@@ -1,7 +1,7 @@
-## Arrears Processing
-Arrears processing of the LVB recording solution depends on the services it consists of:
-- For more information on the arrears processing description of LVB, please see [LVB - Notes for Arrears Processing](https://intl.cloud.tencent.com/document/product/267/30412).
-- For more information on the arrears processing description of VOD, please see VOD - Notes for Arrears Processing.
+## Processing for Overdue Payment
+Overdue payment processing of the LVB recording solution depends on the services it consists of:
+- For more information on the overdue payment processing description of LVB, please see [LVB - Notes for Overdue Payment Processing](https://intl.cloud.tencent.com/document/product/267/30412).
+- For more information on the overdue payment processing description of VOD, please see VOD - Notes for Overdue Payment Processing.
 
 
 

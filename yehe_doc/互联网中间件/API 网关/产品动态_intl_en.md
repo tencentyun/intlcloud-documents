@@ -191,9 +191,9 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/628/36595">API Category</a></td>
 </tr><tr>
 <td>Experience optimization</td>
-<td>The time for which you can continue to use the API Gateway service after your account falls into arrears is extended from 2 hours to 24 hours.</td>
+<td>The time for which you can continue to use the API Gateway service after your account has overdue payment is extended from 2 hours to 24 hours.</td>
 <td>2020-03-03</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/628/11934">Notes on Arrears</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/628/11934">Notes on Overdue Payment</a></td>
 </tr></table>
 
 ## February 2020

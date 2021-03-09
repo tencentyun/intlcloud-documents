@@ -1,6 +1,7 @@
 腾讯即时通信 IM 的跨平台 C 接口（API）。
 
 **各个平台的下载链接：**
+
 - Windows 平台 [IM SDK](https://github.com/tencentyun/TIMSDK/tree/master/cross-platform/Windows)，Windows 快速开始 [集成 IM SDK](https://intl.cloud.tencent.com/document/product/1047/34310) 和 [一分钟跑通 Demo](https://intl.cloud.tencent.com/document/product/1047/34553)。支持32位/64位系统。
 - iOS 平台 [IM SDK](https://github.com/tencentyun/TIMSDK/tree/master/cross-platform/iOS)。
 - Mac 平台 [IM SDK](https://github.com/tencentyun/TIMSDK/tree/master/cross-platform/Mac)。
@@ -9,7 +10,7 @@
 回调分两种，一种是指调用接口的异步返回，另外一种指后台推送的通知。回调在 IM SDK 内部的逻辑线程触发，跟调用接口的线程可能不是同一线程。
 在 Windows 平台，如果调用 [TIMInit](https://intl.cloud.tencent.com/document/product/1047/34388#timinit) 接口进行初始化 IM SDK 之前，已创建了 UI 的消息循环，且调用 [TIMInit](https://intl.cloud.tencent.com/document/product/1047/34388#timinit) 接口的线程为主 UI 线程，则 IM SDK 内部会将回调抛到主 UI 线程调用。
 
->如果接口的参数字符串包含中文，请使用 UTF-8 编码。
+>!如果接口的参数字符串包含中文，请使用 UTF-8 编码。
 
 
 

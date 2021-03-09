@@ -16,7 +16,7 @@ When the user reads a message in a conversation, a read report is sent, and the 
 **API**
 
 ```javascript
-tim.setMessageRead(options)
+tim.setMessageRead(options)；
 ```
 
 **Parameters**

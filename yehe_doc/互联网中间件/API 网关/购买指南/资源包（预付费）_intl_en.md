@@ -28,7 +28,7 @@ Only the all regions type is supported. Resource packs are applicable to all pub
 - Unused resources in a free tier resource pack do not accumulate to the next month, whereas resources in a resource pack from other sources are valid for a long time within the validity period.
 - If you purchase an inappropriate resource pack by mistake, you can make a self-service refund if the refund conditions are met.
 - During the validity period of a resource pack, bills are settled in the following sequence: free tier > resource pack > pay-as-you-go. The usage beyond the free tier and resource pack usage limits is billed on a pay-as-you-go basis.
-- If a user account is in arrears (the balance is below 0), API Gateway will be suspended after 24 hours, regardless of whether the resource pack is within the validity period.
+- If a user account has overdue payment (the balance is below 0), API Gateway will be suspended after 24 hours, regardless of whether the resource pack is within the validity period.
 - Currently, a resource pack consists of only postpaid billable items (number of calls and public network outbound traffic). During the use of API Gateway, other fees (such as instance fees for performance guarantee clusters) may be incurred and will be charged based on billing standards.
 
 ## Resource Pack Validity Period

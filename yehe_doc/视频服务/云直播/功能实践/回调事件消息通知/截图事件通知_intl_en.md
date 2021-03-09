@@ -1,8 +1,8 @@
-The LVB screencapturing feature is used to take screenshots of a real-time live stream at regular intervals and generate images. You can get the information of screenshots from callback notifications. Such screenshot data can be used for porn detection, live room cover generation, and other scenarios.
+The CSS screencapturing feature is used to take screenshots of a real-time live stream at regular intervals and generate images. You can get the information of screenshots from callback notifications. Such screenshot data can be used for porn detection, live room cover generation, and other scenarios.
 
 ## Notes
 
-- You need to understand how to configure the callback feature and receive callback messages on Tencent Cloud LVB before reading this document. For more information, please see [How to Receive Event Notification](https://intl.cloud.tencent.com/zh/document/product/267/38080).
+- You need to understand how to configure the callback feature and receive callback messages on Tencent Cloud CSS before reading this document. For more information, please see [How to Receive Event Notification](https://intl.cloud.tencent.com/zh/document/product/267/38080).
 - The screenshot information obtained after a screencapturing callback event is triggered can be used for porn detection, live room cover generation, and other scenarios.
 
 ## Screencapturing Event Parameter Description
@@ -11,7 +11,7 @@ The LVB screencapturing feature is used to take screenshots of a real-time live 
 
 | Event Type | Field Value Description           |
 | :------- | :------------- |
-| LVB screencapturing | event_type = 200 |
+| CSS screencapturing | event_type = 200 |
 
 ### Common callback parameters
 <table>
@@ -34,8 +34,8 @@ The LVB screencapturing feature is used to take screenshots of a real-time live 
 
 | Field Name | Type   | Description                                                         |
 | :----------- | :----- | :-------------------------- |
-| stream_id    | string | LVB stream name                  |
-| channel_id   | string | The value is the same as LVB stream name                |
+| stream_id    | string | CSS stream name                  |
+| channel_id   | string | The value is the same as CSS stream name                |
 | create_time | int64 | Unix timestamp when a screenshot is generated |
 | file_size    | int    | Screenshot file size in bytes    |
 | width        | int    | Screenshot width in pixels           |

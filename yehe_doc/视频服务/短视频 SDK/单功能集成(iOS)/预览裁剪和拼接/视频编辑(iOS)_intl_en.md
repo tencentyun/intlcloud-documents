@@ -40,7 +40,7 @@ The following is the basic usage process of video editing:
    TXVideoEditer *editor = [[TXVideoEditer alloc] initWithPreview:param];
 
    // Set the source video path
-   NString *path = [[NSBundle mainBundle] pathForResource:@"demo" ofType:@"mp4"]
+   NSString *path = [[NSBundle mainBundle] pathForResource:@"demo" ofType:@"mp4"]
    [editor setVideoPath: path];
 
    // Configure the delegation

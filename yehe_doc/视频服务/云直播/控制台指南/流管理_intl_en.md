@@ -1,4 +1,4 @@
-Log in to the LVB Console and go to **[Live Streaming Management](https://console.cloud.tencent.com/live/streammanage)** to view the online streams, stream history, and forbidden streams.
+Log in to the CSS Console and go to **[Live Streaming Management](https://console.cloud.tencent.com/live/streammanage)** to view the online streams, stream history, and forbidden streams.
 ![](https://main.qcloudimg.com/raw/c5b87e813935c837bab39336772eaa49.png)
 
 ### Disabling a stream

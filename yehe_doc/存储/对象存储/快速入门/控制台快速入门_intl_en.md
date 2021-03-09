@@ -1,14 +1,16 @@
 
+
 ## Overview
+
 
 The COS console is the easiest way to work with COS without writing code or programs. You can use COS services with the COS console directly.
 
 ## Preparations
 
-If this is your first time using COS, we recommend you to learn the following concepts first.
+If this is your first time using COS, you are advised to learn the following concepts first.
 
-- [Bucket](https://intl.cloud.tencent.com/document/product/436/13312): a container for objects stored in COS.
-- [Object](https://intl.cloud.tencent.com/document/product/436/13324): the basic unit of COS storage. It can be the data in any format, such as images, documents, audio and video, and others.
+- [Bucket](https://intl.cloud.tencent.com/document/product/436/13312): a container for objects stored in COS. Each bucket can store an unlimited number of objects.
+- [Object](https://intl.cloud.tencent.com/document/product/436/13324): the basic unit of COS storage. It can be data in any format, such as images, documents, audio and video, and others.
 - [Region](https://intl.cloud.tencent.com/document/product/436/6224): a physical location where data centers are hosted on Tencent Cloud. COS data is stored in the buckets in these regions.
 
 This document describes how to get started and store your data in the cloud using the COS console.
@@ -16,17 +18,17 @@ This document describes how to get started and store your data in the cloud usin
 ## Step 1. Sign up for a Tencent Cloud Account
 You must register a Tencent Cloud account before using the COS service. To do so, click the button below. Skip this step if you already have an account.
 
-<div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:13px;">Account Sign Up</a></div>
+<div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:13px;">Account Sign Up</a></div>
 
 ## Step 2. Verify your Identity
-Once registered, use your registered account to log in to [Tencent Cloud Console](https://console.cloud.tencent.com/) and verify your identity. For detailed instructions, please see [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629). If you are already done so, please skip this step.
+Once registered, use your registered account to log in to the [Tencent Cloud console](https://console.cloud.tencent.com/) and verify your identity. For detailed instructions, please see [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629). If you are already done so, please skip this step. If you haven’t performed identity verification, you cannot purchase any COS instance in the Chinese mainland.
 
 <div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:13px;"  hotrep="document.guide.3128.btn2">Identity Verification</a></div>
 
 
 
 ## Step 3. Activate COS Service
-Open the [Tencent Cloud Console](https://console.cloud.tencent.com/), and select **Products** > **Cloud Object Storage** and enter the COS console. Follow the on-screen instructions to activate COS service. If you have already done so, please skip this step.
+Open the [Tencent Cloud console](https://console.cloud.tencent.com/), and select **Products** > **Cloud Object Storage** and enter the COS console. Then, follow the instructions to activate COS. If you have already done so, please skip this step.
 
 <div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/cos5" target="_blank"  style="color: white; font-size:13px;">Activate COS</a></div>
 
@@ -34,7 +36,7 @@ Open the [Tencent Cloud Console](https://console.cloud.tencent.com/), and select
 ## Step 4. Create a Bucket
 You need to create a bucket to store your objects.
 
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** on the left sidebar to enter the bucket management page.
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) and click **Bucket List** on the left sidebar to enter the bucket management page.
 2. Click **Create Bucket** and configure the following items. Remaining items can be kept as default.
  - Name: enter the bucket name, which cannot be modified once set, such as examplebucket.
  - Region: select a region nearest to your business, such as Guangzhou.
@@ -56,7 +58,7 @@ To download COS data, perform the following.
 2. To download the object, click **Download Objects** under **Basic Information**, or click **Copy Temporary Link**, paste the link into a browser, and press Enter.
 
 ## More Features
-To learn more about what COS console can offer, such as setting object access permissions, hotlink protection, and static websites, please see [Console Overview](https://intl.cloud.tencent.com/document/product/436/11365).
+To learn more about what the COS console can offer, such as setting object access permissions, hotlink protection, and static websites, please see [Console Overview](https://intl.cloud.tencent.com/document/product/436/11365).
 
 
 ## Other Accesses
@@ -71,19 +73,19 @@ In addition to the console, the following accesses are also provided for you to 
 </thead>
 <tbody><tr>
 <td align="left" width="30%"><a href="https://intl.cloud.tencent.com/document/product/436/11366">COSBrowser</a></td>
-<td align="left" width="70%">Provides a user-friendly interface to easily upload and download objects, and generate access URLs.</td>
+<td align="left" width="70%">Provides a user-friendly interface to easily upload and download objects and generate access URLs</td>
 </tr>
 <tr>
-<td align="left" width="30%"><a href="https://intl.cloud.tencent.com/document/product/436/10976">COSCMD</a></td>
-<td align="left" width="70%">Enables you to use simple commands to upload, download, and delete objects in batches.</td>
+<td align="left" width="30%"><a href="https://cloud.tencent.com/doc/product/436/10976">COSCMD</a></td>
+<td align="left" width="70%">Enables you to use simple commands to upload, download, and delete objects in batches</td>
 </tr>
 <tr>
 <td align="left" width="30%"><a href="https://intl.cloud.tencent.com/document/product/436/7751">APIs</a></td>
-<td align="left" width="70%">COS uses XML APIs, which are lightweight, connectionless, and stateless. By calling XML APIs, you can send requests to and accept responses from COS directly over HTTP/HTTPS.
+<td align="left" width="70%">COS uses XML APIs, which are lightweight, connectionless, and stateless. By calling XML APIs, you can send requests to and accept responses from COS directly over HTTP/HTTPS
 </tr>
 <tr>
 <td align="left" width="30%"><a href="https://intl.cloud.tencent.com/document/product/436/6474">SDKs</a></td>
-<td align="left" width="70%">Supports multiple mainstream programming languages including Android, C, C++, .NET, Go, iOS, Java, JavaScript, Node.js, PHP, Python, and Wechat Mini Program.</td>
+<td align="left" width="70%">Supports multiple mainstream programming languages including Android, C, C++, .NET, Go, iOS, Java, JavaScript, Node.js, PHP, Python, and WeChat Mini Program</td>
 </tr>
 </tbody></table>
 
@@ -91,4 +93,4 @@ In addition to the console, the following accesses are also provided for you to 
 
 ## Troubleshooting
 
-We are deeply sorry for any inconvenience you may have encountered when using the console. If you need to reach out, please contact us by [submitting a ticket](https://console.cloud.tencent.com/workorder/category).
+We are deeply sorry for any inconvenience you may have encountered when using the console. If you need to reach out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).

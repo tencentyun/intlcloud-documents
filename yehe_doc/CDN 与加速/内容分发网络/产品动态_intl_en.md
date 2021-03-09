@@ -10,6 +10,7 @@ table th:nth-of-type(4){ width:21%; }
 
 | Update | Description | Release Date | Documentation |
 | -------- | ------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
+|Self-diagnosis tool upgrade|The self-diagnosis tool now supports domain names that have been connected to the "Global" and "Outside the Chinese Mainland" acceleration regions.|December 3, 2020|[Self-Diagnosis Tool](https://intl.cloud.tencent.com/document/product/228/6304)|
 | Browser cache validity configuration | Supports customizing client browser cache policies to reduce origin-pull rate. | December 7, 2020 | [Browser Cache Validity Configuration](https://intl.cloud.tencent.com/document/product/228/38932) |
 | Origin-pull request URL rewrite | Supports configuration of origin-pull request URL rewrite rules. |  December 7, 2020 | [Rewriting Origin-pull URL](https://intl.cloud.tencent.com/document/product/228/38933) |
 | TLS version configuration | Supports enabling and disabling TLS versions as needed. | December 7, 2020 | [TLS Version Configuration](https://intl.cloud.tencent.com/document/product/228/38934) |
@@ -26,14 +27,16 @@ table th:nth-of-type(4){ width:21%; }
 
 | Update | Description | Release Date | Documentation |
 | -------------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
+|Domain name ownership verification|To prevent domain name appropriation, domain name ownership verification is required for connecting a new domain name to Tencent Cloud CDN.|October 14, 2020|[Adding Domain Names](https://intl.cloud.tencent.com/document/product/228/5734)|
 | Official launch of the real-time log service | CDN access logs can be collected and published in real time to realize quick retrieval and analysis of log data. | October 29, 2020 | [Real-Time Log](https://intl.cloud.tencent.com/document/product/228/35380) |
+
+
 
 ## August 2020
 
 | Update | Description | Release Date | Documentation |
 | ---------------------- | ------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
-| Forward Rewrite               | Configures the URL rewrite rule to redirect 302 URLs to the specified URL. | August 13, 2020 | [Configuring URL Rewrite](https://intl.cloud.tencent.com/document/product/228/38074) |
-| Closing ports for accesses from the Chinese mainland | Supports closing ports 80/8080/443.      | August 13, 2020 | Configuring Ports for Accesses from the Chinese Mainland |
+| Access URL rewrite               | Supports configuring URL rewrite rules to redirect 302 URLs to the specified URL. | August 13, 2020 | [Access URL Rewrite Configuration](https://intl.cloud.tencent.com/document/product/228/38074) |
 | Increasing the number of allowed/blocked IPs to 200 | Supports adding up to 200 allowed/blocked IPs.  | August 13, 2020 | [IP Blocklist/Allowlist Configuration](https://intl.cloud.tencent.com/document/product/228/6298) |
 
 ## June 2020
@@ -42,7 +45,7 @@ table th:nth-of-type(4){ width:21%; }
 | ------------------------ | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
 | UA blocklist/allowlist configuration  | Determines whether to deny or allow requests according to HTTP request header `User-Agent`.  | June 30, 2020 | [UA Blocklist/Allowlist Configuration](https://intl.cloud.tencent.com/document/product/228/37256) |
 | Downstream speed limit configuration | Controls the CDN access bandwidth by setting the downstream speed limit on a URL.   | June 30, 2020 | [Downstream Speed Limit Configuration](https://intl.cloud.tencent.com/document/product/228/37257) |
-| Configuring case-insensitive for cache keys  | Configures whether to ignore letter cases for cache keys (case-sensitive by default) | June 30, 2020 | [Cache Key Rule Configuration](https://intl.cloud.tencent.com/document/product/228/38075) |
+| Configuring case-insensitive for cache keys  | Configures whether to ignore letter cases for cache keys (case-sensitive by default) | June 30, 2020 | [Cache Key Rule Configuration](https://intl.cloud.tencent.com/document/product/228/35316) |
 | Origin-pull request header configuration | Supports adding specified header information to the origin-pull request, such as carrying the real client IP. | June 30, 2020 | [Request Header Configuration](https://intl.cloud.tencent.com/document/product/228/37037) |
 | Quick HSTS configuration  | Supports adding the header `strict-transport-security`. | June 30, 2020 | [HSTS Configuration](https://intl.cloud.tencent.com/document/product/228/37036) |
 | OCSP stapling configuration | Fully releases the quick OCSP stapling configuration to improve TLS handshake efficiency and speed up user authentication. | June 30, 2020 |  [OCSP Stapling Configuration](https://intl.cloud.tencent.com/document/product/228/35216)|
@@ -52,7 +55,7 @@ table th:nth-of-type(4){ width:21%; }
 | Update | Description | Release Date | Documentation |
 | --------------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
 | Enabling global CDN service manually| Opens up global acceleration service to global users.<br>Users can activate global CDN service easily in the console by themselves. | April 15, 2020 | [Configuring CDN from Scratch](https://intl.cloud.tencent.com/document/product/228/32978) |
-| Image optimization | Supports enabling WebP, Guetzli, and TPG compression for qualified requested images to effectively reduce downstream traffic generated by image transfer and reduce costs. | April 27, 2020 | Image Optimization |
+
 
 ## March 2020
 
@@ -77,21 +80,21 @@ table th:nth-of-type(4){ width:21%; }
 
 | Update | Description | Release Date | Documentation |
 | ----------------------------- | --------------------------------------------- | ---------- | ------------------------------------------------------------ |
-| Global CDN <br>The cache purge feature is merged | The cache purge feature in the Chinese mainland CDN console and the overseas CDN console has been merged. | November 14, 2019 | [Cache Purge](https://intl.cloud.tencent.com/document/product/228/6299) |
-| Global CDN<br>The cache prefetch feature is merged | The cache prefetch feature in the Chinese mainland CDN console and the overseas CDN console has been merged. | November 14, 2019 | Cache Prefetch |
-| Global CDN <br>The log download feature is merged | The CDN log download feature in the Chinese mainland CDN console and the overseas CDN console has been merged. | November 14, 2019 | [Log Download](https://intl.cloud.tencent.com/document/product/228/6316) |
+| Global CDN <br>The cache purge feature is merged | Merges the cache purge feature in the Chinese mainland and overseas CDN console . | November 14, 2019 | [Purge Cache](https://intl.cloud.tencent.com/document/product/228/6299) |
+| Global CDN <br>The cache prefetch feature is merged | The cache prefetch feature in the Chinese mainland and overseas CDN console has been merged. | November 14, 2019 | [Prefetch Cache](https://intl.cloud.tencent.com/document/product/228/39000) |
+| Global CDN <br>The log download feature is merged | The CDN log download feature in the Chinese mainland and overseas CDN console has been merged. | November 14, 2019 | [Log Download](https://intl.cloud.tencent.com/document/product/228/6316) |
 
 ## October 2019
 
 | Update | Description | Release Date | Documentation |
 | ----------------------------- | --------------------------------------------------------- | ---------- | ------------------------------------------------------------ |
-| Overseas CDN <br>The statistical analysis page is redesigned | Following the upgrade of Overseas CDN's data APIs, data analysis will be upgraded to global data analysis. | October 21, 2019 | [Data Analysis](https://intl.cloud.tencent.com/document/product/228/32923) |
+| Overseas CDN <br>The statistical analysis page is redesigned | Following the upgrade of overseas CDN's data APIs, data analysis will be upgraded to global data analysis. | October 21, 2019 | [Data Analysis](https://intl.cloud.tencent.com/document/product/228/32923) |
 
 ## May 2019
 
 | Update | Description | Release Date | Documentation |
 | --------------------------------- | -------------------------------------- | ---------- | ------------------------------------------------------------ |
-| Chinese mainland CDN <br>The self-diagnosis tool is upgraded | Supports region and status diagnosis and list refreshing. | May 29, 2019 | [Self-Diagnosis Tool](https://intl.cloud.tencent.com/document/product/228/6304) |
+| Chinese mainland CDN <br>The fault self-diagnosis tool is upgraded | New features have been launched, including diagnosing the region or status and refreshing the list information. | May 29, 2019 | [Self-Diagnosis Tool](https://intl.cloud.tencent.com/document/product/228/6304) |
 
 ## April 2019
 
@@ -131,26 +134,26 @@ table th:nth-of-type(4){ width:21%; }
 
 | Update | Description | Release Date | Documentation |
 | ------------------------------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
-| Chinese mainland CDN <br>Multiple purge logics are supported for directory purge | Multiple purge logics are added for Chinese mainland CDN to help purge resources cached in CDN nodes on a regular basis. The nodes will pull the latest resources from the origin server and cache again. | May 31, 2018 | [Cache Purge](https://intl.cloud.tencent.com/document/product/228/6299) |
+| Chinese mainland CDN <br>Multiple purge logics are supported for directory purge | Multiple purge logics are added for Chinese mainland CDN to help purge resources cached in CDN nodes on a regular basis. The nodes will pull the latest resources from the origin server and cache again. | May 31, 2018 | [Purge Cache](https://intl.cloud.tencent.com/document/product/228/6299) |
 
 ## January 2018
 
 | Update | Description | Release Date | Documentation |
 | ---------------------------------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
 | Chinese mainland CDN <br>Timestamp hotlink protection can be configured | By setting an access control policy on the value of the referer field in the HTTP request header, the access source can be restricted to prevent hotlinking by malicious users. | January 30, 2018 | [Hotlink Protection Configuration](https://intl.cloud.tencent.com/document/product/228/6292) |
-| Chinese mainland CDN <br>404 status code cache expiration time can be customized | Supports custom configuration of 404 status code cache expiration time. | January 30, 2018 | [Status Code Cache Configuration](https://intl.cloud.tencent.com/document/product/228/35318) |
+| Chinese mainland CDN <br>404 status code cache validity can be customized | Supports custom configuration of 404 status code cache validity. | January 30, 2018 | [Status Code Cache Configuration](https://intl.cloud.tencent.com/document/product/228/35318) |
 
 ## November 2017
 
 | Update | Description | Release Date | Documentation |
 | ----------------------------- | ------------------------- | ---------- | ------------------------------------------------------------ |
-| Chinese mainland CDN <br>The time periods for arrears processing are adjusted | The time periods for arrears processing in CDN are adjusted. | November 9, 2017 | [Billing Instruction](https://intl.cloud.tencent.com/document/product/228/2949) |
+| Chinese mainland CDN <br>The time periods for arrears processing are adjusted | The time periods for arrears processing in CDN are adjusted. | November 9, 2017 | [Billing Overview](https://intl.cloud.tencent.com/document/product/228/2949) |
 
 ## September 2017
 
 | Update | Description | Release Date | Documentation |
 | ------------------------------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
-| Chinese mainland CDN <br>Forced HTTPS 301 redirect is supported | Enables you to forcibly rewrite all HTTP requests arriving at the CDN node to HTTPS requests. Supports permanent 301 redirect. | September 30, 2017 | [HTTPS Forced Redirect](https://intl.cloud.tencent.com/document/product/228/35214) |
+| Chinese mainland CDN <br>Forced HTTPS 301 redirect is supported | Enables you to forcibly rewrite all HTTP requests arriving at the CDN node to HTTPS requests. Supports permanent 301 redirect. | September 30, 2017 | [Forced Redirection Configuration](https://intl.cloud.tencent.com/document/product/228/35214) |
 | Chinese mainland CDN <br>Homepage cache validity period can be configured | Enables you to configure a set of expiration rules that the CDN cache nodes should follow when caching business contents. | September 30, 2017 | [Node Cache Validity Configuration (Legacy)](https://intl.cloud.tencent.com/document/product/228/35317) |
 
 ## July 2017
@@ -186,7 +189,7 @@ table th:nth-of-type(4){ width:21%; }
 | Update | Description | Release Date | Documentation |
 | ----------------------------------------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
 | Chinese mainland CDN <br>Bandwidth cap can be configured for domain names | Prevents hotlinking by malicious users which can dramatically increase bandwidth usage and result in exorbitant costs. | December 14, 2016 | [Bandwidth Cap Configuration](https://intl.cloud.tencent.com/document/product/228/7541) |
-| Chinese mainland CDN <br>Forced HTTPS redirect is supported | This feature enables you to specify a redirect method and forcibly rewrite all HTTP requests arriving at the CDN node to HTTPS requests. | December 14, 2016 | [HTTPS Forced Redirect](https://intl.cloud.tencent.com/document/product/228/35214) |
+| Chinese mainland CDN <br>Forced HTTPS redirect is supported | This feature enables you to specify a redirect method and forcibly rewrite all HTTP requests arriving at the CDN node to HTTPS requests. | December 14, 2016 | [Forced Redirection Configuration](https://intl.cloud.tencent.com/document/product/228/35214) |
 | Chinese mainland CDN supports primary/secondary origin server configuration | This feature ensures the high availability of origin-pull. | December 14, 2016 | [Origin Server Configuration](https://intl.cloud.tencent.com/document/product/228/6289) |
 | Chinese mainland CDN <br>Switching between external and COS origin servers is supported | This feature enables you to change the type of the primary origin server from external origin server to COS origin server and vice versa. | December 14, 2016 | [Origin Server Configuration](https://intl.cloud.tencent.com/document/product/228/6289) |
 | Chinese mainland CDN <br>Range GETs can be configured | This feature can greatly improve the delivery efficiency of large files, speed up responses, and reduce the pressure on the origin server. | December 14, 2016 | [Range GETs Configuration](https://intl.cloud.tencent.com/document/product/228/7184) |
@@ -196,9 +199,9 @@ table th:nth-of-type(4){ width:21%; }
 
 | Update | Description | Release Date | Documentation |
 | ------------------------------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
-| Overseas CDN <br>Purge and prefetch are supported | The cache purge and cache prefetch features are launched in Overseas CDN. | November 25, 2016 | [Cache Purge](https://intl.cloud.tencent.com/document/product/228/6299)<br>Cache Prefetch |
+| Overseas CDN <br>Purge and prefetch are supported             | The cache purge and cache prefetch features are launched in overseas CDN. | November 25, 2016 | [Purge Cache](https://intl.cloud.tencent.com/document/product/228/6299  )<br> [Prefetch Cache](https://intl.cloud.tencent.com/document/product/228/39000  ) |
 | Overseas CDN <br>Access log download is supported | The access logging feature is launched in Overseas CDN to help you analyze user access. | November 25, 2016 | [Log Download](https://intl.cloud.tencent.com/document/product/228/6316) |
-| Overseas CDN <br>COS origin server is supported | Static resources in COS can be connected to Overseas CDN for global acceleration and delivery to user clients. | November 1, 2016 | [COS as Origin Server](https://intl.cloud.tencent.com/document/product/228/32977) |
+| Overseas CDN <br>COS origin server is supported | Static resources in COS can be connected to Overseas CDN for global acceleration and delivery to user clients. | November 1, 2016 | [COS as Origin Server of CDN](https://intl.cloud.tencent.com/document/product/228/32977) |
 
 ## October 2016
 
@@ -233,7 +236,7 @@ table th:nth-of-type(4){ width:21%; }
 
 | Update | Description | Release Date | Documentation |
 | ------------------------------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
-| The resource prefetch feature is launched <br>(In beta test)  | CDN offers a resource prefetch feature that enables you to load specified resources to a cache node by simply submitting the list of resources in the CDN console instead of waiting for user requests to trigger. | June 30, 2016 | Cache Prefetch |
+| The resource prefetch feature is launched<br>(In beta test)   | CDN offers a resource prefetch feature that enables you to load specified resources to a cache node by simply submitting the list of resources in the CDN console instead of waiting for user requests to trigger. | June 30, 2016 | [Prefetch Cache](https://intl.cloud.tencent.com/document/product/228/39000) |
 | Entry for Overseas CDN application is opened <br>(In beta test) | You can apply to enable Overseas CDN acceleration on this page. | June 30, 2016 | [Overseas Acceleration](https://intl.cloud.tencent.com/product/cdn)          |
 | The CDN monthly operational report feature is launched | Your monthly business status is displayed in multiple dimensions to facilitate analysis of your business operations. | June 13, 2016 | [Operational Report](https://intl.cloud.tencent.com/document/product/228/6312) |
 
@@ -253,13 +256,13 @@ table th:nth-of-type(4){ width:21%; }
 
 | Update | Description | Release Date | Documentation |
 | ----------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
-| CDN supports COS origin server | Static resources in COS can be connected to CDN for global acceleration and delivery to user clients. | January 20, 2016 | [COS as Origin Server](https://intl.cloud.tencent.com/document/product/228/32977) |
+| CDN supports COS origin server | Static resources in COS can be connected to CDN for global acceleration and delivery to user clients. | January 20, 2016 | [COS as Origin Server of CDN](https://intl.cloud.tencent.com/document/product/228/32977) |
 
 ## October 2015
 
 | Update | Description | Release Date | Documentation |
 | --------------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
-| The entire network status monitoring feature is launched for CDN | This feature enables you to monitor the latency and availability status of ISPs in all provinces of Chinese mainland and each region outside Chinese mainland. | October 10, 2015 | [Entire Network Status Monitoring](https://intl.cloud.tencent.com/document/product/228/6311) |
+| The entire network status monitoring feature is launched for CDN | This feature enables you to monitor the latency and availability status of ISPs in all provinces of Chinese mainland and each region outside the Chinese mainland. | October 10, 2015 | [Entire Network Status Monitoring](https://intl.cloud.tencent.com/document/product/228/6311) |
 
 ## August 2015
 
@@ -271,8 +274,8 @@ table th:nth-of-type(4){ width:21%; }
 
 | Update | Description | Release Date | Documentation |
 | -------------------- | -------------------- | ---------- | ------------------------------------------------------------ |
-| Directory purge is supported | Resources can be purged by directory. | June 12, 2015 | [Cache Purge](https://intl.cloud.tencent.com/document/product/228/6299) |
-| The large file prefetch feature is provided | Large file prefetch is supported. | June 12, 2015 | Cache Prefetch |
+| Directory purge is supported | Resources can be purged by directory. | June 12, 2015 | [Purge Cache](https://intl.cloud.tencent.com/document/product/228/6299) |
+| Prefetch feature for large files | Large files can be prefetched. | June 12, 2015 | [Prefetch Cache](https://intl.cloud.tencent.com/document/product/228/39000  ) |
 
 ## May 2015
 
@@ -293,7 +296,7 @@ table th:nth-of-type(4){ width:21%; }
 | Update | Description | Release Date | Documentation |
 | ---------------------------------- | ---------------------------------------- | ---------- | ------------------------------------------------------------ |
 | CDN supports connecting external and FTP-hosted origin servers | External and FTP-hosted origin servers are supported. | March 15, 2015 | [Adding Domain Names](https://intl.cloud.tencent.com/document/product/228/5734) |
-| Bill-by-bandwidth and bill-by-traffic are supported  | CDN offers two billing methods: bill-by-bandwidth and bill-by-traffic. | March 15, 2015 | [Billing Instruction](https://intl.cloud.tencent.com/document/product/228/2949) |
+| Bill-by-bandwidth and bill-by-traffic are supported  | CDN offers two billing modes: bill-by-bandwidth and bill-by-traffic. | March 15, 2015 | [Billing Overview](https://intl.cloud.tencent.com/document/product/228/2949) |
 
 
 

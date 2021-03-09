@@ -1,6 +1,6 @@
 <span id="que1"></span>
-### Which COS storage regions are currently supported by LVB screencapturing?
-Currently, LVB screenshots can be stored in the following regions:
+### Which COS storage regions are currently supported by CSS screencapturing?
+Currently, CSS screenshots can be stored in the following regions:
 <table>
 <tbody><tr><th colspan="3">Public Cloud Region</th></tr><tr>
 <td rowspan="5">Mainland China</td>
@@ -29,9 +29,9 @@ Currently, LVB screenshots can be stored in the following regions:
 </tr></tbody></table>
 
 <span id="que2"></span>
-### Which regions are supported by LVB domain name acceleration?
+### Which regions are supported by CSS domain name acceleration?
 
-LVB has a global acceleration feature, and you can choose an appropriate acceleration region type based on the region of your business.
+CSS has a global acceleration feature, and you can choose an appropriate acceleration region type based on the region of your business.
 
 | Playback Domain Name Acceleration Region Type | Available Region Type | Remarks |
 | :----------------------- | :--------------------------------- | :----------------------------------------------------------- |

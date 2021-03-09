@@ -1,189 +1,188 @@
 ## 적용 시나리오
-CDN 라이브 방송 시청은 'CDN 릴레이 라이브 방송'이라고도 합니다. TRTC는 UDP 프로토콜을 채택해 멀티미디어 데이터를 전송하며, LVB CDN은 데이터 전송 시 RTMP\HLS\FLV 등 프로토콜을 채택합니다. 따라서 TRTC의 멀티미디어 데이터를 라이브 방송 CDN으로 **릴레이**해야 시청자들이 라이브 방송 CDN으로 시청할 수 있습니다.
+CDN 라이브 방송 시청은 ‘CDN 릴레이 라이브 방송’이라고도 하며, TRTC가 UDT 프로토콜을 통해 멀티미디어 데이터를 전송하는 반면 LVB CDN의 경우 RTMP, HLS, FLV등의 프로토콜을 통해 데이터 전송을 하기 때문에, TRTC의 멀티미디어 데이터가 **릴레이**로 CDN 라이브 방송으로 전달되어야만 시청자가 라이브 CDN을 통해 시청할 수 있습니다. 
 
-CDN를 사용해 TRTC를 시청하면 다음의 두 문제를 해결할 수 있습니다.
-- **문제1: 고도의 동시 접속 시청**
-TRTC의 딜레이 조건을 고려한 단일 방의 최대 인원 수는 10만 명입니다. CDN를 적용할 경우, 딜레이가 다소 길지만 10만 명 이상의 동시 시청이 가능하며, 비용도 보다 저렴합니다.
-- **문제2: 모바일 웹 사이트 재생**
-TRTC는 WebRTC 프로토콜의 접근을 지원하지만 Chrome 브라우저에서 주로 사용되며 모바일 기기의 브라우저와 호환 시 기능이 저하됩니다. 특히 Android 휴대폰의 브라우저는 WebRTC를 효과적으로 지원하지 못합니다. 따라서 모바일 기기의 Web 화면으로 라이브 콘텐츠를 공유하려면 HLS(m3u8) 재생 프로토콜을 사용하시길 권장합니다. HLS 프로토콜을 적용할 때 라이브 방송 CDN의 능력도 매우 중요합니다.
+TRTC에 CDN 시청을 접목하는 방식은 다음과 같은 2가지 문제를 해결하는 데에 주로 사용됩니다.
+- **문제 1: 매우 높은 동시 시청 트래픽**
+TRTC의 짧은 딜레이 시간 시청은 하나의 방에서 최대 10만명까지 지원 가능합니다. CDN 시청은 지연 시간이 다소 길지만 10만명 이상의 동시 시청 지원이 가능하며 CDN의 요금이 더욱 저렴합니다.
+- **문제 2: 모바일 웹페이지 재생**
+TRTC는 WebRTC API의 접근을 지원하지만 주로 Chrome 바탕화면 브라우저에 사용되며, 모바일 브라우저에서의 호환성이 매우 떨어지고 특히 안드로이드폰 브라우저의 WebRTC 지원 성능은 대체적으로 상당히 낮은 수준입니다. 따라서 모바일 디바이스에서 Web 화면을 통해 라이브 방송 컨텐츠를 즐기고 싶다면 HLS(m3u8) 재생 프로토콜을 추천하는데 이 역시 라이브 방송 CDN을 통해 HLS 프로토콜을 지원합니다. 
 
 
-## 원리 분석
-Tencent Cloud는 릴레이 트랜스 코딩 클러스터를 통해 TRTC의 멀티미디어 데이터를 라이브 방송 CDN 시스템에 릴레이합니다. 이 클러스터는 TRTC가 채택한 UDP 프로토콜을 표준적인 라이브 방송 RTMP 프로토콜로 전환합니다.
+## 원리 설명
+Tencent Cloud는 트랜스 코딩 클러스터를 사용해 TRTC의 멀티미디어 데이터를 라이브 방송 CDN 시스템에 릴레이하며, 해당 클러스터는 TRTC가 사용한 UDP 프로토콜을 표준화된 라이브 방송 RTMP 프로토콜로 전환합니다. 
 <span id="directCDN"></span>
-**단일 화면의 릴레이 라이브 방송**
-TRTC 방에 호스트가 1인일 경우, TRTC의 릴레이 푸시 스트림은 표준 RTMP 프로토콜의 다이렉트 스트리밍과 기능이 동일합니다. 단, TRTC가 채택하는 UDP는 RTMP에 비해 취약한 네트워크 환경에서도 뛰어난 성능을 선보입니다.
+**싱글채널 화면의 릴레이 라이브 방송**
+TRTC 방에 호스트가 한명 뿐인 경우, TRTC의 릴레이 푸시 스트림은 표준 RTMP 프로토콜의 다이렉트 푸시 기능과 동일하지만 나쁜 네트워크 상태에 대한 저항성은 TRTC의 UDP가 RTMP 보다 높습니다.
 ![](https://main.qcloudimg.com/raw/23ac68cb46b06cc4eb6000fa98500dc4.jpg)
 
 <span id="mixCDN"></span>
-**혼합 화면의 릴레이 라이브 방송**
-TRTC는 끊김 없는 멀티미디어 인터랙션 기능을 구현합니다. 단일 방에 호스트가 다수이며, CDN 시청으로 단일 멀티미디어 화면을 불러오고자 할 때 [클라우드 혼합 스트림 서비스](https://intl.cloud.tencent.com/document/product/647/34618)를 이용해 다중 화면을 하나로 합성해야 합니다. 이때 다음 그림과 같은 원리로 작동합니다.
+**믹스채널 화면의 릴레이 라이브 방송**
+TRTC가 가장 두각을 나타내는 분야는 멀티미디어 인터랙션으로 하나의 방에 여러 호스트가 있는 상황에서 CDN 시청 디바이스에 하나의 멀티미디어 화면만을 가져오려는 경우 [클라우드 혼합 스트림](https://intl.cloud.tencent.com/document/product/647/34618)을 이용해 다중 채널의 화면을 하나의 채널로 결합할 수 있는데, 그 원리는 다음 그림과 같습니다.
 ![](https://main.qcloudimg.com/raw/77eeed776e61c3a6bd0e1669e5747727.jpg)
 
-> **다중 CDN 화면은 왜 바로 재생할 수 없나요?**
->다중 CDN 화면은 재생 시 각 화면의 딜레이 조건을 맞추기가 까다롭습니다. 또한 다중 화면은 다운로드 트래픽이 단일 화면에 비해 많이 소요되기 때문에 업계에서는 보통 클라우드 혼합 스트림 방식을 채택합니다.
+>? **다중 채널의 CDN 화면을 직접 스트리밍 하지 않는 이유는 무엇입니까?**
+>다중 채널의 CDN 화면을 재생하는 경우 여러 채널의 딜레이 타임 조절이 어렵고 동시에 다중 채널 화면을 끌어오기 위해 더 많은 다운로드 트래픽이 소모되기 때문에 업계에서는 일반적으로 클라우드 혼합 스트리밍 솔루션을 채택하고 있습니다.
 
 ## 전제 조건
-Tencent의 [LVB](https://console.cloud.tencent.com/live) 서비스를 개통했다면 라이브 방송 재생에 관한 정부 관련 기관의 규정에 따라 재생 도메인을 설정해야 합니다. 자세한 내용은 [자체 도메인 추가](https://intl.cloud.tencent.com/document/product/267/35970)를 참조하십시오.
+이미 Tencent [LVB](https://console.cloud.tencent.com/live) 서비스를 이용중입니다. 정부 관련 기관의 기준에 따라 라이브 방송은 반드시 스트리밍 도메인을 설정해야 하며, 구체적인 내용은 [외부 도메인 추가](https://intl.cloud.tencent.com/document/product/267/35970)를 참조하시기 바랍니다.
 
-## 사용 방법
+## 사용 순서
 
 <span id="step1"></span>
 ### 1단계: 릴레이 푸시 스트림 기능 활성화
 
 1. [TRTC 콘솔](https://console.cloud.tencent.com/trtc)에 로그인합니다.
 2. 왼쪽 메뉴에서 [애플리케이션 관리]를 선택한 후 대상 애플리케이션이 속한 라인의 [기능 설정]을 클릭합니다.
-3. [릴레이 푸시 스트림 설정]에서 [릴레이 푸시 스트림 활성화] 오른쪽의 ![](https://main.qcloudimg.com/raw/5f58afe211aa033037e5c0b793023b49.png)를 클릭하면 [릴레이 푸시 스트림 기능 활성화] 팝업창이 뜹니다. 팝업창에서 [릴레이 푸시 스트림 기능 활성화]를 클릭하면 활성화됩니다.
+3. [릴레이 푸시 설정]에서 [릴레이 푸시 활성화] 우측의![](https://main.qcloudimg.com/raw/5f58afe211aa033037e5c0b793023b49.png)를 클릭하면, [릴레이 푸시 스트림 기능 활성화] 대화창이 뜨는데 여기서 [릴레이 푸시 스트림 기능 활성화]를 클릭하면 바로 활성화됩니다.
+
 
 <span id="step2"></span>
-### 2단계: 재생 도메인 및 CNAME 설정
+### 2단계: 재생 도메인 설정 및 CNAME 완료
 1. [LVB 콘솔](https://console.cloud.tencent.com/live/)에 로그인합니다.
-2. 왼쪽 메뉴에서 [도메인 관리]를 선택하면 도메인 목록에 `xxxxx.livepush.myqcloud.com` 형식의 푸시 스트림 도메인이 추가된 것을 확인할 수 있습니다. xxxxx는 숫자로 이루어져 있으며, bizid라고 부릅니다. TRTC 콘솔 > [애플리케이션 관리](https://console.cloud.tencent.com/trtc/app) > [애플리케이션 정보]에서 bizid 정보를 조회할 수 있습니다.
-3. [도메인 추가]를 클릭한 뒤 등록한 재생 도메인을 입력합니다. [재생 도메인]으로 도메인 유형을 선택한 뒤 가속 리전(기본값은 [중국대륙])을 선택하고 [확인]을 클릭합니다.
-4. 도메인 추가가 완료되면 시스템은 자동으로 CNAME 도메인(`.liveplay.myqcloud.com` 형식이 뒤에 붙음) 이름을 할당합니다. CNAME 도메인은 직접 액세스할 수 없으므로 도메인 서비스 제공 업체에서 CNAME 설정을 완료해야 합니다. 설정이 적용되면 바로 LVB 서비스를 이용할 수 있으며, 자세한 내용은 [CNAME 설정](https://intl.cloud.tencent.com/document/product/267/31057)을 참조하십시오.
+2. 왼쪽 메뉴에서 [도메인 관리]를 선택하면 도메인 목록에 `xxxxx.livepush.myqcloud.com` 양식의 푸시 도메인이 추가된 것을 볼 수 있는데 여기에서 xxxxx는 bizid라고 하는 숫자로, TRTC 콘솔 >[애플리케이션 관리](https://console.cloud.tencent.com/trtc/app)>[애플리케이션 정보]에서 bizid 정보를 검색하실 수 있습니다.
+3. [도메인 추가]를 클릭해 기존에 준비한 도메인을 입력하고 도메인 유형을 [재생 도메인]으로 선택한 후 가속 리전을 선택(디폴트 값은 [중국대륙]), [확인]을 클릭합니다. 
+4. 도메인 추가가 완료되면 시스템에서 자동으로 CNAME 도메인(뒤에 `.liveplay.myqcloud.com`이 붙음)을 할당합니다. CNAME 도메인은 직접 액세스할 수 없으며, 도메인 서비스 제공 업체에서 CNAME 설정을 완료하고, 설정이 적용되면 LVB 서비스를 이용할 수 있습니다. 자세한 설정 방법은 [CNAME 설정](https://intl.cloud.tencent.com/document/product/267/31057)을 참조 바랍니다.
 
-> **푸시 스트림 도메인 추가 불필요**, [1단계](#step1)에서 릴레이 라이브 방송 기능을 활성화하면 Tencent Cloud는 Live Video Broadcasting 콘솔에 `xxxxx.livepush.myqcloud.com` 형식의 푸시 스트림 도메인을 기본값으로 추가합니다. 해당 도메인은 Tencent Cloud LVB 서비스와 TRTC 서비스 사이에 약정한 기본 푸시 스트림 도메인으로서 수정할 수 없습니다.
+>! **푸시 도메인을 추가할 필요가 없습니다**, [1단계]에서 릴레이 라이브 방송 기능을 활성화하면 Tencent Cloud가 자동으로 LVB 콘솔에 `xxxxx.livepush.myqcloud.com` 형식의 푸시 도메인을 추가하는데, 해당 도메인은 Tencent LVB 서비스와 TRTC 서비스 간에 약정된 디폴트 푸시 도메인으로, 당분간은 수정이 불가합니다.
 
 <span id="step3"></span>
-### 3단계: TRTC 멀티미디어 스트림을 라이브 방송 streamId과 조인
-릴레이 푸시 스트림 기능을 활성화하면 TRTC 방의 각 화면에 맞는 재생 주소가 각각 할당되며, 주소 포맷은 다음과 같습니다.
+### 3단계: TRTC의 멀티미디어 스트림과 라이브 방송 streamId의 연동
+릴레이 푸시 스트림 기능을 켜면 TRTC 방 안의 모든 채널 화면마다 해당되는 재생 주소가 할당되는데, 주소 형식은 다음과 같습니다.
 ```
 http://재생 도메인/live/[streamId].flv
 ```
-주소에 포함된 streamId는 라이브 방송 스트림의 유일한 식별자입니다. streamId를 직접 설정할 수 있으며, 기본값으로 생성된 것을 사용해도 됩니다.
+주소의 streamId로 LVB에서 라이브 스트림을 고유하게 식별할 수 있으며, streamId는 사용자가 지정하거나 시스템이 생성한 기본값을 사용할 수 있습니다.
 
-#### 방법1: streamId의 사용자 정의
-`TRTCCloud`의 `enterRoom` 함수를 호출한 뒤 `TRTCParams` 중 `streamId` 매개변수를 설정해 라이브 방송 스트림 ID를 정합니다.
-iOS기기의 Objective-C 코드 예시
+#### 방법1: 사용자 정의 streamId
+‘TRTCCloud’에서 ‘enterRoom’함수를 호출 할 때, ‘TRTCParams’ 매개변수의 ‘streamId’ 매개변수를 설정하여 라이브 스트림 ID를 지정할 수 있습니다.
+iOS 용 Objective-C 코드를 예로 들어 보겠습니다.
 
 ```Objective-C
 TRTCCloud *trtcCloud = [TRTCCloud sharedInstance];
 TRTCParams *param = [[TRTCParams alloc] init];
-param.sdkAppId = 1400000123;     // TRTC의 SDKAppID은 애플리케이션 생성 뒤 획득
+param.sdkAppId = 1400000123;     // TRTC의 SDKAppID, 애플리케이션 생성 후 획득
 param.roomId   = 1001;           // 방 번호
 param.userId   = @"rexchang";    // 사용자 이름
 param.userSig  = @"xxxxxxxx";    // 로그인 서명
 param.role     = TRTCRoleAnchor; // 역할: 호스트
-param.streamId = @"stream1001";  // 스트림 ID
+param.streamId = @"stream1001";  // 스트리밍 ID
 [trtcCloud enterRoom:params appScene:TRTCAppSceneLIVE]; // LIVE 모드를 사용하십시오.
 ```
-userSig 계산 방법은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166) 을 참조하십시오.
+userSig의 계산 방법은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참조하십시오.
 
-#### 방법2: 시스템의 streamId 지정
-자동 릴레이 푸시 스트림 실행 후 streamId를 사용자 정의하지 않은 경우, 시스템에서 streamId 하나를 디폴트로 생성합니다. 생성 규칙은 다음과 같습니다.
+#### 방법2; 시스템 생성 streamId
+자동 릴레이 푸시가 활성화 된 후 사용자 정의 streamId를 지정하지 않으면 시스템이 다음 규칙에 따라 자동으로 streamId를 생성합니다.
 
-- **streamId가 사용되는 필드 어셈블리**
-  - SDKAppID: [콘솔](https://console.cloud.tencent.com/trtc/app) > [애플리케이션 관리] > [애플리케이션 정보]에서 조회할 수 있습니다.
-  - bizid: [콘솔](https://console.cloud.tencent.com/trtc/app) > [애플리케이션 관리] > [애플리케이션 정보]에서 조회할 수 있습니다.
-  - roomId: `enterRoom` 함수의 매개변수 `TRTCParams`에서 지정합니다.
-  - userId: `enterRoom` 함수의 매개변수 `TRTCParams`에서 지정합니다.
-  - streamType: 카메라 화면은 main, 스크린 공유는 aux입니다(WebRTC은 동시에 한 채널의 업스트림만 지원하기 때문에 WebRTC의 스크린 공유 시 스트림 타입은 main임).
+- **streamId를 조합하는 데 사용되는 필드**
+  - SDKAppID: [콘솔](https://console.cloud.tencent.com/trtc/app)>[애플리케이션 관리]>[애플리케이션 정보]에서 확인할 수 있습니다.
+  - bizid: [콘솔](https://console.cloud.tencent.com/trtc/app)>[애플리케이션 관리]>[애플리케이션 정보]에서 확인할 수 있습니다.
+  - roomId: ‘enterRoom’ 함수의 매개변수 ‘TRTCParams’ 중에서 사용자가 지정합니다.
+  - userId: ‘enterRoom’ 함수의 매개변수 ‘TRTCParams’ 중에서 사용자가 지정합니다.
+  - streamType: 카메라 화면을 main으로, 화면 공유를 aux로 합니다(WebRTC는 하나의 업스트림 채널만을 동시 지원하므로 WebRTC에서는 화면 공유의 스트리밍 유형을 main으로 합니다).
 
-- **streamId 어셈블리 계산 규칙**
+- **streamId 조합 컴퓨팅 규칙**
  <table>
 <tr>
-<th>어셈블리</th>
+<th>조합</th>
 <th>2020년 01월 09일 및 이후 생성된 애플리케이션</th>
-<th>2020년 01월 09일 이전 생성 및 사용된 애플리케이션</th>
+<th>2020년 01월 09일 이전에 생성되어 사용된 애플리케이션</th>
 </tr>
 <tr>
-<td>어셈블리 규칙</td>
+<td>조합규칙</td>
 <td>streamId = urlencode(sdkAppId_roomId_userId_streamType)</td>
 <td>StreamId = bizid_MD5(roomId_userId_streamType)</td>
 </tr>
 <tr>
-<td>계산 예시</td>
-<td>예: sdkAppId = 12345678, roomId = 12345, userId = userA, 사용자가 카메라 사용했음<br>그렇다면: streamId = 12345678_12345_userA_main</td>
-<td>예: bizid = 1234, roomId = 12345, userId = userA, 사용자가 카메라 사용했음<br>그렇다면: streamId = 1234_MD5(12345_userA_main) = 1234_8D0261436C375BB0DEA901D86D7D70E8</td>
+<td>컴퓨팅 예시</td>
+<td>예시：sdkAppId = 12345678, roomId = 12345, userId = userA, 사용자는 현재 카메라를 사용하고 있습니다. <br>그러면：streamId = 12345678_12345_userA_main</td>
+<td>예시：bizid = 1234, roomId = 12345, userId = userA, 사용자는 현재 카메라를 사용하고 있습니다. <br>그러면：streamId = 1234_MD5(12345_userA_main) = 1234_8D0261436C375BB0DEA901D86D7D70E8</td>
 </tr>
 </table>
 
 
 <span id="step4"></span>
-### 4단계: 다중 화면 제어를 위한 혼합 방법
+### 4단계: 다중 화면 제어를 위한 하이브리드 솔루션
 
-혼합한 라이브 방송 화면을 획득하고 싶은 경우 TRTCCloud의 `setMixTranscodingConfig` 인터페이스를 호출하여 클라우드 혼합 스트림 트랜스 코딩을 실행해야 합니다. 해당 인터페이스의 매개변수 `TRTCTranscodingConfig`로 설정할 수 있습니다.
- - 각 서브 화면의 노출 위치 및 사이즈
- - 혼합 화면의 화질 및 인코딩 매개변수
+믹싱된 라이브 방송 이미지를 얻으려면 TRTCCloud의 ‘setMixTranscodingConfig’ 인터페이스를 호출하여 클라우드 혼합 스트림 트랜스 코딩을 시작해야 하며, 해당 인터페이스의 매개변수인 `TRTCTranscodingConfig`를 구성에 적용할 수 있습니다.
+ - 각 하위 화면의 배치 위치 및 크기.
+ - 혼합 화면의 품질 및 인코딩 매개변수.
 
-화면 레이아웃에 관한 자세한 설정 방법은 [클라우드 혼합 스트림 트랜스 코딩](https://intl.cloud.tencent.com/document/product/647/34618)을 참조하십시오. 프로세스 전반에 걸친 각 모듈의 관계는 [원리 분석](#mixCDN)에서 확인할 수 있습니다.
+화면 레이아웃의 세부 배치 방법은 [클라우드 혼합 스트림 트랜스 코딩](https://intl.cloud.tencent.com/document/product/647/34618)을 참조하시고, 전체 프로세스에 관련된 개별 모듈의 관계는 [원리 설명](#mixCDN)을 참조하시기 바랍니다.
 
-> `setMixTranscodingConfig`는 단말에서 스트림을 혼합하지 않습니다. 혼합 스트림 설정을 클라우드로 보내면 클라우드 서버에서 스트림을 혼합하고 트랜스 코딩을 실시합니다. 혼합 스트림과 트랜스 코딩은 모두 원시 멀티미디어를 디코딩한 뒤 2차 인코딩하기 때문에 프로세스 시간이 다소 소요됩니다. 따라서 혼합 화면 시청 시 개별 화면보다 딜레이 시간이 1초~2초 더 걸립니다.
+>! `setMixTranscodingConfig`는 장치에서 혼합 스트리밍을 실행하지 않고 혼합 스트리밍 구성을 클라우드로 전송하여 클라우드 서버에서 혼합 스트리밍과 트랜스 코딩을 실행합니다. 혼합 스트리밍과 트랜스 코딩 모두 원본 멀티미디어 데이터를 디코딩하고 다시 인코딩해야 하기 때문에 더 긴 처리 시간이 소요됩니다. 따라서 혼합 화면의 실제 시청 지연 시간은 단독 화면 보다 1s-2s 정도 깁니다.
 
 <span id="step5"></span>
-### 5단계: 재생 주소 가져오기 및 재생 링크
-[2단계](#step2)와 [3단계](#step3)에서 각각 재생 도메인 설정 및 streamId 매핑을 마치면 라이브 방송을 위한 재생 주소가 할당됩니다. 재생 주소의 표준 포맷은 다음과 같습니다.
+### 5단계: 재생 주소 가져오기 및 재생 연결
+[2단계](#step2) 재생 도메인 설정과 [3단계](#step3) streamId의 매핑을 완료하면 라이브 방송의 재생 주소를 얻을 수 있습니다. 재생 주소의 표준 형식은 다음과 같습니다.
 ```
 http://재생 도메인/live/[streamId].flv
 ```
 
-예를 들어, 재생 도메인이 `live.myhost.com`이면 방 입장 매개변수를 이용해 방(1001)에 입장한 userA의 라이브 방송 스트림 ID를 streamId = "streamd1001"로 지정합니다.
-다음과 같은 세 개의 재생 주소가 할당됩니다.
+예를 들어, 재생 도메인 이름이 ‘live.myhost.com’이고 방 항목 매개 변수를 사용하여 방(1001)에있는 사용자 userA의 라이브 방송 스트리밍 Id를 streamId = "streamd1001"로 지정합니다.
+그러면 다음과 같은 3개의 재생 주소를 얻을 수 있습니다.
 ```
- rtmp 프로토콜 기반의 재생 주소: rtmp://live.myhost.com/live/streamd1001
- flv 프로토콜 기반의 재생 주소: http://live.myhost.com/live/streamd1001.flv
- hls 프로토콜 기반의 재생 주소: http://live.myhost.com/live/streamd1001.m3u8
+ rtmp 프로토콜의 재생 주소: rtmp://live.myhost.com/live/streamd1001
+ flv 프로토콜의 재생 주소: http://live.myhost.com/live/streamd1001.flv
+ hls 프로토콜의 재생 주소: http://live.myhost.com/live/streamd1001.m3u8
 ```
 
-접두사가 `http`이고, 확장자가 `.flv`인 **http - flv** 주소를 권장합니다. 이 재생 주소는 딜레이가 짧아 끊김 없는 재생이 가능하며, 안정성과 신뢰성이 우수합니다.
-플레이어 선택 시 다음 권장 사항을 참조하시기 바랍니다.
+‘http’로 시작하고 ‘.flv’을 확장자명으로 하는 **http - flv** 주소를 권장합니다. 해당 주소는 재생 지연 시간이 짧고 바로 재생 효과가 좋으면서 안정성 및 신뢰성도 뛰어납니다.
+플레이어 선택과 관련해서는 다음 표의 가이드 방안을 참조하시기 바랍니다.
 
-| 플랫폼  | API 개요 | 지원 포맷|
-|:-------:|:-------:|-------|
-| iOS App|   TXLivePlayer(iOS) | FLV 권장 |
-| Android App | TXLivePlayer(Android) | FLV 권장 |
-| Web 브라우저 |  - |  데스크톱 Chrome 브라우저 FLV 지원 <br> Mac Safari 및 모바일 휴대폰 브라우저는 HLS만 지원 |
-|WeChat 미니프로그램|   [&lt;live-player&gt; 태그](https://developers.weixin.qq.com/miniprogram/en/dev/component/live-player.html)| FLV 권장 |
+| 플랫폼 | 연결 문서 | API 개요 | 지원포맷|
+|:-------:|:-------:|:-------:|-------|
+| iOS App| [액세스 가이드](https://intl.cloud.tencent.com/document/product/1071/38159) | TXLivePlayer(iOS)  | 권장 FLV |
+| Android App | [액세스 가이드](https://intl.cloud.tencent.com/document/product/1071/38160) | TXLivePlayer(Android) | 권장 FLV |
+| Web 브라우저 | 액세스 가이드 | - |  바탕화면 Chrome 브라우저 지원 FLV <br> Mac Safari 및 모바일 핸드폰 브라우저는 HLS만 지원 |
 
 
 <span id="step6"></span>
-### 6단계: 재생 시 딜레이 개선
+### 6단계: 재생 딜레이 최적화
 
-릴레이 라이브 방송 실행 후의 http - flv 주소는 라이브 방송 CDN을 경유해 확산 및 분배되기 때문에 TRTC 라이브 룸에서 바로 통화할 때보다 시청 시 긴 딜레이가 발생합니다.
-현재 Tencent Cloud의 라이브 방송 CDN 기술을 기반으로 TXLivePlayer를 실행할 경우 다음 표와 같은 딜레이가 발생합니다.
+릴레이 라이브 방송이 시작된 뒤 http - flv 주소는 라이브 방송 CDN의 확산 및 배포를 거치게 되므로 시청 지연 시간이 TRTC 라이브 방송실의 통화 지연 시간 보다 확실히 길어집니다.
+현재 Tencent Cloud LVB CDN 기술을 TXLivePlayer를 통해 구현할 경우 다음 표와 같은 딜레이 값을 얻을 수 있습니다:
 
-| 릴레이 스트림 타입스튜디오 | TXLivePlayer 재생 모드 |  평균 딜레이 |  실제 테스트 결과 |
+| 릴레이 스트림 유형 | TXLivePlayer의 재생 모드 |  평균 딜레이 시간 |  테스트 결과 |
 |:-------:|:-------:|:--------:|:---------:|
-| 개별 화면 | 고속 모드(권장) | **2초 ~ 3초** | 하단 그림의 왼쪽 대조표(주황색)|
-| 혼합 화면 | 고속 모드(권장) | **4초 ~ 5초** | 하단 그림의 오른쪽 대조표(파란색)|
+| 단독 화면 | 초고속모드（권장） | **2s - 3s** | 하단 그림의 좌측 비교 차트(주황색)|
+| 혼합 화면 | 초고속모드（권장） | **4s - 5s** | 하단 그림의 우측 비교 차트(파란색)|
 
-하단 그림은 동일 사양 휴대폰을 대상으로 한 실제 테스트 결과입니다. 왼쪽 iPhone 6s는 TRTC SDK로 라이브 생방송을 진행했고, 오른쪽 샤오미6는 TXLivePlayer로 FLV 프로토콜 기반의 라이브 방송 스트림을 재생했습니다.
+실제 측정된 딜레이 시간이 위의 표보다 더 긴 경우 다음 가이드에 따라 딜레이 시간을 최적화 할 수 있습니다:
 
+- **TRTC SDK 자체 TXLivePlayer 사용**
+ffmpeg 커널을 기반으로 패키지된 일반 ijkplayer 또는 ffmpeg 플레이어는 딜레이 시간을 조정할 수 없으며, 이러한 유형의 플레이어를 사용하여 위의 라이브 스트림 주소를 재생하면 일반적으로 딜레이 시간을 제어 할 수 없습니다. TXLivePlayer에는 딜레이를 제어할 수 있는 자체 개발된 재생 엔진이 탑재되어 있습니다.
 
-실제 테스트 결과, 딜레이가 상단 표의 수치보다 길다면 다음 제시하는 방법으로 딜레이 현상을 개선할 수 있습니다.
-
-- **TRTC SDK에 포함된TXLivePlayer 사용**
-일반적인 ijkplayer 또는 ffmpeg는 ffmpeg 기반의 커널 패키지 플레이어로 딜레이 제어력이 취약합니다. 이 플레이어로 상술한 라이브 방송 스트림 주소를 재생할 경우 딜레이를 제어할 수 없습니다. TXLivePlayer는 자체 개발한 재생 엔진이 탑재돼 있어 딜레이 제어가 가능합니다.
-
-- **TXLivePlayer 재생 모드를 고속 모드로 설정**
-TXLivePlayerConfig의 매개변수 세 개를 설정하여 고속 모드를 구현할 수 있습니다. 다음은 iOS를 예시로 한 것입니다.
-iOS기기의 Objective-C 코드 예시
+- **TXLivePlayer의 재생 모드를 초고속 모드로 설정**
+TXLivePlayerConfig의 세 가지 매개변수를 설정하여 초고속 모드를 구현할 수 있으며 [iOS](https://intl.cloud.tencent.com/document/product/1071/38159#Delay)를 예로 들어보겠습니다.
+iOS 용 Objective-C 코드를 예로 들어 보겠습니다.
 ```
- // TXLivePlayer의 재생 모드를 고속 모드로 설정
+ // TXLivePlayer의 재생 모드를 초고속 모드로 설정
     TXLivePlayerConfig * config = [[TXLivePlayerConfig alloc] init];
     config.bAutoAdjustCacheTime = YES;
-    config.minAutoAdjustCacheTime = 1; // 최소 버퍼 1초
-    config.maxAutoAdjustCacheTime = 1; // 최대 버퍼 1초
+    config.minAutoAdjustCacheTime = 1; // 최소 버퍼링 1s
+    config.maxAutoAdjustCacheTime = 1; // 최대 버퍼링 1s
     [player setConfig:config];
-    // 라이브 방송 재생 실행
+    // 라이브 방송 재생 시작
 ```
 
-<span id="expense"></span>
+<span id="expense"></span>
 ## 관련 비용
 
-CDN 라이브 방송 시청에 따른 과금은 **시청 비용**과 **트랜스 코딩 비용**이 있습니다. 시청 비용은 기본 요금이며, 트랜스 코딩 비용은 [다중 화면 혼합](#mixCDN) 실행 시 부과됩니다.
+CDN 라이브 방송 시청 구현 비용에는 **시청료**와 **트랜스 코딩 비용**이 포함되어 있는데, 시청료는 기본료이고 트랜스 코딩 비용은 [다중 채널 화면 믹싱](# mixCDN)시에만 과금됩니다.
 
->다음 제시되는 가격은 참고용 예시입니다. 실제 가격과 다를 경우 [Live Video Broadcasting > LVB](https://intl.cloud.tencent.com/document/product/267/2819)의 과금 사항을 확인하시기 바랍니다.
+>!본문의 가격은 예시로 단순 참고용입니다. 실제 금액과 다른 경우 [LVB> 표준 라이브 방송](https://intl.cloud.tencent.com/document/product/267/2819)의 과금 설명을 기준으로 적용합니다. 
 
-### 시청 비용: 라이브 방송 CDN 시청 시 발생하는 요금
+### 시청료: 라이브 방송 CDN을 통해 시청할 때 발생하는 비용
 
-라이브 방송 CDN으로 시청 시 **Live Video Broadcasting(LVB)**에서 시청으로 발생한 다운스트림 트래픽/대역폭 요금을 수취합니다. 실제 니즈에 맞춰 본인이 원하는 과금 방식을 선택할 수 있으며, 트래픽에 따른 과금 방식이 디폴트로 정해져 있습니다.
+라이브 CDN을 통해 시청할 때 **LVB**는 시청으로 인하여 발생한 다운 스트림 트래픽/대역폭 요금을 청구하며, 실제 수요에 따라 본인에게 적합한 과금 방식을 선택할 수 있는데, 기본적으로는 트래픽 과금 방식이 적용됩니다. 자세한 내용은 [LVB > 표준 라이브 방송 > 트래픽 대역폭](https://intl.cloud.tencent.com/document/product/267/2818?lang=en&pg=#traffic-and-bandwidth) 과금 설명을 참조하세요. 
 
 
-### 트랜스 코딩 비용: 다중 화면 혼합 시 발생하는 요금
-[다중 화면 혼합](#mixCDN)을 실행하면 스트림 혼합을 위해 디코딩과 인코딩이 일어나고, 이에 따른 별도의 혼합 스트림 트랜스 코딩 요금이 발생합니다. 혼합 스트림 트랜스 코딩은 해상도 크기와 트랜스 코딩 시간에 따라 요금이 책정되며, 호스트가 채택한 해상도가 높고, 마이크 연결 시간(보통 마이크 연결 시 혼합 스트림 트랜스 코딩 필요)이 길수록 요금도 높습니다.
+### 트랜스 코딩 비용: 다중 채널 화면 혼합 활성화 시 부과
+[다중 채널 화면 믹싱](#mixCDN)을 활성화하는 경우, 혼합 스트림으로 인한 디코딩 및 인코딩이 필요하기 때문에 별도의 혼합 스트림 트랜스 코딩 비용이 발생합니다. 혼합 스트림 트랜스 코딩은 해상도 및 트랜스 코딩 시간에 따라 과금되며, 호스트용으로 해상도가 높을수록, 마이크 연결 시간(일반적으로 마이크 연결이 필요한 상황에서 혼합 스트림 트랜스 코딩이 필요함)이 길수록 비용이 높아집니다. 자세한 내용은 [LVB > 라이브 방송 트랜스 코딩](https://intl.cloud.tencent.com/document/product/267/2818?lang=en&pg=#lvb-transcoding) 과금 설명을 참조하십시오.
+
+>예를 들어, [setVideoEncodrParam()](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCVideoEncParam)을 통해 호스트의 비트레이트(videoBitrate)를 1500kbps, 해상도를 720P로 설정합니다. 호스트 1명과 시청자의 마이크 연결 시간이 1시간이고 해당 마이크 연결 시간 동안 [다중 채널 화면 믹싱](#mixCDN)을 활성화 하는 경우, ‘0.0057USD/분 × 60분 = 0.342USD’의 트랜스 코딩 비용이 발생합니다.
 
 ## FAQ
-**방 입장 인원이 1명인데도 화면이 끊기고 흐릿한 이유는 무엇인가요?**
+**라이브 방송 방 안에 사용자가 1명만 있을 때 왜 화면이 끊기고 흐릿해지나요?**
 `enterRoom`의 TRTCAppScene 매개변수를 **TRTCAppSceneLIVE**로 지정합니다.
-VideoCall 모드는 영상 통화에 최적화되어 있어 방에 1명의 사용자만 있을 경우 화면이 사용자의 네트워크 트래픽을 절약하기 위해 낮은 비트 레이트와 프레임 레이트를 유지하기 때문에 화면이 끊기고 흐릿한 것처럼 느껴질 수 있습니다.
+VideoCall 모드는 영상 통화에 최적화되어 있어 방에 1명의 사용자만 있을 경우 화면이 사용자의 네트워크 트래픽을 절약하기 위해 낮은 비트 레이트와 프레임 레이트를 유지하기 때문에 화면이 멈추고 흐릿한 것처럼 느껴질 수 있습니다.

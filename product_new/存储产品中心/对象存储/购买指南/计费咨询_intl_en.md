@@ -1,7 +1,7 @@
 ### FAQs About Free Tier
 
 [Does COS have a free tier?](https://intl.cloud.tencent.com/document/product/436/10373#does-cos-have-a-free-tier.3F)
-[Why is my account still in arrears (fees are deducted) even if I am entitled to the free tier?](https://intl.cloud.tencent.com/document/product/436/10373#why-is-my-account-still-in-arrears-(fees-are-deducted)-even-if-i-am-entitled-to-the-free-tier.3F)
+[Why does my account still have overdue payment (fees are deducted) even if I am entitled to the free tier?](https://intl.cloud.tencent.com/document/product/436/10373#why-is-my-account-still-in-arrears-(fees-are-deducted)-even-if-i-am-entitled-to-the-free-tier.3F)
 
 
 ### FAQs About Billing Method
@@ -13,6 +13,6 @@
 [Will traffic fees be incurred by uploading a file to a COS bucket?](https://intl.cloud.tencent.com/document/product/436/10373#will-traffic-fees-be-incurred-by-uploading-a-file-to-a-cos-bucket.3F)
 [Will traffic fees be incurred when Tencent Cloud products in the same region access each other?](https://intl.cloud.tencent.com/document/product/436/10373#will-traffic-fees-be-incurred-when-tencent-cloud-products-in-the-same-region-access-each-other.3F)
 
-### FAQs About Arrears Processing
+### FAQs About Overdue Payment
 
-[If my account is in arrears and COS service is suspended, can I still access and download files in the COS Console?](https://intl.cloud.tencent.com/document/product/436/10373#if-my-account-is-in-arrears-and-cos-service-is-suspended.2C-can-i-still-access-and-download-files-in-the-cos-console.3F)
+[If my account has overdue payment and COS service is suspended, can I still access and download files via the COS console?](https://intl.cloud.tencent.com/document/product/436/10373#if-my-account-is-in-arrears-and-cos-service-is-suspended.2C-can-i-still-access-and-download-files-in-the-cos-console.3F)

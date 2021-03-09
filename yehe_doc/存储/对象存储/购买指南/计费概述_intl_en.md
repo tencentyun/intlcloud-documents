@@ -118,6 +118,6 @@ The billing cycle and sequence of COS fees are as detailed below:
 
 
 1. For more information on COS fee calculation and billing in different scenarios, please see [Billing Examples](https://intl.cloud.tencent.com/document/product/436/6241).
-2. For more information on arrears processing in COS, data retention and the purge schedule, please see COS [Arrears](https://intl.cloud.tencent.com/document/product/436/10044).
+2. For more information on the COS overdue policy (data retention and destruction), please see COS [Payment Overdue](https://intl.cloud.tencent.com/document/product/436/10044).
 3. You can estimate the usage of and calculate your pay-as-you-go COS fees using the COS [Price Calculator](https://buy.cloud.tencent.com/price/cos/calculator).
 4. If you have any further questions about COS billing, please see [Billing FAQs](https://intl.cloud.tencent.com/document/product/436/32532) for answers.

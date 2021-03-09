@@ -18,7 +18,7 @@ Tencent Cloud CLS offers a limited free tier to all users in each region. The de
 >- The free tier is applicable to all resources under an account in each region.
 >- **The free tier is expectedly valid until 23:59:59 on June 31, 2021**.
 >- The daily free tier is not accrue to the next billing cycle.
-> - If your service is interrupted due to violations or arrears, you will not be eligible for the free tier. Free tier will remain unavailable until the service is restarted.
+> - If your service is interrupted due to violations or overdue payment, you will not be eligible for the free tier. Free tier will remain unavailable until the service is restarted.
 >- Free tier applies to all CLS regions.
 
 ## Example

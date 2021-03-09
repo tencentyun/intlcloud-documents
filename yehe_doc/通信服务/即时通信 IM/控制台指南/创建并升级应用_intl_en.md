@@ -15,7 +15,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 ![](https://main.qcloudimg.com/raw/8997bb04e972bfe2a1ef7a149b7350b1.jpg)
 
 ## Upgrading an App
->? You can use a package to upgrade an app from the Trial Edition to the Pro Edition or Flagship Edition but cannot roll it back to the Trial Edition after the upgrade. After the services of an app are suspended due to arrears or refunds, if you need to continue to use the services, you can [renew] the Pro Edition or Flagship Edition package. If you want to go back to the Trial Edition, [create a new app](https://intl.cloud.tencent.com/document/product/1047/34577).
+>? You can use a package to upgrade an app from the Trial Edition to the Pro Edition or Flagship Edition but cannot roll it back to the Trial Edition after the upgrade. After the services of an app are suspended due to overdue payment or refunds, if you need to continue to use the services, you can [renew] the Pro Edition or Flagship Edition package. If you want to go back to the Trial Edition, [create a new app](https://intl.cloud.tencent.com/document/product/1047/34577).
 
 
 1. Click **Upgrade** in the card for the target app to open the IM package purchase page.

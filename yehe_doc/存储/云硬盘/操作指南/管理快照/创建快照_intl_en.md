@@ -1,10 +1,10 @@
 ## Operation Scenario
 With Cloud Block Storage (CBS), you can create snapshots and save cloud disk data at a specific point of time. Tencent Cloud creates snapshots in an incremental manner, which means it only creates data that has changed since the last snapshot. If the size of the changed data is small, snapshot creation is quick. Because snapshots are incrementally created, deleting snapshots does not affect the use of any snapshot data. Therefore, you can restore your cloud disks by using any remaining snapshots.
-You can create a snapshot of a cloud disk in any state, but the snapshot will only save the data that is already written to the cloud disk at the current moment. When any app or process is writing data, the data might not yet have been saved to the snapshot that is being created. If this is the case, you can choose to suspend all writes and create the snapshot as soon as possible, or [unmount](https://intl.cloud.tencent.com/document/product/362/32400) the cloud disk and [mount](/doc/product/362/5745) it later to ensure the integrity of snapshot data.
+You can create a snapshot of a cloud disk in any state, but the snapshot will only save the data that is already written to the cloud disk at the current moment. When any app or process is writing data, the data might not yet have been saved to the snapshot that is being created. If this is the case, you can choose to suspend all writes and create the snapshot as soon as possible, or [unmount](https://intl.cloud.tencent.com/document/product/362/32400) the cloud disk and [mount](https://intl.cloud.tencent.com/document/product/362/32401) it later to ensure the integrity of snapshot data.
 
 ## Prerequisites
 - You have [created a cloud disk](https://intl.cloud.tencent.com/document/product/362/5744).
-- The upper limits for the number and total size of snapshots in the current region have not been reached. For more information, see [Snapshot Use Limits](https://intl.cloud.tencent.com/document/product/362/32406).
+- The upper limits for the number and total size of snapshots in the current region have not been reached. For more information, see [Snapshot Use Limits](https://intl.cloud.tencent.com/document/product/362/32406#use-limits-on-snapshot).
 
 ## Notes
 A snapshot only contains data that is already written to the disk (but not data that is in the memory and not yet written to the disk) at the moment the snapshot is created. We strongly recommend that you shut down the instance or ensure that the memory data is already written to the cloud disk and then suspend all writes to the cloud disk before creating the snapshot. For this purpose, you need to do the following.
@@ -22,8 +22,8 @@ To resolve this issue, run the `sync` command to forcibly write the data in the 
 ![](https://main.qcloudimg.com/raw/e1b0ac245e325281a0693f7ae43946ff.png)
 
 
-
-## Procedure<span id="CreateSnapshot"></span>
+e<span id="CreateSnapshot"></span>
+## Procedur
 ### Creating a snapshot in the console
 1. Log in to the [CBS console](https://console.cloud.tencent.com/cvm/cbs).
 2. Click **Create Snapshot** for the target cloud disk.

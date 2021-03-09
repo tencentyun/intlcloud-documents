@@ -1,11 +1,11 @@
-To view your LVB bills and payment details, go to the **Billing Center** > **Bills** > **[Bill Details](https://console.cloud.tencent.com/expense/bill/summary)** on the Tencent Cloud console.
+To view your CSS bills and payment details, go to the **Billing Center** > **Bills** > **[Bill Details](https://console.cloud.tencent.com/expense/bill/summary)** on the Tencent Cloud console.
 The Bill Details page includes the **Bill by Instance** and **Bill Details** tabs:
 - Bill by Instance: displays aggregated bills by instance.
 - Bill Details: displays one record per bill without performing aggregation.
 <span id="resources_id"></span>
 ## Bill by Instance
 1. Click the **Bill by Instance** tab.
-2. Click **All products** and then select **LVB** to view the LVB bills.
+2. Click **All products** and then select **CSS** to view the CSS bills.
 
 ![](https://main.qcloudimg.com/raw/9db167f7285dfaf82d83a9028d589ad8.png)
 
@@ -27,11 +27,11 @@ The Bill Details page includes the **Bill by Instance** and **Bill Details** tab
 </tr>
 <tr>
 <td>Configuration description</td>
-<td>LVB sub-features and their usage in this month. LVB sub-features include: <ul style="margin:0;">
-    <li>LVB transcoding</li>
-    <li>LVB recording</li>
-    <li>LVB screencapturing</li>
-    <li>LVB porn detection</li>
+<td>CSS sub-features and their usage in this month. CSS sub-features include: <ul style="margin:0;">
+    <li>CSS transcoding</li>
+    <li>CSS recording</li>
+    <li>CSS screencapturing</li>
+    <li>CSS porn detection</li>
     </ul></td>
 </tr>
 <tr>
@@ -52,7 +52,7 @@ The Bill Details page includes the **Bill by Instance** and **Bill Details** tab
 <span id="detail"></span>
 ## Bill Details
 1. Click the **Bill Details** tab.
-2. Click **All products** and then select **LVB** to view the details of the LVB bills.
+2. Click **All products** and then select **CSS** to view the details of the CSS bills.
 
 ![](https://main.qcloudimg.com/raw/0716954d4d5a955a77acd4149961ca1b.png)
 
@@ -60,7 +60,7 @@ The Bill Details page includes the **Bill by Instance** and **Bill Details** tab
 
 | Field     | Description                                                         |
 | :--------- | :----------------------------------------------------------- |
-| Component type  | LVB sub-feature used in this month                               |
+| Component type  | CSS sub-feature used in this month                               |
 | Component name  | Sub-item under this component type                                 |
 | Component’s published unit price | The component’s published unit price without discounts                    |
 | Component’s usage   | Usage of the component                                             |
@@ -69,4 +69,3 @@ The Bill Details page includes the **Bill by Instance** and **Bill Details** tab
 | Total cost    | Total cost = Component’s original price x (1 - Discount rate). Component’s original price = Component’s published unit price x Usage duration |
 
 >?Other fields are assigned by Tencent Cloud. For details, see [Bills](https://intl.cloud.tencent.com/document/product/555/7432).
-

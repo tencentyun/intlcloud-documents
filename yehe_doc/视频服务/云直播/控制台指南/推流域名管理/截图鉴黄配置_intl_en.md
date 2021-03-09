@@ -1,4 +1,4 @@
-The screencapture and porn detection feature is disabled by default for LVB push. This document describes how to bind/unbind a push domain name to/from a screencapture and porn detection template to enable/disable the screencapture and porn detection feature.
+The screencapture and porn detection feature is disabled by default for CSS push. This document describes how to bind/unbind a push domain name to/from a screencapture and porn detection template to enable/disable the screencapture and porn detection feature.
 
 ## Notes
 - The template configuration will take effect in about **5–10 minutes**.
@@ -6,7 +6,7 @@ The screencapture and porn detection feature is disabled by default for LVB push
 - One domain name can be bound to only one screencapture and porn detection template. After binding, all streams under it will be screencaptured and porn detected according to this template.
 
 ## Prerequisites
- - You have logged in to the [LVB console](https://console.cloud.tencent.com/live) and added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970). 
+ - You have logged in to the [CSS console](https://console.cloud.tencent.com/live) and added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970). 
  - You have created a [screencapture and porn detection template](https://intl.cloud.tencent.com/document/product/267/31072).
 
 

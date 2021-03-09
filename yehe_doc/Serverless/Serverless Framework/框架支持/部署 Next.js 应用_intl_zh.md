@@ -130,7 +130,7 @@ async function createServer() {
 module.exports = createServer
 ```
 
-### 自定义监控
+## 自定义监控
 
 当您在部署 Next.js 应用时，如果 `serverless.yml` 中未指定 `role`，默认会尝试绑定 `QCS_SCFExcuteRole`，并且开启自定义监控，帮助您收集应用监控指标。对于为自定义入口文件的项目，会默认上报除含有 `/_next` 和 `/static` 的路由。
 

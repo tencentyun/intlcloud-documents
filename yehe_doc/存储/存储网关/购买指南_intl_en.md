@@ -28,10 +28,10 @@ CSG write traffic is the traffic consumed when your application writes to CSG, w
 3.	 On the left sidebar, click **Billing**.
 4.	 Click **Billing Details** in the drop-down list and then select the CSG product to view CSG's bills by instance and detailed bills online.
 
-## Arrears and Service Suspension
+## Overdue Payment and Service Suspension
 
-If your account falls into arrears, the CSG service will be suspended after 24 hours. Your data will be retained for 120 days. If you fail to top up your account to a positive balance within this period, your data will be destroyed.
+If your account has overdue payment, the CSG service will be suspended after 24 hours. Your data will be retained for 120 days. If you fail to bring your account to a positive balance within this period, your data will be destroyed.
 
-Once you receive the arrears reminder, please go to [Billing Center > Payment](https://console.cloud.tencent.com/account/recharge) to top up your account as soon as possible to prevent your business from being affected.
+Once you receive the payment overdue reminder, please go to [Billing Center > Payment](https://console.cloud.tencent.com/account/recharge) to pay the past due charges as soon as possible to prevent your business from being affected.
 
-You can also configure alarms for arrears through the balance alarm feature in the Billing Center. 
+You can also configure alarms for overdue payment through the balance alarm feature in the Billing Center. 

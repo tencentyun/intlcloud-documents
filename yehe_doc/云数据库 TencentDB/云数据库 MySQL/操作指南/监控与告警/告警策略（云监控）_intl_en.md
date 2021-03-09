@@ -2,13 +2,13 @@ This document describes how to create alarm policies and associate alarm objects
 
 ## Overview
 You can create alarm policies to trigger alarms and send alarm notifications when the Tencent Cloud service status changes. The created alarm policies can determine whether an alarm needs to be triggered according to the difference between the monitoring metric value and the given threshold at intervals.
-You can take appropriate precautionary or remedial measures in a timely manner when the alarm is triggered. Therefore, properly created alarm policies can help you improve the robustness and reliability of your applications. For more information on alarms, see [Configuring Alarm Policies](https://intl.cloud.tencent.com/document/product/248/1073) in Cloud Monitor.
+You can take appropriate precautionary or remedial measures in a timely manner when the alarm is triggered by changed product status. Therefore, properly created alarm policies can help you improve the robustness and reliability of your applications. For more information on alarms, see [Creating Alarm Policy](https://intl.cloud.tencent.com/document/product/248/38916) in Cloud Monitor.
 
 To send an alarm for a specific status of a product, you need to create an alarm policy at first. An alarm policy is composed of three compulsory components, that is, the name, type and alarm triggering conditions. Each alarm policy is a set of alarm triggering conditions with the logical relationship "or", that is, as long as one of the conditions is met, an alarm will be triggered. The alarm will be sent to all users associated with the alarm policy. Upon receiving the alarm, the user can view the alarm and take appropriate actions in time.
 
 >!Make sure that you have set the default alarm recipient; otherwise, the default alarm policy of TencentDB won't be able to send notifications.
 
-## Directions
+## Operation Directions
 ### Creating an alarm policy
 1. Log in to the [Cloud Monitor](https://console.cloud.tencent.com/monitor/overview) console and select **Alarm Configuration** > **Alarm Policy** on the left sidebar.
 2. In the alarm policy list, click **Create**.
@@ -22,7 +22,7 @@ To send an alarm for a specific status of a product, you need to create an alarm
 4. After confirming everything is correct, click **Complete**.
 
 ### Associating alarm objects
-After the alarm policy is created, you can associate some alarm objects with it. When an alarm object satisfies an alarm trigger, an alarm notification will be sent.
+After the alarm policy is created, you can associate alarm objects with it. When an alarm object satisfies an alarm trigger condition, an alarm notification will be sent.
 1. In the [alarm policy](https://console.cloud.tencent.com/monitor/alarm2/policy) list, click the name of an alarm policy to enter the alarm policy management page.
 2. Click **Add Object** in the **Alarm Object** section.
 ![](https://main.qcloudimg.com/raw/00833b7ad2a481ec65b1eb14c0d2cad4.png)

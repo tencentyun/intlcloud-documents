@@ -1,9 +1,9 @@
-This document describes how to quickly run the demo for TRTC SDK for Flutter.
+This document describes how to quickly run the TRTC demo for Flutter.
 
 ## Environment Requirements
 - Flutter 1.12 or above
 - Developing for Android:
-  - Android Studio 3.5 or above.
+  - Android Studio 3.5 or above
   - Devices with Android 4.1 or above
 - Developing for iOS:
   - Xcode 11.0 or above
@@ -15,26 +15,27 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 
 ## Directions
 
-<span id="step1"></span> 
+[](id:step1)
+
 ### Step 1. Create an application.
 1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
-2. Click **Start Now**, enter an application name, e.g. `TestTRTC`, and click **Create Application**.
+2. Enter an application name, e.g. `TestTRTC`, and click **Create**.
 
-<span id="step2"></span> 
+[](id:step2)
 ### Step 2. Download the SDK and demo source code.
-1. Click **[GitHub](https://github.com/c1avie/trtc_demo)** to download the SDK and demo source code.
-2. After the download, return to the TRTC console and click **Downloaded and Next** to view your `SDKAppID` and secret key.
+1. Download the SDK and demo source code for your platform.
+2. Click **Next step**.
 
 
-<span id="step3"></span> 
+[](id:step3)
 ### Step 3. Configure demo project files.
-1. Decompress the source package downloaded in [step 2](#step2).
-2. Find and open `Web/js/debug/GenerateTestUserSig.js`.
+1. In the **Modify Configuration** step, select the platform in line with the source package downloaded.
+2. Find and open `/lib/debug/GenerateTestUserSig.dart`.
 3. Set parameters in `GenerateTestUserSig.java` as follows.
-  - SDKAPPID: `PLACEHOLDER` by default. Set it to the actual `SDKAppID`.
-	SECRETKEY: `PLACEHOLDER` by default. Set it to the actual key.
-  - Return to the TRTC console and click **Pasted and Next**.
-  - Click **Close Guide and Enter Console**.
+<ul><li/>SDKAPPID: `PLACEHOLDER` by default. Set it to the actual `SDKAppID`.
+	<li/>SECRETKEY: `PLACEHOLDER` by default. Set it to the actual key.</ul>
+4. Click **Next step** to complete the creation.
+5. After compilation, click **Return to Overview Page**.
 
 >!
 >- The method for generating `UserSig` described in this document involves configuring `SECRETKEY` in client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is leaked, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for the local execution and debugging of the demo**.
@@ -44,30 +45,30 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 1. Run `flutter pub get`.
 2. Compile, run, and debug the project.
 
-###  Android
+#### Android
 1. Run `flutter run`.
 2. Open the demo project with Android Studio (3.5 or above).
 3. Run the project.
 
-### iOS
-1. Open the demo project in the `\ios` folder with Xcode (11.0 or above).
+#### iOS
+1. Open `\ios project` in the source code directory with Xcode (11.0 or above).
 2. Compile and run the demo project.
 
 
 
 ## FAQs
 
-- [The demo is running on two mobile phones, but why can't they display the images of each other?](https://intl.cloud.tencent.com/zh/document/product/647/39242#que1)
-- [What firewall restrictions does TRTC face?](hhttps://intl.cloud.tencent.com/zh/document/product/647/39242#que2)
-- [What should I do if the iOS app crashes when I build and run it?](https://intl.cloud.tencent.com/zh/document/product/647/39242#que3)
-- [What should I do if videos do not show on iOS but do on Android?](https://intl.cloud.tencent.com/zh/document/product/647/39242#que4)
-- [What should I do if an error occurs when I run CocoaPods on iOS after updating to the latest version of the SDK?](https://intl.cloud.tencent.com/zh/document/product/647/39242#que5)
-- [What should I do if Android Studio fails to build my project with the error “Manifest merge failed”?](https://intl.cloud.tencent.com/zh/document/product/647/39242#que6)
-- [What should I do if an error occurs due to the absence of signatures when I debug my project on a real device?](https://intl.cloud.tencent.com/zh/document/product/647/39242#que7)
-- [Why can’t I find the corresponding file after deleting/adding content in the swift file of the plugin?](https://intl.cloud.tencent.com/zh/document/product/647/39242#que8)
-- [What should I do if the error “Info.plist, error: No value at that key path or invalid key path: NSBonjourServices” occurs when I run my project?](https://intl.cloud.tencent.com/zh/document/product/647/39242#que9)
-- [What should I do if an error occurs when I run pod install?](https://intl.cloud.tencent.com/zh/document/product/647/39242#que10)
-- [What should I do if a dependency error occurs when I run my project on iOS?](https://intl.cloud.tencent.com/zh/document/product/647/39242#que11)
+- [The demo is running on two mobile phones, but why can't they display the images of each other?](https://intl.cloud.tencent.com/document/product/647/39242)
+- [What firewall restrictions does TRTC face?](https://intl.cloud.tencent.com/document/product/647/39242)
+- [What should I do if the iOS app crashes when I build and run it?](https://intl.cloud.tencent.com/document/product/647/39242)
+- [What should I do if videos do not show on iOS but do on Android?](https://intl.cloud.tencent.com/document/product/647/39242)
+- [What should I do if an error occurs when I run CocoaPods on iOS after updating to the latest version of the SDK?](https://intl.cloud.tencent.com/document/product/647/39242)
+- [What should I do if I Android Studio fails to build my project with the error “Manifest merge failed”?](https://intl.cloud.tencent.com/document/product/647/39242)
+- [What should I do if an error occurs due to the absence of signatures when I debug my project on a real device?](https://intl.cloud.tencent.com/document/product/647/39242)
+- [After deleting/adding content in the swift file of the plugin, why can’t I find the corresponding file when building my project?](https://intl.cloud.tencent.com/document/product/647/39242)
+- [What should I do if the error “Info.plist, error: No value at that key path or invalid key path: NSBonjourServices” occurs when I run my project?](https://intl.cloud.tencent.com/document/product/647/39242)
+- [What should I do if an error occurs when I run `pod install`?](https://intl.cloud.tencent.com/document/product/647/392420)
+- [What should I do if a dependency error occurs when I run my iOS project?](https://intl.cloud.tencent.com/document/product/647/392421)
 
 
 

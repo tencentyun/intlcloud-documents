@@ -1,14 +1,14 @@
-In order to protect the information security of live streaming, push authentication is enabled for LVB push domain names by default. You can generate the corresponding push address online with the push address generator on the push address details page. By pushing a live stream online with the push address, the stream can be transmitted (uploaded) to LVB.
+In order to protect the information security of live streaming, push authentication is enabled for CSS push domain names by default. You can generate the corresponding push address online with the push address generator on the push address details page. By pushing a live stream online with the push address, the stream can be transmitted (uploaded) to CSS.
 
 ## Notes
 
-- LVB provides a test domain name `xxxx.livepush.myqcloud.com` by default. You can use it for push testing, but you are not recommended to use it as the push domain name for your real business. 
+- CSS provides a test domain name `xxxx.livepush.myqcloud.com` by default. You can use it for push testing, but you are not recommended to use it as the push domain name for your real business. 
 - Only push addresses in RTMP format can be generated.
 - The generated push address is valid before the set expiration time. You need to generate a new address after the old one expires.
 
 ## Prerequisites
 
-You have activated the LVB service and completed identity verification.
+You have activated the CSS service and completed identity verification.
 
 ## Authentication Configuration
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the **push domain** to be configured or **Manage** to enter the domain name details page. 
@@ -30,8 +30,8 @@ You have activated the LVB service and completed identity verification.
    2. Enter a custom `StreamName`, such as `liveteststream`.
    3. Click **Generate Push Address** to generate an RTMP push address containing the `StreamName`.
  ![](https://main.qcloudimg.com/raw/be893a10e50189c1ded53cc03cf6dbe8.jpg)
-4. You can test, disable, or delete it in [stream management](https://intl.cloud.tencent.com/document/product/267/31068) after implementing [LVB push](https://intl.cloud.tencent.com/document/product/267/31558) according to your business scenario.
-5. After the push address is generated, LVB push can be started. However, to view live streaming, a playback address is required. For more information, please see [Playback Configuration](https://intl.cloud.tencent.com/document/product/267/31058).
+4. You can test, disable, or delete it in [stream management](https://intl.cloud.tencent.com/document/product/267/31068) after implementing [CSS push](https://intl.cloud.tencent.com/document/product/267/31558) according to your business scenario.
+5. After the push address is generated, CSS push can be started. However, to view live streaming, a playback address is required. For more information, please see [Playback Configuration](https://intl.cloud.tencent.com/document/product/267/31058).
 
 
 
@@ -42,8 +42,8 @@ An RTMP push address is in the following format:
 rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 ```
 Here:
-- `domain`: LVB push domain name.
-- `AppName`: LVB application name, which is `live` by default and customizable.
+- `domain`: CSS push domain name.
+- `AppName`: CSS application name, which is `live` by default and customizable.
 - `StreamName`: user-defined stream name which is used to identify a live stream.
 - `txSecret`: authentication string generated after push authentication is enabled.
 - `txTime`: timestamp set for a push address which represents the expiration time of the address in the console.
@@ -137,4 +137,4 @@ public class Test {
 }
 ```
 ## Subsequent Operations
-With the push address, you can use LVB push as needed. For more information, see [LVB Push](https://intl.cloud.tencent.com/document/product/267/31558).
+With the push address, you can use CSS push as needed. For more information, see [CSS Push](https://intl.cloud.tencent.com/document/product/267/31558).

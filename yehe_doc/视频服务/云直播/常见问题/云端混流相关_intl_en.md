@@ -5,7 +5,7 @@ Please wait for about 5 seconds after push starts before starting stream mix.
 
 <span id="que2"></span>
 ### How do I troubleshoot if the stream mix API returned code -505?
-If -505 is reported by the stream mix API, the stream ID has no corresponding data on the LVB backend.
+If -505 is reported by the stream mix API, the stream ID has no corresponding data on the CSS backend.
 1. You can pull the stream to check whether the stream has been successfully pushed. If the pull succeeds, the push is successful.
 2. If the stream can be pulled, but -505 is reported by the API, please check whether the entered `AppID` is correct in the stream mix parameters.
 

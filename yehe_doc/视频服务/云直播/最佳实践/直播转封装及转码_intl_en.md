@@ -1,6 +1,6 @@
-## LVB Remuxing Feature
+## CSS Remuxing Feature
 
-LVB remuxing refers to the process where the original stream pushed out of the live streaming site (generally to the cloud over the RTMP protocol) is converted to different container formats in the cloud before being pushed to viewers. In addition, it supports pure audio or pure video output and a variety of DRM schemes to meet the needs of digital copyrights protection.
+CSS remuxing refers to the process where the original stream pushed out of the live streaming site (generally to the cloud over the RTMP protocol) is converted to different container formats in the cloud before being pushed to viewers. In addition, it supports pure audio or pure video output and a variety of DRM schemes to meet the needs of digital copyrights protection.
 
  ### Supported output container formats
 
@@ -28,9 +28,9 @@ LVB remuxing refers to the process where the original stream pushed out of the l
   HLS supports the universal AES-128 encryption scheme.
 
 
-## LVB Transcoding Feature
+## CSS Transcoding Feature
 
-LVB transcoding (including both video transcoding and audio transcoding) refers to the process where the original stream pushed out of the live streaming site is transcoded to streams of different codecs, resolutions, and bitrates in the cloud before being pushed to viewers. This helps meet the playback needs in different network environments on different devices.
+CSS transcoding (including both video transcoding and audio transcoding) refers to the process where the original stream pushed out of the live streaming site is transcoded to streams of different codecs, resolutions, and bitrates in the cloud before being pushed to viewers. This helps meet the playback needs in different network environments on different devices.
 
  ### Typical use cases
 
@@ -159,17 +159,17 @@ LVB transcoding (including both video transcoding and audio transcoding) refers 
 
 ## Top Speed Codec Transcoding Feature
 
-Based on the technologies such as audio/video encoding, intelligent scenario recognition, dynamic encoding, and three-level (CTU/line/frame) precise bitrate control model accumulated by Tencent Video Cloud over the years, the top speed codec transcoding feature enables video businesses such as LVB and VOD to provide higher-definition streaming services at lower bitrates (reduced by over 30% on average).
+Based on the technologies such as audio/video encoding, intelligent scenario recognition, dynamic encoding, and three-level (CTU/line/frame) precise bitrate control model accumulated by Tencent Video Cloud over the years, the top speed codec transcoding feature enables video businesses such as CSS and VOD to provide higher-definition streaming services at lower bitrates (reduced by over 30% on average).
 
 ### Use cases
 
-If the LVB push bitrate is high and the image is complex, you can use the intelligent dynamic encoding technology and precise bitrate control model to keep a high definition at a low bitrate, ensuring that the quality of the video image watched by the viewer is the same as the original quality.
+If the CSS push bitrate is high and the image is complex, you can use the intelligent dynamic encoding technology and precise bitrate control model to keep a high definition at a low bitrate, ensuring that the quality of the video image watched by the viewer is the same as the original quality.
 
 ### Feature advantages
 
 As users of various video platforms have an ever-increasing requirement for high video source definition and smooth watch experience, in the current live streaming industry, 1080p resolution and 3–10 Mbps bitrate have gradually become the mainstream configuration, and the bandwidth costs are taking a large part in the total video platform costs. In this case, the reduction of the video bitrate can effectively reduce the bandwidth costs.
 **Example:**
-In LVB, a standard live stream encoded in H.264 is pushed to 200 users at 3 Mbps bitrate and 1080p resolution for 4 hours. If top speed codec transcoding is not used, the incurred bandwidth fees as calculated by the [LVB price calculator](https://buy.cloud.tencent.com/price/lvb/calculator) will be 372 CNY.
+In CSS, a standard live stream encoded in H.264 is pushed to 200 users at 3 Mbps bitrate and 1080p resolution for 4 hours. If top speed codec transcoding is not used, the incurred bandwidth fees as calculated by the [CSS price calculator](https://buy.cloud.tencent.com/price/lvb/calculator) will be 372 CNY.
 
 - If top speed codec transcoding is used to reduce the bitrate, the incurred bandwidth fees will be around 372 * (100% - 30%) = 260.4 CNY.
 - Fees incurred by the use of top speed codec transcoding: 0.2511 × 240 = 60.264 CNY (published price without any discount applied).
@@ -179,13 +179,13 @@ Therefore, top speed codec transcoding can effectively reduce the platform bandw
 
 ### Key parameters
 
-The parameters of top speed codec transcoding are configured basically in the same way as standard LVB transcoding parameters. For more information, please see [Video transcoding parameters](#parameter).
+The parameters of top speed codec transcoding are configured basically in the same way as standard CSS transcoding parameters. For more information, please see [Video transcoding parameters](#parameter).
 
 
 
-## LVB Watermark Feature Overview
+## CSS Watermark Feature Overview
 
-LVB watermark refers to adding a preset logo image to an original video stream for copyright marking and marketing purposes.
+CSS watermark refers to adding a preset logo image to an original video stream for copyright marking and marketing purposes.
 
 ### Watermark parameters
 The main parameters of a watermark include watermark location and watermark size, which are determined by the `XPosition`, `YPosition`, `Width` and `Height` parameters as detailed below:
@@ -196,7 +196,7 @@ The main parameters of a watermark include watermark location and watermark size
 
 ![](https://main.qcloudimg.com/raw/b7341cfb465aae7a59ff24ca6abeecb2.png)
 
->! If you enable multi-bitrate transcoding for a stream (i.e., one source stream is transcoded into streams of different resolutions) and want to add a watermark, you can set its percentage position on the X and Y axes in the [LVB Console](#W_control) or through the corresponding [API](#W_api), and the watermark position will be automatically determined by the system.
+>! If you enable multi-bitrate transcoding for a stream (i.e., one source stream is transcoded into streams of different resolutions) and want to add a watermark, you can set its percentage position on the X and Y axes in the [CSS Console](#W_control) or through the corresponding [API](#W_api), and the watermark position will be automatically determined by the system.
 
 ### Sample watermark parameters
 
@@ -212,10 +212,10 @@ Height_pixel = 192 * 240 / 320 = 144
 Therefore, the watermark position is at 96 pixels away from the left edge of the output video and 54 pixels away from the top edge of the output video, and the watermark size is 192 * 144 pixels.
 
 ### Usage overview
-You can add a watermark in the [LVB Console](#W_control) or through a [server API](#W_api) based on your business needs.
+You can add a watermark in the [CSS Console](#W_control) or through a [server API](#W_api) based on your business needs.
 <span id="W_control"></span>
 
-#### LVB Console
+#### CSS Console
 1. Go to **Feature Template** > **[Watermark Configuration](https://console.cloud.tencent.com/live/config/watermark)** to add a watermark configuration template, set the watermark parameters, and generate the corresponding watermark template ID. For detailed directions, please see [Watermark Template Configuration](https://intl.cloud.tencent.com/document/product/267/31073).
 2. In [**Domain Management**](https://console.cloud.tencent.com/live/domainmanage), select the target push domain name and click **Manage** > **Template Configuration** to associate it with the watermark template. For detailed directions, please see [Watermark Configuration](https://intl.cloud.tencent.com/document/product/267/31064).
 
@@ -233,9 +233,9 @@ You can add a watermark in the [LVB Console](#W_control) or through a [server AP
 
 ### Usage overview
 
-You can set transcoding parameters in the [LVB Console](#T_control) or through [server APIs](#T_api). No matter which method is used, the settings mainly involve watermark templates, transcoding templates, and transcoding rules.
+You can set transcoding parameters in the [CSS Console](#T_control) or through [server APIs](#T_api). No matter which method is used, the settings mainly involve watermark templates, transcoding templates, and transcoding rules.
 <span id="T_control"></span>
-#### LVB Console
+#### CSS Console
 1. Go to **Feature Template** > **[Transcoding Configuration](https://console.cloud.tencent.com/live/config/transcode)** to add a transcoding configuration template. You can add a [general transcoding](https://intl.cloud.tencent.com/document/product/267/31073) or [top speed codec transcoding](https://intl.cloud.tencent.com/document/product/267/31073) template.
 2. Create the corresponding transcoding type and set transcoding parameters as needed. You can use the system's default parameters, and a corresponding transcoding template ID will be generated.
 2. In [**Domain Management**](https://console.cloud.tencent.com/live/domainmanage), find the target pull domain name and click **Manage** > **Template Configuration** to associate it with the transcoding template. For detailed directions, please see [Transcoding Configuration](https://intl.cloud.tencent.com/document/product/267/31062).
@@ -273,7 +273,7 @@ For a push with stream ID `1234_test`, streams of different bitrates can be play
 <table>
 <tr><th>Feature Module</th><th>API</th>
 </tr><tr>
-<td rowspan=8>LVB transcoding</td>
+<td rowspan=8>CSS transcoding</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/30790">CreateLiveTranscodeTemplate</a></td>
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/30784">ModifyLiveTranscodeTemplate</a></td>
@@ -290,7 +290,7 @@ For a push with stream ID `1234_test`, streams of different bitrates can be play
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/30789">DeleteLiveTranscodeRule</a></td>
 </tr><tr>
-<td rowspan=4>LVB watermark</td>
+<td rowspan=4>CSS watermark</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/30826">AddLiveWatermark</a></td>
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/30818">UpdateLiveWatermark</a></td>

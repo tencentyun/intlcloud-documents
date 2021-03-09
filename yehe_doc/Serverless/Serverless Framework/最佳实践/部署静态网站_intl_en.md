@@ -68,7 +68,6 @@ The following describes certain configuration items in `serverless.yml` of the s
 
 component: website # Name of the imported component, which is required. The `tencent-website` component is used in this example
 name: websitedemo # Name of the instance created by this `website` component, which is required
-org: test # Organization information, which is optional. The default value is the `appid` of your Tencent Cloud account
 app: websiteApp # Website application name, which is optional
 stage: dev # Information for identifying environment, which is optional. The default value is `dev`
 

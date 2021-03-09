@@ -16,7 +16,7 @@ A COS bill is broken down into five items: storage usage, requests, data retriev
 
 We provide all first-time COS users (both individuals and enterprises) with a limited free tier for STANDARD storage usage. For more information, see [Free Tier](https://intl.cloud.tencent.com/document/product/436/6240).
 
-### Why does my account fall into arrears or incur charges even if I am eligible for the free tier?
+### Why does my account have overdue payment or incur charges even if I am eligible for the free tier?
 
 Possible reasons include:
 
@@ -62,9 +62,9 @@ Tencent Cloud products within the same region access each other over the private
 
 You can view your COS bills through the Billing Center in the console. For more information, see [Viewing Billing Details](https://intl.cloud.tencent.com/document/product/436/31631).
 
-## Arrears and Service Suspension
+## Overdue Payment and Service Suspension
 
 
-### If my account is in arrears and COS service is suspended, can I still access and download files via the COS Console?
+### If my account has overdue payment and COS service is suspended, can I still access and download files via the COS console?
 
-If so, you cannot read or write any data to COS. All you can do using the console is top up your account. For more information, see [Arrears](https://intl.cloud.tencent.com/document/product/436/10044).
+If so, you cannot read or write any data to COS. All you can do using the console is pay the past due charges. For more information, see [Overdue Payment](https://intl.cloud.tencent.com/document/product/436/10044).

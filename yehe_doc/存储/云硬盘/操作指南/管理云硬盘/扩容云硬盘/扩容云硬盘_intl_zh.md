@@ -32,15 +32,15 @@
 2. 在弹出的“云硬盘扩容”窗口中选择需扩容的系统盘，并单击【下一步】。
 3. 在“调整容量”步骤中，设置目标容量（必须大于或等于当前容量），并单击【下一步】。
 4. 在“扩容分区及文件系统”步骤中，查阅注意事项，勾选“同意强制关机”后，单击【开始调整】即可。如下图所示：
->!完成控制台的扩容操作后，请对应云服务器实际的操作系统，[查看 Linux 实例 cloudinit 配置](#confirmLinuxConfig) 或 [查看 Windows 实例 cloudinit 配置](#confirmwindowsConfig)，根据确认结果按需进行扩容分区及文件系统操作。
->
+5. 完成控制台的扩容操作后，请对应云服务器实际的操作系统，[查看 Linux 实例 cloudinit 配置](#confirmLinuxConfig) 或 [查看 Windows 实例 cloudinit 配置](#confirmwindowsConfig)，根据确认结果按需进行扩容分区及文件系统操作。
+
 
 ### 通过重装系统扩容
 您也可以在云服务器进行 [重装系统](https://intl.cloud.tencent.com/document/product/213/4933) 操作时，同时实现系统盘扩容。
 
 
 ## 相关操作
-[](id:confirmLinuxConfig)
+<span id="confirmLinuxConfig"></span>
 ### 查看 Linux 实例 cloudinit 配置
 完成扩容操作后，请 [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436) 确认 `/etc/cloud/cloud.cfg` 是否包含 growpart 及 resizefs 配置项。
  - 是，则无需进行其他操作。如下图所示：
@@ -48,7 +48,7 @@
     - **growpart**：扩展分区大小到磁盘大小。
     - **resizefs**：扩展调整`/`分区文件系统到分区大小。
  - 否，则需根据目标云服务的操作系统类型，手动扩文件系统及分区。您需要执行 [扩展分区及文件系统（Linux）](https://intl.cloud.tencent.com/document/product/362/31602)，将扩容部分的容量划分至已有分区内或将扩容部分的容量格式化为新的独立分区。
-[](id:confirmwindowsConfig)
+<span id="confirmwindowsConfig"></span>
 ### 查看 Windows 实例 cloudinit 配置
 完成扩容操作后，请 [登录 Windows 实例](https://intl.cloud.tencent.com/zh/document/product/213/5435) 确认 `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf\cloudbase-init.conf` 中的 plugin 是否包含 ExtendVolumesPlugin 配置项。
  - 是，则无需进行其他操作。

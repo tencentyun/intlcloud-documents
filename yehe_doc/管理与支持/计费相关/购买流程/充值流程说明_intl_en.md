@@ -1,14 +1,14 @@
 
 
-You can purchase Tencent Cloud services only if your account has sufficient balance. Most Tencent Cloud services are billed hourly. To prevent service suspension due to your account being in arrears, use "online payment" or "bank transfer" to top-up your account in a timely manner.
+You can purchase Tencent Cloud services only if your account has sufficient balance. Most Tencent Cloud services are billed hourly. To prevent service suspension due to overdue payment, use "online payment" or "bank transfer" to pay the past due charges in a timely manner.
 
 To ensure data security, only creators and collaborators authorized with financial permissions can enter the "Payment" page.
 
 ### Online payment
-Go to **Billing Center**, click **Payment Management -> Payment**, and top-up with your credit card.
+Go to **Billing Center**, click **Payment Management -> Payment**, and pay with your credit card.
 ![](https://main.qcloudimg.com/raw/2696012d2ed0e14ac49ad6e40634ddb4.png)
 
-After payment is completed, you can go to **Transactions** to view the top-up details.
+After payment is completed, you can go to **Transactions** to view the details.
  ![](https://main.qcloudimg.com/raw/45ec8479b54b15bfec31d62d97c62198.png)
  
  
@@ -80,6 +80,6 @@ Address: 1 Fullerton Road, #02-095, One Fullerton, Singapore 049213
 SWIFT Code: HSBCSGSG
 Remarks: Cloud service fee + developer account (unique ID)
 
-2- Bank transfers typically require three to five business days, and cross-border transfers will take a longer time. After you transfer the amount successfully, submit a ticket to confirm the transfer. We will top-up your account based on your transfer information. If you have any doubts, submit a remittance credential in the console.
+2- Bank transfers typically require three to five business days, and cross-border transfers will take a longer time. After you transfer the amount successfully, submit a ticket to confirm the transfer. We will top up your account based on your transfer information. If you have any doubts, submit a remittance credential in the console.
 
 3- You shall bear any service fees incurred due to bank transfers.

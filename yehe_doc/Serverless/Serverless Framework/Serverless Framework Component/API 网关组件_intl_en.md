@@ -27,7 +27,6 @@ touch serverless.yml
 
 component: apigateway # Component name, which is required. `apigateway` is used in this example
 name: apigwDemo # Instance name, which is required
-org: orgDemo # Organization information, which is optional. The default value is the `appid` of your Tencent Cloud account
 app: appDemo # Next.js application name, which is optional
 stage: dev # Information for identifying environment, which is optional. The default value is `dev`
 

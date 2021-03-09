@@ -45,6 +45,6 @@ How the digital signature works:
 
 The signature is unique as it is generated and encrypted with a confidential private key. Digital signatures can guarantee confidential data transmission, the correctness of information senders, and the non-repudiation of transactions.
 
-Tencent Cloud KMS offers solutions for digital signatures. For more information, please see [Asymmetric Signature Verification](https://intl.cloud.tencent.com/document/product/1030/39479).
+Tencent Cloud KMS offers solutions for digital signatures. For more information, please see Asymmetric Signature Verification.
 
 >! Because of the characteristics of use cases of the public key-private key pair, KMS does not support the automatic rotation of asymmetric CMKs. If you need to update the used keys regularly or from time to time, you can create new asymmetric keys.

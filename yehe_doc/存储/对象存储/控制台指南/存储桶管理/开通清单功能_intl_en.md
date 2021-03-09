@@ -3,9 +3,9 @@
 You can enable inventory for your bucket in the [COS console](https://console.cloud.tencent.com/cos5). The inventory feature allows you to regularly (daily/weekly) publish inventory reports about the object attributes, configurations, and more. For more information about inventory, please see [Inventory Overview](https://intl.cloud.tencent.com/document/product/436/30622). The following describes how to enable the inventory feature for a bucket.
 
 > !
-- You can configure multiple inventory jobs for a single bucket.
-- Inventory jobs do not directly read the object content during execution. Instead, they only scan the attribute information such as the object metadata.
-- Currently, the inventory feature is not available for Finance Cloud regions.
+>- You can configure multiple inventory jobs for a single bucket.
+>- Inventory jobs do not directly read the object content during execution. Instead, they only scan the attribute information such as the object metadata.
+>- Currently, the inventory feature is not available for Finance Cloud regions.
 
 ## Prerequisites
 

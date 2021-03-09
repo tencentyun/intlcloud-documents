@@ -1,3 +1,34 @@
+### 2.9.3 @2021.2.3
+
+**Changed**
+
+If a user haven’t joined a group (not an audio-video group), calling [quitGroup](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#quitGroup) will return error code 2623, indicating that the user is not in the group.
+
+**Fixed**
+
+`avatar` (profile photo) or `nick` (nickname) was inconsistent in the C2C conversation message list.
+
+### 2.9.2 @2021.1.26
+
+**Added**
+
+- Support for sending and receiving C2C messages with `avatar` (profile photo) and `nick` (nickname) displayed.
+- Support for the Tencent Cloud IM upload plugin [tim-upload-plugin](https://www.npmjs.com/package/tim-upload-plugin). This plugin enables more secure file upload, supports web, WeChat, QQ, Baidu, Toutiao, and Alipay Mini Program platforms, and is merely 26 KB. For more information, see [registerPlugin](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#registerPlugin).
+
+**Fixed**
+
+- When a user joined an audio-video group anonymously after logging out, the error code 70402 was returned in the response packet during a long polling.
+- The browser environment was misjudged during Taro 3.0+ integration.
+- When the image type and size verification failed, there were errors in the returned data structure.
+
+
+
+### 2.9.1 @2020.12.23
+**Fixed**
+
+A compilation error occurred when [tim-wx-sdk.js](https://www.npmjs.com/package/tim-wx-sdk) was imported into the basic library 2.14.1 of WeChat Developer Tools.
+
+
 ### 2.9.0 @2020.12.15
 **Added**
 
@@ -277,7 +308,7 @@ The logic for getting group roaming messages is optimized.
 
 ### 2.2.0 @2019.11.21
 **Added**
-- WeChat Mini Programs support creating and sending video messages [createVideoMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createVideoMessage). Video messages can be synced across platforms. Update to the latest versions of the [TUIKit and SDK](https://intl.cloud.tencent.com/document/product/1047/33996).
+- Mini Programs support creating and sending video messages [createVideoMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createVideoMessage). Video messages can be synced across platforms. Update to the latest versions of the [TUIKit and SDK](https://intl.cloud.tencent.com/document/product/1047/33996).
 - The [getGroupMemberProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getGroupMemberProfile) API is added.
 - Audio and file messages sent by Native IM v3.x are compatible.
 - Location messages [GeoPayload](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.GeoPayload) can be received.
@@ -324,7 +355,7 @@ Combined messages (multiple message elements in one message) sent by RESTful API
 
 ### 2.1.1 @2019.10.18
 **Added**
-WeChat Mini Programs support [sending audio messages](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createAudioMessage). Audio messages can be synced across platforms. Update to the latest versions of the [TUIKit and SDK](https://intl.cloud.tencent.com/document/product/1047/33996).
+Mini Programs support [sending audio messages](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createAudioMessage). Audio messages can be synced across platforms. Update to the latest versions of the [TUIKit and SDK](https://intl.cloud.tencent.com/document/product/1047/33996).
 
 **Fixed**
 [getMessageList](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getMessageList) could still pull historical messages in a left group after rejoining.
@@ -332,8 +363,8 @@ WeChat Mini Programs support [sending audio messages](https://imsdk-1252463788.f
 ### 2.1.0 @2019.10.16
 
 **Added**
-- Web and WeChat Mini Programs support receiving [audio messages](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.AudioPayload).
-- Web and WeChat Mini Programs support receiving [video messages](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.VideoPayload).
+- Web and Mini Programs support receiving [audio messages](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.AudioPayload).
+- Web and Mini Programs support receiving [video messages](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.VideoPayload).
 
 **Changed**
 - The [getMessageList](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getMessageList) API can pull up to 15 messages at a time.
@@ -359,5 +390,5 @@ The actual width and height of an image are detected before the image message is
 - [TIM.EVENT.GROUP_SYSTEM_NOTICE_RECEIVED](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.GROUP_SYSTEM_NOTICE_RECEIVED) events are sent when new group system notifications are received.
 
 **Fixed**
-- Screen splash occurred when WeChat Mini Programs sent image messages.
+- Screen splash occurred when Mini Programs sent image messages.
 - JPG or other images failed to be sent.

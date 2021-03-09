@@ -1,31 +1,31 @@
-## PC LVB Overview
+## PC CSS Overview
 
 ![](https://main.qcloudimg.com/raw/4ed8b74a5f1dd5e36ff2b70c82adb25a.png)
 
-Tencent Cloud PC LVB is used to push compressed and encoded images (such as **live events**, **teaching**, **projection** or **games**) to the **push URL** of Tencent **Video Cloud** by using push software (**OBS (recommended)** or **XSplit**) installed on PCs (**windows/mac**). Meanwhile, viewers can see **real-time images** using the playback URL corresponding to the push URL.
+Tencent Cloud PC CSS is used to push compressed and encoded images (such as **live events**, **teaching**, **projection** or **games**) to the **push URL** of Tencent **Video Cloud** by using push software (**OBS (recommended)** or **XSplit**) installed on PCs (**windows/mac**). Meanwhile, viewers can see **real-time images** using the playback URL corresponding to the push URL.
 
 
-## PC LVB Procedure
-You can implement PC LVB easily by following the steps below:
-- **Where are the streams pushed to**: Get a **push URL** and 3 playback URLs from Tencent Cloud LVB console.
+## PC CSS Procedure
+You can implement PC CSS easily by following the steps below:
+- **Where are the streams pushed to**: Get a **push URL** and 3 playback URLs from Tencent Cloud CSS console.
 - **What is pushed**: Set audio/video sources for push and encoding parameters in the third-party push software.
-- Viewer can watch LVB using our RTMP DEMO to set playback URL. This helps **push the content to the viewers**.
+- Viewer can watch CSS using our RTMP DEMO to set playback URL. This helps **push the content to the viewers**.
 
 ![](https://main.qcloudimg.com/raw/fece166faaa92f7e907b64581cff220c.png)
 
 
-## 1. Before LVB
-- Activate cloud LVB service on Tencent Cloud.
-If you have not activated the Tencent Cloud LVB service, click here to [apply for the service](https://console.cloud.tencent.com/live).
+## 1. Before CSS
+- Activate cloud CSS service on Tencent Cloud.
+If you have not activated the Tencent Cloud CSS service, click here to [apply for the service](https://console.cloud.tencent.com/live).
 ![](https://main.qcloudimg.com/raw/2ff750be6832f364645a7ac8ee736f5b.png)
 
 ### 1.2 Generate push URL
-If you don't have a **push URL**, you can generate a **push URL** and 3 playback URLs by clicking [**Access Management** -> **LVB Code Access** -> **Access Configuration**](https://console.cloud.tencent.com/live).
+If you don't have a **push URL**, you can generate a **push URL** and 3 playback URLs by clicking [**Access Management** -> **CSS Code Access** -> **Access Configuration**](https://console.cloud.tencent.com/live).
 
 The one whose domain name is **livepush.myqcloud.com** is the push URL:
 ![](https://main.qcloudimg.com/raw/049318c003544a79d45ad51281041252.png)
 
-### 1.3 Select the network for LVB
+### 1.3 Select the network for CSS
 - **Network selection**
 
 | Network Type | Accessibility | Stability |
@@ -33,7 +33,7 @@ The one whose domain name is **livepush.myqcloud.com** is the push URL:
 | Wired network | Low | High |
 |WIFI| High | Low |
 
-It is recommended to use cable network if possible, which is more stable than WIFI to make signals less disruptive. For event LVB, it is recommended to use WIFI for convenience.
+It is recommended to use cable network if possible, which is more stable than WIFI to make signals less disruptive. For event CSS, it is recommended to use WIFI for convenience.
 
 - **Upstream bandwidth test**
 The requirement for upstream bandwidth depends on the video quality and resolution. Generally, a better video quality with a higher resolution means a higher requirement for upstream bandwidth. The upstream bandwidth should not be less than 1 Mbps. To check the condition of upstream bandwidth, you can conduct a test using [speedtest](http://www.speedtest.net/).
@@ -46,7 +46,7 @@ You can download an installation package on [OBS official website](https://obspr
 
 - **XSplit Installation**
 You can download an installation package on XSplit official website to install it according to default settings.
-XSplit is not a free software. As an alternative, you can use OBS (**Free**). For game LVB, XSplit has a separate installation package. It is recommended to use BroadCaster for non-game LVB.
+XSplit is not a free software. As an alternative, you can use OBS (**Free**). For game CSS, XSplit has a separate installation package. It is recommended to use BroadCaster for non-game CSS.
 ![](https://main.qcloudimg.com/raw/401afb98511a69bf70806bf50d28c2ff.png)
 
 ## 2. Software parameter configuration
@@ -60,7 +60,7 @@ You need to set two parts separately:
 
 - **OBS push URL configuration**
 <!-- ![](https://mc.qcloudimg.com/static/img/8f5dabbdea9882531464017385648e0c/image.png) -->
-Click **Settings**, select **Broadcasting Settings**, and then set **Mode** to **LVB Stream**, **Streaming Service** to **Custom**, **FMS URL** to the first part of push URL, and **Playback Path/Streaming Code** to the second part. You're recommended to check **Automatic Reconnection**, which means push reconnection is triggered automatically when OBS detects an exception (such as network disconnection).
+Click **Settings**, select **Broadcasting Settings**, and then set **Mode** to **CSS Stream**, **Streaming Service** to **Custom**, **FMS URL** to the first part of push URL, and **Playback Path/Streaming Code** to the second part. You're recommended to check **Automatic Reconnection**, which means push reconnection is triggered automatically when OBS detects an exception (such as network disconnection).
 <!-- ![](https://mc.qcloudimg.com/static/img/88024aaff126c5e34f4e96b9cd7e37c2/image.png) -->
 
 - **OBS Studio push URL settings**
@@ -83,7 +83,7 @@ Audio and video sources are just like the contents of the package to be sent. Th
 For more information, please see **OBS audio and video sources settings**.
 
 ### 2.3 Set audio and video formats
-After the video source is configured, even though you can get the audio and video signals, the original ones are not applicable for spreading in the network because they need more bandwidth. Therefore, it is important to configure the audio and video encoding parameters before LVB starts.
+After the video source is configured, even though you can get the audio and video signals, the original ones are not applicable for spreading in the network because they need more bandwidth. Therefore, it is important to configure the audio and video encoding parameters before CSS starts.
 
 | Configuration Item | Feature |
 |:--------:|---------|

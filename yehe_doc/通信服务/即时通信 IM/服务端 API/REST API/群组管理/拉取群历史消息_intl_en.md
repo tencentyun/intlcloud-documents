@@ -101,7 +101,7 @@ The seq of the returned messages is less than or equal to the `ReqMsgNumber` of 
                     "MsgType": "TIMFaceElem"
                 }
             ],
-            "MsgPriority": High,
+            "MsgPriority": 1,
             "MsgRandom": 51083293,
             "MsgSeq": 7803321,
             "MsgTimeStamp": 1458721802
@@ -125,7 +125,7 @@ The seq of the returned messages is less than or equal to the `ReqMsgNumber` of 
                     "MsgType": "TIMTextElem"
                 }
             ],
-            "MsgPriority": High,
+            "MsgPriority": 1,
             "MsgRandom": 235168582,
             "MsgSeq": 7803320,
             "MsgTimeStamp": 1458721797

@@ -3,8 +3,8 @@ This document describes how to modify your registered mobile number and email ad
 
 ## Prerequisites
 Before modifying the information, you need to understand the following concepts:
-- **Contact mobile number**: it is the mobile number used to receive subscribed messages (such as account arrears notifications, product expiration notifications, and event notifications) for non-verification purposes.
-- **Contact email address**: it is the email address used to receive subscribed messages (such as account arrears notifications, product expiration notifications, and event notifications) for non-verification purposes.
+- **Contact mobile number**: it is the mobile number used to receive subscribed messages (such as payment overdue notifications, product expiration notifications, and event notifications) for non-verification purposes.
+- **Contact email address**: it is the email address used to receive subscribed messages (such as payment overdue notifications, product expiration notifications, and event notifications) for non-verification purposes.
 - **Recovery mobile number**: it is the mobile number used to verify your identity as a means of account protection.
 - **Recovery email address**: it is an auxiliary means of account holder identity verification.
 - **Login email address**: if you sign up for a Tencent Cloud account without using your email address, you can bind the account to an email address for future login.

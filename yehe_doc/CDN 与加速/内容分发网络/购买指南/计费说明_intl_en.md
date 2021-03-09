@@ -9,7 +9,7 @@ The pricing tiers of bill-by-hourly traffic is the same as it of the pay-as-you-
 
 Tencent Cloud CDN has two billing regions, **the Chinese mainland** and **regions outside the Chinese mainland**.
 
-In the Chinese mainland, fees are the same for all regions.
+In the Chinese mainland, fees are the save for all regions.
 
 In regions outside the Chinese mainland, there are eight billing regions determined according to the location of Tencent Cloud CDN node servers, namely, Asia Pacific Region 1, Asia Pacific Region 2, Asia Pacific Region 3, Middle East, Europe, North America, South America, and Africa, as shown below:
 
@@ -63,10 +63,10 @@ CDN bandwidth adopts the **tiered pricing** as follows:
 
 | Bandwidth Tier (USD/Mbps/day) | the Chinese mainland (CN) | North America (NA) | Europe (EU) | Asia Pacific Zone 1 (AP1) | Asia Pacific Zone 2 (AP2) | Asia Pacific Zone 3 (AP3) | Middle East (ME) | Africa (AA) | South America (SA) |
 | :----------------------- | ------------- | :-------- | :-------- | :------------ | :------------ | :------------ | :-------- | :-------- | :-------- |
-| 0 Mbps - 500 Mbps          | 0.094         | 0.2069    | 0.2069    | 0.3647        | 0.3928        | 0.5140        | 0.7391    | 0.5612    | 0.5612    |
-| 500 Mbps - 5 Gbps          | 0.092         | 0.1964    | 0.1964    | 0.3216        | 0.3402        | 0.4679       | 0.6754   | 0.5137    | 0.5137    |
-| 5 Gbps - 50 Gbps           | 0.086         | 0.1491    | 0.1491    | 0.2703        | 0.2859        | 0.3828        | 0.6075    | 0.4702    | 0.4702    |
-| ≥ 50 Gbps                 | 0.084         | 0.1055    | 0.1055    | 0.2436        | 0.2545        | 0.3267           | 0.5301    | 0.4281       | 0.4281       |
+| 0 Mbps - 500 Mbps          | 0.0815         | 0.2069    | 0.2069    | 0.3647        | 0.3928        | 0.5140        | 0.7391    | 0.5612    | 0.5612    |
+| 500 Mbps - 5 Gbps          | 0.0800         | 0.1964    | 0.1964    | 0.3216        | 0.3402        | 0.4679       | 0.6754   | 0.5137    | 0.5137    |
+| 5 Gbps - 50 Gbps           | 0.0754         | 0.1491    | 0.1491    | 0.2703        | 0.2859        | 0.3828        | 0.6075    | 0.4702    | 0.4702    |
+| ≥ 50 Gbps                 | 0.0738         | 0.1055    | 0.1055    | 0.2436        | 0.2545        | 0.3267           | 0.5301    | 0.4281       | 0.4281       |
 
 > Note:
 >
@@ -76,9 +76,9 @@ CDN bandwidth adopts the **tiered pricing** as follows:
 
 Assuming that the peak bandwidth of CDN in the Chinese mainland is X and there is no consumption outside the Chinese mainland, the calculation method for tiered pricing is as follows:
 
-1. If X < 500 Mbps, the bill amount will be X * 0.094.
-2. If 500 Mbps ≤ X < 5,000 Mbps, the bill amount will be X * 0.092.
-3. If 5,000 Mbps ≤ X < 50,000 Mbps, the bill amount will be X * 0.086.
+1. If X < 500 Mbps, the bill amount will be X * 0.0815.
+2. If 500 Mbps ≤ X < 5,000 Mbps, the bill amount will be X * 0.0800.
+3. If 5,000 Mbps ≤ X < 50,000 Mbps, the bill amount will be X * 0.0754.
 4. If X ≥ 50,000 Mbps, please contact us for off-line contracting. We have more discount options for you.
 
 You can use the [Price Calculator](https://buy.cloud.tencent.com/calculator/cdn) for a price estimation.
@@ -91,11 +91,11 @@ CDN traffic pricing is based on a **monthly cumulative tier** as follows:
 
 | Traffic Tier (USD/GB) | the Chinese mainland (CN) | North America (NA) | Europe (EU) | Asia Pacific Zone 1 (AP1) | Asia Pacific Zone 2 (AP2) | Asia Pacific Zone 3 (AP3) | Middle East (ME) | Africa (AA) | South America (SA) |
 | :------------------ | ------------- | :-------- | :-------- | :------------ | :------------ | :------------ | :-------- | :-------- | :-------- |
-| 0 TB - 2 TB           | 0.037         | 0.0452    | 0.0452    | 0.0665        | 0.0798        | 0.0897          | 0.1080    | 0.1039      | 0.1039      |
-| 2 TB - 10 TB          | 0.035         | 0.0378    | 0.0378    | 0.0592        | 0.0737        | 0.0780        | 0.1000    | 0.0970    | 0.0970    |
-| 10 TB - 50 TB         | 0.032         | 0.0319    | 0.0319    | 0.0533        | 0.0677        | 0.0723        | 0.0940    | 0.0907    | 0.0907    |
-| 50 TB - 100 TB        | 0.026         | 0.0261    | 0.0261    | 0.0475        | 0.0590        | 0.0654        | 0.0863    | 0.0842    | 0.0842    |
-| ≥ 100 TB             | 0.020          | 0.0200    | 0.0200    | 0.0446        | 0.0503        | 0.0577        | 0.0794    | 0.0781    | 0.0781    |
+| 0 TB - 2 TB           | 0.0323         | 0.0452    | 0.0452    | 0.0665        | 0.0798        | 0.0897          | 0.1080    | 0.1039      | 0.1039      |
+| 2 TB - 10 TB          | 0.0308         | 0.0378    | 0.0378    | 0.0592        | 0.0737        | 0.0780        | 0.1000    | 0.0970    | 0.0970    |
+| 10 TB - 50 TB         | 0.0277         | 0.0319    | 0.0319    | 0.0533        | 0.0677        | 0.0723        | 0.0940    | 0.0907    | 0.0907    |
+| 50 TB - 100 TB        | 0.0231         | 0.0261    | 0.0261    | 0.0475        | 0.0590        | 0.0654        | 0.0863    | 0.0842    | 0.0842    |
+| ≥ 100 TB             | 0.0169          | 0.0200    | 0.0200    | 0.0446        | 0.0503        | 0.0577        | 0.0794    | 0.0781    | 0.0781    |
 
 > Note:
 >
@@ -105,11 +105,11 @@ CDN traffic pricing is based on a **monthly cumulative tier** as follows:
 
 Unlike bill-by-bandwidth, bill-by-traffic is based on a monthly cumulative tier. Here is an example describing how the bill-by-daily traffic mode works:
 
-- As shown in the figure below, assuming that the traffic generated in the Chinese mainland on January 1 is 3 TB, and there is no consumption outside the Chinese mainland. The gray zone represents the actual billing tier and the green zone shows the traffic generated on January 1. As 2 TB lays in the 0 TB - 2 TB billing tier and the remaining 1 TB lays in the 2 TB - 10 TB tier, the actual fees for January 1 will be 2 * 1000 * 0.037 + 1 * 1000 * 0.035.
+- As shown in the figure below, assuming that the traffic generated in the Chinese mainland on January 1 is 3 TB, and there is no consumption outside the Chinese mainland. The gray zone represents the actual billing tier and the green zone shows the traffic generated on January 1. As 2 TB lays in the 0 TB - 2 TB billing tier and the remaining 1 TB lays in the 2 TB - 10 TB tier, the actual fees for January 1 will be 2 * 1000 * 0.0323 + 1 * 1000 * 0.0308.
   ![img](https://mc.qcloudimg.com/static/img/bfdae242f6cca57421a65e46a96b0c67/image.png)
-- As shown in the figure below, assuming that the traffic generated in the Chinese mainland on January 2 is also 3 TB, and there is no consumption outside the Chinese mainland. As bill-by-traffic is based on monthly cumulative traffic, all the 3 TB lays in the 2 TB - 10 TB tier, so the actual fees for January 2 will be 3 * 1000 * 0.035.
+- As shown in the figure below, assuming that the traffic generated in the Chinese mainland on January 2 is also 3 TB, and there is no consumption outside the Chinese mainland. As bill-by-traffic is based on monthly cumulative traffic, all the 3 TB lays in the 2 TB - 10 TB tier, so the actual fees for January 2 will be 3 * 1000 * 0.0308.
   ![img](https://mc.qcloudimg.com/static/img/f62d1056c1c2cab249cec62ad6e74ddc/image.png)
-- As shown in the figure below, assuming that the traffic generated in the Chinese mainland on January 3 is 7 TB and there is no consumption outside the Chinese mainland. Of this 7 TB, 4 TB lays in the 2 TB - 10 TB tier and the remaining 3 TB lays in the 10 TB - 50 TB tier, so the actual fees for January 3 will be 4 * 1000 * 0.035 + 3 * 1000 * 0.032.
+- As shown in the figure below, assuming that the traffic generated in the Chinese mainland on January 3 is 7 TB and there is no consumption outside the Chinese mainland. Of this 7 TB, 4 TB lays in the 2 TB - 10 TB tier and the remaining 3 TB lays in the 10 TB - 50 TB tier, so the actual fees for January 3 will be 4 * 1000 * 0.0308 + 3 * 1000 * 0.0277.
   ![img](https://mc.qcloudimg.com/static/img/954e2d483e31afd411f9a91ebd7f66c8/image.png)
 
 In this way, you can calculate the fee for each day in a month. When it is February 1, the consumption will be accumulated from 0 for tier calculation. You can use the [Price Calculator](https://buy.cloud.tencent.com/calculator/cdn) for a price estimation.
@@ -149,11 +149,11 @@ If you select bill-by-bandwidth mode, you will need to pay: 40 * 0.094 = 3.76 US
 
 We recommend bill-by-bandwidth as it is more cost-effective.
 
-## Overdue
+## Arrears
 
-Tencent Cloud will notify you through multiple channels including email and SMS for overdue payment. A **24-hour** grace period is provided. If you fail to top up your account within 24 hours, your CDN service will be suspended. You will need to manually enable the acceleration service in the CDN console after topping up your account.
+Tencent Cloud will notify you through multiple channels including email and SMS when your account falls into arrears. A **24-hour** grace period is provided. If you fail to top up your account within 24 hours, your CDN service will be suspended. You will need to manually enable the acceleration service in the CDN console after topping up your account.
 
 > Note:
 >
-> When your acceleration service is suspended due to overdue payment, all your domain names will be disabled and all access requests will be forwarded to the origin server. You can query information but cannot modify configurations in the CDN console. Your CDN-related domain names and configurations will be retained for 12 months.
+> When your acceleration service is suspended due to arrears, all your domain names will be disabled and all access requests will be forwarded to the origin server. You can query information but cannot modify configurations in the CDN console. Your CDN-related domain names and configurations will be retained for 12 months.
 

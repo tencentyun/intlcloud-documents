@@ -16,7 +16,7 @@ COS 콘솔에서 COS 서비스를 이용해 데이터를 클라우드에 간편�
 ## 1단계: Tencent Cloud 계정 생성하기
 Tencent Cloud의 COS 서비스를 사용하려면 Tencent Cloud 계정을 만드십시오. 하단 버튼을 클릭하면 가입할 수 있습니다. 이미 가입한 경우에는 이 단계를 생략해도 됩니다.
 
-<div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:13px;">가입하기</a></div>
+<div style="background-color:#00A4FF; width: 125px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:13px;">가입하기</a></div>
 
 ## 2단계: 실명 인증하기
 가입 완료 후, 가입한 계정으로 [Tencent Cloud 콘솔](https://console.cloud.tencent.com/)에 로그인하여 실명 인증을 합니다. 자세한 방법은 [실명 인증 소개](https://intl.cloud.tencent.com/document/product/378/3629)에서 확인하실 수 있습니다. 실명 인증을 했다면 본 단계는 생략 가능하며, 실명 인증을 하지 않은 경우, 중국에서 COS 인스턴스를 구매할 수 없습니다.

@@ -18,7 +18,7 @@
 |ERR_USER_ID_INVALID|-3319|Incorrect room entry parameter `userID`|
 |ERR_USER_SIG_INVALID|-3320|Incorrect room entry parameter `userSig`|
 |ERR_ROOM_REQUEST_ENTER_ROOM_TIMEOUT|-3308|The room entry request timed out. Please check the network|
-|ERR_SERVER_INFO_SERVICE_SUSPENDED|-100013|Unavailable service. Please check whether the remained validity period in minutes in the package is greater than 0 and whether the Tencent Cloud account is in arrears|
+|ERR_SERVER_INFO_SERVICE_SUSPENDED|-100013|Unavailable service. Please check whether the remained validity period in minutes in the package is greater than 0 and whether the Tencent Cloud account has overdue payment|
 
 
 ### Error codes for room exit

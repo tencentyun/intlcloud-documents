@@ -1,11 +1,11 @@
-LVB supports recording live streams and storing recording files in VOD for download and preview. This document describes how to create, bind, unbind, modify, and delete recording templates.
+CSS supports recording live streams and storing recording files in VOD for download and preview. This document describes how to create, bind, unbind, modify, and delete recording templates.
 You can create a recording template in the following two methods:
-- Create a recording template in the LVB console. For detailed directions, please see [Creating Recording Template](#C_record).
+- Create a recording template in the CSS console. For detailed directions, please see [Creating Recording Template](#C_record).
 - Create a recording template with APIs. For specific parameters and samples, please see [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845).
 
 ## Notes
 - The recorded video files are stored in the [VOD console](https://console.cloud.tencent.com/vod/overview) by default. We recommend you activate the VOD service in advance. For more information, please see [Getting Started with VOD](https://intl.cloud.tencent.com/document/product/266/8757).
-- After enabling the recording feature, please make sure that your VOD service is in normal status; if it has not been activated or has been suspended due to overdue payment, LVB recording will not be available, no recording files will be generated, and no recording fees will be incurred.
+- After enabling the recording feature, please make sure that your VOD service is in normal status. If it is not activated or is suspended due to overdue payment, CSS recording will not be available, no recording files will be generated, and no recording fees will be incurred.
 - During the live streaming, you can get a recording file in about 5 minutes after the recording process ends. For example, if a recording starts at 12:00 and ends at 12:30, you can get the segment of 12:00-12:30 at around 12:35.
 - As video format only supports .flv, .mp4, and .hls, video codec can only be H.264 and audio codec can only be AAC.
 - After a recording template is created successfully, it can be bound with push domain names. For more information, please see [Recording Configuration](https://intl.cloud.tencent.com/document/product/267/34224). The binding will take effect in about 5-10 minutes.
@@ -14,25 +14,25 @@ You can create a recording template in the following two methods:
 
 
 ## Prerequisites
-- You have activated the LVB service and added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970).
+- You have activated the CSS service and added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970).
 - You have activated the [VOD service](https://intl.cloud.tencent.com/document/product/266/8757#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E5.BC.80.E9.80.9A.E4.BA.91.E7.82.B9.E6.92.AD).
 
 <span id="C_record"></span>
 ## Creating a Recording Template
-1. Log in to the LVB console and select **Feature Configuration** > **[LVB Recording](https://console.cloud.tencent.com/live/config/record)**.
+1. Log in to the CSS console and select **Feature Configuration** > **[CSS Recording](https://console.cloud.tencent.com/live/config/record)**.
 2. Click **Create Recording Template** to set template information and configure as follows:
 ![](https://main.qcloudimg.com/raw/74a4ac0636c59ff69c23437e72189567.png)
 <table>
    <thead><tr><th>Configuration Item</th><th>Configuration Description</th></tr></thead>
    <tbody><tr>
    <td>Default Template</td>
-   <td>Default template type for LVB recording, which can be FLV, MP4, or HLS.</td>
+   <td>Default template type for CSS recording, which can be FLV, MP4, or HLS.</td>
    </tr><tr>
    <td>Template Name</td>
-   <td>Custom LVB recording template name, which can contain letters, digits, underscores (_), and hyphens (-).</td>
+   <td>Custom CSS recording template name, which can contain letters, digits, underscores (_), and hyphens (-).</td>
    </tr><tr>
    <td>Template Description</td>
-   <td>Custom LVB recording template description, which can contain letters, digits, underscores (_), and hyphens (-).</td>
+   <td>Custom CSS recording template description, which can contain letters, digits, underscores (_), and hyphens (-).</td>
    </tr><tr>
    <td>Recording File Type</td>
    <td>Videos are recorded in the original bitrate of the live stream and can be outputted in formats of .hls, .mp4, .flv, and .aac (for audio recording).</td>
@@ -58,7 +58,7 @@ You can create a recording template in the following two methods:
 
 <span id="conect"></span>
 ## Binding a Template with Domain Names
-1. Log in to the LVB console and select **Feature Configuration** > **[LVB Recording](https://console.cloud.tencent.com/live/config/record)**.
+1. Log in to the CSS console and select **Feature Configuration** > **[CSS Recording](https://console.cloud.tencent.com/live/config/record)**.
 	- **Directly bind a domain name**: click **Bind Domain Name** in the top-left corner.
 	![](https://main.qcloudimg.com/raw/bcb6c5da46a3455f94d441134e49825a.png)
 	- **Bind a domain name after creating a recording template:** after successfully [creating a recording template](#C_record), click **Bind Domain Name** in the pop-up window.
@@ -71,7 +71,7 @@ You can create a recording template in the following two methods:
 <span id="unite"></span>
 ## Unbinding a Template from a Domain Name
 
-1. Log in to the LVB console and select **Feature Configuration** > **[LVB Recording](https://console.cloud.tencent.com/live/config/record)**.
+1. Log in to the CSS console and select **Feature Configuration** > **[CSS Recording](https://console.cloud.tencent.com/live/config/record)**.
 2. Select a recording template with bound domain names, and click **Unbind** for the target domain name.
    ![](https://main.qcloudimg.com/raw/f7071a4b4f9297124b460ffebcba64d3.png)
 3. Confirm whether to unbind the domain name and click **Confirm** to unbind it.
@@ -84,7 +84,7 @@ You can create a recording template in the following two methods:
 
 <span id="change"></span>
 ## Modifying a Template
-1. Go to **Feature Configuration** > **[LVB Recording](https://console.cloud.tencent.com/live/config/record)**.
+1. Go to **Feature Configuration** > **[CSS Recording](https://console.cloud.tencent.com/live/config/record)**.
 2. Select the target recording template and click **Edit** on the right to modify the template information.
 3. Click **Save**.
 
@@ -92,7 +92,7 @@ You can create a recording template in the following two methods:
 
 <span id="delete"></span>
 ## Deleting a Template
-1. Go to **Feature Configuration** > **LVB Recording**.
+1. Go to **Feature Configuration** > **CSS Recording**.
 2. Select the target recording template and click ![](https://main.qcloudimg.com/raw/220ada95a4b631349543cc8cde96226e.png) at the top.
 3. Confirm whether to delete the selected recording template and click **OK** to delete it.
 ![](https://main.qcloudimg.com/raw/c7c3e300488ba332b84bfd61da0fb999.png)
@@ -108,7 +108,7 @@ For more information about **binding** and **unbinding a domain name** with a re
 
 ## FAQs
 <span id="que1"></span>
-#### How are videos generated by LVB recording named?
+#### How are videos generated by CSS recording named?
 Recording files generated by the callback of a recording template created in the console are named in the following format by default:
 `{StreamID}*{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{StartMinute}-{StartSecond}*{EndYear}-{EndMonth}-{EndDay}-{EndHour}-{EndMinute}-{EndSecond} `
 

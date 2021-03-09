@@ -91,4 +91,4 @@ The following table describes the error codes specific to this API.
 
 ## Debugging Tool
 
-Use the [REST API online debugging tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/group_open_http_svc/get_group_info) to debug this API.
+Use the [REST API online debugging tool](https://tcc.tencentcs.com/im-api-tool/index.html#v4/group_open_http_svc/get_online_member_num) to debug this API.

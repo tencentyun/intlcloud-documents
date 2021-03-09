@@ -24,7 +24,7 @@ A voucher can be used only within its validity period, which cannot be extended.
 A voucher can be used repeatedly until it expires or its balance is used up.
 6. Other limits 
 Only the account creator and collaborators or sub-users with finance management permissions can use and manage vouchers. Once a voucher expires or its balance is used up, it cannot be used anymore.
-Vouchers cannot be used in the following cases: account arrears, frozen fees for pay-as-you-go service activation, certain promotional campaigns (subject to specific campaign rules), and pay-on-behalf orders.
+Vouchers cannot be used in the following cases: account payment overdue, frozen fees for pay-as-you-go service activation, certain promotional campaigns (subject to specific campaign rules), and pay-on-behalf orders.
 
 An unused voucher is used as an example below to demonstrate use limits. It can be used only if your order meets the following conditions:
 ![](https://main.qcloudimg.com/raw/4b722364f2ec226ae87107d56abdfa77.png)

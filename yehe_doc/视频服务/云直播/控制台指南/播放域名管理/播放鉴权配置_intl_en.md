@@ -1,13 +1,13 @@
 ## Overview   
-The content on LVB is public by default, and you can access live streaming content once you get the playback URL. If you want to control access, you can enable authentication.
+The content on CSS is public by default, and you can access live streaming content once you get the playback URL. If you want to control access, you can enable authentication.
 
 
 ## How to Configure
-To enable URL authentication, you need an encrypted URL generated through authentication configuration and provide the URL to end users. After an end user sends a request to an LVB cache node through the encrypted URL, the node checks its permission information to see whether the request is valid. If it is, the node will return the content properly; otherwise, it will reject the request, thereby protecting the live streaming resources.
+To enable URL authentication, you need an encrypted URL generated through authentication configuration and provide the URL to end users. After an end user sends a request to an CSS cache node through the encrypted URL, the node checks its permission information to see whether the request is valid. If it is, the node will return the content properly; otherwise, it will reject the request, thereby protecting the live streaming resources.
 
 
 ## Prerequisites
-- You have logged in to the [LVB console](https://console.cloud.tencent.com/live).
+- You have logged in to the [CSS console](https://console.cloud.tencent.com/live).
 - You have added a **playback domain name**.
 
 ## Directions
@@ -49,7 +49,7 @@ Timestamp calculation:
 ```
 Setting time: 2018.12.01 08:30:00
 Decimal Unix timestamp: 1543624200
-Hexadecimal Unix timestamp: 5C01D608 (authentication configuration in LVB uses a case-insensitive hexadecimal Unix timestamp)
+Hexadecimal Unix timestamp: 5C01D608 (authentication configuration in CSS uses a case-insensitive hexadecimal Unix timestamp)
 ```
 
 Authentication signature calculation:
@@ -68,4 +68,4 @@ The generated playback URL is:
 http://www.test.com/live/test01.flv?txSecret=6cfcc16fa1eb1200c78b8296468b9180s&txTime=5C01D608
 ```
 The expiration time of this URL is 2018.12.01 08:30:00 + 12495 seconds, i.e., 2018.12.01 11:58:15 Beijing time.
-If the authentication fails or the URL has expired, LVB will return a 403 error.
+If the authentication fails or the URL has expired, CSS will return a 403 error.

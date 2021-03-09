@@ -9,7 +9,7 @@ This document helps you get started with TencentDB for MySQL.
 -----
 
 ## 2. TencentDB for MySQL Billing Modes
-TencentDB for MySQL adopts the pay-as-you-go billing mode. Please see [Product Pricing](https://buy.cloud.tencent.com/price/cdb/overview) for details.
+TencentDB for MySQL adopts the **pay-as-you-go** billing mode. Please see [Product Pricing](https://buy.cloud.tencent.com/price/cdb/overview) for details.
 
 -----
 
@@ -36,11 +36,12 @@ Below is the overview page of the TencentDB for MySQL Console:
 - [Specifying Project for Instance](https://intl.cloud.tencent.com/document/product/236/8460)
 - [Upgrading Database Engine](https://intl.cloud.tencent.com/document/product/236/8126)
 - [Adjusting Database Instance Specification](https://intl.cloud.tencent.com/document/product/236/19707)
-- [Creating Read-Only Instance](https://intl.cloud.tencent.com/document/product/236/7270)
-- [RO Group of Read-only Instance](https://intl.cloud.tencent.com/document/product/236/11361)
+- [Creating Read-only Replica](https://intl.cloud.tencent.com/document/product/236/7270)
+- [RO Group of Read-only Replica](https://intl.cloud.tencent.com/document/product/236/11361)
 - [Disaster Recovery Instance](https://intl.cloud.tencent.com/document/product/236/7272)
 - [Terminating Instance](https://intl.cloud.tencent.com/document/product/236/31895)
 - [Creating Account](https://intl.cloud.tencent.com/document/product/236/31900)
+- [DMC Overview](https://intl.cloud.tencent.com/document/product/236/39221)
 - [Setting Instance Parameters](https://intl.cloud.tencent.com/document/product/236/35793)
 - [Managing Parameter Templates](https://intl.cloud.tencent.com/document/product/236/31906) 
 - [Restoring Database from Physical Backup](https://intl.cloud.tencent.com/document/product/236/31910)
@@ -56,7 +57,7 @@ Below is the overview page of the TencentDB for MySQL Console:
 ## 6. FAQs
 - [How long does it take to create a TencentDB for MySQL instance?](https://intl.cloud.tencent.com/document/product/236/11274).
 - [How do I connect to a TencentDB for MySQL instance?](https://intl.cloud.tencent.com/document/product/236/37783)
-- [How do I view the private/public network address?](https://intl.cloud.tencent.com/document/product/236/37783#.E5.A6.82.E4.BD.95.E6.9F.A5.E7.9C.8B.E5.86.85.E5.A4.96.E7.BD.91.E5.9C.B0.E5.9D.80.EF.BC.9F)
+- [How do I view the private/public network address?](https://intl.cloud.tencent.com/document/product/236/37783)
 - [What preparations do I need to make before using TencentDB for MySQL?](https://intl.cloud.tencent.com/document/product/236/11268)
 - [What if I accidentally deleted an account or forgot the password?](https://intl.cloud.tencent.com/document/product/236/11274)
 - [How do I return a database?](https://intl.cloud.tencent.com/document/product/236/11274)
@@ -64,7 +65,8 @@ Below is the overview page of the TencentDB for MySQL Console:
 
 -----
 
-## 7. Feedback and Suggestion
+## 7. Feedback and Suggestions
 If you have any questions or suggestions when using TencentDB for MySQL, you can submit your feedback through the following channels. We will get back to you as soon as possible.
-- If you have any questions regarding TencentDB for MySQL documentation, such as links, content, or APIs, please click **Send Feedback** at the bottom of the page.
-- If you have any questions about TencentDB for MySQL, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+- To report product documentation issues such as link, content, or API errors, you can click **Send Feedback** at the bottom of the document.
+- If you encounter product-related problems, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+

@@ -1,61 +1,61 @@
-This document describes how to quickly run the Tencent Cloud TRTC Demo for Android.
+This document describes how to quickly run the TRTC demo for Android.
 
 ## Environment Requirements
-- Compatibility with Android 4.1 (SDK API Level 16) or above is required. Android 5.0 (SDK API Level 21) or above is recommended.
-- Android Studio 3.5 or above.
-- Device on Android 4.1 or above for the application.
+- Android 4.1 (SDK API level 16) or above (Android 5.0 (SDK API level 21) or above is recommended.)
+- Android Studio 3.5 or above
+- Devices with Android 4.1 or above
 
 ## Prerequisites
 You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for a Tencent Cloud account and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
 
 ## Directions
-<span id="step1"></span>
-### Step 1. Create an application
-1. Log in to the TRTC Console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
-2. Click **Start Now**, enter an application name such as `TestTRTC`, and click **Create Application**.
+[](id:step1)
+### Step 1. Create an application.
 
-<span id="step2"></span>
-### Step 2. Download the SDK and demo source code
-1. Mouse over the card, click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Android)** to go to the GitHub website (or click **[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip?_ga=1.195966252.185644906.1567570704)**) to download the SDK and supporting demo source code.
- ![](https://main.qcloudimg.com/raw/b0f6f1bd5e0bc083bafddcc7c04a1593.png)
-2. After the download is completed, return to the TRTC Console and click **Downloaded and Next**. Then, you can see the `SDKAppID` and key information.
+1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
+2. Enter an application name, e.g. `TestTRTC`, and click **Create**.
 
+[](id:step2)
+### Step 2. Download the SDK and demo source code.
 
-<span id="step3"></span>
-### Step 3. Configure demo project files
-1. Decompress the source package downloaded in [step 2](#step2).
-2. Find and open the `LiteAVSDK_TRTC_Android_version number/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java` file.
-3. Set the relevant parameters in the `GenerateTestUserSig.java` file:
-  <ul><li>SDKAPPID: it is `PLACEHOLDER` by default. Please replace it with the real `SDKAppID`.</li>
-  <li>SECRETKEY: it is `PLACEHOLDER` by default. Please replace it with the real key information.</li></ul> 
-	<img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
-4. Return to the TRTC Console and click **Pasted and Next**.
-5. Click **Close Guide and Enter Console** to manage application.
+1. Download the SDK and demo source code for your platform.
+2. Click **Next step**.
 
->!In this document, the `SECRETKEY` is configured in the client code to obtain `UserSig`. The `SECRETKEY` is easily decompiled and reverse cracked. If the `SECRETKEY` is leaked, hackers can steal your Tencent Cloud traffic. Therefore, **this method only applies to locally running a demo project and commissioning features**.
->The correct `UserSig` distribution method is to integrate the computing code of `UserSig` into your server and provide an app-oriented API. When `UserSig` is needed, your app can send a request to the business server to obtain the dynamic `UserSig`. For more information, see [How to Generate UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
+[](id:step3)
+### Step 3. Configure demo project files.
 
-### Step 4. Compile and run
-Use Android Studio (v3.5 or above) to open the `TRTCScenesDemo` project and click **Run**.
+1. In the **Modify Configuration** step, select the platform in line with the source package downloaded.
+2. Find and open `LiteAVSDK_TRTC_Android_version number/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java`.
+3. Set parameters in `GenerateTestUserSig.java` as follows.
+	<ul>
+	<li/>SDKAPPID: `PLACEHOLDER` by default. Set it to the actual `SDKAppID`.
+	<li>SECRETKEY: `PLACEHOLDER` by default. Set it to the actual key.</li></ul>
+4. Click **Next step** to complete the creation.
+5. After compilation, click **Return to Overview Page**.
+
+>!
+>- The method for generating `UserSig` described in this document involves configuring `SECRETKEY` in client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is leaked, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for the local execution and debugging of the demo**.
+>- The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, see [How do I calculate UserSig on the server?](https://intl.cloud.tencent.com/document/product/647/35166).
+
+### Step 4. Compile and run the project.
+Use Android Studio (3.5 or above) to open `TRTCScenesDemo` and run the project.
 
 ## FAQs
-### 1. Only public and private key information can be obtained when I try to view the encryption key. How do I get the encryption key?
-Starting from TRTC SDK v6.6 (August 2019), the new signature algorithm HMAC-SHA256 is used. For applications created before then, you need to upgrade the signature algorithm before you can get a new encryption key. If you don’t upgrade it, you can continue to use the [legacy algorithm ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/647/35166). If you have upgraded the version, you can switch between the new and old algorithms as needed.
+### 1. Only public and private keys can be obtained when I try to view the key. How do I get a key?
+TRTC SDK 6.6 (August 2019) and later versions use the new signature algorithm HMAC-SHA256. If your application was created before August 2019, you need to upgrade the signature algorithm to get a new key. Without upgrading, you can continue to use the [old algorithm ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/647/35166). After upgrading, you can switch between the new and old algorithms as needed.
 
-Upgrade/switch the algorithm as follows:
- 1. Log in to the [TRTC Console](https://console.cloud.tencent.com/trtc).
- 2. Select **Application Management** on the left sidebar and click **Application Info** on the row of the target application.
- 3. Select the **Quick Start** tab and click **upgrade**, **asymmetric encryption**, or **HMAC-SHA256** in **Step 2: obtain the secret key to issue UserSig**.
+Upgrade/Switch:
+ 1. Log in to the [TRTC console](https://console.cloud.tencent.com/trtc).
+ 2. Click **Application Management** in the left navigation pane, find your application, and click **Application Info**.
+ 3. Select the **Quick Start** tab and click **Upgrade**, **Asymmetric Encryption**, or **HMAC-SHA256** in **Step 2: obtain the secret key to issue UserSig**.
   - Upgrade:
-
   - Switch to the legacy algorithm ECDSA-SHA256:
-   ![](https://main.qcloudimg.com/raw/a8737123c1e3cc0f7eb34901ed2629f7.png)
+      ![](https://main.qcloudimg.com/raw/a8737123c1e3cc0f7eb34901ed2629f7.png)
   - Switch to the new algorithm HMAC-SHA256:
-   ![](https://main.qcloudimg.com/raw/701fcde1a562bf9fbbb0d426948e311e.png)
+      ![](https://main.qcloudimg.com/raw/701fcde1a562bf9fbbb0d426948e311e.png)
 
 ### 2. The demo is running on two mobile phones, but why can't they display the images of each other?
-Please make sure that the two mobile phones use different `UserIDs` when running the demo, as TRTC does not support using the same `UserID` on two devices simultaneously; unless different `SDKAppIDs` are used.
+Make sure that the two mobile phones use different `UserIDs`. With TRTC, you cannot use the same `UserID` on two devices simultaneously unless the `SDKAppIDs` are different.
 
-
-### 3. What are the restrictions of the firewall?
-As the SDK uses the UDP protocol for audio/video transmission, it cannot be used in office networks that block UDP. If you encounter such a problem, please troubleshoot as instructed in [How to Deal with Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35164).
+### 3. What firewall restrictions does the SDK face?
+The SDK uses the UDP protocol for audio/video transmission and therefore cannot be used in office networks that block UDP. If you encounter such a problem, see [How to Deal with Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35164) to troubleshoot the issue.

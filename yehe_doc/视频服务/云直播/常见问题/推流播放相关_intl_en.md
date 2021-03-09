@@ -1,12 +1,13 @@
 <span id="que1"></span>
 ### Is there an upper limit on the number of online viewers?	
-By default, LVB does not limit the number of online viewers for a live stream as long as the network and other conditions permit. However, if you have configured a bandwidth limit, new viewers cannot watch the live stream if there are so many existing viewers that the bandwidth limit is exceeded. In this case, the number of online viewers is limited.
+By default, CSS does not limit the number of online viewers for a live stream as long as the network and other conditions permit. However, if you have configured a bandwidth limit, new viewers cannot watch the live stream if there are so many existing viewers that the bandwidth limit is exceeded. In this case, the number of online viewers is limited.
 
 <span id="que2"></span>
 ### How can I use live transcoding?
-In consideration of different network factors and to meet your needs for different resolutions at different bitrates, you can set transcoding templates with different bitrates and resolutions in [Transcoding Configuration](https://console.cloud.tencent.com/live/config/transcode). For more information on transcoding, see [Best Practice > LVB Encapsulating and Transcoding](https://intl.cloud.tencent.com/document/product/267/31561).
+In consideration of different network factors and to meet your needs for different resolutions at different bitrates, you can set transcoding templates with different bitrates and resolutions in [Transcoding Configuration](https://console.cloud.tencent.com/live/config/transcode). For more information on transcoding, see [Best Practice > CSS Encapsulating and Transcoding](https://intl.cloud.tencent.com/document/product/267/31561).
 
- #### <span id="multirate">Original, HD, and SD</span>
+<span id="multirate"></span>
+ #### Original, HD, and SD
 In a real playback scenario, three bitrates are generally used: original, HD, and SD.
  - For an original stream, the push bitrate is the same as the original resolution.
  - For an HD stream, bitrate of 2,000 Kbps and resolution of 1080p are recommended.
@@ -21,12 +22,12 @@ If your playback domain name needs to support HTTPS, you should prepare a valid 
 
 <span id="que5"></span>
 ### How can I use a global cache node for playback?
-LVB has CDN nodes across Mainland China and around the world with wide coverage and high stability. If your end users are located outside Mainland China, you can select **Global Acceleration** or **Hong Kong/Macao/Taiwan (China Region) and other regions** as the acceleration region when configuring a domain name in [Domain Management](https://console.cloud.tencent.com/live/domainmanage) to enjoy coverage by global nodes.
->! The global acceleration of LVB supports only HTTP-FLV and HLS protocols.
+CSS has CDN nodes across Mainland China and around the world with wide coverage and high stability. If your end users are located outside Mainland China, you can select **Global Acceleration** or **Hong Kong/Macao/Taiwan (China Region) and other regions** as the acceleration region when configuring a domain name in [Domain Management](https://console.cloud.tencent.com/live/domainmanage) to enjoy coverage by global nodes.
+>! The global acceleration of CSS supports only HTTP-FLV and HLS protocols.
 
 <span id="que6"></span>
 ### How can I enable hotlink protection?
-In order to prevent illegal users from stealing your playback URL for use elsewhere that may cause traffic losses, we strongly recommend enabling hotlink protection for your playback address to avoid potential losses caused by hotlinking. A hotlink protection-enabled playback URL in LVB is mainly controlled by four parameters: `txTime`, `key` (hash key), `txSecret`, and validity period.
+In order to prevent illegal users from stealing your playback URL for use elsewhere that may cause traffic losses, we strongly recommend enabling hotlink protection for your playback address to avoid potential losses caused by hotlinking. A hotlink protection-enabled playback URL in CSS is mainly controlled by four parameters: `txTime`, `key` (hash key), `txSecret`, and validity period.
 
 | Hotlink Protection Parameter | Description | Remarks |
 |---------|---------|---------|
@@ -52,7 +53,7 @@ http://domain/live/test_900.m3u8?txTime=5c2acacc&txSecret=4beae959b16c77da6a65c7
 ```
 
 #### Enabling hotlink protection
-1. Log in to the LVB Console and enter **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**.
+1. Log in to the CSS Console and enter **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**.
 2. Click a playback domain name or click **Manage** to enter its details page.
 3. Select **Access Control** and click **Edit**.
 4. Enable **Playback Authentication** and click **Save**.
@@ -69,29 +70,29 @@ We recommend that you set its validity period to the duration of the live stream
 
 
 <span id="que8"></span>
-### Can I create an LVB push address to use all the time? What is the maximum length of address validity period?
+### Can I create an CSS push address to use all the time? What is the maximum length of address validity period?
 The main purpose of setting a validity period for the push address is to authenticate and protect the push address to prevent unauthorized push and business losses.
 There is no limit on the validity period of a push address, which can be set according to your business needs. You can also splice addresses to generate a push address with a longer validity period. For more information about splicing rules, please see [How to Splice a Push URL](https://intl.cloud.tencent.com/document/product/267/32480).
 
->? We do not recommend a very long validity period of the push address, which may cause LVB to report an error during the use and report a failed authentication.
+>? We do not recommend a very long validity period of the push address, which may cause CSS to report an error during the use and report a failed authentication.
 
 <span id="que9"></span>
-### Will the Tencent Cloud logo be displayed in the LVB video? 
+### Will the Tencent Cloud logo be displayed in the CSS video? 
 No. 
 
 <span id="que10"></span>
-### How long is the LVB delay? 
-LVB pushes a stream using the RTMP protocol and plays it using the FLV protocol. Generally, the delay is about 2 to 3 seconds. A long delay often indicates an error.
+### How long is the CSS delay? 
+CSS pushes a stream using the RTMP protocol and plays it using the FLV protocol. Generally, the delay is about 2 to 3 seconds. A long delay often indicates an error.
 <span id="que11"></span>
-### Can I set the maximum LVB bitrate?
- No. The maximum LVB bitrate is automatically set by the push end, according to the upload speed of your network. The upper limit of bitrate (or maximum bitrate) depends on the upload speed of your network. If the maximum bitrate is too high, it will cause dropped frames and lag during a live stream. 
+### Can I set the maximum CSS bitrate?
+ No. The maximum CSS bitrate is automatically set by the push end, according to the upload speed of your network. The upper limit of bitrate (or maximum bitrate) depends on the upload speed of your network. If the maximum bitrate is too high, it will cause dropped frames and lag during a live stream. 
 
 <span id="que12"></span>
-### How do I delete an LVB room which is no longer used? 
-LVB push and playback are currently associated with stream IDs, so you do not have to delete rooms. If you are using the IM service and want to delete IM rooms to avoid hitting its upper limit, please see [Disbanding Groups](https://intl.cloud.tencent.com/document/product/1047/34896).
-If you are using the channel mode, you can call the `DeleteLVBChannel` API and input LVB channel IDs as parameters to delete the LVB channels (in batches).
+### How do I delete an CSS room which is no longer used? 
+CSS push and playback are currently associated with stream IDs, so you do not have to delete rooms. If you are using the IM service and want to delete IM rooms to avoid hitting its upper limit, please see [Disbanding Groups](https://intl.cloud.tencent.com/document/product/1047/34896).
+If you are using the channel mode, you can call the `DeleteLVBChannel` API and input CSS channel IDs as parameters to delete the CSS channels (in batches).
 
-> ! LVB has no longer provided updates or support for the channel mode.
+> ! CSS has no longer provided updates or support for the channel mode.
 
 <span id="que13"></span>
  ### What does the "enabling/disabling LVB push" API do? 
@@ -104,7 +105,7 @@ The background video playback feature should be provided by devices. You can dev
 
 <span id="que15"></span>
 ### What should I do if the "incorrect certificate" warning shows up when I modify HTTPS configuration? 
- LVB encryption uses Nginx, so the certificate type must be Nginx. Make sure your current certificate type is correct.
+CSS encryption uses Nginx, so the certificate type must be Nginx. Make sure your current certificate type is correct.
 
 <span id="que16"></span>
 ### What should I do if the original generated playback address is unavailable after the playback domain name disabled authentication? 
@@ -112,7 +113,7 @@ The background video playback feature should be provided by devices. You can dev
 
 <span id="que17"></span>
 ### What is an upper limit of the total number of API accesses?
-LVB puts an upper limit of the total number of requests sent by all SecretIds under an account. Requests exceeding the upper limit will not be responded.
+CSS puts an upper limit of the total number of requests sent by all SecretIds under an account. Requests exceeding the upper limit will not be responded.
 For example, an upper limit of 200 requests per second indicates that Tencent Cloud server can receive up to 200 requests sent by all SecretIds under your account per second. The 200 requests can be sent by one or more customers, and can be used to query one or more streams. 
 
 <span id="que18"></span>
@@ -127,31 +128,3 @@ It may be because the current frame rate is too high. The frame rate more than 1
 ### When does the system actively disconnect from a push with no data for a long time? 
 It occurs when the device has a problem pushing the stream.
 For example, exceptions can be caused by application crash, mobile phone shutdown and other non-subjective factors. In this case, the system may disconnect actively if it cannot collect the data of pushed streams in the backend within 70 seconds.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

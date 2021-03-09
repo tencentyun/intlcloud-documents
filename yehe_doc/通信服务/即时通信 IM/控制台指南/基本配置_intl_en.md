@@ -1,4 +1,4 @@
-Log in to the [IM Console](https://console.cloud.tencent.com/im) and click the target app card to go to the app’s basic configuration page. You can manage basic configuration for your app according to business needs.
+Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the app’s basic configuration page. You can manage basic configuration for your app according to business needs.
 
 ## Changing the Version
 
@@ -30,7 +30,7 @@ In the **Basic Info** area, you can:
  In the **Basic Info** area, click **Delete** next to **Status**. In the pop-up dialog box, click **OK**.
 
 **Pro Edition/Flagship Edition**
-- Apps that have been in arrears for seven days will be automatically **Disabled**. To delete such disabled apps, please [contact us](https://console.cloud.tencent.com/workorder/category).
+- Apps that have overdue payments for seven days will be automatically **Disabled**. To delete such disabled apps, please [contact us](https://console.cloud.tencent.com/workorder/category).
 - Apps become **Expired** after the refund and **Disabled** after seven days. To delete such disabled apps, please [contact us](https://console.cloud.tencent.com/workorder/category).
 
 **TRTC Trial**
@@ -82,7 +82,7 @@ Account administrators can call RESTful APIs, disband groups, and perform operat
 2. In the confirmation box that pops up, click **Confirm**.
 
 ## Activating Tencent Real-Time Communication (TRTC)
-If you need features such as audio calling, video calling, and interactive live broadcasting in your current IM app, or you need to integrate the IM SDK and TRTC SDK at the same time, you can activate the [TRTC service](https://intl.cloud.tencent.com/document/product/647) in the **Activate TRTC** area. The system will create a TRTC app in the [TRTC Console](https://console.cloud.tencent.com/trtc), which has the same SDKAppID as your current IM app. The two accounts and their authentications can be reused.
+If you need features such as audio calling, video calling, and interactive live broadcasting in your current IM app, or you need to integrate the IM SDK and TRTC SDK at the same time, you can activate the [TRTC service](https://intl.cloud.tencent.com/document/product/647) in the **Activate TRTC** area. The system will create a TRTC app in the [TRTC console](https://console.cloud.tencent.com/trtc), which has the same SDKAppID as your current IM app. The two accounts and their authentications can be reused.
 
 1. Click **Activate Now** in the **Activate TRTC** area.
 2. In the Activate TRTC dialog that pops up, click **OK**.

@@ -11,4 +11,4 @@
  - 命名空间的操作管理请参考 [Namespaces](https://intl.cloud.tencent.com/document/product/457/30660)。
  - 自动伸缩的操作管理请参考 [自动伸缩](https://intl.cloud.tencent.com/document/product/457/32424) 和 [自动伸缩指标说明](https://intl.cloud.tencent.com/document/product/457/34046)。
  - 配置资源的操作管理请参考 [ConfigMap 管理](https://intl.cloud.tencent.com/document/product/457/30675) 和 [Secret 管理](https://intl.cloud.tencent.com/document/product/457/30676)。
- - 存储资源的操作管理请参考 [Volume 管理](https://intl.cloud.tencent.com/document/product/457/30678)、[PV 和 PVC 管理](https://intl.cloud.tencent.com/document/product/457/30679)、[StorageClass 管理](https://intl.cloud.tencent.com/document/product/457/30680)。
+ - 存储资源的操作管理请参考 [存储管理概述](https://intl.cloud.tencent.com/document/product/457/37769)。

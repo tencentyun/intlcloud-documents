@@ -11,7 +11,7 @@ COS provides both enterprises and individual users with a suite of features, inc
 
 This section describes key concepts that help you better understand COS.
 
-- [Bucket](https://intl.cloud.tencent.com/document/product/436/13312): a container for objects stored in COS.
+- [Bucket](https://intl.cloud.tencent.com/document/product/436/13312): a container for objects stored in COS. Each bucket can store an unlimited number of objects.
 - [Object](https://intl.cloud.tencent.com/document/product/436/13324): the basic unit of COS storage. It can be data in any format, such as images, documents, audio and video, and others.
 - [Region](https://intl.cloud.tencent.com/document/product/436/6224): a physical location where data centers are hosted on Tencent Cloud. COS data is stored in the buckets in these regions.
 - [Endpoint](https://intl.cloud.tencent.com/document/product/436/6224): a COS endpoint used to access and download an object stored in a bucket.
@@ -22,11 +22,11 @@ This section describes key concepts that help you better understand COS.
 
 COS offers the following storage classes of objects: INTELLIGENT TIERING, STANDARD, STANDARD_IA, ARCHIVE, and DEEP ARCHIVE. They indicate how active objects are in COS, and vary from one another in access frequency, durability, availability, latency, and more. You can choose which storage class to upload your data to based on your use case.
 
-> ?For a comparison among COS storage classes, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).
+> ?For comparison among COS storage classes, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925).
 
 ### STANDARD
 
-COS STANDARD is a highly reliable, accessible and powerful object storage service that is designed for hot data and features low latency and high throughput.
+COS STANDARD is a highly reliable, accessible, and powerful object storage service that is designed for hot data and features low latency and high throughput.
 
 
 **Use cases**
@@ -53,7 +53,7 @@ Use cases where access patterns are unknown or changing. This storage class is i
 
 ### ARCHIVE
 
-COS ARCHIVE is a highly reliable object storage service designed for cold data, and offers very low storage costs and long-term data retention. This storage class has a minimal storage duration of 90 days. To read data stored in ARCHIVE, you need to restore it to STANDARD first.
+COS ARCHIVE is a highly reliable object storage service designed for cold data, and offers very low storage costs and long-term data retention. This storage class has a minimum storage duration of 90 days. To read data stored in ARCHIVE, you need to restore it to STANDARD first.
 
 **Use cases**
 
@@ -61,7 +61,7 @@ Use cases that require long-term data retention, such as archival data, medical 
 
 ### DEEP ARCHIVE
 
-COS DEEP ARCHIVE is a highly reliable object storage service that offers the lowest storage costs and long-term data retention. This storage class has a minimal storage duration of 180 days. To read data stored in DEEP ARCHIVE, you need to restore it to STANDARD first.
+COS DEEP ARCHIVE is a highly reliable object storage service that offers the lowest storage costs and long-term data retention. This storage class has a minimum storage duration of 180 days. To read data stored in DEEP ARCHIVE, you need to restore it to STANDARD first.
 
 **Use cases**
 

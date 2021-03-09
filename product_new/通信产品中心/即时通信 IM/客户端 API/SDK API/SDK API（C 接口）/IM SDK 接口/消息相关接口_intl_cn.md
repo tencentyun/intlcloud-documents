@@ -26,19 +26,19 @@ TIM_DECL int TIMMsgSendNewMsg(const char* conv_id, enum TIMConvType conv_type, c
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->
-- 发送新消息，单聊消息和群消息的发送均采用此接口。
- - 发送单聊消息时`conv_id`为对方的 UserID，`conv_type`为`kTIMConv_C2C`。
- - 发送群聊消息时`conv_id`为群 ID，`conv_type`为`kTIMConv_Group`。
-- 发送消息时不能发送`kTIMElem_GroupTips`、`kTIMElem_GroupReport`，他们由为后台下发，用于更新（通知）群的信息。可以的发送消息内元素。
- - 文本消息元素，请参考 [TextElem](https://intl.cloud.tencent.com/document/product/1047/34551#textelem)。
- - 表情消息元素，请参考 [FaceElem](https://intl.cloud.tencent.com/document/product/1047/34551#faceelem)。
- - 位置消息元素，请参考 [LocationElem](https://intl.cloud.tencent.com/document/product/1047/34551#locationelem)。
- - 图片消息元素，请参考 [ImageElem](https://intl.cloud.tencent.com/document/product/1047/34551#imageelem)。
- - 声音消息元素，请参考 [SoundElem](https://intl.cloud.tencent.com/document/product/1047/34551#soundelem)。
- - 自定义消息元素，请参考 [CustomElem](https://intl.cloud.tencent.com/document/product/1047/34551#customelem)。
- - 文件消息元素，请参考 [FileElem](https://intl.cloud.tencent.com/document/product/1047/34551#fileelem)。
- - 视频消息元素，请参考 [VideoElem](https://intl.cloud.tencent.com/document/product/1047/34551#videoelem)。
+>?
+>- 发送新消息，单聊消息和群消息的发送均采用此接口。
+  >    - 发送单聊消息时`conv_id`为对方的 UserID，`conv_type`为`kTIMConv_C2C`。
+  >    - 发送群聊消息时`conv_id`为群 ID，`conv_type`为`kTIMConv_Group`。
+>- 发送消息时不能发送`kTIMElem_GroupTips`、`kTIMElem_GroupReport`，他们由为后台下发，用于更新（通知）群的信息。可以的发送消息内元素。
+  >    - 文本消息元素，请参考 [TextElem](https://intl.cloud.tencent.com/document/product/1047/34551#textelem)。
+  >    - 表情消息元素，请参考 [FaceElem](https://intl.cloud.tencent.com/document/product/1047/34551#faceelem)。
+  >    - 位置消息元素，请参考 [LocationElem](https://intl.cloud.tencent.com/document/product/1047/34551#locationelem)。
+  >    - 图片消息元素，请参考 [ImageElem](https://intl.cloud.tencent.com/document/product/1047/34551#imageelem)。
+  >    - 声音消息元素，请参考 [SoundElem](https://intl.cloud.tencent.com/document/product/1047/34551#soundelem)。
+  >    -  自定义消息元素，请参考 [CustomElem](https://intl.cloud.tencent.com/document/product/1047/34551#customelem)。
+  >    -  文件消息元素，请参考 [FileElem](https://intl.cloud.tencent.com/document/product/1047/34551#fileelem)。
+  >    - 视频消息元素，请参考 [VideoElem](https://intl.cloud.tencent.com/document/product/1047/34551#videoelem)。
 
 
 **示例**
@@ -102,7 +102,7 @@ TIM_DECL int TIMMsgReportReaded(const char* conv_id, enum TIMConvType conv_type,
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->`json_msg_param`可以填`NULL`空字符串指针或者""空字符串，此时以会话当前最新消息的时间戳（如果会话存在最新消息）或当前时间为已读时间戳上报。当要指定消息时，则以该指定消息的时间戳为已读时间戳上报，最好用接收新消息获取的消息数组里面的消息 JSON 或者用消息定位符查找到的消息 JSON，避免重复构造消息 JSON。
+>?`json_msg_param`可以填`NULL`空字符串指针或者""空字符串，此时以会话当前最新消息的时间戳（如果会话存在最新消息）或当前时间为已读时间戳上报。当要指定消息时，则以该指定消息的时间戳为已读时间戳上报，最好用接收新消息获取的消息数组里面的消息 JSON 或者用消息定位符查找到的消息 JSON，避免重复构造消息 JSON。
 
 
 ## TIMMsgRevoke
@@ -131,7 +131,7 @@ TIM_DECL int TIMMsgRevoke(const char* conv_id, enum TIMConvType conv_type, const
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->消息撤回。使用保存的消息 JSON 或者用消息定位符查找到的消息 JSON，避免重复构造消息 JSON。
+>?消息撤回。使用保存的消息 JSON 或者用消息定位符查找到的消息 JSON，避免重复构造消息 JSON。
 
 
 **示例**
@@ -187,9 +187,9 @@ TIM_DECL int TIMMsgFindByMsgLocatorList(const char* conv_id, enum TIMConvType co
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->
-- 此接口根据消息定位符精准查找指定会话的消息，该功能一般用于消息撤回时查找指定消息等。
-- 一个消息定位符对应一条消息。
+>?
+>- 此接口根据消息定位符精准查找指定会话的消息，该功能一般用于消息撤回时查找指定消息等。
+>- 一个消息定位符对应一条消息。
 
 
 **示例**
@@ -247,7 +247,7 @@ TIM_DECL int TIMMsgImportMsgList(const char* conv_id, enum TIMConvType conv_type
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->批量导入消息，可以自己构造消息去导入。也可以将之前要导入的消息数组 JSON 保存，然后导入的时候直接调用接口，避免构造消息数组。
+>?批量导入消息，可以自己构造消息去导入。也可以将之前要导入的消息数组 JSON 保存，然后导入的时候直接调用接口，避免构造消息数组。
 
 
 **示例**
@@ -313,7 +313,7 @@ TIM_DECL int TIMMsgSaveMsg(const char* conv_id, enum TIMConvType conv_type, cons
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->消息保存接口，一般是自己构造一个消息 JSON 字符串，然后保存到指定会话。
+>?消息保存接口，一般是自己构造一个消息 JSON 字符串，然后保存到指定会话。
 
 
 ## TIMMsgGetMsgList
@@ -342,7 +342,7 @@ TIM_DECL int TIMMsgGetMsgList(const char* conv_id, enum TIMConvType conv_type, c
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->从`kTIMMsgGetMsgListParamLastMsg`指定的消息开始获取本地消息列表，kTIMMsgGetMsgListParamCount  为要获取的消息数目。kTIMMsgGetMsgListParamLastMsg 可以不指定，不指定时表示以会话最新的消息为`LastMsg`。若指定`kTIMMsgGetMsgListParamIsRamble`为 true 则本地消息获取不够指定数目时，会去获取云端漫游消息。`kTIMMsgGetMsgListParamIsForward`为 true 时表示获取比`kTIMMsgGetMsgListParamLastMsg`新的消息，为 false 时表示获取比`kTIMMsgGetMsgListParamLastMsg`旧的消息。
+>?从`kTIMMsgGetMsgListParamLastMsg`指定的消息开始获取本地消息列表，kTIMMsgGetMsgListParamCount  为要获取的消息数目。kTIMMsgGetMsgListParamLastMsg 可以不指定，不指定时表示以会话最新的消息为`LastMsg`。若指定`kTIMMsgGetMsgListParamIsRamble`为 true 则本地消息获取不够指定数目时，会去获取云端漫游消息。`kTIMMsgGetMsgListParamIsForward`为 true 时表示获取比`kTIMMsgGetMsgListParamLastMsg`新的消息，为 false 时表示获取比`kTIMMsgGetMsgListParamLastMsg`旧的消息。
 
 
 **示例：获取 C2C 会话`Windows-02`消息列表**
@@ -394,10 +394,10 @@ TIM_DECL int TIMMsgDelete(const char* conv_id, enum TIMConvType conv_type, const
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->
-- 当设置`kTIMMsgDeleteParamMsg`时，在会话中删除指定本地消息。
-- 当未设置`kTIMMsgDeleteParamMsg`时，`kTIMMsgDeleteParamIsRamble`为 false 表示删除会话所有本地消息，true  表示删除会话所有漫游消息（删除漫游消息暂时不支持）。
-- 一般直接使用保存的消息 JSON，或者通过消息定位符查找得到的 JSON。不用删除的时候构造消息 JSON。
+>?
+>- 当设置`kTIMMsgDeleteParamMsg`时，在会话中删除指定本地消息。
+>- 当未设置`kTIMMsgDeleteParamMsg`时，`kTIMMsgDeleteParamIsRamble`为 false 表示删除会话所有本地消息，true  表示删除会话所有漫游消息（删除漫游消息暂时不支持）。
+>- 一般直接使用保存的消息 JSON，或者通过消息定位符查找得到的 JSON。不用删除的时候构造消息 JSON。
 
 
 **示例**
@@ -444,7 +444,7 @@ TIM_DECL int TIMMsgDownloadElemToPath(const char* json_download_elem_param, cons
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->此接口用于下载消息内图片、文件、声音、视频等元素。下载的参数kTIMMsgDownloadElemParamFlag、kTIMMsgDownloadElemParamId、kTIMMsgDownloadElemParamBusinessId、kTIMMsgDownloadElemParamUrl  均可以在相应元素内找到。其中`kTIMMsgDownloadElemParamType`为下载文件类型 [TIMDownloadType](https://intl.cloud.tencent.com/document/product/1047/34551#timdownloadtype)。
+>?此接口用于下载消息内图片、文件、声音、视频等元素。下载的参数kTIMMsgDownloadElemParamFlag、kTIMMsgDownloadElemParamId、kTIMMsgDownloadElemParamBusinessId、kTIMMsgDownloadElemParamUrl  均可以在相应元素内找到。其中`kTIMMsgDownloadElemParamType`为下载文件类型 [TIMDownloadType](https://intl.cloud.tencent.com/document/product/1047/34551#timdownloadtype)。
 
 
 **示例**
@@ -487,7 +487,7 @@ TIM_DECL int TIMMsgBatchSend(const char* json_batch_send_param, TIMCommCallback 
 |-----|-----|
 | int | 返回 TIM_SUCC 表示接口调用成功（接口只有返回 TIM_SUCC，回调 cb 才会被调用），其他值表示接口调用失败。每个返回值的定义请参考 [TIMResult](https://intl.cloud.tencent.com/document/product/1047/34551#timresult)  |
 
->批量发送消息的接口，每个 UserID 发送成功与否，通过回调 cb 返回。
+>?批量发送消息的接口，每个 UserID 发送成功与否，通过回调 cb 返回。
 
 
 **示例**

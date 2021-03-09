@@ -1,47 +1,45 @@
-This document describes how to quickly run the Tencent Cloud TRTC Demo for Electron.
+This document describes how to quickly run the TRTC demo for Electron.
 
 ## Prerequisites
 
-You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
+You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for a Tencent Cloud account and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
 
 ## Directions
 
-<span id="step1" name="step1"> </span>
+[](id:step1)
 
-### Step 1. Create an application
+### Step 1. Create an application.
 
-1. Log in to the TRTC Console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
-2. Click **Start Now**, enter an application name such as `TestTRTC`, and click **Create Application**.
+1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
+2. Enter an application name, e.g. `TestTRTC`, and click **Create**.
 
-<span id="step2" name="step2"> </span>
+[](id:step2)
 
-### Step 2. Download the SDK and demo source code
+### Step 2. Download the SDK and demo source code.
+1. Download the SDK and demo source code for your platform.
+2. Click **Next step**.
 
-1. Mouse over the corresponding block, click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Electron)** to enter GitHub (or click **[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Electron_latest.zip)**), and download the relevant SDK and supporting demo source code.
-    ![img](https://main.qcloudimg.com/raw/b0f6f1bd5e0bc083bafddcc7c04a1593.png)
-2. After the download is completed, return to the TRTC Console and click **Downloaded and Next**. Then, you can see the `SDKAppID` and key information.
+[](id:step3)
+### Step 3. Configure demo project files.
+1. In the **Modify Configuration** step, select the platform in line with the source package downloaded.
+2. Decompress the source package and find the `TRTCSDK/Electron/TRTCSimpleDemo/` directory, which is the <span id="projectFolder" name="projectFolder">"**project directory**"</span> mentioned below.
+3. Find and open the `debug/gen-test-user-sig.js` file in the project directory.
+4. Set parameters in `gen-test-user-sig.js` as follows:
+<ul>
+ <li/>SDKAPPID: 0 by default. Set it to the actual `SDKAppID`.
+ <li/>SECRETKEY: left empty by default. Set it to the actual key.</ul>
+5. Click **Next step** to complete the creation.
+6. After compilation, click **Return to Overview Page**.
 
-<span id="step3" name="step3"> </span>
-
-### Step 3. Configure demo project files
-1. Decompress the source package downloaded in [step 2](#step2) and find the `TRTCSDK/Electron/TRTCSimpleDemo/` directory, which is the <span id="projectFolder" name="projectFolder">"**project directory**"</span> mentioned below.
-2. Find the `debug/gen-test-user-sig.js` file in the project directory and open it.
-3. Set the relevant parameters in the `gen-test-user-sig.js` file:
-  -   SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.
-  -   SECRETKEY: it is an empty string by default. Please replace it with your real key information.
-4. Return to the TRTC Console and click **Pasted and Next**.
-5. Click **Close Guide and Enter Console** to manage the application.
-
-**File and directory description:**
-
+**File paths and description:**
 ```bash
 .
-|---README.md                             README file. Please read it carefully
+|---README.md                             README file. Please read it carefully.
 |---main.electron.js                      Electron main file
 |---public                                Stores static files
 |---babel.config.js
 |---package.json
-|---vue.config.js                         vue-cli project file
+|---vue.config.js                         Vue CLI project file
 |---src                                   Source code directory
 | |---app.vue
 | |---common.css
@@ -52,48 +50,43 @@ You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/
 | | |---show-screen-capture.vue
 | |---common                              Utility functions, public libraries, etc.
 | | |---live-room-service.js
-| | |---log.js                            Log tool
+| | |---log.js                            Log tools
 | | |---mtah5.js                          
 | | |---routes.js
 | | |---rand.js
-| |---pages                               Page directory
+| |---pages                               View directory
 | | |---index.vue                         Homepage
-| | |---trtc                              Video conferencing pages
-| | | |---trtc-room.vue                   Video conferencing room page
-| | | |---trtc-index.vue                  Video conferencing entry page
+| | |---trtc                              Video conferencing views
+| | | |---trtc-room.vue                   Video conferencing room view
+| | | |---trtc-index.vue                  Video conferencing entry view
 | | |---404.vue
-| | |---live                              Live streaming pages
-| | | |---live-index.vue                  Live streaming entry page
-| | | |---live-room-audience.vue          Viewer page
-| | | |---live-room-anchor.vue            Anchor page
-| |---debug                               Note: when deploying, please move the signature logic in this folder to the server for implementation
+| | |---live                              Live streaming views
+| | | |---live-index.vue                  Live streaming entry view
+| | | |---live-room-audience.vue          Viewer room view
+| | | |---live-room-anchor.vue            Anchor room view
+| |---debug                               Note: when deploying your project, please move the signature logic in this folder to the server for implementation.
 | | |---lib-generate-test-usersig.min.js  
 | | |---gen-test-user-sig.js              
 ```
 
-<span id="step4"> </span>
+[](id:step4)
 
-### Step 4. Compile and run
-
+### Step 4. Compile and run the project.
 #### Windows
-1. Install the latest version of Node.js. We recommend you choose a 64-bit `.msi` file. [Node.js download address](https://nodejs.org/en/download/)
-2. Press the `win + r` and enter `cmd` to open the command line window as administrator, locate the [project directory](#projectFolder), and run the following command.
- ```shell
+1. Install the latest version of Node.js. We recommend you use a 64-bit MSI file for the installation. Download [here](https://nodejs.org/en/download/).
+2. Press the Windows key and R and enter `cmd` to open Windows Command Prompt as Administrator, locate the [project directory](#projectFolder), and run the following command.
+```
 $ npm install
 ```
 ![](https://main.qcloudimg.com/raw/5aba25ba2d5eddb5d956406ca5b6b9ac.png)
-
-
-3. After the npm dependent libraries are all installed, run the following command in the command line window to run the demo.
-    ```shell
-    $ npm run start  # During the first run, the UI will appear in the window after a while
-    ```
-    
-    ![](https://main.qcloudimg.com/raw/47f6e01acb2d927f6d9e24a7c9f78af1.png)
+3. After the npm dependencies are installed, run the following command in Command Prompt to run the demo.
+```shell
+$ npm run start  # On first run, it may take a while for the UI to appear.
+```
+![](https://main.qcloudimg.com/raw/47f6e01acb2d927f6d9e24a7c9f78af1.png)
 
 #### macOS
-
-1. Open the Terminal or command line window and run the following command to install Homebrew. Skip this step if you have already installed it.
+1. Open a terminal window or Command Prompt and run the following command to install Homebrew. If you have already installed it, skip this step.
 ```shell
 $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
@@ -101,51 +94,52 @@ $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/maste
 ```shell
 $ brew install node
 ```
-3. If installing Node.js with the default address of Homebrew is slow, you can consider using a mirror address.
+3. If it is too slow for you to install Node.js via Homebrew, consider using a mirror address in your country or region.
  ```shell
 $ cd `brew --repo`
 $ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
 $ brew update
-```
+ ```
 4. Run the `cd` command to go to the project directory and run the following command.
 ```shell
 $ npm install 
 ```
-    ![](https://main.qcloudimg.com/raw/3f8e92e9c59ff1bdb9fd0b2a0f34852a.png)
-    
-5. After the npm dependent libraries are all installed, run the following command in the command line window to run the demo.
-
-    ```shell
-    $ npm run start # During the first run, the UI will appear in the window after a while
-    ```
-    
-	![](https://main.qcloudimg.com/raw/423dae368118e5250e7fa878022bb26f.png)
+![](https://main.qcloudimg.com/raw/8bcc95adad07ff37e7f0a27893b8b7cf.png)
+5. After the npm dependencies are installed, run the following command in Command Prompt to run the demo.
+```shell
+$ npm run start  # On first run, it may take a while for the UI to appear.
+```
+![](https://main.qcloudimg.com/raw/423dae368118e5250e7fa878022bb26f.png)
     
 ### Main project commands
 
 | Command | Description |
 |--|--|
-| npm run start | Runs the demo in the development environment |
-| npm run pack:mac | Packages as a .dmg installation file for macOS |
-| npm run pack:win64 | Packages as an .exe installation file for Windows 64-bit |
+| npm run start | Runs the demo in development environment. |
+| npm run pack:mac | Packages the project into a DMG installer for macOS |
+| npm run pack:win64 | Packages the project into a 64-bit EXE installer for Windows |
 
 ## FAQs
 
-### 1. Only public and private key information can be obtained when I try to view the encryption key. How do I get the encryption key?
+### 1. Only public and private keys can be obtained when I try to view the key. How do I get a key?
 
-Starting from TRTC SDK 6.6 (August 2019), the new signature algorithm HMAC-SHA256 is used. For applications created before then, you need to upgrade the signature algorithm before your can get a new encryption key. If you don't upgrade it, you can continue to use the [legacy algorithm ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/647/35166).
+TRTC SDK 6.6 (August 2019) and later versions use the new signature algorithm HMAC-SHA256. If your application was created before August 2019, you need to upgrade the signature algorithm to get a new key. Without upgrading, you can continue to use the [old algorithm ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/647/35166).
 
-**Upgrade operation:**
-1. Log in to the [TRTC Console](https://console.cloud.tencent.com/trtc).
-2. Select **Application Management** on the left sidebar and click **Application Info** on the row of the target application.
+**Upgrade:**
+1. Log in to the [TRTC console](https://console.cloud.tencent.com/trtc).
+2. Click **Application Management** in the left navigation pane, find your application, and click **Application Info**.
 3. Select the **Quick Start** tab and click **Upgrade** in **Step 2: obtain the secret key to issue UserSig**.
 
 ### 2. The demo is running on two devices, but why can't they display the images of each other?
 
-Please make sure that the two devices use different `UserID` values when running the demo, as TRTC does not support using the same `UserID` on two devices simultaneously, unless different `SDKAppID` values are used.
+Make sure that the two devices use different `UserIDs`. With TRTC, you cannot use the same `UserID` on two devices simultaneously unless the `SDKAppIDs` are different.
 
-### 3. What are the restrictions of the firewall?
+### 3. What firewall restrictions does the SDK face?
 
-As the SDK uses the UDP protocol for audio/video transmission, it cannot be used in office networks that block UDP. If you encounter such a problem, please see [How to Deal with Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35164) for assistance.
+The SDK uses the UDP protocol for audio/video transmission and therefore cannot be used in office networks that block UDP. If you encounter such a problem, see [How to Deal with Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35164).
 
 
+
+```
+
+```

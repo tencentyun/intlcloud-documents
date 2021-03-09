@@ -27,7 +27,7 @@ Windows, Linux, macOS 시스템을 지원합니다.
 
 ## 다운로드 및 설치
 
-다음 세 가지 방법으로 COSCMD을 설치할 수 있습니다.
+다음 세 가지 방법으로 COSCMD를 설치할 수 있습니다.
 
 #### 1.1 pip를 통한 설치 
 
@@ -47,7 +47,7 @@ pip install coscmd
 pip install coscmd -U
 ```
 
-> ! pip 버전이 10.0.0 이상인 경우, 종속 라이브러리를 업데이트하거나 설치 시 오류가 발생할 수 있습니다. pip 버전 9.x(pip install pip==9.0.0) 사용을 권장하며, 최신 Python 버전(예: 3.9.0)을 설치한 경우 이미 pip이 통합되어 있으므로 다시 설치할 필요 없습니다.
+> ! pip 버전이 10.0.0 이상인 경우, 종속 라이브러리를 업데이트하거나 설치 시 오류가 발생할 수 있습니다. pip 버전 9.x(pip install pip==9.0.0) 사용을 권장하며, 최신 Python 버전(예: 3.9.0)을 설치한 경우 이미 pip가 통합되어 있으므로 다시 설치할 필요 없습니다.
 
 #### 2. 소스 코드 설치(권장하지 않음)
 
@@ -59,19 +59,19 @@ cd coscmd
 python setup.py install
 ```
 
-> !Python 버전이 2.6인 경우 pip로 종속 라이브러리를 설치하면 쉽게 실패할 수 있으므로 이 방법을 사용해 설치하기를 권장합니다. 
+> !Python 버전이 2.6인 경우 pip로 종속 라이브러리를 설치하면 쉽게 실패할 수 있으므로 본 방법을 사용해 설치하기를 권장합니다. 
 
 #### 3. 오프라인 설치
 
 > ! 두 기기의 Python 버전은 동일해야 하며, 동일하지 않을 경우 설치에 실패합니다.
 
 ```sh
-# 외부 네트워크가 연결된 기기에서 다음 명령어를 실행합니다.
+# 공인 네트워크가 연결된 기기에서 다음 명령어를 실행합니다.
 mkdir coscmd-packages
 pip download coscmd -d coscmd-packages
 tar -czvf coscmd-packages.tar.gz coscmd-packages
 
-# 설치 패키지를 외부 네트워크가 연결되어 있지 않은 기기에 복사한 후 다음 명령어를 실행합니다.
+# 설치 패키지를 공인 네트워크가 연결되어 있지 않은 기기에 복사한 후 다음 명령어를 실행합니다.
 tar -xzvf coscmd-packages.tar.gz
 pip install coscmd --no-index -f coscmd-packages
 ```
@@ -139,7 +139,7 @@ optional arguments:
   -v, --version         show program's version number and exit
 ```
 
-이 외에도, 사용자는 모든 명령어 뒤에(매개변수 입력하지 않음) `-h`를 입력하여 해당 명령어의 구체적인 사용 방법을 확인할 수 있습니다. 예시:
+이외에도 사용자는 모든 명령어 뒤에(매개변수 입력하지 않음) `-h`를 입력하여 해당 명령어의 구체적인 사용 방법을 확인할 수 있습니다. 예시:
 
 ```plaintext
 coscmd upload -h  //upload 명령어 사용 방법 조회
@@ -169,15 +169,15 @@ coscmd config [OPTION]...<FILE>...
 
 | 옵션 항목             | 매개변수 설명                                                     | 유효값 | 필수 여부 |
 | ---------------- | ------------------------------------------------------------ | ------ | -------- |
-| -a               | 키 ID는 [API 키 콘솔](https://console.cloud.tencent.com/cam/capi)에서 획득하십시오. | 문자열 | 예       |
-| -s               | 키 Key는 [API 키 콘솔](https://console.cloud.tencent.com/cam/capi)에서 획득하십시오. | 문자열 | 예       |
+| -a               | 키 ID는 [API Keys 콘솔](https://console.cloud.tencent.com/cam/capi)에서 획득하십시오. | 문자열 | 예       |
+| -s               | 키 Key는 [API Keys 콘솔](https://console.cloud.tencent.com/cam/capi)에서 획득하십시오. | 문자열 | 예       |
 | -t               | 임시 키 토큰 token으로, 임시 키 사용 시 설정해야 하며 x-cos-security-token 헤더를 설정해야 합니다. | 문자열 | 아니오       |
-| -b               | 지정한 버킷 이름이며, 버킷 이름은 BucketName-APPID 형식으로 생성됩니다. [이름 생성 규범](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. 처음 설정 사용 시 COS 콘솔에서 버킷을 생성해야 하며 툴 설정에 사용합니다. | 문자열 | 예       |
+| -b               | 지정한 버킷 이름이며, 버킷 이름은 BucketName-APPID 형식으로 생성됩니다. [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. 처음 설정 사용 시 COS 콘솔에서 버킷을 생성해야 하며 툴 설정에 사용합니다. | 문자열 | 예       |
 | -r               | 버킷이 위치한 리전이며 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참조하십시오.  | 문자열 | 예       |
 | -e               | 요청한 ENDPOINT를 설정합니다. ENDPOINT 매개변수를 설정하면 REGION 매개변수는 유효하지 않습니다. 기본 도메인을 사용한 경우 `cos.<region>.myqcloud.com`으로 설정하고, 글로벌 가속 도메인을 사용한 경우 `cos.accelerate.myqcloud.com`으로 설정합니다. | 문자열 | 아니오       |
-| -m               | 멀티 스레드 작업의 최대 스레드 수(기본값: 5, 설정 가능 범위: 1  - 30)입니다.             | 숫자   | 아니오       |
-| -p               | 멀티파트 작업의 단일 블록 크기(단위: MB, 기본값: 1MB, 설정 가능 범위: 1  - 1000)입니다.             | 숫자   | 아니오       |
-| --do-not-use-ssl | HTTP 프로토콜을 사용사용하고 HTTPS는 사용하지 않습니다.                              | 문자열 | 아니오       |
+| -m               | 멀티 스레드 작업의 최대 스레드 수(기본값: 5, 설정 가능 범위: 1 - 30)입니다.             | 숫자   | 아니오       |
+| -p               | 멀티파트 작업의 단일 파트 크기(단위: MB, 기본값: 1MB, 설정 가능 범위: 1 - 1000)입니다.             | 숫자   | 아니오       |
+| --do-not-use-ssl | HTTP 프로토콜을 사용하고 HTTPS는 사용하지 않습니다.                              | 문자열 | 아니오       |
 | --anonymous      | 익명 작업(서명 없음)                                       | 문자열 | 아니오       |
 
 ### 빠른 설정
@@ -303,8 +303,9 @@ coscmd upload -rs D:/doc / --ignore *.txt,*.doc
 
 > !
 > - "<>"의 매개변수를 업로드할 로컬 파일 경로(localpath) 및 COS 저장 경로(cospath)로 대체합니다.
-> - COSCMD는 대용량 파일에 대한 중단된 시점부터 이어 업로드하는 기능을 지원합니다. 대용량 파일 멀티파트 업로드에 실패한 경우 해당 파일 재 업로드 시 업로드에 실패한 블록만 업로드하며 처음부터 시작하지 않습니다(재 업로드하는 파일의 디렉터리 및 내용, 업로드하는 디렉터리가 동일해야 함).
-> - COSCMD 멀티파트 업로드 시 모든 블록에 MD5 인증을 실행합니다.
+> - 10MB 이상의 파일을 업로드할 경우 COSCMD는 멀티파트 업로드를 사용하며, 명령어 사용법은 간편 업로드와 동일하게 `coscmd upload <localpath> <cospath>`를 사용합니다.
+> - COSCMD는 대용량 파일에 대한 중단된 시점부터 이어서 업로드하는 기능을 지원합니다. 대용량 파일 멀티파트 업로드에 실패한 경우 해당 파일 재 업로드 시 업로드에 실패한 파트만 업로드하며 처음부터 시작하지 않습니다(다시 업로드하는 파일의 디렉터리 및 내용, 업로드하는 디렉터리가 동일해야 함).
+> - COSCMD 멀티파트 업로드 시 모든 파트에 MD5 인증을 실행합니다.
 > - COSCMD 업로드는 기본적으로 `x-cos-meta-md5` 헤더가 수반되며 값은 해당 파일의 md5 값입니다.
 > - -s 매개변수를 사용하여 동기화 업로드를 진행할 수 있으며, md5가 동일한 파일(COS 상의 원본 파일은 반드시 1.8.3.2 버전 이상의 COSCMD가 업로드해야 하며, 기본적으로 x-cos-meta-md5의 header가 존재)은 건너뜁니다.
 > - -H 매개변수를 사용하여 HTTP header 설정 시, JSON 형식을 유지해야 합니다. 예시: `coscmd upload -H "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`. 헤더에 대한 자세한 내용은 [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) 문서를 참조하십시오.
@@ -330,10 +331,10 @@ coscmd list -v
 ```
 
 >?
-> - "<>" 매개변수를 파일 리스트를 쿼리할 COS 파일 경로(cospath)로 대체합니다. `<cospath>`를 입력하지 않을 경우 기본적으로 현재 버킷의 루트 디렉터리를 쿼리합니다.
+> - "<>" 매개변수를 파일 리스트를 쿼리할 COS 파일 경로(cospath)로 대체합니다. `<cospath>`를 입력하지 않을 경우 현재 버킷의 루트 디렉터리를 쿼리합니다.
 >- `-a`를 사용하여 모든 파일을 쿼리합니다.
 >- `-r` 재귀 쿼리를 사용하여 마지막에 파일의 수량 및 크기의 합을 반환합니다.
->- `-n num`를 사용하여 쿼리 수의 최대값을 설정합니다.
+>- `-n num`을 사용하여 쿼리 수의 최대값을 설정합니다.
 
 
 ### 파일 정보 조회
@@ -389,7 +390,7 @@ coscmd download -rs / D:/examplefolder --ignore *.txt,*.doc
 > !
 >?"<>"의 매개변수를 다운로드할 COS 파일 경로(cospath)와 로컬 저장 경로(localpath)로 대체합니다.
 > - 이전 버전의 mget 인터페이스는 이미 폐기되었으며, download 인터페이스가 멀티파트 다운로드를 이용합니다. download 인터페이스를 사용하십시오.
-> - 로컬에 동일한 이름의 파일이 존재하는 경우 다운로드에 실패합니다. `-f` 매개변수를 사용하여 로컬 파일을 덮어쓰기 하십시오.
+> - 로컬에 동일한 이름의 파일이 존재하는 경우 다운로드에 실패합니다. `-f` 매개변수를 사용하여 로컬 파일을 덮어쓰십시오.
 > - `-s` 또는 `--sync` 매개변수를 사용하여 폴더 다운로드 시 로컬에 존재하는 동일한 파일(다운로드하는 파일이 COSCMD의 upload 인터페이스를 사용해 업로드하여 파일이 `x-cos-meta-md5` 헤더를 가지고 있어야 함)을 건너뜁니다.
 > - 폴더 다운로드 시 `--ignore` 매개변수를 사용하면 특정 유형의 파일을 생략할 수 있으며, shell 와일드카드 규칙을 지원합니다. 여러 개의 규칙을 지원하며, 쉼표 `,`로 구분합니다. 특정 유형의 확장명을 생략하는 경우 마지막에 `,`를 입력하거나 큰따옴표 `""`를 사용해야 합니다.
 
@@ -473,13 +474,13 @@ coscmd abort
 #명령어 형식
 coscmd copy <sourcepath> <cospath> 
 #작업 예시
-#동일한 버킷 내에서의 복사로, examplebucket-1250000000 버킷에 있는 picture.jpg 파일을 doc 폴더로 복사
+#동일한 버킷 내에서의 복사: examplebucket-1250000000 버킷에 있는 picture.jpg 파일을 doc 폴더로 복사
 coscmd -b examplebucket-1250000000 -r ap-chengdu copy examplebucket-1250000000.ap-chengdu.myqcloud.com/picture.jpg doc/
-#다른 버킷으로 복사로, examplebucket2-1250000000 버킷의 doc/picture.jpg 객체를 examplebucket1-1250000000 버킷의 doc/examplefolder/로 복사
+#다른 버킷으로 복사: examplebucket2-1250000000 버킷의 doc/picture.jpg 객체를 examplebucket1-1250000000 버킷의 doc/examplefolder/로 복사
 coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy examplebucket2-1250000000.ap-beijing.myqcloud.com/doc/picture.jpg doc/examplefolder/
-#스토리지 유형 수정, 파일 유형을 표준IA 스토리지로 수정
+#스토리지 유형 수정: 파일 유형을 표준IA 스토리지로 수정
 coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy examplebucket2-1250000000.ap-beijing.myqcloud.com/doc/picture.jpg doc/examplefolder/ -H "{'x-cos-storage-class':'STANDARD_IA'}"
-#스토리지 유형 수정, 파일 유형을 CAS로 수정하고 photo.jpg로 이름 변경
+#스토리지 유형 수정: 파일 유형을 CAS로 수정하고 photo.jpg로 이름 변경
 coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy examplebucket2-1250000000.ap-beijing.myqcloud.com/doc/picture.jpg doc/examplefolder/photo.jpg -H "{'x-cos-storage-class':'Archive'}"
 ```
 
@@ -509,13 +510,13 @@ coscmd -b examplebucket1-1250000000 -r ap-guangzhou copy -r examplebucket2-12500
 #명령어 형식
 coscmd move <sourcepath> <cospath> 
 #작업 예시
-#동일한 버킷 내에서의 이동으로, examplebucket-1250000000 버킷에 있는 picture.jpg 파일을 doc 폴더로 이동
+#동일한 버킷 내에서의 이동: examplebucket-1250000000 버킷에 있는 picture.jpg 파일을 doc 폴더로 이동
 coscmd -b examplebucket-1250000000 -r ap-chengdu move examplebucket-1250000000.ap-chengdu.myqcloud.com/picture.jpg doc/
-#다른 버킷으로의 이동으로, examplebucket2-1250000000 버킷의 picture.jpg 객체를 examplebucket1-1250000000 버킷의 doc/folder/로 이동
+#다른 버킷으로의 이동: examplebucket2-1250000000 버킷의 picture.jpg 객체를 examplebucket1-1250000000 버킷의 doc/folder/로 이동
 coscmd -b examplebucket1-1250000000 -r ap-guangzhou move examplebucket2-1250000000.ap-beijing.myqcloud.com/picture.jpg doc/folder/
-#스토리지 유형 수정, 파일 유형을 표준IA 스토리지로 수정
+#스토리지 유형 수정: 파일 유형을 표준IA 스토리지로 수정
 coscmd -b examplebucket1-1250000000 -r ap-guangzhou move examplebucket2-1250000000.ap-beijing.myqcloud.com/picture.jpg doc/folder/ -H "{'x-cos-storage-class':'STANDARD_IA'}"
-#스토리지 유형 수정, 파일 유형을 CAS로 수정
+#스토리지 유형 수정: 파일 유형을 CAS로 수정
 coscmd -b examplebucket1-1250000000 -r ap-guangzhou move examplebucket2-1250000000.ap-beijing.myqcloud.com/data/exampleobject data/examplefolder/exampleobject -H "{'x-cos-storage-class':'Archive'}"
 ```
 

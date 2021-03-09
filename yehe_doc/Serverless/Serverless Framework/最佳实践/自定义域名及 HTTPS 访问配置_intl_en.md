@@ -19,7 +19,6 @@ In `serverless.yml`, add CDN custom domain name configuration:
 
 component: website
 name: myWebsite
-org: test
 app: websiteApp
 stage: dev
 

@@ -1,10 +1,10 @@
 If you want to set an image as the background displayed during on-cloud stream mixing, you can add the image in **Material Management**.
 
-<span id="add"></span>
+<span id="add" ></span>
 ## Adding Images
 1. Log in to the **TRTC console**, click **[Application Management](https://console.cloud.tencent.com/trtc/app)**, and find the application you want to mange.
 2. Click **Application Info** to go to the details page, and select **Material Management**.
-3. Click **+** and set the following parameters.
+3. Click **Add image** and set the following parameters.
 <table id="inform">
 <tr><th width="17%">Item</th><th  width="31%">Configuration</th><th>Note</th></tr>
 <tr>
@@ -32,7 +32,7 @@ If you want to set an image as the background displayed during on-cloud stream m
 
 <span id="preview"></span>
 ## Preview
-1. After [adding images](#add), select an image in the list and click **Preview**.
+1. After [adding images][#add], select an image in the list and click **Preview** on the right.
 2. In the window that pops up, view the effect with the image set as the background.
 
 
@@ -41,23 +41,25 @@ If you want to set an image as the background displayed during on-cloud stream m
 ## Modifying Images
 1. In **[Application Management](https://console.cloud.tencent.com/trtc/app)**, select the image you want to manage.
 2. Click **Application Info** to go to the details page, and select **Material Management**.
-3. Find the image you want to modify in the list on the left, and click **Edit**.
-4. In the edit page, modify the [configuration](#inform), and click **Save**.
+3. Find the image you want to modify from the list on the left, and click **Edit**, which can be found in the list as well as in the **Image Info** box.
+4. In the *Edit image* page, modify the [configuration](#inform), and click **Save**.
 
 
-<span id="delete"></span>
+<span id="delete"></span>
 ## Deleting Images
 1. In **[Application Management](https://console.cloud.tencent.com/trtc/app)**, select the image you want to manage.
 2. Click **Application Info** to go to the details page, and select **Material Management**.
-3. In the list on the left, find the image you want to delete, and click the delete button![](https://main.qcloudimg.com/raw/12a12e329a1828de1c9a104b0accd539.png).
+3. Find the image you want to delete from the list on the left, and click **Edit**, which can be found in the list as well as in the **Image Info** box.
 4. A dialog box pops up asking you to confirm the deletion.
 5. Click **Confirm** to delete the image.
 
 
 ## Documentation
+- To create an application, see [Creating Application](https://intl.cloud.tencent.com/document/product/647/39077).
 - To search an application in the application list, see [Searching Application](https://intl.cloud.tencent.com/document/product/647/39078).
-- To configure the functions of an application or view configuration information, see Function Configuration.
-- To get the demo source code for a quick start, see [Quick Start](https://intl.cloud.tencent.com/zh/document/product/647/39082).
+- To view the basic information of an application, see [Application Info](https://intl.cloud.tencent.com/document/product/647/39079).
+- To configure the functions of an application or view configuration information, see [Function Configuration](https://intl.cloud.tencent.com/document/product/647/39080).
+- To get the demo source code for a quick start, see [Quick Start](https://intl.cloud.tencent.com/document/product/647/39082).
 
 
 

@@ -1,7 +1,7 @@
 <span id="que1"></span>
-### How do I add a domain name to LVB?
+### How do I add a domain name to CSS?
 
-1. Log in to the [LVB Console](https://console.cloud.tencent.com/live) and enter **Domain Management**.
+1. Log in to the [CSS Console](https://console.cloud.tencent.com/live) and enter **Domain Management**.
 2. Add your own push or playback domain name. For more information, please see [Adding Domain Name](https://intl.cloud.tencent.com/document/product/267/35970).
 3. Configure CNAME. For more information, please see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/267/31057).
 4. After successful configuration, you can push and play back with your own domain name.
@@ -16,15 +16,15 @@ After you configure CNAME as instructed in [CNAME Configuration](https://intl.cl
 
 <span id="que3"></span>
 ### What if I don't add my own domain name?
-If you activated the LVB service after October 17, 2018, you are required to add your own domain name for playback; otherwise, you cannot play back the live streaming content.
+If you activated the CSS service after October 17, 2018, you are required to add your own domain name for playback; otherwise, you cannot play back the live streaming content.
 
-If you activated the service before then, LVB provided a default domain name for you, but we recommend that you replace it with your own domain name. Tencent Cloud has started phasing out the default domain names since December 31, 2018.
+If you activated the service before then, CSS provided a default domain name for you, but we recommend that you replace it with your own domain name. Tencent Cloud has started phasing out the default domain names since December 31, 2018.
 
-> Default domain names are system domain names assigned by LVB in the format of `bizid.livepush.myqcloud.com` and `bizid.liveplay.myqcloud.com`.
+> Default domain names are system domain names assigned by CSS in the format of `bizid.livepush.myqcloud.com` and `bizid.liveplay.myqcloud.com`.
 
 <span id="que4"></span>
 ### I have configured special items for the default domain name. Can my own domain name be resolved to the default one?
-To use a new domain name, connect it to LVB from scratch. We recommend that you add and configure your own domain name in the LVB Console.
+To use a new domain name, connect it to CSS from scratch. We recommend that you add and configure your own domain name in the CSS Console.
 
 
 
