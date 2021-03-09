@@ -10,7 +10,7 @@
 <li>Each room can accommodate up to 300 concurrent users, and up to 30 of them can enable their cameras at the same time.</li>
 </ul></td>
 <td>One-to-one video calls, video conferences with up to 300 attendees, online medical consultation, video chat, video customer service, video interviews, audiovisual recording, online insurance claim settlement, and video Werewolf</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44246">Billing of video calls</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">Billing of video calls</a></td>
 </tr>
 <tr>
 <td>Audio call</td>
@@ -19,7 +19,7 @@
 <li>Each room can accommodate up to 300 concurrent users, and up to 30 of them can enable their mics at the same time.</li>
 </ul></td>
 <td>One-to-one or group audio calls, voice chat, audio conferences, audio customer service, and audio Werewolf</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44226">Billing of audio calls</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">Billing of audio calls</a></td>
 </tr><tr>
 <td>Interactive video live streaming</td>
 <td><ul style="margin:0">
@@ -29,7 +29,7 @@
 <li>No upper limit on the number of viewers in the CDN relayed live streaming mode</li>
 </ul></td>
 <td>Low-latency video live streaming, interactive classrooms with up to 100,000 participants, live video competitions, video dating, remote training, large-scale conferences, etc.</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44247">Billing of interactive video live streaming</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">Billing of interactive video live streaming</a></td>
 </tr><tr>
 <td>Interactive audio live streaming</td>
 <td><ul style="margin:0">
@@ -39,7 +39,7 @@
 <li>No upper limit on the number of viewers in the CDN relayed live streaming mode</li>
 </ul></td>
 <td>Low-latency audio live streaming, live audio co-anchoring, live audio competitions, voice chat rooms, audio dating, karaoke rooms, FM radio, etc.</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44248">Billing of interactive audio live streaming</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">Billing of interactive audio live streaming</a></td>
 </tr></table>
 
 
@@ -77,4 +77,4 @@
 | CDN live streaming | TRTC uses relaying and transcoding clusters to convert its UDP audio/video streams into RTMP streams in the cloud, which are then pushed to the standard live streaming system and distributed through CDNs to viewers. | Interactive live streaming, live sharing, large-scale conferencing, live stream watching by remote viewers, etc. | Relayed live streaming is a value-added service and is charged by **[CSS](https://intl.cloud.tencent.com/document/product/267)**. For more information, please see [CDN Relayed Live Streaming > Applicable Fees](https://intl.cloud.tencent.com/document/product/647/35242). |
 | Instant messaging (IM) | <li>TRTC leverages the capabilities of IM, including one-to-one chat, group chat, and chat rooms with no upper limit on user number, to enable features such as chatting, commenting, and sending on-screen comments, gifts, and likes.</li><li>IM can also be used for signaling-based interaction, call making, and user number counting.</li> | Online customer service, interactive live streaming, interactive classrooms, remote training, etc. | IM is a value-added service and is charged by **[IM](https://intl.cloud.tencent.com/document/product/1047)**. For more information, please see [IM > Purchase Guide > Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).|
 |Speech content moderation|Detecting pornographic, politically sensitive content, etc. for content-related risk management |Business security protection, compliance, etc.|Speech content moderation is a value-added service and is charged by **Business Security Protection (BSP)**. To try it out, [contact us](https://intl.cloud.tencent.com/support) to activate the service.|
-| Video content moderation| Detecting pornographic, politically sensitive content, etc. for content-related risk management| Business security protection, compliance, etc.| Video content moderation is a value-added service and is charged by [CSS](https://intl.cloud.tencent.com/document/product/267). For more information, please see [Intelligent Porn Detection](https://intl.cloud.tencent.com/document/product/267/3960). |
+| Video content moderation| Detecting pornographic, politically sensitive content, etc. for content-related risk management| Business security protection, compliance, etc.| Video content moderation is a value-added service and is charged by [CSS](https://intl.cloud.tencent.com/document/product/267). For more information, please see [Intelligent Porn Detection](https://intl.cloud.tencent.com/document/product/267/39607). |
