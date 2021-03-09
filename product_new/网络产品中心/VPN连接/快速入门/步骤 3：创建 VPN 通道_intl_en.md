@@ -1,5 +1,5 @@
 Before creating a VPN tunnel, you need to create a customer gateway.
-1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/) and choose **Products** > **Virtual Private Cloud** to access the VPC console.
+1. Log in to [VPC Console](https://console.cloud.tencent.com/vpc/vpc?rid=1).
 2. In the left sidebar, choose **VPN Connection** > **VPN Tunnel** to go to the management page.
 3. Select the region (such as Guangzhou) and VPC (such as TomVPC), and click **+New**.
 4. Enter a name for the tunnel (for example, TomVPNConn), select the VPN gateway `TomVPNGw` and the customer gateway `TomVPNUserGw`, enter the pre-shared key (for example, `123456`), and click **Next**.
