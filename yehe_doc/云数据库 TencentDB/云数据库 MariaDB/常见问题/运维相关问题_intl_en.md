@@ -1,5 +1,3 @@
-### What should I do if some parameters I want to modify don't exist or cannot be modified in parameter settings?
-The TencentDB Console supports most common database parameters and sets security thresholds for them. If a parameter to be modified does not exist or cannot be modified to a specific value, please submit a ticket for assistance and we will process it as soon as possible.
 
 ### I have purchased a CVM instance in East China (Shanghai Zone 2) and a TencentDB for MariaDB instance in Shanghai, and both of them are in the basic network. Why is the TencentDB for MariaDB instance unpingable on the CVM instance?
 TencentDB disables the ping operation by default.
@@ -12,7 +10,7 @@ Please use the latest version for connection.
 It is a normal master/slave sync thread, which is resident.
 
 ### What can I do if an error occurs when I use the multi-thread download tool Axel to download TencentDB for MariaDB backup or log files?
-Due to operation strategies, multi-thread download is not supported. You can use the `wget --content-disposition` command for download.
+Multi-thread download is not supported. You can use the `wget --content-disposition` command for download.
 
 ### Why does the master/slave delay of TencentDB for MariaDB suddenly increase even to several minutes?
 The [TencentDB Console](https://console.cloud.tencent.com/tdsql) supports most common database parameters and sets security thresholds for them. If a parameter to be modified does not exist or cannot be modified to a specific value, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
