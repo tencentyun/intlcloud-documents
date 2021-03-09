@@ -153,7 +153,7 @@ Tencent VOD traffic is billed on a daily basis with a tiered pricing model. The 
 | Traffic Tier (USD/GB) | Chinese Mainland |Asia Pacific region 1|Asia Pacific region 2|Asia Pacific region 3|Middle East|Europe|North America|South America|Africa|
 | ----------  |----------------|----------------|----------------|----------------|----------------|----------------|----------------|----------------|----------------|
 |  0 GB - 500 GB (inclusive)   | 0.039             |0.113|0.125|0.125|0.163|0.071|0.071|0.169|0.169|
-| 500 GB - 2 TB (inclusive)   | 0.038             |0.038|0.105|0.105|0.159|0.064|0.064|0.161|0.161|
+| 500 GB - 2 TB (inclusive)   | 0.038             |0.105|0.105|0.105|0.159|0.064|0.064|0.161|0.161|
 | 2 TB - 50 TB (inclusive)   | 0.036            |0.097|0.099|0.099|0.154|0.051|0.051|0.156|0.156|
 | 50 TB - 100 TB (inclusive)     | 0.033             |0.084|0.092|0.092|0.145|0.033|0.033|0.15|0.15|
 | 100TB         | 0.025             |0.071|0.085|0.085|0.135|0.026|0.026|0.14|0.14|
