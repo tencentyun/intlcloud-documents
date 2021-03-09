@@ -3,35 +3,22 @@ The data sync feature supports real-time data sync between two database sources.
 
 **Supported instance types**
 <table>
-<thead>
-<tr>
-<th>Source Instance Type</th>
-<th>Target Instance Type</th>
-</tr>
-</thead>
+<thead><tr><th>Source Instance Type</th><th>Target Instance Type</th></tr></thead>
 <tbody><tr>
-<td rowspan= "4">**Public cloud** TencentDB for MariaDB/MySQL</td>
-<td>**Public cloud** TencentDB for MariaDB/MySQL</td>
-</tr>
+<td rowspan= "4">**Public cloud** TencentDB for MariaDB/MySQL</td><td>**Public cloud** TencentDB for MariaDB/MySQL</td></tr>
 <tr>
-<td>**Public cloud** TencentDB for PostgreSQL</td>
-</tr>
+<td>**Public cloud** TencentDB for PostgreSQL</td></tr>
 <tr>
-<td>**Public cloud** CKafka</td>
-</tr>
+<td>**Public cloud** CKafka</td></tr>
 <tr>
-<td>**Private cloud** TencentDB for MariaDB/MySQL</td>
-</tr>
+<td>**Private cloud** TencentDB for MariaDB/MySQL</td></tr>
 <tr>
 <td rowspan= "3">**Public cloud** TDSQL</td>
-<td>**Public cloud** TDSQL</td>
-</tr>
+<td>**Public cloud** TDSQL</td></tr>
 <tr>
-<td>**Public cloud** CKafka</td>
-</tr>
+<td>**Public cloud** CKafka</td></tr>
 <tr>
-<td>**Private cloud** TDSQL</td>
-</tr>
+<td>**Private cloud** TDSQL</td></tr>
 </tbody></table>
 
 **Supported sync topologies**
@@ -80,7 +67,7 @@ MariaDB/MySQL and PostgreSQL have different data types. The database sync tool w
 | decimal/numeric                        | decimal/numeric              |
 | enum                                   | integer                      |
 
->The data length of columns in the types listed above stays unchanged during conversion. Types that are not listed above stay unchanged too during conversion.
+>?The data length of columns in the types listed above stays unchanged during conversion. Types that are not listed above stay unchanged too during conversion.
 
 #### Sync from MariaDB/MySQL to TDSQL
 MariaDB/MySQL and TDSQL have the same data types; therefore, data type conversion is not needed.
@@ -115,4 +102,4 @@ The following settings are for your reference only. Select appropriate values ba
 
 - **Data consistency**
 Due to network disconnection or other reasons, messages produced by a database instance to CKafka may be duplicate. In this case, when the consumer replays data, idempotency can be used to clear duplicates.
->In the idempotency scheme, eventual data consistency will be ensured in case messages are executed repeatedly. Specifically, when there are records with primary key conflict, the system will first delete the duplicate data before performing the `insert` operation, forcibly insert the data that cannot be matched by the `update` operation, and directly skip the data that cannot be found during the `delete` operation. Idempotency can be used to achieve data consumption consistency. To use this scheme, there must be a primary key or a non-NULL unique index in the table.
+>?In the idempotency scheme, eventual data consistency will be ensured in case messages are executed repeatedly. Specifically, when there are records with primary key conflict, the system will first delete the duplicate data before performing the `insert` operation, forcibly insert the data that cannot be matched by the `update` operation, and directly skip the data that cannot be found during the `delete` operation. Idempotency can be used to achieve data consumption consistency. To use this scheme, there must be a primary key or a non-NULL unique index in the table.
