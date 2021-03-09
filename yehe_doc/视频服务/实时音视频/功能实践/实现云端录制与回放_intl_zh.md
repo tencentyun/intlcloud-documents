@@ -132,6 +132,8 @@ TRTC 提供了三种云端录制的控制方案，分别是 [全局自动录制]
 | 云端混流 | 调用 SDK API  [setMixTranscodingConfig()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 启动云端混流 | 发起混流的主播退房后，混流会自动停止，或中途调用 [setMixTranscodingConfig()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 并将参数设置为 `null/nil` 手动停止 |
 | 旁路直播 | 进房时指定参数 `TRTCParams` 中的 `streamId` 字段             | 主播退房时自动停止                                           |
 
+![](https://main.qcloudimg.com/raw/7daf8430ca74adeec019c10fc384a48e.gif)
+
 - **控制台中的设定**
   要使用该种录制方案，请在控制台中 [选择录制形式](#recordType) 时，设定为“指定用户录制”。
 
@@ -176,6 +178,7 @@ TRTC 的服务端提供了一对 REST API（ [StartMCUMixTranscode](https://intl
 | 旁路直播 | 调用  [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) 时指定 `OutputParams.StreamId` 参数可启动到 CDN 的旁路直播 | 自动停止，或中途调用 [StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760) 停止 |
 
 >? 由于这对 REST API 控制的是 TRTC 云服务中的核心混流模块 MCU，并将 MCU 混流后的结果输送给录制系统和直播 CDN，因此 API 的名字被称为 `Start/StopMCUMixTranscode`。因此，从功能角度上来说，`Start/StopMCUMixTranscode` 不仅仅可以实现混流的功能，也可以实现云端录制和旁路直播 CDN 的功能。
+![](https://main.qcloudimg.com/raw/65ef546c0e424af77f7d20f23aa1d363.gif)
 
 - **控制台中的设定**
   要使用该种录制方案，请在控制台中 [选择录制形式](#recordType) 时，设定为“指定用户录制”。
