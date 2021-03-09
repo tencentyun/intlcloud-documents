@@ -45,7 +45,7 @@ VOD also provides **sample code for signature generation** and a signature gener
 | --- | --- | --- | --- | 
 | secretId | Yes | String | `SecretId` in the TencentCloud API key. For more information on how to get it, please see [Guide for Upload from Client - Get TencentCloud API Key](https://intl.cloud.tencent.com/document/product/266/33921#p3). |
 | currentTimeStamp | Yes | Integer | Current Unix timestamp. |
-| expireTime | Yes | Integer | Unix timestamp for signature expiration. <br/>```expireTime = currentTimeStamp + signature validity period```<br/>The maximum value for signature validity period is 7,776,000 (i.e., 90 days). |
+| expireTime | Yes | Integer | Unix timestamp for signature expiration. <br/>`expireTime = currentTimeStamp + signature validity period`<br/>The maximum value for signature validity period is 7,776,000 (i.e., 90 days). |
 | random | Yes | Integer | A parameter used to construct plaintext signature string. Decimal number. The maximum value is `xxxxx` (the maximum value of a 32-bit unsigned binary number). |
 | classId | No | Integer | Video file category. Default value: 0. | 
 |<span id ="p3"></span> procedure | No | String | Subsequent task operation on a video, i.e., after a video file is uploaded, task flow operations will be initiated automatically. This parameter value is a task flow template name. VOD supports [creating task flow templates](https://intl.cloud.tencent.com/document/product/266/14058) and naming the templates. | 
