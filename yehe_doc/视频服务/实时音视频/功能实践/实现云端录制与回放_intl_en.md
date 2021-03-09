@@ -131,6 +131,7 @@ You can enable on-cloud stream mixing, on-cloud recording and relayed live strea
 | On-cloud recording | Specify the `userDefineRecordId` field in `TRTCParams` during room entry.    | The recording stops automatically when the anchor exits the room.                                           |
 | On-cloud stream mixing | Call the SDK API [`setMixTranscodingConfig()`](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) to start on-cloud stream mixing. | The mixing stops automatically when the anchor who starts it exits the room. The anchor can also stop it manually by calling [`setMixTranscodingConfig()`](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) and setting the parameter to `null/nil`. |
 | Relayed live streaming | Specify the `streamId` field in `TRTCParams` during room entry.             | The relaying stops automatically when the anchor exits the room.                                           |
+
 ![](https://main.qcloudimg.com/raw/7daf8430ca74adeec019c10fc384a48e.gif)
 
 - **Selecting the scheme in the console**
