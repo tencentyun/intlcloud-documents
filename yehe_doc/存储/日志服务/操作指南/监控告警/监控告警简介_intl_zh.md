@@ -13,7 +13,7 @@
 | 告警频率 | 满足触发条件后的告警频率，避免频繁告警通知                   |
 | 通知模版 | 定义通知的类型、对象和渠道，通知渠道支持短信、微信、语音、邮件、Webhook等告警通知方式 |
 
->? 配置流程参考 [配置告警策略](https://intl.cloud.tencent.com/document/product/614/50922)。
+>? 配置流程参考 [配置告警策略](https://intl.cloud.tencent.com/document/product/614/39574)。
 
 ### 原理介绍
 
