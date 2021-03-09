@@ -1,4 +1,4 @@
-1. Log in to the [Tencent Cloud Console](https://console.cloud.tencent.com/) and select **Products** -> **Networking** -> **Virtual Private Cloud** to go to the VPC Console.
+1. Log in to [VPC Console](https://console.cloud.tencent.com/vpc/vpc?rid=1).
 2. In the left sidebar, choose **VPN Connection** -> **VPN Gateway** to go to the management page.
 3. Choose a region (**Guangzhou** in this example), and click **+New**.
 >? If the **+New** button is grayed out, and prompts “No available VPC” when you hover over it, [create a VPC](https://intl.cloud.tencent.com/document/product/215/31805) before creating the VPN gateway. 
