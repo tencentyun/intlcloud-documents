@@ -23,7 +23,7 @@ On the "Image Repository" page, you can view the image repository list of the cu
  - **Associated Instance**: currently selected instance, to which the created image repository belongs.
  - **Namespace**: namespace to which the image repository belongs. If the list is empty, you must [create a namespace](https://intl.cloud.tencent.com/document/product/1051/35487) in the instance.
  **Name**: name of the image repository. The value must be 2 to 200 characters in length and can only contain lowercase letters, numbers, and separators (including periods (.), underscores (_), hyphens (-), and slashes (/). It cannot start or end with a separator or contain several consecutive separators. The name can be a multi-level path, such as `team-01/front/nginx`. You can set the name flexibly based on your business requirements.
- - **Image Source**: "Local Push" and "Auto Build" are supported. For more information on how to create images through the platform.
+ - **Image Source**: "Local Push" and "Auto Build" are supported. 
  - **Summary**: brief description of the image repository. It is a string of up to 100 characters. You can re-edit the summary after the image repository is created.
  - **Description**: detailed description of the image repository. This parameter supports the Markdown syntax. It is a string of up to 1000 characters. You can modify the description after the image repository is created.
 3. Click **OK** to create the image repository.
