@@ -31,17 +31,12 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 1. Decompress the source package downloaded in [step 2](#step2).
 2. Find and open the `GenerateTestUserSig.h` file.
  <table><tr>
-      <th nowrap="nowrap">Platform</th>
-      <th nowrap="nowrap">Relative Path to File</th>
-  </tr>
+<th nowrap="nowrap">Platform</th><th nowrap="nowrap">Relative Path to File</th></tr>
 <tr>
-      <td>iOS</td>
-<td>iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h</td>
-  </tr>
-<tr>
-    <td>Mac</td>
-    <td>Mac/TRTCDemo/TRTC/GenerateTestUserSig.h</td>
-  </tr></table>
+<td>iOS</td><td>iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h</td>
+</tr><tr>
+<td>Mac</td><td>Mac/OCDemo/TRTCDemo/TRTC/GenerateTestUserSig.h</td>
+</tr></table>
 3. Set parameters in the `GenerateTestUserSig.h` file.
   <ul><li>SDKAPPID: it is 0 by default. Please replace it with the real `SDKAppID`.</li>
   <li>SECRETKEY: left empty by default. Set it to the actual secret key.</li></ul> 
