@@ -1,5 +1,5 @@
 ## Scenario
-Tencent Cloud CBS supports the adjustment of storage hardware types when business is in operating state. You can upgrade the type without business interruption to satisfy your business requirements for higher performance. The cloud disk type takes effect immediately after fee payment. For information on fees for adjusting cloud disk types, see [Fees for adjusting cloud disk types](https://intl.cloud.tencent.com/document/product/362/31651).
+Tencent Cloud CBS supports the adjustment of storage hardware types when business is in operating state. You can upgrade the type without business interruption to satisfy your business requirements for higher performance. The cloud disk type takes effect immediately after fee payment.
 Currently, only upgrading is supported for adjusting cloud disk types. Downgrading is not supported. Details are as follows:
 
 - A HDD cloud disk can be adjusted to premium cloud storage or SSD cloud disk.
