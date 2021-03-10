@@ -203,7 +203,7 @@ Browser-based stream pushing and low-latency playback are based on the WebRTC te
 |   Android   |   WeChat embedded browser (TBS core)   |         -          |     Supported     |     Supported     |
 |   Android   |  WeChat embedded browser (XWEB core)   |         -          |     Supported     |    Not supported    |
 
->- Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices do not support TRTC SDK for desktop browsers.
+>! Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices do not support TRTC SDK for desktop browsers.
 
 ## FAQs
 **1. Only public and private keys can be obtained when I try to view the key. How do I get a key?**
