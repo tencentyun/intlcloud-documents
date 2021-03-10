@@ -1,39 +1,39 @@
 
-## Overview
-This document describes the signature authentication methods of TPNS.
+## 概述
+本文主要为您介绍移动推送 TPNS 签名认证方法。
 
-The HMAC-SHA256 algorithm is used to generate signing information according to `SecretKey`. The authentication is performed by verifying the signature, which ensures higher security and is recommended.
+采用 HMAC-SHA256 算法，根据 SecretKey 生产签名信息。通过校验签名进行鉴权，安全性更好，推荐使用。
 
 
-#### Parameter description
+#### 参数说明
 
-| Parameter | Description |
+| 参数 | 说明 |
 | --- | --- |
-| AccessId | Application ID assigned by the TPNS backend, which can be obtained in **Configuration Management** > **Basic Configuration** in the [TPNS console](https://console.cloud.tencent.com/tpns) |
-| SecretKey | `SecretKey` assigned by the TPNS backend, which corresponds to `AccessId` and can be obtained in **Configuration Management** > **Basic Configuration** in the [TPNS console](https://console.cloud.tencent.com/tpns) |
-| Sign | API signature method |
-| TimeStamp |      Request timestamp |
+| AccessId | 移动推送 TPNS 后台分配的应用 ID，请前往 【[移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns)】>【配置管理】>【基础配置】 获取|
+| SecretKey | 移动推送 TPNS 后台分配的 SecretKey，与 AccessId 对应，请前往 【[移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns)】>【配置管理】>【基础配置】 获取|
+| Sign | 接口签名方式 |
+| TimeStamp |      请求时间戳 |
 
 
-## Signature Generation Method
+## 签名生成方式
 
-1. Splice the request timestamp + `AccessId` + request body to get the original string to be signed:
-`String to be signed = ${TimeStamp} + ${AccessId} + ${request body}`
-2. Use `secretKey` as the key to sign the original string to be signed to generate a signature:
-`Sign = Base64(HMAC_SHA256(string to be signed, SecretKey ))`
+1. 通过请求时间戳 + AccessId + 请求 body 进行字符拼接，得到原始的待签名字符串：
+`待签名字符串 = ${TimeStamp} + ${AccessId} + ${请求body}`
+2. 通过 SecretKey 作为密钥，对原始待签名字符串进行签名，生成得到签名：
+`Sign = Base64(HMAC_SHA256(待签名字符串, SecretKey))`
 
-## HTTP Protocol Assembly Method
+## HTTP 协议拼装方式
 
-In addition to the general header protocol, the HTTP protocol header also needs to carry the current request timestamp, `AccessId`, and signature's `Sign` information. The specific parameters are as follows:
+HTTP 协议 header 中 除了通用头部协议外，需要携带当前请求时间戳、 AccessId、 以及签名 Sign 信息，具体参数如下：
 
-| Parameter Key in Header | Description | Required |
+| Header  中参数 Key | 含义 | 是否必须 |
 | --- | --- | --- |
-| Sign | Request signature | Yes |
-| AccessId | Application ID | Yes |
-| TimeStamp | Request timestamp | Yes |
+| Sign | 请求签名 | 是 |
+| AccessId | 应用 ID | 是 |
+| TimeStamp | 请求时间戳 | 是 |
 
-The specific HTTP request packet is as follows:
-```xml
+具体 HTTP 请求报文如下：
+``` xml
 POST /v3/push/app HTTP/1.1
 Host: api.tpns.tencent.com
 Content-Type: application/json
@@ -43,27 +43,27 @@ Sign: Y2QyMDc3NDY4MmJmNzhiZmRiNDNlMTdkMWQ1ZDU2YjNlNWI3ODlhMTY3MGZjMTUyN2VmNTRjNj
 {"audience_type": "account","platform": "android","message": {"title": "test title","content": "test content","android": { "action": {"action_type": 3,"intent": "xgscheme://com.xg.push/notify_detail?param1=xg"}}},"message_type": "notify","account_list": ["5822f0eee44c3625ef0000bb"] }
 ```
 
-## Signature Generation Sample
+## 签名生成示例
 
-1. The generated string to be signed is as follows:
+1. 生成待拼接签名字符串如下：
 ```
-String to be encrypted =15653147891500001048{"audience_type": "account","platform": "android","message": {"title": "test title","content": "test content","android": { "action": {"action_type": 3,"intent": "xgscheme://com.xg.push/notify_detail?param1=xg"}}},"message_type": "notify","account_list": ["5822f0eee44c3625ef0000bb"] }
+待加密字符串=15653147891500001048{"audience_type": "account","platform": "android","message": {"title": "test title","content": "test content","android": { "action": {"action_type": 3,"intent": "xgscheme://com.xg.push/notify_detail?param1=xg"}}},"message_type": "notify","account_list": ["5822f0eee44c3625ef0000bb"] }
 ```
-2. Generate a hexadecimal hash based on the key through the HMAC-SHA256 algorithm, i.e., `secretKey =1452fcebae9f3115ba794fb0fff2fd73` in the sample.
+2. 根据密钥通过 HMAC-SHA256 算法，生成十六进制 hash，其中示例对应 `secretKey =1452fcebae9f3115ba794fb0fff2fd73`。
 ```
-hashcode= hmac-sha256(string to be signed, secretKey)
-Get hashcode="cd20774682bf78bfdb43e17d1d5d56b3e5b789a1670fc1527ef54c65d2d7b76d"
+hashcode= hmac-sha256(待签名字符串， secretKey)
+得到 hashcode="cd20774682bf78bfdb43e17d1d5d56b3e5b789a1670fc1527ef54c65d2d7b76d"
 ```
-3. Base64-encode the hashcode to get the following signature string:
+3. 对 hashcode 进行 base64 编码，得到签名串如下：
 ```
-Get Sign=Base64(hashcode)
+得到 Sign=Base64(hashcode)
 Sign="Y2QyMDc3NDY4MmJmNzhiZmRiNDNlMTdkMWQ1ZDU2YjNlNWI3ODlhMTY3MGZjMTUyN2VmNTRjNjVkMmQ3Yjc2ZA=="
 ```
 
 
 
 
-## Signature Code Samples in Various Languages
+##  各语言签名代码示例
 
 #### Python2
 ``` 
@@ -168,8 +168,7 @@ namespace tpns_server_sdk_cs
         public static string HmacSHA256(string key, string data)
         {
             string hash;
-            ASCIIEncoding encoder = new ASCIIEncoding();
-            Byte[] code = encoder.GetBytes(key);
+			Byte[] code = Encoding.UTF8.GetBytes(key);
             using (HMACSHA256 hmac = new HMACSHA256(code))
             {
                 Byte[] hmBytes = hmac.ComputeHash(encoder.GetBytes(data));
@@ -214,11 +213,12 @@ $timeStamp = "1565314789";
 $requestBody = "{\"audience_type\": \"account\",\"platform\": \"android\",\"message\": {\"title\": \"test title\",\"content\": \"test content\",\"android\": { \"action\": {\"action_type\": 3,\"intent\": \"xgscheme://com.xg.push/notify_detail?param1=xg\"}}},\"message_type\": \"notify\",\"account_list\": [\"5822f0eee44c3625ef0000bb\"] }";
 $hashData = "{$timeStamp}{$accessId}{$requestBody}";
 echo "reqBody: " . $hashData . "\n";
-//Get the SHA256 and hex results
+//获取 sha256 and hex 结果
 $hashRes = hash_hmac("sha256", $hashData, $secretKey, false);
-//Conduct Base64 encoding
+//进行 base64
 $sign = base64_encode($hashRes);
 echo $sign . "\n";
 ?>
 ```
+
 
