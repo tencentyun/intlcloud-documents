@@ -1,7 +1,7 @@
 
 TencentDB for PostgreSQL allows you to create one or more read-only replicas, which is suitable for read/write separation and one-primary-multiple-secondary application scenarios and capable of greatly enhancing the read load capacity of your databases.
 
-Unified read/write separation addresses (i.e., read and write requests are separated automatically) are not supported currently. Read-only replicas need to be accessed with separate IPs and ports, but you can balance the load of read-only replicas by adding them to a read-only replica group (RO group).
+Unified read/write separation addresses (i.e., read and write requests are separated automatically) are not supported currently. You can access read-only replicas with separate IPs and ports, or add them to a read-only replica group (RO group) to balance their loads.
 
 >?For more information on read-only replica fees, please see [Pricing](https://intl.cloud.tencent.com/document/product/409/4993). Currently, read-only replicas do not support monthly subscription.
 
@@ -16,7 +16,7 @@ Read-only replicas adopt PostgreSQL streaming replication, which can sync the ch
 ## Feature Limits
 - The minimum disk capacity for a read-only replica must be greater than or equal to the storage capacity used by the primary instance.
 - Up to six read-only replicas can be created for a primary instance.
-- Backup and rollback are not supported.
+- Backup and rollback features are not supported.
 - Data cannot be migrated to read-only replicas.
 - Databases can be neither created in nor deleted from read-only replicas.
 - Operations including account creation/deletion/authorization and account name/password modification are not supported.
@@ -31,8 +31,6 @@ Read-only replicas adopt PostgreSQL streaming replication, which can sync the ch
 2. Click **Add Read-only Replica** in the **Instance Architecture Diagram** section on the **Instance Details** tab or click **Create** on the **Read-only Replica** tab.
 ![](https://main.qcloudimg.com/raw/a5bb132bfaa35bb3529fa040dc021d9f.png)
 3. On the displayed purchase page, specify the following read-only replica configurations, confirm that everything is correct, and click **Buy Now**.
-
-
  - **Specify RO Group**: create an RO group, specify an existing RO group, or do not specify any RO group for the time being.
     - **Create RO Group**: if multiple read-only replicas are purchased at a time, all of them will be assigned to the newly created RO group. The RO group automatically allocates read weights to each read-only replica, and automatically distributes read requests among the read-only replicas based on their read weights. For more information, please see [Creating RO Groups](https://intl.cloud.tencent.com/document/product/409/39546).
     - **Existing RO Group**: specify an existing RO group. If multiple read-only replicas are purchased at a time, all of them will be assigned to the RO group.

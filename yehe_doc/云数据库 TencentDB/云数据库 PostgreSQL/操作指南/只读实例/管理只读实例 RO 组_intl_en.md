@@ -44,8 +44,8 @@ On the RO group configuration page, you can configure the basic information of t
 <tr><td>480 GB memory</td><td>50</td></tr>
 </table> 
  - **Rebalance Load**:
-    - If load rebalancing is disabled, modifying weight will take effect only for new loads but not affect the read-only replicas accessed by existing persistent connections or cause short disconnection from the database.
-    - If load rebalancing is enabled, a short disconnection lasting for just seconds will occur to disconnect all connections from the database, and the loads of newly added connections will be balanced according to the set weights.
+    - If load rebalancing is disabled, modifying weight will take effect only for new loads, but neither affect the read-only replicas accessed by existing persistent connections nor cause short disconnection from the database.
+    - If load rebalancing is enabled, when the configurations of read-only replicas in the RO group are modified, all connections to the RO group will be disconnected and new connections will be rebalanced according to the weights.
 ![](https://main.qcloudimg.com/raw/45b4aacc78429c2cb47bf3a9c226cd22.png)
 
 ## Deleting an RO Group
