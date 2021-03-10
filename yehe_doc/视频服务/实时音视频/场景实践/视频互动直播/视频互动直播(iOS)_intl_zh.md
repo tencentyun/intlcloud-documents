@@ -1,6 +1,15 @@
 ## 效果展示
 您可以 [下载](https://intl.cloud.tencent.com/document/product/647/35076) 安装我们的 Demo 体验互动直播的能力效果，包括互动连麦、主播 PK、低延时观看、弹幕聊天等 TRTC 在互动直播场景下的相关能力。
 
+<table>
+<tr>
+<td><img width="260" height="561" src="https://demovideo-1252463788.cos.ap-shanghai.myqcloud.com/trtcliveroom/beauty.gif"/></td>
+<td><img width="260" height="561" src="https://demovideo-1252463788.cos.ap-shanghai.myqcloud.com/trtcliveroom/join.gif"/></td>
+<td><img width="260" height="561" src="https://demovideo-1252463788.cos.ap-shanghai.myqcloud.com/trtcliveroom/msg.gif"/></td>
+<td><img width="260" height="561" src="https://demovideo-1252463788.cos.ap-shanghai.myqcloud.com/trtcliveroom/pk.gif"/></td>
+</tr>
+</table>
+
 如需快速接入视频互动直播功能，您可以直接基于我们提供的 Demo 进行修改适配，也可以使用我们提供的 TRTCLiveRoom 组件并实现自定义 UI 界面。
 
 [](id:DemoUI)
@@ -9,30 +18,31 @@
 [](id:ui.step1)
 ### 步骤1：创建新的应用
 1. 登录实时音视频控制台，选择【开发辅助】>【[快速跑通Demo](https://console.cloud.tencent.com/trtc/quickstart)】。
-2. 单击【立即开始】，输入应用名称，例如 `TestLiveRoom` ，单击【创建应用】。
+2. 输入应用名称，例如 `TestLiveRoom` ，单击【创建】。
 
->?本功能同时使用了腾讯云  [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047) 两个基础 PAAS 服务，开通实时音视频后会同步开通即时通信 IM 服务。即时通信 IM 属于增值服务，详细计费规则请参见 [即时通信 IM 价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
+>!本功能同时使用了腾讯云 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://cloud.tencent.com/document/product/269) 两个基础 PaaS 服务，开通实时音视频后会同步开通即时通信 IM 服务。 即时通信 IM 属于增值服务，详细计费规则请参见 [即时通信 IM 价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
 
 
 [](id:ui.step2)
 ### 步骤2：下载 SDK 和 Demo 源码
-1. 鼠标移动至对应卡片，单击【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS)】跳转至 Github（或单击【[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip)】），下载相关 SDK 及配套的 Demo 源码。
- ![](https://main.qcloudimg.com/raw/b0f6f1bd5e0bc083bafddcc7c04a1593.png)
-2. 下载完成后，返回实时音视频控制台，单击【我已下载，下一步】，可以查看 SDKAppID 和密钥信息。
+1. 根据实际业务需求下载 SDK 及配套的 Demo 源码。
+2. 下载完成后，单击【已下载，下一步】。
+![](https://main.qcloudimg.com/raw/3b115019ddfd0866108ed1add30810d8.png)
 
 [](id:ui.step3)
 ### 步骤3：配置 Demo 工程文件
-1. 解压 [步骤2](#ui.step2) 中下载的源码包。
+1. 进入修改配置页，根据您下载的源码包，选择相应的开发环境。
 2. 找到并打开 `iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h` 文件。
 3. 设置 `GenerateTestUserSig.h` 文件中的相关参数：
-  <ul><li>SDKAPPID：默认为0，请设置为实际的 SDKAppID。</li>
-  <li>SECRETKEY：默认为空字符串，请设置为实际的密钥信息。</li></ul> 
-    <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
-4. 返回实时音视频控制台，单击【粘贴完成，下一步】。
-5. 单击【关闭指引，进入控制台管理应用】。
+<ul style="margin:0"><li/>SDKAPPID：默认为0，请设置为实际的 SDKAppID。
+<li/>SECRETKEY：默认为空字符串，请设置为实际的密钥信息。</ul>
+<img src="https://main.qcloudimg.com/raw/0cf6689c2a1d7ce0d73da04682932e8d.png">
+4. 粘贴完成后，单击【已复制粘贴，下一步】即创建成功。
+5. 编译完成后，单击【回到控制台概览】即可。
 
->!本文提到的生成 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通 Demo 和功能调试**。
->正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。
+>!
+>- 本文提到的生成 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通 Demo 和功能调试**。
+>- 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。
 
 [](id:ui.step4)
 ### 步骤4：运行 Demo
@@ -56,7 +66,7 @@
 ## 实现自定义 UI 界面
 
 [源码](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCLiveRoomDemo) 中的 trtcliveroomdemo 文件夹包含两个子文件夹 ui 和 model，model 文件夹中包含可重用的开源组件 TRTCLiveRoom，您可以在`TRTCLiveRoom.swift` 文件中看到该组件提供的接口函数，并使用对应接口实现自定义 UI 界面。
-![](https://main.qcloudimg.com/raw/710358e4e170d44304cdb9bc991ad209.jpg)
+![](https://main.qcloudimg.com/raw/b0c39e5b7ce3a6b1decb1fbbf7ec4ff1.png)
 
 
 [](id:model.step1)
@@ -80,20 +90,20 @@ pod 'TXLiteAVSDK_TRTC'
 
 [](id:model.step2)
 ### 步骤2：配置权限
-在 info.plist 文件中需要添加 Privacy > Camera Usage Description， Privacy > Microphone Usage Description 申请摄像头和麦克风权限。
+在 info.plist 文件中需要添加 `Privacy > Camera Usage Description`， `Privacy > Microphone Usage Description` 申请摄像头和麦克风权限。
 
 [](id:model.step3)
 ### 步骤3：导入 TRTCLiveRoom 组件
-拷贝`iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCLiveRoomDemo/model`目录中的所有文件到您的项目中。
+拷贝 `iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCLiveRoomDemo/model` 目录中的所有文件到您的项目中。
 
 
 [](id:model.step4)
 ### 步骤4：创建并登录组件
-1. 调用 TRTCLiveRoom 的`init`接口可以创建一个 TRTCLiveRoom 组件的实例对象。
-2. 创建一个`TRTCLiveRoomConfig`对象，该对象可以设置  useCDNFirst 和 CDNPlayDomain 属性：
+1. 调用 TRTCLiveRoom 的 `init` 接口可以创建一个 TRTCLiveRoom 组件的实例对象。
+2. 创建一个 `TRTCLiveRoomConfig` 对象，该对象可以设置  useCDNFirst 和 CDNPlayDomain 属性：
  - useCDNFirst 属性：用于设置观众观看方式。true 表示普通观众通过 CDN 观看，计费便宜但延时较高。false 表示普通观众通过低延时观看，计费价格介于 CDN 和连麦之间，但延迟可控制在1s以内。
  - CDNPlayDomain 属性：在 useCDNFirst 设置为 true 时才会生效，用于指定 CDN 观看的播放域名，您可以登录直播控制台 >【[域名管理](https://console.cloud.tencent.com/live/domainmanage)】页面中进行设置。
-3. 调用`login`函数完成组件的登录，请参考下表填写关键参数：
+3. 调用 `login` 函数完成组件的登录，请参考下表填写关键参数：
 <table>	
 <tr>
 <th>参数名</th>
@@ -113,7 +123,7 @@ pod 'TXLiteAVSDK_TRTC'
 </tr>
 <tr>
 <td>config</td>
-<td>全局配置信息，请在登录时初始化，登录之后不可变更。<ul style="margin:0;">
+<td>全局配置信息，请在登录时初始化，登录之后不可变更。<ul style="margin:0;">
 <li>useCDNFirst 属性：用于设置观众观看方式。true 表示普通观众通过 CDN 观看，计费便宜但延时较高。false 表示普通观众通过低延时观看，计费价格介于 CDN 和连麦之间，但延迟可控制在1s以内。</li>
 <li>CDNPlayDomain 属性：在 useCDNFirst 设置为 true 时才会生效，用于指定 CDN 观看的播放域名，您可以登录直播控制台 >【<a href="https://console.cloud.tencent.com/live/domainmanage">域名管理</a>】页面中进行设置。</li>
 </ul></td>
@@ -123,7 +133,8 @@ pod 'TXLiteAVSDK_TRTC'
 <td>登录回调，成功时 code 为0。</td>
 </tr>
 </table>
-<pre>
+<dx-codeblock>
+::: Android 
 class LiveRoomController: UIViewController {
 	let mLiveRoom = TRTCLiveRoom()
 }
@@ -135,7 +146,8 @@ mLiveRoom.login(SDKAPPID, userID, userSig, config) { (code, error) in
 		//登录成功
 	}
 }
-</pre>
+:::
+</dx-codeblock>
 
 
 [](id:model.step5)
@@ -147,7 +159,7 @@ mLiveRoom.login(SDKAPPID, userID, userSig, config) { (code, error) in
 3. 主播调整美颜效果后，可以调用`createRoom`创建新的直播间。
 4. 主播调用`startPublish`开始推流。如需支持 CDN 观看，请在 login 时传入的`TRTCLiveRoomConfig`参数中指定`useCDNFirst`和`CDNPlayDomain`并在`startPublish`时指定直播拉流用的 streamID。
 
-![](https://main.qcloudimg.com/raw/eab281d702879ae87728d0064a090dca.jpg)
+![](https://main.qcloudimg.com/raw/754450346c831a792a0cc7a06b2c7d31.png)
 
 ```swift
 // 1.主播设置昵称和头像
@@ -186,7 +198,7 @@ mLiveRoom.createRoom(roomID: 123456789, roomParam: param) { [weak self] (code, e
  - 若在进房前暂未获取主播的 userId，观众端在进房后会收到主播`onAnchorEnter`的事件回调，该回调中携带主播的 userId 信息，调用`startPlay`即可播放。 
 
 
-![](https://main.qcloudimg.com/raw/2ff8b30de38a3084c12af0513068dc6e.jpg)
+![](https://main.qcloudimg.com/raw/70320746e332252cddbb842e280c95a5.png)
 
 ```swift
 // 1.假定您从业务后台获取房间列表为 roomList
@@ -220,7 +232,7 @@ public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoom, onAnchorEnter userID: Str
 6. 主播端会在观众端启动通知后收到 `TRTCLiveRoomDelegate#onAnchorEnter` （即另一路音视频流已到来）通知，该通知会携带观众端的 userId。
 7. 主播端调用`startPlay`即可看到连麦观众的画面。
 
-![](https://main.qcloudimg.com/raw/05a8c6af8bdc8b441f90b297e83106fc.jpg)
+![](https://main.qcloudimg.com/raw/743009e16a89eb6ff8d708b4564d8a91.png)
 
 ```swift
 // 观众端：
@@ -257,7 +269,7 @@ public func trtcLiveRoom(_ trtcLiveRoom: TRTCLiveRoom, onAnchorEnter userID: Str
 5. 主播 A 收到`responseCallback`回调通知，PK 请求是否被同意。
 6. 主播 A 请求被同意，等待`TRTCLiveRoomDelegate onAnchorEnter`通知，调用`startPlay`显示主播 B。
 
-![](https://main.qcloudimg.com/raw/5632056b6d86541db841026e9488468b.jpg)
+![](https://main.qcloudimg.com/raw/8e3868af20a2cd4f968b673da107e227.png)
 
 ```swift
 // 主播 A:

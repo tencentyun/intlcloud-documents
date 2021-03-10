@@ -2,7 +2,7 @@
 
 <span id="deploy"></span>
 ## 配置信息
-实时音视频 TRTC 控制台支持自助配置回调信息，配置完成后即可接收事件回调通知。
+实时音视频 TRTC 控制台支持自助配置回调信息，配置完成后即可接收事件回调通知。详细操作指引请参见 [回调配置](https://intl.cloud.tencent.com/document/product/647/39559)。
 
 
 >!您需要提前准备以下信息：
@@ -12,7 +12,7 @@
 ## 超时重试
 事件回调服务器在发送消息通知后，5秒内没有收到您的服务器的响应，即认为通知失败。首次通知失败后会立即重试，后续失败会以**10秒**的间隔继续重试，直到消息存续时间超过1分钟，不再重试。
 
-<span id="format)"></span>
+<span id="format"></span>
 ## 事件回调消息格式
 
 事件回调消息以 HTTP/HTTPS POST 请求发送给您的服务器，其中：
@@ -23,7 +23,7 @@
 
 
 ## 参数说明
-<span id="message)"></span>
+<span id="message"></span>
 ### 回调消息参数
 
 - 事件回调消息的 header 中包含以下字段：
@@ -56,7 +56,7 @@
 </tr>
 </tbody></table>
 
-<span id="eventId)"></span>
+<span id="eventId"></span>
 ### 事件组 ID
 
 | 字段名            | 值   | 含义       |
@@ -64,7 +64,7 @@
 | EVENT_GROUP_ROOM  | 1    | 房间事件组 |
 | EVENT_GROUP_MEDIA | 2    | 媒体事件组 |
 
-<span id="event_type)"></span>
+<span id="event_type"></span>
 ### 事件类型
 
 | 字段名                  | 值   | 含义             |
@@ -73,6 +73,7 @@
 | EVENT_TYPE_DISMISS_ROOM | 102  | 解散房间         |
 | EVENT_TYPE_ENTER_ROOM   | 103  | 进入房间         |
 | EVENT_TYPE_EXIT_ROOM    | 104  | 退出房间         |
+|  EVENT_TYPE_CHANGE_ROLE   | 105  |    切换角色      |
 | EVENT_TYPE_START_VIDEO  | 201  | 开始推送视频数据 |
 | EVENT_TYPE_STOP_VIDEO   | 202  | 停止推送视频数据 |
 | EVENT_TYPE_START_AUDIO  | 203  | 开始推送音频数据 |
@@ -80,7 +81,7 @@
 | EVENT_TYPE_START_ASSIT  | 205  | 开始推送辅路数据 |
 | EVENT_TYPE_STOP_ASSIT   | 206  | 停止推送辅路数据 |
 
-<span id="event_infor)"></span>
+<span id="event_infor"></span>
 ### 事件信息
 
 | 字段名  | 类型   | 含义                              |
@@ -91,7 +92,7 @@ RoomId      |     String/Number       |     房间名（类型与客户端房间
 | Role    | Number | [角色类型](#role_type)（option：进退房时携带）  |
 | Reason  | Number | [具体原因](#reason) （option：进退房时携带） |
 
-<span id="role_type)"></span>
+<span id="role_type"></span>
 ### 角色类型
 
 | 字段名             | 值   | 含义 |
@@ -99,13 +100,13 @@ RoomId      |     String/Number       |     房间名（类型与客户端房间
 | MEMBER_TRTC_ANCHOR | 20   | 主播 |
 | MEMBER_TRTC_VIEWER | 21   | 观众 |
 
-<span id="reason)"></span>
+<span id="reason"></span>
 ### 具体原因
 
 | 字段名    | 含义                              |
 | -------  | --------------------------------- |
 |进房   |<li/>1：正常进房<li/>2：切换网络<li/>3：超时重试<li/>4：跨房连麦进房 |
-|退房 | <li/>1：正常退房<li/>2：超时离开<li/>3：用户在其他终端加入，本地退出<li/>4：房间用户被删除<li/>5：取消连麦退房<li/>6：强杀|
+|退房 | <li/>1：正常退房<li/>2：超时离开<li/>3：房间用户被移出<li/>4：取消连麦退房<li/>5：强杀|
 
 
 

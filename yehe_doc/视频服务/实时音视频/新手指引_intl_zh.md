@@ -1,4 +1,3 @@
-本文将为刚入门实时音视频的用户提供一条学习路径。
 ## 快速了解实时音视频
 
 - [平台支持](https://intl.cloud.tencent.com/document/product/647/35078)
@@ -6,6 +5,7 @@
 - [适用场景](https://intl.cloud.tencent.com/document/product/647/37713)
 - [基本概念](https://intl.cloud.tencent.com/document/product/647/37714)
 
+[](id:pay)
 ## 计费模式
 
 实时音视频服务项根据服务类型划分为**基础服务**和**增值服务**两大类。 
@@ -37,13 +37,14 @@
 
 
 
+
 ## 开发支持
-<span id="demo"></span> 
+[](id:demo)
 ### Demo 体验
 
-实时音视频提供了 **iOS**、**Android**、**Mac OS**、**Windows**、**桌面浏览器**端的体验 Demo，具体详情请参见  [Demo 体验](https://intl.cloud.tencent.com/document/product/647/35076)。
+实时音视频提供了 **iOS**、**Android**、**Mac OS**、**Windows**、**桌面浏览器**、**Electron**、**Flutter** 端的体验 Demo，具体详情请参见  [Demo 体验](https://intl.cloud.tencent.com/document/product/647/35076)。
 
-<span id="sdk"></span> 
+[](id:sdk)
 ### SDK 下载
 
 TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使用了相同的基础模块，如果您的项目中同时集成了两款以上的 LiteAV 体系的 SDK，就会出现符号冲突（symbol duplicate）的问题。因此我们为您提供集成了不同产品能力的**精简版（TRTC）**、**专业版（Professional）**和**企业版（Enterprise）**，您可以根据实际业务需要选择不同的版本。
@@ -57,7 +58,7 @@ TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使
 > ? 各版本的差异对照，请参见 [SDK 下载](https://intl.cloud.tencent.com/document/product/647/34615)。
 
 
-<span id="api"></span> 
+[](id:api)
 ### API 集成
 
 - **客户端 API：**支持通过调用 SDK 接口实现功能集成，可支持平台包括 [iOS](https://intl.cloud.tencent.com/document/product/647/35119)、[Mac](https://intl.cloud.tencent.com/document/product/647/35119)、[Android](https://intl.cloud.tencent.com/document/product/647/35125)、[Windows（C++）](https://intl.cloud.tencent.com/document/product/647/35131)、[Windows（C#）](https://intl.cloud.tencent.com/document/product/647/35136)、[桌面浏览器](https://intl.cloud.tencent.com/document/product/647/35143)、 [Electron](https://intl.cloud.tencent.com/document/product/647/35141)和 [Flutter](https://intl.cloud.tencent.com/document/product/647/39169)。
@@ -66,7 +67,7 @@ TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使
 
 
 ## 新手入门
-<span id="demo_guide"></span> 
+[](id:demo_guide)
 ### 一分钟跑通 Demo
 
 实时音视频控制台提供了不同平台的 Demo 源码，具体跑通方法请参见：
@@ -80,7 +81,7 @@ TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使
 | Electron   | [跑通 Demo（Electron）](https://intl.cloud.tencent.com/document/product/647/35089) |
 | Flutter | [跑通 Demo（Flutter）](https://intl.cloud.tencent.com/document/product/647/39243) |
 
-<span id="sdk_guide"></span> 
+[](id:sdk_guide)
 ### 一分钟集成 SDK
 
 SDK 下载完成后，您可通过以下方式快速将 TRTC SDK 集成到您的项目中：
@@ -95,11 +96,12 @@ SDK 下载完成后，您可通过以下方式快速将 TRTC SDK 集成到您的
 | Electron   | [快速集成（Electron）](https://intl.cloud.tencent.com/document/product/647/35097) |
 | Flutter | [快速集成（Flutter）](https://intl.cloud.tencent.com/document/product/647/35098) |
 
-<span id="web_guide"></span> 
+[](id:web_guide)
 ### 一分钟跑通 Web 直播互动组件
 
 实时音视频提供了完整的 Web 直播互动组件体验 Demo，具体集成方法请参见 [一分钟跑通 Web 直播互动组件](https://intl.cloud.tencent.com/document/product/647/38172)。
 
+[](id:sence)
 ## 场景实践
 
 实时音视频搭配其他腾讯云产品，提供多种直播场景类型的体验 Demo。
@@ -132,17 +134,22 @@ SDK 下载完成后，您可通过以下方式快速将 TRTC SDK 集成到您的
 <td><a href="https://intl.cloud.tencent.com/document/product/647/37287" target="_blank">语音聊天室</a></td>
 </tr></table>
 
-<span id="console"></span> 
+[](id:console)
 ## 控制台实践
 | 如果您想通过控制台                                         | 您可以阅读                                                   |
 | :--------------------------------------------------------- | :----------------------------------------------------------- |
+| 查看使用 TRTC 时产生的**音视频互动**和**云端录制**用量数据 | [用量统计](https://intl.cloud.tencent.com/document/product/647/39066) |
+| 使用监控仪表盘功能了解应用房间的通话质量详情               | [监控仪表盘](https://intl.cloud.tencent.com/document/product/647/39069) |
+| 创建下载 Demo 应用，并能快速跑通试用                       | [快速跑通 Demo](https://intl.cloud.tencent.com/document/product/647/39073) |
 | 在线生成签名 UserSig，或检验已有 UserSig 是否有效         | [UserSig 生成与校验](https://intl.cloud.tencent.com/document/product/647/39074)                |
+| 创建新的应用 | [创建应用](https://intl.cloud.tencent.com/document/product/647/39077) |
 | 为某个应用开启旁路推流、云端录制或高级权限控制功能         | [功能配置](https://intl.cloud.tencent.com/document/product/647/39080) |
 | 为云端混流转码时所需的自定义背景图片添加图片素材           | [素材管理](https://intl.cloud.tencent.com/document/product/647/39081) |
+| 结合实际业务需求，配置回调密钥和回调地址 | [回调配置](https://intl.cloud.tencent.com/document/product/647/39559) |
 
 
 
-<span id="faq"></span> 
+[](id:faq)
 ## 新手常见问题
 
 -  [客户端 Native SDK 需要配置哪些端口或域名为白名单？](https://intl.cloud.tencent.com/document/product/647/35164)
@@ -161,4 +168,4 @@ SDK 下载完成后，您可通过以下方式快速将 TRTC SDK 集成到您的
 使用腾讯实时音视频产品和服务中有任何问题或建议，您可以通过以下渠道反馈：
 
 - 如果发现产品文档的问题，如链接、内容等，您可以单击文档页右侧 【文档反馈】或选中存在问题的内容进行反馈。
-- 如果遇到产品相关问题，您可[提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
+- 如果遇到产品相关问题，您可 [提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
