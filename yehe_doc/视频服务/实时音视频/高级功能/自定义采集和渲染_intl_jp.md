@@ -115,7 +115,7 @@ public int onTextureProcess(int textureId, EGLContext eglContext) {
 
 TRTC SDKはOpenGLを使用してビデオ画面のレンダリングを行います。ゲーム開発に使用する場合、または自身のインターフェースエンジンにTRTC SDKを埋め込む場合は、自身でビデオ画面をレンダリングする必要があります。
 
-### iOS プラットフォーム（iMacを含む）
+### iOS プラットフォーム（Macを含む）
 
 TRTCCloud の `setLocalVideoRenderDelegate` と `setRemoteVideoRenderDelegate`を介してローカルとリモート画面のレンダリングカスタマイズのコールバックを設定します。関連パラメータは次のとおりです。
 
