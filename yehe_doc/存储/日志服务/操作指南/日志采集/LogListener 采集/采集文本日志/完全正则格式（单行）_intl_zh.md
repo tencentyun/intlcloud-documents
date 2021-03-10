@@ -1,6 +1,6 @@
 ## 操作场景
 
-单行-完全正则模式适用于日志文本中每行内容为一条原始日志，且每条日志可按正则表达式提取为多个 key-value 键值的日志解析模式。若不需要提取 key-value，请参阅 [单行全文格式](https://cloud.tencent.com/document/product/614/17421) 进行配置。
+单行-完全正则模式适用于日志文本中每行内容为一条原始日志，且每条日志可按正则表达式提取为多个 key-value 键值的日志解析模式。若不需要提取 key-value，请参阅 [单行全文格式](https://intl.cloud.tencent.com/document/product/614/32287) 进行配置。
 配置单行-完全正则模式时，您需要先输入日志样例，再自定义正则表达式。配置完成后，系统将根据正则表达式中的捕获组提取对应的 key-value。
 如下内容将为您详细介绍如何采集单行-完全正则模式日志。
 
@@ -51,7 +51,7 @@ upstream_response_time: 0.354
 1. 日志主题创建成功后，进入该日志主题管理页面。
 2. 选择【采集配置】页签，单击您需要采集的日志数据源格式。如下图所示：
 3. 在“机器组管理”页面，勾选需要与当前日志主题进行绑定的机器组，单击【下一步】。
-即可进入采集配置阶段，更多详情请参阅 [管理机器组](https://cloud.tencent.com/document/product/614/17412#.E5.88.9B.E5.BB.BA.E6.9C.BA.E5.99.A8.E7.BB.84)。
+即可进入采集配置阶段，更多详情请参阅 [管理机器组](https://intl.cloud.tencent.com/document/product/614/17412)。
 
 ### 采集配置
 
@@ -113,7 +113,7 @@ upstream_response_time: 0.354
 - 日志的时间属性有如下方式：
  - 采集时间：默认作为日志的时间属性。
  - 原始时间戳：将“使用采集时间”设置为 <img src="https://main.qcloudimg.com/raw/b4558d9e42043de2669e1b071103836b.png" />，并填写原始时间戳的时间键以及对应的时间解析格式。
- 时间解析格式请参见 [配置时间格式](https://cloud.tencent.com/document/product/614/38614)。
+ 时间解析格式请参见 [配置时间格式](https://intl.cloud.tencent.com/document/product/614/32942)。
 - 采集时间：日志的时间属性由日志服务 CLS 采集该条日志的时间决定。
 - 原始时间戳：日志的时间属性由原始日志中时间戳决定。
 
