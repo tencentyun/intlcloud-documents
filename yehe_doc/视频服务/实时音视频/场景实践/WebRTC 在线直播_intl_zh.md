@@ -115,7 +115,7 @@ im.enterRoom('your roomID').then((imResponse) => {
 首先我们需要在实时音视频控制台创建一个 TRTC 应用，腾讯云会默认为该 TRTC 应用绑定一个具有相同 SDKAppID 的 IM 应用。
 
 1. 登录 [实时音视频控制台](https://console.cloud.tencent.com/trtc)。
-2. 进入[【应用管理】](https://console.cloud.tencent.com/trtc/app)，单击【创建应用】，输入应用名称，单击【确定】创建一个实时音视频应用。
+2. 进入【[应用管理](https://console.cloud.tencent.com/trtc/app)】，单击【创建应用】，输入应用名称，单击【确定】创建一个实时音视频应用。
 
 <span id="step2"></span>
 ### 步骤2：获取 SDKAppID 及密钥
