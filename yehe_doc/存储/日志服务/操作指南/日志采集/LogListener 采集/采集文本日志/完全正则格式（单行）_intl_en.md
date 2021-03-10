@@ -1,6 +1,6 @@
 ## Overview
 
-The single-line - full regular expression mode is a log parsing mode where multiple key-value pairs can be extracted from each log in a log text file in which each line is a raw log based on a regular expression. If you don't need to extract key-value pairs, please configure it as instructed in [Collecting Logs with Full Text in a Single Line](https://cloud.tencent.com/document/product/614/17421).
+The single-line - full regular expression mode is a log parsing mode where multiple key-value pairs can be extracted from each log in a log text file in which each line is a raw log based on a regular expression. If you don't need to extract key-value pairs, please configure it as instructed in [Collecting Logs with Full Text in a Single Line](https://intl.cloud.tencent.com/document/product/614/32287).
 When configuring the single-line - full regular expression mode, you need to enter a sample log first and then customize your regular expression. After the configuration is completed, the system will extract the corresponding key-value pairs according to the capture group in the regular expression.
 This document describes how to collect logs in single-line - full regular expression mode.
 
@@ -51,7 +51,7 @@ upstream_response_time: 0.354
 1. After the log topic is created successfully, enter the log topic management page.
 2. Select the **Collection Configuration** tab, and click the format in which you need to collect logs as shown below:
 3. On the **Machine Group Management** page, select the server group to which to bind the current log topic and click **Next** to proceed to collection configuration.
-For more information, please see [Machine Group Management](https://cloud.tencent.com/document/product/614/17412#.E5.88.9B.E5.BB.BA.E6.9C.BA.E5.99.A8.E7.BB.84).
+For more information, please see [Machine Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
 
 ### Configuring collection
 
@@ -113,7 +113,6 @@ The system offers two ways to define a regular expression: **manual mode** and *
 - The time attribute of a log is defined as follows:
  - Collection time: it is the default time attribute of a log.
  - Original timestamp: set "Use Collection Time" to <img src="https://main.qcloudimg.com/raw/b4558d9e42043de2669e1b071103836b.png" /> and enter the time key of the original timestamp and the corresponding time parsing format.
- For more information on the time parsing format, please see [Configuring the Time Format](https://cloud.tencent.com/document/product/614/38614).
 - Collection time: the time attribute of a log is determined by the time when CLS collects it.
 - Original timestamp: the time attribute of a log is determined by the timestamp in the raw log.
 
