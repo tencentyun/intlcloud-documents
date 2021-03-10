@@ -5,7 +5,7 @@ Log into the [Global Application Acceleration Console](https://console.cloud.ten
 ## Deleting an origin server 
 Log into [Global Application Acceleration Console](https://console.cloud.tencent.com/gaap). On "Origin Server Management" page, select the origin server to be deleted and click [Delete].
 ![](https://main.qcloudimg.com/raw/60f772f8cc3cf43c9be4fc1545962cf5.png)
->**Note:** Origin servers must be unbound from the listener first in order to be deleted.
+>! Origin servers must be unbound from the listener first in order to be deleted.
 
 ## Renaming
 You can add an alias for an origin server to facilitate OPS by clicking the "edit" icon next to the origin server name.
