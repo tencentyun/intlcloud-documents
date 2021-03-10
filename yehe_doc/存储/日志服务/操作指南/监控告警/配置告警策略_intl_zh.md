@@ -7,7 +7,7 @@
 
 ###  步骤1：创建告警策略
 
-登录 [日志服务控制台](https://console.cloud.tencent.com/cls/monitor)，单击左侧菜单栏的【监控告警】，进入告警策略创建新的告警策略。
+登录 [日志服务控制台](https://console.cloud.tencent.com/cls/alarm)，单击左侧菜单栏的【监控告警】，进入告警策略创建新的告警策略。
 
 ### 步骤2：配置监控规则
 
