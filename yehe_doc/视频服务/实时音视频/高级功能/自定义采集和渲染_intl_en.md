@@ -112,7 +112,7 @@ public int onTextureProcess(int textureId, EGLContext eglContext) {
 
 The TRTC SDK uses OpenGL to render video images. If you use the SDK for game development or want to integrate it into your own UI engine, you must render video images by yourself.
 
-### iOS (including iMac)
+### iOS (including Mac)
 
 You can call `setLocalVideoRenderDelegate` and `setRemoteVideoRenderDelegate` of `TRTCCloud` to configure custom rendering callbacks for local and remote video images. Below are the relevant parameters.
 

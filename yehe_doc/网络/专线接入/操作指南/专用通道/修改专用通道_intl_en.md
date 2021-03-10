@@ -8,11 +8,11 @@ You have [owned a tunnel](https://intl.cloud.tencent.com/document/product/216/19
 ## Modifying a Tunnel
 1. Log in to the [Direct Connect console](https://console.cloud.tencent.com/dc/conn) and click *Dedicated Tunnels** on the left sidebar to access the **Dedicated Tunnels** page.
 2. Locate the dedicated tunnel to be modified, and click **More** > **Change Tunnel** under the **Operation** tunnel.
-![](https://main.qcloudimg.com/raw/3719a18adc9f02ebd04f5cd0c2fdb334.png)
+
 3. Choose the operation depending on the dedicated tunnel type, which can be checked on the **Basic Information** page.
  - **Dedicated Tunnel 1.0**
 Edit the following configurations in the pop-up dialog box, and click **OK**.
-![](https://main.qcloudimg.com/raw/b181ef8f7b7c50eaa466182dcb7fa23b.png)
+
 <table>
 <tr>
 <th width="20%">Field</th>
@@ -47,7 +47,7 @@ Edit the following configurations in the pop-up dialog box, and click **OK**.
 Modify the information as needed in the **Advanced Configuration** tab.
     - Modifying tunnel configuration
 Click **Edit** on the right to modify Tencent Cloud IP, CPE peer IP, or VLAN ID, and click **Save**.
-![](https://main.qcloudimg.com/raw/9d37e29001a48787fecf9e17221cbf3d.png)
+
 <table>
 <tr>
 <th width="20%">Field</th>
@@ -69,9 +69,9 @@ Click **Edit** on the right to modify Tencent Cloud IP, CPE peer IP, or VLAN ID,
     - Editing the routing mode
       1. Click **Edit** on the right of the **Routing Mode** to modify the route.
              - **Static**: modify the CPE IP range. To ensure the refined scheduling capability of your network, follow the [Use Limits on Large IP Range](#dwdxz).</td>
- ![](https://main.qcloudimg.com/raw/f8eea7913f3b8de5f3e0de15eaf33cbc.png)
+
              - **BGP**: modify BGP ASN or BGP key.
- ![](https://main.qcloudimg.com/raw/b2b7a9faa69315a8f2c46534d7cd8bf2.png)
+
  <table>
 		<tr>
 		<th width="20%">Field</th>
@@ -87,7 +87,7 @@ Click **Edit** on the right to modify Tencent Cloud IP, CPE peer IP, or VLAN ID,
 		</tr>
 		</table>
       2. Choose whether to enable health check. Configure **Health Check Interval** and **Number of Failed Health Checks** if you choose to enable health check.
-    <img src="https://main.qcloudimg.com/raw/1a835c68b4404c2b350e9399ff58665a.png"></img>
+
     		<table>
     		<tr>
     		<th width="20%">Field</th>
@@ -113,9 +113,9 @@ You can modify the tunnel bandwidth on the **Change Tunnel** page. For more info
  1. Locate the target dedicated tunnel, and click <img src="https://main.qcloudimg.com/raw/134ed671d2fa3ec1b82525985c0a6633.svg" style="zoom:6%;" /> under the **Bandwidth** column.
 > ? Only a **Connected** dedicated tunnel supports modifying the bandwidth.
 > 
-![](https://main.qcloudimg.com/raw/85e2384c415324f3bafd97178696d67f.png)
+
  2. Specify a new bandwidth value in the edit box and click **OK**.
-![](https://main.qcloudimg.com/raw/9a0c42e3f0b59665aa36dee39d74112d.png)
+
 > ? The tunnel bandwidth cap cannot exceed the maximum bandwidth of the associated connection. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category) to increase the connection bandwidth.
 
 <span id ="dwdxz"></span>

@@ -1,10 +1,10 @@
 如果您发现直播无法观看，完全搞不懂里面出了什么情况，按照下面的思路进行排查，一般都能在几十秒内确认问题原因。
-![](//mc.qcloudimg.com/static/img/29c74afc399429e40a21b28e7abe87d9/image.png)
+![](https://main.qcloudimg.com/raw/54668f50b8e89909e6fc1600485723cc.png)
 
 ## 排查思路
 ### step 1. 检查播放 URL
 在所有检查开始之前，您务必要先检查一下地址是否正确，因为这里出错概率最高，腾讯云的直播地址分推流地址和播放地址两种，我们要首先排除**误拿推流地址来播放**的错误。
-![diff](//mccdn.qcloud.com/static/img/1d093770d4b9bfaec5e15b01bdb65d00/image.png)
+![diff](https://main.qcloudimg.com/raw/44951fab55d1a8228bbc332d2713d9cf.png)
 >**小直播的播放 URL：**
 >小直播的播放 URL 可以用调试的办法获取，您可以全局搜索代码寻找关键字 **startPlay**，然后在此处打下调试断点，这里是小直播对 RTMP SDK 的调用点，startPlay 的参数即为播放 URL。
 

@@ -17,7 +17,7 @@ You have applied for a connection as instructed in [Applying for Connection](htt
 1. Log in to the [Direct Connect console](https://console.cloud.tencent.com/dc/dc) and choose **Internet Tunnels** > **Internet Dedicated Tunnels** on the left sidebar.
 2. Click **+ New** at the top of the **Internet Dedicated Tunnels** page.
 3. Complete the following configurations in the **Basic Configuration** tab, and check **I have read and agreed that the monthly billable base bandwidth is 300 Mbps**.
-![](https://main.qcloudimg.com/raw/5828228e5fed9bf703fc20a65a028e88.png)
+
 <table>
 <tr>
 <th>Field</th>
@@ -52,7 +52,7 @@ You have applied for a connection as instructed in [Applying for Connection](htt
 
 ### Step 2: complete the advanced configurations
 1. Configure the following parameters in the **Advanced Configuration** tab.
-![](https://main.qcloudimg.com/raw/602a6485df85c8e846c2b72d67a980b8.png)
+
 <table>
 <tr>
 <th width="25%">Field</th>
@@ -91,7 +91,7 @@ You have applied for a connection as instructed in [Applying for Connection](htt
 
 ## Connection Status
 After the Internet dedicated tunnel is created, it will be displayed on the **Internet Tunnels** page in the **Applying** connection status.
-![](https://main.qcloudimg.com/raw/8617238bb5bd897df28ca8055f6c74cd.png)
+
 - **Applying**
   The system has received your application for a new dedicated tunnel and is ready to start the creation.
 - **Configuring**
