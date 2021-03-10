@@ -156,6 +156,7 @@ trtcvoiceroomdemo/src/main/java/com/tencent/liteav/trtcvoiceroom/model
 <td>登录回调，成功时 code 为0。</td>
 </tr>
 </table>
+
 ```
 TRTCVoiceRoom mTRTCVoiceRoom = TRTCVoiceRoom.sharedInstance(this);
 mTRTCVoiceRoom.setDelegate(this);
