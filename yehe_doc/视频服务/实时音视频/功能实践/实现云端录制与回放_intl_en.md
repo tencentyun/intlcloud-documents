@@ -329,7 +329,7 @@ As server computing resources are needed to transcode or remux audio/video strea
 >- For Tencent Cloud accounts that create their first applications on or after July 1, 2020, the prices listed in [On-Cloud Recording Billing Overview](https://intl.cloud.tencent.com/document/product/647/38385) shall apply.
 >- Tencent Cloud accounts that created applications before July 1, 2020 will continue to be charged the **CSS Recording** fee for the use of the recording service, whether the service is used by applications created before or after July 1, 2020.
 
-The **CSS Recording** fee is calculated based on the peak number of concurrent recording channels. The higher the number, the higher the fee. For details, see [CSS > CSS Recording](https://intl.cloud.tencent.com/document/product/267/39605).
+The **CSS Recording** fee is calculated based on the peak number of concurrent recording channels. The higher the number, the higher the fee. For details, see CSS > CSS Recording.
 
 > Suppose you have 1,000 anchors, and during peak times, it’s necessary to record the audio/video streams of 500 of them at the same time. If the service is priced 5.2941 USD per channel per month, then you will be charged `500 channels x 5.2941 USD/channel/month=2,647.05 USD/month`.
 >If you select two [file formats](#fileFormat), both the recording and storage fees will double. If you select three, they will triple. To reduce cost, you are not advised to select more than one file format unless necessary.
