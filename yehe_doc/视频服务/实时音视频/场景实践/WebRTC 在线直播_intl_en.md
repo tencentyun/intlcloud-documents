@@ -115,7 +115,7 @@ im.enterRoom('your roomID').then((imResponse) => {
 First, you need to create an application in the TRTC console. Tencent Cloud will automatically bind the application with the IM application having the same `SDKAppID`.
 
 1. Log in to the [TRTC console](https://console.cloud.tencent.com/trtc).
-2. Go to [**Application Management**](https://console.cloud.tencent.com/trtc/app), click **Create Application**, enter an application name, and click **Confirm**.
+2. Go to **[Application Management](https://console.cloud.tencent.com/trtc/app)**, click **Create Application**, enter an application name, and click **Confirm**.
 
 <span id="step2"></span>
 ### Step 2. Obtain the `SDKAppID` and key.
