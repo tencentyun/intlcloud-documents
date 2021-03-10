@@ -36,7 +36,7 @@ The monitoring period indicates the frequency at which monitoring tasks are perf
 A trigger condition expression is used to determine whether to trigger an alarm, and an alarm will be triggered when it is met.
 CLS allows you to import analysis results by using `$N.keyname`.
 - $N: it indicates the Nth monitoring object in the current alarm policy (for more information, please see [How do I view the number?](#number)).
-- keyname: it indicates the corresponding field name; for example, `$1.status>500` indicates that an alarm will be triggered when the `status` field value of the monitoring object numbered 1 is greater than 500. For more information on the expression syntax, please see [Trigger Condition Expression](https://cloud.tencent.com/document/product/614/51756).
+- keyname: it indicates the corresponding field name; for example, `$1.status>500` indicates that an alarm will be triggered when the `status` field value of the monitoring object numbered 1 is greater than 500. For more information on the expression syntax, please see Trigger Condition Expression.
 
 #### Alarm frequency
 
