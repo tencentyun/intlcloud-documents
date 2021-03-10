@@ -74,7 +74,7 @@ http://Grafana IP 地址:3000
 
 ### 配置 dashboard
 
-1. 在左侧导航栏中，单击【**Creat Dashboards**】。
+1. 在左侧导航栏中，单击【**Create Dashboards**】。
 2. 在 Dashboard 页面，单击【**Add new panel**】。
 3. 将数据源选择为您新建的日志数据源。如下图所示：
    ![image-20201229200254913](https://main.qcloudimg.com/raw/b0981c7c5e43d803d0eb694f3b737060.png)
@@ -82,7 +82,7 @@ http://Grafana IP 地址:3000
 <table>
 <tr><th>Format 格式</th><th>描述</th><th>配置项</th><tr>
 <tr><td>Log panel</td><td>log panel is used to shown log search result. Query syntax supports searching by keyword, fuzzy match. For more information, see [Syntax and Rules](https://intl.cloud.tencent.com/document/product/614/30439). Eg. status:400</td><td>limit：用于指定返回日志检索结果条数。</td><tr>
-<tr><td>Table panle</td><td>Table panel will automatically show the results of whatever columns and rows your query returns</td><td>无</td><tr>
+<tr><td>Table panel</td><td>Table panel will automatically show the results of whatever columns and rows your query returns</td><td>无</td><tr>
 <tr><td>Graph,Pie,Gauge panel</td><td>In this pattern, there is a format transformation where data will be adapted to graph,pie,gauge panel</td><td><ul><li>Metrics：待统计指标。</li><li>Bucket：（选填）聚合列名称。</li><li>Time : （选填）若 query 返回结果为连续时间数据，则需指定 time 字段。若无，则不填写。</li></ul></td><tr>
 </table>
 
