@@ -15,15 +15,15 @@ Perform the following operations to modify a 2.0 Internet tunnel.
 3. Select the **Cloudification Link** tab and configure as follows:
  - Modify the tunnel configuration
     1. Click **Edit** on the right of the **Tunnel Configuration**.
-    ![](https://main.qcloudimg.com/raw/192618aa67d85f6500ae86086fba9c1f.png)
+
      2. Modify Tencent Cloud primary IP, Tencent Cloud secondary IP, CPE peer IP, or VLAN ID, and choose whether to enable IPv6 as needed, and click **Save**.
      > ? IPv6 cannot be disabled once enabled.
      > 
-     ![](https://main.qcloudimg.com/raw/7cef9a543957058386572517624106d9.png)
+
  - Modify the routing mode
     1. Click **Edit** on the right of the **Routing Mode** to modify the route.
         For BGP, modify BGP ASN and BGP key.
-       ![](https://main.qcloudimg.com/raw/b2b7a9faa69315a8f2c46534d7cd8bf2.png)
+
 	<table>
 	<tr>
 	<th>Field</th>
@@ -39,7 +39,7 @@ Perform the following operations to modify a 2.0 Internet tunnel.
 	</tr>
 	</table>
     2. Choose whether to enable health check. Configure **Health Check Interval** and **Number of Failed Health Checks** if you choose to enable health check. After the health check is enabled, the service will be quickly switched to the standby link in case of network exceptions.
- ![](https://main.qcloudimg.com/raw/1a835c68b4404c2b350e9399ff58665a.png)
+
 <table>
 <tr>
 <th>Field</th>
@@ -62,5 +62,5 @@ Perform the following operations to modify a 2.0 Internet tunnel.
 1. On the **Internet Tunnels** page, select the tunnel to be deleted, and click **Delete** under the **Operation** column.
 >? A **Modifying** or **Configuring** tunnel cannot be deleted.
 > 
-![](https://main.qcloudimg.com/raw/740689f61578c83726fd5adb227062f8.png)
+
 2. Click **Delete** in the pop-up window to confirm the deletion. You can create a dedicated tunnel with the same VLAN ID only after the deletion operation is completed.
