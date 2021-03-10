@@ -1,4 +1,14 @@
+## 2021年01月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+    <td>Master 版本升级支持小版本升级</td><td>该功能提供更灵活的版本升级机制。</td><td>2021-01-14</td><td><a href="https://intl.cloud.tencent.com/document/product/457/30640">升级 Master Kubernetes 版本</a></td>
+</tr>
+</table>
+
 ## 2020年12月
+
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
 <th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
