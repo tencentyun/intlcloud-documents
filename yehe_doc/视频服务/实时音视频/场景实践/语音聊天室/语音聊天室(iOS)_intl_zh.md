@@ -111,6 +111,7 @@ pod 'TXLiteAVSDK_TRTC'
 <td>callback</td>
 <td>登录回调，成功时 code 为0。</td>
 </tr></table>
+
 ```
 // Swift 示例
 // 您代码里负责业务逻辑的类
