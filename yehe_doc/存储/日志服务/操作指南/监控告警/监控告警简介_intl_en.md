@@ -13,7 +13,7 @@ CLS supports setting alarm policies for one or more log topics. An alarm policy 
 | Alarm frequency | It is the alarm frequency after the trigger condition is met, which helps avoid frequent alarm notifications. |
 | Notification template | It defines the type, recipient, and channel of notifications. The notification channel can be SMS, WeChat, phone, or email. |
 
->? For more information on the configuration process, please see [Configuring Alarm Policy](https://intl.cloud.tencent.com/document/product/614/50922).
+>? For more information on the configuration process, please see [Configuring Alarm Policy](https://intl.cloud.tencent.com/document/product/614/39574).
 
 ### How it works
 
