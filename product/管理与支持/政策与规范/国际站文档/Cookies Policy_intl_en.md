@@ -4,7 +4,7 @@ We use cookies, log files, pixel tags, web beacons, scripts, eTags and similar f
 
 We only use non-essential cookies with your consent.
 
-**1.** **What are cookies?**
+## **1.** **What are cookies?**
 
 Cookies are text files containing small amounts of information which are downloaded to your browser or device when you visit a certain web address. Cookies are then sent back to the originating web address on each subsequent visit, or to another web address that recognises that cookie. Cookies are widely used in order to make the Service work, or to work more efficiently, as well as to provide information to the Service team.
 
@@ -20,7 +20,7 @@ Cookies can remain on your browser or device for different periods of time. Some
 
  
 
-**2.** **How do we use cookies?**
+## **2.** **How do we use cookies?**
 
 We use cookies to:
 
@@ -36,7 +36,7 @@ We use cookies to:
 
  - customize and enhance your online experience.
 
-**3.** **What types of cookies do we use?**
+## **3.** **What types of cookies do we use?**
 
 The types of cookies used by us and our partners in connection with the Service can be classified into the following categories, namely 'essential cookies', 'functionality cookies' and 'analytics and performance cookies'. We have set out some further information about each category, and the purposes of the cookies we and third parties set in the following table.
 
@@ -56,7 +56,7 @@ The types of cookies used by us and our partners in connection with the Service 
 	<td >uin</td>
 	<td rowspan = "3">Check your login status</td>
 	<td rowspan = "3">Session</td>
-	<td rowspan ="6">First.</td>
+	<td rowspan ="6">First</td>
 	<td rowspan ="6">Please see the instructions set out in <b>'How to control cookies' below.</b></td>
 </tr>
 <tr>
@@ -127,7 +127,7 @@ The types of cookies used by us and our partners in connection with the Service 
 </tr>
 </table>
 
-**4.** **How to control cookies**
+## **4.** **How to control cookies**
 
 You have the right to choose whether or not to accept cookies and we have explained how you can exercise this right below. When you use our Service for the first time, we will provide you with a notice which lets you know how we use cookies, why we use them and how you can change which cookies you accept. You can opt-into non-essential cookies or change your preferences at any time here. Please note that if you choose not to receive our cookies, we cannot guarantee that your experience of our Service will be as good as it could otherwise be. 
 
@@ -143,20 +143,20 @@ Alternatively, most browsers allow you to change your cookies settings. These se
 
  
 
-**5.** **Changes to this Cookies Policy**
+## **5.** **Changes to this Cookies Policy**
 
 We will update this Cookies Policy to reflect changes in our practices and services. When we post changes to this Cookies Policy, we will revise the "**Last Updated**" date at the top of this Cookies Policy. If we make any material changes in the way we collect, use, and/or share information held in cookies, we will notify you by prominently posting notice of the changes when you log in to or use the Service. We recommend that you check this page from time to time to inform yourself of any changes in this Cookies Policy or any of our other policies.
 
-**6.** **Need More Information?**
+## **6.** **Need More Information?**
 
 If you would like to find out more about cookies and their use on the Internet, you may find the following link useful:
 
  - [All About Cookies](http://www.allaboutcookies.org/)
 
-**7.** **Cookies that have been set in the past**
+## **7.** **Cookies that have been set in the past**
 
 If you have disabled one or more cookies, we may still use information collected from cookies prior to your disabled preference being set, however, we will stop using the disabled cookie to collect any further information.
 
-**8.** **Contact us**
+## **8.** **Contact us**
 
 If you have any questions or comments about this Cookies Policy, or privacy matters generally, please contact us via email at cloudlegalnotices@tencent.com.
