@@ -69,11 +69,11 @@ Use [`EncodeParams`](https://intl.cloud.tencent.com/document/product/647/36760#L
 | Parameter            | Description                                         | Recommended Value |
 | --------------- | -------------------------------------------- | ------ |
 | AudioSampleRate | Audio sample rate                         | 48000  |
-| AudioBitrate    | Audio bitrate, in Kbps               | 64     |
+| AudioBitrate    | Audio bitrate, in kbps               | 64     |
 | AudioChannels   | Audio channel number                         | 2      |
 | VideoWidth      | Video width, required for audio-video output              | Custom |
 | VideoHeight     | Video height, required for audio-video output              | Custom |
-|VideoBitrate        | Video bitrate, in Kbps, required for audio-video output | Custom |
+|VideoBitrate        | Video bitrate, in kbps, required for audio-video output | Custom |
 | VideoFramerate  | Frame rate, required for audio-video output            | 15     |
 | VideoGop        | GOP, required for audio-video output            | 3      |
 | BackgroundColor | Background color                            | Custom |
