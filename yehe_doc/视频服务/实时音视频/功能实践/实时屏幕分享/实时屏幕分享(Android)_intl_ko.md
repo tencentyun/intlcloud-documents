@@ -72,7 +72,7 @@ public void showView(View view, int width, int height) {
   공유 화면을 보고 싶은 사용자는 [startRemoteSubStreamView](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ae029514645970e7d32470cf1c7aca716) 인터페이스를 통해 사용자의 서브스트림 화면의 원격 렌더링을 활성화할 수 있습니다.
 
 - **Android/iOS 화면 공유 보기**
-  사용자가 Android/iOS를 통해 화면을 공유하는 경우 주요 화면을 공유합니다. 방 안의 다른 사용자들은 TRTCCloudDelegate의 [onUserVideoAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ac1a0222f5b3e56176151eefe851deb05) 이벤트를 통해 통지를 수신합니다.
+  사용자가 Android/iOS를 통해 화면을 공유하는 경우 주요 화면을 공유합니다. 방 안의 다른 사용자들은 TRTCCloudListener의 [onUserVideoAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ac1a0222f5b3e56176151eefe851deb05) 이벤트를 통해 통지를 수신합니다.
   공유 화면을 보고 싶은 사용자는 [startRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a57541db91ce032ada911ea6ea2be3b2c) 인터페이스를 통해 사용자의 주요 화면을 원격 렌더링할 수 있습니다.
 
 

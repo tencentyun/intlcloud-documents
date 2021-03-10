@@ -72,7 +72,7 @@ TRTC Android版の画面共有は、デスクトップ版のように「サブ�
   画面共有を見たいユーザーは[startRemoteSubStreamView](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ae029514645970e7d32470cf1c7aca716) インターフェースを介してリモートユーザーのサブストリーム画面のレンダリングを起動することができます。
 
 - **鑑賞 Android / iOS 画面の共有**
-  ユーザーが Android / iOS を介して画面共有を実行する場合は、メインストリームを介して共有を実行することができます。ルームにいるその他ユーザーは TRTCCloudDelegate 中の [onUserVideoAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ac1a0222f5b3e56176151eefe851deb05) イベントを介してこの通知を受け取ります。
+  ユーザーが Android / iOS を介して画面共有を実行する場合は、メインストリームを介して共有を実行することができます。ルームにいるその他ユーザーは TRTCCloudListener 中の [onUserVideoAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ac1a0222f5b3e56176151eefe851deb05) イベントを介してこの通知を受け取ります。
   画面共有を見たいユーザーは [startRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a57541db91ce032ada911ea6ea2be3b2c) インターフェースを介してリモートユーザーのメインストリーム画面のレンダリングを起動することができます。
 
 
