@@ -222,7 +222,6 @@ if #available(iOS 12.0, *) {
 TRTCMeeting.sharedInstance().sendRoomTextMsg("Hello Word!") { (code, message) in
   debugPrint("send result: ", code)
 }
-
 // 接收端：监听文本消息
 func onRecvRoomTextMsg(_ message: String?, userInfo: TRTCMeetingUserInfo) {
   debugPrint("收到来自:\(String(describing: userInfo.userId))的消息\(String(describing: message))")
@@ -236,7 +235,6 @@ func onRecvRoomTextMsg(_ message: String?, userInfo: TRTCMeetingUserInfo) {
 TRTCMeeting.sharedInstance().sendRoomCustomMsg("CMD_MUTE_AUDIO", message: "1") { (code, message) in
   debugPrint("send result: ", code)
 }
-
 // 接收端：监听自定义消息
 func onRecvRoomCustomMsg(_ cmd: String?, message: String?, userInfo: TRTCMeetingUserInfo) {
   if cmd == "CMD_MUTE_AUDIO" {
