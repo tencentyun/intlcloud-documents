@@ -348,6 +348,6 @@ As playback consumes CDN traffic, if you play back a recording file, you will be
 
 #### Transcoding fee: charged for using the stream mixing service
 
-As stream mixing involves encoding and decoding, you will incur an additional transcoding fee if you enable stream mixing. The fee varies with the resolution used and the duration of transcoded streams. The higher resolution used for anchors, and the longer co-anchoring (the most common application scenario for stream mixing) lasts, the higher the cost. For more information, see [CSS Transcoding](https://intl.cloud.tencent.com/document/product/267/39604).
+As stream mixing involves encoding and decoding, you will incur an additional transcoding fee if you enable stream mixing. The fee varies with the resolution used and the duration of transcoded streams. The higher resolution used for anchors, and the longer co-anchoring (the most common application scenario for stream mixing) lasts, the higher the cost. For more information, see CSS Transcoding.
 
 >Suppose you used [`setVideoEncodrParam()`](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCVideoEncParam) to set the bitrate (`videoBitrate`) for anchors to 1,500 Kbps and resolution to 720p, and an anchor co-anchored with a viewer for 1 hour, during which [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618) was enabled. The transcoding fee incurred would be `0.0057 USD/min x 60 min=0.342 USD`.
