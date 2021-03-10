@@ -1,5 +1,5 @@
 ## 1. 为什么会卡顿
-![](//mc.qcloudimg.com/static/img/b41b15c344f8c34011e4ee0e55db21e5/image.png)
+![](https://main.qcloudimg.com/raw/c38bbed25d2953aea75f76764522e25d.png)
 卡顿的原因无外乎三种情况：
 - **原因 1：帧率太低**
 如果主播端手机性能较差，或者有很占 CPU 的后台程序在运行，可能导致视频的帧率太低。正常情况下每秒15FPS以上的视频流才能保证观看的流畅度，如果 FPS 低于10帧，可以判定为**帧率太低**，这会导致**全部观众**的观看体验都很卡顿。
@@ -12,7 +12,7 @@
 
 ## 2. 发现问题的“眼睛”
 推流 SDK 提供了一种状态反馈机制，每隔1秒 - 2秒就会将内部各种状态参数反馈出来，我们可以通过注册 **TXLivePushListener** 监听器来获取这些状态。
-![](//mc.qcloudimg.com/static/img/48fd46af4e17b0299fd00a0e661a16f0/image.png)
+![](https://main.qcloudimg.com/raw/533391ae5c188ed87b748f78d8168591.png)
 
 |  推流状态                   |  含义说明                    |   
 | :------------------------  |  :------------------------ | 
@@ -47,8 +47,7 @@
  BITRATE( = VIDEO_BITRATE + AUDIO_BITRATE ) 指的是编码器每秒产生了多少音视频数据要推出去，NET_SPEED 指的是每秒钟实际推出了多少数据，所以如果 BITRATE == NET_SPEED 的情况是常态，则推流质量会非常良好；而如果 BITRATE >= NET_SPEED 这种情况的持续时间比较长，推流质量就很难有什么保障。
 - **4.1.2：CACHE_SIZE 和 DROP_CNT 的数值**
 BITRATE >= NET_SPEED 的情况一旦出现，编码器产生的音视频数据就会在主播的手机上积压起来，积压的严重程度以 CACHE_SIZE 这个状态值展示出来，如果 CACHE_SIZE 超过警戒线，SDK 会主动丢弃一些音视频数据，从而触发 DROP_CNT 的增长。下图所示就是一个典型的上行阻塞，途中 CACHE_SIZE 始终在**红色警戒线**以上，说明上行网络不足以满足数据的传输需求，也就是上行阻塞严重：
-![](//mc.qcloudimg.com/static/img/319d6197da603ca15ffc6e2afd778e48/image.png)
-![](//mc.qcloudimg.com/static/img/e241222c0591e6b5ffa41738a8a35d62/image.png)
+![](https://main.qcloudimg.com/raw/ea350eb13c5bde411529b8e9914f705c.png)
  > ! 您可以在[【直播控制台】](https://console.cloud.tencent.com/live/livestat)>【质量监控】里看到类似上图的图表。
  
 ### 4.2 针对性优化方案
@@ -66,7 +65,7 @@ BITRATE >= NET_SPEED 的情况一旦出现，编码器产生的音视频数据�
 
 
 ## 5. 播放端的优化
-![](//mc.qcloudimg.com/static/img/9ccfcf56c0993232cc5637f306c21ba5/image.png)
+![](https://main.qcloudimg.com/raw/1f221c3ecba79a706014154531a02bbd.png)
 
 ### 5.1 卡顿 & 延迟
 如上图，下行网络的波动或者下行带宽不沟通，都会导致在播放过程中出现一段段的**饥饿期**——App 这段时间内拿不到可以播放的音视频数据。如果想要让观看端的视频卡顿尽量少，就要尽可能地让 App 缓存足够多的视频数据，以保证它能平安度过这些“饥饿期”，但是 App 缓存太多的音视频数据会引入一个新的问题 —— **高延迟**，这对互动性要求高的场景是很坏的消息，同时如果不做延迟修正和控制，卡顿引起的延迟会有**累积效应**，就是播放时间越久，延迟越高，延迟修正做得好不好是衡量一款播放器是否足够优秀的关键指标。所以**延迟和流畅是一架天平的两端**，如果过分强调低延迟，就会导致轻微的网络波动即产生明显的播放端卡顿。反之，如果过分强调流畅，就意味着引入大量的延迟（典型的案例就是 HLS（m3u8） 通过引入10秒 - 30秒的延迟来实现流畅的播放体验）。
@@ -75,14 +74,15 @@ BITRATE >= NET_SPEED 的情况一旦出现，编码器产生的音视频数据�
 为了能够让您无需了解过多流控处理知识就能优化出较好的播放体验，腾讯云 RTMP SDK 经过多个版本的改进，优化出一套自动调节技术，并在其基础上推出了三种比较优秀的 [延迟控制方案](https://intl.cloud.tencent.com/document/product/1071/38160)：
 
 - **自动模式**：如果您不太确定您的主要场景是什么，可以直接选择这个模式。
->把 TXLivePlayConfig 中的 setAutoAdjustCache 开关打开，即为自动模式。在该模式下播放器会根据当前网络情况，对延迟进行自动调节（默认情况下播放器会在 1s - 5s 这个区间内自动调节延迟大小，您可以通过 setMinCacheTime 和 setMaxCacheTime 对默认值进行修改），以保证在足够流畅的情况下尽量降低观众跟主播端的延迟，确保良好的互动体验。
+>? 把 TXLivePlayConfig 中的 setAutoAdjustCache 开关打开，即为自动模式。在该模式下播放器会根据当前网络情况，对延迟进行自动调节（默认情况下播放器会在 1s - 5s 这个区间内自动调节延迟大小，您可以通过 setMinCacheTime 和 setMaxCacheTime 对默认值进行修改），以保证在足够流畅的情况下尽量降低观众跟主播端的延迟，确保良好的互动体验。
 
 - **极速模式**：主要适用于**秀场直播**等互动性高，因而对延迟要求比较苛刻的场景。
-> 极速模式设置方法是  **setMinCacheTime = setMaxCacheTime = 1s**  ，自动模式跟极速模式的差异只是MaxCacheTime 有所不同 （极速模式的 MaxCacheTime 一般比较低，而自动模式的 MaxCacheTime 则相对较高 ），这种灵活性主要得益于 SDK 内部的自动调控技术，可以在不引入卡顿的情况下自动修正延时大小，而MaxCacheTime 反应的就是调节速度：MaxCacheTime的值越大，调控速度会越发保守，卡顿概率就会越低。
+>? 极速模式设置方法是  **setMinCacheTime = setMaxCacheTime = 1s**  ，自动模式跟极速模式的差异只是MaxCacheTime 有所不同 （极速模式的 MaxCacheTime 一般比较低，而自动模式的 MaxCacheTime 则相对较高 ），这种灵活性主要得益于 SDK 内部的自动调控技术，可以在不引入卡顿的情况下自动修正延时大小，而MaxCacheTime 反应的就是调节速度：MaxCacheTime的值越大，调控速度会越发保守，卡顿概率就会越低。
  
 - **流畅模式**：主要适用于**游戏直播** 等大码率高清直播场景。
-> 当把播放器中的 setAutoAdjustCache 开关关闭，即为流畅模式，在该模式下播放器采取的处理策略跟 Adobe Flash 内核的缓存出策略如出一辙：当视频出现卡顿后，会进入 loading 状态直到缓冲区蓄满，之后进入 playing 状态，直到下一次遭遇无法抵御的网络波动。默认情况下缓冲大小为 5s，您可以通过 setCacheTime 进行更改。
-> 在延迟要求不高的场景下，这种看似简单的模式会更加可靠，因为该模式本质上就是通过牺牲一点延迟来降低卡顿率。
+>? 
+>- 当把播放器中的 setAutoAdjustCache 开关关闭，即为流畅模式，在该模式下播放器采取的处理策略跟 Adobe Flash 内核的缓存出策略如出一辙：当视频出现卡顿后，会进入 loading 状态直到缓冲区蓄满，之后进入 playing 状态，直到下一次遭遇无法抵御的网络波动。默认情况下缓冲大小为 5s，您可以通过 setCacheTime 进行更改。
+>- 在延迟要求不高的场景下，这种看似简单的模式会更加可靠，因为该模式本质上就是通过牺牲一点延迟来降低卡顿率。
 
 
 
