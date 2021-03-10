@@ -7,7 +7,7 @@ Log-based monitoring alarm use cases can be implemented by configuring alarm pol
 
 ### Step 1. Create an alarm policy
 
-Log in to the [CLS console](https://console.cloud.tencent.com/cls/monitor) and click **Monitoring Alarm** on the left sidebar to create an alarm policy.
+Log in to the [CLS console](https://console.cloud.tencent.com/cls/alarm) and click **Monitoring Alarm** on the left sidebar to create an alarm policy.
 
 ### Step 2. Configure a monitoring rule
 
