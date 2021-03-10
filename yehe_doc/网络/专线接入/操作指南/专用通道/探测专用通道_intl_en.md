@@ -9,5 +9,4 @@ The Direct Connect console provides a tunnel tool that sends a detection packet 
 2. Click the **ID/Name** of the target dedicated tunnel to enter its details page.
 3. Select the **Tunnel Tool** tab.
 4. Configure the number and volume of the packets, and click **Start Probing**. Determine if the network is connected based on the loss delay.
-![](https://main.qcloudimg.com/raw/28a978d1df630ef3aef261fcbb895cdb.png)
 
