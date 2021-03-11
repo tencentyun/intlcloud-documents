@@ -53,7 +53,7 @@ You have logged in to the [SSL Certificate Service console](https://console.clou
   - **Reissue reason**: Enter the reissue reason in brief.
 2. In the pop-up window, click **Confirm**.
 3. Go to the **Domain verification** page to verify the ownership of the domain. After this, click **Verify Now**. For more information about how to verify a domain, please see [Domain Verification](https://intl.cloud.tencent.com/document/product/1007/30168).
->?If your DV certificate is purchased from TrustAsia (2-year or 3-year wildcard domain) and have configured auto-DNS verification or auto-file verification for the domain you are applying for, ownership verification is not required.
+
 4. After the domain is verified, the reissue is completed.
 
 >?
