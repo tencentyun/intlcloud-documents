@@ -145,27 +145,27 @@ iOS/TRTCSceneDemo/TXLiteAVDemo/TRTCCallingDemo/model
 2. 接收方收到 `onInvited` 事件，此时可以通过 `accept` 方法接听此次通话，也可以选择用 `reject` 方法拒绝通话。
 3. 发起方收到 `onUserEnter` 的回调，说明接收方已经进入通话。
 ```
-// 1.监听回调
-[[TRTCCalling shareInstance] addDelegate:delegate];
+ // 1.监听回调
+ [[TRTCCalling shareInstance] addDelegate:delegate];
 
-// 接听/拒绝
-// 此时 B 如果也登录了IM系统，会收到 onInvited(A, null, false) 回调
-// 可以调用 TRTCCalling的accept方法接受 / TRTCCalling的reject 方法拒绝
--(void)onInvited:(NSString *)sponsor
-         userIds:(NSArray<NSString *> *)userIds
-     isFromGroup:(BOOL)isFromGroup
-        callType:(CallType)callType {
-    [[TRTCCalling shareInstance] accept];
-}
+ // 接听/拒绝
+ // 此时 B 如果也登录了IM系统，会收到 onInvited(A, null, false) 回调
+ // 可以调用 TRTCCalling的accept方法接受 / TRTCCalling的reject 方法拒绝
+ -(void)onInvited:(NSString *)sponsor
+          userIds:(NSArray<NSString *> *)userIds
+      isFromGroup:(BOOL)isFromGroup
+         callType:(CallType)callType {
+     [[TRTCCalling shareInstance] accept];
+ }
 
-// 2.调用组件的其他功能函数发起通话或挂断等
-// 注意：必须在登录后才可以正常调用
-// 发起视频通话
-[[TRTCCalling shareInstance] call:@"目标用户" type:CallType_Audio];
-// 挂断
-[[TRTCCalling shareInstance] hangup];
-// 拒绝
-[[TRTCCalling shareInstance] reject];
+ // 2.调用组件的其他功能函数发起通话或挂断等
+ // 注意：必须在登录后才可以正常调用
+ // 发起视频通话
+ [[TRTCCalling shareInstance] call:@"目标用户" type:CallType_Audio];
+ // 挂断
+ [[TRTCCalling shareInstance] hangup];
+ // 拒绝
+ [[TRTCCalling shareInstance] reject];
 ```
 
 <span id="model.step6"></span>
