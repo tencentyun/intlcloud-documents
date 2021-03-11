@@ -2,7 +2,7 @@
 
 ## 函数部署
 SCF CLI 通过 `deploy` 子命令来完成函数打包部署。SCF 命令行工具依据指定的函数模板配置文件，将配置文件中指定的代码包、函数配置等信息，部署到云端，或更新云端的函数。
-> `scf deploy` 命令的执行过程均基于函数模板配置文件，具体的模板文件说明和写法请见 [模板文件说明](https://intl.cloud.tencent.com/document/product/583/32758)。
+>! `scf deploy` 命令的执行过程均基于函数模板配置文件，具体的模板文件说明和写法请见 [模板文件说明](https://intl.cloud.tencent.com/document/product/583/32758)。
 
 ### 参数说明
 
@@ -32,14 +32,14 @@ Deploy function 'testproject' success
 Deploy namespace 'default' end
 ```
 部署成功后，即可在控制台上的函数列表中，查询到已创建的 “testproject” 函数。
-> 如需修改代码，请在完成修改代码后重新部署。若模板配置文件没有修改，函数将进行更新操作。
+>? 如需修改代码，请在完成修改代码后重新部署。若模板配置文件没有修改，函数将进行更新操作。
 >
 修改代码后，需要重新打包上传的操作示例如下：
 ```bash
 $ cd testproject
 $ vim index.py
 
-$ scf deploy
+$ scf deploy -f
 Deploy  function 'testproject' success
 ```
 
@@ -47,7 +47,7 @@ Deploy  function 'testproject' success
 实际项目中，可以自定义不想上传的文件内容，SCF CLI 将会忽略这些内容进行打包。
 1. 您需要在代码路径下，新建 `ignore` 文件夹。
 2. 进入 `ignore` 文件，新建忽略配置文件 `FUNCTIONNAME.ignore` ，并在该文件下描述忽略的内容。
->路径规范：以 template.yaml 里的 CodeUri 路径为基准 ，定义想要忽略的内容所在位置。
+>!路径规范：以 template.yaml 里的 CodeUri 路径为基准 ，定义想要忽略的内容所在位置。
 >
 如下所示，template.yaml 里定义函数名为 hello，CodeUri 为`./`。
 ```yaml
@@ -79,7 +79,7 @@ Resources:
 
 <span id="COSUploadCode"></span>
 ### 通过 COS 对象存储上传代码
-使用 COS 部署函数最高能提升80%的速率，大大提高了工作效率。但在部署频次、部署包很大时，可能会产生 COS 计费。现 SCF 与 COS 联合发布限时活动，开启 COS 部署即可领取代金券，请前往 [SCF 控制台](https://console.cloud.tencent.com/scf/index?rid=1?from=fromdoc) 查看活动信息。
+使用 COS 部署函数最高能提升80%的速率，极大提高了工作效率。但在部署频次、部署包很大时，可能会产生 COS 计费。现 SCF 与 COS 联合发布限时活动，开启 COS 部署即可领取代金券，请前往 [SCF 控制台](https://console.cloud.tencent.com/scf/index?rid=1?from=fromdoc) 查看活动信息。
 
 #### 自动部署
 您可以执行 `scf configure set --using-cos y` 命令开启自动 COS 上传。部署时，云端将会在您的账户下自动开启 COS 并创建名为 `scf-deploy-区域-appid` 的存储桶，并存储部署包。
@@ -90,7 +90,7 @@ Resources:
 #### 使用示例
 本示例假设，在环境为 Python 2.7 下，`/Users/xxx/code/scf` 目录中创建 testproject 项目。
 1. 执行以下命令，进入对应目录，打包配置文件并将 COS bucket 指定为 “temp-code-1253970226”。
-> COS bucket 需要与函数在相同地域。
+>! COS bucket 需要与函数在相同地域。
 >
 ```bash
 $ cd /Users/xxx/code/scf/testproject
@@ -102,6 +102,6 @@ Upload function zip file 'default-testproject-latest-2019-07-17-10-42-20.zip' to
 根据返回的信息，得知本地创建 zip 文件后，SCF 将 zip 包传递到 COS bucket 中。云端从 COS bucket 拉取代码包并部署成功。
 
 ### 通过本地 zip 包上传代码
->  当您通过本地 zip 包上传代码的方式创建函数时， zip 包的大小不能大于30MB。超过30MB的 zip 包将无法直接创建函数。若 zip 包大于30MB，建议您选择 [通过 COS 对象存储上传代码](#COSUploadCode) 方式进行创建。
->
->`delpoy` 子命令中的示例均以本地 zip 包上传方式完成。使用本地代码包上传方式时，`deploy` 子命令无需带有 cos-bucket 参数，SCF CLI 会将本地代码打包并生成一个随机名的 zip 文件然后部署至云端。
+>!
+>- 当您通过本地 zip 包上传代码的方式创建函数时， zip包的大小不能大于30MB。超过30MB的 zip 包将无法直接创建函数。若zip包大于30MB，建议您选择[通过 COS对象存储上传代码](#COSUploadCode)方式进行创建。
+>- `delpoy` 子命令中的示例均以本地 zip 包上传方式完成。使用本地代码包上传方式时，`deploy` 子命令无需带有 cos-bucket 参数，SCF CLI 会将本地代码打包并生成一个随机名的 zip 文件然后部署至云端。
