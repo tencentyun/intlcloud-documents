@@ -8,7 +8,7 @@
 
 
 ## 具体操作
-请根据需切换为私有网络的实例，选择对应的操作。
+请根据需要切换为私有网络的实例，选择对应的操作。
 <table>
 <thead>
 <tr>
@@ -28,30 +28,31 @@
 </tr>
 <tr>
 <td>云数据库 MySQL</td>
-<td><li>切换后，私有网络访问立即生效</li><li>转换后原有基础网络的访问可以最长保持24小时</li><li>切换网络时，保障数据库连接不中断</li></td>
+<td><li>切换后，私有网络访问立即生效</li><li>转换后原有基础网络的访问最长可以保持7天</li><li>切换网络时，保障数据库连接不中断</li></td>
 <td><li>基础网络切换私有网络后不可逆，云数据库 MySQL 切换至私有网络后与其他基础网络的云服务不互通</li>
-<li>内网 IP 从基础网络 IP 改变为私有网络 IP。</li></td>
+<li>内网 IP 从基础网络 IP 改变为私有网络 IP</li></td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/31915" target="_blank">切换网络</a></td>
 </tr>
 <tr>
 <td>云数据库 Redis</td>
-<td><li>切换后，私有网络访问立即生效</li><li>转换后原有基础网络的访问可以最长保持7天</li><li>切换网络时，保障数据库连接不中断</li></td>
+<td><li>切换后，私有网络访问立即生效</li><li>转换后原有基础网络的访问最长可以保持7天</li><li>切换网络时，保障数据库连接不中断</li></td>
 <td><li>基础网络切换私有网络后不可逆，云数据库 Redis 切换至私有网络后与其他基础网络的云服务不互通</li>
-<li>内网 IP 从基础网络 IP 改变为私有网络 IP。</li></td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/31944" target="_blank">更换 Redis 网络</a></td>
+<li>内网 IP 从基础网络 IP 改变为私有网络 IP</li></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/31944?from=10680#.E6.9B.B4.E6.8D.A2-redis-.E7.BD.91.E7.BB.9C" target="_blank">更换 Redis 网络</a></td>
 </tr>
 </tbody></table>
 
 ## 迁移示例
+>?本示例仅供参考，实际迁移的场景可能较示例更复杂，请在迁移前仔细评估影响，谨慎地制定迁移方案。
 ### 迁移说明
-本示例仅供参考，实际迁移的场景可能较示例更复杂，请在迁移前仔细评估影响，谨慎地制定迁移方案。
+
 如下图所示，基础网络的服务使用了 CLB、CVM、云数据库 MySQL、云数据库 Redis 四个产品，它们之间的依赖关系为：
 - 公网 CLB 绑定了两台 CVM 作为后端服务器。
 - 云数据库 MySQL、云数据库 Redis 为两台 CVM 上部署的服务提供数据库服务。
 ![](https://main.qcloudimg.com/raw/bf54dd1832d0e16c756984e305772e06.png)
 
 ### 迁移步骤
-1. 迁移云数据库，利用迁移后，仍可访问原有基础网络的优势，保障数据库连接不中断，不影响服务提供，且在原有基础网络的访问的最长保持时间内，完成其他产品的迁移。
+1. 迁移云数据库，利用迁移后原有基础网络仍可访问的优势，保障数据库连接不中断，不影响服务提供，且在原有基础网络的访问的最长保持时间内，完成其他产品的迁移。
 ![](https://main.qcloudimg.com/raw/427fe3f0445056c94332df90d4cd9bb3.png)
 2. 在云数据库迁移的私有网络内，新建两个 CVM，并部署对应的服务。完成后，测试 CVM 是否能正常访问云数据库。
 ![](https://main.qcloudimg.com/raw/4425f9af34e3df70a84f1a80e8a7ba40.png)
@@ -59,3 +60,4 @@
 ![](https://main.qcloudimg.com/raw/8dab2d96a40f1df4eefa9ad04117cb2b.png)
 4. 待所有服务完成迁移后，释放基础网络下留存的公网 CLB、CVM 资源，结束迁移。
 ![](https://main.qcloudimg.com/raw/cb567a4a3f88c4bc4c8d787d60f512f3.png)
+
