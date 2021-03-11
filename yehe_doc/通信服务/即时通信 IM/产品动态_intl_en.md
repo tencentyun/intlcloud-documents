@@ -5,8 +5,55 @@
     <th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>  
 </tr> 
 <tr>
+    <td> SDK 5.1.123 release (simplified edition)</td>
+    </td>
+        <ul style="margin:0">
+            <li> Fixed the issue where the Android edition cannot receive custom group system messages sent via the RESTful API.</li>
+            <li> Optimized the method of generating the value of the `random` field for a message.</li>
+            <li> Optimized log printing to facilitate troubleshooting.</li>
+            <li> Fixed the issue of occasional crashes in the network module.</li>
+        </ul>
+    </td>
+    <td> 2020-12-31 </td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+</tr>
+<tr>
+    <td> SDK 5.1.122 release (simplified edition)</td>
+    </td>
+        <ul style="margin:0">
+            <li> Fixed the issue where there might be no callbacks for setting conversation drafts.</li>
+            <li> Fixed the issue where the message sender information was not completed when searching for messages via `findMessage`.</li>
+            <li> Fixed the issue where it might fail to search for messages via `findMessage` after inserting local messages.</li>
+            <li> Fixed the issue where conversation objects were not updated when setting group message receiving options.</li>
+            <li> Fixed the issue where conversation change notifications were not sent when personal or group nicknames or profile photos were changed.</li>
+            <li> Fixed the issue where the last message of a conversation was not updated when inserting local messages.</li>
+            <li> Enabled on-cloud control over personal profile update cycle.</li>
+            <li> Fixed the issue of occasional crashes caused by improper dictionary or array operations on the iOS platform.</li>
+            <li> Fixed the issue of occasional crashes when deleting messages on the Android platform.</li>
+        </ul>
+    </td>
+    <td> 2020-12-25 </td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+</tr>
+<tr>
+    <td> SDK 5.1.121 release (simplified edition)</td>
+    </td>
+        <ul style="margin:0">
+            <li> Optimized the logic of pulling group profiles, so you don’t need to pull the group member information for audio-video groups.</li>
+            <li> Improved log printing and added the device type field.</li>
+            <li> Fixed the issue where the status of the last message in a C2C conversation was not updated when the conversation received a message recall notification.</li>
+            <li> Fixed the issue where the delay of long polling messages in audio-video groups was too long.</li>
+            <li> Fixed the issue where the message long polling module did not update messages and pull the key after a user logged in to the same account repeatedly and joined the same audio-video group.</li>
+            <li> Fixed the issue of crashes during parsing on the signaling module of the receiver when a custom message field passed in a JSON array on the iOS platform.</li>
+            <li> Fixed the issue of occasional crashes when setting conversation drafts on the Android platform.</li>
+        </ul>
+    </td>
+    <td> 2020-12-18 </td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+</tr>
+<tr>
     <td> SDK 5.1.118 release (simplified edition)</td>
-    <td>
+    </td>
         <ul style="margin:0">
             <li> Optimized the message deduplication logic and fixed the issue where repeated callbacks were triggered for the same message.</li>
             <li> Added an API for the local insertion of C2C messages.</li>
@@ -24,7 +71,7 @@
 </tr>
 <tr>
     <td> SDK 5.1.115 release (simplified edition)</td>
-    <td>
+    </td>
         <ul style="margin:0">
             <li> Optimized the signaling timeout threshold and server time synchronization.</li>
             <li> Fixed occasional failures in establishing connections on a weak network.</li>
@@ -37,7 +84,7 @@
 </tr>
 <tr>
     <td> SDK 5.1.10 release (standard edition)</td>
-    <td>
+    </td>
         <ul style="margin:0">
             <li> V2 APIs: added support for custom group fields and multi-element messages.</li>
             <li> V2 APIs: added an API for local insertion of C2C messages.</li>
@@ -54,7 +101,7 @@
 </tr> 
 <tr>
     <td> SDK 5.1.111 release (simplified edition)</td>
-    <td>
+    </td>
         <ul style="margin:0">
             <li> Improved log printing.</li>
             <li> Fixed several stability issues.</li>
@@ -74,7 +121,7 @@
 </tr> 
 <tr>
     <td> SDK 5.1.110 release (simplified edition)</td>
-    <td>
+    </td>
         <ul style="margin:0">
             <li> Supplemented all V2 APIs.</li>
             <li> Supplemented the conversation feature.</li>
@@ -91,7 +138,7 @@
 </tr> 
 <tr>
     <td> SDK 5.1.2 release (standard edition)</td>
-    <td>
+    </td>
         <ul style="margin:0">
             <li> iOS now allows users to be online on both their iPhones and iPads at the same time.</li>
             <li> Mac added support for the ARM64 architecture.</li>
@@ -104,7 +151,7 @@
 </tr> 
 <tr>
     <td> SDK 5.1.1 release (standard edition)</td>
-    <td>
+    </td>
         <ul style="margin:0">
             <li> Added an API to obtain the number of online users in an audio-video group (AVChatRoom).</li>
             <li> Added an API to query messages by unique ID.</li>
@@ -128,7 +175,7 @@
 <tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>  
 </tr> <tr>
 <td>SDK 5.0.108 release (simplified edition)</td>
-<td>
+</td>
     <li>Fixed a stability issue in the iOS edition.</li>
     <li>Fixed the occasional message callback failure issue for the Android edition.</li>
 </td>
@@ -338,14 +385,6 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 ## December 2019
 <table>
 <tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>  
-</tr> <tr>     
-<td>Launch of standard billing plan (Flagship Edition)</td>   
-<td>Standard billing plan (Flagship Edition) is now available with features such as “unlimited audio-video chat rooms”, “30-day message history storage”, and “maximum of 2,000 group members”. This is a one-time purchase to get more features.</td>   
-<td>2019-12-26</td>   
-<td><ul style="margin:0;">
-    <li><a href="https://intl.cloud.tencent.com/document/product/1047/34349">Billing Overview</a></li>
-    <li><a href="https://intl.cloud.tencent.com/document/product/1047/34350">Price Specification</a></li>
-    <li><a href="https://intl.cloud.tencent.com/document/product/1047/34577">Creating and Upgrading Applications</a></li></ul></td>   
 </tr><tr>      
 <td>SDK 4.6 improvements (Android, iOS, and Windows)</td>   
 <td><ul style="margin:0;">
