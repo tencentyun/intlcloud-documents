@@ -38,25 +38,25 @@ Perform the following operations to modify a 2.0 Internet tunnel.
 	<td>Enter the MD5 value of the BGP neighbor, which defaults to "tencent". If it is left empty, no BGP key is required. It cannot contain special characters such as ?, &, space, ", \, and +.</td>
 	</tr>
 	</table>
-    2. Choose whether to enable health check. Configure **Health Check Interval** and **Number of Failed Health Checks** if you choose to enable health check. After the health check is enabled, the service will be quickly switched to the standby link in case of network exceptions.
 
-<table>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-<tr>
-<td>Health Check Interval</td>
-<td>Enter a number within 1000-3000 to specify a period of time between two Tencent Cloud health checks, in ms.</td>
-</tr>
-<tr>
-<td>Number of Failed Health Checks</td>
-<td>Switch the route after the configured consecutive failed health checks.</td>
-</tr>
-</table>
-	3. Click **OK**.
-> ? The new tunnel configuration will take effect in several minutes depending on the network.
-> 
+    2. Choose whether to enable health check. Configure **Health Check Interval** and **Number of Failed Health Checks** if you choose to enable health check. After the health check is enabled, the service will be quickly switched to the standby link in case of network exceptions.
+	 <table>
+	 <tr>
+	 <th>Field</th>
+	 <th>Description</th>
+	 </tr>
+	 <tr>
+	 <td>Health Check Interval</td>
+	 <td>Enter a number within 1000-3000 to specify a period of time between two Tencent Cloud health checks, in ms.</td>
+	 </tr>
+	 <tr>
+	 <td>Number of Failed Health Checks</td>
+	 <td>Switch the route after the configured consecutive failed health checks.</td>
+	 </tr>
+	 </table>
+    3. Click **OK**.
+ > ? The new tunnel configuration will take effect in several minutes depending on the network.
+ > 
 
 ## Deleting an Internet Tunnel
 1. On the **Internet Tunnels** page, select the tunnel to be deleted, and click **Delete** under the **Operation** column.
