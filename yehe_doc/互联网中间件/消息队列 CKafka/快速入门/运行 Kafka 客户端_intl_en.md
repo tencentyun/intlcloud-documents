@@ -70,14 +70,14 @@ Currently, CKafka is fully compatible with Kafka 0.9, 0.10, 1.1, and 2.4. We rec
       bash kafka-console-consumer.sh --bootstrap-server XXXX:port --topic test --consumer.config ../config/consumer.properties
       ```
       >? Replace `XXXX:port` with the domain name and port for public network access.
-      >![](https://main.qcloudimg.com/raw/6855a9d500dcbefbabed91515b695050.png)
+      >![](https://main.qcloudimg.com/raw/afc2a197f4e0646f40aa6280c5f6414d.png)
 
    2. Open another terminal window to start a producer.
       ``` bash
       bash kafka-console-producer.sh --broker-list XXXX:port --topic test --producer.config ../config/producer.properties
       ```
       >? Replace `XXXX:port` with the domain name and port for public network access.
-      >![](https://main.qcloudimg.com/raw/6855a9d500dcbefbabed91515b695050.png)
+      >![](https://main.qcloudimg.com/raw/afc2a197f4e0646f40aa6280c5f6414d.png)
 
       Enter the content of the message and press Enter.
 
