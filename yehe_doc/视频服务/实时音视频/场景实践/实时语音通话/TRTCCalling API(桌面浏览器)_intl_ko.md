@@ -414,7 +414,7 @@ function handleInviteeReject({userID}) {
 초대한 사용자 응답 없음
 
 ``` javascript javascript
-function handleNoResponse({userID}) {
+function handleNoResponse({userID, userIDList}) {
 
 }
 ```
@@ -439,6 +439,7 @@ function handleInviteeLineBusy({userID}) {
 |매개변수   | 유형   | 의미    |
 | ------ | ------ | ------- |
 | userID | String | 사용자 ID |
+| userIDList | Array  | 시간 초과 사용자 리스트 |
 
 ### 초대 수신자 이벤트 콜백
 
