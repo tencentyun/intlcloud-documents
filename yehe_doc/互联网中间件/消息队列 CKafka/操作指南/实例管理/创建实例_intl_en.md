@@ -9,14 +9,10 @@ This document describes how to create instances in the CKafka console.
 3. On the purchase page, enter the purchase information.
    ![](https://main.qcloudimg.com/raw/053e51b2105b9ac14f4eacdb33130bb2.png)
   - Billing Mode: pay as you go
-   
-    - The standard edition does not support cross-AZ deployment.
   - Region: select a region close to the resources of the client that is to deploy CKafka.
   - AZ: select an AZ based on your actual conditions.
   - Bandwidth Cap: choose the peak bandwidth based on your actual conditions.
   - Message Retention: 1-2,160 hours
-   
-  >
   - VPC: if you want to use other VPCs, follow the steps in [Adding a Routing Policy](https://intl.cloud.tencent.com/document/product/597/32555) to modify the routing rules.
    
 4. Click **Buy Now** to complete the creation.
