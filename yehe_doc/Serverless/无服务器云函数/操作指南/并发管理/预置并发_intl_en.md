@@ -1,7 +1,5 @@
 Provisioned concurrency can start concurrent instances in advance according to the configuration, instead of starting them when accepting requests. You can use this feature to set the quota of provisioned concurrent instances for a specified function version, so as to prepare computing resources in advance and reduce the duration for cold start and initialization of runtime environment and business code.
->?
->- Provisioned concurrency is currently in beta test. You can apply for activation on the application page, and we will reply within 7 business days.
->- During the beta test, provisioned concurrent instances will not incur any fees when they are idle, and fees will be charged based on the actual execution duration of requests.
+
 
 
 ## Provisioned Concurrency and Concurrency Expansion
