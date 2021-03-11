@@ -27,29 +27,25 @@ TRTCCalling 依赖以下端口进行数据传输，请将其加入防火墙白�
 
 [](id:step1)
 ### 步骤1：创建新的应用
-
-1. [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国大陆的实时语音通话实例。
+1. [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 实名认证，未进行实名认证的用户无法购买中国大陆的实时视频通话实例。
 2. 登录实时音视频控制台，选择【开发辅助】>【[快速跑通Demo](https://console.cloud.tencent.com/trtc/quickstart)】。
-3. 单击【立即开始】，输入应用名称，例如 `TestTRTC`，单击【创建应用】。
+3. 输入应用名称，例如 `TestTRTC` ，单击【创建】。
 
 [](id:step2)
 ### 步骤2：下载 SDK 和 Demo 源码
-1. 鼠标移动至对应卡片，单击【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Web/TRTCScenesDemo/trtc-calling-web)】跳转至 Github（或单击【[ZIP](https://liteavsdk-1252463788.cos.ap-guangzhou.myqcloud.com/H5_latest.zip?_ga=1.195966252.185644906.1567570704)】），下载相关 SDK 及配套的 Demo 源码。
-
-2. 下载完成后，返回实时音视频控制台，单击【我已下载，下一步】，可以查看 SDKAppID 和密钥信息。
-
+1. 根据实际业务需求下载 SDK 及配套的 Demo 源码。
+2. 下载完成后，单击【已下载，下一步】。
 
 [](id:step3)
 ### 步骤3：配置 Demo 工程文件
-
-1. 解压 [步骤2](#step2) 中下载的源码包。
+1. 进入修改配置页，根据您下载的源码包，选择相应的开发环境。
 2. 找到并打开 `Web/TRTCScenesDemo/trtc-calling-web/public/debug/GenerateTestUserSig.js` 文件。
 3. 设置 `GenerateTestUserSig.js` 文件中的相关参数：
-  - SDKAPPID：默认为0，请设置为实际的 SDKAppID。
-  - SECRETKEY：默认为空字符串，请设置为实际的密钥信息。
+<ul style="margin:0"><li/>SDKAPPID：默认为0，请设置为实际的 SDKAppID。
+<li/>SECRETKEY：默认为空字符串，请设置为实际的密钥信息。</ul>
+4. 粘贴完成后，单击【已复制粘贴，下一步】即创建成功。
+5. 编译完成后，单击【回到控制台概览】即可。
 
-4. 返回实时音视频控制台，单击【粘贴完成，下一步】。
-5. 单击【关闭指引，进入控制台管理应用】。
 
 >!
 >- 本文提到的生成 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此 **该方法仅适合本地跑通 Demo 和功能调试**。
@@ -63,13 +59,9 @@ npm install
 npm run serve
 ```
 2. 启动 Chrome 浏览器中打开链接 `http://localhost:8080/` ，如果一切正常，Demo 运行界面如图所示：
-
 3. 输入用户 userid，单击【登录】，并选择【语音通话】：
-
 4. 输入呼叫用户 userid，单击【呼叫】：
-
 5. 即可进行语音通话：
-
 
 
 ## 搭建自己的语音通话
