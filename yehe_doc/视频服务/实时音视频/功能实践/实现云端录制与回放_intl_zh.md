@@ -139,8 +139,7 @@ TRTC 提供了三种云端录制的控制方案，分别是 [全局自动录制]
 
 - **录制任务的开始**
   主播在进房时指定进房参数 [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCParams) 中的 [userDefineRecordId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) 字段，之后该主播的上行音视频数据即会被云端录制下来，不指定该参数的主播不会触发录制任务。
-<dx-codeblock>
-::: Objective-C Objective-C
+```
 // 示例代码：指定录制用户 rexchang 的音视频流，文件 id 为 1001_rexchang
 TRTCCloud *trtcCloud = [TRTCCloud sharedInstance];
 TRTCParams *param = [[TRTCParams alloc] init];
@@ -151,8 +150,7 @@ param.userSig  = @"xxxxxxxx";    // 登录签名
 param.role     = TRTCRoleAnchor; // 角色：主播
 param.userDefineRecordId = @"1001_rexchang";  // 录制 ID，即指定开启该用户的录制。
 [trtcCloud enterRoom:params appScene:TRTCAppSceneLIVE]; // 请使用 LIVE 模式
-:::
-</dx-codeblock>
+```
 
 - **录制任务的结束**
   自动停止，当进房时指定 [userDefineRecordId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) 参数的主播在停止音视频上行后，云端录制会自行停止。如果您在[选择文件格式](#fileFormat)时设置了“续录时间”，则需要等待续录时间超时后才能收到录制文件。
