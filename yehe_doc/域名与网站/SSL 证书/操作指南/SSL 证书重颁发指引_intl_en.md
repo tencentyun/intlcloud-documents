@@ -40,7 +40,7 @@ You have logged in to the [SSL Certificate Service console](https://console.clou
 
 #### Paid DV certificates
 **Reissuing paid DV certificates**
-1. On the **Certificate re-issuance application** page, select a CSR algorithm, enter and confirm the configurations, and click ****Confirm application**.
+1. On the **Certificate re-issuance application** page, select a CSR algorithm, enter and confirm the configurations, and click **Confirm application**.
   - **Using the CSR of the original certificate**: The CSR of the original certificate is used.
   - **Generating a CSR online**: The CSR is generated and managed by Tencent Cloud SSL Certificate Service.
   - **Using an existing CSR**: Paste the content of an existing CSR to the certificate.
