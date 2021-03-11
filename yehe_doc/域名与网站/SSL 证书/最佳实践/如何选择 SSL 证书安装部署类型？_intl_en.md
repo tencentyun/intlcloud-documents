@@ -39,5 +39,6 @@ You can choose an appropriate method to install a certificate based on the encry
 </tr>
 </table>
 
-## [Using the Certificate Installation Service Provided by Tencent Cloud Marketplace](id:service)
+<span id="service"></span>
+## Using the Certificate Installation Service Provided by Tencent Cloud Marketplace
 The above manual certificate installation methods are suitable for mainstream servers. For server types that are not listed, use the [certificate installation service](https://market.cloud.tencent.com/categories/1100?tagName=%E8%AF%81%E4%B9%A6%E5%AE%89%E8%A3%85) provided by the Tencent Cloud marketplace.
