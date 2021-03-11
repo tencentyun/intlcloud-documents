@@ -414,7 +414,7 @@ function handleInviteeReject({userID}) {
 招待されたユーザーは応答しませんでした。
 
 ```  javascript javascript
-function handleNoResponse({userID}) {
+function handleNoResponse({userID, userIDList}) {
 
 }
 ```
@@ -424,6 +424,7 @@ function handleNoResponse({userID}) {
 | パラメータ   | タイプ   | 意味    |
 | ------ | ------ | ------- |
 | userID | String | ユーザーID |
+| userIDList | Array  | タイムアウトユーザーリスト |
 
 #### LINE_BUSY
 被招待側は通話中で、ビジー状態です。
