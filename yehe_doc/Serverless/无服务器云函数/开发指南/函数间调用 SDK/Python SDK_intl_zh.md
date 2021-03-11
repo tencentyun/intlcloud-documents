@@ -17,7 +17,7 @@ Tencentserverless SDK 的功能特性可分为以下几点：
 ### 云端函数互调
 
 #### 示例
->
+>!
 >- 不同地域下的函数互调，须指定地域，命名规则参见 [地域列表](https://intl.cloud.tencent.com/document/api/583/17238)。
 > - 如果不指定地域，默认为同地域下函数互调。
 > - 命名空间不指定，默认为 default。
@@ -38,6 +38,7 @@ def main_handler(event, context):
 
 ```python
 # -*- coding: utf8 -*-
+from tencentserverless import scf 
 from tencentserverless.scf import Client
 from tencentserverless.exception import TencentServerlessSDKException
 from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
@@ -64,6 +65,7 @@ def main_handler(event, context):
 
 ```python
 # -*- coding: utf8 -*-
+from tencentserverless import scf 
 from tencentserverless.scf import Client
 from tencentserverless.exception import TencentServerlessSDKException
 from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
@@ -98,7 +100,7 @@ def main_handler(event, context):
 - 运行环境
 已安装 tencentserverless SDK，支持 Windows、Linux 和 Mac 操作系统。
 
->本地调用云端函数须进行以上开发准备，推荐函数在本地开发完成后上传到云端，使用云端函数互调进行调试。
+>?本地调用云端函数须进行以上开发准备，推荐函数在本地开发完成后上传到云端，使用云端函数互调进行调试。
 
 
 #### 通过 pip 安装（推荐）
@@ -138,6 +140,7 @@ def main_handler(event, context):
 
 ```python
 # -*- coding: utf8 -*-
+from tencentserverless import scf 
 from tencentserverless.scf import Client
 from tencentserverless.exception import TencentServerlessSDKException
 from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
@@ -159,7 +162,7 @@ def main_handler(event, context):
 
 main_handler("","")
 ```
->Secret_id 及 secret_key：指云 API 的密钥 ID 和密钥 Key。您可以通过登录【[访问管理控制台](https://console.cloud.tencent.com/cam/overview)】，选择【云 API 密钥】>【[API 密钥管理](https://console.cloud.tencent.com/cam/capi)】，获取相关密钥或创建相关密钥。
+>?Secret_id 及 secret_key：指云 API 的密钥 ID 和密钥 Key。您可以通过登录【[访问管理控制台](https://console.cloud.tencent.com/cam/overview)】，选择【云 API 密钥】>【[API 密钥管理](https://console.cloud.tencent.com/cam/capi)】，获取相关密钥或创建相关密钥。
 >
 进入 PythonInvokeTest.py 所在文件目录，执行以下命令，查看结果。
 ```shell
