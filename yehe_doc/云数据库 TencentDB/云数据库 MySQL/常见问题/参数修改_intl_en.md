@@ -2,43 +2,26 @@
 ### How do I modify the configuration parameters of a TencentDB for MySQL instance?
 - **In the TencentDB for MySQL Console**
 In the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb), click the instance name and enter the management page. Select **Database Management** > **Parameter Settings**. Common `var\_name` includes:
-<table class="t">
+<table>
 <tbody><tr>
-<th>  Variable
-</th><th>  Description
-</th></tr>
+<th>Variable</th><th>Description</th></tr>
 <tr>
-<td> character_set_server
-</td><td> Default character set of the server
-</td></tr>
+<td>character_set_server</td><td>Default character set of the server</td></tr>
 <tr>
-<td> connect_timeout
-</td><td> Connection timeout period
-</td></tr>
+<td>connect_timeout</td><td>Connection timeout period</td></tr>
 <tr>
-<td> long_query_time
-</td><td> A query that takes longer than this time is a slow query
-</td></tr>
+<td>long_query_time</td><td>A query that takes longer than this time is a slow query</td></tr>
 <tr>
-<td> max_allowed_packet
-</td><td> Maximum packet length
-</td></tr>
+<td>max_allowed_packet</td><td>Maximum packet length</td></tr>
 <tr>
-<td> max_connections
-</td><td> Maximum number of connections
-</td></tr>
+<td>max_connections</td><td>Maximum number of connections</td></tr>
 <tr>
-<td> sql_mode
-</td><td> Current SQL mode of the server
-</td></tr>
+<td>sql_mode</td><td>Current SQL mode of the server</td></tr>
 <tr>
-<td> table_open_cache
-</td><td> Number of tables opened by all threads. Increasing this value will increase the number of file descriptors that mysqld is requested to open
-</td></tr>
+<td>table_open_cache</td><td>Number of tables opened by all threads. Increasing this value will increase the number of file descriptors that mysqld is requested to open</td></tr>
 <tr>
-<td> wait_timeout
-</td><td> Non-interactive connection timeout period
-</td></tr></tbody></table>
+<td>wait_timeout</td><td>Non-interactive connection timeout period</td></tr>
+</tbody></table>
 
 - **In the phpMyAdmin Console**
 Log in to the TencentDB for MySQL instance through phpMyAdmin and click **Variables** on the top menu. Click **Edit** next to the variable to be modified. Modify and click **Save**.
