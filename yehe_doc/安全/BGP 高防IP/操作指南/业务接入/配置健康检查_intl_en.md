@@ -7,7 +7,7 @@ Anti-DDoS Advanced can automatically identify the running status of your real se
 The health check mechanism for layer-7 business protection in Anti-DDoS Advanced is as follows: the Anti-DDoS forwarding cluster sends HTTP requests to the real server, and the Anti-DDoS system judges whether the server is normal according to the returned HTTP status codes.
 You can customize the status represented by the response code. For example, in a certain scenario, if HTTP returned values include http_1xx, http_2xx, http_3xx, http_4xx, and http_5xx, and you define http_1xx and http_2xx as normal status based on your business needs, then when a response code between http_3xx to http_5xx is returned, you can know that the server is exceptional.
 
->When configuring a forwarding rule, if only one real server IP is configured in the rule, the health check feature will not be enabled, as it is suitable for scenarios with multiple real server IPs.
+>!When configuring a forwarding rule, if only one real server IP is configured in the rule, the health check feature will not be enabled, as it is suitable for scenarios with multiple real server IPs.
 
 ## Directions
 ### Health check configuration for layer-4 business
@@ -15,7 +15,7 @@ You can customize the status represented by the response code. For example, in a
 2. On the "Port Connection" tab, select the target Anti-DDoS Advanced instance and the corresponding rule and click **Edit** in its health check column.
 ![](https://main.qcloudimg.com/raw/1ff1f0502792f1f75719d55789b34c36.png)
 3. On the health check editing page, click "Show Advanced Options", set the configuration items, and click **OK**.
->
+>?
 > - Heath check is enabled by default. When configuring health check, you are recommended to use the default values.
 > - Under the TCP protocol, it detects whether the port can be connected. Under the UDP protocol, it uses ping for reachability check.
 > 
@@ -28,7 +28,7 @@ You can customize the status represented by the response code. For example, in a
 2. On the "Domain Name Connection" tab, select the target Anti-DDoS Advanced instance and the corresponding rule and click **Configure** in its health check column.
 ![](https://main.qcloudimg.com/raw/10caff27108f8dc76acc5e8b2534632e.png)
 3. On the health check editing page, click "Show Advanced Options", set the configuration items, and click **OK**.
->Health check is disabled by default.
+>?Health check is disabled by default.
 >
 ![](https://main.qcloudimg.com/raw/1159b957659ea780671f572f08c6cd75.png)
 
