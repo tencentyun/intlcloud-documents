@@ -5,8 +5,8 @@ This document describes how to create instances and topics in the CKafka console
 
 ## Prerequisites
 
-- You have [signed up for a Tencent Cloud account(https://intl.cloud.tencent.com/document/product/378/17985).
-You have [purchased a [CVM](https://buy.cloud.tencent.com/cvm).
+- You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985).
+- You have [purchased a CVM](https://buy.cloud.tencent.com/cvm).
 
 ## Directions
 
