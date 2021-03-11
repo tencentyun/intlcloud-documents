@@ -272,37 +272,18 @@ Height_pixel = 192 * 240 / 320 = 144
 <tr><th>功能模块</th><th>API 接口</th>
 </tr><tr>
 <td rowspan=8>直播转码</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30790">创建转码模板</a></td>
-</tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30784">修改转码模板</a></td>
-</tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30786">查询转码模板详情</a></td>
-</tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30785">查询转码模板列表</a></td>
-</tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30788">删除转码模板</a></td>
-</tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30791">创建转码规则</a></td>
-</tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30787">查询转码规则</a></td>
-</tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30790">创建转码模板</a></td></tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30784">修改转码模板配置</a></td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30786">获取单个转码模板</a></td></tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30785">获取转码模板列表</a></td></tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30788">删除转码模板</a></td></tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30791">创建转码规则</a></td></tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30787">获取转码规则列表</a></td></tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/30789">删除转码规则</a></td>
 </tr><tr>
 <td rowspan=4>直播水印</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30826">创建水印模板</a></td>
-</tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30818">修改水印模板</a></td>
-</tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30824">删除水印模板</a></td>
-</tr><tr>
+<td><a href="https://cloud.tencent.com/document/api/267/30154">添加水印</a></td></tr><tr>
+<td><a href="https://cloud.tencent.com/document/api/267/30150">更新水印</a></td></tr><tr>
+<td><a href="https://cloud.tencent.com/document/api/267/30153">删除水印</a></td></tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/30820">查询水印列表</a></td>
 </tr></table>
-
-
-
-
-
-
-
-
- 
