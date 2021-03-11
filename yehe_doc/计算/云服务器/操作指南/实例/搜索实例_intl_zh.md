@@ -6,9 +6,9 @@
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm)。
 2. 在搜索框中，根据实际需求，输入需搜索的内容，单击 <img src="https://main.qcloudimg.com/raw/3cca38f08eaa87087cdd1b81eaf08a0a.png" style="margin: 0;"></img> 进行搜索。
  - 输入关键字，单击 <img src="https://main.qcloudimg.com/raw/3cca38f08eaa87087cdd1b81eaf08a0a.png" style="margin: 0;"></img>。如下图所示：
-![](https://main.qcloudimg.com/raw/4eac2d19630d80b29ea2278636daee3f.png)
+![](https://main.qcloudimg.com/raw/3a980389c96ec95a554a5ddb1d9afad8.png)
  - 选择可搜索的资源维度（例如选择所属项目、实例计费模式、实例类型等），单击  <img src="https://main.qcloudimg.com/raw/3cca38f08eaa87087cdd1b81eaf08a0a.png" style="margin: 0;"></img>。如下图所示：
-![](https://main.qcloudimg.com/raw/9f46eba7f774b9ac488eb6a8f32c47f6.png)
+![](https://main.qcloudimg.com/raw/44be7ae999dd1be682e244adb2b61842.png)
 3. 如需了解更多搜索语法，可单击 <img src="https://main.qcloudimg.com/raw/9de970d18ee10e917d164edf08670f06.png" style="margin: 0;"></img> 进行来查看相关搜索实例的语法。
 更多搜索实例相关的语法如下图所示：
 ![](https://main.qcloudimg.com/raw/2d55bf6a3fa40bd48d0b9ef298a6c57b.png)
