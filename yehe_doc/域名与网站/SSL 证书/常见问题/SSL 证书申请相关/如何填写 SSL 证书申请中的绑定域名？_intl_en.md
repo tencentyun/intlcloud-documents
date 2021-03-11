@@ -1,7 +1,7 @@
 
 ### How to fill in the domains bound to an SSL certificate during the application?
 After purchasing the SSL certificate, you need to go to the [SSL Certificate Service console](https://console.cloud.tencent.com/certoverview) to submit the materials for review. The SSL Certificate Service console will prompt you the type and number of domain names based on the certificate you purchased, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/1d7c5362e48996c7deb9bc0d5a761bc6.png)
+![](https://main.qcloudimg.com/raw/87f999fc76247c6ba04dbf364cd27cc0.png)
 
 >? To ensure that your SSL certificate can be issued and HTTPS can be used properly, please fill in information about the bound domains correctly.
 
