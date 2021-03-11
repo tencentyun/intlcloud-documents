@@ -14,7 +14,7 @@ You have logged in to the [SSL Certificate Service console](https://console.clou
 ## Directions
 ### Selecting certificate reissue
 1. Go to the **My Certificates** management page and select the certificate to reissue. Then, click **More** > **Reissue**, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/ca54ddf1b3390cc6796fdb1118f013e1.png)
+![](https://main.qcloudimg.com/raw/2c5c3623d0467555e13a8d4836afea16.png)
 2. Go to the **Certificate re-issuance application** page and verify your certificate or submit the required materials based on your certificate type. For more information, please see [Reissuing different types of certificates](#issue).
 
 
