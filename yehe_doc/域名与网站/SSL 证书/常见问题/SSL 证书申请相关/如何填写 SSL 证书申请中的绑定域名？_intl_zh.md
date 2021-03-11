@@ -1,7 +1,7 @@
 
 ### 如何填写证书申请中的绑定域名？
 当完成 SSL 证书购买后，您需要在 [腾讯云证书管理控制台](https://console.cloud.tencent.com/certoverview) 提交证书申请的审核资料。证书管理控制台将会根据您购买的证书提示您需要输入的域名类型和数量。如下图所示：
-![](https://main.qcloudimg.com/raw/1d7c5362e48996c7deb9bc0d5a761bc6.png)
+![](https://main.qcloudimg.com/raw/87f999fc76247c6ba04dbf364cd27cc0.png)
 
 >? 需正确填写证书绑定的域名信息，才可保证您的 SSL 证书顺利颁发并正常使用 HTTPS 服务。
 
