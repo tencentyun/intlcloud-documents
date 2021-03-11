@@ -465,7 +465,7 @@ function handleInviteeReject({userID}) {
 
 
 ```plaintext
-function handleNoResponse({userID}) {
+function handleNoResponse({userID, userIDList}) {
 
 }
 ```
@@ -476,6 +476,7 @@ function handleNoResponse({userID}) {
 | 参数   | 类型   | 含义    |
 | ------ | ------ | ------- |
 | userID | String | 用户 ID |
+| userIDList | Array  | 超时用户列表 |
 
 #### LINE_BUSY
 被邀请方正在通话中，忙线。
