@@ -3,7 +3,7 @@
 For more information on how to create custom policies, please see [Creating Custom Policies](https://intl.cloud.tencent.com/document/product/598/35596). SCF's policy syntax follows CAM's [syntax structure](https://intl.cloud.tencent.com/document/product/598/10604) and [resource description method](https://intl.cloud.tencent.com/document/product/598/10606), which is based on the JSON format, and all resources can be described in the six-segment style, as shown in the sample below:
 
 ```
-qcs: :scf:region:uin/uin—id:function/function-name
+qcs::scf:region:uin/uin—id:namespace/namespace-name/function/function-name
 ```
 
 >! When configuring the policy syntax, you also need to use the monitor APIs to get the monitoring information under the account. For more information about using the monitor APIs, please see the [sample policy](#policygen).
@@ -41,8 +41,8 @@ qcs: :scf:region:uin/uin—id:function/function-name
             ],
             "resource": 
             [
-                "qcs::scf:gz:uin/******:function/Test1",
-                "qcs::scf:gz:uin/******:function/Test2"
+                "qcs::scf:gz:uin/******:namespace/default/function/Test1",
+                "qcs::scf:gz:uin/******:namespace/default/function/Test2"
             ]
          }
       ] 
