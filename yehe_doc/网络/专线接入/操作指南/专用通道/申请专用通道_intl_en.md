@@ -48,6 +48,7 @@ Dedicated tunnels are network link segmentation of a connection. You can create 
 <td>Associate an existing direct connect gateway with the dedicated tunnel. A 2.0 tunnel does not support a NAT-type direct connect gateway.</td>
 </tr>
 </table>
+
 3. Configure the following parameters on the **Advanced Configuration** page.
 
 <table>
@@ -104,6 +105,7 @@ Dedicated tunnels are network link segmentation of a connection. You can create 
 > - `172.16.0.0/12` should be split into `172.16.0.0/13` + `172.24.0.0/13`.
 > - `192.168.0.0/16` should be split into `192.168.0.0/17` + `192.168.128.0/17`.
 >
+
 4. Configure IDC devices. You can click **Download configuration guide** and complete the configurations as instructed in the guide.
 
 <table>
@@ -118,6 +120,7 @@ Dedicated tunnels are network link segmentation of a connection. You can create 
 <td>You can update the IP range via <b>Change Tunnel</b> in the console.</td>
 </tr>
 </table>
+
 5. Click **Submit**.
 
 ### Step 2: set the alarm recipient
