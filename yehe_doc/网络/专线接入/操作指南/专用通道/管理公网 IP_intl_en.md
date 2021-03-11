@@ -43,6 +43,7 @@ The public IP range will be automatically bound to the Internet tunnels in the s
 <td>Customize a mask length, which cannot exceed 64 bits.</td>
 </tr>
 </table>
+
 4. Click **OK**.
 
 <span id ="wdcf"></span>
@@ -74,7 +75,7 @@ Follow the steps below to enable a public IP range.
 2. Select a region at the top of the page.
 3. Locate the public IP range to be enabled, and click **Enable** under the **Operation** column.
 
-4. In the pop-up dialog box, check **Confirm to enable the above IP addresses**, and click **Enable* to enable the four addresses of the IP range.
+4. In the pop-up dialog box, check **Confirm to enable the above IP addresses**, and click **Enable** to enable the four addresses of the IP range.
 
 <span id ="thgw"></span>
 ## Releasing a Public IP Range
