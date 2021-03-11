@@ -465,7 +465,7 @@ The invitee did not answer.
 
 
 ```plaintext
-function handleNoResponse({userID}) {
+function handleNoResponse({userID, userIDList}) {
 
 }
 ```
@@ -476,6 +476,7 @@ The parameters are as detailed below:
 | Parameter | Type | Description |
 | ------ | ------ | ------- |
 | userId | String | User ID |
+| userIDList | Array  | Timed-out user list |
 
 #### LINE_BUSY
 The invitee is in a call. The line is busy.
