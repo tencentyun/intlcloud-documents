@@ -94,7 +94,7 @@ Dedicated tunnels are network link segmentation of a connection. You can create 
 </tr>
 </table>
 
- > ?If **Static** is selected for **Routing Mode*, do not directly publish the following routes: `9.0.0.0/8`, `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`, `100.64.0.0/10`, `131.87.0.0/16`, `172.16.0.0/12` and `192.168.0.0/16` when configuring IDC IP range. Instead, you need to first split them as follows.
+ > ?If **Static** is selected for **Routing Mode**, do not directly publish the following routes: `9.0.0.0/8`, `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`, `100.64.0.0/10`, `131.87.0.0/16`, `172.16.0.0/12` and `192.168.0.0/16` when configuring IDC IP range. Instead, you need to first split them as follows.
 >
 > - `9.0.0.0/8` should be split into `9.0.0.0/9` + `9.128.0.0/9`.
 > - `10.0.0.0/8` should be split into `10.0.0.0/9` + `10.128.0.0/9`.
