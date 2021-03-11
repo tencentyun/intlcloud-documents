@@ -437,7 +437,7 @@ function handleInviteeReject({userID}) {
 邀请用户无应答。
 
 ```plaintext
-function handleNoResponse({userID}) {
+function handleNoResponse({userID, userIDList}) {
 
 }
 ```
@@ -447,6 +447,7 @@ function handleNoResponse({userID}) {
 | 参数   | 类型   | 含义    |
 | ------ | ------ | ------- |
 | userID | String | 用户 ID |
+| userIDList | Array  | 超时用户列表 |
 
 #### LINE_BUSY
 
