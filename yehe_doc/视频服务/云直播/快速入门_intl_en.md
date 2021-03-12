@@ -74,7 +74,7 @@ You can enter the generated push address into the corresponding push software ac
 3. You can use the following methods to test whether a live stream can be played back normally based on your business scenario:
    1. For stream test on PCs, we recommend you use tools such as [VLC](https://intl.cloud.tencent.com/document/product/267/32483). For more information, please see [CSS Playback](https://intl.cloud.tencent.com/document/product/267/31559).
    2. For stream test on web, we recommend you use TCPlayerLite in the Player SDK. For more information, please see [CSS Playback](https://intl.cloud.tencent.com/document/product/267/31559).
-   4. For stream test on mobile devices, we recommend you download and install Tencent Video Cloud Demo, open it, select **MLVB** > **CSS Pull*, enter the playback address into the address box manually or by scanning the QR code, and tap **Play** in the bottom-left corner to start watching.
+   4. For stream test on mobile devices, we recommend you download and install Tencent Video Cloud Demo, open it, select **MLVB** > **CSS Pull**, enter the playback address into the address box manually or by scanning the QR code, and tap **Play** in the bottom-left corner to start watching.
 
 >? If you need to push/play back a stream in an app, you can integrate the [MLVB SDK](https://intl.cloud.tencent.com/zh/product/mlvb) to use the CSS service. If you encounter any problem during the trial, please see [FAQs](https://intl.cloud.tencent.com/zh/document/product/267/7968).
 
