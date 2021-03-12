@@ -86,18 +86,20 @@ The root directory of your website is `C:/inetpub/wwwroot`. You can create a fil
 **URL format**: `http://Domain name/File directory/File name` or `https://Domain name/File directory/File name`
 Access the URL to obtain the file content, for example, `2019080603......ep939jlu32alzeo`.
  - If the domain name for file verification is `example.tencent.com`, access the URL `http://example.tencent.com/.well-known/pki-validation/fileauth.txt` or `https://example.tencent.com/.well-known/pki-validation/fileauth.txt` for verification.
+
+>?
  > For second-level domains prefixed with `www`, for example, `www.tencent.com`, perform the following 2 steps:
  >- First, perform [file verification](#FileVerification) for the second-level domain name.
  >- Second, perform [file verification](#FileVerification) for the primary domain name `tencent.com` (you do not need to reapply for a certificate). Verify the domain name according to the method specified in **URL format** and ensure that the file content is consistent.
  - If the domain name for file verification is a wildcard domain name `*.tencent.com`, access the URL `http://tencent.com/.well-known/pki-validation/fileauth.txt` or `https://tencent.com/.well-known/pki-validation/fileauth.txt` for verification.
 
->
-> - Both HTTP and HTTPS are supported, and either can be accessed.
-> - File verification does not support any redirect. Instead, it directly returns status code 200 and file content.
+>?
+ > - Both HTTP and HTTPS are supported, and either can be accessed.
+ > - File verification does not support any redirect. Instead, it directly returns status code 200 and file content.
 
 
 6. Wait for the CA's review. After the certificate is issued, the file and directory can be cleared.
 
->If any problems occur during this process, please [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
+>?If any problems occur during this process, please [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
 
 
