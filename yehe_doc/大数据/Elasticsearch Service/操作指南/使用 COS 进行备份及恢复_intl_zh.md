@@ -53,6 +53,7 @@ PUT _snapshot/my_cos_backup/snapshot_2
 GET _snapshot/my_cos_backup/snapshot_1
 ```
 该命令会返回快照的相关信息：
+>?当信息中的`state`字段为`SUCCESS`时，说明快照备份完成。
 ```
 {
     "snapshots": [
@@ -88,7 +89,7 @@ GET _snapshot/my_cos_backup/snapshot_1
 DELETE _snapshot/my_cos_backup/snapshot_1
 ```
 
->如果存在还未完成的快照，删除快照命令依旧会执行，并取消未完成快照的创建进程。
+>!如果存在还未完成的快照，删除快照命令依旧会执行，并取消未完成快照的创建进程。
 
 ## 从快照恢复
 1. 将快照中备份的所有索引都恢复到 ES 集群中。
