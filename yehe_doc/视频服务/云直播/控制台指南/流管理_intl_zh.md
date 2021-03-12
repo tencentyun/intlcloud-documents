@@ -1,5 +1,5 @@
 登录云直播控制台进入[【流管理】](https://console.cloud.tencent.com/live/streammanage)，在直播流管理界面可以切换显示在线流、历史流和禁推流。
-![](https://main.qcloudimg.com/raw/c5b87e813935c837bab39336772eaa49.png)
+![](https://main.qcloudimg.com/raw/7059648f7ca9055c2a97bc969152a6e1.png)
 
 ### 禁用直播流
 单击【禁用】即可对该推流地址进行禁用，禁用后该地址暂时无法进行推流。
