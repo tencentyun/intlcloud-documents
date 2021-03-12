@@ -71,7 +71,7 @@ For more information, please visit [Apache Flume's official website](https://flu
 
 ## Flume Connection to CKafka
 ### Preparations
-- In the CKafka Console, [create an instance](https://intl.cloud.tencent.com/document/product/597/32543).
+- In the CKafka Console, [create an instance](https://intl.cloud.tencent.com/document/product/597/39718).
 - Download [Apache Flume](http://flume.apache.org/download.html). Flume 1.7.0 is used in this document. 
 
 ### CKafka configuration
