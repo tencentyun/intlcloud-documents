@@ -1,8 +1,8 @@
 ## TCP SSL Listener Overview
 You can add a TCP SSL listener to a CLB instance to forward encrypted TCP requests from the client. The TCP SSL protocol is suitable for scenarios that require ultra-high performance and large-scale TLS offloading. With a TCP SSL listener, the backend server can directly obtain the real IP of the client.
->?
->- TCP SSL listener is in beta. To use it, please submit [a ticket](https://console.cloud.tencent.com/workorder/category/create?level1_id=6&level2_id=163&level1_name=%E8%AE%A1%E7%AE%97%E4%B8%8E%E7%BD%91%E7%BB%9C&level2_name=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB).
->- TCP SSL listener is currently only supported for CLB, but not classic CLB.
+
+>?TCP SSL listener is currently only supported for CLB, but not classic CLB.
+>
 
 ## Prerequisites
 You need to [create a CLB instance](http://intl.cloud.tencent.com/document/product/214/6149) first.
