@@ -282,8 +282,8 @@ Height_pixel = 192 * 240 / 320 = 144
 <td><a href="https://intl.cloud.tencent.com/document/product/267/30789">删除转码规则</a></td>
 </tr><tr>
 <td rowspan=4>直播水印</td>
-<td><a href="https://cloud.tencent.com/document/api/267/30154">添加水印</a></td></tr><tr>
-<td><a href="https://cloud.tencent.com/document/api/267/30150">更新水印</a></td></tr><tr>
-<td><a href="https://cloud.tencent.com/document/api/267/30153">删除水印</a></td></tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30826">添加水印</a></td></tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30818">更新水印</a></td></tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30824">删除水印</a></td></tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/30820">查询水印列表</a></td>
 </tr></table>
