@@ -1,7 +1,7 @@
 ## Apache Flume Overview
 Apache Flume is a distributed, reliable, and highly available log collection system that supports a wide variety of data sources such as HTTP, log file, JMS, and listening port. It can efficiently collect, aggregate, move, and store massive amounts of log data to a specified storage system like Kafka, distributed file system, and Solr search server.
 
-// The structure of Flume is as follows:
+The structure of Flume is as follows:
 ![](https://mc.qcloudimg.com/static/img/291cf61049ab4820c10c05c6f0900850/00.png)
 
 Flume uses agents as the smallest independent unit of operation. An agent is a JVM composed of three main components: source, sink, and channel.
