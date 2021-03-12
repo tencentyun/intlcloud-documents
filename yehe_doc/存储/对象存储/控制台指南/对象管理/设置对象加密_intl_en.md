@@ -2,7 +2,7 @@
 
 You can encrypt the objects stored in buckets on the COS console to prevent data leakage. For more information on encryption, see [Server-side Encryption Overview](https://intl.cloud.tencent.com/document/product/436/18145). The following information outlines how to configure object encryption:
 
->
+>!
 >- This operation does not support configuring encryption for archived objects. If encryption is needed, please first refer to the information on [restoring an archived object](https://intl.cloud.tencent.com/document/product/436/30961). After the restoration is complete, modify the storage type to standard or low frequency before configuring the encryption.
 >- As long as you have access permission for an object, whether the object has been encrypted has no effect on your accessing said object.
 > - Server-side encryption encrypts only the object data but not its metadata. Server-side encrypted objects can only be accessed with a valid signature and cannot be accessed by anonymous users.
@@ -23,6 +23,6 @@ You can encrypt the objects stored in buckets on the COS console to prevent data
 6. Click **Save**.
 7. If you need to configure batch encryption for multiple objects, you can check multiple objects from the file list and then select [Modify Encryption Method] under [More Actions].
 
->
+>!
 >- If you’re using SSE-KMS encryption for the first time, you need to [enable KMS services](https://buy.cloud.tencent.com/kms).
 >- Currently, SSE-KMS encryption only supports the Beijing, Shanghai, and Guangzhou regions.
