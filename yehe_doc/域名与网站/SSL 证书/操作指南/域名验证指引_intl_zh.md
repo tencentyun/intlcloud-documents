@@ -1,4 +1,3 @@
-﻿
 ## 操作场景
 
 本文档指导您在申请域名型证书后，验证域名的所有权。
@@ -86,18 +85,20 @@
 **链接地址格式**：`http://域名/文件目录/文件名`或者 `https://域名/文件目录/文件名`。
 访问链接可获取到文件内容，例如 `2019080603......ep939jlu32alzeo`。
  - 如果申请文件验证的域名是 `example.tencent.com`，进行验证访问的链接地址则是 `http://example.tencent.com/.well-known/pki-validation/fileauth.txt` 或者是 `https://example.tencent.com/.well-known/pki-validation/fileauth.txt`。
+
+>?
  > 对于 www 开头的二级域名，例如 `www.tencent.com`，您需进行以下两步操作：
  >- 第一步对该二级域名添加 [文件验证](#FileVerification)。
  >- 第二步对其主域名 `tencent.com` 添加 [文件验证](#FileVerification)（不需要重新申请证书），验证方法按照**链接地址格式**进行验证，验证值显示一致。
  - 如果申请文件验证的域名是泛域名 `*.tencent.com`，进行验证访问的链接地址是 `http://tencent.com/.well-known/pki-validation/fileauth.txt` 或者 `https://tencent.com/.well-known/pki-validation/fileauth.txt`。
 
->
-> - 支持 HTTP 和 HTTPS，任意一个均可访问。
-> - 文件验证需要直接响应200状态码和文件内容，不支持任何形式的跳转。
+>?
+ > - 支持 HTTP 和 HTTPS，任意一个均可访问。
+ > - 文件验证需要直接响应200状态码和文件内容，不支持任何形式的跳转。
 
 
 6. 请耐心等待 CA 机构扫描审核。证书颁发完成后，文件和目录即可清除。
 
->操作过程如果出现问题，请您 [联系我们](https://intl.cloud.tencent.com/document/product/1007/30951)。
+>?操作过程如果出现问题，请您 [联系我们](https://intl.cloud.tencent.com/document/product/1007/30951)。
 
 
