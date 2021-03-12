@@ -12,7 +12,6 @@ TPNS provides multiple push methods. You can test message pushes in different sc
 | Prerequisites | The SDK has been integrated and device registration has been successfully completed |
 | Test steps | 1. Get the token of the mobile phone to be tested<br>2. Call the relevant API or select a token as the push target in the console to push a message |
 | Expected result | The phone can receive the message |
-| Remarks | The message will preferentially be pushed through the vendor channel; and if it fails, the TPNS channel will be used for push |
 
 ### Push to all devices (broadcasting)
 
