@@ -1,21 +1,26 @@
-Tencent Cloud MediaPackage (MDP) provides professional, stable and secure video packaging and delivery services for global users. It leverages Tencent Cloud’s globally deployed compute resources and independently developed audiovisual technologies to simplify video packaging and distribution, while enhancing origin resiliency. MDP enables video providers to stream videos safely and stably on a global scale.
+Tencent Cloud MediaPackage (MDP) provides professional, stable, and secure video packaging and delivery services for global users. Leveraging the compute resources in Tencent Cloud's abundant AZs deployed around the globe and proprietary world-leading audiovisual technologies, MediaPackage simplifies video packaging and delivery and enhances the origin resiliency, which enables video providers to stream videos securely and stably on a large scale.
 
 ## Key Features
 
-### HLS and DASH input redundancy
-MediaPackage supports HLS and DASH input types. It will generate two input streams for each channel. **You can push both streams at the same time. If one input stream fails due to unstable network or other exceptions, MediaPackage will switch over to the other input stream seamlessly so the service is not interrupted.** It is stable and reliable in protecting your video assets.
+### Multiprotocol primary/backup stream inputs
 
-### Diverse output methods
-MediaPackage supports pulling streams from the origin server through multiple endpoints. Its quick integration with Tencent Cloud LVB CDN distribution allows you to build your own origin servers, ensuring safe and reliable video stream distribution on a global scale.
+MediaPackage supports HLS and DASH input streams. It generates primary and backup stream input addresses for each channel and allows you to push both streams at the same time, thus protecting your video assets stably and reliably.
 
-### High security
+### Flexible disaster recovery mechanism for output
 
-MediaPackage supports multiple authentication methods throughout the entire input and output process. **You can verify an input stream using a username and password in HTTP-authentication mode. You can authenticate an output stream using an IP blocklist/allowlist (CIDR block supported), Authkey, and the X-TENCENT-PACKAGE field in the HTTP header.**
+MediaPackage supports a flexible disaster recovery mechanism for output. When you input primary and backup streams at the same time, if the primary input fails due to unstable network connection or other exceptions, MediaPackage will switch to the backup input seamlessly for uninterrupted push. You can customize related parameters such as the switch time.
 
-### Built-in scalability and easy integration with Tencent Cloud services
+### Secure and stable origin server protection
 
-MediaPackage helps you build your own origin servers for video delivery, simplifying video packaging and distribution. You can also integrate MediaPackage with other Tencent Cloud products (MediaLive, MediaConnect, LVB CDN, etc.) to implement large-scale, broadcast-grade, and one-stop media services.
+MediaPackage supports pulling streams from the origin server through multiple endpoints. This enables you to build your own origin servers, thus ensuring secure and reliable video stream delivery on a large scale.
 
-### High-availability cache protection
+### Quick connection with CDN
 
-MediaPackage provides multi-level cache protection. When a server has an exception, the built-in monitoring system of MediaPackage can automatically remove the node to ensure the high reliability of regional resources. MediaPackage also supports input redundancy, where input streams can be switched seamlessly to ensure high stability and availability during push.
+MediaPackage allows you to quickly connect to LVB CDN and add your own playback domain name for delivery. The edge servers deployed around the world help deliver your videos stably and efficiently.
+
+### Comprehensive security protection
+
+MediaPackage supports multiple authentication modes throughout the entire input and output process. You can authenticate an input stream with a username and password in HTTP-authentication mode and authenticate an output stream with an IP blocklist/allowlist, Authkey, the X-TENCENT-PACKAGE field in the HTTP header, or a CIDR block-level protection policy.
+
+### High scalability for standalone or mix-and-match use
+MediaPackage helps you build your own origin servers with speed and ease to deliver video content to high numbers of viewers. It simplifies video packaging and delivery and can be integrated with other Tencent Cloud services such as MediaLive, MediaConnect, and LVB CDN to implement a full linkage of large-scale broadcast-grade one-stop media services.
