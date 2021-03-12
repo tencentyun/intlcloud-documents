@@ -5,19 +5,37 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>Added the cluster script feature.</td>
+<td>Added support for running a specified script on multiple nodes at a time for higher efficiency.</td>
+<td>January 26, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/39664" target="_blank">Cluster Scripts</a></td>
+</tr>
+<tr>
+<td>Added support for cross-model configuration change.</td>
+<td>You can select other models to change the node configuration when the current model is sold out.</td>
+<td>January 26, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31114" target="_blank">Adjusting Configuration</a></td>
+</tr>
+<tr>
+<td>Added the auto scaling feature.</td>
+<td>The auto scaling feature automatically adds or removes task nodes, helping you save costs while meeting the requirement for cluster computing power.</td>
+<td>January 26, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/39660" target="_blank">Auto Scaling</a></td>
+</tr>
+<tr>
 <td>Added new monitoring metrics.</td>
-<td>Added new monitoring metrics for the HDFS, YARN, HBase, Hive, Druid, Kudu, and Alluxio services.</td>
+<td><ol style="margin:0"><li>Added new monitoring metrics for the HDFS, Yarn, HBase, Hive, and Druid services.</li><li>Added support for monitoring on the Kudu and Alluxio services.</li></ol></td>
 <td>January 13, 2021</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/36879" target="_blank">Node Monitoring Metrics</a></td>
 </tr>
 <tr>
-<td>Added new regions on the international version.</td>
-<td>Added the Singapore region on the international version, including Singapore Zone 1 and Singapore Zone 2.</td>
+<td>Released the EMR service in Singapore on the international version.</td>
+<td>Added support for Singapore Zone 1 and Singapore Zone 2 on the international version.</td>
 <td>January 13, 2021</td>
 <td>-</td>
 </tr>
@@ -30,7 +48,7 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody>
@@ -49,7 +67,7 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody>
@@ -77,7 +95,7 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody>
@@ -108,13 +126,13 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Released Hadoop EMR v2.5.0.</td>
-<td>Upgraded the Alluxio component to the stable version 2.3.0, which delivers better performance in the use cases where compute and storage are separated.</td>
+<td>Upgraded the Alluxio component to the stable version 2.3.0, which delivers better performance in the use cases where compute and storage are separated.<td>
 <td>September 17, 2020</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
 </tr>
@@ -127,7 +145,7 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody>
@@ -151,7 +169,7 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody>
@@ -175,7 +193,7 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody>
@@ -210,7 +228,7 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -239,7 +257,7 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -268,7 +286,7 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -296,7 +314,7 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -323,7 +341,7 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -350,7 +368,7 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -397,7 +415,7 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -429,7 +447,7 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -446,7 +464,7 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -473,7 +491,7 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -510,7 +528,7 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -547,7 +565,7 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -583,7 +601,7 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -637,11 +655,11 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>Released new models.</td>
+<td>Released a new model.</td>
 <td>Released the I3 model in the Beijing, Shanghai, and Guangzhou regions. This model is a CVM allowlist model, and you can purchase it only if you are in the I3 allowlist.</td>
 <td>March 2019</td>
 <td>-</td>
@@ -673,7 +691,7 @@
 <th width=20%>Update</th>
 <th width=45%>Description</th>
 <th width=15%>Release Date</th>
-<th width=20%>Document</th>
+<th width=20%>Documentation</th>
 </tr>
 </thead>
 <tbody><tr>
