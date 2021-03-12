@@ -1,5 +1,5 @@
 LVBコンソールにログインして[【ストリーム管理】](https://console.cloud.tencent.com/live/streammanage)に移動し、LVBストリーム管理インターフェースでオンラインストリーム、ストリーム履歴、および禁止ストリームを切り替えることができます。
-![](https://main.qcloudimg.com/raw/c5b87e813935c837bab39336772eaa49.png)
+![](https://main.qcloudimg.com/raw/7059648f7ca9055c2a97bc969152a6e1.png)
 
 ### LVBストリームの無効化
 【無効】をクリックすれば、そのプッシュアドレスを無効にすることができます。無効にすると、そのアドレスは一時的にプッシュできなくなります。
