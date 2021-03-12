@@ -6,7 +6,7 @@ Packet loss or high latency may be caused by backbone network congestion, networ
 MTR is a network diagnostic tool and provides reports that help you locate networking problems.
 
 ## Solution
-> This document takes Linux and Windows CVM as an example to describe how to use MTR and analyze the report.
+>? This document takes Linux and Windows CVM as an example to describe how to use MTR and analyze the report.
 >
 Please see the MTR introduction and instructions corresponding to the host operating system.
 - [WinMTR Introduction and Instructions (for Windows)](#MTRofWindows)
@@ -107,7 +107,7 @@ The main output information is as follows
 - **StDev:** Standard deviation. A higher standard deviation indicates a larger difference in the the response time of data packets at this node.
 
 ### Report analysis and troubleshooting
-> Due to network asymmetry, we recommend you collect two-way MTR data (from the local machine to the destination server and from the destination server to the local machine) if any network error occurs.
+>? Due to network asymmetry, we recommend you collect two-way MTR data (from the local machine to the destination server and from the destination server to the local machine) if any network error occurs.
 >
 1. According to the report, check whether there is packet loss on the destination IP.
  - If there is no packet loss on the destination IP, network conditions are normal.
