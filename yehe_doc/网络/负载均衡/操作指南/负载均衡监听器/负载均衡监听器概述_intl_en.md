@@ -19,10 +19,8 @@ Tencent Cloud CLB supports request forwarding over the following protocols:
 - TCP SSL (transport layer)
 - HTTP (application layer)
 - HTTPS (application layer)
->?
->- The TCP SSL listener feature is currently in beta. To use it, please [submit a ticket](https://console.cloud.tencent.com/workorder/category/create?level1_id=6&level2_id=163&level1_name=%E8%AE%A1%E7%AE%97%E4%B8%8E%E7%BD%91%E7%BB%9C&level2_name=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB) for application.
->- TCP SSL listeners currently support public network CLB instances but not private network or classic CLB instances.
->
+
+>? TCP SSL listeners currently support public network CLB instances but not private network or classic CLB instances.
 
 <table>
 <thead>
