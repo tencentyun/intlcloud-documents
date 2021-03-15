@@ -13,10 +13,10 @@
 ## 鉴权配置
 1.  进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**推流域名**或【管理】进入域名详情页。 
 2.  单击【推流配置】，查看【鉴权配置】标签，单击右侧的【编辑】。
-	![](https://main.qcloudimg.com/raw/9928eda10a0759bcf2a433e101cb3e7d.jpg)
+	![](https://main.qcloudimg.com/raw/f57795fb5a6497ff59a1612c5d805ad2.png)
 3.  进入推流鉴权配置页，单击![](https://main.qcloudimg.com/raw/5637a9d55de965fa5d35725a955f4c00.png)按钮选择开启/关闭推流鉴权。
 4. 修改主 KEY 和备 KEY 信息，单击【保存】即可成功生效。
-![](https://main.qcloudimg.com/raw/315b71b8315d30ade496b3861e8d403c.jpg)
+![](https://main.qcloudimg.com/raw/a12dc5bb7d739ca7d526f35e9f22e81e.png)
 >? 主 KEY 为必填、备 KEY 为选填，主备 KEY 可实现当 KEY 泄露时平滑更换 KEY 不影响业务。
 
 
@@ -30,7 +30,7 @@
    1. 选择过期时间，例如：`2019-10-31 23:59:59`。
    2. 填写自定义的流名称 StreamName，例如：`liveteststream`。
    3. 单击【生成推流地址】即可生成带着 StreamName 的 RTMP 推流地址。
- ![](https://main.qcloudimg.com/raw/be893a10e50189c1ded53cc03cf6dbe8.jpg)
+ ![](https://main.qcloudimg.com/raw/6f5ac8dcac2082aedca950c5341946ab.png)
 4. 您可在根据业务场景实现 [直播推流](https://intl.cloud.tencent.com/document/product/267/31558) 后，在 [流管理](https://intl.cloud.tencent.com/document/product/267/31068) 进行测试、禁用和删除。
 5. 生成推流地址即可进行直播推流开播，但是观看直播要获取播放地址，具体请参见 [播放配置](https://intl.cloud.tencent.com/document/product/267/31058)。
 
