@@ -7,13 +7,17 @@
 
 ## プッシュアドレスジェネレーター
 1. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)に入り、設定したいプッシュドメイン名を選択するか、【管理】をクリックし、ドメイン名の詳細ページに入ります。
-![](https://main.qcloudimg.com/raw/88a070c73b1bcd6a04195da768ace0c7.png)
+![](https://main.qcloudimg.com/raw/f57795fb5a6497ff59a1612c5d805ad2.png)
 2. 【プッシュ設定】>【プッシュアドレスジェネレーター】を選択し、次のとおり設定を行います。
 	1. 期限切れ時間を選択します（例：`2019-10-31 23:59:59）。
 	2. カスタマイズされたカスタムストリーム名StreamNameを入力します（例：liveteststream）。
 	3. 【プッシュアドレスの生成】をクリックすると、 StreamNameの付いたRTMPプッシュアドレスが生成されます。
-![](https://main.qcloudimg.com/raw/29e4a0af31d1b37d91f6618453b6cc81.png)
->RTMPプッシュアドレスの形式は、`rtmp://domain/live/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)`です。そのうち、
+![](https://main.qcloudimg.com/raw/a12dc5bb7d739ca7d526f35e9f22e81e.png)
+RTMPプッシュアドレスの形式は、
+```
+rtmp://domain/live/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
+```
+そのうち、
 		- `domain`：CSSプッシュドメイン名。
 		- `AppName`：CSSアプリケーション名。デフォルトはliveで、カスタマイズ可能です。
 		- `StreamName`：ライブストリーミングのストリームを識別するために用いる、ユーザー定義のストリーム名。
