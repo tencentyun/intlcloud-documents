@@ -1,5 +1,5 @@
 After your domain name is connected to CDN, the system will automatically assign you a CNAME domain name suffixed with `.cdn.dnsv1.com` which can be viewed on the [Domain Management](https://console.cloud.tencent.com/cdn/domains) page in the CDN console. It cannot be accessed directly. Instead, you need to complete the CNAME configuration with the domain name service provider first. When the configuration takes effect, you can use the CDN acceleration service.
-![img](https://main.qcloudimg.com/raw/073b948565743f7947aae8503eef995d.png)
+![img](https://main.qcloudimg.com/raw/6e3efa29d65ec9a35af7c1a762ebfcb8.png)
 
 ## Configuration Directions
 
