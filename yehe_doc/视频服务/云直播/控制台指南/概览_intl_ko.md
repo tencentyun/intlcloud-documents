@@ -1,4 +1,4 @@
-LVB 콘솔에 로그인하여 왼쪽 메뉴에 있는 [Overview](https://console.cloud.tencent.com/live/livestat)를 클릭해 비디오 라이브 방송 개요 페이지로 이동합니다.
+CSS 콘솔에 로그인하여 왼쪽 메뉴에 있는 [Overview](https://console.cloud.tencent.com/live/livestat)를 클릭해 비디오 라이브 방송 개요 페이지로 이동합니다.
 라이브 방송 개요 페이지에서 전날 트래픽 요금, 라이브 방송 실시간 데이터, 라이브 방송 온라인 시청자 수, 최근 몇 일 간의 과금 대역폭 및 과금 트래픽 추세 등을 확인할 수 있으며, 과금 방식 및 시간 단위를 변경할 수 있습니다.
 
 #### 1. 과금 방식 전환
