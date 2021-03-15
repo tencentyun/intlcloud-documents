@@ -12,7 +12,7 @@ Open a terminal window and run this command:
 ```
 java -version
 ```
-If the output of the command is a Java version number, then Java is already installed in your system. If you have not installed Java yet, download and install a [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+If the output of the command is a Java version number, then Java is already installed in your system. If you have not installed Java yet, download and install a [Java Development Kit (JDK)](http://kafka.apache.org/downloads)
 
 
 #### 2. Set up the Java environment.
