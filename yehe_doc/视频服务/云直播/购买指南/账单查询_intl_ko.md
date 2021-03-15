@@ -1,4 +1,4 @@
-Tencent LVB(CSS)에서 발생한 청구서 및 사용 명세서는 Tencent Cloud [Bills]>[Bill Details](https://console.cloud.tencent.com/expense/bill/summary)에서 조회할 수 있습니다.
+Tencent CSS(CSS)에서 발생한 청구서 및 사용 명세서는 Tencent Cloud [Bills]>[Bill Details](https://console.cloud.tencent.com/expense/bill/summary)에서 조회할 수 있습니다.
 청구서 상세에는 [리소스 ID 청구서](#resources_id) 및 [청구 명세서](#detail)가 포함되어 있습니다.
 - 리소스 ID 청구서: 리소스 ID별 명세 내역을 취합한 청구서입니다.
 - 청구 명세서: 취합하지 않은 각 비용의 명세 기록입니다.
@@ -8,7 +8,7 @@ Tencent LVB(CSS)에서 발생한 청구서 및 사용 명세서는 Tencent Cloud
 ## 리소스 ID 청구서
 
 1. [Bill by Instance]를 클릭해 탭으로 이동합니다.
-2. [All products] 필터 클릭 후 [LVB CSS]를 선택하여 LVB의 리소스 ID 청구서를 조회할 수 있습니다.
+2. [All products] 필터 클릭 후 [CSS]를 선택하여 CSS의 리소스 ID 청구서를 조회할 수 있습니다.
 
 ![](https://main.qcloudimg.com/raw/9db167f7285dfaf82d83a9028d589ad8.png)
 
@@ -30,7 +30,7 @@ Tencent LVB(CSS)에서 발생한 청구서 및 사용 명세서는 Tencent Cloud
 </tr>
 <tr>
 <td>설정 설명</td>
-<td>이번 달에 사용자가 LVB에서 사용한 하위 기능 항목 및 사용량은 다음과 같습니다.<ul style="margin:0;">
+<td>이번 달에 사용자가 CSS에서 사용한 하위 기능 항목 및 사용량은 다음과 같습니다.<ul style="margin:0;">
     <li>라이브 방송 트랜스 코딩</li>
     <li>라이브 방송 녹화</li>
     <li>라이브 방송 화면 캡처</li>
@@ -58,7 +58,7 @@ Tencent LVB(CSS)에서 발생한 청구서 및 사용 명세서는 Tencent Cloud
 ## 청구 명세서
 
 1. [청구 명세서]를 클릭해 탭으로 이동합니다.
-2. [모든 제품] 필터 클릭 후 [LVB CSS]를 선택하여 LVB의 청구서를 조회할 수 있습니다.
+2. [모든 제품] 필터 클릭 후 [CSS]를 선택하여 CSS의 청구서를 조회할 수 있습니다.
 
 ![](https://main.qcloudimg.com/raw/0716954d4d5a955a77acd4149961ca1b.png)
 
@@ -66,7 +66,7 @@ Tencent LVB(CSS)에서 발생한 청구서 및 사용 명세서는 Tencent Cloud
 
 | 필드       | 설명                                                         |
 | :--------- | :----------------------------------------------------------- |
-| 모듈 유형   | 이번 달 LVB에서 사용한 각 하위 기능 항목                                 |
+| 모듈 유형   | 이번 달 CSS에서 사용한 각 하위 기능 항목                                 |
 | 모듈 명칭   | 해당 모듈 유형에서 사용한 기능 항목                                 |
 | 모듈 정가 | 해당 모듈에는 할인된 정가 가격이 존재하지 않습니다                                   |
 | 모듈 사용량   | 해당 모듈의 사용량                                               |
