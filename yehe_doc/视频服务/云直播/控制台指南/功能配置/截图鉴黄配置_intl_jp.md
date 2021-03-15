@@ -1,8 +1,8 @@
-ここでは、[LVBコンソール](https://console.cloud.tencent.com/live) を利用して、スクリーンキャプチャテンプレートを作成する方法を紹介します。作成完了後は、対応するプッシュドメイン名において [Screencapturing and Porn Detection Configuration](https://intl.cloud.tencent.com/document/product/267/31063)の関連付けを行う必要があり、関連付け完了の約5分 - 10分後に有効となります。その外、APIを介して、ライブストリーミングチャネルに対してスクリーンキャプチャテンプレートを作成することもできます。
+ここでは、[CSSコンソール](https://console.cloud.tencent.com/live) を利用して、スクリーンキャプチャテンプレートを作成する方法を紹介します。作成完了後は、対応するプッシュドメイン名において [Screencapturing and Porn Detection Configuration](https://intl.cloud.tencent.com/document/product/267/31063)の関連付けを行う必要があり、関連付け完了の約5分 - 10分後に有効となります。その外、APIを介して、ライブストリーミングチャネルに対してスクリーンキャプチャテンプレートを作成することもできます。
 
 
 ## スクリーンキャプチャテンプレートの作成
-LVBコンソールにログインした後、左側メニューバーから【機能テンプレート】>[【[Screencapturing and Porn Detection Configuration]](https://console.cloud.tencent.com/live/config/jtjh)を選択します。【+】をクリックして設定情報を設定し、【保存】をクリックすれば完了です。
+CSSコンソールにログインした後、左側メニューバーから【機能テンプレート】>[【[Screencapturing and Porn Detection Configuration]](https://console.cloud.tencent.com/live/config/jtjh)を選択します。【+】をクリックして設定情報を設定し、【保存】をクリックすれば完了です。
 スクリーンキャプチャの間隔は、通常、デフォルトは10秒で、値の範囲は5秒 - 300秒です。自主的にスクリーンキャプチャの間隔を設定するときに注意が必要なのは、間隔を必ず5の倍数にすることです。
 
 ![](https://main.qcloudimg.com/raw/30b549740abdf77f002fba3069737e52.png)
@@ -11,7 +11,7 @@ LVBコンソールにログインした後、左側メニューバーから【�
 >1. スクリーンキャプチャ機能は単独で有効にして使用できますが、ポルノ検出機能はスクリーンキャプチャを有効にすることで起動でき、単独では使用できません。
 >2. スクリーンキャプチャとポルノ検出は課金対象機能です。有効化した後、スクリーンキャプチャ機能は1000枚ごとに0.0176USD徴収され、ポルノ検出機能は1000枚ごとに0.2294USD徴収されます。
 >3. スクリーンキャプチとポルノ検出の画像はお客様のCloud Object Storage（COS）の中に保存され、 COS保存料金が発生します。詳細については、[COS製品の料金設定](https://intl.cloud.tencent.com/document/product/436/6239)をご参照ください。
->4. スクリーンキャプチャ機能をアクティブ化するには、先にお客様のCOS bucketの中で、LVBサービスにデータ書き込み権限を与える必要があります。
+>4. スクリーンキャプチャ機能をアクティブ化するには、先にお客様のCOS bucketの中で、CSSサービスにデータ書き込み権限を与える必要があります。
 
 
 ## ドメイン名の関連付け
