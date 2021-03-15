@@ -7,13 +7,17 @@
 
 ## 푸시 스트리밍 주소 생성기
 1. [Domain Management](https://console.cloud.tencent.com/live/domainmanage)로 이동하여 설정할 푸시 스트리밍 도메인 또는 [Manage]를 클릭해 도메인 상세 페이지로 이동합니다.
-![](https://main.qcloudimg.com/raw/88a070c73b1bcd6a04195da768ace0c7.png)
+![](https://main.qcloudimg.com/raw/f57795fb5a6497ff59a1612c5d805ad2.png)
 2. [푸시 스트리밍 설정]>[푸시 스트리밍 주소 생성기]를 선택하여 다음과 같이 설정합니다.
 	1. 만료 시간을 선택합니다. (예시: `2019-10-31 23:59:59`)
 	2. 사용자 정의 스트림 이름 StreamName을 작성합니다. (예시: `liveteststream`)
 	3. [스트리밍 주소 생성]을 클릭하면 StreamName이 있는 RTMP 푸시 스트리밍 주소가 생성됩니다.
-![](https://main.qcloudimg.com/raw/29e4a0af31d1b37d91f6618453b6cc81.png)
->RTMP 푸시 스트리밍 주소 포맷은 `rtmp://domain/live/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)`입니다. 다음을 참고하십시오.
+![](https://main.qcloudimg.com/raw/a12dc5bb7d739ca7d526f35e9f22e81e.png)
+RTMP 푸시 스트리밍 주소 포맷은 
+```
+rtmp://domain/live/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
+```
+입니다. 다음을 참고하십시오.
 		- `domain`: 라이브 방송 푸시 스트리밍 도메인
 		- `AppName`: 라이브 방송 애플리케이션 이름. 기본값은 live이고 사용자 정의 가능합니다.
 		- `StreamName`: 스트림 이름. 사용자 정의가 가능하며 라이브 방송 스트림을 식별하는데 사용됩니다.
