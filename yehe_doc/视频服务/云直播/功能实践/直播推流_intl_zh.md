@@ -1,5 +1,6 @@
 云直播的服务本质是一个广播的过程，类似于电视台的直播节目通过有线电视网发送给千家万户。为了完成这个过程，云直播需要有采集和推流设备（类似摄像头）、云直播服务（类似电视台的有线电视网）和播放设备（类似电视）。而采集和推流设备以及播放设备可以是手机、PC、Pad 等智能终端以及 Web 浏览器，相应设备上的推流软件我们也已经为您提供了完整的 Demo。
-## <span id="step1">准备工作</span>
+<span id="step1"></span>
+## 准备工作
 1. 开通 [腾讯云直播服务](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)。
 2. 选择 [【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击【添加域名】添加您已备案的推流域名。
 >? 云直播为您提供了一个默认推流域名，格式为`xxx.livepush.myqcloud.com`，但不建议您在正式的业务中使用这个域名作为推流域名。
