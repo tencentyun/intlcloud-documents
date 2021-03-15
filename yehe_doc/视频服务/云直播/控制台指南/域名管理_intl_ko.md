@@ -1,8 +1,8 @@
 ## 주의 사항
-LVB에서는 기본적으로 테스트 도메인 `xxxx.livepush.myqcloud.com`을 제공하며, 해당 도메인을 통해 푸시 스트리밍을 테스트할 수 있습니다. 정식 비즈니스에 해당 도메인을 푸시 스트리밍 도메인을 사용하는 것은 권장하지 않으며, 해당 푸시 스트리밍은 삭제할 수 없습니다.
+CSS에서는 기본적으로 테스트 도메인 `xxxx.livepush.myqcloud.com`을 제공하며, 해당 도메인을 통해 푸시 스트리밍을 테스트할 수 있습니다. 정식 비즈니스에 해당 도메인을 푸시 스트리밍 도메인을 사용하는 것은 권장하지 않으며, 해당 푸시 스트리밍은 삭제할 수 없습니다.
 
 ## 전제 조건
-1. [Tencent LVB 서비스](https://intl.cloud.tencent.com/zh/product/LVB)가 활성화된 상태여야 합니다.
+1. [Tencent CSS 서비스](https://intl.cloud.tencent.com/zh/product/css)가 활성화된 상태여야 합니다.
 2. [외부 도메인 추가](https://intl.cloud.tencent.com/zh/document/product/267/35970)가 되어 있어야 합니다.
 
 
