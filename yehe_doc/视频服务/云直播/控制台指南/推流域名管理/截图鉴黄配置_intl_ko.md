@@ -6,13 +6,13 @@
 - 도매인당 음란물 감지 화면 캡처 템플릿은 1개만 연결할 수 있으며, 연결 후 해당 도메인의 모든 스트리밍은 해당 템플릿에 따라 화면 캡처 및 음란물 감지가 진행됩니다.
 
 ## 전제 조건
- - [LVB 콘솔](https://console.cloud.tencent.com/live)에 로그인되어 있어야 하며 [푸시 스트리밍 도메인](https://intl.cloud.tencent.com/document/product/267/35970)이 추가되어 있어야 합니다. 
+ - [CSS 콘솔](https://console.cloud.tencent.com/live)에 로그인되어 있어야 하며 [푸시 스트리밍 도메인](https://intl.cloud.tencent.com/document/product/267/35970)이 추가되어 있어야 합니다. 
  - [음란물 감지 화면 캡처 템플릿](https://intl.cloud.tencent.com/document/product/267/31072)이 생성되어 있어야 합니다.
 
 
 ## 음란물 감지 화면 캡처 템플릿 연결
 
-1.	[Domain Management](https://console.cloud.tencent.com/live/domainmanage)로 이동하여 설정할푸시 스트리밍 도메인 또는 [Manage]를 클릭해 도메인 상세 페이지로 이동합니다.
+1. [Domain Management](https://console.cloud.tencent.com/live/domainmanage)로 이동하여 설정할푸시 스트리밍 도메인 또는 [Manage]를 클릭해 도메인 상세 페이지로 이동합니다.
 2. [Template Configuration] 탭을 선택해 [Screencap&Porn Detection Configuration] 부분 오른쪽 상단의 [편집]을 클릭합니다.
 ![](https://main.qcloudimg.com/raw/13d8bdd830ed06a6c3e16960628c04a5.png)
 3. 설정할 음란물 감지 화면 캡처 템플릿을 선택하고 [Save]를 클릭합니다.
