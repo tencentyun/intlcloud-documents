@@ -424,7 +424,7 @@ type ObjectCopyHeaderOptions struct {
 | XCosACL | Sets the file ACL, such as private, public-read, and public-read-write | string | No |
 | XCosGrantFullControl | Grants full permission in the format: `id="[OwnerUin]"` | string | No |
 | XCosGrantRead| Grants the read permission in the format: id="[OwnerUin]" | string | No |
-|  XCosMetadataDirective| Valid values: Copy and Replaced.<br><li>`Copy`: copies the source object along with its metadata.<br><li>`Replaced`: copies the source object while replacing its metadata.<br>If the destination path is identical to the source path, it must be set to `Replaced`. | string | Yes |
+|  XCosMetadataDirective| Valid values: Copy and Replaced.</br><li>`Copy`: copies the source object along with its metadata.</br><li>`Replaced`: copies the source object while replacing its metadata.</br>If the destination path is identical to the source path, it must be set to `Replaced`. | string | Yes |
 | XCosCopySourceIfModifiedSince | The operation is performed if the object is modified after the specified time; otherwise, error code 412 is returned. It can be used with `XCosCopySourceIfNoneMatch`. Using it with other conditions can cause a conflict. | string | No |
 | XCosCopySourceIfUnmodifiedSince | The operation is performed if the object is unmodified after the specified time; otherwise, error code 412 is returned. It can be used with `XCosCopySourceIfMatch`. Using it with other conditions can cause a conflict. | string | No |
 | XCosCopySourceIfMatch | The operation is performed if the Etag of the object is the same as the specified one, otherwise error code 412 is returned. It can be used with XCosCopySourceIfUnmodifiedSince. Using it with other conditions can cause a conflict. | string | No |
@@ -528,7 +528,7 @@ type Object struct {
 
 | Parameter Name | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | --------- | ---- |
-| Quiet | Indicates whether to enable Quiet or Verbose mode for the response result. Valid values: true, false.<br><li>`true`: enables Verbose mode that returns the deletion result for each object<br><li>`fase` (default): enables Quiet mode that only returns information on objects<br>to which an error occurred | Boolean | No |
+| Quiet | Indicates whether to enable Quiet or Verbose mode for the response result. Valid values: true, false.</br><li>`true`: enables Verbose mode that returns the deletion result for each object<br><li>`fase` (default): enables Quiet mode that only returns information on objects</br>to which an error occurred | Boolean | No |
 | Objects | Describes each destination object to be deleted | Container | Yes |
 | Key | Name of the destination object | String | Yes |
 
@@ -600,7 +600,7 @@ type ListMultipartUploadsOptions struct {
 | prefix | Specifies that returned object keys must be prefixed with this value. Note that if you use this parameter, returned keys will contain the prefix | string |No |
 | MaxUploads | Sets the maximum number of multipart uploads returned. Value range: 1-1,000. Default value: 1,000 | int | No |
 | KeyMarker | Used together with `upload-id-marker`.<br><li>If `upload-id-marker` is not specified, only the multipart uploads whose `ObjectName` is lexicographically greater than `key-marker` will be listed;<br><li>If `upload-id-marker` is specified, the multipart uploads whose `ObjectName` is lexicographically greater than the specified `key-marker` will be listed, and any multipart upload whose `ObjectName` lexicographically equals `key-marker` and whose `UploadID` is greater than `upload-id-marker` will also be listed | string |No |
-| UploadIDMarker  | Used together with `key-marker`.<br><li>If `key-marker` is not specified, `upload-id-marker` will be ignored; <br><li>If `key-marker` is specified, the multipart uploads whose `ObjectName` is lexicographically greater than the specified `key-marker` will be listed, and any multipart upload whose `ObjectName` lexicographically equals `key-marker` and whose `UploadID` is greater than `upload-id-marker` will also be listed | string |No |
+| UploadIDMarker  | Used together with `key-marker`.：</li><li>If `key-marker` is not specified, `upload-id-marker` will be ignored; ：</li><li>If `key-marker` is specified, the multipart uploads whose `ObjectName` is lexicographically greater than the specified `key-marker` will be listed, and any multipart upload whose `ObjectName` lexicographically equals `key-marker` and whose `UploadID` is greater than `upload-id-marker` will also be listed | string |No |
 
 
 #### Response
@@ -661,6 +661,7 @@ type Owner struct {
 | ID | Unique CAM ID of users | string |
 | DisplayName | User Identifier (UIN) | string |
 
+
 ### Multipart upload operations
 
 Operations related to multipart upload include the following:
@@ -670,7 +671,8 @@ Operations related to multipart upload include the following:
 
 >?To perform a multipart upload operation, you can also use the [advanced upload API](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) (recommended).
 
-### <span id = "INIT_MULIT_UPLOAD">Initializing a multipart upload operation</span>
+<span id="INIT_MULIT_UPLOAD"></span>
+###  Initializing a multipart upload operation
 
 #### API description
 
@@ -753,7 +755,8 @@ type InitiateMultipartUploadResult struct {
 | Bucket | Bucket name in the format: `BucketName-APPID` | string |
 | key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string |
 
-### <span id = "MULIT_UPLOAD_PART"> Uploading parts</span>
+<span id="MULIT_UPLOAD_PART"></span>
+###  Uploading parts
 
 This API is used to upload parts in a multipart upload operation.
 
@@ -813,8 +816,8 @@ etag := resp.Header.Get("ETag")
 | ETag | MD5 of the uploaded part | string |
 
 
-
-### <span id = "LIST_MULIT_UPLOAD"> Querying uploaded parts</span>
+<span id = "LIST_MULIT_UPLOAD"></span>
+###  Querying uploaded parts
 
 #### API description
 
@@ -910,8 +913,8 @@ type Object struct {
 | Part | Information on the uploaded part, including ETag, PartNumber, Size, and LastModified | struct |
 
 
-
-### <span id = "COMPLETE_MULIT_UPLOAD">Completing a multipart upload operation</span>
+<span id = "COMPLETE_MULIT_UPLOAD"></span>
+###  Completing a multipart upload operation
 
 #### API description
 
@@ -982,7 +985,8 @@ type CompleteMultipartUploadResult struct {
 | key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string |
 | ETag | The unique tag of a merged object. This value does not represent the MD5 checksum of the object content, but is used only to verify the uniqueness of the object as a whole. To verify the object content, you can check the ETag of each part during the upload process | string |
 
-### <span id = "ABORT_MULIT_UPLOAD"> Aborting multipart upload</span>
+<span id = "ABORT_MULIT_UPLOAD"></span>
+###  Aborting multipart upload 
 
 #### API description
 
