@@ -1,3 +1,18 @@
+## February 2021
+<table>
+	<tr>
+		<th width=20%>Update</th>
+    <th width=44%>Description</th>
+    <th width=16%>Release Date</th>
+    <th width=20%>Documentation</th>
+	</tr>
+	<tr>
+        <td>Released SDK 1.2.3.1</td><td>A logic error of the Huawei disable component is fixed.</td>
+        <td>2021-02-04</td><td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
+    </tr>
+<tr>
+</table>
+
 ## January 2021
    <table>
 <tr>
@@ -6,30 +21,23 @@
     <th width=16%>Release Date</th>
     <th width=20%>Documentation</th>
 </tr>
+        <td>Released SDK v1.2.3.0</td>
+<td><li>Network communication protocol supports secondary message encryption.
+<li>APIs for client account, tag, and attribute settings are simplified.
+<li>The `traceId` and `templateId` fields are added in the notification callback.
+<li>Adds badge logic support for new HONOR phones.
+<li>The ANR issue that occasionally occurs during network connection checks is fixed.</td>
+        <td>2021-01-27</td>
+        <td>-</td>
+    </tr>
 <tr>
         <td>SDK v1.2.2.4 is released.</td>
 <td><li>The special character handling issue in Intent strings of FCM notifications is fixed.<li>Other known issues are fixed.</td>
         <td>2021-01-18</td>
-        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
+        <td>-</a></td>
     </tr>
 </table>
 
-## December 2020
-
-<table>
-<tr>
-    <th width=20%>Update</th>
-    <th width=44%>Description</th>
-    <th width=16%>Release Date</th>
-    <th width=20%>Documentation</th>
-</tr>
-<tr>
-        <td>SDK v1.2.2.1 is released.</td>
-<td>The Intent redirection component permission vulnerability is fixed. `TpnsActivity` is modified to be non-exported.</td>
-        <td>2020-12-10</td>
-        <td>-</td>
-    </tr>
-</table>
 
 
 ## November 2020
@@ -45,7 +53,7 @@
         <td>SDK v1.2.2.0 is released.</td>
        <td><li> The naming convention is unified for account and tag operation APIs.<li> SDK error code reporting is optimized.<li> The FCM channel protocol is upgraded, and the display of notifications sent through the FCM channel is taken over by the system.<li> Badge coloring is supported for messages sent through the TPNS channel.<li> Gzip compression is supported during network communication.<li>The exception of service unbinding that might occur in multi-thread environments is fixed.</td>
         <td>2020-11-26</td>
-        <td>-</td>
+        <td><a href="https://intl.cloud.tencent.com/document/product/1024/32625">Badge Coloring</a></td>
     </tr>
         <tr>
         <td>SDK v1.2.1.3 is released.</td>
@@ -165,11 +173,9 @@
         <td>SDK v1.1.5.4 is released.</td>
         <td><li> Network connection is optimized.</li> <li>Account types are added. </li> <li> Issues with security alarming are fixed. </li> <li> TPNS is now compatible with XG Platform version upgrade. </li><li> The feature to get QIMEI information is added.</li> </td>
         <td>2020-03-06</td>
-        <td>-</td>
+        <td><a href="https://cloud.tencent.com/document/product/548/41609#.E6.B3.A8.E9.94.80.E4.BF.A1.E9.B8.BD.E5.B9.B3.E5.8F.B0.E6.8E.A8.E9.80.81.E6.9C.8D.E5.8A.A1">Unregistering XG Platform Service</a></td>
     </tr>
 </table>
-
-
 
 ## January 2020
 
