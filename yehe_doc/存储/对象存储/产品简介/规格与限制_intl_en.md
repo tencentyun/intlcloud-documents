@@ -41,7 +41,7 @@
      <tr>
         <td rowspan="4">Bucket</td>
     			<td>Limits</td>
-    			<td>1. Once a bucket is created, its name and region cannot be modified.<br>2. The name of each bucket under a given account is unique and cannot be changed.<br>3. A bucket name can only contain lowercase letters [a-z], numbers [0-9], hyphens (-), or a combination thereof, and can be up to 50 characters.</td>
+    			<td>1. Once a bucket is created, its name and region cannot be modified.<br>2. The name of each bucket under a given account is unique and cannot be changed.<br>3. A bucket name cannot start or end with a hyphen (-). It can only contain lowercase letters [a-z], digits [0-9], hyphens (-), or a combination thereof, and can be up to 50 characters.</td>
      </tr>
     	 <tr>
     			<td> Number of buckets</td>

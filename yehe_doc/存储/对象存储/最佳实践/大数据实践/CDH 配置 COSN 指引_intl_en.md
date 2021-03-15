@@ -14,8 +14,10 @@ The table below shows which big data modules are supported by COSN:
 | Spark    | Yes                    | NodeManager                             |
 | Sqoop    | Yes                    |  NodeManager                             |
 | Presto   | Yes                    | HiveServer, HiveMetastore and Presto |
-| Flink    | Yes                    | None                                           |
-| Impala   | No                  | None                                          |
+| Flink | Yes | None |
+| Impala | Yes | None |
+| EMR | Yes | None |
+| Self-built components  | Will be supported later | None |
 | HBase    | Not recommended                  | None                                           |
 
 
@@ -27,7 +29,7 @@ This example uses software versions as follows:
 - Hadoop 2.6.0
 
 
-## Directions
+## Usage
 
 ### Configuring the storage environment
 

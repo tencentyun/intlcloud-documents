@@ -12,7 +12,7 @@ COS offers the following features:
    </tr>
    <tr>
       <td>Object Operations</td>
-      <td>Storage classes: COS provides the following storage classes for different access frequencies: INTELLIGENT TIERING, STANDARD, STANDARD_IA, ARCHIVE, and DEEP ARCHIVE. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/30925">Storage Class</a><br>Objects/folders: can be uploaded, queried, downloaded, copied, and deleted. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/13321">Object Management.</a></td>
+      <td>Storage classes. You can choose a storage class from INTELLIGENT TIERING, STANDARD, STANDARD_IA, ARCHIVE, or DEEP ARCHIVE provided by COS according to the access frequency of your objects. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/30925">Storage Class Overview</a>.<br>Objects/Folders: can be uploaded, queried, downloaded, copied, and deleted. For detailed directions, please see <a href="https://intl.cloud.tencent.com/document/product/436/13321">Object Management</a>.</td>
    </tr>
    <tr>
       <td rowspan=8>Data Management</td>
@@ -36,7 +36,7 @@ COS offers the following features:
       <td>Used in conjunction with the Serverless Cloud Function (SCF), COS can send you timely notifications about resource changes (such as when a new file has been uploaded or deleted). For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/31648">Event Notifications.</a></td>
    </tr>
    <tr>
-      <td>COS Select</td>
+      <td>Data Extraction</td>
       <td>This feature uses Structured Query Language (SQL) statements to filter the objects stored in COS so as to extract specific objects and get desired data. With COS Select, you can reduce the amount of data transferred by COS for lower costs and latency during data extraction. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/32472">SELECT Overview.</a></td>
    </tr>
    <tr>
@@ -45,7 +45,7 @@ COS offers the following features:
    </tr>
    <tr>
       <td>Object Tagging</td>
-      <td>This feature is designed to help you group and manage objects in your bucket by adding a key-value pair as an object identifier. An object tag consists of a `tagKey`, an equal sign `=`, and a `tagValue`, such as `group = IT`. You can set, query and delete tags for a specified object. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/35665">Object Tagging Overview.</a></td>
+      <td>This feature is designed to help group and manage objects in your bucket by adding a key-value pair as an object identifier. An object tag consists of a `tagKey`, an equal sign `=`, and a `tagValue`, for example, `group = IT`. You can set, query, and delete tags for a specified object. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/35665">Object Tagging Overview</a>.</td>
    </tr>
    <tr>
       <td rowspan=3>Remote Disaster Recovery</td>
@@ -54,7 +54,7 @@ COS offers the following features:
    </tr>
    <tr>
       <td nowrap="nowrap">Cross-Bucket Replication</td>
-      <td>By configuring a cross-bucket replication rule, incremental objects can be automatically and asynchronously replicated between buckets for remote disaster recovery and data backup. <a href="https://intl.cloud.tencent.com/document/product/436/19237">Cross-Bucket Replication Overview</a></td>
+      <td>By configuring a cross-bucket replication rule, incremental objects can be automatically and asynchronously replicated between buckets for disaster recovery and data backup. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/19237">Cross-Bucket Replication Overview</a>.</td>
    </tr>
    <tr>
 ​     
@@ -62,7 +62,7 @@ COS offers the following features:
    <tr>
       <td rowspan=2>Data Security</td>
       <td>Encryption</td>
-      <td>COS can apply the encryption policy at the object level to your data before it is written to the IDC disk, and automatically decrypt it when it is accessed. For details, please see <a href="https://intl.cloud.tencent.com/document/product/436/18145">Server-side Encryption Overview</a> and <a href="https://intl.cloud.tencent.com/document/product/436/33457" >Bucket Encryption Overview</a></td>
+      <td>COS can apply an object-level encryption policy to your data before it is written to the IDC disk, and automatically decrypt it when it is accessed. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/18145">Server-Side Encryption Overview</a> and <a href="https://intl.cloud.tencent.com/document/product/436/33457" >Bucket Encryption Overview</a>.</td>
    </tr>
    <tr>
       <td>Hotlink Protection</td>
@@ -71,19 +71,19 @@ COS offers the following features:
    <tr>
       <td rowspan=4>Access Management</td>
       <td>Cross-Origin Access</td>
-      <td>With COS, you can set HTML5 CORS configuration to enable access among different origins. COS can respond to CORS OPTIONS requests and return the user-defined configuration to the browser. For detailed directions, see <a href="https://intl.cloud.tencent.com/document/product/436/13318">Setting Cross-Origin Access</a></td>
+      <td>With COS, you can set HTML5 CORS configurations to enable access among different origins. COS can respond to CORS OPTIONS requests and return specified rules to the browser as configured by the developer. For detailed directions, see <a href="https://intl.cloud.tencent.com/document/product/436/13318">Setting CORS.</a></td>
    </tr>
    <tr>
-      <td>Origin Pull</td>
-      <td>COS allows you to set an origin-pull rule on your bucket so that it can pull data from an external origin if the requested object does not exist in your bucket, or a specific request needs to be redirected. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/31508">Setting Origin-Pull</a></td>
+      <td>Origin-Pull</td>
+      <td>COS allows you to set an origin-pull rule on your bucket so that it can pull data from an external origin if the requested object does not exist in your bucket, or a specific request needs to be redirected. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/31508">Setting Origin-Pull</a>.</td>
    </tr>
    <tr>
       <td>Bucket Policy</td>
-      <td>You can add a policy to a bucket to grant or deny an account or source IP (or IP range) access permission for a COS resource. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/30927">Adding Bucket Policies</a></td>
+      <td>You can add a policy to a bucket to grant or deny an account or source IP (or IP range) access permission for a COS resource. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/30927">Adding Bucket Policies.</a></td>
    </tr>
    <tr>
       <td>Access Control</td>
-      <td>You can manage the access permissions for your buckets and objects by configuring an Access Control List (ACL). When receiving a resource request, COS will check the ACL of the bucket/object to determine whether the requester has the required access permission. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/30581">Concepts</a> and <a href="https://intl.cloud.tencent.com/document/product/436/11714">Granting Sub-accounts Access to COS</a> </td>
+      <td>You can manage the access permissions for your buckets and objects by configuring an Access Control List (ACL). When receiving a resource request, COS will check the ACL of the bucket/object to determine whether the requester has the required access permission. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/30581">Concepts</a> and <a href="https://intl.cloud.tencent.com/document/product/436/11714">Granting Sub-accounts Access to COS.</a> </td>
    </tr>
    <tr>
       <td rowspan=3>Access Acceleration</td>
@@ -92,30 +92,34 @@ COS offers the following features:
    </tr>
    <tr>
       <td>Global Acceleration</td>
-      <td>The COS global acceleration feature can help users around the globe quickly access your buckets and improve your access success rate, further improving business stability as well as the overall user experience. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/33409">Global Acceleration Overview</a></td>
+      <td>The COS global acceleration feature can help you quickly access your buckets and improve your access success rate, further improving business stability as well as the overall user experience. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/33409">Global Acceleration Overview.</a></td>
    </tr>
    <tr>
       <td>Single-Connection Bandwidth Limit</td>
-      <td>COS allows bandwidth limit on uploads and downloads to ensure sufficient bandwidth for your other applications. For more information, <a href="https://intl.cloud.tencent.com/document/product/436/34072">Single-Connection Bandwidth Limit</a></td>
+      <td>COS allows setting a bandwidth limit on uploads and downloads to ensure sufficient bandwidth for your other applications. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/34072">Single-Connection Bandwidth Limit</a>.</td>
    </tr>
    <tr>
       <td>Batch Jobs</td>
       <td nowrap="nowrap">Batch Operations</td>
-      <td>You can specify an operation to be performed for a specified list of objects in a bucket. This involves generating an inventory of objects through the inventory feature to serve as the specified object list, or you can record the objects to be processed in a CSV file according to inventory file formatting requirements. Then, COS will perform the specified batch operation on the objects in the inventory file. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/32958">Batch Processing Overview</a></td>
+      <td>You can specify an operation to be performed for a specified list of objects in a bucket. This involves generating an inventory of objects through the inventory feature to serve as the specified object list, or you can record the objects to be processed in a CSV file according to inventory file formatting requirements. Then, COS will perform the specified batch operation on the objects in the inventory file. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/32958">Batch Processing Overview.</a></td>
    </tr>
    <tr>
-      <td rowspan=2>Data Monitoring</td>
-      <td>Monitoring and Alarming</td>
-      <td>COS data such as read/write requests and traffic are collected and displayed on the <a href="https://intl.cloud.tencent.com/document/product/248">Cloud Monitor</a>. You can view COS monitoring details on the Cloud Monitor <a href="https://console.cloud.tencent.com/monitor/product/COS">console</a>. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/31649">Monitoring and Alarming</a></td>
+      <td rowspan=3>Data Monitoring</td>
+      <td>Monitoring and Alarms</td>
+      <td>COS data such as read/write requests and traffic are collected and displayed on the <a href="https://intl.cloud.tencent.com/document/product/248">Cloud Monitor</a>. You can view COS monitoring details on the Cloud Monitor <a href="https://console.cloud.tencent.com/monitor/product/COS">console</a>. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/31649">Monitoring and Alarming.</a></td>
    </tr>
    <tr>
       <td>Dashboard</td>
-      <td>The COS console features a Dashboard monitoring window where you can see the amount of storage data for different storage classes over different periods as well as associated trends. For more information, see <a href="https://intl.cloud.tencent.com/zh/document/product/436/31634">Querying Monitoring Data</a> and <a href="https://intl.cloud.tencent.com/document/product/436/36542">Dashboard</a></td>
+      <td>COS supports data monitoring, with which you can view the amount of data stored in different storage classes by different periods, as well as the trends. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/36542">Dashboard</a> and <a href="https://intl.cloud.tencent.com/document/product/436/31634">Querying Monitoring Data</a>.</td>
    </tr>
    <tr>
-      <td rowspan=3>Data Management</td>
+      <td>Setting Alarm Policies</td>
+      <td>You can leverage the alarm policy feature of Cloud Monitor to set threshold-reaching alarms for COS monitoring metrics. An alarm policy must include the policy name, policy type, trigger condition, alarm object, and alarm notification template. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/39104">Setting Alarm Polices</a>.</td>
+   </tr>
+   <tr>
+      <td rowspan=3>Data Processing</td>
       <td nowrap="nowrap">Image Processing</td>
-      <td>COS has integrated Cloud Infinite (CI), an all-in-one professional media solution, to provide image processing, content moderation, detection, and many more. You can use the COS upload and process APIs to process your media data. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/35280">Image Processing Overview</a></td>
+      <td>COS has integrated the professional all-in-one media solution, Cloud Infinite (CI), to perform image processing, content moderation, detection, and many more services. You can use the COS upload and process APIs to process media data. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/35280">Image Processing Overview.</a></td>
    </tr>
    <tr>
       <td>File Decompression</td>
@@ -128,11 +132,16 @@ COS offers the following features:
    <tr>
       <td>Tools</td>
       <td nowrap="nowrap">Management Tools</td>
-      <td>COS provides a suite of practical tools such as COSBrowser, COSCMD, and COS Migration to help manage and/or migrate data. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/6242">Tools Overview</a></td>
+      <td>COS provides a suite of practical tools such as COSBrowser, COSCMD, and COS Migration to help manage and/or migrate data. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/6242">Tools Overview.</a></td>
    </tr>
    <tr>
-      <td>API/SDK</td>
+      <td>APIs/SDKs</td>
       <td nowrap="nowrap">APIs & SDKs</td>
-      <td><li>APIs: COS provides a rich set of APIs and API-specific documentation that describes API usage, parameters, sample requests, responses, and error codes. For more information, see <a href="https://cloud.tencent.com/document/product/436/10111">Operation List</a><br><li>SDKs: COS offers SDKs for various programming languages, including Android, C, C++, .NET, Go, iOS, Java, JavaScript, Node.js, PHP, Python, and WeChat Mini Programs. For more information, see <a href="https://intl.cloud.tencent.com/document/product/436/6474">SDK Overview</a></td>
+      <td><li>APIs: COS provides a rich set of APIs and API-specific documentation that describes API usage, parameters, sample requests, responses, and error codes. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/10111">Operation List</a>.<br><li>SDKs: COS offers SDKs for various programming languages, including Android, C, C++, .NET, Go, iOS, Java, JavaScript, Node.js, PHP, Python, and WeChat Mini Programs. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/6474">SDK Overview</a>.</td>
+   </tr>
+   <tr>
+      <td>Supported Protocols</td>
+      <td nowrap="nowrap">Various Protocols</td>
+      <td>COS supports various transfer protocols, including HTTP1.0, HTTP1.1, HTTP2.0, and QUIC. In addition, the TLS1.0, TLS1.1, and TLS1.2 encryption protocols are supported. HTTP2.0 and QUIC are in beta testing. Therefore, if you need to use them, please go to <a href="https://cloud.tencent.com/online-service">online support</a> or <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>, and we will add you to the allowlist.</td>
    </tr>
 </table>
