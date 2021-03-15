@@ -3,16 +3,16 @@
 #### 相关资源
 - 对象存储服务的 XML Java SDK 源码下载地址：[XML Java SDK](https://github.com/tencentyun/cos-java-sdk-v5)。
 - SDK 快速下载地址：[XML Java SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-java-sdk-v5/latest/cos-java-sdk-v5.zip)。
-- 示例 Demo 下载地址：[ COS XML Java SDK 示例](https://github.com/tencentyun/cos-java-sdk-v5/tree/master/src/main/java/com/qcloud/cos/demo)。
+- 示例 Demo 下载地址：[COS XML Java SDK 示例](https://github.com/tencentyun/cos-java-sdk-v5/tree/master/src/main/java/com/qcloud/cos/demo)。
 - SDK 文档中的所有示例代码请参见 [SDK 代码示例](https://github.com/tencentyun/cos-snippets/tree/master/Java)。
 - SDK 更新日志请参见 [ChangeLog](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/CHANGELOG.md)。
 
 #### 环境依赖
 - SDK 支持 JDK 1.7、1.8及以上版本。
-- JDK 安装方式请参见 [Java 安装与配置](https://cloud.tencent.com/document/product/436/10865)。
+- JDK 安装方式请参见 [Java 安装与配置](https://intl.cloud.tencent.com/document/product/436/10865)。
 
 >?
->- 关于文章中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://cloud.tencent.com/document/product/436/7751#.E6.9C.AF.E8.AF.AD.E4.BF.A1.E6.81.AF)。
+>- 关于文章中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
 >- COS Java SDK 中的常见类所在包分别为：
  - 客户端配置相关类在包 com.qcloud.cos.\* 下。
  - 权限相关类在 com.qcloud.cos.auth.\* 子包下。
@@ -30,10 +30,9 @@
 <dependency>
     <groupId>com.qcloud</groupId>
     <artifactId>cos_api</artifactId>
-    <version>5.6.35</version>
+    <version>5.6.37</version>
 </dependency>
 ```
-
 - 源码安装
   从 Github [XML Java SDK](https://github.com/tencentyun/cos-java-sdk-v5) 或 [快速下载地址](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-java-sdk-v5/latest/cos-java-sdk-v5.zip) 下载源码，通过 maven 导入。例如 eclipse，依次选择 【File】>【Import】>【maven】>【Existing Maven Projects】。
 
@@ -64,7 +63,7 @@ COS Java SDK 的包名为`com.qcloud.cos.*`，您可以通过 Eclipse 或者 Int
 String secretId = "COS_SECRETID";
 String secretKey = "COS_SECRETKEY";
 COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
-// 2 设置 bucket 的区域, COS 地域的简称请参照 https://cloud.tencent.com/document/product/436/6224
+// 2 设置 bucket 的区域, COS 地域的简称请参照 https://intl.cloud.tencent.com/document/product/436/6224
 // clientConfig 中包含了设置 region, https(默认 http), 超时, 代理等 set 方法, 使用可参见源码或者常见问题 Java SDK 部分。
 Region region = new Region("COS_REGION");
 ClientConfig clientConfig = new ClientConfig(region);
@@ -72,7 +71,7 @@ ClientConfig clientConfig = new ClientConfig(region);
 COSClient cosClient = new COSClient(cred, clientConfig);
 ```
 
-您也可以使用临时密钥初始化 COSClient，临时密钥生成和使用可参见 [临时密钥生成及使用指引](https://cloud.tencent.com/document/product/436/14048)，参考示例如下：
+您也可以使用临时密钥初始化 COSClient，临时密钥生成和使用可参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)，参考示例如下：
 
 [//]: # (.cssg-snippet-global-init-sts)
 ```java
@@ -81,7 +80,7 @@ String tmpSecretId = "COS_SECRETID";
 String tmpSecretKey = "COS_SECRETKEY";
 String sessionToken = "COS_TOKEN";
 BasicSessionCredentials cred = new BasicSessionCredentials(tmpSecretId, tmpSecretKey, sessionToken);
-// 2 设置 bucket 的区域, COS 地域的简称请参阅 https://cloud.tencent.com/document/product/436/6224
+// 2 设置 bucket 的区域, COS 地域的简称请参阅 https://intl.cloud.tencent.com/document/product/436/6224
 // clientConfig 中包含了设置 region, https(默认 http), 超时, 代理等 set 方法, 使用可参阅源码或者常见问题 Java SDK 部分
 Region region = new Region("COS_REGION");
 ClientConfig clientConfig = new ClientConfig(region);
@@ -94,7 +93,7 @@ ClientConfig 类为配置信息类，主要的成员如下：
 
 |  成员名 | 设置方法            | 描述                                                         | 类型    |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------- |
-| region   | 构造函数或 set 方法 | 存储桶所在的区域，COS 地域的简称请参见 [地域和访问域名](https://cloud.tencent.com/document/product/436/6224) 文档 | Region  |
+| region   | 构造函数或 set 方法 | 存储桶所在的区域，COS 地域的简称请参见 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) 文档 | Region  |
 | httpProtocol       | set 方法 |  请求所使用的协议，默认使用 HTTP 协议与 COS 交互| HttpProtocol  |
 | signExpired      | set 方法 | 请求签名的有效时间，单位：秒，默认为3600s   | int |
 | connectionTimeout      | set 方法 | 连接 COS 服务的超时时间，单位：毫秒，默认为30000ms        | int |
@@ -141,10 +140,10 @@ for (Bucket bucketElement : buckets) {
 
 >? 高级 API 接口在 com.qcloud.cos.transfer.\* 子包下。
 
-- 若本地文件大部分在 20M 以上，建议您参考使用高级 API 接口进行上传。
+- 若本地文件大部分在20M以上，建议您参考使用高级 API 接口进行上传。
 - 若 COS 上已存在同样 Key 的对象，上传时则会覆盖旧的对象。
-- 若要创建目录对象，请参见 [SDK 如何创建目录](https://intl.cloud.tencent.com/document/product/436/38956?lang=en&pg=#how-do-i-create-a-directory-in-the-sdk.3F)。
-- 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/images/picture.jpg` 中，对象键为 images/picture.jpg，详情请参见 [对象键](https://cloud.tencent.com/document/product/436/13324#.E5.AF.B9.E8.B1.A1.E9.94.AE) 的说明。
+- 若要创建目录对象，请参见 [SDK 如何创建目录](https://intl.cloud.tencent.com/document/product/436/38956)。
+- 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/images/picture.jpg` 中，对象键为 images/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) 的说明。
 
 
 上传不超过5GB的文件，参考示例如下：
@@ -211,7 +210,7 @@ do {
 ```
 
 ### 下载对象
-上传对象后，您可以用同样的 key，调用 GetObject 接口将对象下载到本地，也可以生成预签名链接（下载请指定 method 为 GET，详情请参见 [预签名 URL](https://cloud.tencent.com/document/product/436/35217)），分享到其他终端来进行下载。但如果您的文件设置了私有读权限，那么请注意预签名链接的有效期。
+上传对象后，您可以用同样的 key，调用 GetObject 接口将对象下载到本地，也可以生成预签名链接（下载请指定 method 为 GET，详情请参见 [预签名 URL](https://intl.cloud.tencent.com/document/product/436/31536)），分享到其他终端来进行下载。但如果您的文件设置了私有读权限，那么请注意预签名链接的有效期。
 将文件下载到本地指定路径，参考示例如下：
 
 [//]: # (.cssg-snippet-get-object)
@@ -247,10 +246,54 @@ String key = "exampleobject";
 cosClient.deleteObject(bucketName, key);
 ```
 
+### 默认请求重试策略
+
+使用 SDK 生成的 cosClient 发起的请求，默认已经对响应错误的请求进行了重试。重试规则如下：
+- 重试的次数：默认值为 3，可以通过 clientConfig.setMaxErrorRetry 进行设置，
+如果设置为 0，则所有类型的错误请求都不进行重试。
+- 重试的错误类型：客户端异常中所有的报 IOException 的错误。服务端异常中状态码为 500, 502, 503 504 的错误。
+
+用户也可以根据自己的需求，设置重试策略。代码如下：
+
+设置重试次数：
+
+[//]: # (.cssg-snippet-error-retry)
+```java
+Region region = new Region("COS_REGION");
+ClientConfig clientConfig = new ClientConfig(region);
+// 设置最大重试次数为 4 次
+clientConfig.setMaxErrorRetry = 4;
+```
+
+设置重试策略：
+
+[//]: # (.cssg-snippet-retry-policy)
+```java
+// 自定义重试策略
+public class OnlyIOExceptionRetryPolicy extends RetryPolicy {
+    @Override
+    public <X extends CosServiceRequest> boolean shouldRetry(CosHttpRequest<X> request,
+            HttpResponse response,
+            Exception exception,
+            int retryIndex) {
+        // 如果是客户端的 IOException 异常则重试，否则不重试
+        if (exception.getCause() instanceof IOException) {
+            return true;
+        }
+        return false;
+    }
+}
+
+Region region = new Region("COS_REGION");
+ClientConfig clientConfig = new ClientConfig(region);
+RetryPolicy myRetryPolicy = new OnlyIOExceptionRetryPolicy();
+// 设置自定义的重试策略
+clientConfig.setRetryPolicy(myRetryPolicy);
+```
+
 ### 关闭客户端
 
-关闭 cosClient，并释放 HTTP 连接的后台管理线程，代码如下。
-
+关闭 cosClient，并释放 HTTP 连接的后台管理线程，代码如下：
 ```java
 // 关闭客户端(关闭后台线程)
 cosClient.shutdown();

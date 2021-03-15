@@ -8,13 +8,13 @@ COS FTP Server 支持通过 FTP 协议直接操作 COS 中的对象和目录，�
 **下载机制**：直接流式返回给客户端。
 **目录机制**：bucket 作为整个 FTP Server 的根目录，bucket 下面可以建立若干个子目录。
 **多 bucket 绑定**：支持同时绑定多个 bucket。
->多 bucket 绑定：通过不同的 FTP Server 工作路径（home_dir）来实现，因此，指定不同的 bucket 和用户信息时必须保证 home_dir 不同。
+>?多 bucket 绑定：通过不同的 FTP Server 工作路径（home_dir）来实现，因此，指定不同的 bucket 和用户信息时必须保证 home_dir 不同。
 
 **删除操作限制**：在新的 FTP Server 中可以针对每个 ftp 用户配置 delete_enable 选项，以标识是否允许该 FTP 用户删除文件。
 **支持的 FTP 命令：**put、mput、get、rename、delete、mkdir、ls、cd、bye、quite、size。
 **不支持的 FTP 命令：**append、mget （不支持原生的 mget 命令，但在某些 Windows 客户端下，仍然可以批量下载，例如 FileZilla 客户端。）
 
->FTP Server 工具暂时不支持断点续传功能。
+>?FTP Server 工具暂时不支持断点续传功能。
 
 ## 开始使用
 
@@ -23,6 +23,8 @@ COS FTP Server 支持通过 FTP 协议直接操作 COS 中的对象和目录，�
 - 操作系统：Linux，推荐使用腾讯 CentOS 系列 [云服务器](https://intl.cloud.tencent.com/document/product/213)，暂时不支持 Windows 系统。
 - psutil 依赖的 Linux 系统包：python-devel（或 python-dev，依据不同的 Linux 发行版名字不同），通过 Linux 下的包管理工具添加，例如`yum install python-devel`或`aptitude install python-dev`。
 - Python 解释器版本：Python 2.7，请参见 [Python 安装与配置](https://intl.cloud.tencent.com/document/product/436/10866) 进行安装与配置。
+>? FTP Server 工具不支持 Python 3。
+>
 - 依赖包：
  - [cos-python-sdk-v5](https://pypi.org/project/cos-python-sdk-v5/) （≥1.6.5）
  - [pyftpdlib](https://pypi.org/project/pyftpdlib/) （≥1.5.2）
@@ -123,7 +125,7 @@ log_dir             = log                  # 设置日志的存放目录，默�
 ```
 
 
->
+>?
 >- 如果要将每个用户绑定到不同的 bucket 上，则只需要添加 [COS_ACCOUNT_X] 的 section 即可。
 针对每个不同的 COS_ACCOUNT_X 的 section 有如下说明：
  - 每个 ACCOUNT 下的用户名（ftp_login_user_name）和用户的主目录（home_dir）必须各不相同，并且主目录必须是系统中真实存在的目录。
@@ -154,7 +156,7 @@ ftp 192.xxx.xx.103 2121
 1. 下载 [FileZilla 客户端](https://filezilla-project.org/) 并安装。
 2. 在 FileZilla 客户端配置 COS FTP Server 的访问信息后，单击【快速连接】。
  - **主机 (H)：**对应配置示例文件 conf/vsftpd.conf.example 中 **masquerade_address** 配置项。在本例中ip设置为192.xxx.xx.103。
->如果 COS FTP Server 处于某个网关或 NAT 后，可以通过该配置项将网关的 IP 地址或域名指定给 COS FTP Server 。
+>!如果 COS FTP Server 处于某个网关或 NAT 后，可以通过该配置项将网关的 IP 地址或域名指定给 COS FTP Server 。
  - **用户名 (U)：**对应配置示例文件`conf/vsftpd.conf.example`中的 **ftp_login_user_name** 配置项 （需要进行配置）。
  - **密码 (W)：** 对应配置示例文件`conf/vsftpd.conf.example`中的 **ftp_login_user_password** 配置项 (需要进行配置）。
  - **端口 (P)：**对应配置示例文件`conf/vsftpd.conf.example`中的 **listen_port** 配置项。在本例中设置为2121。
