@@ -71,6 +71,6 @@ table th:nth-of-type(2){ width:82%; }
 当您接入的域名为泛域名，或已被其他用户接入，需要进行域名所有权验证后方可接入或取回。域名所有权验证的方式为 DNS 验证，验证步骤如下：
 
 1. 单击【验证方法】，获取 DNS 验证所需要添加的解析记录信息。在验证完成前请不要关闭页面。
-   ![img](https://main.qcloudimg.com/raw/a0bae11cfa188a1ec2a6ca3d5cd4edec.png)
+   ![img](https://main.qcloudimg.com/raw/07b8c6621e0f8d3588373a6889477a6b.png)
 2. 在您的域名解析商处，添加一条记录类型为 TXT 的 DNS 记录，主机记录填写 _cdnauth，记录值为验证方法处随机生成的记录值。
 3. 等待 TXT 解析生效，单击【验证】按钮进行验证。如提示“验证失败”，请等待 DNS 记录生效后重试，并检查 TXT 记录是否正确填写。
