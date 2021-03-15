@@ -14,7 +14,7 @@ https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCSimpleDemo/Live/LivePu
 
 ## 지원 플랫폼
 
-| iOS | Android | Mac OS | Windows |  데스크톱 브라우저 |
+| iOS | Android | Mac OS | Windows |  데스크톱 브라우저 | Electron|
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | &#10003; | &#10003;   | &#10003;  |  &#10003;   | &#10003;  |&#10003;  |
 
