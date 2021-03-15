@@ -10,7 +10,7 @@
 <li>방은 최대 300명의 동시 접속이 가능하며, 최대 30명이 동시에 카메라를 활성화할 수 있습니다.</li>
 </ul></td>
 <td>일대일 영상 통화, 300인 화상 회의, 온라인 진료, 화상 채팅, 화상 고객서비스, 화상 심사, 화상 녹음 및 녹화, 온라인 클레임 처리, 화상 마피아 게임 등에 적합합니다.</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44246">영상 통화 과금 설명</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">영상 통화 과금 설명</a></td>
 </tr>
 <tr>
 <td>음성 통화</td>
@@ -19,7 +19,7 @@
 <li>방은 최대 300명의 동시 접속이 가능하며, 최대 30명이 동시에 마이크를 활성화할 수 있습니다.</li>
 </ul></td>
 <td>일대일 음성 통화, 그룹 음성 통화, 음성 채팅, 음성 회의, 음성 고객서비스, 마피아 게임 등에 적합합니다.</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44226">음성 통화 과금 설명</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">음성 통화 과금 설명</a></td>
 </tr><tr>
 <td>비디오 ILVB</td>
 <td><ul style="margin:0">
@@ -29,7 +29,7 @@
 <li>CDN 릴레이 라이브 방송 모드 시, 시청자 수는 무제한입니다.</li>
 </ul></td>
 <td>저 딜레이 ILVB, 10만 인터랙션 강의, 비디오 라이브 방송 PK, 화상 소개팅, 원격 교육, 대규모 회의 등에 적합합니다.</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44247">비디오 ILVB 과금 설명</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">비디오 ILVB 과금 설명</a></td>
 </tr><tr>
 <td>음성 ILVB</td>
 <td><ul style="margin:0">
@@ -39,7 +39,7 @@
 <li>CDN 릴레이 라이브 방송 모드 시, 시청자 수는 무제한입니다.</li>
 </ul></td>
 <td>음성 저 딜레이 라이브 방송, 음성 라이브 방송 PK, 음성 채팅방, 음성 소개팅, 노래방, FM 라디오 등에 적합합니다.</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44248">음성 ILVB 과금 설명</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">음성 ILVB 과금 설명</a></td>
 </tr></table>
 
 
@@ -77,4 +77,4 @@
 | CDN 라이브 방송 시청| 'CDN 릴레이 라이브 방송'이라고도 합니다. TRTC는 클라우드 환경에서 트랜스 코딩 클러스터를 사용해 TRTC가 적용한 UDP 프로토콜을 표준화된 라이브 방송 RTMP 프로토콜로 변환합니다. 표준 클라우드 라이브 방송 시스템에 전송된 TRTC의 멀티미디어 데이터는 다시 CDN을 거쳐 CDN 라이브 방송을 제공합니다. | ILVB, 라이브 방송 공유, 대규모 회의, 라이브 방송 원격 시청 등 | 릴레이 라이브 방송은 부가 서비스입니다. [CSS](https://intl.cloud.tencent.com/document/product/267)에 따른 요금을 청구하며, 자세한 사항은 [CDN 라이브 방송 시청>관련 요금](https://intl.cloud.tencent.com/document/product/647/35242)을 참조하십시오. |
 | 인스턴트 메시지 IM  | <li>IM으로 개별 채팅, 그룹 채팅을 할 수 있고 인원 무제한 채팅방을 개설할 수 있습니다. 정보, 댓글, 댓글 자막, 선물 주기, 좋아요 등의 기능을 지원합니다.</li><li>이외에도 IM으로 신호를 인터랙션해 전화 걸기, 방 사용자 수 통계 등 기능을 구현할 수 있습니다.</li> | 온라인 고객서비스, ILVB, 인터랙션 수업, 원격 교육 등         | 인스턴트 메시지 IM은 부가 서비스입니다. [인스턴트 메시지 IM](https://intl.cloud.tencent.com/document/product/1047)에 따른 요금을 청구하며, 자세한 사항은 [인스턴트 메시지 IM 관련 요금](https://intl.cloud.tencent.com/document/product/1047/34350)을 참조하십시오. |
 | 음성 콘텐츠 심사 | 음성 음란물 감지, 정치 등 관련 콘텐츠 보안 점검은 서비스 콘텐츠 보안 검사에 활용할 수 있습니다.       | 서비스 보안 검사, 컴플라이언스 등                             | 음성 콘텐츠 심사는 부가 서비스이며, **TenDI 콘텐츠 보안**에서 관련 비용을 청구합니다. 서비스가 필요한 경우 [고객센터](https://intl.cloud.tencent.com/support)를 통해 신청하시기 바랍니다. |
-| 비디오 콘텐츠 심사 | 비디오 음란물 감지, 정치 등 관련 콘텐츠 보안 점검은 서비스 콘텐츠 보안 검사에 활용할 수 있습니다.       | 서비스 보안 검사, 컴플라이언스 등                             | 비디오 콘텐츠 심사는 부가 서비스이며, [CSS](https://intl.cloud.tencent.com/document/product/267)에서 관련 비용을 청구합니다. 자세한 내용은 [스마트 음란물 감지 관련 요금](https://intl.cloud.tencent.com/document/product/267/3960)을 참조하십시오. |
+| 비디오 콘텐츠 심사 | 비디오 음란물 감지, 정치 등 관련 콘텐츠 보안 점검은 서비스 콘텐츠 보안 검사에 활용할 수 있습니다.       | 서비스 보안 검사, 컴플라이언스 등                             | 비디오 콘텐츠 심사는 부가 서비스이며, [CSS](https://intl.cloud.tencent.com/document/product/267)에서 관련 비용을 청구합니다. 자세한 내용은 [스마트 음란물 감지 관련 요금](https://intl.cloud.tencent.com/document/product/267/39607)을 참조하십시오. |
