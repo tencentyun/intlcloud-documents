@@ -28,7 +28,7 @@ COS 콘솔에서 버킷 복사 규칙을 설정할 수 있으며, 자세한 방�
 - [.NET SDK](https://intl.cloud.tencent.com/document/product/436/35272)
 - [Go SDK](https://intl.cloud.tencent.com/document/product/436/31527)
 - [iOS SDK](https://intl.cloud.tencent.com/document/product/436/37696)
-- [Java SDK](https://intl.cloud.tencent.com/document/product/436/31535)
+- [Java SDK](https://intl.cloud.tencent.com/document/product/436/10199)
 - [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/35805)
 - [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/35859)
 - [PHP SDK](https://intl.cloud.tencent.com/document/product/436/34996)
