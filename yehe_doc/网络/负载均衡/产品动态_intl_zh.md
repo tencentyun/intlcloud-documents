@@ -1,3 +1,22 @@
+## 2021年1月
+<table>
+<thead>
+<tr>
+<th width="25%">动态名称</th>
+<th width="40%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="20%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+ <tr>
+<td>CLB 支持绑定云函数 SCF</td> 
+<td>负载均衡支持绑定云函数 SCF，提供更便捷、更低价的云函数接入公网能力。</td> 
+<td>2021-01-28</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/214/39790">绑定云函数 SCF</a></td> 
+</tbody>
+</table>
+
 ## 2020年12月
 <table>
 <thead>
@@ -21,8 +40,6 @@
   <td>2020-12-14</td>
   <td><a href="https://intl.cloud.tencent.com/document/product/214/6097">健康检查概述</a></td>
   </tr>
- 
-
 </tbody>
 </table>
 
@@ -55,6 +72,28 @@
 <td>负载均衡直接绑定云下本地数据中心（IDC）内 IP。</td>
 <td>2020-09-10</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/214/38442">混合云部署
+</a></td>
+</tr>
+</tbody>
+</table>
+
+
+## 2020年08月
+<table>
+<thead>
+<tr>
+<th width="25%">动态名称</th>
+<th width="40%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="20%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CLB 支持共享流量包</td>
+<td>自2020-08-26 12:00:00开始，标准账户类型购买的按流量计费的 CLB 实例，将优先通过共享流量包进行优惠扣费。</td>
+<td>2020-08-26</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/684/15245">共享流量包
 </a></td>
 </tr>
 </tbody>
@@ -383,24 +422,6 @@
 </tr>
 </tbody></table>
 
-## 2016年12月
-<table>
-<thead>
-<tr>
-<th width="25%">动态名称</th>
-<th width="40%">动态描述</th>
-<th width="15%">发布时间</th>
-<th width="20%">相关文档</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>深圳金融支持跨可用区容灾</td>
-<td>深圳金融一区和二区分别部署多套集群，以实现同一地域下的跨可用区容灾，当某个可用区故障时，负载均衡会将前端访问流量切换到同一地域下的其它可用区，以恢复服务能力。</td>
-<td>2016-12</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/8093">多可用区高可用配置说明</a></td>
-</tr>
-</tbody></table>
-
 ## 2016年11月
 <table>
 <thead>
@@ -433,7 +454,7 @@
 <td>支持七层协议 HTTP、HTTPS</td>
 <td>七层 HTTP、HTTPS 是应用层协议，七层监听器支持基于 Cookie 的会话保持、支持基于 HTTP 返回码的健康检查等能力。</td>
 <td>2016-04</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/6151#.E6.94.AF.E6.8C.81.E7.9A.84.E5.8D.8F.E8.AE.AE.E7.B1.BB.E5.9E.8B">七层监听器</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/6151">七层监听器</a></td>
 </tr>
 </tbody></table>
 
