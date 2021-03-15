@@ -1,5 +1,6 @@
 The nature of LVB is a broadcast process, similar to the live broadcast of TV channels sent to audience through cable networks. In order to complete this process, LVB needs to have a capture and push device (similar to a camera), a cloud live broadcast service (similar to a cable network), and a playback device (similar to a TV set). These devices can be smart devices such as mobile phones, PCs, and tablets as well as web browsers. We provide complete software demos for different types of devices.
-## <span id="step1">Preparations</span>
+<span id="step1"></span>
+## Preparations
 1. Activate the [LVB service](https://console.cloud.tencent.com/live?from=product-banner-use-lvb).
 2. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click **Add Domain Name** to add an ICP filed push domain name. 
 >? LVB provides a default push domain name in the format of `xxx.livepush.myqcloud.com`. You are not recommended to use it as the push domain name for your real business.
