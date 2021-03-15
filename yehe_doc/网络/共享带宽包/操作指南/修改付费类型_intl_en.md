@@ -1,5 +1,5 @@
 You can change the billing mode for BWP. This document describes how to do so.
->?You can change the billing mode anytime before the bill is generated, and the latest billing mode will be used for your bill. See [Billing Overview](https://intl.cloud.tencent.com/document/product/684/15255) for more details.
+>?You can change the billing mode anytime before the bill is generated, and the latest billing mode will be used for your bill. See [Product Pricing](https://intl.cloud.tencent.com/document/product/684/15254) for more details.
 
 ## Prerequisites
 
