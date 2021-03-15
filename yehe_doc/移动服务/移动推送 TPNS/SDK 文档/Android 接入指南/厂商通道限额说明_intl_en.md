@@ -1,13 +1,18 @@
-## vivo Channel Limits
+
+## Vivo Channel Limits
 
 ### Quota description
+#### Message push quota description
+- Official messages include system messages and operation messages. The quota depends on the number of SDK subscriptions. A subscription number smaller than 10,000 will be counted as 10,000. If the number exceeds 10,000, the actual number of subscriptions will be counted. If you need to upgrade the system message volume, please see [How to Apply for Vivo System Message](https://intl.cloud.tencent.com/document/product/1024/36250).
+ - System message: includes emails, user-specified reminders, logistics messages, order messages, to-do/to-read, financial messages, feature reminders, and instant messages.
+ - Operation message: includes but is not limited to operation-facilitating messages for advertisements, recommendations, promotions, as well as events, user-triggered messages, and unsubscribed video/audio messages, product promotions, advertisements, discounts, red pockets, and coupons.
+- The number of testing system messages and testing operation messages that can be sent is limited to 10,000 per day and 100 per day, respectively. There can be up to 20 testing devices.
+- Currently, the ratio of single push and group push is not limited. The number of users to whom the single/group push messages can be pushed should not exceed the total daily quota.
 
-- The daily message delivery limit is calculated based on the number of SDK subscriptions. If the actual number of SDK subscriptions is below 10,000, it will be calculated as 10,000; otherwise, the actual number will be used. Currently, the proportions of single pushes and group pushes are not limited. The number of users to whom single-push and group-push messages can be sent cannot exceed the daily message delivery limit.
-- Public message: push messages include full-push, group-push, and tag-push messages. A user can receive up to 5 public messages per day. The number of arrived messages is counted in the quota. Once a message arrives at a user phone, no matter whether notification is enabled on the phone, the remaining quota will decrease by one.
-  - Full push: one full-push message can be sent to all application users subscribing to vivo push (`turnOPush` succeeds on the client) per day by default. If the number of messages arrived at user phones reaches the quota, excessive messages will not be sent.
- - Group push: a group push can be used to send a message to multiple users. The number of user phones at which a message arrives is counted in the quota; for example, if a message arrives at the clients of 500 valid users, 500 will be deducted from the quota. "Group push message body" refers to the group push message body saved by calling an API, whose quantity limit is 1,000 by default and increases with the number of SDK subscriptions.
- - Tag push: the rule is the same as that of group push.
-- Personalized information message: it refers to single push, for which only the daily total number of pushes is limited, while the number of pushes that can be received by one user is not limited. One message can be sent to only one user, and the remaining quota will decrease by one once a message arrives at a valid `regId`.
+#### Message receive quota description
+
+- A user can receive up to 5 operation messages a day from an application, while the number of system messages is not limited. This limit might be adjusted according to users’ feedback and experience. The specific quota is subject to the official announcement of Vivo.
+- The number of messages a user can receive from an application is counted based on whether the number of messages **arrived** exceeds 5, which will be checked during message sending. If exceeded, Vivo will control and decide whether messages can still be sent to the device.
 
 ### Quota query guide
 
@@ -23,7 +28,7 @@ You can view the number of SDK subscriptions and the total number of deliverable
 ### Quota query guide
 
 - Query in the console: you can query the cumulative number of users on the [OPPO PUSH Operation Platform](https://push.oppo.com), which is refreshed once every day.
-- Query through API: see [OPPO PUSH Platform Server-side API](https://developers.oppomobile.com/wiki/doc/index#id=71).
+- Query through an API: see [OPPO PUSH Platform Server-side API](https://developers.oppomobile.com/wiki/doc/index#id=71).
 
 ## Mi Channel Limits
 
