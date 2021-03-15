@@ -2,7 +2,7 @@
 
 
 ## スクリーンキャプチャテンプレートの作成
-CSSコンソールにログインした後、左側メニューバーから【機能テンプレート】>[【[Screencapturing and Porn Detection Configuration]](https://console.cloud.tencent.com/live/config/jtjh)を選択します。【+】をクリックして設定情報を設定し、【保存】をクリックすれば完了です。
+CSSコンソールにログインした後、左側メニューバーから【機能テンプレート】>[【Screencapturing and Porn Detection Configuration】](https://console.cloud.tencent.com/live/config/jtjh)を選択します。【+】をクリックして設定情報を設定し、【保存】をクリックすれば完了です。
 スクリーンキャプチャの間隔は、通常、デフォルトは10秒で、値の範囲は5秒 - 300秒です。自主的にスクリーンキャプチャの間隔を設定するときに注意が必要なのは、間隔を必ず5の倍数にすることです。
 
 ![](https://main.qcloudimg.com/raw/30b549740abdf77f002fba3069737e52.png)
