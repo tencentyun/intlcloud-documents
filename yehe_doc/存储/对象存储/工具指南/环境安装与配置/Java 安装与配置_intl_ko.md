@@ -2,7 +2,7 @@ JDK는 Java 소프트웨어 개발 툴 패키지입니다. 본 문서에서는 J
 
 ## Windows
 ### 1. JDK 다운로드
-[Oracle 공식 홈페이지](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)에 접속하여 적합한 JDK 버전을 다운로드하여 설치를 준비합니다.
+Oracle 공식 홈페이지에 접속하여 적합한 JDK 버전을 다운로드하여 설치를 준비합니다.
 ### 2. 설치
 안내에 따라 모두 설치하고, 설치 중 설치 디렉터리(기본적으로 C 드라이브에 설치)를 사용자 정의 선택할 수 있습니다. 예를 들어 본 문서에서는 설치 디렉터리를 다음과 같이 선택합니다.
 `D:\Program Files\Java\jdk1.8.0_31`
@@ -24,7 +24,7 @@ JDK는 Java 소프트웨어 개발 툴 패키지입니다. 본 문서에서는 J
 yum 또는 apt-get 명령어를 사용해 openjdk를 설치하는 경우 클래스 라이브러리가 완전하지 못할 수 있으며, 이로 인해 사용자가 설치 후 관련 툴 실행 시 오류가 나타날 수 있습니다. 따라서 수동으로 압축 해제해 설치하는 방식으로 JDK를 설치하는 것을 권장합니다. 자세한 작업 방법은 다음과 같습니다.
 
 ### 1. JDK 다운로드
-[Oracle 공식 홈페이지](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)에 접속하여 적합한 JDK 버전을 다운로드하여 설치를 준비합니다.
+Oracle 공식 홈페이지에 접속하여 적합한 JDK 버전을 다운로드하여 설치를 준비합니다.
 >!Linux 버전을 다운로드해야 합니다. 본 문서에서는 jdk-8u151-linux-x64.tar.gz를 예시로 하며, 실제 다운로드하는 파일은 해당 버전이 아닐 수 있으나 이는 상관 없으며 확장명(.tar.gz)이 동일하면 됩니다.
 
 ### 2. 디렉터리 생성 
