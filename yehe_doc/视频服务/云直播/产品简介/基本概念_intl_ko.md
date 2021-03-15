@@ -21,7 +21,7 @@
 
 [](id:cname)
 ### CNAME 도메인
-CNAME 도메인은 Tencent LVB 콘솔에서 가속 도메인에 액세스한 뒤 시스템에서 해당하는 도메인에 `.liveplay.myqcloud.com`을 접미사로 할당하는 도메인입니다. 사용자는 도메인 서비스 제공 업체에서 CNAME 기록을 설정해야 하고, 기록이 적용되면 리졸브 작업이 정식으로 Tencent Cloud LVB에 전달되며, 이 도메인의 모든 요청은 Tencent LVB의 엣지 노드로 전달됩니다.
+CNAME 도메인은 Tencent CSS 콘솔에서 가속 도메인에 액세스한 뒤 시스템에서 해당하는 도메인에 `.liveplay.myqcloud.com`을 접미사로 할당하는 도메인입니다. 사용자는 도메인 서비스 제공 업체에서 CNAME 기록을 설정해야 하고, 기록이 적용되면 리졸브 작업이 정식으로 Tencent Cloud LVB에 전달되며, 이 도메인의 모든 요청은 Tencent LVB의 엣지 노드로 전달됩니다.
 
 [](id:streamname)
 ### StreamName
@@ -72,7 +72,7 @@ H.265 표준은 기존의 비디오 코딩 표준 H.264에서 일부 기술을 �
 
 [](id:screenshot)
 ### 화면 캡처
-라이브 방송 푸시 스트리밍 비디오 화면을 일정 시간 간격으로 캡처하여 생성된 이미지 파일을 COS에 저장합니다. 화면 캡처 기능을 활성화하려면 먼저 COS bucket에서 LVB 서비스의 데이터 쓰기 권한을 설정해야 합니다. 자세한 내용은 [COS bucket 화면 캡처 저장 권한 부여](https://intl.cloud.tencent.com/document/product/267/33384)를 참조하십시오. 
+라이브 방송 푸시 스트리밍 비디오 화면을 일정 시간 간격으로 캡처하여 생성된 이미지 파일을 COS에 저장합니다. 화면 캡처 기능을 활성화하려면 먼저 COS bucket에서 CSS 서비스의 데이터 쓰기 권한을 설정해야 합니다. 자세한 내용은 [COS bucket 화면 캡처 저장 권한 부여](https://intl.cloud.tencent.com/document/product/267/33384)를 참조하십시오. 
 
 [](id:yellow_confidence)
 ### 음란물 감지
