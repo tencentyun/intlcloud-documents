@@ -43,7 +43,7 @@ COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/prod
    </tr>
    <tr>
       <td>Obtaining image information</td>
-      <td><a href="https://cloud.tencent.com/document/product/460/6927">Basic information</a>, <a href="https://cloud.tencent.com/document/product/460/6926">EXIF data</a>, <a href="https://cloud.tencent.com/document/product/460/6928">average hue</a></td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/1045/33722">Basic information</a>, <a href="https://intl.cloud.tencent.com/document/product/1045/33723">EXIF data</a>, <a href="https://intl.cloud.tencent.com/document/product/1045/33724">average hue</a></td>
    </tr>
    <tr>
       <td><a href="https://intl.cloud.tencent.com/document/product/436/36378">Removing metadata</a></td>
