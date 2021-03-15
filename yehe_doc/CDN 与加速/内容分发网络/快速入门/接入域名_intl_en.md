@@ -71,6 +71,6 @@ When the distribution is completed, CDN will allocate a corresponding CNAME addr
 If the domain name is a wildcard one or has been connected to by another user, you need to verify its ownership before connecting or retrieving it. DNS verification is used in the following steps:
 
 1. Click **Verification Method** to get the resolution record information to be added for DNS verification. Do not close this page before verification is completed.
-   ![img](https://main.qcloudimg.com/raw/a0bae11cfa188a1ec2a6ca3d5cd4edec.png)
+   ![img](https://main.qcloudimg.com/raw/07b8c6621e0f8d3588373a6889477a6b.png)
 2. At your DNS service provider, add a TXT record, enter `_cdnauth` as its host record. The record value is randomly generated on the "Verification Method" page.
 3. Wait for TXT resolution to take effect and click **Verify**. If the verification is failed, wait for the DNS record to take effect to try again and check whether the TXT record has been entered correctly.
