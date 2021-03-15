@@ -132,7 +132,7 @@
 - Mac：システム音量の変化コールバックを追加します。詳細は[TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#af24c0f0258e83ab644e242ee0d01277f)をご参照ください。
 - Windows：スクリーン間の指定エリアをサポートして画面共有を行います。
 - Windows：ウィンドウ共有を追加し、フィルターでウィンドウを指定して遮蔽対策をサポートします。詳細は [TRTCCloud.addExcludedShareWindow](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ae5141a9331c3675f17fbdc922f376b06) および [TRTCCloud.removeExcludedShareWindow](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a08504ce347b593c0191904611da5cfd2)をご参照ください。
-- Windows：システム音量変化コールバックを追加します。詳細は[ITRTCCloudCallback.onAudioDevicePlayoutVolumeChanged](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a39cf2644243dceaccd82933f11f4db12)をご参照ください。
+- Windows：システム音量変化コールバックを追加します。
 
 **最適化**
 - iOS： VODPlayerおよびtrtcの同時使用をサポートし、さらにエコー除去をサポートします。
@@ -185,7 +185,7 @@
 - iOS：再生オーディオ効果がローエンドのiPhoneまたはiPadで失敗することがあるBUGを修正します。
 - iOS：iPad Proの画面共有の画面に変形、伸びが生じる問題を修正します。
 - iOS： ユーザーの権限拒否後にも、App内のスクリーンがスクリーンレコーディングの権限申請の表示を繰り返しポップアップし続ける問題を修正します。
-- Windows：ノートブックまたはデスクトップ式パソコンが長時間スリープすると、退室 [onExitRoom](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a0a45883a23a200b0e9ea38fdde1da4bd) イベント通知がコールバックされない問題を解決します。
+- Windows：ノートブックまたはデスクトップ式パソコンが長時間スリープすると、退室 onExitRoom イベント通知がコールバックされない問題を解決します。
 - Windows：Music音質モードで、システムミックス [stopSystemAudioLoopback](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aab0258238e4414c386657151d01ffb23) を有効にすると、エコーが漏れる問題を修正します。
 - Windows：enterRoom および exitRoom の入退室をクイックコールするとき、再生側に無音声を時々生じさせるBUGを修正します。
 - Windows：SDKはVisual Stuido 2010プロジェクトのコンパイルの互換性の問題を修正します。
