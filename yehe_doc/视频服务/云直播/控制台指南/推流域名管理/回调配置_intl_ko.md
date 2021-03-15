@@ -11,7 +11,7 @@
 - 도매인당 콜백 템플릿은 1개만 연결할 수 있으며, 연결 후 해당 도메인의 모든 스트리밍은 해당 템플릿에 따라 콜백됩니다.
 
 ## 전제 조건
-- [LVB 콘솔](https://console.cloud.tencent.com/live)에 로그인되어 있어야 하며 [푸시 스트리밍 도메인](https://intl.cloud.tencent.com/document/product/267/35970)이 추가되어 있어야 합니다.
+- [CSS 콘솔](https://console.cloud.tencent.com/live)에 로그인되어 있어야 하며 [푸시 스트리밍 도메인](https://intl.cloud.tencent.com/document/product/267/35970)이 추가되어 있어야 합니다.
 - [콜백 템플릿](https://intl.cloud.tencent.com/document/product/267/31074)이 생성되어 있어야 합니다.
 
 <span id="related"></span>
