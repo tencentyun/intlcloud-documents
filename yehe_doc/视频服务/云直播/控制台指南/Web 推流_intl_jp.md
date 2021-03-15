@@ -1,13 +1,13 @@
 ## 操作シナリオ
-Tencent Cloudはプッシュアドレスの迅速な作成して、LVB機能をオンラインでプッシュテストできるWebプッシュ機能を提供します。
+Tencent Cloudはプッシュアドレスの迅速な作成して、CSS機能をオンラインでプッシュテストできるWebプッシュ機能を提供します。
 
 ## 前提条件
--  [LVBコンソール](https://console.cloud.tencent.com/live)にログイン済みであること。
+-  [CSSコンソール](https://console.cloud.tencent.com/live)にログイン済みであること。
 -  [プッシュドメイン名](https://intl.cloud.tencent.com/document/product/267/35970)を追加済みであること。
 - デバイスにカメラがインストール済みであり、かつブラウザがカメラ許可を呼び出すためのFlashプラグインをサポートしていること。
 
 ## 操作手順
-1. LVBコンソールにログインし、[【Webプッシュ】](https://console.cloud.tencent.com/live/tools/webpush)を選択します。
+1. CSSコンソールにログインし、[【Webプッシュ】](https://console.cloud.tencent.com/live/tools/webpush)を選択します。
 2. Webプッシュページで次の設定を行います。
 	- プッシュドメイン名を選択します。
 	- カスタムされたストリーム名StreamNameを記入します（例:`test`）。
