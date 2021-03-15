@@ -132,7 +132,7 @@
 - Mac: 시스템 음량 변화 콜백이 추가되었습니다. 세부 사항은 [TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#af24c0f0258e83ab644e242ee0d01277f)를 참조 바랍니다.
 - Windows: 크로스 스크린을 지원하여 지정된 영역에 화면을 공유하는 기능이 추가되었습니다.
 - Windows: 창 공유가 필터 기능을 지원하여 지정된 창에 대한 차폐 방지 기능이 추가되었습니다. 세부 사항은 [TRTCCloud.addExcludedShareWindow](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ae5141a9331c3675f17fbdc922f376b06)과 [TRTCCloud.removeExcludedShareWindow](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a08504ce347b593c0191904611da5cfd2)를 참조 바랍니다.
-- Windows: 시스템 음량 변화 콜백이 추가되었습니다. 세부 사항은 [ITRTCCloudCallback.onAudioDevicePlayoutVolumeChanged](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a39cf2644243dceaccd82933f11f4db12)를 참조 바랍니다.
+- Windows: 시스템 음량 변화 콜백이 추가되었습니다. 
 
 **최적화**
 - iOS: VODPlayer와 trtc 동시 사용 및 에코 제거를 지원합니다.
@@ -185,7 +185,7 @@
 - iOS: 저가형 iPhone 또는 iPad에서 오디오 재생 시 가끔 재생에 실패하는 버그가 수정되었습니다.
 - iOS: iPad Pro에서 화면 공유 기능으로 인해 공유된 화면이 늘어나는 문제가 수정되었습니다.
 - iOS: 사용자가 권한을 거절했음에도 App 내부 화면 기여가 계속해서 화면 녹화 권한을 요청하는 문제가 수정되었습니다.
-- Windows: 노트북 또는 데스크톱이 장시간 미사용 시, 나가기 [onExitRoom](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a0a45883a23a200b0e9ea38fdde1da4bd) 이벤트 알림이 콜백되지 않는 문제가 수정되었습니다.
+- Windows: 노트북 또는 데스크톱이 장시간 미사용 시, 나가기 onExitRoom 이벤트 알림이 콜백되지 않는 문제가 수정되었습니다.
 - Windows: Music 음질 모드에서 시스템 오디오 루프백 [stopSystemAudioLoopback](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aab0258238e4414c386657151d01ffb23)을 활성화하면 에코가 새는 문제가 수정되었습니다.
 - Windows: enterRoom과 exitRoom을 빠르게 호출하여 방 입장/퇴장을 할 경우 가끔 소리가 들리지 않는 버그가 수정되었습니다.
 - Windows: Visual Stuido 2010 프로젝트에서 SDK의 편집 호환성 문제가 수정되었습니다.
