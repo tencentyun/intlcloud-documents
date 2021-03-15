@@ -1,5 +1,6 @@
 LVB의 서비스는 본질적으로 방송 프로세스로 방송국의 라이브 방송 프로그램이 유선 TV 망을 통해 수많은 시청자에게 발송하는 것과 유사합니다. 해당 프로세스를 완료하기 위해서 LVB에는 수집하고 푸시 스트림하는 디바이스(예: 카메라), LVB 서비스(예: 방송국의 유선 TV 망), 재생 디바이스(예: TV)가 필요합니다. 수집하고 푸시 스트림하는 디바이스와 재생 디바이스는 휴대폰, PC, Pad 등 스마트 단말기 및 Web 브라우저가 될 수 있으며, Tencent Cloud에서는 해당 디바이스의 푸시 스트림 소프트웨어로 완벽한 Demo를 제공합니다.
-## <span id="step1">준비 작업</span>
+<span id="step1"></span>
+## 준비 작업
 1. [Tencent LVB 서비스](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)를 활성화합니다.
 2. [도메인 관리](https://console.cloud.tencent.com/live/domainmanage)를 선택해 [도메인 추가]를 클릭하여 ICP비안을 받은 푸시 스트림 도메인을 추가합니다.
 >? LVB에서는 `xxx.livepush.myqcloud.com` 포맷의 기본 푸시 스트림 도메인을 제공합니다. 단, 정식 비즈니스에 해당 도메인을 푸시 스트림 도메인으로 사용하는 것은 권장하지 않습니다.
