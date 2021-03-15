@@ -13,10 +13,10 @@ You have activated the CSS service and completed identity verification.
 ## Authentication Configuration
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the **push domain** to be configured or **Manage** to enter the domain name details page. 
 2. Click **Push Configuration**, view the **Authentication Configuration** section, and click **Edit** on the right.
-	![](https://main.qcloudimg.com/raw/9928eda10a0759bcf2a433e101cb3e7d.jpg)
+	![](https://main.qcloudimg.com/raw/f57795fb5a6497ff59a1612c5d805ad2.png)
 3. On the **Configure Authentication** page, click ![](https://main.qcloudimg.com/raw/5637a9d55de965fa5d35725a955f4c00.png) to enable or disable push authentication.
 4. Modify the **Primary Key** and **Standby Key**, and click **Save**.
-![](https://main.qcloudimg.com/raw/315b71b8315d30ade496b3861e8d403c.jpg)
+![](https://main.qcloudimg.com/raw/a12dc5bb7d739ca7d526f35e9f22e81e.png)
 >? **Primary Key** is required, while **Standby Key** is optional. This design ensures that the key can be smoothly replaced in case of leakage without interrupting the business.
 
 
@@ -29,7 +29,7 @@ You have activated the CSS service and completed identity verification.
    1. Select an expiration time, such as `2019-10-31 23:59:59`.
    2. Enter a custom `StreamName`, such as `liveteststream`.
    3. Click **Generate Push Address** to generate an RTMP push address containing the `StreamName`.
- ![](https://main.qcloudimg.com/raw/be893a10e50189c1ded53cc03cf6dbe8.jpg)
+ ![](https://main.qcloudimg.com/raw/6f5ac8dcac2082aedca950c5341946ab.png)
 4. You can test, disable, or delete it in [stream management](https://intl.cloud.tencent.com/document/product/267/31068) after implementing [CSS push](https://intl.cloud.tencent.com/document/product/267/31558) according to your business scenario.
 5. After the push address is generated, CSS push can be started. However, to view live streaming, a playback address is required. For more information, please see [Playback Configuration](https://intl.cloud.tencent.com/document/product/267/31058).
 
