@@ -3,10 +3,10 @@
 アドレスジェネレーターを使用して、追加済みのプッシュ/再生ドメイン名を迅速に選択し、対応するプッシュ/再生アドレスを生成できます。
 
 ## 前提条件
- [LVBコンソール](https://console.cloud.tencent.com/live) の [Domain Management](https://intl.cloud.tencent.com/document/product/267/31056) に1つ以上の使用可能なドメイン名があること。
+[CSSコンソール](https://console.cloud.tencent.com/live) の [Domain Management](https://intl.cloud.tencent.com/document/product/267/31056) に1つ以上の使用可能なドメイン名があること。
 
 ## 操作手順
-1. LVBコンソールにログインし、【補助ツール】>[【アドレスジェネレーター】](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)を選択し、アドレスジェネレーターに移動します。
+1. CSSコンソールにログインし、【補助ツール】>[【アドレスジェネレーター】](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)を選択し、アドレスジェネレーターに移動します。
 3. アドレスジェネレーターで次の設定を行います。
 	1. **プッシュドメイン名**または**再生ドメイン名**の生成タイプを選択します。
 	2. ドメイン名管理内に追加済みの対応するドメイン名を選択します。
