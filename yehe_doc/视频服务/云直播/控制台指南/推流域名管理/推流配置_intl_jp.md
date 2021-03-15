@@ -1,8 +1,8 @@
 ## 操作シナリオ
-プッシュの設定によって、対応するプッシュドメイン名でプッシュアドレスを生成し、ストリームをプッシュアドレスにプッシュして、ライブストリーミングのストリームをLVBサービスへ伝送する、つまりLVBビデオをアップロードすることができます。
+プッシュの設定によって、対応するプッシュドメイン名でプッシュアドレスを生成し、ストリームをプッシュアドレスにプッシュして、ライブストリーミングのストリームをCSSサービスへ伝送する、つまりCSSビデオをアップロードすることができます。
 
 ## 前提条件
--  [LVBコンソール](https://console.cloud.tencent.com/live)にログイン済みであること。
+-  [CSSコンソール](https://console.cloud.tencent.com/live)にログイン済みであること。
 - プッシュドメイン名を追加していること。
 
 ## プッシュアドレスジェネレーター
@@ -14,17 +14,17 @@
 	3. 【プッシュアドレスの生成】をクリックすると、 StreamNameの付いたRTMPプッシュアドレスが生成されます。
 ![](https://main.qcloudimg.com/raw/29e4a0af31d1b37d91f6618453b6cc81.png)
 >RTMPプッシュアドレスの形式は、`rtmp://domain/live/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)`です。そのうち、
-		- `domain`：LVBプッシュドメイン名。
-		- `AppName`：LVBアプリケーション名。デフォルトはliveで、カスタマイズ可能です。
+		- `domain`：CSSプッシュドメイン名。
+		- `AppName`：CSSアプリケーション名。デフォルトはliveで、カスタマイズ可能です。
 		- `StreamName`：ライブストリーミングのストリームを識別するために用いる、ユーザー定義のストリーム名。
 		- `txSecret`：プッシュ認証を有効にした後に生成される認証文字列。
 		- `txTime`：プッシュアドレスのタイムスタンプは、コンソールのストリーミングアドレスの有効時間です。
 
-3. 業務シナリオに応じて [LVBプッシュ](https://intl.cloud.tencent.com/document/product/267/31558)を実装した後、 [ストリーム管理](https://intl.cloud.tencent.com/document/product/267/31068)においてテスト、無効化、削除が行えます。
+3. 業務シナリオに応じて [CSSプッシュ](https://intl.cloud.tencent.com/document/product/267/31558)を実装した後、 [ストリーム管理](https://intl.cloud.tencent.com/document/product/267/31068)においてテスト、無効化、削除が行えます。
 
 > 
 >- 生成されたプッシュアドレスは、設定された有効期限内は使用可能です。期限切れになったら、新しいプッシュアドレスを再生成できます。
->- プッシュアドレスが生成されると、LVBプッシュを開始できますが、ライブストリーミングを視聴するには再生アドレスを取得する必要があります。詳細については、[再生設定](https://intl.cloud.tencent.com/document/product/267/31058)をご参照ください。
+>- プッシュアドレスが生成されると、CSSプッシュを開始できますが、ライブストリーミングを視聴するには再生アドレスを取得する必要があります。詳細については、[再生設定](https://intl.cloud.tencent.com/document/product/267/31058)をご参照ください。
 
 
 ## プッシュアドレスのサンプルコード
