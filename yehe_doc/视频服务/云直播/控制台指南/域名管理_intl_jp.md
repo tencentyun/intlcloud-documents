@@ -1,8 +1,8 @@
 ## 注意事項
-LVBは、デフォルトでテストドメイン名 `xxxx.livepush.myqcloud.com`を提供します。このドメイン名をプッシュテストに使用できますが、正式なサービスでこのドメイン名をプッシュドメイン名として使用することはお勧めしません。またこのプッシュドメイン名は削除操作をサポートしていません。
+CSSは、デフォルトでテストドメイン名 `xxxx.livepush.myqcloud.com`を提供します。このドメイン名をプッシュテストに使用できますが、正式なサービスでこのドメイン名をプッシュドメイン名として使用することはお勧めしません。またこのプッシュドメイン名は削除操作をサポートしていません。
 
 ## 前提条件
-1.  [Tencent LVBサービス](https://intl.cloud.tencent.com/zh/product/LVB)がアクティブ化されていること。
+1.  [Tencent CSSサービス](https://intl.cloud.tencent.com/zh/product/css)がアクティブ化されていること。
 2.  [独自のドメイン名の追加](https://intl.cloud.tencent.com/zh/document/product/267/35970)が完了していること。
 
 
