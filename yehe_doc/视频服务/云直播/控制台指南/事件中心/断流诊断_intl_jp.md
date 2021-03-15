@@ -4,7 +4,7 @@
 ストリーム切断診断により、迅速にライブストリーミングのプッシュストリーム切断の記録を確認し、ストリーム切断の原因を特定できます。
 
 ## 前提条件
--  [LVBコンソール](https://console.cloud.tencent.com/live)にログイン済みであること。
+-  [CSSコンソール](https://console.cloud.tencent.com/live)にログイン済みであること。
 - 現在Tencent Cloudアカウントにおいて、ライブストリーミングのプッシュに中断が発生していること。
 
 ## 操作手順
@@ -48,7 +48,7 @@
  </tr>
  <tr>
 <td colspan='2' >5</td>
-<td >LVBシステム内部エラー。</td>
+<td >CSSシステム内部エラー。</td>
  </tr>
  <tr >
 <td colspan='2' >6</td>
@@ -64,7 +64,7 @@
  </tr>
  <tr>
 <td colspan='2' >9</td>
-<td  >LVBシステム内部エラー。</td>
+<td  >CSSシステム内部エラー。</td>
  </tr>
  <tr >
 <td colspan='2'  >10</td>
@@ -72,7 +72,7 @@
  </tr>
  <tr >
 <td colspan='2'  >11</td>
-<td  >LVBシステム内部エラー。</td>
+<td  >CSSシステム内部エラー。</td>
  </tr>
  <tr >
 <td colspan='2'  >12</td>
@@ -92,7 +92,7 @@
  </tr>
  <tr  >
 <td colspan='2'  >16</td>
-<td  >LVBシステム内部エラー</td>
+<td  >CSSシステム内部エラー</td>
  </tr>
  <tr >
 <td colspan='2'  >17</td>
@@ -101,23 +101,23 @@
  <tr  >
 <td rowspan='27'>18</td>
 <td>100</td>
-<td  >LVBシステム内部エラー。</td>
+<td  >CSSシステム内部エラー。</td>
  </tr>
  <tr >
 <td >101</td>
-<td  >LVBシステム内部エラー。</td>
+<td  >CSSシステム内部エラー。</td>
  </tr>
  <tr  >
 <td >102</td>
-<td  >LVBシステム内部エラー。</td>
+<td  >CSSシステム内部エラー。</td>
  </tr>
  <tr  >
 <td >103</td>
-<td  >LVBシステム内部エラー</td>
+<td  >CSSシステム内部エラー</td>
  </tr>
  <tr >
 <td >104</td>
-<td  >LVBシステム内部エラー。</td>
+<td  >CSSシステム内部エラー。</td>
  </tr>
  <tr >
 <td >200</td>
@@ -125,15 +125,15 @@
  </tr>
  <tr >
 <td >201</td>
-<td  >あなたのLVBサービスは停止されています。</td>
+<td  >あなたのCSSサービスは停止されています。</td>
  </tr>
  <tr  >
 <td>202</td>
-<td  >アカウントの支払い延滞により、あなたのLVBサービスは一時停止されています。速やかにチャージしてください。</td>
+<td  >アカウントの支払い延滞により、あなたのCSSサービスは一時停止されています。速やかにチャージしてください。</td>
  </tr>
  <tr>
 <td >203</td>
-<td  >あなたのLVBサービスは強制的に停止されました。</td>
+<td  >あなたのCSSサービスは強制的に停止されました。</td>
  </tr>
  <tr>
 <td >300</td>
@@ -238,7 +238,7 @@
  </tr>
  <tr >
 <td colspan='2'  >24</td>
-<td  >LVBシステム内部エラー。</td>
+<td  >CSSシステム内部エラー。</td>
  </tr>
  <tr >
 <td colspan='2'  >25</td>
@@ -286,5 +286,5 @@
  </tr>
 </table>
 
-LVBでは、クエリーを行うAPIインターフェースも提供しています。詳細については、[プッシュストリーム切断イベントのクエリー](https://intl.cloud.tencent.com/document/product/267/30800)をご参照ください。
+CSSでは、クエリーを行うAPIインターフェースも提供しています。詳細については、[プッシュストリーム切断イベントのクエリー](https://intl.cloud.tencent.com/document/product/267/30800)をご参照ください。
 
