@@ -1,8 +1,8 @@
-## Live Video Broadcasting
+## Cloud Streaming Services
 
 ### ゲームのライブブロードキャスト
 
-Tencent Cloud Live Video Broadcasting(CSS)は、ゲームのライブブロードキャストプラットフォームに上りアクセラレーション、高品質なトランスコーディングとアクセラレーション配信などのサービスを提供し、ゲームプラットフォームでの低遅延、低ラグのネットワーク全体ライブブロードキャストの実現を支援します。
+Tencent Cloud Cloud Streaming Services(CSS)は、ゲームのライブブロードキャストプラットフォームに上りアクセラレーション、高品質なトランスコーディングとアクセラレーション配信などのサービスを提供し、ゲームプラットフォームでの低遅延、低ラグのネットワーク全体ライブブロードキャストの実現を支援します。
 
 <img src="https://main.qcloudimg.com/raw/b4e6ca9c4c81a9caa570639578b856b8.png" width="700px">
 
