@@ -14,9 +14,9 @@ https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCSimpleDemo/Live/LivePu
 
 ## 지원 플랫폼
 
-| iOS | Android | Mac OS | Windows |  데스크톱 브라우저 | Electron|WeChat 미니프로그램 |
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| &#10003; | &#10003;   | &#10003;  |  &#10003;   | &#10003;  |&#10003;  |   &#10003;  |
+| iOS | Android | Mac OS | Windows |  데스크톱 브라우저 |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| &#10003; | &#10003;   | &#10003;  |  &#10003;   | &#10003;  |&#10003;  |
 
 데스크톱 브라우저에서의 화면 품질 설정에 대한 자세한 방법은 [설정 가이드](https://www.qcloudtrtc.com/trtc-web-sdk/docs/api/tutorial-04-advanced-set-video-profile.html)를 참조하십시오.
 
