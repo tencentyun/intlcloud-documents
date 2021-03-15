@@ -43,7 +43,7 @@ If your DNS service provider is Alibaba Cloud, you can add a CNAME record as fol
 2. Click the domain name to be resolved to enter the resolution record page.
 3. Click **Add Record**.
 4. To set a CNAME resolution record, select CNAME as the record type. Enter the host record as needed (e.g., `www`), which is the domain name prefix. Enter the domain name pointed to by the current domain name as the record value. Retain the default settings for **ISP Line** and **TTL**.
-   ![img](https://main.qcloudimg.com/raw/36f84a0d21b51bc56d79544943f0f752.png)
+![img](https://main.qcloudimg.com/raw/6b8bb9ce4f998b8d17ca27fd10512dc6.png)
 5. Finally, click **Confirm**.
 
 
