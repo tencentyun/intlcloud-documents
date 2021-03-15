@@ -8,7 +8,7 @@
 <table>
 <tr><th width=15%>기능 명칭</th><th>기능 소개</th></tr>
 <tr><td><a href="https://intl.cloud.tencent.com/document/product/267/7968" target="_blank">푸시 스트리밍 프로토콜</a></td><td>푸시 스트리밍을 위해 RTMP 프로토콜을 지원합니다.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31558" target="_blank">푸시 스트리밍 방식</a></td><td>Tencent LVB iOS, Android, Web 등의 푸시 스트리밍 SDK 통합 App 및 일반적인 3rd party 푸시 스트리밍 소프트웨어(OBS/XSplit/FMLE 등)를 지원합니다.</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31558" target="_blank">푸시 스트리밍 방식</a></td><td>Tencent CSS iOS, Android, Web 등의 푸시 스트리밍 SDK 통합 App 및 일반적인 3rd party 푸시 스트리밍 소프트웨어(OBS/XSplit/FMLE 등)를 지원합니다.</td></tr>
 <tr><td>푸시 스트리밍 디바이스</td><td>일반적인 3rd party RTMP 푸시 스트리밍 하드웨어 및 인코더 또는 셋업박스 등 디바이스를 지원합니다.</td></tr>
 </table>
 
@@ -17,7 +17,7 @@
 <table>
 <tr><th width=15%>기능 명칭</th><th>기능 소개</th></tr>
 <tr><td><a href="https://intl.cloud.tencent.com/document/product/267/7968" target="_blank">방송 프로토콜</a></td><td>RTMP, FLV, HLS 3종 재생 프로토콜을 지원합니다.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31559" target="_blank">재생 방식</a></td><td>Tencent LVB iOS, Android, Web 등의 재생기 SDK 및 일반적인 3rd party FLV, RTMP, HLS 재생기를 지원합니다.</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31559" target="_blank">재생 방식</a></td><td>Tencent CSS iOS, Android, Web 등의 재생기 SDK 및 일반적인 3rd party FLV, RTMP, HLS 재생기를 지원합니다.</td></tr>
 <tr><td>재생 제어</td><td>스트리밍 규격이 일치하는 원시 비트 스트리밍을 재생, 입력하거나 실시간 트랜스 코딩한 비트 스트리밍을 재생할 수 있습니다.</td></tr>
 </table>
 
@@ -101,7 +101,7 @@
 <tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31564" target="_blank">라이브 방송 식별</a></td><td>AI가 라이브 방송 화면 캡처본으로 음란물을 식별하며 결과 내용을 보내줍니다.</td></tr>
 <tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31563" target="_blank">라이브 방송 녹화</a></td><td>API를 통해 라이브 방송 과정을 녹화하고 Tencent Cloud VOD 서비스에 저장할 수 있도록 지원합니다.</td></tr>
 <tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31565" target="_blank">라이브 방송 재생 시간 이동</a></td><td>사용자가 방송 중에 놓친 라이브 방송 내용을 되감기하여 볼 수 있습니다.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31567" target="_blank">라이브 방송 GCD</a></td><td>해외 지역에서 Tencent LVB 서비스를 이용할 수 있습니다.</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31567" target="_blank">라이브 방송 GCD</a></td><td>해외 지역에서 Tencent CSS 서비스를 이용할 수 있습니다.</td></tr>
 </table>
 
 
