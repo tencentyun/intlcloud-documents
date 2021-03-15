@@ -2,7 +2,7 @@ The nature of LVB is a broadcast process, similar to the live broadcast of TV ch
 ## <span id="step1">Preparations</span>
 1. Activate the [LVB service](https://console.cloud.tencent.com/live?from=product-banner-use-lvb).
 2. Select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click **Add Domain Name** to add an ICP filed push domain name. 
-> LVB provides a default push domain name in the format of `xxx.livepush.myqcloud.com`. You are not recommended to use it as the push domain name for your real business.
+>? LVB provides a default push domain name in the format of `xxx.livepush.myqcloud.com`. You are not recommended to use it as the push domain name for your real business.
 
 ## Getting Push Address
 Log in to the LVB Console, select **Auxiliary Tools** > **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)** to generate a push address and configure as follows:
@@ -12,7 +12,7 @@ Log in to the LVB Console, select **Auxiliary Tools** > **[Address Generator](ht
 - Select the expiration time of the address, such as `2019-10-18 23:59:59`.
 - Click **Generate Address**.
 
->
+>!
 >- To ensure the security of your live streams, the system will automatically enable push authentication. You can also select the push domain name to be modified in **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and click **Manage** on the right to enter the domain name details page and customize the authentication information in **Push Configuration**. The push address is in the following format:
 `rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)`
 >- In addition to the above method, you can also select a push domain name in **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** in the LVB Console, click **Manage**, select **Push Configuration**, enter the expiration time of the push address and the custom `StreamName`, and click **Generate Push Address** to generate a push address.
@@ -52,7 +52,7 @@ rtmp://3891.livepush.myqcloud.com/live/3891_test?bizid=3891&txSecret=xxx&txTime=
 	3. Select an expiration time, such as `2019-10-30 23:59:59`.
 	4. Click **Start Push** and grant the camera permission to start the push.
 
-> The web push feature requires that your device have a camera installed and its browser support the Flash plugin to call the camera permission.
+>! The web push feature requires that your device have a camera installed and its browser support the Flash plugin to call the camera permission.
 
 ![](https://main.qcloudimg.com/raw/9da7489bb2387049859131e792364124.png)
 
@@ -62,7 +62,7 @@ rtmp://3891.livepush.myqcloud.com/live/3891_test?bizid=3891&txSecret=xxx&txTime=
 3. Enter the [push address](#step1) manually or by scanning the QR code.
 4. Tap "Start" in the bottom-left corner to start the push.
 
-> If you did not prepare a push address in advance, you can tap **New** on the right of the push address bar on the Camera Push page, and the system will automatically enter a push address and provide the corresponding playback address which can be used for LVB playback.
+>? If you did not prepare a push address in advance, you can tap **New** on the right of the push address bar on the Camera Push page, and the system will automatically enter a push address and provide the corresponding playback address which can be used for LVB playback.
 
 ### Scenario 4. LVB SDK push
 If you need to integrate only LVB Push into your existing application, follow the steps below to do so quickly.
@@ -77,7 +77,7 @@ The LVB SDK is a collection of mobile live streaming services. It demonstrates i
 3. Enter the [push address](#step1) manually or tap **Scan QR Code** to add it.
 4. Tap **Start** in the middle to start the push.
 
->If you don't have a push address yet, you can launch the Mini Program, select **RTMP Push**, tap **Auto Generate** on the right of the push address on the RTMP page, and the system will automatically create a push address and generate a playback address.
+>? If you don't have a push address yet, you can launch the Mini Program, select **RTMP Push**, tap **Auto Generate** on the right of the push address on the RTMP page, and the system will automatically create a push address and generate a playback address.
 
 
 ## FAQs

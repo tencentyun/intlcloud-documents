@@ -2,7 +2,7 @@
 ## <span id="step1">准备工作</span>
 1. 开通 [腾讯云直播服务](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)。
 2. 选择 [【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击【添加域名】添加您已备案的推流域名。
-> 云直播为您提供了一个默认推流域名，格式为`xxx.livepush.myqcloud.com`，但不建议您在正式的业务中使用这个域名作为推流域名。
+>? 云直播为您提供了一个默认推流域名，格式为`xxx.livepush.myqcloud.com`，但不建议您在正式的业务中使用这个域名作为推流域名。
 
 ## 获取推流地址
 进入云直播控制台的【辅助工具】>[【地址生成器】](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 生成推流地址，在该页面进行如下配置：
@@ -12,7 +12,7 @@
 - 选择地址过期时间，例如：` 2019-10-18  23:59:59`。
 - 单击 【生成地址】即可。
 
->
+>!
 >- 为了保障您的直播安全，系统会自动开启推流鉴权。您也可以在[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，选择您需要修改的推流域名，单击右侧的【管理】进入域名详情页的【推流配置】，自定义设置鉴权信息。推流地址格式为：
 `rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)`
 >-  除上述方法，您还可以在云直播控制台的[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)中，选择推流域名单击【管理】，选择【推流配置】，输入推流地址的过期时间和自定义的流名称 StreamName，单击【生成推流地址】即可生成推流地址。
@@ -52,7 +52,7 @@ rtmp://3891.livepush.myqcloud.com/live/3891_test?bizid=3891&txSecret=xxx&txTime=
 	3. 选择过期时间，例如：`2019-10-30 23:59:59`。
 	4. 单击【开始推流】，并授权允许调用摄像头，即可开始推流。
 
-> Web 推流功能需要您的设备安装了摄像头，并且浏览器支持 Flash 插件调用摄像头权限。
+>! Web 推流功能需要您的设备安装了摄像头，并且浏览器支持 Flash 插件调用摄像头权限。
 
 ![](https://main.qcloudimg.com/raw/9da7489bb2387049859131e792364124.png)
 
@@ -62,7 +62,7 @@ rtmp://3891.livepush.myqcloud.com/live/3891_test?bizid=3891&txSecret=xxx&txTime=
 3. 手动输入或扫描二维码录入 [推流地址](#step1)。
 4. 单击左下角开始按钮，即可开始推流。
 
-> 如果您没有提前准备推流地址，您在摄像头推流页面单击推流地址右侧的【NEW】，系统会自动填入一个推流地址，并提供对应的播放地址，您可通过播放地址查看直播推流效果。
+>? 如果您没有提前准备推流地址，您在摄像头推流页面单击推流地址右侧的【NEW】，系统会自动填入一个推流地址，并提供对应的播放地址，您可通过播放地址查看直播推流效果。
 
 ### 场景四：直播 SDK 推流
 如果您只需要在现有的 App 里集成直播推流功能，那么按照如下步骤可以快速实现目标。
@@ -77,7 +77,7 @@ rtmp://3891.livepush.myqcloud.com/live/3891_test?bizid=3891&txSecret=xxx&txTime=
 3. 手动输入或单击【扫码读取】扫码录入 [推流地址](#step1)。
 4. 单击中间的【开始】，即可开始推流。
 
->如果您没有提前准备推流地址，您可打开腾讯视频云小程序，选择【RTMP 推流】，在 RTMP 页单击推流地址右侧的【自动生成】，系统会自动创建一个推流地址，同时生成一个播放地址。
+>? 如果您没有提前准备推流地址，您可打开腾讯视频云小程序，选择【RTMP 推流】，在 RTMP 页单击推流地址右侧的【自动生成】，系统会自动创建一个推流地址，同时生成一个播放地址。
 
 
 ## 常见问题
