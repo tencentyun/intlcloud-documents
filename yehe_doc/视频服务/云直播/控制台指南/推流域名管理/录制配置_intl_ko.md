@@ -10,7 +10,7 @@
 - 혼합 스트리밍 녹화는 중국대륙 및 글로벌/홍콩, 마카오, 대만의 라이브 방송 혼합 스트리밍은 지원하지 않아 녹화 파일에 오류가 발생할 수 있으며 정상적인 재생에 영향을 미칠 수 있습니다.
 
 ## 전제 조건
-- [LVB 콘솔](https://console.cloud.tencent.com/live)에 로그인되어 있어야 하며 [푸시 스트리밍 도메인](https://intl.cloud.tencent.com/document/product/267/35970)이 추가되어 있어야 합니다.
+- [CSS 콘솔](https://console.cloud.tencent.com/live)에 로그인되어 있어야 하며 [푸시 스트리밍 도메인](https://intl.cloud.tencent.com/document/product/267/35970)이 추가되어 있어야 합니다.
 - [녹화 템플릿 생성](https://intl.cloud.tencent.com/document/product/267/34223)이 완료되었어야 합니다.
 
 
