@@ -8,7 +8,7 @@
 <table>
 <tr><th width=15%>機能名</th><th>機能概要</th></tr>
 <tr><td><a href="https://intl.cloud.tencent.com/document/product/267/7968" target="_blank">プッシュプロトコル</a></td><td>RTMPプロトコルのプッシュをサポートしています。</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31558" target="_blank">プッシュ方式</a></td><td>Tencent LVBのiOS、Android、Web版などのプッシュSDKを統合したApp、および一般的なサードパーティー製プッシュソフトウェア（OBS/XSplit/FMLEなど）をサポートしています。</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31558" target="_blank">プッシュ方式</a></td><td>Tencent CSSのiOS、Android、Web版などのプッシュSDKを統合したApp、および一般的なサードパーティー製プッシュソフトウェア（OBS/XSplit/FMLEなど）をサポートしています。</td></tr>
 <tr><td>プッシュデバイス</td><td>一般的なサードパーティー製RTMPプッシュハードウェアおよびエンコーダ装置またはボックスなどのデバイスをサポートしています。</td></tr>
 </table>
 
@@ -17,7 +17,7 @@
 <table>
 <tr><th width=15%>機能名</th><th>機能概要</th></tr>
 <tr><td><a href="https://intl.cloud.tencent.com/document/product/267/7968" target="_blank">再生プロトコル</a></td><td>RTMP、FLV 、HLSの3種類の再生プロトコルをサポートしています。</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31559" target="_blank">再生方式</a></td><td>Tencent LVBのiOS、Android、Web版などのプレーヤーSDK、および一般的なサードパーティー製 FLV、RTMP、HLS形式のプレーヤーをサポートしています。</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31559" target="_blank">再生方式</a></td><td>Tencent CSSのiOS、Android、Web版などのプレーヤーSDK、および一般的なサードパーティー製 FLV、RTMP、HLS形式のプレーヤーをサポートしています。</td></tr>
 <tr><td>再生制御</td><td>入力ストリームと仕様が一致するオリジナルストリームを再生、またはリアルタイムのトランスコーディングを経たストリームを再生できます。</td></tr>
 </table>
 
@@ -25,7 +25,7 @@
  ### ライブストリーミング管理
  <table>
 <tr><th width=15%>機能名</th><th>機能概要</th></tr>
-<tr><td>管理方式</td><td>ライブストリーミング管理コンソールでのグラフィック化による管理、またはLVB Cloud APIの呼び出しによる管理をサポートしています。</td></tr>
+<tr><td>管理方式</td><td>ライブストリーミング管理コンソールでのグラフィック化による管理、またはCSS Cloud APIの呼び出しによる管理をサポートしています。</td></tr>
 </table>
 
 ### ライブストリーミングコンソール
@@ -69,20 +69,20 @@
 <tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">ウォーターマーク管理に関するAPI</a></td>
             <td>ウォーターマークの追加、ウォーターマークルールの作成、ウォーターマークの削除、ウォーターマークルールの削除、単独のウォーターマークの取得、ウォーターマークルールリストの取得、ウォーターマークリストの確認、ウォーターマークの更新が可能です。</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">LVBコールバックに関するAPI</a></td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">CSSコールバックに関するAPI</a></td>
             <td>コールバックルールの作成、コールバックテンプレートの作成、コールバックルールの削除、コールバックテンプレートの削除、コールバックルールリストの取得、単独のコールバックテンプレートの取得、コールバックテンプレートリストの取得、コールバックテンプレートの修正が可能です。</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">LVBプルに関するAPI</a></td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">CSSプルに関するAPI</a></td>
             <td>プル設定の追加、プル設定の削除、プル設定の確認、プル設定の更新、プル設定状態の修正が可能です。</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">LVB管理に関するAPI</a></td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">CSS管理に関するAPI</a></td>
             <td>プッシュ禁止リストの取得、プッシュ切断イベントの確認、ライブストリーミング中のストリーミングの確認、ストリーミング履歴リストの確認、ストリーミング状態の確認、ライブストリーミングの切断、ライブストリーミングのプッシュ禁止、ライブストリーミングプッシュの回復が可能です。</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">LVBトランスコードに関するAPI</a></td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">CSSトランスコードに関するAPI</a></td>
             <td>トランスコーディングルールの作成、トランスコーディングテンプレートの作成、トランスコーディングルールの削除、トランスコーディングテンプレートの削除、トランスコーディングルールリストの取得、単独のトランスコーディングテンプレートの取得、トランスコーディングテンプレートリストの取得、トランスコーディングテンプレート設定の修正が可能です。</td>
 </tr>
 <tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">統計クエリーに関するAPI</a></td>
-            <td>LVB課金帯域幅およびトラフィックデータのクエリー、省およびプロバイダーグルーブごとの再生データのクエリー、再生 HTTP ステータスコードの詳細データのクエリー、リアルタイムのドメイン名次元の下り再生データのクエリー、ライブストリーミングパッケージ情報のクエリーなどの機能がサポートされています。</td>
+            <td>CSS課金帯域幅およびトラフィックデータのクエリー、省およびプロバイダーグルーブごとの再生データのクエリー、再生 HTTP ステータスコードの詳細データのクエリー、リアルタイムのドメイン名次元の下り再生データのクエリー、ライブストリーミングパッケージ情報のクエリーなどの機能がサポートされています。</td>
 </tr>
 <tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">証明書管理に関するAPI</a></td>
             <td>ドメイン名証明書のバインディング、証明書の追加、証明書の削除、証明書情報の取得、証明書情報リストの取得、ドメイン名証明書情報の取得、証明書の修正、ドメイン名および証明書バインディング情報の修正、ドメイン名証明書のバインディング解除が可能です。</td>
@@ -96,12 +96,12 @@
 ### 付加価値サービス
 <table>
 <tr><th width=15%>機能名</th><th>機能概要</th></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31561" target="_blank">LVBトランスコード</a></td><td> ライブストリーミングに対して多様な仕様のトランスコーディングをサポートしています。</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31562" target="_blank">LVBスクリーンキャプチャ</a></td><td>APIを介してライブストリーミング中にスクリーンキャプチャし、Tencent Cloud COSのサーバーに保存します。</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31564" target="_blank">LVB識別</a></td><td>AIがライブストリーミングのスクリーンキャプチャのポルノを識別し、識別結果を返す機能をサポートしています。 </td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31561" target="_blank">CSSトランスコード</a></td><td> ライブストリーミングに対して多様な仕様のトランスコーディングをサポートしています。</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31562" target="_blank">CSSスクリーンキャプチャ</a></td><td>APIを介してライブストリーミング中にスクリーンキャプチャし、Tencent Cloud COSのサーバーに保存します。</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31564" target="_blank">CSS識別</a></td><td>AIがライブストリーミングのスクリーンキャプチャのポルノを識別し、識別結果を返す機能をサポートしています。 </td></tr>
 <tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31563" target="_blank">ライブストリーミングレコーディング</a></td><td>APIを介して ライブストリーミングのプロセスをレコーディングし、Tencent Cloud VODプラットフォームに保存する機能をサポートしています。</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31565" target="_blank">LVBタイムシフト</a></td><td>ユーザーがライブストリーミングのストリーミング中に過去の任意の時間のライブストリーミングコンテンツを再生する機能をサポートしています。</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31567" target="_blank">LVB Global Content Delivery</a></td><td>海外でのTencent LVBサービスの利用をサポートしています。</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31565" target="_blank">CSSタイムシフト</a></td><td>ユーザーがライブストリーミングのストリーミング中に過去の任意の時間のライブストリーミングコンテンツを再生する機能をサポートしています。</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31567" target="_blank">CSS Global Content Delivery</a></td><td>海外でのTencent CSSサービスの利用をサポートしています。</td></tr>
 </table>
 
 
