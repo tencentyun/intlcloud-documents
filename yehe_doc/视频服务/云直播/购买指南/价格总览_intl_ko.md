@@ -1,10 +1,10 @@
 >? [고객센터](https://intl.cloud.tencent.com/zh/contact-sales)에서 라이브 방송 관련 비용을 예상할 수 있습니다.
 
-LVB 요금제는 기본 서비스 요금, 부가 서비스 요금 및 확장 서비스 요금이 포함되며, 요금 구성은 다음 그림과 같습니다.
+CSS 요금제는 기본 서비스 요금, 부가 서비스 요금 및 확장 서비스 요금이 포함되며, 요금 구성은 다음 그림과 같습니다.
 
 ![](https://main.qcloudimg.com/raw/40b382f7218804c557fdb9e3ce47294c.png)
 
-- [기본 서비스 요금](#base): LVB 이용 후 발생하는 라이브 방송 소모 비용으로, 트래픽 방식 또는 대역폭 피크 방식의 두 가지 과금 방식을 제공합니다.
+- [기본 서비스 요금](#base): CSS 이용 후 발생하는 라이브 방송 소모 비용으로, 트래픽 방식 또는 대역폭 피크 방식의 두 가지 과금 방식을 제공합니다.
 - [부가 서비스 요금](#appreciation): 라이브 방송 트랜스 코딩, 녹화, 화면 캡처, 음란물 감지 등 부가 서비스 이용 비용으로, 해당 기능은 기본적으로 꺼져 있으며 사용 시에만 과금됩니다.
 - [확장 서비스 요금](#extensions): Tencent Cloud의 기타 제품과 결합하여 함께 제공되는 부가 서비스로, 다른 클라우드 서비스가 각각의 과금 규정에 따라 관련 비용을 청구합니다.
 
@@ -13,12 +13,12 @@ LVB 요금제는 기본 서비스 요금, 부가 서비스 요금 및 확장 서
 <table>
 <tr><th width="20%">과금 항목</th><th width="60%">과금 설명</th><th>결제 방식</th></tr>
 <tr>
-<td>LVB 트래픽(기본)</td>
-<td>과금 방식이 <b>일별 트래픽 과금</b> 방식인 경우, LVB 발생 비용은 <strong>트래픽 소모량에 따라 과금됩니다.</strong></td>
+<td>CSS 트래픽(기본)</td>
+<td>과금 방식이 <b>일별 트래픽 과금</b> 방식인 경우, CSS 발생 비용은 <strong>트래픽 소모량에 따라 과금됩니다.</strong></td>
 <td><a href="https://intl.cloud.tencent.com/zh/document/product/267/2818#.E5.B8.A6.E5.AE.BD.E8.AE.A1.E8.B4.B9">후불-일 결산</a></td>
 </tr><tr>
-<td>LVB 대역폭 피크</td>
-<td>과금 방식이 <b>일별 대역폭 과금</b> 방식인 경우, LVB 발생 비용은 <b>대역폭 피크에 따라 과금됩니다.</b></td>
+<td>CSS 대역폭 피크</td>
+<td>과금 방식이 <b>일별 대역폭 과금</b> 방식인 경우, CSS 발생 비용은 <b>대역폭 피크에 따라 과금됩니다.</b></td>
 <td><a href="https://intl.cloud.tencent.com/zh/document/product/267/2818#.E5.B8.A6.E5.AE.BD.E8.AE.A1.E8.B4.B9">후불-일 결산</a></td>
 </tr></table>
 
@@ -61,7 +61,7 @@ LVB 요금제는 기본 서비스 요금, 부가 서비스 요금 및 확장 서
   <td colspan=2>라이브 방송 녹화</td>
   <td>
     <li>라이브 방송 녹화는 녹화 템플릿에 따라 생성되는 녹화 파일로 VOD에 저장됩니다.</li>
-    <li>녹화로 인해 발생하는 서비스 비용은 <b>LVB 녹화 동시 피크 채널 수에 따라 과금됩니다.</b></li>
+    <li>녹화로 인해 발생하는 서비스 비용은 <b>CSS 녹화 동시 피크 채널 수에 따라 과금됩니다.</b></li>
   </td>
 <td><a href="https://intl.cloud.tencent.com/zh/document/product/267/2818#.E7.9B.B4.E6.92.AD.E5.BD.95.E5.88.B6">후불-월 결산</a></td>
 </tr><tr>
