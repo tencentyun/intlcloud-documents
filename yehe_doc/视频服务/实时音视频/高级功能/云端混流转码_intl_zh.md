@@ -19,10 +19,11 @@
 ## 方案一：服务端 REST API 混流方案
 ### 启动混流
 由您的服务器调用 REST API [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) 可以启动云端混流，对于此 API 您需关注如下细节：
-![](https://main.qcloudimg.com/raw/be0205b5f624679302e57ca5aa1b133f.png)
+
 [](id:restapi_step1)
 #### 1. 设置画面排版模式
 通过 `StartMCUMixTranscode` 中的 [LayoutParams](https://intl.cloud.tencent.com/document/product/647/36760#LayoutParams) 参数，可以设置如下几种排版模式：
+![](https://main.qcloudimg.com/raw/be0205b5f624679302e57ca5aa1b133f.png)
 
 **悬浮模板（LayoutParams.Template = 0）**
 
@@ -92,7 +93,7 @@
 #### 4. 设置是否开启 CDN 直播
 
 - **OutputParams.StreamId**
-  该参数用于指定是否启动 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242)，如果您指定此参数，那么混流后的音视频流会被导入到 [云直播系统](https://intl.cloud.tencent.com/product/LVB) 中。不过只有在您已经开通了直播服务，并配置了播放域名的情况下，才能通过 CDN 正常观看这条直播流。
+  该参数用于指定是否启动 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242)，如果您指定此参数，那么混流后的音视频流会被导入到 [云直播系统](https://intl.cloud.tencent.com/product/css) 中。不过只有在您已经开通了直播服务，并配置了播放域名的情况下，才能通过 CDN 正常观看这条直播流。
 - **OutputParams.PureAudioStream**
   如果您只希望做纯音频直播，可以设置 `OutputParams.PureAudioStream` 参数为 1，代表仅把混音后的音频数据流转发到 CDN 上。
 
@@ -430,7 +431,97 @@ mixUsersArray[2] = remote2;
 // 发起云端混流
 config.mixUsersArray = mixUsersArray;
 trtc.setMixTranscodingConfig(config);
-```
+:::
+::: Flutter java
+TRTCCloud trtcCloud = await TRTCCloud.sharedInstance();
+trtcCloud.setMixTranscodingConfig(TRTCTranscodingConfig(
+  appId: 1252463788, //仅供参考
+  bizId: 3891, //仅供参考
+  // 设置分辨率为720 × 1280, 码率为1500kbps，帧率为20FPS
+  videoWidth: 720,
+  videoHeight: 1280,
+  videoBitrate: 1500,
+  videoFramerate: 20,
+  videoGOP: 2,
+  audioSampleRate: 48000,
+  audioBitrate: 64,
+  audioChannels: 2,
+
+  // 采用预排版模式
+  mode: TRTCCloudDef.TRTC_TranscodingConfigMode_Template_PresetLayout,
+
+  mixUsers: [
+  // 主播摄像头的画面位置
+    TRTCMixUser(
+      userId: "PLACE_HOLDER_LOCAL_MAIN",
+      roomId: null, // 本地用户不用填写 roomID，远程需要
+      zOrder: 0, // zOrder 为0代表主播画面位于最底层
+      x: 0, //仅供参考
+      y: 0,
+      streamType: 0,
+      width: 300,
+      height: 400),
+    TRTCMixUser(
+      userId: 'PLACE_HOLDER_REMOTE',
+      roomId: '256', // 本地用户不用填写 roomID，远程需要
+      zOrder: 1,
+      x: 100, //仅供参考
+      y: 100,
+      streamType: 0,
+      width: 160,
+      height: 200)
+  ],
+));
+:::
+::: Web JavaScript
+// 预排版模式
+const config = {
+   mode: 'preset-layout',
+   videoWidth: 720,
+   videoHeight: 1280,
+   videoBitrate: 1500,
+   videoFramerate: 20,
+   videoGOP: 2,
+   audioSampleRate: 48000,
+   audioBitrate: 64,
+   audioChannels: 2,
+   // 预设一路本地摄像头、两路远端流的排版位置
+   mixUsers: [
+      {
+        width: 720,
+        height: 1280,
+        locationX: 0,
+        locationY: 0,
+        pureAudio: false,
+        userId: '123456', // 本地摄像头占位，传入推摄像头的 client userId
+        zOrder: 1
+      },
+      {
+        width: 180,
+        height: 240,
+        locationX: 400,
+        locationY: 800,
+        pureAudio: false,
+        userId: '$PLACE_HOLDER_REMOTE$', // 远端流占位
+        zOrder: 2
+      },
+      {
+        width: 320,
+        height: 240,
+        locationX: 400,
+        locationY: 500,
+        pureAudio: false,
+        userId: '$PLACE_HOLDER_REMOTE$', // 远端流占位
+        zOrder: 2
+      }
+    ];
+ }
+ await client.startMixTranscode(config);
+} catch (e) {
+ console.error('startMixTranscode failed ', e);
+}
+:::
+</dx-codeblock>  
 
 >! 预排版模式下 `setMixTranscodingConfig()` 接口无需多次调用，在进房成功并开启本地音频上行后调用一次即可。
 
@@ -493,6 +584,5 @@ trtc.setMixTranscodingConfig(config);
   - 调用 [setMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 并将参数设置为 `nil/null` 主动停止混流。
 
 在其他情况下，TRTC 云端都将会尽力持续保持混流状态。因此，为避免产生预期之外的混流费用，请在您不需要混流的时候尽早通过上述方法结束云端混流。
-
 
 

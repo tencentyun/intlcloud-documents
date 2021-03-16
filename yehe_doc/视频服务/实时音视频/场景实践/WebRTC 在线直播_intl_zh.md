@@ -123,7 +123,7 @@ im.enterRoom('your roomID').then((imResponse) => {
 2. 查看【应用信息】模块，单击复制按钮，记录 SDKAppID 信息。
 ![](https://main.qcloudimg.com/raw/a65b6631553159ce553620e40f9c2040.png)
 3. 选择【快速上手】页签，查看【第二步 获取签发UserSig的密钥】标签，单击【复制密钥】。
-  ![](https://main.qcloudimg.com/raw/99f03c367c43416bd7c7e8c6d6ff5002.png)
+    ![](https://main.qcloudimg.com/raw/99f03c367c43416bd7c7e8c6d6ff5002.png)
 
 >!
 >- 本地计算 UserSig 的方式仅用于本地开发调试，请勿直接发布到线上，一旦您的 `SECRETKEY` 泄露，攻击者就可以盗用您的腾讯云流量。
@@ -141,7 +141,7 @@ im.enterRoom('your roomID').then((imResponse) => {
 ### 步骤4：下载并配置 Demo 源码
 1. 下载 [腾讯云 Web 直播互动组件 Demo 工程](https://github.com/tencentyun/TWebLive)。
 2. 打开 `TWebLive/dist/debug/GenerateTestUserSig.js` 文件，并设置相关参数：<ul style="margin:0">
-   <li/>SDKAPPID：请设置为 <a href="#step2">步骤2</a> 中获取的实际应用 SDKAppID。
+   <li/>SDKAPPID：请设置为 <a href="#step2">步骤1</a> 中获取的实际应用 SDKAppID。
     <li/>SECRETKEY：请设置为 <a href="#step2">步骤2</a> 中获取的实际密钥信息。
     <li/>PLAYDOMAIN：CDN观看，配置播放域名。（如果不需要 CDN 直播观看，可略过此配置。）
     </ul>
@@ -198,6 +198,7 @@ Web 推流和 Web 低延时观看用到了 WebRTC 技术。而 WebRTC 技术是�
 |   Windows   |      桌面版 Edge 浏览器      |        80+         |     支持     |     支持     |
 | iOS 11.1.2+ |     移动版 Safari 浏览器     |        11+         |     支持     |     支持     |
 | iOS 12.1.4+ |         微信内嵌网页         |         -          |     支持     |    不支持    |
+| iOS 14.3+   |         微信内嵌网页         |   6.5+（微信版本） |     支持     |    支持     |
 |   Android   |       移动版 QQ 浏览器       |         -          |    不支持    |    不支持    |
 |   Android   |       移动版 UC 浏览器       |         -          |    不支持    |    不支持    |
 |   Android   |   微信内嵌网页（TBS 内核）   |         -          |     支持     |     支持     |
@@ -227,6 +228,5 @@ TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256�
 
 - [TWebLive API 手册](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblive/TWebLive.html)
 - [在线 Demo](https://trtc.qcloud.com/tweblive/index.html#/)
-
 
 
