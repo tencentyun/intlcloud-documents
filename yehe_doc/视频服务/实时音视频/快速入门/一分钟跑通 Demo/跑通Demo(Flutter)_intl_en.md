@@ -30,8 +30,8 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 [](id:step3)
 ### Step 3. Configure demo project files.
 1. In the **Modify Configuration** step, select the platform in line with the source package downloaded.
-2. Find and open `/lib/debug/GenerateTestUserSig.dart`.
-3. Set parameters in `GenerateTestUserSig.java` as follows.
+2. Find and open `/example/lib/debug/GenerateTestUserSig.dart`.
+3. Set parameters in `GenerateTestUserSig.dart` as follows.
 <ul><li/>SDKAPPID: `PLACEHOLDER` by default. Set it to the actual `SDKAppID`.
 	<li/>SECRETKEY: `PLACEHOLDER` by default. Set it to the actual key.</ul>
 4. Click **Next step** to complete the creation.
