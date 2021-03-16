@@ -14,9 +14,9 @@ https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCSimpleDemo/Live/LivePu
 
 ## Supported Platforms
 
-| iOS | Android | Mac OS | Windows |  Desktop Browser | Electron|
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| &#10003; | &#10003;   | &#10003;  |  &#10003;   | &#10003;  |&#10003;  |
+| iOS | Android | Mac OS | Windows |  Desktop Browser | Electron|Flutter |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| &#10003; | &#10003;   | &#10003;  |  &#10003;   | &#10003;  |&#10003;  |&#10003;  |
 
 For detailed directions on how to set video quality for the desktop browser, please see [Configuration Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-14-basic-set-video-profile.html).
 
