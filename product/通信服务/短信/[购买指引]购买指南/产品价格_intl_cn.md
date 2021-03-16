@@ -10,6 +10,7 @@
 
 | 国家（或地区） | 中文名	| 代号	| 国家（或地区）码 |	单价（美元） |
 |--------------------|----------|-------|---------|---------------|
+| Ascension Island          | 阿森松岛       | AC   | 247              | 0.0530          |
 | Andorra |	安道尔 |	AD |	376 |	0.0651 |
 | United Arab Emirates|	阿拉伯联合酋长国|	AE|	971	|0.0415 |
 | Afghanistan|	阿富汗|	AF|	93|	0.0731 |
@@ -17,6 +18,7 @@
 | Anguilla	|安圭拉|	AI	|1264|	0.0454 |
 | Albania|	阿尔巴尼亚|	AL|	355|0.0949 |
 | Armenia|	亚美尼亚|	AM|	374|	0.0813 |
+| Netherlands Antilles      | 荷属安的列斯   | AN   | 599              | 0.0590          |
 | Angola|	安哥拉	|AO	|244|	0.0633 |
 | Argentina	|阿根廷	|AR|	54	|0.0301| 
 | American Samoa|	美属萨摩亚|	AS|	1684	|0.1100 |
@@ -67,9 +69,10 @@
 |Ecuador|	厄瓜多尔|	EC|	593|	0.1068| 
 |Estonia|	爱沙尼亚|	EE|	372|	0.1141 |
 |Egypt|	埃及|	EG|	20|	0.0780| 
+| Western Sahara            | 西撒哈拉       | EH   | 212              | 0.0625          |
 |Eritrea|	厄立特里亚|	ER|	291	|0.0915| 
 |Spain|	西班牙|	ES|	34|	0.0988| 
-|Ethiopia|	埃塞俄比亚	|ET|	251|	0.0336| 
+|Ethiopia|	埃塞俄比亚	|ET|	251|	0.0863| 
 |Finland	|芬兰	| FI|	358|	0.1390| 
 |Fiji	|斐济|	FJ	|679|	0.0367 |
 |Micronesia|	密克罗尼西亚|	FM|	691|	0.1491| 
@@ -78,9 +81,9 @@
 |Gabon	|加蓬	|GA	|241	|0.0357| 
 |United Kingdom	|英国	|GB|	44|	0.0464| 
 |Grenada	|格林纳达	|GD	|1473	|0.0489 |
-|Georgia	|格鲁吉亚|	GE|	995|	0.0218 |
+|Georgia	|格鲁吉亚|	GE|	995|	0.1165 |
 |French Guiana	|法属圭亚那	|GF	|594	|0.1515| 
-|Ghana|	加纳|	GH|	233|	0.0244| 
+|Ghana|	加纳|	GH|	233|	0.0764| 
 |Gibraltar	|直布罗陀	|GI|	350|	0.0201| 
 |Greenland|	格陵兰岛|	GL|	299|	0.0128 |
 |Gambia	|冈比亚	|GM	|220|	0.0454| 
@@ -99,22 +102,22 @@
 |Hungary	|匈牙利	|HU	|36|	0.1197 |
 |Indonesia	|印度尼西亚	|ID|	62	|0.0850 |
 |Ireland	|爱尔兰|	IE	|353|	0.0824 |
-|Israel|	以色列	|IL	|972	|0.0173 |
-|India	|印度|	IN	|91|	0.0085 |
-|Iraq	|伊拉克|	IQ|	964|	0.0611| 
+|Israel|	以色列	|IL	|972	|0.0393 |
+|India	|印度|	IN	|91|	0.0140 |
+|Iraq	|伊拉克|	IQ|	964|	0.0805| 
 |Iceland	|冰岛	|IS|	354|	0.0333 |
 |Italy	|意大利	|IT	|39|	0.0823| 
 |Jamaica|	牙买加	|JM|	1876	|0.0374 |
 |Jordan	|约旦	|JO|	962|	0.0700| 
 |Japan	|日本	|JP|	81|	0.0750 |
-|Kenya	|肯尼亚	|KE|	254|	0.0299 |
-|Kyrgyzstan	|吉尔吉斯斯坦|	KG|	996	|0.0564 |
-|Cambodia	|柬埔寨	|KH	|855|	0.0561 |
+|Kenya	|肯尼亚	|KE|	254|	0.0424 |
+|Kyrgyzstan	|吉尔吉斯斯坦|	KG|	996	|0.1274 |
+|Cambodia	|柬埔寨	|KH	|855|	0.0813 |
 |Kiribati	|基里巴斯|	KI	|686|	0.0510 |
 |Comoros	|科摩罗|	KM|	269|	0.0459 |
 |Saint Kitts and Nevis|	圣基茨和尼维斯|	KN|	1869|	0.0947 |
 |South Korea	|韩国	|KR|	82|	0.0357 |
-|Kuwait	|科威特	|KW	|965	|0.0518 |
+|Kuwait	|科威特	|KW	|965	|0.0684 |
 |Cayman Islands	|开曼群岛|KY|	1345	|0.0463 |
 |Kazakhstan	|哈萨克斯坦|	KZ|	7	|0.0783 |
 |Laos	|老挝|	LA|	856	|0.0456 |
@@ -127,18 +130,20 @@
 |Lithuania	|立陶宛	|LT	|370	|0.0419 |
 |Luxembourg	|卢森堡|	LU	|352	|0.0157 |
 |Latvia	|拉脱维亚|	LV|	371|	0.0696 |
-|Libya	|利比亚	|LY	|218	|0.0569 |
+|Libya	|利比亚	|LY	|218	|0.1001 |
 |Morocco	|摩洛哥|	MA	|212	|0.0832 |
 |Monaco|	摩纳哥	|MC|	377|	0.0638|
 |Moldova	|摩尔多瓦	|MD|	373|	0.0954 |
 |Montenegro	|黑山|	ME|	382|	0.0358| 
-|Madagascar|	马达加斯加	|MG	|261	|0.0564| 
+|Madagascar|	马达加斯加	|MG	|261	|0.0733| 
 |Marshall Islands|	马绍尔群岛	|MH	|692|	0.1323| 
 |Macedonia|	马其顿|	MK|	389|	0.0303 |
 |Mali	|马里|	ML	|223|	0.1927 |
 |Myanmar|	缅甸	|MM|	95|	0.0940| 
 |Mongolia	|蒙古|	MN	|976	|0.0645 |
 |Macau, China|	中国澳门	|MO|	853|	0.0267| 
+| Northern Mariana Islands  | 北马利安纳群岛 | MP   | 1670             | 0.0500          |
+| Martinique                | 马丁尼克       | MQ   | 596              | 0.1177          |
 |Mauritania	|毛里塔尼亚	|MR|	222|	0.0800 |
 |Montserrat|	蒙特塞拉特岛|	MS	|1664|	0.0685| 
 |Malta|	马耳他|	MT	|356	|0.0316| 
@@ -164,10 +169,11 @@
 |French Polynesia|	法属波利尼西亚	|PF	|689	|0.1246| 
 |Papua New Guinea	|巴布亚新几内亚	|PG	|675	|0.0692 |
 |Philippines	|菲律宾	|PH|	63	|0.0355| 
-|Pakistan	|巴基斯坦	|PK	|92	|0.0226 |
+|Pakistan	|巴基斯坦	|PK	|92	|0.0590 |
 |Poland|	波兰	|PL	|48|	0.0411| 
 |Saint Pierreand Miquelon|	圣彼埃尔和密克隆岛|	PM|	508|	0.0580 |
 |Puerto Rico|	波多黎各|	PR	|1787	|0.0564 |
+| Palestinian Territory     | 巴勒斯坦       | PS   | 970              | 0.0927          |
 |Portugal	|葡萄牙|	PT	|351|	0.0522 |
 |Palau	|帕劳|	PW|	680	|0.0855| 
 |Paraguay	|巴拉圭|	PY	|595	|0.0306 |
@@ -180,7 +186,7 @@
 |Saudi Arabia	|沙特阿拉伯|	SA	|966|	0.0357 |
 |Solomon Islands|	所罗门群岛	|SB	|677|	0.0303 |
 |Seychelles|	塞舌尔	|SC|	248	|0.0644 |
-|Sudan|苏丹	|SD	|249|	0.0510 |
+|Sudan|苏丹	|SD	|249|	0.0673 |
 |Sweden	|瑞典|	SE	|46	|0.1066 |
 |Singapore	|新加坡|	SG	|65	|0.0380 |
 |Slovenia	|斯洛文尼亚|	SI	|386	|0.0383 |
@@ -190,14 +196,16 @@
 |Senegal	|塞内加尔	|SN	|221	|0.0719 ||
 |Somalia	|索马里	|SO	|252|	0.0873 |
 |Suriname	|苏里南|	SR|	597|	0.0495 |
+| South Sudan               | 南苏丹         | SS   | 211              | 0.0800          |
 |Sao Tome and Principe|	圣多美和普林西比|	ST	|239|	0.1149 |
 |ElSalvador|	萨尔瓦多|	SV|	503|	0.0574 |
+|Sint Maarten (Dutch Part) | 英属圣马丁   | SX   | 1721 | 0.0640  |
 |Swaziland	|斯威士兰	|SZ|	268|0.0748 |
 |Turksand Caicos Islands	|特克斯和凯科斯群岛	|TC|	1649|	0.0411 |
 |Chad	|乍得|	TD	|235|	0.0378 |
 |Togo	|多哥	|TG	|228	|0.0348 |
 |Thailand|	泰国	|TH	|66|	0.0192 |
-|Tajikistan	|塔吉克斯坦|	TJ	|992	|0.0607 |
+|Tajikistan	|塔吉克斯坦|	TJ	|992	|0.0970 |
 |East Timor|	东帝汶	|TL|	670|	0.0656| 
 |Turkmenistan	|土库曼斯坦	|TM|	993	|0.0580 |
 |Tunisia|	突尼斯|	TN|216|	0.1255 |
@@ -205,19 +213,21 @@
 |Turkey	|土耳其	|TR|	90|	0.0090 |
 |Trinidadand Tobago	|特立尼达和多巴哥|	TT|	1868|	0.0384 
 |Taiwan, China	|中国台湾|	TW|	886	|0.0540 |
-|Tanzania|	坦桑尼亚	|TZ|	255|	0.0422 |
-|Ukraine	|乌克兰|	UA	|380	|0.0533 |
+|Tanzania|	坦桑尼亚	|TZ|	255|	0.0819 |
+|Ukraine	|乌克兰|	UA	|380	|0.0759 |
 |Uganda	|乌干达|	UG|	256|	0.0776 |
 |United States	|美国	|US|	1	|0.0063 |
 |Uruguay	|乌拉圭|	UY	|598|	0.1093 |
 |Uzbekistan|	乌兹别克斯坦|	UZ	|998	|0.1411 |
 |Saint Vincent and The Grenadines	|圣文森特和格林纳丁斯|	VC	|1784	|0.0619 |
-|Venezuela|	委内瑞拉	|VE	|58	|0.0203 |
+|Venezuela|	委内瑞拉	|VE	|58	|0.0360 |
 |VirginIslands,British	|英属处女群岛|	VG|	1284|	0.0480 |
+| Virgin Islands, US  | 美属维尔京群岛 | VI   | 1340   | 0.0063 |
 |Vietnam	|越南	|VN|	84	|0.0490 |
 |Vanuatu|	瓦努阿图|	VU|	678|	0.0611 |
 |Samoa|	萨摩亚|	WS	|685|	0.0774 |
-|Yemen|	也门	|YE|	967|	0.0284 |
+| Kosovo| 科索沃共和国   | XK   | 383  | 0.0867 |
+|Yemen|	也门	|YE|	967|	0.0634  |
 |Mayotte	|马约特	|YT	|269	|0.1589| 
 |South Africa|	南非|	ZA	|27|	0.0319| 
 |Zambia	|赞比亚	|ZM|	260	|0.0422 |
