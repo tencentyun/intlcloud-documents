@@ -14,9 +14,9 @@ https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCSimpleDemo/Live/LivePu
 
 ## サポートするプラットフォーム
 
-| iOS | Android | Mac OS | Windows |  デスクトップブラウザ | Electron|
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| &#10003; | &#10003;   | &#10003;  |  &#10003;   | &#10003;  |&#10003;  |
+| iOS | Android | Mac OS | Windows |  デスクトップブラウザ | Electron|Flutter |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| &#10003; | &#10003;   | &#10003;  |  &#10003;   | &#10003;  |&#10003;  |&#10003;  |
 
 デスクトップブラウザ端末で画質の詳細操作を設定します。 [設定ガイド](https://www.qcloudtrtc.com/trtc-web-sdk/docs/api/tutorial-04-advanced-set-video-profile.html)をご参照ください。
 
@@ -47,7 +47,7 @@ https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCSimpleDemo/Live/LivePu
 
 - **(TRTCVideoResolution) videoResolution**
 エンコード解像度は、 例えば、640 x 360 はエンコードした画面の幅（画素） x 高さ（画素）を指し、TRTCVideoResolution で列挙した定義では、幅は高さ以上の長さとの横型スクリーン（Landscape）の解像度を定義しただけです。縦型スクリーン解像度を使用したい場合は、 resModeを Portraitに設定する必要があります。
- >多くのハードウェアのコーデックが 16 で割り切れる画素数の幅のみをサポートすることから、 SDKが実際にエンコードする解像度は、必ずしもパラメータに従って自ら設定したわけではなく、 16 で割って自動で修正したものです。例えば、 640  x 360 の解像度なら、 SDK 内部では 640 x 368に対応することがありえます。
+ >!多くのハードウェアのコーデックが 16 で割り切れる画素数の幅のみをサポートすることから、 SDKが実際にエンコードする解像度は、必ずしもパラメータに従って自ら設定したわけではなく、 16 で割って自動で修正したものです。例えば、 640  x 360 の解像度なら、 SDK 内部では 640 x 368に対応することがありえます。
 
 - **(TRTCVideoResolutionMode) resMode**
 横スクリーンまたは縦スクリーンの解像度を指し、TRTCVideoResolution には横スクリーンの解像度しか定義していないことから、 360 x 640 のような縦スクリーン解像度を使用したい場合は、 resMode を TRTCVideoResolutionModePortraitに指定する必要があります。一般に PCおよび Macは、横スクリーン（Landscape）解像度を採用し、携帯電話は縦スクリーン（Portrait）解像度を採用しています。
