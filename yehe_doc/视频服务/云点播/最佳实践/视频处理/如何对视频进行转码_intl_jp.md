@@ -16,18 +16,18 @@
 - VODのトラフィックはビデオ再生に使用されます。詳細は [トラフィック課金](https://intl.cloud.tencent.com/document/product/266/14666#.E5.8A.A0.E9.80.9F.E6.9C.8D.E5.8A.A1.3Cspan-id.3D.22speed.22.3E.3C.2Fspan.3E)をご参照ください。
 
 ## コンソールでのトランスコードの開始
-
-### 手順1：VODのアクティブ化<span id="p11"></span>
+<span id="p11"></span>
+### 手順1：VODのアクティブ化
 
 [クイックスタート - 手順1](https://intl.cloud.tencent.com/document/product/266/8757) を参照してVODサービスをアクティブにします。
-
-### 手順2：ビデオのアップロード<span id="p12"></span>
+<span id="p12"></span>
+### 手順2：ビデオのアップロード
 
 [クイックスタート - 手順2](https://intl.cloud.tencent.com/document/product/266/8757) を参照して、1個のテストビデオをアップロードします。 [ここ](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) をクリックして、Demoで使用されるテストビデオを表示します。対応するFileIdは下図に示すとおり5285890804162014755です。
 ![](https://main.qcloudimg.com/raw/f8aa62bd40ab37b8cdd371798d4ff1e9.png)
 >?トランスコードに時間がかかりすぎないように、短めのビデオファイルを使用してテストすることをお勧めします（例えば数十秒間のビデオ）。
-
-### 手順3：トランスコードの開始<span id="p13"></span>
+<span id="p13"></span>
+### 手順3：トランスコードの開始
 
 コンソールの [ビデオ管理](https://console.cloud.tencent.com/vod/media) 画面でアップロードされたテストビデオにチェックを入れた後、【VC】をクリックします：
 ![](https://main.qcloudimg.com/raw/cf6d8e0fa032b2a76acfd918cf5c3146.png)
@@ -39,8 +39,8 @@
 ![](https://main.qcloudimg.com/raw/f52ec218600e19af3e42359a90d03298.png)
 「ビデオ管理」画面でテストビデオのステータスが「処理中」になっていることを確認できます。これはビデオがトランスコードされていることを示します。
 ![](https://main.qcloudimg.com/raw/30d3c90f55970568f55ce09be4cdb32b.png)
-
-### 手順4：トランスコード結果の表示<span id="p14"></span>
+<span id="p14"></span>
+### 手順4：トランスコード結果の表示
 
 コンソールの [ビデオ管理](https://console.cloud.tencent.com/vod/media) 画面でテストビデオのステータスが「正常」に変わるのを待ちます。これはトランスコーディングが完了したことを示します。テストビデオの右側の【管理】をクリックしてビデオ管理画面に進みます。
 ![](https://main.qcloudimg.com/raw/694f1b000cea813d12397fcb1c3a86a0.png)
@@ -48,8 +48,8 @@
 ![](https://main.qcloudimg.com/raw/38db47dcfbd840bd6d67478ce42fd1cd.png)
 
 ## Tencent Cloud APIを呼び出してトランスコードを開始
-
-### 手順1：Tencent Cloud CVMの準備<span id="p21"></span>
+<span id="p21"></span>
+### 手順1：Tencent Cloud CVMの準備
 
 Tencent Cloud APIのリクエストは、1台のTencent Cloud CVM上で実行させる必要があります。要件は次のとおりです。
 
@@ -61,22 +61,22 @@ Tencent Cloud APIのリクエストは、1台のTencent Cloud CVM上で実行さ
 CVMの購入方法は [操作ガイド - インスタンス作成](https://intl.cloud.tencent.com/document/product/213/4855)をご参照ください。システムの再インストール方法は [操作ガイド - システム再インストール](https://intl.cloud.tencent.com/document/product/213/4933)をご参照ください。
 
 >!上述の条件に適合するTencent Cloud CVMがない場合は、その他のパブリックネットワークアクセスを備えたLinux（CentOS、Debianなど）またはMac機器でスクリプトを実行することもできます。ただし、OSの違いによってスクリプトの特定のコマンドを修正する必要があります。具体的な修正方式については、開発者自身で検索してください。
-
-### 手順2：APIキーの取得<span id="p22"></span>
+<span id="p22"></span>
+### 手順2：APIキーの取得
 
 Tencent Cloud APIのリクエストにはAPIキー（SecretIdおよびSecretKey）が必要です。まだキーを作成していない場合は、 [キードキュメントの作成](https://intl.cloud.tencent.com/document/product/598/34228) を参照して、新しいAPIキーを作成してください。キーを作成済の場合は、 [キードキュメントの表示](https://intl.cloud.tencent.com/document/product/598/34228) を参照してAPIキーを取得してください。
-
-### 手順3：VODのアクティブ化<span id="p23"></span>
+<span id="p23"></span>
+### 手順3：VODのアクティブ化
 
 [クイックスタート - 手順1](https://intl.cloud.tencent.com/document/product/266/8757) を参照してVODサービスをアクティブにします。
-
-### 手順4：ビデオのアップロード<span id="p24"></span>
+<span id="p24"></span>
+### 手順4：ビデオのアップロード
 [クイックスタート - 手順2](https://intl.cloud.tencent.com/document/product/266/8757) を参照して、1個のテストビデオをアップロードします。 [ここ](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) をクリックして、Demoで使用されるテストビデオを表示します。対応するFileIdは下図に示すとおり5285890804162014755です。
 ![](https://main.qcloudimg.com/raw/f8aa62bd40ab37b8cdd371798d4ff1e9.png)
 >?トランスコードに時間がかかりすぎないように、短めのビデオファイルを使用してテストすることをお勧めします（例えば数十秒間のビデオ）。
 
-
-### 手順5：トランスコードの開始<span id="p25"></span>
+<span id="p25"></span>
+### 手順5：トランスコードの開始
 
  [手順1](#p21) で準備したCVM（ログイン方法の詳細は [操作ガイド - Linuxにログイン](https://intl.cloud.tencent.com/document/product/213/5436)をご参照ください）にログインして、リモートターミナルで以下のコマンドを入力して実行します。
 ```
@@ -103,8 +103,8 @@ ubuntu@VM-69-2-ubuntu:~$ cd ~/vod-server-demo/transcode_api/; python3 process_me
 ```
 {"TaskId": "1400329073-procedurev2-f6bf6f01612369b6db30f2224792a2aft0", "RequestId": "809918fb-791c-4937-b684-5027ba6bc5f0"}
 ```
-
-### 手順6：トランスコード結果の表示<span id="p14"></span>
+<span id="p14"></span>
+### 手順6：トランスコード結果の表示
 
 「ビデオ管理」画面でテストビデオのステータスが「処理中」になっていることを確認できます。これはビデオがトランスコードされていることを示します。
 ![](https://main.qcloudimg.com/raw/30d3c90f55970568f55ce09be4cdb32b.png)
