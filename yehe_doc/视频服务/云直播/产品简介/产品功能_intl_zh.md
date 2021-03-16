@@ -1,116 +1,115 @@
-This document provides a list of features in LVB. For more information on their descriptions and usage, please see the corresponding documents.
+本文提供直播产品功能说明，具体功能描述和使用方法，请查询对应详细文档。
 
 
 
 
 
-### LVB Push
+### 直播推流
 <table>
-<tr><th width=15%>Feature</th><th>Description</th></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/7968" target="_blank">Push protocol</a></td><td>Supports the RTMP protocol for push.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31558" target="_blank">Push method</a></td><td>Supports applications that are integrated with Tencent Cloud LVB Push SDK for iOS, Android, or web as well as common third-party push software programs such as OBS, XSplit, and FMLE.</td></tr>
-<tr><td>Push device</td><td>Supports common third-party RTMP push hardware devices, encoders, and set-top boxes.</td></tr>
+<tr><th width=15%>功能名称</th><th>功能简介</th></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/7968" target="_blank">推流协议</a></td><td>支持 RTMP 协议进行推流。</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31558" target="_blank">推流方式</a></td><td>支持集成腾讯云直播 iOS、Android、Web 等推流 SDK 的 App，以及常见的第三方推流软件，包括  OBS/XSplit/FMLE 等。</td></tr>
+<tr><td>推流设备</td><td>支持常见的第三方 RTMP 推流硬件和编码器或盒子等设备。</td></tr>
 </table>
 
 
-### LVB Playback
+### 直播播放
 <table>
-<tr><th width=15%>Feature</th><th>Description</th></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/7968" target="_blank">Playback protocol</a></td><td>Supports RTMP, FLV, and HLS playback protocols.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31559" target="_blank">Playback method</a></td><td>Supports Tencent Cloud LVB Player SDK for iOS, Android, and web as well as common third-party FLV, RTMP, and HLS players.</td></tr>
-<tr><td>Playback control</td><td>Plays back an original stream that has the same specification as the input stream or a stream that is transcoded in real time.</td></tr>
+<tr><th width=15%>功能名称</th><th>功能简介</th></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/7968" target="_blank">播放协议</a></td><td>支持 RTMP、FLV 及 HLS 三种播放协议。</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31559" target="_blank">播放方式</a></td><td>支持腾讯云直播 iOS、Android、Web 等播放器 SDK，以及常见的第三方 FLV、RTMP、HLS 播放器。</td></tr>
+<tr><td>播放控制</td><td>可播放与输入流规格一致的原始码流，或播放经过实时转码的码流。</td></tr>
 </table>
 
 
- ### LVB Management
+ ### 直播管理
  <table>
-<tr><th width=15%>Feature</th><th>Description</th></tr>
-<tr><td>Management method</td><td>Supports management in the LVB console graphically or by calling LVB's TencentCloud APIs.</td></tr>
+<tr><th width=15%>功能名称</th><th>功能简介</th></tr>
+<tr><td>管理方式</td><td>支持在直播管理控制台进行图形化管理，或调用直播云 API 进行管理。</td></tr>
 </table>
 
-### LVB Console
+### 直播控制台
 <table>
-<tr><th width=15%>Feature</th><th>Description</th></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31054" target="_blank">Overview</a></td><td>Displays data such as real-time LVB bandwidth and traffic. </td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/35970" target="_blank">Domain name management</a></td><td>Supports adding, modifying, disabling, and deleting LVB push and playback domain names as well as configuring domain name CNAME records, HTTPS certificates, and push and playback authentication.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31068" target="_blank">Live stream management</a></td><td>Supports querying the information of real-time and historical live streams.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/34223" target="_blank">Feature module</a></td><td>Supports querying and modifying the configuration information of LVB recording, transcoding, screencapture, porn detection, watermark, and callback.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31076" target="_blank">Statistical analysis</a></td><td>Supports querying the usage statistics of LVB service bandwidth, traffic, requests, concurrent connections, screenshots, channels, and recording channels.</td></tr>
-<tr><td>LVB SDK</a></td><td>Supports querying the MLVB SDK quality monitoring data and MLVB mic connect minutes.</td></tr>
+<tr><th width=15%>功能名称</th><th>功能简介</th></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31054" target="_blank">概览</a></td><td>可对直播实时带宽、流量等数据进行查看。</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/35970" target="_blank">域名管理</a></td><td>可进行新增、修改、禁用、删除直播推流和播放域名，支持配置域名 CNAME、HTTPS 证书和推流及播放鉴权等。</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31068" target="_blank">直播流管理</a></td><td>查询在线或历史的直播流信息。</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/34223" target="_blank">功能模块</a></td><td>查询或修改直播录制、转码、截图、鉴黄、水印、回调等配置信息。</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31076" target="_blank">统计分析</a></td><td>查询直播服务带宽、流量、请求数、并发连接数、截图数量、频道数量、录制路数等用量统计信息。</td></tr>
+<tr><td>直播 SDK</a></td><td>查询移动直播 SDK 质量监控数据，以及移动直播连麦分钟数信息。</td></tr>
 </table>
 
 
-### LVB Security
+### 直播安全
 <table>
-<tr><th width=15%>Feature</th><th>Description</th></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31059" target="_blank">Push authentication</a></td><td>Supports configuring push URL hotlink protection and customizing the authentication key and expiration time.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31060" target="_blank">Playback authentication</a></td><td>Supports hotlink protection based on blocklist, allowlist, Referer, and playback URL as well as remote playback authentication.</td></tr>
+<tr><th width=15%>功能名称</th><th>功能简介</th></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31059" target="_blank">推流鉴权</a></td><td>支持推流 URL 防盗链，可自定义鉴权 Key 及过期时间。</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31060" target="_blank">播放鉴权</a></td><td>支持黑白名单防盗链、 Referer 防盗链、播放 URL 防盗链以及播放远程鉴权。</td></tr>
 </table>
 
 ​    
-### API Management
+###  API 管理
 <table>
-<tr><th width=15%>Feature</th><th>Description</th></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Domain management APIs</a></td>
-            <td>Used to add domain name, delete domain name, query domain name information, query domain name list, enable domain name, disable domain name, or modify playback domain name information.</td>
+<tr><th width=15%>功能名称</th><th>功能简介</th></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">域名管理相关 API</a></td>
+            <td>可添加域名、删除域名、查询域名信息、查询域名列表、启用域名、禁用域名、修改播放域名信息。</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Real-time log APIs</a></td>
-            <td>Used to get log URLs in batches.</td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">实时日志相关 API</a></td>
+            <td>可批量获取日志 URL。</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Delayed playback management APIs</a></td>
-            <td>Used to delay playback, get delayed playback list, or resume playback.</td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">延播管理相关 API</a></td>
+            <td>可延迟播放、获取直播延播列表、恢复延播。</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Recording management APIs</a></td>
-            <td>Used to create recording task, create recording rule, create recording template, delete recording task, delete recording rule, delete recording template, get recording rule list, get one single recording template, get recording template list, modify recording template configuration, or terminate recording task.</td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">录制管理相关 API</a></td>
+            <td>可创建录制任务、创建录制规则、创建录制模板、删除录制任务、删除录制规则、删除录制模板、获取录制规则列表、获取单个录制模板、获取录制模板列表、修改录制模板配置、终止录制任务。</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Screencapture and porn detection APIs</a></td>
-            <td>Used to create screencapture rule, create screencapture template, delete screencapture rule, delete screencapture template, get screencapture rule list, get one single screencapture template, get screencapture template list, or modify screencapture template.</td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">截图鉴黄相关 API</a></td>
+            <td>可创建截图规则、创建截图模板、删除截图规则、删除截图模板、获取截图规则列表、获取单个截图模板、获取截图模板列表、修改截图模板。</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Watermark management APIs</a></td>
-            <td>Used to add watermark, create watermark rule, delete watermark, delete watermark rule, get one single watermark, get watermark rule list, query watermark list, or update watermark.</td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">水印管理相关 API</a></td>
+            <td>可添加水印、创建水印规则、删除水印、删除水印规则、获取单个水印、获取水印规则列表、查询水印列表、更新水印。</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">LVB callback APIs</a></td>
-            <td>Used to create callback rule, create callback template, delete callback rule, delete callback template, get callback rule list, get one single callback template, get callback template list, or modify callback template.</td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">直播回调相关 API</a></td>
+            <td>可创建回调规则、创建回调模板、删除回调规则、删除回调模板、获取回调规则列表、获取单个回调模板、获取回调模板列表、修改回调模板。</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">LVB pull APIs</a></td>
-            <td>Used to add, delete, query, update, or modify status of the live pull configuration.</td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">直播拉流相关 API</a></td>
+            <td>可添加拉流配置、删除拉流配置、查询拉流配置、更新拉流配置、修改拉流配置状态。</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Live stream management APIs</a></td>
-            <td>Used to get forbidden stream list, query stream interruption event, query live stream, query historical stream list, query stream status, interrupt live stream, forbid live stream, or resume live stream.</td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">直播流管理相关 API</a></td>
+            <td>可获取禁推流列表、查询推断流事件、查询直播中的流、查询历史流列表、查询流状态、断开直播流、禁推直播流、恢复直播推流。</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">LVB transcoding APIs</a></td>
-            <td>Used to create transcoding rule, create transcoding template, delete transcoding rule, delete transcoding template, get transcoding rule list, get one single transcoding template, get transcoding template list, or modify transcoding template configuration.</td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">直播转码相关 API</a></td>
+            <td>可创建转码规则、创建转码模板、删除转码规则、删除转码模板、获取转码规则列表、获取单个转码模板、获取转码模板列表、修改转码模板配置。</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Statistical query APIs</a></td>
-            <td>Used to query billable LVB bandwidth and traffic data, query playback data by district and ISP, query HTTP playback status code details, query real-time downstream playback data at domain name level, or query LVB package information.</td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">统计查询相关 API</a></td>
+            <td>可直播计费带宽和流量数据查询、查询按省份和运营商分组的播放数据、查询播放 HTTP 状态码明细数据、查询实时的域名维度下行播放数据、查询直播套餐包信息等功能。</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Certificate management APIs</a></td>
-            <td>Used to bind certificate to domain name, add certificate, delete certificate, get certificate information, get certificate information list, get domain name certificate information, modify certificate, modify domain name-certificate binding information, or unbind domain name from certificate.</td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">证书管理相关 API</a></td>
+            <td>可域名绑定证书、添加证书、删除证书、获取证书信息、获取证书信息列表、获取域名证书信息、修改证书、修改域名和证书绑定信息、解绑域名证书。</td>
 </tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">Authentication management APIs</a></td>
-            <td>Used to query playback authentication key, query push authentication key, modify playback authentication key, or modify push authentication key.</td>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30760">鉴权管理相关 API</a></td>
+            <td>可查询播放鉴权 key、查询推流鉴权 key、修改播放鉴权 key、修改推流鉴权 key。</td>
 </tr>
 </table>
 
 
-### Value-Added Services
+### 增值服务
 <table>
-<tr><th width=15%>Feature</th><th>Description</th></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31561" target="_blank">LVB transcoding</a></td><td>Supports transcoding live streams in various specifications.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31562" target="_blank">LVB screencapture</a></td><td>Supports taking screenshots during live streaming through the APIs and storing them in COS.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31564" target="_blank">LVB recognition</a></td><td>Supports detecting pornographic information in LVB screenshots with the aid of AI and returning recognition results.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31563" target="_blank">LVB recording</a></td><td>Supports recording live streams through APIs and storing them in the Tencent Cloud VOD platform.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31565" target="_blank">LVB time shifting</a></td><td>Supports playing back the content at any previous time point during live streaming.</td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31567" target="_blank">Global live streaming acceleration</a></td><td>Supports using the Tencent Cloud LVB service outside the Chinese mainland.</td></tr>
+<tr><th width=15%>功能名称</th><th>功能简介</th></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31561" target="_blank">直播转码</a></td><td> 支持对直播流进行多种规格转码。</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31562" target="_blank">直播截图</a></td><td>支持通过 API 对直播过程截图并存储于腾讯云 COS 对象存储服务。</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31564" target="_blank">直播识别</a></td><td>支持 AI 对直播截图进行涉黄识别，返回识别结果。 </td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31563" target="_blank">直播录制</a></td><td>支持通过 API 录制直播过程并存储于腾讯云 VOD 点播平台。</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31565" target="_blank">直播时移</a></td><td>支持用户在直播流进行中回放过去任意时间的直播内容。</td></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/31567" target="_blank">直播海外加速</a></td><td>支持在海外地区使用腾讯云直播服务。</td></tr>
 </table>
 
 
 
-### LVB SDK
+### 直播 SDK
 <table>
-<tr><th width=15%>Feature</th><th>Description</th></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/1071" target="_blank">MLVB SDK</a></td><td>An integrated live streaming SDK that provides various features such as LVB push, basic beauty filters, filters, LVB playback, and LVB time shifting.</td></tr>
-<tr><td>Beauty filter SDK</a></td><td>Jointly created by Tencent Cloud, Pitu, and YouTu Lab, this is an advanced video processing solution that has a wide variety of real-time special effects for live video capture such as filters, beauty filters, stickers, and gesture recognition to meet the diversified video capture needs in multiple scenarios.</td></tr>
-<tr><td>Interactive live streaming (solution)</a></td><td>Interactive live mic connect solution based on the MLVB SDK.</td></tr>
+<tr><th width=15%>功能名称</th><th>功能简介</th></tr>
+<tr><td><a href="https://intl.cloud.tencent.com/zh/document/product/1071" target="_blank">移动直播 SDK</a></td><td>提供集直播推流、基础美颜、滤镜、直播播放、直播时移回看一体化的直播 SDK。 </td></tr>
+<tr><td>美颜特效 SDK</a></td><td>由腾讯云与天天 P 图及优图实验室联合打造的高级视频处理方案，为直播视频拍摄提供了滤镜、美颜美型、贴纸、手势识别等多种实时特效功能，覆盖多种拍摄场景，满足用户多类拍摄需求。</td></tr>
+<tr><td>互动直播（解决方案）</a></td><td>基于移动直播 SDK 的直播连麦功能的互动方案。</td></tr>
 </table>
-
