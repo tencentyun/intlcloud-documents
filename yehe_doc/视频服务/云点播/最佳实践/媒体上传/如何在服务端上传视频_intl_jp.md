@@ -12,8 +12,8 @@
 - VODのストレージ容量はアップロードをプルしたビデオの保存に使用します。詳細は [ストレージ料金](https://intl.cloud.tencent.com/document/product/266/14666#.E5.AA.92.E8.B5.84.E5.AD.98.E5.82.A8.3Cspan-id.3D.22media_storage.22.3E.3C.2Fspan.3E)をご参照ください。
 
 ##  CVMのビデオをVODにアップロード
-
-### 手順1：Tencent Cloud CVMの準備<span id="p1"></span>
+<span id="p1"></span>
+### 手順1：Tencent Cloud CVMの準備
 
 アップロードスクリプトは、1台のTencent Cloud CVM上で実行させる必要があります。要件は次のとおりです。
 
@@ -25,16 +25,16 @@
 CVMの購入方法は [操作ガイド - インスタンス作成](https://intl.cloud.tencent.com/document/product/213/4855)をご参照ください。システムの再インストール方法は [操作ガイド - システム再インストール](https://intl.cloud.tencent.com/document/product/213/4933)をご参照ください。
 
 >!上述の条件に適合するTencent Cloud CVMがない場合は、その他のパブリックネットワークアクセスを備えたLinux（CentOS、Debianなど）またはMac機器でスクリプトを実行することもできます。ただし、OSの違いによってスクリプトの特定のコマンドを修正する必要があります。具体的な修正方式については、開発者自身で検索してください。
-
-### 手順2：VODのアクティブ化<span id="p2"></span>
+<span id="p2"></span>
+### 手順2：VODのアクティブ化
 
 [クイックスタート - 手順1](https://intl.cloud.tencent.com/document/product/266/8757) を参照してVODサービスをアクティブにします。
-
-### 手順3：APIキーの取得<span id="p3"></span>
+<span id="p3"></span>
+### 手順3：APIキーの取得
 
 ビデオのアップロードのリクエストにはAPIキー（SecretIdおよびSecretKey）が必要です。まだキーを作成していない場合は、 [キードキュメントの作成](https://intl.cloud.tencent.com/document/product/598/34228) を参照して、新しいAPIキーを作成してください。キーを作成済の場合は、 [キードキュメントの表示](https://intl.cloud.tencent.com/document/product/598/34228) を参照してAPIキーを取得してください。
-
-### 手順4：コードのダウンロードおよびSDKのインストール<span id="p4"></span>
+<span id="p4"></span>
+### 手順4：コードのダウンロードおよびSDKのインストール
 
  [手順1](#p1) で準備したCVM（ログイン方法の詳細は [操作ガイド - Linuxにログイン](https://intl.cloud.tencent.com/document/product/213/5436)をご参照ください）にログインして、リモートターミナルで以下のコマンドを入力して実行します。
 
@@ -54,8 +54,8 @@ ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECR
 [2020-06-23 19:56:36]SDKパラメータの設定開始。
 [2020-06-23 19:56:36]SDKパラメータの設定完了。
 ```
-
-### 手順5：ビデオのアップロード<span id="p5"></span>
+<span id="p5"></span>
+### 手順5：ビデオのアップロード
 
 アップロードの開始前に、CVMでビデオファイルおよびカバーピクチャ（オプション）を準備しておく必要があります。ビデオをCVMにアップロードするのに不都合がある場合は、リモートターミナルで以下のコマンドを実行して、テストビデオおよびテストカバーをCVMにダウンロードすることができます。
 
@@ -78,8 +78,8 @@ ubuntu@VM-69-2-ubuntu:~$ cd ~/vod-server-demo/server_upload/; python3 server_upl
 ```
 
 >?自身のビデオを使用してテストを行う場合は、CVM帯域幅が不足のためにアップロード時間がかかりすぎないように、小さめのビデオファイル（例えば数MB）を使用することをお勧めします。
-
-### 手順6：結果の表示<span id="p6"></span>
+<span id="p6"></span>
+### 手順6：結果の表示
 
 コンソールの [ビデオ管理](https://console.cloud.tencent.com/vod/media) 画面で、アップロードしたビデオファイルおよびカバーを見ることができます。
 
