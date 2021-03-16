@@ -2,7 +2,7 @@
 
 CSS 요금제에는 기본 서비스 요금, 부가 서비스 요금 및 확장 서비스 요금이 포함되며, 요금 구성은 다음 그림과 같습니다.
 
-![](https://main.qcloudimg.com/raw/03c4d0aefb9ea69aba8d5d3df27a09e9.png)
+![](https://main.qcloudimg.com/raw/2ce6c231a986ddb89e2ae2680d2c2563.png)
 
 
 - [기본 서비스 요금](#base): CSS 이용 후 발생하는 라이브 방송 소모 비용으로, 트래픽 방식 또는 대역폭 피크 방식의 두 가지 과금 방식을 제공합니다.
