@@ -13,7 +13,7 @@ Namespace=QCE/BLOCK_STORAGE
 | DiskAwait        | Disk IO wait time | Disk IO wait time   | ms   | diskId     | 10s, 60s, 300s, <br/>3600s, 86400s |
 | DiskSvctm        | Disk IO service time | Disk IO service time   | ms   | diskId    | 10s, 60s, 300s, <br/>3600s, 86400s |
 | DiskUtil         | Disk IO utilization | Disk IO utilization   | %    | diskId     | 10s, 60s, 300s, <br/>3600s, 86400s |
-| DiskUsage        | Disk utilization     | Disk utilization       | %    | InstanceId | 10s, 60s, 300s, <br/>3600s, 86400s |
+| DiskUsage        | Disk utilization     | Disk utilization       | %    | InstanceId | 60s, 300s, <br/>3600s, 86400s |
 
 > ?The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to get the `period` values supported by each metric.
 
