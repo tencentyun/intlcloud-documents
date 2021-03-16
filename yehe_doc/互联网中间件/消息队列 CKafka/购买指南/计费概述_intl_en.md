@@ -15,8 +15,6 @@ CKafka has an elastic and cost-effective billing mode that only requires you to 
 ### Standard Edition instance pricing
 
 
-**Standard Edition pricing**
-
 | Instance Type | Peak Throughput (MB/s) | Disk Capacity (GB) | Number of Instance-Level Topics | Number of Instance-Level Partitions | Price (USD/Month) |
 | -------- | ------------------ | -------------- | ----------------- | --------------------- | ------------- |
 | Small   | 40                 | 300            | 25                | 60                    | 870           |
@@ -27,7 +25,6 @@ CKafka has an elastic and cost-effective billing mode that only requires you to 
 | Xlarge L2 | 400                | 6000           | 250               | 500                   | 3970          |
 | Xlarge L3 | 600                | 6000           | 350               | 600                   | 5170          |
 | Xlarge L4 | 900                | 9000           | 450               | 700                   | 7030          |
-| Dedicated   | 1200               | 24000          | 1000              | 1500                  | 13900         |
 
 
 >?
