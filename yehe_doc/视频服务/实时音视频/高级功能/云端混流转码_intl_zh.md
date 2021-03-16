@@ -431,8 +431,9 @@ mixUsersArray[2] = remote2;
 // 发起云端混流
 config.mixUsersArray = mixUsersArray;
 trtc.setMixTranscodingConfig(config);
-:::
-::: Flutter java
+```
+##### Flutter
+```
 TRTCCloud trtcCloud = await TRTCCloud.sharedInstance();
 trtcCloud.setMixTranscodingConfig(TRTCTranscodingConfig(
   appId: 1252463788, //仅供参考
@@ -472,8 +473,9 @@ trtcCloud.setMixTranscodingConfig(TRTCTranscodingConfig(
       height: 200)
   ],
 ));
-:::
-::: Web JavaScript
+```
+##### Web JavaScript
+```
 // 预排版模式
 const config = {
    mode: 'preset-layout',
@@ -520,8 +522,7 @@ const config = {
 } catch (e) {
  console.error('startMixTranscode failed ', e);
 }
-:::
-</dx-codeblock>  
+```
 
 >! 预排版模式下 `setMixTranscodingConfig()` 接口无需多次调用，在进房成功并开启本地音频上行后调用一次即可。
 
@@ -584,5 +585,4 @@ const config = {
   - 调用 [setMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 并将参数设置为 `nil/null` 主动停止混流。
 
 在其他情况下，TRTC 云端都将会尽力持续保持混流状态。因此，为避免产生预期之外的混流费用，请在您不需要混流的时候尽早通过上述方法结束云端混流。
-
 
