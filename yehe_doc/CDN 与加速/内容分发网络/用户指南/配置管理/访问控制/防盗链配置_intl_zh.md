@@ -3,12 +3,14 @@
 
 通过对用户 HTTP Request Header 中 referer 字段的值设置访问控制策略，从而限制访问来源，避免恶意用户盗刷。
 
+
 ## 配置指南
 ### 查看配置
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在菜单栏里选择【域名管理】，单击域名右侧【管理】，即可进入域名配置页面，第二栏【访问控制】中可看到防盗链配置，默认情况下，防盗链配置为关闭状态：
 ![](https://main.qcloudimg.com/raw/53cfa056e5574aae9c912db36fcbf67b.png)
 
 ### 开启配置
+
 单击开关，选择防盗链类型并填入列表，勾选是否允许空 refer 并单击【确认】，即可启用防盗链配置：
 ![](https://main.qcloudimg.com/raw/951eb25d77110a01fcd91ab9bfcd1cad.png)
 **referer 黑名单：**
@@ -35,7 +37,7 @@
 若您的加速域名服务区域为全球加速，想针对境内、境外加速区域进行不同的 referer 防盗链配置，可点击配置下方的【添加特殊配置】进行设置：
 ![](https://main.qcloudimg.com/raw/31d414d5adf37f8a2deadce688962645.png)
 
->!区域特殊配置添加后，暂时无法直接删除，您可以通过关闭配置来禁用。
+> !区域特殊配置添加后，暂时无法直接删除，您可以通过关闭配置来禁用。
 
 ## 配置示例
 
