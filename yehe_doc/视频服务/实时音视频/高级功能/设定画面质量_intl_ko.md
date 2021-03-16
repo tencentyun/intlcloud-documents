@@ -14,9 +14,9 @@ https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCSimpleDemo/Live/LivePu
 
 ## 지원 플랫폼
 
-| iOS | Android | Mac OS | Windows |  데스크톱 브라우저 | Electron|
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| &#10003; | &#10003;   | &#10003;  |  &#10003;   | &#10003;  |&#10003;  |
+| iOS | Android | Mac OS | Windows |  데스크톱 브라우저 | Electron|Flutter |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| &#10003; | &#10003;   | &#10003;  |  &#10003;   | &#10003;  |&#10003;  |&#10003;  |
 
 데스크톱 브라우저에서의 화면 품질 설정에 대한 자세한 방법은 [설정 가이드](https://www.qcloudtrtc.com/trtc-web-sdk/docs/api/tutorial-04-advanced-set-video-profile.html)를 참조하십시오.
 
@@ -47,7 +47,7 @@ https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCSimpleDemo/Live/LivePu
 
 - **(TRTCVideoResolution) videoResolution**
 인코딩 해상도입니다. 예를 들어 640 x 360은 인코딩된 화면의 너비(픽셀) x 높이(픽셀)이며, TRTCVideoResolution 열거 값 정의에서 너비 >= 높이의 가로 모드(Landscape) 해상도만 정의했습니다. 세로 모드 해상도를 사용하고 싶은 경우 resMode를 Portrait으로 설정해야 합니다.
- >많은 하드웨어 인코더/디코더가 16배수 픽셀의 너비만 지원하여 SDK에서 실제로 인코딩한 해상도가 사용자 정의한 매개변수 설정을 완벽하게 따르지 않을 수 있으며 자동으로 16배수로 수정됩니다. 예를 들어 640 x 360의 해상도는 SDK 내부에서 640 x 368로 적용될 수 있습니다.
+ >!많은 하드웨어 인코더/디코더가 16배수 픽셀의 너비만 지원하여 SDK에서 실제로 인코딩한 해상도가 사용자 정의한 매개변수 설정을 완벽하게 따르지 않을 수 있으며 자동으로 16배수로 수정됩니다. 예를 들어 640 x 360의 해상도는 SDK 내부에서 640 x 368로 적용될 수 있습니다.
 
 - **(TRTCVideoResolutionMode) resMode**
 가로 모드 또는 세로 모드 해상도입니다. TRTCVideoResolution에 가로 모드만 정의되어 있으므로 360 x 640의 세로 모드 해상도를 사용할 경우 resMode를 TRTCVideoResolutionModePortrait으로 설정해야 합니다. 일반적으로 PC 및 Mac에서는 가로 모드(Landscape) 해상도를 사용하며, 휴대폰에서는 세로 모드(Portrait) 해상도를 사용합니다.
