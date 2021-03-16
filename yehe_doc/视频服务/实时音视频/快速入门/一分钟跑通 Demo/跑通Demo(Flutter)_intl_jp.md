@@ -29,8 +29,8 @@
 [](id:step3)
 ### 手順3：Demoプロジェクトファイルの設定
 1. [手順2](#step2)でダウンロードしたソースコードパッケージを解凍します。
-2. `/lib/debug/GenerateTestUserSig.dart` ファイルを見つけて開きます。
-3. `GenerateTestUserSig.java`ファイル内の関連パラメータを設定します。
+2. `/example/lib/debug/GenerateTestUserSig.dart` ファイルを見つけて開きます。
+3. `GenerateTestUserSig.dart`ファイル内の関連パラメータを設定します。
  - SDKAPPID：デフォルトはPLACEHOLDER、実際のSDKAppIDを設定してください。
  - SECRETKEY：デフォルトはPLACEHOLDER、実際のキー情報を設定してください。
  - Tencent Real-Time Communicationコンソールに戻り、【貼り付け完了。次のステップ】をクリックします。
@@ -61,17 +61,17 @@
 
 ## よくあるご質問
 
-- [2台のスマホで同時にDemoを実行する場合、お互いの画面が見えないのはなぜですか？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que1)
-- [ファイアウォールにはどのような制限がありますか？](hhttps://intl.cloud.tencent.com/zh/document/product/647/39242#que2)
-- [iOSパッケージはCrashを実行しますか？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que3)
-- [iOSでビデオを表示できません（Androidでは正常です）。なぜですか？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que4)
-- [SDKバージョンを更新した後、iOS CocoaPodsはエラーを報告しますか？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que5)
-- [Android Manifest merge failedとは、コンパイルに失敗したのですか？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que6)
-- [署名がないことで、実機でのデバッグでエラーが報告されますか？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que7)
-- [プラグインのswiftファイルを追加または削除した後、buildする際に対応するファイルが見つからなくなりますか？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que8)
-- [実行エラー“Info.plit, error: No value at that key path or invalid key path: NSBonjourServices”とは？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que9)
-- [Pod installエラーとは？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que10)
-- [実行時にiOSのバージョンに依存するエラーが報告されますか？](https://intl.cloud.tencent.com/zh/document/product/647/39242#que11)
+- [2台のスマホで同時にDemoを実行する場合、お互いの画面が見えないのはなぜですか？](https://intl.cloud.tencent.com/document/product/647/39242#que1)
+- [ファイアウォールにはどのような制限がありますか？](hhttps://intl.cloud.tencent.com/document/product/647/39242#que2)
+- [iOSパッケージはCrashを実行しますか？](https://intl.cloud.tencent.com/document/product/647/39242#que3)
+- [iOSでビデオを表示できません（Androidでは正常です）。なぜですか？](https://intl.cloud.tencent.com/document/product/647/39242#que4)
+- [SDKバージョンを更新した後、iOS CocoaPodsはエラーを報告しますか？](https://intl.cloud.tencent.com/document/product/647/39242#que5)
+- [Android Manifest merge failedとは、コンパイルに失敗したのですか？](https://intl.cloud.tencent.com/document/product/647/39242#que6)
+- [署名がないことで、実機でのデバッグでエラーが報告されますか？](https://intl.cloud.tencent.com/document/product/647/39242#que7)
+- [プラグインのswiftファイルを追加または削除した後、buildする際に対応するファイルが見つからなくなりますか？](https://intl.cloud.tencent.com/document/product/647/39242#que8)
+- [実行エラー“Info.plit, error: No value at that key path or invalid key path: NSBonjourServices”とは？](https://intl.cloud.tencent.com/document/product/647/39242#que9)
+- [Pod installエラーとは？](https://intl.cloud.tencent.com/document/product/647/39242#que10)
+- [実行時にiOSのバージョンに依存するエラーが報告されますか？](https://intl.cloud.tencent.com/document/product/647/39242#que11)
 
 
 
