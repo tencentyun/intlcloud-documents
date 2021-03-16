@@ -24,7 +24,7 @@ Tencent Cloud는 EIP에 IP 리소스 요금을 청구하며, EIP를 CVM 혹은 N
 ### 공용 네트워크 과금
 
 EIP로 발생한 공용 네트워크 트래픽은 공용 네트워크 요금으로 청구되며, 과금 단위에 따라 트래픽 과금과 대역폭 과금의 두 가지 유형으로 나뉩니다.
-> 자세한 내용은 [공용 네트워크 과금](https://intl.cloud.tencent.com/zh/document/product/213/39743)을 참조 바랍니다.
+> 자세한 내용은 [공용 네트워크 과금](https://intl.cloud.tencent.com/document/product/213/39743)을 참조 바랍니다.
 
 ## 연체 설명
 
