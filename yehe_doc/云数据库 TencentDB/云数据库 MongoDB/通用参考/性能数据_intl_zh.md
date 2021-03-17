@@ -35,8 +35,6 @@ nohup ./ycsb-0.15.0/bin/ycsb run mongodb -s -P workloads/workloada -p mongodb.ur
 ```
 nohup ./ycsb-0.15.0/bin/ycsb run mongodb -s -P workloads/workloada -p mongodb.url=mongodb://mongouser: password @10.xx.xx.30:27017,10.xx.xx.28:27017,10.xx.xx.5:27017/admin?w=0 -p table=test -p recordcount=10000000 -p readproportion=0.95 -p updateproportion=0.05 -p insertproportion=0 -p operationcount=100000 -threads 100 >runlog.txt &
 ```
-
-
 >?
 >- `-p operationcount=100000`根据具体执行时间动态调整，需要保证执行时间在二十分钟以上，否则时间过短没有代表性。
 >- `?w=0`中的 w 表示 write concern。
