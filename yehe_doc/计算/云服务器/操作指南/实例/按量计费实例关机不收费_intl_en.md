@@ -21,7 +21,7 @@ You can use the `StopInstances` API to shut down an instance. For details, pleas
 
 | Parameter Name | Required | Type | Description |
 | ----------- | ---- | ------ | ------------------------------------------------------------ |
-| StoppedMode | No   | String |The "No Charge when Shut down" feature is only available for pay-as-you-go instances.<br>**Valid values:**<br>KEEP_CHARGING: the instance incurs fees after shutdown<br>STOP_CHARGING: no charges when shut down<br>**Default value: **<br>KEEP_CHARGING |
+| StoppedMode | No   | String |The "No Charge when Shut down" feature is only available for pay-as-you-go instances.<br>**Valid values:**<br>KEEP_CHARGING: the instance incurs fees after shutdown<br>STOP_CHARGING: no charges when shut down<br>**Default value:**<br>KEEP_CHARGING |
 
 
 
