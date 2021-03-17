@@ -1,0 +1,154 @@
+This document describes how to use the RSA signature verification algorithm.
+
+## Operation Directions
+### Step 1: Creating an asymmetric signature key
+>!To use the signature feature, the correct key purpose `KeyUsage= ASYMMETRIC_SIGN_VERIFY_RSA_2048` is required when calling the [CreateKey](https://intl.cloud.tencent.com/document/product/1030/32199) API to create a CMK.
+>
+- **Request**:
+```
+tccli kms CreateKey --Alias test_rsa --KeyUsage ASYMMETRIC_SIGN_VERIFY_RSA_2048
+```
+- **Returned result**:
+```
+{
+"Response": {
+  "KeyId": "22d79428-61d9-11ea-a3c8-525400******",
+  "Alias": "test_rsa",
+  "CreateTime": 1583739580,
+  "Description": "",
+  "KeyState": "Enabled",
+  "KeyUsage": "ASYMMETRIC_SIGN_VERIFY_RSA_2048",
+  "TagCode": 0,
+  "TagMsg": "",
+  "RequestId": "0e3c62db-a408-406a-af27-dd5ced******"
+}
+}
+```
+
+### Step 2: Downloading the public key
+- **Request**:
+```
+tccli kms GetPublicKey  --KeyId 22d79428-61d9-11ea-a3c8-525400******
+```
+- **Returned result**:
+```
+{
+"Response": {
+  "RequestId": "408fa858-cd6d-4011-b8a0-653805******",
+  "KeyId": "22d79428-61d9-11ea-a3c8-525400******",
+  "PublicKey":  "MFkwEwYHKoZIzj0CAQYIKoEcz1UBgi0DQgAEFLlge0vtct949CwtadHODzisgXJahujq+PvM***************bBs/f3axWbvgvHx8Jmqw==",
+  "PublicKeyPem": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoEcz1UBgi0DQgAEFLlge0vtct949CwtadHODzisgXJa\nhujq+PvM***************bBs/f3axWbvgvHx8Jmqw==\n-----END PUBLIC KEY-----\n"
+}
+}
+```
+- **Convert the public key `PublicKeyPem` into the PEM format and save it in the file `public_key.pem`**.
+```
+echo "-----BEGIN PUBLIC KEY-----
+MFkwEwYHKoZIzj0CAQYIKoEcz1UBgi0DQgAEFLlge0vtct949CwtadHODzisgXJa
+hujq+PvM***************bBs/f3axWbvgvHx8Jmqw==
+-----END PUBLIC KEY-----" > public_key.pem
+```
+
+>!You can also log in to the [KMS console](https://console.cloud.tencent.com/kms2/index), click **Customer Managed CMK** on the left sidebar, click a key ID/name in the key list to view the key information, and download the public asymmetric key.
+
+
+### Step 3: Creating the plaintext file
+
+Create the testing plaintext file.
+```
+echo "test" > test_verify.txt
+```
+>! If there are any invisible characters such as line breaks in the generated content, you need to truncate the file (e.g., truncate -s -1 test_verify.txt) to provide a correct signature.
+
+### Step 4: Calculating the message abstract
+>!
+>- If the message to be generated a signature for is not longer than 4,096 bytes, you can skip this step to [Step 5](#step5).
+>- If the message to be generated a signature for is longer than 4,096 bytes, you need to calculate a message abstract locally first.
+
+Use OpenSSL to calculate the message abstract for `test_verity.txt`.
+```
+openssl dgst -sha256 -binary -out digest.bin test_verify.txt
+```
+
+<span id="step5)"></span>
+### Step 5: Calling the KMS signature API to generate a signature
+
+Call the KMS [SignByAsymmetricKey](https://intl.cloud.tencent.com/document/product/1030/39509) API to calculate the signature.
+1. Base64-encode the original message or message abstract before signature calculation.
+```
+// Base64-encode the message abstract
+openssl enc -e -base64 -A -in digest.bin -out encoded.base64
+// Base64-encode the original message
+openssl enc -e -base64 -A -in test_verify.txt -out encoded.base64
+```
+2. Calculate the signature.
+	- **Request**:
+		- **RSA_PSS_SHA_256** 
+```
+// Generate the signature for the message abstract using the content of the file `encoded.base64` as the `Message` parameter of `SignByAsymmetricKey`.
+tccli kms SignByAsymmetricKey --KeyId 22d79428-61d9-11ea-a3c8-525400****** --Algorithm RSA_PSS_SHA_256 --Message "qJQj83hSyOuU7Tn0SRReGCk4yuuVWaeZ44BP******==" --MessageType DIGEST
+// Generate the signature for the Base64-encoded original message
+tccli kms SignByAsymmetricKey --KeyId 22d79428-61d9-11ea-a3c8-525400****** --Algorithm RSA_PSS_SHA_256 --Message "dG***Ao=" --MessageType RAW
+```
+		- **RSA_PKCS1_SHA_256**
+```
+// Generate the signature for the message abstract using the content of the file `encoded.base64` as the `Message` parameter of `SignByAsymmetricKey`.
+tccli kms SignByAsymmetricKey --KeyId 22d79428-61d9-11ea-a3c8-525400****** --Algorithm RSA_PKCS1_SHA_256 --Message "qJQj83hSyOuU7Tn0SRReGCk4yuuVWaeZ44BP******==" --MessageType DIGEST
+// Generate the signature for the Base64-encoded original message
+tccli kms SignByAsymmetricKey --KeyId 22d79428-61d9-11ea-a3c8-525400****** --Algorithm RSA_PKCS1_SHA_256 --Message "dG***Ao=" --MessageType RAW
+```
+	- **Returned result**:
+```
+{
+"Response": {
+  "Signature": "U7Tn0SRReGCk4yuuVWaeZ4******",
+  "RequestId": "408fa858-cd6d-4011-b8a0-653805******"
+}
+}
+```
+	- **Save the signature content `Signature` in the file `signContent.sign`**:
+```
+echo "U7Tn0SRReGCk4yuuVWaeZ4******" | base64 -d > signContent.bin
+```
+
+### Step 6: Verifying the signature
+1. Call the KMS signature verification API to verify the signature (**recommended**).
+	- **Request**:
+  - **RSA_PSS_SHA_256**
+```
+// Verify the message abstract (verify the signature for the message abstract using the content of the file `encoded.base64` mentioned in step 4 as the `Message` parameter of `VerifyByAsymmetricKey`).
+tccli kms VerifyByAsymmetricKey --KeyId 22d79428-61d9-11ea-a3c8-525400****** --SignatureValue "U7Tn0SRReGCk4yuuVWaeZ4******" --Message "QUuAcNFr1Jl5+3GDbCxU7te7Uekq+oTxZ**********=" --Algorithm RSA_PSS_SHA_256 --MessageType DIGEST
+// Verify the Base64-encoded original message.
+tccli kms VerifyByAsymmetricKey --KeyId 22d79428-61d9-11ea-a3c8-525400****** --SignatureValue "U7Tn0SRReGCk4yuuVWaeZ4******" --Message "dG***Ao=" --Algorithm RSA_PSS_SHA_256 --MessageType RAW
+```
+  - **RSA_PKCS1_SHA_256**
+```
+// Verify the message abstract (verify the signature for the message abstract using the content of the file `encoded.base64` mentioned in step 4 as the `Message` parameter of `VerifyByAsymmetricKey`).
+tccli kms VerifyByAsymmetricKey --KeyId 22d79428-61d9-11ea-a3c8-525400****** --SignatureValue "U7Tn0SRReGCk4yuuVWaeZ4******" --Message "QUuAcNFr1Jl5+3GDbCxU7te7Uekq+oTxZ**********=" --Algorithm RSA_PKCS1_SHA_256 --MessageType DIGEST
+// Verify the Base64-encoded original message.
+tccli kms VerifyByAsymmetricKey --KeyId 22d79428-61d9-11ea-a3c8-525400****** --SignatureValue "U7Tn0SRReGCk4yuuVWaeZ4******" --Message "dG***Ao=" --Algorithm RSA_PKCS1_SHA_256 --MessageType RAW
+```
+	- **Returned result**:
+```
+{
+"Response": {
+  "SignatureValid": true,
+  "RequestId": "6758cbf5-5e21-4c37-a2cf-8d47f5******"
+}
+}
+```
+
+>?The value of the parameter `Message` and `MessageType` used in the signature API call should be the same as those of the signature verification API call.
+
+2. Verify the signature locally using the KMS public key and signature content.
+	- **Request**:
+```
+// Use the `RSA_PSS_SHA_256` algorithm to verify the signature.
+openssl dgst -verify public_key.pem -sha256 -sigopt rsa_padding_mode:pss -sigopt rsa_pss_saltlen:-1 -signature ./signContent.bin ./test_verify.txt
+// Use the `RSA_PKCS1_SHA_256` algorithm to verify the signature.
+openssl dgst -verify public_key.pem -sha256 -signature ./signContent.bin ./test_verify.txt
+```
+	- **Returned result**:
+```
+Verified OK
+```

@@ -1,10 +1,10 @@
-A **public key** and a **private key** are required for asymmetric encryption and decryption. These two are a pair of bidirectional keys in cryptography, that is the public key and private key both can be used for encryption. If one is used for encryption, the decryption can only be performed using another key. The public key can be disclosed to anyone even an unreliable party, but the private key must be kept confidential.
+A **public key** and a **private key** are required for asymmetric encryption and decryption. These two are a pair of bidirectional keys in cryptography, that is, the public key and private key both can be used for encryption. If one is used for encryption, the decryption can only be performed using another key. The public key can be disclosed to anyone even an unreliable party, but the private key must be kept confidential.
 
-Comparing to symmetric encryption, asymmetric encryption does not require a reliable channel for key distribution, so that it is usually applied in communications between systems with different trust levels for encrypted transfer of sensitive data and digital signature verification. 
+Compared to symmetric encryption, asymmetric encryption does not require a reliable channel for key distribution, so that it is usually applied in communications between systems with different trust levels for encrypted transfer of sensitive data and digital signature verification. 
 
 ## Asymmetric Key Types
 
-Tencent Cloud KMS currently supports the two asymmetric key algorithms below:
+Tencent Cloud KMS currently supports the three asymmetric key algorithms below:
 
 ### RSA
 
@@ -14,11 +14,15 @@ Currently, KMS supports RSA keys with a modulus of 2,048 bits (KeyUsage = ASYMME
 
 SM2 is a public-key algorithm that meets the standards issued by the State Cryptography Administration (SCA) of China. It is used to replace the RSA algorithm in China's commercial cryptography system. You can consider using this type of keys for applications with requirements for compliance with SCA standards (KeyUsage = ASYMMETRIC_DECRYPT_SM2).
 
->? Asymmetric signature verification currently only supports SM2 algorithm.
+### ECC
+Elliptic Curve Cryptography (ECC) is an encryption algorithm based on mathematical elliptic curves (KeyUsage = ASYMMETRIC_SIGN_VERIFY_ECC).
+
+
+
 
 ## Typical Scenarios of Asymmetric Encryption
 
-There are two typical scenarios of asymmetric encryption and decryption in actual use cases, namely the **encrypted communication** and **digital signature**.
+There are two typical scenarios of asymmetric encryption and decryption in actual use cases, namely the **encrypted communication** and **digital signature**:
 
 ### Encrypted communication
 
@@ -41,10 +45,10 @@ How the digital signature works:
 1. The information sender creates a public key-private key pair and sends the public key to one or multiple information recipients.
 2. The information sender uses the Hash function to generate a message abstract from the original message, and then uses its private key to encrypt the abstract to get the digital signature of the original message. 
 3. The information sender transmits the original message and digital signature to the information recipient.
-4. After receiving the original message and digital signature, the information recipient uses the same Hash function to generate the abstract A from the original message and uses the public key given by the information sender to decrypt the digital signature to get the abstract B, and then compares the two abstracts to check whether they are identical and the original data is tampered. 
+4. After receiving the original message and digital signature, the information recipient uses the same Hash function to generate the abstract A from the original message and uses the public key given by the information sender to decrypt the digital signature to get the abstract B, and then compares the two abstracts to check whether they are identical and the original data is tampered with. 
 
 The signature is unique as it is generated and encrypted with a confidential private key. Digital signatures can guarantee confidential data transmission, the correctness of information senders, and the non-repudiation of transactions.
 
-Tencent Cloud KMS offers solutions for digital signatures. For more information, please see Asymmetric Signature Verification.
+Tencent Cloud KMS offers solutions for digital signatures. For more information, please see [Asymmetric Signature Verification](https://intl.cloud.tencent.com/document/product/1030/39479).
 
 >! Because of the characteristics of use cases of the public key-private key pair, KMS does not support the automatic rotation of asymmetric CMKs. If you need to update the used keys regularly or from time to time, you can create new asymmetric keys.
