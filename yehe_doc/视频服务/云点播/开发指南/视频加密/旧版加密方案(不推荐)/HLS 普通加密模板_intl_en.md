@@ -5,5 +5,5 @@ An HLS common encryption template contains `definition` (unique template ID) and
 * [Create an HLS common encryption template](https://intl.cloud.tencent.com/document/product/266/35167)
 * [Update an HLS common encryption template](https://intl.cloud.tencent.com/document/product/266/35168)
 * [Query an HLS common encryption template](https://intl.cloud.tencent.com/document/product/266/35169)
--->
-> Only VOD APIs 2017 are available for management of HLS common encryption templates.
+
+>? Only VOD APIs 2017 are available for management of HLS common encryption templates.
