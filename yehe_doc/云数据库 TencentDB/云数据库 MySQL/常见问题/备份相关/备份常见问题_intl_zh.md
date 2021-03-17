@@ -16,12 +16,12 @@
  - [备份下载慢如何解决？](#bfwt10)
  - [为什么下载数据备份文件会报错？](#bfwt6)
  - [下载的备份能恢复到另一个云数据库 MySQL 实例上吗？](#bfwt7)
- - [基础版实例备份怎么恢复或迁移？](#bfwt5)
+ - [单节点 - 基础型实例备份怎么恢复或迁移？](#bfwt5)
 
 
 <span id = "bfwt1"></span>
 ### 备份空间如何收费？
-云数据库 MySQL 会按地域赠送一定额度的免费备份空间，免费备份空间大小为您在对应地域下所有高可用和金融版实例（包括主实例、灾备实例）的存储空间之和。
+云数据库 MySQL 会按地域赠送一定额度的免费备份空间，免费备份空间大小为您在对应地域下所有双节点、三节点实例（包括主实例）的存储空间之和。
 超出免费额度的备份空间定价，请参见 [备份空间收费说明](https://intl.cloud.tencent.com/document/product/236/32344)。
 
 <span id = "bfwt2"></span>
@@ -49,11 +49,11 @@
 云数据库 MySQL 实例默认每天会进行全量备份，请参见 [备份方式](https://intl.cloud.tencent.com/document/product/236/37796)。如需临时备份数据，您也可以通过如下方式备份数据：
 - 通过 mysqldump 工具自己备份数据。
 - 通过第三方工具来进行备份，如 Navicat Premium。
-- [登录 phpMyAdmin](https://intl.cloud.tencent.com/document/product/236/32341)，通过上方导航的【导出】备份数据。
+- [登录 phpMyAdmin](https://intl.cloud.tencent.com/document/product/236/39352)，通过上方导航的【导出】备份数据。
 
 <span id = "bfwt5"></span>
 ### 基础版实例备份怎么恢复或迁移？
-基础版实例仅支持快照备份，您可以参考 [命令行工具迁移数据](https://intl.cloud.tencent.com/document/product/236/8464) 迁移数据。
+单节点 - 基础型实例仅支持快照备份，您可以参考 [命令行工具迁移数据](https://intl.cloud.tencent.com/document/product/236/8464) 迁移数据。
 
 <span id = "bfwt6"></span>
 ### 为什么下载数据备份文件会报错？
@@ -103,8 +103,7 @@
 新版的备份文件由于采用的全新压缩算法，使用原有 tar 工具无法正常解包解压，需要使用 xbstream 和 qpress 工具解包解压。
 使用 xbstream 和 qpress 工具解包解压的详细步骤，请参见 [使用物理备份恢复数据库](https://intl.cloud.tencent.com/document/product/236/31910) 和  [使用逻辑备份恢复数据库](https://intl.cloud.tencent.com/document/product/236/31909)。
 
-<span id = "bfwt16"></span>
-### 如何下载 xbstream 和 qpress 的工具？
+### [如何下载 xbstream 和 qpress 的工具？](id:bfwt16)
 - xbstream 为 Percona 的 xtrabackup 备份工具下的一个子程序，要使用 xbstream，需要先安装 Percona 的 xtrabackup，可以使用 yum 安装和二进制安装两种方式来安装 xtrabackup。
 - [qpress下载地址](http://www.quicklz.com/)，下载之后通过 tar 命令解出 qpress 二进制文件。
 具体 xtrabackup 和 qpress 的安装方式请参见 [使用物理备份恢复数据库](https://intl.cloud.tencent.com/document/product/236/31910)。
