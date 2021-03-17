@@ -104,7 +104,7 @@ info.plist 파일에 Privacy > Camera Usage Description, Privacy > Microphone Us
 
 <span id="model.step4"> </span>
 ### 4단계: 모듈 생성 및 로그인
-1. TRTCVoiceRoomImp의 `sharedInstance` 클래스를 호출하는 방법으로 TRTCVoiceRoom 프로토콜을 준수하는 인스턴스 객체를 생성할 수 있습니다. 또는 `shared` 클래스를 호출하는 방법으로 TRTCVoiceRoomImp 인스턴스 객체를 불러와 직접 사용할 수 있으며, 두 방법은 TRTCVoiceRoom 인터페이스 사용 상에 어떠한 차이점도 없습니다.
+1. TRTCVoiceRoom의 `sharedInstance` 클래스를 호출하는 방법으로 TRTCVoiceRoom 프로토콜을 준수하는 인스턴스 객체를 생성할 수 있습니다. 또는 `shared` 클래스를 호출하는 방법으로 TRTCVoiceRoomImp 인스턴스 객체를 불러와 직접 사용할 수 있으며, 두 방법은 TRTCVoiceRoom 인터페이스 사용 상에 어떠한 차이점도 없습니다.
 2. `setDelegate` 함수를 호출하여 모듈의 이벤트 콜백 알림을 등록합니다.
 3. `login` 함수를 호출해 모듈에 로그인하고, 다음 표를 참고하여 관련 매개변수를 입력합니다.
 <table>    
