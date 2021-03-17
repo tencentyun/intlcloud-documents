@@ -1,5 +1,5 @@
 ## Feature Description
-This API is used to delete messages sent by a specified user within the last 1,000 messages.
+This API is used to recall messages sent by a specified user within the last 1,000 messages.
 
 ## API Calling Description
 ### Applicable group types
@@ -13,7 +13,7 @@ This API is used to delete messages sent by a specified user within the last 1,0
 
 These are the 4 built-in group types in IM. For detailed information, see the [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
->?Livestreaming groups (AVChatRoom groups) do not support storing message history (in this document, deleting messages means deleting messages stored in the message history). Therefore, you cannot delete user messages in groups of this type. However, no error will be returned if you attempt to do so.
+>?Livestreaming groups (AVChatRoom groups) do not support storing message history (in this document, recalling messages means recalling messages stored in the message history). Therefore, you cannot recall user messages in groups of this type. However, no error will be returned if you attempt to do so.
 
 ### Sample request URL
 ```
@@ -36,7 +36,7 @@ The maximum calling frequency is 200 calls per second.
 
 ### Sample request packet
 
-Delete group messages. Specifically, delete messages sent by a certain user within the last 1,000 messages.
+Recall group messages. Specifically, recall messages sent by a certain user within the last 1,000 messages.
 ```
 {
     "GroupId": "@TGS#2C5SZEAEF",    // Required
@@ -48,8 +48,8 @@ Delete group messages. Specifically, delete messages sent by a certain user with
 
 | Field | Type | Required | Description |
 |---------|---------|---------|---------|
-| GroupId | String | Required | ID of the group for which messages are to be deleted |
-| Sender_Account | String | Required | ID of the sender whose messages are to be deleted |
+| GroupId | String | Required | ID of the group for which messages are to be recalled |
+| Sender_Account | String | Required | ID of the sender whose messages are to be recalled |
 
 ### Sample response packet body
 ```
