@@ -42,12 +42,12 @@ tccli kms GetPublicKey  --KeyId 22d79428-61d9-11ea-a3c8-525400******
 }
 ```
 - **Convert the public key `PublicKeyPem` into the PEM format and save it in the file `public_key.pem`**.
-```
-echo "-----BEGIN PUBLIC KEY-----
-MFkwEwYHKoZIzj0CAQYIKoEcz1UBgi0DQgAEFLlge0vtct949CwtadHODzisgXJa
-hujq+PvM***************bBs/f3axWbvgvHx8Jmqw==
------END PUBLIC KEY-----" > public_key.pem
-```
+  ```
+  echo "-----BEGIN PUBLIC KEY-----
+  MFkwEwYHKoZIzj0CAQYIKoEcz1UBgi0DQgAEFLlge0vtct949CwtadHODzisgXJa
+  hujq+PvM***************bBs/f3axWbvgvHx8Jmqw==
+  -----END PUBLIC KEY-----" > public_key.pem
+  ```
 
 >!You can also log in to the [KMS console](https://console.cloud.tencent.com/kms2/index), click **Customer Managed CMK** on the left sidebar, click a key ID/name in the key list to view the key information, and download the public asymmetric key.
 
