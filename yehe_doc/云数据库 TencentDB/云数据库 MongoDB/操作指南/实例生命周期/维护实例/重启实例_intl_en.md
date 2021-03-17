@@ -4,5 +4,5 @@ During the restart, the TencentDB for MongoDB instance will not be able to provi
 
 ## Directions
 1. Log in to the [MongoDB Console](https://console.cloud.tencent.com/mongodb). In the instance list, select the desired instance and click **Restart** at the top or click **More** > **Restart** in the "Operation" column.
- 
+ ![](https://main.qcloudimg.com/raw/5e704dbdbc5ab151bac6b57856a5f5e0.jpg)
 2. In the pop-up dialog box, select the components to be restarted, click **OK**, and wait for the task to complete.
