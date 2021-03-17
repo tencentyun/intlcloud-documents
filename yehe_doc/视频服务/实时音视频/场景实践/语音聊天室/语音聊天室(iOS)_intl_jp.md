@@ -104,7 +104,7 @@ info.plist ファイルに Privacy > Camera Usage Description， Privacy > Micro
 
 <span id="model.step4"> </span>
 ### 手順4：コンポーネントの作成およびログイン
-1.  TRTCVoiceRoomImp の`sharedInstance`クラスメソッドをコールすれば、 TRTCVoiceRoom プロトコルを遵守するインスタンスオブジェクトを作成できます。`shared`クラスメソッドをコールして TRTCVoiceRoomImpインスタンスオブジェクトを取得して直接使用することもできます。両者は、TRTCVoiceRoom のインターフェースの使用において何の違いもありません。
+1.  TRTCVoiceRoom の`sharedInstance`クラスメソッドをコールすれば、 TRTCVoiceRoom プロトコルを遵守するインスタンスオブジェクトを作成できます。`shared`クラスメソッドをコールして TRTCVoiceRoomImpインスタンスオブジェクトを取得して直接使用することもできます。両者は、TRTCVoiceRoom のインターフェースの使用において何の違いもありません。
 2. `setDelegate`関数をコールしてコンポーネントのイベントコールバック通知を登録します。
 3. `login`関数をコールしてコンポーネントのログインを完了します。下表を参考にキーパラメータを入力してください。
 <table>    
