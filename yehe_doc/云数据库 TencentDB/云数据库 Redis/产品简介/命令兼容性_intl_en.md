@@ -1,9 +1,9 @@
-
 ### Command Compatibility of Different Editions
-In the following table, ✓ indicates "supported", x indicates "unsupported", and - indicates that cross-slot access is not applicable to the command:
-- For custom command descriptions, please see [Custom Command](https://intl.cloud.tencent.com/document/product/239/18336).
-- For more information on the command compatibility of the Memory Edition (Cluster Architecture), please see [Memory Edition (Cluster Architecture) > Command Compatibility](https://intl.cloud.tencent.com/document/product/239/18336).
-- For more information on the command compatibility of the Hybrid Storage Edition (Cluster Architecture), please see [Hybrid Storage Edition (Cluster Architecture) > Command Compatibility](https://intl.cloud.tencent.com/document/product/239/36163).
+
+In the following table, ✓ indicates "supported", x indicates "unsupported", and "N/A" indicates that cross-slot access is not applicable to the command:
+
+- For more information on custom commands, please see [Memory Edition (Cluster Architecture) > Command Compatibility Description > Custom commands](https://intl.cloud.tencent.com/document/product/239/18336).
+- For more information on command compatibility of Memory Edition (cluster architecture), please see [Memory Edition (Cluster Architecture) > Command Compatibility Description](https://intl.cloud.tencent.com/document/product/239/18336).
 - [Command table download address](https://redis-doc-2020-1254408587.cos.ap-guangzhou.myqcloud.com/Redis%E5%91%BD%E4%BB%A4%E5%85%BC%E5%AE%B9%E6%80%A7.xlsx).
 
 <table>
@@ -12,7 +12,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <th>Command</th>
       <th>2.8 Memory Edition (Standard Architecture)</th>
       <th>4.0 Memory Edition (Standard Architecture)</th>
-      <th>4.0 Memory/Hybrid Storage Edition (Cluster Architecture)</th>
+      <th>4.0 Memory Edition (Cluster Architecture)</th>
       <th>5.0 Memory Edition (Standard Architecture)</th>
       <th>5.0 Memory Edition (Cluster Architecture)</th>
       <th>Cross-slot Support in Memory Edition (Cluster Architecture)</th>
@@ -20,881 +20,881 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
    <tr>
       <td rowspan=6>connection group</td>
       <td>auth</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>echo</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>ping</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>Custom</td>
-      <td>✓</td>
+      <td>&#10003;</td>
       <td>Custom</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>quit</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>select</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>swapdb</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan=15>hash group</td>
       <td>hdel</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>hexists</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>hget</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>hgetall</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>hincrby</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>hincrbyfloat</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>hkeys</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>hlen</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>hmget</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>hmset</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>hset</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>hsetnx</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>hstrlen</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>hvals</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>hscan</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan=17>keys group</td>
       <td>del</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
    </tr>
    <tr>
       <td>scan</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>Custom</td>
-       <td>✓</td>
+       <td>&#10003;</td>
       <td>Custom</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>exists</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>x</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
    </tr>
    <tr>
       <td>expire</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>expireat</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>keys</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>Custom</td>
-      <td>✓</td>
+      <td>&#10003;</td>
       <td>Custom</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>type</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>move</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>ttl</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>persist</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>pexpire</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>pexpireat</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>pttl</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>randomkey</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>rename</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
       <td>renamenx</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
       <td>sort</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan=17>list group</td>
       <td>lindex</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>linsert</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>llen</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>lpop</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>lpush</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>lpushx</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>lrange</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>lrem</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>lset</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>ltrim</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>rpop</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>rpoplpush</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
       <td>rpush</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>rpushx</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>blpop</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
       <td>brpop</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
       <td>brpoplpush</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
       <td rowspan=6>pub/sub group</td>
       <td>psubscribe</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>pubsub</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>publish</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>punsubscribe</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>subscribe</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>unsubscribe</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan=15>sets group</td>
       <td>sadd</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>scard</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>sdiff</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
       <td>sdiffstore</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
       <td>sinter</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
       <td>sinterstore</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
       <td>sismember</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>smembers</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>smove</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
       <td>spop</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>srandmember</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>srem</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>sscan</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>sunion</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
       <td>sunionstore</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
       <td rowspan=25>sorted sets group</td>
       <td>zadd</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>zcard</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>zcount</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>zincrby</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>zinterstore</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
       <td>zlexcount</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>zrange</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>zrangebylex</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>zrangebyscore</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>zrank</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>zrem</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>zremrangebylex</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>zremrangebyrank</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>zremrangebyscore</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-			     <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+			     <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>zrevrange</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>zrevrangebylex</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>zrevrangebyscore</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>zscore</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>zrevrank</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>zscan</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>zunionstore</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
@@ -902,465 +902,465 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>zpopmin</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>bzpopmax</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>bzpopmin</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan=24>strings group</td>
       <td>append</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>bitcount</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>bitop</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
       <td>bitpos</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>decr</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>decrby</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>get</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>getbit</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>getrange</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>getset</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>incr</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>incrby</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>incrbyfloat</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>mget</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
    </tr>
    <tr>
       <td>mset</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
    </tr>
    <tr>
       <td>msetnx</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
       <td>psetex</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>setex</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>set</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>setbit</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>setnx</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>setrange</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>strlen</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>bitfield</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan=5>transactions group</td>
       <td>discard</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>exec</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>multi</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>unwatch</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>watch</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan=3>hyperloglog group</td>
       <td>pfadd</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>pfcount</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
       <td>pfmerge</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
       <td rowspan=7>scripting group</td>
       <td>eval</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
       <td>evalsha</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
       <td>script debug</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>script exists</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
       <td>script flush</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>script load</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>script kill</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan=6>geo group</td>
       <td>geoadd</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>geohash</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>geopos</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>geodist</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>georadius</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>georadiusbymember</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan=7>keys group</td>
       <td>touch</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>restore</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>object</td>
@@ -1369,15 +1369,15 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>unlink</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-       <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+       <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
@@ -1387,7 +1387,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>migrate</td>
@@ -1396,16 +1396,16 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>dump</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan=40>server group</td>
@@ -1415,7 +1415,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>bgsave</td>
@@ -1424,7 +1424,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>client kill</td>
@@ -1433,7 +1433,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>sync</td>
@@ -1442,7 +1442,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>psync</td>
@@ -1451,16 +1451,16 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>client list</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>client getname</td>
@@ -1469,7 +1469,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>client pause</td>
@@ -1478,7 +1478,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>client reply</td>
@@ -1487,7 +1487,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>client setname</td>
@@ -1496,7 +1496,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>command count</td>
@@ -1505,7 +1505,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>command getkeys</td>
@@ -1514,7 +1514,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>command info</td>
@@ -1523,7 +1523,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>slaveof</td>
@@ -1532,7 +1532,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>config rewrite</td>
@@ -1541,7 +1541,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>config set</td>
@@ -1550,7 +1550,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>config resetstat</td>
@@ -1559,7 +1559,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>debug object</td>
@@ -1568,7 +1568,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>debug segfault</td>
@@ -1577,7 +1577,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>role</td>
@@ -1586,7 +1586,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>save</td>
@@ -1595,7 +1595,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>lastsave</td>
@@ -1604,7 +1604,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>shutdown</td>
@@ -1613,133 +1613,133 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>MEMORY</td>
       <td>x</td>
-      <td>✓</td>
+      <td>&#10003;</td>
       <td>Custom</td>
-      <td>✓</td>
+      <td>&#10003;</td>
       <td>Custom</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>command</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>dbsize</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>info</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>Custom</td>
-      <td>✓</td>
+      <td>&#10003;</td>
       <td>Custom</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>time</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>client list</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>config get</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>monitor</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>Custom</td>
-      <td>✓</td>
+      <td>&#10003;</td>
       <td>Custom</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>flushdb</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>Custom</td>
-      <td>✓</td>
+      <td>&#10003;</td>
       <td>Custom</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>flushall</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>slowlog</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>Custom</td>
-      <td>✓</td>
+      <td>&#10003;</td>
       <td>Custom</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>cluster keyslot</td>
       <td>x</td>
       <td>x</td>
-      <td>✓</td>
+      <td>&#10003;</td>
       <td>x</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>cluster nodes</td>
       <td>x</td>
       <td>x</td>
-      <td>✓</td>
+      <td>&#10003;</td>
       <td>x</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>cluster getkeysinslot</td>
       <td>x</td>
       <td>x</td>
-      <td>✓</td>
+      <td>&#10003;</td>
       <td>x</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>cluster (others)</td>
@@ -1748,7 +1748,7 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>module</td>
@@ -1757,16 +1757,16 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>-</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>lolwut</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td rowspan=13>Stream group</td>
@@ -1774,71 +1774,71 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>xadd</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>xtrim</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>xdel</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>xrange</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>xrevrange</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>xlen</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>xread</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
@@ -1846,17 +1846,17 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>xreadgroup</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
       <td>x</td>
    </tr>
    <tr>
@@ -1864,27 +1864,26 @@ In the following table, ✓ indicates "supported", x indicates "unsupported", an
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>xlclaim</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
    <tr>
       <td>xpending</td>
       <td>x</td>
       <td>x</td>
       <td>x</td>
-      <td>✓</td>
-      <td>✓</td>
-      <td>-</td>
+      <td>&#10003;</td>
+      <td>&#10003;</td>
+      <td>N/A</td>
    </tr>
 </table>
-
