@@ -1,3 +1,20 @@
+## 2020年12月
+<table>
+<tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=10%>发布时间</th><th width=20%>相关文档</th></tr>
+<tr>
+<td>Redis 混合存储版更名为云数据库 Tendis</td>
+<td>Redis 混合存储版本正式更名为云数据库 Tendis，启用独立产品入口，独立控制台。</td>
+<td>2020-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1083/39286" target="_blank">云数据库 Tendis</a></td>
+</tr>
+<tr>
+<td>支持多可用区部署</td>
+<td>云数据库 Redis 支持同地域下跨多个可用区部署副本，相对单可用区实例（主节点和副本节点在同一可用区），多可用区实例具有更高的可用性和容灾能力。</td>
+<td>2020-12</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/39812" target="_blank">多可用区</a></td>
+</tr>
+</table>
+
 ## 2020年09月
 <table>
 <tr>
@@ -26,7 +43,7 @@
 <td>支持版本升级</td>
 <td>Redis 新增版本升级功能，支持标准版低版本升级到高版本，包括2.8升级至4.0、2.8升级至5.0、4.0升级至5.0。</td>
 <td>2020-07</td>
-<td><a href="https://cloud.tencent.com/document/product/239/46457" target="_blank">升级实例版本</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/37710" target="_blank">升级实例版本</a></td>
 </tr>
 <tr>
 <td>支持架构升级</td>
@@ -48,7 +65,7 @@
 <td>Redis 混合存储版上线</td>
 <td>云数据库 Redis 混合存储版正式发布，100%兼容 Redis 协议，最大可降低内存成本80%，与内存版一致的热数据性能，兼容性、性能、成本可完美平衡。</td>
 <td>2020-06</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/36163" target="_blank">混合存储版（集群架构）</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1083/39296" target="_blank">混合存储版（集群架构）</a></td>
 </tr>
 </table>
 
