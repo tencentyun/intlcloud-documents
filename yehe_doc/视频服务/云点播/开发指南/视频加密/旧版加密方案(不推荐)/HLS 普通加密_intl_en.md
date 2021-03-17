@@ -178,7 +178,7 @@ After the above steps are completed, the client can get the video decryption key
 ### <span id="p2"></span>Video playback scheme 2
 Video playback scheme 2: passing authentication information through cookie. This scheme is only suitable for HTML5/Flash players on iOS devices or PCs. In this case, the player will bring a cookie when accessing the URL identified by the `EXT-X-KEY` tag.
 
-> Tests showed that the HTML5 player on Android did not carry cookies when accessing the URL identified by the `EXT-X-KEY` tag, so for the Android platform, only **scheme 1** can be used currently.
+>! Tests showed that the HTML5 player on Android did not carry cookies when accessing the URL identified by the `EXT-X-KEY` tag, so for the Android platform, only **scheme 1** can be used currently.
 
 #### 1. Log in and distribute the cookie used for authentication
 Only authenticated end users can get a video decryption key. Therefore, before a video is played back, the client must be logged in to, and then the application server will distribute to it a signature. For example, after the client is logged in to with an account and password at `login.example.com` and authentication is passed on the application backend, the cookie of the `example.com` domain will be distributed to the client to identify the end user.
@@ -215,7 +215,7 @@ Then, when the player parses the M3U8 file, it will make an HTTP request to this
 #### 2. What information is required to enable VOD encryption?
 To enable VOD encryption, you need to provide `getkeyurl`, i.e., the `URI` attribute in the `EXT-X-KEY` tag.
 The application server needs to deploy an HTTP service that gets key data when the client plays back an encrypted video. When the VOD service encrypts the video, the `URI` attribute of the `EXT-X-KEY` tag in the encrypted video's M3U8 file will be set to `getkeyurl`. In order to get the key and manage it conveniently, three parameters (`fileId`, `edk` and `keySource`) will be appended to `getkeyurl`.
-> `fileId` is the video ID, `edk` is the encrypted key, and `keySource` is the key source. For files encrypted with the KMS system built in VOD, `keySource` is `VodBuildInKMS`. When the player initiates a request to get the decryption key, the `QueryString` of the HTTP request received by the application server will include parameters such as `fileId` and `edk`, based on which the application server can return the corresponding DK to the player.
+>? `fileId` is the video ID, `edk` is the encrypted key, and `keySource` is the key source. For files encrypted with the KMS system built in VOD, `keySource` is `VodBuildInKMS`. When the player initiates a request to get the decryption key, the `QueryString` of the HTTP request received by the application server will include parameters such as `fileId` and `edk`, based on which the application server can return the corresponding DK to the player.
 
 #### 3. Where does the player get the decryption key when playing back an encrypted video?
 When the player plays back an encrypted video, it initiates a request for obtaining the key based on the URI of the `EXT-X-KEY` tag in the M3U8 file, which is the `getkeyurl` address provided by the application to VOD.
