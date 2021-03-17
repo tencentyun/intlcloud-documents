@@ -178,7 +178,7 @@ https://getkey.example.com?fileId=123456&keySource=VodBuildInKMS&edk=abcdef&toke
 ### <span id="p2"></span>视频播放方案2
 视频播放方案2：通过 Cookie 传递身份认证信息。该方案仅适用于 iOS/PC 平台的 H5/Flash 播放器。在该平台下，播放器在访问`EXT-X-KEY`标签所标识的 URL 时会带上 Cookie。
 
->实际测试发现，Android 平台的 H5 播放器在访问`EXT-X-KEY`标签所标识的 URL 时不会携带 Cookie，所以 Android 平台目前只能使用**方案1**。
+>!实际测试发现，Android 平台的 H5 播放器在访问`EXT-X-KEY`标签所标识的 URL 时不会携带 Cookie，所以 Android 平台目前只能使用**方案1**。
 
 #### 1. 登录并派发用于身份校验的 Cookie
 只有经过合法身份认证的客户才应当得到视频解密密钥。因此在视频播放之前，客户端必须进行登录操作，并由 App 服务端给客户端派发签名。例如，客户端通过`login.example.com`进行账号密码登录，App 后台在通过身份认证后，给客户端下发`example.com`域的 Cookie 来标识用户身份。
@@ -215,7 +215,7 @@ http://www.test.com/getdk?fileId=123&edk=14cf
 ####  2. 开通点播加密功能需要提供哪些信息？
 开通云点播加密功能需要提供 getkeyurl，即`EXT-X-KEY`标签中的`URI`属性。
 App 服务端需要部署客户端播放加密视频时获取密钥数据的 HTTP 服务。云点播服务在加密视频时，会把加密视频的 M3U8 文件`EXT-X-KEY`标签的`URI`属性设置为 getkeyurl。为了获取密钥和管理方便，我们会在 getkeyurl 后面附加三个参数 fileId、edk 和 keySource。
->fileId 即视频 ID，edk 是加密后的密钥，keySource 是密钥来源，使用点播内置 KMS 系统的加密文件，keySource 为 VodBuildInKMS。播放器发起获取解密密钥请求时，App 服务端收到的 HTTP 请求的 QueryString 就会包含 fileId 和 edk 等参数，App 服务端可以根据 fileId 和 edk 等参数来返回对应的 DK 给播放器。
+>?fileId 即视频 ID，edk 是加密后的密钥，keySource 是密钥来源，使用点播内置 KMS 系统的加密文件，keySource 为 VodBuildInKMS。播放器发起获取解密密钥请求时，App 服务端收到的 HTTP 请求的 QueryString 就会包含 fileId 和 edk 等参数，App 服务端可以根据 fileId 和 edk 等参数来返回对应的 DK 给播放器。
 
 ####  3. 播放器播放加密视频时从哪里获取解密密钥？
 播放器播放加密视频时，根据 M3U8 文件里`EXT-X-KEY`的 URI，发起获取密钥的请求，即 App 提供给云点播的 getkeyurl 地址。
