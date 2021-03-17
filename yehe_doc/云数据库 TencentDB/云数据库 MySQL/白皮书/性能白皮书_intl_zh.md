@@ -22,7 +22,7 @@ make install
 
 |类型|说明|
 |--|--|
-|实例物理机器|高可用版-单机器最高可支撑488GB内存、6TB硬盘数据库|
+|实例物理机器|双节点-单机器最高可支撑488GB内存、6TB硬盘数据库|
 |实例规格|当前售卖主流配置规格（详见下文 [测试用例](#cscs)）|
 |客户端配置| 4核8GB内存|
 |客户端数量|1 - 6个（若配置提升，客户端数量也需要相应提升）|
@@ -52,7 +52,6 @@ c: 08566691963-88624912351-16662227201-46648573979-64646226163-77505759394-75470
 pad: 63188288836-92351140030-06390587585-66802097351-4928296184
 ```
 
-
 ### 3. 数据准备
 ```
 sysbench --mysql-host=xxxx --mysql-port=xxxx --mysql-user=xxx --mysql-password=xxx --mysql-db=test --mysql-table-engine=innodb --test=tests/db/oltp.lua --oltp_tables_count=20 --oltp-table-size=10000000  --rand-init=on prepare
@@ -63,7 +62,7 @@ sysbench --mysql-host=xxxx --mysql-port=xxxx --mysql-user=xxx --mysql-password=x
 - `--oltp_tables_count=20`，表示用于测试的表数量为20张。
 - `--oltp-table-size=10000000`，表示每个测试表填充数据行数为1000万行。
 - `--rand-init=on`，表示每个测试表都是用随机数据来填充的。
-   
+  
 
 ### 4. 性能压测命令
 ```
@@ -85,6 +84,7 @@ sysbench --mysql-host=xxxx --mysql-port=xxx --mysql-user=xxx --mysql-password=xx
 ### 5. 场景模型
 本文用例均使用 sysbench 的 lua 脚本，修改为4个 select 点查询，1个 update （索引列），读写比为4:1。
 针对最大配置类型，对数据场景增加了参数调优模型，测试结果见下文 [测试结果](#document_test_result)。
+
 
 <span id="cscs"></span>
 ## 测试参数
