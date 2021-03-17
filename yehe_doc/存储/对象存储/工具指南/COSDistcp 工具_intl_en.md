@@ -1,10 +1,10 @@
-## Overview
+## Feature Overview
 
 COSDistCp is a MapReduce-based distributed file copy tool mainly used for data copy between HDFS and COS. It introduces the following features:
 - Performs incremental copy as well as real-time verification, and obtain the list of different files based on the length and CRC checksum.
 - Filters files in the source directory with regular expression.
 - Decompresses files in the source directory and compresses them to the target compression format.
-- Aggregates text files based on regular expression.
+- Aggregates text files based on a regular expression.
 - Preserves user/user group, extension attributes, and time of the source file and directory.
 - Limits the read bandwidth.
 
@@ -16,19 +16,19 @@ Linux
 
 #### Software requirements
 
-Hadoop 2.6.0 or above; Hadoop-COS 5.8.7 or above.
+Hadoop 2.6.0 or above; Hadoop-COS 5.9.3 or above
 
 ## Download and Installation
 
 #### Obtaining the COSDistCp JAR package
 
-If your Hadoop version is 2.x, you can download [cos-distcp-1.3-2.8.5.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.3-2.8.5.jar) and verify the integrity of the downloaded JAR package according to the [MD5 checksum](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.3-2.8.5-md5.txt) of the package.
+If your Hadoop version is 2.x, you can download [cos-distcp-1.5-2.8.5.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.5-2.8.5.jar) and verify the integrity of the downloaded JAR package according to the [MD5 checksum](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.5-2.8.5-md5.txt) of the package.
 
-If your Hadoop version is 3.x, you can download [cos-distcp-1.3-3.1.0.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.3-3.1.0.jar) and verify the integrity of the downloaded JAR package according to the [MD5 checksum](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.3-3.1.0-md5.txt) of the package.
+If your Hadoop version is 3.x, you can download [cos-distcp-1.5-3.1.0.jar](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.5-3.1.0.jar) and verify the integrity of the downloaded JAR package according to the [MD5 checksum](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.5-3.1.0-md5.txt) of the package.
 
-#### Notes
+#### Installation notes
 
-In the Hadoop environment, install [Hadoop-COS](https://intl.cloud.tencent.com/document/product/436/6884?!preview=&!editLang=zh&from_cn_redirect=1&lang=en&pg=#download-and-installation) and then run the COSDistCp tool.
+In the Hadoop environment, install [Hadoop-COS](https://intl.cloud.tencent.com/document/product/436/6884) and then run the COSDistCp tool.
 
 
 ## How It Works
@@ -68,7 +68,9 @@ You can run the `hadoop jar cos-distcp-${version}.jar --help` (`${version}` is t
 |  --diffOutput=LOCATION  | Specifies the output directory for the list of different files. This directory must be empty.<br/>Example: --diffOutput=/diff-output  |  None |  No  |
 | --cosChecksumType=TYPE     | Specifies the CRC algorithm used by the Hadoop-COS plugin. Valid values are `CRC32C` and `CRC64`. <br/>Example: --cosChecksumType=CRC32C | CRC32C | No |
 | --preserveStatus=VALUE | Specifies whether to copy the `user`, `group`, `permission`, `xattr`, and `timestamps` metadata of the source file to the destination file. Valid values are ugpxt (initials of `user`, `group`, `permission`, `xattr`, and `timestamps`, respectively). <br/>Example: --preserveStatus=ugpt | None | No |
-
+| --ignoreSrcMiss | Ignores files that exist in the manifest file but cannot be found during the copy. | false | No |
+| --taskCompletionCallback=VALUE | Upon task completion, calls back the collected information as parameters to a specified function. | None | No |
+| --temp=VALUE | Specifies the temporary directory for the task. | /tmp  | No |
 
 ## Examples
 
@@ -211,7 +213,7 @@ Run the command with the `--outputCodec` parameter, which allows you to compress
 hadoop jar cos-distcp-${version}.jar --src /data/warehouse/logs --dest cosn://examplebucket-1250000000/data/warehouse/logs-gzip --outputCodec=gzip
 ```
 
->!If not set to `keep`, the files will be decompressed and converted to the target compression format. Due to the difference in compression parameters, the content of the destination files might be different from that of the source files, but the files will be the same after decompression.
+>! If not set to `keep`, the files will be decompressed and converted to the target compression format. Due to the difference in compression parameters, the content of the destination files might be different from that of the source files, but the files will be the same after decompression.
 
 ### Copying multiple directories
 
@@ -294,6 +296,54 @@ Run the following command with the `--preserveStatus` parameter. The following c
 hadoop jar cos-distcp-${version}.jar --src /data/warehouse --dest cosn://examplebucket-1250000000/data/warehouse/ --preserveStatus=ugpt
 ```
 
+### Alarms for copy failures
+Run the command with the `--completionCallbackClass` parameter to specify the path of the callback class. When the task is completed, COSDistCp will use the collected task information as parameters to execute the callback function. For user-defined callback functions, the following APIs need to be implemented. You can download the [callback sample code](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-alarm-1.0.jar).
+```
+package com.qcloud.cos.distcp;
+import java.util.Map;
+public interface TaskCompletionCallback {
+/**
+ * @description: When the task is completed, the callback function is executed
+ * @param jobType Copy or Diff
+ * @param jobStartTime  the job start time
+ * @param errorMsg  the exception error msg
+ * @param applicationId the MapReduce application id
+ * @param: cosDistCpCounters the job 
+*/
+
+void doTaskCompletionCallback(String jobType, long jobStartTime, String errorMsg, String applicationId, Map<String, Long> cosDistCpCounters);
+
+/**
+ *  @description: init callback config before execute
+ */
+void init() throws Exception;
+}
+```
+
+COSDistCp has integrated the alarms of Cloud Monitor. When the task runs abnormally or some files fail to be copied, the alarm will be performed.
+
+```
+export alarmSecretId=SECRET-ID
+export alarmSecretKey=SECRET-KEY
+export alarmRegion=ap-guangzhou
+export alarmModule=module
+export alarmPolicyId=cm-xxx
+hadoop jar cos-distcp-1.4-2.8.5.jar \
+-Dfs.cosn.credentials.provider=org.apache.hadoop.fs.auth.SimpleCredentialProvider \
+-Dfs.cosn.userinfo.secretId=SECRET-ID \
+-Dfs.cosn.userinfo.secretKey=SECRET-KEY \
+-Dfs.cosn.bucket.region=ap-guangzhou \
+-Dfs.cosn.impl=org.apache.hadoop.fs.CosFileSystem \
+-Dfs.AbstractFileSystem.cosn.impl=org.apache.hadoop.fs.CosN \
+--src /data/warehouse \
+--dest cosn://examplebucket-1250000000/data/warehouse/ \
+--checkMode=checksum \
+--completionCallbackClass=com.qcloud.cos.distcp.DefaultTaskCompletionCallback
+```
+`alarmPolicyId` in the command above is an alarm policy created in Cloud Monitor. You can go to the Cloud Monitor console (**Alarm Management** > **Alarm Configuration** > **Custom Messages**) to create and configure one.
+
+
+
 ## FAQs
 
 ### How can I run COSDistCp if Hadoop-COS is not configured in the environment?
@@ -327,3 +377,10 @@ Except for those recorded as SRC_MISS, if there are other failed files, you can 
 yarn logs -applicationId application_1610615435237_0021 > application_1610615435237_0021.log
 ```
 In the command above, `application_1610615435237_0021` is the application ID.
+
+### Will COSDistCp generate incomplete files due to network or other exceptions?
+If the network is abnormal, the source file is missing, or the permissions are insufficient, COSDistCp cannot generate a destination file with the same size as the source file.
+- For versions earlier than COSDistCp 1.5, COSDistCp will attempt to delete the destination files generated. If the deletion fails, you need to re-execute the copy task to overwrite the incomplete files, or manually delete them.
+- If your COSDistCp version is 1.5 or later and the version of the Hadoop-COS plugin in the running environment is 5.9.3 or later, when files fail to be copied to COS, COSDistCp will call the abort API to terminate the ongoing upload request. Therefore, no incomplete file will be generated even if an exception occurs.
+- If your COSDistCp version 1.5 or later but the version of Hadoop-COS in the running environment is earlier than 5.9.3, you are advised to upgrade it to 5.9.3 or later.
+- If the destination location is not COS, COSDistCp will attempt to delete the destination files.
