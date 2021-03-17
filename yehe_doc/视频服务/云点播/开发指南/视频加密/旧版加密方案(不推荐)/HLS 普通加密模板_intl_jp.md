@@ -5,5 +5,5 @@ HLS共通暗号化テンプレートには、`definition`（一意のテンプ�
 * [HLS共通暗号化テンプレートの作成](https://intl.cloud.tencent.com/document/product/266/35167)
 * [HLS共通暗号化テンプレートの更新](https://intl.cloud.tencent.com/document/product/266/35168)
 * [HLS共通暗号化テンプレートのクエリー](https://intl.cloud.tencent.com/document/product/266/35169)
--->
->HLS共通暗号化テンプレート管理は、VOD API 2017インターフェースのみを提供しています。
+
+>?HLS共通暗号化テンプレート管理は、VOD API 2017インターフェースのみを提供しています。
