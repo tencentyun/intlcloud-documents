@@ -1,3 +1,4 @@
+
 TencentDB for Redis is compatible with Redis 2.8, 4.0, and 5.0. Upgrade to a compatible version is supported, so that you can upgrade your instance to a newer version for more features.
 
 ## Upgrade Description
@@ -20,7 +21,7 @@ The version upgrade process mainly consists of data sync and instance switch:
 - During switch, the instances will become read-only for less than 1 minute (to wait for the data sync completion), and a momentary disconnection (within seconds) will occur; therefore, your business should have an automatic reconnection mechanism.
 
 ## Upgrade Directions
-1. Log in to the [TencentDB for Redis Console](https://console.cloud.tencent.com/redis), select a region in the instance list, and click an instance name to enter the instance details page.
+1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), select an region at the top of the instance list, click an instance ID/name, and enter the instance management page.
 2. On the instance details page, click **Version Upgrade**.
 ![](https://main.qcloudimg.com/raw/ebc4ecc50af95d99be2fa23f45d11278.png)
 3. In the pop-up dialog box, select the version and switch time and click **OK**.

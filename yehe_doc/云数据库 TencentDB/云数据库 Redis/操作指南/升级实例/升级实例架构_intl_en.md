@@ -1,3 +1,4 @@
+
 TencentDB for Redis supports standard architecture and cluster architecture. To help you process ever-growing business data, it allows you to upgrade from standard architecture to cluster architecture if the performance and capacity of standard architecture are insufficient.
 
 ## Upgrade Description
@@ -15,15 +16,17 @@ TencentDB for Redis supports standard architecture and cluster architecture. To 
 ## Upgrade Preparations (Compatibility Check)
 To avoid business failures caused by compatibility problems during migration to cluster architecture, please check the compatibility before the upgrade:
 - Cluster architecture stores data in a distributed manner, and its biggest difference from standard architecture lies in whether a single command supports multikey access. For the cluster architecture, commands can be categorized into supported, partially supported, and unsupported. For the complete list of compatible commands, please see [Command Compatibility](https://intl.cloud.tencent.com/document/product/239/31958).
-- For more information on how to check the compatibility, please see [Check for Migration from Standard Architecture to Cluster Architecture](https://intl.cloud.tencent.com/document/product/239/35954).
+- For more information about compatibility check, please see [Notes on Migration from Standard to Cluster Architecture](https://intl.cloud.tencent.com/document/product/239/37594).
 
 ## Upgrade Impact
 - Generally, upgrade can be completed in 3 minutes.
 - During the upgrade, existing connections will be closed momentarily; therefore, your business should have a reconnection mechanism.
 
 ## Upgrade Directions
-1. Log in to the [TencentDB for Redis Console](https://console.cloud.tencent.com/redis), select a region in the instance list, and click an instance name to enter the instance details page.
+1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), select an region at the top of the instance list, click an instance ID/name, and enter the instance management page.
 2. On the instance details page, click **Architecture Upgrade**.
+![](https://main.qcloudimg.com/raw/ebc4ecc50af95d99be2fa23f45d11278.png)
 3. In the pop-up dialog box, select the architecture and switch time, indicate your consent to the notice about compatibility risks, and click **OK**.
 Architecture upgrade supports **Switch Now** and **Switch Maintenance Window** options. You can modify the maintenance time in "Maintenance Window" on the instance details page.
-4. Make the payment and return to the instance list. After the status of the instance changes to "Running", the instance can be used normally.
+![](https://main.qcloudimg.com/raw/f584ccc7b3004feb662e72e8ddcf819a.png)
+4. After the payment is completed, you will be redirected to the instance list. After the status of the instance becomes **Running**, it can be used normally.

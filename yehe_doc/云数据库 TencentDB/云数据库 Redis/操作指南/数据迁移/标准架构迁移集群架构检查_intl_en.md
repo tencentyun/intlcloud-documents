@@ -1,7 +1,6 @@
 Standard Edition can be your self-created Redis Standalone Edition, master/replica mode, or TencentDB for Redis Memory Edition (Standard Architecture). This document describes the compatibility issues in migrating data from Redis Standard Edition to TencentDB for Redis Memory Edition (Cluster Architecture).
 
-<span id = "jrxsm"></span>
-## Compatibility Description
+## [Compatibility Description](id:jrxsm)
 TencentDB for Redis Memory Edition (Cluster Architecture) adopts the cluster architecture consisting of Tencent Cloud's proprietary proxy and Redis Community Cluster Edition, which is 100% compatible with Redis Community Cluster Edition commands.
 ![](https://main.qcloudimg.com/raw/8d5d073e1e71c2367f35b3029e49f8c6.jpg)
 
@@ -17,7 +16,7 @@ TencentDB for Redis Memory Edition (Cluster Architecture) uses the hash algorith
 | Command Group         | Command          | Cross-slot Support in Memory Edition (Cluster Architecture) |
 | -------------- | ------------- | ------------------ |
 | keys        | del           | ✓                  |
-| keys        | exists        | x                  |
+| keys        | exists        | ✓                  |
 | keys        | rename        | x                  |
 | keys        | renamenx      | x                  |
 | keys        | unlink        | x                  |
@@ -63,17 +62,20 @@ TencentDB for Redis Memory Edition (Cluster Architecture) uses the hash algorith
 - Memory Edition (Cluster Architecture) supports transactions, but cross-slot access to keys in transactions is not supported.
 - You need to first run the `watch key` command and then the `multi` and `exec` commands in the current version. This operation will be optimized in future versions to eliminate need to run `watch key` first.
 
-<span id = "zdyml"></span>
-### Custom command
-Through VIP encapsulation, Redis Memory Edition (Cluster Architecture) provides a user experience in cluster mode comparable to Standard Edition, making it much easier for use in different scenarios. To increase the transparency to OPS, custom commands can be used. Access to each node in the cluster is supported by adding a parameter "node ID" on the right of the original command parameter list, such as `COMMAND arg1 arg2 ... [node ID]`. The node ID can be obtained through the `cluster nodes` command or in the [console](https://console.cloud.tencent.com/redis).
+### [Custom commands](id:zdyml)
+Through VIP encapsulation, TencentDB for Redis Memory Edition (cluster architecture) provides a user experience in cluster mode comparable to the standard edition, making it much easier for use in different scenarios. To increase the transparency to OPS, custom commands can be used. Access to each node in the cluster is supported by adding a parameter "node ID" on the right of the original command parameter list, such as `COMMAND arg1 arg2 ... [node ID]`. The node ID can be obtained through the `cluster nodes` command or in the [console](https://console.cloud.tencent.com/redis).
 ```
 10.1.1.1:2000> cluster nodes25b21f1836026bd49c52b2d10e09fbf8c6aa1fdc 10.0.0.15:6379@11896 slave 36034e645951464098f40d339386e9d51a9d7e77 0 1531471918205 1 connectedda6041781b5d7fe21404811d430cdffea2bf84de 10.0.0.15:6379@11170 master - 0 1531471916000 2 connected 10923-1638336034e645951464098f40d339386e9d51a9d7e77 10.0.0.15:6379@11541 myself,master - 0 1531471915000 1 connected 0-546053f552fd8e43112ae68b10dada69d3af77c33649 10.0.0.15:6379@11681 slave da6041781b5d7fe21404811d430cdffea2bf84de 0 1531471917204 3 connected18090a0e57cf359f9f8c8c516aa62a811c0f0f0a 10.0.0.15:6379@11428 slave ef3cf5e20e1a7cf5f9cc259ed488c82c4aa17171 0 1531471917000 2 connectedef3cf5e20e1a7cf5f9cc259ed488c82c4aa17171 10.0.0.15:6379@11324 master - 0 1531471916204 0 connected 5461-10922
-Native command: info server
-Custom command: info server ef3cf5e20e1a7cf5f9cc259ed488c82c4aa17171SCAN 
-Sample command: scan 0 238b45926a528c85f40ae89d6779c802eaa394a2scan 0 match a* 238b45926a528c85f40ae89d6779c802eaa394a2KEYS 
-Sample command: keys a* 238b45926a528c85f40ae89d6779c802eaa394a2
-```
 
+Native command: `info server`
+Custom command:
+info server ef3cf5e20e1a7cf5f9cc259ed488c82c4aa17171SCAN 
+Sample:
+scan 0 238b45926a528c85f40ae89d6779c802eaa394a2
+scan 0 match a* 238b45926a528c85f40ae89d6779c802eaa394a2KEYS 
+Sample:
+keys a* 238b45926a528c85f40ae89d6779c802eaa394a2
+```
 
 ### Client access method
 We recommend you use a Standard Edition (e.g., [Jedis](https://intl.cloud.tencent.com/document/product/239/7043) but not JedisCluster) client to access TencentDB for Redis Memory Edition (Cluster Architecture), as this access method is more efficient and simpler. You can also access through cluster clients, such as JedisCluster.
@@ -119,9 +121,9 @@ export pipeline = 2000  // Number of concurrent pipelines, which is 1,000 by def
 To ensure successful data migration, we recommend you test the business in the test environment. You can connect the business in the testing environment to the TencentDB for Redis Memory Edition (Cluster Architecture) and confirm whether all features can work properly before data migration.
 
 ## Migrating Data Online with DTS
-For detailed directions, please see [Migration with DTS](https://intl.cloud.tencent.com/document/product/239/31941).
+- For detailed directions, please see [Migration with DTS](https://intl.cloud.tencent.com/document/product/239/31941).
 
-## Migration Failure
+## Self-created Instance Migration Failure
 -  The `client-output-buffer-limit` parameter value is too small. We recommend you set it to 512 MB or 1,024 MB by running the following command:
 ```
 config set client-output-buffer-limit "slave 1073741824 1073741824 600"
