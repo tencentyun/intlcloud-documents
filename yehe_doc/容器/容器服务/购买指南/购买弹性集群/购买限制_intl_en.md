@@ -9,8 +9,8 @@ For more information on the regions and resource specifications supported by EKS
 | Resource | Limit | Description |
 | --------- | --------- | --------- |
 | Clusters in one region | 5 | Includes clusters that are being created and running. |
-| Pods in one cluster | 50 | Includes all namespaces, workloads, and stateless and stateful pods. |
-| Pod replicas for one workload | 50 | Includes all stateless and stateful pods in the workload. |
+| Pods in one cluster | 100 | Includes all namespaces, workloads, and stateless and stateful pods. |
+| Pod replicas for one workload | 100 | Includes all stateless and stateful pods in the workload. |
 
 If the number of required resources exceeds the quota limit shown in the preceding table, you can submit a ticket to apply for a higher quota. Tencent Cloud will assess your actual needs and increase your quota as appropriate.
 
