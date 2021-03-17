@@ -8,11 +8,11 @@
 
 ## 躲避拥塞
 基于 Anycast 的能力，在公网传输过程中避开拥塞路段。
-![](https://main.qcloudimg.com/raw/52f9dbf12a2dfa4edb05581a4f2473c0.png)
+<img width="60%" src="https://main.qcloudimg.com/raw/a96bcd833cd7679ab62631b5259f8c55.png"/>
 
 ## 屏蔽故障
 公网运营商网络不时出现故障，可利用 Anycast 能力屏蔽公网的故障。
-![](https://main.qcloudimg.com/raw/67d339bb1257493017569af60b28c6d0.png)
+<img width="60%" src="https://main.qcloudimg.com/raw/8dfe8e366fb70faa312b477b76eedea8.png"/>
 
 ## 相关扩展
 **理解 AIA 需要掌握以下几个概念：**
