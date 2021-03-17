@@ -1,56 +1,31 @@
 
-This document describes how to create and rename an instance in the TencentDB for Redis Console.
+This document describes how to create an instance in the TencentDB for Redis console.
+
+## Prerequisites
+You have registered a Tencent Cloud account and completed identity verification.
+- To register a Tencent Cloud account:
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn1">Click here to sign up for a Tencent Cloud account</a></div>
+- To verify your identity:
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">Click here to verify your identity</a></div>
 
 ## Directions
-1. Log in at the [TencentDB for Redis purchase page](https://buy.cloud.tencent.com/redis?regionId=1) and select the configuration based on your actual needs.
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Remarks</th>
-</tr>
-</thead>
-<tbody><tr>
-<tr>
-<td>Network Type</td>
-<td>VPC is recommended. After the instance is purchased, you can change from the classic network to VPC but not from VPC to the classic network. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/213/5227" target="_blank">Network Environment</a>.</td>
-</tr>
-<tr>
-<td>Product Version</td>
-<td>Memory Edition is supported. It is a high-performance edition based on the open-source Redis engine, which is compatible with Redis 2.8, 4.0, and 5.0.</td>
-</tr>
-<tr>
-<td>Compatible Version</td>
-<td>TencentDB for Redis is compatible with Redis 2.8, 4.0, and 5.0. v2.8 is unavailable currently, and v4.0 or above is recommended. If you need to purchase v2.8, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> for application.
-</td>
-</tr>
-<tr>
-<td>Architecture Version</td>
-<td>Standard Edition and Cluster Edition are supported.</td>
-</tr>
-<tr>
-<td>Replica Count</td>
-<td><ul><li>Redis 2.8 Standard Edition supports 0–1 replica. </li><li>Redis 4.0/5.0 Standard Edition supports 1–5 replicas. </li><li>Redis 4.0/5.0 Cluster Edition supports 1–5 replicas.</li></td>
-</tr>
-<tr>
-<td>Port</td>
-<td>Custom ports must fall between 1024 and 65535.</td>
-</tr>
-<tr>
-<td>Specify Project/Security Group</td>
-<td>Specify the project and security group for the database.</td>
-</tr>
-<tr>
-<td>Instance Name/Set Password</td>
-<td>You can directly set the instance name and password here or set them in the instance list after creation.</td>
-</tr>
-</tbody></table>
-
-3. After confirming that everything is correct, click **Buy Now**. For detailed pricing of each edition, please see [Pricing](https://intl.cloud.tencent.com/document/product/239/9894).
-4. After the purchase is completed, you will be redirected to the instance list. After the status of the instance is displayed as **Running**, the instance can be used normally.
-5. (Optional) To rename the instance, in the **Instance ID / Name** column in the instance list, click the small icon below to rename the instance.
+1. Log in and go to the [Redis purchase page](https://buy.cloud.tencent.com/redis), configure the following instance information, confirm that everything is correct, and click **Buy Now**.
+  - **Billing Mode**: pay-as-you-go
+ - **Region**: select the region that you want your TencentDB for Redis instance to be deployed in. We recommend that you use the same region as the CVM instance to be connected to. Tencent Cloud products in different regions cannot communicate with each other over the private network. The region cannot be modified after purchase.
+ - **Instance Edition**: Memory Edition is supported. It is a high-performance edition based on the open-source Redis engine, which is compatible with Redis v2.8, v4.0, and v5.0.
+ - **Compatible Version**: TencentDB for Redis is compatible with Redis v2.8, v4.0, and v5.0. v2.8 is unavailable currently, and v4.0 or later is recommended. To purchase v2.8, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.
+ -**Architecture**: standard architecture or cluster architecture
+ -**Replica Count**: TencentDB for Redis v2.8 (standard architecture) supports 0 or 1 replica; v4.0 or v5.0 (standard or cluster architecture) supports 1 to 5 replicas.
+  - **Network**: select the network where the TencentDB for Redis instance resides. We recommend that you select the same VPC in the same region as the CVM instance to be connected to. After an instance is purchased, you can switch the instance from classic network to VPC, but you cannot switch it from VPC to classic network.
+ - **Availability Zone**: select availability zones for the master node and replica nodes. Multi-AZ deployed instances have higher availability and better disaster recovery capability than single-AZ deployed instances. For more information, please see [Multi-AZ Deployment](https://intl.cloud.tencent.com/document/product/239/39812).
+ - **Port**: the custom port number ranging from 1024 to 65535.
+ - **Project** and **Security Group**: specify the project and security group for the instance.
+ - **Instance Name** and **Set Password**: you can set the instance name and password here or set them in the instance list after creation.
+2. After the purchase is completed, you will be redirected to the instance list. After the status of the instance becomes **Running**, it can be used normally.
+3. (Optional) Click the **Edit** icon in the **Instance ID/Name** column in the instance list to rename the instance.
 ![](https://main.qcloudimg.com/raw/8a6917c05adb4e06731dbdd836c620da.png)
 
-## Subsequent Steps
-- Use a CVM instance to directly access the private IP of the TencentDB instance. For more information, please see [Connecting to TencentDB for Redis over Private Network](https://intl.cloud.tencent.com/document/product/239/9897).
-- Use a CVM instance with a public IP for port forwarding to connect to TencentDB for Redis over the public network. For more information, please see [Connecting to TencentDB for Redis over Public Network](https://intl.cloud.tencent.com/document/product/239/35905).
+## Subsequent Operations
+- Use a CVM instance to directly access the private IP of the TencentDB instance. For more information, please see [Connecting to TencentDB for Redis Instances](https://intl.cloud.tencent.com/zh/document/product/239/9897).
+- Use a CVM instance with a public IP to connect to the TencentDB instance over the public network through port forwarding. For more information, please see [iptables Forwarding](https://intl.cloud.tencent.com/document/product/239/35905).
+
