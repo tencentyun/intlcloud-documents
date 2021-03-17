@@ -5,5 +5,5 @@ HLS 普通加密模板，包含`definition`（唯一的模板 ID）和`get_key_u
 * [创建 HLS 普通加密模板](https://intl.cloud.tencent.com/document/product/266/35167)
 * [更新 HLS 普通加密模板](https://intl.cloud.tencent.com/document/product/266/35168)
 * [查询 HLS 普通加密模板](https://intl.cloud.tencent.com/document/product/266/35169)
--->
->HLS 普通加密模板管理仅提供云点播 API 2017 接口。
+
+>?HLS 普通加密模板管理仅提供云点播 API 2017 接口。
