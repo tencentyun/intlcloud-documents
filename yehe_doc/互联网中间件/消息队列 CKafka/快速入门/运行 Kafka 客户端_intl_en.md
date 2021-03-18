@@ -57,7 +57,7 @@ Currently, CKafka is fully compatible with Kafka 0.9, 0.10, 1.1, and 2.4. We rec
           password="yourpassword";
       };
       ```
-      >? `username` is the combination of the instance ID and the user name entered, and `password` is the password set.
+      >?  `username` is in the format of "instance ID#entered username", and `password` is the password set. 
 
    3. In the `./bin` directory of the installation file, add the statement of the full path of the JAAS file at the beginning of `kafka-console-producer.sh` and `kafka-console-consumer.sh`.
       ```bash
