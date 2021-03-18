@@ -6,7 +6,7 @@ The recording feature is disabled for CSS push by default. This document describ
 - After enabling the recording feature, please make sure that your VOD service is in normal status. If it is not activated or is suspended due to overdue payment, CSS recording will not be available, no recording files will be generated, and no recording fees will be incurred.
 -  The template configuration will take effect in about 5–10 minutes. 
 -  After the template is bound successfully, the recording feature will be enabled for push addresses under the specified push domain name.
-- One domain name can be bound to only one recording template. After binding, all streams under it will be recorded according to this template.
+- One domain name can be bound to only one recording template. After they are bound, all streams under the domain name will be recorded according to this template.
 - Stream mix-based recording does not support mixing streams in and outside Chinese mainland, as recording file errors will occur and affect normal playback.
 
 ## Prerequisites
