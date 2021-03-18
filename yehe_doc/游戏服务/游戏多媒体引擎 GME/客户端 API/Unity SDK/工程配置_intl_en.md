@@ -35,8 +35,6 @@ If the settings are as follows, Unity playback sound effect will be interrupted 
 #### Operations on macOS
 If you use Unity to access the GME SDK on macOS 10.15.x, an error will be displayed for file corruption during the execution. This error is caused by the `com.apple.quarantine` attribute, and the most direct solution is to delete this attribute.
 
-<img src="https://main.qcloudimg.com/raw/29aa9b69f32c13ffe3c6db4559c9ff17.png"  width="30%" /></img>
-
 1. Run the `cd` command in terminal to go to the `Unity_OpenSDK_Audio/Assets/Plugins/` folder in the project.
 2. Run the following command:
 ```
