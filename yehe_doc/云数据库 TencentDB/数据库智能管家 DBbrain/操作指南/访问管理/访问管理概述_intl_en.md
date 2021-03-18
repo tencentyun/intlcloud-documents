@@ -15,7 +15,7 @@ If you do not need to manage the access permissions to DBbrain resources for sub
 ### Getting started
 A CAM policy must authorize or deny the use of one or more DBbrain operations. At the same time, it must specify the resources that can be used for the operations (can be all resources or partial resources for certain operations). A policy can also include the conditions set for the manipulated resources.
 
->
+>?
 >- We recommend you manage DBbrain resources and authorize DBbrain operations through CAM policies. Although the user experience does not change for existing users who are granted permissions by project, we do not recommend you continue to manage resources and authorize operations in a project-based manner.
 >- Currently, DBbrain does not support setting conditions for policies.
 
