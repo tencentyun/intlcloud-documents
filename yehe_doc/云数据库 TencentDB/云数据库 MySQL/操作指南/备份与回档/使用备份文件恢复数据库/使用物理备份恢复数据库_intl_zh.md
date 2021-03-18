@@ -10,20 +10,19 @@
 ## 前提条件
 - 下载并安装 XtraBackup 工具。
 下载地址请参见 [Percona XtraBackup 官网](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/)，请选择 Percona XtraBackup 2.4.6 及以上的版本，安装介绍请参见 [Percona XtraBackup 2.4](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI)。
-- 支持的实例版本：MySQL 高可用版和金融版。
+- 支持的实例版本：MySQL 双节点、三节点。
 - 启用数据加密功能的实例，不支持使用物理备份恢复数据库。
 
 ## 操作步骤
 >?本文以 CentOS 操作系统的云服务器和 MySQL 5.7 版本为例进行演示。
 >
-
 ### 步骤1：下载备份文件
 您可通过控制台下载云数据库 MySQL 的数据备份、日志备份。
 >?默认每个 IP 限制10个链接，每个链接下载速度可达20Mpbs - 30Mpbs。
 >
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名或“操作”列的【管理】，进入实例管理页面。
 2. 在实例管理页面，选择【备份恢复】>【数据备份列表】页， 选择需要下载的备份，在“操作”列单击【下载】。
-3. 在弹出的对话框，推荐您复制下载地址，并 [登录到云数据库所在 VPC 下的 CVM（Linux 系统） ](https://intl.cloud.tencent.com/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8)中，运用 wget 命令进行内网高速下载，更高效。
+3. 在弹出的对话框，推荐您复制下载地址，并 [登录到云数据库所在 VPC 下的 CVM（Linux 系统） ](https://intl.cloud.tencent.com/zh/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8)中，运用 wget 命令进行内网高速下载，更高效。
 >?
 >- 您也可以选择【本地下载】直接下载，但耗时较多。
 >- wget 命令格式：wget -c '备份文件下载地址' -O 自定义文件名.xb 
@@ -51,7 +50,7 @@ xbstream -x -C /data < ~/test.xb
 ```
 wget http://www.quicklz.com/qpress-11-linux-x64.tar
 ```
->?若 wget 下载提示错误，您可至 [quicklz](http://www.quicklz.com/) 下载 qpress 工具到本地后，再将 qpress 工具上传至 Linux 云服务器，请参见 [通过 SCP 上传文件到 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/2133)。
+>?若 wget 下载提示错误，您可至 [quicklz](http://www.quicklz.com/) 下载 qpress 工具到本地后，再将 qpress 工具上传至 Linux 云服务器，请参见 [通过 SCP 上传文件到 Linux 云服务器](https://intl.cloud.tencent.com/zh/document/product/213/2133)。
 2. 通过如下命令解压出 qpress 二进制文件。
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
@@ -76,7 +75,7 @@ xtrabackup --prepare  --target-dir=/data
 执行后若结果中包含如下输出，则表示 prepare 成功。
 ![prepare.png](https://main.qcloudimg.com/raw/13c768fd980f99d7f5824e8f28100950.png)
 	
-
+	
 #### 2.4 修改配置文件
 1. 执行如下命令打开`backup-my.cnf`文件。
 ```
@@ -91,7 +90,7 @@ vi /data/backup-my.cnf
  - innodb_page_size 
  - innodb_log_block_size
  - redo_log_version 
- 
+
 ![](https://mc.qcloudimg.com/static/img/10113311b33e398ce0df96ca419f7f45/3.png)
 
 #### 2.5 修改文件属性
@@ -99,7 +98,7 @@ vi /data/backup-my.cnf
 ```
 chown -R mysql:mysql /data
 ```
-![](https://main.qcloudimg.com/raw/2c2bfcad8c8bdac9385e70d975bec56a.png)
+![](https://mc.qcloudimg.com/static/img/efbdeb20e1b699295c6a4321943908b2/4.png)
 
 ### 步骤3：启动 mysqld 进程并登录验证
 1. 启动 mysqld 进程。
@@ -114,3 +113,5 @@ mysql  -uroot
 
 ## 备份相关问题
 请参见 [备份常见问题](https://intl.cloud.tencent.com/document/product/236/9036) 和 [备份失败原因](https://intl.cloud.tencent.com/document/product/236/34394)。
+
+

@@ -1,9 +1,9 @@
 ## 操作场景
 超过指定时间的 SQL 语句查询称为“慢查询”，对应语句称为“慢查询语句”，数据库管理员（DBA）对慢查询语句进行分析并找到慢查询出现原因的过程称为“慢查询分析”。
 
-您可以在控制台的操作日志页面查看实例的慢日志明细、错误日志明细、回档日志，及下载慢日志。也可以在命令行界面（CLI）或者使用云数据库 API 查看、下载数据库日志，请参见 [查询慢查询日志](https://intl.cloud.tencent.com/document/product/236/15845) 与 [查询二进制日志](https://intl.cloud.tencent.com/document/product/236/15843)。
+您可以在控制台的操作日志页面查看实例的慢日志明细、错误日志明细、回档日志，及下载慢日志。也可以在命令行界面（CLI）或者使用云数据库 API 查看、下载数据库日志，请参见 [查询慢查询日志](https://intl.cloud.tencent.com/document/product/236/15845) 与 [查询二进制日志](https://intl.cloud.tencent.com/zh/document/product/236/15843)。
 
->?云数据库 MySQL（不含基础版）实例支持操作日志管理功能。
+>?云数据库 MySQL（不含单节点 - 基础型）实例支持操作日志管理功能。
 >
 
 #### MySQL 慢查询相关说明
@@ -26,8 +26,7 @@
 <tr>
 <td>回档日志</td><td>记录回档任务的运行状态和进展</td></tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/460115a1a260cb7437561556c2f8cb9a.png"  style="margin:0;">
-
+<img src="https://main.qcloudimg.com/raw/c229d0fe6a4869998d3472b0a35efa28.png"  style="margin:0;">
 3. 在慢日志下载页面，单击“操作”列的【下载】下载慢日志。
 4. 在弹出的对话框，推荐您复制下载地址，并登录到云数据库所在 VPC 下的 CVM（Linux 系统） 中，运用 wget 命令进行内网高速下载，更高效。
 >?

@@ -5,13 +5,13 @@
 
 - 本文介绍的恢复方式仅适用于 Linux 平台，暂不支持 Windows 平台。
 - Windows 平台恢复数据请参考 [命令行工具迁移数据](https://intl.cloud.tencent.com/document/product/236/8464)。
-- 支持的实例版本：MySQL 高可用版和金融版。
+- 支持的实例版本：MySQL 双节点、三节点。
 
 ## 操作步骤
 ### 步骤1：下载备份文件
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名或“操作”列的【管理】，进入实例管理页面。
 2. 在实例管理页面，选择【备份恢复】>【数据备份列表】页， 选择需要下载的备份，在“操作”列单击【下载】。
-3. 在弹出的对话框，推荐您复制下载地址，并 [登录到云数据库所在 VPC 下的 CVM（Linux 系统）](https://intl.cloud.tencent.com/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8)中，运用 wget 命令进行内网高速下载，更高效。
+3. 在弹出的对话框，推荐您复制下载地址，并 [登录到云数据库所在 VPC 下的 CVM（Linux 系统）](https://intl.cloud.tencent.com/zh/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8)中，运用 wget 命令进行内网高速下载，更高效。
 >?
 >- 您也可以选择【本地下载】直接下载，但耗时较多。
 >- wget 命令格式：wget -c '备份文件下载地址' -O 自定义文件名.xb
@@ -37,7 +37,7 @@ xbstream -x < test0.xb
 ```
 wget http://www.quicklz.com/qpress-11-linux-x64.tar
 ```
->?若 wget 下载提示错误，您可至 [quicklz](http://www.quicklz.com/) 下载 qpress 工具到本地后，再将 qpress 工具上传至 Linux 云服务器，请参见 [通过 SCP 上传文件到 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/2133)。
+>?若 wget 下载提示错误，您可至 [quicklz](http://www.quicklz.com/) 下载 qpress 工具到本地后，再将 qpress 工具上传至 Linux 云服务器，请参见 [通过 SCP 上传文件到 Linux 云服务器](https://intl.cloud.tencent.com/zh/document/product/213/2133)。
 2. 通过如下命令解出 qpress 二进制文件。
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin
