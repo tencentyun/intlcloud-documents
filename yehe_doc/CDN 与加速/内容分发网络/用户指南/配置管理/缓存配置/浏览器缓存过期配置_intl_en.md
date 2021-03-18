@@ -29,7 +29,6 @@ Click **Add Rule** to add browser cache validity rules for specified file type, 
 **Configuration limitations**
 
 - Each domain name can have up to 20 rules. Only one "All Files" and "Homepage" rule can be added.
-- The "All Files" rule cannot be deleted, but its cache option can be modified.
 - You can adjust the priority for multiple rules. Rules at the bottom of the list have higher priority.
 - In each rule of specified file type, file directory, and file path, up to 50 groups of content can be entered. Please use ";" to separate different content, e.g., Specified File Type: jpg;png.
 - Chinese characters are not supported.
