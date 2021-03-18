@@ -23,7 +23,11 @@ For more information, see [Creating a Custom Sub-user](https://intl.cloud.tencen
 
 You can add policies and authorize users or user groups on the user or user group management and policy management pages. For more information, see [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
 
-- Method 1: go to the **User List** or **User Groups** page, click **Authorize** on the right of the created sub-user or user group, select the corresponding CSS policy, and click **Confirm**.
+- Method 1: go to the **User List** or **User Groups** page, click **Authorize**/**Associate Policy** on the right of the created sub-user or user group, select the corresponding CSS policy, and click **Confirm**.
+![](https://main.qcloudimg.com/raw/9da12095cfa57813a373ab9ffeabc9a4.png)
+
+![](https://main.qcloudimg.com/raw/ec1e09ab6cde2a703ac90d7ccdad6424.png)
+
 ![](https://main.qcloudimg.com/raw/f09b5d456ba1fd554ad321ddcc67cbdc.png)
 
 - Method 2: go to the **Policies** page, click **Associate Users/Groups** on the right of the policy to be associated, select the created sub-user or user group, and click **Confirm**.
