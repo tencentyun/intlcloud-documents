@@ -56,4 +56,3 @@ qcs::${ApiModule}:${Region}:uin/:domain/${DomainName}
 
 ### Step 3. Use a sub-account
 You can use a sub-account identity (sub-account ID and password created by the root account) to call the authorized APIs (such as the `DescribeLiveDomains` API) to get the corresponding CSS information (such as all domains under the account).
-
