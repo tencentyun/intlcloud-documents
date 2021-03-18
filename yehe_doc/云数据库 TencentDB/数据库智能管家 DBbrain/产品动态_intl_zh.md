@@ -1,3 +1,14 @@
+## 2021年03月
+<table>
+<tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=10%>发布时间</th><th width=20%>相关文档</th></tr>
+<tr>
+<td>新增无主键表扫描功能</td>
+<td>无主键扫描功能支持通过定期扫描和手动刷新，来发现当前实例中缺少建立主键的表。</td>
+<td>2021-03</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/36039" target="_blank">空间分析</a></td></tr>
+</table>
+
+
 ## 2020年12月
 <table>
 <tr>
