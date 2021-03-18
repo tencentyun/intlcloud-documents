@@ -85,7 +85,7 @@ An alias record allows you to map multiple names to the same computer and is gen
 
 
 ## Verifying the Effect of CNAME Record
-The time it takes for a CNAME record to take effect varies by DNS service provider. It is generally within half an hour. You can also check whether the CNAME record is in effect in the following ways:
+The time for a CNAME record to take effect varies by DNS service provider. It is generally within half an hour. You can also check whether the CNAME record is in effect in the following ways:
 - **Method 1**: enter **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** in the CSS Console and check whether the status symbol of the domain name suffixed with `.myqcloud.com` has changed to ![](https://main.qcloudimg.com/raw/0fc346399ae095d69113d4944e511a20.png), and if so, CNAME configuration is successful.
 ![](https://main.qcloudimg.com/raw/7930331f6eb7f4271014083cab27fb26.png)
 - **Method 2**: on Linux/macOS, run the `dig` command in the format of `dig your own domain name`. If the first row displays that the destination domain name provided by CSS is resolved, CNAME configuration is successful. 
