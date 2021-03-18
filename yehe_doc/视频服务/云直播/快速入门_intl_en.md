@@ -94,4 +94,3 @@ You can enter the generated push address into the corresponding push software ac
 - [What playback protocols are supported?](https://intl.cloud.tencent.com/document/product/267/7968#.E6.94.AF.E6.8C.81.E5.93.AA.E4.BA.9B.E6.92.AD.E6.94.BE.E5.8D.8F.E8.AE.AE.EF.BC.9F)
 - [What does a playback address consist of?](https://intl.cloud.tencent.com/document/product/267/7968#.E6.92.AD.E6.94.BE.E5.9C.B0.E5.9D.80.E7.94.B1.E4.BB.80.E4.B9.88.E7.BB.84.E6.88.90.EF.BC.9F)
 - [How do I splice and generate multiple CSS URLs?](https://intl.cloud.tencent.com/zh/document/product/267/38393)
-CSS
