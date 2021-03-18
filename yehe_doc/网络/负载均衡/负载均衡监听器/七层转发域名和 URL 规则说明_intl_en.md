@@ -99,11 +99,11 @@ A health check domain name is the domain name used by layer-7 CLB to detect the 
 - Length limit: 1–80 characters.
 - Default: forwarded domain name.
 - Regex is not supported. If your forwarded domain name is a wildcard domain name, you should specify a fixed one (non-regex).
-- Valid character sets include `a–z`, `0–9`, `.`, `-`, and `_`.
+- Valid character sets include `a–z`, `0–9`, `.`, `-`, and `_`. For example, `www.example.qcloud.com`.
 
 ### Health check path configuration rules
 A health check path is the URL path used by layer-7 CLB to detect the health status of a real server.
 - Length limit: 1–200 characters.
 - Default: `/`, with which the path must begin.
 - Regex is not supported. You are recommended to specify a fixed URL (static page) for health check.
-- Valid character sets include `a–z`, `A–Z`, `0–9`, `.`, `-`, `_`, `/`, `=`, `?`, and `:`.
+- Valid character sets include `a–z`, `A–Z`, `0–9`, `.`, `-`, `_`, `/`, `=`, `?`, and `:`. For example,  `/index`.
