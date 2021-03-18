@@ -24,8 +24,8 @@ The export command is as follows:
 mongoexport --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authenticationDatabase=admin --db=testdb --collection=testcollection  -o /data/export_testdb_testcollection.json
 ```
 
->In addition, you can include the `-f` parameter to specify a desired field or the `-q` parameter to specify a query condition so as to restrict the data to be exported.
-
+>?In addition, you can include the `-f` parameter to specify a desired field or the `-q` parameter to specify a query condition so as to restrict the data to be exported.
+>
 **3. Parameters for export commands written by the users `rwuser` and `mongouser`** 
 As described in the [Connection Sample](https://intl.cloud.tencent.com/document/product/240/7092), TencentDB for MongoDB provides two usernames `rwuser` and `mongouser` by default to support MONGODB-CR and SCRAM-SHA-1 authentication respectively.
 
