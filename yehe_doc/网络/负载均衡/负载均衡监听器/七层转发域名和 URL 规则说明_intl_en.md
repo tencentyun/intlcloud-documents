@@ -33,7 +33,7 @@ For example, if you configure `URL ~*.(gif|jpg|bmp)$`. in the forwarding group, 
 If a client request cannot be matched with any domain name of this listener, CLB will forward the request to the default domain name (`Default Server`) to make the default rule controllable. Only one default domain name can be configured under one listener.
 For example, the `HTTP:80` listener of CLB instance 1 is configured with two domain names: `www.test1.com` and `www.test2.com`, where `www.test1.com` is the default domain name. When a user visits `www.example.com`, since no domain name is matched, CLB will forward the request to the default domain name `www.test1.com`.
 
->
+>?
 >- Before May 18, 2020, the default domain name is optional for layer-7 listeners.
 >  - If your layer-7 listener has a default domain name configured, client requests that do not match other rules will be forwarded to it.
 >  - If your layer-7 listener has no default domain name configured, client requests that do not match other rules will be forwarded to the first domain name loaded by CLB (its loading order may be different from that configured in the console; therefore, it may not be the first one configured in the console). 
