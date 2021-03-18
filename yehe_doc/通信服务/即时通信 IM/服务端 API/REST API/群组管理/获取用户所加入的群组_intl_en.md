@@ -115,7 +115,7 @@ To specify the group member information in the group that needs to be pulled, se
             "Role", 
             "JoinTime",
             "MsgFlag", 
-            "UnreadMsgNum" 
+            "MsgSeq" 
         ]
     }
 }
@@ -217,14 +217,14 @@ To specify the group member information in the group that needs to be pulled, se
             "MaxMemberNum": 200,
             "MemberNum": 1,
             "Name": "d",
-            "NextMsgSeq": 1,
+            "NextMsgSeq": 2,
             "Notification": "",
             "Owner_Account": "",
             "SelfInfo": {
                 "JoinTime": 1588148506,
                 "MsgFlag": "AcceptAndNotify",
                 "Role": "Member",
-                "UnreadMsgNum": 0
+                "MsgSeq": 1
             },
             "ShutUpAllMember": "Off",
             "Type": "Private"
