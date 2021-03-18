@@ -24,7 +24,7 @@ MongoDB 官方提供了两套数据导出工具，一般来说，进行整库导
 mongoexport --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authenticationDatabase=admin --db=testdb --collection=testcollection  -o /data/export_testdb_testcollection.json
 ```
 
->您也可以加上 -f 参数指定需要的字段，-q 参数指定一个查询条件来限定要导出的数据。
+> ?您也可以加上 -f 参数指定需要的字段，-q 参数指定一个查询条件来限定要导出的数据。
 
 **3. 关于 rwuser 和 mongouser 用户名在写导出命令时的参数说明** 
 在 [连接示例](https://intl.cloud.tencent.com/document/product/240/7092) 文档中有说明，腾讯云 MongoDB 默认提供了 rwuser 和 mongouser 两个用户名，分别支持 MONGODB-CR 和 SCRAM-SHA-1 两种认证方式。
