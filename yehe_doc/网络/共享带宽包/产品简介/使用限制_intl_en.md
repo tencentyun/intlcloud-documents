@@ -40,7 +40,7 @@ To learn about your account type, see [Checking Account Type](https://intl.cloud
 <th width="19%">Peak Bandwidth</th><th>Description</th>
 </tr>
 <tr>
-<td>Single instance</td><td>The peak bandwidth of a single bandwidth package is 2 Gbps. The peak bandwidth is only regarded as the maximum bandwidth for reference, and not as the committed bandwidth. When bandwidth resources are contested, the peak bandwidth may be limited.</td>
+<td>Single instance in BWP</td><td>The peak bandwidth of a single instance in the bandwidth package (such as public IP and CLB) is 2 Gbps. The peak bandwidth is only regarded as the maximum bandwidth for reference, and not as the committed bandwidth. When bandwidth resources are contested, the peak bandwidth may be limited.</td>
 </tr>
 <tr>
 <td>Single region</td><td>The sum of peak bandwidth of all the running instances billed in bandwidth packages cannot exceed 50 Gbps in one region. If your application requires a guaranteed or higher bandwidth, contact your sales rep or <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>. In this case, you need to pay the guaranteed bandwidth fee on a pro rata basis.</td>
