@@ -14,7 +14,7 @@ Once your domain name is connected to CSS, the system will automatically assign 
 
 
 ## Configuration Steps
-This document describes how to configure a CNAME record at Tencent Cloud, Alibaba Cloud, Baidu Cloud, DNSPod, Wanwang, and Xinnet, respectively. The directions below are for your reference only, and the actual directions shall apply. After configuring the domain name CNAME, you can verify whether the CNAME configuration has taken effect as instructed in [Verifying the Effect of CNAME Record](#check).
+This document describes how to configure a CNAME record at Tencent Cloud, Alibaba Cloud, Baidu Cloud, DNSPod, Wanwang, and Xinnet, respectively. The directions below are for your reference only, and the actual directions shall apply. After configuring the domain name CNAME, you can verify whether the CNAME configuration has taken effect as instructed in [Verifying the Effectiveness of CNAME Record](#check).
 
 
 <span id="ali"></span>
