@@ -7,7 +7,7 @@ The recording feature is disabled for CSS push by default. This document describ
 -  The template configuration will take effect in about 5–10 minutes. 
 -  After the template is bound successfully, the recording feature will be enabled for push addresses under the specified push domain name.
 - One domain name can be bound to only one recording template. After they are bound, all streams under the domain name will be recorded according to this template.
-- Stream mix-based recording does not support mixing streams in and outside Chinese mainland, as recording file errors will occur and affect normal playback.
+- Mixed stream recording does not support mixing streams in and outside Chinese mainland, as recording file errors will occur and affect normal playback.
 
 ## Prerequisites
 - You have logged in to the [CSS console](https://console.cloud.tencent.com/live) and added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970).
