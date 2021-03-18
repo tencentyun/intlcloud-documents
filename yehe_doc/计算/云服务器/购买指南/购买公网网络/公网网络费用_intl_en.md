@@ -3,7 +3,9 @@ This document describes the public network prices under different billing modes 
 ## Monthly Bandwidth Subscription
 For the monthly bandwidth subscription plan, you pay for a fixed bandwidth in advance. Monthly bandwidth subscription is suitable for long-term scenarios with stable traffic.
 >? The monthly subscription mode is currently in beta. To use it, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
+
 **Pricing**
+
 <table>
 <thead>
 <tr>
