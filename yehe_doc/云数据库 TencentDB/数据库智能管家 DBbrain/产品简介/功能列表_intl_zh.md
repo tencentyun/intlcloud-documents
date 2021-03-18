@@ -1,4 +1,4 @@
-数据库智能管家 DBbrain 目前支持云数据库 MySQL（不含基础版）。
+数据库智能管家 DBbrain 目前支持云数据库 MySQL（不含单节点 - 基础型）。
 
 <table>
 <thead><tr><th colspan=2>功能</th><th>MySQL</th></tr></thead>
