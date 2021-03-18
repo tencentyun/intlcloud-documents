@@ -4,7 +4,7 @@ To use CSS, you should have at least **two** domain names, one as the push domai
 
 ## Prerequisites
 1. You have activated the [CSS](https://intl.cloud.tencent.com/product/css) service.
-2. You have prepared your own domain names and obtained ICP filings for their service in Mainland China.
+2. You have a domain name. ICP filing is required for your domain name if you want to use resources for Chinese mainland.
 	- If your domain names have not obtained an ICP filing, you can go to Tencent Cloud Website ICP Filing Service to apply for ICP filing.
 >!
 >- You should apply for ICP filing for your domain names according to the regulations of the Ministry of Industry and Information Technology (MIIT) of China. The application process takes several business days to complete, so you are recommended to start an application in advance. For more information, please see [Domain Name ICP Filing and Configuration](https://intl.cloud.tencent.com/document/product/267/32478).
