@@ -15,15 +15,11 @@
 ### 快速入门
 CAM 策略必须授权使用一个或多个 DBbrain 操作，或者必须拒绝使用一个或多个 DBbrain 操作，同时还必须指定可以用于操作的资源（可以是全部资源，某些操作也可以是部分资源），策略还可以包含操作资源所设置的条件。
 
->
+>?
 >- 建议用户使用 CAM 策略来管理 DBbrain 资源和授权 DBbrain 操作，对于存量分项目权限的用户体验不变，但不建议再继续使用分项目权限来管理资源与授权操作。
 >- DBbrain 暂时不支持相关生效条件设置。
 
 | 任务 | 链接 | 
 |---------|---------|
-|快速给子用户授权|[子用户授权操作](https://cloud.tencent.com/document/product/1130/39343#gzyhsq)|
-|了解策略基本结构|[策略语法](https://cloud.tencent.com/document/product/1130/39343#clyf)|
-|在策略中定义操作|[DBbrain 的操作](https://cloud.tencent.com/document/product/1130/39343#cz) | 
-|在策略中定义资源|[DBbrain 的资源](https://cloud.tencent.com/document/product/1130/39343#zylj)|
-|支持的资源级权限|[支持的资源级权限](https://cloud.tencent.com/document/product/1130/39341)|
+|支持的资源级权限|[支持的资源级权限](https://intl.cloud.tencent.com/zh/document/product/1035/36052)|
 
