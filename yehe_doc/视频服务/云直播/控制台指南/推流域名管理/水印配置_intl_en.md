@@ -3,7 +3,7 @@ The watermark feature is disabled by default for CSS push. This document describ
 ## Notes
 - The template configuration will take effect in about 5–10 minutes.
 - After the template is bound successfully, the watermark feature will be enabled for push addresses under the specified push domain name.
-- One domain name can be bound to only one watermark template. After binding, all streams under it will be watermarked according to this template.
+- One domain name can be bound to only one watermark template. After they are bound, all streams under the domain name will be watermarked according to this template.
 
 ## Prerequisites
 - You have logged in to the [CSS console](https://console.cloud.tencent.com/live) and added a [push domain name](https://intl.cloud.tencent.com/document/product/267/35970).
