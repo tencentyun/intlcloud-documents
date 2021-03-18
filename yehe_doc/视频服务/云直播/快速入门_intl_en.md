@@ -3,7 +3,7 @@ This document describes how to get started with CSS. Before trying out CSS, we r
 <span id="step0"></span>
 ## Preparations
 
-1. Sign up for a [Tencent Cloud account](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fproduct%2Flvb) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
+1. Sign up for a [Tencent Cloud account](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fproduct%2Flvb) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629). Unverified users cannot buy instances in Chinese mainland.
 2. Go to the [CSS service activation page](https://console.cloud.tencent.com/live?from=product-banner-use-lvb), indicate your consent to the **Tencent Cloud Service Agreement**, and click **Apply for Activation** to activate the CSS service.
 
 <span id="step1"></span>
