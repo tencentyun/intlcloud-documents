@@ -4,7 +4,7 @@ Once your domain name is connected to CSS, the system will automatically assign 
 ## Notes
 - CNAME resolution is required for both playback domain name and push domain name.
 - Please configure a CNAME record at your domain name resolution service provider. For detailed directions, please consult your service provider.
-- The CNAME configuration will take effect in about 15 minutes. If you set multiple layers of CNAME, CSS cannot effectively monitor the resolution result, and the actual access conditions shall prevail.
+- The CNAME configuration will take effect in about 15 minutes. If you set multiple layers of CNAME, CSS cannot effectively monitor the resolution result. You can check if the CNAME is successfully configured when it is accessed.
 - If the CNAME configuration fails to take effect after a prolonged time, please see [CNAME Configuration Troubleshooting](https://intl.cloud.tencent.com/document/product/267/32478).
 
 ## Prerequisites
