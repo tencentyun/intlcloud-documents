@@ -1,8 +1,8 @@
-TencentDB for PostgreSQL supports creating custom plugins (create extension pluginName). The following plugins are supported:
+TencentDB for PostgreSQL supports creating custom extensions (`CREATE EXTENSION extension_name`). The following extensions are supported.
 
->?To use the timescaledb, pipelinedb, wal2json, decoder_raw, decoderbufs, and pgagent plugins, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+>?To use the timescaledb, pipelinedb, wal2json, decoder_raw, and decoderbufs extensions, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
-| Plugin Name                                                       | 9.3.5    | 9.5.4    | 10.4     | 11.8     |12.4   |
+| Extension Name                                                       | 9.3.5    | 9.5.4    | 10.4     | 11.8     |12.4   |
 | ----------------------------------------------- | -------- | -------- | -------- | -------- | -------- |
 | btree_gin                                                    | &#10003; | &#10003; | &#10003; | &#10003; |&#10003; |
 | btree_gist                                                   | &#10003; | &#10003; | &#10003; | &#10003; |&#10003; |
@@ -11,9 +11,6 @@ TencentDB for PostgreSQL supports creating custom plugins (create extension plug
 | cube                                                         | &#10003; | &#10003; | &#10003; | &#10003; |&#10003; |
 | dict_int                                                     | &#10003; | &#10003; | &#10003; | &#10003; |&#10003; |
 | earthdistance                                                | &#10003; | &#10003; | &#10003; | &#10003; |&#10003; |
-| [postgres_fdw](https://intl.cloud.tencent.com/document/product/409/18706) | &#10003; | &#10003; |×   | ×   |×    |
-| [mysql_fdw](https://intl.cloud.tencent.com/document/product/409/18706 ) | &#10003; | &#10003; | ×   | ×   |×  |
-| [cos_fdw](https://intl.cloud.tencent.com/document/product/409/18706 ) | &#10003; | &#10003; | ×   | ×    |×   |
 | fuzzystrmatch                                                | &#10003; | &#10003; | &#10003; | &#10003; |&#10003; |
 | hstore                                                       | &#10003; | &#10003; | &#10003; | &#10003; |&#10003; |
 | intagg                                                       | &#10003; | &#10003; | &#10003; | &#10003; |&#10003; |
@@ -48,8 +45,12 @@ TencentDB for PostgreSQL supports creating custom plugins (create extension plug
 | postgres-decoderbufs                                         | ×        | ×        | &#10003; | &#10003; |&#10003; |
 | hll                                                          | ×        | &#10003; | &#10003; | &#10003; |&#10003; |
 | pg_bigm                                                      | ×        | &#10003; | &#10003; | &#10003; |&#10003; |
-| pgagent                                                      | &#10003; | &#10003; | &#10003; | &#10003; |&#10003; |
 | imgsmlr                                                      | &#10003; | &#10003; | &#10003; | &#10003; |&#10003; |
-| rum                                                          | ×        | ×        | &#10003; | &#10003; |&#10003; |
-| zhparser                                                      | &#10003;        | &#10003;        | &#10003; | &#10003; |&#10003; |
+| rum                                                    | ×        | ×        | &#10003; | &#10003; |&#10003; |
+| zhparser                                             | &#10003;        | &#10003;        | &#10003; | &#10003; |&#10003; |
+| postgis_topology                                | &#10003;        | &#10003;        | &#10003; | &#10003; |&#10003; |
+| address_standardizer                           | &#10003;        | &#10003;        | &#10003; | &#10003; |&#10003; |
+| postgis_sfcgal                                     | &#10003;        | &#10003;        | &#10003; | &#10003; |&#10003; |
+| pg_stat_error                                      | &#10003;        | &#10003;        | &#10003; | &#10003; |&#10003; |
+| pg_stat_log                                       | &#10003;        | &#10003;        | &#10003; | &#10003; |&#10003; |
 
