@@ -13,6 +13,6 @@
   - 可用区：根据实际需要选择可用区
   - 峰值带宽：根据实际需要选择峰值带宽
   - 消息保留：1-2160小时
-  - 私有网络：若用户需要接入其他私有网络可参考 [添加路由策略](https://cloud.tencent.com/document/product/597/36348) 修改路由接入规则
+  - 私有网络：若用户需要接入其他私有网络可参考 [添加路由策略](https://intl.cloud.tencent.com/document/product/597/32555) 修改路由接入规则
 4. 单击【立即购买】，完成实例创建。
    ![](https://main.qcloudimg.com/raw/38933dab24f3e9a16941609518d73c70.png)
