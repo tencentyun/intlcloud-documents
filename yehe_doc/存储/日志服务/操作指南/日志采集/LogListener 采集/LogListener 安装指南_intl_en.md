@@ -16,11 +16,11 @@ LogListener supports only Linux 64-bit operating systems but not Windows for the
 
 ### 1. Download and install LogListener
 
-Download the latest version of LogListener [here](https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-linux-x64-2.5.0.tar.gz).
+Download the latest version of LogListener [here](https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-linux-x64-2.5.3.tar.gz).
 
 Download the LogListener installation package and decompress it to the installation path (`/usr/local/` in this example). Then, go to the LogListener directory `loglistener/tools` and run the following installation command:
 ```plaintext
-wget https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-linux-x64-2.5.0.tar.gz && tar -zxvf loglistener-linux-x64-2.5.0.tar.gz -C /usr/local && cd /usr/local/loglistener-2.5.0/tools && ./loglistener.sh install
+wget https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-linux-x64-2.5.3.tar.gz && tar -zxvf loglistener-linux-x64-2.5.3.tar.gz -C /usr/local && cd /usr/local/loglistener-2.5.3/tools && ./loglistener.sh install
 ```
 
 ### 2. Initialize LogListener
