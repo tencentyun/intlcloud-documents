@@ -40,7 +40,7 @@
 | xgMediaResources | String             | 富媒体信息             | -                                                            |
 | multiPkg         | Boolean               | 是否多包名推送         | <li>true //开启多包名推送<li>false //关闭多包名推送                   |
 | targetList       | Array(String) | 推送账号或推送设备列表 | pushType 为 token_list 或 account_list 时有效                     |
-| collapseID      | Integer | 消息覆盖id | pushType 为 all、tag、package_account_push 时有效                     |	
+| collapseID      | Integer | 消息覆盖 ID | pushType 为 all、tag、package_account_push 时有效                     |	
 | tagSet           | Object         | 标签设置               | pushType 为 tag 时有效<br>数据结构：<br><code>{<br>"op":"OR", //标签间逻辑操作<br>"tagWithType":[<br>{ "tagTypeName":"xg_user_define", //标签类型<br>"tagValue":"test68" //标签值}<br>]<br>} </code>|
 | uploadId         | Integer             | 号码包 ID               | pushType 为 package_account_push 时有效                         |
 | pushConfig       | Object         | 推送配置信息           | <br>"Android"：Android 推送相关配置信息，具体参考下述代码<br>"iOS"：iOS 推送相关配置信息， 具体参考下述代码<br>|
@@ -75,6 +75,7 @@
             "sound":"default",//缺省代表默认音效
             "mutable-content":1
         },
+		  }
 ```
 
 ## 示例说明
