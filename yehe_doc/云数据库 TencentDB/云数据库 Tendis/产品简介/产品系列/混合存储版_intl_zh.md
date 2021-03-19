@@ -59,7 +59,7 @@ redis-benchmark -h 10.0.0.5 -p 6379 -c 100 -n 60000000 -r 1000000000 -d 128 -t s
 - **仅驱逐 Value**
 设置 Key 的超时时间，或者使用 expire 命令时，Key 和 Value 均会被淘汰，其他情况不会淘汰 Key，只会从内存淘汰 Value。
 - **value-eviction-policy**
- - 通过 value-eviction-policy 用户可以指定 N 天未访问的 Value 自动被驱逐出内存。
+ - 通过 value-eviction-policy 用户可以指定 N 天未访问的 Key 自动被驱逐出内存。
  - 该参数默认指定时间为7天，可在控制台自助调整该参数。
 - **maxmemory-policy**
  - 混合存储版仅支持 allkeys-lru、allkeys-random，默认为 allkeys-lru。
@@ -77,7 +77,7 @@ redis-benchmark -h 10.0.0.5 -p 6379 -c 100 -n 60000000 -r 1000000000 -d 128 -t s
 
 
 ## 命令兼容性说明
-混合存储版（集群架构）数据是分布式存储的，和内存版（标准架构）命令支持的最大差异在于单个命令是否支持多 Key 访问，集群架构命令支持情况分为支持、自定义命令、不支持，详细命令兼容性列表请参见 [命令兼容性](https://cloud.tencent.com/document/product/1363/https://intl.cloud.tencent.com/document/product/1083/39290)。
+混合存储版（集群架构）数据是分布式存储的，集群架构命令支持情况分为支持、自定义命令、不支持，详细命令兼容性列表请参见 [命令兼容性](https://intl.cloud.tencent.com/document/product/1083/39290)。
 
  - **不支持的命令**
 系统将返回如下错误：
