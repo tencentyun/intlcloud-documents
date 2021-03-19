@@ -56,9 +56,9 @@ sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule require
 ![](https://main.qcloudimg.com/raw/442c5f5bc928701cd1684a116d44bded.png)
 
 >?
-- Enabling routing only affects the authentication method during access, while the set ACL policy takes effect globally.
-- If you use the PLAINTEXT method to access Kafka while enabling public network access routing, the ACL previously set for the topics will still take effect. If you want PLAINTEXT access to be unaffected, please add the read/write permissions of all users for the topics that PLAINTEXT needs to access.
-- If a topic is already being used by another Tencent Cloud service (e.g., log shipping in CLS, message dump in SCF, and component consumption in EMR), enabling ACL policy is equivalent to imposing restrictions on the permissions of these linked capabilities, and they will directly become unavailable. Therefore, please be sure to do so with caution. In such cases, we recommend you produce the same data to another topic for separate processing instead of configuring a unified ACL policy on the same topic.
+>- Enabling routing only affects the authentication method during access, while the set ACL policy takes effect globally.
+>- If you use the PLAINTEXT method to access Kafka while enabling public network access routing, the ACL previously set for the topics will still take effect. If you want PLAINTEXT access to be unaffected, please add the read/write permissions of all users for the topics that PLAINTEXT needs to access.
+>- If a topic is already being used by another Tencent Cloud service (e.g., log shipping in CLS, message dump in SCF, and component consumption in EMR), enabling ACL policy is equivalent to imposing restrictions on the permissions of these linked capabilities, and they will directly become unavailable. Therefore, please be sure to do so with caution. In such cases, we recommend you produce the same data to another topic for separate processing instead of configuring a unified ACL policy on the same topic.
 
 ### Step 4. Test the connectivity
 #### Kafka's tool script
