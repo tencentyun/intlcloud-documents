@@ -27,4 +27,4 @@ Advantages of dynamic thresholds:
 
 
 ## How to use dynamic thresholds?
-Please see [How to Use Dynamic Thresholds](https://intl.cloud.tencent.com/document/product/248/39022).
+For use instructions, please see [How to Use Dynamic Thresholds](https://intl.cloud.tencent.com/document/product/248/39022) or [Dynamic Alarm Threshold](https://intl.cloud.tencent.com/document/product/248/39443).

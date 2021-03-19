@@ -27,4 +27,4 @@
 
 
 ## 如何使用动态阈值？
-请参考文档 [使用动态阈值](https://intl.cloud.tencent.com/document/product/248/39022)。
+请参考文档 [使用动态阈值](https://intl.cloud.tencent.com/document/product/248/39022) 或 [告警动态阈值最佳实践](https://intl.cloud.tencent.com/document/product/248/39443)。
