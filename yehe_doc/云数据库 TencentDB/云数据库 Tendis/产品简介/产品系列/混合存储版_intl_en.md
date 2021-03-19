@@ -59,7 +59,7 @@ redis-benchmark -h 10.0.0.5 -p 6379 -c 100 -n 60000000 -r 1000000000 -d 128 -t s
 - **Value eviction only**
 When you set a timeout period for keys or use the `expire` command, both keys and values will be evicted from the memory; otherwise, only values will be evicted.
 - **value-eviction-policy**
- - Through `value-eviction-policy`, you can set how many days a value has not been accessed before it is automatically evicted from the memory.
+ - Through `value-eviction-policy`, you can set how many days a key has not been accessed before it is automatically evicted from the memory.
  - The default value of this parameter is 7 days, which can be modified by users in the console.
 - **maxmemory-policy**
  - Hybrid Storage Edition only supports `allkeys-lru` (default) and `allkeys-random`.
@@ -77,7 +77,7 @@ To ensure reading performance, Hybrid Storage Edition currently does not evict a
 
 
 ## Command Compatibility
-Hybrid Storage Edition (cluster architecture) stores data in a distributed manner, and its biggest difference from the Redis Memory Edition (standard architecture) lies in whether a single command supports multikey access. For the cluster architecture, commands can be categorized into supported, custom, and unsupported. For the complete list of compatible commands, please see [Command Compatibility](https://intl.cloud.tencent.com/document/product/1083/39290).
+Hybrid Storage Edition (cluster architecture) stores data in a distributed manner. For the cluster architecture, commands can be categorized into supported, custom, and unsupported. For the complete list of compatible commands, please see [Command Compatibility](https://intl.cloud.tencent.com/document/product/1083/39290).
 
  - **Unsupported commands**
 The system will return the following error:
