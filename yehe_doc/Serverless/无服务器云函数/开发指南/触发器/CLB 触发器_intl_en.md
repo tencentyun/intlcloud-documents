@@ -26,8 +26,8 @@ CLB triggers can be configured in either the **[SCF](https://console.cloud.tence
 ## Request and Response
 Request method refers to the method to process request sent from CLB to SCF, and response method refers to the method to process the returned value sent from SCF to CLB. Both request and response methods are automatically processed by the CLB trigger. When it triggers the function, data structures must be returned in the request method.
 
-
-#### Event message structure of integration request for CLB trigger[](id:datastructures)
+<span id="datastructures"></span>
+#### Event message structure of integration request for CLB trigger
 When a CLB trigger receives a request, event data will be sent to the bound function in JSON format as shown below.
 ```
 {  
@@ -79,8 +79,8 @@ The data structures are as detailed below:
 ### Integration response
 Integration response means that CLB parses the returned content of the function and constructs an HTTP response based on the parsed content. With the aid of integration response, you can control the status code, headers, and body content of the response by using code and implement response to content in custom formats, such as XML, HTML, JSON, and even JS. When using integration response, data structures need to be returned in the [returned data structures of integration response for CLB trigger](#clbStructure) before they can be successfully parsed; otherwise, the error message `{"errno":403,"error":"Analyse scf response failed."}` will appear.
 
-
-#### Returned data structures of integration response for CLB trigger[](id:clbStructure)
+<span id="clbStructure"></span>
+#### Returned data structures of integration response for CLB trigger
 If integration response is set for CLB, data needs to be returned in the following structures:
 ```
 {
