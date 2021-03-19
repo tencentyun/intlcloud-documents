@@ -12,4 +12,4 @@ The SOC reports can provide Tencent Cloud users with valuable information to eva
 
  - SOC 1 report: Tencent Cloud user organizations and their independent auditors can evaluate major misstatement risks of their financial statements based on the SOC 1 report and their internal controls.
  - SOC 2 report: Tencent Cloud user organizations, independent auditors, regulators, shareholders, and other stakeholders can evaluate the design adequacy and operational effectiveness of Tencent Cloud's internal controls (covering security, availability, process integrity, confidentiality, and privacy) based on the SOC 2 report.
- - SOC 3 report: it is a part of the SOC 2 report, which mainly describes the Tencent Cloud service system. The report can be made available to the public upon request. The public can learn more about Tencent Cloud's internal controls in the SOC 3 report.
+ - SOC 3 report: it is a part of the SOC 2 report. The SOC 3 report offers a brief introduction to Tencent Cloud’s products and service system and allows corporate clients to learn about Tencent Cloud’s internal controls.
