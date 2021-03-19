@@ -11,5 +11,5 @@ The AICPA published its latest 2017 edition of the Trust Services Criteria in Ap
 The SOC series of Reports provides Tencent Cloud users with valuable information so as to assess and resolve risks associated with service providers.
 
 * SOC 1 Reports: Cloud users and independent auditors may make use of the SOC 1 Reports and together with the users’ custom controls evaluate the risk of material misstatements in the Financial Statements of Institutional Users.
-
 * SOC 2 Reports: Institutional Cloud Users, independent auditors, regulatory authorities, shareholders and other stakeholders may assess the internal controls (covers security, availability, integrity of the whole process, confidentiality and privacy) of the cloud service provider, based on the said reports. 
+* SOC 3 report: it is a part of the SOC 2 report. The SOC 3 report offers a brief introduction to Tencent Cloud’s products and service system and allows corporate clients to learn about Tencent Cloud’s internal controls.
