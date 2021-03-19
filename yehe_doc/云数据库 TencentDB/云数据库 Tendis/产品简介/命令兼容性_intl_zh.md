@@ -25,9 +25,9 @@
 | hash 族         | hsetnx                | &#10003; | &#10003;   | -                   |
 | hash 族         | hstrlen               | &#10003; | &#10003;   | -                   |
 | hash 族         | hvals                 | &#10003; | &#10003;   | -                   |
-| hash 族         | hscan                 | &#10003; | &#10003;   | -                   |
+| hash 族         | hscan                 |  x   |  x    |  x                  |
 | keys 族         | del                   | &#10003; | &#10003;   | &#10003;            |
-| keys 族         | scan                  | 自定义   | 自定义     | -                   |
+| keys 族         | scan                  |  x   |  x    |  x                  |
 | keys 族         | exists                | &#10003; | &#10003;   | x                   |
 | keys 族         | expire                | &#10003; | &#10003;   | -                   |
 | keys 族         | expireat              | &#10003; | &#10003;   | -                   |
