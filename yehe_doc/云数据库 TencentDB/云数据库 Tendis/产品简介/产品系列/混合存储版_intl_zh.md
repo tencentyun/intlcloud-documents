@@ -93,7 +93,7 @@ redis-benchmark -h 10.0.0.5 -p 6379 -c 100 -n 60000000 -r 1000000000 -d 128 -t s
  - CONFIG GET
 
 - **跨 Slot 命令支持**
-混合存储版（集群架构）目前支持跨 Slot 访问的命令，包括 MGET、MSET、DEL，其他多 KEY 命令的跨 Slot 访问暂不支持。
+混合存储版（集群架构）目前支持跨 Slot 访问的命令，包括 MGET、MSET、DEL，其他多 Key 命令的跨 Slot 访问暂不支持。
 
 - **自定义命令**
 混合存储版（集群架构）通过 VIP 封装，在集群模式下提供了单机版的使用体验，对业务的使用带来的极大的便利，但是对运维不够透明，因此通过自定义命令来弥补这块空缺，支持集群中每个节点的访问，支持方式为在原有命令的参数列表最右边新增一个参数【节点ID】，COMMAND arg1 arg2 ... [节点ID]，节点 ID 可通过 cluster nodes 命令，或者在 [控制台](https://console.cloud.tencent.com/tendis) 中获取：
