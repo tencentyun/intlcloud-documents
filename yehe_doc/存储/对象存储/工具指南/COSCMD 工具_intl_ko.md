@@ -37,7 +37,7 @@ Windows, Linux, macOS 시스템을 지원합니다.
 pip install coscmd
 ```
 
- 설치 완료 후 `-v` 또는 `--version` 명령어를 통해 현재 버전 정보를 확인할 수 있습니다.
+설치 완료 후 `-v` 또는 `--version` 명령어를 통해 현재 버전 정보를 확인할 수 있습니다.
 
 #### 1.2 pip 업데이트
 
@@ -83,7 +83,7 @@ pip install coscmd --no-index -f coscmd-packages
 사용자는 `-h` 또는 `--help` 명령어를 통해 툴의 help 정보 및 사용법을 확인할 수 있습니다.
 
 ```plaintext
-coscmd -h  //현재 버전 정보 조회
+coscmd -h
 ```
 
 help 정보는 다음과 같습니다.
