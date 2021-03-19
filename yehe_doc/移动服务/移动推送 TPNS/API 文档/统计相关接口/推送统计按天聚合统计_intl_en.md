@@ -24,15 +24,15 @@ The API request address is corresponding to the service access point. Select the
 | ------------------- | --------- | ------------------------------------------------------------ |
 | retCode      | Integer   | Returned status code                             |
 | errMsg              | String    | Error message                                                     |
-| pushDateChannelStat | Array | Returned result: result array by day. <br/>Individual elements in the array represent daily statistics by channel, formed by `date` and `channelDatas`. The element structure of `channelDatas` is as follows |
+| pushDateChannelStat | Array | Returned result: result array by day. <br/>Individual elements in the array represent daily statistics by channel, formed by `date` and `channelDatas`. The element structure of `channelDatas` is as follows. |
 
 
 #### channelDatas
 
 | Parameter Name | Type   | Description           |
 | --------- | ------ | ------------------------------------------------------------ |
-| channel   | String | Push channel name. <br>  xg: TPNS channel<br> hw: Huawei channel<br> xm: Mi channel<br> mz: Meizu channel<br>oppo: OPPO channel<br> vivo: Vivo channel<br> apns: APNs channel<br> fcm: FCM channel<br> rog: ROG channel |
-| pushState | Object   | Push funnel statistics. For the data structures, please see `pushState` below |
+| channel   | String | Push channel name <br>  xg: TPNS channel<br> hw: Huawei channel<br> xm: Mi channel<br> mz: Meizu channel<br>oppo: OPPO channel<br> vivo: Vivo channel<br> apns: APNs channel<br> fcm: FCM channel<br> rog: ROG channel |
+| pushState | Object   | Push funnel statistics. For the data structures, please see `pushState` below. |
 
 
 #### pushState (Android)
@@ -42,8 +42,8 @@ The API request address is corresponding to the service access point. Select the
 | pushActiveUv        | Integer  | Scheduled<br/>Number of available devices connected to the Internet within 90 days that meet the target push conditions and on which the notification bar is enabled.                                                |
 | pushOnlineUv        | Integer  | Sent<br/>Actual number of available devices in the scheduled devices that have been delivered to vendor channels or to process online terminal using TPNS channel.                                                   |
 | arrivalUv         | Integer  | Number of reached devices (including arrival receipts for the TPNS and vendor channels. For the Huawei and Meizu channels, you need to add a configuration item for arrival receipt manually. For more information, please see [Acquisition of Vendor Channel Arrival Receipt](https://intl.cloud.tencent.com/document/product/1024/35246)) |
-| verifySvcUv         | Integer | Number of reached devices (only valid for TPNS, ROG, and FCM channels. For other vendor channels, the `pushOnlineUv` metric of actual deliveries by TPNS will be used). **Note:** this field will be disused subsequently. You are recommended to check the `arrivalUv` field for arrival data |
-| callbackVerifySvcUv | Integer  | Arrival receipt for vendor channel (for the Huawei and Meizu channels, you need to add a configuration item for arrival receipt manually. For more information, please see [Acquisition of Vendor Channel Arrival Receipt](https://intl.cloud.tencent.com/document/product/1024/35246)). **Note:** this field will be disused subsequently. You are recommended to check the `arrivalUv` field for arrival data |
+| verifySvcUv         | Integer | Number of reached devices (only valid for TPNS, ROG, and FCM channels. For other vendor channels, the `pushOnlineUv` metric of actual deliveries by TPNS will be used). <br>**Note:** this field will be disused subsequently. You are recommended to check the `arrivalUv` field for arrival data. |
+| callbackVerifySvcUv | Integer  | Arrival receipt for vendor channel (for the Huawei and Meizu channels, you need to add a configuration item for arrival receipt manually. For more information, please see [Acquisition of Vendor Channel Arrival Receipt](https://intl.cloud.tencent.com/document/product/1024/35246)). <br>**Note:** this field will be disused subsequently. You are recommended to check the `arrivalUv` field for arrival data. |
 | clickUv             | Integer  | Clicked                                                         |
 | cleanupUv           | Integer  | Cleared                                                         |
 
