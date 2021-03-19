@@ -25,9 +25,9 @@ For custom command descriptions, please see [Hybrid Storage Edition > Custom com
 | hash group         | hsetnx                | &#10003; | &#10003;   | -                   |
 | hash group         | hstrlen               | &#10003; | &#10003;   | -                   |
 | hash group         | hvals                 | &#10003; | &#10003;   | -                   |
-| hash group         | hscan                 | &#10003; | &#10003;   | -                   |
+| hash group         | hscan                  | x   | x     | x                  |
 | keys group         | del                   | &#10003; | &#10003;   | &#10003;            |
-| keys group         | scan                  | Custom   | Custom     | -                   |
+| keys group         | scan                  | x   | x     | x                  |
 | keys group         | exists                | &#10003; | &#10003;   | x                   |
 | keys group         | expire                | &#10003; | &#10003;   | -                   |
 | keys group         | expireat              | &#10003; | &#10003;   | -                   |
