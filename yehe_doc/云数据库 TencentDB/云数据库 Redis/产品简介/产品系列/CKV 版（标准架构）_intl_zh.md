@@ -1,3 +1,6 @@
+
+>?云数据库 Redis CKV 版已暂停售卖，建议您选择 [云数据库 Redis 内存版](https://intl.cloud.tencent.com/document/product/239/31959)。
+
 云数据库 Redis CKV 版（标准架构）采用主从节点部署架构，提供数据持久化和备份，适用于对数据可靠性、可用性均有要求的场景。
 主节点提供日常服务访问，从节点提供 HA，当主节点发生故障，系统会自动切换至从节点，保证业务平稳运行。CKV 版（标准架构）兼容 Redis 3.2 版本的命令和协议，支持4GB - 384GB的规格，满足大容量存储的需求。
 ![](https://main.qcloudimg.com/raw/dd4615622819ebf541e3c33d76302b73.png)
@@ -32,7 +35,7 @@ CKV 版（标准架构）仅支持“实例 ID:密码”的密码格式类型，
 ## 兼容性
 **CKV 版（标准架构）支持的命令：**
 
-| **connection 族** | **geo 族** | **hashes 族** | **hyperloglog 族** | **keys 族** | **lists 族** | **pub/sub 族** | **server 族** | 
+| **connection 族** | **geo 族** | **hashes 族** | **hyperloglog 族** | **keys 族** | **lists 族** | **pub/sub 族** | **server 族** |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | auth | geoadd | hdel | pfadd | del | lindex | psubscribe | command |
 | echo | geohash | hexists | pfcount | scan | linsert | pubsub | dbsize |

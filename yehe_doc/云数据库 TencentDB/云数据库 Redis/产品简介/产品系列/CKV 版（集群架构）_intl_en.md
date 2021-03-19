@@ -1,36 +1,39 @@
-TencentDB for Redis CKV Edition (cluster architecture) provides dual-replica cluster edition instances, which break the single-thread bottleneck to meet your business needs for large capacity or high performance. It is compatible with Redis 3.2 protocols and commands and supports up to 128 shards of 12 GB–48 TB capacity.
+
+>?TencentDB for Redis CKV Edition is currently unavailable. We recommend [TencentDB for Redis Memory Edition](https://intl.cloud.tencent.com/document/product/239/18336) for you.
+
+TencentDB for Redis CKV Edition (cluster architecture) provides dual-replica cluster instances, which break the single-thread bottleneck to meet your business needs for large capacity or high performance. CKV Edition (cluster architecture) is compatible with Redis 3.2 protocols and commands and supports up to 128 shards of 12 GB–48 TB capacity.
 
 ## Features
-- **Service reliability**
-With a dual-server master/slave architecture, the master and slave nodes reside on different physical machines with the master node providing external access. You can perform data CRUD using the Redis command line or client. The slave node provides data backup and high availability (HA). In case that the master node fails, the proprietary HA system will automatically perform master-slave switch to ensure smooth operation of the business.        
-- **Data reliability**
-The data persistence feature is enabled by default, so all data will be stored in disks. Data backup is supported; therefore, you can roll back or clone instances for backup sets to effectively cope with data misoperations and other issues.
-- **Lower latency**
+- **Robust service**
+With a dual-server master/replica architecture, the master and replica nodes reside on different physical machines with the master node providing external access and the replica node providing data backup and high availability (HA). You can perform data CRUD using the Redis command line or client. In case that the master node fails, the proprietary HA system will automatically perform master/replica switchover to ensure smooth operation of the business.        
+- **Reliable data**
+The data persistence feature is enabled by default with all data stored in disks. CKV Edition (cluster architecture) supports data backup. You can roll back or clone instances from backup sets to effectively cope with data misoperations and other issues.
+-**Lower latency**
 CKV uses a high-performance network platform and a proxy-free architecture, which significantly reduce the access latency and network latency by up to 60% in high-load scenarios.
-- **Read-only slave**
-CKV Edition (cluster architecture) can greatly improve the read performance by 40% on average by enabling slaves. The read-only slave feature is not enabled by default. Currently, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application. Due to the replication delay between the CKV master node and slave node, after the real-only slave feature is enabled, some legacy data may be read; therefore, please confirm whether your business can accept slight data inconsistency before enabling this feature.
+- **Read-only replica**
+CKV Edition (cluster architecture) can greatly improve the read performance by 40% on average by enabling read-only replica. The read-only replica feature is not enabled by default. Currently, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application. Due to the replication delay between the CKV master node and replica node, after the read-only replica feature is enabled, some legacy data may be read; therefore, please confirm whether your business can accept slight data inconsistency before enabling this feature.
 - **Smooth upgrade**
-CKV Edition (cluster architecture) uses a unique scheme to ensure that version upgrade is imperceptible to the business, thereby ensuring maximum service availability.
+With unique schemes, CKV Edition (cluster architecture) can ensure the business-imperceptible version upgrade, thus maximizing the service availability.
 
 ## Use Cases
-- **Single instance for high data volume**
-CKV Edition (cluster architecture) uses a distributed architecture, making it suitable for storing high volumes of data in one single instance. Its capacity can exceed the upper limit of 384 GB of CKV Standard Edition.
+- **Large volume of data in a single instance**
+CKV Edition (cluster architecture) uses a distributed architecture, making it suitable for storing high volumes of data in one single instance. Its capacity can exceed the upper limit of 384 GB of CKV Edition (standard architecture).
 - **High QPS and concurrence requirements**
 CKV Edition (cluster architecture) uses a distributed architecture where reads and writes are spread across multiple nodes. Under the condition that the keys are evenly distributed, its QPS can increase linearly with the number of nodes. At present, it supports a maximum of 128 shards and 10 million QPS.
-- **Insensitivity for protocol support**
+- **Insensitive protocol support**
 CKV Edition (cluster architecture) supports slightly less protocols than the open-source editions.
 
-## Connection Sample
-CKV Edition (cluster architecture) only supports the password format of `instance ID:password`. For example, if your instance ID is `crs-bkuza6i3` and the password is `abcd1234`, then the connection command should be `redis-cli -h IP -p port -a crs-bkuza6i3:abcd1234`.
+## Connection Example
+CKV Edition (cluster architecture) only supports the password format: `instance id:password`. For example, if your instance ID is crs-bkuza6i3 and the password is abcd1234, the connection command is redis-cli -h IP address -p port -a crs-bkuza6i3:abcd1234.
 
 
 ## Use Limits
--The minimum unit of `pttl` setting display in the CKV engine is second, which is different from Redis Community Edition.
+- The minimum unit of `pttl` in CKV Edition is second, which is different from Redis Community Edition.
 - Currently, string-type keys are supported, and a value can be up to 32 MB, which are different from Redis Community Edition.
-- Except batch operations of MSET and MGET, other batch operations require the batch keys to be in the same slot; otherwise, an error will be displayed stating `CROSSSLOT Keys in request don't hash to the same slot`.
-- After a shard is full, `subscribe` and `psubscribe` operations need to use a certain amount of memory; therefore, new subscriptions will be affected, but `publish` operations on subscribed channels will not.
+- Except MSET and MGET, other batch operations require that all the keys be in the same slot, otherwise an error message "CROSSSLOT Keys in request don't hash to the same slot" may occur.
+- When a shard is full, `subscribe`/`psubscribe` takes up a certain amount of memory, which affects the addition of a new subscription, but does not affect the publish of the subscribed channel.
 
-## Special Notes
+## Notes
 - At present, the size of a single shard in CKV Edition (cluster architecture) is 4 GB by default; therefore, it is recommended that the value of a single key not exceed 4 GB.
 - CKV Edition (cluster architecture) currently provides monitoring at the cluster dimension.
 
@@ -39,7 +42,7 @@ CKV Edition (cluster architecture) only supports the password format of `instanc
 
 **Commands supported by CKV Edition (cluster architecture):**
  
-| **connection group** | **geo group** | **hashes group** | **hyperloglog group** | **keys group** | **lists group** | **pub/sub group** | 
+| **connection Group** | **geo Group** | **hashes Group** | **hyperloglog Group** | **keys Group** | **lists Group** | **pub/sub Group** | 
 | --- | --- | --- | --- | --- | --- | --- |
 | auth | geoadd | hdel | pfadd | del | lindex | psubscribe | 
 | echo | geohash | hexists | pfcount | exists | linsert | pubsub | 
@@ -57,7 +60,7 @@ CKV Edition (cluster architecture) only supports the password format of `instanc
 | -　 | -　 | hvals | -　 | - | rpushx | -　 | -　 |
 | -　 |- 　 | hscan | -　 |-  | -　 | -　 | -　 |
 
-|**sets group** | **sorted sets group** | **strings group** | **transactions group** |**server group** | 
+|**sets Group** | **sorted sets Group** | **strings Group** | **transactions Group** |**server Group** | 
 | --- | --- | --- | --- | --- |
 | sadd | zadd | append | discard | command |
 | scard | zcard | bitcount | exec | dbsize |
@@ -85,7 +88,7 @@ CKV Edition (cluster architecture) only supports the password format of `instanc
 
 **Commands not supported by CKV Edition (cluster architecture):**
 
-| **cluster group** | **connection group** | **keys group** | **lists group** | **scripting group** | **server group** | **strings group** |
+| **cluster Group** | **connection Group** | **keys Group** | **lists Group** | **scripting Group** | **server Group** | **strings Group** |
 | --- | --- | --- | --- | --- | --- | --- |
 | cluster addslots | swapdb | touch | blpop | eval | bgrewriteaof | bitfield |
 | cluster count-failure-reports | -　 | restore | brpop | evalsha | bgsave | -　 |

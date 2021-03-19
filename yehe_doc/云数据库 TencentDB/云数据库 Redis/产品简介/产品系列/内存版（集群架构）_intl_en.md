@@ -1,15 +1,15 @@
-TencentDB for Redis Memory Edition (cluster architecture) is a new edition of Redis built by Tencent Cloud based on Community Edition of Redis Cluster that is compatible with Redis 4.0 and 5.0 commands. It uses a distributed architecture to enable elastic scaling and features high flexibility, availability, and performance of tens of millions of QPS. Specifically, it supports horizontal scaling of 3–128 shards and replica scaling of 1–5 replica sets, where the scaling and migration are virtually imperceptible to the business, maximizing the system availability. 
+TencentDB for Redis Memory Edition (cluster architecture) is a new edition of Redis built by Tencent Cloud based on Community Edition of Redis Cluster, which is compatible with Redis 4.0 and 5.0 commands. It uses a distributed architecture to enable elastic scaling and features high flexibility, availability, and performance of tens of millions of QPS. Specifically, it supports horizontal scaling of 3–128 shards and replica scaling of 1–5 replica sets, where the scaling and migration are virtually imperceptible to the business, maximizing the system availability.
 ![](https://main.qcloudimg.com/raw/d023aa7ddecec8b0b42a899b7ea307b0.png)
 
 ## Use Cases
-**Master/Slave high-availability scenarios**
-This edition allows you to configure a replica set for a single node to achieve high master/slave availability. It features dual-server hot backup and automatic failover to ensure high reliability and availability of the Redis service.
- **Read/Write separation scenarios**  
+**Master/replica high-availability (HA) scenarios**
+The Memory Edition (cluster architecture) allows you to configure a replica set for a single node to achieve high master/replica availability. It boasts dual-server hot backup and automatic failover to ensure high reliability and availability of the Redis service.
+ **Read/write separation scenarios**  
 When the number of replica nodes is greater than 1, automatic read/write separation can be enabled for the TencentDB for Redis instance to extend the read performance of a single node. Up to 5 replica sets can be supported and read access weights across the master node and replica nodes can be configured. 
-**Multi-Shard high-performance scenarios**
-Memory Edition (cluster architecture) automatically enables auto-sharding and achieves horizontal scaling of system performance by assigning different keys to multiple nodes.
+**High-performance scenarios for multiple shards**
+The Memory Edition (cluster architecture) automatically enables auto-sharding and achieves horizontal scaling of system performance by assigning different keys to multiple nodes.
 
-## Cluster Specification
+## Cluster Specifications
 - Shard size (GB): 2, 4, 8, 12, 16, 20, 24, 28, 32
 - Number of shards: 3, 5, 8, 12, 16, 24, 32, 64, 96, 128 
 - Number of replicas: 1, 2, 3, 4, 5 
@@ -17,29 +17,25 @@ Memory Edition (cluster architecture) automatically enables auto-sharding and ac
 
 ## Cluster Mode
 - In cluster mode, data is automatically sharded. The system provides data load balancing and migration capabilities.
-- The cluster mode supports shards of 2–32 GB specifications.
-- The cluster mode is compatible with certain commands of the non-cluster mode, mainly reflected in cross-slot data access. For more information, pleas see [Command Compatibility Description](#xianzhi).
+- The cluster mode supports shards of 2-32 GB.
+- The cluster mode is compatible with certain commands of the non-cluster mode, mainly reflected in cross-slot data access. For more information, please see [Notes on Command Compatibility](#xianzhi).
 
 ## Replica Description
-- When there is only one replica, Redis provides master/slave real-time hot backup for high data reliability and high availability (cross-server in the same AZ). When the HA system detects a node failure, it requests for switching to a slave node, and add a new slave node to the system.
-- When the number of replicas is greater than 1, Redis provides master/slave real-time hot backup with the slave nodes being read-only.
+- When there is only one replica, Redis provides master/replica real-time hot backup for high data reliability and availability (server-level HA is supported in a single AZ). When the HA system detects a node failure, it requests for switching to a replica node, and add a new replica node to the system.
+- When the number of replicas is greater than 1, Redis provides master/replica real-time hot backup with the replica nodes being read-only.
 
 ## Features
 **Flexibility** 
-Memory Edition (cluster architecture) supports horizontal scaling of 3–128 nodes and replica scaling of 1–5 replica sets, making it ideal for various scenarios through instance specification adjustment.
+The Memory Edition (cluster architecture) supports horizontal scaling of 3-128 nodes and scaling of 1-5 replica sets, making it ideal for various scenarios through instance specification adjustment.
 **Availability** 
 In Memory Edition (cluster architecture), scaling of shard quantity and replica quantity are virtually imperceptible to the business, maximizing the system availability.
  **Compatibility**
-Memory Edition (cluster architecture) supports use cases of native clusters of Redis Community Edition and Codis and is compatible with clients such as Jedis.
+The Memory Edition (cluster architecture) supports use cases of the Community Edition of Redis Cluster and Codis and is compatible with clients such as Jedis.
  **OPS**
-Memory Edition (cluster architecture) maximizes system capability openness and has advanced features such as shard-level monitoring and management, data migration and load balancing, as well as monitoring of big and hot keys, which help facilitate total system management and OPS.
+The Memory Edition (cluster architecture) maximizes system capability and has advanced features such as shard-level monitoring and management, data migration and load balancing, as well as monitoring of big and hot keys, which help facilitate total system management and OPS.
 
-
-
-
-<span id = "xianzhi"></span>
-## Command Compatibility Description
-Memory Edition (cluster architecture) stores data in a distributed manner, and its biggest difference from the standard architecture lies in whether a single command supports multikey access. For the cluster architecture, commands can be categorized into supported, partially supported, and unsupported. For the complete list of compatible commands, please see [Command Compatibility](https://cloud.tencent.com/document/product/239/36152).
+## [Notes on Command Compatibility](id:xianzhi)
+The Memory Edition (cluster architecture) stores data in a distributed manner, and its biggest difference from standard architecture lies in whether a single command supports multikey access. For the cluster architecture, commands can be categorized into custom, supported, and unsupported. For the complete list of compatible commands, please see [Command Compatibility](https://intl.cloud.tencent.com/document/product/239/31958).
 
 #### Unsupported commands
 The system will return the following error:
@@ -49,17 +45,16 @@ The system will return the following error:
 ```
 
 #### Partially supported commands
-Memory Edition (cluster architecture) is compatible with smart clients such as Jedis Cluster. For compatibility with Jedis Cluster, TencentDB for Redis modifies the IP list returned by the supported commands, and the IP address of each node in the returned information is the instance's VIP.
+The Memory Edition (cluster architecture) is compatible with smart clients such as JedisCluster. For compatibility with JedisCluster, TencentDB for Redis modifies the IP list returned by the supported commands, and the IP address of each node in the returned information is the instance's VIP.
 - CLUSTER NODES
 - CLUSTER SLOTS
 - CONFIG GET
 
 #### Supported cross-slot commands
-Currently, cross-slot access commands supported by Memory Edition (cluster architecture) include MGET, MSET, and DEL but not other multikey commands.
+Currently, cross-slot access commands supported by Memory Edition (cluster architecture) include only MGET, MSET, and DEL.
 
-<span id = "ziding"></span>
-#### Custom commands
-Through VIP encapsulation, Memory Edition (cluster architecture) provides a user experience in cluster mode comparable to the standalone edition, making it much easier for use in different scenarios. To increase the transparency to OPS, custom commands can be used. Access to each node in the cluster is supported by adding a parameter **node ID** on the right of the original command parameter list, such as COMMAND arg1 arg2 ... node ID. The node ID can be obtained through the `cluster nodes` command or in the console:
+#### [Custom commands](id:ziding)
+Through VIP encapsulation, the Memory Edition (cluster architecture) provides a user experience in cluster mode comparable to the standalone edition, making it much easier for use in different scenarios. To increase the transparency to OPS, custom commands can be used. Access to each node in the cluster is supported by adding a parameter **node ID** on the right of the original command parameter list, such as "COMMAND arg1 arg2 ... node ID". The node ID can be obtained through the `cluster nodes` command or in the console:
 ```
   10.1.1.1:2000> cluster nodes
   25b21f1836026bd49c52b2d10e09fbf8c6aa1fdc 10.0.0.15:6379@11896 slave 36034e645951464098f40d339386e9d51a9d7e77 0 1531471918205 1 connected
@@ -82,7 +77,7 @@ Through VIP encapsulation, Memory Edition (cluster architecture) provides a user
   keys a* 238b45926a528c85f40ae89d6779c802eaa394a2
 ```
 
-Custom command list:
+List of custom commands:
 - INFO
 - MEMORY
 - SLOWLOG
@@ -93,7 +88,7 @@ Custom command list:
 - MONITOR
 
 #### Transactional support
-Memory Edition (cluster architecture) supports transactional commands provided that the transactions are started by the WATCH command. The keys of a transaction should be stored in the same slot, and the keys of WATCH and transaction-related keys should also be stored in the same slot. HashTag is recommended for multikey transactions in cluster mode.
+The Memory Edition (cluster architecture) supports transactional commands. A transaction should start with the `WATCH` command, the keys of a transaction should be stored in the same slot, and the keys of `WATCH` and transaction-related keys should be stored in the same slot too. Hashtag is recommended for multikey transactions in cluster mode.
 
 #### Multi-database support
-Memory Edition (cluster architecture) supports multiple databases (256 by default); therefore, it can support all commands related to database operations.
+The Memory Edition (cluster architecture) supports multiple databases (256 by default); therefore, it can support all commands related to database operations.
