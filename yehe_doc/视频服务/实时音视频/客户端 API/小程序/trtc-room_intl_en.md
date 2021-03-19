@@ -1006,6 +1006,7 @@ trtcRoomContext.on(EVENT.IM_MESSAGE_RECEIVED,(event)=>{
 | REMOTE_AUDIO_ADD           | A remote audio stream was added. This notification will be received when a remote user publishes an audio stream |
 | REMOTE_AUDIO_REMOVE        | A remote audio stream was removed. This notification will be received when a remote user cancels audio stream release |
 | REMOTE_STATE_UPDATE        | The remote user playback status changed |
+| LOCAL_AUDIO_VOLUME_UPDATE  | Local volume changed                      |
 | LOCAL_NET_STATE_UPDATE     | The local push network status changed |
 | REMOTE_NET_STATE_UPDATE    | The remote user network status changed |
 | REMOTE_AUDIO_VOLUME_UPDATE | The remote user volume level changed |
