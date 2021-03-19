@@ -37,7 +37,7 @@ Run the `pip` command to install COSCMD:
 pip install coscmd
 ```
 
- After the installation is complete, you can run the `-v` or `--version` command to view the version information.
+After the installation is complete, you can run the `-v` or `--version` command to view the version information.
 
 #### 1.2 Upgrading with pip
 
@@ -83,7 +83,7 @@ pip install coscmd --no-index -f coscmd-packages
 You can run the `-h` or `--help` command to view the information and usage of COSCMD.
 
 ```plaintext
-coscmd -h  // View information about the current version
+coscmd -h
 ```
 
 The help information is as follows:
