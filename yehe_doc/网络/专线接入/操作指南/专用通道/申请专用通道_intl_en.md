@@ -11,7 +11,7 @@ A dedicated tunnel is a network link segmentation of a connection. You can creat
 ### Step 1: apply for a dedicated tunnel
 1. Log in to the [Direct Connect - Dedicated Tunnel](https://console.cloud.tencent.com/dc/dcConn) console.
 2. Click **+New** at the top of the **Dedicated Tunnels** page, complete the basic configurations such as name, connection type, access network, region and associated direct connect gateway, and click **Next**.
-![](https://main.qcloudimg.com/raw/2c73253e11ecd199034a926ae848c315.png)
+
 <table>
 <tr>
 <th width="15%">Field</th>
@@ -48,8 +48,9 @@ A dedicated tunnel is a network link segmentation of a connection. You can creat
 <td>Associate an existing direct connect gateway with the dedicated tunnel. A 2.0 tunnel does not support a NAT-type direct connect gateway.</td>
 </tr>
 </table>
+
 3. Configure the following parameters on the **Advanced Configuration** page.
-![](https://main.qcloudimg.com/raw/d5aa5c9b6488ec7a867eaf373a40293c.png)
+
 <table>
 <tr>
  <th width="15%">Field</th>
@@ -106,7 +107,8 @@ A dedicated tunnel is a network link segmentation of a connection. You can creat
 >
 
 
-4. Configure IDC devices. You can click **Download Configuration Guide** to download related files and complete the configurations as instructed in the guide.<p><img src="https://main.qcloudimg.com/raw/f5480a8e21884a3bbf1cd38c109f23bc.png"></img></p>
+4. Configure IDC devices. You can click **Download Configuration Guide** to download related files and complete the configurations as instructed in the guide.
+
 <table>
 <tr>
 <th width="20%">Parameter</th>
@@ -119,6 +121,7 @@ A dedicated tunnel is a network link segmentation of a connection. You can creat
 <td>You can update the IP range later via “Change Tunnel” on the console.</td>
 </tr>
 </table>
+
 5. Click **Submit**.
 
 ### Step 2: set the alarm recipient
@@ -126,24 +129,24 @@ After a dedicated tunnel is created, Tencent Cloud automatically configures four
 This default alarm policy does not configure recipient information, so you can only view alarms on the console. To configure a recipient, take the following steps.
 1. Log in to the [Cloud Monitor](https://console.cloud.tencent.com/monitor/overview) console and choose **Alarm Configuration** > **Alarm Policy** on the left sidebar.
 2. Select **Direct Connect** as the “Product Type” at the top of the “Alarm Policy” page.
-![](https://main.qcloudimg.com/raw/dd623aec4ea3048e34922cfbc75261c7.png)
+
 3. Perform the following operations as needed.
  - Configure alarm recipients
      1. Click the name of the target default policy in the “Alarm Policy” list.
      2. Click **Edit** under the **Alarm Recipient** tab and select alarm recipients from the list in the pop-up window. You can also click **Add Recipient Group** to configure new recipient groups if you don’t have any alarm recipient.
-      ![](https://main.qcloudimg.com/raw/12444a2429ead98ac07897d7955c7426.png)
+
  - Modify an alarm policy
      1. Click the name of the target default policy in the alarm policy list.
      2. Click **Edit** next to the **Trigger Condition** and modify the trigger conditions in the pop-up window. For more information on the event alarm, please see the “Event Alarms” section in [Alarm Overview](https://intl.cloud.tencent.com/document/product/216/38403). After the modification, click **Save**.
  - Set a default policy
      If the default alarm policy cannot meet your needs, you can select a custom alarm policy and click **Set Default** under the **Policy Type** column. Then the selected alarm policy will be automatically applied to dedicated tunnels being created afterwards.
-    ![](https://main.qcloudimg.com/raw/7230beab44341f97f172fbc9532095e3.png)
+
 
 ## Connection Status
 After the dedicated tunnel is created, it will be displayed on the **Dedicated Tunnels** page in the **Applying** status.
-![](https://main.qcloudimg.com/raw/a184734e3f46469ac1e2dba8c6bdfe6b.png)
+
 The possible connection statuses of a dedicated channel include:
-![](https://main.qcloudimg.com/raw/407ce7d9d6113518793ea3cd76fee7cd.png)
+![](https://main.qcloudimg.com/raw/11b697a5399930b24682ab6e8387dde8.png)
 - **Applying**
   The system has received your application for a new dedicated tunnel and is ready to start the creation.
 - **Configuring**
