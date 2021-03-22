@@ -7,7 +7,7 @@ Based on Tencent Cloud's many years of expertise in audio/video services, CSS su
 - For different live streaming scenarios such as high-concurrency playback and push and ultra-low delay, CSS provides different tailor-made solutions to cater to the specific use cases, delivering a higher product cost performance.
 
 ### Video Delivery Coverage
-With over 1,300 cache nodes deployed globally, CSS can ensure high service availability and media transfer speed even during peak hours with high concurrency.
+With over 2,000 cache nodes deployed globally, CSS can ensure high service availability and media transfer speed even during peak hours with high concurrency.
 
 ### Video Data Analysis
 By collecting data such as live streaming traffic consumption, requests, and concurrency in real time, CSS controls push quality and identifies playback issues with ease. It provides detailed statistical results to help you expand your business rapidly. 
