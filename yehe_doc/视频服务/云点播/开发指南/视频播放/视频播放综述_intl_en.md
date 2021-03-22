@@ -16,12 +16,12 @@ Short videos generally refer to videos of less than 5 minutes in length, mainly 
 * Product promotion videos shared on ecommerce platforms (such as JD.com and Pinduoduo).
 * Videos shared on WeChat Official Account and we media.
 
-
+<img src="https://main.qcloudimg.com/raw/36d901de64420df8e7d49bae570eaeb3.png" width="800" />
 
 ### Playback architecture
 For short video playback scenarios, VOD provides the **basic player SDK**, which uses the URL as a parameter to play back the selected video on demand.
 
-
+<img src="https://main.qcloudimg.com/raw/a9d4a24cefcdb3ccba1b316ea6be9ee0.png" width="700" />
 
 The overall architecture of playback with the basic player SDK is as follows:
 1. **Upload from server**: the business backend uploads a video to VOD through the console, server API, or other means.
