@@ -41,9 +41,9 @@ You can [submit a ticket](https://console.cloud.tencent.com/workorder/category?l
 - Recording template ID added in [Step 3](#step3). 
 - Define time-shift duration `timeshift_dur` in seconds
 >?
-	- Time-shift duration, which refers to the maximum time-shift duration (up to 7 days currently).
-	- The defined duration may not take accurately. We recommend that you adding a little buffer.
-	- Suppose the duration is configured as 7200 (2 hours), you will be able to request time-shifted contents generated less than 2 hours ago (`delay`, or the time-shift duration will range from 90 seconds to 2 hours). When any content generated more than 2 hours ago is requested, `HTTP 404` will be returned even if there is live streaming content.
+	>- Time-shift duration, which refers to the maximum time-shift duration (up to 7 days currently).
+	>- The defined duration may not take accurately. We recommend that you adding a little buffer.
+	>- Suppose the duration is configured as 7200 (2 hours), you will be able to request time-shifted contents generated less than 2 hours ago (`delay`, or the time-shift duration will range from 90 seconds to 2 hours). When any content generated more than 2 hours ago is requested, `HTTP 404` will be returned even if there is live streaming content.
 
 ## Playback Request
 ### Request URL format
