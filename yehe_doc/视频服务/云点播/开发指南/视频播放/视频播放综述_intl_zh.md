@@ -16,12 +16,12 @@
 * 电商购物平台（京东、拼多多）中的商品宣传视频。
 * 微信公众号、自媒体中分享的短片。
 
-
+<img src="https://main.qcloudimg.com/raw/36d901de64420df8e7d49bae570eaeb3.png" width="800" />
 
 ### 播放架构
 针对短视频播放场景，点播提供了**基础播放器 SDK**，使用 URL 作为参数，播放点播中的视频。
 
-
+<img src="https://main.qcloudimg.com/raw/a9d4a24cefcdb3ccba1b316ea6be9ee0.png" width="700" />
 
 使用基础播放器 SDK 播放的整体架构流程如下：
 1. **服务端上传**：业务后台通过控制台、服务端 API 等方式，将视频上传到云点播。
