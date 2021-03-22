@@ -2,42 +2,79 @@
 <img src="https://main.qcloudimg.com/raw/146d801f4900734b8faa0435b34ea6cc.png" width="650">
 
 ## Features
-### Audio/Video transcoding
+### Audio/video transcoding
 The transcoding feature converts a video bitstream. It changes parameters of the source bitstream, such as codec, resolution, and bitrate, for playback on different devices in various network environments. For more information, please see [Transcoding](https://intl.cloud.tencent.com/document/product/266/33938). The following benefits can be achieved with transcoding:
-- The distributed transcoding system of VOD supports multipart transcoding, elastic scalability of transcoding resources, and dynamic capacity expansion to meet the needs of custom transcoding in various scenarios.
-- VOD supports all mainstream formats, multiple resolutions, and multiple bitrates. It features flexibly configurable transcoding templates and custom watermarking.
-- VOD can intelligently analyze video metadata to select the optimal transcoding template accordingly and call back the transcoding result promptly.
-- VOD supports H.265 transcoding, 4K transcoding, HDR transcoding, and video transcoding to GIF.
+- Supports multipart transcoding, elastic scalability of transcoding resources, and dynamic capacity expansion to meet the needs of customized transcoding in various scenarios.
+- Supports all mainstream formats, multiple resolutions, and multiple bitrates. It features flexibly configurable transcoding templates and custom watermarking.
+- Intelligently analyzes video metadata to select the optimal transcoding template accordingly and calls back the transcoding result to the user promptly.
+- Supports H.265 transcoding, 4K transcoding, HDR transcoding, and video transcoding to GIF.
+
+### Supported transcoding formats:
+<table>
+   <tr>
+      <th width="0px" style="text-align:center">Parameter</td>
+      <th width="0px" style="text-align:center">Type</td>
+      <th width="0px"  style="text-align:center">Description</td>
+
+   </tr>
+   <tr>
+      <td rowspan='3' style="text-align:center">Input format</td>
+      <td style="text-align:center">Container mode</td>
+      <td>3GP, AVI, FLV, MP4, M3U8, MPG, ASF, WMV, MKV, MOV, TS, WebM, MXF</td>
+   </tr>
+   <tr>
+      <td style="text-align:center">Video codec</td>
+      <td>AV1, AVS2, H.264/AVC, H.263, H.263+, H.265, MPEG-1, MPEG-2, MPEG-4, MJPEG, VP8, VP9, QuickTime, RealVideo, Windows Media Video</td>
+   </tr>
+	    <tr>
+      <td style="text-align: center; ">Audio codec</td>
+      <td>AAC, ADPCM, AMR, DSD, MP1, MP2, MP3, PCM, RealAudio, Windows Media Audio, VORBIS</td>
+   </tr>
+
+   <tr>
+      <td rowspan='5' style="text-align:center">Output format</td>
+      <td rowspan='3' style="text-align:center">Container format</td>
+      <td>Video: FLV, MP4, HLS (M3U8 + TS), MXF</td>@
+   </tr>
+	    <tr>
+      <td>Audio: MP3, MP4, Ogg, FLAC, M4A</td>.
+   </tr>
+	 	    <tr>
+      <td>Image: GIF, WebP</td>
+   </tr>
+   <tr>
+      <td style="text-align:center">Video codec</td>
+      <td>H.264/AVC, H.265/HEVC, AV1</td>
+   </tr>
+	    <tr>
+      <td style="text-align:center">Audio codec</td>
+      <td>MP3, AAC, FLAC, MP2</td>
+   </tr>
+</table>
 
 
-### Audio/Video editing
-Audio/Video editing includes video splicing and editing features as detailed below:
-- VOD enables you to create audio/video clips of a specified duration starting at a specified time point and splice multiple video files.
-- VOD supports time point screencapturing, sampled screencapturing, and image sprite generating.
-- VOD supports deleting audio track from video.
-
-
-### Video DRM encryption
-The digital rights management (DRM) feature of VOD supports encryption of videos as detailed below:
-- VOD supports DRM encryption for protecting digital copyright and encrypts video content with the AES-128 algorithm.
-- VOD supports encryption in all HLS players and provides customized and personalized video encryption services.
+### Audio/video editing
+Audio/video editing includes video splicing and editing features as detailed below:
+- Enables you to create audio/video clips of a specified duration starting at a specified time point and splice multiple video files into a single file.
+- Supports point-in-time screencapture, sampled screencapture, and image sprite generation.
+- Supports deleting the audio track from a video.
 
 
 ### Video AI
-The video AI of VOD has various AI-powered features such as video audit, intelligent video recognition, and intelligent video analysis as detailed below:
-- VOD leverages YouTu's DeepEye intelligent porn detection technology to identify porn images and videos on your video platform, helping you greatly improve the coverage and efficiency of your fight against pornography and avoid the risk of being involved in distributing porn information in your business.
-- Currently, the accuracy of porn image recognition by the DeepEye engine has reached over 65% at a 0.01% FAR and over 80% at a 0.1% FAR.
-- Based on in-depth understanding of audio/video content, VOD is capable of searching for multiple elements such as tags, figures, phrases, scenes, and objects, helping you improve the availability of media assets and quickly locate desired video content.
-- VOD can generate distinctive tags and covers quickly for your audio/video content to increase the efficiency of recommendation service.
+The video AI of VOD has various AI-powered features such as intelligent video recognition and intelligent video analysis as detailed below:
+- Leverages YouTu's DeepEye intelligent recognition technology to identify pornography on your video platform. This helps you greatly improve the coverage and efficiency of your fight against pornography and build a green, healthy social network environment.
+- Offers an accuracy of over 65% at a 0.01% FAR and over 80% at a 0.1% FAR in porn recognition.
+- Supports searching for elements such as tags, figures, phrases, scenes, and objects based on in-depth understanding of audio/video content, helping you improve the availability of media assets and quickly locate desired video content.
+- Generates distinctive tags and thumbnails quickly for your audio/video content to increase the efficiency of recommendation service.
 
 
 ### Adaptive bitrate streaming
 Adaptive bitrate streaming refers to the process of transcoding a video and muxing it into adaptive bitstream for output. It involves audio/video files with various bitrates and a descriptive file (manifest).
 
-A player can dynamically select the most appropriate bitrate for playback based on the current bandwidth. The adaptive bitrate streaming parameters can specify "video transcoding parameter" and "audio transcoding parameter" of each substream. VOD uses an adaptive bitrate streaming template to represent the set of parameters for easy configuration. For more information, please see [Adaptive Bitrate Streaming](https://intl.cloud.tencent.com/document/product/266/33942). Specifically,
-- VOD can dynamically select the appropriate bitrate for playback based on the changes in the network bandwidth of devices, helping you conserve bandwidth while delivering a smoother viewing experience.
-- VOD supports customizing video and audio parameters to meet your diverse needs.
-- VOD supports multi-resolution, multi-bitrate substream modes that can be configured easily and flexibly.
+A player can dynamically select the most appropriate bitrate for playback based on the current bandwidth. The adaptive bitrate streaming parameters can specify "video transcoding parameters" and "audio transcoding parameters" of each substream. VOD uses an adaptive bitrate streaming template to represent the set of parameters for easy configuration. For more information, please see [Adaptive Bitrate Streaming](https://intl.cloud.tencent.com/document/product/266/33942). Adaptive bitrate streaming has the following benefits:
+- Dynamically selects the appropriate bitrate for playback based on the changes in the network bandwidth of devices, helping you conserve bandwidth while delivering a smoother viewing experience.
+- Supports customizing video and audio parameters to meet your diverse needs.
+- Supports multi-resolution, multi-bitrate substream modes that can be configured easily and flexibly.
 
 
 ### TESHD

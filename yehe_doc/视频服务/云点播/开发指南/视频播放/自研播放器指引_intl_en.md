@@ -32,9 +32,9 @@ A request is initiated in HTTP GET, and the URL is `https://playvideo.qcloud.com
 
 | Parameter | Required | Type | Description |
 | -- | -- | -- | -- |
-| appId | Yes | Integer | Account `appId`. |
+| appId | Yes | Integer | Account `appId`.|
 | fileId | Yes | String | File ID. |
-| currentTimeStamp | Yes | Integer | Current Unix timestamp of the distributed signature. |
+| currentTimeStamp | Yes | Integer | Unix timestamp of distributing a signature. |
 | expireTimeStamp | Yes | Integer | Expiration Unix timestamp of the distributed signature. If this parameter is left empty, the signature will expire 1 day after distribution. |
 | pcfg | No | String | Name of the superplayer configuration to be used. If you use the `Default` configuration, you can leave this parameter empty. |
 | urlAccessInfo | No | Object | Hotlink protection configuration parameter of playback link, which is in `UrlAccessInfo` type. |
@@ -54,11 +54,11 @@ A request is initiated in HTTP GET, and the URL is `https://playvideo.qcloud.com
 | Parameter | Required | Type | Description |
 | -- | -- | -- | -- |
 | expireTimeStamp | No | Integer | Expiration Unix timestamp of key. If this parameter is left empty, the key will expire in 1 day after the signature is distributed. |
-| strictMode | No | Integer | Check level. Valid values: 0, 1, 2. `0` indicates that the content key is allowed to be passed through, encrypted with a symmetric key, or encrypted with a symmetric key and an asymmetric key. `1` indicates that the content key is allowed to be encrypted with a symmetric key or encrypted with a symmetric key and an asymmetric key. `2` indicates that the content key is only allowed to be encrypted with a symmetric key and an asymmetric key. If the content key is allowed to be passed through, the content can be played back on any terminals. If the content key is encrypted, the client can play back the content only after decrypting the content key, which is currently not supported for mini program. |
+| strictMode | No | Integer | Check level. Valid values: 0, 1, 2. `0` indicates that the content key is allowed to be passed through, encrypted with a symmetric key, or encrypted with a symmetric key and an asymmetric key. `1` indicates that the content key is allowed to be encrypted with a symmetric key or encrypted with a symmetric key and an asymmetric key. `2` indicates that the content key is only allowed to be encrypted with a symmetric key and an asymmetric key. If the content key is allowed to be passed through, the content can be played back on any clients. If the content key is encrypted, the client can play back the content only after decrypting the content key. |
 
 ### Response field
 
-| Parameter | Type | Description |
+| Parameter  | Type | Description |
 | -- | -- | -- |
 | code | Integer | Error code. A value other than 0 indicates an error. |
 | message | String | Error message. It has a value when `code` is not 0. |
@@ -68,7 +68,7 @@ A request is initiated in HTTP GET, and the URL is `https://playvideo.qcloud.com
 
 #### Media type
 
-| Parameter | Type | Description |
+| Parameter  | Type | Description |
 | -- | -- | -- |
 | basicInfo | Object | Basic video information in the `BasicInfo` type. |
 | streamingInfo | Object | Multi-bitrate video information in the `StreamingInfo` type. |
@@ -83,11 +83,11 @@ A request is initiated in HTTP GET, and the URL is `https://playvideo.qcloud.com
 | size | Integer | Video size in bytes. |
 | duration | Float | Video duration in seconds. |
 | description | String | Video description. |
-| coverUrl | String | Video cover. |
+| coverUrl | String | URL of video thumbnail. |
 
 #### StreamingInfo type
 
-| Parameter | Type | Description |
+| Parameter  | Type | Description |
 | -- | -- | -- |
 |plainOutput|String| Unencrypted output in the `StreamingOutput` type. |
 |drmOutput|Array| Output after the video is DRM encrypted in the `StreamingOutput` type. |
@@ -95,7 +95,7 @@ A request is initiated in HTTP GET, and the URL is `https://playvideo.qcloud.com
 
 #### StreamingOutput type
 
-| Parameter | Type | Description |
+| Parameter  | Type | Description |
 | -- | -- | -- |
 | type | String | Adaptive bitstream protection type. Valid values: plain (no encryption), simpleAES (HLS common encryption). |
 | url | String | Playback URL. |
@@ -103,7 +103,7 @@ A request is initiated in HTTP GET, and the URL is `https://playvideo.qcloud.com
 
 #### SubStreamInfo type
 
-| Parameter | Type | Description |
+| Parameter  | Type | Description |
 | -- | -- | -- |
 | type | String | Substream type. Valid values: video. |
 | width | Integer | Substream video width in px. |
@@ -112,7 +112,7 @@ A request is initiated in HTTP GET, and the URL is `https://playvideo.qcloud.com
 
 #### ImageSpriteInfo type
 
-| Parameter | Type | Description |
+| Parameter  | Type | Description |
 | -- | -- | -- |
 | imageUrls | Array | Array of thumbnail download URLs in `String` type. |
 | webVttUrl | String | Thumbnail VTT file download URL. |
@@ -158,7 +158,7 @@ The following is an example of playing back the encrypted output of a video.
 ### Request
 `https://playvideo.qcloud.com/getplayinfo/v4/125xxx167/52858xxx74597?psign=0eef1a12dxxxf0f48ebf34b4&cipheredOverlayKey=5872bd2fcc76176a2db6fcd1341c04e891643e938bf8901310846de62d6942f49e7393cbaf96fd48bfeb7f50878d5bafe93017670e4483e6ccc3c8908ee2ae42823b875aa171a44781cc417163d19d503dda2ba1e6242f41b49c1de12bed52de310a71ba3d8660a9a086289a54f573f1141c451b6ec88ca917c586b4d7735e20&cipheredOverlayIv=5872bd2fcc76176a2db6fcd1341c04e891643e938bf8901310846de62d6942f49e7393cbaf96fd48bfeb7f50878d5bafe93017670e4483e6ccc3c8908ee2ae42823b875aa171a44781cc417163d19d503dda2ba1e6242f41b49c1de12bed52de310a71ba3d8660a9a086289a54f573f1141c451b6ec88ca917c586b4d7735e20&keyId=1`
 
-### Response
+## Response
 ```json
 {
     "code":0,
@@ -169,7 +169,7 @@ The following is an example of playing back the encrypted output of a video.
     "warning":"",
     "media":{
         "basicInfo":{
-            "name":"Animal World",
+            "Name":"Animal World",
             "size":26246026,
             "duration":30.5,
             "description":"A classic animal program from CCTV",
@@ -188,7 +188,7 @@ The following is an example of playing back the encrypted output of a video.
                             "type":"video",
                             "width":427,
                             "height":240,
-                            "resolutionName":"LD"
+                            "resolutionName":"Smooth"
                         },
                         {
                             "type":"video",
@@ -230,9 +230,9 @@ The following is an example of playing back the encrypted output of a video.
 ```
 
 ## Glossary
-| Parameter | Type | Description |
+| Parameter  | Type | Description |
 | -- | -- | -- |
-| OverlayKey | String | Key for secondary client encryption, which is used to encrypt the content key. It contains 32 characters, where each character represents a hexadecimal digit. |
+| OverlayKey | String | Secondary client encryption key, which is used to encrypt the content key. It is a string containing 32 bytes and is calculated by hexadecimal encryption of the 128-bit key. |
 | OverlayIv | String | Initialization vector for secondary client encryption, which is used to encrypt the content key. It contains 32 characters, where each character represents a hexadecimal digit. |
 | cipheredOverlayKey | String | Additional encryption key used to encrypt the key, which contains 256 hexadecimal characters. |
 | cipheredOverlayIv | String | Additional encryption initialization vector used to encrypt the key, which contains 256 hexadecimal characters. |
