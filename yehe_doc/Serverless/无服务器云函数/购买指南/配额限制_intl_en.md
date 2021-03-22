@@ -18,6 +18,9 @@ The quota limits for each user account are as follows:
 >! 
 >- SCF currently supports 10,000-level concurrency, which can effectively support scenarios with high concurrency demand such as ecommerce promotions and parallel processing of medical and biological data.
 >- The total function concurrency quota per region on the SCF platform is 128,000 MB, which is shared by all functions by default. You can [customize the concurrency for specific functions](https://intl.cloud.tencent.com/document/product/583/37040) to meet your actual needs. To request an increase in the quota, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=668&source=0&data_title=%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%91%E5%87%BD%E6%95%B0%20SCF&step=1) to apply.
+> -  In SCF, a COS trigger has limits in two dimensions: SCF and COS, as detailed below:
+>    - SCF dimension: one function can be bound to 10 COS triggers at most. 
+>    - COS dimension: the same event and prefix/suffix rule of one function can trigger up to 3 functions, and one COS bucket can be bound to 10 rules at most.
 
 The limits for the function runtime environment are as follows:
 
