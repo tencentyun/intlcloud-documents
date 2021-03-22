@@ -53,7 +53,7 @@
 
 ### 使用 REST API
 
-您可以直接使用 REST API 发起异步拉取请求，详情请参见 查询进度 和 发起离线回源。
+您可以直接使用 REST API 发起异步拉取请求，详情请参见 [查询进度](https://intl.cloud.tencent.com/document/product/436/39775) 和 [发起离线回源](https://intl.cloud.tencent.com/document/product/436/39774)。
 
 ### 使用 SDK
 
