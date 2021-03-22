@@ -6,6 +6,8 @@ COS adopts a data transfer framework different from that of Tencent Cloud. There
 >- By using COS APIs, you acknowledge that you have read and agree to the [General Service Level Agreements](https://intl.cloud.tencent.com/document/product/301/12905) and Tencent COS [Service Level Agreement](https://intl.cloud.tencent.com/document/product/436/6227).
 >- For more information about the available regions of COS, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). 
 >- Before using APIs or SDKs to initiate a request, you are advised to read the [Creating Request Overview](https://intl.cloud.tencent.com/document/product/436/30613) document to learn more about access endpoints, authentication, and how to determine access via a private or public network.
+>- If you want to receive responses in JSON format, you are advised to configure in the [COS SDK](https://intl.cloud.tencent.com/document/product/436/6474).
+>- For API formats of other Tencent Cloud services, please see [APIs](https://intl.cloud.tencent.com/document/api).
 
 
 
