@@ -16,12 +16,12 @@ VODは、アップロードおよびトランスコードされたビデオを�
 * eコマースショッピングプラットフォーム（京東（JD.com）、拼多多 （Pinduoduo））の商品PRビデオ。
 * WeChat公式アカウント、メディア で共有されるショートムービー。
 
-
+<img src="https://main.qcloudimg.com/raw/36d901de64420df8e7d49bae570eaeb3.png" width="800" />
 
 ### 再生アーキテクチャ
 短編ビデオの再生シーンでは、VODでは**基本的なプレーヤーSDK**を提供し、URLをパラメータとして、VODのビデオを再生します。
 
-
+<img src="https://main.qcloudimg.com/raw/a9d4a24cefcdb3ccba1b316ea6be9ee0.png" width="700" />
 
 基本的なプレーヤーSDKを使用して再生する全体的なアーキテクチャフローは次のとおりです。
 1. **サーバーからのアップロード**：ビジネスバックエンドでは、コンソールやサーバーAPIといった形式により、ビデオをVODにアップロードします。
