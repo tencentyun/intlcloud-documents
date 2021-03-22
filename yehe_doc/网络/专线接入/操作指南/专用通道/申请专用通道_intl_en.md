@@ -36,8 +36,8 @@ A dedicated tunnel is a network link segmentation of a connection. You can creat
 </tr>
 <tr>
 <td>Region</td>
-<td><ul><li>If **CCN** is selected as the access network, the region is where the CCN-based direct connect gateway resides by default.</li><li>
- If **VPC** is selected as the access network, you can only select the region where the connection resides for a 2.0 tunnel and select any region for a 1.0 tunnel.</li><li>If **BM Network** is selected as the access network, you can select any region for a 1.0 tunnel.</li></ul></td>
+<td><ul><li>If <b>CCN</b> is selected as the access network, the region is where the CCN-based direct connect gateway resides by default.</li><li>
+ If <b>VPC</b> is selected as the access network, you can only select the region where the connection resides for a 2.0 tunnel and select any region for a 1.0 tunnel.</li><li>If <b>BM Network</b> is selected as the access network, you can select any region for a 1.0 tunnel.</li></ul></td>
 </tr>
 <tr>
 <td>VPC</td>
@@ -117,7 +117,7 @@ A dedicated tunnel is a network link segmentation of a connection. You can creat
 </tr>
 <tr>
 <td>User IDC IP Range</td>
-<td>Enter the CPE IP range on the user side if **Static Routing** is selected as the routing mode. This parameter cannot conflict with the VPC IP range in a non-NAT mode.</td>
+<td>Enter the CPE IP range on the user side if <b>Static Routing</b> is selected as the routing mode. This parameter cannot conflict with the VPC IP range in a non-NAT mode.</td>
 <td>You can update the IP range later via “Change Tunnel” on the console.</td>
 </tr>
 </table>
