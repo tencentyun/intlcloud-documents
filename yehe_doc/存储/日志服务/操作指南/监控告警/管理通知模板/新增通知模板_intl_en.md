@@ -7,7 +7,7 @@ This document describes how to create a notification template in the CLS console
 | Notification type - alarm cleared | When the trigger condition is met in the previous monitoring period but not met in the current period and the alarm notification has been sent, an alarm cleared notification will be triggered |
 | User notification | Notifications can be sent to specified users |
 | User group notification | A user group contains multiple users. Notifications can be sent to specified user groups |
-| Notification method | Email, SMS, phone, and WeChat are supported |
+| Receipt channel | Email, SMS, phone calls, and WeChat are supported |
 | Webhook | Up to 10 custom and WeCom webhooks can be configured |
 
 
@@ -19,20 +19,17 @@ This document describes how to create a notification template in the CLS console
  - Template name: custom template name.
  - Notification type:
     - Alarm triggered: a notification will be sent when an alarm is triggered.
-    - Alarm cleared: a notification will be sent when an alarm is cleared.
-4. Configure user notification and enter the information for receiving notifications:
+    - Alarm cleared: a notification will be sent when an alarm is resolved.
+4. Configure user notification and enter the receipt information:
  - Recipient: user or user group (a collection of multiple users).
  - Notification time: time period for receiving alarm notifications.
- - Notify by: email, SMS, WeChat, or phone.
+ - Notify by: email, SMS, WeChat, or phone calls.
 5. Configure webhook and enter the webhook address information:
-
 ### Webhook - WeCom robot
-After creating a WeCom bot, just enter the URL of the webhook. For more information, please see [Receiving Alarm Notification Through WeCom](https://intl.cloud.tencent.com/document/product/614/39581).
-
+After creating a WeCom bot, just enter the URL of the webhook. For more information, please see [Receiving Alarm Notification Through a WeCom Group](https://intl.cloud.tencent.com/document/product/614/39581).
 ### Webhook - custom
 You can enter a custom webhook address to further process and forward received alarm notifications. You can also customize the request content. CLS alarm-related information can be referenced by variables, and when the alarm callback is triggered, it will be replaced with the corresponding content in the current alarm policy.
 In the custom webhook, **request content** supports the following alarm variables:
-
 | Variable | Description |
 | ---------------- | -------------------------------------------- |
 | {{.UIN}} | Tencent Cloud account `UID` of the alarm policy |

@@ -1,20 +1,20 @@
 Log-based monitoring alarm use cases can be implemented by configuring alarm policies. This document describes how to configure an alarm policy in the CLS console.
 ## Prerequisites
-- Logs have been uploaded to a certain [log topic](https://console.cloud.tencent.com/cls/logset/desc).
-- [An index has been configured](https://intl.cloud.tencent.com/document/product/614/39594) for the log topic.
+- You have uploaded the log to a [log topic](https://console.cloud.tencent.com/cls/logset/desc).
+- The log topic has [configured an index](https://intl.cloud.tencent.com/document/product/614/39594).
 
 ## Configuration Process
 
 ### Step 1. Create an alarm policy
 
-Log in to the [CLS console](https://console.cloud.tencent.com/cls/alarm) and click **Monitoring Alarm** on the left sidebar to create an alarm policy.
+Log in to the [CLS console](https://console.cloud.tencent.com/cls/monitor) and click **Monitoring Alarm** on the left sidebar to create an alarm policy.
 
 ### Step 2. Configure a monitoring rule
 
 #### Monitoring object
 Select the log topic to be monitored and configure the corresponding analysis statement and query time range as detailed below:
 
-| Name         | Description                                      | Example                                                         |
+| Name | Description | Example |
 | ------------ | ----------------------------------------- | ------------------------------------------------------------ |
 | Log topic     | Target log topic for which to configure monitoring alarms            | Log topic `nginx`                                         |
 | Analysis statement     | Analysis statement that acts on the log topic | Example 1. Get the number of logs in the `error` status<br>status:error | select count(*) as ErrCount<br>Example 2. Get the average request latency of the domain name (url:aaa.com)<br>url:"aaa.com" \| select avg(request_time) as Latency |
@@ -36,7 +36,7 @@ The monitoring period indicates the frequency at which monitoring tasks are perf
 A trigger condition expression is used to determine whether to trigger an alarm, and an alarm will be triggered when it is met.
 CLS allows you to import analysis results by using `$N.keyname`.
 - $N: it indicates the Nth monitoring object in the current alarm policy (for more information, please see [How do I view the number?](#number)).
-- keyname: it indicates the corresponding field name; for example, `$1.status>500` indicates that an alarm will be triggered when the `status` field value of the monitoring object numbered 1 is greater than 500. For more information on the expression syntax, please see Trigger Condition Expression.
+- keyname: name of the corresponding field. For example, `$1.status>500` indicates triggering the alarm for the 1st monitoring object if the `status` field carries a value greater than 500.
 
 #### Alarm frequency
 
@@ -50,7 +50,7 @@ You can set the interval between two notifications to avoid frequently sending a
 
 ### Step 4. Configure alarm notifications
 
-The notification method and recipients can be set by associating a notification template. Notifications can be sent by email, SMS, phone, or WeChat. For more information, please see [Creating Notification Template](https://intl.cloud.tencent.com/document/product/614/39582).
+The notification channels and objects can be set by associating a notification template. Notifications can be sent by SMS, phone calls, WeChat, WeCom, and webhook. For more information, please see [Creating Notification Template](https://intl.cloud.tencent.com/document/product/614/39582).
 
 ## FAQs
 <span id="number"></span>
