@@ -3,7 +3,7 @@ LVB는 콘솔에 설정된 화면 캡처 및 음란물 감지 템플릿을 통�
 
 그 중, 캡처 및 음란물 감지 템플릿을 생성하는 방법으로는 다음 두 가지 방식이 있습니다.
 
-- LVB 콘솔을 통한 템플릿 생성에 대한 자세한 방법은 [화면 캡처 및 음란물 감지 템플릿 생성](#Screenshot)을 참조하십시오.
+- CSS 콘솔을 통한 템플릿 생성에 대한 자세한 방법은 [화면 캡처 및 음란물 감지 템플릿 생성](#Screenshot)을 참조하십시오.
 - API를 통한 템플릿 생성에 대한 자세한 매개변수 및 사례는 [화면 캡처 템플릿 생성](https://intl.cloud.tencent.com/document/product/267/30834)을 참조하십시오.
 
 
@@ -13,7 +13,7 @@ LVB는 콘솔에 설정된 화면 캡처 및 음란물 감지 템플릿을 통�
 - 화면 캡처 기능은 단독으로 활성화하여 사용할 수 있습니다. 그러나 음란물 감지 기능은 화면 캡처 기능을 활성화해야만 활성화할 수 있으며 단독으로 사용할 수 없습니다.
 - 화면 캡처 및 음란물 감지는 유료 기능입니다. 활성화 후 화면 캡처 기능은 1000장당 0.0176USD의 요금이 발생되며, 음란물 감지 기능은 1000장당 0.2294USD의 요금이 발생됩니다. 자세한 내용은 [스마트 음란물 감지](https://intl.cloud.tencent.com/document/product/267/39607)를 참조하십시오.  
 - 화면 캡처 및 음란물 감지 이미지는 사용자의 COS에 저장되며 COS 저장 비용이 발생합니다. 자세한 내용은 [COS 제품 과금 가격](https://intl.cloud.tencent.com/pricing/cos)을 참조하십시오.
-- 화면 캡처 기능을 활성화하려면 먼저 COS bucket에서 LVB 서비스의 데이터 쓰기 권한을 설정해야 합니다. 자세한 내용은 [COS bucket 라이브 방송 화면 캡처 저장 권한 부여](https://intl.cloud.tencent.com/document/product/267/33384)를 참조하십시오.
+- 화면 캡처 기능을 활성화하려면 먼저 COS bucket에서 CSS 서비스의 데이터 쓰기 권한을 설정해야 합니다. 자세한 내용은 [COS bucket 라이브 방송 화면 캡처 저장 권한 부여](https://intl.cloud.tencent.com/document/product/267/33384)를 참조하십시오.
 - 템플릿 생성 완료 후 푸시 도메인과 연결할 수 있으며, 관련 문서는 [화면 캡처 및 음란물 감지 설정](https://intl.cloud.tencent.com/document/product/267/31063)을 참조하십시오. 템플릿 연결 성공 후 약 5~10분 뒤에 적용됩니다. 
 - 콘솔의 음란물 감지 화면 캡처 템플릿 관리에서는 현재 도메인 차원에서 연결 인터페이스 생성 규칙을 취소할 수 없습니다. 음란물 감지 화면 캡처 관련 인터페이스를 통해 지정한 스트림과 연결하고 있는 경우, [화면 캡처 규칙 삭제](https://intl.cloud.tencent.com/document/product/267/30833)를 참조하여 연결을 해제해야 합니다.
 - 템플릿 바인딩 및 수정, 바인딩 해제는 업데이트 이후의 라이브 방송 스트리밍에만 적용되며, 현재 라이브 방송 중인 스트림에는 적용되지 않습니다. 라이브 방송 중인 스트림을 중단하고 다시 시작해야만 새로운 규칙이 적용됩니다.
@@ -22,7 +22,7 @@ LVB는 콘솔에 설정된 화면 캡처 및 음란물 감지 템플릿을 통�
 
 ## 사용 전제 조건
 
-- Tencent Cloud LVB 서비스를 활성화하고 [푸시 도메인](https://intl.cloud.tencent.com/document/product/267/35970)이 추가된 상태여야 합니다.
+- Tencent Cloud CSS 서비스를 활성화하고 [푸시 도메인](https://intl.cloud.tencent.com/document/product/267/35970)이 추가된 상태여야 합니다.
 - COS Bucket이 생성되어 있고 COS Bucket을 통해 LVB에 권한을 부여한 상태여야 합니다. 관련 문서는 [COS bucket 라이브 방송 화면 캡처 저장 권한 부여](https://intl.cloud.tencent.com/document/product/267/33384)를 참조하십시오.
 
 
@@ -30,7 +30,7 @@ LVB는 콘솔에 설정된 화면 캡처 및 음란물 감지 템플릿을 통�
 <span id="Screenshot)"></span>
 ## 화면 캡처 및 음란물 감지 템플릿 생성
 
-1. LVB 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 화면 캡처 및 음란물 감지]](https://console.cloud.tencent.com/live/config/jtjh)페이지로 이동합니다.
+1. CSS 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 화면 캡처 및 음란물 감지]](https://console.cloud.tencent.com/live/config/jtjh)페이지로 이동합니다.
 2. [+]를 클릭하고 설정 항목을 입력한 뒤 [저장]을 클릭합니다.
 ![](https://main.qcloudimg.com/raw/e17b92da94af4b583dab0273adb89447.jpg)
 <table>
@@ -86,7 +86,7 @@ LVB는 콘솔에 설정된 화면 캡처 및 음란물 감지 템플릿을 통�
 [](id:conect)
 ## 도메인 연결
 
-1. LVB 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 화면 캡처 및 음란물 감지]](https://console.cloud.tencent.com/live/config/jtjh) 페이지로 이동합니다.
+1. CSS 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 화면 캡처 및 음란물 감지]](https://console.cloud.tencent.com/live/config/jtjh) 페이지로 이동합니다.
 2. 다음과 같이 도메인 바인딩 창으로 이동합니다.
     - **도메인 직접 연결:** 왼쪽 상단에 있는 [바인딩 도메인 이름]을 클릭합니다.
     - **신규 화면 캡처 및 음란물 감지 템플릿 생성 완료 후 도메인 연결:** [화면 캡처 및 음란물 감지 템플릿 생성](#Screenshot)완료 후 팝업창의 [바인딩 도메인 이름]을 클릭합니다.
@@ -97,7 +97,7 @@ LVB는 콘솔에 설정된 화면 캡처 및 음란물 감지 템플릿을 통�
 [](id:unite)
 ## 바인딩 해제
 
-1. LVB 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 화면 캡처 및 음란물 감지]](https://console.cloud.tencent.com/live/config/jtjh) 페이지로 이동합니다.
+1. CSS 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 화면 캡처 및 음란물 감지]](https://console.cloud.tencent.com/live/config/jtjh) 페이지로 이동합니다.
 2. 연결되어 있는 도메인의 라이브 방송 화면 캡처 및 음란물 감지 템플릿을 선택하고 [바인딩 해제]를 클릭합니다.
 3. 현재 연결된 도메인의 바인딩 해제 여부를 확인하고 [확인]을 클릭하면 바인딩 해제가 완료됩니다.
 
