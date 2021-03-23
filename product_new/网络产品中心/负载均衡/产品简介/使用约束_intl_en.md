@@ -37,4 +37,4 @@ The use of Tencent Cloud CLB has certain restrictions, and different types of CL
 </tbody>
 </table>
 
-A CLB instance **will not unbind itself** from the CVM instance. After a CVM instance becomes isolated (pay-as-you-go CVM instance has been in arrears for more than 2 hours), it **will not unbind itself** from the CLB instance either.
+A CLB instance **will not unbind itself** from the CVM instance. After a CVM instance becomes isolated (pay-as-you-go CVM instance has been overdue for more than 2 hours), it **will not unbind itself** from the CLB instance either.
