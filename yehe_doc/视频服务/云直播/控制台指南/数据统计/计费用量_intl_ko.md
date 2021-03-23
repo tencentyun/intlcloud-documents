@@ -1,6 +1,6 @@
 ### 과금 사용량
 
-Tencent Cloud 콘솔에서는 LVB를 위해 과금 사용량 조회 기능을 제공합니다. 현재 트래픽/대역폭, 라이브 방송 녹화, 라이브 방송 트랜스 코딩, 라이브 방송 화면 캡처, 라이브 방송 공유 등의 서비스 사용 현황을 확인하고 싶은 경우 CSS 콘솔의 [Statistics]>[Billing Usage Statistics](https://console.cloud.tencent.com/live/analysis/bill)에서 1개월 이내의 CSS 서비스 사용 관련 데이터를 확인할 수 있습니다.
+Tencent Cloud 콘솔에서는 CSS를 위해 과금 사용량 조회 기능을 제공합니다. 현재 트래픽/대역폭, 라이브 방송 녹화, 라이브 방송 트랜스 코딩, 라이브 방송 화면 캡처, 라이브 방송 공유 등의 서비스 사용 현황을 확인하고 싶은 경우 CSS 콘솔의 [Statistics]>[Billing Usage Statistics](https://console.cloud.tencent.com/live/analysis/bill)에서 1개월 이내의 CSS 서비스 사용 관련 데이터를 확인할 수 있습니다.
 <img src="https://main.qcloudimg.com/raw/7c7ac04114113f2d5e2a54361df0b480.png" width="750px"/>
 
 ### 과금 설명
@@ -12,13 +12,13 @@ Tencent Cloud 콘솔에서는 LVB를 위해 과금 사용량 조회 기능을 �
 <td  rowspan="4">트래픽/대역폭</td>
 <tr>
 <td>재생 트래픽</td>
-<td>라이브 방송 재생으로 발생하는 다운스트림 트래픽이 현재 시간 분할 단위로 표시되며, LVB별로 필터링할 수 있습니다.</td>
+<td>라이브 방송 재생으로 발생하는 다운스트림 트래픽이 현재 시간 분할 단위로 표시되며, CSS별로 필터링할 수 있습니다.</td>
 </tr><tr>
 <td>재생 대역폭 피크</td>
-<td>라이브 방송 재생으로 발생하는 다운스트림 대역폭 피크가 현재 시간 분할 단위로 표시되며, LVB별로 필터링할 수 있습니다.</td>
+<td>라이브 방송 재생으로 발생하는 다운스트림 대역폭 피크가 현재 시간 분할 단위로 표시되며, CSS별로 필터링할 수 있습니다.</td>
 </tr><tr>
 <td>트래픽/대역폭 그래프</td>
-<td>5분 단위의 트래픽/대역폭 누적 데이터로, LVB별로 필터링할 수 있습니다.</td>
+<td>5분 단위의 트래픽/대역폭 누적 데이터로, CSS별로 필터링할 수 있습니다.</td>
 </tr><tr>
 <td  rowspan="3">라이브 방송 녹화</td>
 </tr><tr>
