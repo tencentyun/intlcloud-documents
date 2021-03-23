@@ -2,12 +2,12 @@
 Tencent Cloud는 Web 푸시 스트리밍 기능을 제공하여 빠르게 푸시 스트리밍 주소를 생성할 수 있으며, 온라인 푸시 스트리밍 라이브 방송 테스트 기능을 제공합니다.
 
 ## 전제 조건
-- [LVB 콘솔](https://console.cloud.tencent.com/live)에 로그인되어 있어야 합니다.
+- [CSS 콘솔](https://console.cloud.tencent.com/live)에 로그인되어 있어야 합니다.
 - [푸시 스트리밍 도메인](https://intl.cloud.tencent.com/document/product/267/35970)이 추가되어 있어야 합니다.
 - 디바이스에 카메라가 설치되어 있어야 하며 브라우저에서 Flash 플러그 인의 카메라 호출 권한을 지원해야 합니다.
 
 ## 작업 순서
-1. LVB 콘솔에 로그인하여 [Web Push](https://console.cloud.tencent.com/live/tools/webpush)를 선택합니다.
+1. CSS 콘솔에 로그인하여 [Web Push](https://console.cloud.tencent.com/live/tools/webpush)를 선택합니다.
 2. Web 푸시 스트리밍 페이지에서 다음을 설정합니다.
 	- 푸시 스트리밍 도메인을 선택합니다.
 	- 사용자 정의 스트림 이름 StreamName을 입력합니다. (예시: `test`)
