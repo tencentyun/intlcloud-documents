@@ -3,8 +3,8 @@ Open Broadcaster Software (OBS) is an easy-to-use third-party open-source softwa
 This document describes how to configure a stream on a PC in OBS Studio.
 
 ## Preparations
-- Log in to the [CSS Console](https://console.cloud.tencent.com/live) and generate a push address. For more information, see [Push Configuration](https://intl.cloud.tencent.com/document/product/267/31059).
-- Install [OBS Studio](https://obsproject.com/download?spm=a2c4g.11186623.2.15.6aac1445JPlKR8).
+ - Log in to the [CSS Console](https://console.cloud.tencent.com/live) and generate a push address. For more information, see [Push Configuration](https://intl.cloud.tencent.com/document/product/267/31059).
+ - Install [OBS Studio](https://obsproject.com/download?spm=a2c4g.11186623.2.15.6aac1445JPlKR8).
 
 ## Directions
 
@@ -27,12 +27,12 @@ Click the **+** icon under the "Sources" box and select the input source. If you
 Otherwise, click **Tools** > **Auto-Configuration Wizard** at the top, configure the push as prompted, and click **Controls** > **Start Streaming**.
 
  3. **Configure other push-related items**
-- Video broadcasting delay
+ - Video broadcasting delay
 Click **Controls** > **Settings** > **Output**, select **Advanced** for **Output Mode**, and then you can configure **Keyframe Interval** and other items as shown below:
 ![](https://main.qcloudimg.com/raw/5f48205da162f1230723729c36369f65.png)
 Select **Advanced** on the left sidebar to configure **Stream Delay**:
 ![](https://main.qcloudimg.com/raw/c3ec9a71a014548eb680009d9798b1ac.png)
-- Local CSS recording
+ - Local CSS recording
  If you need local CSS recording, you can record live streams for local backup. The configuration is as shown below:
 ![](https://main.qcloudimg.com/raw/a3c90994ef7447766914dc41605623c3.png)
 Click **Controls** > **Settings** > **Output** and then click the **Recording** tab to configure recording. You can save recording files locally.
@@ -43,8 +43,8 @@ Resolution determines the clarity of video shown to viewers. The higher the reso
 ## Related Operations
 ### Common Operations
 1. **Common input sources**
- - **Image**: Live broadcasts a single image.
- - **Image Slide Show**: Plays back multiple images in a loop or sequentially.
+ - **Image**: Live broadcasts a single image.
+ - **Image Slide Show**: Plays back multiple images in a loop or sequentially.
  - **Scene**: Achieves various fascinating effects for live broadcasting. In this case, another scene, in part or in its entirety, can be embedded into the current scene as a source.
  - **Media Source**: Uploads and plays back local on-demand videos to be processed for live broadcasting.
  - **Text**: Adds text to the live broadcasting window in real time.
