@@ -60,7 +60,7 @@ API를 사용해 지정 버킷에 로그 관리 기능을 활성화할 경우 �
 3. 로그 관리를 활성화합니다.
 
 #### 1. 로그 역할 생성
-로그 역할 생성과 구체적인 인터페이스 정보는 [CreateRole](https://intl.cloud.tencent.com/document/product/598/13886)을 참조하십시오.
+로그 역할 생성과 구체적인 인터페이스 정보는 [CreateRole](https://intl.cloud.tencent.com/jp/document/product/598/33561)을 참조하십시오.
 roleName은 반드시 CLS_QcsRole이어야 합니다.
 policyDocument:
 ```
@@ -76,7 +76,7 @@ policyDocument:
 }
 ```
 #### 2. 로그 역할 바인딩 권한
-역할 권한 바인딩 권한과 구체적인 인터페이스 정보는 [AttachRolePolicy](https://intl.cloud.tencent.com/document/product/598/13889)를 참조하십시오.
+역할 권한 바인딩 권한과 구체적인 인터페이스 정보는 [AttachRolePolicy](https://intl.cloud.tencent.com/document/product/598/33562)를 참조하십시오.
 policyName은 QcloudCOSAccessForCLSRole, roleName은 1단계의 CLS_QcsRole 또는 roleName 생성 시 반환된 roleID를 사용할 수 있습니다.
 
 #### 3. 로그 관리 활성화
