@@ -20,12 +20,12 @@ The public network CLB charges instance fees differently in regions as shown bel
 | Singapore, Frankfurt, Toronto & Moscow | 0.14 |
 | Silicon Valley & Virginia | 0.12 |
 
-## Arrear Isolation Policy
+## Overdue Isolation Policy
 
-- Service will stop in 24 hours when your account is in arrears. You will get SMS/email notifications to top up your account within 24 hours. Your service will not be affected if you top up your account within 24 hours. 
+- Service will stop in 24 hours when your account is overdue. You will get SMS/email notifications to top up your account within 24 hours. Your service will not be affected if you top up your account within 24 hours. 
 - If you do not top up your account within 24 hours, instance will be stopped and **isolated**, and billing of used CLB instances will be stopped. Instance-related configuration data will be kept for 7 days. If your balance is positive, service will automatically resume. If your balance remains negative more than 7 days, it will be taken that you no longer wish to continue the service and relevant configuration data will be deleted permanently.
 - Tencent Cloud will send you notifications via SMS/email one day before deletion. Once deleted, relevant configuration data cannot be recovered.
 
-> CLB and CVM can only be unbound manually, but they can unbind forcibly when **CVM** is isolated (when Pay-as-You-Go CVM account is in arrears for over 2 hours).
+> CLB and CVM can only be unbound manually, but they can unbind forcibly when **CVM** is isolated (when pay-as-you-go CVM account has been overdue for over 2 hours).
 
 This pricing document is for reference only. See your bill for the actual price.
