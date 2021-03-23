@@ -24,7 +24,7 @@ You can configure the network ACL for the VPC subnet to restrict the access from
 #### Notes
 - The CLB instance within a VPC cannot be bound to a basic network CVM interconnected with the same VPC.
 - Changing the private IP address of a basic network CVM cancels the association with the VPC, which means the original association record will become invalid. Add the record again in VPC Console if you want to associate them again.
-- The interconnection relationship with the VPC will not be unbound by actions taken regarding the CVM, such as isolation due to arrears, security isolation, cold migration, failover, configuration modification, and operating system switching.
+- The interconnection relationship with the VPC will not be unbound by actions taken regarding the CVM, such as isolation due to overdue payment, security isolation, cold migration, failover, configuration modification, and operating system switching.
 - The interconnection relationship with the VPC will be automatically unbound if the CVM is returned.
 - In Classiclink situations, the CVM traffic can only be routed to private IP addresses within the VPC, but not to destinations outside the VPC. That is, the basic network CVM cannot access the Internet or VPC resources outside the current VPC through network devices such as its VPN gateway, direct connect gateway, public gateway, peering connection, and NAT gateway. Likewise, the peer of a VPN gateway, direct connect gateway, and peering connection cannot access the basic network CVM.
 
