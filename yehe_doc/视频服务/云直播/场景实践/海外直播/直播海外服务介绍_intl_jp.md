@@ -32,11 +32,11 @@
 ライブストリーミングにおいて、結合技術のフレームワークとソリューション以外に、より重要な点は、リソースのストックです。海外に基盤を支える該当するリソースがなければ、すべての技術は机上の空論です。文章の冒頭のTencent Cloudグローバルノード分布図の中でも言及しましたが、**Tencent Cloudの海外進出戦略と長期的な海外での投資のおかげで、世界の50余りの国と地域に1300強の伝送ノードを建設し、帯域幅の総ストック量は100Tを超えています。50社を超える全世界のキャリアと提携し、Global Content Deliveryのノードも200+となっています**。同時にTencent Cloudは同じ地区で複数のキャリアと提携し、各地点に少なくとも3つのマルチサイトを設け、サービスの安定性と信頼性を保証しています。
 
 ### アクティブ化の方式
-海外LVBサービスは、 [LVBコンソール](https://console.cloud.tencent.com/live)から直接アクティブ化が可能です
-- Tencent Cloudアカウントを未登録の場合は、Tencent Cloudアカウントの登録を行っていただく必要があります。登録の操作については、[Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com/document/product/378/17985) ドキュメントをご参照のうえ、 [LVBサービスアクティブ化の申請](https://intl.cloud.tencent.com/document/product/267/30410)を行ってください。
-- Tencent Cloudアカウントをお持ちで、LVBサービスのアクティブ化を申請済みの場合は、以下の操作手順を直接行うことができます。
+海外CSSサービスは、 [CSSコンソール](https://console.cloud.tencent.com/live)から直接アクティブ化が可能です
+- Tencent Cloudアカウントを未登録の場合は、Tencent Cloudアカウントの登録を行っていただく必要があります。登録の操作については、[Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com/document/product/378/17985) ドキュメントをご参照のうえ、 [CSSサービスアクティブ化の申請](https://intl.cloud.tencent.com/document/product/267/30410)を行ってください。
+- Tencent Cloudアカウントをお持ちで、CSSサービスのアクティブ化を申請済みの場合は、以下の操作手順を直接行うことができます。
 
-LVBコンソールに入り、左側ナビゲーションバーから[【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)選択し、その後【ドメイン名の追加】をクリックします。
+CSSコンソールに入り、左側ナビゲーションバーから[【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)選択し、その後【ドメイン名の追加】をクリックします。
 ![](https://main.qcloudimg.com/raw/8966d84b046460251f38b49927117826.png)
 
 ポップアップしたドメイン名追加のボックスの中でタイプ【再生ドメイン名】を選択し、さらに対応する【アクセラレーションリージョン】を選択します。最後にアクセラレーションが必要な【ドメイン名】を入力すれば完了です。
