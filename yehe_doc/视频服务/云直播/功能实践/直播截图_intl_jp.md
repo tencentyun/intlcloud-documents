@@ -1,22 +1,22 @@
 
 
 
-LVBスクリーンキャプチャとは、決まった時間間隔でリアルタイムのライブストリーミングの画像を切り取り、画像を生成することを指します。通知のコールバックによってスクリーンキャプチャ情報を取得でき、またスクリーンキャプチャのデータは、LVBポルノ検出、ライブルームのサムネイルなどの多様なシナリオに応用できます。
+CSSスクリーンキャプチャとは、決まった時間間隔でリアルタイムのライブストリーミングの画像を切り取り、画像を生成することを指します。通知のコールバックによってスクリーンキャプチャ情報を取得でき、またスクリーンキャプチャのデータは、CSSポルノ検出、ライブルームのサムネイルなどの多様なシナリオに応用できます。
 
-## LVBスクリーンキャプチャ全体の流れ
+## CSSスクリーンキャプチャ全体の流れ
 ![](https://main.qcloudimg.com/raw/3ff391e3f3505a257e9abb96fc882b21.png)
 
 全体の流れ：
-1. コンソールで、またはTencent Cloud APIを直接呼び出し、LVBスクリーンキャプチャ機能を設定します。
-- LVBプッシュを実行します。 
+1. コンソールで、またはTencent Cloud APIを直接呼び出し、CSSスクリーンキャプチャ機能を設定します。
+- CSSプッシュを実行します。 
 - スクリーンキャプチャサービスは、設定に基づき、スクリーンキャプチャデータを生成し、Cloud Object Storageシステムに保存します。
 - 生成されたスクリーンキャプチャの関連情報はコールバックで通知されます。
 
-## LVBスクリーンキャプチャの設定
+## CSSスクリーンキャプチャの設定
 
 ### スクリーンキャプチャの設定方式
-- [LVB API](https://intl.cloud.tencent.com/zh/document/product/267/30760#.E6.88.AA.E5.9B.BE.E9.89.B4.E9.BB.84.E7.9B.B8.E5.85.B3.E6.8E.A5.E5.8F.A3)
-- 【LVBコンソール】>【機能テンプレート】>【[Screencapturing and Porn Detection Configuration](https://console.cloud.tencent.com/live/config/jtjh)】、詳細な情報については、[Screencapturing and Porn Detection Configuration](https://cloud.tencent.com/document/product/267/20386)をご参照ください。
+- [CSS API](https://intl.cloud.tencent.com/zh/document/product/267/30760#.E6.88.AA.E5.9B.BE.E9.89.B4.E9.BB.84.E7.9B.B8.E5.85.B3.E6.8E.A5.E5.8F.A3)
+- 【CSSコンソール】>【機能テンプレート】>【[Screencapturing and Porn Detection Configuration](https://console.cloud.tencent.com/live/config/jtjh)】、詳細な情報については、[Screencapturing and Porn Detection Configuration](https://cloud.tencent.com/document/product/267/20386)をご参照ください。
 
 ### スクリーンキャプチャ間隔の設定
 
@@ -47,10 +47,10 @@ LVBスクリーンキャプチャとは、決まった時間間隔でリアル�
 
 -  W < Hに設定し、かつWとHがいずれも0より大きく、プッシュ時にX > Yである場合、設定の幅は高さより小さく、プッシュの幅は高さより大きくなります。
 
-この時、直接スクリーンキャプチャを撮影すると、画像に湾曲や変形が出現することがあります。これら変形の出現を避けるため、LVBスクリーンキャプチャサービスは、設定の幅と高さのサイズ関係とLVBプッシュ画面が一致するように、バックエンドでWとHの値を自動的に切り替えます。
+この時、直接スクリーンキャプチャを撮影すると、画像に湾曲や変形が出現することがあります。これら変形の出現を避けるため、CSSスクリーンキャプチャサービスは、設定の幅と高さのサイズ関係とCSSプッシュ画面が一致するように、バックエンドでWとHの値を自動的に切り替えます。
 
 
-## LVBスクリーンキャプチャのイベントメッセージ通知
+## CSSスクリーンキャプチャのイベントメッセージ通知
 
 イベントメッセージ通知の設定は、 [イベントメッセージ通知](https://intl.cloud.tencent.com/document/product/267/31566)をご参照ください。スクリーンキャプチャのコールバック通知は、JSON形式で、HTTP POSTプロトコルを使用し、クライアントが事前に設定済みの受信サーバーに通知されます。
 
@@ -59,8 +59,8 @@ LVBスクリーンキャプチャとは、決まった時間間隔でリアル�
 | フィールド名| タイプ | 説明 |
 | --- | --- | --- |
 | event\_type | int | コールバック情報タイプ。スクリーンキャプチャコールバックを200に固定 |
-| stream\_id | string | LVBストリーム名|
-| channel\_id | string | LVBストリーム名と同じ |
+| stream\_id | string | CSSストリーム名|
+| channel\_id | string | CSSストリーム名と同じ |
 | create\_time  | int64  | スクリーンキャプチャ生成のUnixタイムスタンプ        |
 | file\_size    | int    | スクリーンキャプチャファイルサイズ。単位：byte   |
 | width | int | スクリーンキャプチャの幅。単位：ピクセル |
@@ -73,7 +73,7 @@ LVBスクリーンキャプチャとは、決まった時間間隔でリアル�
 ### <span id="jump">一部フィールドの説明</span>
 - `pic_url`説明：
  - path：年-月-日
- - name：LVBストリーム名-screenshot-時-分-秒-幅x高さ.jpg
+ - name：CSSストリーム名-screenshot-時-分-秒-幅x高さ.jpg
  例：
 ```
  /2018-12-17/stream_name-screenshot-19-06-59-640x352.jpg
