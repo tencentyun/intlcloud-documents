@@ -9,7 +9,7 @@
 ### 방법1: 인증 키
 먼저 공식 홈페이지의 콘솔에서 암호화 키를 설정해야 하며, 해당 암호화 키는 서버에 링크 도용 방지 서명을 생성하는 데 사용됩니다. Tencent Cloud는 사용자와 동일한 키를 가지고 있어 사용자가 생성한 링크 도용 방지 서명을 복호화하고 확인할 수 있습니다.
 
- 암호화 키는 푸시 스트림 링크 도용 방지 KEY와 재생 링크 도용 방지 KEY로 구분되며, 전자는 푸시 스트림 링크 도용 방지 URL을 생성하는 데 사용되고 후자는 재생 링크 도용 방지 URL을 생성하는 데 사용됩니다. [LVB 콘솔]>[도메인 관리](https://console.cloud.tencent.com/live/domainmanage)에서 해당 도메인 또는 [관리]를 클릭하여 [푸시 스트림 설정]을 선택해 푸시 스트림 링크 도용 방지 KEY를 직접 설정할 수 있습니다. 다음 이미지를 참고하십시오.
+ 암호화 키는 푸시 스트림 링크 도용 방지 KEY와 재생 링크 도용 방지 KEY로 구분되며, 전자는 푸시 스트림 링크 도용 방지 URL을 생성하는 데 사용되고 후자는 재생 링크 도용 방지 URL을 생성하는 데 사용됩니다. [CSS 콘솔]>[도메인 관리](https://console.cloud.tencent.com/live/domainmanage)에서 해당 도메인 또는 [관리]를 클릭하여 [푸시 스트림 설정]을 선택해 푸시 스트림 링크 도용 방지 KEY를 직접 설정할 수 있습니다. 다음 이미지를 참고하십시오.
 ![](https://main.qcloudimg.com/raw/0833ac9f646507a3bf1f288709dddd20.png)
 
 재생 링크 도용 방지 KEY에 대한 자세한 정보는 [재생 링크 도용 방지는 어떻게 활성화하나요?](https://intl.cloud.tencent.com/document/product/267/35598)를 참조하십시오. 
@@ -42,4 +42,4 @@ rtmp://livepush.tcloud.com/live/test?txSecret=f85a2ab363fe4deaffef9754d79da6fe&t
 
 
 ## 푸시 스트림 예시 코드
-[LVB 콘솔]>[도메인 관리](https://console.cloud.tencent.com/live/domainmanage)에서 이벤트 설정의 푸시 스트림 도메인을 선택한 후, [관리]>[푸시 스트림 설정] 페이지 아래 쪽에 [푸시 스트림 주소 예시 코드](두 버전: PHP 및 Java)가 있습니다. 링크 도용 방지 주소를 생성하는 방법을 보여줍니다.
+[CSS 콘솔]>[도메인 관리](https://console.cloud.tencent.com/live/domainmanage)에서 이벤트 설정의 푸시 스트림 도메인을 선택한 후, [관리]>[푸시 스트림 설정] 페이지 아래 쪽에 [푸시 스트림 주소 예시 코드](두 버전: PHP 및 Java)가 있습니다. 링크 도용 방지 주소를 생성하는 방법을 보여줍니다.
