@@ -1,6 +1,6 @@
 Apache Impala 项目为存储在 Apache Hadoop 文件格式的数据提供高性能、低延迟的 SQL 查询。它对查询进行快速响应，同时支持对分析查询进行交互式的数据探索和查询调整，而不是传统上那种与 SQL-on-Hadoop 技术相关联的长时间批量作业。
 
-Impala 不同于 hive，hive 底层执行使用的是 MapReduce 引擎，仍然是一个批处理过程。而 impala 的中间结果不写入磁盘，即时通过网络以流的形式传递，大大降低了节点的 IO 开销。
+Impala 不同于 hive，hive 底层执行使用的是 MapReduce 引擎，仍然是一个批处理过程。而 impala 的中间结果不写入磁盘，即时通过网络以流的形式传递，极大降低了节点的 IO 开销。
 
 Impala 与 Apache Hive 数据库集成，在两个组件之间共享数据库和表。通过与 Hive 的高度集成，以及与 HiveQL 语法的兼容性，您可以使用 Impala 或 Hive 创建表、发起查询、加载数据等。
 
@@ -30,7 +30,7 @@ done
 ```
 [hadoop@10 ~]$ ./gen_data.sh > impala_test.data
 ```
-这个脚本文件会生成1000000个随机数对，并且保存到文件`hive_test.data`中。然后把生成的测试数据上传到 HDFS 中，执行如下命令：
+这个脚本文件会生成1000000个随机数对，并且保存到文件`impala_test.data`中。然后把生成的测试数据上传到 HDFS 中，执行如下命令：
 ```
 [hadoop@10 ~]$ hdfspath="/impala_test_dir"
 [hadoop@10 ~]$ hdfs dfs -mkdir $hdfspath
@@ -140,7 +140,7 @@ Fetched 2 row(s) in 0.01s
 LOAD DATA INPATH '$hdfspath/impala_test.data' INTO TABLE t1;
 ```
 其中 $hdfspath 为 HDFS 中您存放文件的路径。导入完成后，HDFS 上导入路径上的源数据文件将会被删除。存放到 Impala 内部表的存放路径`/usr/hive/warehouse/experiments.db/t1`下。也可以建立外部表，语句如下：
->这里只有一条指令，如果不输入分号“;”，可以把一条指令放在多行输入。
+>!这里只有一条指令，如果不输入分号“;”，可以把一条指令放在多行输入。
 >
 ```
 CREATE EXTERNAL TABLE t2
