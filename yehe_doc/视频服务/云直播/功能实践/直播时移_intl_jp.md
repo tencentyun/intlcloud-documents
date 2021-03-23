@@ -1,4 +1,4 @@
-LVBタイムシフトは、LVBレコーディング機能に基づいて、TS（Transport Stream）セグメントアドレスとTSファイルを個別にVODシステムに保存します。クライアントはタイムシフト再生ドメイン名を使用して時間パラメータを渡し、現時刻より前の精彩なビデオコンテンツを再生できます。
+CSSタイムシフトは、CSSレコーディング機能に基づいて、TS（Transport Stream）セグメントアドレスとTSファイルを個別にVODシステムに保存します。クライアントはタイムシフト再生ドメイン名を使用して時間パラメータを渡し、現時刻より前の精彩なビデオコンテンツを再生できます。
 
 ## タイムシフトの原理
 
@@ -11,8 +11,8 @@ LVBタイムシフトは、LVBレコーディング機能に基づいて、TS（
 
 ### 前提条件
 
--   [Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com/document/product/378/17985) でアカウントを作成済みであり、かつ身分認証が完了していること。身分認証を実施していないユーザーは中国国内のLVBインスタンスを購入できません。
-- Tencent LVBサービスをアクティブ化し、[プッシュドメイン名](https://intl.cloud.tencent.com/document/product/267/35970)を追加済みであること。 
+-   [Tencent Cloudアカウントの登録](https://intl.cloud.tencent.com/document/product/378/17985) でアカウントを作成済みであり、かつ身分認証が完了していること。身分認証を実施していないユーザーは中国国内のCSSインスタンスを購入できません。
+- Tencent CSSサービスをアクティブ化し、[プッシュドメイン名](https://intl.cloud.tencent.com/document/product/267/35970)を追加済みであること。 
 
 <span id="step1"></span>
 ### 手順1：VODサービスのアクティブ化
@@ -30,7 +30,7 @@ LVBタイムシフトは、LVBレコーディング機能に基づいて、TS（
 <span id="step3"></span>
 ### 手順3：レコーディングテンプレートとの関連付け
 
-1. 【LVBコンソール】>【機能テンプレート】>【[レコーディング設定](https://console.cloud.tencent.com/live/config/record)】に移動します。
+1. 【CSSコンソール】>【機能テンプレート】>【[レコーディング設定](https://console.cloud.tencent.com/live/config/record)】に移動します。
 2. 【+】をクリックし、レコーディングテンプレートを作成します。具体的な操作については、 [レコーディングテンプレート設定](https://intl.cloud.tencent.com/document/product/267/34223)をご参照ください。
    > ! 
    > - レコーディングファイルタイプは **HLS** 形式を選択して、HLSレコーディングを開始します。
@@ -40,7 +40,7 @@ LVBタイムシフトは、LVBレコーディング機能に基づいて、TS（
 <span id="step4"></span>
 ### 手順4：タイムシフトサービスのアクティブ化
 
-[チケットを提出](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=39&source=0&data_title=%E4%BA%91%E7%9B%B4%E6%92%AD%20%20CSS&step=1) し、 「LVB」を選択の上、タイムシフトサービスアクティブ化のリクエストを提出すると同時に、次のパラメータを送信します。
+[チケットを提出](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=39&source=0&data_title=%E4%BA%91%E7%9B%B4%E6%92%AD%20%20CSS&step=1) し、 「CSS」を選択の上、タイムシフトサービスアクティブ化のリクエストを提出すると同時に、次のパラメータを送信します。
 
 - [手順2](#step2) で追加済みのVOD**タイムシフト再生ドメイン名**。
 - [手順3](#step3) のレコーディングテンプレートID。
