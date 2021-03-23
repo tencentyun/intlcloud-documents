@@ -1,7 +1,7 @@
 ### 前提条件
-- Tencent Cloudアカウントが登録済みであり、かつ [Tencent LVBサービス](https://intl.cloud.tencent.com/product/LVB)がアクティブ化されていること。
+- Tencent Cloudアカウントが登録済みであり、かつ [Tencent CSSサービス](https://intl.cloud.tencent.com/product/css)がアクティブ化されていること。
 - 独自のドメイン名があること。
-- 【LVBコンソール】>【[Domain Management](https://console.cloud.tencent.com/live/domainmanage)】にプッシュ/再生ドメイン名が追加され、かつCNAMEが正常に実行されていること。詳細な操作については、[独自のドメイン名の追加](https://intl.cloud.tencent.com/document/product/267/35970)をご参照ください。
+- 【CSSコンソール】>【[Domain Management](https://console.cloud.tencent.com/live/domainmanage)】にプッシュ/再生ドメイン名が追加され、かつCNAMEが正常に実行されていること。詳細な操作については、[独自のドメイン名の追加](https://intl.cloud.tencent.com/document/product/267/35970)をご参照ください。
 
 <span id="push"></span>
 ### プッシュURLのスプライス
@@ -9,9 +9,9 @@
 ![](https://main.qcloudimg.com/raw/679602c838e8dfd3b61acefebb221d13.jpg)
 
 - **Domain**
-プッシュドメイン名には、Tencent Cloud LVBが提供するデフォルトのプッシュドメイン名が使用でき、またはCNAMEが正常に設定された独自のプッシュドメイン名も使用できます。
+プッシュドメイン名には、Tencent Cloud CSSが提供するデフォルトのプッシュドメイン名が使用でき、またはCNAMEが正常に設定された独自のプッシュドメイン名も使用できます。
 - **AppName**
-LVBアプリケーション名のデフォルトはlive ですが、カスタマイズすることができます。
+CSSアプリケーション名のデフォルトはlive ですが、カスタマイズすることができます。
 - **StreamName（ストリームID）**
 カスタムストリーム名、各ライブストリーミングのストリームの一意IDには、ランダムな数字または数字とアルファベットの組み合わせを使用することをお勧めします。
 - **認証Key（オプション）**
@@ -66,5 +66,5 @@ http://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txT
 
 <span id="push_code"></span>
 ### プッシュサンプルコードの表示
-【LVBコンソール】>[【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)に移動し、事前に設定したプッシュドメイン名を選択して、【管理】>【プッシュ設定】ページの下半分にホットリンク防止アドレスの生成方法を示す【プッシュアドレスサンプルコード】（PHPとJavaの両バージョン）があります。さらに詳細な情報と操作については、[プッシュ設定](https://intl.cloud.tencent.com/document/product/267/31059)をご参照ください。
+【CSSコンソール】>[【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)に移動し、事前に設定したプッシュドメイン名を選択して、【管理】>【プッシュ設定】ページの下半分にホットリンク防止アドレスの生成方法を示す【プッシュアドレスサンプルコード】（PHPとJavaの両バージョン）があります。さらに詳細な情報と操作については、[プッシュ設定](https://intl.cloud.tencent.com/document/product/267/31059)をご参照ください。
 
