@@ -2,7 +2,7 @@
 
 当 COS 资源发生变动（例如新文件上传、文件删除），您可以及时收到通知消息。事件通知可以结合 [云函数 SCF](https://intl.cloud.tencent.com/product/scf)（Serverless Cloud Function）实现更丰富的应用场景：
 
-- **产品间联动**：例如，当新文件上传到 COS 后，[自动刷新 CDN 缓存](https://intl.cloud.tencent.com/document/product/436/30611)。新文件上传到 COS 后，自动更新数据库。
+- **产品间联动**：例如，当新文件上传到 COS 后，自动刷新 CDN 缓存。新文件上传到 COS 后，自动更新数据库。
 - **系统集成**：当 COS 上的文件发生变更（新建、删除、覆盖），自动调用您自己的服务接口。在 UGC（User Generated Content）场景下，您就可以基于事件通知功能，完成移动端和服务端的联动。
 - **数据处理**：对 COS 上的文件进行自动处理，例如，自动解压缩、AI 识别等。
 ![](https://main.qcloudimg.com/raw/d3b76080a15393556c8aa5b79f9439f0.png)
