@@ -2,7 +2,7 @@
 재생 도메인을 서로 다른 리전에서 배포, 가속, 재생해야 해서 도메인 가속 리전 전환이 필요한 경우 리전 설정에서 도메인 재생 리전을 설정할 수 있습니다.
 
 ## 전제 조건
-- [LVB 콘솔](https://console.cloud.tencent.com/live)에 로그인되어 있어야 합니다.
+- [CSS 콘솔](https://console.cloud.tencent.com/live)에 로그인되어 있어야 합니다.
 - **재생 도메인**이 추가되어 있어야 합니다.
 >? 도메인 추가, 재생 도메인 선택 시 라이브 방송을 재생 배포하는 가속 리전(예: "중국대륙")을 선택하고, [확인]을 클릭합니다.
 >![](https://main.qcloudimg.com/raw/bffc28b43fb63cdbd996a93790cb5db5.png)
