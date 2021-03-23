@@ -1,7 +1,7 @@
 Tencent Cloud 라이브 방송은 라이브 방송 푸시 스트림 중단 기록 및 원인을 빠르게 파악할 수 있도록 스트리밍 중단 진단을 지원합니다.
 
 ## 전제 조건
-- [LVB 콘솔](https://console.cloud.tencent.com/live)에 로그인되어 있어야 합니다.
+- [CSS 콘솔](https://console.cloud.tencent.com/live)에 로그인되어 있어야 합니다.
 - 현재 Tencent Cloud 계정의 라이브 방송 푸시 스트림에 스트리밍 중단이 발생했어야 합니다.
 
 ## 작업 순서
