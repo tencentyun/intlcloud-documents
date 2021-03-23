@@ -1,7 +1,7 @@
 ### 전제 조건
-- Tencent Cloud 계정에 가입되어 있어야 하며 [LVB 서비스](https://intl.cloud.tencent.com/product/LVB)가 활성화된 상태여야 합니다.
+- Tencent Cloud 계정에 가입되어 있어야 하며 [CSS 서비스](https://intl.cloud.tencent.com/product/css)가 활성화된 상태여야 합니다.
 - 외부 도메인이 있어야 합니다.
-- [LVB 콘솔]>[도메인 관리](https://console.cloud.tencent.com/live/domainmanage)에서 푸시 스트림/재생 도메인을 추가하고 CNAME 작업을 완료한 상태여야 하며, 자세한 방법은 [외부 도메인 추가](https://intl.cloud.tencent.com/document/product/267/35970)를 참조하십시오.
+- [CSS 콘솔]>[도메인 관리](https://console.cloud.tencent.com/live/domainmanage)에서 푸시 스트림/재생 도메인을 추가하고 CNAME 작업을 완료한 상태여야 하며, 자세한 방법은 [외부 도메인 추가](https://intl.cloud.tencent.com/document/product/267/35970)를 참조하십시오.
 
 <span id="push"></span>
 ### 푸시 스트림 URL 연동
@@ -9,7 +9,7 @@
 ![](https://main.qcloudimg.com/raw/679602c838e8dfd3b61acefebb221d13.jpg)
 
 - **Domain**
-푸시 스트림 도메인으로, Tencent LVB를 이용해 제공하는 기본 푸시 스트림 도메인입니다. 외부 도메인에 CNAME을 설정한 푸시 스트림 도메인을 사용할 수도 있습니다.
+푸시 스트림 도메인으로, Tencent CSS를 이용해 제공하는 기본 푸시 스트림 도메인입니다. 외부 도메인에 CNAME을 설정한 푸시 스트림 도메인을 사용할 수도 있습니다.
 - **AppName**
 라이브 방송 애플리케이션 이름으로, 기본값은 live이며 사용자 정의할 수 있습니다.
 - **StreamName(스트림 ID)**
@@ -66,5 +66,5 @@ http://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txT
 
 <span id="push_code"></span>
 ### 푸시 스트림 예시 코드 확인
-[LVB 콘솔]>[도메인 관리](https://console.cloud.tencent.com/live/domainmanage)에서 이벤트 설정의 푸시 스트림 도메인을 선택한 후, [관리]>[푸시 스트림 설정] 페이지 아래쪽에 [푸시 스트림 주소 예시 코드](PHP 및 Java 두 버전)가 있습니다. 링크 도용 방지 주소를 생성하는 방법을 보여줍니다. 자세한 작업 방법은 [푸시 스트림 설정](https://intl.cloud.tencent.com/document/product/267/31059)을 참조하십시오.
+[CSS 콘솔]>[도메인 관리](https://console.cloud.tencent.com/live/domainmanage)에서 이벤트 설정의 푸시 스트림 도메인을 선택한 후, [관리]>[푸시 스트림 설정] 페이지 아래쪽에 [푸시 스트림 주소 예시 코드](PHP 및 Java 두 버전)가 있습니다. 링크 도용 방지 주소를 생성하는 방법을 보여줍니다. 자세한 작업 방법은 [푸시 스트림 설정](https://intl.cloud.tencent.com/document/product/267/31059)을 참조하십시오.
 
