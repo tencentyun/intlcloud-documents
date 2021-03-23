@@ -3,10 +3,10 @@
 주소 생성기를 통해 이미 추가한 푸시 스트리밍/재생 도메인을 빠르게 선택하고 해당 푸시 스트리밍/재생 주소를 생성할 수 있습니다.
 
 ## 전제 조건
-[LVB 콘솔](https://console.cloud.tencent.com/live)의 [도메인 관리](https://intl.cloud.tencent.com/document/product/267/31056)에는 1개 이상의 사용 가능한 도메인이 있어야 합니다.
+[CSS 콘솔](https://console.cloud.tencent.com/live)의 [도메인 관리](https://intl.cloud.tencent.com/document/product/267/31056)에는 1개 이상의 사용 가능한 도메인이 있어야 합니다.
 
 ## 작업 순서
-1. LVB 콘솔에 로그인하여 [LVB Toolkit]>[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)를 선택해 주소 생성기 페이지로 이동합니다.
+1. CSS 콘솔에 로그인하여 [CSS Toolkit]>[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)를 선택해 주소 생성기 페이지로 이동합니다.
 3. 주소 생성기 페이지에서 다음과 같이 설정합니다.
 	1. 생성 유형에서 **푸시 스트리밍 도메인** 또는 **재생 도메인**을 선택합니다.
 	2. 도메인 관리에서 추가한 해당하는 도메인을 선택합니다.
