@@ -19,5 +19,5 @@ You can purchase a TencentDB for Redis instance at [Tencent Cloud's official web
 >- For more purchase instructions and precautions, see [Creating an Instance](https://intl.cloud.tencent.com/document/product/239/7033).
 
 ## Purchasing via API
-For more information on how to purchase a TencentDB for Redis instance via the API, see [Create CRS Instance](https://intl.cloud.tencent.com/document/product/239/5325).
+For more information on how to purchase a TencentDB for Redis instance via the API, see [Create CRS Instance](https://intl.cloud.tencent.com/document/product/239/32069).
 
