@@ -1,4 +1,4 @@
-## Creating Repository
+## Creating a Repository
 You can create a repository by running the following command:
 ```
 PUT _snapshot/my_cos_backup
@@ -16,30 +16,30 @@ PUT _snapshot/my_cos_backup
     }
 }
 ```
-- app_id: `APPID` of your Tencent Cloud account.
-- access_key_id: `SecretId` of your TencentCloud API key.
-- access_key_secret: `SecretKey` of your TencentCloud API key.
-- bucket: COS bucket name, **which cannot contain the `-{appId}` suffix**.
-- region: COS bucket region, **which must be the same region as that of the ES cluster**.  For more information about regions, see [Regions and Availability Zones](https://intl.cloud.tencent.com/document/product/213/6091).
+- app_id: APPID of your Tencent Cloud account.
+- access_key_id: SecretId of your Tencent Cloud API key.
+- access_key_secret: SecretKey of your Tencent Cloud API ley.
+- bucket: COS bucket name, **which cannot contain the `-{appId}` prefix**.
+- region: COS bucket region, **which must be the same region as that of the ES cluster**. For more information about regions, see [Regions and Availability Zones](https://intl.cloud.tencent.com/document/product/213/6091).
 - base_path: backup directory.   
 
 ## Listing Repository Information
-You can use `GET _snapshot` to get the repository information. You can also get the information of a specified repository by running `GET _snapshot/my_cos_backup`.
+You can get repository information via `GET _snapshot` or get the information of a specified repository via `GET _snapshot/my_cos_backup`.
 
-## Creating Snapshot Backup
+## Creating a Snapshot Backup
 
-### Backing up all indexes
+### Backing up all indices
 Back up all indices in the ES cluster to the repository `my_cos_backup` and name it `snapshot_1`.
 ```
 PUT _snapshot/my_cos_backup/snapshot_1
 ```
-This command will be returned immediately and executed asynchronously in the background until the end. If you want to block the execution of the snapshot creating command, you can add the `wait_for_completion` parameter. **The duration of the command execution depends on the index size.**
+This command will return a response immediately and be executed asynchronously in the background until the end. If you want to wait for the execution to complete before returning, you can add the `wait_for_completion` parameter. **The duration of the command execution depends on the index size**.
 ```
 PUT _snapshot/my_cos_backup/snapshot_1?wait_for_completion=true
 ```
 
-### Backing up specified index
-You can specify the index to be backed up when creating a snapshot. **If the value of the `indices` parameter is multiple indices, they should be separated by `, ` with no spaces.**
+### Backing up specified indices
+You can specify the indices to be backed up when creating a snapshot. **If the value of the `indices` parameter is multiple indices, they should be separated by `,` with no spaces.**
 ```
 PUT _snapshot/my_cos_backup/snapshot_2
 {
@@ -47,12 +47,13 @@ PUT _snapshot/my_cos_backup/snapshot_2
 }
 ```
 
-## Querying Snapshot
+## Querying a Snapshot
 Query the information of a single snapshot:
 ```
 GET _snapshot/my_cos_backup/snapshot_1
 ```
-This command will return the information about the snapshot:
+This command returns the information about the snapshot:
+>?When the value of the `state` field is `SUCCESS`, the snapshot backup is completed.
 ```
 {
     "snapshots": [
@@ -82,20 +83,20 @@ This command will return the information about the snapshot:
 }
 ```
 
-## Deleting Snapshot
-Delete the specified snapshot:
+## Deleting a Snapshot
+Delete a specified snapshot:
 ```
 DELETE _snapshot/my_cos_backup/snapshot_1
 ```
 
->If there are uncompleted snapshots, the snapshot deleting command will still be executed and cancel the creation of such snapshots.
+>!If the creation of the snapshot hasn't been competed, the snapshot deletion command will still be executed and cancel the creation of the snapshot.
 
-## Restoring from Snapshot
-1. Restore all indices backed up in the snapshot to the ES cluster:
+## Restoring Indices from a Snapshot
+1. Restore all indices backed up in a snapshot to the ES cluster:
 ```
 POST _snapshot/my_cos_backup/snapshot_1/_restore
 ```
- - If snapshot_1 contains 5 indices, then all of them will be restored to the ES cluster.   
+ - If `snapshot_1` contains five indices, all of them will be restored to the ES cluster.   
  - You can also rename the indices through an additional option which allows you to match the index name by pattern and provide a new name through the restoration process. Use this option if you want to restore old data to verify the content or perform other operations without replacing existing data.
 
 2. Restore a single index from a snapshot and provide an alternate name:
@@ -107,17 +108,17 @@ POST /_snapshot/my_cos_backup/snapshot_1/_restore
     "rename_replacement": "restored_index_$1"
 }
 ```
- - indices: only restores the index "index_1" and ignores other indices in the snapshot.
+ - indices: only restores `index_1` and ignores other indices in the snapshot.
  - rename_pattern: finds the index being restored that can be matched by the specified pattern.
- - rename_replacement: renames the matching index to an alternate name.   
+ - rename_replacement: renames the matching index to the name specified in this parameter.   
 
-## Querying Snapshot Restoration Status
+## Querying the Status of Snapshot Restoration
 You can check the status of snapshot restoration and monitor the progress by running the `_recovery` command.   
-1. You can call the following API separately in the index specified for restoration:
+1. You can call the following API separately in the specified index to be restored:
 ```
 GET index_1/_recovery
 ```
-2. This command will return the restoration status of each shard of the specified index.
+2. This command will return the restoration status of each shard of the specified index:
 ```
 {
     "sonested": {
@@ -175,14 +176,14 @@ GET index_1/_recovery
     }
 }
 ```
- - type: this describes the nature of the restoration, i.e., this shard is restored from a snapshot.
- - source: the hash describes the specific snapshot and repository as the source of restoration.
- - percent: this describes the status of restoration. The particular shard has now restored 94% of the files, so it will be completely restored soon.   
+ - type: describes the nature of the restoration, i.e., this shard is restored from a snapshot.
+ - source: describes the specific snapshot and repository as the source of restoration.
+ - percent: describes the restoration status. 94% of the files in the particular shard has now been restored, so it will be completely restored soon.   
 
-The output lists all the indices that are being restored and all the shards in them. Each shard contains statistics such as start/stop time, duration, percentage of restoration, and number of bytes transferred.
+The output lists all the indices that are being restored and all the shards in them. Each shard contains statistics such as the start/stop time, duration, percentage of restoration, and number of bytes transferred.
 
 ## Canceling Snapshot Restoration
 ```
 DELETE /restored_index_1
 ```
-If `restored\_index\_1` is being restored, this deleting command will stop the restoration and delete all data that has been restored to the cluster.
+If `restored\_index\_1` is being restored, this deletion command will stop the restoration and delete all data that has been restored to the cluster.
