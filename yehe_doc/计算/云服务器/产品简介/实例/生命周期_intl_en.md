@@ -46,7 +46,7 @@ For more information about shutting down an instance, please see [Shutdown Insta
 If you no longer need an instance, you can terminate and release it via Tencent Cloud Console or APIs.
 
 - Manual termination: pay-as-you-go instances will be released after being retained in the recycle bin for a maximum of 2 hours.
-- Expiry/arrears auto termination: pay-as-you-go instance will be automatically terminated when its balance drops below 0 for 2 hours and 15 days. Billing will continue for the first 2 hours, then the instance will shut down and no longer be billed. The pay-as-you-go instance in arrears will not enter the recycle bin and can be viewed on the instance list. You can continue to use the instance if you renew it within the specified time.
+- Auto termination due to expiry or overdue payment: pay-as-you-go instance will be automatically terminated when its balance drops below 0 for 2 hours and 15 days. Billing will continue for the first 2 hours, then the instance will shut down and no longer be billed. The overdue pay-as-you-go instance will not enter the recycle bin and can be viewed on the instance list. You can continue to use the instance if you renew it within the specified time.
 
 When an instance is terminated, its system disks and data disks specified at purchase will be released. However, cloud disks mounted on the instance will not be affected.
 For more information on terminating an instance, please see [Terminate Instances](https://intl.cloud.tencent.com/document/product/213/4930).
