@@ -19,7 +19,7 @@ You can create an alarm policy in the following steps:
 
 6. Set the alarm trigger. You can either choose a trigger condition template or configure trigger conditions.
  - Trigger condition template
-  Enable "Trigger Condition Template" and select a configured template from the drop-down list. For detailed configurations, please see [Configuring Trigger Condition Templates](https://intl.cloud.tencent.com/document/product/248/32817). If a newly created template is not displayed, click **Refresh** on the right.
+  Enable "Trigger Condition Template" and select a configured template from the drop-down list. For detailed configurations, please see [Configuring Trigger Condition Templates](https://intl.cloud.tencent.com/document/product/248/38911). If a newly created template is not displayed, click **Refresh** on the right.
  - Configure trigger condition
 An alarm trigger is a semantic condition consisting of metric, statistical period, comparison relationship, threshold, duration, and notification frequency.
 For example, if the specified metric is `inbound packets`, the statistical period is `1 minute`, the comparison relationship is `>`, the threshold is `100 packets/sec`, the duration is `2 periods`, and the notification frequency is `once per day`, then the number of inbound packets will be collected once every minute, and an alarm will be triggered once per day if the number of inbound packets of a CLB listener is over 100 packets/sec for two consecutive times.
