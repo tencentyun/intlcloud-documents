@@ -63,7 +63,7 @@
 
 > ? 
 > - 如需查看指标名称，请参考 [云产品监控指标](https://intl.cloud.tencent.com/document/product/248/6843)。
-> - 如需获取产品策略类型和命名空间，请参考 [云产品策略类型和命名空间](https://cloud.tencent.com/document/product/248/50397)。
+> - 如需获取产品策略类型和命名空间，请参考 [云产品策略类型和命名空间](https://intl.cloud.tencent.com/zh/document/product/248/39565)。
 
 #### 指标告警 dimensions 示例
 
