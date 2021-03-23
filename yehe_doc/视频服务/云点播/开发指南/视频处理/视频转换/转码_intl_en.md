@@ -1,6 +1,6 @@
 Transcoding is an offline task that converts the source audio/video bitstream. It changes parameters of the source bitstream, such as codec, resolution, and bitrate, to adapt it to different devices and network conditions. The following benefits can be achieved with transcoding:
 - Compatible with multiple clients: A source video can be transcoded to formats (.mp4 for example) that are compatible with more types of devices for smooth playback.
-- Adapt to different bandwidths: a source video can be transcoded for output in multiple definitions such as LD, SD, HD, and FHD. End users can select the appropriate bitrate depending on their network conditions.
+- Adapt to different bandwidths: a source video can be transcoded for output in multiple definitions such as smooth, SD, HD, and FHD. End users can select the appropriate bitrate depending on their network conditions.
 - Improved playback efficiency: The moov atom can be moved from the end of an MP4 file to its beginning, so the video can be played before it is entirely downloaded.
 - Watermarking: you can add a watermark to a video to mark ownership or copyright. For more information, please see [Watermarking](https://intl.cloud.tencent.com/document/product/266/33939).
 - Reduce bandwidth usage: use advanced encoding modes (H.265 for example) for transcoding to reduce the bitrate of a video substantially with the original quality retained, thus lowering the payback bandwidth usage.
@@ -8,11 +8,11 @@ Transcoding is an offline task that converts the source audio/video bitstream. I
 After a video is transcoded, the playback URL of the output video can be obtained according to [Getting the Result](#jghq). You can use your own player or a third-party player to play back the output video.
 
 >!The transcoding feature is mainly suitable for **UGSV** scenarios. For **long video** scenarios (video websites, online education, etc.), [adaptive bitrate streaming](https://intl.cloud.tencent.com/document/product/266/33942) can deliver a better user experience.
-<span id="zm"></span>
-## Transcoding Template
+
+## [](id:zm)Transcoding Template
 
 The target specification of an output video after transcoding is specified by parameters such as codec, resolution, and bitrate. VOD integrates these parameters in the transcoding template as shown below:
->? For more audio/video transcoding types, see [Supported transcoding types](https://intl.cloud.tencent.com/document/product/266/7898).
+>?For more audio/video transcoding types, see [Supported transcoding types](https://intl.cloud.tencent.com/document/product/266/7898).
 <table>
     <tr>
         <th style="width:18%">
@@ -37,7 +37,7 @@ The target specification of an output video after transcoding is specified by pa
         <td>
 			Supported video and audio container formats for transcoding:
             <li>Video: MP4, TS, HLS, and FLV</li>
-            <li>Audio: MP3, M4A, FLAC, and OGG</li>
+            <li>Audio: MP3, M4A, FLAC, and Ogg</li>
         </td>
     </tr>
     <tr>
@@ -105,8 +105,8 @@ The target specification of an output video after transcoding is specified by pa
             Profile
         </td>
         <td>
-            <li>When the video codec is H.264, the `Baseline`, `Main`, and `High` profiles are supported.</li>
-            <li>When the video codec is H.265, only the `Main` profile is supported.</li>
+            <li>When the video codec is H.264, the baseline, main, and high profiles are supported.</li>
+            <li>When the video codec is H.265, only the main profile is supported.</li>
         </td>
     </tr>
     <tr>
@@ -114,7 +114,7 @@ The target specification of an output video after transcoding is specified by pa
             Color Space
         </td>
         <td>
-            YUV420P is supported.
+            YUV420p is supported.
         </td>
     </tr>
     <tr>
@@ -175,8 +175,8 @@ Methods of initiating transcoding tasks:
 * Specify a task upon upload from server: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, set the specifications of transcoding output in it, and specify it as the `procedure` parameter in the [ApplyUpload](https://intl.cloud.tencent.com/document/product/266/34120) API.
 * Specify a task upon upload from client: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, set the specifications of transcoding output in it, and specify it as the `procedure` parameter in the [signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922).
 * Upload through console: [add a task flow](https://intl.cloud.tencent.com/document/product/266/14058) in the console, set the specifications of transcoding output in it, upload a video through the console, select [Process Video During Upload](https://intl.cloud.tencent.com/document/product/266/33890), and specify to execute this task flow upon video upload completion.
-<span id="jghq"></span>
-## Getting the Result 
+
+## Getting the Result[](id:jghq) 
 
 After initiating a transcoding task, you can wait for [result notification](https://intl.cloud.tencent.com/document/product/266/33931) asynchronously or perform [task query](https://intl.cloud.tencent.com/document/product/266/33931) synchronously to get the task execution result. Below is an example of getting the result notification in normal callback (the fields with null value are omitted):
 

@@ -9,7 +9,7 @@ The transcoding feature converts a video bitstream. It changes parameters of the
 - Intelligently analyzes video metadata to select the optimal transcoding template accordingly and calls back the transcoding result to the user promptly.
 - Supports H.265 transcoding, 4K transcoding, HDR transcoding, and video transcoding to GIF.
 
-### Supported transcoding formats:
+Supported transcoding formats:
 <table>
    <tr>
       <th width="0px" style="text-align:center">Parameter</td>
@@ -28,7 +28,7 @@ The transcoding feature converts a video bitstream. It changes parameters of the
    </tr>
 	    <tr>
       <td style="text-align: center; ">Audio codec</td>
-      <td>AAC, ADPCM, AMR, DSD, MP1, MP2, MP3, PCM, RealAudio, Windows Media Audio, VORBIS</td>
+      <td>AAC, ADPCM, AMR, DSD, MP1, MP2, MP3, PCM, RealAudio, Windows Media Audio, Vorbis</td>
    </tr>
 
    <tr>

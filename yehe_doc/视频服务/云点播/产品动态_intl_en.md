@@ -10,7 +10,7 @@
 </thead>
 <tbody><tr>
 <td>Released v2.6</td>
-<td>Officially launched billable regions outside Chinese mainland and statistics collection feature of VOD.</td>
+<td>Officially launched billable regions outside Chinese mainland and statistics collection feature of VOD console.</td>
  <td>November 2020</td> 
 </td>
 <br><a href="https://intl.cloud.tencent.com/document/product/266/30421">Usage Statistics</a>
@@ -124,7 +124,7 @@
 <td>Released the dedicated Video Production Edition</td>
 <td >The video clipping and production features were launched for you to clip, splice, transition, and export audio/video files.</td>
  <td>March 02, 2020</td> 
-<td>-</td>
+<td><a href="https://cloud.tencent.com/document/product/266/42923">Video Production</a></td>
 </tr>
 </tbody></table>
 
@@ -200,7 +200,7 @@
 </thead>
 <tbody><tr>
 <td>Released v1.5</td>
-<td><ul style="margin:0;"><li >Fixed issues in the re-upload logic in the console.
+<td><ul style="margin:0;"><li >Fixed issues in the re-upload logic of the console.
 <li >Fixed issues in CSV file export by filter.</td>
  <td>August 1, 2019</td> 
 <td>-</td>
@@ -349,7 +349,7 @@ Tencent Cloud's powerful cloud storage platform provides secure and reliable clo
 </thead>
 <tbody><tr>
 <td>Launched the UGC video upload feature.</td>
-<td>The UGC video upload feature enables end users to quickly upload short video clips to the cloud. It supports upload from iOS, Android, and web clients.</td>
+<td>The UGC video upload feature enables end users to quickly upload short videos to the cloud. It supports upload from iOS, Android, and web clients.</td>
  <td>April 2017</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/266/9760">Media Upload Overview</a></td>
 </tbody></table>

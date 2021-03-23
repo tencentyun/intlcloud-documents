@@ -10,7 +10,7 @@ High: it adds 8x8 internal prediction, custom quantification, lossless video enc
 
 Sampling rate defines the number of samples per second (in Hz) taken from a continuous signal to make a discrete signal. 
 
-## Superplayer
+### Superplayer
 
 Supeperplayer is a player SDK that VOD provides for [long video playback](https://intl.cloud.tencent.com/document/product/266/38295) scenarios. VOD offers Android, iOS, and Web-client players. `FileId` parameter is used to uniquely identify videos in VOD for playback.
 
@@ -32,7 +32,7 @@ A superplayer signature is used by the application playback service to authorize
 - Other [superplayer configurations](https://intl.cloud.tencent.com/document/product/266/38296) than the `default` one has been used.
 - An [encrypted](https://intl.cloud.tencent.com/document/product/266/38294) video needs to be played back.
 
-See [Superplayer Signature](https://intl.cloud.tencent.com/document/product/266/38099) for its specific features and using methods.
+For specific features and using methods, see [Superplayer Signature](https://intl.cloud.tencent.com/document/product/266/38099).
 
 ### Sampling interval
 
@@ -55,17 +55,17 @@ Resolution determines a video's capability to resolve details and is represented
 
 The encoded and compressed video stream and audio stream are put into one file according to a certain format specification, which is container format. For on-demand content, a more appropriate term should be "streaming media transport protocol". The most widely used protocols in the Internet are as follows:
 
-- **MP4**: a classic file format well supported by iOS, Android, PC and Web clients. However, the header of an MP4 file is often too large and complicated. For a long video (e.g., several hours), a large file header will slow down video loading. Therefore, this protocol is more suitable for short video scenarios.
-- **HLS (HTTP Live Streaming)**: a protocol developed by Apple and well compatible with iOS and Android clients.  For Internet Explorer to support HLS, secondary development of Flash player is needed (Tencent Cloud's Flash player control is recommended). With a streamlined M3U8 index structure, HLS does not have MP4's drawback of slow indexing, making it a favorable choice for on-demand content.
-- **FLV**: a protocol developed by Adobe and well supported by Flash Player on PCs, but requires a dedicated player on mobile devices (Tencent Cloud's Flash Player control is recommended). Most mobile browsers do not support FLV.
+- **MP4**: a classic file format well supported by iOS, Android, PC Web clients. However, the header of an MP4 file is often too large and complicated. For a long video (e.g., several hours), a large file header will slow down video loading. Therefore, this protocol is more suitable for short video scenarios.
+- **HLS (HTTP Live Streaming)**: a protocol developed by Apple and well compatible with iOS and Android clients.  For Internet Explorer to support HLS, secondary development of Flash player is needed (Tencent Cloud's Flash player control is recommended). With a streamlined M3U8 index structure, HLS does not have MP4's drawback of slow indexing and is a favorable choice for on-demand content.
+- **FLV**: a protocol developed by Adobe and well supported by Flash player on PCs, but requires a player on applications if FLV format is to be used on mobile clients (Tencent Cloud's Flash player control is recommended). Most mobile browsers do not support FLV.
 
 ### GOP
 
 A GOP (group of pictures) refers to a collection of successive pictures within an MPEG encoded video stream. It starts with an I-frame and ends with the next I-frame. A GOP can contain the following types of pictures:
 
 I-frame: intra encoded picture. It is in block-based frame and is a fixed image independent of other image types. Each GOP begins with this type of image.
-- P-frame (Predictive Coded Picture): predictive coded picture. It contains the information of the difference from the previous I or P frame.
-B-Frame (Bidirectionally Predictive Coded Pictures): the predictive coded picture that contains the information of difference from the previous and/or the latter I or P frame.
+- P-frame: predictive coded picture. It contains the information of the difference from the previous I or P frame.
+B-Frame: bidirectionally predictive coded picture, which contains the information of difference from the previous and/or the latter I or P frame.
 
 The number of frames within a GOP is called GOP length.
 
@@ -79,7 +79,7 @@ An HTTP protocol identifier refers to a specific protocol used to request media 
 
 ### HTTP status code
 
-An HTTP status code (or HTTP response status code) indicates whether an HTTP request has been successfully completed. There are five categories of status codes: information response (100-199), response success (200-299), redirection (300-399), client error (400-499), and server error (500-599). For more information, please see [HTTP Response Codes](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status) and [RFC2616](https://tools.ietf.org/html/rfc2616#section-10).
+An HTTP status code (or HTTP response status code) indicates whether an HTTP request has been successfully completed. There are five categories of status codes: information response (100-199), response success (200-299), redirection (300-399), client error (400-499), and server error (500-599). For more information, please see [HTTP Response Codes](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status) and [RFC 2616](https://tools.ietf.org/html/rfc2616#section-10).
 
 ### Cache Hit/Miss
 
@@ -99,13 +99,13 @@ An IDR (instantaneous decoding refresh) picture is a type of I frame. Different 
 
 In VOD scenarios, a player generally allows dragging on the progress bar to a desired position. The most convenient way is to start playback from the IDR picture in close proximity to that position, because it is clear for the player that all frames after the IDR frame will not reference other I frames before it, thus avoiding complicated reverse resolution.
 
-If IDR frame alignment is specified when multi-bitrate transcoding is performed on a video, IDR pictures of all the output videos will be precisely aligned by time point and picture content, so that video players can smoothly switch among videos at different bitrates without obvious lagging.
+If IDR frame alignment is specified when multi-bitrate transcoding is performed on a video, IDR frames of all the output videos will be precisely aligned by time point and picture content, so that video players can smoothly switch among videos at different bitrates without obvious lagging.
 
 If you enable IDR frame alignment on the VOD platform during transcoding, the settings of frame rate, GOP length, codec, and container format of multiple output formats must be identical.
 
 ### Basic player
 
-VOD provides playback SDKs for Android, iOS, and Web for [short video playback](https://intl.cloud.tencent.com/document/product/266/38295). The URL contains parameters used for playing back on-demand videos.
+VOD provides player SDKs for Android, iOS, and Web clients for [short video playback](https://intl.cloud.tencent.com/document/product/266/38295). The URL contains parameters used for playing back on-demand videos.
 
 ### Bitrate
 
@@ -120,7 +120,7 @@ Content prefetch is to prefetch the media content to CDN nodes in advance, which
 In the era of analog television, the processing speed and network bandwidth of playback devices were limited. Thus, interlacing technology was developed to deliver videos at lower bitrates without reducing the source frame rates. It can reduce the video transmission bandwidth by 50% while basically retaining source image quality. However, it has noticeable negative effects such as low definition, flickering, and jagged image edges.
 As video playback devices have been advanced and network bandwidth have been improved, interlacing gradually becomes outdated and is not supported by some new device models. Therefore, old videos that were processed with interlacing need to be "deinterlaced".
 
-Range parameter
+### Range parameter
 
 The `Range` parameter is the response content range specified by the `Range` header in an HTTP request. When a modern player plays back a large media file, it usually doesn't download the entire file; instead, it requests the file in segments. A `Range` request allows the server to send only a part of the media file to the client for playback. For more information, please see [HTTP range requests](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Range_requests).
 
@@ -130,9 +130,9 @@ A sound channel refers to an independent audio signal collected or played back f
 
 ### Video codec
 
-A program or a device that can compress or decompress (video decoding) digital videos. The common encoding methods include:
+A video codec refers to a program or a device that can compress or decompress (video decoding) digital videos. The common codecs include:
 
-- H.26x series: standards developed by the International Telecommunication Union (ITU), among which the most popular one is H.264. H.265 is the successor of H.264 and offers a doubled compression rate compared to H.264, yet H.265 is not widely used for patent limitations and other reasons.
+- H.26x series: standards developed by the International Telecommunication Union (ITU), among which the most popular one is H.264. H.265 is the successor of H.264 and offers a doubled compression rate compared to H.264, yet H.265 is not widely used dut to patent and other reasons.
 - MPEG series: codec standards developed by Moving Picture Experts Group (MPEG) under International Organization for Standardization (ISO).
 - Other series such as VP8 and VP9 developed by Google and RealVideo developed by RealNetworks.
 
@@ -142,9 +142,9 @@ An operation such as uploading, deleting, or video processing initiated on a vid
 
 ### Video noise reduction
 
-Video noise is random variation of brightness or colors in an image caused by a sensor, scanner circuit, or digital camera. It can also originate in film grain and fixed shot noise of a photon detector. It is generally viewed as an undesirable by-product of image capturing. Video noise reduction is to remove unwanted noise from a video while retaining important details and other useful information in the video.
+Video noise is random variation of brightness or colors in an image produced by a sensor, scanner circuit, or digital camera. It can also originate in film grain and fixed shot noise of a photon detector. It is generally viewed as an undesirable by-product of image capturing. Video noise reduction is to remove unwanted noise from a video while retaining important details and other useful information in the video.
 
-## Video pull
+### Video pull
 
 The process of pulling videos in the Internet to VOD as media assets. For details, see [PullUpload](https://intl.cloud.tencent.com/document/product/266/34118).
 
@@ -162,7 +162,7 @@ SimpleAES is an HLS-based AES encryption scheme that uses a key to encrypt video
 
 For details, see [Video on-demand (VOD)](https://intl.cloud.tencent.com/document/product/266/11732).
 
-### Web/Mobile player
+### Web/mobile player
 
 A web player is a player used on webpages. A mobile player is a player integrated in applications on mobile devices (phones and tablets). VOD currently provides three player SDKs for Android, iOS, and web respectively, among which Android and iOS players are mobile players.
 
@@ -176,7 +176,7 @@ A color space is an abstract mathematical model which simply describes the range
 
 ### Audio codec
 
-A audio codec is a method of encoding analog audio as digital signals or decoding digital back into analog. There are mainly two kinds of audio codecs: lossless and lossy. According to sampling principles, encoded audio signals can only get "infinitely similar" to natural signals; therefore, all audio codecs are lossy in essence. In computer field, pulse code modulation (PCM) that achieves the highest fidelity is regarded as lossless encoding. Commonly used audio codecs in Internet services are all lossy, such as MP3 and AAC.
+An audio codec is a method of encoding analog audio as digital signals or decoding digital back into analog. There are mainly two kinds of audio codecs: lossless and lossy. According to sampling principles, encoded audio signals can only get "close to indefinitely" to natural signals; therefore, all audio codecs are lossy. In computer field, pulse code modulation (PCM) that achieves the highest fidelity is regarded as lossless encoding. Commonly used audio codecs in Internet services are all lossy, such as MP3 and AAC.
 
 ### Video on-demand (VOD)
 
@@ -191,7 +191,7 @@ Frame rate refers to the number of frames in a video per unit time. It is measur
 Transcoding converts a video bitstream into another one. It changes the codec, resolution, bitrate, and other parameters of the bitstream for playback on different devices in various network environments. This feature can achieve the following:
 
 - Increase compatibility: transcode a source video to formats (MP4 for example) that are compatible with more types of devices for smooth playback.
-  - Increase bandwidth adaptability: transcode a source video to outputs in LD, SD, HD, and UHD. End users can select the bitrates as appropriate for their network conditions.
+  - Increase bandwidth adaptability: transcode a source video to outputs in smooth, SD, HD, and UHD. End users can select the bitrates as appropriate for their network conditions.
   - Improved playback efficiency: The moov atom can be moved from the end of an MP4 file to its beginning, so the video can be played before it is entirely downloaded.
   - Watermarking: a watermark can be added to a video to mark video ownership or copyright.
   - Reduce bandwidth usage: use advanced encoding modes (such as H.265) for transcoding to reduce the bitrate of a video substantially with the original quality retained, thus lowering the payback bandwidth usage.
