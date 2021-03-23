@@ -3,7 +3,7 @@ Open Broadcaster Software(OBS)는 사용하기 좋은 3rd party 오픈 소스 �
 이 작업은 OBS 툴을 설치한 후 PC에서 푸시 스트리밍을 설정하는 방법을 알려줍니다.
 
 ## 준비 과정
-- [LVB 콘솔](https://console.cloud.tencent.com/live)에 로그인하여 푸시 스트리밍 주소를 생성하십시오. 자세한 내용은 [푸시 스트리밍 설정](https://intl.cloud.tencent.com/document/product/267/31059)을 참조하십시오.
+- [CSS 콘솔](https://console.cloud.tencent.com/live)에 로그인하여 푸시 스트리밍 주소를 생성하십시오. 자세한 내용은 [푸시 스트리밍 설정](https://intl.cloud.tencent.com/document/product/267/31059)을 참조하십시오.
 - [OBS](https://obsproject.com/download?spm=a2c4g.11186623.2.15.6aac1445JPlKR8) 툴을 설치하십시오.
 
 ## 작업 순서
