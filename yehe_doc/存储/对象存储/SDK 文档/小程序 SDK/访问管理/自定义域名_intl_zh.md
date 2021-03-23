@@ -4,9 +4,9 @@
 
 | API                                                          | 操作名         | 操作描述                         |
 | ------------------------------------------------------------ | -------------- | -------------------------------- |
-| [PUT Bucket domain](https://intl.cloud.tencent.com/document/product/436/35868) | 设置自定义域名   | 设置存储桶的自定义域名信息 |
-| [GET Bucket domain](https://intl.cloud.tencent.com/document/product/436/35869) | 查询自定义域名 | 查询存储桶的自定义域名信息 |
-| [DELETE Bucket domain](https://intl.cloud.tencent.com/document/product/436/35870) | 删除自定义域名 | 删除存储桶的自定义域名信息 |
+| PUT Bucket domain | 设置自定义域名   | 设置存储桶的自定义域名信息 |
+| GET Bucket domain | 查询自定义域名 | 查询存储桶的自定义域名信息 |
+| DELETE Bucket domain | 删除自定义域名 | 删除存储桶的自定义域名信息 |
 
 
 ## 设置自定义域名
