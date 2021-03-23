@@ -1,15 +1,61 @@
-## Latest Lite Edition 5.1.137 @2021.01.29
+## Latest Standard Edition 5.1.56 @2021.03.03
 
 ### SDK
 
 **Common changes**
-- Fixed the issue where there was no callback for the login API occasionally when a user logged in to the same account repeatedly on multiple iOS devices or Android devices.
+
+- Optimized the logic of persistent connection, improving the quality of connections outside Chinese mainland.
+- Optimized data reporting and specified error codes related to network timeout in a detailed way.
+- Fixed known stability issues.
+
+**iOS platform**
+
+- Fixed occasional failures in extracting logs in the iOS SDK.
 
 **Android platform**
-- Fixed crashes that occurred occasionally when a low-end Android device tried to obtain the log path.
 
+- Replaced the log component of the Android SDK to improve stability.
 
-## Latest Standard Edition 5.1.21 @2021.01.15
+**Windows platform**
+
+- Fixed the issue where the client thread might block the SDK logic thread when a new message callback was triggered in the Windows SDK.
+
+## Latest Lite Edition 5.1.138 @2021.02.05
+### SDK
+
+**Common changes**
+- Optimized logging.
+- Optimized the policy of persistent connection, improving the quality of connections outside Chinese mainland.
+- Fixed the issue where sometimes the last message was incorrect when multiple C2C messages were sent in the same second.
+- Fixed the issue where sometimes there was be no callback for querying the conversation list.
+- Fixed the issue where sometimes the sequence number of a C2C message was incorrect.
+
+**Android platform**
+- Fixed the issue where sometimes a negative upload progress was displayed when a video greater than 24 MB was sent.
+- Fixed occasional crashes when messages were sent.
+
+## 5.1.50 @2021.02.05 - Standard Edition
+
+### SDK
+
+- V2 APIs added the `random` field for message objects.
+- Added support for recalling the `lastMsg` message in a conversation.
+- Fixed occasional exceptions in the status of the last message obtained via the `getMessage` API.
+- Fixed the issue where messages were delayed when user profiles were frequently pulled after messages were received.
+- Fixed the issue where deleting the account might cause the failure to pull the group member list.
+- Fixed the issue where the message might not be found when `findMessage` was called after `insertLocalMessage`.
+- Fixed the issue of conversation update callback when a conversation was deleted.
+- Fixed the issue of the Android SDK where the nicknames of historical group messages were not timely updated.
+- Improved the database stability of the iOS SDK.
+
+### TUIKit and demo
+- Fixed the issue of the Android TUIKit where a black screen was displayed when you tried to view the original images that were not downloaded.
+- Fixed the internationalization issue of the iOS version.
+- Fixed the issue of the iOS version where images were overwritten when multiple images were sent at a time.
+- Fixed the issue of the iOS 14 operating system where there was no response when you clicked the "add" or "delete" button on the group details page.
+- Fixed the issue of the iOS 14 operating system where the tab bar disappeared after you left a group conversation and went back to the message list.
+
+## 5.1.21 @2021.01.15 - Standard Edition
 
 ### SDK
 
@@ -21,6 +67,17 @@
 **iOS/Android**
 
 - Improved internationalization support by eliminating the issue where there were Chinese characters in the English version.
+
+
+## 5.1.137 @2021.01.29 - Lite Edition
+
+### SDK
+
+**Common changes**
+- Fixed the issue where there was no callback for the login API occasionally when a user logged in to the same account repeatedly on multiple iOS devices or Android devices.
+
+**Android platform**
+- Fixed crashes that occurred occasionally when a low-end Android device tried to obtain the log path.
 
 
 ## 5.1.136 @2021.01.27 - Lite Edition
@@ -405,7 +462,7 @@
 - Fixed file upload failures in some regions outside Chinese mainland.
 - Fixed file upload failures for accounts containing the @ symbol.
 - Fixed occasional errors with C2C unread count.
-- Fixed occasional exceptions in conversation showName display.
+- Fixed occasional exceptions in conversation `showName` display.
 - Added an API for obtaining the download URL of file messages.
 
 **iOS platform**
@@ -1259,7 +1316,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
  - TUIKit: fixed a crash (github issue#86).
  - TUIKit: fixed issues with using SDK without permissions.
  - TUIKit: fixed crashes after deleting conversation, deleting message, and long-pressing.
- - TUIKit: fixed the issue where popupwindow would not disappear.
+ - TUIKit: fixed the issue where `popupwindow` would not disappear.
  - TUIKit: fixed the issue with repeated messages.
  - TUIKit: fixed the issue with intercepting empty messages containing whitespace.
  - TUIKit: fixed the issue where unread counts did not update after conversations were deleted.
