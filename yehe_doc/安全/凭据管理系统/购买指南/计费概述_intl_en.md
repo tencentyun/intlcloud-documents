@@ -12,8 +12,8 @@
 	- **Price:** 0.4 USD/credential/month
 
 >!
-- Quota: Each account can have up to 1000 credentials. If you need to create more credentials, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) or [contact the sales rep](https://intl.cloud.tencent.com/zh/contact-sales).
-- Credential status: Only enabled and disabled credentials are charged.
+>- Quota: Each account can have up to 1000 credentials. If you need to create more credentials, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) or [contact the sales rep](https://intl.cloud.tencent.com/zh/contact-sales).
+>- Credential status: Only enabled and disabled credentials are charged.
 
 ## API Call Fees
 - SSM API call fees are **calculated and billed by month**. The accumulated number of API calls is calculated and billed monthly.
