@@ -1,30 +1,30 @@
 
-LVBのポルノ検出をアクティブにするには、まずLVBスクリーンキャプチャ機能をアクティブにする必要があります。[LVBコンソール](https://intl.cloud.tencent.com/document/product/267/31072)  またはLVBスクリーンキャプチャポルノ検出APIを介してアクティブにすることができます。ここでは、主にLVBスクリーンキャプチャポルノ検出APIを介したLVBポルノ検出機能の実現方法について説明します。
+CSSのポルノ検出をアクティブにするには、まずCSSスクリーンキャプチャ機能をアクティブにする必要があります。[CSSコンソール](https://intl.cloud.tencent.com/document/product/267/31072)  またはCSSスクリーンキャプチャポルノ検出APIを介してアクティブにすることができます。ここでは、主にCSSスクリーンキャプチャポルノ検出APIを介したCSSポルノ検出機能の実現方法について説明します。
 
-## LVBポルノ検出のアクティブ化
-LVBポルノ検出は、LVBスクリーンキャプチャに基づくため、LVBポルノ検出のアクティブ化には、LVBスクリーンキャプチャ機能のアクティブ化が必要です。具体的な操作は次のとおりです。
+## CSSポルノ検出のアクティブ化
+CSSポルノ検出は、CSSスクリーンキャプチャに基づくため、CSSポルノ検出のアクティブ化には、CSSスクリーンキャプチャ機能のアクティブ化が必要です。具体的な操作は次のとおりです。
 
-### 1. ポルノ検出機能を付帯するLVBスクリーンキャプチャテンプレートの作成
-[CreateLiveSnapshotTemplate](https://intl.cloud.tencent.com/document/product/267/30834)を呼び出し、PornFlag = 1と設定することによって、ポルノ検出機能を備えたLVBスクリーンキャプチャテンプレートを作成します。
+### 1. ポルノ検出機能を付帯するCSSスクリーンキャプチャテンプレートの作成
+[CreateLiveSnapshotTemplate](https://intl.cloud.tencent.com/document/product/267/30834)を呼び出し、PornFlag = 1と設定することによって、ポルノ検出機能を備えたCSSスクリーンキャプチャテンプレートを作成します。
 
-### 2. ポルノ検出機能を付帯するLVBスクリーンキャプチャルールの作成
-[CreateLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30835)を呼び出し、ポルノ検出機能を付帯するLVBスクリーンキャプチャルールを作成するには、第1ステップで作成したLVBスクリーンキャプチャテンプレートIDをポルノ検出が必要なライブストリーミングAppId、DomainName、AppName、StreamNameに関連付けます。
+### 2. ポルノ検出機能を付帯するCSSスクリーンキャプチャルールの作成
+[CreateLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30835)を呼び出し、ポルノ検出機能を付帯するCSSスクリーンキャプチャルールを作成するには、第1ステップで作成したCSSスクリーンキャプチャテンプレートIDをポルノ検出が必要なライブストリーミングAppId、DomainName、AppName、StreamNameに関連付けます。
 
-### 3. LVBを開始し、ポルノ検出を開始
-ポルノ検出機能を付帯するLVBスクリーンキャプチャルールを作成した後、新たに開始するLVBでは自動的にポルノ検出機能が開始されます。現在ライブストリーミング中のストリームに、LVBのポルノ検出を開始したい場合は、ライブストリーミングを停止、再開して、この機能の開始を有効にする必要があります。
+### 3. CSSを開始し、ポルノ検出を開始
+ポルノ検出機能を付帯するCSSスクリーンキャプチャルールを作成した後、新たに開始するCSSでは自動的にポルノ検出機能が開始されます。現在ライブストリーミング中のストリームに、CSSのポルノ検出を開始したい場合は、ライブストリーミングを停止、再開して、この機能の開始を有効にする必要があります。
 
-## LVBポルノ検出結果の取得
-LVBポルノ検出機能をアクティブにした後、ポルノ検出コールバックテンプレートで登録するコールバックドメイン名を設定すれば、LVBバックエンドからポルノ検出結果がコールバックされます。
+## CSSポルノ検出結果の取得
+CSSポルノ検出機能をアクティブにした後、ポルノ検出コールバックテンプレートで登録するコールバックドメイン名を設定すれば、CSSバックエンドからポルノ検出結果がコールバックされます。
 >! デフォルトでは疑わしい結果に対してのみコールバックを行い、通常の結果にはコールバックを行いません。
 
-### 1. LVBポルノ検出コールバックテンプレートの作成
-[CreateLiveCallbackTemplate](https://intl.cloud.tencent.com/document/product/267/30815)を呼び出し、PornCensorshipNotifyUrl パラメータをお客様のドメイン名として設定し、LVBポルノ検出コールバックテンプレートを作成します。
-### 2. LVBポルノ検出コールバックルールの作成
+### 1. CSSポルノ検出コールバックテンプレートの作成
+[CreateLiveCallbackTemplate](https://intl.cloud.tencent.com/document/product/267/30815)を呼び出し、PornCensorshipNotifyUrl パラメータをお客様のドメイン名として設定し、CSSポルノ検出コールバックテンプレートを作成します。
+### 2. CSSポルノ検出コールバックルールの作成
 
-[CreateLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30816)を呼び出し、ポルノ検出機能を付帯するLVBスクリーンキャプチャルールを作成するには、直前のステップで作成したLVBスクリーンキャプチャテンプレートIDをポルノ検出が必要なライブストリーミングAppId、DomainName、AppNameに関連付けます。
+[CreateLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30816)を呼び出し、ポルノ検出機能を付帯するCSSスクリーンキャプチャルールを作成するには、直前のステップで作成したCSSスクリーンキャプチャテンプレートIDをポルノ検出が必要なライブストリーミングAppId、DomainName、AppNameに関連付けます。
 
 ### 3. ポルノ検出結果の取得
-LVBのバックエンドは、HTTP POSTリクエストを介して登録されたドメイン名にポルノ検出結果を送信します。ポルノ検出結果はJSON 形式でHTTP Bodyに保存されます。ライブストリーミングがポルノであるかどうかは、typeフィールドのみで判断できます。
+CSSのバックエンドは、HTTP POSTリクエストを介して登録されたドメイン名にポルノ検出結果を送信します。ポルノ検出結果はJSON 形式でHTTP Bodyに保存されます。ライブストリーミングがポルノであるかどうかは、typeフィールドのみで判断できます。
 >!画像の`type`を使用してポルノ画像かどうかを判断することを推奨しますが、検出システムの判断は100%の精度を保証できないため、少数ながらポルノの疑いがあると識別された画像の識別結果が正しくない場合があります。したがって目視による再確認を行うことをお勧めします。  
 
 #### 完全なプロトコルは次のとおりです。
@@ -107,14 +107,14 @@ HTTP Body:
 }  
 ```
 
-## LVBポルノ検出の停止
+## CSSポルノ検出の停止
 
-LVBポルノ検出を停止するには、スクリーンキャプチャルールを削除するか、またはスクリーンキャプチャテンプレートを変更します。すべての削除と変更操作は新たなLVBの対してのみ有効です。すでに開始されているLVBにつき、ポルノ検出を停止したい場合は、ライブストリーミングを停止、再開して、この機能の停止を有効にする必要があります。
+CSSポルノ検出を停止するには、スクリーンキャプチャルールを削除するか、またはスクリーンキャプチャテンプレートを変更します。すべての削除と変更操作は新たなCSSの対してのみ有効です。すでに開始されているCSSにつき、ポルノ検出を停止したい場合は、ライブストリーミングを停止、再開して、この機能の停止を有効にする必要があります。
 
 ### 1. ポルノ検出スクリーンキャプチャルールの削除による停止
 
-[DeleteLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30833)を呼び出し、テンプレートIDを介してDomainName、 AppName、StreamNameの対応するLVBスクリーンキャプチャ仕様を削除します。
+[DeleteLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30833)を呼び出し、テンプレートIDを介してDomainName、 AppName、StreamNameの対応するCSSスクリーンキャプチャ仕様を削除します。
 
 ### 2. ポルノ検出スクリーンキャプチャテンプレートの削除または修正による停止
 
-[ModifyLiveSnapshotTemplate](https://intl.cloud.tencent.com/document/product/267/30828)を呼び出し、LVBテンプレートのポルノ検出表示を0にします。
+[ModifyLiveSnapshotTemplate](https://intl.cloud.tencent.com/document/product/267/30828)を呼び出し、CSSテンプレートのポルノ検出表示を0にします。
