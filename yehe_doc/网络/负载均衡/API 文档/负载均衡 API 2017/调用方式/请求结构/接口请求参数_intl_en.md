@@ -13,7 +13,7 @@ The list below uses the DescribeInstances API as an example and contains its req
 | offset | The offset at which the entries start. The entry starts from 0. | Int | No |
 | limit | The maximum number of instances that can be queried at a time. The default is 20 and the maximum is 100. | Int | No | 
 | status | Status of the CVM to query. | Int | No |
-| projectId | Project ID. CVM instances of all projects will be queried if this parameter is not passed in. The value `0` indicates the default project. If you want to query a specified project, call the [DescribeProject](https://intl.cloud.tencent.com/document/product/378/4400) API. | String | No |
+| projectId | Project ID. CVM instances of all projects will be queried if this parameter is not passed in. The value `0` indicates the default project. If you want to query a specified project, call the DescribeProject API. | String | No |
 | simplify | Non-real time data obtained if `simplify=1` is included in the input parameter| Int | No |
 | zoneId | Availability zone ID. CVM instances in all availability zones will be queried if this parameter is not passed in. If you want to query a specified availability zone, call the [DescribeZones](https://intl.cloud.tencent.com/document/product/213/35071) API. | Int | No |
 
