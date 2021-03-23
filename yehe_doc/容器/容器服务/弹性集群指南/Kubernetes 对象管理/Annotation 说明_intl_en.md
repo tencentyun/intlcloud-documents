@@ -45,7 +45,7 @@ You can define `template annotation` in a YAML file to implement capabilities su
 <li>amd</li>
 </ul>
 For more information on configurations supported by different models, see <a href="https://console.cloud.tencent.com/cvm/securitygroup" target="_blank">Resource Specifications</a>.</td>
-<td>No. If you do not specify it, the CPU type is not specified forcibly by default. The system will calculate the most suitable specifications according to <a href="https://intl.cloud.tencent.com/document/product/457/36161" target="_blank">Methods for Specifying Resource Specifications</a>. If the calculated specifications are supported by both Intel and AMD, Intel CPUs are preferred.</td>
+<td>No. If you do not specify it, the CPU type is not specified forcibly by default. The system will calculate the most suitable specifications according to Methods for Specifying Resource Specifications. If the calculated specifications are supported by both Intel and AMD, Intel CPUs are preferred.</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/gpu-type</td>
@@ -77,12 +77,12 @@ For more information on configurations supported by different models, see <a hre
 <td>No. If you specify it, ensure that the CAM role exists.</td>
 </tr>
 <tr>
-<td>eks.tke.cloud.tencent.com/monitor_port</td>
+<td>eks.tke.cloud.tencent.com/monitor-port</td>
 <td>Sets an open port for monitoring data for a pod, to facilitate collection by Prometheus and other components.</td>
 <td>No. If you do not specify it, the default value is 9100.</td>
 </tr>
 <tr>
-<td>eks.tke.cloud.tencent.com/custom_metrics_url</td>
+<td>eks.tke.cloud.tencent.com/custom-metrics-url</td>
 <td>Sets the custom monitoring metric pull address for a pod. The monitoring data opened at this address will be automatically read and reported by the monitoring component.</td>
 <td>No. If you specify it, please ensure that the opened data protocol can be recognized by the monitoring system, such as the Prometheus protocol and cloud monitoring data protocol.</td>
 </tr>
@@ -124,8 +124,8 @@ spec:
         eks.tke.cloud.tencent.com/security-group-id: "sg-dxxxxxx5,sg-zxxxxxxu"
         eks.tke.cloud.tencent.com/static-ip: "true"
         eks.tke.cloud.tencent.com/role-name: "cam-role-name"
-        eks.tke.cloud.tencent.com/monitor_port: "9123"
-        eks.tke.cloud.tencent.com/custom_metrics_url: "http://localhost:8080/metrics"
+        eks.tke.cloud.tencent.com/monitor-port: "9123"
+        eks.tke.cloud.tencent.com/custom-metrics-url: "http://localhost:8080/metrics"
       creationTimestamp: null
       labels:
         k8s-app: nginx
