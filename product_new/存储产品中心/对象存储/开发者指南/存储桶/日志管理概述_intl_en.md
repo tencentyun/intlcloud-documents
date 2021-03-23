@@ -60,7 +60,7 @@ To enable the log management feature for the specified bucket using API, follow 
 3. Enable log management.
 
 #### 1. Create a log role
-Create a log role. For more information, see [CreateRole](https://intl.cloud.tencent.com/document/product/598/13886).
+Create a log role. For more information, see [CreateRole](https://intl.cloud.tencent.com/jp/document/product/598/33561).
 Here, roleName must be CLS_QcsRole.
 policyDocument must be:
 
@@ -77,7 +77,7 @@ policyDocument must be:
 }
 ```
 #### 2. Grant the log role permissions
-Grant the log role permissions. For specific API information, see [AttachRolePolicy](https://intl.cloud.tencent.com/document/product/598/13889).
+Grant the log role permissions. For specific API information, see [AttachRolePolicy](https://intl.cloud.tencent.com/document/product/598/33562).
 Here, the policyName is QcloudCOSAccessForCLSRole; the roleName is CLS_QcsRole as in step 1, or, the roleID returned upon the creation of roleName, for this regard.   
 
 #### 3. Enable log management
