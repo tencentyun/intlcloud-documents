@@ -4,9 +4,9 @@ This document provides an overview of APIs and SDK code samples related to custo
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | -------------------------------- |
-| [PUT Bucket domain](https://intl.cloud.tencent.com/document/product/436/35868) | Setting a custom endpoint  | Sets a custom endpoint for a bucket |
-| [GET Bucket domain](https://intl.cloud.tencent.com/document/product/436/35869) | Querying a custom endpoint  | Queries the custom endpoint of a bucket |
-| [DELETE Bucket domain](https://intl.cloud.tencent.com/document/product/436/35870) | Deleting a custom endpoint  | Deletes the custom endpoint from a bucket |
+| PUT Bucket domain | Setting a custom endpoint  | Sets a custom endpoint for a bucket |
+| GET Bucket domain | Querying a custom endpoint  | Queries the custom endpoint of a bucket |
+| DELETE Bucket domain | Deleting a custom endpoint  | Deletes the custom endpoint from a bucket |
 
 
 ## Setting a Custom Endpoint
