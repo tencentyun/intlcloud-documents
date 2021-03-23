@@ -242,11 +242,11 @@ config.videoGOP        = 2;
 config.audioSampleRate = 48000;
 config.audioBitrate    = 64;
 config.audioChannels   = 2;
-
+ 
 // 采用预排版模式
 config.mode = TRTCTranscodingConfigMode_Template_PresetLayout;
 config.mixUsers = [NSMutableArray new];
-
+ 
 // 主播摄像头的画面位置
 TRTCMixUser* local = [TRTCMixUser new];
 local.userId = @"$PLACE_HOLDER_LOCAL_MAIN$"; 
@@ -254,7 +254,7 @@ local.zOrder = 0;   // zOrder 为0代表主播画面位于最底层
 local.rect   = CGRectMake(0, 0, videoWidth, videoHeight);
 local.roomID = nil; // 本地用户不用填写 roomID，远程需要
 [config.mixUsers addObject:local];
-
+ 
 // 连麦者的画面位置
 TRTCMixUser* remote1 = [TRTCMixUser new];
 remote1.userId = @"$PLACE_HOLDER_REMOTE$"; 
@@ -262,7 +262,7 @@ remote1.zOrder = 1;
 remote1.rect   = CGRectMake(400, 800, 180, 240); //仅供参考
 remote1.roomID = 97392; // 本地用户不用填写 roomID，远程需要
 [config.mixUsers addObject:remote1];
-
+ 
 // 连麦者的画面位置
 TRTCMixUser* remote2 = [TRTCMixUser new];
 remote2.userId = @"$PLACE_HOLDER_REMOTE$"; 
@@ -270,7 +270,7 @@ remote2.zOrder = 1;
 remote2.rect   = CGRectMake(400, 500, 180, 240); //仅供参考
 remote2.roomID = 97392; // 本地用户不用填写 roomID，远程需要
 [config.mixUsers addObject:remote2];
-
+ 
 // 发起云端混流
 [_trtc setMixTranscodingConfig:config];
 :::
@@ -285,11 +285,11 @@ config.videoGOP        = 2;
 config.audioSampleRate = 48000;
 config.audioBitrate    = 64;
 config.audioChannels   = 2;
-
+ 
 // 采用预排版模式
 config.mode = TRTCCloudDef.TRTC_TranscodingConfigMode_Template_PresetLayout;
 config.mixUsers = new ArrayList<>();
-
+ 
 // 主播摄像头的画面位置
 TRTCCloudDef.TRTCMixUser local = new TRTCCloudDef.TRTCMixUser();
 local.userId = "$PLACE_HOLDER_LOCAL_MAIN$";
@@ -300,7 +300,7 @@ local.width  = videoWidth;
 local.height = videoHeight;
 local.roomId = null; // 本地用户不用填写 roomID，远程需要
 config.mixUsers.add(local);
-
+ 
 // 连麦者的画面位置
 TRTCCloudDef.TRTCMixUser remote1 = new TRTCCloudDef.TRTCMixUser();
 remote1.userId = "$PLACE_HOLDER_REMOTE$";
@@ -311,7 +311,7 @@ remote1.width  = 180; //仅供参考
 remote1.height = 240; //仅供参考
 remote1.roomId = "97392"; // 本地用户不用填写 roomID，远程需要
 config.mixUsers.add(remote1);
-
+ 
 // 连麦者的画面位置
 TRTCCloudDef.TRTCMixUser remote2 = new TRTCCloudDef.TRTCMixUser();
 remote2.userId = "$PLACE_HOLDER_REMOTE$";
@@ -322,7 +322,7 @@ remote1.width  = 180; //仅供参考
 remote1.height = 240; //仅供参考
 remote1.roomId = "97393"; // 本地用户不用填写 roomID，远程需要
 config.mixUsers.add(remote2);
-
+ 
 // 发起云端混流
 trtc.setMixTranscodingConfig(config);
 :::
@@ -337,7 +337,7 @@ config.videoGOP        = 2;
 config.audioSampleRate = 48000;
 config.audioBitrate    = 64;
 config.audioChannels   = 2;
-
+ 
 // 采用预排版模式
 config.mode == TRTCTranscodingConfigMode_Template_PresetLayout
 TRTCMixUser* mixUsersArray = new TRTCMixUser[3];
@@ -348,7 +348,7 @@ mixUsersArray[0].rect.top    = 0;
 mixUsersArray[0].rect.right  = videoWidth;
 mixUsersArray[0].rect.bottom = videoHeight;
 mixUsersArray[0].roomId      = nullptr; // 本地用户不用填写 roomID，远程需要
-
+ 
 mixUsersArray[1].userId      = "$PLACE_HOLDER_REMOTE$";
 mixUsersArray[1].zOrder      = 1;
 mixUsersArray[1].rect.left   = 400; //仅供参考
@@ -356,7 +356,7 @@ mixUsersArray[1].rect.top    = 800; //仅供参考
 mixUsersArray[1].rect.right  = 180; //仅供参考
 mixUsersArray[1].rect.bottom = 240; //仅供参考
 mixUsersArray[1].roomId      = "97392"; // 本地用户不用填写 roomID，远程需要
-
+ 
 mixUsersArray[2].userId      = "$PLACE_HOLDER_REMOTE$";
 mixUsersArray[2].zOrder      = 1;
 mixUsersArray[2].rect.left   = 400; //仅供参考
@@ -365,7 +365,7 @@ mixUsersArray[2].rect.right  = 180; //仅供参考
 mixUsersArray[2].rect.bottom = 240; //仅供参考
 mixUsersArray[2].roomId      = "97393"; // 本地用户不用填写 roomID，远程需要
 config.mixUsersArray = mixUsersArray;
-
+ 
 // 发起云端混流
 trtc->setMixTranscodingConfig(&config);
 :::
@@ -382,7 +382,7 @@ config.audioBitrate    = 64;
 config.audioChannels   = 2;
 config.mode = RTCTranscodingConfigMode.TRTCTranscodingConfigMode_Template_PresetLayout;
 TRTCMixUser[] mixUsersArray = new TRTCMixUser[3];
-
+ 
 // 主播摄像头的画面位置
 TRTCMixUser local = new TRTCMixUser();
 local.userId = "$PLACE_HOLDER_LOCAL_MAIN$";
@@ -396,7 +396,7 @@ RECT rtLocal = new RECT() {
 };
 local.rect = rtLocal;
 mixUsersArray[0] = local;
-
+ 
 // 连麦者的画面位置
 TRTCMixUser remote1 = new TRTCMixUser();
 remote1.userId = "$PLACE_HOLDER_REMOTE$";
@@ -410,7 +410,7 @@ RECT rtRemote1 = new RECT() { //仅供参考
 };
 remote1.rect = rtRemote1;
 mixUsersArray[1] = remote1;
-
+ 
 // 连麦者的画面位置
 TRTCMixUser remote2 = new TRTCMixUser();
 remote2.userId = "$PLACE_HOLDER_REMOTE$";
@@ -424,7 +424,7 @@ RECT rtRemote2 = new RECT() { //仅供参考
 };
 rtRemote2.rect   = rtRemote2;
 mixUsersArray[2] = remote2;
-
+ 
 // 发起云端混流
 config.mixUsersArray = mixUsersArray;
 trtc.setMixTranscodingConfig(config);
@@ -443,10 +443,10 @@ trtcCloud.setMixTranscodingConfig(TRTCTranscodingConfig(
   audioSampleRate: 48000,
   audioBitrate: 64,
   audioChannels: 2,
-
+ 
   // 采用预排版模式
   mode: TRTCCloudDef.TRTC_TranscodingConfigMode_Template_PresetLayout,
-
+ 
   mixUsers: [
   // 主播摄像头的画面位置
     TRTCMixUser(
