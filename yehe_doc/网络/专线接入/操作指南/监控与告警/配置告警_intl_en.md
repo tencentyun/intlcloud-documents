@@ -11,24 +11,22 @@ You can configure alarm rules for the connection, dedicated tunnel, and direct c
     - If you check **Select some objects**, the alarm policy will be associated with the selected instances.
     - If you check **Select instance group**, the alarm policy will be associated with the selected instance groups. You can click **Create instance group** to add instance groups.
   4. Use one of the following methods to configure the trigger condition.
-- Trigger condition template
-    This method allows you to select a configured template from the drop-down list.
->? You can click **Add Trigger Condition Template** to configure a new trigger condition template. For more information, see [Configuring Trigger Condition Templates](https://intl.cloud.tencent.com/document/product/248/32817). If the new template is not displayed in the list, click **Refresh**.
+     - Trigger condition template
+         This method allows you to select a configured template from the drop-down list.
+         >? You can click **Add Trigger Condition Template** to configure a new trigger condition template. For more information, see [Configuring Trigger Condition Templates](https://intl.cloud.tencent.com/document/product/248/38911). If the new template is not displayed in the list, click **Refresh**.
 
-- Configure trigger condition
+     - Configure trigger condition
    This method requires configuring **metric alarm** and **event alarm** as needed.
- - Configure the trigger conditions for metric alarm. For more information about the metrics, see [Metric Alarms](https://intl.cloud.tencent.com/document/product/216/38403).
+          - Configure the trigger conditions for metric alarm. For more information about the metrics, see [Metric Alarms](https://intl.cloud.tencent.com/document/product/216/38403).
  For example, if you choose **BandwidthIn** metric and configure the following parameters: **Statistical Period 1 minutes**, **>**, **100 Mbps**, **Last for 2 periods**, and **Alarm once every 1 day**, then the inbound bandwidth data will be collected once every minute, and an alarm will be triggered once a day if the inbound bandwidth of a connection or dedicated tunnel exceeds 100 Mpbs for 2 consecutive minutes.
->? Click **Add** to configure a new trigger condition. You can select to trigger an alarm when any or all conditions are met.
+            >? Click **Add** to configure a new trigger condition. You can select to trigger an alarm when any or all conditions are met.
 
+          - Configure the event such as DirectConnectDown for the event alarm. For more information about the events, see [Event Alarms](https://cloud.tencent.com/document/product/216/48582).
 
- - Configure the event such as DirectConnectDown for the event alarm. For more information about the events, see [Event Alarms](https://cloud.tencent.com/document/product/216/48582).
-
- >? Click **Add** to configure a new event alarm.
+           >? Click **Add** to configure a new event alarm.
 
 4. Configure the alarm channel, including the recipient group, valid period, and receipt channel (email, object, and WeChat) as needed.
- >? Click **Add Recipient Group** to configure a new receipt group. For more information about the configuration, see [Creating Alarm Recipient Groups](https://intl.cloud.tencent.com/document/product/248/6217).
-
+ >? Click **Add Recipient Group** to configure a new receipt group. 
 
 5. (Optional) Configure the API callback. Input the URL that is accessible over the public network as the callback API address (domain name or IP[:port][/path]), and the Cloud Monitor will push the alarm information to this address in time.
 6. After the configuration is complete, click **Complete**.
