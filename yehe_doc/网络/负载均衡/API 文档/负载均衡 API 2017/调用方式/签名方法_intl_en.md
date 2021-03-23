@@ -30,10 +30,10 @@ SecretKey: Gu5t9xGARNpq86cd98joQYCN3Cozk1qA
 
 >!This is just an example. You need to use your own SecretId and SecretKey in actual operations.
 
-Take the [DescribeInstances](https://intl.cloud.tencent.com/document/product/213/9388) API to query the list of CVM instances as an example. When you call this API, the request parameters may be as follows:
+Take the [DescribeInstances](https://intl.cloud.tencent.com/document/product/213/33258) API to query the list of CVM instances as an example. When you call this API, the request parameters may be as follows:
 
 | Parameter  Description | Value |
-|---------|---------|---------|
+|---------|---------|
 | Action | Action name | DescribeInstances |
 | SecretId | Key ID | AKIDz8krbsJ5yKBZQpn74WFkmLPx3gnPhESA  |
 | Timestamp | Current timestamp | 1465185768 |
@@ -63,8 +63,8 @@ This step generates a request string.
 Format the request parameters sorted in the previous step into the form of "parameter name"="parameter value". For example, if the value of `Action` is `"DescribeInstances"`, the parameter is formatted into `Action=DescribeInstances`.
 
 >!
-- "Parameter value" is the original value instead of the URL-encoded value.
-- Replace the underscore (if any) in the `Key` of an input parameter with a `.`, while maintain the underscore in the `Value`. For example, `Placement_Zone=CN_GUANGZHOU` should be converted to `Placement.Zone=CN_GUANGZHOU`.
+> - "Parameter value" is the original value instead of the URL-encoded value.
+> - Replace the underscore (if any) in the `Key` of an input parameter with a `.`, while maintain the underscore in the `Value`. For example, `Placement_Zone=CN_GUANGZHOU` should be converted to `Placement.Zone=CN_GUANGZHOU`.
 
 Then, concatenate the formatted parameters with `"&"`. The resulting request string is as follows (ignore the line breaks here):
 
@@ -81,7 +81,7 @@ Action=DescribeInstances
 ### 3. Concatenating the original signature string
 This step generates an original signature string.
 Construct a signature string in the format of 
-> **request method + request CVM + request path + ? + request string**
+>? **request method + request CVM + request path + ? + request string**
 
 Description of parameters:
 **Request method:** both POST and GET methods are supported. This example uses the GET request method.
