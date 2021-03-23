@@ -205,7 +205,7 @@ There is no one-click option for disabling COS. If there are long periods of tim
 
 If you decide to stop using COS, you can avoid any further billing by permanently deleting all of your COS data (including incomplete multipart uploads and object versions). There is no need to de-register your account, and if you use other Tencent Cloud products, please avoid doing so as it will affect your other services.
 
->To delete your COS data and incomplete multipart uploads, see [Deleting Objects](https://intl.cloud.tencent.com/document/product/436/13323), and [Deleting Incomplete Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/31632).
+>?To delete your COS data and incomplete multipart uploads, see [Deleting Objects](https://intl.cloud.tencent.com/document/product/436/13323), and [Deleting Incomplete Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/31632).
 
 Before the you complete the deletion process, please note the following:
 
