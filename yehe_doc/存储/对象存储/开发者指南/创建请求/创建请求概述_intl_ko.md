@@ -17,8 +17,8 @@ CAM(Cloud Access Management)은 객체 스토리지 COS에 대해 계정 및 보
 
 루트 계정 로그인 후, CAM의 [Tencent Cloud API 키](https://console.cloud.tencent.com/cam/capi) 페이지를 통해 루트 계정 보안 자격 증명 SecretID와 SecretKey를 관리하고 얻을 수 있습니다. 다음은 한 그룹 키의 예시입니다.
 
-> 36개 문자의 액세스 키 ID(SecretID): AKIDHZRLB9Ibhdp7Y7gyQq6BOk1997BGmUXg
-> 32개 문자의 액세스 키 Key(SecretKey): LYaWIuQmCSZ5ZMniUM6hiaLxHnW6XxRK
+- 36개 문자의 액세스 키 ID(SecretID): AKIDHZRLB9Ibhdp7Y7gyQq6BOk1997BGmUXg
+- 32개 문자의 액세스 키 Key(SecretKey): LYaWIuQmCSZ5ZMniUM6hiaLxHnW6XxRK
 
 액세스 키는 고유한 계정을 표시하는 데 사용할 수 있습니다. 키 서명을 사용하여 요청을 보내면 Tencent Cloud는 요청 실행자의 신분을 식별하고 인증한 후, 신분, 리소스, 작업, 조건 등 인증을 거쳐 이 작업 실행을 허가할지 여부를 판단합니다.
 
@@ -41,9 +41,9 @@ CAM(Cloud Access Management)은 객체 스토리지 COS에 대해 계정 및 보
 
 임시 보안 자격 증명을 생성하는 인터페이스를 호출하면 한 쌍의 임시 키(tmpSecretId/tmpSecretKey)와 보안 토큰(sessionToken)을 얻게 되는데, 이것이 객체 스토리지 COS에 액세스하는데 쓰는 보안 자격 증명을 구성합니다. 다음은 하나의 예시입니다.
 
-> 41개 문자의 보안 토큰(SecurityToken): 5e776c4216ff4d31a7c74fe194a978a3ff2a42864
-> 36개 문자의 임시 액세스 키 ID(SecretID): AKIDcAZnqgar9ByWq6m7ucIn8LNEuY2MkPCl
-> 32개 문자의 임시 액세스 키 Key(SecretKey): VpxrX0IMCpHXWL0Wr3KQNCqJix1uhMqD
+- 41개 문자의 보안 토큰(SecurityToken): 5e776c4216ff4d31a7c74fe194a978a3ff2a42864
+- 36개 문자의 임시 액세스 키 ID(SecretID): AKIDcAZnqgar9ByWq6m7ucIn8LNEuY2MkPCl
+- 32개 문자의 임시 액세스 키 Key(SecretKey): VpxrX0IMCpHXWL0Wr3KQNCqJix1uhMqD
 
 해당 인터페이스는 또한 `expiration` 필드를 통해 임시 보안 자격 증명의 유효 시간을 반환하는데, 이는 이 시간 내에 해당 보안 자격 증명을 사용해야만 요청을 실행할 수 있음을 의미합니다.
 
