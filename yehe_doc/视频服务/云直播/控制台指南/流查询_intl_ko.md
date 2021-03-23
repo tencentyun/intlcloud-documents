@@ -1,4 +1,4 @@
-LVB 콘솔로 이동하여 [Stream Data Query](https://console.cloud.tencent.com/live/analysis/stream)를 선택해 스트림 ID를 입력하면 다음 이미지와 같이 스트림의 푸시 스트리밍과 재생 정보를 확인할 수 있습니다. 
+CSS 콘솔로 이동하여 [Stream Data Query](https://console.cloud.tencent.com/live/analysis/stream)를 선택해 스트림 ID를 입력하면 다음 이미지와 같이 스트림의 푸시 스트리밍과 재생 정보를 확인할 수 있습니다. 
 ![](https://main.qcloudimg.com/raw/74a6c9f0ab91c0891ea7f483205237e3.png)
 
 ### 재생 데이터 조회 
