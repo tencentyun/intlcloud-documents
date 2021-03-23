@@ -1,12 +1,12 @@
-LVB의 서비스는 본질적으로 방송 프로세스로 방송국의 라이브 방송 프로그램이 유선 TV 망을 통해 수많은 시청자에게 발송하는 것과 유사합니다. 해당 프로세스를 완료하기 위해서 LVB에는 수집하고 푸시 스트림하는 디바이스(예: 카메라), LVB 서비스(예: 방송국의 유선 TV 망), 재생 디바이스(예: TV)가 필요합니다. 수집하고 푸시 스트림하는 디바이스와 재생 디바이스는 휴대폰, PC, Pad 등 스마트 단말기 및 Web 브라우저가 될 수 있으며, Tencent Cloud에서는 해당 디바이스의 푸시 스트림 소프트웨어로 완벽한 Demo를 제공합니다.
+CSS의 서비스는 본질적으로 방송 프로세스로 방송국의 라이브 방송 프로그램이 유선 TV 망을 통해 수많은 시청자에게 발송하는 것과 유사합니다. 해당 프로세스를 완료하기 위해서 CSS에는 수집하고 푸시 스트림하는 디바이스(예: 카메라), CSS 서비스(예: 방송국의 유선 TV 망), 재생 디바이스(예: TV)가 필요합니다. 수집하고 푸시 스트림하는 디바이스와 재생 디바이스는 휴대폰, PC, Pad 등 스마트 단말기 및 Web 브라우저가 될 수 있으며, Tencent Cloud에서는 해당 디바이스의 푸시 스트림 소프트웨어로 완벽한 Demo를 제공합니다.
 <span id="step1"></span>
 ## 준비 작업
-1. [Tencent LVB 서비스](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)를 활성화합니다.
+1. [Tencent CSS 서비스](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)를 활성화합니다.
 2. [도메인 관리](https://console.cloud.tencent.com/live/domainmanage)를 선택해 [도메인 추가]를 클릭하여 ICP비안을 받은 푸시 스트림 도메인을 추가합니다.
->? LVB에서는 `xxx.livepush.myqcloud.com` 포맷의 기본 푸시 스트림 도메인을 제공합니다. 단, 정식 비즈니스에 해당 도메인을 푸시 스트림 도메인으로 사용하는 것은 권장하지 않습니다.
+>? CSS에서는 `xxx.livepush.myqcloud.com` 포맷의 기본 푸시 스트림 도메인을 제공합니다. 단, 정식 비즈니스에 해당 도메인을 푸시 스트림 도메인으로 사용하는 것은 권장하지 않습니다.
 
 ## 푸시 스트림 주소 가져오기
-LVB 콘솔의 [보조 툴]>[주소 생성기](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)에서 푸시 스트림 주소를 생성합니다. 해당 페이지에서 다음과 같이 설정합니다.
+CSS 콘솔의 [보조 툴]>[주소 생성기](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)에서 푸시 스트림 주소를 생성합니다. 해당 페이지에서 다음과 같이 설정합니다.
 - 생성 유형을 **푸시 스트림 도메인**으로 선택합니다.
 - 도메인 관리에 추가된 푸시 스트림 도메인을 선택합니다.
 - 사용자 정의 스트림 이름 StreamName을 작성합니다. (예시: `liveteststream`)
@@ -16,7 +16,7 @@ LVB 콘솔의 [보조 툴]>[주소 생성기](https://console.cloud.tencent.com/
 >!
 >- 라이브 방송 보안을 위해 시스템에서 자동으로 푸시 스트림 인증을 활성화합니다. [도메인 관리](https://console.cloud.tencent.com/live/domainmanage)에서 수정할 푸시 스트림 도메인을 선택하고 오른쪽에 있는 [관리]를 클릭하여 도메인 상세 페이지의 [푸시 스트림 설정]에서 인증 정보를 사용자 정의 설정합니다. 푸시 스트림 주소 포맷은 다음과 같습니다.
 `rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)`
->- 상기 방법 이외에도 LVB 콘솔의 [도메인 관리](https://console.cloud.tencent.com/live/domainmanage)에서 푸시 스트림 도메인 선택 후 [관리]를 클릭하고, [푸시 스트림 설정]을 선택하여 푸시 스트림 주소의 만료 시간과 사용자 정의 스트림 이름 StreamName 입력 후 [푸시 스트림 주소 생성]을 클릭하면 푸시 스트림 주소가 생성됩니다.
+>- 상기 방법 이외에도 CSS 콘솔의 [도메인 관리](https://console.cloud.tencent.com/live/domainmanage)에서 푸시 스트림 도메인 선택 후 [관리]를 클릭하고, [푸시 스트림 설정]을 선택하여 푸시 스트림 주소의 만료 시간과 사용자 정의 스트림 이름 StreamName 입력 후 [푸시 스트림 주소 생성]을 클릭하면 푸시 스트림 주소가 생성됩니다.
 >- **장기적으로 유효한 푸시 스트림 주소*가 필요한 경우, [도메인 관리](https://console.cloud.tencent.com/live/domainmanage)에서 푸시 스트림 도메인 선택 후 [관리]를 클릭하고, [푸시 스트림 설정]을 선택하여 [푸시 스트림 주소 예시 코드]에 있는 예시 코드를 참고하여 연산해 생성합니다. 자세한 확인 방법은 [푸시 스트림 예시 코드는 어떻게 확인하나요?](https://intl.cloud.tencent.com/document/product/267/31059)를 참조하십시오.
 ## 라이브 방송 푸시 스트림
 비즈니스 시나리오에 따라 다음의 방식으로 라이브 방송 푸시 스트림을 구현할 수 있습니다.
@@ -45,7 +45,7 @@ rtmp://3891.livepush.myqcloud.com/live/3891_test?bizid=3891&txSecret=xxx&txTime=
 4. 툴 란의 [소프트웨어 제어]>[푸시 스트림 시작]을 클릭하면 푸시 스트림 테스트가 진행됩니다. OSB 작업 방법에 대한 자세한 내용은 [OBS 푸시 스트림](https://intl.cloud.tencent.com/document/product/267/31569)을 참조하십시오.
 
 ### 시나리오2: Web에서의 푸시 스트림
-1. LVB 콘솔에 로그인합니다.
+1. CSS 콘솔에 로그인합니다.
 2. [보조 툴]>[Web 푸시 스트림](https://console.cloud.tencent.com/live/tools/webpush)을 선택합니다.
 3. Web 푸시 스트림 페이지에서 다음을 설정합니다.
 	1. 푸시 스트림 도메인을 선택합니다.
