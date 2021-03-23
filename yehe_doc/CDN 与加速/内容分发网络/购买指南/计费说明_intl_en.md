@@ -149,11 +149,11 @@ If you select bill-by-bandwidth mode, you will need to pay: 40 * 0.094 = 3.76 US
 
 We recommend bill-by-bandwidth as it is more cost-effective.
 
-## Arrears
+## Overdue
 
-Tencent Cloud will notify you through multiple channels including email and SMS when your account falls into arrears. A **24-hour** grace period is provided. If you fail to top up your account within 24 hours, your CDN service will be suspended. You will need to manually enable the acceleration service in the CDN console after topping up your account.
+Tencent Cloud will notify you through multiple channels including email and SMS when your account is overdue. A **24-hour** grace period is provided. If you fail to top up your account within 24 hours, your CDN service will be suspended. You will need to manually enable the acceleration service in the CDN console after topping up your account.
 
 > Note:
 >
-> When your acceleration service is suspended due to arrears, all your domain names will be disabled and all access requests will be forwarded to the origin server. You can query information but cannot modify configurations in the CDN console. Your CDN-related domain names and configurations will be retained for 12 months.
+> When your acceleration service is suspended due to overdue payment, all your domain names will be disabled and all access requests will be forwarded to the origin server. You can query information but cannot modify configurations in the CDN console. Your CDN-related domain names and configurations will be retained for 12 months.
 
