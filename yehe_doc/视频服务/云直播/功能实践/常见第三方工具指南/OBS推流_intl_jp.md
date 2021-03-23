@@ -3,7 +3,7 @@ Open Broadcaster Software（略称 OBS）は、オープンソースプログラ
 ここでのタスクは、OBSツールをインストールした後、PC端末でどのようにプッシュ設定を操作するのかをお伝えことです。
 
 ### 準備作業
--  [LVBコンソール](https://console.cloud.tencent.com/live)にログインし、プッシュアドレスを生成します。詳細については、[プッシュ設定](https://intl.cloud.tencent.com/document/product/267/31059)をご参照ください。
+-  [CSSコンソール](https://console.cloud.tencent.com/live)にログインし、プッシュアドレスを生成します。詳細については、[プッシュ設定](https://intl.cloud.tencent.com/document/product/267/31059)をご参照ください。
 -  [OBS](https://obsproject.com/download?spm=a2c4g.11186623.2.15.6aac1445JPlKR8) ツールをインストールします。
 
 ## 操作手順
