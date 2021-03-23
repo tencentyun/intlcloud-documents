@@ -1,6 +1,6 @@
 LVB는 라이브 방송 화면 녹화 및 파일을 Video on Demand(VOD)에 저장하는 서비스를 제공하며, VOD를 통해 녹화한 비디오 파일을 다운로드하거나 미리 보기 등의 작업을 처리할 수 있습니다. 본 문서에서는 녹화 템플릿의 생성, 바인딩, 바인딩 해제, 수정, 삭제 방법에 대해 소개합니다.
 녹화 템플릿을 생성하는 방법으로는 다음 두 가지 방식이 있습니다.
-- LVB 콘솔을 통한 녹화 템플릿 생성 작업에 대한 자세한 방법은 [녹화 템플릿 생성](#C_record)을 참조하십시오.
+- CSS 콘솔을 통한 녹화 템플릿 생성 작업에 대한 자세한 방법은 [녹화 템플릿 생성](#C_record)을 참조하십시오.
 - API를 통한 녹화 템플릿 생성에 대한 자세한 방법 및 사례는 [녹화 템플릿 생성](https://intl.cloud.tencent.com/document/product/267/30845)을 참조하십시오.
 
 ## 주의 사항
@@ -15,12 +15,12 @@ LVB는 라이브 방송 화면 녹화 및 파일을 Video on Demand(VOD)에 저�
 
 
 ## 전제 조건
-- Tencent Cloud LVB 서비스를 활성화하고 [푸시 도메인](https://intl.cloud.tencent.com/document/product/267/35970)이 추가된 상태여야 합니다.
+- Tencent Cloud CSS 서비스를 활성화하고 [푸시 도메인](https://intl.cloud.tencent.com/document/product/267/35970)이 추가된 상태여야 합니다.
 - [VOD 서비스](https://intl.cloud.tencent.com/document/product/266/8757#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E5.BC.80.E9.80.9A.E4.BA.91.E7.82.B9.E6.92.AD)를 활성화한 상태여야 합니다.
 
 <span id="C_record"></span>
 ## 녹화 템플릿 생성
-1. LVB 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 녹화]](https://console.cloud.tencent.com/live/config/record) 페이지로 이동합니다.
+1. CSS 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 녹화]](https://console.cloud.tencent.com/live/config/record) 페이지로 이동합니다.
 2. [녹화 템플릿 생성]을 클릭하여 다음과 같이 템플릿 정보를 설정합니다.
 ![](https://main.qcloudimg.com/raw/74a4ac0636c59ff69c23437e72189567.png)
 <table>
@@ -59,7 +59,7 @@ LVB는 라이브 방송 화면 녹화 및 파일을 Video on Demand(VOD)에 저�
 
 <span id="conect"></span>
 ## 도메인 연결
-1. LVB 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 녹화]](https://console.cloud.tencent.com/live/config/record) 페이지로 이동합니다.
+1. CSS 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 녹화]](https://console.cloud.tencent.com/live/config/record) 페이지로 이동합니다.
     - **도메인 직접 연결:** 왼쪽 상단에 있는 [바인딩 도메인 이름]을 클릭합니다.
     ![](https://main.qcloudimg.com/raw/bcb6c5da46a3455f94d441134e49825a.png)
     - **신규 녹화 템플릿 생성 완료 후 도메인 연결:** [녹화 템플릿 생성](#C_record) 완료 후 안내창의 [바인딩 도메인 이름]을 클릭합니다.
@@ -72,7 +72,7 @@ LVB는 라이브 방송 화면 녹화 및 파일을 Video on Demand(VOD)에 저�
 <span id="unite"></span>
 ## 바인딩 해제
 
-1. LVB 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 녹화]](https://console.cloud.tencent.com/live/config/record) 페이지로 이동합니다.
+1. CSS 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 녹화]](https://console.cloud.tencent.com/live/config/record) 페이지로 이동합니다.
 2. 연결되어 있는 도메인의 녹화 템플릿을 선택하고 바인딩 해제가 필요한 도메인을 선택한 뒤 [바인딩 해제]를 클릭합니다.
    ![](https://main.qcloudimg.com/raw/f7071a4b4f9297124b460ffebcba64d3.png)
 3. 현재 연결된 도메인의 바인딩 해제 여부를 확인하고 [확인]을 클릭하면 바인딩 해제가 완료됩니다.
