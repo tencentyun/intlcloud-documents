@@ -2,7 +2,7 @@ Tencent Cloud는 재생 도메인의 대역폭 상한 설정 기능을 제공합
 
 
 ## 전제 조건
-- [LVB 콘솔](https://console.cloud.tencent.com/live)에 로그인되어 있어야 합니다.
+- [CSS 콘솔](https://console.cloud.tencent.com/live)에 로그인되어 있어야 합니다.
 - [재생 도메인](https://cloud.tencent.com/document/product/267/20381)이 추가되어 있어야 합니다.
 
 
@@ -21,7 +21,7 @@ Tencent Cloud는 재생 도메인의 대역폭 상한 설정 기능을 제공합
 3. 해당 부분 오른쪽에 있는 [Edit]를 클릭하여 대역폭 상한 설정 페이지로 이동합니다.
 4. [Bandwidth Cap] 슬라이드 버튼![](https://main.qcloudimg.com/raw/96d86bb811611dbc89c4757fb64af536.png)을 활성화합니다.
 5. [+ 제한 추가] 버튼을 클릭하여 다음과 같이 설정합니다.
-	1. 	제한 리전은 해당 재생 도메인 가속 지역 유형에 따라 자체적으로 판단하며, 관련 설정 규칙은 [사용 제한](#limit)을 참조하십시오.
+	1. 제한 리전은 해당 재생 도메인 가속 지역 유형에 따라 자체적으로 판단하며, 관련 설정 규칙은 [사용 제한](#limit)을 참조하십시오.
 	2. 대역폭 임계값을 입력합니다.
 	3. 임계값 단위 Mbps, Gbps 또는 Tbps를 선택합니다.
 6. [Save]를 클릭합니다.
