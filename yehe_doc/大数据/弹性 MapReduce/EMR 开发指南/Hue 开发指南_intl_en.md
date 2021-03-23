@@ -39,14 +39,14 @@ Hue's web UI makes it easy to view files and folders in HDFS and perform operati
 1. **Prepare workflow data**
 Hue's task scheduling is based on workflows. First, create a workflow containing a Hive script with the following content:
 ```
-| create database if not exists hive_sample; | 
-| show databases;| 
-| use hive_sample;|
-| show tables;|
-| create table if not exists hive_sample (a int, b string);|
-| show tables;|
-| insert into hive_sample select 1, "a";|
-| select * from hive_sample;|
+ create database if not exists hive_sample; 
+ show databases;
+ use hive_sample;
+ show tables;
+ create table if not exists hive_sample (a int, b string);
+ show tables;
+ insert into hive_sample select 1, "a";
+ select * from hive_sample;
 ```
 Save the content above as a file named hive_sample.sql. The Hive workflow also requires a hive-site.xml configuration file, which can be found on the cluster node where the Hive component is installed. Upload the Hive script file and hive-site.xml to a directory in HDFS, such as `/user/hadoop`.
 Upload the Hive script file and hive-site.xml to a directory in HDFS, such as `/user/hadoop`.
