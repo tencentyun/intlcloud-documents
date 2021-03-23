@@ -1,4 +1,4 @@
-라이브 방송 타임 시프트는 LVB 녹화 능력을 기반으로 하며, TS(Transport Stream)의 멀티파트 주소와 TS 파일을 VOD 시스템에 단독으로 저장합니다. 클라이언트는 타임 시프트 재생 도메인을 통해 시간 매개변수를 전송하여 현재 시간 이전의 하이라이트 비디오 콘텐츠를 재생할 수 있습니다.
+라이브 방송 타임 시프트는 CSS 녹화 능력을 기반으로 하며, TS(Transport Stream)의 멀티파트 주소와 TS 파일을 VOD 시스템에 단독으로 저장합니다. 클라이언트는 타임 시프트 재생 도메인을 통해 시간 매개변수를 전송하여 현재 시간 이전의 하이라이트 비디오 콘텐츠를 재생할 수 있습니다.
 
 ## 타임 시프트의 원리
 
@@ -11,8 +11,8 @@
 
 ### 전제 조건
 
--  [Tencent Cloud 계정에 가입](https://intl.cloud.tencent.com/document/product/378/17985)하고 실명 인증이 완료된 상태여야 합니다. 실명 인증을 하지 않은 사용자는 중국 내 LVB 인스턴스를 구매할 수 없습니다.
-- Tencent LVB 서비스를 활성화하고 [푸시 스트림 도메인](https://intl.cloud.tencent.com/document/product/267/35970)이 추가된 상태여야 합니다. 
+-  [Tencent Cloud 계정에 가입](https://intl.cloud.tencent.com/document/product/378/17985)하고 실명 인증이 완료된 상태여야 합니다. 실명 인증을 하지 않은 사용자는 중국 내 CSS 인스턴스를 구매할 수 없습니다.
+- Tencent CSS 서비스를 활성화하고 [푸시 스트림 도메인](https://intl.cloud.tencent.com/document/product/267/35970)이 추가된 상태여야 합니다. 
 
 <span id="step1"></span>
 ### 1단계: VOD 서비스 활성화
@@ -30,7 +30,7 @@
 <span id="step3"></span>
 ### 3단계: 녹화 템플릿 연결
 
-1. [LVB 콘솔]>[기능 템플릿]<[녹화 설정](https://console.cloud.tencent.com/live/config/record)으로 이동합니다.
+1. [CSS 콘솔]>[기능 템플릿]<[녹화 설정](https://console.cloud.tencent.com/live/config/record)으로 이동합니다.
 2. [+]를 클릭하여 녹화 템플릿을 생성합니다. 자세한 방법은 [녹화 템플릿 설정](https://intl.cloud.tencent.com/document/product/267/34223)을 참조하십시오.
    > ! 
    > - 녹화 파일 유형을 **HLS** 포맷으로 선택하고 HLS 녹화를 활성화합니다.
@@ -40,7 +40,7 @@
 <span id="step4"></span>
 ### 4단계: 타임 시프트 서비스 활성화
 
-[티켓 제출](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=39&source=0&data_title=%E4%BA%91%E7%9B%B4%E6%92%AD%20%20CSS&step=1)에서 문의 제품을 "LVB"로 선택하고 다음 매개변수와 함께 타임 시프트 활성화 신청을 제출합니다.
+[티켓 제출](https://console.cloud.tencent.com/workorder/category?level1_id=29&level2_id=39&source=0&data_title=%E4%BA%91%E7%9B%B4%E6%92%AD%20%20css&step=1)에서 문의 제품을 "CSS"로 선택하고 다음 매개변수와 함께 타임 시프트 활성화 신청을 제출합니다.
 
 - [2단계](#step2)에서 추가한 VOD **타임 시프트 재생 도메인**
 - [3단계](#step3)에서 설정한 녹화 템플릿 ID
