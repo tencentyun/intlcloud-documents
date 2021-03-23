@@ -92,7 +92,7 @@ COS is a distributed storage service for unstructured data and cannot support vi
 
 ### Does COS support the auto decompression of uploaded files?
 
-COS is a distributed storage service for unstructured data and does not support file decompression on its own. To enable this feature, please use the integrated SCF service. For more information, see [File Decompression](https://intl.cloud.tencent.com/document/product/436/35663) or [Using SCF to Decompress Zip Packages](https://intl.cloud.tencent.com/document/product/436/31709).
+COS is a distributed storage service for unstructured data and does not support file decompression on its own. To enable this feature, please use the integrated SCF service. For more information, see [File Decompression](https://intl.cloud.tencent.com/document/product/436/35663).
 
 ### What are the specifications and limits of COS?
 
