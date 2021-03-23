@@ -19,7 +19,7 @@ You must first determine whether your purchased instance is a Windows system ins
 Tencent Cloud provides [Port Verification](https://console.cloud.tencent.com/vpc/helper) to help you determine possible causes of login failures. More than 70% of login issues can be checked and located by this tool.
 
 #### Self-Diagnosis Tool
-Problems that can be diagnosed include high bandwidth usage rate, zero public network bandwidth, high server workload, improper security group rules, DDoS attack blocking, security isolation, and account in arrears.
+Problems that can be diagnosed include high bandwidth usage rate, zero public network bandwidth, high server workload, improper security group rules, DDoS attack blocking, security isolation, and overdue account.
 
 #### Port Verification Tool
 This tool can diagnose security group- and port-related problems. If there is a security group configuration issue, you can use **Open All Ports** function of the tool to open all commonly used interfaces of the security group.
