@@ -10,7 +10,7 @@
  - SecretId：用于标识 API 调用者身份。
  - SecretKey：用于加密签名字符串和服务器端验证签名字符串的密钥。
 
->!API 密钥是构建腾讯云 API 请求的重要凭证，使用腾讯云 API 可以操作您名下的所有腾讯云资源，为了您的财产和服务安全，请妥善保存和定期更换密钥，当您更换密钥后，请及时删除旧密钥，详情请参见 [签名方法](https://intl.cloud.tencent.com/document/product/240/8329)。
+>!API 密钥是构建腾讯云 API 请求的重要凭证，使用腾讯云 API 可以操作您名下的所有腾讯云资源，为了您的财产和服务安全，请妥善保存和定期更换密钥，当您更换密钥后，请及时删除旧密钥，详情请参见 [签名方法](https://intl.cloud.tencent.com/document/product/240/32137)。
 
 ### MongoDB 用户名使用限制是什么？
 云数据库 MongoDB 內建了默认用户 mongouser，mongouser 采用 SCRAM-SHA-1 认证方式，角色为 [readWriteAnyDatabase+dbAdmin](https://docs.mongodb.org/v3.0/reference/built-in-roles/)，也就是说您可以用此默认用户读写任意数据库，但是不具备高危操作的权限。
