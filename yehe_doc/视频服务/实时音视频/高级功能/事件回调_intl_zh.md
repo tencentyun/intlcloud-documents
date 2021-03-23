@@ -1,6 +1,6 @@
 事件回调服务支持将实时音视频业务下的事件，以 HTTP/HTTPS 请求的形式通知到您的服务器。事件回调服务已集成房间事件组（Room Event）和媒体事件组（Media Event）下的一些事件，您可以向腾讯云提供相关的配置信息来开通该服务。
 
-<span id="deploy"></span>
+[](id:deploy)
 ## 配置信息
 实时音视频 TRTC 控制台支持自助配置回调信息，配置完成后即可接收事件回调通知。详细操作指引请参见 [回调配置](https://intl.cloud.tencent.com/document/product/647/39559)。
 
@@ -12,18 +12,37 @@
 ## 超时重试
 事件回调服务器在发送消息通知后，5秒内没有收到您的服务器的响应，即认为通知失败。首次通知失败后会立即重试，后续失败会以**10秒**的间隔继续重试，直到消息存续时间超过1分钟，不再重试。
 
-<span id="format"></span>
+[](id:format)
 ## 事件回调消息格式
 
 事件回调消息以 HTTP/HTTPS POST 请求发送给您的服务器，其中：
 
-- 字符编码格式：UTF-8。
-- 请求：body 格式为 JSON。
-- 应答：HTTP STATUS CODE = 200，服务端忽略应答包具体内容，为了协议友好，建议客户应答内容携带 JSON： {"code":0}。
+- **字符编码格式**：UTF-8。
+- **请求**：body 格式为 JSON。
+- **应答**：HTTP STATUS CODE = 200，服务端忽略应答包具体内容，为了协议友好，建议客户应答内容携带 JSON： {"code":0}。
+- **包体示例**：下述为“房间事件组-进入房间”事件的包体示例。
+<dx-codeblock>
+::: JSON JSON
+{
+	"EventGroupId": 1,        #房间事件组
+	"EventType": 103,        #进入房间事件
+	"CallbackTs": 1615554923704,        #回调时间，单位毫秒
+	"EventInfo": {
+		"RoomId": 12345,        #数字房间号
+		"EventTs": 1608441737,        #事件发生时间，单位秒
+		"UserId": "test",        #用户ID
+		"UniqueId": 1615554922656,        #唯一标识符
+		"Role": 20,        #用户角色，主播
+		"Reason": 1        #进房原因，正常进房
+		}
+}
+:::
+</dx-codeblock>
+
 
 
 ## 参数说明
-<span id="message"></span>
+[](id:message)
 ### 回调消息参数
 
 - 事件回调消息的 header 中包含以下字段：
@@ -56,7 +75,7 @@
 </tr>
 </tbody></table>
 
-<span id="eventId"></span>
+[](id:eventId)
 ### 事件组 ID
 
 | 字段名            | 值   | 含义       |
@@ -64,7 +83,7 @@
 | EVENT_GROUP_ROOM  | 1    | 房间事件组 |
 | EVENT_GROUP_MEDIA | 2    | 媒体事件组 |
 
-<span id="event_type"></span>
+[](id:event_type)
 ### 事件类型
 
 | 字段名                  | 值   | 含义             |
@@ -81,7 +100,7 @@
 | EVENT_TYPE_START_ASSIT  | 205  | 开始推送辅路数据 |
 | EVENT_TYPE_STOP_ASSIT   | 206  | 停止推送辅路数据 |
 
-<span id="event_infor"></span>
+[](id:event_infor)
 ### 事件信息
 
 | 字段名  | 类型   | 含义                              |
@@ -89,10 +108,13 @@
 RoomId      |     String/Number       |     房间名（类型与客户端房间号类型一致）    |
 | EventTs | Number | 时间发生的 Unix 时间戳，单位为秒    |
 | UserId  | String | 用户 ID                            |
+| UniqueId  | Number | [唯一标识符](#UniqueId)（option：房间事件组携带）                            |
 | Role    | Number | [角色类型](#role_type)（option：进退房时携带）  |
 | Reason  | Number | [具体原因](#reason) （option：进退房时携带） |
 
-<span id="role_type"></span>
+>?[](id:UniqueId) **唯一标识符的定义：**当客户端发生了一些特殊行为，例如切换网络、进程异常退出及重进等，此时您的回调服务器可能会收到同一个用户多次进房和退房回调，UniqueId 可用于标识用户的同一次进退房。
+
+[](id:role_type)
 ### 角色类型
 
 | 字段名             | 值   | 含义 |
@@ -100,7 +122,7 @@ RoomId      |     String/Number       |     房间名（类型与客户端房间
 | MEMBER_TRTC_ANCHOR | 20   | 主播 |
 | MEMBER_TRTC_VIEWER | 21   | 观众 |
 
-<span id="reason"></span>
+[](id:reason)
 ### 具体原因
 
 | 字段名    | 含义                              |

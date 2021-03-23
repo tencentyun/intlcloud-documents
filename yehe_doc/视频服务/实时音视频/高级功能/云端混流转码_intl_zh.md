@@ -65,7 +65,7 @@
 
 [](id:restapi_step2)
 #### 2. 设置混流编码参数
-通过 `StartMCUMixTranscode` 中的 [EncodeParams](https://intl.cloud.tencent.com/document/product/647/36760#LayoutParams) 参数，可以设置混流编码参数：
+通过 `StartMCUMixTranscode` 中的 [EncodeParams](https://intl.cloud.tencent.com/document/product/647/36760#EncodeParams) 参数，可以设置混流编码参数：
 
 | 名称            | 描述                                         | 推荐值 |
 | --------------- | -------------------------------------------- | ------ |
@@ -82,7 +82,7 @@
 [](id:restapi_step3)
 #### 3. 设置是否开启云端录制
 
-通过  `StartMCUMixTranscode` 中的 [OutputParams](https://intl.cloud.tencent.com/document/product/647/36760#LayoutParams) 参数，可以指定混流后视频流的去向。
+通过  `StartMCUMixTranscode` 中的 [OutputParams](https://intl.cloud.tencent.com/document/product/647/36760#OutputParams) 参数，可以指定混流后视频流的去向。
 
 - **OutputParams.RecordId**
   该参数用于指定是否启动 [云端录制](https://intl.cloud.tencent.com/document/product/647/35426)，如果您指定此参数，那么混流后的音视频流会被录制成文件并存储到 [云点播](https://intl.cloud.tencent.com/product/vod) 中。录制下来的文件会按照 `OutputParams.RecordId_开始时间_结束时间` 的格式命名，例如：`file001_2020-02-16-12-12-12_2020-02-16-13-13-13`。
@@ -230,8 +230,8 @@
 
 您可根据下面的示例代码实现“一大二小，上下叠加”的混合效果：
 
-##### iOS
-```
+<dx-codeblock>
+::: iOS  Objective-C 
 TRTCTranscodingConfig *config = [[TRTCTranscodingConfig alloc] init];
 // 设置分辨率为720 × 1280, 码率为1500kbps，帧率为20FPS
 config.videoWidth      = 720;
@@ -273,9 +273,8 @@ remote2.roomID = 97392; // 本地用户不用填写 roomID，远程需要
 
 // 发起云端混流
 [_trtc setMixTranscodingConfig:config];
-```
-##### Android
-```
+:::
+::: Android java
 TRTCCloudDef.TRTCTranscodingConfig config = new TRTCCloudDef.TRTCTranscodingConfig();
 // 设置分辨率为720 × 1280, 码率为1500kbps，帧率为20FPS
 config.videoWidth      = 720;
@@ -326,9 +325,8 @@ config.mixUsers.add(remote2);
 
 // 发起云端混流
 trtc.setMixTranscodingConfig(config);
-```
-##### C++
-```
+:::
+::: C++ C++
 TRTCTranscodingConfig config;
 // 设置分辨率为1280 × 720, 码率为1500kbps，帧率为20fps
 config.videoWidth      = 1280;
@@ -370,9 +368,8 @@ config.mixUsersArray = mixUsersArray;
 
 // 发起云端混流
 trtc->setMixTranscodingConfig(&config);
-```
-##### C#
-```
+:::
+::: C# C#
 TRTCTranscodingConfig config = new TRTCTranscodingConfig();
 // 设置分辨率为1280 × 720, 码率为1500kbps，帧率为20fps
 config.videoWidth      = 1280;
@@ -431,9 +428,8 @@ mixUsersArray[2] = remote2;
 // 发起云端混流
 config.mixUsersArray = mixUsersArray;
 trtc.setMixTranscodingConfig(config);
-```
-##### Flutter
-```
+:::
+::: Flutter java
 TRTCCloud trtcCloud = await TRTCCloud.sharedInstance();
 trtcCloud.setMixTranscodingConfig(TRTCTranscodingConfig(
   appId: 1252463788, //仅供参考
@@ -473,11 +469,11 @@ trtcCloud.setMixTranscodingConfig(TRTCTranscodingConfig(
       height: 200)
   ],
 ));
-```
-##### Web JavaScript
-```
-// 预排版模式
-const config = {
+:::
+::: Web JavaScript
+try {
+  // 预排版模式
+  const config = {
    mode: 'preset-layout',
    videoWidth: 720,
    videoHeight: 1280,
@@ -495,7 +491,7 @@ const config = {
         locationX: 0,
         locationY: 0,
         pureAudio: false,
-        userId: '123456', // 本地摄像头占位，传入推摄像头的 client userId
+        userId: 'jack', // 本地摄像头占位，传入推摄像头的 client userId
         zOrder: 1
       },
       {
@@ -508,7 +504,7 @@ const config = {
         zOrder: 2
       },
       {
-        width: 320,
+        width: 180,
         height: 240,
         locationX: 400,
         locationY: 500,
@@ -517,14 +513,17 @@ const config = {
         zOrder: 2
       }
     ];
- }
- await client.startMixTranscode(config);
-} catch (e) {
- console.error('startMixTranscode failed ', e);
+  }
+  await client.startMixTranscode(config);
+} catch (error) {
+  console.error('startMixTranscode failed ', error);
 }
-```
+:::
+</dx-codeblock>  
 
->! 预排版模式下 `setMixTranscodingConfig()` 接口无需多次调用，在进房成功并开启本地音频上行后调用一次即可。
+>! 
+>- 预排版模式下 `setMixTranscodingConfig()` 接口无需多次调用，在进房成功并开启本地音频上行后调用一次即可。
+>- Web 端接口命名与其他端稍有差异，详情请参见 [Client.startMixTranscode()](https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/web/docs/Client.html#startMixTranscode)。
 
 [](id:ScreenSharing)
 
@@ -544,6 +543,7 @@ const config = {
 4. 调用 `setMixTranscodingConfig()` 接口启动云端混流，需要您在调用时将 `TRTCTranscodingConfig` 中的 `mode` 参数设定为 **TRTCTranscodingConfigMode_Template_ScreenSharing** ，并指定 `audioSampleRate`、`audioBitrate` 和 `audioChannels` 等关乎音频输出质量的参数，以及 `videoWidth`、`videoHeight`、`videoBitrate`、`videoFramerate` 等关乎视频输出质量的参数。
 >?若将 `videoWidth` 和 `videoHeight` 参数均指定为0，SDK 会自动根据用户当前屏幕的宽高比计算出一个合适的分辨率。
 5. 经过上述步骤，当前用户的旁路音频流中就会自动混合房间中其他用户的声音，之后您可以参考文档 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 配置播放域名进行直播观看，也可以参考文档 [云端录制](https://intl.cloud.tencent.com/document/product/647/35426) 录制混合后的音频流。
+
 ![](https://main.qcloudimg.com/raw/675e67bfaff40451b60a21aa403217d4.gif)
 >! 
 >- 屏幕分享模式仅支持 Windows 和 Mac 平台。
@@ -585,4 +585,6 @@ const config = {
   - 调用 [setMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 并将参数设置为 `nil/null` 主动停止混流。
 
 在其他情况下，TRTC 云端都将会尽力持续保持混流状态。因此，为避免产生预期之外的混流费用，请在您不需要混流的时候尽早通过上述方法结束云端混流。
+
+
 
