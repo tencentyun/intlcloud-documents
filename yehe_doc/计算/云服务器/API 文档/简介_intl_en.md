@@ -7,16 +7,15 @@ CVM provides elastic computing, storage, and network resources. This API documen
 Before you use CVM APIs, make sure that you fully understand the [CVM overview](https://intl.cloud.tencent.com/document/product/213/495).
 
 
-> **Notes:**
-> * All CVM APIs described in this chapter have been upgraded to API 3.0. All new CVM features will be updated in this chapter. It is recommended that you use API 3.0.
-> * The features of old version APIs remain available. For more information, see [CVM API Overview (Old Version)](https://intl.cloud.tencent.com/document/product/213/11648).
+> ?
+> All CVM APIs described in this chapter have been upgraded to API 3.0. All new CVM features will be updated in this chapter. It is recommended that you use API 3.0.
 
 
 ## Glossary
 The following table introduces the common terms used in the CVM API documentation.
 
 | Term | Full Name | Description |
-|---------|---------|---------|---------|
+|---------|---------|---------|
 | [Instance](https://intl.cloud.tencent.com/document/product/213/4939) | Instance | A CVM.|
 | [Region](https://intl.cloud.tencent.com/document/product/213/6091) | Region | A region where resources are located. Each region contains one or more availability zones. |
 | [AZ](https://intl.cloud.tencent.com/document/product/213/6091) | Availability Zone | A physical IDC of Tencent Cloud with independent power supply and network resources within a [region](https://intl.cloud.tencent.com/document/product/213/6091). Availability zones are designed to ensure business stability because failures within an availability zone are isolated without affecting other availability zones within the same region. |
@@ -26,12 +25,15 @@ The following table introduces the common terms used in the CVM API documentatio
 | Pay-as-you-go | Pay-as-you-go | A billing mode. For more information, see [Billing Modes](https://intl.cloud.tencent.com/document/product/213/2180#2.-.E6.8C.89.E9.87.8F.E8.AE.A1.E8.B4.B9). |
 
 #### Description of input and output parameters
+
 * `Limit` and `Offset`
+>?
 >These parameters are used for paging control. `Limit` indicates the maximum number of entries returned at a time, and `Offset` indicates the offset value. If the number of results exceeds the value of `Limit`, the number of returned results is equal to the value of `Limit`.
 >
 >For example, if `Offset` is set to 0 and `Limit` is set to 20, the 0th to 19th entries are returned; if `Offset` is set to 20 and `Limit` is set to 20, the 20th to 39th entries are returned; if `Offset` is set to 40 and `Limit` is set to 20, the 40th to 59th entries are returned.
 
 * `Ids.N`
+>?
 >Format for inputting multiple parameters at a time. If a parameter is in such a format, you can specify multiple values for the parameter. For example:
 >
 >GET request or POST x-www-form-urlencoded request: `Ids.0=ins-r8hr2upy&Ids.1=ins-5d8a23rs&Ids.2=ins--dcs9x3gz`
