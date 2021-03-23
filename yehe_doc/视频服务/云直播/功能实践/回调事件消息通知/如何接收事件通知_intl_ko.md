@@ -26,14 +26,14 @@
 
 <span id="configuration"></span>
 ## 콜백 이벤트 설정 방법
-콜백 설정은 두 가지 방식으로 할 수 있습니다. 첫 번째 방법은 [LVB 콘솔](#c_callback)을 통해서 할 수 있습니다. 두 번째 방법은 [서버 API](#api_callback) 호출을 통해서 할 수 있습니다.
+콜백 설정은 두 가지 방식으로 할 수 있습니다. 첫 번째 방법은 [CSS 콘솔](#c_callback)을 통해서 할 수 있습니다. 두 번째 방법은 [서버 API](#api_callback) 호출을 통해서 할 수 있습니다.
 >?라이브 방송 콜백 메시지 공지 URL은 푸시 스트리밍, 스트리밍 중단, 녹화, 화면 캡처, 음란물 감지 이벤트의 단독 콜백 URL 설정을 지원합니다.
 
 
 
 <span id="c_callback"></span>
-### LVB 콘솔
-1. LVB 콘솔의 [기능 템플릿]>[콜백 설정](https://console.cloud.tencent.com/live/config/callback)에 들어가 콜백 템플릿을 생성합니다. 자세한 내용은 [콜백 템플릿 생성](https://intl.cloud.tencent.com/document/product/267/31074)을 참조하십시오.
+### CSS 콘솔
+1. CSS 콘솔의 [기능 템플릿]>[콜백 설정](https://console.cloud.tencent.com/live/config/callback)에 들어가 콜백 템플릿을 생성합니다. 자세한 내용은 [콜백 템플릿 생성](https://intl.cloud.tencent.com/document/product/267/31074)을 참조하십시오.
 ![](https://main.qcloudimg.com/raw/e487fbb21c3e7018c97f82f7055b8f8a.png)
 2. [Domain Management](https://console.cloud.tencent.com/live/domainmanage)에서 작업에 필요한 푸시 스트리밍 도메인을 찾고 [Manage]>[Template Configuration]을 클릭하여 도메인과 트랜스 코딩 템플릿을 연결합니다. 자세한 내용은 [콜백 설정](https://cloud.tencent.com/document/product/267/35254)을 참조하십시오.
 <span id="api_callback"></span>
