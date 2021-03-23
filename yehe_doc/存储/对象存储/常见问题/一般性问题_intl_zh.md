@@ -92,7 +92,7 @@ COS 控制台集成了数据万象，可以对图片进行缩放、裁剪、添�
 
 ### COS 支持文件上传后自动解压吗？
 
-对象存储服务是面向非结构化数据的分布式存储服务，服务本身不支持文件解压，但您可以结合 SCF 服务来实现解压缩功能，详情请参见 [文件解压缩](https://intl.cloud.tencent.com/document/product/436/35663) 或 [使用 SCF 进行 ZIP 文件解压缩](https://intl.cloud.tencent.com/document/product/436/31709)。
+对象存储服务是面向非结构化数据的分布式存储服务，服务本身不支持文件解压，但您可以结合 SCF 服务来实现解压缩功能，详情请参见 [文件解压缩](https://intl.cloud.tencent.com/document/product/436/35663)。
 
 ### COS 有哪些规格和限制？
 
