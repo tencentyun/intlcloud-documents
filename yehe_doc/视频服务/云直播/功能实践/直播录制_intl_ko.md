@@ -216,7 +216,7 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask
 ### VOD API 조회
 
 구체적인 사용 방법은 VOD API [SearchMedia](https://intl.cloud.tencent.com/document/product/266/34179)의 인터페이스 선별로 녹화 파일 조회를 참조 바랍니다.
->! LVB API로 [녹화 작업 생성](https://intl.cloud.tencent.com/zh/document/product/267/37309)을 진행할 경우, 녹화 콜백은 사용자 푸시 스트림 URL의 [stream_param](#message) 매개변수로 반환하지 않으며 다른 녹화 방식은 반환됩니다.
+>! CSS API로 [녹화 작업 생성](https://intl.cloud.tencent.com/zh/document/product/267/37309)을 진행할 경우, 녹화 콜백은 사용자 푸시 스트림 URL의 [stream_param](#message) 매개변수로 반환하지 않으며 다른 녹화 방식은 반환됩니다.
 
 
 ## 업데이트 설정 주의 사항
