@@ -54,7 +54,7 @@ Domain name for API calls: `lb.api.qcloud.com`
 | subnetId | Int | Numerical digits of the VPC subnet ID. 0: default subnet. |
 | openBgp | Int | Identifier of a high defense LB. 1: high defense CLB; 0: non-high defense CLB. |
 | snat | Bool | "snat" is enabled for all private network classic CLB instances created before December 2016. |
-| isolation | Int | Isolation status of the CLB instance due to account arrears. 0: not isolated; 1: isolated. |
+| isolation | Int | Isolation status of the CLB instance due to overdue account. 0: not isolated; 1: isolated. |
 | log | String | Log information. Only the public network CLB instances that have HTTP or HTTPS listener can generate logs. |
 
 
