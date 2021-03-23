@@ -17,5 +17,5 @@
 >- 更多购买说明与注意事项可参考 [创建实例](https://intl.cloud.tencent.com/document/product/239/7033)。
 
 ## API 购买
-通过 API 购买云数据库的用户，可参考 API 文档 [创建实例](https://intl.cloud.tencent.com/document/product/239/5325)。
+通过 API 购买云数据库的用户，可参考 API 文档 [创建实例](https://intl.cloud.tencent.com/document/product/239/32069)。
 
