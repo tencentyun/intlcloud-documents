@@ -39,5 +39,5 @@ You can view the SMS delivery result in the following ways:
 - Select **Statistics** > **Mainland China SMS** and you can filter and view the statistics and relevant analysis of Mainland China SMS by application, signature, body template, and time.
 
 ## Related Documentation
-You can also send SMS via APIs or SDKs. For detailed directions, please see [API documentation] or [SDK documentation](https://intl.cloud.tencent.com/document/product/382/32991).
+You can also send SMS via APIs or SDKs. For detailed directions, please see [API documentation](https://intl.cloud.tencent.com/document/product/382/39155) or SDK documentation.
 
