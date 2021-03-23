@@ -129,8 +129,6 @@ public void onRecvNewMessage(V2TIMMessage msg) {
 >? 目前仅支持文本 @ 消息。
 
 
-
-
 ### 发送群 @ 消息
 1. 发送方监听聊天界面的文本输入框，启动群成员选择界面，选择完成后回传选择群成员的 ID 和昵称信息，ID 用来构建消息对象 [V2TIMMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html)，昵称用来在文本框显示。
 2. 发送方调用 [V2TIMMessageManager](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html) 的 [createTextAtMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#ad255ff81ed0b9ee71273a1b20cf6d753) 创建一条 @ 文本消息，拿到消息对象 [V2TIMMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html)。
@@ -381,7 +379,7 @@ public void onRecvMessageRevoked(String msgID) {
 ```
 @Override
 public void onRecvC2CReadReceipt(List<V2TIMMessageReceipt> receiptList) {
-	// 由于接收方一次性可能会收到多个已读回执，所以这里采用了数组的回调形式
+	// 由于发送方一次性可能会收到多个已读回执，所以这里采用了数组的回调形式
 	for (V2TIMMessageReceipt v2TIMMessageReceipt : receiptList) {
 		// 消息接收者 receiver
 		String userID = v2TIMMessageReceipt.getUserID();

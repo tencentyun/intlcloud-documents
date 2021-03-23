@@ -122,9 +122,6 @@ onlineUserOnly:NO offlinePushInfo:nil progress:^(uint32_t progress) {
 
 >? 目前仅支持文本 @ 消息。
 
-
-
-
 ### 发送群 @ 消息
 
 1. 发送方监听聊天界面的文本输入框，启动群成员选择界面，选择完成后回传选择群成员的 ID 和昵称信息，ID 用来构建消息对象 [V2TIMMessage](http://doc.qcloudtrtc.com/im/interfaceV2TIMMessage.html)，昵称用来在文本框显示。
@@ -331,7 +328,7 @@ priority:V2TIM_PRIORITY_DEFAULT onlineUserOnly:YES offlinePushInfo:nil progress:
 
 ```
 - (void)onRecvC2CReadReceipt:(NSArray<V2TIMMessageReceipt *> *)receiptList {
-      // 接收方可能一次性会收到多个已读回执，因此这里采用数组的回调形式
+      // 发送方可能一次性会收到多个已读回执，因此这里采用数组的回调形式
       for (V2TIMMessageReceipt *receipt in receiptList) {
           // 消息接收者 receiver
           NSString * receiver = receipt.userID;

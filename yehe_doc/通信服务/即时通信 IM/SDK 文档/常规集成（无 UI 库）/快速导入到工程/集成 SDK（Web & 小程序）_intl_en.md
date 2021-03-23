@@ -1,6 +1,7 @@
 This document describes how to quickly integrate the Tencent Cloud IM SDK into your web or Mini Program project.
-- You can integrate the IM SDK into your web project by using NPM (recommended) or scripts.
-- You can integrate the IM SDK into your Mini Program project by using NPM.
+- You can integrate the IM SDK into your web project by using npm (recommended) or script.
+- You can integrate the IM SDK into your Mini Program project by using npm.
+- You can integrate the SDK upload plugin for faster and safer upload of rich text message resources. For more information, see [SDK Upload Plugin Integration (Web & Mini Program)](https://intl.cloud.tencent.com/document/product/1047/39858).
 
 
 ## Preparations
@@ -8,16 +9,17 @@ This document describes how to quickly integrate the Tencent Cloud IM SDK into y
 - You have obtained the key information.
 
 
-## Documentation
+## Relevant Documents
 - [Demo Quick Start](https://intl.cloud.tencent.com/document/product/1047/34553)
 - [Running the IM SDK (Mini Program) Demo](https://github.com/tencentyun/TIMSDK/tree/master/WXMini)
 - [Running the IM SDK (Web) Demo](https://github.com/tencentyun/TIMSDK/tree/master/H5)
+- [SDK Upload Plugin Integration (Web & Mini Program)](https://intl.cloud.tencent.com/document/product/1047/39858)
 
 ## Integrating the SDK
 
 
-### Integrating with NPM (recommended)
-Use NPM to install appropriate IM SDK dependencies in your project.
+### Integrating via npm (recommended)
+Use npm to install appropriate IM SDK dependencies in your project.
 
 #### **Web project**
 ```javascript
@@ -38,13 +40,13 @@ import TIM from 'tim-js-sdk';
 import TIMUploadPlugin from 'tim-upload-plugin';
 
 let options = {
-  SDKAppID: 0 // Replace `0` with the `SDKAppID` of your IM app during connection.
+  SDKAppID: 0 // Replace `0` with the `SDKAppID` of your IM app during access.
 };
 // Create an SDK instance. The `TIM.create()` method returns the same instance for the same `SDKAppID`.
 let tim = TIM.create(options); // The SDK instance is usually represented by `tim`.
 
 // Set the SDK log output level. For more information on each level, see <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#setLogLevel">setLogLevel API Description</a>.
-tim.setLogLevel(0); // Common level. You are advised to use this level during connection as it covers more logs.
+tim.setLogLevel(0); // Common level. You are advised to use this level during access as it covers more logs.
 // tim.setLogLevel(1); // Release level, at which the SDK outputs important information. You are advised to use this log level in a production environment.
 
 // Register the Tencent Cloud IM upload plugin.
@@ -64,19 +66,19 @@ npm install tim-upload-plugin --save
 >npm config set registry http://r.cnpmjs.org/
 >```
 
- Import modules to the project script and initialize the SDK.
+ Import modules to the project script and initialize it.
 ```
 import TIM from 'tim-wx-sdk';
 import TIMUploadPlugin from 'tim-upload-plugin';
 
 let options = {
-  SDKAppID: 0 // Replace `0` with the `SDKAppID` of your IM app during connection.
+  SDKAppID: 0 // Replace `0` with the `SDKAppID` of your IM app during access.
 };
 // Create an SDK instance. The `TIM.create()` method returns the same instance for the same `SDKAppID`.
 let tim = TIM.create(options); // The SDK instance is usually represented by `tim`.
 
 // Set the SDK log output level. For more information on each level, see <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#setLogLevel">setLogLevel API Description</a>.
-tim.setLogLevel(0); // Common level. You are advised to use this level during connection as it covers more logs.
+tim.setLogLevel(0); // Common level. You are advised to use this level during access as it covers more logs.
 // tim.setLogLevel(1); // Release level, at which the SDK outputs important information. You are advised to use this log level in a production environment.
 
 // Register the Tencent Cloud IM upload plugin.
@@ -94,12 +96,12 @@ Import the SDK to your project by using the script tag and initialize the SDK.
 <script src="./tim-upload-plugin.js"></script>
 <script>
 var options = {
-  SDKAppID: 0 // Replace `0` with the `SDKAppID` of your IM app during connection.
+  SDKAppID: 0 // Replace `0` with the `SDKAppID` of your IM app during access.
 };
 // Create an SDK instance. The `TIM.create()` method returns the same instance for the same `SDKAppID`.
 var tim = TIM.create(options);
 // Set the SDK log output level. For details on each level, see **setLogLevel API description**.
-tim.setLogLevel(0); // Common level. You are advised to use this level during connection as it covers more logs.
+tim.setLogLevel(0); // Common level. You are advised to use this level during access as it covers more logs.
 // tim.setLogLevel(1); // Release level, at which the SDK outputs important information. You are advised to use this log level in a production environment.
 
 // Register the Tencent Cloud IM upload plugin.

@@ -3,7 +3,7 @@ IM messages are classified by message destination into two types: one-to-one mes
 
 | Message Type | API Keyword | Description |
 |---------|---------|---------|
-| C2C message | C2CMessage | When sending a C2C message, you must specify the UserID of the message recipient, and only the recipient can receive this message. |
+| One-to-one message | C2CMessage | Also called C2C message. When sending a C2C message, you must specify the UserID of the message recipient, and only the recipient can receive this message. |
 | Group message | GroupMessage | When sending a group message, you must specify the groupID of the target group, and all users in this group can receive this message. |
 
 IM messages can also be classified by content into text messages, custom (signaling) messages, image messages, video messages, voice messages, file messages, location messages, and group tips.
@@ -129,8 +129,6 @@ For a group @ message, the sender can listen to the input of the @ character in 
 >? Currently, only text @ messages are supported.
 
 
-
-
 ### Sending group @ messages
 1. The sender listens to the text input box on the chat interface and launches the group member selection interface. After selection is completed, the ID and nickname of the selected member are returned. The ID is used to construct the message object [V2TIMMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html), and the nickname is displayed in the text box.
 2. The sender calls [createTextAtMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#ad255ff81ed0b9ee71273a1b20cf6d753) of [V2TIMMessageManager](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html) to create an @ text message and obtain the message object [V2TIMMessage](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html).
@@ -253,7 +251,7 @@ Sender: Denny needs to set `ext` before sending a message.
 ```
 // Denny sets `offlinePushInfo` and specifies `ext` before sending a message.
 JSONObject jsonObject = new JSONObject();
-try{
+try {
 	jsonObject.put("action", "jump to denny");
 } catch (JSONException e) {
 	e.printStackTrace();
@@ -279,7 +277,7 @@ Bundle bundle = intent.getExtras();
 Set<String> set = bundle.keySet();
 if (set != null) {
 	for (String key : set) {
-		// `key` and `value` correspond to `extKey` and `ext content` set in Step 1.
+		// `key` and `value` correspond to `extKey` and `ext content` set at the sender.
 		String value = bundle.getString(key);
 		if (value.equals("jump to denny")) {
 			// Go to the chat window with Denny.
@@ -301,7 +299,7 @@ In the one-to-one chat scenario, you can call [sendMessage](http://doc.qcloudtrt
 ```
 // Send the "I am typing..." message to userA.
 JSONObject jsonObject = new JSONObject();
-try{
+try {
 	jsonObject.put("command", "textInput");
 } catch (JSONException e) {
 	e.printStackTrace();

@@ -3,7 +3,7 @@ IM messages are classified by message destination into two types: one-to-one mes
 
 | Message Type | API Keyword | Description |
 |---------|---------|---------|
-| C2C message | C2CMessage | When sending a C2C message, you must specify the UserID of the message recipient, and only the recipient can receive this message. |
+| One-to-one message | C2CMessage | Also called C2C message. When sending a C2C message, you must specify the UserID of the message recipient, and only the recipient can receive this message. |
 | Group message | GroupMessage | When sending a group message, you must specify the groupID of the target group, and all users in this group can receive this message. |
 
 IM messages can also be classified by content into text messages, custom (signaling) messages, image messages, video messages, voice messages, file messages, location messages, and group tips.
@@ -118,12 +118,9 @@ The recipient identifies the image message, and parses the message to obtain the
 
 ## Sending and Receiving Group @ Messages
 
-For a group @ message, the sender can listen to the input of the @ character in the input box and call the group member selection interface. After selection is completed, the input box displays the content in the format of `”@A @B @C......”`, and then the sender can continue to edit the message content and send the message. On the group chat list of the recipient’s conversation interface, the identifier `"someone@me"` or `"@all members"` will be displayed to remind the user that the user was mentioned by someone in the group.
+For a group @ message, the sender can listen to the input of the @ character in the input box and call the group member selection interface. After selection is completed, the input box displays the content in the format of `"@A @B @C......"`, and then the sender can continue to edit the message content and send the message. On the group chat list of the recipient’s conversation interface, the identifier `"someone@me"` or `"@all members"` will be displayed to remind the user that the user was mentioned by someone in the group.
 
 >? Currently, only text @ messages are supported.
-
-
-
 
 ### Sending group @ messages
 
