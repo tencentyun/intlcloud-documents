@@ -30,7 +30,7 @@ Then, run the following command:
 ```
 [hadoop@10 ~]$ ./gen_data.sh > impala_test.data
 ```
-This script file will generate 1,000,000 random number pairs and save them to the `hive_test.data` file. Then, upload the generated test data to HDFS and run the following command:
+This script file will generate 1,000,000 random number pairs and save them to the `impala_test.data` file. Then, upload the generated test data to HDFS and run the following command:
 ```
 [hadoop@10 ~]$ hdfspath="/impala_test_dir"
 [hadoop@10 ~]$ hdfs dfs -mkdir $hdfspath
@@ -140,7 +140,7 @@ For data stored in HDFS, run the following command to import it into the table:
 LOAD DATA INPATH '$hdfspath/impala_test.data' INTO TABLE t1;
 ```
 Here, `$hdfspath` is the path of your file in HDFS. After the import is completed, the source data file in the import path in HDFS will be deleted and then stored in the `/usr/hive/warehouse/experiments.db/t1` path of the Impala internal table.You can also create an external table by executing the following statement:
->There is only one command. If you do not enter the semicolon ";", you can put one command in multiple lines for input.
+>!There is only one command. If you do not enter the semicolon ";", you can put one command in multiple lines for input.
 >
 ```
 CREATE EXTERNAL TABLE t2
