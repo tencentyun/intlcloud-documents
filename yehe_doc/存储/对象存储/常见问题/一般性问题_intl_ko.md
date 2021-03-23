@@ -200,7 +200,7 @@ COS는 원클릭 서비스 취소 기능이 없습니다. 장기간 COS 서비�
 
 더 이상 COS 서비스를 사용하지 않을 경우 COS 내 모든 데이터(업로드하지 못한 파일 조각 및 지난 버전 객체 등을 포함)를 삭제하여 추가 과금을 피할 수 있습니다. 계정은 말소하지 않아도 됩니다. Tencent Cloud의 다른 서비스를 이용할 경우 계정 말소에도 영향을 받을 수 있습니다.
 
->COS 내의 데이터 및 업로드하지 못한 파일 조각을 삭제하려면 [객체 삭제](https://intl.cloud.tencent.com/document/product/436/13323) 및 [조각 삭제](https://intl.cloud.tencent.com/document/product/436/31632)를 참고하십시오.
+>?COS 내의 데이터 및 업로드하지 못한 파일 조각을 삭제하려면 [객체 삭제](https://intl.cloud.tencent.com/document/product/436/13323) 및 [조각 삭제](https://intl.cloud.tencent.com/document/product/436/31632)를 참고하십시오.
 
 삭제하기 전에 아래 사항을 유의하시기 바랍니다.
 
