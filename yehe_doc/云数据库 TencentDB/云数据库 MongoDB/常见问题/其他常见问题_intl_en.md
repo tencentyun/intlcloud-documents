@@ -10,7 +10,7 @@ Security credentials comprise a `SecretId` and a `SecretKey`:
  - `SecretId` is used to identify the API caller.
  - `SecretKey` is used to encrypt the strings to create a signature so that Tencent Cloud server can validate the identity of the caller.
 
->!API key is very important for creating TencentCloud API requests. With TencentCloud APIs, you can access and manage the resources in your Tencent Cloud account. For security reasons, store your keys safely and rotate them regularly (be sure to delete the old key when a new one is created). For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/240/8329).
+>!API key is very important for creating TencentCloud API requests. With TencentCloud APIs, you can access and manage the resources in your Tencent Cloud account. For security reasons, store your keys safely and rotate them regularly (be sure to delete the old key when a new one is created). For more information, please see [Request Signature](https://intl.cloud.tencent.com/document/product/240/32137).
 
 ### What are the restrictions on using the MongoDB username?
 TencentDB for MongoDB comes with a default user `mongouser`. It supports the SCRAM-SHA-1 authentication mechanism, and its role is [readWriteAnyDatabase+dbAdmin](https://docs.mongodb.org/v3.0/reference/built-in-roles/). You can use it to read and write any database, but you are not permitted to perform high-risk operations.
