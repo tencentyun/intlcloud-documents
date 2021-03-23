@@ -1,8 +1,8 @@
 라이브 방송 트랜스 코딩 기능(비디오 트랜스 코딩 및 오디오 트랜스 코딩 포함)이란 라이브 방송 현장에서 발송하는 원시 스트림을 클라우드에서 서로 다른 인코딩 포맷, 해상도, 비트 레이트의 트랜스 코딩 스트림으로 전환하여 시청자에게 발송하는 기능으로, 서로 다른 네트워크 환경 및 단말 디바이스 등의 시나리오에서 재생 수요를 충족해 줍니다. 본 문서에서는 트랜스 코딩 템플릿의 콘솔 생성, 바인딩, 바인딩 해제, 수정 및 삭제 방법에 대해 소개합니다.
 
-** 트랜스 코딩 템플릿을 생성하는 방법으로는 다음 두 가지 방식이 있습니다:**
+**트랜스 코딩 템플릿을 생성하는 방법으로는 다음 두 가지 방식이 있습니다:**
 
-- LVB 콘솔을 통해 트랜스 코딩 템플릿을 생성하는 자세한 작업 순서는 [표준 트랜스 코딩 템플릿 생성](#C_trans), [초고속 고화질 트랜스 코딩 템플릿 생성](#C_topspeed), [퓨어 오디오 트랜스 코딩 템플릿 생성](#C_audio)을 참조하십시오.
+- CSS 콘솔을 통해 트랜스 코딩 템플릿을 생성하는 자세한 작업 순서는 [표준 트랜스 코딩 템플릿 생성](#C_trans), [초고속 고화질 트랜스 코딩 템플릿 생성](#C_topspeed), [퓨어 오디오 트랜스 코딩 템플릿 생성](#C_audio)을 참조하십시오.
 - API를 통한 트랜스 코딩 템플릿에 대한 자세한 매개변수 및 사례는 [트랜스 코딩 템플릿 생성](https://intl.cloud.tencent.com/document/product/267/30790)을 참조하십시오.
 
 
@@ -16,12 +16,12 @@
 - 트랜스 코딩 템플릿을 바인딩하면 해당 템플릿 하단에 바인딩 규칙이 표시될 수 있습니다. API를 통해 더 상세한 규칙을 생성하는 경우 여기서도 조회 및 [바인딩 해제](#untie)가 가능합니다.
 - 개별 재생 도메인을 **여러개의 트랜스 코딩 템플릿**에 연결할 수 있으며, 개별 트랜스 코딩 템플릿을 **여러개의 재생 도메인**에 연결할 수 있습니다.
 
-span id="create"></span>
+<span id="create"></span>
 ## 트랜스 코딩 템플릿 생성
-span id="C_trans"></span>
+<span id="C_trans"></span>
 ### 표준 트랜스 코딩 템플릿 생성
 
-1. LVB 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 트랜스 코딩]](https://console.cloud.tencent.com/live/config/transcode) 페이지로 이동합니다.
+1. CSS 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 트랜스 코딩]](https://console.cloud.tencent.com/live/config/transcode) 페이지로 이동합니다.
 2. [트랜스 코딩 템플릿 생성]을 클릭하고 트랜스 코딩 유형을『**표준 트랜스 코딩**』으로 선택한 뒤 다음과 같이 설정합니다.
   - 기본 설정 항목: 템플릿 이름, 비디오 비트 레이트, 화면 해상도 등의 설정 항목을 포함하며 자세한 내용은 [표준 트랜스 코딩 기본 설정 설명](#C_trans_normal)을 참조하십시오.
   - 고급 설정 항목(선택 입력): [고급 설정]을 클릭하고 펼쳐 보기 후 설정할 수 있습니다. 자세한 내용은 [표준 트랜스 코딩 고급 설정 설명](#C_trans_high)을 참조하십시오.
@@ -84,10 +84,10 @@ span id="C_trans"></span>
 
    
 
-span id="C_topspeed"></span>
+<span id="C_topspeed"></span>
 
 ### 초고속 고화질 트랜스 코딩 템플릿 생성
-1. LVB 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 트랜스 코딩]](https://console.cloud.tencent.com/live/config/transcode) 페이지로 이동합니다.
+1. CSS 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 트랜스 코딩]](https://console.cloud.tencent.com/live/config/transcode) 페이지로 이동합니다.
 2. [트랜스 코딩 템플릿 생성]을 클릭하고 트랜스 코딩 유형을『**초고속 고화질 트랜스 코딩**』으로 선택한 뒤 다음과 같이 설정합니다:
   - 기본 설정 항목: 템플릿 이름, 비디오 비트 레이트, 화면 해상도 등의 설정 항목을 포함하며 자세한 내용은 [초고속 고화질 트랜스 코딩 기본 설정 설명](#C_topspeed_normal)을 참조하십시오.
   - 고급 설정 항목(선택 입력): [고급 설정]을 클릭하고 펼쳐 보기 후 설정할 수 있습니다. 자세한 내용은 [초고속 고화질 트랜스 코딩 고급 설정 설명](#C_topspeed_high)을 참조하십시오.
@@ -144,10 +144,10 @@ span id="C_topspeed"></span>
 <td>기본값은 비활성화이나, 수동으로 활성화할 수 있습니다. <br>매개변수 제한이 활성화된 후 입력된 라이브 방송 스트리밍의 원시 매개변수가 설정된 출력 매개변수 보다 작을 경우, 원시 매개변수 출력값에 따라 라이브 방송 스트리밍이 출력되어 저화질의 라이브 방송 스트리밍이 높은 매개변수 값으로 재생됨으로써 실제 화면에 영향을 주는 것을 방지합니다. </td>
 </tr></table>
 
-span id="C_audio"></span>
+<span id="C_audio"></span>
 ### 퓨어 오디오 트랜스 코딩 템플릿 생성
 
-1. LVB 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 트랜스 코딩]](https://console.cloud.tencent.com/live/config/transcode) 페이지로 이동합니다.
+1. CSS 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 트랜스 코딩]](https://console.cloud.tencent.com/live/config/transcode) 페이지로 이동합니다.
 2. [트랜스 코딩 템플릿 생성]을 클릭하고 트랜스 코딩 유형을 『**퓨어 오디오 트랜스 코딩**』으로 선택합니다. [설정 항목](#C_audio_normal)을 입력하고 [저장]을 클릭합니다.
 
 ![](https://main.qcloudimg.com/raw/c12170c861b0ed188aed7047822902a6.png)
@@ -169,9 +169,9 @@ span id="C_audio"></span>
 </tr>
 </table>
 
-span id="related"></span>
+<span id="related"></span>
 ## 도메인 연결
-1. LVB 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 트랜스 코딩]](https://console.cloud.tencent.com/live/config/transcode)페이지로 이동합니다.
+1. CSS 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 트랜스 코딩]](https://console.cloud.tencent.com/live/config/transcode)페이지로 이동합니다.
 2. 다음과 같이 도메인 바인딩 창으로 이동합니다.
   - **도메인 직접 연결:** 왼쪽 상단에 있는 [바인딩 도메인 이름]을 클릭합니다.
     ![](https://main.qcloudimg.com/raw/ffa3a7d7c8392dc0509bf679f8d56c14.png)
@@ -183,9 +183,9 @@ span id="related"></span>
 
 
 
-span id="untie"></span>
+<span id="untie"></span>
 ## 바인딩 해제
-1. LVB 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 트랜스 코딩]](https://console.cloud.tencent.com/live/config/transcode)페이지로 이동합니다.
+1. CSS 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 트랜스 코딩]](https://console.cloud.tencent.com/live/config/transcode)페이지로 이동합니다.
 2. 연결되어 있는 도메인의 트랜스 코딩 템플릿을 선택하고 [바인딩 해제]을 클릭합니다.
 ![](https://main.qcloudimg.com/raw/59ecf14bea1e5b3ffa7b1fe6da0d565b.png)
 3. 현재 연결된 도메인의 바인딩 해제 여부를 확인하고 [확인]을 클릭하면 바인딩 해제가 완료됩니다.
@@ -193,9 +193,9 @@ span id="untie"></span>
 
 
 
-span id="modify"></span>
+<span id="modify"></span>
 ## 템플릿 수정
-1. LVB 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 트랜스 코딩]](https://console.cloud.tencent.com/live/config/transcode)페이지로 이동합니다.
+1. CSS 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 트랜스 코딩]](https://console.cloud.tencent.com/live/config/transcode)페이지로 이동합니다.
 2. 생성된 트랜스 코딩 템플릿을 선택하고 오른쪽에 있는 [편집]을 클릭하면 템플릿 정보 수정 페이지로 이동합니다.
 3. [저장]을 클릭합니다.
 
@@ -203,11 +203,11 @@ span id="modify"></span>
 
 
 
-span id="delect"></span>
+<span id="delect"></span>
 ## 템플릿 삭제
 >!   템플릿이 이미 연결되어 있는 경우 먼저 [바인딩 해제](#unite)를 진행해야 삭제할 수 있습니다. 
 
-1. LVB 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 트랜스 코딩]](https://console.cloud.tencent.com/live/config/transcode)페이지로 이동합니다.
+1. CSS 콘솔에 로그인하여 [기능 설정]>[[라이브 방송 트랜스 코딩]](https://console.cloud.tencent.com/live/config/transcode)페이지로 이동합니다.
 2. 연결되지 않은 재생 도메인의 트랜스 코딩 템플릿을 선택하고 [삭제]를 클릭합니다.
 ![](https://main.qcloudimg.com/raw/c3109628fcb4a5a4fabce8ad58c03db5.png)
 3. 현재 트랜스 코딩 템플릿의 삭제 여부를 확인하고 [확인]을 클릭하면 삭제가 완료됩니다.
