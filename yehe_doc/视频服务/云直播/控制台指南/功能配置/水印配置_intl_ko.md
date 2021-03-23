@@ -1,8 +1,8 @@
-본 문서에서는 [LVB 콘솔](https://console.cloud.tencent.com/live)을 통해 워터마크 설정을 생성하는 방법을 소개합니다. 생성 완료 후 해당 푸시 스트리밍 도메인에서 [워터마크 설정](https://intl.cloud.tencent.com/document/product/267/31064)을 연결해야 하며, 연결하고 약 5~10분 후 적용됩니다. API를 통해서도 라이브 방송 채널에 워터마크를 추가할 수 있습니다.
+본 문서에서는 [CSS 콘솔](https://console.cloud.tencent.com/live)을 통해 워터마크 설정을 생성하는 방법을 소개합니다. 생성 완료 후 해당 푸시 스트리밍 도메인에서 [워터마크 설정](https://intl.cloud.tencent.com/document/product/267/31064)을 연결해야 하며, 연결하고 약 5~10분 후 적용됩니다. API를 통해서도 라이브 방송 채널에 워터마크를 추가할 수 있습니다.
 
 
 ## 워터마크 템플릿 생성
-LVB 콘솔에 로그인하여 왼쪽 메뉴바에서 [기능 템플릿]>[워터 마크 설정](https://console.cloud.tencent.com/live/config/watermark)을 선택한 후, [+] 버튼을 클릭해 워터마크 기본 정보를 설정합니다.
+CSS 콘솔에 로그인하여 왼쪽 메뉴바에서 [기능 템플릿]>[워터 마크 설정](https://console.cloud.tencent.com/live/config/watermark)을 선택한 후, [+] 버튼을 클릭해 워터마크 기본 정보를 설정합니다.
 워터마크 위치를 선택할 수 있으며, 워터마크 이미지를 드래그하거나 X축과 Y축 방향을 조절하여 워터마크를 원하는 위치로 조정할 수 있습니다.
 ![](https://main.qcloudimg.com/raw/573023a1d1d6fd921209799edbfa96e8.png)
 
