@@ -37,7 +37,7 @@ CAM(Cloud Access Management)은 객체 스토리지 COS에 대해 계정 및 보
 루트 계정 또는 서브 계정의 보안 자격 증명을 통한 리소스 액세스 외에도 Tencent Cloud는 역할 생성을 지원하고, 임시 보안 자격 증명을 사용하여 Tencent Cloud 리소스를 관리합니다. 역할 관련 기본 개념 및 사용 방법은 CAM의 [역할 관리](https://intl.cloud.tencent.com/document/product/598/19420) 문서를 참조하십시오.
 
 역할은 가상 신분이기 때문에 영구적인 키를 가지고 있지 않으므로 Tencent Cloud의 CAM은 임시 보안 자격 증명을 생성하기 위한 STS API를 제공합니다.
-사용 방법과 세부 예시는 [역할 사용](https://intl.cloud.tencent.com/document/product/598/19419) 문서나 [STS API](https://intl.cloud.tencent.com/document/product/598/13895) 문서에서 임시 보안 자격 증명 생성 방식을 참조하십시오. 임시 보안 자격 증명에는 보통 **정책 제한**(작업, 리소스, 조건) 및 **시간 제한**(시작 및 종료 유효 시간)만 포함되므로, 생성된 임시 보안 자격 증명은 자체 배포하거나 직접 사용할 수 있습니다.
+사용 방법과 세부 예시는 [역할 사용](https://intl.cloud.tencent.com/document/product/598/19419) 문서나 STS API 문서에서 임시 보안 자격 증명 생성 방식을 참조하십시오. 임시 보안 자격 증명에는 보통 **정책 제한**(작업, 리소스, 조건) 및 **시간 제한**(시작 및 종료 유효 시간)만 포함되므로, 생성된 임시 보안 자격 증명은 자체 배포하거나 직접 사용할 수 있습니다.
 
 임시 보안 자격 증명을 생성하는 인터페이스를 호출하면 한 쌍의 임시 키(tmpSecretId/tmpSecretKey)와 보안 토큰(sessionToken)을 얻게 되는데, 이것이 객체 스토리지 COS에 액세스하는데 쓰는 보안 자격 증명을 구성합니다. 다음은 하나의 예시입니다.
 
