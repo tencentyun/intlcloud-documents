@@ -180,27 +180,27 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/9005" target="_blank">DescribeForwardLBListeners</a></td>
+<td>DescribeForwardLBListeners</td>
 <td>DescribeForwardLBListeners</td>
 <td>Queries CLB listeners.</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/9000" target="_blank">CreateForwardLBSeventhLayerListeners</a></td>
+<td>CreateForwardLBSeventhLayerListeners</td>
 <td>CreateForwardLBSeventhLayerListeners</td>
 <td>Creates one or more Layer-7 listeners.</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/9001" target="_blank">CreateForwardLBFourthLayerListeners</a></td>
+<td>CreateForwardLBFourthLayerListeners</td>
 <td>CreateForwardLBFourthLayerListeners</td>
 <td>Creates one or more Layer-4 listener.</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/8998" target="_blank">ModifyForwardLBFourthListener</a></td>
+<td>ModifyForwardLBFourthListener</td>
 <td>ModifyForwardLBFourthListener</td>
 <td>Modifies the attributes of a CLB Layer-4 listener.</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/8997" target="_blank">ModifyForwardLBSeventhListener</a></td>
+<td>ModifyForwardLBSeventhListener</td>
 <td>ModifyForwardLBSeventhListener</td>
 <td>Modifies the attributes of a CLB Layer-7 listener.</td>
 </tr>
@@ -212,7 +212,7 @@
 </tbody></table>
 
 
-|### Forwarding rule APIs
+### Forwarding rule APIs
 <table>
 <thead>
 <tr>
@@ -222,22 +222,22 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/9011" target="_blank">CreateForwardLBListenerRules</a></td>
+<td>CreateForwardLBListenerRules</td>
 <td>CreateForwardLBListenerRules</td>
 <td>Creates forwarding rules of a CLB Layer-7 listener.</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/9007" target="_blank">ModifyForwardLBRulesDomain</a></td>
+<td>ModifyForwardLBRulesDomain</td>
 <td>ModifyForwardLBRulesDomain</td>
 <td>Modifies the domain name under a CLB Layer-7 listener.</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/9008" target="_blank">ModifyLoadBalancerRulesProbe</a></td>
+<td>ModifyLoadBalancerRulesProbe</td>
 <td>ModifyLoadBalancerRulesProbe</td>
 <td>Modifies the health check and forwarding path for the forwarding rules of a CLB Layer-7 listener.</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/9012" target="_blank">DeleteForwardLBListenerRules</a></td>
+<td>DeleteForwardLBListenerRules</td>
 <td>DeleteForwardLBListenerRules</td>
 <td>Deletes forwarding rules of a CLB Layer-7 listener.</td>
 </tr>
@@ -311,7 +311,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/8995" target="_blank">DescribeForwardLBHealthStatus</a></td>
+<td>DescribeForwardLBHealthStatus</td>
 <td>DescribeForwardLBHealthStatus</td>
 <td>Queries the health check of a CLB instance.</td>
 </tr>
