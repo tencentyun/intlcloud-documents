@@ -3,7 +3,7 @@
 - **短信接收不到告警**：
 	- 在 [访问管理控制台 ](https://console.cloud.tencent.com/cam)用户列表中，单击用户名称进入用户详情，查看手机是否验证。
 	- 在 [告警策略](https://console.cloud.tencent.com/monitor/policylist) 列表中，查看对应的告警策略是否被屏蔽了短信告警渠道。
-	- 在 [监控概览](https://console.cloud.tencent.com/monitor/overview) 页右侧查看免费短信是否已使用完。详情请参见 [短信告警渠道](https://intl.cloud.tencent.com/document/product/248/32815)。
+	- 在 [监控概览](https://console.cloud.tencent.com/monitor/overview) 页右侧查看免费短信是否已使用完。详情请参见 [短信告警渠道](https://intl.cloud.tencent.com/zh/document/product/248/38908)。
 - **邮件接收不到告警**：
 	- 在 [访问管理控制台 ](https://console.cloud.tencent.com/cam)用户列表中，单击用户名称进入用户详情，查看邮箱是否验证。
 	- 在 [告警策略](https://console.cloud.tencent.com/monitor/policylist) 列表中，查看对应的告警策略是否被屏蔽了邮件告警渠道。
