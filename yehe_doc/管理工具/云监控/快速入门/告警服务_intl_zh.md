@@ -51,4 +51,3 @@
 
 1. 登录 [云监控控制台](https://console.cloud.tencent.com/monitor)。
 2. 在左侧导航栏中，单击【监控概览】，进入监控概览页即可查看告警。
->如需了解更多监控概览信息，请参见 [查看告警](https://intl.cloud.tencent.com/document/product/248/6219)。
