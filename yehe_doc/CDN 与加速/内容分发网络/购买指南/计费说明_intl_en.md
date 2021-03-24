@@ -149,7 +149,7 @@ If you select bill-by-bandwidth mode, you will need to pay: 40 * 0.094 = 3.76 US
 
 We recommend bill-by-bandwidth as it is more cost-effective.
 
-## Overdue
+## Overdue Payment
 
 Tencent Cloud will notify you through multiple channels including email and SMS when your account is overdue. A **24-hour** grace period is provided. If you fail to top up your account within 24 hours, your CDN service will be suspended. You will need to manually enable the acceleration service in the CDN console after topping up your account.
 
