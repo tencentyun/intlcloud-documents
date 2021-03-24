@@ -1,5 +1,5 @@
 ## Feature Overview
-CI provides the image watermark processing feature through the **watermark** API. Currently, a watermark image must be specified as an image stored in CI. The size of the original image to be processed cannot exceed 20 MB, its width and height cannot exceed 30,000 pixels respectively, and its total pixels cannot exceed 100 million. The width and height of the output image cannot exceed 9,999 pixels respectively. For animated images, the original image width * height * number of frames cannot exceed 100 million pixels.
+CI provides the image watermark processing feature through the **watermark** API. Currently, a watermark image must be specified as an image stored in CI. The size of the input image to be processed cannot exceed 20 MB, its width and height cannot exceed 30,000 pixels respectively, and its total pixels cannot exceed 250 million. The width and height of the output image cannot exceed 9,999 pixels respectively. For animated images, the input image's Width x Height x Number of frames cannot exceed 250 million pixels.
 
 ## API Format
 
@@ -31,7 +31,7 @@ download_url?watermark/1/image/<encodedURL>
 | /scatype/    | Scales watermark image based on original image size.<br><li>When `scatype` is set to 1, the size is scaled by width.<br><li>When `scatype` is set to 2, the size is scaled by height.<br><li>When `scatype` is set to 3, the size is scaled by area.                      |
 | /spcent/     | Permillage of watermark image in original image. Value range: [1,1000]. The original image size is used by default.                      |
 
->The specified watermark image must meet all the following three conditions:  
+>!The specified watermark image must meet all the following three conditions:  
 >- The watermark image and the original image must be located in the same bucket.
 >- The URL needs to be a COS domain name (CDN acceleration domain names such as `examplebucket-1250000000.file.myqcloud.com/shuiyin_2.png` cannot be used), and the watermark image must be accessible (if it is private read, a valid signature must be carried).
 >- The URL must start with `http://`. The HTTP header cannot be omitted or replaced by the HTTPS header. For example, `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/shuiyin_2.png` and `https://examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/shuiyin_2.png` are invalid watermark URLs.
@@ -49,7 +49,7 @@ A nine-part grid can provide a location reference for various operations perform
 >?
 >- When `gravity` is set to `center`, the `dx` and `dy` parameters won't take effect.
 >- When `gravity` is set to `north` or `south`, the `dx` parameter won't take effect (in which case the watermark is horizontally centered).
-- When `gravity` is set to `west` or `east`, the `dy` parameter won't take effect (in which case the watermark is vertically centered).
+>- When `gravity` is set to `west` or `east`, the `dy` parameter won't take effect (in which case the watermark is vertically centered).
 
 
 ## Sample
