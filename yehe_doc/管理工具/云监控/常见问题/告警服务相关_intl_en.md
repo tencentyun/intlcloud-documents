@@ -3,7 +3,7 @@
 - **Alarm notifications cannot be received via SMS**:
 	- In the user list in the [CAM Console](https://console.cloud.tencent.com/cam), click a username to access the user details page and check that the user's phone number has been verified.
 	- In the [alarm policy](https://console.cloud.tencent.com/monitor/policylist) list, check whether the SMS channel is blocked in the corresponding alarm policy.
-	- On the right of the [Monitoring Overview](https://console.cloud.tencent.com/monitor/overview) page, check whether the free quota of SMS messages has been used up. For more information, please see [SMS Alarm Channel](https://intl.cloud.tencent.com/document/product/248/32815).
+	- On the right of the [Monitoring Overview](https://console.cloud.tencent.com/monitor/overview) page, check whether the free quota of SMS messages has been used up. For more information, please see [SMS Alarm Channel](https://intl.cloud.tencent.com/zh/document/product/248/38908).
 - **Alarm notifications cannot be received via email**:
 	- In the user list in the [CAM Console](https://console.cloud.tencent.com/cam), click a username to access the user details page and check that the user's email address has been verified.
 	- In the [Alarm Policy](https://console.cloud.tencent.com/monitor/policylist) list, check whether the email channel is blocked in the corresponding alarm policy.
