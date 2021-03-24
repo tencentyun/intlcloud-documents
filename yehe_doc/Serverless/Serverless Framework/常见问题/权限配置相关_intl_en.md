@@ -1,5 +1,5 @@
 ### What should I do if "The appid is unavailable for legal reasons." is reported?
-This error is caused by account arrears, as it is impossible to create pay-as-you-go resources. Please check whether your account is in arrears. This error can be resolved by topping up your account to a positive balance.
+This error is caused by overdue account, as it is impossible to create pay-as-you-go resources. Please check whether your account is overdue. This error can be resolved by topping up your account to a positive balance.
 
 ### What should I do if "you are not authorized to perform operation resource has no permission" is reported?
 This error is caused by the lack of relevant permissions in the account itself or the invocation role `SLS_QcsRole`. Please determine the missing policy according to the error message and then assign it to the account or `SLS_QcsRole` in the [CAM console](https://console.cloud.tencent.com/cam).
