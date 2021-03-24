@@ -1,5 +1,5 @@
 ## Feature
-This API is used to provide common image processing templates in Tencent Cloud CI. You only need to add corresponding parameters to the download URL to generate corresponding thumbnails. Currently, images smaller than 20 MB in size and smaller than 9,999 pixels in length and width are supported.
+This API is used to provide common image processing templates in Tencent Cloud CI. You only need to add corresponding parameters to the download URL to generate corresponding thumbnails. The size of the input image to be processed cannot exceed 20 MB, its width and height cannot exceed 30,000 pixels respectively, and its total pixels cannot exceed 250 million. The width and height of the output image cannot exceed 9,999 pixels respectively. For animated images, the input image's Width x Height x Number of frames cannot exceed 250 million pixels.
 
 ## API Form
 
@@ -12,7 +12,7 @@ imageView2/<mode>/w/<Width>
                  /lq/<Quality>			
 ```
 
-> Quality conversion parameters are only applicable to **jpg** and **webp** images.
+>!Quality conversion parameters are only applicable to **jpg** and **webp** images.
 
 
 ## Parameter Description
