@@ -22,5 +22,5 @@ You can process images using the APIs provided by CI. For more information, plea
 ## Restrictions
 
 - Format: Currently, processing JPG, BMP, GIF, PNG, and WebP, as well as decoding and processing HEIF are supported.
-- Size: The size of an original image cannot be larger than 20 MB, its width and height cannot exceed 30,000 pixels, and the total number of pixels cannot exceed 100 million. The width and height of the destination image cannot exceed 9,999 pixels. For a source animated image, Width x Height x Number of frames cannot exceed 100 million pixels.
+- Size: The size of an original image cannot be larger than 20 MB, its width and height cannot exceed 30,000 pixels, and the total number of pixels cannot exceed 250 million. The width and height of the destination image cannot exceed 9,999 pixels. For a source animated image, Width x Height x Number of frames cannot exceed 250 million pixels.
 - Number of frames (for animated images): For GIF, the number of frames cannot exceed 300.
