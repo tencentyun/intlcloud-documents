@@ -25,7 +25,7 @@ You have created a bucket. For more information, please see [Creating Buckets](h
  - **Advanced Settings**: advanced configurations for inventory. If not set, the default values will be used.
    - **Output Format**: The default value is **CSV**.
    - **Object Version**: whether to include all object versions or only the current version in the inventory. If not set, only the current version will be included.
-   - **Generation Cycle**: whether to export the inventory daily or weekly. If not set, the inventory will be published daily.
+   - **Generate Lifecycle**: specifies whether to export the inventory **Everyday** (default) or **Everyweek**. For example, an inventory added at 15:00 today will be generated and delivered to the destination bucket before 6:00 tomorrow in most cases.
    - **Filter Prefix (Optional)**: filters only objects with the specified prefix in the inventory. If not set, no prefix filter will be applied.
    - **Filter Time (Optional)**: filters only objects modified after the specified time or within the specified period in the inventory. If not set, no time filter will be applied.
    - **Inventory Encryption**: whether to encrypt the inventory on the server. Options include:
