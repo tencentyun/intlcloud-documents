@@ -1,50 +1,51 @@
 
-## API Description
-**Request method**: POST.
-**Calling frequency limit**: 200 times/hour.
+## 接口说明
+**请求方式**：POST。
+**调用频率限制**：200次/小时。
 
 ```plaintext
-request address/v3/statistics/get_device_stat_overview
+服务地址/v3/statistics/get_device_stat_overview
 ```
-The API request address is corresponding to the service access point. Select the [request address](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
 
-**Feature**: this API is used to query "daily new devices", "daily active users", and "historically accumulated devices" of the application within a certain time period.
+接口服务地址与服务接入点一一对应，请选择与您的应用服务接入点对应的 [服务地址](https://intl.cloud.tencent.com/document/product/1024/38517)。
 
-## Parameter Description
-#### Request parameters
+**接口功能**：查询应用某个时间段内每天的“日新增设备数”、“日活跃用户数（DAU）”和“历史累计设备数”。
 
-| Parameter Name | Required | Type | Description |
+## 参数说明
+#### 请求参数
+
+| 参数名称  | 必选 | 类型   | 描述                                                         |
 | --------- | ---- | ------ | ------------------------------------------------------------ |
-| startDate | Yes   | String | Query start date<li>Format: YYYYMMDD<li>Limit: only data in the last 3 months can be queried |
-| endDate   | Yes   | String | Query end date. Format: YYYYMMDD                                 |
+| startDate | 是   | String | 查询开始日期<li>格式：YYYYMMDD<li>限制：只能查询最近3个月内的数据 |
+| endDate   | 是   | String | 查询截止日期，格式：YYYYMMDD                                 |
 
-#### Response parameters
+#### 应答参数
 
-| Parameter Name                  | Type      | Description                                                |
+| 参数名称                  | 类型      | 描述                                                |
 | ------------------------- | --------- | --------------------------------------------------- |
-| retCode                   | Integer       | Returned status code                                          |
-| errMsg                    | String    | Error message                                            |
-| getDeviceStatOverviewData | Array | Returned result, with `getDeviceStatOverviewData` structure variables shown in following table |
+| retCode                   | Integer       | 返回状态码                                          |
+| errMsg                    | String    | 错误信息                                            |
+| getDeviceStatOverviewData | Array | 返回结果，getDeviceStatOverviewData 结构变量见下表 |
 
 #### getDeviceStatOverviewData
 
-| Parameter Name | Type   | Description           |
+| 参数名称 | 类型   | 说明           |
 | -------- | ------ | -------------- |
-| date     | Integer | Data date       |
-| accuUv   | Integer    | Accumulated devices     |
-| newUv    | Integer    | Daily new devices   |
-| activeUv | Integer    | Daily peak of online devices |
+| date     | Integer | 数据日期       |
+| accuUv   | Integer    | 累积设备量     |
+| newUv    | Integer    | 日新增设备量   |
+| activeUv | Integer    | 日在线设备峰值 |
 
 
-## Samples
-#### Sample request
+## 示例说明
+#### 请求示例
 ```json
 {
     "startDate": "20190724",
     "endDate": "20190726"
 }
 ```
-#### Sample response
+#### 应答示例
 ```json
 {
     "retCode": 0,
