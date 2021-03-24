@@ -5,7 +5,7 @@ Welcome to the GME SDK. This document describes error codes that may be reported
 |--------|-------|------------|
 |AV_ERR_3DVOICE_ERR_NOT_INITED       |7003| The `InitSpatializer` API needs to be called first. |
 |AV_ERR_NET_REQUEST_FALLED |7004| Network request failed. This is generally caused by unstable network. Please see [Voice Chat Room Issues](https://intl.cloud.tencent.com/zh/document/product/607/30257) for troubleshooting. |
-|AV_ERR_CHARGE_OVERDUE     |7005| Operation failed due to account arrears. You need to check whether your account is in arrears in the Tencent Cloud Console. |
+|AV_ERR_CHARGE_OVERDUE     |7005| Operation failed due to overdue payment. You need to check whether your account is overdue in the Tencent Cloud Console. |
 |AV_ERR_AUTH_FIALD         |7006| Authentication failed. Possible causes: 1. The `AppID` does not exist or is incorrect; 2. An error occurred while authenticating the `authbuff`; 3. Authentication expired. |
 |AV_ERR_IN_OTHER_ROOM      |7007| Already in another room. |
 |AV_ERR_NO_PERMISSION      |7009| No permission to perform the operation. |
@@ -51,7 +51,7 @@ Welcome to the GME SDK. This document describes error codes that may be reported
 
 | Error Code Name | Error Code Value | Description | Cause | Suggested Solution |
 |-----------------------------------|-----|-----|----------------------------------------------------------------------------------------------|---------------------------------------------------------|
-| AV_ERR_SERVER_FAILED | 10001 | General error | Locate the specific cause based on the actual error code (in logs) returned from the backend to the client. | View and confirm the validity of the parameters in the room entering API, such as `AppID`, `UIN`, and `AuthBuffer` (please see the documentation). Check whether the relevant parameters in the console match the local ones, whether your account is in arrears, and whether the network environment of your testing devices is in the private network or public network. |
+| AV_ERR_SERVER_FAILED | 10001 | General error | Locate the specific cause based on the actual error code (in logs) returned from the backend to the client. | View and confirm the validity of the parameters in the room entering API, such as `AppID`, `UIN`, and `AuthBuffer` (please see the documentation). Check whether the relevant parameters in the console match the local ones, whether your account is overdue, and whether the network environment of your testing devices is in the private network or public network. |
 | AV_ERR_SERVER_INVALID_ARGUMENT | 10002 | Invalid parameter | One or more incorrect parameters are passed in when an SDK API is called or an internal SDK signal is sent to the backend. | Ensure the correctness of parameters passed in to SDK API calls. Analyze logs, get the actual error code returned from the backend to the client, and ask backend personnel for assistance. |
 | AV_ERR_SERVER_NO_PERMISSION | 10003 | No permission | The client had no permission to use a feature; for example, the client carries an incorrect or expired signature when it tries to enter a room. | Be sure to use a feature after the permission parameters are correctly set. Check whether the `AppID` and permission key are correct. |
 | AV_ERR_SERVER_TIMEOUT | 10004 | Timeout | The result of an operation was not returned within the specified time. | Analyze logs, get the actual error code returned from the backend to the client, and ask backend personnel for assistance. |
