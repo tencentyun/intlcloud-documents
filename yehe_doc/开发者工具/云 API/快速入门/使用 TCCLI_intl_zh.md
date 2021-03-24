@@ -41,7 +41,7 @@
 ```
 pip install tccli
 ```
->! 3.0.252.3以下版本升级需要执行以下代码：
+>! 3.0.96.1以下版本升级需要执行以下代码：
 ```
 sudo pip uninstall tccli jmespath
 sudo pip install tccli
@@ -140,7 +140,7 @@ tccli configure
 ## 使用 TCCLI
 
 ### [基础功能](id:primaryfunction)
-TCCLI 支持自主配置，helper 信息支持中文信息且支持 JSON、table 及 text 输出格式。
+TCCLI 支持自主配置，help 信息支持中文信息且支持 JSON、table 及 text 输出格式。
 >! 请注意示例中非简单类型的参数必须为标准 JSON 格式。 
 >
 TCCLI 目前支持以下三种调用方式：

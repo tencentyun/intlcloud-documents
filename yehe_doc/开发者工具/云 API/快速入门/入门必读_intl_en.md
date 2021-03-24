@@ -28,13 +28,9 @@ This document uses the [`DescribeInstances`](https://intl.cloud.tencent.com/docu
 <td><a href="https://intl.cloud.tencent.com/document/product/494">SDK</a></td>
 </tr>
 <tr>
-<td>APIs</td>
-<td>APIs provide an entry to all Tencent Cloud APIs. You can query API documents, error codes, API Explorer and SDK here. /td>
-<td><a href="https://intl.cloud.tencent.com/document/api">APIs</a></td>
-</tr>
-<tr>
 <td>API Inspector</td>
 <td>API Inspector records API calls associated with console operations, and automatically generates API code snippets in different languages.</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1080/38785">Using API Inspector</a></td>
 </tr>
 </table>
+
