@@ -1,5 +1,5 @@
-The arrears processing for the peering connection are adjusted according to the billing method, which is effective from 10:30:00 on May 19, 2020. You can find details below:
-> If you have enabled the non-stop feature, and when your account is in arrears, you can continue to use the service and be billed. To enable the non-stop feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+The overdue payment processing for the peering connection are adjusted according to the billing method, which is effective from 10:30:00 on May 19, 2020. You can find details below:
+> If you have enabled the non-stop feature, and when your account is overdue, you can continue to use the service and be billed. To enable the non-stop feature, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 >
 ## Billing by Daily Peak Bandwidth and Monthly 95th Percentile
 - You can continue to use the cross-region peering connection for 24 hours from the moment your balance becomes zero. You will be billed for this period.
