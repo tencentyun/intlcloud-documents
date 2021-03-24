@@ -69,8 +69,8 @@ GPU Cloud Computing is available in the following instance types: Computing GN6S
 ## Repossession Description
 GPU instances are repossessed in the same manner as CVM instances. For more information, please see CVM [Instance Repossession](https://intl.cloud.tencent.com/document/product/213/4931).
 
-## Note on Arrears
-GPU instances in arrears will be dealt with in the same manner as CVM instances. For more information, please see CVM [Arrears](https://intl.cloud.tencent.com/document/product/213/2181).
+## Note on Overdue Payment
+After your account becomes overdue, GPU instances will be dealt with in the same manner as CVM instances. For more information, please see CVM [Overdue Payment](https://intl.cloud.tencent.com/document/product/213/2181).
 
 ## Notes
 - The above listed prices are subject to change. Prices indicated on the purchase page shall prevail.
