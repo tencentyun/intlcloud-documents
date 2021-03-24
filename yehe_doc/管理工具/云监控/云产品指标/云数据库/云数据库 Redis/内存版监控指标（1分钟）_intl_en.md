@@ -95,7 +95,7 @@ Namespace=QCE/REDIS
 | Parameter Name | Dimension Name | Dimension Description | Format |
 | ------------------------------ | ---------- | ---------------- | ------------------------------------------------------------ |
 | Instances.N.Dimensions.0.Name | instanceid | Dimension name of the instance ID | Enter a string-type dimension name, such as instanceid |
-| Instances.N.Dimensions.0.Value | instanceid | A specific instance ID | Enter a specific Redis instance ID, such as tdsql-123456. The specific Redis instance ID can also be an instance string, such as crs-ifmymj41. It can be queried through the [DescribeRedis](https://intl.cloud.tencent.com/document/api/239/1384) API |
+| Instances.N.Dimensions.0.Value | instanceid | A specific instance ID | Enter a specific Redis instance ID, such as tdsql-123456. The specific Redis instance ID can also be an instance string, such as crs-ifmymj41. It can be queried through the DescribeRedis API |
 | Instances.N.Dimensions.1.Name | clusterid | Dimension name of the shard ID | Enter a string-type dimension name, such as clusterid. <br><li> To pull overall information, do not pass in this parameter. <br><li> To pull shard information, the input parameter must be `clusterid` |
 | Instances.N.Dimensions.1.Value | clusterid | A specific shard ID | Enter a specific shard ID such as tdsql-123456, which can be obtained by running commands such as `cluster nodes` |
 
