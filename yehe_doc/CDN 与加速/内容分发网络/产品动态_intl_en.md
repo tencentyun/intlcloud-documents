@@ -147,7 +147,7 @@ table th:nth-of-type(4){ width:21%; }
 
 | Update | Description | Release Date | Documentation |
 | ----------------------------- | ------------------------- | ---------- | ------------------------------------------------------------ |
-| Chinese mainland CDN <br>The time periods for arrears processing are adjusted | The time periods for arrears processing in CDN are adjusted. | November 9, 2017 | [Billing Overview](https://intl.cloud.tencent.com/document/product/228/2949) |
+| Chinese mainland CDN <br>The time periods for overdue payment processing are adjusted | The time periods for overdue payment processing in CDN are adjusted. | November 9, 2017 | [Billing Overview](https://intl.cloud.tencent.com/document/product/228/2949) |
 
 ## September 2017
 
