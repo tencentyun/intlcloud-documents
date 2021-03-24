@@ -1,4 +1,4 @@
->! Tencent CMQ is currently being fully upgraded (to be completed in January 2021) and will be launched as a brand new message queue product.
+>! Tencent CMQ is currently being fully upgraded (to be completed in September 2021) and will be launched as a brand new message queue product.
 
 Currently, CMQ is free of charge. You are not billed for requests or message retention for queues or topics.
 
