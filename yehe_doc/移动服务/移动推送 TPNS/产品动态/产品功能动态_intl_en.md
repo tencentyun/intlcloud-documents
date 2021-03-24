@@ -29,10 +29,7 @@
 </tr>
 </tbody></table>
 
-
-
 ## November 2020
-
 
 <table>
 <thead>
@@ -95,7 +92,6 @@
 
 ## October 2020
 
-
 <table>
 <thead>
 <tr>
@@ -125,7 +121,6 @@
 </tr>
 </tbody></table>
 
-
 ## September 2020
 
 <table>
@@ -152,8 +147,6 @@
 </tr>
 
 </tbody></table>
-
-
 
 ## August 2020
 
@@ -188,12 +181,7 @@
 </tr>
 </tbody></table>
 
-
-
 ## July 2020
-
-
-
 
 <table>
 <thead>
@@ -220,7 +208,7 @@
 
 <tr>
 <td>The pay-as-you-go (postpaid) billing mode is added</td>
-<td>The daily pay-as-you-go billing mode is added, which is suitable for applications whose number of daily connected devices fluctuates greatly.</td>
+<td>The daily pay-as-you-go billing mode is added, which is suitable for applications whose number of daily active users (DAUs) fluctuates greatly.</td>
 <td>July 1, 2020</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1024/36877">Pay-as-You-Go</a></td>
 </tr>
@@ -415,7 +403,7 @@
     </tr>
     <tr>
         <td>A trial mechanism is added</td>
-        <td>The TPNS service can be used free of charge for 30 days for applications with less than 1,000 daily connected devices</td>
+        <td>The TPNS service can be used free of charge for 30 days for applications with less than 1,000 daily active users (DAUs)</td>
         <td>December 25, 2019</td>
         <td>-</td>
     </tr>
