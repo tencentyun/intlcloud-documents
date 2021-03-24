@@ -7,7 +7,7 @@ The metrics on this page are described as follows:
 - Messages Pushed Yesterday: the number of messages (PV) pushed by all push tasks yesterday (the pushed amount of inter-day tasks is included in that of the actual sent day)
 - Push Tasks Yesterday: the total number of push tasks yesterday
 - Number of Devices Reached Yesterday: the number of unique devices that the push tasks reached to yesterday (the pushed amount of inter-day tasks is included in that of the actual sent day)
-- Connected Devices Yesterday: the number of unique online devices connected to the SDK yesterday (the SDK will connect to the TPNS server when the application is running in the frontend or backend)
+- Daily Active Users (DAUs) of Yesterday: the number of unique online devices connected to the SDK yesterday (the SDK will connect to the TPNS server when the application is running in the frontend or backend)
 
 2. **Application Status Monitoring**: monitors the application’s available devices, notification bar enablement, and uninstallation.
 ![](https://main.qcloudimg.com/raw/1b138213a593d9892c571b6e2e7deba1.png)
@@ -29,7 +29,7 @@ The metrics on this page are described as follows:
 - Messages Clicked: the number of times the notification bar message was clicked. This feature requires Android SDK 1.2.0.1 or later. This deduplicated number is obtained from TPNS acquisition and vendor's data receipt.
 - Messages Cleared: the number of times the notification bar message was dismissed
 - Message Click Rate: Messages clicked/Messages reached (PV)
-- Daily Connected Devices: the number of unique online devices connected to the SDK daily (the SDK will connect to the TPNS server when the application is running in the frontend or backend).
+- Daily Active Users (DAUs): the number of unique online devices connected to the SDK daily (the SDK will connect to the TPNS server when the application is running in the frontend or backend).
 - Opt-In Devices: the number of devices on which the notification bar is enabled
 - Uninstalled/Unavailable devices: the total number of devices offline over 90 consecutive days or devices returned unavailable by vendor/TPNS SDK.
 - New Devices: the number of unique devices that got newly registered Token on the day
@@ -41,7 +41,7 @@ The metrics on this page are described as follows:
 - Messages Reached (PV): the number of devices (PV) that received the push messages
 - Messages Clicked: the number of times the notification bar message was clicked
 - Message Click Rate: Messages clicked/Messages reached (PV)
-- Daily Connected Devices: the number of unique online devices connected to the SDK daily (the SDK will connect to the TPNS server when the application is running in the frontend or backend).
+- Daily Active Users (DAUs): the number of unique online devices connected to the SDK daily (the SDK will connect to the TPNS server when the application is running in the frontend or backend).
 - Opt-In Devices: the number of devices on which the notification bar is enabled (the notification bar status will be checked every 10 seconds. The change will be reported when the application is online in the frontend).
 - Uninstalled/Unavailable devices: the total number of devices offline over 90 consecutive days or devices returned unavailable by vendor/TPNS SDK.
 - New Devices: the number of unique devices that got newly registered Token on the day
