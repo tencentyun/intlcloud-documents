@@ -1,26 +1,27 @@
 ## Configuration Overview
 
-When an user requests your service resource, you can add a custom header in the **response message** to implement cross-origin resource sharing.
-Response header is configured at the domain name level, therefore, once the configuration takes effect, it will be applied to the responses of all resources under the domain name. Response header configuration only makes changes to the client (browser) response but not to the CDN node cache.
+When an end user requests for a business resource, you can add a custom header in the **response message** to implement cross-origin resource sharing.
+Response header in configured on domain name level, therefore, once the configuration takes effect, it will be synced to the response messages of all resource under the domain name. Response header configuration only makes changes to the client (browser) response but not to the CDN node cache.
 
 ## Configuration Guide
 
 ### Viewing the configuration
 
-Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar, and click **Manage** on the right of a domain name to enter its configuration page. Open the **Advanced Configuration** tab to find the **Response Header Settings** section. It is disabled by default. You can click **Add Rule** to add response header rules.
+Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar, and click **Manage** on the right of a domain name to enter its configuration page. Open the **Advanced Configuration** tab to see the **Response Header Configuration** section. It is disabled by default. You can click **Add Rule** to add response header rules.
 ![img](https://main.qcloudimg.com/raw/979a6f3254776cdadd5ca4dc71d631a6.png)
 
 ### Operation
 
 | Operation | Description                                                         |
-| -------- | ------------------------------------------------------------ |
-| Change     | Changes the specified response header parameter value.<br/>If there are duplicate header parameters, they will all be changed and merged into one header.<br/>If the target header does not exist, a new one will be created.|
-| Add     | Adds the specified response header parameter.<br/>Parameters can be duplicate. <br/>You can add parameters with the same name and different values (x-cdn:value1,x-cdn:value2) and even parameters with the same name and value (x-cdn:value1,x-cdn:value1). <br/>**Note: Adding headers may affect the request. It’s recommended to change the header instead of adding one.** |
-| Delete     | Deletes the specified response header parameter.                                       |
+| :------- | :----------------------------------------------------------- |
+| Set     | Changes the value of a specified response header parameter.<br/>If the target header does not exist, it will be added after the change operation.<br/>If the header parameter already exists, all the duplicates will be changed and merged into one header. For example, after the rule "Set - `x-cdn: value1`" is configured, if a request contains multiple `x-cdn` headers, the headers will be changed and merged into one header `x-cdn: value1`. |
+| Add     | Adds a specified response header parameter.<br/>Adding headers with the same parameter but different values is allowed by default. For example, you can add `x-cdn:value1` and `x-cdn:value2` at the same time.<br/>If you add a header that already exists (the header parameter and value are exactly the same as these of the existing one), it can still be added. For example, the header `x-cdn:value1` already exists, you can still add the header `x-cdn:value1`.<br/><br/>**Note: A request may be affected by its duplicate headers, therefore, we recommend setting headers in such cases.** |
+| Delete     | Deletes a specified response header parameter.                                       |
 
 > !
-> - Some headers cannot be added, deleted, or changed by yourself. For the detailed list, please see [Note](#notice).
-> - You can configure up to 10 response header rules and adjust their priorities. Rules at the bottom of the list have higher priorities.
+> - Some headers cannot be set, added, or deleted in a self-service manner. For the detailed list, please see [Notes](#noice).
+> - Up to 10 response header rules can be configured.
+> - Rule priority can be adjusted. Rules lower on the list have higher priority. If a header parameter is configured with multiple rules, the bottom rule will take effect as rules are executed from bottom to top.
 
 ### Header parameter
 
@@ -28,12 +29,12 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Dom
 <thead>
 <tr>
 <th style="width:230px">Header Parameter</th>
-<th>Description</th>
+<th>Note</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>Access-Control-Allow-Origin</td>
-<td>It specifies which domains can access the resource. Up to 10 domains can be configured. For the request whose host is added to this list, the corresponding value will be filled in to the response header. You can also set it as `*` to allow all domains to access resources. For more information, please see <a href="#acao">Access-Control-Allow-Origin Match Mode Introduction</a>.<br>You can enter wildcard `*`, domain names, and IPs. `http://` or `https://` must be contained (E.g., `http://test.com,http://1.1.1.1`). Please separate multiple ones with `,`, and up to 66 entries are supported. </td>
+<td>Cross-origin permission-related header, which specifies the domain allowed to access resources. Up to 10 domains can be configured. If a source request host is configured as a header parameter value, it will be filled in to the response header. You can also set it as `*` to allow all domains to access resources. For more information, please see <a href="#acao">Access-Control-Allow-Origin Match Mode Description</a>.<br>The wildcard `*`, domain names, and IPs are supported. `http://` or `https://` must be contained. Please separate multiple ones with `,`, and up to 66 entries are supported. E.g., `http://test.com,http://1.1.1.1`. </td>
 </tr>
 <tr>
 <td>Access-Control-Allow-Methods</td>
@@ -41,11 +42,11 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Dom
 </tr>
 <tr>
 <td>Access-Control-Max-Age</td>
-<td>Specifies the validity period (in seconds) of a preflight request.<br>For a non-simple cross-origin request, it needs to add an HTTP query request, (namely the preflight request) before the communication to check whether the cross-origin request is trusted. The following requests are considered as non-simple cross-origin requests: <br>1) Requests whose method is not GET, HEAD, or POST; <br>2) POST requests whose request data type is not `application / x-www-form-urlencoded`, `multipart / form-data` or `text / plain` (for example `application/xml` and `text/xml`)<br>For example, if the custom request header is `Access-Control-Max-Age:1728000`, it indicates that there will not be another preflight request sent for the cross-origin access to the resource within 1,728,000 seconds (20 days).</td>
+<td>Specifies the validity period (in seconds) of a preflight request.<br>For a non-simple cross-origin request, an HTTP query request, namely the preflight request, is needed before the official communication to check whether the cross-origin request is secure to be accepted. A cross-origin request is non-simple if it is:<br>Not a GET, HEAD, or POST request, or it is a POST request but its request data type is `application/xml`, `text/xml`, or any other data type except `application/x-www-form-urlencoded`, `multipart/form-data`, and `text/plain`.<br>For example, if a custom request header is `Access-Control-Max-Age:1728000`, it indicates that there will not be another preflight request sent for the cross-origin access to the resource within 1,728,000 seconds (20 days).</td>
 </tr>
 <tr>
 <td>Access-Control-Expose-Headers</td>
-<td>Specifies which headers can be exposed to clients as a part of response.<br>By default, these 6 headers can be exposed to clients: `Cache-Control`, `Content-Language`, `Content-Type`, `Expires`, `Last-Modified`, and `Pragma`.<br>If you want to make other headers accessible to clients, you can separate multiple headers with `,`, e.g., `Access-Control-Expose-Headers: Content-Length,X-My-Header`. In this way, clients can access the two headers `Content-Length` and `X-My-Header`.</td>
+<td>Specifies which headers can be exposed to clients as a part of responses.<br>By default, these 6 headers can be exposed to clients: `Cache-Control`, `Content-Language`, `Content-Type`, `Expires`, `Last-Modified`, and `Pragma`.<br>If you want to make other headers accessible to clients, you can separate multiple headers with `,`, e.g., `Access-Control-Expose-Headers: Content-Length,X-My-Header`. In this way, clients can access the two headers `Content-Length` and `X-My-Header`.</td>
 </tr>
 <tr>
 <td>Content-Disposition</td>
@@ -53,30 +54,30 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Dom
 </tr>
 <tr>
 <td>Content-Language</td>
-<td>Specifies the language code used on the page. The common configuration is as follows:<br>`Content-Language: en-US`</td>
+<td>Specifies the language code used on the page. The common configuration is as follows:<br>`Content-Language: zh-CN`<br>`Content-Language: en-US`</td>
 </tr>
 <tr>
 <td>Custom</td>
-<td>Supports custom header parameters in key-value format.<br>Parameter key: 1 to 100 characters, supporting uppercase and lowercase letters, digits, and hyphens (-).<br>Parameter value: 1 to 1000 characters</td>
+<td>Supports custom header and key-value pair settings.<br>Requirements on custom header parameters: consisting of 1 to 100 characters of uppercase and lowercase letters, digits, and hyphens (-).<br>Requirements on custom header values: consisting of 1 to 1000 characters; Chinese characters are not supported.</td>
 </tr>
 </tbody></table>
 
-[](id:acao)
-### Access-Control-Allow-Origin match mode introduction
+<span id="acao"></span>
+### Access-Control-Allow-Origin match mode description
 
 | **Match Mode**   | **Origin Value**                                                     | **Description**                                                     |
 | :------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| All         | *                                                            | If it is set to `*`, the header `Access-Control-Allow-Origin:*` is added to all responses. |
-| Full match       | `http://cloud.tencent.com` `https://cloud.tencent.com` `http://www.b.com` |For requests from `https://cloud.tencent.com`, the response header is `Access-Control-Allow-Origin: https://cloud.tencent.com`. If the request is from `https://www.qq.com`, which is not specified in the rule, the response will not change. |
-| Second-level wildcard domain name match | `http://*.tencent.com`                                       | For requests from `https://cloud.tencent.com`, the header `Access-Control-Allow-Origin: https://cloud.tencent.com` will be added to the response. If the request is from `https://cloud.qq.com`, which is not specified in the rule, so the response will not change. |
-| Port match       | `https://cloud.tencent.com:8080`                             | For requests from `https://cloud.tencent.com:8080`, the header `Access-Control-Allow-Origin:https://cloud.tencent.com:8080` will be added to the response. The source `https://cloud.tencent.com` does not hit the list, so the response will not change. |
+| Full match         | *                                                            | If it is set to `*`, the header `Access-Control-Allow-Origin:*` will be added to the response. |
+| Fixed match       | `http://cloud.tencent.com` `https://cloud.tencent.com` `http://www.b.com` | The source `https://cloud.tencent.com` hits the list, so the header `Access-Control-Allow-Origin: https://cloud.tencent.com` will be added to the response. The source `https://www.qq.com` does not hit the list, so the response will not change. |
+| Second-level wildcard domain name match | `http://*.tencent.com`                                       | The source `https://cloud.tencent.com` hits the list, so the header `Access-Control-Allow-Origin: https://cloud.tencent.com` will be added to the response. The source `https://cloud.qq.com` does not hit the list, so the response will not change. |
+| Port match       | `https://cloud.tencent.com:8080`                             | The source `https://cloud.tencent.com:8080` hits the list, so the header `Access-Control-Allow-Origin:https://cloud.tencent.com:8080` will be added to the response. The source `https://cloud.tencent.com` does not hit the list, so the response will not change. |
 
-> ! In Port Match mode, you must specify the port.
+> ! If there are special ports, you need to enter the relevant information in the list. Arbitrary port match is not supported, and you must specify the ports.
 
-[](id:notice)
-### Note
+<span id="noice"></span>
+### Notes
 
-The following headers currently cannot be added, deleted, or changed.
+The following headers currently cannot be set, added, or deleted by users directly:
 
 ```
 Date
