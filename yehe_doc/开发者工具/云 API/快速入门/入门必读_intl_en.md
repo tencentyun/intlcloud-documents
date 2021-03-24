@@ -4,7 +4,7 @@ TencentCloud API provides a variety of tools including API Explorer, TCCLI, SDK,
 
 
 ## Tools
-This document uses the [`DescribeInstances`](https://intl.cloud.tencent.com/document/product/213/33258) API as an example to help you get started with API Explorer, TCCLI and SDK. This is especially suitable for first-time Tencent Cloud users. It allows you to view all the available Tencent Cloud APIs, and the API calls associated with console operations.
+This document uses the [DescribeInstances](https://intl.cloud.tencent.com/document/product/213/33258) API as an example to help you get started with API Explorer, TCCLI and SDK. This is especially suitable for first-time Tencent Cloud users. It allows you to view all the available Tencent Cloud APIs, and the API calls associated with console operations.
 
 <table>
 <tr>
