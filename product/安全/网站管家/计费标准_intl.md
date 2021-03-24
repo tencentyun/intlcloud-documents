@@ -42,6 +42,6 @@ Tiered Price Table:
 For example, if the website peak QPS today is 15, today's bill will be 15 x 0.2=3 USD.
 
 Note:
-WAF service will be suspended one day after your account falls into arrears, and WAF resources will be repossessed after 7 days. You can pay off the outstanding fees before repossession to resume service.
+WAF service will be suspended one day after your account becomes overdue, and WAF resources will be repossessed after 7 days. You can pay off the outstanding fees before repossession to resume service.
 
-This pricing document  is for reference only. See your bill for the actual price.
+This pricing document is for reference only. See your bill for the actual price.
