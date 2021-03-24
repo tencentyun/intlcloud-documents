@@ -94,7 +94,7 @@ Voice messaging and speech-to-text services are billed by voice message DAU.
 
 
 ## Service Suspension/Termination Policy
-Your GME service will be suspended 24 hours after your account falls into arrears. Your GME resources will be terminated and repossessed 168 hours (7 days) after service suspension. Please ensure that your account balance stays positive to avoid service interruptions.
+Your GME service will be suspended 24 hours after your account becomes overdue. Your GME resources will be terminated and repossessed 168 hours (7 days) after service suspension. Please ensure that your account balance stays positive to avoid service interruptions.
 
-## Arrears Alerts
-Arrears alerts will be sent via email, SMS, and the Message Center to the Tencent Cloud account creator and all collaborators on the day your account falls into arrears.
+## Overdue Payment Alerts
+Overdue payment alerts will be sent via email, SMS, and the Message Center to the Tencent Cloud account creator and all collaborators on the day your account becomes overdue.
