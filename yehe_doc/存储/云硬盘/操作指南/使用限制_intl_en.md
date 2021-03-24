@@ -25,8 +25,8 @@
 	<td>A cloud disk can only be mounted to a CVM in the same availability zone.</td>
 	</tr>
 	<tr>
-		<td>Repossession of cloud disks in arrears</td>
-		<td>When a monthly-subscribed cloud disk expires and you do not renew it within 7 days after the expiry, it will be forcibly unmounted from the CVM (if any), and moved to the recycle bin. For details about the repossession mechanism, see <a href="https://intl.cloud.tencent.com/document/product/362/31625">Arrears</a>.<br>Currently, when you <a href="https://intl.cloud.tencent.com/document/product/362/32401">mount</a> a monthly-subscribed cloud disk to monthly-subscribed CVM, the following renewal method are available:
+		<td>Repossession of overdue cloud disks</td>
+		<td>When a monthly-subscribed cloud disk expires and you do not renew it within 7 days after the expiry, it will be forcibly unmounted from the CVM (if any), and moved to the recycle bin. For details about the repossession mechanism, see <a href="https://intl.cloud.tencent.com/document/product/362/31625">Overdue Payment</a>.<br>Currently, when you <a href="https://intl.cloud.tencent.com/document/product/362/32401">mount</a> a monthly-subscribed cloud disk to monthly-subscribed CVM, the following renewal method are available:
 			<ul style="margin-bottom:0;">
 			<li>Renew the cloud disk when the associated CVM expires</li>
 			<li>Renew the cloud disk automatically on a monthly basis after it expires.</li>
