@@ -91,7 +91,7 @@ When the domain name connection is completed, ECDN will assign a corresponding C
 
 #### Billing
 - [How is the traffic exceeding the ECDN free tier limit billed?](https://intl.cloud.tencent.com/document/product/570/35823)
-- [What will happen to my ECDN service if my account falls into arrears?](https://intl.cloud.tencent.com/document/product/570/35823)
+- [What will happen to my ECDN service if my account becomes overdue?](https://intl.cloud.tencent.com/document/product/570/35823)
 - [Will fees be incurred after the domain name service is disabled (the domain name is deactivated)?](https://intl.cloud.tencent.com/document/product/570/35823)
 
 #### Access service
