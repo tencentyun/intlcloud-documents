@@ -13,7 +13,7 @@ You can access the following CVM monitoring and alarms features in the Cloud Mon
 | [Cloud Virtual Machine](https://console.cloud.tencent.com/monitor/product/cvm) | Displays the specific CVM monitoring information      | Allows you to view the CVM monitoring data |
 | [Dashboard](https://console.cloud.tencent.com/monitor/dashboard2/default?channel=8) | Displays the custom monitoring dashboard | Graphically displays monitoring data to facilitate the dynamic metric analysis |
 | [Custom Monitoring](https://console.cloud.tencent.com/monitor/indicator-manage) | Displays the custom monitoring metrics | Allows you to view the predefined custom monitoring metrics and reported data            |
-| [Traffic Monitoring(https://console.cloud.tencent.com/monitor/flow)  | Displays the traffic monitoring           | Allows you to view your overall bandwidth usage                              |
+| [Traffic Monitoring](https://console.cloud.tencent.com/monitor/flow)  | Displays the traffic monitoring           | Allows you to view your overall bandwidth usage                              |
 
 For more information about Cloud Monitor, please see [Product Overview](https://intl.cloud.tencent.com/document/product/248/32799)
 
@@ -40,5 +40,5 @@ To benchmark instance performance, you should at least monitor the following ite
 - **Monitoring interval:** Cloud Monitor provides monitoring data at different statistical granularities, including 1 minute, 5 minutes, 1 hour, and 1 day. CVM supports the monitoring granularity of 1 minute, meaning data is collected every 1 minute. The default interval is 5 minutes.
 - **Data storage:** monitoring data at a 1-minute, 5-minute, and 1-hour granularity will be retained for 31 days; monitoring data at a 1-day granularity will be retained for half a year.
 - **Alarm display:** data is displayed in easy-to-read charts. The Cloud Monitor console displays the monitoring data of all products to give you a comprehensive overview of their running status.
-- **Alarm settings:** you can set limits for monitoring metrics. When the condition is met, alarm notification will be sent to the recipient group promptly. For more information, please see [Configuring Alarm Policies](https://intl.cloud.tencent.com/document/product/248/6215).
+- **Alarm settings:** you can set limits for monitoring metrics. When the condition is met, alarm notification will be sent to the recipient group promptly. For more information, please see [Configuring Alarm Policies](https://intl.cloud.tencent.com/document/product/248/38908).
 -  **Dashboard settings:** you can create a monitoring metric dashboard to dynamically analyze abnormal metrics and view the metric change in real time for prompt resource expansion. For more information, see [Creating a Dashboard](https://intl.cloud.tencent.com/document/product/248/38468).
