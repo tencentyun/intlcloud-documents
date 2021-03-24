@@ -1,5 +1,5 @@
 ## Feature
-This API is used to provide real-time text watermarking in Tencent Cloud CI. Currently, images smaller than 20 MB in size and smaller than 9,999 pixels in length and width are supported.
+This API is used to provide real-time text watermarking in Tencent Cloud CI. Currently, a watermark image must be specified as an image stored in CI. The size of the input image to be processed cannot exceed 20 MB, its width and height cannot exceed 30,000 pixels respectively, and its total pixels cannot exceed 250 million. The width and height of the output image cannot exceed 9,999 pixels respectively. For animated images, the input image's Width x Height x Number of frames cannot exceed 250 million pixels.
 
 ## API Form
 
@@ -16,7 +16,7 @@ download_url?watermark/2/text/<encodedText>
                         /degree/<degree>
 ```
 
-> Please ignore the preceding spaces and line breaks.
+>? Please ignore the preceding spaces and line breaks.
 
 
 ## Parameter Description
@@ -30,7 +30,7 @@ download_url?watermark/2/text/<encodedText>
 | /font/ | Watermark font, which is [encoded with Base64 that is safe to the URL](https://intl.cloud.tencent.com/document/product/1045/33430#.E4.BB.80.E4.B9.88.E6.98.AF-url-.E5.AE.89.E5.85.A8.E7.9A.84-base64-.E7.BC.96.E7.A0.81.EF.BC.9F). The default value is tahoma.ttf. |
 | /fontsize/ | Watermark text fontsize in pounds. The default value is 13. |
 | /fill/ | Watermark font color, which must be set to the hexadecimal RGB format (such as #FF0000). The default value is gray. For more information, see [RGB Code Table](https://www.rapidtables.com/web/color/RGB_Color.html). The value must be [encoded with Base64 that is safe to the URL](https://intl.cloud.tencent.com/document/product/1045/33430#.E4.BB.80.E4.B9.88.E6.98.AF-url-.E5.AE.89.E5.85.A8.E7.9A.84-base64-.E7.BC.96.E7.A0.81.EF.BC.9F). The default value is #3D3D3D. |
-| /dissolve/ | Text transparency. Value range: 1 - 100. The default value is 90, which indicates total non-transparency. |
+| /dissolve/ | Text transparency. Value range: 1-100. The default value is 90 (90% non-transparent). |
 | /gravity/ | Text watermark position, which is a 3x3 grid position ([See the 3x3 grid position diagram](#1)). The default value is SouthEast. |
 | /dx/ | Horizontal margin in pixels. The default value is 0. |
 | /dy/ | Vertical margin in pixels. The default value is 0. |
@@ -43,10 +43,10 @@ download_url?watermark/2/text/<encodedText>
 A 3x3 grid position diagram provides position reference for multiple image operations. Red dots show the origin points of each region. After you use the gravity parameter to select a region, displacement must be based on the corresponding origin point.
 ![](https://main.qcloudimg.com/raw/53a143451229b4fbdd74935afe3832d5.png)
 
->
-- When the gravity parameter is set to center, the dx and dy parameters are invalid.
-- When the gravity parameter is set to north or south, the dx parameter is invalid, and the watermark is centered horizontally.
-- When the gravity parameter is set to west or east, the dy parameter is invalid, and the watermark is centered vertically.
+> !
+> - When the gravity parameter is set to center, the dx and dy parameters are invalid.
+> - When the gravity parameter is set to north or south, the dx parameter is invalid, and the watermark is centered horizontally.
+> - When the gravity parameter is set to west or east, the dy parameter is invalid, and the watermark is centered vertically.
 
 ## Example
 This example shows you how to **add a text watermark**.
