@@ -1,5 +1,5 @@
 ### How can I access CFS?
-CFS can be accessed through Tencent Cloud services, such as CVM clients (Linux, Unix, and Windows), TKE, SCF, BatchCompute, and BM instances. It can also be accessed through your own IDC or external computing nodes once you activate Tencent Cloud VPN, Direct Connect or CCN ([Learn more](https://cloud.tencent.com/document/product/215/36699)).
+CFS can be accessed through Tencent Cloud services, such as CVM clients (Linux, Unix, and Windows), TKE, SCF, BatchCompute, and BM instances. It can also be accessed through your own IDC or external computing nodes once you activate Tencent Cloud VPN, Direct Connect or CCN ([Learn more](https://intl.cloud.tencent.com/document/product/215/35504)).
 
 ### How is CFS billed?
 CFS is billed hourly based on the peak storage usage for the hour.
