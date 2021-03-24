@@ -59,7 +59,7 @@
 
 ## 架构说明
 
-云监控为用户提供了基础指标监控和数据存储，是所有云资源储存数据的空间。云监控通过各种途径采集并获取各云产品的监控指标数据，经过系统处理后放在存储库中。您可以通过 [云监控控制台](https://console.cloud.tencent.com/monitor/overview) 查看图表化的监控数据或 API 拉取指标数据。您还可以通过 [创建告警策略](https://intl.cloud.tencent.com/document/product/248/6215) 来定义告警处理系统如何处理这些监控数据，在并监控数据满足告警条件时发送告警通知。
+云监控为用户提供了基础指标监控和数据存储，是所有云资源储存数据的空间。云监控通过各种途径采集并获取各云产品的监控指标数据，经过系统处理后放在存储库中。您可以通过 [云监控控制台](https://console.cloud.tencent.com/monitor/overview) 查看图表化的监控数据或 API 拉取指标数据。您还可以通过 [创建告警策略](https://intl.cloud.tencent.com/zh/document/product/248/38908) 来定义告警处理系统如何处理这些监控数据，在并监控数据满足告警条件时发送告警通知。
 
 **架构图如下：**
 ![](https://main.qcloudimg.com/raw/d6dadcb6df11651053ce31ff9f037895.jpg)
@@ -101,9 +101,3 @@
 - [对象存储 COS](https://intl.cloud.tencent.com/document/product/436)
 - [文件存储](https://intl.cloud.tencent.com/document/product/582)
 - [Web 应用防火墙](https://intl.cloud.tencent.com/document/product/627)
-
-
-
-
-
-
