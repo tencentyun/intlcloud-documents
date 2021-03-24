@@ -95,7 +95,7 @@ Namespace=QCE/REDIS
 | 参数名称                       | 维度名称   | 维度解释         | 格式                                                         |
 | ------------------------------ | ---------- | ---------------- | ------------------------------------------------------------ |
 | Instances.N.Dimensions.0.Name  | instanceid | 实例 ID 维度名称 | 输入 String 类型维度名称：instanceid                         |
-| Instances.N.Dimensions.0.Value | instanceid | 实例具体 ID      | 输入实例的具体 Redis 实例 ID，例如：tdsql-123456 也可以是实例串号，例如：crs-ifmymj41，可通过 [查询CRS实例列表接口](https://intl.cloud.tencent.com/document/api/239/1384) 查询 |
+| Instances.N.Dimensions.0.Value | instanceid | 实例具体 ID      | 输入实例的具体 Redis 实例 ID，例如：tdsql-123456 也可以是实例串号，例如：crs-ifmymj41，可通过查询CRS实例列表接口查询 |
 | Instances.N.Dimensions.1.Name  | clusterid  | 分片 ID 维度名称 | 输入 String 类型维度名称：clusterid 。<br><li>如拉取总信息，不传此值<br><li>如拉取分片信息，入参必现是 clusterid |
 | Instances.N.Dimensions.1.Value | clusterid  | 分片具体 ID      | 输入具体分片 ID，例如：tdsql-123456 （可通过命令 `cluster nodes` 等获取分片 ID） |
 
