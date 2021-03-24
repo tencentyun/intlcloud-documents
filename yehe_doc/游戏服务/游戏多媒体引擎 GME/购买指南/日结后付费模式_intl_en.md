@@ -85,10 +85,10 @@ The voice messaging and speech-to-text service is billed by voice message DAU.
 >A user who receives or sends a voice message in the application is counted as a voice message DAU, and the total number of voice message DAUs is calculated based on the deduplicated `openID` (`openID` is a unique identifier of a user in an application, and one user corresponds to one `openID`).
 
 ## Service Suspension/Release Policy
-Your GME service will be suspended 24 hours after your account falls into arrears. Your GME resources will be terminated and repossessed 168 hours (7 days) after the service is suspended. For service continuity, please make sure that your account balance is always sufficient. 
+Your GME service will be suspended 24 hours after your account becomes overdue. Your GME resources will be terminated and repossessed 168 hours (7 days) after the service is suspended. For service continuity, please make sure that your account balance is always sufficient. 
 
 
-## Alert for Arrears
-Alert notifications for arrears will be sent through email, SMS, and Message Center to the Tencent Cloud account creator and all collaborators on the day of and after expiration of the daily pay-as-you-go GME resources.
+## Overdue Payment Alerts
+Overdue payment alerts will be sent through email, SMS, and Message Center to the Tencent Cloud account creator and all collaborators on the day of and after expiration of the daily pay-as-you-go GME resources.
 
 
