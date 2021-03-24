@@ -1,13 +1,13 @@
-## Arrears Status
-ECDN is billed on a pay-as-you-go basis. The system will generate a bill and deduct the fees based on your actual usage in the last billing cycle. If your account balance is insufficient, your account will become negative and fall into arrears.
+## Overdue Status
+ECDN is billed on a pay-as-you-go basis. The system will generate a bill and deduct the fees based on your actual usage in the last billing cycle. If your account balance is insufficient, your account will become overdue.
 **Note:**
-If your account falls into arrears when you purchase or use another Tencent Cloud service, your use of ECDN will be affected.
+If your account becomes overdue when you purchase or use another Tencent Cloud service, your use of ECDN will be affected.
 
-## Arrears Alarming
-If your account balance becomes negative, your account will fall into arrears, and the system will push an **arrears notification**, which will be triggered only once when your account balance turns negative.
+## Overdue Payment Alerts
+If your account balance becomes negative, the system will send you an **overdue payment alert**, which will be triggered only once when your account balance turns negative.
 
 ## Grace Period
-To avoid affecting your business, the system grants your account in arrears a grace period for arrears handling, during which it will push arrears notifications to remind you to top up promptly.
+To avoid affecting your business, the system grants you a grace period to handle the overdue payment, during which it will send you renewal reminder.
 
 - During the grace period, the current ECDN service of your account will **not be affected** and can still be used.
 - During the grace period, you can change the current ECDN acceleration service configuration of your account.
@@ -21,6 +21,6 @@ To avoid affecting your business, the system grants your account in arrears a gr
  - All your ECDN services will be automatically disabled. After that, acceleration domain names will be directly resolved to the origin server and no longer enjoy acceleration services.
 
 ## Account Top-up
-- When your account is in arrears, you can enable ECDN again in the console after topping up.   
-- For acceleration domain names that are forcibly deactivated due to arrears, you need to activate them again in the console before you can use ECDN again.
+- When your account is overdue, you can enable ECDN again in the console after topping up.   
+- For acceleration domain names that are forcibly deactivated due to overdue payment, you need to activate them again in the console before you can use ECDN again.
 
