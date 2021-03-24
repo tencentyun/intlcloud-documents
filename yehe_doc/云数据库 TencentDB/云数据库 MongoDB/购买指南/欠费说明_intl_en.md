@@ -2,7 +2,7 @@
 ### Balance reminder
 We will estimate the number of days it takes for your account balance to become negative based on the past 24 hours usage and current balance under the pay-as-you-go mode. If it's less than 5 days, we will send you a reminder message. The reminder message will be sent to the Tencent Cloud account creator and all the collaborators via email and SMS.
 
-### Overdue reminder
+### Overdue payment reminder
 Fees for pay-as-you-go resources are charged by the hour. When your account balance becomes negative, we will notify the Tencent Cloud account creator and all the collaborators via email and SMS.
 
 ### Overdue payment processing
