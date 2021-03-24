@@ -1,7 +1,6 @@
 ## Feature Overview
 
-This API is used to obtain the average hue information of an image in Tencent Cloud CI. Currently, images smaller than 20 MB in size and smaller than 9,999 pixels in length and width are supported.
-
+This API is used to obtain the average hue information of an image in Tencent Cloud CI. The size of the input image to be processed cannot exceed 20 MB, its width and height cannot exceed 30,000 pixels respectively, and its total pixels cannot exceed 250 million. The width and height of the output image cannot exceed 9,999 pixels respectively. For animated images, the input image's Width x Height x Number of frames cannot exceed 250 million pixels.
 
 ## API Form
 ```
