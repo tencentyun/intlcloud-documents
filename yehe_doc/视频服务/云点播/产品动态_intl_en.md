@@ -124,7 +124,7 @@
 <td>Released the dedicated Video Production Edition</td>
 <td >The video clipping and production features were launched for you to clip, splice, transition, and export audio/video files.</td>
  <td>March 02, 2020</td> 
-<td><a href="https://cloud.tencent.com/document/product/266/42923">Video Production</a></td>
+<td>-</td>
 </tr>
 </tbody></table>
 
