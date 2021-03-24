@@ -119,7 +119,7 @@ TPNS 目前提供了两大类标签功能，包括用户自定义标签和 TPNS 
 API 具体参见文档：[标签绑定](https://intl.cloud.tencent.com/document/product/1024/33766)
 
 **方式二：通过终端 SDK 进行标签设置**
-iOS SDK 进行标签的设置，详情请参见文档 [自定义标签设置](https://intl.cloud.tencent.com/document/product/1024/30727)。
+iOS SDK 进行标签的设置，详情请参见文档 [自定义标签设置](https://intl.cloud.tencent.com/zh/document/product/1024/30727)。
 Android SDK 进行标签的设置，详情请参见文档 [自定义标签设置](https://intl.cloud.tencent.com/document/product/1024/30715)。
 
 >?
