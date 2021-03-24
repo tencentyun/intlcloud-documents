@@ -98,7 +98,7 @@ For billing details, please see the following documents:
 <td><a href="https://intl.cloud.tencent.com/document/product/583/12281" target="_blank">View document</a></td>
 </tr>
 <tr>
-<td>Notes on Arrears</td>
+<td>Notes on Overdue Payment</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/583/12283" target="_blank">View document</a></td>
 </tr>
 <tr>
