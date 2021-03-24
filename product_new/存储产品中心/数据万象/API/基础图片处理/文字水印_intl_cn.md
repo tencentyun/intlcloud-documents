@@ -1,5 +1,5 @@
 ## 功能概述
-腾讯云数据万象通过 **watermark** 接口提供实时文字水印处理功能。目前支持大小在20M以内、长宽小于9999像素的图片处理。
+腾讯云数据万象通过 **watermark** 接口提供实时文字水印处理功能。处理图片原图大小不超过20MB、宽高不超过30000像素且总像素不超过2.5亿像素，处理结果图宽高设置不超过9999像素；针对动图，原图宽 x 高 x 帧数不超过2.5亿像素。
 
 ## 接口形式
 
@@ -16,7 +16,7 @@ download_url?watermark/2/text/<encodedText>
                         /degree/<degree>
 ```
 
->请忽略上面的空格与换行符。
+>?请忽略上面的空格与换行符。
 
 
 ## 参数说明
@@ -30,7 +30,7 @@ download_url?watermark/2/text/<encodedText>
 | /font/       | 水印字体，需要经过 [URL 安全的 Base64 编码](https://intl.cloud.tencent.com/document/product/1045/33430#.E4.BB.80.E4.B9.88.E6.98.AF-url-.E5.AE.89.E5.85.A8.E7.9A.84-base64-.E7.BC.96.E7.A0.81.EF.BC.9F)，默认值 tahoma.ttf 。|
 | /fontsize/   | 水印文字字体大小，单位为磅，缺省值13                       |
 | /fill/       | 字体颜色，缺省为灰色，需设置为十六进制 RGB 格式（如 #FF0000），详情参考 [RGB 编码表](https://www.rapidtables.com/web/color/RGB_Color.html)，需经过 [URL 安全的 Base64 编码](https://intl.cloud.tencent.com/document/product/1045/33430#.E4.BB.80.E4.B9.88.E6.98.AF-url-.E5.AE.89.E5.85.A8.E7.9A.84-base64-.E7.BC.96.E7.A0.81.EF.BC.9F)，默认值为 #3D3D3D|
-| /dissolve/   | 文字透明度，取值1 - 100 ，默认90（完全不透明）                |
+| /dissolve/   | 文字透明度，取值1 - 100 ，默认90（90%不透明）                |
 | /gravity/    | 文字水印位置，九宫格位置（[参见九宫格方位图](#1)），默认值 SouthEast |
 | /dx/         | 水平（横轴）边距，单位为像素，缺省值为0                      |
 | /dy/         | 垂直（纵轴）边距，单位为像素，默认值为0                      |
@@ -43,10 +43,10 @@ download_url?watermark/2/text/<encodedText>
 九宫格方位图可为图片的多种操作提供位置参考。红点为各区域位置的原点（通过 gravity 参数选定各区域后位移操作会以相应远点为参照）。
 ![](https://main.qcloudimg.com/raw/53a143451229b4fbdd74935afe3832d5.png)
 
->
-- 当 gravity 参数设置为 center 时，dx、dy 参数无效。
-- 当 gravity 参数设置为 north 或 south 时，dx 参数无效（水印会水平居中）。
-- 当 gravity 参数设置为 west 或 east 时，dy 参数无效（水印会垂直居中）。
+> !
+> - 当 gravity 参数设置为 center 时，dx、dy 参数无效。
+> - 当 gravity 参数设置为 north 或 south 时，dx 参数无效（水印会水平居中）。
+> - 当 gravity 参数设置为 west 或 east 时，dy 参数无效（水印会垂直居中）。
 
 ## 示例
 **添加文字水印**
