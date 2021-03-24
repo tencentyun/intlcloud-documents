@@ -414,6 +414,6 @@ Yes. If you stop using pay-as-you-go resources, please terminate them as soon as
 
 ## Documentation
 - You can purchase TencentDB for MySQL instances through the console or API. For more information, please see [Purchase Methods](https://intl.cloud.tencent.com/document/product/236/5160).
-- TencentDB for MySQL sends alert messages to you before it expires and its resources are repossessed. For more information, please see [Arrears](https://intl.cloud.tencent.com/document/product/236/5159).
+- TencentDB for MySQL sends alert messages to you before it expires and its resources are repossessed. For more information, please see [Overdue Payment](https://intl.cloud.tencent.com/document/product/236/5159).
 - You can return TencentDB for MySQL instances and request a refund. For more information, please see [Refund](https://intl.cloud.tencent.com/document/product/236/14618).
 - You can adjust TencentDB for MySQL instances to a higher or lower specification. For more information, please see [Instance Adjustment Fee](https://intl.cloud.tencent.com/document/product/236/32345).
