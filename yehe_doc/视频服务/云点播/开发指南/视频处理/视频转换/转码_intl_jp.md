@@ -7,12 +7,12 @@
 
 ビデオトランスコーディングした後、[結果の取得](#jghq)をもとに、トランスコード後のビデオ再生URLを取得できます。ご自身のプレーヤーまたはサードパーティプレーヤーを使用して、トランスコード後のビデオを再生することができます。
 
->トランスコーディング機能は主に**ショート動画（UGSV）**のシナリオに適用します。**ロング動画**（動画サイト、eラーニングなど）に対しては、 [アダプティブビットレートストリーミングへのトランスコード](https://intl.cloud.tencent.com/document/product/266/33942) を使用すれば、お客様のユーザーに対しより素晴らしい体験をもたらすことができます。
+>!トランスコーディング機能は主に**ショート動画（UGSV）**のシナリオに適用します。**ロング動画**（動画サイト、eラーニングなど）に対しては、 [アダプティブビットレートストリーミングへのトランスコード](https://intl.cloud.tencent.com/document/product/266/33942) を使用すれば、お客様のユーザーに対しより素晴らしい体験をもたらすことができます。
 
-## <span id = "zm" ></span>トランスコードテンプレート
+## [](id:zm)トランスコードテンプレート
 
 トランスコードの目標仕様には、エンコード形式、解像度、ビットレートなどのパラメータがあります。VODではトランスコードテンプレートを使用してトランスコードのパラメータグループを表します。トランスコードテンプレートによって、以下のトランスコード関連パラメータを指定することができます。
-
+>?その他のオーディオビデオトランスコーディング形式については、[トランスコーディングのサポート形式](https://intl.cloud.tencent.com/document/product/266/7898)をご参照ください。
 <table>
     <tr>
         <th style="width:18%">
@@ -105,8 +105,8 @@
             プロファイル（Profile）
         </td>
         <td>
-            <li>ビデオコーデックがH.264の時は、Baseline、Main、Highのエンコードレベルをサポートします</li>
-            <li>ビデオコーデックがH.265の時は、Mainのエンコードレベルをサポートします</li>
+            <li>ビデオコーデックがH.264の時は、Baseline、Main、Highのプロファイルをサポートします</li>
+            <li>ビデオコーデックがH.265の時は、Mainのプロファイルをサポートします</li>
         </td>
     </tr>
     <tr>
@@ -162,7 +162,7 @@
     </tr>
 </table>
 
-一般的なトランスコードの仕様を対象に、VODでは、[プリセットのトランスコードテンプレート](https://intl.cloud.tencent.com/document/product/266/33932)を用意しています。その外、コンソールを介して（具体的な操作は [テンプレート設定](https://intl.cloud.tencent.com/document/product/266/14059)を参照）または [サーバーAPI](https://intl.cloud.tencent.com/document/product/266/34164) を呼び出して、トランスコーディングのカスタマイズテンプレートを作成し、管理することができます。
+一般的なトランスコードの仕様を対象に、VODでは、[プリセットトランスコードテンプレート](https://intl.cloud.tencent.com/document/product/266/33932)を用意しています。その外、コンソールを介して（具体的な操作は [テンプレート設定](https://intl.cloud.tencent.com/document/product/266/14059)を参照）または [サーバーAPI](https://intl.cloud.tencent.com/document/product/266/34164) を呼び出して、トランスコーディングのカスタマイズテンプレートを作成し、管理することができます。
 
 ## タスクの開始
 
@@ -172,11 +172,11 @@
 
 * サーバーAPI[ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) の呼び出しによるタスク開始：リクエストの中の`MediaProcessTask.TranscodeTaskSet`パラメータで [トランスコードテンプレート](#sh) のテンプレートIDを指定します。
 * コンソールでのビデオに対するタスクの開始：コンソールで[タスクフローを追加](https://intl.cloud.tencent.com/document/product/266/14058)し、タスクフローの中でトランスコーディングの目標仕様を設定します。コンソールでこのタスクフローを使用して[ビデオ処理を開始](https://intl.cloud.tencent.com/document/product/266/33892)します。
-* サーバーからのアップロード時にタスクを指定：コンソールで [タスクフローを追加](https://intl.cloud.tencent.com/document/product/266/14058)し、タスクフローの中でトランスコーディングの目標仕様を設定します。[アップロードの申請](https://intl.cloud.tencent.com/document/product/266/34120#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0)の中の`procedure`パラメータでこのタスクフローを指定します。
+* サーバーからのアップロード時にタスクを指定：コンソールで[タスクフローを追加](https://intl.cloud.tencent.com/document/product/266/14058)し、タスクフローの中でトランスコーディングの目標仕様を設定します。[アップロードの申請](https://intl.cloud.tencent.com/document/product/266/34120)の中の`procedure`パラメータでこのタスクフローを指定します。
 * クライアントからのアップロード時にタスクを指定：コンソール で[タスクフローを追加](https://intl.cloud.tencent.com/document/product/266/14058)し、タスクフローの中でトランスコーディングの目標仕様を設定します。[クライアントからのアップロード署名](https://intl.cloud.tencent.com/document/product/266/33922) の中の`procedure`でこのタスクフローを指定します。
 * コンソールからのアップロード：コンソールで [タスクフローを追加](https://intl.cloud.tencent.com/document/product/266/14058)し、タスクフローの中でトランスコーディングの目標仕様を設定します。コンソールを介してビデオをアップロードし、[アップロードと同時にビデオに対する処理操作を実行](https://intl.cloud.tencent.com/document/product/266/33890)を選択して、ビデオアップロード後にこのタスクフローの実行を指定します。
 
-## 結果の取得<span id="jghq"></span>
+## 結果の取得[](id:jghq)
 
 トランスコードタスクの開始後、非同期の[結果通知](https://intl.cloud.tencent.com/document/product/266/33931) または同期の [タスクの確認](https://intl.cloud.tencent.com/document/product/266/33931#TaskQuery) の2種類の方式でトランスコードの実行結果を取得できます。以下は、トランスコードタスクの開始後、通常のコールバック方式での結果通知の例となります（値がnullのフィールドは省略）。
 
@@ -198,7 +198,7 @@
                     "SamplingRate":48000
                 }
             ],
-            "Bitrate":1021028、
+            "Bitrate":1021028,
             "Container":"mov,mp4,m4a,3gp,3g2,mj2",
             "Duration":60,
             "Height":480,
@@ -207,7 +207,7 @@
             "VideoDuration":60,
             "VideoStreamSet":[
                 {
-                    "Bitrate":637174、
+                    "Bitrate":637174,
                     "Codec":"h264",
                     "Fps":23,
                     "Height":480,

@@ -1,3 +1,58 @@
+## 2020年12月
+<table>
+<thead>
+<tr>
+<th width="20%">動的名称</th>
+<th width="50%">動的記述</th>
+ <th width="15%">リリース時間</th> 
+<th width="15%">関連ドキュメント</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>V2.6バージョンをリリース</td>
+<td>VODコンソールの中国国外エリアでの課金およびデータ統計を正式にリリースしました。</td>
+ <td>2020-11</td> 
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/266/30421">使用量の統計</a>
+</td>
+</tr>
+</tbody></table>
+
+
+## 2020年10月
+<table>
+<thead>
+<tr>
+<th width="20%">動的名称</th>
+<th width="50%">動的記述</th>
+ <th width="15%">リリース時間</th> 
+<th width="15%">関連ドキュメント</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>V2.5バージョンをリリース</td>
+<td> VODコンソールに初心者ガイドを追加しました。</td> 
+ <td>2020-10</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/266/8757">クイックスタート</a></td>
+</tr>
+<tr>
+<td>V2.4バージョンをリリース</td>
+<td>VODの画像をプルしてビデオカバーを作成する機能をサポートしました。</td>
+ <td>2020-09</td> 
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/266/33896">ビデオ管理</a>
+</td>
+</tr>
+<tr>
+<td>V2.3バージョンをリリース</td>
+<td>VODメディア資産管理の新バージョンのサービスを開始しました。</td>
+ <td>2020-09</td> 
+<td>
+<a href="https://cloud.tencent.com/document/product/266/45507">ビデオ管理</a>
+</td>
+</tr>
+</tbody></table>
+
 ## 2020年08月
 
 
@@ -12,9 +67,10 @@
 </thead>
 <tbody><tr>
 <td>V2.2バージョンをリリース</td>
-<td>画像メディア資源を直接使用して、ビデオカバーを設定することができます</td> 
+<td>画像メディア資源を直接使用して、ビデオカバーを設定することができます。</td> 
  <td>2020-08</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/266/33896#.E5.9F.BA.E6.9C.AC.E4.BF.A1.E6.81.AF.E7.BC.96.E8.BE.91">ビデオ管理</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/33896">ビデオ管理</a>
+</td>
 </tr>
 </tbody></table>
 
@@ -31,8 +87,8 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>V2.2バージョンをリリース</td>
-<td>コンソールで画像管理機能が開始されました </td> 
+<td>V2.0バージョンをリリース</td>
+<td>コンソールで画像管理機能が開始されました。 </td> 
  <td>2020-06</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/266/37900">画像管理</a></td>
 </tr>
@@ -45,10 +101,33 @@
 <td>
 <ul style="margin:0;">
 <li ><a href="https://intl.cloud.tencent.com/document/product/266/38261">Super Playerの設定</a>
-<li ><a href="https://intl.cloud.tencent.com/document/product/266/33896#.E8.B6.85.E7.BA.A7.E6.92.AD.E6.94.BE.E5.99.A8.E9.A2.84.E8.A7.88">Super Playerプレビュー</a>
+<li ><a href="https://intl.cloud.tencent.com/document/product/266/33896">Super Playerのプレビュー</a>
 </td>
 </tr>
 </tbody></table>
+
+
+
+
+## 2020年03月
+
+<table >
+<thead>
+<tr>
+<th width="20%">動的名称</th>
+<th width="50%">動的記述</th>
+ <th width="15%">リリース時間</th>  
+<th width="15%">関連ドキュメント</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ビデオ制作専用バージョンのリリース</td>
+<td >ビデオトリミング制作のサービスを開始しました。オーディオ・ビデオのトリミング、スプライシング、トランジションおよびエクスポート機能を提供しています。</td>
+ <td>2020-03-02</td> 
+<td><a href="https://cloud.tencent.com/document/product/266/42923">ビデオ制作</a></td>
+</tr>
+</tbody></table>
+
 
 ## 2019年10月
 
@@ -66,11 +145,11 @@
 <td>V1.7バージョンをリリース</td>
 <td><ul style="margin:0;"><li >ビデオトリミング統計機能が開始されました。
 <li > TESHDテンプレート機能が開始されました。
-<li >エラーコードのマッピングのエラーが修正されました。
+<li >エラーコードのマッピングが修正されました。
 <li >登録されていないドメイン名を削除できないエラーが修正されました。 
 <li >ストレージリージョン名のエラーが修正されました。
  <td>2019-10-23</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/266/14059#.E6.9E.81.E9.80.9F.E9.AB.98.E6.B8.85.E6.A8.A1.E6.9D.BF">テンプレートの設定</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/14059">テンプレート設定</a></td>
 </tr>
 <tr>
 <td>V1.6バージョンをリリース</td>
@@ -99,13 +178,13 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>ビデオ監査の特別バージョンをリリース</td>
-<td><ul style="margin:0;"><li >ビデオ監査は、コンソールのカスタムテンプレートから使用できます。
-<li >ポルノ・暴力・テロ・政治に関連する内容審査をサポートしています。
-<li >内容審査違反のタイミングと違反の詳細は、ビデオ監査リストで確認することができます。
+<td>インテリジェントビデオ認識専用バージョンのリリース</td>
+<td><ul style="margin:0;"><li >インテリジェントビデオ認識では、コンソールのカスタムテンプレートから使用できます。
+<li >ポルノ関係コンテンツに対するインテリジェント認識をサポートしています。
+<li >インテリジェントビデオ認識ウォールによってコンテンツを検閲し、コンプライアンス違反が出現したタイミングと違反情報をインテリジェントに認識できます。
 </td>
  <td>2019-09-15</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/266/33897">ビデオ監査</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/33897">インテリジェントビデオ認識</a></td>
 </tbody></table>
 
 ## 2019年08月
@@ -164,7 +243,7 @@
 <td>V1.3バージョンをリリース</td>
 <td>VODのWebプレーヤーとUGSV Licenseが再構築されました。</td>
  <td>2019-05-15</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/266/33900">Webプレーヤー管理</a></td>
+<td><a href="https://cloud.tencent.com/document/product/266/14056">Webプレーヤー管理</a></td>
 </tr>
 
 </tbody></table>
