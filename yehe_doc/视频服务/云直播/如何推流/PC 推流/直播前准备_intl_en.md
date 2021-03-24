@@ -2,10 +2,10 @@ If you have not activated the Tencent Cloud CSS service, click here to [apply fo
 ![](https://main.qcloudimg.com/raw/49924e950bf97743789efcf1d881b1cf.png)
 
 ### Generate push URL
-If the push URL is not ready yet, log in to Tencent Cloud [CSS Console](https://console.cloud.tencent.com/live), select **Access Management** -> **LVB Code Access (Recommended)** -> **Push Generator** to generate a push URL and three playback URLs. The URL with a domain name of livepush.myqcloud.com is the push URL:
+If the push URL is not ready yet, log in to Tencent Cloud [CSS Console](https://console.cloud.tencent.com/live), select **Access Management** -> **CSS Code Access (Recommended)** -> **Push Generator** to generate a push URL and three playback URLs. The URL with a domain name of livepush.myqcloud.com is the push URL:
 ![](https://main.qcloudimg.com/raw/3ca98ea018817419a67d954bfc1d2897.png)
 
-### Select the network for LVB
+### Select the network for CSS
 #### Network options
 
 | Network Type  | Accessibility | Stability |
@@ -24,5 +24,5 @@ Download the OBS installer package on [OBS official website](https://obsproject.
 ![](//mc.qcloudimg.com/static/img/dcbb929e364b1d8e80c04e326a756a26/image.png)
 
 #### Install XSplit
-Optionally, download the XSplit installer package on XSplit official website and then install it with default settings. XSplit is a paid software. In case of a budget constraint, OBS (**Free**) is recommended. A dedicated XSplit installer package is available for game LVB. For non-game LVB, BroadCaster is recommended.
+Optionally, download the XSplit installer package on XSplit official website and then install it with default settings. XSplit is a paid software. In case of a budget constraint, OBS (**Free**) is recommended. A dedicated XSplit installer package is available for game CSS. For non-game CSS, BroadCaster is recommended.
 ![](//mc.qcloudimg.com/static/img/18c47cb7646e189acc168e6a5e8e4714/image.png)
