@@ -6,7 +6,7 @@
 - Pay-as-you-go resources are billed on the hour. When your account balance becomes negative, the system will send an alert to your Tencent Cloud account creator, global resource collaborators, and financial collaborators via email, SMS, and other methods which are configured in message subscription in the [Message Center](https://console.cloud.tencent.com/message).
 
 
-### Overdue policy
+### Overdue payment policy
 1. **From the moment your account balance becomes negative:**
  - You can continue to use your TencentDB instance for 24 hours from the moment your account balance becomes negative. We will continue to bill you for this period.
  - When your account has been overdue for 24 hours, **your TencentDB instance will automatically shut down**, and billing will stop.
