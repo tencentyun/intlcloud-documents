@@ -34,7 +34,7 @@ This document describes how to create a notification template in the Cloud Monit
 	- **User Notification**:
         - Recipient Object: you can choose a recipient group or recipient. If you need to create a group, please see [Creating Alarm Recipient Group](https://intl.cloud.tencent.com/document/product/248/6217).
         - Notification Period: define the time period for receiving alarms.
-        - Receiving Channel: three alarm channels are supported: email, SMS, and phone. You can also set different channels and notification periods in different user dimensions. For more information, please see [Alarm Type, Channel, and Quota](https://intl.cloud.tencent.com/document/product/248/17705).
+        - Receiving Channel: three alarm channels are supported: email, SMS, and phone. You can also set different channels and notification periods in different user dimensions. For more information, please see [Alarm Type, Channel, and Quota](https://intl.cloud.tencent.com/document/product/248/38908).
 		Description of phone alarm settings:
 			- Polling Times: the maximum number of dials for each polled recipient when there is no valid reach.
 			- Polling Sequence: alarm calls will be dialed according to the order of the recipients. You can adjust the order of calling by dragging up and down recipients.
