@@ -17,7 +17,7 @@ Snapshots are convenient and efficient data protection methods. We recommend tha
 Before using Tencent Cloud CBS, sign up for a [Tencent Cloud account](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
 
 #### 4.2 Creating cloud disks
-After registration and identity verification, you can select a cloud disk type, capacity, billing mode, retention period, automatic renewal, and expiration or in arrears protection based on the requirements of the availability zone where your CVM is located to create cloud disks. For more information, see [Creating Cloud Disks](https://intl.cloud.tencent.com/document/product/362/31647).
+After registration and identity verification, you can select a cloud disk type, capacity, billing mode, retention period, automatic renewal, and expiration or overdue payment protection based on the requirements of the availability zone where your CVM is located to create cloud disks. For more information, see [Creating Cloud Disks](https://intl.cloud.tencent.com/document/product/362/31647).
 
 #### 4.3 Using cloud disks
 After you create cloud disks, you need to mount separately purchased cloud disks to CVMs in the same availability zone and initialize the cloud disks. For more information, see the following documents:
