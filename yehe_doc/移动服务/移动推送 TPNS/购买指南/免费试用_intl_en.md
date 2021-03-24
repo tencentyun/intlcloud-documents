@@ -2,8 +2,8 @@ Starting from July 1, 2020, applications created in the [TPNS console](https://c
 
 >?
 > 1. The trial edition does not limit the length of use or the number of push notifications that can be sent. It offers the same features as the paid edition, including push through vendor channels, notification bar message collapsing, and rich media notifications.
-> 2. The trial edition can push to a maximum of 1,000 daily connected devices, but **does not limit the number of push notifications sent**. Once the number of your daily connected devices exceeds 1,000, the service will be suspended and become unavailable to your application.
- > 3. If the number of your daily connected devices does not drop below 1,000 within 7 days of service suspension, Tencent Cloud will terminate the service for you on the 8th day, and your application token, account and tag information, push history, and other data will be deleted and cannot be retrieved. We recommend that you purchase TPNS if your application exceeds the limit. For detailed instructions, see [Purchase Directions](https://intl.cloud.tencent.com/document/product/1024/37863).
+> 2. The trial edition can push to a maximum of 1,000 daily active users (DAUs), but **does not limit the number of push notifications sent**. Once the number of your DAUs exceeds 1,000, the service will be suspended and become unavailable to your application.
+ > 3. If the number of your DAUs does not drop below 1,000 within 7 days of service suspension, Tencent Cloud will terminate the service for you on the 8th day, and your application token, account and tag information, push history, and other data will be deleted and cannot be retrieved. We recommend that you purchase TPNS if your application exceeds the limit. For detailed instructions, see [Purchase Directions](https://intl.cloud.tencent.com/document/product/1024/37863).
  > 
 
 
