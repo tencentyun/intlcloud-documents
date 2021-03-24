@@ -13,8 +13,8 @@ The fees of excessive traffic are calculated as follows:
 - The fees of excessive traffic are mainly subject to the number of billable requests and actually used traffic. If the actually used traffic does not exceed the free tier, you do not need to pay for traffic.
 - The free tier of traffic is calculated based on the number of billable requests in an actual billing cycle and applies only to the current billing cycle as it is non-cumulative.
 
-### What will happen to my ECDN service if my account falls into arrears?
-Arrears will affect your acceleration service. For more information, please see [Notes on Arrears](https://intl.cloud.tencent.com/document/product/570/15567).
+### What will happen to my ECDN service if my account becomes overdue?
+Overdue payment will affect your acceleration service. For more information, please see [Notes on Overdue Payment](https://intl.cloud.tencent.com/document/product/570/15567).
 
 ### Will fees be incurred after the domain name service is disabled (the domain name is deactivated)?
 After the domain name service is disabled, if the domain name is still configured with CNAME resolution or the user's local DNS cache has not expired, the cache nodes can still receive user access requests, for which the platform will return a 404 status code and bill them as follows:
