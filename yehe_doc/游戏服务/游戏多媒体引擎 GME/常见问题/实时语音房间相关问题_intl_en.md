@@ -37,7 +37,7 @@ A callback will be returned after the `EnterRoom` API is called, which, instead 
 The troubleshooting steps are as follows:
 1. View and confirm the validity of the parameters in the room entry API, such as `Appid`, `UIN`, and `AuthBuffer` (please see the API documentation for the corresponding platform).
 2. Check whether the relevant parameters in the console match the local ones.
-3. Check whether your account is in arrears in the console.
+3. Check whether your account is overdue in the console.
 4. Check whether your testing devices are in the private network or public network. If they are in the private network, please troubleshoot as instructed in [Dealing with Corporate Firewall Restrictions](https://intl.cloud.tencent.com/document/product/607/35232).
 
 ### What should I do if the callback returns the error code 1101 when the `EnterRoom` API is called for room entry after the `Init` method is called?
