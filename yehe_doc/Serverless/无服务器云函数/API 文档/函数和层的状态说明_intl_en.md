@@ -37,7 +37,7 @@ The change process of the function version release statuses is as shown below:
 | AvailableStatus Value (Returned by API) | Description                 |
 | -------------------------------------------- | -------------------- |
 | Available                                    | The function is available             |
-| InsufficientBalance                          | The function is unavailable due to arrears |
+| InsufficientBalance                          | The function is unavailable due to overdue payment |
 
 
 
