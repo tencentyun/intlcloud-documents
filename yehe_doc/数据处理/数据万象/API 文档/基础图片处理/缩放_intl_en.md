@@ -1,7 +1,7 @@
 ## Overview
 The **imageMogr2** API is used to scale an image.
 
->?The image to be processed should not be larger than 20 MB, with the width and height not exceeding 30,000 pixels and the total number of pixels not exceeding 100 million. The width and height of the output image should not exceed 9,999 pixels.
+>?The image to be processed should not be larger than 20 MB, with the width and height not exceeding 30,000 pixels and the total number of pixels not exceeding 250 million. The width and height of the output image should not exceed 9,999 pixels.
 
 
 ## API Format
