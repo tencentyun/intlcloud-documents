@@ -53,7 +53,7 @@
         <td>SDK v1.2.2.0 is released.</td>
        <td><li> The naming convention is unified for account and tag operation APIs.<li> SDK error code reporting is optimized.<li> The FCM channel protocol is upgraded, and the display of notifications sent through the FCM channel is taken over by the system.<li> Badge coloring is supported for messages sent through the TPNS channel.<li> Gzip compression is supported during network communication.<li>The exception of service unbinding that might occur in multi-thread environments is fixed.</td>
         <td>2020-11-26</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/1024/32625">Badge Coloring</a></td>
+        <td>-</td>
     </tr>
         <tr>
         <td>SDK v1.2.1.3 is released.</td>
