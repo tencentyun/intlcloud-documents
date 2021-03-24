@@ -68,6 +68,6 @@ This API is used to terminate an asynchronously executed event in progress accor
 - The generated event status data is retained for only 3 days and will be cleared on a rolling basis in a time window of 3 days. If you want to keep all records, you need to periodically pull them and save them to your own storage.
 - After status tracking is disabled, event management-related services such as recording, collecting, querying, and terminating asynchronously executed events will no longer be available, and the generated event status data will be cleared in 3 days.
 - The limit on QPS of asynchronously executed events is one-tenth of the function concurrency, and any excess will be limited, resulting in response failures.
-- If the limit on QPS is exceeded, or if your account falls into arrears, the corresponding exception will be returned by the scheduling engine directly after you invoke an event, and no event status records will be generated.
+- If the limit on QPS is exceeded, or if your account becomes overdue, the corresponding exception will be returned by the scheduling engine directly after you invoke an event, and no event status records will be generated.
 
 
