@@ -32,7 +32,7 @@ The pay-as-you-go (postpaid) billing mode is adopted.
 
 - When this product is used, the system will calculate whether the balance in your account is enough, and if yes, an amount equal to capacity * unit price will be frozen for one day when you create a table; otherwise, the creation will fail.
 - The fees of the previous day will be deducted at 00:00 each day.
-- Insufficient balance will trigger denial of access to the service. After your account falls into arrears, data will be retained for 7 days. If you fail to top up your account within 7 days, your data will be cleared.
+- Insufficient balance will trigger denial of access to the service. After your account becomes overdue, data will be retained for 7 days. If you fail to top up your account within 7 days, your data will be cleared.
 
 ## Settlement Cycle
 Fees are charged daily, and those incurred on the current day will automatically be deducted on the next day. Any disputes related to bills shall be resolved through negotiation. If the negotiation fails, the system statistics shall prevail.
