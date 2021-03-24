@@ -14,7 +14,7 @@ You can purchase a TencentDB for Redis instance at [Tencent Cloud's official web
 5. The instance activates immediately after the order is paid. Wait for 1-5 minutes before you can view the IP address. After the password is initialized, you can access the instance.
 
 >
->- After the Pay-as-You-Go TencentDB for Redis instance is activated, please ensure that your account balance is sufficient; otherwise, it may result in arrears and even instance repossession.
+>- After the Pay-as-You-Go TencentDB for Redis instance is activated, please ensure that your account balance is sufficient. Your instance will be repossessed after your account balance becomes negative.
 > For more information, see [Expiry Reminder](http://intl.cloud.tencent.com/document/product/236/5159).
 >- For more purchase instructions and precautions, see [Creating an Instance](https://intl.cloud.tencent.com/document/product/239/7033).
 
