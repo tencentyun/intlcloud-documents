@@ -4,13 +4,13 @@
 ### Balance reminder
 We will estimate the number of days it takes your account balance to become negative based on the usage in the past 24 hours and current balance. If it is less than five days, we will send a reminder to your Tencent Cloud account creator and all the collaborators through email and SMS.
 
-### Arrears reminder
+### Overdue payment reminder
 For pay-as-you-go resources, fees are deducted on the hour. When your account balance is in negative , we will notify the Tencent Cloud account creator and all the collaborators through email and SMS.
 
-### Arrears processing
+### Overdue payment processing
 **Starting from the moment your account becomes negative:**
 - You can continue to use your TencentDB instance for 24 hours from the moment your account becomes negative. We will also continue to bill you for this period.
-- When your account is in arrears for 24 hours , **your TencentDB instance will automatically shut down. We will also stop billing you for service**.
+- After your account has been overdue for 24 hours, **your TencentDB instance will automatically shut down. We will also stop billing you for service**.
 
 **After automatic shutdown:**
 - If your account is not topped up to a positive balance within 3 days after automatic shutdown, you will not be able to launch your database; If your balance is positive, the billing continues, and you can start your database.
