@@ -4,9 +4,9 @@
 
 Starting 7 days before your monthly subscription resources expire, we will send you an expiration alert every other day (i.e., on the 7th, 5th, 3rd, and 1st days before expiration). The account creator will be notified via email, SMS, and the Message Center. All collaborators under the account can configure the receipt method in the console -> Message Center -> [Message Subscription](https://console.cloud.tencent.com/message/subscription) and add recipients.
 
-### Arrears Alerts
+### Overdue Payment Alerts
 
-On the day your monthly subscription resources expire (the 1st day of the expiration) and every other day thereafter (the 3rd, 5th, 7th days, etc.), we will send you an arrears alert. You can configure the receipt method in the console -> Message Center -> [Message Subscription](https://console.cloud.tencent.com/message/subscription) and add recipients.
+On the day your monthly subscription resources expire (the 1st day of the expiration) and every other day thereafter (the 3rd, 5th, 7th days, etc.), we will send you an overdue payment alert. You can configure the receipt method in the console -> Message Center -> [Message Subscription](https://console.cloud.tencent.com/message/subscription) and add recipients.
 
 ### Repossession Mechanism
 
@@ -25,10 +25,10 @@ On the day your monthly subscription resources expire (the 1st day of the expira
 ### Balance Alert
 The system estimates the number of days it takes for your account balance to become negative based on the current balance and your usage in the past 24 hours. If it is less than 5 days, the system will send a balance alert to your Tencent Cloud account creator and all collaborators who have subscribed to messages via email, SMS, and the Message Center.
 
-### Arrears Alerts
+### Overdue Payment Alerts
 Pay-as-you-go resources are billed by the hour. When your account balance becomes negative (Point 1 in the figure above), the system will send an alert to your Tencent Cloud account creator and all collaborators who have subscribed to messages via email, SMS, and the Message Center.
 
-### Arrears Processing
+### Overdue Payment Processing
 
 - You can continue to use the pay-as-you-go cloud disk for 2 hours from the moment your account balance becomes negative. You will be billed for this period. After 2 hours (Point 2 in the figure above), its services will be suspended (cloud disk is unavailable and can only store data). You will still be billed according to the billing standard (even if the account balance is negative) until data is completely erased.
 - If your Tencent Cloud account is topped up to a positive balance within 15 days after the cloud disk has its services suspended, the disk can be restored.
