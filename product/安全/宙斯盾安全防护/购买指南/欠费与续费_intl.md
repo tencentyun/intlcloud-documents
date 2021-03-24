@@ -1,13 +1,13 @@
-## Alert for Expiry
-Alert notifications for expiry will be sent through email and SMS to Tencent Cloud account creators, global resource collaborators and financial collaborators within seven days of expiry of the prepaid cloud resources for DDoS protective IP.
+## Expiration Alerts
+Expiration alerts will be sent through email and SMS to Tencent Cloud account creators, global resource collaborators and financial collaborators within seven days of expiry of the prepaid cloud resources for DDoS protective IP.
 
-## **Alert for Arrears**
-Alert notifications for arrears will be sent through email and SMS to Tencent Cloud account creators and all collaborators on the day of and after expiry of the prepaid cloud resources for DDoS protective IP.
+## **Overdue Payment Alerts**
+Overdue payment alerts will be sent through email and SMS to Tencent Cloud account creators and all collaborators on the day of and after expiry of the prepaid cloud resources for DDoS protective IP.
 
-## **Arrears Processing**
+## **Overdue Payment Processing**
 From the moment your account is charged and carries a negative balance, DDoS protective IP's elastic protection will be disabled, but the unexpired base protection with monthly frozen prepayment and business forwarding will not be affected. Once you pay off your account balance, the elastic protection will be automatically resumed.
 
-## Note for Extension
+## Extension Reminders
 
 - The system will send you extension reminders within seven days of expiry of the cloud resources.
 - If the account balance is sufficient and automatic extension has been set up, the system will automatically extend the resources upon expiry.
