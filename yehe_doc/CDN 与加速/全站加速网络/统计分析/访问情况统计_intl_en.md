@@ -29,7 +29,7 @@ The access statistics section displays curves of historical monitoring data. You
 + The real-time monitoring data on the current day is delayed for about 5 minutes. If you perform a query at 14:26:00, the query result will generally include data between 00:00:00 and 14:21:00 on the day.
 + Monitoring statistics are grouped by granularity. For example, if the query granularity is 5-minute, statistics between 10:00:00 and 10:04:59 will be grouped to the `10:00:00` sample point.
 + If the specified query time period is longer than the domain name connection period, only the statistics of the connection period will be displayed, while the time period during which the domain name has not been connected or has been deleted will be excluded.
-+ To query monitoring data of multiple domain names or metrics, you can use the [GetDsaStatistics API](https://intl.cloud.tencent.com/document/product/570/17942).
++ To query monitoring data of multiple domain names or metrics, you can use the GetDsaStatistics API.
 
 ![](https://main.qcloudimg.com/raw/6831a48251c2aa8adf03aa23b4b18f95.png)
 
