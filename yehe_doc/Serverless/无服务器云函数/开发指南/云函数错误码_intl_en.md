@@ -79,8 +79,8 @@ If an error code is returned after the function is executed, you can find the ca
 </tr>
 <tr>
 <td>438<br>FunctionStatusError</td>
-<td>The SCF service is suspended because the Tencent Cloud account is in arrears.</td>
-<td>The SCF service is suspended because the Tencent Cloud account is in arrears. Please top up and try again.</td>
+<td>The SCF service is suspended because the Tencent Cloud account is overdue.</td>
+<td>The SCF service is suspended because the Tencent Cloud account is overdue. Please top up and try again.</td>
 </tr>
 <tr>
 <td>439<br>User preocess exit when running</td>
