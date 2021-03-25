@@ -9,4 +9,4 @@ In order to facilitate quick identification and management of CDHs, Tencent Clou
    ![Renaming operation box](https://main.qcloudimg.com/raw/2f83d40760fefaff3212fd1b791e93bb.png)
 
 ## Renaming a CDH Instance Through API
-CDH instances can be renamed using the ModifyHostsAttribute API. For details, see [API for Modifying CDH Instance Attributes](https://intl.cloud.tencent.com/document/api/213/16475).
+CDH instances can be renamed using the ModifyHostsAttribute API. For details, see [API for Modifying CDH Instance Attributes](https://intl.cloud.tencent.com/document/product/213/33278).
