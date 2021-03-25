@@ -5,7 +5,7 @@ Restart is usually used for the maintenance of GPU instances. Restarting a GPU i
  
  - **How to perform restart:** It is recommended to restart an instance using the restart operation provided by Tencent Cloud, instead of running the restart command in the instance (such as restart command under Windows and Reboot command under Linux).
  
- - **Restart period:**Generally, it takes only a few minutes to restart an instance.
+ - <b>Restart period:</b>Generally, it takes only a few minutes to restart an instance.
  
  - **Physical attributes of instances:** Restarting an instance does not change any of its physical attributes, so the public IP, private IP, and any data stored on the instance will remain unchanged.
  
