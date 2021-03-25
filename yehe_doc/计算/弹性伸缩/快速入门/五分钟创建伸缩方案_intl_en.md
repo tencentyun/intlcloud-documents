@@ -1,7 +1,7 @@
 To create a complete Auto Scaling solution, perform the following three steps:
 ![](https://main.qcloudimg.com/raw/bb6c41ddc7c79cb3c76580f9ae42a008.png)
 
->? This document describes how to create an Auto Scaling solution in the console. If you prefer to use APIs, see [API Use Case](https://intl.cloud.tencent.com/document/product/377/4232).
+>? This document describes how to create an Auto Scaling solution in the console. If you prefer to use APIs, see [API Use Case](https://intl.cloud.tencent.com/document/product/377/30983).
 
 ## Step 1. Create a Launch Configuration
 A launch configuration defines the configuration information of CVM instances used for auto scaling, including their images, storage, networks, security groups, login methods, and other configuration information.
