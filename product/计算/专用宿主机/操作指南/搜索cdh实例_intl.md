@@ -7,4 +7,4 @@
 ![Search](https://main.qcloudimg.com/raw/cb87073b1e56413203aff6a224c605f8.png)
 
 ### Searching for CDH Instance Through API
-CDH instances can be filtered using the DescribeHosts API. For details, see [API for Viewing CDH Instance List](https://intl.cloud.tencent.com/document/api/213/16474).
+CDH instances can be filtered using the DescribeHosts API. For details, see [API for Viewing CDH Instance List](https://intl.cloud.tencent.com/document/product/213/33279).
