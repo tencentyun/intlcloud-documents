@@ -7,6 +7,6 @@ TencentDB for SQL Server supports deleting databases on the **Manage Database** 
 2. Select the **Manage Database** tab, select the database to be deleted in the list, and click **Delete** in the "Operation" column.
 >!Before deleting the database, please make sure that there are no active connections using the database. If any active connection is detected during the deletion process, the deletion operation will be suspended.
 >
-
+![](https://main.qcloudimg.com/raw/bf042b8ac56666b0455a60eff91663c0.png)
 3. In the pop-up dialog box, click **Delete**.
 
