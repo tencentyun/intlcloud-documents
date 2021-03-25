@@ -27,7 +27,7 @@ The following example assumes that you have purchased three instances and want t
 
 #### API Operations
 
-In the [RunInstances](https://intl.cloud.tencent.com/document/api/213/15730) API, set the InstanceName field to `CVM`.
+In the [RunInstances](https://intl.cloud.tencent.com/document/product/213/33237) API, set the InstanceName field to `CVM`.
 
 ### Specifying Pattern Strings
 
@@ -50,7 +50,7 @@ The following example assumes that you want to create three instances and name t
 
 ##### API Operations
 
-In the [RunInstances](https://intl.cloud.tencent.com/document/api/213/15730) API, set the InstanceName field to `CVM{R:3}`.
+In the [RunInstances](https://intl.cloud.tencent.com/document/product/213/33237) API, set the InstanceName field to `CVM{R:3}`.
 
 <span id="SpecifyMultipleStrings"></span>
 #### Specifying Multiple Pattern Strings
@@ -67,5 +67,5 @@ The following example assumes that you want to create three instances and name t
 
 ##### API Operations
 
-In the [RunInstances](https://intl.cloud.tencent.com/document/api/213/15730) API, set the InstanceName field to `cvm{R:13}-Big{R:2}-test`.
+In the [RunInstances](https://intl.cloud.tencent.com/document/product/213/33237) API, set the InstanceName field to `cvm{R:13}-Big{R:2}-test`.
 
