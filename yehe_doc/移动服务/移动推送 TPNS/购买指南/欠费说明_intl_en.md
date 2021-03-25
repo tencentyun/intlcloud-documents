@@ -3,7 +3,7 @@ TPNS provides two billing modes: monthly subscription and pay-as-you-go. If your
 
 
 ## Pay-as-You-Go (Postpaid) Mode
-Pay-as-you-go billing is an elastic billing mode of TPNS. You can activate or terminate the service at any time, and the service fees will be charged by the number of daily connected devices and settled daily. This mode has relatively high prices and is suitable for scenarios where the number of daily connected devices fluctuates greatly.
+Pay-as-you-go billing is an elastic billing mode of TPNS. You can activate or terminate the service at any time, and the service fees will be charged by the number of daily active users (DAUs) and settled daily. This mode has relatively high prices and is suitable for scenarios where the number of DAUs fluctuates greatly.
 After purchasing the pay-as-you-go service, please ensure that your account balance is always sufficient. If your account is in arrears for more than 24 hours, the pay-as-you-go service will be suspended.
 
 ### Service suspension mechanism
@@ -13,6 +13,7 @@ After purchasing the pay-as-you-go service, please ensure that your account bala
 >!
 >- After the service is suspended, the device registration, account, and tag binding logic can be used normally, but the push feature will become unavailable.
 >- If you have activated the non-stop feature offered to key accounts, the service will not be suspended due to arrears of your account, you can continue to use it, and fees will continue to be charged. If you haven't activated this feature, you can [contact sales](https://console.cloud.tencent.com/workorder/category) to apply for activation.
+>
 
 ### Repossession mechanism
 After the service is suspended, if you fail to top up your account to a positive balance in seven days, the repossession policy will start.
