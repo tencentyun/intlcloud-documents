@@ -38,7 +38,7 @@ Then you can log in to them to store your local files, use them as your virtual 
 | Change or reset your instance password | [Resetting Instance Passwords](https://intl.cloud.tencent.com/document/product/213/16566) |
 | Terminate, release or return a CVM instance | [Terminating Instances](https://intl.cloud.tencent.com/document/product/213/4930) |
 | Obtain the CVM instance list of a region| [Export Instances](https://intl.cloud.tencent.com/document/product/213/16563) |
-| Search for CVM instances and other resources| [Cross-region Search](https://intl.cloud.tencent.com/document/product/213/8668) |
+| Search for CVM instances and other resources| Cross-region Search |
 | Create a custom image and use this image to start more new instances that have the same custom configurations as the original one | [Creating Custom Images](https://intl.cloud.tencent.com/document/product/213/4942) |
 | Obtain images shared by other users, get the necessary components and add custom contents | [Sharing Custom Images](https://intl.cloud.tencent.com/document/product/213/4944) |
 | Import the system disk image on local computers or other platforms to the custom image on the CVM | [Overview](https://intl.cloud.tencent.com/document/product/213/4945) |
@@ -56,7 +56,7 @@ Then you can log in to them to store your local files, use them as your virtual 
 You can build a personal website or forum on CVM instances as instructed in [Setting up a Website](https://intl.cloud.tencent.com/document/product/213/34815).
 
 ### Developer tools
-Tencent Cloud API provides a variety of tools including API Explorer, TCCLI, SDK, and API Inspector, helping you easily use and quickly manage Tencent Cloud services with a few codes. To learn more about Tencent Cloud API and start using it, see [Getting Started](https://intl.cloud.tencent.com/document/product/1080/38759).
+Tencent Cloud API provides a variety of tools including API Explorer, TCCLI, SDK, and API Inspector, helping you easily use and quickly manage Tencent Cloud services with a few codes. 
 
 
 ## 6. Feedback and Suggestions
