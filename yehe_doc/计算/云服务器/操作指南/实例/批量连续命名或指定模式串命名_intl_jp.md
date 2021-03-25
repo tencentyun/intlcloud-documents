@@ -20,14 +20,14 @@
 #### 購入ページでの操作
 
 1.  [インスタンスの作成](http://intl.cloud.tencent.com/document/product/213/4855) を参照して、3つのインスタンスを購入し、「2.ホスト設定」の中で**「プレフィックス+シーケンス番号」**の命名規則でインスタンスの名称を記入し、すなわちインスタンス名称を `CVM`と記入します。下図に示す通り：
-![](https://main.qcloudimg.com/raw/820a52077080be5da4c1fb4715452e6b.png)
+![](https://main.qcloudimg.com/raw/9815074c0fde0f3dbc7f0b9f4504d7e3.png)
 2. ページの指示に従い、支払いを完了します。
 4.  [CVMコンソール](https://console.cloud.tencent.com/cvm/index)に戻り、 新しく作成されたインスタンスを確認します。一括購入したインスタンスのプレフィックスが同じで、シーケンス番号がインクリメントされていることを確認できます。下図に示す通り：
-![](https://main.qcloudimg.com/raw/27de624cd251910d47bea8e7732b284b.png)
+![](https://main.qcloudimg.com/raw/34057be61529702cc287db4a971865d3.png)
 
 #### API操作
 
-TencentCloud API [RunInstances](https://intl.cloud.tencent.com/document/api/213/15730) で、InstanceName フィールドを `CVM`に設定します。
+TencentCloud API [RunInstances](https://intl.cloud.tencent.com/document/product/213/33237) で、InstanceName フィールドを `CVM`に設定します。
 
 ### パターン文字列の指定
 
@@ -43,14 +43,14 @@ TencentCloud API [RunInstances](https://intl.cloud.tencent.com/document/api/213/
 ##### 購入ページでの操作
 
 1.  [インスタンスの作成](http://intl.cloud.tencent.com/document/product/213/4855) を参照してインスタンスを購入し、「2.ホスト設定」の中で**「プレフィックス+パターン文字列の指定{R:x}」**という命名規則でインスタンスの名称を記入し、すなわちインスタンス名称を `CVM{R:x}`と記入します。下図に示す通り：
-![](https://main.qcloudimg.com/raw/4e09732d612222f619cf7a1e8da1ee06.png)
+![](https://main.qcloudimg.com/raw/1b06d1bdf95e10afdd7dfde39e3a7e11.png)
 2. ページの指示に従い、支払いを完了します。
 3.  [CVMコンソール](https://console.cloud.tencent.com/cvm/index)に戻り、 新しく作成されたインスタンスを確認します。 これらの一括購入したインスタンスのプレフィックスが同じで、シーケンス番号が3からインクリメントされていることを確認できます。下図に示す通り：
-![](https://main.qcloudimg.com/raw/78dc40cf4baa707573ad95a77bed4e1d.png)
+![](https://main.qcloudimg.com/raw/69d59d2523a9fc27a5b58d61070cfe21.png)
 
 ##### API操作
 
-API [RunInstances](https://intl.cloud.tencent.com/document/api/213/15730) で InstanceName フィールドを `CVM{R:3}`に設定します。
+API [RunInstances](https://intl.cloud.tencent.com/document/product/213/33237) で InstanceName フィールドを `CVM{R:3}`に設定します。
 
 <span id="SpecifyMultipleStrings"></span>
 #### 複数パターン文字列の指定
@@ -60,12 +60,12 @@ API [RunInstances](https://intl.cloud.tencent.com/document/api/213/15730) で In
 ##### 購入ページでの操作
 
 1.  [インスタンスの作成](http://intl.cloud.tencent.com/document/product/213/4855) を参照して3つのインスタンスを購入します。「2.ホスト設定」ページで**「プレフィックス+パターン文字列の指定{R:x}-プレフィックス+パターン文字列の指定{R:x}-プレフィックス」**という命名規則でインスタンス名を記入し、すなわちインスタンス名を `cvm{R:13}-Big{R:2}-test` と記入します。下図に示す通り：
-![](https://main.qcloudimg.com/raw/1042e86262bc7ce3939f1842a8025c23.png)
+![](https://main.qcloudimg.com/raw/6704d8309016c2406c51d3a3b99b6883.png)
 2. ページの指示に従い、支払いを完了します。
 3.  [CVMコンソール](https://console.cloud.tencent.com/cvm/index)に戻り、 新しく作成されたインスタンスを確認します。これらの一括購入したインスタンスには、プレフィックスが指定されたシーケンス番号からインクリメントされていることを確認できます。下図に示す通り：
-![](https://main.qcloudimg.com/raw/a3c5e58daf07381ffde5abc019edad33.png)
+![](https://main.qcloudimg.com/raw/2d6980c90ab552c911bdf16197c685f9.png)
 
 ##### API操作
 
- API [RunInstances](https://intl.cloud.tencent.com/document/api/213/15730) で、 InstanceName フィールドを ` cvm{R:13}-Big{R:2}-test`に設定します。
+ API [RunInstances](https://intl.cloud.tencent.com/document/product/213/33237) で、 InstanceName フィールドを ` cvm{R:13}-Big{R:2}-test`に設定します。
 
