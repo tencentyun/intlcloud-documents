@@ -114,7 +114,7 @@ You need to create a SAML identity provider in CAM before you can create a role 
 ```
 
 2. Prepare permission policies for the role to be created. For more information on permission policies, see [Policy](https://intl.cloud.tencent.com/document/product/598/10601).
-3. Call the [cam:CreateRole](https://intl.cloud.tencent.com/document/api/598/13886) API to create a role for the identity provider.
+3. Call the [cam:CreateRole](https://intl.cloud.tencent.com/document/product/598/33561) API to create a role for the identity provider.
 
 
 
