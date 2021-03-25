@@ -49,4 +49,4 @@
 
 ## API를 사용하여 폐기
 
-[TerminateInstances 인터페이스](/doc/product/213/9395)를 참조하십시오.
+[TerminateInstances 인터페이스](https://intl.cloud.tencent.com/document/product/213/33234)를 참조하십시오.
