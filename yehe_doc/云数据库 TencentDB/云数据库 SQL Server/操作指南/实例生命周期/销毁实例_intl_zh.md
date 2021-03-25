@@ -12,8 +12,8 @@
 
 ## 操作步骤
 1. 登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在实例列表选择所需实例，在“操作”列中，选择【更多】>【销毁/退货】。
-![](https://main.qcloudimg.com/raw/05236c5be0f2318a8e7d34dd0cb5f26d.png)
+![](https://main.qcloudimg.com/raw/be837273695eb17b86447852317fb45f.png)
 2. 在弹出的对话框，勾选同意，单击【销毁】。
 
-![](https://main.qcloudimg.com/raw/bce8a99dcc988e1a45bb701cd30e627c.png)
+![](https://main.qcloudimg.com/raw/eed621d2fb6827d94ab5b2875a42fc84.png)
 
