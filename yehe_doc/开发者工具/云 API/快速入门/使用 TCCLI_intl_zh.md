@@ -52,15 +52,18 @@ sudo pip install tccli
 tccli --version
 ```
 返回类似如下结果，则说明已成功安装 TCCLI。
+
 ```bash
 [root@VM_180_248_centos ~]# tccli --version
 3.0.250.1
 ```
+
 5. 在 Linux 环境中，执行以下命令启动自动补全功能，支持大小写自动纠错：
 ```bash
 complete -C 'tccli_completer' tccli
 ```
 以下代码片段展示自动补全过程：
+
 ```bash
 [root@VM_33_50_centos ~]# tccli c
 cam          cbs          cdn          chdfs        ckafka       cloudhsm     cms          cr           cynosdb 
@@ -138,8 +141,8 @@ tccli configure
 ```
 
 ## 使用 TCCLI
-
-### [基础功能](id:primaryfunction)
+<span id ="primaryfunction"></span>
+### 基础功能
 TCCLI 支持自主配置，help 信息支持中文信息且支持 JSON、table 及 text 输出格式。
 >! 请注意示例中非简单类型的参数必须为标准 JSON 格式。 
 >
@@ -316,6 +319,7 @@ AVAILABLE PARAMS
 }
 ```
  - **table 格式**：
+
 ```bash
 [root@VM_33_50_centos ~]# tccli cvm DescribeRegions --output table
 --
@@ -349,7 +353,9 @@ AVAILABLE PARAMS
 ||  na-toronto       |  北美地区(多伦多)     |  AVAILABLE    ||
 |+-------------------+----------------+---------------+|
 ```
+
  - **text 格式**：
+
 ```bash
 [root@VM_33_50_centos ~]# tccli cvm DescribeRegions --output text
 70bbd02f-****-****-****-afc5c34018ae    20
@@ -372,8 +378,8 @@ REGIONSET       na-ashburn      美国东部(弗吉尼亚)      AVAILABLE
 REGIONSET       na-siliconvalley        美国西部(硅谷)  AVAILABLE
 REGIONSET       na-toronto      北美地区(多伦多)        AVAILABLE
 ```
-
-### [高级功能](id:sophisticatedfunctions)
+<span id ="sophisticatedfunctions"></span>
+### 高级功能
 该步骤以 CVM 为例，详细介绍了如何使用 TCCLI 高级功能，包括多版本接口访问、指定最近的接入点、返回结果过滤、输出入参数据结构到 JSON 文件以及从 JSON 文件读取参数等。
 
 #### 多版本接口访问
