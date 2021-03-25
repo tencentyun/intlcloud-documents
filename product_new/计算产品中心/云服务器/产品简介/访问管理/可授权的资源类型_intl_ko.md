@@ -14,7 +14,7 @@
 <span id="CVMCorrelation"></span>
 #### CVM 인스턴스 관련 설명
 
-| API Operation | Resource Path | Condition Key |
+| API 작업 | 리소스 경로 | 조건부 키 |
 | :-------- | :--------| :------ |
 |DescribeInstanceInternetBandwidthConfigs	|  `qcs::cvm:$region:$account:instance/*`<br>`qcs::cvm:$region:$account:instance/$instanceId`| cvm:region<br>cvm:zone<br>cvm:instance_type|
 |ModifyInstanceInternetChargeType	|  `qcs::cvm:$region:$account:instance/*`<br>`qcs::cvm:$region:$account:instance/$instanceId` | cvm:region<br>cvm:zone<br>cvm:instance_type|
@@ -38,7 +38,7 @@
 <span id="KeyCorrelation"></span>
 #### CVM 키 관련 설명
 
-| API Operation | Resource Path | Condition Key |
+| API 작업 | 리소스 경로 | 조건부 키 |
 | :-------- | :--------| :------ |
 |[AssociateInstancesKeyPairs](https://intl.cloud.tencent.com/document/product/213/33232)	|  `qcs::cvm:$region:$account:instance/*`<br>`qcs::cvm:$region:$account:instance/$instanceId`<br>`qcs::cvm:$region:$account:keypair/*`<br>`qcs::cvm:$region:$account:keypair/$keyId`  | -|
 |[CreateKeyPair](https://intl.cloud.tencent.com/document/product/213/33231)	|  `qcs::cvm:$region:$account:keypair/*` | -|
@@ -52,7 +52,7 @@
 <span id="ImageCorrelation"></span>
 #### CVM 미러 이미지 관련 설명
 
-| API Operation | Resource Path | Condition Key |
+| API 작업 | 리소스 경로 | 조건부 키 |
 | :-------- | :--------| :------ |
 | [CreateImage](https://intl.cloud.tencent.com/document/product/213/33276)	|  `qcs::cvm:$region:$account:instance/*`<br>`qcs::cvm:$region:$account:instance/$instanceId`<br> `qcs::cvm:$region:$account:image/*` | cvm:region |
 | [DeleteImages](https://intl.cloud.tencent.com/document/product/213/33275)	|  `qcs::cvm:$region:$account:image/*`<br>`qcs::cvm:$region:$account:image/$imageId` | cvm:region |
