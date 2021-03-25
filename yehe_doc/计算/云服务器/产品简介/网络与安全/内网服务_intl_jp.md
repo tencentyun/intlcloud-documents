@@ -61,8 +61,8 @@ Tencent Cloudは様々なリージョンに信頼できるプライベートネ�
 
 ![](//mc.qcloudimg.com/static/img/2663aabcbe44c2ad372b5b8ba2bb6a1f/image.png)
 
-###　APIで取得する
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[DescribeInstancesインターフェース](/doc/product/213/9388)をご参照ください。
+### APIで取得する
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DescribeInstancesインターフェースをご参照ください。
 
 ### インスタンスメタデータで取得する
 
