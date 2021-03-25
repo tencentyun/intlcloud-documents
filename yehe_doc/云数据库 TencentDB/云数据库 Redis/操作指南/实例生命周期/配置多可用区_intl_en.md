@@ -15,13 +15,13 @@ We recommend you deploy one master node and one replica node in the master avail
 1. Log in to the [Redis Purchase Page](https://buy.cloud.tencent.com/redis), specify instance information including region, availability zones, and replicas, and click **Buy Now**.
  - Replica count: the maximum number of availability zones = the number of replicas + 1.
  - Availability zone: deploy Redis nodes in different availability zones. Up to six availability zones are supported.
-![](https://main.qcloudimg.com/raw/c5d9cd4fc9c9e0b5e988115a20497c83.png)
+![](https://main.qcloudimg.com/raw/d76a6c8cc996b58c8f5df1a17102111c.png)
 2. After the purchase is completed, you will be redirected to the instance list. After the status of the instance changes to **Running**, it can be used normally.
 
 ### Viewing multi-AZ deployment details
 - Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis). In the **Availability Zone** column in the instance list, the **M** tag indicates that nodes of this instance are deployed in multiple availability zones. Mouse over the tag to view details.
-![](https://main.qcloudimg.com/raw/2bdca4ff571f6d01eff6eada33afb9eb.png)
+![](https://main.qcloudimg.com/raw/5c553bf4c0817c0dbddb662405078fe7.png)
 - In the [instance list](https://console.cloud.tencent.com/redis), click an instance ID/name and enter the instance management page. In the **Basic Info** section on the **Instance Details** tab, the **M** tag next to **Availability Zone** indicates that nodes of this instance are deployed in multiple availability zones. Mouse over the tag to view details.
-![](https://main.qcloudimg.com/raw/af9f9fdf1cd9789b34a9b15a96eb56ee.png)
+![](https://main.qcloudimg.com/raw/d579e1ab309c754ef0ea56904ad5f194.png)
 - In the [instance list](https://console.cloud.tencent.com/redis), click an instance ID/name and enter the instance management page. On the **Manage Node** tab, you can view node details and adjust node configurations.
-![](https://main.qcloudimg.com/raw/61d091fb780209028cd9829a4bea5e46.png)
+![](https://main.qcloudimg.com/raw/aa0adb39b9bfb543051ca6bdfda78664.png)
