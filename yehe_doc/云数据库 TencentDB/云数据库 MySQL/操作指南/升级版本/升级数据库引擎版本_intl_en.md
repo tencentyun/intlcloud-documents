@@ -9,8 +9,8 @@ TencentDB for MySQL supports database engine upgrade:
 >- Database engine downgrading is not supported.
 >- Upgrading across major releases is not supported. For example, to upgrade a TencentDB for MySQL 5.5 instance to MySQL 5.7 or later, you have to upgrade it to MySQL 5.6 first.
 >- Currently, MySQL 5.7 cannot be upgraded to MySQL 8.0. 
-
-## [Upgrade Rules](id:shengjiguize)
+<span id ="shengjiguize"></span>
+## Upgrade Rules
 - The `create table …  as select …` syntax is not supported.
 - Source-replica sync in TencentDB for MySQL 5.6 and 5.7 is implemented based on GTID. Only InnoDB is supported by default.
 - MyISAM tables will be converted to InnoDB tables during the process of upgrading from MySQL 5.5 to 5.6. **We recommend that you complete the conversion first before upgrading.**
