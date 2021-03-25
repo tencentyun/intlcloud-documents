@@ -118,9 +118,9 @@
 | 节点上 Pod 重启次数     | 次  | 节点内所有 Pod 重启次数之和    |
 | Node Ready     | -  | 节点状态，默认 False 时告警    |
 
-集群节点更详细的指标告警请参考 [云服务器监控](http://intl.cloud.tencent.com/document/product/213/5178) 和 [云监控创建告警策略](http://intl.cloud.tencent.com/document/product/248/6215)。
+集群节点更详细的指标告警请参考 [云服务器监控](http://intl.cloud.tencent.com/document/product/213/5178) 和 [云监控创建告警策略](https://intl.cloud.tencent.com/document/product/248/38908)。
 
-集群节点数据盘更详细的指标告警请参考 [云硬盘监控](http://intl.cloud.tencent.com/document/product/362/6742) 和 [云监控创建告警策略](http://intl.cloud.tencent.com/document/product/248/6215)。
+集群节点数据盘更详细的指标告警请参考 [云硬盘监控](http://intl.cloud.tencent.com/document/product/362/6742) 和 [云监控创建告警策略](https://intl.cloud.tencent.com/document/product/248/38908)。
 
 
 ### Pod 告警指标
