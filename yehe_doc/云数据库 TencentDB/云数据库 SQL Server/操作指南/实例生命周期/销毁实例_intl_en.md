@@ -12,8 +12,8 @@ After an instance is returned, once its status changes to "Isolated", no fees re
 
 ## Directions
 1. Log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver), select the target instance in the instance list, and select **More** > **Terminate/Return** in the "Operation" column.
-
+![](https://main.qcloudimg.com/raw/be837273695eb17b86447852317fb45f.png)
 2. In the pop-up dialog box, indicate your consent and click **Terminate**.
-
+![](https://main.qcloudimg.com/raw/eed621d2fb6827d94ab5b2875a42fc84.png)
 
 
