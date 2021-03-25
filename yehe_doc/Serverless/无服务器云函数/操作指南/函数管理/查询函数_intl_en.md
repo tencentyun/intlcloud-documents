@@ -12,6 +12,6 @@ A function can be queried in the console or on Serverless Framework CLI.
  * Monitoring: it displays function execution monitoring information.
 
 ## Getting Function Information on SCF CLI
->Before starting, you need to install and configure SCF CLI as instructed in [CLI Installation and Configuration](https://intl.cloud.tencent.com/document/product/583/32754).
+>Before starting, you need to install and configure SCF CLI as instructed in CLI Installation and Configuration.
 >
-You can run the `scf function list` command on SCF CLI to get the function list. For more information, please see [Getting Function List](<https://intl.cloud.tencent.com/document/product/583/32763>).
+You can run the `scf function list` command on SCF CLI to get the function list.
