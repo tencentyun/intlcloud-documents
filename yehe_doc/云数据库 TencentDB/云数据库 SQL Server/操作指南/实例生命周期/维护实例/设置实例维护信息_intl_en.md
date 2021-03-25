@@ -13,9 +13,9 @@ Taking the database instance specification upgrade as an example, as this operat
 ### Setting maintenance time
 1. Log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver). In the instance list, click an instance name or **Manage** in the "Operation" column to enter the instance details page.
 2. Click **Modify** in "Maintenance Info".
-
+![](https://main.qcloudimg.com/raw/141ecd7d3a0ce63ac514aa6c8b4a530f.png)
 3. In the pop-up dialog box, select the **Maintenance Period** and **Maintenance Time** as needed and click **OK**.
-
+![](https://main.qcloudimg.com/raw/d3cdb9e92661e4cdf11bec5861bfb53d.png)
 
 <span id="lijiqiehuan"></span>
 ### Performing immediate switch
