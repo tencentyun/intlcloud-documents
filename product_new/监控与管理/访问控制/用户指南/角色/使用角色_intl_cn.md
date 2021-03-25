@@ -39,7 +39,7 @@ durationSeconds=7200
 }
 ```
 3. 在凭证有效期内，根据实际需求，DevB 对公司 A 执行权限范围内的操作。
-例如，通过 API 查看云服务器列表，在调用 [DescribeInstances](https://intl.cloud.tencent.com/document/product/213/15728) 接口时，将 API 密钥 SecretId 和 SecretKey 的值替换为 tmpSecretId 和 tmpSecretKey 的值，同时将 [公共参数](https://intl.cloud.tencent.com/document/product/213/31574) 中的 Token 设置为 sessionToken 的值。
+例如，通过 API 查看云服务器列表，在调用 [DescribeInstances](https://intl.cloud.tencent.com/document/product/213/33258) 接口时，将 API 密钥 SecretId 和 SecretKey 的值替换为 tmpSecretId 和 tmpSecretKey 的值，同时将 [公共参数](https://intl.cloud.tencent.com/document/product/213/31574) 中的 Token 设置为 sessionToken 的值。
 > 当公司 A 想终止对公司 B 的授权时，删除角色 DevOpsRole 即可。
 
 
