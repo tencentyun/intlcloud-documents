@@ -33,14 +33,14 @@
 <td><a href = "https://cloud.tencent.com/document/product/267/20388">이벤트 센터</a></td>
 <td><ul style= "margin: 0"><li>트리거된 각 사건 설정에 따라 관련 콜백 정보의 경로를 수신합니다.</li><li>라이브 방송 푸시 스트림 중단 기록과 중단 원인을 빠르게 조회할 수 있습니다.</li></ul></td>
 </tr><tr>
-<td><a href = "https://cloud.tencent.com/document/product/267/32405">라이브 방송 SDK</a></td>
+<td>라이브 방송 SDK</a></td>
 <td><ul style= "margin: 0"><li>모바일 라이브 방송 SDK와 결합하여 정식 버전 License를 추가하고 관리할 수 있습니다.</li><li>IM 애플리케이션을 추가하고 조회해 개발 중 필요한 SDKAPPID와 SecretKey를 생성할 수 있습니다.</li><li>모바일 라이브 방송 SDK 중의 마이크 연결 기능 사용 시간과 패키지의 사용 현황을 조회할 수 있습니다.</li></ul></td>
 </tr><tr>
-<td><a href = "https://cloud.tencent.com/document/product/267/47152">클라우드 스튜디오</a></td>
+<td>클라우드 스튜디오</a></td>
 <td>CSS 콘솔로 온라인 디렉터 기능을 실현할 수 있습니다.</td>
 </tr></tr>
 <tr>
-<td><a href = "https://cloud.tencent.com/document/product/267/34286">LCB</a></td>
+<td>LCB</a></td>
 <td><ul style= "margin: 0"><li>LCB 서비스(대규모 멀티미디어 업스트림 시나리오에 적합)를 사용할 수 있습니다.</li><li>LCB에 사용할 가속 도메인을 추가하고 관리하고, 이미 설정된 콜백/녹화 템플릿을 호출할 수 있습니다.</li><li>LCB에서 생산하는 다운스트림 트래픽/대역폭 현황을 조회할 수 있습니다.</li><li>LCB 사용 중 라이브 방송 동시 녹화 채널 수를 조회할 수 있습니다.</li></ul></td>
 </tr>
 </table>
@@ -58,10 +58,10 @@
 <td><a href = "https://cloud.tencent.com/document/product/267/20391">스트리밍 데이터 조회</a></td>
 <td>하나의 비디오 스트리밍의 푸시 스트림 및 재생 데이터를 조회하고 로컬로 내보낼 수 있습니다.</td>
 </tr><tr>
-<td><a href = "https://cloud.tencent.com/document/product/267/20382">SDK 품질 모니터링</a></td>
+<td>SDK 품질 모니터링</a></td>
 <td>모바일 라이브 방송 SDK의 최근 3일 푸시 스트림 데이터 정보를 조회할 수 있습니다.</td>
 </tr><tr>
-<td><a href = "https://cloud.tencent.com/document/product/267/33996">로그 분석</a></td>
+<td>로그 분석</a></td>
 <td><ul style = "margin-bottom: 0px;"><li>라이브 방송 방문 로그를 실시간으로 수집한 후 클리닝해 분석과 검색으로 빠르게 장애 위치를 파악하고 액세스 할 수 있습니다.</li><li>전날, 최근 일주일, 최근 한달 혹은 사용자가 정의한 시간대의 로그 데이터 패키지를 다운로드 할 수 있습니다.</li></ul></td>
 </tr>
 </table>
