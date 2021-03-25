@@ -26,7 +26,7 @@
 ## 使用专用宿主机
 
 腾讯云 CDH 提供基于 Web 的用户界面，即控制台，如果您已注册腾讯云账户，您可以直接登录 [ CDH 控制台](https://console.cloud.tencent.com/cvm/cdh)，对您的 CVM 进行操作。
-腾讯云 CDH 也提供了 API 接口方便您管理专用宿主机 CDH，有关 CDH API 操作的更多信息，请参阅 [API 文档](https://intl.cloud.tencent.com/zh/document/api/213/16473)。
+腾讯云 CDH 也提供了 API 接口方便您管理专用宿主机 CDH，有关 CDH API 操作的更多信息，请参阅 [API 文档](https://intl.cloud.tencent.com/document/product/213/33280)。
 您可以使用 SDK（支持 PHP/Python/Java/.NET/Node.js）编程或使用腾讯云命令行工具调用 CVM API，具体请参考：
 
 - [使用命令行工具 >>](https://intl.cloud.tencent.com/document/product/1013/33463)
