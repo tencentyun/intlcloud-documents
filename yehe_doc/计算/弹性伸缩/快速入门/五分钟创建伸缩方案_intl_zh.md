@@ -1,7 +1,7 @@
 创建完整的弹性伸缩方案，您需要通过以下3步来完成：
 ![](https://main.qcloudimg.com/raw/bb6c41ddc7c79cb3c76580f9ae42a008.png)
 
->? 本文以通过弹性伸缩控制台操作为例，如果您更倾向于使用 API 方式，请参见 [API 使用示例](https://intl.cloud.tencent.com/zh/document/product/377/4232)。
+>? 本文以通过弹性伸缩控制台操作为例，如果您更倾向于使用 API 方式，请参见 [API 使用示例](https://intl.cloud.tencent.com/document/product/377/30983)。
 
 ## 步骤1：创建启动配置
 启动配置定义了用于弹性伸缩的云服务器 CVM 实例的配置信息，包括 CVM 的镜像、存储、网络、安全组、登录方式和其他配置信息。
