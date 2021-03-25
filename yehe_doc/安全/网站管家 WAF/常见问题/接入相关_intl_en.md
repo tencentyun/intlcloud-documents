@@ -1,53 +1,57 @@
-### Can non-Tencent Cloud servers use Web Application Firewall (WAF)?
+### Is WAF available to servers outside Tencent Cloud?
 
  WAF can be connected with servers in data centers outside Tencent Cloud. WAF protects servers in any public networks, including but not limited to Tencent Cloud, and clouds and IDCs from other vendors. 
->Domain names connected in Mainland China must be ICP licensed as required by MIIT.
+>! Domain names connected in the Chinese mainland must be ICP filed as required by the Ministry of Industry and Information Technology of China.
 
 ### Does WAF support HTTPS protection?
 
-WAF fully supports HTTPS services. You just need to upload the SSL certificate and private key as instructed, or select the Tencent Cloud hosting certificate to make WAF protect HTTPS traffic.
+WAF fully supports HTTPS services. You just need to upload the SSL certificate and private key as instructed or select the Tencent Cloud-hosted certificate to use WAF for HTTPS traffic protection.
 
 ### Does the WAF QPS limit apply to the entire instance, or to a single domain name?
-The QPS limit in WAF is for the entire instance. For example, if three domain names are under protection of the WAF, the total QPS of the three domains names cannot exceed the upper limit. If the QPS limit of the purchased instance is exceeded, speed limit is triggered, which will result in packet loss.
+The QPS limit in WAF is for the entire instance. For example, if three domain names are protected, the total QPS of the three domain names cannot exceed the limit. If the QPS limit of the purchased instance is exceeded, speed will be limited and packets will be lost.
 
-### Can the real server IP added to WAF be a private IP in Tencent Cloud CVM?
-When adding a domain name to WAF, you must enter a public IP or domain name as real server address, including CVM public IP, CLB public IP, or Egress IP from other local IDCs, and cannot enter a CVM private IP.
+### Can the real server IP added to WAF be the private IP of a Tencent Cloud CVM instance?
+When adding a domain name to WAF, the real server address must be a domain name or a public IP, such as CVM public IP, CLB public IP, or Egress IP of other local IDCs, while a CVM private IP is not supported.
 
-### Can WAF use Anti-DDoS Pro directly?
-Yes, you can empower WAF with high DDoS protection capability simply by selecting IPs specified in a WAF instance in the Anti-DDoS Pro console configuration page. For more information, please see [Anti-DDoS Pro access practice](https://intl.cloud.tencent.com/document/product/1029/31768).
+### Can Anti-DDoS Pro instances be used for WAF?
+Yes, you can empower WAF with high DDoS protection capability simply by selecting IPs specified in a WAF instance on the configuration page in the Anti-DDoS Pro console. For more information, please see [Combination of Anti-DDoS Pro and Web Application Firewall](https://intl.cloud.tencent.com/document/product/1029/31768).
 
-### How does WAF connect with CDN or Anti-DDoS Pro?
-- WAF can be associated directly with Anti-DDoS Pro as long as the CDN origin server points to the IP specified in the WAF instance. The best deployment architecture is: client > CDN > WAF + Anti-DDoS Pro > CLB > real server.
-- If you need the CDN and Anti-DDoS capabilities, simply set the CNAME provided after the connection to WAF to CDN origin server, and associate Anti-DDoS Pro with the WAF instance. The user traffic, after going through CDN, is forwarded to WAF, which has the capability of cleaning high-traffic DDOS attacks, and finally reaches the real server for full protection.
+### How to use WAF together with CDN or Anti-DDoS Pro services?
+- You can use WAF with Anti-DDoS Pro directly, or use it with CDN by setting the CDN origin server IP as the IP of a WAF instance. Recommended deployment architecture: Client -> CDN -> WAF + Anti-DDoS Pro -> CLB -> Real server.
+- If you need the CDN and Anti-DDoS capabilities, simply set the CNAME provided after the connection to WAF as the CDN origin server, and associate Anti-DDoS Pro with the WAF instance. In this way, the user traffic, after going through CDN, is forwarded to WAF, which has the capability of cleansing high-traffic DDoS attacks, and finally reaches the real server for full protection.
 
-### How many intermediate IPs can I set for a WAF-protected domain name?
-You can set up to 20 ones for a WAF-protected domain name.
+### How many forwarding IPs can be set for one protected domain name in WAF?
+Up to 20 forwarding IPs can be set for one protected domain name in WAF.
 
-### How does WAF handle load when configuring multiple real servers?
-In case of multiple intermediate IPs, WAF will load balance access requests with Round Robin algorithm.
+### How does the traffic balancing work when multiple real servers are configured in WAF?
+If multiple forwarding IPs are configured, WAF achieves load balancing for access requests by polling.
 
 ### Does WAF support health check?
-In WAF, health check is enabled by default. WAF will detect if any real server IP is inaccessible. If a real server IP does not respond, WAF will stop forwarding requests to this IP until it goes back to normal.
+Health check is enabled for WAF by default. WAF checks the connection status of all real server IPs. For the real server IP that does not respond, WAF will not forward requests to this IP until its connection status becomes normal.
 
 ### Does WAF support session persistence?
-Session persistence is enabled in WAF by default.
+Session persistence is supported and enabled by default in WAF.
 
-### How long does it roughly take for a configuration change to take effect in the WAF console?
+### How long does it take for configuration changes to take effect in the WAF console?
 
 In general, a configuration change takes effect within 10 seconds.
 
-Will WAF automatically add an intermediate IP range to a security group?
+### Does WAF automatically add a forwarding IP range to a security group?
 
-No, WAF won’t automatically add an intermediate IP range to a security group. To add intermediate IPs to a security group, see [Getting Started with WAF](https://intl.cloud.tencent.com/document/product/627/18635).
+WAF does not automatically add a forwarding IP range to a security group. To do so, please see [Getting Started](https://intl.cloud.tencent.com/document/product/627/18635).
 
 ### If the uploaded files are blocked, will they still be blocked with HTTPS or SFTP?
 
-They won’t be blocked if WAF is disabled. However, if you enable block mode in WAF, it blocks malicious files uploaded with HTTP or HTTPS, but does not block any files uploaded with SFTP, a non-HTTP or -HTTPS protocol beyond protection of WAF.
+If WAF is disabled, the file will not be blocked. If WAF is enabled and the blocking mode is set, WAF will block malicious files uploaded over HTTP or HTTPS, but will not block files uploaded over SFTP. SFTP is a non-HTTP or non-HTTPS protocol beyond the protection of WAF.
 
-### Do SaaS WAF and CLB WAF support SSL mutual authentication?
-CLB WAF supports SSL mutual authentication, while SaaS WAF does not.
+### Is the SSL mutual authentication supported by both the SaaS WAF and CLB WAF?
+It is supported by CLB WAF but not by SaaS WAF.
 
-### Which cipher suites are supported by SaaS WAF and CLB WAF?
-- SaaS WAF does not support SSL cipher suite settings.
-- CLB WAF supports the following cipher suite.
+### What cipher suite does the SaaS WAF or CLB WAF support?
+- SaaS WAF does not support setting SSL cipher suites.
+- CLB WAF supports:
 ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-CHACHA20-POLY1305:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128:AES256:AES:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK
+- WAF supports the following TLS versions:
+	- TLSv1, TLSv1.1, and TLSv1.2.
+	- Cipher suite: EECDH+CHACHA20:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5.
+	>?Customization for TLS protocol and cipher suite is available in the Dedicated edition.
