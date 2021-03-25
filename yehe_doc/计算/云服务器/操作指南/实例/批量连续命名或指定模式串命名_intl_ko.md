@@ -20,14 +20,14 @@
 #### 구매 페이지 작업
 
 1. [인스턴스 생성](http://intl.cloud.tencent.com/document/product/213/4855)을 참조하여 인스턴스 3대 구매하고 "2.호스트 설정"에서 **"접두사+순번"**의 이름 짓기 규칙으로 인스턴스 이름을 작성합니다. 즉 인스턴스 이름을 `CVM`으로 작성합니다. 아래 그림 참조
-![](https://main.qcloudimg.com/raw/820a52077080be5da4c1fb4715452e6b.png)
+![](https://main.qcloudimg.com/raw/9815074c0fde0f3dbc7f0b9f4504d7e3.png)
 2. 페이지 제시어에 따라 단계별로 작업하고 결제를 완료합니다.
 4. [CVM 콘솔](https://console.cloud.tencent.com/cvm/index)로 돌아가 신규 생성 인스턴스를 조회하면 대량 구매한 인스턴스는 접두사가 동일하고 순번이 점차 증가한다는 것을 바로 발견할 수 있습니다. 아래 그림 참조
-![](https://main.qcloudimg.com/raw/27de624cd251910d47bea8e7732b284b.png)
+![](https://main.qcloudimg.com/raw/34057be61529702cc287db4a971865d3.png)
 
 #### API 작업
 
-클라우드 API [RunInstances](https://intl.cloud.tencent.com/document/api/213/15730)에서 InstanceName 필드를 `CVM`으로 지정합니다.
+클라우드 API [RunInstances](https://intl.cloud.tencent.com/document/product/213/33237)에서 InstanceName 필드를 `CVM`으로 지정합니다.
 
 ### 패턴 스트링 지정
 
@@ -43,14 +43,14 @@
 ##### 구매 페이지 작업
 
 1. [인스턴스 생성](http://intl.cloud.tencent.com/document/product/213/4855)을 참조하여 인스턴스를 구매하고 “2.호스트 설정”에서 **“접두사+지정 패턴 스트링{R:x}”**의 이름 짓기 규칙으로 인스턴스 이름을 작성합니다. 즉 인스턴스 이름을 `CVM{R:3}`으로 작성합니다. 아래 그림 참조
-![](https://main.qcloudimg.com/raw/4e09732d612222f619cf7a1e8da1ee06.png)
+![](https://main.qcloudimg.com/raw/1b06d1bdf95e10afdd7dfde39e3a7e11.png)
 2. 페이지 제시어에 따라 단계별로 작업하고 결제를 완료합니다.
 3. [CVM 콘솔](https://console.cloud.tencent.com/cvm/index)로 돌아가 신규 생성 인스턴스를 조회하면 대량 구매한 인스턴스는 접두사가 동일하고 순번이 3부터 시작하여 점차 증가한다는 것을 바로 발견할 수 있습니다. 아래 그림 참조
-![](https://main.qcloudimg.com/raw/78dc40cf4baa707573ad95a77bed4e1d.png)
+![](https://main.qcloudimg.com/raw/69d59d2523a9fc27a5b58d61070cfe21.png)
 
 ##### API 작업
 
-클라우드 API [RunInstances](https://intl.cloud.tencent.com/document/api/213/15730)에서 InstanceName 필드를 `CVM{R:3}`로 지정합니다.
+클라우드 API [RunInstances](https://intl.cloud.tencent.com/document/product/213/33237)에서 InstanceName 필드를 `CVM{R:3}`로 지정합니다.
 
 <span id="SpecifyMultipleStrings"></span>
 #### 여러 개 패턴 스트링 지정
@@ -60,12 +60,12 @@
 ##### 구매 페이지 작업
 
 1. [인스턴스 생성](http://intl.cloud.tencent.com/document/product/213/4855)을 참조하여 인스턴스 3대 구매하고 “2.호스트 설정”에서 **“접두사+지정 패턴 스트링{R:x}-접두사+지정 패턴 스트링{R:x}-접두사”**의 이름 짓기 규칙으로 인스턴스 이름을 작성합니다. 즉 인스턴스 이름을 `cvm{R:13}-Big{R:2}-test`로 작성합니다. 아래 그림 참조
-![](https://main.qcloudimg.com/raw/1042e86262bc7ce3939f1842a8025c23.png)
+![](https://main.qcloudimg.com/raw/6704d8309016c2406c51d3a3b99b6883.png)
 2. 페이지 제시어에 따라 단계별로 작업하고 결제를 완료합니다.
 3. [CVM 콘솔](https://console.cloud.tencent.com/cvm/index)로 돌아가 신규 생성 인스턴스를 조회하면 대량 구매한 인스턴스는 각 접두사가 지정한 순번에 따라 점차 증가한다는 것을 바로 발견할 수 있습니다. 아래 그림 참조
-![](https://main.qcloudimg.com/raw/a3c5e58daf07381ffde5abc019edad33.png)
+![](https://main.qcloudimg.com/raw/2d6980c90ab552c911bdf16197c685f9.png)
 
 ##### API 작업
 
-클라우드 API  [RunInstances](https://intl.cloud.tencent.com/document/api/213/15730)에서 InstanceName 필드를 ` cvm{R:13}-Big{R:2}-test`로 지정합니다.
+클라우드 API  [RunInstances](https://intl.cloud.tencent.com/document/product/213/33237)에서 InstanceName 필드를 ` cvm{R:13}-Big{R:2}-test`로 지정합니다.
 
