@@ -52,15 +52,18 @@ sudo pip install tccli
 tccli --version
 ```
 If the following result is returned, it indicates that TCCLI has been successfully installed.
+
 ```bash
 [root@VM_180_248_centos ~]# tccli --version
 3.0.250.1
 ```
+
 5. Run the following command to enable the autocomplete feature that also corrects uppercase/lowercase misuse.
 ```bash
 complete -C 'tccli_completer' tccli
 ```
 The following code snippets display the autocomplete process:
+
 ```bash
 [root@VM_33_50_centos ~]# tccli c
 cam          cbs          cdn          chdfs        ckafka       cloudhsm     cms          cr           cynosdb 
@@ -138,8 +141,8 @@ Use the `tccli configure [list, get or set] help` command such as `tccli configu
 ```
 
 ## Using TCCLI
-
-### [Basic features](id:primaryfunction)
+<span id ="primaryfunction"></span>
+### Basic features
 TCCLI supports custom configurations, provides help information, and outputs results in JSON, table or text.
 >! The non-simple parameters in the examples must be in standard JSON format. 
 >
@@ -316,6 +319,7 @@ AVAILABLE PARAMS
 }
 ```
  - **Table**:
+
 ```bash
 [root@VM_33_50_centos ~]# tccli cvm DescribeRegions --output table
 --
@@ -349,7 +353,9 @@ AVAILABLE PARAMS
 ||  na-toronto       |  North America (Toronto)     |  AVAILABLE    ||
 |+-------------------+----------------+---------------+|
 ```
+
  - **Text**:
+
 ```bash
 [root@VM_33_50_centos ~]# tccli cvm DescribeRegions --output text
 70bbd02f-****-****-****-afc5c34018ae    20
@@ -372,8 +378,8 @@ REGIONSET       na-ashburn      Eastern US (Virginia)      AVAILABLE
 REGIONSET       na-siliconvalley        Western US (Silicon Valley)   AVAILABLE
 REGIONSET       na-toronto      North America (Toronto)        AVAILABLE
 ```
-
-### [Advanced features](id:sophisticatedfunctions)
+<span id ="sophisticatedfunctions"></span>
+### Advanced features
 This document uses CVM as an example to describe how to use TCCLI advanced features, including multi-version access, specifying nearest access point, filtering the return results, outputting input parameters to JSON, and passing in a JSON file.
 
 #### Multi-version API access
