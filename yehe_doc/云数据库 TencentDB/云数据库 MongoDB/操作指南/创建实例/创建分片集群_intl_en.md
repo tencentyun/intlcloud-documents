@@ -6,7 +6,7 @@
 
 ## Sharded Cluster Console
 Click an instance name in the instance list to enter the details page where you can view the details of the sharded cluster instance, such as shard composition, shard node specification, and used capacity. You can also expand instance capacity in the console.
-
+![](https://main.qcloudimg.com/raw/ff86a7a08d4990d542b64749440e4896.png)
 ## Sharded Cluster Expansion
 You can only expand the capacity of a TencentDB for MongoDB sharded cluster by expanding all nodes. Capacity expansion based on node scale-out is not supported currently.
 Click **Adjust Configuration** on the instance list page, select the target capacity specification, and click **Submit**.
