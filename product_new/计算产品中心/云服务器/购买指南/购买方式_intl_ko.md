@@ -23,5 +23,5 @@ Tencent Cloud는 공식 웹 사이트 구매 및 API 구매의 두 가지 CVM �
 >- 구매와 관련된 더 자세한 설명과 주의사항은 [공식 웹 사이트 구매 설명](https://intl.cloud.tencent.com/document/product/213/6998)을 참조하십시오.
 
 ## API 구매
-API를 통해 CVM를 구매하려는 사용자는 API 문서 [인스턴스 생성](https://intl.cloud.tencent.com/document/api/213/15730)을 참조하십시오.
+API를 통해 CVM를 구매하려는 사용자는 API 문서 [인스턴스 생성](https://intl.cloud.tencent.com/document/product/213/33237)을 참조하십시오.
 
