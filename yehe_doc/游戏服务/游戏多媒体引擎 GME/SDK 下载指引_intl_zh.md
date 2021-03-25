@@ -7,7 +7,7 @@
 ## 下载及使用
 
 下载 SDK 及 Demo 后，如果使用上有问题，您可参见 [Demo使用问题](https://intl.cloud.tencent.com/document/product/607/39521)，或者 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系腾讯云工作人员。
->?下载的 Demo 代码中，需要替换您申请的 SDKAppid 和 Key 才可编译执行，例如 Unity Demo，需要修改 **UserConfig.cs** 代码文件。申请服务详情请参见 [语音服务开通指引](https://intl.cloud.tencent.com/document/product/607/10782)。
+>?下载的 Demo 代码中，需要替换您申请的 SDKAppid 和 Key 才可编译执行，例如 Unity Demo，需要修改 **UserConfig.cs** 代码文件。申请服务详情请参见 [语音服务开通指引](https://intl.cloud.tencent.com/document/product/607/39696)。
 
 
 ## 版本更新
