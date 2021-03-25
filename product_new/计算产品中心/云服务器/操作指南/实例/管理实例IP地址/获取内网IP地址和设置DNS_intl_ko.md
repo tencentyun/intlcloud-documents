@@ -7,7 +7,7 @@
 ![](https://main.qcloudimg.com/raw/f4849355a4890861e2d07b35de1099a4.png)
 
 ### API를 사용하여 획득하기
-[DescribeInstances 인터페이스](https://cloud.tencent.com/document/product/213/15728)를 참조하십시오.
+[DescribeInstances 인터페이스](https://intl.cloud.tencent.com/document/product/213/33258)를 참조하십시오.
 
 ### 인스턴스 메타데이터를 사용하여 획득하기
 
