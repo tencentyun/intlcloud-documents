@@ -59,7 +59,7 @@
 
 #### 其他品牌 OV 与 EV 型 SSL 证书
 1. 购买证书完成后，请登录 [证书管理控制台](https://console.cloud.tencent.com/ssl) ，选择并进入【待提交】管理页面，提交资料并上传确认函进行证书申请。
-2. 提交申请后，需人工审核，人工审核通过后将签发证书。详情请查看 [其他品牌 OV 与 EV 型证书材料提交流程](https://intl.cloud.tencent.com/document/product/1007/30160)。
+2. 提交申请后，需人工审核，人工审核通过后将签发证书。
 
 #### 域名型（DV）SSL 证书
 购买证书完成后，请登录 [证书管理控制台](https://console.cloud.tencent.com/ssl) ，选择并进入【待提交】管理页面，提交资料并完成域名所有权认证后，CA 机构将签发证书。
