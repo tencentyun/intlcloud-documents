@@ -9,5 +9,5 @@
    ![改名操作框](https://main.qcloudimg.com/raw/2f83d40760fefaff3212fd1b791e93bb.png)
 
 ## 使用 API 修改 CDH 实例名称
-使用 ModifyHostsAttribute 接口可以修改 CDH 实例的名称，具体用法详见 [修改 CDH 实例的属性](https://cloud.tencent.com/document/api/213/16475)。
+使用 ModifyHostsAttribute 接口可以修改 CDH 实例的名称，具体用法详见 [修改 CDH 实例的属性](https://intl.cloud.tencent.com/document/product/213/33278)。
 
