@@ -7,5 +7,5 @@
 ![](https://main.qcloudimg.com/raw/ec30d15f442736db40f900ea859f5b8a.png)
 
 ### 使用 API 搜索 CDH 实例
-使用 DescribeHosts 接口可以对专用宿主机实例进行过滤，具体用法详见[查看 CDH 实例列表 API](https://intl.cloud.tencent.com/document/api/213/16474)。
+使用 DescribeHosts 接口可以对专用宿主机实例进行过滤，具体用法详见[查看 CDH 实例列表 API](https://intl.cloud.tencent.com/document/product/213/33279)。
 
