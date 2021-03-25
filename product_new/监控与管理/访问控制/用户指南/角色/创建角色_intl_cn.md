@@ -114,7 +114,7 @@
 ```
 
 2.	为即将创建的角色准备权限策略。关于权限策略请参阅 [策略](https://intl.cloud.tencent.com/document/product/598/10601)。
-3.	调用 [cam:CreateRole](https://intl.cloud.tencent.com/document/api/598/13886) 接口创建身份提供商角色。
+3.	调用 [cam:CreateRole](https://intl.cloud.tencent.com/document/product/598/33561) 接口创建身份提供商角色。
 
 
 
