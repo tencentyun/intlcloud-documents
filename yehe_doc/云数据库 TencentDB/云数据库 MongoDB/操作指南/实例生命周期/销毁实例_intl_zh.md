@@ -27,6 +27,7 @@
 
 ### 按量计费实例
 1. 登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，在实例列表的“操作”列中，选择【更多】>【销毁】。
+![](https://main.qcloudimg.com/raw/b0d642108a455149b47158c059521ea2.png)
 2. 在弹出的对话框，确认无误后，单击【确定】。
 >!单击【确定】后实例会直接销毁，无保留期，请谨慎操作。
 >
