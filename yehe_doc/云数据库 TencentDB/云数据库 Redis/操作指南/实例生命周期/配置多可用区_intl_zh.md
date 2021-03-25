@@ -20,5 +20,8 @@
 
 ### 查看多可用区
 - 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表的“可用区”列，带有“M”标志的实例即为多可用区实例，且可查看多可用区信息。
+![](https://main.qcloudimg.com/raw/5c553bf4c0817c0dbddb662405078fe7.png)
 - 在 [实例列表](https://console.cloud.tencent.com/redis)，单击实例名进入管理页面，在详情页的“可用区”处带有“M”标志的实例即为多可用区实例，且可查看多可用区信息。
+![](https://main.qcloudimg.com/raw/d579e1ab309c754ef0ea56904ad5f194.png)
 - 在 [实例列表](https://console.cloud.tencent.com/redis)，单击实例名进入管理页面，在节点管理页，可查看各节点的详细信息，及调整节点配置。
+![](https://main.qcloudimg.com/raw/aa0adb39b9bfb543051ca6bdfda78664.png)
