@@ -25,11 +25,11 @@ pod 'TPNS-iOS', '~> 版本'  // 如果不指定版本则默认为本地 pod TPNS
 >?
 > - 首次下载需要登录 [仓库地址](https://git.code.tencent.com/users/sign_in)，并在【账户】菜单栏中 [设置用户名和密码](https://code.tencent.com/help/productionDoc/profile#password)。设置成功后，在 Terminal 输入对应的用户名和密码，后续即可正常使用，当前 PC 不需要再次登录。
 > - 由于仓库地址变更，如果 pod 提示 `Unable to find a specification for 'TPNS-iOS'`，那么需要执行以下命令，并更新仓库确认版本：
->``` 
-pod repo update
-pod search TPNS-iOS
-pod install //安装 SDK 
->```
+>	``` 
+	pod repo update
+	pod search TPNS-iOS
+	pod install //安装 SDK 
+		```
 
 #### 方式二：手动导入
 1. 进入腾讯移动推送 [控制台](https://console.cloud.tencent.com/tpns)，单击左侧菜单栏【[SDK 下载](https://console.cloud.tencent.com/tpns/sdkdownload)】，进入下载页面，选择需要下载的 SDK 版本，单击操作栏中【下载】即可。
@@ -70,18 +70,26 @@ pod install //安装 SDK
 /// @note TPNS SDK1.2.7.1+
 [[XGPush defaultManager] configureClusterDomainName:@"tpns.sh.tencent.com"];
 ```
-如需接入新加坡服务接入点，则将域名设置为`tpns.sgp.tencent.com`。
+如需接入新加坡服务接入点，则将域名设置为 `tpns.sgp.tencent.com`。
 **示例**
 ``` object-c
 /// @note TPNS SDK1.2.7.1+
 [[XGPush defaultManager] configureClusterDomainName:@"tpns.sgp.tencent.com"];
 ```
-如需接入中国香港服务接入点，则将域名设置为`tpns.hk.tencent.com`。
+如需接入中国香港服务接入点，则将域名设置为 `tpns.hk.tencent.com`。
 **示例**
 ``` object-c
 /// @note TPNS SDK1.2.7.1+
 [[XGPush defaultManager] configureClusterDomainName:@"tpns.hk.tencent.com"];
 ```
+如需接入中国广州服务接入点，则将域名设置为 `tpns.tencent.com`。
+**示例**
+```
+/// @note TPNS SDK1.2.7.1+
+[[XGPush defaultManager] configureClusterDomainName:@"tpns.tencent.com"];
+```
+
+
 
 ### 接入样例
 调用启动腾讯移动推送的 API，并根据需要实现 `XGPushDelegate` 协议中的方法，开启推送服务。
@@ -128,9 +136,9 @@ SDK 提供了 Service Extension 接口，可供客户端调用，从而可以使
 >!如果未集成此接口，则无法统计 APNs 通道“抵达数”。
 
 
+未集成通知服务扩展插件：
 
-
-
+集成通知服务扩展插件后：
 
 
 ## 调试方法
@@ -177,9 +185,9 @@ TPNS 及 APNs 通道统一接收消息回调，当应用在前台收到通知消
 - (void)xgPushDidReceiveRemoteNotification:(nonnull id)notification withCompletionHandler:(nullable void (^)(NSUInteger))completionHandler;
 ```
 >?
->- 当应用在前台收到通知消息以及所有状态下收到静默消息时，会触发统一接收消息回调 xgPushDidReceiveRemoteNotification。
+- 当应用在前台收到通知消息以及所有状态下收到静默消息时，会触发统一接收消息回调 xgPushDidReceiveRemoteNotification。
 区分前台收到通知消息和静默消息示例代码如下：
->```
+```
 NSDictionary *tpnsInfo = notificationDic[@"xg"];
 NSNumber *msgType = tpnsInfo[@"msgtype"];
 if (msgType.integerValue == 1) {
@@ -189,10 +197,9 @@ if (msgType.integerValue == 1) {
     } else if (msgType.integerValue == 9) {
         /// 收到本地通知（TPNS本地通知）
     }
->```
+```
 
 统一点击消息回调，此回调方法为应用所有状态（前台、后台、关闭）下的通知消息点击回调。
-
 ```objective-c
 /// 统一点击回调
 /// @param response 如果 iOS 10+/macOS 10.14+ 则为 UNNotificationResponse，低于目标版本则为 NSDictionary
@@ -203,10 +210,10 @@ if (msgType.integerValue == 1) {
 >!
 >
 >- TPNS 统一消息回调 `xgPushDidReceiveRemoteNotification` 会处理消息接收，并自动后续调用 `application:didReceiveRemoteNotification:fetchCompletionHandler` 方法。然而，该方法也可能被其他 SDK 也进行 hook 调用。
->- 如果您只集成了 TPNS 推送平台，我们不推荐再去实现系统通知回调方法，请统一在 TPNS 通知回调中进行处理。
->- 如果您集成了多推送平台，并且需要在 `application:didReceiveRemoteNotification:fetchCompletionHandler` 方法处理其他推送平台的业务，请参照如下指引，避免业务重复：
->  - 您需要区分平台消息，在两个消息回调方法中分别拿到消息字典后通过“xg”字段来区分是否是 TPNS 平台的消息，如果是 TPNS 的消息则在 `xgPushDidReceiveRemoteNotification` 方法进行处理，非 TPNS 消息请统一在 `application:didReceiveRemoteNotification:fetchCompletionHandler` 方法处理
->  - `xgPushDidReceiveRemoteNotification` 和 `application:didReceiveRemoteNotification:fetchCompletionHandler` 如果都执行，总共只需要调用一次 `completionHandler`。如果其他 SDK 也调用 `completionHandler`，确保整体的 `completionHandler` 只调用一次。这样可以防止由于多次 `completionHandler` 而引起的 crash。
+- 如果您只集成了 TPNS 推送平台，我们不推荐再去实现系统通知回调方法，请统一在 TPNS 通知回调中进行处理。
+- 如果您集成了多推送平台，并且需要在 `application:didReceiveRemoteNotification:fetchCompletionHandler` 方法处理其他推送平台的业务，请参照如下指引，避免业务重复：
+ - 您需要区分平台消息，在两个消息回调方法中分别拿到消息字典后通过“xg”字段来区分是否是 TPNS 平台的消息，如果是 TPNS 的消息则在 `xgPushDidReceiveRemoteNotification` 方法进行处理，非 TPNS 消息请统一在 `application:didReceiveRemoteNotification:fetchCompletionHandler` 方法处理
+ - `xgPushDidReceiveRemoteNotification` 和 `application:didReceiveRemoteNotification:fetchCompletionHandler` 如果都执行，总共只需要调用一次 `completionHandler`。如果其他 SDK 也调用 `completionHandler`，确保整体的 `completionHandler` 只调用一次。这样可以防止由于多次 `completionHandler` 而引起的 crash。
 
 
 
@@ -244,4 +251,20 @@ if (msgType.integerValue == 1) {
 //获取 TPNS 生成的 Token
 [[XGPushTokenManager defaultTokenManager] xgTokenString];
 ```
+### 隐私协议声明建议
+
+您可在申请 App 权限使用时，使用以下内容声明授权的用途：
+
+
+
+
+<pre>
+我们使用 <a href="https://cloud.tencent.com/product/tpns">腾讯云移动推送 TPNS</a> 用于实现产品信息的推送，在您授权我们“访问网络连接”和“访问网络状态”权限后，表示您同意 <a href="https://cloud.tencent.com/document/product/548/50955">腾讯 SDK 隐私协议</a>。您可以通过关闭终端设备中的通知选项来拒绝接受此 SDK 推送服务。
+</pre>
+
+
+
+其中上述声明授权的两个链接如下：
+- 腾讯云移动推送 TPNS ：`https://cloud.tencent.com/product/tpns`
+- 腾讯 SDK 隐私协议：`https://cloud.tencent.com/document/product/548/50955`
 

@@ -1,3 +1,4 @@
+
 ## 简介
 
 Android SDK 是移动推送 TPNS 服务为客户端实现消息推送而提供给开发者的接口，本文将提供 AndroidStudio Gradle 自动集成和 Android Studio 手动集成两种方式。
@@ -14,7 +15,6 @@ Android SDK 是移动推送 TPNS 服务为客户端实现消息推送而提供�
 
 1. 登录 [移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns)，在【产品管理】>【配置管理】页面获取应用的 AccessID、AccessKey。
 2. 在 [SDK 下载](https://console.cloud.tencent.com/tpns/sdkdownload) 页面，获取当前最新版本号。
-
 3. 在 app build.gradle 文件下，配置以下内容：
 
 ```
@@ -52,9 +52,9 @@ dependencies {
 ```
 
 >!
-> - 如果您的应用服务接入点为广州，SDK 默认实现该配置。
-> - 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置。
-   在 Androidanifest 文件 application 标签内添加以下元数据：
+ >- 如果您的应用服务接入点为广州，SDK 默认实现该配置。
+ >- 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置。
+   在 AndroidManifest 文件 application 标签内添加以下元数据：
 ```
 <application>
 	// 其他安卓组件
@@ -72,7 +72,7 @@ dependencies {
 
  - 如在添加以上 abiFilter 配置后， Android Studio 出现以下提示：
    NDK integration is deprecated in the current plugin. Consider trying the new experimental plugin，则在 Project 根目录的 gradle.properties 文件中添加  `android.useDeprecatedNdk=true`。
- - 如需监听消息请参考 XGPushBaseReceiver 接口或 demo 的 MessageReceiver 类。自行继承 XGPushBaseReceiver 并且在配置文件中配置如下内容（请勿在 receiver  里处理耗时操作）：
+ - 如需监听消息请参考 XGPushBaseReceiver 接口或 Demo（在 SDK 压缩包内，可前往 [SDK 下载](https://console.cloud.tencent.com/tpns/sdkdownload) 页面获取 ）的 MessageReceiver 类。自行继承 XGPushBaseReceiver 并且在配置文件中配置如下内容（请勿在 receiver  里处理耗时操作）：
 ```xml
 <receiver android:name="com.tencent.android.xg.cloud.demo.MessageReceiver">
     <intent-filter>
@@ -92,6 +92,9 @@ dependencies {
 
 ###  Android Studio 手动集成
 
+前往 [SDK 下载](https://console.cloud.tencent.com/tpns/sdkdownload) 页面获取最新版 SDK，并参考以下步骤将 SDK 导入到您的 Android 工程中。
+
+
 #### 工程配置
 
 将 SDK 导入到工程的步骤为：
@@ -99,7 +102,8 @@ dependencies {
 1. 创建或打开 Android 工程。
 2. 将移动推送 TPNS  SDK 目录下的 libs 目录所有 .jar 文件拷贝到工程的 libs（或 lib）目录下。
 3. .so 文件是移动推送 TPNS 必须的组件，支持 armeabi、armeabi-v7a、arm64-v8a、mips、mips64、x86、x86_64平台，请根据自己当前 .so 支持的平台添加
-4. 打开 Androidmanifest.xml，添加以下配置（建议参考下载包的 Demo 修改），其中 YOUR_ACCESS_ID 和YOUR_ACCESS_KEY 替换为 App 对应的 AccessId 和 AccessKey，请确保按照要求配置，否则可能导致服务不能正常使用。
+4. 打开 AndroidManifest.xml，添加以下配置（建议参考下载包 Demo 中的 Merged Manifest 修改），其中 “APP的AccessId ” 和 “APP的AccessKey” 替换为 App 对应的 AccessId 和 AccessKey，请确保按照要求配置，否则可能导致服务不能正常使用。
+
 
 #### 权限配置
 
@@ -141,8 +145,6 @@ dependencies {
 
 
 #### 组件和应用信息配置
-
-
 
 ```xml
 <application>
@@ -266,9 +268,9 @@ dependencies {
 ```
 
 >!
- - 如果您的应用服务接入点为广州，SDK 默认实现该配置。
- - 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置。
-   在 Androidanifest 文件 application 标签内添加以下元数据：
+ >- 如果您的应用服务接入点为广州，SDK 默认实现该配置。
+ >- 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置。
+   在 AndroidManifest 文件 application 标签内添加以下元数据：
 ```
 <application>
 	// 其他安卓组件
@@ -365,6 +367,9 @@ XG register push success with token : 6ed8af8d7b18049d9fed116a9db9c71ab44d5565
 
 ### 关闭联合保活
 
+
+>!为提升离线抵达率，TPNS SDK 默认开启联合保活能力，开发者可手动关闭。
+
 如果需要关闭 TPNS 的保活功能，若您使用 gradle 自动集成方式，请在自身应用的 AndroidManifest.xml 文件 “application” 标签下配置如下结点，其中 `xxx` 为任意自定义名称；如果使用手动集成方式，请修改如下节点属性：
 
 ```xml
@@ -387,4 +392,18 @@ XG register push success with token : 6ed8af8d7b18049d9fed116a9db9c71ab44d5565
 XGPushConfig.getToken(getApplicationContext());
 ```
 
+### 隐私协议声明建议
+
+您可在申请 App 权限使用时，使用以下内容声明授权的用途：
+
+
+<pre>
+我们使用 <a href="https://cloud.tencent.com/product/tpns">腾讯云移动推送 TPNS</a> 用于实现产品信息的推送，在您授权我们“访问网络连接”和“访问网络状态”权限后，表示您同意 <a href="https://cloud.tencent.com/document/product/548/50955">腾讯 SDK 隐私协议</a>。您可以通过关闭终端设备中的通知选项来拒绝接受此 SDK 推送服务。
+</pre>
+
+
+
+其中上述声明授权的两个链接如下：
+- 腾讯云移动推送 TPNS ：`https://cloud.tencent.com/product/tpns`
+- 腾讯 SDK 隐私协议：`https://cloud.tencent.com/document/product/548/50955`
 
