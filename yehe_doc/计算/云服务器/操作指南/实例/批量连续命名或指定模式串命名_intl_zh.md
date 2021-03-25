@@ -27,7 +27,7 @@
 
 #### API 操作
 
-在云 API [RunInstances](https://intl.cloud.tencent.com/document/api/213/15730) 中，将 InstanceName 字段指定为 `CVM`。
+在云 API [RunInstances](https://intl.cloud.tencent.com/document/product/213/33237) 中，将 InstanceName 字段指定为 `CVM`。
 
 ### 指定模式串
 
@@ -50,7 +50,7 @@
 
 ##### API 操作
 
-在云 API [RunInstances](https://intl.cloud.tencent.com/document/api/213/15730) 中，将 InstanceName 字段指定为 `CVM{R:3}`。
+在云 API [RunInstances](https://intl.cloud.tencent.com/document/product/213/33237) 中，将 InstanceName 字段指定为 `CVM{R:3}`。
 
 <span id="SpecifyMultipleStrings"></span>
 #### 指定多个模式串
@@ -67,5 +67,5 @@
 
 ##### API 操作
 
-在云 API  [RunInstances](https://intl.cloud.tencent.com/document/api/213/15730) 中，将 InstanceName 字段指定为 ` cvm{R:13}-Big{R:2}-test`。
+在云 API  [RunInstances](https://intl.cloud.tencent.com/document/product/213/33237) 中，将 InstanceName 字段指定为 ` cvm{R:13}-Big{R:2}-test`。
 
