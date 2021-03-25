@@ -51,4 +51,4 @@
 
 ## APIによって廃棄する
 
-[TerminateInstancesインターフェース](/doc/product/213/9395)をご参照ください。
+[TerminateInstancesインターフェース](https://intl.cloud.tencent.com/document/product/213/33234)をご参照ください。
