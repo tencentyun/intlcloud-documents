@@ -20,5 +20,5 @@ Restart is usually used for the maintenance of GPU instances. Restarting a GPU i
  3. Restart multiple instances: Select all the instances to be restarted and click **Restart** at the top of the list.  Reasons are given for instances that cannot be restarted.
 
 ## Restart instance using API
-For more information, see [RebootInstances API](/doc/api/213/9396).
+For more information, see [RebootInstances API](https://intl.cloud.tencent.com/document/product/213/33243).
 
