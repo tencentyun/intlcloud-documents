@@ -23,3 +23,4 @@ After an instance is returned, once its status changes to "Isolated", no fees re
 2. In the pop-up dialog box, confirm that everything is correct and click **OK**.
 >!After you click **OK**, the instance will be directly terminated without a retention period; therefore, please do so with caution.
 >
+![](https://main.qcloudimg.com/raw/b0d642108a455149b47158c059521ea2.png)
