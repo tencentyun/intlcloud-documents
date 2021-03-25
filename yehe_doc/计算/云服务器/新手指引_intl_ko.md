@@ -43,7 +43,7 @@ CVM 콘솔 총람 페이지:
 |인스턴스 로그인 비밀번호 수정 또는 재설정 | [인스턴스 비밀번호 재설정](https://intl.cloud.tencent.com/document/product/213/16566) |
 | CVM 인스턴스 폐기, 릴리스, 반환 | [인스턴스 폐기/반환](https://intl.cloud.tencent.com/document/product/213/4930) |
 | 리전의 CVM 인스턴스 정보 | [인스턴스 내보내기](https://intl.cloud.tencent.com/document/product/213/16563) |
-| CVM 인스턴스 및 관련 리소스 검색 | [리전 간 검색](https://intl.cloud.tencent.com/document/product/213/8668) |
+| CVM 인스턴스 및 관련 리소스 검색 | 리전 간 검색|
 | 이후 이미지를 사용해 기존 인스턴스와 동일한 사용자 정의 페이지를 가진 신규 인스턴스를 더 많이 생성하기 위한 신규 사용자 정의 이미지 생성 | [사용자 정의 이미지 생성](https://intl.cloud.tencent.com/document/product/213/4942) |
 | 다른 사용자에게서 공유 이미지 획득 및 해당 이미지에서 필요한 구성 요소를 획득하고 사용자 정의 컨텐츠 추가하기 | [사용자 정의 이미지 공유](https://intl.cloud.tencent.com/document/product/213/4944) |
 | 로컬 또는 기타 플랫폼 서버 시스템 디스크 상의 이미지 파일을 CVM 사용자 정의 이미지로 가져오기 | [이미지 가져오기 개요](https://intl.cloud.tencent.com/document/product/213/4945) |
