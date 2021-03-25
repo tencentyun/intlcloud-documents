@@ -10,6 +10,6 @@ TencentDB for SQL Server supports creating accounts and authorizing accounts to 
  - Supported Character Set: select the character set to be used by the database. Currently, most native character sets are supported.
  - Authorize Account: you can authorize existing accounts to access the database. If you haven't created an account yet, please see [Creating Account](https://intl.cloud.tencent.com/document/product/238/7521).
  - Remarks: it can contain up to 256 characters.
-
+![](https://main.qcloudimg.com/raw/e35649cddc46342128bb8c396d120dd1.png)
 
 
