@@ -38,7 +38,7 @@ The following concepts are usually involved in CDH:
 
 CDH has web-based UIs (i.e. console). If you have already signed up for a Tencent Cloud account, you can log in to the [CDH Console](https://console.cloud.tencent.com/cvm/cdh) to perform various operations on the CVM instances.
 
-CDH also provides various APIs for host management. For more information about CDH API operations, see the [API Documentation](https://intl.cloud.tencent.com/document/api/213/16473)
+CDH also provides various APIs for host management. For more information about CDH API operations, see the [API Documentation](https://intl.cloud.tencent.com/document/product/213/33280)
 
 You can use the SDK (with PHP, Python, Java, .NET and Node.js supported) for programming or use the Tencent Cloud Command Line Interface (CLI) to call the CVM API. For details, see:
 
