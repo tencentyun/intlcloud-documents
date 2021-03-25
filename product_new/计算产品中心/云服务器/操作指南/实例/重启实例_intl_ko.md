@@ -26,4 +26,4 @@
 
 <span id="apiRestart"></span>
 ### API 를 사용하여 인스턴스 재시작
-[RebootInstances 인터페이스](https://cloud.tencent.com/document/api/213/15742)를 참조하십시오.
+[RebootInstances 인터페이스](https://intl.cloud.tencent.com/document/product/213/33243)를 참조하십시오.
