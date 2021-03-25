@@ -118,9 +118,9 @@ TKE currently provides alarm metrics of the following dimensions. All metrics ar
 | Re-startup of Pods on This Node     | Times  | Total number of restarts of all pods on the node  |
 | Node Ready     | -  | Node status. By default, alarms when status value is `False`.   |
 
-For more information on alarm metrics for cluster nodes, please see [Get Monitoring Statistics](http://intl.cloud.tencent.com/document/product/213/5178) and [Create Alarm](http://intl.cloud.tencent.com/document/product/248/6215).
+For more information on alarm metrics for cluster nodes, please see [Get Monitoring Statistics](http://intl.cloud.tencent.com/document/product/213/5178) and [Create Alarm](https://intl.cloud.tencent.com/document/product/248/38908).
 
-For more information on alarm metrics for cluster node data disks, please see [Monitoring Cloud Disks](http://intl.cloud.tencent.com/document/product/362/6742) and [Create Alarm](http://intl.cloud.tencent.com/document/product/248/6215).
+For more information on alarm metrics for cluster node data disks, please see [Monitoring Cloud Disks](http://intl.cloud.tencent.com/document/product/362/6742) and [Create Alarm](https://intl.cloud.tencent.com/document/product/248/38908).
 
 
 ### Alarm Metrics for Pods
