@@ -38,7 +38,7 @@
 | 修改或者重置实例登录密码 | [重置实例密码](https://intl.cloud.tencent.com/document/product/213/16566) |
 | 销毁、释放或者退还某个云服务器实例 | [销毁/退还实例](https://intl.cloud.tencent.com/document/product/213/4930) |
 | 某地域的云服务器实例信息 | [导出实例](https://intl.cloud.tencent.com/document/product/213/16563) |
-| 搜索云服务器实例及相关资源 | [跨地域搜索](https://intl.cloud.tencent.com/document/product/213/8668) |
+| 搜索云服务器实例及相关资源 | 跨地域搜索 |
 | 创建新的自定义镜像，便于后续使用该镜像创建更多与原实例具有相同自定义项的新实例 | [创建自定义镜像](https://intl.cloud.tencent.com/document/product/213/4942) |
 | 从其他用户那里获得共享镜像，并从中获得需要的组件及添加自定义内容 | [共享自定义镜像](https://intl.cloud.tencent.com/document/product/213/4944) |
 | 将本地或其他平台的服务器系统盘镜像文件导入至云服务器自定义镜像中 | [导入镜像概述](https://intl.cloud.tencent.com/document/product/213/4945) |
@@ -56,7 +56,7 @@
 您可在云服务器上搭建一个属于自己的网站或论坛，详情请参见 [如何搭建网站](https://intl.cloud.tencent.com/document/product/213/34815)。
 
 ### 开发者工具
-腾讯云 API 可帮助您方便快捷的使用产品，只需少量代码即可快速管理云产品。云 API 还提供了 API Explorer、腾讯云命令行工具 TCCLI、SDK、云 API 平台及 API Inspector 工具。您可参考 [云 API 快速入门](https://intl.cloud.tencent.com/document/product/1080/38759) 文档了解 API 相关信息并开始使用。
+腾讯云 API 可帮助您方便快捷的使用产品，只需少量代码即可快速管理云产品。云 API 还提供了 API Explorer、腾讯云命令行工具 TCCLI、SDK 及 API Inspector 工具。
 
 
 ## 6. 反馈与建议
