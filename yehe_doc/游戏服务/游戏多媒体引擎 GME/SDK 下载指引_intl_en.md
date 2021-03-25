@@ -7,7 +7,7 @@ To make it easier for developers to integrate GME, we recommend developers to ch
 ## Download and Use
 
 For any problems encountered when using the downloaded SDK or Demo, please see [Demo Usage](https://intl.cloud.tencent.com/document/product/607/39521), or [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
->?To compile and run the downloaded demo, you need to replace relevant strings with the SDK AppID and key you have applied for. For example, the code file **UserConfig.cs** needs modification for using the Unity demo. For more information on the service application, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/10782).
+>?To compile and run the downloaded demo, you need to replace relevant strings with the SDK AppID and key you have applied for. For example, the code file **UserConfig.cs** needs modification for using the Unity demo. For more information on the service application, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/39696).
 
 
 ## Version Updates
