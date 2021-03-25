@@ -14,15 +14,15 @@ This model specifies the fixed `event` data and `context` data as input paramete
 
 Function input parameters refer to the content that is passed to the function when the function is triggered. Usually, there are two input parameters: `event` and `context`. However, the number of input parameters may vary by programming language and environment. For more information, please see [Python](https://intl.cloud.tencent.com/document/product/583/11061).
 
-<dx-fold-block title="event input parameter">
+#### event input parameter
 #### Usage
  The parameter type is `dict`. The `event` input parameter is passed to the execution method, through which the code will interact with the event that triggers the function. For example, if a file upload operation triggers the function, the code can get all the information of the file from the `event` parameter, including the filename, download path, file type, and size.
 #### Instructions
 The value of `event` varies by function:
 - If the function is triggered by a Tencent Cloud service, the service will pass the event to SCF as the `event` parameter in a platform-predefined unchangeable format. You can write code based on this format and get information from the `event` parameter. For example, when COS triggers a function, the specific information of the bucket and the file will be passed to the `event` parameter in <a href="https://intl.cloud.tencent.com/document/product/583/9707">JSON</a> format.
 - If the function is invoked by another application, you can freely define a parameter of <code>dict</code> type between the invoker and the function code, where the invoker passes in the data in the format agreed upon, and the function code gets the data in the format.<br>For example, you can define a data structure <code>{"key":"XXX"}</code> of <code>dict</code> type, and when the invoker passes in the data <code>{"key":"abctest"}</code>, the function code can get the value <code>abctest</code> through <code>event[key]</code>.
-</dx-fold-block>
-<dx-fold-block title="context input parameter">
+
+#### context input parameter
 #### Usage
 The `context` input parameter is passed to the execution method, through which the code can get to know the runtime environment and related content of the current request.
 #### Instructions
@@ -42,11 +42,11 @@ Please see the `context` input parameter below for specific information:
 		tencentcloud_appid: '1253970226',
 		tencentcloud_uin: '3473058547' 
 }
-```This contains the execution timeout of the current invocation, the memory limit, and the current request ID.
-<dx-alert infotype="notice" title="Note">
-The content of the context structure may be increased as the SCF platform is iterated.
-</dx-alert>
-</dx-fold-block>
+```
+This contains the execution timeout of the current invocation, the memory limit, and the current request ID.
+
+>! The content of the context structure may be increased as the SCF platform is iterated.
+
 
 <br>
 After understanding the basic usage of `event` and `context` input parameters, you should pay attention to the following points when writing function code:
@@ -127,8 +127,8 @@ This document provides the following three ways to throw exceptions, and you can
 >?You can log in to the [SCF Console](https://console.cloud.tencent.com/scf/index) and follow the steps below to test exception handling:
 >1. Create a function and copy the following function code without adding any triggers.
 >2. Click **Test** in the console and select the "Hello World" test sample for testing.
-<dx-tabs>
-::: Throw exceptions explicitly
+
+#### Throw exceptions explicitly
 - **Sample**
 ```
 def always_failed_handler(event,context):
@@ -141,8 +141,8 @@ File "/var/user/index.py", line 2, in always_failed_handler
 raise Exception('I failed!')
 Exception: I failed!
 ```
-:::
-::: Inherit the `Exception` class
+
+#### Inherit the `Exception` class
 - **Sample**
 ```
 class UserNameAlreadyExistsException(Exception): pass
@@ -153,8 +153,8 @@ def create_user(event):
 ```
 - **Description**
 You can define how to handle errors in your code to ensure the robustness and scalability of your application.
-:::
-::: Use the `Try` statement to catch errors
+
+#### Use the `Try` statement to catch errors
 - **Sample**
 ```
 def create_user(event):
@@ -165,8 +165,7 @@ def create_user(event):
 ```
 - **Description**
 You can define how to handle errors in your code to ensure the robustness and scalability of your application.
-:::
-</dx-tabs>
+
 
 ### Returned error message
 If exception handling and error capture are not performed in your code logic, the SCF platform will capture errors as much as possible such as when your function suddenly crashes and exits during execution. The platform will return a general error message if it cannot capture an error that occurs.
@@ -205,8 +204,8 @@ It usually has the following data structures:
 The log statement provides the function with the necessary information in the execution process, which is necessary for developers to troubleshoot code issues. The SCF platform writes all the logs generated by the log statement in your code to the logging system. If you use the console to invoke the function, the console will display the same logs.
 
 You can generate logs through the `print` statement or the `Logger` function in the logging module as shown below:
-<dx-tabs>
-::: Use the `logging` statement
+
+#### Use the `logging` statement
 The following sample code uses the logging module to write information into the log:
 ```
 import logging
@@ -215,22 +214,22 @@ def my_logging_handler(event):
     logger.info('got event{}'.format(event))
     logger.error('something went wrong')
     return 'Hello World!'
-```You can go to the logs tab in the console or use the <a href="https://intl.cloud.tencent.com/document/product/583/18583">GetFunctionLogs</a> API to view the log information in the code.
-<dx-alert infotype="notice" title="Note">
-The log level identifies the log type, such as <code>INFO</code>, <code>ERROR</code>, and <code>DEBUG</code>.
-</dx-alert>
-:::
-::: Use the `print` statement
+```
+You can go to the logs tab in the console or use the <a href="https://intl.cloud.tencent.com/document/product/583/18583">GetFunctionLogs</a> API to view the log information in the code.
+
+>? The log level identifies the log type, such as <code>INFO</code>, <code>ERROR</code>, and <code>DEBUG</code>.
+
+#### Use the `print` statement
 Use the `print` statement in the code:
 ```
 def print_handler(event):
     print('this will show up in logging')
     return 'Hello World!'
-```<dx-alert infotype="notice" title="Note">
-When you invoke this function synchronously by using the **Test** button in the console, the console will display the `print` statement and `return` value.
-</dx-alert>
-:::
-</dx-tabs>
+```
+
+>! When you invoke this function synchronously by using the **Test** button in the console, the console will display the `print` statement and `return` value.
+
+
 
 ### Getting log
 You can get a function execution log in the following methods:
@@ -242,11 +241,11 @@ You can get a function execution log in the following methods:
 	</tr>
 	<tr>
 	<td>SCL CLI</td>
-	<td>Run the <code>scf logs</code> command. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/583/32762">Log View</a>.</td>
+	<td>Run the <code>scf logs</code> command.</td>
 	</tr>
 	<tr>
 	<td>SCF Console</td>
-	<td>On the function code page, click **Test** to synchronously invoke the function. After the execution is completed, the log of this invocation will be displayed directly in the console.</td>
+	<td>On the function code page, click <b>Test</b> to synchronously invoke the function. After the execution is completed, the log of this invocation will be displayed directly in the console.</td>
 	</tr>
 	<tr>
 	<td>Trigger invocation</td>
@@ -271,7 +270,9 @@ Therefore, you are recommended to store persistent states in TDSQL, COS, Tencent
 For more information on the function development process, please see [Getting Started](https://intl.cloud.tencent.com/document/product/583/9179).
 
 
+<ul><li>test1</li><li>test2</li></ul>
 
+<ol><li>test3</li><li>test4</li></ol>
 
 <style>
 	.params{
@@ -279,4 +280,3 @@ For more information on the function development process, please see [Getting St
 	}
 </style>
 
-```
