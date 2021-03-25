@@ -15,6 +15,6 @@
  - 所属数据库：选填，可在创建帐号时设置该帐号对数据库所具有的权限（只读或只写），也可在修改权限或创建数据库时授权。
  - 密码：必填，密码需要8-32个字符，至少包含英文、数字和符号 _+-&=!@#$%^*()[] 中的2种。
  - 帐号备注：选填，可输入备注说明，最多256个字符
-![](https://main.qcloudimg.com/raw/3ed72989a1e0096982a1ccbf3a49e996.png)
+![](https://main.qcloudimg.com/raw/df24976a6bb9af279508c49e4f09f227.png)
 3. 创建成功后，可在帐号列表执行【移除管理员】、【修改权限】、【重置密码】、【删除帐号】等操作。
-![](https://main.qcloudimg.com/raw/84c1a3aa7b0c3e837a72769a67c07b36.png)
+![](https://main.qcloudimg.com/raw/9a4a6c88f4e4a5b391241eca8080b09d.png)
