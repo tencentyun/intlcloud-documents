@@ -10,6 +10,6 @@
  - 支持字符集：选择该库采用的字符集，目前已支持大多数原生字符集。
  - 授权帐号：可以针对已有帐号对该库进行授权，如未创建帐号，可参见 [创建帐号](https://intl.cloud.tencent.com/document/product/238/7521)。
  - 备注说明：输入备注说明，最多256个字符。
-![](https://main.qcloudimg.com/raw/496bb77b68421cfb5514a753b997faca.png)
+![](https://main.qcloudimg.com/raw/e35649cddc46342128bb8c396d120dd1.png)
 
 
