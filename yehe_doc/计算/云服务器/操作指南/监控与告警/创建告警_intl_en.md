@@ -1,6 +1,6 @@
 ## Scenario
 You can create an alarm to trigger and send alarm notifications when Tencent Cloud services change statues. The created alarm can determine whether to trigger alarm notifications based on comparison between a monitoring metric and a specified threshold at every interval.
-Each alarm policy is a set of trigger conditions with the logic relationship "or", that is, an alarm is triggered when any of the conditions is met. The alarm is sent to all users associated with the alarm policy. Upon receiving the alarm, you can view it and take appropriate actions in time. Creating an alarm can help you increase application reliability. For more information on alarms, see [Create Alarm Policy](https://intl.cloud.tencent.com/document/product/248/6215).
+Each alarm policy is a set of trigger conditions with the logic relationship "or", that is, an alarm is triggered when any of the conditions is met. The alarm is sent to all users associated with the alarm policy. Upon receiving the alarm, you can view it and take appropriate actions in time. Creating an alarm can help you increase application reliability. For more information on alarms, see [Create Alarm Policy](https://intl.cloud.tencent.com/document/product/248/38908).
 
 ## Prerequisites
 
