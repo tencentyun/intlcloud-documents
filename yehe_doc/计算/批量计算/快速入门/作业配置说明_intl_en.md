@@ -132,7 +132,7 @@ Name | Type | Required | Description | Example
 -----|------|-----|------|------
 InstanceType | String | Yes | CVM instance type, which is required for the MANAGED type | S1.SMALL1
 ImageId | String | Yes | CVM image ID, which is required for the MANAGED type | img-m4q71qnf
-others | others | No | Please see the parameters provided in CVM API document [Creating Instances](https://intl.cloud.tencent.com/document/api/213/9384) | `SystemDisk`, `DataDisks`, `VirtualPrivateCloud` and other parameters are supported
+others | others | No | Please see the parameters provided in CVM API document [Creating Instances](https://intl.cloud.tencent.com/document/product/213/33237) | `SystemDisk`, `DataDisks`, `VirtualPrivateCloud` and other parameters are supported
 
 #### RedirectInfo
 Name | Type | Required | Description | Example
