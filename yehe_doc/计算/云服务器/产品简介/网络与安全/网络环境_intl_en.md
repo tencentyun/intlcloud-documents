@@ -34,7 +34,7 @@ Some Tencent Cloud resources and features support both basic network and VPC, an
 |--|--|
 |[Image](https://intl.cloud.tencent.com/document/product/213/4940)|An image can be used to launch a CVM instance in any network environment|
 |[Elastic Public IP](https://intl.cloud.tencent.com/document/product/213/5733)|Elastic Public IPs can bind to a CVM instance under any network environment|
-|Instances|Instances in the basic network and VPC can communicate with each other through the [Public IP](https://intl.cloud.tencent.com/document/product/213/5224) or [Classiclink](https://intl.cloud.tencent.com/document/product/215/2098)|
+|Instances|Instances in the basic network and VPC can communicate with each other through the [Public IP](https://intl.cloud.tencent.com/document/product/213/5224) or [Classiclink](https://intl.cloud.tencent.com/document/product/215/31807)|
 |[SSH Key](https://intl.cloud.tencent.com/document/product/213/6092)|SSH key supports loading a CVM instance under any network environment|
 |[Security Groups](https://intl.cloud.tencent.com/document/product/213/12452)|Security groups support binding CVM instances under any network environment|
 
