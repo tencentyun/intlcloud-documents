@@ -20,4 +20,4 @@ Before deleting custom images, please note the following items:
 If the deletion fails, possible reasons will be prompted.
 
 ### Delete images through API
-You can use the DeleteImages API to delete images. For details, see [Delete Images](https://intl.cloud.tencent.com/document/api/213/15716).
+You can use the DeleteImages API to delete images. For details, see [Delete Images](https://intl.cloud.tencent.com/document/product/213/33275).
