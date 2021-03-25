@@ -20,4 +20,4 @@
 삭제할 수 없는 경우 원인이 제시됩니다.
 
 ### API를 통해 삭제
-DeleteImages 인터페이스를 사용하여 미러 이미지를 공유할 수 있습니다. 자세한 내용은 [미러 이미지 삭제](https://cloud.tencent.com/document/api/213/15716)를 참조하십시오. 
+DeleteImages 인터페이스를 사용하여 미러 이미지를 공유할 수 있습니다. 자세한 내용은 [미러 이미지 삭제](https://intl.cloud.tencent.com/document/product/213/33275)를 참조하십시오. 
