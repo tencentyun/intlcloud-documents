@@ -60,7 +60,7 @@ After selecting the brand, model, supported domain name, and certificate validit
 
 #### Other OV and EV SSL certificates
 1. After purchasing the certificate, log in to the [SSL Certificate Service console](https://console.cloud.tencent.com/ssl) and click **Submit info** to go to the **Certificate Information Submission** page. Then, enter the relevant information and upload the confirmation letter to apply for the certificate.
-2. After your application is submitted, it will be reviewed. After the review is successfully completed, the certificate will be issued. For more information, please see [The Process of Submitting Materials for OV/EV SSL Certificates](https://intl.cloud.tencent.com/document/product/1007/30160).
+2. After your application is submitted, it will be reviewed. After the review is successfully completed, the certificate will be issued. For more information, please see The Process of Submitting Materials for OV/EV SSL Certificates.
 
 #### DV SSL certificates
 After purchasing the certificate, log in to the [SSL Certificate Service console](https://console.cloud.tencent.com/ssl) and click **Submit info** to go to the **Certificate Information Submission** page. Then, enter the relevant information and complete the domain ownership verification, after which the CA will issue the certificate.
