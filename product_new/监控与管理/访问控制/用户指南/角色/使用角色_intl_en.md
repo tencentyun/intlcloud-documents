@@ -39,7 +39,7 @@ If this API is called successfully, the response will be as follows:
 }
 ```
 3. `DevB` can perform operations on company A’s resources within the scope of permissions during the validity period of the credentials.
-For example, `DevB` wants to call the [DescribeInstances](https://intl.cloud.tencent.com/document/product/213/15728) API to view the CVM list. `DevB` needs to replace the values of `SecretId` and `SecretKey` with the values of `tmpSecretId` and `tmpSecretKey` , and set the `Token` in [Common Parameters](https://intl.cloud.tencent.com/document/product/213/31574) to the value of `sessionToken`. 
+For example, `DevB` wants to call the [DescribeInstances](https://intl.cloud.tencent.com/document/product/213/33258) API to view the CVM list. `DevB` needs to replace the values of `SecretId` and `SecretKey` with the values of `tmpSecretId` and `tmpSecretKey` , and set the `Token` in [Common Parameters](https://intl.cloud.tencent.com/document/product/213/31574) to the value of `sessionToken`. 
 > To stop authorizing company B, company A only needs to delete the `DevOpsRole` role.
 
 
