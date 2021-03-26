@@ -24,6 +24,10 @@ CAM을 사용할 경우 사용자 또는 사용자 그룹과 정책을 연결할
 사용자/사용자 그룹 관리 및 정책 관리 페이지에서 정책을 추가하고 권한을 부여할 수 있습니다. 자세한 내용은 [권한 관리](https://intl.cloud.tencent.com/document/product/598/10602)를 참조하시기 바라며, 간략한 설명은 다음과 같습니다.
 
 - 방법1: 사용자/사용자 그룹 페이지로 이동하여 정책을 추가할 사용자/사용자 그룹을 선택한 후, 작업 리스트에 있는 [Authorize]를 클릭합니다. 해당 라이브 방송 정책을 선택하고 [Confirm]을 클릭하면 추가가 완료됩니다.
+![](https://main.qcloudimg.com/raw/9da12095cfa57813a373ab9ffeabc9a4.png)
+
+![](https://main.qcloudimg.com/raw/ec1e09ab6cde2a703ac90d7ccdad6424.png)
+
 ![](https://main.qcloudimg.com/raw/f09b5d456ba1fd554ad321ddcc67cbdc.png)
 
 - 방법2: 정책 페이지로 이동하여 추가할 정책을 선택한 후, 작업 리스트에 있는 [Add to Group]을 클릭합니다. 권한을 부여할 사용자를 선택하고 [OK]를 클릭하면 추가가 완료됩니다.
