@@ -154,7 +154,7 @@
 | 해상도 | 템플릿 이름 | 비디오 해상도        | 비디오 비트레이트 | 비디오 프레임 레이트 | 비디오 인코딩 포맷 |
 | ------ | -------- | ----------------- | -------- | -------- | ------------ |
 | 원활   | 550      | 비율에 따라 축소/확대 * 540  | 500kbps  | 23       | H264         |
-| 标清   | 900      | 비율에 따라 축소/확대 * 720  | 1000kbps | 25       | H264         |
+| SD   | 900      | 비율에 따라 축소/확대 * 720  | 1000kbps | 25       | H264         |
 |HD    | 2000     | 비율에 따라 축소/확대 * 1080 | 2000kbps | 25       | H264         |
 
 ## 고속 HD 트랜스 코딩 기능
@@ -289,13 +289,13 @@ Height_pixel = 192 * 240 / 320 = 144
 <td><a href="https://intl.cloud.tencent.com/document/product/267/30789">트랜스 코딩 규칙 삭제</a></td>
 </tr><tr>
 <td rowspan=4>라이브 방송 워터마크</td>
-<td><a href="https://cloud.tencent.com/document/api/267/30154">워터마크 템플릿 생성</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30826">워터마크 템플릿 생성</a></td>
 </tr><tr>
-<td><a href="https://cloud.tencent.com/document/api/267/30150">워터마크 템플릿 수정</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30818">워터마크 템플릿 수정</a></td>
 </tr><tr>
-<td><a href="https://cloud.tencent.com/document/api/267/30153">워터마크 템플릿 삭제</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30824">워터마크 템플릿 삭제</a></td>
 </tr><tr>
-<td><a href="https://cloud.tencent.com/document/api/267/30152">워터마크 리스트 조회</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30820">워터마크 리스트 조회</a></td>
 </tr></table>
 
 
