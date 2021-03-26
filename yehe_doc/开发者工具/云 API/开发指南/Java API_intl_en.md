@@ -382,8 +382,8 @@ For example, if you call the `DescribeInstances` API to query CVM instances, the
 
 Sort all the request parameters in an ascending lexicographical order (ASCII code) by their names.
 >!
-- The parameters are sorted only by name but not by value.
-- The parameters are sorted based on ASCII code but not in an alphabetical order or by value. For example, `InstanceIds.2` should be arranged behind `InstanceIds.12`. You can complete sorting by using a sorting function in a programming language, such as the `ksort` function in PHP.
+>- The parameters are sorted only by name but not by value.
+>- The parameters are sorted based on ASCII code but not in an alphabetical order or by value. For example, `InstanceIds.2` should be arranged behind `InstanceIds.12`. You can complete sorting by using a sorting function in a programming language, such as the `ksort` function in PHP.
 >
 The parameters in the example are sorted as follows:
 
@@ -497,9 +497,9 @@ The generated signature string cannot be directly used as a request parameter an
 
 For example, if the signature string generated in the previous step is `Eli*****************cGeI=`, the final value of the `Signature` request parameter will be `EliP***********************eI%3d`, which will be used to generate the final request URL.
 >!
-- If you use the GET request method or use the POST request method with `Content-Type` of `application/x-www-form-urlencoded`, all the request parameter values must be URL-encoded (except the parameter key and the equal symbol (=)) before the request is sent. Non-ASCII characters must be encoded with **UTF-8** before URL-encoding.
-- The network libraries of some programming languages automatically URL-encode all parameters. In this case, the signature string does not need to be URL-encoded again; otherwise, two rounds of URL-encoding will cause the signature to fail.
-- Other parameter values also need to be encoded with [RFC 3986](http://tools.ietf.org/html/rfc3986). Use `%XY` in percent-encoding for special characters such as Chinese characters, where "X" and "Y" are hexadecimal characters (0–9 and uppercase A–F). Using lowercase characters will cause an error.
+>- If you use the GET request method or use the POST request method with `Content-Type` of `application/x-www-form-urlencoded`, all the request parameter values must be URL-encoded (except the parameter key and the equal symbol (=)) before the request is sent. Non-ASCII characters must be encoded with **UTF-8** before URL-encoding.
+>- The network libraries of some programming languages automatically URL-encode all parameters. In this case, the signature string does not need to be URL-encoded again; otherwise, two rounds of URL-encoding will cause the signature to fail.
+>- Other parameter values also need to be encoded with [RFC 3986](http://tools.ietf.org/html/rfc3986). Use `%XY` in percent-encoding for special characters such as Chinese characters, where "X" and "Y" are hexadecimal characters (0–9 and uppercase A–F). Using lowercase characters will cause an error.
 
 #### 7. Sample API 3.0 signature v1
 
