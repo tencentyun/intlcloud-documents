@@ -464,9 +464,9 @@ https://cvm.tencentcloudapi.com/?Action=DescribeInstances&InstanceIds.0=ins-09dx
 如上一步生成的签名串为  ` Eli*****************cGeI= ` ，最终得到的签名串请求参数（Signature）为：`EliP***********************eI%3D`，它将用于生成最终的请求 URL。
 
 >! 
-- 如果用户的请求方法是 GET，或者请求方法为 POST 同时 Content-Type 为 application/x-www-form-urlencoded，则发送请求时所有请求参数的值均需要做 URL 编码，参数键和=符号不需要编码。非 ASCII 字符在 URL 编码前需要先以 UTF-8 进行编码。
-- 有些编程语言的网络库会自动为所有参数进行 urlencode，在这种情况下，就不需要对签名串进行 URL 编码了，否则两次 URL 编码会导致签名失败。
-- 其他参数值也需要进行编码，编码采用 [RFC 3986](http://tools.ietf.org/html/rfc3986)。使用 `%XY` 对特殊字符例如汉字进行百分比编码，其中“ X ”和“ Y ”为十六进制字符（0-9 和大写字母 A-F），使用小写将引发错误。
+>- 如果用户的请求方法是 GET，或者请求方法为 POST 同时 Content-Type 为 application/x-www-form-urlencoded，则发送请求时所有请求参数的值均需要做 URL 编码，参数键和=符号不需要编码。非 ASCII 字符在 URL 编码前需要先以 UTF-8 进行编码。
+>- 有些编程语言的网络库会自动为所有参数进行 urlencode，在这种情况下，就不需要对签名串进行 URL 编码了，否则两次 URL 编码会导致签名失败。
+>- 其他参数值也需要进行编码，编码采用 [RFC 3986](http://tools.ietf.org/html/rfc3986)。使用 `%XY` 对特殊字符例如汉字进行百分比编码，其中“ X ”和“ Y ”为十六进制字符（0-9 和大写字母 A-F），使用小写将引发错误。
 
 #### 7. API 3.0 签名 V1示例
 
