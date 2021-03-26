@@ -8,7 +8,7 @@ If you need to sign up for a Tencent Cloud account:
 
 
 ## Directions
-1. Log in to the [TencentDB for Console](https://console.cloud.tencent.com/pgsql). In the instance list, locate the uninitialized instance, and click **Initialize** in the "Operation" column.
+1. Log in to the [TencentDB for PostgreSQL Console](https://console.cloud.tencent.com/pgsql). In the instance list, locate the uninitialized instance, and click **Initialize** in the "Operation" column.
 
    ![](https://main.qcloudimg.com/raw/63731685a6c959999e938a9132b99196.png)
 
