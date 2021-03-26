@@ -20,7 +20,7 @@
 用户可设置定时备份时间，实现每天自动备份数据库。具体步骤如下：
 1. 登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在实例列表，单击实例名或“操作”列的【管理】，进入实例管理页面。
 2. 选择【备份管理】>【备份设置】页，单击【编辑】，选择定时备份的时间段，单击【保存】即可。
-![](https://main.qcloudimg.com/raw/ca455ca4f870e8ec31ffa6b4f9c9f31b.png)
+![](https://main.qcloudimg.com/raw/a9fd8e162a02ec7c11c75b9520d3956c.png)
 
  
 ## 设置手动备份
@@ -30,12 +30,12 @@
 1. 登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在实例列表，单击实例名或“操作”列的【管理】，进入实例管理页面。
 2. 选择【备份管理】>【备份列表】页，单击【创建备份】。
 3. 选择备份策略：实例备份（即整个实例的所有数据库）或多库备份，若选择多库备份，需选择要备份的数据库，单击【确定】。
-![](https://main.qcloudimg.com/raw/e42b9d8f89ac7f6a6f86783e1597ce2b.png)
+![](https://main.qcloudimg.com/raw/f33a17aca57a83cb9bbaf262f73d798e.png)
 
 ## 查看备份任务
 1. 登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在实例列表，单击实例名或“操作”列的【管理】，进入实例管理页面。
 2. 选择【备份管理】>【备份列表】页，可查看备份任务的创建时间、状态、文件大小、策略等。
-![](https://main.qcloudimg.com/raw/4b97822f4eb03a7c5cbf937548d7af4c.png)
+![](https://main.qcloudimg.com/raw/db076dda070a0a3819c547168d53449a.png)
 
 
   
