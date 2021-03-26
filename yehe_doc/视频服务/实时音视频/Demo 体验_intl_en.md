@@ -37,6 +37,7 @@
     box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;" onclick="window.open('https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/electron_sdk/solution/education/TRTC_Education_Demo-1.1.0.dmg?_ga=1.35276513.1325816544.1607066203/')" /></td>
 </tr>
 </table>
+
 **iOS** 
 ![](https://main.qcloudimg.com/raw/296c9a0f50e38ff975dce00e4392ef6c.png)
 
