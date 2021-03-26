@@ -451,7 +451,7 @@ GN7 is cost-effective and applicable to the following scenarios:
         <td>4 GB vGPU</td>
 				<td>4 cores</td>
 				<td>20 GB</td>
-        <td>2 Gbps</td>
+        <td>1.5Gbps</td>
 				<td>500,000</td>
          <td>4</td>
          <td rowspan="2">Guangzhou Zone 3, Guangzhou Zone 4, Shanghai Zone 2, Shanghai Zone 4, Nanjing Zone 1, Nanjing Zone 2, Beijing Zone 3, Beijing Zone 5, Chengdu Zone 1, Chongqing Zone 1, and Silicon Valley Zone 2</td>
@@ -462,7 +462,7 @@ GN7 is cost-effective and applicable to the following scenarios:
         <td>8 GB vGPU</td>
 				<td>10 cores</td>
 				<td>40 GB</td>
-        <td>4 Gbps</td>
+        <td>3Gbps</td>
 				<td>700,000</td>
         <td>10</td>
 			</tr>
@@ -472,7 +472,7 @@ GN7 is cost-effective and applicable to the following scenarios:
                 <td>1 * 16 GB</td>
 				<td>8 cores</td>
 				<td>32 GB</td>
-                <td>7 Gbps</td>
+                <td>3Gbps</td>
 				<td>600,000</td>
                 <td>8</td>
                 <td rowspan="5">Guangzhou Zone 3, Guangzhou Zone 4, Shanghai Zone 2, Shanghai Zone 4, Nanjing Zone 1, Nanjing Zone 2, Beijing Zone 3, Beijing Zone 5, Chengdu Zone 1, Chongqing Zone 1, Singapore Zone 1, and Silicon Valley Zone 2</td>
@@ -493,7 +493,7 @@ GN7 is cost-effective and applicable to the following scenarios:
         <td>1 * 16 GB</td>
 				<td>32 cores</td>
 				<td>128 GB</td>
-        <td>7 Gbps</td>
+        <td>10Gbps</td>
 				<td>2.4 million</td>
         <td>16</td>
 			</tr>
