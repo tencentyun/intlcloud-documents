@@ -27,12 +27,12 @@
 
 
 
-<span id="Screenshot)"></span>
+<span id="Screenshot"></span>
 ## 创建截图鉴黄模板
 
 1. 登录云直播控制台，【功能配置】>[【直播截图&鉴黄】](https://console.cloud.tencent.com/live/config/jtjh)。
-2. 单击【+】，填写配置项，并单击【保存】即可。
-![](https://main.qcloudimg.com/raw/e17b92da94af4b583dab0273adb89447.jpg)
+2. 单击【创建截图鉴黄模板】，填写配置项，并单击【保存】即可。
+![](https://main.qcloudimg.com/raw/544c2127f7870add334eaf760f1da089.png)
 <table>
 <thead><tr><th width="15%">配置项</th><th>说明</th></tr></thead>
 <tbody><tr>
@@ -83,45 +83,50 @@
 </tbody></table>
 
 
-[](id:conect)
+<span id="conect"></span>
 ## 关联域名
 
 1. 登录云直播控制台，进入【功能配置】>[【直播截图&鉴黄】](https://console.cloud.tencent.com/live/config/jtjh)。
 2. 通过以下方式进入域名绑定窗口：
     - **直接关联域名：**单击左上方的【绑定域名】。
+    ![](https://main.qcloudimg.com/raw/20490c4aa318f5b5253d0b82c1672087.png)
     - **新截图&鉴黄模板创建成功后关联域名：**[截图&鉴黄模板创建](#Screenshot) 成功后，单击提醒框中的【去绑定域名】。
-3. 在域名绑定窗口中，选择您需绑定的**截图&鉴黄模板**及**推流域名**，单击【确定】即可绑定成功。
+    ![](https://main.qcloudimg.com/raw/727b1d25f256a655478312ee45814a32.png)
+1. 在域名绑定窗口中，选择您需绑定的**截图&鉴黄模板**及**推流域名**，单击【确定】即可绑定成功。
+![](https://main.qcloudimg.com/raw/5612913bcbb6ac1cb5207dcc03e997c4.png)
 > ? 支持通过单击【添加】为当前模板绑定多个推流域名。
 
 
-[](id:unite)
+<span id="unite"></span>
 ## 解除绑定
 
 1. 登录云直播控制台，进入【功能配置】>[【直播截图&鉴黄】](https://console.cloud.tencent.com/live/config/jtjh)。
 2. 选择已关联域名的直播截图&鉴黄模板，单击【解绑】。
+   ![](https://main.qcloudimg.com/raw/fd20557cc393cc483d9a36dd0ddb6652.png)
 3. 确认是否解绑当前关联域名，单击【确定】即可解绑。
+   ![](https://main.qcloudimg.com/raw/9182f6589885ecba5fafcea075c9184e.png)
 
 
-[](id:change)
+<span id="change"></span>
 ## 修改模板
 
 1. 进入【功能配置】>[【直播截图&鉴黄】](https://console.cloud.tencent.com/live/config/jtjh)。
 2. 选择您已创建成功的截图鉴黄模板，并单击右侧的【编辑】，即可进入修改模板信息。
 3. 单击【保存】即可。
 
-![](https://main.qcloudimg.com/raw/976ee78aedebea43c6b3fe2e4e0ef41c.jpg)
+![](https://main.qcloudimg.com/raw/0ec0dcb3dc35571e1aab74b20d533c35.png)
 
 
-[](id:delete)
+<span id="delete"></span>
 ## 删除模板
 
->! 若模板已被关联，需要先 [解除绑定](#解除绑定)，才可以进行删除操作。
+>! 若模板已被关联，需要先 [解除绑定](#unite)，才可以进行删除操作。
 
 1. 进入【功能配置】>[【直播截图&鉴黄】](https://console.cloud.tencent.com/live/config/jtjh)。
 2. 选择您已创建成功的截图鉴黄模板，单击上方的删除按钮。
 3. 确认是否删除当前截图鉴黄配置模板，单击【确定】即可成功删除。
 
-![](https://main.qcloudimg.com/raw/d4b62f44f9ecafdee20be7758f2042e1.jpg)
+![](https://main.qcloudimg.com/raw/6ae7a299517803a92776d8077ccda1d3.png)
 
 
 
