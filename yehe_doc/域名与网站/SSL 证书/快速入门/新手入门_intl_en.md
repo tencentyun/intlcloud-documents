@@ -6,7 +6,7 @@ The following figure shows the entire process of purchasing a certificate:
 
 ### Step 1: purchase a certificate
 1. Log in to the [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl). On the **Certificate Management** page, click **Purchase Certificate**, after which the page shown in the following figure is displayed.
->!You can also purchase a certificate on the Tencent Cloud [SSL certificate purchase page](https://buy.cloud.tencent.com/ssl?fromSource=ssl).
+>!You can also purchase a certificate on the Tencent Cloud SSL certificate purchase page.
 
 ![](https://main.qcloudimg.com/raw/6e6fe4d37a533f2b81f1f70abf76ef8f.png)
 2. Select the certificate type, certificate brand, domain name type, and domain name validity period as needed. For detailed instructions, see [Purchase Procedure](https://intl.cloud.tencent.com/document/product/1007/30159).
@@ -17,7 +17,7 @@ For DV SSL certificates, 3 verification methods are supported: automatic DNS ver
  >!If the domain name entered is added successfully to [Tencent Cloud DNS](https://console.cloud.tencent.com/cns), automatic DNS verification is supported.
 
 #### Organization verification
-For OV and EV SSL certificates, you need to submit the required materials, upload the confirmation letter, and wait for review. A reviewer will call you to verify the information and send an email asking you to confirm the domain name information. For more information, see [Material Submission for OV/EV SSL Certificates](https://intl.cloud.tencent.com/document/product/1007/30160).
+For OV and EV SSL certificates, you need to submit the required materials, upload the confirmation letter, and wait for review. A reviewer will call you to verify the information and send an email asking you to confirm the domain name information. 
 
 ### Step 3: wait for the certificate to be issued
 After your certificate order passes the review, the CA will issue your certificate.
