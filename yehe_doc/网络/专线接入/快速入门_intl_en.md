@@ -13,7 +13,7 @@ Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/) and select
 2. In the left sidebar, click **Direct Connect Gateways** to go to the management page.
 3. On the top of the page, select the region and network, and click **+Create**.
 4. In the page that appears, enter a name and select the type of network to associate.
- > For Cloud Connect Network (CCN), you do not need to associate the Direct Connect gateway with a CCN instance.
+ >? For Cloud Connect Network (CCN), you do not need to associate the Direct Connect gateway with a CCN instance.
 5. Click **OK** to complete the creation of the Direct Connect gateway.
 
 ## Step 4: Create a Dedicated Tunnel
@@ -50,4 +50,3 @@ Connecting to VPC or BM networks:
 4. Enter a name for the alarm policy. For policy type, select connection or dedicated tunnel, and add the alarm trigger.
 5. Associate alarm objects: select the alarm receiver group, and when it is saved, you can view the alarm polices that are set in Alarm Policy List.
 6. View alarm information: when the alarm condition is triggered, you will be notified via SMS, email, and Message Center. You can also view the alarm information by selecting **Direct Connect** -> **Connection** (or **Dedicated Tunnel**) from the left sidebar.
-For more information on alarms, refer to [Creating Alarm Policies](https://intl.cloud.tencent.com/document/product/248/6215).
