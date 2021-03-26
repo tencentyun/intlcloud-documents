@@ -5,7 +5,7 @@ Cloud Monitor alarms divide into two types: basic monitoring alarms and custom n
 | Alarm Type | Description |
 | ------- | ---------------------------------------- |
 | Basic alarm | Alarms triggered by monitoring items (metrics and events) provided by Tencent Cloud service resources |
-| Custom notification | Business alarms triggered by the [custom notification](https://intl.cloud.tencent.com/document/product/248/6218) service of Cloud Monitor |
+| Custom notification | Business alarms triggered by the custom notification service of Cloud Monitor |
 
 ## Alarm Channel
 
