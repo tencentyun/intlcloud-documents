@@ -9,7 +9,7 @@
 
 
 ### DDL
-- CREATE TABLE ... LIKE is not supported 
+
 - CREATE TABLE ... SELECT is not supported 
 - CREATE TEMPORARY TABLE is not supported 
 - CREATE/DROP/ALTER SERVER/LOGFILE GROUP are not supported
