@@ -7,7 +7,7 @@ SCF provides a new function execution mechanism. You can use the async function 
 1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/list?rid=16&ns=default) and click **Function Service** on the left sidebar.
 2. Select the region where to create a function at the top of the page and click **Create** to enter the function creation process.
 3. Select an **empty function** or **function template** to create a function.
-4. On the "Function Configuration" page, expand **Advanced Settings** and select **Async Execution**.
+4. On the **Function Configuration** page, expand **Advanced Settings** and select **Async Execution**.
 5. Click **Complete**.
 
 
@@ -42,21 +42,43 @@ After status tracking is enabled in the advanced configuration of a function, fo
 
 APIs for event management-related services are provided through TencentCloud APIs:
 
-#### GetAsyncEventOverview
-This API is used to get an overview of the execution status of an asynchronously executed event. Event statuses include:
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Description</th>
+<th>Documentation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GetAsyncEventOverview</td>
+<td>This API is used to get an overview of the execution status of an asynchronously executed event. Event statuses include:
+<li>Running: the event is being executed asynchronously.</li>
+<li>Invoked successfully: the event is asynchronously executed successfully with a normal response.</li>
+<li>Invocation failed: the event failed to be asynchronously executed with an exceptional response.</li>
+<li>Invocation terminated: the user actively terminated the event in progress, and async execution stopped.</li>
+</td>
+<td>-</td>
+</tr>
+<tr>
+<td>ListAsyncEvents</td>
+<td>This API is used to list the information of an asynchronously executed event. It can query the information by conditions such as `RequestId`, function name, function version, event status, and event invocation/end time.
+<dx-alert infotype="notice" title="">
+Only data within three days after event tracking is enabled can be queried.
+</dx-alert>
+</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/583/39734">ListAsyncEvents</a></td>
+</tr>
+<tr>
+<td>TerminateAsyncEvent</td>
+<td>This API is used to terminate an asynchronously executed event in progress according to the returned `RequestId`.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/583/39733">TerminateAsyncEvent</a></td>
+</tr>
+</tbody>
+</table>
 
-- Running: the event is being executed asynchronously.
-- Invoked successfully: the event is asynchronously executed successfully with a normal response.
-- Invocation failed: the event failed to be asynchronously executed with an exceptional response.
-- Invocation terminated: the user actively terminated the event in progress, and async execution stopped.
-
-#### ListAsyncEvents
-This API is used to list the information of an asynchronously executed event. It can query the information by conditions such as `RequestId`, function name, function version, event status, and event invocation/end time.
->! Only data within three days after event tracking is enabled can be queried.
 
 
-#### TerminateAsyncEvent
-This API is used to terminate an asynchronously executed event in progress according to the returned `RequestId`.
 
 
 
@@ -68,6 +90,6 @@ This API is used to terminate an asynchronously executed event in progress accor
 - The generated event status data is retained for only 3 days and will be cleared on a rolling basis in a time window of 3 days. If you want to keep all records, you need to periodically pull them and save them to your own storage.
 - After status tracking is disabled, event management-related services such as recording, collecting, querying, and terminating asynchronously executed events will no longer be available, and the generated event status data will be cleared in 3 days.
 - The limit on QPS of asynchronously executed events is one-tenth of the function concurrency, and any excess will be limited, resulting in response failures.
-- If the limit on QPS is exceeded, or if your account becomes overdue, the corresponding exception will be returned by the scheduling engine directly after you invoke an event, and no event status records will be generated.
+- If the limit on QPS is exceeded, or if your account falls into arrears, the corresponding exception will be returned by the scheduling engine directly after you invoke an event, and no event status records will be generated.
 
 

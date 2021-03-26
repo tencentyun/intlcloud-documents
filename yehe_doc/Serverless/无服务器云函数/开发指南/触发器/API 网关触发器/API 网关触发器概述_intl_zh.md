@@ -32,8 +32,8 @@ API 网关中，一条 API 规则仅能绑定一个云函数，但一个云函�
 >- 当前 API 网关触发器触发云函数时，全部使用的为集成请求。
 >- 当您需要将图片或文件通过 API 网关传入云函数时，需要将图片或文件进行 Base64 编码。如果上传的文件在 Base64 编码后的大小超过6MB，建议您通过客户端先将文件上传至 [COS](https://intl.cloud.tencent.com/product/cos)，再将 Object 地址传递给云函数，由云函数从 COS 拉取文件，以完成大文件的上传。
 
-<a id="datastructures"></a>
 
+<a id="datastructures"></a>
 #### API 网关触发器的集成请求事件消息结构
 在 API 网关触发器接收到请求时，会将类似以下 JSON 格式的事件数据发送给绑定的云函数。
 ```
@@ -123,7 +123,7 @@ API 网关中，一条 API 规则仅能绑定一个云函数，但一个云函�
 | ---------- | --- |
 | isBase64Encoded |  指明 body 内的内容是否为 Base64 编码后的二进制内容，取值需要为 JSON 格式的 true 或 false。 |
 | statusCode | HTTP 返回的状态码，取值需要为 Integer 值。 |
-| headers | HTTP 返回的头部内容，取值需要为多个 key-value 对象，或 `key:[value,value]` 对象。其中 key、value 均为字符串。 |
+| headers | HTTP 返回的头部内容，取值需要为多个 key-value 对象，或 `key:[value,value]` 对象。其中 key、value 均为字符串。headers 请求头暂不支持 Location key。 |
 | body | HTTP 返回的 body 内容。 |
 
 在需要返回 key 相同的多个 headers 时，可以使用字符串数组的方式描述不同 value，例如：

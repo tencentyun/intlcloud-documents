@@ -23,7 +23,7 @@ API Gateway triggers currently can only be bound to functions in the same region
 ## Request and Response
 Request method is the method to process request sent from API Gateway to SCF, and response method is the method to process the returned value sent from SCF to API Gateway. Both request and response methods can be planned and implemented by means of passthrough and integration.
 
-### Integration Request and Passthrough Request
+### Integration request and passthrough request
 Integration request means that API Gateway converts the content of the HTTP request into request data structures which are passed to the function for handling as `event` input parameters of the function. The following details the request data structures.
 
 Passthrough request means that API Gateway passes the `body` content of the HTTP request to the function as `event` input parameters of the function. The passthrough request feature is still in the planning stage. For passthrough requests, the `body` of the HTTP request must be in JSON data format.
@@ -32,8 +32,8 @@ Passthrough request means that API Gateway passes the `body` content of the HTTP
 >- Currently, when an API Gateway trigger triggers a function, integration request is always used.
 >- When transferring images or files to SCF through API Gateway, you need to Base64-encode them. If the size of a Base64-encoded file is above 6 MB, we recommend you upload the file to [COS](https://intl.cloud.tencent.com/product/cos) through the client and pass the object address to SCF first. Then, SCF will pull the file from COS to complete the upload.
 
-<a id="datastructures"></a>
 
+<a id="datastructures"></a>
 #### Event message structures of integration request for API Gateway trigger
 When an API Gateway trigger receives a request, it sends the event data to the bound function in JSON format as shown below:
 ```
@@ -95,7 +95,7 @@ The data structures are detailed as below:
 > - The content of `requestContext` may be increased during API Gateway iteration. At present, it is guaranteed that the content of the data structure will only be increased but not reduced, so that the existing structure will not be compromised.
 > - Parameters in the actual request may appear in multiple locations and can be selected based on your business needs.
 
-### Integration Response and Passthrough Response
+### Integration response and passthrough response
 Integration response means that API Gateway parses the returned content of the function and constructs an HTTP response based on the parsed content. With the aid of integration response, you can control the status code, headers, and body content of the response by using code, and implement the response in a custom format, such as XML, HTML, JSON, and even JS. When using integration response, data structures need to be returned based on the [rules of integration response for API Gateway trigger](#apiStructure) before they can be successfully parsed by API Gateway; otherwise, error message `{"errno":403,"error":"Invalid scf response format. please check your scf response format."}` will appear.
 
 Passthrough response means that API Gateway directly passes the returned content of the function to the API requester. Generally, the data format of this type of responses is fixed at JSON format, the status code is defined according to the status of function execution, and status code 200 is returned if the function is successfully executed. With passthrough response, you can get the JSON format and parse the structures at the call location to get the content in the structures.
@@ -123,7 +123,7 @@ The data structures are detailed as below:
 | ---------- | --- |
 | isBase64Encoded | This indicates whether the content in the `body` is Base64-encoded binary. It should be `true` or `false` in JSON format. |
 | statusCode | HTTP return code, which should be an integer value. |
-| headers | HTTP return header, which should contain multiple `key-value` or `key:[value,value]` objects. Both key and value should be strings. |
+| headers | HTTP return header, which should contain multiple `key-value` or `key:[value,value]` objects. Both key and value should be strings. The `Location` key header is not supported currently. |
 | body | HTTP return body. |
 
 If you need to return multiple headers with the same key, you can use a string array to describe different values; for example:
