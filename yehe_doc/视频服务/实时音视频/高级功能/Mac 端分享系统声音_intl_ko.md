@@ -10,12 +10,15 @@ SDK는 [TRTCPrivilegedTask](https://liteavsdk-1252463788.cos.ap-guangzhou.myqclo
 
 #### CocoaPods를 사용한 통합  
 1. 현재 프로젝트의 루트 디렉터리에서 `Podfile` 파일을 연 뒤 다음 내용을 추가합니다.
+
 ```
 platform :osx, '10.10'	
+
 target 'Your Target' do
-    pod 'TRTCPrivilegedTask', :podspec => 'https://pod-1252463788.cos.ap-guangzhou.myqcloud.com/liteavsdkspec/TRTCPrivilegedTask.podspec'
+   pod 'TRTCPrivilegedTask', :podspec => 'https://pod-1252463788.cos.ap-guangzhou.myqcloud.com/liteavsdkspec/TRTCPrivilegedTask.podspec'
 end
 ```
+
 2. `pod install` 명령어를 실행하여 **TRTCPrivilegedTask** 라이브러리를 설치합니다.
 
 >?
@@ -46,7 +49,8 @@ App의 entitlements 설명 파일에서 **App Sandbox** 항목을 삭제합니�
 <span id="step4"></span>
 ### 4단계: 시스템 오디오 수집 시작  
 [startSystemAudioLoopback](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a2979e32c019708dcc9209bb6d2db9486) 인터페이스를 호출하여 시스템 오디오 수집을 시작하고, 이를 오디오 업스트림에 혼합합니다. 인터페이스에서 실행이 완료되면 [onSystemAudioLoopbackError](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a8644f5136138d13ffa8e0ea68f5c3676)를 통해 완료 또는 실패 결과를 콜백합니다.
-```Objective-C
+
+```
 TRTCCloud *trtcCloud = [TRTCCloud sharedInstance];
 [trtcCloud startLocalAudio];
 [trtcCloud startSystemAudioLoopback];
