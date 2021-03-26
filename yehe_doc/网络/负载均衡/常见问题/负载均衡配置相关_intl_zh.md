@@ -174,6 +174,7 @@ TCP 是面向连接的协议，在正式收发数据前，必须和对方建立�
 - 将需要拒绝访问的 client IP + 端口添加至安全组中，并在策略栏中选取拒绝该 IP 的访问。
 - 设置完毕后，再添加一条安全组规则，默认开放该端口全部 IP 的访问。
 配置完成后，安全组规则如下：
+
 ```
 clientA ip+port drop
 clientB ip+port drop
@@ -200,13 +201,12 @@ clientB ip+port drop
 ### 关于 Telnet 负载均衡监听端口的说明
 - 创建四层（TCP、UDP、TCP SSL） 监听器后，如果不绑定后端服务器，则无法 Telnet 通监听端口；绑定后端服务器后，可以 Telnet 通监听端口。
 - 创建七层（HTTP、HTTPS）监听器后，即使不绑定后端服务器，也可以 Telnet 通监听端口，由 CLB 代答。
-- 关于843端口的说明，详情请参见[ 负载均衡配置相关](https://intl.cloud.tencent.com/document/product/214/5411)。
 
 [[回到顶部]](#23)
 
 <span id="18"></span>
 ### 关于内网回环问题的说明
-内网负载均衡不支持同一个内网 IP 既作为客户端又作为服务器，此时 CLB 看到的 Client IP 和 Server IP 是一样的，会导致访问不通。
+内网负载均衡不支持同一个CVM 既作为客户端又作为服务器，此时 CLB 看到的 Client IP 和 Server IP 是一样的，会导致访问不通。
 当您的客户端需要同时作为服务器时，请至少绑定两个后端服务器。CLB 有自动避免回环的策略，当 Client A 访问负载均衡时，负载均衡会自动调度到非 Client A 的后端服务器上。
 
 [[回到顶部]](#23)
