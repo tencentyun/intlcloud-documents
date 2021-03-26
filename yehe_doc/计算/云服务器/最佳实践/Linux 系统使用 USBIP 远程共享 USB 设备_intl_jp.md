@@ -74,11 +74,13 @@ modprobe usbip-host
 usbip list --remote 127.0.0.1
 ```
 たとえば、Feitian USBキーの情報を見つけて、次の結果が返されます。
+
 ```
-Exportable USB devices
-======================
--127.0.0.1 1-1.3: Feitian Technologies, Inc.: unknown product(096e:031b):/sys/devices/platform/scb/fd500000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/usb1/1-1/1-1.3:(Defined at Interface level)(00/00/00)
+ Exportable USB devices
+ ======================
+ -127.0.0.1 1-1.3: Feitian Technologies, Inc.: unknown product(096e:031b):/sys/devices/platform/scb/fd500000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/usb1/1-1/1-1.3:(Defined at Interface level)(00/00/00)
 ```
+
 5.次のコマンドを実行して、USBデバイスをCVMにバインドします。
 ```
 usbip attach --remote=127.0.0.1 --busid=1-1.3
