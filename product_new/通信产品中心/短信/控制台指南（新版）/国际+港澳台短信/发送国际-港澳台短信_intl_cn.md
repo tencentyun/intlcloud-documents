@@ -42,4 +42,4 @@
 - 选择【业务统计】>【国际/港澳台短信】，您可以根据应用、签名、模板正文以及时间等维度筛选查看国际/港澳台短信的数据记录以及相关分析。
 
 ## 相关文档
-您也可以通过 API 或 SDK 发送短信，具体操作请参见 [API 文档](https://intl.cloud.tencent.com/document/product/382/13297#.E7.9F.AD.E4.BF.A1-api) 或 [SDK 文档](https://intl.cloud.tencent.com/document/product/382/32991)。
+您也可以通过 API 或 SDK 发送短信，具体操作请参见 [API 文档](https://intl.cloud.tencent.com/document/product/382/39155) 或 [SDK 文档](https://intl.cloud.tencent.com/document/product/382/32991)。
