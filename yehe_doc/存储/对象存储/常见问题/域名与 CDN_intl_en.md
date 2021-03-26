@@ -74,4 +74,4 @@ ICP filing is not required for GCD. However, it should be noted that your data a
 
 ### When a file is updated (re-uploaded or deleted) on COS, its cached content remains unchanged in CDN, resulting in inconsistency with the origin server. Can the cache in CDN be purged automatically when the file on COS is updated?
 
-COS itself does not support automatic purging of CDN cache, a feature you should use with the help of Serverless Cloud Function (SCF). For more information, see [Using SCF to Automatically Purge COS Resources Cached in CDN](https://intl.cloud.tencent.com/document/product/436/30611).
+COS itself does not support automatic purging of CDN cache, a feature you should use with the help of Serverless Cloud Function (SCF). For more information, see Using SCF to Automatically Purge COS Resources Cached in CDN.
