@@ -464,9 +464,9 @@ The generated signature string cannot be directly used as a request parameter an
 For example, if the signature string generated in the previous step is `Eli*****************cGeI=`, the final value of the `Signature` request parameter will be `EliP***********************eI%3D`, which will be used to generate the final request URL.
 
 >! 
-- If you use the GET request method or use the POST request method with `Content-Type` of `application/x-www-form-urlencoded`, all the request parameter values must be URL-encoded (except the parameter key and the equal symbol (=)) before the request is sent. Non-ASCII characters must be encoded with UTF-8 before URL-encoding.
-- The network libraries of some programming languages automatically URL-encode all parameters. In this case, the signature string does not need to be URL-encoded again; otherwise, two rounds of URL-encoding will cause the signature to fail.
-- Other parameter values also need to be encoded with [RFC 3986](http://tools.ietf.org/html/rfc3986). Use `%XY` in percent-encoding for special characters such as Chinese characters, where "X" and "Y" are hexadecimal characters (0–9 and uppercase A–F). Using lowercase characters will cause an error.
+>- If you use the GET request method or use the POST request method with `Content-Type` of `application/x-www-form-urlencoded`, all the request parameter values must be URL-encoded (except the parameter key and the equal symbol (=)) before the request is sent. Non-ASCII characters must be encoded with UTF-8 before URL-encoding.
+>- The network libraries of some programming languages automatically URL-encode all parameters. In this case, the signature string does not need to be URL-encoded again; otherwise, two rounds of URL-encoding will cause the signature to fail.
+>- Other parameter values also need to be encoded with [RFC 3986](http://tools.ietf.org/html/rfc3986). Use `%XY` in percent-encoding for special characters such as Chinese characters, where "X" and "Y" are hexadecimal characters (0–9 and uppercase A–F). Using lowercase characters will cause an error.
 
 #### 7. Sample API 3.0 signature v1
 
