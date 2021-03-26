@@ -25,6 +25,7 @@ You can troubleshoot in CLS as follows:
 1. Log in to the CLS console and go to the **Log Search** page. Then, specify a time range based on the error occurrence time and enter the **keyword** (order number) to locate the error log of the order.
 2. Scroll up/down based on the error log until you locate the desired context of the log.
 
+<img src="https://main.qcloudimg.com/raw/85d5656e2d5b868872b2497757c5a2b0.svg" style="width: 50%"/>
 
 ## Directions
 
