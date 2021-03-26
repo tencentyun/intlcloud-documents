@@ -16,7 +16,7 @@ If you want to monitor a metric of an instance, you need to create an alarm poli
 	- If you select **Instance Group**, the alarm policy will be associated with the selected instance group.
 5. Set the alarm trigger. You can either choose a trigger template or configure a trigger on your own.
 	- Trigger template
-	Click **Trigger Template** to enable it and select a configured template from the drop-down list. For detailed configurations, please see [Configuring Trigger Templates](https://intl.cloud.tencent.com/document/product/248/32817). If a newly create template is not displayed, click **Refresh** on the right.
+	Click **Trigger Template** to enable it and select a configured template from the drop-down list. For detailed configurations, please see [Configuring Trigger Templates](https://intl.cloud.tencent.com/document/product/248/38911). If a newly create template is not displayed, click **Refresh** on the right.
 	- Trigger configuration
 	An alarm trigger is a semantic condition consisting of metric, statistical period, comparison relationship, threshold, duration, and notification frequency.
 	- Below is a sample parameter configuration:
