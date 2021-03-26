@@ -46,26 +46,27 @@ DTS 迁移支持的网络迁移：公网、CVM 自建、专线接入、VPN 接�
 - 目标库类型：选择 SQL Server。
 - 数据库实例：选择目标数据库实例，并输入目标库上的帐号及密码。
 
-![](https://main.qcloudimg.com/raw/3b875206dab5338cb9007cab96f39c71.png) 
+![](https://main.qcloudimg.com/raw/0c0db8639cc644fbf56d12d94ae8d24c.png) 
 
 ### 3. 选择迁移选项和迁移对象
 设置要迁移的数据类型和对象，迁移类型支持全量迁移、全量+增量迁移，确认无误后，单击【保存】。
-![](https://main.qcloudimg.com/raw/0169bfdd91dda3ed5800450d7435081b.png) 
+![](https://main.qcloudimg.com/raw/3bf88e9f3ea08c1c873ec91112261560.png) 
 
 ### 4. 校验迁移任务
 校验任务页面将会显示 DTS 对迁移任务的预检查结果。
 - 如果校验通过，单击【启动任务】。
-![](https://main.qcloudimg.com/raw/f31cd3c26af554c5cab657590f1a017b.png)
+![](https://main.qcloudimg.com/raw/1c7cc5db78038606e3f8f8d38baa91b4.png)
 - 如果校验失败，请根据出错的校验项，单击【查看详情】，并根据提示采取对应调整，然后重试校验。
 
 ### 5. 启动迁移任务
 1）校验通过后，在校验任务页面单击【启动任务】立即开始迁移数据。
+![](https://main.qcloudimg.com/raw/695aa8aef7df1095807a19a8bd7c7c13.png)
 >!
 >- 如果没有设置定时任务，则迁移任务会立即执行。
 >- 如果您设定了迁移任务的定时时间，则迁移任务会在设定的时间开始排队并执行，您也可在迁移任务列表中单击【立即启动】手动启动迁移任务。
 >
 2）迁移启动后，返回迁移任务列表，可查看对应的迁移进度信息。
-![](https://main.qcloudimg.com/raw/aa61109964d4c5a74128ba5785f51778.png)
+
 
 ### 6. 完成迁移任务
 断开同步前，可在目标实例上验证数据，如果验证无误，即可完成迁移任务。
