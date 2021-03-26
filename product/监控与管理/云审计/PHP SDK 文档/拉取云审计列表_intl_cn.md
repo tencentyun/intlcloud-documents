@@ -1,8 +1,6 @@
 
 ## SDK 描述
   ListAudits 用于拉取 CloudAudit 列表。
-## 请求参数
-详见 [公共请求参数](https://cloud.tencent.com/document/product/599/12707)  页面。
 
 ## 响应参数
 
