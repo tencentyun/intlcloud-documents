@@ -110,7 +110,7 @@ App 管理员可以通过即时通信 IM [控制台](https://console.cloud.tence
 ## 黑名单
 每个用户都有一份黑名单，用于保存被该用户屏蔽的帐号。
 用户 A 将用户 B 加入黑名单后，A 与 B 之间的好友关系会被解除（如果有），且 A 与 B 之间无法再发起加好友请求。
-即时通信 IM 的黑名单列表默认允许添加 1000 条黑名单帐号，如对黑名单列表的大小有特殊要求，请联系腾讯云客服。
+即时通信 IM 的黑名单列表最多允许添加 1000 个黑名单帐号，且不支持配置。
 
 ### 添加黑名单
 即时通信 IM 支持批量添加黑名单，详情可参见：<a href="https://intl.cloud.tencent.com/document/product/1047/34911">添加黑名单</a>。
@@ -152,8 +152,7 @@ App 管理员可以通过即时通信 IM [控制台](https://console.cloud.tence
 ## 相关文档
 
 - [用户资料与关系链（Android）](https://intl.cloud.tencent.com/document/product/1047/34332)
-- [用户资料与关系链（iOS）](https://intl.cloud.tencent.com/document/product/1047/36284)
-- [快速调通基本功能（Windows）](https://intl.cloud.tencent.com/document/product/1047/34304)
-- [关系链（Web SDK）](https://intl.cloud.tencent.com/document/product/1047/34334)
-- [好友系统消息（Web SDK）](https://intl.cloud.tencent.com/document/product/1047/34334)
+- [用户资料与关系链（iOS）](https://intl.cloud.tencent.com/document/product/1047/34333)
+- [概述（Windows）](https://intl.cloud.tencent.com/document/product/1047/34304)
+- [用户资料（Web & 小程序）](https://intl.cloud.tencent.com/document/product/1047/34334)
 

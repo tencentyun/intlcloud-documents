@@ -1,3 +1,20 @@
+### 2.10.1 @2021.3.19
+
+**新增**
+
+- [createMergerMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createMergerMessage) 接口，创建合并消息。
+- [createForwardMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createForwardMessage) 接口，创建转发消息。
+- 多实例或多终端登录，一端上报已读后，Web 端同一个会话未读数同步清零。
+
+**变更**
+
+废弃 MTA 统计。
+
+**修复**
+
+- Web 多实例登录，C2C 会话对端头像和昵称出错。
+- 注册发消息后回调并调用 REST API 频繁撤回消息的场景，部分消息未正确撤回。
+
 ### 2.9.3 @2021.2.3
 
 **变更**
@@ -260,7 +277,6 @@ Taro 3.x 集成 WebIM 时的兼容性问题。
 **变更**
 - [createFileMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createFileMessage) 上传文件大小由20M调整为100M。
 - [群提示消息](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.GroupTipPayload) 的 `msgMemberInfo` 和 `shutupTime` 即将废弃，请使用 `memberList` 和 `muteTime` 代替。
-
 
 **修复**
 - 调用 [off](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#off) 接口无法取消监听事件。
