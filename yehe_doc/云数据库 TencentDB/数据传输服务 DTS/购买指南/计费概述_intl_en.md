@@ -20,7 +20,7 @@ Your subscription service will be isolated after expiration, which will affect y
 | Billing Mode | Payment Mode | Use Case | 
 |---------|---------|---------|
 | Monthly subscription | Fees are prepaid when a subscription instance is created. | <li>Suitable for businesses with long-term stable needs as the rates are lower than the pay-as-you-go option. Longer-term purchases result in increased savings.<li>Monthly subscription cannot be changed to pay-as-you-go. | 
-| Pay-as-you-go | It is a postpaid mode where a bill will be generated once per hour and fees will be deducted from your Tencent Cloud account accordingly. | <li>Suitable for business scenarios where traffic fluctuates greatly. The instance can be released immediately after use to save costs.<li>Pay-as-you-go can be changed to monthly subscription. | 
+| Pay-as-you-go | It is a postpaid mode where a bill will be generated once per hour and fees will be deducted from your Tencent Cloud account accordingly. | Suitable for business scenarios where traffic fluctuates greatly. The instance can be released immediately after use to save costs. |
 
 ### Pricing Details
 One data subscription instance corresponds to one TencentDB for MySQL instance, and up to 20 channels can be enabled for one instance. The monthly fee of a data subscription instance is as follows:
