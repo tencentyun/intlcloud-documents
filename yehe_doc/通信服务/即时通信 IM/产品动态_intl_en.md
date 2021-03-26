@@ -3,21 +3,36 @@
 
 <table>
 <tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
-</tr> <tr>
-<td> SDK 5.1.56 release (standard edition)</td>
-<td><ul style="margin:0">
-    <li>Fixed the issue of the Windows SDK where the client thread might block the SDK logic thread when a new message callback was triggered.</li>
-    <li>Replaced the log component of the Android SDK to improve stability.</li>
-    <li>Optimized the logic of persistent connections, improving the quality of connections outside Chinese mainland.</li>
-    <li>Optimized data reporting and specified error codes related to network timeout in a detailed way.</li>
-    <li>Fixed occasional failures of extracting logs in the iOS SDK.</li>
-    <li>Fixed several stability issues.</li>
-</ul></td>
-<td>March 03, 2021</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+</tr> 
+<tr>
+	<td> SDK 5.2.210 release (lite edition)</td>
+	<td><ul style="margin:0">
+	    <li>Added support for forwarding multiple messages as a combined single message.</li>
+	    <li>Optimized the logic of persistent connections, improving the quality of connections outside Chinese mainland.</li>
+	    <li>Specified login error codes in a detailed way to distinguish whether the network is normal during login.</li>
+	    <li>Optimized the logic of COS upload, providing better experience of sending rich media messages.</li>
+	    <li>Added the advanced API for getting historical messages.</li>
+	    <li>Added the API for getting conversations in batches.</li>
+		<li>Added the API for checking friend relationships in batches.</li>
+		<li>For more information about updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34282">Update Log</a>.</li>
+	</ul></td>
+	<td>March 12, 2021</td>
+	<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+</tr>
+<tr>
+	<td> SDK 5.1.56 release (standard edition)</td>
+	<td><ul style="margin:0">
+	    <li>Fixed the issue of the Windows SDK where the client thread might block the SDK logic thread when a new message callback was triggered.</li>
+	    <li>Replaced the log component of the Android SDK to improve stability.</li>
+	    <li>Optimized the logic of persistent connections, improving the quality of connections outside Chinese mainland.</li>
+	    <li>Optimized data reporting and specified error codes related to network timeout in a detailed way.</li>
+	    <li>Fixed occasional failures of extracting logs in the iOS SDK.</li>
+	    <li> Fixed several stability issues.</li>
+	</ul></td>
+	<td>March 03, 2021</td>
+	<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
 </tr>
 </table>
-
 ## January 2021
 <table>
 <tr>
@@ -33,7 +48,7 @@
 	    <li>Fixed the issue where sometimes there was be no callback for querying the conversation list.</li>
 	    <li>Fixed the issue where sometimes the sequence number of a C2C message was incorrect.</li>
 	    <li>Fixed the issue where sometimes a negative upload progress was displayed when a video greater than 24 MB was sent on the Android platform.</li>
-	    <li>Fixed the issue of occasional crashes when messages were sent on the Android platform.</li>
+	    <li>Fixed occasional crashes on the Android platform when messages were sent.</li>
         </ul>
     </td>
     <td>February 05, 2021</td>
@@ -55,7 +70,7 @@
 		<li>For more information about updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34282">Update Log</a>.</li>
         </ul>
     </td>
-    <td>February 05, 2021 </td>
+    <td>February 05, 2021</td>
     <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
 </tr>
 <tr>
@@ -66,22 +81,22 @@
 	    <li>Fixed occasional crashes when a low-end Android device tried to obtain the log path.</li>
         </ul>
     </td>
-    <td>January 29, 2021 </td>
+    <td>January 29, 2021</td>
     <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
 </tr>
 <tr>
     <td> SDK 5.1.136 release (lite edition)</td>
     </td>
         <ul style="margin:0">
-            <li>V2 APIs added an API for log callbacks.</li>
+            <li>V2 APIs added the API for log callbacks.</li>
 	    <li>Fixed the issue where the UserID of the @ target user in the group @ message was empty.</li>
 	    <li>Fixed the issue where sometimes audio-video group messages could not be received.</li>
 	    <li>Fixed the occasional issue of incorrect login status in the case of frequent network reconnections.</li>
 	    <li>Fixed the issue where sometimes users failed to log in again after going offline and being kicked off.</li>
-	    <li>Fixed occasional crashes in DNS resolution.</li>
+	    <li>Fixed occasional crashes during DNS resolution.</li>
         </ul>
     </td>
-    <td>January 27, 2021 </td>
+    <td>January 27, 2021</td>
     <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
 </tr>
 <tr>
@@ -89,7 +104,7 @@
     </td>
         <ul style="margin:0">
             <li>Added support for overload protection in the network module.</li>
-	    <li>Fixed the issue where some sessions occasionally were lost when the standard edition was upgraded to the lite edition.</li>
+	    <li>Fixed the issue where sometimes some sessions were lost when the standard edition was upgraded to the lite edition.</li>
 	    <li>Fixed the issue where the `onUserSigExpired` callback could not be received after the login information expired.</li>
 	    <li>Fixed the issue where a member received the `onMemberKicked` callback after being kicked out of a group and joining the group again.</li>
         </ul>
@@ -107,10 +122,10 @@
 	    <li>Fixed the issue where sometimes the unread messages count in C2C conversations was cleared when the C2C messages were synchronized after login.</li>
 	    <li>Fixed the issue where the last message in a conversation was not updated when the conversation list was synchronized after a user went offline and then online.</li>
 	    <li>Fixed the issue on the Android platform where the settings of the custom message field `description` and personal profile fields `level` and `role` did not take effect.</li>
-	    <li>Fixed occasional crashes during deinitialization.</li>
+	    <li>Fixed occasional crashes on the Android platform during deinitialization.</li>
         </ul>
     </td>
-    <td>January 19, 2021 </td>
+    <td>January 19, 2021</td>
     <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
 </tr>
 <tr>
@@ -118,7 +133,7 @@
     </td>
         <ul style="margin:0">
             <li>Improved internationalization support by eliminating the issue where there were Chinese characters in the English version.</li>
-						<li>Fixed the issue where custom messages with the extended field `extension` failed to be sent on the Android platform.</li>
+						<li>Fixed the issue on the Android platform where custom messages with the extended field `extension` failed to be sent.</li>
         </ul>
     </td>
     <td>January 15, 2021</td>
@@ -146,7 +161,7 @@
             <li>V2 APIs added the `role` and `level` fields for user profile objects.</li>
             <li>Fixed the database compatibility issue in the upgrade from versions below 4.8.1 to the lite edition.</li>
             <li>Fixed the issue where sometimes users received the callbacks of messages sent by themselves.</li>
-            <li>Fixed the issue where there was no callback when you tried to get the list of groups that you joined when you hadn’t joined any group.</li>
+            <li>Fixed the issue where there was no callback when users tried to get the list of groups that they had joined when they hadn't joined any group.</li>
             <li>Fixed the issue where there was no conversation update callback when setting group message receiving options.</li>
             <li>Fixed the issue where sometimes there was no end callback for conversion synchronization.</li>
             <li>Fixed occasional crashes during conversion synchronization.</li>
@@ -166,8 +181,8 @@
             <li>Optimized the issue in getting the profile photos of C2C messages.</li>
             <li>Optimized the security and renewal of rich media message file upload.</li>
             <li>Fixed the issue where the local paths of sent rich media messages were empty.</li>
-            <li>Fixed the issue where when a local message was inserted into a group, the previous message was displayed as the `lastMessage` of the conversation after you logged out and logged back in.</li>
-            <li>Fixed the issue where when a local message was inserted into a group, the previous message was displayed as the `lastMessage` of the conversation after you logged out and logged back in.</li>
+            <li>Fixed the issue where when a local message was inserted into a group, the previous message was displayed as the `lastMessage` of the conversation after users logged out and logged back in.</li>
+            <li>Fixed the issue where when a local message was inserted into a group, the previous message was displayed as the `lastMessage` of the conversation after users logged out and logged back in.</li>
             <li>For more information about updates, see <a href="https://intl.cloud.tencent.com/document/product/1047/34282">Update Log</a>.</li>
         </ul>
     </td>
@@ -274,7 +289,7 @@
             <li> Fixed a stability issue.</li>
         </ul>
     </td>
-    <td>December 04, 2020 </td>
+    <td>December 04, 2020</td>
     <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
 </tr>
 <tr>
@@ -443,7 +458,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 </tr> <tr>
 <td>SDK 4.8.50 release (Android, iOS, and Windows)</td>
 <td><ul style="margin:0;">
-    <li>Fixed the API 2.0 issue where the onMemberEnter callback was not triggered when someone entered a audio-video group (AVChatRoom).</li>
+    <li>Fixed the API 2.0 issue where the onMemberEnter callback was not triggered when someone entered a livestreaming group (AVChatRoom).</li>
     <li>Added the groupID parameter to the onGroupInfoChanged and onMemberInfoChanged callbacks of API 2.0.</li>
     <li>Fixed the issue where there was no conversation update callback after a C2C message was sent successfully.</li>
     <li>Fixed the issue where a user failed to receive messages after switching accounts and joining the same audio-video group (AVChatRoom).</li>
