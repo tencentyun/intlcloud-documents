@@ -19,7 +19,7 @@ You can scan the QR code in [Free Demo](https://intl.cloud.tencent.com/document/
 
 #### 4.1 Activate the service
 
-Before using GME, you need to [sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and activate the GME service. For more information, please see [Voice Service Activation Guide](https://intl.cloud.tencent.com/document/product/607/10782).
+Before using GME, you need to [sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and activate the GME service. For more information, please see [Voice Service Activation Guide](https://intl.cloud.tencent.com/document/product/607/39698).
 
 #### 4.2 Obtaining the access parameter
 
