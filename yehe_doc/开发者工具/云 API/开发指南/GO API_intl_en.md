@@ -177,8 +177,8 @@ StringToSign =
 
 
 >!
- 1. `Date` must be calculated from the timestamp `X-TC-Timestamp` and the time zone is UTC+0. If you add the local time zone information (such as UTC+8) in the system, calls can succeed both day and night but will definitely fail at 00:00. For example, if the timestamp is 1551113065 and the time in UTC+8 is 2019-02-26 00:44:25, the UTC+0 date in the calculated `Date` value should be 2019-02-25 instead of 2019-02-26.
- 2. `Timestamp` must be the same as your current system time, and your system time must be in sync with the UTC time. If the difference between the timestamp and your current system time is greater than five minutes, the request will fail. If your system time is out of sync with the UTC time for a prolonged period, the request will fail, and a signature expiration error will be returned.
+> 1. `Date` must be calculated from the timestamp `X-TC-Timestamp` and the time zone is UTC+0. If you add the local time zone information (such as UTC+8) in the system, calls can succeed both day and night but will definitely fail at 00:00. For example, if the timestamp is 1551113065 and the time in UTC+8 is 2019-02-26 00:44:25, the UTC+0 date in the calculated `Date` value should be 2019-02-25 instead of 2019-02-26.
+> 2. `Timestamp` must be the same as your current system time, and your system time must be in sync with the UTC time. If the difference between the timestamp and your current system time is greater than five minutes, the request will fail. If your system time is out of sync with the UTC time for a prolonged period, the request will fail, and a signature expiration error will be returned.
 
  According to the rules above, the string to sign obtained in the example is as follows: 
 
@@ -458,9 +458,9 @@ The generated signature string cannot be directly used as a request parameter an
 For example, if the signature string generated in the previous step is `Eli*****************cGeI=`, the final value of the `Signature` request parameter will be `EliP***********************eI%3D`, which will be used to generate the final request URL.
 
 >!  
-- If you use the GET request method or use the POST request method with `Content-Type` of `application/x-www-form-urlencoded`, all the request parameter values must be URL-encoded (except the parameter key and the equal symbol (=)) before the request is sent. Non-ASCII characters must be encoded with UTF-8 before URL-encoding.
-- The network libraries of some programming languages automatically URL-encode all parameters. In this case, the signature string does not need to be URL-encoded again; otherwise, two rounds of URL-encoding will cause the signature to fail.
-- Other parameter values also need to be encoded with [RFC 3986](http://tools.ietf.org/html/rfc3986). Use `%XY` in percent-encoding for special characters such as Chinese characters, where `X` and `Y` are hexadecimal characters (0–9 and uppercase A–F). Using lowercase characters will cause an error.
+>- If you use the GET request method or use the POST request method with `Content-Type` of `application/x-www-form-urlencoded`, all the request parameter values must be URL-encoded (except the parameter key and the equal symbol (=)) before the request is sent. Non-ASCII characters must be encoded with UTF-8 before URL-encoding.
+>- The network libraries of some programming languages automatically URL-encode all parameters. In this case, the signature string does not need to be URL-encoded again; otherwise, two rounds of URL-encoding will cause the signature to fail.
+>- Other parameter values also need to be encoded with [RFC 3986](http://tools.ietf.org/html/rfc3986). Use `%XY` in percent-encoding for special characters such as Chinese characters, where `X` and `Y` are hexadecimal characters (0–9 and uppercase A–F). Using lowercase characters will cause an error.
 
 #### 7. Sample API 3.0 signature v1
 
