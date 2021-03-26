@@ -32,7 +32,7 @@ This document describes how to create a notification template in the Cloud Monit
         - Alarm Trigger: a notification will be sent when an alarm is triggered.
         - Alarm Recovery: a notification will be sent when an alarm is resolved.
 	- **User Notification**:
-        - Recipient Object: you can choose a recipient group or recipient. If you need to create a group, please see [Creating Alarm Recipient Group](https://intl.cloud.tencent.com/document/product/248/6217).
+        - Recipient Object: you can choose a recipient group or recipient. If you need to create a group, please see [Creating Alarm Recipient Group](https://intl.cloud.tencent.com/document/product/248/38908).
         - Notification Period: define the time period for receiving alarms.
         - Receiving Channel: three alarm channels are supported: email, SMS, and phone. You can also set different channels and notification periods in different user dimensions. For more information, please see [Alarm Type, Channel, and Quota](https://intl.cloud.tencent.com/document/product/248/38908).
 		Description of phone alarm settings:
