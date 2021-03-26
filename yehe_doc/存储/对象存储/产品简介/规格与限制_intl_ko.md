@@ -20,28 +20,28 @@
     	 <tr>
         <td rowspan="5">스토리지 유형</td>
     			<td>표준 스토리지 제한</td>
-    			<td>과금 유의 사항: <br>저장 기간, 저장 단위 무제한<br>표준 스토리지에 대한 자세한 가격은 <a href="https://buy.cloud.tencent.com/price/cos">제품 가격</a>을 참조하십시오.</td>
+    			<td>과금 유의 사항: <br>저장 기간, 저장 단위 무제한 <br>표준 스토리지에 대한 자세한 가격은 <a href="https://buy.cloud.tencent.com/price/cos">제품 가격</a>을 참조하십시오.</td>
     </tr>
     	 <tr>
         <td>표준IA 스토리지 제한</td>
-    			<td>과금 유의 사항: <br><li>저장 기간이 30일 이하인 경우 30일로 계산<br><li>저장 단위가 64KB 미만인 경우 64KB로 계산하며, 64KB 이상인 경우 실제 크기로 계산<br>표준IA 스토리지에 대한 자세한 가격은 <a href="https://buy.cloud.tencent.com/price/cos">제품 가격</a>을 참조하십시오.</td>
+    			<td>과금 유의 사항: <br><li>저장 기간이 30일 미만인 경우 30일로 계산 <br><li>저장 단위가 64KB 미만인 경우 64KB로 계산하며, 64KB 이상인 경우 실제 크기로 계산<br>표준IA 스토리지에 대한 자세한 가격은 <a href="https://buy.cloud.tencent.com/price/cos">제품 가격</a>을 참조하십시오.</td>
     </tr>
     	 <tr>
         <td>INTELLIGENT TIERING 스토리지 제한</td>
-    			<td>과금 유의 사항: <br><li>저장 기간이 30일 이하인 경우 30일로 계산<br><li>저장 단위가 64KB 미만인 경우 64KB로 계산하며, 64KB 이상인 경우 실제 크기로 계산<br>INTELLIGENT TIERING 스토리지에 대한 자세한 가격은 <a href="https://buy.cloud.tencent.com/price/cos">제품 가격</a>을 참조하십시오.</td>
+    			<td>과금 유의 사항: <br><li>저장 기간이 30일 미만인 경우 30일로 계산<br><li>저장 단위가 64KB 미만인 경우 64KB로 계산하며, 64KB 이상인 경우 실제 크기로 계산 <br>INTELLIGENT TIERING 스토리지에 대한 자세한 가격은 <a href="https://buy.cloud.tencent.com/price/cos">제품 가격</a>을 참조하십시오.</td>
     </tr>
     	 <tr>
-        <td>클라우드 아카이브 스토리지(CAS) 제한</td>
-    			<td>과금 유의 사항: <br><li>저장 기간이 90일 이하인 경우 90일로 계산<br><li>저장 단위가 64KB 미만인 경우 64KB로 계산하며, 64KB 이상인 경우 실제 크기로 계산<br>CAS에 대한 자세한 가격은 <a href="https://buy.cloud.tencent.com/price/cos">제품 가격</a>을 참조하십시오.</td>
+        <td>CAS 제한</td>
+    			<td>과금 유의 사항: <br><li>저장 기간이 90일 미만인 경우 90일로 계산 <br><li>저장 단위가 64KB 미만인 경우 64KB로 계산하며, 64KB 이상인 경우 실제 크기로 계산 <br>CAS에 대한 자세한 가격은 <a href="https://buy.cloud.tencent.com/price/cos">제품 가격</a>을 참조하십시오.</td>
     </tr>
     	 <tr>
         <td>DEEP ARCHIVE 제한</td>
-    			<td>과금 유의 사항: <br><li>저장 기간이 180일 이하인 경우 180일로 계산<br><li>저장 단위가 64KB 미만인 경우 64KB로 계산하며, 64KB 이상인 경우 실제 크기로 계산<br>DEEP ARCHIVE에 대한 자세한 가격은 <a href="https://buy.cloud.tencent.com/price/cos">제품 가격</a>을 참조하십시오.</td>
+    			<td>과금 유의 사항: <br><li>저장 기간이 180일 미만인 경우 180일로 계산 <br><li>저장 단위가 64KB 미만인 경우 64KB로 계산하며, 64KB 이상인 경우 실제 크기로 계산 <br>DEEP ARCHIVE에 대한 자세한 가격은 <a href="https://buy.cloud.tencent.com/price/cos">제품 가격</a>을 참조하십시오.</td>
     </tr>
      <tr>
         <td rowspan="4">버킷</td>
     			<td>제한</td>
-    			<td>1. 버킷은 한 번 생성되면 이름과 소속 리전을 수정할 수 없습니다.<br>2. 동일한 사용자 계정의 모든 버킷 이름은 고유하며 이름을 변경할 수 없습니다.<br>3. 이름은 영문 소문자와 숫자 [a-z, 0-9], 하이픈 “-” 및 해당 조합으로만 구성할 수 있으며 1-50자까지 지원합니다.</td>
+    			<td>1. 버킷은 한 번 생성되면 이름과 소속 리전을 변경할 수 없습니다. <br>2. 동일한 사용자 계정의 모든 버킷 이름은 고유하며 이름을 변경할 수 없습니다. <br>3. 이름은 '-'으로 시작하거나 끝날 수 없으며 영어 소문자와 숫자 [a~z, 0~9], 하이픈 '-' 및 해당 조합으로만 구성할 수 있고, 1~50자까지 지원합니다.</td>
      </tr>
     	 <tr>
     			<td> 버킷 수량</td>
@@ -53,28 +53,28 @@
     		</tr>
 				<tr>
     			<td> 버킷 태그</td>
-    			<td>버킷당 최대 50개까지 태그를 설정할 수 있으며, 태그 버튼은 중복 사용 불가</td>
+    			<td>버킷당 최대 50개까지 태그를 설정할 수 있으며, 태그 키는 중복 사용할 수 없습니다.</td>
     		</tr>
     		<tr>
     			<td rowspan="5">객체</td>
     			<td>제한</td>
-					<td >객체 버튼 길이는 1-850B까지 지원하며, 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/13324">객체 개요</a>를 참조하십시오.</td>
+					<td >객체 키 길이는 1~850B까지 지원하며, 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/13324">객체 개요</a>를 참조하십시오.</td>
     		</tr>
     			<tr>
     			<td>업로드</td>
-    			<td>1. 콘솔 업로드 객체당 최대 512GB<br>2. API/SDK 업로드 객체당 최대 48.82TB(50,000GB)<br>업로드 인터페이스 규격:<br>&nbsp;&nbsp;(a)간편 업로드: 객체당 최대 5GB. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/14113">간편 업로드</a>를 참조하십시오.<br>&nbsp;&nbsp;(b)멀티파트 업로드: 객체당 최대 48.82TB, 파트 크기 1MB-5GB, 마지막 파트 크기 1MB 이하, 파트 수 1-10000. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/14112">멀티파트 업로드</a>를 참조하십시오.<br>3. 현재 버킷에서 INTELLIGENT TIERING 스토리지를 설정한 상태에서만 INTELLIGENT TIERING 스토리지 유형의 객체를 업로드할 수 있습니다. 서로 다른 스토리지 레이어의 객체 전환은 INTELLIGENT TIERING 스토리지 설정상의 매개변수에 따라 결정됩니다.</td>
+    			<td>1. 콘솔 업로드 객체당 최대 512GB까지 지원합니다. <br>2. API/SDK 업로드 객체당 최대 48.82TB(50,000GB)까지 지원합니다. <br>업로드 인터페이스 규격: <br>&nbsp;&nbsp;(a) 간편 업로드: 객체당 최대 5GB까지 지원합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/14113">간편 업로드</a>를 참조하십시오. <br>&nbsp;&nbsp;(b) 멀티파트 업로드: 객체당 최대 48.82TB, 파트 크기 1MB~5GB, 마지막 파트 크기 1MB 이하, 파트 수 1~10000입니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/14112">멀티파트 업로드</a>를 참조하십시오. <br>3. 현재 버킷에서 INTELLIGENT TIERING 스토리지 설정을 활성화한 상태에서만 INTELLIGENT TIERING 스토리지 유형의 객체를 업로드할 수 있습니다. 서로 다른 스토리지 레이어 간의 객체 전환은 INTELLIGENT TIERING 스토리지 설정의 매개변수에 따라 결정됩니다.</td>
     		</tr>
     		<tr>
     			<td >복사</td>
-    			<td >1. 단일 계정에서 리전 내 또는 리전 간의 객체 복사를 지원합니다.<br>2. 리전 내 객체 복사는 무료이며, 리전 간 객체 복사는 트래픽 요금이 발생합니다. 자세한 내용은 <a href="https://buy.cloud.tencent.com/price/cos">과금 설명</a>의 트래픽 요금 정보를 참조하십시오.<br>3. 복사 인터페이스 규격:<br>&nbsp;&nbsp;(a) 간편 복사: 객체당 최대 5GB. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/14117">간단한 복사</a>를 참조하십시오.<br>&nbsp;&nbsp;(b)5GB를 초과하는 경우 반드시 멀티파트 복사를 사용해야 하며, 복사 객체당 최대 48.82TB까지 지원합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/14118">멀티파트 복사</a>를 참조하십시오.<br>4. 현재 표준 스토리지, 표준IA 스토리지, INTELLIGENT TIERING 스토리지 유형을 INTELLIGENT TIERING 스토리지 유형으로 복사할 수 없습니다.</td>
+    			<td >1. 리전 내 또는 리전 간 단일 계정의 객체 복사를 지원합니다. <br>2. 리전 내 객체 복사는 무료이며, 리전 간 객체 복사는 트래픽 요금이 발생합니다. 자세한 내용은 <a href="https://buy.cloud.tencent.com/price/cos">과금 설명</a>의 트래픽 요금 정보를 참조하십시오. <br>3. 복사 인터페이스 규격: <br>&nbsp;&nbsp;(a) 간편 복사: 객체당 최대 5GB까지 지원합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/14117">간편 복사</a>를 참조하십시오. <br>&nbsp;&nbsp;(b) 5GB를 초과하는 경우 반드시 멀티파트 복사를 사용해야 하며, 복사 객체당 최대 48.82TB까지 지원합니다. 자세한 내용은 <a href="https://intl.cloud.tencent.com/document/product/436/14118">멀티파트 복사</a>를 참조하십시오. <br>4. 현재 표준 스토리지, 표준IA 스토리지, INTELLIGENT TIERING 스토리지 유형은 INTELLIGENT TIERING 스토리지 유형으로 복사할 수 없습니다.</td>
     		</tr>
     		<tr>
     			<td>일괄 삭제</td>
-    			<td>API, SDK에서 전송하는 일괄 삭제는 1회당 최대 1000개의 객체를 삭제할 수 있습니다.</td>
+    			<td>API, SDK를 통한 일괄 삭제는 1회당 최대 1000개의 객체를 삭제할 수 있습니다.</td>
     		</tr>
 				<tr>
     			<td>객체 태그</td>
-    			<td>동일한 객체에는 최대 10개의 태그를 추가할 수 있으며, 태그는 중복될 수 없습니다.</td>
+    			<td>동일한 객체에 최대 10개의 태그를 추가할 수 있으며, 태그는 중복될 수 없습니다.</td>
     		</tr>
     		 <tr>
     			<td >액세스 정책</td>
@@ -84,11 +84,11 @@
     		<tr>
     			<td rowspan="3">라이프사이클</td>
     			<td>규칙 수량</td>
-    			<td >버킷당 최대 1000개</td>
+    			<td >버킷당 최대 1000개까지 설정할 수 있습니다.</td>
     		</tr>
     		<tr>
     			<td >스토리지 유형 전환</td>
-    			<td >표준에서 표준IA로 전환: 최소 1일<br>표준/표준IA에서 CAS 또는 DEEP ARCHIVE로 전환: 최소 1일</td>
+    			<td >표준에서 표준IA로 전환: 최소 1일 <br>표준/표준IA에서 CAS 또는 DEEP ARCHIVE로 전환: 최소 1일</td>
     		</tr>
     		 <tr>
     			<td >만료 삭제</td>
