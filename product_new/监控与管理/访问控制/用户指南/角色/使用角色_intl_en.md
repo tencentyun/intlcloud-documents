@@ -18,7 +18,7 @@ Company A takes the following steps as directed in [Creating a role > Creating a
 
 Company B takes the following steps as directed in [Assigning role policies to sub-accounts](https://intl.cloud.tencent.com/document/product/598/19422):
 1. Authorize the sub-account `DevB` to assume the `DevOpsRole` role.
-2. Call the [AssumeRole](https://intl.cloud.tencent.com/document/product/598/13895) API to apply for temporary credentials for the role `DevOpsRole`. Input parameters are as follows: 
+2. Call the [AssumeRole](https://intl.cloud.tencent.com/document/product/598/35840) API to apply for temporary credentials for the role `DevOpsRole`. Input parameters are as follows: 
 > If company B (`CompanyExampleB`) wants to directly operate the resources of company A (`CompanyExampleA`), they can also request temporary credentials to perform operations.
 >
 ```
