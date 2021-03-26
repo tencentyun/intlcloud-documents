@@ -24,17 +24,12 @@
 1. 설정 변경 페이지로 들어가서 다운로드한 소스 패키지에 적합한 개발 환경을 선택합니다.
 2. `GenerateTestUserSig.h` 파일을 찾아 엽니다.
  <table><tr>
-      <th nowrap="nowrap">적용 플랫폼</th>
-      <th nowrap="nowrap">파일의 상대 경로</th>
-  </tr>
+<th nowrap="nowrap">적용 플랫폼</th><th nowrap="nowrap">파일의 상대 경로</th></tr>
 <tr>
-      <td>iOS</td>
-<td>iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h</td>
-  </tr>
-<tr>
-    <td>Mac</td>
-    <td>Mac/OCDemo/TRTCDemo/TRTC/GenerateTestUserSig.h</td>
-  </tr></table>
+<td>iOS</td><td>iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h</td>
+</tr><tr>
+<td>Mac</td><td>Mac/OCDemo/TRTCDemo/TRTC/GenerateTestUserSig.h</td>
+</tr></table>
 3. `GenerateTestUserSig.h` 파일에서 관련 매개변수를 설정합니다.
   <ul><li>SDKAPPID: 0으로 기본 설정되어 있으며 실제 SDKAppID로 설정하십시오.</li>
   <li>SECRETKEY: 공백으로 기본 설정되어 있으며 실제 키 정보로 설정하십시오.</li></ul> 
