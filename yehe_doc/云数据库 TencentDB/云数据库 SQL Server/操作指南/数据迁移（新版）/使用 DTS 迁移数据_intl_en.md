@@ -45,21 +45,23 @@ Configure the task, source database, and target database. After the network conn
 #### c. Target database settings
 - Target database type: select SQL Server.
 - Database instance: select the target database instance and enter its account and password.
+![](https://main.qcloudimg.com/raw/0c0db8639cc644fbf56d12d94ae8d24c.png) 
 
  
 
 ### 3. Set migration options and select migration objects
 Specify the data type and objects to be migrated. The migration type supports full migration and full + incremental migration. After confirming that everything is correct, click **Save**.
- 
+ ![](https://main.qcloudimg.com/raw/3bf88e9f3ea08c1c873ec91112261560.png) 
 
 ### 4. Verify the migration task
 View the verification results of the migration task.
 - If the verification is successful, click **Start Task**.
-
+![](https://main.qcloudimg.com/raw/1c7cc5db78038606e3f8f8d38baa91b4.png)
 - If one or more check items fail, click **View Details**, troubleshoot based on the pop-up tips, and verify the task again.
 
 ### 5. Start the migration task
 1) After the verification is successful, click **Start Task** on the task verification page.
+![](https://main.qcloudimg.com/raw/695aa8aef7df1095807a19a8bd7c7c13.png)
 >!
 >- If the scheduled start is not set, the task will start immediately.
 >- If the scheduled start is set, the migration task will queue and start at the specified start time. You can also manually start the migration task by clicking **Immediate start** in the migration task list.
