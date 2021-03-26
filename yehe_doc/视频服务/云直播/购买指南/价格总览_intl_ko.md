@@ -2,7 +2,7 @@
 
 CSS 요금 항목에는 기본 서비스 요금과 부가 서비스 요금이 있습니다. Tencent Cloud에서는 다른 제품과 접목해 제공하는 부가 기능에 대해 서비스 확장 비용을 부과합니다. 요금 구성 항목은 다음 이미지와 같습니다.
 
-![](https://main.qcloudimg.com/raw/fdf794a99893c09a002b3bea848b3238.png)
+![](https://main.qcloudimg.com/raw/2ce6c231a986ddb89e2ae2680d2c2563.png)
 
 
 - [기본 서비스 요금](#base): 라이브 방송(LVB 및 LEB 포함) 이용 후 발생하는 라이브 방송 소모 비용으로, LVB와 LEB는 트래픽 방식 또는 대역폭 피크 방식의 두 가지 과금 방식을 지원합니다.
@@ -36,11 +36,11 @@ CSS 요금 항목에는 기본 서비스 요금과 부가 서비스 요금이 �
 </tr><tr>
 <td>LEB 트래픽<br>(기본)</td>
 <td>LEB 시청으로 중국(대륙)에서 발생하는 다운스트림 트래픽 요금은 일 결산하며 후불제가 적용됩니다. </td>
-<td><a href="https://cloud.tencent.com/document/product/267/39136#flow">후불 - 일 결산</a></td>
+<td>후불 - 일 결산</a></td>
 </tr><tr>
 <td>LEB 대역폭 피크</td>
 <td>LEB 시청으로 중국(대륙)에서 발생하는 다운스트림 대역폭 피크 요금은 일 결산하며 후불제가 적용됩니다. </td>
-<td><a href="https://cloud.tencent.com/document/product/267/39136#bandwidth">후불 - 일 결산</a></td>
+<td>후불 - 일 결산</a></td>
 </tr></table>
 
 >! 
@@ -115,7 +115,7 @@ CSS 요금 항목에는 기본 서비스 요금과 부가 서비스 요금이 �
 <tr>
 <td>녹화 저장</td>
 <td>라이브 방송 녹화 파일은 VOD에 저장해야 하며 비용이 발생합니다. <b>데이터의 실제 저장 시간과 저장량에 따라 과금되며</b> 별도의 VOD 저장 비용이 발생합니다.</td>
-<td><a href="https://cloud.tencent.com/document/product/266/14667#storage_page">VOD - 종량제</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/14666">VOD - 종량제</a></td>
 </tr><tr>
 <td>화면 캡처 저장</td>
 <td>라이브 방송 화면 캡처와 음란물 감지로 생성되는 화면 캡처 파일은 COS에 저장해야 하며 비용이 발생합니다. <strong>데이터 실제 저장 시간 및 저장량에 따라 과금되며</strong> 별도의 COS 저장 비용이 발생합니다.</td>
