@@ -60,11 +60,11 @@
 
 [](id:step4)
 ### 4단계: 컴파일 실행
-- **Windows(C++): **
+- **Windows(C++):**
 Visual Studio(VS2015 권장)를 사용해 소스 코드 디렉터리의 `DuilibDemo\TRTCDuilibDemo.sln` 프로그램 파일을 열어 줍니다. Release/X86 구축 플랫폼을 통한 Demo 프로그램 컴파일링 및 실행을 권장합니다.
-- **Windows(C#): **
+- **Windows(C#):**
 Visual Studio(VS2017 권장)를 사용해 소스 코드 디렉터리의 `CSharpDemo\TRTCCSharpDemo.sln` 프로그램 파일을 엽니다. Release/X86 구축 플랫폼을 통한 Demo 프로그램 컴파일링 및 실행을 권장합니다.
-- **Windows(QT): ** 
+- **Windows(QT):** 
 Visual Studio(VS2015 이상 권장)를 사용해 소스 코드 디렉터리의
 QTDemo\QTDemo.pro 프로그램 파일을 열어 QTDemo 프로그램을 컴파일링 및 실행할 수 있습니다.
 
