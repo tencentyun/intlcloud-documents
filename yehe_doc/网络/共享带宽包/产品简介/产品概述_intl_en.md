@@ -1,4 +1,4 @@
-Tencent Cloud Bandwidth Package (BWP) is a multi-IP aggregated billing method that significantly reduces Internet access costs. When public network instances have traffic peaks at different times, you can use BWP for the aggregated bandwidth billing to greatly save your public network fees.
+Tencent Cloud Bandwidth Package (BWP) is a multi-IP aggregated billing method that significantly reduces Internet access costs. When public network instances have traffic peaks at different times, you can use BWP for the aggregated bandwidth billing instead of purchasing separate bandwidth for each device to save costs.
 BWP supports [monthly top 5 billing](https://intl.cloud.tencent.com/document/product/684/15255) and [monthly 95th percentile billing](https://intl.cloud.tencent.com/document/product/684/15255) for different use cases.
 >?BWP is currently in beta. To try it out, please submit an application to be added to the beta list.
 >
