@@ -19,7 +19,7 @@ You have created a bucket. For more information, please see [Creating Buckets](h
    ![](https://main.qcloudimg.com/raw/73aa7b3f19389dfdd42d4066e6437329.png)
 4. On the **Add Inventory** page, configure the following parameters:
   - **Inventory Name**: name of the published inventory report
-  - **Destination Bucket **: bucket where the inventory is stored. Defaults to the source bucket. The destination bucket must be in the same region as the source bucket.
+  - **Destination Bucket**: bucket where the inventory is stored. Defaults to the source bucket. The destination bucket must be in the same region as the source bucket.
  - **Report Prefix (Optional)**: prefix selected for the destination bucket. The prefix can be used to group the inventory files in a public location. The default value is used initially.
  - **Status**: enables/disables the inventory feature.
  - **Advanced Settings**: advanced configurations for inventory. If not set, the default values will be used.
