@@ -19,7 +19,7 @@
 
 #### 4.1 开通服务
 
-在使用腾讯云游戏多媒体引擎之前，您需要 [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985) 并且开通游戏多媒体引擎服务。详情请参见 [语音服务配置指引](https://intl.cloud.tencent.com/document/product/607/10782)。
+在使用腾讯云游戏多媒体引擎之前，您需要 [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985) 并且开通游戏多媒体引擎服务。详情请参见 [语音服务配置指引](https://intl.cloud.tencent.com/document/product/607/39698)。
 
 #### 4.2 获取接入参数
 
