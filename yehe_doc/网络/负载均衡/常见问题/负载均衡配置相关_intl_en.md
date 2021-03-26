@@ -174,6 +174,7 @@ If you need to configure a blocklist for some client IPs to deny their access re
 - Add the client IP and port to be rejected into the security group, and select the option in the policy column to reject access from this IP.
 - Add another security group rule after completing the above configuration to allow access requests to the port from all IPs by default.
 When the configuration completes, the security group rules are as follows:
+
 ```
 clientA ip+port drop
 clientB ip+port drop
@@ -200,13 +201,12 @@ Public network CLB VIP can be pinged. The requests of pinging the CLB VIP are re
 ### Description of running `Telnet` command to connect CLB listening ports
 - If layer-4 listeners (TCP, UDP, and TCP SSL) are not bound with real servers after being created, running the command `Telnet` to connect to their listening ports will fail. It will succeed if they are bound with real servers.
 - Running the command `Telnet` to connect to listening ports will succeed for layer-7 listeners (HTTP and HTTPS) not bound with real servers, as CLB instances will respond instead.
-- For more information about the port 843, please see [CLB Configuration](https://intl.cloud.tencent.com/document/product/214/5411).
 
 [[Back to Top]](#23)
 
 <span id="18"></span>
 ### Description of private network loopback
-For private network CLB instances, a private IP cannot be both the client and server IP. When the CLB instances read the same client and server IPs, access will fail.
+For private network CLB instances, a CVM cannot be both the client and server. When the CLB instances read the same client and server IPs, access will fail.
 If your client needs to be used as a server, please bind at least 2 real servers. CLB has related policies to prevent automatic loopback. When client A accesses the CLB instance, the CLB instance will automatically schedule the request to a real server other than client A.
 
 [[Back to Top]](#23)
