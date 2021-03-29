@@ -26,7 +26,7 @@ The alarm records feature allows the **current user logged in to the console** t
 1. Log in to the Cloud Monitor Console and go to [Alarm Records](https://console.cloud.tencent.com/monitor/alarm2/history).
 2. Find the alarm policy to be subscribed to and click **Subscribe** in the "Operation" column.
 	- If the alarm object of the alarm policy is a recipient, click **OK** in the pop-up box.
-	- If the alarm object of the alarm policy is a recipient group, click the **policy details page** link in the pop-up box. Then, you need to create a user group on the redirected page. For more information, please see [Creating Alarm Recipient Group](https://intl.cloud.tencent.com/document/product/248/6217).
+	- If the alarm object of the alarm policy is a recipient group, click the **policy details page** link in the pop-up box. Then, you need to create a user group on the redirected page. For more information, please see Creating Alarm Recipient Group.
 > ?
 > - The alarm receiving channel is the channel set by the current policy. If it is not set, SMS and email channels will be used by default.
 > - Alarm policies for platform events cannot be subscribed to.
