@@ -14,7 +14,7 @@ Content-Type: application/json
 
 {
     "group_name": "testname", 
-    "type"： "label", 
+    "type": "label", 
     "labels": ["defined_label_1", "defined_label_2"]
 }
 ```
@@ -35,7 +35,7 @@ There are only common request headers but no special request headers.
 |--------------|--------|------|---------|--------------------------------|
 | group_name   | string | body | Yes      | Server group name, which must be unique             |
 | type       | string    | body | No   | Server group type. Valid values: ip and label. Default value: ip  |
-| ips          | JsonArray| body| Yes    | List of IPs in server group            |
+| ips          | JsonArray| body| No   | List of IPs in server group            |
 | labels     | JsonArray | body | No   | List of labels in the server group          |
 
 ## Response
