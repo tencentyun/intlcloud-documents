@@ -493,7 +493,7 @@ void clearAndAppendAccount(Context context, final String account, int accountTyp
 > ?
 > - As the `appendAccount` API was seldom used and confusing to developers, it has been disused since October 26. If you used it previously, it will be replaced by the `clearAndAppendAccount` API.
 > - Each account can be bound to up to 100 tokens.
-> - The account can be email, QQ account number, mobile number, username, etc. For valid values, please see the enumeration class `XGPushManager.AccountType`. (Currently, only the default account type is supported. Other account types are expected to be available in February 2021.)
+> - The account can be email, QQ account number, mobile number, username, etc. For valid values, please see the enumeration class `XGPushManager.AccountType`. (Currently, only the default account type is supported. Other account types are expected to be available in April 2021.)
 > - If multiple devices are bound to the same account, the backend will push the message to the last bound device by default. If you want to push to all the bound devices, you can view the `account_push_type` parameter settings in [Push API](https://intl.cloud.tencent.com/document/product/1024/33764).
 >- The `clearAndAppendAccount` API is disused in SDK v1.2.3.0. The `upsertAccounts` API is recommended.
 > 
