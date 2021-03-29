@@ -1,3 +1,22 @@
+## Latest Lite Edition 5.2.210 @2021.03.12
+
+### SDK
+**Common changes**
+- Added support for forwarding multiple messages as a combined single message.
+- Optimized the logic of persistent connections, improving the quality of connections outside Chinese mainland.
+- Specified login error codes in a detailed way to distinguish whether the network is normal during login.
+- Optimized the logic of COS upload, providing better experience of sending rich media messages.
+- Added the advanced API for getting historical messages.
+- Added the API for getting conversations in batches.
+- Added the API for checking friend relationships in batches.
+- Fixed the issue where two messages were generated in the local database after a message that failed to be sent was sent again.
+- Fixed the issue where the muting time called back was incorrect when the group member profile was changed.
+- Fixed the issue where the width of the image called back was incorrect when an image message was received.
+- Fixed the issue where the console still printed logs after `logLevel` was set to `None`.
+- Fixed the issue where the `add_source` field of adding friends was incorrect.
+- Fixed the issue where sometimes the sending progress called back was negative when a video file greater than 24 MB was sent.
+
+
 ## Latest Standard Edition 5.1.56 @2021.03.03
 
 ### SDK
@@ -10,7 +29,7 @@
 
 **iOS platform**
 
-- Fixed occasional failures in extracting logs in the iOS SDK.
+- Fixed occasional failures of extracting logs in the iOS SDK.
 
 **Android platform**
 
@@ -20,13 +39,13 @@
 
 - Fixed the issue where the client thread might block the SDK logic thread when a new message callback was triggered in the Windows SDK.
 
-## Latest Lite Edition 5.1.138 @2021.02.05
+## 5.1.138 @2021.02.05 - Lite Edition
 ### SDK
 
 **Common changes**
 - Optimized logging.
 - Optimized the policy of persistent connection, improving the quality of connections outside Chinese mainland.
-- Fixed the issue where sometimes the last message was incorrect when multiple C2C messages were sent in the same second.
+- Fixed the issue where sometimes the last message was incorrect when multiple C2C messages were sent or received in the same second.
 - Fixed the issue where sometimes there was be no callback for querying the conversation list.
 - Fixed the issue where sometimes the sequence number of a C2C message was incorrect.
 
@@ -44,7 +63,7 @@
 - Fixed the issue where messages were delayed when user profiles were frequently pulled after messages were received.
 - Fixed the issue where deleting the account might cause the failure to pull the group member list.
 - Fixed the issue where the message might not be found when `findMessage` was called after `insertLocalMessage`.
-- Fixed the issue of conversation update callback when a conversation was deleted.
+- Fixed the issue where a conversation update callback was triggered when a conversation was deleted.
 - Fixed the issue of the Android SDK where the nicknames of historical group messages were not timely updated.
 - Improved the database stability of the iOS SDK.
 
@@ -117,7 +136,7 @@
 
 **Android platform**
 - Fixed the issue where the settings of the custom message field `description` and personal profile fields `level` and `role` did not take effect.
-- Fixed occasional crashes in deinitialization.
+- Fixed occasional crashes during deinitialization.
 
 
 ## 5.1.129 @2021.01.13 - Lite Edition
@@ -190,7 +209,7 @@
 - Fixed the issue where there was no callback when you tried to get the list of groups that you joined when you hadn’t joined any group.
 - Fixed the issue where there was no conversation update callback when setting group message receiving options.
 - Fixed the issue where occasionally there was no end callback for conversion synchronization.
-- Fixed occasional crashes in conversion synchronization.
+- Fixed occasional crashes during conversion synchronization.
 
 
 ## 5.1.123 @2020.12.31 - Lite Edition

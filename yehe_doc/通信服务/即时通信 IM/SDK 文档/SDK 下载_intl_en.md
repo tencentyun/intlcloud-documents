@@ -1,5 +1,5 @@
 You can download the latest source codes of IM SDKs and demos.
-<span id="TLS"></span>
+<span id ="TLS"></span>
 ## SDK Download
 <table>
 <tr>
@@ -68,18 +68,7 @@ You can download the latest source codes of IM SDKs and demos.
 
 
 
-<table>
-<tr>
-<th width="94px" style="text-align:center" >Framework SDK</td>
- <th width="0px" style="text-align:center" >Download Address</td>
-<th width="307px"  style="text-align:center">Reference</td>
-<th width="175px" style="text-align:center">Update Log</td>
-</tr>
-<tr>
-<td style="text-align:center">Electron  </td>
-<td style="text-align:center" colspan='3' >Coming soon</td>
-</tr>
-</table>
+
 ## Demo and Solution Download
 IM demos demonstrate IM features in various scenarios. You can [install](https://intl.cloud.tencent.com/document/product/1047/34279) and try the demos for different platforms and use cases.
 <table>
@@ -138,4 +127,3 @@ IM demos demonstrate IM features in various scenarios. You can [install](https:/
 
 ## Relevant Documentation
 - [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350)
-

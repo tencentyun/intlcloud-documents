@@ -1,5 +1,5 @@
 您可以在这里下载最新的即时通信 IM SDK 以及 Demo 源码。
-<span id="TLS"></span>
+<span id ="TLS"></span>
 ## SDK 下载
 <table>
 <tr>
@@ -68,18 +68,7 @@
 
 
 
-<table>
-<tr>
-<th width="94px" style="text-align:center" >框架 SDK</td>
- <th width="0px" style="text-align:center" >下载地址</td>
-<th width="307px"  style="text-align:center">参考文档</td>
-<th width="175px" style="text-align:center">更新日志</td>
-</tr>
-<tr>
-<td style="text-align:center">Electron  </td>
-<td style="text-align:center" colspan='3' >敬请期待</td>
-</tr>
-</table>
+
 ## Demo 及解决方案下载
 即时通信 IM Demo 演示了各个场景下的 IM 功能，您可 [前往安装](https://intl.cloud.tencent.com/document/product/1047/34279) 并体验不同平台、不同使用场景下的 Demo。
 <table>
@@ -138,4 +127,3 @@
 
 ## 相关文档
 - [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)
-
