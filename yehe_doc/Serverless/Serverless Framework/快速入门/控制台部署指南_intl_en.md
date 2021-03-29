@@ -1,21 +1,23 @@
 ## Overview
 
-For common framework components, Serverless Framework provides the [SSR](https://console.cloud.tencent.com/ssr) development and deployment scheme to help you develop and deploy your applications in the console.
+For common framework components, you can quickly develop and deploy your applications in the [Serverless SSR console](https://console.cloud.tencent.com/sls?from=quickstart).
 
 #### Currently supported frameworks
 - Express
+- WordPress
 - Koa
 - Egg.js
 - Next.js
 - Nuxt.js
 - Flask
 - Laravel
+- SpringBoot
 
 ## Prerequisites
 Before deploying your application in the console, you must complete the following permission configuration:
 
 #### Authorizing by root account
-1. Log in to the [SSR console](https://console.cloud.tencent.com/ssr) and click **Authorize** to enter the CAM console.
+1. Log in to the [Serverless SSR console](https://console.cloud.tencent.com/sls?from=quickstart) and click **Authorize** to enter the CAM console.
 2. On the **Role** list page in the CAM console, check whether the **SLS_QcsRole** and **CODING_QCSRole** service roles have been created successfully.
 >!If you have already created `CODING_QCSRole`, please check whether it has complete permissions. It requires the following basic policies: `QcloudSLSFullAccess`, `QcloudSSLFullAccess`, and `QcloudAccessForCODINGRole`. If any policy is missing, please add it manually.
 3. You can start to use the service after making sure that both the roles and permissions meet the requirements.
@@ -39,7 +41,7 @@ If the **Serverless Framework** and **Coding DevOps** services haven't been acti
 <span id="1"></span>
 #### Creating application from application template
 
-If you choose to create an application from a template, you can quickly create a web application by selecting a project template provided by Serverless Framework. During template-based deployment, the following configuration will be completed for you by default:
+If you choose to create an application from a template, you can quickly create a web application by selecting a project template provided in the console. During template-based deployment, the following configuration will be completed for you by default:
 1. Create a layer (**for the Node.js framework only**) and store the project dependency package `node_modules` in the layer. For more information on how to use a layer, please see [Overview](https://intl.cloud.tencent.com/document/product/583/37039).
 2. Create a COS bucket (**for Next.js and Nuxt.js frameworks only**), separate the static resources, and host them in the COS bucket.
 
@@ -59,12 +61,11 @@ You can also configure more capabilities for your project in **Advanced Configur
 
 
 
-### Step 2. Manage resources
-On the [Serverless Application](https://console.cloud.tencent.com/ssr) page, click the target application to enter the application details page and view the basic information output after the project is deployed as well as monitoring metric data such as the number of requests and error statistics. This makes it easy for you to manage your project.
 
+### Step 2. Manage resources
+On the [Serverless SSR](https://console.cloud.tencent.com/ssr) page, click the target application to enter the application details page and view the basic information output after the project is deployed as well as monitoring metric data such as the number of requests and error statistics. This makes it easy for you to manage your project.
 
 
 
 ### Step 3. Deploy for development
 Click **Deploy** at the top of the application details page, and you can quickly modify the configuration of your project and upload it for re-deployment. Three methods are supported: **local upload, code hosting, and CLI development**.
-

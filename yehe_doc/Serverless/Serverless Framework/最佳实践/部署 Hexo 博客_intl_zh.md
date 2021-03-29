@@ -2,10 +2,13 @@
 该任务指导您通过 Serverless Website 组件，快速构建一个 Serverless Hexo 站点。 
 
 ## 前提条件
-- 已安装 [Node.js](https://nodejs.org/en/)（Node.js 版本需不低于8.6，建议使用 Node.js10.0 及以上版本）
+- 已安装 [Node.js](https://nodejs.org/en/)（**2020年9月1日起，Serverless 组件不再支持 Node.js10.0 以下版本，请注意升级**）
 - 已安装 [Git](https://git-scm.com/)
 
 如您未安装上述应用程序，可以参考 [Hexo 安装说明](https://hexo.io/zh-cn/docs/)。
+
+
+
 
 ## 操作步骤
 ### 1. 安装
@@ -43,7 +46,7 @@ $ npm install
 $ hexo g   # generate
 ```
 
->如果希望在本地查看效果，也可以运行下列命令，通过浏览器访问 `localhost:4000` 查看页面效果。
+>?如果希望在本地查看效果，也可以运行下列命令，通过浏览器访问 `localhost:4000` 查看页面效果。
 
 ```
 $ hexo s   # server
@@ -60,7 +63,7 @@ $ touch serverless.yml
 
 component: website # (必填) 引用 component 的名称，当前用到的是 tencent-website 组件
 name: hexodemo # (必填) 该 website 组件创建的实例名称
-org: test # (可选) 用于记录组织信息，默认值为您的腾讯云账号 APPID
+
 app: websiteApp # (可选) 该 website 应用名称
 stage: dev # (可选) 用于区分环境信息，默认值是 dev
 
@@ -92,7 +95,6 @@ inputs:
 
 ### 3. 部署
 通过`sls deploy`命令进行部署，并可以添加`--debug`参数查看部署过程中的信息。
-如您的账号未 [登录](https://intl.cloud.tencent.com/login) 或 [注册](https://intl.cloud.tencent.com/register) 腾讯云，您可以直接进行授权登录或注册。
 ```
 $ sls deploy
 
@@ -108,7 +110,7 @@ website: https://my-bucket-1258834142.cos-website.ap-guangzhou.myqcloud.com
 
 访问命令行输出的 Website URL，即可查看您的 Serverless Hexo 站点。
 
->如果希望更新 Hexo 站点中的文章，需要在本地重新运行`hexo g`进行生成静态页面，再运行`serverless`更新到页面。
+>!如果希望更新 Hexo 站点中的文章，需要在本地重新运行`hexo g`进行生成静态页面，再运行`serverless`更新到页面。
 
 ### 4. 移除
 
@@ -140,6 +142,9 @@ $ touch .env # 腾讯云的配置信息
 TENCENT_SECRET_ID=123
 TENCENT_SECRET_KEY=123
 ```
->
+>?
 >- 如果没有腾讯云账号，请先 [注册新账号](https://intl.cloud.tencent.com/register)。
 >- 如果已有腾讯云账号，可以在 [API 密钥管理](https://console.cloud.tencent.com/cam/capi) 中获取 SecretId 和 SecretKey。
+
+
+

@@ -12,7 +12,8 @@ SDK: 2.3.2
 Components: 3.4.3
 ```
 
-<span id="doc"></span>
+<span id ="doc"></span>
+
 ## 组件全量配置文档
 
 - [基础组件列表](https://intl.cloud.tencent.com/document/product/1040/39135)
@@ -26,7 +27,7 @@ Components: 3.4.3
 新建项目 `app-demo` 并进入该目录下：
 
    ```bash
-$ mkdir app-demo && cd app-demo
+   $ mkdir app-demo && cd app-demo
    ```
 
 ### 步骤2：构建 Egg 项目
@@ -43,13 +44,13 @@ $ npm i
 $ touch serverless.yml
 ```
  egg 组件的 yml 文件示例如下（全量配置文件可参考 [Eggjs 组件全量配置](https://github.com/serverless-components/tencent-egg/blob/master/docs/configure.md)）：
-```
+``` yml
 # serverless.yml
 app: app-demo #应用名称，同一个应用下每个组件的 app、stage、org 参数必须保持一一致
-org: app-demo
 stage: dev
 component: egg 
 name:  app-demo-egg # (必填) 创建的实例名称
+
 inputs:
   src:   
     src: ./    # 需要上传的项目路径
@@ -66,7 +67,7 @@ inputs:
     environment: release
 ```
 
- >!
+>!
 >- 同一个应用下，每一个组件创建的资源的 **app、stage、org** 参数必须保持一致，**name** 参数必须唯一。
 >- Egg 组件实际上创建的是一个 API 网关触发器 + 云函数资源，此处可根据您的实际开发场景，选择不同组件，配置方法相似，详情请参考 [组件全量配置](#doc)。
 
@@ -79,13 +80,13 @@ $ mkdir layer && cd layer
 $ touch serverless.yml
 ```
 `serverless.yml` 可以按照如下模版配置（更多配置请参考 [Layer 组件全量配置](https://github.com/serverless-components/tencent-layer/blob/master/docs/configure.md)）：
-```
+```  yml
 # serverless.yml
 app: app-demo #应用名称，同一个应用下每个组件的 app、stage、org 参数必须保持一致
-org: app-demo
 stage: dev
 component: layer 
 name:  app-demo-layer # (必填) 创建的实例名称
+
 inputs:
   region: ap-guangzhou
   src: 
@@ -109,7 +110,8 @@ inputs:
 $ cd ../src
 ```
 在 `serverless.yml` 里，`inputs` 部分增加 layer 配置：
-```
+
+``` yml
 inputs:
   src:   
     src: ./    
@@ -133,7 +135,7 @@ inputs:
 
 此时已完成 Serverless 应用的构建，项目目录结构如下：
 
-   ```
+```
    ./app-demo
    ├── layer
    │   └── serverless.yml # layer 配置文件
@@ -143,13 +145,15 @@ inputs:
    │   ├── ...
    │   └── app # 项目路由文件
    └── .env # 环境变量文件
-   ```
+```
 
 ### 步骤5：部署应用
 在项目根目录下，执行 `sls deploy`，即可完成 Layer 创建，并将 Layer 组件的输出作为 Egg 组件的输入，完成 Egg 框架上云。
-```
-$ sls deploy
+```  bash
+ $ sls deploy
+
 serverless ⚡framework
+
 app-demo-layer: 
   region:        ap-guangzhou
   name:          layer_component_xxx
@@ -160,6 +164,7 @@ app-demo-layer:
     - Nodejs10.15
   version:       3
   vendorMessage: null
+
 app-demo-egg: 
   region:        ap-guangzhou
   scf: 
@@ -174,6 +179,7 @@ app-demo-egg:
     environment: release
     url:         https://service-xxx.gz.apigw.tencentcs.com/release/
   vendorMessage: null
+
 76s › app-demo › "deploy" ran for 2 apps successfully.
 ```
 
@@ -200,8 +206,8 @@ app-demo-egg:
    ```
 
 #### 2. 配置项目模版文件并发布
-```
-# serverless.template.yml
+```  yml
+ # serverless.template.yml
 name: app-demo # 项目模板的名字，模版唯一标识，不可重复
 displayName: 基于 layer 创建的 eggjs 项目模版 #项目模板展示在控制台的名称（中文）
 author: Tencent Cloud, Inc. # 作者的名字
@@ -227,12 +233,14 @@ src: # 描述项目中的哪些文件需要作为模板发布
 ```
 
 `serverless.template.yml` 文件配置完成后，便可以使用发布命令 `sls publish` 将此项目作为模板发布到应用中心。
-```
+   ```
 $ sls publish
+
 serverless ⚡registry
 Publishing "app-demo@0.0.0"...
+
 Serverless › Successfully published app-demo
-```
+   ```
 
 #### 3. 复用模版
 
@@ -244,11 +252,13 @@ $ npm install
 ```
 
 <span id="quote"></span>
+
 ## 变量引用说明
+
 `serverless.yml` 支持多种方式引用变量：
 
-- **顶级参数引用**
-   在 `inputs` 字段里，支持直接引用顶级配置信息，引用语法如下：`${org}`、`${app}`
+- **Serverless 基本参数引用**
+   在 `inputs` 字段里，支持直接引用Serverless 基本参数配置信息，引用语法如下：`${org}`、`${app}`
 
 - **环境变量引用**  
    在 `serverless.yml` 中，可以直接通过 `${env}` 的方式，直接引用环境变量配置（包含 .env 文件中的环境变量配置，以及手动配置在环境中的变量参数）。
@@ -260,14 +270,14 @@ $ npm install
 	 `${output:[app]:[stage]:[instance name].[output]}`
 
 示例 yml：
-```
-org: xxx
+```  yml
 app: demo
 component: scf
 name: rest-api
 stage: dev
+
 inputs:
-  name: ${org}-${stage}-${app}-${name} # 命名最终为 "acme-prod-ecommerce-rest-api"
+  name: ${stage}-${app}-${name} # 命名最终为 "acme-prod-ecommerce-rest-api"
   region: ${env:REGION} # 环境变量中指定的 REGION= 信息
   vpcName: ${output:prod:my-app:vpc.name} # 获取其他组件中的输出信息
   vpcName: ${output:${stage}:${app}:vpc.name} # 上述方式也可以组合使用

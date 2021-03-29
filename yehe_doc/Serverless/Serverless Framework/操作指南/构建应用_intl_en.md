@@ -44,8 +44,10 @@ A sample `.yml` file for the COS component is provided below. For more informati
 ```yml
 app: appDemo
 stage: dev
+
 component: cos
 name: cosdemo
+
 inputs:
   bucket: my-bucket
   region: ap-guangzhou
@@ -55,6 +57,7 @@ inputs:
 ```yml
 app: appDemo
 stage: dev
+
 component: scf
 name: scfdemo
 inputs:
@@ -71,8 +74,8 @@ inputs:
 ### Variable import description
 `serverless.yml` supports multiple ways to import variables:
 
-- **Import top-level parameters**
-   In the `inputs` field, you can directly import top-level configuration information through the `${org}` and `${app}` syntax.
+- **Import basic Serverless parameters**
+   In the `inputs` field, you can directly import basic Serverless configuration information through the `${org}` and `${app}` syntax.
 
 - **Import environment variables**
    In `serverless.yml`, you can directly import the environment variable configuration (including the environment variable configuration in the `.env` file and variable parameters manually configured in the environment) through the `${env}` syntax.
@@ -83,13 +86,13 @@ inputs:
 
 Sample `.yml` file:
 ```yml
-org: xxx
 app: demo
 component: scf
 name: rest-api
 stage: dev
+
 inputs:
-  name: ${org}-${stage}-${app}-${name} # The final name is "acme-prod-ecommerce-rest-api"
+  name: ${stage}-${app}-${name} # The final name is "acme-prod-ecommerce-rest-api"
   region: ${env:REGION} # `REGION=` information specified in the environment variable
   vpcName: ${output:prod:my-app:vpc.name} # Get the output information of other components
   vpcName: ${output:${stage}:${app}:vpc.name} # The above methods can also be used in combination

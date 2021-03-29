@@ -13,6 +13,7 @@ Components: 3.4.3
 ```
 
 <span id ="doc"></span>
+
 ## Component Configuration Documentation
 
 - [Basic Component List](https://intl.cloud.tencent.com/document/product/1040/39135)
@@ -26,7 +27,7 @@ This document uses deploying a **framework project based on Layer and Egg** as a
 Create a project `app-demo` and enter this directory:
 
    ```bash
-$ mkdir app-demo && cd app-demo
+   $ mkdir app-demo && cd app-demo
    ```
 
 ### Step 2. Build an Egg project
@@ -43,13 +44,13 @@ $ npm i
 $ touch serverless.yml
 ```
  A sample `.yml` file for the Egg component is provided below. For more information on all configuration items, please see [Egg.js Component Configuration](https://github.com/serverless-components/tencent-egg/blob/master/docs/configure.md).
-```
+``` yml
 # serverless.yml
 app: app-demo # Application name. The `app`, `stage`, and `org` parameters must be the same for each component under the same application
-org: app-demo
 stage: dev
 component: egg 
 name:  app-demo-egg # Name of the created instance, which is required
+
 inputs:
   src:   
     src: ./    # Project path for upload
@@ -66,7 +67,7 @@ inputs:
     environment: release
 ```
 
- >!
+>!
 >- The **`app`, `stage`, and `org`** parameters must be the same for the resources created by each component under the same project.
 >- The Egg component essentially creates an API Gateway trigger + SCF resource. Here, you can select different components according to your actual development needs, and the configuration methods are similar. For more information, please see [Component Configuration Documentation](#doc).
 
@@ -79,13 +80,13 @@ $ mkdir layer && cd layer
 $ touch serverless.yml
 ```
 `serverless.yml` can be configured according to the following template (for more information on the configuration, please see [Layer Component Configuration](https://github.com/serverless-components/tencent-layer/blob/master/docs/configure.md)):
-```
+```  yml
 # serverless.yml
 app: app-demo # Application name. The `app`, `stage`, and `org` parameters must be the same for each component under the same application
-org: app-demo
 stage: dev
 component: layer 
 name:  app-demo-layer # Name of the created instance, which is required
+
 inputs:
   region: ap-guangzhou
   src: 
@@ -101,15 +102,16 @@ inputs:
 
 ### Step 4. Organize the resource relationship
 
-In the same application, you can organize the creation order of resources according to their dependency relationship. Taking this project as an example, you need to create a layer first and then use the layer in the Egg project; therefore, you should ensure that the resource creation order is * *layer > Egg.js application**. The specific steps are as follows:
+In the same application, you can organize the creation order of resources according to their dependency relationship. Taking this project as an example, you need to create a layer first and then use the layer in the Egg.js project; therefore, you should ensure that the resource creation order is * *layer > Egg.js application**. The specific steps are as follows:
 
-Modify the `.yml` configuration file of the Egg project, configure the layer configuration according to the following syntax, and import the deployment output of the Layer component as the deployment input of the Egg project to ensure that the Layer component is created before the Egg project:
+Modify the `.yml` configuration file of the Egg.js project, configure the layer configuration according to the following syntax, and import the deployment output of the Layer component as the deployment input of the Egg.js project to ensure that the Layer component is created before the Egg.js project:
 
 ```
 $ cd ../src
 ```
 In `serverless.yml`, add layer configuration in the `inputs` section:
-```
+
+``` yml
 inputs:
   src:   
     src: ./    
@@ -133,7 +135,7 @@ For the variable import format, please see [Variable Import Description](#quote)
 
 At this point, the serverless application has been built, and the project directory structure is as follows:
 
-   ```
+```
    ./app-demo
    ├── layer
    │   └── serverless.yml # Layer configuration file
@@ -143,13 +145,15 @@ At this point, the serverless application has been built, and the project direct
    │   ├── ...
    │   └── app # Project routing file
    └── .env # Environment variable file
-   ```
+```
 
 ### Step 5. Deploy the application
-In the project root directory, run `sls deploy` to complete layer creation and use the output of the Layer component as the input of the Egg component to cloudify the Egg framework.
-```
-$ sls deploy
+In the project root directory, run `sls deploy` to complete layer creation and use the output of the Layer component as the input of the Egg.js component to cloudify the Egg.js framework.
+```  bash
+ $ sls deploy
+
 serverless ⚡framework
+
 app-demo-layer: 
   region:        ap-guangzhou
   name:          layer_component_xxx
@@ -160,6 +164,7 @@ app-demo-layer:
     - Nodejs10.15
   version:       3
   vendorMessage: null
+
 app-demo-egg: 
   region:        ap-guangzhou
   scf: 
@@ -174,6 +179,7 @@ app-demo-egg:
     environment: release
     url:         https://service-xxx.gz.apigw.tencentcs.com/release/
   vendorMessage: null
+
 76s › app-demo › "deploy" ran for 2 apps successfully.
 ```
 
@@ -200,8 +206,8 @@ In the root directory, create a `serverless.template.yml` file, and the project 
    ```
 
 #### 2. Configure and publish the project template file
-```
-# serverless.template.yml
+```  yml
+ # serverless.template.yml
 name: app-demo # Project template name, which must be unique
 displayName: Egg.js project template created based on layer # Name of the project template displayed in the console
 author: Tencent Cloud, Inc. # Author name
@@ -227,12 +233,14 @@ src: # Describe the files in the project to be published as a template
 ```
 
 After the `serverless.template.yml` file is configured, you can use the `sls publish` command to publish the project to the Registry as a template.
-```
+   ```
 $ sls publish
+
 serverless ⚡registry
 Publishing "app-demo@0.0.0"...
+
 Serverless › Successfully published app-demo
-```
+   ```
 
 #### 3. Reuse the template
 
@@ -244,11 +252,13 @@ $ npm install
 ```
 
 <span id="quote"></span>
+
 ## Variable Import Description
+
 `serverless.yml` supports multiple ways to import variables:
 
-- **Import top-level parameters**
-   In the `inputs` field, you can directly import top-level configuration information through the `${org}` and `${app}` syntax.
+- **Import basic Serverless parameters**
+   In the `inputs` field, you can directly import basic Serverless parameter configuration information through the `${org}` and `${app}` syntax.
 
 - **Import environment variables**  
    In `serverless.yml`, you can directly import the environment variable configuration (including the environment variable configuration in the `.env` file and variable parameters manually configured in the environment) through the `${env}` syntax.
@@ -260,14 +270,14 @@ $ npm install
 	 `${output:[app]:[stage]:[instance name].[output]}`
 
 Sample `.yml` file:
-```
-org: xxx
+```  yml
 app: demo
 component: scf
 name: rest-api
 stage: dev
+
 inputs:
-  name: ${org}-${stage}-${app}-${name} # The final name is "acme-prod-ecommerce-rest-api"
+  name: ${stage}-${app}-${name} # The final name is "acme-prod-ecommerce-rest-api"
   region: ${env:REGION} # `REGION=` information specified in the environment variable
   vpcName: ${output:prod:my-app:vpc.name} # Get the output information of other components
   vpcName: ${output:${stage}:${app}:vpc.name} # The above methods can also be used in combination

@@ -1,11 +1,14 @@
-## Operation Scenarios
+## Overview
 This document describes how to use the Serverless Website component to quickly construct a serverless Hexo website. 
 
 ## Prerequisites
-- You have installed [Node.js](https://nodejs.org/en/) (v8.6 or above; v10.0 or above is recommended).
+- [Node.js](https://nodejs.org/en/) has been installed (**starting from September 1, 2020, Serverless components no longer support Node.js versions below 10.0. Please upgrade if needed**).
 - You have installed [Git](https://git-scm.com/).
 
 If the applications above are not installed, please install them as instructed in the [Hexo documentation](https://hexo.io/zh-cn/docs/).
+
+
+
 
 ## Directions
 ### 1. Install
@@ -43,7 +46,7 @@ After the installation is completed, run the `hexo g` command to generate a stat
 $ hexo g   # generate
 ```
 
->If you want to view the result locally, you can run the following command to access `localhost:4000` and view the webpage in a browser:
+>?If you want to view the result locally, you can run the following command to access `localhost:4000` and view the webpage in a browser:
 
 ```
 $ hexo s   # server
@@ -60,7 +63,7 @@ Configure the `serverless.yml` file as follows:
 
 component: website # Name of the imported component, which is required. The `tencent-website` component is used in this example
 name: hexodemo # Name of the instance created by this `website` component, which is required
-org: test # Organization information, which is optional. The default value is the `APPID` of your Tencent Cloud account
+
 app: websiteApp # Website application name, which is optional
 stage: dev # Information for identifying environment, which is optional. The default value is `dev`
 
@@ -92,7 +95,6 @@ After the configuration is completed, the directory structure is as follows:
 
 ### 3. Deploy
 Deploy by running the `sls deploy` command, and you can add the `--debug` parameter to view the information during the deployment process:
-If you have not [logged in to](https://intl.cloud.tencent.com/login) or [signed up for](https://intl.cloud.tencent.com/register) a Tencent Cloud account, you can directly log in or sign up:
 ```
 $ sls deploy
 
@@ -108,7 +110,7 @@ website: https://my-bucket-1258834142.cos-website.ap-guangzhou.myqcloud.com
 
 You can view your serverless Hexo website by accessing the website URL output by the command line.
 
->If you want to update an article in your Hexo website, you need to run `hexo g` locally again to generate a static webpage and run `serverless` to update the webpage.
+>!If you want to update an article in your Hexo website, you need to run `hexo g` locally again to generate a static webpage and run `serverless` to update the webpage.
 
 ### 4. Remove
 
@@ -140,6 +142,9 @@ Configure Tencent Cloud's `SecretId` and `SecretKey` information in the `.env` f
 TENCENT_SECRET_ID=123
 TENCENT_SECRET_KEY=123
 ```
->
+>?
 >- If you don't have a Tencent Cloud account yet, please [sign up](https://intl.cloud.tencent.com/register) first.
 >- If you already have a Tencent Cloud account, you can get `SecretId` and `SecretKey` in [API Key Management](https://console.cloud.tencent.com/cam/capi).
+
+
+

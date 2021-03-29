@@ -1,5 +1,5 @@
 ## 使用前提
-Serverless Framework 帮助您将项目快速部署到**腾讯云 Serverless 平台**，因此在部署前，请确认您已经 [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/10495)。
+Serverless Framework 帮助您将项目快速部署到**腾讯云 Serverless 应用中心**，因此在部署前，请确认您已经 [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/10495)。
 
 ## 授权方式
 ### 扫码一键授权
@@ -49,7 +49,7 @@ TENCENT_SECRET_KEY=xxxxxxxx #您账号的 SecretKey
 ![](https://main.qcloudimg.com/raw/47ac3d10b3dcae6d828ccc056393cee3.png)
 
 5. 选择【按策略语法创建】>【空白模版】，填入如下内容，注意角色参数替换为您自己的 uin（账号 ID）：
-   ```
+```
    {
     "version": "2.0",
     "statement": [
@@ -73,8 +73,8 @@ TENCENT_SECRET_KEY=xxxxxxxx #您账号的 SecretKey
         }
     ]
    }
-   ```
- 
+```
+
 6. 完成自定义策略配置后，回到第4步的授权页面，搜索刚刚创建的自定义策略，点击【下一步】> 【确定】，即可授予子账号 SLS_QcsRole 的操作权限，此时，您的子账号应该拥有一个自定义策略和一个 **QcloudSLSFullAccess** 的预设策略，可以完成 Serverless Framework 的正常使用。
 ![](https://main.qcloudimg.com/raw/b062490a1703b7fac049c43c8e598c96.png)
 
@@ -83,18 +83,18 @@ TENCENT_SECRET_KEY=xxxxxxxx #您账号的 SecretKey
 <span id="list"></span>
 ### SLS_QcsRole 角色权限列表 
 
-| 策略                    | 描述                                  |      
-| ----------------------- | ------------------------------------- | 
-| QcloudCOSFullAccess     | COS（对象存储）全读写访问权限         |      
-| QcloudSCFFullAccess     | SCF（云函数）全读写权限               |      
-| QcloudSSLFullAccess     | SSL 证书（SSL）全读写访问权限          |      
-| QcloudTCBFullAccess     | TCB（云开发）全读写权限               |      
-| QcloudAPIGWFullAccess   | APIGW（API 网关）全读写权限            |      
-| QcloudVPCFullAccess     | VPC（私有网络）全读写权限             |      
-| QcloudMonitorFullAccess | Monitor（云监控）全读写权限           |      
-| QcloudSLSFullAccess     | SLS（Serverless Framework）全读写权限 |      
-| QcloudCDNFullAccess     | CDN（内容分发网络）全读写权限         |      
-| QcloudCKafkaFullAccess  | CKafka（消息队列 CKafka）全读写权限   |      
+| 策略                    | 描述                                  |
+| ----------------------- | ------------------------------------- |
+| QcloudCOSFullAccess     | COS（对象存储）全读写访问权限         |
+| QcloudSCFFullAccess     | SCF（云函数）全读写权限               |
+| QcloudSSLFullAccess     | SSL 证书（SSL）全读写访问权限          |
+| QcloudTCBFullAccess     | TCB（云开发）全读写权限               |
+| QcloudAPIGWFullAccess   | APIGW（API 网关）全读写权限            |
+| QcloudVPCFullAccess     | VPC（私有网络）全读写权限             |
+| QcloudMonitorFullAccess | Monitor（云监控）全读写权限           |
+| QcloudSLSFullAccess     | SLS（Serverless Framework）全读写权限 |
+| QcloudCDNFullAccess     | CDN（内容分发网络）全读写权限         |
+| QcloudCKafkaFullAccess  | CKafka（消息队列 CKafka）全读写权限   |
 | QcloudCodingFullAccess  | CODING DevOps 全读写访问权限    |
 | QcloudPostgreSQLFullAccess | 云数据库 PostgreSQL 全读写访问权限 |
 | QcloudCynosDBFullAccess | 云数据库 CynosDB 全读写访问权限 |

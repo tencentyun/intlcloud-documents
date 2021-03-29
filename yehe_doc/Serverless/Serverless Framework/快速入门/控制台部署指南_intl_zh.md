@@ -1,21 +1,23 @@
 ## 操作场景
 
-针对常用框架组件，Serverless Framework 提供了 [应用控制台](https://console.cloud.tencent.com/ssr) 开发部署方案，帮助用户通过控制台实现完整的应用开发部署流程。
+针对常用框架组件，可以直接通过 [Serverless 应用控制台](https://console.cloud.tencent.com/sls?from=quickstart) ，帮助用户通过控制台快速实现完整的应用开发部署流程。
 
 #### 当前支持框架
 - Express
+- WordPress
 - Koa
 - Egg.js
 - Next.js
 - Nuxt.js
 - Flask
 - Laravel
+- SpringBoot
 
 ## 前提条件
 在使用控制台部署前，您需要先完成以下权限配置：
 
 #### 主账号授权
-1. 登录 [Serverless 应用控制台](https://console.cloud.tencent.com/ssr)，单击【前往授权】进入访问管理控制台。
+1. 登录 [Serverless 应用控制台](https://console.cloud.tencent.com/sls?from=quickstart)，单击【前往授权】进入访问管理控制台。
 2. 在访问管理控制台的【角色】列表页，查看 **SLS_QcsRole** 和 **CODING_QCSRole** 服务角色是否创建成功。
 >!如果您已经创建过 CODING_QCSRole，请检查角色拥有权限是否完整，该角色需要基本策略列表如下：QcloudSLSFullAccess、QcloudSSLFullAccess、QcloudAccessForCODINGRole，如有缺少，请手动添加。
 3. 确定角色与权限都符合要求后，即可开始使用服务。
@@ -39,7 +41,7 @@
 <span id="1"></span>
 #### 应用模版创建
 
-如果选择模版创建，您可以通过选择 Serverless Framework 提供的项目模版，快速创建一个 web 应用，模版部署时，将为默认您完成以下配置：
+如果选择模版创建，您可以通过选择控制台提供的项目模版，快速创建一个 web 应用，模版部署时，将为默认您完成以下配置：
 1. 新建层（**仅限 Node.js 框架**），并将项目依赖包 node_modules 存放在层中，层的使用请参考 [层管理](https://intl.cloud.tencent.com/document/product/583/37039)。
 2. 新建 COS 存储桶（**仅限 Next.js、Nuxt.js 框架**），拆分静态资源，将静态资源托管到 COS 桶中。
 
@@ -56,6 +58,7 @@
 
  - 文件夹上传
  您可以通过上传文件夹的方式直接导入本地项目，对于 Node.js 框架，Serverless Framework 将自动为您创建层，并将依赖包 node_modules 传入层中完成部署。
+
 
 
 

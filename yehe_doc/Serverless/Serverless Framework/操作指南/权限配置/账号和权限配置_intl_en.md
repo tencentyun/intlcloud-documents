@@ -1,5 +1,5 @@
 ## Prerequisites
-Serverless Framework helps you quickly deploy your project to the **Tencent Cloud Serverless Platform**. Before deploying, please make sure that you have [registered a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/10495).
+Serverless Framework helps you quickly deploy your project to **Serverless SSR**. Before deploying, please make sure that you have [registered a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/10495).
 
 ## Authorization Method
 ### Authorizing by scanning code
@@ -49,7 +49,7 @@ Policy creation page:
 ![](https://main.qcloudimg.com/raw/47ac3d10b3dcae6d828ccc056393cee3.png)
 
 5. Click **Create by Policy Syntax** > **Blank Template** and enter the following content. Be sure to replace the role parameter with your own `uin` (account ID):
-   ```
+```
    {
     "version": "2.0",
     "statement": [
@@ -73,32 +73,30 @@ Policy creation page:
         }
     ]
    }
-   ```
- ```
+```
+
 6. After completing the custom policy configuration, go back to the authorization page in step 4, search for the custom policy just created, and click **Next** > **OK** to grant the sub-account the operation permissions of `SLS_QcsRole`. At this point, your sub-account should have a custom policy and a preset policy **QcloudSLSFullAccess** and can use Serverless Framework normally.
-![](https://main.qcloudimg.com/raw/595df2c83bda0ce5ed93321325da2f48.png)
+![](https://main.qcloudimg.com/raw/b062490a1703b7fac049c43c8e598c96.png)
 
 >?In addition to the permission to call the default `SLS_QcsRole` role, you can also grant the sub-account the permission to call a custom role and control the sub-account permissions with refined permission policies in the custom role. For more information, please see [Configuring Role for Specified Operation](https://intl.cloud.tencent.com/document/product/1040/36819).
 
 <span id="list"></span>
 ### SLS_QcsRole role permission list 
 
-| Policy | Description |      
-| ----------------------- | ------------------------------------- | 
-| QcloudCOSFullAccess     | Full access to COS |      
-| QcloudSCFFullAccess     | Full access to SCF |      
-| QcloudSSLFullAccess     | Full access to SSL Certificate Service |      
-| QcloudTCBFullAccess     | Full access to TCB |      
-| QcloudAPIGWFullAccess   | Full access to API Gateway |      
-| QcloudVPCFullAccess     | Full access to VPC |      
-| QcloudMonitorFullAccess | Full access to Cloud Monitor |      
-| QcloudSLSFullAccess     | Full access to SLS (Serverless Framework) |      
-| QcloudCDNFullAccess     | Full access to CDN |      
-| QcloudCKafkaFullAccess  | Full access to CKafka |      
+| Policy | Description |
+| ----------------------- | ------------------------------------- |
+| QcloudCOSFullAccess     | Full access to COS |
+| QcloudSCFFullAccess     | Full access to SCF |
+| QcloudSSLFullAccess     | Full access to SSL Certificate Service |
+| QcloudTCBFullAccess     | Full access to TCB |
+| QcloudAPIGWFullAccess   | Full access to API Gateway |
+| QcloudVPCFullAccess     | Full access to VPC |
+| QcloudMonitorFullAccess | Full access to Cloud Monitor |
+| QcloudSLSFullAccess     | Full access to SLS (Serverless Framework) |
+| QcloudCDNFullAccess     | Full access to CDN |
+| QcloudCKafkaFullAccess  | Full access to CKafka |
 | QcloudCodingFullAccess  | Full access to CODING DevOps    |
 | QcloudPostgreSQLFullAccess | Full access to TencentDB for PostgreSQL |
 | QcloudCynosDBFullAccess | Full access to TencentDB for CynosDB |
 | QcloudCLSFullAccess    | Full access to CLS |
 | QcloudAccessForSLSRole | This policy can be associated with the Serverless Framework (SLS) service role (SLS_QCSRole) for SLS' quick experience feature to access other Tencent Cloud service resources. It contains permissions of CAM-related operations. |
-
- ```

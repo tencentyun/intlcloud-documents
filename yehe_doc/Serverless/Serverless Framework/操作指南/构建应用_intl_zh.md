@@ -44,8 +44,10 @@ COS 组件的 yml 文件示例如下，全量配置文件可参考 [COS 组件�
 ```yml
 app: appDemo
 stage: dev
+
 component: cos
 name: cosdemo
+
 inputs:
   bucket: my-bucket
   region: ap-guangzhou
@@ -55,6 +57,7 @@ inputs:
 ```yml
 app: appDemo
 stage: dev
+
 component: scf
 name: scfdemo
 inputs:
@@ -71,8 +74,8 @@ inputs:
 ### 变量引用说明
 `serverless.yml` 支持多种方式引用变量：
 
-- **顶级参数引用**
-   在 `inputs` 字段里，支持直接引用顶级配置信息，引用语法为：`${org}`、`${app}`。
+- **Serverless 基本参数引用**
+   在 `inputs` 字段里，支持直接引用 Serverless 基本参数配置信息，引用语法为：`${org}`、`${app}`。
 
 - **环境变量引用**
    在 `serverless.yml` 中，可以直接通过 `${env}` 的方式，直接引用环境变量配置（包含 .env 文件中的环境变量配置，以及手动配置在环境中的变量参数）。
@@ -83,13 +86,13 @@ inputs:
 
 示例 yml：
 ```yml
-org: xxx
 app: demo
 component: scf
 name: rest-api
 stage: dev
+
 inputs:
-  name: ${org}-${stage}-${app}-${name} # 命名最终为 "acme-prod-ecommerce-rest-api"
+  name: ${stage}-${app}-${name} # 命名最终为 "acme-prod-ecommerce-rest-api"
   region: ${env:REGION} # 环境变量中指定的 REGION= 信息
   vpcName: ${output:prod:my-app:vpc.name} # 获取其他组件中的输出信息
   vpcName: ${output:${stage}:${app}:vpc.name} # 上述方式也可以组合使用
