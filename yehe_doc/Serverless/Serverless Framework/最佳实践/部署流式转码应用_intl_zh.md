@@ -91,7 +91,8 @@ TENCENT_SECRET_KEY=xxxxxxxxxxxx # 您的腾讯云 sercretKey
 			 period: 7 # 日志保存时间，单位天
 ```
 
-- 云函数及转码配置，文件 `transcode-app/transcode/serverless.yml` ：
+ - 云函数及转码配置，文件 `transcode-app/transcode/serverless.yml` ：
+
 ```
 		 #组件信息 全量配置参考https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md
 		 component: scf # 引用 component 的名称
