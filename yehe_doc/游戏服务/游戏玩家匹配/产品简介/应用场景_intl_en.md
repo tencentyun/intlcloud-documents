@@ -15,7 +15,3 @@ GPM can be used together with Tencent Cloud Game Server Engine (GSE) to form a s
 GPM supports multiple matchmaking configurations within the same game. Developers can create sequential matchmaking rules to build teams and match battles. Players are first slotted into teams and then the teams are matched against each other.  
 ![](https://main.qcloudimg.com/raw/f9a83daee21184e72f7b57936f9d1b04.png)
 
-### Use Case 4: Match Backfill
-
-GPM offers a match backfill feature for existing game sessions. It can be difficult to fill all player slots for large matches. GPM supports starting a game session once the minimal number of players are matched to reduce wait time. GPM will then initiate match backfill requests for the empty player slots to continue searching for potential matches. This feature can also be used when players drop out of a session. 
-![](https://main.qcloudimg.com/raw/7473734517ee61fb3d215730c41f459d.png)
