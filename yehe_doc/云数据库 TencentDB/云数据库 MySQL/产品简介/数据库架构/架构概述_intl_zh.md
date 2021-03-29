@@ -11,7 +11,7 @@
 <tr><th>架构</th><th >双节点</th><th>三节点</th><th colspan=2>单节点</th>
 </thead>
 <tbody><tr>
-<td><a href="https://cloud.tencent.com/document/product/236/53253">隔离策略</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/39794">隔离策略</a></td>
 <td>通用型</td><td>通用型</td><td>通用型</td><td>基础型</td></tr>
 <tr>
 <td>支持版本</td>
