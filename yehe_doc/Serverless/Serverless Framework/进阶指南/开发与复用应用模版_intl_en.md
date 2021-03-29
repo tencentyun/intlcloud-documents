@@ -44,6 +44,7 @@ $ npm i
 $ touch serverless.yml
 ```
  A sample `.yml` file for the Egg component is provided below. For more information on all configuration items, please see [Egg.js Component Configuration](https://github.com/serverless-components/tencent-egg/blob/master/docs/configure.md).
+
 ``` yml
 # serverless.yml
 app: app-demo # Application name. The `app`, `stage`, and `org` parameters must be the same for each component under the same application
