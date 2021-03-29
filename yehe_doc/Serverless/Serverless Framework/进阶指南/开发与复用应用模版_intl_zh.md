@@ -44,6 +44,7 @@ $ npm i
 $ touch serverless.yml
 ```
  egg 组件的 yml 文件示例如下（全量配置文件可参考 [Eggjs 组件全量配置](https://github.com/serverless-components/tencent-egg/blob/master/docs/configure.md)）：
+
 ``` yml
 # serverless.yml
 app: app-demo #应用名称，同一个应用下每个组件的 app、stage、org 参数必须保持一一致
@@ -74,6 +75,7 @@ inputs:
 
 ### 步骤3：创建层
 回到 `app-demo` 根目录下，新建 `layer` 文件夹，并在里面新建 layer 配置文件 `serverless.yml`：
+
 ```
 $ cd ..
 $ mkdir layer && cd layer
