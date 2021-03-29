@@ -14,7 +14,7 @@ CDNは、デフォルトで80/8080/443のアクセスポートが有効になっ
 [CDNコンソール](https://console.cloud.tencent.com/cdn)にログインし、左側のメニューバーで【Domain Management】を選択し、ドメイン名操作列の【管理】をクリックして、ドメイン名設定画面に入ります。タブを【アクセス制御】に切り替えると、【中国国内アクセスポート設定】が表示されます。
 
 デフォルトの状態では、80/8080/443のアクセスポートがいずれも有効になっています。
-![](https://main.qcloudimg.com/raw/0ce7f3ef1fcd0059e7c662648440be49.png)
+![](https://main.qcloudimg.com/raw/a9f3930bb87a720acd8a09fb07f333d2.png)
 
 ### 設定の変更
 
@@ -30,7 +30,7 @@ CDNは、デフォルトで80/8080/443のアクセスポートが有効になっ
 ## 設定例
 
 アクセラレーションドメイン名`www.test.com`の**中国国内アクセスポート設定**の例は次のとおりです。
-![](https://main.qcloudimg.com/raw/c29aa04b629f7f08c94d103ba43eddef.png)
+![](https://main.qcloudimg.com/raw/a420e4f25d322855ee04b41c408ea9ab.png)
 
 実際のアクセス状況は次のとおりです。
 
