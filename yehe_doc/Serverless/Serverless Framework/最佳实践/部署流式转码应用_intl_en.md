@@ -91,7 +91,8 @@ TENCENT_SECRET_KEY=xxxxxxxxxxxx # Your Tencent Cloud `sercretKey`
 			 period: 7 # Log retention period in days
 ```
 
-- SCF function and transcoding configurations are in the `transcode-app/transcode/serverless.yml` file:
+ - SCF function and transcoding configurations are in the `transcode-app/transcode/serverless.yml` file:
+
 ```
 		 # Component information. For all configuration items, please visit https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md.
 		 component: scf # Name of the imported component
