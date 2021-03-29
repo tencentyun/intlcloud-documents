@@ -44,6 +44,6 @@ You can disable an API key of the root account. Tencent Cloud will block all req
 1. Click **Disable** in the [API Key Management](https://console.cloud.tencent.com/cam/capi) page. If the target API key was disabled, you can directly perform step 3.
 2. In the pop-up window, click **Disable**.
 3. On the API Key Management page, click **Delete** in the "Operation" column.
-4. In the pop-up window, click **Delete*.
+4. In the pop-up window, click **Delete**.
 
 > ?Please note that a deleted API key cannot be retrieved.
