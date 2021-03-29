@@ -2,12 +2,12 @@
 This document describes how to use the `instant` algorithm to quickly add columns in big tables, while avoiding data replication. This feature does not replicate the data or use disk capacity/IO, and can implement changes in real time during peak hours.
 
 ## Limits
-- Instance version: MySQL 5.7 High-Availability Edition and Finance Edition
-- Kernel minor version: 20190830 or later
->?Newly purchased instances use the latest kernel minor version by default. For more information on how to view the kernel minor version, see [How do I check the kernel minor version?](https://intl.cloud.tencent.com/document/product/236/35995). For more information on kernel updates, see [Kernel Version Release Notes](https://intl.cloud.tencent.com/document/product/236/35989).
+- Supported instance architecture and version: two-node or three-node MySQL v5.7
+- Supported kernel minor version: 20190830 and later
+>?Newly purchased instances use the latest kernel minor version by default. For more information on how to view the kernel minor version, see [How do I check the kernel minor version?](https://intl.cloud.tencent.com/document/product/236/35995). For more information on kernel updates, see [Kernel Version Updates](https://intl.cloud.tencent.com/document/product/236/35989).
 
-## Use Instructions
-[Log in to the database](https://intl.cloud.tencent.com/document/product/236/3130) and use the following syntax to quickly add a column:
+## Directions
+[Log in to the database](https://intl.cloud.tencent.com/document/product/236/37788) and use the following syntax to quickly add a column:
 ```
 ALTER TABLE t1 ADD COLUMN c1 int, algorithm=instant;
 ```

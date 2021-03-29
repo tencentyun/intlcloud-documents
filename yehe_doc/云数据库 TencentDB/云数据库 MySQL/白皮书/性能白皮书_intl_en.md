@@ -22,7 +22,7 @@ make install
 
 | Type | Description |
 |--|--|
-| Physical machine | High-availability edition where a single machine can support database instances with up to 488 GB memory and 6 TB disk |
+| Physical machine | A single machine can support two-node database instances with up to 488 GB memory and 6 TB disk |
 | Instance specification | Currently purchasable mainstream specification (please see the [test cases](#cscs) below) |
 | Client configuration | 4-core CPU and 8 GB memory |
 | Number of clients | 1-6 (more clients need to be added as the configuration is upgraded) |
@@ -52,7 +52,6 @@ c: 08566691963-88624912351-16662227201-46648573979-64646226163-77505759394-75470
 pad: 63188288836-92351140030-06390587585-66802097351-4928296184
 ```
 
-
 ### 3. Data preparations
 ```
 sysbench --mysql-host=xxxx --mysql-port=xxxx --mysql-user=xxx --mysql-password=xxx --mysql-db=test --mysql-table-engine=innodb --test=tests/db/oltp.lua --oltp_tables_count=20 --oltp-table-size=10000000  --rand-init=on prepare
@@ -63,7 +62,7 @@ Descriptions of data preparation parameters:
 - `--oltp_tables_count=20` indicates that the number of tables for testing is 20.
 - `--oltp-table-size=10000000` indicates that each testing table is populated with 10 million rows of data.
 - `--rand-init=on` indicates that each testing table is populated with random data.
-   
+  
 
 ### 4. Command for stress testing
 ```
@@ -85,6 +84,7 @@ Descriptions of stress testing parameters:
 ### 5. Scenario model
 All test cases in this document adopt the `lua` script of Sysbench which was modified to run four SELECT operations and one UPDATE operation (index column) with the read/write ratio at 4:1.
 For the maximum configuration, the parameter tuning model is added to the data scenario. For the test results, please see [Test Results](#document_test_result) below.
+
 
 <span id="cscs"></span>
 ## Test Parameters
