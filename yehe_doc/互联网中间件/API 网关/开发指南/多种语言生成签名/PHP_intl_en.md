@@ -22,27 +22,27 @@ This document describes how to authenticate and manage your APIs through key pai
 <?php
 
 $dateTime = gmdate("D, d M Y H:i:s T");
-$SecretId = 'your SecretId'; // `SecretId` in key pair
-$SecretKey = 'your SecretKey'; // `SecretKey` in key pair
-$srcStr = "date: ".$dateTime."\n"."source: "."xxxxxx"; // Arbitrary signature watermark value
+$SecretId = 'your SecretId'; # `SecretId` in key pair
+$SecretKey = 'your SecretKey'; # `SecretKey` in key pair
+$srcStr = "date: ".$dateTime."\n"."source: "."xxxxxx"; # Arbitrary signature watermark value
 $Authen = 'hmac id="'.$SecretId.'", algorithm="hmac-sha1", headers="date source", signature="';
 $signStr = base64_encode(hash_hmac('sha1', $srcStr, $SecretKey, true));
-//echo $signStr;
+# echo $signStr;
 $Authen = $Authen.$signStr."\"";
 echo $Authen;
-#echo '</br>';
+# echo '</br>';
 
-$url = 'http://service-xxxxxxxx-1234567890.ap-guangzhou.apigateway.myqcloud.com/release/yousa'; // API access path
+$url = 'http://service-xxxxxxxx-1234567890.ap-guangzhou.apigateway.myqcloud.com/release/yousa'; # API access path
 $headers = array( 
-	'Host:service-xxxxxxxx-1234567890.ap-guangzhou.apigateway.myqcloud.com', // Service domain name of API
+	'Host:service-xxxxxxxx-1234567890.ap-guangzhou.apigateway.myqcloud.com', # Service domain name of API
 	'Accept:text/html, */*; q=0.01',
 	'Source: xxxxxx',
 	'Date: '.$dateTime,
 	'Authorization: '.$Authen,
 	'X-Requested-With: XMLHttpRequest',
-	'Accept-Encoding: gzip, deflate, sdch',
+	# 'Accept-Encoding: gzip, deflate, sdch',
 	
-	// If it is a microservice API, you need to add two fields in the header: 'X-NameSpace-Code' and 'X-MicroService-Name'. They are not needed for general APIs.
+	# If it is a microservice API, you need to add two fields in the header: 'X-NameSpace-Code' and 'X-MicroService-Name'. They are not needed for general APIs.
 	'X-NameSpace-Code: testmic',
 	'X-MicroService-Name: provider-demo'
 );
@@ -58,7 +58,7 @@ $data = curl_exec($ch);
 if (curl_errno($ch)) { 
 	print "Error: " . curl_error($ch); 
 } else { 
-	// Show me the result 
+	# Show me the result 
 	var_dump($data); 
 	curl_close($ch); 
 } 
