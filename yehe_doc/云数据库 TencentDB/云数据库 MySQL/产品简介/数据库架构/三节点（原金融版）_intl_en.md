@@ -1,7 +1,7 @@
 TencentDB for MySQL supports three types of architectures: single-node, two-node, and three-node. This document describes the three-node architecture.
 
 - Three-node instances adopt a one-source-two-replica architecture and support strong sync replication. They guarantee strong data consistency through real-time hot backup and provide finance-grade reliability and high availability.
-- Three-node instances support two resource isolation policies: general and dedicated. For more information, see [Resource Isolation Policy](https://cloud.tencent.com/document/product/236/53253).
+- Three-node instances support two resource isolation policies: general and dedicated. For more information, see [Resource Isolation Policy](https://intl.cloud.tencent.com/document/product/236/39794).
 
 ## Use Cases
 Ideal for industries such as gaming, internet, IoT, retail, e-commerce, logistics, insurance, and securities.
