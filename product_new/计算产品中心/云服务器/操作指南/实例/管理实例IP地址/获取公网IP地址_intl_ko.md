@@ -12,7 +12,7 @@
 >
 
 ### API를 사용하여 획득하기
-[인스턴스 리스트 조회](https://intl.cloud.tencent.com/document/product/213/15728)에서 관련 인터페이스를 참조하십시오.
+[인스턴스 리스트 조회](https://intl.cloud.tencent.com/document/product/213/33258)에서 관련 인터페이스를 참조하십시오.
 
 <span id = "jump">  </span>
 ### 인스턴스 메타데이터를 사용하여 획득하기
