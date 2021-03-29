@@ -14,7 +14,7 @@ By default, CDN supports port 80, 8080, and 443. You can disable any of them as 
 Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar, click **Manage** on the right of a domain name to enter its configuration page. Open the **Access Control** tab to find the **Chinese Mainland Access Port Configuration** section.
 
 Port 80, 8080, and 443 are enabled by default.
-![](https://main.qcloudimg.com/raw/0ce7f3ef1fcd0059e7c662648440be49.png)
+![](https://main.qcloudimg.com/raw/a9f3930bb87a720acd8a09fb07f333d2.png)
 
 ### Modifying the configuration
 
@@ -30,7 +30,7 @@ You can disable and enable the ports as needed.
 ## Configuration Samples
 
 If the **Chinese Mainland Access Port Configuration** of the acceleration domain name `www.test.com` is as follows:
-![](https://main.qcloudimg.com/raw/c29aa04b629f7f08c94d103ba43eddef.png)
+![](https://main.qcloudimg.com/raw/a420e4f25d322855ee04b41c408ea9ab.png)
 
 Then the actual access will be as follows:
 
