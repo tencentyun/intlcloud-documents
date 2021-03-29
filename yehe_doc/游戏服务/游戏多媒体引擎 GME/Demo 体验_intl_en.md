@@ -84,13 +84,13 @@ Please double-click the executable file (GMEDemo.exe). You can use a device to o
 
 ### 3. Initialize it
 
-For initialization, you need to enter the `AppID` and access key obtained from the **Service Management** page in the [GME console](https://console.cloud.tencent.com/gamegme/detail/1400391524) first. To access GME service, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/10782). **appId** refers to the `AppID` in the console, and `authKey` refers to the access key in the console.
+For initialization, you need to enter the `AppID` and access key obtained from the **Service Management** page in the [GME console](https://console.cloud.tencent.com/gamegme/detail/1400391524) first. To access GME service, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/39698). **appId** refers to the `AppID` in the console, and `authKey` refers to the access key in the console.
 >!
 >- Please prevent your `AppID` and access key from leakage.
 >- The `userId` used in two windows should be different.
 >
 <img src="https://main.qcloudimg.com/raw/f27ce333719f70f03447dcd97c5c9f3a.png"  width="80%"><br>
-Finally, click **Initialize ** -> **Voice Chat **.
+Finally, click **Initialize** -> **Voice Chat**.
 
 ### 4. Enter a voice chat room
 
