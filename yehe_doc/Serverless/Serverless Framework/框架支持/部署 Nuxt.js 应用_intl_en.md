@@ -84,7 +84,8 @@ $ serverless info
 <span id="1"></span>
 ## Modification Template for Project Migration
 
-- Express template
+ - Express template
+
 ``` js
 const express = require('express')
 const { loadNuxt } = require('nuxt')
@@ -116,7 +117,8 @@ module.exports = createServer
 ```
 
 
-- Koa template
+ - Koa template
+
 ``` js
 const Koa = require('koa')
 const { loadNuxt } = require('nuxt')
