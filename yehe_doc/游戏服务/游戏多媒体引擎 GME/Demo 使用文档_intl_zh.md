@@ -35,7 +35,7 @@ Sample Code 实时语音界面截图如下所示（下图为 iOS Demo 界面截�
 <img src="https://main.qcloudimg.com/raw/2498f0fc3c90eeea5b0cefccaf591f39.png" width="60%">
 
 
-参数 Appid、Key 的来源，请参见 [接入指引](https://intl.cloud.tencent.com/document/product/607/10782)。
+参数 Appid、Key 的来源，请参见 [接入指引](https://intl.cloud.tencent.com/document/product/607/39698)。
 参数 OpenID 数值必须大于10000，用于标记本端使用者。
 
 ### 2. 点击  Init 
