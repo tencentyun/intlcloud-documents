@@ -11,4 +11,4 @@
  6. 팝업창에서 [확인]을 클릭하여 미러 이미지 공유 취소를 완료하십시오.
 
 ### API를 통한 공유 취소
-사용자는 ModifyImageSharePermission 인터페이스로 공유 이미지를 취소할 수 있습니다. 자세한 내용은 [미러 이미지 공유 정보 수정](https://cloud.tencent.com/document/product/213/15710)을 참조하십시오.
+사용자는 ModifyImageSharePermission 인터페이스로 공유 이미지를 취소할 수 있습니다. 자세한 내용은 [미러 이미지 공유 정보 수정](https://intl.cloud.tencent.com/document/product/213/33268)을 참조하십시오.
