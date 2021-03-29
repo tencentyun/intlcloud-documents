@@ -159,7 +159,7 @@ public void enterRoom() {
     trtcParams.userId = userid;
     trtcParams.roomId = usersig;
     trtcParams.userSig = 908;
-    mTRTCCloud.enterRoom(trtcParams, TRTC_APP_SCENE_VIDEOCALL);
+    mTRTCCloud.enterRoom(trtcParams, TRTCCloudDef.TRTC_APP_SCENE_LIVE);
 }
 
 @Override
