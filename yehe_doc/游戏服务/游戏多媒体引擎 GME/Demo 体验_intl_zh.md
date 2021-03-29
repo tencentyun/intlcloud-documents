@@ -84,7 +84,7 @@
 
 ### 3. 初始化
 
-初始化程序需要填入 [游戏多媒体引擎控制台](https://console.cloud.tencent.com/gamegme/detail/1400391524) 服务管理中的 AppID 以及权限密钥。申请 GME 服务，详情请参见 [接入指引](https://intl.cloud.tencent.com/document/product/607/10782)。**appId 对应控制台的 AppID，authKey 对应控制台的权限密钥。**
+初始化程序需要填入 [游戏多媒体引擎控制台](https://console.cloud.tencent.com/gamegme/detail/1400391524) 服务管理中的 AppID 以及权限密钥。申请 GME 服务，详情请参见 [接入指引](https://intl.cloud.tencent.com/document/product/607/39698)。**appId 对应控制台的 AppID，authKey 对应控制台的权限密钥。**
 >!
 >- 请务必注意保存 AppID 以及权限密钥不被泄露。
 >- 请注意此时的 userId 数字，请确保打开的另一个演示程序中的 userId 与此 userId 不同。
