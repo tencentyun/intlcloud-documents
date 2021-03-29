@@ -14,7 +14,7 @@ CDN 默认开启80/8080/443访问端口。您可根据业务的实际需求，�
 登录 [CDN 控制台](https://console.cloud.tencent.com/cdn)，在左侧菜单栏选择【域名管理】，单击域名操作列的【管理】，进入域名配置页面，切换 Tab 至【访问控制】，即可找到【境内访问端口配置】。
 
 默认情况下，80/8080/443访问端口均为开启状态：
-![](https://main.qcloudimg.com/raw/0ce7f3ef1fcd0059e7c662648440be49.png)
+![](https://main.qcloudimg.com/raw/a9f3930bb87a720acd8a09fb07f333d2.png)
 
 ### 修改配置
 
@@ -30,7 +30,7 @@ CDN 默认开启80/8080/443访问端口。您可根据业务的实际需求，�
 ## 配置示例
 
 若加速域名`www.test.com`的**境内访问端口配置**如下：
-![](https://main.qcloudimg.com/raw/c29aa04b629f7f08c94d103ba43eddef.png)
+![](https://main.qcloudimg.com/raw/a420e4f25d322855ee04b41c408ea9ab.png)
 
 则实际访问情况如下：
 
