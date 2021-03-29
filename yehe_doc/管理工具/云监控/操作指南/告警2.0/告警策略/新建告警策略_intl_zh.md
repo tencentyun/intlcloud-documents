@@ -98,7 +98,7 @@
   </tr>
   <tr>
     <td>选择模板</td>
-    <td> 选择模板按钮，并在下拉列表选择已配置的模板，具体配置请参阅 <a href="https://intl.cloud.tencent.com/document/product/248/32817">配置触发条件模板 </a>。若新建的模板没有显示，则单击右侧的【刷新】，即可刷新触发告警模板选择列表</td>
+    <td> 选择模板按钮，并在下拉列表选择已配置的模板，具体配置请参阅 <a href="https://intl.cloud.tencent.com/zh/document/product/248/38911">配置触发条件模板 </a>。若新建的模板没有显示，则单击右侧的【刷新】，即可刷新触发告警模板选择列表</td>
   </tr>
    <tr>
         <td >配置告警通知</td>
