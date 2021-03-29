@@ -35,7 +35,7 @@ Before initializing the SDK, modify the `Appid`, `Key`, and `OpenID` parameters 
 <img src="https://main.qcloudimg.com/raw/2498f0fc3c90eeea5b0cefccaf591f39.png" width="60%">
 
 
-For the source of the `Appid` and `Key` parameters, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/10782).
+For the source of the `Appid` and `Key` parameters, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/39698).
 The `OpenID` parameter is used to identify the local user, and its value must be above 10,000.
 
 ### 2. Click Init 
