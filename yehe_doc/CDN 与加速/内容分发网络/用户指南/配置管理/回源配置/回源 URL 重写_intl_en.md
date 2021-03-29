@@ -21,7 +21,7 @@ You can click **Add Rule** to add rewrite rules as needed.
 
 **Configuration limitations**
 
-- Each domain name can have up to 10 rewrite rules.
+- Each domain name can have up to 100 rewrite rules.
 - You can adjust the priority for multiple rules. Rules at the bottom of the list have higher priority.
 - Current Origin URL: starting with `/`; supporting full-path matching (e.g., /test/a.jpg) and wildcard (*) matching (e.g., /test/*/*.jpg). If you want to specify a file directory, you cannot end the path with `/` (e.g., /test).
 - Target Origin Domain: the current domain name is used by default (excluding `http://` and `https://`). You can modify it as needed.
