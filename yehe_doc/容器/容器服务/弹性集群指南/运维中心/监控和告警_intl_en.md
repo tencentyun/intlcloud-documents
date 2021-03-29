@@ -14,10 +14,10 @@ An elastic cluster has been created and is in the Running state. For more inform
 ## Monitoring and Alarm Metrics
 ### Monitoring metrics
 TKE currently provides monitoring metrics in the following dimensions. All metrics are **average values** of the statistics collected within the statistical period.
->
+>!
 >- For monitoring metrics for persistent volumes (PVs) used by a workload, see [Block Storage](https://console.cloud.tencent.com/monitor/product/bs) and [Cloud File Storage](https://console.cloud.tencent.com/monitor/product/cfs).
 >- For network monitoring metrics for a CLB associated with a Service, see the [Cloud Load Balancer](https://console.cloud.tencent.com/monitor/clb).
-- For more information on how to create an alarm policy, see [Creating an Alarm Policy](https://intl.cloud.tencent.com/document/product/248/6215).
+>- For more information on how to create an alarm policy, see [Creating an Alarm Policy](https://intl.cloud.tencent.com/document/product/248/38908).
 
 
 ### Monitoring metrics for a cluster
