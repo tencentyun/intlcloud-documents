@@ -65,8 +65,8 @@
 - [서명이 없어 실제 기기에서 디버깅 오류가 발생합니다.](https://intl.cloud.tencent.com/document/product/647/39242)
 - [플러그 인 내의 swift 파일에 추가/삭제 후, build 시 상응하는 파일을 찾을 수 없습니다.](https://intl.cloud.tencent.com/document/product/647/39242)
 - [Run 오류 “Info.plit, error: No value at that key path or invalid key path: NSBonjourServices”가 발생합니다.](https://intl.cloud.tencent.com/document/product/647/39242)
-- [Pod install 오류가 발생합니다.](https://intl.cloud.tencent.com/document/product/647/392420)
-- [Run 시 iOS 버전에 따른 오류가 발생합니다.](https://intl.cloud.tencent.com/document/product/647/392421)
+- [Pod install 오류가 발생합니다.](https://intl.cloud.tencent.com/document/product/647/39242)
+- [Run 시 iOS 버전에 따른 오류가 발생합니다.](https://intl.cloud.tencent.com/document/product/647/39242)
 
 
 
