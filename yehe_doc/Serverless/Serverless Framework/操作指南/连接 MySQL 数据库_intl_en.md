@@ -100,6 +100,7 @@ npm install mysql2
 ```
 
 4. After writing the business code and installing the dependencies, create a `serverless.yml` file as shown below:
+
 ``` yml
 app: mysql-app
 stage: dev
@@ -124,6 +125,7 @@ inputs:
 <span id="step5"></span>
 ### Step 5. Deploy
 After the creation, the project directory structure is as follows:
+
 ```
    ./test-MySQL
    ├── vpc
@@ -145,6 +147,7 @@ sls deploy
 >- If your account is a sub-account, please get the authorization first as instructed in [Account and Permission Configuration](https://intl.cloud.tencent.com/document/product/1040/36793).
 
  If the following result is returned, the deployment is successful:
+
 ``` mysql
 mysql-app-vpc: 
   region:        xxx
@@ -183,6 +186,7 @@ serverless ⚡ framework
 ## Sample Code
 ### Python
 In Python, you can use the built-in **pymysql** dependency package in the SCF environment to connect to the database. The sample code is as follows:
+
 ```  python
 # -*- coding: utf8 -*-
 from os import getenv
@@ -253,6 +257,7 @@ exports.main_handler = async (event, context, callback) => {
 ### PHP
 In PHP, you can use the **pdo_mysql** or **mysqli** dependency package for data connection. The sample code is as follows:
 - **pdo_mysql**
+
 ```php
 <?php
 function handler($event, $context) {
@@ -312,6 +317,7 @@ function main_handler($event, $context) {
 ```
 
 2. Use HikariCP for connection. The sample code is as follows:
+
 ``` java
 package example;
 
@@ -386,6 +392,7 @@ SCF DB SDK for MySQL has the following features:
 - The SCF team will continuously check issues to ensure that the database connection is available, so you don't need to pay attention to connection issues.
 
 **1. SDK for Node.js**
+
 ```  JavaScript
 'use strict';
 const database = require('scf-nodejs-serverlessdb-sdk').database;
@@ -405,6 +412,7 @@ exports.main_handler = async (event, context, callback) => {
 
 
 **2. SDK for Python**
+
 ``` Python
 from serverless_db_sdk import database
 
