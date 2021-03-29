@@ -41,6 +41,7 @@ Serverless Framework 提供了多个基础资源组件，用户可以通过不�
 ```
 
 COS 组件的 yml 文件示例如下，全量配置文件可参考 [COS 组件全量配置](https://github.com/serverless-components/tencent-cos/blob/master/docs/configure.md)。
+
 ```yml
 app: appDemo
 stage: dev
@@ -54,6 +55,7 @@ inputs:
 ```
 
 2. 修改 SCF 项目的 yml 配置文件，在触发器配置部分按以下语法引用 COS 组件的部署结果：
+
 ```yml
 app: appDemo
 stage: dev
