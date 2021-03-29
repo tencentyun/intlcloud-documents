@@ -2,7 +2,7 @@
 본 문서는 스팟 인스턴스 관리와 구매에 대해 안내하며 현재 다음과 같은 세 가지 방식을 제공합니다.
 - **CVM 콘솔**: CVM 구매 페이지는 스팟 인스턴스 모드를 지원하고 있습니다.
 - **배치 컴퓨팅 콘솔**: 배치 컴퓨팅은 작업 제출을 지원하고 컴퓨팅 환경 생성 시 스팟 인스턴스를 선택합니다.
-- **클라우드 API**: [RunInstance 인터페이스](https://cloud.tencent.com/document/api/213/15730)에 스팟 인스턴스 관련 파라미터를 추가하였습니다.
+- **클라우드 API**: [RunInstance 인터페이스](https://intl.cloud.tencent.com/document/product/213/33237)에 스팟 인스턴스 관련 파라미터를 추가하였습니다.
 
 
 ## 작업 순서
@@ -34,7 +34,7 @@
 
 
 ### 클라우드 API
-RunInstance 인터페이스 내 [InstanceMarketOptionsRequest](https://cloud.tencent.com/document/api/213/15753#InstanceMarketOptionsRequest) 파라미터는 스팟 인스턴스 모드와 구성 관련 정보를 지정하여 사용 가능합니다.
+RunInstance 인터페이스 내 [InstanceMarketOptionsRequest](https://intl.cloud.tencent.com/document/api/213/15753#InstanceMarketOptionsRequest) 파라미터는 스팟 인스턴스 모드와 구성 관련 정보를 지정하여 사용 가능합니다.
 * **동기화 인터페이스**: 현재 RunInstance가 제공하는 일회용 동기화 요청 인터페이스로써 신청이 실패(재고 부족, 요청 가격이 시장 가격보다 낮은 경우)하면 즉시 실패를 반환하므로 더 이상 신청되지 않습니다.
 - **고정 가격**: 현재 단계에서 고정 할인 모드를 사용할 경우 사용자는 시장 가격보다 크거나 같은 파라미터를 설정해야 하며 시장 가격에 대한 자세한 내용은 [현재 스팟 인스턴스는 어떤 리전과 인스턴스 유형 및 사양을 지원합니까?](https://intl.cloud.tencent.com/document/product/213/17817)를 참조하십시오.
 
