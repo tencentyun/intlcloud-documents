@@ -98,7 +98,7 @@ You can set threshold alarms for the performance consumption metrics of the Tenc
   </tr>
   <tr>
     <td>Template</td>
-    <td>Click "Template" and select a configured template from the drop-down list. For detailed configurations, please see <a href="https://intl.cloud.tencent.com/document/product/248/32817">Configuring Trigger Condition Template</a>. If a newly created template is not displayed, click **Refresh** on the right.</td>
+    <td>Click "Template" and select a configured template from the drop-down list. For detailed configurations, please see <a href="https://intl.cloud.tencent.com/document/product/248/38911">Configuring Trigger Condition Template</a>. If a newly created template is not displayed, click **Refresh** on the right.</td>
   </tr>
    <tr>
         <td >Alarm notification configuration</td>
