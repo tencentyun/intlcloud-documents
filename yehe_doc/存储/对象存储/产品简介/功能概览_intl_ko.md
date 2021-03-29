@@ -142,6 +142,6 @@ COS에서는 다음과 같은 기능을 제공합니다.
    <tr>
       <td>지원 프로토콜</td>
       <td nowrap="nowrap">다양한 전송 프로토콜</td>
-      <td>COS는 HTTP1.0, HTTP1.1, HTTP2.0, QUIC 프로토콜을 포함한 다양한 프로토콜과 TLS1.0, TLS1.1, TLS1.2 암호화 프로토콜을 지원합니다. HTTP2.0과 QUIC 프로토콜은 현재 베타 단계로, 사용이 필요한 경우 <a href="https://cloud.tencent.com/online-service">온라인 지원</a> 또는 <a href="https://console.cloud.tencent.com/workorder/category">Submit Ticket</a>을 통해 고객센터에 문의하시면 화이트리스트를 활성화해 드립니다.</td>
+      <td>COS는 HTTP1.0, HTTP1.1, HTTP2.0, QUIC 프로토콜을 포함한 다양한 프로토콜과 TLS1.0, TLS1.1, TLS1.2 암호화 프로토콜을 지원합니다. HTTP2.0과 QUIC 프로토콜은 현재 베타 단계로, 사용이 필요한 경우 <a href="https://intl.cloud.tencent.com/support">온라인 지원</a> 또는 <a href="https://console.cloud.tencent.com/workorder/category">Submit Ticket</a>을 통해 고객센터에 문의하시면 화이트리스트를 활성화해 드립니다.</td>
    </tr>
 </table>
