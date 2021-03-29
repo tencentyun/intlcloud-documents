@@ -43,9 +43,9 @@ Number  Start   End     Size    File system  Name                          Flags
 ```
 mount -t ntfs-3g data disk path mount target
 ```
-For example, to mount the data disk in `/dev/vdb1` to `/mnt`, run the following command:
+For example, to mount the data disk in `/dev/vdb2` to `/mnt`, run the following command:
 ```
-mount -t ntfs-3g /dev/vdb1 /mnt
+mount -t ntfs-3g /dev/vdb2 /mnt
 ```
 As the file system can be recognized by the operating system, the Linux system can directly read data from and write data to the mounted data disk.
 
