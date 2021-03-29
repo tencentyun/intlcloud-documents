@@ -41,6 +41,7 @@ This document uses deploying a function project triggered by a COS trigger as an
 ```
 
 A sample `.yml` file for the COS component is provided below. For more information on all configuration items, please see [COS Component Configuration](https://github.com/serverless-components/tencent-cos/blob/master/docs/configure.md).
+
 ```yml
 app: appDemo
 stage: dev
@@ -54,6 +55,7 @@ inputs:
 ```
 
 2. Modify the `.yml` configuration file for the SCF project and impot the deployment result of the COS component according to the following syntax in the trigger configuration part:
+
 ```yml
 app: appDemo
 stage: dev
