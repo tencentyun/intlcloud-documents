@@ -1,8 +1,3 @@
-## 操作シナリオ
-このドキュメントは、コンソール、API、およびインスタンスメタデータでパブリックIPアドレスを取得する方法について説明します。
-
-
-## 操作手順
 
 ### コンソールで取得する
 1. [CVMコンソール](https://console.cloud.tencent.com/cvm/)にログインします。
@@ -13,13 +8,15 @@
 >
 
 ### APIで取得する
-[インスタンスリストの照会](https://cloud.tencent.com/document/product/213/15728)にある関連インターフェースをご参照ください。
+[インスタンスリストの照会](https://intl.cloud.tencent.com/document/product/213/33258)にある関連インターフェースをご参照ください。
 
 <span id = "jump">  </span>
+
 ### インスタンスメタデータで取得する
 1. CVMのインスタンスにログインする。
 ログイン方法の詳細については、[Linuxインスタンスのログイン](https://intl.cloud.tencent.com/document/product/213/5436)、および[Windowsインスタンスのログイン](https://intl.cloud.tencent.com/document/product/213/32498)をご参照ください。
-2. cURLツールまたはHTTPのGETリクエストを介してmetadataにアクセスし、パブリックIPアドレスを取得します。
+
+2. コマンドを入力する:
 ```
 curl http://metadata.tencentyun.com/meta-data/public-ipv4
 ```
