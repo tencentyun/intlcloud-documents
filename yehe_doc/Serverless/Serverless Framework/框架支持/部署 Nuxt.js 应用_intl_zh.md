@@ -84,7 +84,8 @@ $ serverless info
 <span id="1"></span>
 ## 项目迁移改造模版
 
-- Express 模版
+ - Express 模版
+
 ``` js
 const express = require('express')
 const { loadNuxt } = require('nuxt')
@@ -116,7 +117,8 @@ module.exports = createServer
 ```
 
 
-- Koa 模版
+ - Koa 模版
+
 ``` js
 const Koa = require('koa')
 const { loadNuxt } = require('nuxt')
