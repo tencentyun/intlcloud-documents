@@ -84,7 +84,7 @@ IM supports three types of callbacks:
 2. HTTPS callback. The WebServer of the app backend is configured with a certificate issued by a CA or a certificate issued by IM free of charge.
 3. HTTPS mutual authentication callback. The WebServer of the app backend is configured with a certificate issued by a CA or a certificate issued by IM free of charge. In addition, mutual authentication is enabled.
 
->To obtain a certificate issued by IM free of charge, you need to log in to the console, configure the callback URL, and download the certificate. For more information, see [Callback Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
+>?To obtain a certificate issued by IM free of charge, you need to log in to the console, configure the callback URL, and download the certificate. For more information, see [Callback Configuration](https://intl.cloud.tencent.com/document/product/1047/34520).
 
 The first type of callback has the lowest security level, and the last type has the highest.
 
@@ -98,7 +98,7 @@ We strongly recommend that apps use the third type of callbacks. In addition, th
 
 Currently, the IM console allows you to configure callbacks, including configuring the callback URL and the types of enabled callbacks. For details on the configuration method, see the [Configuration of Third-Party Callbacks](https://intl.cloud.tencent.com/document/product/1047/34520).
 
-> The IM console allows you to configure only HTTP and HTTPS callbacks. If you need to enable the HTTPS mutual authentication callback, which has the highest security level, complete the following steps:
+> !The IM console allows you to configure only HTTP and HTTPS callbacks. If you need to enable the HTTPS mutual authentication callback, which has the highest security level, complete the following steps:
 > 1. In the IM console, configure the callback URL (which must be an HTTPS domain name) and enable the callback.
 >2. Click **Download HTTPS Mutual Authentication Certificate** on the right to get the certificate, and configure HTTPS mutual authentication by following two guides below:
 >   1. [Configuring HTTPS Mutual Authentication on an Apache Server](https://intl.cloud.tencent.com/document/product/1047/34379)
