@@ -43,7 +43,7 @@ This document introduces how to troubleshoot and resolve situations in which no 
 
 1. Go to the [Alarm Policy](https://console.cloud.tencent.com/monitor/policylist) page in the Cloud Monitor console.
 2. Find the target alarm policy and click its name to go to the alarm policy management page.
-3. Check whether the alarm recipients contain the user who has not received alarm notifications. If the alarm receiving group is "not configured" or does not contain the user, see [Creating Alarm Recipient Groups](https://intl.cloud.tencent.com/document/product/248/6217) to add the user to the alarm receiving group.
+3. Check whether the alarm recipients contain the user who has not received alarm notifications. If the alarm receiving group is "not configured" or does not contain the user, see [Creating Alarm Recipient Groups](https://intl.cloud.tencent.com/zh/document/product/248/38908) to add the user to the alarm receiving group.
 ![](https://main.qcloudimg.com/raw/00155e489f2b870c94341cec6ca67839.png)
 
 
