@@ -3,10 +3,6 @@
 This document describes how to create an alias to abstract the name of a fleet. By using an alias instead of a specific fleet ID, you can change the server fleet associated with the alias to switch player traffic from one fleet to another fleet more easily and seamlessly for zero downtime updates.
 
 
-## Prerequisites
-
-You have completed the [GSE Application Form](https://intl.cloud.tencent.com/apply/p/k0b6pvbhs6) and your application has been approved.
-
 ## Directions
 
 1. Log in to the [GSE Console](https://console.cloud.tencent.com/gse/asset) and click **Alias** on the left sidebar.
