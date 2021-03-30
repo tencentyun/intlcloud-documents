@@ -39,7 +39,7 @@ message GseResponse {
 ## Field Description
 
 **GameServerSession**
-For more information on game session, please see `GameServerSession`.
+For more information on game session, please see [GameServerSession](https://intl.cloud.tencent.com/document/product/1055/37140#GameServerSession).
 
 
 
