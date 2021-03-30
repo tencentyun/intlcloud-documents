@@ -2,9 +2,6 @@
 
 This document describes how to create a server fleet, which is a group of managed resources in the form of CVM instances, to deploy game servers. The fleet size is subject to the number of instances you assign, and can be manually or automatically scaled to meet players' needs.
 
-## Prerequisites
-
-You have completed the [GSE Application Form](https://intl.cloud.tencent.com/apply/p/k0b6pvbhs6) and your application has been approved.
 
 ## Directions
 
