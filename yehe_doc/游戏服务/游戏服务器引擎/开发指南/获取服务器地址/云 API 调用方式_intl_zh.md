@@ -14,4 +14,4 @@
 ### 3. 直接封装
 通过域名、接口名的 HTTP 请求方法调用客户端云 API。
 
- >?GSE 的云 API 已升级到3.0版本，具体操作请参见 云 API 调用方式。
+ >?GSE 的云 API 已升级到3.0版本，具体操作请参见 [云 API 调用方式](https://intl.cloud.tencent.com/document/product/1055/37122)。
