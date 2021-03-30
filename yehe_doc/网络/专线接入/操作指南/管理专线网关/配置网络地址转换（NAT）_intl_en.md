@@ -21,14 +21,15 @@ You can configure IP translation and IP port translation for Direct Connect gate
 5. In the upper-left corner of the IP mapping page, click **Add** to add a local IP mapping.
 6. In the window that appears, enter the source IP address, mapped IP address, and notes. Then, click **OK**.
 7. (Optional) When a new local IP mapping is created, an ACL rule that allows all inbound and outbound traffic is added by default, which means local IP translation takes effect for all dedicated tunnels. You can edit the ACL rule to change the scope of local IP translation.
->
+>?
 >- If the Direct Connect gateway is also configured with peer IP translation, the **destination IP address** for the ACL rule for local IP translation should be the **mapped IP address for peer IP translation**, instead of the source IP address.
 >- For an ACL rule of local IP translation, you can configure the protocol (TCP or UDP), source port, destination IP address, and destination port. If the port and IP address are left empty, they default to ALL. If ALL is selected for the protocol, then All is also selected for the port and IP address by default.
->?
- 1. On the IP mapping page, click **Edit ACL rule** for the IP mapping.
-  2. At the bottom of the list of existing ACL rules, click **New line** to add an ACL rule, and then click **Save**.
- 3. (Optional) You can modify or delete an existing ACL rule in the editing mode. After making the change, click **Save**.
-  4. (Optional) You can click <img src="https://main.qcloudimg.com/raw/b2347f733a56962b935f57d086824290.png" style="margin:-3px 0px;width:15px"> to show all the rules of the IP mapping on the IP mapping page, and then click **Modify** or **Delete** for the rule to be modified or deleted. When making the change, confirm the operation as prompted.
+> 
+    1. On the IP mapping page, click **Edit ACL rule** for the IP mapping.
+    2. At the bottom of the list of existing ACL rules, click **New line** to add an ACL rule, and then click **Save**.
+    3. (Optional) You can modify or delete an existing ACL rule in the editing mode. After making the change, click **Save**.
+    4. (Optional) You can click <img src="https://main.qcloudimg.com/raw/b2347f733a56962b935f57d086824290.png" style="margin:-3px 0px;width:15px"> to show all the rules of the IP mapping on the IP mapping page, and then click **Modify** or **Delete** for the rule to be modified or deleted. When making the change, confirm the operation as prompted.
+
 8. (Optional) To modify the local IP mapping, click **Modify IP mapping** for the IP mapping on the IP mapping page. Modify the source IP address, mapped IP address, and notes of the local IP mapping as needed, and click **OK** to apply the changes.
 9. (Optional) To delete the local IP mapping, click **Delete** for the IP mapping on the IP mapping page, and then confirm the operation as prompted. Deleting an IP mapping also deletes its associated ACL rules.
 
@@ -160,6 +161,6 @@ After the configuration, network requests from VPC C to access banks A and B wil
 ### Sample configuration for local destination IP port translation
 VPC C’s IP range is `172.16.0.0/16`. To open only some of the ports to the active access of the Direct Connect peer, you can configure local destination IP port mappings A and B as follows:
 - Local destination IP port mapping A: the source IP port is `172.16.0.1:80` and the mapped IP port is `10.0.0.1:80`.
-- Local destination IP port mapping B: the source IP port is `172.16.0.0:8080` and the mapped IP port is `10.0.0.1:8080`.
+- Local destination IP port mapping B: the source IP port is `172.16.0.1:8080` and the mapped IP port is `10.0.0.1:8080`.
 
-After the configuration, the Direct Connect peer can access ports `10.0.0.1:80` and` 10.0.0.1:8080` to implement active access to ports `172.16.0.1:80` and `172.16.0.0:8080` in VPC C.
+After the configuration, the Direct Connect peer can access ports `10.0.0.1:80` and` 10.0.0.1:8080` to implement active access to ports `172.16.0.1:80` and `172.16.0.1:8080` in VPC C.
