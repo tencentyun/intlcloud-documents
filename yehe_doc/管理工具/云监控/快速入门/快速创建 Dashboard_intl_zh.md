@@ -28,5 +28,5 @@ Dashboard 提供了自定义监控面板的服务，用户可以跨产品跨实�
 ## 步骤3：查看监控图表
 
 在完成图表创建后，您可以在 Dashboard 管理页查看您创建的监控图表。
- ![](https://main.qcloudimg.com/raw/8a5034bbc78cb8ffe67aeee6bc7c0bd5)
+ ![](https://main.qcloudimg.com/raw/53a7126e61313945d008f91baa2ea0a2.png)
 > ?如需了解更多 Dashboard 设置，请参见 [Dashboard](https://intl.cloud.tencent.com/document/product/248/38461) 操作指南。

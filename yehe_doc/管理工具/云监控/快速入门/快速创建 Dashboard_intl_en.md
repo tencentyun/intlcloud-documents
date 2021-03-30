@@ -28,5 +28,5 @@ On the **Dashboard List** page, click **Create Dashboard** in the upper-left cor
 ## Step 3: View the Monitoring Chart
 
 After creating the monitoring chart, you can view it on the dashboard management page.
- ![](https://main.qcloudimg.com/raw/8a5034bbc78cb8ffe67aeee6bc7c0bd5)
+ ![](https://main.qcloudimg.com/raw/53a7126e61313945d008f91baa2ea0a2.png)
 > ?For more information about dashboard settings, please see [Dashboard](https://intl.cloud.tencent.com/document/product/248/38461) in the operation guide.
