@@ -39,7 +39,7 @@ message GseResponse {
 ## 字段说明
 
 **GameServerSession**
-更多相关游戏会话详情请参见 GameServerSession。
+更多相关游戏会话详情请参见 [GameServerSession](https://intl.cloud.tencent.com/document/product/1055/37140#GameServerSession)。
 
 
 
