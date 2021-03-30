@@ -14,4 +14,4 @@ You can use API Explorer to call a client TencentCloud API. This tool provides v
 ### 3. Direct Encapsulation
 You can use the HTTP request method of a domain name or an API name to call a client TencentCloud API.
 
- >?TencentCloud APIs of GSE have been upgraded to v3.0. For detailed directions, please see TencentCloud API calling methods.
+ >?TencentCloud APIs of GSE have been upgraded to v3.0. For detailed directions, please see [TencentCloud API calling methods](https://intl.cloud.tencent.com/document/product/1055/37122).
