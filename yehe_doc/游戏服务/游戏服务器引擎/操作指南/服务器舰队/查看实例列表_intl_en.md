@@ -4,7 +4,7 @@ This document describes how to view all information about the instance list, inc
 
 ## Prerequisites
 
-You have completed the [GSE Application Form](https://intl.cloud.tencent.com/apply/p/k0b6pvbhs6), your application has been approved, and you have created a server fleet.
+You have [created server fleets](https://intl.cloud.tencent.com/document/product/1055/36675).
 
 ## Directions
 
