@@ -44,7 +44,7 @@ Currently, CKafka is fully compatible with Kafka 0.9, 0.10, 1.1, and 2.4. We rec
 ### Step 3. Test Kafka APIs.
 
 1. Configure an ACL policy locally.
-   1. In the `./config` directory of the installation file, add the following content at the end of `producer.propertise` and `consumer.properties`.
+   1. In the `./config` directory of the installation file, add the following content at the end of `producer.properties` and `consumer.properties`.
       ```properties
       security.protocol=SASL_PLAINTEXT 
       sasl.mechanism=PLAIN
