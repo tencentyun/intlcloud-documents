@@ -4,7 +4,7 @@ ActivateGameServerSession
 
 ## 接口描述
 
-游戏进程通过 [OnStartGameServerSession ](https://intl.cloud.tencent.com/document/product/1055/37423) 接口收到 GSE 的回调后，需要调用该接口告诉 GSE 来激活对应的 GameServerSession。
+游戏进程通过 [OnStartGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37423)接口收到 GSE 的回调后，需要调用该接口告诉 GSE 来激活对应的 GameServerSession。
 
 ## 请求消息体
 
@@ -32,4 +32,4 @@ message GseResponse
 
 ## 使用示例
 
-使用示例请参见 [OnStartGameServerSession ](https://intl.cloud.tencent.com/document/product/1055/37423)接口。
+使用示例请参见 [OnStartGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37423) 接口。
