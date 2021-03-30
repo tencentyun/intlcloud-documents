@@ -88,7 +88,7 @@ UserID 即用户ID，用于在一个实时音视频应用中唯一标识一个�
 
 [](id:que18)
 ### 实时音视频是否支持主动呼叫功能？
-需要结合信令通道解决，例如使用 [即时通信 IM](https://cloud.tencent.com/product/im) 服务的自定义消息实现呼叫，可以参考 [SDK](https://intl.cloud.tencent.com/document/product/647/34615) 源码中的场景化 Demo 示例。
+需要结合信令通道解决，例如使用 [即时通信 IM](https://intl.cloud.tencent.com/product/im) 服务的自定义消息实现呼叫，可以参考 [SDK](https://intl.cloud.tencent.com/document/product/647/34615) 源码中的场景化 Demo 示例。
 
 [](id:que19)
 ### 实时音视频双人视频通话是否支持蓝牙耳机？
@@ -196,7 +196,7 @@ TRTC 没有音频和视频通道的区分，只调用 startLocalAudio 不调用 
 ### TRTC 房间支不支持踢人、禁止发言、静音？  
 支持。
 - 如果是简单的信令操作，可以使用 TRTC 的自定义信令接口 sendCustomCmdMsg，开发者自己定义相应的控制信令，收到控制信令的通话方执行对应操作即可。例如，踢人就是定义一个踢人的信令，收到此信令的用户就自行退出房间。
-- 如果是需要实现更完善的操作逻辑，建议开发者通过 [即时通信 IM](https://cloud.tencent.com/document/product/269) 来实现相关逻辑，将 TRTC 的房间与 IM 群组进行映射，在 IM 群组中收发自定义消息来实现相应的操作。
+- 如果是需要实现更完善的操作逻辑，建议开发者通过 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047) 来实现相关逻辑，将 TRTC 的房间与 IM 群组进行映射，在 IM 群组中收发自定义消息来实现相应的操作。
 
 [](id:que42)
 ### TRTC 支持拉流播放 RTMP/FLV 流吗？  
@@ -283,7 +283,7 @@ TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决�
 
 [](id:que60)
 ### 怎样实现横屏视频通话？ 
-详情请参见 [实现横屏视频通话](https://cloud.tencent.com/developer/article/1492095) 和 [视频画面旋转和缩放](https://intl.cloud.tencent.com/document/product/647/35154)。
+详情请参见 [视频画面旋转和缩放](https://intl.cloud.tencent.com/document/product/647/35154)。
 
 [](id:que61)
 ### TRTC 本地和远端画面方向不一致怎么调整？  
