@@ -27,7 +27,7 @@
 |  CallbackCommand  | 回调命令字 |
 |  contenttype  | 可选，通常值为 JSON|
 |  ClientIP  | 客户端 IP 地址 |
-|  OptPlatform  | 客户端平台，对应不同的平台类型，可能的取值有：<br />    RESTAPI（使用 REST API 发送请求）、Web（使用 Web SDK 发送请求）、<br/>Android、iOS、Windows、Mac、IPad、Unkown（使用未知类型的设备发送请求） |
+|  OptPlatform  | 客户端平台，对应不同的平台类型，可能的取值有：<br />    RESTAPI（使用 REST API 发送请求）、Web（使用 Web SDK 发送请求）、<br/>Android、iOS、Windows、Mac、IPad、Unknown（使用未知类型的设备发送请求） |
 
 具体的回调内容则会包含在 HTTP 请求包体中，参见下文回调示例。
 
@@ -84,7 +84,7 @@ Content-Length: 75
 2. HTTPS 回调，App 后台的 WebServer 配置的是 CA 机构签发的证书或即时通信 IM 免费签发的证书。
 3. HTTPS 双向认证回调，App 后台的 WebServer 配置的是 CA 机构签发的证书或即时通信 IM 免费签发的证书，且启用双向认证能力。
 
->获取即时通信 IM 免费签发的证书，需先登录控制台配置回调 URL 并下载证书，详细操作步骤请参见 [回调配置](https://intl.cloud.tencent.com/document/product/1047/34520)。
+>?获取即时通信 IM 免费签发的证书，需先登录控制台配置回调 URL 并下载证书，详细操作步骤请参见 [回调配置](https://intl.cloud.tencent.com/document/product/1047/34520)。
 
 三种方案的安全性逐步递增：
 
@@ -98,7 +98,7 @@ Content-Length: 75
 
 目前即时通信 IM 控制台支持自助配置回调，包括配置回调 URL 以及启用哪些回调。配置方法参见 [第三方回调配置](https://intl.cloud.tencent.com/document/product/1047/34520) 文档。
 
->控制台自助配置的回调仅支持 HTTP/HTTPS 回调。如果您需要启用安全级别最强的 HTTPS 双向认证：
+>!控制台自助配置的回调仅支持 HTTP/HTTPS 回调。如果您需要启用安全级别最强的 HTTPS 双向认证：
 >1. 在控制台中配置回调 URL（必须为 HTTPS 域名）、回调开启。
 >2. 单击右侧的【HTTPS双向认证证书下载】获取证书，依照如下两篇指引配置 HTTPS 双向认证：
 >   1. [Apache 配置 HTTPS 双向认证指南](https://intl.cloud.tencent.com/document/product/1047/34379)
