@@ -4,7 +4,7 @@
 | Reserved Keyword    | Description                                                         |
 | :------------ | :----------------------------------------------------------- |
 | \_\_SOURCE\_\_    | The operator that specifies the IP address of a source whose logs you want to query, and wildcard is supported, such as `__SOURCE__:"127.0.0.*"` |
-| \_\_FILENAME\_\_  | The operator that specifies the file path from which you want to query logs, and wildcard is supported, such as `__FILENAME__:"/var/log/access.*"` |
+| \_\_FILENAME\_\_  | The operator that specifies the file path from which you want to query logs, and wildcard is supported, such as `__FILENAME__:"\/var\/log/access.*"` |
 | AND           | The AND logical operator that displays a record if all the conditions separated by AND are TRUE, such as `level:ERROR AND pid:1234`                |
 | OR            | The OR logical operator that displays a record if any of the conditions separated by OR is TRUE, such as `level:ERROR OR level:WARNING`            |
 | NOT           | The NOT logical operator that displays a record if the condition(s) is NOT TRUE, such as `level:ERROR NOT pid:1234`                |
