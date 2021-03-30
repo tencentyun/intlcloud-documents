@@ -23,7 +23,7 @@ On the **Dashboard List** page, click **Create Dashboard** in the upper-left cor
 
 1. On the **New Dashboard** page, click **Create Chart**.
 2. Set the metric information from below the chart and customize a chart name on the right of the chart. After this, click **Save** in the upper-right corner. For more information, please see [Step 1: Create a metric](https://intl.cloud.tencent.com/document/product/248/38477).
-![](https://main.qcloudimg.com/raw/65c3fa64e6674ae43ce98ea06283fcce.png)
+![](https://main.qcloudimg.com/raw/f8de2aef14ebc4fd68244e85ef499a92.png)
 
 ## Step 3: View the Monitoring Chart
 

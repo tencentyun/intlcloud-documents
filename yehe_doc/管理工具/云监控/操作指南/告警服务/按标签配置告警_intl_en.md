@@ -48,7 +48,7 @@ You can create tags according to different use cases and needs.
 
 1. Go to the tag list page in the [Tag console](https://console.cloud.tencent.com/tag/taglist).
 2. On the tag list page, click **Create** and enter the tag key and tag value (which can be left empty). You can create multiple tags for different use cases.
-   ![](https://main.qcloudimg.com/raw/e95d071efe0bd47b0f0e6bfdefd8a361.png)
+   ![](https://main.qcloudimg.com/raw/7f71df3dfee7168fc958fdcf5c107a5f.png)
 3. After entering the information, click **OK**.
 
 <span id= "step2"></span>
@@ -58,7 +58,7 @@ You can create tags according to different use cases and needs.
 
 1. Go to the alarm policy page in the [Cloud Monitor console](https://console.cloud.tencent.com/monitor/alarm2/policy).
 2. Click **Create** to enter the alarm policy creation page, select the **Tag** type in the **Alarm Object** column, and select the corresponding tag key and tag value. For other configuration items, please see [Creating Alarm Policy](https://intl.cloud.tencent.com/document/product/248/38916).
-   ![](https://main.qcloudimg.com/raw/1a40447244d6feee42fa90cb2722bd1a.png)
+   ![](https://main.qcloudimg.com/raw/6f84d0ab70625f8bf8360fb9c0ffa90b.png)
 3. After completing the configuration, click **Complete**.
 
 <span id= "step3"></span>
@@ -76,14 +76,14 @@ You can associate tags in two ways:
 
 1. Go to the instance list page in the [CVM console](https://console.cloud.tencent.com/cvm/instance).
 2. Click **Create** to create a CVM instance as instructed in [Creating Instances via CVM Purchase Page](https://intl.cloud.tencent.com/document/product/213/4855). When configuring the instance in step 2, select the corresponding tag key and tag value in the **Tag** column.
-![](https://main.qcloudimg.com/raw/40212e5d870e3078357d0fc55423c905.png)
+![](https://main.qcloudimg.com/raw/86a07bb2777e31eb9eb283e7ffd7c747.png)
 
 #### Associating existing CVM instance with tag
 
 1. Go to the instance list page in the [CVM console](https://console.cloud.tencent.com/cvm/instance).
 2. On the instance list page, find the target instance and select **More** > **Instance Settings** > **Edit Tag** in the **Operation** column.
 3. In the tag editing window, associate the instance with the corresponding tag key and value and click **OK**.
-![](https://main.qcloudimg.com/raw/b4963b4d749da17de176b43f3f1e9ea8.png)
+![](https://main.qcloudimg.com/raw/4a18fcd3d6d61af1b6462954a47ba2b0.png)
 
 
 
