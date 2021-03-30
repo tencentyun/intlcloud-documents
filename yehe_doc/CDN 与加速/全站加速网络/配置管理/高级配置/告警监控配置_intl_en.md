@@ -115,4 +115,4 @@ On the historical alarm page in Cloud Monitor, you can view the list of alarm de
 ![](https://main.qcloudimg.com/raw/03155da8d30984811d6c820428c79aac.png)
 
 ## Other Alarm Policies
-For more information on how to configure alarm policies, please see [Creating Alarm Policies](https://intl.cloud.tencent.com/document/product/248/6215).
+For more information on how to configure alarm policies, please see [Creating Alarm Policies](https://intl.cloud.tencent.com/zh/document/product/248/38908).
