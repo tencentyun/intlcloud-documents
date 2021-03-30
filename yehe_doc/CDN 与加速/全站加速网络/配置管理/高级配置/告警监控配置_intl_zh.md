@@ -115,4 +115,4 @@ ECDN 已正式接入腾讯云监控系统，当前版本支持的告警指标包
 ![](https://main.qcloudimg.com/raw/03155da8d30984811d6c820428c79aac.png)
 
 ## 其他告警策略
-告警策略更多配置说明，请参见 [创建告警策略](https://intl.cloud.tencent.com/document/product/248/6215) 文档。
+告警策略更多配置说明，请参见 [创建告警策略](https://intl.cloud.tencent.com/zh/document/product/248/38908) 文档。
