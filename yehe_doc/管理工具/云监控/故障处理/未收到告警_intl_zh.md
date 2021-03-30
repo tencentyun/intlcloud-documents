@@ -43,7 +43,7 @@
 
 1. 进入 [云监控控制台—告警策略](https://console.cloud.tencent.com/monitor/policylist)。
 2. 找到对应的告警策略，单击策略名称，进入告警策略管理页。
-3. 查看告警接收对象是否包含未收到告警的用户。若出现“未设置”或没有此用户，请参考  [创建告警接收组](https://intl.cloud.tencent.com/document/product/248/6217) 添加用户到告警接收组。
+3. 查看告警接收对象是否包含未收到告警的用户。若出现“未设置”或没有此用户，请参考  [创建告警接收组](https://intl.cloud.tencent.com/zh/document/product/248/38908) 添加用户到告警接收组。
 ![](https://main.qcloudimg.com/raw/00155e489f2b870c94341cec6ca67839.png)
 
 
