@@ -186,4 +186,3 @@ sls remove --all
 serverless ⚡ framework
 38s › tencent-fullstack › Success
 ```
-更多 PostgreSQL 数据库用法，请参考 [基于 PG SQL+Website 全栈网站最佳实践](https://cloud.tencent.com/document/product/1154/43009)。
