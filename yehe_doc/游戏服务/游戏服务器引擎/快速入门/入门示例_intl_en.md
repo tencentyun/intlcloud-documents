@@ -2,10 +2,6 @@
 
 This document describes how to use the "Demo" to get started with GSE, a game server hosting service.
 
-## Prerequisites
-
-You have completed the [GSE Application Form](https://intl.cloud.tencent.com/apply/p/k0b6pvbhs6) and your application has been approved.
-
 ## Directions
 
 ### Step 1. Upload demo package
