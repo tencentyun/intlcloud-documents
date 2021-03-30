@@ -88,7 +88,7 @@ UserID 即用户ID，用于在一个实时音视频应用中唯一标识一个�
 
 [](id:que18)
 ### 实时音视频是否支持主动呼叫功能？
-需要结合信令通道解决，例如使用 [即时通信 IM](https://intl.cloud.tencent.com/product/im) 服务的自定义消息实现呼叫，可以参考 [SDK](https://intl.cloud.tencent.com/document/product/647/34615) 源码中的场景化 Demo 示例。
+需要结合信令通道解决，例如使用 [即时通信 IM](https://cloud.tencent.com/product/im) 服务的自定义消息实现呼叫，可以参考 [SDK](https://intl.cloud.tencent.com/document/product/647/34615) 源码中的场景化 Demo 示例。
 
 [](id:que19)
 ### 实时音视频双人视频通话是否支持蓝牙耳机？
@@ -196,7 +196,7 @@ TRTC 没有音频和视频通道的区分，只调用 startLocalAudio 不调用 
 ### TRTC 房间支不支持踢人、禁止发言、静音？  
 支持。
 - 如果是简单的信令操作，可以使用 TRTC 的自定义信令接口 sendCustomCmdMsg，开发者自己定义相应的控制信令，收到控制信令的通话方执行对应操作即可。例如，踢人就是定义一个踢人的信令，收到此信令的用户就自行退出房间。
-- 如果是需要实现更完善的操作逻辑，建议开发者通过 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047) 来实现相关逻辑，将 TRTC 的房间与 IM 群组进行映射，在 IM 群组中收发自定义消息来实现相应的操作。
+- 如果是需要实现更完善的操作逻辑，建议开发者通过 [即时通信 IM](https://cloud.tencent.com/document/product/269) 来实现相关逻辑，将 TRTC 的房间与 IM 群组进行映射，在 IM 群组中收发自定义消息来实现相应的操作。
 
 [](id:que42)
 ### TRTC 支持拉流播放 RTMP/FLV 流吗？  
@@ -283,7 +283,7 @@ TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决�
 
 [](id:que60)
 ### 怎样实现横屏视频通话？ 
-详情请参见  [视频画面旋转和缩放](https://intl.cloud.tencent.com/document/product/647/35154)。
+详情请参见 [实现横屏视频通话](https://cloud.tencent.com/developer/article/1492095) 和 [视频画面旋转和缩放](https://intl.cloud.tencent.com/document/product/647/35154)。
 
 [](id:que61)
 ### TRTC 本地和远端画面方向不一致怎么调整？  
@@ -310,3 +310,25 @@ TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决�
 ### TRTC 自定义渲染支持哪些格式？ 
 - iOS 端支持 i420、NV12 和 BGRA。
 - Android 端支持 I420 和 texture2d。
+
+[](id:que67)
+### 实时音视频是什么？
+腾讯实时音视频（Tencent Real-Time Communication，TRTC），将腾讯多年来在网络与音视频技术上的深度积累，以多人音视频通话和低延时互动直播两大场景化方案，通过腾讯云服务向开发者开放，致力于帮助开发者快速搭建低成本、低延时、高品质的音视频互动解决方案，详细说明请参见 [产品概述](https://intl.cloud.tencent.com/document/product/647/35078)。
+
+[](id:que68)
+### 实时音视频 Demo 怎么体验？
+具体请参见 [Demo 体验](https://intl.cloud.tencent.com/document/product/647/35076)。
+
+[](id:que69)
+### 实时音视频如何快速入门？
+实时音视频为您提供了各个平台的 Demo 源码，您只需花费极少的时间即可快速搭建属于您自己的小应用，具体请参见 [新手入门](https://intl.cloud.tencent.com/document/product/647/39386)。
+
+[](id:que70)
+### 实时音视频如何实现云端录制与回放？
+具体请参见 [实现云端录制与回放](https://intl.cloud.tencent.com/document/product/647/35426)。
+
+
+
+
+
+
