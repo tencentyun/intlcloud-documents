@@ -4,7 +4,7 @@ This document describes how to configure a scaling policy after a server fleet i
 
 ## Prerequisites
 
-You have completed the [GSE Application Form](https://intl.cloud.tencent.com/apply/p/k0b6pvbhs6), your application has been approved, and you have created a server fleet.
+You have [created server fleets](https://intl.cloud.tencent.com/document/product/1055/36675).
 
 ## Directions
 1. Log in to the [GSE Console](https://console.cloud.tencent.com/gse/asset) and create a server fleet. For more information, please see [Creating Server Fleets](https://intl.cloud.tencent.com/document/product/1055/36675).
