@@ -29,6 +29,7 @@ You need to successfully perform [LVB push](https://intl.cloud.tencent.com/docum
 
 ### Scenario 1. PC playback
 You can use tools such as [VLC](https://intl.cloud.tencent.com/document/product/267/32483), FFmepg, and [TCPlayerDemo](https://imgcache.qq.com/open/qcloud/video/player/demo/player.html) for playback.
+![](https://main.qcloudimg.com/raw/d7aa3b16f0a76ed2a6bd6102be04ddaf.png)
 ### Scenario 2. Mobile playback
 1. Download and install the Tencent Video Cloud demo.
 
