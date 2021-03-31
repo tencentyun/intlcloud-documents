@@ -23,7 +23,7 @@ CSS 콘솔의 [보조 툴]>[주소 생성기](https://console.cloud.tencent.com/
 
 ### 시나리오1: PC에서의 재생
 [VLC](https://intl.cloud.tencent.com/document/product/267/32483), FFmepg, [TCPlayerDemo](https://imgcache.qq.com/open/qcloud/video/player/demo/player.html) 등의 툴을 사용해 재생할 수 있습니다.
-
+![](https://main.qcloudimg.com/raw/d7aa3b16f0a76ed2a6bd6102be04ddaf.png)
 ### 시나리오2: 모바일 재생
 1. Tencent 비디오 클라우드 Demo를 다운로드 및 설치합니다.
 2. [MLVB]>[라이브 방송 풀 스트리밍]을 선택합니다.
