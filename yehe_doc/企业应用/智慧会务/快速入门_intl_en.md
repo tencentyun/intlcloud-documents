@@ -1,9 +1,9 @@
 
 ### Step 1. Sign-up and Login
-Log in at Tencent Cloud's official website. If you don't have an account yet, please sign up as instructed in [Sign up for a Tencent Cloud Account](https://intl.cloud.tencent.com/document/product/378/17985).
+Log in at [Tencent Cloud's official website](https://intl.cloud.tencent.com/login/subAccount). If you don't have an account yet, please sign up as instructed in [Sign up for a Tencent Cloud Account](https://intl.cloud.tencent.com/document/product/378/17985).
 
 ### Step 2. Online Application
-Go to the overview page of Tencent Cloud Conference, click [Apply Now](https://intl.cloud.tencent.com/apply/p/st7gvmdxi19), fill out the application form, and click **Submit** to complete the online application.
+Go to the overview page of Tencent Cloud Conference, click Apply Now, fill out the application form, and click **Submit** to complete the online application.
 
 ### Step 3. Application Review
 After receiving your application, we will review it and contact you to confirm your preliminary needs and arrange business negotiation.
