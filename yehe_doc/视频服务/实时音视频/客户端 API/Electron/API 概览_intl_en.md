@@ -7,19 +7,17 @@ APIs for Tencent Cloud’s video call feature
 
 ### Creating TRTC objects
 ```js
-const TRTCCloud = require('trtc-electron-sdk');
+const TRTCCloud = require('trtc-electron-sdk').default;
+// import TRTCCloud from 'trtc-electron-sdk';
 this.rtcCloud = new TRTCCloud();
 ```
 
-Since version 7.0.149, TRTC SDK for Electron has integrated `trtc.d.ts` for developers using TypeScript.
+Since version 7.9.348, TRTC SDK for Electron has integrated `trtc.d.ts` for developers using TypeScript.
 
 ```javascript
-// Enable the ES Module interoperability mode (esModuleInterop=true)
-import * as trtc_namespace from 'trtc-electron-sdk';
+import TRTCCloud from 'trtc-electron-sdk';
 
-const TRTCCloud = require('trtc-electron-sdk');
-
-const rtcCloud: trtc_namespace.TRTCCloud = new TRTCCloud();
+const rtcCloud: TRTCCloud = new TRTCCloud();
 // Get the SDK version number.
 rtcCloud.getSDKVersion();
 ```
