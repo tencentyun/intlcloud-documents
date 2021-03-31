@@ -34,4 +34,4 @@ Tencent Cloud共有イメージは、対向側アカウントの唯一IDによ�
 
 ### API経由で共有します
 
-ShareImageインターフェースを使用してイメージを共有できます。詳細については、[共有イメージ API](https://cloud.tencent.com/document/api/213/2361)をご参照ください。
+ShareImageインターフェースを使用してイメージを共有できます。
