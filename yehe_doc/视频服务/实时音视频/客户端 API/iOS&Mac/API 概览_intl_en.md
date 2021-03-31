@@ -322,7 +322,7 @@
 | [onStopPublishing](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a379dcf84e15f93b64efe2cb9f362877c) | Callback of stopping pushing to Tencent Cloud’s live streaming CDN, which corresponds to the `stopPublishing()` API in [`TRTCCloud`](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#interfaceTRTCCloud). |
 | [onStartPublishCDNStream](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a817783f364bf9f6f0a1df4bc26bad628) | Callback of the completion of starting relayed push to CDNs |
 | [onStopPublishCDNStream](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#aab032eb48a56e8351ada60ce5b510d5e) | Callback of the completion of stopping relayed push to CDNs |
-| [onSetMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#ab5c98341b7536b5b65c04b835c4d28fb) | Callback of setting On-Cloud MixTranscoding parameters, which corresponds to the `setMixTranscodingConfig()` API in `[TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#interfaceTRTCCloud)`. |
+| [onSetMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#ab5c98341b7536b5b65c04b835c4d28fb) | Callback of setting On-Cloud MixTranscoding parameters, which corresponds to the `setMixTranscodingConfig()` API in [`TRTCCloud`](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#interfaceTRTCCloud). |
 
 
 ### Audio effect callback APIs
