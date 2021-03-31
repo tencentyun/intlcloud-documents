@@ -26,4 +26,4 @@ After the copying is completed, the image list in the destination regions will d
  6. Switch to a destination region. Select the successfully copied image in the image list under the region, and click **Create Instance** to create the same CVM instance.
 
 ### Copy images via API
-You can also use SyncCvmImage API to copy images. For details, see [SyncCvmImage API](https://intl.cloud.tencent.com/document/api/213/1336).
+You can also use SyncCvmImage API to copy images. 
