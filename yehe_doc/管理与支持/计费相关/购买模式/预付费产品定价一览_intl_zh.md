@@ -1,11 +1,7 @@
 
-## 计算
-
-[云服务器](https://intl.cloud.tencent.com/zh/document/product/213/30619)
-
 ## 存储
 
-[云硬盘](https://intl.cloud.tencent.com/zh/document/product/362/2413)
+[云硬盘](https://intl.cloud.tencent.com/document/product/362/2413)
 
 ## 网络
 
@@ -15,7 +11,7 @@
 
 [云联网](https://intl.cloud.tencent.com/document/product/1003/30053)
 
-[公网](https://intl.cloud.tencent.com/document/product/213/10578)
+[EIP弹性IP](https://intl.cloud.tencent.com/document/product/213/17156)
 
 ## 数据库
 
@@ -35,7 +31,7 @@
 
 ## 中间件
 
-[消息队列Ckafka](https://intl.cloud.tencent.com/document/product/597/11745)
+消息队列Ckafka
 
 ## 移动服务
 
