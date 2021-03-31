@@ -16,9 +16,9 @@ ES supports configuring alarms for key metrics, which can help you identify clus
  - **Trigger**: **Trigger template** and **Configure a trigger** are supported. The latter is selected by default. For more information about custom configuration, see the description below. For more information about how to create a template, see the [Create a trigger template](#Create-a-new-trigger-template) section below. 
  >Metric: For example, "CPU utilization". The statistical period is 1 minute or 5 minutes. All the metrics of an ES cluster are collected once per minute. If the statistical period is 1 minute, an alarm will be triggered as soon as a threshold is exceeded in the cluster. If 5 minutes is selected as the statistical period, an alarm will be triggered only when the threshold is continuously exceeded within 5 minutes. 
 >Alarm frequency: For example, "Alarm once every 30 minutes" means that there will be only one alarm triggered every 30 minutes if a metric exceeds the threshold in several consecutive statistical periods. Another alarm will be triggered only if the metric exceeds the threshold again in the next 30 minutes.
- - **Alarm Channel**: Select the recipient group, valid time period, and receiving channel. For more information about the configuration method, see [Creating and Managing an Alarm Recipient Group](https://intl.cloud.tencent.com/document/product/248/6217).
+ - **Alarm Channel**: Select the recipient group, valid time period, and receiving channel. For more information about the configuration method, see [Creating and Managing an Alarm Recipient Group](https://intl.cloud.tencent.com/zh/document/product/248/38908).
 3. After the configuration is completed, click **Finish**. Return to the **Alarm Policy** list and you can see the alarm policy just configured.
->For more information about how to configure an alarm policy, see [Cloud Monitor Alarm Configuration](https://intl.cloud.tencent.com/document/product/248/6215).
+>For more information about how to configure an alarm policy, see [Cloud Monitor Alarm Configuration](https://intl.cloud.tencent.com/zh/document/product/248/38908).
 >
 ![](https://main.qcloudimg.com/raw/e036d702d7225cb01e2ffd9f02ca927a.png)
 ![](https://main.qcloudimg.com/raw/e4277fe07038f654ef69fd2185f0ac2e.png)
