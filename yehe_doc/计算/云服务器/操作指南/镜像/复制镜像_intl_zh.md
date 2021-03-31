@@ -26,4 +26,4 @@
  6. 切换至复制的目的地域，在该地域下的镜像列表中，选择复制成功的镜像，单击【创建实例】，即可创建相同的云服务器实例。
 
 ### 使用 API 复制
-您可以使用 SyncCvmImage 接口复制镜像，具体内容可以参考 [复制镜像 API](https://intl.cloud.tencent.com/document/api/213/1336)。
+您可以使用 SyncCvmImage 接口复制镜像。
