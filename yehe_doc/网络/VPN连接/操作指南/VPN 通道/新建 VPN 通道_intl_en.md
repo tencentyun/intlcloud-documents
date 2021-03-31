@@ -16,7 +16,7 @@ The following configuration information is required to create a VPN tunnel:
 2. Click **VPN Connection** > **VPN Tunnel** on the left sidebar to go to the management page.
 3. Click **Create** on the **VPN Tunnel** management page.
 4. Configure the basic information of the VPN tunnel in the pop-up dialog box.
-    ![](https://main.qcloudimg.com/raw/cb32f21fa41c5f34d8a8d0f8a8d660c1.png)
+
 <table>
 <tr>
 <th>Parameter Name</th>
@@ -36,7 +36,7 @@ The following configuration information is required to create a VPN tunnel:
 </tr>
 <tr>
 <td>VPC</td>
-<td>Select the VPC of the VPN gateway only when the **VPN Gateway Type** is **VPC**. This parameter is not available for CCN-based VPN gateways.</td>
+<td>Select the VPC of the VPN gateway only when the <b>VPN Gateway Type</b> is <b>VPC</b>. This parameter is not available for CCN-based VPN gateways.</td>
 </tr>
 <tr>
 <td>VPN Gateway</td>
@@ -56,7 +56,7 @@ The following configuration information is required to create a VPN tunnel:
 </tr>
 <tr>
 <td>Enable Health Check</td>
-<td>Used to enable/disable health check and check the health status of the linkage. **Disabled** by default.</td>
+<td>Used to enable/disable health check and check the health status of the linkage. <b>Disabled</b> by default.</td>
 </tr>
 <tr>
 <td>VPN Gateway IP Address for Health Check</td>
@@ -71,7 +71,9 @@ The following configuration information is required to create a VPN tunnel:
 <td>(Optional) Attach a tag to the network resource as you need for easy management.</td>
 </tr>
 </table>
+
 5. Click **Next** to go to the **SPD Policy** configuration page.
+
 6. Configure the SPD policy.
   >?
   >+ An SPD policy consists of a series of SPD rules to specify the IP ranges in a VPC or CCN and an IDC that can communicate with each other. Each SPD rule contains one VPN gateway CIDR block and at least one customer gateway CIDR block. A CIDR block and a customer gateway CIDR block form a mapping. An SPD rule may involve multiple mappings.
@@ -79,7 +81,6 @@ The following configuration information is required to create a VPN tunnel:
   >
 **Example:**
 As shown in the figure below, a VPN gateway has the following SPD rules:
-![](https://main.qcloudimg.com/raw/6e585587b4bb23e22558a3d84cc50ba6.png)
  - SPD rule 1: the VPN gateway IP range is 10.0.0.0/24, and the customer gateway IP ranges are 192.168.0.0/24 and 192.168.1.0/24. Two mappings are formed.
  - SPD rule 2: the VPN gateway IP range is 10.0.1.0/24, and the customer gateway IP range is 192.168.2.0/24. One mapping is formed.
  - SPD rule 3: the VPN gateway IP range is 10.0.1.0/24, and the customer gateway IP range is 192.168.2.0/24. One mapping is formed.
@@ -91,9 +92,9 @@ As shown in the figure below, a VPN gateway has the following SPD rules:
 Note that the mapping rules cannot overlap with each other, which means that the VPN and customer gateway IP range of a rule cannot be both overlapped with the two corresponding IP ranges of another rule. 
  - Suppose that you want to add a new mapping between 10.0.0.0/24-----192.168.1.0/24. The operation fails as the combination of VPN gateway IP and customer gateway IP already exists.
  - You can add a new mapping between 10.0.1.0/24 and 192.168.1.0/24 as it does not overlap with any of the existing mappings.
-![](https://main.qcloudimg.com/raw/641121e50364a1a40b4b3643a20703c1.png)
+
 7. Click **Next** to go to the **IKE Configuration (Optional)** page. If no advanced configuration is required, click **Next** directly.
- ![](https://main.qcloudimg.com/raw/cb7acde379a0aafb5d4b28dfe759c683.png)
+
 <table>
 <tr>
 <th width="20%">Configuration Item</th>
@@ -117,7 +118,7 @@ Note that the mapping rules cannot overlap with each other, which means that the
 </tr>
 <tr>
 <td>Negotiation Mode</td>
-<td>**Main** mode and **Aggressive** mode supported<br/>In **aggressive** mode, more information can be sent with fewer packets so that a connection can be established quickly, but the identity of a security gateway is sent in plain text. The configuration parameters such as Diffie-Hellman and PFS cannot be negotiated and they must have compatible configurations.
+<td><b>Main</b> mode and <b>Aggressive</b> mode supported<br/>In <b>aggressive</b> mode, more information can be sent with fewer packets so that a connection can be established quickly, but the identity of a security gateway is sent in plain text. The configuration parameters such as Diffie-Hellman and PFS cannot be negotiated and they must have compatible configurations.
 </tr>
 <tr>
 <td>VPN Gateway Identifier</td>
@@ -136,7 +137,9 @@ Note that the mapping rules cannot overlap with each other, which means that the
 <td>Unit: second<br/>SA lifetime proposed for IKE security. Before a preset lifetime expires, another SA is negotiated in advance to replace the old one. The old SA is used before a new one is negotiated. The new SA is used immediately after establishment, and the old one is automatically cleared after its lifetime expires.</td>
 </tr>
 </table>
+
 8. Go to the **IPsec configuration (Optional)** page. Directly click **Finish** if no advanced configuration is required.
+
 <table>
 <tr>
 <th width="22%">Configuration Item</th>
@@ -171,6 +174,7 @@ Note that the mapping rules cannot overlap with each other, which means that the
 <td>Unit: KB</td>
 </tr>
 </table>
+
 9. After the VPN tunnel is successfully created, return to the VPN tunnel list page and click **More**. Choose **Download config file** to complete the download.
 10. Other operations:
      1. Clicking **Reset** will clear existing tunnel configurations. This operation will interrupt data transmission over the existing VPN tunnel and reestablish the connection. Please get ready for network change in advance.
@@ -178,5 +182,4 @@ Note that the mapping rules cannot overlap with each other, which means that the
      3. Click **More** > **Delete** to delete the tunnel. Unconnected tunnels can be deleted.
      4. Click **More** > **Download config file** to download the tunnel configuration file. This file can be uploaded to the customer VPN device.
      5. Click **More** > **Edit Tag** to modify tags.
-![](https://main.qcloudimg.com/raw/98d4d5764ea7fa0f0723bf96da85e990.png)
-	
+
