@@ -16,14 +16,14 @@ CSS 콘솔의 [보조 툴]>[주소 생성기](https://console.cloud.tencent.com/
 - 주소 만료 시간을 선택합니다. (예시: `2019-12-13  23:59:59`)
 - [주소 생성]을 클릭합니다.
   ![](https://main.qcloudimg.com/raw/a2f130098eb40df252956ffb3752d230.png)
->- 상기 방법 이외에도 CSS 콘솔의 [도메인 관리](https://console.cloud.tencent.com/live/domainmanage)에서 재생 도메인을 선택한 후 [관리]를 클릭하고, [재생 설정]을 선택해 재생 주소의 만료 시간을 선택하고 푸시 스트림 주소와 동일한 StreamName을 입력한 후, [재생 주소 생성]을 클릭하면 재생 주소를 생성할 수 있습니다.
+>?상기 방법 이외에도 CSS 콘솔의 [도메인 관리](https://console.cloud.tencent.com/live/domainmanage)에서 재생 도메인을 선택한 후 [관리]를 클릭하고, [재생 설정]을 선택해 재생 주소의 만료 시간을 선택하고 푸시 스트림 주소와 동일한 StreamName을 입력한 후, [재생 주소 생성]을 클릭하면 재생 주소를 생성할 수 있습니다.
 
 ## 라이브 방송 재생
 먼저 [라이브 방송 푸시 스트림](https://intl.cloud.tencent.com/document/product/267/31558)을 진행해야 하며, 푸시 스트림을 완료해야 만 재생 주소를 통해 라이브 방송 화면을 확인할 수 있습니다. 비즈니스 시나리오에 따라 다음 방법을 이용해 라이브 방송을 테스트할 수 있습니다.
 
 ### 시나리오1: PC에서의 재생
 [VLC](https://intl.cloud.tencent.com/document/product/267/32483), FFmepg, [TCPlayerDemo](https://imgcache.qq.com/open/qcloud/video/player/demo/player.html) 등의 툴을 사용해 재생할 수 있습니다.
-![](https://main.qcloudimg.com/raw/d7aa3b16f0a76ed2a6bd6102be04ddaf.png)
+![](https://main.qcloudimg.com/raw/e47f8d4d9ca63e678439df3e8a17c9b4.png)
 ### 시나리오2: 모바일 재생
 1. Tencent 비디오 클라우드 Demo를 다운로드 및 설치합니다.
 2. [MLVB]>[라이브 방송 풀 스트리밍]을 선택합니다.
