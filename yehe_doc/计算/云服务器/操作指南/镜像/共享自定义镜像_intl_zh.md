@@ -34,4 +34,4 @@
 
 ### 通过 API 共享
 
-您可以使用 ShareImage 接口共享镜像，具体内容可以参考 [共享镜像 API](https://intl.cloud.tencent.com/document/api/213/2361)。
+您可以使用 ShareImage 接口共享镜像。
