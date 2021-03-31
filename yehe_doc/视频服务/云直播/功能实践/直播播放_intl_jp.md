@@ -23,7 +23,7 @@ CSSコンソールの【補助ツール】>[【アドレスジェネレーター
 
 ### シナリオ1： PC での再生
 [ VLC](https://intl.cloud.tencent.com/document/product/267/32483)、FFmepg および [TCPlayerDemo](https://imgcache.qq.com/open/qcloud/video/player/demo/player.html)  などのツールを使用して再生することができます。
-
+![](https://main.qcloudimg.com/raw/d7aa3b16f0a76ed2a6bd6102be04ddaf.png)
 ### シナリオ2：モバイルでの再生
 1.  Tencent Video Cloud Demoをダウンロードし、インストールします。
 2. 【MLVB】>【CSSプル】を開き、選択します。
