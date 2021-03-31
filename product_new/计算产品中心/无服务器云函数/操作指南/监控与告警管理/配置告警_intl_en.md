@@ -27,7 +27,7 @@ For the full list of supported metrics, see [Descriptions of monitoring metrics]
 ![](https://main.qcloudimg.com/raw/fcf6fd3b4002c03d15aa51278a049b89.png)
 4. Click **Finish** and you can view the configured policy in "Alarm Policies". You can start or stop a policy at any time as needed.
 
-> For more information on detailed alarm policy configuration, see [Cloud Monitor > Alarm Policy](https://intl.cloud.tencent.com/document/product/248/6215).
+> For more information on detailed alarm policy configuration, see [Cloud Monitor > Alarm Policy](https://intl.cloud.tencent.com/document/product/248/38908).
 
 
 
