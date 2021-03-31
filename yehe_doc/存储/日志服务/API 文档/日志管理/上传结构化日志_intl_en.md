@@ -47,7 +47,7 @@ In addition, CLS allows you to upload logs in the following two modes:
 
 #### Uploading compressed logs
 
-In this mode, logs are compressed in lz4 format for collection, and then uploaded for retention. This mode reduces the log upload traffic (write traffic) and saves costs.
+In this mode, logs are compressed in LZ4 format for collection, and then uploaded for retention. This mode reduces the log upload traffic (write traffic) and saves costs.
 
 #### Sample
 
@@ -102,14 +102,14 @@ The `x-cls-hashkey` request header indicates that logs are written to the CLS to
 
 | Field Name | Type | Location | Required | Description |
 | ------------ | ------- | ----- | ---- | ------------------------------------------------------------ |
-| topic_id     | string  | query | Yes   | ID of the target log topic to which data will be uploaded and can be viewed in the [log topic](https://console.cloud.tencent.com/cls/logset/desc) page |
-| logGroupList | message | pb    | Yes   | The logGroup list, which describes the encapsulated log groups. Less than five `logGroup` values are recommended.                     |
+| topic_id     | string  | query | Yes   | ID of the target log topic to which data will be uploaded, which can be viewed on the [log topic](https://console.cloud.tencent.com/cls/logset/desc) page |
+| logGroupList | message | pb    | Yes   | The logGroup list, which describes the encapsulated log groups. No more than five `logGroup` values are recommended.                     |
 
 `LogGroup` description:
 
 | Field Name     | Required | Description                                                         |
 | ----------- | -------- | ------------------------------------------------------------ |
-| logs        | Yes       | Log array consisting of multiple `Log` values. The `Log` indicates a log, and `LogGroup` can contain up to 10,000 `Log` values |
+| logs        | Yes       | Log array consisting of multiple `Log` values. The `Log` indicates a log, and a `LogGroup` can contain up to 10,000 `Log` values. |
 | contextFlow | No       | UID used to maintain context, which does not take effect currently |
 | filename    | No       | Log filename                                                   |
 | source      | No       | Log source, which is generally the server IP                           |
@@ -117,17 +117,17 @@ The `x-cls-hashkey` request header indicates that logs are written to the CLS to
 
 `Log` description:
 
-| Field Name     | Required | Description                                                         |
+| Field Name | Required | Description |
 | -------- | -------- | ------------------------------------------------------------ |
-| time     | Yes       | UNIX timestamp of log time in seconds (not recommended), milliseconds, or microseconds |
-| contents | No       | Log content in `key-value` format. A log can contain multiple `key-value` pairs |
+| time | Yes | UNIX timestamp of log time in seconds or milliseconds (recommended) |
+| contents | No | Log content in `key-value` format. A log can contain multiple `key-value` pairs. |
 
 `Content` description:
 
 | Field Name     | Required | Description                                                         |
 | ------ | -------- | ------------------------------------------------------------ |
-| key    | Yes       | Key of a field group in one log, which cannot start with `_`                 |
-| value  | Yes       | Value of a field group, which cannot exceed 1 MB in one log. The total value cannot exceed 5 MB in `LogGroup` |
+| key    | Yes       | Key of a field group in one log, which cannot start with `_`.                 |
+| value  | Yes       | Value of a field group, which cannot exceed 1 MB in one log. The total value cannot exceed 5 MB in `LogGroup`. |
 
 `LogTag` description:
 
@@ -147,7 +147,7 @@ Content-Length: 0
 
 #### Response header
 
-No special response header is used except for common response header.
+No special response header is used except for common response headers.
 
 #### Response parameters
 
@@ -155,7 +155,7 @@ None.
 
 ## Error Codes
 
-For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/614/12402).
+For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/614/12402).
 
 ## PB Compilation Sample
 
@@ -165,7 +165,7 @@ This sample describes how to use the protoc compiler to compile the PB descripti
 
 ####. 1. Install Protocol Buffer
 
-Download [Protocol Buffer](https://main.qcloudimg.com/raw/d7810aaf8b3073fbbc9d4049c21532aa/protobuf-2.6.1.tar.gz), decompress and install it. This document uses protobuf 2.6.1 running on CentOS 7.3 as an example.
+Download [Protocol Buffer](https://main.qcloudimg.com/raw/d7810aaf8b3073fbbc9d4049c21532aa/protobuf-2.6.1.tar.gz), then decompress and install it. This document uses protobuf 2.6.1 running on CentOS 7.3 as an example.
 Run the following command to decompress the `protobuf-2.6.1.tar.gz` package to `/usr/local` and access this directory:
 ```sh
 [root@VM_0_8_centos]# tar -zxvf protobuf-2.6.1.tar.gz -C /usr/local/ && cd /usr/local/protobuf-2.6.1
@@ -241,7 +241,7 @@ protoc --cpp_out=./ ./cls.proto
 
 > ?`--cpp_out=./ ` indicates that the file will be compiled in cpp format and output to the current directory. `./cls.proto` indicates the `cls.proto` description file in the current directory.
 
-After the compilation succeeds, the code file in the corresponding programming language will be output. This sample generates the `cls.pb.h` header file and `cls.pb.cc` code implementation file as shown below:
+After the compilation succeeds, the code file in the corresponding programming language will be generated. This sample generates the `cls.pb.h` header file and `cls.pb.cc` code implementation file as shown below:
 
 ```
 [root@VM_0_8_centos protobuf-2.6.1]# protoc --cpp_out=./ ./cls.proto
