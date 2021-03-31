@@ -2,9 +2,7 @@
 
 The Batch Change Configuration feature allows you change a configuration item of multiple domain names at the same time.
 
-> Note：
->
-> Some of the configuration items are not yet available for batch changing.
+> ?Some of the configuration items are not yet available for batch changing.
 
 ## Directions
 
@@ -13,8 +11,8 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn) and select **
 
 
 >!
-- Configurations of disabled, blocked, and locked domain names cannot be changed in batches.
-- For domain name configurations that are not completed on the console, configuration changes do not apply.
+>- Configurations of disabled, blocked, and locked domain names cannot be changed in batches.
+>- For domain name configurations that are not completed on the console, configuration changes do not apply.
 
 
 ## Notes
