@@ -1,21 +1,105 @@
-このドキュメントでは、さまざまなタイプのTencentDB for MySQLインスタンスでサポートされている機能について説明します。ユーザーは各アーキテクチャの機能をより良く理解し、必要に応じてインスタンスを選択して購入することできます。
-次の表の「-」はサポートされていないことを示します。
+このドキュメントでは、さまざまなタイプのTencentDB for MySQLアーキテクチャでサポートされている機能と違いについて説明します。ユーザーは各アーキテクチャの機能をより良く理解し、必要に応じてインスタンスを選択して購入することできます。
 
-| 機能ポイント       | 高可用性バージョン         |ファイナンス版             |単一ノードHigh IOバージョン        |基本版                 | 
-| :------------ | :----------------- | :----------------- |:----------------------- | :-------------------- |
-| バージョン          | <li>MySQL 5.5<li>MySQL 5.6<li>MySQL 5.7<li>MySQL 8.0 |<li>MySQL 5.6<li>MySQL 5.7<li>MySQL 8.0 |<li>MySQL 5.6<li>MySQL 5.7<li>MySQL 8.0 |MySQL 5.7 | 
-| ノード数       |  2                        | 3                       |1                         |1                         |
-| 仕様設定    |最高488GB/6TB    | 最高488GB/6TB  |最高488GB/6TB    | 最高8GB/1T        | 
-| [アップグレードエンジンバージョン](https://intl.cloud.tencent.com/document/product/236/8126) | サポート（MySQL 5.5、5.6のみ）| サポート                   | サポート                    | サポート                   |
-| [アップグレードファイナンス版](https://intl.cloud.tencent.com/document/product/236/35986)  | サポート                    | - | -                    | -                   |
-| [読み取り専用インスタンス](https://intl.cloud.tencent.com/document/product/236/7270)    | サポート（MySQL 5.6、5.7のみ）| サポート|サポート            |-        |
-| [災害復旧インスタンス](https://intl.cloud.tencent.com/document/product/236/7272)    | サポート（MySQL 5.6、5.7のみ）| サポート|-         |-        | 
-| [アカウント管理](https://intl.cloud.tencent.com/document/product/236/31900)  | サポート                    | サポート                   | -                    | サポート                   |
-| [パラメータ設定](https://intl.cloud.tencent.com/document/product/236/35793)  | サポート                    | サポート                   |-                  | サポート                   |
-| [バックアップ](https://intl.cloud.tencent.com/document/product/236/32340)        | サポート                    | サポート                   |-                  |-                 | 
-| [ロールバック](https://intl.cloud.tencent.com/document/product/236/7276)          | サポート                    | サポート                   |-                  |-                | 
-| [データマイグレーション](https://intl.cloud.tencent.com/document/product/236/8463)    |  サポート                  | サポート                  |サポート                      |-                 |
-| [SQLファイルのインポート](https://intl.cloud.tencent.com/document/product/236/8466)    |  サポート                  | サポート                  |-                      |-                 |
-| [セキュリティグループ](https://intl.cloud.tencent.com/document/product/236/14470)       | サポート                    | サポート                   |サポート                     | -                |
-| [監視とアラーム](https://intl.cloud.tencent.com/document/product/236/8455) | サポート                    | サポート                   | サポート                    |サポート                    |
-| [ログ操作](https://intl.cloud.tencent.com/document/product/236/34588) | サポート                    | サポート                   | サポート                    |サポート                    |
+<table>
+<thead><tr><th align="left">機能</th><th align="left">2ノード</th><th align="left">3ノード</th><th colspan=2 align="left" >単一ノード</th>
+</tr></thead>
+<tbody><tr>
+<td align="left"><a href="https://cloud.tencent.com/document/product/236/53253" target="_blank">分離ポリシー</a></td>
+<td align="left">汎用型</td>
+<td align="left">汎用型</td>
+<td align="left">汎用型</td>
+<td align="left">基本型</td></tr>
+<tr>
+<td align="left">バージョン</td>
+<td align="left"><li>MySQL 5.5</li><li>MySQL 5.6</li><li>MySQL 5.7</li><li>MySQL 8.0</li></td>
+<td align="left"><li>MySQL 5.6</li><li>MySQL 5.7</li><li>MySQL 8.0</li></td>
+<td align="left"><li>MySQL 5.6</li><li>MySQL 5.7</li><li>MySQL 8.0</li></td>
+<td align="left">MySQL 5.7</td></tr>
+<tr>
+<td align="left">ノード数</td>
+<td align="left">2</td>
+<td align="left">3</td>
+<td align="left">1</td>
+<td align="left">1</td></tr>
+<tr>
+<td align="left">メモリ/ディスク</td>
+<td align="left">最大488GB /6TB</td>
+<td align="left">最大488GB/6TB</td>
+<td align="left">最大488GB/6TB</td>
+<td align="left">最大8GB/1T</td></tr>
+<tr>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/236/8126" target="_blank">データベースエンジンバージョンのアップグレード</a></td>
+<td align="left">サポート（MySQL 5.5、5.6のみ）</td>
+<td align="left">サポート</td>
+<td align="left">サポート</td>
+<td align="left">サポート</td></tr>
+<tr>
+<td align="left"><a href="https://intl.cloud.tencent.com/zh/document/product/236/35986" target="_blank">Finance Editionへのアップグレード</a></td>
+<td align="left">サポート</td>
+<td align="left">-</td>
+<td align="left">-</td>
+<td align="left">-</td></tr>
+<tr>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/236/7270" target="_blank">読み取り専用インスタンス</a></td>
+<td align="left">サポート（MySQL 5.5、5.6、8.0のみ）</td>
+<td align="left">サポート</td>
+<td align="left">サポート</td>
+<td align="left">-</td></tr>
+<tr>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/236/31900" target="_blank">アカウント管理</a></td>
+<td align="left">サポート</td>
+<td align="left">サポート</td>
+<td align="left">-</td>
+<td align="left">サポート</td></tr>
+<tr>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/236/35793" target="_blank">パラメータの設定</a></td>
+<td align="left">サポート</td>
+<td align="left">サポート</td>
+<td align="left">-</td>
+<td align="left">サポート</td></tr>
+<tr>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/236/37796" target="_blank">バックアップ</a></td>
+<td align="left">サポート</td>
+<td align="left">サポート</td>
+<td align="left">-</td>
+<td align="left">-</td></tr>
+<tr>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/236/7276" target="_blank">ロールバック</a></td>
+<td align="left">サポート</td>
+<td align="left">サポート</td>
+<td align="left">-</td>
+<td align="left">-</td></tr>
+<tr>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/236/8463" target="_blank">データ移行</a></td>
+<td align="left">サポート</td>
+<td align="left">サポート</td>
+<td align="left">サポート</td>
+<td align="left">-</td></tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/17136" target="_blank">SQLファイルのインポート</a></td>
+<td align="left">サポート</td>
+<td align="left">サポート</td>
+<td align="left">-</td>
+<td align="left">-</td></tr>
+<tr>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/236/14470" target="_blank">セキュリティグループ</a></td>
+<td align="left">サポート</td>
+<td align="left">サポート</td>
+<td align="left">サポート</td>
+<td align="left">-</td></tr>
+<tr>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/236/8455" target="_blank">監視とアラーム</a></td>
+<td align="left">サポート</td>
+<td align="left">サポート</td>
+<td align="left">サポート</td>
+<td align="left">サポート</td>
+<tr>
+<td align="left"><a href="https://intl.cloud.tencent.com/document/product/236/34588" target="_blank">操作ログ/a></td>
+<td align="left">サポート</td>
+<td align="left">サポート</td>
+<td align="left">サポート</td>
+<td align="left">サポート</td></tr>
+</tbody></table>
+
+
+>?上記の表の「-」は、サポートされていないことを示します。
