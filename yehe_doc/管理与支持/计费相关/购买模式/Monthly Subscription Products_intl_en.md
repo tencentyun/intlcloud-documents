@@ -31,7 +31,7 @@
 
 ## Middleware
 
-[Message Queue CKafka](https://intl.cloud.tencent.com/document/product/597/11745) 
+Message Queue CKafka
 
 ## Mobile
 
