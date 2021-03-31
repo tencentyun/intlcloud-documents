@@ -1,13 +1,13 @@
 
 ## API Description
 
-**Request method**: POST.
+**Request method**: POST
 
 ```plaintext
-Service address/v3/push/package/upload
+Service URL/v3/push/package/upload
 ```
 
-The API service address corresponds to the service access point one by one; therefore, please select the service address corresponding to your application [service access point](https://intl.cloud.tencent.com/document/product/1024/38517).
+API service URLs correspond to service access points one by one. Please select the [service URL](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
 
 **Feature**: you can upload a token package file for a batch of device tokens, and messages will be pushed by the tokens in it.
 
@@ -15,15 +15,15 @@ The API service address corresponds to the service access point one by one; ther
 
 | Parameter | Type | Required | Description |
 | ------ | --------- | -------- | ------------------------------------------------------------ |
-| file   | form-data | Yes       | <li>Token package format and size: `.zip`, `.txt`, or `.csv` file within 100 MB<li>The `.zip` package can contain a single `.txt` or `.csv` file but not folders.<li>`.txt` file requirements: (1) encoded in UTF-8; (2) one token (36 characters) per row<li>`.csv` file requirements: (1) one column only; (2) one token (36 characters) per row |
+| file   | form-data | Yes       | <li>Token package file name: [1, 100] characters</li><li>Token package format and size: `.zip`, `.txt`, or `.csv` file within 100 MB</li><li>`.zip` file requirements: contains a single `.txt` or `.csv` file but not folders</li><li>`.txt` file requirements: encoded in UTF-8; one token (36 characters) per row</li><li>`.csv` file requirements: one column only; one token (36 characters) per row</li> |
 
 ## Response Parameters
 
 | Parameter | Type | Required | Description |
 | -------- | ------- | -------- | ------------------------------------------------------------ |
 | retCode  | Integer | Yes       | Error code                                                       |
-| errMsg   | String   | Yes   | Error message when an error occurs in the request   |
-| uploadId | Integer | Yes | When a file is uploaded, the `uploadId` is returned as a positive integer, which represents the ID of the uploaded file. It is provided to the push API for `Token` package pushes |
+| errMsg   | String  | Yes       | Error message when a request error occurs                                        |
+| uploadId | Integer | Yes | When a file is uploaded, `uploadId` is provided as a positive integer, which represents the ID of the uploaded file. It is provided to the push API for token package push. |
 
 
 ## Sample Request
@@ -34,7 +34,7 @@ The API service address corresponds to the service access point one by one; ther
 curl -X POST 
 https://api.tpns.tencent.com/v3/push/package/upload 
    
--H 'Authorization: basic application authorization information' 
+-H 'Authorization: Basic application authorization information' 
 -F 'file=@C:\Absolute path of the uploaded file'
 ```
 
@@ -58,5 +58,5 @@ response = requests.request("POST", url, data=upload_data, headers=headers, file
 print(response.text.encode('utf-8'))
 ```
 
->!For application authorization information, please see [Basic Auth Verification](https://intl.cloud.tencent.com/document/product/1024/34672).
+>!For more information on the application authorization, please see [Basic Auth Verification](https://intl.cloud.tencent.com/document/product/1024/34672).
 
