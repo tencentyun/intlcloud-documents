@@ -22,7 +22,7 @@
 
 ### 场景一： PC 端播放
 您可使用[ VLC](https://intl.cloud.tencent.com/document/product/267/32483)、FFmepg 及 [TCPlayerDemo](https://imgcache.qq.com/open/qcloud/video/player/demo/player.html)  等工具进行播放。
-![](https://main.qcloudimg.com/raw/d7aa3b16f0a76ed2a6bd6102be04ddaf.png)
+![](https://main.qcloudimg.com/raw/e47f8d4d9ca63e678439df3e8a17c9b4.png)
 ### 场景二：移动端播放
 1. 下载安装 [腾讯视频云 Demo](https://intl.cloud.tencent.com/document/product/1071/38147)。
 2. 打开选择【移动直播】>【直播拉流】。
