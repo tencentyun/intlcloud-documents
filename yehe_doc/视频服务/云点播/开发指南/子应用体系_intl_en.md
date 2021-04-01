@@ -70,7 +70,7 @@ After enabling the subapplication feature, you must specify the subapplication w
 VOD server API has been upgraded to [TencentCloud API 3.0](https://intl.cloud.tencent.com/product/api). You can use the `SubAppId` parameter in each API to specify the subapplication you want to access. If you want to access the primary application, you can enter the primary application ID or leave this parameter empty.
 
 ### Specifying subapplication in server API 2017
-Server API 2017 also supports subapplications. When using it, you need to add the `SubAppId` parameter (case-sensitive) to the request. This parameter is at the same level as [common request parameters](https://intl.cloud.tencent.com/document/api/213/6976) of server API 2017, and its value is the subapplication ID. If you want to access the primary application, you can enter the primary application ID or leave this parameter empty.
+Server API 2017 also supports subapplications. When using it, you need to add the `SubAppId` parameter (case-sensitive) to the request. This parameter is at the same level as common request parameters of server API 2017, and its value is the subapplication ID. If you want to access the primary application, you can enter the primary application ID or leave this parameter empty.
 
 >?
 >- Server API 2017 documentation does not disclose the `SubAppId` parameter, which will not affect the use of it though.
