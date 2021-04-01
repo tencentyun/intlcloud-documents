@@ -1,8 +1,8 @@
-The event callback service can send notifications about TRTC events in the form of HTTP/HTTPS requests to your server. Currently, you can register callbacks for room events (`Room Event`) and media events (`Media Event`). Follow the directions below to configure callbacks in the TRTC console.
+The event callback service can notify your server of TRTC events in the form of HTTP/HTTPS requests. It has integrated certain events under the room event group and media event group. You can provide relevant configuration information to Tencent Cloud to activate this service.
 
-<span id="deploy"></span>
+
 ## Configuration Information
-You can configure callback information in the TRTC console. After completing the configuration, you will receive event callback notifications. For detailed directions, please see [Callback Configuration](https://intl.cloud.tencent.com/document/product/647/39559).
+You can configure callback information in the TRTC console. After completing the configuration, you can receive event callback notifications. For detailed directions, please see [Callback Configuration](https://cloud.tencent.com/document/product/647/52428).
 
 
 >?You need to provide the following information for the configuration:
@@ -10,10 +10,10 @@ You can configure callback information in the TRTC console. After completing the
 >- **Optional**: a custom key containing up to 32 uppercase and lowercase letters and digits, which is needed for the calculation of signatures
 
 ## Timeout and Retry
-A notification will be considered failed if the callback server does not receive a response from your server within 5 seconds of message sending. It will try again immediately after the first failure and retry **10 seconds** after every subsequent failure. No retries will be made 1 minute after the first try.
+If the event callback server doesn't receive a response from your server within 5 seconds after sending a message notification, it will consider that the notification has failed. After the initial notification fails, it will retry immediately, and for subsequent failures, it will continue to retry at intervals of **10 seconds** until the message lasts for more than 1 minute.
 
-<span id="format"></span>
-## Format of Callback Messages
+
+## Event Callback Message Format
 
 Callback messages are sent to your server in the form of HTTP/HTTPS POST requests, which consist of the following parts.
 
@@ -21,9 +21,28 @@ Callback messages are sent to your server in the form of HTTP/HTTPS POST request
 - Request: JSON for the request body
 - Response: HTTP STATUS CODE = 200. The server ignores the content of the response packet. For protocol-friendliness, we recommend adding `JSON: `{"code":0}`` to the response.
 
+<dx-codeblock>
+
+{
+	
+	
+	
+	
+		
+		
+		
+		
+		
+		
+		}
+}
+:::
+</dx-codeblock>
+
+
 
 ## Parameters
-<span id="message"></span>
+<td> message
 ### Callback message parameters
 
 - The header of a callback message contains the following fields.
@@ -56,7 +75,7 @@ Callback messages are sent to your server in the form of HTTP/HTTPS POST request
 </tr>
 </tbody></table>
 
-<span id="eventId"></span>
+
 ### Event group ID
 
 | Field            | Value   | Description       |
@@ -64,7 +83,7 @@ Callback messages are sent to your server in the form of HTTP/HTTPS POST request
 | EVENT_GROUP_ROOM  | 1    | Room event group |
 | EVENT_GROUP_MEDIA | 2    | Media event group |
 
-<span id="event_type"></span>
+
 ### Event type
 
 | Field                  | Value   | Description             |
@@ -73,15 +92,15 @@ Callback messages are sent to your server in the form of HTTP/HTTPS POST request
 | EVENT_TYPE_DISMISS_ROOM | 102  | Closing room         |
 | EVENT_TYPE_ENTER_ROOM   | 103  | Entering room        |
 | EVENT_TYPE_EXIT_ROOM    | 104  | Exiting room          |
-|  EVENT_TYPE_CHANGE_ROLE   | 105  |    Switching roles      |
+
 | EVENT_TYPE_START_VIDEO  | 201  | Starting pushing video data |
 | EVENT_TYPE_STOP_VIDEO   | 202  | Stopping pushing video data |
 | EVENT_TYPE_START_AUDIO  | 203  | Starting pushing audio data |
 | EVENT_TYPE_STOP_AUDIO   | 204  | Stopping pushing audio data |
 | EVENT_TYPE_START_ASSIT  | 205  | Starting pushing substream data |
-| EVENT_TYPE_STOP_ASSIT   | 206  | Stopping pushing substream data |
+| EVENT_TYPE_STOP_ASSIT   | 206  | Substream data push end |
 
-<span id="event_infor"></span>
+
 ### Event information
 
 | Field  | Type   | Description                              |
@@ -89,10 +108,13 @@ Callback messages are sent to your server in the form of HTTP/HTTPS POST request
 RoomId      |     String/Number       |     Room ID (same type as Room ID on the client)    |
 | EventTs | Number | Unix timestamp (in seconds) of event    |
 | userID | String | User ID |
+
 | Role    | Number | [Role type](#role_type) (option: carried during room entry/exit)  |
 | Reason  | Number | [Reason](#reason) (option: carried during room entry/exit) |
 
-<span id="role_type"></span>
+
+
+
 ### Role type
 
 | Field             | Value   | Description |
@@ -100,13 +122,13 @@ RoomId      |     String/Number       |     Room ID (same type as Room ID on the
 | MEMBER_TRTC_ANCHOR | 20   | Anchor |
 | MEMBER_TRTC_VIEWER | 21   | Viewer |
 
-<span id="reason"></span>
-### Reason
+
+### Specific reason
 
 | Field    | Description                              |
 | -------  | --------------------------------- |
-|Room entry   |<li/>1: voluntary entry <li/>2: entry after network switch<li/>3: timeout and retry <li/>4: entry in co-anchoring |
-|Room exit | <li/>1: voluntary exit <li/>2: exit due to timeout <li/>3: exit because the user was removed from the room <li/>4: exit due to the cancelling of co-anchoring <li/>5: force killing|
+|Room entry   |<li/>1: successful entry <li/>2: entry after network switch<li/>3: timeout and retry <li/>4: entry in co-anchoring |
+|Room exit | <li/>1: successful exit <li/>2: exit due to timeout <li/>3: exit after the user entered the room via another client <li/>4: exit due to user deletion <li/>5: cancelling of co-anchoring <li/>6: force killing |
 
 
 
