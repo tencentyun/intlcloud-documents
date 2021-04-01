@@ -1,8 +1,8 @@
-CSS 콘솔로 이동하여 [Stream Data Query](https://console.cloud.tencent.com/live/analysis/stream)를 선택해 스트림 ID를 입력하면 다음 이미지와 같이 스트림의 푸시 스트리밍과 재생 정보를 확인할 수 있습니다. 
+CSS 콘솔로 이동하여[【Stream Data Query】](https://console.cloud.tencent.com/live/analysis/stream)를 선택해 스트림 ID를 입력하면 다음 이미지와 같이 스트림의 푸시 스트리밍과 재생 정보를 확인할 수 있습니다. 
 ![](https://main.qcloudimg.com/raw/74a6c9f0ab91c0891ea7f483205237e3.png)
 
 ### 재생 데이터 조회 
-재생 데이터 페이지에서는 대역폭, 트래픽, 동시 접속 수에 대한 데이터를 조회할 수 있습니다. 재생 데이터는 최근 30일 데이터만 조회할 수 있으며 24시간 이하 단위로 조회할 수 있습니다.
+재생 데이터 페이지에서는 대역폭, 트래픽, 동시 접속 수에 대한 데이터를 조회할 수 있습니다. 재생 데이터는 최근 20일 데이터만 조회할 수 있으며 24시간 이하 단위로 조회할 수 있습니다.
 ![](https://main.qcloudimg.com/raw/8e22e9eaa44be89778eab39502a13a1f.png)
 
 ### 푸시 스트리밍 데이터 조회
