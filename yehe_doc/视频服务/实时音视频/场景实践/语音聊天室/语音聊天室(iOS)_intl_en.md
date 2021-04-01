@@ -93,7 +93,7 @@ Copy all files in `iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCVoiceRoomDemo/model` to y
 
 <span id="model.step4"></span>
 ### Step 4. Create a `TRTCVoiceRoom` instance and log in.
-1. Call the `sharedInstance` class method of `TRTCVoiceRoomImp` to create an instance that complies with `TRTCVoiceRoom`’s protocol, or call the `shared` class method to get a `TRTCVoiceRoomImp` instance. There is no difference between the two methods with respect to API usage.
+1. Call the `sharedInstance` class method of `TRTCVoiceRoom` to create an instance that complies with `TRTCVoiceRoom`’s protocol, or call the `shared` class method to get a `TRTCVoiceRoomImp` instance. There is no difference between the two methods with respect to API usage.
 2. Call the `setDelegate` function to register event callbacks of the component.
 3. Call the `login` function to log in to the component. Set the key parameters as described below.
 <table>    
