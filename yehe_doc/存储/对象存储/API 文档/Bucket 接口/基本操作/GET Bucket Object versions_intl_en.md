@@ -42,7 +42,7 @@ This API returns only common response headers. For more information, please see 
 
 #### Response body
 
-A successful query returns **application/xml** data, which contains information about versions of objects in the bucket. For the response bodies of different scenarios, please see the sample below:
+A successful query returns **application/xml** data, which contains information about object versions in the bucket. For the response bodies in different scenarios, see the samples below.
 ```xml
 <ListVersionsResult>
 		<EncodingType>string</EncodingType>
@@ -185,7 +185,7 @@ The nodes are described as follows:
 
 This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Sample
+## Samples
 
 #### Sample 1. Versioning disabled
 
@@ -204,7 +204,7 @@ Connection: close
 ```shell
 HTTP/1.1 200 OK
 Content-Type: application/xml
-Content-Length: 903
+Content-Length: 952
 Connection: close
 Date: Thu, 10 Dec 2020 03:35:34 GMT
 Server: tencent-cos
@@ -239,7 +239,8 @@ x-cos-request-id: NWZkMTk3ODZfZDUyNzVkNjRfNDgxYl8xNjU5****
 		        <LastModified>2020-12-10T03:35:24.000Z</LastModified>
 		        <ETag>&quot;dcffaafe67632b2bd2dd0b9456eafca7&quot;</ETag>
 		        <Size>23</Size>
-		        <StorageClass>STANDARD</StorageClass>
+		        <StorageClass>INTELLIGENT_TIERING</StorageClass>
+		        <StorageTier>FREQUENT</StorageTier>
 		        <Owner>
 					<ID>1250000000</ID>
 					<DisplayName>1250000000</DisplayName>
@@ -265,7 +266,7 @@ Connection: close
 ```shell
 HTTP/1.1 200 OK
 Content-Type: application/xml
-Content-Length: 2018
+Content-Length: 2070
 Connection: close
 Date: Thu, 10 Dec 2020 03:36:05 GMT
 Server: tencent-cos
@@ -300,7 +301,7 @@ x-cos-request-id: NWZkMTk3YTVfYjFiODJhMDlfNTg0MDZfMTdj****
 		        <LastModified>2020-12-10T03:35:44.000Z</LastModified>
 		        <ETag>&quot;51ffadb19b3bf062ecd0c6f044a4d4ce&quot;</ETag>
 		        <Size>23</Size>
-		        <StorageClass>STANDARD</StorageClass>
+		        <StorageClass>STANDARD_IA</StorageClass>
 		        <Owner>
 		        	<ID>1250000000</ID>
 		        	<DisplayName>1250000000</DisplayName>
@@ -313,7 +314,8 @@ x-cos-request-id: NWZkMTk3YTVfYjFiODJhMDlfNTg0MDZfMTdj****
 		        <LastModified>2020-12-10T03:35:24.000Z</LastModified>
 		        <ETag>&quot;dcffaafe67632b2bd2dd0b9456eafca7&quot;</ETag>
 		        <Size>23</Size>
-		        <StorageClass>STANDARD</StorageClass>
+		        <StorageClass>INTELLIGENT_TIERING</StorageClass>
+		        <StorageTier>FREQUENT</StorageTier>
 		        <Owner>
 		        	<ID>1250000000</ID>
 		        	<DisplayName>1250000000</DisplayName>
@@ -362,7 +364,7 @@ Connection: close
 ```shell
 HTTP/1.1 200 OK
 Content-Type: application/xml
-Content-Length: 2393
+Content-Length: 2396
 Connection: close
 Date: Thu, 10 Dec 2020 03:36:25 GMT
 Server: tencent-cos
@@ -410,7 +412,7 @@ x-cos-request-id: NWZkMTk3YjlfNDhhOTBiMDlfMTYzNTZfMTIw****
 		        <LastModified>2020-12-10T03:35:44.000Z</LastModified>
 		        <ETag>&quot;51ffadb19b3bf062ecd0c6f044a4d4ce&quot;</ETag>
 		        <Size>23</Size>
-		        <StorageClass>STANDARD</StorageClass>
+		        <StorageClass>STANDARD_IA</StorageClass>
 		        <Owner>
 		        	<ID>1250000000</ID>
 		        	<DisplayName>1250000000</DisplayName>
@@ -736,7 +738,7 @@ x-cos-request-id: NWZkMWM4NjNfZWVjODJhMDlfNTNmN18xNWNj****
 </ListVersionsResult>
 ```
 
-#### Sample 7. Obtaining the first page of keys when there are more than one page (this sample specifies `max-keys`. If not specified, the value `1000` is used by default. The sum of `Version` and `DeleteMarker` cannot exceed the value of `max-keys`)
+#### Sample 7. Obtaining the first page of keys when there are more than one page (this sample specifies `max-keys`. If it is not specified, the value `1000` is used by default. The sum of `Version` and `DeleteMarker` cannot exceed the value of `max-keys`)
 
 #### Request
 
