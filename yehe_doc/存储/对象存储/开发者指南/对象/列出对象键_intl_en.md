@@ -1,32 +1,40 @@
-## Use Cases
+An [object key](https://intl.cloud.tencent.com/document/product/436/13324) is the unique identifier of an object in a bucket. You can think of it as the object’s path. For example, if an object key is `doc/picture.jpg`, the image `picture.jpg` is stored in the `doc` path/folder in COS.
 
-Tencent Cloud COS supports listing keys by prefix. You can use the separator (`/`) in a key to implement a hierarchical structure similar to the traditional file system. In COS, you can use separators to select and browse keys hierarchically.
+You can use the object key to search for a specific object. You can also use a prefix of the object key (e.g. `doc`) to search for all objects with this prefix (e.g. all objects prefixed with `doc`).
+
+## Overview
+
+Tencent Cloud COS supports listing keys by a prefix. You can use the delimiter (`/`) in a key to implement a hierarchical structure similar to the traditional file system. In COS, you can use a delimiter to select and browse keys hierarchically.
 
 You can list all keys in a single bucket in UTF-8 binary order of prefixes or filter the key list by specifying the prefix. For example, adding the parameter `t`, would list the `tencent` object, while skipping objects prefixed with `a` or other characters.
 
-Keys can be reorganized based on the added separator (`/`). You can use the prefix and separator together to implement a folder retrieval feature. For example, if you add the prefix parameter `t` and the separator (`/`), eligible keys such as `tencent/cos` will be listed.
+A slash (/) can be used as a delimiter in object keys. In this way, both the prefix and delimiter can be used to facilitate the search.
 
-COS supports storing an unlimited number of objects in a single bucket, so the key list may be very large. For management purposes, a maximum of 1,000 key values are returned for one List Objects request, and a marker will be returned to indicate whether the result is truncated. You can send a series of List Objects requests based on markers and separators to list all key values or search for the desired content.
+COS allows you to store an unlimited number of objects in a single bucket. As a result, the key list may be very large. For the convenience of management, a maximum of 1,000 key values can be returned in each `List Objects` request, and a marker will be returned to indicate whether the list is truncated. If so, not all objects are listed in this request. In this case, you can initiate the `List Objects` request multiple times based on markers and delimiter to list all/some object keys as needed.
 
-## Directions
+## How to Use
 
-### Via REST API
+### Using COS console
 
-You can use the REST API directly to initiate an object key listing request. For more information, see [GET Bucket](https://intl.cloud.tencent.com/document/product/436/30614).
+You can search for objects in the COS console. For more information, please see [Searching for Objects](https://intl.cloud.tencent.com/document/product/436/13325) in Console Guide.
 
-### Via the SDK
+### Using RESTful APIs
+
+You can directly use RESTful APIs to initiate a request to list object keys. For more information, please see [GET Bucket (List Objects)](https://intl.cloud.tencent.com/document/product/436/30614).
+
+### Using SDKs
 
 You can directly call the object list querying method in the SDK. For more information, see the SDK documentation for the corresponding programming language below:
 
-- [SDK for Android](https://intl.cloud.tencent.com/document/product/436/31463#.E6.9F.A5.E8.AF.A2.E5.AF.B9.E8.B1.A1.E5.88.97.E8.A1.A8)
-- [SDK for C](https://intl.cloud.tencent.com/document/product/436/31464#.E6.9F.A5.E8.AF.A2.E5.AF.B9.E8.B1.A1.E5.88.97.E8.A1.A8)
-- [SDK for C++](https://intl.cloud.tencent.com/document/product/436/31465#.E6.9F.A5.E8.AF.A2.E5.AF.B9.E8.B1.A1.E5.88.97.E8.A1.A8)
-- [SDK for .NET](https://intl.cloud.tencent.com/document/product/436/30594)
-- [SDK for Go](https://intl.cloud.tencent.com/document/product/436/31466#.E6.9F.A5.E8.AF.A2.E5.AF.B9.E8.B1.A1.E5.88.97.E8.A1.A8)
-- [SDK for iOS](https://intl.cloud.tencent.com/document/product/436/31467#.E8.8E.B7.E5.8F.96.E5.AF.B9.E8.B1.A1.E5.88.97.E8.A1.A8)
-- [SDK for Java](https://intl.cloud.tencent.com/document/product/436/31468#.E6.9F.A5.E8.AF.A2.E5.AF.B9.E8.B1.A1.E5.88.97.E8.A1.A8)
-- [SDK for JavaScript](https://intl.cloud.tencent.com/document/product/436/31477#.E6.9F.A5.E8.AF.A2.E5.AF.B9.E8.B1.A1.E5.88.97.E8.A1.A8)
-- [SDK Node.js](https://intl.cloud.tencent.com/document/product/436/8629)
-- [SDK for PHP](https://intl.cloud.tencent.com/document/product/436/31470#.E6.9F.A5.E8.AF.A2.E5.AF.B9.E8.B1.A1.E5.88.97.E8.A1.A8)
-- [SDK for Python](https://intl.cloud.tencent.com/document/product/436/31471#.E6.9F.A5.E8.AF.A2.E5.AF.B9.E8.B1.A1.E5.88.97.E8.A1.A8)
-- [SDK for WeChat Mini Program](https://intl.cloud.tencent.com/document/product/436/30609)
+- [SDK for Android](https://intl.cloud.tencent.com/document/product/436/37676)
+- [C SDK](https://intl.cloud.tencent.com/document/product/436/31518)
+- [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31522)
+- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/30594)
+- [Go SDK](https://intl.cloud.tencent.com/document/product/436/31526)
+- [SDK for iOS](https://intl.cloud.tencent.com/document/product/436/37685)
+- [Java SDK](https://intl.cloud.tencent.com/document/product/436/31534)
+- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31538)
+- [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/31710)
+- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31542)
+- [Python SDK](https://intl.cloud.tencent.com/document/product/436/31546)
+- [SDK for WeChat Mini Program](https://intl.cloud.tencent.com/document/product/436/32457)

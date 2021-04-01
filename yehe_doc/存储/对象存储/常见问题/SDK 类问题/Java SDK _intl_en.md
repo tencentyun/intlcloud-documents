@@ -1,19 +1,20 @@
-### What do I do if `java.lang.NoSuchMethodError` is reported when I run the SDK?
 
+### What do I do if the client network is normal, while the access to COS over HTTP is very slow, or the error message “Connection reset” is reported?
+In some regions, carriers may hijack COS endpoints. Therefore, you are advised to access COS over HTTPS.
+
+### What do I do if `java.lang.NoSuchMethodError` is reported when I run the SDK?
 
 This is usually caused by a JAR package conflict. For example, if the JAR package the SDK depends on uses method A, but the JAR package in the HttpClient library in your project does not have method A, then, the HttpClient library in your project will be loaded due to the runtime load order, throwing `NoSuchMethodError`.
 Solution: Change the version of the package in your project that has caused `NoSuchMethodError` to the version of the corresponding library in `pom.xml` in the SDK.
-
-
 
 ### What do I do if the upload with SDK is slow and `IOException` is frequently printed in the log?
 
 Cause and solution:
 
- a. Check whether you are accessing COS through a public network. Currently, CVM instances that are in the same region as COS can access COS through a private network (the IP ranges resolved by the private endpoint is 10, 100, and 169). For more information about COS endpoints, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). If a public network is used, check whether the egress bandwidth is too small or whether bandwidth resources are occupied by other programs.
+ a. Check whether you are accessing COS through a public network. Currently, CVM instances that are in the same region as COS can access COS through a private network (the IP ranges resolved by the private endpoint are 10, 100, and 169). For more information about COS endpoints, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). If a public network is used, check whether the egress bandwidth is too small or whether bandwidth resources are occupied by other programs.
  b. Ensure that the logs in the production environment are not set to DEBUG level. INFO level is recommended.
  c. Currently, the simple upload speed is up to 10 MB/s, and the speed of 32 concurrent uploads using advanced APIs can reach 60 MB/s. If the speed is far lower than these two values, see a and b.
- d. If `IOException` is printed in the WARN level logs, it can be ignored, and the SDK will retry. `IOException` may be caused by slow network connection. For possible causes, see a and b.
+ d. If `IOException` is printed in the WARN level logs, it can be ignored, and the SDK will retry. `IOException` may be caused by a slow network connection. For possible causes, see a and b.
 
 ### How do I create a directory in the SDK?
 

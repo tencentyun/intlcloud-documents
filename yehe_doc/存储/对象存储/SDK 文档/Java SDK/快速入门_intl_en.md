@@ -28,9 +28,9 @@ You can install the Java SDK using Maven or source code:
   Add required dependencies to the pom.xml file of your Maven project as follows:
 ```shell
 <dependency>
-    <groupId>com.qcloud</groupId>
-    <artifactId>cos_api</artifactId>
-    <version>5.6.37</version>
+       <groupId>com.qcloud</groupId>
+       <artifactId>cos_api</artifactId>
+       <version>5.6.37</version>
 </dependency>
 ```
 - Using source code
@@ -63,8 +63,8 @@ If you use a permanent key to initialize a `COSClient`, you need to get your `Se
 String secretId = "COS_SECRETID";
 String secretKey = "COS_SECRETKEY";
 COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
-// 2. Set the bucket region. For the abbreviations of COS regions, see https://intl.cloud.tencent.com/document/product/436/6224.
-// clientConfig contains set methods to set region, HTTPS (HTTP by default), timeout, proxy, etc. For details, see the source code or the Java SDK FAQs.
+// 2. Set the bucket region. For the abbreviations for COS regions, please see https://intl.cloud.tencent.com/document/product/436/6224.
+// `clientConfig` contains the set methods to set region, HTTPS (HTTP by default), timeout, and proxy. For detailed usage, please see the source code or the FAQs about the SDK for Java.
 Region region = new Region("COS_REGION");
 ClientConfig clientConfig = new ClientConfig(region);
 // 3. Generate a COS client.
@@ -80,8 +80,8 @@ String tmpSecretId = "COS_SECRETID";
 String tmpSecretKey = "COS_SECRETKEY";
 String sessionToken = "COS_TOKEN";
 BasicSessionCredentials cred = new BasicSessionCredentials(tmpSecretId, tmpSecretKey, sessionToken);
-// 2. Set the bucket region. For the abbreviations of COS regions, see https://intl.cloud.tencent.com/document/product/436/6224.
-// clientConfig contains set methods to set region, HTTPS (HTTP by default), timeout, and proxy, etc. For details, see the source code or the Java SDK FAQs.
+// 2. Set the bucket region. For the abbreviations for COS regions, please see https://intl.cloud.tencent.com/document/product/436/6224.
+// `clientConfig` contains the set methods to set region, HTTPS (HTTP by default), timeout, and proxy. For detailed usage, please see the source code or the FAQs about the SDK for Java.
 Region region = new Region("COS_REGION");
 ClientConfig clientConfig = new ClientConfig(region);
 // 3. Generate a COS client.
@@ -91,15 +91,15 @@ COSClient cosClient = new COSClient(cred, clientConfig);
 
 The ClientConfig class is a configuration class containing the following main members:
 
-| Member Name | Setting Method | Description | Type |
+| Member Name | Set Method | Description | Type |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------- |
-| region | Constructor or set method | Bucket region. For the abbreviations of COS regions, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/zh/document/product/436/6224) | Region |
-| httpProtocol | set method | The protocol used by the request. By default, HTTP is used to interact with COS. | HttpProtocol |
-| signExpired | set method | Validity period (in seconds) of the request signature. Default: 3600s | int |
-| connectionTimeout | set method | Timeout duration in milliseconds for connection with COS. Default value: 30000 ms | int |
-| socketTimeout | set method | Timeout duration in milliseconds for the client to read data. Default value: 30000 ms | int |
-| httpProxyIp | set method | Proxy server IP | String |
-| httpProxyPort | set method | Proxy server port | int |
+| region | Constructor or set method | Bucket region. For the abbreviations for COS regions, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/zh/document/product/436/6224). | Region |
+| httpProtocol | Set method | The protocol used by the request. By default, HTTP is used to interact with COS. | HttpProtocol |
+| signExpired | Set method | Validity period (in seconds) of the request signature. Default: 3600s | int |
+| connectionTimeout | Set method | Timeout duration in milliseconds for connection with COS. Default value: 30000 ms | int |
+| socketTimeout | Set method | Timeout duration in milliseconds for the client to read data. Default value: 30000 ms | int |
+| httpProxyIp | Set method | Proxy server IP | String |
+| httpProxyPort | Set method | Proxy server port | int |
 
 
 ### Creating a bucket
@@ -110,7 +110,7 @@ The following example creates a bucket for the selected region and bucket:
 ```java
 String bucket = "examplebucket-1250000000"; // Bucket name in the format: BucketName-APPID
 CreateBucketRequest createBucketRequest = new CreateBucketRequest(bucket);
-// Set the bucket permission to Private (private read/write). Other options include public read/private write and public read/write.
+// Set the bucket permission to "Private" (private read and write). Other valid values are "PublicRead" (public read/private write) and "PublicReadWrite" (public read and write).
 createBucketRequest.setCannedAcl(CannedAccessControlList.Private);
 try{
     Bucket bucketResult = cosClient.createBucket(createBucketRequest);
@@ -143,7 +143,7 @@ Upload a local file or input stream with a known length to COS. It is most suita
 - If most of your local files are over 20 MB, you are advised to upload them with an advanced upload API.
 - If an object with the same key already exists in COS, it will be overwritten by the newly-uploaded one.
 - If you want to create a directory project, see [How to create a directory in the SDK?](https://intl.cloud.tencent.com/document/product/436/38956).
-- An object key (Key) is the unique identifier of an object in a bucket. For example, in the object endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/images/picture.jpg`, the object key is images/picture.jpg. For more information, see [Object Key](https://cloud.tencent.com/document/product/436/13324#.E5.AF.B9.E8.B1.A1.E9.94.AE).
+- An object key (Key) is the unique identifier of an object in a bucket. For example, in the object’s access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/images/picture.jpg`, the object key is `images/picture.jpg`. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324).
 
 
 The following example uploads a file up to 5 GB:
@@ -152,9 +152,9 @@ The following example uploads a file up to 5 GB:
 ```java
 // Specify the file to be uploaded.
 File localFile = new File(localFilePath);
-// Specify the destination bucket.
+// Specify a bucket to store the file.
 String bucketName = "examplebucket-1250000000";
-// Specify the key of the object to be uploaded to COS.
+// Specify the COS path (i.e. the object key) to upload the file. For example, if the object key is "folder/picture.jpg", the file "picture.jpg" will be uploaded to the "folder" directory.
 String key = "exampleobject";
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localFile);
 PutObjectResult putObjectResult = cosClient.putObject(putObjectRequest);
@@ -217,6 +217,7 @@ The following example downloads a file to a specified local path:
 ```java
 // Enter the bucket name in the format: BucketName-APPID.
 String bucketName = "examplebucket-1250000000";
+// Specify the COS path (i.e. the object key) of the file to download. For example, if the object key is "folder/picture.jpg", the file "picture.jpg" in the "folder" directory will be downloaded.
 String key = "exampleobject";
 // Method 1. Get the input stream of the downloaded file.
 GetObjectRequest getObjectRequest = new GetObjectRequest(bucketName, key);
@@ -227,7 +228,7 @@ String crc64Ecma = cosObject.getObjectMetadata().getCrc64Ecma();
 // Close the input stream.
 cosObjectInput.close();
 
-// Method 2. Download the file locally.
+// Method 2: Download the file to a local directory, e.g. a directory in D drive.
 String outputFilePath = "exampleobject";
 File downFile = new File(outputFilePath);
 getObjectRequest = new GetObjectRequest(bucketName, key);
@@ -242,6 +243,7 @@ You can delete an object in a specified path in COS with the following code:
 ```java
 // Enter the bucket name in the format: BucketName-APPID.
 String bucketName = "examplebucket-1250000000";
+// Specify the COS path (i.e. the object key) of the file to delete. For example, if the object key is "folder/picture.jpg", the "picture.jpg" file in the "folder" directory will be deleted.
 String key = "exampleobject";
 cosClient.deleteObject(bucketName, key);
 ```
