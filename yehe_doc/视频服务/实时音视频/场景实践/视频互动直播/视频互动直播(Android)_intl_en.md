@@ -168,6 +168,7 @@ src/main/java/com/tencent/liteav/liveroom/model
 <td>Login callback. The code is 0 if login is successful.</td>
 </tr>
 </table>
+
 ```
 TRTCLiveRoom mLiveRoom = TRTCLiveRoom.sharedInstance(this);
 // useCDNFirst: `true` means that viewers watch live streams over CDNs, and `false` means that viewers watch live streams under the low latency mode.
