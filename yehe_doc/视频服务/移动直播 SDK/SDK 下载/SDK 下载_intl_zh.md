@@ -12,14 +12,14 @@
    </tr>
    <tr>
       <td style="text-align:center">iOS</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("mlvb_sdk_download_ios_smart") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_International_iOS_lastest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick=MtaH5.clickStat("mlvb_sdk_download_ios_smart") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_International_iOS_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1071/38155">DOC</a></td>
       <td style="text-align:center">支持</td>
       <td style="text-align:center">1.27M（arm64）</td>
    </tr>
      <tr>
       <td style="text-align:center">Android</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("mlvb_sdk_download_android_smart") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_International_Android_lastest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick=MtaH5.clickStat("mlvb_sdk_download_android_smart") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_International_Android_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1071/38156">DOC</a></td>
       <td style="text-align:center">支持</td>
       <td style="text-align:center">jar：1.5M <br> so(armeabi)：4.4M <br>so(armeabi-v7a)：4.1M <br>so(arm64-v8a)：4.9M</td>
@@ -27,7 +27,7 @@
 </table>
 
 
->注意：如需使用移动直播基础班版 SDK服务，需要购买移动直播基础版 License，完成产品功能授权，具体价格请参照[购买指南](https://intl.cloud.tencent.com/document/product/1071/38114)。
+>!如需使用移动直播基础班版 SDK服务，需要购买移动直播基础版 License，完成产品功能授权，具体价格请参照[购买指南](https://intl.cloud.tencent.com/document/product/1071/38114)。
 
 
 
