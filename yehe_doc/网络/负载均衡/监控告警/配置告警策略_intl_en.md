@@ -1,6 +1,6 @@
 You can create an alarm to trigger alarms and send alarm messages to a certain user group when a Tencent Cloud product meets the configured condition. The created alarm can periodically determine whether an alarm notification should be sent based on the difference between the monitored metric and the given threshold.
 
-The specified users can take appropriate precautionary or remedial measures in a timely manner when the alarm is triggered. Therefore, properly created alarms can help you improve the robustness and reliability of your applications. For more information on alarms, please see [Creating Alarm Policies](https://intl.cloud.tencent.com/document/product/248/6215).
+The specified users can take appropriate precautionary or remedial measures in a timely manner when the alarm is triggered. Therefore, properly created alarms can help you improve the robustness and reliability of your applications. For more information on alarms, please see [Creating Alarm Policies](https://intl.cloud.tencent.com/document/product/248/38908).
 
 You can create an alarm policy in the following steps:
 1. Log in to the [Cloud Monitor Console](https://console.cloud.tencent.com/monitor/overview).
