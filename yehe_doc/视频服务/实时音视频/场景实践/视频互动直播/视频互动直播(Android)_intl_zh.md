@@ -168,6 +168,7 @@ src/main/java/com/tencent/liteav/liveroom/model
 <td>登录回调，成功时 code 为0。</td>
 </tr>
 </table>
+
 ```
 TRTCLiveRoom mLiveRoom = TRTCLiveRoom.sharedInstance(this);
 //useCDNFirst：true 表示普通观众通过 CDN 观看，false 表示普通观众通过低延时观看
