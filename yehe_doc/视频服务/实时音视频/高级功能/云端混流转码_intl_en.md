@@ -1,4 +1,4 @@
-## Use Cases
+## Overview
 In scenarios such as [CDN relayed live streaming](https://intl.cloud.tencent.com/document/product/647/35242) and [on-cloud recording](https://intl.cloud.tencent.com/document/product/647/35426), you may need to mix multiple audio and video streams in a TRTC room into one stream, which can be achieved using TRTC’s stream mixing and transcoding MCU cluster. The MCU cluster can mix multiple audio and video streams as needed and distribute the mixed stream to live streaming CDNs and the on-cloud recording system.
 
 You can enable or disable On-Cloud MixTranscoding using the following methods.
@@ -15,14 +15,15 @@ On-Cloud MixTranscoding involves three processes: decoding, mixing, and encoding
 
 ![](https://main.qcloudimg.com/raw/a5ce0215228eca3375ce47133df0be95.png)
 
-[](id:restapi)
+
 ## Method 1: Using server-side RESTful APIs
 ### Enabling On-Cloud MixTranscoding
 Call the RESTful API [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) from your server to enable On-Cloud MixTranscoding. Finish the following configurations during the process.
-![](https://main.qcloudimg.com/raw/be0205b5f624679302e57ca5aa1b133f.png)
-[](id:restapi_step1)
+
+
 #### 1. Set the image layout mode.
 Use [`LayoutParams`](https://intl.cloud.tencent.com/document/product/647/36760#LayoutParams) in `StartMCUMixTranscode` to select one of the following layout templates.
+![](https://main.qcloudimg.com/raw/be0205b5f624679302e57ca5aa1b133f.png)
 
 **Floating (LayoutParams.Template = 0)**
 
@@ -62,23 +63,23 @@ Use [`LayoutParams`](https://intl.cloud.tencent.com/document/product/647/36760#L
 
 >! On-Cloud MixTrancoding can mix up to 16 audio and video streams at a time. A user sending audio only still counts as a stream.
 
-[](id:restapi_step2)
+
 #### 2. Set encoding parameters for stream mixing.
 Use [`EncodeParams`](https://intl.cloud.tencent.com/document/product/647/36760#LayoutParams) in `StartMCUMixTranscode` to set the following encoding parameters.
 
 | Parameter            | Description                                         | Recommended Value |
 | --------------- | -------------------------------------------- | ------ |
 | AudioSampleRate | Audio sample rate                         | 48000  |
-| AudioBitrate    | Audio bitrate, in kbps               | 64     |
+| AudioBitrate    | Audio bitrate, in Kbps               | 64     |
 | AudioChannels   | Audio channel number                         | 2      |
 | VideoWidth      | Video width, required for audio-video output              | Custom |
 | VideoHeight     | Video height, required for audio-video output              | Custom |
-|VideoBitrate        | Video bitrate, in kbps, required for audio-video output | Custom |
+|VideoBitrate        | Video bitrate, in Kbps, required for audio-video output | Custom |
 | VideoFramerate  | Frame rate, required for audio-video output            | 15     |
 | VideoGop        | GOP, required for audio-video output            | 3      |
 | BackgroundColor | Background color                            | Custom |
 
-[](id:restapi_step3)
+
 #### 3. Set whether to enable on-cloud recording.
 
 Use [`OutputParams`](https://intl.cloud.tencent.com/document/product/647/36760#LayoutParams) in `StartMCUMixTranscode` to specify the next step after stream mixing.
@@ -88,7 +89,7 @@ Use [`OutputParams`](https://intl.cloud.tencent.com/document/product/647/36760#L
 - **OutputParams.RecordAudioOnly**
   If you want to record audio only, set the `OutputParams.RecordAudioOnly` parameter to `1`, and mixed streams will be recorded as MP3 files.
 
-[](id:restapi_step4)
+
 #### 4. Set whether to enable CDN relayed live streaming.
 
 - **OutputParams.StreamId**
@@ -99,7 +100,7 @@ Use [`OutputParams`](https://intl.cloud.tencent.com/document/product/647/36760#L
 ### Stopping On-Cloud MixTranscoding
 Call the REST API [`StopMCUMixTranscode`](https://intl.cloud.tencent.com/document/product/647/37760) from your server to stop On-Cloud MixTranscoding.
 
-[](id:sdkapi)
+
 
 ## Method 2: Using client-side SDK APIs
 
@@ -182,7 +183,7 @@ Sending a stream mixing command using the TRTC SDK is simple. Just call the [`se
 
 
 
-[](id:PureAudio)
+
 ### Audio-only mode (`PureAudio`)
 
 #### Use cases
@@ -198,7 +199,7 @@ In this mode, the SDK automatically mixes all the audio streams in a room into o
 5. After the above steps are performed, the audio of other users in the room will be automatically mixed into the relayed audio stream of the current user. You can then follow the instructions in [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242) to configure a playback domain name for relayed live streaming or record the mixed audio stream as described in [On-Cloud Recording](https://intl.cloud.tencent.com/document/product/647/35426).
 >! In the audio-only mode, you only need to call the `setMixTranscodingConfig()` API once after entering a room and enabling local audio publishing.
 
-[](id:PresetLayout)
+
 ### Preset layout mode
 #### Use cases
 The preset layout mode is suitable for scenarios that involve the transfer of both audio and video, such as video calls (`VideoCall`) and interactive live streaming (`LIVE`). You can select this mode when calling the [`enterRoom`](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) API of the SDK.
@@ -223,7 +224,7 @@ In the preset layout mode, the SDK automatically mixes multiple audio and video 
 6. After the above steps are performed, the audio of other users in the room will be automatically mixed into the relayed audio stream of the current user. You can then follow the instructions in CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242) to configure a playback domain name for relayed live streaming or record the mixed audio stream as described in [On-Cloud Recording](https://intl.cloud.tencent.com/document/product/647/35426).
 ![](https://main.qcloudimg.com/raw/4119e41cefe59b7a8b8edf675babdd38.png)
 
-[](id:example_code)
+
 
 #### Sample code
 
@@ -431,10 +432,101 @@ mixUsersArray[2] = remote2;
 config.mixUsersArray = mixUsersArray;
 trtc.setMixTranscodingConfig(config);
 ```
+Flutter
+```
+trtcCloud = TRTCCloud.sharedInstance(this);
+void setMixTranscodingConfig(TRTCTranscodingConfig config)
+  
+  
+  // Set the resolution to 720 x 1280 px, bitrate to 1,500 Kbps, and frame rate to 20 FPS.
+  VideoWidth
+  
+      "VideoBitrate": 30,
+  VideoFramerate
+  
+  AudioSampleRate
+      "AudioBitrate":15,
+  AudioChannels
+
+  // Use the preset layout mode.
+  config.mode = TRTCCloudDef.TRTC_TranscodingConfigMode_Template_PresetLayout;
+
+  
+  // Position of the camera image of the anchor
+    ## TRTCMixUser
+      local.userId = @"PLACE_HOLDER_LOCAL_MAIN";
+      local.roomId = null; // `roomID` setting is required for remote users but not for the local user.
+      local.zOrder = 0; // When `zOrder` is set to `0`, it indicates that the anchor's image is displayed at the bottom.
+      
+      "y": 0
+      StreamType
+      "width":640,
+      "Height": 3264,
+    ## TRTCMixUser
+      remote1.userId = "$PLACE_HOLDER_REMOTE$";
+      remote1.roomId = 97392; // `roomID` setting is required for remote users but not for the local user.
+      
+      
+      "y": 0
+      StreamType
+      width: 13%;
+      "height":352,
+  ],
+));
+```
+
+```
+
+
+   
+   VideoWidth
+   
+       "VideoBitrate": 30,
+   VideoFramerate
+   
+   AudioSampleRate
+       "AudioBitrate":15,
+   AudioChannels
+   
+   
+      {
+        "width":640,
+        "height":352,
+        
+        
+        
+        
+        
+      },
+      {
+        "width":640,
+        "height":352,
+        
+        
+        
+        
+        
+      },
+      {
+        "width":640,
+        "height":352,
+        
+        
+        
+        
+        
+      }
+    ];
+ }
+ 
+} catch (e) {
+ 
+}
+```
 
 >! In the preset layout mode, you only need to call the `setMixTranscodingConfig()` API once after entering a room and enabling local audio publishing.
 
-[](id:ScreenSharing)
+
 
 ### Screen sharing mode (`ScreenSharing`)
 
@@ -459,7 +551,7 @@ In the screen sharing mode, the SDK prepares a canvas in the specified resolutio
 >- The teacher’s screen constitutes the main part of an online class. Publishing the teacher’s camera data at the same time would drive up bandwidth usage. Given this, you are advised to use `setLocalVideoRenderCallback()` and `setRemoteVideoRenderCallback()` to display the teacher’s camera image and students’ images on the shared screen.
 >- You can have the SDK select an output resolution automatically by setting both `videoWidth` and `videoHeight` in `TRTCTranscodingConfig` to `0`. If the teacher's screen width is smaller than 1920 px, the SDK will use the actual resolution of the teacher's screen; otherwise it will select a resolution from 1920 x 1080 px (16:9), 1920 x 1200 px (16:10), and 1920 x 1440 px (4:3), depending on the aspect ratio of the teacher’s screen.
 
-[](id:Manual)
+
 
 ### Manual mode (`Manual`)
 
@@ -493,6 +585,4 @@ During On-Cloud MixTranscoding, the MCU cluster decodes and re-encodes the audio
   - You have called [`setMixTranscodingConfig`](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) and set the parameter to `nil/null` to manually stop stream mixing.
 
 In all other cases, TRTC will continue to mix streams in the cloud. Therefore, to reduce costs, you are advised to stop stream mixing using one of the above methods once you no longer need it.
-
-
 

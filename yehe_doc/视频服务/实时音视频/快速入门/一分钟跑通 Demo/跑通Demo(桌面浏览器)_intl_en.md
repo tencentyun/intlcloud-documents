@@ -1,4 +1,4 @@
-This document describes how to quickly run the TRTC demo for desktop browsers.
+This document describes how to quickly run the demo for TRTC SDK for desktop browsers.
 
 ## Supported Platforms
 
@@ -12,7 +12,7 @@ Proposed by Google, the WebRTC technology is well supported by Chrome (desktop),
 <th>OS</th>
 <th width="22%">Browser</th><th>Minimum Browser<br>Version Requirement</th><th width="16%">Receive (Playback)</th><th width="16%">Send (Broadcast)</th><th>Screen Sharing</th><th>SDK Version Requirement</th>
 </tr><tr>
-<td>macOS</td>
+<td rowspan="4">macOS</td>
 <td>Safari (desktop)</td>
 <td>11+</td>
 <td>Supported</td>
@@ -21,7 +21,6 @@ Proposed by Google, the WebRTC technology is well supported by Chrome (desktop),
 <td>-</td>
 </tr>
 <tr>
-<td>macOS</td>
 <td>Chrome (desktop)</td>
 <td>56+</td>
 <td>Supported</td>
@@ -30,7 +29,6 @@ Proposed by Google, the WebRTC technology is well supported by Chrome (desktop),
 <td>-</td>
 </tr>
 <tr>
-<td>macOS</td>
 <td>Firefox (desktop)</td>
 <td>56+</td>
 <td>Supported</td>
@@ -39,7 +37,6 @@ Proposed by Google, the WebRTC technology is well supported by Chrome (desktop),
 <td>4.7.0+</td>
 </tr>
 <tr>
-<td>macOS</td>
 <td>Edge (desktop)</td>
 <td>80+</td>
 <td>Supported</td>
@@ -48,7 +45,7 @@ Proposed by Google, the WebRTC technology is well supported by Chrome (desktop),
 <td>4.7.0+</td>
 </tr>
 <tr>
-<td>Windows</td>
+<td  rowspan="4">Windows</td>
 <td>Chrome (desktop)</td>
 <td>56+</td>
 <td>Supported</td>
@@ -57,7 +54,6 @@ Proposed by Google, the WebRTC technology is well supported by Chrome (desktop),
 <td>-</td>
 </tr>
 <tr>
-<td>Windows</td>
 <td>QQ browser (desktop, WebKit core)</td>
 <td>10.4+</td>
 <td>Supported</td>
@@ -66,7 +62,6 @@ Proposed by Google, the WebRTC technology is well supported by Chrome (desktop),
 <td>-</td>
 </tr>
 <tr>
-<td>Windows</td>
 <td>Firefox (desktop)</td>
 <td>56+</td>
 <td>Supported</td>
@@ -75,7 +70,6 @@ Proposed by Google, the WebRTC technology is well supported by Chrome (desktop),
 <td>4.7.0+</td>
 </tr>
 <tr>
-<td>Windows</td>
 <td>Edge (desktop)</td>
 <td>80+</td>
 <td>Supported</td>
@@ -102,16 +96,23 @@ Proposed by Google, the WebRTC technology is well supported by Chrome (desktop),
 <td>-</td>
 </tr>
 <tr>
-<td>Android</td>
+<td>iOS 14.3+</td>
+<td>WeChat embedded browser</td>
+<td>WeChat 6.5+</td>
+<td>Supported</td>
+<td>Supported</td>
+<td>Not supported</td>
+<td>-</td>
+</tr>
+<tr>
+<td  rowspan="4">Android</td>
 <td>QQ browser (mobile)</td>
 <td>-</td>
 <td>Not supported</td>
 <td>Not supported</td>
 <td>Not supported</td>
 <td>-</td>
-</tr>
-<tr>
-<td>Android</td>
+</tr><tr>
 <td>UC browser (mobile)</td>
 <td>-</td>
 <td>Not supported</td>
@@ -120,7 +121,6 @@ Proposed by Google, the WebRTC technology is well supported by Chrome (desktop),
 <td>-</td>
 </tr>
 <tr>
-<td>Android</td>
 <td>WeChat embedded browser (TBS core)</td>
 <td>-</td>
 <td>Supported</td>
@@ -129,7 +129,6 @@ Proposed by Google, the WebRTC technology is well supported by Chrome (desktop),
 <td>-</td>
 </tr>
 <tr>
-<td>Android</td>
 <td>WeChat embedded browser (XWEB core)</td>
 <td>-</td>
 <td>Supported</td>
@@ -150,7 +149,7 @@ Proposed by Google, the WebRTC technology is well supported by Chrome (desktop),
  - TCP port: 8687
  - UDP ports: 8000, 8080, 8800, 843, 443, 16285
  - Domain name: qcloud.rtc.qq.com
-
+ 
 ## Prerequisites
 You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for a Tencent Cloud account and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
 
@@ -165,7 +164,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 [](id:step2)
 ### Step 2. Download the SDK and demo source code.
 1. Download the SDK and demo source code for your platform.
-2. Click **Next step**.
+2. Click **Next**.
 
 [](id:step3)
 ### Step 3. Configure demo project files.
@@ -174,7 +173,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 3. Set parameters in `GenerateTestUserSig.js` as follows:
   <ul><li>SDKAPPID: 0 by default. Set it to the actual `SDKAppID`.</li>
   <li>SECRETKEY: left empty by default. Set it to the actual key.</li></ul> 
-4. Click **Next step** to complete the creation.
+4. Click **Next** to complete the creation.
 5. After compilation, click **Return to Overview Page**.
 
 >!
@@ -188,7 +187,7 @@ Open `index.html` in the root directory of the demo with Chrome to run the demo.
 >- Normally, the demo needs to be deployed on the server and then accessed through `https://domain name/xxx`. You can also build a server locally and access the demo through `localhost:port`.
 > - Currently, the desktop version of Chrome offers better support for the features of TRTC SDK for desktop browsers; therefore, Chrome is recommended for the demo.
 
-This is what you see when you run the demo:
+On the demo landing page:
 - Click **Enter Room** to enter a TRTC room and publish local audio/video streams.
  You can open multiple pages and click **Enter Room* on each of them. You should be able to see multiple video images, which simulate a real-time video/audio call.
 - Click the camera icon to select a camera.
@@ -208,7 +207,7 @@ Upgrade/Switch:
   - Upgrade:
   - Switch to the old algorithm ECDSA-SHA256:
       ![](https://main.qcloudimg.com/raw/49da46eea23847de79925a12e7a07102/%E8%B7%91%E9%80%9ADemo(%E6%A1%8C%E9%9D%A2%E6%B5%8F%E8%A7%88%E5%99%A8)4-%E8%BF%94%E8%BF%98.png)
-  - Switch to the new algorithm HMAC-SHA256.
+  - Switch to the new algorithm HMAC-SHA256:
       ![](https://main.qcloudimg.com/raw/fbb69de98ae6ec0c6e1d09c8d95d57b7/%E8%B7%91%E9%80%9ADemo(%E6%A1%8C%E9%9D%A2%E6%B5%8F%E8%A7%88%E5%99%A8)5-%E8%BF%94%E8%BF%98.png)
 
 ### 2. What should I do if the client error "RtcError: no valid ice candidate found" occurs?

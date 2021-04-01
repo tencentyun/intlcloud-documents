@@ -59,7 +59,7 @@ player.startPlay(url).then(() => {
 </script>
 ```
 ### Chat room
-To allow the anchor and viewers to chat or interact with each other, you need to create an IM object. A simple message sending/receiving feature takes only three steps to implement:
+To allow the anchor and viewers to chat with each other, you need to create an IM object. A simple message sending/receiving feature takes only three steps to implement:
 
 ```
 // 1. Create an IM object and listen for events.
@@ -82,7 +82,7 @@ im.on(TWebLive.EVENT.IM_TEXT_MESSAGE_RECEIVED, onTextMessageReceived);
 
 // 2. Log in to IM.
 im.login({userID: 'your userID', userSig: 'your userSig'}).then((imResponse) => {
-  console.log(imResponse.data); // Login successful.
+  console.log(imResponse.data); // Login succeeds.
   if (imResponse.data.repeatLogin === true) {
     // This indicates that the account is already logged in.
     console.log(imResponse.data.errorInfo);
@@ -115,15 +115,15 @@ im.enterRoom('your roomID').then((imResponse) => {
 First, you need to create an application in the TRTC console. Tencent Cloud will automatically bind the application with the IM application having the same `SDKAppID`.
 
 1. Log in to the [TRTC console](https://console.cloud.tencent.com/trtc).
-2. Go to **[Application Management](https://console.cloud.tencent.com/trtc/app)**, click **Create Application**, enter an application name, and click **Confirm**.
+2. Go to [**Application Management**](https://console.cloud.tencent.com/trtc/app), click **Create Application**, enter an application name, and click **Confirm**.
 
 <span id="step2"></span>
 ### Step 2. Obtain the `SDKAppID` and key.
 1. Go to **[Application Management](https://console.cloud.tencent.com/trtc/app)**, find your application, and click **Application Info** on the right to go to the details page.
-2. In the **Application Info** section, click the copy button, and note the `SDKAppID`.
+2. In **Application Info** section, click the copy button, and note the `SDKAppID`.
 ![](https://main.qcloudimg.com/raw/a65b6631553159ce553620e40f9c2040.png)
 3. Go to the **Quick Start** tab and click **Copy Secret Key** in **Step 2: obtain the secret key to issue UserSig**.
-  ![](https://main.qcloudimg.com/raw/99f03c367c43416bd7c7e8c6d6ff5002.png)
+    ![](https://main.qcloudimg.com/raw/99f03c367c43416bd7c7e8c6d6ff5002.png)
 
 >!
 >- Local calculation of `UserSig` is for development and local debugging only and not for official launch. If your `SECRETKEY` is leaked, attackers can steal your Tencent Cloud traffic.
@@ -198,27 +198,28 @@ Browser-based stream pushing and low-latency playback are based on the WebRTC te
 |   Windows   |      Edge (desktop)      |        80+         |     Supported     |     Supported     |
 | iOS 11.1.2+ |    Safari (mobile)     |        11+         |     Supported     |     Supported     |
 | iOS 12.1.4+ |         WeChat embedded browser         |         -          |     Supported     |    Not supported    |
+| iOS 14.3+   |         WeChat embedded browser         |   WeChat 6.5+ |     Supported     |    Supported     |
 |   Android   |       QQ browser (mobile)       |         -          |    Not supported    |    Not supported    |
 |   Android   |       UC browser (mobile)       |         -          |    Not supported    |    Not supported    |
 |   Android   |   WeChat embedded browser (TBS core)   |         -          |     Supported     |     Supported     |
 |   Android   |  WeChat embedded browser (XWEB core)   |         -          |     Supported     |    Not supported    |
 
->! Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices do not support TRTC SDK for desktop browsers.
+>- Due to H.264 copyright restrictions, Chrome and Chrome WebView-based browsers on Huawei devices do not support TRTC SDK for desktop browsers.
 
 ## FAQs
 **1. Only public and private keys can be obtained when I try to view the key. How do I get a key?**
 
 TRTC SDK 6.6 (August 2019) and later versions use the new signature algorithm HMAC-SHA256. If your application was created before August 2019, you need to upgrade the signature algorithm to get a new key.
 
-**2.What should I do if the client error "RtcError:\sno\svalid\sice\scandidate\sfound" occurs?**
+**2. What should I do if the client error "RtcError:no valid ice candidate found" occurs?**
 
-It indicates that TRTC SDK for desktop browsers failed to establish a media transmission channel. Please check your firewall policy against the environment requirements.
+This error indicates that TRTC SDK for desktop browsers failed with regard to Session Traversal Utilities for NAT (STUN). Please check your firewall policy against the environment requirements.
 
-**3.What should I do if the client error "tcError:\sICE/DTLS\sTransport\sconnection\sfailed" or "RtcError:\sDTLS\sTransport\sconnection\stimeout" occurs?**
+**3. What should I do if the client error "RtcError: ICE/DTLS Transport connection failed" or "RtcError: DTLS Transport connection timeout" occurs?**
 
-It indicates that TRTC SDK for desktop browsers failed to establish a media transmission channel. Please check your firewall policy against the environment requirements.
+It indicates that TRTC SDK for desktop browsers failed to establish a media transmission channel. Please check your firewall configuration against the environment requirements.
 
-**4.What should I do if a `10006\serror\s` error occurs?**
+** 4. What should I do if a 10006 error occurs?**
 
 If the `"Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it"` error occurs, log in to the [TRTC console](https://console.cloud.tencent.com/rav), find the application you created, click **Application Info**, and check in the **Application Info** tab if your TRTC service is available.
 ![](https://main.qcloudimg.com/raw/33bd04fe44f1a9b4163709f3c513643c.png)
@@ -227,6 +228,5 @@ If the `"Join room failed result: 10006 error: service is suspended,if charge is
 
 - [TWebLive API Guide](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblive/TWebLive.html)
 - [Online demos](https://trtc.qcloud.com/tweblive/index.html#/)
-
 
 
