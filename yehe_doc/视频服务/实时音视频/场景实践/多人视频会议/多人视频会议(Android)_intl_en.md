@@ -1,66 +1,69 @@
-## Effect Demo
-You can [download](https://intl.cloud.tencent.com/document/product/647/35076) and install the demo to try out the video conferencing capabilities of TRTC, such as screen sharing, beauty filters, and low-latency conferencing.
+## Demonstration
+You can [download](https://intl.cloud.tencent.com/document/product/647/35076) and install the demo we provide to try out TRTC’s video conferencing features, including screen sharing, beauty filters, and low-latency conferencing.
 
-To quickly implement the video conferencing feature, you can directly modify the demo provided by TRTC for adaptation or use the provided `TRTCMeeting` component and implement custom UI.
+To quickly enable the video conferencing feature, you can modify the demo we provide and adapt it to your needs. You can also use the `TRTCMeeting` component and customize your own UI.
 
-<span id="DemoUI"> </span>
-## Reusing Demo UI
-<span id="ui.step1"></span>
-### Step 1. Create an application
-1. Log in to the TRTC Console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
-2. Click **Start Now**, enter the application name such as `TestMeetingRoom`, and click **Create Application**.
+[](id:DemoUI)
+## Using the Demo UI
+[](id:ui.step1)
+### Step 1. Create an application.
+1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
+2. Enter an application name, e.g., `TestMeetingRoom`, and click **Create**.
 
->? This feature uses two basic PaaS services of Tencent Cloud, namely, [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047). When TRTC is activated, IM will be activated automatically. IM is a value-added service. For more information, please see [IM Pricing](https://intl.cloud.tencent.com/document/product/1047/34350)
+>!The video conferencing feature uses two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047). When you activate TRTC, IM will be activated automatically. IM is a value-added service. See [Value-added Service Pricing](https://intl.cloud.tencent.com/document/product/1047/34350) for its billing details.
 
-<span id="ui.step2"></span>
-### Step 2. Download the SDK and demo source code
-1. Mouse over the corresponding block, click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Android)** to enter GitHub (or click **[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip)**), and download the relevant SDK and supporting demo source code.
- ![](https://main.qcloudimg.com/raw/b0f6f1bd5e0bc083bafddcc7c04a1593.png)
-2. After the download is completed, return to the TRTC Console and click **Downloaded and Next**. Then, you can see the `SDKAppID` and key information.
 
-<span id="ui.step3"></span>
-### Step 3. Configure demo project files
-1. Decompress the source package downloaded in [step 2](#ui.step2).
+
+[](id:ui.step2)
+### Step 2. Download the SDK and demo source code.
+1. Download the SDK and demo source code for your platform.
+2. Click **Next**.
+
+[](id:ui.step3)
+### Step 3. Configure demo project files.
+1. In the **Modify Configuration** step, select the platform in line with the source package downloaded.
 2. Find and open the `Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java` file.
-3. Set the relevant parameters in the `GenerateTestUserSig.java` file:
-  <ul><li>SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.</li>
-  <li>SECRETKEY: it is an empty string by default. Please replace it with your real key information.</li></ul> 
-    <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
-4. Return to the TRTC Console and click **Pasted and Next**.
-5. Click **Close Guide and Enter Console** to manage the application.
+3. Set parameters in `GenerateTestUserSig.java` as follows.
+<ul style="margin:0"><li/>SDKAPPID: 0 by default. Set it to the actual `SDKAppID`.
+<li/>SECRETKEY: left empty by default. Set it to the actual key.</ul>
+<img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
 
->!The scheme for generating `UserSig` mentioned in this document is to configure `SECRETKEY` in the client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is leaked, attackers can steal your Tencent Cloud traffic; therefore, **this method is only suitable for local execution and debugging of the demo**.
->The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can make a request to the business server for dynamic `UserSig`. For more information, please see [Server-Side UserSig Generation](https://intl.cloud.tencent.com/document/product/647/35166).
+4. Click **Next** to complete the creation.
+5. After compilation, click **Return to Overview Page**.
 
-<span id="ui.step4"></span>
-### Step 4. Run the demo
-Use Android Studio (v3.5 or above) to open the `TRTCScenesDemo` project and click **Run** to start debugging the demo.
 
-<span id="ui.step5"></span>
-### Step 5. Modify the demo source code
-The `trtcmeetingdemo` folder in the source code contains two subfolders: `ui` and `model`. The `ui` folder contains the UI code. The following table lists the files or folders and the corresponding UIs for easy adjustment:
+>!The method for generating `UserSig` described in this document involves configuring `SECRETKEY` in client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is leaked, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for the local execution and debugging of the demo**.
+>The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, see [How do I calculate UserSig on the server?](https://intl.cloud.tencent.com/document/product/647/35166).
 
-| File or Folder | Feature Description |
+[](id:ui.step4)
+### Step 4. Run the demo.
+Open the `TRTCScenesDemo` project with Android Studio (version 3.5 or above) and click **Run**.
+
+[](id:ui.step5)
+### Step 5. Modify the demo source code.
+The `trtcmeetingdemo` folder in the source code contains two subfolders: `ui` and `model`. The `ui` folder contains the UI code. The table below lists the files (folders) and UI views they represent. You can refer to it when making UI changes.
+
+| File or Folder | Use |
 |:-------:|:--------|
-| remote | Remote user list UI |
+| remote | The remote user list view |
 | widget | Common UI component |
-| CreateMeetingActivity.java | UI for meeting creation |
-| MeetingMainActivity.java | Main UI of video conferencing |
-| MeetingVideoView.java | `TXCloudVideoView` with TRTC encapsulated, which is used to display local and remote user video data |
+| CreateMeetingActivity.java | The meeting creation view |
+| MeetingMainActivity.java | The main view for video conferencing |
+| MeetingVideoView.java | Include `TXCloudVideoView`, which displays the video data of the local user and remote users |
 | MemberEntity.java | User data at the UI layer |
-| MemberListAdapter.java | Adapter of the main UI of video conferencing |
+| MemberListAdapter.java | Adapter for the main video conferencing view |
 
-<span id="model"> </span>
-## Implementing Custom UI
+[](id:model)
+## Implementing A Custom UI
 
-The `trtcmeetingdemo` folder in the [source code](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo/trtcmeetingdemo/src/main/java/com/tencent/liteav/meeting) contains two subfolders: `ui` and `model`. The `model` folder contains the reusable open-source component `TRTCMeeting`. You can find the API functions provided by this component in the `TRTCMeeting.java` file and use the corresponding API to implement your own custom UI.
+The `trtcmeetingdemo` folder in the [source code](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo/trtcmeetingdemo/src/main/java/com/tencent/liteav/meeting) contains two subfolders: `ui` and `model`. The `model` folder contains the reusable open-source component `TRTCMeeting`. You can find the component’s API functions in `TRTCMeeting.java` and use them to customize your own UI.
 ![](https://main.qcloudimg.com/raw/2ac6fe9df1b43dae59271f4288f54ef3.png)
 
-<span id="model.step1"> </span>
-### Step 1. Integrate SDKs
-The video conferencing component `TRTCMeeting` depends on the TRTC SDK and IM SDK. You can integrate the two SDKs into your project in the following steps:
+[](id:model.step1)
+### Step 1. Integrate the SDKs.
+The video conferencing component `TRTCMeeting` depends on the TRTC SDK and IM SDK. Follow the steps below to integrate the two SDKs into your project.
 
-**Method 1. Implement dependency through Maven repository**
+**Method 1: adding dependencies via Maven**
 1. Add the TRTC SDK and IM SDK dependencies to `dependencies`.
 ```
 dependencies {
@@ -68,9 +71,9 @@ dependencies {
        compile 'com.tencent.imsdk:imsdk:latest.release'
 }
 ```
->?You can get the latest version numbers of the two SDKs on the [TRTC](https://github.com/tencentyun/TRTCSDK) and [IM](https://github.com/tencentyun/TIMSDK) homepages on GitHub.
+>?You can view the latest version numbers of the two SDKs by visiting their GitHub pages at [TRTC](https://github.com/tencentyun/TRTCSDK) and [IM](https://github.com/tencentyun/TIMSDK).
 >
-2. In `defaultConfig`, specify the CPU architecture to be used by the application.
+2. In `defaultConfig`, specify the CPU architecture to be used by the app.
 ```
 defaultConfig {
       ndk {
@@ -78,10 +81,10 @@ defaultConfig {
       }
 }
 ```
-3. Click **Sync Now** to automatically download the SDK and integrate it into the project.
+3. Click **Sync Now** to have the SDKs downloaded and integrated into your project automatically.
 
-**Method 2. Implement dependency through local AAR files**
-If the access to the Maven repository is slow in your development environment, you can download the ZIP packages and manually integrate the SDKs into your project as instructed in the integration document.
+**Method 2: adding dependencies through local AAR files**
+If your access to the Maven repository is slow, you can download the ZIP packages of the SDKs and manually and integrate them into your project as instructed in the documents below.
 <table>
 <tr>
 <th>SDK</th>
@@ -100,9 +103,9 @@ If the access to the Maven repository is slow in your development environment, y
 </tr>
 </table>
 
-<span id="model.step2"> </span>
-### Step 2. Configure permissions and obfuscation rules
-Configure application permissions in `AndroidManifest.xml`. The SDK requires the following permissions (on Android 6.0 and above, the camera and storage read permissions need to be requested dynamically):
+[](id:model.step2)
+### Step 2. Configure permission requests and obfuscation rules.
+Configure permission requests for your app in `AndroidManifest.xml`. The SDKs need the following permissions (on Android 6.0 and above, the camera and read storage permissions must be requested at runtime.)
 ```
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -118,82 +121,84 @@ Configure application permissions in `AndroidManifest.xml`. The SDK requires the
 <uses-feature android:name="android.hardware.camera.autofocus" />
 ```
 
-In the `proguard-rules.pro` file, add the classes related to the SDK to the "do not obfuscate" list:
+In the `proguard-rules.pro` file, add the SDK classes to the "do not obfuscate" list.
 ```
 -keep class com.tencent.** { *; }
 ```
 
-<span id="model.step3"> </span>
-### Step 3. Import the TRTCMeeting component
+[](id:model.step3)
+### Step 3. Import the `TRTCMeeting` component.
 Copy all files in the following directory to your project:
 ```
 src/main/java/com/tencent/liteav/meeting/model
 ```
 
-<span id="model.step4"> </span>
-### Step 4. Create and log in to the component
-1. Call the `sharedInstance` API to create an instance object of the `TRTCMeeting` component.
-2. Call the `setDelegate` function to register the event notification of the component.
-3. Call the `login` function to log in to the component. Enter key parameters as shown below:
+<span id="model.step4"></span>
+### Step 4. Create a component instance and log in.
+1. Call the `sharedInstance` API to create an instance of the `TRTCMeeting` component.
+2. Call the `setDelegate` function to register event callbacks of the component.
+3. Call the `login` function to log in to the component. Set the key parameters as described below.
  <table>
 <tr>
-<th>Parameter Name</th>
-<th>Description</th>
+<th>Parameter</th>
+<th>Note</th>
 </tr>
 <tr>
-<td>sdkAppId</td>
-<td>You can view the `SDKAppID` in the <a href="https://console.cloud.tencent.com/trtc/app">TRTC Console</a>.</td>
+<td>SDKAPPID</td>
+<td>You can view the `SDKAPPID` of your application in the <a href="https://console.cloud.tencent.com/trtc/app">TRTC console</a>.</td>
 </tr>
 <tr>
 <td>userId</td>
-<td>ID of current user, which is a string that can contain only letters (a–z and A–Z), digits (0–9), hyphens (-), and underscores (_).</td>
+<td>ID of the current user, which is a string that can contain letters (a-z and A-Z), digits (0-9), hyphens (-), and underscores (_).</td>
 </tr>
 <tr>
 <td>userSig</td>
-<td>Tencent Cloud's proprietary security protection signature. For more information on how to get it, please see <a href="https://intl.cloud.tencent.com/document/product/647/35166">How to Calculate UserSig</a>.</td>
+<td>Tencent Cloud's proprietary security signature. To obtain one, see <a href="https://intl.cloud.tencent.com/document/product/647/35166">UserSig</a>.</td>
 </tr>
 <tr>
 <td>callback</td>
-<td>Login callback. The `code` will be 0 if login is successful.</td>
+<td>Login callback. The code is 0 if login is successful.</td>
 </tr>
 </table>
-<pre>
+<dx-codeblock>
+```
 TRTCMeeting trtcMeeting = TRTCMeeting.sharedInstance(this);
 trtcMeeting.login(SDKAPPID, userId, userSig, new TRTCMeetingCallback.ActionCallback() {
     @Override
     public void onCallback(int code, String msg) {
         if (code == 0) {
-            // Logged in successfully
+            //Login successful
         }
     }
 });
-</pre>
+```
 
-<span id="model.step5"> </span>
-### Step 5. Create a meeting
-1. The chairperson can call `setSelfProfile` to set the nickname and profile photo after logging in by performing [step 4](#model.step4).
-2. The chairperson can call `setDelegate` to make an event call of `createMeeting` to create a meeting room.
-3. The chairperson can call `startCameraPreview` to capture video image or call `startMicrophone` to capture sound.
-4. If the chairperson requires beauty filters, the beauty filter adjusting buttons can be configured on the UI for setting beauty filters through `getBeautyManager`.
->?Face changing and sticker pendant features are not supported for SDKs in editions other than the Enterprise Edition.
+[](id:model.step5)
+### Step 5. Create a meeting as a host.
+1. After performing [step 4](#model.step4) to log in, call `setSelfProfile` to set your nickname and profile photo as a host.
+2. Call `setDelegate` to create a meeting room via `createMeeting`.
+3. Call `startCameraPreview` to capture video image and `startMicrophone` to capture sound.
+4. To use beauty filters, you can add beauty filter buttons to the UI and set beauty filters through `getBeautyManager`.
+>?Only the Enterprise Edition SDK supports face changing and stickers.
 >
 ![](https://main.qcloudimg.com/raw/416a1afd87b196a6ef791bf63eeaa5e0.png)
 
-```java
-// 1. The chairperson sets the nickname and profile photo
+
+```
+// 1. The host sets his or her nickname and profile photo.
 trtcMeeting.setSelfProfile("my_name", "my_avatar", null);
 
-// 2. The chairperson creates a room
+// 2. The host creates a room.
 trtcMeeting.createMeeting(roomId, new TRTCMeetingCallback.ActionCallback() {
     @Override
     public void onCallback(int code, String msg) {
         if (code == 0) {
-            // 3. Enable camera and audio capture
+            // 3. The host turns on the camera and enables audio capturing.
             TXCloudVideoView txCloudVideoView = new TXCloudVideoView(TestMeetingActivity.this);
             parentView.add(view);
             trtcMeeting.startCameraPreview(true, txCloudVideoView);
             trtcMeeting.startMicrophone();
-            // 4. Set the beauty filter
+            // 4. The host sets beauty filters.
             trtcMeeting.getBeautyManager().setBeautyStyle(1);
             trtcMeeting.getBeautyManager().setBeautyLevel(6);
         }
@@ -201,25 +206,25 @@ trtcMeeting.createMeeting(roomId, new TRTCMeetingCallback.ActionCallback() {
 });
 ```
 
-<span id="model.step6"> </span>
-### Step 6. The participant joins the meeting
-1. The participant can call `setSelfProfile` to set the nickname and profile photo after logging in by performing [step 4](#model.step4).
-2. The participant can call `enterMeeting` and pass in the meeting room number to enter the meeting room.
-3. The participant can call `startCameraPreview` to capture video image and call `startMicrophone` to capture sound.
-4. If another participant enables the camera, the participant will receive the `onUserVideoAvailable` event. At this time, the participant can call `startRemoteView` and pass in the `userId` to start playback.
+<span id="model.step6"></span>
+### Step 6. Join a meeting as an attendee.
+1. After performing [step 4](#model.step4) to log in, call `setSelfProfile` to set your nickname and profile photo as an attendee.
+2. Call `enterMeeting` and pass in the meeting room ID to enter the room.
+3. Call `startCameraPreview` to capture video image and `startMicrophone` to capture sound.
+4. If another attendee turns on the camera, you will receive the `onUserVideoAvailable` notification, and can call `startRemoteView` and pass in the `userId` to play the attendee’s video.
 
 ![](https://main.qcloudimg.com/raw/f33213dea7a32ca9904c066952fcc535.png)
 
-```java
-// 1. The participant sets the nickname and profile photo
+```
+// 1. The attendee sets his or her nickname and profile photo.
 trtcMeeting.setSelfProfile("my_name", "my_avatar", null);
 
-// 2. The participant calls `enterMeeting` to enter the meeting room
+// 2. The attendee calls `enterMeeting` to enter the meeting room.
 trtcMeeting.enterMeeting(roomId, new TRTCMeetingCallback.ActionCallback() {
     @Override
     public void onCallback(int code, String msg) {
         if (code == 0) {
-            // 3. The participant successfully enters the room and can enable local camera and mic and the beauty filter feature
+            // 3. After entering the room, the attendee turns on the mic and camera, or enables beauty filters as well.
             TXCloudVideoView txCloudVideoView = new TXCloudVideoView(TestMeetingActivity.this);
             parentView.add(view);
             trtcMeeting.startCameraPreview(true, txCloudVideoView);
@@ -230,7 +235,7 @@ trtcMeeting.enterMeeting(roomId, new TRTCMeetingCallback.ActionCallback() {
     }
 });
 
-// 4. The participant receives the notification that another member enables the camera and starts playback
+// 3. The attendee receives a notification that another attendee has turned on the camera and starts playing the attendee’s video.
 trtcMeeting.setDelegate(new TRTCMeetingDelegate() {
     @Override
     public void onUserVideoAvailable(String userId, boolean available) {
@@ -245,23 +250,24 @@ trtcMeeting.setDelegate(new TRTCMeetingDelegate() {
 });
 ```
 
-<span id="model.step7"> </span>
-### Step 7. Share the screen
+[](id:model.step7)
+### Step 7. Enable screen sharing.
 
-1. The screen sharing feature needs to apply for the floating window permission from the system, so you need to implement specific logic in the UI.
-2. Call `startScreenCapture`, pass in the encoding parameters and the floating window in the screen sharing process to implement the screen sharing feature. For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58).
-3. Other participants in the meeting will receive the `onUserVideoAvailable` event notification.
->!Screen sharing and camera capture are mutually exclusive. If you need to enable screen sharing, please call `stopCameraPreview` to disable camera capture first.
+1. The screen sharing feature requires the floating window permission, so you need to include the permission requesting logic in your UI.
+2. Call `startScreenCapture`, pass in the encoding parameters and floating window to start screen sharing. For more information, see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58).
+3. Other attendees in the room will receive the `onUserVideoAvailable` event notification.
+>!Screen sharing and camera capturing are mutually exclusive. Before enabling screen sharing, you need to call `stopCameraPreview` to disable camera capturing.
 
-```java
-// 1. Add the activity and permission of the SDK's screen sharing feature in the `AndroidManifest.xml` file
+```
+// 1. Add the SDK’s screen sharing activity and permission in `AndroidManifest.xml`.
 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 <application>
     <activity
         android:name="com.tencent.rtmp.video.TXScreenCapture$TXScreenCaptureAssistantActivity"
         android:theme="@android:style/Theme.Translucent" />
 </application>
-// 2. Apply for the floating window permission in your UI
+
+// 2. Request the floating window permission in your UI.
 if (Build.VERSION.SDK_INT >= 23) {
     if (!Settings.canDrawOverlays(getApplicationContext())) {
         Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName()));
@@ -278,14 +284,14 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     if (requestCode == 100) {
         if (Build.VERSION.SDK_INT >= 23) {
             if (Settings.canDrawOverlays(this)) {
-                // Authorized user successfully
+                // The user grant the permission.
                 startScreenCapture();
             } else {
             }
         }
     }
 }
-// 4. Enable screen sharing
+// 4. Enable screen sharing.
 private void startScreenCapture() {
         TRTCCloudDef.TRTCVideoEncParam encParams = new TRTCCloudDef.TRTCVideoEncParam();
         encParams.videoResolution = TRTCCloudDef.TRTC_VIDEO_RESOLUTION_1280_720;
@@ -300,36 +306,36 @@ private void startScreenCapture() {
 }
 ```
 
-<span id="model.step8"> </span>
-### Step 8. Implement text chat and messaging mute
-- `sendRoomTextMsg` can be used to send general text messages, and all anchors and viewers in the room can receive the `onRecvRoomTextMsg` callback.
- The backend of IM has default sensitive word filtering rules, and text messages that are considered to contain any sensitive words will not be forwarded by the cloud.
-```java
-// Sender: sends text messages
+[](id:model.step8)
+### Step 8. Implement text chat and muting notifications.
+- Call `sendRoomTextMsg` to send text messages, and all hosts and attendees in the room will receive the `onRecvRoomTextMsg` callback.
+ IM has its default content moderation rules. Text messages that contain blocked terms will not be forwarded by the cloud.
+```
+// Sender: send text messages
 trtcMeeting.sendRoomTextMsg("Hello Word!", null);
-// Receiver: listens on text messages
+// Recipient: listen for text messages
 trtcMeeting.setDelegate(new TRTCMeetingDelegate() {
     @Override
     public void onRecvRoomTextMsg(
 		    String message, TRTCMeetingDef.UserInfo userInfo) {
-        Log.d(TAG, "A message from" + userInfo.userName + "is received:" + message);
+        Log.d(TAG, "Received a message from" + userInfo.userName + ":" + message);
     }
 });
 ```
-- `sendRoomCustomMsg` can be used to send custom (signaling) messages, and all chairpersons and participants in the room can receive the `onRecvRoomCustomMsg` callback.
-Custom messages are often used to transfer custom signals, such as meeting controls like mute.
-```java
-// Sender: mute notifications can be identified by custom `CMD`
-// eg:"CMD_MUTE_AUDIO" indicates a mute notification
+- Call `sendRoomCustomMsg` to send custom (signaling) messages, and all hosts and attendees in the room will receive the `onRecvRoomCustomMsg` callback.
+Custom messages are often used to transfer custom signals, such as muting notifications and notifications about other meeting controls.
+```
+// Sender: customize CMD to distinguish a muting notification
+// E.g., use "CMD_MUTE_AUDIO" to indicate muting notifications
 trtcMeeting.sendRoomCustomMsg("CMD_MUTE_AUDIO", "1", null);
-// Receiver: listens on custom messages
+// Receiver: listen for custom messages
 trtcMeeting.setDelegate(new TRTCMeetingDelegate() {
     @Override
     public void onRecvRoomCustomMsg(String cmd, 
 		    String message, TRTCMeetingDef.UserInfo userInfo) {
         if ("CMD_MUTE_AUDIO".equals(cmd)) {
-            // Receive the mute notification
-            Log.d(TAG, "A mute notification from" + userInfo.userName + "is received:" + message);
+            // Receive a muting notification.
+            Log.d(TAG, "Received a muting notification from" + userInfo.userName + ":" + message);
             trtcMeeting.muteLocalAudio("1".equals(message));
         }
     }

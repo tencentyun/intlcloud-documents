@@ -1,109 +1,97 @@
-## Demo
-<table style="text-align:center;vertical-align:middle;width: 300px">
-  <tr>
-    <th width="150px">Mac OS</th>
-    <th width="150px">Windows</th>
-  </tr>
-  <tr>
-<td>
-		<a href="https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/electron_sdk/solution/education/TRTC_Education_Demo-1.1.0.dmg" >
-		<span style="width:125px;height: 125px;background-image:url(https://main.qcloudimg.com/raw/d03160ca4e5342a96464aaba1de97923.png);background-size: cover;display:block;">
-</span></a></td>
-<td>
-<a href="https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/electron_sdk/solution/education/TRTC_Education_Demo%20Setup%201.1.0.exe">
-<span style="width:125px;height: 125px;background-image:url(https://main.qcloudimg.com/raw/d03160ca4e5342a96464aaba1de97923.png);background-size: cover;display:block;">
-</span></a></td>
-  </tr>
-</table>
+## Free Demo
+<input type="button" value="Windows" style="height: 30px;width: 150px;min-width: 24px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;white-space: nowrap;margin-right:10px;"  onclick="window.open('https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/electron_sdk/solution/education/TRTC_Education_Demo%20Setup%201.1.0.exe')" />
+
+<input type="button" value="macOS" style="height: 30px;width: 150px;margin-top: 5px;min-width: 24px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;white-space: nowrap;" onclick="window.open('https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/electron_sdk/solution/education/TRTC_Education_Demo-1.1.0.dmg')" />
+
+## Demonstration
+You can download and install the demo we provide to try out TRTC’s real-time interactive teaching feature, which supports teaching modes such as audio, video, and screen sharing, as well as interactions such as Q&A, hand raising, inviting to speak, and ending Q&A.
+
+To quickly implement the real-time interactive teaching feature, you can modify the demo we provide and adapt it to your needs. You can also use the [trtc-electron-education](https://intl.cloud.tencent.com/document/product/647/37279) component to customize your own UI.
+
+## Using the Demo UI
+[](id:ui.step1)
+### Step 1. Create an application.
+1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
+2. Enter an application name, e.g. `TestEduDemo`, and click **Create**.
+
+>?The real-time interactive teaching feature uses two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047). When you activate TRTC, IM will be activated automatically. IM is a value-added service. See [Value-added Service Pricing](https://intl.cloud.tencent.com/document/product/1047/34350) for its billing details.
 
 
+[](id:ui.step2)
+### Step 2. Download the SDK and demo source code.
+1. Download the SDK and demo source code for your platform.
+2. Click **Next**.
 
-## Effect Demo
-You can download and install the demo to experience the capabilities and effect of the real-time interactive teaching feature, such as teaching modes (audio, video, and screen sharing, etc.) and interactions (Q&A, raise hand, invite, end, etc.).
-
-To quickly implement real-time interactive teaching, you can directly modify the demo provided by TRTC for adaptation or use the provided [trtc-electron-education](https://intl.cloud.tencent.com/document/product/647/37279) component and implement custom UI.
-
-## Reusing Demo UI
-### Step 1. Create an application
-1. Log in to the TRTC Console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
-2. Click **Start Now**, enter the application name such as `TestEduDemo`, and click **Create Application**.
-
->?Note: this feature uses two basic PaaS services of Tencent Cloud, namely, [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047). When TRTC is activated, IM will be activated automatically.IM is a value-added service at the prices as detailed in [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350).
-
-<span id="ui.step2"></span>
-### Step 2. Download the SDK and demo source code
-1. Click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Electron/TRTCScenesDemo/TRTCEducation)** to enter GitHub and download the relevant SDK and supporting demo source code.
-2. After the download is completed, return to the TRTC Console and click **Downloaded and Next**. Then, you can see the `SDKAppID` and key information.
-
-### Step 3. Configure demo project files
-1. Decompress the source package downloaded in [step 2](#ui.step2).
+[](id:ui.step3)
+### Step 3. Configure demo project files.
+1. In the **Modify Configuration** step, select the platform in line with the source package downloaded.
 2. Find and open the `TRTCEducation/app/debug/GenerateTestUserSig.js` file.
-3. Set the relevant parameters in the `GenerateTestUserSig.js` file:
-  <ul style="margin:0;"><li>SDKAPPID: it is 0 by default. Please replace it with your real `SDKAppID`.</li>
-  <li>SECRETKEY: it is an empty string by default. Please replace it with your real key information.</li></ul> 
-  <img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
-4. Return to the TRTC Console and click **Pasted and Next**.
-5. Click **Close Guide and Enter Console** to manage the application.
+3. Set parameters in `GenerateTestUserSig.js` as follows:
+<ul style="margin:0"><li/>SDKAPPID: 0 by default. Set it to the actual `SDKAppID`.
+<li/>SECRETKEY: left empty by default. Set it to the actual key.</ul>
+<img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
 
->!The scheme for generating `UserSig` mentioned in this document is to configure `SECRETKEY` in the client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is leaked, attackers can steal your Tencent Cloud traffic; therefore, **this method is only suitable for local execution and debugging of the demo**.
->The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can make a request to the business server for dynamic `UserSig`. For more information, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166).
+4. Click **Next** to complete the creation.
+5. After compilation, click **Return to Overview Page**.
 
-### Step 4. Run the demo
+>!The method for generating `UserSig` described in this document involves configuring `SECRETKEY` in client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is leaked, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for the local execution and debugging of the demo**.
+> The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, see [How do I calculate UserSig on the server?](https://intl.cloud.tencent.com/document/product/647/35166).
+
+### Step 4. Run the demo.
 
 ```typescript
-// Install YARN, which is used to manage the demo
+// Install Yarn, which is used to manage the demo.
 npm install yarn -g
-// Install required dependencies
+// Install the required dependencies.
 yarn install
-// Develop and debug
+// Develop and debug.
 yarn dev
-// Package
+// Package.
 yarn package
 ```
 
->!
->- You can package for macOS only on macOS and package for Windows only on Windows.
+>- You can package for macOS only on macOS and for Windows only on Windows.
 
 
-### Step 5. Modify the demo source code
+### Step 5. Modify the demo source code.
 The following frameworks are used by the demo:
 - typescript
 - react & react hooks
 - electron & electron-react-boilerplate
 - element-ui
 
-The following table lists the files and the corresponding UIs for easy adjustment:
+The following table lists the files and the UI views they represent. You can refer it to when making UI changes.
 
-| File | Feature Description |
+| File | Use |
 | ----- | ----- |
-| app/containers/HomePage.tsx | Implementation code for classroom entry UI |
-| app/containers/ClassRoomPage.tsx | Implementation code for classroom UI |
-| app/components/TeacherClass.tsx | Implementation code for teacher client UI of classroom |
-| app/components/StudentClass.tsx | Implementation code for student client UI of classroom |
-| app/components/Chat.tsx | Implementation code for chat room UI of classroom |
-| app/components/UserList.tsx | Implementation code for member list UI of classroom |
+| app/containers/HomePage.tsx | Implementation code for the classroom entry view |
+| app/containers/ClassRoomPage.tsx | Implementation code for the classroom view |
+| app/components/TeacherClass.tsx | Implementation code for teacher-end views |
+| app/components/StudentClass.tsx | Implementation code for student-end views |
+| app/components/Chat.tsx | Implementation code for the chat room view |
+| app/components/UserList.tsx | Implementation code for the member list view |
 
-## Implementing Custom UI
-If the UI implemented by default in the demo does not meet your expectations, you can implement your own UI as needed simply by using the audio/video capabilities provided by the encapsulated [trtc-electron-education](https://www.npmjs.com/package/trtc-electron-education) component.
+## Implementing A Custom UI
+If the UI in the demo does not meet your expectations, you can use the audio and video capabilities of the [trtc-electron-education](https://www.npmjs.com/package/trtc-electron-education) component we provide and customize your own UI.
 ![](https://main.qcloudimg.com/raw/cba4f331a811dd5dbf31cce80bd1d826.png)
 
-### Step 1. Integrate the SDK
+### Step 1. Integrate the SDKs.
 
 ```
-// Import by using YARN
+// Import via Yarn
 yarn add trtc-electron-education
-// Import by using npm
+// Import via npm
 npm i trtc-electron-education --save
 ```
 
-### Step 2. Initialize the component
-Initialize the component. The required key parameters are as detailed below:
+### Step 2. Initialize the component.
+Initialize the component. The table below lists the required key parameters.
 
 | Parameter | Type | Description |
 | ----- | ----- | ----- |
-| sdkAppId | number | `SDKAppID`, which is required and can be viewed in the <a href="https://console.cloud.tencent.com/trtc/app">TRTC Console</a>. |
-| userID | string | User ID, which is required and can be specified by your account system. |
-| userSig | string | Identity signature, which is required and acts as the login password. It can be calculated based on the `userID`. For more information on the calculation method, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166). |
+| sdkAppId | number | `SDKAppID`, which is required and can be viewed in the <a href="https://console.cloud.tencent.com/trtc/app">TRTC console</a> |
+| userID | string | User ID, which is required and can be assigned by your account system |
+| userSig | string | User signature, which acts as a login password and is required. It is calculated based on user ID. For details, see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166). |
 
 ```typescript
 import TrtcElectronEducation from 'trtc-electron-education';
@@ -114,71 +102,71 @@ const rtcClient = new TrtcElectronEducation({
  });
 ```
 
-### Step 3. Start a class on the teacher client
-1. The teacher calls the [createRoom](https://intl.cloud.tencent.com/document/product/647/37279#createRoom) method of the component to create a classroom.
+### Step 3. Start a class as a teacher.
+1. Call the [`createRoom`](https://intl.cloud.tencent.com/document/product/647/37279#createRoom) method of the component to create a classroom.
 ```typescript
 const params = {
       classId, // Classroom ID
       nickName // Nickname
 }
 rtcClient.createRoom(params).then(() => {
-	// Created classroom successfully
+	// Classroom created
 })
 ```
-2. The teacher calls the [enterRoom](https://intl.cloud.tencent.com/document/product/647/37279#enterRoom) method of the component to start a class.
+2. Call the [`enterRoom`](https://intl.cloud.tencent.com/document/product/647/37279#enterRoom) method of the component to start a class.
 ```typescript
 rtcClient.enterRoom({
       role: 'teacher', // Role
       classId // Classroom ID
 })
 ```
-3. The teacher calls the [openCamera](https://intl.cloud.tencent.com/document/product/647/37279#openCamera) method of the component to enable the local camera.
+3. Call the [`openCamera`](https://intl.cloud.tencent.com/document/product/647/37279#openCamera) method of the component to turn on the local camera.
 ```typescript
 const domEle = document.getElementById('test');
 rtcClient.openCamera(domEle)
 ```
-4. The teacher can share the local screen with students to present slides, courseware, etc.
- a. Call the [getScreenShareList](https://intl.cloud.tencent.com/document/product/647/37279#getScreenShareList) method of the component first to get the window list.
+4. Share your screen, e.g., a PowerPoint or courseware.
+ a. Call the [`getScreenShareList`](https://intl.cloud.tencent.com/document/product/647/37279#getScreenShareList) method of the component to get the window list.
 ```typescript
 const screenList = rtcClient.getScreenShareList()
 ```
-b. Call [startScreenCapture](https://intl.cloud.tencent.com/document/product/647/37279#startScreenCapture) of the component to start pushing the screen sharing stream.
+ b. Call the [`startScreenCapture`](https://intl.cloud.tencent.com/document/product/647/37279#startScreenCapture) method of the component to push screen sharing streams.
 ```typescript
 rtcClient.startScreenCapture({
       type,// Capture source type
-      sourceId,// Capture source ID. For a window, this field indicates a window handle; for a screen, this field indicates a screen ID
-      sourceName // Capture source name encoded in UTF-8
+      sourceId,// Capture source ID, which is a window handle if a window is shared or a screen ID if the screen is shared
+      sourceName // Capture source name, which is UTF-8-encoded
  })
 ```
-5. During teaching, if the teacher wants to ask students a question to interact with them, the teacher can call the [startQuestionTime](https://intl.cloud.tencent.com/document/product/647/37279#startQuestionTime) method of the component to start Q&A. After the student client receives the command, the student can "raise hand" to ask to answer the question.
+5. To ask students questions, call the [`startQuestionTime`](https://intl.cloud.tencent.com/document/product/647/37279#startQuestionTime) method of the component to start Q&A. After receiving the event notification, students can "raise hands" to request to answer the questions.
 ```typescript
 rtcClient.startQuestionTime(classId) // `classId` is the classroom ID
 ```
-6. After the student "raises hand", the teacher can call the [inviteToPlatform](https://intl.cloud.tencent.com/document/product/647/37279#inviteToPlatform) method of the component to invite the student to answer, and the invited student will automatically mic on.
+6. When students "raise hands", call the [`inviteToPlatform`](https://intl.cloud.tencent.com/document/product/647/37279#inviteToPlatform) method of the component to invite a student to answer. The student’s mic will be turned on automatically.
 ```typescript
 rtcClient.inviteToPlatform(userID) // `userID` of the invited student
 ```
-7. The teacher can call the [finishAnswering](https://intl.cloud.tencent.com/document/product/647/37279#finishAnswering) method of the component to mic off the student.
+7. After the student finishes answering, call the [`finishAnswering`](https://intl.cloud.tencent.com/document/product/647/37279#finishAnswering) method of the component to turn the student’s mic off.
 ```typescript
-rtcClient.finishAnswering(userID)// `userID` of the student whose mic is disabled
+rtcClient.finishAnswering(userID)// `userID` of the student whose mic is to be turned off
 ```
 
-### Step 4. Attend a class on the student client
-1. The student calls the [enterRoom](https://intl.cloud.tencent.com/document/product/647/37279#enterRoom) method of the component to enter a classroom and prepare to listen.
+### Step 4. Attend a class as a student.
+1. Call the [`enterRoom`](https://intl.cloud.tencent.com/document/product/647/37279#enterRoom) method of the component to enter a classroom.
 ```typescript
 rtcClient.enterRoom({
       role: 'student', // Role
       classId // Classroom ID
 })
 ```
-2. After the teacher starts Q&A, the student can call the [raiseHand](https://intl.cloud.tencent.com/document/product/647/37279#raiseHand) method of the component to ask to speak.
+2. After the teacher starts Q&A, call the [`raiseHand`](https://intl.cloud.tencent.com/document/product/647/37279#raiseHand) method of the component to request to answer.
 ```typescript
 rtcClient.raiseHand()
 ```
 
-### Step 5. Implement the chat room feature
+### Step 5. Implement the chat room feature.
 
-The teacher and students can send text messages to each other in the chat room.
+The teacher and students can send text messages to each other in a chat room.
 ```typescript
 const params = {
    classId: classId, // Classroom ID

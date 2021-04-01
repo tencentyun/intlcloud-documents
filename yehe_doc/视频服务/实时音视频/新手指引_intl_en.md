@@ -1,4 +1,3 @@
-This document offers a beginner’s guide for clients who are new to TRTC.
 ## Quick Introduction to TRTC
 
 - [Supported Platforms](https://intl.cloud.tencent.com/document/product/647/35078)
@@ -6,7 +5,8 @@ This document offers a beginner’s guide for clients who are new to TRTC.
 - [Use Cases](https://intl.cloud.tencent.com/document/product/647/37713)
 - [Basic Concepts](https://intl.cloud.tencent.com/document/product/647/37714)
 
-## Billing Modes
+[](id:pay)
+## Billing Plans
 
 TRTC offers two types of services: **basic services** and *value-added services*. 
 
@@ -14,11 +14,11 @@ TRTC offers two types of services: **basic services** and *value-added services*
 <tr><th>Service Type</th><th>Use Case</th><th>Billing Details</th></tr >
 <tr>
 <td rowspan="4">Basic services</td>
-<td>Interactive audio live streaming</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">Billing of interactive audio live streaming</a></td>
+<td>Interactive live audio streaming</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">Billing of interactive live audio streaming</a></td>
 </tr><tr>
-<td>Interactive video live streaming</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">Billing of interactive video live streaming</a></td>
+<td>Interactive live video streaming</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">Billing of interactive live video streaming</a></td>
 </tr><tr>
 <td>Audio call</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/34613">Billing of audio calls</a></td>
@@ -37,13 +37,14 @@ TRTC offers two types of services: **basic services** and *value-added services*
 
 
 
+
 ## Development Support
-<span id="demo"></span> 
-### Free Demo
+[](id:demo)
+### Free Demos
 
-TRTC offers free demos for **iOS**, **Android**, **macOS**, **Windows**, and **desktop browsers**. For details, see [Free Demo](https://intl.cloud.tencent.com/document/product/647/35076).
+TRTC offers free demos for **iOS**, **Android**, **macOS**, **Windows**, **desktop browsers**, **Electron**, and **Flutter**. For details, see [Free Demo](https://intl.cloud.tencent.com/document/product/647/35076).
 
-<span id="sdk"></span> 
+[](id:sdk)
 ### SDK download
 
 TRTC is one of Tencent Cloud’s LiteAV products. Because all LiteAV products use the same underlying modules, integrating more than one LiteAV SDK into the same project will result in a “duplicate symbol” error. For this, we provide different editions of the SDK, including **Lite (TRTC)**, **Professional**, and **Enterprise**, which come with different capabilities. You can choose the one that fits your needs.
@@ -57,7 +58,7 @@ TRTC is one of Tencent Cloud’s LiteAV products. Because all LiteAV products us
 > ? See [SDK Download](https://intl.cloud.tencent.com/document/product/647/34615) for a comparison of the three editions.
 
 
-<span id="api"> </span> 
+[](id:api)
 ### API integration
 
 - **Client APIs:** you can implement different features by calling SDK-side APIs on platforms including [iOS](https://intl.cloud.tencent.com/document/product/647/35119), [macOS](https://intl.cloud.tencent.com/document/product/647/35119), [Android](https://intl.cloud.tencent.com/document/product/647/35125), [Windows(C++)](https://intl.cloud.tencent.com/document/product/647/35131), [Windows(C#)](https://intl.cloud.tencent.com/document/product/647/35136), [desktop browsers](https://intl.cloud.tencent.com/document/product/647/35143), [Electron](https://intl.cloud.tencent.com/document/product/647/35141), and [Flutter](https://intl.cloud.tencent.com/document/product/647/39169).
@@ -66,10 +67,10 @@ TRTC is one of Tencent Cloud’s LiteAV products. Because all LiteAV products us
 
 
 ## Getting Started
-<span id="demo_guide"></span> 
-### Demo Quick Start
+[](id:demo_guide)
+### Demo quick start
 
-The TRTC console offers demo source codes for different platforms. See the documents below for how to run the demo.
+The TRTC console offers demo source code for different platforms. See the documents below for how to run the demos.
 
 | Platform       | Document                                                     |
 | ---------- | ------------------------------------------------------------ |
@@ -80,10 +81,10 @@ The TRTC console offers demo source codes for different platforms. See the docum
 | Electron   | [Demo Quick Start (Electron)](https://intl.cloud.tencent.com/document/product/647/35089) |
 - [Demo Quick Start (Flutter)](https://intl.cloud.tencent.com/document/product/647/39243)
 
-<span id="sdk_guide"></span> 
-### SDK Quick Integration
+[](id:sdk_guide)
+### SDK quick integration
 
-After downloading the TRTC SDK, you can integrate it into your project. See the documents below for how to implement a quick SDK integration.
+After downloading the TRTC SDK, you can integrate it into your project. For detailed instructions, see the documents below.
 
 | Platform       | Document                                                     |
 | ---------- | ------------------------------------------------------------ |
@@ -95,11 +96,12 @@ After downloading the TRTC SDK, you can integrate it into your project. See the 
 | Electron   | [SDK Quick Integration (Electron)](https://intl.cloud.tencent.com/document/product/647/35097) |
 | Flutter | [SDK Quick Integration (Flutter)](https://intl.cloud.tencent.com/document/product/647/35098) |
 
-<span id="web_guide"></span> 
-### Quick TWebLive Run
+[](id:web_guide)
+### Quick TWebLive run
 
-TRTC offers an all-inclusive free demo for the TWebLive component. See [Quick TWebLive Run](https://intl.cloud.tencent.com/document/product/647/38172) for how to integrate the component.
+TRTC offers an all-inclusive free demo for the TWebLive component. See [WebRTC-based Streaming](https://intl.cloud.tencent.com/document/product/647/38172) for how to integrate the component.
 
+[](id:sence)
 ##Scenario-specific Practice
 
 TRTC, along with other Tencent Cloud products, offers free demos for a wide range of live streaming scenarios.
@@ -115,9 +117,9 @@ TRTC, along with other Tencent Cloud products, offers free demos for a wide rang
 <td>Co-anchoring, offline call answering, etc. </td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/36067" target="_blank">Real-Time Audio Call</a></td>
 </tr><tr>
-<td>Interactive live broadcast</td>
+<td>Interactive live streaming</td>
 <td>Co-anchoring, anchor competition, low-latency watch, on-screen comments, etc.</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/36060" target="_blank">Video Interactive Live Broadcast</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/36060" target="_blank">Interactive Live Video Streaming</a></td>
 </tr><tr>
 <td>Real-time interactive teaching</td>
 <td>Teaching modes: video, audio, screen sharing, etc.; interactions: asking questions, hand raising, inviting to speak, ending Q&A, etc. </td>
@@ -127,22 +129,27 @@ TRTC, along with other Tencent Cloud products, offers free demos for a wide rang
 <td>Screen sharing, beauty filters, low-latency conferencing, etc.</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/37284" target="_blank">Video Conferencing</a></td>
 </tr><tr>
-<td>Voice chat room</td>
-<td>Mic management, low-latency voice interaction, text chat, etc.</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/37287" target="_blank">Voice Chat Room</a></td>
+<td>Audio chat room</td>
+<td>Mic management, low-latency audio interaction, text chat, etc.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/37287" target="_blank">Audio Chat Room</a></td>
 </tr></table>
 
-<span id="console"></span> 
+[](id:console)
 ## Console Guide
-| Console Operation                                         | Guide                                                   |
+| If you want to                                         | Please Read                                                   |
 | :--------------------------------------------------------- | :----------------------------------------------------------- |
-| Generating UserSig online or verifying existing UserSig         | [UserSig Generation and Verification](https://intl.cloud.tencent.com/document/product/647/39074)                |
-| Enabling relayed push, on-cloud recording or advanced permission control for an application        | [Function Configuration](https://intl.cloud.tencent.com/document/product/647/39080) |
-| Adding a custom image to be set as the background displayed during on-cloud stream mixing            | [Material Management](https://intl.cloud.tencent.com/document/product/647/39081) |
+| View your usage of TRTC’s **audio/video interaction** and **on-cloud recording** services | [Usage Statistics](https://intl.cloud.tencent.com/document/product/647/39066) |
+| View call quality statistics of a TRTC room via the dashboard               | [Dashboard](https://intl.cloud.tencent.com/document/product/647/39069) |
+| Download the demo source code and have a quick run of the demo                       | [Demo Quick Run](https://intl.cloud.tencent.com/document/product/647/39073) |
+| Generate a UserSig online or verify an existing UserSig         | [UserSig Generation and Verification](https://intl.cloud.tencent.com/document/product/647/39074)                |
+| Create an application | [Create Application](https://intl.cloud.tencent.com/document/product/647/39077) |
+| Enable relayed push, on-cloud recording or advanced permission control for an application        | [Function Configuration](https://intl.cloud.tencent.com/document/product/647/39080) |
+| Add a custom image to be set as the background displayed during on-cloud stream mixing            | [Material Management](https://intl.cloud.tencent.com/document/product/647/39081) |
+| Configure a callback key and address based on your actual needs | [Callback Configuration](https://intl.cloud.tencent.com/document/product/647/39559) |
 
 
 
-<span id="faq"></span> 
+[](id:faq)
 ## FAQs
 
 -  [What ports or domain names do I need to add to the allowlist of a native SDK?](https://intl.cloud.tencent.com/document/product/647/35164)
@@ -160,5 +167,5 @@ TRTC, along with other Tencent Cloud products, offers free demos for a wide rang
 
 If you have any questions about TRTC, contact us via the following channels.
 
-- If your question is about documents, for example, the content or a link in the documents, click **Help** in the bottom right and then click **Send Feedback** to provide feedback.
+- If your question is about documents, for example, the content or a link in the documents, click **Help** at the bottom right and then click **Send Feedback** to provide your feedback.
 - If you have questions about the product, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
