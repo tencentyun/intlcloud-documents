@@ -10,11 +10,11 @@ After a CLB instance is created, you can configure a CLB security group to isola
 A security group is a virtual firewall that can filter stateful data packets and control outbound and inbound traffic at the instance level. For more information, please see [Security Group Overview](https://intl.cloud.tencent.com/document/product/213/12452).
 
 A CLB security group is bound to a CLB instance, while a CVM security group is bound to a CVM instance. They target at different objects. CLB security groups can be generally configured in the following two modes:
-- [Enable "Allow Traffic by Default in Security Group"](#open)
-- [Disable "Allow Traffic by Default in Security Group"](#close)
+- [Enable "Allow Traffic by Default in Security Group"](#open-security-group)
+- [Disable "Allow Traffic by Default in Security Group"](#close-security-group)
 
 
-<span id ="open"></span>
+<span id ="open-security-group"></span>
 ### Enabling "Allow Traffic by Default in Security Group"
 ![](https://main.qcloudimg.com/raw/0d2b50ca557d805ce5790fcdd3974b40.jpg)
 After "Allow Traffic by Default in Security Group" is enabled:
@@ -23,7 +23,7 @@ After "Allow Traffic by Default in Security Group" is enabled:
 <li>If a CLB instance has no security group configured, all traffic will be allowed, and only ports configured with listeners on the VIP of the CLB instance can be accessed; therefore, the listening port will allow traffic from all IPs.</li>
 <li>To reject traffic from a specified client IP, you must do so in the CLB security group, as doing so in the CVM security group takes effect only for traffic from public IPs (including general public IPs and EIPs) but <strong>not</strong> for traffic from CLB.</li></ul>
 
-<span id ="close"></span>
+<span id ="close-security-group"></span>
 ### Disabling "Allow Traffic by Default in Security Group"
 ![](https://main.qcloudimg.com/raw/9357f8d81a0027110bd6a977cda4aafc.jpg)
 After "Allow Traffic by Default in Security Group" is disabled:</p>
