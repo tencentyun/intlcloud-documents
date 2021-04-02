@@ -28,7 +28,7 @@ Each field has a corresponding value range:
 | Hours | An integer between 0 and 23 | , - * / |
 | Day | An integer between 1 and 31 (the number of days in the month needs to be considered) | , - * / |
 | Month | An integer between 1 and 12 or JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC | , - * / |
-| Week | An integer between 0 and 6 or SUN,MON, TUE, WED, THU, FRI, SAT; where 0 means Sunday, 1 means Monday, and so on |, - * / |
+| Week | An integer between 0 and 6 or SUN, MON, TUE, WED, THU, FRI, SAT; where 0 means Sunday, 1 means Monday, and so on | , - * / |
 | Year | An integer between 1970 and 2099 | , - * / |
 
 ### Cron expression syntax 2 (not recommended)
@@ -46,7 +46,7 @@ Each field has a corresponding value range:
 | Hours | An integer between 0 and 23 | , - * / |
 | Day | An integer between 1 and 31 (the number of days in the month needs to be considered) | , - * / |
 | Month | An integer between 1 and 12 or JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC | , - * / |
-| Week | An integer between 0 and 6 or SUN,MON, TUE, WED, THU, FRI, SAT; where 0 means Sunday, 1 means Monday, and so on |, - * / |
+| Week | An integer between 0 and 6 or SUN, MON, TUE, WED, THU, FRI, SAT; where 0 means Sunday, 1 means Monday, and so on | , - * / |
 
 ### Wildcards
 <table>
@@ -59,7 +59,7 @@ Each field has a corresponding value range:
 		<td> It represents the union of characters separated by commas; for example, 1, 2, 3 in the "Hour" field means 1:00, 2:00 and 3:00</td>
 	</tr>
 	<tr>
-		<td>- (dash)</td>
+		<td>- (hyphen)</td>
 		<td> It contains all values in the specified range; for example, in the "Day" field, 1-15 contains the 1st to the 15th day of the specified month</td>
 	</tr>
 	<tr>
@@ -77,12 +77,18 @@ When both the "Day" and "Week" fields in a cron expression are specified, they a
 
 ### Sample
 Below are some examples of cron expressions and their meanings:
-- `*/5 * * * * * *` means triggering every 5 seconds
-- `0 0 2 1 * * *` means triggering at 2 am on the 1st day of every month
-- `0 15 10 * * MON-FRI *` means triggering every day at 10:15 am Monday through Friday
-- `0 0 10,14,16 * * * *` means triggering every day at 10 am, 2 pm, and 4 pm
-- `0 */30 9-17 * * * *` means triggering every half hour from 9 am to 5 pm every day
-- `0 0 12 * * WED *` means triggering at 12:00 noon every Wednesday
+
+| Expression | Description | 
+|---------|---------|
+| `*/5 * * * * * *` | Triggers once every 5 seconds | 
+|`0 15 10 * * MON-FRI *`| Triggers at 2 am on the 1st day of every month |
+|`0 15 10 * * MON-FRI *`| Triggers every day at 10:15 am Monday through Friday |
+|`0 0 10,14,16 * * * *`| Triggers every day at 10 am, 2 pm, and 4 pm |
+|`0 */30 9-17 * * * *`| Triggers every half hour from 9 am to 5 pm every day |
+|`0 0 12 * * WED *`| Triggers at 12:00 noon every Wednesday |
+
+
+
 
 ## Input Parameters of Timer Triggers
 When a timer trigger triggers a function, the following data structures will be encapsulated in `event` and passed to the function. In addition, you can specify to pass the `message` for a timer trigger, which is empty by default.

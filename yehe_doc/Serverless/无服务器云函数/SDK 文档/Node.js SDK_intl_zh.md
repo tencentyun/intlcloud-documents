@@ -20,14 +20,14 @@ npm install tencentcloud-sdk-nodejs --save
 ## 接口列表
 | 接口名称 | 接口功能                            |
 | :--- | :------------------------------------ |
-| [CreateFunction](https://intl.cloud.tencent.com/document/api/583/18586)   | 创建函数          |
-| [DeleteFunction](https://intl.cloud.tencent.com/document/api/583/18585)   | 删除函数范        |
-| [GetFunction](https://intl.cloud.tencent.com/document/api/583/18584?from_cn_redirect=1)      | 获取函数详细信息   |
-| [GetFunctionLogs](https://intl.cloud.tencent.com/document/api/583/18583?from_cn_redirect=1)  | 获取函数运行日志   |
-| [Invoke](https://intl.cloud.tencent.com/document/api/583/17243?from_cn_redirect=1)           | 运行函数          |
-| [ListFunctions](https://intl.cloud.tencent.com/document/api/583/18582?from_cn_redirect=1)    | 获取函数列表       |
-| [UpdateFunctionCode](https://intl.cloud.tencent.com/document/api/583/18581?from_cn_redirect=1)  | 更新函数代码    |
-| [UpdateFunctionConfiguration](https://intl.cloud.tencent.com/document/api/583/18580?from_cn_redirect=1)  | 更新函数配置|
+| [CreateFunction](https://intl.cloud.tencent.com/document/api/583/18586) | 创建函数          |
+| [DeleteFunction](https://intl.cloud.tencent.com/document/api/583/18585) | 删除函数          |
+| [GetFunction](https://intl.cloud.tencent.com/document/api/583/18584) | 获取函数详细信息   |
+| [GetFunctionLogs](https://intl.cloud.tencent.com/document/api/583/18583) | 获取函数运行日志   |
+| [Invoke](https://intl.cloud.tencent.com/document/api/583/17243) | 运行函数          |
+| [ListFunctions](https://intl.cloud.tencent.com/document/api/583/18582) | 获取函数列表       |
+| [UpdateFunctionCode](https://intl.cloud.tencent.com/document/api/583/18581) | 更新函数代码    |
+| [UpdateFunctionConfiguration](https://intl.cloud.tencent.com/document/api/583/18580) | 更新函数配置|
 
 ## 示例
 ```

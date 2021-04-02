@@ -2,7 +2,7 @@ You can write an SCF function to process the logs collected in the CLS service. 
 
 Characteristics of CLS triggers:
 - **Push model**: CLS monitors the specified log topic, aggregates data within a certain period of time, and invokes the associated function to push the event data to the function.
-- **Async invocation**: a CLS trigger always invokes a function asynchronously, and the result is not returned to the invoker. For more information on invocation types, please see “Invocation Types” in [How It Works](https://intl.cloud.tencent.com/document/product/583/9694).
+- **Async invocation**: a CLS trigger always invokes a function asynchronously, and the result is not returned to the invoker. For more information on invocation types, please see "Invocation Types" in [How It Works](https://intl.cloud.tencent.com/document/product/583/9694).
 
 ## CLS Trigger Attributes
 
@@ -23,9 +23,9 @@ After consuming messages, the CLS backend consumption module will encapsulate th
 >- After the event content is obtained by the function, each message can be guaranteed for processing by loop handling, and it is not assumed that the message time passed each time is constant.
 
 
-## Event Message Structure for CLS Triggers
+## Event Message Structure for CLS Trigger
 
-When the specified CLS trigger receives a message, the CLS backend consumption module will consume the message and encapsulate it to asynchronously invoke your function. In order to ensure the efficiency of data transfer in a single triggering action, the value of the data field is a Base64-encoded ZIP document.
+When the specified CLS trigger receives a message, the CLS backend consumption module will consume the message and encapsulate it to asynchronously invoke your function. In order to ensure the efficiency of data transfer in a single triggering action, the value of the data field is a Base64-encoded Gzip document.
 
 ```
 {
@@ -50,9 +50,9 @@ After being decoded and decompressed, the log data will look like the following 
 }
 ```
 
-The data structures are detailed as below:
+The data structures are as detailed below:
 
-| Structure Name | Description |
+| Structure | Description |
 | ---------- | --- |
 | topic_id | Log topic ID |
 | topic_name   | 	Log topic name |

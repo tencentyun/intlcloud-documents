@@ -77,7 +77,7 @@ When an API Gateway trigger receives a request, it sends the event data to the b
 }
 ```
 
-The data structures are detailed as below:
+The data structures are as detailed below:
 
 | Structure | Description |
 | ---------- | --- |
@@ -93,7 +93,7 @@ The data structures are detailed as below:
 
 >! 
 > - The content of `requestContext` may be increased during API Gateway iteration. At present, it is guaranteed that the content of the data structure will only be increased but not reduced, so that the existing structure will not be compromised.
-> - Parameters in the actual request may appear in multiple locations and can be selected based on your business needs.
+> - Parameters in real requests may appear in multiple locations and can be selected based on your business needs.
 
 ### Integration response and passthrough response
 Integration response means that API Gateway parses the returned content of the function and constructs an HTTP response based on the parsed content. With the aid of integration response, you can control the status code, headers, and body content of the response by using code, and implement the response in a custom format, such as XML, HTML, JSON, and even JS. When using integration response, data structures need to be returned based on the [rules of integration response for API Gateway trigger](#apiStructure) before they can be successfully parsed by API Gateway; otherwise, error message `{"errno":403,"error":"Invalid scf response format. please check your scf response format."}` will appear.
@@ -108,7 +108,7 @@ Passthrough response means that API Gateway directly passes the returned content
 
 [](id:apiStructure)
 #### Returned data structures of integration response for API Gateway trigger
-If integration response is set for API Gateway, data structures similar to the content below need to be returned:
+If integration response is set for API Gateway, the data structure in the following JSON format should be returned to API Gateway.
 ```
 {
     "isBase64Encoded": false,
@@ -117,7 +117,7 @@ If integration response is set for API Gateway, data structures similar to the c
     "body": "<html><body><h1>Heading</h1><p>Paragraph.</p></body></html>"
 }
 ```
-The data structures are detailed as below:
+The data structures are as detailed below:
 
 | Structure | Description |
 | ---------- | --- |

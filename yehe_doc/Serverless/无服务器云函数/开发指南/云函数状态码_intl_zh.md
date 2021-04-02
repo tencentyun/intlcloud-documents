@@ -33,7 +33,7 @@
 <tr>
 <td>406<br>RequestTooLarge</td>
 <td>函数调用请求参数体太大时，会有该返回信息。</td>
-<td>请求事件大小超限，同步请求事件最大为6MB，异步请求时间最大为128KB。</td>
+<td>请求事件大小超限，同步请求事件最大为6MB，异步请求事件最大为128KB。</td>
 </tr>
 <tr>
 <td>407<br>The size of response exceeds the upper limit (6MB)</td>
@@ -115,7 +115,7 @@
 </tr>
 <td>450<br>InitContainerTimeout</td>
 <td>当用户代码起容器超时情况下，会有该返回信息。</td>
-<td>用户代码起容器超时（15s），请检查代码后重试。若仍无法解决，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a>。</td>
+<td>用户代码起容器超时（15s），请检查代码后重试。若仍无法解决，请或 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a>。</td>
 </tr>
 <tr>
 <td>500<br>InternalError</td>
@@ -130,9 +130,10 @@
 </style>
 
 ## 相关概念
-#### 执行方法
+#### 执行方法<div id="handler"></div>
 执行方法表明了调用云函数时需要从哪个文件中的哪个函数开始执行。如下图所示：
 ![](https://main.qcloudimg.com/raw/81835da7292ef575fde6d634a99bb1e5.png)
+
 - 一段式格式为【文件名】，Golang 环境时使用。例如 `main`。
 - 两段式格式为【文件名.函数名】，Python、Node.js 及 PHP 环境时使用。例如 `index.main_handler`。
 	

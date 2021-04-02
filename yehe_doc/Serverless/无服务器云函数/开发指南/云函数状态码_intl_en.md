@@ -48,7 +48,7 @@ If an error code is returned after the function is executed, you can find the ca
 <tr>
 <td>430<br>User code exception caught</td>
 <td>A user code execution error occurs.</td>
-<td>Based on the error log in the console, check the error stack of the code and see whether the code can be executed properly.</td>
+<td>Based on the error log on the console, check the error stack of the code and see whether the code can be executed properly.</td>
 </tr>
 <tr>
 <td>432<br>ResourceLimitReached</td>
@@ -59,13 +59,13 @@ If an error code is returned after the function is executed, you can find the ca
 <td>433<br>TimeLimitReached</td>
 <td>The function execution times out.</td>
 <td><ul class="params"><li>Check whether a large number of time-consuming operations exists in the service code.</li>
-<li>Set a longer timeout period on the **Function configuration** page. If the current timeout period has been set to the maximum value, you can <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> to increase the timeout limit.</li></ul></td>
+<li>Set a longer timeout period on the **FUNCTION Configuration** page. If the current timeout period has been set to the maximum value, you can <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> to increase the timeout limit.</li></ul></td>
 </tr>
 <tr>
 <td>434<br>MemoryLimitReached </td>
 <td>The memory limit is reached.</td>
 <td><ul class="params"><li>Check the code logic to see whether there is a memory leak.</li>
-<li>Set a larger memory size on the **Function configuration** page. If the current memory size has been set to the maximum value, you can <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> to increase the memory limit.</li></ul></td>
+<li>Set a larger memory size on the **Function Configuration** page. If the current memory size has been set to the maximum value, you can <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> to increase the memory limit.</li></ul></td>
 </tr>
 <tr>
 <td>435<br>FunctionNotFound</td>
@@ -111,7 +111,7 @@ If an error code is returned after the function is executed, you can find the ca
 <tr>
 <td>443<br>UserCodeError</td>
 <td>A user code execution error occurs.</td>
-<td>Based on the error log in the console, check the error stack of the code and see whether the code can be executed properly.</td>
+<td>Based on the error log on the console, check the error stack of the code and see whether the code can be executed properly.</td>
 </tr>
 <td>450<br>InitContainerTimeout</td>
 <td>The user code container times out.</td>
@@ -130,9 +130,10 @@ If an error code is returned after the function is executed, you can find the ca
 </style>
 
 ## Concepts
-#### Execution method
+#### Execution method<div id="handler"></div>
 The execution method specifies the starting file and function while invoking the cloud function as shown below:
 ![](https://main.qcloudimg.com/raw/81835da7292ef575fde6d634a99bb1e5.png)
+
 - For Go programming, use the **FileName** format, such as `main`.
 - For Python, Node.js, or PHP programming, use the **FileName.FunctionName** format, such as `index.main_handler`.
 	

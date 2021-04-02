@@ -26,7 +26,9 @@ CLB triggers can be configured in either the **[SCF](https://console.cloud.tence
 ## Request and Response
 Request method refers to the method to process request sent from CLB to SCF, and response method refers to the method to process the returned value sent from SCF to CLB. Both request and response methods are automatically processed by the CLB trigger. When it triggers the function, data structures must be returned in the request method.
 
-<span id="datastructures"></span>
+[](id:datastructures)
+
+
 #### Event message structure of integration request for CLB trigger
 When a CLB trigger receives a request, event data will be sent to the bound function in JSON format as shown below.
 ```
@@ -66,11 +68,11 @@ The data structures are as detailed below:
 | X-Client-Proto-Ver | Protocol type |
 | X-Real-IP | Client IP address |
 | X-Forward-For | Passed proxy IP address |
-| X-Real-Port | Records the `Path` parameters configured in CLB and their actual values |
-| X-Vip | CLB VIP address |
-| X-Vport | CLB Vport |
-| X-Url | CLB request path |
-| X-Method | CLB request method |
+| X-Real-Port | Records the `Path` parameters configured in API Gateway and their actual values (optional custom configuration of CLB) |
+| X-Vip | CLB VIP address (optional custom configuration of CLB) |
+| X-Vport | CLB Vport (optional custom configuration of CLB) |
+| X-Url | CLB request path (optional custom configuration of CLB) |
+| X-Method | CLB request method (optional custom configuration of CLB) |
 
 >! 
 > - The content may be increased significantly during CLB iteration. At present, it is guaranteed that the content of the data structure will only be increased but not reduced, so that the existing structure will not be compromised.
@@ -79,8 +81,10 @@ The data structures are as detailed below:
 ### Integration response
 Integration response means that CLB parses the returned content of the function and constructs an HTTP response based on the parsed content. With the aid of integration response, you can control the status code, headers, and body content of the response by using code and implement response to content in custom formats, such as XML, HTML, JSON, and even JS. When using integration response, data structures need to be returned in the [returned data structures of integration response for CLB trigger](#clbStructure) before they can be successfully parsed; otherwise, the error message `{"errno":403,"error":"Analyse scf response failed."}` will appear.
 
-<span id="clbStructure"></span>
+[](id:clbStructure)
+
 #### Returned data structures of integration response for CLB trigger
+
 If integration response is set for CLB, data needs to be returned in the following structures:
 ```
 {
@@ -94,9 +98,9 @@ The data structures are as detailed below:
 
 | Structure | Description |
 | ---------- | --- |
-| isBase64Encoded | Indicates whether the content in the body is Base64-encoded binary. It should be `true` or `false` in JSON format. |
-| statusCode | HTTP return code. It should be an integer value. |
-| headers | HTTP return header. It should contain multiple key-value objects or a `key:[value,value]` object where both key and value are strings. |
+| isBase64Encoded | This indicates whether the content in the `body` is Base64-encoded binary. It should be `true` or `false` in JSON format. |
+| statusCode | HTTP return code, which should be an integer value. |
+| headers | HTTP return header, which should contain multiple `key-value` or `key:[value,value]` objects. Both key and value should be strings. |
 | body | HTTP return body. |
 
 If you need to return multiple headers with the same key, you can use a string array to describe different values; for example:

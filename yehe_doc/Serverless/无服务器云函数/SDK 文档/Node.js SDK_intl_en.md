@@ -1,5 +1,5 @@
 ## Preparations for Development
-Before installing the SDK for Node.js and using TencentCloud API for the first time, you need to apply for security credentials in the Tencent Cloud Console, which consists of `SecretId` and `SecretKey`. `SecretId` is used to identify the API requester, while `SecretKey` is a key used for signature string encryption and authentication by the server. Please keep your `SecretKey` private and do not disclose it to others.
+Before installing the SDK for Node.js and using TencentCloud API for the first time, you need to apply for security credentials in the Tencent Cloud console, which consists of `SecretId` and `SecretKey`. `SecretId` is used to identify the API requester, while `SecretKey` is a key used for signature string encryption and authentication by the server. Please keep your `SecretKey` private and do not disclose it to others.
 
 ### Development environment
 Node.js v8.9
@@ -20,14 +20,14 @@ npm install tencentcloud-sdk-nodejs --save
 ## API List
 | API Name | Description |
 | :--- | :------------------------------------ |
-| [CreateFunction](https://intl.cloud.tencent.com/document/api/583/18586)   | Creates function |
-| [DeleteFunction](https://intl.cloud.tencent.com/document/api/583/18585)   | Deletes function        |
-| [GetFunction](https://intl.cloud.tencent.com/document/api/583/18584)      | Gets function details   |
-| [GetFunctionLogs](https://intl.cloud.tencent.com/document/api/583/18583)  | Gets function execution logs   |
-| [Invoke](https://intl.cloud.tencent.com/document/api/583/17243)           | Executes function          |
-| [ListFunctions](https://intl.cloud.tencent.com/document/api/583/18582)    | Gets function list       |
-| [UpdateFunctionCode](https://intl.cloud.tencent.com/document/api/583/18581)  | Updates function code    |
-| [UpdateFunctionConfiguration](https://intl.cloud.tencent.com/document/api/583/18580)  | Updates function configuration |
+| [CreateFunction](https://intl.cloud.tencent.com/document/api/583/18586) | Creates function |
+| [DeleteFunction](https://intl.cloud.tencent.com/document/api/583/18585) | Deletes function |
+| [GetFunction](https://intl.cloud.tencent.com/document/api/583/18584) | Gets function details |
+| [GetFunctionLogs](https://intl.cloud.tencent.com/document/api/583/18583) | Gets function execution logs |
+| [Invoke](https://intl.cloud.tencent.com/document/api/583/17243) | Executes function |
+| [ListFunctions](https://intl.cloud.tencent.com/document/api/583/18582) | Gets function list |
+| [UpdateFunctionCode](https://intl.cloud.tencent.com/document/api/583/18581) | Updates function code |
+| [UpdateFunctionConfiguration](https://intl.cloud.tencent.com/document/api/583/18580) | Updates function configuration |
 
 ## Samples
 ```
@@ -88,7 +88,7 @@ exports.main_handler = (event, context, callback) => {
 
 ```
 ## Packaging and Deployment
-If you need to deploy a function in the SCF Console and use the SDK to invoke other functions, you need to package the `tencentcloud` library and function code together into a zip file.
+If you need to deploy a function in the SCF console and use the SDK to invoke other functions, you need to package the `tencentcloud` library and function code together into a zip file.
 
 - Please note that the execution method specified when the function is created in the console must correspond to the code file and execution function in the zip file.
 - If the generated zip package is larger than 50 MB, it should be uploaded through COS.

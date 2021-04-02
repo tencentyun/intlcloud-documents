@@ -26,7 +26,9 @@ CLB 触发器支持在 **[云函数控制台](https://console.cloud.tencent.com/
 ## 请求与响应
 CLB 负载均衡发送到云函数的请求处理方式，和云函数响应给 CLB 负载均衡的返回值处理方式，称为请求方法和响应方法。请求方法和响应方法都为 CLB 触发器自动处理。CLB 触发器触发云函数时，必须按照响应方法返回数据结构。
 
-<span id="datastructures"></span>
+[](id:datastructures)
+
+
 #### CLB 触发器的集成请求事件消息结构
 在  CLB 负载均衡触发器接收到请求时，会将类似以下 JSON 格式的事件数据发送给绑定的云函数。
 ```
@@ -66,11 +68,11 @@ CLB 负载均衡发送到云函数的请求处理方式，和云函数响应给 
 | X-Client-Proto-Ver | 协议类型 |
 | X-Real-IP | 客户端IP地址 |
 | X-Forward-For | 经过的代理IP地址 |
-| X-Real-Port | 记录在 API 网关中配置过的 Path 参数以及实际取值。 |
-| X-Vip | CLB 负载均衡的 VIP 地址 |
-| X-Vport | CLB 负载均衡的 Vport  |
-| X-Url | 请求 CLB 负载均衡的 PATH |
-| X-Method |请求  CLB 负载均衡的 method |
+| X-Real-Port | 记录在 API 网关中配置过的 Path 参数以及实际取值。（可选，CLB 个性化配置） |
+| X-Vip | CLB 负载均衡的 VIP 地址（可选，CLB 个性化配置） |
+| X-Vport | CLB 负载均衡的 Vport（可选，CLB 个性化配置）  |
+| X-Url | 请求 CLB 负载均衡的 PATH（可选，CLB 个性化配置） |
+| X-Method |请求  CLB 负载均衡的 method（可选，CLB 个性化配置） |
 
 >! 
 > - 在 CLB 负载均衡迭代过程中，内容可能会增加更多。目前会保证数据结构内容仅增加，不删除，不对已有结构进行破坏。
@@ -79,8 +81,10 @@ CLB 负载均衡发送到云函数的请求处理方式，和云函数响应给 
 ### 集成响应
 集成响应，是指 CLB 负载均衡会将云函数的返回内容进行解析，并根据解析内容构造 HTTP 响应。通过使用集成响应，可以通过代码自主控制响应的状态码、headers、body 内容，可以实现自定义格式的内容响应，例如响应 XML、HTML、JSON 甚至 JS 内容。在使用集成响应时，需要按照 [CLB 负载均衡触发器的集成响应返回数据结构](#clbStructure)，才可以被成功解析，否则会出现  `{"errno":403,"error":"Analyse scf response failed."}` 错误信息。
 
-<span id="clbStructure"></span>
+[](id:clbStructure)
+
 #### CLB 触发器的集成响应返回数据结构
+
 在 CLB 负载均衡设置为集成响应时，需要返回类似如下内容的数据结构。
 ```
 {
