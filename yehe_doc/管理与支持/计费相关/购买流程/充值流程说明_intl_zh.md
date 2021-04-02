@@ -8,10 +8,14 @@
 进入“Billing Center”点击“Payment Management”选择“Payment”进行“Credit Card”支付。
 ![](https://main.qcloudimg.com/raw/2696012d2ed0e14ac49ad6e40634ddb4.png)
 
+在1分钟内针对相同金额的在线充值会进行弹框提示，规避人为的重复充值。
+
+![](https://main.qcloudimg.com/raw/33e2b541d95aa81b42ad764d7f712f90.png)
+
 支付完成后可前往“Transactions”进行充值明细查询：
  ![](https://main.qcloudimg.com/raw/45ec8479b54b15bfec31d62d97c62198.png)
- 
- 
+
+
 ### 银行转账
 1-如果您选择银行转账，请在柜台通过网上银行或银行存款的方式转账到我们的银行账户，您可以在下方清单中看到我们的账户信息。在付款时，请在备注中注明您的腾讯云账号。
 注意：如果您选择银行转账作为付款方式，请确保以美元付款。
@@ -39,7 +43,7 @@ SWIFT: MRMDUS33
 Remarks: Cloud service fee + developer account (unique ID)
 
 
-| B. 客户注册地为下方列表用户：|  | 
+| B. 客户注册地为下方列表用户：|  |
 |---------|---------|
 | Switzerland | Latvia |
 | Sweden | Italy |
@@ -56,7 +60,7 @@ Remarks: Cloud service fee + developer account (unique ID)
 | Lithuania | Cyprus |
 | Liechtenstein | Croatia |
 | Belgium | Bulgaria |
-| Austria |  
+| Austria |
 
 Beneficiary name:TENCENT CLOUD EUROPE B.V. 
 Beneficiary account: NL49HSBC2031728156 (USD account)
@@ -66,12 +70,12 @@ SWIFT Code: HSBCNL2A
 Remarks: Cloud service fee + developer account (unique ID)
 
 
-| C. 对于其他注册地的用户：|  | 
+| C. 对于其他注册地的用户：|  |
 |---------|---------|
-| Others | Philippines | 
-| Taiwan, China | Indonesia | 
-| Macau, China | Malaysia | 
-| Hong Kong, China | Singapore | 
+| Others | Philippines |
+| Taiwan, China | Indonesia |
+| Macau, China | Malaysia |
+| Hong Kong, China | Singapore |
 
 Beneficiary name: ACEVILLE PTE.LTD.	
 Beneficiary account: 260-737366-178 (USD account)
