@@ -1,3 +1,14 @@
+
+## March 2021
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr>
+<tr>
+<td>Scanning tables without primary key is supported</td>
+<td>With this feature, you can detect tables without primary key in the current instance through regular scanning and manual refreshing.</td>
+<td>2021-03</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/36039" target="_blank">Space Analysis</a></td></tr>
+</table>
+
 ## December 2020
 <table>
 <tr>
