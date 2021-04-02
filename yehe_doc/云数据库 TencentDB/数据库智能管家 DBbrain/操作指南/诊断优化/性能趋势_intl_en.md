@@ -1,9 +1,8 @@
 The performance trends feature of DBbrain not only supports the selection of multiple performance metrics such as key metrics, all metrics, and custom metrics, but also supports multiple ways to view performance trends, such as fine-grained view of one single performance metric trend, link comparison view of multiple performance metric trends, and time comparison view of multiple performance metric trends.
 
->?Currently, the performance trends feature is supported for TencentDB for MySQL (excluding the Basic Edition).
+>?Currently, the performance trends feature is supported only for TencentDB for MySQL (excluding the basic single-node instance).
 >
 ![](https://main.qcloudimg.com/raw/21d421be543c040140dd7a6a86226ef0.png)
-
 
 ## Viewing Performance Trend Metrics
 The performance trends feature supports selection of multiple performance metrics, including 4 categories (Resource Monitoring, MySQL Server, InnoDB Engine, and MySQL Replication) and 15 subcategories. You can select different metrics based on different OPS needs to view the performance trends of the selected instance against the selected metrics.
@@ -15,141 +14,97 @@ The performance trends feature supports selection of multiple performance metric
 >
 ![](https://main.qcloudimg.com/raw/11d33834252e836eebc908ac9c18cb07.png)
 
-
 The performance trends feature currently supports the following performance metrics:
 <table>
 <tr>
 <td rowspan=7>Resource Monitoring</th>
-<td>CPU</th>
-<td>CPU</th>
-</tr>
+<td>CPU</th><td>CPU</th></tr>
 <tr>
-<td rowspan=2 >Memory</td>
-<td>Memory</td>
-</tr>
+<td rowspan=2 >Memory</td><td>Memory</td></tr>
 <tr>
-<td>Memory usage</td>
-</tr>
+<td>Memory usage</td></tr>
 <tr>
-<td rowspan=2>Storage space</td>
-<td>Disk utilization</td>
-</tr>
+<td rowspan=2>Storage space</td><td>Disk utilization</td></tr>
 <tr>
-<td>Occupied disk space</td>
-</tr>
+<td>Occupied disk space</td></tr>
 <tr>
-<td rowspan=2>Traffic</td>
-<td>Outbound traffic</td>
-</tr>
+<td rowspan=2>Traffic</td><td>Outbound traffic</td></tr>
 <tr>
-<td>Inbound traffic</td>
-</tr>
+<td>Inbound traffic</td></tr>
 <tr>
 <td rowspan=13>MySQL Server</td>
-<td>TPS/QPS</td>
-<td>TPS/QPS</td>
-</tr>
+<td>TPS/QPS</td><td>TPS/QPS</td></tr>
 <tr>
 <td rowspan=4>Connection</td>
-<td>Max connections</td>
-</tr>
+<td>Max connections</td></tr>
 <tr>
-<td>Connected threads</td>
-</tr>
+<td>Connected threads</td></tr>
 <tr>
-<td>Running threads</td>
-</tr>
+<td>Running threads</td></tr>
 <tr>
 <td>Created threads</td>
-</tr>
 <tr>
 <td rowspan=6>Requests</td>
-<td>Select</td>
-</tr>
+<td>Select</td></tr>
 <tr>
-<td>Update</td>
-</tr>
+<td>Update</td></tr>
 <tr>
-<td>Delete</td>
-</tr>
+<td>Delete</td></tr>
 <tr>
-<td>Insert</td>
-</tr>
+<td>Insert</td></tr>
 <tr>
-<td>Replace</td>
-</tr>
+<td>Replace</td></tr>
 <tr>
-<td>Total requests</td>
-</tr>
+<td>Total requests</td></tr>
 <tr>
 <td rowspan=2>Slow query</td>
-<td>Slow queries</td>
-</tr>
+<td>Slow queries</td></tr>
 <tr>
-<td>Full-table scans</td>
-</tr>
+<td>Full-table scans</td></tr>
 <tr>
 <td rowspan=14>InnoDB Engine</td>
 <td rowspan=4>InnoDB buffer pool pages</td>
 <td>InnoDB empty pages</td>
-</tr>
 <tr>
 <td>Total InnoDB pages</td>
-</tr>
 <tr>
 <td>InnoDB logical reads</td>
-</tr>
 <tr>
 <td>InnoDB physical reads</td>
-</tr>
 <tr>
 <td rowspan=2>Read/Written InnoDB data</td>
 <td>InnoDB reads</td>
-</tr>
 <tr>
 <td>InnoDB writes</td>
-</tr>
 <tr>
 <td rowspan=2>InnoDB data reads/writes</td>
-<td>Total InnoDB reads</td>
-</tr>
+<td>Total InnoDB reads</td></tr>
 <tr>
-<td>Total InnoDB writes</td>
-</tr>
+<td>Total InnoDB writes</td></tr>
 <tr>
 <td rowspan=4>InnoDB row operations</td>
-<td>InnoDB rows deleted</td>
-</tr>
+<td>InnoDB rows deleted</td></tr>
 <tr>
-<td>InnoDB rows inserted</td>
-</tr>
+<td>InnoDB rows inserted</td></tr>
 <tr>
-<td>InnoDB rows updated</td>
-</tr>
+<td>InnoDB rows updated</td></tr>
 <tr>
-<td>InnoDB rows read</td>
-</tr>
+<td>InnoDB rows updated</td></tr>
 <tr>
 <td rowspan=2>InnoDB row lock</td>
-<td>InnoDB row lock waits</td>
-</tr>
-<td>Average InnoDB row lock acquiring time</td>
-</tr>
+<td>InnoDB row lock waits</td></tr>
+<td>Average InnoDB row lock acquiring time</td></tr>
 <tr>
 <td rowspan=4>MySQL Replication</td>
 <td rowspan=2>Replication status</td>
-<td>Source-replica delay distance</td>
-</tr>
+<td>Source-replica delay distance</td></tr>
 <tr>
 <td>Source-replica delay time</td>
-</tr>
 <tr>
 <td rowspan=2>Replication delay</td>
-<td>IO thread status</td>
-</tr>
+<td>IO thread status</td></tr>
 <tr>
-<td>SQL thread status</td>
-</tr>
+<td>SQL thread status</td></tr>
 </tbody></table>
 
 
@@ -161,7 +116,6 @@ Drag on the view for fine-grained display of one single performance metric trend
 ![](https://main.qcloudimg.com/raw/54b877aeee9d5ae2495b4496489caa2d.png)
 
 ## Switching Between Real-Time/Historical Views
-
 1. Log in to the [DBbrain console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Performance Optimization** on the left sidebar. On the displayed page, select a database at the top and select the **Performance Trends** tab.
 2. Click **Real-Time** or **Historical** to view the corresponding real-time or historical performance trends.
  - The real-time performance trends view allows you to view the performance trends of the instance over the last 3 minutes and is automatically refreshed by default. Click **Disable refresh** to stop refreshing the trends in real time.

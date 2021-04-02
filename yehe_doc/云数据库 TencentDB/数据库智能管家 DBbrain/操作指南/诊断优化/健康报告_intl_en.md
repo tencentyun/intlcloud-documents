@@ -1,6 +1,6 @@
 The health report feature can routinely perform health checks on database instances and output the corresponding health reports for the specified time period, helping you gain in-depth insights into the health, failures, and risks of the database instance and providing you with professional optimization suggestions.
 
->?Currently, health reports are supported only for TencentDB for MySQL (excluding the Basic Edition).
+>?Currently, health reports are supported only for TencentDB for MySQL (excluding the basic single-node instance).
 
 ## Creating a Health Report
 Log in to the [DBbrain console](https://console.cloud.tencent.com/dbbrain/analysis) and select **Performance Optimization** on the left sidebar. On the displayed page, select a database at the top and select the **Health Report** tab. You can view the health score trends and the problem overview for the specified time period.
@@ -13,7 +13,7 @@ Log in to the [DBbrain console](https://console.cloud.tencent.com/dbbrain/analys
 In the **Score Details** section, you can view instance score details for database availability, maintainability, performance, and reliability. For more information, see [Exception Alarms](https://intl.cloud.tencent.com/document/product/1035/37177).
 
 ## Viewing/Downloading a Health Report
-- In the task list, the type, health level, creation time, start and end times, progress, and operations of each health report task are displayed.
+- In the task list, the type, health level, creation time, starting and ending time, progress, and operations of each health report task are displayed.
  - The **Type** column displays how the report is generated, including being generated manually, as scheduled, or in an database inspection.
  - The **Health Level** column displays the health level obtained through diagnoses, including healthy, suboptimal, risky, and critical.
 - You can click **View Report** in the **Operation** column to view the health report details and download the report as a PDF file.
@@ -42,8 +42,8 @@ A report contains the following sections: overview, basic information, health, i
 #### Reported health level definitions
 | No. | Type | Description |
 | ---- | ------ | --------------------- |
-| 1    | Healthy   | Score ≥ 95         |
-| 2    | Suboptimal |80 ≤ score < 95 |
-| 3    | Risky   | 60 ≤ score < 80 |
-| 4    |  Critical  | Score < 60         |
+| 1 | Healthy | Score ≥ 95 |
+| 2 | Suboptimal |80 ≤ score < 95 |
+| 3 | Risky | 60 ≤ score < 80 |
+| 4 | Critical | Score < 60 |
 
