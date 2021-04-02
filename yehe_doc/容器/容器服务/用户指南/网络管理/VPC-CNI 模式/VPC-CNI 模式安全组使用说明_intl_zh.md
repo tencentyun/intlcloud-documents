@@ -10,7 +10,7 @@
 
 ## IPAMD 组件角色添加安全组接口访问权限
 
-1. 登录 [访问管理控制台](https://console.cloud.tencent.com/cam/policy)，选择左侧的【策略】。中`新建自定义策略`。
+1. 登录 [访问管理控制台](https://console.cloud.tencent.com/cam/policy)，选择左侧的【策略】。
 2. 在“策略”详情页中，单击【新建自定义策略】。
 3. 在弹出的选择创建方式窗口中，单击【按策语法创建】，进入选择策略模板页面。
 4. 选择“空白模板”，并单击【下一步】，进入编辑策略页面。
@@ -41,6 +41,7 @@
 - 执行以下命令，在 `spec.template.spec.containers[0].args` 中加入启动参数。
   修改后，ipamd 会自动重启并生效。
 	生效后，存量网卡没有关联安全组的会按以下策略绑定安全组，增量网卡则都会绑定以下安全组。
+
 ```yaml
 - --enable-security-groups
 # 如果希望默认继承自主网卡/实例的安全组，则不添加 security-groups 参数
