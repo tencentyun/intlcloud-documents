@@ -14,6 +14,30 @@ This document describes the MySQL kernel version updates. For information on how
 - Fixed the crash caused by phrase search under multi-byte character sets in full-text index.
 
 ## MySQL 5.7
+### 20201231
+#### New features
+- Supports using `NOWAIT` and `SKIP LOCKED` in `SELECT FOR UPDATE/SHARE` statements.
+- Supports dynamic setting of thread pooling mode or connection pooling mode by using the `thread_handling` parameter.
+- Supports source-replica buffer pool synchronization.
+- Supports monitoring of user connection status. Monitoring items include sync/async IO, memory, log size, CPU time, lock duration, etc.
+
+#### Performance optimizations
+- Optimizes the transaction subsystem to improve the high concurrency performance.
+- Optimizes the time to start crash recovery for large transactions.
+- Optimizes redo log flushing.
+- Optimizes the buffer pool initialization time.
+- Optimizes UTF8/UTF8MB4 string efficiency.
+- Optimizes audit performance.
+- The value of `gtid_purged` does not have to be empty.
+- Optimizes the backup lock. `LOCK TABLES FOR BACKUP`, `LOCK BINLOG FOR BACKUP`, and `UNLOCK BINLOG` are supported. `FLUSH TABLES WITH READ LOCK` is used to take a backup of the database, but it blocks the whole database from providing service. In contrast, the three statements above use a lightweight backup lock to ensure data consistency during physical/logical backup while allowing the database to providing service.
+- Optimizes the `drop table` operations on big tables.
+
+#### Bug fixes
+- Fixed the hang issue when querying `performance_schema`.
+- Fixed the overflow of the `digest_add_token` function.
+- Fixed the crashes when accessing ibuf using the `truncate table` statement.
+- Fixed incorrect queries when `const` in `left join` statements was calculated earlier than it should.
+
 ### 20200930
 #### Performance optimizations
 - Optimizes the backup lock. 
@@ -93,7 +117,6 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 - Fixed the crash caused by the use of `NAME_CONST`.
 - Fixed the illegal mix of collation error caused by character set.
 
-
 ### 20190203
 #### New features
 - Supports async deletion of big tables. You can clear files asynchronously and slowly to avoid business performance fluctuation caused by deleting big tables. To apply for this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
@@ -108,7 +131,6 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 - Fixed the hard error when `fsync` returned `EIO` and retries were made repeatedly.
 - Fixed the error where replication was interrupted and could not be recovered due to GTID holes.
    
-
 ### 20180918
 #### New features
 - Supports automatic killing of idle transactions to reduce resource conflicts. To apply for this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
@@ -117,14 +139,13 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 - Supports memory management with jemalloc, which can replace the jlibc memory management module to reduce memory usage and improve allocation efficiency.
    
 #### Performance optimizations
-- Optimizes binlog switch to reduce the `rotate` holdlock duration and improve system performance.
+- Optimizes binlog switch to reduce the `rotate` lock duration and improve system performance.
 - Increases the crash recovery speed.
     
 #### Bug fixes
 - Fixed the error where an event became invalid due to source/replica switch.
 - Fixed the crash caused by `REPLAY LOG RECORD`.
 - Fixed the error where the query result was incorrect due to loose index scans.
-
 
 ### 20180530
 #### New features
@@ -138,7 +159,7 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 #### Bug fixes
 - Fixed the error where switch failed due to inconsistent checkpoints between `relay_log_pos` and `master_log_pos`.
 - Fixed the crash caused by `Crash on UPDATE ON DUPLICATE KEY`.
-- Fixed the “Invalid escape character in string.” error when a JSON column was imported.
+- Fixed the "Invalid escape character in string." error when a JSON column was imported.
    
 ### 20171130
 #### New features
@@ -150,8 +171,16 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 - Fixed the error of `innodb_buffer_pool_pages_data` overflow by calculating it based on `bytes_data`.
 - Fixed the error where speed limit plugin became unavailable in async mode.
 
-   
 ## MySQL 5.6
+### 20201231
+#### Bug fixes
+- Fixed the error (error code: 1032) caused by hash scans. 
+- Fixed the error where REPLACE INTO does not update AUTO_INCREMENT columns in row-based replication.
+- Fixed the memory leak caused by not freeing up the memory requested for parsing SQL statements.
+- Fixed the error where the sql_mode check is skipped when running CREATE TABLE AS SELECT.
+- Fixed the error where the sql_mode check is skipped when inserting default values.
+- Fixed the error where the sql_mode check is skipped when running UPDATE with bound parameters.
+
 ### 20200915
 #### New features
 - Supports [SQL throttling](https://intl.cloud.tencent.com/document/product/1035/36037).
@@ -163,7 +192,7 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 - Fixed the hang issue of `rename table` on both source and replica. 
 - Fixed the crash when `event_scheduler` was set to `disable` and `cdb_skip_event_scheduler` was changed from `on` to `off`. 
 - Fixed the `sync_wait_array` assertion failure when the maximum number of connections of `tencentroot` was not counted in `srv_max_n_threads`. 
-- Fixed the crash of source-replica parallel replication caused by the system table structure inconsistency between TencentDB for MySQL v5.6 and other cloud vendors’ MySQL v5.6. 
+- Fixed the crash of source-replica parallel replication caused by the system table structure inconsistency between TencentDB for MySQL v5.6 and other cloud vendors' MySQL v5.6. 
 - Fixed the `INSERT ON DUPLICATE KEY UPDATE THE WRONG ROW` error. 
 - Fixed the error of `index_mapping`. 
 - Fixed the MTR failure. 
@@ -188,7 +217,6 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 - Fixed the error where replica instance replay might fail due to the deletion of temp table.
 - Fixed the error of deadlock under high concurrency.
    
-
 ### 20190203
 #### New features
 - Supports async deletion of big tables. You can clear files asynchronously and slowly to avoid business performance fluctuation caused by deleting big tables. To apply for this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
@@ -211,7 +239,6 @@ The `innodb_fast_ahi_cleanup_for_drop_table` parameter helps significantly reduc
 #### Bug fixes
 - Fixed the crash caused by `REPLAY LOG RECORD`.
 - Fixed the error of time data inconsistency between source and replica due to decimal precision issues.
-
 
 ### 20180130
 #### New features

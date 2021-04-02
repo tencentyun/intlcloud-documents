@@ -1,9 +1,9 @@
+
 TencentDB for MySQL enables you to easily deploy and use scalable instances of MySQL database, the most popular open-source relational database in the world, in the cloud in a matter of minutes. It features high cost performance and elastic hardware scalability without downtime. As a complete database solution with various features such as backup, rollback, monitoring, fast scaling, and data transfer, it simplifies your IT OPS and allows you to focus more on business development.
 
 TencentDB for MySQL provides diversified security reinforcement features to ensure the reliability and security of your data. In order to make your TencentDB for MySQL instances more secure, you are recommended to use the following security features based on your business needs:
-- Network: [security group](https://intl.cloud.tencent.com/document/product/236/14470), [VPC](https://intl.cloud.tencent.com/document/product/215/535), etc.
-- Storage: data encryption, [automatic backup](https://intl.cloud.tencent.com/document/product/236/32340), etc.
-- Disaster recovery: [intra-region disaster recovery](https://intl.cloud.tencent.com/document/product/236/8459), [cross-region disaster recovery](https://intl.cloud.tencent.com/document/product/236/7272).
+- Network: [security group](https://intl.cloud.tencent.com/document/product/236/14470) and [VPC](https://intl.cloud.tencent.com/document/product/215/535)
+- Storage: [data encryption](https://intl.cloud.tencent.com/document/product/236/38491) and [automatic backup](https://intl.cloud.tencent.com/document/product/236/37796)
+- Permission: [access control](https://intl.cloud.tencent.com/document/product/236/35296)
+- Security: [data security](https://cloud.tencent.com/document/product/236/53652) and [database inspection](https://cloud.tencent.com/document/product/236/53653)
 
-Relevant security features:
- [Attack protection](https://intl.cloud.tencent.com/document/product/236/35295), [access control](https://intl.cloud.tencent.com/document/product/236/35296), [network isolation](https://intl.cloud.tencent.com/document/product/236/35297), [data storage encryption](https://intl.cloud.tencent.com/document/product/236/35298), [backup and restoration](https://intl.cloud.tencent.com/document/product/236/35299), [instance disaster recovery](https://intl.cloud.tencent.com/document/product/236/35300), [data termination](https://intl.cloud.tencent.com/document/product/236/35301), [version upgrade](https://intl.cloud.tencent.com/document/product/236/35302).
