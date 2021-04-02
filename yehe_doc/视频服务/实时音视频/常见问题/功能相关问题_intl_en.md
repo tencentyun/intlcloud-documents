@@ -37,8 +37,8 @@ The concept of roles (anchors and viewers) is applicable only in the live stream
 The following application scenarios are supported:
 - TRTCAppSceneVideoCall: the video call scenario, which is suitable for one-to-one video calls, video conferences with up to 300 participants, online medical consultation, video chat, and video interviews
 - TRTCAppSceneLIVE: the interactive video live broadcasting scenario, which is suitable for low-latency video live streaming, interactive classroom for up to 100,000 participants, live video competition, video dating, remote training, and mega conferences
-- TRTCAppSceneAudioCall: the audio call scenario, which is suitable for one-to-one audio calls, audio conferences with up to 300 participants, voice chat, and online Werewolf playing
-- TRTCAppSceneVoiceChatRoom: the interactive audio live broadcasting scenario, which is suitable for low-latency audio live streaming, live audio co-anchoring, voice chat rooms, karaoke, and FM broadcasting
+- TRTCAppSceneAudioCall: the audio call scenario, which is suitable for one-to-one audio calls, audio conferences with up to 300 participants, audio chat, and online Werewolf playing
+- TRTCAppSceneVoiceChatRoom: the interactive audio live broadcasting scenario, which is suitable for low-latency audio live streaming, live audio co-anchoring, audio chat rooms, karaoke, and FM broadcasting
 
 
 [](id:que9)
@@ -47,7 +47,7 @@ TRTC supports platforms including iOS, Android, Windows (C++), Windows (C#), mac
 
 [](id:que10)
 ### What are the differences among TRTC Lite, Professional, and Enterprise? 
-See [Differences Between Editions](https://intl.cloud.tencent.com/document/product/647/34615).
+See [Differences Among Editions](https://intl.cloud.tencent.com/document/product/647/34615).
 
 
 [](id:que11)
@@ -81,10 +81,6 @@ There isn’t a limit.
 [](id:que15)
 ### Can TRTC be deployed on-premises?
 No, it cannot.
-
-[](id:que16)
- 
- 
 
 [](id:que17)
 ### How long is the average delay in TRTC?
@@ -314,3 +310,25 @@ Yes, you can. For details, please see [CDN Relayed Live Streaming](https://intl.
 ### What formats does TRTC support for custom rendering? 
 - iOS: I420, NV12, and BGRA
 - Android: I420 and Texture2D
+
+[](id:que67)
+### What is TRTC?
+Tencent Real-Time Communication (TRTC) leverages Tencent's years of experience in network and audio/video technologies to offer group audio/video calls and low-latency interactive live streaming solutions, allowing you to quickly develop cost-effective, low-latency, and high-quality interactive audio/video services. For details, please see [Product Introduction > Overview](https://intl.cloud.tencent.com/document/product/647/35078).
+
+[](id:que68)
+### How can I try out the TRTC demo?
+Please see [Free Demo](https://intl.cloud.tencent.com/document/product/647/35076).
+
+[](id:que69)
+### How can I get started quickly with TRTC?
+TRTC offers demo source code for different platforms to allow you to quickly build your own apps. For details, please see [User Tutorial](https://intl.cloud.tencent.com/document/product/647/39386).
+
+[](id:que70)
+### How do I enable on-cloud recording and playback in TRTC?
+Please see [On-Cloud Recording and Playback](https://intl.cloud.tencent.com/document/product/647/35426).
+
+
+
+
+
+

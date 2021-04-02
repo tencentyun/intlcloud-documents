@@ -1,8 +1,8 @@
 The event callback service can notify your server of TRTC events in the form of HTTP/HTTPS requests. It has integrated certain events under the room event group and media event group. You can provide relevant configuration information to Tencent Cloud to activate this service.
 
-
+[](id:deploy)
 ## Configuration Information
-You can configure callback information in the TRTC console. After completing the configuration, you can receive event callback notifications. For detailed directions, please see [Callback Configuration](https://cloud.tencent.com/document/product/647/52428).
+You can configure callback information in the TRTC console. After completing the configuration, you will receive event callback notifications. For detailed directions, please see [Callback Configuration](https://intl.cloud.tencent.com/document/product/647/39559).
 
 
 >?You need to provide the following information for the configuration:
@@ -10,30 +10,30 @@ You can configure callback information in the TRTC console. After completing the
 >- **Optional**: a custom key containing up to 32 uppercase and lowercase letters and digits, which is needed for the calculation of signatures
 
 ## Timeout and Retry
-If the event callback server doesn't receive a response from your server within 5 seconds after sending a message notification, it will consider that the notification has failed. After the initial notification fails, it will retry immediately, and for subsequent failures, it will continue to retry at intervals of **10 seconds** until the message lasts for more than 1 minute.
+A notification will be considered failed if the callback server does not receive a response from your server within 5 seconds of message sending. It will try again immediately after the first failure and retry **10 seconds** after every subsequent failure. No retries will be made 1 minute after the first try.
 
-
+[](id:format)
 ## Event Callback Message Format
 
 Callback messages are sent to your server in the form of HTTP/HTTPS POST requests, which consist of the following parts.
 
-- Character encoding: UTF-8
-- Request: JSON for the request body
-- Response: HTTP STATUS CODE = 200. The server ignores the content of the response packet. For protocol-friendliness, we recommend adding `JSON: `{"code":0}`` to the response.
-
+- **Character encoding**: UTF-8
+- **Request**: JSON for the request body
+- **Response**: HTTP STATUS CODE = 200. The server ignores the content of the response packet. For protocol-friendliness, we recommend adding `JSON: `{"code":0}`` to the response.
+- **Package body sample**: below is a sample of the package body for the room entry event of the room event group.
 <dx-codeblock>
-
+::: JSON JSON
 {
-	
-	
-	
-	
-		
-		
-		
-		
-		
-		
+	"EventGroupId": 1,        #Room event group
+	"EventType": 103,        #Room entry event
+	"CallbackTs": 1615554923704,        #Callback time, in milliseconds
+	"EventInfo": {
+		"RoomId": 12345,        #Numeric room number
+		"EventTs": 1608441737,        #Event occurrence time, in seconds
+		"UserId": "test",        #User ID
+		"UniqueId": 1615554922656,        #Unique identifier
+		"Role": 20,        #User role: anchor
+		"Reason": 1        #Reason: voluntary entry
 		}
 }
 :::
@@ -42,17 +42,17 @@ Callback messages are sent to your server in the form of HTTP/HTTPS POST request
 
 
 ## Parameters
-<td> message
+[](id:message)
 ### Callback message parameters
 
 - The header of a callback message contains the following fields.
 <table id="header">
 <tr><th>Field</th><th>Value</th></tr></thead><tr>
-<td>Content-Type</td><td>application/json</td>
+<td>Content-Type</td><td>Application/JSON</td>
 </tr><tr>
 <td>Sign</td><td>Signature value</td>
 </tr><tr>
-<td>SdkAppId</td><td>sdk application id</td>
+<td>SdkAppId</td><td>SDK application ID</td>
 </tr></table>
 - The body of a callback message contains the following fields.
 <table id="body">
@@ -75,7 +75,7 @@ Callback messages are sent to your server in the form of HTTP/HTTPS POST request
 </tr>
 </tbody></table>
 
-
+[](id:eventId)
 ### Event group ID
 
 | Field            | Value   | Description       |
@@ -83,7 +83,7 @@ Callback messages are sent to your server in the form of HTTP/HTTPS POST request
 | EVENT_GROUP_ROOM  | 1    | Room event group |
 | EVENT_GROUP_MEDIA | 2    | Media event group |
 
-
+[](id:event_type)
 ### Event type
 
 | Field                  | Value   | Description             |
@@ -91,8 +91,8 @@ Callback messages are sent to your server in the form of HTTP/HTTPS POST request
 | EVENT_TYPE_CREATE_ROOM  | 101  | Creating room         |
 | EVENT_TYPE_DISMISS_ROOM | 102  | Closing room         |
 | EVENT_TYPE_ENTER_ROOM   | 103  | Entering room        |
-| EVENT_TYPE_EXIT_ROOM    | 104  | Exiting room          |
-
+| EVENT_TYPE_EXIT_ROOM    | 104  | Leaving room          |
+|  EVENT_TYPE_CHANGE_ROLE   | 105  |    Switching roles      |
 | EVENT_TYPE_START_VIDEO  | 201  | Starting pushing video data |
 | EVENT_TYPE_STOP_VIDEO   | 202  | Stopping pushing video data |
 | EVENT_TYPE_START_AUDIO  | 203  | Starting pushing audio data |
@@ -100,21 +100,21 @@ Callback messages are sent to your server in the form of HTTP/HTTPS POST request
 | EVENT_TYPE_START_ASSIT  | 205  | Starting pushing substream data |
 | EVENT_TYPE_STOP_ASSIT   | 206  | Substream data push end |
 
-
+[](id:event_infor)
 ### Event information
 
 | Field  | Type   | Description                              |
 | ------- | ------ | --------------------------------- |
 RoomId      |     String/Number       |     Room ID (same type as Room ID on the client)    |
-| EventTs | Number | Unix timestamp (in seconds) of event    |
+| EventTs | Number | Unix timestamp (s) of event occurrence    |
 | userID | String | User ID |
-
+| UniqueId  | Number | [Unique identifier](#UniqueId) (option: carried by the room event group)                            |
 | Role    | Number | [Role type](#role_type) (option: carried during room entry/exit)  |
 | Reason  | Number | [Reason](#reason) (option: carried during room entry/exit) |
 
+>?[](id:UniqueId) **Definition of unique identifier:** when a user experiences unusual events such as network change, abnormal exit and reentry, your callback server may receive multiple callbacks of the entry and exit of the same user. A unique identifier can help identify that the multiple exits and entries are from the same user.
 
-
-
+[](id:role_type)
 ### Role type
 
 | Field             | Value   | Description |
@@ -122,13 +122,13 @@ RoomId      |     String/Number       |     Room ID (same type as Room ID on the
 | MEMBER_TRTC_ANCHOR | 20   | Anchor |
 | MEMBER_TRTC_VIEWER | 21   | Viewer |
 
-
-### Specific reason
+[](id:reason)
+### Reason
 
 | Field    | Description                              |
 | -------  | --------------------------------- |
-|Room entry   |<li/>1: successful entry <li/>2: entry after network switch<li/>3: timeout and retry <li/>4: entry in co-anchoring |
-|Room exit | <li/>1: successful exit <li/>2: exit due to timeout <li/>3: exit after the user entered the room via another client <li/>4: exit due to user deletion <li/>5: cancelling of co-anchoring <li/>6: force killing |
+|Room entry   |<li/>1: voluntary entry <li/>2: entry after network switch<li/>3: timeout and retry <li/>4: entry in co-anchoring |
+|Room exit | <li/>1: voluntary exit <li/>2: exit due to timeout <li/>3: exit because the user was removed from the room <li/>4: exit due to the cancelling of co-anchoring <li/>5: force killing|
 
 
 
@@ -139,5 +139,7 @@ Signatures are calculated using the HMAC SHA256 encryption algorithm. Upon recei
 Sign = base64(hmacsha256(key, body))
 ```
 
-
-
+>! `body` is the original package body of the callback request you receive. Do not make any modifications. Below is a sample.
+>```
+>body="{\n\t\"EventGroupId\":\t1,\n\t\"EventType\":\t103,\n\t\"CallbackTs\":\t1615554923704,\n\t\"EventInfo\":\t{\n\t\t\"RoomId\":\t12345,\n\t\t\"EventTs\":\t1608441737,\n\t\t\"UserId\":\t\"test\",\n\t\t\"UniqueId\":\t1615554922656,\n\t\t\"Role\":\t20,\n\t\t\"Reason\":\t1\n\t}\n}"
+>```
