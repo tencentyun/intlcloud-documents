@@ -1,7 +1,8 @@
 
 ### 如何关闭 TPNS 的保活功能？
 
-TPNS 默认开启联合保活能力，请在应用初始化的时候，例如 Application 或 LauncherActivity 的 onCreate 中调用如下接口，并传递 false 值：
+如需关闭联合保活功能，请在应用初始化的时候，例如 Application 或 LauncherActivity 的 onCreate 中调用如下接口，并传递 false 值：
+>!仅 1.1.6.0 之后版本支持关闭联合保活功能，1.1.6.0之前版本TPNS 默认开启联合保活能力，且不可关闭。
 
 ```java
 XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
@@ -25,11 +26,11 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 
 | 厂商 | 是否需要上架应用市场 |
 |---------|---------|
-| 小米 | 否，个人开发者账号即可 [开通小米平台推送服务](https://dev.mi.com/console/doc/detail?pId=68) |
-| 魅族 | 否，个人开发者账号即可 [开通魅族平台推送服务](http://open.res.flyme.cn/fileserver/upload/file/201709/a271468fe23b47408fc2ec1e282f851f.pdf)|
+| 小米 | 否，个人开发者账号即可 [开通小米平台推送服务](https://dev.mi.com/console/doc/detail?pId=68) | 
+| 魅族 | 否，个人开发者账号即可 [开通魅族平台推送服务](http://open.res.flyme.cn/fileserver/upload/file/201709/a271468fe23b47408fc2ec1e282f851f.pdf)| 
 | FCM | 否，个人开发者账号即可开通 FCM 推送服务 |
-| 华为 | 否，个人开发者账号即可 [开通华为平台推送服务](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-enable_service#enable-service) |
-| OPPO | 是，且需要企业开发者账号可 [开通 OPPO 平台推送服务](https://open.oppomobile.com/wiki/doc/#id=10195)|
+| 华为 | 否，个人开发者账号即可 [开通华为平台推送服务](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-enable_service#enable-service) | 
+| OPPO | 是，且需要企业开发者账号可 [开通 OPPO 平台推送服务](https://open.oppomobile.com/wiki/doc/#id=10195)| 
 | vivo | 是 ，且需要企业开发者账号可 [开通 vivo 平台推送服务](https://dev.vivo.com.cn/documentCenter/doc/2)|
 
 
@@ -43,7 +44,7 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 问题代码来源为 vivo 厂商通道推送 SDK，TPNS 项目组无法变更其内容；此问题已向 vivo 推送服务相关人员反馈，表示相关静态字段为 SDK 遗留代码，并无实际使用，会尽快排期修复。 当前可参考的快速解决办法如下：
 - 方式一（推荐）： 在《APP隐私声明》里增加 [移动推送 TPNS 的隐私说明](https://intl.cloud.tencent.com/document/product/1024/30713)。 
 - 方式二（不推荐）： 剔除掉 vivo 相关 jar 包，但是也会丧失掉 vivo 厂商通道的能力。
-
+ 
 ### 什么是 TPNS 通道？
 
 - TPNS 通道是移动推送 TPNS 的自建通道，依赖移动推送 TPNS Service 在线（与移动推送 TPNS 后台服务器保持长连接）才能下发消息，因此 TPNS 通道的实际发送一般比其他厂商通道的数据要低。
@@ -103,15 +104,15 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 
 | 回调 | 抵达回调 | 点击回调 |
 |---------|---------|---------|
-| 小米 | 支持 | 支持 |
-| 魅族 | 支持 | 支持 |
-| FCM | 支持 | 支持 |
+| 小米 | 不支持 | 支持 |
+| 魅族 | 不支持 | 支持 |
+| FCM | 不支持 | 支持 |
 | 华为 | 不支持 | 支持 |
 | OPPO | 不支持 | 支持 |
 | vivo | 不支持 | 支持 |
 
 >! 厂商通道的点击回调需 SDK 版本1.2.0.1及以上版本支持；旧版本仅支持华为、小米、魅族、vivo。
-
+>
 
 
 ### 应用接入了厂商通道，但在调试过程中遇到 other push Token 为空的问题，如何解决？
@@ -132,13 +133,13 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 目前 IM 已使用 TPNS 提供的厂商 jar 包，请按照下方表格替换相关依赖包，替换后即可解决。
 
 
-| 推送通道 | 系统要求 | 条件说明 |
-| --------------- | ------| -------------------------------------------- |
-| 小米推送| MIUI|使用小米推送，添加依赖：`implementation 'com.tencent.tpns:xiaomi:1.2.1.3-release'`|
-| 华为推送| EMUI|使用华为推送，添加依赖：<li>`implementation 'com.tencent.tpns:huawei:1.2.1.3-release'`<li>`implementation 'com.huawei.hms:push:5.0.2.300'`|
-| Google FCM 推送| Android 4.1及以上|手机端需安装 Google Play Services 且在中国大陆地区以外使用。添加依赖：`implementation 'com.google.firebase:firebase-messaging:20.2.3'`|
-| 魅族推送 | Flyme| 使用魅族推送，添加依赖：`implementation 'com.tencent.tpns:meizu:1.2.1.3-release'` |
-| OPPO 推送| ColorOS |并非所有 OPPO 机型和版本都支持使用 OPPO 推送，使用 OPPO 推送，添加依赖：`implementation 'com.tencent.tpns:oppo:1.2.1.3-release'`|
+ | 推送通道 | 系统要求 | 条件说明 |
+ | --------------- | ------| -------------------------------------------- | 
+ | 小米推送| MIUI|使用小米推送，添加依赖：`implementation 'com.tencent.tpns:xiaomi:1.2.1.3-release'`|
+ | 华为推送| EMUI|使用华为推送，添加依赖：<li>`implementation 'com.tencent.tpns:huawei:1.2.1.3-release'`<li>`implementation 'com.huawei.hms:push:5.0.2.300'`| 
+| Google FCM 推送| Android 4.1及以上|手机端需安装 Google Play Services 且在中国大陆地区以外使用。添加依赖：`implementation 'com.google.firebase:firebase-messaging:20.2.3'`| 
+| 魅族推送 | Flyme| 使用魅族推送，添加依赖：`implementation 'com.tencent.tpns:meizu:1.2.1.3-release'` | 
+| OPPO 推送| ColorOS |并非所有 OPPO 机型和版本都支持使用 OPPO 推送，使用 OPPO 推送，添加依赖：`implementation 'com.tencent.tpns:oppo:1.2.1.3-release'`| 
 | vivo 推送| FuntouchOS|并非所有 vivo 机型和版本都支持使用 vivo 推送，使用 vivo 推送，添加依赖：`implementation 'com.tencent.tpns:vivo:1.2.1.3-release'`|
 
 ### 如何适配 small icon 小图标？
@@ -161,12 +162,14 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 
 适配后的具体效果如下，建议参考 Demo logo 图标进行作图。
 
+<img src="https://main.qcloudimg.com/raw/d9f92fb413aa98a01af64b2c17680bef.jpg" width="60%"></img>
+
 
 >?
->- small icon 必须是带 Alpha 透明通道的 PNG 图片。
->- 背景必须是透明。
->- 周围不宜留过多 padding。
->- 建议统一使用46 x 46px，过小图片会模糊，过大系统会自动缩小。
+- small icon 必须是带 Alpha 透明通道的 PNG 图片。
+- 背景必须是透明。
+- 周围不宜留过多 padding。
+- 建议统一使用46 x 46px，过小图片会模糊，过大系统会自动缩小。
 
 
 ### Flyme 6.0 及以下版本的魅族手机，为何消息抵达设备却不在通知栏展示？
