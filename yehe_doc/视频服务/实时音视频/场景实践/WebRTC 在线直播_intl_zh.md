@@ -141,7 +141,7 @@ im.enterRoom('your roomID').then((imResponse) => {
 ### 步骤4：下载并配置 Demo 源码
 1. 下载 [腾讯云 Web 直播互动组件 Demo 工程](https://github.com/tencentyun/TWebLive)。
 2. 打开 `TWebLive/dist/debug/GenerateTestUserSig.js` 文件，并设置相关参数：<ul style="margin:0">
-   <li/>SDKAPPID：请设置为 <a href="#step2">步骤1</a> 中获取的实际应用 SDKAppID。
+   <li/>SDKAPPID：请设置为 <a href="#step2">步骤2</a> 中获取的实际应用 SDKAppID。
     <li/>SECRETKEY：请设置为 <a href="#step2">步骤2</a> 中获取的实际密钥信息。
     <li/>PLAYDOMAIN：CDN观看，配置播放域名。（如果不需要 CDN 直播观看，可略过此配置。）
     </ul>
