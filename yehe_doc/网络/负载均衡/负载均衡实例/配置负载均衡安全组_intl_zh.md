@@ -10,11 +10,11 @@
 安全组是一种虚拟防火墙，具备有状态的数据包过滤功能，控制实例级别的出入流量，详情请参见 [安全组概述](https://intl.cloud.tencent.com/document/product/213/12452)。
 
 CLB 安全组为绑定在 CLB 实例上的安全组，CVM 安全组为绑定在 CVM 上的安全组，二者限制的对象不同。CLB的安全组配置，主要有如下两种模式：
-- [开启安全组默认放通](#open)
-- [关闭安全组默认放通](#close)
+- [开启安全组默认放通](#open-security-group)
+- [关闭安全组默认放通](#close-security-group)
 
 
-<span id ="open"></span>
+<span id ="open-security-group"></span>
 ### 开启安全组默认放通
 ![](https://main.qcloudimg.com/raw/0d2b50ca557d805ce5790fcdd3974b40.jpg)
 开启安全组默认放通后：
@@ -23,7 +23,7 @@ CLB 安全组为绑定在 CLB 实例上的安全组，CVM 安全组为绑定在 
 <li>若 CLB 实例不配置安全组，则放通所有流量：CLB 实例的 VIP 上，仅配置了监听器的端口才能被访问，因此监听端口将放通所有 IP 的流量。</li>
 <li>若需拒绝某个 Client IP 的流量，必须在 CLB 的安全组中拒绝访问；在 CVM 的安全组中拒绝某个 IP 的访问将<strong>不对</strong>来自 CLB 的流量生效，只对来自公网 IP（包括普通公网 IP 和 EIP）的流量生效。</li></ul>
 
-<span id ="close"></span>
+<span id ="close-security-group"></span>
 ### 关闭安全组默认放通
 ![](https://main.qcloudimg.com/raw/9357f8d81a0027110bd6a977cda4aafc.jpg)
 关闭安全组默认放通后：</p>
