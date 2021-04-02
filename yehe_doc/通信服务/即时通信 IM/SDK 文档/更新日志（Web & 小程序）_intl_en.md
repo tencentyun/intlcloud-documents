@@ -1,3 +1,20 @@
+### 2.10.1 @2021.3.19
+
+**Added**
+
+- The [createMergerMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createMergerMessage) API for creating combined messages.
+- The [createForwardMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createForwardMessage) API for creating forward messages.
+- When an account logs in on multiple instances or clients, once conversation read is reported on one instance or client, the unread count of the conversation will be synchronously cleared on the web client.
+
+**Changed**
+
+MTA statistics was deprecated.
+
+**Fixed**
+
+- Web: when an account logs in on multiple instances, the profile photo and nickname of the other party in a C2C conversation were incorrect.
+- When you called back and called the RESTful API to recall messages frequently after sending messages, and some of them were not recalled correctly.
+
 ### 2.9.3 @2021.2.3
 
 **Changed**
@@ -260,7 +277,6 @@ The priority of messages received at the receiver side of an audio-video group i
 **Changed**
 - The maximum size of files uploaded through [createFileMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#createFileMessage) is increased from 20 MB to 100 MB.
 - `msgMemberInfo` and `shutupTime` of [Group Prompts](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.GroupTipPayload) will be deprecated. Use `memberList` and `muteTime` instead.
-
 
 **Fixed**
 - Listening events could not be canceled by calling the [off](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#off) API.
