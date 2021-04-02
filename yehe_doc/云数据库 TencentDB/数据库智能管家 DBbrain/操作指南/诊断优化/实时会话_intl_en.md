@@ -1,6 +1,6 @@
 You can use the real-time session feature of DBbrain to view the real-time session information of your instance, including performance monitoring, connection monitoring, running thread monitoring, SQL throttling, and hotspot update protection. This document describes how to use the real-time session feature.
 
->?Currently, the real-time session feature (including SQL throttling and hotspot update protection) is supported only for TencentDB for MySQL (excluding the Basic Edition).
+>?Currently, the real-time session feature (including SQL throttling and hotspot update protection) is supported only for TencentDB for MySQL (excluding the basic single-node instances).
 
 ## Performance and Connection Monitoring
 Log in to the [DBbrain console](https://console.cloud.tencent.com/dbbrain/session) and select **Performance Optimization** on the left sidebar. On the displayed page, select a database at the top and select the **Real-Time Session** tab.
@@ -42,8 +42,8 @@ After setting the task of killing thread during a period, you can preview the th
 >
 DBbrain supports the SQL throttling feature to ensure service availability. You can create SQL throttling tasks to control the database requests and SQL concurrency by setting the SQL type, maximum concurrency, throttling duration, and SQL keywords. Multiple tasks do not conflict with each other.
 >?
->-To create a SQL throttling task, you need to log in to the database account first.
->-If SQL throttling prevents a SQL statement from being executed, the error message `SQL rejected by CDB_SQL_FILTER` will be displayed.
+>- To create a SQL throttling task, you need to log in to the database account first.
+>- If SQL throttling prevents a SQL statement from being executed, the error message `SQL rejected by CDB_SQL_FILTER` will be displayed.
 >
 - SQL types: SELECT, UPDATE, DELETE, INSERT, or REPLACE.
 - Maximum concurrency: the maximum number of concurrent SQL executions. If the number of concurrent SQL executions containing keywords reaches the maximum concurrency value, the SQL throttling policy will be triggered. If this value is set to 0, all matched SQL executions will be restricted.
@@ -56,7 +56,7 @@ In the "SQL Throttling" tab, the list displays the SQL type, status, keywords, s
 - Click **Details** in the **Operation** column to view SQL throttling details.
 - After a SQL throttling task starts, it will remain in the "Running" status until its remaining time decreases to zero. Click **Close** in the **Operation** column to terminate the task in advance, and its status will change to "Terminated".
 - After a SQL throttling task starts, its status will change to "Terminated" once its remaining time decreases to zero.
-- Click **Delete** in the "Operation" column to delete a SQL throttling task in the "Terminated" or "Completed" status.
+- Click **Delete** in the **Operation** column to delete a SQL throttling task in the "Terminated" or "Completed" status.
 ![](https://main.qcloudimg.com/raw/5925c45ce935ae8f7e990214ae4c568b.png)
 
 ## Hotspot Update Protection
@@ -69,6 +69,6 @@ In the "Hotspot Update Protection" tab, click **Create Task** to create a hotspo
 
 In the "Hotspot Update Protection" tab, the list displays the status, start time, execution time, remaining time, wait timeout threshold, and operations.
 - For a task in the "Running" status, click **Close** in the **Operation** column to terminate it in advance.
-- For a task in the "Terminated" or "Completed" status, click **Delete** in the "Operation" column to delete it.
+- For a task in the "Terminated" or "Completed" status, click **Delete** in the **Operation** column to delete it.
 ![](https://main.qcloudimg.com/raw/ccc4e3231faaada5fd6dabc33ddbddb5.png)
 

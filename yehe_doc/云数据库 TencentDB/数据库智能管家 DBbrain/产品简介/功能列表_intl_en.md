@@ -1,4 +1,4 @@
-Currently, TencentDB for DBbrain is supported for TencentDB for MySQL (excluding the Basic Edition).
+Currently, TencentDB for DBbrain is supported for TencentDB for MySQL (excluding the basic single-node instances).
 
 <table>
 <thead><tr><th colspan=2>Features</th><th>TencentDB for MySQL</th></tr></thead>
