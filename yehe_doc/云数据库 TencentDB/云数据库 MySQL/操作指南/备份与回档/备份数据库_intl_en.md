@@ -2,10 +2,10 @@ To avoid data loss or corruption, you can back up a database automatically or ma
 
 ## Backup Overview
 ### Backup modes
-TencentDB for MySQL High-Availability Edition and Finance Edition support the **automatic backup** and **manual backup** of databases.
+Two-node and three-node TencentDB for MySQL instances support **automatic backup** and **manual backup** of databases.
 
 ### Backup types
-TencentDB for MySQL High-Availability Edition and Finance Edition support two backup types:
+Two-node and three-node TencentDB for MySQL instances support two backup types:
 - **Physical backup**, which replicates full physical data (available for both automatic backup and manual backup).
 - **Logical backup**, which backs up SQL statements (only available for manual backup).
 >?
@@ -16,12 +16,12 @@ TencentDB for MySQL High-Availability Edition and Finance Edition support two ba
 
 | Physical Backup Advantages | Logical Backup Disadvantages |
 |---------|---------|
-| <li>High backup speed. <li>Streaming backup and compression are supported. <li>High success rate. <li>Simple and efficient restoration. <li>Faster backup-based coupling operations such as adding real-only and disaster recovery instances. <li>1/8 of average time needed for creating a logical backup. <li>Ten times faster than logical backups during import. | <li>Long time needed to restore as it takes time to run SQL statements and build indexes. <li>Low backup speed, especially when there are massive amounts of data. <li>Possible increase in source-replica delay due to the pressure on instances during backup. <li>Possible loss of precision information of floating points. <li>Potential backup failures due to wrong views and other problems. <li>Slower backup-based coupling operations such as adding read-only and disaster recovery instances. |
+| <li>High backup speed. <li>Streaming backup and compression are supported. <li>High success rate. <li>Simple and efficient restoration. <li>Faster backup-based coupling operations such as adding real-only replicas and disaster recovery instances. <li>1/8 of average time needed for creating a logical backup. <li>Ten times faster than logical backups during import. | <li>Long time needed to restore as it takes time to run SQL statements and build indexes. <li>Low backup speed, especially when there are massive amounts of data. <li>Possible increase in source-replica delay due to the pressure on instances during backup. <li>Possible loss of precision information of floating points. <li>Potential backup failures due to wrong views and other problems. <li>Slower backup-based coupling operations such as adding read-only replicas and disaster recovery instances. |
 
 ### Backup objects
 | Data Backup | Log Backup |
 |---------|---------|
-| TencentDB for MySQL High-Availability Edition and Finance Edition: <li>Automatic backup supports full physical backup. <li>Manual backup supports full physical backup, full logical backup, and single-database/table logical backup. <li>Both automatic and manual backups can be compressed and downloaded. | TencentDB for MySQL High-Availability Edition and Finance Edition support binlog backup: <li>Log files occupy the instance's backup space. <li>Log files can be downloaded but cannot be compressed. <li>Retention periods can be set for log files. |
+| Two-node and three-node TencentDB for MySQL: <li>Automatic backup supports full physical backup. <li>Manual backup supports full physical backup, full logical backup, and single-database/table logical backup. <li>Both automatic and manual backups can be compressed and downloaded. | Two-node and three-node TencentDB for MySQL support binlog backup: <li>Log files occupy the instance's backup space. <li>Log files can be downloaded but cannot be compressed. <li>Retention periods can be set for log files. |
 
 ## Notes
 - Since February 26, 2019, the automatic backup feature of TencentDB for MySQL only supports physical backup (default type) and no longer provides logical backup. Existing automatic logical backups will be switched to physical backups automatically.
@@ -31,8 +31,7 @@ This will not affect your business access, but may impact your automatic backup 
 - We recommend that you back up your data during off-peak hours.
 - We recommend that you download the backup files locally before they are deleted after the retention period ends.
 - Do not perform DDL operations during the backup process to avoid backup failure due to table locking.
-- TencentDB for MySQL Basic Edition instances cannot be backed up.
-
+- Single-node TencentDB for MySQL instances cannot be backed up.
 
 ## Backing up MySQL Data Automatically
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID/name on the instance list page to access the instance’s management page, and select **Backup and Restore** > **Auto Backup Settings**.
@@ -47,19 +46,17 @@ This will not affect your business access, but may impact your automatic backup 
 <thead><tr><th>Parameter</th><th>Description</th></tr></thead>
 <tbody>
 <tr>
-<td>Backup cycle</td><td>To ensure data security, please back up your data at least twice a week. All seven days of the week will be selected by default.</td></tr>
+<td>Backup Schedule</td><td>To ensure data security, please back up your data at least twice a week. All seven days of the week will be selected by default.</td></tr>
 <tr>
-<td>Backup start time</td><td><ul><li>The default backup start time is automatically assigned by the system. <li>You can set a start time as needed. We recommend that you set it to off-peak hours. This is just the start time of the backup process and does not indicate the end time. <br>For example, if the backup start time is set to 02:00-06:00, the system will initiate a backup at a point in time during 02:00-06:00, which depends on the backend backup policy and backup system conditions.</td></tr>
+<td>Backup Start Time</td><td><ul><li>The default backup start time is automatically assigned by the system. <li>You can set a start time as needed. We recommend that you set it to off-peak hours. This is just the start time of the backup process and does not indicate the end time. <br>For example, if the backup start time is set to 02:00-06:00, the system will initiate a backup at a point in time during 02:00-06:00, which depends on the backend backup policy and backup system conditions.</td></tr>
 <tr>
-<td>Data backup retention time</td><td>Data backup files can be retained for 7 (default value) to 732 days.</td></tr>
+<td>Data Backup Retention Time</td><td>Data backup files can be retained for 7 (default value) to 732 days.</td></tr>
 <tr>
-<td>Log backup retention time</td><td>Log backup files can be retained for 7 (default value) to 732 days. <strong>The number of days set for log backup retention must be smaller than that for data backup retention.</strong></td></tr>
+<td>Log Backup Retention Time</td><td>Log backup files can be retained for 7 (default value) to 732 days. <strong>The number of days set for log backup retention cannot exceed that for data backup retention.</strong></td></tr>
 </tbody></table>
 <img src="https://main.qcloudimg.com/raw/a371d4ba960264aa5630b59a3bfe5096.png"  style="margin:0;">
 
-
-<span id = "manual-backup"></span>
-## Backing up MySQL Data Manually
+## [Backing up MySQL Data Manually](id:manual-backup)
 The manual backup feature allows you to initiate a backup task manually.
 >?
 >- Manual backup supports full physical backup, full logical backup, and single-database/table logical backup.
@@ -78,7 +75,7 @@ The manual backup feature allows you to initiate a backup task manually.
 Expired backup sets will be deleted automatically and cannot be downloaded or restored.
 - We recommend that you configure a backup retention period based on business needs or download the backup files locally via the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb).
 - You can also manually back up instance data in the console. Manual backups will be retained permanently.
->?Manual backups will also take up the backup space. We recommend that you plan the usage of the backup space appropriately to reduce costs.
+>?Manual backups will also take up the backup space. We recommend that you plan the usage of backup space appropriately to reduce cost.
 
 #### 2. Can I delete backups manually?
 - Automatic backups cannot be deleted manually. You can set the retention period for automatic backups, and the backups will be deleted automatically when they expire. 
@@ -88,7 +85,7 @@ Expired backup sets will be deleted automatically and cannot be downloaded or re
 No. However, you can reduce the backup frequency and delete manual backups no longer used via the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) to lower the capacity usage.
 
 #### 4. How can I reduce the backup capacity costs?
-- Delete manual backups that are no longer used (you can log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID/name to access the instance’s management page, and delete manual backups on the "Backup and Restore" tab). 
+- Delete manual backups that are no longer used (you can log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID/name to access the instance’s management page, and delete manual backups on the **Backup and Restore** tab). 
 - Reduce the frequency of automatic data backup for non-core businesses (you can adjust the backup cycle and retention period in the console, and the frequency should be at least twice a week).
 >?The [rollback feature](https://intl.cloud.tencent.com/document/product/236/7276) relies on the backup cycle and retention days of data backups and log backups (binlog). Rollback will be affected if you reduce the automatic backup frequency and retention period. Please select the parameters as needed.
 >

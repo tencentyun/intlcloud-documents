@@ -1,17 +1,17 @@
 ## Overview
 >?To save storage capacity, physical and logical backups in TencentDB for MySQL will be compressed with qpress and then packed with xbstream offered by Percona.
 
-TencentDB for MySQL supports [logical backup](https://intl.cloud.tencent.com/document/product/236/37796). In the console, you can manually create logical backup files and download the logical backup files of an entire instance or specified databases or tables. This document describes how to manually restore data from logical backup files.
+TencentDB for MySQL supports [logical backup](https://intl.cloud.tencent.com/document/product/236/37796). In the console, you can manually create logical backup files of an entire instance or specified databases/tables and download them. This document describes how to manually restore data from logical backup files.
 
 - The restoration method described in this document only applies to Linux.
-- For more information about how to restore data in Windows, please see [Offline Migration of Data > Data Migration via the Command Line Tool](https://intl.cloud.tencent.com/document/product/236/8464).
-- Supported instance edition: TencentDB for MySQL High-Availability Edition and Finance Edition
+- For more information about how to restore data in Windows, please see [Offline Migration of Data > Data Migration with Command Line Tool](https://intl.cloud.tencent.com/document/product/236/8464).
+- Supported instance architectures: two-node or three-node MySQL
 
 ## Directions
 ### Step 1. Download the backup file
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click the instance ID/name or **Manage** in the **Operation** column to access the instance management page.
-2. On the instance management page, click **Backup and Restore** > **Data Backup List**, locate the backup file to download, and click **Download** in the **Operation** column.
-3. In the pop-up dialog window, copy the download URL. Log in to a [(Linux) CVM instance](https://intl.cloud.tencent.com/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8) in the same VPC as the TencentDB instance, and run the `wget` command to download over the private network for higher speed.
+2. On the **Backup and Restore** > **Data Backup List** tab, locate the backup file to be downloaded and click **Download** in the **Operation** column.
+3. We recommend you copy the download link in the pop-up dialog box, log in to a [(Linux) CVM instance in the same VPC as the TencentDB instance](https://intl.cloud.tencent.com/zh/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8), and run the `wget` command for download over the private network at a higher speed.
 >?
 >- You can also click **Download** to download it directly, which may take longer.
 >- `wget` command format: wget -c 'backup file download address' -O custom filename.xb
@@ -23,7 +23,7 @@ wget -c 'https://mysql-database-backup-bj-118.cos.ap-beijing.myqcloud.com/12427%
 
 ### Step 2. Unpack the backup file
 Unpack the backup file with xbstream.
->?xbstream can be downloaded at [Percona's official website](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). Please select Percona XtraBackup 2.4.6 or later. For more information on installation, please see [Percona XtraBackup 2.4](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI).
+>?xbstream can be downloaded at [Percona's official website](https://www.percona.com/downloads/Percona-XtraBackup-2.4/LATEST/). Please select Percona XtraBackup v2.4.6 or later. For more information on installation, please see [Percona XtraBackup 2.4](https://www.percona.com/doc/percona-xtrabackup/2.4/installation.html?spm=a2c4g.11186623.2.14.4d8653a6QmHkgI).
 ```
 xbstream -x < test0.xb
 ```
@@ -37,7 +37,7 @@ The unpacking result is as shown below:
 ```
 wget http://www.quicklz.com/qpress-11-linux-x64.tar
 ```
->?If an error is displayed during the `wget` download, you can go to [QuickLZ's official website](http://www.quicklz.com/) to download qpress locally and upload it to the Linux CVM instance. For more information, please see [Uploading Files via SCP to a Linux CVM from Linux](https://intl.cloud.tencent.com/document/product/213/2133).
+>?If an error is displayed during the `wget` download, you can go to [QuickLZ's official website](http://www.quicklz.com/) to download qpress locally and upload it to the Linux CVM instance. For more information, please see [Uploading Files via SCP to a Linux CVM from Linux](https://intl.cloud.tencent.com/zh/document/product/213/2133).
 2. Extract the qpress binary files by running the following command:
 ```
 tar -xf qpress-11-linux-x64.tar -C /usr/local/bin

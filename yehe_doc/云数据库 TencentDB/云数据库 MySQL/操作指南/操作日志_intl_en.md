@@ -1,9 +1,9 @@
 ## Overview
 An SQL statement query that takes more time than the specified value is referred to as a "slow query", and the corresponding statement is called a "slow query statement". The process where a database administrator (DBA) analyzes slow query statements and finds out the reasons why slow queries occur is known as "slow query analysis".
 
-You can view the slow logs details, error logs details, and rollback logs of an instance, and download slow logs on the operation log page in the console. You can also view and download database logs through the command line interface (CLI) or TencentDB APIs. For more information, please see [DescribeSlowLogs](https://intl.cloud.tencent.com/document/product/236/15845) and [DescribeBinlogs](https://intl.cloud.tencent.com/document/product/236/15843).
+You can view the slow logs details, error logs details, and rollback logs of an instance, and download slow logs on the operation log page in the console. You can also view and download database logs through the command line interface (CLI) or TencentDB APIs. For more information, please see [DescribeSlowLogs](https://intl.cloud.tencent.com/document/product/236/15845) and [DescribeBinlogs](https://intl.cloud.tencent.com/zh/document/product/236/15843).
 
->?TencentDB for MySQL (excluding the Basic Edition) instances support operation log management.
+>?TencentDB for MySQL instances (excluding basic single-node instances) support operation log management.
 >
 
 #### Notes on slow queries in MySQL
@@ -26,16 +26,15 @@ When the `long_query_time` parameter is adjusted, existing slow logs will not be
 <tr>
 <td>Rollback logs</td><td>Records the status and progress of rollback tasks</td></tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/460115a1a260cb7437561556c2f8cb9a.png"  style="margin:0;">
-
+<img src="https://main.qcloudimg.com/raw/c229d0fe6a4869998d3472b0a35efa28.png"  style="margin:0;">
 3. To download the slow log, on the **Download Slow Log** tab, click **Download** in the **Operation** column.
-4. To quickly download the slow log, we recommend that you copy the download address in the pop-up dialog box, log in to a (Linux) CVM instance in the same VPC as the TencentDB instance, and run the `wget` command to download the slow log over the private network.
+4. We recommend that you copy the download address in the pop-up dialog box, log in to a (Linux) CVM instance in the same VPC as the TencentDB instance, and run the `wget` command to download over the private network at a higher speed.
 >?
 >- Logs with a size of 0 KB cannot be downloaded.
 >- You can also click **Download** to download it directly. However, this may take longer.
 >- `wget` command format: wget -c 'log file download address' -O custom filename.log
 >
-See below as an example:
+Example:
 ```
 wget -c 'http://szx.dl.cdb.tencentyun.com:303/cfdee?appid=1210&time=1591&sign=aIGM%3D' -O test.log
 ```
