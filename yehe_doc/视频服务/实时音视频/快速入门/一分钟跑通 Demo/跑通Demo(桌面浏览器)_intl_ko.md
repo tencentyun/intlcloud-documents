@@ -159,7 +159,7 @@ WebRTC는 Google이 최초 출시한 기술입니다. 현재 데스크톱 버전
 [](id:step1)
 
 ### 1단계: 신규 애플리케이션 생성
-1. TRTC 콘솔에 로그인한 후, [개발 지원]>[Demo 빠른 실행](https://console.cloud.tencent.com/trtc/quickstart)을 선택합니다.
+1. [TRTC 콘솔에](https://console.cloud.tencent.com/trtc) 로그인한 후, [개발 지원]>[Demo 빠른 실행](https://console.cloud.tencent.com/trtc/quickstart)을 선택합니다.
 2. 애플리케이션 명칭(예: TestTRTC)을 입력한 후 [생성]을 클릭합니다.
 
 [](id:step2)
