@@ -450,7 +450,7 @@ trtcCloud.setMixTranscodingConfig(TRTCTranscodingConfig(
   mixUsers: [
   // Position of the camera image of the anchor
     TRTCMixUser(
-      userId: "PLACE_HOLDER_LOCAL_MAIN",
+      userId: "$PLACE_HOLDER_LOCAL_MAIN$",
       roomId: null, // Required for remote users but not for the local user
       zOrder: 0, // When `zOrder` is set to `0`, it indicates that the anchor's image is displayed at the bottom.
       x: 0, // For reference only
@@ -459,7 +459,7 @@ trtcCloud.setMixTranscodingConfig(TRTCTranscodingConfig(
       width: 300,
       height: 400),
     TRTCMixUser(
-      userId: 'PLACE_HOLDER_REMOTE',
+      userId: '$PLACE_HOLDER_REMOTE$',
       roomId: '256', // Required for remote users but not for the local user
       zOrder: 1,
       x: 100, // For reference only
