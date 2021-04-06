@@ -23,11 +23,11 @@ A room is a space where users can receive each other’s audio and video data in
 - A user can be in only one room at a time. A user who is already in a room must exit the room first in order to enter another room.
 
 >!
-- The first user who enters a room is the owner of the room, but room owners cannot close rooms manually.
-- In the call modes, TRTC closes a room when all users in the room exit.
-- In the live streaming modes, if the last user who exits a room is an anchor, TRTC will close the room immediately; if the user is a viewer, TRTC will close the room in 10 minutes.
-- A user will be removed from a room 90 seconds after unexpected disconnection. If all users are unexpectedly disconnected, the room will be closed after 90 seconds.
-- If a user attempts to enter a room that does not exist, TRTC will create the room automatically.
+>- The first user who enters a room is the owner of the room, but room owners cannot close rooms manually.
+>- In the call modes, TRTC closes a room when all users in the room exit.
+>- In the live streaming modes, if the last user who exits a room is an anchor, TRTC will close the room immediately; if the user is a viewer, TRTC will close the room in 10 minutes.
+>- A user will be removed from a room 90 seconds after unexpected disconnection. If all users are unexpectedly disconnected, the room will be closed after 90 seconds.
+>- If a user attempts to enter a room that does not exist, TRTC will create the room automatically.
 
 ### Room ID
 
