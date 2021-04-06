@@ -8,7 +8,7 @@ Tencent Real-Time Communication（TRTC）はTencentが21年間に蓄積したネ
 
 ## 製品アーキテクチャ
 TRTCは、全プラットフォームでの相互接続による多人数の音声ビデオ通話と低遅延のインタラクティブライブストリーミングソリューションをメインに打ち出しています。WeChatミニプログラム、デスクトップブラウザー、Android、iOS、Electron、Windows、macOS、Linux等のプラットフォームのSDKを提供し、開発者が素早く統合し、TRTCクラウドサービスのバックエンドと連携できるようにしています。またTencent Cloudの様々な製品と連動させることで、TRTCとInstant Messaging（IM）、Live Video Broadcasting（LVB）、Video on Demand（VOD）等のクラウド製品の機能を一緒に使用することができ、業務でのユースケースをより広げることが可能です。製品アーキテクチャは下図の通りとなります。
-![](https://main.qcloudimg.com/raw/9ab5063e6f7c50d03ebbd2244220c9f9.png)
+![](https://main.qcloudimg.com/raw/be1345a58328913f7dae524a4cc5e153.svg)
 
 ## プラットフォームのサポート
 TRTCは、**業界で真の全プラットフォームの相互接続を実現したソリューション**です。具体的なサポートされているプラ​​ットフォームおよび開発環境要件は下表の通りとなります。　
