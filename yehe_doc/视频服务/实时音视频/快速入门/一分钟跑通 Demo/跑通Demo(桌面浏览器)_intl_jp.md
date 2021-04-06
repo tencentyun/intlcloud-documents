@@ -140,7 +140,7 @@ WebRTC の技術は Googleが一番早く提案し、現在は主に、デスク
 [](id:step1)
 
 ### ステップ1：新規アプリケーションの作成
-1. TRTCコンソールにログインし、【開発支援】>【[Demoのクイック実行](https://console.cloud.tencent.com/trtc/quickstart)】を選択します。
+1. [TRTCコンソール](https://console.cloud.tencent.com/trtc)にログインし、【開発支援】>【[Demoのクイック実行](https://console.cloud.tencent.com/trtc/quickstart)】を選択します。
 2. 【今すぐスタート】をクリックし、アプリケーション名（例：`TestTRTC`）を入力して、【アプリケーションの作成】をクリックします。
 
 [](id:step2)
