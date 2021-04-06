@@ -158,7 +158,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 [](id:step1)
 
 ### Step 1. Create an application.
-1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
+1. Log in to the [TRTC console](https://console.cloud.tencent.com/trtc) and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
 2. Enter an application name, e.g. `TestTRTC`, and click **Create**.
 
 [](id:step2)
