@@ -61,7 +61,7 @@ When an alarm rule is triggered, Cloud Monitor will send alarm messages to the U
 
 > ? 
 > - To get the namespace and metric names of a specific service, please see [Tencent Cloud Service Metrics](https://intl.cloud.tencent.com/document/product/248/6843).
-> - To get the policy type names of a specific service, please see [Tencent Cloud Service Policy Type](https://intl.cloud.tencent.com/document/product/248/39351).
+> - To get the policy type names of a specific service, please see Tencent Cloud Service Policy Type.
 
 #### Sample metric alarm dimensions
 
