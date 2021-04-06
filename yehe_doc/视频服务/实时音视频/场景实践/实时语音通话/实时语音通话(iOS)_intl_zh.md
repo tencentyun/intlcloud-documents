@@ -144,6 +144,7 @@ iOS/TRTCSceneDemo/TXLiteAVDemo/TRTCCallingDemo/model
 1. 发起方调用 TRTCCalling 的 `call(userId, callType)` 方法，`userId` 参数为用户 ID，`callType` 传入语音类型 `CallType_Audio`，就能够发起语音通话的请求。
 2. 接收方收到 `onInvited` 事件，此时可以通过 `accept` 方法接听此次通话，也可以选择用 `reject` 方法拒绝通话。
 3. 发起方收到 `onUserEnter` 的回调，说明接收方已经进入通话。
+
 ```
  // 1.监听回调
  [[TRTCCalling shareInstance] addDelegate:delegate];
