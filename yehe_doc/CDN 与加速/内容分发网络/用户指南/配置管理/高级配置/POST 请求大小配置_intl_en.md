@@ -2,6 +2,8 @@
 ## Feature Overview
 The maximum size of a Tencent Cloud CDN POST request (body) defaults to 32 MB, which can be adjusted as required by your business.
 
+>! This feature currently does not support HTTPS origin-pull. If the maximum POST request size is adjusted, HTTP origin-pull will be used. **Please adjust it with caution**.
+
 ## Configuration Guide
 
 ### Viewing the configuration

@@ -1,30 +1,36 @@
+[](id:q1)
 ### What is HTTPS?
 HTTPS refers to Hypertext Transfer Protocol Secure, a security protocol that encrypts and transfers data based on the HTTP protocol to ensure the security of data transfer. When configuring HTTPS, you need to provide a certificate for the domain name and deploy it on all CDN nodes to implement encrypted data transfer across the entire network.
 
+[](id:q2)
 ### Does CDN support HTTPS configuration?
-Yes. Tencent Cloud CDN fully supports HTTPS configuration. You can either upload your own certificate for deployment or go to the [SSL Certificate Service Console](https://console.cloud.tencent.com/ssl) to apply for a free third-party certificate provided by TrustAsia.
+Yes. Tencent Cloud CDN fully supports HTTPS configuration. You can either upload your own certificate for deployment or go to the [SSL Certificate Service console](https://console.cloud.tencent.com/ssl) to apply for a free third-party certificate provided by TrustAsia.
 
-### How do I configure a HTTPS certificate?
-You can configure a HTTPS certificate on the CDN Console. For more information, please see [HTTPS Acceleration Configuration Guide](https://intl.cloud.tencent.com/document/product/228/35213).
+[](id:q3)
+### How do I configure an HTTPS certificate?
+You can configure an HTTPS certificate in the [CDN console](https://console.cloud.tencent.com/cdn). For detailed directions, please see [HTTPS Configuration Guide](https://intl.cloud.tencent.com/document/product/228/35213).
 
-### Do the HTTPS certificates on CDN nodes need to be synced with HTTPS certificate updates on the origin server?
+[](id:q4)
+### Do the HTTPS certificates on CDN nodes need to be synchronized with HTTPS certificate updates on the origin server?
 This depends on your origin-pull method.
-HTTP forwarding: they do not need to be synced.
-HTTPS forwarding: when the certificate on the origin server is updated, the certificates on the CDN nodes need to be updated synchronously. The certificate between the client and the node must be identical to the one between the node and the origin server. Otherwise, origin-pull will fail.
+HTTP origin-pull: they do not need to be synced.
+HTTPS origin-pull: when the certificate on the origin server is updated, the certificate on the CDN node needs to be updated synchronously. The certificate between the client and the node must be identical to the one between the node and the origin server. Otherwise, the origin-pull will fail.
 
-### Is there any way for users to allow only HTTPS access and forbid HTTP access?
-Yes. You can use the forced HTTPS redirection feature. After the certificate is configured successfully, the "Forced Redirect to HTTPS" switch will appear. When it is enabled, even if a user initiates a HTTP request, the request will be redirected to a HTTPS request for access.
-![](https://main.qcloudimg.com/raw/f3b267f6140375bb728418f9b29026d8.png)
+[](id:q5)
+### Can I deny HTTP access and allow HTTPS access only?
+Yes. After successfully configuring an HTTPS certificate, you can use the [Forced Redirection](https://intl.cloud.tencent.com/document/product/228/35214) feature. HTTP requests from users will be forcibly redirected to HTTPS requests.
+![](https://main.qcloudimg.com/raw/c562127135d558445481ab97973b1ebe.png)
 
 
+[](id:q6)
 ### Why does HTTPS access not work after CDN is configured?
 
-You need to upload the website's HTTPS certificate to CDN using the following steps:
-1. Log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and click **Domain Management** on the left sidebar to access the domain name management page. Click **Manage** on the right of the domain name to access the management page.
-![](https://main.qcloudimg.com/raw/518644b104972679d063ec3bb790ea31.png)
-2. Click **Advanced Configuration** and find the HTTPS configuration module. Click **Configure Now** to access the certificate management page and configure a certificate. For the configuration steps, please see [HTTPS Acceleration Configuration Guide](https://intl.cloud.tencent.com/document/product/228/35213#.E5.9F.9F.E5.90.8D.E9.85.8D.E7.BD.AE). ![](https://main.qcloudimg.com/raw/49ed20144b4018164794926576a26c1c.png)
-3. After the certificate is configured successfully, the **Forced Redirect to HTTPS** switch will appear. When it is enabled, even if a user initiates a HTTP request, the request will be redirected to a HTTPS request for access.
-![](https://main.qcloudimg.com/raw/98993eaa23a524bcc2cb8a168fbaccd3.png)
+For HTTPS access, please configure it as instructed:
+1. Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar, and click **Manage** on the right of a domain name to enter its management page.
+![](https://main.qcloudimg.com/raw/33ea31c11bfac2022ea5753b6d849042.png)
+2. Open the **Advanced Configuration** tab to find the **HTTPS Configuration** section, and click **Configure Now** to go to the **Certificate Management** page. For configuration directions, please see [HTTPS Configuration Guide](https://intl.cloud.tencent.com/document/product/228/35213#.E8.AF.81.E4.B9.A6.E9.85.8D.E7.BD.AE).
+![](https://main.qcloudimg.com/raw/67be1f3b42a411613c0500afa97e06b5.png)
+HTTPS access can be enabled after the certificate is successfully configured.
 
 
 
