@@ -81,7 +81,7 @@ This dimension reflects the overall monitoring metric of a public network CLB in
 API calling sample using the dimension:
 <pre>
 https://monitor.api.qcloud.com/v2/index.php?Action=GetMonitorData
-&&lt<a href="https://intl.cloud.tencent.com/document/api/213/6976" target="_blank">Common request parameters</a> &gt;
+&&lt<a href="https://intl.cloud.tencent.com/document/product/213/31574" target="_blank">Common request parameters</a> &gt;
 &namespace=qce/lb_public
 &metricName=connum
 &dimensions.0.name=vip
@@ -100,7 +100,7 @@ This dimension reflects the monitoring metric of the port on a public network CL
 API calling sample using the dimension:
 <pre>
 https://monitor.api.qcloud.com/v2/index.php?Action=GetMonitorData
-&&lt;<a href="https://intl.cloud.tencent.com/document/api/213/6976" target="_blank">Common request parameters</a> &gt;
+&&lt;<a href="https://intl.cloud.tencent.com/document/product/213/31574" target="_blank">Common request parameters</a> &gt;
 &namespace=qce/lb_public
 &metricName=connum
 &dimensions.0.name=vip
@@ -125,7 +125,7 @@ This dimension reflects the monitoring metric of the real server bound to a publ
 API calling sample using the dimension:
 <pre>
 https://monitor.api.qcloud.com/v2/index.php?Action=GetMonitorData
-&&lt;<a href="https://intl.cloud.tencent.com/document/api/213/6976" target="_blank">Common request parameters</a> &gt;
+&&lt;<a href="https://intl.cloud.tencent.com/document/product/213/31574" target="_blank">Common request parameters</a> &gt;
 &namespace=qce/lb_public
 &metricName=connum
 &dimensions.0.name=vip
@@ -155,7 +155,7 @@ This dimension reflects the monitoring metric of a port on the real server bound
 API calling sample using the dimension:
 <pre>
 https://monitor.api.qcloud.com/v2/index.php?Action=GetMonitorData
-&&lt;<a href="https://intl.cloud.tencent.com/document/api/213/6976" target="_blank">Common request parameters</a> &gt;
+&&lt;<a href="https://intl.cloud.tencent.com/document/product/213/31574" target="_blank">Common request parameters</a> &gt;
 &namespace=qce/lb_public
 &metricName=connum
 &dimensions.0.name=vip
@@ -321,7 +321,7 @@ This dimension reflects the overall monitoring metric of a CLB instance. The dim
 API calling sample using the dimension:
 <pre>
 https://monitor.api.qcloud.com/v2/index.php?Action=GetMonitorData
-&&lt;<a href="https://intl.cloud.tencent.com/document/api/213/6976" target="_blank">Common request parameters</a>&gt;
+&&lt;<a href="https://intl.cloud.tencent.com/document/product/213/31574" target="_blank">Common request parameters</a>&gt;
 &namespace=qce/loadbalance
 &metricName=connum
 &dimensions.0.name=vip
@@ -341,7 +341,7 @@ This dimension reflects the monitoring metric of the port on a CLB instance. The
 API calling sample using the dimension:
 <pre>
 https://monitor.api.qcloud.com/v2/index.php?Action=GetMonitorData
-&&lt;<a href="https://intl.cloud.tencent.com/document/api/213/6976" target="_blank">Common request parameters</a>&gt;
+&&lt;<a href="https://intl.cloud.tencent.com/document/product/213/31574" target="_blank">Common request parameters</a>&gt;
 &namespace=qce/loadbalance
 &metricName=connum
 &dimensions.0.name=vip
@@ -366,7 +366,7 @@ This dimension reflects the monitoring metric of the CLB forwarding domain name.
 API calling sample using the dimension:
 <pre>
 https://monitor.api.qcloud.com/v2/index.php?Action=GetMonitorData
-&&lt;<a href="https://intl.cloud.tencent.com/document/api/213/6976" target="_blank">Common request parameters</a>&gt;
+&&lt;<a href="https://intl.cloud.tencent.com/document/product/213/31574" target="_blank">Common request parameters</a>&gt;
 &namespace=qce/loadbalance
 &metricName=connum
 &dimensions.0.name=vip
@@ -393,7 +393,7 @@ This dimension reflects the monitoring metric of the CLB forwarding path. The di
 API calling sample using the dimension:
 <pre>
 https://monitor.api.qcloud.com/v2/index.php?Action=GetMonitorData
-&&lt;<a href="https://intl.cloud.tencent.com/document/api/213/6976" target="_blank">Common request parameters</a>&gt;
+&&lt;<a href="https://intl.cloud.tencent.com/document/product/213/31574" target="_blank">Common request parameters</a>&gt;
 &namespace=qce/loadbalance
 &metricName=connum
 &dimensions.0.name=vip
@@ -424,7 +424,7 @@ This dimension reflects the monitoring metric of the IP of the real server bound
 API calling sample using the dimension:
 <pre>
 https://monitor.api.qcloud.com/v2/index.php?Action=GetMonitorData
-&&lt;<a href="https://intl.cloud.tencent.com/document/api/213/6976" target="_blank">Common request parameters</a>&gt;
+&&lt;<a href="https://intl.cloud.tencent.com/document/product/213/31574" target="_blank">Common request parameters</a>&gt;
 &namespace=qce/loadbalance
 &metricName=connum
 &dimensions.0.name=vip
@@ -460,7 +460,7 @@ This dimension reflects the monitoring metric of the port on the real server bou
 API calling sample using the dimension:
 <pre>
 https://monitor.api.qcloud.com/v2/index.php?Action=GetMonitorData
-&&lt;<a href="https://intl.cloud.tencent.com/document/api/213/6976" target="_blank">Common request parameters</a>&gt;
+&&lt;<a href="https://intl.cloud.tencent.com/document/product/213/31574" target="_blank">Common request parameters</a>&gt;
 &namespace=qce/loadbalance
 &metricName=connum
 &dimensions.0.name=vip
@@ -526,7 +526,7 @@ Request
 <pre>
  
 https://monitor.api.qcloud.com/v2/index.php?Action=GetMonitorData
-&&lt;<a href="https://intl.cloud.tencent.com/document/api/213/6976" target="_blank">Common request parameters</a>&gt;
+&&lt;<a href="https://intl.cloud.tencent.com/document/product/213/31574" target="_blank">Common request parameters</a>&gt;
 &namespace=qce/lb_public
 &metricName=connum
 &dimensions.0.name=protocol
@@ -565,7 +565,7 @@ This dimension reflects the monitoring metric of the CLB instance(s) which confi
 API calling sample using the dimension:
 <pre>
 https://monitor.api.qcloud.com/v2/index.php?Action=GetMonitorData
-&&lt;<a href="https://intl.cloud.tencent.com/document/api/213/6976" target="_blank">Common request parameters</a>&gt;
+&&lt;<a href="https://intl.cloud.tencent.com/document/product/213/31574" target="_blank">Common request parameters</a>&gt;
 &namespace=qce/loadbalance
 &metricName=QPS
 &dimensions.0.name=domain
