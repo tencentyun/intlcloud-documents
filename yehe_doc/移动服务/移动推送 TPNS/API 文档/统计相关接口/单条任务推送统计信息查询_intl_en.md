@@ -1,57 +1,65 @@
 ## API Description
-**Request method**: POST.
-**Calling frequency limit**: 200 times/hour.
+**Request method**: POST
+**Calling frequency limit**: 200 times/hour
+
 ```plaintext
-request address/v3/statistics/get_push_task_stat_channel
+Service URL/v3/statistics/get_push_task_stat_channel
 ```
-The API request address is corresponding to the service access point. Select the [request address](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
+API service URLs correspond to service access points one by one. Please select the [service URL](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
 
-**Feature**: this API is used to query the detailed statistics for each push task, including all channel information and summary results. The channel types in pushStatDataAll will be changed based on their differences in terms of iOS/Android and push channels.
+**Feature**: This API is used to query the detailed statistics for each push task, including all channel information and the summary. The channel types in `pushStatDataAll` vary depending on the OS (iOS/Android) and push channels.
 
 
 
-## Parameter Description
+## Parameters
 #### Request parameters
 
-| Parameter Name | Required | Type | Description |
+| Parameter | Required | Type | Description |
 | -------- | ---- | ------ | ------ |
-| pushId   | Yes   | String | Message ID |
+| pushId | Yes | String | ID of a push task. You can only query push tasks within last 30 days. |
 
 #### Response parameters
 
-| Parameter Name | Type | Description |
+| Parameter | Type | Description |
 | --------------- | ------ | ------------------------------------------------------------ |
-| retCode         | Integer    | Returned status code                                                  |
+| retCode         | Integer    | Returned status code                              |
 | errMsg          | String | Error message                                                     |
-| pushStatDataAll | Object   | Returned result: individual element formed by `channel` and `pushState`, where `channel` is the push channel name. `pushState` structure variables are shown in following table |
+| pushStatDataAll | Array   | Variables in the `pushStatDataAll` structure. See the table below for details. |
 
-#### PushState (Android)
+#### pushStatDataAll
 
-| Parameter Name | Type   | Description           |
+| Parameter | Type | Description |
+| --------------- | ------ | ------------------------------------------------------------ |
+| channel | String | Name of a push channel<br> `xg`: TPNS<br> `hw`: Huawei<br> `xm`: Mi<br> `mz`: Meizu<br>`oppo`: OPPO<br> `vivo`: vivo<br> `apns`: APNs<br> `fcm`: FCM<br> `rog`: ROG <br> `all`: all channels |
+| pushState          | Object | Variables in the `pushState` structure. See  the table below for details.             |
+
+#### pushState (Android)
+
+| Parameter | Type   | Description           |
 | ------------------- | ---- | ------------------------------------------------------------ |
-| pushActiveUv        | Integer  | Scheduled<br/>Number of available devices connected to the Internet within 90 days that meet the target push conditions and on which the notification bar is enabled.                                                |
-| pushOnlineUv        | Integer  | Sent<br/>Actual number of available devices in the scheduled devices that have been delivered to vendor channels or to process online terminal using TPNS channel.                                                   |
-| arrivalUv         | Integer  | Devices reached (including arrival receipts for TPNS and vendor channels. For the Huawei and Meizu channels, you need to configure the arrival receipts manually. For more information, see [Acquisition of Vendor Channel Arrival Receipt](https://intl.cloud.tencent.com/document/product/1024/35246)）|
-| verifySvcUv         | Integer  | Devices reached (only for TPNS, ROG and FCM channels.  Use the TPNS `pushOnlineUv` metric for other vendor channels.)**Note:** This field will be deprecated later. Use `arrivalUv ` to get the arrival data |
-| callbackVerifySvcUv | Integer  | Vendor channel arrival receipt (For the Huawei and Meizu channels, you need to configure the arrival receipts manually. For more information, see [Acquisition of Vendor Channel Arrival Receipt](https://intl.cloud.tencent.com/document/product/1024/35246)）**Note:** This field will be deprecated later. Use `arrivalUv ` to get the arrival data|
-| verifyUv            | Integer  | Display (obsolete)|
-| clickUv      | Integer    | Click     |
-| cleanupUv    | Integer    | Dismissal |
+| pushActiveUv        | Integer  | Scheduled delivery count<br/>Number of available devices online in last 90 days with the notification bar enabled in the push target devices                                                     |
+| pushOnlineUv        | Integer  | Actual delivery count<br/>Number of available devices to which the message was successfully delivered through the vendor or TPNS channel out of the devices for scheduled delivery                                                     |
+| arrivalUv | Integer | Number of reached devices (including arrival receipts for the TPNS and vendor channels. For Huawei and Meizu channels, you need to configure the arrival receipt manually. For more information, please see [Acquisition of Vendor Channel Arrival Receipt](https://intl.cloud.tencent.com/document/product/1024/35246)). |
+| verifySvcUv | Integer | Number of reached devices (only for TPNS, ROG, and FCM channels. The arrival data of other vendor channels is displayed using the `pushOnlineUv` parameter of TPNS). **Note:** This parameter will be discontinued later. Therefore, you are advised to use `arrivalUv` for the arrival data. |
+| callbackVerifySvcUv | Integer | Arrival receipt for vendor channels (for Huawei and Meizu channels, you need to configure the arrival receipt manually. For more information, please see [Acquisition of Vendor Channel Arrival Receipt](https://intl.cloud.tencent.com/document/product/1024/35246)). **Note:** This parameter will be discontinued later. Therefore, you are advised to use `arrivalUv` for the arrival data. |
+| verifyUv            | Integer  | Displayed (this parameter has been discarded and will be discontinued later)                                                         |
+| clickUv             | Integer  | Clicked                                                         |
+| cleanupUv           | Integer  | Cleared                                                         |
 
->Note:
->The "all" channel in the array corresponds to the aggregated statistics.
->
->-  In the aggregated statistics, the `verifySvcUv` (device reached), `verifyUv` (display), `clickUv` (click), and `cleanupUv` (dismissal) metrics only aggregates the data of the TPNS, ROG, and FCM channels.
->-  In the aggregated statistics, `pushActiveUv` (scheduled delivery) and `pushOnlineUv` (actual delivery) aggregates the data of the TPNS channel and vendor channels.
->-  In the aggregated statistics, `callbackVerifySvcUv` (arrival receipt of vendor channel) aggregates the data of vendor channel's `callbackVerifySvcUv` (arrival receipt of vendor channel) + TPNS channel's `verifySvcUv` (device reached) + ROG channel's `verifySvcUv` (device reached) + FCM channel's `verifySvcUv` (device reached).
+>?
+>The `all` channel in the array corresponds to the aggregated statistics.
+>-  In the aggregated statistics, the `verifySvcUv` (reached devices), `verifyUv` (displayed), `clickUv` (clicked), and `cleanupUv` (cleared) metrics only aggregate the data of the TPNS, ROG, and FCM channels. 
+>-  In the aggregated statistics, `pushActiveUv` (scheduled delivery) and `pushOnlineUv` (actual delivery) aggregate the data of the TPNS channel and vendor channels.
+>-  In the aggregated statistics, `callbackVerifySvcUv` (arrival receipt of vendor channel) aggregates the data of vendor channel's `callbackVerifySvcUv` (arrival receipt of vendor channel) + TPNS channel's `verifySvcUv` (reached devices) + ROG channel's `verifySvcUv` (reached devices) + FCM channel's `verifySvcUv` (reached devices).
+
 #### pushState (iOS and macOS)
 
-| Parameter Name | Type | Description |
+| Parameter | Type | Description |
 | ------------ | ------ | ------------ |
 | pushActiveUv | Integer    | Scheduled delivery |
-| pushOnlineUv | Integer    | APNs successfully received |
-| verifySvcUv  | Integer    | Arrival |
-| clickUv      | Integer    | Click     |
+| pushOnlineUv | Integer    | Successfully received by APNs |
+| verifySvcUv  | Integer    | Reached |
+| clickUv      | Integer    | Clicked     |
 
 ## Samples
 #### Sample request
