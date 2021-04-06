@@ -138,8 +138,8 @@ TRTC, along with other Tencent Cloud products, offers free demos for a wide rang
 ## Console Guide
 | If you want to                                         | Please Read                                                   |
 | :--------------------------------------------------------- | :----------------------------------------------------------- |
-| View your usage of TRTC’s **audio/video interaction** and **on-cloud recording** services | [Usage Statistics](https://intl.cloud.tencent.com/document/product/647/39066) |
-| View call quality statistics of a TRTC room via the dashboard               | [Dashboard](https://intl.cloud.tencent.com/document/product/647/39069) |
+| View your usage of TRTC’s **audio/video interaction** and **on-cloud recording** services | Usage Statistics |
+| View call quality statistics of a TRTC room via the dashboard               | Dashboard |
 | Download the demo source code and have a quick run of the demo                       | [Demo Quick Run](https://intl.cloud.tencent.com/document/product/647/39073) |
 | Generate a UserSig online or verify an existing UserSig         | [UserSig Generation and Verification](https://intl.cloud.tencent.com/document/product/647/39074)                |
 | Create an application | [Create Application](https://intl.cloud.tencent.com/document/product/647/39077) |
