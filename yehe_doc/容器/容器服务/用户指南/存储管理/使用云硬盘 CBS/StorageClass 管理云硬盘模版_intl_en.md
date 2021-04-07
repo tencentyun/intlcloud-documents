@@ -13,7 +13,7 @@ This document describes how to create a StorageClass of the Cloud Block Storage 
 3. Choose **Storage** -> **StorageClass** in the left sidebar to go to the **StorageClass** page, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/9c08551ba5e4fe254cebf30eb34a01e1.png)
 4. Click **Create** to go to the **Create a StorageClass** page, where you can set the parameters as required, as shown in the following figure.
-![](https://main.qcloudimg.com/raw/f0a35d376991444679f3cd7dbb79b434.png)
+![](https://main.qcloudimg.com/raw/1654bb4dbce684a4492f3f155159f2b7.png)
 Main parameters are described as follows:
 	- **Name**: set a custom name. This document uses `cbs-test` as an example.
 	- **Provisioner**: select **Cloud Block Storage**.
