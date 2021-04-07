@@ -1,5 +1,3 @@
->?The VPN gateway for CCN is now in beta test. To apply for it, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
-> 
 The VPN gateway for CCN can be associated with the Cloud Connect Network (CCN) to establish an encrypted communication between the IDC and CCN. This document introduces how to associate the VPN gateway for CCN with CCN.
 
 ## Background
@@ -18,7 +16,7 @@ The steps to associate the VPN gateway for CCN with CCN are as follows:
 ### Step 1: Create a VPN gateway for CCN
 1. Log in to [Virtual Private Cloud Console](https://console.cloud.tencent.com/vpc/vpc?rid=1).
 2. Click **VPN Connection** -> **VPN Gateway** in the left sidebar.
-3. Select a region on the top of the *VPN Gateway** page and click **+New**.
+3. Select a region on the top of the **VPN Gateway** page and click **+New**.
 4. In the **Create a VPN gateway** pop-up window, enter the gateway name, such as TomVPNGw. Select the associate network, bandwidth cap, billing method, and click **Create**. After the VPN gateway is created, the system randomly assigns it a public IP address such as `203.195.147.82`.
 >?To create a VPN gateway for CCN in the specified availability zone, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 >
@@ -40,7 +38,7 @@ The steps to associate the VPN gateway for CCN with CCN are as follows:
  2. Select a region on the top of the **CCN** page and click **+New**.
  3. In the **New CCN instance** pop-up window, complete the following configurations and click **OK**.
    1. Enter the name and description for the CCN instance. Select its billing mode, service quality, and speed limit mode.
-   2. Select **VPN Gateway** under *Associate with Instance**, and search for regions and IDs of existing VPN gateways for CCN.
+   2. Select **VPN Gateway** under **Associate with Instance**, and search for regions and IDs of existing VPN gateways for CCN.
 ![](https://main.qcloudimg.com/raw/54cba45a12f8d6396f1dcd02b6dff281.png)
 
 <span id="step3"></span>
@@ -83,6 +81,6 @@ The steps to associate the VPN gateway for CCN with CCN are as follows:
 ## Result Validation
 1. Log in to [Virtual Private Cloud Console](https://console.cloud.tencent.com/vpc/vpc?rid=1).
 2. Click **Cloud Connect Network** in the left sidebar to go to the **CCN** page.
-2. In the list, click the ID of a CCN instance associated with the VPN gateway for CCN to view its details.
-3. Select the **Route table** tab. If the table shows the enabled IP range with a **Valid** status and the **Next hop** is a VPN gateway for CCN, the CCN instance is successfully associated.
+3. In the list, click the ID of a CCN instance associated with the VPN gateway for CCN to view its details.
+4. Select the **Route table** tab. If the table shows the enabled IP range with a **Valid** status and the **Next hop** is a VPN gateway for CCN, the CCN instance is successfully associated.
 ![](https://main.qcloudimg.com/raw/1f7089ad46654f9a3c2a9242c34302a4.png)
