@@ -56,7 +56,7 @@ For more information on CKafka monitoring APIs, please see:
 
 ## CKafka Alarm Policy
 You can create an alarm to promptly remind yourself to take corresponding measures when the status of CKafka changes. The created alarm can determine whether an alarm notification should be sent based on the comparison between the monitored metric and the given threshold in the selected time period.
-You can take appropriate precautionary or remedial measures in a timely manner when the alarm is triggered. Therefore, properly created alarms can help you improve the robustness and reliability of your applications. For more information on alarms, please see [Creating Alarms in Cloud Monitor](https://intl.cloud.tencent.com/document/product/248/6215).
+You can take appropriate precautionary or remedial measures in a timely manner when the alarm is triggered. Therefore, properly created alarms can help you improve the robustness and reliability of your applications. For more information on alarms, please see [Creating Alarms in Cloud Monitor](https://intl.cloud.tencent.com/document/product/248/38908).
 
 ## Monitoring and Alarm Policies Recommended for CKafka
 For more information on metrics that may affect the business data stability, please see [CKafka Data Reliability Description](https://intl.cloud.tencent.com/document/product/597/31586).
