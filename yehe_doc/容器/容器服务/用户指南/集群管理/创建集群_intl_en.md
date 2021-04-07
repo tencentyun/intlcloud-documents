@@ -4,7 +4,7 @@ Tencent Cloud TKE offers two ways to create clusters: [Creating Clusters Using T
 ## Prerequisites
 TKE uses cloud resources such as CVM instances, CLB instances, and CBS cloud disks. If you are using TKE for the first time, make sure you have the appropriate service authorization so that you can use these cloud resources. TKE also uses VPCs, subnets, and security groups. Each region has a resource quota. For more information on resource quotas, see [Quota Limits for Cluster Purchase](https://intl.cloud.tencent.com/document/product/457/9087).
 
-> If this is not the first time you are creating a TKE cluster, skip to [Operating Systems](#OS) for notes on operating systems.
+>? If this is not the first time you are creating a TKE cluster, skip to [Operating Systems](#OS) for notes on operating systems.
 >
 If you are creating a TKE cluster for the first time, go to [Related Operations](#RelatedOperations) to create the necessary resources for the cluster. The following is a list of all the resources you need to create:
 - [Identity Verification](#Verified)
@@ -22,7 +22,7 @@ If you are creating a TKE cluster for the first time, go to [Related Operations]
 - One script does not suit all OSs. After configuring a node with a script, run a test to make sure it is compatible with the OS.
 - For more information on how to change the OS for a cluster, see [Related Operations](#RelatedOperations).
 - To use the custom image feature, please apply by [submitting a ticket](https://console.qcloud.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&level3_id=718&radio_title=%E5%AE%B9%E5%99%A8%E9%9B%86%E7%BE%A4%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98&queue=97&scene_code=16798&step=2).
->
+>!
 >- If you need to use the custom image feature, create custom images based on the basic image provided by TKE.
 >- Currently, only modifications within a single OS type are supported. For example, you can use the CentOS basic image to create a CentOS custom image.
 >
@@ -41,7 +41,7 @@ If you are creating a TKE cluster for the first time, go to [Related Operations]
  - **Self-deployed cluster**: if you create a self-deployed Kubernetes cluster, you need to purchase and manage the master and worker nodes of the cluster. You will have all the management and operation permissions of the cluster.
  - **Elastic cluster**: if you create a serverless Kubernetes cluster, you do not need to manage any node resources of the cluster and can quickly deploy business applications.
 4. This document uses the “Standard Cluster” template under **Managed Cluster** as an example. After choosing **Standard Cluster**, go to the page for creating a cluster.
-> When using a cluster template to create a cluster, all configuration items adopt their default values. You can directly click **Next** or refer to the directions in [Creating a custom image](#CustomClusterCreation) to customize the configuration.
+>? When using a cluster template to create a cluster, all configuration items adopt their default values. You can directly click **Next** or refer to the directions in [Creating a custom image](#CustomClusterCreation) to customize the configuration.
 >
 5. Click **Finish**.
 
@@ -60,8 +60,8 @@ If you are creating a TKE cluster for the first time, go to [Related Operations]
  - **Kubernetes Version**: multiple Kubernetes versions are available. For feature comparison between different versions, see [Supported Versions of the Kubernetes Documentation](https://kubernetes.io/docs/home/supported-doc-versions/).
  - **Runtime Component**: choose **docker** or **containerd**. For more information, see [How to Choose Containerd and Docker](https://intl.cloud.tencent.com/document/product/457/31088).
  - **Region**: the region where the cluster to be created is located. We recommend that you select the region closest to you to help minimize access latency and improve the download speed.
- - **Cluster Network**: assigns IP addresses that are within the node IP range to CVMs in the cluster. For more information, see [Network Settings for Containers and Nodes](https://intl.cloud.tencent.com/document/product/457/9083).
- - **Container Network**: assigns IP addresses that are within the container network address range to containers in the cluster. For more information, see [Network Settings for Containers and Nodes](https://intl.cloud.tencent.com/document/product/457/9083).
+ - **Cluster Network**: assigns IP addresses that are within the node IP range to CVMs in the cluster. 
+ - **Container Network**: assigns IP addresses that are within the container network address range to containers in the cluster.
  - **Operating System**: select the OS based on your requirements.
  - **Cluster Description**: enter the information about the cluster, which will be displayed on the **Cluster Information** page.
  - **Advanced Settings**: you can set IPVS.
@@ -75,7 +75,7 @@ In the **Select the model** step, you can choose **Existing nodes** or **Add**.
 
 <span id="UseExistingCVMCreateCluster"></span>
 **Create a cluster using existing CVMs**
->
+>!
 > - The selected CVM will have the operating system reinstalled, and all data in the system disk will be cleared.
 > - The selected CVM will be migrated to the project of the cluster. All related security groups will be unbound. You need to bind them again manually.
 >
@@ -101,7 +101,7 @@ In the **Select the model** step, you can choose **Existing nodes** or **Add**.
       - **Data disk**: as it is not recommended to deploy other applications in the Master and Etcd nodes, no data disk is configured for them by default. You can purchase one and add it if needed.
       - **Public network bandwidth**: select **Assign free public IP** and the system will assign a public IP address for free. Two billing methods are available. For more information, see [Public Network Billing Methods](https://intl.cloud.tencent.com/document/product/213/10578).
       -  **Quantity**: set this parameter based on your actual requirements.
-> In independent deployment mode, you can refer to the Worker configuration for the configuration settings of the Masters model. At least three Master models should be deployed. Cross-AZ deployment is supported.
+>! In independent deployment mode, you can refer to the Worker configuration for the configuration settings of the Masters model. At least three Master models should be deployed. Cross-AZ deployment is supported.
 >
 2. <span id="step7">Click **Next** to start [configuring a CVM](#ConfigureCVM).</span>
 
@@ -135,6 +135,7 @@ Log in to the [Tencent Cloud console](https://console.cloud.tencent.com/). On th
 - **Enterprise Verification**: after the Tencent Cloud account passes enterprise identity verification, this account and its cloud resources belong to you and can be used for enterprise operation events on the official website of Tencent Cloud. It can be used to apply for VAT special invoices, but cannot be used for individual operation events.
 2. After verification is completed, you can use this Tencent Cloud account to create clusters and perform other operations.
 <span id="ServiceAuthorization"></span>
+
 ### Service authorization
 
 1. When you log in to the [Tencent Cloud TKE console](https://console.cloud.tencent.com/tke2) for the first time, click **Clusters** in the left sidebar. The **Service authorization** page appears.
@@ -199,20 +200,21 @@ If you select **Custom** as the template for your security group, click **Add ru
  3. On the **Create SSH Key** page that appears, configure the SSH key, as shown in the figure below.
 ![](https://main.qcloudimg.com/raw/55c8e18cc210802077c138b905e24971.png)
   - **Mode**: you can **Create a new key pair** or **Use an existing public key**.
-        - If you select **Create a new key pair**, enter a name.
-        - If you select **Use an existing public key**, enter the key name and the original public key information.
-> The following is a sample public key:
-```
+    - If you select **Create a new key pair**, enter a name.
+    - If you select **Use an existing public key**, enter the key name and the original public key information.
+
+>! The following is a sample public key:
+>```
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCdv1zOdTqtt70iqgCBT6mYbwCP3ASSl6Qidr/LmBkMCbWvSB1PDcZhcVmnkM1Fcltz25UroRmusF6s45HOgU2qZtC4J1jPV1SG6ashUJgJw9TSmnHPvy76BcRFe4xwA75CVfozSqeJejLnHP1oF8Dj+cM7/DLmxbOpJO1kaIx2bVuqYrwQGah6L3nozKSTY9qZ6pBar8TJFmgp4YDaxso78oqBtt0Q82c9MWTMszt3VvfNscS2WY6PFF3OHOlwkUesfPez5OnUeeCFpD3T5UCfTY0yrjbcYqx4WHElZ92RtSNDTbonAxUPHVYi8r6tkVNznBJJ2E+6TphvGIR2wzPl skey-qswnaltn
-```
+>```
 
  4. Click **OK** to go to the *SSH Key Pair Created** page. Click **Download** to save a copy of the private key.
-> Tencent Cloud does not save your private key information. Download and obtain the private key within 10 minutes.
+>! Tencent Cloud does not save your private key information. Download and obtain the private key within 10 minutes.
 
 
 ### Changing the default OS of a cluster
 >
-> Before changing the default OS of a cluster, read [Operating System Description](#OS) carefully to learn about the relevant risks.
+>? Before changing the default OS of a cluster, read [Operating System Description](#OS) carefully to learn about the relevant risks.
 
 1. Log in to the [Tencent Cloud TKE console](https://console.cloud.tencent.com/tke2) and click **Clusters** in the left sidebar.
 2. On the **Cluster Management** page, select **More** -> **Query Cluster Credentials** for the target cluster to go to the basic information page of the cluster.
