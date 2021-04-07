@@ -1,3 +1,4 @@
+
 This document describes how to view monitoring information such as server fleets, game server queues, and instances.
 ## Prerequisites
 
@@ -5,18 +6,17 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 
 ## Directions
 
-1. Log in to the [GSE Console](https://console.cloud.tencent.com/gse/asset) and click **Server Fleet** on the left sidebar.
+1. Log in to the [GSE console](https://console.cloud.tencent.com/gse/asset) and click **Fleet** on the left sidebar.
 2. Click the server fleet **ID** to enter the server fleet details page.
 ![](https://main.qcloudimg.com/raw/42c96a345b41ae2545c10534cf8aee1e.png)
 3. On the server fleet details page, click **View Monitoring** in the top-right corner to enter the monitoring panel.
 ![](https://main.qcloudimg.com/raw/99e7932d115505db65079bd78ad71335.png)
-4. Click **Add Monitoring Chart** in the monitoring panel to create a monitoring chart.
-![](https://main.qcloudimg.com/raw/bf9242f2c4c272732f95a341d65fd9d7.png)
-5. Select **Game Server Engine** as the product type in the top-left corner and select **Fleet**, **GameServerSessionQueue**, or **Instance** as the monitoring object as needed.
+4. Click **Dashboard** > **Dashboard List** > **Create Dashboard** > **Create Chart** to create a monitoring chart.
+5. Select the namespace and metrics on the **Metric** tab to define data to be displayed on the monitoring chart. You can select **Fleet**, **Game Server Queue** or **Instance** as the namespace as needed.
 ![](https://main.qcloudimg.com/raw/40bfdf27116e1b8ebf6a16a33f840116.png)
 
 
- - Description of available monitoring metrics for **Game Server Engine - Fleet**:
+ - Description of monitoring metrics available for **Game Server Engine - Fleet**:
 
 <table>
 <thead>
@@ -26,8 +26,8 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 </tr>
 </thead>
 <tbody><tr>
-<td>Activating Game Server Sessions (Count)</td>
-<td>Number of game server sessions in ACTIVATING status (a session in this status is being started)</td>
+<td>Game Server Sessions Being Activated(Count)</td>
+<td>Number of game server sessions in ACTIVATING status (a session in this status is being launched)</td>
 </tr>
 <tr>
 <td>Active Game Server Sessions (Count)</td>
@@ -42,7 +42,7 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 <td>Number of active instances that are not hosting any game server sessions</td>
 </tr>
 <tr>
-<td>Percent Idle Instances (%)</td>
+<td>Percent of Idle Instances (%)</td>
 <td>Percentage of active instances in idle status</td>
 </tr>
 <tr>
@@ -55,7 +55,7 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 </tr>
 <tr>
 <td>Desired Instances (Count)</td>
-<td>Target number of active instances that can be sustained by the server fleet</td>
+<td>Target number of active instances that can be maintained by the server fleet</td>
 </tr>
 <tr>
 <td>Healthy Server Processes (Count)</td>
@@ -78,7 +78,7 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 <td>Number of server processes in ACTIVE status (a process in this status is running and can host game server sessions)</td>
 </tr>
 <tr>
-<td>Percent Healthy Server Processes (%)</td>
+<td>Percent of Healthy Server Processes (%)</td>
 <td>Percentage of all active server processes that are running normally</td>
 </tr>
 <tr>
@@ -86,11 +86,11 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 <td>Number of idle game server session slots in the active server processes that are running normally</td>
 </tr>
 <tr>
-<td>Percent Available Game Server Session (%)</td>
+<td>Percent of Available Game Server Sessions (%)</td>
 <td>Percentage of idle game server session slots in all active server processes (no matter whether they are running normally or not)</td>
 </tr>
 <tr>
-<td>Current Player Sessions (Count)</td>
+<td>Active Player Sessions (Count)</td>
 <td>Player sessions in ACTIVE (the players have connected to active game server sessions) or RESERVED status (the players have been assigned with slots in the game server session but have not connected)</td>
 </tr>
 <tr>
@@ -99,13 +99,13 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 </tr>
 <tr>
 <td>No Instances (Count)</td>
-<td>Number of instances failed to be purchased</td>
+<td>Number of instances that fail to be purchased</td>
 </tr>
 </tbody></table>
 
 ![](https://main.qcloudimg.com/raw/610777f8db2c951e732fc3ac0b181633.png)
 
- - Description of available monitoring metrics for **Game Server Engine - GameServerSessionQueue**:
+ - Description of available monitoring metrics for **Game Server Engine - Game Server Queue**:
 
 <table>
 <thead>
@@ -136,10 +136,10 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 </tr>
 <tr>
 <td>Placements Failed (Count)</td>
-<td>Number of game server session placement requests that have failed for any cause since the last report</td>
+<td>Number of game server session placement requests that have failed for any reason since the last report</td>
 </tr>
 <tr>
-<td>Requests Started (Count)</td>
+<td>New Requests (Count)</td>
 <td>Number of new game server session placement requests that have been added to the queue since the last report</td>
 </tr>
 <tr>
@@ -148,7 +148,7 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 </tr>
 <tr>
 <td>Placements Timed Out (Count)</td>
-<td>Number of game server session placement requests that have exceeded the queue timeout limit and not been executed since the last report</td>
+<td>Number of game server session placement requests that have exceeded the queue timeout limit and have not been executed since the last report</td>
 </tr>
 <tr>
 <td>Queue Depth (Count)</td>
@@ -156,47 +156,47 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 </tr>
 <tr>
 <td>Placement In ap-shanghai (Count)</td>
-<td>Number of game server sessions that have been successfully placed in a server fleet in the Shanghai region since the last report</td>
+<td>Number of game server sessions that have been successfully placed in a server fleet in Shanghai since the last report</td>
 </tr>
 <tr>
 <td>Placement In na-siliconvalley (Count)</td>
-<td>Number of game server sessions that have been successfully placed in a server fleet in the Silicon Valley region since the last report</td>
+<td>Number of game server sessions that have been successfully placed in a server fleet in Silicon Valley since the last report</td>
 </tr>
 <tr>
 <td>Placement In na-ashburn (Count)</td>
-<td>Number of game server sessions that have been successfully placed in a server fleet in the Virginia region since the last report</td>
+<td>Number of game server sessions that have been successfully placed in a server fleet in Virginia since the last report</td>
 </tr>
 <tr>
 <td>Placement In ap-beijing (Count)</td>
-<td>Number of game server sessions that have been successfully placed in a server fleet in the Beijing region since the last report</td>
+<td>Number of game server sessions that have been successfully placed in a server fleet in Beijing since the last report</td>
 </tr>
 <tr>
 <td>Placement In ap-guangzhou (Count)</td>
-<td>Number of game server sessions that have been successfully placed in a server fleet in the Guangzhou region since the last report</td>
+<td>Number of game server sessions that have been successfully placed in a server fleet in Guangzhou since the last report</td>
 </tr>
 <tr>
 <td>Placement In ap-hongkong (Count)</td>
-<td>Number of game server sessions that have been successfully placed in a server fleet in the Hong Kong (China) region since the last report</td>
+<td>Number of game server sessions that have been successfully placed in a server fleet in Hong Kong since the last report</td>
 </tr>
 <tr>
 <td>Placement In ap-mumbai (Count)</td>
-<td>Number of game server sessions that have been successfully placed in a server fleet in the Mumbai region since the last report</td>
+<td>Number of game server sessions that have been successfully placed in a server fleet in Mumbai since the last report</td>
 </tr>
 <tr>
 <td>Placement In ap-seoul (Count)</td>
-<td>Number of game server sessions that have been successfully placed in a server fleet in the Seoul region since the last report</td>
+<td>Number of game server sessions that have been successfully placed in a server fleet in Seoul since the last report</td>
 </tr>
 <tr>
 <td>Placement In ap-tokyo (Count)</td>
-<td>Number of game server sessions that have been successfully placed in a server fleet in the Tokyo region since the last report</td>
+<td>Number of game server sessions that have been successfully placed in a server fleet in Tokyo since the last report</td>
 </tr>
 <tr>
 <td>Placement In eu-frankfurt (Count)</td>
-<td>Number of game server sessions that have been successfully placed in a server fleet in the Frankfurt region since the last report</td>
+<td>Number of game server sessions that have been successfully placed in a server fleet in Frankfurt since the last report</td>
 </tr>
 <tr>
 <td>Placement In ap-singapore (Count)</td>
-<td>Number of game server sessions that have been successfully placed in a server fleet in the Singapore region since the last report</td>
+<td>Number of game server sessions that have been successfully placed in a server fleet in Singapore since the last report</td>
 </tr>
 </tbody></table>
 
@@ -230,7 +230,7 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 <td>Average number of outbound packets per second of private ENI</td>
 </tr>
 <tr>
-<td>Private Outbound Bandwidth (MBit/s)</td>
+<td>Private Outbound Packets (Count/s)</td>
 <td>Average outbound traffic per second of private ENI</td>
 </tr>
 <tr>
@@ -242,8 +242,8 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 <td>Amount of the memory actually used, excluding the memory used by buffers and system caches</td>
 </tr>
 <tr>
-<td>CPU Utilization (%)</td>
-<td>Real-Time CPU utilization during instance execution</td>
+<td>CPU Utilization</td>
+<td>Real time CPU utilization during instance execution</td>
 </tr>
 <tr>
 <td>TCP Connections (Count)</td>

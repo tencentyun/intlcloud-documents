@@ -2,10 +2,6 @@
 
 本文档主要指导您如何创建生成包，以便将生成包文件上传部署到游戏服务器引擎，进行游戏托管。
 
-## 前提条件
-
-已填写 [游戏服务器引擎申请表](https://intl.cloud.tencent.com/apply/p/k0b6pvbhs6)，并获得使用资格。
-
 ## 操作步骤
 
 1. 登录 [游戏服务器引擎控制台](https://console.cloud.tencent.com/gse/asset)，单击左侧菜单【生成包】。
@@ -21,7 +17,7 @@
    - 上传代码：生成包需 [集成 gRPC框架](https://intl.cloud.tencent.com/document/product/1055/37418)。生成包目录必须包含运行您的游戏服务器所需的所有组件，包括游戏服务器可执行文件、依赖包、安装脚本，将其打包成 ZIP 包。
      - 游戏服务器可执行文件：运行游戏服务器所需的文件。生成包可以包括多个游戏服务器可执行文件，但前提是它们都为相同平台构建的。
      - 依赖包：运行游戏服务器可执行文件所需的任何相关文件。
-     - 安装脚本：用于处理在游戏服务器引擎的托管服务器上，完成安装生成包所需执行的任务。此文件必须放置到生成包目录的根目录中，安装脚本在创建舰队过程中运行一次。
+     - 安装脚本：用于处理在游戏服务器引擎的托管服务器上，完成安装生成包所需执行的任务。此文件必须放置到生成包目录的根目录中，安装脚本在创建舰队过程中运行一次。详情请参考 [游戏进程启动配置](https://intl.cloud.tencent.com/document/product/1055/39885)。
 ![](https://main.qcloudimg.com/raw/776e5e422d9ce4afb68de44356e4a303.png)
 
 ### 命令行上传
@@ -33,7 +29,7 @@
 脚本运行需要依赖以下两个安装包运行：
 -  **tencentcloud-sdk-python**
  -  安装命令：`pip install tencentcloud-sdk-python`。
- -  版本支持：支持腾讯云云API SDK Python V2.7 - V3.6版本，详情可参考 [Python SDK](https://intl.cloud.tencent.com/zh/document/product/494/7244)。
+ -  版本支持：支持腾讯云云API SDK Python V2.7 - V3.6版本，详情可参考 [Python SDK](https://intl.cloud.tencent.com/document/product/494/7244)。
 - **cos-python-sdk-v5**
  - 安装命令：`pip install -U cos-python-sdk-v5`。
  - 版本支持：详情可参考 [Python SDK](https://intl.cloud.tencent.com/document/product/436/12269)。
