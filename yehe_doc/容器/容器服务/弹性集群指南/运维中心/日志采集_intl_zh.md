@@ -1,5 +1,5 @@
 ## 操作场景
-EKS 日志采集功能可以将集群内服务的日志发送至 [日志服务 CLS](https://intl.cloud.tencent.com/product/cls)、[消息队列 CKafka](https://intl.cloud.tencent.com/product/ckafka) 或用户自建 Kafka，适用于需要对 EKS 集群内服务日志进行存储和分析的用户。本文介绍如何使用弹性容器服务 EKS 提供的集群内日志采集功能。
+EKS 日志采集功能可以将集群内服务的日志发送至 [日志服务 CLS](https://intl.cloud.tencent.com/product/cls)、[消息队列 CKafka](https://intl.cloud.tencent.com/product/CKafka) 或用户自建 Kafka，适用于需要对 EKS 集群内服务日志进行存储和分析的用户。本文介绍如何使用弹性容器服务 EKS 提供的集群内日志采集功能。
 
 
 EKS 日志采集功能需要在创建工作负载时为每个弹性集群手动开启。您可根据以下操作开启日志采集功能：
@@ -46,7 +46,7 @@ EKS 日志采集功能采集到的日志信息将会以 JSON 格式输出到您�
   1. 登录访问管理控制台，在左侧导航栏选择【[角色](https://console.cloud.tencent.com/cam/role)】。
   2. 在“角色”页面，单击【新建角色】。
   3. 在“选择角色载体” 弹窗中，选择【腾讯云产品服务】，进入【新建自定义角色】页面。
-  4. 在“输入角色载体信息”步骤中，选择绑定【云服务器（cvm）】载体，单击【下一步】。
+  4. 在“输入角色载体信息”步骤中，选择**绑定【云服务器（cvm）】载体**，单击【下一步】。
   5. 在“配置角色策略”步骤中，选择【QcloudCLSAccessForApiGateWayRole】策略，单击【下一步】。
   6. 在“审阅”步骤中，输入您的角色名称，审阅您即将创建角色的相关信息，单击【完成】后即完成自定义角色创建。详情请参见 [创建角色](https://intl.cloud.tencent.com/document/product/598/19381)。
 
