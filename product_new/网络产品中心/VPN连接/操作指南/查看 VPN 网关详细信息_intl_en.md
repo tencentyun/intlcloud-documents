@@ -1,4 +1,4 @@
-1. Log in to [Tencent Cloud Console](https://console.cloud.tencent.com/) and choose **Products** > **Virtual Private Cloud** to access VPC console.
+1. Log in to [VPC Console](https://console.cloud.tencent.com/vpc/vpc?rid=1).
 2. In the left sidebar, choose **VPN Connection** > **VPN Gateway** to go to the management page.
 3. Click the ID of the target VPN gateway to go to the details page.
 4. View the details of the VPN gateway.
