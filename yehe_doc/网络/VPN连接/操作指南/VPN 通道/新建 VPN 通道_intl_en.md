@@ -1,10 +1,10 @@
 A VPN tunnel is an encrypted public network tunnel used to transmit data packets in a VPN connection. The VPN tunnel on Tencent Cloud uses the IKE (Internet Key Exchange) protocol to establish a session when implementing IPsec. Featuring a self-protection mechanism, IKE can securely verify identities, distribute keys, and establish IPSec sessions on insecure networks. This document describes how to create a VPN tunnel on the [VPC console](https://console.cloud.tencent.com/vpc/vpnConn?rid=25).
 
 The following configuration information is required to create a VPN tunnel:
-+ Basic information
-+ SPD (Security Policy Database) policy
-+ IKE configuration (Optional)
-+ IPsec configuration (Optional)
++ [Basic information](#buzhou4)
++ [SPD (Security Policy Database) policy](#buzhou6)
++ [IKE configuration (Optional)](#buzhou7)
++ [IPsec configuration (Optional)](#buzhou8)
 
 ## Prerequisites
 + The VPN gateway and customer gateway have been configured.
@@ -15,7 +15,7 @@ The following configuration information is required to create a VPN tunnel:
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1).
 2. Click **VPN Connection** > **VPN Tunnel** on the left sidebar to go to the management page.
 3. Click **Create** on the **VPN Tunnel** management page.
-4. Configure the basic information of the VPN tunnel in the pop-up dialog box.
+4. Configure the basic information of the VPN tunnel in the pop-up dialog box.[](id:buzhou4)
 
 <table>
 <tr>
@@ -74,7 +74,7 @@ The following configuration information is required to create a VPN tunnel:
 
 5. Click **Next** to go to the **SPD Policy** configuration page.
 
-6. Configure the SPD policy.
+6. Configure the SPD policy.[](id:buzhou6)
   >?
   >+ An SPD policy consists of a series of SPD rules to specify the IP ranges in a VPC or CCN and an IDC that can communicate with each other. Each SPD rule contains one VPN gateway CIDR block and at least one customer gateway CIDR block. A CIDR block and a customer gateway CIDR block form a mapping. An SPD rule may involve multiple mappings.
   >+ The rules for all tunnels of the same VPN gateway cannot contain overlapped mappings. In other words, the VPN gateway IP range and customer gateway IP range in a mapping cannot have a duplicate address range.
@@ -93,7 +93,7 @@ Note that the mapping rules cannot overlap with each other, which means that the
  - Suppose that you want to add a new mapping between 10.0.0.0/24-----192.168.1.0/24. The operation fails as the combination of VPN gateway IP and customer gateway IP already exists.
  - You can add a new mapping between 10.0.1.0/24 and 192.168.1.0/24 as it does not overlap with any of the existing mappings.
 
-7. Click **Next** to go to the **IKE Configuration (Optional)** page. If no advanced configuration is required, click **Next** directly.
+7.[](id:buzhou7)Click **Next** to go to the **IKE Configuration (Optional)** page. If no advanced configuration is required, click **Next** directly.
 
 <table>
 <tr>
@@ -138,7 +138,7 @@ Note that the mapping rules cannot overlap with each other, which means that the
 </tr>
 </table>
 
-8. Go to the **IPsec configuration (Optional)** page. Directly click **Finish** if no advanced configuration is required.
+8.[](id:buzhou8)Go to the **IPsec configuration (Optional)** page. Directly click **Finish** if no advanced configuration is required.
 
 <table>
 <tr>
