@@ -19,7 +19,7 @@
  For example, select Guangzhou region.
  ![](https://main.qcloudimg.com/raw/f845cfeef21663bf8aaff58d5145f08c.png)
  4. Find the instance whose image needs to be copied, click **More** > **Cross-region replication**.
- > For batch operations, select all the images you want to copy and click **Cross-region replication**.
+ >? For batch operations, select all the images you want to copy and click **Cross-region replication**.
  >
  5. In the pop-up "Cross-region copying" window, select the regions where the image will be copied to and click **OK**.
 After the copying is completed, the image list in the destination regions will display images with the same name and different IDs.
