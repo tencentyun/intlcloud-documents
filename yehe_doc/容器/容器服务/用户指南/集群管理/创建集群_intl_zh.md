@@ -4,7 +4,7 @@
 ## 前提条件
 容器服务中使用了云服务器、负载均衡、云硬盘等多种云资源，首次使用之前需进行服务授权以获取相关云资源使用权限。此外，集群创建过程中也将使用私有网络、子网、安全组等多种资源。资源所在地域具备一定的配额限制，详情请参见[ 购买集群配额限制](https://intl.cloud.tencent.com/document/product/457/9087)。
 
->非首次使用容器服务进行集群创建，请跳过以下步骤，直接前往 [操作系统说明](#OS) 了解说明事项。
+>?非首次使用容器服务进行集群创建，请跳过以下步骤，直接前往 [操作系统说明](#OS) 了解说明事项。
 >
 如果首次使用容器服务进行集群创建，请前往[ 相关操作 ](#RelatedOperations)提前准备相关资源。具体内容如下：
 - [实名认证](#Verified)
@@ -22,7 +22,7 @@
 - 同一脚本不一定适用于所有操作系统，建议您对节点进行脚本配置之后，验证该节点操作系统是否与此脚本相适配。
 - 集群更改操作系统步骤请参见 [相关操作](#RelatedOperations)。
 - 如需使用自定义镜像功能，请 [提交工单](https://console.qcloud.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&level3_id=718&radio_title=%E5%AE%B9%E5%99%A8%E9%9B%86%E7%BE%A4%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98&queue=97&scene_code=16798&step=2) 申请。
->
+>!
 >- 如果您需要使用自定义镜像功能，请使用容器服务提供的基础镜像来制作自定义镜像。
 >- 目前仅支持同类型的操作系统修改，例如：使用 CentOS 基础镜像制作 CentOS 类的自定义镜像。
 >
@@ -41,7 +41,7 @@
  - **独立集群**：创建一个 Kubernetes 独立集群，同时购买并管理集群的管理及工作节点，拥有集群的所有管理和操作权限。
  - **弹性集群**：创建一个 Serverless Kubernetes 集群，无需管理集群的任何节点资源，即可快速部署业务应用。
 4. 本文以使用托管集群下的“标准集群”模板为例，选择【标准集群】即可前往“创建集群”页面。
->使用集群模板创建集群过程中，各配置项已采用默认值，可以直接单击【下一步】，也可参照 [自定义新建集群](#CustomClusterCreation) 步骤进行自定义配置。
+>?使用集群模板创建集群过程中，各配置项已采用默认值，可以直接单击【下一步】，也可参照 [自定义新建集群](#CustomClusterCreation) 步骤进行自定义配置。
 >
 5. 单击【完成】即可创建成功。
 
@@ -60,8 +60,8 @@
  - **Kubernetes版本**：提供多个 Kubernetes 版本选择，可前往 [Supported Versions of the Kubernetes Documentation](https://kubernetes.io/docs/home/supported-doc-versions/) 查看各版本特性对比。
  - **运行时组件**：提供【docker】和【containerd】两种选择。详情请参见 [如何选择 Containerd 和 Docker](https://intl.cloud.tencent.com/document/product/457/31088)。
  - **所在地域**：建议您根据所在地理位置选择靠近的地域，可降低访问延迟，提高下载速度。
- - **集群网络**：为集群内主机分配在节点网络地址范围内的 IP 地址。详情请参见 [容器及节点网络设置](https://intl.cloud.tencent.com/document/product/457/9083)。
- - **容器网络**：为集群内容器分配在容器网络地址范围内的 IP 地址。详情请参见 [容器及节点网络设置](https://intl.cloud.tencent.com/document/product/457/9083)。
+ - **集群网络**：为集群内主机分配在节点网络地址范围内的 IP 地址。
+ - **容器网络**：为集群内容器分配在容器网络地址范围内的 IP 地址。
  - **操作系统**：根据实际需求进行选择。
  - **集群描述**：填写集群的相关信息，该信息将显示在**集群信息**页面。
  - **高级设置**：可设置 ipvs。
@@ -75,7 +75,7 @@
 
 <span id="UseExistingCVMCreateCluster"></span>
 **使用已有云服务器创建集群**
->
+>!
 > - 所选的云服务器需重装系统，重装后云服务器系统盘的所有数据将被清除。
 > - 所选的云服务器将迁移至集群所属项目，且云服务器迁移项目会导致安全组解绑，需要重新绑定安全组。
 >
@@ -101,7 +101,7 @@
       - **数据盘**：Master 和 Etcd 不建议部署其他应用，默认不配置数据盘，您可以购置后再添加。
       - **公网宽带**：勾选【分配免费公网IP】，系统将免费分配公网 IP。提供两种计费模式，详情请参见 [公网计费模式](https://intl.cloud.tencent.com/document/product/213/10578)。
       -  **数量**：根据实际需求进行设置。
->独立部署模式下，Masters 机型配置项设置亦可参考 Worker 配置 ，其数量最少部署3台，可跨可用区部署。
+>?独立部署模式下，Masters 机型配置项设置亦可参考 Worker 配置 ，其数量最少部署3台，可跨可用区部署。
 >
 2. <span id="step7">单击【下一步】，开始 [配置云服务器](#ConfigureCVM)。</span>
 
@@ -200,20 +200,21 @@
  3. 在弹出的“创建 SSH 密钥”窗口中，进行密钥信息设置，如下图所示：
 ![](https://main.qcloudimg.com/raw/55c8e18cc210802077c138b905e24971.png)
   - **创建方式**：提供 “创建新密钥对”和“使用已有公钥”两种方式，请根据实际情况进行选择。
-        - 若创建方式选择为【创建新密钥对】时，请输入密钥名称。
-        - 若创建方式选择为【使用已有公钥】时，请输入密钥名称和原有的公钥信息。
->公钥内容格式及示例如下：
-```
+    - 若创建方式选择为【创建新密钥对】时，请输入密钥名称。
+    - 若创建方式选择为【使用已有公钥】时，请输入密钥名称和原有的公钥信息。
+
+>!公钥内容格式及示例如下：
+>```
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCdv1zOdTqtt70iqgCBT6mYbwCP3ASSl6Qidr/LmBkMCbWvSB1PDcZhcVmnkM1Fcltz25UroRmusF6s45HOgU2qZtC4J1jPV1SG6ashUJgJw9TSmnHPvy76BcRFe4xwA75CVfozSqeJejLnHP1oF8Dj+cM7/DLmxbOpJO1kaIx2bVuqYrwQGah6L3nozKSTY9qZ6pBar8TJFmgp4YDaxso78oqBtt0Q82c9MWTMszt3VvfNscS2WY6PFF3OHOlwkUesfPez5OnUeeCFpD3T5UCfTY0yrjbcYqx4WHElZ92RtSNDTbonAxUPHVYi8r6tkVNznBJJ2E+6TphvGIR2wzPl skey-qswnaltn
-```
-> 
+>```
+
  4. 单击【确定】，并单击弹出的“SSH密钥对已创建”提示框中【下载】按钮获取私钥。
-> 腾讯云不会保管您的私钥信息，请在10分钟内下载和获取私钥。
+>! 腾讯云不会保管您的私钥信息，请在10分钟内下载和获取私钥。
 
 
 ### 更改集群默认操作系统
 >
-> 进行集群默认操作系统更改操作之前，请仔细阅读[ 操作系统说明 ](#OS)以知悉相关风险。
+>? 进行集群默认操作系统更改操作之前，请仔细阅读[ 操作系统说明 ](#OS)以知悉相关风险。
 
 1. 登录 [腾讯云容器服务控制台](https://console.cloud.tencent.com/tke2) ，单击左侧导航栏中的【集群】。
 2. 在“集群管理”页面，选择目标集群所在行右侧的【更多】>【查看集群凭证】，进入集群基本信息页。
