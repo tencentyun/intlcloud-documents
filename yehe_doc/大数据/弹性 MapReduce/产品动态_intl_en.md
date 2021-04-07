@@ -1,3 +1,23 @@
+## February 2021
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Released the EMR service in new regions on Tencent Cloud Chinese.</td>
+<td>Added support for the Bangkok, Seoul, Tokyo, Virginia, and Toronto regions on Tencent Cloud Chinese.</td>
+<td>February 02, 2021</td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+
 ## January 2021
 <table>
 <thead>
@@ -132,7 +152,7 @@
 <tbody>
 <tr>
 <td>Released Hadoop EMR v2.5.0.</td>
-<td>Upgraded the Alluxio component to the stable version 2.3.0, which delivers better performance in the use cases where compute and storage are separated.<td>
+<td>Upgraded the Alluxio component to the stable version 2.3.0, which delivers better performance in the use cases where compute and storage are separated.</td>
 <td>September 17, 2020</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
 </tr>

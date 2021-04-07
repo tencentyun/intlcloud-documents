@@ -1,3 +1,23 @@
+## 2021年02月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> 新增境外地域开服  </td>
+<td>  中国站境外地域新增曼谷、首尔、东京、弗吉尼亚、多伦多地域开服</td>
+<td>2021-02-02 </td>
+<td>-</td>
+</tr>
+</tbody></table>
+
+
 ## 2021年01月
 <table>
 <thead>
