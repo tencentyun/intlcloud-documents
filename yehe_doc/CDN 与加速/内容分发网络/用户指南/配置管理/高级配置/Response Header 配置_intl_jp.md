@@ -68,9 +68,9 @@
 | **マッチング方式**   | **ドメイン値**                                                     | **説明**                                                     |
 | :------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | 完全マッチング        | *                                                            | 「*」に設定する場合、ヘッダー `Access-Control-Allow-Origin:` がすべての応答に追加されます。 |
-| 固定マッチング            | `http://cloud.tencent.com` `https://cloud.tencent.com` `http://www.b.com` | `https://cloud.tencent.com`からのリクエストで、リストにヒットした場合、応答に次のヘッダーを追加：  `Access-Control-Allow-Origin: https://cloud.tencent.com`。 `https://www.qq.com`からのリクエストで、リストにヒットしない場合、応答は変わりません。 |
-| 第2レベルのワイルドカードドメイン名のマッチング | `http://*.tencent.com`                                       | `https://cloud.tencent.com`からのリクエストで、リストにヒットした場合、応答に次のヘッダーを追加： `Access-Control-Allow-Origin: https://cloud.tencent.com`  。`https://cloud.qq.com`からのリクエストで、リストにヒットしない場合、応答は変わりません。 |
-| ポートマッチング        | `https://cloud.tencent.com:8080`                             | `https://cloud.tencent.com:8080`からのリクエストで、リストにヒットした場合、応答に次のヘッダーを追加：`Access-Control-Allow-Origin:https://cloud.tencent.com:8080`。 https://cloud.tencent.comからのリクエストで、リストにヒットしない場合、応答は変わりません。 |
+| 固定マッチング            | `http://cloud.tencent.com` `https://cloud.tencent.com` `http://www.b.com` | `https://cloud.tencent.com`からのリクエストで、リストにヒットした場合、応答に次のヘッダーを追加：  `Access-Control-Allow-Origin: https://cloud.tencent.com` `https://www.qq.com`からのリクエストで、リストにヒットしない場合、応答は変わりません。 |
+| 第2レベルのワイルドカードドメイン名のマッチング | `http://*.tencent.com`                                       | `https://cloud.tencent.com`からのリクエストで、リストにヒットした場合、応答に次のヘッダーを追加： `Access-Control-Allow-Origin: https://cloud.tencent.com`  `https://cloud.qq.com`からのリクエストで、リストにヒットしない場合、応答は変わりません。 |
+| ポートマッチング        | `https://cloud.tencent.com:8080`                             | `https://cloud.tencent.com:8080`からのリクエストで、リストにヒットした場合、応答に次のヘッダーを追加：`Access-Control-Allow-Origin:https://cloud.tencent.com:8080` `https://cloud.tencent.com`からのリクエストで、リストにヒットしない場合、応答は変わりません。 |
 
 >! 特殊なポートがある場合は、リストに関連情報を記入する必要があります。任意のポートマッチングをサポートしないため、指定しなければなりません。
 
