@@ -1,5 +1,5 @@
 1. **创建 HAVIP**
-登录 [HAVIP 控制台](https://console.cloud.tencent.com/vpc/havip) ，创建一个 HAVIP，具体方法请参见 [创建 HAVIP](https://intl.cloud.tencent.com/zh/document/product/215/31820#.E5.88.9B.E5.BB.BA-havip)。
+登录 [HAVIP 控制台](https://console.cloud.tencent.com/vpc/havip) ，创建一个 HAVIP，具体方法请参见 [创建高可用虚拟 IP](https://intl.cloud.tencent.com/document/product/215/31820#.E5.88.9B.E5.BB.BA-havip)。
 2. **绑定和配置**
 此处与传统模式配置一样，由后端机器声明和协商哪一设备绑定创建的 HAVIP。您只要在对应的配置文件中指定 virtual IP为 HAVIP。
 在群集管理器里，将刚才创建的 HAVIP 配置进去。
