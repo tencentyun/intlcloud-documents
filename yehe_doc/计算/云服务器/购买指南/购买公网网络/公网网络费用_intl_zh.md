@@ -1,55 +1,8 @@
 本文介绍不同计费模式的公网网络价格，您可以按需选择合适的计费模式。
 
-## 包月带宽
-根据需求预先购买固定带宽，付费模式为预付费。适用于业务流量峰值在不同时间段比较平稳，且长期使用的场景。
->? 此产品的包年包月售卖模式正在内测中，如有需要，请[联系商务](https://intl.cloud.tencent.com/contact-sales)。
-
-**计费价格**
-
-<table>
-<thead>
-<tr>
-<th rowspan="2" width="10%">地域</th>
-<th colspan="3"  style="text-align:center;">价格（单位：美元/Mbps/月）</th>
-</tr>
-<tr>
-<th>≤ 2Mbps的部分</th>
-<th>2Mbps＜带宽 ≤ 5Mbps的部分 </th>
-<th>＞5Mbps的部分</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>广州<br>清远<br>上海<br>北京<br>中国香港<br>新加坡   </td>
-<td>2.86   </td>
-<td>3.57</td>
-<td>12.86</td>
-</tr>
-<tr>
-<td >成都<br>重庆  </td>
-<td>2.57</td>
-<td>3.15</td>
-<td rowspan="5">11.43</td>
-</tr>
-<tr>
-<td>多伦多<br>硅谷<br>弗吉尼亚<br>曼谷<br>孟买<br> 莫斯科  </td>
-<td colspan="2">4.29   </td>
-</tr>
-<tr>
-<td >首尔<br>法兰克福   </td>
-<td colspan="2">2.86</td>
-</tr>
-<tr>
-<td >东京</td>
-<td colspan="2">3.57</td>
-</tr>
-</tbody></table>
-
-**计费示例**
-假设您购买了广州地域的 EIP，选择了包月带宽计费模式。该用户购买了2个月15Mbps的固定带宽，则总费用为：（2.86美元/Mbps/月 × 2Mbps + 3.57美元/Mbps/月 × 3Mbps + 12.86美元/Mbps/月 × 10Mbps）× 2个月  = 290.06美元。
-
 ##   按流量
->? 此产品的包年包月售卖模式正在内测中，如有需要，请[联系商务](https://intl.cloud.tencent.com/contact-sales)。
-根据使用的公网流量计费，付费模式为后付费，每小时结算一次。适用于业务流量峰值在不同时间段波动较大的场景。
+>? 根据使用的公网流量计费，付费模式为后付费，每小时结算一次。适用于业务流量峰值在不同时间段波动较大的场景。
+
 **计费价格**
 <table>
 <thead>
