@@ -3,15 +3,15 @@ Before using CSS, you need to know the following use limits:
 <table>
 <tr><th>Item</th><th>Description</th></tr>
 <tr>
-<td>CSS domain name</td>
+<td>Live stream domain name</td>
 <td><ul style="margin:0">
-<li>Multiple playback and push domain names can be created under an account by default. If a domain name is used in Mainland China, it must have an ICP filing from the MIIT, and the current filing information must be normal and available.</li><li>We recommend you use a domain name containing up to 30 characters. If it has over <strong>30</strong> characters, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> for assistance.</li>
+<li>Multiple playback and push domain names can be created under an account by default. If a domain name is used in Chinese mainland, it must have an ICP filing from the MIIT, and the current filing information must be normal and available.</li><li>We recommend you use a domain name containing up to 30 characters. If it has over <strong>30</strong> characters, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> for assistance.</li>
 <li>A domain name managed by CSS can be used to push or play back live streams normally only after being resolved. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/267/31057">Configuring CNAME for Domain Name</a>.</li></td>
 </tr><tr>
-<td>CSS push</td>
+<td>Live push</td>
 <td>The CSS service does not limit the push bitrate and supports common resolutions and corresponding bitrates. To avoid push lag, we recommend you keep the bitrate below 4 Mbps.</td>
 </tr><tr>
-<td>CSS playback</td>
+<td>Live playback</td>
 <td><ul style="margin:0">
 <li>Only when the `StreamName` of the playback address is the same as that of the push address can the corresponding stream be played back.</li><li>The number of live streaming viewers is not limited, and you can set a bandwidth limit.</li></td>
 </tr><tr>
