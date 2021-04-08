@@ -61,8 +61,8 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Dom
 </tr>
 </tbody></table>
 
-
-### Access-Control-Allow-Origin match mode introduction[](id:acao)
+[](id:acao)
+### Access-Control-Allow-Origin match mode introduction
 
 | **Match Mode**   | **Origin Value**                                                     | **Description**                                                     |
 | :------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
@@ -73,7 +73,8 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Dom
 
 > ! If there are special ports, you need to enter the relevant information in the list. Arbitrary port match is not supported, and you must specify the ports.
 
-### Notes[](id:noice)
+[](id:noice)
+### Notes
 
 The headers below are not supported and will not take effect if configured:
 
