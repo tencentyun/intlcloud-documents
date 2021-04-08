@@ -1,9 +1,9 @@
 <span id="que1"></span>
-### Which COS storage regions are currently supported by CSS screencapturing?
-Currently, CSS screenshots can be stored in the following regions:
+### Which COS storage regions are currently supported by live screencapture?
+Currently, screenshots can be stored in the following regions:
 <table>
 <tbody><tr><th colspan="3">Public Cloud Region</th></tr><tr>
-<td rowspan="5">Mainland China</td>
+<td rowspan="5">Chinese mainland</td>
 <td>Beijing</td>
 </tr><tr><td>Guangzhou</td>
 </tr><tr><td>Shanghai</td>
