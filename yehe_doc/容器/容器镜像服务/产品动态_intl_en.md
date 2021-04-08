@@ -1,5 +1,13 @@
 >? This document introduces the updates to Tencent Container Registry (TCR) Enterprise Edition. For more information about the updates to Tencent Kubernetes Engine (TKE), see [Release Notes](https://intl.cloud.tencent.com/document/product/457/37358).
 
+
+## March 2021
+<table>
+	<tr><th style="width: 25%;">Update</th><th style="width: 50%;">Description</th><th style="width: 25%;">Document</th></tr>
+<tr><td>Custom domain name</td><td>TCR supports custom domain name. User can add a custom domain name and SSL certificate for the Enterprise Edition instance to access the instance through the HTTPS protocol.</td><td>Configuring Custom Domain Name</td></tr>
+</table>
+
+
 ## January 2021
 <table>
 	<tr><th style="width: 25%;">Update</th><th style="width: 50%;">Description</th><th style="width: 25%;">Document</th></tr>
@@ -20,7 +28,7 @@
 
 <table>
 	<tr><th style="width: 25%;">Update</th><th style="width: 50%;">Description</th><th style="width: 25%;">Document</th></tr>
-	<tr><td>Added support for multiple code sources in the image building feature.</td><td>The private GitLab and TGit code sources are now supported, and the code source authorization process has been optimized. </td><td>Configuring Image Building</td></tr>
+	<tr><td>Added support for multiple code sources in the image building feature.</td><td>The private GitLab and TGit code sources are now supported, and the code source authorization process has been optimized.</td><td>Configuring Image Building</td></tr>
 	<tr><td>Added support for image filtering in the delivery assembly line deployment feature.</td><td>Local push images can be used to trigger the deployment process, and filtering rules can be configured to deploy only the most recently pushed images that meet the rules.</td><td>Using the Delivery Assembly Line to Implement Container DevOps</td></tr>
 </table>
 
