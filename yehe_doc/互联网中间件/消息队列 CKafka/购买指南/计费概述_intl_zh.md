@@ -17,7 +17,7 @@
 
 选购专业版实例时，请您做好对业务峰值带宽、Partition数和磁盘容量的估算，最终购买的专业版实例的总费用 = (基础套餐包费用 + Partition 包单价 × 额外 Partition 数量 / 100 + 磁盘容量单价 × 磁盘容量 / 100) × 月数
 
-> ?包年包月暂不支持提前进行缩容，您可以先 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=876&level2_id=951&source=0&data_title=消息服务 CKafKa&step=1) 申请缩容，等待到下一计费周期开始前，后台会为您执行缩容，执行后新的一个月/年会按照缩容后的规格计算。
+> ?包年包月暂不支持提前进行缩容，您可以先 [提交工单](https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fworkorder%2Fcategory) 申请缩容，等待到下一计费周期开始前，后台会为您执行缩容，执行后新的一个月/年会按照缩容后的规格计算。
 
 ## 专业版价格
 
