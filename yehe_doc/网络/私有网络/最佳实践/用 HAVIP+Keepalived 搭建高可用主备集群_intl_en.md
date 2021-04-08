@@ -1,8 +1,7 @@
 
 This document describes how to use Keepalived with [HAVIP](https://intl.cloud.tencent.com/document/product/215/31817) to build a high availability primary/secondary cluster in the Tencent Cloud VPC.
->?
+>?HAVIP is currently in beta, and switching between primary/secondary servers may take 10 seconds. To try it out, please apply to be a beta user.
 >
->- HAVIP is currently in beta, and switching between primary/secondary servers may take 10 seconds. To try it out, please apply to be a beta user.
 
 ## Basic Principle
 Typically, a high availability primary/secondary cluster consists of two servers: an active primary server and a standby secondary server. The two servers share the same VIP (virtual IP) which is only valid for the primary server. When the primary server fails, the secondary server will take over the VIP to continue providing services. This mode is widely used in MySQL source/replica switch and Ngnix web access.
