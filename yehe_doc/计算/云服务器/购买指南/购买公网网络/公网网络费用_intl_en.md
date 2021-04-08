@@ -1,56 +1,9 @@
 This document describes the public network prices under different billing modes and helps you choose the billing plan that best suits your business.
 
-## Monthly Bandwidth Subscription
-For the monthly bandwidth subscription plan, you pay for a fixed bandwidth in advance. Monthly bandwidth subscription is suitable for long-term scenarios with stable traffic.
->? The monthly subscription mode is currently in beta. To use it, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
-
-**Pricing**
-
-<table>
-<thead>
-<tr>
-<th rowspan="2" width="10%">Region</th>
-<th colspan="3"  style="text-align:center;">Price (unit: USD/Mbps/month)</th>
-</tr>
-<tr>
-<th>Bandwidth ≤ 2 Mbps</th>
-<th>2 Mbps < Bandwidth ≤ 5 Mbps</th>
-<th>Bandwidth > 5 Mbps</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Guangzhou<br>Qingyuan<br>Shanghai<br>Beijing<br>Hong Kong, China<br>Singapore</td>
-<td>2.86   </td>
-<td>3.57</td>
-<td>12.86</td>
-</tr>
-<tr>
-<td>Chengdu<br>Chongqing</td>
-<td>2.57</td>
-<td>3.15</td>
-<td rowspan="5">11.43</td>
-</tr>
-<tr>
-<td>Toronto<br>Silicon Valley<br>Virginia<br>Bangkok<br>Mumbai<br>Moscow</td>
-<td colspan="2">4.29   </td>
-</tr>
-<tr>
-<td>Seoul<br>Frankfurt</td>
-<td colspan="2">2.86</td>
-</tr>
-<tr>
-<td>Tokyo</td>
-<td colspan="2">3.57</td>
-</tr>
-</tbody></table>
-
-**Billing example**
-
-Suppose you purchase an EIP in Guangzhou region and choose monthly bandwidth subscription billing mode. If you purchase a fixed bandwidth of 15 Mbps for 2 months, the fees will be: (2.86 USD/Mbps/month) × 2 Mbps + 3.57 USD/Mbps/month × 3 Mbps + 12.86 USD/Mbps/month × 10 Mbps) × 2 months = 290.06 USD.
-
 ## Bill-by-traffic
  
-Fees are pay-as-you-go on an hourly billing cycle based on the public network traffic used. Bill-by-traffic is suitable for scenarios where the peak business traffic fluctuates greatly at varying times.
+>?Fees are pay-as-you-go on an hourly billing cycle based on the public network traffic used. Bill-by-traffic is suitable for scenarios where the peak business traffic fluctuates greatly at varying times.
+
 **Pricing**
 <table>
 <thead>
