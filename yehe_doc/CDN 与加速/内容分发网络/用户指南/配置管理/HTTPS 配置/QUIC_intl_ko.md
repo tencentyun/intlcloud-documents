@@ -13,7 +13,8 @@ Tencent Colud CDN QUIC 베타 서비스가 오픈되었습니다. [신청 양식
 
 [CDN 콘솔](https://console.cloud.tencent.com/cdn)에 로그인하여 신규 도메인을 추가할 때 QUIC 플랫폼 항목을 선택하여 도메인에 대한 QUIC 플랫폼에 액세스할 수 있습니다:
 ![](https://main.qcloudimg.com/raw/2098308cd8a8c1a0321c0164646b7700.png)
-**설정 제한: **
+
+**설정 제한:**
 
 - 스트림 미디어 VOD 가속 서비스 유형 도메인의 경우 현재 QUIC을 지원하지 않습니다.
 - IPv6 액세스 활성화 이후에 QUIC을 활성화할 수 없습니다.
