@@ -1,7 +1,7 @@
 ## Configuration Overview
 
-When an end user requests for a business resource, you can add a custom header in the **response message** to implement cross-origin resource sharing.
-Response header in configured on domain name level, therefore, once the configuration takes effect, it will be synced to the response messages of all resource under the domain name. Response header configuration only makes changes to the client (browser) response but not to the CDN node cache.
+When an end user requests a business resource, you can add a custom header in the returned **response message** to implement cross-origin resource sharing.
+Response header configuration is of the domain name dimension, therefore, once the configuration takes effect, it will be synced to the response message of each resource under the domain name. Response header configuration only makes changes to the client (browser) response but not to the CDN node cache.
 
 ## Configuration Guide
 
@@ -15,11 +15,10 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Dom
 | Operation | Description                                                         |
 | :------- | :----------------------------------------------------------- |
 | Set     | Changes the value of a specified response header parameter.<br/>If the target header does not exist, it will be added after the change operation.<br/>If the header parameter already exists, all the duplicates will be changed and merged into one header. For example, after the rule "Set - `x-cdn: value1`" is configured, if a request contains multiple `x-cdn` headers, the headers will be changed and merged into one header `x-cdn: value1`. |
-| Add     | Adds a specified response header parameter.<br/>Adding headers with the same parameter but different values is allowed by default. For example, you can add `x-cdn:value1` and `x-cdn:value2` at the same time.<br/>If you add a header that already exists (the header parameter and value are exactly the same as these of the existing one), it can still be added. For example, the header `x-cdn:value1` already exists, you can still add the header `x-cdn:value1`.<br/><br/>**Note: A request may be affected by its duplicate headers, therefore, we recommend setting headers in such cases.** |
 | Delete     | Deletes a specified response header parameter.                                       |
 
 > !
-> - Some headers cannot be set, added, or deleted in a self-service manner. For the detailed list, please see [Notes](#noice).
+> - Some headers cannot be set or deleted in a self-service manner. For the detailed list, please see [Notes](#noice).
 > - Up to 10 response header rules can be configured.
 > - Rule priority can be adjusted. Rules lower on the list have higher priority. If a header parameter is configured with multiple rules, the bottom rule will take effect as rules are executed from bottom to top.
 
@@ -29,7 +28,7 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Dom
 <thead>
 <tr>
 <th style="width:230px">Header Parameter</th>
-<th>Note</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -38,11 +37,11 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Dom
 </tr>
 <tr>
 <td>Access-Control-Allow-Methods</td>
-<td>Specifies the cross-origin HTTP request method and supports multiple methods at the same time.<br>Valid values: `POST`, `GET`, and `OPTIONS`.</td>
+<td>Specifies the cross-origin HTTP request method and supports multiple methods at the same time: <br>`Access-Control-Allow-Methods: <code>POST, GET, OPTIONS`</code>.</td>
 </tr>
 <tr>
 <td>Access-Control-Max-Age</td>
-<td>Specifies the validity period (in seconds) of a preflight request.<br>For a non-simple cross-origin request, an HTTP query request, namely the preflight request, is needed before the official communication to check whether the cross-origin request is secure to be accepted. A cross-origin request is non-simple if it is:<br>Not a GET, HEAD, or POST request, or it is a POST request but its request data type is `application/xml`, `text/xml`, or any other data type except `application/x-www-form-urlencoded`, `multipart/form-data`, and `text/plain`.<br>For example, if a custom request header is `Access-Control-Max-Age:1728000`, it indicates that there will not be another preflight request sent for the cross-origin access to the resource within 1,728,000 seconds (20 days).</td>
+<td>Specifies the validity period (in seconds) of a preflight request.<br>For a non-simple cross-origin request, an HTTP query request, namely the preflight request, is needed before the official communication to check whether the cross-origin request is secure to be accepted. A cross-origin request is non-simple if it is:<br>Not a GET, HEAD, or POST request, or it is a POST request but its request data type is `application/xml`, `text/xml`, or any other data type except `application/x-www-form-urlencoded`, `multipart/form-data`, and `text/plain`.<br>For example, if a custom request header is `Access-Control-Max-Age:1728000`, it indicates that there will not be another preflight request sent for the cross-origin resource sharing within 1,728,000 seconds (20 days).</td>
 </tr>
 <tr>
 <td>Access-Control-Expose-Headers</td>
@@ -62,8 +61,8 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Dom
 </tr>
 </tbody></table>
 
-<span id="acao"></span>
-### Access-Control-Allow-Origin match mode description
+
+### Access-Control-Allow-Origin match mode introduction[](id:acao)
 
 | **Match Mode**   | **Origin Value**                                                     | **Description**                                                     |
 | :------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
@@ -74,10 +73,9 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Dom
 
 > ! If there are special ports, you need to enter the relevant information in the list. Arbitrary port match is not supported, and you must specify the ports.
 
-<span id="noice"></span>
-### Notes
+### Notes[](id:noice)
 
-The following headers currently cannot be set, added, or deleted by users directly:
+The headers below are not supported and will not take effect if configured:
 
 ```
 Date

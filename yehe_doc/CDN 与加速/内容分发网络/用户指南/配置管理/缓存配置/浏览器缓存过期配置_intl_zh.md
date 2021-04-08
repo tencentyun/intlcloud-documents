@@ -13,17 +13,14 @@
 
 
 
-
-
 ### 新增规则
 
 您可按需添加浏览器缓存过期规则，单击【新增规则】，支持指定文件类型/文件目录/文件路径/首页配置缓存行为：
 <img src="https://main.qcloudimg.com/raw/d98a14185f9e9d41d682fb356601e9e5.jpg" style="height:220px"/>
 
-- 遵循源站：遵循源站的 Cache-Control 头部。
-- 缓存：配置资源在浏览器的缓存时间。
+- 遵循源站：遵循源站的 Cache-Control 头部。源站无 CC 头部或 CC 头部为 no-cache/no-store/private，则浏览器不缓存资源。
+- 缓存：源站 CC 头部不为 no-cache/no-store/private 时，遵循控制台浏览器缓存配置规则，否则，浏览器不缓存资源。
 - 不缓存：浏览器不缓存资源。
-
 
 
 **配置约束**
@@ -32,3 +29,12 @@
 - 多条规则支持调整优先级：底部优先级大于顶部。
 - 单条文件类型/文件目录/文件路径规则中，至多可输入50组内容，不同内容之间用“;”分隔。例如：文件类型 - jpg;png。
 - 不支持提交中文内容。
+
+### 平台默认策略
+若您未配置任何规则或请求未命中配置的规则时，默认遵循以下平台策略：
+- 当用户请求您某一业务资源时，若源站对应的 HTTP Response Header 中存在 Cache-Control 字段，则遵循该 Cache-Control 。
+- 若源站对应的 HTTP Response Header 中无 Cache-Control 字段，则：浏览器默认对该资源缓存600s。
+
+若您已配置/命中控制台 [节点缓存过期配置](https://intl.cloud.tencent.com/document/product/228/38424) 时：
+- 若源站对应的 HTTP Response Header 中无 Cache-Control 字段，则浏览器不缓存资源。
+- 若源站对应的 HTTP Response Header 中存在 Cache-Control 字段，则浏览器缓存遵循该 Cache-Control。
