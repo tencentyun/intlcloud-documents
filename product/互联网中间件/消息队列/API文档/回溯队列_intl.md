@@ -5,7 +5,7 @@ Domain for public network API request: cmq-queue-region.api.qcloud.com
 
 Domain for private network API request: cmq-queue-region.api.tencentyun.com
 
-> Whenever (including during alpha test) any public network downstream traffic is generated from the use of a public network domain, a fee will be charged. It is strongly recommended that users whose services are on the Tencent Cloud use **private network** domains, because no fee will be charged for the traffic consumed in the private network.
+>? Whenever (including during alpha test) any public network downstream traffic is generated from the use of a public network domain, a fee will be charged. It is strongly recommended that users whose services are on the Tencent Cloud use **private network** domains, because no fee will be charged for the traffic consumed in the private network.
 
 - region should be replaced with a specific region: gz (Guangzhou), sh (Shanghai), or bj (Beijing). The region value in the common parameters should be consistent with the region value of the domain. If there is an inconsistency, the request will be sent to the region specified by the domain.
 - Public network domain requests both support http and https. Private network requests only support http.
@@ -69,7 +69,7 @@ Input:
 <pre>
  https://domain/v2/index.php?Action=RewindQueue
  &queueName=test-queue-123&startConsumeTime=unix timestamp
- &<<a href="https://intl.cloud.tencent.com/doc/api/229/6976">Common request parameters</a>>
+ &<<a href="https://intl.cloud.tencent.com/document/product/213/31574">Common request parameters</a>>
 </pre>
 
 Output:
