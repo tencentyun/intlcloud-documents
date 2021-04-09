@@ -16,7 +16,7 @@ After the CLS service is commercialized, Tencent Cloud still provides a certain 
 
 >!
 >- The free tier is counted for all resources of a single user in each region.
->- **The Free Tier perk will end at 23:59:59 on June 31, 2021.**
+>- **The Free Tier perk will end at 23:59:59 on June 30, 2021.**
 >- The daily free tier will not be accumulated into the next billing cycle.
 > - If your service is suspended due to violations or overdue payment, you will not be eligible for the Free Tier perk. Free tier will be unavailable until the service is restarted.
 >- The free tier is applicable to all regions supported by CLS.
