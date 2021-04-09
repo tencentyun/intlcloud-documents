@@ -1,4 +1,4 @@
-In order to protect the information security of live streaming, push authentication is enabled for CSS push domain names by default. You can generate the corresponding push address online with the push address generator on the push address details page. By pushing a live stream online with the push address, the stream can be transmitted (uploaded) to CSS.
+In order to protect the information security of live streaming, push authentication is enabled for push domain names by default. You can generate the corresponding push address online with the push address generator on the push address details page. By pushing a live stream online with the push address, the stream can be transmitted (uploaded) to CSS.
 
 ## Notes
 
@@ -30,8 +30,8 @@ You have activated the CSS service and completed identity verification.
    2. Enter a custom `StreamName`, such as `liveteststream`.
    3. Click **Generate Push Address** to generate an RTMP push address containing the `StreamName`.
  ![](https://main.qcloudimg.com/raw/6f5ac8dcac2082aedca950c5341946ab.png)
-4. You can test, disable, or delete it in [stream management](https://intl.cloud.tencent.com/document/product/267/31068) after implementing [CSS push](https://intl.cloud.tencent.com/document/product/267/31558) according to your business scenario.
-5. After the push address is generated, CSS push can be started. However, to view live streaming, a playback address is required. For more information, please see [Playback Configuration](https://intl.cloud.tencent.com/document/product/267/31058).
+4. You can test, disable, or delete it in [stream management](https://intl.cloud.tencent.com/document/product/267/31068) after implementing [live push](https://intl.cloud.tencent.com/document/product/267/31558) according to your business scenario.
+5. After the push address is generated, live push can be started. However, to view live streaming, a playback address is required. For more information, please see [Playback Configuration](https://intl.cloud.tencent.com/document/product/267/31058).
 
 
 
@@ -42,8 +42,8 @@ An RTMP push address is in the following format:
 rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 ```
 Here:
-- `domain`: CSS push domain name.
-- `AppName`: CSS application name, which is `live` by default and customizable.
+- `domain`: push domain name.
+- `AppName`: live streaming application name, which is `live` by default and customizable.
 - `StreamName`: user-defined stream name which is used to identify a live stream.
 - `txSecret`: authentication string generated after push authentication is enabled.
 - `txTime`: timestamp set for a push address which represents the expiration time of the address in the console.
@@ -137,4 +137,4 @@ public class Test {
 }
 ```
 ## Subsequent Operations
-With the push address, you can use CSS push as needed. For more information, see [CSS Push](https://intl.cloud.tencent.com/document/product/267/31558).
+With the push address, you can use live push as needed. For more information, see [Live Push](https://intl.cloud.tencent.com/document/product/267/31558).
