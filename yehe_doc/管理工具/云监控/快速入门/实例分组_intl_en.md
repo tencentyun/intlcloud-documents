@@ -73,5 +73,5 @@ You can group cross-region and cross-project instances of a Tencent Cloud produc
 3. Click **Add** to enter the configuration page for creating policies.
 4. Find the **Alarm Object** configuration item, enable **Select instance group**, and select the previously created instance group from the drop-down list as shown below.
 ![](https://main.qcloudimg.com/raw/061e22856354bdedcc321fa28869a5f4.png)
-5. Complete the configurations for other items on the page. For more information, please see [Creating Alarm Policies](https://intl.cloud.tencent.com/document/product/248/6215).
+5. Complete the configurations for other items on the page. For more information, please see [Creating Alarm Policies](https://intl.cloud.tencent.com/document/product/248/38908).
 
