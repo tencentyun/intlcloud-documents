@@ -3,7 +3,7 @@ Open Broadcaster Software (OBS) is an easy-to-use third-party open-source softwa
 This document describes how to configure a stream on a PC in OBS Studio.
 
 ## Preparations
- - Log in to the [CSS Console](https://console.cloud.tencent.com/live) and generate a push address. For more information, see [Push Configuration](https://intl.cloud.tencent.com/document/product/267/31059).
+ - Log in to the [CSS console](https://console.cloud.tencent.com/live) and generate a push address. For more information, see [Push Configuration](https://intl.cloud.tencent.com/document/product/267/31059).
  - Install [OBS Studio](https://obsproject.com/download?spm=a2c4g.11186623.2.15.6aac1445JPlKR8).
 
 ## Directions
@@ -32,8 +32,8 @@ Click **Controls** > **Settings** > **Output**, select **Advanced** for **Output
 ![](https://main.qcloudimg.com/raw/5f48205da162f1230723729c36369f65.png)
 Select **Advanced** on the left sidebar to configure **Stream Delay**:
 ![](https://main.qcloudimg.com/raw/c3ec9a71a014548eb680009d9798b1ac.png)
- - Local CSS recording
- If you need local CSS recording, you can record live streams for local backup. The configuration is as shown below:
+ - Local live recording
+ If you need local live recording, you can record live streams for local backup. The configuration is as shown below:
 ![](https://main.qcloudimg.com/raw/a3c90994ef7447766914dc41605623c3.png)
 Click **Controls** > **Settings** > **Output** and then click the **Recording** tab to configure recording. You can save recording files locally.
 Resolution determines the clarity of video shown to viewers. The higher the resolution, the clearer the video. FPS (frames per second) determines how smooth a video look. The FPS value for ordinary videos ranges from 24 to 30, and lags would appear if it is lower than 16. Video games have a higher requirement for frame rate and would often smear if the value is below 30. The resolution and frame rate settings are as shown below:
