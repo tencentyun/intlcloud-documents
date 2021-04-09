@@ -1,4 +1,4 @@
-The CSS screencapturing feature is used to take screenshots of a real-time live stream at regular intervals and generate images. You can get the information of screenshots from callback notifications. Such screenshot data can be used for porn detection, live room cover generation, and other scenarios.
+The live screencapture feature is used to take screenshots of a real-time live stream at regular intervals and generate images. You can get the information of screenshots from callback notifications. Such screenshot data can be used for porn detection, live room cover generation, and other scenarios.
 
 ## Notes
 
@@ -11,7 +11,7 @@ The CSS screencapturing feature is used to take screenshots of a real-time live 
 
 | Event Type | Field Value Description           |
 | :------- | :------------- |
-| CSS screencapturing | event_type = 200 |
+| Live screencapture | event_type = 200 |
 
 ### Common callback parameters
 <table>
@@ -34,8 +34,8 @@ The CSS screencapturing feature is used to take screenshots of a real-time live 
 
 | Field Name | Type   | Description                                                         |
 | :----------- | :----- | :-------------------------- |
-| stream_id    | string | CSS stream name                  |
-| channel_id   | string | The value is the same as CSS stream name                |
+| stream_id    | string | Live stream name                  |
+| channel_id   | string | The value is the same as live stream name                |
 | create_time | int64 | Unix timestamp when a screenshot is generated |
 | file_size    | int    | Screenshot file size in bytes    |
 | width        | int    | Screenshot width in pixels           |
