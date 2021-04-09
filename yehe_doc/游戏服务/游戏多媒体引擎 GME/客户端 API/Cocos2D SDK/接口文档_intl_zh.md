@@ -13,13 +13,13 @@
 |EnableSpeaker		|开扬声器 	|
 
 >?
-- GME 使用前请对工程进行配置，否则 SDK 不生效。
-- GME 的接口调用成功后返回值为 AV_OK，数值为 0。
-- GME 的接口调用要在同一个线程下。
-- GME 需要周期性的调用 Poll 接口触发事件回调。
-- GME 回调信息参考回调消息列表。
-- 设备的操作要在进房成功之后。
-- 错误码详情可参考 [错误码](https://intl.cloud.tencent.com/document/product/607/15173)
+>- GME 使用前请对工程进行配置，否则 SDK 不生效。
+>- GME 的接口调用成功后返回值为 AV_OK，数值为 0。
+>- GME 的接口调用要在同一个线程下。
+>- GME 需要周期性的调用 Poll 接口触发事件回调。
+>- GME 回调信息参考回调消息列表。
+>- 设备的操作要在进房成功之后。
+>- 错误码详情可参考 [错误码](https://intl.cloud.tencent.com/document/product/607/15173)
 
 ## 实时语音流程图
 ![](https://main.qcloudimg.com/raw/e536525aa47c06a5a84bb6c8d4851b22.png)
@@ -89,7 +89,7 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 
 ### 初始化 SDK
 
-参数获取请查看 [接入指引](https://intl.cloud.tencent.com/document/product/607/10782)。
+参数获取请查看 [接入指引](https://intl.cloud.tencent.com/document/product/607/39698)。
 此接口需要来自腾讯云控制台的 AppID 号码作为参数，再加上 openID，这个 openID 是唯一标识一个用户，规则由 App 开发者自行制定，App 内不重复即可（目前只支持 INT64）。
 >!初始化 SDK 之后才可以进房。
 
