@@ -1,4 +1,4 @@
-LVB provides live stream mix feature, which can synchronously mix multiple streams of input sources into a new stream based on the configured stream mix layout for interactive live streaming. In addition, on-cloud stream mix has been connected to TencentCloud API 3.0. For more information, please see [CreateCommonMixStream](https://intl.cloud.tencent.com/document/product/267/35997). This document uses examples to describe how to implement live stream mix in different scenarios.
+CSS provides live stream mix feature, which can synchronously mix multiple streams of input sources into a new stream based on the configured stream mix layout for interactive live streaming. In addition, on-cloud stream mix has been connected to TencentCloud API 3.0. For more information, please see [CreateCommonMixStream](https://intl.cloud.tencent.com/document/product/267/35997). This document uses examples to describe how to implement live stream mix in different scenarios.
 
 ## Notes
 - Standard transcoding fees will be incurred for the stream mix feature.
