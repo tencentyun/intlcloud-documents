@@ -1,4 +1,4 @@
-The watermark feature is disabled by default for CSS push. This document describes how to bind/unbind a push domain name to/from a watermark template to enable/disable the watermark feature.
+The watermark feature is disabled by default for live push. This document describes how to bind/unbind a push domain name to/from a watermark template to enable/disable the watermark feature.
  
 ## Notes
 - The template configuration will take effect in about 5–10 minutes.
