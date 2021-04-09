@@ -56,7 +56,7 @@ Once BITRATE >= NET_SPEED, the audio/video data produced by the encoder will bui
 In a scenario where video quality is important, it's the best practice to notify the VJ through appropriate UI interactions, such as **"The network condition is bad now. Please move closer to your router, and make sure the signal isn't blocked by any wall or obstacle."**
  For more information on how to do this, please see the **Event Handling** section in RTMP SDK's documentation about push. VJs generally are not aware of the upstream clog until receiving a notification from the App or a viewer. Therefore, it is recommended to remind the VJ about the network condition if the App receives multiple **PUSH_WARNING_NET_BUSY** events from RTMP SDK in a short time.
 - **4.2.2 Proper encoding settings**
-The following shows the recommended encoding settings (suitable for beauty show live streaming). You can set different video quality options using API setVideoQuality of TXLivePush.
+The following shows the recommended encoding settings (suitable for live shows). You can set different video quality options using API setVideoQuality of TXLivePush.
 
 | Option | Resolution | FPS | Bitrate | Scenario |
 |:-------:|---------|---------|:-------:|---------|
@@ -90,7 +90,7 @@ To allow you to get a better playback experience without the need to have much k
 - **Speedy**: Suitable for **live shows** and other scenarios with a high requirement for delay.
 >? Speedy mode (set by making **SetMinCacheTime = setMaxCacheTime = 1 second**) and Auto mode only differ in MaxCacheTime value (generally, MaxCacheTime is lower in Speedy mode and is higher in Auto mode). This flexibility can be largely attributed to the automatic control technology within the SDK, which automatically adjusts delay without causing stutter. MaxCacheTime is used to indicate the adjustment speed - the higher the MaxCacheTime value is, the more conservative the adjustment speed is, and therefore the lower the probability of stutter becomes.
 
-- **Smooth**: Suitable for **game live streaming** and other HD (high bitrate) live streaming scenarios.
+- **Smooth**: Suitable for **live game streaming** and other HD (high bitrate) live streaming scenarios.
 >? 
 >- You can enter the Smooth mode by turning off setAutoAdjustCache switch in the player. In this mode, the player uses a processing strategy similar to the caching strategy of the Adobe Flash kernel. When stutter occurs in a video, the video will go into the loading status until the cache is full; then it will go into the playing status until the next network fluctuation that can't be resisted. By default, the cache time is 5 seconds, which you can change using setCacheTime.
 >- This seemingly simple mode will be more reliable in scenarios with a low requirement for delay, because the mode in essence trades off delay slightly for a reduced stutter rate.
