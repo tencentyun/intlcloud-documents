@@ -1,5 +1,5 @@
 ## 操作场景
-本文将指导您手机号和邮箱信息。
+本文将指导您修改手机号和邮箱信息。
 
 ## 前提条件
 在进行操作之前您需要了解一下概念：
@@ -14,20 +14,20 @@
 ## 操作步骤
 ### 修改联系手机或联系邮箱
 登录腾讯云控制台，进入 [账号信息](https://console.cloud.tencent.com/developer) 页面，单击联系手机或联系邮箱旁的编辑图标。
-![](https://main.qcloudimg.com/raw/2b00bff5ac75ae18e98b9cdc7e2ab501.png)
+
 页面跳转用户列表页，在对应的用户（如开发商）页签上，单击手机或者邮箱旁的编辑图标。
-![](https://main.qcloudimg.com/raw/dfcc46431aca7b1e85633306ed814d48.png)
+
 在弹框中输入新的手机或者邮箱后单击【确定】，根据页面提示完成页面验证，手机或者邮箱修改成功。
 修改完成后请尽快验证新的手机或邮箱，保证账号可正常接收消息。
-![](https://main.qcloudimg.com/raw/249bc11567a2a8036973ba1b51e332ef.png)
+
 
 
 ### 修改安全手机或安全邮箱
 - **修改安全手机**
 登录腾讯云控制台，进入 [安全设置](https://console.cloud.tencent.com/developer/security) 页面，单击手机号码旁的编辑图标。根据页面提示完成身份验证后，输入新的手机号码，然后单击【发送验证码】，将手机收到的验证码填入后单击【确定】即可完成修改。
-![](https://main.qcloudimg.com/raw/516805fc73481342083ca351db6cc06c.png)
+
 
 - **修改安全邮箱**
 登录腾讯云控制台，进入 [安全设置](https://console.cloud.tencent.com/developer/security) 页面，单击邮箱旁的编辑图标。根据页面提示完成身份验证后，输入新的邮箱号码，然后单击【发送验证码】。将新邮箱收到的验证码填入后单击【确定】即可完成修改。
-![](https://main.qcloudimg.com/raw/4b1ba06a6b3afb6b5e3b5977d51f8f16.png)
+
 
