@@ -1,5 +1,5 @@
 
->?The Ignore Query String and Cache Ignore URL Case configurations have been merged into the Cache Key Rule configuration, which now supports more refined configurations.
+
 
 ## Configuration Overview
 
@@ -26,19 +26,19 @@ If the letter case of resource URL paths is irrelevant to the resource content i
 
 ## Configuration Guide
 
-### Viewing the Configuration
+### Viewing the configuration
 
-Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar, and click **Manage** on the right of a domain name to enter its configuration page. Select the **Cache Configuration** tab to find **Cache Key Rule Configuration** section.
+Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar, and click **Manage** on the right of a domain name to enter its configuration page. Select the **Cache Configuration** tab to find the **Cache Key Rule Configuration** section.
 
 When adding an acceleration domain name, the Ignore Query String is enabled or disabled by default based on different acceleration business types.
 
-- If static acceleration is selected, the Ignore Query String is disabled by default. In the cache key configuration, the Ignore Query String of all file rules will be synced to **Do Not Filter**.
+- If static acceleration is selected, the Ignore Query String is disabled by default. In the cache key configuration, the Ignore Query String of all file rules will be synced to **Not Filter**.
 - If downloading or streaming VOD acceleration is selected, the Ignore Query String is enabled by default. In the cache key configuration, the Ignore Query String of all file rules will be synced to **Filter All**.
 
 
 ![](https://main.qcloudimg.com/raw/1f53ed863618b442233dd3e1bba6229b.png)
 
-### Adding Rules
+### Adding rules
 
 You can add cache rules as needed.
 <img src="https://main.qcloudimg.com/raw/48becf925518b2595097eddf7b4ec6d5.png" height="250" width="438" />
@@ -49,24 +49,24 @@ You can add cache rules as needed.
 - Rule priority can be adjusted: rules at the bottom of the list have higher priority (the priority of default rules cannot be adjusted).
 - In each rule of specified file type, folder, and full-path file, up to 100 groups of contents can be entered. Please use ";" to separate different contents, e.g., "Specified file type - jpg;png".
 - Ignore Query String - Reserve Specified Parameters.
-  - All files: up to 6 parameters can be entered; each one can contain up to 20 characters.
-  - Specified file type/folder/full path: up to 5 parameters can be entered; each one can contain up to 20 characters.
+  - All files: up to 6 parameter names can be entered; each one can contain up to 20 characters.
+  - Specified file type/folder/full-path file: up to 5 parameter names can be entered; each one can contain up to 20 characters.
+    Separate each parameter name with ";". For example: key1;key2;key3.
 
-
-### Modifying Rules
+### Modifying rules
 
 You can click **Modify** to modify the added cache key rules.
 
 >!The default rules support modifying Ignore Query String and Cache Ignore URL Case configurations, while the type and content cannot be modified.
 
-### Deleting Rules
+### Deleting rules
 
 You can click **Delete** to delete the added cache key rules (except the default ones).
 
 
 ## Configuration Samples
 
-The cache key rule configuration of the acceleration domain name `www.test.com` is as follows:
+If the cache key rule configuration of the acceleration domain name `www.test.com` is as follows:
 ![](https://main.qcloudimg.com/raw/8c3f7f534c5fa849ca1594a0a244d840.png)
 
 Then the actual access will be as follows:

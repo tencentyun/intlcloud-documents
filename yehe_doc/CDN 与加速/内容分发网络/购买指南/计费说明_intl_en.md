@@ -1,7 +1,7 @@
 For users who activate Tencent Cloud CDN after December 7, 2020, 21:30, the only billing option is **bill-by-hourly traffic**. The billing mode cannot be changed after service activation.
-The pricing tiers of bill-by-hourly traffic is the same as it of the pay-as-you-go bill-by-traffic. See [Billing Instruction](https://intl.cloud.tencent.com/document/product/228/2949).
+The pricing tier of bill-by-hourly traffic is the same as it of the pay-as-you-go bill-by-traffic. See [Billing Overview](https://intl.cloud.tencent.com/document/product/228/2949).
 
-
+ 
 
 ## Billing Overview
 
@@ -9,17 +9,17 @@ The pricing tiers of bill-by-hourly traffic is the same as it of the pay-as-you-
 
 Tencent Cloud CDN has two billing regions, **the Chinese mainland** and **regions outside the Chinese mainland**.
 
-In the Chinese mainland, fees are the save for all regions.
+In the Chinese mainland, fees are the same for all regions.
 
 In regions outside the Chinese mainland, there are eight billing regions determined according to the location of Tencent Cloud CDN node servers, namely, Asia Pacific Region 1, Asia Pacific Region 2, Asia Pacific Region 3, Middle East, Europe, North America, South America, and Africa, as shown below:
 
   |  Billing Region   |                        Covered Countries and Regions                        |
   | :-----: | :----------------------------------------------------: |
-  | Asia Pacific Region 1   | Hong Kong (China), Macao (China), Vietnam, Singapore, Thailand           |
-  | Asia Pacific Region 2   | Taiwan (China), Japan, South Korea, Malaysia, Indonesia           |
-  | Asia Pacific Region 3   | Philippines, India, Australia, other Asia-Pacific countries and regions             |
+  | Asia Pacific Region 1   | Hong Kong (China), Macao (China), Vietnam, Singapore, Thailand          |
+  | Asia Pacific Region 2   | Taiwan (China), Japan, South Korea, Malaysia, Indonesia          |
+  | Asia Pacific Region 3   | Philippines, India, Australia, other Asia-Pacific countries and regions            |
   |  Middle East   |              Saudi Arabia, United Arab Emirates, Turkey            |
-  | Europe     |United Kingdom, Russia, Germany, Italy, Ireland, France, Netherlands, Spain  |
+  | Europe    |United Kingdom, Russia, Germany, Italy, Ireland, France, Netherlands, Spain  |
   |  North America   |                    United States, Canada                    |
   |  South America   |                          Brazil                          |
   |  Africa   |                         South Africa                         |
@@ -61,12 +61,12 @@ If the actual or estimated consumption of your CDN service is more than USD 20,0
 
 CDN bandwidth adopts the **tiered pricing** as follows:
 
-| Bandwidth Tier (USD/Mbps/day) | the Chinese mainland (CN) | North America (NA) | Europe (EU) | Asia Pacific Zone 1 (AP1) | Asia Pacific Zone 2 (AP2) | Asia Pacific Zone 3 (AP3) | Middle East (ME) | Africa (AA) | South America (SA) |
+| Bandwidth Tier (USD/Mbps/day) | the Chinese mainland (CN) | North America (NA) | Europe (EU) | Asia Pacific Region 1 (AP1) | Asia Pacific Region 2 (AP2) | Asia Pacific Region 3 (AP3) | Middle East (ME) | Africa (AA) | South America (SA) |
 | :----------------------- | ------------- | :-------- | :-------- | :------------ | :------------ | :------------ | :-------- | :-------- | :-------- |
 | 0 Mbps - 500 Mbps          | 0.0815         | 0.2069    | 0.2069    | 0.3647        | 0.3928        | 0.5140        | 0.7391    | 0.5612    | 0.5612    |
 | 500 Mbps - 5 Gbps          | 0.0800         | 0.1964    | 0.1964    | 0.3216        | 0.3402        | 0.4679       | 0.6754   | 0.5137    | 0.5137    |
 | 5 Gbps - 50 Gbps           | 0.0754         | 0.1491    | 0.1491    | 0.2703        | 0.2859        | 0.3828        | 0.6075    | 0.4702    | 0.4702    |
-| ≥ 50 Gbps                 | 0.0738         | 0.1055    | 0.1055    | 0.2436        | 0.2545        | 0.3267           | 0.5301    | 0.4281       | 0.4281       |
+| ≥ 50 Gbps                 | 0.0738       | 0.1055    | 0.1055    | 0.2436        | 0.2545        | 0.3267           | 0.5301    | 0.4281       | 0.4281       |
 
 > Note:
 >
@@ -89,7 +89,7 @@ You can use the [Price Calculator](https://buy.cloud.tencent.com/calculator/cdn)
 
 CDN traffic pricing is based on a **monthly cumulative tier** as follows:
 
-| Traffic Tier (USD/GB) | the Chinese mainland (CN) | North America (NA) | Europe (EU) | Asia Pacific Zone 1 (AP1) | Asia Pacific Zone 2 (AP2) | Asia Pacific Zone 3 (AP3) | Middle East (ME) | Africa (AA) | South America (SA) |
+| Traffic Tier (USD/GB) | the Chinese mainland (CN) | North America (NA) | Europe (EU) | Asia Pacific Region 1 (AP1) | Asia Pacific Region 2 (AP2) | Asia Pacific Region 3 (AP3) | Middle East (ME) | Africa (AA) | South America (SA) |
 | :------------------ | ------------- | :-------- | :-------- | :------------ | :------------ | :------------ | :-------- | :-------- | :-------- |
 | 0 TB - 2 TB           | 0.0323         | 0.0452    | 0.0452    | 0.0665        | 0.0798        | 0.0897          | 0.1080    | 0.1039      | 0.1039      |
 | 2 TB - 10 TB          | 0.0308         | 0.0378    | 0.0378    | 0.0592        | 0.0737        | 0.0780        | 0.1000    | 0.0970    | 0.0970    |
@@ -140,7 +140,7 @@ In this way, you can calculate the fee for each day in a month. When it is Febru
 CDN provides two billing modes: **bill-by-traffic** and **bill-by-bandwidth**. You can choose the billing mode as needed.
 
 **Calculation example:**
-Assuming that the traffic consumed between 00:00 and 23:59 yesterday was 200 GB, and there was no consumption in the regions outside the Chinese mainland. The peak bandwidth was 40 Mbps as the curve bellow:
+Assuming that the traffic consumed between 00:00 and 23:59 yesterday was 200 GB, and there was no consumption in the regions outside the Chinese mainland. The peak bandwidth was 40 Mbps as the curve below:
 ![img](https://mc.qcloudimg.com/static/img/3ecfe86a031782ebeaf0b1f7595cc69f/image.png)
 
 If you select bill-by-traffic mode, you will need to pay: 200 * 0.037 = 7.4 USD
@@ -149,9 +149,9 @@ If you select bill-by-bandwidth mode, you will need to pay: 40 * 0.094 = 3.76 US
 
 We recommend bill-by-bandwidth as it is more cost-effective.
 
-## Overdue Payment
+## Overdue
 
-Tencent Cloud will notify you through multiple channels including email and SMS when your account is overdue. A **24-hour** grace period is provided. If you fail to top up your account within 24 hours, your CDN service will be suspended. You will need to manually enable the acceleration service in the CDN console after topping up your account.
+Tencent Cloud will notify you through multiple channels including email and SMS for overdue payments. A **24-hour** grace period is provided. If you fail to top up your account within 24 hours, your CDN service will be suspended. After your account is topped up, the domain name status will be automatically restored to the one before service suspension.
 
 > Note:
 >
