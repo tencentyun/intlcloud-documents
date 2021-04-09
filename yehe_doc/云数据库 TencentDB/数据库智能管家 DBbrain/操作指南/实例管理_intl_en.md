@@ -1,12 +1,12 @@
 The instance management feature displays the information of the TencentDB instances supporting DBbrain. It mainly shows the basic information of database instances (instance name/ID, status, etc.) and their access sources, groups, exception alarms, health scores, and operations.
->?Currently, instance management is supported only for TencentDB for MySQL (excluding the Basic Edition).
+>?Currently, instance management is supported only for TencentDB for MySQL (excluding the basic single-node instance).
 >
 
 
 ## Instance Management List
 Log in to the [DBbrain console](https://console.cloud.tencent.com/dbbrain/instance) and select **Instance Management** on the left sidebar. On the displayed page, select a database type at the top.
 
-The instance management list shows the basic information of database instances and their access sources, exception alarms, health scores, and operations. In the search box above the list, you can search data by one or more fields.
+The instance management list shows the basic information of database instances and their access sources, exception alarms, health scores, and operations. In the search box above the list, you can filter, aggregate, and search data by field.
 - **Status**: this column displays whether database inspection or instance overview is enabled for an instance. To modify the status of an instance, click the **Edit** icon in the **Status** column; to modify the status of multiple instances at a time, select the instances in the list and click **Custom Settings** at the top. You can filter data by status.
 - **Health Score**: this column displays the instance health score (the higher the score, the healthier the instance) rated during periodic health checks. You can sort data by health score.
 - **Exception Alarm**: this column displays the number of exceptions of an instance detected by "24/7 Exception Diagnosis". You can click the number in the column to view more details and sort data by the number.

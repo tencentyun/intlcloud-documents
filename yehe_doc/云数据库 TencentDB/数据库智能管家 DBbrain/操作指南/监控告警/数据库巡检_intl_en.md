@@ -1,5 +1,5 @@
 Database inspection is used to automate full instance health checks regularly. You can also set up custom inspections based on your own needs to help troubleshoot potential instance issues and provide solutions.
->?Currently, database inspection is supported only TencentDB for MySQL (excluding the Basic Edition).
+>?Currently, database inspection is supported only for TencentDB for MySQL (excluding the basic single-node instance).
 
 Log in to the [DBbrain console](https://console.cloud.tencent.com/dbbrain/patrol), select **Monitoring & Alarm** > **Database Inspection** on the left sidebar, and select a database type at the top.
 
