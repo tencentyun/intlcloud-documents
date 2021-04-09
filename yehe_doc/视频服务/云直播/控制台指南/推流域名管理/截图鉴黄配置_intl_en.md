@@ -1,4 +1,4 @@
-The screencapture and porn detection feature is disabled by default for CSS push. This document describes how to bind/unbind a push domain name to/from a screencapture and porn detection template to enable/disable the screencapture and porn detection feature.
+The screencapture and porn detection feature is disabled by default for live push. This document describes how to bind/unbind a push domain name to/from a screencapture and porn detection template to enable/disable the screencapture and porn detection feature.
 
 ## Notes
 - The template configuration will take effect in about **5–10 minutes**.
