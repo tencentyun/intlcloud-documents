@@ -8,17 +8,17 @@ To use CSS, you should have at least **two** domain names, one as the push domai
 	- If your domain names have not obtained an ICP filing, you can go to Tencent Cloud Website ICP Filing Service to apply for ICP filing.
 >!
 >- You should apply for ICP filing for your domain names according to the regulations of the Ministry of Industry and Information Technology (MIIT) of China. The application process takes several business days to complete, so you are recommended to start an application in advance. For more information, please see [Domain Name ICP Filing and Configuration](https://intl.cloud.tencent.com/document/product/267/32478).
->- The time needed to complete an ICP filing application depends on your domain name service provider. If you have received a notification from MIIT that your domain name has been filed on record, please wait for 1 to 24 hours. After your domain name can be found on [MIIT's ICP filing query website](https://beian.miit.gov.cn/#/Integrated/index), it can be added to the CSS Console.
+>- The time needed to complete an ICP filing application depends on your domain name service provider. If you have received a notification from MIIT that your domain name has been filed on record, please wait for 1 to 24 hours. After your domain name can be found on [MIIT's ICP filing query website](https://beian.miit.gov.cn/#/Integrated/index), it can be added to the CSS console.
 >- A new ICP filing can be synced to Tencent Cloud servers in one business day; therefore, a newly filed domain name may appear to be not filed when it is added.
 
 
 ## Directions
 <span id="step1"></span>
 ### Step 1. Add you own domain name
-1. Log in to the [CSS Console](https://console.cloud.tencent.com/live) and select **Domain Management**.
+1. Log in to the [CSS console](https://console.cloud.tencent.com/live) and select **Domain Management**.
 2. Click **Add Domain** to enter the domain name adding page and configure as follows:
 	1. To add a **push domain**, enter the domain name, select its type as **Push domain**, and click **OK**.
-	2. To add a **playback domain**, enter the domain name, select its type as **Playback domain**, select an acceleration region (**Mainland China** by default), and click **OK**.
+	2. To add a **playback domain**, enter the domain name, select its type as **Playback domain**, select an acceleration region (**Chinese mainland** by default), and click **OK**.
 
 ![](https://main.qcloudimg.com/raw/a602d5953a0c0fcfd66ba8801c0266b3.png)
 >! 
