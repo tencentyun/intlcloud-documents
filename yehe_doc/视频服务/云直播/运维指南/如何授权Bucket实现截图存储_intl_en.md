@@ -1,4 +1,4 @@
-This document describes how to store CSS screenshots or porn detection data in a COS bucket. You need to create a COS bucket, authorize CSS to store data in it, and then configure CSS screencapturing and porn detection settings in the CSS Console. After doing so, CSS screenshots and porn detection data can be stored in the bucket. (This feature is available in the new version of console.)
+This document describes how to store screenshots or porn detection data in a COS bucket. You need to create a COS bucket, authorize CSS to store data in it, and then configure live screencapture and porn detection settings in the CSS console. After doing so, screenshots and porn detection data can be stored in the bucket. (This feature is available in the new version of console.)
 ### Creating a COS bucket
 1. Log in to the COS Console and select [Bucket List](https://console.cloud.tencent.com/cos5/bucket).
 2. Click **Create Bucket**, enter the corresponding information on the pop-up page, and click **OK**.
@@ -10,7 +10,7 @@ This document describes how to store CSS screenshots or porn detection data in a
 ![](https://main.qcloudimg.com/raw/097144cf7c6d1df5923d406b0301f93e.png)
 
 ### Authorizing CSS to Store Screenshots
-1. Grant the root account (ID: 3508645126) permission to store CSS screenshots.
+1. Grant the root account (ID: 3508645126) permission to store the screenshots.
 
 	i. Add a user for the bucket in **[Bucket List](https://console.cloud.tencent.com/cos5/bucket)** > **Permission Management** > **Bucket Access Permission**, select root account as user type , **and enter the root account ID `3508645126`**
 	> **You need to enter the root account ID `3508645126` in the account ID field for authorization. (This root account is the CSS service, so it is sufficient to directly enter `3508645126`).**
