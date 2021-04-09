@@ -1,3 +1,5 @@
+>!This is a legacy API which has been hidden and will no longer be updated. We recommend using the new [CMQ API 3.0](https://intl.cloud.tencent.com/document/product/406/36408?!editLang=en&!preview) which is standardized and faster.
+>
 ## API Description
 This API is used to consume a message in the queue.
 Calling the `ReceiveMessage` API will turn the status of the obtained message to `inactive`, and the period of being `inactive` is specified by the `visibilityTimeout` queue attribute (for more information, please see [CreateQueue API](https://intl.cloud.tencent.com/document/product/406/5832)). After successful consumption within the period of `visibilityTimeout`, you are recommended to call the `(batch) DeleteMessage` API to delete the message; otherwise, it will return to the `active` status and may be consumed again. This ensures that the message is consumed at least once, but cannot guarantee the idempotency. Therefore, deduplication logic is required at the business side.
@@ -6,12 +8,12 @@ Calling the `ReceiveMessage` API will turn the status of the obtained message to
 - API private domain name: `http://cmq-queue-{$region}.api.tencentyun.com`
    
 In the above domain names, **`{$region}` needs to be replaced with a specific region**: `gz` (Guangzhou), `sh` (Shanghai), `bj` (Beijing), `hk` (Hong Kong (China)), `cd` (Chengdu), `ca` (North America), `usw` (West US), or `sg` (Singapore). The value of `region` in the common parameters should be the same as that of `region` in the domain name; otherwise, the latter will prevail, i.e., requests will be sent to the region as specified by `region` in the domain name.
->Whenever downstream traffic is generated from using the public domain name, traffic fees will be charged (even during the beta test period). Therefore, you are strongly recommended to use the **private** domain name as traffic fees will not be incurred there.
+>?Whenever downstream traffic is generated from using the public domain name, traffic fees will be charged (even during the beta test period). Therefore, you are strongly recommended to use the **private** domain name as traffic fees will not be incurred there.
 
 
 
 ## Input Parameters
-The list below contains only the API request parameters. Other parameters can be found in [Common Request Parameters](https://intl.cloud.tencent.com/document/api/213/6976).
+The list below contains only the API request parameters. Other parameters can be found in [Common Request Parameters](https://intl.cloud.tencent.com/document/product/213/31574).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -46,7 +48,7 @@ Input:
 <pre>
  https://domain/v2/index.php?Action=ReceiveMessage
  &queueName=test-queue-123
- &<<a href="https://intl.cloud.tencent.com/doc/api/229/6976">Common Request Parameters</a>>
+ &<<a href="https://intl.cloud.tencent.com/document/product/213/31574">Common Request Parameters</a>>
 </pre>
 
 Output:
