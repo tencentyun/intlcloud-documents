@@ -13,13 +13,14 @@ This document describes how to access and debug the GME APIs for Cocos2d.
 |EnableSpeaker		| Enables speaker 	|
 
 >?
-- Configure your project before using GME; otherwise, the SDK will not take effect.
-- After a GME API is called successfully, `AV_OK` will be returned with the value being 0.
-- GME APIs should be called in the same thread.
-- The `Poll` API should be called periodically for GME to trigger event callbacks.
-- For GME callback messages, please see the callback message list.
-- Operation on devices should be performed after successful room entry.
-- For detailed error codes, please see [Error Codes](https://intl.cloud.tencent.com/document/product/607/15173).
+>- Configure your project before using GME; otherwise, the SDK will not take effect.
+>- After a GME API is called successfully, `AV_OK` will be returned with the value being 0.
+>- GME APIs should be called in the same thread.
+>- The `Poll` API should be called periodically for GME to trigger event callbacks.
+>- For GME callback messages, please see the callback message list.
+>- Operation on devices should be performed after successful room entry.
+>- For detailed error codes, please see [Error Codes](https://intl.cloud.tencent.com/document/product/607/15173).
+
 
 ## Voice Chat Flowchart
 ![](https://main.qcloudimg.com/raw/e536525aa47c06a5a84bb6c8d4851b22.png)
@@ -89,7 +90,7 @@ void TMGTestScene::OnEvent(ITMG_MAIN_EVENT_TYPE eventType,const char* data){
 
 ### Initializing the SDK
 
-For more information on how to get parameters, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/10782).
+For more information on how to get parameters, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/39698).
 This API requires the `AppID` from the Tencent Cloud Console and the `openID` as parameters. The `openID` uniquely identifies a user with the rules stipulated by the application developer and must be unique in the application (currently, only INT64 is supported).
 >!The SDK must be initialized before a client can enter a room.
 
