@@ -46,4 +46,4 @@ There are only two ways to realize auto video playback on mobile web: by configu
 Flash is no longer be automatically played starting from Chrome 42 (Google has purchased WebRTC and made it open-source for a reason). Chrome only plays major Flash contents automatically, while other Flash contents are paused, unless users enable them manually.
 
 ### Why can the CSS video be played in browsers on PC but cannot on mobile devices?
-Only hls (m3u8) protocol is supported for playing CSS videos in mobile browsers. Thus, you need to confirm whether the CSS stream pulling addresses contain URL for pulling hls (m3u8) stream. The video cannot be played on mobile phones if you only provide an flv or rtmp address for our player.
+Only HLS (M3U8) protocol is supported for playing live streaming videos in mobile browsers. Thus, you need to confirm whether the live stream pulling addresses contain URL for pulling HLS (M3U8) stream. The video cannot be played on mobile phones if you only provide an flv or rtmp address for our player.
