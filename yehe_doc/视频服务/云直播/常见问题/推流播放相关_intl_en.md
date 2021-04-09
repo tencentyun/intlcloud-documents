@@ -4,7 +4,7 @@ By default, CSS does not limit the number of online viewers for a live stream as
 
 <span id="que2"></span>
 ### How can I use live transcoding?
-In consideration of different network factors and to meet your needs for different resolutions at different bitrates, you can set transcoding templates with different bitrates and resolutions in [Transcoding Configuration](https://console.cloud.tencent.com/live/config/transcode). For more information on transcoding, see [Best Practice > CSS Encapsulating and Transcoding](https://intl.cloud.tencent.com/document/product/267/31561).
+In consideration of different network factors and to meet your needs for different resolutions at different bitrates, you can set transcoding templates with different bitrates and resolutions in [Transcoding Configuration](https://console.cloud.tencent.com/live/config/transcode). For more information on transcoding, see [Best Practice > Live Remuxing and Transcoding](https://intl.cloud.tencent.com/document/product/267/31561).
 
 <span id="multirate"></span>
  #### Original, HD, and SD
@@ -53,7 +53,7 @@ http://domain/live/test_900.m3u8?txTime=5c2acacc&txSecret=4beae959b16c77da6a65c7
 ```
 
 #### Enabling hotlink protection
-1. Log in to the CSS Console and enter **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**.
+1. Log in to the CSS console and enter **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**.
 2. Click a playback domain name or click **Manage** to enter its details page.
 3. Select **Access Control** and click **Edit**.
 4. Enable **Playback Authentication** and click **Save**.
@@ -70,27 +70,27 @@ We recommend that you set its validity period to the duration of the live stream
 
 
 <span id="que8"></span>
-### Can I create an CSS push address to use all the time? What is the maximum length of address validity period?
+### Can I create a live push address to use all the time? What is the maximum length of address validity period?
 The main purpose of setting a validity period for the push address is to authenticate and protect the push address to prevent unauthorized push and business losses.
 There is no limit on the validity period of a push address, which can be set according to your business needs. You can also splice addresses to generate a push address with a longer validity period. For more information about splicing rules, please see [How to Splice a Push URL](https://intl.cloud.tencent.com/document/product/267/32480).
 
 >? We do not recommend a very long validity period of the push address, which may cause CSS to report an error during the use and report a failed authentication.
 
 <span id="que9"></span>
-### Will the Tencent Cloud logo be displayed in the CSS video? 
+### Will the Tencent Cloud logo be displayed in the live streaming video? 
 No. 
 
 <span id="que10"></span>
-### How long is the CSS delay? 
+### How long is the live streaming delay? 
 CSS pushes a stream using the RTMP protocol and plays it using the FLV protocol. Generally, the delay is about 2 to 3 seconds. A long delay often indicates an error.
 <span id="que11"></span>
-### Can I set the maximum CSS bitrate?
- No. The maximum CSS bitrate is automatically set by the push end, according to the upload speed of your network. The upper limit of bitrate (or maximum bitrate) depends on the upload speed of your network. If the maximum bitrate is too high, it will cause dropped frames and lag during a live stream. 
+### Can I set the maximum live streaming bitrate?
+ No. The maximum live streaming bitrate is automatically set by the push end, according to the upload speed of your network. The upper limit of bitrate (or maximum bitrate) depends on the upload speed of your network. If the maximum bitrate is too high, it will cause dropped frames and lag during a live stream. 
 
 <span id="que12"></span>
-### How do I delete an CSS room which is no longer used? 
-CSS push and playback are currently associated with stream IDs, so you do not have to delete rooms. If you are using the IM service and want to delete IM rooms to avoid hitting its upper limit, please see [Disbanding Groups](https://intl.cloud.tencent.com/document/product/1047/34896).
-If you are using the channel mode, you can call the `DeleteLVBChannel` API and input CSS channel IDs as parameters to delete the CSS channels (in batches).
+### How do I delete an live room which is no longer used? 
+Live push and playback are currently associated with stream IDs, so you do not have to delete rooms. If you are using the IM service and want to delete IM rooms to avoid hitting its upper limit, please see [Disbanding Groups](https://intl.cloud.tencent.com/document/product/1047/34896).
+If you are using the channel mode, you can call the `DeleteLVBChannel` API and input live channel IDs as parameters to delete the live channels (in batches).
 
 > ! CSS has no longer provided updates or support for the channel mode.
 
