@@ -1,4 +1,4 @@
-CSS playback is output to the original bitrate by default. If you want to limit or set the playback bitrate, you can bind the playback domain name to a transcoding template. This document describes how to bind/unbind a playback domain name to/from a transcoding template.
+Live playback is output to the original bitrate by default. If you want to limit or set the playback bitrate, you can bind the playback domain name to a transcoding template. This document describes how to bind/unbind a playback domain name to/from a transcoding template.
 
 ## Notes
 - The template configuration will take effect in about 5–10 minutes.
