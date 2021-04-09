@@ -90,7 +90,7 @@ Valid values for the key of `filter` array:
 Request
 <pre>
 https://lb.api.qcloud.com/v2/index.php?Action=DescribeLoadBalancerLog
-&<<a href="https://intl.cloud.tencent.com/document/api/213/6976">Common request parameters</a>>
+&<<a href="https://intl.cloud.tencent.com/document/product/213/31574">Common request parameters</a>>
 &loadBalancerId=lb-7wdcqme9
 &filter.0.key=status
 &filter.0.value=200
