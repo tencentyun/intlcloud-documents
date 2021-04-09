@@ -1,10 +1,10 @@
-CSS porn detection takes real-time screenshots of suspiciously pornographic video images in live streams and stores them in COS. The porn detection callback is used to push the information of detected pornographic images, including their type, score, and screenshot time. You need to configure the server address receiving porn detection callback messages in the callback template and bind the template to the push domain name. When a porn detection event is triggered by a live stream, the Tencent Cloud CSS backend will call back the pornographic image information to the configured receiving server.
+Porn detection takes real-time screenshots of suspiciously pornographic video images in live streams and stores them in COS. The porn detection callback is used to push the information of detected pornographic images, including their type, score, and screenshot time. You need to configure the server address receiving porn detection callback messages in the callback template and bind the template to the push domain name. When a porn detection event is triggered by a live stream, the Tencent Cloud CSS backend will call back the pornographic image information to the configured receiving server.
 
 This document describes the fields in callback message notifications sent by Tencent Cloud CSS after a porn detection callback event is triggered.
 
 ## Notes
 - You need to understand how to configure the callback feature and receive callback messages on Tencent Cloud CSS before reading this document. For more information, please see [How to Receive Event Notification](https://intl.cloud.tencent.com/document/product/267/38080).
-- By default, only questionable results will be called back for CSS porn detection.
+- By default, only questionable results will be called back for porn detection.
 - We recommend you use the `[type](#type)` of an image to determine whether it is pornographic. As the detection results are not 100% accurate and there may be false positives or false negatives, you can confirm them manually if necessary.
 
 ## Screencapture Event Parameter Description
@@ -12,7 +12,7 @@ This document describes the fields in callback message notifications sent by Ten
 
 | Event Type | Field Value Description           |
 | :------- | :------------- |
-| CSS porn detection | event_type = 317 |
+| Porn detection | event_type = 317 |
 
 
 ### Common callback parameters
@@ -29,7 +29,7 @@ This document describes the fields in callback message notifications sent by Ten
 <td>Security signature of event notification (sign = MD5(key + t)). <br>Note: Tencent Cloud splices the encryption `<a href="#key">key</a>` and `t`, calculates the `sign` value through MD5, and places it in the notification message. After your backend server receives the notification message, it can confirm whether the `sign` is correct based on the same algorithm and then determine whether the message is indeed from the Tencent Cloud backend.</td>
 </tr></table>
 
->? `<span id="key"></span>key` is the callback key in **Event Center** > **[CSS Callback](https://console.cloud.tencent.com/live/config/callback)**, which is mainly used for authentication. In order to protect the security of your data, we recommend you enter it.
+>? `<span id="key"></span>key` is the callback key in **Event Center** > **[Live Stream Callback](https://console.cloud.tencent.com/live/config/callback)**, which is mainly used for authentication. In order to protect the security of your data, we recommend you enter it.
 >![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
 
 
