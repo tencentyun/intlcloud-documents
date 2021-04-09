@@ -11,7 +11,7 @@ The following table lists the video formats supported by Web SDK:
 
 | Playback Format | PC Browser | Mobile Browser |
 |---------------|----------------------|---------------------|
-| HLS (m3u8) | Yes | Yes |
+| HLS (M3U8) | Yes | Yes |
 | MP4              | Yes | Yes |
 | FLV               | No | No |
 
@@ -230,7 +230,7 @@ This parameter indicates the options that can be set for player's parameters. Th
 | Parameter | Type | Default Value | Description |
 |--------------------------------------------------------|---------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | file_id                                               | String  | None | Unique ID of the VOD file. This is **Required** when playing video by video ID |
-| app_id                                                | String  | None | The parameter is **Required** if the CSS video is played using video ID. For the videos under the same account, this parameter remains the same. |
+| app_id                                                | String  | None | The parameter is **Required** if the live streaming video is played using video ID. For the videos under the same account, this parameter remains the same. |
 | width                                                  | Number  | None | **Required**, used to configure player width (in pixel). Example: 640 |
 | height                                                 | Number  | None | **Required**, used to configure player height (in pixel). Example: 480 |
 | auto_play                                             | Number  | 0      | Whether auto playback is allowed. 0: Disable; 1: Enable <br> **Note: This parameter only applies to Flash players on PC.** |
