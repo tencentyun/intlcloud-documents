@@ -21,7 +21,7 @@ For more information, please see [CSS Pricing](https://intl.cloud.tencent.com/do
 
 ## 3. Console
 
- The overview page of the [CSS Console](https://console.cloud.tencent.com/live/livestat) is shown below: 
+ The overview page of the [CSS console](https://console.cloud.tencent.com/live/livestat) is shown below: 
 
 ![](https://main.qcloudimg.com/raw/d064207bb8e3f69f2eef152a41a49fa2.png)
 
@@ -38,8 +38,8 @@ For more information, please see [CSS Pricing](https://intl.cloud.tencent.com/do
 | Watermark live streams in the console to protect video assets.    | [Watermark Configuration](https://intl.cloud.tencent.com/document/product/267/31073) |
 | Get callback information about live streams in the console.     | [Callback Configuration](https://intl.cloud.tencent.com/document/product/267/31074) |
 | Generate push/playback addresses in the console.                | [Address Generator](https://intl.cloud.tencent.com/document/product/267/31084) |
-| Push streams.                                   | [CSS Push](https://intl.cloud.tencent.com/document/product/267/31558) |
-| Pull a stream and check whether it can be played back correctly.       | [CSS Playback](https://intl.cloud.tencent.com/document/product/267/31559) |
+| Push streams.                                   | [Live Push](https://intl.cloud.tencent.com/document/product/267/31558) |
+| Pull a stream and check whether it can be played back correctly.       | [Live Playback](https://intl.cloud.tencent.com/document/product/267/31559) |
 | View the push interruption records and reasons in the console.         | [Push Interruption Diagnostics](https://intl.cloud.tencent.com/document/product/267/31083) |
 | Call APIs to use CSS features.                      | [API Category](https://intl.cloud.tencent.com/document/product/267/30760) |
 
@@ -50,7 +50,7 @@ For more information, please see [CSS Pricing](https://intl.cloud.tencent.com/do
 -  [What playback protocols are supported?](https://intl.cloud.tencent.com/document/product/267/7968) 
 -  [Is there an upper limit on the number of online viewers?](https://intl.cloud.tencent.com/document/product/267/35598)
 -  [Can the playback and push domain names in CSS be the same? Can I use second-level domain names for them?](https://intl.cloud.tencent.com/document/product/267/7968)
--  [How many recording files are generated in an CSS recording process?](https://intl.cloud.tencent.com/document/product/267/36564)
+-  [How many recording files are generated in an live recording process?](https://intl.cloud.tencent.com/document/product/267/36564)
 
 > ? For more information, please see [FAQs](https://intl.cloud.tencent.com/document/product/267/7968).
 
