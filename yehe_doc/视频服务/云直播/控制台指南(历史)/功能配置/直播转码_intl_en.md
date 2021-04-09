@@ -1,4 +1,4 @@
-CSS transcoding (including video transcoding and audio transcoding) refers to the process where the original stream pushed from the live streaming site is converted into streams of different codecs, resolutions, and bitrates in the cloud before being pushed to viewers. This meets playback needs in varying network environments on different devices. This document describes how to create, modify, bind, unbind, and delete a transcoding template in the console.
+Live transcoding (including video transcoding and audio transcoding) refers to the process where the original stream pushed from the live streaming site is converted into streams of different codecs, resolutions, and bitrates in the cloud before being pushed to viewers. This meets playback needs in varying network environments on different devices. This document describes how to create, modify, bind, unbind, and delete a transcoding template in the console.
 
 **You can create a transcoding template in two ways:**
 
@@ -21,7 +21,7 @@ CSS transcoding (including video transcoding and audio transcoding) refers to th
 <span id="C_trans"></span>
 ### Creating standard transcoding template
 
-1. Log in to the CSS console and select **Feature Configuration** > **[CSS Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
+1. Log in to the CSS console and select **Feature Configuration** > **[Live Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Click **Create Transcoding Template**, select **Standard Transcoding** as the transcoding type, and configure as follows.
   - Basic settings include template name, video bitrate, video resolution, and more. For more information, please see [Basic Configuration Description for Standard Transcoding](#C_trans_normal).
   - Advanced settings (optional): click **Advanced Configuration** to configure advanced settings. For more information, please see [Advanced Configuration Description for Standard Transcoding](#C_trans_high).
@@ -38,11 +38,11 @@ CSS transcoding (including video transcoding and audio transcoding) refers to th
 </tr><tr>
 <td>Template Name</td>
 <td>Yes</td>
-<td>CSS transcoding template name, which can contain only letters and alphanumeric combinations. Please enter 1–10 characters.</td>
+<td>Live transcoding template name, which can contain only letters and alphanumeric combinations. Please enter 1–10 characters.</td>
 </tr><tr>
 <td>Template Description</td>
 <td>No</td>
-<td>CSS transcoding template description, which can contain only letters, digits, underscores (_), and hyphens (-).</td>
+<td>Live transcoding template description, which can contain only letters, digits, underscores (_), and hyphens (-).</td>
 </tr><tr>
 <td>Recommended Parameter</td>
 <td>No</td>
@@ -87,7 +87,7 @@ CSS transcoding (including video transcoding and audio transcoding) refers to th
 <span id="C_topspeed"></span>
 
 ### Creating top speed codec transcoding template
-1. Log in to the CSS console and select **Feature Configuration** > **[CSS Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
+1. Log in to the CSS console and select **Feature Configuration** > **[Live Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Click **Create Transcoding Template**, select **Top Speed Codec Transcoding** as the transcoding type, and configure as follows.
   - Basic settings include template name, video bitrate, video resolution, and more. For more information, please see [Basic Configuration Description for Top Speed Codec Transcoding](#C_topspeed_normal).
   - Advanced settings (optional): click **Advanced Configuration** to configure advanced settings. For more information, please see [Advanced Configuration Description for Top Speed Codec Transcoding](#C_topspeed_high).
@@ -147,7 +147,7 @@ CSS transcoding (including video transcoding and audio transcoding) refers to th
 <span id="C_audio"></span>
 ### Creating pure audio transcoding template
 
-1. Log in to the CSS console and select **Feature Configuration** > **[CSS Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
+1. Log in to the CSS console and select **Feature Configuration** > **[Live Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Click **Create Transcoding Template**, select **Pure Audio Transcoding** as the transcoding type, configure [settings](#C_audio_normal), and then click **Save**.
 
 ![](https://main.qcloudimg.com/raw/c12170c861b0ed188aed7047822902a6.png)
@@ -161,17 +161,17 @@ CSS transcoding (including video transcoding and audio transcoding) refers to th
 </tr><tr>
 <td>Template Name</td>
 <td>Yes</td>
-<td>CSS transcoding template name, which can contain only letters and alphanumeric combinations. Please enter 3–10 characters.</td>
+<td>Live transcoding template name, which can contain only letters and alphanumeric combinations. Please enter 3–10 characters.</td>
 </tr><tr>
 <td>Template Description</td>
 <td>No</td>
-<td>CSS transcoding template description, which can contain only letters, digits, underscores (_), and hyphens (-).</td>
+<td>Live transcoding template description, which can contain only letters, digits, underscores (_), and hyphens (-).</td>
 </tr>
 </table>
 
 <span id="related"></span>
 ## Binding Domain Name
-1. Log in to the CSS console and select **Feature Configuration** > **[CSS Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
+1. Log in to the CSS console and select **Feature Configuration** > **[Live Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Enter the domain name binding page in either of the following ways:
   - **Directly bind a domain name**: click **Bind Domain Name** in the top-left corner.
 	![](https://main.qcloudimg.com/raw/ffa3a7d7c8392dc0509bf679f8d56c14.png)
@@ -185,7 +185,7 @@ CSS transcoding (including video transcoding and audio transcoding) refers to th
 
 <span id="untie"></span>
 ## Unbinding
-1. Log in to the CSS console and select **Feature Configuration** > **[CSS Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
+1. Log in to the CSS console and select **Feature Configuration** > **[Live Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Select domain names bound to the transcoding template and click **Unbind**.
 ![](https://main.qcloudimg.com/raw/59ecf14bea1e5b3ffa7b1fe6da0d565b.png)
 3. Confirm whether to unbind the domain name and click **OK** to unbind it.
@@ -195,7 +195,7 @@ CSS transcoding (including video transcoding and audio transcoding) refers to th
 
 <span id="modify"></span>
 ## Modifying Template
-1. Log in to the CSS console and select **Feature Configuration** > **[CSS Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
+1. Log in to the CSS console and select **Feature Configuration** > **[Live Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Select the target transcoding template and click **Edit** on the right to modify the template information.
 3. Click **Save**.
 
@@ -207,7 +207,7 @@ CSS transcoding (including video transcoding and audio transcoding) refers to th
 ## Deleting Template
 >!   If the template has been bound to a domain name, you need to [unbind](#untie) the template before deleting it. 
 
-1. Log in to the CSS console and select **Feature Configuration** > **[CSS Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
+1. Log in to the CSS console and select **Feature Configuration** > **[Live Transcoding](https://console.cloud.tencent.com/live/config/transcode)**.
 2. Select a template which is not bound to any playback domain name and click **Delete**.
 ![](https://main.qcloudimg.com/raw/c3109628fcb4a5a4fabce8ad58c03db5.png)
 3. Confirm whether to delete the selected transcoding template and click **OK** to delete it.
