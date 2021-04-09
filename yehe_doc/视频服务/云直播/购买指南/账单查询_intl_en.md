@@ -28,10 +28,10 @@ The Bill Details page includes the **Bill by Instance** and **Bill Details** tab
 <tr>
 <td>Configuration description</td>
 <td>CSS sub-features and their usage in this month. CSS sub-features include: <ul style="margin:0;">
-    <li>CSS transcoding</li>
-    <li>CSS recording</li>
-    <li>CSS screencapturing</li>
-    <li>CSS porn detection</li>
+    <li>Live transcoding</li>
+    <li>Live recording</li>
+    <li>Live screencapture</li>
+    <li>Porn detection</li>
     </ul></td>
 </tr>
 <tr>
