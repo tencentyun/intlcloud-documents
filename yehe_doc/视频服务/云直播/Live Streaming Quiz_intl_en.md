@@ -33,7 +33,7 @@ is used for RTMP push and FLV playback. The Smart version has the above-mentione
 ## Our Advantages
 
 - **Precise "sound-image-question" synchronization**
-Both Tencent Cloud SDK and the cloud support inserting **questions** or **time synchronization signaling** into CSS streams to achieve perfect synchronization of sounds, images and question pop-ups.
+Both Tencent Cloud SDK and the cloud support inserting **questions** or **time synchronization signaling** into live streams to achieve perfect synchronization of sounds, images and question pop-ups.
 
 - **Ultra-low latency deviation at the viewer end**
 The latency correction technology supported by the speedy playback mode in Tencent Cloud SDK can keep the latency deviation between viewers within 1 sec, thus ensuring that viewers answer questions synchronously.
@@ -48,7 +48,7 @@ Tencent Cloud SDK is integrated within WeChat by default and made publicly avail
 
 #### How it works
 
-1. Tencent Cloud inserts in real time an international standard timestamp (UTC timestamp) calibrated by NTP into CSS streams every other second.
+1. Tencent Cloud inserts in real time an international standard timestamp (UTC timestamp) calibrated by NTP into live streams every other second.
 2. The program director in the studio assigns questions at the appropriate time based on the pace at which the host raises questions. The assignment system inserts the current international standard time into the questions assigned each time.
 3. When playing back video streams inserted with such timestamps, SDK notifies your App of the time when the currently played back image was recorded. Take note of the latency from the studio to the cloud and make sure you correct the deviation in advance.
 4. Your App can display specified questions as needed according to the time notifications saying when the current image was recorded from the SDK.
@@ -66,7 +66,7 @@ Please see the document [How to Get URL Quickly](https://intl.cloud.tencent.com/
 - To understand the relationship between push URL and Live room ID
 - To protect the push URL from being stolen
 
-To add a NTP timestamp, append the parameter &txAddTimestamp=2 to the push URL. (txAddTimestamp=1 results in screen crashes in the mini program).  The server will send a international standard SEI timestamp to the CSS stream every other second (with a deviation less than 100ms). If you use our player to play this video, you will receive a notification of the current screen NTP time every other second. 
+To add a NTP timestamp, append the parameter &txAddTimestamp=2 to the push URL. (txAddTimestamp=1 results in screen crashes in the mini program).  The server will send a international standard SEI timestamp to the live stream every other second (with a deviation less than 100ms). If you use our player to play this video, you will receive a notification of the current screen NTP time every other second. 
 
 ### Step 3: Obtain the playback URL
 There is a one-to-one mapping between the playback URL and the push URL. Please see the following figure for the mapping rule.
@@ -83,7 +83,7 @@ If you are using your App to push streams, please see the document(iOS|Android).
 2. See the integration document (iOS| Android)) to integrate the player. It takes about 1/2 day to finish the work in the two platforms.
 
 3. **<font color='red'>Change the default settings</font>**
- Normal CSS scenarios are set by default in the SDK, so it is necessary to change the settings as follows:
+ Normal live streaming scenarios are set by default in the SDK, so it is necessary to change the settings as follows:
  ```objectiveC
 //iOS Source Code
 TXLivePlayConfig *config = [[TXLivePlayConfig alloc] init];
@@ -129,7 +129,7 @@ If you are using your App to assign questions, you can use the sendMessage calli
 <font color='red'>**Reliability evaluation**</font>
 Some customers might worry that unstable audio/video channels will cause stutters or video data loss, and viewers will not be able to see the questions.
 
-- Frame loss with CSS audio/video data occurs on a per-GOP basis. If GOP is 1, then 1 second of audio/video data will be lost each time.
+- Frame loss with live streaming audio/video data occurs on a per-GOP basis. If GOP is 1, then 1 second of audio/video data will be lost each time.
 - According to the node deployment by Tencent Cloud, 90% of the video stutter is caused by a slow network connection at the viewer end. In this case, using the other network connections will have the same results.
 
 The solution to this problem is to send a question message every second (if GOP is set to 1 second) and eliminate the repeated question numbers at the viewer end. This prevents audio/video stutter from affecting the reliability of question arrival.
