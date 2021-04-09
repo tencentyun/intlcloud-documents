@@ -25,7 +25,7 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn) and tick the 
 
 After successfully connecting the domain name, you can click **Domain Management** on the left sidebar, enter the domain name details page, and open the **HTTPS Configuration** tab to find the QUIC configuration section. It is disabled by default, and you can enable it directly.
 **Note:** You need to configure an HTTPS certificate before enabling QUIC.
-![](https://main.qcloudimg.com/raw/b90da5a37968a594ed9c81768fb72ab5.png)
+![](https://main.qcloudimg.com/raw/e697e32b39948d56610285c80043f1de.png)
 
 
 
