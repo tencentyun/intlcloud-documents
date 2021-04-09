@@ -59,7 +59,7 @@ You can access the following features in the Cloud Monitor console:
 
 ## Architecture
 
-CM provides basic metrics monitoring and data storage services for users. It is a space for storing the data of all cloud resources. CM collects and obtains the monitoring metric data for Tencent Cloud services through various channels. After processing the data, it stores the data in a repository. You can go to the [CM console](https://console.cloud.tencent.com/monitor/overview) to view the monitoring data in charts or pull metric data through APIs. You can also [create alarm policies](https://intl.cloud.tencent.com/document/product/248/6215) to define how to handle the monitoring data via the alarm processing system and enable the system to send alarm notifications when the monitoring data triggers the alarm conditions.
+CM provides basic metrics monitoring and data storage services for users. It is a space for storing the data of all cloud resources. CM collects and obtains the monitoring metric data for Tencent Cloud services through various channels. After processing the data, it stores the data in a repository. You can go to the [CM console](https://console.cloud.tencent.com/monitor/overview) to view the monitoring data in charts or pull metric data through APIs. You can also [create alarm policies](https://intl.cloud.tencent.com/document/product/248/38908) to define how to handle the monitoring data via the alarm processing system and enable the system to send alarm notifications when the monitoring data triggers the alarm conditions.
 
 **Architecture Diagram:**
 ![](https://main.qcloudimg.com/raw/d6dadcb6df11651053ce31ff9f037895.jpg)
@@ -101,9 +101,3 @@ Currently, CM can automatically monitor the following services. Once you start a
 - [Cloud Object Storage](https://intl.cloud.tencent.com/document/product/436)
 - [Cloud File Storage](https://intl.cloud.tencent.com/document/product/582)
 - [Web Application Firewall](https://intl.cloud.tencent.com/document/product/627)
-
-
-
-
-
-
