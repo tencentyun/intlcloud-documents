@@ -5,8 +5,8 @@ Tencent Cloud requires adding Hotlink protection to all push URLs to ensure secu
 Please see [Get addresses quickly](https://intl.cloud.tencent.com/document/product/267/7977) to learn how to get a reliable push URL.
 
 ### Expired txTime
-Some customers who worry about their CSS traffic being hacked would set a shorter txTime, such as 5 minutes after the current time. In fact, with txSercet signature, you don't need to set such a short validity period. Furthermore, with a too-short validity period, in case of a network interruption during CSS, the VJ would not be able to resume push due to the expiration of push URL.
-It's recommended to set the txTime to a value that is 12 or 24 hours after the current time, making the validity period longer than a normal CSS duration.
+Some customers who worry about their live streaming traffic being hacked would set a shorter txTime, such as 5 minutes after the current time. In fact, with txSercet signature, you don't need to set such a short validity period. Furthermore, with a too-short validity period, in case of a network interruption during CSS, the VJ would not be able to resume push due to the expiration of push URL.
+It's recommended to set the txTime to a value that is 12 or 24 hours after the current time, making the validity period longer than a normal live streaming duration.
 
 ### Push URL is in use already
 A push URL can only be used by one pusher, and any other client attempting to push will be rejected by Tencent Cloud. In this case, RTMP SDK throws a **PUSH_WARNING_SERVER_DISCONNECT** event.
