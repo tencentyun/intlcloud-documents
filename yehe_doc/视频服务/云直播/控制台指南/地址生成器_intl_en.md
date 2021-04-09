@@ -3,10 +3,10 @@
 With the address generator, you can select an added push/playback domain name to quickly generate the corresponding push/playback address.
 
 ## Prerequisites
-There should be at least one available domain name in [Domain Management](https://intl.cloud.tencent.com/document/product/267/31056) in the [LVB Console](https://console.cloud.tencent.com/live).
+There should be at least one available domain name in [Domain Management](https://intl.cloud.tencent.com/document/product/267/31056) in the [CSS console](https://console.cloud.tencent.com/live).
 
 ## Directions
-1. Log in to the LVB Console, select **Auxiliary Tools** > **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)** to open the Address Generator.
+1. Log in to the CSS console, select **Auxiliary Tools** > **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)** to open the Address Generator.
 3. Configure as follows on the Address Generator page:
 	1. Select the type, such as **push domain** or **playback domain**.
 	2. Select a domain name you have already added on the Domain Management page.
