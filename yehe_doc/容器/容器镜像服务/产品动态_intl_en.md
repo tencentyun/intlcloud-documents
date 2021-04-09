@@ -3,7 +3,7 @@
 ## March 2021
 <table>
 	<tr><th style="width: 25%;">Update</th><th style="width: 50%;">Description</th><th style="width: 25%;">Document</th></tr>
-<tr><td>Added support for custom domain name</td><td>TCR supports custom domain name. User can add a custom domain name and SSL certificate for the Enterprise Edition instance to access the instance through the HTTPS protocol.</td><td><a href="https://cloud.tencent.com/document/product/1141/53879">Configuring Custom Domain Name</a></td></tr>
+<tr><td>Added support for custom domain name</td><td>TCR supports custom domain name. User can add a custom domain name and SSL certificate for the Enterprise Edition instance to access the instance through the HTTPS protocol.</td><td>Configuring Custom Domain Name</td></tr>
 </table>
 
 ## January 2021
