@@ -1,13 +1,13 @@
 ## Operation Scenarios
 
-If you have a self-built origin server and live stream source and want to live broadcast your content through Tencent Cloud, you can configure origin server information for your CSS playback domain name for origin-pull. After the configuration is successful, you can pull live streams from the origin server and distribute the live content through CSS. This document describes how to do so.
+If you have a self-built origin server and live stream source and want to live broadcast your content through Tencent Cloud, you can configure origin server information for your playback domain name for origin-pull. After the configuration is successful, you can pull live streams from the origin server and distribute the live content through CSS. This document describes how to do so.
 
 ## Notes
 - After the relevant configuration is finished, the origin server settings will take effect in **30 minutes**- **one hour**.
 - After the origin server configuration is enabled, features such as transcoding, recording, screencapturing, porn detection, and watermark will become unavailable.
 
 ## Prerequisites
-- You have logged in to the [CSS Console](https://console.cloud.tencent.com/live).
+- You have logged in to the [CSS console](https://console.cloud.tencent.com/live).
 - You have built a live stream origin server.
 - You have added a **playback domain name**.
 
