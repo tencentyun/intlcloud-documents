@@ -3,7 +3,7 @@
 ## 2021年03月
 <table>
 	<tr><th style="width: 25%;">动态名称</th><th style="width: 50%;">动态描述</th><th style="width: 25%;">相关文档</th></tr>
-<tr><td>自定义域名</td><td>TCR 支持配置使用自定义域名，为企业版实例添加自定义域名和 SSL 证书，实现通过 HTTPS 协议访问实例。</td><td><a href="https://cloud.tencent.com/document/product/1141/53879">配置自定义域名</a></td></tr>
+<tr><td>自定义域名</td><td>TCR 支持配置使用自定义域名，为企业版实例添加自定义域名和 SSL 证书，实现通过 HTTPS 协议访问实例。</td><td>配置自定义域名</td></tr>
 </table>
 
 ## 2021年01月
