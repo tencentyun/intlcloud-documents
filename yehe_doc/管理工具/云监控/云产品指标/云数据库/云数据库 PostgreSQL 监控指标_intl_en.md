@@ -5,42 +5,173 @@ Namespace=QCE/POSTGRES
 ## Monitoring Metrics
 
 
-| Parameter | Metric Name | Description | Unit | Dimension |
-| --------------------- | ------------ | ---- |---- | --------------------- |
-| Connections | Number of connections | Historical trend of an instance’s number of active connections | Count | resourceId |
-| Cpu | CPU utilization | CPU utilization of an instance. The CPU utilization may be greater than 100% due to the use of flexible CPU limitation policies during the idle period | % | resourceId |
-| HitPercent | Buffer cache hit rate | Data cache hit rate | % | resourceId |
-| InFlow | Inbound traffic | Inbound traffic for instance read/write | KB/s | resourceId |
-| OutFlow | Outbound traffic | Outbound traffic for instance read/write | KB/s | resourceId |
-| Iops | Disk IOPS | Instance IOPS (requests per second) | Times/sec | resourceId |
-| Memory | Memory usage | Disk storage space occupied by the instance | KB | resourceId |
-| OtherCalls | Number of other requests | Total number of requests other than read and write requests (such as Drop requests), which is accumulated by minute | Times/min | resourceId |
-| Qps | Number of queries per second | Number of queries per second | Times/sec | resourceId |
-| WriteCalls | Number of write requests | Total number of write requests per minute | Times/min | resourceId |
-| ReadCalls | Number of read requests | Total number of read requests per minute | Times/min | resourceId |
-| ReadWriteCalls | Number of read and write requests | Total number of read and write requests (including Create/Read/Update/Delete (CRUD) requests) per minute | Times/min | resourceId |
-| RemainXid | Number of remaining XIDs | Number of remaining Transaction IDs. There are a maximum of 2^32 Transaction IDs. We recommend that you run "vacuum full" manually if the number of Transaction IDs is less than 1,000,000 | Count | resourceId |
-| SqlRuntimeAvg | Average execution latency | Average execution time of all SQL requests, excluding SQL requests in transactions | ms | resourceld |
-| SqlRuntimeMax | Top-10 maximum execution latency | Average value of the top-10 maximum execution times for SQL requests | ms | resourceId |
-| SqlRuntimeMin | Top-10 minimum execution latency | Average value of the top-10 minimum execution times for SQL requests | ms | resourceId |
-| Storage | Used storage space | Storage capacity used for instances | resourceId |
-| XlogDiff | Xlog synchronization difference between the Master and the Slave | Sampling per minute. The Xlog synchronization difference between the Master and the Slave reflects the synchronization latency. Therefore, the smaller the Xlog synchronization difference is, the better the performance of the Master/Slave will be | Byte | resourceId |
-| SlowQueryCnt | Slow queries | Number of queries with a query time greater than the specified time (1s by default) | Count | resourceId |
-| StorageRate | Storage space utilization | Storage space utilization of the instance | % | resourceId |
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Metric</th>
+<th>Description</th>
+<th>Unit</th>
+<th>Dimension</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Connections</td>
+<td>Connections</td>
+<td>Historical trend of active connections to the instance</td>
+<td> - </td>
+<td>resourceId</td>
+</tr>
+<tr>
+<td>Cpu</td>
+<td>CPU utilization</td>
+<td>Instance CPU utilization. Due to the flexible CPU limit policy adopted during idle time, the CPU utilization may be above 100%</td>
+<td>%</td>
+<td>resourceId</td>
+</tr>
+<tr>
+<td>HitPercent</td>
+<td>Buffer cache hit rate</td>
+<td>Data cache hit rate</td>
+<td>%</td>
+<td>resourceId</td>
+</tr>
+<tr>
+<td>InFlow</td>
+<td>Inbound traffic</td>
+<td>Inbound traffic for instance reads/writes</td>
+<td>KB/s</td>
+<td>resourceId</td>
+</tr>
+<tr>
+<td>OutFlow</td>
+<td>Outbound traffic</td>
+<td>Outbound traffic for instance reads/writes</td>
+<td nowrap="nowrap">KB/s</td>
+<td>resourceId</td>
+</tr>
+<tr>
+<td>Iops</td>
+<td>Disk IOPS</td>
+<td>Instance IOPS (number of requests per second)</td>
+<td>Requests/sec</td>
+<td>resourceId</td>
+</tr>
+<tr>
+<td>Memory</td>
+<td>Memory usage</td>
+<td>Available memory space used by the instance</td>
+<td>KB</td>
+<td>resourceId</td>
+</tr>
+<tr>
+<td>OtherCalls</td>
+<td>Other requests</td>
+<td>Total number of requests (such as DROP) other than reads and writes accumulated by the minute</td>
+<td nowrap="nowrap">Requests/min</td>
+<td>resourceId</td>
+</tr>
+<tr>
+<td>Qps</td>
+<td>Queries per second</td>
+<td>Number of queries per second</td>
+<td>Queries/sec</td>
+<td>resourceId</td>
+</tr>
+<tr>
+<td>WriteCalls</td>
+<td>Write requests</td>
+<td>Total number of write requests per minute</td>
+<td>Requests/min</td>
+<td>resourceId</td>
+</tr>
+<tr>
+<td>ReadCalls</td>
+<td>Read requests</td>
+<td>Total number of read requests per minute</td>
+<td>Requests/min</td>
+<td>resourceId</td>
+</tr>
+<tr>
+<td>ReadWriteCalls</td>
+<td>Read and write requests</td>
+<td>Total number of read and write (CRUD) requests per minute</td>
+<td>Requests/min</td>
+<td>resourceId</td>
+</tr>
+<tr>
+<td>RemainXid</td>
+<td>Remaining XIDs</td>
+<td>Number of remaining transaction IDs. Maximum number: 2^32. If this value is below 1000000, we recommend you manually run `vacuum full`</td>
+<td> - </td>
+<td>resourceId</td>
+</tr>
+<tr>
+<td>SqlRuntimeAvg</td>
+<td>Average execution latency</td>
+<td>Average execution time of all SQL requests, excluding SQL requests in transactions</td>
+<td>Ms</td>
+<td>resourceId</td>
+</tr>
+<tr>
+<td>SqlRuntimeMax</td>
+<td>Top 10 longest execution latency</td>
+<td>Average execution time of the top 10 most time-consuming SQL requests</td>
+<td>Ms</td>
+<td>resourceId</td>
+</tr>
+<tr>
+<td>SqlRuntimeMin</td>
+<td>Top 10 shortest execution latency</td>
+<td>Average execution time of the top 10 least time-consuming SQL requests</td>
+<td>Ms</td>
+<td>resourceId</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>Used storage space</td>
+<td>Storage capacity used by the instance</td>
+<td>GB</td>
+<td>resourceId</td>
+</tr>
+<tr>
+<td>XlogDiff</td>
+<td>Primary/Secondary xlog sync delay</td>
+<td>Primary/Secondary xlog sync delay sampled once per minute. The smaller, the better</td>
+<td>Byte</td>
+<td>resourceId</td>
+</tr>
+<tr>
+<td>SlowQueryCnt</td>
+<td>Slow queries</td>
+<td>Number of queries that take more than the specified time (1s by default) to be executed</td>
+<td> - </td>
+<td>resourceId</td>
+</tr>
+<tr>
+<td>StorageRate</td>
+<td>Storage space utilization</td>
+<td>Storage space utilization of the instance</td>
+<td>%</td>
+<td>resourceId</td>
+</tr>
+</tbody></table>
 
-> The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to obtain the `period` supported by each metric.
 
-## Overview of the Parameters in Each Dimension
 
-| Parameter Name | Dimension Name | Dimension Description | Format |
+> ?The statistical granularity (`period`) may vary by metric. The [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API can be used to get the `period` values supported by each metric.
+
+## Overview of Parameters in Each Dimension
+
+| Parameter | Dimension | Dimension Description          | Format |
 | ------------------ | ---------------- | ------------- | ----------------------------- |
-| Instances.N.Dimensions.0.Name | resourceId | Dimension name of the resourceId | Enter a string-type dimension name, such as resourceId |
-| Instances.N.Dimensions.0.Value | resourceId | A specific instance resourceId | Enter a specific instance resourceId, such as postgres-123456 |
+| Instances.N.Dimensions.0.Name  | resourceId              | `resourceId` dimension name   | Enter a String-type dimension name: resourceId         |
+| Instances.N.Dimensions.0.Value | resourceId              | Specific instance `resourceId`       | Enter a specific instance `resourceId`, such as postgres-123456       |
 
 
-## Input Parameters
+## Input Parameter Description
 
-To query the monitoring data of PostgreSQL, use the following input parameters:
+To query the monitoring data of a TencentDB for PostgreSQL instance, use the following input parameters:
 &Namespace=QCE/POSTGRES
 &Instances.N.Dimensions.0.Name=resourceId
-&Instances.N.Dimensions.0.Value=<Instance resourceId> 
+&Instances.N.Dimensions.0.Value=resourceId 
