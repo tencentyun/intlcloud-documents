@@ -73,5 +73,5 @@
 3. 单击【新增】，进入新建策略配置页面。
 4. 找到“告警对象”配置选项，启用“选择实例组”，在下拉列表选择之前创建的实例分组，如下图所示。
 ![](https://main.qcloudimg.com/raw/e70acdee37c55399ae06e87306251003.png)
-5. 在新建策略界面完成其他对应项的填写，即可完成告警策略的创建，详情请参见 [创建告警策略](https://intl.cloud.tencent.com/document/product/248/6215)。
+5. 在新建策略界面完成其他对应项的填写，即可完成告警策略的创建，详情请参见 [创建告警策略](https://intl.cloud.tencent.com/document/product/248/38908)。
 
