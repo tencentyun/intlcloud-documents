@@ -16,7 +16,7 @@ When your application is approved, you can go to the CDN console to enable QUIC 
 >- QUIC origin-pull is currently not supported.
 
 Log in to the [CDN console](https://console.cloud.tencent.com/cdn) and tick the box to enable QUIC when connecting a new domain name:
-![](https://main.qcloudimg.com/raw/cb7d9ab0a9026574363f7308047c04c6.png)
+![](https://main.qcloudimg.com/raw/2098308cd8a8c1a0321c0164646b7700.png)
 **Configuration limitations**:
 
 - QUIC currently cannot be enabled for any domain names of the service type of streaming VOD acceleration.
@@ -26,10 +26,6 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn) and tick the 
 After successfully connecting the domain name, you can click **Domain Management** on the left sidebar, enter the domain name details page, and open the **HTTPS Configuration** tab to find the QUIC configuration section. It is disabled by default, and you can enable it directly.
 **Note:** You need to configure an HTTPS certificate before enabling QUIC.
 ![](https://main.qcloudimg.com/raw/e697e32b39948d56610285c80043f1de.png)
-
-
-
-
 
 
 
