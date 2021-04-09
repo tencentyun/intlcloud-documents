@@ -16,7 +16,7 @@ A VPN gateway is an egress gateway for VPC to establish a VPN connection. It is 
 - **VPN tunnel**: an encrypted IPsec VPN tunnel over the public network. After the VPN gateway and customer gateway are created, you can establish a VPN tunnel between the VPC and an external IDC for encrypted communication.
 
 ### What roles does the VPN gateway bandwidth limit play?
-The VPN gateway bandwidth limit provides **monitoring** and **control** capabilities at IP-gateway granularity. For more information about its roles and advantages, see the “VPN gateway bandwidth limit” section in [Features](https://intl.cloud.tencent.com/document/product/1037/32681).
+The VPN gateway bandwidth limit provides **monitoring** and **control** capabilities at IP-gateway granularity.
 
 ### What are the limitations on using a VPN?
  To use a VPN, take notice of the limitations on IP addresses of the VPN connection and the customer gateway. For more information, see [Use Limits](https://intl.cloud.tencent.com/document/product/1037/32682).
