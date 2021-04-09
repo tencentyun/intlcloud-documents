@@ -1,14 +1,14 @@
 ## Operation Scenarios
 
-Push interruption diagnosis helps you quickly check the record of CSS push interruptions and their reasons.
+Push interruption diagnosis helps you quickly check the records of push interruptions and their reasons.
 
 ## Prerequisites
-- You have logged in to the [CSS Console](https://console.cloud.tencent.com/live).
+- You have logged in to the [CSS console](https://console.cloud.tencent.com/live).
 - There is an interruption in live push under the current Tencent Cloud account.
 
 ## Directions
 
-After the CSS push is interrupted, select **Event Center** > **[Stream Interruption Records](https://console.cloud.tencent.com/live/tools/streamevent)** on the left sidebar to enter the push interruption diagnosis page.
+After the live push is interrupted, select **Event Center** > **[Stream Interruption Records](https://console.cloud.tencent.com/live/tools/streamevent)** on the left sidebar to enter the push interruption diagnosis page.
 ![](https://main.qcloudimg.com/raw/169c385baadcf5d7c4e6f3c9edc06722.png)
 
 Here:
