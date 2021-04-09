@@ -1,4 +1,4 @@
-The CSS console provides configurations for you to quickly implement basic features such as CSS domain name management, CSS stream management, transcoding and recording. In addition, it enables you to perform various operations such as web push, acceleration configuration, resource monitoring and log management. 
+The CSS console provides configurations for you to quickly implement basic features such as domain name management, stream management, transcoding and recording. In addition, it enables you to perform various operations such as web push, acceleration configuration, resource monitoring and log management. 
 
 ## Prerequisites
 
@@ -16,7 +16,7 @@ Click **Overview** on the left sidebar, and you can view the relevant data such 
 <thead><tr><th width="20%">Statistical Item</th><th width="80%">Description</th></tr></thead>
 <tbody><tr>
 <td>Yesterday's traffic usage</td>
-<td>It displays the fees incurred by the downstream traffic/bandwidth generated in yesterday's CSS playback. You can select <strong>daily traffic billing</strong> or <strong>daily bandwidth billing</strong> as the billing mode.</td>
+<td>It displays the fees incurred by the downstream traffic/bandwidth generated in yesterday's live playback. You can select <strong>daily traffic billing</strong> or <strong>daily bandwidth billing</strong> as the billing mode.</td>
 </tr>
 </tbody></table>
 
@@ -27,7 +27,7 @@ For more information, see [CSS Pricing](https://intl.cloud.tencent.com/document/
 
 ### Today's data
 
-It displays the downstream peak bandwidth, downstream traffic usage, and number of concurrent connections in CSS for today.
+It displays the downstream peak bandwidth, downstream traffic usage, and number of concurrent connections of live streaming for today.
 
 <table>
 <thead><tr><th width="20%">Statistical Item</th><th width="80%">Description</th></tr></thead>
@@ -48,7 +48,7 @@ It displays the downstream peak bandwidth, downstream traffic usage, and number 
 
 ### Usage trend
 
-It mainly displays the CSS usage trends for today, yesterday, last 7 days, and last 30 days, including the "bandwidth trend" and "traffic trend".
+It mainly displays the usage trends for today, yesterday, last 7 days, and last 30 days, including the "bandwidth trend" and "traffic trend".
 
 <table>
 <thead><tr><th width="20%">Statistical Item</th><th width="80%">Description</th></tr></thead>
