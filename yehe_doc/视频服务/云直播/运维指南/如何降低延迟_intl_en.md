@@ -2,12 +2,12 @@ Generally, the delay of RTMP push+FLV playback is about 2-3 seconds. An extra-lo
 
 ### Step 1. Check the playback protocol
 It is quite normal that many customers using HLS (m3u8) as the playback protocol experience a longer delay. Apple's HLS is a streaming protocol based on a total of 3-4 large-granular TS fragments, with each fragment featuring a time period of more than 5 seconds. Therefore, it is not unusual that the total delay may reach about 20-30 seconds.
-To solve the problem, use the FLV protocol instead. Please note that only HLS (m3u8) playback protocol can be selected if you want to watch CSS on mobile browsers. Other CSS protocols are not supported on Apple's Safari browser.
+To solve the problem, use the FLV protocol instead. Please note that only HLS (m3u8) playback protocol can be selected if you want to watch live streaming on mobile browsers. Other live streaming protocols are not supported on Apple's Safari browser.
 
 ### Step 2. Check the player settings
 Tencent Cloud RTMP SDK's player supports Speedy, Smooth and Auto modes. For more information about the settings, please see [adjusting delay].
-- **Speedy**: With a delay within 2-3 seconds in most scenarios, this mode is suitable for Beauty Show CSS.
-- **Smooth**: With a delay within 5 seconds in most scenarios, this mode is suitable for scenarios that are insensitive to delay but have a high requirement for smoothness (such as Game CSS).
+- **Speedy**: With a delay within 2-3 seconds in most scenarios, this mode is suitable for live shows.
+- **Smooth**: With a delay within 5 seconds in most scenarios, this mode is suitable for scenarios that are insensitive to delay but have a high requirement for smoothness (such as live game streaming).
 
 
 ### Step 3. Disable watermarking in background
