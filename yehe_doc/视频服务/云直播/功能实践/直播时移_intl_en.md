@@ -1,4 +1,4 @@
-Based on the CSS recording capability, the time shifting feature stores the TS (Transport Stream) segment addresses and TS files separately into the VOD system. A client can replay video content before the current time point by passing in a time parameter in the URL with the time-shift playback domain name.
+Based on the live recording capability, the time shifting feature stores the TS (Transport Stream) segment addresses and TS files separately into the VOD system. A client can replay video content before the current time point by passing in a time parameter in the URL with the time-shift playback domain name.
 
 ## How It Works
 
@@ -18,7 +18,7 @@ Fees for VOD traffic and storage will be incurred when you enable the time shift
 
 ### Step 1: activate VOD service
 
-1. Log in to the [VOD Console](https://console.cloud.tencent.com/vod/overview) and click **Activate Now**.
+1. Log in to the [VOD console](https://console.cloud.tencent.com/vod/overview) and click **Activate Now**.
 2. Check the checkbox to agree to the service agreement, and click **OK** to activate VOD service. Log in to the VOD console.
 <span id="step2"></span>
 ### Step 2: add domain name of the time-shift playback
@@ -31,7 +31,7 @@ To add the Tencent Cloud VOD domain name for time-shift playback, perform the fo
 <span id="step3"></span>
 ### Step 3: associate recording template
 
-1. Log in to the CSS Console and go to **Function Template** > **[Recording Configuration](https://console.cloud.tencent.com/live/config/record)**.
+1. Log in to the CSS console and go to **Function Template** > **[Recording Configuration](https://console.cloud.tencent.com/live/config/record)**.
 2. Click **+** to create a recording template. For more information, please see [Recording Configuration](https://intl.cloud.tencent.com/document/product/267/34223).
    > ! 
    >- Choose **HLS** for the file type.
