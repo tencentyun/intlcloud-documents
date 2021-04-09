@@ -24,7 +24,7 @@ In regions outside the Chinese mainland, there are eight billing regions determi
   |  South America   |                          Brazil                          |
   |  Africa   |                         South Africa                         |
 
-> Note:
+>!
 >
 > CDN service fees for the Chinese mainland and regions outside the Chinese mainland are charged separately based on corresponding unit prices and usages.
 
@@ -46,7 +46,7 @@ If the actual or estimated consumption of your CDN service is more than USD 20,0
 |    Monthly 95th percentile    | A total of 288 CDN bandwidth statistical points are collected each day, then the statistical points of all valid days in a month (starting from the 1st day) are sorted in descending order. Next, the top 5% points are discarded. Finally, the remaining statistical point with the greatest value is used as the bandwidth for billing based on the price in your service contract. | If the actual or estimated consumption of your CDN service is more than USD 20,000, please contact Tencent Cloud sales. | [Billing Instruction](https://intl.cloud.tencent.com/document/product/228/2949) |
 |     Monthly traffic     |       The traffic generated in a month is accumulated for billing based on the price in your service contract.   | If the actual or estimated consumption of your CDN service is more than USD 20,000, please contact Tencent Cloud sales. |                              /                               |
 
-> Note:
+>!
 >
 > 
 >
@@ -68,7 +68,7 @@ CDN bandwidth adopts the **tiered pricing** as follows:
 | 5 Gbps - 50 Gbps           | 0.0754         | 0.1491    | 0.1491    | 0.2703        | 0.2859        | 0.3828        | 0.6075    | 0.4702    | 0.4702    |
 | ≥ 50 Gbps                 | 0.0738       | 0.1055    | 0.1055    | 0.2436        | 0.2545        | 0.3267           | 0.5301    | 0.4281       | 0.4281       |
 
-> Note:
+>!
 >
 > If your CDN peak bandwidth is equal to or more than 50 Gbps, please [contact us](https://intl.cloud.tencent.com/contact-sales) for discount information.
 
@@ -97,7 +97,7 @@ CDN traffic pricing is based on a **monthly cumulative tier** as follows:
 | 50 TB - 100 TB        | 0.0231         | 0.0261    | 0.0261    | 0.0475        | 0.0590        | 0.0654        | 0.0863    | 0.0842    | 0.0842    |
 | ≥ 100 TB             | 0.0169          | 0.0200    | 0.0200    | 0.0446        | 0.0503        | 0.0577        | 0.0794    | 0.0781    | 0.0781    |
 
-> Note:
+>!
 >
 > If your CDN traffic is equal to or more than 100 TB, please [contact us](https://intl.cloud.tencent.com/contact-sales) for discount information.
 
@@ -132,7 +132,7 @@ In this way, you can calculate the fee for each day in a month. When it is Febru
 
 ## Choosing a Billing Mode
 
-> Note:
+>!
 >
 > If you noticed that the selected billing mode is not suitable for your business needs during use, you can change it. For more information, please see [Changing Billing Method](https://intl.cloud.tencent.com/document/product/228/32326).
 
@@ -153,7 +153,7 @@ We recommend bill-by-bandwidth as it is more cost-effective.
 
 Tencent Cloud will notify you through multiple channels including email and SMS for overdue payments. A **24-hour** grace period is provided. If you fail to top up your account within 24 hours, your CDN service will be suspended. After your account is topped up, the domain name status will be automatically restored to the one before service suspension.
 
-> Note:
+>!
 >
 > When your acceleration service is suspended due to overdue payment, all your domain names will be disabled and all access requests will be forwarded to the origin server. You can query information but cannot modify configurations in the CDN console. Your CDN-related domain names and configurations will be retained for 12 months.
 
