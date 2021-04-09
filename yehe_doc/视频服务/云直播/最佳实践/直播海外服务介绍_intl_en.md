@@ -40,11 +40,11 @@ In addition to technical architectures and solutions, resource reserves are also
 
 <span id="open"></span>
 ### How to Activate
-The Global CSS service can be directly activated in the [CSS Console](https://console.cloud.tencent.com/live)
+The Global CSS service can be directly activated in the [CSS console](https://console.cloud.tencent.com/live)
 - If you don't have a Tencent Cloud account yet, you need to sign up first as instructed in [Signing up for a Tencent Cloud Account](https://intl.cloud.tencent.com/document/product/378/17985) and then [apply for activation of the CSS service](https://intl.cloud.tencent.com/document/product/267/30410).
 - If you already have a Tencent Cloud account and have activated CSS, you can proceed directly to the next step.
 
-Go to the CSS Console, select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** on the left sidebar, and click **Add Domain**.
+Go to the CSS console, select **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** on the left sidebar, and click **Add Domain**.
 ![](https://main.qcloudimg.com/raw/8966d84b046460251f38b49927117826.png)
 
 In the pop-up window, select the type as **Playback Domain**, select the corresponding **Acceleration Region**, and enter the **Domain Name** that needs to be accelerated.
