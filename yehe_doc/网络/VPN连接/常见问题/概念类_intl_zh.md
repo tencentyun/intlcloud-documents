@@ -16,7 +16,7 @@ VPN 网关是私有网络建立 VPN 连接的出口网关，与对端网关（ID
 - **VPN 通道**：加密的公网 IPsec VPN 通道，在 VPN 网关和对端网关建立后，即可以建立 VPN 通道，用于私有网络和用户的 IDC 之间的加密通信。
 
 ### VPN 网关流控有什么作用？
-VPN 网关流控提供 IP-网关 粒度的 “监” 与 “控” 能力，VPN 网关流控的作用和主要价值，详情请参见 [VPN 网关流控](https://intl.cloud.tencent.com/document/product/1037/32681)。
+VPN 网关流控提供 IP-网关 粒度的 “监” 与 “控” 能力，VPN 网关流控的作用和主要价值。
 
 ### 使用 VPN 有什么约束？
  使用 VPN 时，您需要注意 VPN 连接和对端网关 IP 地址上的约束，详情请参见 [使用约束](https://intl.cloud.tencent.com/document/product/1037/32682)。
