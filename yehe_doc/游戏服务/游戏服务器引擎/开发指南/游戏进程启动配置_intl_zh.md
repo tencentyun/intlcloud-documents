@@ -31,7 +31,7 @@ Linux 环境下启动 Java 程序的命令如：java -jar XXXX.jar，为确保 J
 
 2. 将 install.sh 脚本放置到游戏生成包的根目录下，即在游戏服务器舰队实例上解压后的路径为 /local/game/install.sh。
 3. 创建游戏服务器舰队时，启动路径填写 /local/game/java，启动参数填写 -jar 用户指定的 jar 包。
-![](https://main.qcloudimg.com/raw/4bd297141914431440f69cb4d1393aee.png)
+![](https://main.qcloudimg.com/raw/50f224688792b05010a583992013d5b2.png)
 
 4. 游戏进程成功启动后，/local/game 路径内容示意如下：
 ![](https://main.qcloudimg.com/raw/637aebe468e921d845baeb88fa21688c.png)
