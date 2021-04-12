@@ -9,23 +9,23 @@ Tencent Cloud PC CSS is used to push compressed and encoded images (such as **li
 You can implement PC CSS easily by following the steps below:
 - **Where are the streams pushed to**: Get a **push URL** and 3 playback URLs from Tencent Cloud CSS console.
 - **What is pushed**: Set audio/video sources for push and encoding parameters in the third-party push software.
-- Viewer can watch CSS using our RTMP DEMO to set playback URL. This helps **push the content to the viewers**.
+- Viewer can watch live streaming using our RTMP DEMO to set playback URL. This helps **push the content to the viewers**.
 
 ![](https://main.qcloudimg.com/raw/fece166faaa92f7e907b64581cff220c.png)
 
 
-## 1. Before CSS
+## 1. Before Live Streaming
 - Activate cloud CSS service on Tencent Cloud.
 If you have not activated the Tencent Cloud CSS service, click here to [apply for the service](https://console.cloud.tencent.com/live).
 ![](https://main.qcloudimg.com/raw/2ff750be6832f364645a7ac8ee736f5b.png)
 
 ### 1.2 Generate push URL
-If you don't have a **push URL**, you can generate a **push URL** and 3 playback URLs by clicking [**Access Management** -> **CSS Code Access** -> **Access Configuration**](https://console.cloud.tencent.com/live).
+If you don't have a **push URL**, you can generate a **push URL** and 3 playback URLs by clicking [**Access Management** -> **Live Stream Code Access** -> **Access Configuration**](https://console.cloud.tencent.com/live).
 
 The one whose domain name is **livepush.myqcloud.com** is the push URL:
 ![](https://main.qcloudimg.com/raw/049318c003544a79d45ad51281041252.png)
 
-### 1.3 Select the network for CSS
+### 1.3 Select the network for live streaming
 - **Network selection**
 
 | Network Type | Accessibility | Stability |
@@ -46,7 +46,7 @@ You can download an installation package on [OBS official website](https://obspr
 
 - **XSplit Installation**
 You can download an installation package on XSplit official website to install it according to default settings.
-XSplit is not a free software. As an alternative, you can use OBS (**Free**). For game CSS, XSplit has a separate installation package. It is recommended to use BroadCaster for non-game CSS.
+XSplit is not a free software. As an alternative, you can use OBS (**Free**). For live game streaming, XSplit has a separate installation package. It is recommended to use BroadCaster for non-game live streaming.
 ![](https://main.qcloudimg.com/raw/401afb98511a69bf70806bf50d28c2ff.png)
 
 ## 2. Software parameter configuration
@@ -60,7 +60,7 @@ You need to set two parts separately:
 
 - **OBS push URL configuration**
 <!-- ![](https://mc.qcloudimg.com/static/img/8f5dabbdea9882531464017385648e0c/image.png) -->
-Click **Settings**, select **Broadcasting Settings**, and then set **Mode** to **CSS Stream**, **Streaming Service** to **Custom**, **FMS URL** to the first part of push URL, and **Playback Path/Streaming Code** to the second part. You're recommended to check **Automatic Reconnection**, which means push reconnection is triggered automatically when OBS detects an exception (such as network disconnection).
+Click **Settings**, select **Broadcasting Settings**, and then set **Mode** to **Live Stream**, **Streaming Service** to **Custom**, **FMS URL** to the first part of push URL, and **Playback Path/Streaming Code** to the second part. You're recommended to check **Automatic Reconnection**, which means push reconnection is triggered automatically when OBS detects an exception (such as network disconnection).
 <!-- ![](https://mc.qcloudimg.com/static/img/88024aaff126c5e34f4e96b9cd7e37c2/image.png) -->
 
 - **OBS Studio push URL settings**
@@ -83,7 +83,7 @@ Audio and video sources are just like the contents of the package to be sent. Th
 For more information, please see **OBS audio and video sources settings**.
 
 ### 2.3 Set audio and video formats
-After the video source is configured, even though you can get the audio and video signals, the original ones are not applicable for spreading in the network because they need more bandwidth. Therefore, it is important to configure the audio and video encoding parameters before CSS starts.
+After the video source is configured, even though you can get the audio and video signals, the original ones are not applicable for spreading in the network because they need more bandwidth. Therefore, it is important to configure the audio and video encoding parameters before live streaming starts.
 
 | Configuration Item | Feature |
 |:--------:|---------|
