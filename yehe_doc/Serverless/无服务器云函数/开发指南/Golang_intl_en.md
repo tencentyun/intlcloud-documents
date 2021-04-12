@@ -6,14 +6,14 @@ Currently, the following versions of Go are supported:
 
 The Go function format is generally as follows:
 
-```golang
-
+<dx-codeblock>
+:::  golang
 package main
 
-import(
+import (
 	"context"
 	"fmt"
-	"github.com/tencentyun/scf-go-lib/events"
+	"github.com/tencentyun/scf-go-lib/cloudfunction"
 )
 
 type DefineEvent struct {
@@ -32,14 +32,13 @@ func main() {
 	// Make the handler available for Remote Procedure Call by Cloud Function
 	cloudfunction.Start(hello)
 }
-
-    
-```
+:::
+</dx-codeblock>
 
 Pay attention to the following during code development:
 
 - You need to use `package main` to include the `main` function.
-- Before compiling and packaging the `github.com/tencentyun/scf-go-lib/cloudfunction` library, run the `go get github.com/tencentyun/scf-go-lib/cloudfunction` command.
+- Import the `github.com/tencentyun/scf-go-lib/cloudfunction` library by running `go get github.com/tencentyun/scf-go-lib/cloudfunction` before packaging and compilation.
 - 0–2 parameters can be used as the input parameters for the entry function. If parameters are included, `context` needs to be in front, followed by `event`, and the combination of input parameters can be `()`, `(event)`, `(context)`, or `(context, event)`. For more information, please see [Input parameters](#Participation).
 - 0–2 parameters can be used as the returned values for the entry function. If parameters are included, the returned content `ret` needs to be in front, followed by `error`, and the combination of returned values can be `()`, `(ret)`, `(error)`, or `(ret, error)`. For more information, please see [Returned values](#ReturnValue).
 - The `event` input parameter and `ret` returned value need to be compatible with the `encoding/json` standard library for Marshal and Unmarshal operations.
@@ -52,13 +51,14 @@ Pay attention to the following during code development:
 
 When developing an SCF function with Go, you need to make sure that the `main` function is in the `main` package. In the `main` function, start the entry function that actually handles the business by using the `Start` function in the `cloudfunction` package.
 
-You can use the `Start` function in the package in the `main` function through `import "github.com/tencentyun/scf-go-lib/events"`.
+You can use the `Start` function in the package in the `main` function through `import "github.com/tencentyun/scf-go-lib/cloudfunction"`.
 
 ### Entry function
 
 An entry function is the function started by `cloudfunction.Start`, which usually handles the actual business. The input parameters and returned values of the entry function need to be written according to certain specifications.
 
-<span id="Participation"></span>
+[](id:Participation)
+
 #### Input parameters
 
 The entry function can have 0–2 input parameters, such as:
@@ -78,8 +78,8 @@ The JSON structure corresponding to the custom data structure usually correspond
 
 >! The event structures of input parameters passed in by certain triggers have been defined and can be used directly. You can get and use the Go libraries through the [Cloud Event Definition](https://github.com/tencentyun/scf-go-lib/tree/master/events) by importing "github.com/tencentyun/scf-go-lib/events"` into the code. If you have any questions during use, you can [submit an issue](https://github.com/tencentyun/scf-go-lib/issues/new) or [ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
-<span id="ReturnValue"></span>
-#### Returned values
+
+#### Returned values[](id:ReturnValue)
 
 The entry function can have 0–2 returned values, such as:
 
@@ -106,7 +106,7 @@ The output can be viewed at the `log` position in the function log.
 
 A function in the Go environment can only be uploaded as a zip package. You can choose to upload the local zip package or use COS to import the package. The package should include the compiled executable binary file.
 
-Cross-platform Go compilation can be achieved by developing OS and ARCH on any platform, so it can be done on Linux, Windows, or macOS.
+Cross-platform Go compilation can be achieved by specifying OS and ARCH on any platform, so it can be done on Linux, Windows, or macOS.
 
 - Compile and package on Linux or macOS as follows:
 ```
@@ -143,5 +143,5 @@ You can click the test button in the top-right corner on the console to open the
 
 ## Related Documents
 For more information on how to use relevant features, please see the following documents:
-- [Role and Authorization](https://intl.cloud.tencent.com/document/product/583/38176)
 - [Network Configuration Management](https://intl.cloud.tencent.com/document/product/583/38377)
+- [Role and Authorization](https://intl.cloud.tencent.com/document/product/583/38176)
