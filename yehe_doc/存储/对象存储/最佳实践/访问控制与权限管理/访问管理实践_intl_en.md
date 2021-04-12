@@ -64,9 +64,9 @@ The policy in this example allows the sub-account with ID 100000000011 under the
 {
 	"version": "2.0",
 	"principal": {
-		"qcs": ["qcs::cam::uin/100000000001:uin/100000000011",
+		"qcs": ["qcs::cam::uin/100000000001:uin/100000000011"]
 
-		]
+		
 	},
 	"statement": [{
 			"effect": "allow",
@@ -79,8 +79,8 @@ The policy in this example allows the sub-account with ID 100000000011 under the
 					"qcs:ip": "10.*.*.10/24"
 				}
 			}
-		},
-	]
+		
+	}]
 }
 ```
 
