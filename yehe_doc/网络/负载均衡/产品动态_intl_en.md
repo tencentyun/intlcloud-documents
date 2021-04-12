@@ -1,10 +1,29 @@
+## January 2021
+<table>
+<thead>
+<tr>
+<th width="25%">Update</th>
+<th width="40%">Description</th>
+<th width=15%>Release Date</th>
+<th width="20%">Documentation</th>
+</tr>
+</thead>
+<tbody>
+ <tr>
+<td>Supports binding CLB instances with SCF functions</td> 
+<td>CLB instances support binding with SCF functions, enabling more convenient and cost-effective public network access for SCF.</td> 
+<td>January 28, 2021</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/214/39790">Binding with SCF</a></td> 
+</tbody>
+</table>
+
 ## December 2020
 <table>
 <thead>
 <tr>
 <th width="25%">Update</th>
 <th width="40%">Description</th>
-<th width="15%">Release Date</th>
+<th width=15%>Release Date</th>
 <th width="20%">Documentation</th>
 </tr>
 </thead>
@@ -21,8 +40,6 @@
   <td>December 14, 2020</td>
   <td><a href="https://intl.cloud.tencent.com/document/product/214/6097">Health Check</a></td>
   </tr>
- 
-
 </tbody>
 </table>
 
@@ -32,7 +49,7 @@
 <tr>
 <th width="25%">Update</th>
 <th width="40%">Description</th>
-<th width="15%">Release Date</th>
+<th width=15%>Release Date</th>
 <th width="20%">Documentation</th>
 </tr>
 </thead>
@@ -61,13 +78,35 @@
 </table>
 
 
+## August 2020
+<table>
+<thead>
+<tr>
+<th width="25%">Update</th>
+<th width="40%">Description</th>
+<th width=15%>Release Date</th>
+<th width="20%">Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CLB supports traffic packs</td>
+<td>For bill-by-traffic CLB instances purchased with a bill-by-IP account, traffic packs have been used preferentially for billing since 12:00:00 on August 26, 2020.</td>
+<td>August 26, 2020</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/684/15245">Product Overview
+</a></td>
+</tr>
+</tbody>
+</table>
+
+
 ## June 2020
 <table>
 <thead>
 <tr>
 <th width="25%">Update</th>
 <th width="40%">Description</th>
-<th width="15%">Release Date</th>
+<th width=15%>Release Date</th>
 <th width="20%">Documentation</th>
 </tr>
 </thead>
@@ -88,7 +127,7 @@
 <tr>
 <th width="25%">Update</th>
 <th width="40%">Description</th>
-<th width="15%">Release Date</th>
+<th width=15%>Release Date</th>
 <th width="20%">Documentation</th>
 </tr>
 </thead>
@@ -121,7 +160,7 @@
 <tr>
 <th width="25%">Update</th>
 <th width="40%">Description</th>
-<th width="15%">Release Date</th>
+<th width=15%>Release Date</th>
 <th width="20%">Documentation</th>
 </tr>
 </thead>
@@ -139,7 +178,7 @@
 <tr>
 <th width="25%">Update</th>
 <th width="40%">Description</th>
-<th width="15%">Release Date</th>
+<th width=15%>Release Date</th>
 <th width="20%">Documentation</th>
 </tr>
 </thead>
@@ -157,7 +196,7 @@
 <tr>
 <th width="25%">Update</th>
 <th width="40%">Description</th>
-<th width="15%">Release Date</th>
+<th width=15%>Release Date</th>
 <th width="20%">Documentation</th>
 </tr>
 </thead>
@@ -187,7 +226,7 @@
 <tr>
 <th width="25%">Update</th>
 <th width="40%">Description</th>
-<th width="15%">Release Date</th>
+<th width=15%>Release Date</th>
 <th width="20%">Documentation</th>
 </tr>
 </thead>
@@ -205,7 +244,7 @@
 <tr>
 <th width="25%">Update</th>
 <th width="40%">Description</th>
-<th width="15%">Release Date</th>
+<th width=15%>Release Date</th>
 <th width="20%">Documentation</th>
 </tr>
 </thead>
@@ -223,7 +262,7 @@
 <tr>
 <th width="25%">Update</th>
 <th width="40%">Description</th>
-<th width="15%">Release Date</th>
+<th width=15%>Release Date</th>
 <th width="20%">Documentation</th>
 </tr>
 </thead>
@@ -249,7 +288,7 @@
 <tr>
 <th width="25%">Update</th>
 <th width="40%">Description</th>
-<th width="15%">Release Date</th>
+<th width=15%>Release Date</th>
 <th width="20%">Documentation</th>
 </tr>
 </thead>
@@ -268,7 +307,7 @@
 <tr>
 <th width="25%">Update</th>
 <th width="40%">Description</th>
-<th width="15%">Release Date</th>
+<th width=15%>Release Date</th>
 <th width="20%">Documentation</th>
 </tr>
 </thead>
@@ -286,7 +325,7 @@
 <tr>
 <th width="25%">Update</th>
 <th width="40%">Description</th>
-<th width="15%">Release Date</th>
+<th width=15%>Release Date</th>
 <th width="20%">Documentation</th>
 </tr>
 </thead>
@@ -304,7 +343,7 @@
 <tr>
 <th width="25%">Update</th>
 <th width="40%">Description</th>
-<th width="15%">Release Date</th>
+<th width=15%>Release Date</th>
 <th width="20%">Documentation</th>
 </tr>
 </thead>
@@ -329,7 +368,7 @@
 <tr>
 <th width="25%">Update</th>
 <th width="40%">Description</th>
-<th width="15%">Release Date</th>
+<th width=15%>Release Date</th>
 <th width="20%">Documentation</th>
 </tr>
 </thead>
@@ -347,7 +386,7 @@
 <tr>
 <th width="25%">Update</th>
 <th width="40%">Description</th>
-<th width="15%">Release Date</th>
+<th width=15%>Release Date</th>
 <th width="20%">Documentation</th>
 </tr>
 </thead>
@@ -365,7 +404,7 @@
 <tr>
 <th width="25%">Update</th>
 <th width="40%">Description</th>
-<th width="15%">Release Date</th>
+<th width=15%>Release Date</th>
 <th width="20%">Documentation</th>
 </tr>
 </thead>
@@ -389,7 +428,7 @@
 <tr>
 <th width="25%">Update</th>
 <th width="40%">Description</th>
-<th width="15%">Release Date</th>
+<th width=15%>Release Date</th>
 <th width="20%">Documentation</th>
 </tr>
 </thead>
@@ -407,7 +446,7 @@
 <tr>
 <th width="25%">Update</th>
 <th width="40%">Description</th>
-<th width="15%">Release Date</th>
+<th width=15%>Release Date</th>
 <th width="20%">Documentation</th>
 </tr>
 </thead>
@@ -415,7 +454,7 @@
 <td>Supports layer-7 HTTP and HTTPS protocols</td>
 <td>Layer-7 HTTP and HTTPS protocols are application layer protocols. Layer-7 listeners support session persistence based on cookies and health check based on HTTP return codes.</td>
 <td>April 2016</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/6151#.E6.94.AF.E6.8C.81.E7.9A.84.E5.8D.8F.E8.AE.AE.E7.B1.BB.E5.9E.8B">CLB Listeners - Overview</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/6151">CLB Listeners - Overview</a></td>
 </tr>
 </tbody></table>
 
@@ -425,7 +464,7 @@
 <tr>
 <th width="25%">Update</th>
 <th width="40%">Description</th>
-<th width="15%">Release Date</th>
+<th width=15%>Release Date</th>
 <th width="20%">Documentation</th>
 </tr>
 </thead>
@@ -443,7 +482,7 @@
 <tr>
 <th width="25%">Update</th>
 <th width="40%">Description</th>
-<th width="15%">Release Date</th>
+<th width=15%>Release Date</th>
 <th width="20%">Documentation</th>
 </tr>
 </thead>
