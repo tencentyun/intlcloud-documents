@@ -31,7 +31,7 @@ In Linux environment, a command like `java -jar XXXX.jar` can be used to launch 
 
 2. Put `install.sh` script under the root directory of the game’s asset package, which means the decompressed path will be `/local/game/install.sh` on the game server fleet instance.
 3. When creating the game server fleet, enter `/local/game/java` as the launch path, and enter `-jar jar package specified by user` as the launch parameter.
-![](https://main.qcloudimg.com/raw/4bd297141914431440f69cb4d1393aee.png)
+![](https://main.qcloudimg.com/raw/50f224688792b05010a583992013d5b2.png)
 
 4. After the game process is successfully launched, the content of the path `/local/game` is shown below:
 ![](https://main.qcloudimg.com/raw/637aebe468e921d845baeb88fa21688c.png)
