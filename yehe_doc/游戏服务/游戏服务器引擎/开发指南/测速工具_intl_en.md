@@ -1,29 +1,33 @@
-This document describes the addresses and examples for latency test in different regions. Both HTTPS and UDP are supported.
+This document provides the addresses and examples for latency test in different regions. Both HTTPS and UDP addresses are supported.
 
 ### HTTPS and UDP addresses for latency test in regions 
 
-|  Region   |                 HTTPS Address              |   UDP Address   |
+|   Region   |                 HTTPS Address                 |   UDP Address   |
 | :------: | :-------------------------------------------: | :-------------: |
-| Frankfurt |   https://eu-frankfurt.speed.tencentgse.com   | 162.62.115.241  |
-| Beijing   |    https://ap-beijing.speed.tencentgse.com    | 109.244.169.222 |
-| Tokyo   |     https://ap-tokyo.speed.tencentgse.com     | 124.156.236.22  |
-| Seoul   |     https://ap-seoul.speed.tencentgse.com     | 150.109.249.54  |
-| Singapore  |   https://ap-singapore.speed.tencentgse.com   |  129.226.2.138  |
-| Mumbai   |    https://ap-mumbai.speed.tencentgse.com     | 129.226.26.136  |
-|  Hong Kong (China)   |   https://ap-hongkong.speed.tencentgse.com    | 129.226.103.23  |
-| Virginia |    https://na-ashburn.speed.tencentgse.com    |  49.51.78.239   |
-| Silicon Valley  | https://na-siliconvalley.speed.tencentgse.com |  49.51.190.41   |
-| Guangzhou   |   https://ap-guangzhou.speed.tencentgse.com   |  106.55.124.10  |
-| Shanghai   |   https://ap-shanghai.speed.tencentgse.com    | 175.24.219.174  |
+|   Beijing   |    https://ap-beijing.speed.tencentgse.com    | ap-beijing.speed.tencentgse.com |
+|   Shanghai   |   https://ap-shanghai.speed.tencentgse.com    | ap-shanghai.speed.tencentgse.com  |
+|   Hong Kong (China)   |   https://ap-hongkong.speed.tencentgse.com    | ap-hongkong.speed.tencentgse.com  |
+|   Guangzhou   |   https://ap-guangzhou.speed.tencentgse.com   |  ap-guangzhou.speed.tencentgse.com |
+|   Chengdu   |   https://ap-chengdu.speed.tencentgse.com   |   ap-chengdu.speed.tencentgse.com | 
+|  Singapore  |   https://ap-singapore.speed.tencentgse.com   |  ap-singapore.speed.tencentgse.com  |
+|   Mumbai   |    https://ap-mumbai.speed.tencentgse.com     | ap-mumbai.speed.tencentgse.com  |
+|   Silicon Valley   | https://na-siliconvalley.speed.tencentgse.com |  na-siliconvalley.speed.tencentgse.com   |
+| Virginia |    https://na-ashburn.speed.tencentgse.com    |  na-ashburn.speed.tencentgse.com   |
+| Frankfurt |   https://eu-frankfurt.speed.tencentgse.com   | eu-frankfurt.speed.tencentgse.com  |
+|   Seoul   |     https://ap-seoul.speed.tencentgse.com     | ap-seoul.speed.tencentgse.com  |
+|   Tokyo   |     https://ap-tokyo.speed.tencentgse.com     | ap-tokyo.speed.tencentgse.com  |
+
+
 
 ### Example  
-This document uses Guangzhou as an example.
+Let’s take Guangzhou as an example.
 - **HTTPS**
-```
+```plaintext
 ping ap-guangzhou.speed.tencentgse.com
 curl https://ap-guangzhou.speed.tencentgse.com/v1/ping
 ```
 - **UDP**
 ```
-IP + PORT（8888）
+Domain name + PORT (8888)
+ap-guangzhou.speed.tencentgse.com + PORT (8888)
 ```
