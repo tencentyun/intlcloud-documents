@@ -1,7 +1,7 @@
 <span id="que1"></span>
 ### How do I add a domain name to CSS?
 
-1. Log in to the [CSS Console](https://console.cloud.tencent.com/live) and enter **Domain Management**.
+1. Log in to the [CSS console](https://console.cloud.tencent.com/live) and enter **Domain Management**.
 2. Add your own push or playback domain name. For more information, please see [Adding Domain Name](https://intl.cloud.tencent.com/document/product/267/35970).
 3. Configure CNAME. For more information, please see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/267/31057).
 4. After successful configuration, you can push and play back with your own domain name.
@@ -9,7 +9,7 @@
 <span id="que2"></span>
 ### Why CNAME is still displayed as not configured after configuration?
 
-After you configure CNAME as instructed in [CNAME Configuration](https://intl.cloud.tencent.com/document/product/267/31057), please wait patiently because it takes 15-30 minutes for the configuration to take effect. In addition, you can check whether CNAME configuration is successful by following the steps in [Verifying the Effect of CNAME Record](https://intl.cloud.tencent.com/document/product/267/31057).
+After you configure CNAME as instructed in [CNAME Configuration](https://intl.cloud.tencent.com/document/product/267/31057), please wait patiently because it takes 15-30 minutes for the configuration to take effect. In addition, you can check whether CNAME configuration is successful by following the steps in [Verifying the Effectivenes of CNAME Record](https://intl.cloud.tencent.com/document/product/267/31057).
 >?
 > - DNS resolution must be performed over the public network on Linux/macOS/Windows.
 > - If the CNAME configuration failure persists, consult your domain name registrar.
