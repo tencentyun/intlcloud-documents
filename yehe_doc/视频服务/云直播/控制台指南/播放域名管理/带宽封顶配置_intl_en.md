@@ -1,4 +1,4 @@
-Tencent Cloud provides the bandwidth cap feature for playback domain name, which is disabled by default. You can set a cap threshold for the downstream bandwidth in the domain name acceleration region. If the peak bandwidth reaches the threshold within a statistical cycle, a 403 error will be returned for all CSS requests. You can enable/disable the bandwidth cap based on the actual usage of the domain name.
+Tencent Cloud provides the bandwidth cap feature for playback domain name, which is disabled by default. You can set a cap threshold for the downstream bandwidth in the domain name acceleration region. If the peak bandwidth reaches the threshold within a statistical cycle, a 403 error will be returned for all live streaming requests. You can enable/disable the bandwidth cap based on the actual usage of the domain name.
 
 
 ## Prerequisites
