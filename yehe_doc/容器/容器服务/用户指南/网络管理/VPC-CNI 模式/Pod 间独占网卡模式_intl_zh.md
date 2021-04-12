@@ -13,8 +13,7 @@ Pod 间独占网卡模式在原有 VPC-CNI 模式单网卡多 IP 模式的基础
 ## 实现方式
 
 新一代方案在原有 VPC-CNI 模式的基础上扩展，依托于弹性网卡，将绑定到节点的弹性网卡通过 CNI 配置到容器网络命名空间，实现容器直接独享使用弹性网卡。实现原理如下图所示：
-
-![](https://main.qcloudimg.com/raw/c3b33f90da3cd9db6d8396fe9e981e18.png)
+![](https://main.qcloudimg.com/raw/79d5ed549d59b5c36219a97b8041a515.png)
 
 ## IP 地址管理原理
 

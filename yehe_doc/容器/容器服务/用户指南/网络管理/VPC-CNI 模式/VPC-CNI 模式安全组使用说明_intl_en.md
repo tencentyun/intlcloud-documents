@@ -41,7 +41,6 @@ You can bind specified security group to the ENI created in VPC-CNI mode through
 - Run the following command to add the startup parameter to `spec.template.spec.containers[0].args`.
   After modification, ipamd will restart automatically and take effect.
 	After ipamd takes effect, the new ENIs and the existing ENIs that do not bind security groups will bind the security group according to the following policy.
-
 ```yaml
 - --enable-security-groups
 # If you want to use the security groups from the primary ENI/instance by default, you do not add the security-Groups parameter.
@@ -52,7 +51,7 @@ You can bind specified security group to the ENI created in VPC-CNI mode through
 
 ## Feature Logic
 
-- If the startup parameter `--security-groups` is not set, or its value is empty, the security group of each node will use the security group bound to the node instance.
+- If the startup parameter `--security-groups` is not set, or its value is empty, the security group of each node will use the security group bound to the node Pod.
 - After the feature is enabled, if `--security-groups` is set, the security group of each node is set to this security group set.
 - Run the following command to view node security group. The `spec.securityGroups` contains the node security group information.
   ```

@@ -2,7 +2,6 @@
 ## 使用原理
 
 VPC-CNI 多 Pod 共享网卡模式使用原理图如下所示：
-
 ![](https://main.qcloudimg.com/raw/d8f0de10f2f6ac320d8afd2abe93b79e.png)
 
 - 集群网络是用户的 VPC，节点和容器子网属于该 VPC。

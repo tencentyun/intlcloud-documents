@@ -5,16 +5,15 @@ Based on the original single ENI with multiple IP addresses of VPC-CNI mode, the
 ## Overview
 
 The new VPC-CNI mode network solution has the following new capabilities:
-- It supports using Pod to bind EIP/NAT. No longer relying on the public network access capability of the node and without using SNAT, it can meet the network access scenarios with high concurrency and high bandwidth such as Crawler and video conference.
+- Pod can be directly bound to EIP/NAT, and no longer relies on the public network access capability of the node, nor does it need SNAT, which can meet the network access scenarios with high concurrency and high bandwidth such as Crawler and video conference.
 - It supports static IP address based on Pod name. The IP address can remain unchanged after Pod is scheduled and restarted.
-- It supports CLB-to-pod direct connection without forwarding through NodePort, so as to improve forwarding performance and provide a unified CLB view.
+- It supports CLB-to-Pod direct connection without forwarding through NodePort, so as to improve forwarding performance and provide a unified CLB view.
 
 
 ## Implementation Methods
 
 The new VPC-CNI mode network solution is an extension of the original VPC-CNI mode. Relying on the ENI, the ENI bound to the node can be configured to the container network namespace through CNI, so that the container can directly use the ENI exclusively. The principle is shown in the figure below:
-
-![](https://main.qcloudimg.com/raw/c3b33f90da3cd9db6d8396fe9e981e18.png)
+![](https://main.qcloudimg.com/raw/79d5ed549d59b5c36219a97b8041a515.png)
 
 ## IP Address Management Principle
 

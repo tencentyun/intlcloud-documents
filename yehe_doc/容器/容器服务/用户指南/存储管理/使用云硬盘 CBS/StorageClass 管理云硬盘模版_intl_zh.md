@@ -13,7 +13,7 @@
 3. 选择左侧菜单栏中的【存储】>【StorageClass】，进入 “StorageClass” 页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/9c08551ba5e4fe254cebf30eb34a01e1.png)
 4. 单击【新建】进入“新建StorageClass” 页面，参考以下信息进行创建。如下图所示：
-![](https://main.qcloudimg.com/raw/1654bb4dbce684a4492f3f155159f2b7.png)
+![](https://main.qcloudimg.com/raw/f0a35d376991444679f3cd7dbb79b434.png)
 主要参数信息如下：
 	- **名称**：自定义，本文以 `cbs-test` 为例。
 	- **Provisioner**：选择【云硬盘CBS】。
@@ -73,7 +73,10 @@
 		- **数据卷**：选择该步骤中已添加的数据卷 “cbs-vol”。
 		- **目标路径**：填写目标路径，本文以 `/cache` 为例。
 		- **挂载子路径**：仅挂载选中数据卷中的子路径或单一文件。例如，`/data` 或 `/test.txt`。
-4. 单击【创建Workload】，即可完成创建。
+3. 单击【创建Workload】，即可完成创建。
+
+>! 如使用 CBS 的 PVC 挂载模式，则数据卷只能挂载到一台 Node 主机上。
+
 
 ### Kubectl 操作指引
 您可参考本文提供的示例模板，使用 Kubectl 进行 StorageClass 创建操作。

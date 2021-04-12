@@ -6,7 +6,7 @@ This mode is suitable for scenarios that rely on container static IP addresses, 
 ## Features and Limitations
 
 - The static IP address is achieved by retaining the associated IP address when the Pod is terminated, or keeping the IP unchanged when the Pod is migrated.
-- Pods in a cluster can be in different subnets, but Pods with static IP addresses cannot be scheduled across node availability zones and across subnets (the subnet to which the Pod IP address belongs).
+- Pods in a cluster can be in different subnets, but Pods with static IP addresses cannot be scheduled across node availability zones and across subnets.
 - The IP address of Pod can automatically associate with EIP, thus Pod can be accessed via internet.
 - For the static IP addresses with shared ENI, when the Pod with static IP address is terminated, its IP address is only retained in the cluster. If other clusters or services (such as CVM, CDB, CLB) use the same subnet, the retained static IP address may be occupied, and the Pod will be unable to obtain the IP address when it being restarted. **Please ensure that the container subnet of this mode is exclusively used.**
 
@@ -30,8 +30,8 @@ You can enable the static IP address using either of the following methods:
 ### Enabling VPC-CNI with static IP address for GlobalRouter mode
 #### Enabling VPC-CNI for the existing clusters
 >?
-- Enable VPC-CNI Mode with static IP address for GlobalRouter, that is, when creating a cluster, you select the Global Router network add-on, and then enable the VPC-CNI mode (both modes can be used at the same time by default) on the basic information page of the cluster.
-- If you use this method to enable VPC-CNI, the Pods cannot use ENIs by default.
+>- Enable VPC-CNI Mode with static IP address for GlobalRouter, that is, when creating a cluster, you select the Global Router network add-on, and then enable the VPC-CNI mode (both modes can be used at the same time by default) on the basic information page of the cluster.
+>- If you use this method to enable VPC-CNI, the Pods cannot use ENIs by default.
 >
 1. Log in to the [TKE console](https://console.qcloud.com/tke2) and select **Cluster** in the left sidebar.
 2. On **Cluster Management** page, select a cluster ID that needs to enable VPC-CNI and go to its details page.
@@ -60,7 +60,7 @@ You can create the static IP address using either of the following methods:
  1. Log in to the [TKE console](https://console.qcloud.com/tke2) and select **Cluster** in the left sidebar.
  2. Select a cluster ID that needs to use the static IP address and go to its management page.
  3. Choose **Workload** > **StatefulSet** to go to the cluster management page of **StatefulSet**.
- 4. Click **Create** to view **Number of Instances**, as shown below.
+ 4. Click **Create** to view **Number of instances**, as shown below:
       ![](https://main.qcloudimg.com/raw/0ce9969c685d732aed4103f91e8ffe41.png)
  5. Click **Advanced Settings** and set StatefulSet parameters as needed. The key parameters are as follows:
       ![](https://main.qcloudimg.com/raw/ce1bb9d7f0df7b07db6a7d66da115eb8.png)
@@ -109,5 +109,5 @@ spec:
             tke.cloud.tencent.com/eni-ip: "1" 
 ```
  - spec.template.annotations: `tke.cloud.tencent.com/networks: "tke-route-eni"` indicates that the Pod uses the VPC-CNI mode with shared ENI. If you use the VPC-CNI mode with independent ENI, please modify the value to `"tke-direct-eni"`.
- - spec.template.annotations: to create pods in VPC-CNI mode, you need to set the annotation `tke.cloud.tencent.com/vpc-ip-claim-delete-policy`. Its default value is “Immediate”, that is, when a Pod is terminated, the associated IP address is also terminated. To use a static IP address, set it to “Never”, that is, a Pod is terminated, but the associated IP address will be retained. When a Pod with the same name as the terminated Pod is pulled the next time, the original IP address is used.
+ - spec.template.annotations: to create Pods in VPC-CNI mode, you need to set the annotation `tke.cloud.tencent.com/vpc-ip-claim-delete-policy`. Its default value is “Immediate”, that is, when a Pod is terminated, the associated IP address is also terminated. To use a static IP address, set it to “Never”, that is, a Pod is terminated, but the associated IP address will be retained. When a Pod with the same name as the terminated Pod is pulled the next time, the original IP address is used.
  - spec.template.spec.containers.0.resources: to create Pods with shared ENI in VPC-CNI mode, you need to add "requests" and "limits", that is, `tke.cloud.tencent.com/eni-ip`. If you are using the VPC-CNI mode with independent ENI, add `tke.cloud.tencent.com/direct-eni`.

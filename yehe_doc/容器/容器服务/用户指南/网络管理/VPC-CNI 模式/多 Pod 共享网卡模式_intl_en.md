@@ -2,14 +2,13 @@
 ## How It Works
 
 The following diagram illustrates how the multiple Pods with shared ENI in VPC-CNI mode work.
-
 ![](https://main.qcloudimg.com/raw/d8f0de10f2f6ac320d8afd2abe93b79e.png)
 
 - The cluster network is the user's VPC, and the nodes and container subnets belong to this VPC.
 - The container subnet can select subnets in multiple VPCs.
 - You can set whether to enable the static IP address. For more information, see [Static IP Address Usage](https://intl.cloud.tencent.com/document/product/457/38975).
 
-## IP Address Management Principle
+### IP Address Management Principle
 
 #### Non-static IP address mode
 - TKE will apply for an ENI for each new node in the cluster, and at the same time apply for the maximum number of IP addresses that can be bound to the ENI at a time. These IP addresses will be used as the available IP address pool of the node for the Pods on the node to use.
@@ -59,7 +58,7 @@ When creating a cluster, select the Global Router network add-on. Then, enable t
 1. Log in to the [TKE console](https://console.qcloud.com/tke2) and select **Cluster** in the left sidebar.
 2. On **Cluster Management** page, select a cluster ID that needs to enable VPC-CNI and go to its details page.
 3. On the cluster details page, click **Basic Information** on the left.
-4. In the **Node and Network Information** section, enable the **VPC-CNI mode**.
+4. In the **Node and Network Information** section, enable **VPC-CNI mode**.
 5. Select the subnet and set the **IP Reclaiming Policy** in the pop-up window, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/3246c6d4a6217f176e7da51d986bc628.png)
 >! 
