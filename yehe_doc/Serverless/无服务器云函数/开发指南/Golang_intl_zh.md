@@ -9,25 +9,25 @@ Golang 函数形态一般如下所示：
 <dx-codeblock>
 :::  golang
 package main
-
+  
 import (
 	"context"
 	"fmt"
 	"github.com/tencentyun/scf-go-lib/cloudfunction"
 )
-
+  
 type DefineEvent struct {
 	// test event define
 	Key1 string `json:"key1"`
 	Key2 string `json:"key2"`
 }
-
+  
 func hello(ctx context.Context, event DefineEvent) (string, error) {
 	fmt.Println("key1:", event.Key1)
 	fmt.Println("key2:", event.Key2)
 	return fmt.Sprintf("Hello %s!", event.Key1), nil
 }
-
+  
 func main() {
 	// Make the handler available for Remote Procedure Call by Cloud Function
 	cloudfunction.Start(hello)
@@ -57,7 +57,8 @@ func main() {
 
 入口函数为通过 cloudfunction.Start 来启动的函数，通常通过入口函数来处理实际业务。入口函数的入参和返回值都需要根据一定的规范编写。
 
-#### 入参[](id:Participation)
+[](id:Participation)
+#### 入参
 
 入口函数可以带有0 - 2个入参，例如：
 
@@ -76,8 +77,8 @@ func hello(ctx context.Context, event DefineEvent)
 
 >! 部分触发器传递的入参事件结构目前已有一部分已定义，可直接使用。您可通过 [cloud event 定义](https://github.com/tencentyun/scf-go-lib/tree/master/events) 获取 golang 的库并使用。通过在代码中引用 `import "github.com/tencentyun/scf-go-lib/events"` 来直接使用。如果使用过程中发现问题，可以通过 [提交 issue ](https://github.com/tencentyun/scf-go-lib/issues/new) 或 [提交工单](https://console.cloud.tencent.com/workorder/category) 说明。
 
-
-#### 返回值[](id:ReturnValue)
+[](id:ReturnValue)
+#### 返回值
 
 入口函数可以带有0 - 2个返回值，例如：
 
