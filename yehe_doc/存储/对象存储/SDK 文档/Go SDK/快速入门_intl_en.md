@@ -35,7 +35,7 @@ Using a permanent key:
 // Replace examplebucket-1250000000 and COS_REGION with the actual information.
 u, _ := url.Parse("https://examplebucket-1250000000.cos.COS_REGION.myqcloud.com")
 // The following calls the Get Service API. By default, all regions (service.cos.myqcloud.com) will be queried.
-su, _ := url.Parse(https://cos.COS_REGION.myqcloud.com")
+su, _ := url.Parse("https://cos.COS_REGION.myqcloud.com")
 b := &cos.BaseURL{BucketURL: u, ServiceURL: su}
 // 1. Permanent key
 client := cos.NewClient(b, &http.Client{
