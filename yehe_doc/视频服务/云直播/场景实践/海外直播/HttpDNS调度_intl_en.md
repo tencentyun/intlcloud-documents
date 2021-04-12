@@ -5,7 +5,7 @@ An ISP's LocalDNS egress performs NAT based on an authoritative DNS destination 
 Empowered by world-leading DNS cluster technology, Tencent Cloud HttpDNS supports multiple ISPs and custom lines for optimal scheduling. For more information, see [HttpDNS].
 
 
-> This document uses the free edition of HttpDNS as an example to describe how to use the HttpDNS scheduling solution for Tencent Cloud Global CSS. For APIs of the free edition, see the related [documentation]. 
+> This document uses the free edition of HttpDNS as an example to describe how to use the HttpDNS scheduling solution for Tencent Cloud global live streaming. For APIs of the free edition, see the related [documentation]. 
 
 ## Scheduling Upstream Push Using HttpDNS
 
