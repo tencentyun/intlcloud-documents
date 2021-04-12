@@ -9,25 +9,25 @@ The Go function format is generally as follows:
 <dx-codeblock>
 :::  golang
 package main
-
+  
 import (
 	"context"
 	"fmt"
 	"github.com/tencentyun/scf-go-lib/cloudfunction"
 )
-
+  
 type DefineEvent struct {
 	// test event define
 	Key1 string `json:"key1"`
 	Key2 string `json:"key2"`
 }
-
+  
 func hello(ctx context.Context, event DefineEvent) (string, error) {
 	fmt.Println("key1:", event.Key1)
 	fmt.Println("key2:", event.Key2)
 	return fmt.Sprintf("Hello %s!", event.Key1), nil
 }
-
+  
 func main() {
 	// Make the handler available for Remote Procedure Call by Cloud Function
 	cloudfunction.Start(hello)
@@ -78,8 +78,8 @@ The JSON structure corresponding to the custom data structure usually correspond
 
 >! The event structures of input parameters passed in by certain triggers have been defined and can be used directly. You can get and use the Go libraries through the [Cloud Event Definition](https://github.com/tencentyun/scf-go-lib/tree/master/events) by importing "github.com/tencentyun/scf-go-lib/events"` into the code. If you have any questions during use, you can [submit an issue](https://github.com/tencentyun/scf-go-lib/issues/new) or [ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
-
-#### Returned values[](id:ReturnValue)
+[](id:ReturnValue)
+#### Returned values
 
 The entry function can have 0–2 returned values, such as:
 
