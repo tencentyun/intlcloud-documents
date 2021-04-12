@@ -3,8 +3,8 @@
 
 
 ## 前提条件
-- 已通过节点池功能内测申请，如未申请，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 进行申请。
-- 在创建节点池之前，请确保您已经 [创建集群](https://intl.cloud.tencent.com/document/product/457/30637)。
+- 已了解 [节点池基本概念](https://intl.cloud.tencent.com/document/product/457/35900)。
+- 已 [创建集群](https://intl.cloud.tencent.com/document/product/457/30637)。
 
 ## 说明事项
 容器服务支持集群下原伸缩组转换为节点池。当集群下已创建伸缩组时，可使用存量伸缩组创建节点池。步骤如下：
@@ -84,7 +84,8 @@
 > - **NoExecute**：当节点上存在 taint 时，对于没有对应容忍的 Pod，不仅不会被调度到该节点上，该节点上已存在的 Pod 也会被驱逐。
 
   以设置 Taints `key1=value1:PreferNoSchedule` 为例，控制台配置如下图所示：
-  ![](https://main.qcloudimg.com/raw/e554317ef5c178297d34eef3f9a7bfa7.png)
+  ![](https://main.qcloudimg.com/raw/9f8c0a99099ff58c12ee0d0ad2349b9e.png)
+
   - **重试策略**：提供以下两种策略，请根据实际需求进行选择。
     - **快速重试**：立即重试，在较短时间内快速重试，连续失败超过一定次数（5次）后不再重试。
     - **间隔递增重试**：间隔递增重试，随着连续失败次数的增加，重试间隔逐渐增大，重试间隔从秒级到1天不等。
