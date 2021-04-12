@@ -61,7 +61,7 @@ Domain name for API calls: `lb.api.qcloud.com`
 Request
 <pre>
 https://lb.api.qcloud.com/v2/index.php?Action=ModifyLoadBalancerAttributes
-&<<a href="https://intl.cloud.tencent.com/document/api/213/6976">Common request parameters</a>>
+&<<a href="https://intl.cloud.tencent.com/document/product/213/31574">Common request parameters</a>>
 &loadBalancerId=lb-abcdefgh
 &loadBalancerName=my-lb-name
 </pre>
