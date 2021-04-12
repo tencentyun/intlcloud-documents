@@ -1,7 +1,7 @@
 ## Overview
 
-Based on [Custom Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/custom-metrics-api.md), TKE supports many metrics for auto scaling, including CPU, memory, disk, network and GPU related metrics, which can cover most HPA auto scaling scenarios. For detailed list, see [TKE Auto-scaling Metrics](https://intl.cloud.tencent.com/document/product/457/34025).
-For complex scenarios such as auto scaling based on the size of the service single-replica QPS, you can install [prometheus-adapter](https://github.com/DirectXMan12/k8s-prometheus-adapter) to implement auto scaling. Kubernetes provides [Custom Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/custom-metrics-api.md) and [External Metrics API](https: //github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/external-metrics-api.md) for HPA metrics scaling, allowing users to customize as needed.
+Based on [Custom Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/custom-metrics-api.md), TKE supports many metrics for auto scaling, including CPU, memory, disk, network and GPU related metrics, which can cover most HPA scenarios. For detailed metrics, see [HPA Metrics](https://intl.cloud.tencent.com/document/product/457/34025).
+For complex scenarios such as auto scaling based on the number of the service single-replica QPS, you can install [prometheus-adapter](https://github.com/DirectXMan12/k8s-prometheus-adapter) to implement auto scaling. Kubernetes provides [Custom Metrics API](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/custom-metrics-api.md) and [External Metrics API](https: //github.com/kubernetes/community/blob/master/contributors/design-proposals/instrumentation/external-metrics-api.md) for HPA to perform auto scaling based on metrics, allowing users to customize auto scaling as needed.
 Prometheus-adapter supports the above two APIs. In the actual environment, the Custom Metrics API can meet most scenarios. This document describes how to use custom metrics for auto scaling through the Custom Metrics API.
 
 
@@ -10,11 +10,10 @@ Prometheus-adapter supports the above two APIs. In the actual environment, the C
 ## Prerequisites
 
 - You have created a TKE cluster of v1.12 or later version. For more information, see [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/30637).
-- You have deployed the PROM instance and performed the corresponding custom metric collection.
+- You have deployed the PROM instance and collected the corresponding custom metrics.
 - You have installed [Helm](https://helm.sh/docs/intro/install/).
 
 ## Directions
-
 
 <span id="example"></span>
 
@@ -119,7 +118,6 @@ spec:
 
 You can configure PROM instance to collect the monitoring metrics opened by service through [PROM Instance Collection Rules](#way1) or [ServiceMonitor](#way2).
 
-
 <span id="way1"></span>
 
 #### Method 1: Configuring PROM instance collection rules
@@ -144,7 +142,7 @@ Add the following collection rules to the configuration file of PROM instance co
 			regex: http
 ```
 
-<span id="way2"></span>
+[](id:way2)
 
 #### Method 2: Configuring ServiceMonitor
 
@@ -168,27 +166,29 @@ spec:
 
 ### Installing prometheus-adapter
 
-1. Use Helm to install [prometheus-adapter](https://artifacthub.io/packages/helm/prometheus-community/prometheus-adapter). Please confirm and configure custom metrics before installation. According to the example in [Opening the monitoring metric](#example) above, the `httpserver_requests_total` metric is used in the service to record HTTP requests, so you can calculate the QPS monitoring of each service Pod through the following PromQL, as shown below:
+1. Use Helm to install [prometheus-adapter](https://artifacthub.io/packages/helm/prometheus-community/prometheus-adapter). Please confirm and configure custom metrics before installation. According to the example in [Opening the monitoring metric](#example) above, the `httpserver_requests_total` metric is used in the service to record HTTP requests, so you can calculate the QPS of each service Pod through the following PromQL, as shown below:
 ```
 sum(rate(http_requests_total[2m])) by (pod)
 ```
-2. Convert it to the configuration of prometheus-adapter and create `values.yaml` with the following content:
+2. Convert it to the configuration of prometheus-adapter. Create `values.yaml` with the following content:
 ```yaml
 rules:
-		default: false
-		custom:
-		- seriesQuery: 'httpserver_requests_total'
-		  resources:
-			template: <<.Resource>>
-		  name:
-			matches: "httpserver_requests_total"
-			as: "httpserver_requests_qps" # PromQL calculated QPS metric
-		  metricsQuery: sum(rate(<<.Series>>{<<.LabelMatchers>>}[1m])) by (<<.GroupBy>>)
+      default: false
+      custom:
+      - seriesQuery: 'httpserver_requests_total'
+        resources:
+          template: <<.Resource>>
+        name:
+          matches: "httpserver_requests_total"
+          as: "httpserver_requests_qps" # QPS metric calculated by PromQL
+        metricsQuery: sum(rate(<<.Series>>{<<.LabelMatchers>>}[1m])) by (<<.GroupBy>>)
 prometheus:
-		url: http://prometheus.monitoring.svc.cluster.local # Replace PROM instance API address (Do not need a port).
-		port: 9090u
+      url: http://prometheus.monitoring.svc.cluster.local # Replace PROM instance API address (Do not need a port)
+      port: 9090
 ```
 3. Run the following Helm command to install prometheus-adapter, as shown below:
+>! Before installation, you need to delete the TKE's registered Custom Metrics API using the following command:
+> `kubectl delete apiservice v1beta1.custom.metrics.k8s.io`
 ```bash
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm repo update
@@ -200,7 +200,7 @@ helm install prometheus-adapter prometheus-community/prometheus-adapter -f value
 
 ### Verifying installation result
 
-If the installation is correct, you can run the following command to view the QPS related metrics returned by the Custom Metrics API, as shown below:
+If the installation is correct, you can run the following command to view the configured QPS related metrics returned by the Custom Metrics API, as shown below:
 ```bash
 $ kubectl get --raw /apis/custom.metrics.k8s.io/v1beta1
 {
@@ -240,7 +240,7 @@ $ kubectl get --raw /apis/custom.metrics.k8s.io/v1beta1
 ```
 
 Run the following command to view the QPS value of the Pod, as shown below:
->?In the following example, the QPS is 500m, which means the value of QPS is 0.5 request/second.
+>?In the following example, the value is 500m, which means the value of QPS is 0.5 request/second.
 ``` bash
 $ kubectl get --raw /apis/custom.metrics.k8s.io/v1beta1/namespaces/httpserver/pods/*/httpserver_requests_qps
 {
@@ -270,7 +270,7 @@ $ kubectl get --raw /apis/custom.metrics.k8s.io/v1beta1/namespaces/httpserver/po
 
 ### Testing HPA
 
-If the scaling is triggered when the average QPS of each service Pod reaches 50 requests/second, and the minimum and maximum number of replicas are 1 and 1000 respectively, the configuration example will be as follows:
+If the scaling out is triggered when the average QPS of each service Pod reaches 50 requests/second, and the minimum and maximum number of replicas are 1 and 1000 respectively, the configuration example will be as follows:
 ``` yaml
 apiVersion: autoscaling/v2beta2
 kind: HorizontalPodAutoscaler
@@ -294,7 +294,7 @@ spec:
         type: AverageValue
 ```
 
-Run the following command to test the service and observe whether it is automatically scaled out, as shown below:
+Run the following command to test the service and observe whether the scaling out is triggered, as shown below:
 ``` bash
 $ kubectl get hpa
 NAME         REFERENCE               TARGETS     MINPODS   MAXPODS   REPLICAS   AGE
@@ -307,4 +307,4 @@ httpserver-6f94475d45-6c5xm   0/1     ContainerCreating   0          1s
 httpserver-6f94475d45-wl78d   0/1     ContainerCreating   0          1s
 ```
 
-If the service is scaled out normally, it means that HPA has implemented auto scaling based on service custom metrics.
+If the scaling out is triggered normally, it means that HPA has implemented auto scaling based on service custom metrics.
