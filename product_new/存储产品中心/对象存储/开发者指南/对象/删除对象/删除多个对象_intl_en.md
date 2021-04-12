@@ -4,7 +4,7 @@ COS supports batch deletion of multiple objects. You can delete objects in batch
 
 By default, when the deletion task is completed, a null will be returned. If an error occurs, an error message will be returned.
 
-> A maximum of 1,000 objects can be deleted in a single request. To delete more objects, split the list and send the request separately.
+>! A maximum of 1,000 objects can be deleted in a single request. To delete more objects, split the list and send the request separately.
 
 ## Directions
 
