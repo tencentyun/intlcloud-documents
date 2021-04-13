@@ -127,7 +127,7 @@
 </tr>
 <tr>
 <td>进行 DDoS、CC、WAF 全方位防护及攻击监控。</td>
-<td><a href="https://cloud.tencent.com/document/product/228/18508" target="_blank">安全加速</a></td>
+<td>安全加速</a></td>
 </tr>
 <tr>
 <td>使用腾讯云 CDN 进行海量图片分发。</td>
