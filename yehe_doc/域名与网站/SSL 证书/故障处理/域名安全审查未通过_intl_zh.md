@@ -1,7 +1,7 @@
 
 ## 现象描述
 申请免费域名型（DV）SSL 证书时，出现如下提示：
-![](https://main.qcloudimg.com/raw/89a308c1e2dfa481aba018db2869beb0.png)
+
 
 ## 可能原因
 由于 CA 机构的反钓鱼机制，一般是域名信息中包含敏感词，例如 bank、pay 等，会引起安全审查失败，具体敏感词由 CA 机构定义，同时部分不常用的根域名也可能会审核失败，例如，`www.qq.pw`、`www.qcloud.pw` 等以 .pw 根域名后缀的无法通过审核。
