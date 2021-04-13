@@ -45,7 +45,7 @@
    - 设置触发条件范围。
    - 设置告警渠道。
 4. 完成以上设置后， 单击【完成】即可。
->查看更多告警设置，请参见 [创建告警策略](https://intl.cloud.tencent.com/document/product/248/6215)。
+>查看更多告警设置，请参见 [创建告警策略](https://intl.cloud.tencent.com/document/product/248/38908)。
 
 ### 查看告警
 
