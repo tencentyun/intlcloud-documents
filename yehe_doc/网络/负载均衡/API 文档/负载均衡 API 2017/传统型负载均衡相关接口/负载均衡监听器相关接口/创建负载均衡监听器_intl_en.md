@@ -59,7 +59,7 @@ The list below contains only the API request parameters. Common parameters shoul
 Request
 <pre>
 https://lb.api.qcloud.com/v2/index.php?Action=CreateLoadBalancerListeners
-&<<a href="https://intl.cloud.tencent.com/document/api/213/6976">Common request parameters</a>>
+&<<a href="https://intl.cloud.tencent.com/document/product/213/31574">Common request parameters</a>>
 &loadBalancerId=lb-abcdefgh
 &listeners.0.loadBalancerPort=443
 &listeners.0.instancePort=443
