@@ -1,7 +1,8 @@
 ## Configuration Overview
-To control the access to your service, you can use the referer hotlink protection feature in Tencent Cloud CDN.
+To control the source of access to your business resources, you can use the referer hotlink protection feature in Tencent Cloud CDN.
 
-By configuring an access control policy in the referer field of the HTTP request header, you can control the access source to prevent hotlinking.
+By configuring an access control policy on the value of the referer field in the HTTP request header, you can control the access source to prevent hotlinking by malicious users.
+
 
 ## Configuration Guide
 ### Viewing the configuration
@@ -9,6 +10,7 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Dom
 ![](https://main.qcloudimg.com/raw/53cfa056e5574aae9c912db36fcbf67b.png)
 
 ### Enabling the configuration
+
 Toggle on the switch, select a hotlink protection type, tick **Allow blank referer** as needed, enter an IP or domain name in the input box, and click **OK**.
 ![](https://main.qcloudimg.com/raw/951eb25d77110a01fcd91ab9bfcd1cad.png)
 **Referer blocklist**:
@@ -28,21 +30,21 @@ Toggle on the switch, select a hotlink protection type, tick **Allow blank refer
 + Hotlink protection supports wildcard matching, e.g., if `*.qq.com` is configured, then both `www.qq.com` and `a.qq.com` will be matched.
 
 ### Disabling the configuration
-You can toggle off the switch to disable this feature. When it’s off, the existing configuration is not applied to the production environment. When you toggle it on, you need to confirm the action again to apply the configuration across the entire network.
+You can toggle off the switch to disable this feature. When the switch is off, this feature does not take effect in the production environment even if there is an existing configuration. If you toggle the switch on, the configuration will take effect across the entire network after the action is confirmed.
 ![](https://main.qcloudimg.com/raw/0eff7fac96363892b1b95f53fbadf47d.png)
 
 ### Region-specific configuration
 If your acceleration domain name is configured for global acceleration and you want to configure acceleration in and outside the Chinese mainland with different referer hotlink protection settings, you can click **Add Special Configuration**.
 ![](https://main.qcloudimg.com/raw/31d414d5adf37f8a2deadce688962645.png)
 
->!Currently, region-specific configuration items cannot be deleted once added but can be disabled.
+> !Currently, region-specific configuration items cannot be deleted once added but can be disabled.
 
-## Configuration Samples
+## Configuration Sample
 
 If the hotlink protection configuration of the acceleration domain name `www.test.com` is as follows:
 ![](https://main.qcloudimg.com/raw/027832bf7f5df50370257cce662105d8.png)
 Then the actual access will be as follows:
 
-1. If a user in the Chinese mainland initiates a request with the referer field `1.1.1.1`, which matches the allowlist configured for the Chinese mainland, then the requested content will be directly returned.
-2. If a user outside the Chinese mainland initiates a request with an empty referer field, which matches the blocklist configured for regions outside the Chinese mainland, then a 403 code will be returned.
+1. If a user in the Chinese mainland initiates a request with the referer field being `1.1.1.1`, which matches the allowlist configured for the Chinese mainland, then the requested content will be directly returned.
+2. If a user outside the Chinese mainland initiates a request with a blank referer, which matches the blocklist configured for regions outside the Chinese mainland, then a 403 status code will be returned.
 

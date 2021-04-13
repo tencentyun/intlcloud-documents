@@ -41,7 +41,7 @@ unzip cls-grafana-datasource.zip
 ```
 >? 
 > - 如果您的云服务器非 CentOS 系统，请先确认 Grafana 的插件目录位置，再进入该插件目录进行安装。
-> - 如果安装 Grafana 的版本低于7.0，则无需修改 Grafana 配置文件，请跳过以下步骤，直接 [配置日志数据源](#ConfigLogDataSource)。
+> - 需要安装 Grafana 7.0以上版本才可使用此插件。若 Grafana 版本低于7.0，需进行配置备份和升级，详情请参考 [Grafana 升级指南](https://grafana.com/docs/grafana/latest/installation/upgrading/)。
 > 
 2. 在已部署 Grafana 的机器中，打开 `grafana.ini` 配置文件。
  - MacOS 系统的文件路径：`/usr/local/etc/grafana/grafana.ini`
@@ -54,8 +54,8 @@ allow_loading_unsigned_plugins = tencent-cls-grafana-datasource
 ```
    service grafana-server restart
 ```
-<span id="ConfigLogDataSource"></span>
-### 配置日志数据源
+
+### 配置日志数据源<span id="ConfigLogDataSource"></span>
 1. 在浏览器中访问以下地址，登录 Grafana。
 >? Grafana 的默认端口为3000端口。
 >
@@ -74,7 +74,7 @@ http://Grafana IP 地址:3000
 
 ### 配置 dashboard
 
-1. 在左侧导航栏中，单击【**Create Dashboards**】。
+1. 在左侧导航栏中，单击【**Creat Dashboards**】。
 2. 在 Dashboard 页面，单击【**Add new panel**】。
 3. 将数据源选择为您新建的日志数据源。如下图所示：
    ![image-20201229200254913](https://main.qcloudimg.com/raw/b0981c7c5e43d803d0eb694f3b737060.png)
@@ -82,7 +82,7 @@ http://Grafana IP 地址:3000
 <table>
 <tr><th>Format 格式</th><th>描述</th><th>配置项</th><tr>
 <tr><td>Log panel</td><td>log panel is used to shown log search result. Query syntax supports searching by keyword, fuzzy match. For more information, see [Syntax and Rules](https://intl.cloud.tencent.com/document/product/614/30439). Eg. status:400</td><td>limit：用于指定返回日志检索结果条数。</td><tr>
-<tr><td>Table panel</td><td>Table panel will automatically show the results of whatever columns and rows your query returns</td><td>无</td><tr>
+<tr><td>Table panle</td><td>Table panel will automatically show the results of whatever columns and rows your query returns</td><td>无</td><tr>
 <tr><td>Graph,Pie,Gauge panel</td><td>In this pattern, there is a format transformation where data will be adapted to graph,pie,gauge panel</td><td><ul><li>Metrics：待统计指标。</li><li>Bucket：（选填）聚合列名称。</li><li>Time : （选填）若 query 返回结果为连续时间数据，则需指定 time 字段。若无，则不填写。</li></ul></td><tr>
 </table>
 
@@ -92,14 +92,12 @@ http://Grafana IP 地址:3000
 ### 时间折线图
 
 时间折线图（Graph） 展示 pv，uv 数据曲线。如下图所示：
+
 您可以根据如下信息进行配置：
-
 - 输入的 Query 语句如下所示：
-
 ```
 * | select histogram( cast(__TIMESTAMP__ as timestamp),interval 1 minute) as time, count(*) as pv,count( distinct remote_addr) as uv group by time order by time limit 1000
 ```
-
 - Format：选择 **Graph,Pie,Gauge panel**。
 - Metrics：**pv，uv**。
 - Bucket：无聚合列，**不填写**。
@@ -108,14 +106,12 @@ http://Grafana IP 地址:3000
 ### 饼图
 
 饼图（Pie）展示请求状态码分布。如下图所示：
+
 您可以根据如下信息进行配置：
-
 - 输入的 Query 语句如下所示：
-
 ```
 * | select count(*) as count, status group by status
 ```
-
 - Format：选择 **Graph,Pie,Gauge panel**。
 - Metrics：**count**。
 - Bucket：**status**。
@@ -124,14 +120,12 @@ http://Grafana IP 地址:3000
 ### 柱状图，压力图
 
 柱状图，压力图（bar gauge）统计访问延时前10的页面。如下图所示：
+
 您可以根据如下信息进行配置：
-
 - 输入的 Query 语句如下所示：
-
 ```
 * | select http_referer,avg(request_time) as lagency group by http_referer order by lagency desc limit 10
 ```
-
 - Format：选择 **Graph,Pie,Gauge panel**。
 - Metrics：lagency。
 - Bucket：http_referer。
@@ -140,13 +134,12 @@ http://Grafana IP 地址:3000
 ### 表格Table
 
 表格（Table）展示访问量前10的用户。如下图所示：
+
 您可以根据如下信息进行配置：
 - 输入的 Query 语句如下所示：
-
 ```
 * | select remote_addr,count(*) as count group by remote_addr order by count desc limit 10
 ```
-
 - Format：Table
 
 
