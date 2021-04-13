@@ -39,7 +39,9 @@
 1. 在【排查工具】页面点击【推送查询】。
 2. 输入 pushid（必选）、待查询的设备 Token（必选），单击【查询】，查看排查结果。
 > ?pushid 获取方式：
+>
 > 1. 可在左侧导航栏选择【推送管理】>【推送任务】，获取需要查询的 PushID。
+
 > 2. 在推送接口的应答参数中获取。
 3. 若查询结果与实际情况不符或仍无法解决问题，可查看 [推送常见问题](#.E6.8E.A8.E9.80.81.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98) 或 [提交工单](https://console.cloud.tencent.com/workorder/category) 反馈，并在工单中补充 pushID 和 Token 信息。
 
@@ -60,15 +62,16 @@
    答：在设备注册详情页中查看该 Token 是否关联了推送的目标账号或者标签，若未关联则无法通过账号或标签推送。
 2. 推送状态显示已完成，设备状态正常，为什么手机没有收到推送？
    答：
-   - iOS 平台推送环境是否与 Token 注册环境一致，不一致则无法收到推送，推送环境选择说明详情可参考文档 [推送环境选择](https://intl.cloud.tencent.com/document/product/1024/34214)。
-   -  检查 App 包名是否和【[移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns)】>【配置管理】>【基础配置】中填写的包名一致，如果包名不一致检查是否开启 [多包名推送功能](https://intl.cloud.tencent.com/document/product/1024/35393)。
-   - 安卓 P 及以上系统需要添加使用 Apache HTTP client 库，检查在 AndroidManifest 的 application 节点内是否有添加以下配置：
-     ```
-     <uses-library android:name="org.apache.http.legacy" android:required="false"/>
-     ```
-   - 小米手机确认是否被收纳到【不重要通知】。
-   - 魅族手机确认是否被收纳到【消息盒子】。
-   - OPPO手机通知栏默认关闭，确认是否手动开启。
-   - vivo 部分机型通知栏、通知渠道默认关闭，确认是否手动开启。
-   - 应尽量避免使用“test”、“测试”等字眼，部分厂商通道会拦截这类型的通知。
-   - vivo、OPPO 需要厂商审核通过后才可以测试推送，请注意确认。
+ - iOS 平台推送环境是否与 Token 注册环境一致，不一致则无法收到推送，推送环境选择说明详情可参考文档 [推送环境选择](https://intl.cloud.tencent.com/document/product/1024/34214)。
+ -  检查 App 包名是否和【[移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns)】>【配置管理】>【基础配置】中填写的包名一致，如果包名不一致检查是否开启 [多包名推送功能](https://intl.cloud.tencent.com/document/product/1024/35393)。
+ - 安卓 P 及以上系统需要添加使用 Apache HTTP client 库，检查在 AndroidManifest 的 application 节点内是否有添加以下配置：
+ ```
+ <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+ ```
+ - 小米手机确认是否被收纳到【不重要通知】。
+ - 魅族手机确认是否被收纳到【消息盒子】。
+ - OPPO 手机通知栏默认关闭，确认是否手动开启。
+ - vivo 、OPPO 部分机型通知栏默认关闭，确认是否手动开启。
+ - vivo 、华为部分机型，通知渠道的横幅、铃声等权限默认关闭，确认是否手动开启。
+ - 应尽量避免使用“test”、“测试”等字眼，部分厂商通道会拦截这类型的通知。
+ - vivo、OPPO 需要厂商审核通过后才可以测试推送，请注意确认。
