@@ -37,7 +37,7 @@
 2. 在集群详情页面，选择左侧菜单栏中的【存储】>【PersistentVolumeClaim】，进入 “PersistentVolumeClaim” 信息页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/1ebfd35584e86e4ca050c03ffc0a979c.png)
 3. 单击【新建】进入“新建PersistentVolumeClaim” 页面，参考以下信息设置 PVC 关键参数。如下图所示：
-![](https://main.qcloudimg.com/raw/8db59181d6d5df5129dd0b47d641bbc6.png)
+![](https://main.qcloudimg.com/raw/1654bb4dbce684a4492f3f155159f2b7.png)
 主要参数信息如下：
    - **名称**：自定义，本文以 `cbs-pvc` 为例。
    - **命名空间**：选择 “default”。
