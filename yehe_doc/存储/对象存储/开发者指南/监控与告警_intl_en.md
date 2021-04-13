@@ -1,4 +1,4 @@
-# Overview
+## Overview
 
 COS data (such as traffic and the number of read/write requests) is collected and displayed according to [Basic Cloud Monitor](https://intl.cloud.tencent.com/document/product/248). Therefore, you can go to the COS or Cloud Monitor console to view COS monitoring data in detail.
 
@@ -28,58 +28,142 @@ You can go to **Cloud Product Monitoring** > [Cloud Object Storage](https://cons
 
 ## Querying Monitoring Data via APIs
 
-You can call APIs to view the COS monitoring data. The following table describes the COS monitoring metrics:
+You can call the corresponding APIs to view the COS monitoring data. The monitoring metrics are described below. For more information about the monitoring APIs, please see [COS Monitoring Metrics](https://intl.cloud.tencent.com/document/product/248/37269).
 
-#### Storage metrics
+## Monitoring Metrics
 
-| Metric Name | Description | Unit |
-| ---------------------- | ----------------- | ---- |
-| std_storage | STANDARD storage - storage capacity | MB |
-| sia_storage | STANDARD_IA storage - storage capacity | MB |
-| nel_storage | Nearline Storage - storage capacity | MB |
-| arc_storage | ARCHIVE storage - storage capacity | MB |
+> ?COS uses a generic region. Therefore, select "Guangzhou" for `Region` when you pull COS monitoring metric data, regardless of where the bucket resides.
+> - When pulling data using [API Explorer](https://console.cloud.tencent.com/api/explorer?Product=monitor&Version=2018-07-24&Action=DescribeBaseMetrics), select "ap-guangzhou" for the `Region` field.
+> - When pulling data using an SDK, enter "ap-guangzhou" for the `Region` field.
 
-#### Traffic metrics
+### Request metrics
 
-| Metric Name | Description | Unit |
-| ---------------------- | ------------ | ---- |
-| internet_traffic | Public network traffic | B |
-| internal_traffic | Private network traffic | B |
-| cdn_origin_traffic | CDN origin-pull traffic | B |
-| inbound_traffic | Upload traffic | B |
+| Metric | Meaning | Description | Unit | Dimension |
+| -------------------- | ------------------------ | ------------------------------------------------------------ | ---- | ------------- |
+| StdReadRequests | STANDARD read requests | Number of STANDARD read requests, which is calculated based on the number of requests sent | - | appid, bucket |
+| StdWriteRequests | STANDARD write requests | Number of STANDARD write requests, which is calculated based on the number of requests sent | - | appid, bucket |
+| MazStdReadRequests | MAZ_STANDARD read requests | Number of MAZ_STANDARD read requests, which is calculated based on the number of requests sent | - | appid, bucket |
+| MazStdWriteRequests | MAZ_STANDARD write requests | Number of MAZ_STANDARD write requests, which is calculated based on the number of requests sent | - | appid, bucket |
+| IaReadRequests | STANDARD_IA read requests | Number of STANDARD_IA read requests, which is calculated based on the number of requests sent | - | appid, bucket |
+| IaWriteRequests | STANDARD_IA write requests | Number of STANDARD_IA write requests, which is calculated based on the number of requests sent | - | appid, bucket |
+| MazIaReadRequests | MAZ_STANDARD_IA read requests | Number of MAZ_STANDARD_IA read requests, which is calculated based on the number of requests sent | - | appid, bucket |
+| MazIaWriteRequests | MAZ_STANDARD_IA write requests | Number of MAZ_STANDARD_IA write requests, which is calculated based on the number of requests sent | - | appid, bucket |
+|  DeepArcReadRequests | DEEP ARCHIVE read requests | Number of DEEP ARCHIVE read requests, which is calculated based on the number of requests sent | - | appid, bucket |
+| DeepArcWriteRequests | DEEP ARCHIVE write requests | Number of DEEP ARCHIVE write requests, which is calculated based on the number of requests sent | - | appid, bucket |
+| ItReadRequests | INTELLIGENT TIERING read requests | Number of INTELLIGENT TIERING read requests, which is calculated based on the number of requests sent | - | appid, bucket |
+| ItWriteRequests | INTELLIGENT TIERING write requests | Number of INTELLIGENT TIERING write requests, which is calculated based on the number of requests sent | - | appid, bucket |
+| MazItReadRequests | MAZ_INTELLIGENT_TIERING read requests | Number of MAZ_INTELLIGENT_TIERING read requests, which is calculated based on the number of requests sent | - | appid, bucket |
+| MazItWriteRequests  | MAZ_INTELLIGENT_TIERING write requests | Number of MAZ_INTELLIGENT_TIERING write requests, which is calculated based on the number of requests sent | - | appid, bucket |
+| TotalRequests | Total requests | Total number of read and write requests in all storage classes, which is calculated based on the number of requests sent | - | appid, bucket |
+| GetRequests | Total GET requests | Total number of GET requests in all storage classes, which is calculated based on the number of requests sent | - | appid, bucket |
+| PutRequests | Total PUT requests | Total number of PUT requests in all storage classes, which is calculated based on the number of requests sent | - | appid, bucket |
 
-#### Data retrieval metrics
+### Storage metrics
 
-| Metric Name | Description | Unit |
-| ---------------------- | ------------ | ---- |
-| std_retrieval | STANDARD data retrieval | B |
-| sia_retrieval | STANDARD_IA data retrieval | B |
-| nel_retrieval | Nearline data retrieval | B |
+| Metric | Description | Unit | Dimension |
+| ---------------------------- | --------------------------------- | ---- | ------------- |
+| StdStorage | STANDARD - storage capacity | MB | appid, bucket |
+| MazStdStorage | MAZ_STANDARD - storage capacity | MB | appid, bucket |
+| SiaStorage | STANDARD_IA - storage capacity | MB | appid, bucket |
+| MazIaStorage | MAZ_STANDARD_IA - storage capacity | MB | appid, bucket |
+| ItFreqStorage                | INTELLIGENT_TIERING - frequent storage space       | MB   | appid, bucket |
+| ItInfreqStorage              | INTELLIGENT_TIERING - infrequent storage space       | MB   | appid, bucket |
+| MazItFreqStorage             | MAZ_INTELLIGENT_TIERING - frequent storage space | MB   | appid, bucket |
+| MazItInfreqStorage           | MAZ_INTELLIGENT_TIERING - infrequent storage space | MB   | appid, bucket |
+| ArcStorage | ARCHIVE - storage capacity | MB | appid, bucket |
+| DeepArcStorage | DEEP ARCHIVE - storage capacity | MB | appid, bucket |
+| StdObjectNumber | STANDARD - number of objects | - | appid, bucket |
+| MazStdObjectNumber | MAZ_STANDARD - number of objects | - | appid, bucket |
+| IaObjectNumber | STANDARD_IA - number of objects | - | appid, bucket |
+| MazIaObjectNumber            | MAZ_STANDARD_IA - number of objects      | -   | appid, bucket |
+| ItFreqObjectNumber           | INTELLIGENT TIERING - number of frequently accessed objects | - | appid, bucket |
+| ItInfreqObjectNumber         | INTELLIGENT TIERING - number of infrequently accessed objects | - | appid, bucket |
+| MazItFreqObjectNumber | MAZ_INTELLIGENT_TIERING - number of frequently accessed objects | - | appid, bucket |
+| MazItInfreqObjectNumber | MAZ_INTELLIGENT_TIERING - number of infrequently accessed objects | - | appid, bucket |
+| ArcObjectNumber | ARCHIVE - number of objects | - | appid, bucket |
+| DeepArcObjectNumber          | DEEP_ARCHIVE - number of objects              | -   | appid, bucket |
+| StdMultipartNumber | STANDARD - number of incomplete multipart uploads | - | appid, bucket |
+| MazStdMultipartNumber | MAZ_STANDARD - number of incomplete multipart uploads | - | appid, bucket |
+| IaMultipartNumber | STANDARD_IA - number of incomplete multipart uploads | - | appid, bucket |
+| MazIaMultipartNumber | MAZ_STANDARD_IA - number of incomplete multipart uploads | - | appid, bucket |
+| ItFrequentMultipartNumber | INTELLIGENT TIERING (frequent access tier) - number of incomplete multipart uploads | - | appid, bucket |
+| MazItFrequentMultipartNumber | MAZ_INTELLIGENT_TIERING (frequent access tier) - number of incomplete multipart uploads | - | appid, bucket |
+| ArcMultipartNumber | ARCHIVE - number of incomplete multipart uploads | - | appid, bucket |
+| DeepArcMultipartNumber | DEEP ARCHIVE - number of incomplete multipart uploads | - | appid, bucket |
 
-#### Request metrics
+### Traffic metrics
 
-| Metric Name | Description | Unit |
-| ---------------------- | -------------- | ---- |
-| std_read_requests | STANDARD storage read requests | times |
-| std_write_requests | STANDARD storage write requests | times |
-| ia_read_requests | STANDARD_IA storage read requests | times |
-| ia_write_requests | STANDARD_IA storage write requests | times |
-| nl_read_requests | Nearline storage read requests | times |
-| nl_write_requests | Nearline storage write requests | times |
+| Metric | Meaning | Description | Unit | Dimension |
+| ----------------------------- | -------------------- | -------------------------------------------------------- | ---- | ------------- |
+| InternetTraffic | Public network downstream traffic  | Traffic generated by downloading data from COS to a client over the Internet | Byte | appid, bucket |
+| InternetTrafficUp | Public network upstream traffic | Traffic generated by uploading data from a client to COS over the Internet | Byte | appid, bucket |
+| InternalTraffic | Private network downstream traffic | Traffic generated by downloading data from COS to a client over a Tencent Cloud private network | Byte | appid, bucket |
+| InternalTrafficUp | Private network upstream traffic | Traffic generated by uploading data from a client to COS over a Tencent Cloud private network | Byte | appid, bucket |
+| CdnOriginTraffic | CDN origin-pull traffic | Traffic generated by transferring data from COS to Tencent Cloud CDN edge server | Byte | appid, bucket |
+| InboundTraffic | Total upload traffic over public and private networks | Traffic generated by uploading data from a client to COS over a Tencent Cloud private network or the Internet | Byte | appid, bucket |
+| CrossRegionReplicationTraffic | Cross-region replication traffic | Traffic generated by replicating data to a bucket in another region | Byte | appid, bucket |
 
-#### Return code metrics
+### Return code metrics
 
-| Metric Name | Description | Unit |
-| ---------------------- | ---------- | ---- |
-| 2xx_response | 2xx status codes | times |
-| 3xx_response | 3xx status codes | times |
-| 4xx_response | 4xx status codes | times |
-| 5xx_response | 5xx status codes | times |
+| Metric | Meaning | Description | Unit | Dimension |
+| --------------- | -------------- | ----------------------------------------------- | ---- | ------------- |
+| 2xxResponse | 2xx status code | Number of requests with a 2xx status code returned | - | appid, bucket |
+| 3xxResponse | 3xx status code | Number of requests with a 3xx status code returned | - | appid, bucket |
+| 4xxResponse | 4xx status code | Number of requests with a 4xx status code returned | - | appid, bucket |
+| 5xxResponse | 5xx status code | Number of requests with a 5xx status code returned | - | appid, bucket |
+| 2xxResponseRate | Proportion of 2xx status code | Proportion of the requests with a 2xx status code returned in the total requests | % | appid, bucket |
+| 3xxResponseRate | Proportion of 3xx status code | Proportion of the requests with a 3xx status code returned in the total requests | % | appid, bucket |
+| 4xxResponseRate | Proportion of 4xx status code | Proportion of the requests with a 4xx status code returned in the total requests | % | appid, bucket |
+| 5xxResponseRate | Proportion of 5xx status code | Proportion of the requests with a 5xx status code returned in the total requests | % | appid, bucket |
+| 400Response | 400 status code | Number of requests with a 400 status code returned | - | appid, bucket |
+| 403Response | 403 status code | Number of requests with a 403 status code returned | - | appid, bucket |
+| 404Response | 404 status code | Number of requests with a 404 status code returned | - | appid, bucket |
+| 400ResponseRate | Proportion of 400 status code | Proportion of the requests with a 400 status code returned in the total requests | % | appid, bucket |
+| 403ResponseRate | Proportion of 403 status code | Proportion of the requests with a 403 status code returned in the total requests | % | appid, bucket |
+| 404ResponseRate | Proportion of 404 status code | Proportion of the requests with a 404 status code returned in the total requests | % | appid, bucket |
+| 500ResponseRate | Proportion of 500 status code | Proportion of the requests with a 500 status code returned in the total requests | % | appid, bucket |
+| 501ResponseRate | Proportion of 501 status code | Proportion of the requests with a 501 status code returned in the total requests | % | appid, bucket |
+| 502ResponseRate | Proportion of 502 status code | Proportion of the requests with a 502 status code returned in the total requests | % | appid, bucket |
+| 503ResponseRate | Proportion of 503 status code | Proportion of the requests with a 503 status code returned in the total requests | % | appid, bucket |
+
+> ?
+> 1. For more information about 3xx, 4xx, and 5xx status codes, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+> 2. The statistical granularity (`period`) may vary by metric. You can call the [DescribeBaseMetrics](https://intl.cloud.tencent.com/document/product/248/33882) API to obtain the `period` supported by each metric.
+
+### Data retrieval metrics
+
+| Metric | Meaning | Description | Unit | Dimension |
+| ------------ | -------------- | ------------------------------------------------------------ | ---- | ------------- |
+| StdRetrieval | STANDARD data retrieval | Traffic generated by the retrieval of STANDARD data, which is the sum of the public network downstream traffic, private network downstream traffic, and CDN origin-pull traffic in the  STANDARD storage class | B | appid, bucket |
+| IaRetrieval | STANDARD_IA data retrieval | Traffic generated by the retrieval of STANDARD_IA data, which is the sum of the public network downstream traffic, private network downstream traffic, and CDN origin-pull traffic in the  STANDARD_IA storage class | B | appid, bucket |
+
+## Dimension Parameters
+
+| Parameter | Dimension | Description | Format |
+| ------------------------------- | -------- | ----------------------- | -------------------------------------------------- |
+| &Instances.N.Dimensions.0.Name | appid | Dimension name of the root account `APPID` | Enter a string-type dimension name, such as appid |
+| &Instances.N.Dimensions.0.Value | appid    | Specific root account APPID      | Enter a root account APPID, such as `1250000000`                 |
+| &Instances.N.Dimensions.1.Name | bucket | Dimension name of the bucket | Enter a string-type dimension name, such as bucket |
+| &Instances.N.Dimensions.1.Value | bucket   | Specific bucket name          | Enter a specific bucket name, such as `examplebucket-1250000000` |
+
+## Input Parameters
+
+To query COS monitoring data, the values of the input parameters are as follows:
+
+&Namespace=QCE/COS
+&Instances.N.Dimensions.0.Name=appid
+&Instances.N.Dimensions.0.Value=root account APPID
+&Instances.N.Dimensions.1.Name=bucket
+&Instances.N.Dimensions.1.Value=bucket name 
+
 
 ## Monitoring Description
 
 - **Monitoring interval**: Cloud Monitor supports multiple monitoring intervals, including monitoring data in real time, in the past 24 hours, in the past 7 days, and in the user-specified period, with time granularity of 1 minute, 5 minutes, 1 hour, and 1 day.
 - **Data storage**: 1-minute monitoring data can be stored for 15 days, 5-minute monitoring data for 31 days, 1-hour data for 93 days, and 1-day monitoring data for 186 days.
 - **Alarm display**: Cloud Monitor integrates the monitoring data of COS and displays the data in graphs. Alarm notifications can be sent to you according to the predefined alarm metrics of your product. In this way, you can stay informed of the overall running status.
-- **Alarm settings**: You can set the threshold for the monitoring metrics. When the monitoring data meets the alarm condition that is set, Cloud Monitor will send the alarm notifications to the specified users. For more information, please see [Cloud Monitor Overview](https://intl.cloud.tencent.com/document/product/248/38910) and [Setting Monitoring Alarms](https://intl.cloud.tencent.com/document/product/436/39104).
+- **Alarm settings**: You can set the threshold for the monitoring metrics. When the monitoring data meets the alarm condition that is set, Cloud Monitor will send the alarm notifications to the specified users. For more information, please see [Cloud Monitor Overview](https://intl.cloud.tencent.com/document/product/248/6126) and [Setting Monitoring Alarms](https://intl.cloud.tencent.com/document/product/436/39104).
+
+
+
 
