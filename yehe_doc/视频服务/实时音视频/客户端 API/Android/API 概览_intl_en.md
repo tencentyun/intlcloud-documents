@@ -2,394 +2,402 @@
 
 ### Basic methods
 
-| API                                                          | Description                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [sharedInstance](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ac5da416bb06d461c7e1e555e3fd143ee) | Creates [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) singleton. |
-| [destroySharedInstance](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a69e76ca12b727c7cbcbdda274fc007a2) | Terminates [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) singleton. |
+| API | Description |
+|-----|-----|
+| [sharedInstance](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ac5da416bb06d461c7e1e555e3fd143ee) | Creates a [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) singleton. |
+| [destroySharedInstance](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a69e76ca12b727c7cbcbdda274fc007a2) | Terminates a [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) singleton. |
 | [setListener](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a22fe2f31f2ef62fb3c6cba083dc6c016) | Sets the `TRTCCloudListener` callback API, through which users can get various status notifications from [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud). |
 | [setListenerHandler](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a48c867145dcc09289f7af41871b4fdd9) | Sets the queue that drives the [TRTCCloudListener](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudListener) callback. |
 
 
 ### Room APIs
 
-| API                                                          | Description                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c) | Enters room. If the room does not exist, the system will automatically create a new room. |
-| [exitRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a41d16a97a9cb8f16ef92f5ef5bfebee1) | Exits room. |
-| [switchRole](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a915a4b3abca0e41f057022a4587faf66) | Switches role. This API applies only to the live streaming scenario (`TRTC_APP_SCENE_LIVE` and `TRTC_APP_SCENE_VOICE_CHATROOM`). |
-| [ConnectOtherRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ac1ab7e4a017b99bb91d89ce1b0fac5fd) | Requests cross-room call (anchor competition). |
-| [DisconnectOtherRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#af777ac398ac47c8e5649c983fa2053fa) | Exits cross-room call. |
-| [setDefaultStreamRecvMode](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a0b8d004665d5003ce1d9a48a9ab551b3) | Sets audio/video data reception mode, which must be set before room entry for it to take effect. |
-| [createSubCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3c4a93d24e0ef076168b44cf3545a8d4) | Creates [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) subinstance. |
-| [destroySubCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a6dc091ead812c50497c4b4e87e5c2fcf) | Terminates [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) subinstance. |
-| [switchRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a09fbe471def0c1790357fc2b70149784) | Switches room. |
+| API | Description |
+|-----|-----|
+| [enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c) | Enters a room. |
+| [exitRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a41d16a97a9cb8f16ef92f5ef5bfebee1) | Exits a room. |
+| [switchRole](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a915a4b3abca0e41f057022a4587faf66) | Switches roles. This API works only in live streaming scenarios (`TRTC_APP_SCENE_LIVE` and `TRTC_APP_SCENE_VOICE_CHATROOM`). |
+| [ConnectOtherRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ac1ab7e4a017b99bb91d89ce1b0fac5fd) | Requests a cross-room call (anchor competition). |
+| [DisconnectOtherRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#af777ac398ac47c8e5649c983fa2053fa) | Exits a cross-room call. |
+| [setDefaultStreamRecvMode](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a0b8d004665d5003ce1d9a48a9ab551b3) | Sets the audio/video data reception mode, which must be set before room entry for it to take effect. |
+| [createSubCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3c4a93d24e0ef076168b44cf3545a8d4) | Creates the [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) sub-instance. |
+| [destroySubCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a6dc091ead812c50497c4b4e87e5c2fcf) | Terminates the [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) sub-instance. |
+| [switchRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a09fbe471def0c1790357fc2b70149784) | Switches rooms. |
 
 
 ### CDN APIs
 
-| API                                                          | Description |
-| ------------------------------------------------------------ | ----------------------------- |
-| [startPublishing](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a1c168a9aa35ccd0b24981526425e4730) | Starts pushing to Tencent Cloud LVB CDN. |
-| [stopPublishing](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3067efa528fb9ffb8cf7685ce29925d4) | Stops pushing to Tencent Cloud LVB CDN. |
+| API | Description |
+|-----|-----|
+| [startPublishing](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a1c168a9aa35ccd0b24981526425e4730) | Starts pushing to Tencent Cloud’s live streaming CDN. |
+| [stopPublishing](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3067efa528fb9ffb8cf7685ce29925d4) | Stops pushing to Tencent Cloud’s live streaming CDN. |
 | [startPublishCDNStream](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a41aefb8be652f8f6803020e543acaadc) | Starts relaying to the live streaming CDN of another cloud. |
-| [stopPublishCDNStream](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a0e1e8a1eb1cac3f5e5d4433b4aa21e8e) | Stops relaying to non-Tencent Cloud address. |
-| [setMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#af7cf5544f9b8027e9526c32319a13838) | Sets On-cloud MixTranscoding parameters. |
+| [stopPublishCDNStream](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a0e1e8a1eb1cac3f5e5d4433b4aa21e8e) | Stops relaying to the non-Tencent Cloud address. |
+| [setMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#af7cf5544f9b8027e9526c32319a13838) | Sets On-Cloud MixTranscoding parameters. |
 
 
 ### Video APIs
 
-| API                                                          | Description                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [startLocalPreview](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a84098740a2e69e3d1f02735861614116) | Enables the preview image of local video. |
-| [stopLocalPreview](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#af6ee50bf2c4c592294061077fc727505) | Stops local video capturing and preview. |
+| API | Description |
+|-----|-----|
+| [startLocalPreview](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a84098740a2e69e3d1f02735861614116) | Enables preview of the local video. |
+| [stopLocalPreview](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#af6ee50bf2c4c592294061077fc727505) | Stops preview of the local video. |
 | [muteLocalVideo](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a13a2e406bffafecb96bfeac48d82746b) | Pauses/Resumes pushing local video data. |
-| [setVideoMuteImage](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a78195189ea5f3db9a05338f585bb925d) | Sets the image to be pushed when local video pushing is paused. |
-| [startRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a57541db91ce032ada911ea6ea2be3b2c) | Starts displaying remote video image. |
-| [stopRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a8f3e86bc219090d0e8f2d5c2fab4467a) | Stops displaying remote video image and pulling the video data stream of remote user. |
-| [stopAllRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#addaac0786ac0bd6e73a5f35c038df127) | Stops displaying all remote video images and pulling the video data streams of all remote users. |
-| [muteRemoteVideoStream](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a79f78532789dc6bbf67b128d004fab6a) | Pauses/Resumes receiving specified remote video stream. |
+| [setVideoMuteImage](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a78195189ea5f3db9a05338f585bb925d) | Sets the image to be pushed when the local video pushing is paused. |
+| [startRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a57541db91ce032ada911ea6ea2be3b2c) | Starts pulling and displaying the video image of a specified remote user. |
+| [stopRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a8f3e86bc219090d0e8f2d5c2fab4467a) | Stops displaying the video image of a remote user and pulling the user’s video stream. |
+| [stopAllRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#addaac0786ac0bd6e73a5f35c038df127) | Stops displaying the video images of all users and pulling their video streams. |
+| [muteRemoteVideoStream](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a79f78532789dc6bbf67b128d004fab6a) | Pauses/Resumes receiving a specified remote video stream. |
 | [muteAllRemoteVideoStreams](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a2d8a7b74068026a85158262cc9aedd66) | Pauses/Resumes receiving all remote video streams. |
 | [setVideoEncoderParam](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ae047d96922cb1c19135433fa7908e6ce) | Sets video encoder parameters. |
-| [setNetworkQosParam](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a02631a5e4251657875535c38ab319239) | Sets network bandwidth limit parameters. |
-| [setLocalRenderParams](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#afe6ea1bf7c959722595356a9b7fc2179) | Sets the rendering mode of local image. |
-| [setRemoteRenderParams](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a069766641cee1aff4844d0beaa18ee13) | Sets remote image parameters. |
-| [setVideoEncoderRotation](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a272afecae1d291033cb9cd4b1d7b52e0) | Sets the direction of image output by video encoder (i.e., video image viewed by remote user and recorded by server).
-| [setVideoEncoderMirror](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a32d9ba3696b305373508253f9bee8236) | Sets the mirror mode of image output by encoder. |
-| [setGSensorMode](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#abbbe1548bfba0bd082a08478ce35e9bc) | Sets the adaptation mode of g-sensor. |
-| [enableEncSmallVideoStream](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3a040c5012cf572b9dfabcca87f2cbb7) | Enables dual-channel encoding mode with big and small images. |
-| [setRemoteVideoStreamType](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a2a018cc1010587ea9b0fbd791eb3c54f) | Specifies whether to view the big or small image of the specified `uid`. |
-| [setPriorRemoteVideoStreamType](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ad2efc2703c86ee009bd4a1d440d0c1e0) | Sets the video quality preferred by viewers. |
-| [snapshotVideo](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ae75285c95fc53651e24fa23c4141093b) | Video screenshot. |
+| [setNetworkQosParam](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a02631a5e4251657875535c38ab319239) | Sets QoS control parameters. |
+| [setLocalRenderParams](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#afe6ea1bf7c959722595356a9b7fc2179) | Sets rendering parameters for the local image. |
+| [setRemoteRenderParams](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a069766641cee1aff4844d0beaa18ee13) | Sets rendering parameters for a remote image. |
+| [setVideoEncoderRotation](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a272afecae1d291033cb9cd4b1d7b52e0) | Sets the rotation of encoded video images, i.e., images presented to remote users and recorded by the server. |
+| [setVideoEncoderMirror](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a32d9ba3696b305373508253f9bee8236) | Sets the mirror mode of encoded images. |
+| [setGSensorMode](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#abbbe1548bfba0bd082a08478ce35e9bc) | Sets the adaptation mode of the G-sensor. |
+| [enableEncSmallVideoStream](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3a040c5012cf572b9dfabcca87f2cbb7) | Enables the dual-channel (big and small images) encoding mode. |
+| [setRemoteVideoStreamType](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a2a018cc1010587ea9b0fbd791eb3c54f) | Switches between the small and big images of a specified remote user. |
+| [setPriorRemoteVideoStreamType](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ad2efc2703c86ee009bd4a1d440d0c1e0) | Sets video quality preferences for viewers. |
+| [snapshotVideo](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ae75285c95fc53651e24fa23c4141093b) | Takes a video screenshot. |
 
 
 ### Audio APIs
 
-| API                                                          | Description                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [startLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a9428ef48d67e19ba91272c9cf967e35e) | Enables local audio capturing and upstreaming. |
-| [stopLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a272bba21d046347ac42d76069ba5972c) | Disables local audio capturing and upstreaming. |
+| API | Description |
+|-----|-----|
+| [startLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a9428ef48d67e19ba91272c9cf967e35e) | Enables local audio capturing and upstream data transfer. |
+| [stopLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a272bba21d046347ac42d76069ba5972c) | Disables local audio capturing and upstream data transfer. |
 | [muteLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86) | Mutes/Unmutes local audio. |
-| [setAudioRoute](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a4a3dda74823afa597b42b981257e9e22) | Sets audio routing. |
-| [muteRemoteAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a8d8b8edf120036d4049cc3639a1ce81f) | Mutes/Unmutes specified remote user's audio. |
-| [muteAllRemoteAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a5b63c0796404b80323ae67aafe0384ba) | Mutes/Unmutes all users' audio. |
-| [setAudioCaptureVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a6af5e2c4819a683042f382688aff41e9) | Sets SDK capturing volume level. |
-| [getAudioCaptureVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a81037b960fb2b3501b1e8e60f2b5f9f3) | Gets SDK capturing volume level. |
-| [setAudioPlayoutVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a0b20e1eec637c82190c5264d78d686af) | Sets SDK playback volume level. |
-| [getAudioPlayoutVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a5a1636fa1300b0b4e2829846c36450a2) | Gets SDK playback volume level. |
-| [enableAudioVolumeEvaluation](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ad1dbca6b3f22072d7b3963473d02e0d7) | Enables volume reminder. |
-| [startAudioRecording](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#af89a64fd6ccb822850f9bf7e8a1c8462) | Starts audio recording. |
+| [setAudioRoute](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a4a3dda74823afa597b42b981257e9e22) | Sets the audio route. |
+| [muteRemoteAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a8d8b8edf120036d4049cc3639a1ce81f) | Mutes/Unmutes a specified remote user. |
+| [muteAllRemoteAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a5b63c0796404b80323ae67aafe0384ba) | Mutes/Unmutes all users. |
+| [setRemoteAudioVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3dabe4a4e13509cf1bd5b3d58aabaa06) | Sets the playback volume of a remote user. |
+| [setAudioCaptureVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a6af5e2c4819a683042f382688aff41e9) | Sets the SDK capturing volume. |
+| [getAudioCaptureVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a81037b960fb2b3501b1e8e60f2b5f9f3) | Gets the SDK capturing volume. |
+| [setAudioPlayoutVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a0b20e1eec637c82190c5264d78d686af) | Sets the SDK playback volume. |
+| [getAudioPlayoutVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a5a1636fa1300b0b4e2829846c36450a2) | Gets the SDK playback volume. |
+| [enableAudioVolumeEvaluation](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ad1dbca6b3f22072d7b3963473d02e0d7) | Enables volume reminders. |
+| [startAudioRecording](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#af89a64fd6ccb822850f9bf7e8a1c8462) | Starts audio recording.                                                   |
 | [stopAudioRecording](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a7d55e5f15d1291afc89f7e1dfe0a25d8) | Stops audio recording. |
-| [setSystemVolumeType](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a5438dcc45dc2f26a3771a5feddcdef5d) | Sets the system volume type used during call. |
+| [setSystemVolumeType](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a5438dcc45dc2f26a3771a5feddcdef5d) | Sets the system volume type used during the call. |
 | [enableAudioEarMonitoring](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a9306bca7c6a13e0443a3fa1b40c9f343) | Enables in-ear monitoring. |
 
 
-### Device management APIs
+### Device APIs
 
 | API | Description |
 |-----|-----|
-| [getDeviceManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ae66395bc404d205fcd7fe9082ca85ce9) | Gets device management module. |
+| [getDeviceManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ae66395bc404d205fcd7fe9082ca85ce9) | Gets the device management module. |
 
 
 ### Beauty filter APIs
 
-| API                                                          | Description               |
-| ------------------------------------------------------------ | ------------------ |
-| [getBeautyManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3fdfeb3204581c27bbf1c8b5598714fb) | Gets beauty filter management object. |
-| [setWatermark](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a1083aaf0441e3d90ce6641d278a97a63) | Adds watermark. |
+| API | Description |
+|-----|-----|
+| [getBeautyManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3fdfeb3204581c27bbf1c8b5598714fb) | Gets the beauty filter management object. |
+| [setWatermark](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a1083aaf0441e3d90ce6641d278a97a63) | Adds watermark.         |
 
 
-### Music and voice effect APIs
+### Music and voice effect API
 
-| API                                                          | Description                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [getAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) | Gets the sound effect management class `TXAudioEffectManager` to manage background music, short sound effects, and voice effect features |
+| API | Description |
+|-----|-----|
+| [getAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) | Gets the audio effect management class `TXAudioEffectManager`. |
 
 
 ### Substream APIs
 
-| API                                                          | Description                               |
-| ------------------------------------------------------------ | ---------------------------------- |
+| API | Description |
+|-----|-----|
 | [startScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58) | Starts screen sharing. |
-| [stopScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab6c3014f6f88c775aa91fccea19ce8a4) | Stops screen capturing. |
+| [stopScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab6c3014f6f88c775aa91fccea19ce8a4) | Stops screen sharing. |
 | [pauseScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a56af9ada2d43cfb497fe44fa6d4b99cf) | Pauses screen sharing. |
 | [resumeScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a155ed7b6bcf2edf3259d26b8f8fdfe7e) | Resumes screen sharing. |
 
 
 ### Custom capturing and rendering APIs
 
-| API                                                          | Description                            |
-| ------------------------------------------------------------ | ------------------------------- |
-| [enableCustomVideoCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a68187fc9a1656bb32cf825363745f7e7) | Enables custom video capturing mode. |
-| [sendCustomVideoData](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a39b79b77e3795e918383e945e9513d35) | Delivers captured video data to SDK. |
-| [setLocalVideoRenderListener](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa3cbb7a501c3151d94473965e2538c7a) | Sets the callback of custom rendering for local video. |
-| [setRemoteVideoRenderListener](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a4fca6803d13e4c7ff00dcac2974637e4) | Sets the callback of custom rendering for remote video. |
-| [enableCustomAudioCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a206b9ce3594aa535b633d4f7c8f97210) | Enables custom audio capturing mode. |
-| [sendCustomAudioData](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a30a542b7d540c8699595a22ca3401f29) | Delivers captured audio data to SDK. |
+| API | Description |
+|-----|-----|
+| [enableCustomVideoCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a68187fc9a1656bb32cf825363745f7e7) | Enables custom video capturing |
+| [sendCustomVideoData](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a39b79b77e3795e918383e945e9513d35) | Sends captured video data to SDKs. |
+| [setLocalVideoProcessListener](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a0b565dc8c77df7fb826f0c45d8ad2d85) | Sets the callback of video data for application of third-party beauty filters. |
+| [setLocalVideoRenderListener](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa3cbb7a501c3151d94473965e2538c7a) | Sets the callback of local video for custom rendering. |
+| [setRemoteVideoRenderListener](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a4fca6803d13e4c7ff00dcac2974637e4) | Sets the callback of remote videos for custom rendering. |
+| [enableCustomAudioCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a206b9ce3594aa535b633d4f7c8f97210) | Enables custom audio capturing. |
+| [sendCustomAudioData](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a30a542b7d540c8699595a22ca3401f29) | Sends captured audio data to SDKs. |
 | [setAudioFrameListener](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a034b6fce9a517267acd874c243efc575) | Sets audio data callback. |
 
 
 ### Custom message sending APIs
 
-| API                                                          | Description                                 |
-| ------------------------------------------------------------ | ------------------------------------ |
-| [sendCustomCmdMsg](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa4847ad53acc9ab5990194b21ff5b070) | Sends custom message to all users in room. |
-| [sendSEIMsg](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a034f9e1effbdadf8b9bfb7f3f06486c4) | Embeds custom data of a small size in video frames. |
+| API | Description |
+|-----|-----|
+| [sendCustomCmdMsg](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa4847ad53acc9ab5990194b21ff5b070) | Sends a custom message to all users in the room.     |
+| [sendSEIMsg](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a034f9e1effbdadf8b9bfb7f3f06486c4) | Embeds the custom data of a small size in the video frames. |
 
 
-### Network test
+### Network test APIs
 
-| API                                                          | Description                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [startSpeedTest](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a0dbceb18d61d99ca33e967427dd0a344) | Starts network speed test (do not test during a video call so as to avoid affecting the call quality). |
-| [stopSpeedTest](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3e862cef0e818ddecdc3dc4d66a6f8f9) | Stops server speed test. |
+| API | Description |
+|-----|-----|
+| [startSpeedTest](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a0dbceb18d61d99ca33e967427dd0a344) | Starts network speed testing. This may compromise the quality of video calls and should be avoided during a video call. |
+| [stopSpeedTest](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3e862cef0e818ddecdc3dc4d66a6f8f9) | Stops server speed testing. |
 
 
 ### Log APIs
 
-| API                                                          | Description                        |
-| ------------------------------------------------------------ | --------------------------- |
-| [getSDKVersion](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aeb5168abbd62c631b65247e6289d1e2d) | Gets SDK version information. |
-| [setLogLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a0ec9520dda7e2062f7455956d093113b) | Sets log output level. |
-| [setConsoleEnabled](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a2942d9d05045d3f0e0add45a3e10b3ee) | Disables or enables console log printing. |
-| [setLogCompressEnabled](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a495d2122a4098ab371d825c1f0bb90f5) | Enables or disables local log compression. |
-| [setLogDirPath](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a44c20358d08da798e0f15d142c9c3914) | Modifies log storage path. |
-| [setLogListener](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a299a71f4addb3638c7790de446fbdf37) | Sets log callback. |
-| [showDebugView](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ad2cdb5d447114534f53bad5bdc48afba) | Displays dashboard. |
-| [setDebugViewMargin](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa2014c293033e9ea60aa6ffd525ee2fa) | Sets dashboard margin. |
-| [TRTCViewMargin](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#adeb72b7f954af864743cdbeb283c534b) | View margin. |
-| [callExperimentalAPI](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a37f331dd0cfff51ab5a3becf4950a55e) | Calls experimental API. |
+| API | Description |
+|-----|-----|
+| [getSDKVersion](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aeb5168abbd62c631b65247e6289d1e2d) | Gets the SDK version. |
+| [setLogLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a0ec9520dda7e2062f7455956d093113b) | Sets the log output level.         |
+| [setConsoleEnabled](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a2942d9d05045d3f0e0add45a3e10b3ee) | Enables/Disables console log printing. |
+| [setLogCompressEnabled](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a495d2122a4098ab371d825c1f0bb90f5) | Enables/Disables local log compression. |
+| [setLogDirPath](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a44c20358d08da798e0f15d142c9c3914) | Sets the path to save logs. |
+| [setLogListener](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a299a71f4addb3638c7790de446fbdf37) | Sets the log callback. |
+| [showDebugView](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ad2cdb5d447114534f53bad5bdc48afba) | Displays the dashboard.                |
+| [setDebugViewMargin](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa2014c293033e9ea60aa6ffd525ee2fa) | Sets the dashboard margin.          |
+| [callExperimentalAPI](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a37f331dd0cfff51ab5a3becf4950a55e) | Calls the experimental API.       |
 
 
-### Disused APIs
+### Disused APIs (consider using new ones)
 
-| API                                                          | Description                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [setMicVolumeOnMixing](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab356494d1b7dd924be69b23aa631a85a) | Sets mic volume level. |
-| [setBeautyStyle](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a46ffe2b60f916a87345fb357110adf10) | Sets the effect levels of beauty, brightening, and rosy skin filters. |
-| [setEyeScaleLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a4ff69ce783f648f23dd737641344ac52) | Sets the effect level of eye enlarging filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [setFaceSlimLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a78a159a2a45d24dbd5722eb73d237e8a) | Sets the effect level of face slimming filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [setFaceVLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a58bb7ce1fbbc40a50647d64693ac5d41) | Sets the effect level of chin slimming filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [setChinLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a774eb948494cecec024771434ccd9d3c) | Sets the effect level of chin lengthening/shortening filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [setFaceShortLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa14091f0d02330cbd02da5186e9dd874) | Sets the effect level of face shortening filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [setNoseSlimLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3f806534b2596d7e29ea0ea6c070b591) | Sets the effect level of nose slimming filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [selectMotionTmpl](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a521a0446d0922d480a1eec4b86f1ecb2) | Selects the AI animated effect pendant to be used. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [setMotionMute](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a066cbf8f4f6c1cd23fe9451b82c5a073) | Mutes animated effect. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [setFilter](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a925323ab809957ccaeb4cef30841cb72) | Sets filter effect for specified material. This API was disused in v7.2. Please use [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html) to set the filter effect. |
-| [setFilterConcentration](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a5fb4c8bc9948e61a75b9ef85f618309d) | Sets filter effect level. This API was disused in v7.2. Please use [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html) to set the filter effect level. |
-| [setGreenScreenFile](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aef56a36b901d5e525ee539e7d5642063) | Sets green screen video (which takes effect only in the Enterprise Edition and is invalid in other editions). This API was disused in v7.2. Please use [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html) to set the green screen video. |
-| [playBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3df738557f5c658c37174ac9aeae9684) | Starts background music. The AAC, MP, and WAV formats are supported. <br>This API was disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set the sound effect and background music. |
-| [stopBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3ee7bdd15de4ba9010aa5ece3abff0ab) | Stops background music. This API was disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set the sound effect and background music. |
-| [pauseBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a21ddee03e6f4cec028a24e5d5e30955e) | Pauses background music. This API was disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set the sound effect and background music. |
-| [resumeBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aaa8b34ef2b334bd22a1cb6541a4c6702) | Resumes background music. This API was disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set the sound effect and background music. |
-| [getBGMDuration](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ae7342a8bcfda22a872aa684f06a4677f) | Gets the total length of music file in milliseconds. This API was disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set the sound effect and background music. |
-| [setBGMPosition](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a78f901b6175352a31b0236776bfdc661) | Sets the playback progress of background music. This API was disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set the sound effect and background music. |
-| [setBGMVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ada9c2b4aaf9a1a9ab9cd846593fdf9e6) | Sets the playback volume level of background music. This API was disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set the sound effect and background music. |
-| [setBGMPlayoutVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab1e1c94c9efd967dbffb46d3ba08fef5) | Sets the local playback volume level of background music. This API was disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set the sound effect and background music. |
-| [setBGMPublishVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a535eab48f9df390f4de5ebd5afcd59e3) | Sets the remote playback volume level of background music. This API was disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set the sound effect and background music. |
-| [setReverbType](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a6f4f89be3c810acfa2430ad65fd7ea68) | Sets reverb effect. This API was disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set the sound effect and background music. |
-| [setVoiceChangerType](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a37acaf3b2539e0b1c18123a646e91189) | Sets voice changer type. This API was disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set the sound effect and background music. |
-| [playAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ad1ed7667282eccfac1992c1e547a5aeb) | Plays back sound effect. This API was disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set the sound effect and background music. |
-| [setAudioEffectVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a214846db40c2d1be2fe8008c6637f631) | Sets sound effect volume level. This API was disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set the sound effect and background music. |
-| [stopAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a18e4ca6939d005a1d67cef397ee8b8d4) | Stops sound effect. This API was disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set the sound effect and background music. |
-| [stopAllAudioEffects](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a770543c80d3a5629a26d1382535fb6c4) | Stops all sound effects. This API was disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set the sound effect and background music. |
-| [setAllAudioEffectsVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a9bb41c4ff1a5b24ca742fe3ce45a2bc0) | Sets the volume level of all sound effects. This API was disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set the sound effect and background music. |
-| [pauseAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab32923d04ce164b82879b3e05833959f) | Pauses sound effect. This API was disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set the sound effect and background music. |
-| [resumeAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a33ab6e798d3da245435166464b702d4f) | Resumes sound effect. This API was disused in v7.3. Please use [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TXAudioEffectManager__android.html) to set the sound effect and background music. |
-| [startRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a57541db91ce032ada911ea6ea2be3b2c2) | Starts displaying remote video image. This API was disused in v7.9. Please use `startRemoteView(userId, streamType, view)` |
-| [stopRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a8f3e86bc219090d0e8f2d5c2fab4467a2) | Stops displaying remote video image and pulling the video data stream of remote user. |
-| [setLocalViewFillMode](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#af36ab721c670e5871e5b21a41518b51d) | Sets the rendering mode of local image. |
-| [setLocalViewRotation](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a87fd1307871debc7c051de4878eb6d69) | Sets the clockwise rotation angle of local image. |
-| [setLocalViewMirror](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa353b5cf5662c43252eb8e5132f041c1) | Sets the mirror mode of local camera's preview image. |
-| [setRemoteViewFillMode](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab4197bc2efb62b471b49f926bab9352f) | Sets the rendering mode of remote image. |
-| [setRemoteViewRotation](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a8478d804d2a07520ce2bc5466b727839) | Sets the clockwise rotation angle of remote image. |
-| [setAudioQuality](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55) | Sets sound quality. The higher the sound quality of the anchor, the better the sound effect to viewers, but the higher the required bandwidth, so there may be lags if the bandwidth is limited. |
-| [startLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a9428ef48d67e19ba91272c9cf967e35e2) | Enables local audio capturing and upstreaming. |
-| [startRemoteSubStreamView](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#acdbe3829d20f58cedd5a0c2f49ea24dc) | Starts displaying the screen sharing image of remote user. |
-| [stopRemoteSubStreamView](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ae5f540d795425046c9166b0a2361a8de) | Stops displaying the screen sharing image of remote user. |
-| [setRemoteSubStreamViewFillMode](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a73f66e66ffee44e19ebb4d8c56c89718) | Sets the display mode of screen sharing image. |
-| [setRemoteSubStreamViewRotation](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#affdf177b468fdf40a41782e2e47524cc) | Sets the clockwise rotation angle of screen sharing image. |
-| [switchCamera](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a1b43a65a32f9dcb81b39b9c51c5bc4c6) | Switches camera. This API was disused in v7.9. Please use the function in `TXDeviceManager`. |
-| [isCameraZoomSupported](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ac7ae26eca2f9a673121803d6d175b034) | Queries whether the current camera supports zoom. This API was disused in v7.9. Please use the function in `TXDeviceManager`. |
-| [setZoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a9f761eebdf04f724e0d1591c41c6045f) | Sets the zoom factor (focal length) of camera. |
-| [isCameraTorchSupported](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a645183ba7c0cea748973796cb38aad8c) | Queries whether the device supports flash (flash mode). This API was disused in v7.9. Please use the function in `TXDeviceManager`. |
-| [enableTorch](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a09253f6547914d54058831b61325e770) | Enables or disables flash. |
-| [isCameraFocusPositionInPreviewSupported](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#abd39aca40adfc8da6beaf32141f84cfa) | Queries whether the device supports setting focus. This API was disused in v7.9. Please use the function in `TXDeviceManager`. |
+| API | Description |
+|-----|-----|
+| [setMicVolumeOnMixing](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab356494d1b7dd924be69b23aa631a85a) | Sets the mic volume. |
+| [setBeautyStyle](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a46ffe2b60f916a87345fb357110adf10) | Sets the strength of the beauty, brightening and rosy skin filters. |
+| [setEyeScaleLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a4ff69ce783f648f23dd737641344ac52) | Sets the strength of the eye enlarging filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
+| [setFaceSlimLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a78a159a2a45d24dbd5722eb73d237e8a) | Sets the strength of the face slimming filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
+| [setFaceVLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a58bb7ce1fbbc40a50647d64693ac5d41) | Sets the strength of the chin slimming filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
+| [setChinLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a774eb948494cecec024771434ccd9d3c) | Sets the strength of the chin lengthening/shortening filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
+| [setFaceShortLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa14091f0d02330cbd02da5186e9dd874) | Sets the strength of the face shortening filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
+| [setNoseSlimLevel](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3f806534b2596d7e29ea0ea6c070b591) | Sets the strength of the nose slimming filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
+| [selectMotionTmpl](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a521a0446d0922d480a1eec4b86f1ecb2) | Selects an AI animated effect widget. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
+| [setMotionMute](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a066cbf8f4f6c1cd23fe9451b82c5a073) | Mutes animated effects. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
+| [setFilter](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a925323ab809957ccaeb4cef30841cb72) | Sets filters for specified materials. This API is no longer used since version 7.2. Please use `TXBeautyManager` instead. |
+| [setFilterConcentration](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a5fb4c8bc9948e61a75b9ef85f618309d) | Sets filter strength. This API is no longer used since version 7.2. Please use `TXBeautyManager` instead. |
+| [setGreenScreenFile](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aef56a36b901d5e525ee539e7d5642063) | Sets green background effects for videos (valid only in the Enterprise Edition). This API is no longer used since version 7.2. Please use `TXBeautyManager` instead. |
+| [playBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3df738557f5c658c37174ac9aeae9684) | Starts background music. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
+| [stopBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3ee7bdd15de4ba9010aa5ece3abff0ab) | Stops background music. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
+| [pauseBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a21ddee03e6f4cec028a24e5d5e30955e) | Pauses background music. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
+| [resumeBGM](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aaa8b34ef2b334bd22a1cb6541a4c6702) | Resumes background music. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
+| [getBGMDuration](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ae7342a8bcfda22a872aa684f06a4677f) | Gets the total length of the music file, in milliseconds. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
+| [setBGMPosition](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a78f901b6175352a31b0236776bfdc661) | Sets the playback progress of background music. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead.|
+| [setBGMVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ada9c2b4aaf9a1a9ab9cd846593fdf9e6) | Sets the playback volume of background music. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
+| [setBGMPlayoutVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab1e1c94c9efd967dbffb46d3ba08fef5) | Sets the local playback volume of background music. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
+| [setBGMPublishVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a535eab48f9df390f4de5ebd5afcd59e3) | Sets the remote playback volume of background music. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead.|
+| [setReverbType](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a6f4f89be3c810acfa2430ad65fd7ea68) | Sets the reverb effect. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
+| [setVoiceChangerType](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a37acaf3b2539e0b1c18123a646e91189) | Sets the voice changing type. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead.|
+| [playAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ad1ed7667282eccfac1992c1e547a5aeb) | Plays an audio effect. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead.|
+| [setAudioEffectVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a214846db40c2d1be2fe8008c6637f631) | Sets audio effect volume. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
+| [stopAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a18e4ca6939d005a1d67cef397ee8b8d4) | Stops an audio effect. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead.|
+| [stopAllAudioEffects](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a770543c80d3a5629a26d1382535fb6c4) | Stops all audio effects. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
+| [setAllAudioEffectsVolume](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a9bb41c4ff1a5b24ca742fe3ce45a2bc0) | Sets the volume of all audio effects. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
+| [pauseAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab32923d04ce164b82879b3e05833959f) | Pauses an audio effect. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead.|
+| [resumeAudioEffect](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a33ab6e798d3da245435166464b702d4f) | Resumes an audio effect. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead.|
+| [startRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a57541db91ce032ada911ea6ea2be3b2c2) | Starts displaying a remote video image. This API is no longer used since version 7.9. Please use `startRemoteView(userId, streamType, view)` instead. |
+| [stopRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a8f3e86bc219090d0e8f2d5c2fab4467a2) | Stops displaying the video image of a remote user and pulling the user’s video stream. |
+| [setLocalViewFillMode](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#af36ab721c670e5871e5b21a41518b51d) | Sets the rendering mode of the local image. |
+| [setLocalViewRotation](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a87fd1307871debc7c051de4878eb6d69) | Sets the clockwise rotation of the local image. |
+| [setLocalViewMirror](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa353b5cf5662c43252eb8e5132f041c1) | Sets the mirror mode of the local camera's preview image. |
+| [setRemoteViewFillMode](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ab4197bc2efb62b471b49f926bab9352f) | Sets the rendering mode of a remote image. |
+| [setRemoteViewRotation](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a8478d804d2a07520ce2bc5466b727839) | Sets the clockwise rotation of a remote image. |
+| [setAudioQuality](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55) | Sets audio quality. Higher audio quality of the anchor means better listening experience for viewers, but higher audio quality is more demanding on bandwidth and therefore may lead to lag when bandwidth is insufficient. |
+| [startLocalAudio](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a9428ef48d67e19ba91272c9cf967e35e2) | Enables local audio capturing and upstream data transfer. |
+| [startRemoteSubStreamView](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#acdbe3829d20f58cedd5a0c2f49ea24dc) | Starts displaying the screen sharing image of a remote user. |
+| [stopRemoteSubStreamView](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ae5f540d795425046c9166b0a2361a8de) | Stops displaying the screen sharing image of a remote user. |
+| [setRemoteSubStreamViewFillMode](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a73f66e66ffee44e19ebb4d8c56c89718) | Sets the display mode of screen sharing images. |
+| [setRemoteSubStreamViewRotation](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#affdf177b468fdf40a41782e2e47524cc) | Sets the clockwise rotation of screen sharing images. |
+| [switchCamera](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a1b43a65a32f9dcb81b39b9c51c5bc4c6) | Switches cameras. This API is no longer used since version 7.9. Please use the functions in `TXDeviceManager` instead. |
+| [isCameraZoomSupported](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ac7ae26eca2f9a673121803d6d175b034) | Queries whether the current camera supports zoom. This API is no longer used since version 7.9. Please use the functions in `TXDeviceManager` instead. |
+| [setZoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a9f761eebdf04f724e0d1591c41c6045f) | Sets camera zoom factor (focal length). |
+| [isCameraTorchSupported](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a645183ba7c0cea748973796cb38aad8c) | Queries whether flash (torch mode) is supported. This API is no longer used since version 7.9. Please use the functions in `TXDeviceManager` instead. |
+| [enableTorch](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a09253f6547914d54058831b61325e770) | Enables/Disables flash. |
+| [isCameraFocusPositionInPreviewSupported](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#abd39aca40adfc8da6beaf32141f84cfa) | Queries whether focus setting is supported. This API is no longer used since version 7.9. Please use the functions in `TXDeviceManager` instead. |
 | [setFocusPosition](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa7c65fb033727804e7a79b8f135c776c) | Sets camera focus. |
-| [isCameraAutoFocusFaceModeSupported](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a23f25ffb81215a32517da78455459ff2) | Queries whether the device supports automatically recognizing face position. This API was disused in v7.9. Please use the function in `TXDeviceManager`. |
+| [isCameraAutoFocusFaceModeSupported](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a23f25ffb81215a32517da78455459ff2) | Queries whether automatic face detection is supported. This API is no longer used since version 7.9. Please use the functions in `TXDeviceManager` instead. |
 
 
-### Callback APIs of background music playback
+### Callback APIs for background music playback
 
 Callback APIs for background music playback.
 
-| API                                                          | Description                     |
-| ------------------------------------------------------------ | ------------------------ |
-| [onBGMStart](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#af7f9f419dafff42ef750256f953a88c9) | Callback notification of music playback start. |
-| [onBGMProgress](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a30ab555520fa5a478f633394b9cd4d14) | Callback notification of music playback progress. |
-| [onBGMComplete](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a444c6749e7cb77466940ec1de1c88546) | Callback notification of music playback end. |
-
+| API | Description |
+|-----|-----|
+| [onBGMStart](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#af7f9f419dafff42ef750256f953a88c9) | Callback of starting background music |
+| [onBGMProgress](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a30ab555520fa5a478f633394b9cd4d14) | Callback of the music playback progress |
+| [onBGMComplete](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a444c6749e7cb77466940ec1de1c88546) | Callback of the end of background music playback |
 
 
 ## TRTCCloudListener @ TXLiteAVSDK
 
 Callback APIs for the Tencent Cloud video call feature.
 
-### Error events and warning events
-
-| API                                                          | Description                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [onError](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a511d0007e1990e63e853e46ce3f02670) | Error callback, which indicates that the SDK encountered an irrecoverable error and must be listened on. Corresponding UI reminders should be displayed based on the actual conditions. |
-| [onWarning](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a9871472ee8195dfc5d0c34fae3294465) | Warning callback. This callback is used to alert you of some non-serious problems such as lag or recoverable decoding failure. |
-
-
-### Room event callbacks
-
-| API                                                          | Description                                |
-| ------------------------------------------------------------ | ----------------------------------- |
-| [onEnterRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#abf0525c3433cbd923fd1f13b42c416a2) | Callback of room entry. |
-| [onExitRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ad5ac26478033ea9c0339462c69f9c89e) | Callback of room exit. |
-| [onSwitchRole](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a6a4b7f39bc5dfb0c5d75ef8802e2e758) | Callback of role switching. |
-| [onConnectOtherRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ac9fd524ab9de446f4aaf502f80859e95) | Callback of result of requesting cross-room call (anchor competition). |
-| [onDisConnectOtherRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a6f7db4f0aaadad2cdfa822ba0060414c) | Callback of result of ending cross-room call (anchor competition). |
-| [onSwitchRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a9778a84932f02de9be52ea7513f606c1) | Callback of room switching (switchRoom) result. |
-
-
-### Member event callbacks
-
-| API                                                          | Description                                                   |
-| ------------------------------------------------------------ | ------------------------------------------------------ |
-| [onRemoteUserEnterRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a891f38e4cdeaf3ff18937726f0269c2c) | A user enters the current room. |
-| [onRemoteUserLeaveRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#abfec3607f97823956fad77a7a63dc441) | A user exits the current room. |
-| [onUserVideoAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ac1a0222f5b3e56176151eefe851deb05) | Whether the remote user has a playable primary image (generally used for the camera). |
-| [onUserSubStreamAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a80bcaac82e5372245746a4bc63656390) | Whether the remote user has a playable substream image (generally used for screen sharing). |
-| [onUserAudioAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ac474bbf919f96c0cfda87c93890d871f) | Whether the remote user has playable audio data. |
-| [onFirstVideoFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a0c1ccf1bec2d3261e9f11894b32e357e) | Rendering of the first frame of a local or remote user starts. |
-| [onFirstAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a3516aaef4cb63e512cd713e4ec96d118) | Playback of the first audio frame of a remote user starts (the local audio currently does not support notifications). |
-| [onSendFirstLocalVideoFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a181788d7441d41022ce014095ee05353) | The first local video frame data has been sent. |
-| [onSendFirstLocalAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#acb73daf4ce82cd03f787f057b233b412) | The first local audio frame data has been sent. |
-| [onUserEnter](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aff18b3bc5b1e448b21b7614e5716e73e) | Disused API: an anchor enters the current room. |
-| [onUserExit](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a0d1361e52e96b4c7c1a5f1b89f4ef0fb) | Disused API: an anchor exits the current room. |
-
-
-### Callbacks of statistics on quality and technical metrics
-
-| API                                                          | Description                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [onNetworkQuality](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aba07d4191391dadef900422521f34e5b) | Network quality. This callback is triggered once every 2 seconds to collect the statistics of the current network upstreaming and downstreaming quality. |
-| [onStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a003278cb7647cd577702e8367c9e0a58) | Callback of technical metric statistics. |
-
-
-### Server event callbacks
-
-| API                                                          | Description                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [onConnectionLost](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aed43a70b4a95eb95181e2b410013bf54) | The connection between SDK and server has been lost. |
-| [onTryToReconnect](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a1c8654b64e4bde42a8a24954ecf2cb2d) | The SDK tries to connect to the server again. |
-| [onConnectionRecovery](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a36d96a42ec4b00a0e3808f7f8460cd7f) | The connection between SDK and server has been restored. |
-| [onSpeedTest](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ab77a0dff287e1642527cd414fc5fe5f5) | Callback of server speed test. The SDK tests the speed of multiple server IPs, and the test result of each IP is returned through this callback notification. |
-
-
-### Hardware device event callbacks
-
-| API                                                          | Description                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [onCameraDidReady](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aaa74021e5fd2564afb2df50e25eedeff) | The camera is ready. |
-| [onMicDidReady](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#afdac7dee94451913a4dc9982badc8035) | The mic is ready. |
-| [onAudioRouteChanged](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a1a608275247d2912e26bd83f648d6378) | Audio routing changes, i.e., whether the audio is output by the speaker or receiver. |
-| [onUserVoiceVolume](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a4e3b79968ccbb86de5b79e326a2daafa) | Callback of volume level, including the volume level of each `userId` and the total remote volume level. |
-
-
-### Custom message receipt callbacks
-
-| API                                                          | Description                        |
-| ------------------------------------------------------------ | --------------------- |
-| [onRecvCustomCmdMsg](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a51fd654c5ec030ff84f208f2ba50298d) | Callback of receipt of custom message. |
-| [onMissCustomCmdMsg](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a98af11ba5b25d3124bd9533dc5197127) | Callback of loss of custom message. |
-| [onRecvSEIMsg](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ad3640e6bf80a1f93991644701e9b0d96) | Callback of receipt of SEI message. |
-
-
-### CDN relayed push callbacks
-
-| API                                                          | Description                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [onStartPublishing](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a03d0ef687b2973b9b13cb041bd35bb85) | Callback of starting pushing to Tencent Cloud LVB CDN, which corresponds to the `startPublishing()` API in [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud). |
-| [onStopPublishing](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ad3cb7e5ceb69954d762eafca5a0e3a62) | Callback of stopping pushing to Tencent Cloud LVB CDN, which corresponds to the `stopPublishing()` API in [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud). |
-| [onStartPublishCDNStream](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a64df36d6c56dd69d8b6f051fd9fffcbc) | Callback of completion of starting relayed push to CDN. |
-| [onStopPublishCDNStream](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a6c3d63538897ddb9ed1b170819c41dca) | Callback of completion of stopping relayed push to CDN. |
-| [onSetMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#af1c79a5ec3e0c106939e7f0d7849d694) | Callback of setting On-cloud MixTranscoding parameters, which corresponds to the `setMixTranscodingConfig()` API in `[TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud)`. |
-
-
-### Sound effect callbacks
-
-| API                                                          | Description               |
-| ------------------------------------------------------------ | ------------------ |
-| [onAudioEffectFinished](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#abe967d855abae66836877fe0dacf8b5f) | Callback of audio effect playback end. |
-
-
-### Screen sharing callbacks
-
-| API                                                          | Description                        |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [onScreenCaptureStarted](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a7d15537d26fb001045ff95157d59ed3f) | This callback will be returned by the SDK when screen sharing is started. |
-| [onScreenCapturePaused](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a12c57991389e32f04a56774df5d1ce76) | This callback will be returned by the SDK when screen sharing is paused by calling [TRTCCloud.pauseScreenCapture()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a56af9ada2d43cfb497fe44fa6d4b99cf). |
-| [onScreenCaptureResumed](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ade88963a254d297d3be1993e8a599f6e) | This callback will be returned by the SDK when screen sharing is resumed by calling [TRTCCloud.resumeScreenCapture()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a155ed7b6bcf2edf3259d26b8f8fdfe7e). |
-| [onScreenCaptureStopped](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a6c09b21b733da7d314d1db2cb03c8bcb) | This callback will be returned by the SDK when screen sharing is stopped. |
-
-
-### Callbacks of video data frames for custom rendering
-
-| API                                                          | Description                 |
-| ------------------------------------------------------------ | -------------------- |
-| [onRenderVideoFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a41b44f9b0583bbf56ad9e96065ea825c) | Callback of custom video rendering. |
-
-
-### Custom audio data frame processing callbacks (read-only)
+### Error and warning event callback APIs
 
 | API | Description |
 |-----|-----|
-| [onCapturedRawAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#abffd560f5b2b2322ea3980bc5a91d22e) | Callback of audio data captured by the local mic. |
-| [onLocalProcessedAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a62c526c6c30a66671260bdf0c5c64e46) | Callback of audio data captured by the local mic and preprocessed by the audio module. |
-| [onRemoteUserAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a4af98a7d668c150ea8e99e3085505902) | Audio data from each remote user before audio mixing, i.e., the raw data of each channel before audio mixing. For example, when converting a certain channel of audio to text, you must use the raw audio data of the channel. |
-| [onMixedPlayAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a580e94224357c38adf6ed883ab3321f7) | Audio data to be played back by speaker after audio data from each channel is mixed. |
+| [onError](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a511d0007e1990e63e853e46ce3f02670) | Error callback. This indicates that the SDK encountered an irrecoverable error. Such errors must be listened for, and UI reminders should be sent to users depending on the situation. |
+| [onWarning](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a9871472ee8195dfc5d0c34fae3294465) | Warning callback. This alerts you to non-serious problems such as lag or recoverable decoding failure. |
 
 
-### Log callbacks
+### Room event callback APIs
 
->?We recommend setting the callback object in a class that is initialized early, such as `Application`.
+| API | Description |
+|-----|-----|
+| [onEnterRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#abf0525c3433cbd923fd1f13b42c416a2) | Callback of room entry                  |
+| [onExitRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ad5ac26478033ea9c0339462c69f9c89e) | Callback of room exit                |
+| [onSwitchRole](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a6a4b7f39bc5dfb0c5d75ef8802e2e758) | Callback of role switching                |
+| [onConnectOtherRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ac9fd524ab9de446f4aaf502f80859e95) | Callback of the result of requesting a cross-room call (anchor competition) |
+| [onDisConnectOtherRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a6f7db4f0aaadad2cdfa822ba0060414c) | Callback of the result of ending a cross-room call (anchor competition) |
+| [onSwitchRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a9778a84932f02de9be52ea7513f606c1) | Callback of the result of room switching (`switchRoom`) |
 
-| API                                                          | Description                 |
-| ------------------------------------------------------------ | -------------------- |
+
+### User event callback APIs
+
+| API | Description |
+|-----|-----|
+| [onRemoteUserEnterRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a891f38e4cdeaf3ff18937726f0269c2c) | Callback of the entry of a user |
+| [onRemoteUserLeaveRoom](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#abfec3607f97823956fad77a7a63dc441) | Callback of the exit of a user |
+| [onUserVideoAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ac1a0222f5b3e56176151eefe851deb05) | Callback of whether a remote user has a playable primary image (usually the image of the camera) |
+| [onUserSubStreamAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a80bcaac82e5372245746a4bc63656390) | Callback of whether a remote user has a playable substream image (usually the screen sharing image) |
+| [onUserAudioAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ac474bbf919f96c0cfda87c93890d871f) | Callback of whether a remote user has playable audio data |
+| [onFirstVideoFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a0c1ccf1bec2d3261e9f11894b32e357e) | Callback of the rendering of the first video frame of the local user or a remote user |
+| [onFirstAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a3516aaef4cb63e512cd713e4ec96d118) | Callback of the playing of the first audio frame of a remote user. No notifications are sent for local audio. |
+| [onSendFirstLocalVideoFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a181788d7441d41022ce014095ee05353) | Callback of the sending of the first local video frame |
+| [onSendFirstLocalAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#acb73daf4ce82cd03f787f057b233b412) | Callback of the sending of the first local audio frame |
+| [onUserEnter](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aff18b3bc5b1e448b21b7614e5716e73e) | Disused API: callback of the entry of an anchor |
+| [onUserExit](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a0d1361e52e96b4c7c1a5f1b89f4ef0fb) | Disused API: callback of the exit of an anchor |
+
+
+### Callback APIs for statistics on network quality and technical metrics
+
+| API | Description |
+|-----|-----|
+| [onNetworkQuality](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aba07d4191391dadef900422521f34e5b) | Callback of network quality. This callback is triggered every 2 seconds to collect statistics on the current upstream and downstream data transfer. |
+| [onStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a003278cb7647cd577702e8367c9e0a58) | Callback of statistics on technical metrics |
+
+
+### Server event callback APIs
+
+| API | Description |
+|-----|-----|
+| [onConnectionLost](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aed43a70b4a95eb95181e2b410013bf54) | Callback of the disconnection of the SDK from the server |
+| [onTryToReconnect](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a1c8654b64e4bde42a8a24954ecf2cb2d) | Callback of the SDK trying to connect to the server again |
+| [onConnectionRecovery](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a36d96a42ec4b00a0e3808f7f8460cd7f) | Callback of the reconnection of the SDK to the server |
+| [onSpeedTest](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ab77a0dff287e1642527cd414fc5fe5f5) | Callback of server speed tests. The SDK tests the speed of multiple server IPs, and the result of each test is returned through this callback. |
+
+
+### Hardware event callback APIs
+
+| API | Description |
+|-----|-----|
+| [onCameraDidReady](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aaa74021e5fd2564afb2df50e25eedeff) | Callback of the camera being ready |
+| [onMicDidReady](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#afdac7dee94451913a4dc9982badc8035) | Callback of the mic being ready |
+| [onAudioRouteChanged](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a1a608275247d2912e26bd83f648d6378) | Callback of the change of the audio route, i.e. audio output (speaker or receiver). |
+| [onUserVoiceVolume](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a4e3b79968ccbb86de5b79e326a2daafa) | Callback of volume, including the volume of each `userId` and the total remote volume |
+
+
+### Callback APIs for receiving custom messages
+
+| API | Description |
+|-----|-----|
+| [onRecvCustomCmdMsg](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a51fd654c5ec030ff84f208f2ba50298d) | Callback of the receipt of the custom message  |
+| [onMissCustomCmdMsg](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a98af11ba5b25d3124bd9533dc5197127) | Callback of the missing of a custom message |
+| [onRecvSEIMsg](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ad3640e6bf80a1f93991644701e9b0d96) | Callback of the receipt of an SEI message |
+
+
+### Callback APIs for CDN relayed push
+
+| API | Description |
+|-----|-----|
+| [onStartPublishing](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a03d0ef687b2973b9b13cb041bd35bb85) | Callback of starting to push to Tencent Cloud’s live streaming CDN, which corresponds to the `startPublishing()` API in [`TRTCCloud`](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) |
+| [onStopPublishing](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ad3cb7e5ceb69954d762eafca5a0e3a62) | Callback of stopping pushing to Tencent Cloud’s live streaming CDN, which corresponds to the `stopPublishing()` API in [`TRTCCloud`](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) |
+| [onStartPublishCDNStream](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a64df36d6c56dd69d8b6f051fd9fffcbc) | Callback of the completion of starting relayed push to CDNs |
+| [onStopPublishCDNStream](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a6c3d63538897ddb9ed1b170819c41dca) | Callback of the completion of stopping relayed push to CDNs |
+| [onSetMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#af1c79a5ec3e0c106939e7f0d7849d694) | Callback of setting On-Cloud MixTranscoding parameters, which corresponds to the `setMixTranscodingConfig()` API in `[TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud)` |
+
+
+### Audio effect callback APIs
+
+| API | Description |
+|-----|-----|
+| [onAudioEffectFinished](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#abe967d855abae66836877fe0dacf8b5f) | Callback of ending audio effects |
+
+
+### Screen sharing callback APIs
+
+| API | Description |
+|-----|-----|
+| [onScreenCaptureStarted](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a7d15537d26fb001045ff95157d59ed3f) | Callback of starting screen sharing |
+| [onScreenCapturePaused](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a12c57991389e32f04a56774df5d1ce76) | Callback of pausing screen sharing via the calling of [`TRTCCloud.pauseScreenCapture()`](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a56af9ada2d43cfb497fe44fa6d4b99cf) |
+| [onScreenCaptureResumed](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ade88963a254d297d3be1993e8a599f6e) | Callback of resuming screen sharing via the calling of `[TRTCCloud.resumeScreenCapture()`](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a155ed7b6bcf2edf3259d26b8f8fdfe7e) |
+| [onScreenCaptureStopped](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a6c09b21b733da7d314d1db2cb03c8bcb) | Callback of stopping screen sharing |
+
+
+### Callback API for video frames for custom rendering
+
+| API | Description |
+|-----|-----|
+| [onRenderVideoFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a41b44f9b0583bbf56ad9e96065ea825c) | Callback of video frames for custom rendering |
+
+
+### Callback APIs for third-party beauty filter databases for rendering
+
+| API | Description |
+|-----|-----|
+| [onGLContextCreated](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#af4a7a3a4e4945bf216d87f81b6926dab) | Notification of destroying the OpenGL context in the SDK. |
+| [onProcessVideoFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a22afb08b2a1a18563c7be28c904b166a) | Callback of video data that uses third-party beauty filters. This can be set using the `setLocalVideoProcessListener` API in [TRTCCloud](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud). |
+| [onGLContextDestory](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a5f6d5ef01d3cd610959433107f78aa60) | Notification of destroying the OpenGL context in the SDK. |
+
+
+### Callback APIs for audio frames for custom processing (read-only)
+
+| API | Description |
+|-----|-----|
+| [onCapturedRawAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#abffd560f5b2b2322ea3980bc5a91d22e) | Callback of the audio data captured by the local mic |
+| [onLocalProcessedAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a62c526c6c30a66671260bdf0c5c64e46) | Callback of the audio data captured by the local mic and pre-processed by the audio module |
+| [onRemoteUserAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a4af98a7d668c150ea8e99e3085505902) | Callback of the audio data of each remote user before audio mixing, i.e., the raw data of each channel before audio mixing. The data is needed when, for example, you want to convert the audio of a channel into text. |
+| [onMixedPlayAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a580e94224357c38adf6ed883ab3321f7) | Callback of the audio data mixed from all channels and sent to the speaker |
+
+
+### Log callback API
+
+| API | Description |
+|-----|-----|
 | [onLog](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a77d78090666e330606b670bf8ce2d854) | Callback of log printing. |
 
 
-### Screencapturing callbacks
+### Screenshot callback API
 
-| API                                                          | Description             |
-| ------------------------------------------------------------ | ---------------- |
-| [onSnapshotComplete](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aa9c6d0488175f6d19f5f38f6307cfea4) | Callback of screencapturing completion. |
+| API | Description |
+|-----|-----|
+| [onSnapshotComplete](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#aa9c6d0488175f6d19f5f38f6307cfea4) | Callback of the completion of a screenshot |
 
 
 ## Definitions of Key Classes
 
-| Class                                                         | Description                                    |
-| ------------------------------------------------------------ | --------------------------------------- |
-| [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a1751af68516425e5556e2057d0c90915) | Room entry parameters. |
-| [TRTCVideoEncParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCVideoEncParam) | Encoding parameters. |
-| [TRTCNetworkQosParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCNetworkQosParam) | Network bandwidth limit parameters. |
-| [TRTCRenderParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCRenderParams) | Remote image parameters. |
-| [TRTCQuality](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCQuality) | Video (or network) quality. |
-| [TRTCTexture](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCTexture) | Video texture data, including texture ID and EGL environment. |
-| [TRTCVideoFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCVideoFrame) | Video frame information. |
-| [TRTCAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCAudioFrame) | Audio frame data. |
-| [TRTCVolumeInfo](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCVolumeInfo) | Volume level. |
-| [TRTCSpeedTestResult](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCSpeedTestResult) | Network speed test result. |
-| [TRTCMixUser](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a51966088a4a7382a37bc00fa78ff7385) | Position information of each channel of subimage in On-cloud MixTranscoding. |
-| [TRTCTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a328b2e89495023a61efc342e3284477a) | On-cloud MixTranscoding configuration. |
-| [TRTCPublishCDNParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCPublishCDNParam) | Relayed push parameters. |
-| [TRTCAudioRecordingParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCAudioRecordingParams) | Audio recording parameters. |
-| [TRTCAudioEffectParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#ad82a59c2209c0596dabaee1152820494) | Sound effect. |
-| [TRTCScreenShareParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCScreenShareParams) | Screen sharing parameters. |
-| [TRTCSwitchRoomConfig](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a1b79e0e45a5f137df2e1995af7c0885c) | Room switch parameters. |
-| [TRTCStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCStatistics) | Statistics. |
-| [TRTCRemoteStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCStatistics_1_1TRTCRemoteStatistics) | Remote audio/video statistics. |
-| [TRTCLocalStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCStatistics_1_1TRTCLocalStatistics) | Local audio/video statistics. |
+| Class | Description |
+|-----|-----|
+| [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a1751af68516425e5556e2057d0c90915) | Room entry parameters                                    |
+| [TRTCVideoEncParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCVideoEncParam) | Encoding parameters                              |
+| [TRTCNetworkQosParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCNetworkQosParam) | QoS control parameters                      |
+| [TRTCRenderParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCRenderParams) | Remote image parameters |
+| [TRTCQuality](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCQuality) | Network quality |
+| [TRTCTexture](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCTexture) | Video texture data, including texture ID and the EGL context |
+| [TRTCVideoFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCVideoFrame) | Video frame information |
+| [TRTCAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCAudioFrame) | Audio frame information |
+| [TRTCVolumeInfo](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCVolumeInfo) | Volume                              |
+| [TRTCSpeedTestResult](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCSpeedTestResult) | Network speed testing result                          |
+| [TRTCMixUser](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a51966088a4a7382a37bc00fa78ff7385) | Position of the image of each channel in On-Cloud MixTranscoding |
+| [TRTCTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a328b2e89495023a61efc342e3284477a) | On-Cloud MixTranscoding configuration |
+| [TRTCPublishCDNParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCPublishCDNParam) | Relayed push parameters                          |
+| [TRTCAudioRecordingParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCAudioRecordingParams) | Audio recording parameters                              |
+| [TRTCAudioEffectParam](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#ad82a59c2209c0596dabaee1152820494) | Audio effect parameters |
+| [TRTCScreenShareParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCScreenShareParams) | Screen sharing parameters |
+| [TRTCSwitchRoomConfig](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a1b79e0e45a5f137df2e1995af7c0885c) | Room switching parameters |
+| [TRTCStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCStatistics) | Statistics |
+| [TRTCRemoteStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCStatistics_1_1TRTCRemoteStatistics) | Remote audio/video statistics              |
+| [TRTCLocalStatistics](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCStatistics_1_1TRTCLocalStatistics) | Local audio/video statistics              |
+
