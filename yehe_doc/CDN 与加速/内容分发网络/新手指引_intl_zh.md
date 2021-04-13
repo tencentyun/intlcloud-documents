@@ -115,7 +115,7 @@
 </tr>
 <tr>
 <td>在 CDN 控制台查看中国境内流量包的使用情况。</td>
-<td><a href="https://cloud.tencent.com/document/product/228/6306" target="_blank">流量包管理</a></td>
+<td>流量包管理</a></td>
 </tr>
 <tr>
 <td>验证指定的 IP 是否为腾讯云 CDN 节点。</td>
@@ -131,7 +131,7 @@
 </tr>
 <tr>
 <td>使用腾讯云 CDN 进行海量图片分发。</td>
-<td><a href="https://cloud.tencent.com/document/product/228/43121" target="_blank">图片优化</a></td>
+<td>图片优化</a></td>
 </tr>
 </tbody></table>
 
