@@ -1,7 +1,6 @@
 ## Error Description
 When you apply for an SSL certificate, an error indicating a validation failure is reported after you click **View Domain Validation Status**.
 
-
 ## Possible Causes
 You can troubleshoot based on the error message that is displayed.
 
