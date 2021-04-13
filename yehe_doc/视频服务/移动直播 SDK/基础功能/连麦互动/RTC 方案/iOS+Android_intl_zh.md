@@ -210,23 +210,24 @@ V2TXLivePusher *pusherB = [[V2TXLivePusher alloc] initWithLiveMode:V2TXLiveMode_
 [pusherB startPush:pushURLB];
 :::
 </dx-codeblock>
+
 3. **开始 PK**，主播 A 和主播 B 分别调用 `V2TXLivePlayer` 开始播放对方的流，此时主播 A 和主播 B 即进入超低延时的实时互动场景中。
 
 <dx-codeblock>
-::: Java  Java 
+::: Java Java
 V2TXLivePlayer playerA = new V2TXLivePlayerImpl(mContext);
 ...
 playerA.startPlay(playURLA);
-
+      
 V2TXLivePlayer playerB = new V2TXLivePlayerImpl(mContext);
 ...
 playerB.startPlay(playURLB);
 :::
-::: Objective-C  Objective-C
+::: Objective-C Objective-C
 V2TXLivePlayer *playerA = [[V2TXLivePlayer alloc] init];
 ...
 [playerA startPlay:playURLA];
-
+      
 V2TXLivePlayer *playerB = [[V2TXLivePlayer alloc] init];
 ...
 [playerB startPlay:playURLB];
@@ -252,9 +253,9 @@ RTC 连麦方案采用腾讯云实时音视频 TRTC 来实现，由 TRTC **按�
 | 超清 HD+     | 高于1280 × 720               | 14.99               |
 
 >?
-- 麦上用户指的是主播和上麦的观众，计费时长按拉流时间统计，时长类型取决于拉流分辨率。
-- 同一个用户拉取同一路音视频流的语音费用已包含在视频费用中，不会重复计算语音费用。
-- 当麦上用户仅推流、不拉流时，由于统计不到拉流时长和拉流分辨率，则计费时长按推流时间统计，时长类型按语音统计。
+>- 麦上用户指的是主播和上麦的观众，计费时长按拉流时间统计，时长类型取决于拉流分辨率。
+>- 同一个用户拉取同一路音视频流的语音费用已包含在视频费用中，不会重复计算语音费用。
+>- 当麦上用户仅推流、不拉流时，由于统计不到拉流时长和拉流分辨率，则计费时长按推流时间统计，时长类型按语音统计。
 
 ## 常见问题
 
