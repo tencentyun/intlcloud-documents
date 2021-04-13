@@ -17,7 +17,7 @@ The CKafka service can be billed as an instance by using a **prepaid monthly sub
 
 When purchasing Pro Edition instances, you need to estimate the peak bandwidth, number of partitions, and disk capacity of your business. The total fees of the purchased instances are (basic package price + partition package price * number of additional partitions / 100 + disk capacity price * disk capacity / 100) * number of months.
 
-> ?Currently, the monthly subscription billing mode does not support capacity reduction in advance. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=876&level2_id=951&source=0&data_title=消息服务 CKafKa&step=1) to apply for capacity reduction. The backend will perform the reduction operation for you before your next billing cycle starts. Then, fees will be charged based on the reduced specification.
+> ?Currently, the monthly subscription billing mode does not support capacity reduction in advance. You can [submit a ticket](https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fworkorder%2Fcategory) to apply for capacity reduction. The backend will perform the reduction operation for you before your next billing cycle starts. Then, fees will be charged based on the reduced specification.
 
 ## Pro Edition Pricing
 
