@@ -10,7 +10,7 @@
 <li>1つのルームで最大300人のオンライン同時接続、最大30人のカメラ同時起動をサポート。</li>
 </ul></td>
 <td>1対1のビデオ通話、300人規模のビデオミーティング、オンライン診断、ビデオチャット、ビデオカスタマーサービス、ビデオ対面審査、ビデオダブルレコーディング、オンライン賠償請求、ビデオ人狼ゲームなど。</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44246">ビデオ通話課金説明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">ビデオ通話課金説明</a></td>
 </tr>
 <tr>
 <td>音声通話</td>
@@ -19,7 +19,7 @@
 <li>1つのルームで最大300人のオンライン同時接続、最大30人のマイク同時起動をサポート。</li>
 </ul></td>
 <td>1対1音声通話、多人数音声チャット通話、音声チャット、音声ミーティング、音声カスタマーサービス、人狼ゲームなど。</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44226">音声通話課金説明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">音声通話課金説明</a></td>
 </tr><tr>
 <td>ビデオ・インタラクティブストリーミング</td>
 <td><ul style="margin:0">
@@ -29,7 +29,7 @@
 <li>CDN Relayed live streamingモードの場合は、視聴者数が無制限です。</li>
 </ul></td>
 <td>低遅延のビデオライブストリーミング、10万人規模のインタラクティブな授業、ビデオライブストリーミングのPK、ビデオお見合いルーム、双方向対話型授業、リモートトレーニング、大規模なミーティングなど。</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44247">ビデオ・インタラクティブストリーミング課金説明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">ビデオ・インタラクティブストリーミング課金説明</a></td>
 </tr><tr>
 <td>ボイス・インタラクティブストリーミング</td>
 <td><ul style="margin:0">
@@ -39,7 +39,7 @@
 <li>CDN Relayed live streamingモードの場合は、視聴者数が無制限です。</li>
 </ul></td>
 <td>低遅延の音声ライブストリーミング、音声ライブストリーミングのPK、チャットルーム、音声お見合いルーム、カラオケ、FMラジオなど。</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44248">ボイス・インタラクティブストリーミング課金説明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">ボイス・インタラクティブストリーミング課金説明</a></td>
 </tr></table>
 
 
@@ -77,4 +77,4 @@
 | CDN relayed live streaming | TRTCはクラウド上でバイパストランスコーディングのクラスターを活用し、TRTCで使用する UDP プロトコルを標準のライブストリーミングRTMPプロトコルに変換して、TRTCの音声ビデオデータを標準のLVBシステムにプッシュします。さらに CDN経由で分配し、これによりCDN relayed live streamingを実現します。 | ILVB、ライブストリーミング共有、大型ミーティング、ライブストリーミングの視聴者リモートビューイングなど。 | Relayed Live Streamingは付加価値サービスに属し、 [Live Video Broadcasting](https://intl.cloud.tencent.com/document/product/267) から関連費用を請求します。詳細は、 [CDN relayed live streaming≻関連費用](https://intl.cloud.tencent.com/document/product/647/35242) をご参照ください。 |
 | Instant Messaging（IM） |<li>IMのシングルチャット、グループチャット、人数制限なしのチャットルームによって、チャットメッセージ、コメント、弾幕、プレゼント、「いいね！」などの機能を実現できます。</li><li>IM経由でシグナリングを交換し、通話呼び出し、ルームユーザー数統計などの機能が実現可能です。</li> | オンラインカスタマーサービス、ILVB、インタラクティブ教室、リモートトレーニングなど。         | IMは付加価値サービスに属し、[IM](https://intl.cloud.tencent.com/document/product/1047)から関連費用が請求されます。詳細は、[IM関連費用](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。 |
 | 音声内容審査 | 音声のポルノ検出、政治関係などのコンテンツセキュリティの検査。業務の不正コンテンツチェックに利用できます。       | 業務の不正コンテンツチェック、コンプライアンスなど。                             | 音声内容審査は、付加価値サービスに属し、**T-Secコンテンツセキュリティ**によって関連費用が徴収されます。ご利用になりたい場合は、アクティブ化の申請について、[お問い合わせ](https://intl.cloud.tencent.com/support) ください。 |
-| ビデオコンテンツ審査 | ビデオのポルノ検出、政治関係などのコンテンツセキュリティの検査。業務の不正コンテンツチェックに利用できます。       | 業務の不正コンテンツチェック、コンプライアンスなど。                             | ビデオコンテンツ審査は、付加価値サービスに属し、[LVB］(https://intl.cloud.tencent.com/document/product/267)によって関連費用が請求されます。詳細は、[インテリジェントポルノ検出関連費用](https://intl.cloud.tencent.com/document/product/267/3960) をご参照ください。 |
+| ビデオコンテンツ審査 | ビデオのポルノ検出、政治関係などのコンテンツセキュリティの検査。業務の不正コンテンツチェックに利用できます。       | 業務の不正コンテンツチェック、コンプライアンスなど。                             | ビデオコンテンツ審査は、付加価値サービスに属し、[LVB］(https://intl.cloud.tencent.com/document/product/267)によって関連費用が請求されます。詳細は、[インテリジェントポルノ検出関連費用](https://intl.cloud.tencent.com/document/product/267/39607) をご参照ください。 |
