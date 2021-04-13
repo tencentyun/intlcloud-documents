@@ -42,7 +42,7 @@ _context.TMGDelegate =self;
 
 
 ### 2、初始化 SDK
-参数获取请查看 [接入指引](https://intl.cloud.tencent.com/document/product/607/10782)。
+参数获取请查看 [接入指引](https://intl.cloud.tencent.com/document/product/607/39698)。
 此接口需要来自腾讯云控制台的 SDKAppID 号码作为参数，再加上 openId，这个 openId 是唯一标识一个用户，规则由 App 开发者自行制定，App 内不重复即可（目前只支持 INT64）。
 >初始化 SDK 之后才可以进房。
 ####  函数原型
@@ -57,12 +57,17 @@ ITMGContext -(int)InitEngine:(NSString*)sdkAppID openID:(NSString*)openID
 | openId    		|NSString  |OpenID 只支持 Int64 类型（转为 string 传入），数值必须大于10000，用于标识用户。 |
 
 
+|返回值|处理|
+|----|----|
+|QAVError.OK|初始化 SDK 成功|
+|7015 AV_ERR_SDK_NOT_FULL_UPDATE|检查 SDK 文件是否完整，建议删除后重新导入 SDK|
+
 ####  示例代码 
+
 
 ```
 [[ITMGContext GetInstance] InitEngine:SDKAPPID3RD openID:_openId];
 ```
-
 ### 3、触发事件回调
 通过在 update 里面周期的调用 Poll 可以触发事件回调。
 ####  函数原型
