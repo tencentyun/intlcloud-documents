@@ -210,6 +210,7 @@ V2TXLivePusher *pusherB = [[V2TXLivePusher alloc] initWithLiveMode:V2TXLiveMode_
 [pusherB startPush:pushURLB];
 :::
 </dx-codeblock>
+
 3. **Start anchor competition**: anchor A and B call `V2TXLivePlayer` to play back each other’s stream and interact with ultra low latency.
 
 <dx-codeblock>
@@ -217,7 +218,7 @@ V2TXLivePusher *pusherB = [[V2TXLivePusher alloc] initWithLiveMode:V2TXLiveMode_
 V2TXLivePlayer playerA = new V2TXLivePlayerImpl(mContext);
 ...
 playerA.startPlay(playURLA);
-
+      
 V2TXLivePlayer playerB = new V2TXLivePlayerImpl(mContext);
 ...
 playerB.startPlay(playURLB);
@@ -226,7 +227,7 @@ playerB.startPlay(playURLB);
 V2TXLivePlayer *playerA = [[V2TXLivePlayer alloc] init];
 ...
 [playerA startPlay:playURLA];
-
+      
 V2TXLivePlayer *playerB = [[V2TXLivePlayer alloc] init];
 ...
 [playerB startPlay:playURLB];
@@ -252,9 +253,9 @@ The RTC-based co-anchoring scheme is enabled by TRTC, which charges you based on
 | UHD     | > 1280 × 720               | 14.99               |
 
 >?
-- Mic-on duration is the duration of playback by the anchor and co-anchoring viewers. The type of a duration depends on the playback resolution.
-- If a user plays an audio-video stream, the duration will be charged only once as a video duration rather than twice as a video and audio duration.
-- If a mic-on user publishes streams but does not play back streams, the user’s duration will be billed as an audio duration, whose length is the same as the duration of publishing.
+>- Mic-on duration is the duration of playback by the anchor and co-anchoring viewers. The type of a duration depends on the playback resolution.
+>- If a user plays an audio-video stream, the duration will be charged only once as a video duration rather than twice as a video and audio duration.
+>- If a mic-on user publishes streams but does not play back streams, the user’s duration will be billed as an audio duration, whose length is the same as the duration of publishing.
 
 ## FAQs
 
