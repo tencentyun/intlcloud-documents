@@ -41,10 +41,11 @@
 - 执行以下命令，在 `spec.template.spec.containers[0].args` 中加入启动参数。
   修改后，ipamd 会自动重启并生效。
 	生效后，存量网卡没有关联安全组的会按以下策略绑定安全组，增量网卡则都会绑定以下安全组。
+
 ```yaml
-- --enable-security-groups
-# 如果希望默认继承自主网卡/实例的安全组，则不添加 security-groups 参数
-- --security-groups=sg-xxxxxxxx,sg-xxxxxxxx
+ - --enable-security-groups
+ # 如果希望默认继承自主网卡/实例的安全组，则不添加 security-groups 参数
+ - --security-groups=sg-xxxxxxxx,sg-xxxxxxxx
 ```
 
 
