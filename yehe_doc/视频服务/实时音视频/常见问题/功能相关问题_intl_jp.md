@@ -82,10 +82,6 @@ UserID、即ちユーザーIDは、1つのTRTCアプリケーションの中で�
 ### TRTCはプライベート化したデプロイをサポートしていますか。
 現在サポートしていません。
 
-[](id:que16)
-### TRTCでRelayed live streamingをアクティブ化した場合、利用にはドメイン名の登録が必要ですか。
-Relayed live streamingをアクティブ化する必要がある場合は、国の関連部門の要件に基づき、再生ドメイン名のICP登録をしないと使用できません。詳細は[CDN Relayed live Streaming](https://intl.cloud.tencent.com/document/product/647/35242)をご参照ください。
-
 [](id:que17)
 ### TRTCの遅延はどのくらいですか。
 グローバルなエンドツーエンドの平均遅延は300ms未満です。
