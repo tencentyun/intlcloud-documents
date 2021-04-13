@@ -54,7 +54,7 @@
 
 
 
-## OPPO 通知渠道申请指南[](id:oppozhinan)
+## OPPO 通知渠道申请指南<span id=“oppozhinan”></span>
 
 ### OPPO 通知渠道介绍
 
@@ -122,7 +122,7 @@ XX应用申请接入 OPush 公私信公测，并承诺遵守运营规则，不�
 
 
 
-## 小米通知渠道申请指南[](id:xiaomizhinan)
+## 小米通知渠道申请指南<span id=“xiaomizhinan”></span>
 
 ### 小米通知渠道介绍
 
