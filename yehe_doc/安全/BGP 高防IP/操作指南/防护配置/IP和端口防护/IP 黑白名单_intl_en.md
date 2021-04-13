@@ -4,6 +4,7 @@ Anti-DDoS supports configuring IP blocklist and allowlist to block or allow sour
 ## Prerequisites
 Purchase an [Anti-DDoS Advanced instance](https://intl.cloud.tencent.com/document/product/297/37241) and set the object to be protected.
 The IP blocklist and allowlist filtering take effect only when your business is under DDoS attacks.
+>?
 >- The allowed IPs will be allowed to access resources without being filtered by any protection policy.
 >- The access requests from the blocked IPs will be directly denied.
 ## Operation Directions
