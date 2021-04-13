@@ -45,10 +45,9 @@ To prevent the normal operation of your system from being affected when a monito
    - Set alarm trigger conditions.
    - Set alarm channels.
 4. After the above configurations, click **Complete**.
->For more information on alarm settings, please see [Creating Alarms](https://intl.cloud.tencent.com/document/product/248/6215).
+>For more information on alarm settings, please see [Creating Alarms](https://intl.cloud.tencent.com/document/product/248/38908).
 
 ### Viewing an alarm
 
 1. Log in to the [Cloud Monitoring Console](https://console.cloud.tencent.com/monitor).
 2. On the left sidebar, click **Monitor Overview** to access the monitoring overview page and view alarms.
->For more information on monitoring overview, please see [Viewing Alarms](https://intl.cloud.tencent.com/document/product/248/6219).
