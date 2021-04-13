@@ -13,7 +13,7 @@ The new VPC-CNI mode network solution has the following new capabilities:
 ## Implementation Methods
 
 The new VPC-CNI mode network solution is an extension of the original VPC-CNI mode. Relying on the ENI, the ENI bound to the node can be configured to the container network namespace through CNI, so that the container can directly use the ENI exclusively. The principle is shown in the figure below:
-![](https://main.qcloudimg.com/raw/79d5ed549d59b5c36219a97b8041a515.png)
+![](https://main.qcloudimg.com/raw/c3b33f90da3cd9db6d8396fe9e981e18.png)
 
 ## IP Address Management Principle
 
