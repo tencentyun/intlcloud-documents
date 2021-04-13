@@ -1,6 +1,6 @@
 ## Error Description
 When you apply for an SSL certificate, an error indicating a validation failure is reported after you click **View Domain Validation Status**.
-![](https://main.qcloudimg.com/raw/72ec22ee9ff15811194d0ae7d768af25.png)
+
 
 ## Possible Causes
 You can troubleshoot based on the error message that is displayed.
