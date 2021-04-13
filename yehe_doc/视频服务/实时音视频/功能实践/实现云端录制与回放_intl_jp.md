@@ -131,6 +131,7 @@ TRTC SDKが提供するいくつかの API インターフェースとパラメ�
 | クラウドレコーディング | 入室時にパラメータ `TRTCParams` の中の `userDefineRecordId` フィールドを指定します   | キャスター退室時に自動停止します                                           |
 | クラウドミクスストリーミング| SDK API  [setMixTranscodingConfig()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) を呼び出してクラウドミクスストリーミングを起動 | クラウドミクスを発出したキャスターが退室したら、ミクスストリーミングは自動的に停止するか、途中で [setMixTranscodingConfig()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) を呼び出してパラメータを `null/nil` 手動停止に設定します |
 | Relayed live streaming | 入室時にパラメータ `TRTCParams`の中の `streamId` フィールドを指定します             | キャスター退室時に自動停止します                                           |
+![](https://main.qcloudimg.com/raw/7daf8430ca74adeec019c10fc384a48e.gif)
 
 - **コンソールでの設定**
   このレコーディング方法を使用したい場合は、コンソールの [レコーディング形式の選択](#recordType)のときに、「指定ユーザーレコーディング」に設定してください。
@@ -176,6 +177,8 @@ TRTC のサーバーは1対のREST API（ [StartMCUMixTranscode](https://intl.cl
 | Relayed live streaming |   [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) 呼び出し時に `OutputParams.StreamId` パラメータを指定すればCDNのRelayed live streamingを起動できます | 自動停止、または途中で [StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760) を呼び出して停止できます |
 
 >? これらのREST APIに対する制御は、TRTCクラウドサービスの中のコアのミクスストリーミングモジュール（MCU）となり、MCU ミクスストリーミング後の結果はレコーディングシステムとライブCDNに送信されるため、APIの名前を `Start/StopMCUMixTranscode`としています。このため、機能の点からいうと、`Start/StopMCUMixTranscode` はミクスストリーミングの機能を実装できるだけでなく、クラウドレコーディングとRelayed live streaming CDNの機能も実装できます。
+
+![](https://main.qcloudimg.com/raw/65ef546c0e424af77f7d20f23aa1d363.gif)
 
 - **コンソールでの設定**
   このレコーディング方法を使用したい場合は、コンソールの [レコーディング形式の選択](#recordType)のときに、「指定ユーザーレコーディング」に設定してください。
@@ -298,7 +301,7 @@ eラーニングなどのユースケースでは、通常ライブストリー�
 
 #### ファイルフォーマットの選択（HLS）
 [レコーディングフォーマットの設定](#fileFormat)では、ファイルフォーマットをHLSに選択します。
-HLSは最長5分間のブレークポイントの継続レコーディングをサポートしており、「1つのライブストリーミング（または1回の授業）から1回だけの再生接続」が行えます。かつ、HLSファイルは、大多数のブラウザのオンライン再生をサポートしており、ビデオ再生のユースケースにとても適しています。
+HLSは最長30分間のブレークポイントの継続レコーディングをサポートしており、「1つのライブストリーミング（または1回の授業）から1回だけの再生接続」が行えます。かつ、HLSファイルは、大多数のブラウザのオンライン再生をサポートしており、ビデオ再生のユースケースにとても適しています。
 
 #### VODアドレス（video_url）の取得
 [レコーディングファイルの受け取り](#callback) のときに、コールバック情報の **video_url** フィールドを取得できます。このフィールドは、現在のレコーディングファイルのTencent CloudにおけるVODアドレスになります。
