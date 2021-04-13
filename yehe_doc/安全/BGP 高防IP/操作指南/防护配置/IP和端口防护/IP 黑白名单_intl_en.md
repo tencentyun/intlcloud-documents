@@ -1,13 +1,17 @@
-## Prerequisites
-You need to [purchase an Anti-DDoS Advanced instance](https://intl.cloud.tencent.com/document/product/297/15483) and set the protected object first.
 
-## Directions
-1. Log in to the [new Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/package) and click **Protection Configuration** on the left sidebar.
-2. Select the ID or port of an Anti-DDoS Advanced instance in the list on the left, such as "212.64.xx.xx bgpip-000002je" or "212.64.xx.xx bgpip-000002je" > "TCP:8000".
+Anti-DDoS supports configuring IP blocklist and allowlist to block or allow source IPs accessing the Anti-DDoS services, restricting the users accessing your business resources. If the accessing traffic exceeds the cleansing threshold, the allowed IPs will be allowed to access resources without being filtered by any protection policy; while the access requests from the blocked IPs will be directly denied.
+
+## Prerequisites
+Purchase an [Anti-DDoS Advanced instance](https://intl.cloud.tencent.com/document/product/297/37241) and set the object to be protected.
+The IP blocklist and allowlist filtering take effect only when your business is under DDoS attacks.
+>- The allowed IPs will be allowed to access resources without being filtered by any protection policy.
+>- The access requests from the blocked IPs will be directly denied.
+## Operation Directions
+1. Log in to the [Anti-DDoS console](https://console.cloud.tencent.com/ddos/antiddos-advanced/package) and click **Anti-DDoS Advanced (New)** -> **Configurations** on the left sidebar.
+2. Select the ID or port of a protected IP from the left list, e.g., **212.64.xx.xx bgpip-000002jt** or **119.28.xx.xx bgpip-000002ju** -> **tcp:8000**. Click **Set** in the **IP Blocklist/Allowlist** section to enter the IP blocklist/allowlist.
 ![](https://main.qcloudimg.com/raw/188d333af2cbd161c06c096c7d767531.png)
-3. Click **Set** in the "IP Blocklist/Allowlist" block on the right to enter the IP blocklist/allowlist.
-![](https://main.qcloudimg.com/raw/c516490db9123b7395a207e4e80e9e2d.png)
-4. Click **Create** to create an IP blocklist/allowlist rule and select the list type.
+3. Click **Create**.
+4. In the pop-up window, select the rule type to create a rule, and click **OK**.
 ![](https://main.qcloudimg.com/raw/1c3a46e9eea39733555bec2741bedc10.png)
-5. After the creation is completed, an IP blocklist/allowlist rule will be added to the IP blocklist/allowlist. You can click **Delete** in the "Operation" column on the right to delete the rule.
+5. Now the new rule is added to the list. You can click **Delete** on the right of the rule to delete it.
 ![](https://main.qcloudimg.com/raw/3453f2025be0bccc6429a8358986a8ed.png)

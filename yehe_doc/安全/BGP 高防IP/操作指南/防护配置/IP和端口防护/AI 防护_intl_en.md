@@ -1,15 +1,15 @@
 
+Anti-DDoS supports AI protection. After AI protection is enabled, with its algorithms, Anti-DDoS can self-learn the connection quantity baseline and traffic characteristics, adaptively adjust cleansing policies, discover and block layer-4 connection CC attacks to deliver an optimal protection effect.
 
 ## Prerequisites
-You need to [purchase an Anti-DDoS Advanced instance](https://intl.cloud.tencent.com/document/product/297/15483) and set the protected object first.
+Purchase an [Anti-DDoS Advanced instance](https://intl.cloud.tencent.com/document/product/297/37241) and set the object to be protected.
 
-## Directions
-1. Log in to the [new Anti-DDoS Advanced Console](https://console.cloud.tencent.com/ddos/antiddos-advanced/package) and click **Protection Configuration** on the left sidebar.
-2. Select the ID or port of an Anti-DDoS Advanced instance in the list on the left, such as "212.64.xx.xx bgpip-000002je" or "212.64.xx.xx bgpip-000002je" > "TCP:8000".
+## Operation Directions
+1. Log in to the [Anti-DDoS console](https://console.cloud.tencent.com/ddos/antiddos-advanced/package) and click **Anti-DDoS Advanced (New)** -> **Configurations** on the left sidebar.
+2. Select the ID or port of a protected IP from the left list, e.g., **212.64.xx.xx bgpip-000002jt** or **119.28.xx.xx bgpip-000002ju** -> **tcp:8000**. Click **Set** in the **AI Protection** section to enter the AI protection list.
 ![](https://main.qcloudimg.com/raw/3bd1f94e743499e9e64cb9912684fb26.png)
-3. Click **Set** in the "AI Protection" block on the right to enter the AI protection list.
-![](https://main.qcloudimg.com/raw/8303ce60cc2cad6d868360df1afe8fe3.png)
-4. Click **Create** to create an AI protection rule and click the switch to enable AI.
+3. Click **Create** to create an AI protection rule.
+4. In the pop-up window, enable the protection and click **OK**.
 ![](https://main.qcloudimg.com/raw/16e4c5b422ecf606cc2ea2387eea1324.png)
-5. After the creation is completed, an AI protection rule will be added to the AI protection list. You can modify the rule by clicking **Configure** in the "Operation" column on the right.
+5. Now the new AI protection rule is added to the list. You can click **Configuration** on the right of the rule to modify it.
 ![](https://main.qcloudimg.com/raw/22c75fc0cba4b6b62ecbbe0ec2f58d63.png)
