@@ -1,7 +1,7 @@
 Multi-Factor Authentication (MFA) is a simple and effective security authentication method. It adds an additional layer of protection to strengthen the username and password credentials. An MFA device, also called a dynamic password card or token, is a device that enables this authentication method. Tencent Cloud currently offers two types of MFA devices: hardware MFA devices and virtual MFA devices.
 
 ## Hardware MFA Devices
->Currently, hardware MFA devices are only available for beta users.
+>?Currently, hardware MFA devices are only available for beta users.
 
 The figure below shows some examples of hardware MFA devices. The 6-digit dynamic authentication code displayed is updated every 30 seconds, and the serial number of the MFA device is on the back.
 ![](https://main.qcloudimg.com/raw/00e6a241a9091978fbb2e11a9e126a88.png)
