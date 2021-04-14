@@ -5,7 +5,7 @@ The **&lt;trtc-room&gt;** tag is a custom component for TRTC intercommunication 
 **Audio/Video call (scene = "rtc")**
 - In video call scenarios, [720p and 1080p](#quality) HD image quality options are supported.
 - In audio call scenarios, 48 kHz full band and dual-channel are supported.
-- A single room can sustain up to 300 concurrent online users, and up to 30 of them can speak simultaneously.
+- A single room can sustain up to 300 concurrent online users, and up to 50 of them can speak simultaneously.
 - Use cases: one-to-one video call, video conferencing with up to 300 participants, online medical diagnosis, video interview, video customer service, online Werewolf, etc.
 - Use method: you need to set the [scene](#Config) attribute of `&lt;trtc-room&gt;` to **rtc**.
 
@@ -86,7 +86,7 @@ The message sending/receiving feature takes effect only after you activate the [
 
 | Parameter | Type | Default Value | Description |
 |:---------------------|:--------|:----------|:-------------|
-| scene                | String  | rtc       | Scenario, which is required. Valid values: <li>rtc: real-time call, which uses high-quality lines and supports up to 300 users in a room.</li><li>live: live streaming, which uses hybrid lines and supports up to 100,000 users in a room (up to 20 users can mic on concurrently).</li> |
+| scene                | String  | rtc       | Scenario, which is required. Valid values: <li>rtc: real-time call, which uses high-quality lines and supports up to 300 users in a room.</li><li>live: live streaming, which uses hybrid lines and supports up to 100,000 users in a room (up to 50 users can mic on concurrently).</li> |
 | sdkAppID             | String  | -         | `SDKAppID` that will be assigned to a created application after TRTC is activated, which is required. |
 | userID               | String  | -         | User ID, which is required and can be specified by your account system. |
 | userSig              | String  | -         | Identity signature, which is required and acts as the login password. It can be calculated based on the `userID`. For more information on the calculation method, please see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166). |
