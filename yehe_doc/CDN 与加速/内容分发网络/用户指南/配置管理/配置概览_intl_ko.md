@@ -57,16 +57,16 @@ HTTPS 가속 설정 모듈은 HTTPS 관련 항목 설정을 지원합니다.
 | 설정 이름                                                     | 기능 설명                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [HTTPS 설정](https://intl.cloud.tencent.com/document/product/228/35213) | 자체 관리 인증서를 업로드하거나 위탁 관리 인증서를 사용해 HTTPS 가속으로 실행합니다.              |
-| [HTTP2.0 설정](https://intl.cloud.tencent.com/document/product/228/35215) | 활성화 시 CDN 엣지 노드가 HTTP2.0 프로토콜을 지원합니다. <br/>**HTTP2.0 프로토콜을 활성화하기 전에 인증서 구성 필요. ** |
+| [HTTP2.0 설정](https://intl.cloud.tencent.com/document/product/228/35215) | 활성화 시 CDN 엣지 노드가 HTTP2.0 프로토콜을 지원합니다. <br/>**HTTP2.0 프로토콜을 활성화하기 전에 인증서 구성 필요.**|
 | [강제 리디렉션 설정](https://intl.cloud.tencent.com/document/product/228/35214) | 인증서 구성 여부에 상관없이 HTTPS를 HTTP 요청으로 강제 리디렉션 하도록 설정합니다. <br/>인증서가 구성되어 있는 경우, HTTP를 HTTPS 요청으로 강제 리디렉션 하도록 설정 가능. |
-| [OCSP 스테이플링 설정](https://intl.cloud.tencent.com/document/product/228/35216) | 활성화 시 OCSP 스테이플링을 지원합니다. <br/>**OCSP 스테이플링을 활성화하기 전에 인증서 구성 필요. ** |
-| [HSTS 설정](https://intl.cloud.tencent.com/document/product/228/37036) | 활성화 시 strict-transport-security 헤더를 추가합니다. <br/>** HSTS 설정을 활성화하기 전에 인증서 구성 필요. ** |
+| [OCSP 스테이플링 설정](https://intl.cloud.tencent.com/document/product/228/35216) | 활성화 시 OCSP 스테이플링을 지원합니다. <br/>**OCSP 스테이플링을 활성화하기 전에 인증서 구성 필요.**|
+| [HSTS 설정](https://intl.cloud.tencent.com/document/product/228/37036) | 활성화 시 strict-transport-security 헤더를 추가합니다. <br/>**HSTS 설정을 활성화하기 전에 인증서 구성 필요.**|
 
 ### 고급 설정
 
 | 설정 이름                                                     | 기능 설명                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [대역폭 상한 설정](https://intl.cloud.tencent.com/document/product/228/7541) | 중국 본토 내/외의 가속 대역폭 상한 설정을 지원하고, 초과 시 필요에 따라 가속 서비스를 중단합니다. <br/>**글로벌 도메인 중국 본토 내/외 구분 설정** |
+| [대역폭 상한 설정](https://intl.cloud.tencent.com/document/product/228/7541) | 중국 본토 내/외의 가속 대역폭 상한 설정을 지원하고, 초과 시 필요에 따라 가속 서비스를 중단합니다. <br/>**글로벌 도메인 중국 본토 내/외 구분 설정**|
 | [SEO 최적화 설정](https://intl.cloud.tencent.com/document/product/228/35219) | 활성화 시 액세스 IP가 검색엔진인지 여부를 자동으로 식별합니다. <br/>확인 후 자동으로 원본 요청을 하고, 검색 엔진 가중치의 안정성을 최대한 보장합니다. |
 | [Response Header 설정](https://intl.cloud.tencent.com/document/product/228/35320) | 필요에 따라 HTTP Response Header를 설정하고, 요청 응답 과정에서 클라이언트에게 반환합니다. |
 | [스마트 압축 설정](https://intl.cloud.tencent.com/document/product/228/35220) | 파일 유형 및 범위를 지정하여 Gzip 또는 Brotli로 압축합니다.                             |
