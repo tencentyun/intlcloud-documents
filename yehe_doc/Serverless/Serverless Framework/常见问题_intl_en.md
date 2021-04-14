@@ -39,7 +39,7 @@ If you have any other questions or feedback, please submit a [ticket](https://co
 
 Problem: your environment does not have permission to access the public network and can access the public network only through a proxy, and a network failure is reported when `sls deploy` is executed.
 
-Solution: add the following configuration to the `.env` file:
+Solution: add the following configuration to the `.env` file
 ```
 HTTP_PROXY=http://127.0.0.1:12345 # Your proxy
 HTTPS_PROXY=http://127.0.0.1:12345 # Your proxy
