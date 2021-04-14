@@ -3,9 +3,9 @@ This document uses security group creation as an example to describe how to conf
 
 ## Configuring Security Groups
 1. Select **Create Security Group**, as shown in the following figure.
-> If you already have available security groups, you can select **Existing Security Groups**.
+>? If you already have available security groups, you can select **Existing Security Groups**.
 >
-![](https://main.qcloudimg.com/raw/c08ca9a0262f4911fdac90925762e4a6.png)
+![](https://main.qcloudimg.com/raw/7bafed15a25c7fbfdb60d09069ea3d0b.png)
 2. Select IP addresses or ports to be opened based on your actual requirements.
 Rules for a new security group are as follows:<ul>
 <li><b>ICMP</b>: enable ICMP and allow the public network to ping the server.</li>
@@ -14,13 +14,11 @@ Rules for a new security group are as follows:<ul>
 <li><b>TCP:443</b>: open port 443 and allow web service access through HTTPS.</li>
 <li><b>TCP:3389</b>: open port 3389 and allow RDP connection to the Windows CVM.</li>
 <li><b>Private network</b>: open the private network and allow intercommunication (IPv4-based) between different cloud resources through the private network.</li></ul>
-<blockquote class="d-mod-explain">
-<div class="d-mod-title d-explain-title">
-<i class="d-icon-explain"></i>Note:
-</div>
-<ul><li> After you select the IP addresses or ports to be opened, the detailed inbound and outbound rules appear on the **Security Group Rule** tab page.</li><li> To open other ports for your business, refer to <a href="https://intl.cloud.tencent.com/document/product/213/32369">security group use cases</a> to <a href="https://intl.cloud.tencent.com/document/product/213/34271">create security groups</a>. For security purposes, Tencent Cloud recommends that you only open required ports to prevent potential security risks.
-</li></ul>
-</blockquote>
+
+>?
+> - After you select the IP addresses or ports to be opened, the detailed inbound and outbound rules appear on the **Security Group Rule** tab page.
+> - To open other ports for your business, refer to <a href="https://intl.cloud.tencent.com/document/product/213/32369">security group use cases</a> to <a href="https://intl.cloud.tencent.com/document/product/213/34271">create security groups</a>. For security purposes, Tencent Cloud recommends that you only open required ports to prevent potential security risks.
+
 3. Configure other information as prompted.
 
 ## Security Group Rules
