@@ -26,6 +26,7 @@
 <td>
 <ul style="margin-bottom: 0;">
 	<li><a href="#S5">Standard S5</a> </li>
+	<li><a href="#S5se">Standard Storage Optimized S5se</a> </li>
 	<li><a href="#SA2">Standard SA2</a> </li>
 	<li><a href="#S4">Standard S4</a> </li>
 	<li><a href="#SN3ne">Standard Network Optimized SN3ne</a> </li>
@@ -63,7 +64,11 @@
 </tr>
 <tr>
 <td><a href="#D">Big Data Instance Family</a></td>
-<td><a href="#D2">Big Data D2</a>
+<td>
+<ul style="margin-bottom: 0;">
+<li><a href="#D3">Big Data D3</a></li>
+<li><a href="#D2">Big Data D2</a></li>
+</ul>
 </td>
 <td>This instance family is equipped with massive storage resources, features high throughput, and is suitable for throughput-intensive applications such as Hadoop distributed computing, massive log processing, distributed file systems, and large data warehouses.</td>
 </tr>
@@ -71,13 +76,14 @@
 <td><a href="#C">Computing Instance Family</a></td>
 <td>
 <ul style="margin-bottom: 0;">
-      <li><a href="#C4">Compute Optimized C4</a> </li>
+	<li><a href="#C5">Compute Optimized C5</a> </li>
+	<li><a href="#C4">Compute Optimized C5</a> </li>
 	<li><a href="#CN3">Compute Network-optimized CN3</a> </li>
 	<li><a href="#C3">Compute C3</a> </li>
 	<li><a href="#C2">Compute C2</a></li>
 </ul>
 </td>
-<td>This family comes with a powerful processor with a base frequency of 3.2GHz, and provides the highest single-core computing performance. It is suitable for compute-intensive workloads such as batch processing, high performance computing, and dedicated game servers.</td>
+<td>This family comes with a turbo frequency up to 3.8 GHz, and provides the highest single-core computing performance. It is suitable for compute-intensive applications such as batch processing, high performance computing, and dedicated game servers.</td>
 </tr>
 <tr>
 <td><a href="#OTHER">Heterogeneous Computing Instance Family</a></td>
@@ -100,7 +106,7 @@
 					<p>Send/Receive Packets: the maximum number of data packets that the instance can process per second for both sending and receiving, without differentiating private or public network traffic.</p>
 				</li>
 				<li>
-					<p><a href="https://cloud.tencent.com/document/product/213/5225">Private Network</a> Bandwidth Capacity: the maximum number of bits that the instance can transfer per second over private network</p>
+					<p><a href="https://intl.cloud.tencent.com/document/product/213/5225">Private Network</a> Bandwidth Capacity: the maximum number of bits that the instance can transfer per second over private network</p>
 				</li>
 				<li>
 					<p>Multi-queue Technology: multiple send/receive packet queues are supported on a virtual ENI, with the sending and receiving of the data packets of each queue capable of being simultaneously processed by different CPUs</p>
@@ -161,15 +167,12 @@
 									<div class="paragraph">
 										<p>Standard S5 instances are the latest generation of standard instances. Based on an all-new optimized virtualization platform, this family provides a balance of stable computing, memory, and network resources. This is a premium choice for many applications.</p>
 									</div>
-									<div class="paragraph">
-										<p>Standard S5 instances are equipped with the latest Xeon® Cascade Lake processors with the latest DDR4 memory. They are network optimized by default, and provide excellent private network throughput and bandwidth.</p>
-									</div>
 									<div class="sect3">
 										<h4 id="_Features">Features</h4>
 										<div class="ulist">
 											<ul>
 												<li>
-													<p>2.5 GHz Intel® Xeon® Cascade Lake processor, turbo frequency 3.1 GHz, with the latest generation 6-channel DDR4 for stable memory computing performance</p>
+													<p><p>Intel<sup>®</sup> Xeon<sup>®</sup> Cascade Lake or Intel<sup>®</sup> Xeon<sup>®</sup> Cooper Lake processor, with a CPU clock rate of 2.5 GHz and turbo frequency of 3.1 GHz</p></p>
 												</li>
 												<li>
 													<p>New Intel Advanced Vector Extension (AVX-512) instruction set</p>
@@ -1496,40 +1499,697 @@
 						<td class="tableblock halign-left valign-top">
 							<div>
 								<div class="sect2">
-									<h3 id="SA2">Standard SA2</h3>
+									<h3 id="S5se">Standard Storage Optimized S5se</h3>
 									<div class="paragraph">
-										<p>A Standard SA2 instance uses the latest generation AMD EPYC™ processor. This ultra-high cost performance instance family supports a variety of specifications, ensuring cost efficiency. Standard SA2 instances provides a balance of computing, memory, and network resources, and it is a good choice for many applications.</p>
-									</div>
-									<div class="paragraph">
-										<p>Standard SA2 instances are equipped with the latest AMD EPYC™ ROME processors with the latest DDR4 memory, default network optimization, private network throughput up to 7,500,000 pps, and support for up to 25 Gbps of private network bandwidth.</p>
+										<p>Based on an all-new optimized virtualization platform, S5se instances improve the overall cloud disk performance. They are powered by new Xeon<sup>®</sup> Cascade Lake processors with the latest DDR4 memory to provide the excellent cloud disk performance.</p>
 									</div>
 									<div class="sect3">
 										<h4 id="_Features">Features</h4>
 										<div class="ulist">
 											<ul>
 												<li>
-													<p>Based on the StarLake server developed by Tencent Cloud, providing reliable, secure and stable performance</p>
+													<p>Supports Premium Cloud Storage and SSD as the system disk</p>
 												</li>
 												<li>
-													<p>2.6 GHz AMD EPYC™ ROME processor, turbo frequency 3.3 GHz, with the latest generation 8-channel DDR4 for stable memory computing performance</p>
+													<p>Supports Tremendous SSD as the data disk</p>
 												</li>
 												<li>
-													<p>Larger instance size, SA2.45XLARGE464, offering 180 vCPUs and 464 GB of memory</p>
+													<p>Provides cloud disk storage performance of up to 1,200,000 IOPS, and read/write bandwidth of 4 GB/s</p>
 												</li>
 												<li>
-													<p>A wide range of processor to memory ratio, such as 1:2 and 1:4</p>
+												<p>2.5 GHz Intel<sup>®</sup> Xeon<sup>®</sup> Cascade Lake processor, with a turbo frequency 3.1 GHz and the latest generation 6-channel DDR4 for stable memory computing performance</p>
 												</li>
 												<li>
-													<p>Supports up to 25 Gbps of private network bandwidth for ultra-high packet throughput to meet the needs of extremely high private network transmission demand</p>
+												<p>New Intel Advanced Vector Extension (AVX-512) instruction set</p>
 												</li>
 												<li>
-													<p>The network performance of an instance is determined by its specification. A higher specification means a greater network forwarding performance and a higher maximum private network bandwidth limit.</p>
+												<p>1:2 or 1:4 processor to memory ratio</p>
 												</li>
 											</ul>
 										</div>
 									</div>
 									<div class="sect3">
 										<h4 id="Application Scenarios">Application Scenarios</h4>
+										<div class="paragraph">
+										<p>Standard Storage Optimized S5se instances are applicable to the following scenarios:</p>
+										</div>
+										<div class="ulist">
+											<ul>
+												<li>
+													<p>Enterprise applications of different types and sizes</p>
+												</li>
+												</li>
+												<li>
+													<p>IO-intensive applications including large databases, NoSQL databases, audio/video processing services, and Elasticsearch cluster</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="sect3">
+										<h4 id="_Requirements">Requirements</h4>
+										<div class="ulist">
+											<ul>
+												<li>
+													<p>Supports pay-as-you-go.</p>
+												</li>
+												<li>
+													<p>Supports only VPC.</p>
+												</li>
+												<li>
+													<p>See below for available S5se specifications:</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="sect3">
+										<h4 id="__a_href_instancetype_Back to Top_a">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back to Top</a></h4>
+									</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="tableblock halign-left valign-top">
+							<div>
+								<table class="tableblock frame-all grid-all spread">
+									<colgroup>
+										<col style="width: 20%;">
+										<col style="width: 5%;">
+										<col style="width: 10%;">
+										<col style="width: 10%;">
+										<col style="width: 10%;">
+										<col style="width: 5%;">
+										<col style="width: 10%;">
+										<col style="width: 10%;">
+										<col style="width: 20%;">
+									</colgroup>
+									<tbody>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>Connections</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>Number of queues</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>Private network bandwidth (Gbps) (outbound and inbound)</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>CPU frequency</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>Notes</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>S5se.LARGE16</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>4</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>16</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>500,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>250,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>1.5</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.5GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+													<p>S5se.2XLARGE16</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>8</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>16</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>800,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>250,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+													<p>3.0</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.5GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>S5se.2XLARGE32</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>8</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>32</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>800,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>250,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>3.0</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.5GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>S5se.4XLARGE32</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>16</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>32</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>1,500,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>300,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>4</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>6.0</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.5GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>S5se.4XLARGE64</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>16</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>64</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>1,500,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>300,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>4</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>6.0</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.5GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>S5se.8XLARGE64</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>32</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>64</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2,500,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>600,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>8</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>12.0</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.5GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>S5se.8XLARGE128</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>32</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>128</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2,500,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>600,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>8</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>12.0</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.5GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>S5se.17XLARGE316</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>68</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>316</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>5,000,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>1,200,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>16</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>25.0</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.5GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+											</tr>
+										<tr>			
+</tbody>
+</table></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-none grid-all spread custom-style">
+				<colgroup>
+					<col style="width: 100%;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<td class="tableblock halign-left valign-top">
+							<div>
+								<div class="sect2">
+									<h3 id="SA2">Standard SA2</h3>
+									<div class="paragraph">
+										<p>SA2 instances are optimized with the latest generation AMD EPYC™ processor, deliver ultra-high cost performance with a variety of specifications, and provide a balance of compute, memory, and network resources, making them ideal for many applications.</p>
+									</div>
+									<div class="paragraph">
+										<p>SA2 instances come with the new AMD EPYC™ ROME processors with the latest DDR4 memory. They are network optimized by default, offering a private network throughput up to 7,500,000 pps and support up to 25 Gbps of private network bandwidth.</p>
+									</div>
+									<div class="sect3">
+										<h4 id="_Features">Features</h4>
+										<div class="ulist">
+											<ul>
+												<li>
+													<p>Provides high performance with high reliability, security, and stability based on the Star Lake servers developed by Tencent Cloud</p>
+												</li>
+												<li>
+													<p>2.6 GHz AMD EPYC™ ROME processor, with a turbo frequency 3.3 GHz and the latest generation 8-channel DDR4 for stable memory computing performance</p>
+												</li>
+												<li>
+													<p>Higher specification, SA2.45XLARGE464, offering 180 vCPUs and 464 GB memory</p>
+												</li>
+												<li>
+													<p>A wide range of processor to memory ratio, such as 1:2 and 1:4</p>
+												</li>
+												<li>
+													<p>Supports up to 25 Gbps of private network bandwidth for ultra-high packet throughput to meet extremely high private network transmission requirements</p>
+												</li>
+												<li>
+													<p>The network performance of an instance depends on its specification. A higher specification means a greater network forwarding performance and a higher private network bandwidth cap.</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="sect3">
+										<h4 id="_Application Scenarios">Application Scenarios</h4>
 										<div class="paragraph">
 											<p>Standard SA2 instances are applicable to the following scenarios:</p>
 										</div>
@@ -1542,7 +2202,7 @@
 													<p>Search and other computing clusters</p>
 												</li>
 												<li>
-													<p>Video decoding, video rendering and other applications sensitive to single core performance</p>
+													<p>Video encoding and decoding, video rendering and other applications sensitive to the single-core performance</p>
 												</li>
 											</ul>
 										</div>
@@ -1552,19 +2212,19 @@
 										<div class="ulist">
 											<ul>
 												<li>
-													<p>SA2 instances are pay-as-you-go.</p>
+													<p>Supports pay-as-you-go.</p>
 												</li>
 												<li>
-													<p>SA2 instances can only be launched in a VPC.</p>
+													<p>Supports only VPC.</p>
 												</li>
 												<li>
-													<p>Configuration purchase is available for SA2 instances. Please see the instance specifications below. Make sure that the size of the SA2 instance you choose meet the minimum CPU memory requirements of your operating system and applications. In many cases, GUI operating systems (such as Windows) that consume extensive memory and CPU resources may need larger instances. As the needs of your workload for memory and CPU increase, you can expand to higher configurations or choose other instance types.</p>
+													<p>See below for available SA2 instance specifications. Make sure that the instance specification you choose meet the minimum CPU memory requirements of your operating system and applications. In many cases, GUI operating systems (such as Windows) that consume extensive memory and CPU resources may need higher specifications. As the needs of your workload for memory and CPU increase, you can choose higher configurations or other instance types.</p>
 												</li>
 											</ul>
 										</div>
 									</div>
 									<div class="sect3">
-										<h4 id="__a_href_instancetype_Back to Top_a">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back to Top</a></h4>
+										<h4 id="__a_href_instancetype_Back To Top_a">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back To Top</a></h4>
 									</div>
 								</div>
 							</div>
@@ -1624,7 +2284,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>Private network bandwidth (Gbps) (outbound and inbound)</p>
+													<p>Private network bandwidth (Gbps) (outbound and inbound)</p>
 													</div>
 												</div>
 											</td>
@@ -2211,7 +2871,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>2.6 GHz</p>
+														<p>2.6GHz</p>
 													</div>
 												</div>
 											</td>
@@ -2269,7 +2929,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>2.6 GHz</p>
+														<p>2.6GHz</p>
 													</div>
 												</div>
 											</td>
@@ -2306,7 +2966,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>140,000</p>
+														<p>1,400,000</p>
 													</div>
 												</div>
 											</td>
@@ -2327,7 +2987,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>2.6 GHz</p>
+														<p>2.6GHz</p>
 													</div>
 												</div>
 											</td>
@@ -2385,7 +3045,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>2.6 GHz</p>
+														<p>2.6GHz</p>
 													</div>
 												</div>
 											</td>
@@ -2443,7 +3103,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>2.6 GHz</p>
+														<p>2.6GHz</p>
 													</div>
 												</div>
 											</td>
@@ -2461,7 +3121,7 @@
 													<div class="paragraph">
 														<p>SA2.20XLARGE160</p>
 													</div>
-												</div>
+													</div>
 											</td>
 											<td class="tableblock halign-left valign-top">
 												<div>
@@ -2480,7 +3140,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>350,000</p>
+														<p>3,500,000</p>
 													</div>
 												</div>
 											</td>
@@ -2501,7 +3161,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>2.6 GHz</p>
+														<p>2.6GHz</p>
 													</div>
 												</div>
 											</td>
@@ -2517,7 +3177,8 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>SA2.22XLARGE224</p>
+														<p>SA2.22XLARGE224
+</p>
 													</div>
 												</div>
 											</td>
@@ -2538,7 +3199,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>375,000</p>
+														<p>3,750,000</p>
 													</div>
 												</div>
 											</td>
@@ -2559,7 +3220,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>2.6 GHz</p>
+														<p>2.6GHz</p>
 													</div>
 												</div>
 											</td>
@@ -2596,7 +3257,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>420,000</p>
+														<p>4,200,000</p>
 													</div>
 												</div>
 											</td>
@@ -2617,7 +3278,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>2.6 GHz</p>
+														<p>2.6GHz</p>
 													</div>
 												</div>
 											</td>
@@ -2654,7 +3315,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>560,000</p>
+														<p>5,600,000</p>
 													</div>
 												</div>
 											</td>
@@ -2675,7 +3336,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>2.6 GHz</p>
+														<p>2.6GHz</p>
 													</div>
 												</div>
 											</td>
@@ -2712,7 +3373,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>710,000</p>
+														<p>7,100,000</p>
 													</div>
 												</div>
 											</td>
@@ -2733,7 +3394,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>2.6 GHz</p>
+														<p>2.6GHz</p>
 													</div>
 												</div>
 											</td>
@@ -2791,7 +3452,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>2.6 GHz</p>
+														<p>2.6GHz</p>
 													</div>
 												</div>
 											</td>
@@ -2819,41 +3480,41 @@
 								<div class="sect2">
 									<h3 id="S4">Standard S4</h3>
 									<div class="paragraph">
-										<p>Standard S4 instances are a new generation of standard instances. This family provides a balance of computing, memory, and network resources, and it is a good choice for many applications.</p>
+										<p>S4 instances provide a balance of compute, memory, and network resources, making them ideal for many applications.</p>
 									</div>
 									<div class="paragraph">
-										<p>Standard S4 instances are equipped with the latest Xeon® Skylake processors with the latest DDR4 memory, default network optimization, private network throughput up to 6,000,000 pps, and support for up to 25 Gbps of private network bandwidth.</p>
+										<p>S4 instances come with new Xeon® Skylake processors with the latest DDR4 memory. They are network optimized by default, offering a private network throughput up to 6,000,000 pps, and support up to 25 Gbps of private network bandwidth.</p>
 									</div>
 									<div class="sect3">
 										<h4 id="_Features">Features</h4>
 										<div class="ulist">
 											<ul>
 												<li>
-													<p>2.4 GHz Intel Xeon® Skylake 6148 processors with stable computing performance</p>
+													<p>2.4 GHz Intel® Xeon® Skylake 6148 processor, offering stable computing performance</p>
 												</li>
 												<li>
 													<p>New Intel Advanced Vector Extension (AVX-512) instruction set</p>
 												</li>
 												<li>
-													<p>The latest generation of 6-channel DDR4 memory with a memory bandwidth of 2,666 MT/s</p>
+													<p>The latest generation of 6-channel DDR4 memory with a bandwidth of 2,666 MT/s</p>
 												</li>
 												<li>
-													<p>Larger instance size, S4.18XLARGE228, offering 72 vCPUs and 228 GB of memory</p>
+													<p>Higher specification, S4.18XLARGE228, offering 72 vCPUs and 228 GB memory</p>
 												</li>
 												<li>
-													<p>1:2 or 1:4 processor to memory ratio.</p>
+													<p>1:2 or 1:4 processor to memory ratio</p>
 												</li>
 												<li>
-													<p>Supports up to 25 Gbps of private network bandwidth for ultra-high packet throughput to meet the needs of extremely high private network transmission demand</p>
+													<p>Supports up to 25 Gbps of private network bandwidth for ultra-high packet throughput to meet extremely high private network transmission requirements</p>
 												</li>
 												<li>
-													<p>The network performance of an instance is determined by its specification. A higher specification means a greater network forwarding performance and a higher maximum private network bandwidth limit.</p>
+													<p>The network performance of an instance depends on its specification. A higher specification means a greater network forwarding performance and a higher private network bandwidth cap.</p>
 												</li>
 											</ul>
 										</div>
 									</div>
 									<div class="sect3">
-										<h4 id="Application Scenarios">Application Scenarios</h4>
+										<h4 id="_Application Scenarios">Application Scenarios</h4>
 										<div class="paragraph">
 											<p>Standard S4 instances are applicable to the following scenarios:</p>
 										</div>
@@ -2869,7 +3530,7 @@
 													<p>Computing clusters, memory-intensive data processing</p>
 												</li>
 												<li>
-													<p>Scenarios that require sending and receiving massive network packets, such as video on-screen comments, live video broadcasting, and gaming</p>
+													<p>Scenarios that require massive send/receive network packets, such as on-screen comments, live video broadcasting, and gaming</p>
 												</li>
 											</ul>
 										</div>
@@ -2879,19 +3540,19 @@
 										<div class="ulist">
 											<ul>
 												<li>
-													<p>S4 instances are pay-as-you-go.</p>
+													<p>Supports pay-as-you-go.</p>
 												</li>
 												<li>
-													<p>S4 instances can only be launched in a VPC.</p>
+													<p>Supports only VPC.</p>
 												</li>
 												<li>
-													<p>Configuration purchase is available for S4 instances. Please see the instance specifications below. Make sure that the size of the S4 instance you choose meet the minimum CPU memory requirements of your operating system and applications. In many cases, GUI operating systems (such as Windows) that consume extensive memory and CPU resources may need larger instances. As the needs of your workload for memory and CPU increase, you can expand to higher configurations or choose other instance types.</p>
+													<p>See below for available S4 instance specifications. Make sure that the instance specification you choose meet the minimum CPU memory requirements of your operating system and applications. In many cases, GUI operating systems (such as Windows) that consume extensive memory and CPU resources may need higher specifications. As the needs of your workload for memory and CPU increase, you can choose higher configurations or other instance types.</p>
 												</li>
 											</ul>
 										</div>
 									</div>
 									<div class="sect3">
-										<h4 id="__a_href_instancetype_Back to Top_a">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back to Top</a></h4>
+										<h4 id="__a_href_instancetype_Back To Top_a">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back To Top</a></h4>
 									</div>
 								</div>
 							</div>
@@ -2930,35 +3591,35 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>Memory (GB)</p>
+														<p>Memory(GB)</p>
 													</div>
 												</div>
 											</td>
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>Send/receive packets (pps) (outbound and inbound)</p>
+														Send/receive packets (pps) (outbound and inbound)
 													</div>
 												</div>
 											</td>
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>Number of queues</p>
+														Number of queues
 													</div>
 												</div>
 											</td>
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>Private network bandwidth (Gbps) (outbound and inbound)</p>
+														Private network bandwidth (Gbps) (outbound and inbound)
 													</div>
 												</div>
 											</td>
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>CPU frequency</p>
+														CPU frequency
 													</div>
 												</div>
 											</td>
@@ -3016,7 +3677,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>2.4 GHz</p>
+														<p>2.4GHz</p>
 													</div>
 												</div>
 											</td>
@@ -3074,7 +3735,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>2.4 GHz</p>
+														<p>2.4GHz</p>
 													</div>
 												</div>
 											</td>
@@ -3132,7 +3793,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>2.4 GHz</p>
+														<p>2.4GHz</p>
 													</div>
 												</div>
 											</td>
@@ -3190,7 +3851,7 @@
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
-														<p>2.4 GHz</p>
+														<p>2.4GHz</p>
 													</div>
 												</div>
 											</td>
@@ -3208,7 +3869,7 @@
 													<div class="paragraph">
 														<p>S4.MEDIUM8</p>
 													</div>
-												</div></td>
+											</div></td>
 											<td class="tableblock halign-left valign-top"><div><div class="paragraph">
 											<p>2</p>
 											</div></div></td>
@@ -3225,7 +3886,7 @@
 											<p>1.5</p>
 											</div></div></td>
 											<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-											<p>2.4 GHz</p>
+											<p>2.4GHz</p>
 											</div></div></td>
 											<td class="tableblock halign-left valign-top"><div><div class="paragraph">
 											<p>-</p>
@@ -3251,7 +3912,7 @@
 											<p>1.5</p>
 											</div></div></td>
 											<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-											<p>2.4 GHz</p>
+											<p>2.4GHz</p>
 											</div></div></td>
 											<td class="tableblock halign-left valign-top"><div><div class="paragraph">
 											<p>-</p>
@@ -3277,7 +3938,7 @@
 											<p>1.5</p>
 											</div></div></td>
 											<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-											<p>2.4 GHz</p>
+											<p>2.4GHz</p>
 											</div></div></td>
 											<td class="tableblock halign-left valign-top"><div><div class="paragraph">
 											<p>-</p>
@@ -7082,19 +7743,21 @@
 </div></div></td>
 </tr>
 </tbody>
-</table></div></td>
+</table></div>
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note:</p><p>In the S1 instance list, "-" indicates that, for this specification, the send/receive packets and CPU clock rate are not guaranteed. If you have a strict performance requirement, please choose models with performance guarantee.</p>
+</blockquote>
+</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note:</p><p>Among standard S1 instances, "-" indicates that, for this specification, the network packet rate and server CPU performance are not guaranteed. If you have strict requirement on the performance, please choose models with performance guarantee. </p>
-</blockquote>
+
 <div class="sect1">
 <h2 id="M">Memory Optimized Instance Family</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Memory optimized instances feature large memory and are suitable for applications that require extensive memory operations, searches, and computations, such as high-performance databases and distributed memory caching.</p>
+<p>This family features a large memory. It is well suited for memory-intensive operations, searches, and applications, such as high-performance databases and distributed in-memory caching</p>
 </div>
 
 <table class="tableblock frame-none grid-all spread custom-style">
@@ -7106,36 +7769,14 @@
 <td class="tableblock halign-left valign-top"><div><div class="sect2">
 <h3 id="M5">Memory Optimized M5</h3>
 <div class="paragraph">
-<p>As the latest generation of memory optimized instances, Memory Optimized M5 instances are designed based on an all-new optimized virtualization platform to deliver fast, stable performance for processing large data sets in memory, and are the best choice for applications demanding high-memory computing.</p>
-</div>
-<div class="paragraph">
-<p>Memory Optimized M5 instances are equipped with the latest Xeon® Cascade Lake processors with the latest DDR4 memory. They are network optimized by default, and provide excellent private network throughput and bandwidth.</p>
-</div>
-<div class="sect3">
-<h4 id="Application Scenarios_8">Application Scenarios</h4>
-<div class="paragraph">
-<p>These instances are an ideal choice for:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Applications that require extensive memory operations, searches, and computations, such as high-performance databases and distributed memory caching.</p>
-</li>
-<li>
-<p>Users who build their own Hadoop clusters or Redis to use in fields such as computational genomics.</p>
-</li>
-<li>
-<p>Scenarios that require sending and receiving massive network packets, such as video on-screen comments, live video broadcasting, and gaming</p>
-</li>
-</ul>
-</div>
+<p>As the latest generation of memory optimized instances, M5 instances are powered by an all-new optimized virtualization platform and designed to deliver fast and stable performance for workloads that process large data sets in memory. They are ideal for applications that require high in-memory computing performance.</p>
 </div>
 <div class="sect3">
 <h4 id="_Features_8">Features</h4>
 <div class="ulist">
 <ul>
 <li>
-<p>2.5 GHz Intel® Xeon® Cascade Lake processor, with the latest generation 6-channel DDR4 memory for stable memory computing performance</p>
+<p>Intel<sup>®</sup> Xeon<sup>®</sup> Cascade Lake or Intel<sup>®</sup> Xeon<sup>®</sup> Cooper Lake processor, with a CPU clock rate of 2.5 GHz and turbo frequency of 3.1 GHz</p>
 </li>
 <li>
 <p>New Intel Advanced Vector Extension (AVX-512) instruction set</p>
@@ -7144,10 +7785,29 @@
 <p>1:8 processor to memory ratio</p>
 </li>
 <li>
-<p>Priced lower than any other memory-optimized instances with the same memory</p>
+<p>Lowest price per GB of memory among instance types</p>
 </li>
 <li>
-<p>The network performance of an instance is determined by its specification. A higher specification means a greater network forwarding performance and a higher maximum private network bandwidth limit.</p>
+<p>The network performance of an instance depends on its specification. A higher specification means a greater network forwarding performance and a higher private network bandwidth cap.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Application Scenarios_8">Application Scenarios</h4>
+<div class="paragraph">
+<p>These instances are ideal for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Applications that require memory-intensive operations, searches, and computations, such as high-performance databases and distributed in-memory caching</p>
+</li>
+<li>
+<p>Self-built Hadoop clusters or Redis for fields such as computational genomics</p>
+</li>
+<li>
+<p>Scenarios that require massive send/receive packets, such as on-screen comments, live video broadcasting, and gaming</p>
 </li>
 </ul>
 </div>
@@ -7163,13 +7823,13 @@
 <p>Supports only VPC.</p>
 </li>
 <li>
-<p>See below for available M5 specifications: </p>
+<p>See below for available M5 specifications:</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="__a_href_instancetype_Back to Top_a_8">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back to Top</a></h4>
+<h4 id="__a_href_instancetype_Back To Top_a_8">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back To Top</a></h4>
 
 </div>
 </div></div></td>
@@ -7178,6 +7838,7 @@
 <td class="tableblock halign-left valign-top"><div><table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 20%;">
+<col style="width: 10%;">
 <col style="width: 10%;">
 <col style="width: 10%;">
 <col style="width: 10%;">
@@ -7240,7 +7901,7 @@
 <p>1.5</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
+<p>2.5GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -7269,7 +7930,7 @@
 <p>1.5</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
+<p>2.5GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -7298,7 +7959,7 @@
 <p>1.5</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
+<p>2.5GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -7321,13 +7982,12 @@
 <p>250,000</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2</p>
-</div></div></td>
+<p>2</p></div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>3.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
+<p>2.5GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -7356,7 +8016,7 @@
 <p>5.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
+<p>2.5GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -7385,7 +8045,7 @@
 <p>6.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
+<p>2.5GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -7414,17 +8074,48 @@
 <p>12.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
+<p>2.5GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
 </div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>M5.16XLARGE512</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>64</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>512</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>5,000,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>1,200,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>16</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>23.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2.5GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div>
+</td>
 </tr>
 </tbody>
 </table></div></td>
 </tr>
 </tbody>
 </table>
+
 
 <table class="tableblock frame-none grid-all spread custom-style">
 <colgroup>
@@ -7435,10 +8126,10 @@
 <td class="tableblock halign-left valign-top"><div><div class="sect2">
 <h3 id="M4">Memory Optimized M4</h3>
 <div class="paragraph">
-<p>As the new generation of memory optimized instances, Memory Optimized M4 instances are designed to deliver high performance for processing large data sets in memory, and are the best choice for applications demanding high-memory computing.</p>
+<p>M4 instances are designed to deliver fast performance for workloads that process large data sets in memory. They are ideal for applications that require high in-memory computing performance.</p>
 </div>
 <div class="paragraph">
-<p>Memory Optimized M4 instances are equipped with the latest Xeon® Skylake processors with the latest DDR4 memory, default network optimization, private network throughput up to 6,000,000 pps, and ultra-high private network bandwidth.</p>
+<p>As a new generation of memory optimized instances, M4 instances come with new Xeon® Skylake processors with the latest DDR4 memory. They are network optimized by default, offering a private network throughput up to 6,000,000 pps, and support for ultra-high private network bandwidth.</p>
 </div>
 <div class="sect3">
 <h4 id="Application Scenarios_8">Application Scenarios</h4>
@@ -7464,20 +8155,19 @@
 <div class="ulist">
 <ul>
 <li>
-<p>2.4 GHz Intel Xeon® Skylake 6148 processors with stable computing performance</p>
+<p>2.4 GHz Intel® Xeon® Skylake 6148 processor, offering stable computing performance</p>
 </li>
 <li>
 <p>New Intel Advanced Vector Extension (AVX-512) instruction set</p>
 </li>
 <li>
-<p>The latest generation of 6-channel DDR4 memory with a bandwidth of 2,666 MT/sec</p>
+<p>The latest generation of 6-channel DDR4 memory with a bandwidth of 2,666 MT/s</p>
 </li>
 <li>
-<p>Larger instance size is M4.16XLARGE512, offering 64 vCPUs and 512 GB of memory</p>
+<p>Higher specification, M4.16XLARGE512, offering 64 vCPUs and 512 GB memory</p>
 </li>
 <li>
 <p>1:8 or 1:12 processor to memory ratio</p>
-</li>
 <li>
 <p>Priced lower than any other memory-optimized instances with the same memory</p>
 </li>
@@ -7498,7 +8188,7 @@
 <p>Supports only VPC.</p>
 </li>
 <li>
-<p>See below for available M4 specifications: </p>
+<p>See below for available M4 specifications:</p>
 </li>
 </ul>
 </div>
@@ -7568,7 +8258,7 @@
 <p>1.5</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -7594,7 +8284,7 @@
 <p>1.5</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -7620,7 +8310,7 @@
 <p>1.5</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -7646,7 +8336,7 @@
 <p>3.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -7672,7 +8362,7 @@
 <p>4.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -7698,7 +8388,7 @@
 <p>4.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -7724,7 +8414,7 @@
 <p>6.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -7750,7 +8440,7 @@
 <p>6.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -7776,7 +8466,7 @@
 <p>11.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -7802,7 +8492,7 @@
 <p>11.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -7828,7 +8518,7 @@
 <p>22.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -7854,7 +8544,7 @@
 <p>24.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -7865,6 +8555,7 @@
 </tr>
 </tbody>
 </table>
+
 <table class="tableblock frame-none grid-all spread custom-style">
 <colgroup>
 <col style="width: 100%;">
@@ -7874,10 +8565,10 @@
 <td class="tableblock halign-left valign-top"><div><div class="sect2">
 <h3 id="M3">Memory Optimized M3</h3>
 <div class="paragraph">
-<p>As a relatively new generation of memory optimized instances, Memory Optimized M3 instances are designed to deliver high performance for processing large data sets in memory, and are the best choice for applications demanding high-memory computing.</p>
+<p>M3 instances are designed to deliver fast performance for workloads that process large data sets in memory. They are ideal for applications that require high in-memory computing performance.</p>
 </div>
 <div class="paragraph">
-<p>Memory Optimized M3 instances are equipped with the latest Xeon® Skylake processors with the latest DDR4 memory and support for up to 10 Gbps of private network bandwidth.</p>
+<p>M3 instances are powered by new Intel® Xeon® Skylake processors with the latest DDR4 memory, and support up to 10 Gbps of private network bandwidth.</p>
 </div>
 <div class="sect3">
 <h4 id="Application Scenarios_9">Application Scenarios</h4>
@@ -7900,13 +8591,13 @@
 <div class="ulist">
 <ul>
 <li>
-<p>2.5 GHz Intel Xeon® Skylake 6133 processors with stable computing performance</p>
+<p>2.5 GHz Intel® Xeon® Skylake 6133 processor, offering stable computing performance</p>
 </li>
 <li>
 <p>The latest generation of 6-channel DDR4 memory with a bandwidth of 2,666 MT/sec</p>
 </li>
 <li>
-<p>Larger instance size is M3.16XLARGE512, offering 64 vCPUs and 512 GB of memory</p>
+<p>Higher specification, M3.16XLARGE512, offering 64 vCPUs and 512 GB memory</p>
 </li>
 <li>
 <p>1:8 or 1:12 processor to memory ratio</p>
@@ -8079,7 +8770,7 @@
 <p>1.5</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
+<p>2.5GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -8281,14 +8972,15 @@
 <td class="tableblock halign-left valign-top"><div><div class="sect2">
 <h3 id="M2">Memory Optimized M2</h3>
 <div class="paragraph">
-<p>Memory Optimized M2 instances are designed to deliver high performance for processing large data sets in memory. They feature large memory, which makes them the perfect choice for applications demanding high memory computing.</p>
+<p>M2 instances are designed to deliver fast performance for workloads that process large data sets in memory. They feature a large memory, making them ideal for applications that require high in-memory computing performance.</p>
 </div>
 <div class="sect3">
 <h4 id="Application Scenarios_10">Application Scenarios</h4>
 <div class="paragraph">
-<p>These instances are an ideal choice for:<ul>
-<li>Applications that require extensive memory operations, searches, and computations, such as high-performance databases and distributed memory caching.</li>
-<li>Users who build their own Hadoop clusters or Redis to use in fields such as computational genomics.</li>
+<p>These instances are ideal for:</p>
+<ul>
+<li><p>Applications that require extensive memory operations, searches, and computations, such as high-performance databases and distributed memory caching.</p></li>
+<li><p>Users who build their own Hadoop clusters or Redis to use in fields such as computational genomics.</p></li>
 </ul>
 </p>
 </div>
@@ -8298,10 +8990,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>2.4 GHz Intel Xeon® E5-2680v4 processors, DDR4 memory</p>
+<p>2.4 GHz Intel® Xeon® E5-2680v4 processor with DDR4 memory</p>
 </li>
 <li>
-<p>Up to 448 GB memory available. M2.14XLARGE448, offering 56 vCPUs and 448 GB of memory</p>
+<p>Memory of up to 448 GB is available. The M2.14XLARGE448 model offers 56 vCPUs and 448 GB memory</p>
 </li>
 <li>
 <p>1:8 processor to memory ratio</p>
@@ -8317,10 +9009,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>M2 instances are pay-as-you-go, and can also be used as production instances of memory optimized host HM20 in CDHs.</p>
+<p>M2 instances are pay-as-you-go. They can also be used as production instances of memory optimized host HM20 in CDHs.</p>
 </li>
 <li>
-<p>Supports both classic network and VPC.</p>
+<p>Supports only VPC.</p>
 </li>
 <li>
 <p>See below for available M2 specifications: </p>
@@ -8549,7 +9241,7 @@
 <p>4.5</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -8575,7 +9267,7 @@
 <p>6.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -8601,7 +9293,7 @@
 <p>9.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -8627,7 +9319,7 @@
 <p>10.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -8647,33 +9339,28 @@
 <td class="tableblock halign-left valign-top"><div><div class="sect2">
 <h3 id="M1">Memory Optimized M1</h3>
 <div class="paragraph">
-<p>Memory Optimized M1 instances come with approximately 1:8 CPU to memory ratio. They are well-suited for applications that require extensive memory operations, searches, and computations, such as high-performance databases and distributed memory caching.</p>
+<p>M1 instances come with approximately 1:8 CPU to memory ratio. They are well suited for applications that require memory-intensive operations, searches, and computations, such as high-performance databases and distributed in-memory caching.</p>
 </div>
 <div class="sect3">
 <h4 id="_Features_11">Features</h4>
 <div class="ulist">
-<ul>
-<li>
-<p>2.3 GHz Intel Xeon® E5-2670 v3 processors and DDR3 memories, providing larger-sized instances with stronger computing capacities.</p>
-</li>
-<li>
-<p>Memory-intensive with a golden CPU to memory ratio, satisfying the needs for large-scale business deployment.</p>
-</li>
+<li><p>2.3 GHz Intel Xeon® E5-2670 v3 processor with DDR3 memory, providing more instance sizes with stronger computing capacities</p></li>
+<li><p>Golden CPU to memory ratio for memory-intensive applications, satisfying the needs for large-scale business deployment</p></li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="Application Scenarios_11">Application Scenarios</h4>
+<h4 id="_Application Scenarios_11">Application Scenarios</h4>
 <div class="paragraph">
-<p>These instances are an ideal choice for:</p>
+<p>These instances are ideal for:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Applications that require extensive memory operations, searches, and computations, such as high-performance databases and distributed memory caching.</p>
+<p>Applications that require memory-intensive operations, searches, and computations, such as high-performance databases and distributed in-memory caching</p>
 </li>
 <li>
-<p>Users who build their own Hadoop clusters or Redis to use in fields such as computational genomics.</p>
+<p>Self-built Hadoop clusters or Redis for fields such as computational genomics</p>
 </li>
 </ul>
 </div>
@@ -8688,17 +9375,13 @@
 <li>
 <p>Supports both classic network and VPC.</p>
 </li>
-<li>
-<p>&quot;-&quot; indicates that, for this specification, the network packet rate and server CPU performance are not guaranteed. If you have strict requirement on the performance, please choose models with performance guarantee.</p>
-</li>
-<li>
-<p>See below for available M1 specifications: </p>
-</li>
+<li><p>In the M1 instance list, "-" indicates that, for this specification, the send/receive packets and CPU clock rate are not guaranteed. If you have a strict performance requirement, please choose models with performance guarantee.</p></li>
+<li><p>See below for available M1 specifications:</p></li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="__a_href_instancetype_Back to Top_a_11">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back to Top</a></h4>
+<h4 id="__a_href_instancetype_Back To Top_a_11">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back To Top</a></h4>
 
 </div>
 </div></div></td>
@@ -8762,7 +9445,7 @@
 <p>1.5</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.3 GHz</p>
+<p>2.3GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -8788,7 +9471,7 @@
 <p>1.5</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.3 GHz</p>
+<p>2.3GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -8814,7 +9497,7 @@
 <p>1.5</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.3 GHz</p>
+<p>2.3GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -8840,7 +9523,7 @@
 <p>2.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.3 GHz</p>
+<p>2.3GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -8866,7 +9549,7 @@
 <p>2.5</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.3 GHz</p>
+<p>2.3GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -8892,7 +9575,7 @@
 <p>3.5</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.3 GHz</p>
+<p>2.3GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -8918,7 +9601,7 @@
 <p>5.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.3 GHz</p>
+<p>2.3GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -8944,7 +9627,7 @@
 <p>7.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.3 GHz</p>
+<p>2.3GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
@@ -8970,48 +9653,50 @@
 <p>10.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.3 GHz</p>
+<p>2.3GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>-</p>
 </div></div></td>
 </tr>
 </tbody>
-</table></div></td>
+</table></div>
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note:</p><p>In the M1 instance list, "-" indicates that, for this specification, the send/receive packets and CPU clock rate are not guaranteed. If you have a strict performance requirement, please choose models with performance guarantee.</p>
+</blockquote>
+</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<div><blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note: </p><p>Among M1 instances, "-" indicates that, for this specification, the network packet rate is not guaranteed. If you have strict requirement on the performance, please choose models with performance guarantee.  </p>
-</blockquote></div>
-
 <div class="sect1">
-<h2 id="I">High I/O Instance Family</h2>
+<h2 id="I">High I/O Family</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>High I/O instances feature high random IOPS, high throughput and low latency and are well-suited for I/O-intensive applications that require high disk read/write performance and low latency, such as high-performance databases.</p>
+<p>This family features high random IOPS, high throughput and low latency, making it suitable for I/O-intensive applications that require high disk read/write performance and low latency, such as high-performance databases.</p>
 </div>
 <table class="tableblock frame-none grid-all spread custom-style">
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note：</p><p>IT3 and IT5 instances use local disk as the data disk, which may lose data (e.g., when the host crashes). If your application cannot guarantee data reliability, we recommend you choose an instance that can use cloud disks as the data disk.</p>
+</blockquote>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div><div class="sect2">
 <h3 id="IT5">High I/O IT5</h3>
 <div class="paragraph">
-<p>High I/O IT5 instances, based on NVMe SSD instance storage, are the latest high I/O instances designed for I/O-intensive workloads. They come with the storage resources featuring low latency, ultra-high IOPS and high throughput. They offer an IOPS of up to 2.05 million and a throughput reaching up to 11 GB/s, allowing for an ultra-high IOPS at a low cost. This instance type is suitable for I/O-intensive applications such as high performance relational databases, Elasticsearch, etc.</p>
+<p>IT5 instances, based on NVMe SSD storage, are designed for I/O-intensive workloads. They come with storage resources featuring low latency, ultra-high IOPS and high throughput. They offer an IOPS of up to 2.05 million and a throughput of up to 11 GB/s, allowing for an ultra-high IOPS at a low cost. This instance type is suitable for I/O-intensive applications including high-performance relational databases, Elasticsearch, etc.</p>
 </div>
 <div class="sect3">
-<h4 id="Application Scenarios_13">Application Scenarios</h4>
+<h4 id="_Application Scenarios_13">Application Scenarios</h4>
 <div class="ulist">
 <ul>
 <li>
 <p>High-performance databases, NoSQL databases (e.g. MongoDB), and clustered databases</p>
 </li>
 <li>
-<p>I/O intensive applications that require low latency, such as online transaction processing (OLTP) systems, and Elasticsearch.</p>
+<p>I/O intensive applications that require low latency, such as online transaction processing (OLTP) systems, and Elasticsearch</p>
 </li>
 </ul>
 </div>
@@ -9021,7 +9706,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>2.5 GHz Intel® Xeon® Cascade Lake processors with stable computing performance</p>
+<p>2.5 GHz Intel® Xeon® Cascade Lake processor, offering stable computing performance</p>
 </li>
 <li>
 <p>The latest generation of 6-channel DDR4 memory</p>
@@ -9031,8 +9716,8 @@
 </li>
 <li><p>NVMe SSD is used for instance storage, offering low latency and ultra-high IOPS</p>
 <ul>
-<li><p>Up to 650,000 (4 KB block size) random read IOPS, and up to 2.8 GB/s (128 KB block size) sequential read throughout for a single disk</p></li>
-<li><p>Up to 2.05 million (4 KB block size) random read IOPS, and up to 11 GB/s (128 KB block size) sequential read throughout for a CVM.</p></li>
+<li><p>Up to 650,000 random read IOPS (block size of 4 KB), and up to 2.8 GB/s sequential read throughput (block size of 128 KB) for a single disk</p></li>
+<li><p>Up to 2.05 million random read IOPS (block size of 4 KB), and up to 11 GB/s sequential read throughput (block size of 128 KB) for a CVM</p></li>
 </ul>
 </li>
 </ul>
@@ -9042,14 +9727,11 @@
 <h4 id="_Requirements_13">Requirements</h4>
 <div class="ulist">
 <ul>
-<li>
-<p>IT5 instances use local disks as data disks, which may lead to a risk of data loss (in case of host crash). If your application does not have a data reliability architecture, we strongly recommend choosing instances using cloud disks as data disks.</p>
-<ul>
 <li><p>If the local disk is damaged, you will need to shut down the CVM instance for us to replace the local disk.</p></li>
-<li><p>We will notify you and perform fixes if the CVM instance crashes.</p></li>
-</ul>
+<li><p>If the CVM instance crashes, we will notify you and perform fixes.</p></li>
 </li>
-<li><p>If Agent has not been installed, your CVM instance cannot be monitored. You will not receive a notification if the CVM instance fails, which is very risky. For more information on installing Agent, see <a href="https://intl.cloud.tencent.com/document/product/248/6211">Installing CVM Agents</a>.</p></li><li>
+<li><p>If Agent has not been installed, IT5 instances cannot be monitored. You will not receive a notification when the CVM instance fails, which is very risky. For more information about how to install Agent, see <a href="https://intl.cloud.tencent.com/document/product/248/6211">Installing CVM Agents</a>.</p></li>
+<li>
 <p>Supports pay-as-you-go.</p>
 </li>
 <li>
@@ -9059,13 +9741,13 @@
 <p>The configuration of IT5 instances cannot be changed.</p>
 </li>
 <li>
-<p>See below for available IT5 specifications: </p>
+<p>See below for available IT5 specifications:</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="__a_href_instancetype_Back to Top_a_13">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back to Top</a></h4>
+<h4 id="__a_href_instancetype_Back to Top_a_11">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back to Top</a></h4>
 </div>
 </div></div></td>
 </tr>
@@ -9128,10 +9810,10 @@
 <p>6</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
+<p>2.5GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1 x 3570 GB NVMe local NVMe SSD</p>
+<p>1 x 3570 GB local NVMe SSD</p>
 </div></div></td>
 </tr>
 <tr>
@@ -9154,10 +9836,10 @@
 <p>12</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
+<p>2.5GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2 x 3570 GB local NVMe SSD</p>
+<p>2 x 3570 GB local NVMe SSDs</p>
 </div></div></td>
 </tr>
 <tr>
@@ -9180,10 +9862,10 @@
 <p>23</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
+<p>2.5GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>4 x 3570 GB local NVMe SSD</p>
+<p>4 x 3570 GB local NVMe SSDs</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -9200,20 +9882,20 @@
 <td class="tableblock halign-left valign-top"><div><div class="sect2">
 <h3 id="IT3">High I/O IT3</h3>
 <div class="paragraph">
-<p>High I/O IT3 instances, based on NVMe SSD instance storage, are designed for I/O-intensive workloads. They come with the storage resources featuring low latency, super high IOPS and high throughput. They offer an IOPS of up to 1.8 million and a throughput reaching up to 11 GB/s, allowing for an ultra high IOPS at a low cost. This instance type is suitable for I/O-intensive workloads such as high performance relational databases, Elasticsearch, etc.</p>
+<p>IT3 instances, based on NVMe SSD storage, are designed for I/O-intensive workloads. They come with storage resources featuring low latency, ultra-high IOPS and high throughput. They offer an IOPS of up to 1.8 million and a throughput of up to 11 GB/s, allowing for an ultra-high IOPS at a low cost. This instance type is suitable for I/O-intensive applications including high-performance relational databases, Elasticsearch, etc.</p>
 </div>
 <div class="paragraph">
-<p>IT3 instances feature inexpensive and intensive storage, providing higher IOPS and larger private network bandwidth for each CPU core.</p>
+<p>IT3 instances feature inexpensive and intensive storage. They can provide each CPU core with higher IOPS and larger private network bandwidth.</p>
 </div>
 <div class="sect3">
-<h4 id="Application Scenarios_13">Application Scenarios</h4>
+<h4 id="_Application Scenarios_13">Application Scenarios</h4>
 <div class="ulist">
 <ul>
 <li>
 <p>High-performance databases, NoSQL databases (e.g. MongoDB), and clustered databases</p>
 </li>
 <li>
-<p> I/O intensive applications that require low latency, such as online transaction processing (OLTP) systems, and Elasticsearch.</p>
+<p>I/O intensive applications that require low latency, such as online transaction processing (OLTP) systems, and Elasticsearch</p>
 </li>
 </ul>
 </div>
@@ -9223,7 +9905,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>2.5 GHz Intel Xeon® Skylake 6133 processors with stable computing performance</p>
+<p>2.5 GHz Intel® Xeon® Skylake 6133 processor, offering stable computing performance</p>
 </li>
 <li>
 <p>The latest generation of 6-channel DDR4 memory</p>
@@ -9233,8 +9915,8 @@
 </li>
 <li><p>NVMe SSD is used for instance storage, offering low latency and ultra-high IOPS</p>
 <ul>
-<li><p>Up to 620,000 (4 KB block size) random read IOPS, and up to 2.9 GB/s (128 KB block size) sequential read throughout for a single disk</p></li>
-<li><p>Up to 1.8 million (4 KB block size) random read IOPS, and up to 11 GB/s (128 KB block size) sequential read throughout for a CVM.</p></li>
+<li><p>Up to 620,000 random read IOPS (block size of 4 KB), and up to 2.9 GB/s sequential read throughput (block size of 128 KB) for a single disk</p></li>
+<li><p>Up to 1.8 million random read IOPS (block size of 4 KB), and up to 11 GB/s sequential read throughput (block size of 128 KB) for a CVM</p></li>
 </ul>
 </li>
 </ul>
@@ -9244,14 +9926,11 @@
 <h4 id="_Requirements_13">Requirements</h4>
 <div class="ulist">
 <ul>
-<li>
-<p> IT3 instances use local disks as data disks, which may lead to a risk of data loss (in case of host crash). If your application does not have a data reliability architecture, we strongly recommend choosing instances using cloud disks as data disks.</p>
-<ul>
 <li><p>If the local disk is damaged, you will need to shut down the CVM instance for us to replace the local disk.</p></li>
-<li><p>We will notify you and perform fixes if the CVM instance crashes.</p></li>
-</ul>
+<li><p>If the CVM instance crashes, we will notify you and perform fixes.</p></li>
 </li>
-<li><p>If Agent has not been installed, your CVM instance cannot be monitored. You will not receive a notification if the CVM instance fails, which is very risky. For more information on installing Agent, see <a href="https://intl.cloud.tencent.com/document/product/248/6211">Installing CVM Agents</a>.</p></li><li>
+<li><p>If Agent has not been installed, IT3 instances cannot be monitored. You will not receive a notification when the CVM instance fails, which is very risky. For more information about how to install Agent, see <a href="https://intl.cloud.tencent.com/document/product/248/6211">Installing CVM Agents</a>.</p></li>
+<li>
 <p>Supports pay-as-you-go.</p>
 </li>
 <li>
@@ -9261,13 +9940,13 @@
 <p>The configuration of IT3 instances cannot be changed.</p>
 </li>
 <li>
-<p>See below for available IT3 specifications: </p>
+<p>See below for available IT3 specifications:</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="__a_href_instancetype_Back to Top_a_13">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back to Top</a></h4>
+<h4 id="__a_href_instancetype_Back To Top_a_13">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back To Top</a></h4>
 </div>
 </div></div></td>
 </tr>
@@ -9330,7 +10009,7 @@
 <p>6</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
+<p>2.5GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>1 × 3720 GB local NVMe SSD</p>
@@ -9356,10 +10035,10 @@
 <p>12</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
+<p>2.5GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2 × 3720 GB local NVMe SSD</p>
+<p>2 × 3720 GB local NVMe SSDs</p>
 </div></div></td>
 </tr>
 <tr>
@@ -9382,10 +10061,10 @@
 <p>23</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
+<p>2.5GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>4 × 3720 GB local NVMe SSD</p>
+<p>4 × 3720 GB local NVMe SSDs</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -9396,35 +10075,38 @@
 </div>
 </div>
 
+
 <div class="sect1">
-<h2 id="D">Big Data Instance Family</h2>
+<h2 id="D">Big Data Family</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The big data instance family is equipped with massive storage resources, features high throughput, and is suitable for throughput-intensive applications such as Hadoop distributed computing, massive log processing, distributed file systems, and large data warehouses.</p>
+<p>The big data family is equipped with massive storage resources, features high throughput, and is suitable for throughput-intensive applications such as Hadoop distributed computing, massive log processing, distributed file systems, and large data warehouses.</p>
 </div>
 <table class="tableblock frame-none grid-all spread custom-style">
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note：</p><p> D3 and D2 instances use local disk as the data disk, which may lose data (e.g., when the host crashes). If your application cannot guarantee data reliability, we recommend you choose an instance that can use cloud disks as the data disk.</p>
+</blockquote>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div><div class="sect2">
-<h3 id="D2">Big Data D2</h3>
+<h3 id="D3">Big Data D3</h3>
 <div class="paragraph">
-<p>Big Data D2 instances are equipped with massive storage resources, and carry up to 144 TB SATA HDD local storage, making them suitable for throughput-intensive services, such as Hadoop distributed computing and parallel data processing.</p>
+<p>As the latest generation of big data instances, D3 instances are equipped with massive storage resources, and carry up to 94 TB SATA HDD local storage, making them suitable for throughput-intensive services, such as Hadoop distributed computing and parallel data processing.</p>
 </div>
 <div class="sect3">
-<h4 id="Application Scenarios_15">Application Scenarios</h4>
+<h4 id="_Application Scenarios_15">Application Scenarios</h4>
 <div class="ulist">
 <ul>
 <li>
-<p>Distributed computing services such as Hadoop MapReduce/HDFS/Hive/HBase.</p>
+<p>Distributed computing services such as Hadoop MapReduce/HDFS/Hive/HBase</p>
 </li>
 <li>
-<p>Workloads such as Elasticsearch, log processing, and large data warehouse.</p>
+<p>Business scenarios such as Elasticsearch, log processing, and large data warehouse</p>
 </li>
 <li>
-<p>Customers in the Internet, finance, and other industries who require big data computing and storage analysis, as well as workloads requiring massive data storage and computing.</p>
+<p>Internet, finance, and industries that require big data computing and storage analysis, as well as applications that require massive data storage and computing</p>
 </li>
 </ul>
 </div>
@@ -9434,32 +10116,295 @@
 <div class="ulist">
 <ul>
 <li>
-<p>2.4 GHz Intel Xeon® Skylake 6148 processors with DDR4 memory</p>
+<p>2.5 GHz Intel<sup>®</sup> Xeon<sup>®</sup> Cascade Lake processor with DDR4 memory</p>
 </li>
 <li>
-<p>Instances come with up to 12 local disks of 12 TB in size and are equipped with up to 144 TB of HDD local storage</p>
+<p>Instances carry up to 24 local disks of 4 TB and up to 94 TB of HDD local storage.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>For a single disk, the sequential read throughput is 220+ MB/s, and sequential write throughput is 220+ MB/s (128 KB block size and depth of 32)</p>
+<p>At least 190 MB/s sequential read throughput performance for a single disk</p>
 </li>
 <li>
-<p>For the CVM, the throughput can reach up to 2.8 GB/s (128 KB block size and depth of 32).</p>
-</li>
-<li>
-<p>The read/write delay is as low as 2-5 ms.</p>
+<p>Millisecond read/write latency</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Larger instance size, D2.19XLARGE320, offering 76 vCPUs and 320 GB of memory</p>
+<p>Processor to memory ratio 1:4, tailored for the big data scenarios</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Requirements_15">Requirements</h4>
+<div class="ulist">
+<ul>
+<li><p>If the local disk is damaged, you will need to shut down the CVM instance for us to replace the local disk.</p></li>
+<li><p>We will notify you and perform fixes if the CVM instance crashes.</p></li>
+<li><p>If Agent has not been installed, D3 instances cannot be monitored. You will not receive a notification when the CVM instance fails, which is very risky. For more information about how to install Agent, see <a href="https://intl.cloud.tencent.com/document/product/248/6211">Installing CVM Agents</a>.</p></li>
+<li><p>Supports pay-as-you-go.</p></li>
+<li><p>Supports only VPC.</p></li>
+<li><p>The configuration of D3 instances cannot be changed.</p></li>
+<p>See below for available D3 specifications:</p>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="__a_href_instancetype_Back To Top_a_15">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back To Top</a></h4>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 5%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 5%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Specification</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>vCPU</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Memory (GB)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Send/receive packets (pps) (outbound and inbound)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Connections</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Number of queues</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Private network bandwidth (Gbps) (outbound and inbound)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>CPU frequency</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Notes</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>D3.2XLARGE32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>800,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>250,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>4.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2.5GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>4 x 3720 GB local SATA HDDs</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>D3.4XLARGE64</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>16</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>64</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>1,500,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>300,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>4</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>7.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2.5 GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>8 x 3720 GB local SATA HDDs</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>D3.8XLARGE128</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>128</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2,500,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>600,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>14.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2.5 GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>12 x 3720 GB local SATA HDDs</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>D3.16XLARGE256</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>64</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>256</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>5,000,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>1,200,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>12</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>27.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2.5GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>24 x 3720 GB local SATA HDDs</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>D3.21XLARGE320</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>84</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>320</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>6,000,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>1,600,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>16</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>32.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2.5 GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>24 x 3720 GB local SATA HDDs</p>
+</div></div></td>
+</tr>
+</tbody>
+</table></div></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-none grid-all spread custom-style">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="sect2">
+<h3 id="D2">Big Data D2</h3>
+<div class="paragraph">
+<p>D2 instances are equipped with massive storage resources, and carry up to 144 TB SATA HDD local storage, making them suitable for throughput-intensive services, such as Hadoop distributed computing and parallel data processing.</p>
+</div>
+<div class="sect3">
+<h4 id="_Application Scenarios_15">Application Scenarios</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Distributed computing services such as Hadoop MapReduce/HDFS/Hive/HBase</p>
 </li>
 <li>
-<p>The unit price of local storage is as low as 1/10 of that of S2. The total cost is similar to that of Hadoop clusters built in IDC.</p>
+<p>Business scenarios such as Elasticsearch, log processing, and large data warehouse</p>
 </li>
 <li>
-<p>The 1:4 processor to memory ratio is tailored for the big data scenarios.</p>
+<p>Internet, finance, and industries that require big data computing and storage analysis, as well as applications that require massive data storage and computing</p>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Features_15">Features</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>2.4 GHz Intel® Xeon® Skylake 6148 processor with DDR4 memory</p>
+</li>
+<li>
+<p>Instances carry up to 12 local disks of 12 TB and up to 144 TB of HDD local storage</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For a single disk, the sequential read throughput is 220+ MB/s and sequential write throughput is 220+ MB/s (128 KB block size and depth of 32)</p>
+<li>
+<p>For the CVM, the throughput can reach up to 2.8 GB/s (block size of 128 KB and queue depth of 32).</p>
+</li>
+<li>
+<p>Read/write latency is as low as 2-5 ms</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Higher specification, D2.19XLARGE320, offering 76 vCPUs and 320 GB of memory</p>
+</li>
+<li>
+<p>Local storage with a unit price as low as 1/10 of S2, making its total cost close to that of a self-built Hadoop clusters in IDC</p>
+</li>
+<li>
+<p>Processor to memory ratio 1:4, tailored for the big data scenarios</p>
 </li>
 </ul>
 </div>
@@ -9469,17 +10414,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Big Data D2 instances use local disks as data disks, which may lead to a risk of data loss (in case of host crash). If your application does not have a data reliability architecture, we strongly recommend choosing instances using cloud disks as data disks.</p>
-<div class="ulist">
-<ul>
-<li>
 <p>If the local disk is damaged, you will need to shut down the CVM instance for us to replace the local disk.</p>
 </li>
 <li>
-<p>We will notify you and perform fixes if the CVM instance crashes.</p>
-</li>
-</ul>
-</div>
+<p>If the CVM instance crashes, we will notify you and perform fixes.</p>
 </li>
 <li>
 <p>Supports pay-as-you-go.</p>
@@ -9491,14 +10429,13 @@
 <p>The configuration of D2 instances cannot be changed.</p>
 </li>
 <li>
-<p>See below for available D2 specifications: </p>
+<p>See below for available D2 specifications:</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="__a_href_instancetype_Back to Top_a_15">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back to Top</a></h4>
-
+<h4 id="__a_href_instancetype_Back To Top_a_15">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back To Top</a></h4>
 </div>
 </div></div></td>
 </tr>
@@ -9561,10 +10498,10 @@
 <p>3.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Equipped with one 11176 GB SATA HDD local disk</p>
+<p>1 x 11176 GB local SATA HDD</p>
 </div></div></td>
 </tr>
 <tr>
@@ -9587,10 +10524,10 @@
 <p>6.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Equipped with two 11176 GB SATA HDD local disks</p>
+<p>2 x 11176 GB local SATA HDDs</p>
 </div></div></td>
 </tr>
 <tr>
@@ -9613,10 +10550,10 @@
 <p>8.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Equipped with three 11176 GB SATA HDD local disks</p>
+<p>3 x 11176 GB local SATA HDDs</p>
 </div></div></td>
 </tr>
 <tr>
@@ -9639,10 +10576,10 @@
 <p>11.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Equipped with four 11176 GB SATA HDD local disks</p>
+<p>4 x 11176 GB local SATA HDDs</p>
 </div></div></td>
 </tr>
 <tr>
@@ -9665,10 +10602,10 @@
 <p>22.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Equipped with eight 11176 GB SATA HDD local disks</p>
+<p>8 x 11176 GB local SATA HDDs</p>
 </div></div></td>
 </tr>
 <tr>
@@ -9691,10 +10628,10 @@
 <p>25.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
+<p>2.4GHz</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Equipped with twelve 11176 GB SATA HDD local disks</p>
+<p>12 x 11176 GB local SATA HDDs</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -9703,15 +10640,522 @@
 </tbody>
 </table>
 
-</div>
-</div>
 
 <div class="sect1">
 <h2 id="C">Computing Instance Family</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This family comes with a powerful processor with a base frequency of 3.2GHz, and provides the highest single-core computing performance. It is suitable for compute-intensive workloads such as batch processing, high performance computing, and dedicated game servers.</p>
+<p>This family provides the highest single-core computing performance with a turbo frequency up to 3.8 GHz. It is suitable for compute-intensive applications such as batch processing, high performance computing, and dedicated game servers.</p>
 </div>
+<div class="doc-table-wrap"><table class="tableblock frame-none grid-all spread custom-style">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="sect2">
+<h3 id="C5">Compute Optimized C5</h3>
+<div class="paragraph">
+<p>As the latest generation of computing instances, C5 instances are powered by an all-new virtualization platform to provide stable and reliable high-performance computing services for greater bandwidth and lower latency. These instances have the most powerful processors and the best cost performance among CVMs. They are ideal for applications that require high computing performance and high-concurrence reads/writes.</p>
+</div>
+<div class="paragraph">
+<p>C5 instances come with the latest Xeon<sup>®</sup> Cooper Lake processors.</p>
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note:</p><p>this instance type is now only available to beta users. Contact your account manager to purchase it.</p>
+</blockquote>
+</div>
+<div class="sect3">
+<h4 id="_Features_17">Features</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Intel<sup>®</sup> Xeon<sup>®</sup> Cooper Lake processor, with a base frequency of 3.4 GHz and turbo frequency of 3.8 GHz</p>
+</li>
+<li>
+<p>New Intel Brain Floating Point 16-bit (blfoat16) instruction set</p>
+</li>
+<li>
+<p>1:2 or 1:4 processor to memory ratio</p>
+</li>
+<li>
+<p>The network performance of an instance depends on its specification. A higher specification means a greater network forwarding performance and a higher private network bandwidth cap.</p>
+</li>
+<li>
+<p>Supports all kinds of cloud disks</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Application Scenarios_17">Application Scenarios</h4>
+<div class="paragraph">
+<p>These instances are ideal for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Batch processing workloads and high performance computing (HPC)</p>
+</li>
+<li>
+<p>High-traffic Web frontend server</p>
+</li>
+<li>
+<p>Other compute-intensive services such as massively multiplayer online (MMO) game servers</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_Requirements_17">Requirements</h4>
+<div class="ulist">
+<ul>
+<li><p>Supports pay-as-you-go.</p></li>
+<li><p>Supports both classic network and VPC.</p></li>
+<li><p>See below for available C5 specifications:</p></li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="__a_href_instancetype_Back To Top_a_17">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back To Top</a></h4>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="doc-table-wrap"><table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 5%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 5%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Specification</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>vCPU</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Memory (GB)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Send/receive packets (pps) (outbound and inbound)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Connections</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Number of queues</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Private network bandwidth (Gbps) (outbound and inbound)</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>CPU frequency</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>Notes</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>C5.LARGE8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>4</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>500,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>250,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>4</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>1.5</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>3.4GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>C5.LARGE16</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>4</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>16</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>500,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>250,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>4</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>1.5</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>3.4GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>C5.2XLARGE16</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>16</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>800,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>250,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>3.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>3.4GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>C5.2XLARGE32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>800,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>250,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>3.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>3.4GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>C5.4XLARGE32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>16</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>1,500,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>300,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>6.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>3.4GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>C5.4XLARGE64</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>16</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>64</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>1,500,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>300,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>8</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>6.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>3.4GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>C5.8XLARGE64</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>64</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2,500,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>600,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>16</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>12.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>3.4GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>
+</tr>
+</div></div></td>
+</tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>C5.8XLARGE128</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>128</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2,500,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>600,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>16</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>12.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>3.4GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>
+</tr>
+</div></div></td>
+</tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>C5.12XLARGE96</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>48</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>96</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>4,000,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>900,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>24</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>18.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>3.4GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>
+</tr>
+</div></div></td>
+</tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>C5.12XLARGE192</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>48</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>192</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>4,000,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>900,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>24</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>18.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>3.4GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>
+</tr>
+</div></div></td>
+</tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>C5.13XLARGE184</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>52</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>184</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>4,000,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>1,000,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>19.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>3.4GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>
+</tr>
+</div></div></td>
+</tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>C5.16XLARGE256</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>64</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>256</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>5,000,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>1,200,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>24.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>3.4GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>
+</tr>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>C5.26XLARGE368</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>104</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>368</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>6,000,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>2,000,000</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>32</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>36.0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>3.4GHz</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
+<p>-</p>
+</div></div></td>
+</tr>
+</div></div></td>
+</tr>
+</tbody>
+</table></div></div></td>
+</tr>
+</tbody>
+</table></div>
+
+
+
 <div class="doc-table-wrap"><table class="tableblock frame-none grid-all spread custom-style">
 <colgroup>
 <col style="width: 100%;">
@@ -9721,7 +11165,7 @@
 <td class="tableblock halign-left valign-top"><div><div class="sect2">
 <h3 id="C4">Compute Optimized C4</h3>
 <div class="paragraph">
-<p>As the latest generation of computing instances, C4 instances have up to 25 Gbps of private network bandwidth for greater bandwidth and lower latency. These instances have the most powerful processors and the best cost performance among CVMs. They are ideal for applications that require high computing performance and high-concurrence reads/writes.</p>
+<p>C4 instances have up to 25 Gbps of private network bandwidth for greater bandwidth and lower latency. These instances have the most powerful processors and the best cost performance among CVMs. They are ideal for applications that require high computing performance and high-concurrence reads/writes.</p>
 </div>
 <div class="paragraph">
 <p>C4 instances are equipped with the latest Xeon® Cascade Lake processors, and support up to 25 Gbps of private network bandwidth.</p>
@@ -9849,7 +11293,7 @@
 <p>4</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>3.0</p>
+<p>2.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>3.2GHz</p>
@@ -9875,7 +11319,7 @@
 <p>4</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>3.0</p>
+<p>2.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>3.2GHz</p>
@@ -9901,7 +11345,7 @@
 <p>8</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>5.0</p>
+<p>4.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>3.2GHz</p>
@@ -9927,7 +11371,7 @@
 <p>8</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>5.0</p>
+<p>4.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>3.2GHz</p>
@@ -9953,7 +11397,7 @@
 <p>16</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>9.0</p>
+<p>7.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>3.2GHz</p>
@@ -9979,7 +11423,7 @@
 <p>16</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>17.0</p>
+<p>13.0</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>3.2GHz</p>
@@ -11053,3 +12497,5 @@
 </div>
 </div>
 </div>
+
+
