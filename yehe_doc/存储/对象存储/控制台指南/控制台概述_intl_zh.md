@@ -1,6 +1,6 @@
 ## 简介
 
-对象存储控制台是 COS 为用户提供的最简单且易于上手的操作方式。用户无需编写代码或运行程序，可直接通过 COS 控制台进行创建、上传、删除等基础操作，以及数据备份、批量处理等高级操作。对象存储控制台涵盖有丰富且多样化的功能，对应的操作文档如下表所示。
+对象存储控制台是 COS 为用户提供的最简单且易于上手的操作方式。用户无需编写代码或运行程序，可直接通过 COS 控制台创建存储桶、上传和分享数据以及数据备份、批量处理等。对象存储控制台涵盖有丰富且多样化的功能，对应的操作文档如下表所示。
 
 >? 如需了解功能的相关介绍，可参见 [功能概览](https://intl.cloud.tencent.com/document/product/436/8186)。
 
@@ -19,14 +19,12 @@
 | 数据回源     | [设置回源](https://intl.cloud.tencent.com/document/product/436/31508) |
 | 批量作业 | [批量处理](https://intl.cloud.tencent.com/document/product/436/32956)  |
 | 数据检索     | [检索数据](https://intl.cloud.tencent.com/document/product/436/32538) |
-| 版本控制     | [设置版本控制](https://intl.cloud.tencent.com/document/product/436/19881)   |
-| 存储桶复制   | [设置存储桶复制](https://intl.cloud.tencent.com/document/product/436/19235)  |
+| 异地容灾       | <li>[设置版本控制](https://intl.cloud.tencent.com/document/product/436/19881) <br><li>[设置存储桶复制](https://intl.cloud.tencent.com/document/product/436/19235) |
 | 加密         | <li>[设置对象加密](https://intl.cloud.tencent.com/document/product/436/30929) <br><li>[设置存储桶加密](https://intl.cloud.tencent.com/document/product/436/33455) |
 | 防盗链       | [设置防盗链](https://intl.cloud.tencent.com/document/product/436/13319) |
 | 跨域访问     | [设置跨域访问](https://intl.cloud.tencent.com/document/product/436/13318)  |
 | 存储桶策略   | [添加存储桶策略](https://intl.cloud.tencent.com/document/product/436/30927)   |
 | 访问控制     | <li>[设置对象的访问权限](https://intl.cloud.tencent.com/document/product/436/13327)<br><li>[设置存储桶的访问权限](https://intl.cloud.tencent.com/document/product/436/13315)<br><li>[子账号访问存储桶列表](https://intl.cloud.tencent.com/document/product/436/17061)          |
 | 域名与访问加速     | <li>[域名管理概述](https://intl.cloud.tencent.com/document/product/436/18424)<br><li>[开启默认加速域名](https://intl.cloud.tencent.com/document/product/436/31505)<br><li>[开启自定义加速域名](https://intl.cloud.tencent.com/document/product/436/31506)<br><li>[开启自定义源站域名](https://intl.cloud.tencent.com/document/product/436/31507)<br><li>[授予子账号配置存储桶加速域名的权限](https://intl.cloud.tencent.com/document/product/436/31712)<br><li>[开启全球加速](https://intl.cloud.tencent.com/document/product/436/33406)  |
-|  数据处理 |  图片处理：<li>[基础图片处理](https://intl.cloud.tencent.com/document/product/436/36569) <br>函数计算：<br><li>[设置文件解压缩](https://intl.cloud.tencent.com/document/product/436/35663)<br><li>[设置 CDN 缓存刷新](https://intl.cloud.tencent.com/document/product/436/37273)<br><li>[设置云数据库备份](https://intl.cloud.tencent.com/document/product/436/39629)   |
-
-
+| 数据处理       | 图片处理：<br><li>[基础图片处理](https://intl.cloud.tencent.com/document/product/436/36569) <br>函数计算：<br><li>[设置文件解压缩](https://intl.cloud.tencent.com/document/product/436/35663)<br><li>[设置 CDN 缓存刷新](https://intl.cloud.tencent.com/document/product/436/37273)<li>[设置云数据库备份](https://intl.cloud.tencent.com/document/product/436/39629) |
+|   应用集成  |   <li>[Ckafka 消息备份](https://cloud.tencent.com/document/product/436/54233)<br><li>[日志清洗](https://cloud.tencent.com/document/product/436/54234)    |
