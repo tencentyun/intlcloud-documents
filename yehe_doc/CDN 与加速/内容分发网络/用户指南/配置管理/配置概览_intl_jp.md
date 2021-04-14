@@ -1,47 +1,74 @@
-<style> table th:first-of-type { width: 200px; } </style>
+## 設定概要
 
-CDNサービスはさまざまなカスタム設定をサポートしているため、ビジネスニーズに応じて設定し、CDNアクセラレーション効果を最適化します。
+Tencent Cloud CDNはリクエストの各段階でさまざまなカスタマイズ設定をサポートしているため、ご自身のビジネスニーズに応じて調整が可能です。
 
-## 基本設定
-| 設定名                                    | 機能説明                |
-| ---------------------------------------- | ------------------- |
-| [基本情報](https://intl.cloud.tencent.com/document/product/228/7864) | ドメイン名の所属プロジェクト、サービスリージョンとサービスタイプの変更をサポートします。|
-| [オリジンサーバー設定](https://intl.cloud.tencent.com/document/product/228/6289) | ドメイン名のオリジンサーバー設定には、オリジンサーバー基本情報、back to originリクエストプロトコル、back to origin Host とホットバックアップオリジンサーバー設定が含まれており、スムーズなback to originを確保できます。中国本土/中国本土以外の異なる設定をサポートします。  |
+### 基本設定
+
+基本設定にはアクセラレーションリージョンや業務タイプ等、ドメイン名のアクセラレーションサービスの基本情報、およびオリジンサーバーの関連設定、CDNアクセラレーションに必須の設定内容を含みます。
+
+| 設定名                                                     | 機能説明                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [基本情報](https://intl.cloud.tencent.com/document/product/228/7864) | ドメイン名の所属項目、アクセラレーションリージョン、業務タイプ等の基本情報を修正します。               |
+| [オリジンサーバー設定](https://intl.cloud.tencent.com/document/product/228/6289) | 複数のIPポーリングback-to-origin設定、ドメイン名back-to-origin、加重back-to-origin、back-to-origin Host設定、back-to-originプロトコル設定をサポートします。<br/>ホットバックアップオリジンサーバー設定をサポートします。<br/>**グローバルアクセラレーションドメイン名は国内外の異なる設定をサポートします。** |
+
+### アクセス制御
+
+アクセス制御の設定では、ユーザーの実際のリクエスト内容に応じて各種ルールを設定し、アクセスの遮断または承諾を行います。
+
+| 設定名                                                     | 機能説明                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [リンク不正アクセス防止の設定](https://intl.cloud.tencent.com/document/product/228/6292) | refererブラックリスト/ホワイトリストの設定では、HTTPリクエストのrefererヘッダーへのアクセスに応じて、リクエストを拒否/承諾するかを判定します。<br/>**グローバルアクセラレーションドメイン名は国内外で異なる設定をサポートします。** |
+| [IPブラックリスト/ホワイトリストの設定](https://intl.cloud.tencent.com/document/product/228/6298) | IPブラックリスト/ホワイトリストの設定では、HTTPリクエストのclient ipへのアクセスに応じて、リクエストを拒否/承諾するかを判定します。<br/>**グローバルアクセラレーションドメイン名は国内外で異なる設定をサポートします。** |
+| [IP アクセス制限の設定](https://intl.cloud.tencent.com/document/product/228/6420) | 単一IP、単一ノードのアクセス制限を設定します。アクセス回数を超えたclient ipからのリクエストは直接拒否されます。 |
+| [認証設定](https://intl.cloud.tencent.com/document/product/228/35237) | タイムスタンプによるホットリンク防止の設定は、複数のタイムスタンプ署名アルゴリズムとルールをサポートします。<br/>**グローバルアクセラレーションドメイン名は国内外で異なる設定をサポートします。** |
+| [ビデオドラッグ](https://intl.cloud.tencent.com/document/product/228/8111) | ストリーミングメディアVODアクセラレーションシナリオに使用します。<br/>ビデオドラッグの機能をオンにした後、startパラメータによってビデオの再生開始位置の指定をサポートします。 |
+| [UAブラックリスト/ホワイトリストの設定](https://intl.cloud.tencent.com/document/product/228/37256) | UAブラックリスト/ホワイトリストの設定は、HTTPリクエストのUser-Agentヘッダーのアクセスに基づいて、リクエストを拒否/承諾するかを判定します。 |
+| [ダウンストリーム速度制限設定](https://intl.cloud.tencent.com/document/product/228/37257) | シングルリンクのダウンストリーム速度制限を設定し、CDNのアクセス帯域幅をある程度制御できます。       |
+
+### キャッシュ設定
+
+キャッシュ設定はCDNノードのキャッシュ動作を制御します。
+
+| 設定名                                                     | 機能説明                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [フィルタパラメータ構成](https://intl.cloud.tencent.com/document/product/228/35316) | ノードがリソースをキャッシュする際に、URL ? 後のパラメータへのアクセスを無視するかどうかを設定します。<br/>**URL後のパラメータが異なるコンテンツを意味する場合は、フィルタパラメータ構成をオンにしないことをお勧めします。** |
+| [キャッシュの有効期限の設定](https://intl.cloud.tencent.com/document/product/228/35317) | パスやファイルタイプに応じて、CDNノード上のファイルキャッシュの有効期限の設定をサポートします。    |
+| [ステータスコードキャッシュの設定](https://intl.cloud.tencent.com/document/product/228/35318) | オリジンサーバーが異常なステータスコード（404や405）で応答した際、応答コンテンツに対するCDNノード上のキャッシュ有効期限を設定します。 |
+| [HTTPヘッダーキャッシュの設定](https://intl.cloud.tencent.com/document/product/228/35319) | デフォルトでは、CDNノードはすべてのオリジンサーバーのレスポンスヘッダーをキャッシュしますが、必要に応じてオフにすることができます。        |
+| [大文字と小文字を区別しないキャッシュ設定](https://intl.cloud.tencent.com/document/product/228/35316) |デフォルトでは、CDNノードは大文字と小文字を区別してキャッシュしますが、必要に応じて大文字と小文字を無視することができます。         |
+| [URL書き換え設定](https://intl.cloud.tencent.com/document/product/228/38074)|URLの書き換え設定をカスタマイズし、URL302を目標URLにリダイレクトすることをサポートします。|
 
 
-## アクセス制御
-| 設定名                                      | 機能説明                      |
-| ---------------------------------------- | ------------------------- |
-| [フィルターパラメーターの設定](https://intl.cloud.tencent.com/document/product/228/35316)  | ノードがユーザーのアクセスURLの「？」の後のパラメーターを無視するかどうかを指定します。 |
-| [リンク不正アクセス防止の設定](https://intl.cloud.tencent.com/document/product/228/6292) | HTTP refererのブラックリスト/ホワイトリスト設定します。中国本土/中国本土以外の異なる設定をサポートします。     |
-| [IPブラックリスト/ホワイトリストの設定](https://intl.cloud.tencent.com/document/product/228/6298) | IPブラックリスト/ホワイトリストの設定をサポートすることで、アクセスコントロールを実現します。     |
-| [IPアクセス頻度制限の設定](https://intl.cloud.tencent.com/document/product/228/6420) | 単一IP、単一ノードのアクセス頻度制限の設定をサポートします。      |
-| [ビデオドラッグの設定](https://intl.cloud.tencent.com/document/product/228/8111)|   ビデオドラッグ設定の有効化をサポートします。              |
-| [認証設定](https://intl.cloud.tencent.com/document/product/228/35237) | URL認証を設定します。中国本土/中国本土以外の異なる設定をサポートします。|
+### back-to-origin設定
 
+back-to-origin設定はCDNノードがオリジンサーバーへのリクエストの送信を制御します。
 
-## キャッシュの有効期限の設定
-| 設定名                                  | 機能説明              |
-| ---------------------------------------- | ----------------- |
-| [キャッシュの有効期限の設定](https://intl.cloud.tencent.com/document/product/228/35317)  | 指定したリソースのキャッシュ有効期限ルールを設定できます。|
-| [ステータスコードキャッシュの設定](https://intl.cloud.tencent.com/document/product/228/35318)| 403および404ステータスコードのキャッシュ期間を設定できます。   |
-| [HTTPヘッダーキャッシュの設定](https://intl.cloud.tencent.com/document/product/228/35319) | ヘッダーのキャッシュポリシーを設定できます。         |
+| 設定名                                                     | 機能説明                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [Range back-to-originの設定](https://intl.cloud.tencent.com/document/product/228/7184) | デフォルトの状態では、CDNノードがそれぞれ分割してback-to-originを行います。オリジンサーバーがサポートしていない場合は、この設定をオフにすることができます。 |
+| [back-to-origin Request Headerの設定](https://intl.cloud.tencent.com/document/product/228/37037) | back-to-originリクエスト時に、正しいclient ipを伴う等、必要に応じて指定されたヘッダー情報を追加します。      |
+| [back-to-originの301/302追従設定](https://intl.cloud.tencent.com/document/product/228/7183) | back-to-originの301/302追従設定をオンにすることをサポートします。                                  |
+| [back-to-originタイムアウト時間の設定](https://intl.cloud.tencent.com/document/product/228/35227) | back-to-originのTCP接続タイムアウト時間（デフォルトでは5秒）とback-to-originのロード時間（デフォルトでは10秒）を設定します。 |
 
-## back to origin設定
-| 設定名                                    | 機能説明                |
-| ---------------------------------------- | -------------------- |
-| [Range back to origin設定](https://intl.cloud.tencent.com/document/product/228/7184) | Range パートback to originを有効/無効にできます。  |
-| [301/302リダイレクトの設定](https://intl.cloud.tencent.com/document/product/228/7183) | オリジンサーバーが301/302ステータスコードが戻された場合、リクエストをリダイレクトするかどうかを設定できます。|
-| [back to originタイムアウト時間の設定](https://intl.cloud.tencent.com/document/product/228/35227) | back to origin TCP接続のタイムアウト時間と、back to originのデータ読み込みのタイムアウト時間を設定して、スムーズなback to originを確保します。 |
+### HTTPSアクセラレーションの設定
 
+HTTPSアクセラレーション設定モジュールはHTTPSに関するさまざまな設定をサポートします。
 
-## 高度な設定
+| 設定名                                                     | 機能説明                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [HTTPS設定](https://intl.cloud.tencent.com/document/product/228/35213) | 所有する証明書をアップロードするか、委託された証明書を使用し、HTTPSアクセラレーションを起動します。              |
+| [HTTP2.0の設定](https://intl.cloud.tencent.com/document/product/228/35215) | オンにすると、CDNエッジノードはHTTP2.0プロトコルをサポートします。<br/>**HTTP2.0プロトコルをオンにする前に、証明書の設定が必要になります。** |
+| [強制的ジャンプ設定](https://intl.cloud.tencent.com/document/product/228/35214) | 証明書の設定の有無にかかわらず、HTTPSがHTTPリクエストに強制的にジャンプするよう設定することができます。<br/>証明書が設定済みの場合は、HTTPがHTTPSリクエストに強制的にジャンプするよう設定することができます。 |
+| [OCSPステープリングの設定](https://intl.cloud.tencent.com/document/product/228/35216) | オンにすると、OCSPステープリングをサポートします。<br/>**OCSPステープリングをオンにする前に、証明書の設定が必要になります。** |
+| [HSTS設定](https://intl.cloud.tencent.com/document/product/228/37036) | オンにすると、strict-transport-securityヘッダーを追加します。<br/>**HSTSの設定を行う前に、証明書の設定が必要になります。** |
 
-| 設定名                                    | 機能説明                             |
-| ---------------------------------------- | -------------------------------- |
-| [帯域幅制限の設定](https://intl.cloud.tencent.com/document/product/228/7541)  | ドメイン名に対し、帯域幅の上限値を設定します。上限に達すると、CDNサービスが無効になり、アクセス要求がオリジンサーバーに転送されます。中国本土/中国本土以外の異なる設定をサポートします。|
-| [HTTPS設定](https://intl.cloud.tencent.com/document/product/228/35212) | HTTPSを設定することで、安全な加速を実現します。HTTPSの強制リダイレクト、HTTP2.0アクセス およびOCSPステープリング設定の有効/無効の設定をサポートします。   |
-| [SEO最適化設定](https://intl.cloud.tencent.com/document/product/228/35219) | SEO最適化設定を有効にして、検索エンジンの重みの安定性を確保できます。       |
-| [HTTPヘッダの設定](https://intl.cloud.tencent.com/document/product/228/35320) |HTTPヘッダの設定を追加します。                |
+### 高度な設定
+
+| 設定名                                                     | 機能説明                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [ネットワーク帯域幅の制限の設定](https://intl.cloud.tencent.com/document/product/228/7541) | 国内外のアクセラレーションの上限帯域幅の設定をサポートし、それを超えた場合に必要に応じてアクセラレーションサービスを停止することができます。<br/>**グローバルドメイン名は国内外で異なる設定をサポートします。** |
+| [SEO最適化の設定](https://intl.cloud.tencent.com/document/product/228/35219) | オンにすると、アクセスIPが検索エンジン向きかどうかを自動的に認識します。<br/>確認後、自動的にback-to-originし、検索エンジンの重み付けの安定性確保に努めます。 |
+| [Response Headerの設定](https://intl.cloud.tencent.com/document/product/228/35320) | 必要に応じてHTTP Response Headerの設定を行い、リクエスト応答中にクライアントに戻します。 |
+| [インテリジェント圧縮の設定](https://intl.cloud.tencent.com/document/product/228/35220) | ファイルタイプと範囲を指定し、GzipまたはBrotli圧縮を行います。                             |
 
 

@@ -1,47 +1,74 @@
-<style> table th:first-of-type { width: 200px; } </style>
+## 설정 개요
 
-CDN은 다양한 사용자 정의 설정을 지원합니다. 비즈니스 니즈에 맞게 설정하여 최적화된 CDN 가속 효과를 볼 수 있습니다.
+Tencent Cloud CDN은 사용자가 비즈니스 요구 사항에 맞게 조정할 수 있도록 요청 단계별로 다양한 사용자 정의 설정을 지원합니다.
 
-## 기본 설정
-| 설정 이름                                     | 기능 설명              |
-| ---------------------------------------- | ------------------- |
-| [기본 정보](https://intl.cloud.tencent.com/document/product/228/7864) | 도메인 서브 프로젝트, 서비스 리전 및 서비스 유형 변경 지원. |
-| [원본 서버 설정](https://intl.cloud.tencent.com/document/product/228/6289) | 도메인 원본 서버 설정: 원본 서버의 기본 정보, 원본 요청 프로토콜, 호스트 헤더 및 핫 백업 원본 서버 설정 가능, 원본 요청 보장. 중국 내/외를 다르게 설정 가능.  |
+### 기본 설정
+
+기본 설정에는 가속 리전, 서비스 유형 등의 도메인 가속 서비스 기본 정보와 CDN 가속을 위해 설정해야 하는 원본 서버 관련 설정 등이 포함됩니다.
+
+| 설정 이름                                                     | 기능 설명                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [기본 정보](https://intl.cloud.tencent.com/document/product/228/7864) | 도메인 서브 항목, 가속 리전 및 서비스 유형 등 기본 정보 수정 |               |
+| [원본 서버 설정](https://intl.cloud.tencent.com/document/product/228/6289) | 다중 IP 폴링 원본 요청 설정, 도메인 원본 요청, 가중치 원본 요청, 호스트 헤더 구성, 원본 요청 프로토콜 구성 지원. <br/>핫 백업 원본 서버 설정 지원. <br/>**글로벌 가속 도메인 중국 본토 내/외 구분 설정** |
+
+### 액세스 제어
+
+엑세스 제어 설정은 사용자의 실제 요청 내용에 따라 각종 규칙을 설정하여 액세스를 차단하거나 허용합니다.
+
+| 설정 이름                                                     | 기능 설명                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [링크 도용 방지 설정](https://intl.cloud.tencent.com/document/product/228/6292) | referer 블랙리스트/화이트리스트를 설정하고, HTTP 액세스 요청의 referer 헤드에 따라서 요청을 거부/허용할지 여부를 판단합니다. <br/>**글로벌 가속 도메인 중국 본토 내/외 구분 설정** |
+| [IP 블랙리스트/화이트리스트 설정](https://intl.cloud.tencent.com/document/product/228/6298) | IP 블랙리스트/화이트리스트를 설정하고, HTTP 액세스 요청의 client ip에 따라서 요청을 거부/허용할지 여부를 판단합니다. <br/>**글로벌 가속 도메인 중국 본토 내/외 구분 설정** |
+| [IP 액세스 빈도 제한 설정](https://intl.cloud.tencent.com/document/product/228/6420) | 단일 IP 단일 노드의 액세스 빈도 제한을 설정하고, 액세스 횟수를 초과한 client ip에서 전송한 요청을 거부합니다. |
+| [인증 설정](https://intl.cloud.tencent.com/document/product/228/35237) | 타임스탬프 링크 도용 방지를 설정하고, 다양한 타임스탬프 서명 알고리즘과 규칙을 지원합니다. <br/>**글로벌 가속 도메인 중국 본토 내/외 구분 설정** |
+| [비디오 드래깅](https://intl.cloud.tencent.com/document/product/228/8111) | 스트림 미디어 VOD 가속 시나리오에 적용합니다. <br/>비디오 드래깅 기능을 활성화하면 start 매개변수를 통해 비디오 재생 시작 위치를 지정할 수 있습니다. |
+| [UA 블랙리스트/화이트리스트 설정](https://intl.cloud.tencent.com/document/product/228/37256) | UA 블랙리스트/화이트리스트를 설정하고, HTTP 액세스 요청의 User-Agent 헤더에 따라서 요청을 거부/허용할지 여부를 판단합니다. |
+| [다운스트림 속도 제한 설정](https://intl.cloud.tencent.com/document/product/228/37257) | 단일 링크의 다운스트림 속도 제한을 설정하고, CDN의 액세스 대역폭을 일정 수준 제어할 수 있습니다.       |
+
+### 캐시 설정
+
+캐시 설정을 통해 CDN 노드의 캐싱을 제어합니다.
+
+| 설정 이름                                                     | 기능 설명                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [필터링 매개변수 설정](https://intl.cloud.tencent.com/document/product/228/35316) | 노드의 캐시 리소스를 설정할 때 액세스 URL에서 ? 뒤의 매개변수를 무시할지 여부를 설정합니다. <br/>**URL 뒤의 매개변수가 각기 다른 비즈니스 내용을 나태내는 경우, 필터링 매개변수 설정 비활성화 권장.** |
+| [캐시 만료 설정](https://intl.cloud.tencent.com/document/product/228/35317) | 경로, 파일 유형별로 CDN 노드에서의 파일의 캐시 만료 시간 설정을 지원합니다.    |
+| [상태 코드 캐시 설정](https://intl.cloud.tencent.com/document/product/228/35318) | 원본 서버에서 이상 상태 코드(예: 404 405) 응답 시, CDN 노드에서 응답 내용에 대한 캐시 만료 시간을 설정합니다. |
+| [HTTP 헤더 캐시 설정](https://intl.cloud.tencent.com/document/product/228/35319) | 기본적으로 CDN 노드는 모든 원본 서버의 응답 헤더를 캐싱하도록 설정되어 있으며, 필요에 따라 비활성화할 수 있습니다.        |
+| [캐시 대소문자 무시 설정](https://intl.cloud.tencent.com/document/product/228/35316) | 기본적으로 CDN 노드는 캐시 대소문자를 구분하도록 설정되어 있으며, 필요에 따라 대소문자를 무시할 수 있습니다..         |
+| [URL 재작성 설정](https://intl.cloud.tencent.com/document/product/228/38074)|사용자 정의 URL 재작성을 지원하며, URL 302를 타깃 URL로 리디렉션합니다. |
 
 
-## 액세스 제어
-| 설정 이름                                     | 기능 설명                      |
-| ---------------------------------------- | ------------------------- |
-| [필터링 매개변수 설정](https://intl.cloud.tencent.com/document/product/228/35316) | 노드의 사용자 액세스 URL 무시 여부 중 "?" 뒤의 매개변수 지정. |
-| [링크 도용 방지 설정](https://intl.cloud.tencent.com/document/product/228/6292) | HTTP referer 블랙리스트/화이트리스트 설정. 중국 내/외를 다르게 설정 가능.      |
-| [IP 블랙리스트/화이트리스트 설정](https://intl.cloud.tencent.com/document/product/228/6298) | IP 블랙리스트/화이트리스트 설정으로 액세스 제어 가능.       |
-| [IP 액세스 빈도 제한 설정](https://intl.cloud.tencent.com/document/product/228/6420) | 단일 IP 단일 노드 액세스 빈도 제한 설정 지원.          |
-| [비디오 드래그 설정](https://intl.cloud.tencent.com/document/product/228/8111) | 비디오 드래그 설정 지원.                |
-| [인증 설정](https://intl.cloud.tencent.com/document/product/228/35237) | URL 인증 설정. 중국 내/외를 다르게 설정 가능. |
+### 원본 요청 설정
 
+원본 요청 설정을 통해 CDN 노드가 요청을 원본 서버로 전송하는 것을 제어합니다.
 
-## 캐시 만료 설정
-| 설정 이름                                     | 기능 설명              |
-| ---------------------------------------- | ----------------- |
-| [캐시 만료 설정](https://intl.cloud.tencent.com/document/product/228/35317) | 지정된 리소스 콘텐츠의 캐시 만료 시간 규칙 설정. |
-| [상태 코드 캐시 설정](https://intl.cloud.tencent.com/document/product/228/35318) | 403 및 404 상태 코드의 캐시 시간 설정.     |
-| [HTTP 헤더 캐시](https://intl.cloud.tencent.com/document/product/228/35319) | 헤더 캐시 정책 설정.          |
+| 설정 이름                                                     | 기능 설명                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [Range 원본 요청 설정](https://intl.cloud.tencent.com/document/product/228/7184) | 기본적으로 CDN 노드의 원본 요청은 샤드 원본 요청으로 설정되어 있으며, 원본 서버가 지원하지 않는 경우 해당 설정을 비활성화할 수 있습니다. |
+| [Origin-pull Request Header 설정](https://intl.cloud.tencent.com/document/product/228/37037) | 원본 가져오기 요청 시, 필요에 따라 실제 client ip를 포함하는 등 특정 헤더 정보를 추가로 지원할 수 있습니다.      |
+| [301/302 원본 정책 따르기 설정](https://intl.cloud.tencent.com/document/product/228/7183) | 301/302 원본 정책 따르기 설정 활성화를 지원합니다.                                  |
+| [원본 요청 타임아웃 설정](https://intl.cloud.tencent.com/document/product/228/35227) | 원본 요청 TCP 연결 타임아웃 시간(기본값 5초) 및 원본 요청 로딩 시간(기본값 10초)을 설정합니다. |
 
-#원본 가져오기 구성
-| 설정 이름                                     | 기능 설명                 |
-| ---------------------------------------- | -------------------- |
-| [Range 원본 가져오기 구성](https://intl.cloud.tencent.com/document/product/228/7184) | Range 샤드 원본 요청 활성화/비활성화.     |
-| [원본 요청 301/302 따르기 설정](https://intl.cloud.tencent.com/document/product/228/7183) |원본 서버 301/302 리턴 시 리디렉션 따르기 여부 활성화/비활성화 |
-| [원본 요청 타임아웃 시간 설정](https://intl.cloud.tencent.com/document/product/228/35227) | 원본 요청 TCP 연결 타임아웃 시간과 원본 요청 데이터 로딩 타임아웃 시간을 설정해 정상적인 원본 요청 보장. |
+### HTTPS 가속 설정
 
+HTTPS 가속 설정 모듈은 HTTPS 관련 항목 설정을 지원합니다.
 
-## 고급 설정
+| 설정 이름                                                     | 기능 설명                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [HTTPS 설정](https://intl.cloud.tencent.com/document/product/228/35213) | 자체 관리 인증서를 업로드하거나 위탁 관리 인증서를 사용해 HTTPS 가속으로 실행합니다.              |
+| [HTTP2.0 설정](https://intl.cloud.tencent.com/document/product/228/35215) | 활성화 시 CDN 엣지 노드가 HTTP2.0 프로토콜을 지원합니다. <br/>**HTTP2.0 프로토콜을 활성화하기 전에 인증서 구성 필요. ** |
+| [강제 리디렉션 설정](https://intl.cloud.tencent.com/document/product/228/35214) | 인증서 구성 여부에 상관없이 HTTPS를 HTTP 요청으로 강제 리디렉션 하도록 설정합니다. <br/>인증서가 구성되어 있는 경우, HTTP를 HTTPS 요청으로 강제 리디렉션 하도록 설정 가능. |
+| [OCSP 스테이플링 설정](https://intl.cloud.tencent.com/document/product/228/35216) | 활성화 시 OCSP 스테이플링을 지원합니다. <br/>**OCSP 스테이플링을 활성화하기 전에 인증서 구성 필요. ** |
+| [HSTS 설정](https://intl.cloud.tencent.com/document/product/228/37036) | 활성화 시 strict-transport-security 헤더를 추가합니다. <br/>** HSTS 설정을 활성화하기 전에 인증서 구성 필요. ** |
 
-| 설정 이름                                     | 기능 설명                             |
-| ---------------------------------------- | -------------------------------- |
-| [대역폭 상한 설정](https://intl.cloud.tencent.com/document/product/228/7541) |도메인의 대역폭 상한 임계 값을 설정하여 임계 값 초과 시 CDN 서비스 종료 및 원본 서버에 액세스. 중국 내/외를 다르게 설정 가능. |
-| [HTTPS 설정](https://intl.cloud.tencent.com/document/product/228/35212) | HTTPS 설정으로 보안 가속 구현. HTTPS 강제 리디렉션, HTTP2.0 액세스 및 OCSP 고정 활성화/비활성화 지원.    |
-| [SEO 최적화 설정](https://intl.cloud.tencent.com/document/product/228/35219) | SEO 최적화 설정을 활성화하여 검색 엔진의 가중치 안정성 보장.          |
-| [HTTP Header 설정](https://intl.cloud.tencent.com/document/product/228/35320) | HTTP Header 설정 추가                |
+### 고급 설정
+
+| 설정 이름                                                     | 기능 설명                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [대역폭 상한 설정](https://intl.cloud.tencent.com/document/product/228/7541) | 중국 본토 내/외의 가속 대역폭 상한 설정을 지원하고, 초과 시 필요에 따라 가속 서비스를 중단합니다. <br/>**글로벌 도메인 중국 본토 내/외 구분 설정** |
+| [SEO 최적화 설정](https://intl.cloud.tencent.com/document/product/228/35219) | 활성화 시 액세스 IP가 검색엔진인지 여부를 자동으로 식별합니다. <br/>확인 후 자동으로 원본 요청을 하고, 검색 엔진 가중치의 안정성을 최대한 보장합니다. |
+| [Response Header 설정](https://intl.cloud.tencent.com/document/product/228/35320) | 필요에 따라 HTTP Response Header를 설정하고, 요청 응답 과정에서 클라이언트에게 반환합니다. |
+| [스마트 압축 설정](https://intl.cloud.tencent.com/document/product/228/35220) | 파일 유형 및 범위를 지정하여 Gzip 또는 Brotli로 압축합니다.                             |
 
 
