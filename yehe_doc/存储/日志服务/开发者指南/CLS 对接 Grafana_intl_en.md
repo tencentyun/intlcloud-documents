@@ -54,8 +54,8 @@ allow_loading_unsigned_plugins = tencent-cls-grafana-datasource
 ```
    service grafana-server restart
 ```
-
-### Configuring log data source<span id="ConfigLogDataSource"></span>
+<span id="ConfigLogDataSource"></span>
+### Configuring log data source
 1. Log in to Grafana by accessing the following URL from your browser.
 >? The default port of Grafana is `3000`.
 >
@@ -69,7 +69,7 @@ http://Grafana IP address: 3000
 <table>
 <tr><th>Configuration Item</th><th>Description</th><tr>
 <tr><td>Security Credentials</td><td>**SecretId** and **SecretKey**: API request key, which is used for authentication. You can go to the <a href="https://console.cloud.tencent.com/cam/capi">API Key Management</a> page to get a key.</td><tr>
-<tr><td>Log Service Info</td><td><ul><li>**Region**: abbreviation of the CLS region. For example, enter `ap-beijing` for the Beijing region.</br>For the complete list of regions, please see <a href="https://intl.cloud.tencent.com/document/product/614/18940">Available Regions</a>.</li><li>**TopicId**: log topic ID.</li></ul></td><tr>
+<tr><td>Log Service Info</td><td><ul><li>**Region**: abbreviation of the CLS region. For example, enter `ap-beijing` for the Beijing region.</br>For the complete list of regions, please see <a href="https://intl.cloud.tencent.com/document/product/614/18940">Available Regions</a>.</li><li>**TopicId**: log topic ID.</li></ul></td></tr>
 </table>
 
 ### Configuring dashboard
@@ -83,7 +83,7 @@ http://Grafana IP address: 3000
 <tr><th>Format</th><th>Description</th><th>Configuration Item</th><tr>
 <tr><td>Log panel</td><td>Log panel is used to shown log search results. Query syntax supports searching by keyword and fuzzy match. For more information, see [Syntax and Rules](https://intl.cloud.tencent.com/document/product/614/30439). Eg. status:400</td><td>**limit**: specifies the number of log search results to be returned.</td><tr>
 <tr><td>Table panel</td><td>Table panel automatically shows the results of whatever columns and rows your query returns.</td><td>None</td><tr>
-<tr><td>Graph,Pie,Gauge panel</td><td>In this pattern, there is a format transformation where data will be adapted to graph,pie,gauge panel. </td><td><ul><li>**Metrics**: metrics to be collected.</li><li>**Bucket**: (optional) name of the aggregate column.</li><li>**Time**: (optional) if the result returned by a query is continuous time data, you need to specify the **Time** field; otherwise, leave it empty.</li></ul></td><tr>
+<tr><td>Graph,Pie,Gauge panel</td><td>In this pattern, there is a format transformation where data will be adapted to graph,pie,gauge panel. </td><td><ul><li>**Metrics**: metrics to be collected.</li><li>**Bucket**: (optional) name of the aggregate column.</li><li>**Time**: (optional) if the result returned by a query is continuous time data, you need to specify the **Time** field; otherwise, leave it empty.</li></ul></td></tr>
 </table>
 
 
@@ -96,8 +96,10 @@ A graph shows the PV and UV curves as shown below:
 You can configure it according to the following information:
 
 - The query statement is entered as shown below:
+
 ```
 * | select histogram( cast(__TIMESTAMP__ as timestamp),interval 1 minute) as time, count(*) as pv,count( distinct remote_addr) as uv group by time order by time limit 1000
+
 ```
 - **Format**: select **Graph,Pie,Gauge panel**.
 - **Metrics**: **pv, uv**.
@@ -110,8 +112,10 @@ A pie shows the distribution of request status codes as shown below:
 
 You can configure it according to the following information:
 - The query statement is entered as shown below:
+
 ```
 * | select count(*) as count, status group by status
+
 ```
 - **Format**: select **Graph,Pie,Gauge panel**.
 - **Metrics**: **count**.
@@ -124,6 +128,7 @@ A bar gauge shows the top 10 pages in terms of access latency as shown below:
 
 You can configure it according to the following information:
 - The query statement is entered as shown below:
+
 ```
 * | select http_referer,avg(request_time) as lagency group by http_referer order by lagency desc limit 10
 ```
@@ -138,8 +143,10 @@ A table shows the top 10 users in terms of access requests as shown below:
 
 You can configure it according to the following information:
 - The query statement is entered as shown below:
+
 ```
 * | select remote_addr,count(*) as count group by remote_addr order by count desc limit 10
+
 ```
 - **Format**: **Table**.
 
