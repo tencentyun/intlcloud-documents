@@ -25,7 +25,7 @@ on-off 스위치를 클릭하여 임계 값의 최댓값을 설정할 수 있습
 
 #### 3. 리전 특수 설정
 사용자의 가속 도메인 서비스 리전이 글로벌 가속이며, 중국 내, 중국 외 가속 구역에 각기 다른 대역폭 상한을 설정하고자 한다면 설정 아래의 [특수 설정 추가]를 클릭하여 설정할 수 있습니다.
-![](https://main.qcloudimg.com/raw/ee63c14e4bcbd38899e8d9c063499db9.png)
+![](https://main.qcloudimg.com/raw/042c0fdd3d8f76bc7fdd57afa72e1e25.png)
 
 >!
 >
