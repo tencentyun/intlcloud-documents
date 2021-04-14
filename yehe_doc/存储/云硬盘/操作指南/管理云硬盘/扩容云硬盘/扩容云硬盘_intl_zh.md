@@ -42,48 +42,68 @@
 
 [](id:distinguish)
 ## 相关操作
+
 ### 区分数据盘
 您可根据云服务器实际使用的操作系统，选择查看方式：
+
 ####  Linux
 1. [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436)。
+
 2. 执行以下命令，查看到云硬盘与设备名之间的对应关系。
 ```
 ls -l /dev/disk/by-id
-​```返回结果如下图所示：
+​```
+返回结果如下图所示：
 ![](https://main.qcloudimg.com/raw/66b6a19695ef4ba21b74ce0cd96503db.png)
 其中，`disk-xxxx` 为云硬盘 ID，您可前往 [云硬盘控制台](https://console.cloud.tencent.com/cvm/cbs) 查看。
 
 ####  Windows
+
 1. [登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/5435)。
+
 2. 右键单击 <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin:-6px 0px">，选择【运行】。
+
 3. 在“运行”窗口中，输入 `cmd` 并按 **Enter**。
+
 4. 执行以下命令，查看到云硬盘与设备名之间的对应关系。
+
 ```
 wmic diskdrive get caption,deviceid,serialnumber
-```或执行以下命令
+
+```
+或执行以下命令
 
 ```
 wmic path win32_physicalmedia get SerialNumber,Tag
-```返回结果如下图所示：
+```
+返回结果如下图所示：
 ![](https://main.qcloudimg.com/raw/e91aa2f938ddda304844d7ac28840859.png)
+
 其中，`disk-xxxx` 为云硬盘 ID，您可前往 [云硬盘控制台](https://console.cloud.tencent.com/cvm/cbs) 查看。
 
 
 ### 查看实例 cloudinit 配置
+
 您可根据云服务器实际使用的操作系统，选择查看方式：
 
-#### 查看\sLinux\s实例\scloudinit\s配置[](id:confirmLinuxConfig)
+[](id:confirmLinuxConfig)
+#### 查看 Linux 实例 cloudinit 配置
+
 完成扩容操作后，请 [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436) 确认 `/etc/cloud/cloud.cfg` 是否包含 growpart 及 resizefs 配置项。
+
  - 是，则无需进行其他操作。如下图所示：
 ![](https://main.qcloudimg.com/raw/03d38f34651d317176c50f1ed3a03f30.png)
+
     - **growpart**：扩展分区大小到磁盘大小。
     - **resizefs**：扩展调整`/`分区文件系统到分区大小。
+
  - 否，则需根据目标云服务的操作系统类型，手动扩文件系统及分区。您需要执行 [扩展分区及文件系统（Linux）](https://intl.cloud.tencent.com/document/product/362/31602)，将扩容部分的容量划分至已有分区内或将扩容部分的容量格式化为新的独立分区。
 
-####  查看\sWindows\s实例\scloudinit\s配置[](id:confirmwindowsConfig)
+[](id:confirmwindowsConfig)
+####  查看 Windows 实例 cloudinit 配置
+
 完成扩容操作后，请 [登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/5435) 确认 `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf\cloudbase-init.conf` 中的 plugin 是否包含 ExtendVolumesPlugin 配置项。
+
  - 是，则无需进行其他操作。
+
  - 否，则需根据目标云服务的操作系统类型，手动扩文件系统及分区。您需要执行 [扩展分区及文件系统（Windows）](https://intl.cloud.tencent.com/document/product/362/31601)，将扩容部分的容量划分至已有分区内或将扩容部分的容量格式化为新的独立分区。
-
-
-```
