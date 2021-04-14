@@ -22,7 +22,7 @@ You can create different types of CBS cloud disks based on business needs. For m
      </tr> 
 	 <tr>
          <td>Cloud Disk Type</td>
-         <td>Required.</br>CBS offers 2 cloud disk types:<ul><li>Premium cloud storage</li><li>SSD</li><li>Enhanced SSD</li></ul></td>
+         <td>Required.</br>CBS offers 3 cloud disk types:<ul><li>Premium cloud storage</li><li>SSD</li><li>Enhanced SSD</li></ul></td>
      </tr>
 		 <tr>
 			 <td>Quick Disk Creation</td>
