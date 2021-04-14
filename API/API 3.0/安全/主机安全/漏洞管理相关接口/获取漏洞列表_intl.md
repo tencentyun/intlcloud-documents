@@ -8,7 +8,7 @@ Default request rate limit: 20/sec.
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/296/19828).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/296/19828).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -18,14 +18,14 @@ The following request parameter list only provides API request parameters and so
 | VulType | Yes | String | Vulnerability type.<br/><li> WEB: Web application vulnerability</li><li> SYSTEM: System component vulnerability</li><li> BASELINE: Security baseline</li> |
 | Limit | No | Integer | Number of returned results. It defaults to 10. The maximum is 100. |
 | Offset | No | Integer | Offset. It defaults to 0. |
-| Filters.N | No | Array of [Filter](/document/api/296/19867#Filter) | Filter.<br/><li>Status - String - Required: No - Filter by status (UN_OPERATED: Pending &#124; FIXED: Fixed)<br/><br/>Only one value is allowed for the status filter. "OR" relationship is not supported. |
+| Filters.N | No | Array of [Filter](https://cloud.tencent.com/document/api/296/19867#Filter) | Filter.<br/><li>Status - String - Required: No - Filter by status (UN_OPERATED: Pending &#124; FIXED: Fixed)<br/><br/>Only one value is allowed for the status filter. "OR" relationship is not supported. |
 
 ## 3. Output Parameters
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
 | TotalCount | Integer | Number of vulnerabilities. |
-| Vuls | Array of [Vul](/document/api/296/19867#Vul) | Array of vulnerabilities. |
+| Vuls | Array of [Vul](https://cloud.tencent.com/document/api/296/19867#Vul) | Array of vulnerabilities. |
 | RequestId | String | The unique ID of a request, which is required for each troubleshooting case. |
 
 ## 4. Example
@@ -85,11 +85,11 @@ Cloud API 3.0 comes with the software development kit (SDK) that supports multip
 
 ### Command line tools
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/296/19830#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/296/19830#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

@@ -8,7 +8,7 @@ Improves existing documents
 
 New API:
 
-* [ModifyAutoSnapshotPolicyAttribute](/document/api/362/35482)
+* [ModifyAutoSnapshotPolicyAttribute](https://cloud.tencent.com/document/api/362/35482)
 
 ## Release 13
 
@@ -20,9 +20,9 @@ Improves existing documents
 
 Modified API:
 
-* [CreateDisks](/document/api/362/16312)
+* [CreateDisks](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/16312)
 	* **Deleted input parameter: **DeleteWithInstance
-* [DetachDisks](/document/api/362/16316)
+* [DetachDisks](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/16316)
 	* New input parameter added: InstanceId
 
 ## Release 12
@@ -35,7 +35,7 @@ Improves existing documents
 
 Modified API:
 
-* [CreateDisks](/document/api/362/16312)
+* [CreateDisks](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/16312)
 	* New input parameter: Shareable
 
 ## Release 11
@@ -48,7 +48,7 @@ Improves existing documents
 
 Modified data structure:
 
-* [Disk](/document/api/362/15669#Disk)
+* [Disk](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15669#Disk)
 	* New members: Shareable, InstanceIdList
 
 ## Release 10
@@ -61,17 +61,17 @@ Improves existing documents
 
 New APIs:
 
-* [BindAutoSnapshotPolicy](/document/api/362/33559)
-* [CreateAutoSnapshotPolicy](/document/api/362/33558)
-* [DeleteAutoSnapshotPolicies](/document/api/362/33557)
-* [DescribeAutoSnapshotPolicies](/document/api/362/33556)
-* [DescribeDiskAssociatedAutoSnapshotPolicy](/document/api/362/33555)
-* [UnbindAutoSnapshotPolicy](/document/api/362/33554)
+* [BindAutoSnapshotPolicy](https://cloud.tencent.com/document/api/362/33559)
+* [CreateAutoSnapshotPolicy](https://cloud.tencent.com/document/api/362/33558)
+* [DeleteAutoSnapshotPolicies](https://cloud.tencent.com/document/api/362/33557)
+* [DescribeAutoSnapshotPolicies](https://cloud.tencent.com/document/api/362/33556)
+* [DescribeDiskAssociatedAutoSnapshotPolicy](https://cloud.tencent.com/document/api/362/33555)
+* [UnbindAutoSnapshotPolicy](https://cloud.tencent.com/document/api/362/33554)
 
 New data structures:
 
-* [AutoSnapshotPolicy](/document/api/362/15669#AutoSnapshotPolicy)
-* [Policy](/document/api/362/15669#Policy)
+* [AutoSnapshotPolicy](https://cloud.tencent.com/document/api/362/15669#AutoSnapshotPolicy)
+* [Policy](https://cloud.tencent.com/document/api/362/15669#Policy)
 
 ## Release 9
 
@@ -83,18 +83,18 @@ Improves existing documents
 
 Modified API:
 
-* [ModifyDiskAttributes](/document/api/362/15659)
+* [ModifyDiskAttributes](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15659)
 	* New input parameter: DiskType
 
 New data structure:
 
-* [Image](/document/api/362/15669#Image)
+* [Image](https://cloud.tencent.com/document/api/362/15669#Image)
 
 Modified data structure:
 
-* [Placement](/document/api/362/15669#Placement)
+* [Placement](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15669#Placement)
 	* New members: CdcId, CageId, CdcName
-* [Snapshot](/document/api/362/15669#Snapshot)
+* [Snapshot](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15669#Snapshot)
 	* New members: Images, ImageCount
 	* **Deleted member: **ImageIds
 
@@ -108,19 +108,19 @@ Improves existing documents
 
 New API:
 
-* [DescribeSnapshotOperationLogs](/document/api/362/32490)
+* [DescribeSnapshotOperationLogs](https://cloud.tencent.com/document/api/362/32490)
 
 New data structure:
 
-* [SnapshotOperationLog](/document/api/362/15669#SnapshotOperationLog)
+* [SnapshotOperationLog](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15669#SnapshotOperationLog)
 
 Modified data structures:
 
-* [Disk](/document/api/362/15669#Disk)
+* [Disk](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15669#Disk)
 	* New members: Migrating, MigratePercent
-* [Price](/document/api/362/15669#Price)
+* [Price](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15669#Price)
 	* New member: UnitPriceDiscount
-* [Snapshot](/document/api/362/15669#Snapshot)
+* [Snapshot](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15669#Snapshot)
 	* New member: ImageIds
 
 ## Release 7
@@ -133,29 +133,29 @@ Improves existing documents
 
 New API:
 
-* [DescribeDiskOperationLogs](/document/api/362/30162)
+* [DescribeDiskOperationLogs](https://cloud.tencent.com/document/api/362/30162)
 
 Modified API:
 
-* [CreateDisks](/document/api/362/16312)
+* [CreateDisks](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/16312)
 	* New input parameter: DeleteWithInstance
-* [DescribeInstancesDiskNum](/document/api/362/16311)
+* [DescribeInstancesDiskNum](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/16311)
 	* New output parameter: AttachDetail
 	* **Deleted output parameters: **AttachedDiskCount, MaxAttachCount
-* [InquiryPriceRenewDisks](/document/api/362/16317)
+* [InquiryPriceRenewDisks](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/16317)
 	* **Modified output parameter: **DiskPrice
-* [InquiryPriceResizeDisk](/document/api/362/16320)
+* [InquiryPriceResizeDisk](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/16320)
 	* **Modified output parameter: **DiskPrice
 
 New data structures:
 
-* [AttachDetail](/document/api/362/15669#AttachDetail)
-* [DiskOperationLog](/document/api/362/15669#DiskOperationLog)
-* [PrepayPrice](/document/api/362/15669#PrepayPrice)
+* [AttachDetail](https://cloud.tencent.com/document/api/362/15669#AttachDetail)
+* [DiskOperationLog](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15669#DiskOperationLog)
+* [PrepayPrice](https://cloud.tencent.com/document/api/362/15669#PrepayPrice)
 
 Modified data structure:
 
-* [Disk](/document/api/362/15669#Disk)
+* [Disk](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15669#Disk)
 	* New member: DifferDaysOfDeadline
 	* **Modified member: **ReturnFailCode
 
@@ -169,12 +169,12 @@ Improves existing documents
 
 Modified API:
 
-* [ModifyDiskAttributes](/document/api/362/15659)
+* [ModifyDiskAttributes](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15659)
 	* New input parameter: DeleteWithInstance
 
 Modified data structure:
 
-* [Disk](/document/api/362/15669#Disk)
+* [Disk](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15669#Disk)
 	* New member: DeleteWithInstance
 
 ## Release 5
@@ -187,12 +187,12 @@ Improves existing documents
 
 Modified API:
 
-* [AttachDisks](/document/api/362/16313)
+* [AttachDisks](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/16313)
 	* New input parameter: DeleteWithInstance
 
 Modified data structure:
 
-* [Price](/document/api/362/15669#Price)
+* [Price](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15669#Price)
 	* New members added: UnitPrice, ChargeUnit
 
 ## Release 4
@@ -205,7 +205,7 @@ Improves existing documents
 
 Modified API:
 
-* [CreateDisks](/document/api/362/16312)
+* [CreateDisks](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/16312)
 	* New input parameter: Tags
 
 ## Release 3
@@ -218,11 +218,11 @@ Improves existing documents
 
 New data structures:
 
-* [Tag](/document/api/362/15669#Tag)
+* [Tag](https://cloud.tencent.com/document/api/362/15669#Tag)
 
 Modified data structure:
 
-* [Disk](/document/api/362/15669#Disk)
+* [Disk](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15669#Disk)
 	* New member: Tags
 
 ## Release 2xi
@@ -235,13 +235,13 @@ Improves existing documents
 
 Modified API:
 
-* [DescribeDiskConfigQuota](/document/api/362/16318)
+* [DescribeDiskConfigQuota](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/16318)
 	* New input parameter: DiskTypes
 	* **Deleted input parameter:** DiskType
 
 Modified data structure:
 
-* [Snapshot](/document/api/362/15669#Snapshot)
+* [Snapshot](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15669#Snapshot)
 	* New members: CopyingToRegions, CopyFromRemote
 
 ## Release 1
@@ -254,33 +254,33 @@ Improves existing documents
 
 New APIs:
 
-* [ApplySnapshot](/document/api/362/15643)
-* [AttachDisks](/document/api/362/16313)
-* [CreateDisks](/document/api/362/16312)
-* [CreateSnapshot](/document/api/362/15648)
-* [DeleteSnapshots](/document/api/362/15645)
-* [DescribeDiskConfigQuota](/document/api/362/16318)
-* [DescribeDisks](/document/api/362/16315)
-* [DescribeInstancesDiskNum](/document/api/362/16311)
-* [DescribeSnapshots](/document/api/362/15647)
-* [DetachDisks](/document/api/362/16316)
-* [InquiryPriceCreateDisks](/document/api/362/16314)
-* [InquiryPriceRenewDisks](/document/api/362/16317)
-* [InquiryPriceResizeDisk](/document/api/362/16320)
-* [ModifyDiskAttributes](/document/api/362/15659)
-* [ModifyDisksRenewFlag](/document/api/362/15668)
-* [ModifySnapshotAttribute](/document/api/362/15650)
-* [RenewDisk](/document/api/362/16319)
-* [ResizeDisk](/document/api/362/16310)
-* [TerminateDisks](/document/api/362/16321)
+* [ApplySnapshot](https://cloud.tencent.com/document/api/362/15643)
+* [AttachDisks](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/16313)
+* [CreateDisks](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/16312)
+* [CreateSnapshot](https://cloud.tencent.com/document/api/362/15648)
+* [DeleteSnapshots](https://cloud.tencent.com/document/api/362/15645)
+* [DescribeDiskConfigQuota](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/16318)
+* [DescribeDisks](https://cloud.tencent.com/document/api/362/16315)
+* [DescribeInstancesDiskNum](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/16311)
+* [DescribeSnapshots](https://cloud.tencent.com/document/api/362/15647)
+* [DetachDisks](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/16316)
+* [InquiryPriceCreateDisks](https://cloud.tencent.com/document/api/362/16314)
+* [InquiryPriceRenewDisks](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/16317)
+* [InquiryPriceResizeDisk](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/16320)
+* [ModifyDiskAttributes](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15659)
+* [ModifyDisksRenewFlag](https://cloud.tencent.com/document/api/362/15668)
+* [ModifySnapshotAttribute](https://cloud.tencent.com/document/api/362/15650)
+* [RenewDisk](https://cloud.tencent.com/document/api/362/16319)
+* [ResizeDisk](https://cloud.tencent.com/document/api/362/16310)
+* [TerminateDisks](https://cloud.tencent.com/document/api/362/16321)
 
 New data structures:
 
-* [Disk](/document/api/362/15669#Disk)
-* [DiskChargePrepaid](/document/api/362/15669#DiskChargePrepaid)
-* [DiskConfig](/document/api/362/15669#DiskConfig)
-* [Filter](/document/api/362/15669#Filter)
-* [Placement](/document/api/362/15669#Placement)
-* [Price](/document/api/362/15669#Price)
-* [Snapshot](/document/api/362/15669#Snapshot)
+* [Disk](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15669#Disk)
+* [DiskChargePrepaid](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15669#DiskChargePrepaid)
+* [DiskConfig](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15669#DiskConfig)
+* [Filter](https://cloud.tencent.com/document/api/362/15669#Filter)
+* [Placement](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15669#Placement)
+* [Price](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15669#Price)
+* [Snapshot](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15669#Snapshot)
 

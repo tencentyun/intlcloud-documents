@@ -12,13 +12,13 @@ CRS 인스턴스 백업 리스트를 조회합니다.
 
 ## 2. 입력 매개변수
 
-다음 요청 매개변수 리스트에는 API 요청 매개변수 및 일부 공통 매개변수만 나열되며, 완전한 공통 매개변수 리스트는 [공통 요청 매개변수](/document/api/239/20005)를 참조하십시오.
+다음 요청 매개변수 리스트에는 API 요청 매개변수 및 일부 공통 매개변수만 나열되며, 완전한 공통 매개변수 리스트는 [공통 요청 매개변수](https://cloud.tencent.com/document/api/239/20005)를 참조하십시오.
 
 | 매개변수 이름 | 필수 여부 | 유형 | 설명 |
 |---------|---------|---------|---------|
 | Action | 예 | String | 공통 매개변수, 이 API 값: DescribeInstanceBackups |
 | Version | 예 | String | 공통 매개변수, 이 API 값: 2018-04-12 |
-| Region | 예 | String | 공통 매개변수, 자세한 내용은 제품이 지원되는 [지역 리스트](/document/api/239/20005#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)를 참조하십시오. |
+| Region | 예 | String | 공통 매개변수, 자세한 내용은 제품이 지원되는 [지역 리스트](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/239/20005#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)를 참조하십시오. |
 | InstanceId | 예 | String | 작업 예정 중인 인스턴스 ID, DescribeInstance API를 통해 반환값의 InstanceId를 획득할 수 있습니다. |
 | Limit | 아니오 | Integer | 인스턴스 리스트 크기, 기본 크기는 20 |
 | Offset | 아니요 | Integer | 오프셋, Limit의 정수 배수 |
@@ -31,7 +31,7 @@ CRS 인스턴스 백업 리스트를 조회합니다.
 | 매개변수 이름 | 유형 | 설명 |
 |---------|---------|---------|
 | TotalCount | Integer | 백업 총수|
-| BackupSet | Array of [RedisBackupSet](/document/api/239/20022#RedisBackupSet) | 인스턴스의 백업 배열|
+| BackupSet | Array of [RedisBackupSet](https://cloud.tencent.com/document/api/239/20022#RedisBackupSet) | 인스턴스의 백업 배열|
 | RequestId | String | 유일한 요청 ID, 매회 요청 시마다 반환됩니다. 문제를 찾을 경우 해당 요청의 RequestId를 제공해야 합니다. |
 
 ## 4. 예시
@@ -98,11 +98,11 @@ https://redis.tencentcloudapi.com/?Action=DescribeInstanceBackups
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. 오류 코드
 
-다음은 API 비즈니스 로직과 관련된 오류 코드만 나열하며 다른 오류 코드는 [공통 오류 코드](/document/api/239/20007#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)를 참조하십시오.
+다음은 API 비즈니스 로직과 관련된 오류 코드만 나열하며 다른 오류 코드는 [공통 오류 코드](https://cloud.tencent.com/document/api/239/20007#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)를 참조하십시오.
 
 | 오류 코드 | 설명 |
 |---------|---------|

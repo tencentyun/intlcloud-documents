@@ -12,13 +12,13 @@
 
 ## 2. 输入参数
 
-以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见 [公共请求参数](/document/api/845/30623)。
+以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见 [公共请求参数](https://cloud.tencent.com/document/api/845/30623)。
 
 | 参数名称 | 必选 | 类型 | 描述 |
 |---------|---------|---------|---------|
 | Action | 是 | String | 公共参数，本接口取值：CreateInstance |
 | Version | 是 | String | 公共参数，本接口取值：2018-04-16 |
-| Region | 是 | String | 公共参数，详见产品支持的 [地域列表](/document/api/845/30623#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。 |
+| Region | 是 | String | 公共参数，详见产品支持的 [地域列表](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/845/30623#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。 |
 | Zone | 是 | String | 可用区 |
 | NodeNum | 是 | Integer | 节点数量（2-50个） |
 | EsVersion | 是 | String | 实例版本（支持"5.6.4"、"6.4.3"） |
@@ -41,7 +41,7 @@
 | MasterNodeDiskSize | 否 | Integer | 专用主节点磁盘大小（单位GB，非必传，若传递则必须为50，暂不支持自定义） |
 | ClusterNameInConf | 否 | String | 集群配置文件中的ClusterName（系统默认配置为实例ID，暂不支持自定义） |
 | DeployMode | 否 | Integer | 集群部署方式<li>0：单可用区部署</li><li>1：多可用区部署</li>默认为0 |
-| MultiZoneInfo.N | 否 | Array of [MultiZoneInfo](/document/api/845/30634#MultiZoneInfo) | 多可用区部署时可用区的详细信息(DeployMode为1时必传) |
+| MultiZoneInfo.N | 否 | Array of [MultiZoneInfo](https://cloud.tencent.com/document/api/845/30634#MultiZoneInfo) | 多可用区部署时可用区的详细信息(DeployMode为1时必传) |
 | LicenseType | 否 | String | License类型<li>oss：开源版</li><li>basic：基础版</li><li>platinum：白金版</li>默认值platinum |
 
 ## 3. 输出参数
@@ -112,11 +112,11 @@ InstanceName=es_test
 
 ### 命令行工具
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. 错误码
 
-以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](/document/api/845/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
+以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](https://cloud.tencent.com/document/api/845/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
 
 | 错误码 | 描述 |
 |---------|---------|

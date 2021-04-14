@@ -14,7 +14,7 @@ This API (ImportImage) is used to import images that can be used to create insta
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/213/15692).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/213/15692).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -27,7 +27,7 @@ The following request parameter list only provides API request parameters and so
 | ImageName | Yes | String | Image name |
 | ImageDescription | No | String | Image description |
 | DryRun | No | Boolean | Check parameters only, and do not execute tasks |
-| Force | No | Boolean | Whether to perform the forced image import. For more information, please see [Forced Image Import](https://cloud.tencent.com/document/product/213/12849) |
+| Force | No | Boolean | Whether to perform the forced image import. For more information, please see [Forced Image Import](https://intl.cloud.tencent.com/document/product/213/12849) |
 
 ## 3. Output Parameters
 

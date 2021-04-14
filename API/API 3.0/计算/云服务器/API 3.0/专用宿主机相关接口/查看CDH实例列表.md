@@ -4,13 +4,13 @@
 
 ## 2. 输入参数
 
-以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见[公共请求参数](/document/api/213/15692)。
+以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见[公共请求参数](https://cloud.tencent.com/document/api/213/15692)。
 
 | 参数名称 | 是否必选 | 类型 | 描述 |
 |---------|---------|---------|---------|
 | Action | 是 | String | 公共参数，本接口取值：DescribeHosts |
 | Version | 是 | String | 公共参数，本接口取值：2017-03-12 |
-| Filters.N | 否 | Array of [Filter](/document/api/213/15753#Filter) | 过滤条件。<li>zone - String - 是否必填：否 - （过滤条件）按照可用区过滤。</li><li>project-id - Integer - 是否必填：否 - （过滤条件）按照项目ID过滤。可通过调用 DescribeProject 查询已创建的项目列表或登录控制台进行查看；也可以调用 AddProject 创建新的项目。</li><li>host-id - String - 是否必填：否 - （过滤条件）按照CDH ID过滤。CDH ID形如：host-11112222。</li><li>host-name - String - 是否必填：否 - （过滤条件）按照CDH实例名称过滤。</li><li>host-state - String - 是否必填：否 - （过滤条件）按照CDH实例状态进行过滤。（PENDING：创建中&#124;LAUNCH_FAILURE：创建失败&#124;RUNNING：运行中&#124;EXPIRED：已过期）|</li>
+| Filters.N | 否 | Array of [Filter](https://cloud.tencent.com/document/api/213/15753#Filter) | 过滤条件。<li>zone - String - 是否必填：否 - （过滤条件）按照可用区过滤。</li><li>project-id - Integer - 是否必填：否 - （过滤条件）按照项目ID过滤。可通过调用 DescribeProject 查询已创建的项目列表或登录控制台进行查看；也可以调用 AddProject 创建新的项目。</li><li>host-id - String - 是否必填：否 - （过滤条件）按照CDH ID过滤。CDH ID形如：host-11112222。</li><li>host-name - String - 是否必填：否 - （过滤条件）按照CDH实例名称过滤。</li><li>host-state - String - 是否必填：否 - （过滤条件）按照CDH实例状态进行过滤。（PENDING：创建中&#124;LAUNCH_FAILURE：创建失败&#124;RUNNING：运行中&#124;EXPIRED：已过期）|</li>
 | Offset | 否 | Integer | 偏移量，默认为0。 |
 | Limit | 否 | Integer | 返回数量，默认为20，最大值为100。 |
 
@@ -21,7 +21,7 @@
 | 参数名称 | 类型 | 描述 |
 |---------|---------|---------|
 | TotalCount | Integer | 符合查询条件的cdh实例总数 |
-| HostSet | Array of [HostItem](/document/api/213/15753#HostItem) | cdh实例详细信息列表 |
+| HostSet | Array of [HostItem](https://cloud.tencent.com/document/api/213/15753#HostItem) | cdh实例详细信息列表 |
 | RequestId | String | 唯一请求ID，每次请求都会返回。定位问题时需要提供该次请求的RequestId。 |
 
 ## 4. 错误码

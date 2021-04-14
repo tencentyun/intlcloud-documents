@@ -7,14 +7,14 @@ This API (RenewHosts) is used to renew the prepaid CDH instances.
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/213/15692).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/213/15692).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. Value​used in this API: RenewHosts |
 | Version | Yes | String | Common parameter. Value​used in this API: 2017-03-12 |
 | HostIds.N | Yes | Array of String | ID(s) of one or more CDH instance to be operated. |
-| HostChargePrepaid | Yes | [ChargePrepaid](/document/api/213/15753#ChargePrepaid) | Prepaid mode, which is the relevant parameter setting for prepaid mode. This parameter can specify the purchased usage period, whether to set automatic renewal and other attributes of the instance purchased on a prepaid basis. If the payment mode of the specified instance is prepaid, this parameter must be submitted. |
+| HostChargePrepaid | Yes | [ChargePrepaid](https://cloud.tencent.com/document/api/213/15753#ChargePrepaid) | Prepaid mode, which is the relevant parameter setting for prepaid mode. This parameter can specify the purchased usage period, whether to set automatic renewal and other attributes of the instance purchased on a prepaid basis. If the payment mode of the specified instance is prepaid, this parameter must be submitted. |
 
 ## 3. Output Parameters
 

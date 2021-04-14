@@ -144,8 +144,8 @@ Referenced by: CreateComputeEnv, CreateTaskTemplate, DescribeComputeEnvCreateInf
 
 | Name | Type | Required | Description |
 |------|------|----------|------|
-| DiskSize | Integer | Yes | Data disk size in GB. The minimum adjustment step width is 10 GB, and the value range varies for different data disk types. For details, see [CVM Instance Configuration](/document/product/213/2177). The default value is 0, which means that data disk is not purchased. For more information about restrictions, see the product documentation. |
-| DiskType | String | No | Data disk type. For more information about restrictions on data disk types, see [CVM Instance Configuration](/document/product/213/2177). Value range: <br><li>LOCAL_BASIC: local disk <br><li>LOCAL_SSD: Local SSD <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium cloud disk <br><li>CLOUD_SSD: SSD cloud disk <br><br>Default value: LOCAL_BASIC. <br><br>This parameter is not valid for the `ResizeInstanceDisk` API. |
+| DiskSize | Integer | Yes | Data disk size in GB. The minimum adjustment step width is 10 GB, and the value range varies for different data disk types. For details, see [CVM Instance Configuration](https://intl.cloud.tencent.com/document/product/213/11518). The default value is 0, which means that data disk is not purchased. For more information about restrictions, see the product documentation. |
+| DiskType | String | No | Data disk type. For more information about restrictions on data disk types, see [CVM Instance Configuration](https://intl.cloud.tencent.com/document/product/213/11518). Value range: <br><li>LOCAL_BASIC: local disk <br><li>LOCAL_SSD: Local SSD <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium cloud disk <br><li>CLOUD_SSD: SSD cloud disk <br><br>Default value: LOCAL_BASIC. <br><br>This parameter is not valid for the `ResizeInstanceDisk` API. |
 | DiskId | String | No | Data disk ID. The LOCAL_BASIC and LOCAL_SSD types do not have an ID. They don't support this parameter temporarily. |
 
 ## Dependency
@@ -338,7 +338,7 @@ Referenced by: CreateComputeEnv, CreateTaskTemplate, DescribeComputeEnvCreateInf
 | Name | Type | Required | Description |
 |------|------|----------|------|
 | InternetChargeType | String | No | Internet billing method. Value range: <br><li>BANDWIDTH_PREPAID: Prepaid by bandwidth <br><li>TRAFFIC_POSTPAID_BY_HOUR: Postpaid by traffic on a per hour basis <br><li>BANDWIDTH_POSTPAID_BY_HOUR: Postpaid by bandwidth on a per hour basis <br><li>BANDWIDTH_PACKAGE: BWP user <br>Default value: TRAFFIC_POSTPAID_BY_HOUR. |
-| InternetMaxBandwidthOut | Integer | No | The upper limit of outbound Internet bandwidth in Mbps. Default value: 0 Mbps. The upper limit of bandwidth varies for different models. For details, see [Buying Network Bandwidth](/document/product/213/509). |
+| InternetMaxBandwidthOut | Integer | No | The upper limit of outbound Internet bandwidth in Mbps. Default value: 0 Mbps. The upper limit of bandwidth varies for different models. For details, see [Buying Network Bandwidth](https://intl.cloud.tencent.com/document/product/213/10578). |
 | PublicIpAssigned | Boolean | No | Whether to assign a public IP. Value range: <br><li>TRUE: A public IP is assigned <br><li>FALSE: No public IP is assigned <br><br>If the Internet bandwidth is greater than 0 Mbps, either value can be used. The default value is TRUE. If the Internet bandwidth is 0, it is not allowed to assign a public IP. |
 
 ## ItemPrice
@@ -486,8 +486,8 @@ Referenced by: CreateComputeEnv, DescribeComputeEnv, DescribeComputeEnvs, Descri
 
 | Name | Type | Required | Description |
 |------|------|----------|------|
-| Zone | String | Yes | ID of the [availability zone](/document/product/213/9452#zone) to which the instance belongs. This parameter can also be obtained by calling the Zone field in the return value of [DescribeZones](/document/api/213/9455). |
-| ProjectId | Integer | No | ID of the project to which the instance belongs. This parameter can also be obtained by calling the projectId field in the return value of [DescribeProject](/document/api/378/4400). If left blank, the default project. |
+| Zone | String | Yes | ID of the [availability zone](https://intl.cloud.tencent.com/document/product/213/15753) to which the instance belongs. This parameter can also be obtained by calling the Zone field in the return value of [DescribeZones](https://cloud.tencent.com/document/api/213/9455). |
+| ProjectId | Integer | No | ID of the project to which the instance belongs. This parameter can also be obtained by calling the projectId field in the return value of [DescribeProject](https://cloud.tencent.com/document/api/378/4400). If left blank, the default project. |
 | HostIds | Array of String | No | ID List of the CDH to which the instance belongs. If you have purchased dedicated hosts and specified this parameter, the instances you purchase will be randomly deployed on these hosts. |
 
 ## RedirectInfo
@@ -524,7 +524,7 @@ Referenced by: CreateComputeEnv, CreateTaskTemplate, DescribeComputeEnvCreateInf
 
 | Name | Type | Required | Description |
 |------|------|----------|------|
-| Enabled | Boolean | No | Whether to enable the [Cloud Monitor](/document/product/248) service. Value range: <br><li>TRUE: Cloud Monitor is enabled <br><li>FALSE: Cloud Monitor is disabled <br><br>Default value: TRUE. |
+| Enabled | Boolean | No | Whether to enable the [Cloud Monitor](https://cloud.tencent.com/document/product/248) service. Value range: <br><li>TRUE: Cloud Monitor is enabled <br><li>FALSE: Cloud Monitor is disabled <br><br>Default value: TRUE. |
 
 ## RunSecurityServiceEnabled
 
@@ -534,7 +534,7 @@ Referenced by: CreateComputeEnv, CreateTaskTemplate, DescribeComputeEnvCreateInf
 
 | Name | Type | Required | Description |
 |------|------|----------|------|
-| Enabled | Boolean | No | Whether to enable the [Cloud Security](/document/product/296) service. Value range: <br><li>TRUE: Cloud Security is enabled <br><li>FALSE: Cloud Security is disabled <br><br>Default value: TRUE. |
+| Enabled | Boolean | No | Whether to enable the [Cloud Security](https://cloud.tencent.com/document/product/296) service. Value range: <br><li>TRUE: Cloud Security is enabled <br><li>FALSE: Cloud Security is disabled <br><br>Default value: TRUE. |
 
 ## SpotMarketOptions
 
@@ -567,7 +567,7 @@ Referenced by: CreateComputeEnv, CreateTaskTemplate, DescribeComputeEnvCreateInf
 
 | Name | Type | Required | Description |
 |------|------|----------|------|
-| DiskType | String | No | System disk type. For more information about restrictions on system disk types, see [CVM Instance Configuration](/document/product/213/2177). Value range: <br><li>LOCAL_BASIC: Local disk <br><li>LOCAL_SSD: Local SSD <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_SSD: SSD cloud disk <br><li>CLOUD_PREMIUM: Premium cloud disk <br><br>Default value: CLOUD_BASIC. |
+| DiskType | String | No | System disk type. For more information about restrictions on system disk types, see [CVM Instance Configuration](https://intl.cloud.tencent.com/document/product/213/11518). Value range: <br><li>LOCAL_BASIC: Local disk <br><li>LOCAL_SSD: Local SSD <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_SSD: SSD cloud disk <br><li>CLOUD_PREMIUM: Premium cloud disk <br><br>Default value: CLOUD_BASIC. |
 | DiskId | String | No | System disk ID. The LOCAL_BASIC and LOCAL_SSD types do not have an ID. They don't support this parameter temporarily. |
 | DiskSize | Integer | No | System disk size in GB. Default value: 50 |
 
@@ -684,7 +684,7 @@ Referenced by: CreateComputeEnv, CreateTaskTemplate, DescribeComputeEnvCreateInf
 
 | Name | Type | Required | Description |
 |------|------|----------|------|
-| VpcId | String | Yes | VPC ID in the format of `vpc-xxx`. A valid VpcId can be queried by logging in to the [console](https://console.cloud.tencent.com/vpc/vpc?rid=1) or obtained from the `unVpcId` field returned after calling the [DescribeVpcEx](/document/api/215/1372) API. |
-| SubnetId | String | Yes | VPC subnet ID in the format of `subnet-xxx`. A valid SubnetId can be queried by logging in to the [console](https://console.cloud.tencent.com/vpc/subnet?rid=1) or obtained from the `unSubnetId` field returned after calling the [DescribeSubnets](/document/api/215/15784) API. |
+| VpcId | String | Yes | VPC ID in the format of `vpc-xxx`. A valid VpcId can be queried by logging in to the [console](https://console.cloud.tencent.com/vpc/vpc?rid=1) or obtained from the `unVpcId` field returned after calling the [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) API. |
+| SubnetId | String | Yes | VPC subnet ID in the format of `subnet-xxx`. A valid SubnetId can be queried by logging in to the [console](https://console.cloud.tencent.com/vpc/subnet?rid=1) or obtained from the `unSubnetId` field returned after calling the [DescribeSubnets](https://cloud.tencent.com/document/api/215/15784) API. |
 | AsVpcGateway | Boolean | No | Whether to use as a public gateway. Public gateway can be used normally only if the instance has a public IP and is in a VPC. Value range: <br><li>TRUE: Used as a public gateway <br><li>FALSE: Not used as a public gateway <br><br>Default value: FALSE. |
 | PrivateIpAddresses | Array of String | No | VPC subnet IP array, which can be used when creating an instance or modifying the instance's VPC properties. Currently, multiple IPs from the same subnet can be passed in only when batch creating multiple instances. |

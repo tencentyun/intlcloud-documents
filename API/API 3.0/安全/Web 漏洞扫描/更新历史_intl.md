@@ -7,13 +7,13 @@ Improvement to existing documentation.
 
 New APIs:
 
-* [CreateVulsReport](/document/api/692/18089)
-* [DescribeVulsNumber](/document/api/692/18088)
-* [DescribeVulsNumberTimeline](/document/api/692/18087)
+* [CreateVulsReport](https://cloud.tencent.com/document/api/692/18089)
+* [DescribeVulsNumber](https://cloud.tencent.com/document/api/692/18088)
+* [DescribeVulsNumberTimeline](https://cloud.tencent.com/document/api/692/18087)
 
 New data structures:
 
-* [VulsTimeline](/document/api/692/16759#VulsTimeline)
+* [VulsTimeline](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/692/16759#VulsTimeline)
 
 ## Release 3
 
@@ -25,23 +25,23 @@ Improvement to existing documentation.
 
 Modified APIs:
 
-* [CreateSites](/document/api/692/16748)
+* [CreateSites](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/692/16748)
 	* New input parameters: UserAgent
-* [DescribeConfig](/document/api/692/16757)
+* [DescribeConfig](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/692/16757)
 	* New output parameters: Appid
-* [DescribeSitesVerification](/document/api/692/16753)
+* [DescribeSitesVerification](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/692/16753)
 	* **Modified output parameters:** SitesVerification
-* [ModifySiteAttribute](/document/api/692/16754)
+* [ModifySiteAttribute](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/692/16754)
 	* New input parameters: NeedLogin, LoginCookie, LoginCheckUrl, LoginCheckKw, ScanDisallow
 
 Modified data structure:
 
-* [Site](/document/api/692/16759#Site)
+* [Site](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/692/16759#Site)
 	* New members: NeedLogin, LoginCookie, LoginCookieValid, LoginCheckUrl, LoginCheckKw, ScanDisallow, UserAgent
 	* **Deleted members:** LastScanExtsCount
-* [SitesVerification](/document/api/692/16759#SitesVerification)
+* [SitesVerification](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/692/16759#SitesVerification)
 	* New members: VerifyUrl, VerifyFileUrl
-* [Vul](/document/api/692/16759#Vul)
+* [Vul](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/692/16759#Vul)
 	* New members: Appid, Uin
 
 ## Release 2
@@ -54,12 +54,12 @@ Improvement to existing documentation.
 
 Modified data structure:
 
-* [Monitor](/document/api/692/16759#Monitor)
+* [Monitor](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/692/16759#Monitor)
 	* New members: Id, Appid
 	* **Deleted members:** ID
-* [Site](/document/api/692/16759#Site)
+* [Site](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/692/16759#Site)
 	* New members: LastScanExtsCount, Appid, Uin
-* [SitesVerification](/document/api/692/16759#SitesVerification)
+* [SitesVerification](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/692/16759#SitesVerification)
 	* New members: Id, Appid
 
 ## Release 1
@@ -72,31 +72,31 @@ Improvement to existing documentation.
 
 New APIs:
 
-* [CreateMonitors](/document/api/692/16743)
-* [CreateSites](/document/api/692/16748)
-* [CreateSitesScans](/document/api/692/16749)
-* [CreateVulsMisinformation](/document/api/692/16740)
-* [DeleteMonitors](/document/api/692/16744)
-* [DeleteSites](/document/api/692/16750)
-* [DescribeConfig](/document/api/692/16757)
-* [DescribeMonitors](/document/api/692/16745)
-* [DescribeSiteQuota](/document/api/692/16751)
-* [DescribeSites](/document/api/692/16752)
-* [DescribeSitesVerification](/document/api/692/16753)
-* [DescribeVuls](/document/api/692/16741)
-* [ModifyConfigAttribute](/document/api/692/16758)
-* [ModifyMonitorAttribute](/document/api/692/16746)
-* [ModifySiteAttribute](/document/api/692/16754)
-* [VerifySites](/document/api/692/16755)
+* [CreateMonitors](https://cloud.tencent.com/document/api/692/16743)
+* [CreateSites](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/692/16748)
+* [CreateSitesScans](https://cloud.tencent.com/document/api/692/16749)
+* [CreateVulsMisinformation](https://cloud.tencent.com/document/api/692/16740)
+* [DeleteMonitors](https://cloud.tencent.com/document/api/692/16744)
+* [DeleteSites](https://cloud.tencent.com/document/api/692/16750)
+* [DescribeConfig](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/692/16757)
+* [DescribeMonitors](https://cloud.tencent.com/document/api/692/16745)
+* [DescribeSiteQuota](https://cloud.tencent.com/document/api/692/16751)
+* [DescribeSites](https://cloud.tencent.com/document/api/692/16752)
+* [DescribeSitesVerification](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/692/16753)
+* [DescribeVuls](https://cloud.tencent.com/document/api/692/16741)
+* [ModifyConfigAttribute](https://cloud.tencent.com/document/api/692/16758)
+* [ModifyMonitorAttribute](https://cloud.tencent.com/document/api/692/16746)
+* [ModifySiteAttribute](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/692/16754)
+* [VerifySites](https://cloud.tencent.com/document/api/692/16755)
 
 New data structures:
 
-* [Filter](/document/api/692/16759#Filter)
-* [Monitor](/document/api/692/16759#Monitor)
-* [MonitorMiniSite](/document/api/692/16759#MonitorMiniSite)
-* [MonitorsDetail](/document/api/692/16759#MonitorsDetail)
-* [Site](/document/api/692/16759#Site)
-* [SitesVerification](/document/api/692/16759#SitesVerification)
-* [Vul](/document/api/692/16759#Vul)
+* [Filter](https://cloud.tencent.com/document/api/692/16759#Filter)
+* [Monitor](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/692/16759#Monitor)
+* [MonitorMiniSite](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/692/16759#MonitorMiniSite)
+* [MonitorsDetail](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/692/16759#MonitorsDetail)
+* [Site](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/692/16759#Site)
+* [SitesVerification](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/692/16759#SitesVerification)
+* [Vul](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/692/16759#Vul)
 
 

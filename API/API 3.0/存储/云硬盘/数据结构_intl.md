@@ -94,9 +94,9 @@ Referenced by: DescribeDiskConfigQuota.
 | DiskChargeType | String | Billing method. Value range: <br><li>PREPAID: Prepaid <br><li>POSTPAID_BY_HOUR: Postpaid, that is, pay as you go. |
 | MaxDiskSize | Integer | The maximum configurable cloud disk size (in GB). |
 | MinDiskSize | Integer | The minimum configurable cloud disk size (in GB). |
-| Zone | String | The [Availability Region](/document/product/213/15753#ZoneInfo) of the cloud drive. |
+| Zone | String | The [Availability Region](https://intl.cloud.tencent.com/document/product/213/15753) of the cloud drive. |
 | DeviceClass | String | The instance type. <br/>Note: This field may return ‘null’, indicating that no valid values are available. |
-| InstanceFamily | String | Instance model series. For more information, see [Instance Models](https://cloud.tencent.com/document/product/213/11518). <br/>Note: This field may return ‘null’, indicating that no valid values are available. |
+| InstanceFamily | String | Instance model series. For more information, see [Instance Models](https://intl.cloud.tencent.com/document/product/213/11518). <br/>Note: This field may return ‘null’, indicating that no valid values are available. |
 
 ## DiskOperationLog
 
@@ -143,8 +143,8 @@ Referenced by: CreateDisks, DescribeDisks, DescribeSnapshots.
 
 | Name | Type | Required | Description |
 |------|------|----------|------|
-| Zone | String | Yes | The ID of the [Availability Zone](/document/product/213/15753#ZoneInfo) to which the cloud disk belongs. This parameter can be obtained from the Zone field in the returned values of [DescribeZones](/document/product/213/15707). |
-| ProjectId | Integer | No | ID of the project to which the instance belongs. This parameter can be obtained from the projectId field in the returned values of [DescribeProject](/document/api/378/4400). If this is left empty, default project is used. |
+| Zone | String | Yes | The ID of the [Availability Zone](https://intl.cloud.tencent.com/document/product/213/15753) to which the cloud disk belongs. This parameter can be obtained from the Zone field in the returned values of [DescribeZones](https://intl.cloud.tencent.com/document/product/213/35071). |
+| ProjectId | Integer | No | ID of the project to which the instance belongs. This parameter can be obtained from the projectId field in the returned values of [DescribeProject](https://cloud.tencent.com/document/api/378/4400). If this is left empty, default project is used. |
 | CdcId | String | No | The ID of the dedicated cluster to which the instance belongs. As an input parameter, it indicates that the resources of the designated CdcId dedicated cluster are to be operated. It can be empty. As an output parameter, it indicates the ID of the dedicated cluster to which the resources belong. It can be empty. <br/>Note: This field may return ‘null’, indicating that no valid values are available. |
 | CageId | String | No | The cage ID. As an input parameter, it indicates that the resources of the specified CageId are to be operated. It can be empty. As an output parameter, it indicates the cage ID to which the resources belong. It can be empty. <br/>Note: This field may return ‘null’, indicating that no valid values are available. |
 | CdcName | String | No| The name of the dedicated cluster. Ignore as an input parameter. As an output parameter, it indicates the name of the dedicated cluster to which the cloud disk belongs. <br/>Note: This field may return ‘null’, indicating that no valid values are available. |
@@ -199,7 +199,7 @@ Referenced by: DescribeSnapshots.
 | DiskId | String | ID of the cloud disk used to create the snapshot. |
 | DiskSize | Integer | Size of the cloud disk used to create the snapshot (in GB). |
 | SnapshotState | String | Status of the snapshot. Value range: <br><li>NORMAL: Normal <br><li>CREATING: Creating <br><li>ROLLBACKING: Rolling backing <br><li>COPYING_FROM_REMOTE: Duplicating snapshot across regions |
-| SnapshotName | String | Snapshot name, custom snapshot alias. Call [ModifySnapshotAttribute](/document/product/362/15650) to modify this field. |
+| SnapshotName | String | Snapshot name, custom snapshot alias. Call [ModifySnapshotAttribute](https://intl.cloud.tencent.com/document/product/362/15650) to modify this field. |
 | Percent | Integer | The percentage of progress for snapshot creation. This field is always 100 after the snapshot is created successfully. |
 | CreateTime | Timestamp | Creation time of the snapshot. |
 | DeadlineTime | Timestamp | Expiration time of the snapshot. If the snapshot is permanently retained, this field is empty. |

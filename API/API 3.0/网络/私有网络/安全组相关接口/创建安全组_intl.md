@@ -3,7 +3,7 @@
 Domain name for API request: vpc.tencentcloudapi.com.
 
 This API (CreateSecurityGroup) is used to create security groups (SecurityGroup).
-* <a href="https://cloud.tencent.com/document/product/213/500#2.-.E5.AE.89.E5.85.A8.E7.BB.84.E7.9A.84.E9.99.90.E5.88.B6">Limit on the number of security groups</a> for each project in each region under each account.
+* <a href="https://intl.cloud.tencent.com/document/product/213/12452">Limit on the number of security groups</a> for each project in each region under each account.
 Both the ingress and egress policies for a created security group are Deny All by default. Usually, you need to call CreateSecurityGroupPolicies to set the security group policy to the desired one after creation is complete.
 
 A maximum of 100 requests can be initiated per second for this API.
@@ -14,13 +14,13 @@ Note: This API supports Finance regions. Since Finance regions and non-Finance r
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/215/15692).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/215/15692).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: CreateSecurityGroup |
 | Version | Yes |  String | Common parameter. The value used for this API: 2017-03-12 |
-| Region | Yes |  String | Common parameter. For more information, please see the [list of regions](/document/api/215/15692#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes |  String | Common parameter. For more information, please see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/215/15692#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | GroupName | Yes | String | Security group name, which is limited to 60 characters. |
 | GroupDescription | Yes | String | Security group remark, which is limited to 100 characters. |
 | ProjectId | No | String | Project ID. Default is 0. It can be found on the project management page in the Tencent Cloud console. |
@@ -29,12 +29,12 @@ The following request parameter list only provides API request parameters and so
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
-| SecurityGroup | [SecurityGroup](/document/api/215/##SecurityGroup) | Security group object. |
+| SecurityGroup | [SecurityGroup](https://cloud.tencent.com/document/api/215/##SecurityGroup) | Security group object. |
 | RequestId | String | The unique request ID, which is returned for each request. RequestId is required for locating a problem. |
 
 ## 4. Error Codes
 
-The following only lists the error codes related to the API business logic. For other error codes, see [Common Error Codes](/document/api/215/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to the API business logic. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/215/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
@@ -83,5 +83,5 @@ Cloud API 3.0 comes with the following development tools to make it easier to ca
 * [Tencent Cloud SDK 3.0 for Go](https://github.com/TencentCloud/tencentcloud-sdk-go)
 * [Tencent Cloud SDK 3.0 for NodeJS](https://github.com/TencentCloud/tencentcloud-sdk-nodejs)
 * [Tencent Cloud SDK 3.0 for .NET](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 

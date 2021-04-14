@@ -95,8 +95,8 @@ Referenced by: CreateLaunchConfiguration, DescribeLaunchConfigurations, UpgradeL
 
 | Name | Type | Required | Description |
 |------|------|----------|------|
-| DiskType | String | No | Data disk type. For more information on limits of data disk types, see [CVM Instance Configuration](https://cloud.tencent.com/document/product/213/2177). Value range: <br><li>LOCAL_BASIC: Local disk <br><li>LOCAL_SSD: Local SSD disk <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium cloud disk <br><li>CLOUD_SSD: SSD cloud disk <br><br>Default value: CLOUD_BASIC. <br/>Note: This field may return null, indicating that no valid values can be obtained. |
-| DiskSize | Integer | No | Data disk size (in GB). The minimum adjustment increment is 10 GB. Different types of data disks have different value ranges. For more information on limits, see [CVM Instance Configuration](https://cloud.tencent.com/document/product/213/2177). The default value is 0, indicating that no data disk is purchased. For more information, see the product documentation. <br/>Note: This field may return null, indicating that no valid values can be obtained. |
+| DiskType | String | No | Data disk type. For more information on limits of data disk types, see [CVM Instance Configuration](https://intl.cloud.tencent.com/document/product/213/11518). Value range: <br><li>LOCAL_BASIC: Local disk <br><li>LOCAL_SSD: Local SSD disk <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium cloud disk <br><li>CLOUD_SSD: SSD cloud disk <br><br>Default value: CLOUD_BASIC. <br/>Note: This field may return null, indicating that no valid values can be obtained. |
+| DiskSize | Integer | No | Data disk size (in GB). The minimum adjustment increment is 10 GB. Different types of data disks have different value ranges. For more information on limits, see [CVM Instance Configuration](https://intl.cloud.tencent.com/document/product/213/11518). The default value is 0, indicating that no data disk is purchased. For more information, see the product documentation. <br/>Note: This field may return null, indicating that no valid values can be obtained. |
 | SnapshotId | String | No | ID of the data disk snapshot in the format of `snap-l8psqwnt`. <br/>Note: This field may return null, indicating that no valid values can be obtained. |
 
 ## EnhancedService
@@ -208,7 +208,7 @@ Referenced by: CreateLaunchConfiguration, CreatePaiInstance, DescribeLaunchConfi
 | Name | Type | Required | Description |
 |------|------|----------|------|
 | InternetChargeType | String | No | Network billing mode. Value range: <br><li>BANDWIDTH_PREPAID: Prepaid by bandwidth <br><li>TRAFFIC_POSTPAID_BY_HOUR: Postpaid by traffic on a per hour basis <br><li>BANDWIDTH_POSTPAID_BY_HOUR: Postpaid by bandwidth on a per hour basis <br><li>BANDWIDTH_PACKAGE: BWP user <br>Default value: TRAFFIC_POSTPAID_BY_HOUR. <br/>Note: This field may return null, indicating that no valid values can be obtained. |
-| InternetMaxBandwidthOut | Integer | No | The maximum outbound bandwidth of the public network (in Mbps). The default value is 0 Mbps. The upper limit of bandwidth varies with different models. For more information, see [Purchasing Network Bandwidth](https://cloud.tencent.com/document/product/213/509). <br/>Note: This field may return null, indicating that no valid values can be obtained. |
+| InternetMaxBandwidthOut | Integer | No | The maximum outbound bandwidth of the public network (in Mbps). The default value is 0 Mbps. The upper limit of bandwidth varies with different models. For more information, see [Purchasing Network Bandwidth](https://intl.cloud.tencent.com/document/product/213/10578). <br/>Note: This field may return null, indicating that no valid values can be obtained. |
 | PublicIpAssigned | Boolean | No | Whether to assign a public IP. Value range: <br><li>TRUE: Assign a public IP <br><li>FALSE: Do not assign a public IP <br><br>If the public network bandwidth is greater than 0 Mbps, you are free to choose whether to enable the public IP (which is enabled by default). If the public network bandwidth is 0 Mbps, no public IP is allowed to be assigned. <br/>Note: This field may return null, indicating that no valid values can be obtained |
 
 ## LaunchConfiguration
@@ -405,7 +405,7 @@ Referenced by: CreateLaunchConfiguration, DescribeLaunchConfigurations, UpgradeL
 
 | Name | Type | Required | Description |
 |------|------|----------|------|
-| DiskType | String | No | System disk type. For more information on limits of system disk types, see [CVM Instance Configuration](https://cloud.tencent.com/document/product/213/2177). Value range: <br><li>LOCAL_BASIC: Local disk <br><li>LOCAL_SSD: Local SSD disk <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium cloud disk <br><li>CLOUD_SSD: SSD cloud disk <br><br>Default value: CLOUD_BASIC. <br/>Note: This field may return null, indicating that no valid values can be obtained. |
+| DiskType | String | No | System disk type. For more information on limits of system disk types, see [CVM Instance Configuration](https://intl.cloud.tencent.com/document/product/213/11518). Value range: <br><li>LOCAL_BASIC: Local disk <br><li>LOCAL_SSD: Local SSD disk <br><li>CLOUD_BASIC: HDD cloud disk <br><li>CLOUD_PREMIUM: Premium cloud disk <br><li>CLOUD_SSD: SSD cloud disk <br><br>Default value: CLOUD_BASIC. <br/>Note: This field may return null, indicating that no valid values can be obtained. |
 | DiskSize | Integer | No | System disk size in GB. Default value: 50 <br/>Note: This field may return null, indicating that no valid values can be obtained. |
 
 ## Tag

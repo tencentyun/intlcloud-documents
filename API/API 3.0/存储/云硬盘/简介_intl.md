@@ -2,7 +2,7 @@ Thank you for using Tencent Cloud Block Storage!
 
 Cloud Block Storage (CBS) is a highly available, highly reliable, low-cost, customizable network block storage device. For more information, please see [CBS Product Overview](https://cloud.tencent.com/doc/product/362/2345).
 
-Users can use the APIs described in this document to perform operations on cloud disks and snapshots, such as creating an elastic cloud disk, creating a snapshot, or rolling back a snapshot. For more information on supported operations, please see [API Overview](/document/product/362/15634).
+Users can use the APIs described in this document to perform operations on cloud disks and snapshots, such as creating an elastic cloud disk, creating a snapshot, or rolling back a snapshot. For more information on supported operations, please see [API Overview](https://intl.cloud.tencent.com/document/product/362/15634).
 
 Before using these APIs, please make sure that you have a thorough understanding of [CBS Product Overview](https://cloud.tencent.com/doc/product/362/2345), [Tips on Usage](https://cloud.tencent.com/doc/product/362/2922) and [Billing Methods](https://cloud.tencent.com/doc/product/362/2413).
 
@@ -13,7 +13,7 @@ To help you get familiar with CBS and snapshot services more quickly, we provide
 | Term | Full Name | Description |
 | --- |  --- | --- |
 | CBS | [Cloud Block Storage](https://cloud.tencent.com/document/product/439/6329 | This refers to distributed block storage independently developed by Tencent Cloud and called Could Storage for short. For more information, please see [CBS Product Overview](https://cloud.tencent.com/doc/product/362/%E4%BA%A7%E5%93%81%E6%A6%82%E8%BF%B0). It includes cloud disk purchased with CVM and elastic cloud disk purchased independently.
-| Elastic cloud block storage | [Elastic Cloud Block Storage](https://cloud.tencent.com/document/product/439/6329#1.2.-.E5.BC.B9.E6.80.A7.E4.BA.91.E7.A1.AC.E7.9B.98) | A cloud disk, also known as elastic cloud disk, that is not purchased along with a CVM (purchased separately), with an independent lifecycle (billing cycle). It can be mounted and unmounted to different CVMs (cannot be mounted simultaneously on multiple CVMs). |
+| Elastic cloud block storage | [Elastic Cloud Block Storage](https://intl.cloud.tencent.com/document/product/213/4953) | A cloud disk, also known as elastic cloud disk, that is not purchased along with a CVM (purchased separately), with an independent lifecycle (billing cycle). It can be mounted and unmounted to different CVMs (cannot be mounted simultaneously on multiple CVMs). |
 | Snapshot | [Cloud Disk Snapshot](https://cloud.tencent.com/doc/product/213/502) | Used to save a copy of a cloud disk at a certain point. You can use the snapshot to restore the cloud disk to the point when the snapshot was created |
 
 #### Definitions of input and output parameters
@@ -34,15 +34,15 @@ To help you get familiar with CBS and snapshot services more quickly, we provide
 
 To use an elastic cloud disk via APIs, you need to complete the following three steps:
 
-1. Create an elastic cloud disk: You can use the API [CreateDisks (create elastic cloud disk)](/document/product/362/16312) to create one or more elastic cloud disks.
-2. Mount the elastic cloud disk to the specified CVM: After the elastic cloud disk is created, use the API [AttachDisks (Mount Elastic Cloud Disk)](/document/product/362/16313) to mount it to the specified CVM. **Note: The term "mount" here refers to assigning the elastic cloud disk to the specified CVM, similar to a hot-plug of a disk to the server**.
+1. Create an elastic cloud disk: You can use the API [CreateDisks (create elastic cloud disk)](https://intl.cloud.tencent.com/document/product/362/16312) to create one or more elastic cloud disks.
+2. Mount the elastic cloud disk to the specified CVM: After the elastic cloud disk is created, use the API [AttachDisks (Mount Elastic Cloud Disk)](https://intl.cloud.tencent.com/document/product/362/16313) to mount it to the specified CVM. **Note: The term "mount" here refers to assigning the elastic cloud disk to the specified CVM, similar to a hot-plug of a disk to the server**.
 3. Log in to the CVM to initialize the elastic cloud disk: When using the new elastic cloud disk for the first time, you need to perform a series of operations such as partitioning and formatting. For more information, please see [Data Disk Partitioning and Formatting on Windows System](https://cloud.tencent.com/doc/product/213/2158) and [Data Disk Mounting, Partitioning and Formatting on Linux System](https://cloud.tencent.com/doc/product/362/6735). Note: For Linux system, partitioning is not necessary. You can skip the partitioning process and directly proceed to the formatting.
 
 
 To use cloud disk snapshots via APIs, you need to complete the following two steps:
 
-1. Create a cloud disk snapshot: You can use the API [CreateSnapshot (create snapshot)](/document/product/362/15648) to create a snapshot for the specified cloud disk.
-2. Roll back the cloud disk snapshot: If necessary, you can use the API [ApplySnapshot (roll back snapshot)](/document/product/362/15643) to roll back the snapshot to the specified cloud disk.
+1. Create a cloud disk snapshot: You can use the API [CreateSnapshot (create snapshot)](https://intl.cloud.tencent.com/document/product/362/15648) to create a snapshot for the specified cloud disk.
+2. Roll back the cloud disk snapshot: If necessary, you can use the API [ApplySnapshot (roll back snapshot)](https://intl.cloud.tencent.com/document/product/362/15643) to roll back the snapshot to the specified cloud disk.
 
 
 ## Use Limits

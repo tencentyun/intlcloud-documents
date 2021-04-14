@@ -12,13 +12,13 @@ API 요청 도메인 이름: cdb.tencentcloudapi.com.
 
 ## 2. 입력 매개변수
 
-다음 요청 매개변수 리스트에는 API 요청 매개변수 및 일부 공통 매개변수만 나열되며, 완전한 공통 매개변수 리스트는 [공통 요청 매개변수](/document/api/236/15833)를 참조하십시오.
+다음 요청 매개변수 리스트에는 API 요청 매개변수 및 일부 공통 매개변수만 나열되며, 완전한 공통 매개변수 리스트는 [공통 요청 매개변수](https://cloud.tencent.com/document/api/236/15833)를 참조하십시오.
 
 | 매개변수 이름 | 필수 항목 여부 | 유형 | 설명 |
 |---------|---------|---------|---------|
 | Action | 예 | String | 공통 매개변수, 이 API 값: DescribeTasks |
 | Version | 예 | String | 공통 매개변수, 이 API 선택 값: 2017-03-20 |
-| Region | 아니요 | String | 공통 매개변수, 자세한 내용은 제품의 지원되는 [지역 리스트](/document/api/236/15833#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)를 참조하십시오. |
+| Region | 아니요 | String | 공통 매개변수, 자세한 내용은 제품의 지원되는 [지역 리스트](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/236/15833#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)를 참조하십시오. |
 | InstanceId | 아니요 | String | 인스턴스 ID, 형식 예: cdb-c1nl9rpv, TencentDB 콘솔 페이지에 표시된 인스턴스 ID와 동일합니다. [인스턴스 리스트 조회](https://cloud.tencent.com/document/api/236/15872) API를 사용하여 획득할 수 있으며, 그 값은 출력 매개변수 중 필드 InstanceId의 값입니다 |
 | AsyncRequestId | 아니요 | String | 비동기화 태스크 요청 ID, CDB 관련 조작 실행 시 반환된 AsyncRequestId입니다. |
 | TaskTypes.N | 아니요 | Array of Integer | 태스크 유형, 값을 전달하지 않으면 모든 태스크 유형을 조회합니다. 가능한 값: 1-데이터베이스 롤백, 2-SQL 조작, 3-데이터 가져오기, 5-매개변수 설정, 6-초기화, 7-다시 시작, 8-GTID 시작, 9-읽기 전용 인스턴스 업그레이드, 10-데이터베이스 배치 롤백, 11-마스터 인스턴스 업그레이드, 12-데이터베이스 테이블 삭제, 13-마스터 인스턴스로 전환. |
@@ -339,11 +339,11 @@ https://cdb.tencentcloudapi.com/?Action=DescribeTasks
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. 오류 코드
 
-다음은 API 비즈니스 로직과 관련된 오류 코드만 나열하며 다른 오류 코드는 [공통 오류 코드](/document/api/236/15835#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)를 참조하십시오.
+다음은 API 비즈니스 로직과 관련된 오류 코드만 나열하며 다른 오류 코드는 [공통 오류 코드](https://cloud.tencent.com/document/api/236/15835#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)를 참조하십시오.
 
 | 오류 코드 | 설명 |
 |---------|---------|

@@ -8,25 +8,25 @@ Improvements on the existing documents.
 
 New APIs:
 
-* [CreateCluster](/document/api/457/34527)
+* [CreateCluster](https://cloud.tencent.com/document/api/457/34527)
 
 Modified APIs:
 
-* [DescribeClusterInstances](/document/api/457/31863)
+* [DescribeClusterInstances](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/457/31863)
 	* **Modified input parameters:** InstanceIds
 
 New data structures:
 
-* [ClusterAdvancedSettings](/document/api/457/31866#ClusterAdvancedSettings)
-* [ClusterBasicSettings](/document/api/457/31866#ClusterBasicSettings)
-* [ClusterCIDRSettings](/document/api/457/31866#ClusterCIDRSettings)
-* [ExistedInstancesForNode](/document/api/457/31866#ExistedInstancesForNode)
-* [ExistedInstancesPara](/document/api/457/31866#ExistedInstancesPara)
-* [RunInstancesForNode](/document/api/457/31866#RunInstancesForNode)
+* [ClusterAdvancedSettings](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/457/31866#ClusterAdvancedSettings)
+* [ClusterBasicSettings](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/457/31866#ClusterBasicSettings)
+* [ClusterCIDRSettings](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/457/31866#ClusterCIDRSettings)
+* [ExistedInstancesForNode](https://cloud.tencent.com/document/api/457/31866#ExistedInstancesForNode)
+* [ExistedInstancesPara](https://cloud.tencent.com/document/api/457/31866#ExistedInstancesPara)
+* [RunInstancesForNode](https://cloud.tencent.com/document/api/457/31866#RunInstancesForNode)
 
 Modified data structures:
 
-* [Cluster](/document/api/457/31866#Cluster)
+* [Cluster](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/457/31866#Cluster)
 	* New members: ProjectId
 
 ## Release 2
@@ -39,19 +39,19 @@ Improvements on the existing documents.
 
 Modified APIs:
 
-* [DescribeClusters](/document/api/457/31862)
+* [DescribeClusters](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/457/31862)
 	* New input parameters: Filters
 
 New data structures:
 
-* [Filter](/document/api/457/31866#Filter)
+* [Filter](https://cloud.tencent.com/document/api/457/31866#Filter)
 
 Modified data structures:
 
-* [Cluster](/document/api/457/31866#Cluster)
+* [Cluster](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/457/31866#Cluster)
 	* New members: ClusterNodeNum
 	* **Modify members:** ClusterDescription
-* [ClusterNetworkSettings](/document/api/457/31866#ClusterNetworkSettings)
+* [ClusterNetworkSettings](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/457/31866#ClusterNetworkSettings)
 	* New members: Ipvs
 	* **Deleted members:** IPVS
 
@@ -65,19 +65,19 @@ Improvements on the existing documents.
 
 New APIs:
 
-* [AddExistedInstances](/document/api/457/31865)
-* [DeleteClusterInstances](/document/api/457/31864)
-* [DescribeClusterInstances](/document/api/457/31863)
-* [DescribeClusters](/document/api/457/31862)
+* [AddExistedInstances](https://cloud.tencent.com/document/api/457/31865)
+* [DeleteClusterInstances](https://cloud.tencent.com/document/api/457/31864)
+* [DescribeClusterInstances](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/457/31863)
+* [DescribeClusters](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/457/31862)
 
 New data structures:
 
-* [Cluster](/document/api/457/31866#Cluster)
-* [ClusterNetworkSettings](/document/api/457/31866#ClusterNetworkSettings)
-* [EnhancedService](/document/api/457/31866#EnhancedService)
-* [Instance](/document/api/457/31866#Instance)
-* [InstanceAdvancedSettings](/document/api/457/31866#InstanceAdvancedSettings)
-* [LoginSettings](/document/api/457/31866#LoginSettings)
-* [RunMonitorServiceEnabled](/document/api/457/31866#RunMonitorServiceEnabled)
-* [RunSecurityServiceEnabled](/document/api/457/31866#RunSecurityServiceEnabled)
+* [Cluster](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/457/31866#Cluster)
+* [ClusterNetworkSettings](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/457/31866#ClusterNetworkSettings)
+* [EnhancedService](https://cloud.tencent.com/document/api/457/31866#EnhancedService)
+* [Instance](https://cloud.tencent.com/document/api/457/31866#Instance)
+* [InstanceAdvancedSettings](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/457/31866#InstanceAdvancedSettings)
+* [LoginSettings](https://cloud.tencent.com/document/api/457/31866#LoginSettings)
+* [RunMonitorServiceEnabled](https://cloud.tencent.com/document/api/457/31866#RunMonitorServiceEnabled)
+* [RunSecurityServiceEnabled](https://cloud.tencent.com/document/api/457/31866#RunSecurityServiceEnabled)
 

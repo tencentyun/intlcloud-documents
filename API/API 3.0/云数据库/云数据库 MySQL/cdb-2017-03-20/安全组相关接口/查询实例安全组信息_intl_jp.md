@@ -12,20 +12,20 @@ APIリクエストドメイン名： cdb.tencentcloudapi.com 。
 
 ## 2. 入力パラメータ
 
-次のリクエストパラメータリストには、APIリクエストパラメータと一部の共通パラメータのみがリストされています。完全な共通パラメータのリストについては、[共通リクエストパラメータ](/document/api/236/15833)を参照してください。
+次のリクエストパラメータリストには、APIリクエストパラメータと一部の共通パラメータのみがリストされています。完全な共通パラメータのリストについては、[共通リクエストパラメータ](https://cloud.tencent.com/document/api/236/15833)を参照してください。
 
 | パラメータ名 | 必須項目 | タイプ | 説明 |
 |---------|---------|---------|---------|
 | Action | はい | String | 共通パラメータ、このAPIの値：DescribeDBSecurityGroups |
 | Version | はい | String | 共通パラメータ、該当APIの値：2017/03/20 |
-| Region | はい | String | 共通パラメータ。詳細について製品がサポートする[地域リスト](/document/api/236/15833#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)を参照してください。 |
+| Region | はい | String | 共通パラメータ。詳細について製品がサポートする[地域リスト](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/236/15833#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)を参照してください。 |
 | InstanceId | はい | String | インスタンスID。フォーマット：cdb-c1nl9rpvまたはcdbro-c1nl9rpv。データベースコンソールページで表示されるインスタンスIDと同じ。 |
 
 ## 3. 出力パラメータ
 
 | パラメータ名 | タイプ | 説明 |
 |---------|---------|---------|
-| Groups | Array of [SecurityGroup](/document/api/236/15878#SecurityGroup) | セキュリティグループの詳細。|
+| Groups | Array of [SecurityGroup](https://cloud.tencent.com/document/api/236/15878#SecurityGroup) | セキュリティグループの詳細。|
 | RequestId | String | 唯一のリクエストID、リクエストごとに返します。問題を特定するときに、このリクエストのRequestIdが必要です。|
 
 ## 4. 例
@@ -83,11 +83,11 @@ https://cdb.tencentcloudapi.com/?Action=DescribeDBSecurityGroups
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. エラーコード
 
-以下に、APIビジネスロジックに関連するエラーコードのみをリストします。その他のエラーコードについては、[共通エラーコード](/document/api/236/15835#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)を参照してください。
+以下に、APIビジネスロジックに関連するエラーコードのみをリストします。その他のエラーコードについては、[共通エラーコード](https://cloud.tencent.com/document/api/236/15835#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)を参照してください。
 
 | エラーコード | 説明 |
 |---------|---------|

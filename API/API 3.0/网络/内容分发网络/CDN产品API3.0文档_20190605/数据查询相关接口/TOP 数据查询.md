@@ -14,7 +14,7 @@ ListTopData 通过入参 Metric 和 Filter 组合不同，可以查询以下排�
 
 ## 2. 输入参数
 
-以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见[公共请求参数](/document/api/228/30977)。
+以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见[公共请求参数](https://cloud.tencent.com/document/api/228/30977)。
 
 | 参数名称 | 必选 | 类型 | 描述 |
 |---------|---------|---------|---------|
@@ -34,7 +34,7 @@ ListTopData 通过入参 Metric 和 Filter 组合不同，可以查询以下排�
 
 | 参数名称 | 类型 | 描述 |
 |---------|---------|---------|
-| Data | Array of [TopData](/document/api/228/30987#TopData) | 各个资源的Top 访问数据详情。|
+| Data | Array of [TopData](https://cloud.tencent.com/document/api/228/30987#TopData) | 各个资源的Top 访问数据详情。|
 | RequestId | String | 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。|
 
 ## 4. 示例
@@ -106,11 +106,11 @@ https://cdn.tencentcloudapi.com/?Action=ListTopData
 
 ### 命令行工具
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. 错误码
 
-以下仅列出了接口业务逻辑相关的错误码，其他错误码详见[公共错误码](/document/api/228/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
+以下仅列出了接口业务逻辑相关的错误码，其他错误码详见[公共错误码](https://cloud.tencent.com/document/api/228/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
 
 | 错误码 | 描述 |
 |---------|---------|

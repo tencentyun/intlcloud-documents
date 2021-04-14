@@ -165,7 +165,7 @@ Referenced by: CreateCluster.
 | Name | Type | Required | Description |
 |------|------|----------|------|
 | NodeRole | String | Yes | The role the Node plays. Valid values: MASTER_ETCD, WORKER. You only need to specify a value for MASTER_ETCD only when creating an independent cluster (INDEPENDENT_CLUSTER). |
-| RunInstancesPara | Array of String | Yes | A JSON string passed through when create a CVM instance. For more information, see the API for [creating a CVM instance](https://cloud.tencent.com/document/product/213/15730). You only need to pass in a parameter other than the common parameters, where ImageId should be replaced with the ID of the image corresponding to the TKE cluster OS. |
+| RunInstancesPara | Array of String | Yes | A JSON string passed through when create a CVM instance. For more information, see the API for [creating a CVM instance](https://intl.cloud.tencent.com/document/product/213/33237). You only need to pass in a parameter other than the common parameters, where ImageId should be replaced with the ID of the image corresponding to the TKE cluster OS. |
 
 ## RunMonitorServiceEnabled
 
@@ -175,7 +175,7 @@ Referenced by: AddExistedInstances, CreateCluster.
 
 | Name | Type | Required | Description |
 |------|------|----------|------|
-| Enabled | Boolean | No | Whether to enable [Cloud Monitor](/document/product/248). Valid values: <br><li>TRUE: Yes <br><li>FALSE: No <br><br>Default value: TRUE. |
+| Enabled | Boolean | No | Whether to enable [Cloud Monitor](https://cloud.tencent.com/document/product/248). Valid values: <br><li>TRUE: Yes <br><li>FALSE: No <br><br>Default value: TRUE. |
 
 ## RunSecurityServiceEnabled
 
@@ -185,5 +185,5 @@ Referenced by: AddExistedInstances, CreateCluster.
 
 | Name | Type | Required | Description |
 |------|------|----------|------|
-| Enabled | Boolean | No | Whether to enable [Cloud Security](/document/product/296). Valid values: <br><li>TRUE: Yes <br><li>FALSE: No <br><br>Default value: TRUE. |
+| Enabled | Boolean | No | Whether to enable [Cloud Security](https://cloud.tencent.com/document/product/296). Valid values: <br><li>TRUE: Yes <br><li>FALSE: No <br><br>Default value: TRUE. |
 

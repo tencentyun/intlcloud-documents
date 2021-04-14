@@ -8,13 +8,13 @@
 
 ## 2. 输入参数
 
-以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见 [公共请求参数](/document/api/589/33974)。
+以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见 [公共请求参数](https://cloud.tencent.com/document/api/589/33974)。
 
 | 参数名称 | 必选 | 类型 | 描述 |
 |---------|---------|---------|---------|
 | Action | 是 | String | 公共参数，本接口取值：DescribeInstances |
 | Version | 是 | String | 公共参数，本接口取值：2019-01-03 |
-| Region | 是 | String | 公共参数，详见产品支持的 [地域列表](/document/api/589/33974#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。 |
+| Region | 是 | String | 公共参数，详见产品支持的 [地域列表](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/589/33974#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。 |
 | InstanceIds.N | 否 | Array of String | 查询列表,  如果不填写，返回该AppId下所有实例列表 |
 | Offset | 否 | Integer | 查询偏移量，默认0 |
 | Limit | 否 | Integer | 查询结果限制，默认值10 |
@@ -23,7 +23,7 @@
 
 | 参数名称 | 类型 | 描述 |
 |---------|---------|---------|
-| Result | [ClusterInfoResult](/document/api/589/33981#ClusterInfoResult) | 实例数量|
+| Result | [ClusterInfoResult](https://cloud.tencent.com/document/api/589/33981#ClusterInfoResult) | 实例数量|
 | RequestId | String | 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。|
 
 ## 4. 示例
@@ -146,11 +146,11 @@ https://emr.tencentcloudapi.com/?Action=DescribeInstances
 
 ### 命令行工具
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. 错误码
 
-以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](/document/api/589/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
+以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](https://cloud.tencent.com/document/api/589/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
 
 | 错误码 | 描述 |
 |---------|---------|

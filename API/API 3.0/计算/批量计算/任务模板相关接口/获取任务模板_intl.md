@@ -9,15 +9,15 @@ Default API request frequency limit: 2 times/second.
 
 ## 2. Input Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/599/30473).
+The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](https://cloud.tencent.com/document/api/599/30473).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter; the value for this API: DescribeTaskTemplates |
 | Version | Yes | String | Common parameter; the value for this API: 2017-03-12 |
-| Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/599/30473#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameters; for details, see the [Region List](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30473#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | TaskTemplateIds.N | No | Array of String | Task template ID |
-| Filters.N | No | Array of [Filter](/document/api/599/30482#Filter) | Filter |
+| Filters.N | No | Array of [Filter](https://cloud.tencent.com/document/api/599/30482#Filter) | Filter |
 | Offset | No | Integer | Offset |
 | Limit | No | Integer | Number of entries returned |
 
@@ -25,7 +25,7 @@ The following list of request parameters lists only the API request parameters a
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| TaskTemplateSet | Array of [TaskTemplateView](/document/api/599/30482#TaskTemplateView) | Task template list |
+| TaskTemplateSet | Array of [TaskTemplateView](https://cloud.tencent.com/document/api/599/30482#TaskTemplateView) | Task template list |
 | TotalCount | Integer | Number of task templates |
 | RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided when troubleshooting. |
 
@@ -153,11 +153,11 @@ Cloud API 3.0 comes with a set of complementary development tools that make it e
 * [Tencent Cloud SDK 3.0 for Go](https://github.com/TencentCloud/tencentcloud-sdk-go)
 * [Tencent Cloud SDK 3.0 for NodeJS](https://github.com/TencentCloud/tencentcloud-sdk-nodejs)
 * [Tencent Cloud SDK 3.0 for .NET](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](/document/api/599/30479#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/599/30479#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

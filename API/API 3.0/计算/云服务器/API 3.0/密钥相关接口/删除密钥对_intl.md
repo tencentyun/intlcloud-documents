@@ -7,7 +7,7 @@ This API (DeleteKeyPairs) is used to delete the key pairs hosted in Tencent Clou
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/213/15692).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/213/15692).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|

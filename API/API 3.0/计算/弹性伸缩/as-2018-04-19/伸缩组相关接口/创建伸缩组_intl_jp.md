@@ -12,13 +12,13 @@ APIリクエストドメイン名：as.tencentcloudapi.com 。
 
 ## 2. 入力パラメータ
 
-次のリクエストパラメータリストには、APIリクエストパラメータと一部の共通パラメータのみがリストされています。完全な共通パラメータについては、[共通リクエストパラメータ](/document/api/377/20426)を参照してください。
+次のリクエストパラメータリストには、APIリクエストパラメータと一部の共通パラメータのみがリストされています。完全な共通パラメータについては、[共通リクエストパラメータ](https://cloud.tencent.com/document/api/377/20426)を参照してください。
 
 | パラメータ名 | 必須項目 | タイプ | 説明 |
 |---------|---------|---------|---------|
 | Action | はい | String | 共通パラメータ、このAPIの値：CreateAutoScalingGroup |
 | Version | はい | String | 共通パラメータ、このAPIの値：2018-04-19 |
-| Region | はい | String | 共通パラメータ、詳細については、製品がサポートする[地域リスト](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)を参照してください。 |
+| Region | はい | String | 共通パラメータ、詳細については、製品がサポートする[地域リスト](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)を参照してください。 |
 | AutoScalingGroupName | はい | String | スケーリンググループの名前。アカウント内で唯一である必要があります。この名前は、中国語、英語、数字、アンダースコア、区切り記号「-」、小数点のみをサポートし、最大長は55バイトを超えることはできません。 |
 | LaunchConfigurationId | はい | String | 起動構成ID |
 | MaxSize | はい | Integer | 最大インスタンス数。その値の範囲は0～2000です。 |
@@ -28,7 +28,7 @@ APIリクエストドメイン名：as.tencentcloudapi.com 。
 | DesiredCapacity | いいえ | Integer | 目標インスタンス数。最小インスタンス数と最大インスタンス数の間にあります |
 | LoadBalancerIds.N | いいえ | Array of String | 伝統型CLB装置IDのリスト。現在の最大長は1です。LoadBalancerIdsとForwardLoadBalancersを同時に指定することはできません |
 | ProjectId | いいえ | Integer | プロジェクトID |
-| ForwardLoadBalancers.N | いいえ | Array of [ForwardLoadBalancer](/document/api/377/20453#ForwardLoadBalancer) | アプリケーション型CLB装置リスト、現在の最大長は1です。LoadBalancerIdsとForwardLoadBalancersを同時に指定することはできません |
+| ForwardLoadBalancers.N | いいえ | Array of [ForwardLoadBalancer](https://cloud.tencent.com/document/api/377/20453#ForwardLoadBalancer) | アプリケーション型CLB装置リスト、現在の最大長は1です。LoadBalancerIdsとForwardLoadBalancersを同時に指定することはできません |
 | SubnetIds.N | いいえ | Array of String | サブネットIDリスト、VPCシナリオでサブネットを指定する必要があります |
 | TerminationPolicies.N | いいえ | Array of String | 終了ポリシー。現在の最大長は1です。値はOLDEST_INSTANCEとNEWEST_INSTANCEを含みます。デフォルト値はOLDEST_INSTANCEです。<br/><br><li> OLDEST_INSTANCEは、スケーリンググループ内の最も古いインスタンスを優先に終了します。<br/><br><li> NEWEST_INSTANCEは、スケーリンググループ内の最新のインスタンスを優先に終了します。 |
 | Zones.N | いいえ | Array of String | Availability Zoneリスト。基本ネットワークシナリオでAvailability Zoneを指定する必要があります |
@@ -104,11 +104,11 @@ https://as.tencentcloudapi.com/?Action=CreateAutoScalingGroup
 
 ### CLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. エラーコード
 
-以下に、APIビジネスロジックに関連するエラーコードのみをリストします。その他のエラーコードについては、[共通エラーコード](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)を参照してください。
+以下に、APIビジネスロジックに関連するエラーコードのみをリストします。その他のエラーコードについては、[共通エラーコード](https://cloud.tencent.com/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)を参照してください。
 
 | エラーコード | 説明 |
 |---------|---------|

@@ -7,7 +7,7 @@ This API (DescribeInstancesStatus) is used to query the status of one or more in
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/213/15692).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/213/15692).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -24,7 +24,7 @@ The following request parameter list only provides API request parameters and so
 | Parameter Name | Type | Description |
 |---------|---------|---------|
 | TotalCount | Integer | Number of instance statuses that meet the condition. |
-| InstanceStatusSet | Array of [InstanceStatus](/document/api/213/15753#InstanceStatus) | [Instance Status](https://cloud.tencent.com/document/api/213/15738) list. |
+| InstanceStatusSet | Array of [InstanceStatus](https://cloud.tencent.com/document/api/213/15753#InstanceStatus) | [Instance Status](https://cloud.tencent.com/document/api/213/15738) list. |
 | RequestId | String | The unique request ID, which is returned for each request. When locating the problem, the RequestId of the request needs to be provided. |
 
 ## 4. Error Codes

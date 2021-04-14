@@ -8,50 +8,50 @@ Improvement to existing documentation.
 
 New APIs:
 
-* [CleanUpInstance](/document/api/239/34442)
-* [DescribeBackupUrl](/document/api/239/34443)
-* [DescribeInstanceParamRecords](/document/api/239/34449)
-* [DescribeInstanceParams](/document/api/239/34448)
-* [DescribeInstanceSecurityGroup](/document/api/239/34447)
-* [DescribeInstanceShards](/document/api/239/34441)
-* [DescribeProjectSecurityGroup](/document/api/239/34446)
-* [DestroyPostpaidInstance](/document/api/239/34440)
-* [DestroyPrepaidInstance](/document/api/239/34439)
-* [DisableReplicaReadonly](/document/api/239/34438)
-* [EnableReplicaReadonly](/document/api/239/34437)
-* [ModifyInstanceParams](/document/api/239/34445)
-* [ModifyNetworkConfig](/document/api/239/34436)
-* [RestoreInstance](/document/api/239/34435)
+* [CleanUpInstance](https://cloud.tencent.com/document/api/239/34442)
+* [DescribeBackupUrl](https://cloud.tencent.com/document/api/239/34443)
+* [DescribeInstanceParamRecords](https://cloud.tencent.com/document/api/239/34449)
+* [DescribeInstanceParams](https://cloud.tencent.com/document/api/239/34448)
+* [DescribeInstanceSecurityGroup](https://cloud.tencent.com/document/api/239/34447)
+* [DescribeInstanceShards](https://cloud.tencent.com/document/api/239/34441)
+* [DescribeProjectSecurityGroup](https://cloud.tencent.com/document/api/239/34446)
+* [DestroyPostpaidInstance](https://cloud.tencent.com/document/api/239/34440)
+* [DestroyPrepaidInstance](https://cloud.tencent.com/document/api/239/34439)
+* [DisableReplicaReadonly](https://cloud.tencent.com/document/api/239/34438)
+* [EnableReplicaReadonly](https://cloud.tencent.com/document/api/239/34437)
+* [ModifyInstanceParams](https://cloud.tencent.com/document/api/239/34445)
+* [ModifyNetworkConfig](https://cloud.tencent.com/document/api/239/34436)
+* [RestoreInstance](https://cloud.tencent.com/document/api/239/34435)
 
 Modified APIs:
 
-* [CreateInstances](/document/api/239/20026)
+* [CreateInstances](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/239/20026)
 	* New input parameters: InstanceName
-* [DescribeInstanceBackups](/document/api/239/20011)
+* [DescribeInstanceBackups](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/239/20011)
 	* **Modified input parameters:** Status
-* [DescribeInstances](/document/api/239/20018)
+* [DescribeInstances](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/239/20018)
 	* New input parameters: Status, TypeVersion, EngineName, AutoRenew, BillingMode, Type, SearchKeys
-* [ModifyInstance](/document/api/239/31785)
+* [ModifyInstance](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/239/31785)
 	* New input parameters: ProjectId, AutoRenew
 	
 New data structures:
 
-* [InstanceClusterNode](/document/api/239/20022#InstanceClusterNode)
-* [InstanceClusterShard](/document/api/239/20022#InstanceClusterShard)
-* [InstanceEnumParam](/document/api/239/20022#InstanceEnumParam)
-* [InstanceIntegerParam](/document/api/239/20022#InstanceIntegerParam)
-* [InstanceNode](/document/api/239/20022#InstanceNode)
-* [InstanceParam](/document/api/239/20022#InstanceParam)
-* [InstanceParamHistory](/document/api/239/20022#InstanceParamHistory)
-* [InstanceSecurityGroupDetail](/document/api/239/20022#InstanceSecurityGroupDetail)
-* [InstanceTagInfo](/document/api/239/20022#InstanceTagInfo)
-* [InstanceTextParam](/document/api/239/20022#InstanceTextParam)
-* [SecurityGroupDetail](/document/api/239/20022#SecurityGroupDetail)
-* [SecurityGroupsInboundAndOutbound](/document/api/239/20022#SecurityGroupsInboundAndOutbound)
+* [InstanceClusterNode](https://cloud.tencent.com/document/api/239/20022#InstanceClusterNode)
+* [InstanceClusterShard](https://cloud.tencent.com/document/api/239/20022#InstanceClusterShard)
+* [InstanceEnumParam](https://cloud.tencent.com/document/api/239/20022#InstanceEnumParam)
+* [InstanceIntegerParam](https://cloud.tencent.com/document/api/239/20022#InstanceIntegerParam)
+* [InstanceNode](https://cloud.tencent.com/document/api/239/20022#InstanceNode)
+* [InstanceParam](https://cloud.tencent.com/document/api/239/20022#InstanceParam)
+* [InstanceParamHistory](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/239/20022#InstanceParamHistory)
+* [InstanceSecurityGroupDetail](https://cloud.tencent.com/document/api/239/20022#InstanceSecurityGroupDetail)
+* [InstanceTagInfo](https://cloud.tencent.com/document/api/239/20022#InstanceTagInfo)
+* [InstanceTextParam](https://cloud.tencent.com/document/api/239/20022#InstanceTextParam)
+* [SecurityGroupDetail](https://cloud.tencent.com/document/api/239/20022#SecurityGroupDetail)
+* [SecurityGroupsInboundAndOutbound](https://cloud.tencent.com/document/api/239/20022#SecurityGroupsInboundAndOutbound)
 
 Modified data structures:
 
-* [InstanceSet](/document/api/239/20022#InstanceSet)
+* [InstanceSet](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/239/20022#InstanceSet)
 	* New members: InstanceTitle, OfflineTime, SubStatus, Tags, InstanceNode, RedisShardSize, RedisShardNum, RedisReplicasNum, PriceId, CloseTime, SlaveReadWeight, InstanceTags, ProjectName
 
 ## Release 4
@@ -64,7 +64,7 @@ Improvement to existing documentation.
 
 New APIs:
 
-* [ModifyInstance](/document/api/239/31785)
+* [ModifyInstance](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/239/31785)
 
 ## Release 3
 
@@ -76,11 +76,11 @@ Improvement to existing documentation.
 
 Modified APIs:
 
-* [CreateInstances](/document/api/239/20026)
+* [CreateInstances](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/239/20026)
 	* New input parameters: RedisShardNum, RedisReplicasNum, ReplicasReadonly
-* [DescribeInstances](/document/api/239/20018)
+* [DescribeInstances](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/239/20018)
 	* New input parameters: UniqVpcIds, UniqSubnetIds
-* [UpgradeInstance](/document/api/239/20013)
+* [UpgradeInstance](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/239/20013)
 	* New input parameters: RedisShardNum, RedisReplicasNum
 
 ## Release 2
@@ -93,20 +93,20 @@ Improvement to existing documentation.
 
 New APIs:
 
-* [DescribeInstanceDealDetail](/document/api/239/30602)
-* [DescribeProductInfo](/document/api/239/30600)
-* [DescribeTaskInfo](/document/api/239/30601)
+* [DescribeInstanceDealDetail](https://cloud.tencent.com/document/api/239/30602)
+* [DescribeProductInfo](https://cloud.tencent.com/document/api/239/30600)
+* [DescribeTaskInfo](https://cloud.tencent.com/document/api/239/30601)
 
 New data structures:
 
-* [ProductConf](/document/api/239/20022#ProductConf)
-* [RegionConf](/document/api/239/20022#RegionConf)
-* [TradeDealDetail](/document/api/239/20022#TradeDealDetail)
-* [ZoneCapacityConf](/document/api/239/20022#ZoneCapacityConf)
+* [ProductConf](https://cloud.tencent.com/document/api/239/20022#ProductConf)
+* [RegionConf](https://cloud.tencent.com/document/api/239/20022#RegionConf)
+* [TradeDealDetail](https://cloud.tencent.com/document/api/239/20022#TradeDealDetail)
+* [ZoneCapacityConf](https://cloud.tencent.com/document/api/239/20022#ZoneCapacityConf)
 
 Modified data structures:
 
-* [InstanceSet](/document/api/239/20022#InstanceSet)
+* [InstanceSet](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/239/20022#InstanceSet)
 	* New members: Engine, ProductType, UniqVpcId, UniqSubnetId, BillingMode
 
 ## Release 1
@@ -119,19 +119,19 @@ Improvement to existing documentation.
 
 New APIs:
 
-* [ClearInstance](/document/api/239/20021)
-* [CreateInstances](/document/api/239/20026)
-* [DescribeAutoBackupConfig](/document/api/239/20019)
-* [DescribeInstanceBackups](/document/api/239/20011)
-* [DescribeInstances](/document/api/239/20018)
-* [ManualBackupInstance](/document/api/239/20010)
-* [ModfiyInstancePassword](/document/api/239/20025)
-* [ModifyAutoBackupConfig](/document/api/239/20016)
-* [RenewInstance](/document/api/239/20015)
-* [ResetPassword](/document/api/239/20014)
-* [UpgradeInstance](/document/api/239/20013)
+* [ClearInstance](https://cloud.tencent.com/document/api/239/20021)
+* [CreateInstances](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/239/20026)
+* [DescribeAutoBackupConfig](https://cloud.tencent.com/document/api/239/20019)
+* [DescribeInstanceBackups](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/239/20011)
+* [DescribeInstances](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/239/20018)
+* [ManualBackupInstance](https://cloud.tencent.com/document/api/239/20010)
+* [ModfiyInstancePassword](https://cloud.tencent.com/document/api/239/20025)
+* [ModifyAutoBackupConfig](https://cloud.tencent.com/document/api/239/20016)
+* [RenewInstance](https://cloud.tencent.com/document/api/239/20015)
+* [ResetPassword](https://cloud.tencent.com/document/api/239/20014)
+* [UpgradeInstance](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/239/20013)
 
 New data structures:
 
-* [InstanceSet](/document/api/239/20022#InstanceSet)
-* [RedisBackupSet](/document/api/239/20022#RedisBackupSet)
+* [InstanceSet](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/239/20022#InstanceSet)
+* [RedisBackupSet](https://cloud.tencent.com/document/api/239/20022#RedisBackupSet)

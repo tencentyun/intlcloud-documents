@@ -8,7 +8,7 @@ API request rate limit: 20 requests/sec.
 
 ## 2. Input Parameters
 
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/238/19930).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](https://cloud.tencent.com/document/api/238/19930).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -21,7 +21,7 @@ The following parameters are required for requesting this API, including action-
 | Parameter name | Type | Description |
 |---------|---------|---------|
 | TotalCount | Integer | Total number of regions returned |
-| RegionSet | Array of [RegionInfo](/document/api/238/19976#RegionInfo) | Region information array |
+| RegionSet | Array of [RegionInfo](https://cloud.tencent.com/document/api/238/19976#RegionInfo) | Region information array |
 | RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Samples
@@ -124,11 +124,11 @@ TencentCloud API 3.0 integrates SDKs that support various programming languages 
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/238/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/238/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

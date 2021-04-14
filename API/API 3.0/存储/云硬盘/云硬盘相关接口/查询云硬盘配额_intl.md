@@ -12,19 +12,19 @@ Note: This API supports finance AZs. As finance AZs and non-finance AZs are isol
 
 ## 2. Input Parameters
 
-The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/362/15637).
+The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/362/15637).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: DescribeDiskConfigQuota |
 | Version | Yes | String | Common parameter. The value used for this API: 2017-03-12 |
-| Region | Yes | String | Common parameter. For more information, see [List of Regions](/document/api/362/15637#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameter. For more information, see [List of Regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15637#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | InquiryType | Yes | String | Query type. Value range: <br><li>INQUIRY_CBS_CONFIG: query the configuration list of cloud disks <br><li>INQUIRY_CVM_CONFIG: query the configuration list of cloud disks and instances |
-| Zones.N | No | Array of String | Queries the configurations in one or more [availability zones](/document/product/213/15753#ZoneInfo). |
+| Zones.N | No | Array of String | Queries the configurations in one or more [availability zones](https://intl.cloud.tencent.com/document/product/213/15753). |
 | DiskChargeType | No | String | Billing method. Value range: <br><li>PREPAID: Prepaid <br><li>POSTPAID_BY_HOUR: Postpaid (pay as you go) |
 | DiskTypes.N | No | String | Type of disk medium. Value range: <br><li>CLOUD_BASIC: HDD cloud storage<br><li>CLOUD_PREMIUM: Premium cloud storage <br><li>CLOUD_SSD: SSD cloud storage. |
 | DiskUsage | No | String | The system disk or data disk. Value range: <br><li>SYSTEM_DISK: System disk <br><li>DATA_DISK: Data disk |
-| InstanceFamilies.N | No | Array of String | Filter by the instance models, such as S1, I1 and M1. For more information, please see [Instance Types](https://cloud.tencent.com/document/product/213/11518) |
+| InstanceFamilies.N | No | Array of String | Filter by the instance models, such as S1, I1 and M1. For more information, please see [Instance Types](https://intl.cloud.tencent.com/document/product/213/11518) |
 | CPU | No | Integer | Number of CPU cores in the instance |
 | Memory | No | Integer | Memory size of the instance |
 
@@ -32,7 +32,7 @@ The list below contains only the API request parameters and certain common param
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
-| DiskConfigSet | Array of [DiskConfig](/document/api/362/15669#DiskConfig) | Configuration list of the cloud disk. |
+| DiskConfigSet | Array of [DiskConfig](https://cloud.tencent.com/document/api/362/15669#DiskConfig) | Configuration list of the cloud disk. |
 | RequestId | String | Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.  |
 
 ## 4. Samples
@@ -187,11 +187,11 @@ TencentCloud API 3.0 comes with SDKs that support multiple programming languages
 
 ### Command line tools
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/362/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/362/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

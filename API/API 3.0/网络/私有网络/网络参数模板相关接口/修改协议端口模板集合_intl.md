@@ -12,13 +12,13 @@ Note: This API supports Finance regions. Since Finance regions and non-Finance r
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/215/15692).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/215/15692).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: ModifyServiceTemplateGroupAttribute |
 | Version | Yes | String | Common parameter. The value used for this API: 2017-03-12 |
-| Region | Yes |  String | Common parameter. For more information, please see the [list of regions](/document/api/215/15692#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes |  String | Common parameter. For more information, please see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/215/15692#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | ServiceTemplateGroupId | Yes | String | Protocol port template group instance ID, such as ppmg-ei8hfd9a. |
 | ServiceTemplateGroupName | No | String | Protocol port template group name. |
 | ServiceTemplateIds.N | No | Array of String | Protocol port template instance ID, such as ppm-4dw6agho. |
@@ -31,7 +31,7 @@ The following request parameter list only provides API request parameters and so
 
 ## 4. Error Codes
 
-The following only lists the error codes related to the API business logic. For other error codes, see [Common Error Codes](/document/api/215/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to the API business logic. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/215/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
@@ -73,5 +73,5 @@ Cloud API 3.0 comes with the following development tools to make it easier to ca
 * [Tencent Cloud SDK 3.0 for Go](https://github.com/TencentCloud/tencentcloud-sdk-go)
 * [Tencent Cloud SDK 3.0 for NodeJS](https://github.com/TencentCloud/tencentcloud-sdk-nodejs)
 * [Tencent Cloud SDK 3.0 for .NET](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 

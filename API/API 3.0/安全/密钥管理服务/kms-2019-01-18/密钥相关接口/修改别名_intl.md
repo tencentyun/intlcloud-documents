@@ -8,13 +8,13 @@ API request rate limit: 100 requests/sec.
 
 ## 2. Input Parameters
 
-The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/573/34406).
+The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/573/34406).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: UpdateAlias |
 | Version | Yes | String | Common parameter. The version of this API: 2019-01-18 |
-| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/573/34406#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/573/34406#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | Alias | Yes | String | New alias containing 1-64 characters or numbers |
 | KeyId | Yes | String | Globally unique ID of the CMK |
 
@@ -71,11 +71,11 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) for various
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/573/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/573/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

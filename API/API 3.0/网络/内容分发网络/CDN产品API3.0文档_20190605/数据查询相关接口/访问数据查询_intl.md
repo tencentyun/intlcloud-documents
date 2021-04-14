@@ -17,7 +17,7 @@ Default API request rate limit: 20 requests/sec.
 
 ## 2. Input Parameters
 
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/228/30977).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](https://cloud.tencent.com/document/api/228/30977).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -31,8 +31,8 @@ The following parameters are required for requesting this API, including action-
 | Project | No | Integer | Specify the project ID to be queried, and you can [view project IDs](https://console.cloud.tencent.com/project) <br/>Please note that if domain names are specified, this parameter will be ignored |
 | Interval | No | String | Time granularity: 1-minute; time interval: last 24 hours (inclusive); you see a data point for every minute in last 24 hours <br/>Time granularity: 5-minute; time interval: last 31 days (inclusive); you see a data point for every 5 minutes in last 31 days <br/>Time granularity: 1-hour; time interval: last 31 days (inclusive), and it can return the details for the 1-hour granularity <br/>Time granularity: 1-day; time interval: last 31 days (inclusive); you see a data point for every 5 minutes in last 31 days |
 | Detail | No | Boolean | When  multiple Domains are specified, the default value is False, which means that the aggregated data for multiple domain names is returned <br/>You can set the value to True as needed to return the data for individual Domain (the statusCode metric is currently not supported) |
-| Isp | No | Integer | Specify the ISP to be queried; if you leave it blank, all ISPs will be queried <br/>To view ISP codes, see [ISP Code Mappings](https://cloud.tencent.com/document/product/228/6316#.E8.BF.90.E8.90.A5.E5.95.86.E6.98.A0.E5.B0.84) |
-| District | No | Integer | Specify the district to be queried; if you leave it blank, all districts will be queried <br/>To view district codes, see [District Code Mappings](https://cloud.tencent.com/document/product/228/6316#.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84) |
+| Isp | No | Integer | Specify the ISP to be queried; if you leave it blank, all ISPs will be queried <br/>To view ISP codes, see [ISP Code Mappings](https://intl.cloud.tencent.com/document/product/228/6316) |
+| District | No | Integer | Specify the district to be queried; if you leave it blank, all districts will be queried <br/>To view district codes, see [District Code Mappings](https://intl.cloud.tencent.com/document/product/228/6316) |
 | Protocol | No | String | Specify the protocol to be queried; if you leave it blank, all protocols will be queried <br/>all: All protocols <br/>http: Specify the HTTP metric to be queried <br/>https: Specify the HTTPS metric to be queried |
 | DataSource | No | String | Specify the data source to be queried, which can be seen as the whitelisting function |
 | IpProtocol | No | String | Specify the IP protocol to be queried; if you leave it blank, all IP protocols will be queried <br/>all: All IP protocols <br/>ipv4: Specify the ipv4 metric to be queried <br/>ipv6: Specify the ipv6 metric to be queried |
@@ -42,7 +42,7 @@ The following parameters are required for requesting this API, including action-
 | Parameter name | Type | Description |
 |---------|---------|---------|
 | Interval | String | Data granularity: <br/>min: 1-minute <br/>5min: 5-minute <br/>hour: 1-hour <br/>day: 1-day |
-| Data | Array of [ResourceData](/document/api/228/30987#ResourceData) | Returned data details of the specified conditional query |
+| Data | Array of [ResourceData](https://cloud.tencent.com/document/api/228/30987#ResourceData) | Returned data details of the specified conditional query |
 | RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Sample
@@ -117,11 +117,11 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/228/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/228/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

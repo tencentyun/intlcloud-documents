@@ -1,13 +1,13 @@
 ## 1. API Description
 API domain name: vod.tencentcloudapi.com.  
 This API categorizes media resources;
-* This does not affect the existing media resource categories. If you need to modify a category, call the [media file properties modifying API](/document/product/266/31762).
+* This does not affect the existing media resource categories. If you need to modify a category, call the [media file properties modifying API](https://intl.cloud.tencent.com/document/product/266/37570).
 * One category can have up to 4 levels.
 * One category can have up to 500 sub-categories.  
 Default API request rate limit: 100 requests/sec.
 
 ## 2. Input Parameters
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/266/31756).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](https://cloud.tencent.com/document/api/266/31756).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -16,7 +16,7 @@ The following parameters are required for requesting this API, including action-
 | Region | No | String | Common parameter; optional for this API |
 | ParentId | Yes | Integer | Parent category ID. For a first-level category, enter -1. |
 | ClassName | Yes | String | Category name. Length range: 1-64 characters. |
-| SubAppId | No | Integer | ID of the VOD [sub-application](/document/product/266/14574). Input the ID of the sub-application that has the desired resources; otherwise, leave it blank. |
+| SubAppId | No | Integer | ID of the VOD [sub-application](https://intl.cloud.tencent.com/document/product/266/33987). Input the ID of the sub-application that has the desired resources; otherwise, leave it blank. |
 ## 3. Output Parameters
 | Parameter name | Type | Description |
 |---------|---------|---------|
@@ -57,10 +57,10 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 * [Tencent Cloud SDK 3.0 for .NET](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)
 
 ### TCCLI
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
-The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

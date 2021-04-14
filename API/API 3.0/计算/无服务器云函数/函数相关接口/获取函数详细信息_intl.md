@@ -8,13 +8,13 @@ Default API request frequency limit: 20 times/second.
 
 ## 2. Input Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/583/17238).
+The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](https://cloud.tencent.com/document/api/583/17238).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter; the name of this API: GetFunction |
 | Version | Yes | String | Common parameter; the version of this API: 2018-04-16 |
-| Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
+| Region | Yes | String | Common parameters; for details, see the [Region List](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
 | FunctionName | Yes | String | Name of the queried function |
 | Qualifier | No | String | Version number of the function |
 | ShowCode | No | String | Whether or not to display the code; TRUE means yes, while FALSE means no; any code that is larger than 1MB in size will not be displayed. |
@@ -26,7 +26,7 @@ The following list of request parameters lists only the API request parameters a
 | ModTime | Timestamp | Last modified time of the function |
 | CodeInfo | String | Code of the function |
 | Description | String | Description of the function |
-| Triggers | Array of [Trigger](/document/api/583/17244#Trigger) | Trigger list of the function |
+| Triggers | Array of [Trigger](https://cloud.tencent.com/document/api/583/17244#Trigger) | Trigger list of the function |
 | Handler | String | Handler of the function |
 | CodeSize | Integer | Code size of the function |
 | Timeout | Integer | Timeout of the function |
@@ -34,9 +34,9 @@ The following list of request parameters lists only the API request parameters a
 | MemorySize | Integer | Maximum available memory for the function |
 | Runtime | String | Runtime environment of the function |
 | FunctionName | String | Name of the function |
-| VpcConfig | [VpcConfig](/document/api/583/17244#VpcConfig) | VPC of the function |
+| VpcConfig | [VpcConfig](https://cloud.tencent.com/document/api/583/17244#VpcConfig) | VPC of the function |
 | UseGpu | String | This indicates whether to use the GPU |
-| Environment | [Environment](/document/api/583/17244#Environment) | Environment variables of the function |
+| Environment | [Environment](https://cloud.tencent.com/document/api/583/17244#Environment) | Environment variables of the function |
 | CodeResult | String | This indicates whether the code is correct |
 | CodeError | String | Error message of the code |
 | ErrNo | Integer | Error code of the code |
@@ -115,11 +115,11 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/583/17240#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/583/17240#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

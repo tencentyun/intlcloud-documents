@@ -5,15 +5,15 @@
 
 ## 2. 输入参数
 
-以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见[公共请求参数](/document/api/213/15692)。
+以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见[公共请求参数](https://cloud.tencent.com/document/api/213/15692)。
 
 | 参数名称          | 是否必选 | 类型                                                   | 描述                                                         |
 | ----------------- | -------- | ------------------------------------------------------ | ------------------------------------------------------------ |
 | Action            | 是       | String                                                 | 公共参数，本接口取值：AllocateHosts                          |
 | Version           | 是       | String                                                 | 公共参数，本接口取值：2017-03-12                             |
 | ClientToken       | 否       | String                                                 | 用于保证请求幂等性的字符串。                                 |
-| Placement         | 是       | [Placement](/document/api/213/15753#Placement)         | 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。 |
-| HostChargePrepaid | 否       | [ChargePrepaid](/document/api/213/15753#ChargePrepaid) | 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。 |
+| Placement         | 是       | [Placement](https://cloud.tencent.com/document/api/213/15753#Placement)         | 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。 |
+| HostChargePrepaid | 否       | [ChargePrepaid](https://cloud.tencent.com/document/api/213/15753#ChargePrepaid) | 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。 |
 | HostChargeType    | 否       | String                                                 | 实例计费类型。目前仅支持：PREPAID（预付费，即包年包月模式）。 |
 | HostType          | 否       | String                                                 | CDH实例机型，默认为：'HS1'。                                 |
 | HostCount         | 否       | Integer                                                | 购买CDH实例数量。                                            |

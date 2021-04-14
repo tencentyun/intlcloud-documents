@@ -10,7 +10,7 @@ This API (ModifyImageSharePermission) is used to modify the image sharing inform
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/213/15692).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/213/15692).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -24,7 +24,7 @@ The following request parameter list only provides API request parameters and so
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
-| SharePermissionSet | Array of [SharePermission](/document/api/213/15753#SharePermission) | Image sharing information |
+| SharePermissionSet | Array of [SharePermission](https://cloud.tencent.com/document/api/213/15753#SharePermission) | Image sharing information |
 | RequestId | String | The unique request ID, which is returned for each request. When locating the problem, the RequestId of the request needs to be provided. |
 
 ## 4. Error Codes

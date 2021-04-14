@@ -8,19 +8,19 @@ Improvements on existing documentation.
 
 New APIs:
 
-* [CreateFunction](/document/api/583/18586)
-* [CreateTrigger](/document/api/583/18589)
-* [DeleteFunction](/document/api/583/18585)
-* [DeleteTrigger](/document/api/583/18588)
-* [GetFunction](/document/api/583/18584)
-* [GetFunctionLogs](/document/api/583/18583)
-* [ListFunctions](/document/api/583/18582)
-* [UpdateFunctionCode](/document/api/583/18581)
-* [UpdateFunctionConfiguration](/document/api/583/18580)
+* [CreateFunction](https://cloud.tencent.com/document/api/583/18586)
+* [CreateTrigger](https://cloud.tencent.com/document/api/583/18589)
+* [DeleteFunction](https://cloud.tencent.com/document/api/583/18585)
+* [DeleteTrigger](https://cloud.tencent.com/document/api/583/18588)
+* [GetFunction](https://cloud.tencent.com/document/api/583/18584)
+* [GetFunctionLogs](https://cloud.tencent.com/document/api/583/18583)
+* [ListFunctions](https://cloud.tencent.com/document/api/583/18582)
+* [UpdateFunctionCode](https://cloud.tencent.com/document/api/583/18581)
+* [UpdateFunctionConfiguration](https://cloud.tencent.com/document/api/583/18580)
 
 Modified APIs:
 
-* [Invoke](/document/api/583/17243)
+* [Invoke](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/583/17243)
 	* New input parameters: Namespace
 
 New data structures:
@@ -44,7 +44,7 @@ Improvements on existing documentation.
 
 New APIs:
 
-* [Invoke](/document/api/583/17243)
+* [Invoke](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/583/17243)
 
 New data structures:
 

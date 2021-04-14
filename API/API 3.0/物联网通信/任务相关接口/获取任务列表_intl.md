@@ -8,7 +8,7 @@ Default API request frequency limit: 100 times/second.
 
 ## 2. Input Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/634/19472).
+The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](https://cloud.tencent.com/document/api/634/19472).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -23,7 +23,7 @@ The following list of request parameters lists only the API request parameters a
 | Parameter name | Type | Description |
 |---------|---------|---------|
 | TotalCount | Integer | Total number of tasks created by the user in one month |
-| Tasks | Array of [TaskInfo](/document/api/634/19497#TaskInfo) | Array of task objects in this page, sorted by creation time |
+| Tasks | Array of [TaskInfo](https://cloud.tencent.com/document/api/634/19497#TaskInfo) | Array of task objects in this page, sorted by creation time |
 | RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided when troubleshooting. |
 
 ## 4. Examples
@@ -84,11 +84,11 @@ Cloud API 3.0 comes with a set of complementary development toolkits (SDKs) that
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](/document/api/634/19474#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/634/19474#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

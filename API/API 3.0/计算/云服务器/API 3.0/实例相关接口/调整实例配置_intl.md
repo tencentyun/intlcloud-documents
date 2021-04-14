@@ -2,12 +2,12 @@
 ## 1. API Description
 
 This API (ResetInstancesType) is used to adjust the model of an instance.
-* Currently, using this API for adjusting models is only supported for the instances with a [system disk type](/document/api/213/9452#block_device) of `CLOUD_BASIC`, `CLOUD_PREMIUM` and `CLOUD_SSD`.
+* Currently, using this API for adjusting models is only supported for the instances with a [system disk type](https://cloud.tencent.com/document/api/213/9452#block_device) of `CLOUD_BASIC`, `CLOUD_PREMIUM` and `CLOUD_SSD`.
 * Currently, using this API for adjusting models is not supported for the [CDH](https://cloud.tencent.com/document/product/416) instances. * Model adjustment is not supported for different models and systems, which means that the `InstanceType` specified when you use this API and the original instance model must be in the same series. * For prepaid instances, fee deduction will be involved in using this API, so make sure to keep sufficient balance in your account. You can query the balance via the API [`DescribeAccountBalance`](https://cloud.tencent.com/document/product/378/4397).
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/213/15692).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/213/15692).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|

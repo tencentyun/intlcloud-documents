@@ -5,15 +5,15 @@ This API (AllocateHosts) is used to create one or more CDH instances with specif
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/213/15692).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/213/15692).
 
 | Parameter Name | Required | Type | Description |
 | ----------------- | -------- | ------------------------------------------------------ | ------------------------------------------------------------ |
 | Action | Yes | String | Common parameter. Value​used in this API: AllocateHosts |
 | Version | Yes | String | Common parameter. Value​used in this API: 2017-03-12 |
 | ClientToken | No | String | A string to ensure the idempotency of the request. |
-| Placement | Yes | [Placement](/document/api/213/15753#Placement) | Location of the instance. This parameter is used to specify the availability zone and project to which the instance belongs, etc. |
-| HostChargePrepaid | No | [ChargePrepaid](/document/api/213/15753#ChargePrepaid) | Prepaid mode, which is the relevant parameter setting for prepaid mode. This parameter can specify the purchased usage period, whether to set automatic renewal and other attributes of the instance purchased on a prepaid basis. If the payment mode of the specified instance is prepaid, this parameter must be submitted. |
+| Placement | Yes | [Placement](https://cloud.tencent.com/document/api/213/15753#Placement) | Location of the instance. This parameter is used to specify the availability zone and project to which the instance belongs, etc. |
+| HostChargePrepaid | No | [ChargePrepaid](https://cloud.tencent.com/document/api/213/15753#ChargePrepaid) | Prepaid mode, which is the relevant parameter setting for prepaid mode. This parameter can specify the purchased usage period, whether to set automatic renewal and other attributes of the instance purchased on a prepaid basis. If the payment mode of the specified instance is prepaid, this parameter must be submitted. |
 | HostChargeType | No | String | Billing type of instance. Only PREPAID (prepaid, that is prepaid mode) is supported for now. |
 | HostType | No | String | CDH instance model, default is: 'HS1'. |
 | HostCount | No | Integer | Number of CDH instances purchased. |

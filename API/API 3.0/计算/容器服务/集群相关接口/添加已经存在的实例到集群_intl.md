@@ -12,18 +12,18 @@ Note: This API supports financial regions. As financial regions and non-financia
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/457/31856).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/457/31856).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The name of this API: AddExistedInstances |
 | Version | Yes | String | Common parameter. The version of this API: 2018-05-25 |
-| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/457/31856#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product.
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/457/31856#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product.
 | ClusterId | Yes | String | Cluster ID |
 | InstanceIds.N | Yes | Array of String | Instance list |
-| InstanceAdvancedSettings | No | [InstanceAdvancedSettings](/document/api/457/31866#InstanceAdvancedSettings) | Additional parameters need to be specified for the CVM instance |
-| EnhancedService | No | [EnhancedService](/document/api/457/31866#EnhancedService) | Enable or disable enhanced services, including Cloud Security, Cloud Monitoring. If this parameter is not specified, Cloud Monitoring and Cloud Security will be enabled by default |
-| LoginSettings | No | [LoginSettings](/document/api/457/31866#LoginSettings) | Login to Node. Currently, you can only use password or a single KeyId to login to the node.   |
+| InstanceAdvancedSettings | No | [InstanceAdvancedSettings](https://cloud.tencent.com/document/api/457/31866#InstanceAdvancedSettings) | Additional parameters need to be specified for the CVM instance |
+| EnhancedService | No | [EnhancedService](https://cloud.tencent.com/document/api/457/31866#EnhancedService) | Enable or disable enhanced services, including Cloud Security, Cloud Monitoring. If this parameter is not specified, Cloud Monitoring and Cloud Security will be enabled by default |
+| LoginSettings | No | [LoginSettings](https://cloud.tencent.com/document/api/457/31866#LoginSettings) | Login to Node. Currently, you can only use password or a single KeyId to login to the node.   |
 | SecurityGroupIds.N | No | Array of String | Security group of the instance. You may find this parameter in  `sgId` returned by API DescribeSecurityGroups. If this parameter is not specified, the default security group is bound (currently, you can configure only one single `sgId`) |
 
 ## 3. Output Parameters
@@ -79,11 +79,11 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 
 ### Command line tools
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/457/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/457/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

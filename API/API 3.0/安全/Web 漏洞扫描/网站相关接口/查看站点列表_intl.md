@@ -9,7 +9,7 @@ Default API request frequency limit: 20 times/second.
 
 ## 2. Input Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/692/16736).
+The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](https://cloud.tencent.com/document/api/692/16736).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -17,7 +17,7 @@ The following list of request parameters lists only the API request parameters a
 | Version | Yes | String | Common parameter; the value for this API: 2018-03-12 |
 | Region | No | String | Common parameter; not passed in for this API |
 | SiteIds.N | No | Array of Integer | List of website IDs |
-| Filters.N | No | Array of [Filter](/document/api/692/16759#Filter) | Filters |
+| Filters.N | No | Array of [Filter](https://cloud.tencent.com/document/api/692/16759#Filter) | Filters |
 | Offset | No | Integer | Offset; 0 by default |
 | Limit | No | Integer | Number of returns; 10 by default, up to 100 |
 
@@ -26,7 +26,7 @@ The following list of request parameters lists only the API request parameters a
 | Parameter name | Type | Description |
 |---------|---------|---------|
 | TotalCount | Integer | Number of websites. |
-| Sites | Array of [Site](/document/api/692/16759#Site) | List of website information. |
+| Sites | Array of [Site](https://cloud.tencent.com/document/api/692/16759#Site) | List of website information. |
 | RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided when troubleshooting. |
 
 ## 4. Examples
@@ -113,11 +113,11 @@ Cloud API 3.0 comes with a set of complementary development toolkits (SDKs) that
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](/document/api/692/16738#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/692/16738#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

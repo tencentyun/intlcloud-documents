@@ -12,13 +12,13 @@ APIリクエストドメイン名：mongodb.tencentcloudapi.com。
 
 ## 2. 入力パラメータ
 
-次のリクエストパラメータリストには、APIリクエストパラメータと一部の共通パラメータのみがリストされています。完全な共通パラメータについては、[共通リクエストパラメータ](/document/api/240/31800)を参照してください。
+次のリクエストパラメータリストには、APIリクエストパラメータと一部の共通パラメータのみがリストされています。完全な共通パラメータについては、[共通リクエストパラメータ](https://cloud.tencent.com/document/api/240/31800)を参照してください。
 
 | パラメータ名 | 必須項目 | タイプ | 説明 |
 |---------|---------|---------|---------|
 | Action | はい | String | 共通パラメータ、該当APIの値：CreateDBInstance |
 | Version | はい | String | 共通パラメータ、該当APIの値：2018-04-08 |
-| Region | はい | String | 共通パラメータ、詳細については、製品がサポートする[地域リスト](/document/api/240/31800#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)を参照してください。 |
+| Region | はい | String | 共通パラメータ、詳細については、製品がサポートする[地域リスト](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/240/31800#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)を参照してください。 |
 | SecondaryNum | はい | Integer | 各コピーセットにあるスレーブノードの数 |
 | Memory | はい | Integer | インスタンスメモリサイズ、単位：GB |
 | Volume | はい | Integer | インスタンスディスクサイズ、単位：GB |
@@ -98,11 +98,11 @@ https://mongodb.tencentcloudapi.com/?Action=CreateDBInstance
 
 ### CLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. エラーコード
 
-以下に、APIビジネスロジックに関連するエラーコードのみをリストします。その他のエラーコードについては、[共通エラーコード](/document/api/240/31803#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)を参照してください。
+以下に、APIビジネスロジックに関連するエラーコードのみをリストします。その他のエラーコードについては、[共通エラーコード](https://cloud.tencent.com/document/api/240/31803#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)を参照してください。
 
 | エラーコード | 説明 |
 |---------|---------|

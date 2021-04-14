@@ -13,14 +13,14 @@ This API (ModifyImageSharePermission) is used to modify the image sharing inform
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/213/15692).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/213/15692).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. Value used in this API: ModifyImageSharePermission |
 | Version | Yes | String | Common parameter. Value used in this API: 2017-03-12 |
-| ImageId | Yes | String | Image ID, such as `img-gvbnzy6f`, which can be obtained by either of the following ways:<li>From the `ImageId` field returned by the API [DescribeImages](https://cloud.tencent.com/document/api/213/15715).</li><li>Via the [Image console](https://console.cloud.tencent.com/cvm/image).</li>The specified image ID must identify an image with a status of `NORMAL`. For more information on image statuses, please see [Image Data Sheet](/document/api/213/9452#image_state). |
-| AccountIds.N | Yes | Array of String | List of account IDs receiving shared image. For the format of array parameters, please see [API Introduction](/document/api/213/568). The account ID is different from the QQ number. To query the account ID, please see the Account ID column in [Account Information](https://console.cloud.tencent.com/developer). |
+| ImageId | Yes | String | Image ID, such as `img-gvbnzy6f`, which can be obtained by either of the following ways:<li>From the `ImageId` field returned by the API [DescribeImages](https://cloud.tencent.com/document/api/213/15715).</li><li>Via the [Image console](https://console.cloud.tencent.com/cvm/image).</li>The specified image ID must identify an image with a status of `NORMAL`. For more information on image statuses, please see [Image Data Sheet](https://cloud.tencent.com/document/api/213/9452#image_state). |
+| AccountIds.N | Yes | Array of String | List of account IDs receiving shared image. For the format of array parameters, please see [API Introduction](https://cloud.tencent.com/document/api/213/568). The account ID is different from the QQ number. To query the account ID, please see the Account ID column in [Account Information](https://console.cloud.tencent.com/developer). |
 | Permission | Yes | String | Operations including `SHARE` and `CANCEL`. `SHARE` means sharing, and `CANCEL` means canceling sharing. |
 
 ## 3. Output Parameters

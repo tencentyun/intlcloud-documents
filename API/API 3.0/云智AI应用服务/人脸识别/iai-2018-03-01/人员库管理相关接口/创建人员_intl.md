@@ -10,7 +10,7 @@ Default API request frequency limit: 50 times/second.
 
 ## 2. Input Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/867/32773).
+The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](https://cloud.tencent.com/document/api/867/32773).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -21,7 +21,7 @@ The following list of request parameters lists only the API request parameters a
 | PersonName | Yes | String | Person name. 1-60 characters, modifiable, repeatable. |
 | PersonId | Yes | String | Person ID, which must be unique under a Tencent Cloud account. It can contain letters, digits, and -%@#&_ of up to 64 B. |
 | Gender | No | Integer | 0 - blank; 1 - male; 2 - female. |
-| PersonExDescriptionInfos.N | No | Array of [PersonExDescriptionInfo](/document/api/867/32807#PersonExDescriptionInfo) | Content of the person description field; key-value. 0-60 characters, modifiable, repeatable. |
+| PersonExDescriptionInfos.N | No | Array of [PersonExDescriptionInfo](https://cloud.tencent.com/document/api/867/32807#PersonExDescriptionInfo) | Content of the person description field; key-value. 0-60 characters, modifiable, repeatable. |
 | Image | No | String | Base64 data of the image. <br/>If there are multiple faces in the image, only the face with the largest size is selected. <br/>Images in .png, .jpg, .jpeg, and .bmp but not .gif formats are supported. |
 | Url | No | String | Either the Url of Image of the image must be provided; if both are provided, only Url will be used. <br/>It is recommended to store the image in Tencent Cloud, as a Tencent Cloud URL can guarantee higher download speed and stability. <br/>The download speed and stability of non-Tencent Cloud URLs may be low. <br/>If there are multiple faces in the image, only the face with the largest size is selected. <br/>Images in .png, .jpg, .jpeg, and .bmp but not .gif formats are supported. |
 
@@ -186,11 +186,11 @@ TencentCloud API 3.0 comes with a set of complementary development toolkits (SDK
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](/document/api/867/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/867/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

@@ -12,13 +12,13 @@ Note: This API supports Finance regions. Since Finance regions and non-Finance r
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/236/15692).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/236/15692).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: DescribeDBInstanceConfig |
 | Version | Yes | String | Common parameter. The value used for this API: 2017-03-20 |
-| Region | Yes |  String | Common parameter. For more information, please see the [list of regions](/document/api/236/15692#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes |  String | Common parameter. For more information, please see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/236/15692#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | InstanceId | Yes | String | Instance ID, such as cdb-c1nl9rpv. It is identical to the instance ID displayed in the database console page. |
 
 ## 3. Output Parameters
@@ -28,13 +28,13 @@ The following request parameter list only provides API request parameters and so
 | ProtectMode | Integer | The data protection method for the master database, which is an attribute of the master instance. Possible returned values: 0 - Async replication; 1 - Semisync replication; 2 - Strongsync replication. |
 | DeployMode | Integer | The deployment method for the master database, which is an attribute of the master instance. Possible returned values: 0 - Single availability zone; 1 - Multiple availability zones. |
 | Zone | String | Formal name of the availability zone of the master database, such as ap-shanghai-1. |
-| SlaveConfig | [SlaveConfig](/document/api/236/##SlaveConfig) | The configuration of the slave database |
-| BackupConfig | [BackupConfig](/document/api/236/##BackupConfig) | The configuration of the second slave database of ECDB. This field is only applicable to ECDB instances. |
+| SlaveConfig | [SlaveConfig](https://cloud.tencent.com/document/api/236/##SlaveConfig) | The configuration of the slave database |
+| BackupConfig | [BackupConfig](https://cloud.tencent.com/document/api/236/##BackupConfig) | The configuration of the second slave database of ECDB. This field is only applicable to ECDB instances. |
 | RequestId | String | The unique request ID, which is returned for each request. RequestId is required for locating a problem. |
 
 ## 4. Error Codes
 
-The following only lists the error codes related to the API business logic. For other error codes, see [Common Error Codes](/document/api/236/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to the API business logic. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/236/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
@@ -81,5 +81,5 @@ Cloud API 3.0 comes with the following development tools to make it easier to ca
 * [Tencent Cloud SDK 3.0 for Go](https://github.com/TencentCloud/tencentcloud-sdk-go)
 * [Tencent Cloud SDK 3.0 for NodeJS](https://github.com/TencentCloud/tencentcloud-sdk-nodejs)
 * [Tencent Cloud SDK 3.0 for .NET](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 

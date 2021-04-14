@@ -9,14 +9,14 @@ This API (SyncImages) is used to sync a custom image to other regions.
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/213/15692).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/213/15692).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. Value used in this API: SyncImages |
 | Version | Yes | String | Common parameter. Value used in this API: 2017-03-12 |
-| ImageIds.N | Yes | Array of String | List of image Ids. Image ID can be obtained by either of the following ways:<li>From the `ImageId` field in the returned values of the API [DescribeImages](https://cloud.tencent.com/document/api/213/15715).</li><li>Via the [Image console](https://console.cloud.tencent.com/cvm/image).<br>Image ID must meet the following requirements:<li>It must identify an image with a status of `NORMAL`.</li><li>It must identify an image smaller than 50 GB.</li>For more information on image statuses, please see [Image Data Sheet](/document/api/213/9452#image_state). |
-| DestinationRegions.N | Yes | Array of String | List of destination regions for synchronization. Destination region must meet the following requirements:<li>It cannot be the source region.</li><li>It must be valid.</li><li>Synchronization is not supported for some regions.</li>For more information on region parameters, please see [Region](https://cloud.tencent.com/document/product/213/6091).
+| ImageIds.N | Yes | Array of String | List of image Ids. Image ID can be obtained by either of the following ways:<li>From the `ImageId` field in the returned values of the API [DescribeImages](https://cloud.tencent.com/document/api/213/15715).</li><li>Via the [Image console](https://console.cloud.tencent.com/cvm/image).<br>Image ID must meet the following requirements:<li>It must identify an image with a status of `NORMAL`.</li><li>It must identify an image smaller than 50 GB.</li>For more information on image statuses, please see [Image Data Sheet](https://cloud.tencent.com/document/api/213/9452#image_state). |
+| DestinationRegions.N | Yes | Array of String | List of destination regions for synchronization. Destination region must meet the following requirements:<li>It cannot be the source region.</li><li>It must be valid.</li><li>Synchronization is not supported for some regions.</li>For more information on region parameters, please see [Region](https://intl.cloud.tencent.com/document/product/213/6091).
 
 ## 3. Output Parameters
 

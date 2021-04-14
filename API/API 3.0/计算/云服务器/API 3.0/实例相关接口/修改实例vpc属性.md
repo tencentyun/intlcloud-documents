@@ -7,14 +7,14 @@
 
 ## 2. 输入参数
 
-以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见[公共请求参数](/document/api/213/15692)。
+以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见[公共请求参数](https://cloud.tencent.com/document/api/213/15692)。
 
 | 参数名称 | 是否必选 | 类型 | 描述 |
 |---------|---------|---------|---------|
 | Action | 是 | String | 公共参数，本接口取值：UpdateInstanceVpcConfig |
 | Version | 是 | String | 公共参数，本接口取值：2017-03-12 |
 | InstanceId | 是 | String | 待操作的实例ID。可通过[`DescribeInstances`](document/api/213/9388)接口返回值中的`InstanceId`获取。 |
-| VirtualPrivateCloud | 是 | [VirtualPrivateCloud](/document/api/213/15753#VirtualPrivateCloud) | 私有网络相关信息配置。通过该参数指定私有网络的ID，子网ID，私有网络ip等信息。 |
+| VirtualPrivateCloud | 是 | [VirtualPrivateCloud](https://cloud.tencent.com/document/api/213/15753#VirtualPrivateCloud) | 私有网络相关信息配置。通过该参数指定私有网络的ID，子网ID，私有网络ip等信息。 |
 | ForceStop | 否 | Boolean | 是否对运行中的实例选择强制关机。默认为TRUE。 |
 
 ## 3. 输出参数

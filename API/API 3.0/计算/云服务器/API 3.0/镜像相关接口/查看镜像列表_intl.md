@@ -7,16 +7,16 @@ This API (DescribeImages) is used to view the image list.
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/213/15692).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/213/15692).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. Value used in this API: DescribeImages |
 | Version | Yes | String | Common parameter. Value used in this API: 2017-03-12 |
 | ImageIds.N | No | Array of String | List of image IDs, such as `img-gvbnzy6f`. For the format of array parameter, please see [API Introduction](https://cloud.tencent.com/document/api/213/15688). Image ID can be obtained by either of the following ways:<li>From the `ImageId` field returned by the API [DescribeImages](https://cloud.tencent.com/document/api/213/15715).</li><li>Via the [Image console](https://console.cloud.tencent.com/cvm/image). |
-| Filters.N | No | Array of [Filter](/document/api/213/15753#Filter) | Filter condition. The maximum number of `Filters` for each request is 0 and that of `Filters.Values` is 5. This parameter does not support specifying both `ImageIds` and `Filters`. Specific filter conditions are described as follows:<li> image-id - String - Required: No - (Filter condition) Filter by image ID.</li><li> image-type - String - Required: No - (Filter condition) Filter by image type. Value range: for more information, please see [Image Type](https://cloud.tencent.com/document/product/213/9452#image_type).</li><li> image-state - String - Required: No - (Filter condition) Filter by image status. Value range: for more information, please see [Image Status](https://cloud.tencent.com/document/product/213/9452#image_state). |
-| Offset | No | Integer | Offset. Default is 0. For more information on Offset, please see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89). |
-| Limit | No | Integer | Limit on the number of results. Default is 20, and maximum is 100. For more information on Limit, please see [API Introduction](/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89). |
+| Filters.N | No | Array of [Filter](https://cloud.tencent.com/document/api/213/15753#Filter) | Filter condition. The maximum number of `Filters` for each request is 0 and that of `Filters.Values` is 5. This parameter does not support specifying both `ImageIds` and `Filters`. Specific filter conditions are described as follows:<li> image-id - String - Required: No - (Filter condition) Filter by image ID.</li><li> image-type - String - Required: No - (Filter condition) Filter by image type. Value range: for more information, please see [Image Type](https://intl.cloud.tencent.com/document/product/213/15753).</li><li> image-state - String - Required: No - (Filter condition) Filter by image status. Value range: for more information, please see [Image Status](https://intl.cloud.tencent.com/document/product/213/15753). |
+| Offset | No | Integer | Offset. Default is 0. For more information on Offset, please see [API Introduction](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89). |
+| Limit | No | Integer | Limit on the number of results. Default is 20, and maximum is 100. For more information on Limit, please see [API Introduction](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/213/568#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89). |
 | InstanceType | No | String | Instance type, such as `S1.SMALL1` |
 
 ## 3. Output Parameters
@@ -25,7 +25,7 @@ The following request parameter list only provides API request parameters and so
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
-| ImageSet | Array of [Image](/document/api/213/15753#Image) | An array of the details of an image, including the main statuses and attributes of the image. |
+| ImageSet | Array of [Image](https://cloud.tencent.com/document/api/213/15753#Image) | An array of the details of an image, including the main statuses and attributes of the image. |
 | TotalCount | Integer | Number of images satisfying the filter conditions. |
 | RequestId | String | The unique request ID, which is returned for each request. When locating the problem, the RequestId of the request needs to be provided. |
 

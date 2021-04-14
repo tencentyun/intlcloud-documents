@@ -12,24 +12,24 @@ Note: This API supports financial regions. As financial regions and non-financia
 
 ## 2. Input Parameters
 
-The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/377/20426).
+The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/377/20426).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: CreatePaiInstance |
 | Version | Yes | String | Common parameter. The value used for this API: 2018-04-19 |
-| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | DomainName | Yes | String | PAI instance domain name. |
-| InternetAccessible | Yes | [InternetAccessible](/document/api/377/20453#InternetAccessible) | Information of the public network bandwidth configuration. |
+| InternetAccessible | Yes | [InternetAccessible](https://cloud.tencent.com/document/api/377/20453#InternetAccessible) | Information of the public network bandwidth configuration. |
 | InitScript | No | String | The Base64-encoded string of the launch script. |
 | Zones.N | No | Array of String | Availability zone list. |
 | VpcId | No | String | VpcId. |
 | SubnetIds.N | No | Array of String | List of subnets. |
 | InstanceName | No | String | Instance display name. |
 | InstanceTypes.N | No | Array of String | List of instance models. |
-| LoginSettings | No | [LoginSettings](/document/api/377/20453#LoginSettings) | Instance login settings. |
+| LoginSettings | No | [LoginSettings](https://cloud.tencent.com/document/api/377/20453#LoginSettings) | Instance login settings. |
 | InstanceChargeType | No | String | Instance billing mode. |
-| InstanceChargePrepaid | No | [InstanceChargePrepaid](/document/api/377/20453#InstanceChargePrepaid) | The relevant parameter setting for monthly subscription mode. This parameter can specify the purchased period, whether to set auto-renewal and other attributes of the instance purchased on a monthly subscription basis. This parameter is required if the billing mode for the specified instance is monthly subscription. |
+| InstanceChargePrepaid | No | [InstanceChargePrepaid](https://cloud.tencent.com/document/api/377/20453#InstanceChargePrepaid) | The relevant parameter setting for monthly subscription mode. This parameter can specify the purchased period, whether to set auto-renewal and other attributes of the instance purchased on a monthly subscription basis. This parameter is required if the billing mode for the specified instance is monthly subscription. |
 
 ## 3. Output Parameters
 
@@ -97,8 +97,8 @@ TencentCloud API 3.0 comes with SDKs that support multiple programming languages
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-This API has no error codes related to business logic. For other error codes, see [Common Error Codes](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+This API has no error codes related to business logic. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).

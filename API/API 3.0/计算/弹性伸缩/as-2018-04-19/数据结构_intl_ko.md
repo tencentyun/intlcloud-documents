@@ -79,8 +79,8 @@ API: CreateLaunchConfiguration, DescribeLaunchConfigurations에 참조욉니다.
 
 | 이름 | 유형 | 필수 선택 항목 | 설명 |
 |------|------|----------|------|
-| DiskType | String | 아니요 | 데이터 디스크 유형입니다. 데이터 디스크 유형 제한은 [CVM 인스턴스 구성](https://cloud.tencent.com/document/product/213/2177)을 참조하십시오. 값 범위: <br><li>LOCAL_BASIC: 로컬 디스크<br><li>LOCAL_SSD: 로컬 SSD 디스크<br><li>CLOUD_BASIC: HDD 클라우드 디스크<br><li>CLOUD_PREMIUM: 프리미엄 클라우드 디스크<br><li>CLOUD_SSD: SSD 클라우드 디스크<br><br> 기본 값: LOCAL_BASIC입니다. |
-| DiskSize | Integer | 아니요 | 데이터 디스크 크기, 단위: GB. 최소 조정 단위는 10G, 서로 다른 유형의 데이터 디스크는 값이 다릅니다. 구체적인 제한은 [CVM 인스턴스 구성](https://cloud.tencent.com/document/product/213/2177)을 참조하십시오. 기본값은 0으로 데이터 디스크 구매하지 않음을 표시합니다. 더 많은 제한은 제품 문서를 참조하십시오. |
+| DiskType | String | 아니요 | 데이터 디스크 유형입니다. 데이터 디스크 유형 제한은 [CVM 인스턴스 구성](https://intl.cloud.tencent.com/document/product/213/11518)을 참조하십시오. 값 범위: <br><li>LOCAL_BASIC: 로컬 디스크<br><li>LOCAL_SSD: 로컬 SSD 디스크<br><li>CLOUD_BASIC: HDD 클라우드 디스크<br><li>CLOUD_PREMIUM: 프리미엄 클라우드 디스크<br><li>CLOUD_SSD: SSD 클라우드 디스크<br><br> 기본 값: LOCAL_BASIC입니다. |
+| DiskSize | Integer | 아니요 | 데이터 디스크 크기, 단위: GB. 최소 조정 단위는 10G, 서로 다른 유형의 데이터 디스크는 값이 다릅니다. 구체적인 제한은 [CVM 인스턴스 구성](https://intl.cloud.tencent.com/document/product/213/11518)을 참조하십시오. 기본값은 0으로 데이터 디스크 구매하지 않음을 표시합니다. 더 많은 제한은 제품 문서를 참조하십시오. |
 | SnapshotId | String | 아니요 | 데이터 디스크 스냅샷 ID, 형식은 `snap-l8psqwnt`와 유사합니다. |
 
 ## EnhancedService
@@ -169,7 +169,7 @@ API: CreateLaunchConfiguration, DescribeLaunchConfigurations에 참조욉니다.
 | 이름 | 유형 | 필수 선택 항목 | 설명 |
 |------|------|----------|------|
 | InternetChargeType | String | 아니요 | 네트워크 요금제. 가능한 값: <br><li>BANDWIDTH_PREPAID: 대역폭에 따른 선불제 <br><li>TRAFFIC_POSTPAID_BY_HOUR: 트래픽 시간별 후불제<br><li>BANDWIDTH_POSTPAID_BY_HOUR: 대역폭 시간별 후불제 <br><li>BANDWIDTH_PACKAGE: 대역폭 패키지 <br> 기본 값은 TRAFFIC_POSTPAID_BY_HOUR입니다. |
-| InternetMaxBandwidthOut | Integer | 아니요 | 공중망 아웃바운드 대역폭 상한, 단위는 Mbps, 기본 값은 0Mbps입니다. 모델에 따라 대역폭 상한이 달라집니다. 구체적인 제한은 [구매한 네트워크 대역폭](https://cloud.tencent.com/document/product/213/509)을 참조하십시오. |
+| InternetMaxBandwidthOut | Integer | 아니요 | 공중망 아웃바운드 대역폭 상한, 단위는 Mbps, 기본 값은 0Mbps입니다. 모델에 따라 대역폭 상한이 달라집니다. 구체적인 제한은 [구매한 네트워크 대역폭](https://intl.cloud.tencent.com/document/product/213/10578)을 참조하십시오. |
 | PublicIpAssigned | Boolean | 아니요 | 공인 IP 할당 여부입니다. 가능한 값: <br><li>TRUE: 공인 IP 할당<br><li>FALSE: 공인 IP 할당하지 않음<br><br>공중망 대역폭이 0Mbps보다 클 경우 자유롭게 개통 여부를 선택할 수 있고 기본적으로 공인 IP를 활성화합니다. 공중망 대역폭이 0인 경우, 공인 IP의 할당을 허용하지 않습니다. |
 
 ## LaunchConfiguration
@@ -279,7 +279,7 @@ API: CreateLaunchConfiguration, DescribeLaunchConfigurations에 참조욉니다.
 
 | 이름 | 유형 | 필수 선택 항목 | 설명 |
 |------|------|----------|------|
-| DiskType | String | 아니요 | 시스템 디스크 유형입니다. 시스템 디스크 유형 제한의 상세한 내용은 [CVM 인스턴스 구성](https://cloud.tencent.com/document/product/213/2177)을 참조하십시오. 가능한 값 범위: <br><li>LOCAL_BASIC: 로컬 디스크<br><li>LOCAL_SSD: 로컬 SSD 디스크<br><li>CLOUD_BASIC: HDD 클라우드 디스크<br><li>CLOUD_PREMIUM: 프리미엄 클라우드 디스크<br><li>CLOUD_SSD: SSD 클라우드 디스크<br><br>기본 값은 LOCAL_BASIC입니다. |
+| DiskType | String | 아니요 | 시스템 디스크 유형입니다. 시스템 디스크 유형 제한의 상세한 내용은 [CVM 인스턴스 구성](https://intl.cloud.tencent.com/document/product/213/11518)을 참조하십시오. 가능한 값 범위: <br><li>LOCAL_BASIC: 로컬 디스크<br><li>LOCAL_SSD: 로컬 SSD 디스크<br><li>CLOUD_BASIC: HDD 클라우드 디스크<br><li>CLOUD_PREMIUM: 프리미엄 클라우드 디스크<br><li>CLOUD_SSD: SSD 클라우드 디스크<br><br>기본 값은 LOCAL_BASIC입니다. |
 | DiskSize | Integer | 아니요 | 시스템 디크스 크기, 단위는 GB입니다. 기본값은 50입니다. |
 
 ## TargetAttribute

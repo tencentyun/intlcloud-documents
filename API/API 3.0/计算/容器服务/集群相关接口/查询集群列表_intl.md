@@ -12,24 +12,24 @@ Note: This API supports financial regions. As financial regions and non-financia
 
 ## 2. Input Parameters
 
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/457/31856).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](https://cloud.tencent.com/document/api/457/31856).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The name of this API: DescribeClusters |
 | Version | Yes | String | Common parameter. The version of this API: 2018-05-25 |
-| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/457/31856#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product.
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/457/31856#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product.
 | ClusterIds.N | No | Array of String | List of cluster IDs (if this parameter is empty, <br/>all clusters under the account are obtained) |
 | Offset | No | Integer | Offset; default is 0 |
 | Limit | No | Integer | Maximum number of output entries; default is 20 |
-| Filters.N | No | Array of [Filter](/document/api/457/31866#Filter) | Filter. Currently, only ClusterName is supported |
+| Filters.N | No | Array of [Filter](https://cloud.tencent.com/document/api/457/31866#Filter) | Filter. Currently, only ClusterName is supported |
 
 ## 3. Output Parameters
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
 | TotalCount | Integer | Total number of clusters |
-| Clusters | Array of [Cluster](/document/api/457/31866#Cluster) | Cluster information list |
+| Clusters | Array of [Cluster](https://cloud.tencent.com/document/api/457/31866#Cluster) | Cluster information list |
 | RequestId | String | Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.  |
 
 ## 4. Samples
@@ -97,11 +97,11 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 
 ### Command line tools
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/457/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/457/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

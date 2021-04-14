@@ -7,22 +7,22 @@ This API initiates a task to process a audio or video files downloaded from a UR
 Default API request rate limit: 100 requests/sec.
 
 ## 2. Input Parameters
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/266/31756).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](https://cloud.tencent.com/document/api/266/31756).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter; the name of this API: ProcessMediaByUrl |
 | Version | Yes | String | Common parameter; the version of this API: 2018-07-17 |
 | Region | No | String | Common parameter; optional for this API |
-| InputInfo | No | [MediaInputInfo](/document/api/266/31773#MediaInputInfo) | Information of the input video, including video's URL, name, and custom ID. |
-| OutputInfo | No | [MediaOutputInfo](/document/api/266/31773#MediaOutputInfo) | Information of the COS path for the output file. |
-| AiContentReviewTask | No | [AiContentReviewTaskInput](/document/api/266/31773#AiContentReviewTaskInput) | Parameter of the video content review task. |
-| AiAnalysisTask | No | [AiAnalysisTaskInput](/document/api/266/31773#AiAnalysisTaskInput) | Parameter of the video content analysis task. |
+| InputInfo | No | [MediaInputInfo](https://cloud.tencent.com/document/api/266/31773#MediaInputInfo) | Information of the input video, including video's URL, name, and custom ID. |
+| OutputInfo | No | [MediaOutputInfo](https://cloud.tencent.com/document/api/266/31773#MediaOutputInfo) | Information of the COS path for the output file. |
+| AiContentReviewTask | No | [AiContentReviewTaskInput](https://cloud.tencent.com/document/api/266/31773#AiContentReviewTaskInput) | Parameter of the video content review task. |
+| AiAnalysisTask | No | [AiAnalysisTaskInput](https://cloud.tencent.com/document/api/266/31773#AiAnalysisTaskInput) | Parameter of the video content analysis task. |
 | TasksPriority | No | Integer | Priority of the task flow. The higher the value, the higher the priority. Value range: -10 to 10; if you leave this field blank, the API will recognize it as 0. |
 | TasksNotifyMode | No | String | Mode of task flow status notification. Valid values : Finish, Change and None; if you leave this field blank, the API will recognize it as Finish. |
 | SourceContext | No | String | The source context passed along with the request. The upload callback API will return this value. Maximum 250 characters allowed. |
 | SessionId | No | String | The ID used for deduplication. If there was a request with the same ID in the past seven days, the current request will return an error. Up to 50 characters. If missing or with a blank string, no deduplication is performed. |
-| SubAppId | No | Integer | ID of the VOD [sub-application](/document/product/266/14574). Input the ID of the sub-application that has the desired resources; otherwise, leave it blank. |
+| SubAppId | No | Integer | ID of the VOD [sub-application](https://intl.cloud.tencent.com/document/product/266/33987). Input the ID of the sub-application that has the desired resources; otherwise, leave it blank. |
 ## 3. Output Parameters
 | Parameter name | Type | Description |
 |---------|---------|---------|
@@ -91,10 +91,10 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 * [Tencent Cloud SDK 3.0 for .NET](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)
 
 ### TCCLI
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
-The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

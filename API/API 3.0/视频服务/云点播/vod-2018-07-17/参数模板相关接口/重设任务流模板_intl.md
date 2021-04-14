@@ -4,7 +4,7 @@ This API updates the task information of an existing task flow template.
 Default API request rate limit: 100 requests/sec.
 
 ## 2. Input Parameters
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/266/31756).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](https://cloud.tencent.com/document/api/266/31756).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -12,11 +12,11 @@ The following parameters are required for requesting this API, including action-
 | Version | Yes | String | Common parameter; the version of this API: 2018-07-17 |
 | Region | No | String | Common parameter; optional for this API |
 | Name | Yes | String | Task flow name. |
-| MediaProcessTask | No | [MediaProcessTaskInput](/document/api/266/31773#MediaProcessTaskInput) | Parameter of the video processing task. |
-| AiContentReviewTask | No | [AiContentReviewTaskInput](/document/api/266/31773#AiContentReviewTaskInput) | Parameter of the AI-based content review task. |
-| AiAnalysisTask | No | [AiAnalysisTaskInput](/document/api/266/31773#AiAnalysisTaskInput) | Parameter of the AI-based content analysis task. |
-| AiRecognitionTask | No | [AiRecognitionTaskInput](/document/api/266/31773#AiRecognitionTaskInput) | Parameter of the AI-based content recognition task. |
-| SubAppId | No | Integer | ID of the VOD [sub-application](/document/product/266/14574). Input the ID of the sub-application that has the desired resources; otherwise, leave it blank. |
+| MediaProcessTask | No | [MediaProcessTaskInput](https://cloud.tencent.com/document/api/266/31773#MediaProcessTaskInput) | Parameter of the video processing task. |
+| AiContentReviewTask | No | [AiContentReviewTaskInput](https://cloud.tencent.com/document/api/266/31773#AiContentReviewTaskInput) | Parameter of the AI-based content review task. |
+| AiAnalysisTask | No | [AiAnalysisTaskInput](https://cloud.tencent.com/document/api/266/31773#AiAnalysisTaskInput) | Parameter of the AI-based content analysis task. |
+| AiRecognitionTask | No | [AiRecognitionTaskInput](https://cloud.tencent.com/document/api/266/31773#AiRecognitionTaskInput) | Parameter of the AI-based content recognition task. |
+| SubAppId | No | Integer | ID of the VOD [sub-application](https://intl.cloud.tencent.com/document/product/266/33987). Input the ID of the sub-application that has the desired resources; otherwise, leave it blank. |
 ## 3. Output Parameters
 | Parameter name | Type | Description |
 |---------|---------|---------|
@@ -57,10 +57,10 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 * [Tencent Cloud SDK 3.0 for .NET](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)
 
 ### TCCLI
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
-The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

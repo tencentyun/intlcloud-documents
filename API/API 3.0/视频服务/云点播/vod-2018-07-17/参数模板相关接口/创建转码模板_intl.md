@@ -4,7 +4,7 @@ This API creates up to 1000 custom transcoding templates.
 Default API request rate limit: 100 requests/sec.
 
 # 2. Input Parameters
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/266/31756).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](https://cloud.tencent.com/document/api/266/31756).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -16,9 +16,9 @@ The following parameters are required for requesting this API, including action-
 | Comment | No | String | The description of the template. Maximum 256 bytes. |
 | RemoveVideo | No | Integer | Whether to remove the video data: <br/><li>0: No </li><li>1: Yes </li><br/>Default value: 0. |
 | RemoveAudio | No | Integer | Whether to remove the audio data: <br/><li>0: No </li><li>1: Yes </li><br/>Default value: 0. |
-| VideoTemplate | No | [VideoTemplateInfo](/document/api/266/31773#VideoTemplateInfo) | Video stream configuration parameter. This field is required when RemoveVideo is 0. |
-| AudioTemplate | No | [AudioTemplateInfo](/document/api/266/31773#AudioTemplateInfo) | Audio stream configuration parameter. This field is required when RemoveAudio is 0. |
-| SubAppId | No | Integer | ID of the VOD [sub-application](/document/product/266/14574). Input the ID of the sub-application that has the desired resources; otherwise, leave it blank. |
+| VideoTemplate | No | [VideoTemplateInfo](https://cloud.tencent.com/document/api/266/31773#VideoTemplateInfo) | Video stream configuration parameter. This field is required when RemoveVideo is 0. |
+| AudioTemplate | No | [AudioTemplateInfo](https://cloud.tencent.com/document/api/266/31773#AudioTemplateInfo) | Audio stream configuration parameter. This field is required when RemoveAudio is 0. |
+| SubAppId | No | Integer | ID of the VOD [sub-application](https://intl.cloud.tencent.com/document/product/266/33987). Input the ID of the sub-application that has the desired resources; otherwise, leave it blank. |
 ## 3. Output Parameters
 | Parameter name | Type | Description |
 |---------|---------|---------|
@@ -67,10 +67,10 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 * [Tencent Cloud SDK 3.0 for .NET](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)
 
 ### TCCLI
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
-The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

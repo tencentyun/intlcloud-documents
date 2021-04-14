@@ -8,14 +8,14 @@ This API (ImportKeyPair) is used to import key pairs.
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/213/15692).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/213/15692).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. Value used in this API: ImportKeyPair |
 | Version | Yes | String | Common parameter. Value used in this API: 2017-03-12 |
 | KeyName | Yes | String | Name of key pair, which can consist of numbers, letters, and underscores, with a length of not more than 25 characters. |
-| ProjectId | Yes | Integer | The ID of the [project](/document/product/378/10863) to which the created key pair belongs.<br><br> You can obtain the project ID by either of the following ways: <li>query the project ID via [Project List](https://console.cloud.tencent.com/project);</li><li>obtain the project ID from the `projectId` field in the returned values of API [DescribeProject](https://cloud.tencent.com/document/api/378/4400). </li><br>If it is the default project, enter 0. |
+| ProjectId | Yes | Integer | The ID of the [project](https://intl.cloud.tencent.com/document/product/378/34726) to which the created key pair belongs.<br><br> You can obtain the project ID by either of the following ways: <li>query the project ID via [Project List](https://console.cloud.tencent.com/project);</li><li>obtain the project ID from the `projectId` field in the returned values of API [DescribeProject](https://cloud.tencent.com/document/api/378/4400). </li><br>If it is the default project, enter 0. |
 | PublicKey | Yes | String | The public key text of the key pair which is in an format of `OpenSSH RSA`. |
 
 ## 3. Output Parameters

@@ -8,19 +8,19 @@ Default API request rate limit: 20 requests/sec.
 
 ## 2. Input Parameters
 
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/589/33974).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](https://cloud.tencent.com/document/api/589/33974).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The name of this API: ScaleOutInstance |
 | Version | Yes | String | Common parameter. The value used for this API: 2019-01-03 |
-| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/589/33974#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/589/33974#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | ClientToken | Yes | String | Token |
 | TimeUnit | Yes | String | Time unit |
 | TimeSpan | Yes | Integer | Time span |
 | InstanceId | Yes | String | ID of the instance for scale-out |
 | PayMode | Yes | Integer | Payment method |
-| PreExecutedFileSettings | No | [PreExecuteFileSettings](/document/api/589/33981#PreExecuteFileSettings) | Pre-execution script settings |
+| PreExecutedFileSettings | No | [PreExecuteFileSettings](https://cloud.tencent.com/document/api/589/33981#PreExecuteFileSettings) | Pre-execution script settings |
 | TaskCount | No | Integer | Number of task nodes to add |
 | CoreCount | No | Integer | Number of core nodes to add |
 
@@ -28,7 +28,7 @@ The following parameters are required for requesting this API, including action-
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| Result | [ScaleOutInstanceResult](/document/api/589/33981#ScaleOutInstanceResult) | Scale-out result |
+| Result | [ScaleOutInstanceResult](https://cloud.tencent.com/document/api/589/33981#ScaleOutInstanceResult) | Scale-out result |
 | RequestId | String | The unique ID of a request, which is required for each troubleshooting case. |
 
 ## 4. Examples
@@ -90,8 +90,8 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-This API has no error codes related to business logic. For other error codes, see [Common Error Codes](/document/api/589/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+This API has no error codes related to business logic. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/589/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).

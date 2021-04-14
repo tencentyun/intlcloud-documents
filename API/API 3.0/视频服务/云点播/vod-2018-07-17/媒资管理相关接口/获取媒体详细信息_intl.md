@@ -14,7 +14,7 @@ API domain name: vod.tencentcloudapi.com.
 Default API request rate limit: 100 requests/sec.
 
 ## 2. Input Parameters
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/266/31756).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](https://cloud.tencent.com/document/api/266/31756).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -23,11 +23,11 @@ The following parameters are required for requesting this API, including action-
 | Region | No | String | Common parameter; optional for this API |
 | FileIds.N | Yes | Array of String | List of media file IDs. N starts from 0 and can be up to 19. |
 | Filters.N | No | Array of String | Specify the information entry that needs to be returned by all media files. Multiple information entries can be specified simultaneously. N starts from 0. If this field is left blank, all information entries are returned by default. Valid values: <br/><li>basicInfo (basic information of the video). </li><li>metaData (metadata of the video). </li><li>transcodeInfo (information of the video transcoding result). </li><li>animatedGraphicsInfo (information of the animated image generating result). </li><li>imageSpriteInfo (information of the image sprites). </li><li>snapshotByTimeOffsetInfo (information of the time point screenshots). </li><li>sampleSnapshotInfo (information of the sampled screenshots). </li><li>keyFrameDescInfo (information of the timestamps). </li> |
-| SubAppId | No | Integer | ID of the VOD [sub-application](/document/product/266/14574). Input the ID of the sub-application that has the desired resources; otherwise, leave it blank. |
+| SubAppId | No | Integer | ID of the VOD [sub-application](https://intl.cloud.tencent.com/document/product/266/33987). Input the ID of the sub-application that has the desired resources; otherwise, leave it blank. |
 ## 3. Output Parameters
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| MediaInfoSet | Array of [MediaInfo](/document/api/266/31773#MediaInfo) | List of media file information. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| MediaInfoSet | Array of [MediaInfo](https://cloud.tencent.com/document/api/266/31773#MediaInfo) | List of media file information. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | NotExistFileIdSet | Array of String | List of file IDs that do not exist. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
@@ -277,10 +277,10 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 * [Tencent Cloud SDK 3.0 for .NET](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)
 
 ### TCCLI
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
-The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

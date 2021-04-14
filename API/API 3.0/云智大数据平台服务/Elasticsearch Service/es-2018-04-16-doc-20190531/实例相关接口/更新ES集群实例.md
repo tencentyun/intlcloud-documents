@@ -22,26 +22,26 @@
 
 ## 2. 输入参数
 
-以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见 [公共请求参数](/document/api/845/30623)。
+以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见 [公共请求参数](https://cloud.tencent.com/document/api/845/30623)。
 
 | 参数名称 | 必选 | 类型 | 描述 |
 |---------|---------|---------|---------|
 | Action | 是 | String | 公共参数，本接口取值：UpdateInstance |
 | Version | 是 | String | 公共参数，本接口取值：2018-04-16 |
-| Region | 是 | String | 公共参数，详见产品支持的 [地域列表](/document/api/845/30623#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。 |
+| Region | 是 | String | 公共参数，详见产品支持的 [地域列表](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/845/30623#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。 |
 | InstanceId | 是 | String | 实例ID |
 | InstanceName | 否 | String | 实例名称（1-50 个英文、汉字、数字、连接线-或下划线_） |
 | NodeNum | 否 | Integer | 节点个数（2-50个） |
 | EsConfig | 否 | String | 配置项（JSON格式字符串）。当前仅支持以下配置项：<li>action.destructive_requires_name</li><li>indices.fielddata.cache.size</li><li>indices.query.bool.max_clause_count</li> |
 | Password | 否 | String | 默认用户elastic的密码（8到16位，至少包括两项（[a-z,A-Z],[0-9]和[-!@#$%&^*+=_:;,.?]的特殊符号） |
-| EsAcl | 否 | [EsAcl](/document/api/845/30634#EsAcl) | 访问控制列表 |
+| EsAcl | 否 | [EsAcl](https://cloud.tencent.com/document/api/845/30634#EsAcl) | 访问控制列表 |
 | DiskSize | 否 | Integer | 磁盘大小（单位GB） |
 | NodeType | 否 | String | 节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li> |
 | MasterNodeNum | 否 | Integer | 专用主节点个数（只支持3个或5个） |
 | MasterNodeType | 否 | String | 专用主节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li> |
 | MasterNodeDiskSize | 否 | Integer | 专用主节点磁盘大小（单位GB系统默认配置为50GB,暂不支持自定义） |
 | ForceRestart | 否 | Boolean | 更新配置时是否强制重启<li>true强制重启</li><li>false不强制重启</li>当前仅更新EsConfig时需要设置，默认值为false |
-| CosBackup | 否 | [CosBackup](/document/api/845/30634#CosBackup) | COS自动备份信息 |
+| CosBackup | 否 | [CosBackup](https://cloud.tencent.com/document/api/845/30634#CosBackup) | COS自动备份信息 |
 
 ## 3. 输出参数
 
@@ -237,11 +237,11 @@ https://es.tencentcloudapi.com/?Action=UpdateInstance
 
 ### 命令行工具
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. 错误码
 
-以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](/document/api/845/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
+以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](https://cloud.tencent.com/document/api/845/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
 
 | 错误码 | 描述 |
 |---------|---------|

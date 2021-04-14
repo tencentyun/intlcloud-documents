@@ -15,15 +15,15 @@ APIリクエストドメイン名：as.tencentcloudapi.com 。
 
 ## 2. 入力パラメータ
 
-次のリクエストパラメータリストには、APIリクエストパラメータと一部の共通パラメータのみがリストされています。完全な共通パラメータについては、[共通リクエストパラメータ](/document/api/377/20426)を参照してください。
+次のリクエストパラメータリストには、APIリクエストパラメータと一部の共通パラメータのみがリストされています。完全な共通パラメータについては、[共通リクエストパラメータ](https://cloud.tencent.com/document/api/377/20426)を参照してください。
 
 | パラメータ名 | 必須項目 | タイプ | 説明 |
 |---------|---------|---------|---------|
 | Action | はい | String | 共通パラメータ、このAPIの値：ModifyLaunchConfigurationAttributes |
 | Version | はい | String | 共通パラメータ、このAPIの値：2018-04-19 |
-| Region | はい | String | 共通パラメータ、詳細については、製品がサポートする[地域リスト](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)を参照してください。 |
+| Region | はい | String | 共通パラメータ、詳細については、製品がサポートする[地域リスト](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)を参照してください。 |
 | LaunchConfigurationId | はい | String | 起動構成ID |
-| ImageId | いいえ | String | 有効な[イメージ](https://cloud.tencent.com/document/product/213/4940)IDを指定します。`img-8toqc6s3`のような形をしています。イメージの種類は4種類あります。<br/><li>共通イメージ</li><li>カスタムイメージ</li><li>共有イメージ</li><li>サービスマーケットイメージ</li><br/>以下の方法で使用可能なイメージIDを取得できます。<br/><li>`共通イメージ`、`カスタムイメージ`、`共有イメージ`のイメージIDは、[コンソール](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)にログインして確認できます。`サービスイメージマーケット`のイメージIDは、[クラウドマーケット](https://market.cloud.tencent.com/list)で確認できます。</li><li>API [DescribeImages](https://cloud.tencent.com/document/api/213/15715)を呼び出して、返されたメッセージの`ImageId`フィールドを取ります。</li> |
+| ImageId | いいえ | String | 有効な[イメージ](https://intl.cloud.tencent.com/document/product/213/4940)IDを指定します。`img-8toqc6s3`のような形をしています。イメージの種類は4種類あります。<br/><li>共通イメージ</li><li>カスタムイメージ</li><li>共有イメージ</li><li>サービスマーケットイメージ</li><br/>以下の方法で使用可能なイメージIDを取得できます。<br/><li>`共通イメージ`、`カスタムイメージ`、`共有イメージ`のイメージIDは、[コンソール](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)にログインして確認できます。`サービスイメージマーケット`のイメージIDは、[クラウドマーケット](https://market.cloud.tencent.com/list)で確認できます。</li><li>API [DescribeImages](https://cloud.tencent.com/document/api/213/15715)を呼び出して、返されたメッセージの`ImageId`フィールドを取ります。</li> |
 | InstanceTypes.N | いいえ | Array of String | インスタンスタイプのリスト。異なるインスタンスモデルは異なるリソース仕様を指定し、最大5つのインスタンスモデルをサポートします。<br/>起動構成。InstanceTypeを通して単一のインスタンスタイプを表し、InstanceTypesを通してマルチインスタンスタイプを表します。指定されたInstanceTypesが構成を成功的に起動した後、元のInstanceTypeは自動的に無効になります。 |
 | InstanceTypesCheckPolicy | いいえ | String | インスタンスタイプ検証ポリシー。実際にInstanceTypesを変更する際に役割を果たします。値はALLおよびANYがあり、デフォルト値はANYです。<br/><br><li> ALLは、すべてのインスタンスタイプ（InstanceType）が使用可能な場合は、検証に合格し、それ以外の場合は検証エラーが報告されます。<br/><br><li> ANYは、任意のインスタンスタイプ（InstanceType）が使用可能な場合は、検証に合格し、それ以外の場合は検証エラーが報告されます。<br/><br/>インスタンスタイプが使用できない一般的な原因は、インスタンスタイプの売り切れ、対応するクラウドディスクの売り切れなどです。<br/>InstanceTypesの1つのモデルが存在しないか既に無効だった場合、InstanceTypesCheckPolicyの値に関係なく、検証エラーが報告されます。 |
 | LaunchConfigurationName | いいえ | String | 起動構成の名前。この名前は、中国語、英語、数字、アンダースコア、区切り記号「-」、小数点のみをサポートし、最大長は60バイトを超えることはできません。 |
@@ -103,11 +103,11 @@ https://as.tencentcloudapi.com/?Action=ModifyLaunchConfigurationAttributes
 
 ### CLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. エラーコード
 
-以下に、APIビジネスロジックに関連するエラーコードのみをリストします。その他のエラーコードについては、[共通エラーコード](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)を参照してください。
+以下に、APIビジネスロジックに関連するエラーコードのみをリストします。その他のエラーコードについては、[共通エラーコード](https://cloud.tencent.com/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)を参照してください。
 
 | エラーコード | 説明 |
 |---------|---------|

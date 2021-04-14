@@ -8,7 +8,7 @@ Default API request rate limit: 20 requests/sec.
 
 ## 2. Input Parameters
 
-The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/607/35367).
+The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/607/35367).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -19,10 +19,10 @@ The list below contains only the API request parameters and certain common param
 | ProjectId | No | Integer | Tencent Cloud project ID. Default value: 0, which means that the default project is used |
 | EngineList.N | No | Array of String | List of engines to be supported. Value range: android, ios, unity, cocos, unreal, windows. All values are selected by default. |
 | RegionList.N | No | Array of String | List of service regions. Value range: mainland (Mainland China), sa (South America), eu (Europe), oc (Australia), me (Middle East). All values are selected by default. |
-| RealtimeSpeechConf | No | [RealtimeSpeechConf](/document/api/607/35375#RealtimeSpeechConf) | Configuration information of voice chat |
-| VoiceMessageConf | No | [VoiceMessageConf](/document/api/607/35375#VoiceMessageConf) | Configuration information of voice messaging and speech-to-text |
-| VoiceFilterConf | No | [VoiceFilterConf](/document/api/607/35375#VoiceFilterConf) | Configuration information of phrase filtering |
-| Tags.N | No | Array of [Tag](/document/api/607/35375#Tag) | List of tags to be added |
+| RealtimeSpeechConf | No | [RealtimeSpeechConf](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/607/35375#RealtimeSpeechConf) | Configuration information of voice chat |
+| VoiceMessageConf | No | [VoiceMessageConf](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/607/35375#VoiceMessageConf) | Configuration information of voice messaging and speech-to-text |
+| VoiceFilterConf | No | [VoiceFilterConf](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/607/35375#VoiceFilterConf) | Configuration information of phrase filtering |
+| Tags.N | No | Array of [Tag](https://cloud.tencent.com/document/api/607/35375#Tag) | List of tags to be added |
 
 ## 3. Output Parameters
 
@@ -33,9 +33,9 @@ The list below contains only the API request parameters and certain common param
 | ProjectId | Integer | Project ID, which is passed through from the entered `ProjectId` |
 | SecretKey | String | Application key, which is used when the GME SDK is initialized |
 | CreateTime | Integer | Service creation timestamp |
-| RealtimeSpeechConf | [RealtimeSpeechConf](/document/api/607/35375#RealtimeSpeechConf) | Configuration information of voice chat |
-| VoiceMessageConf | [VoiceMessageConf](/document/api/607/35375#VoiceMessageConf) | Configuration information of voice messaging |
-| VoiceFilterConf | [VoiceFilterConf](/document/api/607/35375#VoiceFilterConf) | Configuration information of phrase filtering |
+| RealtimeSpeechConf | [RealtimeSpeechConf](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/607/35375#RealtimeSpeechConf) | Configuration information of voice chat |
+| VoiceMessageConf | [VoiceMessageConf](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/607/35375#VoiceMessageConf) | Configuration information of voice messaging |
+| VoiceFilterConf | [VoiceFilterConf](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/607/35375#VoiceFilterConf) | Configuration information of phrase filtering |
 
 ## 4. Samples
 
@@ -146,11 +146,11 @@ TencentCloud API 3.0 comes with SDKs that support multiple programming languages
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/607/35370#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/607/35370#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

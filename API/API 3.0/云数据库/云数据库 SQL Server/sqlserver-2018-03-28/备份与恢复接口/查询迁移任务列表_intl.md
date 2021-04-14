@@ -9,13 +9,13 @@ API request rate limit: 20 requests/sec.
 
 ## 2. Input Parameters
 
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/238/19930).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](https://cloud.tencent.com/document/api/238/19930).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The name of this API: DescribeMigrations |
 | Version | Yes | String | Common parameter. The version of this API: 2018-03-28 |
-| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/238/19930#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/238/19930#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | StatusSet.N | No | Array of Integer | Status set. As long as a migration task is in a status therein, it will be listed |
 | MigrateName | No | String | Migration task name (fuzzy match) |
 | Limit | No | Integer | Number of results per page |
@@ -28,7 +28,7 @@ The following parameters are required for requesting this API, including action-
 | Parameter name | Type | Description |
 |---------|---------|---------|
 | TotalCount | Integer | Total number of query results |
-| MigrateTaskSet | Array of [MigrateTask](/document/api/238/19976#MigrateTask) | List of query results |
+| MigrateTaskSet | Array of [MigrateTask](https://cloud.tencent.com/document/api/238/19976#MigrateTask) | List of query results |
 | RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Samples
@@ -120,11 +120,11 @@ TencentCloud API 3.0 integrates SDKs that support various programming languages 
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/238/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/238/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

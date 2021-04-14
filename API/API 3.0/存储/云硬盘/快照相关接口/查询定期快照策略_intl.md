@@ -16,17 +16,17 @@ Note: This API supports finance AZs. As finance AZs and non-finance AZs are isol
 
 ## 2. Input Parameters
 
-The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/362/15637).
+The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/362/15637).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: DescribeAutoSnapshotPolicies |
 | Version | Yes | String | Common parameter. The value used for this API: 2017-03-12 |
-| Region | Yes | String | Common parameter. For more information, see [List of Regions](/document/api/362/15637#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameter. For more information, see [List of Regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15637#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | AutoSnapshotPolicyIds.N | No | Array of String | List of the IDs of the scheduled snapshot policies to be queried. Specification of both the `AutoSnapshotPolicyIds` and `Filters` parameters is not supported. |
-| Filters.N | No | Array of [Filter](/document/api/362/15669#Filter) | Filter conditions. `AutoSnapshotPolicyIds` and `Filters` parameters cannot be specified at the same time.<br><li>auto-snapshot-policy-id - Array of String - Required or not: No - (Filter condition) Filters according to the scheduled snapshot policy ID. The format of the scheduled snapshot policy ID is as follows: `asp-11112222`. <br><li>auto-snapshot-policy-state - Array of String - Required or not: No - (Filter condition) Filters according to the status of the scheduled snapshot policy. The format of the scheduled snapshot policy ID is as follows: `asp-11112222`. (NORMAL: normaI | ISOLATED: isolated)<br><li>auto-snapshot-policy-name - Array of String - Required or not: No - (Filter condition) Filters according to the name of the scheduled snapshot policy. |
-| Limit | No | Integer | Allowed number of results. Default is 20. Maximum is 100. For more information on `Limit`, see the relevant sections in API [Introduction](/document/362/13158). |
-| Offset | No | Integer | Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Introduction](/document/362/13158). |
+| Filters.N | No | Array of [Filter](https://cloud.tencent.com/document/api/362/15669#Filter) | Filter conditions. `AutoSnapshotPolicyIds` and `Filters` parameters cannot be specified at the same time.<br><li>auto-snapshot-policy-id - Array of String - Required or not: No - (Filter condition) Filters according to the scheduled snapshot policy ID. The format of the scheduled snapshot policy ID is as follows: `asp-11112222`. <br><li>auto-snapshot-policy-state - Array of String - Required or not: No - (Filter condition) Filters according to the status of the scheduled snapshot policy. The format of the scheduled snapshot policy ID is as follows: `asp-11112222`. (NORMAL: normaI | ISOLATED: isolated)<br><li>auto-snapshot-policy-name - Array of String - Required or not: No - (Filter condition) Filters according to the name of the scheduled snapshot policy. |
+| Limit | No | Integer | Allowed number of results. Default is 20. Maximum is 100. For more information on `Limit`, see the relevant sections in API [Introduction](https://cloud.tencent.comhttps://cloud.tencent.com/document/362/13158). |
+| Offset | No | Integer | Offset. Default is 0. For more information on `Offset`, see the relevant sections in API [Introduction](https://cloud.tencent.comhttps://cloud.tencent.com/document/362/13158). |
 | Order | No | String | Outputs the ordering of the scheduled snapshot lists. Value range: <br><li>ASC: Ascending order <br><li>DESC: Descending order |
 | OrderField | No | String | The field by which the scheduled snapshot list is sorted. Value range: <br><li>CREATETIME: sorted by the creation time of the scheduled snapshots <br>By default, the snapshot list is sorted by the creation time of snapshots. |
 
@@ -35,7 +35,7 @@ The list below contains only the API request parameters and certain common param
 | Parameter Name | Type | Description |
 |---------|---------|---------|
 | TotalCount | Integer | The number of scheduled snapshot policies in effect. |
-| AutoSnapshotPolicySet | Array of [AutoSnapshotPolicy](/document/api/362/15669#AutoSnapshotPolicy) | The list of scheduled snapshot policies. |
+| AutoSnapshotPolicySet | Array of [AutoSnapshotPolicy](https://cloud.tencent.com/document/api/362/15669#AutoSnapshotPolicy) | The list of scheduled snapshot policies. |
 | RequestId | String | Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.  |
 
 ## 4. Samples
@@ -131,11 +131,11 @@ TencentCloud API 3.0 comes with SDKs that support multiple programming languages
 
 ### Command line tools
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/362/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/362/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

@@ -12,13 +12,13 @@ APIリクエストドメイン名： cdb.tencentcloudapi.com 。
 
 ## 2. 入力パラメータ
 
-次のリクエストパラメータリストには、APIリクエストパラメータと一部の共通パラメータのみがリストされています。完全な共通パラメータのリストについては、[共通リクエストパラメータ](/document/api/236/15833)を参照してください。
+次のリクエストパラメータリストには、APIリクエストパラメータと一部の共通パラメータのみがリストされています。完全な共通パラメータのリストについては、[共通リクエストパラメータ](https://cloud.tencent.com/document/api/236/15833)を参照してください。
 
 | パラメータ名 | 必須項目 | タイプ | 説明 |
 |---------|---------|---------|---------|
 | Action | はい | String | 共通パラメータ。このAPIの値：DescribeTasks |
 | Version | はい | String | 共通パラメータ、該当APIの値：2017/03/20 |
-| Region | はい | String | 共通パラメータ。詳細について製品がサポートする[地域リスト](/document/api/236/15833#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)を参照してください。 |
+| Region | はい | String | 共通パラメータ。詳細について製品がサポートする[地域リスト](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/236/15833#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)を参照してください。 |
 | InstanceId | いいえ | String | インスタンスID。フォーマット：cdb-c1nl9rpv。データベースコンソールページで表示されるインスタンスIDと同じ。[インスタンスリストの照合](https://cloud.tencent.com/document/api/236/15872) APIで取得できます。その値は出力パラメータのフィールドInstanceIdの値です |
 | AsyncRequestId | いいえ | String | 非同期タスクリクエストID。クラウドデータベースの関連操作を実行することによって返されたAsyncRequestId |
 | TaskTypes.N | いいえ | Array of Integer | タスクタイプ。値を渡さないとすべてのタスクタイプを照合します。可能な値：1-データベースロールバック、2-SQL操作、3-データインポート、5-パラメータ設定、6-初期化、7-再起動、8-GTIDの有効化、9-読み取り専用インスタンスのアップグレード、10-データベースの一括ロールバック、11-プライマリインスタンスのアップグレード、12-データベーステーブルの削除、13-マスタリインスタンスへの切り替え |
@@ -339,11 +339,11 @@ https://cdb.tencentcloudapi.com/?Action=DescribeTasks
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. エラーコード
 
-以下に、APIビジネスロジックに関連するエラーコードのみをリストします。その他のエラーコードについては、[共通エラーコード](/document/api/236/15835#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)を参照してください。
+以下に、APIビジネスロジックに関連するエラーコードのみをリストします。その他のエラーコードについては、[共通エラーコード](https://cloud.tencent.com/document/api/236/15835#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)を参照してください。
 
 | エラーコード | 説明 |
 |---------|---------|

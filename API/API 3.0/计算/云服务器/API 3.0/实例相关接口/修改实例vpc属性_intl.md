@@ -7,14 +7,14 @@ This API (UpdateInstanceVpcConfig) is used to modify VPC attributes, such as IP.
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/213/15692).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/213/15692).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. Value used in this API: UpdateInstanceVpcConfig |
 | Version | Yes | String | Common parameter. Value used in this API: 2017-03-12 |
 | InstanceId | Yes | String | ID of instance to work with. This can be obtained from `InstanceId` in the returned values of API [`DescribeInstances`](document/api/213/9388). |
-| VirtualPrivateCloud | Yes | [VirtualPrivateCloud](/document/api/213/15753#VirtualPrivateCloud) | Configuration information of VPC. This parameter is used to specify VPC ID, subnet ID, VPC IP, etc. |
+| VirtualPrivateCloud | Yes | [VirtualPrivateCloud](https://cloud.tencent.com/document/api/213/15753#VirtualPrivateCloud) | Configuration information of VPC. This parameter is used to specify VPC ID, subnet ID, VPC IP, etc. |
 | ForceStop | No | Boolean | Indicate whether a forced shutdown is performed to running instances. Default is TRUE. |
 
 ## 3. Output Parameters

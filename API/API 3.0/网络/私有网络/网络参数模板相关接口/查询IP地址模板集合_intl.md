@@ -12,14 +12,14 @@ Note: This API supports Finance regions. Since Finance regions and non-Finance r
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/215/15692).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/215/15692).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: DescribeAddressTemplateGroups |
 | Version | Yes |  String | Common parameter. The value used for this API: 2017-03-12 |
-| Region | Yes |  String | Common parameter. For more information, please see the [list of regions](/document/api/215/15692#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
-| Filters.N | No | Array of [Filter](/document/api/215/##Filter) | Filter conditions.<br/><li> address-template-group-name - String - (Filter condition ) IP address template group name.</li><li> address-template-group-id - String - (Filter condition ) IP address template group instance ID, such as ipmg-mdunqeb6.</li> |
+| Region | Yes |  String | Common parameter. For more information, please see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/215/15692#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Filters.N | No | Array of [Filter](https://cloud.tencent.com/document/api/215/##Filter) | Filter conditions.<br/><li> address-template-group-name - String - (Filter condition ) IP address template group name.</li><li> address-template-group-id - String - (Filter condition ) IP address template group instance ID, such as ipmg-mdunqeb6.</li> |
 | Offset | No | String | Offset. Default is 0. |
 | Limit | No | String | Number of values to be returned. Default is 20. Maximum is 100. |
 
@@ -28,12 +28,12 @@ The following request parameter list only provides API request parameters and so
 | Parameter Name | Type | Description |
 |---------|---------|---------|
 | TotalCount | Integer | Number of instances matching the filter condition. |
-| AddressTemplateGroupSet | Array of [AddressTemplateGroup](/document/api/215/##AddressTemplateGroup) | IP address template. |
+| AddressTemplateGroupSet | Array of [AddressTemplateGroup](https://cloud.tencent.com/document/api/215/##AddressTemplateGroup) | IP address template. |
 | RequestId | String | The unique request ID, which is returned for each request. RequestId is required for locating a problem. |
 
 ## 4. Error Codes
 
-The following only lists the error codes related to the API business logic. For other error codes, see [Common Error Codes](/document/api/215/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to the API business logic. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/215/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
@@ -87,5 +87,5 @@ Cloud API 3.0 comes with the following development tools to make it easier to ca
 * [Tencent Cloud SDK 3.0 for Go](https://github.com/TencentCloud/tencentcloud-sdk-go)
 * [Tencent Cloud SDK 3.0 for NodeJS](https://github.com/TencentCloud/tencentcloud-sdk-nodejs)
 * [Tencent Cloud SDK 3.0 for .NET](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 

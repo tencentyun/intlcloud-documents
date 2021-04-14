@@ -8,10 +8,10 @@
 
 APIの追加：
 
-* [CreateDBInstance](/document/api/240/31810)
-* [CreateDBInstanceHour](/document/api/240/31809)
-* [TerminateDBInstance](/document/api/240/31808)
-* [UpgradeDBInstance](/document/api/240/31807)
-* [UpgradeDBInstanceHour](/document/api/240/31806)
+* [CreateDBInstance](https://cloud.tencent.com/document/api/240/31810)
+* [CreateDBInstanceHour](https://cloud.tencent.com/document/api/240/31809)
+* [TerminateDBInstance](https://cloud.tencent.com/document/api/240/31808)
+* [UpgradeDBInstance](https://cloud.tencent.com/document/api/240/31807)
+* [UpgradeDBInstanceHour](https://cloud.tencent.com/document/api/240/31806)
 
 

@@ -12,13 +12,13 @@ Note: This API supports Finance regions. Finance and non-Finance regions are iso
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/237/16147).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/237/16147).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value​used for this API: DescribeDBResourceUsage. |
 | Version | Yes | String | Common parameter. The value used for this API: 2017-03-12. |
-| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/237/16147#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/237/16147#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | InstanceId | Yes | String | Instance ID, such as tdsql-ow728lmc. |
 | StartTime | Yes | Date | Start date. Format: yyyy-mm-dd. |
 | EndTime | Yes | Date | End date. Format: yyyy-mm-dd. |
@@ -27,10 +27,10 @@ The following request parameter list only provides API request parameters and so
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
-| BinlogDiskAvailable | [MonitorData](/document/api/237/16191#MonitorData) | Available space of a binlog disk (in GB) |
-| DataDiskAvailable | [MonitorData](/document/api/237/16191#MonitorData) | Available space of a disk (in GB) |
-| CpuUsageRate | [MonitorData](/document/api/237/16191#MonitorData) | CPU utilization |
-| MemAvailable | [MonitorData](/document/api/237/16191#MonitorData) | Available space of memory (in GB) |
+| BinlogDiskAvailable | [MonitorData](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/237/16191#MonitorData) | Available space of a binlog disk (in GB) |
+| DataDiskAvailable | [MonitorData](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/237/16191#MonitorData) | Available space of a disk (in GB) |
+| CpuUsageRate | [MonitorData](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/237/16191#MonitorData) | CPU utilization |
+| MemAvailable | [MonitorData](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/237/16191#MonitorData) | Available space of memory (in GB) |
 | RequestId | String | The unique ID of a request, which is required for each troubleshooting case. |
 
 ## 4. Example
@@ -115,11 +115,11 @@ Cloud API 3.0 comes with the software development kit (SDK) that supports multip
 
 ### Command line tools
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to the API business logic. For other error codes, see [Common Error Codes](/document/api/237/16149#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to the API business logic. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/237/16149#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

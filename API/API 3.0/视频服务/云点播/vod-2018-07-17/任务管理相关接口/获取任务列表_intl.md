@@ -6,7 +6,7 @@ This API queries a list of tasks;
 Default API request rate limit: 100 requests/sec.
 
 ## 2. Input Parameters
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/266/31756).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](https://cloud.tencent.com/document/api/266/31756).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -17,11 +17,11 @@ The following parameters are required for requesting this API, including action-
 | FileId | No | String | Filter the result by file ID. |
 | Limit | No | Integer | Number of returned entries; 10 by default, up to 100. |
 | ScrollToken | No | String | The token for scrolling the result. The API returns a ScrollToken when it cannot retrieve all the result at once. Add this token to your next request to prevent getting repeated records. |
-| SubAppId | No | Integer | ID of the VOD [sub-application](/document/product/266/14574). Input the ID of the sub-application that has the desired resources; otherwise, leave it blank. |
+| SubAppId | No | Integer | ID of the VOD [sub-application](https://intl.cloud.tencent.com/document/product/266/33987). Input the ID of the sub-application that has the desired resources; otherwise, leave it blank. |
 ## 3. Output Parameters
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| TaskSet | Array of [TaskSimpleInfo](/document/api/266/31773#TaskSimpleInfo) | The list of the task overview. <br/>Note: Null means no valid values returned. |
+| TaskSet | Array of [TaskSimpleInfo](https://cloud.tencent.com/document/api/266/31773#TaskSimpleInfo) | The list of the task overview. <br/>Note: Null means no valid values returned. |
 | ScrollToken | String | The token for scrolling the result. If the request does not return all the data entries, this parameter returns a task ID following the last ID of the previous result. This parameter returns empty value means you have retrieved all of the records. <br/>Note: Null means no valid values returned. |
 | RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
@@ -148,10 +148,10 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 * [Tencent Cloud SDK 3.0 for .NET](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)
 
 ### TCCLI
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
-The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

@@ -19,20 +19,20 @@ APIリクエストドメイン名： cdb.tencentcloudapi.com 。
 
 ## 2. 入力パラメータ
 
-次のリクエストパラメータリストには、APIリクエストパラメータと一部の共通パラメータのみがリストされています。完全な共通パラメータのリストについては、[共通リクエストパラメータ](/document/api/236/15833)を参照してください。
+次のリクエストパラメータリストには、APIリクエストパラメータと一部の共通パラメータのみがリストされています。完全な共通パラメータのリストについては、[共通リクエストパラメータ](https://cloud.tencent.com/document/api/236/15833)を参照してください。
 
 | パラメータ名 | 必須項目 | タイプ | 説明 |
 |---------|---------|---------|---------|
 | Action | はい | String | 共通パラメータ、該当APIの値：CreateDBInstance |
 | Version | はい | String | 共通パラメータ、該当APIの値：2017/03/20 |
-| Region | はい | String | 共通パラメータ。詳細について製品がサポートする[地域リスト](/document/api/236/15833#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)を参照してください。 |
+| Region | はい | String | 共通パラメータ。詳細について製品がサポートする[地域リスト](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/236/15833#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)を参照してください。 |
 | Memory | はい | Integer | インスタンスメモリのサイズ。単位：MB。[データベースの販売可能な仕様の取得](https://cloud.tencent.com/document/api/236/17229) APIで作成可能なメモリ仕様を取得してください |
 | Volume | はい | Integer | インスタンスディスクのサイズ。単位：GB。[データベースの販売可能な仕様の取得](https://cloud.tencent.com/document/api/236/17229) APIで作成可能なディスク範囲を取得してください |
 | Period | はい | Integer | インスタンス期間。単位：月。選択可能な値：[1,2,3,4,5,6,7,8,9,10,11,12,24,36] |
 | GoodsNum | はい | Integer | インスタンス数、デフォルト値は1、最小値は1、最大値は100 |
 | Zone | いいえ | String | Availability Zone情報。このパラメータをデフォルト値に設定した場合、システムは自動的に1つのAvailability Zoneを選択します。[データベースの販売可能な仕様の取得](https://cloud.tencent.com/document/api/236/17229) APIで作成可能なAvailability Zoneを取得してください |
-| UniqVpcId | いいえ | String | VPC ID。渡さない場合デフォルトで基本ネットワークが選択されます。[VPCリストの照合](/document/api/215/15778)を使用してください |
-| UniqSubnetId | いいえ | String | VPCのサブネットID。UniqVpcIdが設定された場合、UniqSubnetIdは入力必須です。[サブネットリストの照合](/document/api/215/15784)を使用してください |
+| UniqVpcId | いいえ | String | VPC ID。渡さない場合デフォルトで基本ネットワークが選択されます。[VPCリストの照合](https://cloud.tencent.com/document/api/215/15778)を使用してください |
+| UniqSubnetId | いいえ | String | VPCのサブネットID。UniqVpcIdが設定された場合、UniqSubnetIdは入力必須です。[サブネットリストの照合](https://cloud.tencent.com/document/api/215/15784)を使用してください |
 | ProjectId | いいえ | Integer | プロジェクトID。入力しないとデフォルトプロジェクトです。[プロジェクトリストの照合](https://cloud.tencent.com/document/product/378/4400) APIでプロジェクトIDを取得してください |
 | Port | いいえ | Integer | カスタムポート。ポート範囲：[ 1024～65535 ] |
 | InstanceRole | いいえ | String | インスタンスタイプ。デフォルトはmaster、対応値：master-マスタインスタンス、dr-ディザスタリカバリインスタンス、ro-読み取り専用インスタンス |
@@ -42,14 +42,14 @@ APIリクエストドメイン名： cdb.tencentcloudapi.com 。
 | ProtectMode | いいえ | Integer | データレプリケーション方式。デフォルトは0です。対応値：0-非同期レプリケーション、1-準同期レプリケーション、2-強同期レプリケーション |
 | DeployMode | いいえ | Integer | 複数のAvailability Zone。デフォルトは0。対応値：0-単一Availability Zone、1-複数Availability Zone |
 | SlaveZone | いいえ | String | スレーブデータベース1のAvailability Zone情報。デフォルトは地区の値 |
-| ParamList.N | いいえ | Array of [ParamInfo](/document/api/236/15878#ParamInfo) | パラメータリスト。パラメータフォーマットの例：ParamList.0.Name=auto_increment&ParamList.0.Value=1。[インスタンスの設定可能なパラメータリストの照合](https://cloud.tencent.com/document/api/236/20411)で設定可能なパラメータを照合できます |
+| ParamList.N | いいえ | Array of [ParamInfo](https://cloud.tencent.com/document/api/236/15878#ParamInfo) | パラメータリスト。パラメータフォーマットの例：ParamList.0.Name=auto_increment&ParamList.0.Value=1。[インスタンスの設定可能なパラメータリストの照合](https://cloud.tencent.com/document/api/236/20411)で設定可能なパラメータを照合できます |
 | BackupZone | いいえ | String | スレーブデータベース2のAvailability Zone ID。デフォルトは0です。マスタインスタンスを購入する際にこのパラメータを指定できます。読み取り専用インスタンスまたはディザスタリカバリインスタンスを購入する際にこのパラメータを指定しても意味がありません |
 | AutoRenewFlag | いいえ | Integer | 自動更新フラグ。選択可能な値：0-非自動更新、1-自動更新 |
 | MasterRegion | いいえ | String | マスタインスタンス地域情報。ディザスタリカバリインスタンスを購入する際に、このフィールドは入力必須です |
 | SecurityGroup.N | いいえ | Array of String | セキュリティグループパラメータ。[プロジェクトセキュリティグループ情報の照合](https://cloud.tencent.com/document/api/236/15850) APIで特定プロジェクトのセキュリティグループの詳細を照合できます |
-| RoGroup | いいえ | [RoGroup](/document/api/236/15878#RoGroup) | 読み取り専用インスタンスパラメータ |
+| RoGroup | いいえ | [RoGroup](https://cloud.tencent.com/document/api/236/15878#RoGroup) | 読み取り専用インスタンスパラメータ |
 | InstanceName | いいえ | String | インスタンス名 |
-| ResourceTags.N | いいえ | Array of [TagInfo](/document/api/236/15878#TagInfo) | インスタンスとバインディングされるタグ |
+| ResourceTags.N | いいえ | Array of [TagInfo](https://cloud.tencent.com/document/api/236/15878#TagInfo) | インスタンスとバインディングされるタグ |
 
 ## 3. 出力パラメータ
 
@@ -148,11 +148,11 @@ https://cdb.tencentcloudapi.com/?Action=CreateDBInstance
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. エラーコード
 
-以下に、APIビジネスロジックに関連するエラーコードのみをリストします。その他のエラーコードについては、[共通エラーコード](/document/api/236/15835#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)を参照してください。
+以下に、APIビジネスロジックに関連するエラーコードのみをリストします。その他のエラーコードについては、[共通エラーコード](https://cloud.tencent.com/document/api/236/15835#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)を参照してください。
 
 | エラーコード | 説明 |
 |---------|---------|

@@ -16,7 +16,7 @@ API search limit:
 Default API request rate limit: 100 requests/sec.
 
 ## 2. Input Parameters
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/266/31756).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](https://cloud.tencent.com/document/api/266/31756).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -26,21 +26,21 @@ The following parameters are required for requesting this API, including action-
 | Text | No | String | Search text, which fuzzily matches the media file name or description. The more matching items and the higher the match rate, the higher-ranked the result. Length limit: 64 characters. |
 | Tags.N | No | Array of String | Tag set, which matches any element in the set. <br/><li>Tag length limit: 8 characters. </li><li>Array length limit: 10.</li> |
 | ClassIds.N | No | Array of Integer | Category ID set, which matches the categories of the specified IDs and all subcategories. Array length limit: 10. |
-| StartTime | No | String | Start time in the creation time range. <br/><li>Before or at the start time. </li><li>In ISO 8601 format. For more information, see [Notes on ISO Date Format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). </li> |
-| EndTime | No | String | End time in the creation time range. <br/><li>After the end time. </li><li>In ISO 8601 format. For more information, see [Notes on ISO Date Format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). </li> |
-| SourceType | No | String | Media file source. For the value range, see [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData). |
+| StartTime | No | String | Start time in the creation time range. <br/><li>Before or at the start time. </li><li>In ISO 8601 format. For more information, see [Notes on ISO Date Format](https://intl.cloud.tencent.com/document/product/266/11732). </li> |
+| EndTime | No | String | End time in the creation time range. <br/><li>After the end time. </li><li>In ISO 8601 format. For more information, see [Notes on ISO Date Format](https://intl.cloud.tencent.com/document/product/266/11732). </li> |
+| SourceType | No | String | Media file source. For the value range, see [SourceType](https://intl.cloud.tencent.com/document/product/266/34187). |
 | StreamId | No | String | [LVB code](https://cloud.tencent.com/document/product/267/5959) of the push stream. |
 | Vid | No | String | Unique ID of the LVB recording file. |
-| Sort | No | [SortBy](/document/api/266/31773#SortBy) | Sorting order. <br/><li>Sort.Field value range: CreateTime</li><li>If Text is specified for the search, the results are sorted by the match rate, and this field is invalid </li> |
+| Sort | No | [SortBy](https://cloud.tencent.com/document/api/266/31773#SortBy) | Sorting order. <br/><li>Sort.Field value range: CreateTime</li><li>If Text is specified for the search, the results are sorted by the match rate, and this field is invalid </li> |
 | Offset | No | Integer | Offset. <br/><li>Default value: 0. </li><li>Value range: Offset + Limit cannot exceed 5,000. </li> |
 | Limit | No | Integer | Number of returned entries; 10 by default. |
-| SubAppId | No | Integer | ID of the VOD [sub-application](/document/product/266/14574). Input the ID of the sub-application that has the desired resources; otherwise, leave it blank. |
+| SubAppId | No | Integer | ID of the VOD [sub-application](https://intl.cloud.tencent.com/document/product/266/33987). Input the ID of the sub-application that has the desired resources; otherwise, leave it blank. |
 
 ## 3. Output Parameters
 | Parameter name | Type | Description |
 |---------|---------|---------|
 | TotalCount | Integer | Total number of results matching the search criteria <br/><li>Maximum: 5,000, i.e., when the number of hits exceeds 5,000, this field returns 5,000 instead of the actual total hits. </li>|
-| MediaInfoSet | Array of [MediaInfo](/document/api/266/31773#MediaInfo) | List of media file information, only including the basic information (BasicInfo) <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| MediaInfoSet | Array of [MediaInfo](https://cloud.tencent.com/document/api/266/31773#MediaInfo) | List of media file information, only including the basic information (BasicInfo) <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Sample
@@ -129,10 +129,10 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 * [Tencent Cloud SDK 3.0 for .NET](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)
 
 ### TCCLI
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
-The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/267/20461#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

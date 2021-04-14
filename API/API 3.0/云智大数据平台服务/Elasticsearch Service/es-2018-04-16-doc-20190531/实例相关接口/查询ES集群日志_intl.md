@@ -12,13 +12,13 @@ Note: This API supports financial regions. As financial regions and non-financia
 
 ## 2. Input Parameters
 
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/845/30623).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](https://cloud.tencent.com/document/api/845/30623).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The name of this API: DescribeInstanceLogs |
 | Version | Yes | String | Common parameter. The version of this API: 2018-04-16 |
-| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/845/30623#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/845/30623#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | InstanceId | Yes | String | Cluster instance ID |
 | LogType | No | Integer | Log type; 1 by default <br/><li>1: Master log </li><li>2: Search slow log </li><li>3: Index slow log </li><li>4: GC log </li> |
 | SearchKey | No | String | Search keyword, which supports LUCENE syntax, such as level:WARN, ip:1.1.1.1, and message:test-index |
@@ -33,7 +33,7 @@ The following parameters are required for requesting this API, including action-
 | Parameter name | Type | Description |
 |---------|---------|---------|
 | TotalCount | Integer | Number of returned logs |
-| InstanceLogList | Array of [InstanceLog](/document/api/845/30634#InstanceLog) | List of log details |
+| InstanceLogList | Array of [InstanceLog](https://cloud.tencent.com/document/api/845/30634#InstanceLog) | List of log details |
 | RequestId | String | The unique ID of a request, which is required for each troubleshooting case. |
 
 ## 4. Examples
@@ -97,11 +97,11 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/845/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/845/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

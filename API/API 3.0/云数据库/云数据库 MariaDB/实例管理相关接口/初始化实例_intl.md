@@ -12,15 +12,15 @@ Note: This API supports Finance regions. Finance and non-Finance regions are iso
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/237/16147).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/237/16147).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value​used for this API: InitDBInstances. |
 | Version | Yes | String | Common parameter. The value used for this API: 2017-03-12. |
-| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/237/16147#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/237/16147#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | InstanceIds.N | Yes | Array of String | List of instance IDs to be initialized, such as tdsql-ow728lmc. It can be obtained by querying instance details via DescribeDBInstances. |
-| Params.N | Yes | Array of [DBParamValue](/document/api/237/16191#DBParamValue) | List of parameters. Available values for this API are character_set_server (character set, which is required), lower_case_table_names (case sensitivity of table names, which is required), innodb_page_size (innodb data page, which is 16 KB by default) and sync_mode (synchronization mode: 0 - Async; 1 - Strongsync (default); 2 - Strongsync (degradable)). |
+| Params.N | Yes | Array of [DBParamValue](https://cloud.tencent.com/document/api/237/16191#DBParamValue) | List of parameters. Available values for this API are character_set_server (character set, which is required), lower_case_table_names (case sensitivity of table names, which is required), innodb_page_size (innodb data page, which is 16 KB by default) and sync_mode (synchronization mode: 0 - Async; 1 - Strongsync (default); 2 - Strongsync (degradable)). |
 
 ## 3. Output Parameters
 
@@ -86,11 +86,11 @@ Cloud API 3.0 comes with the software development kit (SDK) that supports multip
 
 ### Command line tools
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to the API business logic. For other error codes, see [Common Error Codes](/document/api/237/16149#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to the API business logic. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/237/16149#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

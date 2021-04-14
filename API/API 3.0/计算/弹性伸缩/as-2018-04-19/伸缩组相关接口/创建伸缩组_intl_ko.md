@@ -12,13 +12,13 @@ API 요청 도메인 이름: as.tencentcloudapi.com.
 
 ## 2. 입력 매개변수
 
-다음 요청 매개변수 리스트에는 API 요청 매개변수와 일부 공통 매개변수만 나열합니다. 완전한 공통 매개변수 리스트는 [공통 매개변수](/document/api/377/20426)를 참조하십시오.
+다음 요청 매개변수 리스트에는 API 요청 매개변수와 일부 공통 매개변수만 나열합니다. 완전한 공통 매개변수 리스트는 [공통 매개변수](https://cloud.tencent.com/document/api/377/20426)를 참조하십시오.
 
 | 매개변수 이름 | 필수 여부 | 유형 | 설명 |
 |---------|---------|---------|---------|
 | Action | 예 | String | 공통 매개변수, 본 API 값: CreateAutoScalingGroup |
 | Version | 예 | String | 공통 매개변수, 본 API 값: 2018-04-19 |
-| Region | 예 | String | 공통 매개변수, 세부 정보는 제품이 지원하는 [지역 리스트](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)를 참조하십시오 |
+| Region | 예 | String | 공통 매개변수, 세부 정보는 제품이 지원하는 [지역 리스트](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)를 참조하십시오 |
 | AutoScalingGroupName | 예 | String | 조정 그룹 이름, 사용자 계정에 유일해야 합니다. 이름은 중문, 영문, 숫자, 밑줄, 구분 기호 "-", 소수점만 지원하고 길이는 55바이트를 초과할 수 없습니다. |
 | LaunchConfigurationId | 예 | String | 시동 구성 ID |
 | MaxSize | 예 | Integer | 최대 인스턴스 수, 값 범위는 0-2000입니다. |
@@ -28,7 +28,7 @@ API 요청 도메인 이름: as.tencentcloudapi.com.
 | DesiredCapacity | 아니요 | Integer | 에상 인스턴스 수, 크기는 최소 에상 인스턴스 수와 최대 에상 인스턴스 수 사이입니다. |
 | LoadBalancerIds.N | 아니요 | Array of String | 기존 로드밸런서 ID 리스트, 현재 길이 상한은 1, LoadBalancerIds와 ForwardLoadBalancers 2가지는 한 번에 1개만 지정 가능 |
 | ProjectId | 아니요 | Integer | 프로젝트 ID |
-| ForwardLoadBalancers.N | 아니요 | Array of [ForwardLoadBalancer](/document/api/377/20453#ForwardLoadBalancer) | 응용형 로드밸런서 리스트, 현재 길이 상한은 1, LoadBalancerIds와 ForwardLoadBalancers 2가지는 한 번에 1개만 지정 가능 |
+| ForwardLoadBalancers.N | 아니요 | Array of [ForwardLoadBalancer](https://cloud.tencent.com/document/api/377/20453#ForwardLoadBalancer) | 응용형 로드밸런서 리스트, 현재 길이 상한은 1, LoadBalancerIds와 ForwardLoadBalancers 2가지는 한 번에 1개만 지정 가능 |
 | SubnetIds.N | 아니요 | Array of String | 서브넷 ID 리스트, VPC 시나리오에서 서브넷을 반드시 지정해야 합니다. |
 | TerminationPolicies.N | 아니요 | Array of String | 폐기 전략, 현재 길이 상한은 1입니다. 가능한 값은 OLDEST_INSTANCE와 NEWEST_INSTANCE를 포함하고 기본 값은 OLDEST_INSTANCE입니다.<br/><br><li> OLDEST_INSTANCE, 조정 그룹 중 가장 오래된 인스턴스를 우선 폐기합니다.<br/><br><li> NEWEST_INSTANCE, 조정 그룹 중 최신 인스턴스를 우선 폐기합니다. |
 | Zones.N | 아니요 | Array of String | 가용 영역 리스트, 기본 네트워크 시나리오에서 가용 영역을 반드시 지정해야 합니다. |
@@ -104,11 +104,11 @@ https://as.tencentcloudapi.com/?Action=CreateAutoScalingGroup
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. 오류 코드
 
-다음은 API 비즈니스 로직과 관련된 오류 코드만 나열하며 다른 오류 코드는 [공통 오류 코드](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)를 참조하십시오.
+다음은 API 비즈니스 로직과 관련된 오류 코드만 나열하며 다른 오류 코드는 [공통 오류 코드](https://cloud.tencent.com/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)를 참조하십시오.
 
 | 오류 코드 | 설명 |
 |---------|---------|

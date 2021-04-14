@@ -9,7 +9,7 @@ This API (CreateKeyPair) is used to create an `OpenSSH RSA` key pair to be used 
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/213/15692).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/213/15692).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -27,7 +27,7 @@ Obtain the project ID from the `projectId ` field in the returned value of API D
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
-| KeyPair | [KeyPair](/document/api/213/15753#KeyPair) | Information of key pair. |
+| KeyPair | [KeyPair](https://cloud.tencent.com/document/api/213/15753#KeyPair) | Information of key pair. |
 | RequestId | String | The unique request ID, which is returned for each request. When locating the problem, the RequestId of the request needs to be provided. |
 
 ## 4. Error Codes

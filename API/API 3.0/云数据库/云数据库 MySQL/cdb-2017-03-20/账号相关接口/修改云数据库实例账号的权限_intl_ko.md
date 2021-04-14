@@ -12,19 +12,19 @@ API 요청 도메인 이름: cdb.tencentcloudapi.com.
 
 ## 2. 입력 매개변수
 
-다음 요청 매개변수 리스트에는 API 요청 매개변수 및 일부 공통 매개변수만 나열되며, 완전한 공통 매개변수 리스트는 [공통 요청 매개변수](/document/api/236/15833)를 참조하십시오.
+다음 요청 매개변수 리스트에는 API 요청 매개변수 및 일부 공통 매개변수만 나열되며, 완전한 공통 매개변수 리스트는 [공통 요청 매개변수](https://cloud.tencent.com/document/api/236/15833)를 참조하십시오.
 
 | 매개변수 이름 | 필수 항목 여부 | 유형 | 설명 |
 |---------|---------|---------|---------|
 | Action | 예 | String | 공통 매개변수, 이 API 값: ModifyAccountPrivileges |
 | Version | 예 | String | 공통 매개변수, 이 API 선택 값: 2017-03-20 |
-| Region | 아니요 | String | 공통 매개변수, 자세한 내용은 제품의 지원되는 [지역 리스트](/document/api/236/15833#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)를 참조하십시오. |
+| Region | 아니요 | String | 공통 매개변수, 자세한 내용은 제품의 지원되는 [지역 리스트](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/236/15833#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)를 참조하십시오. |
 | InstanceId | 예 | String | 인스턴스 ID, 형식 예: cdb-c1nl9rpv. TencentDB 콘솔 페이지에 표시된 인스턴스 ID와 동일합니다. |
-| Accounts.N | 예 | Array of [Account](/document/api/236/15878#Account) | 데이터베이스의 계정, 사용자 이름 및 도메인 이름 포함. |
+| Accounts.N | 예 | Array of [Account](https://cloud.tencent.com/document/api/236/15878#Account) | 데이터베이스의 계정, 사용자 이름 및 도메인 이름 포함. |
 | GlobalPrivileges.N | 아니요 | Array of String | 전역 권한. 그중, GlobalPrivileges 중 권한의 선택 가능 값: "SELECT", "INSERT", "UPDATE", "DELETE", "CREATE", 	"DROP", "REFERENCES", "INDEX", "ALTER", "SHOW DATABASES", "CREATE TEMPORARY TABLES", "LOCK TABLES", "EXECUTE", "CREATE VIEW", "SHOW VIEW", "CREATE ROUTINE", "ALTER ROUTINE", "EVENT", "TRIGGER". |
-| DatabasePrivileges.N | 아니요 | Array of [DatabasePrivilege](/document/api/236/15878#DatabasePrivilege) | 데이터베이스의 권한. Privileges 권한의 선택 가능 값: "SELECT", "INSERT", "UPDATE", "DELETE", "CREATE", 	"DROP", "REFERENCES", "INDEX", "ALTER", "CREATE TEMPORARY TABLES", "LOCK TABLES", "EXECUTE", "CREATE VIEW", "SHOW VIEW", "CREATE ROUTINE", "ALTER ROUTINE", "EVENT", "TRIGGER". |
-| TablePrivileges.N | 아니요 | Array of [TablePrivilege](/document/api/236/15878#TablePrivilege) | 데이터베이스 중 테이블의 권한. Privileges 권한의 선택 가능 값: "SELECT", "INSERT", "UPDATE", "DELETE", "CREATE", 	"DROP", "REFERENCES", "INDEX", "ALTER", "CREATE VIEW", "SHOW VIEW", "TRIGGER". |
-| ColumnPrivileges.N | 아니요 | Array of [ColumnPrivilege](/document/api/236/15878#ColumnPrivilege) | 데이터베이스 테이블 중 리스트의 권한. Privileges 권한의 선택 가능 값: "SELECT", "INSERT", "UPDATE", "REFERENCES". |
+| DatabasePrivileges.N | 아니요 | Array of [DatabasePrivilege](https://cloud.tencent.com/document/api/236/15878#DatabasePrivilege) | 데이터베이스의 권한. Privileges 권한의 선택 가능 값: "SELECT", "INSERT", "UPDATE", "DELETE", "CREATE", 	"DROP", "REFERENCES", "INDEX", "ALTER", "CREATE TEMPORARY TABLES", "LOCK TABLES", "EXECUTE", "CREATE VIEW", "SHOW VIEW", "CREATE ROUTINE", "ALTER ROUTINE", "EVENT", "TRIGGER". |
+| TablePrivileges.N | 아니요 | Array of [TablePrivilege](https://cloud.tencent.com/document/api/236/15878#TablePrivilege) | 데이터베이스 중 테이블의 권한. Privileges 권한의 선택 가능 값: "SELECT", "INSERT", "UPDATE", "DELETE", "CREATE", 	"DROP", "REFERENCES", "INDEX", "ALTER", "CREATE VIEW", "SHOW VIEW", "TRIGGER". |
+| ColumnPrivileges.N | 아니요 | Array of [ColumnPrivilege](https://cloud.tencent.com/document/api/236/15878#ColumnPrivilege) | 데이터베이스 테이블 중 리스트의 권한. Privileges 권한의 선택 가능 값: "SELECT", "INSERT", "UPDATE", "REFERENCES". |
 
 ## 3. 출력 매개변수
 
@@ -81,11 +81,11 @@ https://cdb.tencentcloudapi.com/?Action=ModifyAccountPrivileges
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. 오류 코드
 
-다음은 API 비즈니스 로직과 관련된 오류 코드만 나열하며 다른 오류 코드는 [공통 오류 코드](/document/api/236/15835#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)를 참조하십시오.
+다음은 API 비즈니스 로직과 관련된 오류 코드만 나열하며 다른 오류 코드는 [공통 오류 코드](https://cloud.tencent.com/document/api/236/15835#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)를 참조하십시오.
 
 | 오류 코드 | 설명 |
 |---------|---------|

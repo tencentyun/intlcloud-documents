@@ -13,19 +13,19 @@ ModifyListener는 응용형 CLB 수신기의 속성을 수정하는 데 사용�
 
 ## 2. 입력 매개변수
 
-다음 요청 매개변수 리스트에는 API 요청 매개변수 및 일부 공통 매개변수만 나열되며, 완전한 공통 매개변수 리스트는 [공통 요청 매개변수](/document/api/214/30670)를 참조하십시오.
+다음 요청 매개변수 리스트에는 API 요청 매개변수 및 일부 공통 매개변수만 나열되며, 완전한 공통 매개변수 리스트는 [공통 요청 매개변수](https://cloud.tencent.com/document/api/214/30670)를 참조하십시오.
 
 | 매개변수 이름 | 필수 여부 | 유형 | 설명 |
 |---------|---------|---------|---------|
 | Action | 예 | String | 공통 매개변수, API 값: ModifyListener |
 | Version | 예 | String | 공통 매개변수, API 값: 2018-03-17 |
-| Region | 예 | String | 공통 매개변수, 세부 정보는 [지역 리스트](/document/api/214/30670#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)를 참조하십시오.
+| Region | 예 | String | 공통 매개변수, 세부 정보는 [지역 리스트](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/214/30670#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)를 참조하십시오.
 | LoadBalancerId | 예 | String | 로드밸런서 인스턴스 ID |
 | ListenerId | 예 | String | 로드밸런서 수신기 ID |
 | ListenerName | 아니요 | String | 새로운 수신기 이름 |
 | SessionExpireTime | 아니요 | Integer | 세션 유지 시간, 단위: 초. 선택 가능 값: 30~3600이며 기본은 0으로 활성화되지 않음을 의미합니다. 이 매개변수는 TCP/UDP 수신기에만 적용됩니다. |
-| HealthCheck | 아니요 | [HealthCheck](/document/api/214/30694#HealthCheck) | 상태 검사 관련 매개변수로 TCP/UDP/TCP_SSL 수신기에만 적용됩니다. |
-| Certificate | 아니요 | [CertificateInput](/document/api/214/30694#CertificateInput) | 인증서 관련 정보로 HTTPS/TCP_SSL 수신기에만 적용됩니다. |
+| HealthCheck | 아니요 | [HealthCheck](https://cloud.tencent.com/document/api/214/30694#HealthCheck) | 상태 검사 관련 매개변수로 TCP/UDP/TCP_SSL 수신기에만 적용됩니다. |
+| Certificate | 아니요 | [CertificateInput](https://cloud.tencent.com/document/api/214/30694#CertificateInput) | 인증서 관련 정보로 HTTPS/TCP_SSL 수신기에만 적용됩니다. |
 | Scheduler | 아니요 | String | 수신기의 포워딩한 방식으로 선택 가능 값: WRR, LEAST_CONN<br/>WRR: 가중치에 따른 라운드 로빈, LEAST_CONN: 최소 연결 수 기본값: WRR. |
 
 ## 3. 출력 매개변수
@@ -110,11 +110,11 @@ https://clb.tencentcloudapi.com/?Action=ModifyListener
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. 오류 코드
 
-다음은 API 비즈니스 로직과 관련된 오류 코드만 나열하며 다른 오류 코드는 [공통 오류 코드](/document/api/214/30673#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)를 참조하십시오.
+다음은 API 비즈니스 로직과 관련된 오류 코드만 나열하며 다른 오류 코드는 [공통 오류 코드](https://cloud.tencent.com/document/api/214/30673#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)를 참조하십시오.
 
 | 오류 코드 | 설명 |
 |---------|---------|

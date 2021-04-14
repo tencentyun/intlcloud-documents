@@ -4,7 +4,7 @@ This API modifies a customer watermarking template. The watermark type cannot be
 Default API request rate limit: 100 requests/sec.  
 
 ## 2. Input Parameters
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/266/31756).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For the complete list of common parameters, see [Common Request Parameters](https://cloud.tencent.com/document/api/266/31756).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -17,10 +17,10 @@ The following parameters are required for requesting this API, including action-
 | CoordinateOrigin | No | String | Origin position; value range: <br/><li>TopLeft: The origin of coordinates is in the top-left corner of the video, and the origin of the watermark is in the top-left corner of the image or text; </li><li>TopRight: The origin of coordinates is in the top-right corner of the video, and the origin of the watermark is in the top-right corner of the image or text; </li><li>BottomLeft: The origin of coordinates is in the bottom-left corner of the video, and the origin of the watermark is in the bottom-left corner of the image or text; </li><li>BottomRight: The origin of coordinates is in the bottom-right corner of the video, and the origin of the watermark is in the bottom-right corner of the image or text. </li><br/>Currently, if Type is image, this field supports only TopLeft. |
 | XPos | No | String | The horizontal position of the origin of the watermark relative to the origin of coordinates of the video. % and px formats are supported: <br/><li>If the string ends in %, the left edge of the watermark is at the position of the specified percentage of the video width, for example, 10% means that the left edge is at 10% of the video width; </li><li>if the string ends in px, the left edge of the watermark is at the position of the specified px of the video width, for example, 100px means that the left edge is at the position of 100px. </li> |
 | YPos | No | String | The vertical position of the origin of the watermark relative to the origin of coordinates of the video. % and px formats are supported: <br/><li>If the string ends in %, the top edge of the watermark is at the position of the specified percentage of the video height, for example, 10% means that the top edge is at 10% of the video height; </li><li>if the string ends in px, the top edge of the watermark is at the position of the specified px of the video height, for example, 100px means that the top edge is at the position of 100px. </li> |
-| ImageTemplate | No | [ImageWatermarkInputForUpdate](/document/api/266/31773#ImageWatermarkInputForUpdate) | Image watermarking template. This field is valid only for an image watermarking template. |
-| TextTemplate | No | [TextWatermarkTemplateInputForUpdate](/document/api/266/31773#TextWatermarkTemplateInputForUpdate) | Text watermarking template. This field is valid only for a text watermarking template. |
-| SvgTemplate | No | [SvgWatermarkInputForUpdate](/document/api/266/31773#SvgWatermarkInputForUpdate) | SVG watermarking template. This field is required if Type is svg. It is invalid if Type is image or text. |
-| SubAppId | No | Integer | ID of the VOD [sub-application](/document/product/266/14574). Input the ID of the sub-application that has the desired resources; otherwise, leave it blank. |
+| ImageTemplate | No | [ImageWatermarkInputForUpdate](https://cloud.tencent.com/document/api/266/31773#ImageWatermarkInputForUpdate) | Image watermarking template. This field is valid only for an image watermarking template. |
+| TextTemplate | No | [TextWatermarkTemplateInputForUpdate](https://cloud.tencent.com/document/api/266/31773#TextWatermarkTemplateInputForUpdate) | Text watermarking template. This field is valid only for a text watermarking template. |
+| SvgTemplate | No | [SvgWatermarkInputForUpdate](https://cloud.tencent.com/document/api/266/31773#SvgWatermarkInputForUpdate) | SVG watermarking template. This field is required if Type is svg. It is invalid if Type is image or text. |
+| SubAppId | No | Integer | ID of the VOD [sub-application](https://intl.cloud.tencent.com/document/product/266/33987). Input the ID of the sub-application that has the desired resources; otherwise, leave it blank. |
 ## 3. Output Parameters
 | Parameter name | Type | Description |
 |---------|---------|---------|
@@ -57,9 +57,9 @@ TencentCloud API 3.0 comes with a set of complementary development toolkits (SDK
 * [Tencent Cloud SDK 3.0 for NodeJS](https://github.com/TencentCloud/tencentcloud-sdk-nodejs)
 * [Tencent Cloud SDK 3.0 for .NET](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)
 ### TCCLI
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 ## 6. Error Codes
-The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/266/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/266/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

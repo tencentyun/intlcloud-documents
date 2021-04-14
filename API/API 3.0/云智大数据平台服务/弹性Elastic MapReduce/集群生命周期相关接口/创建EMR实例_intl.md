@@ -8,28 +8,28 @@ Default API request rate limit: 20 requests/sec.
 
 ## 2. Input Parameters
 
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/589/33974).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](https://cloud.tencent.com/document/api/589/33974).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The name of this API: CreateInstance |
 | Version | Yes | String | Common parameter. The version of this API: 2019-01-03 |
-| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/589/33974#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/589/33974#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | ProductId | Yes | Integer | Product ID |
-| VPCSettings | Yes | [VPCSettings](/document/api/589/33981#VPCSettings) | VPC settings parameter |
+| VPCSettings | Yes | [VPCSettings](https://cloud.tencent.com/document/api/589/33981#VPCSettings) | VPC settings parameter |
 | Software.N | Yes | Array of String | Software list |
-| ResourceSpec | Yes | [ResourceSpec](/document/api/589/33981#ResourceSpec) | Resource description |
+| ResourceSpec | Yes | [ResourceSpec](https://cloud.tencent.com/document/api/589/33981#ResourceSpec) | Resource description |
 | SupportHA | Yes | Integer | Support for HA |
 | InstanceName | Yes | String | Instance name |
 | PayMode | Yes | Integer | Billing method |
-| Placement | Yes | [Placement](/document/api/589/33981#Placement) | Cluster location information |
+| Placement | Yes | [Placement](https://cloud.tencent.com/document/api/589/33981#Placement) | Cluster location information |
 | TimeSpan | Yes | Integer | Time span |
 | TimeUnit | Yes | String | Time unit |
-| LoginSettings | Yes | [LoginSettings](/document/api/589/33981#LoginSettings) | Login configuration |
+| LoginSettings | Yes | [LoginSettings](https://cloud.tencent.com/document/api/589/33981#LoginSettings) | Login configuration |
 | ClientToken | Yes | String | Client token |
-| COSSettings | No | [COSSettings](/document/api/589/33981#COSSettings) | COS settings parameter |
+| COSSettings | No | [COSSettings](https://cloud.tencent.com/document/api/589/33981#COSSettings) | COS settings parameter |
 | SgId | No | String | Security group ID |
-| PreExecutedFileSettings | No | [PreExecuteFileSettings](/document/api/589/33981#PreExecuteFileSettings) | Pre-execution script settings |
+| PreExecutedFileSettings | No | [PreExecuteFileSettings](https://cloud.tencent.com/document/api/589/33981#PreExecuteFileSettings) | Pre-execution script settings |
 | AutoRenew | No | Integer | Auto-renewal |
 | NeedMasterWan | No | String | Whether a public IP is needed. If yes, enter NEED_MASTER_WAN; if no, enter NOT_NEED_MASTER_WAN. NEED_MASTER_WAN by default |
 
@@ -37,7 +37,7 @@ The following parameters are required for requesting this API, including action-
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| Result | [CreateInstanceResult](/document/api/589/33981#CreateInstanceResult) | Instance creation result |
+| Result | [CreateInstanceResult](https://cloud.tencent.com/document/api/589/33981#CreateInstanceResult) | Instance creation result |
 | RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Examples
@@ -126,7 +126,7 @@ TencentCloud API 3.0 integrates software development kits (SDKs) that support va
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 

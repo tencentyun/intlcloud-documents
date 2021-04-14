@@ -12,13 +12,13 @@ Note: This API supports Finance regions. Finance and non-Finance regions are iso
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/237/16147).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/237/16147).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: DescribeDBLogFiles. |
 | Version | Yes | String | Common parameter. The value used for this API: 2017-03-12. |
-| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/237/16147#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/237/16147#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | InstanceId | Yes | String | Instance ID, such as tdsql-ow728lmc. |
 | Type | Yes | Integer | Request log type, and can only be 1, 2, 3 or 4. 1-binlog, 2-cold backup, 3-errlog, 4-slowlog. |
 
@@ -29,7 +29,7 @@ The following request parameter list only provides API request parameters and so
 | InstanceId | String | Instance ID, such as tdsql-ow728lmc. |
 | Type | Integer | Request log type, and can only be 1, 2, 3 or 4. 1-binlog, 2-cold backup, 3-errlog, 4-slowlog. |
 | Total | Integer | Total number of request logs |
-| Files | Array of [LogFileInfo](/document/api/237/16191#LogFileInfo) | Includes information such as uri, length, mtime (modification time). |
+| Files | Array of [LogFileInfo](https://cloud.tencent.com/document/api/237/16191#LogFileInfo) | Includes information such as uri, length, mtime (modification time). |
 | VpcPrefix | String | If the instance is in a VPC network, the download address is the URI prefixed by this string. |
 | NormalPrefix | String | If the instance is in an ordinary network, the download address is the URI prefixed by this string. |
 | RequestId | String | The unique ID of a request, which is required for each troubleshooting case. |
@@ -91,11 +91,11 @@ Cloud API 3.0 comes with the software development kit (SDK) that supports multip
 
 ### Command line tools
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to the API business logic. For other error codes, see [Common Error Codes](/document/api/237/16149#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to the API business logic. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/237/16149#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

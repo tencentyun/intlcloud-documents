@@ -6,7 +6,7 @@ API 요청 도메인 이름: as.tencentcloudapi.com.
 
 * 시동 구성, `ModifyLaunchConfigurationAttributes`를 통해 소량의 필드를 수정합니다. 새로운 시동 구성을 사용해야 하는 경우 시동 구성을 재생성하기를 권장합니다.
 
-* 각 프로젝트는 최대 20개의 시동 구성만 생성할 수 있고 자세한 내용은 [사용 제한](https://cloud.tencent.com/document/product/377/3120)을 참조하십시오.
+* 각 프로젝트는 최대 20개의 시동 구성만 생성할 수 있고 자세한 내용은 [사용 제한](https://intl.cloud.tencent.com/document/product/377/3120)을 참조하십시오.
 
 
 기본 API 요청 빈도 제한: 20회/초.
@@ -17,26 +17,26 @@ API 요청 도메인 이름: as.tencentcloudapi.com.
 
 ## 2. 입력 매개변수
 
-다음 요청 매개변수 리스트에는 API 요청 매개변수와 일부 공통 매개변수만 나열합니다. 완전한 공통 매개변수 리스트는 [공통 매개변수](/document/api/377/20426)를 참조하십시오.
+다음 요청 매개변수 리스트에는 API 요청 매개변수와 일부 공통 매개변수만 나열합니다. 완전한 공통 매개변수 리스트는 [공통 매개변수](https://cloud.tencent.com/document/api/377/20426)를 참조하십시오.
 
 | 매개변수 이름 | 필수 여부 | 유형 | 설명 |
 |---------|---------|---------|---------|
 | Action | 예 | String | 공통 매개변수, 본 API 값: CreateLaunchConfiguration |
 | Version | 예 | String | 공통 매개변수, 본 API 값: 2018-04-19 |
-| Region | 예 | String | 공통 매개변수, 세부 정보는 제품이 지원하는 [지역 리스트](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)를 참조하십시오 |
+| Region | 예 | String | 공통 매개변수, 세부 정보는 제품이 지원하는 [지역 리스트](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)를 참조하십시오 |
 | LaunchConfigurationName | 예 | String | 시동 구성 표시 이름입니다. 이름은 중문, 영문, 숫자, 밑줄, 구분 기호 "-", 소수점만을 지원하고 60바이트를 초과할 수 없습니다. |
-| ImageId | 예 | String | 유효한 [이미지](https://cloud.tencent.com/document/product/213/4940) ID 지정, 형식은 예를 들어 `img-8toqc6s3`과 같습니다. 이미지 유형은 4가지로 구분: <br/><li>공통 이미지</li><li> 사용자 지정 이미지</li><li>공유 이미지</li><li>서비스 마켓 이미지</li><br/>다음의 방식을 통해 사용 가능한 이미지 ID 획득: <br/><li>`공통 이미지`, `사용자 지정 이미지`, `공유 이미지`의 이미지 ID는 [콘솔](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)에 로그인하여 조회할 수 있습니다. `서비스 이미지 마켓`의 이미지 ID는 [클라우드 마켓](https://market.cloud.tencent.com/list)을 통해 조회합니다. </li><li>API [DescribeImages](https://cloud.tencent.com/document/api/213/15715)를 호출해 반환 정보 중 `ImageId` 필드를 불러옵니다.</li> |
+| ImageId | 예 | String | 유효한 [이미지](https://intl.cloud.tencent.com/document/product/213/4940) ID 지정, 형식은 예를 들어 `img-8toqc6s3`과 같습니다. 이미지 유형은 4가지로 구분: <br/><li>공통 이미지</li><li> 사용자 지정 이미지</li><li>공유 이미지</li><li>서비스 마켓 이미지</li><br/>다음의 방식을 통해 사용 가능한 이미지 ID 획득: <br/><li>`공통 이미지`, `사용자 지정 이미지`, `공유 이미지`의 이미지 ID는 [콘솔](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)에 로그인하여 조회할 수 있습니다. `서비스 이미지 마켓`의 이미지 ID는 [클라우드 마켓](https://market.cloud.tencent.com/list)을 통해 조회합니다. </li><li>API [DescribeImages](https://cloud.tencent.com/document/api/213/15715)를 호출해 반환 정보 중 `ImageId` 필드를 불러옵니다.</li> |
 | ProjectId | 아니요 | Integer | 인스턴스가 속한 프로젝트 ID입니다. 해당 매개변수는 [DescribeProject](https://cloud.tencent.com/document/api/378/4400)를 호출하여 반환값의 `projectId` 필드를 통해 획득할 수 있습니다. 입력하지 않으면 기본 프로젝트가 됩니다. |
-| InstanceType | 아니요 | String | 인스턴스 모델. 서로 다른 인스턴스 모델은 서로 다른 리소스 사양을 지정하고 구체적인 값은 API [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)를 호출하여 최신의 사양 리스트를 획득하거나 [인스턴스 유형](https://cloud.tencent.com/document/product/213/11518)의 설명을 참조하십시오. <br/>`InstanceType`과 `InstanceTypes` 매개변수는 상호 배타적이기 때문에 2가지 중 반드시 하나를 입력해야 하고 하나만을 입력할 수 있습니다. |
-| SystemDisk | 아니요 | [SystemDisk](/document/api/377/20453#SystemDisk) | 인스턴스 시스템 디스크 설정 정보입니다. 해당 매개변수를 지정하지 않으면 시스템 기본값에 따라 할당합니다. |
-| DataDisks.N | 아니요 | Array of [DataDisk](/document/api/377/20453#DataDisk) | 인스턴스 데이터 디스크 설정 정보입니다. 해당 매개변수를 설정하지 않으면 기본적으로 데이터 디스크를 구매하지 않습니다. 최대 11개 데이터 디스크 지정을 지원합니다. |
-| InternetAccessible | 아니요 | [InternetAccessible](/document/api/377/20453#InternetAccessible) | 공중망 대역폭 관련 정보 설정입니다. 해당 매개변수를 지정하지 않으면 공중망 대역폭은 기본적으로 0Mbps입니다. |
-| LoginSettings | 아니요 | [LoginSettings](/document/api/377/20453#LoginSettings) | 인스턴스 로그인 설정입니다. 해당 매개변수를 통해 인스턴스의 로그인 비밀번호나 키를 설정하거나 이미지의 기존 로그인 설정을 유지할 수 있습니다. 기본 상황에서 랜덤으로 비밀번호를 생성하고 내부 메시지를 통해 사용자에게 발송합니다. |
+| InstanceType | 아니요 | String | 인스턴스 모델. 서로 다른 인스턴스 모델은 서로 다른 리소스 사양을 지정하고 구체적인 값은 API [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)를 호출하여 최신의 사양 리스트를 획득하거나 [인스턴스 유형](https://intl.cloud.tencent.com/document/product/213/11518)의 설명을 참조하십시오. <br/>`InstanceType`과 `InstanceTypes` 매개변수는 상호 배타적이기 때문에 2가지 중 반드시 하나를 입력해야 하고 하나만을 입력할 수 있습니다. |
+| SystemDisk | 아니요 | [SystemDisk](https://cloud.tencent.com/document/api/377/20453#SystemDisk) | 인스턴스 시스템 디스크 설정 정보입니다. 해당 매개변수를 지정하지 않으면 시스템 기본값에 따라 할당합니다. |
+| DataDisks.N | 아니요 | Array of [DataDisk](https://cloud.tencent.com/document/api/377/20453#DataDisk) | 인스턴스 데이터 디스크 설정 정보입니다. 해당 매개변수를 설정하지 않으면 기본적으로 데이터 디스크를 구매하지 않습니다. 최대 11개 데이터 디스크 지정을 지원합니다. |
+| InternetAccessible | 아니요 | [InternetAccessible](https://cloud.tencent.com/document/api/377/20453#InternetAccessible) | 공중망 대역폭 관련 정보 설정입니다. 해당 매개변수를 지정하지 않으면 공중망 대역폭은 기본적으로 0Mbps입니다. |
+| LoginSettings | 아니요 | [LoginSettings](https://cloud.tencent.com/document/api/377/20453#LoginSettings) | 인스턴스 로그인 설정입니다. 해당 매개변수를 통해 인스턴스의 로그인 비밀번호나 키를 설정하거나 이미지의 기존 로그인 설정을 유지할 수 있습니다. 기본 상황에서 랜덤으로 비밀번호를 생성하고 내부 메시지를 통해 사용자에게 발송합니다. |
 | SecurityGroupIds.아니요 | 아니요 | Array of String | 인스턴스가 속한 보안 그룹입니다. 해당 매개변수는 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808)를 호출하여 반환된 값 중 `SecurityGroupId` 필드를 통해 획득할 수 있습니다. 해당 매개변수를 지정하지 않으면 기본적으로 보안 그룹을 바인딩하지 않습니다. |
-| EnhancedService | 아니요 | [EnhancedService](/document/api/377/20453#EnhancedService) | 강화형 서비스입니다. 해당 매개변수를 통해 클라우드 보안, CM 등 서비스 활성화 여부를 지정할 수 있습니다. 해당 매개변수를 지정하지 않으면 기본적으로 CM, 클라우드 보안 서비스를 활성화합니다. |
+| EnhancedService | 아니요 | [EnhancedService](https://cloud.tencent.com/document/api/377/20453#EnhancedService) | 강화형 서비스입니다. 해당 매개변수를 통해 클라우드 보안, CM 등 서비스 활성화 여부를 지정할 수 있습니다. 해당 매개변수를 지정하지 않으면 기본적으로 CM, 클라우드 보안 서비스를 활성화합니다. |
 | UserData | 아니요 | String | Base64로 인코딩된 사용자 지정 데이터, 길이는 16KB를 초과할 수 없습니다. |
 | InstanceChargeType | 아니요 | String | 인스턴스 요금제, CVM은 기본적으로 POSTPAID_BY_HOUR를 채택합니다. <br/><br><li>POSTPAID_BY_HOUR: 시간에 따른 후불제<br/><br><li>SPOTPAID: 비딩 지불 |
-| InstanceMarketOptions | 아니요 | [InstanceMarketOptionsRequest](/document/api/377/20453#InstanceMarketOptionsRequest) | 인스턴스의 마켓 관련 선택 사항, 예를 들어 스팟 인스턴스 관련 매개변수는 지정한 인스턴스의 지불 모드가 비딩 지불이면 해당 매개변수는 반드시 전달합니다. |
+| InstanceMarketOptions | 아니요 | [InstanceMarketOptionsRequest](https://cloud.tencent.com/document/api/377/20453#InstanceMarketOptionsRequest) | 인스턴스의 마켓 관련 선택 사항, 예를 들어 스팟 인스턴스 관련 매개변수는 지정한 인스턴스의 지불 모드가 비딩 지불이면 해당 매개변수는 반드시 전달합니다. |
 | InstanceTypes.N | 아니요 | Array of String | 인스턴스 모델 리스트, 서로 다른 인스턴스 모델은 서로 다른 리소스 사양을 지정하고 최대 5가지 인스턴스 모델을 지원합니다. <br/>`InstanceType`와 `InstanceTypes` 매개변수는 상호 배타적이기 때문에 2가지 중 반드시 하나를 입력해야 하고 하나만을 입력할 수 있습니다. |
 | InstanceTypesCheckPolicy | 아니요 | String | 인스턴스 유형 검사 전략, 값은 ALL과 ANY를 포함하고 기본값은 ANY입니다. <br/><br><li> ALL, 모든 인스턴스 유형(InstanceType)이 사용 가능하면 검사를 통과하고 그렇지 않은 경우 검사 오류를 보고합니다. <br/><br><li> ANY, 임의 하나의 인스턴스 유형(InstanceType)이 사용 가능하면 검사를 통과하고 그렇지 않은 경우 검사 오류를 보고합니다. <br/><br/>인스턴스 유형을 사용할 수 없는 일반적인 원인은 해당 인스턴스 유형 매진, 대응하는 클라우드 디스크 매진 등이 포함됩니다. <br/> InstanceTypes 중 하나의 모델이 존재하지 않거나 오프라인이 된 경우, InstanceTypesCheckPolicy에서 어떤 값을 선택해도 검사 오류를 보고합니다. |
 
@@ -191,11 +191,11 @@ https://as.tencentcloudapi.com/?Action=CreateLaunchConfiguration
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. 오류 코드
 
-다음은 API 비즈니스 로직과 관련된 오류 코드만 나열하며 다른 오류 코드는 [공통 오류 코드](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)를 참조하십시오.
+다음은 API 비즈니스 로직과 관련된 오류 코드만 나열하며 다른 오류 코드는 [공통 오류 코드](https://cloud.tencent.com/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)를 참조하십시오.
 
 | 오류 코드 | 설명 |
 |---------|---------|

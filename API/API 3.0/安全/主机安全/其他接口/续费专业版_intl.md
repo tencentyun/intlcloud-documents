@@ -8,14 +8,14 @@ Default request rate limit: 20/sec.
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/296/19828).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/296/19828).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value​used for this API: RenewProVersion. |
 | Version | Yes | String | Common parameter. The value used for this API: 2/28/2018 |
 | Region | No | String | Common parameter. This parameter is not required for this API. |
-| ChargePrepaid | Yes | [ChargePrepaid](/document/api/296/19867#ChargePrepaid) | Purchase-related parameter. |
+| ChargePrepaid | Yes | [ChargePrepaid](https://cloud.tencent.com/document/api/296/19867#ChargePrepaid) | Purchase-related parameter. |
 | Quuid | Yes | String | Unique ID of the host, i.e. the uuid of a CVM, or the InstanceId of a CPM. |
 
 ## 3. Output Parameters
@@ -69,11 +69,11 @@ Cloud API 3.0 comes with the software development kit (SDK) that supports multip
 
 ### Command line tools
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/296/19830#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/296/19830#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

@@ -8,20 +8,20 @@
 
 새로 추가한 API:
 
-* [DeregisterTargetsFromClassicalLB](/document/api/214/31794)
-* [DescribeClassicalLBByInstanceId](/document/api/214/31793)
-* [DescribeClassicalLBHealthStatus](/document/api/214/31792)
-* [DescribeClassicalLBListeners](/document/api/214/31791)
-* [DescribeClassicalLBTargets](/document/api/214/31790)
-* [RegisterTargetsWithClassicalLB](/document/api/214/31789)
+* [DeregisterTargetsFromClassicalLB](https://cloud.tencent.com/document/api/214/31794)
+* [DescribeClassicalLBByInstanceId](https://cloud.tencent.com/document/api/214/31793)
+* [DescribeClassicalLBHealthStatus](https://cloud.tencent.com/document/api/214/31792)
+* [DescribeClassicalLBListeners](https://cloud.tencent.com/document/api/214/31791)
+* [DescribeClassicalLBTargets](https://cloud.tencent.com/document/api/214/31790)
+* [RegisterTargetsWithClassicalLB](https://cloud.tencent.com/document/api/214/31789)
 
 새로 추가한 데이터 아키텍처:
 
-* [ClassicalHealth](/document/api/214/30694#ClassicalHealth)
-* [ClassicalListener](/document/api/214/30694#ClassicalListener)
-* [ClassicalLoadBalancerInfo](/document/api/214/30694#ClassicalLoadBalancerInfo)
-* [ClassicalTarget](/document/api/214/30694#ClassicalTarget)
-* [ClassicalTargetInfo](/document/api/214/30694#ClassicalTargetInfo)
+* [ClassicalHealth](https://cloud.tencent.com/document/api/214/30694#ClassicalHealth)
+* [ClassicalListener](https://cloud.tencent.com/document/api/214/30694#ClassicalListener)
+* [ClassicalLoadBalancerInfo](https://cloud.tencent.com/document/api/214/30694#ClassicalLoadBalancerInfo)
+* [ClassicalTarget](https://cloud.tencent.com/document/api/214/30694#ClassicalTarget)
+* [ClassicalTargetInfo](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/214/30694#ClassicalTargetInfo)
 
 ## 첫 번째 릴리스
 
@@ -33,37 +33,37 @@
 
 새로 추가한 API:
 
-* [CreateListener](/document/api/214/30693)
-* [CreateLoadBalancer](/document/api/214/30692)
-* [CreateRule](/document/api/214/30691)
-* [DeleteListener](/document/api/214/30690)
-* [DeleteLoadBalancer](/document/api/214/30689)
-* [DeleteRule](/document/api/214/30688)
-* [DeregisterTargets](/document/api/214/30687)
-* [DescribeListeners](/document/api/214/30686)
-* [DescribeLoadBalancers](/document/api/214/30685)
-* [DescribeTargets](/document/api/214/30684)
-* [DescribeTaskStatus](/document/api/214/30683)
-* [ModifyDomain](/document/api/214/30682)
-* [ModifyListener](/document/api/214/30681)
-* [ModifyLoadBalancerAttributes](/document/api/214/30680)
-* [ModifyRule](/document/api/214/30679)
-* [ModifyTargetPort](/document/api/214/30678)
-* [ModifyTargetWeight](/document/api/214/30677)
-* [RegisterTargets](/document/api/214/30676)
+* [CreateListener](https://cloud.tencent.com/document/api/214/30693)
+* [CreateLoadBalancer](https://cloud.tencent.com/document/api/214/30692)
+* [CreateRule](https://cloud.tencent.com/document/api/214/30691)
+* [DeleteListener](https://cloud.tencent.com/document/api/214/30690)
+* [DeleteLoadBalancer](https://cloud.tencent.com/document/api/214/30689)
+* [DeleteRule](https://cloud.tencent.com/document/api/214/30688)
+* [DeregisterTargets](https://cloud.tencent.com/document/api/214/30687)
+* [DescribeListeners](https://cloud.tencent.com/document/api/214/30686)
+* [DescribeLoadBalancers](https://cloud.tencent.com/document/api/214/30685)
+* [DescribeTargets](https://cloud.tencent.com/document/api/214/30684)
+* [DescribeTaskStatus](https://cloud.tencent.com/document/api/214/30683)
+* [ModifyDomain](https://cloud.tencent.com/document/api/214/30682)
+* [ModifyListener](https://cloud.tencent.com/document/api/214/30681)
+* [ModifyLoadBalancerAttributes](https://cloud.tencent.com/document/api/214/30680)
+* [ModifyRule](https://cloud.tencent.com/document/api/214/30679)
+* [ModifyTargetPort](https://cloud.tencent.com/document/api/214/30678)
+* [ModifyTargetWeight](https://cloud.tencent.com/document/api/214/30677)
+* [RegisterTargets](https://cloud.tencent.com/document/api/214/30676)
 
 새로 추가한 데이터 아키텍처:
 
-* [Backend](/document/api/214/30694#Backend)
-* [CertificateInput](/document/api/214/30694#CertificateInput)
-* [CertificateOutput](/document/api/214/30694#CertificateOutput)
-* [HealthCheck](/document/api/214/30694#HealthCheck)
-* [Listener](/document/api/214/30694#Listener)
-* [ListenerBackend](/document/api/214/30694#ListenerBackend)
-* [LoadBalancer](/document/api/214/30694#LoadBalancer)
-* [RuleInput](/document/api/214/30694#RuleInput)
-* [RuleOutput](/document/api/214/30694#RuleOutput)
-* [RuleTargets](/document/api/214/30694#RuleTargets)
-* [Target](/document/api/214/30694#Target)
+* [Backend](https://cloud.tencent.com/document/api/214/30694#Backend)
+* [CertificateInput](https://cloud.tencent.com/document/api/214/30694#CertificateInput)
+* [CertificateOutput](https://cloud.tencent.com/document/api/214/30694#CertificateOutput)
+* [HealthCheck](https://cloud.tencent.com/document/api/214/30694#HealthCheck)
+* [Listener](https://cloud.tencent.com/document/api/214/30694#Listener)
+* [ListenerBackend](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/214/30694#ListenerBackend)
+* [LoadBalancer](https://cloud.tencent.com/document/api/214/30694#LoadBalancer)
+* [RuleInput](https://cloud.tencent.com/document/api/214/30694#RuleInput)
+* [RuleOutput](https://cloud.tencent.com/document/api/214/30694#RuleOutput)
+* [RuleTargets](https://cloud.tencent.com/document/api/214/30694#RuleTargets)
+* [Target](https://cloud.tencent.com/document/api/214/30694#Target)
 
 

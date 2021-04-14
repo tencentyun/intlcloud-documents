@@ -8,19 +8,19 @@ Improvements on current documentation.
 
 New APIs:
 
-* [DisableCaches](/document/api/228/33541)
-* [EnableCaches](/document/api/228/33540)
-* [GetDisableRecords](/document/api/228/33539)
+* [DisableCaches](https://cloud.tencent.com/document/api/228/33541)
+* [EnableCaches](https://cloud.tencent.com/document/api/228/33540)
+* [GetDisableRecords](https://cloud.tencent.com/document/api/228/33539)
 
 Modified APIs:
 
-* [DescribeCdnData](/document/api/228/30986)
+* [DescribeCdnData](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/228/30986)
 	* New input parameters: IpProtocol
 
 New data structures:
 
-* [CacheOptResult](/document/api/228/30987#CacheOptResult)
-* [UrlRecord](/document/api/228/30987#UrlRecord)
+* [CacheOptResult](https://cloud.tencent.com/document/api/228/30987#CacheOptResult)
+* [UrlRecord](https://cloud.tencent.com/document/api/228/30987#UrlRecord)
 
 ## Release 2
 
@@ -32,12 +32,12 @@ Improvements on current documentation.
 
 New APIs:
 
-* [DescribeMapInfo](/document/api/228/31296)
-* [DescribePayType](/document/api/228/31295)
+* [DescribeMapInfo](https://cloud.tencent.com/document/api/228/31296)
+* [DescribePayType](https://cloud.tencent.com/document/api/228/31295)
 
 New data structures:
 
-* [MapInfo](/document/api/228/30987#MapInfo)
+* [MapInfo](https://cloud.tencent.com/document/api/228/30987#MapInfo)
 
 ## Release 1
 
@@ -49,18 +49,18 @@ Improvements on current documentation.
 
 New APIs:
 
-* [DescribeCdnData](/document/api/228/30986)
-* [DescribeIpVisit](/document/api/228/30985)
-* [DescribeOriginData](/document/api/228/30984)
-* [ListTopData](/document/api/228/30983)
+* [DescribeCdnData](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/228/30986)
+* [DescribeIpVisit](https://cloud.tencent.com/document/api/228/30985)
+* [DescribeOriginData](https://cloud.tencent.com/document/api/228/30984)
+* [ListTopData](https://cloud.tencent.com/document/api/228/30983)
 
 New data structures:
 
-* [CdnData](/document/api/228/30987#CdnData)
-* [ResourceData](/document/api/228/30987#ResourceData)
-* [ResourceOriginData](/document/api/228/30987#ResourceOriginData)
-* [SummarizedData](/document/api/228/30987#SummarizedData)
-* [TimestampData](/document/api/228/30987#TimestampData)
-* [TopData](/document/api/228/30987#TopData)
-* [TopDetailData](/document/api/228/30987#TopDetailData)
+* [CdnData](https://cloud.tencent.com/document/api/228/30987#CdnData)
+* [ResourceData](https://cloud.tencent.com/document/api/228/30987#ResourceData)
+* [ResourceOriginData](https://cloud.tencent.com/document/api/228/30987#ResourceOriginData)
+* [SummarizedData](https://cloud.tencent.com/document/api/228/30987#SummarizedData)
+* [TimestampData](https://cloud.tencent.com/document/api/228/30987#TimestampData)
+* [TopData](https://cloud.tencent.com/document/api/228/30987#TopData)
+* [TopDetailData](https://cloud.tencent.com/document/api/228/30987#TopDetailData)
 

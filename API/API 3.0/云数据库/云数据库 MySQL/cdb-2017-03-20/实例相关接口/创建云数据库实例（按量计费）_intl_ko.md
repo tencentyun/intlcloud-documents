@@ -19,19 +19,19 @@ API 요청 도메인 이름: cdb.tencentcloudapi.com.
 
 ## 2. 입력 매개변수
 
-다음 요청 매개변수 리스트에는 API 요청 매개변수 및 일부 공통 매개변수만 나열되며, 완전한 공통 매개변수 리스트는 [공통 요청 매개변수](/document/api/236/15833)를 참조하십시오.
+다음 요청 매개변수 리스트에는 API 요청 매개변수 및 일부 공통 매개변수만 나열되며, 완전한 공통 매개변수 리스트는 [공통 요청 매개변수](https://cloud.tencent.com/document/api/236/15833)를 참조하십시오.
 
 | 매개변수 이름 | 필수 항목 여부 | 유형 | 설명 |
 |---------|---------|---------|---------|
 | Action | 예 | String | 공통 매개변수, 이 API 값: CreateDBInstanceHour |
 | Version | 예 | String | 공통 매개변수, 이 API 선택 값: 2017-03-20 |
-| Region | 아니요 | String | 공통 매개변수, 자세한 내용은 제품의 지원되는 [지역 리스트](/document/api/236/15833#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)를 참조하십시오. |
+| Region | 아니요 | String | 공통 매개변수, 자세한 내용은 제품의 지원되는 [지역 리스트](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/236/15833#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)를 참조하십시오. |
 | GoodsNum | 예 | Integer | 인스턴스 수량, 기본값은 1, 최소값은 1, 최대값은 100입니다. |
 | Memory | 예 | Integer | 인스턴스 메모리 크기, 단위: MB, [데이터베이스 판매 가능 사양 획득](https://cloud.tencent.com/document/api/236/17229) API를 사용하여 생성 가능한 메모리 사양을 획득하십시오. |
 | Volume | 아니요 | Integer | 인스턴스 디스크 크기, 단위: GB, [데이터베이스 판매 가능 사양 획득](https://cloud.tencent.com/document/api/236/17229) API를 사용하여 생성 가능한 디스크 범위를 획득하십시오. |
 | EngineVersion | 아니요 | String | MySQL 버전, 포함 값: 5.5, 5.6 및 5.7, [데이터베이스 판매 가능 사양 획득](https://cloud.tencent.com/document/api/236/17229) API를 사용하여 생성 가능한 인스턴스 버전을 획득하십시오. |
-| UniqVpcId | 아니요 | String | VPC ID, 전달하지 않을 경우 기본적으로 기본 네트워크를 선택합니다. [VPC 리스트 조회](/document/api/215/15778) API를 사용하십시오. |
-| UniqSubnetId | 아니요 | String | VPC 하의 서브넷 ID, UniqVpcId를 설정한 경우, UniqSubnetId를 반드시 입력해야 합니다. [서브넷 리스트 조회](/document/api/215/15784) API를 사용하십시오. |
+| UniqVpcId | 아니요 | String | VPC ID, 전달하지 않을 경우 기본적으로 기본 네트워크를 선택합니다. [VPC 리스트 조회](https://cloud.tencent.com/document/api/215/15778) API를 사용하십시오. |
+| UniqSubnetId | 아니요 | String | VPC 하의 서브넷 ID, UniqVpcId를 설정한 경우, UniqSubnetId를 반드시 입력해야 합니다. [서브넷 리스트 조회](https://cloud.tencent.com/document/api/215/15784) API를 사용하십시오. |
 | ProjectId | 아니요 | Integer | 프로젝트 ID, 입력하지 않으면 기본적으로 기본 프로젝트입니다. [프로젝트 리스트 조회](https://cloud.tencent.com/document/product/378/4400) API를 사용하여 프로젝트 ID를 획득하십시오. |
 | Zone | 아니요 | String | 가용 영역 정보, 해당 매개변수가 없으면 시스템은 자동으로 한 개의 가용 영역을 선택합니다. [데이터베이스 판매 가능 사양 획득](https://cloud.tencent.com/document/api/236/17229) API를 사용하여 생성 가능한 가용 영역을 획득하십시오. |
 | MasterInstanceId | 아니요 | String | 인스턴스 ID, 읽기 전용 인스턴스 또는 재해 복구 인스턴스 구매 시 반드시 입력해야 합니다. 이 필드는 읽기 전용 인스턴스 또는 재해 복구 인스턴스의 마스터 인스턴스 ID를 표시합니다. [인스턴스 리스트 조회](https://cloud.tencent.com/document/api/236/15872) API를 사용하여 데이터베이스 인스턴스 ID를 조회하십시오. |
@@ -39,16 +39,16 @@ API 요청 도메인 이름: cdb.tencentcloudapi.com.
 | MasterRegion | 아니요 | String | 마스터 인스턴스의 가용 영역 정보, 재해 복구 인스턴스 구매 시, 반드시 입력해야 합니다 |
 | Port | 아니요 | Integer | 사용자 지정 포트, 포트 지원 범위: [1024, -65535] |
 | Password | 아니요 | String | root 계정 비밀번호 설정, 비밀번호 규칙: 8-64자, 알파벳, 숫자, 특수 문자(_+-&=!@#$%^*() 지원) 중 최소 두 가지를 포함해야 합니다. 마스터 인스턴스 구매 시 해당 매개변수를 지정할 수 있으며, 읽기 전용 인스턴스 또는 재해 복구 인스턴스 구매 시 해당 매개변수를 지정해도 의미가 없습니다. |
-| ParamList.N | 아니요 | Array of [ParamInfo](/document/api/236/15878#ParamInfo) | 매개변수 리스트, 매개변수 형식 예: ParamList.0.Name=auto_increment&ParamList.0.Value=1. [인스턴스의 설정 가능 매개 변수 리스트 조회](https://cloud.tencent.com/document/api/236/20411) API를 통해 설정 가능한 매개변수를 조회할 수 있습니다. |
+| ParamList.N | 아니요 | Array of [ParamInfo](https://cloud.tencent.com/document/api/236/15878#ParamInfo) | 매개변수 리스트, 매개변수 형식 예: ParamList.0.Name=auto_increment&ParamList.0.Value=1. [인스턴스의 설정 가능 매개 변수 리스트 조회](https://cloud.tencent.com/document/api/236/20411) API를 통해 설정 가능한 매개변수를 조회할 수 있습니다. |
 | ProtectMode | 아니요 | Integer | 데이터 복제 방식, 기본값은 0, 지원 값은 0-비동기화 복제, 1-반동기화 복제, 2-강제 동기화 복제입니다. 마스터 인스턴스 구매 시 해당 매개변수 지정이 가능하며, 읽기 전용 인스턴스 또는 재해 복구 인스턴스 구매 시 해당 매개변수를 지정해도 의미가 없습니다. |
 | DeployMode | 아니요 | Integer | 멀티 가용 영역, 기본값은 0, 지원 값은 0-단일 가용 영역, 1-멀티 가용 영역입니다. 마스터 인스턴스 구매 시 해당 매개변수를 지정할 수 있으며, 읽기 전용 인스턴스 또는 재해 복구 인스턴스 구매 시 해당 매개변수를 지정해도 의미가 없습니다. |
 | SlaveZone | 아니요 | String | 슬레이브 데이터베이스1의 가용 영역 ID, 기본적으로 zoneId의 값입니다. 마스터 인스턴스 구매 시 해당 값을 지정할 수 있으며, 읽기 전용 인스턴스 또는 재해 복구 인스턴스 구매 시 해당 매개변수를 지정해도 의미가 없습니다. |
 | BackupZone | 아니요 | String | 슬레이브 데이터베이스2의 가용 영역 ID, 기본값은 0입니다. 마스터 인스턴스 구매 시 해당 값을 지정할 수 있으며, 읽기 전용 인스턴스 또는 재해 복구 인스턴스 구매 시 해당 매개변수를 지정해도 의미가 없습니다. |
 | SecurityGroup.N | 아니요 | Array of String | 보안 그룹 매개변수, [프로젝트 보안 그룹 정보 조회](https://cloud.tencent.com/document/api/236/15850) API를 사용하여 프로젝트의 보안 그룹 세부 정보를 조회할 수 있습니다. |
-| RoGroup | 아니요 | [RoGroup](/document/api/236/15878#RoGroup) | 읽기 전용 인스턴스 정보 |
+| RoGroup | 아니요 | [RoGroup](https://cloud.tencent.com/document/api/236/15878#RoGroup) | 읽기 전용 인스턴스 정보 |
 | AutoRenewFlag | 아니요 | Integer | 자동 갱신 플래그, 값은 0 또는 1입니다. 사용량 기반 요금제의 인스턴스 구매 시 이 필드는 의미가 없습니다. |
 | InstanceName | 아니요 | String | 인스턴스 이름 |
-| ResourceTags.N | 아니요 | Array of [TagInfo](/document/api/236/15878#TagInfo) | 인스턴스 태그 |
+| ResourceTags.N | 아니요 | Array of [TagInfo](https://cloud.tencent.com/document/api/236/15878#TagInfo) | 인스턴스 태그 |
 
 ## 3. 출력 매개변수
 
@@ -117,11 +117,11 @@ https://cdb.tencentcloudapi.com/?Action=CreateDBInstanceHour
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. 오류 코드
 
-다음은 API 비즈니스 로직과 관련된 오류 코드만 나열하며 다른 오류 코드는 [공통 오류 코드](/document/api/236/15835#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)를 참조하십시오.
+다음은 API 비즈니스 로직과 관련된 오류 코드만 나열하며 다른 오류 코드는 [공통 오류 코드](https://cloud.tencent.com/document/api/236/15835#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)를 참조하십시오.
 
 | 오류 코드 | 설명 |
 |---------|---------|

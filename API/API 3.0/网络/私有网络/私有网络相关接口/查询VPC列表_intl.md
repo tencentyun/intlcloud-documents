@@ -12,15 +12,15 @@ Note: This API supports Finance regions. Since Finance regions and non-Finance r
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/215/15692).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/215/15692).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: DescribeVpcs |
 | Version | Yes | String | Common parameter. The value used for this API: 2017-03-12 |
-| Region | Yes |  String | Common parameter. For more information, please see the [list of regions](/document/api/215/15692#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes |  String | Common parameter. For more information, please see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/215/15692#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | VpcIds.N | No | Array of String | VPC instance ID. such as vpc-f49l6u0z. A maximum of 100 instances are allowed for each request. This parameter does not support specifying both VpcIds and Filters. |
-| Filters.N | No | Array of [Filter](/document/api/215/##Filter) | Filter condition. This parameter does not support specifying both VpcIds and Filters.<br/><li> vpc-name - String - (Filter condition) VPC instance name.</li><li> is-default - String - (Filter condition) Indicates whether it is the default VPC.</li><li> vpc-id - String - (Filter condition) VPC instance ID, such as vpc-f49l6u0z.</li><li> cidr-block - String - (Filter condition) VPC CIDR.</li> |
+| Filters.N | No | Array of [Filter](https://cloud.tencent.com/document/api/215/##Filter) | Filter condition. This parameter does not support specifying both VpcIds and Filters.<br/><li> vpc-name - String - (Filter condition) VPC instance name.</li><li> is-default - String - (Filter condition) Indicates whether it is the default VPC.</li><li> vpc-id - String - (Filter condition) VPC instance ID, such as vpc-f49l6u0z.</li><li> cidr-block - String - (Filter condition) VPC CIDR.</li> |
 | Offset | No | String | Offset |
 | Limit | No | String | Number of values to be returned |
 
@@ -29,12 +29,12 @@ The following request parameter list only provides API request parameters and so
 | Parameter Name | Type | Description |
 |---------|---------|---------|
 | TotalCount | Integer | Number of objects that meet the condition. |
-| VpcSet | Array of [Vpc](/document/api/215/##Vpc) | VPC object. |
+| VpcSet | Array of [Vpc](https://cloud.tencent.com/document/api/215/##Vpc) | VPC object. |
 | RequestId | String | The unique request ID, which is returned for each request. RequestId is required for locating a problem. |
 
 ## 4. Error Codes
 
-The following only lists the error codes related to the API business logic. For other error codes, see [Common Error Codes](/document/api/215/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to the API business logic. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/215/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|
@@ -107,5 +107,5 @@ Cloud API 3.0 comes with the following development tools to make it easier to ca
 * [Tencent Cloud SDK 3.0 for Go](https://github.com/TencentCloud/tencentcloud-sdk-go)
 * [Tencent Cloud SDK 3.0 for NodeJS](https://github.com/TencentCloud/tencentcloud-sdk-nodejs)
 * [Tencent Cloud SDK 3.0 for .NET](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 

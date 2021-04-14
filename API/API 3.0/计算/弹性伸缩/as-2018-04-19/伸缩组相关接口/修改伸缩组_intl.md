@@ -12,13 +12,13 @@ Note: This API supports financial regions. As financial regions and non-financia
 
 ## 2. Input Parameters
 
-The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/377/20426).
+The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/377/20426).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: ModifyAutoScalingGroup |
 | Version | Yes | String | Common parameter. The value used for this API: 2018-04-19 |
-| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | AutoScalingGroupId | Yes | String | Auto scaling group ID |
 | AutoScalingGroupName | No | String | Auto scaling group name, which is unique in your account. The name can only contain letters, numbers, underscores, hyphens ("-") and decimal points, with a length of not more than 55 characters. |
 | DefaultCooldown | No | Integer | Default cooldown period in seconds. Default value: 300 |
@@ -33,7 +33,7 @@ The list below contains only the API request parameters and certain common param
 | Zones.N | No | Array of String | Availability zone list |
 | RetryPolicy | No | String | Retry policy. Value range: IMMEDIATE_RETRY, INCREMENTAL_INTERVALS, NO_RETRY. Default value: IMMEDIATE_RETRY. <br/><br><li> IMMEDIATE_RETRY: Retrying immediately in a short period of time and stopping after a number of consecutive failures (5). <br/><br><li> INCREMENTAL_INTERVALS: Retrying at incremental intervals, i.e., as the number of consecutive failures increases, the retry interval gradually increases, ranging from one second to one day. <br/><br><li> NO_RETRY: No retry until a call or alarm message is received again. |
 | ZonesCheckPolicy | No | String | Availability zone verification policy. Value range: ALL, ANY. Default value: ANY. This will work when the resource-related fields (launch configuration, availability zone, or subnet) of the auto scaling group are actually modified. <br/><br><li> ALL: The verification will succeed only if all availability zones (Zone) or subnets (SubnetId) are available; otherwise, an error will be reported. <br/><br><li> ANY: The verification will succeed if any availability zone (Zone) or subnet (SubnetId) is available; otherwise, an error will be reported. <br/><br/>Common reasons why an availability zone or subnet is unavailable include stock-out of CVM instances or CBS cloud disks in the availability zone, insufficient quota in the availability zone, or insufficient IPs in the subnet. <br/>If an availability zone or subnet in Zones/SubnetIds does not exist, a verification error will be reported regardless of the value of ZonesCheckPolicy. |
-| ServiceSettings | No | [ServiceSettings](/document/api/377/20453#ServiceSettings) | Service settings such as unhealthy instance replacement. |
+| ServiceSettings | No | [ServiceSettings](https://cloud.tencent.com/document/api/377/20453#ServiceSettings) | Service settings such as unhealthy instance replacement. |
 
 ## 3. Output Parameters
 
@@ -111,11 +111,11 @@ TencentCloud API 3.0 comes with SDKs that support multiple programming languages
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

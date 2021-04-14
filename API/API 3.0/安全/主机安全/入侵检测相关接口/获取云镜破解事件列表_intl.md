@@ -8,7 +8,7 @@ Default request rate limit: 20/sec.
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/296/19828).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/296/19828).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -17,7 +17,7 @@ The following request parameter list only provides API request parameters and so
 | Region | No | String | Common parameter. This parameter is not required for this API. |
 | Uuid | No | String | Unique Uuid of the client. |
 | Offset | No | Integer | Offset. It defaults to 0. |
-| Filters.N | No | Array of [Filter](/document/api/296/19867#Filter) | Filter condition.<br/><li>Keywords - String - Required: No - Query keywords</li><li>Status - String - Required: No - Query status (FAILED: Attack failed &#124; SUCCESS: Attack succeeded)</li> |
+| Filters.N | No | Array of [Filter](https://cloud.tencent.com/document/api/296/19867#Filter) | Filter condition.<br/><li>Keywords - String - Required: No - Query keywords</li><li>Status - String - Required: No - Query status (FAILED: Attack failed &#124; SUCCESS: Attack succeeded)</li> |
 | Limit | No | Integer | Number of returned results. It defaults to 10. The maximum is 100. |
 
 ## 3. Output Parameters
@@ -25,7 +25,7 @@ The following request parameter list only provides API request parameters and so
 | Parameter Name | Type | Description |
 |---------|---------|---------|
 | TotalCount | Integer | Number of events. |
-| BruteAttacks | Array of [BruteAttack](/document/api/296/19867#BruteAttack) | List of brute force attack events. |
+| BruteAttacks | Array of [BruteAttack](https://cloud.tencent.com/document/api/296/19867#BruteAttack) | List of brute force attack events. |
 | RequestId | String | The unique ID of a request, which is required for each troubleshooting case. |
 
 ## 4. Example
@@ -92,11 +92,11 @@ Cloud API 3.0 comes with the software development kit (SDK) that supports multip
 
 ### Command line tools
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/296/19830#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/296/19830#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

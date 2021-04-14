@@ -8,28 +8,28 @@
 
 ## 2. 输入参数
 
-以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见 [公共请求参数](/document/api/589/33974)。
+以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见 [公共请求参数](https://cloud.tencent.com/document/api/589/33974)。
 
 | 参数名称 | 必选 | 类型 | 描述 |
 |---------|---------|---------|---------|
 | Action | 是 | String | 公共参数，本接口取值：CreateInstance |
 | Version | 是 | String | 公共参数，本接口取值：2019-01-03 |
-| Region | 是 | String | 公共参数，详见产品支持的 [地域列表](/document/api/589/33974#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。 |
+| Region | 是 | String | 公共参数，详见产品支持的 [地域列表](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/589/33974#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。 |
 | ProductId | 是 | Integer | 产品ID |
-| VPCSettings | 是 | [VPCSettings](/document/api/589/33981#VPCSettings) | VPC设置参数 |
+| VPCSettings | 是 | [VPCSettings](https://cloud.tencent.com/document/api/589/33981#VPCSettings) | VPC设置参数 |
 | Software.N | 是 | Array of String | 软件列表 |
-| ResourceSpec | 是 | [ResourceSpec](/document/api/589/33981#ResourceSpec) | 资源描述 |
+| ResourceSpec | 是 | [ResourceSpec](https://cloud.tencent.com/document/api/589/33981#ResourceSpec) | 资源描述 |
 | SupportHA | 是 | Integer | 支持HA |
 | InstanceName | 是 | String | 实例名称 |
 | PayMode | 是 | Integer | 计费类型 |
-| Placement | 是 | [Placement](/document/api/589/33981#Placement) | 集群位置信息 |
+| Placement | 是 | [Placement](https://cloud.tencent.com/document/api/589/33981#Placement) | 集群位置信息 |
 | TimeSpan | 是 | Integer | 时间长度 |
 | TimeUnit | 是 | String | 时间单位 |
-| LoginSettings | 是 | [LoginSettings](/document/api/589/33981#LoginSettings) | 登录配置 |
+| LoginSettings | 是 | [LoginSettings](https://cloud.tencent.com/document/api/589/33981#LoginSettings) | 登录配置 |
 | ClientToken | 是 | String | 客户端Token |
-| COSSettings | 否 | [COSSettings](/document/api/589/33981#COSSettings) | COS设置参数 |
+| COSSettings | 否 | [COSSettings](https://cloud.tencent.com/document/api/589/33981#COSSettings) | COS设置参数 |
 | SgId | 否 | String | 安全组ID |
-| PreExecutedFileSettings | 否 | [PreExecuteFileSettings](/document/api/589/33981#PreExecuteFileSettings) | 预执行脚本设置 |
+| PreExecutedFileSettings | 否 | [PreExecuteFileSettings](https://cloud.tencent.com/document/api/589/33981#PreExecuteFileSettings) | 预执行脚本设置 |
 | AutoRenew | 否 | Integer | 自动续费 |
 | NeedMasterWan | 否 | String | 是否需要外网Ip。支持填NEED_MASTER_WAN，不支持使用NOT_NEED_MASTER_WAN，默认使用NEED_MASTER_WAN |
 
@@ -37,7 +37,7 @@
 
 | 参数名称 | 类型 | 描述 |
 |---------|---------|---------|
-| Result | [CreateInstanceResult](/document/api/589/33981#CreateInstanceResult) | 创建实例结果信息|
+| Result | [CreateInstanceResult](https://cloud.tencent.com/document/api/589/33981#CreateInstanceResult) | 创建实例结果信息|
 | RequestId | String | 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。|
 
 ## 4. 示例
@@ -126,11 +126,11 @@ https://emr.tencentcloudapi.com/?Action=CreateInstance
 
 ### 命令行工具
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. 错误码
 
-以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](/document/api/589/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
+以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](https://cloud.tencent.com/document/api/589/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
 
 | 错误码 | 描述 |
 |---------|---------|

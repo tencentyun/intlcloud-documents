@@ -15,15 +15,15 @@ Note: This API supports financial regions. As financial regions and non-financia
 
 ## 2. Input Parameters
 
-The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/377/20426).
+The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/377/20426).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: DescribeAutoScalingGroups |
 | Version | Yes | String | Common parameter. The value used for this API: 2018-04-19 |
-| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | AutoScalingGroupIds.N | No | Array of String | Query by one or more auto scaling group IDs in the format of `asg-nkdwoui0`. The maximum quantity per request is 100. This parameter does not support specifying both `AutoScalingGroupIds` and `Filters` at the same time. |
-| Filters.N | No | Array of [Filter](/document/api/377/20453#Filter) | Filter. <br/><li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID. </li><li> auto-scaling-group-name - String - Required: No - (Filter) Filter by auto scaling group name. </li><li> launch-configuration-id - String - Required: No - (Filter) Filter by launch configuration ID. </li><li> tag-key - String - Required: No - (Filter) Filter by tag key. </li><li> tag-value - String - Required: No - (Filter) Filter by tag value. </li><li> tag:tag-key - String - Required: No - (Filter) Filter by tag key-value pair. tag-key should be replaced with a specific tag key. For usage, see sample 2. </li><br/>The maximum number of `Filters` per request is 10, while that of `Filter.Values` is 5. This parameter does not support specifying both `AutoScalingGroupIds` and `Filters` at the same time. |
+| Filters.N | No | Array of [Filter](https://cloud.tencent.com/document/api/377/20453#Filter) | Filter. <br/><li> auto-scaling-group-id - String - Required: No - (Filter) Filter by auto scaling group ID. </li><li> auto-scaling-group-name - String - Required: No - (Filter) Filter by auto scaling group name. </li><li> launch-configuration-id - String - Required: No - (Filter) Filter by launch configuration ID. </li><li> tag-key - String - Required: No - (Filter) Filter by tag key. </li><li> tag-value - String - Required: No - (Filter) Filter by tag value. </li><li> tag:tag-key - String - Required: No - (Filter) Filter by tag key-value pair. tag-key should be replaced with a specific tag key. For usage, see sample 2. </li><br/>The maximum number of `Filters` per request is 10, while that of `Filter.Values` is 5. This parameter does not support specifying both `AutoScalingGroupIds` and `Filters` at the same time. |
 | Limit | No | Integer | Number of returned results. It defaults to 20. The maximum is 100. | For more information on `Limit`, see relevant section in the API [Overview](https://cloud.tencent.com/document/api/213/15688). |
 | Offset | No | Integer | Offset. Default value: 0. For more information on `Offset`, see relevant section in the API [Overview](https://cloud.tencent.com/document/api/213/15688). |
 
@@ -31,7 +31,7 @@ The list below contains only the API request parameters and certain common param
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
-| AutoScalingGroupSet | Array of [AutoScalingGroup](/document/api/377/20453#AutoScalingGroup) | List of auto scaling group details |
+| AutoScalingGroupSet | Array of [AutoScalingGroup](https://cloud.tencent.com/document/api/377/20453#AutoScalingGroup) | List of auto scaling group details |
 | TotalCount | Integer | Number of auto scaling groups that meet the condition |
 | RequestId | String | Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
@@ -198,11 +198,11 @@ TencentCloud API 3.0 comes with SDKs that support multiple programming languages
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

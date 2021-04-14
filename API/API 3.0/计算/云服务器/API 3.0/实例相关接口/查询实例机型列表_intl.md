@@ -7,13 +7,13 @@ This API (DescribeInstanceTypeConfigs) is used to query the instance model confi
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/213/15692).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/213/15692).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. Value​used in this API: DescribeInstanceTypeConfigs |
 | Version | Yes | String | Common parameter. Value​used in this API: 2017-03-12 |
-| Filters.N | No | Array of [Filter](/document/api/213/15753#Filter) | Filter criteria.
+| Filters.N | No | Array of [Filter](https://cloud.tencent.com/document/api/213/15753#Filter) | Filter criteria.
  zone - String - Required: No - (Filter criteria) Filter by [availability zone](https://cloud.tencent.com/document/api/213/9452#zone).
  instance-family - String - Required: No - (Filter criteria) Filter by instance model series, such as: `S1`, `I1`, `M1`.
 
@@ -25,7 +25,7 @@ The maximum number of `Filters ' of each request is 10, and the maximum number o
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
-| InstanceTypeConfigSet | Array of [InstanceTypeConfig](/document/api/213/15753#InstanceTypeConfig) | List of instance model configuration. |
+| InstanceTypeConfigSet | Array of [InstanceTypeConfig](https://cloud.tencent.com/document/api/213/15753#InstanceTypeConfig) | List of instance model configuration. |
 | RequestId | String | The unique request ID, which is returned for each request. When locating the problem, the RequestId of the request needs to be provided. |
 
 ## 4. Error Codes
@@ -36,7 +36,7 @@ The maximum number of `Filters ' of each request is 10, and the maximum number o
 |---------|---------|
 | InternalServerError | Internal operation error. |
 | InvalidFilter | Invalid filter. |
-| InvalidFilterValue.LimitExceeded | The number of values of parameter [`Filter`](/document/api/213/9451#filter) exceeds the limit. |
+| InvalidFilterValue.LimitExceeded | The number of values of parameter [`Filter`](https://cloud.tencent.com/document/api/213/9451#filter) exceeds the limit. |
 | InvalidParameterValue | Invalid parameter value. The format of the parameter value is incorrect or the parameter value is not supported. |
 | InvalidZone.MismatchRegion | The specified `zone` does not exist. |
 

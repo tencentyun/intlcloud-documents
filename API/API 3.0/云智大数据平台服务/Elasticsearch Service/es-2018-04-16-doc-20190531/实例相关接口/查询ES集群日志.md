@@ -12,13 +12,13 @@
 
 ## 2. 输入参数
 
-以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见 [公共请求参数](/document/api/845/30623)。
+以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见 [公共请求参数](https://cloud.tencent.com/document/api/845/30623)。
 
 | 参数名称 | 必选 | 类型 | 描述 |
 |---------|---------|---------|---------|
 | Action | 是 | String | 公共参数，本接口取值：DescribeInstanceLogs |
 | Version | 是 | String | 公共参数，本接口取值：2018-04-16 |
-| Region | 是 | String | 公共参数，详见产品支持的 [地域列表](/document/api/845/30623#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。 |
+| Region | 是 | String | 公共参数，详见产品支持的 [地域列表](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/845/30623#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)。 |
 | InstanceId | 是 | String | 集群实例ID |
 | LogType | 否 | Integer | 日志类型，默认值为1<br/><li>1, 主日志</li><li>2, 搜索慢日志</li><li>3, 索引慢日志</li><li>4, GC日志</li> |
 | SearchKey | 否 | String | 搜索词，支持LUCENE语法，如 level:WARN、ip:1.1.1.1、message:test-index等 |
@@ -33,7 +33,7 @@
 | 参数名称 | 类型 | 描述 |
 |---------|---------|---------|
 | TotalCount | Integer | 返回的日志条数|
-| InstanceLogList | Array of [InstanceLog](/document/api/845/30634#InstanceLog) | 日志详细信息列表|
+| InstanceLogList | Array of [InstanceLog](https://cloud.tencent.com/document/api/845/30634#InstanceLog) | 日志详细信息列表|
 | RequestId | String | 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。|
 
 ## 4. 示例
@@ -97,11 +97,11 @@ https://es.tencentcloudapi.com/?Action=DescribeInstanceLogs
 
 ### 命令行工具
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. 错误码
 
-以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](/document/api/845/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
+以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](https://cloud.tencent.com/document/api/845/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
 
 | 错误码 | 描述 |
 |---------|---------|

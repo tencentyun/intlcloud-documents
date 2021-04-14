@@ -4,14 +4,14 @@ Welcome to the Cloud Virtual Machine.
 
 The Cloud Virtual Machine (CVM), which runs at the Tencent IDC, provides auto scaling computing services and can be used to build and host software systems based on your business needs.
 
-The CVM solution delivers a flexible set of computing, storage and network resources. You can perform such operations as creating/terminating/restarting CVMs and changing bandwidth via APIs described in this document. For more information, please see [API Overview](/document/api/213/15689).
+The CVM solution delivers a flexible set of computing, storage and network resources. You can perform such operations as creating/terminating/restarting CVMs and changing bandwidth via APIs described in this document. For more information, please see [API Overview](https://cloud.tencent.com/document/api/213/15689).
 
 Before using these APIs, please make sure that you have a thorough understanding of [CVM Overview](/doc/product/213/495).
 
 
 > **Note:**
 > - All CVM APIs under this module have been upgraded to API 3.0. All new CVM-related features are added to the APIs under this module. We **recommend that new users use the upgraded API 3.0.**
-> - The features of old APIs remain available. For more information, please see [CVM API Overview (old)](/document/api/213/568).
+> - The features of old APIs remain available. For more information, please see [CVM API Overview (old)](https://cloud.tencent.com/document/api/213/568).
 
 
 ## Glossary
@@ -44,13 +44,13 @@ The common terms involved in this document are as follows:
 
 ## Getting Started with API
 The following introduces how to use CVM APIs in some typical scenarios:
-1. Create an postpaid instance using the API [Create Instances](/document/api/213/15730) and providing information like availability zone ID, image ID, model and other parameters.
+1. Create an postpaid instance using the API [Create Instances](https://cloud.tencent.com/document/api/213/15730) and providing information like availability zone ID, image ID, model and other parameters.
 
-2. Upgrade the configuration of an instance using the API [Adjust Instance Configuration](/document/api/213/15744). You can change CPU and memory by adjusting instance models.
+2. Upgrade the configuration of an instance using the API [Adjust Instance Configuration](https://cloud.tencent.com/document/api/213/15744). You can change CPU and memory by adjusting instance models.
 
-3. Shut down an instance using the API [Shut Down Instances](/document/api/213/15743).
+3. Shut down an instance using the API [Shut Down Instances](https://cloud.tencent.com/document/api/213/15743).
 
-4. If you do not want to use an instance any more, you can terminate it using the API [Return Instances](/document/api/213/15723). No fee will apply once the instance is returned.
+4. If you do not want to use an instance any more, you can terminate it using the API [Return Instances](https://cloud.tencent.com/document/api/213/15723). No fee will apply once the instance is returned.
 
 ## Use Limits
 

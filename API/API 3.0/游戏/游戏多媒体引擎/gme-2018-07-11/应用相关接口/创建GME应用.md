@@ -8,7 +8,7 @@
 
 ## 2. 输入参数
 
-以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见 [公共请求参数](/document/api/607/35367)。
+以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见 [公共请求参数](https://cloud.tencent.com/document/api/607/35367)。
 
 | 参数名称 | 必选 | 类型 | 描述 |
 |---------|---------|---------|---------|
@@ -19,10 +19,10 @@
 | ProjectId | 否 | Integer | 腾讯云项目id，默认为0，表示默认项目 |
 | EngineList.N | 否 | Array of String | 需要支持的引擎列表，取值android, ios, uinty, cocos, unreal, windows。默认全选。 |
 | RegionList.N | 否 | Array of String | 服务区域列表, 默认为空数组. 取值: mainland(美), sa(南美), eu(欧洲), oc(澳洲), me(中东)。默认全选 |
-| RealtimeSpeechConf | 否 | [RealtimeSpeechConf](/document/api/607/35375#RealtimeSpeechConf) | 实时语音服务配置数据 |
-| VoiceMessageConf | 否 | [VoiceMessageConf](/document/api/607/35375#VoiceMessageConf) | 离线语音服务配置数据 |
-| VoiceFilterConf | 否 | [VoiceFilterConf](/document/api/607/35375#VoiceFilterConf) | 语音过滤服务配置数据 |
-| Tags.N | 否 | Array of [Tag](/document/api/607/35375#Tag) | 需要添加的标签列表 |
+| RealtimeSpeechConf | 否 | [RealtimeSpeechConf](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/607/35375#RealtimeSpeechConf) | 实时语音服务配置数据 |
+| VoiceMessageConf | 否 | [VoiceMessageConf](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/607/35375#VoiceMessageConf) | 离线语音服务配置数据 |
+| VoiceFilterConf | 否 | [VoiceFilterConf](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/607/35375#VoiceFilterConf) | 语音过滤服务配置数据 |
+| Tags.N | 否 | Array of [Tag](https://cloud.tencent.com/document/api/607/35375#Tag) | 需要添加的标签列表 |
 
 ## 3. 输出参数
 
@@ -33,9 +33,9 @@
 | ProjectId | Integer | 项目id，透传输入的ProjectId|
 | SecretKey | String | 应用密钥，GME SDK初始化时使用|
 | CreateTime | Integer | 服务创建时间戳|
-| RealtimeSpeechConf | [RealtimeSpeechConf](/document/api/607/35375#RealtimeSpeechConf) | 实时语音服务配置数据|
-| VoiceMessageConf | [VoiceMessageConf](/document/api/607/35375#VoiceMessageConf) | 语音消息服务配置数据|
-| VoiceFilterConf | [VoiceFilterConf](/document/api/607/35375#VoiceFilterConf) | 语音过滤服务配置数据|
+| RealtimeSpeechConf | [RealtimeSpeechConf](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/607/35375#RealtimeSpeechConf) | 实时语音服务配置数据|
+| VoiceMessageConf | [VoiceMessageConf](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/607/35375#VoiceMessageConf) | 语音消息服务配置数据|
+| VoiceFilterConf | [VoiceFilterConf](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/607/35375#VoiceFilterConf) | 语音过滤服务配置数据|
 
 ## 4. 示例
 
@@ -146,11 +146,11 @@ https://gme.tencentcloudapi.com/?Action=CreateApplication
 
 ### 命令行工具
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. 错误码
 
-以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](/document/api/607/35370#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
+以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](https://cloud.tencent.com/document/api/607/35370#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
 
 | 错误码 | 描述 |
 |---------|---------|

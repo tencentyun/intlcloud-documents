@@ -8,14 +8,14 @@ Default API request frequency limit: 20 times/second.
 
 ## 2. Input Parameters
 
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/583/17238).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](https://cloud.tencent.com/document/api/583/17238).
 
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter; the name of this API: ListFunctions |
 | Version | Yes | String | Common parameter; the version of this API: 2018-04-16 |
-| Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
+| Region | Yes | String | Common parameters; for details, see the [Region List](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
 | Order | No | String | Sorting query results in either ascending or descending order; valid values: ASC and DESC |
 | Orderby | No | String | Sorting the query results in either ascending or descending according to one or more fields, including AddTime, ModTime, FunctionName |
 | Offset | No | Integer | Data offset; 0 by default |
@@ -26,7 +26,7 @@ The following parameters are required for requesting this API, including action-
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| Functions | Array of [Function](/document/api/583/17244#Function) | Function list |
+| Functions | Array of [Function](https://cloud.tencent.com/document/api/583/17244#Function) | Function list |
 | TotalCount | Integer | Total number of query results |
 | RequestId | String | The ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
@@ -86,11 +86,11 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/583/17240#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/583/17240#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

@@ -2,7 +2,7 @@
 
 Domain name for API request: cbs.tencentcloudapi.com.
 
-* Only the project ID of elastic cloud disk can be modified. The project ID of non-elastic cloud disk is changed subjected to its associated CVM instance. You can query whether the cloud disk is an elastic cloud disk in the `Portable` field returned by API [DescribeDisks](/document/product/362/16315).
+* Only the project ID of elastic cloud disk can be modified. The project ID of non-elastic cloud disk is changed subjected to its associated CVM instance. You can query whether the cloud disk is an elastic cloud disk in the `Portable` field returned by API [DescribeDisks](https://intl.cloud.tencent.com/document/product/362/16315).
 * Cloud disk name is a user-customized alias of a cloud disk for easier management. Tencent Cloud does not use this name for ticket submission or cloud disk management.
 * Batch operations are supported. If multiple cloud disk IDs are specified, all the specified cloud disks will be changed to the same attribute. If there is a cloud disk that does not allow this operation, the operation is not performed and a specific error code is returned.
 
@@ -14,15 +14,15 @@ Note: This API supports finance AZs. As finance AZs and non-finance AZs are isol
 
 ## 2. Input Parameters
 
-The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/362/15637).
+The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/362/15637).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. Value​used in this API: ModifyDiskAttributes |
 | Version | Yes | String | Common parameter. The value used for this API: 2017-03-12 |
-| Region | Yes | String | Common parameter. For more information, see [List of Regions](/document/api/362/15637#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameter. For more information, see [List of Regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15637#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | DiskIds.N | Yes | Array of String | ID(s) of one or more cloud disks to be operated. If multiple cloud disk IDs are specified, all the specified cloud disks can only have the same attribute. |
-| ProjectId | No | Integer | The new project ID of the cloud disk. Only the project ID of elastic cloud disk can be modified. The available projects and their IDs can be queried via the API [DescribeProject](/document/api/378/4400). |
+| ProjectId | No | Integer | The new project ID of the cloud disk. Only the project ID of elastic cloud disk can be modified. The available projects and their IDs can be queried via the API [DescribeProject](https://cloud.tencent.com/document/api/378/4400). |
 | DiskName | No | String | The new cloud disk name. |
 | Portable | No | Boolean | Whether it is an elastic cloud disk. FALSE: non-elastic cloud disk; TRUE: elastic cloud disk. You can only change a non-elastic cloud disk to an elastic cloud disks, but not vice versa. |
 | DeleteWithInstance | No | Boolean | Whether to release the mounted cloud disk when the associated CVM instance is terminated. `TRUE`: release the cloud disk upon instance termination. `FALSE`: do not release the cloud disk upon instance termination. This is only supported for paly-as-you-go data cloud disks. |
@@ -102,11 +102,11 @@ TencentCloud API 3.0 comes with SDKs that support multiple programming languages
 
 ### Command line tools
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/362/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/362/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

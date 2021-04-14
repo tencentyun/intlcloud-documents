@@ -6,14 +6,14 @@ This API (InquiryPriceRenewInstances) is used to inquire the price of prepaid in
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/213/15692).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/213/15692).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. Value​used in this API: InquiryPriceRenewInstances |
 | Version | Yes | String | Common parameter. Value​used in this API: 2017-03-12 |
 | InstanceIds.N | Yes | Array of String | ID(s) of one or more instance to be operated, which can be obtained from `InstanceId` in the returned values of API [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728). The maximum number of instances for batch request is 100 each time. |
-| InstanceChargePrepaid | Yes | [InstanceChargePrepaid](/document/api/213/15753#InstanceChargePrepaid) | Prepaid mode, which is the relevant parameter setting for prepaid mode. This parameter can specify the renewal period, whether to set automatic renewal and other attributes of the instance purchased on a prepaid basis. |
+| InstanceChargePrepaid | Yes | [InstanceChargePrepaid](https://cloud.tencent.com/document/api/213/15753#InstanceChargePrepaid) | Prepaid mode, which is the relevant parameter setting for prepaid mode. This parameter can specify the renewal period, whether to set automatic renewal and other attributes of the instance purchased on a prepaid basis. |
 | DryRun | No | Boolean | Dry run. |
 
 ## 3. Output Parameters
@@ -22,7 +22,7 @@ The following request parameter list only provides API request parameters and so
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
-| Price | [Price](/document/api/213/15753#Price) | This parameter indicates the price of the corresponding instance configuration. |
+| Price | [Price](https://cloud.tencent.com/document/api/213/15753#Price) | This parameter indicates the price of the corresponding instance configuration. |
 | RequestId | String | The unique request ID, which is returned for each request. When locating the problem, the RequestId of the request needs to be provided. |
 
 ## 4. Error Codes

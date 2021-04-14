@@ -6,7 +6,7 @@ APIリクエストドメイン名： cdb.tencentcloudapi.com 。
 
 ## 2. 入力パラメータ
 
-次のリクエストパラメータリストには、APIリクエストパラメータと一部の共通パラメータのみがリストされています。完全な共通パラメータのリストについては、[共通リクエストパラメータ](/document/api/236/15833)を参照してください。
+次のリクエストパラメータリストには、APIリクエストパラメータと一部の共通パラメータのみがリストされています。完全な共通パラメータのリストについては、[共通リクエストパラメータ](https://cloud.tencent.com/document/api/236/15833)を参照してください。
 
 | パラメータ名 | 必須項目 | タイプ | 説明 |
 |---------|---------|---------|---------|
@@ -22,7 +22,7 @@ APIリクエストドメイン名： cdb.tencentcloudapi.com 。
 | パラメータ名 | タイプ | 説明 |
 |---------|---------|---------|
 | TotalCount | Integer | 照合条件を満たすSQLファイル総数。|
-| Items | Array of [SqlFileInfo](/document/api/236/15878#SqlFileInfo) | 返されたSQLファイルリスト。|
+| Items | Array of [SqlFileInfo](https://cloud.tencent.com/document/api/236/15878#SqlFileInfo) | 返されたSQLファイルリスト。|
 | RequestId | String | 唯一のリクエストID、リクエストごとに返します。問題を特定するときに、このリクエストのRequestIdが必要です。|
 
 ## 4. 例
@@ -84,11 +84,11 @@ https://cdb.tencentcloudapi.com/?Action=DescribeUploadedFiles
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. エラーコード
 
-以下に、APIビジネスロジックに関連するエラーコードのみをリストします。その他のエラーコードについては、[共通エラーコード](/document/api/236/15835#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)を参照してください。
+以下に、APIビジネスロジックに関連するエラーコードのみをリストします。その他のエラーコードについては、[共通エラーコード](https://cloud.tencent.com/document/api/236/15835#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)を参照してください。
 
 | エラーコード | 説明 |
 |---------|---------|

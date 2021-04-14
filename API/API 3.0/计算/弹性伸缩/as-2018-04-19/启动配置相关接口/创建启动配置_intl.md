@@ -6,7 +6,7 @@ This API (CreateLaunchConfiguration) is used to create a launch configuration.
 
 * A few fields of a launch configuration can be modified through `ModifyLaunchConfigurationAttributes`. To use a new launch configuration, it is recommended to create it from scratch.
 
-* You can create up to 20 launch configurations for each project. For more information, see [Usage Limits](https://cloud.tencent.com/document/product/377/3120).
+* You can create up to 20 launch configurations for each project. For more information, see [Usage Limits](https://intl.cloud.tencent.com/document/product/377/3120).
 
 
 Default API request rate limit: 20 requests/sec.
@@ -17,29 +17,29 @@ Note: This API supports financial regions. As financial regions and non-financia
 
 ## 2. Input Parameters
 
-The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/377/20426).
+The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/377/20426).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: CreateLaunchConfiguration |
 | Version | Yes | String | Common parameter. The value used for this API: 2018-04-19 |
-| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | LaunchConfigurationName | Yes | String | The display name of the launch configuration. It can only contain letters, numbers, underscores, hyphens ("-") and decimal points, with a length of not more than 60 characters. |
-| ImageId | Yes | String | Valid [image](https://cloud.tencent.com/document/product/213/4940) ID in the format of `img-8toqc6s3`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the image IDs; for `marketplace images`, query the image IDs through [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>This value can be obtained from the `ImageId` field in the return value of the [DescribeImages API](https://cloud.tencent.com/document/api/213/15715).</li> |
+| ImageId | Yes | String | Valid [image](https://intl.cloud.tencent.com/document/product/213/4940) ID in the format of `img-8toqc6s3`. There are four types of images: <br/><li>Public images </li><li>Custom images </li><li>Shared images </li><li>Marketplace images </li><br/>You can obtain the available image IDs in the following ways: <br/><li>For `public images`, `custom images`, and `shared images`, log in to the [console](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE) to query the image IDs; for `marketplace images`, query the image IDs through [Cloud Marketplace](https://market.cloud.tencent.com/list). </li><li>This value can be obtained from the `ImageId` field in the return value of the [DescribeImages API](https://cloud.tencent.com/document/api/213/15715).</li> |
 | ProjectId | No | Integer | ID of the project to which the instance belongs. This parameter can be obtained from the `projectId` field in the returned values of [DescribeProject](https://cloud.tencent.com/document/api/378/4400). If this is left empty, default project is used. |
-| InstanceType | No | String | Instance model. Different instance models have different resource specifications. The specific value can be obtained by calling the [DescribeInstanceTypeConfigs API](https://cloud.tencent.com/document/api/213/15749) to get the latest specification table or referring to the descriptions in [Instance Types](https://cloud.tencent.com/document/product/213/11518). <br/>`InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered. |
-| SystemDisk | No | [SystemDisk](/document/api/377/20453#SystemDisk) | Configuration information of instance’s system disk. If the parameter is not specified, the default value is assigned to it. |
-| DataDisks.N | No | Array of [DataDisk](/document/api/377/20453#DataDisk) | Information of the instance's data disk configuration. If this parameter is not specified, no data disk is purchased by default. Up to 11 data disks can be supported. |
-| InternetAccessible | No | [InternetAccessible](/document/api/377/20453#InternetAccessible) | Configuration information of public network bandwidth. If this parameter is not specified, the default public network bandwidth is 0 Mbps. |
-| LoginSettings | No | [LoginSettings](/document/api/377/20453#LoginSettings) | Login settings of the instance. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the internal message. |
+| InstanceType | No | String | Instance model. Different instance models have different resource specifications. The specific value can be obtained by calling the [DescribeInstanceTypeConfigs API](https://cloud.tencent.com/document/api/213/15749) to get the latest specification table or referring to the descriptions in [Instance Types](https://intl.cloud.tencent.com/document/product/213/11518). <br/>`InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered. |
+| SystemDisk | No | [SystemDisk](https://cloud.tencent.com/document/api/377/20453#SystemDisk) | Configuration information of instance’s system disk. If the parameter is not specified, the default value is assigned to it. |
+| DataDisks.N | No | Array of [DataDisk](https://cloud.tencent.com/document/api/377/20453#DataDisk) | Information of the instance's data disk configuration. If this parameter is not specified, no data disk is purchased by default. Up to 11 data disks can be supported. |
+| InternetAccessible | No | [InternetAccessible](https://cloud.tencent.com/document/api/377/20453#InternetAccessible) | Configuration information of public network bandwidth. If this parameter is not specified, the default public network bandwidth is 0 Mbps. |
+| LoginSettings | No | [LoginSettings](https://cloud.tencent.com/document/api/377/20453#LoginSettings) | Login settings of the instance. This parameter is used to set the login password and key for the instance, or to keep the original login settings for the image. By default, a random password is generated and sent to the user via the internal message. |
 | SecurityGroupIds.N | No | Array of String | The security group to which the instance belongs. This parameter can be obtained by calling the `SecurityGroupId` field in the returned value of [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808). If this parameter is not specified, the security group is not bound by default. |
-| EnhancedService | No | [EnhancedService](/document/api/377/20453#EnhancedService) | Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitor and other services. If this parameter is not specified, the Cloud Monitoring and Cloud Security are enabled by default. |
+| EnhancedService | No | [EnhancedService](https://cloud.tencent.com/document/api/377/20453#EnhancedService) | Enhanced service. This parameter is used to specify whether to enable Cloud Security, Cloud Monitor and other services. If this parameter is not specified, the Cloud Monitoring and Cloud Security are enabled by default. |
 | UserData | No | String | Base64 encoded custom data, which is limited to 16 KB. |
 | InstanceChargeType | No | String | Instance billing mode. CVM instances are POSTPAID_BY_HOUR by default. <br/><br><li>POSTPAID_BY_HOUR: Pay-as-you-go on an hourly basis <br/><br><li>SPOTPAID: Bidding |
-| InstanceMarketOptions | No | [InstanceMarketOptionsRequest](/document/api/377/20453#InstanceMarketOptionsRequest) | Market-related options of the instance, such as the parameters related to spot instances. If the billing mode of instance is specified as bidding, this parameter must be passed in. |
+| InstanceMarketOptions | No | [InstanceMarketOptionsRequest](https://cloud.tencent.com/document/api/377/20453#InstanceMarketOptionsRequest) | Market-related options of the instance, such as the parameters related to spot instances. If the billing mode of instance is specified as bidding, this parameter must be passed in. |
 | InstanceTypes.N | No | Array of String | List of instance models. Different instance models specify different resource specifications. Up to 5 instance models can be supported. <br/>`InstanceType` and `InstanceTypes` are mutually exclusive, and one and only one of them must be entered.
 | InstanceTypesCheckPolicy | No | String | Instance type verification policy. Value range: ALL, ANY. Default value: ANY. <br/><br><li> ALL: The verification will succeed only if all instance types `InstanceType` are available; otherwise, an error will be reported. <br/><br><li> ANY: The verification will succeed if any instance type `InstanceType` is available; otherwise, an error will be reported. <br/><br/>Common reasons why an instance type is unavailable include stock-out of the instance type or the corresponding cloud disk. <br/>If a model in `InstanceTypes` does not exist or has been deactivated, a verification error will be reported regardless of the value of InstanceTypesCheckPolicy. |
-| InstanceTags.N | No | Array of [InstanceTag](/document/api/377/20453#InstanceTag) | Tag list. This parameter is used to bind up to 10 tags to newly added instances. |
+| InstanceTags.N | No | Array of [InstanceTag](https://cloud.tencent.com/document/api/377/20453#InstanceTag) | Tag list. This parameter is used to bind up to 10 tags to newly added instances. |
 | CamRoleName | No | String | CAM role name, which can be obtained from the `roleName` field in the return value of the DescribeRoleList API. |
 
 ## 3. Output Parameters
@@ -193,11 +193,11 @@ TencentCloud API 3.0 comes with SDKs that support multiple programming languages
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

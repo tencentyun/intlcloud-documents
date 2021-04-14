@@ -15,20 +15,20 @@ Note: This API supports finance AZs. As finance AZs and non-finance AZs are isol
 
 ## 2. Input Parameters
 
-The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/362/15637).
+The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/362/15637).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: DescribeSnapshotOperationLogs |
 | Version | Yes | String | Common parameter. The value used for this API: 2017-03-12 |
-| Region | Yes | String | Common parameter. For more information, see [List of Regions](/document/api/362/15637#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
-| Filters.N | Yes | Array of [Filter](/document/api/362/15669#Filter) | Filter conditions. <br/><li>snapshot-id - Array of String - Required or not: Yes - Filtered according to the snapshot ID. Each request can specify up to 10 snapshot IDs. |
+| Region | Yes | String | Common parameter. For more information, see [List of Regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15637#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Filters.N | Yes | Array of [Filter](https://cloud.tencent.com/document/api/362/15669#Filter) | Filter conditions. <br/><li>snapshot-id - Array of String - Required or not: Yes - Filtered according to the snapshot ID. Each request can specify up to 10 snapshot IDs. |
 
 ## 3. Output Parameters
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
-| SnapshotOperationLogSet | Array of [SnapshotOperationLog](/document/api/362/15669#SnapshotOperationLog) | The snapshot operation log list. |
+| SnapshotOperationLogSet | Array of [SnapshotOperationLog](https://cloud.tencent.com/document/api/362/15669#SnapshotOperationLog) | The snapshot operation log list. |
 | RequestId | String | Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues.  |
 
 ## 4. Samples
@@ -102,11 +102,11 @@ TencentCloud API 3.0 comes with SDKs that support multiple programming languages
 
 ### Command line tools
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/362/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/362/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

@@ -15,15 +15,15 @@ API 요청 도메인 이름: as.tencentcloudapi.com.
 
 ## 2. 입력 매개변수
 
-다음 요청 매개변수 리스트에는 API 요청 매개변수와 일부 공통 매개변수만 나열합니다. 완전한 공통 매개변수 리스트는 [공통 매개변수](/document/api/377/20426)를 참조하십시오.
+다음 요청 매개변수 리스트에는 API 요청 매개변수와 일부 공통 매개변수만 나열합니다. 완전한 공통 매개변수 리스트는 [공통 매개변수](https://cloud.tencent.com/document/api/377/20426)를 참조하십시오.
 
 | 매개변수 이름 | 필수 여부 | 유형 | 설명 |
 |---------|---------|---------|---------|
 | Action | 예 | String | 공통 매개변수, 본 API 값: ModifyLaunchConfigurationAttributes |
 | Version | 예 | String | 공통 매개변수, 본 API 값: 2018-04-19 |
-| Region | 예 | String | 공통 매개변수, 세부 정보는 제품이 지원하는 [지역 리스트](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)를 참조하십시오 |
+| Region | 예 | String | 공통 매개변수, 세부 정보는 제품이 지원하는 [지역 리스트](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)를 참조하십시오 |
 | LaunchConfigurationId | 예 | String | 시동 구성 ID |
-| ImageId | 아니요 | String | 유효한 [이미지](https://cloud.tencent.com/document/product/213/4940) ID 지정, 형식은 예를 들어 `img-8toqc6s3`과 같습니다. 이미지 유형은 4가지로 구분: <br/><li>공통 이미지</li><li>사용자 지정 이미지</li><li>공유 이미지</li><li>서비스 마켓 이미지</li><br/>다음의 방식을 통해 사용 가능한 이미지 ID를 획득할 수 있습니다. <br/><li>`공통 이미지 `, `사용자 지정 이미지`, `공유 이미지`의 이미지 ID는 [콘솔](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)에 로그인하여 조회할 수 있습니다. `서비스 이미지 마켓`의 이미지 ID는 [클라우드 마켓](https://market.cloud.tencent.com/list)을 통해 조회합니다. </li><li>API [DescribeImages](https://cloud.tencent.com/document/api/213/15715)를 호출해 반환 정보 중 `ImageId` 필드를 불러옵니다.</li> |
+| ImageId | 아니요 | String | 유효한 [이미지](https://intl.cloud.tencent.com/document/product/213/4940) ID 지정, 형식은 예를 들어 `img-8toqc6s3`과 같습니다. 이미지 유형은 4가지로 구분: <br/><li>공통 이미지</li><li>사용자 지정 이미지</li><li>공유 이미지</li><li>서비스 마켓 이미지</li><br/>다음의 방식을 통해 사용 가능한 이미지 ID를 획득할 수 있습니다. <br/><li>`공통 이미지 `, `사용자 지정 이미지`, `공유 이미지`의 이미지 ID는 [콘솔](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)에 로그인하여 조회할 수 있습니다. `서비스 이미지 마켓`의 이미지 ID는 [클라우드 마켓](https://market.cloud.tencent.com/list)을 통해 조회합니다. </li><li>API [DescribeImages](https://cloud.tencent.com/document/api/213/15715)를 호출해 반환 정보 중 `ImageId` 필드를 불러옵니다.</li> |
 | InstanceTypes.N | 아니요 | Array of String | 인스턴스 유형 리스트, 서로 다른 인스턴스 모델은 서로 다른 리소스 사양을 지정하고 최대 5가지의 인스턴스 모델을 지원합니다. <br/>시동 구성, InstanceType을 통해 단일한 인스턴스 유형을 나타내고 InstanceTypes를 통해 다중 인스턴스 유형을 표시합니다. 지정된 InstanceTypes를 성공적으로 시동 구성한 후 기존의 InstanceType은 자동으로 무효화됩니다. |
 | InstanceTypesCheckPolicy | 아니요 | String | 인스턴스 유형 검사 전략, InstanceTypes를 수정 시 사용되며 가능한 값은 ALL과 ANY를 포함하고 기본값은 ANY입니다.<br/><br><li> ALL, 모든 인스턴스 유형(InstanceType)이 사용 가능하면 검사를 통과하고 그렇지 않은 경우 검사 오류를 보고합니다.<br/><br><li> ANY, 임의 하나의 인스턴스 유형(InstanceType)이 사용 가능하면 검사를 통과하고 그렇지 않은 경우 검사 오류를 보고합니다.<br/><br/>인스턴스 유형을 사용할 수 없는 일반적인 원인은 해당 인스턴스 유형 매진, 대응하는 클라우드 디스크 매진 등이 포함됩니다.<br/>InstanceTypes 중 하나의 모델이 존재하지 않거나 오프라인이 된 경우, InstanceTypesCheckPolicy에서 어떤 값을 선택해도 검사 오류를 보고합니다. |
 | LaunchConfigurationName | 아니요 | String | 시동 구성 표시 이름입니다. 이름은 중문, 영문, 숫자, 밑줄, 구분 기호 "-", 소수점만을 지원하고 60바이트를 초과할 수 없습니다. |
@@ -103,11 +103,11 @@ https://as.tencentcloudapi.com/?Action=ModifyLaunchConfigurationAttributes
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. 오류 코드
 
-다음은 API 비즈니스 로직과 관련된 오류 코드만 나열하며 다른 오류 코드는 [공통 오류 코드](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)를 참조하십시오.
+다음은 API 비즈니스 로직과 관련된 오류 코드만 나열하며 다른 오류 코드는 [공통 오류 코드](https://cloud.tencent.com/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)를 참조하십시오.
 
 | 오류 코드 | 설명 |
 |---------|---------|

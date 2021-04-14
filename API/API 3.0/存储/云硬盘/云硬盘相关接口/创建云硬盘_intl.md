@@ -6,7 +6,7 @@ This API (CreateDisks) is used to create one or more cloud disks.
 
 * For prepaid cloud disks, the required amount for the purchased cloud disk will be pre-deducted. Make sure your account balance is sufficient before calling this API.
 * You can specify a data disk snapshot while creating a cloud disk. In this case, the snapshot data will be duplicate to the newly created cloud disk.
-* This API is an asynchronous API. A cloud disk ID list will be returned when the creation request is issued successfully, but the cloud disk is not created immediately. You can call the API [DescribeDisks](/document/product/362/16315) to query the cloud disk by DiskId. If the cloud disk can be found and its status is 'UNATTACHED' or 'ATTACHED', the cloud disk is created successfully.
+* This API is an asynchronous API. A cloud disk ID list will be returned when the creation request is issued successfully, but the cloud disk is not created immediately. You can call the API [DescribeDisks](https://intl.cloud.tencent.com/document/product/362/16315) to query the cloud disk by DiskId. If the cloud disk can be found and its status is 'UNATTACHED' or 'ATTACHED', the cloud disk is created successfully.
 
 Default request rate limit: 20/sec.
 
@@ -16,24 +16,24 @@ Note: This API supports finance AZs. As finance AZs and non-finance AZs are isol
 
 ## 2. Input Parameters
 
-The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/362/15637).
+The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/362/15637).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: CreateDisks |
 | Version | Yes | String | Common parameter. The value used for this API: 2017-03-12 |
-| Region | Yes | String | Common parameter. For more information, see [List of Regions](/document/api/362/15637#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameter. For more information, see [List of Regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/362/15637#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | DiskType | Yes | String | Type of disk medium. Value range: <br><li>CLOUD_BASIC: HDD cloud storage<br><li>CLOUD_PREMIUM: Premium cloud storage <br><li>CLOUD_SSD: SSD cloud storage |
-| DiskChargeType | Yes | String | The cloud disk billing method. <br><li>PREPAID: Prepaid, monthly subscription <br><li>POSTPAID_BY_HOUR: Postpaid by hour (pay as you go)<br><li>CDCPAID: Dedicated cluster payment <br>For information on the pricing models, see cloud disk [Pricing Overview](/document/product/362/2413). |
-| Placement | Yes | [Placement](/document/api/362/15669#Placement) | The location of the instance. This parameter is used to specify the availability zone and the project to which the instance belongs. If the project is not specified, the instance is created in the default project. |
+| DiskChargeType | Yes | String | The cloud disk billing method. <br><li>PREPAID: Prepaid, monthly subscription <br><li>POSTPAID_BY_HOUR: Postpaid by hour (pay as you go)<br><li>CDCPAID: Dedicated cluster payment <br>For information on the pricing models, see cloud disk [Pricing Overview](https://intl.cloud.tencent.com/document/product/362/2413). |
+| Placement | Yes | [Placement](https://cloud.tencent.com/document/api/362/15669#Placement) | The location of the instance. This parameter is used to specify the availability zone and the project to which the instance belongs. If the project is not specified, the instance is created in the default project. |
 | DiskName | No | String | The display name of the cloud disk. If it is left empty, the default is "not named". The maximum length is 60 bytes. |
 | DiskCount | No | Integer | The number of cloud disks to create. If it is left empty, the default is 1. For the maximum number of cloud disks that can be created in one request, please see [CBS Use Limits](https://cloud.tencent.com/doc/product/362/5145). |
-| DiskChargePrepaid | No | [DiskChargePrepaid](/document/api/362/15669#DiskChargePrepaid) | Specifies the billing information of monthly subscription cloud disks, including the validity period, auto-renewal status and more. <br>This parameter is required for monthly subscription cloud disks. Ignore this parameter if you want to create pay-as-you-go cloud disks. |
-| DiskSize | No | Integer | Cloud disk size (in GB). <br><li> If `SnapshotId` is specified, `DiskSize` can not be specified at the same time. In this case, the size of the cloud disk is the size of the snapshot. <br><li>To pass `SnapshotId` and `DiskSize` at the same time, the size of the disk must be larger than or equal to the size of the snapshot. <br><li>For information about the size range of cloud disks, see [Product Types](/document/product/362/2353). |
-| SnapshotId | No | String | Snapshot ID. If this parameter is specified, the cloud disk is created based on the snapshot. Please note that the snapshot must be a data disk snapshot. You can query whether the snapshot is a data disk snapshot using the API [DescribeSnapshots](/document/product/362/15647). |
+| DiskChargePrepaid | No | [DiskChargePrepaid](https://cloud.tencent.com/document/api/362/15669#DiskChargePrepaid) | Specifies the billing information of monthly subscription cloud disks, including the validity period, auto-renewal status and more. <br>This parameter is required for monthly subscription cloud disks. Ignore this parameter if you want to create pay-as-you-go cloud disks. |
+| DiskSize | No | Integer | Cloud disk size (in GB). <br><li> If `SnapshotId` is specified, `DiskSize` can not be specified at the same time. In this case, the size of the cloud disk is the size of the snapshot. <br><li>To pass `SnapshotId` and `DiskSize` at the same time, the size of the disk must be larger than or equal to the size of the snapshot. <br><li>For information about the size range of cloud disks, see [Product Types](https://intl.cloud.tencent.com/document/product/362/31636). |
+| SnapshotId | No | String | Snapshot ID. If this parameter is specified, the cloud disk is created based on the snapshot. Please note that the snapshot must be a data disk snapshot. You can query whether the snapshot is a data disk snapshot using the API [DescribeSnapshots](https://intl.cloud.tencent.com/document/product/362/15647). |
 | ClientToken | No | String | A string to ensure the idempotency of the request, which is generated by the client. Each request shall have a unique string with a maximum of 64 ASCII characters. If this parameter is not specified, the idempotency of the request cannot be ensured. |
 | Encrypt | No | String | Indicates whether to encrypt the cloud disk. Its value is always ENCRYPT. |
-| Tags.N | No | Array of [Tag](/document/api/362/15669#Tag) | The tags bound to a cloud disk. |
+| Tags.N | No | Array of [Tag](https://cloud.tencent.com/document/api/362/15669#Tag) | The tags bound to a cloud disk. |
 | Shareable | No | Boolean | Indicates whether the cloud disk is a shared cloud disk.  `True`: shared cloud disk. `False`: not a shared cloud disk. The default value is `False`.  |
 
 ## 3. Output Parameters
@@ -162,11 +162,11 @@ TencentCloud API 3.0 comes with SDKs that support multiple programming languages
 
 ### Command line tools
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/362/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/362/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

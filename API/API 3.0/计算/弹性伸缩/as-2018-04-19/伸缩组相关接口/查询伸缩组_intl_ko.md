@@ -15,15 +15,15 @@ API 요청 도메인 이름: as.tencentcloudapi.com.
 
 ## 2. 입력 매개변수
 
-다음 요청 매개변수 리스트에는 API 요청 매개변수와 일부 공통 매개변수만 나열합니다. 완전한 공통 매개변수 리스트는 [공통 매개변수](/document/api/377/20426)를 참조하십시오.
+다음 요청 매개변수 리스트에는 API 요청 매개변수와 일부 공통 매개변수만 나열합니다. 완전한 공통 매개변수 리스트는 [공통 매개변수](https://cloud.tencent.com/document/api/377/20426)를 참조하십시오.
 
 | 매개변수 이름 | 필수 여부 | 유형 | 설명 |
 |---------|---------|---------|---------|
 | Action | 예| String | 공통 매개변수, 본 API 값: DescribeAutoScalingGroups |
 | Version | 예 | String | 공통 매개변수, 본 API 값: 2018-04-19 |
-| Region | 예 | String | 공통 매개변수, 세부 정보는 제품이 지원하는 [지역 리스트](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)를 참조하십시오 |
+| Region | 예 | String | 공통 매개변수, 세부 정보는 제품이 지원하는 [지역 리스트](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)를 참조하십시오 |
 | AutoScalingGroupIds.N | 아니요 | Array of String | 하나 또는 여러 조정 그룹의 ID에 따라 조회합니다. 조정 그룹 ID 형식은 예를 들어 `asg-nkdwoui0`와 같습니다. 매회 요청의 상한은 100입니다. 매개변수는 `AutoScalingGroups`와 `Filters`의 동시 지정을 지원하지 않습니다. |
-| Filters.N | 아니요 | Array of [Filter](/document/api/377/20453#Filter) | 필터링 조건입니다. <br/><li> auto-scaling-group-id - String - 필수 입력 여부: 아니요 - (필터링 조건)조정 그룹 ID에 따라 필터링합니다.</li><li> auto-scaling-group-name - String - 필수 입력 조건: 아니요 - (필터링 조건)조정 그룹 이름에 따라 필터링합니다.</li><li> launch-configuration-id - String - 필수 입력 여부: 아니요 - (필터링 조건)시동 구성 ID에 따라 필터링합니다.</li><br/>매회 요청한 `Filters`의 상한은 10이고 `Filter.Values`의 상한은 5입니다. 매개변수는 `AutoScalingGroupIds`와 `Filters`의 동시 지정을 지원하지 않습니다. |
+| Filters.N | 아니요 | Array of [Filter](https://cloud.tencent.com/document/api/377/20453#Filter) | 필터링 조건입니다. <br/><li> auto-scaling-group-id - String - 필수 입력 여부: 아니요 - (필터링 조건)조정 그룹 ID에 따라 필터링합니다.</li><li> auto-scaling-group-name - String - 필수 입력 조건: 아니요 - (필터링 조건)조정 그룹 이름에 따라 필터링합니다.</li><li> launch-configuration-id - String - 필수 입력 여부: 아니요 - (필터링 조건)시동 구성 ID에 따라 필터링합니다.</li><br/>매회 요청한 `Filters`의 상한은 10이고 `Filter.Values`의 상한은 5입니다. 매개변수는 `AutoScalingGroupIds`와 `Filters`의 동시 지정을 지원하지 않습니다. |
 | Limit | 아니요 | Integer | 반환 수량, 기본값은 20, 최대값은 100입니다. `Limit`에 대한 더 상세한 설명은 API [소개](https://cloud.tencent.com/document/api/213/15688) 중 관련 섹션을 참조하십시오. |
 | Offset | 아니요 | Integer | 오프셋, 기본값은 0입니다. `Offset`에 대한 더 상세한 설명은 API [소개](https://cloud.tencent.com/document/api/213/15688) 중 관련 섹션을 참조하십시오. |
 
@@ -31,7 +31,7 @@ API 요청 도메인 이름: as.tencentcloudapi.com.
 
 | 매개변수 이름 | 유형 | 설명 |
 |---------|---------|---------|
-| AutoScalingGroupSet | Array of [AutoScalingGroup](/document/api/377/20453#AutoScalingGroup) | 조정 그룹 세부 정보 리스트 |
+| AutoScalingGroupSet | Array of [AutoScalingGroup](https://cloud.tencent.com/document/api/377/20453#AutoScalingGroup) | 조정 그룹 세부 정보 리스트 |
 | TotalCount | Integer | 조건에 부합하는 조정 그룹 수. |
 | RequestId | String | 유일한 요청 ID, 매회 요청 시마다 반환됩니다. 문제를 찾을 경우 해당 요청의 RequestId를 제공해야 합니다. |
 
@@ -123,11 +123,11 @@ https://as.tencentcloudapi.com/?Action=DescribeAutoScalingGroups
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. 오류 코드
 
-다음은 API 비즈니스 로직과 관련된 오류 코드만 나열하며 다른 오류 코드는 [공통 오류 코드](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)를 참조하십시오.
+다음은 API 비즈니스 로직과 관련된 오류 코드만 나열하며 다른 오류 코드는 [공통 오류 코드](https://cloud.tencent.com/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)를 참조하십시오.
 
 | 오류 코드 | 설명 |
 |---------|---------|

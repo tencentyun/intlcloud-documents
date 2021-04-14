@@ -15,15 +15,15 @@ Note: This API supports financial regions. As financial regions and non-financia
 
 ## 2. Input Parameters
 
-The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/377/20426).
+The list below contains only the API request parameters and certain common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/377/20426).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value used for this API: DescribeScheduledActions |
 | Version | Yes | String | Common parameter. The value used for this API: 2018-04-19 |
-| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | ScheduledActionIds.N | No | Array of String | ID(s) of the scheduled action(s) to be queried, such as `asst-am691zxo`. A maximum of 100 instances are allowed for each request. You cannot specify both ScheduledActionIds and Filters. |
-| Filters.N | No | Array of [Filter](/document/api/377/20453#Filter) | Filter condition. <br/><li> scheduled-action-id - String - Required: No - (Filter condition) Filter by scheduled action ID. </li><li> scheduled-action-name - String - Required: No - (Filter condition) Filter by scheduled action name. </li><li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by auto scaling group ID. </li> |
+| Filters.N | No | Array of [Filter](https://cloud.tencent.com/document/api/377/20453#Filter) | Filter condition. <br/><li> scheduled-action-id - String - Required: No - (Filter condition) Filter by scheduled action ID. </li><li> scheduled-action-name - String - Required: No - (Filter condition) Filter by scheduled action name. </li><li> auto-scaling-group-id - String - Required: No - (Filter condition) Filter by auto scaling group ID. </li> |
 | Offset | No | Integer | Offset. Default is 0. For more information on Offset, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
 | Limit | No | Integer | Number of returned results. It defaults to 20. The maximum is 100. For more information on Limit, see the relevant sections in API [Overview](https://cloud.tencent.com/document/api/213/15688). |
 
@@ -32,7 +32,7 @@ The list below contains only the API request parameters and certain common param
 | Parameter Name | Type | Description |
 |---------|---------|---------|
 | TotalCount | Integer | Number of scheduled actions that meet the condition |
-| ScheduledActionSet | Array of [ScheduledAction](/document/api/377/20453#ScheduledAction) | List of scheduled action details |
+| ScheduledActionSet | Array of [ScheduledAction](https://cloud.tencent.com/document/api/377/20453#ScheduledAction) | List of scheduled action details |
 | RequestId | String | Unique ID of the request. Each request returns a unique ID. The RequestId is required to troubleshoot issues. |
 
 ## 4. Samples
@@ -93,11 +93,11 @@ TencentCloud API 3.0 comes with SDKs that support multiple programming languages
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

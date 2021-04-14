@@ -10,7 +10,7 @@ Default API request frequency limit: 100 times/second.
 
 ## 2. Input Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/860/18451).
+The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](https://cloud.tencent.com/document/api/860/18451).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -31,7 +31,7 @@ The following list of request parameters lists only the API request parameters a
 | CompanyId | String | Company ID |
 | ShopId | Integer | Shop ID |
 | TotalCount | Integer | Total number of query results |
-| ZoneTrafficInfoSet | Array of [ZoneTrafficInfo](/document/api/860/18465#ZoneTrafficInfo) | Zone-specific visitor traffic information list |
+| ZoneTrafficInfoSet | Array of [ZoneTrafficInfo](https://cloud.tencent.com/document/api/860/18465#ZoneTrafficInfo) | Zone-specific visitor traffic information list |
 | RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided when troubleshooting. |
 
 ## 4. Examples
@@ -150,11 +150,11 @@ Cloud API 3.0 comes with a set of complementary development toolkits (SDKs) that
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-Only the error codes related to the API are listed below. For other error codes, see [Common Error Codes](/document/api/860/18453#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+Only the error codes related to the API are listed below. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/860/18453#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

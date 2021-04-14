@@ -12,13 +12,13 @@ API 요청 도메인 이름: cdb.tencentcloudapi.com.
 
 ## 2. 입력 매개변수
 
-다음 요청 매개변수 리스트에는 API 요청 매개변수 및 일부 공통 매개변수만 나열되며, 완전한 공통 매개변수 리스트는 [공통 요청 매개변수](/document/api/236/15833)를 참조하십시오.
+다음 요청 매개변수 리스트에는 API 요청 매개변수 및 일부 공통 매개변수만 나열되며, 완전한 공통 매개변수 리스트는 [공통 요청 매개변수](https://cloud.tencent.com/document/api/236/15833)를 참조하십시오.
 
 | 매개변수 이름 | 필수 항목 여부 | 유형 | 설명 |
 |---------|---------|---------|---------|
 | Action | 예 | String | 공통 매개변수, 이 API 값: DescribeDBImportRecords |
 | Version | 예 | String | 공통 매개변수, 이 API 선택 값: 2017-03-20 |
-| Region | 아니요 | String | 공통 매개변수, 자세한 내용은 제품의 지원되는 [지역 리스트](/document/api/236/15833#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)를 참조하십시오. |
+| Region | 아니요 | String | 공통 매개변수, 자세한 내용은 제품의 지원되는 [지역 리스트](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/236/15833#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)를 참조하십시오. |
 | InstanceId | 예 | String | 인스턴스 ID, 형식 예: cdb-c1nl9rpv. TencentDB 콘솔 페이지에 표시된 인스턴스 ID와 동일합니다. |
 | StartTime | 아니요 | String | 시작 시간. 시간 형식 예: 2016-01-01 00:00:01. |
 | EndTime | 아니요 | String | 종료 시간. 시간 형식 예: 2016-01-01 23:59:59. |
@@ -30,7 +30,7 @@ API 요청 도메인 이름: cdb.tencentcloudapi.com.
 | 매개변수 이름 | 유형 | 설명 |
 |---------|---------|---------|
 | TotalCount | Integer | 조회 조건에 부합하는 가져오기 작업 로그 총수. |
-| Items | Array of [ImportRecord](/document/api/236/15878#ImportRecord) | 반환된 가져오기 조작 기록 리스트. |
+| Items | Array of [ImportRecord](https://cloud.tencent.com/document/api/236/15878#ImportRecord) | 반환된 가져오기 조작 기록 리스트. |
 | RequestId | String | 유일한 요청 ID, 매회 요청 시마다 반환됩니다. 문제를 찾을 경우 해당 요청의 RequestId를 제공해야 합니다. |
 
 ## 4. 예시
@@ -142,11 +142,11 @@ https://cdb.tencentcloudapi.com/?Action=DescribeDBImportRecords
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. 오류 코드
 
-다음은 API 비즈니스 로직과 관련된 오류 코드만 나열하며 다른 오류 코드는 [공통 오류 코드](/document/api/236/15835#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)를 참조하십시오.
+다음은 API 비즈니스 로직과 관련된 오류 코드만 나열하며 다른 오류 코드는 [공통 오류 코드](https://cloud.tencent.com/document/api/236/15835#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)를 참조하십시오.
 
 | 오류 코드 | 설명 |
 |---------|---------|

@@ -13,19 +13,19 @@ APIリクエストドメイン名：clb.tencentcloudapi.com。
 
 ## 2. 入力パラメータ
 
-次のリクエストパラメータリストには、APIリクエストパラメータと一部の共通パラメータのみがリストされています。完全な共通パラメータのリストについては、[共通リクエストパラメータ](/document/api/214/30670)を参照してください。
+次のリクエストパラメータリストには、APIリクエストパラメータと一部の共通パラメータのみがリストされています。完全な共通パラメータのリストについては、[共通リクエストパラメータ](https://cloud.tencent.com/document/api/214/30670)を参照してください。
 
 | パラメータ名 | 必須項目 | タイプ | 説明 |
 |---------|---------|---------|---------|
 | Action | はい | String | 共通パラメータ、このAPIの値：CreateListener |
 | Version | はい | String | 共通パラメータ、このAPIの値：2018-03-17 |
-| Region | はい | String | 共通パラメータ、詳細については、製品がサポートする[地域リスト](/document/api/214/30670#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)を参照してください。 |
+| Region | はい | String | 共通パラメータ、詳細については、製品がサポートする[地域リスト](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/214/30670#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)を参照してください。 |
 | LoadBalancerId | はい | String | ロードバランサーインスタンスID |
 | Ports.N | はい | Array of Integer | リスナーを作成するポート番号の配列。各ポートは1つ新しいリスナーに対応します |
 | Protocol | はい | String | リスナーのプロトコル：HTTP &#124; HTTPS &#124; TCP &#124; TCP_SSL|
 | ListenerNames.N | いいえ | Array of String | 作成するリスナー名リストであり、名称とPorts配列は順に1対1で対応します。直ちに命名する必要がない場合、このパラメータを提供する必要はありません |
-| HealthCheck | いいえ | [HealthCheck](/document/api/214/30694#HealthCheck) | 正常性検査関連パラメータであり、このパラメータはTCP/UDP/TCP_SSLリスナーにのみ適用されます |
-| Certificate | いいえ | [CertificateInput](/document/api/214/30694#CertificateInput) | 証明書関連情報であり、このパラメータはHTTPS/TCP_SSLリスナーにのみ適用されます |
+| HealthCheck | いいえ | [HealthCheck](https://cloud.tencent.com/document/api/214/30694#HealthCheck) | 正常性検査関連パラメータであり、このパラメータはTCP/UDP/TCP_SSLリスナーにのみ適用されます |
+| Certificate | いいえ | [CertificateInput](https://cloud.tencent.com/document/api/214/30694#CertificateInput) | 証明書関連情報であり、このパラメータはHTTPS/TCP_SSLリスナーにのみ適用されます |
 | SessionExpireTime | いいえ | Integer | セッション保留時間であり、単位は秒です。選択可能な値は30～3600であり、デフォルトは0で、有効でないことを示します。このパラメータはTCP/UDPリスナーにのみ適用されます。 |
 | Scheduler | いいえ | String | リスナーの転送方式。選択可能な値はWRR、LEAST_CONN。<br/>それぞれ重み付きラウンドロビン、最小接続数を表し、デフォルトはWRRです。このパラメータは、TCP/UDP/TCP_SSLリスナーにのみ適用されます。 |
 | SniSwitch | いいえ | Integer | SNI特性を有効にするかどうかということであり、このパラメータは、HTTPSリスナーにのみ適用されます。 |
@@ -230,11 +230,11 @@ lFRW1kinLCP5y56SJEBz+DRSYV7ql9wOHyaM23sHkbCF0HAa
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. エラーコード
 
-以下に、APIビジネスロジックに関連するエラーコードのみをリストします。その他のエラーコードについては、[共通エラーコード](/document/api/214/30673#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)を参照してください。
+以下に、APIビジネスロジックに関連するエラーコードのみをリストします。その他のエラーコードについては、[共通エラーコード](https://cloud.tencent.com/document/api/214/30673#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)を参照してください。
 
 | エラーコード | 説明 |
 |---------|---------|

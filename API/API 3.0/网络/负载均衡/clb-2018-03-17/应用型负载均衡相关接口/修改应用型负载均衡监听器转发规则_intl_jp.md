@@ -13,18 +13,18 @@ ModifyRule APIはアプリケーション型CLBの7層リスナーの転送規�
 
 ## 2. 入力パラメータ
 
-次のリクエストパラメータリストには、APIリクエストパラメータと一部の共通パラメータのみがリストされています。完全な共通パラメータのリストについては、[共通リクエストパラメータ](/document/api/214/30670)を参照してください。
+次のリクエストパラメータリストには、APIリクエストパラメータと一部の共通パラメータのみがリストされています。完全な共通パラメータのリストについては、[共通リクエストパラメータ](https://cloud.tencent.com/document/api/214/30670)を参照してください。
 
 | パラメータ名 | 必須項目 | タイプ | 説明 |
 |---------|---------|---------|---------|
 | Action | はい | String | 共通パラメータ、このAPIの値：ModifyRule |
 | Version | はい | String | 共通パラメータ、このAPIの値：2018-03-17 |
-| Region | はい | String | 共通パラメータ、詳細については、製品がサポートする[地域リスト](/document/api/214/30670#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)を参照してください。 |
+| Region | はい | String | 共通パラメータ、詳細については、製品がサポートする[地域リスト](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/214/30670#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)を参照してください。 |
 | LoadBalancerId | はい | String | ロードバランサーインスタンスID |
 | ListenerId | はい | String | アプリケーション型CLBリスナーID |
 | LocationId | はい | String | 変更する転送規則のID。 |
 | Url | いいえ | String | 転送規則の新しい転送パスであり、URLを変更する必要がない場合、このパラメータを修正する必要はありません |
-| HealthCheck | いいえ | [HealthCheck](/document/api/214/30694#HealthCheck) | 正常性検査情報 |
+| HealthCheck | いいえ | [HealthCheck](https://cloud.tencent.com/document/api/214/30694#HealthCheck) | 正常性検査情報 |
 | Scheduler | いいえ | String | 規則のリクエスト転送方式 |
 | SessionExpireTime | いいえ | Integer | セッション保留時間 |
 
@@ -90,11 +90,11 @@ https://clb.tencentcloudapi.com/?Action=ModifyRule
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. エラーコード
 
-以下に、APIビジネスロジックに関連するエラーコードのみをリストします。その他のエラーコードについては、[共通エラーコード](/document/api/214/30673#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)を参照してください。
+以下に、APIビジネスロジックに関連するエラーコードのみをリストします。その他のエラーコードについては、[共通エラーコード](https://cloud.tencent.com/document/api/214/30673#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)を参照してください。
 
 | エラーコード | 説明 |
 |---------|---------|

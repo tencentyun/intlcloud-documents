@@ -11,19 +11,19 @@ API request rate limit: 20 requests/sec.
 
 ## 2. Input Parameters
 
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/238/19930).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](https://cloud.tencent.com/document/api/238/19930).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The name of this API: CreateMigration |
 | Version | Yes | String | Common parameter. The version of this API: 2018-03-28 |
-| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/238/19930#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/238/19930#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | MigrateName | Yes | String | Migration task name |
 | MigrateType | Yes | Integer | Migration type (1: structure migration, 2: data migration, 3: incremental synchronization) |
 | SourceType | Yes | Integer | Type of migration source. 1: TencentDB for SQL Server, 2: SQL Server database created by CVM, 4: SQL Server backup restoration, 5: SQL Server backup restoration (in COS mode) |
-| Source | Yes | [MigrateSource](/document/api/238/19976#MigrateSource) | Migration source |
-| Target | Yes | [MigrateTarget](/document/api/238/19976#MigrateTarget) | Migration target |
-| MigrateDBSet.N | No | Array of [MigrateDB](/document/api/238/19976#MigrateDB) | Database objects to be migrated. This parameter is not used for offline migration (SourceType=4 or SourceType=5) |
+| Source | Yes | [MigrateSource](https://cloud.tencent.com/document/api/238/19976#MigrateSource) | Migration source |
+| Target | Yes | [MigrateTarget](https://cloud.tencent.com/document/api/238/19976#MigrateTarget) | Migration target |
+| MigrateDBSet.N | No | Array of [MigrateDB](https://cloud.tencent.com/document/api/238/19976#MigrateDB) | Database objects to be migrated. This parameter is not used for offline migration (SourceType=4 or SourceType=5) |
 
 ## 3. Output Parameters
 
@@ -81,11 +81,11 @@ TencentCloud API 3.0 integrates SDKs that support various programming languages 
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](/document/api/238/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to this API. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/238/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

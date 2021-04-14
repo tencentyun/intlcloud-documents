@@ -6,7 +6,7 @@ APIリクエストドメイン名：as.tencentcloudapi.com 。
 
 * 起動構成は、`ModifyLaunchConfigurationAttributes`を通して少数のフィールドを変更することができます。新しい起動構成を使用する必要がある場合、起動構成を再作成することをお勧めします。
 
-* 各プロジェクトは最大20個の起動構成を作成できます。詳細については、[使用制限](https://cloud.tencent.com/document/product/377/3120)を参照してください。
+* 各プロジェクトは最大20個の起動構成を作成できます。詳細については、[使用制限](https://intl.cloud.tencent.com/document/product/377/3120)を参照してください。
 
 
 デフォルトのAPIリクエスト頻度制限：20回/秒。
@@ -17,26 +17,26 @@ APIリクエストドメイン名：as.tencentcloudapi.com 。
 
 ## 2. 入力パラメータ
 
-次のリクエストパラメータリストには、APIリクエストパラメータと一部の共通パラメータのみがリストされています。完全な共通パラメータについては、[共通リクエストパラメータ](/document/api/377/20426)を参照してください。
+次のリクエストパラメータリストには、APIリクエストパラメータと一部の共通パラメータのみがリストされています。完全な共通パラメータについては、[共通リクエストパラメータ](https://cloud.tencent.com/document/api/377/20426)を参照してください。
 
 | パラメータ名 | 必須項目 | タイプ | 説明 |
 |---------|---------|---------|---------|
 | Action | はい | String | 共通パラメータ、このAPIの値：CreateLaunchConfiguration |
 | Version | はい | String | 共通パラメータ、このAPIの値：2018-04-19 |
-| Region | はい | String | 共通パラメータ、詳細については、製品がサポートする[地域リスト](/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)を参照してください。 |
+| Region | はい | String | 共通パラメータ、詳細については、製品がサポートする[地域リスト](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/377/20426#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)を参照してください。 |
 | LaunchConfigurationName | はい | String | 起動構成の名前。この名前は、中国語、英語、数字、アンダースコア、区切り記号「-」、小数点のみをサポートし、最大長は60バイトを超えることはできません。 |
-| ImageId | はい | String | 有効な[イメージ](https://cloud.tencent.com/document/product/213/4940)IDを指定します。`img-8toqc6s3`のような形をしています。イメージの種類は4種類あります。<br/><li>共通イメージ</li><li>カスタムイメージ</li><li>共有イメージ</li><li>サービスマーケットイメージ</li><br/>以下の方法で使用可能なイメージIDを取得できます。<br/><li>`共通イメージ`、`カスタムイメージ`、`共有イメージ`のイメージIDは、[コンソール](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)にログインして確認できます。`サービスイメージマーケット`のイメージIDは、[クラウドマーケット](https://market.cloud.tencent.com/list)で確認できます。</li><li>API [DescribeImages](https://cloud.tencent.com/document/api/213/15715)を呼び出して、返されたメッセージの`ImageId`フィールドを取ります。</li> |
+| ImageId | はい | String | 有効な[イメージ](https://intl.cloud.tencent.com/document/product/213/4940)IDを指定します。`img-8toqc6s3`のような形をしています。イメージの種類は4種類あります。<br/><li>共通イメージ</li><li>カスタムイメージ</li><li>共有イメージ</li><li>サービスマーケットイメージ</li><br/>以下の方法で使用可能なイメージIDを取得できます。<br/><li>`共通イメージ`、`カスタムイメージ`、`共有イメージ`のイメージIDは、[コンソール](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)にログインして確認できます。`サービスイメージマーケット`のイメージIDは、[クラウドマーケット](https://market.cloud.tencent.com/list)で確認できます。</li><li>API [DescribeImages](https://cloud.tencent.com/document/api/213/15715)を呼び出して、返されたメッセージの`ImageId`フィールドを取ります。</li> |
 | ProjectId | いいえ | Integer | インスタンスが属するプロジェクトID。このパラメータは[DescribeProject](https://cloud.tencent.com/document/api/378/4400)の戻り値の`projectId`フィールドを呼び出して取得できます。記入しない場合は、デフォルトプロジェクトが使用されます。 |
-| InstanceType | いいえ | String | インスタンスモデル。異なるインスタンスモデルは異なるリソース仕様を指定します。具体的な値は、API [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)を呼び出して最新の仕様書を取得するか、または[インスタンスタイプ](https://cloud.tencent.com/document/product/213/11518)の説明を参照してください。<br/>`InstanceType`と`InstanceTypes`パラメータは相互に排他的で、両方のいずれかを記入する必要があります。 |
-| SystemDisk | いいえ | [SystemDisk](/document/api/377/20453#SystemDisk) | インスタンスシステムディスクの構成情報。このパラメータを指定しないと、システムのデフォルト値に従って割り当てられます。 |
-| DataDisks.N | いいえ | Array of [DataDisk](/document/api/377/20453#DataDisk) | インスタンスデータディスクの構成情報。このパラメータを指定しない場合、デフォルトでデータディスクは購入されません。最大11個のデータディスクを指定できます。 |
-| InternetAccessible | いいえ | [InternetAccessible](/document/api/377/20453#InternetAccessible) | パブリックネットワーク帯域幅の関連情報の設定。このパラメータが指定されていない場合、デフォルトのパブリックネットワーク帯域幅は0Mbpsです。 |
-| LoginSettings | いいえ | [LoginSettings](/document/api/377/20453#LoginSettings) | インスタンスログイン設定。このパラメータを使用すると、インスタンスのログインパスワード、暗号鍵を設定でき、またはイメージの元のログイン設定を保持します。デフォルトでは、パスワードはランダムに生成され、サイト内メッセージでユーザーに通知されます。 |
+| InstanceType | いいえ | String | インスタンスモデル。異なるインスタンスモデルは異なるリソース仕様を指定します。具体的な値は、API [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)を呼び出して最新の仕様書を取得するか、または[インスタンスタイプ](https://intl.cloud.tencent.com/document/product/213/11518)の説明を参照してください。<br/>`InstanceType`と`InstanceTypes`パラメータは相互に排他的で、両方のいずれかを記入する必要があります。 |
+| SystemDisk | いいえ | [SystemDisk](https://cloud.tencent.com/document/api/377/20453#SystemDisk) | インスタンスシステムディスクの構成情報。このパラメータを指定しないと、システムのデフォルト値に従って割り当てられます。 |
+| DataDisks.N | いいえ | Array of [DataDisk](https://cloud.tencent.com/document/api/377/20453#DataDisk) | インスタンスデータディスクの構成情報。このパラメータを指定しない場合、デフォルトでデータディスクは購入されません。最大11個のデータディスクを指定できます。 |
+| InternetAccessible | いいえ | [InternetAccessible](https://cloud.tencent.com/document/api/377/20453#InternetAccessible) | パブリックネットワーク帯域幅の関連情報の設定。このパラメータが指定されていない場合、デフォルトのパブリックネットワーク帯域幅は0Mbpsです。 |
+| LoginSettings | いいえ | [LoginSettings](https://cloud.tencent.com/document/api/377/20453#LoginSettings) | インスタンスログイン設定。このパラメータを使用すると、インスタンスのログインパスワード、暗号鍵を設定でき、またはイメージの元のログイン設定を保持します。デフォルトでは、パスワードはランダムに生成され、サイト内メッセージでユーザーに通知されます。 |
 | SecurityGroupIds.N | いいえ | Array of String | インスタンスが属するセキュリティグループ。このパラメータは[DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808)の戻り値の`SecurityGroupId`フィールドを呼び出して取得できます。このパラメータを指定しないと、デフォルトでセキュリティグループはバインディングされません。 |
-| EnhancedService | いいえ | [EnhancedService](/document/api/377/20453#EnhancedService) | 強化されたサービス。このパラメータを使用すると、クラウドセキュリティやCMなどのサービスを有効にするかどうかを指定できます。このパラメータが指定されていない場合、デフォルトでCMとクラウドセキュリティサービスは有効になります。 |
+| EnhancedService | いいえ | [EnhancedService](https://cloud.tencent.com/document/api/377/20453#EnhancedService) | 強化されたサービス。このパラメータを使用すると、クラウドセキュリティやCMなどのサービスを有効にするかどうかを指定できます。このパラメータが指定されていない場合、デフォルトでCMとクラウドセキュリティサービスは有効になります。 |
 | UserData | いいえ | String | Base64エンコード後のカスタムデータ。最大長は16KB以下です。 |
 | InstanceChargeType | いいえ | String | インスタンス課金タイプ。CVMのデフォルト値はPOSTPAID_BY_HOURに従って処理されます。<br/><br><li>POSTPAID_BY_HOUR：時間制後払い<br/><br><li>SPOTPAID：入札支払 |
-| InstanceMarketOptions | いいえ | [InstanceMarketOptionsRequest](/document/api/377/20453#InstanceMarketOptionsRequest) | インスタンスマーケット関連オプション。入札インスタンスに関するパラメータを例として、指定したインスタンスの支払モードは入札支払であれば、このパラメータを転送する必要があります。 |
+| InstanceMarketOptions | いいえ | [InstanceMarketOptionsRequest](https://cloud.tencent.com/document/api/377/20453#InstanceMarketOptionsRequest) | インスタンスマーケット関連オプション。入札インスタンスに関するパラメータを例として、指定したインスタンスの支払モードは入札支払であれば、このパラメータを転送する必要があります。 |
 | InstanceTypes.N | いいえ | Array of String | インスタンスモデルのリスト。異なるインスタンスモデルは異なるリソース仕様を指定し、最大5つのインスタンスモデルをサポートします。<br/>`InstanceType`と`InstanceTypes`パラメータは相互に排他的で、両方のいずれかを記入する必要があります。 |
 | InstanceTypesCheckPolicy | いいえ | String | インスタンスタイプ検証ポリシー。値はALLおよびANYがあり、デフォルト値はANYです。<br/><br><li> ALLは、すべてのインスタンスタイプ（InstanceType）が使用可能な場合は、検証に合格し、それ以外の場合は検証エラーが報告されます。<br/><br><li> ANYは、任意のインスタンスタイプ（InstanceType）が使用可能な場合は、検証に合格し、それ以外の場合は検証エラーが報告されます。<br/><br/>インスタンスタイプが使用できない一般的な原因は、インスタンスタイプの売り切れ、対応するクラウドディスクの売り切れなどです。<br/>InstanceTypesの1つのモデルが存在しないか既に無効だった場合、InstanceTypesCheckPolicyの値に関係なく、検証エラーが報告されます。 |
 
@@ -191,11 +191,11 @@ https://as.tencentcloudapi.com/?Action=CreateLaunchConfiguration
 
 ### CLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. エラーコード
 
-以下に、APIビジネスロジックに関連するエラーコードのみをリストします。その他のエラーコードについては、[共通エラーコード](/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)を参照してください。
+以下に、APIビジネスロジックに関連するエラーコードのみをリストします。その他のエラーコードについては、[共通エラーコード](https://cloud.tencent.com/document/api/377/20428#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)を参照してください。
 
 | エラーコード | 説明 |
 |---------|---------|

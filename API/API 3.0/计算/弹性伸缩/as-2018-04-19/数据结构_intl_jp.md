@@ -79,8 +79,8 @@
 
 | 名称 | タイプ | 必須項目 | 説明 |
 |------|------|----------|------|
-| DiskType | String | いいえ | データディスクタイプ。データディスクタイプの制限については、[CVMインスタンス構成](https://cloud.tencent.com/document/product/213/2177)を参照してください。値範囲：<br><li>LOCAL_BASIC：ローカルディスク<br><li>LOCAL_SSD：ローカルSSDディスク<br><li>CLOUD_BASIC：HDD Cloud Storage<br><li>CLOUD_PREMIUM：Premium Cloud Storage<br><li>CLOUD_SSD：SSD Cloud Storage<br><br>デフォルト値：LOCAL_BASIC。 |
-| DiskSize | Integer | いいえ | データディストサイズ、单位：GB。最小調整ステップサイズは10Gです。データディストのタイプによって値範囲が異なります。具体的には、[CVMインスタンス構成](https://cloud.tencent.com/document/product/213/2177)を参照してください。デフォルト値は0で、データディスを購入しないと示します。更なる制限については、製品ドキュメントを参照てください。 |
+| DiskType | String | いいえ | データディスクタイプ。データディスクタイプの制限については、[CVMインスタンス構成](https://intl.cloud.tencent.com/document/product/213/11518)を参照してください。値範囲：<br><li>LOCAL_BASIC：ローカルディスク<br><li>LOCAL_SSD：ローカルSSDディスク<br><li>CLOUD_BASIC：HDD Cloud Storage<br><li>CLOUD_PREMIUM：Premium Cloud Storage<br><li>CLOUD_SSD：SSD Cloud Storage<br><br>デフォルト値：LOCAL_BASIC。 |
+| DiskSize | Integer | いいえ | データディストサイズ、单位：GB。最小調整ステップサイズは10Gです。データディストのタイプによって値範囲が異なります。具体的には、[CVMインスタンス構成](https://intl.cloud.tencent.com/document/product/213/11518)を参照してください。デフォルト値は0で、データディスを購入しないと示します。更なる制限については、製品ドキュメントを参照てください。 |
 | SnapshotId | String | いいえ | データディスクのスナップショットID、`snap-l8psqwnt`と似ています。 |
 
 ## EnhancedService
@@ -169,7 +169,7 @@ CVM入札リクエスト関連オプション
 | 名称 | タイプ | 必須項目 | 説明 |
 |------|------|----------|------|
 | InternetChargeType | String | いいえ | ネットワーク課金タイプ。値範囲：<br><li>BANDWIDTH_PREPAID：前払いは帯域幅により課金<br><li>TRAFFIC_POSTPAID_BY_HOUR：トラフィックは時間制後払い<br><li>BANDWIDTH_POSTPAID_BY_HOUR：帯域幅は時間制後払い<br><li>BANDWIDTH_PACKAGE：帯域幅パッケージユーザー<br>デフォルト値：TRAFFIC_POSTPAID_BY_HOUR。 |
-| InternetMaxBandwidthOut | Integer | いいえ | パブリックネットワークのアウトバウンド帯域幅上限、单位：Mbps。デフォルト値：0Mbps。モデルによって帯域幅の上限範囲が違います。具体的な制限については[ネットワーク帯域幅の購入](https://cloud.tencent.com/document/product/213/509)を参照してください。 |
+| InternetMaxBandwidthOut | Integer | いいえ | パブリックネットワークのアウトバウンド帯域幅上限、单位：Mbps。デフォルト値：0Mbps。モデルによって帯域幅の上限範囲が違います。具体的な制限については[ネットワーク帯域幅の購入](https://intl.cloud.tencent.com/document/product/213/10578)を参照してください。 |
 | PublicIpAssigned | Boolean | いいえ | パブリックネットワークIPを割り当てるかどうか。値範囲：<br><li>TRUE：パブリックネットワークIPの割り当てを示します<br><li>FALSE：パブリックネットワークIPを割り当てらないと示します<br><br>パブリックネットワーク帯域幅が0Mbpsより大きい場合、有効にするかどうか自由に選択できます。パブリックネットワークIPをデフォルトで有効にします。パブリックネットワーク帯域幅が0である場合、パブリックネットワークIPを割り当てはいけません。 |
 
 ## LaunchConfiguration
@@ -279,7 +279,7 @@ CVM入札リクエスト関連オプション
 
 | 名称 | タイプ | 必須項目 | 説明 |
 |------|------|----------|------|
-| DiskType | String | いいえ | システムディスクタイプ。システムディスクタイプの制限については、[CVMインスタンス構成](https://cloud.tencent.com/document/product/213/2177)を参照してください。値範囲：<br><li>LOCAL_BASIC：ローカルディスク<br><li>LOCAL_SSD：ローカルSSDディスク<br><li>CLOUD_BASIC：HDD Cloud Storage<br><li>CLOUD_PREMIUM：Premium Cloud Storage<br><li>CLOUD_SSD：SSD Cloud Storage<br><br>デフォルト値：LOCAL_BASIC。 |
+| DiskType | String | いいえ | システムディスクタイプ。システムディスクタイプの制限については、[CVMインスタンス構成](https://intl.cloud.tencent.com/document/product/213/11518)を参照してください。値範囲：<br><li>LOCAL_BASIC：ローカルディスク<br><li>LOCAL_SSD：ローカルSSDディスク<br><li>CLOUD_BASIC：HDD Cloud Storage<br><li>CLOUD_PREMIUM：Premium Cloud Storage<br><li>CLOUD_SSD：SSD Cloud Storage<br><br>デフォルト値：LOCAL_BASIC。 |
 | DiskSize | Integer | いいえ | システムディスクサイズ、単位：GB。デフォルト値は50です |
 
 ## TargetAttribute

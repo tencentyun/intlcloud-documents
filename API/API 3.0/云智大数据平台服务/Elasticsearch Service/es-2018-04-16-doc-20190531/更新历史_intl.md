@@ -8,17 +8,17 @@ Improvements on existing documentation.
 
 Modified APIs:
 
-* [CreateInstance](/document/api/845/30633)
+* [CreateInstance](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/845/30633)
 	* New input parameters: DeployMode, MultiZoneInfo, LicenseType
 
 New data structures:
 
-* [MultiZoneInfo](/document/api/845/30634#MultiZoneInfo)
-* [TagInfo](/document/api/845/30634#TagInfo)
+* [MultiZoneInfo](https://cloud.tencent.com/document/api/845/30634#MultiZoneInfo)
+* [TagInfo](https://cloud.tencent.com/document/api/845/30634#TagInfo)
 
 Modified data structures:
 
-* [InstanceInfo](/document/api/845/30634#InstanceInfo)
+* [InstanceInfo](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/845/30634#InstanceInfo)
 	* New members: TagList, LicenseType
 
 ## Release 3
@@ -31,24 +31,24 @@ Improvements on existing documentation.
 
 New APIs:
 
-* [DescribeInstanceLogs](/document/api/845/33760)
-* [DescribeInstanceOperations](/document/api/845/33759)
+* [DescribeInstanceLogs](https://cloud.tencent.com/document/api/845/33760)
+* [DescribeInstanceOperations](https://cloud.tencent.com/document/api/845/33759)
 
 Modified APIs:
 
-* [CreateInstance](/document/api/845/30633)
+* [CreateInstance](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/845/30633)
 	* New input parameters: ClusterNameInConf
-* [UpdateInstance](/document/api/845/30629)
+* [UpdateInstance](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/845/30629)
 	* New input parameters: CosBackup
 
 New data structures:
 
-* [InstanceLog](/document/api/845/30634#InstanceLog)
-* [KeyValue](/document/api/845/30634#KeyValue)
-* [Operation](/document/api/845/30634#Operation)
-* [OperationDetail](/document/api/845/30634#OperationDetail)
-* [SubTaskDetail](/document/api/845/30634#SubTaskDetail)
-* [TaskDetail](/document/api/845/30634#TaskDetail)
+* [InstanceLog](https://cloud.tencent.com/document/api/845/30634#InstanceLog)
+* [KeyValue](https://cloud.tencent.com/document/api/845/30634#KeyValue)
+* [Operation](https://cloud.tencent.com/document/api/845/30634#Operation)
+* [OperationDetail](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/845/30634#OperationDetail)
+* [SubTaskDetail](https://cloud.tencent.com/document/api/845/30634#SubTaskDetail)
+* [TaskDetail](https://cloud.tencent.com/document/api/845/30634#TaskDetail)
 
 ## Release 2
 
@@ -60,22 +60,22 @@ Improvements on existing documentation.
 
 Modified APIs:
 
-* [CreateInstance](/document/api/845/30633)
+* [CreateInstance](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/845/30633)
 	* New input parameters: EnableDedicatedMaster, MasterNodeNum, MasterNodeType, MasterNodeDiskSize
-* [RestartInstance](/document/api/845/30630)
+* [RestartInstance](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/845/30630)
 	* New input parameters: ForceRestart
-* [UpdateInstance](/document/api/845/30629)
+* [UpdateInstance](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/845/30629)
 	* New input parameters: MasterNodeNum, MasterNodeType, MasterNodeDiskSize, ForceRestart
 
 New data structures:
 
-* [CosBackup](/document/api/845/30634#CosBackup)
+* [CosBackup](https://cloud.tencent.com/document/api/845/30634#CosBackup)
 
 Modified data structures:
 
-* [InstanceInfo](/document/api/845/30634#InstanceInfo)
+* [InstanceInfo](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/845/30634#InstanceInfo)
 	* New members: CosBackup, AllowCosBackup
-* [MasterNodeInfo](/document/api/845/30634#MasterNodeInfo)
+* [MasterNodeInfo](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/845/30634#MasterNodeInfo)
 	* New members: MasterNodeDiskType
 
 ## Release 1
@@ -88,17 +88,17 @@ Improvements on existing documentation.
 
 New APIs:
 
-* [CreateInstance](/document/api/845/30633)
-* [DeleteInstance](/document/api/845/30632)
-* [DescribeInstances](/document/api/845/30631)
-* [RestartInstance](/document/api/845/30630)
-* [UpdateInstance](/document/api/845/30629)
+* [CreateInstance](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/845/30633)
+* [DeleteInstance](https://cloud.tencent.com/document/api/845/30632)
+* [DescribeInstances](https://cloud.tencent.com/document/api/845/30631)
+* [RestartInstance](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/845/30630)
+* [UpdateInstance](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/845/30629)
 
 New data structures:
 
-* [DictInfo](/document/api/845/30634#DictInfo)
-* [EsAcl](/document/api/845/30634#EsAcl)
-* [EsDictionaryInfo](/document/api/845/30634#EsDictionaryInfo)
-* [InstanceInfo](/document/api/845/30634#InstanceInfo)
-* [MasterNodeInfo](/document/api/845/30634#MasterNodeInfo)
+* [DictInfo](https://cloud.tencent.com/document/api/845/30634#DictInfo)
+* [EsAcl](https://cloud.tencent.com/document/api/845/30634#EsAcl)
+* [EsDictionaryInfo](https://cloud.tencent.com/document/api/845/30634#EsDictionaryInfo)
+* [InstanceInfo](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/845/30634#InstanceInfo)
+* [MasterNodeInfo](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/845/30634#MasterNodeInfo)
 

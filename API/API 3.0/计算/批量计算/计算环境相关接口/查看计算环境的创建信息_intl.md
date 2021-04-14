@@ -9,13 +9,13 @@ Default API request frequency limit: 2 times/second.
 
 ## 2. Input Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/599/30473).
+The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](https://cloud.tencent.com/document/api/599/30473).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter; the value for this API: DescribeComputeEnvCreateInfo |
 | Version | Yes | String | Common parameter; the value for this API: 2017-03-12 |
-| Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/599/30473#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameters; for details, see the [Region List](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30473#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | EnvId | Yes | String | Compute environment ID |
 
 ## 3. Output Parameters
@@ -26,11 +26,11 @@ The following list of request parameters lists only the API request parameters a
 | EnvName | String | Compute environment name |
 | EnvDescription | String | Compute environment description |
 | EnvType | String | Compute environment type; only "MANAGED" type is supported |
-| EnvData | [EnvData](/document/api/599/30482#EnvData) | Compute environment parameter |
-| MountDataDisks | Array of [MountDataDisk](/document/api/599/30482#MountDataDisk) | Data disk mounting option |
-| InputMappings | Array of [InputMapping](/document/api/599/30482#InputMapping) | Input mapping |
-| Authentications | Array of [Authentication](/document/api/599/30482#Authentication) | Authentication information |
-| Notifications | Array of [Notification](/document/api/599/30482#Notification) | Notification information |
+| EnvData | [EnvData](https://cloud.tencent.com/document/api/599/30482#EnvData) | Compute environment parameter |
+| MountDataDisks | Array of [MountDataDisk](https://cloud.tencent.com/document/api/599/30482#MountDataDisk) | Data disk mounting option |
+| InputMappings | Array of [InputMapping](https://cloud.tencent.com/document/api/599/30482#InputMapping) | Input mapping |
+| Authentications | Array of [Authentication](https://cloud.tencent.com/document/api/599/30482#Authentication) | Authentication information |
+| Notifications | Array of [Notification](https://cloud.tencent.com/document/api/599/30482#Notification) | Notification information |
 | DesiredComputeNodeCount | Integer | Number of desired compute nodes |
 | RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided when troubleshooting. |
 
@@ -125,9 +125,9 @@ Cloud API 3.0 comes with a set of complementary development tools that make it e
 * [Tencent Cloud SDK 3.0 for Go](https://github.com/TencentCloud/tencentcloud-sdk-go)
 * [Tencent Cloud SDK 3.0 for NodeJS](https://github.com/TencentCloud/tencentcloud-sdk-nodejs)
 * [Tencent Cloud SDK 3.0 for .NET](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-This API has no error codes related to business logic. For other error codes, see [Common Error Codes](/document/api/599/30479#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+This API has no error codes related to business logic. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/599/30479#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 

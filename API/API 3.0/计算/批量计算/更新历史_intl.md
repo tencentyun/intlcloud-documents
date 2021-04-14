@@ -8,7 +8,7 @@ Improvement to existing documentation.
 
 Modified data structure:
 
-* [InstanceTypeConfig](/document/api/599/30482#InstanceTypeConfig)
+* [InstanceTypeConfig](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30482#InstanceTypeConfig)
 	* New members: Mem, Cpu
 	* **Deleted members:** GPU, CPU, Memory, CbsSupport, InstanceTypeState
 	* **Modified members:** InstanceType, Zone, InstanceFamily
@@ -31,21 +31,21 @@ Improvement to existing documentation.
 
 New APIs:
 
-* [DescribeCvmZoneInstanceConfigInfos](/document/api/599/30543)
+* [DescribeCvmZoneInstanceConfigInfos](https://cloud.tencent.com/document/api/599/30543)
 
 New data structures:
 
-* [Externals](/document/api/599/30482#Externals)
-* [InstanceMarketOptionsRequest](/document/api/599/30482#InstanceMarketOptionsRequest)
-* [InstanceTypeQuotaItem](/document/api/599/30482#InstanceTypeQuotaItem)
-* [ItemPrice](/document/api/599/30482#ItemPrice)
-* [LocalDiskType](/document/api/599/30482#LocalDiskType)
-* [SpotMarketOptions](/document/api/599/30482#SpotMarketOptions)
-* [StorageBlock](/document/api/599/30482#StorageBlock)
+* [Externals](https://cloud.tencent.com/document/api/599/30482#Externals)
+* [InstanceMarketOptionsRequest](https://cloud.tencent.com/document/api/599/30482#InstanceMarketOptionsRequest)
+* [InstanceTypeQuotaItem](https://cloud.tencent.com/document/api/599/30482#InstanceTypeQuotaItem)
+* [ItemPrice](https://cloud.tencent.com/document/api/599/30482#ItemPrice)
+* [LocalDiskType](https://cloud.tencent.com/document/api/599/30482#LocalDiskType)
+* [SpotMarketOptions](https://cloud.tencent.com/document/api/599/30482#SpotMarketOptions)
+* [StorageBlock](https://cloud.tencent.com/document/api/599/30482#StorageBlock)
 
 Modified data structure:
 
-* [EnvData](/document/api/599/30482#EnvData)
+* [EnvData](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30482#EnvData)
 	* New members: InstanceChargeType, InstanceMarketOptions
 
 ## Release 2
@@ -58,22 +58,22 @@ Improvement to existing documentation.
 
 New APIs:
 
-* [TerminateComputeNodes](/document/api/599/30485)
+* [TerminateComputeNodes](https://cloud.tencent.com/document/api/599/30485)
 
 Modified APIs:
 
-* [DescribeJob](/document/api/599/30561)
+* [DescribeJob](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30561)
 	* New output parameters: StateReason
 
 Modified data structure:
 
-* [ComputeNode](/document/api/599/30482#ComputeNode)
+* [ComputeNode](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30482#ComputeNode)
 	* New members: PrivateIpAddresses, PublicIpAddresses
-* [Job](/document/api/599/30482#Job)
+* [Job](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30482#Job)
 	* New members: StateIfCreateCvmFailed
-* [NamedComputeEnv](/document/api/599/30482#NamedComputeEnv)
+* [NamedComputeEnv](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30482#NamedComputeEnv)
 	* New members: ActionIfComputeNodeInactive
-* [TaskInstanceView](/document/api/599/30482#TaskInstanceView)
+* [TaskInstanceView](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30482#TaskInstanceView)
 	* New members: StateDetailedReason
 
 ## Release 1
@@ -86,72 +86,72 @@ Improvement to existing documentation.
 
 New APIs:
 
-* [CreateComputeEnv](/document/api/599/30521)
-* [CreateTaskTemplate](/document/api/599/30569)
-* [DeleteComputeEnv](/document/api/599/30519)
-* [DeleteJob](/document/api/599/30563)
-* [DeleteTaskTemplates](/document/api/599/30567)
-* [DescribeAvailableCvmInstanceTypes](/document/api/599/30545)
-* [DescribeComputeEnv](/document/api/599/30517)
-* [DescribeComputeEnvActivities](/document/api/599/30515)
-* [DescribeComputeEnvCreateInfo](/document/api/599/30513)
-* [DescribeComputeEnvCreateInfos](/document/api/599/30511)
-* [DescribeComputeEnvs](/document/api/599/30509)
-* [DescribeJob](/document/api/599/30561)
-* [DescribeJobSubmitInfo](/document/api/599/30559)
-* [DescribeJobs](/document/api/599/30557)
-* [DescribeTask](/document/api/599/30555)
-* [DescribeTaskTemplates](/document/api/599/30565)
-* [ModifyComputeEnv](/document/api/599/30507)
-* [ModifyTaskTemplate](/document/api/599/30491)
-* [SubmitJob](/document/api/599/30549)
-* [TerminateComputeNode](/document/api/599/30505)
-* [TerminateJob](/document/api/599/15911)
-* [TerminateTaskInstance](/document/api/599/30489)
+* [CreateComputeEnv](https://cloud.tencent.com/document/api/599/30521)
+* [CreateTaskTemplate](https://cloud.tencent.com/document/api/599/30569)
+* [DeleteComputeEnv](https://cloud.tencent.com/document/api/599/30519)
+* [DeleteJob](https://cloud.tencent.com/document/api/599/30563)
+* [DeleteTaskTemplates](https://cloud.tencent.com/document/api/599/30567)
+* [DescribeAvailableCvmInstanceTypes](https://cloud.tencent.com/document/api/599/30545)
+* [DescribeComputeEnv](https://cloud.tencent.com/document/api/599/30517)
+* [DescribeComputeEnvActivities](https://cloud.tencent.com/document/api/599/30515)
+* [DescribeComputeEnvCreateInfo](https://cloud.tencent.com/document/api/599/30513)
+* [DescribeComputeEnvCreateInfos](https://cloud.tencent.com/document/api/599/30511)
+* [DescribeComputeEnvs](https://cloud.tencent.com/document/api/599/30509)
+* [DescribeJob](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30561)
+* [DescribeJobSubmitInfo](https://cloud.tencent.com/document/api/599/30559)
+* [DescribeJobs](https://cloud.tencent.com/document/api/599/30557)
+* [DescribeTask](https://cloud.tencent.com/document/api/599/30555)
+* [DescribeTaskTemplates](https://cloud.tencent.com/document/api/599/30565)
+* [ModifyComputeEnv](https://cloud.tencent.com/document/api/599/30507)
+* [ModifyTaskTemplate](https://cloud.tencent.com/document/api/599/30491)
+* [SubmitJob](https://cloud.tencent.com/document/api/599/30549)
+* [TerminateComputeNode](https://cloud.tencent.com/document/api/599/30505)
+* [TerminateJob](https://cloud.tencent.com/document/api/599/15911)
+* [TerminateTaskInstance](https://cloud.tencent.com/document/api/599/30489)
 
 New data structures:
 
-* [Activity](/document/api/599/30482#Activity)
-* [AgentRunningMode](/document/api/599/30482#AgentRunningMode)
-* [AnonymousComputeEnv](/document/api/599/30482#AnonymousComputeEnv)
-* [Application](/document/api/599/30482#Application)
-* [Authentication](/document/api/599/30482#Authentication)
-* [ComputeEnvCreateInfo](/document/api/599/30482#ComputeEnvCreateInfo)
-* [ComputeEnvView](/document/api/599/30482#ComputeEnvView)
-* [ComputeNode](/document/api/599/30482#ComputeNode)
-* [ComputeNodeMetrics](/document/api/599/30482#ComputeNodeMetrics)
-* [DataDisk](/document/api/599/30482#DataDisk)
-* [Dependency](/document/api/599/30482#Dependence)
-* [Docker](/document/api/599/30482#Docker)
-* [EnhancedService](/document/api/599/30482#EnhancedService)
-* [EnvData](/document/api/599/30482#EnvData)
-* [EnvVar](/document/api/599/30482#EnvVar)
-* [EventConfig](/document/api/599/30482#EventConfig)
-* [EventVar](/document/api/599/30482#EventVar)
-* [Filter](/document/api/599/30482#Filter)
-* [InputMapping](/document/api/599/30482#InputMapping)
-* [InstanceTypeConfig](/document/api/599/30482#InstanceTypeConfig)
-* [InternetAccessible](/document/api/599/30482#InternetAccessible)
-* [Job](/document/api/599/30482#Job)
-* [JobView](/document/api/599/30482#JobView)
-* [LoginSettings](/document/api/599/30482#LoginSettings)
-* [MountDataDisk](/document/api/599/30482#MountDataDisk)
-* [NamedComputeEnv](/document/api/599/30482#NamedComputeEnv)
-* [Notification](/document/api/599/30482#Notification)
-* [OutputMapping](/document/api/599/30482#OutputMapping)
-* [OutputMappingConfig](/document/api/599/30482#OutputMappingConfig)
-* [Placement](/document/api/599/30482#Placement)
-* [RedirectInfo](/document/api/599/30482#RedirectInfo)
-* [RedirectLocalInfo](/document/api/599/30482#RedirectLocalInfo)
-* [RunMonitorServiceEnabled](/document/api/599/30482#RunMonitorServiceEnabled)
-* [RunSecurityServiceEnabled](/document/api/599/30482#RunSecurityServiceEnabled)
-* [SystemDisk](/document/api/599/30482#SystemDisk)
-* [Task](/document/api/599/30482#Task)
-* [TaskInstanceMetrics](/document/api/599/30482#TaskInstanceMetrics)
-* [TaskInstanceView](/document/api/599/30482#TaskInstanceView)
-* [TaskMetrics](/document/api/599/30482#TaskMetrics)
-* [TaskTemplateView](/document/api/599/30482#TaskTemplateView)
-* [TaskView](/document/api/599/30482#TaskView)
-* [VirtualPrivateCloud](/document/api/599/30482#VirtualPrivateCloud)
+* [Activity](https://cloud.tencent.com/document/api/599/30482#Activity)
+* [AgentRunningMode](https://cloud.tencent.com/document/api/599/30482#AgentRunningMode)
+* [AnonymousComputeEnv](https://cloud.tencent.com/document/api/599/30482#AnonymousComputeEnv)
+* [Application](https://cloud.tencent.com/document/api/599/30482#Application)
+* [Authentication](https://cloud.tencent.com/document/api/599/30482#Authentication)
+* [ComputeEnvCreateInfo](https://cloud.tencent.com/document/api/599/30482#ComputeEnvCreateInfo)
+* [ComputeEnvView](https://cloud.tencent.com/document/api/599/30482#ComputeEnvView)
+* [ComputeNode](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30482#ComputeNode)
+* [ComputeNodeMetrics](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30482#ComputeNodeMetrics)
+* [DataDisk](https://cloud.tencent.com/document/api/599/30482#DataDisk)
+* [Dependency](https://cloud.tencent.com/document/api/599/30482#Dependence)
+* [Docker](https://cloud.tencent.com/document/api/599/30482#Docker)
+* [EnhancedService](https://cloud.tencent.com/document/api/599/30482#EnhancedService)
+* [EnvData](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30482#EnvData)
+* [EnvVar](https://cloud.tencent.com/document/api/599/30482#EnvVar)
+* [EventConfig](https://cloud.tencent.com/document/api/599/30482#EventConfig)
+* [EventVar](https://cloud.tencent.com/document/api/599/30482#EventVar)
+* [Filter](https://cloud.tencent.com/document/api/599/30482#Filter)
+* [InputMapping](https://cloud.tencent.com/document/api/599/30482#InputMapping)
+* [InstanceTypeConfig](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30482#InstanceTypeConfig)
+* [InternetAccessible](https://cloud.tencent.com/document/api/599/30482#InternetAccessible)
+* [Job](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30482#Job)
+* [JobView](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30482#JobView)
+* [LoginSettings](https://cloud.tencent.com/document/api/599/30482#LoginSettings)
+* [MountDataDisk](https://cloud.tencent.com/document/api/599/30482#MountDataDisk)
+* [NamedComputeEnv](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30482#NamedComputeEnv)
+* [Notification](https://cloud.tencent.com/document/api/599/30482#Notification)
+* [OutputMapping](https://cloud.tencent.com/document/api/599/30482#OutputMapping)
+* [OutputMappingConfig](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30482#OutputMappingConfig)
+* [Placement](https://cloud.tencent.com/document/api/599/30482#Placement)
+* [RedirectInfo](https://cloud.tencent.com/document/api/599/30482#RedirectInfo)
+* [RedirectLocalInfo](https://cloud.tencent.com/document/api/599/30482#RedirectLocalInfo)
+* [RunMonitorServiceEnabled](https://cloud.tencent.com/document/api/599/30482#RunMonitorServiceEnabled)
+* [RunSecurityServiceEnabled](https://cloud.tencent.com/document/api/599/30482#RunSecurityServiceEnabled)
+* [SystemDisk](https://cloud.tencent.com/document/api/599/30482#SystemDisk)
+* [Task](https://cloud.tencent.com/document/api/599/30482#Task)
+* [TaskInstanceMetrics](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30482#TaskInstanceMetrics)
+* [TaskInstanceView](https://cloud.tencent.comhttps://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30482#TaskInstanceView)
+* [TaskMetrics](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30482#TaskMetrics)
+* [TaskTemplateView](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30482#TaskTemplateView)
+* [TaskView](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/599/30482#TaskView)
+* [VirtualPrivateCloud](https://cloud.tencent.com/document/api/599/30482#VirtualPrivateCloud)
 
 

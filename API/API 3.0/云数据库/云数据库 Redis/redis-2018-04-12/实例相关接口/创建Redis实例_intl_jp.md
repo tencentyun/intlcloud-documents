@@ -12,13 +12,13 @@ redisインスタンスの作成
 
 ## 2. パラメータ入力
 
-以下のリクエストパラメータリストは、インターフェースリクエストパラメータと一部の共通パラメータのみを表しています。完全な共通パラメータのリストは、[共通のリクエストパラメータ](/document/api/239/20005)を参照してください。
+以下のリクエストパラメータリストは、インターフェースリクエストパラメータと一部の共通パラメータのみを表しています。完全な共通パラメータのリストは、[共通のリクエストパラメータ](https://cloud.tencent.com/document/api/239/20005)を参照してください。
 
 | パラメータ名 | 選択必須 | タイプ | 説明 |
 |---------|---------|---------|---------|
 | Action | 要 | String | 共通パラメータ。本インターフェースの取得値：CreateInstances |
 | Version | 要 | String | 共通パラメータ。本インターフェースの値：2018-04-12 |
-| Region | 要 | String | 共通パラメータ。製品がサポートする[リージョンリスト](/document/api/239/20005#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)を参照してください。|
+| Region | 要 | String | 共通パラメータ。製品がサポートする[リージョンリスト](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/239/20005#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8)を参照してください。|
 | ZoneId | 要 | Integer | インスタンスが属するアベイラビリティゾーンのid |
 | TypeId | 要 | Integer | インスタンスタイプ：2 – Redis2.8マスタースレーブ版、3 – Redis3.2マスタースレーブ版(CKVマスタースレーブ版)、4 – Redis3.2クラスタ版(CKVクラスタ版)、5-Redis2.8スタンドアロン版、7 – Redis4.0クラスタ版、 |
 | MemSize | 要 | Integer | インスタンスの容量。単位はMBとし、値の大きさは販売仕様照会インターフェースが返した仕様に準ずる|
@@ -94,11 +94,11 @@ https://redis.tencentcloudapi.com/?Action=CreateInstances
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. エラーコード
 
-以下では、インターフェースのサービスロジックに関連するエラーコードのみを示します。その他のエラーコードについては[共通エラーコード](/document/api/239/20007#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)をご覧ください。
+以下では、インターフェースのサービスロジックに関連するエラーコードのみを示します。その他のエラーコードについては[共通エラーコード](https://cloud.tencent.com/document/api/239/20007#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)をご覧ください。
 
 | エラーコード | 説明 |
 |---------|---------|

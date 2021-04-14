@@ -562,7 +562,7 @@ Referenced by: DescribeTaskDetail, PullEvents.
 | ErrCode | Integer | Error code <br/><li>0: Success; </li><li>Other values: Failure. </li><br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | Message | String | Error message. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | FileId | String | Image sprite file ID. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| Definition | Integer | Image sprite type. For more information, see [Image Sprite Generating Template](https://cloud.tencent.com/document/product/266/11702#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| Definition | Integer | Image sprite type. For more information, see [Image Sprite Generating Template](https://intl.cloud.tencent.com/document/product/266/33931). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | TotalCount | Integer | Total number of sub-images in the image sprite. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | ImageSpriteUrlSet | Array of String | Address of the output image sprite. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | WebVttUrl | String | Address of the WebVtt file for the position-time relationship among sub-images in the image sprite. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
@@ -588,8 +588,8 @@ Referenced by: DescribeTaskDetail, PullEvents.
 | Name | Type | Required | Description |
 |------|------|----------|------|
 | StreamId | String | Yes | ID of the recorded stream |
-| StartTime | String | No | Start time of stream editing in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| EndTime | String | No | End time of stream editing in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| StartTime | String | No | Start time of stream editing in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| EndTime | String | No | End time of stream editing in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 
 ## EditMediaTask
 
@@ -773,7 +773,7 @@ Referenced by: DescribeMediaInfos, DescribeTaskDetail, PullEvents, SearchMedia.
 | Name | Type | Description |
 |------|------|-------|
 | Url | String | Address of the generated animated image. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| Definition | Integer | ID of the animated image generating template. For more information, see [Animated Image Generating Parameter Template](https://cloud.tencent.com/document/product/266/11701#.E9.A2.84.E7.BD.AE.E8.BD.AC.E5.8A.A8.E5.9B.BE.E6.A8.A1.E6.9D.BF). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| Definition | Integer | ID of the animated image generating template. For more information, see [Animated Image Generating Parameter Template](https://intl.cloud.tencent.com/document/product/266/33931). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | Container | String | Animated image format, such as gif. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | Height | Integer | Height of the animated image in px. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | Width | Integer | Width of the animated image in px. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
@@ -805,9 +805,9 @@ Referenced by: DescribeMediaInfos, PullEvents, SearchMedia.
 |------|------|-------|
 | Name | String | Name of the media file. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | Description | String | Description of the media file. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| CreateTime | String | Creation time of the media file in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| UpdateTime | String | Last update time of the media file (operations that trigger updating of media file information such as modifying video attributes or initiating video processing) in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| ExpireTime | String | Expiry time of the media file in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). After the expiry, the media file and its related resources (such as transcoded results and image sprites) will be permanently deleted. "9999-12-31T23:59:59Z" means "never expire". <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| CreateTime | String | Creation time of the media file in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| UpdateTime | String | Last update time of the media file (operations that trigger updating of media file information such as modifying video attributes or initiating video processing) in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| ExpireTime | String | Expiry time of the media file in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732). After the expiry, the media file and its related resources (such as transcoded results and image sprites) will be permanently deleted. "9999-12-31T23:59:59Z" means "never expire". <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | ClassId | Integer | Category ID of the media file. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | ClassName | String | Category name of the media file. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | ClassPath | String | Category path of the media file separated by "-", such as "New First-level Category - New Second-level Category". <br/>Note: This field may return null, indicating that no effective values can be obtained. |
@@ -878,7 +878,7 @@ Referenced by: DescribeTaskDetail, PullEvents.
 | Label | String | Tag of politically sensitive information detection result of the suspected segment. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | Url | String | URL of the suspected image (which will not be permanently stored <br/>and will be deleted after PicUrlExpireTime). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | AreaCoordSet | Array of Integer | Zone coordinates (at the pixel level) of the politically sensitive figure or image: [x1, y1, x2, y2], i.e., the coordinates of the top-left and bottom-right corners. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| PicUrlExpireTimeStamp | Integer | Expiry time of the suspected image URL in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| PicUrlExpireTimeStamp | Integer | Expiry time of the suspected image URL in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 
 ## MediaContentReviewSegmentItem
 
@@ -894,7 +894,7 @@ Referenced by: DescribeTaskDetail, PullEvents.
 | Label | String | Tag of pornographic information detection result of the suspected segment. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | Suggestion | String | Suggestion for pornographic information detection of the suspected segment; value range: <br/><li>pass. </li><li>review. </li><li>block. </li><br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | Url | String | URL of the suspected image (which will not be permanently stored <br/>and will be deleted after PicUrlExpireTime). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| PicUrlExpireTimeStamp | Integer | Expiry time of the suspected image URL in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| PicUrlExpireTimeStamp | Integer | Expiry time of the suspected image URL in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 
 ## MediaDeleteItem
 
@@ -906,7 +906,7 @@ Referenced by: DeleteMedia.
 | Name | Type | Required | Description |
 |------|------|----------|------|
 | Type | String | Yes | The specified part to be deleted. If this field is left blank, the parameter is invalid. Value range: <br/><li>TranscodeFiles: Delete the transcoded files. </li><li>WechatPublishFiles: Delete the files published on WeChat. </li> |
-| Definition | Integer | No | ID of the template to delete the videos of the types specified by the Type parameter. For the template definition, see [Transcoding Template](https://cloud.tencent.com/document/product/266/11701#.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF). <br/>0 by default, which means to delete all videos in the type specified by the Type parameter. |
+| Definition | Integer | No | ID of the template to delete the videos of the types specified by the Type parameter. For the template definition, see [Transcoding Template](https://intl.cloud.tencent.com/document/product/266/33931). <br/>0 by default, which means to delete all videos in the type specified by the Type parameter. |
 
 ## MediaImageSpriteInfo
 
@@ -926,7 +926,7 @@ Referenced by: DescribeMediaInfos, DescribeTaskDetail, PullEvents, SearchMedia.
 
 | Name | Type | Description |
 |------|------|-------|
-| Definition | Integer | Image sprite type. For more information, see [Image Sprite Parameter Template](https://cloud.tencent.com/document/product/266/11702#.E9.9B.AA.E7.A2.A7.E5.9B.BE.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| Definition | Integer | Image sprite type. For more information, see [Image Sprite Parameter Template](https://intl.cloud.tencent.com/document/product/266/33931). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | Height | Integer | Sub-image height of the image sprite. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | Width | Integer | Sub-image width of the image sprite. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | TotalCount | Integer | Total number of sub-images in each image sprite. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
@@ -1165,7 +1165,7 @@ Referenced by: DescribeMediaInfos, DescribeTaskDetail, PullEvents, SearchMedia.
 
 | Name | Type | Description |
 |------|------|-------|
-| Definition | Integer | Type ID of the screenshot type. For more information, see [Sampling-based Screen Capturing Parameter Template](https://cloud.tencent.com/document/product/266/11702#.E9.87.87.E6.A0.B7.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| Definition | Integer | Type ID of the screenshot type. For more information, see [Sampling-based Screen Capturing Parameter Template](https://intl.cloud.tencent.com/document/product/266/33931). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | SampleType | String | Sampling method; value range:<br/><li>Percent: Sample at the specified percentage interval. </li><li>Time: Sample at the specified time interval. </li><br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | Interval | Integer | Sampling interval <br/><li>If SampleType is Percent, this value means to take a screenshot at an interval of the specified percentage. </li><li>If SampleType is Time, this value means to take a screenshot at an interval of the specified time. The first screenshot is always the first frame of the video. </li><br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | ImageUrlSet | Array of String | List of URLs of the generated screenshots. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
@@ -1189,7 +1189,7 @@ Referenced by: DescribeMediaInfos, DescribeTaskDetail, PullEvents, SearchMedia.
 
 | Name | Type | Description |
 |------|------|-------|
-| Definition | Integer | Type of the time point screenshot. For more information, see [Parameter Template for Time Point-based Screen Capturing](https://cloud.tencent.com/document/product/266/11702#.E6.8C.87.E5.AE.9A.E6.97.B6.E9.97.B4.E7.82.B9.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| Definition | Integer | Type of the time point screenshot. For more information, see [Parameter Template for Time Point-based Screen Capturing](https://intl.cloud.tencent.com/document/product/266/33931). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | PicInfoSet | Array of [MediaSnapshotByTimePicInfoItem](#MediaSnapshotByTimePicInfoItem) | Information set of the screenshots of the same type. Each element represents a screenshot. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 
 ## MediaSnapshotByTimePicInfoItem
@@ -1234,7 +1234,7 @@ Referenced by: DescribeMediaInfos, DescribeTaskDetail, PullEvents, SearchMedia.
 | Name | Type | Description |
 |------|------|-------|
 | Url | String | Address of the transcoded video file. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| Definition | Integer | Transcoding type ID. For more information, see [Transcoding Parameter Template](https://cloud.tencent.com/document/product/266/11701#.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| Definition | Integer | Transcoding type ID. For more information, see [Transcoding Parameter Template](https://intl.cloud.tencent.com/document/product/266/33931). <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | Bitrate | Integer | Sum of the average bitrate of the video stream and that of the audio stream in bps. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | Height | Integer | Maximum value of the video stream height in px. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | Width | Integer | Maximum value of the video stream width in px. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
@@ -1271,9 +1271,9 @@ Referenced by: DescribeTaskDetail, PullEvents.
 | Status | String | Task flow status; value range: <br/><li>PROCESSING: Processing; </li><li>FINISH: Finished. </li> |
 | ErrCode | Integer | Error code <br/><li>0: Success; </li><li>Other values: Failure. </li><br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | Message | String | Error message. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| FileId | String | Media file ID. <br/><li>If the process is initiated by [ProcessMedia](https://cloud.tencent.com/document/product/266/33427), this field means the FileId in [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo); </li><li>If the process is initiated by [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426), this field means the Id in [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo). </li><br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| FileName | String | Media file name. <br/><li>If the process is initiated by [ProcessMedia](https://cloud.tencent.com/document/product/266/33427), this field means the BasicInfo.Name in [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo); </li><li>If the process is initiated by [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426), this field means the Name in [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo). </li><br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| FileUrl | String | Media file address. <br/><li>If the process is initiated by [ProcessMedia](https://cloud.tencent.com/document/product/266/33427), this field means the BasicInfo.MediaUrl in [MediaInfo](https://cloud.tencent.com/document/product/266/31773#MediaInfo); </li><li>If the process is initiated by [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426), this field means the Url in [MediaInputInfo](https://cloud.tencent.com/document/product/266/31773#MediaInputInfo). </li> |
+| FileId | String | Media file ID. <br/><li>If the process is initiated by [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125), this field means the FileId in [MediaInfo](https://intl.cloud.tencent.com/document/product/266/34187); </li><li>If the process is initiated by [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426), this field means the Id in [MediaInputInfo](https://intl.cloud.tencent.com/document/product/266/34187). </li><br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| FileName | String | Media file name. <br/><li>If the process is initiated by [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125), this field means the BasicInfo.Name in [MediaInfo](https://intl.cloud.tencent.com/document/product/266/34187); </li><li>If the process is initiated by [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426), this field means the Name in [MediaInputInfo](https://intl.cloud.tencent.com/document/product/266/34187). </li><br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| FileUrl | String | Media file address. <br/><li>If the process is initiated by [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125), this field means the BasicInfo.MediaUrl in [MediaInfo](https://intl.cloud.tencent.com/document/product/266/34187); </li><li>If the process is initiated by [ProcessMediaByUrl](https://cloud.tencent.com/document/product/266/33426), this field means the Url in [MediaInputInfo](https://intl.cloud.tencent.com/document/product/266/34187). </li> |
 | MetaData | [MediaMetaData](#MediaMetaData) | Metadata of the original video. |
 | MediaProcessResultSet | Array of [MediaProcessTaskResult](#MediaProcessTaskResult) | Execution status and result of the video processing task. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | AiContentReviewResultSet | Array of [AiContentReviewResult](#AiContentReviewResult) | Execution status and result of the video content review task. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
@@ -1296,8 +1296,8 @@ Referenced by: DescribeProcedureTemplates.
 | AiContentReviewTask | [AiContentReviewTaskInput](#AiContentReviewTaskInput) | Parameter of the AI-based content review task. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | AiAnalysisTask | [AiAnalysisTaskInput](#AiAnalysisTaskInput) | Parameter of the AI-based content analysis task. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | AiRecognitionTask | [AiRecognitionTaskInput](#AiRecognitionTaskInput) | Parameter of the AI-based content recognition task. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| CreateTime | String | Creation time of the template in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). |
-| UpdateTime | String | Last modified time of the template in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). |
+| CreateTime | String | Creation time of the template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732). |
+| UpdateTime | String | Last modified time of the template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732). |
 
 ## PullFileTask
 
@@ -1347,7 +1347,7 @@ Referenced by: DescribeTaskDetail, PullEvents.
 |------|------|-------|
 | TaskId | String | Screen capturing task ID. |
 | FileId | String | Screenshot file ID. |
-| Definition | Integer | Screenshot type. For more information, see [Parameter Template for Time Point-based Screen capturing](https://cloud.tencent.com/document/product/266/11702#.E6.8C.87.E5.AE.9A.E6.97.B6.E9.97.B4.E7.82.B9.E6.88.AA.E5.9B.BE.E6.A8.A1.E6.9D.BF). |
+| Definition | Integer | Screenshot type. For more information, see [Parameter Template for Time Point-based Screen capturing](https://intl.cloud.tencent.com/document/product/266/33931). |
 | SnapshotInfoSet | Array of [SnapshotByTimeOffset2017](#SnapshotByTimeOffset2017) | Screen capturing result information. |
 
 ## SnapshotByTimeOffsetTaskInput
@@ -1405,9 +1405,9 @@ Referenced by: DescribeTasks.
 |------|------|-------|
 | TaskId | String | Task ID. |
 | TaskType | String | Task type; value range: <br/><li>Procedure: Video processing task; </li><li>EditMedia: Video editing task; </li><li>WechatDistribute: Publishing on WeChat task. </li><br/>Task types compatible with v2017: <br/><li>Transcode: Video transcoding task; </li><li>SnapshotByTimeOffset: Screen capturing task: </li><li>Concat: Video stitching task; </li><li>Clip: Video clipping task; </li><li>ImageSprites: Image sprite creating task. </li> |
-| CreatTime | String | Creation time of the task in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). |
-| BeginProcessTime | String | Start time of task execution in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). If the task has not been started yet, this field is blank. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| FinishTime | String | End time of the task in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). If the task has not been completed yet, this field is blank. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| CreatTime | String | Creation time of the task in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732). |
+| BeginProcessTime | String | Start time of task execution in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732). If the task has not been started yet, this field is blank. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
+| FinishTime | String | End time of the task in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732). If the task has not been completed yet, this field is blank. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 
 ## TempCertificate
 
@@ -1457,7 +1457,7 @@ Referenced by: DescribeTaskDetail, PullEvents.
 | Name | Type | Description |
 |------|------|-------|
 | Url | String | Playback address. |
-| Definition | Integer | Transcoding type ID. For more information, see [Transcoding Parameter Template](https://cloud.tencent.com/document/product/266/11701#.E8.BD.AC.E7.A0.81.E6.A8.A1.E6.9D.BF). |
+| Definition | Integer | Transcoding type ID. For more information, see [Transcoding Parameter Template](https://intl.cloud.tencent.com/document/product/266/33931). |
 | Bitrate | Integer | Sum of the average bitrate of the video stream and that of the audio stream in bps. |
 | Height | Integer | Maximum value of the video stream height in px. |
 | Width | Integer | Maximum value of the video stream width in px. |
@@ -1508,8 +1508,8 @@ Referenced by: DescribeTranscodeTemplates.
 | VideoTemplate | [VideoTemplateInfo](#VideoTemplateInfo) | Video stream configuration parameter. This field is valid only when RemoveVideo is 0. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | AudioTemplate | [AudioTemplateInfo](#AudioTemplateInfo) | Audio stream configuration parameter. This field is valid only when RemoveAudio is 0. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | ContainerType | String | Filter of container; value range: <br/><li>Video: Video container that can contain both video stream and audio stream; </li><li>PureAudio: Audio container that can contain only audio stream. </li> |
-| CreateTime | String | Creation time of the template in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). |
-| UpdateTime | String | Last modified time of the template in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). |
+| CreateTime | String | Creation time of the template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732). |
+| UpdateTime | String | Last modified time of the template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732). |
 
 ## VideoTemplateInfo
 
@@ -1569,8 +1569,8 @@ Referenced by: DescribeWatermarkTemplates.
 | YPos | String | The vertical position of the origin of the watermark image relative to the origin of the video. <br/><li>If the string ends in %, the top edge of the watermark is at the position of the specified percentage of the video height, for example, 10% means that the top edge is at 10% of the video height; </li><li>if the string ends in px, the top edge of the watermark is at the position of the specified px of the video height, for example, 100px means that the top edge is at the position of 100px. </li> |
 | ImageTemplate | [ImageWatermarkTemplate](#ImageWatermarkTemplate) | Image watermarking template. This field has a value only when Type is image. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
 | TextTemplate | [TextWatermarkTemplateInput](#TextWatermarkTemplateInput) | Text watermarking template. This field has a value only when Type is text. <br/>Note: This field may return null, indicating that no effective values can be obtained. |
-| CreateTime | String | Creation time of the template in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). |
-| UpdateTime | String | Last modified time of the template in [ISO date format](https://cloud.tencent.com/document/product/266/11732#iso-.E6.97.A5.E6.9C.9F.E6.A0.BC.E5.BC.8F). |
+| CreateTime | String | Creation time of the template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732). |
+| UpdateTime | String | Last modified time of the template in [ISO date format](https://intl.cloud.tencent.com/document/product/266/11732). |
 | CoordinateOrigin | No | String | Origin position; value range: <br/><li>topLeft: The origin of coordinates is in the top-left corner of the video, and the origin of the watermark is in the top-left corner of the image or text; </li><li>topRight: The origin of coordinates is in the top-right corner of the video, and the origin of the watermark is in the top-right corner of the image or text; </li><li>bottomLeft: The origin of coordinates is in the bottom-left corner of the video, and the origin of the watermark is in the bottom-left corner of the image or text; </li><li>bottomRight: The origin of coordinates is in the bottom-right corner of the video, and the origin of the watermark is in the bottom-right corner of the image or text. </li> |
 
 ## WechatPublishTask

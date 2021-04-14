@@ -22,26 +22,26 @@ Note: This API supports financial regions. As financial regions and non-financia
 
 ## 2. Input Parameters
 
-The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](/document/api/845/30623).
+The following parameters are required for requesting this API, including action-specific parameters and common parameters. For more information about common parameters for all requests, see [Common Request Parameters](https://cloud.tencent.com/document/api/845/30623).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The name of this API: UpdateInstance |
 | Version | Yes | String | Common parameter. The version of this API: 2018-04-16 |
-| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/845/30623#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/845/30623#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | InstanceId | Yes | String | Instance ID |
 | InstanceName | No | String | Instance name, which can contain 1 to 50 English letters, Chinese characters, digits, dashes - or underscores _ |
 | NodeNum | No | Integer | Number of nodes (2-50) |
 | EsConfig | No | String | Configuration item (JSON string). Currently, only the following items are supported: <li>action.destructive_requires_name</li><li>indices.fielddata.cache.size</li><li>indices.query.bool.max_clause_count</li> |
 | Password | No | String | Password of the default user elastic, which must contain 8 to 16 characters, including at least two out of the following three types of characters: [a-z,A-Z], [0-9] and [-!@#$%&^*+=_:;,.?] |
-| EsAcl | No | [EsAcl](/document/api/845/30634#EsAcl) | Access control list |
+| EsAcl | No | [EsAcl](https://cloud.tencent.com/document/api/845/30634#EsAcl) | Access control list |
 | DiskSize | No | Integer | Disk size in GB |
 | NodeType | No | String | Node specification <li>ES.S1.SMALL2: 1-core 2 GB </li><li>ES.S1.MEDIUM4: 2-core 4 GB </li><li>ES.S1.MEDIUM8: 2-core 8 GB </li><li>ES.S1.LARGE16: 4-core 16 GB </li><li>ES.S1.2XLARGE32: 8-core 32 GB </li><li>ES.S1.4XLARGE32: 16-core 32 GB </li><li>ES.S1.4XLARGE64: 16-core 64 GB </li> |
 | MasterNodeNum | No | Integer | Number of dedicated master nodes (only 3 and 5 are supported) |
 | MasterNodeType | No | String | Dedicated master node specification <li>ES.S1.SMALL2: 1-core 2 GB</li><li>ES.S1.MEDIUM4: 2-core 4 GB</li><li>ES.S1.MEDIUM8: 2-core 8 GB</li><li>ES.S1.LARGE16: 4-core 16 GB</li><li>ES.S1.2XLARGE32: 8-core 32 GB</li><li>ES.S1.4XLARGE32: 16-core 32 GB</li><li>ES.S1.4XLARGE64: 16-core 64 GB</li> |
 | MasterNodeDiskSize | No | Integer | Dedicated master node disk size in GB. Default is 50 GB; customized disk size is currently not available. |
 | ForceRestart | No | Boolean | Whether to force restart after configuration update <li>true: Yes </li><li>false: No </li>This needs to be set only for EsConfig. false by default |
-| CosBackup | No | [CosBackup](/document/api/845/30634#CosBackup) | Configuration of auto-backup-to-COS |
+| CosBackup | No | [CosBackup](https://cloud.tencent.com/document/api/845/30634#CosBackup) | Configuration of auto-backup-to-COS |
 
 ## 3. Output Parameters
 
@@ -237,11 +237,11 @@ TencentCloud API 3.0 integrates software development toolkits (SDKs) that suppor
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following error codes are API business logic-related. For other error codes, see [Common Error Codes](/document/api/845/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following error codes are API business logic-related. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/845/15694#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

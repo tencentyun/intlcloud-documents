@@ -13,13 +13,13 @@ Note: This API supports Finance regions. Finance and non-Finance regions are iso
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/237/16147).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/237/16147).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter. The value​used for this API: DescribeDBInstances. |
 | Version | Yes | String | Common parameter. The value used for this API: 2017-03-12. |
-| Region | Yes | String | Common parameter. For more information, see the [list of regions](/document/api/237/16147#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
+| Region | Yes | String | Common parameter. For more information, see the [list of regions](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/237/16147#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8) supported by the product. |
 | InstanceIds.N | No | Array of String | Queries according to one or more instance IDs, such as tdsql-ow728lmc. A maximum of 100 instances are allowed for each request. |
 | SearchName | No | String | The field name for search. "instancename", "vip" and "all" are supported. The "instancename" means to search by instance names. The "vip" means to search by private IPs. The "all" means to search by instance IDs, instance names and private IPs. |
 | SearchKey | No | String | The keyword for search. Fuzzy search is available. Multiple keywords are separated by the line break '\n'. |
@@ -40,7 +40,7 @@ The following request parameter list only provides API request parameters and so
 | Parameter Name | Type | Description |
 |---------|---------|---------|
 | TotalCount | Integer | Number of instances that meet the condition |
-| Instances | Array of [DBInstance](/document/api/237/16191#DBInstance) | Instance details list |
+| Instances | Array of [DBInstance](https://cloud.tencent.com/document/api/237/16191#DBInstance) | Instance details list |
 | RequestId | String | The unique ID of a request, which is required for each troubleshooting case. |
 
 ## 4. Example
@@ -123,11 +123,11 @@ Cloud API 3.0 comes with the software development kit (SDK) that supports multip
 
 ### Command line tools
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-The following only lists the error codes related to the API business logic. For other error codes, see [Common Error Codes](/document/api/237/16149#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+The following only lists the error codes related to the API business logic. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/237/16149#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

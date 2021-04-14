@@ -8,16 +8,16 @@ Improvements on existing documentation.
 
 Modified APIs:
 
-* [CreateInstance](/document/api/589/34261)
+* [CreateInstance](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/589/34261)
 	* New input parameters: NeedMasterWan
 
 New data structures:
 
-* [MultiDisk](/document/api/589/33981#MultiDisk)
+* [MultiDisk](https://cloud.tencent.com/document/api/589/33981#MultiDisk)
 
 Modified data structures:
 
-* [NodeSpec](/document/api/589/33981#NodeSpec)
+* [NodeSpec](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/589/33981#NodeSpec)
 	* New members: MultiDisks
 
 ## Release 2
@@ -30,24 +30,24 @@ Improvements on existing documentation.
 
 New APIs:
 
-* [CreateInstance](/document/api/589/34261)
-* [DescribeInstances](/document/api/589/34266)
-* [InquiryPriceScaleOutInstance](/document/api/589/34265)
-* [ScaleOutInstance](/document/api/589/34264)
-* [TerminateInstance](/document/api/589/34260)
-* [TerminateTasks](/document/api/589/34263)
+* [CreateInstance](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/589/34261)
+* [DescribeInstances](https://cloud.tencent.com/document/api/589/34266)
+* [InquiryPriceScaleOutInstance](https://cloud.tencent.com/document/api/589/34265)
+* [ScaleOutInstance](https://cloud.tencent.com/document/api/589/34264)
+* [TerminateInstance](https://cloud.tencent.com/document/api/589/34260)
+* [TerminateTasks](https://cloud.tencent.com/document/api/589/34263)
 
 New data structures:
 
-* [COSSettings](/document/api/589/33981#COSSettings)
-* [ClusterInfoResult](/document/api/589/33981#ClusterInfoResult)
-* [ClusterInstanceInfo](/document/api/589/33981#ClusterInstanceInfo)
-* [CreateInstanceResult](/document/api/589/33981#CreateInstanceResult)
-* [EMRProductConfigSettings](/document/api/589/33981#EMRProductConfigSettings)
-* [LoginSettings](/document/api/589/33981#LoginSettings)
-* [PreExecuteFileSettings](/document/api/589/33981#PreExecuteFileSettings)
-* [ScaleOutInstanceResult](/document/api/589/33981#ScaleOutInstanceResult)
-* [TerminateResult](/document/api/589/33981#TerminateResult)
+* [COSSettings](https://cloud.tencent.com/document/api/589/33981#COSSettings)
+* [ClusterInfoResult](https://cloud.tencent.com/document/api/589/33981#ClusterInfoResult)
+* [ClusterInstanceInfo](https://cloud.tencent.com/document/api/589/33981#ClusterInstanceInfo)
+* [CreateInstanceResult](https://cloud.tencent.com/document/api/589/33981#CreateInstanceResult)
+* [EMRProductConfigSettings](https://cloud.tencent.com/document/api/589/33981#EMRProductConfigSettings)
+* [LoginSettings](https://cloud.tencent.com/document/api/589/33981#LoginSettings)
+* [PreExecuteFileSettings](https://cloud.tencent.com/document/api/589/33981#PreExecuteFileSettings)
+* [ScaleOutInstanceResult](https://cloud.tencent.com/document/api/589/33981#ScaleOutInstanceResult)
+* [TerminateResult](https://cloud.tencent.com/document/api/589/33981#TerminateResult)
 
 ## Release 1
 
@@ -59,13 +59,13 @@ Improvements on existing documentation.
 
 New APIs:
 
-* [InquiryPriceCreateInstance](/document/api/589/33980)
+* [InquiryPriceCreateInstance](https://cloud.tencent.com/document/api/589/33980)
 
 New data structures:
 
-* [InquiryPriceResult](/document/api/589/33981#InquiryPriceResult)
-* [NodeSpec](/document/api/589/33981#NodeSpec)
-* [Placement](/document/api/589/33981#Placement)
-* [ResourceSpec](/document/api/589/33981#ResourceSpec)
-* [VPCSettings](/document/api/589/33981#VPCSettings)
+* [InquiryPriceResult](https://cloud.tencent.com/document/api/589/33981#InquiryPriceResult)
+* [NodeSpec](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/589/33981#NodeSpec)
+* [Placement](https://cloud.tencent.com/document/api/589/33981#Placement)
+* [ResourceSpec](https://cloud.tencent.com/document/api/589/33981#ResourceSpec)
+* [VPCSettings](https://cloud.tencent.com/document/api/589/33981#VPCSettings)
 

@@ -8,13 +8,13 @@ Default API request frequency limit: 20 times/second.
 
 ## 2. Input Parameters
 
-The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](/document/api/866/33518).
+The following list of request parameters lists only the API request parameters and some common parameters. For the complete list of common parameters, see [Common Request Parameters](https://cloud.tencent.com/document/api/866/33518).
 
 | Parameter name | Required | Type | Description |
 |---------|---------|---------|---------|
 | Action | Yes | String | Common parameter; the value for this API: GeneralBasicOCR |
 | Version | Yes | String | Common parameter; the value for this API: 2018-11-19 |
-| Region | Yes | String | Common parameters; for details, see the [Region List](/document/api/866/33518#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
+| Region | Yes | String | Common parameters; for details, see the [Region List](https://cloud.tencent.comhttps://cloud.tencent.com/document/api/866/33518#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8). |
 | ImageBase64 | No | String | Base64 value of the image. <br/>Supported image formats: PNG, JPG, JPEG; GIF is not supported at present. <br/>Supported image size: The downloaded image cannot exceed 3 MB in size after Base64 encoding. The image download time cannot exceed 3 seconds. <br/>Either the ImageUrl or ImageBase64 of the image must be provided; if both are provided, only ImageBase64 will be used. |
 | ImageUrl | No | String | URL of the image. <br/>Supported image formats: PNG, JPG, JPEG; GIF is not supported at present. <br/>Supported image size: The downloaded image cannot exceed 3 MB in size after Base64 encoding. The image download time cannot exceed 3 seconds. <br/>It is recommended to store the image in Tencent Cloud, as a Tencent Cloud URL can guarantee higher download speed and stability. The download speed and stability of non-Tencent Cloud URLs may be low. |
 
@@ -22,7 +22,7 @@ The following list of request parameters lists only the API request parameters a
 
 | Parameter name | Type | Description |
 |---------|---------|---------|
-| TextDetections | Array of [TextDetection](/document/api/866/33527#TextDetection) | Recognized text; for more information, click the link on the left |
+| TextDetections | Array of [TextDetection](https://cloud.tencent.com/document/api/866/33527#TextDetection) | Recognized text; for more information, click the link on the left |
 | Language | String | Currently, the following languages can be detected: Simplified Chinese, Traditional Chinese, English, Japanese and Korean. More languages will be supported in the future. <br/>Meaning of the return result: zh - Chinese/English; jap - Japanese; kor - Korean. |
 | RequestId | String | The unique request ID which is returned for each request. The RequestId for the current request needs to be provided when troubleshooting. |
 
@@ -211,11 +211,11 @@ Cloud API 3.0 comes with a set of complementary development toolkits (SDKs) that
 
 ### TCCLI
 
-* [Tencent Cloud CLI 3.0](https://cloud.tencent.com/document/product/440/6176)
+* [Tencent Cloud CLI 3.0](https://intl.cloud.tencent.com/document/product/1013/33463)
 
 ## 6. Error Codes
 
-Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](/document/api/866/33521#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
+Only the error codes related to the API business logic are listed below. For other error codes, see [Common Error Codes](https://cloud.tencent.com/document/api/866/33521#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81).
 
 | Error Code | Description |
 |---------|---------|

@@ -4,7 +4,7 @@ This API (DescribeInstanceFamilyConfigs) is used to query the list of model fami
 
 ## 2. Input Parameters
 
-The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](/document/api/213/15692).
+The following request parameter list only provides API request parameters and some common parameters. For the complete common parameter list, see [Common Request Parameters](https://cloud.tencent.com/document/api/213/15692).
 
 | Parameter Name | Required | Type | Description |
 |---------|---------|---------|---------|
@@ -17,7 +17,7 @@ The following request parameter list only provides API request parameters and so
 
 | Parameter Name | Type | Description |
 |---------|---------|---------|
-| InstanceFamilyConfigSet | Array of [InstanceFamilyConfig](/document/api/213/15753#InstanceFamilyConfig) | List of instance model group configuration. |
+| InstanceFamilyConfigSet | Array of [InstanceFamilyConfig](https://cloud.tencent.com/document/api/213/15753#InstanceFamilyConfig) | List of instance model group configuration. |
 | RequestId | String | The unique request ID, which is returned for each request. When locating the problem, the RequestId of the request needs to be provided. |
 
 ## 4. Error Codes
