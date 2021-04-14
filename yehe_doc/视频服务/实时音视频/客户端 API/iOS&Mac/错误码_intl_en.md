@@ -18,7 +18,7 @@
 |ERR_USER_ID_INVALID|-3319|Incorrect room entry parameter `userID`|
 |ERR_USER_SIG_INVALID|-3320|Incorrect room entry parameter `userSig`|
 |ERR_ROOM_REQUEST_ENTER_ROOM_TIMEOUT|-3308|The room entry request timed out. Please check the network|
-|ERR_SERVER_INFO_SERVICE_SUSPENDED|-100013|Unavailable service. Please check whether the remained validity period in minutes in the package is greater than 0 and whether the Tencent Cloud account has overdue payment|
+|ERR_SERVER_INFO_SERVICE_SUSPENDED|-100013|Unavailable service. Please check whether the remained validity period in minutes in the package is greater than 0 and whether the Tencent Cloud account is in arrears|
 
 
 ### Error codes for room exit
@@ -163,8 +163,8 @@ Warning codes do not require your special attention, and you can choose whether 
 |WARNING_ROOM_DISCONNECT|5101|Network connection was closed|
 |WARNING_IGNORE_UPSTREAM_FOR_AUDIENCE|6001|The current role is viewer, so upstream audio/video data is ignored|
 |WARNING_NET_BUSY|1101|Unstable network condition: the upstream bandwidth is too low, and data upload is restricted|
-|WARNING_RTMP_SERVER_RECONNECT|1102|LVB error. The network was disconnected, and automatic reconnection was performed (which will be canceled if failing for 3 times in a row)|
-|WARNING_LIVE_STREAM_SERVER_RECONNECT|2103|LVB error. The network was disconnected, and automatic reconnection was performed (which will be canceled if failing for 3 times in a row)|
+|WARNING_RTMP_SERVER_RECONNECT|1102|Publishing error. The network was disconnected, and is being reconnected. Maximum retry count: 3. |
+|WARNING_LIVE_STREAM_SERVER_RECONNECT|2103|Playback error. The network was disconnected and is being reconnected. Maximum retry count: 3.|
 |WARNING_RECV_DATA_LAG|2104|Unstable transmission of packets from the network. This may be caused by insufficient downstream bandwidth or uneven outbound stream from the anchor|
 |WARNING_RTMP_DNS_FAIL|3001|LVB error. DNS resolution failed|
 |WARNING_RTMP_SEVER_CONN_FAIL|3002|LVB error. Server connection failed|
