@@ -30,17 +30,16 @@
 ### 如何查看云硬盘详细信息？
 1. 登录 [云硬盘控制台](https://console.cloud.tencent.com/cvm/cbs/index)。
 2. 在“云硬盘”列表页面上方，选择需查看云硬盘所在地域。
-3. 在列表中找到目标云硬盘， 可查看该盘相关信息。如下图所示：
+3. 在列表中找到目标云硬盘， 可查看该盘相关信息。
 可单击 ID 进入该盘详情页，查看更多信息。
-![](https://main.qcloudimg.com/raw/571b1a0c1582120cd44582745cb6a1c6.png)
+
 
 ### 如何通过控制台查看云硬盘使用情况？
 
 腾讯云默认在创建云服务器时开通云监控服务，因此可通过控制台查看已挂载至云服务器，并完成初始化操作的云硬盘使用情况。步骤如下：
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/instance/index)，进入“实例”列表页面。
 2. 选择需查看的实例 ID，进入实例详情页面。
-3. 在实例详情页面，选择【监控】页签，即可查看该实例下云硬盘使用情况。如下图所示：
-![](https://main.qcloudimg.com/raw/83541fc9128edb97b602691a852c1604.png)
+3. 在实例详情页面，选择【监控】页签，即可查看该实例下云硬盘使用情况。
 
 ### 关于云硬盘的常用操作有哪些？
 详情请参见云硬盘 [操作总览](https://intl.cloud.tencent.com/document/product/362/33140)。
@@ -79,11 +78,11 @@
  </tr>
  <tr>
  <td nowrap="nowrap">快照容量 < 云硬盘容量 ≤ 2TB<br/>或者<br/>2TB < 快照容量 < 云硬盘容量</td>
-<td><ul class="params"><li>挂载至 Windows 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/31601">扩展分区及文件系统（Windows）</a></li><li>挂载至 Linux 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/31602">扩展分区及文件系统（Linux）</a></li></ul></td>
+<td><ul class="params"><li>挂载至 Windows 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/31601">扩展分区及文件系统（Windows）</a></li><li>挂载至 Linux 云服务器：<a href="https://cloud.tencent.com/document/product/362/6738">扩展分区及文件系统（Linux）</a></li></ul></td>
  </tr> 
  <tr>
  <td>快照容量 ≤ 2TB < 云硬盘容量</td>
-<td nowrap="nowrap"><ul class="params"><li>若快照中使用 MBR 分区形式：</li>需参考 <a href="https://intl.cloud.tencent.com/document/product/362/31598">初始化云硬盘（大于等于2TB）</a>使用 GPT 重新分区，<b>该操作将会删除原有数据</b><li>若快照中使用 GPT 分区形式：<ul><li>挂载至 Windows 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/31601">扩展分区及文件系统（Windows）</a></li><li>挂载至 Linux 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/31602">扩展分区及文件系统（Linux）</a></li></ul></td>
+<td nowrap="nowrap"><ul class="params"><li>若快照中使用 MBR 分区形式：</li>需参考 <a href="https://intl.cloud.tencent.com/document/product/362/31598">初始化云硬盘（大于等于2TB）</a>使用 GPT 重新分区，<b>该操作将会删除原有数据</b><li>若快照中使用 GPT 分区形式：<ul><li>挂载至 Windows 云服务器：<a href="https://intl.cloud.tencent.com/document/product/362/31601">扩展分区及文件系统（Windows）</a></li><li>挂载至 Linux 云服务器：<a href="https://cloud.tencent.com/document/product/362/6738">扩展分区及文件系统（Linux）</a></li></ul></td>
  </tr> 
  </table>
 
@@ -101,6 +100,9 @@
    - 快速格式化：仅为分区分配文件系统，并重写目录表。快速格式化占用的实际空间相对较少。
    - 正常格式化：不但包含快速格式化工作，还会逐扇区扫描分区以确定和标记坏扇区，填充云硬盘空块，相当于写了云盘全盘的数据量。此时，第一份快照会近似于云盘容量。
 - Linux 系统格式化：格式化云硬盘后，在实例未写入数据前，第一份快照的容量大小与云盘文件系统格式有关。
+
+### 数据盘容量是否可与系统盘容量合并？
+不支持合并。您可通过 [扩容云硬盘](https://intl.cloud.tencent.com/document/product/362/5747) 来扩展数据盘或系统盘的容量大小，以增加存储空间。
 
 ### 扩容云硬盘后，在 Linux 系统下新建独立分区是否需要解挂原有分区？ 
 是。您可参考以下步骤进行解挂分区：
@@ -143,12 +145,14 @@ wmic path win32_physicalmedia get SerialNumber,Tag
 >!在进行调整前，为确保数据安全，请通过 [创建镜像](https://intl.cloud.tencent.com/document/product/213/4942) 或 [创建快照](https://intl.cloud.tencent.com/document/product/362/5755) 完成数据备份。
 >
 
-1. 登录  [云服务器控制台](https://intl.cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fcvm) ，进入“实例”列表页面。
+1. 登录  [云服务器控制台](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fcvm) ，进入“实例”列表页面。
 2. 选择需调整实例所在行右侧的【更多】>【实例状态】>【关机】，进行关机操作。
 3. 待实例关机后，选择【更多】>【资源调整】>【调整硬盘介质】。
 4. 在弹出的“调整硬盘介质”窗口中，选择目标云硬盘类型，勾选同意说明并单击【立即转换】。
 5. 核对信息后，完成可能需要支付的订单，即可完成调整。
->? 更换磁盘介质的更多信息，请参见 [调整硬盘介质](https://intl.cloud.tencent.com/document/product/213/32365)。
+>?
+>
+>- 更换磁盘介质的更多信息，请参见 [调整硬盘介质](https://intl.cloud.tencent.com/document/product/213/32365)。
 
 
 ### 随云服务器一起购买的数据盘可以卸载吗？
@@ -175,10 +179,14 @@ wmic path win32_physicalmedia get SerialNumber,Tag
 
 ### 云硬盘到期后系统如何处理？
 以下说明仅适用于支持卸载的弹性云硬盘，不支持卸载的非弹性云硬盘与云服务器有完全一致的生命周期，可参考 [云服务器欠费说明](https://intl.cloud.tencent.com/document/product/213/2181)。
+
+
 - 按量计费云硬盘：
-    - 从您的账户余额被扣为负值时刻起，按量计费云硬盘在2小时内可继续使用且继续扣费，2小时后云硬盘将作停服处理（云硬盘不可用，仅保留数据），并在数据被彻底清除前按照正常使用的计费标准持续计费（即使您的账户余额已为负值）。
-    - 若云硬盘停服后15天内，您的腾讯云账户充值到余额大于0，云硬盘可恢复使用。
-    - 若云硬盘停服后，余额小于0超过15天，系统将回收按量计费云硬盘并通过邮件、短信及站内信等方式通知到腾讯云账户的创建者以及所有协作者，回收时所有数据会被清除且**不可找回**。
+ - 从您的账户余额被扣为负值时刻起，按量计费云硬盘在2小时内可继续使用且继续扣费，2小时后云硬盘将作停服处理（云硬盘不可用，仅保留数据），并在数据被彻底清除前按照正常使用的计费标准持续计费（即使您的账户余额已为负值）。
+ - 若云硬盘停服后15天内，您的腾讯云账户充值到余额大于0，云硬盘可恢复使用。
+ - 若云硬盘停服后，余额小于0超过15天，系统将回收按量计费云硬盘并通过邮件、短信及站内信等方式通知到腾讯云账户的创建者以及所有协作者，回收时所有数据会被清除且**不可找回**。
+
+如您需要了解更详细的信息，欢迎致电 86 4009100100。
 
 ### 在成功购买后，是否支持更换云硬盘的类型？
 目前暂不支持云硬盘在不同类型之间进行切换，您可以对数据进行快照备份后通过快照创建您需要的新类型云硬盘。
