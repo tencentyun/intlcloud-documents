@@ -5,7 +5,7 @@ Tencent Container Registry (TCR) Enterprise Edition supports public network acce
 This document describes how to configure public network access control for a TCR Enterprise Edition instance.
 
 ## Prerequisites
-Before configuring public network access control for a TCR Enterprise Edition instance, you must first [create a TCR Enterprise Edition instance](https://cloud.tencent.com/document/product/1141/51110).
+Before configuring public network access control for a TCR Enterprise Edition instance, you must first [create a TCR Enterprise Edition instance](https://intl.cloud.tencent.com/document/product/1051/39088).
 
 
 ## Directions
