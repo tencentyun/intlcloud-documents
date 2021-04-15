@@ -45,7 +45,7 @@ TMGContext.getInstance(this);
 
 ### 2. Initialize the SDK
 
-For more information on how to get parameters, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/10782).
+For more information on how to get parameters, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/39698).
 This API requires the `AppID` from the Tencent Cloud Console and the `openID` as parameters. The `openID` uniquely identifies a user with the rules stipulated by the application developer and must be unique in the application (currently, only INT64 is supported).
 
 >The SDK must be initialized so that a room can be entered. 
