@@ -31,7 +31,7 @@
 
 ## 步骤2：配置告警接口回调
 
-在 [云监控控制台—创建告警策略](https://console.cloud.tencent.com/monitor/policylist/create)，填写 webhook 地址，单击【完成】即可。告警策略创建步骤，详情请参见 [创建告警策略](https://intl.cloud.tencent.com/document/product/248/6215)。
+在 [云监控控制台—创建告警策略](https://console.cloud.tencent.com/monitor/policylist/create)，填写 webhook 地址，单击【完成】即可。
 ![](https://main.qcloudimg.com/raw/6c5dcf93ba7498f44faa33dbbcaa82ad.png)
 
 配置成功后，当告警策略被触发或恢复时，您可以在企业微信群接收到群机器人发送的告警通知，如下图所示：
