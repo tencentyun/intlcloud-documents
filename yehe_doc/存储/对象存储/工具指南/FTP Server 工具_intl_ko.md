@@ -11,8 +11,8 @@ COS FTP Server는 FTP 프로토콜을 통해 COS에 저장된 객체 및 디렉�
 >?멀티 bucket 바인딩: 서로 다른 FTP Server 작업 경로(home_dir)를 통해 구현되므로, 서로 다른 bucket 및 사용자 정보 지정 시 반드시 home_dir이 달라야 합니다.
 
 **삭제 작업 제한**: 새로운 FTP Server에서는 ftp 사용자별로 delete_enable 옵션을 설정하여 해당 FTP 사용자에게 파일 삭제 권한을 허용할 것인지 여부를 식별할 수 있습니다.
-**지원하는 FTP 명령어: **put, mput, get, rename, delete, mkdir, ls, cd, bye, quite, size
-**지원하지 않는 FTP 명령어: **append, mget(네이티브 mget 명령어를 지원하지 않으나, FileZilla 클라이언트와 같은 일부 Windows 클라이언트에서는 일괄 다운로드 가능)
+**지원하는 FTP 명령어**:put, mput, get, rename, delete, mkdir, ls, cd, bye, quite, size
+**지원하지 않는 FTP 명령어**:append, mget(네이티브 mget 명령어를 지원하지 않으나, FileZilla 클라이언트와 같은 일부 Windows 클라이언트에서는 일괄 다운로드 가능)
 
 >?FTP Server 툴은 현재 중단 시점부터 다시 전송하기 기능을 제공하지 않습니다.
 
@@ -155,11 +155,11 @@ ftp 192.xxx.xx.103 2121
 
 1. [FileZilla 클라이언트](https://filezilla-project.org/)를 다운로드 및 설치합니다.
 2. FileZilla 클라이언트에서 COS FTP Server의 액세스 정보를 설정한 후 [즉시 연결]을 클릭합니다.
- - **호스트(H): **예시 파일 conf/vsftpd.conf.example의 **masquerade_address**가 해당 설정 항목 입니다. 본 예시에서는 IP를 192.xxx.xx.103으로 설정합니다.
+ - **호스트(H):**예시 파일 conf/vsftpd.conf.example의**masquerade_address**가 해당 설정 항목 입니다. 본 예시에서는 IP를 192.xxx.xx.103으로 설정합니다.
 >!COS FTP Server가 특정 게이트웨이 또는 NAT에 있는 경우, 이 설정 항목을 통해 게이트웨이의 IP 주소 또는 도메인을 COS FTP Server에 지정합니다.
- - **사용자 이름(U): **예시 파일 `conf/vsftpd.conf.example`의 **ftp_login_user_name**이 해당 설정 항목입니다. (설정 필요)
- - **비밀번호(W): **예시 파일 `conf/vsftpd.conf.example`의 **ftp_login_user_password**가 해당 설정 항목입니다. (설정 필요)
- - **포트(P): **예시 파일 `conf/vsftpd.conf.example`의 **listen_port**가 해당 설정 항목입니다. 본 예시에서는 2121로 설정합니다.
+ - **사용자 이름(U):**예시 파일 `conf/vsftpd.conf.example`의**ftp_login_user_name**이 해당 설정 항목입니다. (설정 필요)
+ - **비밀번호(W):**예시 파일 `conf/vsftpd.conf.example`의**ftp_login_user_password**가 해당 설정 항목입니다. (설정 필요)
+ - **포트(P):**예시 파일 `conf/vsftpd.conf.example`의**listen_port**가 해당 설정 항목입니다. 본 예시에서는 2121로 설정합니다.
 
 
 ## FAQ
