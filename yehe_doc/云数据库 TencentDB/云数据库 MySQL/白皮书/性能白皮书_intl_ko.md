@@ -1,8 +1,8 @@
 ## 테스트 툴
-데이터베이스의 표준 성능 테스트는 sysbench 0.5입니다.
+데이터베이스의 표준 성능 테스트는 sysbench 0.5로 진행합니다.
 
 툴 수정 설명:
-sysbench가 자체 보유한 otlp 스크립트를 수정하여 읽기, 쓰기의 비율을 1:1로 수정했으며, 테스트 명령어 매개변수인 oltp_point_selects와 oltp_index_updates를 실행하여 읽기 쓰기 비율을 제어할 수도 있습니다. 본 문서의 테스트 사례는 select 포인트 4개, update 포인트 1개를 사용하여 읽기 쓰기의 비율을 4:1로 유지합니다.
+sysbench의 otlp 스크립트에서 읽기/쓰기의 비율을 1:1로 수정하고, 테스트 명령어 매개변수인 oltp_point_selects와 oltp_index_updates를 실행하여 읽기/쓰기 비율을 제어합니다. 본 문서의 테스트 사례는 모두 select 포인트 4개와 update 포인트 1개를 사용하여 읽기/쓰기 비율을 4:1로 유지합니다.
 
 #### 툴 설치
 본 문서의 테스트에서는 Sysbench 0.5 버전을 사용하며, 설치 방법은 아래와 같습니다.
@@ -16,24 +16,24 @@ yum -y install mariadb-devel
 make -j
 make install
 ```
->?위는 CVM(CentOS 시스템)에서 스트레스 테스트를 진행할 때의 설치 방법이며, 다른 운영 체제에 설치하려면 [Sysbench 공식 문서](https://github.com/akopytov/sysbench?spm=a2c4g.11186623.2.12.36061072oZL2qS)를 참조하십시오.
+>?위는 부하 테스트 CVM(CentOS 시스템)에 설치하는 방법입니다. 다른 운영 체제에 설치하려면 [Sysbench 공식 홈페이지 문서](https://github.com/akopytov/sysbench?spm=a2c4g.11186623.2.12.36061072oZL2qS)를 참조하십시오.
 
 ## 테스트 환경
 
 |유형|설명|
 |--|--|
-|베어메탈 인스턴스|고가용성 버전-단일 기기에 최대 488GB 메모리, 6TB 디스크의 데이터베이스 지원|
-|인스턴스 사양|현재 판매 중인 주요 설정 사양(아래 [테스트 사례](#cscs) 문서 참조)|
+|베어메탈 인스턴스|이중 노드-단일 기기에 최대 488GB 메모리, 6TB 디스크의 데이터베이스 지원|
+|인스턴스 사양|판매 중인 주요 설정 사양(아래 [테스트 사례](#cscs) 문서 참조)|
 |클라이언트 사양| 4코어 8GB 메모리|
-|클라이언트 수량|1~6개(사양 업그레이드 시, 클라이언트 수량도 늘려야 함)|
-|네트워크 환경|10000Mbps 네트워크 데이터 센터, 네트워크 딜레이 < 0.05ms|
-|환경 부하|mysql 설치 시 기기의 부하 > 70%(비전용 인스턴스에 대해)|
+|클라이언트 수량|1~6개(사양 업그레이드 시 클라이언트 수량도 늘려야 함)|
+|네트워크 환경|10GB 네트워크 데이터 센터, 네트워크 딜레이 < 0.05ms|
+|환경 부하|mysql 설치 시 기기의 부하 > 70%(비전용 인스턴스 대상)|
 
-- 클라이언트 사양 설명: 비교적 사양이 높은 클라이언트 기기를 채택하여 단일 클라이언트에서 데이터베이스 인스턴스의 성능에 대한 스트레스 테스트가 가능하게 하였습니다. 클라이언트의 사양이 낮을 경우, 여러 클라이언트의 동시 스트레스 테스트 인스턴스로 데이터의 총합을 구하는 것을 권장합니다.
-- 네트워크 딜레이 설명: 테스트 환경에서 클라이언트 기기와 데이터베이스 인스턴스가 같은 가용존에 있어야 하며, 테스트 결과는 네트워크 환경의 영향을 받지 않습니다.
+- 클라이언트 사양 설명: 비교적 높은 사양의 클라이언트 기기를 사용하여 단일 클라이언트도 데이터베이스 인스턴스의 성능 부하 테스트를 수행할 수 있습니다. 클라이언트의 사양이 낮은 경우, 인스턴스에 대해 여러 클라이언트로 동시에 부하 테스트를 수행하여 데이터의 합계를 구하는 것을 권장합니다.
+- 네트워크 딜레이 설명: 테스트 환경은 클라이언트 기기와 데이터베이스 인스턴스가 동일한 가용존에 있도록 설정해야 합니다. 테스트 결과는 네트워크 환경의 영향을 받지 않습니다.
 
 ## 테스트 방법
-### 1.DB 테이블 구조 테스트
+### 1. DB 테이블 구조 테스트
 ```
 CREATE TABLE `sbtest1` ( 
 `id` int(10) unsigned NOT NULL AUTO_INCREMENT, 
@@ -52,39 +52,39 @@ c: 08566691963-88624912351-16662227201-46648573979-64646226163-77505759394-75470
 pad: 63188288836-92351140030-06390587585-66802097351-4928296184
 ```
 
-
 ### 3. 데이터 준비
 ```
 sysbench --mysql-host=xxxx --mysql-port=xxxx --mysql-user=xxx --mysql-password=xxx --mysql-db=test --mysql-table-engine=innodb --test=tests/db/oltp.lua --oltp_tables_count=20 --oltp-table-size=10000000  --rand-init=on prepare
 ```
 
 데이터 준비 매개변수 설명:
-- `--test=tests/db/oltp.lua`, tests/db/oltp.lua 스크립트를 호출해 oltp 모드 테스트를 진행함을 의미합니다.
-- `--oltp_tables_count=20`, 테스트에 사용되는 테이블 수량이 20개라는 의미입니다.
-- `--oltp-table-size=10000000`, 각 테스트 테이블에 입력된 데이터 행 수가 1000만 행이라는 의미입니다.
-- `--rand-init=on`, 각 테스트 테이블 모두 랜덤 데이터로 입력되었음을 의미합니다.
-   
+- `--test=tests/db/oltp.lua`는 tests/db/oltp.lua 스크립트를 호출해 oltp 모드 테스트를 진행함을 의미합니다.
+- `--oltp_tables_count=20`은 테스트에 사용되는 테이블 수량이 20개임을 의미합니다.
+- `--oltp-table-size=10000000`은 각 테스트 테이블에 입력된 데이터 행 수가 1,000만 개임을 의미합니다.
+- `--rand-init=on`은 각 테스트 테이블이 임의의 데이터로 입력되었음을 의미합니다.
+  
 
-### 4. 성능 스트레스 테스트 명령어
+### 4. 성능 부하 테스트 명령어
 ```
 sysbench --mysql-host=xxxx --mysql-port=xxx --mysql-user=xxx --mysql-password=xxx --mysql-db=test --test=/root/sysbench_for_z3/sysbench/tests/db/oltp.lua --oltp_tables_count=xx --oltp-table-size=xxxx --num-threads=xxx --oltp-read-only=off --rand-type=special --max-time=600 --max-requests=0 --percentile=99 --oltp-point-selects=4 run
 ```
 
-성능 스트레스 테스트 매개변수 설명:
-- `--test=/root/sysbench_for_z3/sysbench/tests/db/oltp.lua`, /root/sysbench_for_z3/sysbench/tests/db/oltp.lua 스크립트를 호출해 oltp 모드의 테스트를 진행함을 의미합니다.
-- `--oltp_tables_count=20`, 이번 테스트에 사용되는 테이블 수량이 20개라는 의미입니다.
-- `--oltp-table-size=10000000`, 이번 테스트에 사용되는 테이블 행 수가 모두 1000만 행이라는 의미입니다.
-- `--num-threads=128`, 이번 테스트의 클라이언트 동시 접속 수가 128임을 의미합니다.
-- `--oltp-read-only=off`, off는 테스트 시 읽기 전용 테스트 모델을 종료하고 읽기 및 쓰기 하이브리드 모델을 사용한다는 의미입니다.
-- `--rand-type=special`, 랜덤 모델이 특정 유형임을 의미합니다.
-- `--max-time=1800`, 이번 테스트의 실행 시간을 의미합니다.
-- `--max-requests=0`, 0은 총 요청 수가 제한되지 않으며, max-time에 따라 테스트함을 의미합니다.
-- `--percentile=99`, 샘플링 레이트 설정을 의미하며, 기본값은 95%입니다. 즉, 1%의 긴 요청을 버리면 나머지 99% 안에서 최댓값을 취한다는 의미입니다.
-- `--oltp-point-selects=4`, oltp 스크립트 중 sql 테스트 명령어로, select 작업 횟수가 4라는 의미이며 기본값은 1입니다.
+성능 부하 테스트 매개변수 설명:
+- `--test=/root/sysbench_for_z3/sysbench/tests/db/oltp.lua`는 /root/sysbench_for_z3/sysbench/tests/db/oltp.lua 스크립트를 호출해 oltp 모드의 테스트를 진행함을 의미합니다.
+- `--oltp_tables_count=20`은 이번 테스트에 사용되는 테이블 수량이 20개임을 의미합니다.
+- `--oltp-table-size=10000000`은 이번 테스트에 사용되는 테이블 행 수가 1,000만 개임을 의미합니다.
+- `--num-threads=128`은 이번 테스트의 클라이언트 동시 접속 수가 128개임을 의미합니다.
+- `--oltp-read-only=off`에서 off 는 테스트 시 읽기 전용 테스트 모델을 비활성화하고 읽기/쓰기 혼합 모델을 사용한다는 의미입니다.
+- `--rand-type=special`은 랜덤 모델이 특정 유형임을 의미합니다.
+- `--max-time=1800`은 이번 테스트의 실행 시간을 의미합니다.
+- `--max-requests=0`에서 0은 요청 수가 제한되어 있지 않으며, max-time에 따라 테스트함을 의미합니다.
+- `--percentile=99`는 샘플링 레이트 설정을 의미하며 기본값은 95%입니다. 즉, 1%의 긴 요청 외에 나머지 99%에서 최댓값을 취한다는 뜻입니다.
+- `--oltp-point-selects=4`는 oltp 스크립트의 sql 테스트 명령어로, select 작업 횟수가 4라는 의미입니다. 기본값은 1입니다.
 
 ### 5. 시나리오 모델
-본 문서의 사례는 모두 sysbench의 lua 스크립트를 사용해 4개의 select 포인트 조회와 1개의 update(인덱스 열)로 수정하였으며, 읽기와 쓰기의 비율은 4:1입니다.
-최대 사양 유형에 대해서는 데이터 시나리오에 매개변수 최적화 모델을 추가했으며, 테스트 결과는 아래 [테스트 결과](#document_test_result) 문서를 참조하십시오.
+본 문서의 사례는 모두 sysbench의 lua 스크립트를 사용해 select 포인트 쿼리 4개와 update 1개(인덱스 열)로 수정하였고, 읽기/쓰기 비율은 4:1입니다.
+최대 사양 유형에 대해서는 데이터 시나리오에 매개변수 최적화 모델을 추가했습니다. 테스트 결과는 아래 [테스트 결과](#document_test_result) 문서를 참조하십시오.
+
 
 <span id="cscs"></span>
 ## 매개변수 테스트
