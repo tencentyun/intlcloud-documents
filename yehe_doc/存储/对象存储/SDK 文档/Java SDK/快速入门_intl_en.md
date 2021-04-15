@@ -30,7 +30,7 @@ You can install the Java SDK using Maven or source code:
 <dependency>
        <groupId>com.qcloud</groupId>
        <artifactId>cos_api</artifactId>
-       <version>5.6.37</version>
+       <version>5.6.38</version>
 </dependency>
 ```
 - Using source code
@@ -67,6 +67,8 @@ COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
 // `clientConfig` contains the set methods to set region, HTTPS (HTTP by default), timeout, and proxy. For detailed usage, please see the source code or the FAQs about the SDK for Java.
 Region region = new Region("COS_REGION");
 ClientConfig clientConfig = new ClientConfig(region);
+// The HTTPS protocol is recommended.
+clientConfig.setHttpProtocol(HttpProtocol.https);
 // 3. Generate a COS client.
 COSClient cosClient = new COSClient(cred, clientConfig);
 ```
