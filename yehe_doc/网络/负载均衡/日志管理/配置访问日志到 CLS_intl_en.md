@@ -7,7 +7,7 @@ Access logs of CLB are mainly used to quickly locate and troubleshoot issues. Th
 >?
 >- Currently, access logs can be stored in CLS only for layer-7 protocols (HTTP/HTTPS) but not layer-4 protocols (TCP/UDP/TCP SSL).
 - Storing CLB access logs in CLS is now free of charge. You only need to pay for the CLS service.
-- Currently, access logs can be stored in CLS in the Guangzhou, Shanghai, Nanjing, Beijing, Chongqing, Chengdu, Hong Kong (China), Singapore, Mumbai, Silicon Valley, Toronto, and Frankfurt regions through the console or APIs.
+- Currently, access logs can be stored in CLS in the Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, Chongqing, Hong Kong (China), Singapore, Mumbai, Seoul, Tokyo, Silicon Valley, Virginia, Toronto, and Frankfurt regions through the console or APIs.
 
 ## Enabling Access Log Storage in CLS
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3).
@@ -72,9 +72,9 @@ Currently, CLS supports the following three field types:
 <tbody><tr><td>stgw_request_id</td><td>Request ID.</td><td>text</td></tr>
 <tr><td>time_local</td><td> Access time and time zone, such as "01/Jul/2019:11:11:00 +0800" where "+0800" represents UTC+8, i.e., Beijing time.</td><td>text</td></tr>
 <tr><td>protocol_type</td><td>Protocol type (HTTP/HTTPS/SPDY/HTTP2/WS/WSS).</td><td>text</td></tr>
-<tr><td>server_addr</td><td>Destination IP of request.</td><td>text</td></tr>
-<tr><td>server_port</td><td>Destination port of request.</td><td>long</td></tr>
-<tr><td>server_name</td><td>Rule's `server_name`, i.e., server name.</td><td>text</td></tr>
+<tr><td>server_addr</td><td>CLB VIP.</td><td>text</td></tr>
+<tr><td>server_port</td><td>CLB VPort, i.e., the listening port.</td><td>long</td></tr>
+<tr><td>server_name</td><td>`server_name` of a rule, i.e., the domain name configured in a CLB listener.</td><td>text</td></tr>
 <tr><td>remote_addr</td><td>Client IP.</td><td>text</td></tr>
 <tr><td>remote_port</td><td>Client port.</td><td>long</td></tr>
 <tr><td>status</td><td>Status code returned to client.</td><td>long</td></tr>
@@ -84,7 +84,7 @@ Currently, CLS supports the following three field types:
 <tr><td>request</td><td>Request line.</td><td>text</td></tr>
 <tr><td>request_length</td><td>Number of bytes of request received from client.</td><td>long</td></tr>
 <tr><td>bytes_sent</td><td>Number of bytes sent to client.</td><td>long</td></tr>
-<tr><td>http_host</td><td>Request domain name.</td><td>text</td></tr>
+<tr><td>http_host</td><td> Request domain name, i.e., the host of the HTTP header.</td><td>text</td></tr>
 <tr><td>http_user_agent</td><td>`user_agent` field of the HTTP header.</td><td>text</td></tr>
 <tr><td>http_referer</td><td>HTTP request source.</td><td>text</td></tr>
 <tr><td>request_time</td><td>Request processing time. The timing begins when the first byte is received from the client and stops when the last byte is sent to the client, i.e., the total time the whole process takes, where the client request reaches a CLB instance, the CLB instance forwards the request to an RS, the RS responds and sends data to the CLB instance, and finally the CLB instance forwards the data to the client.</td><td>double</td></tr>
@@ -97,4 +97,5 @@ Currently, CLS supports the following three field types:
 <tr><td>ssl_handshake_time</td><td>The time that an SSL handshake takes.</td><td>double</td></tr>
 <tr><td>ssl_cipher</td><td>SSL cipher suite.</td><td>text</td></tr>
 <tr><td>ssl_protocol</td><td>SSL protocol version.</td><td>text</td></tr>
-<tr><td>vip_vpcid</td><td>VPC ID of CLB instance VIP.</td><td>long</td></tr></tbody></table>
+<tr><td>vip_vpcid</td><td>VPC ID of a CLB VIP; the `vip_vpcid` of a public network CLB instance is `-1`.</td><td>long</td></tr>
+</tbody></table>
