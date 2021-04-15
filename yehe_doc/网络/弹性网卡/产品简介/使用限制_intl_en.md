@@ -143,7 +143,7 @@ The maximum number of ENIs that can be bound to a CVM and the maximum number of 
    </tr>
    <tr >
     <th rowspan="2" style = "text-align:center;">High IO</th>
-    <th rowspan="2" style = "text-align:center;">High IO IT5</th>
+    <th style = "text-align:center;">High IO IT5</th>
     <td  >-</td>
     <td  >-</td>
     <td  >-</td>
