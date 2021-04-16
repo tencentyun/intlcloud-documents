@@ -53,8 +53,8 @@ You can specify the message type when calling the push API.
 3. If you do not need vendor notification messages nor a custom channel ID, you do not need to perform relevant operations, and TPNS will specify a default channel ID for all messages of your application and group them into the default type.
 
 
-
-## OPPO Notification Channel Application Guide[](id:oppozhinan)
+[](id:oppozhinan)
+## OPPO Notification Channel Application Guide
 
 ### OPPO notification channel overview
 
@@ -76,7 +76,7 @@ The default channel on the OPPO PUSH platform is the public message channel. Now
 >! Once the channel ID is set, it cannot be changed or deleted.
 
 
- ![](https://main.qcloudimg.com/raw/20c0242e7558cdfac1bd6d6a79f0a219.png)
+
 2. Currently, the OPPO private message channel can take effect only after you apply for it through email. Please send an application email to the OPPO PUSH platform according to the following requirements. For more information, see [OPPO PUSH Channel Upgrade Beta Invitation](https://open.oppomobile.com/wiki/doc#id=10614).
 ```plaintext
 Standard for applying for the public/private message channel beta eligibility: total number of users for OPPO PUSH ≥ 300,000
