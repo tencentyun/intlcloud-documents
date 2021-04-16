@@ -8,7 +8,7 @@ Cloud Monitoring (CM) provides various methods to help you identify resource exc
 
 ### Detecting exceptions through alarms
 
-Tencent Cloud uses monitoring and alarms to promptly detect an exception and notify you automatically. This helps keep you informed on exceptions in real time across all scenarios. You can log in to the [Cloud Monitoring Console](https://console.cloud.tencent.com/monitor/overview) and configure alarm policies for resources. For more information, see [Creating Alarm Policies](https://intl.cloud.tencent.com/document/product/248/6215).
+Tencent Cloud uses monitoring and alarms to promptly detect an exception and notify you automatically. This helps keep you informed on exceptions in real time across all scenarios. You can log in to the [Cloud Monitoring Console](https://console.cloud.tencent.com/monitor/overview) and configure alarm policies for resources. For more information, see [Creating Alarm Policies](https://intl.cloud.tencent.com/document/product/248/38908).
 
 If you have configured key performance metrics and events as alarm rules, you will be notified promptly in multiple ways via the alarm channel if an exception occurs.
 
