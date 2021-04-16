@@ -6,7 +6,7 @@
 	<th width="15%">Release Date</th>
 	<th style="width: 25%;">Document</th>
 	</tr>
-	<tr><td>Tencent Cloud Game Server Engine (GSE) is officially launched</td>
+	<tr><td>Tencent Cloud Game Server Elastic-scaling (GSE) is officially launched</td>
 	<td>GSE is officially launched after the beta test.</td>
 	<td nowrap="nowrap">2021-03-18</td>
 	<td><a href="https://intl.cloud.tencent.com/document/product/1055/36667">Overview<br></a></td>
