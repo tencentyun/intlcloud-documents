@@ -1,12 +1,12 @@
-Tencent Cloud LVBは、ストリーム切断診断により、迅速にライブストリーミングのLVBのプッシュ切断ストリームの記録を迅速に確認し、ストリーム切断の原因を特定します。
+Tencent Cloud CSSは、ストリーム切断診断により、迅速にライブストリーミングのCSSのプッシュ切断ストリームの記録を迅速に確認し、ストリーム切断の原因を特定します。
 
 ## 前提条件
-- [LVBコンソール](https://console.cloud.tencent.com/live)にログイン済みであること。
-- 現在Tencent Cloudアカウントにおいて、LVBストリームのプッシュに中断が発生していること。
+- [CSSコンソール](https://console.cloud.tencent.com/live)にログイン済みであること。
+- 現在Tencent Cloudアカウントにおいて、CSSストリームのプッシュに中断が発生していること。
 
 ## 操作手順
 
-LVBプッシュの中断後、左側のメニューバーの【イベントセンター】>【[ストリーム切断記録](https://console.cloud.tencent.com/live/tools/streamevent
+CSSプッシュの中断後、左側のメニューバーの【イベントセンター】>【[ストリーム切断記録](https://console.cloud.tencent.com/live/tools/streamevent
 )】を選択して、ストリーム切断診断に進みます。
 ![](https://main.qcloudimg.com/raw/169c385baadcf5d7c4e6f3c9edc06722.png)
 
@@ -124,15 +124,15 @@ LVBプッシュの中断後、左側のメニューバーの【イベントセ�
  </tr>
  <tr >
 <td >201</td>
-<td  >あなたのLVBサービスは停止されています。</td>
+<td  >あなたのCSSサービスは停止されています。</td>
  </tr>
  <tr  >
 <td>202</td>
-<td  >アカウントの支払い延滞により、あなたのLVBサービスは一時停止されています。速やかにチャージしてください。</td>
+<td  >アカウントの支払い延滞により、あなたのCSSサービスは一時停止されています。速やかにチャージしてください。</td>
  </tr>
  <tr>
 <td >203</td>
-<td  >あなたのLVBサービスは強制的に停止されています。</td>
+<td  >あなたのCSSサービスは強制的に停止されています。</td>
  </tr>
  <tr>
 <td >300</td>
@@ -285,4 +285,4 @@ LVBプッシュの中断後、左側のメニューバーの【イベントセ�
  </tr>
 </table>
 
-LVBではクエリー用のAPIインターフェースも用意しています。詳細は[プッシュストリーム切断イベントのクエリー](https://intl.cloud.tencent.com/document/product/267/30800)をご参照ください。
+CSSではクエリー用のAPIインターフェースも用意しています。詳細は[プッシュストリーム切断イベントのクエリー](https://intl.cloud.tencent.com/document/product/267/30800)をご参照ください。
