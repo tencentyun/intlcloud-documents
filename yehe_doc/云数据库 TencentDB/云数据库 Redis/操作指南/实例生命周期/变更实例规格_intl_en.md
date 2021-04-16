@@ -6,7 +6,7 @@ TencentDB for Redis supports instance specification adjustment to enable flexibl
 ### Scaling the memory edition (standard architecture)
 >!
 >- When you expand the capacity of the memory edition (standard architecture), if the remaining available capacity of the instance is insufficient to meet the capacity expansion requirements, migration will occur, which will not affect the service access. However, there will be a momentary interruption after the migration is completed, and we recommend that you implement a reconnection mechanism for your business.
->- Because the memory edition (standard architecture) has a maximum capacity of 384 GB, when the capacity reaches 384 GB, it cannot be expanded any further.
+>- Because the memory edition (standard architecture) has a maximum capacity of 64 GB, when the capacity reaches 64 GB, it cannot be expanded any further.
 >- To avoid failure in capacity reduction, the capacity after reduction should be at least 1.3 times the amount of existing data. The system will refund automatically after capacity reduction.
 
 1. Log in to the [Redis Console](https://console.cloud.tencent.com/redis). In the instance list, locate the instance you want to scale and click **Configure** > **Expand Node**, **Reduce Node**, **Add Replica**, or **Delete Replica** in the "Operation" column.
