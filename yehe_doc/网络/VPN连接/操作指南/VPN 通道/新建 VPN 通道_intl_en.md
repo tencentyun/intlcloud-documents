@@ -81,6 +81,7 @@ The following configuration information is required to create a VPN tunnel:
   >
 **Example:**
 As shown in the figure below, a VPN gateway has the following SPD rules:
+![](https://main.qcloudimg.com/raw/64171d0e6d862108d5e84ea3b9e3114f.png)
  - SPD rule 1: the VPN gateway IP range is 10.0.0.0/24, and the customer gateway IP ranges are 192.168.0.0/24 and 192.168.1.0/24. Two mappings are formed.
  - SPD rule 2: the VPN gateway IP range is 10.0.1.0/24, and the customer gateway IP range is 192.168.2.0/24. One mapping is formed.
  - SPD rule 3: the VPN gateway IP range is 10.0.1.0/24, and the customer gateway IP range is 192.168.2.0/24. One mapping is formed.
