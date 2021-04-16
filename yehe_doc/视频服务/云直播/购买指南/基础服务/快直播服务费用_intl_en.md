@@ -39,7 +39,7 @@ LEB bill-by-traffic utilizes tiered pricing with a daily billing cycle, as detai
 **Billing example**
 
 - Suppose an LEB session lasts for 1 hour at a bitrate of 500 Kbps, which is the sum of the audio bitrate and the video bitrate. If you enable transcoding and specify a video bitrate, the sum of the audio bitrate and the specified video bitrate will be used for billing. If there are 100 viewers, the consumed bandwidth will be approximately: 500/8 x 3600 x 100 = 22,500,000 KB = 22.5 GB.
-- Suppose this LEB session was held on October 1, 2020. The traffic fees you would need to pay on October 2, 2020 are as follows:
+- Suppose this LEB session was held on October 20, 2020. The traffic fees you would need to pay on October21, 2020 are as follows:
   Daily LEB traffic fees = 0.0891 (USD/GB) × 22.5 (GB) = 2.0048 USD.
 
 [](id:bandwidth)
@@ -66,7 +66,7 @@ LEB bill-by-bandwidth utilizes tiered pricing by the daily peak bandwidth with a
 
 - Suppose a LEB session lasts for 1 hour at a bitrate of 500 Kbps, which is the sum of the audio bitrate and the video bitrate. If you enable transcoding and specify a video bitrate, the sum of the audio bitrate and the specified video bitrate will be used for billing. If there are 100 viewers, the consumed bandwidth will be approximately:
    500 Kbps x 100 = 50,000 Kbps = 50 Mbps.
--  If you held an LEB session that generated 50 Mbps of downstream bandwidth on October 1, 2020, then the bandwidth fees you would need to pay on October 2, 2020 would be as follows:
+-  If you held an LEB session that generated 50 Mbps of downstream bandwidth on October 20, 2020, then the bandwidth fees you would need to pay on October 21, 2020 would be as follows:
    Daily LEB bandwidth fees = 0.2194 (USD/Mbps/Day) × 50 (Mbps) = 10.97 USD.
 
 >? If you have a large-scale live streaming business, then a daily billing mode may not meet your needs. Please contact Tencent Cloud sales or [submit a ticket](https://console.cloud.tencent.com/workorder/category) to determine the best billing mode for you.
@@ -99,8 +99,8 @@ Global LEB bill-by-traffic utilizes tiered pricing with a daily billing cycle, a
 **Billing example**
 
 - Suppose an LEB session lasts for 1 hour at a bitrate of 500 Kbps, which is the sum of the audio bitrate and the video bitrate. If you enable transcoding and specify a video bitrate, the sum of the audio bitrate and the specified video bitrate will be used for billing. If there are 200 viewers, the consumed traffic will be approximately: 500/8 x 3600 x 200 = 22,500,000 KB = 45 GB.
-- If you held a global LEB session that generated 22.5 GB of downstream traffic on April 1, 2021, then the LEB traffic fees you would need to pay on April 2, 2021 would be as follows:
-  Daily LEB traffic fees = 0.1543 (USD/GB) × 45 (GB) = 6.9435 USD.
+- If you held a global LEB session that generated 22.5 GB of downstream traffic on April 20, 2021, then the LEB traffic fees you would need to pay on April 21, 2021 would be as follows:
+  Daily LEB traffic fees = 0.1445 (USD/GB) × 45 (GB) = 6.5025 USD.
 
 ### Global bill-by-bandwidth
 
@@ -123,5 +123,5 @@ Global LEB bill-by-bandwidth utilizes tiered pricing by the daily peak bandwidth
 
 - Suppose a LEB session lasts for 1 hour at a bitrate of 500 Kbps, which is the sum of the audio bitrate and the video bitrate. If you enable transcoding and specify a video bitrate, the sum of the audio bitrate and the specified video bitrate will be used for billing. If there are 100 viewers, the consumed bandwidth will be approximately:
    500 Kbps x 100 = 50,000 Kbps = 50 Mbps.
-- If you held a global LEB session that generated 50 Mbps of downstream bandwidth on April 1, 2021, then the LEB bandwidth fees you would need to pay on April 2, 2021 would be as follows:
-   Daily LEB bandwidth fees = 0.4457 (USD/Mbps/Day) × 50 (Mbps) = 22.285 USD.
+- If you held a global LEB session that generated 50 Mbps of downstream bandwidth on April 20, 2021, then the LEB bandwidth fees you would need to pay on April 21, 2021 would be as follows:
+   Daily LEB bandwidth fees = 0.4149 (USD/Mbps/Day) × 50 (Mbps) = 20.97 USD.
