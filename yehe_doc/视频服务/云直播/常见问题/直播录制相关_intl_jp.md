@@ -20,9 +20,9 @@ LVB完了後5分前後でレコーディングファイルを取得できます�
 [](id:que4)
 ### LVBレコーディング終了後に、レコーディングファイルを取得するにはどうすればよいですか。
 生成されたレコーディングファイルは、VODシステムに自動的に保存されます。クライアントが保存するには、VODサービスをアクティブにする必要があります。レコーディングファイルは、次の方法で取得できます。
-- [VODコンソール](https://intl.cloud.tencent.com/document/product/267/31563)
-- [レコーディングイベント通知](https://intl.cloud.tencent.com/document/product/267/31563)
-- [VOD APIクエリー](https://intl.cloud.tencent.com/document/product/267/31563)
+- [VODコンソール](https://intl.cloud.tencent.com/document/product/267/31563#vod-console)
+- [レコーディングイベント通知](https://intl.cloud.tencent.com/document/product/267/31563#recording-event-notification)
+- [VOD APIクエリー](https://intl.cloud.tencent.com/document/product/267/31563#vod-api-query)
 
 [](id:que5)
 ### LVBビデオをマイグレーションできますか。
@@ -63,7 +63,7 @@ LVB完了後5分前後でレコーディングファイルを取得できます�
 1. コンソールのレコーディング設定情報を確認して、レコーディングファイルのタイプに1つの形式のみが選択されていることを確認します。
    - コンソールが**新バージョンのコンソール**の場合は、[【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)に進んで，プッシュドメイン名右側の【管理】をクリックします。【テンプレート設定】の中の【レコーディング設定】に進んで関連テンプレートの「レコーディング形式」情報を確認します。
    - コンソールが**旧バージョンのコンソール**の場合は、[【LVBコードアクセス】](https://console.cloud.tencent.com/live/livecodemanage)>【アクセス設定】に進んでLVBレコーディング設定情報をチェックします。  
-2. [レコーディングタスク作成](https://intl.cloud.tencent.com/document/product/267/30847)および[レコーディングテンプレート作成](https://intl.cloud.tencent.com/document/product/267/34223)は2種類のレコーティング起動方式です。実際の使用中にニーズに応じてどちらかを選択します。同一のLVBストリームにレコーディングテンプレートを設定すると同時にレコーディングタスクを作成すれば、レコーディングが重複することになります。コンソールでレコーディングタスクを作動させていないかチェックして、同時にAPI 3.0の[CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/30847)インターフェースまたはAPI 2.0のLive_Tape_Startインターフェースを呼び出してレコーディングタスクを開始してください。
+2. [レコーディングタスク作成](https://intl.cloud.tencent.com/document/product/267/30847)および[レコーディングテンプレート作成](https://intl.cloud.tencent.com/document/product/267/34223)は2種類のレコーティング起動方式です。実際の使用中にニーズに応じてどちらかを選択します。同一のLVBストリームにレコーディングテンプレートを設定すると同時にレコーディングタスクを作成すれば、レコーディングが重複することになります。コンソールでレコーディングタスクを作動させていないかチェックして、同時にAPI 3.0の[CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/30847)インターフェースを呼び出してレコーディングタスクを開始してください。
 
 > ! 
 > - LVBレコーディングを旧バージョンのコンソールで作動させていて、新バージョンのコンソールを停止させる必要がある場合は、[チケットを提出](https://console.cloud.tencent.com/workorder/category)していただくことで担当者が解決にご協力します。 
