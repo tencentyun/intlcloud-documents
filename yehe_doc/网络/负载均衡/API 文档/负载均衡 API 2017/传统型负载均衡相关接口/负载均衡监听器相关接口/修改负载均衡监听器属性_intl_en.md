@@ -48,7 +48,7 @@ The list below contains only the API request parameters. Common parameters shoul
 Request
 <pre>
 https://lb.api.qcloud.com/v2/index.php?Action=ModifyLoadBalancerListener
-&<<a href="https://intl.cloud.tencent.com/document/api/213/6976">Common request parameters</a>>
+&<<a href="https://intl.cloud.tencent.com/document/product/213/31574">Common request parameters</a>>
 loadBalancerId=lb-ltkip4do
 &listenerId=lbl-6hkiqc6c
 &SSLMode=unidirectional
