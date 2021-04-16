@@ -80,6 +80,6 @@
 | 1008031 | The application resource has been terminated. |
 | 10110008 | The queried token and account do not exist. |
 | 10010005 | The push target does not exist. |
-| 10010012 | Invalid push time. Please change the push time.<br>If `send_time` passed in is earlier than the current time, the specific rules are as follows:<li>If `send_time` is 10 minutes or less earlier than the current time, the push task is created, and the API schedules the task immediately after receiving it.</li><li>If `send_time` is over 10 minutes earlier than the current time, the push task is rejected, and the API returns a failure message.</li> |
+| 10010012 | Invalid push time. Please change the push time.<br>If `send_time` passed in is earlier than the current time, the specific rules are as follows:</br><ul><li>If  `send_time` is 10 minutes or less earlier than the current time, the push task is created, and the API schedules the task immediately after receiving it.</li><li> If `send_time` is over 10 minutes earlier than the current time, the push task is rejected, and the API returns a failure message.</li></ul> |
 | 10010018 | Repeated push. |
 | 10030002 | `AccessID` and `AccessKey` do not match. |
