@@ -5,7 +5,7 @@
 ## 操作步骤
 
 ### 步骤1：上传示范包
- 1. 登录 [游戏服务器引擎控制台](https://console.cloud.tencent.com/gse)，单击左侧菜单【入门示例】。
+ 1. 登录 [游戏服务器伸缩控制台](https://console.cloud.tencent.com/gse)，单击左侧菜单【入门示例】。
  2. 选择左上侧服务区域，单击【一键上传示范包】，上传示范包，提示创建成功后，单击【下一步】。
     ![](https://main.qcloudimg.com/raw/aba9f81e1e145dd9233c962a71f9938e.png)
  >?
