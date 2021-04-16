@@ -16,16 +16,17 @@ For Android phones, the opened badge capabilities vary by vendor. TPNS' support 
 
 You can configure the server delivery badge in the TPNS console or through the push API.
 
-<dx-tabs>
-::: Method 1: Configure on the push page in the console
+#### Method 1: Configure on the push page in the console
 1. Log in to the [TPNS console](https://console.cloud.tencent.com/tpns).
 2. Locate the target Android product and click **Push Management** in the **Operation** column of the product to go to the **Push Management** page.
 3. Click the push to configure to go to the push configuration page.
 4. In the **Advanced Configuration** area, enable badge number.
 ![](https://main.qcloudimg.com/raw/bd1156cf0106d3894c5aa900884c3988.png)
-:::
-::: Method 2: Configure through the push API
-    In the push message body, add the `badge_type` field with the following attributes under `body.message.android`.
+
+#### Method 2: Configure through the push API
+
+In the push message body, add the `badge_type` field with the following attributes under `body.message.android`.
+
 <table>
 <thead>
 <tr>
@@ -47,11 +48,15 @@ You can configure the server delivery badge in the TPNS console or through the p
 </tr>
 </tbody></table>
 <dx-alert infotype="explain" title="">
-Badge adaptation capabilities vary by vendor device. For details, see the badge adaptation description of each vendor below.
+
+>!Badge adaptation capabilities vary by vendor device. For details, see the badge adaptation description of each vendor below.
+
 </dx-alert>
+
 Sample message body:
+
 <dx-codeblock>
-:::  json
+::: json
 {
 	"audience_type": "token",
 	"expire_time": 3600,
@@ -64,9 +69,11 @@ Sample message body:
 					"ring_raw": "xtcallmusic",
 					"vibrate": 1,
 					"lights": 1,
+  
 					"action": {
 							"action_type": 1,
 							"activity": "com.qq.xg4all.JumpActivity",
+   
 							"aty_attr": {
 							"if": 0,
 							"pf": 0
@@ -76,6 +83,7 @@ Sample message body:
 			"title": "android test",
 			"content": "android test 21"
 	},
+  
 	"token_list": [
 		"01f6ac091755a79015b4a30c9c4c7ddba1ea"
 	],
@@ -84,10 +92,6 @@ Sample message body:
 }
 :::
 </dx-codeblock>
-:::
-</dx-tabs>
-
-
 
 
 
@@ -97,7 +101,8 @@ Sample message body:
 
 This API allows you to set the badge number. It applies to Huawei, OPPO, and vivo phones. For OPPO phones, you need to apply for the badge display permission from OPPO.
 
-```java
+```
+java
 /**
  * @param context   //Application context
  * @param setNum   //Set the badge number
@@ -124,8 +129,8 @@ This API allows you to reset the badge number. It applies to Huawei, OPPO, and v
 Example: when an in-app message is read or an application is opened, call `XGPushConfig.resetBadgeNum(context)` to reset the badge number.
 
 
-
-## Huawei Phone Badge Adaptation Guide[](id:huawei)
+[](id:huawei)
+## Huawei Phone Badge Adaptation Guide
 
 ### Limits
 
@@ -144,7 +149,8 @@ Limited by the openness of Huawei phone badge capabilities, the badge feature va
 
 To implement the correct badge modification effect, please first add the Huawei phone badge read/write permission for your application by adding the following permission configuration under the `manifest` tag in the `AndroidManifest.xml` file of the application:
 
-```xml
+```
+xml
 <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE"/>
 ```
 
@@ -157,7 +163,8 @@ Be sure to enable the Huawei channel in the console and enter the `Activity` cla
 
 For Huawei phones, the badge number can be auto increased or decreased by 1. The API is as follows:
 
-```java
+```
+java
 	/**
 	 * Huawei phone badge modification API
 	 *
@@ -171,8 +178,8 @@ For Huawei phones, the badge number can be auto increased or decreased by 1. The
 Example: when an in-app message is received, call `XGPushConfig.changeHuaweiBadgeNum(context, 1)` to increase the badge number by 1; when the message badge needs to be dismissed, call `XGPushConfig.changeHuaweiBadgeNum(context, -1)` to decrease the badge number by 1.
 
 
-
-## vivo Phone Badge Adaptation Guide[](id:vivo)
+[](id:vivo)
+## vivo Phone Badge Adaptation Guide
 
 ### Limits
 
@@ -190,7 +197,8 @@ Limited by the openness of vivo phone badge capabilities, the badge number curre
 
 To implement the correct badge modification effect, please first add the vivo phone badge read/write permission for your application by adding the following permission configuration under the `manifest` tag in the `AndroidManifest.xml` file of the application:
 
-```xml
+```
+xml
 <uses-permission android:name="com.vivo.notification.permission.BADGE_ICON" />
 ```
 
