@@ -1,13 +1,13 @@
 
 ## 2021年03月
 <table>
-<tr><th width="20%">ダイナミックネーム</th><th width="50%">動的記述</th><th width="10%">発表時間</th><th width="20%">関連ドキュメント</th>
+<tr><th width="20%">更新</th><th width="50%">説明</th><th width="10%">発表時間</th><th width="20%">関連ドキュメント</th>
 <tbody>
 <tr>
 <td>製品アーキテクチャ（名称）アップグレード</td>
-<td>TencentDB for MySQL製品アーキテクチャをシングルノード（元の基本版）、デュアルノード（元の高可用版）およびトリプルノード（元のファイナンス版）にアップグレードし、隔離ポリシーに基本型、汎用型および専用型を追加します。各アーキテクチャ機能に変更はありません。</td>
+<td>TencentDB for MySQL製品アーキテクチャを単一ノード（元のBasic Edition）、2ノード（元のHigh-availability Edition）および3ノード（元のFinance Edition）にアップグレードし、分離ポリシーに基本型、汎用型および専用型を追加します。各アーキテクチャ機能に変更はありません。</td>
 <td>2021-03</td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/236/38328" target="_blank">アーキテクチャの概要</a><li><a href="https://intl.cloud.tencent.com/document/product/236/39794">隔離ポリシー</a></td></tr>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/236/38328" target="_blank">アーキテクチャの概要</a><li><a href="https://intl.cloud.tencent.com/document/product/236/39794">分離ポリシー</a></td></tr>
 <tr>
 <td>読み取り専用インスタンスは独立したイントラネットアドレスをサポートします</td>
 <td>読み取り専用インスタンスは独立したイントラネットアドレスの有効化をサポートし、イントラネットのIPとポートのカスタム変更をサポートします。</td>
@@ -18,8 +18,8 @@
 ## 2020年11月
 <table>
 <tr>
-<th width=20%>ダイナミックネーム</th>
-<th width=50%>動的記述</th>
+<th width=20%>更新</th>
+<th width=50%>説明</th>
 <th width=10%>発表時間</th>
 <th width=20%>関連ドキュメント</th>
 </tr>
@@ -35,8 +35,8 @@
 ## 2020年10月
 <table>
 <tr>
-<th width=20%>ダイナミックネーム</th>
-<th width=50%>動的記述</th>
+<th width=20%>更新/th>
+<th width=50%>説明</th>
 <th width=10%>発表時間</th>
 <th width=20%>関連ドキュメント</th>
 </tr>
@@ -48,7 +48,7 @@
 </tr>
 <tr>
 <td>8.0はTDE（透過的データ暗号化）をサポートします</td>
-<td>TencentDB for MySQL 8.0バージョンはTDE（透過的データ暗号化）による暗号化機能をサポートします。</td>
+<td>TencentDB for MySQL 8.0バージョンはTDE（透過的データ暗号化）機能をサポートします。</td>
 <td>2020-10</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/38491" target="_blank">Transparent Data Encryptionの有効化</a></td>
 </tr>
@@ -57,14 +57,14 @@
 ## 2020年08月
 <table>
 <tr>
-<th width=20%>ダイナミックネーム</th>
-<th width=50%>動的記述</th>
+<th width=20%>更新</th>
+<th width=50%>説明</th>
 <th width=10%>発表時間</th>
 <th width=20%>関連ドキュメント</th>
 </tr>
 <tbody><tr>
 <td>MySQL 8.0をサポートします</td>
-<td>TencentDB for MySQL8.0をサポートし、完備された管理制御サービスとTXSQLカーネルを結合させ、より速く、より安定したエンタープライズ向けのサービスを提供します。豊富な業界シナリオで、お客様の業界のグレードアップを支援します。</td>
+<td>TencentDB for MySQL 8.0をサポートし、完備された管理制御サービスとTXSQLカーネルを結合させ、より速く、より安定したエンタープライズ向けのサービスを提供します。豊富な業界シナリオで、お客様の業界のグレードアップを支援します。</td>
 <td>2020-08</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/31896" target="_blank">データベースバージョン</a></td>
 </tr>
@@ -73,8 +73,8 @@
 ## 2020年07月
 <table>
 <tr>
-<th width=20%>ダイナミックネーム</th>
-<th width=50%>動的記述</th>
+<th width=20%>更新</th>
+<th width=50%>説明</th>
 <th width=10%>発表時間</th>
 <th width=20%>関連ドキュメント</th>
 </tr>
@@ -95,8 +95,8 @@
 ## 2020年06月
 <table>
 <tr>
-<th width=20%>ダイナミックネーム</th>
-<th width=50%>動的記述</th>
+<th width=20%>更新</th>
+<th width=50%>説明</th>
 <th width=10%>発表時間</th>
 <th width=20%>関連ドキュメント</th>
 </tr>
@@ -112,15 +112,15 @@
 <table>
 <thead>
 <tr>
-<th width=20%>ダイナミックネーム</th>
-<th width=50%>動的記述</th>
+<th width=20%>更新</th>
+<th width=50%>説明</th>
 <th width=10%>発表時間</th>
 <th width=20%>関連ドキュメント</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>高可用版（1マスター/2スレーブ）をファイナンス版に改名します</td>
-<td>ファイナンス版には、1マスター/2スレーブの3ノードのアーキテクチャを採用しており、強い同期のレプリケーション方式をサポートします。リアルタイムなホットバックアップにより、データの高い一貫性が確保され、金融業界レベルの信頼性と高可用性を実現します。</td>
+<td>High-Availability Edition （1マスター/2スレーブ）をFinance Editionに改名します</td>
+<td>Finance Editionには、1マスター/2スレーブの3ノードのアーキテクチャを採用しており、強い同期のレプリケーション方式をサポートします。リアルタイムなホットバックアップにより、データの高い一貫性が確保され、金融業界レベルの信頼性と高可用性を実現します。</td>
 <td>2020-04</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/17136" target="_blank">データベースアーキテクチャ</a></td>
 </tr>
@@ -137,21 +137,21 @@
 <table>
 <thead>
 <tr>
-<th width=20%>ダイナミックネーム</th>
-<th width=50%>動的記述</th>
+<th width=20%>更新</th>
+<th width=50%>説明</th>
 <th width=10%>発表時間</th>
 <th width=20%>関連ドキュメント</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>DBbrainをサポートします</td>
-<td>DBbrainとは、データベースのインテリジェント診断と最適化を行う製品です。同時に、ユーザーと協力してソースの予防を行い、リアルタイムにデータベースを保護して、障害原因を効率よく特定し、解決策をユーザーに提供します。</td>
+<td>TencentDB for DBbrainをサポートします</td>
+<td>TencentDB for DBbrain (DBbrain)とは、データベースのインテリジェント診断と最適化を行う製品です。同時に、ユーザーと協力してソースの予防を行い、リアルタイムにデータベースを保護して、障害原因を効率よく特定し、解決策をユーザーに提供します。</td>
 <td>2020-01</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1035/36027" target="_blank">DBbrain</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1035/36027" target="_blank">TencentDB for DBbrain</a></td>
 </tr>
 <tr>
-<td>スローログの詳細、エラーログの詳細のクエリーをサポートします</td>
-<td>TencentDB for MySQL（基本版を含まない）インスタンスは操作ログ管理機能を提供します。コンソールの操作ログページで、インスタンスのスローログの詳細、エラーログの詳細、ロールバックログの表示及びスローログのダウンロードを行うことができます。</td>
+<td>スローログの詳細、エラーログの詳細のクエリをサポートします</td>
+<td>TencentDB for MySQL（Basic Editionを含まない）インスタンスは操作ログ管理機能を提供します。コンソールの操作ログページで、インスタンスのスローログの詳細、エラーログの詳細、ロールバックログの表示及びスローログのダウンロードを行うことができます。</td>
 <td>2020-01</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/34588" target="_blank">操作ログ</a></td>
 </tr>
@@ -162,8 +162,8 @@
 <table>
 <thead>
 <tr>
-<th width=20%>ダイナミックネーム</th>
-<th width=50%>動的記述</th>
+<th width=20%>更新</th>
+<th width=50%>説明</th>
 <th width=10%>発表時間</th>
 <th width=20%>関連ドキュメント</th>
 </tr>
@@ -172,7 +172,7 @@
 <td>MySQLバックアップの商用化料金</td>
 <td>MySQLインスタンスのバックアップが無料スペースを超えた分について、課金が開始されます。バックアップが商用化されると、データ圧縮、バックアップの安定性、バックアップの可用性が大幅に向上し、バックアップがさらに保障されます。ユーザーはバックアップの保持期間や頻度を短縮させるなどで、バックアップの支出を削減できます。</td>
 <td>2019-12</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/32344" target="_blank">バックアップスペース課金説明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/32344" target="_blank">バックアップスペースの課金方法</a></td>
 </tr>
 </tbody></table>
 
@@ -180,8 +180,8 @@
 <table>
 <thead>
 <tr>
-<th width=20%>ダイナミックネーム</th>
-<th width=50%>動的記述</th>
+<th width=20%>更新</th>
+<th width=50%>説明</th>
 <th width=10%>発表時間</th>
 <th width=20%>関連ドキュメント</th>
 </tr>
@@ -199,15 +199,15 @@
 <table>
 <thead>
 <tr>
-<th width=20%>ダイナミックネーム</th>
-<th width=50%>動的記述</th>
+<th width=20%>更新</th>
+<th width=50%>説明</th>
 <th width=10%>発表時間</th>
 <th width=20%>関連ドキュメント</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>データベースバックアップページのリリース</td>
-<td> リリースされたTencentDB for MySQLバックアップページは、概要とバックアップリストの2つのコンテンツに分かれています。概要ページではバックアップスペースの詳細と使用動向を簡単に確認でき、バックアップリストではデータバックアップリストとログバックアップリストを明確に理解できます。</td>
+<td>リリースされたTencentDB for MySQLバックアップページは、概要とバックアップリストの2つのコンテンツに分かれています。概要ページではバックアップスペースの詳細と使用動向を簡単に確認でき、バックアップリストではデータバックアップリストとログバックアップリストを明確に理解できます。</td>
 <td>2019-09</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/33131" target="_blank">バックアップスペースの確認</a></td>
 </tr>
@@ -218,8 +218,8 @@
 <table>
 <thead>
 <tr>
-<th width=20%>ダイナミックネーム</th>
-<th width=50%>動的記述</th>
+<th width=20%>更新</th>
+<th width=50%>説明</th>
 <th width=10%>発表時間</th>
 <th width=20%>関連ドキュメント</th>
 </tr>
@@ -231,7 +231,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/236/32340" target="_blank">バックアップ方式</a></td>
 </tr>
 <tr>
-<td>南京1区サーバーの利用開始</td>
+<td>「南京1区」サービス提供開始しました</td>
 <td>TencentDB for MySQLが南京1区で利用可能になりました。MySQLは現在、華東地区で上海と南京の2地域に設置されています。</td>
 <td>2019-05</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/8458" target="_blank">リージョンとアベイラビリティーゾーン</a></td>
@@ -243,15 +243,15 @@
 <div class="doc-table-wrap"><table>
 <thead>
 <tr>
-<th width=20%>ダイナミックネーム</th>
-<th width=50%>動的記述</th>
+<th width=20%>更新</th>
+<th width=50%>説明</th>
 <th width=10%>発表時間</th>
 <th width=20%>関連ドキュメント</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>VPC間での切り替えをサポートします</td>
-<td>VPC AからVPC Bへの切り替え、すなわち、単一のクラウドデータベースインスタンスのVPC AからVPC Bへの切り替えをサポートします。</td>
+<td>VPC AからVPC Bへの切り替え、すなわち、単一のTencentDBインスタンスのVPC AからVPC Bへの切り替えをサポートします。</td>
 <td>2019-03</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/31915" target="_blank">ネットワーク切り替え</a></td>
 </tr>
@@ -262,8 +262,8 @@
 <table>
 <thead>
 <tr>
-<th width=20%>ダイナミックネーム</th>
-<th width=50%>動的記述</th>
+<th width=20%>更新</th>
+<th width=50%>説明</th>
 <th width=10%>発表時間</th>
 <th width=20%>関連ドキュメント</th>
 </tr>
@@ -281,21 +281,21 @@
 <table>
 <thead>
 <tr>
-<th width=20%>ダイナミックネーム</th>
-<th width=50%>動的記述</th>
+<th width=20%>更新</th>
+<th width=50%>説明</th>
 <th width=10%>発表時間</th>
 <th width=20%>関連ドキュメント</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>基本版インスタンスの購入をサポートします</td>
-<td>基本版は単一ノードを使用してデプロイされ、コンピューティングとストレージは分離されています。コンピューティングノードに障害が発生した場合、ノードを交換することで迅速な復元を実現できます。MySQL基本版の基盤となるストレージメディアは、90%のI/Oケースに適した高性能ディスクを使用しており、高品質かつ低価格、優れて安定したパフォーマンスを実現しています。</td>
+<td>Basic Editionインスタンスの購入をサポートします</td>
+<td>Basic Editionは単一ノードを使用してデプロイされ、コンピューティングとストレージは分離されています。コンピューティングノードに障害が発生した場合、ノードを交換することで迅速な復元を実現できます。Basic Editionの基盤となるストレージメディアは、90%のI/Oケースに適した高性能ディスクを使用しており、高品質かつ低価格、優れて安定したパフォーマンスを実現しています。</td>
 <td>2018-06</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/17136" target="_blank">データベースアーキテクチャ</a></td>
 </tr>
 <tr>
 <td>ネットワーク切り替えをサポートします</td>
-<td>基本ネットワークからVPCへの切り替え、および同じVPC内のサブネット間の切り替えをサポートします。</td>
+<td>クラシックネットワークからVPCへの切り替え、および同じVPC内のサブネット間の切り替えをサポートします。</td>
 <td>2018-06</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/31915" target="_blank">ネットワーク切り替え</a></td>
 </tr>
@@ -307,7 +307,7 @@
 </tr>
 <tr>
 <td>ダウングレードと返金をサポートします</td>
-<td>データベース構成を削減し、残りの費用を返金することができます。</td>
+<td>データベース構成をダウングレードし、残りの費用を返金することができます。</td>
 <td>2018-06</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/32345" target="_blank">インスタンス調整の料金の説明</a></td>
 </tr>
@@ -330,8 +330,8 @@
 <table>
 <thead>
 <tr>
-<th width=20%>ダイナミックネーム</th>
-<th width=50%>動的記述</th>
+<th width=20%>更新</th>
+<th width=50%>説明</th>
 <th width=10%>発表時間</th>
 <th width=20%>関連ドキュメント</th>
 </tr>
@@ -362,7 +362,7 @@
 </tr>
 <tr>
 <td>セキュリティグループをサポートします</td>
-<td>セキュリティグループはステートフルなパケットフィルタリング機能を持つ仮想ファイアウォールであり、1台または複数台のクラウドデータベースのネットワークアクセスコントロールを設定するために使用され、Tencent Cloudによって提供される重要なネットワーク安全分離手段です。</td>
+<td>セキュリティグループはステートフルなパケットフィルタリング機能を持つ仮想ファイアウォールであり、1台または複数台のTencentDBインスタンスのネットワークアクセスコントロールを設定するために使用され、Tencent Cloudによって提供される重要なネットワーク安全分離手段です。</td>
 <td>2017-08</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/14470" target="_blank">TencentDBセキュリティグループ</a></td>
 </tr>
@@ -385,8 +385,8 @@
 <table>
 <thead>
 <tr>
-<th width=20%>ダイナミックネーム</th>
-<th width=50%>動的記述</th>
+<th width=20%>更新</th>
+<th width=50%>説明</th>
 <th width=10%>発表時間</th>
 <th width=20%>関連ドキュメント</th>
 </tr>
@@ -404,8 +404,8 @@
 <table>
 <thead>
 <tr>
-<th width=20%>ダイナミックネーム</th>
-<th width=50%>動的記述</th>
+<th width=20%>更新</th>
+<th width=50%>説明</th>
 <th width=10%>発表時間</th>
 <th width=20%>関連ドキュメント</th>
 </tr>
