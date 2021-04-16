@@ -49,7 +49,7 @@
 | errmsg        | string | プッシュ切断エラーの説明                                               |
 
 ### プッシュ切断エラーコード
-プッシュ切断エラーコードおよび対応するエラーの原因について、詳細は[ストリーム切断エラーコード](https://intl.cloud.tencent.com/document/product/267/31083)をご参照ください。
+プッシュ切断エラーコードおよび対応するエラーの原因について、詳細は[ストリーム切断エラーコード](https://intl.cloud.tencent.com/document/product/267/31083#directions)をご参照ください。
 
 ### コールバックメッセージの例
 
