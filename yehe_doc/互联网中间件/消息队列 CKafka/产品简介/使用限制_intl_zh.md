@@ -3,7 +3,7 @@
 
 | 限制项 | 说明 |
 |---------|---------|
-| Topic 总数量 | 根据产品规格不同固定上限 |
+| Topic 总数量 | 根据产品规格不同固定上限。|
 | Partition 数量 | <li>标准版：单 Topic 支持的 Partition 数量限制为24个。</li><li>实例级别 Partition 数量限制包含了副本数量，副本数量一般为2或者3。</li><li>不支持缩减partition数量。</li>|
 | Consumer group 数量 |<li>标准版：实例级别 Consumer group 默认限制为50个。</li>|
 | 实例 | <li>不支持变更实例地域属性。</li><li>客户端实例最大连接数量为5000。</li>|

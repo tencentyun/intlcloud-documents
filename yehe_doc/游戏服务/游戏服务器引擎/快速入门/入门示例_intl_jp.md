@@ -4,12 +4,12 @@
 
 ## 前提条件
 
-[ゲームサーバーエンジン申請表](https://intl.cloud.tencent.com/apply/p/k0b6pvbhs6) に記入しており、使用資格を取得していること。
+[GSE申請表](https://intl.cloud.tencent.com/apply/p/k0b6pvbhs6) に記入しており、使用資格を取得していること。
 
 ## 操作手順
 
 ### 手順1：デモパッケージのアップロード
- 1. [ゲームサーバーエンジンコンソール](https://console.cloud.tencent.com/gse) にログインし、左側のメニュー【ビギナー向け例】をクリックします。
+ 1. [GSEコンソール](https://console.cloud.tencent.com/gse) にログインし、左側のメニュー【ビギナー向け例】をクリックします。
  2. 左上のサービスエリアを選択し、【デモパッケージのアップロード】をクリックし、デモパッケージをアップロードして、作成完了が表示されたら、【次へ】をクリックします。
     ![](https://main.qcloudimg.com/raw/aba9f81e1e145dd9233c962a71f9938e.png)
  >?

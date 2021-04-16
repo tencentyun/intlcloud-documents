@@ -21,7 +21,7 @@ You can configure user information in two ways: client and CKafka instance.
 ![](https://main.qcloudimg.com/raw/d50580170b01896f2070eaf58e64fe9d.png)
 
 #### CKafka instance configuration
-1. In the configuration file (see the [sample configuration file](#Sample configuration file) below), add the following configuration:
+1. In the configuration file (see the [sample configuration file](#example) below), add the following configuration:
 ```
 sasl.mechanism=PLAIN
 security.protocol=SASL_PLAINTEXT

@@ -21,7 +21,7 @@
 ![](https://main.qcloudimg.com/raw/d50580170b01896f2070eaf58e64fe9d.png)
 
 ####  CKafka 实例配置
-1. 在配置文件（参见 [配置文件示例](#配置文件示例)）中，增加如下配置：
+1. 在配置文件（参见 [配置文件示例](#example)）中，增加如下配置：
 ```
 sasl.mechanism=PLAIN
 security.protocol=SASL_PLAINTEXT
