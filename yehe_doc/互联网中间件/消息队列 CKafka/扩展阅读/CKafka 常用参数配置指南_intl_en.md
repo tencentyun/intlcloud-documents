@@ -29,14 +29,14 @@ log.segment.bytes=1073741824
 # The log rolling check interval is 5 minutes. If the retention period is set to less than 5 minutes, it may still take 5 minutes to clear logs.
 log.retention.check.interval.ms=300000
 ```
->For configurations not listed here, see the [open-source Kafka default configurations](http://kafka.apache.org/0102/documentation.html#brokerconfigs).
+>?For configurations not listed here, see the [open-source Kafka default configurations](http://kafka.apache.org/0102/documentation.html#brokerconfigs).
 
 ## Topic Configuration Parameter Description
 #### 1. Number of partitions
 
 From the producer's point of view, writes to different partitions are completely in parallel; from the consumer's point of view, the number of concurrencies depends entirely on the number of partitions (if there are more consumers than partitions, there will definitely be idle consumers). It is important to select an appropriate number of partitions to fully play the performance of the CKafka instance.
 The number of partitions should be determined based on the throughput of production and consumption, ideally through the following formula:
->**Num = max(T/PT, T/CT) = T/min(PT, CT)**
+>?**Num = max(T/PT, T/CT) = T/min(PT, CT)**
 
 Num represents the number of partitions, T the target throughput, PT the maximum production throughput by the producer to a single partition, and CT the maximum consumption throughput by the consumer from a single partition. The number of partitions is equal to T/PT or T/CT, whichever is larger.
 
@@ -53,7 +53,7 @@ In practice, the actual PT is determined by batch size, compression algorithm, a
 #### 2. Number of replicas
 
 At present, the number of replicas must be at least 2 to ensure availability. To ensure high reliability, we recommend maintaining at least 3 replicas.
->The number of replicas will affect the production/consumption traffic; for example, if there are 3 replicas, the actual traffic will be 3 times the production traffic.
+>!The number of replicas will affect the production/consumption traffic; for example, if there are 3 replicas, the actual traffic will be 3 times the production traffic.
 
 #### 3. Log retention period
 
@@ -162,7 +162,7 @@ fetch.max.bytes=52428800
 # Fetch request wait time.
 fetch.max.wait.ms=500
 
-# Maximum data size returned by each partition in a fetch request. The default value is 10 MB.
+# Maximum data size returned by each partition in a fetch request. The default value is 1 MB.
 max.partition.fetch.bytes=1048576
 
 # Number of records returned in one poll call.
