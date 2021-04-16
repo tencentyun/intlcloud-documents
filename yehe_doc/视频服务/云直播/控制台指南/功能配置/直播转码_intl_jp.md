@@ -16,9 +16,9 @@ LVBトランスコード機能（ビデオトランスコーディングとオ�
 - トランスコードテンプレートをバインドしてから、対応するテンプレートでバインドルールを表示します。またAPIによってより詳細なルールを作成している場合は、それに基づき確認および[バインド解除](#untie)をすることもできます。
 - 単一の再生ドメイン名に**複数のトランスコードテンプレート**を関連付けることができます。単一のトランスコードテンプレートに**複数の再生ドメイン名**を関連付けることができます。
 
-span id="create"></span>
+<span id="create"></span>
 ## トランスコードテンプレートの作成
-span id="C_trans"></span>
+<span id="C_trans"></span>
 ### 標準トランスコードテンプレートの作成
 
 1. LVBコンソールにログインして、【機能設定】>[【LVBトランスコード】](https://console.cloud.tencent.com/live/config/transcode)に進みます。
@@ -84,7 +84,7 @@ span id="C_trans"></span>
 
    
 
-span id="C_topspeed"></span>
+<span id="C_topspeed"></span>
 
 ### 高速高画質トランスコードテンプレートの作成
 1. LVBコンソールにログインして、【機能設定】>[【LVBトランスコード】](https://console.cloud.tencent.com/live/config/transcode)に進みます。
@@ -144,7 +144,7 @@ span id="C_topspeed"></span>
 <td>デフォルトでは無効になっており、手動で有効にできます。<br>パラメータ制限を有効にすると、入力LVBストリームのオリジナルパラメータが、設定した出力パラメータよりも小さいときは、LVBストリームはオリジナルパラメータに従って出力され、低クオリティのLVBストリームが強制的にパラメータ値を引き上げられて実際の画質に影響が出てしまうことを防止できます。</td>
 </tr></table>
 
-span id="C_audio"></span>
+<span id="C_audio"></span>
 ### オーディオのみのトランスコードテンプレートの作成
 
 1. LVBコンソールにログインして、【機能設定】>[【LVBトランスコード】](https://console.cloud.tencent.com/live/config/transcode)に進みます。
@@ -169,7 +169,7 @@ span id="C_audio"></span>
 </tr>
 </table>
 
-span id="related"></span>
+<span id="related"></span>
 ## ドメイン名の関連付け
 1.LVBコンソールにログインして、【機能設定】>[【LVBトランスコード】](https://console.cloud.tencent.com/live/config/transcode)に進みます。
 2. 以下の方法でドメイン名のバインディングウィンドウに進みます。
@@ -183,7 +183,7 @@ span id="related"></span>
 
 
 
-span id="untie"></span>
+<span id="untie"></span>
 ## バインドの解除
 1.LVBコンソールにログインして、【機能設定】>[【LVBトランスコード】](https://console.cloud.tencent.com/live/config/transcode)に進みます。
 2. ドメイン名をすでに関連付けているトランスコードテンプレートを選択し、【バインド解除】をクリックします。
@@ -193,7 +193,7 @@ span id="untie"></span>
 
 
 
-span id="modify"></span>
+<span id="modify"></span>
 ## テンプレートの修正
 1.LVBコンソールにログインして、【機能設定】>[【LVBトランスコード】](https://console.cloud.tencent.com/live/config/transcode)に進みます。
 2. 作成済みのトランスコードテンプレートを選択し、右側の【編集】をクリックすれば、テンプレート情報の修正に入れます。
@@ -203,7 +203,7 @@ span id="modify"></span>
 
 
 
-span id="delect"></span>
+<span id="delect"></span>
 ## テンプレートの削除
 >!   テンプレートがすでに関連付けされている場合は、先に[バインドの解除](#untie)を行ってから、削除操作を行うことができます。 
 
