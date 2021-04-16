@@ -2,7 +2,7 @@
 
 当前 CKafka broker 端的一些配置如下，供参考：
 ```
-# 消息体的最大大小，单位是字节
+# 消息体的最大 大小，单位是字节
 message.max.bytes=1000012
 
 # 是否允许自动创建 Topic, 默认是 false，当前可以通过控制台或云 API 创建 
@@ -29,7 +29,7 @@ log.segment.bytes=1073741824
 # 日志滚动检查间隔5分钟，当设置保留时间小于5分钟时，也可能需要等待5分钟才会清空日志
 log.retention.check.interval.ms=300000
 ```
->其他未列出的 Broker 配置参考 [开源 Kafka 默认配置](http://kafka.apache.org/0102/documentation.html#brokerconfigs)。
+>?其他未列出的 Broker 配置参考 [开源 Kafka 默认配置](http://kafka.apache.org/0102/documentation.html#brokerconfigs)。
 
 <span id="topic"></span>
 ## Topic 配置参数说明
@@ -37,7 +37,7 @@ log.retention.check.interval.ms=300000
 
 从生产者的角度来看，向不同的 partition 写入是完全并行的；从消费者的角度来看，并发数完全取决于 partition 的数量（如果 consumer 数量大于 partition 数量，则必有 consumer 闲置）。因此选取合适的分区数量对于发挥 CKafka 实例的性能十分重要。
 partition 的数量需要根据生产和消费的吞吐来判断。理想情况下，可以通过如下公式来判断分区的数目：
->**Num =  max( T/PT , T/CT ) = T / min( PT ,  CT )**
+>?**Num =  max( T/PT , T/CT ) = T / min( PT ,  CT )**
 
 其中，Num 代表 partition 数量，T 代表目标吞吐量，PT 代表生产者写入单个 partition 的最大吞吐，CT 代表消费者从单个 partition 消费的最大吞吐。则 partition 数量应该等于 T/PT 和 T/CT 中较大的那一个。
 
@@ -54,7 +54,7 @@ partition 的数量需要根据生产和消费的吞吐来判断。理想情况�
 #### 2. 选取合适的副本
 
 目前为了保证可用性副本数必须大于等于2，如果需要保障高可靠建议3副本。
->副本数会影响生产/消费流量，如3副本则实际流量 = 生产流量 × 3
+>!副本数会影响生产/消费流量，如3副本则实际流量 = 生产流量 × 3
 
 #### 3. 日志保留时间
 
@@ -163,7 +163,7 @@ fetch.max.bytes=52428800
 # Fetch 请求等待时间
 fetch.max.wait.ms=500
 
-# Fetch 请求每个 partition 返回的最大数据大小，默认为10MB
+# Fetch 请求每个 partition 返回的最大数据大小，默认为1MB
 max.partition.fetch.bytes=1048576
 
 # 在一次 poll 调用中返回的记录数
