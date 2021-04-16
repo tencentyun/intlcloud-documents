@@ -123,10 +123,10 @@ For the iOS SDK, see [here](https://intl.cloud.tencent.com/document/product/1024
 For the Android SDK, see [Setting custom tag](https://intl.cloud.tencent.com/document/product/1024/30715#setting-custom-tag).
 
 >?
-- One device can be bound to up to 100 tags (to increase the quota, [submit a ticket](https://console.cloud.tencent.com/workorder/category)).
-- One application can be bound to up to 10,000 tags (to increase the quota, [submit a ticket](https://console.cloud.tencent.com/workorder/category)).
-- One tag can contain up to 50 bytes.
-- One request can be used to bind or unbind up to 500 tags.
+>- One device can be bound to up to 100 tags (to increase the quota, [submit a ticket](https://console.cloud.tencent.com/workorder/category)).
+>- One application can be bound to up to 10,000 tags (to increase the quota, [submit a ticket](https://console.cloud.tencent.com/workorder/category)).
+>- One tag can contain up to 50 bytes.
+>- One request can be used to bind or unbind up to 500 tags.
 
 #### Custom tag use cases and keywords
 Tag push is suitable for scenarios where more than 10 devices are bound to a tag and no more than 10 pushes are required per day. For other scenarios, account push (binding an account instead of a tag to multiple devices for push) is recommended.
