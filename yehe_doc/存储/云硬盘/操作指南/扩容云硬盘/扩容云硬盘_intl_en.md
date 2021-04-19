@@ -6,7 +6,7 @@ After a cloud disk is expanded, you need to either assign its expanded capacity 
 ## Expanding Data Disks
 If the cloud disk is a data disk, you can expand it using the following three methods.
 >!If multiple cloud disks of the same capacity and type are mounted to the CVM, you can distinguish them according to the method shown in [Distinguishing data disks](#distinguish). Select a data disk and expand its capacity in the following ways.
->
+
 
 #### Expanding data disks via the CVM console (recommended)
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
@@ -52,9 +52,10 @@ Check cloud disks according to the operating system of the CVM.
 #### Linux
 1. [Log in to a Linux instance](https://intl.cloud.tencent.com/document/product/213/5436)
 2. Run the following command to view the relationship between the elastic cloud disks and the device name.
+
 ```
 ls -l /dev/disk/by-id
-​```
+```
 The following information appears:
 ![](https://main.qcloudimg.com/raw/66b6a19695ef4ba21b74ce0cd96503db.png)
 Note that `disk-xxxx` is the ID of a cloud disk. You can use it to view cloud disk details on the [CBS console](https://console.cloud.tencent.com/cvm/cbs).
@@ -64,6 +65,7 @@ Note that `disk-xxxx` is the ID of a cloud disk. You can use it to view cloud di
 2. Right click <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin:-6px 0px">, and select **Run**.
 3. Enter `cmd` in the pop-up window and press **Enter**.
 4. Run the following command to view the relationship between the elastic cloud disks and the device name.
+
 ```
 wmic diskdrive get caption,deviceid,serialnumber
 ```
@@ -78,7 +80,9 @@ Note that `disk-xxxx` is the ID of a cloud disk. You can use it to view cloud di
 
 ### Checking the cloudinit configuration
 Check the cloudinit configuration according to the operating system of the CVM.
-#### Checking the cloudinit configuration for Linux instances[](id:confirmLinuxConfig)
+
+[](id:confirmLinuxConfig)
+#### Checking the cloudinit configuration for Linux instances
 After the system disk is expanded, [log in to the Linux instance](https://intl.cloud.tencent.com/document/product/213/5436) and check whether the `/etc/cloud/cloud.cfg` file contains the `growpart` and `resizefs` configuration items.
  - If yes, ignore other operations.
 ![](https://main.qcloudimg.com/raw/03d38f34651d317176c50f1ed3a03f30.png)
@@ -86,10 +90,11 @@ After the system disk is expanded, [log in to the Linux instance](https://intl.c
     - **resizefs**: expands or adjusts the `/` partition file system to the partition size.
  - If no, manually [extending partitions and file systems (Linux)](https://intl.cloud.tencent.com/document/product/362/31602) according to the operating system, and assign its expanded capacity to an existing partition, or format it into an independent new partition.
 
-#### Checking the cloudinit configuration for Windows instances[](id:confirmwindowsConfig)
+[](id:confirmwindowsConfig)
+
+[](id:confirmwindowsConfig)
+#### Checking the cloudinit configuration for Windows instances
 After the system disk is expanded, [log in to the Windows instance](https://intl.cloud.tencent.com/document/product/213/5435) and check whether the `ExtendVolumesPlugin` configuration item exists under `plugin` in `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf\cloudbase-init.conf`.
  - If yes, ignore other operations.
  - If no, manually [extending partitions and file systems (Windows)](https://intl.cloud.tencent.com/document/product/362/31601) according to the operating system, and assign its expanded capacity to an existing partition, or format it into an independent new partition.
 
-
-```
