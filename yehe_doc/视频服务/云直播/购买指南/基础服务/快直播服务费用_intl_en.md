@@ -8,7 +8,7 @@
 - LEB does not support playing back live streams with B-frames. If the pushed stream contains B-frames, the system will remove them by transcoding, which will incur transcoding fees.
 - Pull by web client browser only supports the standard WebRTC protocol and does not support the AAC audio codec. To push streams with audios in AAC format, the audios will first need to be transcoded into Opus format, which will incur audio transcoding fees.
 
-LEB bill-by-traffic/bandwidth will take effect on April 20, 2021, and bills will be generated accordingly starting on April 21, 2021.
+>!LEB bill-by-traffic/bandwidth will take effect on April 20, 2021, and bills will be generated accordingly starting on April 21, 2021.
 
 [](id:flow)
 
