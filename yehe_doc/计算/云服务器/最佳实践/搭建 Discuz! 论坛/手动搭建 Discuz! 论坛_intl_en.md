@@ -18,7 +18,7 @@ The following software is used to build a Discuz! website.
 See [Logging in to Linux Instance Using Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436). You can also use other login methods that you are more comfortable with:
 
 - [Log in to Linux Instances via Remote Login Tools](https://intl.cloud.tencent.com/document/product/213/32502).
-- Log in to Linux Instance via SSH Key](https://intl.cloud.tencent.com/document/product/213/32501)
+- [Log in to Linux Instance via SSH Key](https://intl.cloud.tencent.com/document/product/213/32501)
 
 
 
