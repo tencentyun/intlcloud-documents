@@ -26,7 +26,7 @@ You should have a Linux CVM. If you have not purchased one yet, see [Getting Sta
 - [Logging In to a Linux Instance using SSH](https://intl.cloud.tencent.com/document/product/213/32501)
 
 ### Step 2 Create a new user
-1. After logging in, switch to `root`. Refer to [this article](https://intl.intl.cloud.tencent.com/document/product/213/17278) for details.
+1. After logging in, switch to `root`. Refer to [this article](https://intl.cloud.tencent.com/document/product/213/17278) for details.
 2. Run the following command to create a user named `user`.
 >Do not use `ghost` as the username. It causes conflicts with Ghost-CLI. 
 >
