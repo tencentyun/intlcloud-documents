@@ -6,7 +6,7 @@
 
 ## 前提条件
 fdisk/e2fsck/resize2fs 自动扩容工具适用于 Linux 操作系统，用于将新扩容的云硬盘空间添加到已有的文件系统中，扩容能够成功必须满足以下条件：
-- 已确认扩容分区格式，详情请参考 [确认扩展方式](https://cloud.tencent.com/document/product/362/53363)。
+- 已确认扩容分区格式，详情请参考 [确认扩展方式](https://intl.cloud.tencent.com/document/product/362/39995)。
 - 文件系统是 EXT2/EXT3/EXT4/XFS。
 - 当前文件系统不能有错误。
 - 扩容后的磁盘大小不超过2TB。
@@ -43,11 +43,13 @@ umount /data
 ```
 
 2. 执行以下命令，下载工具。
+
 ```
 wget -O /tmp/devresize.py https://raw.githubusercontent.com/tencentyun/tencentcloud-cbs-tools/master/devresize/devresize.py
 ```
 
 3. 执行以下命令，使用扩容工具进行扩容。
+
 ```
 python /tmp/devresize.py <硬盘路径>
 ```
@@ -85,7 +87,6 @@ mount <分区路径> <挂载点>
 ```
 mount /dev/vdb1 /data
 ```
-
 5. 执行以下命令，查看扩容后的分区容量。
 
 ```
@@ -95,6 +96,7 @@ df -h
 ![](https://main.qcloudimg.com/raw/4f57fd2e0038dc1fba5a4389d01ab7dc.png)
 
 6. 执行以下命令，查看扩容后原分区的数据信息，确认新增加的存储空间是否扩容到文件系统中。
+
 ```
 ll /data
 ```
@@ -103,6 +105,7 @@ ll /data
 
 #### 手动扩容
 1. 以 root 用户执行以下命令，卸载分区。
+
 ```
 umount <挂载点>
 ```
@@ -111,10 +114,12 @@ umount <挂载点>
 umount /data
 ```
 2. 执行以下命令，扩容分区 `vdb2`。本文以扩容 `vdb2` 分区为例，您可根据实际情况修改命令。 
+
 ```
 growpart /dev/vdb 2
 ```
 3. 执行以下命令，扩容分区的文件系统。
+
 ```
 resize2fs /dev/vdb2
 ```
@@ -122,6 +127,7 @@ resize2fs /dev/vdb2
 ![](https://main.qcloudimg.com/raw/ba8d2693823a3eb0ccfc4dd097f09ed5.png)
 
 4. [](id:step4MBR)执行以下命令，手动挂载扩容后的分区，本文以挂载点以 `/data` 为例。
+
 ```
 mount <分区路径> <挂载点>
 ```
@@ -130,12 +136,14 @@ mount <分区路径> <挂载点>
 mount /dev/vdb2 /data
 ```
 5. 执行以下命令，查看扩容后的分区容量。
+
 ```
 df -h
 ```
 若返回类似如下图所示的信息，说明挂载成功，即可查看到数据盘：
 ![](https://main.qcloudimg.com/raw/92cd4cc0e9b1c08975603f73e922266f.png)
 6. 执行以下命令，查看扩容后原分区的数据信息，确认新增加的存储空间是否扩容到文件系统中。
+
 ```
 ll /data
 ```
@@ -144,18 +152,21 @@ ll /data
 [](id:New)
 ### 将扩容部分的容量格式化成独立的 MBR 分区
 1. 以 root 用户执行以下命令，查看已挂载的数据盘分区信息。
+
 ```
 df -h
 ```
 已挂载数据盘分区为20GB。如下图所示：
 ![](https://main.qcloudimg.com/raw/4f57fd2e0038dc1fba5a4389d01ab7dc.png)
 2. 执行以下命令，查看数据盘扩容后未分区的信息。
+
 ```
 fdisk -l
 ```
 数据盘已扩容至30GB。如下图所示：
 ![](https://main.qcloudimg.com/raw/f21420374b4334a790022c95bac1fe0f.png)
 3. 执行以下命令，解挂所有已挂载的分区。
+
 ```
 umount <挂载点>
 ```
@@ -167,6 +178,7 @@ umount /data
 >
 
 4. [](id:Step4MBR)执行以下命令，新建一个新分区。
+
 ```
 fdisk <硬盘路径>
 ```
@@ -189,6 +201,7 @@ fdisk /dev/vdb
 >
 
 5. 执行以下命令，查看新分区。
+
 ```
 fdisk -l
 ```
@@ -196,6 +209,7 @@ fdisk -l
 ![](https://main.qcloudimg.com/raw/d604d00955d0db5f052e964ecd409cc3.png)
 
 6. 执行以下命令，格式化新分区并创建文件系统，您可以自行选择文件系统的格式，例如 EXT2、EXT3 等。
+
 ```
 mkfs.<fstype> <分区路径> 
 ```
@@ -207,6 +221,7 @@ mkfs.ext4 /dev/vdb2
 ![](https://main.qcloudimg.com/raw/db15ed11252e6db8adb706f61ed14225.png)
 
 7. 执行以下命令，创建新的挂载点。
+
 ```
 mkdir <新挂载点>
 ```
@@ -215,6 +230,7 @@ mkdir <新挂载点>
 mkdir /data1
 ```
 8. 执行以下命令，手动挂载新分区。
+
 ```
 mount <新分区路径> <新挂载点>
 ```
@@ -223,6 +239,7 @@ mount <新分区路径> <新挂载点>
 mount /dev/vdb1 /data2
 ```
 9. 执行以下命令，查看新分区信息。
+
 ```
 df -h
 ```
@@ -231,10 +248,12 @@ df -h
 >?若您希望云服务器在重启或开机时能自动挂载数据盘，则需要执行 [步骤10](#AddNewPartINFOstep10) 和 [步骤11](#AddNewPartINFOstep11) 添加新分区信息至`/etc/fstab`中。
 
 10. [](id:AddNewPartINFOstep10)执行以下命令，添加信息。
+
 ```
 echo '/dev/vdb2 /data1 ext4 defaults 0 0' >> /etc/fstab
 ```
 11. [](id:AddNewPartINFOstep11)执行以下命令，查看信息。
+
 ```
 cat /etc/fstab
 ```
