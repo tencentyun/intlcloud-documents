@@ -145,7 +145,7 @@ Yes. To do this, follow the steps below:
 >!Refer to [Creating Custom Images](https://intl.cloud.tencent.com/document/product/213/4942) and [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755) to back up data before performing operations to ensure data security.
 >
 
-1. Log in to the [CVM console](https://cloud.tencent.com/login?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fcvm) and access the **Instances** page.
+1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/instance/index) and access the **Instances** page.
 2. Locate the instance of which you want to change the disk, select **More** > **Instance Status** > **Shutdown** under the **Operation** column to shut down the selected instance.
 3. After the instance is shut down, select **More** > **Resource Adjustment** > **Change Disk Media Type**.
 4. In the pop-up window, select a target cloud disk type, check **I have read and agreed to Rules for Changing Disk Media Type**, and click **Change Now**.
