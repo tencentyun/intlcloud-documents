@@ -1,6 +1,6 @@
 ### カーネルのマイナーバージョンをアップグレードする方法は？
 TencentDB for MySQLは、カーネルのマイナーバージョンの自動または手動アップグレードをサポートしています。カーネルのマイナーバージョンアップにより、新機能の使用、パフォーマンスの向上、問題の修正などが実現されます。
->?Basic Editionインスタンスはカーネルのマイナーバージョンアップをサポートしていません。
+>? Basic single-nodeインスタンスはカーネルのマイナーバージョンアップをサポートしていません。
 >
 - **自動アップグレード**：
  - シナリオ1：TencentDB for MySQLで重大なバグやセキュリティホールが発生した場合、システムはメンテナンス期間内にデータベースのカーネルのマイナーバージョンアップを実行し、コンソールのサイト内メールやSMSなどで事前にアップグレード通知を送信します。
@@ -14,12 +14,12 @@ TencentDB for MySQLは、カーネルのマイナーバージョンの自動ま�
 
 
 ### カーネルのマイナーバージョンを確認する方法は？
-1. [CVMインスタンス](https://intl.cloud.tencent.com/zh/document/product/213/10517)にログインし、次のコマンドを実行してTencentDB for MySQLインスタンスにログインします。詳細については、 [Linux CVMからMySQLインスタンスに接続する](https://intl.cloud.tencent.com/document/product/236/37788)をご参照ください。
- プライベートネットワークアクセス：
+1.[CVMインスタンス](https://intl.cloud.tencent.com/zh/document/product/213/10517)にログインし、次のコマンドを実行してTencentDB for MySQLインスタンスにログインします。詳細については、 [Linux CVMからMySQLインスタンスに接続する](https://intl.cloud.tencent.com/document/product/236/37788)ドキュメントをご参照ください。
+ - **プライベートネットワークアクセス：**
 ```
 mysql -h hostname -u username -p
 ```
- パブリックネットワークアクセス：
+ - **パブリックネットワークアクセス：**
 ```
 mysql -h [database IP] -P[database port] -uroot -p
 ```
