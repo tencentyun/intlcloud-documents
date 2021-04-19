@@ -8,7 +8,7 @@
 - LEB does not support playing back live streams with B-frames. If the pushed stream contains B-frames, the system will remove them by transcoding, which will incur transcoding fees.
 - Pull by web client browser only supports the standard WebRTC protocol and does not support the AAC audio codec. To push streams with audios in AAC format, the audios will first need to be transcoded into Opus format, which will incur audio transcoding fees.
 
-
+LEB bill-by-traffic/bandwidth will take effect on April 20, 2021, and bills will be generated accordingly starting on April 21, 2021.
 
 [](id:flow)
 
@@ -67,7 +67,7 @@ LEB bill-by-bandwidth utilizes tiered pricing by the daily peak bandwidth with a
 - Suppose a LEB session lasts for 1 hour at a bitrate of 500 Kbps, which is the sum of the audio bitrate and the video bitrate. If you enable transcoding and specify a video bitrate, the sum of the audio bitrate and the specified video bitrate will be used for billing. If there are 100 viewers, the consumed bandwidth will be approximately:
    500 Kbps x 100 = 50,000 Kbps = 50 Mbps.
 -  If you held an LEB session that generated 50 Mbps of downstream bandwidth on October 20, 2020, then the bandwidth fees you would need to pay on October 21, 2020 would be as follows:
-   Daily LEB bandwidth fees = 0.2194 (USD/Mbps/Day) × 50 (Mbps) = 10.97 USD.
+   Daily LEB bandwidth fees = 0.2065 (USD/Mbps/Day) × 50 (Mbps) = 10.325 USD.
 
 >? If you have a large-scale live streaming business, then a daily billing mode may not meet your needs. Please contact Tencent Cloud sales or [submit a ticket](https://console.cloud.tencent.com/workorder/category) to determine the best billing mode for you.
 
