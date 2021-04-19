@@ -27,63 +27,86 @@ lsblk
  - 返回信息如下图所示，则说明已具备 `vdb1`、`vdb2` 两个分区。如果您具备2个或以上分区时，请参考 [手动扩容](#ManualExpansion) 选择分区进行扩容。
 ![](https://main.qcloudimg.com/raw/070f2144acc543c84d4ab8ab3db25620.png)
 
-<dx-tabs>
-::: 使用工具扩容[](id:AutomaticExpansion)
+[](id:AutomaticExpansion)
+#### 使用工具扩容
 >?使用工具扩容的方式支持仅1个分区的场景。若存在2个及以上分区，请使用 [手动扩容](#ManualExpansion) 方式。
 >
 1. 以 root 用户执行以下命令，卸载分区。
+
 ``` 
 umount <挂载点>
-```本文挂载点以 `/data` 为例，则执行：
+```
+本文挂载点以 `/data` 为例，则执行：
+
 ```
 umount /data
 ```
+
 2. 执行以下命令，下载工具。
 ```
 wget -O /tmp/devresize.py https://raw.githubusercontent.com/tencentyun/tencentcloud-cbs-tools/master/devresize/devresize.py
 ```
+
 3. 执行以下命令，使用扩容工具进行扩容。
 ```
 python /tmp/devresize.py <硬盘路径>
-```本文以硬盘路径以 `/dev/vdb` ，文件系统在 `vdb1` 上为例，则执行：
+```
+本文以硬盘路径以 `/dev/vdb` ，文件系统在 `vdb1` 上为例，则执行：
 ```
 python /tmp/devresize.py /dev/vdb
 ```
+
  - 若输出 `The filesystem on /dev/vdb1 is now XXXXX blocks long.` 如下图所示，则表示扩容成功，请执行 [步骤4](#step4MBR)。
 ![](https://main.qcloudimg.com/raw/689209e1d1f8a227274e8e65be07d2ec.png)
  - 若输出 `[ERROR] - e2fsck failed!!`，请执行以下步骤：
    a. 执行以下命令，修复文件系统所在分区。
+
 ```
 fsck -a <分区路径>
-```本文以硬盘路径是`/dev/vdb`且文件系统在 `vdb1` 上为例，则执行：
+```
+本文以硬盘路径是`/dev/vdb`且文件系统在 `vdb1` 上为例，则执行：
 ```
 fsck -a /dev/vdb1
-```    b. 修复成功后，再次执行以下命令，使用扩容工具进行扩容。
+``` 
+
+ b. 修复成功后，再次执行以下命令，使用扩容工具进行扩容。
+
 ```
 python /tmp/devresize.py /dev/vdb
 ```
+
 4. [](id:step4MBR)执行以下命令，手动挂载扩容后的分区，本文以挂载点以 `/data` 为例。
+
 ```
 mount <分区路径> <挂载点>
-```若扩容前已有分区且以分区路径以 `/dev/vdb1` 为例，则执行：
+```
+若扩容前已有分区且以分区路径以 `/dev/vdb1` 为例，则执行：
+
 ```
 mount /dev/vdb1 /data
 ```
+
 5. 执行以下命令，查看扩容后的分区容量。
+
 ```
 df -h
-```若返回类似如下图所示的信息，说明挂载成功，即可查看到数据盘：
+```
+若返回类似如下图所示的信息，说明挂载成功，即可查看到数据盘：
 ![](https://main.qcloudimg.com/raw/4f57fd2e0038dc1fba5a4389d01ab7dc.png)
+
 6. 执行以下命令，查看扩容后原分区的数据信息，确认新增加的存储空间是否扩容到文件系统中。
 ```
 ll /data
 ```
-:::
-::: 手动扩容[](id:ManualExpansion)
+
+[](id:ManualExpansion)
+
+#### 手动扩容
 1. 以 root 用户执行以下命令，卸载分区。
 ```
 umount <挂载点>
-```本文挂载点以 `/data` 为例，则执行：
+```
+本文挂载点以 `/data` 为例，则执行：
 ```
 umount /data
 ```
@@ -94,26 +117,28 @@ growpart /dev/vdb 2
 3. 执行以下命令，扩容分区的文件系统。
 ```
 resize2fs /dev/vdb2
-```返回结果如下图所示，则表示已成功扩容。
+```
+返回结果如下图所示，则表示已成功扩容。
 ![](https://main.qcloudimg.com/raw/ba8d2693823a3eb0ccfc4dd097f09ed5.png)
+
 4. [](id:step4MBR)执行以下命令，手动挂载扩容后的分区，本文以挂载点以 `/data` 为例。
 ```
 mount <分区路径> <挂载点>
-```若扩容前已有分区且以分区路径以 `/dev/vdb2` 为例，则执行：
+```
+若扩容前已有分区且以分区路径以 `/dev/vdb2` 为例，则执行：
 ```
 mount /dev/vdb2 /data
 ```
 5. 执行以下命令，查看扩容后的分区容量。
 ```
 df -h
-```若返回类似如下图所示的信息，说明挂载成功，即可查看到数据盘：
+```
+若返回类似如下图所示的信息，说明挂载成功，即可查看到数据盘：
 ![](https://main.qcloudimg.com/raw/92cd4cc0e9b1c08975603f73e922266f.png)
 6. 执行以下命令，查看扩容后原分区的数据信息，确认新增加的存储空间是否扩容到文件系统中。
 ```
 ll /data
 ```
-:::
-</dx-tabs>
 
 
 [](id:New)
@@ -140,6 +165,7 @@ umount /data
 ```
 >? 请将云硬盘上所有分区都解挂后，再执行 [步骤4](#Step4MBR)。
 >
+
 4. [](id:Step4MBR)执行以下命令，新建一个新分区。
 ```
 fdisk <硬盘路径>
@@ -148,23 +174,27 @@ fdisk <硬盘路径>
 ```
 fdisk /dev/vdb
 ```
+
 按照界面的提示，依次执行以下步骤：
- 1. 输入 **p**：查看现有分区信息，本文已有分区 `/dev/vdb1`。
- 2. 输入 **n**：新建分区。
- 3. 输入 **p**：新建主分区。
- 4. 输入 **2**：新建第2个主分区。
- 5. 按2次 **Enter**：分区大小使用默认配置。
- 6. 输入 **w**：保存分区表，开始分区。
+ 1. 输入<b>p</b>：查看现有分区信息，本文已有分区 `/dev/vdb1`。
+ 2. 输入<b>n</b>：新建分区。
+ 3. 输入<b>p</b>：新建主分区。
+ 4. 输入<b>2</b>：新建第2个主分区。
+ 5. 按2次<b>Enter</b>：分区大小使用默认配置。
+ 6. 输入<b>w</b>：保存分区表，开始分区。
+
  如下图所示：
 ![](https://main.qcloudimg.com/raw/894ba5a11a73d56a0a165ee7cb49e7c6.png)
 >? 本文以创建一个分区为例，您可以根据实际需求创建多个分区。
 >
+
 5. 执行以下命令，查看新分区。
 ```
 fdisk -l
 ```
 新的分区 `vdb2` 已经创建完成。如下图所示：
 ![](https://main.qcloudimg.com/raw/d604d00955d0db5f052e964ecd409cc3.png)
+
 6. 执行以下命令，格式化新分区并创建文件系统，您可以自行选择文件系统的格式，例如 EXT2、EXT3 等。
 ```
 mkfs.<fstype> <分区路径> 
@@ -175,6 +205,7 @@ mkfs.ext4 /dev/vdb2
 ```
 已成功创建 EXT4 文件系统，如下图所示：
 ![](https://main.qcloudimg.com/raw/db15ed11252e6db8adb706f61ed14225.png)
+
 7. 执行以下命令，创建新的挂载点。
 ```
 mkdir <新挂载点>
@@ -198,6 +229,7 @@ df -h
 返回如下图所示信息则说明挂载成功，即可以查看到数据盘：
 ![](https://main.qcloudimg.com/raw/465c988014acc85957078335d776bfc3.png)
 >?若您希望云服务器在重启或开机时能自动挂载数据盘，则需要执行 [步骤10](#AddNewPartINFOstep10) 和 [步骤11](#AddNewPartINFOstep11) 添加新分区信息至`/etc/fstab`中。
+
 10. [](id:AddNewPartINFOstep10)执行以下命令，添加信息。
 ```
 echo '/dev/vdb2 /data1 ext4 defaults 0 0' >> /etc/fstab
