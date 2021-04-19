@@ -36,8 +36,8 @@
 <img src="https://main.qcloudimg.com/raw/6aad8ac7d4a38a8e74ea7b3b59e36cbb.png" width="50%"/>
 7. 在实例详情页面，单击“监听器管理”页签，在配置监听器模块中，为负载均衡实例绑定后端服务，详情请参见 [添加负载均衡后端云服务器](https://intl.cloud.tencent.com/document/product/214/6156)。
 8. 在弹出的“绑定后端服务”对话框中，选择“其他内网 IP”，单击【添加内网 IP】，输入需绑定的 IDC 内网 IP 地址，并填写端口与权重，详情请参见 [服务器常用端口](https://intl.cloud.tencent.com/document/product/213/12451)，最后单击【确认】。
-![](https://main.qcloudimg.com/raw/18a77ac3712a846083404b3f729ce6b0.png)
+
 9. 返回“已绑定后端服务”区域可以查看已绑定的 IDC 的内网 IP。<br/>
-<img src="https://main.qcloudimg.com/raw/86ac3501b9b559059fc4cc12da6c6e41.png" width="60%"/>
+
 
 
