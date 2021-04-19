@@ -127,6 +127,7 @@ Two expansion methods are provided:
 
 #### Online expansion with pods restart
 1. Run the following command to confirm the status of the PV and file system before expansion. Below is a sample, in which the size of the PV and that of the file system are both 30 GB:
+
 ```
 $ kubectl exec ivantestweb-0 df /usr/share/nginx/html
 Filesystem     1K-blocks  Used Available Use% Mounted on
@@ -135,11 +136,15 @@ $ kubectl get pv pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c
 NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                        STORAGECLASS   REASON   AGE
 pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c   30Gi       RWO            Delete           Bound    default/www1-ivantestweb-0   cbs-csi                 20h
 ```
+
 2. Run the following command to attach an invalid-zone label to the PV object. This way, after the pod is restarted in the next step, it cannot be scheduled to a certain node. See the sample code below:
+
 ```
 $ kubectl label pv pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c failure-domain.beta.kubernetes.io/zone=nozone
 ```
+
 3. Run the following command to restart the pod. After the restart, because the label of the PV corresponding to the pod indicates an invalid zone, the pod will be in the Pending state. See the sample code below:
+
 ```
 $ kubectl delete pod ivantestweb-0
 $ kubectl get pod ivantestweb-0
@@ -150,18 +155,23 @@ Events:
   Type     Reason            Age                 From               Message
  ----     ------            ----                ----               -------
   Warning  FailedScheduling  40s (x3 over 2m3s)  default-scheduler  0/1 nodes are available: 1 node(s) had no available volume zone.
+
 ```
 4. Run the following command to change the capacity in the PVC object to 40 GB. See the sample below:
+
 ```
 kubectl patch pvc www1-ivantestweb-0 -p '{"spec":{"resources":{"requests":{"storage":"40Gi"}}}}'
 ```
+
 5. Run the following command to remove the label attached to the PV object. After the label is removed, the pod can be scheduled successfully. See the sample below:
+
 ```
 $ kubectl label pv pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c failure-domain.beta.kubernetes.io/zone-
 persistentvolume/pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c labeled
 ```
 
 6. Run the following command to confirm that the status of the pod is Running and that the corresponding PV and file system have been expanded from 30 GB to 40 GB. See the sample below:
+
 ```
 $ kubectl get pod ivantestweb-0
 NAME            READY   STATUS    RESTARTS   AGE
@@ -180,6 +190,7 @@ Filesystem     1K-blocks  Used Available Use% Mounted on
 
 #### Online expansion without restarting pods
 1. Run the following command to confirm the status of the PV and file system before expansion. Below is a sample, in which the size of the PV and that of the file system are both 20 GB:
+
 ```
 $ kubectl exec ivantestweb-0 df /usr/share/nginx/html
 Filesystem     1K-blocks  Used Available Use% Mounted on
@@ -188,11 +199,15 @@ $ kubectl get pv pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c
 NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                        STORAGECLASS   REASON   AGE
 pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c   20Gi       RWO            Delete           Bound    default/www1-ivantestweb-0   cbs-csi                 20h
 ```
+
 2. Run the following command to change the capacity in the PVC object to 30 GB. See the sample code below:
+
 ```
 $ kubectl patch pvc www1-ivantestweb-0 -p '{"spec":{"resources":{"requests":{"storage":"30Gi"}}}}'
 ```
+
 3. Run the following command to confirm that the capacity of the PV and file system has been expanded to 30 GB. See the sample code below:
+
 ```
 $ kubectl exec ivantestweb-0 df /usr/share/nginx/html
 Filesystem     1K-blocks  Used Available Use% Mounted on
@@ -212,7 +227,7 @@ pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c   30Gi       RWO            Delete     
 
 
 - You have created a TKE cluster of v1.18 or a later version. For more information, see [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/30637).
-- You have installed the latest version of the [CBS-CSI](https://github.com/TencentCloud/kubernetes-csi-tencentcloud/blob/master/docs/README_CBS.md "CBS CSI documentation") add-on.
+- You have installed the latest version of the [CBS-CSI](https://github.com/TencentCloud/kubernetes-csi-tencentcloud/blob/master/docs/README_CBS.md) add-on.
 
 
 #### Directions
@@ -220,6 +235,7 @@ pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c   30Gi       RWO            Delete     
 #### Using a snapshot to back up a cloud disk
 
 1. Use the following YAML to create a VolumeSnapshotClass object. See the sample code below:
+
 ```
 apiVersion: snapshot.storage.k8s.io/v1beta1
 kind: VolumeSnapshotClass
@@ -228,14 +244,18 @@ metadata:
 driver: com.tencent.cloud.csi.cbs
 deletionPolicy: Delete
 ```
+
 2. After creation, run the following command to view the VolumeSnapshotClass object information. See the sample code below:
+
 ```plaintext
 $ kubectl get volumesnapshotclass
 NAME            DRIVER                      DELETIONPOLICY   AGE
 cbs-snapclass   com.tencent.cloud.csi.cbs   Delete           17m
 ```
+
 <span id = "step"></span>
 3. This document uses the snapshot name `new-snapshot-demo` as an example in the following YAML to create a VolumeSnapshot. See the sample code below:
+
 ```
 apiVersion: snapshot.storage.k8s.io/v1beta1
 kind: VolumeSnapshot
@@ -246,7 +266,9 @@ spec:
     source: 
     persistentVolumeClaimName: csi-pvc
 ```
+
 4. Run the following command to confirm that the Volumesnapshot and Volumesnapshotcontent objects have been created successfully. If `READYTOUSE` is true, creation was successful. See the sample code below:
+
 ```plaintext
 $ kubectl get volumesnapshot
 NAME                READYTOUSE   SOURCEPVC            SOURCESNAPSHOTCONTENT   RESTORESIZE   SNAPSHOTCLASS   SNAPSHOTCONTENT                                    CREATIONTIME   AGE
@@ -255,7 +277,9 @@ $ kubectl get volumesnapshotcontent
 NAME                                               READYTOUSE   RESTORESIZE   DELETIONPOLICY   DRIVER                      VOLUMESNAPSHOTCLASS   VOLUMESNAPSHOT      AGE
 snapcontent-ea11a797-d438-4410-ae21-41d9147fe610   true         10737418240   Delete           com.tencent.cloud.csi.cbs   cbs-snapclass         new-snapshot-demo   22m
 ```
+
 5. Run the following command to obtain the snapshot ID of the Volumesnapshotcontent object from the field `status.snapshotHandle` (snap-e406fc9m in the sample below). With the snapshot ID, you can go to the [TKE console](https://console.cloud.tencent.com/tke2) to check whether the snapshot exists. See the sample code below:
+
 ```
 $ kubectl get volumesnapshotcontent snapcontent-ea11a797-d438-4410-ae21-41d9147fe610 -oyaml
 apiVersion: snapshot.storage.k8s.io/v1beta1
@@ -291,6 +315,7 @@ status:
 #### Restoring volumes from a snapshot (CBS)
 
 1. This document uses the VolumeSnapshot object, named `new-snapshot-demo` and created in the preceding [step](#step), as an example to show the process for restoring a volume from the snapshot. See the sample code below:
+
 ```
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -308,7 +333,9 @@ spec:
     requests: 
       storage: 10Gi
 ```
+
 2. Run the following command to confirm that the restored PVC has been created successfully. From the PV, you can view the corresponding diskid (disk-gahz1kw1 in the sample below). See the sample code below:
+
 ```
 $ kubectl get pvc restore-test
 NAME           STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
