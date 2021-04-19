@@ -106,10 +106,10 @@ The following describes the main parameters. For other parameters, simply keep t
 6. In "Container List", choose **Add Container** > **Container Template** and configure the following information about the container.
   - **Name**: enter a custom container name. This document uses `jnlp-agent` as an example.
     - **Docker image**: enter the image address `jenkins/jnlp-slave:alpine`.
-    - **Working directory*: keep it as its default. Record the working directory, which will be used for building and packaging shell scripts.
+    - **Working directory**: keep it as its default. Record the working directory, which will be used for building and packaging shell scripts.
     - Leave other options as their defaults.
 7. In "Volume", complete the following steps to add a volume and configure the docker command for the slave pod.
-1. Choose **Add Volume** > **Host Path Volume**. Enter `/usr/bin/docker` for both the host and mounting paths.
+   1. Choose **Add Volume** > **Host Path Volume**. Enter `/usr/bin/docker` for both the host and mounting paths.
    2. Choose **Add Volume** > **Host Path Volume**. Enter `/var/run/docker.sock` for both the host and mounting paths.
 8. Click **Save** at the bottom of the page to finish configuring the slave pod template.
 
