@@ -7,7 +7,7 @@ When you use the Kubernetes API or Kubectl to create a workload for EKS, you can
 > - The resource specifications indicate the maximum amount of resources available for containers in a pod.
 > - The following tables list the supported CPU and GPU specifications. Ensure that allocated resources do not exceed the supported specifications.
 > - The total amount of resources specified by Request for all the containers in a pod cannot exceed the maximum pod specification.
-> - The total amount of resources specified by Request for all the containers in a pod cannot exceed the maximum pod specification.
+> - The amount of resources specified by Limit for any container in a pod cannot exceed the maximum pod specification.
 
 
 ## CPU Specifications
