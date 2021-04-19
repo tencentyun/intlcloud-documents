@@ -55,7 +55,7 @@ Structure of the `listenerSet` array returned
 Request
 <pre>
 https://lb.api.qcloud.com/v2/index.php?Action=DescribeLoadBalancerListeners
-&<<a href="https://intl.cloud.tencent.com/document/api/213/6976">Common request parameters</a>>
+&<<a href="https://intl.cloud.tencent.com/document/product/213/31574">Common request parameters</a>>
 &loadBalancerId=lb-abcdefgh
 &listenerIds.0=lbl-6hkiqc6c
 &listenerIds.1=lbl-6wv071ba
