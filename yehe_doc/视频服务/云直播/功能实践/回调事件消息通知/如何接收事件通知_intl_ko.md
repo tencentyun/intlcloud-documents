@@ -4,7 +4,7 @@
 
 ## 전체 프로세스
 
-<img src="https://main.qcloudimg.com/raw/ea1b7cd9ac91b2d561ef045c2f6f2159.svg" data-nonescope="true">
+<img src="https://main.qcloudimg.com/raw/252b7e06b322350c8520283e7826d5a3.png" data-nonescope="true">
 
 **프로세스 설명**
 1. 콘솔 또는 클라우드 API 직접 호출을 통해 호스트가 이벤트 메시지 공지 URL과 녹화, 화면 캡처 등 관련 기능을 설정합니다.
