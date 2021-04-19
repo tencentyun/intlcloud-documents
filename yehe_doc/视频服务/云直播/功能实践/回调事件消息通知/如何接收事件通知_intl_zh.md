@@ -4,7 +4,7 @@
 
 ## 整体流程
 
-<img src="https://main.qcloudimg.com/raw/ea1b7cd9ac91b2d561ef045c2f6f2159.svg" data-nonescope="true">
+<img src="https://main.qcloudimg.com/raw/252b7e06b322350c8520283e7826d5a3.png" data-nonescope="true">
 
 **流程说明：**
 1. 主播在控制台或直接调用云 API 配置事件消息通知 URL 以及录制、截图等相关功能。
