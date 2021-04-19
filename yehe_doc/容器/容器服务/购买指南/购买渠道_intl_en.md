@@ -1,7 +1,7 @@
 ## Product Purchase
 
 
-Log in to the [Tencent Cloud](https://cloud.tencent.com/), choose **Products** > **Container** > **[Tencent Kubernetes Engine](https://intl.cloud.tencent.com/product/tke)**, and click **Get Started** to go to the TKE console. When logging in to this page for the first time, you need to perform the following steps to complete service authorization before you can purchase TKE products.
+Log in to the [Tencent Cloud](https://intl.cloud.tencent.com/), choose **Products** > **Container** > **[Tencent Kubernetes Engine](https://intl.cloud.tencent.com/product/tke)**, and click **Get Started** to go to the TKE console. When logging in to this page for the first time, you need to perform the following steps to complete service authorization before you can purchase TKE products.
 
 
 
