@@ -11,7 +11,7 @@
 负载均衡实例成功购买后，系统将自动分配一个 VIP，该 VIP 为负载均衡向客户端提供服务的 IP 地址。
 1. 登录腾讯云 [负载均衡服务购买页](https://buy.cloud.tencent.com/lb)。
 2. 在负载均衡 CLB 购买页面，地域选择与云服务器相同的地域，实例类型选择【负载均衡】，网络类型选择【公网】。更多参数详情请参考 [产品属性选择](https://intl.cloud.tencent.com/document/product/214/13629)。
->?目前仅杭州、济南、福州、武汉、长沙、石家庄地域支持静态单线 IP，其他地域支持情况请以控制台页面为准。该功能处于内测阶段，如需体验，请提交内测申请。申请通过后，即可在购买页选择中国移动、中国联通或中国电信的运营商类型。
+>?目前仅广州、上海、南京、济南、杭州、福州、北京、石家庄、武汉、长沙、成都、重庆地域支持静态单线 IP 线路类型，其他地域支持情况请以控制台页面为准。该功能处于内测阶段，如需体验，请提交内测申请。申请通过后，即可在购买页选择中国移动、中国联通或中国电信的运营商类型。
 >
 ![](https://main.qcloudimg.com/raw/235e67c8fbe5878a15163e13d0c2a9b6.png)
 3. 单击【立即购买】，完成付款。
@@ -75,7 +75,7 @@
 1. 在 Windows 系统中，进入 `C:\Windows\System32\drivers\etc` 目录，修改 hosts 文件，把域名映射到 CLB 实例的 VIP 上。
 ![](https://main.qcloudimg.com/raw/b12ee22250cb7c24d5e12ecb803e6355.png)
 2. 为了验证 hosts 是否配置成功，可以运行 cmd 命令行工具，用 `ping` 命令探测一下该域名是否成功绑定了 VIP，如有数据包，则证明绑定成功。
-![](https://main.qcloudimg.com/raw/b11b20840cba86bedbaffaa424b4e021.png)
+![](https://main.qcloudimg.com/raw/b11b20840cba86bedbaffaa424b4e021.png)	
 3. 在浏览器中输入访问路径 `http://www.example.com/image/`，测试负载均衡服务。若如下图所示，则表示本次请求被 CLB 转发到了 rs-1 这台 CVM 上，CVM 正常处理请求并返回页面。
 ![](https://main.qcloudimg.com/raw/cf61264a9406d141650ed79da21c6859.png)
 4. 此监听器的均衡方式是“加权轮询”，且两台 CVM 的权重都是“10”。刷新浏览器，再次发送请求，若如下图所示，则表示本次请求被 CLB 转发到了 rs-2 这台 CVM 上。
@@ -83,7 +83,7 @@
 >!`image/` 后 `/` 必须保留，代表 image 是默认的目录，而不是名为 image 的文件。
 
 ### 方法二：配置 DNS 解析 DNSPod 将域名指向 CLB
-1. 打开腾讯云域名注册页面进行域名查询和注册。本例以`example.com` 为例。
+1. 打开 [腾讯云域名注册页面](https://dnspod.cloud.tencent.com) 进行域名查询和注册。本例以`example.com` 为例。
 2. 登录 [DNS 解析 DNSPod 控制台](https://console.cloud.tencent.com/cns)，在“域名解析列表”页面，单击目标域名右侧“操作”列的【解析】。
 3. 在“记录管理”页签，单击【添加记录】为域名添加 A 记录，在添加记录区域，填写以下参数：
   - 主机记录：即域名前缀。本例以解析所有前缀为例，设为 `*.example.com`。
@@ -91,6 +91,7 @@
   - 线路类型：默认。
   - 记录值：单击【关联云资源】，在“关联云资源”对话框勾刚才创建的 CLB 实例。
   - TTL：设置为默认值“600s”。
+    ![](https://main.qcloudimg.com/raw/569c078b0b8263515cbe2910d41970ff.png)
 4. 添加完成后，单击【保存】。
 5. 在添加完解析记录十分钟左右后，在浏览器中输入绑定后的 CNAME 域名（如本例中的 www.example.com），若正常显示页面，则表示负载均衡生效。
 

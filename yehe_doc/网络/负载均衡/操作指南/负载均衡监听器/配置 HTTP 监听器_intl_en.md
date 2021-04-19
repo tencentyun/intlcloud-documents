@@ -20,7 +20,7 @@ Click **Create** in the **HTTP/HTTPS Listener** section and configure an HTTP li
 | Configuration Item | Description | Example |
 | ------- | ------------------------ | ---------------------------------------- |
 | Name | Listener name | test-http-80 |
-| Listening protocol and port | Listening protocol and port of a listener:<ul style="margin-bottom:0px;"><li>Listening protocol: CLB supports various protocols, including TCP, UDP, TCP SSL, HTTP, and HTTPS. HTTP is used in this example.</li><li>Listening port: A port used to receive requests and forward them to the real server. Port range: 1-65535.</li><li>Listening ports of each CLB instance must be unique.</li></ul>| HTTP:80 |
+| Listening protocol and port | Listening protocol and port of a listener:<ul style="margin-bottom:0px;"><li>Listening protocol: CLB supports various protocols, including TCP, UDP, TCP SSL, HTTP, and HTTPS. HTTP is used in this example.</li><li>Listening port: A port used to receive requests and forward them to the real server. Port range: 1 - 65535. These ports are reserved and currently unavailable to users: 843, 1020, 1433, 1434, 3306, 3389, 6006, 20000, 36000, 42222, 48369, 56000, and 65010.</li><li>Listening ports of each CLB instance must be unique.</li></ul>| HTTP:80 |
 
 The specific configuration of the created HTTP listener is as shown below:
 ![](https://main.qcloudimg.com/raw/437e90b575089c2953d701d37b0413b5.png)
@@ -66,11 +66,10 @@ The specific configuration of session persistence is as shown below:
 ### Step 3. Bind a real server
 1. On the **Listener Management** page, select the created listener `HTTP:80`. Click **+** on the left to expand the domain names and URL paths, select the desired URL path, and view the real servers bound to the path on the right of the listener.
 ![](https://main.qcloudimg.com/raw/fa7531928fc8493bc2da973458568657.png)
-2. Click **Bind** and select the real server to be bound and configure the service port and weight in the pop-up window.
+2. Click **Bind**, select the target real server, configure the server port and weight in the pop-up window.
  ① Add port: In the **Selected** box on the right, click **Add Port** to add multiple ports for the same CVM instance, such as ports 80, 81, and 82.
  ② Default port: Enter the **Default Port** first and then select the CVM instance. The port of every CVM instance is the default port.
 ![](https://main.qcloudimg.com/raw/84dae52ca3484eaa09ad5b31a6d9690f.png)
-
 After these three steps are completed, the HTTP listener rule has been configured as shown below:
 ![](https://main.qcloudimg.com/raw/f307c4e60def622c1207e7e7f61fe942.png)
 
