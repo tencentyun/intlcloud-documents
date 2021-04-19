@@ -3,6 +3,7 @@ User-generated content (UGC) and professionally generated content (PGC) platform
 ## Causes of Inappropriate Videos
 
 Generally, a UGC or PGC video platform interacts with content providers, content consumers, and VOD in the following ways (for more information on steps 1–3, please see [Upload from Client](https://intl.cloud.tencent.com/document/product/266/33921)):
+<img src="https://main.qcloudimg.com/raw/f0af99e033b9dbb7f525e1b15bd679e2.png" width="400">
 1. The video application backend authenticates the content provider and distributes to them a [signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922) after authentication is passed.
 2. The content provider uploads the content to be shared to VOD.
 3. VOD notifies the application backend of [relevant information](https://intl.cloud.tencent.com/document/product/266/33950) such as the `FileId` and playback URL of the uploaded video.
@@ -18,7 +19,7 @@ VOD provides a [video content recognition](https://intl.cloud.tencent.com/zh/doc
 * If the recognition result is "review" (human review suggested), the application backend will leave the video for human review to determine whether to publish the video.
 
 After video content recognition is enabled in VOD, the application backend can efficiently recognize and filter out inappropriate videos. The recommended use process is as follows:
-
+<img src="https://main.qcloudimg.com/raw/99544692ba8d62874a0f718e805f2d57.png" width="550">
 1. The video application backend authenticates the content provider and distributes to them a [signature for upload from client](https://intl.cloud.tencent.com/document/product/266/33922) after authentication is passed.
 2. The content provider uploads the content to be shared to VOD.
 3. VOD notifies the application backend of [relevant information](https://intl.cloud.tencent.com/document/product/266/33950) such as the `FileId` and playback URL of the uploaded video.
