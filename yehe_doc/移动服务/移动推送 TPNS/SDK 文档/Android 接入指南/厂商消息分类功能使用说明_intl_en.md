@@ -53,8 +53,8 @@ The message type can be specified when you call the push API.
 3. If you do not need vendor notification messages nor a custom channel ID, you do not need to perform relevant operations, and TPNS will specify a default channel ID for all messages of your application and group them into the default type.
 
 
-
-## OPPO Notification Channel Application Guide[](id:oppozhinan)
+[](id:oppozhinan)
+## OPPO Notification Channel Application Guide
 
 ### OPPO notification channel overview
 
@@ -120,8 +120,8 @@ Below is a sample push:
 
 
 
-
-## Mi Notification Channel Application Guide[](id:xiaomizhinan)
+[](id:xiaomizhinan)
+## Mi Notification Channel Application Guide
 
 ### Mi notification channel overview
 
