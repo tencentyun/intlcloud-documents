@@ -1,6 +1,6 @@
 ## Overview
 
-Compatible with the APIs of Prometheus and Grafana and the CRD usage of mainstream prometheus-operator, TKE [Cloud Native Monitoring](https://intl.cloud.tencent.com/document/product/457/38824) is more flexible and extensible. Combined with Prometheus open source tools, it can have more advanced usages.
+Compatible with the APIs of Prometheus and Grafana and the CRD usage of mainstream prometheus-operator, TKE Cloud Native Monitoring is more flexible and extensible. Combined with Prometheus open source tools, it can have more advanced usages.
 This document describes how to use auxiliary scripts and migration tools to quickly migrate the self-built Prometheus to cloud native monitoring.
 
 
@@ -105,7 +105,7 @@ $ kubectl -n prom-fnc7bvu9 edit prometheus tke-cls-hha93bp9
 
 ### Migrating the aggregation configuration
 
-The format of each Prometheus aggregation configuration rule is the same no matter it is the original static configuration [Recording rules] (https://prometheus.io/docs/prometheus/latest/configuration/recording_rules/) or the dynamic configuration [PrometheusRule] (https://github.com/prometheus-operator/prometheus-operator/blob/master/Documentation/api.md#prometheusrule).
+The format of each Prometheus aggregation configuration rule is the same no matter it is the original static configuration [Recording rules](https://prometheus.io/docs/prometheus/latest/configuration/recording_rules/) or the dynamic configuration [PrometheusRule](https://github.com/prometheus-operator/prometheus-operator/blob/master/Documentation/api.md#prometheusrule).
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. Click **Cloud Native Monitoring** in the left sidebar to go to the **Cloud Native Monitoring** page.
