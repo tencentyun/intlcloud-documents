@@ -36,8 +36,8 @@ This feature is currently in beta. If you want to use it, for cross-region bindi
 <img src="https://main.qcloudimg.com/raw/6aad8ac7d4a38a8e74ea7b3b59e36cbb.png" width="50%"/>
 7. On the instance details page, open the **Listener Management** tab, and bind a real server to the CLB instance in the listener configuration section. For more information, please see [Managing Real Servers](https://intl.cloud.tencent.com/document/product/214/6156).
 8. In the pop-up box, select **Other Private IP**, click **Add a private IP**, enter the target IDC private IP, port, and weight, and click **Confirm**. For more information on ports, please see [Server Common Port](https://intl.cloud.tencent.com/document/product/213/12451).
-![](https://main.qcloudimg.com/raw/18a77ac3712a846083404b3f729ce6b0.png)
+
 9. Now you can view the bound IDC private IP in the **Bound Real Servers** section.<br/>
-<img src="https://main.qcloudimg.com/raw/86ac3501b9b559059fc4cc12da6c6e41.png" width="60%"/>
+
 
 
