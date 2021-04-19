@@ -1,7 +1,7 @@
 ## Configuration Overview
 
 When an end user requests a business resource, you can add a custom header in the returned **response message** to implement cross-origin resource sharing.
-Response header configuration is of the domain name dimension, therefore, once the configuration takes effect, it will be synced to the response message of each resource under the domain name. Response header configuration only makes changes to the client (browser) response but not to the CDN node cache.
+The response header is configured at the domain name level. Once the configuration takes effect, it will be synced to the response message of each resource under the domain name. Response header configuration only makes changes to the client (browser) response but not to the CDN node cache.
 
 ## Configuration Guide
 
@@ -14,11 +14,11 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Dom
 
 | Operation | Description                                                         |
 | :------- | :----------------------------------------------------------- |
-| Set     | Changes the value of a specified response header parameter.<br/>If the target header does not exist, it will be added after the change operation.<br/>If the header parameter already exists, all the duplicates will be changed and merged into one header. For example, after the rule "Set - `x-cdn: value1`" is configured, if a request contains multiple `x-cdn` headers, the headers will be changed and merged into one header `x-cdn: value1`. |
+| Set     | Changes the value of a specified response header parameter.<br/>If the target header does not exist, it will be added after the change.<br/>If the header parameter already exists, all the duplicates will be changed and merged into one header. For example, after the rule "Set - `x-cdn: value1`" is configured, if a request contains multiple `x-cdn` headers, the headers will be changed and merged into one header `x-cdn: value1`. |
 | Delete     | Deletes a specified response header parameter.                                       |
 
 > !
-> - Some headers cannot be set or deleted in a self-service manner. For the detailed list, please see [Notes](#noice).
+> - Some headers cannot be set or deleted in a self-service manner. For the detailed list, please see [Notes](#notice).
 > - Up to 10 response header rules can be configured.
 > - Rule priority can be adjusted. Rules lower on the list have higher priority. If a header parameter is configured with multiple rules, the bottom rule will take effect as rules are executed from bottom to top.
 
@@ -61,8 +61,8 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Dom
 </tr>
 </tbody></table>
 
-[](id:acao)
-### Access-Control-Allow-Origin match mode introduction
+
+### Access-Control-Allow-Origin match mode introduction[](id:acao)
 
 | **Match Mode**   | **Origin Value**                                                     | **Description**                                                     |
 | :------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
@@ -73,10 +73,9 @@ Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Dom
 
 > ! If there are special ports, you need to enter the relevant information in the list. Arbitrary port match is not supported, and you must specify the ports.
 
-[](id:noice)
-### Notes
+### Notes[](id:notice)
 
-The headers below are not supported and will not take effect if configured:
+The headers below are not supported and will not take effect even if configured:
 
 ```
 Date
