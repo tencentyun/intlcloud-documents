@@ -29,14 +29,14 @@ Tencent Kubernetes Engine (TKE) allows you to use Cloud Object Storage (COS) by 
 1. Log in to the [Cloud Object Storage console](https://console.cloud.tencent.com/cos5) and click **Bucket List** in the left sidebar to go to the **Bucket List** page.
 2. Click **Create Bucket**. In the **Create Bucket** page that appears, configure the parameters as required, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/eb8c2ca6089302bd1f3b78bcd9daf6f8.png)
-   -**Name**: enter a custom bucket name, whose format is [custom name]-[developer’s APPID] and cannot be modified once configured. For naming instructions, see [Naming Conventions](https://intl.intl.cloud.tencent.com/document/product/436/13312).
+   - **Name**: enter a custom bucket name, whose format is [custom name]-[developer’s APPID] and cannot be modified once configured. For naming instructions, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312).
    - **Region**: select the region where the target cluster described in this document resides, which cannot be modified once configured. For more information, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
    - **Multi-AZ feature**: after this feature is enabled, disaster recovery for multiple IDCs in the same region is provided. For more information, see [Overview of the Multi-AZ Feature](https://intl.cloud.tencent.com/document/product/436/35208).
    - **Access Permissions**: a bucket provides the **Private Read/Write**, **Public Read/Private Write**, and **Public Read/Write** permissions by default, which can be modified once configured.
       - **Private Read/Write**: only the creator of this bucket and authorized accounts have the permission to read or write objects in this bucket. This is the default access permission for a bucket and is recommended.
       - **Public Read/Private Write**: everyone (including anonymous visitors) has the permission to read objects in this bucket, but only the creator of this bucket and authorized accounts have the permission to write objects in this bucket.
       - **Public Read/Write**: everyone (including anonymous visitors) has the permissions to read or write objects in this bucket. This permission is not recommended.
-   -**Bucket Tag**: the bucket tag is used as a key pair (key = value) and an identifier to manage buckets in groups. For more information, see [Setting Bucket Tags](https://cloud.tencent.com/document/product/436/30928).
+   -**Bucket Tag**: the bucket tag is used as a key pair (key = value) and an identifier to manage buckets in groups. For more information, see [Setting Bucket Tags](https://intl.cloud.tencent.com/document/product/436/30928).
    - **Server-Side Encryption**: valid values are **None** and **SSE-COS**, where the latter indicates server-side encryption that uses COS to manage keys.
       - **SSE-COS**: server-side encryption that uses COS to manage keys. COS is used to host the primary key and manage data. You can use COS to directly manage and encrypt data. For more information, see [Server-side Encryption Overview](https://intl.cloud.tencent.com/document/product/436/18145).
 3. Verify the information and click **OK**. After the bucket is created, you can find it in the bucket list.
