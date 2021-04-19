@@ -1,6 +1,6 @@
 ## Overview
 
-TKE supports managing sub-accounts authorization through the **Authorization Management** feature in the console, or customizing YAML ([RBAC Authorization](https://kubernetes.io/en/docs/reference /access-authn-authz/rbac/)) to meet more personalized authorization requirements. The Kubernetes RBAC authorization instructions and principles are as follows:
+TKE supports managing sub-accounts authorization through the **Authorization Management** feature in the console, or customizing YAML <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">(RBAC Authorization)</a> to meet more personalized authorization requirements. The Kubernetes RBAC authorization instructions and principles are as follows:
 
 - **Permission objects (Role or ClusterRole)**: uses apiGroups, resources, and verbs to define permissions, including:
 	- Role permission object: a Role always sets permissions within a particular namespace.
@@ -38,6 +38,7 @@ As shown in the figure above, Kubernetes RBAC authorization mainly provides the 
 This method is mainly used to bind related permissions of a certain namespace for a certain user, and is suitable for scenarios that require refined permissions. For example, developers, testers, and OPS personnel can only operate on resources in their respective namespaces. The following directions describe how to implement permission binding for a single namespace in TKE.
 
 1. Use the following Shell script to create a test namespace and a test user of ServiceAccount type, and set up cluster access credential (Token) authentication, as shown below:
+
 ```bash
 USERNAME='sa-acc' # Set the test account name
 NAMESPACE='sa-test' # Set the test namespace name
@@ -55,9 +56,11 @@ kubectl config set-credentials ${USERNAME} --token=${SA_TOKEN}
 # Set the context entries for accessing the cluster
 kubectl config set-context ${USERNAME} --cluster=${CLUSTER_NAME} --namespace=${NAMESPACE} --user=${USERNAME}
 ```
+
 2. Run the command `kubectl config get-contexts` to view the generated contexts entries, as shown below: 
 ![image-20201020105559159](https://main.qcloudimg.com/raw/40f7223c29d2c78b5e1671afe28933ba.png)
 3. Create a Role permission object resource file “sa-role.yaml”, as shown below:
+
 ```yaml
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
@@ -69,8 +72,10 @@ rules: # Set the permission rule
   resources: ["deployments", "replicasets", "pods"]
   verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
 ```
+
 4. Create a RoleBinding object resource file “sa-rb-test.yaml”. The following permission binding indicates that the sa-acc user of ServiceAccount type has sa-role-test (Role type) permissions in the sa-test namespace, as shown below:
-``` yaml
+
+```yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata: 
@@ -86,6 +91,7 @@ roleRef:
   name: sa-role-test
   apiGroup: ""  # The default apiGroup is rbac.authorization.k8s.io.
 ```
+
 5. From the verification result in the following figure, you can find that when the Context is sa-context, the default namespace is sa-test, and it has the permissions configured in the sa-role-test (Role) object under the sa-test namespace, but it has no permission under the default namespace.
 ![image-20201020111456470](https://main.qcloudimg.com/raw/237a717756c26ed8ed654851c2d7aa01.png)
 
@@ -97,6 +103,7 @@ roleRef:
 This method is mainly used to grant users the same permissions in multiple namespaces. It is suitable for scenarios where a permission template is used to bind authorizations for multiple namespaces. For example, developers need to bind the same resource operations permission in multiple namespaces. The following directions describe how to implement permission binding for multiple namespaces by reusing cluster permission object in TKE.
 
 1. Use the following Shell script to create an user authenticated with X509 self-signed certificate, approve the CSR and the certificate as trustworthy, and set the cluster resource access credential Context, as shown below:
+
 ```bash
 USERNAME='role_user' # Set the user name that you want to create
 NAMESPACE='default' # Set the test namespace name
@@ -126,8 +133,10 @@ kubectl get csr ${USERNAME} -o jsonpath={.status.certificate} | base64 --decode 
 kubectl config set-credentials ${USERNAME} --client-certificate=${USERNAME}.crt --client-key=${USERNAME}.key
 # Set Context cluster, default Namespace, etc.
 kubectl config set-context  ${USERNAME} --cluster=${CLUSTER_NAME} --namespace=${NAMESPACE} --user=${USERNAME}
+
 ```
 2. Create a ClusterRole object resource “test-clusterrole.yaml”, as shown below:
+
 ``` yaml
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
@@ -138,7 +147,9 @@ rules:
   resources: ["pods"]
   verbs: ["get", "watch", "list", "create"]
 ```
+
 3. Create a RoleBinding object resource file “clusterrole-rb-test.yaml”. The following permission binding indicates that the user role_user with the self-signed certificate authentication has the test-clusterrole (ClusterRole type) permission in the default namespace, as shown below:
+
 ``` yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -155,9 +166,11 @@ roleRef:
   name: test-clusterrole
   apiGroup: ""  # The default apiGroup is rbac.authorization.k8s.io.
 ```
+
 4. From the verification result in the figure below, you can find that when the Context is role_user, the default namespace is “default”, and it has the permissions configured by the test-clusterrole permission object.
 ![image-20201020114653469](https://main.qcloudimg.com/raw/2d57f7719b3f8d1b187b41943e396bd5.png)
 5. Create the second RoleBinding object resource file “clusterrole-rb-test2.yaml”. The following permission binding indicates that the user role_user with the self-signed certificate authentication has the test-clusterrole (ClusterRole type) permission in the default2 namespace.
+
 ``` yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
@@ -174,6 +187,7 @@ roleRef:
   name: test-clusterrole
   apiGroup: ""  # The default apiGroup is rbac.authorization.k8s.io.
 ```
+
 6. From the verification result in the figure below, you can find that in the default2 namespace, role_user also has the permissions configured by test-clusterrole. So far, through the above steps, it has implemented the permission binding for the multiple namespaces by reusing the cluster permissions.
 ![image-20201020114512915](https://main.qcloudimg.com/raw/b948a35d0e49f1f99084b2cf8e6b7eb9.png)
 
@@ -184,6 +198,7 @@ roleRef:
 This method is mainly used to bind permissions of all namespaces (cluster-scoped) for a user, and is suitable for cluster-scoped authorization scenarios, such as log collection permission, admin permission. The following directions describe how to use multiple namespaces in TKE to reuse cluster permission for authorization binding.
 
 1. Create a ClusterRoleBinding object resource file “clusterrole-crb-test3.yaml”. The following permission binding indicates that the user role_user with the certificate authentication has the test-clusterrole (ClusterRole type) permission in the entire cluster.
+
 ``` yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
@@ -199,6 +214,7 @@ roleRef:
   name: test-clusterrole
   apiGroup: ""  # The default apiGroup is rbac.authorization.k8s.io.
 ```
+
 2. From the verification result in the figure below, you can find that after the YAML of permission binding is performed, role_user has the cluster-wide test-clusterrole permission.
 ![image-20201020141737129](https://main.qcloudimg.com/raw/5f3415f45bac5b622264fd4929e104a5.png)
 
