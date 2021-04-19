@@ -39,11 +39,9 @@ TPNS provides you with a troubleshooting tool for message push exceptions such a
 1. Select **Push Query** on the **Troubleshooting Tools** page.
 2. Enter the `pushid` (required) and the device token to be queried (required), and click **Query** to view the troubleshooting results.
 > ?`pushid` acquisition method:
->
 > 1. Select **Push Management** -> **Task List** on the left sidebar to obtain the `PushID` to be queried.
-
 > 2. Obtain it from the response parameter of the push API.
-3. If the query result does not match the actual situation, or the problem persists, you can view the [FAQs about push](#.E6.8E.A8.E9.80.81.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98) or [submit a ticket](https://console.cloud.tencent.com/workorder/category) with the `pushID` and token for assistance.
+> 3. If the query result does not match the actual situation, or the problem persists, you can view the [FAQs about push](#.E6.8E.A8.E9.80.81.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98) or [submit a ticket](https://console.cloud.tencent.com/workorder/category) with the `pushID` and token for assistance.
 
 ## FAQ
 
