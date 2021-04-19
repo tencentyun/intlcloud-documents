@@ -4,18 +4,20 @@
 
 ## 全体フロー
 
-<img src="https://main.qcloudimg.com/raw/252b7e06b322350c8520283e7826d5a3.png" data-nonescope="true">
+<img src="https://main.qcloudimg.com/raw/ea1b7cd9ac91b2d561ef045c2f6f2159.svg" data-nonescope="true">
 
 **フロー説明：**
-1. キャスターが、コンソールまたはTencentCloud APIを直接呼び出して、イベントメッセージ通知のURLおよびレコーディング、スクリーンキャプチャなどの関連機能を設定します。
+1. キャスターが、コンソールまたはTencent Cloud APIを直接呼び出して、イベントメッセージ通知のURLおよびレコーディング、スクリーンキャプチャなどの関連機能を設定します。
 2. キャスターがCSSプッシュを切断します。
-3. CSSサービス内部にイベントが発生すると、メッセージがイベントメッセージ通知サービス経由で視聴者に一括してコールバックされます。
+3. CSSサービス内部にイベントが発生すると、メッセージがイベントメッセージ通知サービス経由でお客様のバックグラウンドに一括でコールバックされます。
+
+
 <span id="protocol"></span>
 ## イベントメッセージ通知のプロトコル
 
 ### ネットワークプロトコル
 - リクエスト：HTTP POSTリクエスト。パケットの中身はJSON。各メッセージの具体的なパケットの内容は後述をご参照ください。
-- 応答：HTTP STATUS CODE = 200、サーバーは応答パケットの具体的な内容を無視します。プロトコルとの親和性のため、クライアントの応答内容に JSON： `{"code":0}`を付けることをお勧めします
+- 応答：HTTP STATUS CODE = 200、サーバーは応答パケットの具体的な内容を無視します。プロトコルとの親和性のため、クライアントの応答内容にJSON： `{"code":0}`を付けることをお勧めします
 
 ### 通知の信頼性
 
@@ -26,28 +28,28 @@
 
 <span id="configuration"></span>
 ## コールバックイベントの設定方式
-コールバック設定は、主に2種類の方式で実現します。1つは、 [CSSコンソール](#c_callback)を利用し、もう1つは [サーバーAPI]の呼び出し(#api_callback)によるものです。
+コールバック設定は、主に2種類の方式で実現します。1つは、[CSSコンソール](#c_callback)を利用し、もう1つは[サーバーAPI]の呼び出し(#api_callback)によるものです。
 >?CSSのイベントメッセージ通知のコールバックURLでは、プッシュイベント、ストリーム切断イベント、レコーディングイベント、スクリーンキャプチャイベント、ポルノ検出イベントの設定に対して単独のコールバックURLをサポートしています。
 
 
 
 <span id="c_callback"></span>
 ### CSSコンソール
-1. CSSコンソールの【機能テンプレート】>【[コールバック設定](https://console.cloud.tencent.com/live/config/callback)】に入り、コールバックテンプレートを作成します。具体的な操作については、[コールバックテンプレートの作成](https://intl.cloud.tencent.com/document/product/267/31074)をご参照ください。
-![](https://main.qcloudimg.com/raw/e487fbb21c3e7018c97f82f7055b8f8a.png)
-2. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)で操作が必要なプッシュドメイン名を見つけ、【管理】>【テンプレート設定】をクリックして、このドメイン名とトランスコードテンプレートの関連付けを行います。具体的な操作については、 [コールバック設定](https://cloud.tencent.com/document/product/267/35254)をご参照ください。
+1. CSSコンソールの【イベントセンター】>【[CSSコールバック](https://console.cloud.tencent.com/live/config/callback)】に進んでコールバックテンプレートを作成します。操作の詳細は[コールバックテンプレートの作成](https://intl.cloud.tencent.com/document/product/267/31074)をご参照ください。
+2. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)で操作したいプッシュドメイン名を探して、【管理】>【テンプレート設定】をクリックし、このドメイン名とコールバックテンプレートを関連付けます。操作の詳細は[コールバック設定](https://intl.cloud.tencent.com/document/product/267/31065)をご参照ください。
+
 <span id="api_callback"></span>
 ### サーバーAPI
-1.  [CreateLiveCallbackTemplate](https://intl.cloud.tencent.com/document/product/267/30815) を呼び出して、コールバックテンプレートのインターフェースを作成し、必要なコールバックパラメータ情報を設定します。
-2. [CreateLiveCallbackRule](https://intl.cloud.tencent.com/document/product/267/30816) を呼び出して、コールバックルールを作成し、パラメータのプッシュドメイン名DomainName 、TemplateIdを設定します（ステップ1を繰り返す）。プッシュおよび再生アドレスのものと一致するAppNameを入力すると、一部のライブストリーミングでコールバック起動の効果が実現されます。
+1. [CreateLiveCallbackTemplate](https://intl.cloud.tencent.com/document/product/267/30815)を呼び出してコールバックテンプレートインターフェースを作成します。必要なコールバックパラメータメッセージを設定します。
+2. [CreateLiveCallbackRule]https://intl.cloud.tencent.com/document/product/267/30816) を呼び出して、コールバックルールを作成し、パラメータのプッシュドメイン名DomainName 、TemplateIdを設定します（ステップ1を繰り返す）。プッシュおよび再生アドレスのものと一致するAppNameを入力すると、一部のライブストリーミングでコールバック起動の効果が実現されます。
 
 ## コールバック情報パラメータの説明
 コールバックテンプレートとドメイン名の関連付けが成功した後、ライブストリーミングの過程でテンプレートのイベントがトリガーされると、Tencent Cloudは自動的にコールバック情報が含まれたJSONパッケージを顧客のサーバーに送信します。コールバック情報の具体的なパラメータ説明は次となります。
-- [プッシュイベントメッセージ通知](https://intl.cloud.tencent.com/zh/document/product/267/38081)
-- [ストリーム切断イベントメッセージ通知](https://intl.cloud.tencent.com/zh/document/product/267/38081)
-- [レコーディングイベントメッセージ通知](https://intl.cloud.tencent.com/zh/document/product/267/38082)
-- [スクリーンキャプチャイベントメッセージ通知](https://intl.cloud.tencent.com/zh/document/product/267/38083)
-- [ポルノ検出イベントメッセージ通知](https://intl.cloud.tencent.com/zh/document/product/267/38084)
+- [プッシュイベントメッセージ通知](https://intl.cloud.tencent.com/document/product/267/38081)
+- [ストリーム切断イベントメッセージ通知](https://intl.cloud.tencent.com/document/product/267/38081)
+- [レコーディングイベントメッセージ通知](https://intl.cloud.tencent.com/document/product/267/38082)
+- [スクリーンキャプチャイベントメッセージ通知](https://intl.cloud.tencent.com/document/product/267/38083)
+- [ポルノ検出イベントメッセージ通知](https://intl.cloud.tencent.com/document/product/267/38084)
 
 
 
