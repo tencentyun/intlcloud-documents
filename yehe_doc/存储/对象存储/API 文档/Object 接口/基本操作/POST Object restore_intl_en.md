@@ -1,11 +1,12 @@
 ## API Description
 
-This API allows you to send a request to restore an ARCHIVED/DEEP ARCHIVED object so that you can read it. The restored readable object is a temporary copy, for which you can set "Keep Readable" and the time at which to delete it at a later point. You can use the "Days" parameter to specify the expiration time of the temporary object. If the time is exceeded and you haven’t initiated a copy, extension, or any other operation, the temporary object will be automatically deleted. Temporary objects are only copies of the archived objects which always exist. For more information about ARCHIVE, please see [Storage Class Overview- ARCHIVE](https://intl.cloud.tencent.com/document/product/436/30925).
+This API allows you to send a request to restore an ARCHIVED/DEEP ARCHIVED object so that you can read it. The restored readable object is a temporary copy, for which you can set `Keep Readable` and the time at which to delete it at a later point. You can use the `Days` parameter to specify the expiration time of the temporary object. If the time is exceeded and you haven’t initiated a copy, extension, or any other operation, the temporary object will be automatically deleted. Temporary objects are only copies of the archived objects which always exist. For more information about ARCHIVE, please see [Storage Class Overview - ARCHIVE](https://intl.cloud.tencent.com/document/product/436/30925).
 
+>?The QPS of the POST Object restore API is limited to 100.
 
 #### Versioning
 
-If versioning is enabled, you can use the `versionId` parameter in your request to specify the ID of the version to restore. If not specified, the latest version will be restored.
+If versioning is enabled, you can use the `versionId` parameter in your request to specify the ID of the version to restore. If this parameter is not specified, the latest version will be restored.
 
 ## Request
 
@@ -20,6 +21,8 @@ Content-Length: Content Length
 Content-MD5: MD5
 Authorization: Auth String
 
+
+
 [Request Body]
 ```
 
@@ -29,7 +32,7 @@ Authorization: Auth String
 
 | Parameter | Description | Type | Required |
 | ---------------------------- | ------------------------------------------------------------ | ------ | -------- |
-| versionId | Specifies the version ID of the versioning-enabled object to restore. If not specified, the latest version will be restored. | string | No |
+| versionId | Specifies the version ID of the versioning-enabled object to restore. If this parameter is not specified, the latest version will be restored. | string | No |
 
 #### Request headers
 
@@ -58,7 +61,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
-| Days | RestoreRequest | Specifies the valid duration (in days) for the temporary copy restored. | number | yes |
+| Days | RestoreRequest | Specifies the valid duration (in days) for the temporary copy restored. | number | Yes |
 | CASJobParameters | RestoreRequest | Restores job parameters. | Container | Yes |
 
 **Content of Container node CASJobParameters:**
@@ -84,7 +87,7 @@ This API returns common error responses and error codes. For more information, p
 
 ## Samples
 
-#### Sample 1. Simple use case (versioning disabled)
+#### Sample 1. Simple sample (versioning not enabled)
 
 #### Request
 
@@ -98,11 +101,13 @@ Content-MD5: Nr7RAnRMgrplFvD8bt5+0w==
 Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1577434769;1577441969&q-key-time=1577434769;1577441969&q-header-list=content-length;content-md5;content-type;date;host&q-url-param-list=restore&q-signature=ed3ee8ca63689dbff4be1533fddc17c0b4d8****
 Connection: close
 
+
+
 <RestoreRequest>
-	<Days>1</Days>
-	<CASJobParameters>
-		<Tier>Expedited</Tier>
-	</CASJobParameters>
+			<Days>1</Days>
+			<CASJobParameters>
+				<Tier>Expedited</Tier>
+			</CASJobParameters>
 </RestoreRequest>
 ```
 
@@ -131,11 +136,13 @@ Content-MD5: Nr7RAnRMgrplFvD8bt5+0w==
 Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1579509820;1579517020&q-key-time=1579509820;1579517020&q-header-list=content-length;content-md5;content-type;date;host&q-url-param-list=restore;versionid&q-signature=f92b1c6753c452bed9ade49739ddb81a0a47****
 Connection: close
 
+
+
 <RestoreRequest>
-	<Days>1</Days>
-	<CASJobParameters>
-		<Tier>Expedited</Tier>
-	</CASJobParameters>
+			<Days>1</Days>
+			<CASJobParameters>
+				<Tier>Expedited</Tier>
+			</CASJobParameters>
 </RestoreRequest>
 ```
 

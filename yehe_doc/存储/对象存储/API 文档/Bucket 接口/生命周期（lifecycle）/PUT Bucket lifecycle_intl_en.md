@@ -1,4 +1,4 @@
-## Overview
+## Description
 
 COS allows you to manage the lifecycle of objects in buckets through the lifecycle configuration, which contains one or more rule sets that will be applied to a set of objects. Each rule defines a COS operation.
 There are two types of operations:
@@ -12,8 +12,9 @@ This API is used to create a new lifecycle configuration for a bucket. If a life
 
 > !
 > - `Days` and `Date` cannot be both specified in the same lifecycle rule. Please pass them to two separate rules. For details, please see the following [Sample](#.E5.AE.9E.E9.99.85.E6.A1.88.E4.BE.8B).
+>- Up to 1,000 lifecycle rules can be added for each bucket.
 
-#### Request
+## Request
 
 #### Sample request
 
