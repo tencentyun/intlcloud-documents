@@ -99,6 +99,7 @@ TKE 支持在线扩容 PV、对应的云硬盘及文件系统，即不需要重�
 #### 创建允许扩容的 StorageClass
 
 使用以下 YAML 创建允许扩容的 StorageClass，在 Storageclass 中设置 `allowVolumeExpansion` 为 `true`。示例如下：
+
 ```yaml
 allowVolumeExpansion: true
 apiVersion: storage.k8s.io/v1
@@ -127,6 +128,7 @@ volumeBindingMode: Immediate
 
 ####  重启Pod情况下在线扩容
 1. 执行以下命令，确认扩容前 PV 和文件系统状态。示例如下，PV 和文件系统大小均为30G：
+
 ```
 $ kubectl exec ivantestweb-0 df /usr/share/nginx/html
 Filesystem     1K-blocks  Used Available Use% Mounted on
@@ -135,11 +137,15 @@ $ kubectl get pv pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c
 NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                        STORAGECLASS   REASON   AGE
 pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c   30Gi       RWO            Delete           Bound    default/www1-ivantestweb-0   cbs-csi                 20h
 ```
+
 2. 执行以下命令，为 PV 对象打上一个非法 zone 标签，旨在下一步重启 Pod 后，使 Pod 无法调度到某个节点上。示例如下：
+
 ```
 $ kubectl label pv pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c failure-domain.beta.kubernetes.io/zone=nozone
 ```
+
 3. 执行以下命令重启 Pod，重启后由于 Pod 对应的 PV 的标签表明的是非法 zone，Pod 将处于 Pending 状态。示例如下：
+
 ```
 $ kubectl delete pod ivantestweb-0
 $ kubectl get pod ivantestweb-0
@@ -151,17 +157,22 @@ Events:
  ----     ------            ----                ----               -------
   Warning  FailedScheduling  40s (x3 over 2m3s)  default-scheduler  0/1 nodes are available: 1 node(s) had no available volume zone.
 ```
+
 4. 执行以下命令，修改 PVC 对象中的容量，将容量扩容至40G。示例如下：
+
 ```
 kubectl patch pvc www1-ivantestweb-0 -p '{"spec":{"resources":{"requests":{"storage":"40Gi"}}}}'
 ```
+
 5. 执行以下命令，去除 PV 对象之前打上的标签， 标签去除之后 Pod 即可调度成功。示例如下：
+
 ```
 $ kubectl label pv pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c failure-domain.beta.kubernetes.io/zone-
 persistentvolume/pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c labeled
 ```
 
 6. 执行以下命令，可以查看到 Pod 状态为 Running、对应的 PV 和文件系统扩容成功，从30G扩容到40G。示例如下：
+
 ```
 $ kubectl get pod ivantestweb-0
 NAME            READY   STATUS    RESTARTS   AGE
@@ -180,6 +191,7 @@ Filesystem     1K-blocks  Used Available Use% Mounted on
 
 #### 不重启Pod情况下在线扩容
 1. 执行以下命令，确认扩容前 PV 和文件系统状态。示例如下，PV 和文件系统大小均为20G：
+
 ```
 $ kubectl exec ivantestweb-0 df /usr/share/nginx/html
 Filesystem     1K-blocks  Used Available Use% Mounted on
@@ -188,11 +200,15 @@ $ kubectl get pv pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c
 NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                        STORAGECLASS   REASON   AGE
 pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c   20Gi       RWO            Delete           Bound    default/www1-ivantestweb-0   cbs-csi                 20h
 ```
+
 2. 执行以下命令，修改 PVC 对象中的容量，将容量扩容至30G。示例如下：
+
 ```
 $ kubectl patch pvc www1-ivantestweb-0 -p '{"spec":{"resources":{"requests":{"storage":"30Gi"}}}}'
 ```
+
 3. 执行以下命令，可以查看到 PV 和文件系统已扩容至30G。示例如下：
+
 ```
 $ kubectl exec ivantestweb-0 df /usr/share/nginx/html
 Filesystem     1K-blocks  Used Available Use% Mounted on
@@ -212,7 +228,7 @@ pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c   30Gi       RWO            Delete     
 
 
 - 已创建1.18或以上版本的 [TKE 集群](https://intl.cloud.tencent.com/document/product/457/30637)。
-- 已安装最新版的 [CBS-CSI](https://github.com/TencentCloud/kubernetes-csi-tencentcloud/blob/master/docs/README_CBS.md "cbs csi文档") 组件。
+- 已安装最新版的 [CBS-CSI](https://github.com/TencentCloud/kubernetes-csi-tencentcloud/blob/master/docs/README_CBS.md) 组件。
 
 
 #### 操作步骤
@@ -220,6 +236,7 @@ pvc-e193201e-6f6d-48cf-b96d-ccc09225cf9c   30Gi       RWO            Delete     
 #### 使用快照备份云硬盘
 
 1. 使用以下 YAML，创建 VolumeSnapshotClass 对象。示例如下：
+
 ```
 apiVersion: snapshot.storage.k8s.io/v1beta1
 kind: VolumeSnapshotClass
@@ -228,14 +245,18 @@ metadata:
 driver: com.tencent.cloud.csi.cbs
 deletionPolicy: Delete
 ```
+
 2. 创建后，执行以下命令查看 VolumeSnapshotClass 对象信息。示例如下：
+
 ```plaintext
 $ kubectl get volumesnapshotclass
 NAME            DRIVER                      DELETIONPOLICY   AGE
 cbs-snapclass   com.tencent.cloud.csi.cbs   Delete           17m
 ```
+
 <span id="step"></span>
 3. 本文以 `new-snapshot-demo` 快照名为例使用以下 YAML，创建 VolumeSnapshot。示例如下：
+
 ```
 apiVersion: snapshot.storage.k8s.io/v1beta1
 kind: VolumeSnapshot
@@ -246,7 +267,9 @@ spec:
     source: 
     persistentVolumeClaimName: csi-pvc
 ```
+
 4. 执行以下命令，查看 Volumesnapshot 和 Volumesnapshotcontent 对象是否创建成功，若 `READYTOUSE` 为 true，则创建成功。示例如下：
+
 ```plaintext
 $ kubectl get volumesnapshot
 NAME                READYTOUSE   SOURCEPVC            SOURCESNAPSHOTCONTENT   RESTORESIZE   SNAPSHOTCLASS   SNAPSHOTCONTENT                                    CREATIONTIME   AGE
@@ -255,7 +278,9 @@ $ kubectl get volumesnapshotcontent
 NAME                                               READYTOUSE   RESTORESIZE   DELETIONPOLICY   DRIVER                      VOLUMESNAPSHOTCLASS   VOLUMESNAPSHOT      AGE
 snapcontent-ea11a797-d438-4410-ae21-41d9147fe610   true         10737418240   Delete           com.tencent.cloud.csi.cbs   cbs-snapclass         new-snapshot-demo   22m
 ```
+
 5. 执行以下命令，可以获取 Volumesnapshotcontent 对象的快照 ID，字段是 `status.snapshotHandle`（如下为 snap-e406fc9m），可以根据快照 ID 在 [容器服务控制台](https://console.cloud.tencent.com/tke2) 确认快照是否存在。示例如下：
+
 ```
 $ kubectl get volumesnapshotcontent snapcontent-ea11a797-d438-4410-ae21-41d9147fe610 -oyaml
 apiVersion: snapshot.storage.k8s.io/v1beta1
@@ -291,6 +316,7 @@ status:
 #### 从快照恢复卷（云硬盘）
 
 1. 本文以上述 [步骤](#step) 中创建的 VolumeSnapshot 的对象名为 `new-snapshot-demo` 为例，使用以下 YAML 从快照恢复卷。示例如下：
+
 ```
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -308,7 +334,9 @@ spec:
     requests: 
       storage: 10Gi
 ```
+
 2. 执行以下命令，查看恢复的 PVC 已成功创建，从 PV 中可以查看到对应的 diskid（如下为 disk-gahz1kw1）。示例如下：
+
 ```
 $ kubectl get pvc restore-test
 NAME           STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
