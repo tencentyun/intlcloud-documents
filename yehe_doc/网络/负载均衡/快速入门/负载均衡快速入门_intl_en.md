@@ -25,7 +25,6 @@ When a client initiates a request, the CLB instance will receive the request acc
 1. Log in to the [CLB console](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3).
 2. On the **Instance Management** page, click **Configure Listener** under the Operation column of the target CLB instance.
 3. Select the **Listener Management** tab, click the **Create** button in the **HTTP/HTTPS Listener** section.
-![](https://main.qcloudimg.com/raw/f8ab76b69f8a0cfdd5b4332c8b80b1f2.png)
 4. In the **Create Listener** window, please configure the following items and click **Submit**.
   - Listener name.
   - Listen protocol port (e.g., `HTTP:80`).
@@ -33,7 +32,7 @@ When a client initiates a request, the CLB instance will receive the request acc
 ### Configure the listener's forwarding rule
 If a client initiates a request, the CLB instance will forward the request according to the configured listener's forwarding rule.
 1. In the **Listener Management** tab, click the **+** icon on the right of the new listener.
-![](https://main.qcloudimg.com/raw/ad3ad578fa4de43d271420bb62bb2efa.png)
+![](https://main.qcloudimg.com/raw/f8ab76b69f8a0cfdd5b4332c8b80b1f2.png)
 2. In the **Create Forwarding Rules** window, configure the domain name, URL, balance method, and then click **Next**.
   - Domain name: the domain name of your real server (e.g., `www.example.com`).
   - Default domain name: if a client request does not match any listener domain names, the CLB instance will forward the request to the default domain name (default server). Each listener can be configured with only one default domain name. If a listener has no default domain name, the CLB instance will forward the request to the first domain name. This example will skip the configuration step.
@@ -91,7 +90,6 @@ After configuring a CLB instance, you can verify whether it is effective by acce
   - Split Zone: Default
   - Value: Click **Associate Tencent Cloud Resources** and then tick the CLB instance created above.
   - TTL: Leave it as the default value **600** s.
-    ![](https://main.qcloudimg.com/raw/569c078b0b8263515cbe2910d41970ff.png)
 4. Click **Save**.
 5. About 10 minutes later, open the bound CNAME domain name in a browser (`www.example.com`). If the corresponding page can be normally displayed, it indicates that the CLB instance is in effect.
 
