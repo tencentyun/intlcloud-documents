@@ -15,13 +15,13 @@ The following tables provide details about some autoscaling metrics:
 	<tr>
 	<td>CPU Usage</td>
 	<td>Core</td>
-	<td>Number of CPU cores used by the pod</td>
+	<td>Number of CPU cores used by the Pod</td>
 	<td>Pods</td>
 	<td>k8s_pod_cpu_core_used</td>
 	<td>Core</td>
 	</tr>
 	<tr>
-	<td>CPU utilization<br>(% of node)</td>
+	<td>CPU Utilization<br>(% of node)</td>
 	<td>%</td>
 	<td>Percentage of total CPU of the node used by the Pod</td>
 	<td>Pods</td>
@@ -30,8 +30,8 @@ The following tables provide details about some autoscaling metrics:
 	</tr>
 	<tr>
 	<td>CPU Utilization <br>(% of Request)</td>
-	<td>%</td>
-	<td>Percentage of the total number of CPU cores specified by Request that is used by the pod</td>
+	<td>% </td>
+	<td>Percentage of the total number of CPU cores specified by Request that is used by the Pod</td>
 	<td>Pods</td>
 	<td>k8s_pod_rate_cpu_core_used_request</td>
 	<td>%</td>
@@ -39,7 +39,7 @@ The following tables provide details about some autoscaling metrics:
 	<tr>
 	<td>CPU Utilization <br>(% of Limit)</td>
 	<td>%</td>
-	<td>Percentage of the total number of CPU cores specified by Limit that is used by the pod</td>
+	<td>Percentage of the total number of CPU cores specified by Limit that is used by the Pod</td>
 	<td>Pods</td>
 	<td>k8s_pod_rate_cpu_core_used_limit</td>
 	<td>%</td>
@@ -48,7 +48,7 @@ The following tables provide details about some autoscaling metrics:
 
 
 
-### Disk Metrics	
+### Disk metrics	
 
 <table>
 <tr>
@@ -90,7 +90,7 @@ The following tables provide details about some autoscaling metrics:
 </table>
 
 
-### Network Metrics	
+### Network metrics	
 
 <table>
 <tr>
@@ -148,7 +148,7 @@ The following tables provide details about some autoscaling metrics:
 
 
 
-### Memory Metrics
+### Memory metrics
 
 <table>
 <tr>
@@ -166,13 +166,13 @@ The following tables provide details about some autoscaling metrics:
 	<tr>
 	<td>MEM Usage<br>(excluding cache)</td>
 	<td>Mib</td>
-	<td>Pod memory usage, excluding cache</td>
+	<td>Pod Memory Usage, excluding cache</td>
 	<td>Pods</td>
 	<td>k8s_pod_mem_no_cache_bytes</td>
 	<td>B</td>
 	</tr>
 	<tr>
-	<td> MEM utilization<br>(% of node)</td>
+	<td> MEM Utilization<br>(% of node)</td>
 	<td>%</td>
 	<td>Percentage of total memory of the node used by the Pod</td>
 	<td>Pods</td>
@@ -180,7 +180,7 @@ The following tables provide details about some autoscaling metrics:
 	<td>%</td>
 	</tr>
 	<tr>
-	<td>MEM utilization<br>(% of node, excluding cache)</td>
+	<td>MEM Utilization<br>(% of node, excluding cache)</td>
 	<td>%</td>
 	<td>Percentage of total memory of the node used by the Pod, excluding cache</td>
 	<td>Pods</td>
@@ -190,15 +190,15 @@ The following tables provide details about some autoscaling metrics:
 	<tr>
 	<td>MEM Utilization <br>(% of Request)</td>
 	<td>%</td>
-	<td>Percentage of the total amount of memory specified by Request that is used by the pod</td>
+	<td>Percentage of the total amount of memory specified by Request that is used by the Pod</td>
 	<td>Pods</td>
 	<td>k8s_pod_rate_mem_usage_request</td>
 	<td>%</td>
 	</tr>
 	<tr>
-	<td>Memory utilization<br>(% of request, excluding cache)</td>
+	<td>Memory Utilization<br>(% of request, excluding cache)</td>
 	<td>%</td>
-	<td>Percentage of Pod memory usage to the request  value, excluding cache</td>
+	<td>Percentage of Pod memory usage to the request value, excluding cache</td>
 	<td>Pods</td>
 	<td>k8s_pod_rate_mem_no_cache_request</td>
 	<td>%</td>
@@ -206,13 +206,13 @@ The following tables provide details about some autoscaling metrics:
 	<tr>
 	<td>MEM Utilization <br>(% of Limit)</td>
 	<td>%</td>
-	<td>Percentage of the total amount of memory specified by Limit that is used by the pod</td>
+	<td>Percentage of the total amount of memory specified by Limit that is used by the Pod</td>
 	<td>Pods</td>
 	<td>k8s_pod_rate_mem_usage_limit</td>
 	<td>%</td>
 	</tr>
 	<tr>
-	<td>MEM utilization<br>(% of limit, excluding cache)</td>
+	<td>MEM Utilization<br>(% of limit, excluding cache)</td>
 	<td>%</td>
 	<td>Percentage of Pod memory usage to the limit value, excluding cache</td>
 	<td>Pods</td>
@@ -224,7 +224,7 @@ The following tables provide details about some autoscaling metrics:
 
 
 
-### GPU Metrics
+### GPU metrics
 
 <table>
 <tr>
@@ -240,7 +240,7 @@ The following tables provide details about some autoscaling metrics:
 	<td>CUDA Core</td>
 	</tr>
 	<tr>
-	<td>GPU applications</td>
+	<td>GPU Applications</td>
 	<td>CUDA Core</td>
 	<td>Pod GPU applications</td>
 	<td>Pods</td>
@@ -248,7 +248,7 @@ The following tables provide details about some autoscaling metrics:
 	<td>CUDA Core</td>
 	</tr>
 	<tr>
-	<td> GPU utilization<br>(% of request)</td>
+	<td> GPU Utilization<br>(% of request)</td>
 	<td>%</td>
 	<td>Percentage of GPU usage to the request value</td>
 	<td>Pods</td>
@@ -256,7 +256,7 @@ The following tables provide details about some autoscaling metrics:
 	<td>%</td>
 	</tr>
 	<tr>
-	<td>GPU utilization<br>(% of node)</td>
+	<td>GPU Utilization<br>(% of node)</td>
 	<td>%</td>
 	<td>Percentage of node taken up by GPU usage</td>
 	<td>Pods</td>
@@ -264,7 +264,7 @@ The following tables provide details about some autoscaling metrics:
 	<td>%</td>
  </tr>
  <tr>
-	<td>GPU memory usage</td>
+	<td>GPU Memory Usage</td>
 	<td>Mib</td>
 	<td>Pod GPU memory usage</td>
 	<td>Pods</td>
@@ -272,7 +272,7 @@ The following tables provide details about some autoscaling metrics:
 	<td>B</td>
  </tr>
  <tr>
-	<td>GPU memory applications</td>
+	<td>GPU Memory Applications</td>
 	<td>Mib</td>
 	<td>Pod GPU memory applications</td>
 	<td>Pods</td>
@@ -280,7 +280,7 @@ The following tables provide details about some autoscaling metrics:
 	<td>B</td>
  </tr>
  <tr>
-	<td>GPU memory utilization<br>(% of request)</td>
+	<td>GPU Memory Utilization<br>(% of request)</td>
 	<td>%</td>
 	<td>Percentage of GPU memory usage to the request value</td>
 	<td>Pods</td>
@@ -288,7 +288,7 @@ The following tables provide details about some autoscaling metrics:
 	<td>%</td>
  </tr>
  <tr>
-	<td>GPU memory utilization<br>(% of node)</td>
+	<td>GPU Memory Utilization<br>(% of node)</td>
 	<td>%</td>
 	<td>Percentage of node taken up by GPU memory usage</td>
 	<td>Pods</td>
@@ -300,24 +300,30 @@ The following tables provide details about some autoscaling metrics:
 
 ## Creating and Editing an HPA by Using a YAML File 
 You can create and edit an HPA by using a YAML file. The following example shows a configuration file that defines an HPA named "example". The HPA enables the system to trigger HPA for 1 or 2 pods when the CPU usage reaches 1.
+
+>! TKE is compatible with the native Resource types.
+
 ```
-apiVersion":"autoscaling/v2beta1
-kind:HorizontalPodAutoscaler
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
 metadata:
-  name: example
-  namespace: default
-  labels:
-    qcloud-app: example
+    name: example
+    namespace: default
+    labels:
+      qcloud-app: example
 spec:
-  minReplicas: 1
-  maxReplicas: 2
-  metrics:
-  - type: Pods
-    pods:
-      metricName: k8s_pod_cpu_core_used
-      targetAverageValue: "1"
-  scaleTargetRef:
-    apiVersion: apps/v1beta2
-    kind: Deployment
-    name: nginx
+    minReplicas: 1
+    maxReplicas: 2
+    metrics:
+    - type: Pods# Support using Resource
+      pods:
+        metricName: k8s_pod_cpu_core_used
+        targetAverageValue: "1"
+    scaleTargetRef:
+      apiVersion: apps/v1beta2
+      kind: Deployment
+      name: nginx
 ```
+
+
+

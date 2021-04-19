@@ -1,15 +1,33 @@
-## TKE Kubernetes 1.18.4 Revisions
+## TKE kubernetes 1.18.4 revisions
 
 <table><thead>
 <tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Updates</th></tr>
 </thead>
 <tbody>
 <tr>
+    <td>2021-04-02</td>	
+    <td>v1.18.4-tke.8</td>	
+    <td><ul class="params">
+		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/97752" rel="nofollow">pr97752</a>, which fixed the issue where NewReplicaSet is displayed as <code>&lt;none&gt;</code> when describing deployment (kubectl).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/93808" rel="nofollow">pr93808</a>, which fixed the issue where unnecessary information is returned when <code>kube-scheduler --version</code> is executed (kube-scheduler).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/91590" rel="nofollow">pr91590</a>, which fixed the issue of warning that the port has been allocated when using the multiprotocol service of NodePort type (kube-apiserver).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/98262" rel="nofollow">pr98262</a>, which allows you to use kube-controller-manager to dynamically adjust the log level (kube-controller-manager).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/95154" rel="nofollow">pr95154</a>, which fixed the issue where kube-scheduler snapshot contains the nodes being deleted (kube-scheduler).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/95711" rel="nofollow">pr95711</a>, which fixed the issue where kubectl drain command occupies too much CPU (kubectl).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/96602" rel="nofollow">pr96602</a>, which fixed the issue of apiserver memory leak before or after the time gaps (kube-apiserver).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/97023" rel="nofollow">pr97023</a>, which deletes the related metadata directory when unmounting an emptyDir type volume (kubelet).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/97527" rel="nofollow">pr97527</a>, which fixed the issue where map access operations are not synchronized in cpumanager (kubelet).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/100190" rel="nofollow">pr100190</a>, which automatically deletes the volume directory left by orphaned Pod (kubelet).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/92614" rel="nofollow">pr92614</a>, when all containers of the Pod whose restart policy is RestartPolicyOnFailure exit successfully, no new sandbox will be created (kubelet).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/94833" rel="nofollow">pr94833</a>, which fixed the issue where the image tag does not match in status when Pod image has multiple tags (kubelet).</li>
+	        </ul></td>
+</tr>
+<tr>
     <td>2020-12-28</td>	
-    <td>v1.18.4-tke.6</td>	
+    <td>v1.18.4-tke.6 (ARM clusters are supported starting from this version)</li></td>	
     <td><ul class="params">
 		<li>Added metrics to QcloudCbs (kube-controller-manager).</li>
-	        <li>Fixed the issue where extra space exists when viewing the value of serial when mounting CBS disk (Kubelet).</li>
+	        <li>Fixed the issue where extra space exists in the value of serial when mounting CBS disk (Kubelet).</li>
 	        </ul></td>
 </tr>
 <tr>
@@ -74,7 +92,7 @@
 
 
 
-## TKE Kubernetes 1.16.3 Revisions
+## TKE kubernetes 1.16.3 revisions
 <table><thead>
 <tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Updates</th></tr>
 </thead>
@@ -170,7 +188,7 @@
 </tr>
 </tbody></table>
 
-## TKE Kubernetes 1.14.3 Revisions
+## TKE kubernetes 1.14.3 revisions
 <table>
 <thead>
 <tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Revisions</th></tr>
@@ -196,7 +214,7 @@
 	        <li>kube-controller-manager supports virtual nodes (kube-controller-manager).</li>
 		<li>Set the instance-type label based on the actual model of the node, instead of being fixed as QCLOUD (kubelet).</li>
 	        <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/79338">pr79338</a>, when both SupportPodPidsLimit and SupportNodePidsLimit are not enabled, the pids cgroup subsystem will not be enabled (kubelet).</li>
-	        <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/89224">pr89224</a>, which fixed the issue where kube-scheduler restarted abnormally because NodeInfo did not check (kube-scheduler).</li>
+	        <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/89224">pr89224</a>, which fixed the issue where kube-scheduler restarted abnormally because NodeInfo is not checked (kube-scheduler).</li>
                 <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/89465">pr89465</a>, which fixed the issue where the HPA based on Pod metrics incorrectly calculated the number of instances during rolling updates (kube-controller-manager).</li></ul></td>
 </tr>	    
 <tr>
@@ -286,7 +304,7 @@
 </tr>
 </tbody></table>
 
-## TKE Kubernetes 1.12.4 Revisions
+## TKE kubernetes 1.12.4 revisions
 
 <table>
 <thead>
@@ -426,7 +444,7 @@
 </tr>
 </tbody></table>
 
-## TKE Kubernetes 1.10.5 Revisions
+## TKE kubernetes 1.10.5 revisions
 
 <table>
 <thead>
@@ -534,7 +552,7 @@
 </tr>
 </tbody></table>                                                
 
-## TKE Kubernetes 1.8.13 Revisions
+## TKE kubernetes 1.8.13 revisions
 
 <table>
 <thead>
@@ -573,7 +591,7 @@
 </tbody></table>
 
 
-## TKE Kubernetes 1.7.8 Revisions
+## TKE kubernetes 1.7.8 revisions
 
 <table>
 <thead>

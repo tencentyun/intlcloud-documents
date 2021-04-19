@@ -9,9 +9,9 @@ Existing clusters may use the Kubeconfig file to perform cluster initialization 
 
 
 
+[](id:QA)
 
 
-<span id="QA"></span>
 ## Issues and Solutions
 
 #### Issues
@@ -28,10 +28,12 @@ error: You must be logged in to the server (Unauthorized)
 
 #### Solutions
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. Obtain the credential Kubeconfig file of the current account. For more information, see [Using Preset Identity Authorization](https://intl.cloud.tencent.com/document/product/457/37368).
-3. After obtaining the Kubeconfig file, you can enable private network access or directly use the service IP address of Kubernetes. On the cluster details page, choose **Services and Routes** > **Service** in the left sidebar to obtain the service IP address of Kubernetes in the default namespace. Replace the value of the clusters.cluster.server field in the Kubeconfig file with https://\<`IP`\>:443.
+2. Obtain the credential Kubeconfig file of the current account. For more information, see [Obtaining credentials](https://intl.cloud.tencent.com/document/product/457/37368).
+3. After obtaining the Kubeconfig file, you can enable private network access or directly use the service IP address of Kubernetes.
+ - Enabling private network access: on the cluster details page, choose **Basic Information** in the left sidebar, enable **Private Network Access** in the **Cluster API Server information** section, and operate according to the prompt.
+ -. Using the service IP address of Kubernetes: on the cluster details page, choose **Services and Routes** > **Service** in the left sidebar to obtain the service IP address of Kubernetes in the default namespace. Replace the clusters.cluster.server field in the Kubeconfig file with https://\<`IP`\>:443.
 4. Copy the content of the Kubeconfig file to `$HOME/.kube/config` on the new node.
-5. Access a Kubeconfig cluster and run the `kubectl get nodes` command to test connectivity.
+5. Access a Kubeconfig cluster and use `kubectl get nodes` to test connectivity.
 
 ## Handling Special Scenarios
 #### Special scenarios
