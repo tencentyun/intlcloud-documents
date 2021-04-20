@@ -1,8 +1,8 @@
 ## 효과
 
-빠른 음성 통화 기능이 필요한 경우, Tencent Cloud가 제공하는 Demo를 기반으로 설정을 적합하게 수정하거나 TRTCCalling 모듈을 사용해 사용자 정의 UI 인터페이스를 구현할 수 있습니다.
+빠른 영상 통화 기능이 필요한 경우, Tencent Cloud가 제공하는 Demo를 기반으로 설정을 적합하게 수정하거나 TRTCCalling 모듈을 사용해 사용자 정의 UI 인터페이스를 구현할 수 있습니다.
 
->! 이전에는 TRTCAudioCall 모듈이 제공되었으나, 구버전 모듈은 [모듈 라이브러리](https://github.com/tencentyun/LiteAVClassic)로 옮겨졌습니다. TRTCCalling 모듈은 IM 신호 인터페이스를 사용하여 구버전 모듈과 호환되지 않습니다.
+>! 이전에는 TRTCVideoCall 모듈이 제공되었으나, 구버전 모듈은 [모듈 라이브러리](https://github.com/tencentyun/LiteAVClassic)로 옮겨졌습니다. TRTCCalling 모듈은 IM 신호 인터페이스를 사용하여 구버전 모듈과 호환되지 않습니다.
 
 [](id:ui)
 
@@ -12,10 +12,10 @@
 
 ### 1단계: 신규 애플리케이션 생성
 1. TRTC 콘솔에 로그인한 후 [개발 지원]>[Demo 빠른 실행](https://console.cloud.tencent.com/trtc/quickstart)을 선택합니다.
-2. 애플리케이션 이름(예: TestAudioCall)을 입력한 후 [생성]을 클릭합니다.
+2. 애플리케이션 이름(예: `TestVideoCall`)을 입력한 후 [생성]을 클릭합니다.
 
->! 
-해당 기능은 기본 PaaS 서비스인 Tencent Cloud [TRTC](https://intl.cloud.tencent.com/document/product/647/35078)와 [인스턴트 메시지 IM](https://intl.cloud.tencent.com/document/product/1047)을 동시에 사용하였으며, TRTC를 활성화하면 IM 서비스도 동시에 활성화됩니다. 인스턴트 메시지 IM은 부가 서비스이며, 자세한 과금 규정은 [인스턴트 메시지 IM 요금 가이드](https://intl.cloud.tencent.com/document/product/1047/34350)를 참조하십시오.
+>! 해당 기능은 기본 PaaS 서비스인 Tencent Cloud [TRTC](https://intl.cloud.tencent.com/document/product/647/35078)와 [인스턴트 메시지 IM](https://intl.cloud.tencent.com/document/product/1047)을 동시에 사용하였으며, TRTC를 활성화하면 IM 서비스도 동시에 활성화됩니다. 인스턴트 메시지 IM은 부가 서비스이며, 자세한 과금 규정은 [인스턴트 메시지 IM 요금 가이드](https://intl.cloud.tencent.com/document/product/1047/34350)를 참조하십시오.
+
 
 [](id:ui.step2)
 ### 2단계: SDK와 Demo 소스 코드 다운로드
@@ -52,16 +52,16 @@ Android Studio(3.5 버전 이상)를 사용하여 소스 코드 프로그램인 
 
 | 파일 및 폴더                     | 기능 설명                                                     |
 | -------------------------------- | ------------------------------------------------------------ |
-| TRTCAudioCallActivity.java       | 음성 통화의 메인 인터페이스입니다. 통화를 수신하거나 거부합니다. |
+| TRTCVideoCallActivity.java       | 영상 통화의 메인 인터페이스입니다. 통화를 수신하거나 거부합니다. |
 | TRTCCallingEntranceActivity.java | 대화 상대 선택 시 사용되는 인터페이스입니다. 등록된 사용자를 검색하고 통화를 요청할 수 있습니다. |
-| audiolayout                      | 통화 중 사용자 화면의 렌더링과 레이아웃 로직에 사용합니다.                     |
+| videolayout                      | 비디오 화면의 렌더링과 레이아웃 로직을 완료하는 데 사용합니다.                       |
 
 [](id:model)
 
 ## 사용자 정의 UI 인터페이스 구현
 
 [소스 코드](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo/trtccallingdemo/src/main/java/com/tencent/liteav/trtccalling) 폴더 `trtccallingdemo`에는 두 개의 하위 폴더 ui와 model이 있으며, model 폴더에는 Tencent Cloud가 구현한 재사용 가능 오픈 소스 모듈 TRTCCalling이 포함되어 있습니다. `TRTCCalling.java` 파일에서 이 모듈이 제공하는 인터페이스 함수를 확인할 수 있습니다.
-![](https://main.qcloudimg.com/raw/78cc06cd53538243bc52abc381350c55.jpg)
+![](https://main.qcloudimg.com/raw/9b4087b68541912ce9e7a48955cd48e8.png)
 
 오픈 소스 모듈 TRTCCalling을 사용해 맞춤형 UI 인터페이스를 구현할 수 있습니다. 즉, model 부분만 재사용하여 UI 부분을 자체적으로 구현할 수 있습니다.
 
@@ -73,13 +73,13 @@ Android Studio(3.5 버전 이상)를 사용하여 소스 코드 프로그램인 
 
 **방법1: Maven 라이브러리를 통한 종속**
 
-1. dependencies에 TRTC SDK 및 IM SDK 종속을 추가합니다.
+1. dependencies에 TRTCSDK 및 IMSDK 종속을 추가합니다.
 ```
 dependencies {
-	complie "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
+  complie "com.tencent.liteav:LiteAVSDK_TRTC:latest.release"
     complie 'com.tencent.imsdk:imsdk:latest.release'
 
-	// gson 리졸브를 사용하였으므로 google의 Gson 종속이 필요합니다.
+  // gson 리졸브를 사용하였으므로 google의 Gson 종속이 필요합니다.
     complie 'com.google.code.gson:gson:latest.release'
 }
 ```
@@ -149,65 +149,79 @@ trtccallingdemo/src/main/java/com/tencent/liteav/trtccalling/model
 1. `TRTCCallingImpl.sharedInstance(context)`를 호출하여 모듈 인스턴스를 획득합니다.
 2. `login(SDKAppID, userId, userSig, callback)`을 호출해 모듈에 로그인합니다. 주요 매개변수는 다음 테이블을 참조하십시오.
  <table>
-<tr>
-<th>매개변수 이름</th>
-<th>역할</th>
-</tr>
+<tr><th>매개변수 이름</th><th>역할</th></tr>
 <tr>
 <td>SDKAppID</td>
 <td><a href="https://console.cloud.tencent.com/trtc/app">TRTC 콘솔</a>에서 SDKAppID를 조회할 수 있습니다.</td>
-</tr>
-<tr>
+</tr><tr>
 <td>userId</td>
 <td>현재 사용자의 ID, 문자열 유형은 영어 알파벳(a~z, A~Z), 숫자(0~9), 대시 부호(-), 언더바(_)만 허용됩니다.</td>
-</tr>
-<tr>
+</tr><tr>
 <td>userSig</td>
 <td>Tencent Cloud가 설계한 일종의 보안 서명으로, 계산 방법은 <a href="https://intl.cloud.tencent.com/document/product/647/35166">UserSig 계산 방법</a>을 참조하십시오.</td>
-</tr>
-</table>
-<pre>
-// 초기화
+</tr></table>
+<dx-codeblock>
+
+```
 sCall = TRTCCallingImpl.sharedInstance(context);
 sCall.login(1400000123, "userA", "xxxx", new ActionCallback());
-</pre>
-
+```
 
 [](id:model.step5)
 
-### 5단계: 1대1 음성 통화
+### 5단계: 1대1 영상 통화
 
-1. 발신자: `TRTCCalling`의 `call()`을 호출하여 통화를 요청하고, 사용자 ID(userid)와 통화 유형(Type)을 전달합니다. 통화 유형 매개변수는 `TYPE_AUDIO_CALL`입니다.
-2. 수신자: 수신자가 로그인 상태인 경우 `onInvited()`라는 이벤트 공지를 받게 됩니다. 수신자가 로그인 상태가 아니어도 통화 요청을 받게 하려면 [오프라인 수신](#model.offline)을 참조하십시오.
-3. 수신자: 통화 수신을 원하는 경우 수신자는 `accept()` 함수를 호출할 수 있고, `reject()`를 호출하여 통화를 거부할 수도 있습니다.
-4. 멀티미디어 터널이 구축되면 양측은 `onUserEnter()`라는 이벤트 공지를 받게 되며, 이는 양측이 통화에 입장했음을 의미합니다.
+1. 발신자: `TRTCCalling`의 `call()`을 호출하여 통화를 요청하고, 사용자 ID(userid)와 통화 유형(Type)을 전달합니다. 통화 유형 매개변수는 `TYPE_VIDEO_CALL`입니다.
+2. 수신자: 수신자가 로그인 상태인 경우 `onInvited()`라는 이벤트 공지를 받게 됩니다. 콜백의 `callType` 매개변수는 발신자가 작성한 통화 유형으로, 이 매개변수를 통해 해당하는 인터페이스를 실행할 수 있습니다. 수신자가 로그인 상태가 아니어도 통화 요청을 받게 하려면 [오프라인 수신](#model.offline)을 참조하십시오.
+3. 수신자: 통화 수신을 원하는 경우 수신자는 `accept()` 함수를 호출할 수 있으며, 동시에 `openCamera()` 함수를 호출하여 자신의 로컬 카메라를 활성화할 수 있습니다. 또한 `reject()`를 호출하여 통화를 거부할 수도 있습니다.
+4. 멀티미디어 터널이 구축되면 양측은 `onUserVideoAvailable()`이라는 이벤트 공지를 받게 되며, 상대의 비디오 화면을 받았다는 의미입니다. 이때 양측의 사용자 모두 `startRemoteView()`를 호출하여 원격 비디오 화면을 볼 수 있습니다. 원격 음성의 기본값은 자동 재생입니다.
+
 
 ```
 //1. 모듈 초기화
-TRTCCalling sCall =  TRTCCallingImpl.sharedInstance(context);
+TRTCCalling sCall = TRTCCallingImpl.sharedInstance(context);
 //2. 리스너 등록
 sCall.addDelegate(new TRTCCallingDelegate() {
     //...일부 수신 코드 생략
     public void onInvited(String sponsor, final List<String> userIdList, boolean isFromGroup, int callType) {
         // sponsor로부터 통화 요청을 받고 이 코드로 수신을 선택하더라도 reject()로 거부할 수 있습니다.
         sCall.accept();
-    } 
+        // 통화 요청을 수락한 후 즉시 카메라를 활성화합니다.
+        TXCloudVideoView localView = new TXCloudVideoView(mContext);
+        mParentView.add(localView);
+        sCall.openCamera(true, localView);
+    }
+    
+    public void onUserVideoAvailable(final String userId, boolean isVideoAvailable) {
+        if (isVideoAvailable) {
+            //상대의 비디오 화면을 받았다는 의미입니다. 이제 상대의 비디오를 볼 수 있습니다.
+            TXCloudVideoView remoteView = new TXCloudVideoView(mContext);
+            mParentView.add(remoteView);
+            sCall.startRemoteView(userId, remoteView);
+        } else {
+            sCall.stopRemoteView(userId);
+        }
+    }
 });
+
 //3. 모듈에 로그인합니다. 로그인이 완료되어야 모듈의 기타 기능 함수를 호출할 수 있습니다.
 sCall.login(sdkappid, "aaa", usersig, new ActionCallback() {
     public void onSuccess() {
-        //4. 이 부분은 인스턴스 코드입니다. 모듈에 로그인한 후 사용자 'aaa'를 호출하고 유형은 TYPE_AUDIO_CALL로 전달합니다.
-        sCall.call("aaa", TRTCCalling.TYPE_AUDIO_CALL);
+        //4. 이 부분은 인스턴스 코드입니다. 모듈에 로그인한 후 즉시 카메라를 활성화하고 사용자 'aaa'를 호출합니다.
+        TXCloudVideoView localView = new TXCloudVideoView(mContext);
+        mParentView.add(localView);
+        sCall.openCamera(true, localView);
+        sCall.call("aaa", TRTCCalling.TYPE_VIDEO_CALL);
     }
 });
 ```
 
 <span id="model.step6"></span>
 
-### 6단계: 그룹 음성 통화
+### 6단계: 그룹 영상 통화
 
-1. 발신자: 그룹 영상 통화는 `TRTCCalling`의 `groupCall()` 함수를 호출하고 사용자 리스트(userIdList), 통화 유형(type), IM 그룹 ID(groupId)를 전달해야 합니다. userIdList와 통화 유형은 필수 입력 매개변수이며, 통화 유형을 `TYPE_AUDIO_CALL`로 전달해야 합니다. groupId는 옵션 매개변수입니다.
-2. 수신자: `onInvited()` 이벤트 공지를 통해 이 요청을 받을 수 있습니다.
+1. 발신자: 그룹 영상 통화는 `TRTCCalling`의 `groupCall()` 함수를 호출하고 사용자 리스트(userIdList), 통화 유형(type), IM 그룹 ID(groupId)를 전달해야 합니다. userIdList와 통화 유형은 필수 입력 매개변수이며, 통화 유형을 `TYPE_VIDEO_CALL`로 전달해야 합니다. groupId는 옵션 매개변수입니다.
+2. 수신자: `onInvited()`라는 이름의 이벤트 공지를 통해 호출 요청을 받을 수 있습니다.
 3. 수신자: 이벤트 공지를 받은 후 `accept()`로 통화를 수신하거나 `reject()`로 거부할 수 있습니다.
 4. 일정 시간(기본 30s)이 지나도 응답이 없으면 수신자는 `onCallingTimeOut()` 이벤트 공지를, 발신자는 `onNoResp(String userId)` 이벤트 공지를 받게 됩니다. 다중 수신자가 모두 응답이 없을 경우 발신자는 `hangup()` 이벤트 공지를, 모든 수신자는 `onCallingCancel()` 이벤트 공지를 받게 됩니다.
 5. 그룹 통화를 중단해야 할 경우 `hangup()`을 호출할 수 있습니다.
@@ -223,7 +237,11 @@ callList.add("bbb");
 callList.add("ccc");
 callList.add("ddd");
 // 한 IM 그룹에서 발송한 것이 아닌 경우, groupId는 비워둘 수 있습니다.
-sCall.groupCall(callList, TRTCCalling.TYPE_AUDIO_CALL, "");
+sCall.groupCall(callList, TRTCCalling.TYPE_VIDEO_CALL, "");
+// 카메라 활성화
+TXCloudVideoView localView = new TXCloudVideoView(mContext);
+mParentView.add(localView);
+sCall.openCamera(true, txCloudVideoView);
 ```
 
 <span id="model.offline"></span>
@@ -262,3 +280,4 @@ TRTCCalling 모듈의 API 인터페이스 리스트는 다음과 같습니다.
 | switchCamera    | 전면/후면 카메라 전환                                           |
 | setMicMute      | mic 음소거 여부                                             |
 | setHandsFree    | 핸즈프리 활성화 여부                                             |
+

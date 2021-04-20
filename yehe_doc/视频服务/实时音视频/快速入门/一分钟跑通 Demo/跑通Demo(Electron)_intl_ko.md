@@ -10,8 +10,8 @@
 
 ### 1단계: 신규 애플리케이션 생성
 
-1. TRTC 콘솔에 로그인한 후, [개발 지원]>[Demo 빠른 실행](https://console.cloud.tencent.com/trtc/quickstart)을 선택합니다.
-2. 애플리케이션 명칭(예: TestTRTC)을 입력한 후 [생성]을 클릭합니다.
+1. TRTC 콘솔에 로그인한 후 [개발 지원]>[Demo 빠른 실행](https://console.cloud.tencent.com/trtc/quickstart)을 선택합니다.
+2. 애플리케이션 이름(예: TestTRTC)을 입력한 후 [생성]을 클릭합니다.
 
 [](id:step2)
 
@@ -21,20 +21,20 @@
 
 [](id:step3)
 ### 3단계: Demo 프로그램 파일 설정
-1. 설정 변경 페이지로 들어가서 다운로드한 소스 패키지에 적합한 개발 환경을 선택합니다.
-2. `TRTCSDK/Electron/TRTCSimpleDemo/` 디렉터리를 찾습니다. 해당 디렉터리가 **프로젝트 디렉터리**이고, 다음에서 언급하는 '프로젝트 디렉터리'는 `TRTCSDK/Electron/TRTCSimpleDemo/` 디렉터리를 의미합니다.
+1. 설정 변경 페이지로 이동하여 다운로드한 소스 패키지에 따라 해당하는 개발 환경을 선택합니다.
+2. `TRTCSDK/Electron/TRTCSimpleDemo/` 디렉터리를 찾습니다. 해당 디렉터리는 **프로젝트 디렉터리**로, 본 문서에서 지칭하는 <span id="projectFolder"></span>'프로젝트 디렉터리'란 `TRTCSDK/Electron/TRTCSimpleDemo/` 디렉터리를 의미합니다.
 2. 프로젝트 디렉터리에서 `debug/gen-test-user-sig.js` 파일을 찾아 엽니다.
 3. `gen-test-user-sig.js` 파일의 관련 매개변수를 설정합니다.
 <ul>
- <li/>SDKAPPID: 0으로 기본 설정되어 있으며, 실제 SDKAppID로 설정하십시오.
- <li/>SECRETKEY: 공백으로 기본 설정되어 있으며, 실제 키 정보로 설정하십시오.</ul>
-4. 붙여넣기 완료 후 [복사 및 붙여넣기 완료, 다음 단계]를 클릭하면 생성됩니다.
+ <li/>SDKAPPID: 0으로 기본 설정되어 있습니다. 실제 SDKAppID로 설정하십시오.
+ <li/>SECRETKEY: 공백으로 기본 설정되어 있습니다. 실제 키 정보로 설정하십시오.</ul>
+4. 붙여넣기 완료 후 [붙여넣기 완료, 다음 단계]를 클릭하면 생성이 완료됩니다.
 5. 컴파일 완료 후 [콘솔 개요로 돌아가기]를 클릭합니다.
 
 **파일 디렉터리 설명:**
 ```bash
 .
-|---README.md                             README 파일. 자세히 읽어 주십시오.
+|---README.md                             README 파일, 자세히 읽어 주십시오.
 |---main.electron.js                      Electron 메인 파일
 |---public                                정적 파일 저장
 |---babel.config.js
@@ -64,7 +64,7 @@
 | | | |---live-index.vue                  라이브 방송 게이트 페이지
 | | | |---live-room-audience.vue          시청자 페이지
 | | | |---live-room-anchor.vue            호스트 룸 페이지
-| |---debug                               주의! 배포 시, 해당 폴더 내 서명 로직을 서버로 이동해 주십시오.
+| |---debug                               주의 사항: 배포 시 해당 폴더 내 서명 로직을 서버로 이동해 주십시오.
 | | |---lib-generate-test-usersig.min.js  
 | | |---gen-test-user-sig.js              
 ```
@@ -73,20 +73,22 @@
 
 ### 4단계: 컴파일 실행
 #### Windows 플랫폼
-1. Node 최신 버전을 설치합니다. 64비트 `.msi` 파일을 권장합니다. [Node 다운로드 주소](https://nodejs.org/en/download/)
-2. `win + r`을 누르고 cmd를 입력해 관리자 권한으로 명령 프롬프트를 실행하고, 디렉터리를 [프로젝트 디렉터리](#projectFolder)로 지정한 후 다음 명령어를 실행합니다.
-```
+1. Node 최신 버전을 설치합니다. 64bit `.msi` 파일을 권장합니다. [Node 다운로드 주소](https://nodejs.org/en/download/)
+2. `win + r`을 눌러 cmd를 입력하고 관리자 권한으로 명령 프롬프트를 실행한 다음, 디렉터리를 [프로젝트 디렉터리](#projectFolder)로 지정한 후 다음 명령어를 실행합니다.
+```shell
 $ npm install
 ```
-![](https://main.qcloudimg.com/raw/5aba25ba2d5eddb5d956406ca5b6b9ac.png)
-3. npm 종속 패키지의 설치가 모두 완료된 후, 명령 프롬프트에서 다음 명령어로 Demo를 실행합니다.
+![설치](https://main.qcloudimg.com/raw/5aba25ba2d5eddb5d956406ca5b6b9ac.png)
+3. npm 종속 패키지 설치가 모두 완료된 후 명령 프롬프트에서 다음 명령어로 Demo를 실행합니다.
 ```shell
 $ npm run start  # 처음 실행 시 잠시 기다리면 창에 UI가 나타납니다.
 ```
-![](https://main.qcloudimg.com/raw/47f6e01acb2d927f6d9e24a7c9f78af1.png)
+![demo 실행](https://main.qcloudimg.com/raw/47f6e01acb2d927f6d9e24a7c9f78af1.png)
+
+
 
 #### MacOS 플랫폼
-1. 터미널(Terminal) 또는 cmd 창을 열고 다음 명령어를 실행하여 Homebrew를 설치합니다. Homebrew를 이미 설치한 경우 본 단계를 생략합니다.
+1. 터미널(Terminal) 또는 cmd 창을 열고 다음 명령어를 실행해 Homebrew를 설치합니다. Homebrew를 이미 설치한 경우 본 단계를 생략합니다.
 ```shell
 $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
@@ -94,7 +96,7 @@ $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/maste
 ```shell
 $ brew install node
 ```
-3. Homebrew의 기본 주소를 사용한 Node.js 설치가 느리다면 중국 내 미러 주소로의 변경을 고려해볼 수 있습니다.
+3. Homebrew의 기본 주소를 사용한 Node.js 설치 속도가 느린 경우, 중국 내 이미지 주소로의 전환을 고려해볼 수 있습니다.
  ```shell
 $ cd `brew --repo`
 $ git remote set-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git
@@ -104,13 +106,12 @@ $ brew update
 ```shell
 $ npm install 
 ```
-![](https://main.qcloudimg.com/raw/8bcc95adad07ff37e7f0a27893b8b7cf.png)
-5. npm 종속 패키지의 설치가 모두 완료된 후, 명령 프롬프트에서 다음 명령어로 Demo를 실행합니다.
+
+5. npm 종속 패키지 설치가 모두 완료된 후 명령 프롬프트에서 다음 명령어로 Demo를 실행합니다.
 ```shell
 $ npm run start # 처음 실행 시 잠시 기다리면 창에 UI가 나타납니다.
 ```
-![](https://main.qcloudimg.com/raw/423dae368118e5250e7fa878022bb26f.png)
-    
+
 ### 프로젝트 주요 명령어
 
 | 명령어 | 설명 |
@@ -121,7 +122,7 @@ $ npm run start # 처음 실행 시 잠시 기다리면 창에 UI가 나타납�
 
 ## FAQ
 
-### 1. 키 조회 시 공개키와 개인키의 정보만 획득할 수 있습니다. 키는 어떻게 획득하나요?
+### 1. 키 조회 시 공개키와 개인키 정보만 획득할 수 있습니다. 키는 어떻게 획득하나요?
 
 TRTC SDK 6.6 버전(2019년 08월)부터 새로운 서명 알고리즘 HMAC-SHA256이 적용되었습니다. 이전에 생성된 애플리케이션은 서명 알고리즘을 업데이트해야 새로운 암호화 키를 획득할 수 있습니다. 업데이트를 진행하지 않을 경우 [기존 버전 알고리즘 ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/647/35166)을 계속 사용할 수 있습니다.
 
@@ -132,14 +133,8 @@ TRTC SDK 6.6 버전(2019년 08월)부터 새로운 서명 알고리즘 HMAC-SHA2
 
 ### 2. 2대의 디바이스에서 동시에 Demo를 실행할 경우 서로의 화면이 보이지 않는 이유는 무엇인가요?
 
-2대의 디바이스에서 Demo를 실행할 경우 각자 다른 UserID를 사용해야 합니다. TRTC에서는 동일 UserID(SDKAppID가 다를 경우 제외)를 2대의 디바이스에서 동시에 사용할 수 없습니다.
+2대의 디바이스가 Demo를 실행할 경우 각자 다른 UserID를 사용해야 합니다. TRTC에서는 동일 UserID(SDKAppID가 다를 경우 제외)를 2개의 디바이스에서 동시에 사용할 수 없습니다.
 
 ### 3. 방화벽에 어떤 제한이 있나요?
 
-SDK는 UDP 프로토콜을 통해 멀티미디어를 전송하므로, UDP를 차단하는 공용 네트워크에서는 사용할 수 없습니다. 이와 유사한 문제가 발생하는 경우 [기업용 방화벽 제한 대응](https://intl.cloud.tencent.com/document/product/647/35164)을 참조하십시오.
-
-
-
-```
-
-```
+SDK는 UDP 프로토콜을 통해 멀티미디어를 전송하므로, UDP를 차단하는 기업용 네트워크에서는 사용할 수 없습니다. 이와 유사한 문제가 발생하는 경우 [기업용 방화벽 제한 대응](https://intl.cloud.tencent.com/document/product/647/35164)을 참조하십시오.
