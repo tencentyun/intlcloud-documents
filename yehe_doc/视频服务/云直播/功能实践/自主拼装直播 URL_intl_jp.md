@@ -2,7 +2,7 @@
 [トランスコードテンプレートの作成](https://intl.cloud.tencent.com/document/product/267/31071)を行い、**再生ドメイン名**[バインド](https://intl.cloud.tencent.com/document/product/267/31071#related)を行ってから、トランスコーディング設定後のLVBストリームは、再生アドレスのStreamNameを`StreamName_トランスコードテンプレート名`に結合する必要があります。詳細は[再生設定](https://intl.cloud.tencent.com/document/product/267/31058)をご参照ください。
 
 ## 前提条件
-- Tencent Cloudアカウントを登録済みで、[Tencent LVBサービス](https://intl.cloud.tencent.com/product/CSS)を有効にしていること。
+- Tencent Cloudアカウントを登録済みで、[Tencent LVBサービス](https://intl.cloud.tencent.com/product/LVB)を有効にしていること。
 - 独自のドメイン名があること。
 - 【LVBコンソール】>【[Domain Management](https://console.cloud.tencent.com/live/domainmanage)】で、プッシュ/再生ドメイン名の追加、およびCNAMEに成功していること。操作の詳細は[独自のドメイン名の追加](https://intl.cloud.tencent.com/document/product/267/35970)をご参照ください。
 
