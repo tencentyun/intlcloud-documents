@@ -282,8 +282,8 @@ Height_pixel = 192 * 240 / 320 = 144
 <td><a href="https://intl.cloud.tencent.com/document/product/267/30789">트랜스 코딩 규칙 삭제</a></td>
 </tr><tr>
 <td rowspan=4>라이브 방송 워터마크</td>
-<td><a href="https://cloud.tencent.com/document/api/267/30154">워터마크 추가</a></td></tr><tr>
-<td><a href="https://cloud.tencent.com/document/api/267/30150">워터마크 업데이트</a></td></tr><tr>
-<td><a href="https://cloud.tencent.com/document/api/267/30153">워터마크 삭제</a></td></tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30826">워터마크 추가</a></td></tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30818">워터마크 업데이트</a></td></tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30824">워터마크 삭제</a></td></tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/30820">워터마크 리스트 조회</a></td>
 </tr></table>
