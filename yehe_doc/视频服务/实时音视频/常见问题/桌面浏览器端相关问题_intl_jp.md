@@ -108,7 +108,6 @@ WebRTCには、3Aアルゴリズムが標準搭載されています。audioのM
 
 
 
-
 <span id="que17"></span>
 ###  Windows版で、共有されたアプリケーションの再生音声を採集する方法は？
 [startSystemAudioLoopback](https://intl.cloud.tencent.com/document/product/647/35131) インターフェースを呼び出すことで、システムを立ち上げて音声を採集できます。
