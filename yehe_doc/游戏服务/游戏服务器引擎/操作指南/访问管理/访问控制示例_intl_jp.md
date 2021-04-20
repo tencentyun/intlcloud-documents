@@ -10,7 +10,7 @@ Cloud Access Management（CAM）ポリシーを使用してGSEコンソールに
 ユーザーにGSEゲームを作成し管理する権限を持たせたい場合、そのユーザーに対してQcloudGSEFullAccess というポリシーを使用することができます。
 具体的な操作手順は次のとおりです：
 1.  [ポリシー管理インターフェース](https://console.cloud.tencent.com/cam/policy)に移動し、【サービスのタイプ】をクリックします。
-2. ドロップダウンリストオプションで【Game Server Engine】を選択します。また右上コーナーの検索機能を使用し、このポリシーを検索することもできます。
+2. ドロップダウンリストオプションで【Game Server Elastic-scaling】を選択します。また右上コーナーの検索機能を使用し、このポリシーを検索することもできます。
 
 ![](https://main.qcloudimg.com/raw/fe654b37e2fd44deac52743c77ecc477.png)
 
@@ -38,7 +38,7 @@ Cloud Access Management（CAM）ポリシーを使用してGSEコンソールに
 ユーザーにすべてのGSEリソースをクエリーする権限のみを付与し、作成、削除および変更しないようにする場合は、ユーザーにQcloudGSEReadOnlyAccess というポリシーを使用できます。
 具体的な操作手順は次のとおりです：
 1.  [ポリシー管理インターフェース](https://console.cloud.tencent.com/cam/policy)に移動し、【サービスのタイプ】をクリックします。
-2. ドロップダウンリストオプションで【Game Server Engine】を選択します。また右上コーナーの検索機能を使用し、このポリシーを検索することもできます。
+2. ドロップダウンリストオプションで【Game Server Elastic-scaling】を選択します。また右上コーナーの検索機能を使用し、このポリシーを検索することもできます。
 
 ![](https://main.qcloudimg.com/raw/2368902dfcb590dd60e51b1720c0c07f.png)
 
