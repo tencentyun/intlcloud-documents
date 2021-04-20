@@ -96,4 +96,4 @@ public class StopGameServerSessionPlacement
         }
 }
 ```
->?You can use [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=gse&Version=2019-11-12&Action=DescribeGameServerSessionPlacement&SignVersion=) for online debugging. You can select TencentCloud APIs under "Game Server Engine" > "Service Management APIs" on the left sidebar, and perform operations such as "Code Generation" and "Online Call".
+>?You can use [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=gse&Version=2019-11-12&Action=DescribeGameServerSessionPlacement&SignVersion=) for online debugging. You can select TencentCloud APIs under "Game Server Elastic-scaling" > "Service Management APIs" on the left sidebar, and perform operations such as "Code Generation" and "Online Call".
