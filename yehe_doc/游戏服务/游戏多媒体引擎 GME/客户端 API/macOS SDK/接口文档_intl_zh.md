@@ -91,7 +91,7 @@ _context.TMGDelegate =self;
 
 ### 初始化 SDK
 - 此接口用于初始化 GME 服务，建议应用侧在应用初始化时候调用。
-- **参数 SDKAppId 获取，详情请参见 [接入指引](https://intl.cloud.tencent.com/document/product/607/10782)**。
+- <b>参数 SDKAppId 获取，详情请参见 [接入指引](https://intl.cloud.tencent.com/document/product/607/39698)</b>。
 - **OpenId 用于唯一标识一个用户，数值需大于 10000（目前只支持 INT64），规则由 App 开发者自行制定，App 内不重复即可**。
 
 > !初始化 SDK 之后才可以进入实时语音房间。
