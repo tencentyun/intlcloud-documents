@@ -8,7 +8,7 @@ This document describes in detail how to use NodeLocal DNS Cache in a TKE cluste
 A hostNetwork Pod is deployed on every node of a cluster by using DaemonSet. This Pod is node-cache, and can cache DNS requests for Pods on this node. If cache misses occur, this Pod will obtain them through a TCP request to the upstream kube-dns service. The principle is shown in the following figure:
 <p style="text-align:center;"><img src="https://main.qcloudimg.com/raw/fafa6d3cccb18bcb4752eda667fa9d3b.png" style="box-shadow:0 0 0"></p>
 
->? NodeLocal DNS Cache does not have high availability (HA), so there will be a single point of failure risk for the nodelocal dns cache (Pod Evicted/OOMKilled/ConfigMpa error/DaemonSet Upgrade). However, this issue is actually a common failure that can occur in any single point proxy (such as kube-proxy and cni pod).
+>? NodeLocal DNS Cache does not have high availability (HA), so there will be a single point of failure risk for the nodelocal dns cache (Pod Evicted/OOMKilled/ConfigMap error/DaemonSet Upgrade). However, this issue is actually a common failure that can occur in any single point proxy (such as kube-proxy and cni pod).
 
 ## Prerequisites
 You have created a cluster of Kubernetes 1.14 or later in the [TKE console](https://console.cloud.tencent.com/tke2/cluster), and nodes exist in this cluster.
