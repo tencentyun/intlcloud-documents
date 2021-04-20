@@ -9,7 +9,7 @@ SSL（Secure Sockets Layer，安全套接字协议）是为网络通信提供安
 <span id="dxrz"></span>
 ## SSL 单向认证
 SSL 单向认证只需要验证服务端的身份，无需验证客户端的身份。SSL 单向认证的流程如下图所示。
-<img src="https://main.qcloudimg.com/raw/4536548bf20a1e20c9c40fefa6929fcf.png" width="70%">
+<img src="https://main.qcloudimg.com/raw/000d0a44b1bad4b015cfc81ad6e17441.png" width="70%">
 1. 客户端发起 HTTPS 建立连接请求，将客户端支持的 SSL 协议版本号、加密算法种类、生成的随机数等信息发送给服务端。
 2. 服务端向客户端返回 SSL 协议版本号、加密算法种类、生成的随机数等信息，以及服务端的证书（server.crt）。
 3. 客户端验证证书（server.crt）是否合法，并从此证书中获取服务端的公钥：
@@ -24,7 +24,7 @@ SSL 单向认证只需要验证服务端的身份，无需验证客户端的身�
 <span id="sxrz"></span>
 ## SSL 双向认证
 SSL 双向认证需要验证客户端和服务端的身份。SSL 双向认证的流程如下图所示。
-<img src="https://main.qcloudimg.com/raw/40b8f9643d4493fdd1b66a1c3d4d646e.png" width="70%">
+<img src="https://main.qcloudimg.com/raw/93c4567863719926db8737aa345e008c.png" width="70%">
 1. 客户端发起 HTTPS 建立连接请求，将客户端支持的 SSL 协议版本号、加密算法种类、生成的随机数等信息发送给服务端。
 2. 服务端向客户端返回 SSL 协议版本号、加密算法种类、生成的随机数等信息，以及服务端的证书（server.crt）。
 3. 客户端验证证书（server.crt）是否合法，并从此证书中获取服务端的公钥：
