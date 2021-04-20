@@ -23,7 +23,7 @@ An asset package is a zip package deployed on a CVM instance. Its directory must
 
 ### Instance
 
-- In GSE, an instance is a CVM instance to host a game server on. For instance types, see [Game Server Engine](https://console.cloud.tencent.com/gse/asset) console.
+- In GSE, an instance is a CVM instance to host a game server on. For instance types, see [Game Server Elastic-scaling](https://console.cloud.tencent.com/gse/asset) console.
 - In TI-ONE, an instance is created each time a workflow runs. Instance types include historical instances, parameter instances, re-run instances, and timed instances.
 - In Tencent Kubernetes Engine (TKE), an instance consists of one or more associated containers that share the same storage and network space.
 - In BatchCompute, an instance is a CVM instance, the smallest unit that this service can schedule. You can specify one or more instances for each job.
