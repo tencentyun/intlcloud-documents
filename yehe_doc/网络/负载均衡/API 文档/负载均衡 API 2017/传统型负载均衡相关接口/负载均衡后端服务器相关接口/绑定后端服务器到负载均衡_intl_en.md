@@ -22,7 +22,7 @@ The list below contains only the API request parameters. Common parameters shoul
 <td> backends.n.instanceId
 <td> Yes
 <td> String
-<td> Unique ID of the CVM, which can be obtained from the “unInstanceId” field in the response of the<a href="https://intl.cloud.tencent.com/document/api/213/831" title="DescribeInstances"> DescribeInstances </a>API.<br>This API supports entering multiple CVM instance IDs at a time. For example, if you want to specify two CVMs, enter backends.0.instanceId&backends.1.instanceId.
+<td> Unique ID of the CVM, which can be obtained from the “unInstanceId” field in the response of the<a href="https://intl.cloud.tencent.com/document/product/213/33258" title="DescribeInstances"> DescribeInstances </a>API.<br>This API supports entering multiple CVM instance IDs at a time. For example, if you want to specify two CVMs, enter backends.0.instanceId&backends.1.instanceId.
 <tr>
 <td> backends.n.weight
 <td> No
@@ -64,7 +64,7 @@ The list below contains only the API request parameters. Common parameters shoul
 Request
 <pre>
 https://lb.api.qcloud.com/v2/index.php?Action=RegisterInstancesWithLoadBalancer
-&<<a href="https://intl.cloud.tencent.com/document/api/213/6976">Common request parameters</a>>
+&<<a href="https://intl.cloud.tencent.com/document/product/213/31574">Common request parameters</a>>
 &loadBalancerId=lb-abcdefgh
 &backends.0.instanceId=ins-1234test
 &backends.0.weight=10
