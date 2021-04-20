@@ -1,8 +1,8 @@
 
-Assume that you are using multiple Tencent Cloud services, such as Game Server Engine (GSE), VPC and TencentDB. These services are managed by different users who all share your Tencent Cloud account key. Then, the following problems may exist:
+Assume that you are using multiple Tencent Cloud services, such as Game Server Elastic-scaling (GSE), VPC and TencentDB. These services are managed by different users who all share your Tencent Cloud account key. Then, the following problems may exist:
 
-- Your key is shared by multiple users, which means your key runs a high risk of being compromised.
-- You cannot restrict the access permissions of other users, which poses a security risk due to potential misoperations.
+ - Your key is shared by multiple users, which means your key runs a high risk of being compromised.
+ - You cannot restrict the access permissions of other users, which poses a security risk due to potential misoperations.
 
 These problems can be eliminated by the use of CAM, which allows you to authorize sub-accounts to manage your different services. By default, a sub-account has no access to GSE service or its resources. To grant a sub-account such access, you need to create a CAM policy. For more information on CAM, see [CAM Overview](https://intl.cloud.tencent.com/document/product/598/10583).
 
