@@ -50,7 +50,7 @@ wget https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-lin
 
 如果需要通过外网方式访问服务域名，需要显式设置网络参数`internet`，执行如下命令：
 
-```shell
+```plaintext
 ./loglistener.sh init -secretid AKIDPEtPyKabfW8Z3Uspdz83xxxxxxxxxxxx -secretkey whHwQfjdLnzzCE1jIf0xxxxxxxxxxxx -region ap-xxxxxx -network internet
 ```
 
@@ -63,7 +63,7 @@ wget https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-lin
 ### 3. 启动 LogListener
 
 成功安装后，执行 LogListener 启动命令：
-```shell
+```plaintext
 /etc/init.d/loglistenerd start
 ```
 ![](https://main.qcloudimg.com/raw/184d6cc3308206b14288372da59a99a0.png)
@@ -74,25 +74,25 @@ wget https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-lin
 
 ### 1. 查看 LogListener 版本
 
-```shell
+```plaintext
 /etc/init.d/loglistenerd -v
 ```
 
 ### 2. 查看 LogListener 帮助文档
 
-```shell
+```plaintext
 /etc/init.d/loglistenerd -h
 ```
 
 ### 3. LogListener 进程管理
 
-```shell
+```plaintext
 /etc/init.d/loglistenerd (start|restart|stop) # 启动、重启、停止
 ```
 
 ### 4. 查看 LogListener 进程状态
 
-```shell
+```plaintext
 /etc/init.d/loglistenerd status
 ```
 
@@ -101,7 +101,7 @@ LogListener 正常情况会运行两个进程：
 
 ### 5. 检查 LogListener 心跳及配置
 
-```shell
+```plaintext
 /etc/init.d/loglistenerd check
 ```
 
@@ -112,7 +112,7 @@ LogListener 正常情况会运行两个进程：
 
 以管理员权限执行 `loglistener/tools` 目录下的卸载命令：
 
-```shell
+```plaintext
 ./loglistener.sh uninstall
 ```
 
@@ -122,22 +122,24 @@ LogListener 正常情况会运行两个进程：
 
 1. 使用停止命令停止运行旧版本的 LogListener。
 2. 备份旧版本中的断点文件目录（`loglistener/data`）。例如，将旧版的断点文件备份至`/tmp/loglistener-backup`目录下。
-
-```shell
+<dx-codeblock>
+:::  plaintext
 cp -r loglistener-2.2.3/data /tmp/loglistener-backup/
-```
-
+:::
+</dx-codeblock>
 3. 使用卸载命令卸载旧版本的 LogListener。
 4. 下载最新版本的 LogListener，并使用相关命令安装和初始化新版本 LogListener。
-5. 复制所备份的断点文件目录（步骤2）到新版本 LogListener 目录下。例如：
-
-```shell
+5. 复制所备份的断点文件目录（步骤2）到新版本 LogListener 目录下。
+```plaintext
+cp -r /tmp/loglistener-backup/data loglistener-<version>/
+```
+ 请根据实际情况替换 `<version>`，例如：
+```plaintext
 cp -r /tmp/loglistener-backup/data loglistener-2.2.8/
 ```
-
-
-
 6. 使用启动命令启动运行新版本 LogListener。
+
+
 
 #### 不复用断点文件（可能会重复采集日志）：
 
