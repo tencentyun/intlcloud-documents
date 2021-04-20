@@ -48,7 +48,7 @@ Signaure=hmac-sha1(SecretKey , "sha1\n" + KeyTime + "\n" + sha1Hex(RtmpString) +
 The following describes the directions:
 
 ### Step 1. Generate KeyTime
-1. Get the Unix `StartTimestamp` of the current time. It is the total number of seconds from January 1, 1970, 00:00:00 UTC (January 1, 1970, 08:00:00 Beijing time) till the current time.
+1. Get the Unix timestamp "StartTimestamp" for the current time, which is the total number of seconds starting from January 1, 1970, 00:00:00 UTC (January 1, 1970, 08:00:00 Beijing time).
 2. Calculate the Unix `EndTimestamp` for the signature to expire according to `StartTimestamp` and the expected validity period of the signature.
 3. Generate `KeyTime` by splicing the two timestamps above in `StartTimestamp;EndTimestamp` format (e.g., `1557902800;1557910000`).
 
@@ -61,7 +61,7 @@ Where:
 - `\n` is a line break. If a string is empty, the line breaks before and after it need to be retained, for example, `/examplebucket-1250000000/test-channel\n\n`.
 
 
-### Step 3. Generate StringToSign
+### Step 3. Generate StringToSign[](id:step3)
 
 Generate `StringToSign` with `KeyTime` and `RtmpString`, in `sha1\nKeyTime\nsha1Hex(RtmpString)\n` format.
 Where:
@@ -72,7 +72,7 @@ Where:
 
 ### Step 4. Generate the signature
 
-Use the [HMAC-SHA1](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) algorithm with `SecretKey` as the key and [StringToSign](#stringtosign) as the message to calculate the message digest, that is, the `Signature` (for example, `01681b8c9d798a678e43b685a9f1bba0f6c0e012`).
+Use the [HMAC-SHA1](#step4) algorithm with `SecretKey` as the key and [StringToSign](#step3) as the message to calculate the message digest, that is, the `Signature` (for example, `01681b8c9d798a678e43b685a9f1bba0f6c0e012`).
 
 ### Step 5. Generate complete signature parameters
 
@@ -88,7 +88,7 @@ q-sign-algorithm=sha1
 
 >! Line breaks in the sample above are for easier reading only and are not included in the actual signature.
 
-Pass the information above to the RTMP request parameter. Unlike HTTP, RTMP does not involve headers. Therefore, you can only pass the signing information via the request parameter.
+Pass the information above to the RTMP request parameters. Unlike HTTP, RTMP does not involve headers. Therefore, you can only pass the signing information via the request parameters.
 
 ## Sample Code
 
@@ -101,7 +101,7 @@ StringToSign = sha1\nKeyTime\nSHA1(RtmpString)\n
 Signature = HMAC-SHA1(SignKey, StringToSign)
 ```
 
-### Sample of the message digest algorithm
+### Sample of the message digest algorithm[](id:step4)
 
 For more information about how to call `HMAC-SHA1` using your preferred programming language, please see the **Sample Code** section in [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
 
