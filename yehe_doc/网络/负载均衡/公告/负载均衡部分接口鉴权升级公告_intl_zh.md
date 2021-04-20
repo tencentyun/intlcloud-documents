@@ -26,8 +26,8 @@
 3. 在“策略管理”页面，单击右侧的【全部策略】。
 4. 在策略列表中，找到需授权的策略，单击右侧“操作”列的【关联用户/组】。
 5. [](id:step4)在弹出的“关联用户/用户组”对话框中，单击左侧列表的目标用户项，将其添加至右侧的“已选择”列表中，单击【确定】。
-![](https://main.qcloudimg.com/raw/a10c35e5a71ef2792b1f338441017a8a.png)
+ ![](https://main.qcloudimg.com/raw/4f9af5773b60505393707c9b2bbe9517.png)
 6. （可选）若需关联用户组，则在“关联用户/用户组”对话框，单击【切换成用户组】＞【用户组】，重复<a href="#step4"> 步骤5</a>。
-   ![](https://main.qcloudimg.com/raw/eb74742271b5d4cfed844e6e1914dbea.png)
+![](https://main.qcloudimg.com/raw/276164b1c4bf81979ba8c4f3d382336b.png)
 
 
