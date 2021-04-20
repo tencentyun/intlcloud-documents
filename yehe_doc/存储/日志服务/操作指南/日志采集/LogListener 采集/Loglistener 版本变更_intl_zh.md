@@ -1,10 +1,10 @@
 本文档为您介绍日志服务 Loglistener 的版本更新记录。
 
 >?
-- 多行-完全正则采集模式，在Loglistener2.4.5版本中开始支持。
-- loglistener自动升级功能，在loglistener 2.5.0 版本中开始支持。
-- 解析失败日志上传功能，在loglistener2.5.2版本中开始支持。
-- 为了更好的使用体验，建议 [前往安装/升级至最新版本](https://intl.cloud.tencent.com/document/product/614/17414)。
+>- 多行-完全正则采集模式，在Loglistener2.4.5版本中开始支持。
+>- loglistener自动升级功能，在loglistener 2.5.0 版本中开始支持。
+>- 解析失败日志上传功能，在loglistener2.5.2版本中开始支持。
+>- 为了更好的使用体验，建议 [前往安装/升级至最新版本](https://intl.cloud.tencent.com/document/product/614/17414)。
 
 <table>
 	<tr><th style="width: 10%;">版本号</th><th style="width: 11%;">变更类型</th><th>描述</th></tr>
