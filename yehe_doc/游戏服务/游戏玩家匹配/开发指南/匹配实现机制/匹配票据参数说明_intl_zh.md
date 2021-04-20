@@ -9,8 +9,8 @@
 - **SEARCHING** ： 匹配搜索中。此状态的票据，正在被 GPM 执行匹配搜索，GPM 将在匹配池中搜索满足规则约束的其他票据，并在超时时间内撮合出一个完整的匹配。如果在设定的超时时间内没有找到符合条件的其他票据，当前票据的状态将会流转为 **TIMEDOUT**。
 - **PLACING** ：匹配放置中。此状态的票据，已经搜索到完整的匹配，正在被 GPM 将匹配结果放置到游戏服务器 GSE 中，即在 GSE 中启动一个游戏服务器会话。并非所有票据都会经历此状态，只有配置了为匹配“请求 GSE资源”的 MatchCode，其发起匹配的票据才会经历这个状态。
 - **COMPLETED** ：匹配已完成。此状态的票据，已经成功搜索到符合规则条件的完整匹配，并结束在 GPM 的生命周期。
- - 对于不通过 GPM 请求对战服资源的票据，此状态表示当前票据被撮合到一个完整的匹配。
- - 对于需要由 GPM 自动请求 GSE 对战服务资源的票据，此状态表示当前票据已经被撮合到一个完整的匹配，且已成功放置到 GSE 的指定队列上。
+    - 对于不通过 GPM 请求对战服资源的票据，此状态表示当前票据被撮合到一个完整的匹配。
+    - 对于需要由 GPM 自动请求 GSE 对战服务资源的票据，此状态表示当前票据已经被撮合到一个完整的匹配，且已成功放置到 GSE 的指定队列上。
 - **CANCELLED** ： 匹配已取消。此状态的票据，表示在 **SEARCHING** 阶段被用户主动请求取消。
 - **TIMEDOUT** ： 匹配已超时。此状态的票据，表示在 **SEARCHING** 阶段未能成功，在设置匹配超时时间 TimeOut 时间内找到符合规则约束的其他票据形成完整的匹配。TimeOut 时间是 MatchCode 的参数，在 [创建匹配](https://intl.cloud.tencent.com/document/product/1072/39203) 时定义。
 - **FAILED** ： 匹配已失败。此状态的票据，表示在 **SEARCHING、PLACING** 阶段因为系统内部错误而失败。
@@ -20,7 +20,7 @@
 ## MatchResult 字段值解析
 
 - **MatchType 取值为 NORMAL 时，MatchResult 字段值请按如下协议进行解析**：
- - **参数说明**
+    - **参数说明**
 <table>
 <thead>
 <tr>
@@ -41,7 +41,7 @@
 ```
 
 - **MatchType 取值为 GSE 时，MatchResult 字段值请按如下协议进行解析**
- - **参数说明**
+    - **参数说明**
 <table>
 <thead>
 <tr>
@@ -76,7 +76,7 @@
 <td>由 GSE 返回的端口号</td>
 </tr>
 </tbody></table>
- - **示例代码**
+    - **示例代码**
 ```json
 "MatchResult": "{\"DnsName\":\"\", \"GameServerSessionId\":\":gameserversession/fleet-xxx\", \"IpAddress\":\"xx.xx.xx.xx\", \"Port\":xxx, \"MatchedPlayers\":[{\"PlayerId\":\"xxx\", \"PlayerSessionId\":\"psess-xxxxxx\", \"MatchTicketId\":\"xxx\"}, {\"PlayerId\":\"xxx\", \"PlayerSessionId\":\"psess-xxxxxxx\", \"MatchTicketId\":\"xxxxxxx\"}]}"
 ```
