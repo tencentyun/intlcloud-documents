@@ -64,8 +64,8 @@
 
 - #### 规则实现
 GPM 将搜索合适的匹配票据，使 measurements 与 referenceValue 之间差距的绝对值，不超过 maxDistance 且不小于 minDistance。
- - 当 measurements 中的表达式计算结果为一个数值时，用这个数值与 referenceValue 进行比较。
- - 当 measurements 中的表达式计算结果为一个数值列表时，用列表中的每一个元素与 referenceValue 进行比较。
+    - 当 measurements 中的表达式计算结果为一个数值时，用这个数值与 referenceValue 进行比较。
+    - 当 measurements 中的表达式计算结果为一个数值列表时，用列表中的每一个元素与 referenceValue 进行比较。
 
 
 - #### 规则样例
@@ -138,13 +138,13 @@ GPM 将搜索合适的匹配票据，使 measurements 与 referenceValue 之间�
 
 - #### 规则实现
 GPM 将搜索合适的匹配票据，使 measurements 与 referenceValue 之间相对大小，满足 operation 定义的表判断符。
- - 当 measurements 中的表达式计算结果为一个数值时，用这个数值与 referenceValue 进行相对大小比较。
- - 当 measurements 中的表达式计算结果为一个数值列表时，用列表中的每一个元素与 referenceValue 进行相对大小比较。
- - 当 measurements 中的表达式计算结果为一个字符串时，判断这个字符串与 referenceValue 是否一致。
- - 当 measurements 中的表达式计算结果为一个字符串列表时，判断列表中的每一个元素与 referenceValue 是否一致。
- - 当 referenceValue 未定义时，判读 measurements 中每一个元素是否两两相等或不等。
+    - 当 measurements 中的表达式计算结果为一个数值时，用这个数值与 referenceValue 进行相对大小比较。
+    - 当 measurements 中的表达式计算结果为一个数值列表时，用列表中的每一个元素与 referenceValue 进行相对大小比较。
+    - 当 measurements 中的表达式计算结果为一个字符串时，判断这个字符串与 referenceValue 是否一致。
+    - 当 measurements 中的表达式计算结果为一个字符串列表时，判断列表中的每一个元素与 referenceValue 是否一致。
+    - 当 referenceValue 未定义时，判读 measurements 中每一个元素是否两两相等或不等。
 - #### 规则样例
- - 样例1： 一个成功匹配中的玩家需要选择同样的 gameMode。
+    - 样例1： 一个成功匹配中的玩家需要选择同样的 gameMode。
 ```json
  "rules": [{
         "name": "SameGameMode",
@@ -153,7 +153,7 @@ GPM 将搜索合适的匹配票据，使 measurements 与 referenceValue 之间�
         "measurements": ["flatten(teams[*].players.playerAttributes[gameMode])"]
     }]
 ```
- - 样例2：红队玩家的颜色属性必须都是 red。
+    - 样例2：红队玩家的颜色属性必须都是 red。
 ```json
  "rules": [{
         "name": "RedTeamSelection",
@@ -226,7 +226,7 @@ GPM 将搜索合适的匹配票据，使 measurements 与 referenceValue 之间�
 玩家发起匹配时传入自己到各个地域的延迟数据。GPM 将搜索合适的匹配票据，使匹配到一起的玩家，至少有一个共同地域能满足延迟规则中的限制条件。
 >?GPM 不提供测速能力，您需要自行测速，或使用 GSE 提供的 [测速工具](https://intl.cloud.tencent.com/document/product/1055/39060)。
 - #### 规则样例
- - 样例1：被匹配到同一局游戏的玩家，至少有一个地域，满足所有玩家到该地域的延迟不大于150ms。
+    - 样例1：被匹配到同一局游戏的玩家，至少有一个地域，满足所有玩家到该地域的延迟不大于150ms。
 ```json
 "rules": [{
         "name": "lowLatency",
@@ -234,7 +234,7 @@ GPM 将搜索合适的匹配票据，使 measurements 与 referenceValue 之间�
         "maxLatency": 150
     }]
 ```
- - 样例2：被匹配到同一局游戏的玩家，至少有一个地域，满足所有玩家到该地域的延迟不大于150ms。且匹配中所有玩家到该地域的延迟最小值，与其他玩家到该地域的延迟差距在80ms以内。
+    - 样例2：被匹配到同一局游戏的玩家，至少有一个地域，满足所有玩家到该地域的延迟不大于150ms。且匹配中所有玩家到该地域的延迟最小值，与其他玩家到该地域的延迟差距在80ms以内。
 ```json
 "rules": [{
         "name": "lowLatency",
