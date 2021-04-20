@@ -11,7 +11,7 @@ A hostNetwork Pod is deployed on every node of a cluster by using DaemonSet. Thi
 >? NodeLocal DNS Cache does not have high availability (HA), so there will be a single point of failure risk for the nodelocal dns cache (Pod Evicted/OOMKilled/ConfigMpa error/DaemonSet Upgrade). However, this issue is actually a common failure that can occur in any single point proxy (such as kube-proxy and cni pod).
 
 ## Prerequisites
-You have created a cluster of Kubernetes 1.14 or later in the [TKE Console](https://console.cloud.tencent.com/tke2/cluster), and nodes exist in this cluster.
+You have created a cluster of Kubernetes 1.14 or later in the [TKE console](https://console.cloud.tencent.com/tke2/cluster), and nodes exist in this cluster.
 
 
 
@@ -19,155 +19,157 @@ You have created a cluster of Kubernetes 1.14 or later in the [TKE Console](http
 
 1. <span ID="StepOne"></span>Deploy NodeLocal DNS Cache with one click. The YAML example is as follows:
 
-	```
-	---
+```
+---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-     name: node-local-dns
-     namespace: kube-system
-     labels:
-		   kubernetes.io/cluster-service: "true"
-       addonmanager.kubernetes.io/mode: Reconcile
-	---
+      name: node-local-dns
+      namespace: kube-system
+      labels:
+        kubernetes.io/cluster-service: "true"
+        addonmanager.kubernetes.io/mode: Reconcile
+---
 apiVersion: v1
 kind: ConfigMap
 metadata:
-     name: node-local-dns
-     namespace: kube-system
+      name: node-local-dns
+      namespace: kube-system
 data:
-     Corefile: |
-       cluster.local:53 {
-           errors
-           cache {
-                   success 9984 30
-                   denial 9984 5
-           }
-           reload
-           loop
-           bind 169.254.20.10
-           forward . __PILLAR__CLUSTER__DNS__ {
-                   force_tcp
-           }
-           prometheus :9253
-           health 169.254.20.10:8080
-           }
-       in-addr.arpa:53 {
-           errors
-           cache 30
-           reload
-           loop
-           bind 169.254.20.10
-           forward . __PILLAR__CLUSTER__DNS__ {
-                   force_tcp
-           }
-           prometheus :9253
-           }
-       ip6.arpa:53 {
-           errors
-           cache 30
-           reload
-           loop
-           bind 169.254.20.10
-           forward . __PILLAR__CLUSTER__DNS__ {
-                   force_tcp
-           }
-           prometheus :9253
-           }
-       .:53 {
-           errors
-           cache 30
-           reload
-           loop
-           bind 169.254.20.10
-           forward . /etc/resolv.conf 
-           prometheus :9253
-           }
-	---
+      Corefile: |
+        cluster.local:53 {
+            errors
+            cache {
+                    success 9984 30
+                    denial 9984 5
+            }
+            reload
+            loop
+            bind 169.254.20.10
+            forward . __PILLAR__CLUSTER__DNS__ {
+                    force_tcp
+            }
+            prometheus :9253
+            health 169.254.20.10:8080
+            }
+        in-addr.arpa:53 {
+            errors
+            cache 30
+            reload
+            loop
+            bind 169.254.20.10
+            forward . __PILLAR__CLUSTER__DNS__ {
+                    force_tcp
+            }
+            prometheus :9253
+            }
+        ip6.arpa:53 {
+            errors
+            cache 30
+            reload
+            loop
+            bind 169.254.20.10
+            forward . __PILLAR__CLUSTER__DNS__ {
+                    force_tcp
+            }
+            prometheus :9253
+            }
+        .:53 {
+            errors
+            cache 30
+            reload
+            loop
+            bind 169.254.20.10
+            forward . /etc/resolv.conf {
+                    force_tcp
+            }
+            prometheus :9253
+            }
+---
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-	 name: node-local-dns
-	 namespace: kube-system
-	 labels:
-	   k8s-app: node-local-dns
+      name: node-local-dns
+      namespace: kube-system
+      labels:
+        k8s-app: node-local-dns
 spec:
-	 updateStrategy:
-	   rollingUpdate:
-	     maxUnavailable: 10%
-	 selector:
-	   matchLabels:
-	     k8s-app: node-local-dns
-	 template:
-	   metadata:
-	     labels:
-           k8s-app: node-local-dns
-			 annotations:
-           prometheus.io/port: "9253"
-           prometheus.io/scrape: "true"
-	   spec:
-	     serviceAccountName: node-local-dns
-			 priorityClassName: system-node-critical
-	     hostNetwork: true
-	     dnsPolicy: Default  # Don't use cluster DNS.
-	     tolerations:
-	     - key: "CriticalAddonsOnly"
-	       operator: "Exists"
-	 	 	- effect: "NoExecute"
-        operator: "Exists"
-       - effect: "NoSchedule"
-        operator: "Exists"
-	     containers:
-	     - name: node-cache
-	       image: ccr.ccs.tencentyun.com/hale/k8s-dns-node-cache:1.15.13
-	       resources:
-	         requests:
-	           cpu: 25m
-	           memory: 5Mi
-	       args: [ "-localip", "169.254.20.10", "-conf", "/etc/Corefile", "-setupiptables=true" ]
-	       securityContext:
-	         privileged: true
-	       ports:
-	       - containerPort: 53
-	         name: dns
-	         protocol: UDP
-	       - containerPort: 53
-	         name: dns-tcp
-	         protocol: TCP
-	       - containerPort: 9253
-	         name: metrics
-	         protocol: TCP
-	       livenessProbe:
-	         httpGet:
-	           host: 169.254.20.10
-	           path: /health
-	           port: 8080
-	         initialDelaySeconds: 60
-	         timeoutSeconds: 5
-	       volumeMounts:
-	       - mountPath: /run/xtables.lock
-	         name: xtables-lock
-	         readOnly: false
-	       - name: config-volume
-	         mountPath: /etc/coredns
-	       - name: kube-dns-config
-	         mountPath: /etc/kube-dns
-	     volumes:
-	     - name: xtables-lock
-	       hostPath:
-	         path: /run/xtables.lock
-	         type: FileOrCreate
-	     - name: kube-dns-config
-	       configMap:
-	         name: kube-dns
-	         optional: true
-	     - name: config-volume
-	       configMap:
-	         name: node-local-dns
-	         items:
-	           - key: Corefile
-	             path: Corefile.base
-	```
+      updateStrategy:
+        rollingUpdate:
+          maxUnavailable: 10%
+      selector:
+        matchLabels:
+          k8s-app: node-local-dns
+      template:
+        metadata:
+          labels:
+            k8s-app: node-local-dns
+          annotations:
+            prometheus.io/port: "9253"
+            prometheus.io/scrape: "true"
+        spec:
+          serviceAccountName: node-local-dns
+          priorityClassName: system-node-critical
+          hostNetwork: true
+          dnsPolicy: Default  # Don't use cluster DNS.
+          tolerations:
+          - key: "CriticalAddonsOnly"
+            operator: "Exists"
+          - effect: "NoExecute"
+            operator: "Exists"
+          - effect: "NoSchedule"
+            operator: "Exists"
+          containers:
+          - name: node-cache
+            image: ccr.ccs.tencentyun.com/hale/k8s-dns-node-cache:1.15.13
+            resources:
+              requests:
+                cpu: 25m
+                memory: 5Mi
+            args: [ "-localip", "169.254.20.10", "-conf", "/etc/Corefile", "-setupiptables=true" ]
+            securityContext:
+              privileged: true
+            ports:
+            - containerPort: 53
+              name: dns
+              protocol: UDP
+            - containerPort: 53
+              name: dns-tcp
+              protocol: TCP
+            - containerPort: 9253
+              name: metrics
+              protocol: TCP
+            livenessProbe:
+              httpGet:
+                host: 169.254.20.10
+                path: /health
+                port: 8080
+              initialDelaySeconds: 60
+              timeoutSeconds: 5
+            volumeMounts:
+            - mountPath: /run/xtables.lock
+              name: xtables-lock
+              readOnly: false
+            - name: config-volume
+              mountPath: /etc/coredns
+            - name: kube-dns-config
+              mountPath: /etc/kube-dns
+          volumes:
+          - name: xtables-lock
+            hostPath:
+              path: /run/xtables.lock
+              type: FileOrCreate
+          - name: kube-dns-config
+            configMap:
+              name: kube-dns
+              optional: true
+          - name: config-volume
+            configMap:
+              name: node-local-dns
+              items:
+                - key: Corefile
+                  path: Corefile.base
+```
 2. Set the specified DNS resolution access address of kubelet to the local DNS cache created in [Step 1](#StepOne). This document provides the following two configuration methods You can choose the method according to your needs:
  -  Execute the following commands in sequence to modify the kubelet launch parameters and restart it.
 ```
@@ -181,17 +183,17 @@ systemctl restart kubelet
     - To ensure the internal domain name of the cluster can be resolved normally, you must configure `searches`.
     - Suitably reducing the `ndots` value is useful for accelerating the external domain name access of clusters.
     - When the Pod does not use the internal domain name of a cluster with multiple dots, we recommend that you set the value to 2.
-	```
-	dnsConfig:
-	  nameservers: ["169.254.20.10"]
-	  searches: 
-		- default.svc.cluster.local
-		- svc.cluster.local
-		- cluster.local
-	  options:
-		- name: ndots
-	      value: "2" 
-	```
+ ```
+ dnsConfig:
+	       nameservers: ["169.254.20.10"]
+        searches: 
+          - default.svc.cluster.local
+          - svc.cluster.local
+          - cluster.local
+	       options:
+          - name: ndots
+            value: "2" 
+```
 	
 ## Configuration Verification
 This test cluster is a Kubernetes version 1.14 cluster. After the NodeLocal DNSCache component is deployed through the preceding steps, you can perform verification by referring to the following methods:
