@@ -96,4 +96,4 @@ public class StopGameServerSessionPlacement
         }
 }
 ```
->? [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=gse&Version=2019-11-12&Action=DescribeGameServerSessionPlacement&SignVersion=) を使用してオンラインデバッグを実行できます。左側の「Game Server Engine」/「サービス管理関連インターフェース」の対応するTencentCloud APIを選択すれば、「コード生成」、「オンラインコール」などの操作を実行できます。
+>? [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=gse&Version=2019-11-12&Action=DescribeGameServerSessionPlacement&SignVersion=) を使用してオンラインデバッグを実行できます。左側の「Game Server Elastic-scaling」/「サービス管理関連インターフェース」の対応するTencentCloud APIを選択すれば、「コード生成」、「オンラインコール」などの操作を実行できます。
