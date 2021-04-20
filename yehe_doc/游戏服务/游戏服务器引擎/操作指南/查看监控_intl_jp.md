@@ -13,11 +13,11 @@
 ![](https://main.qcloudimg.com/raw/99e7932d115505db65079bd78ad71335.png)
 4. 監視パネルの【監視チャートの追加】をクリックすると、監視チャートが作成されます。
 ![](https://main.qcloudimg.com/raw/bf9242f2c4c272732f95a341d65fd9d7.png)
-5. 左上の製品タイプの選択：【Game Server Engine】、監視する必要のあるオブジェクトに応じて、【サーバーフリート】、【ゲームサーバーキュー】、【インスタンス監視】を選択できます。
+5. 左上の製品タイプの選択：【Game Server Elastic-scaling】、監視する必要のあるオブジェクトに応じて、【サーバーフリート】、【ゲームサーバーキュー】、【インスタンス監視】を選択できます。
 ![](https://main.qcloudimg.com/raw/40bfdf27116e1b8ebf6a16a33f840116.png)
 
 
- - 【Game Server Engine-サーバーフリート】で使用できる監視指標を説明します。
+ - 【Game Server Elastic-scaling-サーバーフリート】で使用できる監視指標を説明します。
 
 <table>
 <thead>
@@ -106,7 +106,7 @@
 
 ![](https://main.qcloudimg.com/raw/610777f8db2c951e732fc3ac0b181633.png)
 
- - 【Game Server Engine-ゲームサーバーキュー】で使用できる監視指標を説明します。
+ - 【Game Server Elastic-scaling-ゲームサーバーキュー】で使用できる監視指標を説明します。
 
 <table>
 <thead>
@@ -205,7 +205,7 @@
 
 
 
- - 【Game Server Engine-インスタンス監視】選択した監視指標の説明を提供します。
+ - 【Game Server Elastic-scaling-インスタンス監視】選択した監視指標の説明を提供します。
 
 <table>
 <thead>
