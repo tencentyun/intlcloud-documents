@@ -40,8 +40,8 @@ iOS, Android, Windows(C++), Windows(C#), Mac, 데스크톱 브라우저, Electro
 
 [](id:que6)
 ### TRTC는 최대 몇 명의 동시 통화를 지원하나요?
-- 통화 모드에서는 한 방에 최대 300명까지 동시 접속이 가능하며 최대 30명까지 동시에 카메라 또는 마이크를 활성화할 수 있습니다.
-- 라이브 방송 모드에서는 한 방에 10만 명 이상이 시청자로 접속하여 시청할 수 있으며, 최대 30명까지 호스트로 카메라 또는 마이크를 활성화할 수 있습니다.
+- 통화 모드에서는 한 방에 최대 300명까지 동시 접속이 가능하며 최대 50명까지 동시에 카메라 또는 마이크를 활성화할 수 있습니다.
+- 라이브 방송 모드에서는 한 방에 10만 명 이상이 시청자로 접속하여 시청할 수 있으며, 최대 50명까지 호스트로 카메라 또는 마이크를 활성화할 수 있습니다.
 
 
 [](id:que7)
@@ -77,7 +77,7 @@ TRTC는 온라인 라이브 방송 시나리오 전용으로 10만 명 참여 �
 [](id:que12)
 ### 데스크톱 브라우저 SDK는 어떤 브라우저를 지원하나요?  
 현재 데스크톱 버전 Chrome 브라우저, 데스크톱 버전 Safari 브라우저, 모바일 버전 Safari 브라우저에서 비교적 완벽하게 지원되며, 기타 플랫폼(예시: Android 시스템 브라우저)의 지원 상황은 완전하지 못할 수 있습니다. 자세한 내용은 [지원 플랫폼](https://intl.cloud.tencent.com/document/product/647/35143)을 참조하십시오.
-브라우저에서 [WEBRTC 능력 테스트](https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/web/demo/env-detect/index.html)를 열어 WebRTC 기능을 완벽하게 지원하는지 테스트할 수 있습니다.
+브라우저에서 [WEBRTC 능력 테스트](https:///web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)를 열어 WebRTC 기능을 완벽하게 지원하는지 테스트할 수 있습니다.
 
 
 [](id:que13)
@@ -122,7 +122,6 @@ TRTC는 온라인 라이브 방송 시나리오 전용으로 10만 명 참여 �
 
 ### TRTC에서 통화 시간과 사용량은 어떻게 확인하나요?  
 TRTC 콘솔의 [사용량 통계](https://console.cloud.tencent.com/trtc/statistics) 페이지에서 확인할 수 있습니다.
-
 
 
 [](id:que17)
