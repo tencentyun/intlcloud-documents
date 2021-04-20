@@ -1,8 +1,8 @@
 
-如果您在腾讯云中使用到了游戏服务器引擎（Game Server Engine，GSE）、私有网络和数据库等服务，这些服务由不同的人管理，但均共享您的云账号密钥，将存在以下问题：
+如果您在腾讯云中使用到了游戏服务器伸缩（Game Server Elastic-scaling，GSE）、私有网络和数据库等服务，这些服务由不同的人管理，但均共享您的云账号密钥，将存在以下问题：
 
-- 您的密钥由多人共享，泄密风险高。
-- 您无法限制其他人的访问权限，易产生误操作造成安全风险。
+ - 您的密钥由多人共享，泄密风险高。
+ - 您无法限制其他人的访问权限，易产生误操作造成安全风险。
 
 接入 CAM 后，可通过子账号实现不同的人管理不同的服务，以避免以上的问题。默认情况下，子账号没有使用 GSE 服务以及 GSE 相关资源的权限。因此，我们就需要创建策略来允许子账号使用他们所需要的资源或者权限。CAM 的详细介绍，请参见 [CAM 概述](https://intl.cloud.tencent.com/document/product/598/10583)。
 
@@ -21,7 +21,7 @@ GSE 部分 API 操作支持资源级权限，意味着对于该类 API 操作，
 | 任务                 | 链接                                           |
 | -------------------- | ---------------------------------------------- |
 | 了解策略基本结构     | [策略语法](https://intl.cloud.tencent.com/document/product/1055/37778)             |
-| 在策略中定义操作     | [GSE 的操作](https://intl.cloud.tencent.com/document/product/1055/37778#test5)         |
-| 在策略中定义资源     | [GSE 的资源路径](https://intl.cloud.tencent.com/document/product/1055/37778#test6) |
+| 在策略中定义操作     | [GSE 的操作](https://intl.cloud.tencent.com/document/product/1055/37778)         |
+| 在策略中定义资源     | [GSE 的资源路径](https://intl.cloud.tencent.com/document/product/1055/37778) |
 | GSE 支持的资源级权限 | [可授权资源类型](https://intl.cloud.tencent.com/document/product/1055/37777)              |
 | 控制台示例           | [访问控制示例](https://intl.cloud.tencent.com/document/product/1055/37779)                |
