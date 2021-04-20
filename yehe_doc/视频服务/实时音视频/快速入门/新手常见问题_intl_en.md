@@ -40,8 +40,8 @@ Supported platforms include iOS, Android, Windows (C++), Windows (C#), macOS, de
 
 [](id:que6)
 ### How many people can be in the same call in TRTC?
-- In the call modes, each room can accommodate up to 300 concurrent users, and up to 30 of them can enable their cameras or mics.
-- In the live streaming modes, each room can accommodate up to 100,000 concurrent viewers, and up to 30 of them can be assigned the anchor role and enable their cameras or mics.
+- In the call modes, each room can accommodate up to 300 concurrent users, and up to 50 of them can enable their cameras or mics.
+- In the live streaming modes, each room can accommodate up to 100,000 concurrent viewers, and up to 50 of them can be assigned the anchor role and enable their cameras or mics.
 
 
 [](id:que7)
@@ -77,7 +77,7 @@ Yes. Just integrate the SDK in the same steps as you do a third-party library or
 [](id:que12)
 ### What browsers support TRTC SDK for desktop browsers?  
 It is well supported by Chrome (desktop) and Safari (desktop and mobile) but poorly or not supported by other platforms such as browsers on Android. For more information, please see [Client APIs > Supported Platforms](https://intl.cloud.tencent.com/document/product/647/35143).
-You can open [WebRTC Support Level Test](https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/web/demo/env-detect/index.html) in a browser to test whether the environment fully supports WebRTC.
+You can open [WebRTC Support Level Test](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) in a browser to test whether the environment fully supports WebRTC.
 
 
 [](id:que13)
