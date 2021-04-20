@@ -1,6 +1,6 @@
 > !
-1. This document applies only to push requests over RTMP.
-2. This document is not applicable to other COS HTTP requests.
+>1. This document applies only to push requests over RTMP.
+>2. This document is not applicable to other COS HTTP requests.
 
 ## Push Request
 
