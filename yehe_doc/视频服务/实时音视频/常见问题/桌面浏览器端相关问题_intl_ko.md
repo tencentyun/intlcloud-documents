@@ -1,7 +1,7 @@
 <span id="que1"></span>
 ### 데스크톱 브라우저 SDK는 어떤 브라우저를 지원합니까?	
 현재 데스크톱 Chrome 브라우저, 데스크톱 Edge 브라우저, 데스크톱 Firefox 브라우저, 데스크톱 Safari 브라우저, 모바일 Safari 브라우저에서 비교적 완벽하게 지원되며, 기타 플랫폼(예: Android 플랫폼 브라우저)에서의 지원은 완전하지 못할 수 있습니다. 자세한 내용은 [지원 플랫폼](https://intl.cloud.tencent.com/document/product/647/35143)을 참조하십시오.
-브라우저에서 [WEBRTC 능력 테스트](https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/web/demo/env-detect/index.html)를 열어 WebRTC 기능을 완벽하게 지원하는지 테스트할 수 있습니다.
+브라우저에서 [WEBRTC 능력 테스트](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html)를 열어 WebRTC 기능을 완벽하게 지원하는지 테스트할 수 있습니다.
 
 <span id="que2"></span>
 ### TRTC의 데스크톱 브라우저와 PC는 동기화됩니까?
