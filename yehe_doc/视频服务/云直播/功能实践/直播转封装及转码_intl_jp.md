@@ -169,7 +169,7 @@ CSSのプッシュビットレートが高く、画面が複雑な場合は、�
 
 今日の各種ビデオプラットフォームユーザーのビデオソースの解像度と視聴体験に対する要求がますます高まっていることを受け、現在のライブストリーミングサービスは、1080P、ビットレート3Mbps - 10Mbpsが主なストリームの設定となりつつあり、帯域幅のコストがビデオプラットフォームコストの大部分を占めており、ビデオのビットレートを下げることで、帯域幅のコストを効果的に削減することができます。
 **事例：**
-標準的なCSSのビットレートは3Mbps、ライブストリーミング時間は4時間、視聴人数は200人、コーデックにH.264を使用し、解像度は1080Pであり、高速高画質トランスコーディングを使用しない場合、[CSS価格計算機](https://buy.cloud.tencent.com/price/CSS/calculator)で計算して発生する帯域幅コストは127.08米ドルになります。
+標準的なCSSのビットレートは3Mbps、ライブストリーミング時間は4時間、視聴人数は200人、コーデックにH.264を使用し、解像度は1080Pであり、高速高画質トランスコーディングを使用しない場合、[CSS価格計算機](https://buy.cloud.tencent.com/price/lvb/calculator)で計算して発生する帯域幅コストは127.08米ドルになります。
 
 - 高速高画質トランスコーディングを使用しビットレートを下げた後に、発生する帯域幅コストは、約127.08 ×（100% - 30%）= 88.956米ドルとなります。
 - 高速高画質トランスコーディングを使用して発生する費用は、0.0443 × 240 = 10.632元（割引を計算に入れない定価）です。
@@ -289,13 +289,13 @@ Height_pixel = 192 * 240 / 320 = 144
 <td><a href="https://intl.cloud.tencent.com/document/product/267/30789">トランスコードルールの削除</a></td>
 </tr><tr>
 <td rowspan=4>CSSウォーターマーク</td>
-<td><a href="https://cloud.tencent.com/document/api/267/30154">ウォーターマークテンプレートの作成</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30826">ウォーターマークテンプレートの作成</a></td>
 </tr><tr>
-<td><a href="https://cloud.tencent.com/document/api/267/30150">ウォーターマークテンプレートの修正</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30818">ウォーターマークテンプレートの修正</a></td>
 </tr><tr>
-<td><a href="https://cloud.tencent.com/document/api/267/30153">ウォーターマークテンプレートの削除</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30824">ウォーターマークテンプレートの削除</a></td>
 </tr><tr>
-<td><a href="https://cloud.tencent.com/document/api/267/30152">ウォーターマークテンプレートの詳細リストの確認</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30820">ウォーターマークテンプレートの詳細リストの確認</a></td>
 </tr></table>
 
 
