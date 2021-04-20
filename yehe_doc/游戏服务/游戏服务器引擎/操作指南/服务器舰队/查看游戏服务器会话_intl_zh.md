@@ -1,6 +1,6 @@
 ## 操作场景
 
-本文档主要指导您如何进行查看游戏服务器会话，其在后台中对应一个进程，您通过调用 云 API 为客户端分配一个游戏服务器会话，游戏服务器引擎会将游戏服务器会话分配在一个空闲的进程上。
+本文档主要指导您如何进行查看游戏服务器会话，其在后台中对应一个进程，您通过调用 云 API 为客户端分配一个游戏服务器会话，游戏服务器伸缩会将游戏服务器会话分配在一个空闲的进程上。
 
 ## 前提条件
 
@@ -8,7 +8,7 @@
 
 ## 操作步骤
 
-1. 登录 [游戏服务器引擎控制台](https://console.cloud.tencent.com/gse/asset)，创建服务器舰队，详情请参见 [创建服务器舰队](https://intl.cloud.tencent.com/document/product/1055/36675)。
+1. 登录 [游戏服务器伸缩控制台](https://console.cloud.tencent.com/gse/asset)，创建服务器舰队，详情请参见 [创建服务器舰队](https://intl.cloud.tencent.com/document/product/1055/36675)。
 2. 单击创建完成的服务器舰队【ID】，进入服务器舰队详情，单击【游戏服务器会话】页签，进入游戏服务器会话，详细信息如下说明：
 	- **游戏服务器会话ID**：系统默认自动生成。    
 	- **名称**：由您在调用 [CreateGameServerSession](https://intl.cloud.tencent.com/document/product/1055/37139) API 时输入。
