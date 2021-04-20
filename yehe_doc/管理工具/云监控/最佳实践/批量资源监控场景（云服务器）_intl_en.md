@@ -22,7 +22,7 @@ In cases where you have deployed complex business on Tencent Cloud CVMs, the num
 As shown in the figure below, two businesses run under the Penguin project: the Emperor Penguin business and the Round Penguin business.
 - The Emperor Penguin business involves 7 servers, with 3 on the frontend and 4 on the backend.
 - The Round Penguin business involves 6 servers, with 3 in Guangzhou and 3 in Shenzhen.
-![](https://main.qcloudimg.com/raw/f8423af7e7984fb9537a97ecbd01dd12.png)
+![](https://main.qcloudimg.com/raw/11dc6fa24684cba6e0d9bb2b8a7461de.png)
 
 
 
@@ -94,5 +94,5 @@ In this step, you need to create aggregation and detail monitoring charts, with 
 ## Step 5: Configure Alarm Policies for Batch Resources
 
 1. CVM resources are classified and managed by services and clusters in the project. The resources of different services or clusters reside in different projects.
-2. Log in to the Cloud Monitor console and click **Alarm Configuration** > **Alarm Policy** to create alarm policies for resources. After the resources are grouped by project, you can create a default [alarm policy](https://intl.cloud.tencent.com/document/product/248/6215) for each project.
+2. Log in to the Cloud Monitor console and click **Alarm Configuration** > **Alarm Policy** to create alarm policies for resources. After the resources are grouped by project, you can create a default [alarm policy](https://intl.cloud.tencent.com/document/product/248/38908) for each project.
    The default alarm policy is automatically bound to all resources in the project. If resource changes occur, such as the purchase of resources, project changes, or resource termination upon expiration, by default, resource objects bound to the default policy will change accordingly, eliminating the need for complex manual maintenance.
