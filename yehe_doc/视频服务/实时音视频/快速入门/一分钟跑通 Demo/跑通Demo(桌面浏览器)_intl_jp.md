@@ -121,7 +121,7 @@ WebRTC の技術は Googleが一番早く提案し、現在は主に、デスク
 </tbody></table>
 
 >! 
->- ブラウザで、[WebRTC 能力テスト](https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/web/demo/env-detect/index.html) の画面を開き、WebRTCが完全にサポートされているかチェックすることができます（例：公式アカウント等のブラウザ環境）。
+>- ブラウザで、[WebRTC 能力テスト](https://web.sdk.qcloud.com/web/demo/env-detect/index.html) の画面を開き、WebRTCが完全にサポートされているかチェックすることができます（例：公式アカウント等のブラウザ環境）。
 >- H.264の版権の制限により、ファーウェイのシステムの Chrome ブラウザおよび Chrome WebViewをカーネルとするブラウザでは、TRTC デスクトップブラウザ版SDKの正常な動作をサポートしていません。
 
 [](id:requirements)
