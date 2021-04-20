@@ -1,7 +1,7 @@
 
 ## Overview
 
-You can grant a user the permission to view and use specific resources in the Game Server Engine (GSE) Console by using CAM policies. The examples below show how to do so.
+You can grant a user the permission to view and use specific resources in the Game Server Elastic-scaling (GSE) Console by using CAM policies. The examples below show how to do so.
 
 ## Directions
 
@@ -10,7 +10,7 @@ You can grant a user the permission to view and use specific resources in the Ga
 To grant a user full permission to create and manage all GSE resources, associate the `QcloudGSEFullAccess` policy with the user.
 The detailed steps are as follows:
 1. Go to the [Policies](https://console.cloud.tencent.com/cam/policy) page in the console, and click **Service Type**.
-2. Search for this policy by selecting **Game Server Engine** from the drop-down list, or by directly using the search box in the top right corner.
+2. Search for this policy by selecting **Game Server Elastic-scaling** from the drop-down list, or by directly using the search box in the top right corner.
 
 ![](https://main.qcloudimg.com/raw/fe654b37e2fd44deac52743c77ecc477.png)
 
@@ -38,7 +38,7 @@ The above policy allows the user full access permission to GSE, including activa
 To grant a user permission to query any GSE resources, but not create, delete, or modify them, associate the `QcloudCDBInnerReadOnlyAccess` policy with the user.
 The detailed steps are as follows:
 1. Go to the [Policies](https://console.cloud.tencent.com/cam/policy) page in the console, and click **Service Type**.
-2. Search for this policy by selecting **Game Server Engine** from the drop-down list, or by directly using the search box in the top right corner.
+2. Search for this policy by selecting **Game Server Elastic-scaling** from the drop-down list, or by directly using the search box in the top right corner.
 
 ![](https://main.qcloudimg.com/raw/2368902dfcb590dd60e51b1720c0c07f.png)
 
