@@ -1,8 +1,5 @@
 日志服务提供 SQL 统计能力，对采集的日志进行数据分析并支持以图表的形式展示分析结果。目前支持列表，折线图，柱状图，饼图，等多种类型的统计图表，用户可以根据自己的分析需求选择合适的图表类型展示分析结果。
 
-
-
-
 ## 分析语法简介
 
 >!使用日志分析功能，必须在索引配置中，配置待统计字段的键值索引，并打开统计开关。
@@ -39,6 +36,8 @@ status:404 | select count(*) as pv
 
 
 
+
+
 ## 支持的 SQL 语法和函数
 
 日志服务支持以下 SQL 语法和函数，单击可查看详细内容。
@@ -49,25 +48,25 @@ status:404 | select count(*) as pv
 
 | 语法                                                         | 说明                                                        |
 | ------------------------------------------------------------ | ----------------------------------------------------------- |
-| SELECT | SELECT 语句用于从表中选取数据。                             |
-| AS   | 为列名称（KEY）指定别名。                                   |
-| GROUP BY | 用于结合聚合函数，根据一个或多个列（KEY）对结果集进行分组。 |
-| ORDER BY | 用于根据指定的 KEY 对结果集进行排序。                       |
-| LIMIT | 用于限制由 SELECT 语句返回的数据数量。                      |
-| WHERE | 用于提取那些满足指定条件的日志。                            |
+| [SELECT](https://intl.cloud.tencent.com/document/product/614/38735) | SELECT 语句用于从表中选取数据。                             |
+| [AS](https://intl.cloud.tencent.com/document/product/614/38731)   | 为列名称（KEY）指定别名。                                   |
+| [GROUP BY](https://intl.cloud.tencent.com/document/product/614/38732) | 用于结合聚合函数，根据一个或多个列（KEY）对结果集进行分组。 |
+| [ORDER BY](https://intl.cloud.tencent.com/document/product/614/38734) | 用于根据指定的 KEY 对结果集进行排序。                       |
+| [LIMIT](https://intl.cloud.tencent.com/document/product/614/38733) | 用于限制由 SELECT 语句返回的数据数量。                      |
+| [WHERE](https://intl.cloud.tencent.com/document/product/614/38736) | 用于提取那些满足指定条件的日志。                            |
 
 
 <span id="sql2"></span>
 
 ####  SQL 函数
 
-- 聚合函数
+- [聚合函数](https://intl.cloud.tencent.com/document/product/614/38728)
   支持 avg，count，max，min，sum 函数
-- 数学函数
+- [数学函数](https://intl.cloud.tencent.com/document/product/614/38727)
   支持 abs，sqrt，power，round，floor，log，log10函数
 - [时间函数](https://intl.cloud.tencent.com/document/product/614/36746)
   支持 cast，histogram 函数
-- 运算符
+- [运算符](https://intl.cloud.tencent.com/document/product/614/38729)
   支持算数运算法（+ - * / %），比较运算符（=，大小比较，in，like 等)，逻辑运算符（and or not）
 
 ## SQL 限制说明
@@ -76,5 +75,5 @@ status:404 | select count(*) as pv
 | ---------------------------------------- | ------------------------------------------------------------ | --------------------------- |
 | 单个统计字段值（Value）最大长度          | 最大长度为32KB，超出部分将被截断                             | -                           |
 | 非聚类分析（不含 group by 子句）结果条数 | 每次分析返回结果条数最大1000条                               | limit 默认100条，最多1000条 |
-| 聚类分析（含 group by 子句）结果条数     | 每次分析返回结果条数最大100条                                | limit 默认100条，最多1000条 |
+| 聚类分析（含 group by 子句）结果条数     | 每次分析返回结果条数最大100条                                | limit默认100条，最多2000条 |
 | order by 子句限制                        | round、sqrt、abs、power、floor 函数和四则运算后的字段不支持 order by 操作 | -                           |
