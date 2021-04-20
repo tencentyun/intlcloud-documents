@@ -1,7 +1,7 @@
 <span id="que1"></span>
 ###  桌面浏览器端 SDK 的支持哪些浏览器？	
 目前主要在桌面版 Chrome 浏览器、桌面版 Edge 浏览器、桌面版 Firefox 浏览器、桌面版 Safari 浏览器以及移动版的 Safari 浏览器上有较为完整的支持，其他平台（例如 Android 平台的浏览器）支持情况均比较差，具体详情请参见 [支持的平台](https://intl.cloud.tencent.com/document/product/647/35143)。
-您可以在浏览器打开 [WEBRTC 能力测试](https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/web/demo/env-detect/index.html) 测试是否完整的支持 WebRTC 的功能。
+您可以在浏览器打开 [WEBRTC 能力测试](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) 测试是否完整的支持 WebRTC 的功能。
 
 <span id="que2"></span>
 ###  实时音视频的桌面浏览器端、PC 端是不是同步的？
