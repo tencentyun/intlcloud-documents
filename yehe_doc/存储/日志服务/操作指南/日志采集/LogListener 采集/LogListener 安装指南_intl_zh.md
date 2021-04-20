@@ -29,7 +29,7 @@ wget https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-lin
 ```shell
 ./loglistener.sh init -secretid AKIDPEtPyKabfW8Z3Uspdz83xxxxxxxxxxx -secretkey whHwQfjdLnzzCE1jIf09xxxxxxxxxxxx -region ap-xxxxxx
 ```
->?初始化命令中 **-secretid**、**-secretkey**、**-region**、**-network** 为需要自主填写的参数，详细介绍请见如下 [参数说明](#parameterdescription)。
+>?初始化命令中 <b>-secretid</b>、<b>-secretkey</b>、<b>-region</b>、<b>-network</b> 为需要自主填写的参数，详细介绍请见如下 [参数说明](#parameterdescription)。
 
 <span id="parameterdescription"></span>
 
@@ -122,11 +122,9 @@ LogListener 正常情况会运行两个进程：
 
 1. 使用停止命令停止运行旧版本的 LogListener。
 2. 备份旧版本中的断点文件目录（`loglistener/data`）。例如，将旧版的断点文件备份至`/tmp/loglistener-backup`目录下。
-<dx-codeblock>
-:::  plaintext
+```plaintext
 cp -r loglistener-2.2.3/data /tmp/loglistener-backup/
-:::
-</dx-codeblock>
+```
 3. 使用卸载命令卸载旧版本的 LogListener。
 4. 下载最新版本的 LogListener，并使用相关命令安装和初始化新版本 LogListener。
 5. 复制所备份的断点文件目录（步骤2）到新版本 LogListener 目录下。
