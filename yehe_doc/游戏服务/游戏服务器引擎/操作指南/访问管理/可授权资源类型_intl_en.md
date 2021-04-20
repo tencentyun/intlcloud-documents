@@ -1,5 +1,5 @@
 
-Game Server Engine (GSE) supports resource-level permissions, which means that for certain GSE operations, you can control when users are allowed to perform them, or which specific resources that users are allowed to use. The following will describe the types of resources for which GSE allows permissions.
+Game Server Elastic-scaling (GSE) supports resource-level permissions, which means that for certain GSE operations, you can control when users are allowed to perform them, or which specific resources that users are allowed to use. The following will describe the types of resources for which GSE allows permissions.
 
 >?Resource-level permissions specify which resources users can operate on.
 
