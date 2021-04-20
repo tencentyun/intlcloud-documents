@@ -1,12 +1,12 @@
-**In order to use the Tencent Cloud Game Server Engine (GSE) (hereinafter referred to as the “Service”), you shall read and comply with this Tencent Cloud Game Server Engine (GSE) Service Level Agreement (this “Agreement”, or this “SLA”) and the [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248). This Agreement contains, among others, the terms and definitions of the Service, level indicators of the Service Availability or the Service Success Rate, compensation plan and release of liabilities. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your material rights and interests, are in bold font or underlined or otherwise brought to your special attention.**
+**In order to use the Tencent Cloud Game Server Elastic-scaling (GSE) (hereinafter referred to as the “Service”), you shall read and comply with this Tencent Cloud Game Server Elastic-scaling (GSE) Service Level Agreement (this “Agreement”, or this “SLA”) and the [Tencent Cloud Service Agreement](https://intl.cloud.tencent.com/document/product/301/9248). This Agreement contains, among others, the terms and definitions of the Service, level indicators of the Service Availability or the Service Success Rate, compensation plan and release of liabilities. Please carefully read and fully understand each and every provision hereof, and the provisions restricting or releasing certain liabilities, or otherwise related to your material rights and interests, are in bold font or underlined or otherwise brought to your special attention.**
 
 **Please do not purchase the Service unless and until you have fully read, and completely understood and accepted all the terms hereof. By clicking “Agree”/ “Next”, or by purchasing or using the Service, or by otherwise accepting this Agreement, whether express or implied, you are deemed to have read, and agreed to be bound by, this Agreement. This Agreement shall then have legal effect on both you and Tencent Cloud, constituting a binding legal document on both parties.**
 
 ## 1. Terms and Definitions
 
-#### 1.1 The Game Server Engine (GSE) provided by Tencent Cloud
+#### 1.1 The Game Server Elastic-scaling (GSE) provided by Tencent Cloud
 
-Refers to the services provided by the Tencent Cloud Game Server Engine (GSE) to you (also referred to as the “customer”), which includes, among others, the management of servers and the management and allocation of game servers. 
+Refers to the services provided by the Tencent Cloud Game Server Elastic-scaling (GSE) to you (also referred to as the “customer”), which includes, among others, the management of servers and the management and allocation of game servers. 
 
 #### 1.2 Service Month(s)
 
