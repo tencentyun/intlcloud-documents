@@ -1,5 +1,4 @@
 本文档主要指导您如何通过数据统计查看各地域下服务器舰队的 CVM 使用总时长、网络总流量等信息。
-
 ## 前提条件
 
 已完成 [创建服务器舰队](https://intl.cloud.tencent.com/document/product/1055/36675)。
@@ -8,7 +7,7 @@
 
 ### 数据统计
 
-1. 登录 [游戏服务器引擎控制台](https://console.cloud.tencent.com/gse/asset)，单击左侧菜单【数据统计】。
+1. 登录 [游戏服务器伸缩控制台](https://console.cloud.tencent.com/gse/asset)，单击左侧菜单【数据统计】。
 2. 页面左上侧选择需要查询服务器舰队的**地域**，进入该地域的数据统计页面，可查看**用量统计**、**历史时长**信息。
 ![](https://main.qcloudimg.com/raw/45861b47b04d408e8ba18c27cbce9488.png)
  - **用量统计**：选择**查询时间**、**舰队名称**后可获取特定时间范围内，服务器舰队所使用 CVM 时长和网络流量。
