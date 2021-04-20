@@ -9,7 +9,7 @@ Secure Sockets Layer (SSL) is a security protocol designed to ensure security an
 <span id="dxrz"></span>
 ## SSL One-way Authentication
 In SSL one-way authentication, only the server identity but not the client identity needs to be verified. The process of SSL one-way authentication is as shown below:
-<img src="https://main.qcloudimg.com/raw/4536548bf20a1e20c9c40fefa6929fcf.png" width="70%">
+<img src="https://main.qcloudimg.com/raw/000d0a44b1bad4b015cfc81ad6e17441.png" width="70%">
 1. A client initiates an HTTPS connection request to the server together with the supported SSL protocol versions, encryption algorithms, generated random numbers, and other information.
 2. The server returns an SSL protocol version, encryption algorithm, generated random number, server certificate (server.crt), and other information to the client.
 3. The client verifies the validity of the certificate (server.crt) for the factors below and obtains the server's public key from the certificate.
@@ -24,7 +24,7 @@ The symmetric encryption key (the key K) will be used by the server and client f
 <span id="sxrz"></span>
 ## SSL Mutual Authentication
 In SSL mutual authentication, the server identity and the client identity both need to be verified. The process of SSL mutual authentication is as shown below:
-<img src="https://main.qcloudimg.com/raw/40b8f9643d4493fdd1b66a1c3d4d646e.png" width="70%">
+<img src="https://main.qcloudimg.com/raw/93c4567863719926db8737aa345e008c.png" width="70%">
 1. A client initiates an HTTPS connection request to the server together with the supported SSL protocol versions, encryption algorithms, generated random numbers, and other information.
 2. The server returns an SSL protocol version, encryption algorithm, generated random number, server certificate (server.crt), and other information to the client.
 3. The client verifies the validity of the certificate (server.crt) for the factors below and obtains the server's public key from the certificate.
