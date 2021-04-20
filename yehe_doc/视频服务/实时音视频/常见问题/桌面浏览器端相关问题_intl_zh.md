@@ -109,6 +109,7 @@ WebRTC 标准提供了一套 3A 算法，可以通过指定 audio 的 MediaTrack
 
 
 
+
 <span id="que17"></span>
 ###  Windows 端怎么采集到被分享应用播放的声音？
 通过调用 [startSystemAudioLoopback](https://intl.cloud.tencent.com/document/product/647/35131) 接口，可打开系统声音采集。
