@@ -91,7 +91,7 @@ The API callback messages is processed in `OnEvent`. For the message type, pleas
 
 ### Initializing SDK
 - This API is used to initialize the GME service. It is recommended to call it when initializing the application.
-- **For more information on how to get the `SDKAppId` parameter, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/10782)**.
+- **For more information on how to get the `SDKAppId` parameter, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/39698)**.
 - **The openID uniquely identifies a user with the rules stipulated by the application developer and must be greater than 10,000 and unique in the application (currently, only INT64 is supported)**.
 
 > !The SDK must be initialized before an user can enter a voice chat room.
