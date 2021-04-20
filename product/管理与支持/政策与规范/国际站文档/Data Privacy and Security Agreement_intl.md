@@ -63,7 +63,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 3.[Mobile Tencent Protect](https://intl.cloud.tencent.com/document/product/1018/36785).
 4.[Web Application Firewall](https://intl.cloud.tencent.com/document/product/627/37004).
 5.[Game Multimedia Engine](https://intl.cloud.tencent.com/document/product/607/37523).
-6.[Game Server Engine](https://intl.cloud.tencent.com/document/product/1055/39482)
+6.[Game Server Elastic-scaling](https://intl.cloud.tencent.com/document/product/1055/39482)
 7.[Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029/36804).
 8.[Face Recognition](https://intl.cloud.tencent.com/document/product/1059/38787).
 9.[Tencent Cloud MediaLive](https://intl.cloud.tencent.com/document/product/1048/38989).
