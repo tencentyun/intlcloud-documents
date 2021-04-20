@@ -6,7 +6,7 @@
 
 ## 操作步骤
 
-1. 登录 [游戏服务器引擎控制台](https://console.cloud.tencent.com/gse/asset)，单击左侧菜单【服务器舰队】。
+1. 登录 [游戏服务器伸缩控制台](https://console.cloud.tencent.com/gse/asset)，单击左侧菜单【服务器舰队】。
 2. 单击服务器舰队【ID】，进入服务器舰队详情页。
 ![](https://main.qcloudimg.com/raw/42c96a345b41ae2545c10534cf8aee1e.png)
 3. 在服务器舰队详情页，单击右上角【查看监控】，即可进入监控面板。
@@ -16,7 +16,7 @@
 ![](https://main.qcloudimg.com/raw/40bfdf27116e1b8ebf6a16a33f840116.png)
 
 
- - 【游戏服务器引擎-服务器舰队】可供选择的监控指标说明：
+ - 【游戏服务器伸缩-服务器舰队】可供选择的监控指标说明：
 
 <table>
 <thead>
@@ -105,7 +105,7 @@
 
 ![](https://main.qcloudimg.com/raw/610777f8db2c951e732fc3ac0b181633.png)
 
- - 【游戏服务器引擎-游戏服务器队列】可供选择的监控指标说明：
+ - 【游戏服务器伸缩-游戏服务器队列】可供选择的监控指标说明：
 
 <table>
 <thead>
@@ -204,7 +204,7 @@
 
 
 
- - 【游戏服务器引擎-实例监控】可供选择的监控指标说明：
+ - 【游戏服务器伸缩-实例监控】可供选择的监控指标说明：
 
 <table>
 <thead>
