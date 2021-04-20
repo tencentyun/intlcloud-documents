@@ -64,8 +64,8 @@ A difference rule is used to limit the difference between the measurements and t
 
 - #### Implementation
 GPM will search for suitable MatchTicket that allows the absolute value of difference between `measurements` and `referenceValue` to be no more than `maxDistance` and no less than `minDistance`.
- - If the `measurement` expression is parsed into a number, it will be compared with `referenceValue`.
- - If the `measurement` expression is parsed into a list of numbers, each of its elements will be compared with `referenceValue`.
+    - If the `measurement` expression is parsed into a number, it will be compared with `referenceValue`.
+    - If the `measurement` expression is parsed into a list of numbers, each of its elements will be compared with `referenceValue`.
 
 
 - #### Samples
@@ -138,13 +138,13 @@ A comparison rule is used to indicate the relationship between string or numeric
 
 - #### Implementation
 GPM will search for suitable MatchTicket that allows the relationship between `measurements` and `referenceValue` to satisfy the comparison operator specified in `operation`.
- - If the `measurement` expression is parsed into a number, it will be compared with `referenceValue`.
- - If the `measurement` expression is parsed into a list of numbers, each of its elements will be compared with `referenceValue`.
- - If the `measurement` expression is parsed into a string, it will be judged according to whether it is the same as `referenceValue`.
- - If the `measurement` expression is parsed into a list of strings, each of its elements will be judged according to whether each is the same as `referenceValue`.
- - If `referenceValue` is not specified, each element of `measurements` will take the defined player attribute or not according to `operation`.
+    - If the `measurement` expression is parsed into a number, it will be compared with `referenceValue`.
+    - If the `measurement` expression is parsed into a list of numbers, each of its elements will be compared with `referenceValue`.
+    - If the `measurement` expression is parsed into a string, it will be judged according to whether it is the same as `referenceValue`.
+    - If the `measurement` expression is parsed into a list of strings, each of its elements will be judged according to whether each is the same as `referenceValue`.
+    - If `referenceValue` is not specified, each element of `measurements` will take the defined player attribute or not according to `operation`.
 - #### Samples
- - Sample 1: players matched should choose the same gameMode
+    - Sample 1: players matched should choose the same gameMode
 ```json
  "rules": [{
         "name": "SameGameMode",
@@ -153,7 +153,7 @@ GPM will search for suitable MatchTicket that allows the relationship between `m
         "measurements": ["flatten(teams[*].players.playerAttributes[gameMode])"]
     }]
 ```
- - Sample 2: the color attribute of the red team players must be `red`
+    - Sample 2: the color attribute of the red team players must be `red`
 ```json
  "rules": [{
         "name": "RedTeamSelection",
@@ -226,7 +226,7 @@ A latency rule is used to match players to servers according to the region laten
 Each player inputs the latency from their respective location to every region when sending a matchmaking request. GPM will search for suitable MatchTicket that allows at least one region to meet the latency rule for matched players.
 >? GPM does not support latency test. You need to do so by yourself or use the [Latency Test Tool](https://intl.cloud.tencent.com/document/product/1055/39060) provided by GSE.
 - #### Samples
- - Sample 1: all players matched to a game have latencies of no more than 150 ms to at least one region
+    - Sample 1: all players matched to a game have latencies of no more than 150 ms to at least one region
 ```json
 "rules": [{
         "name": "lowLatency",
@@ -234,7 +234,7 @@ Each player inputs the latency from their respective location to every region wh
         "maxLatency": 150
     }]
 ```
- - Sample 2: all players matched to a game have latencies of no more than 150 ms to at least one region, and their latency difference is less than 80 ms.
+    - Sample 2: all players matched to a game have latencies of no more than 150 ms to at least one region, and their latency difference is less than 80 ms.
 ```json
 "rules": [{
         "name": "lowLatency",
