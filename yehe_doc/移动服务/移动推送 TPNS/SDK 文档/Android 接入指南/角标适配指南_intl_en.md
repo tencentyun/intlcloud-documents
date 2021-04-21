@@ -101,8 +101,7 @@ Sample message body:
 
 This API allows you to set the badge number. It applies to Huawei, OPPO, and vivo phones. For OPPO phones, you need to apply for the badge display permission from OPPO.
 
-```
-java
+```java
 /**
  * @param context   //Application context
  * @param setNum   //Set the badge number
@@ -149,8 +148,7 @@ Limited by the openness of Huawei phone badge capabilities, the badge feature va
 
 To implement the correct badge modification effect, please first add the Huawei phone badge read/write permission for your application by adding the following permission configuration under the `manifest` tag in the `AndroidManifest.xml` file of the application:
 
-```
-xml
+```xml
 <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE"/>
 ```
 
@@ -163,8 +161,7 @@ Be sure to enable the Huawei channel in the console and enter the `Activity` cla
 
 For Huawei phones, the badge number can be auto increased or decreased by 1. The API is as follows:
 
-```
-java
+```java
 	/**
 	 * Huawei phone badge modification API
 	 *
@@ -197,8 +194,7 @@ Limited by the openness of vivo phone badge capabilities, the badge number curre
 
 To implement the correct badge modification effect, please first add the vivo phone badge read/write permission for your application by adding the following permission configuration under the `manifest` tag in the `AndroidManifest.xml` file of the application:
 
-```
-xml
+```xml
 <uses-permission android:name="com.vivo.notification.permission.BADGE_ICON" />
 ```
 
