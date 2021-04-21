@@ -1,24 +1,42 @@
-
-
+## Native Demo
 <table style="text-align:center;vertical-align:middle;">
-  <tr>
-    <th width="150px">iOS</th>
-    <th width="150px">Android</th>
-    <th width="150px">Mac OS</th>
-    <th width="150px">Windows</th>
-    <th width="150px">デスクトップブラウザ</th>
-    <th width="150px">WeChat Mini Program</th>
-  </tr>
-  <tr>
-    <td><img style="width:150px;height:125px" src="https://main.qcloudimg.com/raw/b637949cbfc255ecefb060fafbfc70be.png" /></td>
-    <td><img style="width:150px;height:125px" onclick="window.open('http://dldir1.qq.com/hudongzhibo/TRTC/Demo/TRTCDemo.apk')" style="display: block;cursor: pointer;" src="https://main.qcloudimg.com/raw/cb4c811e2f4dc4a7c9cc4f759e9ca86b.png" /></td>
-    <td><a href="http://trtc-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Mac_Demo.tar.bz2"><img style="width:150px;height:125px" src="https://main.qcloudimg.com/raw/d03160ca4e5342a96464aaba1de97923.png"></a></td>
-    <td><a href="http://trtc-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Win_Demo.exe"><img style="width:150px;height:125px" src="https://main.qcloudimg.com/raw/d03160ca4e5342a96464aaba1de97923.png"></a></td>
-	  <td><a href="https://trtc-1252463788.file.myqcloud.com/web/demo/official-demo/index.html"><img style="width:150px;height:125px" src="https://main.qcloudimg.com/raw/d03160ca4e5342a96464aaba1de97923.png"></a></td>
-    <td><img style="width:150px;height:125px" src="https://main.qcloudimg.com/raw/7298c4c6297b3dc6d9fac973c52caf66.png" /></td>
-  </tr>
+<tr>
+<th>iOS</th><th>Android</th><th>Windows</th><th >Mac OS</th>
+</tr>
+<tr>
+<td><img style="width:150px" src="https://main.qcloudimg.com/raw/7a2a1fc253e7b6afee96538e90d3cf79.png" data-nonescope="true"></td>
+<td><a onclick="window.open('https://dldir1.qq.com/hudongzhibo/TRTC/Demo/TRTCDemo.apk')"><div style="width:150px;height: 150px;background-image:url(https://main.qcloudimg.com/raw/8c59496262e772a492b50c6e1b9cff52.png);background-size: cover;">
+</div></a></td>
+<td><a onclick="window.open('https://trtc-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Win_Demo.exe')"><div style="width:150px;height: 150px;background-image:url(https://main.qcloudimg.com/raw/9c0b20a049f02e07c53ceb8396946d5c.png);background-size: cover;">
+</div></a></td>
+<td><a onclick="window.open('https://trtc-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Mac_Demo.tar.bz2')"><div style="width:150px;height: 150px;background-image:url(https://main.qcloudimg.com/raw/9c0b20a049f02e07c53ceb8396946d5c.png);background-size: cover;">
+</div></a></td>
+</tr>
 </table>
 
+## クロスプラットフォームDemo
+<table style="text-align:center;vertical-align:middle;">
+<tr>
+<th>デスクトップブラウザ</th><th>Flutter </th><th>Electron</th>
+</tr>
+<tr>
+</div></a></td>
+<td><input type="button" value="ビデオ通話" style="height: 30px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;
+    color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;
+    box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;"  onclick="window.open('https://trtc-1252463788.file.myqcloud.com/web/demo/official-demo/index.html')" /><br><br>
+      <input type="button" value="ILVB" style="height: 30px;width: 150px;margin-top: 5px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;
+    color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;
+    box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;" onclick="window.open('https://trtc.qcloud.com/tweblive/index.html#/')" />
+</td>
+<td><img style="width:150px" src="https://main.qcloudimg.com/raw/30938d823c61f718e4a2564c0304030c.png" data-nonescope="true"><br><img style="width:150px" src="https://main.qcloudimg.com/raw/ab9f45c1dfcbf0c88f3776ffbd19c02f.png" data-nonescope="true"></td>
+<td><input type="button" value="Windows版" style="height: 30px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;
+    color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;
+    box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;"  onclick="window.open('https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/electron_sdk/solution/education/TRTC_Education_Demo%20Setup%201.1.0.exe?_ga=1.35276513.1325816544.1607066203')" /><br><br>
+      <input type="button" value="MacOS版" style="height: 30px;width: 150px;margin-top: 5px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;
+    color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;
+    box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;" onclick="window.open('https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/electron_sdk/solution/education/TRTC_Education_Demo-1.1.0.dmg?_ga=1.35276513.1325816544.1607066203/')" /></td>
+</tr>
+</table>
 **iOS** 
 ![](https://main.qcloudimg.com/raw/296c9a0f50e38ff975dce00e4392ef6c.png)
 
@@ -33,7 +51,3 @@
 
 **デスクトップブラウザ**
 ![](https://main.qcloudimg.com/raw/ac6593a0f82fdbf3643ca1214de154fb.jpg)
-
-**WeChat Mini Program**
-![](https://main.qcloudimg.com/raw/d7e03fbe730d1417ca2a4a4c650d94ce.jpg)
-
