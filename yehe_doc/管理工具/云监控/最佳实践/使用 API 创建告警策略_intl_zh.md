@@ -20,7 +20,7 @@
 
 #### 准备告警策略类型
  通过 [查询所有名字空间](https://intl.cloud.tencent.com/document/product/248/39319) 可以查询到所有策略类型。步骤如下：
-1. 进入 [API Explorer 在线调用控制台](https://console.cloud.tencent.com/api/explorer?Product=monitor&Version=2018-07-24&Action=DescribeAllNamespaces)，参考下表填写输入参数。
+   1. 进入 [API Explorer 在线调用控制台](https://console.cloud.tencent.com/api/explorer?Product=monitor&Version=2018-07-24&Action=DescribeAllNamespaces)，参考下表填写输入参数。
 <table>
 	<tr>
 	<th>参数名称</th>
@@ -47,6 +47,7 @@
 		<td>非必填，无需填写</td>
 	</tr>
 </table>
+
 3. 单击【在线调用】>【发送请求】，获取响应结果。返回结果中 Response.QceNamespacesNew.N.Id 即创建告警策略需要的 Namespace。
 
 
@@ -84,6 +85,7 @@
 	</tr>
 </table>
 2. 单击右侧【在线调用】>【发送请求】，获取响应结果。返回结果中 Response.Metrics.N 即该策略类型下的所有告警指标。
+
 #### 准备事件列表
 通过 [查询告警事件列表](https://intl.cloud.tencent.com/document/product/248/39324) 可以查询到策略类型下的所有告警事件。
 
@@ -111,6 +113,7 @@
 		<td>填写“准备告警策略类型”步骤获取的告警策略类型，即返回结果中的 Response.QceNamespacesNew.N.Id</td>
 	</tr>
 </table>
+
 2. 单击【在线调用】>【发送请求】，获取响应结果。返回结果 Response.Events.N.EventName 即告警策略需要的 EventName。
 
 
