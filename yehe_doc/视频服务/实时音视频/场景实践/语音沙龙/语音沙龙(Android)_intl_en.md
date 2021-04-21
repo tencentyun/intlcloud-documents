@@ -159,6 +159,7 @@ trtcchatsalondemo/src/main/java/com/tencent/liteav/trtcchatsalon/model
 <td>Login callback. The code is 0 if login is successful.</td>
 </tr>
 </table>
+
 <dx-codeblock>
 ::: java java
 TRTCChatSalon mTRTCChatSalon = TRTCChatSalon.sharedInstance(this);
@@ -182,11 +183,12 @@ mTRTCChatSalon.login(SDKAPPID, userId, userSig, new TRTCChatSalonCallback.Action
 3. You will receive an `onAnchorEnterSeat` notification that someone becomes a speaker, and mic capturing will be enabled automatically.
 
 ![](https://main.qcloudimg.com/raw/8966e7bf7dde578ad1ed85544c01b249.png)
+    
 <dx-codeblock>
 ::: java java
 // 1. Set your nickname and profile photo
 mTRTCChatSalon.setSelfProfile("my_name", "my_face_url", null);
-
+  
 // 2. Call `createRoom` to create a room
 final TRTCChatSalonDef.RoomParam roomParam = new TRTCChatSalonDef.RoomParam();
 roomParam.roomName = "Room name";
@@ -207,7 +209,7 @@ mTRTCChatSalon.createRoom(mRoomId, roomParam, new TRTCChatSalonCallback.ActionCa
         }
     }
 });
-
+     
 // 4. You receive an `onAnchorEnterSeat` notification after becoming a speaker
 @Override
 public void onAnchorEnterSeat(TRTCChatSalonDef.UserInfo userInfo) {
@@ -229,26 +231,27 @@ public void onAnchorEnterSeat(TRTCChatSalonDef.UserInfo userInfo) {
 6. You will also receive an `onAnchorEnterSeat` notification that someone becomes a speaker.
 
 ![](https://main.qcloudimg.com/raw/117b4dbdaf146cc89b681d067503f0f0.png)
+ 
 <dx-codeblock>
 ::: java java
 // 1. Set your nickname and profile photo.
 mTRTCChatSalon.setSelfProfile("my_name", "my_face_url", null);
-
+   
 // 2. Get the room list from the backend. Suppose it is `roomList`
 List<Integer> roomList = GetRoomList();
-
+  
 // 3. Call `getRoomInfoList` to get the details of the rooms
 mTRTCChatSalon.getRoomInfoList(roomList, new TRTCChatSalonCallback.RoomInfoCallback() {
-
+  
     @Override
     public void onCallback(int code, String msg, List<TRTCChatSalonDef.RoomInfo> list) {
         if (code == 0) {
             // Refresh the room list on your UI
         }
     }
-
+   
 });
-
+   
 // 4. Pass in `roomid` to enter the room
 mTRTCChatSalon.enterRoom(roomId, new TRTCChatSalonCallback.ActionCallback() {
         @Override
@@ -258,7 +261,7 @@ mTRTCChatSalon.enterRoom(roomId, new TRTCChatSalonCallback.ActionCallback() {
             }
         }
 });
-
+   
 // 5. After successful room entry, you receive an `onRoomInfoChange` notification
 @Override
 public void onRoomInfoChange(TRTCChatSalonDef.RoomInfo roomInfo) {
@@ -266,7 +269,7 @@ public void onRoomInfoChange(TRTCChatSalonDef.RoomInfo roomInfo) {
     mRoomName = roomInfo.roomName;
     // The UI can display the title and other information.
 }
-
+   
 // 6. You receive an `onAnchorEnterSeat` notification.
 @Override
 public void onAnchorEnterSeat(TRTCChatSalonDef.UserInfo userInfo) {
@@ -278,13 +281,14 @@ public void onAnchorEnterSeat(TRTCChatSalonDef.UserInfo userInfo) {
 
 ### Step 7. Mic on/off
 
-<dx-tabs>
-::: Room owner
+
+#### Room owner
 1. A room owner can invite a listener to speak by passing in the `userId` of the listener to `pickSeat`. All members in the room will receive an `onAnchorEnterSeat` notification.
 2. A room owner can remove a speaker by passing in the speaker’s `userId` to `kickSeat`. All members in the room will receive an `onAnchorLeaveSeat` notification.
-
+   
 ![](https://main.qcloudimg.com/raw/6b1b013454637a6074aae1170f733d5a.png)
 After a speaker list operation, the order in which different notifications are sent is: callbacks > independent events such as `onAnchorEnterSeat`.
+
 <dx-codeblock>
 ::: java java
 // 1. The room owner invites a listener to speak
@@ -296,19 +300,20 @@ mTRTCChatSalon.pickSeat("123", new TRTCChatSalonCallback.ActionCallback() {
         }
     }
 });
-
+   
 // 3. The room owner receives a notification that someone became a speaker, and can determine whether it is the listener he or she invited
 public void onAnchorEnterSeat(TRTCChatSalonDef.UserInfo user) {
 }
 :::
 </dx-codeblock>
-:::
-::: Listener
+
+#### Listener
 1. A listener can become a speaker by calling `enterSeat`. All members in the room will receive an `onAnchorEnterSeat` notification.
 2. A speaker can become a listener by calling `leaveSeat`. All members in the room will receive an `onAnchorLeaveSeat` notification.
-
+   
 ![](https://main.qcloudimg.com/raw/da788fc08054bc473c417d4bb3cdbecc.png)
 After a speaker list operation, the order in which different notifications are sent is: callbacks > independent events such as `onAnchorEnterSeat`.
+
 <dx-codeblock>
 ::: java java
 // 1. The listener becomes a speaker
@@ -320,35 +325,33 @@ mTRTCChatSalon.enterSeat(new TRTCChatSalonCallback.ActionCallback() {
         }
     }
 });
-
+   
 // 3. The listener receives a notification that someone became a speaker and can determine whether it is him/herself
 public void onAnchorEnterSeat(int index, TRTCChatSalonDef.UserInfo user) {
 }
 :::
 </dx-codeblock>
-:::
-</dx-tabs>
+
 
 
 [](id:model.step8)
 ### Step 8. Use signaling for invitations
 If you want listeners and room owners to obtain each other’s consent before performing the above actions in your app, you can use signaling for invitation sending.
 
-<dx-tabs>
-::: Listener requesting to speak
+#### Listener requesting to speak
 1. A listener calls `sendInvitation`, passing in information including the room owner’s `userId` and custom command words. The function will return an `inviteId`, which should be recorded.
 2. The room owner receives an `onReceiveNewInvitation` notification, and a window pops up on the UI asking the room owner whether to approve the request.
 3. The room owner approves the request, and calls `acceptInvitation`, with the `inviteId` passed in.
 4. The listener receives an `onInviteeAccepted` notification and calls `enterSeat` to become a speaker.
 
 ![](https://main.qcloudimg.com/raw/7b7d4c943bc5edc4bbcf3b5d1542f1f2.png)
-
+  
 <dx-codeblock>
 ::: java java
 // Listener
 // 1. Call `sendInvitation` to request to speak
 String inviteId = mTRTCChatSalon.sendInvitation("ENTER_SEAT", ownerUserId, "123", null);
-
+   
 // 2. Become a speaker upon receiving approval from the room owner
 @Override
 public void onInviteeAccepted(String id, String invitee) {
@@ -356,7 +359,7 @@ public void onInviteeAccepted(String id, String invitee) {
         mTRTCChatSalon.enterSeat(null);
     }
 }
-
+   
 // Room owner
 // 1. Receive the request
  @Override
@@ -368,8 +371,7 @@ public void onReceiveNewInvitation(final String id, String inviter, String cmd, 
 }
 :::
 </dx-codeblock>
-:::
-::: Room owner inviting listener to speak
+#### Room owner inviting listener to speak
 1. The room owner calls `sendInvitation`, passing in information including the listener's `userId` and custom command words. The function will return an `inviteId`, which should be recorded.
 2. The listener receives an `onReceiveNewInvitation` notification, and a window pops up asking the listener whether to agree to speak.
 3. The listener agrees, and calls `acceptInvitation` with `inviteId` passed in.
@@ -382,7 +384,7 @@ public void onReceiveNewInvitation(final String id, String inviter, String cmd, 
 // Room owner
 // 1. Call `sendInvitation` to invite listener `123` to speak
 String inviteId = mTRTCChatSalon.sendInvitation("PICK_SEAT", ownerUserId, "123", null);
-
+   
 // 2. Make the listener a speaker upon receiving approval from the listener
 @Override
 public void onInviteeAccepted(String id, String invitee) {
@@ -390,7 +392,7 @@ public void onInviteeAccepted(String id, String invitee) {
         mTRTCChatSalon.pickSeat(null);
     }
 }
-
+   
 // Listener
 // 1. Receive the request
  @Override
@@ -402,15 +404,15 @@ public void onReceiveNewInvitation(final String id, String inviter, String cmd, 
 }
 :::
 </dx-codeblock>
-:::
-</dx-tabs>
+
 
 
 [](id:model.step9)
 ### Step 9. Enable text chat and on-screen comments
 - Call `sendRoomTextMsg` to send common text messages. All users in the room will receive an `onRecvRoomTextMsg` callback.
   IM has its default content moderation rules. Text messages that contain restricted terms will not be forwarded by the cloud.
-  <dx-codeblock>
+  
+<dx-codeblock>
   ::: java java
   // Sender: send text messages
   mTRTCChatSalon.sendRoomTextMsg("Hello Word!", null);
