@@ -19,6 +19,7 @@ Before calling the [CreateAlarmPolicy](https://intl.cloud.tencent.com/document/p
 > ?If no key has been created, please click **Create Key** to create one.
 
 #### Preparing alarm policy type
+
  You can query all policy types through the [DescribeAllNamespaces](https://intl.cloud.tencent.com/document/product/248/39319) API in the following steps:
 1. Log in to the [API Explorer console](https://console.cloud.tencent.com/api/explorer?Product=monitor&Version=2018-07-24&Action=DescribeAllNamespaces) and enter the input parameters as shown below:
 <table>
@@ -47,7 +48,8 @@ Before calling the [CreateAlarmPolicy](https://intl.cloud.tencent.com/document/p
 		<td>Optional</td>
 	</tr>
 </table>
-3. Click **Online Call** > **Send Request** to get the response, where `Response.QceNamespacesNew.N.Id` is the `Namespace` required by alarm policy creation. 
+
+2. Click **Online Call** > **Send Request** to get the response, where `Response.QceNamespacesNew.N.Id` is the `Namespace` required by alarm policy creation. 
 
 
   >! Here, `Namespace` is the alarm policy type, which is different from the Tencent Cloud service namespace used to pull monitoring data.
@@ -84,6 +86,7 @@ Before calling the [CreateAlarmPolicy](https://intl.cloud.tencent.com/document/p
 	</tr>
 </table>
 2. Click **Online Call** > **Send Request** on the right to get the response, where `Response.Metrics.N` lists all the alarm metrics under the policy type. 
+
 #### Preparing event list
 You can query all the alarm events under the policy type through the [DescribeAlarmEvents](https://intl.cloud.tencent.com/document/product/248/39324) API.
 
@@ -111,7 +114,7 @@ You can query all the alarm events under the policy type through the [DescribeAl
 		<td>Enter the alarm policy type obtained in the "Preparing alarm policy type" step, i.e., `Response.QceNamespacesNew.N.Id` in the returned result</td>
 	</tr>
 </table>
-2. Click **Online Call** > **Send Request** to get the response, where `Response.Events.N.EventName` is the `EventName` required by alarm policy creation.
+2. Click <b>Online Call</b> > <b>Send Request</b> to get the response, where `Response.Events.N.EventName` is the `EventName` required by alarm policy creation.
 
 
 
