@@ -104,12 +104,7 @@
 | [网站备案](https://intl.cloud.tencent.com/document/product/1022)   | 服务级    | &#10003;   | -   |  - |	- |	
 | [SSL证书](https://intl.cloud.tencent.com/document/product/1007)   | 资源级    | &#10003;   | -   |  - |	- |	
 
-## 网络安全	
 
- | 服务                                                          | 授权粒度 | 控制台 | 根据标签进行授权 |  服务角色 |	参考文档 |
-| ----------------------------------------------------------- | ------ | -------- | ----- | ---- | ---- |
-| [宙斯盾安全防护](https://intl.cloud.tencent.com/document/product/685)    | -      | -   | -   |  &#10003;    |- |
->?<sup>1</sup> DDoS 防护（大禹）中  [BGP 高防包](https://intl.cloud.tencent.com/document/product/1029)、[BGP 高防 IP](https://intl.cloud.tencent.com/document/product/297)均已支持使用 CAM。
 
 ## 数据安全
 
@@ -159,7 +154,7 @@
 | 服务                                                        | 授权粒度 | 控制台 | 根据标签进行授权 |  服务角色 |	参考文档 |
 | ----------------------------------------------------------- | ------ | -------- | ----- |  ---- |	 ---- |		
 | [游戏多媒体引擎](https://intl.cloud.tencent.com/document/product/607)  | 资源级 | &#10003;| &#10003;   |  -    |	 -   |
-| [游戏服务器引擎](https://intl.cloud.tencent.com/document/product/1055)  | 资源级 | &#10003;| &#10003;   |  &#10003;    |  [访问管理指南](https://intl.cloud.tencent.com/zh/document/product/1055/37776)   |
+| [游戏服务器伸缩](https://intl.cloud.tencent.com/document/product/1055)  | 资源级 | &#10003;| &#10003;   |  &#10003;    |  [访问管理指南](https://intl.cloud.tencent.com/zh/document/product/1055/37776)   |
 | [游戏玩家匹配](https://intl.cloud.tencent.com/document/product/1072) | 资源级   | &#10003; | &#10003;         | &#10003; | - |
 
 	
