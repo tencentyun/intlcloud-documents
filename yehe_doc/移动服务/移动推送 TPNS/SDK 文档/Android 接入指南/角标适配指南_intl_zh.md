@@ -23,8 +23,9 @@ Android 阵营各厂商机型角标开放能力不同，移动推送 TPNS 对推
 4. 在【高级设置】配置项中，开启角标数字：
 ![](https://main.qcloudimg.com/raw/bd1156cf0106d3894c5aa900884c3988.png)
 
-#### 方式2：通过\sPush\sAPI\s设置
-    在推送消息体 `body.message.android` 下添加字段 "badge_type" ，属性如下：
+#### 方式2：通过Push API设置
+在推送消息体 `body.message.android` 下添加字段 "badge_type" ，属性如下：
+
 <table>
 <thead>
 <tr>
@@ -53,7 +54,7 @@ Android 阵营各厂商机型角标开放能力不同，移动推送 TPNS 对推
 消息体示例：
 
 <dx-codeblock>
-::: json
+:::  json
 {
 	"audience_type": "token",
 	"expire_time": 3600,
@@ -144,8 +145,7 @@ XGPushConfig.setBadgeNum(Context context, int setNum);
 
 为能实现角标修改的正确效果，请首先为应用添加华为手机上的角标读写权限，具体实现为在应用 AndroidManifest.xml 文件的 manifest 标签下添加以下权限配置：
 
-```
-xml
+```xml
 <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE"/>
 ```
 
@@ -158,8 +158,7 @@ xml
 
 华为手机支持角标自动增减1，接口如下：
 
-```
-java
+```java
 	/**
 	 * 华为手机角标修改接口
 	 *
@@ -192,8 +191,7 @@ java
 
 为能实现角标修改的正确效果，请首先为应用添加 vivo 手机上的角标读写权限，具体实现为在应用 AndroidManifest.xml 文件的 manifest 标签下添加以下权限配置：
 
-```
-xml
+```xml
 <uses-permission android:name="com.vivo.notification.permission.BADGE_ICON" />
 ```
 
