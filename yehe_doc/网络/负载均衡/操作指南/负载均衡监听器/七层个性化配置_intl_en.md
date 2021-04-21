@@ -15,7 +15,7 @@ Currently, CLB custom configuration supports the following fields:
 |  client_header_timeout  | 60s |  [30-120]s | Timeout period of obtaining a client request header; in case of timeout, a 408 error will be returned.|
 |  client_header_buffer_size | 4k |[1-256]k | Size of default buffer where a client request header is stored. |
 |  client_body_timeout | 60s |  [30-120]s | Timeout period of obtaining a client request body, which is not the time for obtaining the entire body but refers to the idle period without data transmission; in case of timeout, a 408 error will be returned. |
-|  client_max_body_size | 60M |[1-2048]M| <ul><li>Default configuration range: 1 MB - 256 MB; it can be directly configured.</li><li>Maximum size: 2,048 MB; if `client_max_body_size` is more than 256 MB, the value of <a href="#buffer">proxy_request_buffering</a> must be "off".</li></ul> |
+|  client_max_body_size | 60M |[1-10240]M| <ul><li>Default configuration range: 1 MB - 256 MB; it can be directly configured.</li><li>Maximum size: 2,048 MB; if `client_max_body_size` is more than 256 MB, the value of <a href="#buffer">proxy_request_buffering</a> must be "off".</li></ul> |
 |  keepalive_timeout | 75s | [0-3600]s| `Client-server` persistent connection hold time; if it is set to 0, persistent connection is prohibited. |
 |  add_header |Custom | - | Specific header field returned to the client in the format of `add_header xxx yyy`. |
 |  more_set_headers |Custom| - | Specific header field returned to the client in the format of `more_set_headers "A:B"`. |
