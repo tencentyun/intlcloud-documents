@@ -101,12 +101,6 @@ Definitions:
 | [ICP Filing Registration](https://intl.cloud.tencent.com/document/product/1022)   | Service level | &#10003;   | -   |  - |- | 
 | [SSL Certificates Service](https://intl.cloud.tencent.com/document/product/1007)   | Resource level    | &#10003;   | -   |  - | - | 
 
-## Network Security 
-
- | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | Reference Document |
-| ----------------------------------------------------------- | ------ | -------- | ----- | ---- | ---- |
-| [Aegis Anti-DDoS](https://intl.cloud.tencent.com/document/product/685)    | -      | -   | -   |  &#10003;    |- |
->?<sup>1</sup> In Anti-DDoS, [Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029) and [Anti-DDoS Advanced](https://intl.cloud.tencent.com/document/product/297) support CAM.
 
 ## Data Security
 
@@ -156,7 +150,7 @@ Definitions:
 | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | Reference Document |
 | ----------------------------------------------------------- | ------ | -------- | ----- |  ---- |  ---- |
 | [Game Multimedia Engine (GME)](https://intl.cloud.tencent.com/document/product/607)  | Resource level | &#10003;| &#10003;   |  -    |  -   |
-| [Game Server Engine](https://intl.cloud.tencent.com/document/product/1055)  | Resource level | &#10003;| &#10003;   |  &#10003;    | [CAM Guide](https://intl.cloud.tencent.com/zh/document/product/1055/37776)    |
+| [Game Server Elastic-scaling](https://intl.cloud.tencent.com/document/product/1055)  | Resource level | &#10003;| &#10003;   |  &#10003;    | [CAM Guide](https://intl.cloud.tencent.com/zh/document/product/1055/37776)    |
 | [Game Player Matchmaking](https://intl.cloud.tencent.com/document/product/1072) | Resource level    | &#10003; | &#10003;         | &#10003; | - |
 
 ## Mobile Services
