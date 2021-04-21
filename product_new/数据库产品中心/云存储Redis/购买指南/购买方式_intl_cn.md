@@ -1,7 +1,7 @@
 
 腾讯云为您提供了两种方式购买云数据 Redis：控制台购买和 API 购买。
 ## 控制台购买
-用户可通过 [Redis 购买页](https://buy.cloud.tencent.com/redis) 进行购买。根据计费模式的不同，用户可以购买包年包月或按量计费两种不同类型的云数据库 Redis，下面介绍购买这两种服务的具体操作。
+用户可通过 [Redis 购买页](https://buy.cloud.tencent.com/redis) 进行购买。用户可以购买按量计费类型的云数据库 Redis，下面介绍购买这种服务的具体操作。
 
 ### 按量计费
 
