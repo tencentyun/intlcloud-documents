@@ -50,10 +50,10 @@ When an API Gateway trigger receives a request, it sends the event data to the b
     "stage": "release"
   },
   "headers": {
-    "Accept-Language": "en-US,en,cn",
-    "Accept": "text/html,application/xml,application/json",
-    "Host": "service-3ei3tii4-251000691.ap-guangzhou.apigateway.myqloud.com",
-    "User-Agent": "User Agent String"
+    "accept-Language": "en-US,en,cn",
+    "accept": "text/html,application/xml,application/json",
+    "host": "service-3ei3tii4-251000691.ap-guangzhou.apigateway.myqloud.com",
+    "user-Agent": "User Agent String"
   },
   "body": "{\"test\":\"body\"}",
   "pathParameters": {
