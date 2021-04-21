@@ -201,7 +201,7 @@ Request 멤버 설명:
 | file         | 구조 함수 또는 set 방법 | 로컬 파일                                                     | File           |아니오|
 | input        | 구조 함수 또는 set 방법 | 입력 스트림                                                       | InputStream    | 아니오|
 | metadata     | 구조 함수 또는 set 방법 | 객체의 메타데이터                                                 | ObjectMetadata | 아니오|
-|trafficLimit | set 방법| 객체 업로드의 트래픽 제어에 사용됩니다. 단위는 bit/s이며, 기본적으로 트래픽 제어가 비활성화되어 있습니다. | Int|아니오|
+|trafficLimit | set 방법| 객체 업로드의 트래픽 제어에 사용됩니다. 단위는 bit/s이며, 기본적으로 트래픽 제어가 비활성화되어 있습니다. | Int|아니오| |
 
 ObjectMetadata 유형은 객체의 메타데이터를 기록하는 데 사용됩니다. 주요 멤버 설명은 다음과 같습니다.
 
