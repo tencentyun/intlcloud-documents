@@ -24,6 +24,7 @@ For businesses highly related to regions, you can use CLB instances to different
 
 
 ## Restrictions
+- SCF functions can only be bound with CLB instances in Guangzhou, Shanghai, Beijing, Chengdu, Hong Kong (China), Singapore, Mumbai, Tokyo, and Silicon Valley regions.
 - SCF functions can only be bound with CLB instances of bill-by-IP accounts but not with bill-by-CVM accounts. If you are using a bill-by-CVM account, we recommend upgrading it to a bill-by-IP account. For more information, please see [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246). 
 - SCF functions cannot be bound with classic CLB instances.
 - SCF functions cannot be bound with classic network CLB instances.
