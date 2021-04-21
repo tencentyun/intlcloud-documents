@@ -1,7 +1,7 @@
 ### 免费额度相关
 
 [COS 有免费额度吗?](https://intl.cloud.tencent.com/document/product/436/10373#does-cos-have-a-free-tier.3F)
-[享受免费额度为何仍会欠费（扣费）？](https://intl.cloud.tencent.com/document/product/436/10373#why-is-my-account-still-in-arrears-(fees-are-deducted)-even-if-i-am-entitled-to-the-free-tier.3F)
+[享受免费额度为何仍会欠费（扣费）？](https://intl.cloud.tencent.com/zh/document/product/436/10373#.E4.BA.AB.E5.8F.97.E5.85.8D.E8.B4.B9.E9.A2.9D.E5.BA.A6.E4.B8.BA.E4.BD.95.E4.BB.8D.E4.BC.9A.E6.AC.A0.E8.B4.B9.EF.BC.88.E6.89.A3.E8.B4.B9.EF.BC.89.EF.BC.9F)
 
 
 ### 收费模式相关
