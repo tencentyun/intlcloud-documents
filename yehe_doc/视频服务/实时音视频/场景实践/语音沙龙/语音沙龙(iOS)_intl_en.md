@@ -125,6 +125,7 @@ Copy all the files in `iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCChatSalonDemo/model` 
 <td>callback</td>
 <td>Login callback. The code is 0 if login is successful.</td>
 </tr></table>
+
 <dx-codeblock>
 ::: Swift Swift
 // Swift sample
@@ -135,14 +136,14 @@ class YourController {
         return TRTCChatSalon.shared()
     }
     
-
+   
     // Other code logic
     ......
-
+   
 }
 // Set the `chatSalon` delegate.
 self.chatSalon.setDelegate(delegate: self)
-
+   
 // Below is the calling method. We recommend you use `weak self` in the closure to prevent circular references. The `weak self` part is not included in the sample code below.
 self.chatSalon.login(sdkAppID: sdkAppID, userID: userId, userSig: userSig) { [weak self] (code, message) in
     guard let `self` = self else { return }
@@ -160,14 +161,15 @@ self.chatSalon.login(sdkAppID: sdkAppID, userID: userId, userSig: userSig) { [we
 3. You will receive an `onAnchorEnterSeat` notification that someone becomes a speaker, and mic capturing will be enabled automatically.
 
 ![](https://main.qcloudimg.com/raw/8966e7bf7dde578ad1ed85544c01b249.png)
+
 <dx-codeblock>
 ::: Swift Swift
 // 1. Set your nickname and profile photo
 self.chatSalon.setSelfProfile(userName: userName, avatarUrl: avatarURL) { (code, message) in
     // Result callback           
 }
-
-
+  
+   
 // 2. Create a room
 let param = ChatSalonParam.init()
 param.roomName = "Room name"
@@ -186,7 +188,7 @@ self.chatSalon.createRoom(roomID: yourRoomID, roomParam: param) { (code, message
         }
     }
 }
-
+   
 // 4. You receive an `onAnchorEnterSeat` notification after becoming a speaker
 func onAnchorEnterSeat(user: ChatSalonUserInfo) {
 }
@@ -208,21 +210,22 @@ func onAnchorEnterSeat(user: ChatSalonUserInfo) {
 6. You will also receive an `onAnchorEnterSeat` notification that someone becomes a speaker.
 
 ![](https://main.qcloudimg.com/raw/117b4dbdaf146cc89b681d067503f0f0.png)
+
 <dx-codeblock>
 ::: Swift Swift
 // 1. Set your nickname and profile photo
 self.chatSalon.setSelfProfile(userName: userName, avatarUrl: avatarURL) { (code, message) in
     // Result callback           
 }
-
+  
 // 2. Get the room list from the backend. Suppose it is `roomList`
 let roomList: [Int] = getRoomIDList() // The function you use to get the list of room IDs
-
+  
 // 3. Call `getRoomInfoList` to get the details of the room
 self.chatSalon.getRoomInfoList(roomIdList: roomIdsInt) { (code, message, roomInfos: [ChatSalonInfo]) in
     // Get the result. Refresh the UI
 }
-
+  
 // 4. Pass in `roomid` to enter the room
 self.chatSalon.enterRoom(roomID: roomInfo.roomID) { (code, message) in
     // Callback for the room entry result
@@ -230,12 +233,12 @@ self.chatSalon.enterRoom(roomID: roomInfo.roomID) { (code, message) in
        // Entered room
     }
 }
-
+  
 // 5. After successful room entry, you receive an `onRoomInfoChange` notification
 func onRoomInfoChange(roomInfo: ChatSalonInfo) {
     // Update the room name and other information.
 }
-
+  
 // 6. You receive an `onAnchorEnterSeat` notification.
 func onAnchorEnterSeat(user: ChatSalonUserInfo) {
     // Handle the mic-on event.
@@ -247,8 +250,7 @@ func onAnchorEnterSeat(user: ChatSalonUserInfo) {
 
 ### Step 7. Mic on/off
 
-<dx-tabs>
-::: Room owner
+#### Room owner
 
 1. A room owner can invite a listener to speak by passing in the `userId` of the listener to `pickSeat`. All members in the room will receive an `onAnchorEnterSeat` notification.
 2. A room owner can remove a speaker by passing in the speaker’s `userId` to `kickSeat`. All members in the room will receive an `onAnchorLeaveSeat` notification.
@@ -263,7 +265,7 @@ After a speaker list operation, the order in which different notifications are s
 self.chatSalon.pickSeat(userID: "123") { (code, message) in
     // 2. The callback is received.
 }
-
+  
 // 3. The room owner receives a notification that someone became a speaker, and can determine whether it is the listener he or she invited
 func onAnchorEnterSeat(user: ChatSalonUserInfo) {
     // Handle the mic-on event.
@@ -271,29 +273,28 @@ func onAnchorEnterSeat(user: ChatSalonUserInfo) {
 :::
 </dx-codeblock>
 
-:::
-::: Listener
+#### Listener
 
 1. A listener can become a speaker by calling `enterSeat`. All members in the room will receive an `onAnchorEnterSeat` notification.
 2. A speaker can become a listener by calling `leaveSeat`. All members in the room will receive an `onAnchorLeaveSeat` notification.
 
 ![](https://main.qcloudimg.com/raw/da788fc08054bc473c417d4bb3cdbecc.png)
 After a speaker list operation, the order in which different notifications are sent is: callbacks > independent events such as `onAnchorEnterSeat`.
+
 <dx-codeblock>
 ::: Swift Swift
 // 1. The listener becomes a speaker
 self.chatSalon.enterSeat { (code, message) in
     // 2. The callback is received.
 }
-
+  
 // 3. The listener receives a notification that someone became a speaker and can determine whether it is him/herself
 func onAnchorEnterSeat(user: ChatSalonUserInfo) {
     // Handle the mic-on event.
 }
 :::
 </dx-codeblock>
-:::
-</dx-tabs>
+
 
 
 [](id:model.step8)
@@ -302,8 +303,7 @@ func onAnchorEnterSeat(user: ChatSalonUserInfo) {
 
 If you want listeners and room owners to obtain each other’s consent before performing the above actions in your application, you can use signaling for invitation sending.
 
-<dx-tabs>
-::: Listener requesting to speak
+#### Listener requesting to speak
 
 1. A listener calls `sendInvitation`, passing in information including the anchor's `userId` and custom command words. The function will return an `inviteId`, which should be recorded.
 2. The room owner receives an `onReceiveNewInvitation` notification, and a window pops up on the UI asking the room owner whether to approve the request.
@@ -311,6 +311,7 @@ If you want listeners and room owners to obtain each other’s consent before pe
 4. The listener receives an `onInviteeAccepted` notification and calls `enterSeat` to become a speaker.
 
 ![](https://main.qcloudimg.com/raw/da788fc08054bc473c417d4bb3cdbecc.png)
+
 <dx-codeblock>
 ::: Swift Swift
 // Listener
@@ -326,7 +327,7 @@ func onInviteeAccepted(identifier: String, invitee: String) {
         }
     }
 }
-
+  
 // Room owner
 // 1. Receive the request
 func onReceiveNewInvitation(identifier: String, inviter: String, cmd: String, content: String) {
@@ -354,7 +355,7 @@ func onReceiveNewInvitation(identifier: String, inviter: String, cmd: String, co
 let inviteId = self.chatSalon.sendInvitation(cmd: "PICK_SEAT", userID: ownerUserId, content: "2") { (code, message) in
     // Callback for the request sending result
 }
-
+  
 // 2. Make the listener a speaker upon receiving approval from the listener
 func onInviteeAccepted(identifier: String, invitee: String) {
     if identifier == selfID {
@@ -363,7 +364,7 @@ func onInviteeAccepted(identifier: String, invitee: String) {
         }
     }
 }
-
+  
 // Listener
 // 1. Receive the request
 func onReceiveNewInvitation(identifier: String, inviter: String, cmd: String, content: String) {
@@ -384,12 +385,13 @@ func onReceiveNewInvitation(identifier: String, inviter: String, cmd: String, co
 
 - Call `sendRoomTextMsg` to send common text messages. All users in the room will receive an `onRecvRoomTextMsg` callback.
   IM has its default content moderation rules. Text messages that contain restricted terms will not be forwarded by the cloud.
-  <dx-codeblock>
+
+<dx-codeblock>
   ::: Swift Swift
   // Sender: send text messages
   self.chatSalon.sendRoomTextMsg(message: message) { (code, message) in
         
-
+  
 }
 // Recipient: listen for text messages
 func onRecvRoomTextMsg(message: String, userInfo: ChatSalonUserInfo) {
@@ -400,8 +402,9 @@ func onRecvRoomTextMsg(message: String, userInfo: ChatSalonUserInfo) {
 
 - Call `sendRoomCustomMsg` to send custom (signaling) messages. All users in the room will receive an `onRecvRoomCustomMsg` callback.
   Custom messages are often used to transfer custom signals, e.g., giving and broadcasting likes.
-  <dx-codeblock>
-  ::: Swift Swift
+
+<dx-codeblock>
+::: Swift Swift
   // For example, a sender can customize commands to distinguish on-screen comments and likes
   // For example, use "CMD_DANMU" to indicate on-screen comments and "CMD_LIKE" to indicate likes
   self.chatSalon.sendRoomCustomMsg(cmd: “CMD_DANMU”, message: "hello world", callback: nil)
@@ -415,5 +418,5 @@ func onRecvRoomTextMsg(message: String, userInfo: ChatSalonUserInfo) {
         // A like is received
     }
   }
-  :::
-  </dx-codeblock>
+:::
+</dx-codeblock>
