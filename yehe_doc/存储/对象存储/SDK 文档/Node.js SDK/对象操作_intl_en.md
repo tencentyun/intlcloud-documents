@@ -784,7 +784,7 @@ function(err, data) { ... }
 | - UploadIdMarker | Specifies the `UploadId` where the list starts. | String |
 | - NextKeyMarker | If the returned list is truncated, the `NextKeyMarker` returned will be the starting point of the subsequent list. | String |
 | - NextUploadIdMarker | If the returned list is truncated, the `UploadId` returned will be the starting point of the subsequent list. | String |
-| MaxUploads | Sets the maximum number of entries returned. Value range: 1-1000; default value: `1000` | String | No |
+| MaxUploads | Sets the maximum number of entries returned. Value range: 1-1000; default value: `1000` | String | 
 | - IsTruncated | Indicates whether returned objects are truncated. Valid value: `true` or `false` | String|
 | - Prefix | Matching prefix for object keys. This parameter limits the response to contain only object keys with the specified prefix. | String |
 | - Delimiter | A delimiter is a separating symbol used to group object keys. It is usually `/`. The identical paths between `Prefix` or, if no `Prefix` is specified, the beginning and the first `delimiter` are grouped and defined as a common prefix. All common prefixes will be listed. | String |
@@ -1036,7 +1036,7 @@ function(err, data) { ... }
 | NextPartNumberMarker  | If the returned list is truncated, the `NextMarker` returned will be the starting point of the subsequent list.   | string    |
 | - MaxParts | Maximum number of entries returned at a time | String |
 | - IsTruncated | Indicates whether the returned list is truncated. Valid values: `true`, `false` | String |
-| - Part | Array | Part information list | ObjectArray |
+| - Part | Array Part information list | ObjectArray |
 | - - PartNumber | Part number | String |
 | - - LastModified | Last modified time of a part | String |
 | - - ETag | MD5 checksum of a part | String |
