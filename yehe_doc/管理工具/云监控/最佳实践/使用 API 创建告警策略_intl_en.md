@@ -14,7 +14,7 @@ Before calling the [CreateAlarmPolicy](https://intl.cloud.tencent.com/document/p
 
  1. Go to the [API Key Management](https://console.cloud.tencent.com/cam/capi) page in the CAM console.
  2. Click **Show** to get the `SecretKey`.
- ![](https://main.qcloudimg.com/raw/6ba975475ddd17f82bca8100eb2efb19.png)
+
 
 > ?If no key has been created, please click **Create Key** to create one.
 
@@ -47,8 +47,7 @@ Before calling the [CreateAlarmPolicy](https://intl.cloud.tencent.com/document/p
 		<td>Optional</td>
 	</tr>
 </table>
-3. Click **Online Call** > **Send Request** to get the response, where `Response.QceNamespacesNew.N.Id` is the `Namespace` required by alarm policy creation. The following figure shows the alarm policy types of CVM:
-    ![](https://main.qcloudimg.com/raw/19edabd3808c034c318845ae835ebc7f.png)
+3. Click **Online Call** > **Send Request** to get the response, where `Response.QceNamespacesNew.N.Id` is the `Namespace` required by alarm policy creation. 
 
 
   >! Here, `Namespace` is the alarm policy type, which is different from the Tencent Cloud service namespace used to pull monitoring data.
@@ -84,8 +83,7 @@ Before calling the [CreateAlarmPolicy](https://intl.cloud.tencent.com/document/p
 		<td>Enter the alarm policy type obtained in the "Preparing alarm policy type" step, i.e., `Response.QceNamespacesNew.N.Id` in the returned result</td>
 	</tr>
 </table>
-2. Click **Online Call** > **Send Request** on the right to get the response, where `Response.Metrics.N` lists all the alarm metrics under the policy type. The following figure shows the list of CVM metrics:
- ![](https://main.qcloudimg.com/raw/da93d3e304a016a3ce7c7e4081835426.png)
+2. Click **Online Call** > **Send Request** on the right to get the response, where `Response.Metrics.N` lists all the alarm metrics under the policy type. 
 #### Preparing event list
 You can query all the alarm events under the policy type through the [DescribeAlarmEvents](https://intl.cloud.tencent.com/document/product/248/39324) API.
 
@@ -114,7 +112,7 @@ You can query all the alarm events under the policy type through the [DescribeAl
 	</tr>
 </table>
 2. Click **Online Call** > **Send Request** to get the response, where `Response.Events.N.EventName` is the `EventName` required by alarm policy creation.
-    ![](https://main.qcloudimg.com/raw/de44fb8113250229bfbf5d7985b381da.png)
+
 
 
 ## Directions
@@ -158,9 +156,9 @@ This document describes how to use APIs such as [CreateAlarmPolicy](https://intl
 8. If you want to trigger an event alarm, you need to configure the `EventCondition` parameter. Under `EventCondition`, you **only need** to enter the **`EventName`** obtained in the <a href="#preparationsteps">Preparing event list</a> step in `Rules.N.MetricName`, and you can leave other parameters empty.
 9. Enter the alarm notification template ID in `NoticeIds.N`, such as notice-qvq836vc, which can be obtained through the [DescribeAlarmNotices](https://intl.cloud.tencent.com/document/product/248/39300) API.
 10. After entering the above parameters, click **Online Call** > **Send Request**. The following figure shows the successful creation of the alarm policy for CVM - basic monitoring.
-![](https://main.qcloudimg.com/raw/c671b947114a3058b57918b7b1a44d01.png)
+
 11. After the creation is successful, you can view the alarm policy on the [Alarm Policy](https://console.cloud.tencent.com/monitor/alarm2/policy) page in the Cloud Monitor console.
-![](https://main.qcloudimg.com/raw/f40337bf7649bc856c56dc76893f4c39.png)
+
 
 
 
@@ -174,7 +172,7 @@ This document describes how to use APIs such as [CreateAlarmPolicy](https://intl
 5. Enter 0 in **GroupId**.
 6. Enter either the `InstanceGroupId` or `Dimensions` as detailed below:
 	- **InstanceGroupId:** instance group ID. If you want to bind alarm objects by instance group, you need to pass in the instance group ID (such as 1234), which can be found on the [instance group](https://console.cloud.tencent.com/monitor/instanceGroup) page in the Cloud Monitor console by clicking the corresponding instance name as shown below:
-		![](https://main.qcloudimg.com/raw/5ae5c7e894c88a133063909901ee562f.png)
+
 	- **Dimensions.N:** if you wany to bind an alarm policy by instance ID, you need to enter `Dimensions` as detailed below:
 <table>
 <thead>
@@ -198,9 +196,9 @@ This document describes how to use APIs such as [CreateAlarmPolicy](https://intl
 </tbody></table>
 7. Enter the `PolicyId` (Response.PolicyId) returned in the [Creating alarm policy](#createalarm) step in `PolicyId`, such as `policy-zg2sk27j`.
 8. After entering the above parameters, click **Online Call** > **Send Request**. The following figure shows that the alarm policy is successfully bound.
-   ![](https://main.qcloudimg.com/raw/bc9a7ff9a297cf8667bf2adcd6f965e9.png)
+
 9. After the creation is successful, you can view the number of instances associated with the corresponding alarm policy on the [Alarm Policy](https://console.cloud.tencent.com/monitor/alarm2/policy) page in the Cloud Monitor console.
-   ![](https://main.qcloudimg.com/raw/1807139db99cc2eac68d6a6ce3b8331c.png)
+
 
 
 
