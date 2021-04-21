@@ -13,7 +13,7 @@ This document describes the public network prices under different billing modes 
 </tr>
 </thead>
 <tbody><tr>
-<td>Chinese mainland (not including Hong Kong, Macao, and Taiwan), Seoul, Hong Kong (China)</td>
+<td>Chinese mainland (not including Hong Kong, Macao, and Taiwan), Seoul, Hong Kong (China), Jakarta</td>
 <td>0.12</td>
 </tr>
 <tr>
