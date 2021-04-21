@@ -1,32 +1,32 @@
->!This document mainly describes the access management of **TRTC**. For more access managements of other Tencent Cloud services, please see [CAM-Enabled Products](https://intl.cloud.tencent.com/document/product/598/10588).
+>!This document describes the management of access to **TRTC**. For access management of other Tencent Cloud services, see [CAM-Enabled Products](https://intl.cloud.tencent.com/document/product/598/10588).
 
-[Cloud Access Management](https://intl.cloud.tencent.com/document/product/598) (Cloud Access Management **CAM**) is a web service provided by Tencent Cloud that helps customers securely manage access to their Tencent Cloud account resources. CAM allows you to create, manage, or terminate users (groups) and provides identity management and policy management to control who is allowed to access and use your Tencent Cloud resources.
+[Cloud Access Management](https://intl.cloud.tencent.com/document/product/598) (Cloud Access Management **CAM**) is a web service provided by Tencent Cloud that helps customers securely manage access to their Tencent Cloud account resources. CAM allows you to create, manage, or terminate users or user groups and control who is allowed to access and use your Tencent Cloud resources through identity and policy management.
 
-TRTC has been connected to **CAM**. You can grant appropriate TRTC access permissions to sub-accounts as needed.
+TRTC has supported **CAM**. You can grant TRTC permissions to sub-accounts as needed. 
 
 ## Getting Started
 
-Before using CAM for TRTC, you need to have some knowledge of the basic concepts in CAM and TRTC, including:
+Before you start, make sure that you understand the basic concepts of CAM and TRTC, including:
 
 - CAM: [User Types](https://intl.cloud.tencent.com/document/product/598/32633) and [Policy](https://intl.cloud.tencent.com/document/product/598/10601) 
 - TRTC: [Application](https://intl.cloud.tencent.com/document/product/647/37714) and [SDKAppID](https://intl.cloud.tencent.com/document/product/647/37714)
 
 ## Use Cases
 
-### Permission isolation at Tencent Cloud service level
-Among the various departments using Tencent Cloud in an organization, department A takes charge of the TRTC service. Staff of department A need permission to access TRTC but not to other Tencent Cloud products. To this end, the root account can create a sub-account and only grant it TRTC-related permissions, and then provide it to department A.
+### Granting product-level permissions
+A company has multiple departments that are using Tencent Cloud’s products. Department A is solely responsible for TRTC-related business, and the company needs to grant the department access to TRTC but not to other Tencent Cloud products. To achieve this, the company can create a sub-account for department A under its root account and grant the sub-account only TRTC-related permissions.
 
-### Permission isolation at TRTC application level
-When multiple businesses in an organization are using TRTC, isolation is generally needed. Isolation involves resource isolation and permission isolation, of which the former is enabled by TRTC's application system and the latter implemented by TRTC access management. In this case, sub-accounts can be created for each business and granted permission to the relevant TRTC applications, so that each business can only access the specified application.
+### Granting application-level permissions
+A company has multiple businesses that are using TRTC and needs to isolate them from each other. There are two dimensions to isolation: resource isolation and permission isolation. The former is enabled by TRTC’s application system, and the latter by CAM. The company can create a sub-account for each of the businesses and grant them access only to the TRTC applications they are responsible for.
 
-### Permission isolation at TRTC operation level
-Product operations staff of a business using TRTC in an organization need to access the TRTC Console to get usage statistics, but they should be forbidden to perform sensitive operations (such as modifying relayed push and on-cloud recording configuration) so as to protect the business against any faulty operations. To meet such needs, you can create a custom policy that has permissions to log in to the TRTC Console and call usage statistics APIs, create a sub-account and bind it to that policy, and then deliver the sub-account information to the product operations staff.
+### Granting action-level permissions
+A company has a business that is using TRTC. It needs to grant the business’ operational staff access to the TRTC console so that they can obtain usage statistics, and at the same time deny them access to critical operations such as modifying relayed push and on-cloud recording configurations. To achieve this, the company can create a custom policy that has the permissions to use relevant APIs to log in to the TRTC console and view usage statistics, and associate the policy with the sub-account created for the operational staff.
 
 ## Authorization Granularity
-The core feature of CAM is to **allow or forbid the execution of certain operations to certain resources by certain accounts**. TRTC access management supports [resource-level authorization](https://intl.cloud.tencent.com/document/product/598/10588#.E7.AE.80.E4.BB.8B), the resource granularity is [Application](https://intl.cloud.tencent.com/document/product/647/37714), and the operation granularity is [TencentCloud API](https://intl.cloud.tencent.com/product/api), including [server APIs](https://intl.cloud.tencent.com/document/product/647/34260) and APIs that you may use to access the TRTC Console.
+In essence, CAM enables you to **allow or forbid specified accounts to access certain resources**. TRTC access management supports [resource-level authorization](https://intl.cloud.tencent.com/document/product/598/10588#.E7.AE.80.E4.BB.8B). The granularity of manageable resources is [TRTC applications](https://intl.cloud.tencent.com/document/product/647/37714), and the granularity of manageable actions is [TencentCloud APIs](https://intl.cloud.tencent.com/product/api), including [server APIs](https://intl.cloud.tencent.com/document/product/647/34260) and the APIs used to access the TRTC console. For more information, please see [Manageable Resources and Actions](https://intl.cloud.tencent.com/document/product/647/39549).
 
 
 
-## Limits
-- The resource granularity of TRTC access management is [Application](https://intl.cloud.tencent.com/document/product/647/37714), which cannot implement more refined access control (such as application information and configuration information).
-- Projects management is not available in TRTC access management. We recommend you use [tags](https://intl.cloud.tencent.com/document/product/651/13335) to manage cloud service resources.
+## Limitations
+- The granularity of manageable resources for TRTC access management is [applications](https://intl.cloud.tencent.com/document/product/647/37714). Access control of finer granularity (e.g., application information or configuration information) is not supported.
+- TRTC does not support project-level access management. We recommend that you use [tags](https://intl.cloud.tencent.com/document/product/651/13335) to manage your cloud service resources.

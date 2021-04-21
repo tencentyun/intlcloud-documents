@@ -15,8 +15,9 @@ See the following documents for how to integrate the C++ APIs.
 
 | API | Description |
 |-----|-----|
-| [addCallback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a6a8317825ffe59ddcf1159a778dd7577) | Sets the callback API [ITRTCCloudCallback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#classtrtc_1_1ITRTCCloudCallback). |
-| [removeCallback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ad088226e8af2d6764851efe7bd94652d) | Removes the event callback. |
+| [addCallback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a6a8317825ffe59ddcf1159a778dd7577) | Sets the callback API [`ITRTCCloudCallback`](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#classtrtc_1_1ITRTCCloudCallback). |
+| [removeCallback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ad088226e8af2d6764851efe7bd94652d) | Removes the callback. |
+
 
 
 ### Room APIs
@@ -40,7 +41,7 @@ See the following documents for how to integrate the C++ APIs.
 |-----|-----|
 | [startPublishing](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ac2f616263c108bf6ac5ef2b66b83a380) | Starts pushing to Tencent Cloud’s live streaming CDN. |
 | [stopPublishing](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ac4d3f88b6e067f32d1191878b6db1645) | Stops pushing to Tencent Cloud’s live streaming CDN. |
-| [startPublishCDNStream](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a26e2d0b06211185d52836ffbdeddc3d1) | Starts relaying to the live streaming CDN of another cloud. |
+| [startPublishCDNStream](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a26e2d0b06211185d52836ffbdeddc3d1) | Starts relaying to the live streaming CDN of a non-Tencent Cloud vendor. |
 | [stopPublishCDNStream](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a9cf56c1f3a9aadf4c6123f44e1494a1b) | Stops relaying to non-Tencent Cloud addresses. |
 | [setMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a8c835f1d49ab0f80a85569e030689850) | Sets On-Cloud MixTranscoding parameters. |
 
@@ -54,7 +55,7 @@ See the following documents for how to integrate the C++ APIs.
 | [updateLocalView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a6db572d1e387b21328c6c78de561838c) | Updates preview of the local video.
 | [stopLocalPreview](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#af7003d2c12f5f783115ada43a715abe7) | Stops local video capturing and preview. |
 | [muteLocalVideo](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a6070313a28d3302c94ad807c636eb60f) | Pauses/Resumes pushing local video data. |
-| [startRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a50ec31c281de91903a1ef492a2ec7997) | Starts pulling and displaying the video image of a specified remote user. |
+| [startRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a25f09552efac99d88a7aad53960146d7) | Starts pulling and displaying the image of a specified remote user. |
 | [updateRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a9f774f9abb7970fb32c3172fa3229fd2) | Updates the image of a remote user. |
 | [stopRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a20d2004010563e37804a6b82ed9d09ec) | Stops displaying the video image of a remote user and pulling the user’s video stream. |
 | [stopAllRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a7a55fb85c4135abfbe00af529cdaf9bc) | Stops displaying the video images of all users and pulling their video streams. |
@@ -63,7 +64,7 @@ See the following documents for how to integrate the C++ APIs.
 | [setVideoEncoderParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#aa2bc2739031035b40e8f2a76184c20d9) | Sets video encoder parameters. |
 | [setNetworkQosParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a374f1000d443de80d70747cba876f879) | Sets QoS control parameters. |
 | [setLocalRenderParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#acf1e58c46f0c160ab1a17706ea1aa735) | Sets rendering parameters for the local image (primary stream). |
-| [setVideoEncoderRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a932ff32ec07b20a0e0d83bb434cfb691) | Sets the rotation of encoded video images, i.e., images presented to remote users and recorded by the server. |
+| [setVideoEncoderRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a932ff32ec07b20a0e0d83bb434cfb691) | Sets the rotation degree of encoded video images, i.e., images presented to remote users and recorded by the server. |
 | [setVideoEncoderMirror](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a251af554d7257ec64e84027136ae21ef) | Sets the mirror mode of encoded images. |
 | [setRemoteRenderParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ab0bd203a8dd3c07910249b1c3e0df9e6) | Sets the rendering mode of a remote image. |
 | [enableSmallVideoStream](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a80648f76afbda35c9bf5d96701c62a9e) | Enables the dual-channel (big and small images) encoding mode. |
@@ -88,9 +89,11 @@ See the following documents for how to integrate the C++ APIs.
 | [enableAudioVolumeEvaluation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a3127ec82f1610ac2bc0cb7d32b9bb4b9) | Enables/Disables volume reminders. |
 | [startAudioRecording](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a15b74c793aea807ef9142230c088473b) | Starts audio recording. |
 | [stopAudioRecording](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a052a606496ce98cdc5a7e93098598a32) | Stops audio recording. |
+| [startLocalRecording](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a55c3e8982056532a6cce56e3f7f29241) | Starts local recording. |
+| [stopLocalRecording](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a8b9b6f0608e48c27fc7c646718cb41ba) | Stops local recording. |
 
 
-### Device APIs
+### Device API
 
 | API | Description |
 |-----|-----|
@@ -102,10 +105,10 @@ See the following documents for how to integrate the C++ APIs.
 | API | Description |
 |-----|-----|
 | [setBeautyStyle](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a78c7b8eaa17d721cfd6dcac0224dd50b) | Sets the strength of the beauty, brightening and rosy skin filters. |
-| [setWaterMark](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a4a1c376670ff4f3fdac8cf30bec78576) | Sets watermark. |
+| [setWaterMark](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a4a1c376670ff4f3fdac8cf30bec78576) | Sets watermarks. |
 
 
-### Music and voice effect APIs
+### Music and voice effect API
 
 | API | Description |
 |-----|-----|
@@ -123,7 +126,7 @@ See the following documents for how to integrate the C++ APIs.
 | [stopScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a0e09090fe4281c0e78d8eb38496a8ed0) | Stops screen sharing. |
 | [pauseScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a0dcd89ed2e23706239db98b55dd806d4) | Pauses screen sharing. |
 | [resumeScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a9dc10db068b9d8c6a0fcb8b085359f33) | Resumes screen sharing. |
-| [getScreenCaptureSources](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a3777e1506f1aa806bee116e7117993b5) | Enumerates shareable windows. You are recommended to call this API before calling `startScreenCapture`. |
+| [getScreenCaptureSources](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a3777e1506f1aa806bee116e7117993b5) | Enumerates shareable windows. We recommend that you call this API before calling `startScreenCapture`. |
 | [selectScreenCaptureTarget](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#adc372b21294cd36bf4f4af0d1ac6624a) | Sets screen sharing parameters. This method can be called during screen sharing. |
 | [setSubStreamEncoderParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#abdc3d6339afd741bd8d3ed88ea551282) | Sets encoder parameters for screen sharing. |
 | [setSubStreamMixVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#aff8dd1456e5bebff5495d84683c7f83e) | Sets audio mixing volume for screen sharing. |
@@ -132,35 +135,38 @@ See the following documents for how to integrate the C++ APIs.
 | [removeAllExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#abb20ff837f1f5955bea349ff95002a10) | Removes all windows from the exclusion list of screen sharing. |
 | [addIncludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a76c684e860bca4e48f06269261d73fc0) | Adds a specified window to the screen sharing list. Windows in the list will be shared if they are in the capturing area. |
 | [removeIncludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ae9e324dac071b6d2bbc7b6e2a676ea05) | Removes a specified window from the screen sharing list. |
-| [removeAllIncludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a5d2812b4068e89e6d2a422cd74257246) | Removes all windows from the inclusion list of screen sharing. |
+| [removeAllIncludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a5d2812b4068e89e6d2a422cd74257246) | Removes all windows from the screen sharing list. |
 
 
 ### Custom capturing and rendering APIs
 
 | API | Description |
 |-----|-----|
-| [enableCustomVideoCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ac9d547341170330a70623299b366c44a) | Enables custom video capturing. |
-| [sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a3a53ae79c1bd28825cb276c7555500fe) | Sends captured video data to the SDK. |
+| [enableCustomVideoCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a3278ac2b7b2e093ef22332cff3e6d97f) | Enables custom video capturing. |
+| [sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#aeeff994b8a298fa4948a11225312f629) | Sends captured video data to the SDK. |
 | [enableCustomAudioCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a166d6ea0b36bc1adf3d3eddde35207c3) | Enables custom audio capturing. After this mode is enabled, the SDK will stop the original audio capturing process while continuing to encode and send data. You need to keep feeding your audio data to the SDK using [`sendCustomAudioData()`](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a47ba3ba599134e902299dda9c5596c0d). |
 | [sendCustomAudioData](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a47ba3ba599134e902299dda9c5596c0d) | Sends captured audio data to the SDK. |
+| [enableMixExternalAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a896ff4b2731488821dd1ce382276ca0c) | Specifies whether external audio is mixed into the pushed and played streams. |
+| [mixExternalAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a6d04ce887009661a551e23c61d41571f) | Sends custom substream audio data to the SDK. |
 | [setLocalVideoRenderCallback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ad64031e060146f7985263aad994fc733) | Sets custom rendering for local video. |
 | [setRemoteVideoRenderCallback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a1efc475e32f06c768330ff80ebffbc8a) | Sets custom rendering for a remote video. |
 | [setAudioFrameCallback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a607dc63d8d944869537457c5b92b56e9) | Sets the audio data callback. |
+| [generateCustomPTS](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a33ed1b26695b6b75dc9ce78e5280cbb4) | Gets PTS for custom capturing. |
 
 
 ### Custom message sending APIs
 
 | API | Description |
 |-----|-----|
-| [sendCustomCmdMsg](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a858b11d4d32ee0fd69b42d64a1d65389) | Sends a custom message to all users in room. |
-| [sendSEIMsg](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#aa91b261d10bbdb43508e9e2c33697c29) | Embeds custom data of a small size in video frames. |
+| [sendCustomCmdMsg](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a858b11d4d32ee0fd69b42d64a1d65389) | Sends a custom message to all users in the room. |
+| [sendSEIMsg](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#aa91b261d10bbdb43508e9e2c33697c29) | Embeds small-volume custom data in video frames. |
 
 
-### Device and network test APIs
+### Device and network testing APIs
 
 | API | Description |
 |-----|-----|
-| [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#af86b2903b95b6e74f02d701701ce3380) | Starts network speed testing. This may compromise the quality of video calls and should be avoided during a video call. |
+| [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#af86b2903b95b6e74f02d701701ce3380) | Starts network speed testing. This may compromise the quality of video calls and should be avoided during a call. |
 | [stopSpeedTest](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ad6ba6ea2c5beace98b99ce98d326be4c) | Stops network speed testing. |
 
 
@@ -186,14 +192,14 @@ See the following documents for how to integrate the C++ APIs.
 | [startRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a50ec31c281de91903a1ef492a2ec7997) | Starts displaying a remote video image. |
 | [stopRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a20d2004010563e37804a6b82ed9d09ec) | Stops displaying the video image of a remote user and pulling the user’s video stream. |
 | [setLocalViewFillMode](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#acdfe0dc822f074d5c42dfe308dc313a0) | Sets the fill mode of the local image. |
-| [setLocalViewRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a4447783c52960cffbaedb7ccd7c456a2) | Sets the clockwise rotation of the local image. |
+| [setLocalViewRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a4447783c52960cffbaedb7ccd7c456a2) | Sets the clockwise rotation degree of the local image. |
 | [setLocalViewMirror](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a5a04c60eb2e9997e745412374b7b8d19) | Sets the mirror mode of the local camera's preview image. |
 | [setRemoteViewFillMode](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ab5be71379d671f77b99cf6ccd86cdbc7) | Sets the rendering mode of a remote image. |
-| [setRemoteViewRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a385042d69e79468c9ef60dee8ec8cc96) | Sets the clockwise rotation of a remote image. |
+| [setRemoteViewRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a385042d69e79468c9ef60dee8ec8cc96) | Sets the clockwise rotation degree of a remote image. |
 | [startRemoteSubStreamView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a5935a852496c1a033576cc6fbf676746) | Starts displaying the substream image (`TRTCVideoStreamTypeSub`, usually used for screen sharing) of a remote user. |
 | [stopRemoteSubStreamView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a56a7770d90cad9141aecbd70d93af588) | Stops displaying the substream image (`TRTCVideoStreamTypeSub`, usually used for screen sharing) of a remote user. This API is no longer used since version 8.0. Please use the `stopRemoteView(userId,streamType)` API instead. |
 | [setRemoteSubStreamViewFillMode](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a7832e5870431ccb0e75614b51af51205) | Sets the display mode of substream images (`TRTCVideoStreamTypeSub`, usually used for screen sharing). |
-| [setRemoteSubStreamViewRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ab63344839afca9bd4a890f6f609fd9e7) | Sets the clockwise rotation of substream images (`TRTCVideoStreamTypeSub`, usually used for screen sharing). |
+| [setRemoteSubStreamViewRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ab63344839afca9bd4a890f6f609fd9e7) | Sets the clockwise rotation degree of substream images (`TRTCVideoStreamTypeSub`, usually used for screen sharing). |
 | [setAudioQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a742eefe8508e744918f704e2fa0d3405) | Sets audio quality. |
 | [setPriorRemoteVideoStreamType](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a074579fcbcd5f4639ab40a2d5884fa3f) | Sets video quality preferences for viewers. |
 | [getCameraDevicesList](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ace7e563213b43c1763b1eb60d5b2e8c5) | Gets the camera list. |
@@ -239,5 +245,7 @@ See the following documents for how to integrate the C++ APIs.
 | [pauseAudioEffect](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a2b004f3a3a7bdde7b2926930f31afa6c) | Pauses an audio effect. |
 | [resumeAudioEffect](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#af10583316f15ed709247590a081b2307) | Resumes an audio effect. |
 | [selectScreenCaptureTarget](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#adc372b21294cd36bf4f4af0d1ac6624a2) | Sets screen sharing parameters. |
+| [enableCustomVideoCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ac9d547341170330a70623299b366c44a) | Enables custom video capturing. |
+| [sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a3a53ae79c1bd28825cb276c7555500fe) | Sends captured video data to the SDK. |
 
 
