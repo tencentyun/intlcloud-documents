@@ -6,14 +6,14 @@ Access logs of CLB are mainly used to quickly locate and troubleshoot issues. Th
 
 >?
 >- Currently, access logs can be stored in CLS only for layer-7 protocols (HTTP/HTTPS) but not layer-4 protocols (TCP/UDP/TCP SSL).
-- Storing CLB access logs in CLS is now free of charge. You only need to pay for the CLS service.
-- Currently, access logs can be stored in CLS in the Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, Chongqing, Hong Kong (China), Singapore, Mumbai, Seoul, Tokyo, Silicon Valley, Virginia, Toronto, and Frankfurt regions through the console or APIs.
+>- Storing CLB access logs in CLS is now free of charge. You only need to pay for the CLS service.
+>- Currently, access logs can be stored in CLS in the Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, Chongqing, Hong Kong (China), Singapore, Mumbai, Seoul, Tokyo, Silicon Valley, Virginia, Toronto, and Frankfurt regions through the console or APIs.
 
 ## Enabling Access Log Storage in CLS
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3).
 2. Click the ID of the CLB instance to be configured to enter the "Basic Information" page.
 3. In the "Log Access" module, edit "Cloud Log Service".
-![](https://main.qcloudimg.com/raw/e48a3e35936f91866f2f740f986ae9f5.png)
+![](https://main.qcloudimg.com/raw/b3f9b4276b4ff2f28ac184478ce7964c.png)
 4. In the pop-up box, enable access logging and select the destination logset and log topic for access log storage. If you haven't created a logset or log topic yet, please [create relevant resources](https://console.cloud.tencent.com/cls/logset) and then select them as the storage location.
 ![](https://main.qcloudimg.com/raw/33386c84ae812881548d1b621fbe6a70.png)
 5. Click **Submit** and access logs will be collected into the corresponding topic.
