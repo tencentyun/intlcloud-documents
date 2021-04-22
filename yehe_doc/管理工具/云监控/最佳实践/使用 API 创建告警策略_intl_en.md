@@ -1,4 +1,4 @@
-This document describes how to use [CreateAlarmPolicy](https://intl.cloud.tencent.com/document/product/248/39326) and [BindingPolicyObject](https://intl.cloud.tencent.com/document/product/248/35985) APIs to create alarm policies and bind alarm objects.
+This document describes how to use <dx-tag-link link="https://intl.cloud.tencent.com/document/product/248/39326" tag="API">CreateAlarmPolicy </dx-tag-link>  and  <dx-tag-link link="https://intl.cloud.tencent.com/document/product/248/35985" tag="API">Binding Policy Object </dx-tag-link> to create alarm policies and bind alarm objects.
 
 
 
@@ -6,7 +6,7 @@ This document describes how to use [CreateAlarmPolicy](https://intl.cloud.tencen
 
 ## Preparations
 
-Before calling the [CreateAlarmPolicy](https://intl.cloud.tencent.com/document/product/248/39326) API, you need to prepare the following information.
+Before calling the <dx-tag-link link="https://intl.cloud.tencent.com/document/product/248/39326" tag="API">Create Alarm Policy</dx-tag-link> , you need to prepare the following information.
 
 
 
@@ -20,7 +20,7 @@ Before calling the [CreateAlarmPolicy](https://intl.cloud.tencent.com/document/p
 
 #### Preparing alarm policy type
 
- You can query all policy types through the [DescribeAllNamespaces](https://intl.cloud.tencent.com/document/product/248/39319) API in the following steps:
+ You can query all policy types through the  <dx-tag-link link="https://intl.cloud.tencent.com/document/product/248/39319" tag="API">DescribeAllNamespaces</dx-tag-link>  in the following steps:
 1. Log in to the [API Explorer console](https://console.cloud.tencent.com/api/explorer?Product=monitor&Version=2018-07-24&Action=DescribeAllNamespaces) and enter the input parameters as shown below:
 <table>
 	<tr>
@@ -56,7 +56,7 @@ Before calling the [CreateAlarmPolicy](https://intl.cloud.tencent.com/document/p
 
 
 #### Preparing metric list
- You can query all alarm metrics under the policy type through the [DescribeAlarmMetrics](https://intl.cloud.tencent.com/document/product/248/39322) API.
+ You can query all alarm metrics under the policy type through the <dx-tag-link link="https://intl.cloud.tencent.com/document/product/248/39322" tag="API">DescribeAlarmMetrics</dx-tag-link>.
 
 1. Log in to the [API Explorer console](https://console.cloud.tencent.com/api/explorer?Product=monitor&Version=2018-07-24&Action=DescribeAlarmMetrics) and enter the input parameters as shown below:
 <table>
@@ -88,7 +88,7 @@ Before calling the [CreateAlarmPolicy](https://intl.cloud.tencent.com/document/p
 2. Click **Online Call** > **Send Request** on the right to get the response, where `Response.Metrics.N` lists all the alarm metrics under the policy type. 
 
 #### Preparing event list
-You can query all the alarm events under the policy type through the [DescribeAlarmEvents](https://intl.cloud.tencent.com/document/product/248/39324) API.
+You can query all the alarm events under the policy type through the  <dx-tag-link link="https://intl.cloud.tencent.com/document/product/248/39324" tag="API">DescribeAlarmEvents</dx-tag-link>.
 
 1. Log in to the [API Explorer console](https://console.cloud.tencent.com/api/explorer?Product=monitor&Version=2018-07-24&Action=DescribeAlarmEvents&SignVersion=) and enter the input parameters as shown below:
 
@@ -120,7 +120,7 @@ You can query all the alarm events under the policy type through the [DescribeAl
 
 ## Directions
 
-This document describes how to use APIs such as [CreateAlarmPolicy](https://intl.cloud.tencent.com/document/product/248/39326) to create an alarm policy for CVM - basic monitoring with the following example.
+This document describes how to use APIs such as  <dx-tag-link link="https://intl.cloud.tencent.com/document/product/248/39326" tag="API">CreateAlarmPolicy</dx-tag-link> to create an alarm policy for CVM - basic monitoring with the following example.
 
 <span id="createalarm"></span>
 
@@ -157,7 +157,7 @@ This document describes how to use APIs such as [CreateAlarmPolicy](https://intl
 </tr>
 </tbody></table>
 8. If you want to trigger an event alarm, you need to configure the `EventCondition` parameter. Under `EventCondition`, you **only need** to enter the **`EventName`** obtained in the <a href="#preparationsteps">Preparing event list</a> step in `Rules.N.MetricName`, and you can leave other parameters empty.
-9. Enter the alarm notification template ID in `NoticeIds.N`, such as notice-qvq836vc, which can be obtained through the [DescribeAlarmNotices](https://intl.cloud.tencent.com/document/product/248/39300) API.
+9. Enter the alarm notification template ID in `NoticeIds.N`, such as notice-qvq836vc, which can be obtained through the <dx-tag-link link="https://intl.cloud.tencent.com/document/product/248/39300" tag="API">DescribeAlarmNotices</dx-tag-link>.
 10. After entering the above parameters, click **Online Call** > **Send Request**. The following figure shows the successful creation of the alarm policy for CVM - basic monitoring.
 
 11. After the creation is successful, you can view the alarm policy on the [Alarm Policy](https://console.cloud.tencent.com/monitor/alarm2/policy) page in the Cloud Monitor console.
