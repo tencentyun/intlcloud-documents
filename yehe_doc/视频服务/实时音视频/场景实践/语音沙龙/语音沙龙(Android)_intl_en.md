@@ -188,7 +188,7 @@ mTRTCChatSalon.login(SDKAPPID, userId, userSig, new TRTCChatSalonCallback.Action
 ::: java java
 // 1. Set your nickname and profile photo
 mTRTCChatSalon.setSelfProfile("my_name", "my_face_url", null);
-
+  
 // 2. Call `createRoom` to create a room
 final TRTCChatSalonDef.RoomParam roomParam = new TRTCChatSalonDef.RoomParam();
 roomParam.roomName = "Room name";
@@ -209,7 +209,7 @@ mTRTCChatSalon.createRoom(mRoomId, roomParam, new TRTCChatSalonCallback.ActionCa
         }
     }
 });
-
+  
 // 4. You receive an `onAnchorEnterSeat` notification after becoming a speaker
 @Override
 public void onAnchorEnterSeat(TRTCChatSalonDef.UserInfo userInfo) {
