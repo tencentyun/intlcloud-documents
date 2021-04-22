@@ -1,32 +1,96 @@
-## Operation Scenarios
+## Use Cases
+
 This document uses **write permissions for message consumption and batch message consumption** of the CMQ queue model as an example to describe how to grant a user CMQ permissions.
 
 ## Permission Description
-Before CAM is activated, all the original sub-accounts (sub-users and collaborators) can log in to the CMQ Console and view the resource list of the root account (through the `list` API permission and formerly by using the root account key). After CAM is connected, sub-accounts do not have the root account's resource list permission by default (the sub-account key is used for console login). It can get access only after it is authorized by the root account in CAM.
 
-The console will call CMQ APIs; therefore, if a sub-account needs to view queues, topics, and subscription information in the console, permissions need to be granted to CMQ APIs called in the console; otherwise, the error of no permission will occur when the sub-account tries to view information in the console. Below are the APIs that need to be authorized for different console pages:
-- Viewing queue list in console: authorize the `ListQueue` API
-- Viewing topic list in console: authorize the `ListTopic` API
-- Viewing subscription list in console: authorize the `ListSubscriptionByTopic` API
+After connection to CAM, by default, a sub-account can only view lists, without any other operation permissions (the sub-account key is used for console login). It can get access only after authorized by the root account in CAM.
 
-If the sub-account also wants to access CMQ in the console, it needs to be granted permissions of the corresponding APIs. **If it wants to view monitoring data in the console, it needs to be granted permissions of Cloud Monitor APIs in CAM.**
+ 
+
+ 
+ 
+ 
+
+**If the sub-account wants to view monitoring data in the console, it needs the permissions of Cloud Monitor APIs, which can be granted in CAM.**
 
 
 ## Directions
-### Creating sub-user
-1. Log in to the **[CAM Console](https://console.cloud.tencent.com/cam)**, click **User List**, and click **Create User** in the top-left corner.
-2. On the user creating page, select the user type and enter the user information.
-If the user needs to log in to the Tencent Cloud Console or call TencentCloud APIs, you need to check **Tencent Cloud Console Access** and enter the user's QQ account as the login credential.
-For more information on accounts, please see [User Types](https://intl.cloud.tencent.com/document/product/598/32633).
->You are recommended to use a QQ account that has not signed up for Tencent Cloud as the QQ account of the sub-account. (Sub-accounts do not need to top up as CMQ fees will be deducted from the balance of the root account.)
-3. Associate policies with the user (after being associated with a policy, the user can be granted the permissions described in the policy). For detailed directions, please see [Policy](https://intl.cloud.tencent.com/document/product/598/10601).
-4. In the **User Management** list, you can view the added sub-user.
 
-### Creating custom policy
-You can create a custom policy to enable the permission of a specific API, e.g., specifying write permission (message consumption and batch message consumption) of CMQ queues.
-For detailed directions, please see [Policy](https://intl.cloud.tencent.com/document/product/598/10601).
->The `list` API permissions of CMQ are all enabled by default (i.e., you can view the specific resource lists in the CMQ Console after logging in). You can use the permissions to control what resource content can be displayed.
+### Creating a sub-user
 
-### Logging in as sub-user
-After logging in by using a sub-account, if you cannot find the target resource, please switch to the collaborator developer account in the top-right corner in the console.
+1. Log in to the [CAM console](https://console.cloud.tencent.com/cam), select **Users** > **User List**, and click **Create User** on the upper left corner.
+2. On the **Create User** page, you can choose **Create Now** or **Custom Create** to create a sub-user. For detailed directions, see [Creating a Custom Sub-user](https://intl.cloud.tencent.com/document/product/598/13674).
+3. After successful creation, you can view the newly created sub-user in **Users** > **User List**.
 
+
+### Creating a custom policy
+
+You can create a custom policy to grant the permissions of a specific API. The following takes the write permission (message consumption and batch message consumption) of CMQ queues as an example:
+
+1. Log in to the [CAM console](https://console.cloud.tencent.com/cam/policy), go to **Policies** from the left sidebar, and click **Create Custom Policy** on the upper left corner.
+2. Select **Create by Policy Generator** in the pop-up dialog box.
+3. Provide the following information in the **Visual Policy Generator* tab.
+  - **Service** (required): select **CmqQueue (cmqqueue)** (if it is not found, please confirm whether you have activated the CMQ service).
+  - **Action** (required): select the actions you want to authorize.
+  - **Resource** (required): enter the six-segment description of the resource you want to authorize, for example, `qcs::cmqqueue:bj:uin/1238423:queueName/uin/3232/myqueue`. For more information, see [Authorization of CAM-Enabled APIs](#Authorization of CAM-Enabled APIs).
+    - The first segment is always `qcs`.
+    - The second segment is empty.
+    - The third segment is the message queue type, which should be `cmqqueue` for queue model or `cmqtopic` for topic model.
+    - The fourth segment is the region information, such as `gz`, `bj`, or `sh`. If you want to specify all regions, leave this segment empty.
+    - The fifth segment is `uin/{root account uin}` of the root account.
+    - The sixth segment is the resource description, which should be `queueName/uin/{creator Uin}/{queue name}` for queue model or `topicName/uin/{creator Uin}/{topic name}` for topic model. You can find the `creator Uin` on the details page in the console or in the returned value of `createUin` of the `GetQueueAttributes` or `GetTopicAttributes` API.
+  - **Condition** (optional): set the conditions that must be met for the authorization to take effect for the sub-account. For more information, see [Condition](https://intl.cloud.tencent.com/document/product/598/10608).
+
+  ![](https://main.qcloudimg.com/raw/c2c23f12b5afb11ab73b6c8a5537dc89.png)
+
+4. Click **Add Statement** > **Next** to go to the policy editing page.
+5. On the policy editing page, set the policy name, add description, and confirm the policy content. The policy name and content are automatically generated by the console.
+  - **Policy Name**: `policygen` by default. The suffix number is generated based on the creation date. This is customizable.
+  - **Policy Content**: corresponds to the service and actions selected in [step 3](#step3). You can modify the content as needed.
+
+  ![](https://main.qcloudimg.com/raw/a7100e6b284f37b9fdb89a62971047ab.png)
+
+6. Click **Done** to complete the custom policy creation .
+
+7. In the policy list, select the target policy, click **Associated Users/Groups** in the **Action** column, select the users or user groups to associate, click **Confirm** to complete the configuration.
+   ![](https://main.qcloudimg.com/raw/666eda185eec0c8a78a256f36d00c018.png)
+
+For more information about CAM policies, see [Policy](https://intl.cloud.tencent.com/document/product/598/10601).
+
+>?The `list` API permissions of CMQ are all enabled by default (i.e., you can view the specific resource lists in the CMQ console after logging in). You can use the permissions to control what resource content can be displayed.
+
+ 
+
+ 
+ 
+
+<span id="Authorizations of CAM-Enabled APIs"></span>
+## Authorizations of CAM-Enabled APIs
+
+#### List of APIs supporting authorization at resource level
+
+| API Name | API Description | Resource Type | Example of Resource Six-Segment Description |
+| --------------------------- | -------------------- | ------------ | ------------------------------------------------------------ |
+| ClearSubscriptionFilterTags | Clears the message tags of a subscriber. | Subscription API resource | qcs::cmqqueue:$region:uin/{root account uin}:topicName/uin/{creator Uin}/{topic name} |
+| CreateSubscribe  | Creates a subscription. | Subscription API resource | qcs::cmqqueue:$region:uin/{root account uin}:topicName/uin/{creator Uin}/{topic name} |
+| DeleteSubscribe | Deletes a subscription. | Subscription API resource | qcs::cmqqueue:$region:uin/{root account uin}:topicName/uin/{creator Uin}/{topic name} |
+| ModifySubscriptionAttribute | Modifies subscription attributes. | Subscription API resource | qcs::cmqqueue:$region:uin/{root account uin}:topicName/uin/{creator Uin}/{topic name} |
+| CreateTopic | Creates a topic. | Topic API resource | qcs::cmqqueue:$region:uin/{root account uin}:topicName/uin/{creator Uin}/{topic name} |
+| DeleteTopic | Deletes a topic. | Topic API resource | qcs::cmqqueue:$region:uin/{root account uin}:topicName/uin/{creator Uin}/{topic name} |
+| ModifyTopicAttribute | Modifies topic attributes. | Topic API resource | qcs::cmqqueue:$region:uin/{root account uin}:topicName/uin/{creator Uin}/{topic name} |
+| ClearQueue | Clears the messages in a queue. | Queue API resource | qcs::cmqqueue:$region:uin/{root account uin}:queueName/uin/{creator Uin}/{queue name} |
+| CreateQueue | Creates a queue. | Queue API resource | qcs::cmqqueue:$region:uin/{root account uin}:queueName/uin/{creator Uin}/{queue name} |
+| DeleteQueue | Deletes a queue. | Queue API resource | qcs::cmqqueue:$region:uin/{root account uin}:queueName/uin/{creator Uin}/{queue name} |
+| ModifyQueueAttribute | Modifies queue attributes. | Queue API resource | qcs::cmqqueue:$region:uin/{root account uin}:queueName/uin/{creator Uin}/{queue name} |
+
+#### List of APIs not supporting authorization at resource level
+
+| API Name | API Description | Example of Resource Six-Segment Description |
+| ------------------------------ | ------------------ | ------------ | -------------- |
+| DescribeSubscriptionDetail | Queries subscription details. | Subscription API | * |
+| DescribeTopicDetail | Queries topic details. | Topic API | * |
+| DescribeDeadLetterSourceQueues | Enumerates the source queues of a dead letter queue. | Queue API | * |
+| DescribeQueueDetail | Enumerates queues. | Queue API | * |
+| RewindQueue | Rewinds a queue. | Queue API | * |
+| UnbindDeadLetter | Unbinds a dead letter queue. | Queue API | * |
