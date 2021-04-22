@@ -28,7 +28,7 @@ used...
 */
 var nowDate = new Date(); 
 
-var dateTime = nowDate.toGMTString();
+var dateTime = nowDate.toUTCString();
 //dateTime = "Mon, 19 Mar 2018 12:00:44 GMT"
 var SecretId = 'your SecretId'; // `SecretId` in key pair
 var SecretKey = 'your SecretKey'; // `SecretKey` in key pair
