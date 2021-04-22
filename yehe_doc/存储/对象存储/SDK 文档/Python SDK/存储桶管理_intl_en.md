@@ -22,7 +22,7 @@ This document provides an overview of APIs and SDK code samples related to cross
 | API | Operation | Description |
 | ------------------- | ------------ | ------------------ |
 | [PUT Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19889) | Setting versioning | Sets versioning configuration for a bucket |
-| [GET Bucket versioning](https://cloud.tencent.com/document/product/436/19888) | Querying versioning | Queries the versioning information of a bucket |
+| [GET Bucket versioning](https://intl.cloud.tencent.com/document/product/436/19888) | Querying versioning | Queries the versioning information of a bucket |
 
 **Cross-region replication**
 
@@ -628,14 +628,14 @@ This API returns the cross-region replication configuration on a bucket in dict 
 
 | Parameter Name | Description | Type |
 | -------------- | -------------- |---------- | 
-| Role | Replication initiator identifier: `qcs::cam::uin/<OwnerUin>:uin/<SubUin>` | String | No |
-| Rule | Sets the rule for cross-region replication, including ID, Status, Prefix, and Destination | List | Yes |
-|  ID  | Specifies the ID of the cross-region replication rule| String |  No |
-| Status  | Sets whether the rule is enabled. Valid values: `Enabled`, `Disabled` | String | Yes |
-| Prefix | Specifies the prefix used to filter objects that are subject to the rule. If it is left empty, the rule applies to all objects in the bucket | String |  Yes |
-| Destination |   Describes the destination resource, including `Bucket` and `StorageClass` | Dict | Yes | 
-| Bucket | Sets the destination bucket for cross-region replication. Format: `qcs::cos:[region]::[BucketName-APPID]`  | String  | Yes |
-| StorageClass | Sets the storage class of the object copies. Valid values: `STANDARD`, `STANDARD_IA` | String | No |
+| Role | Replication initiator identifier: `qcs::cam::uin/<OwnerUin>:uin/<SubUin>` | String | 
+| Rule | Sets the rule for cross-region replication, including ID, Status, Prefix, and Destination | List | 
+|  ID  | Specifies the ID of the cross-region replication rule| String |  
+| Status  | Sets whether the rule is enabled. Valid values: `Enabled`, `Disabled` | String | 
+| Prefix | Specifies the prefix used to filter objects that are subject to the rule. If it is left empty, the rule applies to all objects in the bucket | String |  
+| Destination |   Describes the destination resource, including `Bucket` and `StorageClass` | Dict | 
+| Bucket | Sets the destination bucket for cross-region replication. Format: `qcs::cos:[region]::[BucketName-APPID]`  | String  | 
+| StorageClass | Sets the storage class of the object copies. Valid values: `STANDARD`, `STANDARD_IA` | String | 
 
 
 ### Deleting a cross-region replication rule
