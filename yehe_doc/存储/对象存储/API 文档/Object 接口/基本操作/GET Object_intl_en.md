@@ -2,7 +2,7 @@
 
 This API is used to download an object to the local file system. To make this request, you need to have read permission for the object, or the object must have public read permission enabled (i.e., everyone has permission to read the object).
 
-> If the `response-*` request parameter is used, this request operation will not support anonymous requests and will have to carry a signature.
+>? If the `response-*` request parameter is used, this request operation will not support anonymous requests and will have to carry a signature.
 
 #### Versioning
 
@@ -23,7 +23,7 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+>? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
 
 #### Request parameters
 
@@ -43,7 +43,8 @@ In addition to common request headers, this API also supports the following requ
 
 | Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | Required |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| Range  | Byte range of the object as defined in RFC 2616. You can specify only one byte range in the format of bytes=first-last, where both first and last are offsets starting from 0. For example, `bytes=0-9` downloads the first 10 bytes of data of the source object, and `bytes=5-9` downloads the 6th to 10th bytes. In these cases, HTTP 206 (Partial Content) is returned with Content-Range header.<br>If `first` exceeds the object size, HTTP error 416 (Requested Range Not Satisfiable) is returned. If this parameter is not specified, the entire object will be downloaded. | string | No      || If-Modified-Since | If the object is modified after the specified time, the object will be returned; otherwise, HTTP status code `304` (Not Modified) will be returned. | string | No |
+| Range  | Byte range of the object as defined in RFC 2616. You can specify only one byte range in the format of bytes=first-last, where both first and last are offsets starting from 0. For example, `bytes=0-9` downloads the first 10 bytes of data of the source object, and `bytes=5-9` downloads the 6th to 10th bytes. In these cases, HTTP 206 (Partial Content) is returned with Content-Range header.<br>If `first` exceeds the object size, HTTP error 416 (Requested Range Not Satisfiable) is returned. If this parameter is not specified, the entire object will be downloaded. | string | No      |
+| If-Modified-Since | If the object is modified after the specified time, the object will be returned; otherwise, HTTP status code `304` (Not Modified) will be returned. | string | No |
 | If-Unmodified-Since | If the object is not modified after the specified time, the object will be returned; otherwise, HTTP status code `412` (Precondition Failed) will be returned. | string | No |
 | If-Match | If the `ETag` of the object is the same as the specified value, the object will be returned; otherwise, HTTP status code `412` (Precondition Failed) will be returned. | string | No |
 | If-None-Match | If the `ETag` of the object is different from the specified value, the object will be returned; otherwise, HTTP status code 304 (Not Modified) will be returned. | string | No |
