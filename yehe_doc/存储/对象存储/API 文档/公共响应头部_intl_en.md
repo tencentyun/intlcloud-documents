@@ -52,7 +52,7 @@ This document describes common response headers that may be used in API requests
    </tr>
    <tr>
       <td nowrap="nowrap">x-cos-hash-crc64ecma</td>
-      <td>CRC64 value of the object. For more information, see [CRC64 Check] (https://intl.cloud.tencent.com/document/product/436/34078)
+      <td>CRC64 value of the object. For more information,see <a href="https://intl.cloud.tencent.com/document/product/436/34078">CRC64 Check</a>.
       <td>integer</td>
    </tr>
    <tr>
