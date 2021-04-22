@@ -1,12 +1,11 @@
-本文将为您介绍如何通过[创建告警策略接口](https://intl.cloud.tencent.com/document/product/248/39326) 和 [绑定策略对象](https://intl.cloud.tencent.com/document/product/248/35985) 创建告警策略并绑定告警对象。
-
+本文将为您介绍如何通过 <dx-tag-link link="https://intl.cloud.tencent.com/document/product/248/39326" tag="API">创建告警策略接口</dx-tag-link> 和 <dx-tag-link link="https://intl.cloud.tencent.com/document/product/248/35985" tag="API">绑定策略对象</dx-tag-link> 创建告警策略并绑定告警对象。
 
 
 <span id="preparationsteps"></span>
 
 ## 准备工作
 
-在调用创建 [创建告警策略接口](https://intl.cloud.tencent.com/document/product/248/39326)前需要准备以下入参资料。
+在调用创建 <dx-tag-link link="https://intl.cloud.tencent.com/document/product/248/39326" tag="API">创建告警策略接口</dx-tag-link> 前需要准备以下入参资料。
 
 
 
@@ -19,7 +18,7 @@
 > ?如未创建密钥，请单击【新建密钥】创建密钥。
 
 #### 准备告警策略类型
- 通过 [查询所有名字空间](https://intl.cloud.tencent.com/document/product/248/39319) 可以查询到所有策略类型。步骤如下：
+ 通过 <dx-tag-link link="https://intl.cloud.tencent.com/document/product/248/39319" tag="API">查询所有名字空间</dx-tag-link> 可以查询到所有策略类型。步骤如下：
    1. 进入 [API Explorer 在线调用控制台](https://console.cloud.tencent.com/api/explorer?Product=monitor&Version=2018-07-24&Action=DescribeAllNamespaces)，参考下表填写输入参数。
 <table>
 	<tr>
@@ -55,7 +54,7 @@
 
 
 #### 准备指标列表
- 通过 [查询告警指标列表](https://intl.cloud.tencent.com/document/product/248/39322) 可以查询到策略类型下的所有告警指标。
+通过 <dx-tag-link link="https://intl.cloud.tencent.com/document/product/248/39322" tag="API">查询告警指标列表</dx-tag-link> 可以查询到策略类型下的所有告警指标。
 
 1. 进入 [API Explorer 在线调用控制台](https://console.cloud.tencent.com/api/explorer?Product=monitor&Version=2018-07-24&Action=DescribeAlarmMetrics)，参考下表填写输入参数。
 <table>
@@ -87,7 +86,7 @@
 2. 单击右侧【在线调用】>【发送请求】，获取响应结果。返回结果中 Response.Metrics.N 即该策略类型下的所有告警指标。
 
 #### 准备事件列表
-通过 [查询告警事件列表](https://intl.cloud.tencent.com/document/product/248/39324) 可以查询到策略类型下的所有告警事件。
+通过 <dx-tag-link link="https://intl.cloud.tencent.com/document/product/248/39324" tag="API">查询告警事件列表</dx-tag-link> 可以查询到策略类型下的所有告警指标。
 
 1.进入 [API Explorer 在线调用控制台](https://console.cloud.tencent.com/api/explorer?Product=monitor&Version=2018-07-24&Action=DescribeAlarmEvents&SignVersion=)，参考下表填写输入参数。
 
@@ -119,7 +118,7 @@
 
 ## 实践步骤
 
-本文提供以下示例，为您介绍如何使用  [创建告警策略接口](https://intl.cloud.tencent.com/document/product/248/39326)等接口创建云服务器-基础监控告警策略。
+本文提供以下示例，为您介绍如何使用  <dx-tag-link link="https://intl.cloud.tencent.com/document/product/248/39326" tag="API">创建告警策略接口</dx-tag-link>等接口创建云服务器-基础监控告警策略。
 
 <span id="createalarm"></span>
 
@@ -156,7 +155,7 @@
 </tr>
 </tbody></table>
 8. 如需触发事件告警，需要填 EventCondition 参数。在 EventCondition 下，**仅需要**在 Rules.N.MetricName 中填写 <a href="#preparationsteps">准备事件列表</a> 步骤获得的 **EventName**，其他参数可不填。
-9. 在 NoticeIds.N 填写告警通知模板 Id ，例如 notice-qvq836vc。可通过 [查询通知模板列表](https://intl.cloud.tencent.com/document/product/248/39300) 获得。
+9. 在 NoticeIds.N 填写告警通知模板 Id ，例如 notice-qvq836vc。可通过 <dx-tag-link link="https://intl.cloud.tencent.com/document/product/248/39300" tag="API">查询通知模板列表</dx-tag-link> 获得。
 10. 填写完以上参数后，单击【在线调用】>【发送请求】，如下图为成功创建云服务器—基础监控告警策略。
 
 11. 创建成功后，即可在云监控控制台 [告警策略](https://console.cloud.tencent.com/monitor/alarm2/policy) 页面查看该告警策略。
