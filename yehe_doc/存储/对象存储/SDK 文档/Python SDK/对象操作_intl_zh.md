@@ -124,7 +124,7 @@ response = client.list_objects(
 | NextMarker|  当 IsTruncated 为 true 时，标记下一次返回对象的 list 的起点位置  | String  |
 | Name   | 存储桶名称，由 BucketName-APPID 构成  | String  | 
 | IsTruncated   |  表示返回的对象是否被截断  | String|
-| EncodingType   | 默认不编码，规定返回值的编码方式，可选值：url  | String  | 否|
+| EncodingType   | 默认不编码，规定返回值的编码方式，可选值：url  | String  | 
 |Contents |包含所有对象元数据的 list，包括 'ETag'，'StorageClass'，'Key'，'Owner'，'LastModified'，'Size' 等信息|List|
 |CommonPrefixes |所有以 Prefix 开头，以 Delimiter 结尾的对象被归到同一类|List|
 
@@ -237,7 +237,7 @@ response = client.list_objects_versions(
 | NextVersionIdMarker | 当 IsTruncated 为 true 时，标记下一次返回对象的 list 的 VersionId 的起点位置  | String  |
 | Name   | 存储桶名称，由 BucketName-APPID 构成  | String  | 
 | IsTruncated   |  表示返回的对象是否被截断  | String|
-| EncodingType   | 默认不编码，规定返回值的编码方式，可选值：url  | String  | 否|
+| EncodingType   | 默认不编码，规定返回值的编码方式，可选值：url  | String  | 
 |Version |包含所有多个版本对象元数据的 list，包括 'ETag'，'StorageClass'，'Key'，'VersionId'，'IsLatest'，'Owner'，'LastModified'，'Size' 等信息|List|
 |DeleteMarker|包含所有delete marker 对象元数据的 list，包括 'Key'，'VersionId'，'IsLatest'，'Owner'，'LastModified' 等信息|List|
 |CommonPrefixes |所有以 Prefix 开头，以 Delimiter 结尾的对象被归到同一类|List|
@@ -637,7 +637,7 @@ response = client.copy_object(
  |  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String|  是 |
  |  Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String| 是 | 
  |  CopySource  | 描述拷贝源对象的路径，包含 Bucket、Key、Region、VersionId |  Dict | 是 |
- |  CopyStatus  |  可选值为 'Copy'，'Replaced'，设置为 'Copy' 时，忽略设置的用户元数据信息直接复制，设置为 'Replaced' 时，按设置的元信息修改元数据，当目标路径和源路径一样时，必须设置为 'Replaced' | String| 是 |
+ |  CopyStatus  |  可选值为 'Copy'，'Replaced'，设置为 'Copy' 时，忽略设置的用户元数据信息直接复制，设置为 'Replaced' 时，按设置的元信息修改元数据，当目标路径和源路径一样时，必须设置为 'Replaced' | String |  是 |
 | ACL |设置对象的ACL，如 'private'，'public-read' |String| 否|
 | GrantFullControl |赋予指定账户对对象的所有权限，格式为 `id="OwnerUin"`|String|否|
 |GrantRead |赋予指定账户对对象的读权限，格式为 `id="OwnerUin"`|String|否|
