@@ -162,8 +162,8 @@ Android 平台具体字段如下表：
 | android                  | Object | message | 无     | 否   | 安卓通知高级设置结构体，请参见 [Android 结构体说明](#intent1) |
 
 
-
-#### Android 结构体说明 [](id:intent1)
+[](id:intent1)
+#### Android 结构体说明 
 
 | 字段名         | 类型    | 父项目  | 默认值 | 必需 | 参数描述                                                     |
 | -------------- | ------- | ------- | ------ | ---- | ------------------------------------------------------------ |
@@ -187,7 +187,7 @@ Android 平台具体字段如下表：
 | small_icon     | String  | android | 无     | 否   | 消息在状态栏显示的图标，若不设置，则显示应用图标             |
 | icon_color     | Integer | android | 0      | 否   | 通知栏小图标染色。 <li>仅 TPNS 通道有效</li> <li>需要使用 RGB 颜色的十进制值，例如 RGB 颜色 #01e240，请填入123456 </li> |
 | action         | Object  | android | 有     | 否   | 设置点击通知栏之后的行为，默认为打开 App，详情参考  [action 参数说明](#action) |
-| custom_content | String  | android | 无     | 否   | 用户自定义的参数（需要序列化为 JSON String）<br><b> 温馨提示</b>：华为官方通知：「2021年9月30日起停用 V2 协议」。TPNS 已将华为推送协议升级到 V5，V5 协议不支持通过【附加参数】字段携带自定义参数。如果您集成了华为厂商通道，建议您改用 <a href="https://cloud.tencent.com/document/product/548/48572#android-.E4.BD.BF.E7.94.A8">Intent</a> 方式携带自定义参数，否则将导致自定义参数不能成功通过华为推送通道下发 |
+| custom_content | String  | android | 无     | 否   | 用户自定义的参数（需要序列化为 JSON String）<br><b> 温馨提示</b>：华为官方通知：「2021年9月30日起停用 V2 协议」。TPNS 已将华为推送协议升级到 V5，V5 协议不支持通过【附加参数】字段携带自定义参数。如果您集成了华为厂商通道，建议您改用 <a href="https://intl.cloud.tencent.com/document/product/1024/38354">Intent</a> 方式携带自定义参数，否则将导致自定义参数不能成功通过华为推送通道下发 |
 | show_type      | Integer | android | 2      | 否   | 应用前台时，是否展示通知 。 默认展示，仅对 TPNS 通道、FCM 通道有效。 <li>不展示</li><li>展示</br>说明：若取值为1且应用在前台，终端用户对该条推送无感知，但有抵达数据上报</li> |
 
 
@@ -215,13 +215,13 @@ Android 平台具体字段如下表：
     "thread_sumtext":"运营活动",
     "accept_time": [
         {
-            "start": {//时间段起始时间，
-                "hour": "13",//起始时间 小时值, 取值 [0:24)
-                "min": "00"// 起始时间 分钟值, 取值[0:60)
+            "start": {//时间段起始时间
+                "hour": "13",//起始时间 小时值, 取值 [0,24)
+                "min": "00"// 起始时间 分钟值, 取值[0,60)
             },
             "end": {//时间段结束时间
-                "hour": "14",//结束时间 小时值, 取值 [0:24)
-                "min": "00" //结束时间 分钟值,取值[0:60)
+                "hour": "14",//结束时间 小时值, 取值 [0,24)
+                "min": "00" //结束时间 分钟值,取值[0,60)
 
             }
         },
@@ -282,8 +282,8 @@ iOS 平台具体字段如下表：
 | xg_media_resources    | String     | message | 无    | 否    | 图片、音视频富媒体元素 url 地址                          |
 
 
-
-#### iOS 字段说明[](id:iOS)
+[](id:iOS)
+#### iOS 字段说明
 
 | 字段名         | 类型   | 父项目 | 默认值 | 必需 | 参数描述                                                     |
 | -------------- | ------ | ------ | ------ | ---- | ------------------------------------------------------------ |
@@ -376,8 +376,8 @@ Android 平台具体字段如下表：
 }
 ```
 
-
-### iOS 静默消息[](id:aps2)
+[](id:aps2)
+### iOS 静默消息
 
 静默消息，iOS 平台特有，类似 Android 中的透传消息，消息不展示，当静默消息到达终端时，iOS 会在后台唤醒 App 一段时间（小于30s），让 App 来处理消息逻辑。
 
@@ -439,8 +439,8 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
 > 
 
 
-
-### tag_rules 参数说明[](id:tag_rules)
+[](id:tag_rules)
+### tag_rules 参数说明
 
 | 字段      | 类型    | 父项目    | 必填 | 描述                                                         |
 | --------- | ------- | --------- | ---- | ------------------------------------------------------------ |
@@ -448,8 +448,8 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
 | operator  | String  | tag_rules | 是   | tag_rules 数组内各元素的运算符，第一个 tag_rules 元素的 operator 为无效数据，第二个 tag_rules 元素的 operator 作为第一个和第二个 tag_rules 元素之间的运算符。<li>OR： 或运算<li>AND：且运算 |
 | is_not    | Boolean | tag_rules | 是   | 是否对 tag_items 数组的运算结果进行非运算。<li>true：进行非运算<li>false：不进行非运算。</li> |
 
-
-#### tag_items 说明[](id:tag_items2)
+[](id:tag_items2)
+#### tag_items 说明
 
 | 字段           | 类型    | 父项目    | 必填 | 描述                                                         |
 | -------------- | ------- | --------- | ---- | ------------------------------------------------------------ |
@@ -460,8 +460,8 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
 | tag_type       | String  | tag_items | 是   | 参见 [tag_type 取值表](#tag123)                              |
 
 
-
-#### tag_type 取值表[](id:tag123)
+[](id:tag123)
+#### tag_type 取值表
 
 | **标签名称** | **tag_type 取值**      | **标签名举例**          |
 | ------------ | ---------------------- | ----------------------- |
@@ -544,13 +544,13 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
     "xg_media_audio_resources":"xxx", //此处填音频富媒体元素地址，例如http://sc1.111ttt.cn/2018/1/03/13/396131227447.mp3 
     "accept_time": [
         {
-            "start": {//时间段起始时间，
-                "hour": "13",//起始时间 小时值, 取值 [0:24)
-                "min": "00"// 起始时间 分钟值, 取值[0:60)
+            "start": {//时间段起始时间
+                "hour": "13",//起始时间 小时值, 取值 [0,24)
+                "min": "00"// 起始时间 分钟值, 取值[0,60)
             },
             "end": {//时间段结束时间
-                "hour": "14",//结束时间 小时值, 取值 [0:24)
-                "min": "00" //结束时间 分钟值,取值[0:60)
+                "hour": "14",//结束时间 小时值, 取值 [0,24)
+                "min": "00" //结束时间 分钟值,取值[0,60)
 
             }
         },
@@ -652,8 +652,8 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
 ```
 
 
-
-### 标签推送场景（tag_rules 方式）[](id:biaoqianshili)
+[](id:biaoqianshili)
+### 标签推送场景（tag_rules 方式）
 
 **场景一：广东和湖南，并且是20200408当天活跃过的男性用户**
 表达式：（xg_auto_province.guangdong 或 xg_auto_province.hunan）与 xg_auto_active.20200408 与 xg_user_define.male
