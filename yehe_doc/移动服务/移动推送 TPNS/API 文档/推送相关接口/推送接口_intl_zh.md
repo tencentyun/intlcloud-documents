@@ -42,19 +42,13 @@ Push API 提供了多种推送目标的，例如全量、标签、单设备、�
 | package_token_push   | token 文件包推送 | 上传 token 文件包推送必填                                    |
 
 
-
-
-
 - 全量推送：推送给全部设备。
-
 ```json
   {
     "audience_type": "all"
   }
 ```
-
 - 标签推送（tag_rules方式）：广东和湖南，并且是20200408当天活跃过的男性用户。
-
 ```json
  {
   "audience_type": "tag",
@@ -96,9 +90,7 @@ Push API 提供了多种推送目标的，例如全量、标签、单设备、�
     ]
 }
 ```
-
 - 单设备推送：推送给 token 为 token1 的设备。
-
 ```json
   {
     "audience_type": "token",
@@ -109,7 +101,6 @@ Push API 提供了多种推送目标的，例如全量、标签、单设备、�
 ```
 
 - 设备列表推送，推送给 token 为 token1 和 token2 的设备。
-
 ```json
   {
     "audience_type": "token_list",
@@ -119,9 +110,7 @@ Push API 提供了多种推送目标的，例如全量、标签、单设备、�
     ]
   }
 ```
-
 - 单账号推送：推送给账号为 account1 的设备。
-
 ```json
   {
     "audience_type": "account",
@@ -130,9 +119,7 @@ Push API 提供了多种推送目标的，例如全量、标签、单设备、�
     ]
   }
 ```
-
 - 账号列表推送：推送账号为 account1 和 account2 的设备。
-
 ```json
   {
     "audience_type": "account_list",
@@ -175,8 +162,8 @@ Android 平台具体字段如下表：
 | android                  | Object | message | 无     | 否   | 安卓通知高级设置结构体，请参见 [Android 结构体说明](#intent1) |
 
 
-<span id="intent1"></span>
-#### Android 结构体说明
+
+#### Android 结构体说明 [](id:intent1)
 
 | 字段名         | 类型    | 父项目  | 默认值 | 必需 | 参数描述                                                     |
 | -------------- | ------- | ------- | ------ | ---- | ------------------------------------------------------------ |
@@ -188,7 +175,7 @@ Android 平台具体字段如下表：
 | vivo_ch_id     | String  | android | 0      | 否   | vivo 渠道 ID：“0”代表运营消息，“1”代表系统消息（仅 vivo 推送通道生效） |
 | n_id           | Integer | android | 0      | 否   | **（该字段已废弃，后续会下线，如需使用覆盖功能请使用覆盖参数：collapse_id）**<br>通知消息对象的唯一标识（TPNS 通道）<br>（1）大于0：会覆盖先前相同 id 的消息<br>（2）等于0：展示本条通知且不影响其他消息<br>（3）等于-1：将清除先前所有消息，仅展示本条消息 |
 | builder_id     | Integer | android | 0      | 否   | 本地通知样式标识                                             |
-| badge_type     | Integer | android | -1     | 否   | 通知角标：<li>-2：自动增加1，支持华为设备<li>-1：不变，支持华为、vivo 设备<li>[0, 100)：直接设置，支持华为、vivo 设备<br>**注意**：不同厂商设备的角标适配能力不同，各参数值实现效果请参见 <a href="https://intl.cloud.tencent.com/document/product/1024/35828">角标适配指南<a> |
+| badge_type     | Integer | android | -1     | 否   | 通知角标：<li>-2：自动增加1，支持华为设备</li><li>-1：不变，支持华为、vivo 设备</li><li>[0, 100)：直接设置，支持华为、vivo 设备</li>**注意**：不同厂商设备的角标适配能力不同，各参数值实现效果请参见 <a href="https://intl.cloud.tencent.com/document/product/1024/35828">角标适配指南<a> |
 | ring           | Integer | android | 1      | 否   | 是否有铃声<li>0：没有铃声</li><li>1：有铃声  </li>           |
 | ring_raw       | String  | android | 无     | 否   | 指定 Android 工程里 raw 目录中的铃声文件名，不需要后缀名     |
 | vibrate        | Integer | android | 1      | 否   | 是否使用震动<li>0：没有震动</li><li>1：有震动</li>           |
@@ -198,15 +185,15 @@ Android 平台具体字段如下表：
 | icon_res       | String  | android | 无     | 否   | 上传的通知栏缩略图 url 地址，仅 TPNS、华为通道支持。缩略图格式要求可参考 [富媒体通知文档](https://intl.cloud.tencent.com/document/product/1024/37858) |
 | style_id       | Integer | android | 1      | 否   | 设置是否覆盖指定编号的通知样式                               |
 | small_icon     | String  | android | 无     | 否   | 消息在状态栏显示的图标，若不设置，则显示应用图标             |
-| icon_color     | Integer | android | 0      | 否   | 通知栏小图标染色。 <li>仅 TPNS 通道有效 <li>需要使用 RGB 颜色的十进制值，例如 RGB 颜色 #01e240，请填入123456  |
+| icon_color     | Integer | android | 0      | 否   | 通知栏小图标染色。 <li>仅 TPNS 通道有效</li> <li>需要使用 RGB 颜色的十进制值，例如 RGB 颜色 #01e240，请填入123456 </li> |
 | action         | Object  | android | 有     | 否   | 设置点击通知栏之后的行为，默认为打开 App，详情参考  [action 参数说明](#action) |
-| custom_content | String  | android | 无     | 否   | 用户自定义的参数（需要序列化为 JSON String）<br><b> 温馨提示</b>：华为官方通知：「2021年9月30日起停用 V2 协议」。TPNS 已将华为推送协议升级到 V5，V5 协议不支持通过【附加参数】字段携带自定义参数。如果您集成了华为厂商通道，建议您改用 <a href="https://intl.cloud.tencent.com/document/product/1024/32624">Intent</a> 方式携带自定义参数，否则将导致自定义参数不能成功通过华为推送通道下发 |
-| show_type      | Integer | android | 2      | 否   | 应用前台时，是否展示通知 。 默认展示，仅对 TPNS 通道、FCM 通道有效。 <li>1：不展示<li>2： 展示<br>说明：若取值为1且应用在前台，终端用户对该条推送无感知，但有抵达数据上报</br> |
+| custom_content | String  | android | 无     | 否   | 用户自定义的参数（需要序列化为 JSON String）<br><b> 温馨提示</b>：华为官方通知：「2021年9月30日起停用 V2 协议」。TPNS 已将华为推送协议升级到 V5，V5 协议不支持通过【附加参数】字段携带自定义参数。如果您集成了华为厂商通道，建议您改用 <a href="https://cloud.tencent.com/document/product/548/48572#android-.E4.BD.BF.E7.94.A8">Intent</a> 方式携带自定义参数，否则将导致自定义参数不能成功通过华为推送通道下发 |
+| show_type      | Integer | android | 2      | 否   | 应用前台时，是否展示通知 。 默认展示，仅对 TPNS 通道、FCM 通道有效。 <li>不展示</li><li>展示</br>说明：若取值为1且应用在前台，终端用户对该条推送无感知，但有抵达数据上报</li> |
 
 
 
-<span id="action"></span>
-**action 参数说明**
+
+**action 参数说明**[](id:action)
 
 | 字段名      | 类型    | 父项目 | 默认值 | 必需                                        | 参数描述                                                     |
 | ----------- | ------- | ------ | ------ | ------------------------------------------- | ------------------------------------------------------------ |
@@ -228,13 +215,13 @@ Android 平台具体字段如下表：
     "thread_sumtext":"运营活动",
     "accept_time": [
         {
-            "start": {//时间段起始时间
-                "hour": "13",//起始时间 小时值, 取值 [0,24)
-                "min": "00"// 起始时间 分钟值, 取值[0,60)
+            "start": {//时间段起始时间，
+                "hour": "13",//起始时间 小时值, 取值 [0:24)
+                "min": "00"// 起始时间 分钟值, 取值[0:60)
             },
             "end": {//时间段结束时间
-                "hour": "14",//结束时间 小时值, 取值 [0,24)
-                "min": "00" //结束时间 分钟值,取值[0,60)
+                "hour": "14",//结束时间 小时值, 取值 [0:24)
+                "min": "00" //结束时间 分钟值,取值[0:60)
 
             }
         },
@@ -250,35 +237,35 @@ Android 平台具体字段如下表：
         }
     ],
     "android": {
-		"n_ch_id": "default_message",
-		"n_ch_name": "默认通知",
-        "n_id": 0,
-        "builder_id": 0,
-        "ring": 1,
-        "ring_raw": "ring",
-		"badge_type":-1, 
-        "vibrate": 1,
-        "lights": 1,
-        "clearable": 1,
-        "icon_type": 0,
-        "icon_res": "xg",
-        "style_id": 1,
-        "small_icon": "xg",
-        "action": {
-            "action_type": 1,// 动作类型，1，打开activity或app本身；2，打开浏览器；3，打开Intent
-            "activity": "com.x.y.PushActivity",
-            "aty_attr": {// activity属性，只针对action_type=1的情况
-                "if": 0, // Intent的Flag属性
-                "pf": 0  // PendingIntent的Flag属性
-            },
-            "browser": {
-                "url": "https://cloud.tencent.com ", // 仅支持http、https
-                "confirm": 1 // 是否需要用户确认
-            },
-            "intent": "xgscheme://com.tpns.push/notify_detail" //SDK版本需要大于等于1.0.9，然后在客户端的intent配置data标签，并设置scheme属性
-        },
-      "custom_content":"{\"key\":\"value\"}"
-    }
+				"n_ch_id": "default_message",
+				"n_ch_name": "默认通知",
+				"n_id": 0,
+				"builder_id": 0,
+				"ring": 1,
+				"ring_raw": "ring",
+				"badge_type":-1, 
+				"vibrate": 1,
+				"lights": 1,
+				"clearable": 1,
+				"icon_type": 0,
+				"icon_res": "xg",
+				"style_id": 1,
+				"small_icon": "xg",
+				"action": {
+						"action_type": 1,// 动作类型，1，打开activity或app本身；2，打开浏览器；3，打开Intent
+						"activity": "com.x.y.PushActivity",
+						"aty_attr": {// activity属性，只针对action_type=1的情况
+								"if": 0, // Intent的Flag属性
+								"pf": 0  // PendingIntent的Flag属性
+						},
+						"browser": {
+								"url": "https://cloud.tencent.com ", // 仅支持http、https
+								"confirm": 1 // 是否需要用户确认
+						},
+						"intent": "xgscheme://com.tpns.push/notify_detail" //SDK版本需要大于等于1.0.9，然后在客户端的intent配置data标签，并设置scheme属性
+				},
+				"custom_content":"{\"key\":\"value\"}"
+			}
 }
 ```
 
@@ -295,8 +282,8 @@ iOS 平台具体字段如下表：
 | xg_media_resources    | String     | message | 无    | 否    | 图片、音视频富媒体元素 url 地址                          |
 
 
-<span id="iOS"></span>
-#### iOS 字段说明
+
+#### iOS 字段说明[](id:iOS)
 
 | 字段名         | 类型   | 父项目 | 默认值 | 必需 | 参数描述                                                     |
 | -------------- | ------ | ------ | ------ | ---- | ------------------------------------------------------------ |
@@ -304,16 +291,16 @@ iOS 平台具体字段如下表：
 | custom_content | String | ios    | 无     | 否   | 自定义下发的参数，需要序列化为 json string                   |
 | xg             | String | ios    | 无     | 否   | 系统保留 key，应避免使用                                     |
 
-<span id="aps"></span>
-**aps 参数说明**
+
+**aps 参数说明**[](id:aps)
 
 | 字段名          | 类型    | 父项目 | 默认值 | 必需 | 参数描述                                                     |
 | --------------- | ------- | ------ | ------ | ---- | ------------------------------------------------------------ |
 | alert           | Object  | aps    | 无     | 是   | 包含标题和消息内容                                           |
-| badge_type      | Integer | aps    | 无     | 否   | 用户设置角标数字：<li> -1：角标数字不变 <li> -2：角标数字自动加1<li> >=0：设置自定义角标数字 |
+| badge_type      | Integer | aps    | 无     | 否   | 用户设置角标数字：<li> -1：角标数字不变</li> <li> -2：角标数字自动加1</li><li> >=0：设置自定义角标数字</li> |
 | category        | String  | aps    | 无     | 否   | 下拉消息时显示的操作标识                                     |
-| mutable-content | Integer | aps    | 无     | 否   | 通知拓展参数。<li>推送的时候携带 "mutable-content":1 ，说明是支持 iOS 10 的 Service Extension。<li>开启后，推送详情中会有抵达数据上报，使用该功能前请按照 [通知服务扩展的使用说明](https://intl.cloud.tencent.com/document/product/1024/30730) 实现 Service Extension 接口，如果不携带此字段则没有抵达数据上报 |
-| sound           | String  | aps    | 无     | 否   | sound 字段使用情况如下：<br>1：播放系统默认提示音，"sound":"default"<br>2：播放本地自定义铃声，"sound":"chime.aiff"<br>3：静音效果，"sound":"" 或者是去除 sound 字段自定义铃声说明：格式必须是 Linear PCM、MA4（IMA/ADPCM）、alaw，μLaw 的一种，将声频文件放到项目 bundle 目录中，且时长要求30s以下，否则就是系统默认的铃声。 |
+| mutable-content | Integer | aps    | 无     | 否   | 通知拓展参数。<li>推送的时候携带 "mutable-content":1，说明是支持 iOS 10 的 Service Extension</li><li>开启后，推送详情中会有抵达数据上报，使用该功能前请按照 [通知服务扩展的使用说明](https://intl.cloud.tencent.com/document/product/1024/30730) 实现 Service Extension 接口，如果不携带此字段则没有抵达数据上报</li> |
+| sound           | String  | aps    | 无     | 否   | sound 字段使用情况如下：<li>播放系统默认提示音，"sound":"default"</li><li>播放本地自定义铃声，"sound":"chime.aiff"</li><li>静音效果，"sound":"" 或者是去除 sound 字段自定义铃声说明：格式必须是 Linear PCM、MA4（IMA/ADPCM）、alaw，μLaw 的一种，将声频文件放到项目 bundle 目录中，且时长要求30s以下，否则就是系统默认的铃声。</li> |
 
 完整的消息示例如下：
 
@@ -389,8 +376,8 @@ Android 平台具体字段如下表：
 }
 ```
 
-<span id="aps2"></span>
-### iOS 静默消息
+
+### iOS 静默消息[](id:aps2)
 
 静默消息，iOS 平台特有，类似 Android 中的透传消息，消息不展示，当静默消息到达终端时，iOS 会在后台唤醒 App 一段时间（小于30s），让 App 来处理消息逻辑。
 
@@ -399,7 +386,7 @@ Android 平台具体字段如下表：
 | 字段名         | 类型   | 父项目  | 默认值 | 是否必要 | 参数描述                                                     |
 | -------------- | ------ | ------- | ------ | -------- | ------------------------------------------------------------ |
 | ios            | Object | message | 无     | 是       | ios 消息结构体                                               |
-| aps            | Object | ios     | 无     | 是       | 苹果推送服务（APNs）特有的，其中最重要的键值对如下：<li>content-available：标识消息类型（必须为1），类型为 Integer<li>不能包含 alert、sound、badge_type 字段，详细介绍请参见 [Payload](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/PayloadKeyReference.html#//apple_ref/doc/uid/TP40008194-CH17-SW1) <br>**注意：** content-available: 1与 [message_type:"notify"](#消息体类型) 字段互斥，请勿同时使用。 |
+| aps            | Object | ios     | 无     | 是       | 苹果推送服务（APNs）特有的，其中最重要的键值对如下：<li>content-available：标识消息类型（必须为1），类型为 Integer</li><li>不能包含 alert、sound、badge_type 字段，详细介绍请参见 [Payload](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/PayloadKeyReference.html#//apple_ref/doc/uid/TP40008194-CH17-SW1) </li>**注意：** content-available: 1与 [message_type:"notify"](#消息体类型) 字段互斥，请勿同时使用 |
 | custom_content | String | ios     | 无     | 否       | 需要序列化为 json string                                     |
 | xg             | String | ios     | 无     | 否       | 系统保留 key，应避免使用                                     |
 
@@ -424,7 +411,6 @@ Android 平台具体字段如下表：
 Push API 可选参数是除了`audience_type`、`message_type`、`message`以外，可选的高级参数。
 
 
-
 | 参数名                | 类型    | 父项目 | 必需                           | 默认值                               | 描述                                                         |
 | --------------------- | ------- | ------ | ------------------------------ | ------------------------------------ | ------------------------------------------------------------ |
 | expire_time           | Integer | 无     | 否                             | 259200（72小时）                     | 消息离线存储时间（单位为秒）,最长72小时<li>若 expire_time = 0，则表示实时消息</li><li>若 expire_time 大于0，且小于800s，则系统会重置为800s</li><li>若expire_time >= 800s，按实际设置时间存储，最长72小时 </li><li>设置的最大值不得超过2147483647，否则会导致推送失败</li> |
@@ -441,19 +427,20 @@ Push API 可选参数是除了`audience_type`、`message_type`、`message`以外
 | collapse_id           | Integer | 无     | 否                             | 系统默认分配一个 collapse_id         | <li>消息覆盖参数，在前一条推送任务已经调度下发后，如果第二条推送任务携带相同的 collapse_id  则会停止前一条推送中尚未下发的 TPNS 通道数据，同时会覆盖展示第一条推送任务的消息。<li>已完成任务的 collapse_id 可以通过 [单个任务推送信息查询接口](https://intl.cloud.tencent.com/document/product/1024/33773) 获取。<li>目前仅支持全推、标签推送、号码包推送。 |
 | channel_rules         | Array   | 无     | 否                             | 无                                   | 推送通道选择策略。<li>可自定义该条推送允许通过哪些通道下发，默认允许通过所有通道下发，详细推送策略参考 [通道策略](https://intl.cloud.tencent.com/document/product/1024/36151)<li>channel_rules  数组单元素数据结构见下 [channel_rules 参数说明](#channel_rules参数说明1) |
 | tpns_online_push_type | Integer | 无     | 否                             | 0                                    | 在线设备是否通过 TPNS 通道下发：<li>0：默认在线走 TPNS 通道下发<li> 1：在线不优先走 TPNS 通道下发 |
-force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo 通道的设备，是否进行消息下发。<li>false：不下发消息 <li>true：下发消息|
+force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo 通道的设备，是否进行消息下发。<li>false：不下发消息 </li><li>true：下发消息</li>|
 
 
 
-> ?对于 collapse_id，有以下使用条件：
+>? 对于 collapse_id，有以下使用条件：
 > - 暂不支持用户自定义此参数，需要 TPNS 生成的 collapse_id。
 > - 目前仅支持 TPNS 通道、APNS 通道、小米通道、魅族通道以及华为系统版本EMUI10及以上的设备。
 > - 对于华为通道，覆盖消息时携带自定义参数需要使用 [intent](#intent1) 方式，如使用 custom_content 方式携带自定义参数，接口层会进行拦截。
 > - 目前 OPPO 通道 vivo 通道不支持覆盖消息。当新创建覆盖消息时可通过 force_collapse 字段设置为 false 来关闭 vivo、OPPO 通道的下发。
+> 
 
 
-<span id="tag_rules"></span>
-### tag_rules 参数说明
+
+### tag_rules 参数说明[](id:tag_rules)
 
 | 字段      | 类型    | 父项目    | 必填 | 描述                                                         |
 | --------- | ------- | --------- | ---- | ------------------------------------------------------------ |
@@ -462,10 +449,7 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
 | is_not    | Boolean | tag_rules | 是   | 是否对 tag_items 数组的运算结果进行非运算。<li>true：进行非运算<li>false：不进行非运算。</li> |
 
 
-
-
-<span id="tag_items2"></span>
-#### tag_items 说明
+#### tag_items 说明[](id:tag_items2)
 
 | 字段           | 类型    | 父项目    | 必填 | 描述                                                         |
 | -------------- | ------- | --------- | ---- | ------------------------------------------------------------ |
@@ -476,8 +460,8 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
 | tag_type       | String  | tag_items | 是   | 参见 [tag_type 取值表](#tag123)                              |
 
 
-<span id="tag123"></span>
-#### tag_type 取值表
+
+#### tag_type 取值表[](id:tag123)
 
 | **标签名称** | **tag_type 取值**      | **标签名举例**          |
 | ------------ | ---------------------- | ----------------------- |
@@ -491,7 +475,8 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
 | 手机机型     | xg_auto_deviceversion  | MI 9 SE，vivo X9Plus 等 |
 | 国家         | xg_auto_country        | CN，SG 等               |
 
-> ?详细使用方法可参见 [标签推送示例](#biaoqianshili)。
+>? 详细使用方法可参见 [标签推送示例](#biaoqianshili)。
+>
 
 
 <span id="channel_rules参数说明1"></span>
@@ -500,8 +485,8 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
 
 | 字段名  | 类型    | 父项目        | 是否必填 | 参数说明                                                     |
 | ------- | ------- | ------------- | -------- | ------------------------------------------------------------ |
-| channel | String  | channel_rules | 是       | 下发推送通道。<br> <li> hw：华为通道<li> xm：小米通道<li> mz：魅族通道<li> vivo：vivo 通道 <li>oppo：OPPO 通道<li>apns：APNs 通道 |
-| disable | Boolean | channel_rules | 是       | 是否关闭 channel 中对应的通道， 默认打开通道。 <br><li>true：关闭<li> false：打开|
+| channel | String  | channel_rules | 是       | 下发推送通道。<li> hw：华为通道</li><li> xm：小米通道</li><li> mz：魅族通道</li><li> vivo：vivo 通道</li> <li>oppo：OPPO 通道</li><li>apns：APNs 通道</li> |
+| disable | Boolean | channel_rules | 是       | 是否关闭 channel 中对应的通道， 默认打开通道。<li>true：关闭</li><li> false：打开</li>|
 
 <span id="loop_param参数说明"></span>
 
@@ -511,7 +496,7 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
 | ------------- | ------- | ---------- | -------- | ------------------------------------------------------------ |
 | startDate     | String  | loop_param | 是       | 循环区间开始日期，可选择未来90天内的时间。格式 YYYY-MM-DD，例如2019-07-01 |
 | endDate       | String  | loop_param | 是       | 循环区间截止日期，可选择未来90天内的时间。格式 YYYY-MM-DD，例如2019-07-07 |
-| loopType      | Integer | loop_param | 是       | 循环类型<li>1：按天<li> 2：按周<li> 3：按月                  |
+| loopType      | Integer | loop_param | 是       | 循环类型<li>按天</li><li>按周</li><li>按月</li>                |
 | loopDayIndexs | Array   | loop_param | 是       | 按周循环，填周几[0-6]，按天填 0，如[0, 1, 2]，表示每周的周一，周二，周三进行推送 |
 | dayTimes      | Array   | loop_param | 是       | 具体推送时间，格式 HH:MM:SS，例如["19:00:00", "20:00:00"]，表示每天的19点，20点进行推送 |
 
@@ -531,7 +516,6 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
 
 
 ## 示例说明
-
 ### Android 账号推送请求消息
 
 ```json
@@ -560,13 +544,13 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
     "xg_media_audio_resources":"xxx", //此处填音频富媒体元素地址，例如http://sc1.111ttt.cn/2018/1/03/13/396131227447.mp3 
     "accept_time": [
         {
-            "start": {//时间段起始时间
-                "hour": "13",//起始时间 小时值, 取值 [0,24)
-                "min": "00"// 起始时间 分钟值, 取值[0,60)
+            "start": {//时间段起始时间，
+                "hour": "13",//起始时间 小时值, 取值 [0:24)
+                "min": "00"// 起始时间 分钟值, 取值[0:60)
             },
             "end": {//时间段结束时间
-                "hour": "14",//结束时间 小时值, 取值 [0,24)
-                "min": "00" //结束时间 分钟值,取值[0,60)
+                "hour": "14",//结束时间 小时值, 取值 [0:24)
+                "min": "00" //结束时间 分钟值,取值[0:60)
 
             }
         },
@@ -582,36 +566,36 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
         }
     ],
     "android": {
-		"n_ch_id": "default_message",
-		"n_ch_name": "默认通知",
-        "n_id": 0,
-        "builder_id": 0,
-        "ring": 1,
-        "ring_raw": "ring",
-		"badge_type":-1,
-        "vibrate": 1,
-        "lights": 1,
-		"clearable": 1,
-        "icon_type": 0,
-        "icon_res": "xg",
-        "style_id": 1,
-        "small_icon": "xg",
-        "action": {
-            "action_type": 1,// 动作类型，1，打开 activity 或 app 本身；2，打开浏览器；3，打开 Intent
-            "activity": "xxx",
-            "aty_attr": {// activity属性，只针对action_type=1的情况
-                "if": 0, // Intent的Flag属性
-                "pf": 0  // PendingIntent的Flag属性
-            },
-            "browser": {
-                "url": "xxxx ", // 仅支持http、https
-                "confirm": 1 // 是否需要用户确认
-            },
-            "intent": "xxx" //SDK版本需要大于等于1.0.9，然后在客户端的intent配置data标签，并设置scheme属性
-        },
-      "custom_content":"{\"key\":\"value\"}"
-    }
-}
+				"n_ch_id": "default_message",
+				"n_ch_name": "默认通知",
+				"n_id": 0,
+				"builder_id": 0,
+				"ring": 1,
+				"ring_raw": "ring",
+				"badge_type":-1,
+				"vibrate": 1,
+				"lights": 1,
+				"clearable": 1,
+				"icon_type": 0,
+				"icon_res": "xg",
+				"style_id": 1,
+				"small_icon": "xg",
+				"action": {
+						"action_type": 1,// 动作类型，1，打开 activity 或 app 本身；2，打开浏览器；3，打开 Intent
+						"activity": "xxx",
+						"aty_attr": {// activity属性，只针对action_type=1的情况
+								"if": 0, // Intent的Flag属性
+							    "pf": 0  // PendingIntent的Flag属性
+						},
+						"browser": {
+								"url": "xxxx ", // 仅支持http、https
+								"confirm": 1 // 是否需要用户确认
+						},
+						"intent": "xxx" //SDK版本需要大于等于1.0.9，然后在客户端的intent配置data标签，并设置scheme属性
+				 },
+				 "custom_content":"{\"key\":\"value\"}"
+				}
+			}
 }
 ```
 
@@ -668,8 +652,8 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
 ```
 
 
-<span id="biaoqianshili"></span>
-### 标签推送场景（tag_rules 方式）
+
+### 标签推送场景（tag_rules 方式）[](id:biaoqianshili)
 
 **场景一：广东和湖南，并且是20200408当天活跃过的男性用户**
 表达式：（xg_auto_province.guangdong 或 xg_auto_province.hunan）与 xg_auto_active.20200408 与 xg_user_define.male
