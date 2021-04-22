@@ -26,8 +26,8 @@ Please complete the policy authorization for your sub-users as instructed below 
 3. Click **All Policies**.
 4. Click **Associate Users/Groups** on the right of the target policy.
 5. [](id:step4) In the pop-up window, select target users from the box on the left to the **Selected** box on the right, and click **Confirm**.
-![](https://main.qcloudimg.com/raw/a10c35e5a71ef2792b1f338441017a8a.png)
+![](https://main.qcloudimg.com/raw/4f9af5773b60505393707c9b2bbe9517.png)
 6. It is optional: if you need to associate a user group, please click **Switch to User Groups** -> **User Groups** in the pop-up window, and repeat the operations in <a href="#step4">step 5</a>.
-   ![](https://main.qcloudimg.com/raw/eb74742271b5d4cfed844e6e1914dbea.png)
+![](https://main.qcloudimg.com/raw/276164b1c4bf81979ba8c4f3d382336b.png)
 
 
