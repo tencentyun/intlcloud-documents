@@ -15,6 +15,7 @@ Android SDK 是移动推送 TPNS 服务为客户端实现消息推送而提供�
 
 1. 登录 [移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns)，在【产品管理】>【配置管理】页面获取应用的 AccessID、AccessKey。
 2. 在 [SDK 下载](https://console.cloud.tencent.com/tpns/sdkdownload) 页面，获取当前最新版本号。
+
 3. 在 app build.gradle 文件下，配置以下内容：
 
 ```
@@ -52,8 +53,8 @@ dependencies {
 ```
 
 >!
- >- 如果您的应用服务接入点为广州，SDK 默认实现该配置。
- >- 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置。
+ - 如果您的应用服务接入点为广州，SDK 默认实现该配置。
+ - 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置。
    在 AndroidManifest 文件 application 标签内添加以下元数据：
 ```
 <application>
@@ -145,6 +146,7 @@ dependencies {
 
 
 #### 组件和应用信息配置
+
 
 ```xml
 <application>
@@ -268,8 +270,8 @@ dependencies {
 ```
 
 >!
- >- 如果您的应用服务接入点为广州，SDK 默认实现该配置。
- >- 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置。
+ - 如果您的应用服务接入点为广州，SDK 默认实现该配置。
+ - 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置。
    在 AndroidManifest 文件 application 标签内添加以下元数据：
 ```
 <application>
@@ -316,7 +318,7 @@ XGPushManager.registerPush(this, new XGIOperateCallback() {
 过滤 "TPush" 注册成功的日志如下：
 
 ```xml
-XG register push success with token : 6ed8af8d7b18049d9fed116a9db9c71ab44d5565
+TPNS register push success with token : 6ed8af8d7b18049d9fed116a9db9c71ab44d5565
 ```
 
 
@@ -367,20 +369,25 @@ XG register push success with token : 6ed8af8d7b18049d9fed116a9db9c71ab44d5565
 
 ### 关闭联合保活
 
+如需关闭联合保活功能，请在应用初始化的时候，例如 Application 或 LauncherActivity 的 onCreate 中调用如下接口，并传递 false 值：
+>!仅 1.1.6.0 之后版本支持关闭联合保活功能，1.1.6.0之前版本TPNS 默认开启联合保活能力，且不可关闭。
 
->!为提升离线抵达率，TPNS SDK 默认开启联合保活能力，开发者可手动关闭。
-
-如果需要关闭 TPNS 的保活功能，若您使用 gradle 自动集成方式，请在自身应用的 AndroidManifest.xml 文件 “application” 标签下配置如下结点，其中 `xxx` 为任意自定义名称；如果使用手动集成方式，请修改如下节点属性：
-
-```xml
-   <!-- 在自身应用的AndroidManifest.xml文件中添加如下结点，其中 xxx 为任意自定义名称: -->
-   <!-- 关闭与 TPNS 应用的联合保活功能，请配置 -->
-   <provider
-       android:name="com.tencent.android.tpush.XGPushProvider"
-       tools:replace="android:authorities"
-       android:authorities="应用包名.xxx.XGVIP_PUSH_AUTH"
-       android:exported="false" />     
+```java
+XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 ```
+
+若您使用 gradle 自动集成方式，请在自身应用的 AndroidManifest.xml 文件 &lt;application&gt; 标签下配置如下结点，其中 `xxx` 为任意自定义名称；如果使用手动集成方式，请修改如下节点属性：
+```xml
+<!-- 在自身应用的AndroidManifest.xml文件中添加如下结点，其中 xxx 为任意自定义名称: -->     
+<!-- 关闭与 TPNS 应用的联合保活功能，请配置 -->
+<provider
+		 android:name="com.tencent.android.tpush.XGPushProvider"
+		 tools:replace="android:authorities"
+		 android:authorities="应用包名.xxx.XGVIP_PUSH_AUTH"
+		 android:exported="false" />    
+```
+
+若控制台有以下日志打印，则表明联合保活功能已经关闭：`I/TPush: [ServiceUtil] disable pull up other app`。
 
 ### 获取 TPNS Token 交互建议
 
@@ -391,4 +398,5 @@ XG register push success with token : 6ed8af8d7b18049d9fed116a9db9c71ab44d5565
 //获取 Token
 XGPushConfig.getToken(getApplicationContext());
 ```
+
 
