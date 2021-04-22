@@ -39,19 +39,19 @@ This request uses a request body. An example request body with all nodes is as f
 
 The nodes are detailed as follows: <style  rel="stylesheet"> table th:nth-of-type(1) { width: 200px; }</style>
 
-|Node Name (Keyword) | Parent Node | Description | Type | Required
+|Node Name (Keyword) | Parent Node | Description | Type | Required |
 |:---|:-- |:--|:--|:--|
 | BucketLoggingStatus | None | Indicates the status of logging configuration. If there is no child node, logging is disabled | Container | Yes |
 
 Container node `BucketLoggingStatus`:
 
-|Node Name (Keyword) | Parent Node | Description | Type | Required
+|Node Name (Keyword) | Parent Node | Description | Type | Required  |
 |:---|:-- |:--|:--|:--|
 | LoggingEnabled | BucketLoggingStatus | Specifies the logging configuration, mainly for the destination bucket | Container | No |
 
 Container node `LoggingEnabled`:
 
-|Node Name (Keyword) | Parent Node | Description | Type | Required
+|Node Name (Keyword) | Parent Node | Description | Type | Required  |
 |:---|:-- |:--|:--|:--|
 | TargetBucket | LoggingEnabled | The destination bucket used to store logs; this can be the same bucket (not recommended) or a bucket in the same region under the same account | String | No |
 | TargetPrefix | LoggingEnabled | The specified path in which logs are stored in the destination bucket | String | No |
