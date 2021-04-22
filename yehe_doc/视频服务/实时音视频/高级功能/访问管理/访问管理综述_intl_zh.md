@@ -2,7 +2,7 @@
 
 [访问管理](https://intl.cloud.tencent.com/document/product/598)（Cloud Access Management，**CAM**）是腾讯云提供的一套 Web 服务，它主要用于帮助客户安全管理腾讯云账户下的资源的访问权限。通过 CAM，您可以创建、管理和销毁用户（组），并通过身份管理和策略管理控制哪些人可以使用哪些腾讯云资源。
 
-实时音视频 TRTC 已接入 **CAM**，开发者可以根据自身需要为子账号分配合适的 TRTC 访问权限。
+实时音视频 TRTC 已接入 **CAM**，开发者可以根据自身需要为子账号分配合适的 TRTC 访问权限。 
 
 ## 基础入门
 
@@ -23,10 +23,10 @@
 某企业的一个业务在使用 TRTC，该业务的产品运营人员需要访问 TRTC 控制台，获取用量统计信息，同时不允许其进行敏感操作（如修改旁路推流、云端录制配置等），以免误操作影响业务。这时可以先创建自定义策略，该策略拥有 TRTC 控制台登录、用量统计相关 API 的访问权限，然后创建一个子账号，与上述策略绑定，将该子账号提供给产品运营人员。
 
 ## 授权粒度
-访问管理的核心功能可以表达为：**允许或禁止某账号对某些资源进行某些操作**。TRTC 访问管理支持 [资源级授权](https://intl.cloud.tencent.com/document/product/598/10588#.E7.AE.80.E4.BB.8B)，资源的粒度是 [TRTC 应用](https://intl.cloud.tencent.com/document/product/647/37714)，操作的粒度是 [云 API](https://intl.cloud.tencent.com/product/api)，包括 [服务端 API](https://intl.cloud.tencent.com/document/product/647/34260) 以及访问 TRTC 控制台时可能会用到的 API。
+访问管理的核心功能可以表达为：**允许或禁止某账号对某些资源进行某些操作**。TRTC 访问管理支持 [资源级授权](https://intl.cloud.tencent.com/document/product/598/10588#.E7.AE.80.E4.BB.8B)，资源的粒度是 [TRTC 应用](https://intl.cloud.tencent.com/document/product/647/37714)，操作的粒度是 [云 API](https://intl.cloud.tencent.com/product/api)，包括 [服务端 API](https://intl.cloud.tencent.com/document/product/647/34260) 以及访问 TRTC 控制台时可能会用到的 API。详细说明请参见 [可授权的资源及操作](https://intl.cloud.tencent.com/document/product/647/39549)。
 
 
 
 ## 能力限制
 - TRTC 访问管理的资源粒度为 [应用](https://intl.cloud.tencent.com/document/product/647/37714)，不支持对更细粒度的资源（如应用信息、配置信息等）做授权。
-- TRTC 访问管理不支持项目，建议您通过 [标签](https://intl.cloud.tencent.com/document/product/651/13335) 来管理云服务资源。
+- TRTC 访问管理不支持 项目，建议您通过 [标签](https://intl.cloud.tencent.com/document/product/651/13335) 来管理云服务资源。

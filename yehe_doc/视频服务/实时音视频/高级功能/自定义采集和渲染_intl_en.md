@@ -22,8 +22,7 @@ You can call the `enableCustomVideoCapture` API of `TRTCCloud` to disable the TR
 
 The `sendCustomVideoData` API includes a parameter named `TRTCVideoFrame`, which represents a video frame. To avoid performance loss, the TRTC SDK has requirements on the format of video data it receives, which vary with the platform used.
 
-<dx-tabs>
-::: iOS\s
+#### iOS
 On iOS, the TRTC SDK supports data in two YUV formats: NV12 and I420. Image transferring via `CVPixelBufferRef` delivers higher performance on iOS. Given this, we recommend the following settings.
 
 |  Parameter   |       Type       |                      Recommended Value                       |                           Note                           |
@@ -49,8 +48,7 @@ videoFrame.pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
         
 [trtcCloud sendCustomVideoData:videoFrame];      
 ```
-:::
-::: Android\s
+#### Android
 There are two custom video capturing schemes for Android, as shown below.
 - **Buffer scheme**: this scheme is relatively easy, but it delivers mediocre performance and is therefore not recommended for scenarios with high requirements on resolution.
 The buffer scheme involves feeding byte[] arrays to the TRTC SDK. Two YUV formats are supported: I420 and NV21.
@@ -152,8 +150,7 @@ public int onTextureProcess(int textureId, EGLContext eglContext) {
         return textureId;
     }
 ```
-:::
-::: Windows\s
+#### Windows
 Windows supports `TRTCVideoPixelFormat_I420` only. We recommend the following settings.
 <table>
 <thead><tr><th>Parameter</th><th>Type</th><th>Recommended Value</th><th>Note</th>
@@ -224,8 +221,7 @@ m_pCloud->sendCustomVideoData(TRTCVideoStreamTypeBig, & frame);
 
 The TRTC SDK uses OpenGL to render video images. If you use the SDK for game development or want to integrate it into your own UI engine, you must render video images by yourself.
 
-<dx-tabs>
-::: iOS\s&\smacOS
+#### iOS & macOS
 You can call `setLocalVideoRenderDelegate` and `setRemoteVideoRenderDelegate` of `TRTCCloud` to configure callbacks for the custom rendering of local and remote video images. Below are the relevant parameters.
 
 |  Parameter   |       Type       |            Recommended Value             |                Note                |
@@ -260,8 +256,7 @@ If you set `pixelFormat` to `TRTCVideoPixelFormat_NV12` and `bufferType` to `TRT
     });
 }
 ```
-:::
-::: Android\s
+#### Android
 You can call `setLocalVideoRenderListener` and `setRemoteVideoRenderListener` of `TRTCCloud` to configure callbacks for the custom rendering of local and remote video images. Below are the relevant parameters.
 
 |  Parameter   |       Type       |                           Recommended Value                           |                           Note                           |
@@ -271,6 +266,7 @@ You can call `setLocalVideoRenderListener` and `setRemoteVideoRenderListener` of
 
 [](id:example_android)
 #### Sample code
+
 <dx-codeblock>
 ::: Android java
     public void onRenderVideoFrame(String userId, int streamType, final TRTCCloudDef.TRTCVideoFrame frame) {
@@ -298,8 +294,7 @@ You can call `setLocalVideoRenderListener` and `setRemoteVideoRenderListener` of
     }
 :::
 </dx-codeblock>
-:::
-::: Windows\s
+#### Windows
 You can call `setLocalVideoRenderCallback` and `setRemoteVideoRenderCallback` of `TRTCCloud` to configure callbacks for the custom rendering of local and remote video images. Below are the relevant parameters.
 
 |  Parameter   |         Type          |          Recommended Value           |                           Note                           |
@@ -320,9 +315,9 @@ void TXLiveAvVideoView::renderFitMode(HDC hDC, unsigned char * buffer, int width
     origin.X = m_rcItem.left, origin.Y = m_rcItem.top;
     int viewWith = m_rcItem.right - m_rcItem.left;
     int viewHeight = m_rcItem.bottom - m_rcItem.top;
-
-    bool bReDrawBg = false;
     
+    bool bReDrawBg = false;
+     
     if (m_bmi.bmiHeader.biWidth != width || m_bmi.bmiHeader.biHeight != height)
     {
         memset(&m_bmi, 0, sizeof(m_bmi));
@@ -342,8 +337,7 @@ void TXLiveAvVideoView::renderFitMode(HDC hDC, unsigned char * buffer, int width
 }
 :::
 </dx-codeblock>
-:::
-</dx-tabs>
+
 
 ### Custom Audio Capturing
 
