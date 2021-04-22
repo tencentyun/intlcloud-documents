@@ -15,7 +15,7 @@
 - Windows：修复 SDK 启动后非必要的 DXGI 占用问题。
 - iOS：修复手动设置焦点会导致 ANR 的问题。
 - iOS：修复偶现切换前后摄像头无效的问题。
-- iOS：修复 VODPlayer 减速播放 crash。
+- iOS：修复 TXVodPlayer 减速播放 crash。
 - iOS：修复偶现进房后默认从听筒播放的问题。
 - iOS & Android：优化回声消除和噪声抑制的效果，并且耳返也能听到混响的效果。
 - Android：修复偶现硬解绿屏花屏的问题。
@@ -80,7 +80,7 @@
 - Windows 优化 System loopback 音频采集音质及回声消除效果。
 - Windows 优化音频设备选择逻辑，降低无声率。
 - Windows 优化双讲剪切效果。
-- 全平台优化手动接收模式切换角色时的秒开效果。
+- 全平台优化手动订阅模式切换角色时的秒开效果。
 - 全平台优化音频接收逻辑，提升音频效果。
 - 全平台优化 sendCustomCmdMsg 可靠性。
 
@@ -140,7 +140,7 @@
 - Android：优化声音路由策略，支持戴耳机时，声音只从耳机播放。
 - Android：支持部分系统下采用低延迟采集播放，降低 Android 系统通话延迟。
 - Android：支持 VODPlayer 和 trtc 一起使用，并且支持回声消除。
-- Windows：兼容虚拟摄像头 e2eSoft Vacm。
+- Windows：兼容虚拟摄像头 e2eSoft VCam。
 - Windows：支持同时调用 startLocalPreview 和 startCameraDeviceTest。
 - Windows：支持屏幕分享走主路的同时，调用 startLocalPreview 开启本地预览。
 - Windows：降低因 SDK 内部播放缓冲引发音频延迟较大的问题。
@@ -183,9 +183,9 @@
 - 全平台：修复弱网情况下调用 muteLocalVideo 和 muteLocalAudio 接口时会偶现播放异常的 BUG。
 - iOS：修复播放音效在低端 iPhone 或 iPad 上可能会失败的 BUG。
 - iOS：修复 iPad Pro 屏幕分享出的画面出现变形拉伸的问题。
-- iOS：修复 App 内屏幕贡献在用户拒绝权限之后，还会持续弹出几次屏幕录制权限申请提示的问题。
+- iOS：修复 App 内屏幕共享在用户拒绝权限之后，还会持续弹出几次屏幕录制权限申请提示的问题。
 - Windows：解决笔记本或者台式机在长时间休眠后，退房 onExitRoom 事件通知不会回调的问题。
-- Windows：修复在 Music 音质模式下，开启系统混音 [stopSystemAudioLoopback](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aab0258238e4414c386657151d01ffb23) 后会导致漏回声的问题。
+- Windows：修复在 Music 音质模式下，开启系统混音 [startSystemAudioLoopback](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aab0258238e4414c386657151d01ffb23) 后会导致漏回声的问题。
 - Windows：修复在快速调用 enterRoom 和 exitRoom 进退房的情况下，偶现的播放端无声的 BUG。
 - Windows：修复 SDK 对 Visual Stuido 2010 项目的编译兼容性问题。
 - Windows：修复手动接收模式（即 [setDefaultStreamRecvMode(false，false)](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a7a0238314fc1e1f49803c0b22c1019d5)）下会重复收到 onUserVideoAvailable 事件回调的问题。
@@ -212,7 +212,7 @@
 
 **修复**
 
-- 全平台：修复在不退房的情况下进入同一个房间时，SDK 不触发 onEnterRoom 回的 BUG。
+- 全平台：修复在不退房的情况下进入同一个房间时，SDK 不触发 onEnterRoom 回调的 BUG。
 - 全平台：修复几种可能导致黑屏的偶现内部 BUG 的问题。
 - 全平台：修复提前调用 startRemoteSubStreamView 无法正常显示屏幕分享画面的问题。
 - Windows：修复已知的几处句柄及 GDI 泄露。
