@@ -185,7 +185,7 @@ The business logic of custom capturing is optimized:
 - iOS: fixed the issue where sound effect playback may fail on low-end iPhone or iPad devices.
 - iOS: fixed the issue where screen images shared by iPad Pro get distorted.
 - iOS: fixed the issue where, during in-app screen sharing, the screen capturing permission request continues to pop up for a few times after being rejected by users.
-- Windows: fixed the issue where [onExitRoom](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a0a45883a23a200b0e9ea38fdde1da4bd) fails to call back room exit event notifications after laptops or desktops stay in the sleep mode for a long time.
+- Windows: fixed the issue where onExitRoom fails to call back room exit event notifications after laptops or desktops stay in the sleep mode for a long time.
 - Windows: fixed the issue where, in `Music` mode, echo leaks occur after [stopSystemAudioLoopback](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aab0258238e4414c386657151d01ffb23) is enabled.
 - Windows: fixed the issue where the player end is occasionally muted when `enterRoom` and `exitRoom` are frequently and quickly called to enter and exit rooms respectively.
 - Windows: fixed the issue of SDK compatibility with Visual Studio 2010 project compilation.
