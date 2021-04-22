@@ -6,6 +6,7 @@
 - 独自のドメイン名があること。
 - 【LVBコンソール】>【[Domain Management](https://console.cloud.tencent.com/live/domainmanage)】で、プッシュ/再生ドメイン名の追加、およびCNAMEに成功していること。操作の詳細は[独自のドメイン名の追加](https://intl.cloud.tencent.com/document/product/267/35970)をご参照ください。
 
+
 <span id="push"></span>
 ## プッシュURLのスプライス
 実際のサービスを使用中で、ライブストリーミングルームが多い場合、キャスターごとに手動でプッシュと再生のURLを作成することはできませんが、サーバーでプッシュと再生のアドレスを**スプライス**することができます。Tencent Cloud標準仕様に準拠するURLであれば、プッシュに使用でき、4つの部分で構成される標準的なプッシュURLは次のとおりです。
