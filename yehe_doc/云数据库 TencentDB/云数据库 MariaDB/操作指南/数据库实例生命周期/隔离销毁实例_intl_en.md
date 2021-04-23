@@ -6,7 +6,7 @@ When an instance is returned and its status changes to **Isolated**, it will no 
 
 >!
 >- After an instance is isolated, its IP will be released, and you may not get back the original IP after the instance is restored.
->- After an instance is isolated, you cannot upgrade it, modify its parameters, create or modify an account for it, roll it back, add sets to it, or rename it.
+>- After an instance is isolated, you cannot upgrade it, modify its parameters, create or modify an account for it, roll it back, or rename it.
 >
 
 ### Directions
