@@ -395,15 +395,15 @@ func onReceiveNewInvitation(identifier: String, inviter: String, cmd: String, co
   ::: Swift Swift
   // 发送端：发送文本消息
   self.chatSalon.sendRoomTextMsg(message: message) { (code, message) in
-          
-  
-}
-// 接收端：监听文本消息
-func onRecvRoomTextMsg(message: String, userInfo: ChatSalonUserInfo) {
+    
+    
+  }
+  // 接收端：监听文本消息
+  func onRecvRoomTextMsg(message: String, userInfo: ChatSalonUserInfo) {
     //收到的message信息处理方法        
-}
-:::
-</dx-codeblock>
+  }
+  :::
+  </dx-codeblock>
 
 - 通过 `sendRoomCustomMsg` 可以发送自定义（信令）的消息，所有在该房间内的主播和观众均可以收到 `onRecvRoomCustomMsg` 回调。
   自定义消息常用于传输自定义信令，例如用于点赞消息的发送和广播。
