@@ -149,7 +149,7 @@ if (resValue.code == 0) {
 
 1. 主播执行 [步骤4](#model.step4) 登录后，可以调用 `setSelfProfile` 设置自己的昵称和头像。
 2. 主播调用 `createRoom` 创建新的语音沙龙，此时传入房间 ID、房间名等房间属性信息。
-3. 主播会收到有成员进入的 `TRTCChatSalonDelegate.onAudienceEnter` 的事件通知，此时会自动打开麦克风采集。
+3. 主播会收到有成员进入的 `TRTCChatSalonDelegate.onAnchorEnterSeat` 的事件通知，此时会自动打开麦克风采集。
 
 ![](https://main.qcloudimg.com/raw/dfe6ed5d0c973e399e834eb233c96ec6.png)
 
