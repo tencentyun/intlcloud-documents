@@ -89,7 +89,7 @@ cocoapods 라이브러리 액세스가 비교적 느린 개발 환경인 경우,
 
 ### 2단계: 권한 설정
 
-info.plist 파일에 Privacy > Camera Usage Description, Privacy > Microphone Usage Description을 추가해 마이크 권한을 신청해야 합니다.
+info.plist 파일에 Privacy > Microphone Usage Description을 추가해 마이크 권한을 신청해야 합니다.
 
 [](id:model.step3)
 
