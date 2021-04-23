@@ -65,7 +65,7 @@ trtcCloud.on('onError',onError);
 <span id="step4"></span>
 ### 手順4：入室パラメータTRTCParamsを組み立てる
 
-[enterRoom()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#enterRoom) インターフェースを呼び出すとき、1つのキーパラメータ [TRTCParams](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCParams.html)を入力する必要があります。このパラメータに含まれる必須のフィールドは下表のとおりです。
+[enterRoom()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#enterRoom) インターフェースを呼び出すとき、1つのキーパラメータ [TRTCParams](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCParams.html)を入力する必要があります。このパラメータに含まれる必須のフィールドは下表のとおりです。
 
 | パラメータ     | タイプ   | 説明                                                         | サンプル                   |
 | :------- | :----- | :----------------------------------------------------------- | :--------------------- |
