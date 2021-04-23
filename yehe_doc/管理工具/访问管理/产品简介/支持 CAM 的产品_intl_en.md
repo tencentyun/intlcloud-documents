@@ -77,7 +77,7 @@ Definitions:
 | Service | Authorization Granularity | Console | Authorization by Tag | Service Role | Reference Document | 
 | ------------------------------------------------------------| ------ | -------- | -------- |  ---- | ---- | 
 | [Serverless Cloud Function (SCF)](https://intl.cloud.tencent.com/document/product/583)  | Resource level | &#10003;        |  &#10003;  | &#10003;   |[CAM Guide](https://intl.cloud.tencent.com/document/product/583/18014)  | 
-| [Serverless Framework](https://intl.cloud.tencent.com/document/product/1040)  | Resource level | - |  -   |  &#10003;   | -   |
+| [Serverless Application Center](https://intl.cloud.tencent.com/document/product/1040)  | Resource level | - |  -   |  &#10003;   | -   |
 
 
 ## Middleware 
