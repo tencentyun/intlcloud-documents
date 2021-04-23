@@ -47,16 +47,12 @@
 
 1. 执行 `flutter pub get`。
 2. 编译运行调试：
-<dx-tabs>
-:::  Android\s端
-1. 执行 `flutter run`。
-2. 使用 Android Studio（3.5及以上的版本）打开源码工程，单击【运行】即可。
-:::
-::: iOS\s端
-1. 使用 XCode（11.0及以上的版本）打开源码目录下的 `/ios工程`。
-2. 编译并运行 Demo 工程即可。
-:::
-</dx-tabs>
+  ####  Android\s端
+    1. 执行 `flutter run`。
+    2. 使用 Android Studio（3.5及以上的版本）打开源码工程，单击【运行】即可。
+  #### iOS\s端
+    1. 使用 XCode（11.0及以上的版本）打开源码目录下的 `/ios工程`。
+    2. 编译并运行 Demo 工程即可。
 
 [](id:ui.step5)
 ### 步骤5：修改 Demo 源代码
@@ -72,7 +68,7 @@
 [](id:model)
 ## 实现自定义 UI 界面
 [源码](https://github.com/c1avie/TRTCChatSalon) 中的 trtcchatsalondemo 文件夹包含两个子文件夹 ui 和 model，model 文件夹中包含可重用的开源组件 TRTCChatSalon，您可以在 `TRTCChatSalon.dart` 文件中看到该组件提供的接口函数，并使用对应接口实现自定义 UI 界面。
-![](https://main.qcloudimg.com/raw/fcf694c8550664623414604d14ffcd94.png)
+![](https://main.qcloudimg.com/raw/7613bd7ec5b4e665f32ee5df69e5de85.png)
 
 [](id:model.step1)
 ### 步骤1：集成 SDK
@@ -155,7 +151,7 @@ if (resValue.code == 0) {
 2. 主播调用 `createRoom` 创建新的语音沙龙，此时传入房间 ID、房间名等房间属性信息。
 3. 主播会收到有成员进入的 `TRTCChatSalonDelegate.onAudienceEnter` 的事件通知，此时会自动打开麦克风采集。
 
-![](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/chatsalon/chatsalon_zbo.png)
+![](https://main.qcloudimg.com/raw/dfe6ed5d0c973e399e834eb233c96ec6.png)
 
 ```
 // 1.主播设置昵称和头像
@@ -195,7 +191,7 @@ onVoiceListener(type, param) async {
 4. 进房后会收到组件的 `TRTCChatSalonDelegate.onAudienceEnter` 和 `TRTCChatSalonDelegate.onAudienceExit` 观众进退房通知，监听到事件回调后可以将变化然后刷新到 UI 界面上。
 5. 进房后还会收到麦位表有主播进入的 `TRTCChatSalonDelegate.onAnchorEnterMic` 和 `TRTCChatSalonDelegate.onAnchorLeaveMic` 的事件通知。
 
-![](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/chatsalon/chatsalon.png)
+![](https://main.qcloudimg.com/raw/dfe6ed5d0c973e399e834eb233c96ec6.png)
 ```
 // 1.观众设置昵称和头像
 trtcVoiceRoom.setSelfProfile("my_name", "my_face_url");
@@ -240,7 +236,7 @@ onVoiceListener(type, param) async {
 1.  `leaveMic` 主动下麦,房间内所有成员会收到 `onAnchorLeaveMic` 的事件通知。
 2.  `kickMic` 传入对应用户的userId后，可以踢人下麦。群主踢人下麦，房间内所有成员会收到 `onAnchorLeaveMic` 的事件通知。
 
-![](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/chatsalon/chatsalon-ma-m.png)
+![](https://main.qcloudimg.com/raw/b47e4ce248aa71f9a68f28f57c699db6.png)
 ```
 // 1.主播主动下麦
 trtcVoiceRoom.leaveMic();
@@ -252,7 +248,7 @@ trtcVoiceRoom.kickMic(userId);
 1.  `enterMic` 可以进行上麦，房间内所有成员会收到 `onAnchorEnterMic` 的事件通知。
 2.  `leaveMic` 主动下麦，房间内所有成员会收到 `onAnchorLeaveMic` 的事件通知。
 
-![](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/chatsalon/chatsalon-ma-au.png)
+![](https://main.qcloudimg.com/raw/8b68a5c714bf024c8598a52a7281c745.png)
 ```
 // 1.观众主动上麦
 trtcVoiceRoom.enterMic();
@@ -275,7 +271,7 @@ trtcVoiceRoom.leaveMic();
 3. 主播选择同意后，调用 `agreeToSpeak` 并传入 userId。
 4. 观众端收到 `onAgreeToSpeak` 的事件通知，调用 `enterMic` 进行上麦。
 
-![](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/chatsalon/chatsalon-si.png)
+![](https://main.qcloudimg.com/raw/72e4ddc8e1d13b47c6713355145c297e.png)
 ```
 // 观众端视角
 // 1.调用 sendInvitation，请求上麦
