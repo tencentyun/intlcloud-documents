@@ -8,7 +8,7 @@ Object Tagging is designed to help you group and manage objects in your bucket b
 
 ### Using COS Console
 
-You can manage object tags in the COS Console. For more information, see [Setting Object Tags] (https://intl.cloud.tencent.com/document/product/436/35664).
+You can manage object tags in the COS Console. For more information, see [Setting Object Tags](https://intl.cloud.tencent.com/document/product/436/35664).
 
 ### Using RESTful APIs
 
