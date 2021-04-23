@@ -18,7 +18,7 @@ Yes. For more information, see [Setting Origin-Pull](https://intl.cloud.tencent.
 
 ### How to configure HTTPS access for a custom domain name?
 
-If you have bound the bucket to your own domain name, and enabled CDN acceleration, you can configure HTTPS access in the [CDN Console](https://console.cloud.tencent.com/cdn). For more information, see [HTTPS Acceleration Configuration Guide][(https://intl.cloud.tencent.com/document/product/228/35213).
+If you have bound the bucket to your own domain name, and enabled CDN acceleration, you can configure HTTPS access in the [CDN Console](https://console.cloud.tencent.com/cdn). For more information, see [HTTPS Acceleration Configuration Guide](https://intl.cloud.tencent.com/document/product/228/35213).
 If you haven’t used CDN, you can alternatively configure a reverse proxy for the domain name and resolve it to the server. For more information, see [Configuring Custom Domain Names to Support HTTPS Access](https://intl.cloud.tencent.com/document/product/436/11142).
 
 ### How do I generate a temporary URL for files in COS?
@@ -67,7 +67,7 @@ Currently, you need to enable CDN service to use a custom domain name in COS.
 
 Check whether the JSON domain name is configured in your bucket, and modify the JSON domain name to XML domain name.
 
-<a id=""gcd""></a>
+<a id="gcd"></a>
 ### Can I access the overseas acceleration GCD platform via unfiled domain names?
 
 ICP filing is not required for GCD. However, it should be noted that your data and operations in Tencent Cloud should comply with local laws and regulations as well as [Tencent Cloud Terms of Service](https://intl.cloud.tencent.com/document/product/301/12905).
