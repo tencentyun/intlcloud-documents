@@ -59,7 +59,7 @@ The list below contains only the API request parameters. Common request paramete
 Request
 <pre>
 https://lb.api.qcloud.com/v2/index.php?Action=DeregisterInstancesFromLoadBalancer
-&<<a href="https://intl.cloud.tencent.com/document/api/213/6976">Common request parameters</a>>
+&<<a href="https://intl.cloud.tencent.com/document/product/213/31574">Common request parameters</a>>
 &loadBalancerId=lb-abcdefgh
 &backends.0.instanceId=ins-1234test
 &backends.1.instanceId=ins-6789test
