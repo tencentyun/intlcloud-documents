@@ -34,10 +34,10 @@ Namespace=QCE/DCDB
 | InnodbBufferPoolReads        | innodb 磁盘读页次数     | 次/秒 | uuid、shardId |
 | InnodbBufferPoolReadRequests | innodb 缓冲池读页次数   | 次/秒 | uuid、shardId |
 | InnodbBufferPoolReadAhead    | innodb 缓冲池预读页次数 | 次/秒 | uuid、shardId |
-| InnodbRowsDeleted            | innodb 执行 DELETE 行数 | 次/秒 | uuid、shardId |
-| InnodbRowsInserted           | innodb 执行 INSERT 行数 | 次/秒 | uuid、shardId |
-| InnodbRowsRead               | innodb 执行 READ 行数 | 次/秒 | uuid、shardId |
-| InnodbRowsUpdated            | innodb 执行 UPDATE 行数 | 次/秒 | uuid、shardId |
+| InnodbRowsDeleted            | innodb 执行 DELETE 行数 | 行/秒 | uuid、shardId |
+| InnodbRowsInserted           | innodb 执行 INSERT 行数 | 行/秒 | uuid、shardId |
+| InnodbRowsRead               | innodb 执行 READ 行数 | 行/秒 | uuid、shardId |
+| InnodbRowsUpdated            | innodb 执行 UPDATE 行数 | 行/秒 | uuid、shardId |
 
 >? 分布式数据库所有指标的统计粒度可取值60s 、300s 。 每个指标的统计粒度（Period）可取值不一定相同，可通过DescribeBaseMetrics接口获取每个指标支持的统计粒度。
 
