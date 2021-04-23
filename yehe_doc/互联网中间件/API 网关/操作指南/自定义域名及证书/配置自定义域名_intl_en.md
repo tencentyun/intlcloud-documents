@@ -10,9 +10,9 @@ The domain name binding feature allows you to bind your own domain name to a ser
 1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway/index?rid=1) and click **Service** in the left sidebar to access the service list page.
 2. In the service list, click a service ID to enter the service details page.
 3. On the service details page, select **Custom domain**, click **Create** in the top-left corner, enter the configuration information, and click **Submit**.
-> ?
-> - If you need the HTTPS protocol that supports independent domain names, you should submit the SSL certificate for your domain name by uploading it or by entering the certificate name, content, and private key.
-> - A modified CNAME record will take effect after a period of time. Be sure to proceed with the configuration after it takes effect; otherwise, the configuration will fail.
+>?
+>- If you need the HTTPS protocol that supports independent domain names, you should submit the SSL certificate for your domain name by uploading it or by entering the certificate name, content, and private key.
+>- A modified CNAME record will take effect after a period of time. Be sure to proceed with the configuration after it takes effect; otherwise, the configuration will fail.
 4. After configuring CNAME resolution, configure the domain name in the service (be sure to configure CNAME resolution first).
 5. To unbind a domain name, delete it from the service and then delete its CNAME record.
 
