@@ -69,14 +69,19 @@ npm run serve
 >?
 >- 从v0.6.0起，需要手动安装依赖 [trtc-js-sdk](https://www.npmjs.com/package/trtc-js-sdk) 和 [tim-js-sdk](https://www.npmjs.com/package/tim-js-sdk) 以及 [tsignaling](https://www.npmjs.com/package/tsignaling)。
 >- 为了减小 trtc-calling-js.js 的体积，避免和接入侧已使用的 trtc-js-sdk 和 tim-js-sdk 以及 tsignaling 发生版本冲突，trtc-js-sdk 和 tim-js-sdk 以及 tsignaling 不再被打包到 trtc-calling-js.js，在使用前您需要手动安装依赖。
-
-```javascript
+<dx-codeblock>
+::: javascript javascript
   npm i trtc-js-sdk --save
   npm i tim-js-sdk --save
   npm i tsignaling --save
   npm i trtc-calling-js --save
 
 
+```
+:::
+</dx-codeblock>
+<dx-codeblock>
+::: html html
 
   //如果您通过 script 方式使用 trtc-calling-js，需要按顺序先手动引入 trtc.js
   <script src="./trtc.js"></script>
@@ -91,7 +96,9 @@ npm run serve
 
   // 最后再手动引入 trtc-calling-js.js
   <script src="./trtc-calling-js.js"></script>
-```
+:::
+</dx-codeblock>
+
 ### 步骤2：创建 TRTCCalling 对象
 创建 TRTCCalling 对象，并将 SDKAppID 参数设置为您自己的 SDKAppID。
 ```javascript
