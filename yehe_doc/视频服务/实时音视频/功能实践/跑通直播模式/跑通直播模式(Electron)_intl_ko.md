@@ -65,7 +65,7 @@ trtcCloud.on('onError',onError);
 <span id="step4"></span>
 ### 4단계: 입장 매개변수 TRTCParams 구성
 
-[enterRoom()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#enterRoom) 인터페이스를 호출할 경우, 핵심 매개변수 [TRTCParams](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCParams.html)를 입력해야 합니다. 해당 매개변수가 포함하는 필수 입력 필드는 다음과 같습니다.
+[enterRoom()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#enterRoom) 인터페이스를 호출할 경우, 핵심 매개변수 [TRTCParams](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCParams.html)를 입력해야 합니다. 해당 매개변수가 포함하는 필수 입력 필드는 다음과 같습니다.
 
 | 매개변수     | 유형   | 설명                                                         | 예시                   |
 | :------- | :----- | :----------------------------------------------------------- | :--------------------- |
