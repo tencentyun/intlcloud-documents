@@ -149,7 +149,7 @@ if (resValue.code == 0) {
 
 1. 호스트는 [4단계](#model.step4) 로그인 실행 후 `setSelfProfile`을 호출하여 자신의 닉네임과 프로필 사진을 설정할 수 있습니다.
 2. 호스트가 `createRoom`을 호출하여 새로운 음성 살롱을 생성합니다. 이때 방 ID, 방 이름 등 방 속성 정보를 전송합니다.
-3. 호스트는 사용자가 입장할 때 `TRTCChatSalonDelegate.onAudienceEnter` 이벤트 공지를 수신하며, 이때 자동으로 마이크 수집이 활성화됩니다.
+3. 호스트는 사용자가 입장할 때 `TRTCChatSalonDelegate.onAnchorEnterSeat` 이벤트 공지를 수신하며, 이때 자동으로 마이크 수집이 활성화됩니다.
 
 ![](https://main.qcloudimg.com/raw/dfe6ed5d0c973e399e834eb233c96ec6.png)
 
