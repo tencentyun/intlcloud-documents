@@ -183,7 +183,7 @@ x-cos-acl| Defines the access control list (ACL) attribute of the bucket. For th
 | - - Grantee         | Authorized user’s information     | Object      | No   |
 | - - - ID | Complete ID of the grantee in the format: `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`<br>such as `qcs::cam::uin/100000000001:uin/100000000001`, where 100000000001 is uin | String | No |
 | - - - DisplayName | String representing the username, which is usually the same as the string you enter for `ID` | String | No |
-| - - - URI | Preset user groups. For more information, see the `Identity (Grantee)` section in [ACL Overview] (https://intl.cloud.tencent.com/document/product/436/30583), such as <br>`http://cam.qcloud.com/groups/global/AllUsers` or <br>`http://cam.qcloud.com/groups/global/AuthenticatedUsers` | String |
+| - - - URI | Preset user groups. For more information, see the `Identity (Grantee)` section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583), such as <br>`http://cam.qcloud.com/groups/global/AllUsers` or <br>`http://cam.qcloud.com/groups/global/AuthenticatedUsers` | String |
 
 ### Callback function description
 
@@ -279,4 +279,4 @@ cos.getBucketAcl({
 | - - Grantee | Grantee Information | Object |
 | - - - DisplayName                                            | Authorized user’s username                              | String      |
 | - - - ID | User ID of the authorized user <br>For root accounts, the format is `qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>` <br>or `qcs::cam::anyone:anyone` representing all users. <br>For sub-accounts, the format is `qcs::cam::uin/<OwnerUin>:uin/<SubUin>` | String      |
-| - - - URI | Preset user groups. For more information see the `Identity (Grantee)` section in [ACL Overview] (https://intl.cloud.tencent.com/document/product/436/30583), such as <br>`http://cam.qcloud.com/groups/global/AllUsers` or <br>`http://cam.qcloud.com/groups/global/AuthenticatedUsers` | String |
+| - - - URI | Preset user groups. For more information see the `Identity (Grantee)` section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583), such as <br>`http://cam.qcloud.com/groups/global/AllUsers` or <br>`http://cam.qcloud.com/groups/global/AuthenticatedUsers` | String |
