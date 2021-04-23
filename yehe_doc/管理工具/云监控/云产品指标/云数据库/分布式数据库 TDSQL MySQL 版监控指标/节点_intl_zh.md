@@ -185,7 +185,7 @@ Namespace=QCE/TDMYSQL
 <tr>
 <td>ReplaceTotalNode</td>
 <td>REPLACE 请求数</td>
-<td>DB 节点总请求数</td>
+<td>DB 节点REPLACE请求数</td>
 <td>次/秒</td>
 <td>InstanceId,<br>NodeId</td>
 <td>60s、300s、 3600s、86400s</td>
@@ -216,7 +216,7 @@ Namespace=QCE/TDMYSQL
 </tr>
 <tr>
 <td>UpdateTotalNode</td>
-<td>当前打开连接数</td>
+<td>UPDATE 请求数</td>
 <td>DB 节点 UPDATE 请求数</td>
 <td>次/秒</td>
 <td>InstanceId,<br>NodeId</td>
@@ -224,7 +224,7 @@ Namespace=QCE/TDMYSQL
 </tr>
 <tr>
 <td>Threads<br>ConnectedNode</td>
-<td>UPDATE 请求数</td>
+<td>当前打开连接数</td>
 <td>DB 节点连接数，计算方式为 show processlist 得到的 session 个数</td>
 <td>个</td>
 <td>InstanceId,<br>NodeId</td>
