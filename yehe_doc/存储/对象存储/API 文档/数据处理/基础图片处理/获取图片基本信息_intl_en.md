@@ -1,7 +1,7 @@
 ## Feature
 This API **imageInfo** from Tencent Cloud CI is used to query the basic information about an image in COS, including format, length, and width. Currently, supported images are smaller than 20 MB in size and smaller than 9,999 pixels in length and width.
 
->Image processing is a paid service, the fees of which are charged by Cloud Infinite. For detailed billing instructions, see Cloud Infinite’s [Billing and Pricing] (https://intl.cloud.tencent.com/document/product/1045/33431).
+>Image processing is a paid service, the fees of which are charged by Cloud Infinite. For detailed billing instructions, see Cloud Infinite’s [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/33431).
 ## API Form
 
 ```plaintext
