@@ -27,5 +27,3 @@ VOD allows you to manage video files through the console or API by performing su
 - Dynamic URL hotlink protection
 - APIs for video release via WeChat Official Account
 
-### Origin server sync
-With this feature, the video files stored on other origin servers can be seamlessly synced and backed up to Tencent Video Cloud Storage with the original directory structure and playback URLs unchanged.
