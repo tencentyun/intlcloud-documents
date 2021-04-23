@@ -47,16 +47,12 @@ Tencent Cloud의 Demo를 [다운로드](https://intl.cloud.tencent.com/document/
 
 1. 'flutter pub get'을 실행합니다.
 2. 컴파일 실행 디버깅:
-<dx-tabs>
-:::  Android\s
-1. 'flutter run'을 실행합니다.
-2. Android Studio(3.5 버전 이상)를 사용하여 소스 코드 프로그램을 열고 [실행]을 클릭합니다.
-:::
-::: iOS\s
-1. XCode(11.0 버전 이상)를 사용해 소스 코드 디렉터리에 있는 '/ios 프로그램'을 엽니다.
-2. Demo 프로그램을 컴파일 및 실행합니다.
-:::
-</dx-tabs>
+  ####  Android\s
+    1. 'flutter run'을 실행합니다.
+    2. Android Studio(3.5 버전 이상)를 사용하여 소스 코드 프로그램을 열고 [실행]을 클릭합니다.
+  ####  iOS\s
+    1. XCode(11.0 버전 이상)를 사용해 소스 코드 디렉터리에 있는 '/ios 프로그램'을 엽니다.
+    2. Demo 프로그램을 컴파일 및 실행합니다.
 
 [](id:ui.step5)
 ### 5단계: Demo 소스 코드 수정
@@ -72,7 +68,7 @@ Tencent Cloud의 Demo를 [다운로드](https://intl.cloud.tencent.com/document/
 [](id:model)
 ## 사용자 정의 UI 인터페이스 구현
 [소스 코드](https://github.com/c1avie/TRTCChatSalon)의 trtcchatsalondemo 폴더에는 ui 폴더와 model 폴더가 포함되어 있으며, model 폴더에는 재사용 가능한 오픈 소스 모듈인 TRTCChatSalon이 포함되어 있습니다. `TRTCChatSalon.dart` 파일에서 해당 모듈이 제공하는 액세스 함수를 확인할 수 있으며 해당 액세스를 사용해 사용자 정의 UI 인터페이스를 구현할 수 있습니다.
-![](https://main.qcloudimg.com/raw/fcf694c8550664623414604d14ffcd94.png)
+![](https://main.qcloudimg.com/raw/7613bd7ec5b4e665f32ee5df69e5de85.png)
 
 [](id:model.step1)
 ### 1단계: SDK 통합
@@ -155,7 +151,7 @@ if (resValue.code == 0) {
 2. 호스트가 `createRoom`을 호출하여 새로운 음성 살롱을 생성합니다. 이때 방 ID, 방 이름 등 방 속성 정보를 전송합니다.
 3. 호스트는 사용자가 입장할 때 `TRTCChatSalonDelegate.onAudienceEnter` 이벤트 공지를 수신하며, 이때 자동으로 마이크 수집이 활성화됩니다.
 
-![](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/chatsalon/chatsalon_zbo.png)
+![](https://main.qcloudimg.com/raw/dfe6ed5d0c973e399e834eb233c96ec6.png)
 
 ```
 // 1. 호스트 닉네임 및 프로필 사진 설정
@@ -195,7 +191,7 @@ onVoiceListener(type, param) async {
 4. 방 입장 후, 모듈의 시청자 방 입장/퇴장 공지인 `TRTCChatSalonDelegate.onAudienceEnter`와 `TRTCChatSalonDelegate.onAudienceExit`를 수신하게 됩니다. 이벤트 콜백을 수신한 후 변경 사항을 UI 인터페이스에 새로 고침할 수 있습니다.
 5. 방 입장 후 마이크 위치 리스트에 호스트 입장 `TRTCChatSalonDelegate.onAnchorEnterMic` 및 `TRTCChatSalonDelegate.onAnchorLeaveMic` 이벤트 공지도 수신합니다.
 
-![](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/chatsalon/chatsalon.png)
+![](https://main.qcloudimg.com/raw/dfe6ed5d0c973e399e834eb233c96ec6.png)
 ```
 // 1. 시청자 닉네임 및 프로필 사진 설정
 trtcVoiceRoom.setSelfProfile("my_name", "my_face_url");
@@ -240,7 +236,7 @@ onVoiceListener(type, param) async {
 1. `leaveMic`로 직접 마이크를 끄면 방 안에 있는 모든 사용자가 `onAnchorLeaveMic` 이벤트 공지를 수신합니다.
 2. `kickMic`에 해당하는 사용자의 userId를 전달하면 특정 사용자의 마이크를 끌 수 있으며, 방 안에 있는 모든 사용자가 `onAnchorLeaveMic` 이벤트 공지를 수신합니다.
 
-![](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/chatsalon/chatsalon-ma-m.png)
+![](https://main.qcloudimg.com/raw/b47e4ce248aa71f9a68f28f57c699db6.png)
 ```
 // 1. 호스트가 직접 마이크 끄기
 trtcVoiceRoom.leaveMic();
@@ -252,7 +248,7 @@ trtcVoiceRoom.kickMic(userId);
 1. `enterMic`로 마이크를 켤 수 있으며 방 안에 있는 모든 사용자가 `onAnchorEnterMic` 이벤트 공지를 수신합니다.
 2. `leaveMic`로 직접 마이크를 끄면 방 안에 있는 모든 사용자가 `onAnchorLeaveMic` 이벤트 공지를 수신합니다.
 
-![](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/chatsalon/chatsalon-ma-au.png)
+![](https://main.qcloudimg.com/raw/8b68a5c714bf024c8598a52a7281c745.png)
 ```
 // 1. 시청자가 직접 마이크 켜기
 trtcVoiceRoom.enterMic();
@@ -275,7 +271,7 @@ trtcVoiceRoom.leaveMic();
 3. 호스트가 동의를 선택하면 `agreeToSpeak`을 호출하고 userId를 전달합니다.
 4. 시청자는 `onAgreeToSpeak` 이벤트 공지를 수신하고, `enterMic`를 호출하여 마이크를 켭니다.
 
-![](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/chatsalon/chatsalon-si.png)
+![](https://main.qcloudimg.com/raw/72e4ddc8e1d13b47c6713355145c297e.png)
 ```
 // 시청자 측 앵글
 // 1. sendInvitation를 호출하여 마이크 켜기 요청
