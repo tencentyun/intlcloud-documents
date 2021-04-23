@@ -7,7 +7,7 @@ Tencent Cloud CDNのPOSTリクエストのサイズの上限、すなわち、�
 ### 設定の確認
 
 [CDNコンソール](https://console.cloud.tencent.com/cdn)にログインし、左側メニューバーで【ドメイン名管理】を選択し、ドメイン名操作列の【管理】をクリックして、ドメイン名設定ページに入ります。Tabを【高度な設定】に切り替えると、【POSTリクエストサイズの設定】が見つかります。最大**200MB**まで調整可能です。
-![](https://main.qcloudimg.com/raw/699164be49344192830b158c1fd7fd55.png)
+![](https://main.qcloudimg.com/raw/e3a25b8ba81fe251e76fbf0deb22e966.png)
 
 >!一部のプラットフォームにはPOSTリクエストのサイズ制限がありません。またドメイン名では現在この機能をサポートしていません。
 
