@@ -254,7 +254,7 @@ function(err, data) { ... }
 | - - Filter | Specifies the filter | Object |
 | - - - Prefix | Key prefix to be matched with the rule | String |
 | - - Transition | Rule transition attributes, indicating when the COS storage class is transitioned to `Standard_IA` or `Archive` | ObjectArray |
-| - - - Days | Specifies the number of days after which the object was last modified that the action corresponding to the rule will be executed. The value must be a non-negative integer, and a maximum of 3650 days is supported | | Number |
+| - - - Days | Specifies the number of days after which the object was last modified that the action corresponding to the rule will be executed. The value must be a non-negative integer, and a maximum of 3650 days is supported | Number |
 | - - - StorageClass | Indicates the storage class of the transitioned object; enumerated values: `STANDARD`, `STANDARD_IA`, `ARCHIVE` | String | 
 | - - NoncurrentVersionTransition | Specifies the transition attributes of a past object version | ObjectArray |
 | - - - NoncurrentDays | Indicates that the past object version is transitioned after the number of days determined by the value | Number |
