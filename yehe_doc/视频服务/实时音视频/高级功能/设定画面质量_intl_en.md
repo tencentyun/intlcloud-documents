@@ -18,7 +18,7 @@ https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCSimpleDemo/Live/LivePu
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | &#10003; | &#10003;   | &#10003;  |  &#10003;   | &#10003;  |&#10003;  |&#10003;  |
 
-For detailed directions on how to set video quality for the desktop browser, please see [Configuration Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-14-basic-set-video-profile.html).
+For detailed directions on how to set video quality for the desktop browser, please see [Configuration Guide](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-14-basic-set-video-profile.html).
 
 ## TRTCAppScene
 
