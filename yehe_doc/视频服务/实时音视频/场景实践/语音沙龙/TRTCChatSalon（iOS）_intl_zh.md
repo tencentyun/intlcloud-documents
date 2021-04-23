@@ -789,7 +789,7 @@ NS_SWIFT_NAME(onRoomDestroy(message:));
 
 ### onRoomInfoChange
 
-进房成功后会回调该接口，roomInfo 中的信息在创建房间。
+进房成功后会回调该接口，roomInfo 中的信息在房主创建房间的时候传入。
 
 ```Objective-C
 - (void)onRoomInfoChange:(ChatSalonInfo *)roomInfo
