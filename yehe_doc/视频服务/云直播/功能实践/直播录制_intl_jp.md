@@ -1,12 +1,12 @@
-CSSレコーディングは、ライブストリーミングオリジナルストリームのオーディオおよびビデオのパッケージ化（オーディオ、ビデオデータおよび対応するタイムスタンプなどの情報）で生成されたファイルをVODプラットフォームにストレージするサービスです。
+CSSレコーディングは、ライブストリーミングオリジナルストリームのオーディオおよびビデオのパッケージ化（オーディオ、ビデオデータおよび対応するタイムスタンプなどの情報は変更しない）で生成されたファイルをVODプラットフォームにストレージするサービスです。
 
 ##  注意事項
-- [レコーディングタスク作成](https://intl.cloud.tencent.com/document/product/267/37309)および[レコーディングテンプレート作成の設定](https://intl.cloud.tencent.com/document/product/267/34223)はレコーディングを開始させる2つの方式です。実際の使用では、ニーズに応じてどちらかを選択します。同一のCSSストリームにレコーディングテンプレートを設定すると同時にレコーディングタスクを作成した場合は、重複レコーディングになります。
+- [レコーディングタスク作成](https://intl.cloud.tencent.com/document/product/267/37309) と [レコーディングテンプレート作成の設定](https://intl.cloud.tencent.com/document/product/267/34223) の2種類の方法でレコーディングを開始できます。実際に使用する場合は、必要に応じてどちらかを選択できます。同一のライブストリーミングストリームで、レコーディングテンプレートの設定と同時にレコーディングタスクを作成すると、レコーディングが繰り返されます。
 - プッシュ開始後、レコーディングタスクの開始までに一時的なディレイがあるため、プッシュ時間が短すぎると、レコーディングファイルを生成できなくなります。レコーディングファイルの品質を保証するためにも、レコーディング時のプッシュ時間を10秒より長くすることをお勧めします。
 
 ## レコーディングのストレージ
-CSSレコーディングではファイルをVODプラットフォームに保存します。CSSレコーディングサービスを使用したい場合は、まず[VODサービス](https://intl.cloud.tencent.com/product/vod)の有効化を申請する必要があります。
->? 生成したレコーディングファイルの命名ルールを理解する必要がある場合は、[レコーディングテンプレートパラメータ-VodFileName](https://intl.cloud.tencent.com/document/product/267/30767#RecordParam)をご参照ください。
+CSSレコーディングは、ファイルをVODプラットフォームにストレージします。CSSレコーディングサービスを使用したい場合は、まず [VODサービス](https://intl.cloud.tencent.com/product/vod)をアクティブにします。
+>? 生成されるレコーディングファイルの命名ルールを理解したい場合は、[レコーディングテンプレートパラメータ-VodFileName](https://intl.cloud.tencent.com/document/product/267/30767#RecordParam)をご参照ください。
 
 ## レコーディング形式
 
@@ -26,7 +26,7 @@ CSSレコーディングではファイルをVODプラットフォームに保�
 <td>プッシュドメイン名、ストリーム名のレベル別にレコーディングの要否を設定できます。</td>
 </tr>
 <tr>
-<th>指定時間帯のレコーディング</th>
+<th>指定時間帯によるレコーディング</th>
 <td>APIを呼び出してレコーディングの開始および終了時間を制御し、指定した時間内でレコーディングを行うことができます。</td>
 </tr>
 <tr>
@@ -34,7 +34,7 @@ CSSレコーディングではファイルをVODプラットフォームに保�
 <td>プッシュ中の精彩な画面は、APIを呼び出すことで、リアルタイムでレコーディングできます。</td>
 </tr>
 <tr>
-<th>オーディオのみのレコーディング</th>
+<th>オーディオのみレコーディング</th>
 <td>プッシュがオーディオのみの場合は、AACのオーディオのみのレコーディングを設定することができます。</td>
 </tr>
 </tbody></table>
@@ -42,15 +42,15 @@ CSSレコーディングではファイルをVODプラットフォームに保�
 ## 指定プッシュドメイン名のすべてのライブストリーミングストリームのレコーディングを開始
 
 レコーディングパラメータをテンプレート形式で管理し、各種業務シナリオのレコーディング設定テンプレートを作成できます。また設定テンプレートを使用して各種プッシュドメイン名、ストリーム名との関連付けを行い、レコーディング設定を柔軟に管理します。
-VODサービスをアクティブ化した後、特定のプッシュドメイン名のライブストリーミングストリームのレコーディングが必要となった場合は、2つの実現方法があります。
+オンデマンドサービスをアクティブ化した後、特定のプッシュドメイン名のCSSストリームのレコーディングが必要となった場合は、2つの実現方法があります。
 
 ### CSSコンソール
-1. 【機能設定】>[【CSSレコーディング】](https://console.cloud.tencent.com/live/config/record)に進み、レコーディング設定テンプレートを追加します。
-2. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)にプッシュドメイン名を追加し、【管理】をクリックしてこのドメイン名とレコーディングテンプレートを関連付けます。操作の詳細は[レコーディング設定](https://intl.cloud.tencent.com/document/product/267/34224)をご参照ください。
+1. 【機能設定】>[【CSSレコーディング】](https://console.cloud.tencent.com/live/config/record)に入り、レコーディング設定テンプレートを追加します。
+2. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)でプッシュドメイン名を追加して、【管理】をクリックし、このドメイン名とレコーディングテンプレートを関連付けます。具体的な操作については、 [レコーディング設定](https://intl.cloud.tencent.com/document/product/267/34224)をご参照ください。
 
 ### APIの呼び出し
 
-1. [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845)を呼び出して、FlvParamなどの1種類以上のレコーディング形式を設定します。
+1. [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845)を呼び出し、FlvParamなど、1つ以上のレコーディング形式を設定します。
 2. [CreateLiveRecordRule](https://intl.cloud.tencent.com/document/product/267/30846)を呼び出し、パラメータプッシュドメイン名DomainNameとTemplateId（第1ステップに戻ります）を設定します。AppNameおよびStreamNameに空の文字列を入力します。これはこのドメイン名のすべてのプッシュがワイルドカード化されることを意味します。
 
 同様に、レコーディングテンプレートを異なるストリーム名と関連付けることによって、一部のCSSストリームのレコーディング開始の効果を実現します。
@@ -63,20 +63,20 @@ VODサービスをアクティブ化した後、特定のプッシュドメイ�
 | &#10003;   | 空         | 2      |
 | 空         | 空         | 3      |
 
-そのうち：【空】はワイルドカード、【&#10003;】は正確な関連付け、【0】は最も高い優先度です。優先度の高いテンプレートに関連付けられると、関連付けを停止し、この優先度のテンプレートに戻ります。
+そのうち：【空】はワイルドカード、【&#10003;】は正確なマッチング、【0】は最も高い優先度です。優先度の高いテンプレートにマッチすると、マッチングを停止し、この優先度のテンプレートに戻ります。
 
 
 ## 同一プッシュドメイン名の特定のストリームのレコーディングの無効化
 あるプッシュドメイン名にレコーディングを設定済みであるが、このドメイン名に業務上の理由でレコーディングの必要がない一部のプッシュが存在する場合は、次の操作を行ってください。
 
-1. レコーディング形式を指定せずに[CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845)を呼び出します。
+1. [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845)を呼び出し、いずれのレコーディング形式も指定しません。
 ```
    https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
    &TemplateName=norecord
    &Description=test
    &<パブリックリクエストパラメータ>
 ```
-2. [CSSコンソール](https://intl.cloud.tencent.com/document/product/267/34223#conect)またはTencent Cloud API [CreateLiveRecordRule](https://intl.cloud.tencent.com/document/product/267/30846)を介してDomainNameパラメータとStreamNameパラメータを設定し、上述のレコーディングテンプレートを指定プッシュドメイン名、指定ストリーム名と関連付けます。
+2. [CSSコンソール](https://intl.cloud.tencent.com/document/product/267/34223#conect)またはTencent Cloud API [CreateLiveRecordRule](https://intl.cloud.tencent.com/document/product/267/30846)を介して、DomainNameとStreamName パラメータを設定すると、上述のレコーディングテンプレートと指定プッシュドメイン名、ストリーム名の関連付けが行われます。
 
 > ! 上述のスキームは一部のプッシュのレコーディングが不要な場合のみに対応します。操作する必要があるライブストリーミングのストリーム数が多い場合は、主に次の点を考慮しつつ、別のプッシュドメイン名を使用して個別に管理することをお勧めします。
 > - レコーディングテンプレートかレコーディングルールかを問わず、最大数に制限があります（50）。
@@ -87,13 +87,13 @@ VODサービスをアクティブ化した後、特定のプッシュドメイ�
 一部のプッシュにつき、指定の開始時間にレコーディングを開始し、指定の終了時間にレコーディングを終了したい場合は、API方式を介してレコーディングを指定することができます。レコーディングテンプレートの設定方式とは異なり、具体的なレコーディングパラメータはAPIを介して指定する必要があります。通常この方式は、いずれのレコーディング方式も設定されていない場合に使用されます。
 
 ### APIの呼び出し
-レコーディングタスク作成のAPI説明について、詳細は[CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)をご参照ください。
+レコーディングタスク作成APIの具体的な説明については、 [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)をご参照ください。
 
 
 ### レコーディング例
 - 最もシンプルなケースでは、指定されたStreamName、DomainName、AppNameとEndTimeパラメータを入力するだけです。
 例：2020年08月10日午前08時から10時までのレコーディングタスクを作成、FLV形式、ビデオレコーディング、セグメント30分、永久保存。
-**入力例：**
+ **入力例：**
 ```
 https://live.tencentcloudapi.com/?Action=CreateRecordTask
 &AppName=live
@@ -106,8 +106,8 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask
 ```
 - さらに具体的なレコーディング形式、レコーディングタイプ、ストレージパラメータなどを指定できます。
 例：2020年08月10日午前08時から10時までのレコーディングタスクを作成、MP4形式、セグメント1時間、永久保存。
-	1. [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845)を呼び出して、まずレコーディングテンプレートを作成します。
-**入力例：**
+	1. [CreateLiveRecordTemplate](https://intl.cloud.tencent.com/document/product/267/30845) を呼び出し、まずレコーディングテンプレートを作成します。
+ **入力例：**
 ```
 https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 &TemplateName=templat
@@ -117,7 +117,7 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
 &Mp4Param.StorageTime=0
 &<パブリックリクエストパラメータ>
 ```
-**出力例：**
+ **出力例：**
 ```
 {
   "Response": {
@@ -126,8 +126,8 @@ https://live.tencentcloudapi.com/?Action=CreateLiveRecordTemplate
   }
 }
 ```
-	2. [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)を呼び出してレコーディングタスクを作成します。
-**入力例：**
+	2. [CreateRecordTask](https://intl.cloud.tencent.com/document/product/267/37309)を呼び出し、レコーディングタスクを作成します。
+ **入力例：**
 ```
 https://live.tencentcloudapi.com/?Action=CreateRecordTask
 &StreamName=livetest
@@ -160,13 +160,12 @@ https://live.tencentcloudapi.com/?Action=CreateRecordTask
 
 精彩なビデオレコーディングについて、説明すべき点は次のとおりです。
 - プッシュ中にレコーディングを作成する必要があります。
-- サポートするレコーディング時間は最長30分ですので、UGSVレコーディングに適合する必要があります。
-- API [StopRecordTask](https://intl.cloud.tencent.com/document/product/267/37307)を呼び出してタスクを早期に終了させることができます。
+- API [StopRecordTask](https://intl.cloud.tencent.com/document/product/267/37307)を呼び出し、事前にタスクを終了することができます。
 - 海外のプッシュをサポートします。
 
 ## ミクスストリーミングのレコーディング
 
-まず[クラウドミクスストリーミング](https://intl.cloud.tencent.com/document/product/267/37665)を参照してミクスストリーミング業務を理解してください。
+ミクスストリーミングサービスについて理解するためには、まず[クラウドミクスストリーミング](https://intl.cloud.tencent.com/document/product/267/37665) をご参照ください。
 
 CSSクラウドミクスストリーミングサービスを使用するシナリオでは、レコーディング側がミクスストリーミングパラメータOutputStreamType（出力ストリームタイプ）に従ってミクスストリーミングを2つのタイプに分類します。
 
@@ -191,11 +190,11 @@ CSSクラウドミクスストリーミングサービスを使用するシナ�
 
 この機能を使用した後、自動スプライスの中断時間（設定可能時間は最長30分です。つまり最長30分中断したプッシュを1つのファイルにスプライスできます）を設定し、最終の正常なプッシュが終了した後、中断前後のファイルが自動的にスプライスされて、HLSレコーディングファイルが生成されます。
 
-自動スプライスレコーディングは現在HLSフォーマットをサポートしています。[CSSレコーディング](https://intl.cloud.tencent.com/document/product/267/34223)で継続録画超過時間を設定できます。
+自動スプライスレコーディングは、現在、HLS形式をサポートしており、 [CSSレコーディング](https://intl.cloud.tencent.com/document/product/267/34223)で連続レコーディングタイムアウト時間を設定できます。
 
 > !
 > - 自動スプライスでは、オーディオデータなしのライブストリーミングをサポートしていません。
-> - ビデオマージ機能は、VODのビデオ合成インターフェースを呼び出すことで実現します。関連ドキュメントの説明は[ビデオの合成処理](https://intl.cloud.tencent.com/document/product/266/34127)をご参照ください。
+> - ビデオマージ機能は、VODのビデオ合成インターフェースを呼び出すことで実現します。関連ドキュメントの説明については、[ビデオの合成処理](https://intl.cloud.tencent.com/document/product/266/34127)をご参照ください。
 
 ## レコーディングファイルの取得
 
@@ -203,20 +202,20 @@ CSSクラウドミクスストリーミングサービスを使用するシナ�
 
 ### VODコンソール
 
-[VODコンソール](https://console.cloud.tencent.com/vod/media)へのログインは、**非管理者**ページで【メディア資産管理】>【ビデオ管理】を選択します。つまり、レコーディングして生成したすべてのファイルを閲覧できます。
+[VODコンソール](https://console.cloud.tencent.com/vod/media)にログインし、**非管理者**ページで【メディア資産管理】>【ビデオ管理】を選択すれば、すべての生成されたレコーディングファイルを閲覧できます。
 
 ![](https://main.qcloudimg.com/raw/66bde9882dab60099bed8013a3d8c521.png)
 
 ### レコーディングイベント通知
 
-コンソールまたはAPI呼び出しによって、レコーディングコールバックアドレスを設定します。レコーディングファイルが生成されると、このコールバックアドレスにメッセージで通知されます。メッセージを受信した後、レコーディングされた [コールバックイベントメッセージ通知](https://intl.cloud.tencent.com/document/product/267/38080)に基づいて業務を処理することができます。
+コンソールまたはAPIの呼び出しによって、レコーディングコールバックアドレスを設定すると、レコーディングファイルの生成後に、当該コールバックアドレスにメッセージ形式で通知されます。メッセージを受信した後は、レコーディングの[コールバックイベントメッセージ通知](https://intl.cloud.tencent.com/document/product/267/38080)にしたがい、業務を処理することができます。
 
 イベント通知メカニズムは、効率的かつ信頼性が高く、リアルタイム性もあります。コールバックメソッドを使用してレコーディングファイルを取得することをお勧めします。
 
 ### VOD APIクエリー
 
-使用方法の詳細についてはVODのAPI [SearchMedia](https://intl.cloud.tencent.com/document/product/266/34179)インターフェースを参照してレコーディングファイルをフィルタリングして確認してください。
->! CSS APIによって[レコーディングタスク作成](https://intl.cloud.tencent.com/document/product/267/37309)を行うとき、レコーディングのコールバックではユーザーのプッシュURLに付帯する[stream_param](#message)パラメータが返されません。その他のレコーディング方式では返されます。
+具体的な使用法については、VOD API[SearchMedia](https://intl.cloud.tencent.com/document/product/266/34179)インターフェースを参照して、レコーディングファイルをフィルタリングおよびクエリーしてください。
+>! CSS APIを介して [レコーディングタスク作成](https://intl.cloud.tencent.com/document/product/267/37309)する時は、レコーディングコールバックはユーザーのプッシュURLの[stream_param](#message)パラメータを返しません。その他のレコーディング方式では返されます。
 
 
 ## 設定更新に関する注意事項
