@@ -45,9 +45,9 @@ Below is a sample push:
         "content": "Push content",
         "android": {
              "custom_content":"{\"key\":\"value\"}"
-        }
-				"thread_id":"Activity_id",
-				"thread_sumtext":"Operation activity"
+        },
+	    "thread_id":"Activity_id",
+	    "thread_sumtext":"Operation activity"
 				
     }
 }
