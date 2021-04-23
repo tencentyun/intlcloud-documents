@@ -2,7 +2,7 @@
 This API **watermark** from Tencent Cloud CI is used to provide image watermarking in COS. Currently, watermark images must be those stored in buckets associated with CI. Supported original images must be smaller than 20 MB in size and smaller than 9,999 pixels in length and width.
 
 
->Image processing is a paid service, the fees of which are charged by Cloud Infinite. For detailed billing instructions, see Cloud Infinite’s [Billing and Pricing] (https://intl.cloud.tencent.com/document/product/1045/33431).
+>Image processing is a paid service, the fees of which are charged by Cloud Infinite. For detailed billing instructions, see Cloud Infinite’s [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/33431).
 
 ## API Form
 
