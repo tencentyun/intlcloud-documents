@@ -1,3 +1,5 @@
+>!ここでは主に**Video on Demand**のCloud Access Management（CAM）機能関連コンテンツについて紹介します。他製品のCAM関連コンテンツについては、[CAMサポート製品](https://intl.cloud.tencent.com/document/product/598/10588)をご参照ください。
+
 VODは、Tencent Cloud Access Management，[CAM](https://intl.cloud.tencent.com/document/product/598)に接続されています。必要に応じてサブアカウントに適切なVOD権限を付与できます。VODサービスがアクティブになると、VODのCAM機能を直接使用することができます。
 このテキストをお読みになる前に、開発者はTencent Cloud CAMとVODサブアプリケーションシステムについてある程度理解しておく必要があります。このテキストに含まれる主なコンセプトは次のとおりです。
 
@@ -22,15 +24,14 @@ CAMのコア機能は次のように表現できます：**アカウントが一
 
 ## リソースレベルの承認をサポートするAPI
 
-VOD CAMは [リソースレベルの承認](https://intl.cloud.tencent.com/document/product/598/10588) をサポートし、特殊な制限のあるAPIを除くすべてのAPIはリソースレベルでの承認をサポートしています。詳細については、以下をご参照ください。
+VOD CAMは[リソースレベルの承認](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/598/10588)をサポートし、特殊な制限のあるAPIを除くすべてのAPIはリソースレベルでの承認をサポートしています。詳細については、以下をご参照ください。
 
 ### リソースレベルでの承認をサポートしないAPIリスト
 
 | インターフェース名                                        | インターフェースの機能       | 説明                                                         |
 | :---------------------------------------------- | -------------- | ------------------------------------------------------------ |
 | [DescribeSubAppIds](https://intl.cloud.tencent.com/document/product/266/34177)    | サブアプリケーションリストのクエリー| すべてのサブユーザーは、承認を必要とせずにこのインターフェースを呼び出す権限を持っています。このインターフェースをリクエストする場合も特定のサブアプリケーションを指定する必要はありません。 |
-| [ModifySubAppIdStatus](https://intl.cloud.tencent.com/document/product/266/34173) | サブアプリケーション状態の修正 | このインターフェースはリスクの高い操作に該当する指定のサブアプリケーションの使用を中止できるため、VODが完全な権限（ [プリセットポリシー](https://intl.cloud.tencent.com/document/product/266/33971#.E9.A2.84.E8.AE.BE.E7.AD.96.E7.95.A5.E5.88.97.E8.A1.A8)`QcloudVODFullAccess`）を付与したサブユーザーしかアクセスできません。サブユーザーが何らかのサブアプリケーション書き込み権限を持っているが、`QcloudVODFullAccess`権限を持たない場合も、このインターフェースを呼び出すことはできません。 |
-
+| [ModifySubAppIdStatus](https://intl.cloud.tencent.com/document/product/266/34173) | サブアプリケーション状態の修正 | このインターフェースはリスクの高い操作に該当する指定のサブアプリケーションの使用を中止できるため、VODが完全な権限（ [プリセットポリシー](https://intl.cloud.tencent.com/document/product/266/33971)`QcloudVODFullAccess`）を付与したサブユーザーしかアクセスできません。サブユーザーが何らかのサブアプリケーション書き込み権限を持っているが、`QcloudVODFullAccess`権限を持たない場合も、このインターフェースを呼び出すことはできません。 |
 
 ### リソースレベルでの承認をサポートするAPIリスト
 
