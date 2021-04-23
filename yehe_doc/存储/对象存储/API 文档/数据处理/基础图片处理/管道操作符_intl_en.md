@@ -1,7 +1,7 @@
 ## Feature
 COS uses the pipeline operator `|` in Tencent Cloud CI to perform multiple types of processing on images in a sequence. You can use the pipeline operator to separate multiple processing parameters so that different types of processing can be performed on an image in a single access. Currently, supported images are smaller than 20 MB in size and smaller than 9,999 pixels in length and width.
 
->Image processing is a paid service, the fees of which are charged by Cloud Infinite. For detailed billing instructions, see Cloud Infinite’s [Billing and Pricing] (https://intl.cloud.tencent.com/document/product/1045/33431).
+>Image processing is a paid service, the fees of which are charged by Cloud Infinite. For detailed billing instructions, see Cloud Infinite’s [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/33431).
 
 ## API Form
 Following an image URL, the style separator `?` is used to connect processing styles that are separated with the pipeline operator `|` and executed in a sequence. Currently, up to three layers of pipelines are supported.
