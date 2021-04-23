@@ -1,19 +1,23 @@
-本文主要介绍如何购买实时音视频基础服务套餐包，增值服务详细计费规则请参考 [增值服务费用](https://intl.cloud.tencent.com/document/product/647/34614)。
+
+实时音视频 TRTC 支持预付费套餐包和后付费，默认采用预付费套餐包，后付费只能通过购买的套餐包消耗完或过期后自动开通，无法直接开通。本文主要介绍如何购买预付费套餐包。
 
 ## 前提条件
-在购买实时音视频（中国大陆）基础服务套餐包前，您需要完成 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+在购买实时音视频基础服务套餐包前，您需要先 [注册腾讯云](https://intl.cloud.tencent.com/document/product/378/17985) 账号，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的客户无法购买中国大陆的实时音视频示例。
 
 ## 操作步骤
-### 介绍页购买
-1. 登录 [实时音视频介绍页](https://intl.cloud.tencent.com/product/trtc)。
-2. 单击【选购套餐包】，进入套餐包购买页面。
-3. 选择需要购买的套餐包数量，单击【立即购买】。
-4. 确认信息无误后，单击【确认购买】并完成支付。
+1. 登录 [实时音视频套餐包购买页](https://buy.cloud.tencent.com/trtc)。
+2. 选择【通话类型】、【套餐包类型】以及【套餐包内容】。
+3. 勾选【我已阅读并同意腾讯云实时音视频 [《服务等级协议》](https://intl.cloud.tencent.com/document/product/647/35661) 】，单击【立即购买】。
+4. 确认信息并完成支付。
 
-### 控制台购买
-1. 登录 [实时音视频控制台](https://console.cloud.tencent.com/rav)。
-2. 您可以通过以下方式进入套餐包购买页面：
- - 在【应用列表】页面，单击【购买正式套餐包】。
- - 在【套餐包管理】页面，单击【购买正式套餐包】。
-3. 选择需要购买的套餐包数量，单击【立即购买】。
-4. 确认信息无误后，单击【确认购买】并完成支付。
+
+## 相关文档
+- [计费概述](https://intl.cloud.tencent.com/document/product/647/34610)
+- [免费试用](https://intl.cloud.tencent.com/document/product/647/39784)
+- [语音互动直播计费说明](https://intl.cloud.tencent.com/document/product/647/39785)
+- [视频互动直播计费说明](https://intl.cloud.tencent.com/document/product/647/39786)
+- [语音通话计费说明](https://intl.cloud.tencent.com/document/product/647/39787)
+- [视频通话计费说明](https://intl.cloud.tencent.com/document/product/647/39788)
+- [云端录制计费说明](https://intl.cloud.tencent.com/document/product/647/38385)
+- [云端混流转码计费说明](https://intl.cloud.tencent.com/document/product/647/38929)
+- [计费常见问题](https://intl.cloud.tencent.com/document/product/647/39789)

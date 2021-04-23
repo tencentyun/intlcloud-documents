@@ -1,19 +1,23 @@
-This document describes how to purchase basic TRTC service packages. For more information on the billing rules of value-added services, please see [Value-added Service Fees](https://intl.cloud.tencent.com/document/product/647/34614).
+
+TRTC supports two billing modes: **prepaid packages** (default) and **pay-as-you-go**. You will automatically be switched to the pay-as-you-go mode after your prepaid package is exhausted or expires. You cannot switch to the pay-as-you-go mode by yourself. This document describes how to purchase a prepaid package.
 
 ## Prerequisites
-Before purchasing a basic TRTC service package, you need to [sign up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and complete [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
+You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) for a Tencent Cloud account and completed [identity verification](https://intl.cloud.tencent.com/document/product/378/3629).
 
 ## Directions
-### Purchase on overview page
-1. Log in to the [TRTC overview page](https://intl.cloud.tencent.com/product/trtc).
-2. Click **Purchase Package** to enter the package purchase page.
-3. Select the number of packages to be purchased and click **Buy Now**.
-4. After confirming that everything is correct, click **OK** and make the payment.
+1. Go to the [TRTC prepaid package purchase page](https://buy.cloud.tencent.com/trtc) and log in.
+2. Select the **Package Type** and **Package Duration**.
+3. Check **I have read and agreed to the [TRTC Service Level Agreement](https://intl.cloud.tencent.com/document/product/647/35661)**, and click **Purchase**.
+4. Confirm your information and complete the payment.
 
-### Purchase in console
-1. Log in to the [TRTC Console](https://console.cloud.tencent.com/rav).
-2. You can enter the package purchase page in the following ways:
- - On the **Application List** page, click **Purchase Official Package**.
- - On the **Package Management** page, click **Purchase Official Package**.
-3. Select the number of packages to be purchased and click **Buy Now**.
-4. After confirming that everything is correct, click **Confirm Purchase** and make the payment.
+
+## Relevant Documentation
+- [Billing Overview](https://intl.cloud.tencent.com/document/product/647/34610)
+- [Free Trial](https://intl.cloud.tencent.com/document/product/647/39784)
+- [Interactive Live Audio Streaming Billing](https://intl.cloud.tencent.com/document/product/647/39785)
+- [Interactive Live Video Streaming Billing](https://intl.cloud.tencent.com/document/product/647/39786)
+- [Audio Call Billing](https://intl.cloud.tencent.com/document/product/647/39787)
+- [Video Call Billing](https://intl.cloud.tencent.com/document/product/647/39788)
+- [On-Cloud Recording Billing](https://intl.cloud.tencent.com/document/product/647/38385)
+- [On-Cloud MixTranscoding Billing](https://intl.cloud.tencent.com/document/product/647/38929)
+- [FAQs](https://intl.cloud.tencent.com/document/product/647/39789)
