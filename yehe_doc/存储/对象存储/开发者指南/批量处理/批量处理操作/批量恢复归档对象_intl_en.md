@@ -1,4 +1,4 @@
-Batch restoring archived objects can be used to restore objects of archived storage type in the inventory. This operation supports customizing parameters related to POST Object restore. These configuration information will affect the restoration and expiration time of the replica. For more information on POST Object restore, see [POST Object restore] (https://intl.cloud.tencent.com/document/product/436/12633).
+Batch restoring archived objects can be used to restore objects of archived storage type in the inventory. This operation supports customizing parameters related to POST Object restore. These configuration information will affect the restoration and expiration time of the replica. For more information on POST Object restore, see [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633).
 
 To create a job for batch restoring archived objects, you need to specify the following two parameters:
 
