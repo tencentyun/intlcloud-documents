@@ -45,9 +45,9 @@ Android 原生系统和 iOS 系统都提供了相应设置方式，开发者可�
         "content": "推送内容",
         "android": {
              "custom_content":"{\"key\":\"value\"}"
-        }
-				"thread_id":"活动_id",
-				"thread_sumtext":"运营活动"
+        },
+        "thread_id":"活动_id",
+        "thread_sumtext":"运营活动"
 				
     }
 }
