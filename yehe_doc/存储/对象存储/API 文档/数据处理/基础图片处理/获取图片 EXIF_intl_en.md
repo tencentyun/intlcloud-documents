@@ -3,7 +3,7 @@ Exchangeable Image File (EXIF) records the shooting parameters, thumbnails, and 
 
 
 >
->-Image processing is a paid service, the fees of which are charged by Cloud Infinite. For detailed billing instructions, see Cloud Infinite’s [Billing and Pricing] (https://intl.cloud.tencent.com/document/product/1045/33431).
+>-Image processing is a paid service, the fees of which are charged by Cloud Infinite. For detailed billing instructions, see Cloud Infinite’s [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/33431).
 >- If an image has no EXIF data, `{"error" : "no exif data"}` will be returned.
 
 ## API Form
