@@ -2,7 +2,7 @@
 
 QUIC（Quick UDP Internet Connectionsは、汎用的なネットワークプロトコルであり、ネットワークセキュリティを保障するとともに、伝送と接続時のレイテンシーも低減し、ネットワークの輻輳を回避することができます。
 
-Tencent Cloud CDNでは、QUICのベータ版テストを開始していますので、[申請書を提出](https://cloud.tencent.com/apply/p/2j0i34wqyw8)してテスト運用を申請することが可能です。申請をすでに提出いただいている場合は、15営業日でお客様の申請を審査いたします。
+Tencent Cloud CDNでは、QUICのベータ版テストを開始していますので、[申請書を提出](https://intl.cloud.tencent.com/apply/p/g0lwu71z0i7)してテスト運用を申請することが可能です。申請をすでに提出いただいている場合は、15営業日でお客様の申請を審査いたします。
 
 
 
@@ -12,7 +12,7 @@ Tencent Cloud CDNでは、QUICのベータ版テストを開始しています�
 >!QUICプラットフォームは現在テストプラットフォームとなっており、万全ではありませんので、新規テストドメイン名に対してのみQUIC プラットフォームを有効にすることを推奨します。業務ドメイン名には使用しないでください。
 
 [CDNコンソール](https://console.cloud.tencent.com/cdn)にログインし、ドメイン名を追加する時に、QUICプラットフォームの項目を選択すると、ドメイン名でQUICプラットフォームに接続することができます。
-![](https://main.qcloudimg.com/raw/cb7d9ab0a9026574363f7308047c04c6.png)
+![](https://main.qcloudimg.com/raw/a8dd2d19c8c6c31612317d39dda70266.png)
 **設定の制約：**
 
 - ストリーミングメディアのVODアクセラレーションサービスタイプのドメイン名は現在QUICをサポートしていません。
@@ -21,7 +21,7 @@ Tencent Cloud CDNでは、QUICのベータ版テストを開始しています�
 
 ドメイン名の追加が完了した後、ドメイン名管理に入り、Tabを【HTTPS設定】に切り替えると、【QUIC】設定が見つかります。
 デフォルトでは無効状態になっており、自分で有効にすることができます。有効にする前に先にHTTPS証明書を設定してください。
-![](https://main.qcloudimg.com/raw/b90da5a37968a594ed9c81768fb72ab5.png)
+![](https://main.qcloudimg.com/raw/cdeb046241bd674d27884feaf14eeeb3.png)
 
 
 
