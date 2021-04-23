@@ -1,4 +1,4 @@
->? CM will soon stop supporting the old monitoring metrics for TDSQL for MySQL. Please use the [new metrics](https://cloud.tencent.com/document/product/248/54398).
+>? CM will soon stop supporting the old monitoring metrics for TDSQL for MySQL. Please use the [new metrics](https://intl.cloud.tencent.com/document/product/248/40010).
 
 ## Namespace
 Namespace=QCE/DCDB
@@ -55,4 +55,4 @@ Namespace=QCE/DCDB
 **To query the monitoring data of a TencentDB for TDSQL v3 instance, use the following input parameters:**
 &Namespace=QCE/DCDB
 &Instances.N.Dimensions.0.Name=uuid
-&Instances.N.Dimensions.0.Value=<Specific instance uuid>
+&Instances.N.Dimensions.0.Value=Specific instance uuid
