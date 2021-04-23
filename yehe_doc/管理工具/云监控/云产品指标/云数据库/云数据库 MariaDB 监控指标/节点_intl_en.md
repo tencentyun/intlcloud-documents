@@ -264,25 +264,25 @@ Namespace=QCE/MARIADB
 <td>Instances.N.Dimensions.0.Name</td>
 <td>InstanceId</td>
 <td>Dimension name of the instance</td>
-<td>Enter a string-type dimension name: `InstanceId`.</td>
+<td>Enter a string-type dimension name: InstanceId.</td>
 </tr>
 <tr>
 <td>Instances.N.Dimensions.0.Value</td>
 <td>InstanceId</td>
 <td>Instance ID</td>
-<td>Enter an instance ID, e.g., `tdsql-9kjauqq1`.</td>
+<td>Enter an instance ID, e.g., tdsql-9kjauqq1.</td>
 </tr>
 <tr>
 <td>Instances.N.Dimensions.0.Name</td>
 <td>NodeId</td>
 <td>Dimension name of the node</td>
-<td>Enter a string-type dimension name: `NodeId`.</td>
+<td>Enter a string-type dimension name: NodeId.</td>
 </tr>
 <tr>
 <td>Instances.N.Dimensions.0.Value</td>
 <td>NodeId</td>
 <td>Node ID</td>
-<td>Enter a node ID, e.g., `877adc0ada3e`.</td>
+<td>Enter a node ID, e.g., 877adc0ada3e.</td>
 </tr>
 </tbody></table>
 
