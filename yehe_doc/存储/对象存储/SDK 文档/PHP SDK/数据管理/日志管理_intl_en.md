@@ -44,7 +44,7 @@ try {
 | ------------ | ------------------------------------------------------------ | ------ |
 | Bucket            | Source bucket for which to enable the logging feature in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String                                      |
 | TargetBucket | Destination bucket where to store logs in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String                                      |
-| TargetPrefix | Specified path in the destination bucket for storing logs | String
+| TargetPrefix | Specified path in the destination bucket for storing logs | String|
 
 ## Querying Log Management
 
