@@ -342,7 +342,7 @@ If you want listeners and room owners to obtain each other’s consent before pe
 3. The room owner approves the request, and calls `acceptInvitation`, with the `inviteId` passed in.
 4. The listener receives an `onInviteeAccepted` notification and calls `enterSeat` to become a speaker.
 
-![](https://main.qcloudimg.com/raw/71b657c495cb52317c4c32a919407b36.png)
+![](https://main.qcloudimg.com/raw/3543bf768896cfd78b0163dc9378e659.png)
 
 <dx-codeblock>
 ::: java java

@@ -339,13 +339,13 @@ public void onAnchorEnterSeat(int index, TRTCChatSalonDef.UserInfo user) {
 ### 步骤8：邀请信令的使用
 如果您的 App 需要对方同意才能进行下一步操作的业务流程，那么邀请信令可以提供相应支持。
 
-####观众主动申请上麦
+#### 观众主动申请上麦
 1. 观众端调用 `sendInvitation` 传入主播的 userId 和业务的自定义命令字等，此时函数会返回一个 inviteId，记录该 inviteId。
 2. 主播端收到 `onReceiveNewInvitation` 的事件通知，此时 UI 可以弹窗并询问主播是否同意。
 3. 主播选择同意后，调用 `acceptInvitation` 并传入 inviteId。
 4. 观众端收到 `onInviteeAccepted` 的事件通知，调用 `enterSeat` 进行上麦。
 
-![](https://main.qcloudimg.com/raw/c9611b5017536604f63333ce7c19c309.png)
+![](https://main.qcloudimg.com/raw/3543bf768896cfd78b0163dc9378e659.png)
 
 <dx-codeblock>
 ::: java java

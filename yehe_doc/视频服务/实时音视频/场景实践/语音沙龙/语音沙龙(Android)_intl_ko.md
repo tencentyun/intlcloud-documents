@@ -334,7 +334,7 @@ public void onAnchorEnterSeat(int index, TRTCChatSalonDef.UserInfo user) {
 3. 호스트가 동의를 선택한 후 `acceptInvitation`을 호출하고 inviteId를 전송합니다.
 4. 시청자가 `onInviteeAccepted` 이벤트 공지를 수신하고 `enterSeat`를 호출하여 마이크를 켭니다.
 
-![](https://main.qcloudimg.com/raw/c9611b5017536604f63333ce7c19c309.png)
+![](https://main.qcloudimg.com/raw/3543bf768896cfd78b0163dc9378e659.png)
 
 ```
 // 시청자 측 앵글
