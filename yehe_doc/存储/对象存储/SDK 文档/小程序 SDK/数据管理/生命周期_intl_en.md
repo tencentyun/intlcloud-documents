@@ -262,7 +262,7 @@ function(err, data) { ... }
 | - - Expiration | Rule expiration attributes | Object |
 | - - - ExpiredObjectDeleteMarker | Deletes expired object delete markers. Enumerated values: `true` and `false`. It cannot be specified with `Days` at the same time. | Boolean |
 | - - - Days | Specifies the number of days after which the object was last modified that the deletion action will occur. It cannot be specified with `ExpiredObjectDeleteMarker` at the same time. | Number |
-| - - AbortIncompleteMultipartUpload | Indicates to delete incomplete multipart uploads | Object | No |
+| - - AbortIncompleteMultipartUpload | Indicates to delete incomplete multipart uploads | Object | 
 | - - - DaysAfterInitiation | Incomplete multipart uploads are deleted after the number of days determined by this value; the computation of this value starts from the time the file was uploaded and must be a positive integer | Number |
 
 ## Deleting a lifecycle configuration
