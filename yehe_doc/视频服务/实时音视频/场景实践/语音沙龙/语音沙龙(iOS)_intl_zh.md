@@ -94,7 +94,7 @@ pod 'TXLiteAVSDK_TRTC'
 
 ### 步骤2：配置权限
 
-在 `info.plist` 文件中需要添加 `Privacy > Camera Usage Description`， `Privacy > Microphone Usage Description` 申请麦克风权限。
+在 `info.plist` 文件中需要添加 `Privacy > Camera Usage Description`申请麦克风权限。
 
 [](id:model.step3)
 
