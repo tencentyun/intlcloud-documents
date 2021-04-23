@@ -66,7 +66,7 @@ cos.putBucketLogging({
 function(err, data) { ... }
 ```
 
-| Parameter Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
+| Parameter Name | Description                                                     | Type   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ |
 | err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
@@ -122,15 +122,17 @@ cos.getBucketLogging({
 function(err, data) { ... }
 ```
 
-| Parameter Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   | Required |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
-| err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
-| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
-| - headers | Header information returned by the request | Object |
-| data | Data returned when the request is successful. If the request fails, this is null. | Object |
-| - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
-| - headers | Header information returned by the request | Object |
-| - BucketLoggingStatus                                                        | Indicates the logging status. If it is null, logging is disabled.  | Object/String      |
-| - - LoggingEnabled             | Specific information on the bucket logging configuration, mainly for the destination bucket                                           | Object      |
-| - - - TargetBucket             | Destination bucket that stores the logs. It can be the source bucket itself (although this is not recommended), or a bucket in the same account or region as the source bucket.                                           | String      |
-| - - - TargetPrefix             | The specified path used to store logs in the destination bucket                                           | String      |
+
+| Parameter Name        | Description                                                  | Type          |
+| --------------------- | ------------------------------------------------------------ | ------------- | 
+| err                   | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object        |          
+| - statusCode          | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number        |
+| - headers             | Header information returned by the request                   | Object        |
+| data                  | Data returned when the request is successful. If the request fails, this is null. | Object        |
+| - statusCode          | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number        |
+| - headers             | Header information returned by the request                   | Object        |
+| - BucketLoggingStatus | Indicates the logging status. If it is null, logging is disabled. | Object/String |
+| - - LoggingEnabled    | Specific information on the bucket logging configuration, mainly for the destination bucket | Object        |
+| - - - TargetBucket    | Destination bucket that stores the logs. It can be the source bucket itself (although this is not recommended), or a bucket in the same account or region as the source bucket. | String        |
+| - - - TargetPrefix    | The specified path used to store logs in the destination bucket | String        |
+
