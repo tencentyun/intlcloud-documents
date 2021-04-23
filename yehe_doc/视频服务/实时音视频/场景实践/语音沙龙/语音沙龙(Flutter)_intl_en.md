@@ -47,16 +47,12 @@ To quickly enable the chat salon feature, you can modify the demo we provide and
 
 1. Run `flutter pub get`.
 2. Compile, run, and debug the project.
-<dx-tabs>
-:::  Android
-1. Run `flutter run`.
-2. Use Android Studio (3.5 or above) to open the demo and run the project.
-:::
-::: iOS
-1. Open `\ios project` in the source code directory with Xcode (11.0 or above).
-2. Compile and run the demo project.
-:::
-</dx-tabs>
+  ####  Android\s
+    1. Run `flutter run`.
+    2. Use Android Studio (3.5 or above) to open the demo and run the project.
+  ####  iOS
+    1. Open `\ios project` in the source code directory with Xcode (11.0 or above).
+    2. Compile and run the demo project.
 
 [](id:ui.step5)
 ### Step 5. Modify the demo source code
@@ -72,7 +68,7 @@ The `trtcchatsalondemo` folder in the source code contains two subfolders: `ui` 
 [](id:model)
 ## Customizing UI
 The `trtcchatsalondemo` folder in the [source code](https://github.com/c1avie/TRTCChatSalon) contains two subfolders: `ui` and `model`. The `model` subfolder contains the reusable open-source component `TRTCChatSalon`. You can find the component's APIs in `TRTCChatSalon.dart` and use them to customize your own UI.
-![](https://main.qcloudimg.com/raw/fcf694c8550664623414604d14ffcd94.png)
+![](https://main.qcloudimg.com/raw/7613bd7ec5b4e665f32ee5df69e5de85.png)
 
 [](id:model.step1)
 ### Step 1. Integrate SDKs
@@ -155,7 +151,7 @@ if (resValue.code == 0) {
 2. Call `createRoom` to create a chat salon, passing in room-related parameters such as room ID and room name.
 3. You will receive a `TRTCChatSalonDelegate.onAnchorEnterSeat` notification that someone becomes a speaker, and mic capturing will be enabled automatically.
 
-![](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/chatsalon/chatsalon_zbo.png)
+![](https://main.qcloudimg.com/raw/dfe6ed5d0c973e399e834eb233c96ec6.png)
 
 ```
 // 1. Set your nickname and profile photo
@@ -195,7 +191,7 @@ onVoiceListener(type, param) async {
 4. After room entry, you will receive `TRTCChatSalonDelegate.onAudienceEnter` and `TRTCChatSalonDelegate.onAudienceExit` notifications about listeners’ room entry/exit from the component. Display the changes on the UI afterwards.
 5. You will also receive `TRTCChatSalonDelegate.onAnchorEnterMic` and `TRTCChatSalonDelegate.onAnchorLeaveMic` notifications about speaker list change.
 
-![](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/chatsalon/chatsalon.png)
+![](https://main.qcloudimg.com/raw/dfe6ed5d0c973e399e834eb233c96ec6.png)
 ```
 // 1. Set your nickname and profile photo
 trtcVoiceRoom.setSelfProfile("my_name", "my_face_url");
@@ -240,7 +236,7 @@ onVoiceListener(type, param) async {
 1.  A room owner can call `leaveMic` to become a listener. All users in the room will receive an `onAnchorLeaveMic` notification.
 2.  A room owner can remove a speaker by passing in the speaker’s `userId` in `kickMic`. All users in the room will receive an `onAnchorLeaveMic` notification.
 
-![](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/chatsalon/chatsalon-ma-m.png)
+![](https://main.qcloudimg.com/raw/b47e4ce248aa71f9a68f28f57c699db6.png)
 ```
 // 1. Become a listener
 trtcVoiceRoom.leaveMic();
@@ -252,7 +248,7 @@ trtcVoiceRoom.kickMic(userId);
 1. A listener can become a speaker by calling `enterMic`. All members in the room will receive an `onAnchorEnterMic` notification.
 2. A speaker can become a listener by calling `leaveMic`. All members in the room will receive an `onAnchorLeaveMic` notification.
 
-![](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/chatsalon/chatsalon-ma-au.png)
+![](https://main.qcloudimg.com/raw/8b68a5c714bf024c8598a52a7281c745.png)
 ```
 // 1. Become a speaker
 trtcVoiceRoom.enterMic();
@@ -275,7 +271,7 @@ If you want listeners and room owners to obtain each other’s consent before pe
 3. The room owner approves the request and calls `agreeToSpeak`, with the `userId` passed in.
 4. The listener receives an `onAgreeToSpeak` notification and calls `enterMic` to become a speaker.
 
-![](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/chatsalon/chatsalon-si.png)
+![](https://main.qcloudimg.com/raw/72e4ddc8e1d13b47c6713355145c297e.png)
 ```
 // Listener
 // 1. Call `sendInvitation` to request to speak
