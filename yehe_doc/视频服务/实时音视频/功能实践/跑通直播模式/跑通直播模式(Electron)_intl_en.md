@@ -65,7 +65,7 @@ trtcCloud.on('onError',onError);
 <span id="step4"></span>
 ### Step 4. Set the room entry parameter `TRTCParams`.
 
-When calling the [enterRoom()](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#enterRoom) API, you need to set a key parameter [`TRTCParams`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCParams.html), which includes the following required fields:
+When calling the [enterRoom()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#enterRoom) API, you need to set a key parameter [`TRTCParams`](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCParams.html), which includes the following required fields:
 
 | Parameter     | Type   | Description                                                         | Example                   |
 | :------- | :----- | :----------------------------------------------------------- | :--------------------- |
