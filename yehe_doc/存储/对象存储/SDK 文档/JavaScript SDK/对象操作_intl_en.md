@@ -134,7 +134,7 @@ Response:
 | ------------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
-| Prefix | Matching prefix for object keys. This parameter limits the response to contain only object keys with the specified prefix. | String |
+| Prefix | Matching prefix for object keys. This parameter limits the response to contain only object keys with the specified prefix. | String | No |
 | Delimiter | A delimiter is a separating symbol used to group object keys. It is usually `/`. The identical paths between `Prefix` or, if no `Prefix` is specified, the beginning, and the first delimiter` are grouped and defined as a common prefix. All common prefixes will be listed. | String | No |
 | Marker | Indicates where the object key listing begins. Entries are listed starting from the key after the `Marker` in UTF-8 lexicographical order by default. | String | No |
 | MaxKeys | Maximum number of entries returned in a single response. Defaults to `1000`. | String | No |
@@ -402,7 +402,7 @@ function(err, data) { ... }
 
 ```
 
-| Parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | 
+| Parameter | Description | Type | 
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------- |
 | err | Object returned when an error (network error or service error) occurs. If the request is successful, this parameter is left empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
@@ -1189,7 +1189,7 @@ cos.putObjectAcl({
 | AccessControlPolicy | Sets an object's ACL attributes | Object | No |
 | - Owner | Object owner information | Object | No |
 | - - ID | Object owner ID in the format: `qcs::cam::uin/<OwnerUin>:uin/<SubUin>` <br>For root accounts, &lt;OwnerUin> and &lt;SubUin> have the same value. | String | No |
-| - - - DisplayName | Object owner name | String |
+| - - - DisplayName | Object owner name | String | No |
 | - Grants | List of information on the grantee and permissions | ObjectArray | No |
 | - - Permission | Permission granted. Enumerated values: `READ`, `WRITE`, `READ_ACP`, `WRITE_ACP`, `FULL_CONTROL` | String | No |
 | - - Grantee         | Grantee information     | Object      | No   |
@@ -1252,7 +1252,7 @@ function(err, data) { ... }
 | data | Object returned when the request is successful. If the request fails, this parameter is left empty | Object |
 | - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
 | - headers | Headers returned by the request | Object |
-| - ACL | Defines the ACL attribute of the object. For the enumerated values, such as `default`, `private`, and `public-read`, please see the **Preset ACL** section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). Default value: `default` <br>**Note:** If you do not need access control for the object, set `default` for this parameter or leave it empty. In this way, the object will inherit the permissions of the bucket it is stored in. | String | No |
+| - ACL | Defines the ACL attribute of the object. For the enumerated values, such as `default`, `private`, and `public-read`, please see the **Preset ACL** section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). Default value: `default` <br>**Note:** If you do not need access control for the object, set `default` for this parameter or leave it empty. In this way, the object will inherit the permissions of the bucket it is stored in. | String | 
 | - Owner | Identifies the owner of the resource | Object |
 | - - ID | Object owner ID in the format of `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`<br>For root accounts, &lt;OwnerUin> and &lt;SubUin> have the same value. | String |
 | - - DisplayName | Object owner name | String |
@@ -1378,7 +1378,7 @@ cos.sliceCopyFile({
 | Key | Object key (object name), the unique ID of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
 | CopySource | URL path of the source object. A historical version can be specified using the URL parameter `?versionId=<versionId>`. | String | Yes |
 | ChunkSize | Size (in bytes) of each part in the multipart copy. Defaults to `1048576` (1 MB). | Number | No |
-| SliceSize | Specifies the minimum file size (in bytes) to use multipart copy. The default value is 5 GB. If the file size is equal to or smaller than this value, the file will be uploaded using `putObjectCopy`; otherwise, it will be uploaded using `sliceCopyFile`. | Number | No | | Number | No |
+| SliceSize | Specifies the minimum file size (in bytes) to use multipart copy. The default value is 5 GB. If the file size is equal to or smaller than this value, the file will be uploaded using `putObjectCopy`; otherwise, it will be uploaded using `sliceCopyFile`. | Number | No |
 | onProgress | Callback of the upload progress. The callback parameter is the progress object `progressData`. | Function | No |
 | - progressData.loaded | Size of the uploaded parts, in bytes | Number | No |
 | - progressData.total                                         | Total file size in bytes                      | Number    | No   |
