@@ -284,7 +284,7 @@ public void onAnchorEnterSeat(TRTCChatSalonDef.UserInfo userInfo) {
 
 ### 步骤7：上下麦
 
-####主播端
+#### 主播端
 1. `pickSeat` 传入观众 userId, 可以抱人上麦，房间内所有成员会收到 `onAnchorEnterSeat` 的事件通知。
 2. `kickSeat` 传入对应用户的 userId 后，可以踢人下麦，房间内所有成员会收到 `onAnchorLeaveSeat` 的事件通知。
 
