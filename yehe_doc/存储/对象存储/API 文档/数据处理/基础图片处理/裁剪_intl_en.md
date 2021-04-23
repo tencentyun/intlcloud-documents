@@ -1,7 +1,7 @@
 ## Feature
 This API **imageMogr2** from Tencent Cloud CI is used to offer a cropping feature in COS, including regular cropping, scaling and cropping, inscribed circle cropping, rounded corner cropping, and smart cropping.
 
->Image processing is a paid service, the fees of which are charged by Cloud Infinite. For detailed billing instructions, see Cloud Infinite’s [Billing and Pricing] (https://intl.cloud.tencent.com/document/product/1045/33431).
+>Image processing is a paid service, the fees of which are charged by Cloud Infinite. For detailed billing instructions, see Cloud Infinite’s [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/33431).
 
 ## API Form
 
