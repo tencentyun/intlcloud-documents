@@ -35,7 +35,7 @@ Tencent Cloud CDN을 사용하려면 우선 Tencent Cloud 계정에 가입하고
 
 >? 다음의 모범 사례를 참조해 Tencent Cloud CDN 사용을 시작하여 도메인을 가속화할 수 있습니다.
 >- [Tencent Cloud CDN 가속 클라우드 서버 CVM의 인스턴스.](https://intl.cloud.tencent.com/document/product/228/34035)
->- [Tencent Cloud CDN 객체 스토리지 COS의 인스턴스.] (https://intl.cloud.tencent.com/document/product/228/34036)
+>- [Tencent Cloud CDN 객체 스토리지 COS의 인스턴스.](https://intl.cloud.tencent.com/document/product/228/34036)
 
 
 
@@ -139,10 +139,10 @@ Tencent Cloud CDN을 사용하려면 우선 Tencent Cloud 계정에 가입하고
 ## 6. 신규 사용자 FAQ
 #### 과금 관련 문제
 - [CDN 청구서는 어떻게 조회하나요?](https://intl.cloud.tencent.com/document/product/228/31479)
-- [구매한 CDN 중국 내 트래픽 패키지가 필요 없어진 경우 환불받을 수 있나요?] (https://intl.cloud.tencent.com/document/product/228/31479)
+- [구매한 CDN 중국 내 트래픽 패키지가 필요 없어진 경우 환불받을 수 있나요?](https://intl.cloud.tencent.com/document/product/228/31479)
 - [CDN은 요청 횟수에 따른 과금 방식을 지원하나요?](https://intl.cloud.tencent.com/document/product/228/31479)
 - [원본 서버가 COS를 사용할 경우, CDN이 COS에 원본을 요청할 때 발생하는 트래픽에 대해서도 과금되나요?] (https://intl.cloud.tencent.com/document/product/228/31479)
-- [CDN 비활성화(CDN 서비스 종료) 후에도 트래픽이나 요금이 발생하나요?] (https://intl.cloud.tencent.com/document/product/228/31479)
+- [CDN 비활성화(CDN 서비스 종료) 후에도 트래픽이나 요금이 발생하나요?](https://intl.cloud.tencent.com/document/product/228/31479)
 - [CDN 과금 방식을 변경할 수 있나요?](https://intl.cloud.tencent.com/document/product/228/31479)
 - [CDN 중국 내 트래픽 패키지 사용 관리](https://intl.cloud.tencent.com/document/product/228/31479)
 - [CDN 과금 시 다운스트림 트래픽에만 비용이 청구되나요?](https://intl.cloud.tencent.com/document/product/228/31479)
@@ -150,20 +150,18 @@ Tencent Cloud CDN을 사용하려면 우선 Tencent Cloud 계정에 가입하고
 #### 도메인 엑세스 관련 문제
 
 - [CDN은 와일드카드 서브도메인 액세스를 지원하나요?](https://intl.cloud.tencent.com/document/product/228/31476)
-- [ICP 비안 등록이 완료된 도메인임에도 불구하고 CDN 가속 도메인 추가 시 ICP 비안 미등록이라고 뜨는 이유는 무엇인가요?] (https://intl.cloud.tencent.com/document/product/228/31476)
+- [ICP 비안 등록이 완료된 도메인임에도 불구하고 CDN 가속 도메인 추가 시 ICP 비안 미등록이라고 뜨는 이유는 무엇인가요?](https://intl.cloud.tencent.com/document/product/228/31476)
 - [CDN을 설정하는 데 시간이 얼마나 걸리나요?](https://intl.cloud.tencent.com/document/product/228/31476)
 - [원본 서버 IP를 여러 개 설정할 수 있나요?](https://intl.cloud.tencent.com/document/product/228/31476)
 - [CDN이 적용되었는지 어떻게 확인하나요?](https://intl.cloud.tencent.com/document/product/228/31476)
 - [도메인이 비활성화만 가능하고, 삭제는 불가능한 이유는 무엇인가요?](https://intl.cloud.tencent.com/document/product/228/31476)
 - [가속 서비스를 비활성화하려면 어떻게 해야 하나요?](https://intl.cloud.tencent.com/document/product/228/31476)
 - [가속 도메인은 어떻게 삭제하나요?](https://intl.cloud.tencent.com/document/product/228/31476)
-- [가속 도메인 / 원본 서버에서 포트를 설정할 수 있나요?] (https://intl.cloud.tencent.com/document/product/228/31476)
+- [가속 도메인 / 원본 서버에서 포트를 설정할 수 있나요?](https://intl.cloud.tencent.com/document/product/228/31476)
 -[CDN 파일을 다운로드할 수 없습니다](https://intl.cloud.tencent.com/document/product/228/31476)
-
 
 
 ## 7. 피드백 및 의견
 Tencent Cloud CDN 제품 및 서비스 사용 중 문의사항 또는 의견이 있는 경우 다음 채널을 통해 피드백을 보내주십시오. 전문가가 문제를 해결해 드립니다.
 - 링크, 내용, API 오류 등 제품 문서에 문제가 발생하는 경우 문서 페이지 오른쪽 [문서 피드백]을 클릭하거나 문제가 있는 내용을 선택하여 피드백을 보낼 수 있습니다.
 - 제품 관련 문제가 발생한 경우 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 도움을 요청할 수 있습니다.
-
