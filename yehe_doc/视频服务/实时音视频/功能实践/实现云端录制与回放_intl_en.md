@@ -113,9 +113,9 @@ TRTC offers three on-cloud recording schemes, namely [global auto-recording](#au
   - [Stream mixing via the client-side API](#recordSDKAPI): the stream mixing API can be called from the client end. This method works on iOS, Android, Windows, macOS and Electron, but not on browsers for the time being.
 
 - **Naming of recording files**
-  - If an anchor has set [`userDefineRecordId`](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) during room entry, recording files will be named `userDefineRecordId_streamType__start time_end time` (`streamType` has two valid values: `main`, which indicates the primary stream, and `aux`, which indicates the substream.)
-  - If an anchor has set [`streamId`](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167), but not [`userDefineRecordId`](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) during room entry, recording files will be named `streamId_start time_end time`.
-  - If an anchor has set neither [`userDefineRecordId`](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) nor [`streamId`](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167) during room entry, recording files will be named `sdkappid_roomid_userid_streamType_start time_end time` (`streamType` has two valid values: `main`, which indicates the primary stream, and `aux`, which indicates the substream.)
+  - If an anchor has set [`userDefineRecordId`](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) during room entry, recording files will be named `userDefineRecordId_streamType__start time_end time` (`streamType` has two valid values: `main`, which indicates the primary stream, and `aux`, which indicates the substream.)
+  - If an anchor has set [`streamId`](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167), but not [`userDefineRecordId`](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) during room entry, recording files will be named `streamId_start time_end time`.
+  - If an anchor has set neither [`userDefineRecordId`](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) nor [`streamId`](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167) during room entry, recording files will be named `sdkappid_roomid_userid_streamType_start time_end time` (`streamType` has two valid values: `main`, which indicates the primary stream, and `aux`, which indicates the substream.)
 
 - **Supported platforms**
   Recording operations are initiated by your server and are not affected by the platform on which the SDK runs.
@@ -129,7 +129,7 @@ You can enable on-cloud stream mixing, on-cloud recording and relayed live strea
 | On-Cloud Capability | Enabling                                                   | Disabling                                                   |
 | :------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | On-cloud recording | Specify the `userDefineRecordId` field in `TRTCParams` during room entry.    | The recording stops automatically when the anchor exits the room.                                           |
-| On-cloud stream mixing | Call the SDK API [`setMixTranscodingConfig()`](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) to start on-cloud stream mixing. | The mixing stops automatically when the anchor who starts it exits the room. The anchor can also stop it manually by calling [`setMixTranscodingConfig()`](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) and setting the parameter to `null/nil`. |
+| On-cloud stream mixing | Call the SDK API [`setMixTranscodingConfig()`](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) to start on-cloud stream mixing. | The mixing stops automatically when the anchor who starts it exits the room. The anchor can also stop it manually by calling [`setMixTranscodingConfig()`]https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) and setting the parameter to `null/nil`. |
 | Relayed live streaming | Specify the `streamId` field in `TRTCParams` during room entry.             | The relaying stops automatically when the anchor exits the room.                                           |
 
 ![](https://main.qcloudimg.com/raw/7daf8430ca74adeec019c10fc384a48e.gif)
@@ -138,7 +138,7 @@ You can enable on-cloud stream mixing, on-cloud recording and relayed live strea
   To use this recording scheme, set [On-Cloud Recording Mode](#recordType) to **Specified User Recording** in the console.
 
 - **Starting a recording task**
-  If an anchor has set [`userDefineRecordId`](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) in the room entry parameter [`TRTCParams`](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCParams) during room entry, the audio/video data sent by the anchor will be recorded on the cloud. The streams of anchors who have not set the parameter are not recorded.
+  If an anchor has set [`userDefineRecordId`](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) in the room entry parameter [`TRTCParams`](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCParams) during room entry, the audio/video data sent by the anchor will be recorded on the cloud. The streams of anchors who have not set the parameter are not recorded.
 ```
 // Sample code: select the user `rexchang` for specified user recording, the ID of the recording file being `1001_rexchang`.
 TRTCCloud *trtcCloud = [TRTCCloud sharedInstance];
@@ -153,17 +153,17 @@ param.userDefineRecordId = @"1001_rexchang";  // Recording ID, i.e. the user who
 ```
 
 - **Ending a recording task**
-  The task stops automatically after the anchor who has set [`userDefineRecordId`](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) during room entry stops sending audio/video. However, if you have set the **Resumption Timeout** parameter when [choosing the format for recording files](#fileFormat), you will not receive the recording file until the timeout threshold is reached.
+  The task stops automatically after the anchor who has set [`userDefineRecordId`](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) during room entry stops sending audio/video. However, if you have set the **Resumption Timeout** parameter when [choosing the format for recording files](#fileFormat), you will not receive the recording file until the timeout threshold is reached.
 
 - **Mixing streams**
-  You can call the SDK API [`setMixTranscodingConfig()`](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) to mix the audio/video streams of other users in a room into the current user's audio/video streams. For details, see [On-cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618#.E6.96.B9.E6.A1.88.E4.B8.80.EF.BC.9A.E6.9C.8D.E5.8A.A1.E7.AB.AF-rest-api-.E6.B7.B7.E6.B5.81.E6.96.B9.E6.A1.88).
+  You can call the SDK API [`setMixTranscodingConfig()`](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) to mix the audio/video streams of other users in a room into the current user's audio/video streams. For details, see [On-cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618#.E6.96.B9.E6.A1.88.E4.B8.80.EF.BC.9A.E6.9C.8D.E5.8A.A1.E7.AB.AF-rest-api-.E6.B7.B7.E6.B5.81.E6.96.B9.E6.A1.88).
 >! Make sure that the `setMixTranscodingConfig` API is called by just one anchor (preferably the anchor who created the room) in a TRTC room. Calling of the API by multiple anchors may cause confusion.
 
 - **Naming of recording files**
   Recording files are named `userDefineRecordId_start time_end time`.
 
 - **Supported platforms**
-  Recording tasks can be initiated on [iOS](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce), [Android](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a154fa0570c3bb6a9f99fb108bda02520), [Windows](http://doc.qcloudtrtc.com/group__TRTCTypeDef__cplusplus.html#a3a7a5e6144aa337752d22269d25f7cfc), [macOS](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce), and [Electron](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCParams.html).
+  Recording tasks can be initiated on [iOS](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce), [Android](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#a154fa0570c3bb6a9f99fb108bda02520), [Windows](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#a3a7a5e6144aa337752d22269d25f7cfc), [macOS](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce), and [Electron](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCParams.html).
 
 <span id="recordRESTAPI"></span>
 
@@ -265,7 +265,7 @@ The fields in the table below can help you determine which call/live streaming s
 </tr><tr>
 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/2a495b157f03a8905e372a2516ea3a8f.png"  style="box-shadow: 0 0 0px #ccc;"></td>
 <td>stream_id</td>
-<td>The <a href="http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167">`streamId`</a> field in `TRTCParams` specified during room entry</td>
+<td>The <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167">`streamId`</a> field in `TRTCParams` specified during room entry</td>
 </tr><tr>
 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/1cf7ec54371a5e95e2ea00bdda4d1a64.png"  style="box-shadow: 0 0 0px #ccc;"></td>
 <td>stream_param.userid</td>
@@ -273,7 +273,7 @@ The fields in the table below can help you determine which call/live streaming s
 </tr><tr>
 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/66d50d985be81cae9698fae3ffa40f40.png" style="box-shadow: 0 0 0px #ccc;"></td>
 <td>stream_param.userdefinerecordid</td>
-<td>A custom field, which is the <a href="http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce">`userDefineRecordId`</a> field specified in `TRTCParams`</td>
+<td>A custom field, which is the <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce">`userDefineRecordId`</a> field specified in `TRTCParams`</td>
 </tr>
 <tr>
 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/d1cb894a93a1d69cd4215c54064eca5d.png"  style="box-shadow: 0 0 0px #ccc;"></td>
@@ -308,8 +308,8 @@ After [receiving a recording file callback](#callback), you can get the playback
 
 #### Integrate the VOD player
 Integrate the VOD player designed for your platform. For detailed instructions, see the documents below.
-- [iOS](http://doc.qcloudtrtc.com/group__TXVodPlayer__ios.html)
-- [Android](http://doc.qcloudtrtc.com/group__TXVodPlayer__android.html)
+- [iOS](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html)
+- [Android](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html)
 - [Web](https://intl.cloud.tencent.com/document/product/266/33977)
 
 >! We recommend the [Professional Edition TRTC SDK](https://intl.cloud.tencent.com/document/product/647/34615), which integrates features including [Mobile Live Video Broadcasting (MLVB)](https://intl.cloud.tencent.com/product/mlvb). This integrated edition adds less to the size of the app package than two independent SDKs do because many underlying modules are shared among the services. It is also free of the duplicate symbol issue.
@@ -337,7 +337,7 @@ The **CSS Recording** fee is calculated based on the peak number of concurrent r
 **Storage fee: charged for storing files with Tencent Cloud**
 As storage requires disk resources, if you store recording files with Tencent Cloud, you will be charged based on the disk resources used. The longer you store a file, the higher the cost. To reduce cost, you are advised to keep the storage duration short or store recording files on your own server if possible. Storage fees are [postpaid on a daily basis](https://intl.cloud.tencent.com/document/product/266/14666).
 
->For example, if you set the anchor bitrate (`videoBitrate`) to 1,000 Kbps via [`setVideoEncodrParam()`](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCVideoEncParam) and select a file format to record an anchor's live streams for an hour, the size of the recording file generated will be approximately `(1,000/8) KBps x 3,600s=450,000 KB=0.45 GB`. If you store the file with Tencent Cloud, the storage fee per day will be `0.45 GB x 0.0009 USD/GB/day=0.000405 USD`.
+>For example, if you set the anchor bitrate (`videoBitrate`) to 1,000 Kbps via [`setVideoEncodrParam()`](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCVideoEncParam) and select a file format to record an anchor's live streams for an hour, the size of the recording file generated will be approximately `(1,000/8) KBps x 3,600s=450,000 KB=0.45 GB`. If you store the file with Tencent Cloud, the storage fee per day will be `0.45 GB x 0.0009 USD/GB/day=0.000405 USD`.
 
 #### Playback fee: charged for playing back a file
 
@@ -350,4 +350,4 @@ As playback consumes CDN traffic, if you play back a recording file, you will be
 
 As stream mixing involves encoding and decoding, you will incur an additional transcoding fee if you enable stream mixing. The fee varies with the resolution used and the duration of transcoded streams. The higher resolution used for anchors, and the longer co-anchoring (the most common application scenario for stream mixing) lasts, the higher the cost. For more information, see CSS Transcoding.
 
->Suppose you used [`setVideoEncodrParam()`](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCVideoEncParam) to set the bitrate (`videoBitrate`) for anchors to 1,500 Kbps and resolution to 720p, and an anchor co-anchored with a viewer for 1 hour, during which [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618) was enabled. The transcoding fee incurred would be `0.0057 USD/min x 60 min=0.342 USD`.
+>Suppose you used [`setVideoEncodrParam()`](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCVideoEncParam) to set the bitrate (`videoBitrate`) for anchors to 1,500 Kbps and resolution to 720p, and an anchor co-anchored with a viewer for 1 hour, during which [On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/34618) was enabled. The transcoding fee incurred would be `0.0057 USD/min x 60 min=0.342 USD`.
