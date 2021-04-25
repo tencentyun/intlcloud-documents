@@ -4,11 +4,17 @@
 
 ## 步骤1：注册腾讯云账号
 如果您已在腾讯云注册，可忽略此步骤。  
-如未注册，请前往 [注册页面](https://intl.cloud.tencent.com/register)。
+<divstyle="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:13px;">点此注册腾讯云账号</a></div>
 
-<span id="domain"></span>
 
-## 步骤2：购买企业版实例
+## 步骤2：开通容器镜像服务
+在[腾讯云控制台](https://console.cloud.tencent.com/) 中，选择【云产品】>【容器镜像服务】，进入容器镜像服务控制台，按照界面提示开通容器镜像服务并为服务授权，授权详情可参见 [企业版授权方案示例](https://intl.cloud.tencent.com/document/product/1051/37248)。（如果您已为容器镜像服务授权，请跳过该步骤。）
+
+<div style="background-color:#00A4FF; width: 150px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/tcr/instance?rid=1" target="_blank"  style="color: white; font-size:13px;">开通容器镜像服务</a></div>
+
+
+[](id:domain)
+## 步骤3：购买企业版实例
 
 
 >!若您的企业尚未开通本服务，则需首先开通服务，并授权容器镜像服务访问您的对象存储及私有网络资源。服务开通需要主账号或具有管理员权限的子账号进行操作，如果当前正在使用子账号进行操作，请先为该账号分配相应权限，具体可参考 [企业版授权方案示例](https://intl.cloud.tencent.com/document/product/1051/37248)。
