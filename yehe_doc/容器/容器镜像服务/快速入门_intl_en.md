@@ -4,7 +4,7 @@ To use TCR Personal Edition, please see [Image Registry User Guide](https://intl
 
 ## Step 1: Signing up for a Tencent Cloud Account
 If you already have a Tencent Cloud account, ignore this step.  
-<divstyle="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:13px;">Sign up for a Tencent Cloud account</a></div>
+<div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register" target="_blank"  style="color: white; font-size:13px;">Sign up for a Tencent Cloud account</a></div>
 
 
 ## Activating TCR Service
