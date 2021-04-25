@@ -2,7 +2,7 @@
 
 QUIC(Quick UDP Internet Connections)는 범용 네트워크 프로토콜로써, 네트워크 보안을 보장하고 전송 및 연결 시 지연을 감소시켜 네트워크 혼잡을 방지합니다. QUIC 프로토콜을 활성화하여 클라이언트가 CDN 노드에 액세스할 때 데이터 전송 보안을 보장하고 액세스 효율을 높일 수 있습니다.
 
-Tencent Cloud CDN의 QUIC 베타가 출시되었습니다. [신청 양식 제출](https://cloud.tencent.com/apply/p/2j0i34wqyw8)을 통해 사용 신청을 할 수 있습니다. 신청 양식을 제출한 뒤 15 영업일 내에 신청에 대한 심사를 진행합니다.
+Tencent Cloud CDN의 QUIC 베타가 출시되었습니다. [신청 양식 제출](https://intl.cloud.tencent.com/apply/p/g0lwu71z0i7)을 통해 사용 신청을 할 수 있습니다. 신청 양식을 제출한 뒤 15 영업일 내에 신청에 대한 심사를 진행합니다.
 
 
 
@@ -16,8 +16,9 @@ Tencent Cloud CDN의 QUIC 베타가 출시되었습니다. [신청 양식 제출
 >- 현재 QUIC 원본 가져오기는 지원하지 않습니다.
 
 [CDN 콘솔](https://console.cloud.tencent.com/cdn)에 로그인하여 신규 도메인 추가 시 QUIC 플랫폼 항목을 선택하여 도메인의 QUIC 플랫폼에 엑세스할 수 있습니다.
-![](https://main.qcloudimg.com/raw/cb7d9ab0a9026574363f7308047c04c6.png)
-**설정 제한: **
+![](https://main.qcloudimg.com/raw/2098308cd8a8c1a0321c0164646b7700.png)
+
+**설정 제한:**
 
 - 서비스 유형이 스트림 미디어 VOD 가속인 도메인의 경우 일시적으로 QUIC을 지원하지 않습니다.
 - IPv6 액세스를 활성화한 뒤 QUIC을 활성할 수 없습니다.
@@ -25,7 +26,7 @@ Tencent Cloud CDN의 QUIC 베타가 출시되었습니다. [신청 양식 제출
 
 도메인을 추가한 뒤 도메인 관리로 이동하여 [HTTPS 설정] 탭으로 전환하면 [QUIC] 설정을 확인할 수 있습니다. 기본적으로 비활성화로 설정되어 있으며 사용자가 활성화할 수 있습니다.
 **참고:** 활성화하기 전에 HTTPS 인증서를 설정하십시오.
-![](https://main.qcloudimg.com/raw/b90da5a37968a594ed9c81768fb72ab5.png)
+![](https://main.qcloudimg.com/raw/e697e32b39948d56610285c80043f1de.png)
 
 
 
