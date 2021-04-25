@@ -163,7 +163,7 @@ param.userDefineRecordId = @"1001_rexchang";  // 录制 ID，即指定开启该�
   录制文件会以 `userDefineRecordId_开始时间_结束时间` 的格式来命名。
 
 - **已经支持的平台**
-  支持 [iOS](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Android](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a154fa0570c3bb6a9f99fb108bda02520)、[Windows](http://doc.qcloudtrtc.com/group__TRTCTypeDef__cplusplus.html#a3a7a5e6144aa337752d22269d25f7cfc)、[Mac](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Electron](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCParams.html) 等终端发起录制控制，暂不支持由 Web 浏览器发起控制。
+  支持 [iOS](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Android](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a154fa0570c3bb6a9f99fb108bda02520)、[Windows](http://doc.qcloudtrtc.com/group__TRTCTypeDef__cplusplus.html#a3a7a5e6144aa337752d22269d25f7cfc)、[Mac](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Electron](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCParams.html) 等终端发起录制控制，暂不支持由 Web 浏览器发起控制。
 
 <span id="recordRESTAPI"></span>
 
@@ -302,7 +302,7 @@ https://vod.tencentcloudapi.com/?Action=DeleteMedia
 
 #### 选择文件格式（HLS）
 在 [设置录制格式](#fileFormat) 中选择文件格式为 HLS。
-HLS 支持最长5分钟的断点续录，可以做到“一场直播（或一堂课）只产生一个回放链接”，且 HLS 文件支持绝大多数浏览器在线播放，非常适合视频回放场景。
+HLS 支持最长30分钟的断点续录，可以做到“一场直播（或一堂课）只产生一个回放链接”，且 HLS 文件支持绝大多数浏览器在线播放，非常适合视频回放场景。
 
 #### 获取点播地址（video_url）
 在 [接收录制文件](#callback) 时，可以获取回调消息中 **video_url** 字段，该字段为当前录制文件在腾讯云的点播地址。
