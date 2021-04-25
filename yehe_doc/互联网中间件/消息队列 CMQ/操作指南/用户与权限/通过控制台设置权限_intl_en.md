@@ -6,12 +6,6 @@ This document uses **write permissions for message consumption and batch message
 
 After connection to CAM, by default, a sub-account can only view lists, without any other operation permissions (the sub-account key is used for console login). It can get access only after authorized by the root account in CAM.
 
- 
-
- 
- 
- 
-
 **If the sub-account wants to view monitoring data in the console, it needs the permissions of Cloud Monitor APIs, which can be granted in CAM.**
 
 
@@ -60,10 +54,6 @@ For more information about CAM policies, see [Policy](https://intl.cloud.tencent
 
 >?The `list` API permissions of CMQ are all enabled by default (i.e., you can view the specific resource lists in the CMQ console after logging in). You can use the permissions to control what resource content can be displayed.
 
- 
-
- 
- 
 
 <span id="Authorizations of CAM-Enabled APIs"></span>
 ## Authorizations of CAM-Enabled APIs
@@ -86,7 +76,7 @@ For more information about CAM policies, see [Policy](https://intl.cloud.tencent
 
 #### List of APIs not supporting authorization at resource level
 
-| API Name | API Description | Example of Resource Six-Segment Description |
+| API Name | API Description | Resource Type | Example of Resource Six-Segment Description |
 | ------------------------------ | ------------------ | ------------ | -------------- |
 | DescribeSubscriptionDetail | Queries subscription details. | Subscription API | * |
 | DescribeTopicDetail | Queries topic details. | Topic API | * |
