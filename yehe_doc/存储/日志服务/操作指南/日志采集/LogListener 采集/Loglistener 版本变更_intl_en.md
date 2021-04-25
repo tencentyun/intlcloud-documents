@@ -1,10 +1,10 @@
 This document describes CLS LogListener versions.
 
 >?
-- Multi-line - full regular expression collection mode is available starting from LogListener v2.4.5.
-- Automatic LogListener upgrade is available starting from LogListener v2.5.0.
-- Uploading logs of parsing failures is available starting from LogListener v2.5.2.
-- You are advised to [install or upgrade to the latest version](https://intl.cloud.tencent.com/document/product/614/17414) for a better user experience.
+>- Multi-line - full regular expression collection mode is available starting from LogListener v2.4.5.
+>- Automatic LogListener upgrade is available starting from LogListener v2.5.0.
+>- Uploading logs of parsing failures is available starting from LogListener v2.5.2.
+>- You are advised to [install or upgrade to the latest version](https://intl.cloud.tencent.com/document/product/614/17414) for a better user experience.
 
 <table>
 	<tr><th style="width: 10%;">Version</th><th style="width: 11%;">Change Type</th><th>Description</th></tr>
