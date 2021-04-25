@@ -8,13 +8,13 @@
     <td>2021-04-02</td>	
     <td>v1.18.4-tke.8</td>	
     <td><ul class="params">
-		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/97752" rel="nofollow">pr97752</a>, which fixed the issue where NewReplicaSet is displayed as <code>&lt;none&gt;</code> when describing deployment (kubectl).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/97752" rel="nofollow">pr97752</a>, which fixed the issue where NewReplicaSet is displayed as <code>&lt;none&gt;</code> when describing deployment (kubectl).</li>
 <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/93808" rel="nofollow">pr93808</a>, which fixed the issue where unnecessary information is returned when <code>kube-scheduler --version</code> is executed (kube-scheduler).</li>
 <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/91590" rel="nofollow">pr91590</a>, which fixed the issue of warning that the port has been allocated when using the multiprotocol service of NodePort type (kube-apiserver).</li>
-<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/98262" rel="nofollow">pr98262</a>, which allows you to use kube-controller-manager to dynamically adjust the log level (kube-controller-manager).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/98262" rel="nofollow">pr98262</a>, which allows kube-controller-manager to dynamically adjust the log level (kube-controller-manager).</li>
 <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/95154" rel="nofollow">pr95154</a>, which fixed the issue where kube-scheduler snapshot contains the nodes being deleted (kube-scheduler).</li>
 <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/95711" rel="nofollow">pr95711</a>, which fixed the issue where kubectl drain command occupies too much CPU (kubectl).</li>
-<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/96602" rel="nofollow">pr96602</a>, which fixed the issue of apiserver memory leak before or after the time gaps (kube-apiserver).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/96602" rel="nofollow">pr96602</a>, which fixed the issue where apiserver memory leaks before or after the time gaps (kube-apiserver).</li>
 <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/97023" rel="nofollow">pr97023</a>, which deletes the related metadata directory when unmounting an emptyDir type volume (kubelet).</li>
 <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/97527" rel="nofollow">pr97527</a>, which fixed the issue where map access operations are not synchronized in cpumanager (kubelet).</li>
 <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/100190" rel="nofollow">pr100190</a>, which automatically deletes the volume directory left by orphaned Pod (kubelet).</li>
@@ -66,7 +66,7 @@
     <td>2020-08-04</td>	
     <td>v1.18.4-tke.1</td>	
     <td><ul class="params"><li>revert <a href="https://github.com/kubernetes/kubernetes/pull/63066">pr63066 </a>Fixed the LB health check and IPVS issues (kube-proxy).</li>
-    <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/93403">pr72914</a>, which fixed the issue where mounting might fail if you deleted a pod, created a new one, and scheduled it to the same node (kube-controller-manager）。</li>
+    <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/93403">pr72914</a>, which fixed the issue where mounting might fail if you deleted a pod, created a new one, and scheduled it to the same node (kube-controller-manager).</li>
     <li>Fixed the issue where creating containers in CentOS resulted in cgroup leakage (kubelet).</li>
     <li>Fixed the issue where upgrading lxcfs in Ubuntu 16 caused pods to exit (kubelet).</li>
     <li>metadata added cache and timeout. cloud-provider now supports using node names as hostnames (kubelet).</li>
@@ -97,6 +97,17 @@
 <tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Updates</th></tr>
 </thead>
 <tbody>
+<tr>
+    <td>2021-04-14</td>	
+    <td>v1.16.3-tke.15</td>	
+    <td><ul class="params">
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/97752" rel="nofollow">pr97752</a>, which fixed the issue where NewReplicaSet is displayed as <code>&lt;none&gt;</code> when describing deployment (kubectl).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/92614" rel="nofollow">pr92614</a>, when all containers of the Pod whose restart policy is RestartPolicyOnFailure exit successfully, no new sandbox will be created (kubelet).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/91590" rel="nofollow">pr91590</a>, which fixed the issue of warning that the port has been allocated when using the multiprotocol service of NodePort type (kube-apiserver).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/98262" rel="nofollow">pr98262</a>, which allows you to use kube-controller-manager to dynamically adjust the log level (kube-controller-manager).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/95301" rel="nofollow">pr95301</a>, which automatically deletes the volume directory left by orphaned Pod (kubelet).</li>
+	        </ul></td>
+</tr>	
 <tr>
     <td>2020-12-28</td>	
     <td>v1.16.3-tke.14</td>	
@@ -195,6 +206,17 @@
 </thead>
 <tbody>
 <tr>
+    <td>2021-04-14</td>	
+    <td>v1.14.3-tke.21</td>	
+    <td><ul class="params">
+	<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/97752" rel="nofollow">pr97752</a>, which fixed the issue where NewReplicaSet is displayed as <code>&lt;none&gt;</code> when describing deployment (kubectl).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/78999" rel="nofollow">pr78999</a>, which fixed the issue of judging the case of the protocol during graceful close (kube-proxy).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/91590" rel="nofollow">pr91590</a>, which fixed the issue of warning that the port has been allocated when using the multiprotocol service of NodePort type (kube-apiserver).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/98262" rel="nofollow">pr98262</a>, which allows kube-controller-manager to dynamically adjust the log level (kube-controller-manager).</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/95301" rel="nofollow">pr95301</a>, which automatically deletes the volume directory left by orphaned Pod (kubelet).</li>
+	        </ul></td>
+</tr>	
+<tr>
     <td>2020-12-28</td>	
     <td>v1.14.3-tke.19</td>	
     <td><ul class="params">
@@ -209,7 +231,7 @@
 		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/94712">pr94712</a>, which fixed CVE-2020-8564 - fixed the issue when the file format was incorrect and logLevel >= 4, Docker configuration leaked (kubelet).</li>
 		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/95316">pr95316</a>, which fixed CVE-2020-8565 - fixed the issue where incomplete fix for CVE-2019-11250 resulting in log token leak (logLevel >= 9) (kube-apiserver, kubectl).</li>
 		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/95245">pr95245</a>, which fixed CVE-2020-8566 - fixed the issue where Ceph RBD adminSecrets was exposed in the log when loglevel >= 4 (kube-controller-manager).</li>
-	        <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/86140">pr86140</a>, which fixed the issue where the Controller Manager did not handle the timeout error correctly, so that the expanded pod could not be created (kube-controller-manager).</li>
+	        <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/86140">pr86140</a>, which fixed the issue where the Controller Manager did not handle the timeout error correctly, so that the expanded Pod could not be created (kube-controller-manager).</li>
 	        <li>The scheduler supports virtual nodes (kube-scheduler).</li>
 	        <li>kube-controller-manager supports virtual nodes (kube-controller-manager).</li>
 		<li>Set the instance-type label based on the actual model of the node, instead of being fixed as QCLOUD (kubelet).</li>
