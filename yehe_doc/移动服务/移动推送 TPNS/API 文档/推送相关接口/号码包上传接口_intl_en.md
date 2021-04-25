@@ -5,14 +5,14 @@
 ```plaintext
 Service URL/v3/push/package/upload
 ```
-API service URLs correspond to service access points one by one. Please select the [service URL](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
+API service URLs correspond to service access points one to one. Please select the [service URL](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
 
-**Feature**: you can upload an account package file for a batch of accounts, and messages will be pushed by the accounts in it. Account package push APIs mainly include the account package upload API and account package push API.
+**Feature**: you can upload a package of multiple accounts and push to the accounts in batches. The two main APIs used are the account package upload API and the account package push API.
 
 >!
 > - Account package file name: [1, 100] characters
 > - Account package format and size: `.zip`, `.txt`, or `.csv` file within 100 MB
-> - `.zip` file requirements: contains a single `.txt` or `.csv` file but not folders
+> - `.zip` file requirements: can contain single `.txt` or `.csv` files but not folders
 > - `.txt` file requirements: encoded in UTF-8; one account ([2, 100] characters) per row
 > - `.csv` file requirements: one column only; one account ([2, 100] characters) per row
 
@@ -22,7 +22,7 @@ API service URLs correspond to service access points one by one. Please select t
 
 | Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
-| file  | form-data | Yes | <li>Account package format and size: `.zip`, `.txt`, or `.csv` file within 100 MB<li>`.zip` file requirements: can contain a single `.txt` or `.csv` file but not folders<li>`.txt` file requirements: encoded in UTF-8; one account ([2, 100] characters) per row<li>`.csv` file requirements: one column only; one account ([2, 100] characters) per row |
+| file  | form-data | Yes | <li>Account package format and size: `.zip`, `.txt`, or `.csv` file within 100 MB<li>`.zip` file requirements: can contain single `.txt` or `.csv` files but not folders<li>`.txt` file requirements: encoded in UTF-8; one account ([2, 100] characters) per row<li>`.csv` file requirements: one column only; one account ([2, 100] characters) per row |
 
 
 
@@ -31,39 +31,303 @@ API service URLs correspond to service access points one by one. Please select t
 | Parameter | Type | Required | Description |
 | --- | --- | --- | --- |
 | retCode | Integer | Yes | Error code |
-| errMsg | String | Yes | Error message when a request error occurs |
-| uploadId | Integer | Yes | When a file is uploaded, `uploadId` is provided as a positive integer, which represents the ID of the uploaded file. It is provided to the push API for account package push. |
+| errMsg | String | Yes | Error message of a request error |
+| uploadId | Integer | Yes | When a file is uploaded, a positive integer is returned, which represents the ID of the uploaded file (`uploadId`). It is provided to the push API for account package push. |
 
 
 ## Sample Request
 
+#### Python3
 
-#### Curl sample
+```
+import base64
+from pip._vendor import requests
+from pip._vendor.urllib3 import encode_multipart_formdata
 
-``` xml
-curl -X POST 
-https://api.tpns.tencent.com/v3/push/package/upload 
-   
--H 'Authorization: Basic application authorization information' 
--F 'file=@C:\Absolute path of the uploaded file'
+def upload(url, filePath, accessId, secret, data={}, header={}):
+    openFile = open(filePath, 'rb')
+    data['file'] = (openFile.name, openFile.read())
+    encode_data = encode_multipart_formdata(data)
+    data = encode_data[0]
+    header['Content-Type'] = encode_data[1]
+    authInfo = accessId + ":" + secret
+
+    header['Authorization'] = "Basic " + str(base64.b64encode(bytes(authInfo, encoding="utf8")),encoding="utf8")
+    
+    r = requests.post(url, headers=header, data=data)
+    print(r.json())
 ```
 
-#### Python sample
-``` python
-import requests
+#### Golang
 
-url = "https://api.tpns.tencent.com/v3/push/package/upload"
+```
+func Upload(url string, filePath string, accessId string, secret string)(resp string , err error) {
+	fp, err := os.Open(filePath)
+	if err != nil {
+		return resp, err
+	}
+	defer fp.Close()
+	body := &bytes.Buffer{}
+	writer := multipart.NewWriter(body)
+	defer writer.Close()
+	part, err := writer.CreateFormFile("file", filepath.Base(fp.Name()))
+	if err != nil {
+		return resp, err
+	}
+	io.Copy(part, fp)
+	writer.Close()
+	httpReq, err := http.NewRequest(http.MethodPost, url, body)
+	if err != nil {
+		return resp, err
+	}
+	
+	httpReq.Header.Add("Content-Type", writer.FormDataContentType())
+	
+	authInfo := base64.StdEncoding.EncodeToString([]byte(accessId + ":" + secret))
+	httpReq.Header.Add("Authorization", fmt.Sprintf("Basic %s", authInfo))
+	cli := &http.Client{}
+	httpResp, err := cli.Do(httpReq)
+	if err != nil {
+		return resp, err
+	}
+	defer httpResp.Body.Close()
+	data, err := ioutil.ReadAll(httpResp.Body)
+	if err != nil {
+		return resp, err
+	}
+	if httpResp.StatusCode != http.StatusOK {
+		return resp, fmt.Errorf("response error, status: %s, body: %s", httpResp.Status, string(data))
+	}
+	
+	resp = string(data)
+	return resp, nil
+}
+```
 
-files = {'file':open('file name', 'rb')}
-upload_data={"fileName": "absolute file address"}
+#### C#
 
-headers = {
-    'Authorization': "Basic application authorization information",
+```
+        public string Upload(string url, string filePath, uint accessId, string secretKey)
+        {
+            var tmp = accessId.ToString() + ":" + secretKey;
+            var sign = System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(tmp));
+            MultipartFormDataContent form = new MultipartFormDataContent();
+            var content = new StreamContent(new FileStream(filePath, FileMode.Open));
+            content.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data")
+            {
+                Name = "file",
+                FileName = Path.GetFileName(filePath)
+            };
+            form.Add(content);
+            using(HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Add("Authorization","Basic " + sign);
+                client.DefaultRequestHeaders.ExpectContinue = true;
+                var response = (client.PostAsync(url, form)).Result;
+                var result = response.Content.ReadAsStringAsync().Result;
+                if (response.StatusCode != HttpStatusCode.OK) {
+                    throw new Exception(result);
+                }
+                return result;
+            }
+        }
+```
+
+#### PHP
+
+```
+function upload($url, $file, $accessId, $secretkey) {
+    $sign = base64_encode($accessId . ":" . $secretKey);
+    $headers = array("Content-type: multipart/form-data", "Authorization: Basic " . $sign);
+    $cfile = new \CURLFile($file,'multipart/form-data',basename($file));
+    $options = array(
+        CURLOPT_HTTPHEADER      => $headers,
+        CURLOPT_HEADER          => 0,
+        CURLOPT_SSL_VERIFYPEER  => false,
+        CURLOPT_SSL_VERIFYHOST  => 0,
+        CURLOPT_POST            => 1,
+        CURLOPT_URL             => $url,
+        CURLOPT_RETURNTRANSFER  => 1,
+        CURLOPT_TIMEOUT         => 10000,
+        CURLOPT_POSTFIELDS      => array("file" => $cfile)
+    );
+    $ch = curl_init();
+    curl_setopt_array($ch, $options);
+    $ret = curl_exec($ch);
+    $error = curl_error($ch);
+    $info = curl_getinfo($ch);
+    curl_close($ch);
+    if ($error != "") {
+        throw new \Exception($error);
+    }
+    $code = $info["http_code"];
+    if ($code != 200) {
+        throw new \Exception("status: " . $code . ", message: " . $ret);
+    }
+    return $ret;
+
+}
+```
+
+#### JAVA
+
+```
+public JSONObject Upload(String url, String filePath, String accessId, String secret) {
+        OkHttpClient client = new OkHttpClient();
+        File file  = new File(filePath);
+        RequestBody requestBody = new MultipartBody.Builder()
+                .setType(MultipartBody.FORM)
+                .addFormDataPart("file", file.getName(),
+                        RequestBody.create(MediaType.parse("multipart/form-data"), file))
+                .build();
+
+        String authString = accessId+ ":" + secret;
+        byte[] authEncBytes = Base64.encodeBase64(authString.getBytes());
+        String authStringEnc = new String(authEncBytes);
+    
+        Request.Builder builder  = new Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .addHeader("Authorization", "Basic " + authStringEnc);
+
+
+
+        Request request = builder.build();
+        JSONObject jsonRet = null;
+        Response response = null;
+        try {
+            response = client.newCall(request).execute();
+            if(response.code() == 200){
+                String retMsg = response.body().string();
+                jsonRet = new JSONObject(retMsg);
+            }
+            else{
+                jsonRet = new JSONObject();
+                jsonRet.put("retCode", 10101);
+                jsonRet.put("errMsg", "CallApiError,HttpStatus Code:" + response.code());
+            }
+        } catch (IOException e) {
+            jsonRet = new JSONObject();
+            jsonRet.put("retCode", 10100);
+            jsonRet.put("errMsg", e.getMessage());
+        }finally {
+            if (response != null) {
+                response.close();
+            }
+        }
+        return jsonRet;
+    }
+```
+
+#### C++
+
+```
+struct memory {
+    char *data;
+    size_t size;
+    memory(): data(NULL), size(0) {}
+    ~memory() {
+        if (data) {
+            free(data);
+        }
+    }
+};
+      
+static size_t callback(void *data, size_t size, size_t nmemb, void *userp)
+{
+    size_t realsize = size * nmemb;
+    struct memory *mem = (struct memory *)userp;
+    
+    char *ptr = (char *)realloc(mem->data, mem->size + realsize + 1);
+    if(ptr == NULL)
+        return 0; 
+   
+    mem->data = ptr;
+    memcpy(&(mem->data[mem->size]), data, realsize);
+    mem->size += realsize;
+    mem->data[mem->size] = 0;
+    return realsize;
+}
+
+
+std::string upload(const std::string url, const std::string &file, uint32_t accessId, const std::string &secretKey, std::string &err) {
+    CURL *pcurl = curl_easy_init();
+    if (pcurl == NULL) {
+        err.assign("curl_easy_init error");
+        return "";
+    }
+    struct curl_httppost *post = NULL;
+    struct curl_httppost *last = NULL;
+    std::string base;
+    //for unix/linux
+    size_t pos = file.find_last_of("/");
+    if (pos >= 0) {
+        base = file.substr(pos + 1);
+    } 
+    //for windows
+    pos = file.find_last_of("\\");
+    if (pos >= 0) {
+        return base = file.substr(pos + 1);
+    }
+    curl_formadd(&post, &last, CURLFORM_PTRNAME, "file", CURLFORM_FILE, file.c_str(), CURLFORM_FILENAME, base.c_str(), CURLFORM_END);
+
+
+    char buf[128];
+    char dst[128];
+    char authInfo[256];
+    snprintf(buf, sizeof(buf), "%u:%s", accessId, secretKey.c_str());
+    Base64encode(dst, buf, strlen(buf));
+    snprintf(authInfo, sizeof(authInfo), "Authorization: Basic %s", dst);
+
+
+    curl_slist *plist = NULL;
+    plist = curl_slist_append(plist, "Content-Type: multipart/form-data");
+    plist = curl_slist_append(plist, authInfo);
+
+
+    curl_easy_setopt(pcurl, CURLOPT_CONNECTTIMEOUT, 10);
+    curl_easy_setopt(pcurl, CURLOPT_TIMEOUT, 10);
+    curl_easy_setopt(pcurl, CURLOPT_POST, true); 
+
+
+    curl_easy_setopt(pcurl, CURLOPT_HTTPHEADER, plist);
+    curl_easy_setopt(pcurl, CURLOPT_URL, url.c_str());
+
+
+    curl_easy_setopt(pcurl, CURLOPT_HTTPPOST, post);
+    curl_easy_setopt(pcurl, CURLOPT_WRITEFUNCTION, callback);
+    struct memory chunk;
+    curl_easy_setopt(pcurl, CURLOPT_WRITEDATA, (void *)&chunk);
+    curl_easy_setopt(pcurl, CURLOPT_NOSIGNAL, 1);
+
+
+    CURLcode res = curl_easy_perform(pcurl); 
+    curl_slist_free_all(plist);
+
+
+    // Check for errors
+    if (res != CURLE_OK) 
+    {
+        char buf[1024];
+        snprintf(buf, sizeof(buf), "curl_easy_perform error: %s", curl_easy_strerror(res));
+        err.assign(buf);
+        curl_easy_cleanup(pcurl);
+        return "";
+    }
+    long status = 0;
+    curl_easy_getinfo(pcurl, CURLINFO_RESPONSE_CODE, &status);
+    curl_easy_cleanup(pcurl);
+    if (status != 200) {
+        char buf[1024];
+        snprintf(buf, sizeof(buf), "%ld %s", status, chunk.data);
+        err.assign(buf);
+        return "";
     }
 
-response = requests.request("POST", url, data=upload_data, headers=headers, files=files, verify=False)
-print(response.text.encode('utf-8'))
+
+    std::string ret;
+    ret.assign(chunk.data);
+    return ret;
+}
 ```
 
->! For more information on the application authorization, please see [Basic Auth Verification](https://intl.cloud.tencent.com/document/product/1024/34672).
->
