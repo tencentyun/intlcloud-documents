@@ -71,7 +71,7 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 | API                                             | 설명                                                         |
 | ----------------------------------------------- | ------------------------------------------------------------ |
-| [getAudioEffectManager](#getaudioeffectmanager) | 배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) 획득 |
+| [getAudioEffectManager](#getaudioeffectmanager) | 배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) 획득 |
 
 ### 메시지 발송 관련 인터페이스
 
@@ -493,7 +493,7 @@ NS_SWIFT_NAME(enterSeat(callback:));
 
 | 매개변수    | 유형 | 의미                                                         |
 | ------- | ---- | ------------------------------------------------------------ |
-| quality | int  | 오디오의 품질로, 자세한 내용은 [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)를 참조하십시오. |
+| quality | int  | 오디오의 품질로, 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)를 참조하십시오. |
 
 
 ### muteLocalAudio
@@ -508,7 +508,7 @@ NS_SWIFT_NAME(enterSeat(callback:));
 
 | 매개변수 | 유형    | 의미                                                         |
 | ---- | ------- | ------------------------------------------------------------ |
-| mute | boolean | 오디오를 음소거/음소거 취소합니다. 자세한 내용은 [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86)를 참조하십시오. |
+| mute | boolean | 오디오를 음소거/음소거 취소합니다. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86)를 참조하십시오. |
 
 
 
@@ -592,7 +592,7 @@ NS_SWIFT_NAME(enterSeat(callback:));
 
 ### getAudioEffectManager
 
-배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) 획득
+배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) 획득
 
 ```Objective-C
 - (TXAudioEffectManager * _Nullable)getAudioEffectManager;
