@@ -9,12 +9,29 @@ Solution: Change the version of the package in your project that has caused `NoS
 
 ### What do I do if the upload with SDK is slow and `IOException` is frequently printed in the log?
 
-Cause and solution:
+Causes and solutions:
 
- a. Check whether you are accessing COS through a public network. Currently, CVM instances that are in the same region as COS can access COS through a private network (the IP ranges resolved by the private endpoint are 10, 100, and 169). For more information about COS endpoints, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). If a public network is used, check whether the egress bandwidth is too small or whether bandwidth resources are occupied by other programs.
- b. Ensure that the logs in the production environment are not set to DEBUG level. INFO level is recommended.
- c. Currently, the simple upload speed is up to 10 MB/s, and the speed of 32 concurrent uploads using advanced APIs can reach 60 MB/s. If the speed is far lower than these two values, see a and b.
- d. If `IOException` is printed in the WARN level logs, it can be ignored, and the SDK will retry. `IOException` may be caused by a slow network connection. For possible causes, see a and b.
+1. Check whether you are accessing COS through a public network. Currently, CVM instances that are in the same region as COS can access COS through a private network (the IP ranges resolved by the private endpoint are 10, 100, and 169). For more information about COS endpoints, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). If a public network is used, check whether the egress bandwidth is too small or whether bandwidth resources are occupied by other programs.
+2. Ensure that the logs in the production environment are not set to DEBUG level. The INFO level is recommended.
+3. Currently, the simple upload speed is up to 10 MB/s, and the speed of 32 concurrent uploads using advanced APIs can reach 60 MB/s. If the speed is far lower than these two values, see 1 and 2.
+4. If `IOException` is printed in the WARN level logs, it can be ignored, and the SDK will retry. `IOException` may be caused by a slow network connection. For possible causes, see 1 and 2.
+
+### What do I do if there is a plus sign (+) in the requested upload path, throwing "403 SignatureDoesNotMatch"?
+Possible cause: The version of HttpClient in the Java environment leads to the URLEncode error.
+You can troubleshoot using either of the following ways:
+Solution 1: Use the 4.5.3 version of HttpClient.
+```
+<groupId>org.apache.httpcomponents</groupId>
+       <artifactId>httpclient</artifactId>
+ <version>4.5.3</version> 
+```
+
+Solution 2: Replace `cos-java-sdk` with `cos_api-bundle`. In this case, all dependencies of `cos-java-sdk` are installed independently and thus more space will be used.
+```
+<groupId>com.qcloud</groupId>
+       <artifactId>cos_api-bundle</artifactId>
+<version>5.6.35</version>
+```
 
 ### How do I create a directory in the SDK?
 

@@ -14,7 +14,7 @@ The following describes how to use Filetruck to migrate/back up data.
 
 ## Preparations
 
-Before you start, find the image of CFS Filetruck [here](https://market.cloud.tencent.com/products/24827).
+Before you start, find the image of CFS Filetruck in the Tencent Cloud Market.
 
 1. Use CFS Filetruck to create a CVM (minimum configuration: 2-core CP, 4 GB, 1.5Gbps). After the host is created, the Filetruck and relevant environments are ready to go.
 2. Mount the source and destination directories of the data to migrate/back up to the host. For more information, please see [Using CFS File Systems on Linux Clients](https://intl.cloud.tencent.com/document/product/582/11523).
@@ -176,7 +176,7 @@ You can run the `filetruck_client -h` command to obtain the help information of 
 ```
 CFS-Filetruck version: 0.1.3b
 Copyright (C) 2020 Tencent Inc. All rights reserved.
-Link: https://intl.cloud.tencent.com/product/cfs
+Link: https://cloud.tencent.com/product/cfs
  
 CFS-Filetruck makes file migration easier.
  
