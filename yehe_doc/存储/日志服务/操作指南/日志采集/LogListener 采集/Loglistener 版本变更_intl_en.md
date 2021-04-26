@@ -1,10 +1,10 @@
 This document describes CLS LogListener versions.
 
 >?
-- Multi-line - full regular expression collection mode is available starting from LogListener v2.4.5.
-- Automatic LogListener upgrade is available starting from LogListener v2.5.0.
-- Uploading logs of parsing failures is available starting from LogListener v2.5.2.
-- You are advised to [install or upgrade to the latest version](https://intl.cloud.tencent.com/document/product/614/17414) for a better user experience.
+>- Multi-line - full regular expression collection mode is available starting from LogListener v2.4.5.
+>- Automatic LogListener upgrade is available starting from LogListener v2.5.0.
+>- Uploading logs of parsing failures is available starting from LogListener v2.5.2.
+>- You are advised to [install or upgrade to the latest version](https://intl.cloud.tencent.com/document/product/614/17414) for a better user experience.
 
 <table>
 	<tr><th style="width: 10%;">Version</th><th style="width: 11%;">Change Type</th><th>Description</th></tr>
@@ -29,9 +29,9 @@ This document describes CLS LogListener versions.
 	<tr><td>Bug fix</td><td><ul  style="margin: 0;"><li>Fixed the issue where log collection stopped when logs were uploaded but authentication failed in the static configuration mode. </li><li>Fixed the issue where dynamic configurations were no longer read after the memory exceeded the threshold in the dynamic configuration mode. </li><li>Fixed the issue where sometimes log collection repeated when the log production speed was too high during log rotation. </li><li>Fixed the memory leak issue caused by multiple failures to upload logs.</li></ul></td></tr>
 	<tr><td><b>v2.3.1</b></td><td>Bug fix</td><td><ul  style="margin: 0;"><li>Optimized memory limit. </li><li>When the memory limit was reached, requests lasting over three seconds were considered as timed out.</li></ul></td></tr>
 	<tr><td rowspan=2><b>v2.2.6</b></td><td>New feature</td><td>Added support for configuring private domain and public domain separately.</td></tr>
-	<tr><td>Bug fix</td><td>Fixed LogListener exceptions caused by `getip`.</td></tr>
+	<tr><td>Bug fix</td><td>Fixed LogListener exceptions caused by `getip` .</td></tr>
 	<tr><td rowspan=2><b>v2.2.5</b></td><td>New feature</td><td>Added support for Tencent Cloud COC environment deployment.</td></tr>
-	<tr><td>Bug fix</td><td>Fixed the issue of core loss or corruption caused by `getip`.</td></tr>
+	<tr><td>Bug fix</td><td>Fixed the issue of core loss or corruption caused by `getip` .</td></tr>
 	<tr><td><b>v2.2.4</b></td><td>Experience optimization</td><td><ul  style="margin: 0;"><li>Changed the commands for installation and initialization to the subcommands `install` and `init` of `tools/loglistener.sh` respectively. </li><li>Changed the command for restart to `/etc/init.d/loglistenerd start|stop|restart`.</li></ul></td></tr>
 	<tr><td><b>v2.2.3</b></td><td>Experience optimization</td><td>Renaming or creating logs during log rotation will not cause log loss.</td></tr>
 	<tr><td><b>v2.2.2</b></td><td>Experience optimization</td><td>A log greater than 512 KB will be automatically truncated.</td></tr>
