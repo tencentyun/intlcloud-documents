@@ -101,7 +101,7 @@ Calculate and get:
 - HttpHeaders = `date=Thu%2C%2016%20May%202019%2003%3A15%3A06%20GMT&host=examplebucket-1250000000.cos.ap-shanghai.myqcloud.com&x-cos-acl=private&x-cos-grant-read=uin%3D%22100000000011%22`
 
 ### Step 5. Generate HttpString
-Generate the `HttpString` based on the HTTP method, HTTP request path, [HttpParameters](#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.94.9F.E6.88.90-urlparamlist-.E5.92.8C-httpparameters), and [HttpHeaders](#.E6.AD.A5.E9.AA.A44.EF.BC.9A.E7.94.9F.E6.88.90-headerlist-.E5.92.8C-httpheaders) in the format of `HttpMethod\nUriPathname\nHttpParameters\nHttpHeaders\n`.
+Use the HttpMethod, UriPathname, [HttpParameters](#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.94.9F.E6.88.90-urlparamlist-.E5.92.8C-httpparameters), and [HttpHeaders](#.E6.AD.A5.E9.AA.A44.EF.BC.9A.E7.94.9F.E6.88.90-headerlist-.E5.92.8C-httpheaders) to generate `HttpString` in the format of `HttpMethod\nUriPathname\nHttpParameters\nHttpHeaders\n`.
 
 Here:
 - `HttpMethod` is converted to lowercase, such as `get` or `put`.
