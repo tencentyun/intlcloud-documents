@@ -46,10 +46,7 @@ Tencent Cloud CDNを使用する前に、Tencent Cloudアカウントを登録�
 [](https://main.qcloudimg.com/raw/95fff730b132974403698b512260f3fb.png)
 
 
-
-
 ## 5. コンソール機能の概要
-
 <table>
 <thead>
 <tr>
@@ -127,11 +124,11 @@ Tencent Cloud CDNを使用する前に、Tencent Cloudアカウントを登録�
 </tr>
 <tr>
 <td>DDoS、CC、WAFなど、あらゆる方面の防護と攻撃の監視を行います。</td>
-<td><a href="https://cloud.tencent.com/document/product/228/18508" target="_blank">セキュリティアクセラレーション</a></td>
+<td>セキュリティアクセラレーション</a></td>
 </tr>
 <tr>
 <td>Tencent Cloud CDNを使用し、大量の画像配信を行います。</td>
-<td><a href="https://cloud.tencent.com/document/product/228/43121" target="_blank">画像最適化</a></td>
+<td>画像最適化</a></td>
 </tr>
 </tbody></table>
 
@@ -142,7 +139,7 @@ Tencent Cloud CDNを使用する前に、Tencent Cloudアカウントを登録�
 - [購入したCDNの中国本土のトラフィックパッケージを使用しない場合、返品は可能ですか。](https://intl.cloud.tencent.com/document/product/228/31479)
 - [CDNはリクエスト数に応じた課金に対応していますか。](https://intl.cloud.tencent.com/document/product/228/31479)
 - [オリジンサーバーはCOSを使用しますが、CDNがオリジンサーバーをCOSに戻す際に生じるトラフィックに対して課金されますか。](https://intl.cloud.tencent.com/document/product/228/31479)
-- [CDNがオフ（CDNサービスがオフライン）の場合であっても、トラフィックや料金は発生しますか。(https://intl.cloud.tencent.com/document/product/228/31479)
+- [CDNがオフ（CDNサービスがオフライン）の場合であっても、トラフィックや料金は発生しますか。](https://intl.cloud.tencent.com/document/product/228/31479)
 - [CDNは課金方法の変更に対応していますか。](https://intl.cloud.tencent.com/document/product/228/31479)
 - [CDNの中国国内におけるトラフィックパッケージの使用管理](https://intl.cloud.tencent.com/document/product/228/31479)
 - [ダウンストリームトラフィックが発生した場合のみ課金されますか。](https://intl.cloud.tencent.com/document/product/228/31479)
