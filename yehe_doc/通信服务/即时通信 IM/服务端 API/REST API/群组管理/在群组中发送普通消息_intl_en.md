@@ -101,7 +101,7 @@ After receiving the message, other members will see that the message is sent fro
 ```
 - **Specifying the Message Priority**
 You can specify the message priority. The default priority is Normal.
-There are four priority options in descending order: High, Normal, Low, and Lowest. They are case-sensitive.
+There are three priority options in descending order: High, Normal, and Low. They are case-sensitive.
 ```
 {
     "GroupId": "@TGS#2C5SZEAEF",
