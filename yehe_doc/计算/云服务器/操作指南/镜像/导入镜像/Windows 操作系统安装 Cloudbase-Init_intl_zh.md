@@ -9,8 +9,8 @@
 | 软件名称 | 获取路径 | 说明 |
 |---------|---------|---------|
 | CloudbaseInitSetup_X_X_XX_xXX.msi | 请根据实际使用的操作系统位数，下载对应的 Cloudbase-Init 安装包：<ul style="margin: 0;"><li>稳定版本：推荐使用该版本安装包<ul style="margin: 0;"><li>Windows 64位 操作系统：[点此获取](https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x64.msi)</li><li>Windows 32位 操作系统：[点此获取](https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x86.msi)</li></ul></li><li>Beta 版本</li></ul>更多详情请参见 [Cloudbase-Init 官网](http://www.cloudbase.it/cloud-init-for-windows-instances/)。 | 用于安装 Cloudbase-Init。  |
-| TencentCloudRun.ps1 | [点此获取](http://cloudinit-1251783334.cosgz.myqcloud.com/TencentCloudRun.ps1) | - |
-| localscripts.py | [点此获取](http://cloudinit-1251783334.file.myqcloud.com/localscripts.py) | 用于保证 Cloudbase-Init 可以正常启动。 |
+| TencentCloudRun.ps1 | [点此获取](https://cloudinit-1251783334.cosgz.myqcloud.com/TencentCloudRun.ps1) | - |
+| localscripts.py | [点此获取](https://cloudinit-1251783334.file.myqcloud.com/localscripts.py) | 用于保证 Cloudbase-Init 可以正常启动。 |
 
 ## 操作步骤
 
@@ -25,7 +25,7 @@
 ![](https://main.qcloudimg.com/raw/a772c35958cdf3be511dab58f730e7be.png)
 6. 单击【Install】，安装 Cloudbase-Init。
 7. 待 Cloudbase-Init 完成安装后，单击【Finish】，关闭 Cloudbase-Init 安装界面。如下图所示：
-> 关闭 Cloudbase-Init 安装界面时，请勿勾选任何复选框，不要运行 Sysprep。
+>! 关闭 Cloudbase-Init 安装界面时，请勿勾选任何复选框，不要运行 Sysprep。
 >
 ![](https://main.qcloudimg.com/raw/d2d6c30def7812af9d7e484f5e8ccaa9.png)
 
