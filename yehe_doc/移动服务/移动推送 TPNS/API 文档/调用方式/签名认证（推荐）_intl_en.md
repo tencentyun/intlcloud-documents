@@ -20,7 +20,7 @@ The HMAC-SHA256 algorithm is used to generate signing information according to `
 1. Splice the request timestamp + `AccessId` + request body to get the original string to be signed:
 `String to be signed = ${TimeStamp} + ${AccessId} + ${request body}`
 2. Use `secretKey` as the key to sign the original string to be signed to generate a signature:
-`Sign = Base64(HMAC_SHA256(string to be signed, SecretKey ))`
+`Sign = Base64(HMAC_SHA256(SecretKey, string to be signed))`
 
 ## HTTP Protocol Assembly Method
 
@@ -51,7 +51,7 @@ String to be encrypted =15653147891500001048{"audience_type": "account","platfor
 ```
 2. Generate a hexadecimal hash based on the key through the HMAC-SHA256 algorithm, i.e., `secretKey =1452fcebae9f3115ba794fb0fff2fd73` in the sample.
 ```
-hashcode= hmac-sha256(string to be signed, secretKey)
+hashcode= hmac-sha256(SecretKey, string to be signed)
 Get hashcode="cd20774682bf78bfdb43e17d1d5d56b3e5b789a1670fc1527ef54c65d2d7b76d"
 ```
 3. Base64-encode the hashcode to get the following signature string:
