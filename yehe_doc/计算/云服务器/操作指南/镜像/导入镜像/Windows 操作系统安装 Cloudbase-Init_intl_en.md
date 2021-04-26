@@ -9,8 +9,8 @@ The following table describes the software required for installing Cloudbase-Ini
 | Software | Download Link | Description |
 |---------|---------|---------|
 | CloudbaseInitSetup_X_X_XX_xXX.msi | Download the Cloudbase-Init installation package based on the operating system used.<ul style="margin: 0;"><li>Stable version (recommended)<ul style="margin: 0;"><li>Windows 64-bit operating system: [Click here](https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x64.msi) to download the installation package.</li><li>Windows 32-bit operating system: [Click here](https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x86.msi) to download the installation package.</li></ul></li><li>Beta version</li></ul>For details, see the [Cloudbase-Init official website](http://www.cloudbase.it/cloud-init-for-windows-instances/). | Used to install Cloudbase-Init |
-| TencentCloudRun.ps1 | [Click here](http://cloudinit-1251783334.cosgz.myqcloud.com/TencentCloudRun.ps1) to download the installation package. | - |
-| localscripts.py | [Click here](http://cloudinit-1251783334.file.myqcloud.com/localscripts.py) to download the installation package. | Used to ensure that Cloudbase-Init starts properly |
+| TencentCloudRun.ps1 | [Click here](https://cloudinit-1251783334.cosgz.myqcloud.com/TencentCloudRun.ps1) to download the installation package. | - |
+| localscripts.py | [Click here](https://cloudinit-1251783334.file.myqcloud.com/localscripts.py) to download the installation package. | Used to ensure that Cloudbase-Init starts properly |
 
 ## Directions
 
@@ -25,7 +25,7 @@ The following table describes the software required for installing Cloudbase-Ini
 ![](https://main.qcloudimg.com/raw/a772c35958cdf3be511dab58f730e7be.png)
 6. Click **Install**.
 7. When the installation is completed, click **Finish** to close the Cloudbase-Init setup wizard, as shown below:
-> When closing the Cloudbase-Init setup wizard, do not check any checkbox or run Sysprep.
+>! When closing the Cloudbase-Init setup wizard, do not check any checkbox or run Sysprep.
 >
 ![](https://main.qcloudimg.com/raw/d2d6c30def7812af9d7e484f5e8ccaa9.png)
 
