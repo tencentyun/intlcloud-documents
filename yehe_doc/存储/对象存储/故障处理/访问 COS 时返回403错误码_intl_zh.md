@@ -23,7 +23,7 @@
 5. 在“存储桶访问权限”栏中，检查访问 COS 的账号是否配置了访问权限。
  - 是，请执行下一步。
  - 否，请单击【添加用户】，为访问 COS 的账号设置所需权限。
-![](https://main.qcloudimg.com/raw/795fe49c538f9e6a0fde44eee0a1c2af.png)
+
 6. 检查配置访问权限的账号是否具有所需权限。
  - 是，请执行下一步。
  - 否，请单击【编辑】，重新设置。
@@ -35,7 +35,7 @@
 >
  - 是，请执行下一步。
  - 否，请单击【添加策略】，根据实际签名访问时账号所需权限进行设置。
-![](https://main.qcloudimg.com/raw/a3bca9e3d7f0a2bea5d6f2387e2c5f90.png)
+
 8. 检查配置 Policy 权限的账号是否具有所需权限。
  - 是，请执行下一步。
  - 否，请单击【编辑】，重新设置。
@@ -44,7 +44,7 @@
  - 否，请将 q-ak 参数修改为相应的目标桶所属账号。
 10. 检查访问 COS 资源时是否为跨账号访问。
  - 是，请为该账号进行跨账号授权，详细操作请参见 [授权跨账号的子账号对指定文件的读写权限](https://cloud.tencent.com/document/product/598/11092)。
- - 否，请联系 [在线客服](https://cloud.tencent.com/act/event/Online_service)。
+ - 否，请联系 [在线客服](https://intl.cloud.tencent.com/support)。
 
 
 ### Message 为 “AccessForbidden”
@@ -62,7 +62,7 @@
 3. 找到需要操作的存储桶，单击该存储桶名称，进入存储桶配置页面。
 4. 在左侧导航栏中，选择【安全管理】>【跨域访问CORS设置】，进入跨域访问 CORS 设置页面。
 5. 在“跨域访问CORS设置”栏中，检查是否为跨域请求。
-![](https://main.qcloudimg.com/raw/ddb551a419d8e622115906874061047d.png)
+
  - 是，请执行下一步。
  - 否，请修改规则。
 6. 执行以下命令，检查跨域请求配置是否正确。
@@ -87,9 +87,9 @@ curl 'http://bucket-appid.cos.ap-guangzhou.myqcloud.com/object' -voa /dev/null -
 3. 找到需要操作的存储桶，单击该存储桶名称，进入存储桶配置页面。
 4. 在左侧导航栏中，选择【安全管理】>【防盗链设置】，进入防盗链设置页面。
 5. 在“防盗链设置”中，检查是否设置了防盗链。
-![](https://main.qcloudimg.com/raw/6190ed80abed7ddf4254325eb22019a6.png)
+
  - 是，请执行下一步。
- - 否，请联系 [在线客服](https://cloud.tencent.com/act/event/Online_service)。
+ - 否，请联系 [在线客服](https://intl.cloud.tencent.com/support)。
 6. 执行以下命令，检查防盗链设置是否正确。
 ```
 curl 'http://bucket-appid.cos.ap-guangzhou.myqcloud.com/object' -voa /dev/null -H 'referer: Referer 的值'
@@ -112,8 +112,8 @@ curl 'http://bucket-appid.cos.ap-guangzhou.myqcloud.com/object' -voa /dev/null -
  - 是，请执行下一步。
  - 否，请修改 q-ak 参数。密钥的 SecretId 需与 q-ak 参数保持一致，且区分大小写。
 2. 前往 [API密钥管理](https://console.cloud.tencent.com/cam/capi)，检查 API 密钥是否已启用。
-![](https://main.qcloudimg.com/raw/9e69892ac2b9e8fe6b17f905b9599c7e.png)
- - 是，请联系 [在线客服](https://cloud.tencent.com/act/event/Online_service)。
+
+ - 是，请联系 [在线客服](https://intl.cloud.tencent.com/support)。
  - 否，请启用该 API 密钥。
 
 
@@ -129,7 +129,7 @@ curl 'http://bucket-appid.cos.ap-guangzhou.myqcloud.com/object' -voa /dev/null -
 
 检查请求的对象是否为归档类型或深度归档类型。
 - 是，请恢复对象，再进行访问。详细操作请参见 [POST Object restore](https://cloud.tencent.com/document/product/436/12633)。
-- 否，请联系 [在线客服](https://cloud.tencent.com/act/event/Online_service)。
+- 否，请联系 [在线客服](https://intl.cloud.tencent.com/support)。
 
 
 ### Message 为 “RequestTimeTooSkewed”
@@ -148,7 +148,7 @@ curl 'http://bucket-appid.cos.ap-guangzhou.myqcloud.com/object' -voa /dev/null -
 ![](https://main.qcloudimg.com/raw/88288162bd1de8c2ec0b640f0df6799e.png)
 2. 判断客户端当前时间与服务器的时间是否存有偏差（时间偏差超过15分钟）。
  - 是，请同步时间。
- - 否，请联系 [在线客服](https://cloud.tencent.com/act/event/Online_service)。
+ - 否，请联系 [在线客服](https://intl.cloud.tencent.com/support)。
 
 
 ### Message 为 “Request has expired”
@@ -163,7 +163,7 @@ curl 'http://bucket-appid.cos.ap-guangzhou.myqcloud.com/object' -voa /dev/null -
 - 发起请求的时间超过了签名的有效时间。
 - 本地系统时间和所在时区的时间不一致。
 
-需要您重新设置签名的有效时间，或者同步本地系统时间。若仍无法解决，请联系 [在线客服](https://cloud.tencent.com/act/event/Online_service)。
+需要您重新设置签名的有效时间，或者同步本地系统时间。若仍无法解决，请联系 [在线客服](https://intl.cloud.tencent.com/support)。
 
 
 ### Message 为 “SignatureDoesNotMatch”
@@ -177,5 +177,5 @@ curl 'http://bucket-appid.cos.ap-guangzhou.myqcloud.com/object' -voa /dev/null -
 需要您执行以下操作：
 
 检查客户端计算的签名与服务端计算的签名是否一致。
-- 是，请联系 [在线客服](https://cloud.tencent.com/act/event/Online_service)。
+- 是，请联系 [在线客服](https://intl.cloud.tencent.com/support)。
 - 否，请参阅 [请求签名](https://cloud.tencent.com/document/product/436/7778) 文档。
