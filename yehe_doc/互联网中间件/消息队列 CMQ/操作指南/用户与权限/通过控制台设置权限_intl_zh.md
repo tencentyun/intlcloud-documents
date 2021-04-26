@@ -36,19 +36,19 @@
     - 第六段为资源的描述，当为队列模式时，则 `queueName/uin/{创建者Uin}/{队列名字}` ，当为主题模式时该值取 `topicName/uin/{创建者Uin}/{主题名字}`。创建者的 Uin 可以通过控制台详情页获取，或者通过云api 接口 GetQueueAttributes 或者GetTopicAttributes 的返回值 createUin 获取。
   - 条件（选填）：设置子账号上述授权的生效条件。详细可参阅 [生效条件](https://intl.cloud.tencent.com/document/product/598/10608)。
 
-  ![](https://main.qcloudimg.com/raw/c2c23f12b5afb11ab73b6c8a5537dc89.png)
+ ![](https://main.qcloudimg.com/raw/0d76bb4ade99b83b0ca2093561e11b5f.png)
 
 4. 单击【添加声明】>【下一步】，进入编辑策略页面。
 5. 在策略编辑页面，补充策略名称、描述信息，确认策略内容，其中策略名称和策略内容由控制台自动生成。
   - 策略名称：默认为 "policygen" ，后缀数字根据创建日期生成。您可进行自定义。
   - 策略内容：与 [第 3 步](#step3) 的服务和操作对应，您可根据实际需求进行修改。
 
-  ![](https://main.qcloudimg.com/raw/a7100e6b284f37b9fdb89a62971047ab.png)
+ ![](https://main.qcloudimg.com/raw/f7618d543db73c39486aac93a6bfe9f0.png)
 
 6. 单击【完成】，完成按策略生成器创建自定义策略的操作。
 
 7. 在策略列表，选择目标策略，单击操作列的【关联用户/组】，对已开启的权限配置策略的关联对象，选择关联对象后，单击【确认】，完成配置。
-   ![](https://main.qcloudimg.com/raw/666eda185eec0c8a78a256f36d00c018.png)
+ ![](https://main.qcloudimg.com/raw/a56517e94b4e06badb6e76b5eedc63ad.png)
 
 关于 CAM 策略的其他详细说明可参考 [策略](https://intl.cloud.tencent.com/document/product/598/10601) 文档。
 
