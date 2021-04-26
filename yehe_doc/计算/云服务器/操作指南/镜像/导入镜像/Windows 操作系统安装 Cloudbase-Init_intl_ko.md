@@ -9,8 +9,8 @@ Cloudbase-Init 를 설치하기 위해 다음의 소프트웨어가 필요합니
 | 소프트웨어 명칭 | 획득 경로 | 설명 |
 |---------|---------|---------|
 | CloudbaseInitSetup_X_X_XX_xXX.msi | 실제 사용하는 운영 체제 비트에 따라 상응하는 Cloudbase-Init 설치 패키지를 다운로드합니다: <ul style="margin: 0;"><li>안정 버전: 해당 버전의 설치 패키지를 사용할 것을 권장합니다<ul style="margin: 0;"><li>Windows 64비트 운영 체제: [다운로드](https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x64.msi)</li><li>Windows 32비트 운영 체제: [다운로드](https://www.cloudbase.it/downloads/CloudbaseInitSetup_Stable_x86.msi)</li></ul></li><li>Beta 버전</li></ul>자세한 정보는 [Cloudbase-Init 공식 홈페이지](http://www.cloudbase.it/cloud-init-for-windows-instances/)를 참조 바랍니다. | Cloudbase-Init 설치에 사용합니다.  |
-| TencentCloudRun.ps1 | [ 다운로드](http://cloudinit-1251783334.cosgz.myqcloud.com/TencentCloudRun.ps1) | - |
-| localscripts.py | [다운로드](http://cloudinit-1251783334.file.myqcloud.com/localscripts.py) | Cloudbase-Init 의 정상적인 운행을 보장하기 위해 사용합니다. |
+| TencentCloudRun.ps1 | [ 다운로드](https://cloudinit-1251783334.cosgz.myqcloud.com/TencentCloudRun.ps1) | - |
+| localscripts.py | [다운로드](https://cloudinit-1251783334.file.myqcloud.com/localscripts.py) | Cloudbase-Init 의 정상적인 운행을 보장하기 위해 사용합니다. |
 
 ## 작업 순서
 
@@ -25,7 +25,7 @@ Cloudbase-Init 를 설치하기 위해 다음의 소프트웨어가 필요합니
 ![](https://main.qcloudimg.com/raw/a772c35958cdf3be511dab58f730e7be.png)
 6. [Install]을 클릭하여 Cloudbase-Init 를 설치합니다.
 7. 아래 이미지와 같이, Cloudbase-Init 가 설치되면 [Finish]를 클릭해 Cloudbase-Init 설치 인터페이스를 닫습니다.
-> Cloudbase-Init 설치 인터페이스를 닫을 때, 체크 박스를 선택하거나 Sysprep를 실행하지 마세요.
+>! Cloudbase-Init 설치 인터페이스를 닫을 때, 체크 박스를 선택하거나 Sysprep를 실행하지 마세요.
 >
 ![](https://main.qcloudimg.com/raw/d2d6c30def7812af9d7e484f5e8ccaa9.png)
 
