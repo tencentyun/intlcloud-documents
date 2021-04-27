@@ -523,7 +523,7 @@ try {
 
 >! 
 >- In the preset layout mode, you only need to call the `setMixTranscodingConfig()` API once after entering a room and enabling local audio publishing.
->- The API commands for Web are slightly different from those for other platforms. For details, see [`Client.startMixTranscode()`](https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/web/docs/Client.html#startMixTranscode).
+>- The API commands for Web are slightly different from those for other platforms. For details, see [`Client.startMixTranscode()`](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode).
 
 [](id:ScreenSharing)
 
