@@ -35,7 +35,7 @@ PrivateMapKeyに含まれる「権限順位リスト」には、1byte中の8ビ�
 | 第 3 ビット | 0000 0100  |     4      | 音声を送信する権限                       |
 | 第 4 ビット | 0000 1000  |     8      | 音声を受信する権限                       |
 | 第 5 ビット | 0001 0000  |     16     | ビデオを送信する権限                       |
-| 第 6 ビット | 0010 0000  |     32     | ビデオを受信する権限                       
+| 第 6 ビット | 0010 0000  |     32     | ビデオを受信する権限                       |
 | 第 7 ビット | 0100 0000  |     64     | サブストリーム（画面共有）ビデオを送信する権限 |
 | 第 8 ビット | 1000 0000  |    128     | サブストリーム（画面共有）ビデオを受信する権限 |
 
@@ -75,7 +75,7 @@ PrivateMapKey の価値はクライアントが逆方向のクラッキングを
 上の図に示すとおり、お客様のサーバーで PrivateMapKeyを計算した後、お客様のAppに配布することができ、お客様の Appは2種の方法でPrivateMapKeyをSDKに配信することができます。
 
 #### 方法一： enterRoom 時にSDKに配信します
-ユーザーが入室する権限を制御したい場合は、 `TRTCCloud` の `enterRoom` インターフェースを呼び出す時に、 [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCParams) の **privateMapKey** パラメータを設定することで、権限の制御を実現することができます。
+ユーザーが入室する権限を制御したい場合は、 `TRTCCloud` の `enterRoom` インターフェースを呼び出す時に、 [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCParams) の **privateMapKey** パラメータを設定することで、権限の制御を実現することができます。
 
 入室時にPrivateMapKey を検証するこの方法は比較的簡単で、ユーザーが入室する前にユーザーの権限を確認し明確にするシーンに適しています。
 
