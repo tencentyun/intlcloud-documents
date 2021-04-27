@@ -8,7 +8,7 @@ The billable items are as follows:
 | Item      | Description                                                         |
 | --------- | ------------------------------------------------------------ |
 | Peak bandwidth | A throughput of 40 MB/s indicates that the outbound and inbound peak bandwidth is 40 MB/s. Please keep in mind that the replicas of an instance share the throughput equally. For example, for a throughput of 40 MB/s and three replicas, you should purchase a peak bandwidth of 120 MB/s. |
-| Disk capacity | <li>The disk capacity varies by instance specification. </li><li>CKafka Pro Edition currently supports SSD and HDD cloud disks and will support premium cloud disks starting April 2021.</li> |
+| Disk capacity | <li>The disk capacity varies by instance specification. </li><li>CKafka Pro Edition currently supports SSD and Premium Cloud Storage.</li> | 
 | Partition | <li>The number of partitions varies by instance specification, and additional partitions can be purchased separately for the Pro Edition. </li><li>Topics are free of charge for the Pro Edition, and the maximum number of available topics is equal to the number of partitions/the number of replicas. </li><li>The number of partitions cannot be reduced. </li><li>The instance-level partition limit applies to the number of replicas. For example, if an instance has 1 topic with 2 replicas and each with 4 partitions, and 2 topics with 3 replicas and each with 3 partitions, then the total number of partitions in this instance is (1 x 2 x 4) + (2 x 3 x 3) = 26.</li> |
 
 ## Billing Modes
@@ -52,14 +52,14 @@ The price of the basic peak bandwidth package varies by tier, as detailed below:
 
 | Tier | Peak Bandwidth Range (MB/s) | Price (Monthly Subscription) |
 | --------- | -------------------- | ------------------------------------------- |
-| Basic I   | 40–100               | Starting at 310 USD/month and 47 USD/month for each extra 20 MB/s    |
-| Basic II   | 120–300               | Starting at 522 USD/month and 45 USD/month for each extra 20 MB/s    |
-| Basic III  | 320–600               | Starting at 948 USD/month and 44 USD/month for each extra 20 MB/s    |
-| Basic IV  | 620–900               | Starting at 1,806 USD/month and 39 USD/month for each extra 20 MB/s    |
-| Basic V  | 920–1,200               | Starting at 2,370 USD/month and 30 USD/month for each extra 20 MB/s    |
-| Premium  | 1,600–3,200               | Starting at 3,175 USD/month and 780 USD/month for each extra 400 MB/s    |
+| Basic I   | 40–100               | Starting at 360 USD/month and 53 USD/month for each extra 20 MB/s    |
+| Basic II   | 120–300               | Starting at 630 USD/month and 51 USD/month for each extra 20 MB/s    |
+| Basic III  | 320–600               | Starting at 1,200 USD/month and 49 USD/month for each extra 20 MB/s    |
+| Basic IV  | 620–900               | Starting at 2,340 USD/month and 43 USD/month for each extra 20 MB/s    |
+| Basic V  | 920–1,200               | Starting at 3,090 USD/month and 34 USD/month for each extra 20 MB/s    |
+| Premium  | 1,600–3,200               | Starting at 4,150 USD/month and 856 USD/month for each extra 400 MB/s    |
 
-For example, a 180 MB/s instance falls into the Basic II tier with 60 MB/s added to 120 MB/s, so the price of the package is 522 + 45 x (60/20) = 657 (USD/month)
+For example, a 180 MB/s instance falls into the Basic II tier with 60 MB/s added to 120 MB/s, so the price of the package is 630 + 51 x (60/20) = 783 (USD/month)
 
 **Partition package pricing**
 
@@ -67,7 +67,7 @@ After you select the peak bandwidth, if the number of partitions in the correspo
 
 | Tier     | Number of Partitions | Partition Package Price (Monthly Subscription) |
 | -------- | --------------------- | --------------------------- |
-| Any tier | 100                   | 16 USD/month                   |
+| Any tier | 100                   | 35 USD/month                   |
 
 **Disk capacity expansion pricing**
 
@@ -75,6 +75,6 @@ To purchase a CKafka Pro Edition instance, you need to purchase a disk of a cert
 
 | Tier     | Disk Type       | Disk Capacity (GB) | Disk Price (Monthly Subscription) |
 | -------- | -------------- | ------------------ | -------------------- |
-| Any tier | SSD cloud disk | 100                | 16 USD/month            |
-| Any tier | HDD cloud disk | 100                | 8 USD/month             |
+| Any tier | SSD | 100                | 16 USD/month            |
+| Any tier | Premium Cloud Storage | 100                | 6 USD/month             |
 
