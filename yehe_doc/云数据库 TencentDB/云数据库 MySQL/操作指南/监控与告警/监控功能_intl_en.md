@@ -74,7 +74,7 @@ For more information on how to use TencentDB monitoring metrics, please see the 
 | Memory Utilization | memory use rate | % | If overuse of idle resources is permitted, the memory utilization may exceed 100%. |
 | Used Memory | memory_use | MB | If overuse of idle resources is permitted, the used memory may exceed the purchased specification. |
 | Temp Files | created_tmp_files | Counts/second | The number of temp files created per second |
-| Open Tables | opened_tables     | -      | The number of open tables |
+| Open Tables | opened_tables     | -      | Instance-level metric |
 | COMMIT Statements | com_commit | Counts/second | The number of COMMIT statements executed |
 | ROLLBACK Statements |com_rollback| Counts/second | The number of ROLLBACK statements executed |
 | Created Threads | threads_created | - | The number of threads created to handle connections |
@@ -105,7 +105,7 @@ For more information on how to use TencentDB monitoring metrics, please see the 
 | Blocks Written into Key Cache | key_write_requests | Counts/second | The number of requests to write a key block to the MyISAM key cache. |
 | Blocks Written into Disk | key_writes | Counts/second | The number of physical writes of a key block from the MyISAM key cache to disk. |
 | Source-Replica Delay (in MB) | master_slave_sync_distance | MB | The amount of data by which the replica has lagged behind the source |
-| Source-Replica Delay (in Seconds) |seconds_behind_master|Seconds | Instance | The amount of time by which the replica has lagged behind the source |
+| Source-Replica Delay (in Seconds) |seconds_behind_master|Seconds  | The amount of time by which the replica has lagged behind the source |
 | IO Thread Status | slave_io_running | Status value (0: yes, 1: no, 2: connecting) | IO thread status |
-| SQL Thread Status | slave_sql_running | Status value (0: yes, 1: no) | SQL thread status |
+| SQL Thread Status | slave_sql_running | Status value (0: yes, 1: no) | SQLA thread status |
 
