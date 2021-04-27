@@ -106,7 +106,7 @@
 
 | 字段名  | 类型   | 含义                              |
 | ------- | ------ | --------------------------------- |
-RoomId      |     String/Number       |     房间名（类型与客户端房间号类型一致）    |
+|RoomId      |     String/Number       |     房间名（类型与客户端房间号类型一致）    |
 | EventTs | Number | 事件发生的 Unix 时间戳，单位为秒    |
 | UserId  | String | 用户 ID                            |
 | UniqueId  | Number | [唯一标识符](#UniqueId)（option：房间事件组携带）                            |
@@ -144,6 +144,3 @@ Sign = base64（hmacsha256(key, body)）
 >```
 >body="{\n\t\"EventGroupId\":\t1,\n\t\"EventType\":\t103,\n\t\"CallbackTs\":\t1615554923704,\n\t\"EventInfo\":\t{\n\t\t\"RoomId\":\t12345,\n\t\t\"EventTs\":\t1608441737,\n\t\t\"UserId\":\t\"test\",\n\t\t\"UniqueId\":\t1615554922656,\n\t\t\"Role\":\t20,\n\t\t\"Reason\":\t1\n\t}\n}"
 >```
-```
-
-```
