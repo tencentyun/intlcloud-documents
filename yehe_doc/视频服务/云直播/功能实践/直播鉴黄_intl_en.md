@@ -53,7 +53,7 @@ The CSS backend sends the porn detection result to your registered domain name t
 
 #### AbductionRisk description
 
-| **Parameter** | **Required ** | **Data Type** | **Description**                                              |
+| **Parameter** | **Required** | **Data Type** | **Description**                                              |
 | ------------- | ------------- | ------------- | ------------------------------------------------------------ |
 | level         | Yes           | Number        | Risk level in the range of 0–4. The larger the number, the higher the risk. 3 and 4 indicate maliciousness and should be handled |
 | type          | Yes           | Number        | Risk type. 20002: porn                                       |
