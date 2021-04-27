@@ -1,6 +1,6 @@
 To enable porn detection, you need to enable live screencapture first either in the [CSS console](https://intl.cloud.tencent.com/document/product/267/31072) or through API. This document describes how to implement porn detection through API.
 
-## Enabling CSS Porn Detection
+## Enabling Porn Detection
 As the porn detection feature is based on the live screencapture feature, you have to enable screencapture first before you can enable porn detection. The steps are as follows:
 
 ### 1. Create a porn detection-enabled live screencapture template
@@ -11,11 +11,10 @@ Call [CreateLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/26
 
 ### 3. Start a live stream and start porn detection
 After a porn detection-enabled live screencapture rule is created, the porn detection feature will be automatically enabled for new live streams. If you want to enable porn detection for a live stream that is in progress, you need to stop and restart the stream for the feature to take effect.
->! By default, only suspicious results will be called back.
 
 ## Getting Porn Detection Result
 After porn detection is enabled, you can configure the registered callback domain name in the porn detection callback template to have the CSS backend call back the porn detection result.
-
+>! By default, only suspicious results will be called back.
 ### 1. Create an porn detection callback template
 Call [CreateLiveCallbackTemplate](https://intl.cloud.tencent.com/document/product/267/30815) and set `PornCensorshipNotifyUrl` to your domain name to create an porn detection callback template.
 ### 2. Create an porn detection callback rule
