@@ -10,7 +10,7 @@ COS Migration 是一个集成了 COS 数据迁移功能的一体化工具。通�
 - 并行上传：支持多个对象同时上传。
 - 迁移校验：对象迁移后的校验。
 
->
+>!
 >- COS Migration 的编码格式只支持 UTF-8 格式。
 >- 使用该工具上传同名文件，会覆盖较旧的同名文件，不支持校对是否存在同名文件的功能。
 
@@ -20,6 +20,7 @@ Windows、Linux 和 macOS 系统。
 
 #### 软件依赖
 - JDK 1.8 X64或以上，有关 JDK 的安装与配置请参见 [Java 安装与配置](https://intl.cloud.tencent.com/document/product/436/10865)。
+- Linux 环境需要 IFUNC 支持，确保环境 binutils 版本大于 2.20 。
 
 ## 使用方法
 ### 1. 获取工具
@@ -56,7 +57,7 @@ COS_Migrate_tool
 |——start_migrate.bat #Windows 下迁移启动脚本
 </pre>
 
->
+>?
  - db 目录主要记录工具迁移成功的文件标识，每次迁移任务会优先对比 db 中的记录，若当前文件标识已被记录，则会跳过当前文件，否则进行文件迁移。
  - log 目录记录着工具迁移时的所有日志，若在迁移过程中出现错误，请先查看该目录下的 error.log。
 
@@ -234,7 +235,7 @@ urllistPath=D:\\folder\\urllist.txt
 **3.3.6 配置 Bucket 相互复制 migrateBucketCopy**
 
 若从 COS 的一个指定 Bucket 迁移至另一个 Bucket，则进行该部分配置，具体配置项及说明如下：
->发起迁移的账号，需具备源读权限、目的写权限。
+>!发起迁移的账号，需具备源读权限、目的写权限。
 
 <pre>
 # 从源 Bucket 迁移到目标 Bucket 配置分节
@@ -295,7 +296,7 @@ sh start_migrate.sh
 sh start_migrate.sh -Dcommon.cosPath=/savepoint0403_10/
 </pre>
 
->
+>?
 > - 工具支持配置项读取方式有两种：命令行读取或配置文件读取。
 > - 命令行优先级高于配置文件，即相同配置选项会优先采用命令行里的参数。
 > - 命令行中读取配置项的形式方便用户同时运行不同的迁移任务，但前提是两次任务中的关键配置项不完全一样，例如 Bucket 名称，COS 路径，要迁移的源路径等。因为不同的迁移任务写入的是不同的 db 目录，可以保证并发迁移。请参照前文中的工具结构中的 db 信息。

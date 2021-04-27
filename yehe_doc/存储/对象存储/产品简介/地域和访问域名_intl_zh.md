@@ -1,3 +1,4 @@
+
 ## 简介
 
 **地域（Region）**是腾讯云托管机房的分布地区，对象存储 COS 的数据存放在这些地域的存储桶中。您可以通过 COS，将数据进行多地域存储。通常情况下，COS 建议您选择在与您业务最近的地域上创建存储桶，以满足低延迟、低成本以及合规性要求。
@@ -10,6 +11,7 @@
 > ?创建存储桶后会生成对应的默认域名，您可以前往 [对象存储控制台](https://console.cloud.tencent.com/cos5)，在存储桶的【基础配置】中查看。
 
 
+
 ### 中国大陆地域
 
 <table>
@@ -19,7 +21,7 @@
       <th>默认域名（上传/下载/管理 ）</th>
    </tr>
    <tr>
-      <td rowspan=10>中国大陆</td>
+      <td rowspan=7>中国大陆</td>
       <td rowspan=7 nowrap="nowrap">公有云地域</td>
       <td nowrap="nowrap">北京一区（已售罄）</td>
       <td>ap-beijing-1</td>
@@ -69,8 +71,8 @@
       <th>默认域名（上传/下载/管理 ）</th>
    </tr>
    <tr>
-      <td rowspan=6>亚太</td>
-      <td rowspan=11 nowrap="nowrap">公有云地域</td>
+      <td rowspan=7>亚太</td>
+      <td rowspan=12 nowrap="nowrap">公有云地域</td>
       <td>中国香港</td>
       <td>ap-hongkong</td>
       <td>&lt;BucketName-APPID&gt;.cos.ap-hongkong.myqcloud.com</td>
@@ -84,6 +86,11 @@
       <td>孟买</td>
       <td>ap-mumbai</td>
       <td>&lt;BucketName-APPID&gt;.cos.ap-mumbai.myqcloud.com</td>
+   </tr>
+   <tr>
+      <td  nowrap="nowrap">雅加达（灰度中）</td>
+      <td>ap-jakarta</td>
+      <td>&lt;BucketName-APPID&gt;.cos.ap-jakarta.myqcloud.com</td>
    </tr>
    <tr>
       <td>首尔</td>
@@ -102,12 +109,12 @@
    </tr>
    <tr>
       <td rowspan=3>北美</td>
-      <td>硅谷（美西）</td>
+      <td  nowrap="nowrap">硅谷（美西）</td>
       <td>na-siliconvalley</td>
       <td>&lt;BucketName-APPID&gt;.cos.na-siliconvalley.myqcloud.com</td>
    </tr>
    <tr>
-      <td>弗吉尼亚（美东）</td>
+      <td  nowrap="nowrap">弗吉尼亚（美东）</td>
       <td>na-ashburn</td>
       <td>&lt;BucketName-APPID&gt;.cos.na-ashburn.myqcloud.com</td>
    </tr>
@@ -129,10 +136,12 @@
    </tr>
 </table>
 
+>?雅加达地域正在灰度中，部分客户控制台暂时不可见。
+
 
 ### 全球加速域名
 
-全球加速域名的格式为`<BucketName-APPID>.cos.accelerate.myqcloud.com`，有关全球加速域名的介绍和使用示例，请参见 [全球加速概述](https://intl.cloud.tencent.com/document/product/436/33409)。
+全球加速域名的格式为&lt;BucketName-APPID&gt;.cos.accelerate.myqcloud.com，有关全球加速域名的介绍和使用示例，请参见 [全球加速概述](https://intl.cloud.tencent.com/document/product/436/33409)。
 
 
 ### 示例
@@ -167,3 +176,5 @@ examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/picture.jpg
 如果您在腾讯云内部署了服务用于访问 COS，则同地域范围内访问将会自动被指向到内网地址。跨地域暂不支持内网访问，默认将会解析到外网地址。
 
 有关内网与外网访问的相关信息，详情请参见 [创建请求概述](https://intl.cloud.tencent.com/document/product/436/30613) 文档。
+
+
