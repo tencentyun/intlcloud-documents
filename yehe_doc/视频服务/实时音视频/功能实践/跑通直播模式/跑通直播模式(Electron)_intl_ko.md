@@ -71,7 +71,7 @@ trtcCloud.on('onError',onError);
 | :------- | :----- | :----------------------------------------------------------- | :--------------------- |
 | sdkAppId | 숫자 | 애플리케이션 ID, [콘솔](https://console.cloud.tencent.com/trtc/app)>[애플리케이션 관리]>[애플리케이션 정보]에서 확인할 수 있습니다. | 1400000123             |
 | userId | 문자열 | 알파벳 대소문자(a~z, A~Z)와 숫자(0~9), 언더바(_), 하이픈(-)만 허용됩니다. | test_user_001|
-| userSig | 문자열 | userId를 기반으로 userSig를 계산할 수 있습니다. 계산 방법은 [UserSig 계산 방법] (https://intl.cloud.tencent.com/document/product/647/35166)을 참조하십시오. | eJyrVareCeYrSy1SslI... |
+| userSig | 문자열 | userId를 기반으로 userSig를 계산할 수 있습니다. 계산 방법은 [UserSig 계산 방법](https://intl.cloud.tencent.com/document/product/647/35166)을 참조하십시오. | eJyrVareCeYrSy1SslI... |
 | roomId   | 숫자   | 디폴트 값은 문자열 유형의 방 번호를 지원하지 않으며, 문자열 유형의 방 번호는 입장 속도에 영향을 줄 수 있습니다. 문자열 유형의 방 번호 지원이 반드시 필요한 경우, [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 연락주시기 바랍니다. | 29834  |
 
 ```
