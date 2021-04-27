@@ -64,27 +64,27 @@ CKV Edition (cluster architecture) only supports the password format: `instance 
 | --- | --- | --- | --- | --- |
 | sadd | zadd | append | discard | command |
 | scard | zcard | bitcount | exec | dbsize |
-| sdiff | zcount | bitop | multi |-
-| sdiffstore | zincrby | bitpos | unwatch |-
-| sinter | zinterstore | decr | watch |-
-| sinterstore | zlexcount | decrby | -　 |-
-| sismember | zrange | get | -　 |-
-| smembers | zrangebylex | getbit | -　 |-
-| smove | zrangebyscore | getrange | -　 |-
-| spop | zrank | getset | -　 |-
-| srandmember | zrem | incr | -　 |-
-| srem | zremrangebylex | incrby | -　 |-
-| sscan | zremrangebyrank | incrbyfloat | -　 |-
-| sunion | zremrangebyscore | mget | -　 |-
-| sunionstore | zrevrange | mset | -　 |-
-| -　 | zrevrangebylex | msetnx | -　 |-
-| -　 | zrevrangebyscore | psetex | -　 |-
-| -　 | zrevrank | set | -　 |-
-| -　 | zscan | setbit |- 　 |-
-| -　 | zscore | setex | -　 |-
-| -　 | zunionstore | setnx | -　 |-
-| -　 | -　 | setrange | -　 |-
-| -　 | -　 | strlen | -　 |-
+| sdiff | zcount | bitop | multi |- |
+| sdiffstore | zincrby | bitpos | unwatch |- |
+| sinter | zinterstore | decr | watch |- |
+| sinterstore | zlexcount | decrby | -　 |- |
+| sismember | zrange | get | -　 |- |
+| smembers | zrangebylex | getbit | -　 |- |
+| smove | zrangebyscore | getrange | -　 |- |
+| spop | zrank | getset | -　 |- |
+| srandmember | zrem | incr | -　 |- |
+| srem | zremrangebylex | incrby | -　 |- |
+| sscan | zremrangebyrank | incrbyfloat | -　 |- |
+| sunion | zremrangebyscore | mget | -　 |- |
+| sunionstore | zrevrange | mset | -　 |- |
+| -　 | zrevrangebylex | msetnx | -　 |- |
+| -　 | zrevrangebyscore | psetex | -　 |- |
+| -　 | zrevrank | set | -　 |- |
+| -　 | zscan | setbit |- 　 |- |
+| -　 | zscore | setex | -　 |- |
+| -　 | zunionstore | setnx | -　 |- |
+| -　 | -　 | setrange | -　 |- |
+| -　 | -　 | strlen | -　 |- |
 
 **Commands not supported by CKV Edition (cluster architecture):**
 
