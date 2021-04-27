@@ -211,7 +211,7 @@ TRTCVoiceRoom は、オープンソースの Classであり、Tencent Cloudの2�
 
 | パラメータ  | タイプ             | 意味                                                       |
 | ----- | ---------------- | ------------------------------------------------------------ |
-| queue | dispatch_queue_t | TRTCVoiceRoom の各種ステータス通知は、指定するスレッドキューに発信します。
+| queue | dispatch_queue_t | TRTCVoiceRoom の各種ステータス通知は、指定するスレッドキューに発信します。|
 
    
 
@@ -537,7 +537,7 @@ TRTCVoiceRoom は、オープンソースの Classであり、Tencent Cloudの2�
 
 | パラメータ | タイプ    | 意味                                                         |
 | ------- | ---- | ------------------------------------------------------------ |
-| quality | int  | 音声品質。詳細は [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)をご参照ください。 |
+| quality | int  | 音声品質。詳細は [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)をご参照ください。 |
 
 
 ### muteLocalAudio
@@ -552,7 +552,7 @@ TRTCVoiceRoom は、オープンソースの Classであり、Tencent Cloudの2�
 
 | パラメータ | タイプ    | 意味                                                         |
 | ---- | ------- | ------------------------------------------------------------ |
-| mute | boolean | ミュート／ミュート取り消し。詳細は [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86)をご参照ください。 |
+| mute | boolean | ミュート／ミュート取り消し。詳細は [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86)をご参照ください。 |
 
 
 
@@ -636,7 +636,7 @@ TRTCVoiceRoom は、オープンソースの Classであり、Tencent Cloudの2�
 
 ### getAudioEffectManager
 
-バックグラウンド・サウンドエフェクト管理オブジェクト [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa)の取得。
+バックグラウンド・サウンドエフェクト管理オブジェクト [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa)の取得。
 
 ```Objective-C
 - (TXAudioEffectManager * _Nullable)getAudioEffectManager;
