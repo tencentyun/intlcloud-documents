@@ -57,7 +57,7 @@ system.columns 表包含了所有表的列信息。您可以使用此表获取�
 | default_expression      | String | 默认值的表达式，或者为空字符串（如果未定义）                 |
 | data_compressed_bytes   | UInt64 | 压缩数据的大小，以字节为单位                                 |
 | data_uncompressed_bytes | UInt64 | 解压缩数据的大小，以字节为单位                               |
-| marks_bytes             | UInt64 | marks的大小，以字节为单位                                    |
+| marks_bytes             | UInt64 | marks 的大小，以字节为单位                                    |
 | comment                 | String | 列的注释，或者为空字符串（如果未定义）                       |
 | is_in_partition_key     | UInt8  | 表示列是否在分区表达式中的标志                               |
 | is_in_sorting_key       | UInt8  | 表示列是否在排序键表达式中的标志                             |
@@ -74,7 +74,7 @@ system.databases 该表仅包含一个名为“name”的 String 列-数据库�
 
 ### system.detached_parts
 
-system.detached_parts 包含有关 MergeTree 表的分离 part 的信息。reason 列表示为什么该 part 要分离。对于 user-detache 的部分，reason 列为空。有关其他列的描述，请参见 system.parts。如果 part 的名字非法，则某些列的值可能为 NULL，可以使用`ALTER TABLE DROP DETACHED PART`删除这些 parts。
+system.detached_parts 包含有关 MergeTree 表的分离 part 的信息。reason 列表示为什么该 part 要分离。对于 user-detache 的部分，reason 列为空。有关其他列的描述，请参见 [system.parts](#systemparts)。如果 part 的名字非法，则某些列的值可能为 NULL，可以使用`ALTER TABLE DROP DETACHED PART`删除这些 parts。
 
 ### system.dictionaries
 
@@ -183,7 +183,7 @@ system.metrics 表包含可以立即计算或具有当前值的指标。例如�
 
 所支持的指标可以在 ClickHouse 的源码文件中找到 [dbms/src/Common/CurrentMetrics.cpp](https://github.com/ClickHouse/ClickHouse/blob/master/src/Common/CurrentMetrics.cpp)。
 
-示例：
+**示例：**
 ```
 SELECT * FROM system.metrics LIMIT 10
 ```
@@ -206,7 +206,7 @@ system.metric_log 表包含来自表 system.metrics 和 system.events 的指标�
 </yandex>
 ```
 
-示例：
+**示例：**
 ```
 SELECT * FROM system.metric_log LIMIT 1 FORMAT Vertical;
 ```
@@ -225,6 +225,7 @@ SELECT * FROM system.metric_log LIMIT 1 FORMAT Vertical;
 
 该表只有一行一列，其中“dummy”列为 UInt8 类型，值为0。如果 SELECT 查询未指定 FROM 子句，则使用此表。这类似于在其他 DBMS 中找到的 DUAL 表。
 
+[](id:systemparts)
 ### system.parts
 
 system.parts 包含 MergeTree 表的 parts 信息，每一行描述了一个数据分块。
@@ -341,7 +342,7 @@ system.query_log 表包含有关查询执行的信息。对于每个查询，您
 - 只有指定了 query_log server 参数，ClickHouse 才会创建此表。此参数设置日志记录规则，例如日志记录间隔或将要登录查询的表的名称。
 - 要启用查询日志记录，请将 log_queries 参数设置为1。
 
-system.query_log 表注册两种查询：
+**system.query_log 表注册两种查询：**
 - 客户端直接运行的初始查询。
 - 由其他查询（用于分布式查询执行）启动的子查询。对于这些类型的查询，有关父查询的信息显示在`initial_*`列中。
 
