@@ -127,11 +127,11 @@ Tencent Cloud CDN을 사용하려면 우선 Tencent Cloud 계정에 가입하고
 </tr>
 <tr>
 <td>DDoS, CC, WAF 공격 완벽 차단 및 모니터링. </td>
-<td><a href="https://cloud.tencent.com/document/product/228/18508" target="_blank">SCDN</a></td>
+<td>SCDN</a></td>
 </tr>
 <tr>
 <td>Tencent Cloud CDN을 통한 이미지 대량 배포. </td>
-<td><a href="https://cloud.tencent.com/document/product/228/43121" target="_blank">이미지 최적화</a></td>
+<td>이미지 최적화</a></td>
 </tr>
 </tbody></table>
 
@@ -141,7 +141,7 @@ Tencent Cloud CDN을 사용하려면 우선 Tencent Cloud 계정에 가입하고
 - [CDN 청구서는 어떻게 조회하나요?](https://intl.cloud.tencent.com/document/product/228/31479)
 - [구매한 CDN 중국 내 트래픽 패키지가 필요 없어진 경우 환불받을 수 있나요?](https://intl.cloud.tencent.com/document/product/228/31479)
 - [CDN은 요청 횟수에 따른 과금 방식을 지원하나요?](https://intl.cloud.tencent.com/document/product/228/31479)
-- [원본 서버가 COS를 사용할 경우, CDN이 COS에 원본을 요청할 때 발생하는 트래픽에 대해서도 과금되나요?] (https://intl.cloud.tencent.com/document/product/228/31479)
+- [원본 서버가 COS를 사용할 경우, CDN이 COS에 원본을 요청할 때 발생하는 트래픽에 대해서도 과금되나요?](https://intl.cloud.tencent.com/document/product/228/31479)
 - [CDN 비활성화(CDN 서비스 종료) 후에도 트래픽이나 요금이 발생하나요?](https://intl.cloud.tencent.com/document/product/228/31479)
 - [CDN 과금 방식을 변경할 수 있나요?](https://intl.cloud.tencent.com/document/product/228/31479)
 - [CDN 중국 내 트래픽 패키지 사용 관리](https://intl.cloud.tencent.com/document/product/228/31479)
@@ -161,7 +161,9 @@ Tencent Cloud CDN을 사용하려면 우선 Tencent Cloud 계정에 가입하고
 -[CDN 파일을 다운로드할 수 없습니다](https://intl.cloud.tencent.com/document/product/228/31476)
 
 
+
 ## 7. 피드백 및 의견
 Tencent Cloud CDN 제품 및 서비스 사용 중 문의사항 또는 의견이 있는 경우 다음 채널을 통해 피드백을 보내주십시오. 전문가가 문제를 해결해 드립니다.
 - 링크, 내용, API 오류 등 제품 문서에 문제가 발생하는 경우 문서 페이지 오른쪽 [문서 피드백]을 클릭하거나 문제가 있는 내용을 선택하여 피드백을 보낼 수 있습니다.
 - 제품 관련 문제가 발생한 경우 [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 도움을 요청할 수 있습니다.
+
