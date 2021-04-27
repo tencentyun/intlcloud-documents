@@ -221,7 +221,7 @@ In the preset layout mode, the SDK automatically mixes multiple audio and video 
 </tr><tr>
 <td>$PLACE_HOLDER_REMOTE$</td><td>Remote co-anchor(s)</td><td>Yes</td>
 </tr></table>
-6. After the above steps are performed, the audio of other users in the room will be automatically mixed into the relayed audio stream of the current user. You can then follow the instructions in CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242) to configure a playback domain name for relayed live streaming or record the mixed audio stream as described in [On-Cloud Recording](https://intl.cloud.tencent.com/document/product/647/35426).
+6. After the above steps are performed, the audio of other users in the room will be automatically mixed into the relayed audio stream of the current user. You can then follow the instructions in [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242) to configure a playback domain name for relayed live streaming or record the mixed audio stream as described in [On-Cloud Recording](https://intl.cloud.tencent.com/document/product/647/35426).
 ![](https://main.qcloudimg.com/raw/4119e41cefe59b7a8b8edf675babdd38.png)
 
 [](id:example_code)
@@ -542,7 +542,7 @@ In the screen sharing mode, the SDK prepares a canvas in the specified resolutio
 >? On-Cloud MixTranscoding mixes multiple streams into the stream of the current user, i.e., the user who sends the stream mixing command. Therefore, stream mixing works only if the current user is sending audio.
 4. Call the `setMixTranscodingConfig()` API to enable On-Cloud MixTranscoding. You need to set the `mode` parameter in `TRTCTranscodingConfig` to **TRTCTranscodingConfigMode_Template_ScreenSharing**, and specify audio quality-related parameters such as `audioSampleRate`, `audioBitrate`, and `audioChannels`, as well as video quality-related parameters such as `videoWidth`, `videoHeight`, `videoBitrate`, and `videoFramerate`.
 >? If both `videoWidth` and `videoHeight` are set to `0`, the SDK will work out an appropriate resolution based on the aspect ratio of the user's screen.
-5. After the above steps are performed, the audio of other users in the room will be automatically mixed into the relayed audio stream of the current user. You can then follow the instructions in CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242) to configure a playback domain name for relayed live streaming or record the mixed audio stream as described in [On-Cloud Recording](https://intl.cloud.tencent.com/document/product/647/35426).
+5. After the above steps are performed, the audio of other users in the room will be automatically mixed into the relayed audio stream of the current user. You can then follow the instructions in [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242) to configure a playback domain name for relayed live streaming or record the mixed audio stream as described in [On-Cloud Recording](https://intl.cloud.tencent.com/document/product/647/35426).
 
 ![](https://main.qcloudimg.com/raw/675e67bfaff40451b60a21aa403217d4.gif)
 >! 
@@ -569,7 +569,7 @@ In the manual mode, you must set all the parameters in `TRTCTranscodingConfig` a
 4. Call the `setMixTranscodingConfig()` API to enable On-Cloud MixTranscoding. You need to set the `mode` parameter in `TRTCTranscodingConfig` to **TRTCTranscodingConfigMode_Manual**, and specify audio quality-related parameters such as `audioSampleRate`, `audioBitrate`, and `audioChannels`. If your applications involve the transfer of video data too, you also need to set video quality-related parameters such as `videoWidth`, `videoHeight`, `videoBitrate`, and `videoFramerate`.
 5. Listen for the `onUserVideoAvailable()` and `onUserAudioAvailable()` callbacks in `TRTCCloudDelegate` and set the **mixUsers** parameter as needed.
  >?Unlike the preset layout mode, in the manual mode, you must set each `userId` in `mixUser` to the actual user ID of each co-anchor and set the `pureAudio` parameter in `mixUser` based on whether a co-anchor has enabled video.
-6. After the above steps are performed, the audio of other users in the room will be automatically mixed into the relayed audio stream of the current user. You can then follow the instructions in CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242) to configure a playback domain name for relayed live streaming or record the mixed audio stream as described in [On-Cloud Recording](https://intl.cloud.tencent.com/document/product/647/35426).
+6. After the above steps are performed, the audio of other users in the room will be automatically mixed into the relayed audio stream of the current user. You can then follow the instructions in [CDN Relayed Live Streaming](https://intl.cloud.tencent.com/document/product/647/35242) to configure a playback domain name for relayed live streaming or record the mixed audio stream as described in [On-Cloud Recording](https://intl.cloud.tencent.com/document/product/647/35426).
 > In the manual mode, you need to listen for the mic on/off events of co-anchors in the room and call the `setMixTranscodingConfig()` API multiple times depending on the number of co-anchors and whether they are sending audio and video.
 
 ## Billing
