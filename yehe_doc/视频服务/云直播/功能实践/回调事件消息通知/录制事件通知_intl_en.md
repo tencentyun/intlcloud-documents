@@ -1,4 +1,4 @@
-After live recording is enabled, you can configure the registered callback domain name in the live recording callback template to have the CSS backend call back the recording result.
+After CSS recording is enabled, you can configure the registered callback domain name in the CSS recording callback template to have the CSS backend call back the recording result.
 
 # Notes
 
@@ -27,7 +27,7 @@ After live recording is enabled, you can configure the registered callback domai
 <td>Security signature of event notification (sign = MD5(key + t)). <br>Note: Tencent Cloud splices the encryption `<a href="#key">key</a>` and `t`, calculates the `sign` value through MD5, and places it in the notification message. After your backend server receives the notification message, it can confirm whether the `sign` is correct based on the same algorithm and then determine whether the message is indeed from the Tencent Cloud backend.</td>
 </tr></table>
 
->? `<span id="key"></span>key` is the callback key in **Event Center** > **[Live Stream Callback](https://console.cloud.tencent.com/live/config/callback)**, which is mainly used for authentication. In order to protect the security of your data, we recommend you enter it.
+>? `<span id="key"></span>key` is the callback key in **Event Center** > **[CSS Callback](https://console.cloud.tencent.com/live/config/callback)**, which is mainly used for authentication. In order to protect the security of your data, we recommend you enter it.
 >![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
 
 
@@ -36,9 +36,10 @@ After live recording is enabled, you can configure the registered callback domai
 | Field Name | Type | Description |
 | :----------- | :----- | :--------------------------------------------------- |
 | appid        | int    | User [APPID](https://console.cloud.tencent.com/developer)                                           |
-| stream_id    | string | Live stream name                                           |
-| channel_id   | string | The value is the same as live stream name                                         |
-| file_id      | string | VOD file ID, which can uniquely locate a VOD video file on the [VOD platform](https://intl.cloud.tencent.com/zh/document/product/266/33895) || file_format  | string | flv, hls, mp4, aac                                   |
+| stream_id    | string | CSS stream name                                           |
+| channel_id   | string | The value is the same as CSS stream name                                         |
+| file_id      | string | VOD file ID, which can uniquely locate a VOD video file on the [VOD platform](https://intl.cloud.tencent.com/zh/document/product/266/33895) |
+| file_format  | string | flv, hls, mp4, aac                                   |
 | start_time   | int64  | Start timestamp of recording file                                   |
 | end_time     | int64  | End timestamp of recording file                                 |
 | duration     | int64  | Duration of recording file in seconds                                 |
