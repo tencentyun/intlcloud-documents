@@ -74,7 +74,7 @@ Tencent Cloud 클라우드 모니터링은 인스턴스 차원에서 TencentDB f
 |메모리 이용률   |memory use rate| %| 유휴 시간 초과 사용을 허용하여 메모리 이용률이 100%를 초과할 수 있음  |
 | 메모리 점유율     |memory_use       | MB | 유휴 시간 초과 사용을 허용하여 실제 메모리 점유율이 구매한 사양보다 클 수 있음 |
 | 임시 파일 수량    | created_tmp_files | 회/초 | 초당 임시 파일 생성 횟수 |
-| 열려 있는 테이블 수 | opened_tables     | 개      | 인스턴스 차원|열려 있는 테이블 수 |
+| 열려 있는 테이블 수 | opened_tables     | 개      | 인스턴스 차원|
 | 제출 수 | com_commit  | 회/초 | 초당 제출 횟수 |
 | 롤백 수 | com_rollback | 회/수 | 초당 롤백 횟수 |
 | 생성된 스레드 수 | threads_created  | 개 | 연결을 처리하기 위해 생성된 스레드 수 |
