@@ -1,26 +1,26 @@
-To enable CSS porn detection, you need to enable CSS screencapture first either in the [CSS console](https://intl.cloud.tencent.com/document/product/267/31072) or through API. This document describes how to implement CSS porn detection through API.
+To enable porn detection, you need to enable live screencapture first either in the [CSS console](https://intl.cloud.tencent.com/document/product/267/31072) or through API. This document describes how to implement porn detection through API.
 
 ## Enabling CSS Porn Detection
-As the CSS porn detection feature is based on the CSS screencapture feature, you have to enable CSS screencapture first before you can enable CSS porn detection. The steps are as follows:
+As the porn detection feature is based on the live screencapture feature, you have to enable screencapture first before you can enable porn detection. The steps are as follows:
 
-### 1. Create a porn detection-enabled CSS screencapture template
-Call [CreateLiveSnapshotTemplate](https://intl.cloud.tencent.com/document/product/267/30834) and set `PornFlag` to 1 to create a porn detection-enabled CSS screencapture template.
+### 1. Create a porn detection-enabled live screencapture template
+Call [CreateLiveSnapshotTemplate](https://intl.cloud.tencent.com/document/product/267/30834) and set `PornFlag` to 1 to create a porn detection-enabled live screencapture template.
 
-### 2. Create a porn detection-enabled CSS screencapture rule
-Call [CreateLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30835) to create a porn detection-enabled CSS screencapture rule and bind the CSS screencapture template ID created in step 1 to the `AppID`, `DomainName`, `AppName`, and `StreamName` of the live stream that needs to undergo porn detection.
+### 2. Create a porn detection-enabled live screencapture rule
+Call [CreateLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30835) to create a porn detection-enabled live screencapture rule and bind the live screencapture template ID created in step 1 to the `AppID`, `DomainName`, `AppName`, and `StreamName` of the live stream that needs to undergo porn detection.
 
 ### 3. Start a live stream and start porn detection
-After a porn detection-enabled CSS screencapture rule is created, the porn detection feature will be automatically enabled for new live streams. If you want to enable porn detection for a live stream that is in progress, you need to stop and restart the stream for the feature to take effect.
-
-## Getting CSS Porn Detection Result
-After CSS porn detection is enabled, you can configure the registered callback domain name in the porn detection callback template to have the CSS backend call back the porn detection result.
+After a porn detection-enabled live screencapture rule is created, the porn detection feature will be automatically enabled for new live streams. If you want to enable porn detection for a live stream that is in progress, you need to stop and restart the stream for the feature to take effect.
 >! By default, only suspicious results will be called back.
 
-### 1. Create an CSS porn detection callback template
-Call [CreateLiveCallbackTemplate](https://intl.cloud.tencent.com/document/product/267/30815) and set `PornCensorshipNotifyUrl` to your domain name to create an CSS porn detection callback template.
-### 2. Create an CSS porn detection callback rule
+## Getting Porn Detection Result
+After porn detection is enabled, you can configure the registered callback domain name in the porn detection callback template to have the CSS backend call back the porn detection result.
 
-Call [CreateLiveCallbackRule](https://intl.cloud.tencent.com/document/product/267/30816) to create a porn detection-enabled CSS screencapture rule and bind the CSS screencapture template ID created in the previous step to the `AppId`, `DomainName`, and `AppName` of the live stream that needs to undergo porn detection.
+### 1. Create an porn detection callback template
+Call [CreateLiveCallbackTemplate](https://intl.cloud.tencent.com/document/product/267/30815) and set `PornCensorshipNotifyUrl` to your domain name to create an porn detection callback template.
+### 2. Create an porn detection callback rule
+
+Call [CreateLiveCallbackRule](https://intl.cloud.tencent.com/document/product/267/30816) to create a porn detection-enabled screencapture rule and bind the screencapture template ID created in the previous step to the `AppId`, `DomainName`, and `AppName` of the live stream that needs to undergo porn detection.
 
 ### 3. Get the porn detection result
 The CSS backend sends the porn detection result to your registered domain name through an HTTP POST request where the result is stored in the HTTP body in JSON format. You can determine whether the live stream is pornographic by the `type` field alone.
