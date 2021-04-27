@@ -45,7 +45,7 @@
 | sendTime | 必填 | Number | 请求发送时间，UNIX 时间戳 |
 | gameDetails | 选填 | Object |  游戏详情信息  |
 | similarScore  | 选填 | Number | 图片相识度评分|
-| stream_param  | 选填 | String | 推流参数 
+| stream_param  | 选填 | String | 推流参数 |
 | app  | 选填 | String | 推流域名 |
 | appid  | 选填 | Number | 业务 ID  |
 | appname  | 选填 | String | 推流 path 路径  |
