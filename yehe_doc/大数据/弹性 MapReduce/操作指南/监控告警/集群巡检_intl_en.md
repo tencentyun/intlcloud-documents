@@ -17,7 +17,7 @@ After each inspection task is completed, a PDF report will be generated, which c
 ![](https://main.qcloudimg.com/raw/75be9ef6b909944665a1b6a08fb780fe.png)
  - Regular inspection: after the regular inspection policy is enabled, the system will automatically check the health status of the cluster nodes and services in each inspection cycle and generate inspection reports. Each cluster can be configured with one regular inspection policy.
 ![](https://main.qcloudimg.com/raw/15c5e354c2c06f9f858406277da84034.png)
-Inspection item: all enabled event monitoring policies are supported by default. You can adjust the inspection items as instructed in [Cluster Event](https://intl.cloud.tencent.com/document/product/1026/36889). All events with monitoring enabled are selected by default as the initial inspection items. When you customize the inspection items, those selected last time will be selected by default.
+ - Inspection item: all enabled event monitoring policies are supported by default. You can adjust the inspection items as instructed in [Cluster Event](https://intl.cloud.tencent.com/document/product/1026/36889). All events with monitoring enabled are selected by default as the initial inspection items. When you customize the inspection items, those selected last time will be selected by default.
 ![](https://main.qcloudimg.com/raw/89019ff88ebf26e599e980db50647fa9.png)
 
 
