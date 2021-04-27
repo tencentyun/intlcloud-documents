@@ -106,7 +106,7 @@ Callback messages are sent to your server in the form of HTTP/HTTPS POST request
 
 | Field  | Type   | Description                              |
 | ------- | ------ | --------------------------------- |
-RoomId      |     String/Number       |     Room ID (same type as Room ID on the client)    |
+| RoomId      |     String/Number       |     Room ID (same type as Room ID on the client)    |
 | EventTs | Number | Unix timestamp (s) of event occurrence    |
 | userID | String | User ID |
 | UniqueId  | Number | [Unique identifier](#UniqueId) (option: carried by the room event group)                            |
@@ -144,6 +144,3 @@ Sign = base64(hmacsha256(key, body))
 >```
 >body="{\n\t\"EventGroupId\":\t1,\n\t\"EventType\":\t103,\n\t\"CallbackTs\":\t1615554923704,\n\t\"EventInfo\":\t{\n\t\t\"RoomId\":\t12345,\n\t\t\"EventTs\":\t1608441737,\n\t\t\"UserId\":\t\"test\",\n\t\t\"UniqueId\":\t1615554922656,\n\t\t\"Role\":\t20,\n\t\t\"Reason\":\t1\n\t}\n}"
 >```
-```
-
-```
