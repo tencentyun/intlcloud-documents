@@ -24,8 +24,8 @@ These tag keys/values are bound to TencentDB for MySQL instances in the followin
 |cdb-abcdef2	|Ecommerce	|Marketing	|Harry|
 |cdb-abcdef3|Gaming|Game A|John|
 |cdb-abcdef3|Gaming|Game B|John|
-|cdb-abcdef4||Gaming|Game B|John|
-|cdb-abcdef5||Gaming|Game B|Jane|
+|cdb-abcdef4|Gaming|Game B|John|
+|cdb-abcdef5|Gaming|Game B|Jane|
 |cdb-abcdef6|Gaming|Game B|Jane|
 |cdb-abcdef7|Gaming|Game B|Jane|
 |cdb-abcdef8	|Entertainment	|Post-production|	Harry|
