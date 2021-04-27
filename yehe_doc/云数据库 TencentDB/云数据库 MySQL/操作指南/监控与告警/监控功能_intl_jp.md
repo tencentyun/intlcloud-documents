@@ -74,7 +74,7 @@ Tencent CloudのBasic Cloud Monitorは、インスタンスの面からTencentDB
 |メモリ使用率   |memory use rate| % | アイドルタイムの超過を許可。メモリ使用率が100%より大きいことがある  |
 | メモリ使用量     |memory_use       | MB | アイドルタイムの超過を許可。実際のメモリ使用量が購入仕様より大きいことがある |
 | 一時ファイル数 | created_tmp_tables   | 回/秒 | 毎秒の一時ファイル作成数 |
-| 開いているテーブル数 | opened_tables     | 個      | インスタンスのディメンション|開いているテーブル数 |
+| 開いているテーブル数 | opened_tables     | 個      | インスタンスのディメンション|
 | 提出数 | com_commit  | 回/秒 | 毎秒の提出数 |
 | ロールバック数 | com_rollback | 回/秒 | 毎秒のロールバック数 |
 | 作成済みのスレッド数 | threads_created  | 個 | 接続処理用に作成したスレッド数 |
