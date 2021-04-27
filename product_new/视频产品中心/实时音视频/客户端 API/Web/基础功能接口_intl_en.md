@@ -98,7 +98,7 @@ audio, video => New SDK versions no longer support configuration of whether to e
 
 ### WebRTCAPI.getLocalStream
 
->!This API is supported by SDK v2.5 or above.
+>This API is supported by SDK v2.5 or above.
 
 This API is used to get local audio/video stream.
 
@@ -230,7 +230,7 @@ This API is used to create or enter audio/video room.
 | role          | string   |No  | Role name. The role determines the bitrate control mode for the server to receive a video stream. When the `appScene` parameter is set, `role` can be set to `anchor` or `audience`; if neither `appScene` nor `role` is set, the role will be anchor in real-time call by default; if `appScene` is set to `Live` and `role` is set to `audience`, i.e., the viewer role in the ILVB mode, the user can only receive remote audio/video streams but cannot publish local audio/video streams.|
 
 
->!
+>
 >- `role` informs the backend of the bitrate range of the current stream. Please configure an appropriate bitrate in the console.
 >- `role` can be carried when `enterRoom` or `startRTC` is called. It is recommended to carry it during room entry so that processing will be faster.
 >- `privateMapKey` does not affect business development. If user permission control is not required currently, this section can be ignored.
@@ -329,7 +329,7 @@ This API is used to exit audio/video room.
 
 | Parameter | Type | Description | Remarks |
 | -------------------- | -------- | ------------- | ---- |
-| succ         | function | Callback on success     |      |    Optional |
+| succ         | function | Callback on success   |    Optional |
 | error         | function | Callback on failure      |Optional |
 
 #### Sample code
