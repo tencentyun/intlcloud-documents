@@ -64,23 +64,23 @@ CKV 版（标准架构）仅支持“实例 ID:密码”的密码格式类型，
 | sdiffstore | zincrby | bitpos | unwatch |script flush|
 | sinter | zinterstore | decr | watch |script kill|
 | sinterstore | zlexcount | decrby | -　 |script load |
-| sismember | zrange | get | -　 |-
-| smembers | zrangebylex | getbit | -　 |-
-| smove | zrangebyscore | getrange | -　 |-
-| spop | zrank | getset | -　 |-
-| srandmember | zrem | incr | -　 |-
-| srem | zremrangebylex | incrby | -　 |-
-| sscan | zremrangebyrank | incrbyfloat | -　 |-
-| sunion | zremrangebyscore | mget | -　 |-
-| sunionstore | zrevrange | mset | -　 |-
-| -　 | zrevrangebylex | msetnx | -　 |-
-| -　 | zrevrangebyscore | psetex | -　 |-
-| -　 | zrevrank | set | -　 |-
-| -　 | zscan | setbit | -　 |-
-| -　 | zscore | setex | -　 |-
-| -　 | zunionstore | setnx | -　 |-
-| -　 | -　 | setrange |- 　 |-
-| -　 | -　 | strlen | -　 |-
+| sismember | zrange | get | -　 |-  |
+| smembers | zrangebylex | getbit | -　 |-  |
+| smove | zrangebyscore | getrange | -　 |-  |
+| spop | zrank | getset | -　 |-  |
+| srandmember | zrem | incr | -　 |-  |
+| srem | zremrangebylex | incrby | -　 |-  |
+| sscan | zremrangebyrank | incrbyfloat | -　 |-  |
+| sunion | zremrangebyscore | mget | -　 |-  |
+| sunionstore | zrevrange | mset | -　 |-  |
+| -　 | zrevrangebylex | msetnx | -　 |-  |
+| -　 | zrevrangebyscore | psetex | -　 |-  |
+| -　 | zrevrank | set | -　 |-  |
+| -　 | zscan | setbit | -　 |-  |
+| -　 | zscore | setex | -　 |-  |
+| -　 | zunionstore | setnx | -　 |-  |
+| -　 | -　 | setrange |- 　 |-  |
+| -　 | -　 | strlen | -　 |-  |
 
 **CKV 版（标准架构）不支持的命令：**
 
