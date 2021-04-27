@@ -4,7 +4,7 @@ The log management records the detailed access information of the specified sour
 In the destination bucket, the log path is:
 
 ```shell
-{Destination bucket}/{Path prefix} {YYYY}/{MM}/{DD}/{time}_{random}_{index}.gz
+{Destination bucket}/{Path prefix} {YYYY}/{MM}/{DD}/{time}_{random}_{index}
 ```
 
 The log is generated every 5 minutes, one record is a row, each record contains multiple fields, and the fields are separated by spaces. It should be noted that a single log file can be up to 256MB. If you generate more than 256MB of logs in these 5 minutes, your log will be split into multiple log files. The currently supported log fields are as follows:
