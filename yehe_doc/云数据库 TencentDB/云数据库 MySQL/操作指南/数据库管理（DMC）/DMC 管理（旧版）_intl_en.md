@@ -22,15 +22,15 @@ DMC allows you to kill sessions, facilitating your session management.
 ## Real-Time Database Monitoring
 Log in to [DMC](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login), select **Instance Monitoring** on the navigation bar at the top, and enter the instance monitoring page. You can view the following monitoring data which is refreshed every four seconds:
 
-MySQL Status Information | InnoDB Row Operation | Threads | Network
----|---|---|---
-`qps` indicates the number of queries responded per second | `read` indicates the number of read rows in the InnoDB storage engine table | `running` indicates the number of active connections, i.e., the number of connections where SQL statements are being executed | `in(KB)` indicates the inbound network traffic of the instance
-`tps` indicates the number of transactions processed per second | `insert` indicates the number of written rows in the InnoDB storage engine table | `connected` indicates the number of idle connections to the instance, i.e., the number of connections where SQL statements have not been executed | `out(KB)` indicates the outbound network traffic of the instance
-`ins` indicates the number of INSERT statements executed per second | `update` indicates the number of rows updated in the InnoDB storage engine table | - | - |
-[upd] indicates the number of UPDATE statements executed per second | `delete` indicates the number of rows deleted in the InnoDB storage engine table | - | - |
-`del` indicates the number of DELETE statements executed per second | - | - | - |
-`sel` indicates the number of SELECT statements executed per second | - | - | - |
-[hit%] indicates the cache hit rate, which mainly refers to the hit rate of innodb_buffer_pool | - | - |- |
+|MySQL Status Information | InnoDB Row Operation | Threads | Network|
+|---|---|---|---|
+|`qps` indicates the number of queries responded per second | `read` indicates the number of read rows in the InnoDB storage engine table | `running` indicates the number of active connections, i.e., the number of connections where SQL statements are being executed | `in(KB)` indicates the inbound network traffic of the instance|
+|`tps` indicates the number of transactions processed per second | `insert` indicates the number of written rows in the InnoDB storage engine table | `connected` indicates the number of idle connections to the instance, i.e., the number of connections where SQL statements have not been executed | `out(KB)` indicates the outbound network traffic of the instance|
+|`ins` indicates the number of INSERT statements executed per second | `update` indicates the number of rows updated in the InnoDB storage engine table | - | - |
+|`upd` indicates the number of UPDATE statements executed per second | `delete` indicates the number of rows deleted in the InnoDB storage engine table | - | - |
+|`del` indicates the number of DELETE statements executed per second | - | - | - |
+|`sel` indicates the number of SELECT statements executed per second | - | - | - |
+|`hit` indicates the cache hit rate, which mainly refers to the hit rate of innodb_buffer_pool | - | - |- |
 
 
 
