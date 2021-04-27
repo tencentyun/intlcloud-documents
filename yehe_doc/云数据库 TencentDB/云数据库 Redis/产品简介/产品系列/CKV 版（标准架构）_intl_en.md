@@ -64,23 +64,23 @@ CKV Edition (standard architecture) only supports the password format: `instance
 | sdiffstore | zincrby | bitpos | unwatch |script flush|
 | sinter | zinterstore | decr | watch |script kill|
 | sinterstore | zlexcount | decrby | -　 |script load |
-| sismember | zrange | get | -　 |-
-| smembers | zrangebylex | getbit | -　 |-
-| smove | zrangebyscore | getrange | -　 |-
-| spop | zrank | getset | -　 |-
-| srandmember | zrem | incr | -　 |-
-| srem | zremrangebylex | incrby | -　 |-
-| sscan | zremrangebyrank | incrbyfloat | -　 |-
-| sunion | zremrangebyscore | mget | -　 |-
-| sunionstore | zrevrange | mset | -　 |-
-| -　 | zrevrangebylex | msetnx | -　 |-
-| -　 | zrevrangebyscore | psetex | -　 |-
-| -　 | zrevrank | set | -　 |-
-| -　 | zscan | setbit | -　 |-
-| -　 | zscore | setex | -　 |-
-| -　 | zunionstore | setnx | -　 |-
-| -　 | -　 | setrange |- 　 |-
-| -　 | -　 | strlen | -　 |-
+| sismember | zrange | get | -　 |-  |
+| smembers | zrangebylex | getbit | -　 |-  |
+| smove | zrangebyscore | getrange | -　 |-  |
+| spop | zrank | getset | -　 |-  |
+| srandmember | zrem | incr | -　 |-  |
+| srem | zremrangebylex | incrby | -　 |-  |
+| sscan | zremrangebyrank | incrbyfloat | -　 |-  |
+| sunion | zremrangebyscore | mget | -　 |-  |
+| sunionstore | zrevrange | mset | -　 |-  |
+| -　 | zrevrangebylex | msetnx | -　 |-  |
+| -　 | zrevrangebyscore | psetex | -　 |-  |
+| -　 | zrevrank | set | -　 |-  |
+| -　 | zscan | setbit | -　 |-  |
+| -　 | zscore | setex | -　 |-  |
+| -　 | zunionstore | setnx | -　 |-  |
+| -　 | -　 | setrange |- 　 |-  |
+| -　 | -　 | strlen | -　 |-  |
 
 **Commands not supported by CKV Edition (standard architecture):**
 
