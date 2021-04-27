@@ -84,7 +84,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | API                                     | 説明                                                         |
 | --------------------------------------- | ------------------------------------------------------------ |
-| [getBeautyManager](#getbeautymanager) | 美顔管理オブジェクト [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html)を取得します。 |
+| [getBeautyManager](#getbeautymanager) | 美顔管理オブジェクト [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html)を取得します。 |
 
 ### 共有のインターフェース
 
@@ -393,7 +393,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 | パラメータ     | タイプ              | 意味                                                         |
 | -------- | ----------------- | ------------------------------------------------------------ |
 | userId   | NSString          | ユーザーID。                                                    |
-| fillMode | TRTCVideoFillMode | FILLまたはFITモード。デフォルト値：FILL（TRTCVideoFillMode_Fill）、詳細は[TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#afda6658d1bf7dc9bc1445838b95d21ff)をご参照ください。 |
+| fillMode | TRTCVideoFillMode | FILLまたはFITモード。デフォルト値：FILL（TRTCVideoFillMode_Fill）、詳細は[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afda6658d1bf7dc9bc1445838b95d21ff)をご参照ください。 |
 
 ### setRemoteViewRotation
 
@@ -408,7 +408,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 | パラメータ     | タイプ      | 意味                                                         |
 | -------- | --------- | ------------------------------------------------------------ |
 | userId   | NSString  | 相手側のユーザーID。                                              |
-| rotation | NSInteger | 時計回りの回転角度。詳細は [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a2ef26a9ede0ba4fa6c5739229e1eee90)をご参照ください。 |
+| rotation | NSInteger | 時計回りの回転角度。詳細は [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2ef26a9ede0ba4fa6c5739229e1eee90)をご参照ください。 |
 
 ### muteRemoteAudio
 
@@ -493,7 +493,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | パラメータ       | タイプ                | 意味                                                         |
 | ---------- | ------------------- | ------------------------------------------------------------ |
-| resolution | TRTCVideoResolution | ビデオの解像度。詳細は、[TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#gaa58db9156c82d75257499cb5e0cdf0e5)をご参照ください。 |
+| resolution | TRTCVideoResolution | ビデオの解像度。詳細は、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#gaa58db9156c82d75257499cb5e0cdf0e5)をご参照ください。 |
 
 ### setVideoFps
 
@@ -523,7 +523,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | パラメータ    | タイプ | 意味                                                         |
 | ------- | ---- | ------------------------------------------------------------ |
-| bitrate | int  | ビットレート。SDKは、目標ビットレートに応じてエンコードを行い、ネットワークの状態が良くない場合のみ、ビデオのビットレートを動的に引き下げます。詳細は [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454)をご参照ください。 |
+| bitrate | int  | ビットレート。SDKは、目標ビットレートに応じてエンコードを行い、ネットワークの状態が良くない場合のみ、ビデオのビットレートを動的に引き下げます。詳細は [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454)をご参照ください。 |
 
 >?【推奨する値】TRTCVideoResolutionの各クラスに注記する最適ビットレートをご参照ください。これをもとにより高いレートに適宜調整することも可能です。例えば、TRTC_VIDEO_RESOLUTION_1280_720に対応する目標ビットレートが1200kbpsであるならば、設定を1500kbpsにし、より鮮明な画像を得ることができます
 
@@ -539,7 +539,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | パラメータ | タイプ                     | 意味                                                         |
 | ---- | ------------------------ | ------------------------------------------------------------ |
-| type | TRTCLocalVideoMirrorType | ミラーモード。詳細は [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454)をご参照ください。 |
+| type | TRTCLocalVideoMirrorType | ミラーモード。詳細は [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454)をご参照ください。 |
 
 
 
@@ -573,7 +573,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | パラメータ    | タイプ             | 意味                                                         |
 | ------- | ---------------- | ------------------------------------------------------------ |
-| quality | TRTCAudioQuality | 音質。詳細は[TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a2cdffa1529fcaec866404f4f9b92ec53)をご参照ください。 |
+| quality | TRTCAudioQuality | 音質。詳細は[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2cdffa1529fcaec866404f4f9b92ec53)をご参照ください。 |
 
 ### muteLocalAudio
 
@@ -587,7 +587,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | パラメータ | タイプ | 意味                                                         |
 | ---- | ---- | ------------------------------------------------------------ |
-| mute | BOOL | ミュート／ミュート取り消し。詳細は[TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a4ada386a75d8042a432da05fde5552d9)をご参照ください。 |
+| mute | BOOL | ミュート／ミュート取り消し。詳細は[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a4ada386a75d8042a432da05fde5552d9)をご参照ください。 |
 
 ### setSpeaker
 
@@ -643,7 +643,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 
 | パラメータ   | タイプ                     | 意味                                                         |
 | ------ | ------------------------ | ------------------------------------------------------------ |
-| params | TRTCAudioRecordingParams | 録音パラメータ。詳細は[TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCAudioRecordingParams)をご参照ください。 |
+| params | TRTCAudioRecordingParams | 録音パラメータ。詳細は[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCAudioRecordingParams)をご参照ください。 |
 
 >? この方法で呼び出した後、 SDKは通話プロセスの中の全ての音声（ローカル音声、リモート音声、BGMなど）を１つのファイルにレコーディングします。ルームに参加しているか否かにかかわらず、このインターフェースを呼び出せば有効となります。exitMeeting を呼び出した時に録音中であれば、録音は自動的に停止します。
 
@@ -689,7 +689,7 @@ TRTCMeetingは、1つのオープンソースのClassであり、Tencent Cloud�
 | ------ | ----------------- | ------------------------------------------------------------ |
 | params | TRTCVideoEncParam | 画面共有時のエンコードパラメータを設定します。上記の推奨設定を採用することをお勧めします。encParamsにnilを指定した場合、startScreenCaptureを呼び出す前のエンコードパラメータ設定が使用されます。 |
 
->? 詳細は[TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff)をご参照ください。
+>? 詳細は[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff)をご参照ください。
 
 ### stopScreenCapture
 
@@ -739,7 +739,7 @@ CDN共有のリンク先を取得します。
 
 ### getBeautyManager
 
-美顔管理オブジェクト [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html)を取得します。
+美顔管理オブジェクト [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html)を取得します。
 
 ```objective-c
 - (TXBeautyManager *)getBeautyManager;
@@ -843,7 +843,7 @@ CDN共有のリンク先を取得します。
 | localQuality  | TRTCQualityInfo            | アップストリームネットワークの品質。 |
 | remoteQuality | NSArray&lt;TRTCQualityInfo *&gt; | ダウンストリームネットワークの品質。 |
 
->? 詳細は[TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a723002319845fbfc03db501aa9da6c28)をご参照ください。
+>? 詳細は[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cngroup__TRTCCloudDelegate__ios.html#a723002319845fbfc03db501aa9da6c28)をご参照ください。
 
 ### onUserVolumeUpdate
 
