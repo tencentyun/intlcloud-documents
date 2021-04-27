@@ -6,6 +6,7 @@
 - **방법2**: 클라이언트 TRTC SDK의 [setMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 인터페이스를 사용하여 제어할 수 있으며, 해당 원리는 다음 이미지와 같습니다. 
   ![](https://main.qcloudimg.com/raw/fd3017e7eb263b538fba858a362eab13.png)
 
+
 ## 원리 설명
 클라우드 혼합 스트림에는 디코딩, 혼합, 인코딩 세 가지 프로세스가 포함되어 있습니다.
 
