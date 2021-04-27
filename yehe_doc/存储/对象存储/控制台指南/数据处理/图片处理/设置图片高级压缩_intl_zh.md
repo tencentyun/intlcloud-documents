@@ -15,4 +15,4 @@
 2. 单击【数据处理】>【图片处理】页签，在界面中找到**图片高级压缩**配置项。
 3. 单击【编辑】并将当前状态修改为“开启”，然后单击【保存】。
    ![](https://main.qcloudimg.com/raw/f336e71135338664375a4953fabb5a6e.png)
-4. 开启功能后，对于当前存储桶中的图片资源，可使用相应的 [图片高级压缩](https://cloud.tencent.com/document/product/436/48987) API 实现下载时进行 TPG/HEIF 压缩。
+4. 开启功能后，对于当前存储桶中的图片资源，可使用相应的 [图片高级压缩](https://intl.cloud.tencent.com/document/product/436/40119) API 实现下载时进行 TPG/HEIF 压缩。
