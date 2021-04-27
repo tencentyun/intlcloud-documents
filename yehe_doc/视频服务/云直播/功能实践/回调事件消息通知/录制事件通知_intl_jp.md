@@ -42,7 +42,7 @@ CSSレコーディングでは、プッシュドメイン名にバインドし�
 | appid        | int    | ユーザー [APPID](https://console.cloud.tencent.com/developer)                                           |
 | stream_id    | string | CSSストリーム名                                           |
 | channel_id   | string | CSSストリーム名と同じ                                         |
-| file_id      | string | VOD file ID、 [VODプラットフォーム](https://intl.cloud.tencent.com/document/product/266/33895)で1つのVODビデオファイルを一意的に特定することができます |                                  |
+| file_id      | string | VOD file ID、 [VODプラットフォーム](https://intl.cloud.tencent.com/document/product/266/33895)で1つのVODビデオファイルを一意的に特定することができます |                                  
 | file_format  | string | flv，hls，mp4，aac                                   |
 | start_time   | int64  | レコーディングファイル開始タイムスタンプ                                   |
 | end_time     | int64  | レコーディングファイル終了タイムスタンプ                                   |
