@@ -6,7 +6,7 @@ This document describes Tencent Cloud CLS pricing.
 
 - The pay-as-you-go pricing varies by region, including CLS public cloud regions.
 - For more information on billing mode and billable items, see [Billing Overview](https://intl.cloud.tencent.com/document/product/614/37509).
-
+- For information about estimated costs, please go to [Price Calculator](https://buy.cloud.tencent.com/price/cls/calculator) to export estimated bills.
 #### Pricing
 
 <table>
