@@ -14,7 +14,7 @@ Tencent Cloud TRTC는 iOS 플랫폼에서 두 가지 화면 공유 방법을 지
 
 ## 애플리케이션 내 공유
 
-애플리케이션 내 공유 솔루션 구현은 매우 간단합니다. TRTC SDK에서 제공하는 [startScreenCaptureInApp](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a5dbd40c4ad65152e85591c8535b4ee90) 인터페이스를 호출하고 인코딩 매개변수`TRTCVideoEncParam`을 전달하기만 하면 됩니다. 해당 매개 변수를 nil로 설정할 수 있는데, 이때 SDK는 화면 공유 전에 설정된 코딩 매개변수를 사용합니다.
+애플리케이션 내 공유 솔루션 구현은 매우 간단합니다. TRTC SDK에서 제공하는 [startScreenCaptureInApp](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a5dbd40c4ad65152e85591c8535b4ee90) 인터페이스를 호출하고 인코딩 매개변수`TRTCVideoEncParam`을 전달하기만 하면 됩니다. 해당 매개 변수를 nil로 설정할 수 있는데, 이때 SDK는 화면 공유 전에 설정된 코딩 매개변수를 사용합니다.
 
 iOS 화면 공유 시 다음과 같은 인코딩 매개변수를 권장합니다.
 
@@ -164,10 +164,10 @@ iOS 시스템에서 애플리케이션 간 화면 공유의 경우, 메인 App �
 <span id="receive"> </span>
 #### 3단계: 메인 App의 수신 로직 연결
 다음 절차에 따라 메인 App의 수신 로직에 연결합니다. 즉, 사용자가 화면 공유를 시작하기 전에 메인 App이 언제든지 Broadcast Upload Extension 프로세스에서 보내는 화면 녹화 데이터를 수신 가능하도록 "대기" 상태에 있어야 합니다. 
-1. TRTCCloud 카메라 캡처가 비활성화되었는지 확인합니다. 비활성화되지 않은 경우 [stopLocalPreview](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a01ee967e3180a5e2fc0e37e9e99e85b3)를 호출하여 카메라 캡처를 비활성화합니다.
-2. [startScreenCaptureByReplaykit:appGroup:](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff) 방법을 호출하고 [1단계](#createGroup)에서 설정한 AppGroup을 전달하여 SDK를 “대기” 상태로 전환합니다.
+1. TRTCCloud 카메라 캡처가 비활성화되었는지 확인합니다. 비활성화되지 않은 경우 [stopLocalPreview](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a01ee967e3180a5e2fc0e37e9e99e85b3)를 호출하여 카메라 캡처를 비활성화합니다.
+2. [startScreenCaptureByReplaykit:appGroup:](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff) 방법을 호출하고 [1단계](#createGroup)에서 설정한 AppGroup을 전달하여 SDK를 “대기” 상태로 전환합니다.
 3. 사용자가 화면 공유를 시작할 때까지 기다립니다. [4단계](# launch)의 “트리거 버튼”이 구현되지 않은 경우에는 사용자가 iOS 시스템의 제어 센터에서 화면 녹화 버튼을 길게 눌러 트리거해야만 화면 공유가 가능하며, 해당 조작 과정은 다음 그림과 같습니다.
-4. [stopScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) 인터페이스를 호출하여 언제든지 화면 공유를 중단할 수 있습니다.
+4. [stopScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) 인터페이스를 호출하여 언제든지 화면 공유를 중단할 수 있습니다.
 
 ```
 // 화면 공유를 시작하려면 APPGROUP을 앞서 생성한 App Group Identifier로 변경해야 합니다.
@@ -198,6 +198,7 @@ iOS 시스템에서 애플리케이션 간 화면 공유의 경우, 메인 App �
 
 1. [Demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/Screen)에서 `TRTCBroadcastExtensionLauncher` 클래스를 찾아 프로그램에 추가합니다.
 2. 프로그램 인터페이스에 버튼을 만들고, 해당 버튼의 상응하는 함수에 `TRTCBroadcastExtensionLauncher`의 `launch` 함수를 호출하면 화면 공유 기능이 요청됩니다.
+
 ```
  // 사용자 정의 버튼 응답 방법
  - (IBAction)onScreenButtonTapped:(id)sender {
@@ -212,12 +213,12 @@ iOS 시스템에서 애플리케이션 간 화면 공유의 경우, 메인 App �
 
 ## 공유 화면 보기
 - **Mac / Window 공유 화면 보기**
-  방 안에 있는 Mac / Windows 사용자가 화면 공유를 시작하면 서브스트림을 통해 공유가 진행됩니다. 방 안의 다른 사용자는 TRTCCloudDelegate의 [onUserSubStreamAvailable](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__csharp.html#a15be39bb902bf917321b26701e961286) 이벤트를 통해 이 알림을 받습니다.
-  공유 화면을 보고 싶은 사용자는 [startRemoteSubStreamView](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#ae029514645970e7d32470cf1c7aca716) 인터페이스를 통해 원격 사용자의 서브 스트림 화면을 렌더링할 수 있습니다.
+  방 안에 있는 Mac / Windows 사용자가 화면 공유를 시작하면 서브스트림을 통해 공유가 진행됩니다. 방 안의 다른 사용자는 TRTCCloudDelegate의 [onUserSubStreamAvailable](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__csharp.html#a15be39bb902bf917321b26701e961286) 이벤트를 통해 이 알림을 받습니다.
+  공유 화면을 보고 싶은 사용자는 [startRemoteSubStreamView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__csharp.html#ae029514645970e7d32470cf1c7aca716) 인터페이스를 통해 원격 사용자의 서브 스트림 화면을 렌더링할 수 있습니다.
 
 - **Android / iOS 공유 화면 보기**
-  사용자가 Android/iOS를 통해 화면 공유를 시작하면 메인스트림을 통해 공유가 진행됩니다. 방 안의 다른 사용자들은 TRTCCloudDelegate의 [onUserVideoAvailable](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) 이벤트를 통해 이 알림을 받습니다.
-  공유 화면을 보고 싶은 사용자는 [startRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49) 인터페이스를 통해 원격 사용자의 메인 스트림 화면을 렌더링할 수 있습니다.
+  사용자가 Android/iOS를 통해 화면 공유를 시작하면 메인스트림을 통해 공유가 진행됩니다. 방 안의 다른 사용자들은 TRTCCloudDelegate의 [onUserVideoAvailable](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) 이벤트를 통해 이 알림을 받습니다.
+  공유 화면을 보고 싶은 사용자는 [startRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49) 인터페이스를 통해 원격 사용자의 메인 스트림 화면을 렌더링할 수 있습니다.
 
 
 
