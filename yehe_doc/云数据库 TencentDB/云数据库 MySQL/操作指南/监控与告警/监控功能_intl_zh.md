@@ -74,7 +74,7 @@
 |内存利用率   |memory use rate| % | 允许闲时超用，内存利用率可能大于100%  |
 | 内存占用     |memory_use       | MB | 允许闲时超用，实际内存占用可能大于购买规格 |
 | 临时文件数量    | created_tmp_files | 次/秒 | 每秒创建临时文件的次数 |
-| 已经打开的表数 | opened_tables     | 个      | 实例维度|已打开表的个数 |
+| 已经打开的表数 | opened_tables     | 个      | 实例维度|
 | 提交数 | com_commit  | 次/秒 | 每秒提交次数 |
 | 回滚数 | com_rollback | 次/秒 | 每秒回滚次数 |
 | 已创建的线程数 | threads_created  | 个 | 创建用来处理连接的线程数 |
