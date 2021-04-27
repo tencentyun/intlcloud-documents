@@ -253,6 +253,7 @@ TRTCでは、異なるオーディオ・ビデオルームにいる2人のキャ
     例えば、ルーム「001」のキャスターAがルーム「002」のキャスターBと`connectOtherRoom()`を介してルーム間通話をする場合、ルーム「001」のユーザーはキャスターBの`onUserVideoAvailable(B, true)`コールバックと`onUserAudioAvailable(B, true)`コールバックを受信します。ルーム「002」のユーザーはキャスターAの`onUserVideoAvailable(A, true)`コールバックと`onUserAudioAvailable(A, true)`コールバックを受信します。
 3.  2つのルームのユーザーは、[startRemoteView(userId, view)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startRemoteView)を呼び出すことにより、もう一方のルームにいるキャスターの画面を表示することができ、音声は自動的に再生されます。
 ![](https://main.qcloudimg.com/raw/bffa420102bb31dee6f76d7f08a16e4f.png)
+
 ```
 //サンプルコード：ルーム間マイク接続PK
 let onConnectOtherRoom = function(userId, errCode, errMsg) {
