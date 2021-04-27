@@ -2,7 +2,7 @@
 >!
 >- Tencent Cloud Log Service (CLS) has been commercially available starting from 00:00:00 on August 03, 2020. CLS offers a limited **Free Tier** for each region. For details, see [Free Tier](https://intl.cloud.tencent.com/document/product/614/37889).
 >- For billing rules and standards, see [Billing Mode](https://intl.cloud.tencent.com/document/product/614/37509#.E8.AE.A1.E8.B4.B9.E6.96.B9.E5.BC.8F) and other sections below. To view your current resource usage, please go to the [CLS Console](https://console.cloud.tencent.com/cls/overview?region=ap-guangzhou).
-
+>- For information about estimated costs, please go to [Price Calculator](https://buy.cloud.tencent.com/price/cls/calculator) to export estimated bills.
 
 
 <span id="cls"></span>
@@ -64,8 +64,8 @@ CLS provides a daily pay-as-you-go billing option in all the supported regions. 
 	 - Similarly, when **Log Index** is enabled and fields generate index traffic of 50 GB, the index storage is increased by 50 GB.
 2. Log storage is billed based on average usage. Storage usage values are collected per minute, and averaged per day. The calculation formula is as follows:
 
- Daily log storage= “sum of the log storage values per minute for the day” / 1440
- Daily index storage= “sum of the index storage values per minute for the day” / 1440
+ -  Daily log storage= “sum of the log storage values per minute for the day” / 1440
+ -  Daily index storage= “sum of the index storage values per minute for the day” / 1440
 
 3. The log data and index data are saved based on your configured storage cycle. Expired data do not incur storage fees and will be deleted on the hour. For example, suppose the storage cycle is set for 3 days and logs are uploaded on June 15 12:15. The logs will be saved between June 15 12:15 and June 18 12:15, and the data will be deleted on June 18 13:00. **Do not change the storage cycle frequently, and you can only change it once a day**
  - **Extending the storage cycle**
