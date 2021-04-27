@@ -4,7 +4,7 @@
 クラウドミクスストリーミングには、2種類の制御方式があります。
 - 方法一：サーバーの REST API StartMCUMixTranscode および StopMCUMixTranscode を使用して制御し、この REST API はCDN relayed live streaming およびクラウドレコーディングの起動を同時にサポートできます。
 
-- 方法二：クライアントの TRTC SDKの [setMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) インターフェースを使用して制御します。その原理は下図のとおりです： 
+- 方法二：クライアントの TRTC SDKの [setMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) インターフェースを使用して制御します。その原理は下図のとおりです： 
 ![](https://main.qcloudimg.com/raw/fd3017e7eb263b538fba858a362eab13.png)
 >! 方法二は、iOS、Android、Windows、Mac および Electron のこれら5つのプラットフォームの SDKのみをサポートします。
 
@@ -31,6 +31,7 @@
 - 最大で4行，各行最大で4個，小画面は大画面の上部に表示。
 - 最大で1つの大画面および15個の小画面をサポート。
 - ユーザーが音声のみを発信する場合は、そのまま画面の位置を占有します。
+
 
 **3×3マスのテンプレート**
 - すべてのユーザーのビデオ画面の大きさは同じで、すべてのスクリーンを等分し、人数が増えるほど各画面のサイズは小さくなります。
@@ -80,7 +81,7 @@
 
 <span id="sdkapi"></span>
 ## 方法二：クライアント SDK API のミクスストリーミング方法
- TRTC SDK を使用してミクスストリーミングコマンドを発出するのは極めて簡単です。各プラットフォームの [setMixTranscodingConfig()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) API をコールしさえすれば、OKです。現在 SDK は、 4 種類の通常のミクスストリーミング方法を提供しています。
+ TRTC SDK を使用してミクスストリーミングコマンドを発出するのは極めて簡単です。各プラットフォームの [setMixTranscodingConfig()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) API をコールしさえすれば、OKです。現在 SDK は、 4 種類の通常のミクスストリーミング方法を提供しています。
 
 | パラメータ項目 | ピュアオーディオモード（PureAudio） | プリセットレイアウトモード（PresetLayout） | 画面共有モード（ScreenSharing） | 全手動モード（Manual）|
 |-------|-------|-------|-------|-------|
@@ -100,7 +101,7 @@
 ### ピュアオーディオモード（PureAudio）
 
 **適用ケース：**
-ピュアオーディオモードは、オーディオ通話（AudioCall）およびボイスチャットルーム（VoiceChatRoom）などのピュアオーディオのユースケースに適用します。このユースケースでは、 SDK の [enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) インターフェースをコールするとき設定することができます。
+ピュアオーディオモードは、オーディオ通話（AudioCall）およびボイスチャットルーム（VoiceChatRoom）などのピュアオーディオのユースケースに適用します。このユースケースでは、 SDK の [enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) インターフェースをコールするとき設定することができます。
 ピュアオーディオモードでは、SDK はルームのマルチチャネルのオーディオストリームを自動的に1チャネルにミキシングします。
 
 **使用手順：**
@@ -116,7 +117,7 @@
 <span id="PresetLayout"></span>
 ### プリセットレイアウトモード（PresetLayout）
 **適用ケース：**
-プリセットレイアウトモードは、ビデオ通話（VideoCall）およびILVB（LIVE）などのオーディオやビデオによく見られるユースケースに適用します。このユースケースでは SDK の [enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) インターフェースをコールするとき設定できます。
+プリセットレイアウトモードは、ビデオ通話（VideoCall）およびILVB（LIVE）などのオーディオやビデオによく見られるユースケースに適用します。このユースケースでは SDK の [enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) インターフェースをコールするとき設定できます。
 プリセットレイアウトモードでは、SDK は事前に設定した各チャネル画面のレイアウトルールに従って、ルームのマルチチャネルオーディオストリームを1チャネルに自動的にミキシングします。
 
 **使用手順：**
@@ -201,7 +202,7 @@ remote2.roomID = 97392; // ローカルユーザーは roomIDを記入する必�
 <span id="ScreenSharing"></span>
 ### 画面共有モード（ScreenSharing）
 **適用ケース：**
-画面共有モードは、eラーニングおよびインタラクティブな授業などのユースケースに適用し、このユースケースでは SDK の [enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) インターフェースをコールするとき、 AppScene パラメータを `TRTCAppSceneLIVE`に設定できます。
+画面共有モードは、eラーニングおよびインタラクティブな授業などのユースケースに適用し、このユースケースでは SDK の [enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) インターフェースをコールするとき、 AppScene パラメータを `TRTCAppSceneLIVE`に設定できます。
 画面共有モードでは、SDK はまず選定した目標解像度に従って一枚のキャンバスを構築します。教師が画面共有していないとき、SDK はカメラ画面などを、このキャンバス上に比例して拡大して描出します。；教師が画面共有を起動してからは、SDK は画面共有した画面を同様にキャンバス上に描出します。キャンバスの構築によってミクスストリーミングのコンポーネントの出力解像度を一致させることができ、録画およびネットワーク視聴のビデオの互換性の問題を防止（通常再生プレイヤーは解像度が変化するビデオをサポートしません）することができます。
 
 **使用手順：**
