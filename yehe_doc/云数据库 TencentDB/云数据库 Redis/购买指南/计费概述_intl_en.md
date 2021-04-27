@@ -1,5 +1,6 @@
 ## Billing Modes
-
+>? Monthly subscription is currently in beta. This pricing document is for reference only, please see your bill for the actual price. If you wish to use this billing option, please [contact sales](https://intl.cloud.tencent.com/contact-sales).
+>
 - TencentDB for Redis adopts a linear pricing strategy, where charges for an instance are calculated by multiplying the instance specifications by the unit price.
 - TencentDB for Redis provides two billing options, pay-as-you-go and monthly subscription.
 - For pay-as-you-go, the billable usage time is accurate down to the second, where the unit price = monthly price / 30 days / 24 hours / 3600 seconds.
@@ -15,7 +16,7 @@ The tiered pricing model is based on usage duration.
 - 4 days < duration ≤ 15 days: Tier 2 pay-as-you-go pricing applies, where hourly price = monthly price / 30 / 24 * 1.5
 - Duration > 15 days: Tier 3 pay-as-you-go pricing applies, where hourly price = monthly price / 30 / 24
 
-| Configuration | USD/GB/Hour | USD/GB/Month | Region
+| Configuration | USD/GB/Hour | USD/GB/Month | Region |
 | :------ | :----------- | :--------- | :-------------------------------- |
 | 1 GB MEM | 0.034704 | 24.98688 | Beijing, Shanghai, Guangzhou, Chengdu, and Chongqing |
 | 1 GB MEM | 0.029196 | 21.02112 | US East Coast (Virginia) and West Coast (Silicon Valley) |
