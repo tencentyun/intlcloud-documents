@@ -3,7 +3,7 @@
 
 云端混流有两种控制方式：
 - **方案一**：使用服务端 REST API [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) 和 [StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760) 进行控制，该 REST API 还可以同时支持启动 CDN 观看和云端录制。
-- **方案二**：使用客户端 TRTC SDK 的 [setMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 接口进行控制，其原理如下图： 
+- **方案二**：使用客户端 TRTC SDK 的 [setMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 接口进行控制，其原理如下图： 
   ![](https://main.qcloudimg.com/raw/fd3017e7eb263b538fba858a362eab13.png)
 
 ## 原理解析
@@ -104,7 +104,7 @@
 
 ## 方案二：客户端 SDK API 混流方案
 
-使用 TRTC SDK 发起混流指令非常简单，只需调用各个平台的 [setMixTranscodingConfig()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) API 即可，目前 SDK 提供了 4 种常用的混流方案：
+使用 TRTC SDK 发起混流指令非常简单，只需调用各个平台的 [setMixTranscodingConfig()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) API 即可，目前 SDK 提供了 4 种常用的混流方案：
 
 <table>
 <thead><tr><th>参数项</th>
@@ -187,7 +187,7 @@
 ### 纯音频模式（PureAudio）
 
 #### 适用场景
-纯音频模式适用于语音通话（AudioCall）和语音聊天室（VoiceChatRoom）等纯音频应用场景，该类场景下您可以在调用 SDK 的 [enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) 接口时进行设定。
+纯音频模式适用于语音通话（AudioCall）和语音聊天室（VoiceChatRoom）等纯音频应用场景，该类场景下您可以在调用 SDK 的 [enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) 接口时进行设定。
 纯音频模式下，SDK 会自动将房间里的多路音频流混合成一路。
 
 #### 使用步骤
@@ -202,7 +202,7 @@
 [](id:PresetLayout)
 ### 预排版模式（PresetLayout）
 #### 适用场景
-预排版模式适用于视频通话（VideoCall）和互动直播（LIVE）等音频和视频皆有的应用场景，该类场景下您可以在调用 SDK 的 [enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) 接口时进行设定。
+预排版模式适用于视频通话（VideoCall）和互动直播（LIVE）等音频和视频皆有的应用场景，该类场景下您可以在调用 SDK 的 [enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) 接口时进行设定。
 预排版模式下，SDK 会自动按照您预先设定各路画面的排版规则将房间里的多路音频流混合成一路。
 
 #### 使用步骤
@@ -523,7 +523,7 @@ try {
 
 >! 
 >- 预排版模式下 `setMixTranscodingConfig()` 接口无需多次调用，在进房成功并开启本地音频上行后调用一次即可。
->- Web 端接口命名与其他端稍有差异，详情请参见 [Client.startMixTranscode()](https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/web/docs/Client.html#startMixTranscode)。
+>- Web 端接口命名与其他端稍有差异，详情请参见 [Client.startMixTranscode()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-c/Client.html#startMixTranscode)。
 
 [](id:ScreenSharing)
 
@@ -531,7 +531,7 @@ try {
 
 #### 适用场景
 
-屏幕分享模式适用于在线教育和互动课堂等场景，该类场景下您可以在调用 SDK 的 [enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) 接口时将 AppScene 参数设定为 `TRTCAppSceneLIVE`。
+屏幕分享模式适用于在线教育和互动课堂等场景，该类场景下您可以在调用 SDK 的 [enterRoom](/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) 接口时将 AppScene 参数设定为 `TRTCAppSceneLIVE`。
 屏幕分享模式下，SDK 会先根据您所选定的目标分辨率构建一张画布。当老师未开启屏幕分享时，SDK 会将摄像头画面等比例拉伸绘制到该画布上；当老师开启屏幕分享后，SDK 会将屏幕分享画面绘制到同样的画布上。通过构建画布可以确保混流模块的输出分辨率一致，防止录制和网页观看的视频兼容性问题（普通播放器不支持分辨率会变化的视频）。
 
 #### 使用步骤
@@ -582,7 +582,7 @@ try {
   - 调用 REST API [StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760) 主动停止混流。
 - 在**基于客户端 SDK API 混流方案下，要停止混流**，需要满足如下条件之一：
   - 发起混流（即调用了客户端 API `setMixTranscodingConfig`）的主播退出了房间。
-  - 调用 [setMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 并将参数设置为 `nil/null` 主动停止混流。
+  - 调用 [setMixTranscodingConfig](/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 并将参数设置为 `nil/null` 主动停止混流。
 
 在其他情况下，TRTC 云端都将会尽力持续保持混流状态。因此，为避免产生预期之外的混流费用，请在您不需要混流的时候尽早通过上述方法结束云端混流。
 
