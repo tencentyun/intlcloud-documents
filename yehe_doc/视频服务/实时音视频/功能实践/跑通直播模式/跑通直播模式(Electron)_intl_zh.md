@@ -253,6 +253,7 @@ TRTC 中两个不同音视频房间中的主播，可以在不退出原来的直
     例如，当房间“001”中的主播 A 通过`connectOtherRoom()`与房间“002”中的主播 B 拉通跨房通话后， 房间“001”中的用户会收到主播 B 的`onUserVideoAvailable(B, true)`回调和`onUserAudioAvailable(B, true)`回调。 房间“002”中的用户会收到主播 A 的`onUserVideoAvailable(A,  true)` 回调和`onUserAudioAvailable(A, true)`回调。
 3.  两个房间里的用户通过调用 [startRemoteView(userId, view)](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html#startRemoteView) 即可显示另一房间里主播的画面，声音会自动播放。
 ![](https://main.qcloudimg.com/raw/bffa420102bb31dee6f76d7f08a16e4f.png)
+
 ```
 //示例代码：跨房连麦 PK
 let onConnectOtherRoom = function(userId, errCode, errMsg) {
