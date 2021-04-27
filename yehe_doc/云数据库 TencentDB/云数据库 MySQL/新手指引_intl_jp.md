@@ -57,7 +57,7 @@ TencentDB for MySQLを使用する前に、Tencent Cloudアカウントを登録
 ## 6. 初心者からのよくある質問
 - [TencentDB for MySQLの作成にはどのくらい時間がかかりますか？](https://intl.cloud.tencent.com/document/product/236/11274)
 - [TencentDB for MySQLのインスタンスに接続する方法は？](https://intl.cloud.tencent.com/document/product/236/37783)
-- [プライベート/パブリックネットワークアドレスの確認方法は？](https://intl.cloud.tencent.com/document/product/236/37783
+- [プライベート/パブリックネットワークアドレスの確認方法は？](https://intl.cloud.tencent.com/document/product/236/37783)
 - [TencentDB for MySQLを使用する上での注意事項は？](https://intl.cloud.tencent.com/document/product/236/11268)
 - [アカウントを間違って削除した場合やパスワードを忘れた場合の対処方法は？](https://intl.cloud.tencent.com/document/product/236/11274)
 - [データベースを間違って購入した場合の返品方法は？](https://intl.cloud.tencent.com/document/product/236/11274)
