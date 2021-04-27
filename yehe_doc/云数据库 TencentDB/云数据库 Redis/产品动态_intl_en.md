@@ -1,4 +1,15 @@
+## March 2021
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr>
+<tr>
+<td>Five-second monitoring granularity is supported</td>
+<td>TencentDB for Redis now supports the five-second monitoring granularity. After the monitoring granularity of an instance is adjusted to five seconds, the monitoring metrics, proxy, and alarm policies of the instance, and the method of viewing monitoring data in the Cloud Monitor console will change.</td>
+<td>2021-03</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/39984" target="_blank">Notices of Monitoring Upgrade and Alarm Policy Changes</a></td></tr>
+</table>
+
 ## December 2020
+
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr>
 <tr>

@@ -1,4 +1,15 @@
+## 2021年03月
+<table>
+<tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=10%>发布时间</th><th width=20%>相关文档</th></tr>
+<tr>
+<td>Redis 监控全网升级5秒粒度</td>
+<td>云数据库 Redis 监控全网逐步升级至5秒粒度，监控粒度的升级会涉及云监控查看监控数据入口、监控指标、Proxy 、告警配置等变化 。</td>
+<td>2021-03</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/39984" target="_blank">监控升级和告警迁移公告</a></td></tr>
+</table>
+
 ## 2020年12月
+
 <table>
 <tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=10%>发布时间</th><th width=20%>相关文档</th></tr>
 <tr>
