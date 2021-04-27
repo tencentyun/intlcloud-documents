@@ -142,7 +142,7 @@ Then, add the packaging and compiling plugins to the `pom.xml` file:
 </plugins>
 </build>
 ```
-Before adding the sample code, you need to get the ZooKeeper address of the HBase cluster. Log in to any master or core node in EMR, go to the `/usr/local/service/hbase/conf` directory, and view the hbase.zookeeper.quorum configuration in the `base-site.xml` file for ZooKeeper's IP address `$quorum` and the `hbase.zookeeper.property.clientPort` configuration for the port number `$clientPort`.
+Before adding the sample code, you need to get the ZooKeeper address of the HBase cluster. Log in to any master or core node in EMR, go to the `/usr/local/service/hbase/conf` directory, and view the hbase.zookeeper.quorum configuration in the `hbase-site.xml` file for ZooKeeper's IP address `$quorum` and the `hbase.zookeeper.property.clientPort` configuration for the port number `$clientPort`.
 
 Then, add the sample code by creating a Java Class named `PutExample.java` in the main>java folder and adding the following code to it:
 ```
