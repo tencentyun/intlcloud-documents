@@ -28,7 +28,7 @@
 
 <span id="configuration"></span>
 ## コールバックイベントの設定方式
-コールバック設定は、主に2種類の方式で実現します。1つは、[CSSコンソール](#c_callback)を利用し、もう1つは[サーバーAPI]の呼び出し(#api_callback)によるものです。
+コールバック設定は、主に2種類の方式で実現します。1つは、[CSSコンソール](#c_callback)を利用し、もう1つは[[サーバーAPI]の呼び出し](#api_callback)によるものです。
 >?CSSのイベントメッセージ通知のコールバックURLでは、プッシュイベント、ストリーム切断イベント、レコーディングイベント、スクリーンキャプチャイベント、ポルノ検出イベントの設定に対して単独のコールバックURLをサポートしています。
 
 
@@ -41,7 +41,7 @@
 <span id="api_callback"></span>
 ### サーバーAPI
 1. [CreateLiveCallbackTemplate](https://intl.cloud.tencent.com/document/product/267/30815)を呼び出してコールバックテンプレートインターフェースを作成します。必要なコールバックパラメータメッセージを設定します。
-2. [CreateLiveCallbackRule]https://intl.cloud.tencent.com/document/product/267/30816) を呼び出して、コールバックルールを作成し、パラメータのプッシュドメイン名DomainName 、TemplateIdを設定します（ステップ1を繰り返す）。プッシュおよび再生アドレスのものと一致するAppNameを入力すると、一部のライブストリーミングでコールバック起動の効果が実現されます。
+2. [CreateLiveCallbackRule](https://intl.cloud.tencent.com/document/product/267/30816) を呼び出して、コールバックルールを作成し、パラメータのプッシュドメイン名DomainName 、TemplateIdを設定します（ステップ1を繰り返す）。プッシュおよび再生アドレスのものと一致するAppNameを入力すると、一部のライブストリーミングでコールバック起動の効果が実現されます。
 
 ## コールバック情報パラメータの説明
 コールバックテンプレートとドメイン名の関連付けが成功した後、ライブストリーミングの過程でテンプレートのイベントがトリガーされると、Tencent Cloudは自動的にコールバック情報が含まれたJSONパッケージを顧客のサーバーに送信します。コールバック情報の具体的なパラメータ説明は次となります。
