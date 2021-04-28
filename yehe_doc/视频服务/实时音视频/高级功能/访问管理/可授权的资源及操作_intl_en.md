@@ -25,8 +25,8 @@ Barring a [few exceptions](#n_Support), all API actions listed in this section s
 | [DescribeCallDetail](https://intl.cloud.tencent.com/document/product/647/36759) | Call quality monitoring | Queries user list and call metrics. |
 | [DescribeHistoryScale](https://intl.cloud.tencent.com/document/product/647/36758) | Call quality monitoring | Queries room and user numbers in the past.   |
 | [DescribeRealtimeNetwork](https://intl.cloud.tencent.com/document/product/647) | Call quality monitoring | Queries network conditions in real time.       |
-| [DescribeRealtimeQuality](https://intl.cloud.tencent.com/document/product/647/36756) | Call quality monitoring | Queries quality data in real time.       |
-| [DescribeRealtimeScale](https://intl.cloud.tencent.com/document/product/647/36755) | Call quality monitoring | Queries room and user numbers in real time.           |
+| [DescribeRealtimeQuality](https://intl.cloud.tencent.com/document/product/647) | Call quality monitoring | Queries quality data in real time.       |
+| [DescribeRealtimeScale](https://intl.cloud.tencent.com/document/product/647) | Call quality monitoring | Queries room and user numbers in real time.           |
 | [DescribeRoomInformation](https://intl.cloud.tencent.com/document/product/647/36754) | Call quality monitoring | Queries room list.           |
 
 
