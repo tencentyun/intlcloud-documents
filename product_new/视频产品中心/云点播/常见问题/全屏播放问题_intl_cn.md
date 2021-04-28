@@ -37,4 +37,4 @@
 在不支持 Full Screen API 的老旧浏览器中，云点播播放器使用 CSS 实现网页全屏，配合浏览器全屏可以实现屏幕全屏效果（浏览器全屏快捷键通常为“F11”），这里需要页面的 CSS 不能限制播放器的页面内全屏样式，如不能设置播放器的父容器`overflow:hidden`。
 
 如果在 iframe 中，播放器无法修改 iframe 外部的 CSS 样式，需要外部页面提供脚本以及样式支持，通常情况下外部页面需要跨域支持，才能实现网页全屏，因此不建议使用 iframe 的方式使用播放器。
-？>IE8/9/10 浏览器不支持 Full Screen API ，因此不能通过 Full Screen API 进行屏幕全屏。
+>?IE8/9/10 浏览器不支持 Full Screen API ，因此不能通过 Full Screen API 进行屏幕全屏。
