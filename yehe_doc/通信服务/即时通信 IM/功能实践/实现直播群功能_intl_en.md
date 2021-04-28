@@ -18,7 +18,7 @@ IM livestreaming groups (AVChatRooms) have the following features:
  A livestreaming group (AVChatRoom) provides capabilities, such as online classrooms, text messages, and pen motion sensing to support teaching scenarios, such as communication between teachers and students, pen motion saving, large classes, and small classes.
 
 ## Use limits
-- [Recalling messages](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#revokeMessage) is not supported.
+- [Recalling messages](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#revokeMessage) is not supported.
 - The group owner cannot directly quit the group and can only achieve the same result by disbanding the group.
 - Group members cannot be removed.
 
@@ -28,7 +28,7 @@ IM livestreaming groups (AVChatRooms) have the following features:
 - [Group System](https://intl.cloud.tencent.com/document/product/1047/33529)
 - [SDK Download](https://intl.cloud.tencent.com/document/product/1047/33996)
 - [Changelog (Web and Mini Programs)](https://intl.cloud.tencent.com/document/product/1047/34281)
-- [SDK Manual](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/TIM.html)
+- [SDK Manual](https://web.sdk.qcloud.com/im/doc/zh-cn/TIM.html)
 - [SDK Integration (Web & Mini Programs)](https://intl.cloud.tencent.com/document/product/1047/34309)
 - [Initialization (Web & Mini Programs)](https://intl.cloud.tencent.com/document/product/1047/34314)
 - [Sending and Receiving Messages (Web & Mini Programs)](https://intl.cloud.tencent.com/document/product/1047/34322)
@@ -86,7 +86,7 @@ npm config set registry http://r.cnpmjs.org/
   SDKAppID: <span class="hljs-number">0</span> <span class="hljs-comment">// Replace 0 with the SDKAppID of your IM application during integration.</span>
 }
 <span class="hljs-keyword">let</span> tim = TIM.create(options) <span class="hljs-comment">// The SDK instance is usually represented by tim.</span>
-<span class="hljs-comment">// Set the SDK logging level. For more information, see <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html?_ga=1.43970405.1562552652.1542703643#setLogLevel">setLogLevel Description</a>.</span>
+<span class="hljs-comment">// Set the SDK logging level. For more information, see <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html?_ga=1.43970405.1562552652.1542703643#setLogLevel">setLogLevel Description</a>.</span>
 tim.setLogLevel(<span class="hljs-number">0</span>) <span class="hljs-comment">// Normal level. We recommend that you use this level during integration as it covers more logs.</span>
 
 tim.<span class="hljs-keyword">on</span>(TIM.EVENT.SDK_READY, function (<span class="hljs-keyword">event</span>) {
@@ -101,10 +101,10 @@ tim.<span class="hljs-keyword">on</span>(TIM.EVENT.MESSAGE_RECEIVED, function(<s
   <span class="hljs-keyword">const</span> length = <span class="hljs-keyword">event</span>.data.<span class="hljs-function">length
   <span class="hljs-keyword">let</span> message
   <span class="hljs-title">for</span> (<span class="hljs-params"><span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length; i++</span>)</span> {
-    <span class="hljs-comment">// For more information on the data structure of Message instances, see <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html">Message</a>.</span>
+    <span class="hljs-comment">// For more information on the data structure of Message instances, see <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html">Message</a>.</span>
     <span class="hljs-comment">// Pay particular attention to the type and payload properties.</span>
     <span class="hljs-comment">// Starting from SDK v2.6.0, the nick (nickname) and avatar (profile photo URL) properties are added for group chat messages and group prompts for events, such as users joining and quitting livestreaming groups. This allows the access side to provide a better display experience.</span>
-    <span class="hljs-comment">// To do this, you must first set your own nick (nickname) and avatar (profile photo URL) by calling updateMyProfile. For more information, see <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#updateMyProfile">updateMyProfile Description</a>.</span>
+    <span class="hljs-comment">// To do this, you must first set your own nick (nickname) and avatar (profile photo URL) by calling updateMyProfile. For more information, see <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#updateMyProfile">updateMyProfile Description</a>.</span>
     message = <span class="hljs-keyword">event</span>.data[i]
     <span class="hljs-keyword">switch</span> (message.type) {
       <span class="hljs-keyword">case</span> TIM.TYPES.MSG_TEXT:
@@ -130,17 +130,17 @@ tim.<span class="hljs-keyword">on</span>(TIM.EVENT.MESSAGE_RECEIVED, function(<s
 })
 
 _handleTextMsg(message) {
-  <span class="hljs-comment">// For more information on the data structure, see <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.TextPayload">TextPayload Description</a>.</span>
+  <span class="hljs-comment">// For more information on the data structure, see <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html#.TextPayload">TextPayload Description</a>.</span>
   console.log(message.payload.text) <span class="hljs-comment">// Text message content</span>
 }
 
 _handleCustomMsg(message) {
-  <span class="hljs-comment">// For more information on the data structure, see <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.CustomPayload">CustomPayload Description</a>.</span>
+  <span class="hljs-comment">// For more information on the data structure, see <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html#.CustomPayload">CustomPayload Description</a>.</span>
   console.log(message.payload)
 }
 
 _handleGroupTip(message) {
-  <span class="hljs-comment">// For more information on the data structure, see <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.GroupTipPayload">GroupTipPayload Description</a>.</span>
+  <span class="hljs-comment">// For more information on the data structure, see <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html#.GroupTipPayload">GroupTipPayload Description</a>.</span>
   <span class="hljs-keyword">switch</span> (message.payload.operationType) {
     <span class="hljs-keyword">case</span> TIM.TYPES.GRP_TIP_MBR_JOIN: <span class="hljs-comment">// A user joins the group.</span>
       <span class="hljs-keyword">break</span>
@@ -164,7 +164,7 @@ _handleGroupTip(message) {
 }
 
 _handleGroupSystemNotice(message) {
-  <span class="hljs-comment">// For more information on the data structure, see <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.GroupSystemNoticePayload">GroupSystemNoticePayload Description</a>.</span>
+  <span class="hljs-comment">// For more information on the data structure, see <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html#.GroupSystemNoticePayload">GroupSystemNoticePayload Description</a>.</span>
   console.log(message.payload.userDefinedField) <span class="hljs-comment">// User-defined field. When sending a group system notification using a RESTful API, you can get the content of the custom notification in this property value.</span>
   <span class="hljs-comment">// For more information on how to use a RESTful API to send group system notifications, see <a href="https://intl.cloud.tencent.com/document/product/1047/34958">Sending System Messages in a Group</a>.</span>
 }</code></pre>
@@ -183,7 +183,7 @@ promise.then(function(imResponse) {
 
 <span id="Step6"></span>
 ### Step 6: set your nickname and profile photo
-Starting from SDK v2.6.2, the nick (nickname) and avatar (profile photo URL) properties are added for group chat messages and group prompts for events, such as joining and quitting groups in livestreaming groups. You can call [updateMyProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#updateMyProfile) to set your nickname and profile photo.
+Starting from SDK v2.6.2, the nick (nickname) and avatar (profile photo URL) properties are added for group chat messages and group prompts for events, such as joining and quitting groups in livestreaming groups. You can call [updateMyProfile](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#updateMyProfile) to set your nickname and profile photo.
 
 ```javascript
 // Starting from SDK v2.6.0, the nick (nickname) and avatar (profile photo URL) properties are added for group chat messages and group prompts for events, such as joining and quitting groups in livestreaming groups. This allows the access side to provide a better display experience. To do this, you must first set your own profile by calling updateMyProfile.
@@ -251,7 +251,7 @@ promise.then(<span class="hljs-function"><span class="hljs-keyword">function</sp
 
 ### 1. If I send a message in which `Message.nick` and `Message.avatar` are both empty, how can the message be processed to normally display the nickname and profile photo on the screen?
 
-You can call [getMyProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getMyProfile) to obtain your nickname and profile photo.
+You can call [getMyProfile](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getMyProfile) to obtain your nickname and profile photo.
 
 ### 2. How can I mute a group member in a livestreaming group?
 
