@@ -24,7 +24,7 @@ TRTC CAMが承認可能なリソースタイプは、[アプリケーション](
 | [DescribeAbnormalEvent](https://intl.cloud.tencent.com/document/product/647/37763) |通話品質の監視 | 異常体験イベントの確認       |
 | [DescribeCallDetail](https://intl.cloud.tencent.com/document/product/647/36759) | 通話品質の監視 | ユーザーリストと通話インジケータの確認    |
 | [DescribeHistoryScale](https://intl.cloud.tencent.com/document/product/647/36758) | 通話品質の監視 | ルーム履歴とユーザー数の確認      |
-| [DescribeRealtimeNetwork](https://intl.cloud.tencent.com/document/product/647/36757) | 通話品質の監視 | リアルタイムのネットワークステータスの確認          |
+| [DescribeRealtimeNetwork](https://intl.cloud.tencent.com/document/product/647) | 通話品質の監視 | リアルタイムのネットワークステータスの確認          |
 | [DescribeRealtimeQuality](https://intl.cloud.tencent.com/document/product/647/36756) | 通話品質の監視 | リアルタイムの品質データの確認          |
 | [DescribeRealtimeScale](https://intl.cloud.tencent.com/document/product/647/36755) |  通話品質の監視 | リアルタイムスケールの確認              |
 | [DescribeRoomInformation](https://intl.cloud.tencent.com/document/product/647/36754) | 通話品質の監視 | ルームリストの確認           |
