@@ -2,7 +2,8 @@
 
 为了满足证劵行业 SEC(Securities Exchange Commission) Rule 17A-4 法规，腾讯云对象存储 COS 提供了对象锁定功能，以确保在设定期限内对象不能被改写或者删除，且可以立即访问。
 
->？SEC 17A-4 法规是美国证券交易委员会根据 1934 年美国证券交易法而颁布的法规，该法规概述了数据保留、索引、可访问性要求，适用于从事股票，债券和期货等金融证券交易或经纪业务公司，根据该法规， 许多类型交易记录必须保留并不可重写和擦除，可以在至少六年时间内立即访问。
+>?
+>SEC 17A-4 法规是美国证券交易委员会根据 1934 年美国证券交易法而颁布的法规，该法规概述了数据保留、索引、可访问性要求，适用于从事股票，债券和期货等金融证券交易或经纪业务公司，根据该法规， 许多类型交易记录必须保留并不可重写和擦除，可以在至少六年时间内立即访问。
 
 对象锁定功能当前为存储桶级别，每个存储桶只可配置一条基于时间策略的对象锁定，保留周期为 1 天 - 100 年，同时保留周期必须设定，不存在永久期限。
 
@@ -29,9 +30,9 @@ c. 对象 HTTP 头部和用户元数据都不可修改，包括 Content-Type、C
 
 您可以直接通过以下 API 管理对象锁定：
 
-- [PUT Bucket ObjectLockConfiguration](#11)
-- [GET Bucket ObjectLockConfiguration](#1)
-- [GET Object Retention](#) 
+- [PUT Bucket ObjectLockConfiguration](https://intl.cloud.tencent.com/document/product/436/40133)
+- [GET Bucket ObjectLockConfiguration](https://intl.cloud.tencent.com/document/product/436/40134)
+- [GET Object Retention](https://intl.cloud.tencent.com/document/product/436/40135) 
 
 
 
