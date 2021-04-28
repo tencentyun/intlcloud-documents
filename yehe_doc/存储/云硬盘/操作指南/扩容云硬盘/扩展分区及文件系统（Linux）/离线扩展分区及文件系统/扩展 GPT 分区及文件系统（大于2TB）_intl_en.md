@@ -7,7 +7,7 @@ If your cloud disk has a GPT partition that contains the file system, you can us
 
 ## Prerequisites
 You can use automatic expansion tools including e2fsck and resize2fs to add the expanded cloud disk capacity to the existing file system on a Linux CVM. To ensure a successful expansion, the following requirements must be met:
-- The way to expand and partition has been confirmed. For more information, see [Determining the Expansion Method](https://cloud.tencent.com/document/product/362/53363).
+- The way to expand and partition has been confirmed. For more information, see [Determining the Expansion Method](https://intl.cloud.tencent.com/document/product/362/39995).
 - The file system is EXT or XFS.
 - The current file system does not have any error.
 
