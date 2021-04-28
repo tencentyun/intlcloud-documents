@@ -84,7 +84,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | API                                     | 설명                                                         |
 | --------------------------------------- | ------------------------------------------------------------ |
-| [getBeautyManager](#getbeautymanager) | 뷰티 필터 관리 객체 [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html) 획득 |
+| [getBeautyManager](#getbeautymanager) | 뷰티 필터 관리 객체 [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html) 획득 |
 
 ### 공유 인터페이스
 
@@ -393,7 +393,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 | 매개변수     | 유형              | 의미                                                         |
 | -------- | ----------------- | ------------------------------------------------------------ |
 | userId   | NSString          | 사용자 ID                                                    |
-| fillMode | TRTCVideoFillMode | 화면 꽉 채우기 또는 원본에 맞추기 모드가 있으며, 기본값은 화면 꽉 채우기(TRTCVideoFillMode_Fill)입니다. 자세한 내용은 [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#afda6658d1bf7dc9bc1445838b95d21ff)를 참조하십시오. |
+| fillMode | TRTCVideoFillMode | 화면 꽉 채우기 또는 원본에 맞추기 모드가 있으며, 기본값은 화면 꽉 채우기(TRTCVideoFillMode_Fill)입니다. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afda6658d1bf7dc9bc1445838b95d21ff)를 참조하십시오. |
 
 ### setRemoteViewRotation
 
@@ -408,7 +408,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 | 매개변수     | 유형      | 의미                                                         |
 | -------- | --------- | ------------------------------------------------------------ |
 | userId   | NSString  | 상대방 사용자 ID                                              |
-| rotation | NSInteger | 시계 방향 회전 각도이며, 자세한 내용은 [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a2ef26a9ede0ba4fa6c5739229e1eee90)를 참조하십시오. |
+| rotation | NSInteger | 시계 방향 회전 각도이며, 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2ef26a9ede0ba4fa6c5739229e1eee90)를 참조하십시오. |
 
 ### muteRemoteAudio
 
@@ -493,7 +493,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수       | 유형                | 의미                                                         |
 | ---------- | ------------------- | ------------------------------------------------------------ |
-| resolution | TRTCVideoResolution | 비디오 해상도이며, 자세한 내용은 [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#gaa58db9156c82d75257499cb5e0cdf0e5)를 참조하십시오. |
+| resolution | TRTCVideoResolution | 비디오 해상도이며, 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#gaa58db9156c82d75257499cb5e0cdf0e5)를 참조하십시오. |
 
 ### setVideoFps
 
@@ -523,7 +523,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수    | 유형 | 의미                                                         |
 | ------- | ---- | ------------------------------------------------------------ |
-| bitrate | int  | 비트 레이트입니다. SDK는 타깃 비트레이트에 따라 인코딩하며, 네트워크가 불안정한 상태에서만 자체적으로 비디오 비트레이트를 줄입니다. 자세한 내용은 [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454)를 참조하십시오. |
+| bitrate | int  | 비트 레이트입니다. SDK는 타깃 비트레이트에 따라 인코딩하며, 네트워크가 불안정한 상태에서만 자체적으로 비디오 비트레이트를 줄입니다. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454)를 참조하십시오. |
 
 >?[권장 설정값] TRTCVideoResolution의 각 단계별 권장 최적 비트레이트를 참고하고, 이를 기반으로 적합하게 높일 수 있습니다. 예를 들어 TRTC_VIDEO_RESOLUTION_1280_720의 권장 비트레이트는 1200kbps이지만, 1500kbps로 설정하여 더 선명한 화면을 볼 수도 있습니다.
 
@@ -539,7 +539,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수 | 유형                     | 의미                                                         |
 | ---- | ------------------------ | ------------------------------------------------------------ |
-| type | TRTCLocalVideoMirrorType | 화면 모드로, 자세한 내용은 [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454)를 참조하십시오. |
+| type | TRTCLocalVideoMirrorType | 화면 모드로, 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454)를 참조하십시오. |
 
 
 
@@ -573,7 +573,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수    | 유형             | 의미                                                         |
 | ------- | ---------------- | ------------------------------------------------------------ |
-| quality | TRTCAudioQuality | 오디오의 품질로, 자세한 내용은 [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a2cdffa1529fcaec866404f4f9b92ec53)를 참조하십시오. |
+| quality | TRTCAudioQuality | 오디오의 품질로, 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2cdffa1529fcaec866404f4f9b92ec53)를 참조하십시오. |
 
 ### muteLocalAudio
 
@@ -587,7 +587,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수 | 유형 | 의미                                                         |
 | ---- | ---- | ------------------------------------------------------------ |
-| mute | BOOL | 오디오를 음소거/음소거 취소합니다. 자세한 내용은 [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a4ada386a75d8042a432da05fde5552d9)를 참조하십시오. |
+| mute | BOOL | 오디오를 음소거/음소거 취소합니다. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a4ada386a75d8042a432da05fde5552d9)를 참조하십시오. |
 
 ### setSpeaker
 
@@ -643,7 +643,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 
 | 매개변수   | 유형                     | 의미                                                         |
 | ------ | ------------------------ | ------------------------------------------------------------ |
-| params | TRTCAudioRecordingParams | 녹음 매개변수 입니다. 자세한 내용은 [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCAudioRecordingParams)를 참조하십시오. |
+| params | TRTCAudioRecordingParams | 녹음 매개변수 입니다. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCAudioRecordingParams)를 참조하십시오. |
 
 >? 해당 방법으로 호출하면 SDK에서 통화 중 모든 오디오(로컬 오디오, 원격 오디오, BGM 등 포함)를 하나의 파일로 녹음합니다 .방 입장 여부에 상관 없이 해당 인터페이스를 호출하면 모두 적용되며, exitMeeting 호출 시 녹음 중인 경우 녹음은 자동으로 중단됩니다.
 
@@ -689,7 +689,7 @@ TRTCMeeting는 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 
 | ------ | ----------------- | ------------------------------------------------------------ |
 | params | TRTCVideoEncParam | 화면 공유 설정 시 인코딩 매개변수입니다. 위의 권장 설정을 참고하십시오. encParams가 nil인 경우, startScreenCapture 호출 전 인코딩 매개변수 설정이 적용됩니다. |
 
->? 자세한 내용은 [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff)를 참조하십시오.
+>? 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff)를 참조하십시오.
 
 ### stopScreenCapture
 
@@ -739,7 +739,7 @@ CDN 공유 링크를 획득합니다.
 
 ### getBeautyManager
 
-뷰티 필터 관리 객체 [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html)를 가져옵니다.
+뷰티 필터 관리 객체 [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html)를 가져옵니다.
 
 ```objective-c
 - (TXBeautyManager *)getBeautyManager;
@@ -843,7 +843,7 @@ CDN 공유 링크를 획득합니다.
 | localQuality  | TRTCQualityInfo            | 업스트림 네트워크 품질 |
 | remoteQuality | NSArray&lt;TRTCQualityInfo *&gt; | 다운스트림 네트워크 품질 |
 
->? 자세한 내용은 [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a723002319845fbfc03db501aa9da6c28)를 참조하십시오.
+>? 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a723002319845fbfc03db501aa9da6c28)를 참조하십시오.
 
 ### onUserVolumeUpdate
 
@@ -891,7 +891,7 @@ CDN 공유 링크를 획득합니다.
 
 | 매개변수   | 유형     | 의미          |
 | ------ | -------- | ------------- |
-| userId | NSString | | 퇴장한 참여자의 사용자 ID |
+| userId | NSString  | 퇴장한 참여자의 사용자 ID |
 
 
 
