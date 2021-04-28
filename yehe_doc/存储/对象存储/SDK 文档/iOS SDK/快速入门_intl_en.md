@@ -393,9 +393,9 @@ put.body =  url;
 [put setSendProcessBlock:^(int64_t bytesSent,
                             int64_t totalBytesSent,
                             int64_t totalBytesExpectedToSend) {
-    //      bytesSent                   Number of new bytes sent
-    //      totalBytesSent              Total number of bytes sent in the upload
-    //      totalBytesExpectedToSend    Target number of bytes expected to be sent in the upload
+    //      bytesSent                 Number of bytes to send in this request (a large file may require multiple requests)
+    //      totalBytesSent            Total number of bytes sent so far
+    //      totalBytesExpectedToSend  Total number of bytes expected to send, i.e. the size of the file
 }];
 
 // Monitor the upload result
@@ -435,9 +435,9 @@ put.setFinish { (result, error) in
 // Monitor the upload progress
 put.sendProcessBlock = { (bytesSent, totalBytesSent,
     totalBytesExpectedToSend) in
-    //      bytesSent                   Number of new bytes sent
-    //      totalBytesSent              Total number of bytes sent in the upload
-    //      totalBytesExpectedToSend    Target number of bytes expected to be sent in the upload
+    //      bytesSent                 Number of bytes to send in this request (a large file may require multiple requests)
+    //      totalBytesSent            Total number of bytes sent so far
+    //      totalBytesExpectedToSend  Total number of bytes expected to send, i.e. the size of the file
 };
 // Set the upload parameters
 put.initMultipleUploadFinishBlock = {(multipleUploadInitResult, resumeData) in
@@ -479,9 +479,9 @@ request.downloadingURL = [NSURL fileURLWithPath:@"Local File Path"];
 [request setDownProcessBlock:^(int64_t bytesDownload,
                                 int64_t totalBytesDownload,
                                 int64_t totalBytesExpectedToDownload) {
-    //      bytesDownload                   Number of new bytes downloaded 
-    //      totalBytesDownload              Total number of bytes received in the download
-    //      totalBytesExpectedToDownload    Target number of bytes expected to be downloaded
+    //      bytesDownload                   Number of bytes to download in this request (a large file may require multiple requests)
+    //      totalBytesDownload              Total bytes downloaded so far
+    //      totalBytesExpectedToDownload    Total number of bytes expected to download, i.e. the size of the file
 }];
 
 [[QCloudCOSTransferMangerService defaultCOSTransferManager] DownloadObject:request];
@@ -505,9 +505,9 @@ request.downloadingURL = NSURL.fileURL(withPath: "Local File Path") as URL?;
 // Monitor the download progress
 request.sendProcessBlock = { (bytesDownload, totalBytesDownload,
     totalBytesExpectedToDownload) in
-    //      bytesDownload                   Number of new bytes downloaded
-    //      totalBytesDownload              Total number of bytes received in the download
-    //      totalBytesExpectedToDownload    Target number of bytes expected to be downloaded
+    //      bytesDownload                   Number of bytes to download in this request (a large file may require multiple requests)
+    //      totalBytesDownload              Number of bytes downloaded so far
+    //      totalBytesExpectedToDownload    Total number of bytes expected to download, i.e. the size of the file
 }
 
 // Monitor the download result

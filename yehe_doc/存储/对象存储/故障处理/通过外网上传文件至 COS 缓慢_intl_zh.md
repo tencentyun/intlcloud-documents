@@ -49,18 +49,18 @@ coscmd probe -n 1 -s 20
 返回类似如下结果，分别得出平均速率（Average），最低速率（Min），最高速率（Max）。
 ![](https://main.qcloudimg.com/raw/2fcecb96df04acc6b0c32c120ccb3c39.png)
 5. 通过浏览器访问 [测速网](https://www.speedtest.cn/)，并结合 [步骤4](#step04) 检查客户端的网络带宽占用率是否达到上限。
- - 如果步骤4的速率低于客户端带宽速率，请联系 [在线客服](https://intl.cloud.tencent.com/support)。
+ - 如果步骤4的速率低于客户端带宽速率，请联系 [在线客服](https://cloud.tencent.com/act/event/Online_service)。
  - 如果步骤4的速率等于客户端带宽速率，且未达到运营商承诺的带宽，请联系运营商客服。
  - 如果步骤4的速率等于客户端带宽速率，且达到了运营商承诺的带宽，请执行 [步骤6](#step06)。
 6. <span id="step06"></span>检查是否存在国内客户端访问海外节点 bucket，或者存在海外客户端访问国内节点 bucket。
  - 是，建议使用 COS 的全球加速功能。详情请参阅 [全球加速概述](https://intl.cloud.tencent.com/zh/document/product/436/33409)。
- - 否，请联系 [在线客服](https://intl.cloud.tencent.com/support)。
+ - 否，请联系 [在线客服](https://cloud.tencent.com/act/event/Online_service)。
 
 <span id="ModifyCustomDomainNameResolution"></span>
 ### 修改自定义域名解析
 
 1. 检查自定义域名解析是否为 COS 域名。
- - 是，请联系 [在线客服](https://intl.cloud.tencent.com/support)。
+ - 是，请联系 [在线客服](https://cloud.tencent.com/act/event/Online_service)。
  常见的 COS 域名如下：
 ```
 XXX.cos.ap-beijing.myqcloud.com  （COS 默认域名）
