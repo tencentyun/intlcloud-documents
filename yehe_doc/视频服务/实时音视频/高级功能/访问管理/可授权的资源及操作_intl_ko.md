@@ -24,9 +24,9 @@ CAM 권한을 부여할 수 있는 리소스 유형 [애플리케이션](https:/
 | [DescribeAbnormalEvent](https://intl.cloud.tencent.com/document/product/647/37763) | 통화 품질 모니터링 | 오류 경험 이벤트 조회       |
 | [DescribeCallDetail](https://intl.cloud.tencent.com/document/product/647/36759) | 통화 품질 모니터링 | 사용자 목록 및 통화 지표 조회 |
 | [DescribeHistoryScale](https://intl.cloud.tencent.com/document/product/647/36758) | 통화 품질 모니터링 | 방 및 사용자 수 내역 조회   |
-| [DescribeRealtimeNetwork](https://intl.cloud.tencent.com/document/product/647/36757) | 통화 품질 모니터링 | 실시간 네트워크 상태 조회       |
-| [DescribeRealtimeQuality](https://intl.cloud.tencent.com/document/product/647/36756) | 통화 품질 모니터링 | 실시간 품질 데이터 조회       |
-| [DescribeRealtimeScale](https://intl.cloud.tencent.com/document/product/647/36755) | 통화 품질 모니터링 | 실시간 규모 조회           |
+| [DescribeRealtimeNetwork](https://intl.cloud.tencent.com/document/product/647) | 통화 품질 모니터링 | 실시간 네트워크 상태 조회       |
+| [DescribeRealtimeQuality](https://intl.cloud.tencent.com/document/product/647) | 통화 품질 모니터링 | 실시간 품질 데이터 조회       |
+| [DescribeRealtimeScale](https://intl.cloud.tencent.com/document/product/647) | 통화 품질 모니터링 | 실시간 규모 조회           |
 | [DescribeRoomInformation](https://intl.cloud.tencent.com/document/product/647/36754) | 통화 품질 모니터링 | 방 리스트 조회           |
 
 
