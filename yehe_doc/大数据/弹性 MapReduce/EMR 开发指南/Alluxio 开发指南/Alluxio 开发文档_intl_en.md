@@ -42,8 +42,8 @@ Below is a table of the expected behaviors of ReadType. Reads will always prefer
 
 |Read Type |	Behavior |
 |--|--|
-|CACHE_PROMOTE |	Data is moved to the highest tier in the worker where the data was read. If the data was not in the Alluxio storage of the local worker, a replica will be added to the local Alluxio worker. <br>If `alluxio.user.file.cache.partially.read.block` is set to true, data blocks that are not completely read will also be **entirely** stored in Alluxio. In contrast, a data block can be cached only when it is completely read.
-| CACHE	| If the data was not in the Alluxio storage of the local worker, a replica will be added to the local Alluxio worker. <br>If `alluxio.user.file.cache.partially.read.block` is set to true, data blocks that are not completely read will also be **entirely** stored in Alluxio. In contrast, a data block can be cached only when it is completely read.
+|CACHE_PROMOTE |	<ul><li>Data is moved to the highest tier in the worker where the data was read.</li> <li>If the data was not in the Alluxio storage of the local worker, a replica will be added to the local Alluxio worker. </li> <li>If `alluxio.user.file.cache.partially.read.block` is set to true, data blocks that are not completely read will also be **entirely** stored in Alluxio. In contrast, a data block can be cached only when it is completely read.</li></ul>
+| CACHE	| <ul><li>If the data was not in the Alluxio storage of the local worker, a replica will be added to the local Alluxio worker. </li> <li>If `alluxio.user.file.cache.partially.read.block` is set to true, data blocks that are not completely read will also be **entirely** stored in Alluxio. In contrast, a data block can be cached only when it is completely read.</li></ul>
 | NO_CACHE |	Data is read without storing a replica in Alluxio.
 
 Below is a table of the expected behaviors of WriteType.
