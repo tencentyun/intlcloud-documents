@@ -18,7 +18,7 @@
  AVChatRoom 可提供在线课堂、文本消息、画笔轨迹等能力，轻松实现教师学生沟通、画笔轨迹保存、大班课与小班课教学等教学场景。
 
 ## 使用限制
-- 不支持 [撤回消息](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#revokeMessage)。
+- 不支持 [撤回消息](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#revokeMessage)。
 - 群主不可以退群，群主退群只能通过解散群组的方式。
 - 不支持移除群成员。
 
@@ -28,7 +28,7 @@
 - [群组系统](https://intl.cloud.tencent.com/document/product/1047/33529)
 - [SDK 下载](https://intl.cloud.tencent.com/document/product/1047/33996)
 - [更新日志（Web & 小程序）](https://intl.cloud.tencent.com/document/product/1047/34281)
-- [SDK 手册](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/TIM.html)
+- [SDK 手册](https://web.sdk.qcloud.com/im/doc/zh-cn/TIM.html)
 - [集成 SDK（Web & 小程序）](https://intl.cloud.tencent.com/document/product/1047/34309)
 - [初始化与登录（Web & 小程序）](https://intl.cloud.tencent.com/document/product/1047/34314)
 - [消息收发（Web & 小程序）](https://intl.cloud.tencent.com/document/product/1047/34322)
@@ -86,7 +86,7 @@ npm config set registry http://r.cnpmjs.org/
   SDKAppID: <span class="hljs-number">0</span> <span class="hljs-comment">// 接入时需要将0替换为您的即时通信应用的 SDKAppID</span>
 }
 <span class="hljs-keyword">let</span> tim = TIM.create(options) <span class="hljs-comment">// SDK 实例通常用 tim 表示</span>
-<span class="hljs-comment">// 设置 SDK 日志输出级别，详细分级请参考 <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html?_ga=1.43970405.1562552652.1542703643#setLogLevel">setLogLevel 接口的说明</a></span>
+<span class="hljs-comment">// 设置 SDK 日志输出级别，详细分级请参考 <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html?_ga=1.43970405.1562552652.1542703643#setLogLevel">setLogLevel 接口的说明</a></span>
 tim.setLogLevel(<span class="hljs-number">0</span>) <span class="hljs-comment">// 普通级别，日志量较多，接入时建议使用</span>
 
 tim.<span class="hljs-keyword">on</span>(TIM.EVENT.SDK_READY, function (<span class="hljs-keyword">event</span>) {
@@ -101,10 +101,10 @@ tim.<span class="hljs-keyword">on</span>(TIM.EVENT.MESSAGE_RECEIVED, function(<s
   <span class="hljs-keyword">const</span> length = <span class="hljs-keyword">event</span>.data.<span class="hljs-function">length
   <span class="hljs-keyword">let</span> message
   <span class="hljs-title">for</span> (<span class="hljs-params"><span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length; i++</span>)</span> {
-    <span class="hljs-comment">// Message 实例的详细数据结构请参考 <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html">Message</a></span>
+    <span class="hljs-comment">// Message 实例的详细数据结构请参考 <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html">Message</a></span>
     <span class="hljs-comment">// 其中 type 和 payload 属性需要重点关注</span>
     <span class="hljs-comment">// 从v2.6.0起，AVChatRoom 内的群聊消息，进群退群等群提示消息，增加了 nick（昵称） 和 avatar（头像URL） 属性，便于接入侧做体验更好的展示</span>
-    <span class="hljs-comment">// 前提您需要先调用 updateMyProfile 设置自己的 nick（昵称） 和 avatar（头像 URL），请参考 <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#updateMyProfile">updateMyProfile 接口的说明</a></span>
+    <span class="hljs-comment">// 前提您需要先调用 updateMyProfile 设置自己的 nick（昵称） 和 avatar（头像 URL），请参考 <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#updateMyProfile">updateMyProfile 接口的说明</a></span>
     message = <span class="hljs-keyword">event</span>.data[i]
     <span class="hljs-keyword">switch</span> (message.type) {
       <span class="hljs-keyword">case</span> TIM.TYPES.MSG_TEXT:
@@ -130,17 +130,17 @@ tim.<span class="hljs-keyword">on</span>(TIM.EVENT.MESSAGE_RECEIVED, function(<s
 })
 
 _handleTextMsg(message) {
-  <span class="hljs-comment">// 详细数据结构请参考 <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.TextPayload">TextPayload 接口的说明</a></span>
+  <span class="hljs-comment">// 详细数据结构请参考 <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html#.TextPayload">TextPayload 接口的说明</a></span>
   console.log(message.payload.text) <span class="hljs-comment">// 文本消息内容</span>
 }
 
 _handleCustomMsg(message) {
-  <span class="hljs-comment">// 详细数据结构请参考 <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.CustomPayload">CustomPayload 接口的说明</a></span>
+  <span class="hljs-comment">// 详细数据结构请参考 <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html#.CustomPayload">CustomPayload 接口的说明</a></span>
   console.log(message.payload)
 }
 
 _handleGroupTip(message) {
-  <span class="hljs-comment">// 详细数据结构请参考 <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.GroupTipPayload">GroupTipPayload 接口的说明</a></span>
+  <span class="hljs-comment">// 详细数据结构请参考 <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html#.GroupTipPayload">GroupTipPayload 接口的说明</a></span>
   <span class="hljs-keyword">switch</span> (message.payload.operationType) {
     <span class="hljs-keyword">case</span> TIM.TYPES.GRP_TIP_MBR_JOIN: <span class="hljs-comment">// 有成员加群</span>
       <span class="hljs-keyword">break</span>
@@ -164,7 +164,7 @@ _handleGroupTip(message) {
 }
 
 _handleGroupSystemNotice(message) {
-  <span class="hljs-comment">// 详细数据结构请参考  <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.GroupSystemNoticePayload">GroupSystemNoticePayload 接口的说明</a></span>
+  <span class="hljs-comment">// 详细数据结构请参考  <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html#.GroupSystemNoticePayload">GroupSystemNoticePayload 接口的说明</a></span>
   console.log(message.payload.userDefinedField) <span class="hljs-comment">// 用户自定义字段。使用 RESTAPI 发送群系统通知时，可在该属性值中拿到自定义通知的内容。</span>
   <span class="hljs-comment">// 用 REST API 发送群系统通知请参考 <a href="https://intl.cloud.tencent.com/document/product/1047/34958">在群组中发送系统通知 API</a></span>
 }</code></pre>
@@ -183,7 +183,7 @@ promise.then(function(imResponse) {
 
 <span id="Step6"></span>
 ### 步骤6：设置自己的昵称和头像
-2.6.2及以上版本 SDK，AVChatRoom 内的群聊消息和群提示消息（例如进群退群等），都增加了 nick（昵称） 和 avatar（头像URL） 属性，您可以调用接口 [updateMyProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#updateMyProfile) 设置自己的 nick（昵称） 和 avatar（头像URL）。
+2.6.2及以上版本 SDK，AVChatRoom 内的群聊消息和群提示消息（例如进群退群等），都增加了 nick（昵称） 和 avatar（头像URL） 属性，您可以调用接口 [updateMyProfile](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#updateMyProfile) 设置自己的 nick（昵称） 和 avatar（头像URL）。
 
 ```javascript
 // 从v2.6.0起，AVChatRoom 内的群聊消息，进群退群等群提示消息，增加了 nick（昵称） 和 avatar（头像URL） 属性，便于接入侧做体验更好的展示，前提您需要先调用 updateMyProfile 设置个人资料。
@@ -251,7 +251,7 @@ promise.then(<span class="hljs-function"><span class="hljs-keyword">function</sp
 
 ### 1. 自己发送的消息 `Message.nick` 和 `Message.avatar` 都是空的，该怎么处理才能在界面上正常展示昵称和头像？
 
-可以通过调用 [getMyProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getMyProfile) 获取自己的昵称和头像。
+可以通过调用 [getMyProfile](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getMyProfile) 获取自己的昵称和头像。
 
 ### 2. 如何在直播群中实现禁言功能？
 
