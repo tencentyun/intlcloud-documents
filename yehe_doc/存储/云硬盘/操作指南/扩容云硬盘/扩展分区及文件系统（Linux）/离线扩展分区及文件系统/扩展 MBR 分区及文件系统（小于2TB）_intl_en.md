@@ -6,7 +6,7 @@ If your cloud disk has a MBR partition that contains the file system, with a dis
 
 ## Prerequisites
 You can use automatic expansion tools including fdisk, e2fsck and resize2fs to add the expanded cloud disk capacity to the existing file system on a Linux CVM. To ensure a successful expansion, the following requirements must be met:
-- The way to expand and partition has been confirmed. For more information, see [Determining the Expansion Method](https://cloud.tencent.com/document/product/362/53363).
+- The way to expand and partition has been confirmed. For more information, see [Determining the Expansion Method](https://intl.cloud.tencent.com/document/product/362/39995).
 - The file system is EXT2, EXT3, EXT4, or XFS.
 - The current file system does not have any error.
 - The disk size after expansion does not exceed 2 TB.
@@ -27,14 +27,16 @@ lsblk
  - The following output indicates there are two partitions: `vdb1` and `vdb2`. In this case, you need to choose a partition to be extended as instructed in [manual expansion](#ManualExpansion).
 ![](https://main.qcloudimg.com/raw/070f2144acc543c84d4ab8ab3db25620.png)
 
-<dx-tabs>
-::: Automatic Expansion [](id:AutomaticExpansion)
->?This method is only applicable to the scenario where there is only one partition. If you have two or more partitions, choose [manual expansion](#ManualExpansion).
->
+[](id:AutomaticExpansion)
+#### Automatic Expansion
+>?
+>This method is only applicable to the scenario where there is only one partition. If you have two or more partitions, choose [manual expansion](#ManualExpansion).
+
 1. Run the following command as the root user to unmount the partition.
 ``` 
 umount <Mount point>
-```Taking the mount point `/data` as an example, run the following command:
+```
+Taking the mount point `/data` as an example, run the following command:
 ```
 umount /data
 ```
@@ -45,7 +47,8 @@ wget -O /tmp/devresize.py https://raw.githubusercontent.com/tencentyun/tencentcl
 3. Run the following command to use the tool for expansion.
 ```
 python /tmp/devresize.py <Disk path>
-```Taking the disk path `/dev/vdb` and the file system `vdb1` as an example, run the following command:
+```
+Taking the disk path `/dev/vdb` and the file system `vdb1` as an example, run the following command:
 ```
 python /tmp/devresize.py /dev/vdb
 ```
@@ -55,16 +58,19 @@ python /tmp/devresize.py /dev/vdb
    a. Run the following command to fix the partition where the file system resides.
 ```
 fsck -a <Partition path>
-```Taking the disk path `/dev/vdb` and the file system `vdb1` as an example, run the following command:
+```
+Taking the disk path `/dev/vdb` and the file system `vdb1` as an example, run the following command:
 ```
 fsck -a /dev/vdb1
-```b. After the partition is fixed, run the following command again to use the tool for expansion.
+```
+   b. After the partition is fixed, run the following command again to use the tool for expansion.
 ```
 python /tmp/devresize.py /dev/vdb
 ```
 4. [](id:step4MBR)Run the following command to manually mount the extended partition. This document uses the mount point `/data` as an example.
 ```
 mount <Partition path> <Mount point>
+```
 - If a partition at the partition path `/dev/vdb1` exists before expansion, run the following command:
 ```
 mount /dev/vdb1 /data
@@ -72,18 +78,21 @@ mount /dev/vdb1 /data
 5. Run the following command to view the partition capacity after expansion.
 ```
 df -h
+```
 If the result similar to the following figure is returned, the mounting is successful, and you can see the data disk.
 ![](https://main.qcloudimg.com/raw/4f57fd2e0038dc1fba5a4389d01ab7dc.png)
 6. Run the following command to view the data information of the original partition after expansion and check whether the new storage space has been added to the file system.
 ```
 ll /data
 ```
-:::
-::: Manual Expansion [](id:ManualExpansion)
+
+ [](id:ManualExpansion)
+#### Manual Expansion
 1. Run the following command as the root user to unmount the partition.
 ```
 umount <Mount point>
-```Taking the mount point `/data` as an example, run the following command:
+```
+Taking the mount point `/data` as an example, run the following command:
 ```
 umount /data
 ```
@@ -94,26 +103,30 @@ growpart /dev/vdb 2
 3. Run the following command to extend the file system of the partition.
 ```
 resize2fs /dev/vdb2
-```If the following output is returned, the file system has been extended.
+```
+If the following output is returned, the file system has been extended.
 ![](https://main.qcloudimg.com/raw/ba8d2693823a3eb0ccfc4dd097f09ed5.png)
+
 4. [](id:step4MBR)Run the following command to manually mount the extended partition. This document uses the mount point `/data` as an example.
 ```
 mount <Partition path> <Mount point>
-```If a partition at the partition path `/dev/vdb2` exists before expansion, run the following command:
+```
+If a partition at the partition path `/dev/vdb2` exists before expansion, run the following command:
 ```
 mount /dev/vdb2 /data
 ```
 5. Run the following command to view the partition capacity after expansion.
 ```
 df -h
-```If the result similar to the following figure is returned, the mounting is successful, and you can see the data disk.
+```
+If the result similar to the following figure is returned, the mounting is successful, and you can see the data disk.
+
 ![](https://main.qcloudimg.com/raw/92cd4cc0e9b1c08975603f73e922266f.png)
+
 6. Run the following command to view the data information of the original partition after expansion and check whether the new storage space has been added to the file system.
 ```
 ll /data
 ```
-:::
-</dx-tabs>
 
 
 [](id:New)
@@ -129,7 +142,9 @@ As shown in the following figure, the mounted partition of the data disk is 20 G
 fdisk -l
 ```
 As shown in the following figure, the data disk has been expanded to 30 GB.
+
 ![](https://main.qcloudimg.com/raw/f21420374b4334a790022c95bac1fe0f.png)
+
 3. Run the following command to unmount all mounted partitions.
 ```
 umount <Mount point>
@@ -140,6 +155,7 @@ umount /data
 ```
 >? After all partitions are unmounted from the cloud disk, perform [step 4](#Step4MBR) again.
 >
+
 4. [](id:Step4MBR)Run the following command to create a partition.
 ```
 fdisk <Disk path>
@@ -156,7 +172,9 @@ Perform the following steps in sequence when prompted.
  5. Press **Enter** twice to use the default partition size.
  6. Enter **w** to save the partition table and start partitioning.
  See the figure below:
+
 ![](https://main.qcloudimg.com/raw/894ba5a11a73d56a0a165ee7cb49e7c6.png)
+
 >? This document takes creating one partition as an example. You can also create multiple partitions to meet your needs.
 >
 5. Run the following command to view the new partition.
@@ -175,6 +193,7 @@ mkfs.ext4 /dev/vdb2
 ```
 The following figure shows the successful creation of the EXT file system.
 ![](https://main.qcloudimg.com/raw/db15ed11252e6db8adb706f61ed14225.png)
+
 7. Run the following command to create a mount point.
 ```
 mkdir <New mount point>
@@ -198,6 +217,7 @@ df -h
 If the result as shown in the following figure is returned, the mounting is successful, and you can see the data disk.
 ![](https://main.qcloudimg.com/raw/465c988014acc85957078335d776bfc3.png)
 >? To allow the CVM to automatically mount a data disk upon restart or startup, perform [step 10](#AddNewPartINFOstep10) and [step 11](#AddNewPartINFOstep11) to add the new partition to `/etc/fstab`.
+
 10. [](id:AddNewPartINFOstep10)Run the following command to add the partition.
 ```
 echo '/dev/vdb2 /data1 ext4 defaults 0 0' >> /etc/fstab
