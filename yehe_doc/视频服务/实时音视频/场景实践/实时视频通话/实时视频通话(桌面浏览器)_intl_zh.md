@@ -5,7 +5,7 @@
 ## 环境要求
 请使用最新版本的 Chrome 浏览器。目前桌面端 Chrome 浏览器支持 TRTC 桌面浏览器 SDK 的相关特性比较完整，因此建议使用 Chrome 浏览器进行体验。
 
-TRTCCalling 依赖以下端口进行数据传输，请将其加入防火墙白名单，配置完成后，您可以通过访问并体验 [官网 Demo](https://demo-1252463788.cos.ap-shanghai.myqcloud.com/trtccalling/demo/index.html) 检查配置是否生效。
+TRTCCalling 依赖以下端口进行数据传输，请将其加入防火墙白名单，配置完成后，您可以通过访问并体验 [官网 Demo] 检查配置是否生效。
   - TCP 端口：8687
   - UDP 端口：8000，8080，8800，843，443，16285
   - 域名：qcloud.rtc.qq.com
