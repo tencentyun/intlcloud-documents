@@ -16,7 +16,7 @@ Flashの使用はブラウザで徐々に制限されるようになっている
 - デスクトップWeChatブラウザ：FullscreenAPIもwebkitEnterFullScreenもサポートしません。全画面表示モードは、Webページの全画面表示となります（macOSのWeChatブラウザは現在、全画面表示モードをサポートしません）。
 - その他のデスクトップブラウザ：Fullscreen APIは一般的にサポートします。全画面表示モードでは、Tencent Cloud プレーヤーUIを備えた端末の全画面表示モードに入ります。
 
-<span id = "p1"></span>
+[](id:p1)
 ### ビデオが再生されるときに強制的に全画面表示に入る問題を解決するにはどうすればよいですか。
 ページ内（全画面表示ではない）の再生を実現するには、playsinlineとwebkit-playsinline属性をvideoタグに追加する必要があります。これにより、Tencent Cloudプレーヤーではデフォルトでplaysinlineとwebkit-playsinline属性を追加します。iOS 10以降はplaysinline属性を認識しますが、iOS 10以前のシステムはwebkit-playsinline属性を認識します。
 
@@ -41,4 +41,4 @@ iframeタグでallowfullscreen属性を設定します。サンプルコード�
 Full Screen API をサポートしていない古いブラウザでは、VODプレーヤーはCSSを使用してWebページの全画面表示を実装します。ブラウザの全画面表示（通常はF11を押す）を使用すると、端末の全画面表示を実現できます。プレーヤーのページ内の全画面スタイルがページ内のCSSによって制限されていないことを確認する必要があります。たとえば、プレーヤーの親コンテナ`overflow:hidden`を設定してはなりません。
 
 iframeが使用されている場合、プレーヤーはiframeの外部のCSSスタイルを変更できず、外部ページはスクリプトとスタイルのサポートを提供する必要があります。通常、外部ページでは、Webページの全画面表示を実装するにはクロスドメインのサポートが必要です。そのため、iframeでプレーヤーを使用することはお勧めしません。
->IE8/9/10はFull Screen APIをサポートしていないため、Full Screen APIを使用して端末の全画面表示を実装することはできません。
+？>IE8/9/10はFull Screen APIをサポートしていないため、Full Screen APIを使用して端末の全画面表示を実装することはできません。
