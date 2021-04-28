@@ -144,15 +144,17 @@ TRTC CAMが承認可能なリソースタイプは、[アプリケーション](
 特殊な制限により、次のAPIはリソースレベルの承認をサポートしていません。
 
 ### サーバーAPIの操作
+
 |インターフェース名|インターフェースの分類|機能の説明|特殊な制限の説明|
 |---|---|---|---|
 |[DescribeDetailEvent](https://intl.cloud.tencent.com/document/product/647/37762)|通話品質の監視|詳細なイベントを取得|入力パラメータにSDKAppIDがないため、リソースレベルの認証を実行できません。|
 
 ### コンソールAPIの操作
 <table>
-<thead><tr><th >インターフェース名</th><th width="20%">使用モジュール</th><th width="15%">機能の説明</th></tr>特殊な制限の説明</th></tr></thead>
+<thead><tr><th >インターフェース名</th><th width="20%">使用モジュール</th><th width="15%">機能の説明</th><th> 特殊な制限の説明</th></tr></thead>
 <tbody><tr>
 <td>DescribeTrtcStatistic</td>
+
 <td>TRTCコンソール<ul style="margin:0">
 <li><a href="https://console.cloud.tencent.com/trtc">概要</a> 
 <li><a href="https://console.cloud.tencent.com/trtc/statistics">使用量の統計</a>
