@@ -46,14 +46,14 @@
 ## 操作手順
 
 ### 手順1：操作権限の確認
-1.  [getGroupProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getGroupProfile) インターフェースを呼び出して、所属するグループタイプをクエリーし、ミュート/ミュート解除操作がサポートされているかどうか確認します。
+1.  [getGroupProfile](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getGroupProfile) インターフェースを呼び出して、所属するグループタイプをクエリーし、ミュート/ミュート解除操作がサポートされているかどうか確認します。
  >!グループタイプがPrivateまたはWork（ワークグループ）である場合は、ミュートをサポートしていません。
  >
-2.  [getGroupMemberProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getGroupMemberProfile) インターフェースを呼び出して、指定されたuserIDの現在のグループでのメンバーロールをクエリーし、ミュート/ミュート解除操作を実行する権限があるかどうかを確認します。
+2.  [getGroupMemberProfile](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getGroupMemberProfile) インターフェースを呼び出して、指定されたuserIDの現在のグループでのメンバーロールをクエリーし、ミュート/ミュート解除操作を実行する権限があるかどうかを確認します。
 
 ### 手順2：グループメンバーのミュート/ミュート解除
 #### 単一ユーザーのミュート/ミュート解除
-App管理者、グループマスターまたはグループ管理者は [setGroupMemberMuteTime](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#setGroupMemberMuteTime) インターフェースを呼び出し、指定グループ内の指定メンバーに対してミュート/ミュート解除を実行できます。1回の呼び出しは単一のメンバーのみに対するミュート/ミュート解除をサポートします。
+App管理者、グループマスターまたはグループ管理者は [setGroupMemberMuteTime](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setGroupMemberMuteTime) インターフェースを呼び出し、指定グループ内の指定メンバーに対してミュート/ミュート解除を実行できます。1回の呼び出しは単一のメンバーのみに対するミュート/ミュート解除をサポートします。
 リクエストパラメータは下表のとおりです。
 
 | 名称      | タイプ     | 説明    |
@@ -74,7 +74,7 @@ let promise = tim.setGroupMemberMuteTime({
 #### 全メンバーのミュート/ミュート解除
 >!この機能を使用するには、 SDKを2.6.2以上にアップグレードする必要があります。全メンバーをミュートにするか、または全メンバーのミュートを解除する場合は、現状、関連のグループにプロンプトメッセージは送信されません。
  
-App管理者またはグループマスターは、 [updateGroupProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#updateGroupProfile) インターフェースを呼び出し、指定グループのすべての管理者と一般メンバーに対するミュート/ミュート解除を実行できます。
+App管理者またはグループマスターは、 [updateGroupProfile](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#updateGroupProfile) インターフェースを呼び出し、指定グループのすべての管理者と一般メンバーに対するミュート/ミュート解除を実行できます。
 リクエストパラメータは下表のとおりです。
 
 | 名称      | タイプ     | 説明    |
@@ -98,7 +98,7 @@ promise.then(function(imResponse) {
 
 
 ### 手順3：TIM.EVENT.MESSAGE_RECEIVEDイベントの監視と処理
-ミュート後、グループメンバーはミュートされたことを示す[グループプロンプトメッセージ](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.GroupTipPayload) を受信します。event.dataをトラバースして、関連データを取得し、それをページにレンダリングできます。
+ミュート後、グループメンバーはミュートされたことを示す[グループプロンプトメッセージ](https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html#.GroupTipPayload) を受信します。event.dataをトラバースして、関連データを取得し、それをページにレンダリングできます。
 >?ミュート/ミュート解除の関連通知を受信後、入力ボックスまたは入力領域のステータスの有効化/無効化をご自身で実装することを推奨します。
 
 <pre>
@@ -115,7 +115,7 @@ tim.on(TIM.EVENT.MESSAGE_RECEIVED, function(event) {
       case TIM.TYPES.MSG_GRP_TIP:
         this._handleGroupTip(message);
         break;
-      case TIM.TYPES.MSG_TEXT: // テキストメッセージ。さらに詳細なメッセージタイプについては、 <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html">Message</a>をご参照ください。
+      case TIM.TYPES.MSG_TEXT: // テキストメッセージ。さらに詳細なメッセージタイプについては、 <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html">Message</a>をご参照ください。
         break;
       default:
         break;
@@ -147,7 +147,7 @@ _handleGroupTip(message) {
 
 ### 手順4：ミュート状態の判断
 
-- 2.6.2以上のSDKでは、 [getGroupMemberList](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getGroupMemberList) インターフェースを呼び出し、グループメンバーのミュート期限のタイムスタンプ（muteUntil）をプルできます。この数値をもとにグループメンバーのミュート状況、およびミュートの残り時間を判断できます。ミュート解除後、このグループメンバーの次の計算式が有効になります： GroupMember.muteUntil * 1000 <= Date.now()。
+- 2.6.2以上のSDKでは、 [getGroupMemberList](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getGroupMemberList) インターフェースを呼び出し、グループメンバーのミュート期限のタイムスタンプ（muteUntil）をプルできます。この数値をもとにグループメンバーのミュート状況、およびミュートの残り時間を判断できます。ミュート解除後、このグループメンバーの次の計算式が有効になります： GroupMember.muteUntil * 1000 <= Date.now()。
 ```javascript
 // v2.6.2 以降、getGroupMemberList インターフェースを使用して、グループメンバーミュート期限のタイムスタンプをプルできます。
 let promise = tim.getGroupMemberList({ groupID: 'group1', count: 30, offset:0 }); // 0から30のグループメンバーのプルを開始します
@@ -164,4 +164,4 @@ promise.then(function(imResponse) {
   console.warn('getGroupMemberProfile error:', imError);
 });
 ```
-- 2.6.2以下のSDKでは、 [getGroupMemberProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getGroupMemberProfile) インターフェースを呼び出し、グループメンバーのミュート期限のタイムスタンプ（muteUntil）などの詳細情報をクエリーできます。
+- 2.6.2以下のSDKでは、 [getGroupMemberProfile](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getGroupMemberProfile) インターフェースを呼び出し、グループメンバーのミュート期限のタイムスタンプ（muteUntil）などの詳細情報をクエリーできます。
