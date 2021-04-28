@@ -14,13 +14,14 @@ MongoDB 官方提供了两套数据导入导出工具：
 ```
 mongodump --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authenticationDatabase=admin --db=testdb -o /data/dump_testdb
 ```
+如下图所示，则执行成功：
 ![mongodump示例截图](https://mc.qcloudimg.com/static/img/4071cfd5d9b54c720349f41fc2e07b0c/dump_default.png)
 - mongorestore 导入命令如下：
 ```
 mongorestore --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authenticationDatabase=admin --dir=/data/dump_testdb
 ```
+如下图所示，则执行成功：
 ![mongorestore示例截图](https://mc.qcloudimg.com/static/img/335dbef8f11a5417e42740472df1a5b8/restore_default.png)
-
 
 ### mongoexport 和 mongoimport
 进行单个集合导出导入时，通常使用 [mongoexport](https://docs.mongodb.com/manual/reference/program/mongoexport/) 和 [mongoimport](https://docs.mongodb.com/manual/reference/program/mongoimport/)，这一对组合操作的数据是 JSON 格式，可读性较高。
@@ -36,7 +37,7 @@ mongoimport --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authentic
 ```
 
 ## 多种认证方式的参数说明
-在 [连接示例](https://intl.cloud.tencent.com/document/product/240/7092) 中有说明，云数据库 MongoDB 默认提供了 “rwuser” 和 “mongouser” 两个用户名分别支持 “MONGODB-CR” 和 “SCRAM-SHA-1” 两种认证方式。
+在 [连接示例](https://intl.cloud.tencent.com/zh/document/product/240/7092) 中有说明，云数据库 MongoDB 默认提供了 “rwuser” 和 “mongouser” 两个用户名分别支持 “MONGODB-CR” 和 “SCRAM-SHA-1” 两种认证方式。
 - 对于 “mongouser” 以及在控制台创建的所有新用户，在使用导出导入命令工具时，根据上文示例操作即可。
 - 对于 “rwuser”，需要在每个命令里加入参数 “--authenticationMechanism=MONGODB-CR”。
 

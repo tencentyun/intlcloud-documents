@@ -14,13 +14,14 @@ MongoDB provides two sets of official tools for data import and export:
 ```
 mongodump --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authenticationDatabase=admin --db=testdb -o /data/dump_testdb
 ```
+The command is executed successfully, if the following information is output:
 ![](https://mc.qcloudimg.com/static/img/4071cfd5d9b54c720349f41fc2e07b0c/dump_default.png)
 - The import command for mongorestore is as follows:
 ```
 mongorestore --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authenticationDatabase=admin --dir=/data/dump_testdb
 ```
+The command is executed successfully, if the following information is output:
 ![](https://mc.qcloudimg.com/static/img/335dbef8f11a5417e42740472df1a5b8/restore_default.png)
-
 
 ### mongoexport and mongoimport
 [mongoexport](https://docs.mongodb.com/manual/reference/program/mongoexport/) and [mongoimport](https://docs.mongodb.com/manual/reference/program/mongoimport/) are generally used to export and import a single set, as they manipulate data in JSON format, which features a higher readability.
@@ -35,12 +36,12 @@ In addition, you can also include the `-f` parameter to specify a desired field 
 mongoimport --host 10.66.187.127:27017 -u mongouser -p thepasswordA1 --authenticationDatabase=admin --db=testdb --collection=testcollection2 --file=/data/export_testdb_testcollection.json
 ```
 
-## Parameter Description for Multiple Authentication Methods
-As described in [Access Connection > Connection Samples](https://intl.cloud.tencent.com/document/product/240/7092), TencentDB for MongoDB provides two usernames `rwuser` and `mongouser` by default to support the `MONGODB-CR` and `SCRAM-SHA-1` authentication methods, respectively.
-- For `mongouser` and all new users created in the console, simply follow the above samples to use the import and export tools.
+## Authentication Methods and Parameters
+As described in [Access Connection > Connection Samples](https://intl.cloud.tencent.com/zh/document/product/240/7092), TencentDB for MongoDB provides two usernames `rwuser` and `mongouser` by default to support the `MONGODB-CR` and `SCRAM-SHA-1` authentication methods, respectively.
+- For `mongouser` and all new users created in the console, follow the above directions to use the import and export tools.
 - For `rwuser`, the parameter `--authenticationMechanism=MONGODB-CR` should be included in each command.
 
-mongodump sample:
+Sample of mongodump:
 ```
 mongodump --host 10.66.187.127:27017 -u rwuser -p thepasswordA1 --authenticationDatabase=admin --authenticationMechanism=MONGODB-CR --db=testdb -o /data/dump_testdb
 ```
