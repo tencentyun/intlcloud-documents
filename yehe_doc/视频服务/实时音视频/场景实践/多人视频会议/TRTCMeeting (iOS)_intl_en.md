@@ -393,7 +393,7 @@ The parameters are as detailed below:
 | Parameter | Type | Description |
 | -------- | ----------------- | ------------------------------------------------------------ |
 | userId   | NSString          | User ID.                                             |
-| fillMode | TRTCVideoFillMode | Fill or fit mode. Default value: fill (TRTCVideoFillMode_Fill). For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#afda6658d1bf7dc9bc1445838b95d21ff). |
+| fillMode | TRTCVideoFillMode | Fill or fit mode. Default value: fill (TRTCVideoFillMode_Fill). For more information, please see [TRTC SDK]((https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afda6658d1bf7dc9bc1445838b95d21ff). |
 
 ### setRemoteViewRotation
 
@@ -408,7 +408,7 @@ The parameters are as detailed below:
 | Parameter | Type | Description |
 | -------- | --------- | ------------------------------------------------------------ |
 | userId   | NSString  | Remote user ID.                                             |
-| rotation | NSInteger | Clockwise rotation angle. For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a2ef26a9ede0ba4fa6c5739229e1eee90). |
+| rotation | NSInteger | Clockwise rotation angle. For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2ef26a9ede0ba4fa6c5739229e1eee90). |
 
 ### muteRemoteAudio
 
@@ -493,7 +493,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | ---------- | ------------------- | ------------------------------------------------------------ |
-| resolution | TRTCVideoResolution | Video resolution. For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#gaa58db9156c82d75257499cb5e0cdf0e5). |
+| resolution | TRTCVideoResolution | Video resolution. For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#gaa58db9156c82d75257499cb5e0cdf0e5). |
 
 ### setVideoFps
 
@@ -523,7 +523,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | ------- | ---- | ------------------------------------------------------------ |
-| bitrate | int  | Bitrate. The SDK encodes streams at the target video bitrate and will actively reduce the bitrate only if the network conditions are poor. For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454). |
+| bitrate | int  | Bitrate. The SDK encodes streams at the target video bitrate and will actively reduce the bitrate only if the network conditions are poor. For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454). |
 
 >?**Recommended value:** please see the optimal bitrate for each tier in `TRTCVideoResolution`. You can also slightly increase the optimal bitrate. For example, `TRTC_VIDEO_RESOLUTION_1280_720` corresponds to the target bitrate of 1,200 Kbps, and you can also set the bitrate to 1,500 Kbps for higher definition.
 
@@ -539,7 +539,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | ---- | ------------------------ | ------------------------------------------------------------ |
-| type | TRTCLocalVideoMirrorType | Mirroring mode. For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454). |
+| type | TRTCLocalVideoMirrorType | Mirroring mode. For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a21a93f89a608f4642ecc9d81ef25a454). |
 
 
 
@@ -573,7 +573,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | ------- | ---------------- | ------------------------------------------------------------ |
-| quality | TRTCAudioQuality | Audio quality. For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a2cdffa1529fcaec866404f4f9b92ec53). |
+| quality | TRTCAudioQuality | Audio quality. For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2cdffa1529fcaec866404f4f9b92ec53). |
 
 ### muteLocalAudio
 
@@ -587,7 +587,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | ---- | ---- | ------------------------------------------------------------ |
-| mute | BOOL | Mutes/Unmutes. For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a4ada386a75d8042a432da05fde5552d9). |
+| mute | BOOL | Mutes/Unmutes. For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a4ada386a75d8042a432da05fde5552d9). |
 
 ### setSpeaker
 
@@ -643,7 +643,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | ------ | ------------------------ | ------------------------------------------------------------ |
-| params | TRTCAudioRecordingParams | Audio recording parameters. For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCAudioRecordingParams). |
+| params | TRTCAudioRecordingParams | Audio recording parameters. For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCAudioRecordingParams). |
 
 >? After this API is called, the SDK will record all audios (such as local audio, remote audio, and background music) in the current call to a file. No matter whether room entry is performed, this API will take effect once called. If audio recording is still ongoing when `exitMeeting` is called, it will stop automatically.
 
@@ -689,7 +689,7 @@ The parameters are as detailed below:
 | ------ | ----------------- | ------------------------------------------------------------ |
 | params | TRTCVideoEncParam | Screen sharing encoding parameters. We recommend you use the above configuration. If you set `encParams` to `nil`, the encoding parameter settings before `startScreenCapture` is called will be used. |
 
->? For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff).
+>? For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a92330045ce479f3b5e5c6b366731c7ff).
 
 ### stopScreenCapture
 
@@ -739,7 +739,7 @@ The returned values are as detailed below:
 
 ### getBeautyManager
 
-This API is used to get the beauty filter management object [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html).
+This API is used to get the beauty filter management object [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html).
 
 ```objective-c
 - (TXBeautyManager *)getBeautyManager;
@@ -843,7 +843,7 @@ The parameters are as detailed below:
 | localQuality  | TRTCQualityInfo            | Upstream network quality. |
 | remoteQuality | NSArray<TRTCQualityInfo *> | Downstream network quality. |
 
->? For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a723002319845fbfc03db501aa9da6c28).
+>? For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a723002319845fbfc03db501aa9da6c28).
 
 ### onUserVolumeUpdate
 
