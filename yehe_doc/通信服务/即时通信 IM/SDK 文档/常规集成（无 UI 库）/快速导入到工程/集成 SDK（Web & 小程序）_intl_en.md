@@ -45,7 +45,7 @@ let options = {
 // Create an SDK instance. The `TIM.create()` method returns the same instance for the same `SDKAppID`.
 let tim = TIM.create(options); // The SDK instance is usually represented by `tim`.
 
-// Set the SDK log output level. For more information on each level, see <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#setLogLevel">setLogLevel API Description</a>.
+// Set the SDK log output level. For more information on each level, see <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setLogLevel">setLogLevel API Description</a>.
 tim.setLogLevel(0); // Common level. You are advised to use this level during access as it covers more logs.
 // tim.setLogLevel(1); // Release level, at which the SDK outputs important information. You are advised to use this log level in a production environment.
 
@@ -77,7 +77,7 @@ let options = {
 // Create an SDK instance. The `TIM.create()` method returns the same instance for the same `SDKAppID`.
 let tim = TIM.create(options); // The SDK instance is usually represented by `tim`.
 
-// Set the SDK log output level. For more information on each level, see <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#setLogLevel">setLogLevel API Description</a>.
+// Set the SDK log output level. For more information on each level, see <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setLogLevel">setLogLevel API Description</a>.
 tim.setLogLevel(0); // Common level. You are advised to use this level during access as it covers more logs.
 // tim.setLogLevel(1); // Release level, at which the SDK outputs important information. You are advised to use this log level in a production environment.
 
@@ -85,7 +85,7 @@ tim.setLogLevel(0); // Common level. You are advised to use this level during ac
 tim.registerPlugin({'tim-upload-plugin': TIMUploadPlugin});
 ```
 
-For more information on how to initialize the SDK and use APIs, see [SDK Initialization](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html).
+For more information on how to initialize the SDK and use APIs, see [SDK Initialization](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html).
 
 ### Integrating via script
 Import the SDK to your project by using the script tag and initialize the SDK.
@@ -111,14 +111,14 @@ tim.registerPlugin({'tim-upload-plugin': TIMUploadPlugin});
 </script>
 ```
 
->?Set the SDK log output level. For more information on each level, see [setLogLevel API Description](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#setLogLevel).
+>?Set the SDK log output level. For more information on each level, see [setLogLevel API Description](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setLogLevel).
 
-For more information on how to initialize the SDK and use APIs, see [SDK Initialization](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html).
+For more information on how to initialize the SDK and use APIs, see [SDK Initialization](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html).
 
 ### Relevant resources
 - [SDK Update Log](https://intl.cloud.tencent.com/document/product/1047/34281)
-- [SDK API Documentation](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html)
-- [FAQs](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/tutorial-01-faq.html)
+- [SDK API Documentation](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html)
+- [FAQs](https://web.sdk.qcloud.com/im/doc/zh-cn/tutorial-01-faq.html)
 - [IM Web Demo](https://github.com/tencentyun/TIMSDK/tree/master/H5)
 - [Download URL of Tencent Cloud IM Upload Plugin](https://www.npmjs.com/package/tim-upload-plugin)
 
