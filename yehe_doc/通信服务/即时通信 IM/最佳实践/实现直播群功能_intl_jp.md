@@ -18,7 +18,7 @@ IMライブストリーミンググループ（AVChatRoom）には、次の特�
  AVChatRoomは、オンライン教室、テキストメッセージ、手書き入力などの機能を提供し、教師と学生のコミュニケーション、手書き入力の保存、大教室から小教室まで各種授業の教学シナリオを手軽に実現します。
 
 ## 使用制限
-- [メッセージの取り消し](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#revokeMessage)はサポートしていません。
+- [メッセージの取り消し](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#revokeMessage)はサポートしていません。
 - グループマスターはグループを退出できません。グループマスターのグループ退出手段は、グループの解散のみです。
 - グループメンバーの削除はサポートしていません。
 
@@ -28,7 +28,7 @@ IMライブストリーミンググループ（AVChatRoom）には、次の特�
 - [グループシステム](https://intl.cloud.tencent.com/document/product/1047/33529)
 - [SDKダウンロード](https://intl.cloud.tencent.com/document/product/1047/33996)
 - [ログの更新（Web & ミニプログラム）](https://intl.cloud.tencent.com/document/product/1047/34281)
-- [SDKマニュアル](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/TIM.html)
+- [SDKマニュアル](https://web.sdk.qcloud.com/im/doc/zh-cn/TIM.html)
 - [SDK（Web & ミニプログラム）の統合](https://intl.cloud.tencent.com/document/product/1047/34309)
 - [初期化とログイン（Web & ミニプログラム）](https://intl.cloud.tencent.com/document/product/1047/34314)
 - [メッセージの送受信（Web & ミニプログラム）](https://intl.cloud.tencent.com/document/product/1047/34322)
@@ -86,7 +86,7 @@ npm config set registry http://r.cnpmjs.org/
   SDKAppID: <span class="hljs-number">0</span> <span class="hljs-comment">// アクセス時に0をIMアプリケーションのSDKAppIDに置き換える必要があります</span>
 }
 <span class="hljs-keyword">let</span> tim = TIM.create(options) <span class="hljs-comment">// SDK インスタンスは通常timで表示されます</span>
-<span class="hljs-comment">// SDKログ出力レベルを設定します。詳細なレベル分けについては <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html?_ga=1.43970405.1562552652.1542703643#setLogLevel">setLogLevel インターフェースの説明</a>をご参照ください</span>
+<span class="hljs-comment">// SDKログ出力レベルを設定します。詳細なレベル分けについては <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html?_ga=1.43970405.1562552652.1542703643#setLogLevel">setLogLevel インターフェースの説明</a>をご参照ください</span>
 tim.setLogLevel(<span class="hljs-number">0</span>) <span class="hljs-comment">// 通常レベル。アクセス時にログ量が多くなるので、このレベルを使用することを推奨します</span>
 
 tim.<span class="hljs-keyword">on</span>(TIM.EVENT.SDK_READY, function (<span class="hljs-keyword">event</span>) {
@@ -101,10 +101,10 @@ tim.<span class="hljs-keyword">on</span>(TIM.EVENT.MESSAGE_RECEIVED, function(<s
   <span class="hljs-keyword">const</span> length = <span class="hljs-keyword">event</span>.data.<span class="hljs-function">length
   <span class="hljs-keyword">let</span> message
   <span class="hljs-title">for</span> (<span class="hljs-params"><span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length; i++</span>)</span> {
-    <span class="hljs-comment">// Messageインスタンスの詳細なデータ構造については、 <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html">Message</a>をご参照ください</span>
+    <span class="hljs-comment">// Messageインスタンスの詳細なデータ構造については、 <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html">Message</a>をご参照ください</span>
     <span class="hljs-comment">// 特に、typeとpayloadの属性に重点的な注意を払う必要があります</span>
     <span class="hljs-comment">// v2.6.0以上は、AVChatRoomのグループチャットメッセージ、グループへの参加やグループからの退出等のグループプロンプトメッセージに、nick（ニックネーム）とavatar（プロフィール画像URL）属性が追加され、アクセス側のより良い表示体験に貢献しています</span>
-    <span class="hljs-comment">// まずupdateMyProfileを呼び出し、自身のnick（ニックネーム）と avatar（プロフィール画像URL）を設定します。<a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#updateMyProfile">updateMyProfileインターフェースの説明</a>をご参照ください</span>
+    <span class="hljs-comment">// まずupdateMyProfileを呼び出し、自身のnick（ニックネーム）と avatar（プロフィール画像URL）を設定します。<a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#updateMyProfile">updateMyProfileインターフェースの説明</a>をご参照ください</span>
     message = <span class="hljs-keyword">event</span>.data[i]
     <span class="hljs-keyword">switch</span> (message.type) {
       <span class="hljs-keyword">case</span> TIM.TYPES.MSG_TEXT:
@@ -130,17 +130,17 @@ tim.<span class="hljs-keyword">on</span>(TIM.EVENT.MESSAGE_RECEIVED, function(<s
 })
 
 _handleTextMsg(message) {
-  <span class="hljs-comment">// 詳細なデータ構造については、 <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.TextPayload">TextPayloadインターフェースの説明</a>をご参照ください</span>
+  <span class="hljs-comment">// 詳細なデータ構造については、 <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html#.TextPayload">TextPayloadインターフェースの説明</a>をご参照ください</span>
   console.log(message.payload.text) <span class="hljs-comment">// テキストメッセージの内容</span>
 }
 
 _handleCustomMsg(message) {
-  <span class="hljs-comment">// 詳細なデータ構造については、<a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.CustomPayload">CustomPayloadインターフェースの説明</a>をご参照ください</span>
+  <span class="hljs-comment">// 詳細なデータ構造については、<a href="https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html#.CustomPayload">CustomPayloadインターフェースの説明</a>をご参照ください</span>
   console.log(message.payload)
 }
 
 _handleGroupTip(message) {
-  <span class="hljs-comment">// 詳細なデータ構造については、 <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.GroupTipPayload">GroupTipPayloadインターフェースの説明</a>をご参照ください</span>
+  <span class="hljs-comment">// 詳細なデータ構造については、 <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html#.GroupTipPayload">GroupTipPayloadインターフェースの説明</a>をご参照ください</span>
   <span class="hljs-keyword">switch</span> (message.payload.operationType) {
     <span class="hljs-keyword">case</span> TIM.TYPES.GRP_TIP_MBR_JOIN: <span class="hljs-comment">// メンバーのグループへの参加</span>
       <span class="hljs-keyword">break</span>
@@ -164,7 +164,7 @@ _handleGroupTip(message) {
 }
 
 _handleGroupSystemNotice(message) {
-  <span class="hljs-comment">// 詳細なデータ構造については、 <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Message.html#.GroupSystemNoticePayload">GroupSystemNoticePayloadインターフェースの説明</a>をご参照ください</span>
+  <span class="hljs-comment">// 詳細なデータ構造については、 <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html#.GroupSystemNoticePayload">GroupSystemNoticePayloadインターフェースの説明</a>をご参照ください</span>
   console.log(message.payload.userDefinedField) <span class="hljs-comment">// ユーザーカスタムフィールド。RESTAPIを使用してグループシステム通知を送信する場合は、この属性値内でカスタム通知のコンテンツを入手できます。</span>
   <span class="hljs-comment">// REST APIを使用してグループシステム通知を送信する場合は、 <a href="https://intl.cloud.tencent.com/document/product/1047/34958">グループ内システム通知送信API</a>をご参照ください</span>
 }</code></pre>
@@ -183,7 +183,7 @@ promise.then(function(imResponse) {
 
 <span id="Step6"></span>
 ### 手順6：自身のニックネームとプロフィール画像の設定
-2.6.2以上の SDKには、AVChatRoom内のグループチャットメッセージとグループプロンプトメッセージ（グループへの参加やグループからの退出など）に、nick（ニックネーム）とavatar（プロフィール画像URL）属性が追加されています。インターフェース [updateMyProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#updateMyProfile) を呼び出して、自身のnick（ニックネーム）とavatar（プロフィール画像URL）を設定できます。
+2.6.2以上の SDKには、AVChatRoom内のグループチャットメッセージとグループプロンプトメッセージ（グループへの参加やグループからの退出など）に、nick（ニックネーム）とavatar（プロフィール画像URL）属性が追加されています。インターフェース [updateMyProfile](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#updateMyProfile) を呼び出して、自身のnick（ニックネーム）とavatar（プロフィール画像URL）を設定できます。
 
 ```javascript
 // v2.6.0以降、AVChatRoom内のグループチャットメッセージ、グループへの参加やグループからの退出などのグループプロンプトメッセージに、nick（ニックネーム） とavatar（プロフィール画像URL）属性が追加されており、アクセス側のより良い表示体験に貢献しています。まずupdateMyProfileを呼び出し、個人プロファイルを設定する必要があります。
@@ -251,7 +251,7 @@ promise.then(<span class="hljs-function"><span class="hljs-keyword">function</sp
 
 ### 1. 自身が送信するメッセージ `Message.nick` と `Message.avatar` がいずれも空である場合、どのように処理すれば、インターフェースでニックネームとプロフィール画像を正常に表示できますか？
 
-[getMyProfile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#getMyProfile) を呼び出すことによって自身のニックネームとプロフィール画像を取得できます。
+[getMyProfile](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getMyProfile) を呼び出すことによって自身のニックネームとプロフィール画像を取得できます。
 
 ### 2. ライブストリーミンググループでミュート機能を実現するにはどうすればよいですか？
 
