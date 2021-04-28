@@ -15,7 +15,7 @@ __Attribute list__
 
 | Attribute | Type | Description | Recommended Value |
 |-----|-----|-----|-----|
-| sdkAppId | uint32_t | Application ID, which is required. Tencent Cloud generates bills based on `sdkAppId`. | The ID can be obtained on the account information page in the [TRTC Console](https://console.cloud.tencent.com/rav/) after the corresponding application is created. |
+| sdkAppId | uint32_t | Application ID, which is required. Tencent Cloud generates bills based on `sdkAppId`. | The ID can be obtained on the account information page in the TRTC Console after the corresponding application is created. |
 | userId | const char * | User ID in UTF-8 format, which is required. It is the `userId` of the local user and acts as the username. | If the ID of a user in your account system is "abc", `userId` can be set to "`abc`". |
 | userSig | const char * | User signature, which is required. It is the authentication signature corresponding to the current `userId` and acts as the login password. | For more information on the calculation method, please see [How to Calculate `UserSig`](https://intl.cloud.tencent.com/document/product/647/35123/35166). |
 | roomId | uint32_t | Room number, which is required. Users in the same room can see and make video calls to one another. | The parameter value can be customized but must be unique. If the user ID (`userId`) is numeric, the room creator's user ID can be directly used as the `roomId`. |
@@ -69,7 +69,7 @@ __Attribute list__
 | Attribute | Type | Description | Recommended Value | Remarks |
 |-----|-----|-----|-----|-----|
 | preference | [TRTCVideoQosPreference](https://intl.cloud.tencent.com/document/product/647/35134#trtcvideoqospreference) | Whether to select "ensure definition" or "ensure smoothness" on a weak network. | - | - Smoothness on weak network: on a weak network, the video image will have a lot of blurs but can be smooth with no lagging. <br><br>- Definition on weak network: the image will be as clear as possible on a weak network but tend to have more lagging. |
-| controlMode | [TRTCQosControlMode](https://intl.cloud.tencent.com/document/product/647/35134#trtcqoscontrolmode) | On-cloud control. | - Server mode (default): on-cloud control. If there are no special needs, please use this mode directly <br><br>- Client mode: client-based control, which is for internal debugging of the SDK and shall not be used by users. |
+| controlMode | [TRTCQosControlMode](https://intl.cloud.tencent.com/document/product/647/35134#trtcqoscontrolmode) | Video resolution (server-side control - client-side control) | On-cloud control. | - Server mode (default): on-cloud control. If there are no special needs, please use this mode directly <br><br>- Client mode: client-based control, which is for internal debugging of the SDK and shall not be used by users. |
 
 
 
@@ -90,7 +90,7 @@ __Attribute list__
 | Attribute | Type | Description |
 |-----|-----|-----|
 | userId | const char * | User ID. |
-| quality | [TRTCQuality](https://intl.cloud.tencent.com/document/product/647/35134#trtcquality) | Video quality. |
+| quality | [TRTCQuality](#trtcquality) | Video quality. |
 
 
 
@@ -133,7 +133,7 @@ __Attribute list__
 | Attribute | Type | Description |
 |-----|-----|-----|
 | ip | const char * | Server IP address. |
-| quality | [TRTCQuality](https://intl.cloud.tencent.com/document/product/647/35134#trtcquality) | Network quality, which is tested and calculated based on the internal evaluation algorithm. The smaller the loss and round-trip time (RTT), the higher the network quality score. |
+| quality | [TRTCQuality](#trtcquality) | Network quality, which is tested and calculated based on the internal evaluation algorithm. The smaller the loss and round-trip time (RTT), the higher the network quality score. |
 | upLostRate | float | Upstreaming packet loss rate between 0 and 1.0. For example, 0.3 indicates that 3 data packets may be lost in every 10 packets sent to the server. |
 | downLostRate | float | Downstreaming packet loss rate between 0 and 1.0. For example, 0.2 indicates that 2 data packets may be lost in every 10 packets received from the server. |
 | rtt | int | Delay in milliseconds, which is the round-trip time between the current device and CVM instance. The smaller the value, the better. The normal value range is 10–100 ms. |
@@ -186,8 +186,8 @@ __Attribute list__
 | Attribute | Type | Description | Recommended Value |
 |-----|-----|-----|-----|
 | mode | [TRTCTranscodingConfigMode](https://intl.cloud.tencent.com/document/product/647/35134#trtctranscodingconfigmode) | Transcoding `config` mode. | - |
-| appId | uint32_t | Tencent Cloud LVB application ID. | Please select a created application in the [TRTC Console](https://console.cloud.tencent.com/rav), click **Account Info**, and get the ID in "LVB Info". |
-| bizId | uint32_t | Tencent Cloud LVB business ID. | Please select a created application in the [TRTC Console](https://console.cloud.tencent.com/rav), click **Account Info**, and get the ID in "LVB Info". |
+| appId | uint32_t | Tencent Cloud LVB application ID. | Please select a created application in the TRTC Console, click **Account Info**, and get the ID in "LVB Info". |
+| bizId | uint32_t | Tencent Cloud LVB business ID. | Please select a created application in the TRTC Console, click **Account Info**, and get the ID in "LVB Info". |
 | videoWidth | uint32_t | Width of video resolution in px after being transcoded. | - |
 | videoHeight | uint32_t | Height of video resolution in px after being transcoded. | - |
 | videoBitrate | uint32_t | Bitrate of video resolution in Kbps after being transcoded. | - |
@@ -215,8 +215,8 @@ __Attribute list__
 
 | Attribute | Type | Description |
 |-----|-----|-----|
-| appId | uint32_t | Tencent Cloud application ID. Please select a created application in the [TRTC Console](https://console.cloud.tencent.com/rav), click **Account Info**, and get the ID in "LVB Info". |
-| bizId | uint32_t | Tencent Cloud LVB business ID. Please select a created application in the [TRTC Console](https://console.cloud.tencent.com/rav), click **Account Info**, and get the ID in "LVB Info". |
+| appId | uint32_t | Tencent Cloud application ID. Please select a created application in the TRTC Console, click **Account Info**, and get the ID in "LVB Info". |
+| bizId | uint32_t | Tencent Cloud LVB business ID. Please select a created application in the TRTC Console, click **Account Info**, and get the ID in "LVB Info". |
 | url | const char * | Relayed push URL. |
 
 
@@ -405,7 +405,7 @@ TRTC provides three different audio/video streams, including:
 - Small image: it is similar to the primary image, but with lower resolution and bitrate.
 - Secondary stream image: it is generally used for screen sharing and remote video playback (for example, a teacher plays back a video to students).
 
->?
+>
 >- If the upstream network and performance of the anchor is good, the primary (big) and small images can be sent at the same time.
 >- The SDK does not support enabling only the small image, which must be enabled together with the primary image.
 
@@ -521,7 +521,7 @@ The TRTC SDK needs to adjust the internal codecs and network module based on the
 - ModeClient: client-based control, which is for internal debugging of SDK and shall not be used by users.
 
 
->?You are recommended to use on-cloud control, so that when the QoS algorithm is upgraded, you do not need to upgrade the SDK to get a better experience.
+>You are recommended to use on-cloud control, so that when the QoS algorithm is upgraded, you do not need to upgrade the SDK to get a better experience.
 
 
 | Enumerated Value | Description |
@@ -615,7 +615,7 @@ MixTranscoding parameter configuration mode.
 
 __Overview__
 
-Currently, only the manual configuration mode is supported, i.e., all parameters of [TRTCTranscodingConfig](https://intl.cloud.tencent.com/document/product/647/35134#trtctranscodingconfig) need to be set manually.
+Currently, only the manual configuration mode is supported, i.e., all parameters of [TRTCTranscodingConfig](#trtctranscodingconfig) need to be set manually.
 
 | Enumerated Value | Description |
 |-----|-----|
