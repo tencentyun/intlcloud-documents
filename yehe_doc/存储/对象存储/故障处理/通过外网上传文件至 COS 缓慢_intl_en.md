@@ -49,18 +49,18 @@ coscmd probe -n 1 -s 20
 A message similar to the following will be displayed, from which you can get the Average/Min/Max speeds:
 ![](https://main.qcloudimg.com/raw/2fcecb96df04acc6b0c32c120ccb3c39.png)
 5. Browse [Speed Test](https://www.speedtest.net/) to test the speed and compare the tested speed with data obtained in [Step 4](#step04) to determine whether the client has used the maximum bandwidth.
- - If the speeds obtained in Step 4 are way slower than the client bandwidth, please [contact us](https://cloud.tencent.com/act/event/Online_service).
+ - If the speeds obtained in Step 4 are way slower than the client bandwidth, please [contact us](https://intl.cloud.tencent.com/support).
  - If the speeds obtained in Step 4 equal to the client bandwidth but have not reached the speed promised by your ISP, please contact your ISP.
  - If the speeds obtained in Step 4 equal to the client bandwidth and reached the bandwidth promised by your ISP, please perform [Step 6](#step06).
 6. <span id="step06"></span>Check whether the client is accessing a bucket residing in a region in another country.
  - If yes, you are advised to enable COS’s Global Acceleration feature. For more information, please see [Global Acceleration Overview](https://intl.cloud.tencent.com/zh/document/product/436/33409).
- - If not, please [contact us](https://cloud.tencent.com/act/event/Online_service).
+ - If not, please [contact us](https://intl.cloud.tencent.com/support).
 
 <span id="ModifyCustomDomainNameResolution"></span>
 ### Modifying DNS record for your custom endpoint
 
 1. Check whether the custom endpoint is mapped to a COS endpoint.
- - If yes, please [contact us](https://cloud.tencent.com/act/event/Online_service).
+ - If yes, please [contact us](https://intl.cloud.tencent.com/support).
  General COS endpoints are as follows:
 ```
 XXX.cos.ap-beijing.myqcloud.com  (default COS endpoint)
@@ -82,7 +82,8 @@ The following uses C# as an example:
 CosXmlConfig config = new CosXmlConfig.Builder()
 .SetConnectionTimeoutMs(60000)  // Set the connection timeout in milliseconds. Defaults to 45000.
 .SetReadWriteTimeoutMs(40000)  // Set the read/write timeout in milliseconds. Defaults to 45000.
-.IsHttps(true) // Use HTTP requests by default.   .SetAppid(appid) // Set the APPID of the Tencent Cloud account.
+.IsHttps(true) // Use HTTP requests by default.   
+.SetAppid(appid) // Set the APPID of the Tencent Cloud account.
 .SetRegion(region)  // Set the default bucket region.
 .SetHost("XXXXXX.com") // Enter the custom endpoint.
 .SetDebugLog(true) .Build(); // Create the CosXmlConfig object.
