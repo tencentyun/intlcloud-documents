@@ -18,25 +18,28 @@ Log in to the Linux CVM using VNC and enter single user mode. In this mode, fix 
 
 
 ## Troubleshooting Procedure
-### Configuring the `/etc/fstab` file [](id:ConfigurationFile)
+
+[](id:ConfigurationFile)
+### Configuring the `/etc/fstab` file
 1. [Log in to a Linux instance using standard login method](https://intl.cloud.tencent.com/document/product/213/5436).
 2. Choose a configuration method to obtain information.[](id:Step2)
-<dx-tabs>
-::: Using the soft link of elastic cloud disks (recommended)
+
+#### Using the soft link of elastic cloud disks (recommended)
 #### Analyzing the configuration method
 - **Pros**: the soft link of an elastic cloud disk is fixed and unique. It does not change with operations such as mounting, unmounting, and formatting partitions.
 - **Cons**: only an elastic cloud disk can use the soft link, which operates imperceptibly for the partition formatting operation.
 
 #### Obtaining information
 Run the following command to view the soft link of the elastic cloud disk.
-```plaintext
+```
+plaintext
 ls -l /dev/disk/by-id
 ```
 The following information will appear:
 ![](https://main.qcloudimg.com/raw/99c7d8362b4313a0366adace46563bb7.png)
 
-:::
-::: Using the UUID of the file system
+#### Using the UUID of the file system
+
 #### Analyzing the configuration method
 Automatic mounting configuration may fail due to changes in a file system’s UUID.
 For example, reformatting a file system will change its UUID.
@@ -48,8 +51,8 @@ blkid /dev/vdb1
 ```
 The following information will appear:
 ![](https://main.qcloudimg.com/raw/a1f6204b8f95f71609571612ff45aa42.png)
-:::
-::: Using device name (not recommended)
+
+#### Using device name (not recommended)
 
 #### Analyzing the configuration method
 Automatic mounting configuration may fail due to changes in device name.
@@ -62,8 +65,7 @@ fdisk -l
 ```
 The following information will appear:
 ![](https://main.qcloudimg.com/raw/1d09eba0c658fed0e9f5303e273b5539.png)
-:::
-</dx-tabs>
+
 3. Run the following command to back up the `/etc/fstab` file to the `/home` directory, for example:
 ```
 cp /etc/fstab /home
@@ -97,7 +99,8 @@ mount -a
 If information similar to what is shown below is returned, the file has been written. The file system will automatically mount when the operating system is started. You can restart CVM to verify the result.
 ![](https://main.qcloudimg.com/raw/4289f335d3373074d7fc799863fba498.png)
 
-### Fixing the `/etc/fstab` file [](id:RepairConfiguration)
+[](id:RepairConfiguration)
+### Fixing the `/etc/fstab` file 
 1. [Log in to a Linux instance using VNC](https://intl.cloud.tencent.com/document/product/213/32494).
 2. Enter single user mode. For detailed directions, see [Configuring Linux CVM to Boot into Single User Mode](https://intl.cloud.tencent.com/document/product/213/34819).
 3. Run the following command to back up the `/etc/fstab` file to the `/home` directory, for example:
