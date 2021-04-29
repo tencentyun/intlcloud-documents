@@ -9,7 +9,7 @@ table th:nth-of-type(2){ width:82%; }
 
 ## 도메인 추가
 도메인 관리 페이지에서 [도메인 추가]를 클릭합니다.
-![](https://main.qcloudimg.com/raw/3cf76f7cd765a21274fa70dd1f96a6f8.png)
+![](https://main.qcloudimg.com/raw/020628a1fba4d8529bf3b5be7f459170.png)
 
 도메인 추가 페이지는 세 부분으로 구성되어 있습니다.
 
@@ -21,7 +21,7 @@ Tencent Cloud CDN은 선택된 도메인 속성 설정 및 원본 서버 설정�
 
 ### Part1. 도메인 속성 설정
 도메인 설정 모듈에 비즈니스 서비스 도메인을 입력하고 해당 프로젝트, 가속 지역, 서비스 유형을 선택합니다.
-<img src="https://main.qcloudimg.com/raw/2a98d58e2333539610e36f5a6e5263b8.png" style="height:280px"/>
+<img src="https://main.qcloudimg.com/raw/6ec038f7f063b01cc1d68ecbfe4cb5c8.png" style="height:280px"/>
 
 **설정 항목 상세 설명:**
 
@@ -37,7 +37,7 @@ Tencent Cloud CDN은 선택된 도메인 속성 설정 및 원본 서버 설정�
 ### Part2. 원본 서버 설정
 
 비즈니스 원본 서버 관련 정보를 설정하면, 캐시에 리소스가 없을 때 CDN 노드가 원본 서버에서 불러와 캐싱합니다.
-![](https://main.qcloudimg.com/raw/fc1540b18b2f1d210648e93ae1c50527.png)
+![](https://main.qcloudimg.com/raw/947c24efc846a11b25dca0f8ea552422.png)
 
 **설정 항목 상세 설명:**
 
@@ -50,7 +50,7 @@ Tencent Cloud CDN은 선택된 도메인 속성 설정 및 원본 서버 설정�
 
 ### Part3. 가속 서비스 설정
 노드의 가속 서비스 관련 구성을 설정합니다.
-![](https://main.qcloudimg.com/raw/dd7d9aa05e4238d9196be1d7d34de52e.png)
+![](https://main.qcloudimg.com/raw/6e918f4e91d4c5249172589475f292a1.png)
 
 **설정 항목 상세 설명:**
 
@@ -63,16 +63,17 @@ Tencent Cloud CDN은 선택된 도메인 속성 설정 및 원본 서버 설정�
 ## 액세스 완료
 
 [제출]을 클릭하여 도메인 추가 작업을 완료하고 도메인 설정이 전체 네트워크 노드에 전달될 때까지 잠시 기다려 주십시오. 전달 시간은 약 5~10분 소요됩니다.
-![](https://main.qcloudimg.com/raw/46e5f02b7b0beaf9dbc22b7873cc4205.png)
+![](https://main.qcloudimg.com/raw/d5bcb556ac1b89946ec15642d3249676.png)
 
 ## 후속 작업
 액세스가 완료되면 Tencent Cloud CDN에서 해당 CNAME 주소를 할당하므로 CDN 서비스를 적용하려면 CNAME 설정을 완료해야 합니다. 자세한 내용은 [CNAME 설정](https://intl.cloud.tencent.com/document/product/228/3121)을 참조하십시오.
 
-
-## 도메인 소유권 인증[](id:m1)
+[](id:m1)
+## 도메인 소유권 인증
 와일드카드 서브도메인에 액세스했거나 다른 사용자가 액세스한 도메인인 경우 또는 신규 도메인에 처음 액세스하는 경우에는 도메인 소유권 인증이 필요하며, 인증을 통과해야만 액세스 또는 검색할 수 있습니다.
 도메인 소유권 인증은 DNS 인증 방식이며 인증 절차는 다음과 같습니다.
 1. [인증 방법]을 클릭하여 DNS 인증 시 추가해야 하는 리졸브 기록 정보를 불러옵니다. 인증이 완료되기 전까지 페이지를 닫지 마십시오.
-   ![img](https://main.qcloudimg.com/raw/dfd17ea5486c40d86a76bfb3b6d48693.png)
-2. 도메인 리졸브 서비스 제공 업체에서 TXT 유형의 DNS 기록을 추가하면, CVM 기록에 _cdnauth를, 기록 값에는 인증 방법에서 랜덤 생성된 값을 각각 입력합니다. [DNS 리졸브 DNSPod](https://console.cloud.tencent.com/cns)를 예로 들면 다음과 같습니다. ![1583209117135](https://main.qcloudimg.com/raw/dd02d7b7b18d753f7b9e9c72df617cdf.png)
+   ![img](https://main.qcloudimg.com/raw/c05c0d869a71dbe68092ccee632c2d1a.png)
+2. 도메인 리졸브 서비스 제공 업체에서 TXT 유형의 DNS 기록을 추가하면, CVM 기록에 _cdnauth를, 기록 값에는 인증 방법에서 랜덤 생성된 값을 각각 입력합니다.
+
 3. TXT 리졸브가 적용되면 [인증] 버튼을 클릭해 인증을 진행합니다. ‘인증 실패’가 표시되는 경우, DNS 기록이 적용될 때까지 기다렸다가 다시 시도해 주시고, TXT 기록을 정확하게 입력했는지 확인하십시오.
