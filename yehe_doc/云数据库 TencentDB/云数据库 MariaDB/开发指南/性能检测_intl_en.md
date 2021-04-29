@@ -2,10 +2,6 @@
 ## Overview
 Performance test is a comprehensive analysis service for database instance performance and health. It can analyze SQL statement performance, CPU utilization, IOPS utilization, memory utilization, disk utilization, connections, locks, hotspot tables, and transactions, helping you identify and address existing and potential health issues in your database through smart diagnosis and optimization.
 
-This feature is currently available in the following instance editions:
-- TencentDB for TDSQL
-- TencentDB for MariaDB
-
 >?For certain test items, the performance test report provides a series of optimization suggestions. Please carefully test the suggested measures before applying them so as to prevent the instance performance problems from getting worse.
 
 ## Features
@@ -36,12 +32,12 @@ The deadlock diagnosis gets the information of the last deadlock in the database
 #### Lock wait diagnosis
 Reports lock waits lasting over 60 seconds in the current time period.
 
->?Lock waits are normal, but sometimes your business may display lock wait timeout errors such as `Lock wait timeout exceeded;try restarting transaction`. MySQL's InnoDB lock information is saved in tables `innodb_trx`, `innodb_lock_waits`, and `innodb_locks` in the system database `information_schema`. Lock wait diagnosis analyzes the lock dependencies in the three tables in the primary database, finds the head blocker (session or transaction) that holds a lock for longer than the specified time and blocks other sessions or transactions, and then kill it.
+>?Lock waits are normal, but sometimes your business may display lock wait timeout errors such as `Lock wait timeout exceeded;try restarting transaction`. MySQL's InnoDB lock information is saved in tables `innodb_trx`, `innodb_lock_waits`, and `innodb_locks` in the system database `information_schema`. Lock wait diagnosis analyzes the lock dependencies in the three tables in the instance, finds the head blocker (session or transaction) that holds a lock for longer than the specified time and blocks other sessions or transactions, and then kill it.
 
 >!Currently, lock waits are supported only by InnoDB.
 
 #### Long running session diagnosis
-Lists the sessions whose `Command` column is not `Sleep` but execution time exceeds 10 seconds by diagnosing the `information_schema.processlist` table in the primary database.
+Lists the sessions whose `Command` column is not `Sleep` but execution time exceeds 10 seconds by diagnosing the `information_schema.processlist` table in the instance.
 
 >?The best solution to long running sessions is to optimize SQL and proactively place session invalidation configuration in your business code. Of course, you can also make expired sessions automatically invalid by adjusting the `interactive_timeout` and `wait_timeout` parameters.
 

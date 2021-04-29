@@ -7,7 +7,7 @@ Instances in VPC with the same network security isolation demands in one region 
 2. Select **Data Security** > **Security Group** to manage TencentDB security groups.
 >!
 > 1. TencentDB shares the security group rules of CVM. You can match or adjust the rule priority as needed on the TencentDB security group management page.
-> 2. You cannot create or delete security group rules on the TencentDB security group management page.
+> 2. You cannot create or delete security group rules on the TencentDB security group management page. To do so, see [Virtual Private Cloud > Security Groups](https://intl.cloud.tencent.com/document/product/215/35506).
 
 ## Security Group Policy
 Security group policies are divided into "allowing" and "rejecting" traffic. You can configure security group rules to allow or reject inbound traffic of instances deployed in VPC.
@@ -22,12 +22,12 @@ All ports opened: the access to TencentDB from all IP addresses is allowed, whic
 ## Security Group Rules
 Security group rules are used to control the inbound and outbound traffic of instances associated with the security group (filtered based on the rules from top to bottom). By default, a new security group rejects all traffic (All Drop). You can modify security group rules at any time, and the new rules take effect immediately.
 Each security group rule involves the following items:
-- Protocol port: for TencentDB, only **ALL** is supported for protocol port. As TencentDB only provides access over fixed ports, there is no need to specify a port. If a port is specified, the rule will not take effect for TencentDB.
+- Protocol and port: as TencentDB only provides access over fixed ports, security group rules configured with other ports won't take effect for TencentDB. For example, if the TencentDB instance uses port 3306 for access, you can configure `TCP:3306` or `ALL` in the security group rule.
 - Authorization type: access based on address ranges (CIDR/IP).
 - Source (inbound rules) or target (outbound rules): choose one of the following options:
     - Specify a single IP in CIDR notation.
     - Specify an IP address range in CIDR notation, such as 203.0.113.0/24.
-- Policy: allow or reject the access request.
+- Policy: allow or reject access requests
 
 ## Security Group Priority
 You can set security group priority in the TencentDB console, and the smaller the number, the higher the priority. If an instance is associated with multiple security groups, the priority is used as a basis for evaluating the security rules for this instance.
@@ -50,4 +50,4 @@ In addition, if the last policy in multiple security groups associated with an i
 
 ## Creating, Managing, and Deleting Security Group Rules
 TencentDB shares the security group rules of CVM. You can match or adjust the rule priority as needed on the TencentDB security group management page.
-To create, manage, or delete security group rules, please do so on the [security group management page](https://console.cloud.tencent.com/cvm/securitygroup).
+To create, manage, or delete security group rules, please do so on the [security group management page](https://console.cloud.tencent.com/cvm/securitygroup) in the console. For more information, see [Virtual Private Cloud > Security Groups](https://intl.cloud.tencent.com/document/product/215/35506).

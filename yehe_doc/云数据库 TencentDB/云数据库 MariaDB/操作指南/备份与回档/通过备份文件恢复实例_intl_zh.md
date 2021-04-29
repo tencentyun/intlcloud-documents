@@ -9,6 +9,8 @@ MariaDB 可通过回档功能来查看历史数据，如果您需要在本地恢
 - 操作系统：centos。
 
 ###  准备数据库
+>!请保证本地安装的数据库版本和云上数据库实例的版本保持一致。
+>
 下文以安装 MariaDB 10.0.10 为例：
 1. 添加 yum 源。
 ```
@@ -54,15 +56,12 @@ wget  --content-disposition 'http://1x.2xx.0.27:8083/2/noshard1/set_1464144850_5
 ```
 
 ## 通过备份文件恢复数据库（未加密）
-
-<span id = "mulu_jieya"></span>
-#### 1. 进入备份文件下载目录，通过 lz4 解压冷备文件
+#### [1. 进入备份文件下载目录，通过 lz4 解压冷备文件](id:mulu_jieya)
 ```
 lz4 -d set_1464144850_587.1464552298.xtrabackup.lz4
 ```
 
-<span id = "gongju_jieya"></span>
-#### 2. 使用 xbstream 工具解压到临时目录 xtrabackuptmp
+#### [2. 使用 xbstream 工具解压到临时目录 xtrabackuptmp](id:gongju_jieya)
 ```
 mkdir xtrabackuptmp/
 mv set_1464144850_587.1464552298.xtrabackup xtrabackuptmp/
@@ -79,8 +78,7 @@ innobackupex --apply-log  --use-memory=1G --tmpdir='/root/dblogs_tmp/' /root/xtr
 操作成功后，会显示`completed OK!`，如下所示：
 ![](https://main.qcloudimg.com/raw/80a99e3a653a840655be806f92e5e434.png)
 
-<span id = "tingzhi_qingkong"></span>
-#### 4. 停止数据库，清空数据文件
+#### [4. 停止数据库，清空数据文件](id:tingzhi_qingkong)
 ```
 service mysql stop
 ```
@@ -141,7 +139,7 @@ innobackupex --apply-log --rebuild-indexes  --use-memory=1G  --tmpdir=/tmp ./bac
 请参见 [停止数据库，清空数据文件](#tingzhi_qingkong)。
 
 #### 4. 获取数据密钥明文
->?如需使用 [连接加密](https://intl.cloud.tencent.com/document/product/237/35447) 功能，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请。
+>?如需使用 [连接加密](https://intl.cloud.tencent.com/zh/document/product/237) 功能，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请。
 
 解密数据前，需在 [MariaDB 控制台](https://console.cloud.tencent.com/mariadb) 的实例管理页的【数据安全性】>【连接加密】中查询数据密钥密文，然后，您可以通过如下两种方案（任选其一）解密数据密钥密文，得到**数据密钥明文**。
 - 通过密钥管理服务 KMS 的 API，自己实现获取数据密钥明文，请参见 [KMS API 文档](https://intl.cloud.tencent.com/document/product/1030/32172)。
@@ -167,7 +165,7 @@ python ./kms_tool.py --role="qcs::cam::uin/xxxxxxxxx:roleName/kmsTDSQLRole"
  ![](https://main.qcloudimg.com/raw/6c4556b8a0f0362c922c37c62e7f4286.png)
  - 数据密钥串 ciphertext 文本需要加上双引号。
  - `keyring_tool`依赖`libboost_program_options.so.1.53.0`，若系统没有该 lib 库，需要先执行：`export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH`，再运行`keyring_tool`。
- 
+
 #### 6. 通过`./innobackupex`工具对备份文件进行 apply
 下图为通过`./innobackupex`对备份文件进行 apply，直至 apply 正常结束。apply 时需要通过`--keyring-file-data=key_file`来指定密钥，同时该参数指定的路径须填绝对路径。
 

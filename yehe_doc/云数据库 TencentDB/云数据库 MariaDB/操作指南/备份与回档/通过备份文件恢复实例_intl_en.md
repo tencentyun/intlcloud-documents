@@ -1,6 +1,5 @@
 You can use the rollback feature of TencentDB for MariaDB to view historical data. To restore your database instance locally, restore the historical data by following the steps in this document.
 
-
 ## Prerequisites
 ### Preparing a server
 If you need to restore the database instance locally, please ensure that the basic configuration of the server meets the following requirements:
@@ -9,7 +8,9 @@ If you need to restore the database instance locally, please ensure that the bas
 - Disk capacity: it must exceed the database size plus the temporary capacity needed by the system.
 - Operating system: CentOS
 
-### Preparing the database
+### Preparing a database
+>!The version of the local database must be the same as that of the TencentDB instance.
+>
 Take installation of MariaDB 10.0.10 as an example:
 1. Add the yum source.
 ```
@@ -48,22 +49,19 @@ yum install percona-xtrabackup
 ```
 
 ### Downloading a backup
-In the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/mariadb), click an instance name to enter the instance management page and get the backup download address on the **Backup and Restore** tab.
+In the [TencentDB for MariaDB console](https://console.cloud.tencent.com/mariadb), click an instance ID/name to enter the instance management page and get the backup download address on the **Backup and Restore** tab.
 Sample of a download command:
 ```
 wget  --content-disposition 'http://1x.2xx.0.27:8083/2/noshard1/set_1464144850_587/1464552298xxxxxxxx'
 ```
 
-## Restoring Database from Backup File (Unencrypted)
-
-<span id = "mulu_jieya"></span>
-#### 1. Enter the cold backup file download directory and decompress the file with LZ4
+## Restoring Databases from Backup Files (Unencrypted)
+#### [1. Enter the cold backup file download directory and decompress the file with LZ4](id:mulu_jieya)
 ```
 lz4 -d set_1464144850_587.1464552298.xtrabackup.lz4
 ```
 
-<span id = "gongju_jieya"></span>
-#### 2. Decompress the file to a temporary directory `xtrabackuptmp` with xbstream tool
+#### [2. Decompress the file to a temporary directory `xtrabackuptmp` with xbstream](id:gongju_jieya)
 ```
 mkdir xtrabackuptmp/
 mv set_1464144850_587.1464552298.xtrabackup xtrabackuptmp/
@@ -77,11 +75,10 @@ After the decompression, the directories and files are as shown below:
 mkdir /root/dblogs_tmp
 innobackupex --apply-log  --use-memory=1G --tmpdir='/root/dblogs_tmp/' /root/xtrabackuptmp/
 ```
-After the operation succeeds, `Completed OK!!` will be displayed as shown below:
+After the operation succeeds, `completed OK!` will be displayed as shown below:
 ![](https://main.qcloudimg.com/raw/80a99e3a653a840655be806f92e5e434.png)
 
-<span id = "tingzhi_qingkong"></span>
-#### 4. Stop database and clear data file
+#### [4. Stop the database and clear data files](id:tingzhi_qingkong)
 ```
 service mysql stop
 ```
@@ -124,7 +121,7 @@ If you fail to start the database, you need to check and fix the error, and then
 #### 8. Connect to the database to check data
 After starting the database, you may need to connect to the database with the original account and password to view data.
 
-## Restoring Database from Backup File (Encrypted)
+## Restoring Databases from Backup Files (Encrypted)
 Transparent Data Encryption (TDE) is currently supported only in Percona 5.7. You can access it in TencentDB for MariaDB. Please download and install the critical tool needed by the restoration. Below is the encryption process:
 
 #### 1. Decompress the backup file to the temporary directory
@@ -142,7 +139,7 @@ innobackupex --apply-log --rebuild-indexes  --use-memory=1G  --tmpdir=/tmp ./bac
 For more information, please see [Stop database and clear data file](#tingzhi_qingkong).
 
 #### 4. Get the data key plaintext
->?To use the [SSL Connection Encryption](https://intl.cloud.tencent.com/document/product/237/35447) feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+>?To use the [SSL Connection Encryption](https://intl.cloud.tencent.com/zh/document/product/237) feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 Before decrypting the data, you need to query the data key ciphertext in **Data Security** > **Connection Encryption** on the instance management page in the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/mariadb). Then, you can use either of the following two schemes to decrypt the data key ciphertext to get the **data key plaintext**.
 - Use a KMS API to get the data key plaintext on your own. For more information, please see the [KMS API documentation](https://intl.cloud.tencent.com/document/product/1030/32172).
@@ -168,7 +165,7 @@ After getting the data key plaintext, you can use either of the following two sc
  ![](https://main.qcloudimg.com/raw/6c4556b8a0f0362c922c37c62e7f4286.png)
  - Use double quotation marks to enclose the ciphertext of the data key string.
  - `keyring_tool`depends on `libboost_program_options.so.1.53.0`. If this lib does not exist in the system, you need to run `export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH` first before using `keyring_tool`.
- 
+
 #### 6. Use the `./innobackupex` tool to apply the backup file
 The figure below shows performing the `apply` operation on the backup file through `./innobackupex` till the end. During the operation, you need to use `--keyring-file-data=key_file` to specify the key by entering an absolute path.
 
