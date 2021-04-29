@@ -58,22 +58,22 @@
 
 ## 准备工作
 
-
-### 准备个人密钥[](id:step1)
+[](id:step1)
+### 准备个人密钥
 
 1. 登录 [API 密钥管理](https://console.cloud.tencent.com/cam/capi)。
 2. 若还未创建密钥，则需单击【新建密钥】以创建密钥；若已创建密钥，可单击 SecretKey 的【显示】获取密钥。
-![](https://main.qcloudimg.com/raw/dfc5cf24f6d04bcf87a64ec325b6e915.png)
+![](https://main.qcloudimg.com/raw/e72165bc0bd4e5490a40347ff3ba1a4a.png)
 
-
-### 准备云产品指标信息[](id:step2)
+[](id:step2)
+### 准备云产品指标信息
 
 
 本文以云服务器 CPU 利用率指标为例。
 
-1.	查看 [云服务器监控指标文档](https://intl.cloud.tencent.com/document/product/248/6843),
-2.	找到 CPU 利用率指标，即可查看 CPU 利用率指标名、维度，统计周期等相关信息。
-![](https://main.qcloudimg.com/raw/0140541d15e09a5ae4b41394f4f529e4.png)
+1.查看 [云服务器监控指标文档](https://intl.cloud.tencent.com/document/product/248/6843),
+2.找到 CPU 利用率指标，即可查看 CPU 利用率指标名、维度，统计周期等相关信息。
+![](https://main.qcloudimg.com/raw/6d7060de494427b22fc2440651f95bbc.png)
 
 
 ## 实践步骤
@@ -91,5 +91,5 @@
  - **Period**：填入指标支持的统计周期，例如300。
  - **StartTime**：填入需要查询的起始时间（时间类型为 datetime_iso），格式为 `2020-12-20T19:51:23+08:00`。
  - **EndTime**：填入需要查询的起始时间结束时间（时间类型为 datetime_iso），EndTime 不能小于 StartTime。格式为 `2020-12-20T20:51:23+08:00`。
-![](https://main.qcloudimg.com/raw/ad04f8261b114d1482a03abef2eaa658.png)
+![](https://main.qcloudimg.com/raw/56272fc175f0bd56ec73494caed7242c.png)
 5. 以上信息填完后，您可以复制【代码生成】中对应语言的代码，将相关的监控数据集成到您的自建监控系统，您还可以使用【在线调用】发送请求进行在线查询监控数据。
