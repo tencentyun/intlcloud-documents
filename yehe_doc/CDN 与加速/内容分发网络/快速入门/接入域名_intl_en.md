@@ -68,8 +68,8 @@ Click **Submit** to add the domain name and wait for the domain name configurati
 ## Subsequent Operations
 When the distribution is completed, CDN will allocate a corresponding CNAME address to you. You need to configure the CNAME to use the CDN service. For detailed directions, please see [CNAME Configuration](https://intl.cloud.tencent.com/document/product/228/3121).
 
-
-## Verifying the Domain Name Ownership[](id:m1)
+[](id:m1)
+## Verifying the Domain Name Ownership
 If the domain name is a wildcard domain, connected for the first time, or has been connected to by another user, you need to verify the domain name ownership. The domain name can be connected or retrieved after passing the verification.
 Domain name ownership verification is achieved by verifying DNS information in the following steps:
 1. Click **Verification Method** to get the resolution record information to be added for DNS verification. Do not close this page before verification is completed.
