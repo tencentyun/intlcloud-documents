@@ -56,12 +56,13 @@ wget  --content-disposition 'http://1x.2xx.0.27:8083/2/noshard1/set_1464144850_5
 ```
 
 ## 通过备份文件恢复数据库（未加密）
-#### [1. 进入备份文件下载目录，通过 lz4 解压冷备文件](id:mulu_jieya)
+<span id="mulu_jieya"></span>
+#### 1. 进入备份文件下载目录，通过 lz4 解压冷备文件
 ```
 lz4 -d set_1464144850_587.1464552298.xtrabackup.lz4
 ```
-
-#### [2. 使用 xbstream 工具解压到临时目录 xtrabackuptmp](id:gongju_jieya)
+<span id="gongju_jieya"></span>
+#### 2. 使用 xbstream 工具解压到临时目录 xtrabackuptmp
 ```
 mkdir xtrabackuptmp/
 mv set_1464144850_587.1464552298.xtrabackup xtrabackuptmp/
@@ -77,8 +78,8 @@ innobackupex --apply-log  --use-memory=1G --tmpdir='/root/dblogs_tmp/' /root/xtr
 ```
 操作成功后，会显示`completed OK!`，如下所示：
 ![](https://main.qcloudimg.com/raw/80a99e3a653a840655be806f92e5e434.png)
-
-#### [4. 停止数据库，清空数据文件](id:tingzhi_qingkong)
+<span id="tingzhi_qingkong"></span>
+#### 4. 停止数据库，清空数据文件
 ```
 service mysql stop
 ```
