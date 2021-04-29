@@ -23,15 +23,15 @@ You can configure Object Lock using the console or APIs.
 
 #### Using the COS console
 
-You can configure Object Lock in the COS console. For more information, please see [Setting Object Lock](xxx).
+You can configure Object Lock in the COS console. For more information, please see [Setting Object Lock](https://intl.cloud.tencent.com/document/product/436/40136).
 
 #### Using RESTful APIs
 
 You can directly call the following APIs to manage Object Lock:
 
-- [PUT Bucket ObjectLockConfiguration](#11)
-- [GET Bucket ObjectLockConfiguration](#1)
-- [GET Object Retention](#) 
+- [PUT Bucket ObjectLockConfiguration](https://intl.cloud.tencent.com/document/product/436/40133)
+- [GET Bucket ObjectLockConfiguration](https://intl.cloud.tencent.com/document/product/436/40134)
+- [GET Object Retention](https://intl.cloud.tencent.com/document/product/436/40135) 
 
 
 
