@@ -2,7 +2,8 @@
 
 COS introduces Object Lock to meet the requirements of Securities Exchange Commission (SEC) Rule 17a-4. Object Lock can help prevent objects from being overwritten or deleted for a fixed amount of time and objects can still be accessed immediately.
 
->？SEC Rule 17a-4 is a regulation issued by the U.S. Securities and Exchange Commission under the US Securities Exchange Act of 1934. The rule outlines requirements for data retention, indexing, and accessibility for companies that deal in the trade or brokering of financial securities such as stocks, bonds, and futures. According to the rule, records of numerous types of transactions must be retained and cannot be rewritten or erased with immediate accessibility for a period of at least six years.
+>?
+>SEC Rule 17a-4 is a regulation issued by the U.S. Securities and Exchange Commission under the US Securities Exchange Act of 1934. The rule outlines requirements for data retention, indexing, and accessibility for companies that deal in the trade or brokering of financial securities such as stocks, bonds, and futures. According to the rule, records of numerous types of transactions must be retained and cannot be rewritten or erased with immediate accessibility for a period of at least six years.
 
 Object Lock is a bucket-level feature, that is, only one time-based Object Lock rule can be configured for a bucket. A retention period is required, which can be set to 1 day to 100 years. Setting the retention period to permanent is not allowed.
 
