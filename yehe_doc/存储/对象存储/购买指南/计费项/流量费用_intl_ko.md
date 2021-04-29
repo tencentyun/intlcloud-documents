@@ -70,7 +70,7 @@
 
 >?CDN 트래픽 요금은 Tencent Cloud CDN에서 청구됩니다. 자세한 내용은 [CDN 가격](https://buy.cloud.tencent.com/price/cdn)을 참조하십시오.
 
-![](https://main.qcloudimg.com/raw/2dbe3e63ad529331ffddb0af5822ceb5.png)
+![](https://main.qcloudimg.com/raw/3472bd9f388a04e176d0c30fc4bb09fa.png)
 
 ## 트래픽 요금의 과금 방식 및 계산 방법
 
