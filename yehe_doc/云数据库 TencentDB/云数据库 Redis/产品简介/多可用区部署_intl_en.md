@@ -26,9 +26,16 @@ Read/write separation disabled (that is, replicas can be written to and read fro
 Read/write separation enabled (that is, replicas can only be read from): write requests are routed by proxy to the master node, but read requests in a replica AZ are routed to the replica node in the same replica AZ so that read requests can get responded by the nearest node.
 
 ## Recommended Deployment Solution
-We recommend you deploy one master node and one replica node in the master AZ, and another replica node in the replica AZ. If the master node fails, the replica node in the master AZ can be promoted quickly to avoid cross-AZ master-replica switch. Such a deployment solution can maximize service availability and reduce the delay caused by master node failures.
-![](https://main.qcloudimg.com/raw/2a37b9c9346ac86111073e14000cf5f0.png)
+### Two-AZ deployment
+Deploy the master node and one replica node in the master AZ, and two replica nodes in the replica AZ. Both AZs, each of which has two nodes, are accessed through LB. If one node in an AZ fails, the read requests can be processed by the other node in the AZ. If an AZ fails, the other AZ is still highly available. This solution is applicable for use cases which have high requirements on availability and delay.
+![](https://main.qcloudimg.com/raw/5a3cc43871565e6371d1d990e9845324.png)
+
+### Three-AZ deployment
+Deploy the master node in the master AZ, one replica node in replica AZ 1, and one replica node in replica AZ 2. If one node or one AZ fails, the whole architecture still has cross-AZ high availability. This solution is application to use cases which have ultra high requirements on availability but are insensitive to delay.
+![](https://main.qcloudimg.com/raw/d2c4ad9ce6354559eaee7e191be59b7e.png)
 
 ## References
 - For more information on how to configure and view multi-AZ deployment in the TencentDB for Redis console, please see [Configuring Multi-AZ Deployment](https://intl.cloud.tencent.com/document/product/239/39799).
+- For more information on how to upgrade the deployment from single-AZ to multi-AZ in the TencentDB for Redis console, please see [Upgrading from Single-AZ to Multi-AZ](https://intl.cloud.tencent.com/document/product/239/39982).
 - For more information on how to enable and disable read/write separation in the TencentDB for Redis console, please see [Enabling/Disabling Read/write Separation](https://intl.cloud.tencent.com/document/product/239/31935).
+
