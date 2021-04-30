@@ -28,7 +28,7 @@ The routing policies in the route table can be real-time added, deleted, queried
        </td></tr>
    <tr><td>Next hop</td><td>Specify the next hop instance to redirect to, such as the gateway or CVM IP.</td></tr>
     <tr><td>Notes</td><td>You can custom the description of the route for resource management.</td></tr>
-    <tr><td>Add a line</td><td>You can click **+Add a line** to configure multiple routing policies, or click the deletion icon in the **Operation** column to delete the unnecessary routing policies.</td></tr>
+    <tr><td>Add a line</td><td>You can click <b>+Add a line</b> to configure multiple routing policies, or click the deletion icon in the <b>Operation</b> column to delete the unnecessary routing policies.</td></tr>
      </tbody> </table>
 		 <img src="https://main.qcloudimg.com/raw/c449580ff5918822373d9b0067ee877e.png">
 5. Click **Create** to complete the creation.
