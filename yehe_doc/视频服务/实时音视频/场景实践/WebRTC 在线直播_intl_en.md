@@ -227,6 +227,5 @@ If the `"Join room failed result: 10006 error: service is suspended,if charge is
 ## References
 
 - [TWebLive API Guide](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblive/TWebLive.html)
-- [Online demos](https://trtc.qcloud.com/tweblive/index.html#/)
-
+- [Online demos](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblivedemo/index.html)
 
