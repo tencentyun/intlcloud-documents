@@ -39,7 +39,7 @@ TRTC SDK는 NV12, i420의 두 가지 iOS 버전의 YUV 데이터 포맷을 지�
 | height   | uint32_t| 비디오 화면 높이 | 전달 화면의 픽셀 높이를 정확하게 작성하십시오. |
 | rotation | TRTCVideoRotation| 입력하지 않음 | 해당 필드는 사용자 정의 렌더링에 사용되며, 여기에서는 설정하지 않습니다. |
 
-**예시 코드**: [Demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/CustomCapture/testCustomVideo) 폴더에서 `TestSendCustomVideoData.m` 파일은 로컬 비디오 파일에서 NV12 포맷의 PixelBuffer를 읽는 방법을 정의하고 있으며 SDK를 통해 후속 처리합니다.
+**예시 코드**: [Demo] 폴더에서 `TestSendCustomVideoData.m` 파일은 로컬 비디오 파일에서 NV12 포맷의 PixelBuffer를 읽는 방법을 정의하고 있으며 SDK를 통해 후속 처리합니다.
 
 ```objectiveC
 //TRTCVideoFrame을 어셈블리하고, 이를 trtcCloud 객체로 전달
