@@ -103,6 +103,7 @@ TRTC SDK 6.6 バージョン（2019年8月）以降、新しい署名アルゴ�
 ![](https://main.qcloudimg.com/raw/33bd04fe44f1a9b4163709f3c513643c.png)
 
 
+
 ## 関連資料
 
 - [TWebLive インターフェースマニュアル](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblive/TWebLive.html)
