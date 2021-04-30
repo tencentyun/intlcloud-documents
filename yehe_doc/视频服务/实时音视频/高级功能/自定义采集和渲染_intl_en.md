@@ -37,7 +37,7 @@ On iOS, the TRTC SDK supports data in two YUV formats: NV12 and I420. Image tran
 |  rotation   |  TRTCVideoRotation   |                       Leave it empty                        | <ul style="margin:0"><li/>It is left empty by default. <li/>If you want to rotate the video, set it to `TRTCVideoRotation_0`, `TRTCVideoRotation_90`, `TRTCVideoRotation_180`, or `TRTCVideoRotation_270`. The SDK will rotate the video clockwise by the number of degrees set. For example, if `TRTCVideoRotation_90` is passed in, an image in the portrait mode will switch to the landscape mode after rotation.</ul> |
 
 #### Sample code
-The [demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/CustomCapture/testCustomVideo) folder includes a file named `TestSendCustomVideoData.m`, which shows how to extract NV12 formatted PixelBuffer from a local video file and process the data using the SDK.
+The [demo] folder includes a file named `TestSendCustomVideoData.m`, which shows how to extract NV12 formatted PixelBuffer from a local video file and process the data using the SDK.
 
 ```objectiveC
 // Assemble a `TRTCVideoFrame` and send it to a `trtcCloud` object.
