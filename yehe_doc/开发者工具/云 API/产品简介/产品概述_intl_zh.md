@@ -17,5 +17,5 @@
 您可通过以下资源快速查询及使用云 API：
  -  <b>[API 中心](https://intl.cloud.tencent.com/document/api)</b>：可通过 API 中心快速了解腾讯云各产品 API 信息并使用云 API。
  -  <b>[API Explorer 工具](https://console.cloud.tencent.com/api/explorer)</b>：可使用 API Explorer 工具快速便捷完成 API 调用。
- -  <b>[SDK 中心](https://intl.cloud.tencent.com/document/494)</b>：可通过 SDK 中心使用对应的资源。
+ -  <b>[SDK 中心](https://intl.cloud.tencent.com/document/product/494)</b>：可通过 SDK 中心使用对应的资源。
  -  <b>[API Inspector 工具](https://console.cloud.tencent.com/cvm/instance/index?rid=1)</b>：可录制控制台操作对应的 API 调用信息，并自动生成多语言 API 代码片段参数预填充。
