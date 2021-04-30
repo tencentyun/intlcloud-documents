@@ -48,7 +48,7 @@ list_objects(Bucket, Delimiter="", Marker="", MaxKeys=1000, Prefix="", EncodingT
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```python
 response = client.list_objects(
     Bucket='examplebucket-1250000000',
@@ -58,7 +58,7 @@ response = client.list_objects(
 
 #### 全部参数请求示例
 
-[//]: # (.cssg-snippet-get-bucket-with-delimiter)
+[//]: # ".cssg-snippet-get-bucket-with-delimiter"
 ```python
 response = client.list_objects(
     Bucket='examplebucket-1250000000',
@@ -71,13 +71,13 @@ response = client.list_objects(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket   | 存储桶名称，由 BucketName-APPID 构成  | String  | 是| 
-| Prefix   |  默认为空，对对象的对象键进行筛选，匹配 prefix 为前缀的对象  | String  |  否| 
+| Bucket   | 存储桶名称，由 BucketName-APPID 构成  | String  | 是|
+| Prefix   |  默认为空，对对象的对象键进行筛选，匹配 prefix 为前缀的对象  | String  |  否|
 | Delimiter   |   默认为空，设置分隔符，例如设置 `/` 来模拟文件夹  | String|  否|
-| Marker   |  默认以 UTF-8 二进制顺序列出条目，标记返回对象的 list 的起点位置  | String  |  否| 
-| MaxKeys   | 最多返回的对象数量，默认为最大的1000  | Int  |  否| 
+| Marker   |  默认以 UTF-8 二进制顺序列出条目，标记返回对象的 list 的起点位置  | String  |  否|
+| MaxKeys   | 最多返回的对象数量，默认为最大的1000  | Int  |  否|
 | EncodingType   |   默认不编码，规定返回值的编码方式，可选值：url  | String  | 否|
 
 #### 返回结果说明
@@ -115,16 +115,16 @@ response = client.list_objects(
 }
 ```
 
-| 参数名称   | 参数描述   |类型 | 
+| 参数名称   | 参数描述   |类型 |
 | -------------- | -------------- |---------- |
 | MaxKeys   | 最多返回的对象数量，默认为最大的1000  | String |
 | Prefix   |  默认为空，匹配 Prefix 为前缀的对象 | String|
 | Delimiter   |   默认为空，设置分隔符，例如设置 `/` 来模拟文件夹  | String|
 | Marker   |  默认以 UTF-8 二进制顺序列出条目，标记返回对象的 list 的起点位置  | String  |
 | NextMarker|  当 IsTruncated 为 true 时，标记下一次返回对象的 list 的起点位置  | String  |
-| Name   | 存储桶名称，由 BucketName-APPID 构成  | String  | 
+| Name   | 存储桶名称，由 BucketName-APPID 构成  | String  |
 | IsTruncated   |  表示返回的对象是否被截断  | String|
-| EncodingType   | 默认不编码，规定返回值的编码方式，可选值：url  | String  | 
+| EncodingType   | 默认不编码，规定返回值的编码方式，可选值：url  | String  | 否|
 |Contents |包含所有对象元数据的 list，包括 'ETag'，'StorageClass'，'Key'，'Owner'，'LastModified'，'Size' 等信息|List|
 |CommonPrefixes |所有以 Prefix 开头，以 Delimiter 结尾的对象被归到同一类|List|
 
@@ -141,7 +141,7 @@ list_objects_versions(Bucket, Prefix="", Delimiter="", KeyMarker="", VersionIdMa
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-list-objects-versioning)
+[//]: # ".cssg-snippet-list-objects-versioning"
 ```python
 response = client.list_objects_versions(
     Bucket='examplebucket-1250000000',
@@ -151,7 +151,7 @@ response = client.list_objects_versions(
 
 #### 全部参数请求示例
 
-[//]: # (.cssg-snippet-list-objects-versioning-next-page)
+[//]: # ".cssg-snippet-list-objects-versioning-next-page"
 ```python
 response = client.list_objects_versions(
     Bucket='examplebucket-1250000000',
@@ -165,14 +165,14 @@ response = client.list_objects_versions(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
-| Bucket   | 存储桶名称，由 BucketName-APPID 构成  | String  | 是| 
-| Prefix   |  默认为空，对对象的对象键进行筛选，匹配 prefix 为前缀的对象  | String  |  否| 
+| Bucket   | 存储桶名称，由 BucketName-APPID 构成  | String  | 是|
+| Prefix   |  默认为空，对对象的对象键进行筛选，匹配 prefix 为前缀的对象  | String  |  否|
 | Delimiter   |   默认为空，设置分隔符，例如设置 `/` 来模拟文件夹  | String|  否|
 | KeyMarker   |  默认以 UTF-8 二进制顺序列出条目，标记返回对象的 list 的 Key 的起点位置  | String  |  否|
 | VersionIdMarker|  默认以 UTF-8 二进制顺序列出条目，标记返回对象的 list 的 VersionId 的起点位置  | String  |  否|
-| MaxKeys   | 最多返回的对象数量，默认为最大的1000  | Int  |  否| 
+| MaxKeys   | 最多返回的对象数量，默认为最大的1000  | Int  |  否|
 | EncodingType   |   默认不编码，规定返回值的编码方式，可选值：url  | String  | 否|
 
 #### 返回结果说明
@@ -226,7 +226,7 @@ response = client.list_objects_versions(
 }
 ```
 
-| 参数名称   | 参数描述   |类型 | 
+| 参数名称   | 参数描述   |类型 |
 | -------------- | -------------- |---------- |
 | MaxKeys   | 最多返回的对象数量，默认为最大的1000  | String |
 | Prefix   |  默认为空，匹配 Prefix 为前缀的对象 | String|
@@ -235,9 +235,9 @@ response = client.list_objects_versions(
 | VersionIdMarker|  默认以 UTF-8 二进制顺序列出条目，标记返回对象的 list 的 VersionId 的起点位置  | String  |
 | NextKeyMarker|  当 IsTruncated 为 true 时，标记下一次返回对象的 list 的 Key 的起点位置  | String  |
 | NextVersionIdMarker | 当 IsTruncated 为 true 时，标记下一次返回对象的 list 的 VersionId 的起点位置  | String  |
-| Name   | 存储桶名称，由 BucketName-APPID 构成  | String  | 
+| Name   | 存储桶名称，由 BucketName-APPID 构成  | String  |
 | IsTruncated   |  表示返回的对象是否被截断  | String|
-| EncodingType   | 默认不编码，规定返回值的编码方式，可选值：url  | String  | 
+| EncodingType   | 默认不编码，规定返回值的编码方式，可选值：url  | String  | 否|
 |Version |包含所有多个版本对象元数据的 list，包括 'ETag'，'StorageClass'，'Key'，'VersionId'，'IsLatest'，'Owner'，'LastModified'，'Size' 等信息|List|
 |DeleteMarker|包含所有delete marker 对象元数据的 list，包括 'Key'，'VersionId'，'IsLatest'，'Owner'，'LastModified' 等信息|List|
 |CommonPrefixes |所有以 Prefix 开头，以 Delimiter 结尾的对象被归到同一类|List|
@@ -255,18 +255,96 @@ put_object(Bucket, Body, Key, **kwargs)
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-put-object)
+[//]: # ".cssg-snippet-put-object"
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+from qcloud_cos import CosServiceError
+from qcloud_cos import CosClientError
+
+import sys
+import logging
+
+
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+
+# 设置用户属性, 包括 secret_id, secret_key, region
+# APPID 已在配置中移除，请在参数 Bucket 中带上 APPID。Bucket 由 BucketName-APPID 组成
+secret_id = 'secret_id'     # 替换为用户的 secret_id
+secret_key = 'secret_key'     # 替换为用户的 secret_key
+region = 'ap-beijing'    # 替换为用户的 region
+token = None               # 使用临时密钥需要传入 Token，默认为空,可不填
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # 获取配置对象
+client = CosS3Client(config)
+
+# 文件流 简单上传
+file_name = 'test.txt'
+with open('test.txt', 'rb') as fp:
+    response = client.put_object(
+        Bucket='examplebucket-1250000000',  # Bucket 由 BucketName-APPID 组成
+        Body=fp,
+        Key=file_name,
+        StorageClass='STANDARD',
+        ContentType='text/html; charset=utf-8'
+    )
+    print(response['ETag'])
+
+# 字节流 简单上传
 response = client.put_object(
     Bucket='examplebucket-1250000000',
-    Body=b'bytes',
-    Key='exampleobject',
-    EnableMD5=False
+    Body=b'abcdefg',
+    Key=file_name
 )
+print(response['ETag'])
+
+# 本地路径 简单上传
+response = client.put_object_from_local_file(
+    Bucket='examplebucket-1250000000',
+    LocalFilePath='local.txt',
+    Key=file_name,
+)
+print(response['ETag'])
+
+# 设置 HTTP 头部 简单上传
+response = client.put_object(
+    Bucket='examplebucket-1250000000',
+    Body=b'test',
+    Key=file_name,
+    ContentType='text/html; charset=utf-8'
+)
+print(response['ETag'])
+
+# 设置自定义头部 简单上传
+response = client.put_object(
+    Bucket='examplebucket-1250000000',
+    Body=b'test',
+    Key=file_name,
+    Metadata={
+        'x-cos-meta-key1': 'value1',
+        'x-cos-meta-key2': 'value2'
+    }
+)
+print(response['ETag'])
+
+
+# 创建目录
+# 对象存储中，目录是特殊的路径以‘/’结尾的 object。调用 Put Object 接口即可
+try:
+    dir_to_create='path/to/create/dir/'
+    response = client.put_object(
+        Bucket=bucket,
+        Key=dir_to_create,
+        Body=b'',
+    )
+    print(response)
+except CosServiceError as e:
+    print(e.get_status_code())
 ```
 
 #### 全部参数请求示例
-[//]: # (.cssg-snippet-put-object-comp)
+[//]: # ".cssg-snippet-put-object-comp"
 ```python
 response = client.put_object(
     Bucket='examplebucket-1250000000',
@@ -295,26 +373,26 @@ response = client.put_object(
 #### 参数说明
 
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
- |  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String |   是 |
- |  Body  | 上传对象的内容，可以为文件流或字节流 |  file/bytes |  是 |
- |  Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String |  是 | 
-| EnableMD5 | 是否需要 SDK 计算 Content-MD5，默认关闭，打开后将增加上传耗时|Bool | 否| 
+|  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String |   是 |
+|  Body  | 上传对象的内容，可以为文件流或字节流 |  file/bytes |  是 |
+|  Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String |  是 |
+| EnableMD5 | 是否需要 SDK 计算 Content-MD5，默认关闭，打开后将增加上传耗时|Bool | 否|
 | ACL |设置对象的 ACL，例如 'private'，'public-read' |String| 否|
 | GrantFullControl |赋予被授权者所有的权限，格式为 `id="OwnerUin"`|String|否|
 |GrantRead |赋予被授权者读的权限，格式为 `id="OwnerUin"`  |String|否|
- |  StorageClass  |  设置对象的存储类型，STANDARD，STANDARD_IA，ARCHIVE。默认值 STANDARD | String |   否 |
- |  Expires  | 设置 Expires | String|  否 | 
- |  CacheControl  |  缓存策略，设置 Cache-Control | String |   否 |
- |  ContentType  | 内容类型，设置 Content-Type |String |   否 |  
- |  ContentDisposition  |  对象名称，设置 Content-Disposition | String |   否 |
- |  ContentEncoding  |  编码格式，设置 Content-Encoding | String |   否 |
- |  ContentLanguage  |  语言类型，设置 Content-Language | String |   否 |
- |  ContentLength  | 设置传输长度 | String |   否 | 
- |  ContentMD5  | 设置上传对象的 MD5 值用于校验 | String |   否 | 
- |  Metadata | 用户自定义的对象元数据， 必须以 x-cos-meta 开头，否则会被忽略 | Dict |  否 |
- |  TrafficLimit | 单链接限速的值，单位为bit/s，限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s | String |  否 |
+|  StorageClass  |  设置对象的存储类型，STANDARD，STANDARD_IA，ARCHIVE。默认值为 STANDARD。更多存储类型，请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925) | String |   否 |
+|  Expires  | 设置 Expires | String|  否 |
+|  CacheControl  |  缓存策略，设置 Cache-Control | String |   否 |
+|  ContentType  | 内容类型，设置 Content-Type |String |   否 |
+|  ContentDisposition  |  对象名称，设置 Content-Disposition | String |   否 |
+|  ContentEncoding  |  编码格式，设置 Content-Encoding | String |   否 |
+|  ContentLanguage  |  语言类型，设置 Content-Language | String |   否 |
+|  ContentLength  | 设置传输长度 | String |   否 |
+|  ContentMD5  | 设置上传对象的 MD5 值用于校验 | String |   否 |
+|  Metadata | 用户自定义的对象元数据， 必须以 x-cos-meta 开头，否则会被忽略 | Dict |  否 |
+|  TrafficLimit | 单链接限速的值，单位为bit/s，限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s | String |  否 |
 
 #### 返回结果说明
 上传对象的属性，类型为 dict：
@@ -327,7 +405,7 @@ response = client.put_object(
 ```
 
 
-| 参数名称   | 参数描述   |类型 | 
+| 参数名称   | 参数描述   |类型 |
 | -------------- | -------------- |---------- |
 |  ETag   |  上传对象的 MD5 值  | String  |
 |  x-cos-version-id   |  开启版本控制后，对象的版本号 | String  |
@@ -347,7 +425,7 @@ head_object(Bucket, Key, **kwargs)
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-head-object)
+[//]: # ".cssg-snippet-head-object"
 ```python
 response = client.head_object(
     Bucket='examplebucket-1250000000',
@@ -366,12 +444,12 @@ response = client.head_object(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
-  | Bucket   | Bucket 名称，由 BucketName-APPID 构成  | String  |  是 | 
-  | Key   |  对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg  |String  | 是 |
-  | VersionId   | 开启版本控制后，指定对象的具体版本  | String  | 否 | 
-  | IfModifiedSince   | 在指定时间后被修改才返回，时间格式为 GMT  | String  | 否 | 
+| Bucket   | Bucket 名称，由 BucketName-APPID 构成  | String  |  是 |
+| Key   |  对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg  |String  | 是 |
+| VersionId   | 开启版本控制后，指定对象的具体版本  | String  | 否 |
+| IfModifiedSince   | 在指定时间后被修改才返回，时间格式为 GMT  | String  | 否 |
 
 #### 返回结果说明
 
@@ -395,19 +473,19 @@ response = client.head_object(
 ```
 
 
-| 参数名称   | 参数描述   |类型 | 
-| -------------- | -------------- |---------- | 
- | ETag  |  分块上传时，该值不是对象内容的 MD5 校验值，仅能用于检查对象唯一性 |String|
- | Last-Modified | 对象最后修改时间| String|
- |  Cache-Control  |  缓存策略， HTTP 标准头部| String |
- |  Content-Type  | 内容类型，HTTP 标准头部 |String |
- |  Content-Disposition  |  文件名称，HTTP 标准头部 |String |
- |  Content-Encoding  |  编码格式，HTTP 标准头部| String |
- |  Content-Language  |  语言类型，HTTP 标准头部 | String |
- |  Content-Length  | 对象大小 | String |
- |  Expires | 缓存过期时间， HTTP 标准头部| String |
- |  x-cos-meta-* | 用户自定义的对象元数据， 必须以 x-cos-meta 开头，否则会被忽略 | String | 
- |  x-cos-version-id | 开启版本控制后，对象的版本号 | String | 
+| 参数名称   | 参数描述   |类型 |
+| -------------- | -------------- |---------- |
+| ETag  |  分块上传时，该值不是对象内容的 MD5 校验值，仅能用于检查对象唯一性 |String|
+| Last-Modified | 对象最后修改时间| String|
+|  Cache-Control  |  缓存策略， HTTP 标准头部| String |
+|  Content-Type  | 内容类型，HTTP 标准头部 |String |
+|  Content-Disposition  |  文件名称，HTTP 标准头部 |String |
+|  Content-Encoding  |  编码格式，HTTP 标准头部| String |
+|  Content-Language  |  语言类型，HTTP 标准头部 | String |
+|  Content-Length  | 对象大小 | String |
+|  Expires | 缓存过期时间， HTTP 标准头部| String |
+|  x-cos-meta-* | 用户自定义的对象元数据， 必须以 x-cos-meta 开头，否则会被忽略 | String |
+|  x-cos-version-id | 开启版本控制后，对象的版本号 | String |
 
 
 ### 下载对象
@@ -432,7 +510,7 @@ response['Body'].get_stream_to_file('exampleobject')
 ```
 #### 全部参数请求示例
 
-[//]: # (.cssg-snippet-get-object)
+[//]: # ".cssg-snippet-get-object"
 ```python
 response = client.get_object(
     Bucket='examplebucket-1250000000',
@@ -454,23 +532,23 @@ response = client.get_object(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
- |  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String  |  是 | 
- |  Key  |  对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String  | 是 | 
- |  Range  |  设置下载对象的范围，格式为 bytes=first-last  | String  |  否 | 
- |  IfMatch  |  ETag 与指定的内容一致时才返回 |String  | 否 |  
- |  IfModifiedSince  |   在指定时间后被修改才返回，时间格式为 GMT | String  | 否 |
- |  IfNoneMatch  |  ETag 与指定的内容不一致才返回 | String  | 否 | 
- |  IfUnmodifiedSince  |  对象修改时间早于或等于指定时间才返回，时间格式为 GMT| String  | 否|
- |  ResponseCacheControl  |  设置响应头部 Cache-Control | String  | 否 | 
- |  ResponseContentDisposition  |  设置响应头部 Content-Disposition | String  | 否 | 
- |  ResponseContentEncoding  |   设置响应头部 Content-Encoding | String  | 否 |
- |  ResponseContentLanguage  |  设置响应头部 Content-Language | String  | 否 | 
- |  ResponseContentType  |   设置响应头部 Content-Type | String  | 否 |
- |  ResponseExpires  |设置响应头部 Expires |   String  | 否 | 
- |  VersionId  | 指定下载对象的版本 |  String  | 否 |
- |  TrafficLimit | 单链接限速的值，单位为bit/s，限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s，高级接口限制的是单线程的速度| String |  否 |
+|  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String  |  是 |
+|  Key  |  对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String  | 是 |
+|  Range  |  设置下载对象的范围，格式为 bytes=first-last  | String  |  否 |
+|  IfMatch  |  ETag 与指定的内容一致时才返回 |String  | 否 |
+|  IfModifiedSince  |   在指定时间后被修改才返回，时间格式为 GMT | String  | 否 |
+|  IfNoneMatch  |  ETag 与指定的内容不一致才返回 | String  | 否 |
+|  IfUnmodifiedSince  |  对象修改时间早于或等于指定时间才返回，时间格式为 GMT| String  | 否|
+|  ResponseCacheControl  |  设置响应头部 Cache-Control | String  | 否 |
+|  ResponseContentDisposition  |  设置响应头部 Content-Disposition | String  | 否 |
+|  ResponseContentEncoding  |   设置响应头部 Content-Encoding | String  | 否 |
+|  ResponseContentLanguage  |  设置响应头部 Content-Language | String  | 否 |
+|  ResponseContentType  |   设置响应头部 Content-Type | String  | 否 |
+|  ResponseExpires  |设置响应头部 Expires |   String  | 否 |
+|  VersionId  | 指定下载对象的版本 |  String  | 否 |
+|  TrafficLimit | 单链接限速的值，单位为bit/s，限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s，高级接口限制的是单线程的速度| String |  否 |
 
 #### 返回结果说明
 
@@ -589,7 +667,7 @@ copy_object(Bucket, Key, CopySource, CopyStatus='Copy', **kwargs)
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-copy-object)
+[//]: # ".cssg-snippet-copy-object"
 ```python
 response = client.copy_object(
     Bucket='examplebucket-1250000000',
@@ -632,24 +710,24 @@ response = client.copy_object(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
- |  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String|  是 |
- |  Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String| 是 | 
- |  CopySource  | 描述拷贝源对象的路径，包含 Bucket、Key、Region、VersionId |  Dict | 是 |
- |  CopyStatus  |  可选值为 'Copy'，'Replaced'，设置为 'Copy' 时，忽略设置的用户元数据信息直接复制，设置为 'Replaced' 时，按设置的元信息修改元数据，当目标路径和源路径一样时，必须设置为 'Replaced' | String |  是 |
-| ACL |设置对象的ACL，如 'private'，'public-read' |String| 否|
+|  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String|  是 |
+|  Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String| 是 |
+|  CopySource  | 描述拷贝源对象的路径，包含 Bucket、Key、Region、VersionId |  Dict | 是 |
+|  CopyStatus  |  可选值为 Copy、Replaced，设置为 Copy 时，忽略设置的用户元数据信息直接复制，设置为 Replaced 时，按设置的元信息修改元数据，当目标路径和源路径一样时，必须设置为 Replaced | String| 是 |
+| ACL |设置对象的 ACL，如 private，public-read |String| 否|
 | GrantFullControl |赋予指定账户对对象的所有权限，格式为 `id="OwnerUin"`|String|否|
 |GrantRead |赋予指定账户对对象的读权限，格式为 `id="OwnerUin"`|String|否|
- |  StorageClass  |  设置对象的存储类型，STANDARD，STANDARD_IA，默认值 STANDARD | String|  否 |
- |  Expires  | 设置 Expires | String| 否 | 
- |  CacheControl  | 缓存策略，设置 Cache-Control | String|  否 | 
- |  ContentType  | 内容类型，设置 Content-Type | String|  否 | 
- |  ContentDisposition  |  文件名称，设置 Content-Disposition | String|  否 |
- |  ContentEncoding  | 编码格式，设置 Content-Encoding | String|  否 | 
- |  ContentLanguage  |  语言类型，设置 Content-Language | String|  否 |
- |  Metadata |用户自定义的对象元数据 | Dict |  否 | 
- 
+|  StorageClass  |  设置对象的存储类型，STANDARD，STANDARD_IA，默认值 STANDARD | String|  否 |
+|  Expires  | 设置 Expires | String| 否 |
+|  CacheControl  | 缓存策略，设置 Cache-Control | String|  否 |
+|  ContentType  | 内容类型，设置 Content-Type | String|  否 |
+|  ContentDisposition  |  文件名称，设置 Content-Disposition | String|  否 |
+|  ContentEncoding  | 编码格式，设置 Content-Encoding | String|  否 |
+|  ContentLanguage  |  语言类型，设置 Content-Language | String|  否 |
+|  Metadata |用户自定义的对象元数据 | Dict |  否 |
+
 
 #### 返回结果说明
 上传对象的属性，类型为 dict：
@@ -663,12 +741,12 @@ response = client.copy_object(
 }
 ```
 
-| 参数名称   | 参数描述   |类型 | 
-| -------------- | -------------- |---------- | 
+| 参数名称   | 参数描述   |类型 |
+| -------------- | -------------- |---------- |
 | ETag |拷贝对象的 MD5 值|String|
 | LastModified |拷贝对象的最后一次修改时间|String|
 | VersionId | 开启版本控制后，目的对象的版本号 | String |
-| x-cos-copy-source-version-id | 源对象的版本号 | String | 
+| x-cos-copy-source-version-id | 源对象的版本号 | String |
 
 
 ### 删除单个对象
@@ -682,15 +760,94 @@ response = client.copy_object(
 ```
 delete_object(Bucket, Key, **kwargs)
 ```
-#### 请求示例
+#### 请求示例1：删除单个对象
 
-[//]: # (.cssg-snippet-delete-object)
+[//]: # ".cssg-snippet-delete-object"
 ```python
 response = client.delete_object(
     Bucket='examplebucket-1250000000',
     Key='exampleobject'
 )
 ```
+
+#### 请求示例2：删除目录
+
+对象存储中，目录是特殊的路径以“/”结尾的 object。可直接调用 Delete Object 接口实现删除目录。
+
+[//]: # ".cssg-snippet-delete-object"
+```python
+try:
+    to_delete_dir='path/to/delete/dir/'
+    response = client.delete_object(
+        Bucket='examplebucket-1250000000',
+        Key=to_delete_dir,
+    )
+    print(response)
+except CosServiceError as e:
+    print(e.get_status_code())
+```
+
+#### 请求示例3：前缀批量删除
+
+[//]: # ".cssg-snippet-delete-multi-object"
+```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+from qcloud_cos import CosServiceError
+from qcloud_cos import CosClientError
+
+import sys
+import os
+import logging
+
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+from qcloud_cos import CosServiceError
+from qcloud_cos import CosClientError
+
+import sys
+import os
+import logging
+
+# 设置用户属性，包括 secret_id, secret_key, region
+# APPID 已在配置中移除，请在参数 Bucket 中带上 APPID。Bucket 由 BucketName-APPID 组成
+secret_id = ''     # 替换为用户的 secret_id
+secret_key = ''     # 替换为用户的 secret_key
+region = 'ap-guangzhou'    # 替换为用户的 region
+token = None               # 使用临时密钥需要传入 Token，默认为空,可不填
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # 获取配置对象
+client = CosS3Client(config)
+
+# 删除指定前缀 (prefix)的文件
+bucket = 'examplebucket-1250000000'
+is_over = False
+marker = ''
+prefix = 'root/logs'
+while not is_over:
+    try:
+        response = client.list_objects(Bucket=bucket, Prefix=prefix, Marker=marker)
+        if response['Contents']:
+            for content in response['Contents']:
+                print("delete object: ", content['Key'])
+                client.delete_object(Bucket=bucket, Key=content['Key'])
+
+            if response['IsTruncated'] == 'false':
+                is_over = True
+                marker = response['Marker']
+    except CosServiceError as e:
+        print(e.get_origin_msg())
+        print(e.get_digest_msg())
+        print(e.get_status_code())
+        print(e.get_error_code())
+        print(e.get_error_msg())
+        print(e.get_resource_location())
+        print(e.get_trace_id())
+        print(e.get_request_id())
+        break
+```
+
 #### 全部参数请求示例
 
 ```python
@@ -702,11 +859,11 @@ response = client.delete_object(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
- | Bucket  |存储桶名称，由 BucketName-APPID 构成 |  String |  是 | 
- | Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String | 是 |
- | VersionId   | 开启版本控制后，指定对象的具体版本  | String  | 否 | 
+| Bucket  |存储桶名称，由 BucketName-APPID 构成 |  String |  是 |
+| Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String | 是 |
+| VersionId   | 开启版本控制后，指定对象的具体版本  | String  | 否 |
 
 #### 返回结果说明
 
@@ -719,10 +876,12 @@ response = client.delete_object(
 }
 ```
 
-| 参数名称   | 参数描述   |类型 | 
-| -------------- | -------------- |---------- | 
+| 参数名称   | 参数描述   |类型 |
+| -------------- | -------------- |---------- |
 | x-cos-version-id | 删除对象的版本号 | String |
-| x-cos-delete-marker | 标识删除的对象是否为 delete marker | String | 
+| x-cos-delete-marker | 标识删除的对象是否为 delete marker | String |
+
+
 
 ### 删除多个对象
 
@@ -737,7 +896,7 @@ delete_objects(Bucket, Delete={}, **kwargs)
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-delete-multi-object)
+[//]: # ".cssg-snippet-delete-multi-object"
 ```python
 response = client.delete_objects(
     Bucket='examplebucket-1250000000',
@@ -776,14 +935,14 @@ response = client.delete_objects(
 
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
- | Bucket  | Bucket 名称，由 BucketName-APPID 构成 |  String |  是 | 
- | Delete  | 说明本次删除的返回结果方式和目标 Object | Dict | 是 | 
- | Object  | 说明每个将要删除的目标 Object 信息 | List | 是 | 
- | Key     | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg| String|否|
- | VersionId | 开启版本控制后，目的对象的版本号 | String |否|
- | Quiet   |指明删除的返回结果方式，可选值为 'true'，'false'，默认为 'false'。设置为 'true' 只返回失败的错误信息，设置为 'false' 时返回成功和失败的所有信息|String|否|
+| Bucket  | Bucket 名称，由 BucketName-APPID 构成 |  String |  是 |
+| Delete  | 说明本次删除的返回结果方式和目标 Object | Dict | 是 |
+| Object  | 说明每个将要删除的目标 Object 信息 | List | 是 |
+| Key     | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg| String|否|
+| VersionId | 开启版本控制后，目的对象的版本号 | String |否|
+| Quiet   |指明删除的返回结果方式，可选值为 true、false，默认为 false。设置为 true 只返回失败的错误信息，设置为 false 时返回成功和失败的所有信息|String|否|
 
 #### 返回结果说明
 批量删除对象的结果，类型为 dict：
@@ -811,18 +970,19 @@ response = client.delete_objects(
 }
 ```
 
-| 参数名称   | 参数描述   |类型 | 
+| 参数名称   | 参数描述   |类型 |
 | -------------- | -------------- |---------- |
- | Deleted  |  删除成功的 Object 信息|  List |
- | Key     | 删除成功的 Object 的路径| String|
- | VersionId     | 删除成功的 Object 的版本号| String|
- | DeleteMarker     | 删除成功的 Object 是否为 delete marker| String|
- | DeleteMarkerVersionId | 删除成功的 Object 的 delete marker 的版本号| String|
- | Error  |  删除失败的 Object 信息| List |
- | Key     | 删除失败的 Object 的路径| String|
- | VersionId     | 删除失败的 Object 的版本号| String|
- | Code     | 删除失败的 Object 对应的错误码| String|
- | Message   |删除失败的 Object 对应的错误信息| String|
+| Deleted  |  删除成功的 Object 信息|  List |
+| Key     | 删除成功的 Object 的路径| String|
+| VersionId     | 删除成功的 Object 的版本号| String|
+| DeleteMarker     | 删除成功的 Object 是否为 delete marker| String|
+| DeleteMarkerVersionId | 删除成功的 Object 的 delete marker 的版本号| String|
+| Error  |  删除失败的 Object 信息| List |
+| Key     | 删除失败的 Object 的路径| String|
+| VersionId     | 删除失败的 Object 的版本号| String|
+| Code     | 删除失败的 Object 对应的错误码| String|
+| Message   |删除失败的 Object 对应的错误信息| String|
+
 
 
 ### 恢复归档对象 
@@ -838,7 +998,7 @@ restore_object(Bucket, Key, RestoreRequest={}, **kwargs)
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-restore-object)
+[//]: # ".cssg-snippet-restore-object"
 ```python
 response = client.restore_object(
     Bucket='examplebucket-1250000000',
@@ -867,14 +1027,14 @@ response = client.restore_object(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
 |Bucket|存储桶名称，由 BucketName-APPID 构成|String| 是|
 |Key |对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg|String|是|
 |RestoreRequest| 描述取回的临时对象的规则| Dict|是|
 |Days| 描述临时对象的过期时间| Int|是|
 |CASJobParameters| 描述恢复类型的配置信息| Dict|否|
-|Tier| 描述恢复对象的模式，可选值为 'Expedited'，Standard'，'Bulk'，分别对应极速、标准以及批量这三种模式| String|否|
+|Tier| 描述恢复对象的模式，若需恢复归档存储类型的数据，可选值为 Expedited、Standard、Bulk，分别对应极速、标准以及批量这三种模式。若需恢复深度归档存储类型的数据，则可选值为 Standard、Bulk| String|否|
 
 #### 返回结果说明
 该方法返回值为 None。
@@ -893,7 +1053,7 @@ select_object_content(Bucket, Key, Expression, ExpressionType, InputSerializatio
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-select-object-content)
+[//]: # ".cssg-snippet-select-object-content"
 ```python
 response = client.select_object_content(
     Bucket='examplebucket-1250000000',
@@ -939,7 +1099,7 @@ response = client.select_object_content(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
 |Bucket|存储桶名称，由 BucketName-APPID 构成|String| 是|
 |Key |对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`中，对象键为 doc/pic.jpg|String|是|
@@ -992,7 +1152,7 @@ list_multipart_uploads(Bucket, Prefix="", Delimiter="", KeyMarker="", UploadIdMa
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-list-multi-upload)
+[//]: # ".cssg-snippet-list-multi-upload"
 ```python
 response = client.list_multipart_uploads(
     Bucket='examplebucket-1250000000',
@@ -1014,14 +1174,14 @@ response = client.list_multipart_uploads(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
 | Bucket   | 存储桶名称，由 BucketName-APPID 构成  | String  | 是|
-| Prefix   |  默认为空，对分块上传的 key 进行筛选，匹配 prefix 为前缀的分块上传  | String  |  否| 
+| Prefix   |  默认为空，对分块上传的 key 进行筛选，匹配 prefix 为前缀的分块上传  | String  |  否|
 | Delimiter   |   默认为空，设置分隔符| String|  否|
 | KeyMarker   |  和 UploadIdMarker 一起使用，指明列出分块上传的起始位置  | String  |  否|
 | UploadIdMarker   |  和 KeyMarker 一起使用，指明列出分块上传的起始位置。如果未指定 KeyMarker，UploadIdMarker 将被忽略| String  |  否|
-| MaxUploads   | 最多返回的分块上传的数量，默认为最大的1000  | Int  |  否| 
+| MaxUploads   | 最多返回的分块上传的数量，默认为最大的1000  | Int  |  否|
 | EncodingType   |   默认不编码，规定返回值的编码方式，可选值：url  | String  | 否|
 
 #### 返回结果说明
@@ -1064,9 +1224,9 @@ response = client.list_multipart_uploads(
 }
 ```
 
-| 参数名称   | 参数描述   |类型 | 
+| 参数名称   | 参数描述   |类型 |
 | -------------- | -------------- |---------- |
-| Bucket   | 存储桶名称，由 BucketName-APPID 构成  | String  | 
+| Bucket   | 存储桶名称，由 BucketName-APPID 构成  | String  |
 | Prefix   |  默认为空，对分块上传的 key 进行筛选，匹配 prefix 为前缀的分块上传  | String  |
 | Delimiter   |   默认为空，设置分隔符| String|
 | KeyMarker   |  和 UploadIdMarker 一起使用，指明列出分块上传的 key 起始位置  | String  |
@@ -1093,7 +1253,7 @@ create_multipart_upload(Bucket, Key, **kwargs):
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-init-multi-upload)
+[//]: # ".cssg-snippet-init-multi-upload"
 ```python
 response = client.create_multipart_upload(
     Bucket='examplebucket-1250000000',
@@ -1127,19 +1287,19 @@ uploadid = response['UploadId']
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
- | Bucket  | Bucket 名称，由 BucketName-APPID 构成 |  String |  是 |
- | Key  |  对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String | 是 |
- | StorageClass  | 设置对象的存储类型，STANDARD，STANDARD_IA，ARCHIVE。默认值 STANDARD | String |  否 | 
- | Expires  |  设置 Expires | String| 否 |
- | CacheControl  | 缓存策略，设置 Cache-Control | String |  否 | 
- | ContentType  | 内容类型，设置 Content-Type | String |  否 | 
- | ContentDisposition  | 文件名称，设置 Content-Disposition | String |  否 | 
- | ContentEncoding  | 编码格式，设置 Content-Encoding | String |  否 | 
- | ContentLanguage  | 语言类型，设置 Content-Language |  String |  否 |
- | Metadata |用户自定义的对象元数据 | Dict |  否 |
- | ACL |设置对象的 ACL，例如 'private'，'public-read' |String| 否|
+| Bucket  | Bucket 名称，由 BucketName-APPID 构成 |  String |  是 |
+| Key  |  对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String | 是 |
+| StorageClass  | 设置对象的存储类型，STANDARD，STANDARD_IA，ARCHIVE。默认值为 STANDARD。更多存储类型，请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925) | String |  否 |
+| Expires  |  设置 Expires | String| 否 |
+| CacheControl  | 缓存策略，设置 Cache-Control | String |  否 |
+| ContentType  | 内容类型，设置 Content-Type | String |  否 |
+| ContentDisposition  | 文件名称，设置 Content-Disposition | String |  否 |
+| ContentEncoding  | 编码格式，设置 Content-Encoding | String |  否 |
+| ContentLanguage  | 语言类型，设置 Content-Language |  String |  否 |
+| Metadata |用户自定义的对象元数据 | Dict |  否 |
+| ACL |设置对象的 ACL，例如 'private'，'public-read' |String| 否|
 | GrantFullControl |赋予被授权者所有的权限，格式为 `id="OwnerUin"`|String|否|
 |GrantRead |赋予被授权者读的权限，格式为 `id="OwnerUin"` |String|否|
 
@@ -1156,7 +1316,7 @@ uploadid = response['UploadId']
 
 ```
 
-| 参数名称   | 参数描述   |类型 | 
+| 参数名称   | 参数描述   |类型 |
 | -------------- | -------------- |---------- |
 |UploadId | 标识分块上传的 ID|String|
 |Bucket|存储桶名称，由 BucketName-APPID 组成|String|
@@ -1173,7 +1333,7 @@ upload_part(Bucket, Key, Body, PartNumber, UploadId, **kwargs)
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-upload-part)
+[//]: # ".cssg-snippet-upload-part"
 ```python
 # 注意，上传分块的块数最多10000块
 response = client.upload_part(
@@ -1202,18 +1362,18 @@ response = client.upload_part(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
- | Bucket  | Bucket 名称，由 BucketName-APPID 构成 | String |  是|
- | Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String |  是|
- | Body  | 上传分块的内容，可以为本地文件流或输入流 | file/bytes |  是|
- | PartNumber  |标识上传分块的序号 |  Int |  是|
- | UploadId  | 标识分块上传的 ID | String |  是|
- | EnableMD5 | 是否需要 SDK 计算 Content-MD5，默认关闭，打开后会增加上传耗时|Bool | 否| 
- | ContentLength  |设置传输长度 |  String |  否|
- | ContentMD5  | 设置上传对象的 MD5 值用于校验 | String |  否|
- |  TrafficLimit | 单链接限速的值，单位为bit/s，限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s | String |  否 |
- 
+| Bucket  | Bucket 名称，由 BucketName-APPID 构成 | String |  是|
+| Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String |  是|
+| Body  | 上传分块的内容，可以为本地文件流或输入流 | file/bytes |  是|
+| PartNumber  |标识上传分块的序号 |  Int |  是|
+| UploadId  | 标识分块上传的 ID | String |  是|
+| EnableMD5 | 是否需要 SDK 计算 Content-MD5，默认关闭，打开后会增加上传耗时|Bool | 否|
+| ContentLength  |设置传输长度 |  String |  否|
+| ContentMD5  | 设置上传对象的 MD5 值用于校验 | String |  否|
+|  TrafficLimit | 单链接限速的值，单位为bit/s，限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s | String |  否 |
+
 #### 返回结果说明
 
 上传分块的属性，类型为 dict：
@@ -1224,8 +1384,8 @@ response = client.upload_part(
 }
 ```
 
-| 参数名称   | 参数描述   |类型 | 
-| -------------- | -------------- |---------- | 
+| 参数名称   | 参数描述   |类型 |
+| -------------- | -------------- |---------- |
 | ETag |上传分块的 MD5 值。|String|
 
 ### 复制分块
@@ -1239,7 +1399,7 @@ upload_part_copy(Bucket, Key, PartNumber, UploadId, CopySource, CopySourceRange=
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-upload-part-copy)
+[//]: # ".cssg-snippet-upload-part-copy"
 ```python
 response = client.upload_part_copy(
     Bucket='examplebucket-1250000000',
@@ -1277,7 +1437,7 @@ response = client.upload_part_copy(
 
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
 |  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String|  是 |
 |  Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String| 是 |
@@ -1301,11 +1461,11 @@ response = client.upload_part_copy(
 }
 ```
 
-| 参数名称   | 参数描述   |类型 | 
-| -------------- | -------------- |---------- | 
+| 参数名称   | 参数描述   |类型 |
+| -------------- | -------------- |---------- |
 | ETag |拷贝分块的 MD5 值|String|
 | LastModified |拷贝分块的最后一次修改时间|String|
-| x-cos-copy-source-version-id | 源对象的版本号 | String | 
+| x-cos-copy-source-version-id | 源对象的版本号 | String |
 
 ### 查询已上传块
 
@@ -1320,7 +1480,7 @@ list_parts(Bucket, Key, UploadId, MaxParts=1000, PartNumberMarker=0, EncodingTyp
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-list-parts)
+[//]: # ".cssg-snippet-list-parts"
 ```python
 response = client.list_parts(
     Bucket='examplebucket-1250000000',
@@ -1342,7 +1502,7 @@ response = client.list_parts(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
 |Bucket|存储桶名称，由 BucketName-APPID 构成|String| 是|
 |Key |对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg |String| 是|
@@ -1385,20 +1545,20 @@ response = client.list_parts(
 }
 ```
 
-| 参数名称   | 参数描述   |类型 | 
-| -------------- | -------------- |---------- | 
+| 参数名称   | 参数描述   |类型 |
+| -------------- | -------------- |---------- |
 | Bucket   | 存储桶名称，由 BucketName-APPID 构成  | String  |
-|  Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String | 
-|  UploadId  |  标识分块上传的 ID | String | 
+|  Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String |
+|  UploadId  |  标识分块上传的 ID | String |
 | EncodingType   |   默认不编码，规定返回值的编码方式，可选值：url  | String  |
 | MaxParts   | 最多返回的分块的数量，默认为最大的1000  | String  |
 | IsTruncated   |  表示返回的分块是否被截断  | String|
 | PartNumberMarker   | 默认为0，从第一块列出分块，从 PartNumberMarker 下一个分块开始列出  | String  |
 | NextPartNumberMarker   |  指明下一次列出分块的起始位置  | String  |
- |  StorageClass  |  对象的存储类型，STANDARD，STANDARD_IA，ARCHIVE。默认值 STANDARD | String |
+|  StorageClass  |  对象的存储类型，STANDARD，STANDARD_IA，ARCHIVE。默认值为 STANDARD，更多存储类型，请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925) | String |
 |  Part |上传分块的相关信息，包括 ETag，PartNumber，Size，LastModified | String |
- |  Initiator  | 分块上传的创建者，包括 DisplayName 和 ID | Dict | 
- |  Owner  | 对象拥有者的信息，包括 DisplayName 和 ID | Dict | 
+|  Initiator  | 分块上传的创建者，包括 DisplayName 和 ID | Dict |
+|  Owner  | 对象拥有者的信息，包括 DisplayName 和 ID | Dict |
 
 
 
@@ -1415,7 +1575,7 @@ complete_multipart_upload(Bucket, Key, UploadId, MultipartUpload={}, **kwargs)
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-complete-multi-upload)
+[//]: # ".cssg-snippet-complete-multi-upload"
 ```python
 response = client.complete_multipart_upload(
     Bucket='examplebucket-1250000000',
@@ -1438,12 +1598,12 @@ response = client.complete_multipart_upload(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
-|  Bucket  | Bucket 名称，由 BucketName-APPID 构成 | String |   是| 
-|  Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String  |   是| 
-|  UploadId  | 标识分块上传的 ID | String  |   是| 
-|  MultipartUpload  |所有分块的 ETag 和 PartNumber 信息 |  Dict |   是| 
+|  Bucket  | Bucket 名称，由 BucketName-APPID 构成 | String |   是|
+|  Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String  |   是|
+|  UploadId  | 标识分块上传的 ID | String  |   是|
+|  MultipartUpload  |所有分块的 ETag 和 PartNumber 信息 |  Dict |   是|
 
 #### 返回结果说明
 
@@ -1458,12 +1618,12 @@ response = client.complete_multipart_upload(
 }
 ```
 
-| 参数名称   | 参数描述   |类型 | 
-| -------------- | -------------- |---------- | 
- |  ETag  |	合并后对象的唯一标签值，该值不是对象内容的 MD5 校验值，仅能用于检查对象唯一性。如需校验对象内容，可以在上传过程中校验单个分块的 ETag 值。|  String | 
- |  Bucket  |存储桶名称，由 BucketName-APPID 构成 |  String | 
- |  Location  | URL 地址 |  String | 
- |  Key  |  对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String |
+| 参数名称   | 参数描述   |类型 |
+| -------------- | -------------- |---------- |
+|  ETag  |	合并后对象的唯一标签值，该值不是对象内容的 MD5 校验值，仅能用于检查对象唯一性。如需校验对象内容，可以在上传过程中校验单个分块的 ETag 值。|  String |
+|  Bucket  |存储桶名称，由 BucketName-APPID 构成 |  String |
+|  Location  | URL 地址 |  String |
+|  Key  |  对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String |
 
 
 ### 终止分块上传
@@ -1479,7 +1639,7 @@ abort_multipart_upload(Bucket, Key, UploadId, **kwargs)
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-abort-multi-upload)
+[//]: # ".cssg-snippet-abort-multi-upload"
 ```python
 response = client.abort_multipart_upload(
     Bucket='examplebucket-1250000000',
@@ -1489,7 +1649,7 @@ response = client.abort_multipart_upload(
 ```
 #### 参数说明
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
 |Bucket|存储桶名称，由 BucketName-APPID 构成|String| 是|
 |Key |对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg|String| 是|
@@ -1508,32 +1668,50 @@ response = client.abort_multipart_upload(
 
 #### 功能说明
 该高级接口根据用户文件的长度自动选择简单上传以及分块上传，对于小于等于20M的文件调用简单上传，对于大于20MB的文件调用分块上传，对于分块上传未完成的文件会自动进行断点续传。
+对于分块上传的文件，可以通过 progress_callback 回调函数，获取上传进度。
 
 #### 方法原型
 
 ```
-upload_file(Bucket, Key, LocalFilePath, PartSize=1, MAXThread=5, **kwargs)
+upload_file(Bucket, Key, LocalFilePath, PartSize=1, MAXThread=5, EnableMD5=False, progress_callback=None, **kwargs)
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-transfer-upload-file)
+[//]: # ".cssg-snippet-transfer-upload-file"
 ```python
+
+
 response = client.upload_file(
     Bucket='examplebucket-1250000000',
     Key='exampleobject',
     LocalFilePath='local.txt',
-    EnableMD5=False
+    EnableMD5=False,
+    progress_callback=None
 )
 ```
 
 #### 全部参数请求示例
 ```python
+
+def upload_percentage(consumed_bytes, total_bytes):
+    """进度条回调函数，计算当前上传的百分比
+
+    :param consumed_bytes: 已经上传的数据量
+    :param total_bytes: 总数据量
+    """
+    if total_bytes:
+        rate = int(100 * (float(consumed_bytes) / float(total_bytes)))
+        print('\r{0}% '.format(rate))
+        sys.stdout.flush()
+        
+
 response = client.upload_file(
     Bucket='examplebucket-1250000000',
     Key='exampleobject',
     LocalFilePath='local.txt',
     PartSize=1,
     MAXThread=5,
+    progress_callback=upload_percentage,
     EnableMD5=False|True,
     ACL='private'|'public-read', # 请慎用此参数,否则会达到1000条ACL上限
     GrantFullControl='string',
@@ -1557,28 +1735,29 @@ response = client.upload_file(
 #### 参数说明
 
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
- |  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String |   是 |
- |  Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String |  是 | 
+|  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String |   是 |
+|  Key  | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String |  是 |
 |  LocalFilePath  | 本地文件的路径名 |  String |  是 |
 |  PartSize  | 分块上传的分块大小，默认为1MB |  Int |  否 |
 |  MAXThread  | 分块上传的并发数量，默认为5个线程上传分块 |  Int |  否 |
-| EnableMD5 | 是否需要 SDK 计算 Content-MD5，默认关闭，打开后会增加上传耗时|Bool | 否| 
-| ACL |设置对象的 ACL，例如 'private'，'public-read'|String| 否|
+|progress_callback |  上传进度的回调函数，可以通过自定义此函数，来获取上传进度| Func| 否 |
+| EnableMD5 | 是否需要 SDK 计算 Content-MD5，默认关闭，打开后会增加上传耗时|Bool | 否|
+| ACL |设置对象的 ACL，例如 private，public-read  |String| 否|
 | GrantFullControl |赋予被授权者所有的权限，格式为 `id="OwnerUin"`|String|否|
 |GrantRead |赋予被授权者读的权限，格式为 `id="OwnerUin"`  |String|否|
- |  StorageClass  |  设置对象的存储类型，STANDARD，STANDARD_IA，ARCHIVE。默认值 STANDARD | String |   否 |
- |  Expires  | 设置 Expires | String|  否 | 
- |  CacheControl  |  缓存策略，设置 Cache-Control | String |   否 |
- |  ContentType  | 内容类型，设置 Content-Type |String |   否 |  
- |  ContentDisposition  |  文件名称，设置 Content-Disposition | String |   否 |
- |  ContentEncoding  |  编码格式，设置 Content-Encoding | String |   否 |
- |  ContentLanguage  |  语言类型，设置 Content-Language | String |   否 |
- |  ContentLength  | 设置传输长度 | String |   否 | 
- |  ContentMD5  | 设置上传对象的 MD5 值用于校验 | String |   否 | 
- |  Metadata | 用户自定义的对象元数据 | Dict |   否 |
- |  TrafficLimit | 单链接限速的值，单位为bit/s，限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s，高级接口限制的是单线程的速度| String |  否 |
+|  StorageClass  |  设置对象的存储类型，例如 STANDARD，STANDARD_IA，ARCHIVE。默认值为 STANDARD，更多存储类型，请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925) | String |   否 |
+|  Expires  | 设置 Expires | String|  否 |
+|  CacheControl  |  缓存策略，设置 Cache-Control | String |   否 |
+|  ContentType  | 内容类型，设置 Content-Type |String |   否 |
+|  ContentDisposition  |  文件名称，设置 Content-Disposition | String |   否 |
+|  ContentEncoding  |  编码格式，设置 Content-Encoding | String |   否 |
+|  ContentLanguage  |  语言类型，设置 Content-Language | String |   否 |
+|  ContentLength  | 设置传输长度 | String |   否 |
+|  ContentMD5  | 设置上传对象的 MD5 值用于校验 | String |   否 |
+|  Metadata | 用户自定义的对象元数据 | Dict |   否 |
+|  TrafficLimit | 单链接限速的值，单位为bit/s，限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s，高级接口限制的是单线程的速度| String |  否 |
 
 #### 返回结果说明
 上传对象的属性，类型为 dict：
@@ -1589,7 +1768,7 @@ response = client.upload_file(
 }
 ```
 
-| 参数名称   | 参数描述   |类型 | 
+| 参数名称   | 参数描述   |类型 |
 | -------------- | -------------- |---------- |
 |  ETag   |  分块上传的对象，该值不是对象内容的 MD5 校验值，仅能用于检查对象唯一性  | String  |
 
@@ -1606,7 +1785,7 @@ download_file(Bucket, Key, DestFilePath, PartSize=20, MAXThread=5, EnableCRC=Fal
 ```
 #### 请求示例
 
-[//]: # (.cssg-snippet-transfer-upload-file)
+[//]: # ".cssg-snippet-transfer-upload-file"
 ```python
 response = client.download_file(
     Bucket='examplebucket-1250000000',
@@ -1641,29 +1820,232 @@ response = client.download_file(
 #### 参数说明
 
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
- |  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String  |  是 | 
- |  Key  |  对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`中，对象键为 doc/pic.jpg | String  | 是 | 
- |  DestFilePath  | 文件下载的本地目的路径名 |  String |  是 |
- |  PartSize  | 分块下载的分块大小，默认为20MB |  Int |  否 |
- |  MAXThread  | 分块下载的并发数量，默认为5个线程下载分块 |  Int |  否 |
- |  EnableCRC  | 是否开启本地文件与远程文件的 crc 校验，默认为 False |  Bool |  否 |
- |  TrafficLimit | 单链接限速的值，单位为bit/s，限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s，高级接口限制的是单线程的速度| String |  否 |
- |  IfMatch  |  ETag 与指定的内容一致时才返回 |String  | 否 |  
- |  IfModifiedSince  |   在指定时间后被修改才返回，时间格式为 GMT | String  | 否 |
- |  IfNoneMatch  |  ETag 与指定的内容不一致才返回 | String  | 否 | 
- |  IfUnmodifiedSince  |  对象修改时间早于或等于指定时间才返回，时间格式为 GMT| String  | 否|
- |  ResponseCacheControl  |  设置响应头部 Cache-Control | String  | 否 | 
- |  ResponseContentDisposition  |  设置响应头部 Content-Disposition | String  | 否 | 
- |  ResponseContentEncoding  |   设置响应头部 Content-Encoding | String  | 否 |
- |  ResponseContentLanguage  |  设置响应头部 Content-Language | String  | 否 | 
- |  ResponseContentType  |   设置响应头部 Content-Type | String  | 否 |
- |  ResponseExpires  |设置响应头部 Expires |   String  | 否 | 
- |  VersionId  | 指定下载对象的版本 |  String  | 否 |
+|  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String  |  是 |
+|  Key  |  对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`中，对象键为 doc/pic.jpg | String  | 是 |
+|  DestFilePath  | 文件下载的本地目的路径名 |  String |  是 |
+|  PartSize  | 分块下载的分块大小，默认为20MB |  Int |  否 |
+|  MAXThread  | 分块下载的并发数量，默认为5个线程下载分块 |  Int |  否 |
+|  EnableCRC  | 是否开启本地文件与远程文件的 crc 校验，默认为 False |  Bool |  否 |
+|  TrafficLimit | 单链接限速的值，单位为bit/s，限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s，高级接口限制的是单线程的速度| String |  否 |
+|  IfMatch  |  ETag 与指定的内容一致时才返回 |String  | 否 |
+|  IfModifiedSince  |   在指定时间后被修改才返回，时间格式为 GMT | String  | 否 |
+|  IfNoneMatch  |  ETag 与指定的内容不一致才返回 | String  | 否 |
+|  IfUnmodifiedSince  |  对象修改时间早于或等于指定时间才返回，时间格式为 GMT| String  | 否|
+|  ResponseCacheControl  |  设置响应头部 Cache-Control | String  | 否 |
+|  ResponseContentDisposition  |  设置响应头部 Content-Disposition | String  | 否 |
+|  ResponseContentEncoding  |   设置响应头部 Content-Encoding | String  | 否 |
+|  ResponseContentLanguage  |  设置响应头部 Content-Language | String  | 否 |
+|  ResponseContentType  |   设置响应头部 Content-Type | String  | 否 |
+|  ResponseExpires  |设置响应头部 Expires |   String  | 否 |
+|  VersionId  | 指定下载对象的版本 |  String  | 否 |
 
 #### 返回结果说明
 None
+
+### 批量上传（本地文件夹上传）
+
+#### 功能说明
+该示例展示通过组合 SDK 的基本接口，完成批量上传本地文件夹到 COS。
+
+#### 请求示例
+
+[//]: # ".cssg-snippet-transfer-upload-file"
+```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+from qcloud_cos import CosServiceError
+from qcloud_cos import CosClientError
+from qcloud_cos.cos_threadpool import SimpleThreadPool
+
+import sys
+import os
+import logging
+
+# 设置用户属性, 包括secret_id, secret_key, region
+# APPID 已在配置中移除，请在参数 Bucket 中带上 APPID。Bucket 由 BucketName-APPID 组成
+secret_id = ''     # 替换为用户的 secret_id
+secret_key = ''     # 替换为用户的 secret_key
+region = 'ap-guangzhou'    # 替换为用户的 region
+token = None               # 使用临时密钥需要传入 Token，默认为空,可不填
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # 获取配置对象
+client = CosS3Client(config)
+
+uploadDir = '/root/logs'
+bucket = 'examplebucket-125000000'
+g = os.walk(uploadDir)
+# 创建上传的线程池
+pool = SimpleThreadPool()
+for path, dir_list, file_list in g:
+    for file_name in file_list:
+        srcKey = os.path.join(path, file_name)
+        cosObjectKey = srcKey.strip('/')
+        # 判断COS上文件是否存在
+        exists = False
+        try:
+            response = client.head_object(Bucket=bucket, Key=cosObjectKey)
+            exists = True
+        except CosServiceError as e:
+            if e.get_status_code() == 404:
+                exists = False
+            else:
+                print("Error happened, reupload it.")
+        if not exists:
+            print("File %s not exists in cos, upload it", srcKey)
+            pool.add_task(client.upload_file, bucket, cosObjectKey, srcKey)
+
+
+pool.wait_completion()
+result = pool.get_result()
+if not result['success_all']:
+    print("Not all files upload sucessed. you should retry")
+```
+
+### 批量下载（从 COS 下载目录）
+
+#### 功能说明
+该示例展示通过组合 SDK 的基本接口，完成批量下载 COS 目录中的文件到本地磁盘。
+
+#### 请求示例
+
+[//]: # ".cssg-snippet-transfer-upload-file"
+```python
+# -*- coding=utf-8
+import logging
+import sys
+import json
+import os
+
+from qcloud_cos import CosConfig, CosServiceError
+from qcloud_cos import CosS3Client
+from qcloud_cos.cos_threadpool import SimpleThreadPool
+
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# 设置用户属性, 包括secret_id, secret_key, region
+# appid已在配置中移除,请在参数Bucket中带上appid。Bucket由bucketname-appid组成
+secret_id = 'secret_id'  # 替换为用户的secret_id
+secret_key = 'secret_key'  # 替换为用户的secret_key
+region = 'ap-shanghai'  # 替换为用户的region
+
+token = None  # 使用临时密钥需要传入Token，默认为空,可不填
+scheme = 'http'
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)  # 获取配置对象
+client = CosS3Client(config)
+
+# 用户的 bucket 信息
+test_bucket = 'chenxi-1253870963'
+start_prefix = 'data/'
+# 对象存储依赖 分隔符 '/' 来模拟目录语义，
+# 使用默认的空分隔符可以列出目录下面的所有子节点，实现类似本地目录递归的效果,
+# 如果 delimiter 设置为 "/"，则需要在程序里递归处理子目录
+delimiter = ''
+
+
+# 列出当前目录子节点，返回所有子节点信息
+def listCurrentDir(prefix):
+    file_infos = []
+    sub_dirs = []
+    marker = ""
+    count = 1
+    while True:
+        response = client.list_objects(test_bucket, prefix, delimiter, marker)
+        # 调试输出
+        # json_object = json.dumps(response, indent=4)
+        # print(count, " =======================================")
+        # print(json_object)
+        count += 1
+
+        if "CommonPrefixes" in response:
+            common_prefixes = response.get("CommonPrefixes")
+            sub_dirs.extend(common_prefixes)
+
+        if "Contents" in response:
+            contents = response.get("Contents")
+            file_infos.extend(contents)
+
+        if "NextMarker" in response.keys():
+            marker = response["NextMarker"]
+        else:
+            break
+
+    print("=======================================================")
+
+    # 如果 delimiter 设置为 "/"，则需要进行递归处理子目录，
+    # sorted(sub_dirs, key=lambda sub_dir: sub_dir["Prefix"])
+    # for sub_dir in sub_dirs:
+    #     print(sub_dir)
+    #     sub_dir_files = listCurrentDir(sub_dir["Prefix"])
+    #     file_infos.extend(sub_dir_files)
+
+    print("=======================================================")
+
+    sorted(file_infos, key=lambda file_info: file_info["Key"])
+    for file in file_infos:
+        print(file)
+    return file_infos
+
+
+# 下载文件到本地目录，如果本地目录已经有同名文件则会被覆盖；
+# 如果目录结构不存在，则会创建和对象存储一样的目录结构
+def downLoadFiles(file_infos):
+    localDir = "./download/"
+
+    pool = SimpleThreadPool()
+    for file in file_infos:
+        # 文件下载 获取文件到本地
+        file_cos_key = file["Key"]
+        localName = localDir + file_cos_key
+
+        # 如果本地目录结构不存在，递归创建
+        if not os.path.exists(os.path.dirname(localName)):
+            os.makedirs(os.path.dirname(localName))
+
+        # skip dir, no need to download it
+        if str(localName).endswith("/"):
+            continue
+
+        # 实际下载文件
+        # 使用线程池方式
+        pool.add_task(client.download_file, test_bucket, file_cos_key, localName)
+
+        # 简单下载方式
+        # response = client.get_object(
+        #     Bucket=test_bucket,
+        #     Key=file_cos_key,
+        # )
+        # response['Body'].get_stream_to_file(localName)
+
+    pool.wait_completion()
+    return None
+
+
+# 功能封装，下载对象存储上面的一个目录到本地磁盘
+def downLoadDirFromCos(prefix):
+    global file_infos
+
+    try:
+        file_infos = listCurrentDir(prefix)
+
+    except CosServiceError as e:
+        print(e.get_origin_msg())
+        print(e.get_digest_msg())
+        print(e.get_status_code())
+        print(e.get_error_code())
+        print(e.get_error_msg())
+        print(e.get_resource_location())
+        print(e.get_trace_id())
+        print(e.get_request_id())
+
+    downLoadFiles(file_infos)
+    return None
+
+
+if __name__ == "__main__":
+    downLoadDirFromCos(start_prefix)
+```
 
 ### 复制对象
 
@@ -1675,9 +2057,9 @@ None
 ```
 copy(Bucket, Key, CopySource, CopyStatus='Copy', PartSize=10, MAXThread=5, **kwargs)
 ```
-#### 请求示例
+#### 请求示例1：复制对象
 
-[//]: # (.cssg-snippet-transfer-copy)
+[//]: # ".cssg-snippet-transfer-copy"
 ```python
 response = client.copy(
     Bucket='test',
@@ -1689,6 +2071,59 @@ response = client.copy(
     }
 )
 ```
+
+#### 请求示例2：移动对象
+```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+from qcloud_cos import CosServiceError
+from qcloud_cos import CosClientError
+
+import sys
+import os
+import logging
+
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+from qcloud_cos import CosServiceError
+from qcloud_cos import CosClientError
+
+import sys
+import os
+import logging
+
+# 设置用户属性, 包括 secret_id, secret_key, region
+# APPID 已在配置中移除，请在参数 Bucket 中带上 APPID。Bucket 由 BucketName-APPID 组成
+secret_id = ''     # 替换为用户的 secret_id
+secret_key = ''     # 替换为用户的 secret_key
+region = 'ap-guangzhou'    # 替换为用户的 region
+token = None               # 使用临时密钥需要传入 Token，默认为空，可不填
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # 获取配置对象
+client = CosS3Client(config)
+
+# 移动对象
+bucket = 'examplebucket-1250000000'
+srcKey = 'src_object_key'  # 原始的对象路径
+destKey = 'dest_object_key'   # 目的对象路径
+
+#本示例展示利用 SDK 基本接口完成文件的 move 操作。
+try:
+    response = client.copy_object(
+        Bucket=bucket,
+        Key=destKey,
+        CopySource={
+            'Bucket':bucket,
+            'Key':srcKey,
+            'Region':'ap-guangzhou',
+        })
+    client.delete_object(Bucket=bucket, Key=srcKey)
+except CosException as e:
+     print(e.get_error_msg())
+```
+
+
 
 #### 全部参数请求示例
 ```python
@@ -1708,17 +2143,18 @@ response = client.copy(
 #### 参数说明
 
 
-| 参数名称   | 参数描述   |类型 | 是否必填 | 
+| 参数名称   | 参数描述   |类型 | 是否必填 |
 | -------------- | -------------- |---------- | ----------- |
- |  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String  |  是 | 
- |  Key  |  对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`中，对象键为 doc/pic.jpg | String  | 是 | 
- |  CopySource  | 描述拷贝源对象的路径，包含 Bucket、Key、Region、VersionId |  Dict | 是 |
- |  CopyStatus  |拷贝状态,可选值'Copy','Replaced' | String | 否 ｜
+|  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String  |  是 |
+|  Key  |  对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`中，对象键为 doc/pic.jpg | String  | 是 |
+|  CopySource  | 描述拷贝源对象的路径，包含 Bucket、Key、Region、VersionId |  Dict | 是 |
+ |  CopyStatus  |拷贝状态，可选值 Copy、Replaced | String | 否 ｜
  |  PartSize  | 分块下载的分块大小，默认为10MB |  Int |  否 |
  |  MAXThread  | 分块下载的并发数量，默认为5个线程下载分块 |  Int |  否 |
 
 #### 返回结果说明
 若小于5G的文件，则为 copy_object 的返回结果，否则为 complete_multipart_upload 的返回结果，类型为 dict。
+
 
 
 ## 客户端加密
@@ -1743,7 +2179,7 @@ Python 支持客户端加密，将文件加密后再进行上传，并在下载�
 
 示例1：使用对称 AES256 加密每次生成的随机密钥示例。
 
-[//]: # (.cssg-snippet-put-object-cse-c-aes)
+[//]: # ".cssg-snippet-put-object-cse-c-aes"
 ```python
 # 初始化用户身份信息(SECRET_ID, SECRET_KEY)
 SECRET_ID = "COS_SECRETID"
@@ -1775,7 +2211,7 @@ response = client_for_aes.get_object(
                         Bucket='examplebucket-1250000000',
                         Key='exampleobject')
 
-# 分片上传，兼容非加密客户端的分片上传，除了最后一个part，每个part的大小必须为16字节的整数倍
+# 分块上传，兼容非加密客户端的分块上传，除了最后一个part，每个part的大小必须为16字节的整数倍
 response = client_for_aes.create_multipart_upload(
                         Bucket='examplebucket-1250000000',
                         Key='exampleobject_upload')
@@ -1809,7 +2245,7 @@ response = client_for_aes.upload_file(
 
 示例2：使用非对称 RSA 加密每次生成的随机密钥示例。
 
-[//]: # (.cssg-snippet-put-object-cse-c-rsa)
+[//]: # ".cssg-snippet-put-object-cse-c-rsa"
 ```python
 # 初始化用户身份信息(SECRET_ID, SECRET_KEY)
 SECRET_ID = "COS_SECRETID"
@@ -1842,7 +2278,7 @@ response = client_for_rsa.get_object(
                         Bucket='examplebucket-1250000000',
                         Key='exampleobject')
 
-# 分片上传，兼容非加密客户端的分片上传，除了最后一个part，每个part的大小必须为16字节的整数倍
+# 分块上传，兼容非加密客户端的分块上传，除了最后一个part，每个part的大小必须为16字节的整数倍
 response = client_for_rsa.create_multipart_upload(
                         Bucket='examplebucket-1250000000',
                         Key='exampleobject_upload')

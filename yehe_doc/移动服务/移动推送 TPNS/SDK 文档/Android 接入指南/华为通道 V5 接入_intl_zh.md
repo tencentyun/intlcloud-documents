@@ -17,9 +17,12 @@
 4. 获取并复制应用的 AppID 和 AppSecret，填入 【[移动推送 TPNS 控制台](https://console.cloud.tencent.com/tpns)】>【配置管理】>【基础配置】>【华为官方推送通道】栏目中。
 
 
+
 ### 配置 SHA256 证书指纹
 
-获取 SHA256 证书指纹，并在华为推送平台中配置证书指纹，参见 [生成签名证书指纹](https://developer.huawei.com/consumer/cn/doc/development/HMS-Guides/Preparations#generate_finger)。
+获取 SHA256 证书指纹，并在华为推送平台中配置证书指纹，**单击 <img src="https://main.qcloudimg.com/raw/f74e3aa948316533ce91f9add4a81a29.png"></img> 保存**。证书指纹获取可参见 [生成签名证书指纹](https://developer.huawei.com/consumer/cn/doc/development/HMS-Guides/Preparations#generate_finger)。
+
+
 
 ### 获取华为推送配置文件
 
@@ -29,7 +32,9 @@
 ### 打开推送服务开关
 
 1. 在华为推送平台，单击【全部服务】>【推送服务】，进入推送服务页面。
+
 2. 在“推送服务”页面，单击【立即开通】，详情请参见 [打开推送服务开关](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-enable_service#enable-service)。
+
 
 ## SDK 集成（二选一）
 
@@ -174,7 +179,7 @@ I/TPush: [OtherPushClient] handleUpdateToken other push token is : IQAAAACy0PsqA
 ### 华为通道抵达回执配置
 
 华为通道抵达回执需要开发者自行配置，您可参见 [华为厂商通道回执配置指引](https://intl.cloud.tencent.com/document/product/1024/35246) 进行配置。完成后，可在推送记录中查看华为推送通道的抵达数据。
-![](https://main.qcloudimg.com/raw/11c44dfc000045458a627e12b67ef611.png)
+
 
 ### 华为设备角标适配
 
