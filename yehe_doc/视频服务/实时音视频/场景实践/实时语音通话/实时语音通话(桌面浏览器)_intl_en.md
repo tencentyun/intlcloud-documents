@@ -5,7 +5,7 @@ This document describes how to implement a browser-based audio call solution.
 ## Environment Requirements
 Currently, the desktop version of Chrome offers better support for the features of the TRTC SDK for desktop browsers; therefore, Chrome is recommended for the demo.
 
-TRTCCalling uses the following ports for data transfer, which should be added to the allowlist of the firewall. After configuration, please use [Official Demo](https://demo-1252463788.cos.ap-shanghai.myqcloud.com/trtccalling/demo/index.html) to check whether the ports work.
+TRTCCalling uses the following ports for data transfer, which should be added to the allowlist of the firewall. After configuration, please use [Official Demo] to check whether the ports work.
   - TCP port: 8687
   - UDP ports: 8000, 8080, 8800, 843, 443, 16285
   - Domain name: qcloud.rtc.qq.com
@@ -35,7 +35,7 @@ The service supports the following platforms:
 [](id:step2)
 ### Step 2. Download the SDK and demo source code
 1. Mouse over the corresponding block, and click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Web/TRTCScenesDemo/trtc-calling-web)** (or click **[ZIP](https://liteavsdk-1252463788.cos.ap-guangzhou.myqcloud.com/H5_latest.zip?_ga=1.195966252.185644906.1567570704)**) to download the SDK and demo source code.
-
+ ![](https://main.qcloudimg.com/raw/0f35fe3bafe9fcdbd7cc73f991984d1a.png)
 2. After the download, return to the TRTC console and click **Downloaded and Next** to view your `SDKAppID` and secret key.
 
 
@@ -47,7 +47,7 @@ The service supports the following platforms:
 3. Set parameters in the `GenerateTestUserSig.js` file:
   - SDKAPPID: 0 by default. Set it to the actual `SDKAppID`.
   - SECRETKEY: an empty string by default. Set it to the actual key.
-
+<img src="https://main.qcloudimg.com/raw/0ae7a197ad22784384f1b6e111eabb22.png">
 4. Return to the TRTC console and click **Pasted and Next**.
 5. Click **Close Guide and Enter Console**.
 
@@ -63,13 +63,13 @@ npm install
 npm run serve
 ```
 2. Open Chrome and go to `http://localhost:8080/`. If the above steps are performed correctly, the page shown in the following figure is displayed:
-
+![](https://main.qcloudimg.com/raw/03cc2aa792a0f885fe070eb86ada4ce4.png)
 3. Enter your user ID and click **Log In**. Then, click **Audio Call**.
-
+![](https://main.qcloudimg.com/raw/c1243956fe79d1361f3f0329e85f41d9.png)
 4. Enter the user ID of the callee and click **Call**.
-
+![](https://main.qcloudimg.com/raw/cdb27d63a75c83e99452923d5da05999.png)
 5. Start the audio call.
-
+![](https://main.qcloudimg.com/raw/37f1e43114ea2ab6dc4b419d60002d09.png)
 
 
 ## Building Your Own Audio Call
