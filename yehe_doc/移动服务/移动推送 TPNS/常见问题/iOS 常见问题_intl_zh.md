@@ -139,6 +139,7 @@ TestFlight 发布预览版，先将 ipa 包上传到 [App Store Connect](https:/
 ### iOS 如何只更改角标而不弹出信息？
 可使用 API 在创建推送时使用通知栏消息类型，且标题内容设为空，同时只设置 badge_type 即可，详情可参考 [API 文档说明](https://intl.cloud.tencent.com/document/product/1024/33764)。
 示例如下：
+
 <dx-codeblock>
 :::  json
 {
