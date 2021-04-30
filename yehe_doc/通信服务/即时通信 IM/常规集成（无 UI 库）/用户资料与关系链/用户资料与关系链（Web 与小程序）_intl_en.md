@@ -1,7 +1,7 @@
 ## User Profile
 
 ### Obtaining your personal profile
-This API is used to obtain your personal profile. For more information on the properties, see [Profile](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/Profile.html).
+This API is used to obtain your personal profile. For more information on the properties, see [Profile](https://web.sdk.qcloud.com/im/doc/zh-cn/Profile.html).
 
 >! Custom profile fields are supported since SDK v2.3.2. Before using this API, upgrade your SDK to v2.3.2 or later.
 
@@ -14,8 +14,8 @@ tim.getMyProfile()
 **Returned values**
 
 This API returns a `Promise` object. The callback functions are as follows:
-- The callback function parameter for `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). You can obtain your personal profile from `IMResponse.data`.
-- The callback function parameter for `catch` is [IMError](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMError).
+- The callback function parameter for `then` is [IMResponse](https://web.sdk.qcloud.com/im/doc/zh-cn/global.html#IMResponse). You can obtain your personal profile from `IMResponse.data`.
+- The callback function parameter for `catch` is [IMError](https://web.sdk.qcloud.com/im/doc/zh-cn/global.html#IMError).
 
 **Sample**
 
@@ -55,8 +55,8 @@ The `options` parameter is of the `Object` type. It contains the following prope
 **Returned values**
 
 This API returns a `Promise` object. The callback functions are as follows:
-- The callback function parameter for `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). You can obtain other users’ profiles from `IMResponse.data`.
-- The callback function parameter for `catch` is [IMError](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMError).
+- The callback function parameter for `then` is [IMResponse](https://web.sdk.qcloud.com/im/doc/zh-cn/global.html#IMResponse). You can obtain other users’ profiles from `IMResponse.data`.
+- The callback function parameter for `catch` is [IMError](https://web.sdk.qcloud.com/im/doc/zh-cn/global.html#IMError).
 
 **Sample**
 
@@ -106,8 +106,8 @@ The `options` parameter is of the `Object` type. It contains the following prope
 **Returned values**
 
 This API returns a `Promise` object. The callback functions are as follows:
-- The callback function parameter for `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). You can obtain other users’ new profiles from `IMResponse.data`.
-- The callback function parameter for `catch` is [IMError](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMError).
+- The callback function parameter for `then` is [IMResponse](https://web.sdk.qcloud.com/im/doc/zh-cn/global.html#IMResponse). You can obtain other users’ new profiles from `IMResponse.data`.
+- The callback function parameter for `catch` is [IMError](https://web.sdk.qcloud.com/im/doc/zh-cn/global.html#IMError).
 
 **Sample**
 
@@ -187,8 +187,8 @@ The `options` parameter is of the `Object` type. It contains the following prope
 **Returned values**
 
 This API returns a `Promise` object. The callback functions are as follows:
-- The callback function parameter for `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). You can obtain the blacklist from `IMResponse.data`.
-- The callback function parameter for `catch` is [IMError](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMError).
+- The callback function parameter for `then` is [IMResponse](https://web.sdk.qcloud.com/im/doc/zh-cn/global.html#IMResponse). You can obtain the blacklist from `IMResponse.data`.
+- The callback function parameter for `catch` is [IMError](https://web.sdk.qcloud.com/im/doc/zh-cn/global.html#IMError).
 
 **Sample**
 
@@ -229,8 +229,8 @@ The `options` parameter is of the `Object` type. It contains the following prope
 **Returned values**
 
 This API returns a `Promise` object. The callback functions are as follows:
-- The callback function parameter for `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). You can obtain the blacklist from `IMResponse.data`.
-- The callback function parameter for `catch` is [IMError](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMError).
+- The callback function parameter for `then` is [IMResponse](https://web.sdk.qcloud.com/im/doc/zh-cn/global.html#IMResponse). You can obtain the blacklist from `IMResponse.data`.
+- The callback function parameter for `catch` is [IMError](https://web.sdk.qcloud.com/im/doc/zh-cn/global.html#IMError).
 
 **Sample**
 
@@ -266,8 +266,8 @@ The `options` parameter is of the `Object` type. It contains the following prope
 **Returned values**
 
 This API returns a `Promise` object. The callback functions are as follows:
-- The callback function parameter for `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). You can obtain the userIDs that are deleted from the blacklist from `IMResponse.data`.
-- The callback function parameter for `catch` is [IMError](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMError).
+- The callback function parameter for `then` is [IMResponse](https://web.sdk.qcloud.com/im/doc/zh-cn/global.html#IMResponse). You can obtain the userIDs that are deleted from the blacklist from `IMResponse.data`.
+- The callback function parameter for `catch` is [IMError](https://web.sdk.qcloud.com/im/doc/zh-cn/global.html#IMError).
 
 **Sample**
 
