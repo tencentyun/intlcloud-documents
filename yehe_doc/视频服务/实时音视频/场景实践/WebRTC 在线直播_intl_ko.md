@@ -227,6 +227,6 @@ TRTC SDK 6.6 버전(2019년 08월)부터 최신 서명 알고리즘인 HMAC-SHA2
 ## 참고 자료
 
 - [TWebLive API 매뉴얼](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblive/TWebLive.html)
-- [온라인 Demo](https://trtc.qcloud.com/tweblive/index.html#/)
+- [온라인 Demo](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblivedemo/index.html)
 
 
