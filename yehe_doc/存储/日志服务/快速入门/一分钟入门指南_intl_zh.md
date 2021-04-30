@@ -30,7 +30,7 @@ telnet <region 简称>.cls.tencentyun.com 80
 #### 2.2 查看（或创建）密钥对
 
 登录 [访问管理控制台](https://console.cloud.tencent.com/cam/capi)，查看（或创建）密钥对，并确认密钥状态为启用。
-![](https://main.qcloudimg.com/raw/def581cc17891febfab6ecd1d616327c.png)
+
 
 #### 2.3 安装 LogListener
 
@@ -45,18 +45,18 @@ telnet <region 简称>.cls.tencentyun.com 80
 1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls)。
 2. 在左侧导航栏中，单击【日志主题】，进入日志主题管理页面。
 3. 选择日志主题的地域，单击【创建日志主题】。
-![](https://main.qcloudimg.com/raw/3f525ef2794f3e2ba9913f9540ee6a5e.png)
+
 4. 在弹出的创建日志主题窗口中，填写相关信息。</br>
-<img src="https://main.qcloudimg.com/raw/412d69a16806c585358cea858eec9a77.png" style="width: 50%"></img></br>
+
  - 日志主题名称：例如 topic_test
  - 日志集操作：默认选择当前地域现有的日志集。如需新建日志集，请选择【创建日志集】，输入日志集名称（例如 cls_test）。
 >? 日志集支持保存3 - 90天。如需更长保存时间，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。
 >
 5. 单击【确定】。
  - 创建好的日志主题会出现在日志主题列表中。
-![](https://main.qcloudimg.com/raw/744532830cad015849860480edfe4674.png)
+
  - 新创建的日志集可单击【管理日志集】，在展开的日志集列表页面进行查看。
-![](https://main.qcloudimg.com/raw/3eb0f40975cc63a742730ad4a270fee4.png)
+
 
 ### 4. 创建机器组
 
@@ -68,7 +68,7 @@ telnet <region 简称>.cls.tencentyun.com 80
 一个机器组可以填入多个机器 IP 地址（每行一个 IP 地址）。如果机器是 CVM，直接填写内网 IP 地址即可，更多信息请参考 [机器组管理](https://intl.cloud.tencent.com/document/product/614/17412)。
 4. 单击【确定】。
 机器组创建完成后，可单击操作栏中的【查看】，检查 LogListener 与服务端的连接状态。
-<img src="https://main.qcloudimg.com/raw/6d1b3a1c69c2fdff58cf94e5386af6b7.png" style="width: 50%"></img></br>
+
  - 如果状态正常，表示客户端 LogListener 已成功连接到日志服务。
  - 如果状态异常，请参考 [机器组异常](https://intl.cloud.tencent.com/document/product/614/17424) 文档进行排查。
 
@@ -92,7 +92,7 @@ telnet <region 简称>.cls.tencentyun.com 80
 | 文件名   | 日志文件名，仅支持通配符 \* 和 ? ，\* 表示匹配多个任意字符，? 表示匹配单个任意字符 |
 
 例如，待采集文件的绝对路径是`/cls/logs/access.log`，则采集路径填写的目录前缀是`/cls/logs`，日志文件名填写access.log，如下图所示：
-![](https://main.qcloudimg.com/raw/4645e7ffb34ec843ccd3b2e4eaee61cf.png)
+
 
 #### 5.2 绑定机器组
 
@@ -111,7 +111,7 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 - 输入日志样例并抽取键值对
   在日志样例框中输入一条完整的日志，确认后将自动抽取键值对（key-value），然后为每组键值对定义唯一的键名称（key）。
   在本示例中，日志被解析成`Tue Jan 22 14:49:45 2019`，`download`，`success`，`194` 和`a31f28ad59434528660c9076517dc23b` 五个字段，依次为每个字段定义键名称（key）：`time`，`action`，`status`，`size`，`hashcode`，这样 LogListener 将按照所定义的结构化格式进行数据采集。
-![](https://main.qcloudimg.com/raw/2adf2b037d9a39b9c1509bbc71f7af1a.png)
+
 
 ### 6. 索引配置
 
@@ -123,7 +123,7 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 | 键值索引 | 将整条日志按格式拆分成多个键值对（key-value），然后基于键值对进行字段查询 |
 
 本章节以键值索引为例说明配置方法，在日志集管理页面，单击【索引配置】进入到索引管理页面，选择编辑键值索引，然后将需要进行检索分析的字段（键名key）配置到键值索引中，并每个字段的键值索引指定数据类型，目前支持`long`、`double`、`text`等数据类型，其中`text`类型可以指定分词符（分词符将字符串切分成多个分词）。在上述例子中，为`time`，`action`，`status`，`size`，`hashcode`设置键值索引，其中`size`设置为`long`类型。
-![](https://main.qcloudimg.com/raw/638fc9d1064eb5be919f2cad085875f6.png)
+
 
 开启索引后，新写入的数据将会按照所配置规则建立索引，索引会持久化存储一段时间（根据您所配置的存储周期而定），只有建立索引的部分才能进行日志查询分析。**因此，修改索引规则或关闭索引仅对新写入的数据生效，未过期的历史数据仍可被检索**。
 
@@ -142,7 +142,7 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 日志服务目前支持 [分隔符 CSV 格式](https://intl.cloud.tencent.com/document/product/614/31582) 和 [JSON 格式](https://intl.cloud.tencent.com/document/product/614/31583) 投递方式。
 
 完成创建投递任务后，日志服务异步地将数据投递到目标存储桶中。您可以在目标日志主题的“投递到COS”页签或控制台左侧导航栏的“投递任务管理”中，查看数据投递情况。
-![](https://main.qcloudimg.com/raw/871008b8e1431902361f0b0a2c1f1dc6.png)
+
 
 
 #### 7.2 投递至 Ckafka
@@ -157,4 +157,4 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 6. 选择对应的 Ckafka 实例，单击【确定】，启动 Ckafka 消费。
 
 日志服务目前支持 JSON、原始内容数据格式投递，您可以在被消费的日志主题的“投递到Ckafka”页签中，查看数据投递情况。
-![](https://main.qcloudimg.com/raw/58230e299b5b33403e7240c6062c44a5.png)
+
