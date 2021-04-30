@@ -843,7 +843,7 @@ CDN共有のリンク先を取得します。
 | localQuality  | TRTCQualityInfo            | アップストリームネットワークの品質。 |
 | remoteQuality | NSArray&lt;TRTCQualityInfo *&gt; | ダウンストリームネットワークの品質。 |
 
->? 詳細は[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cngroup__TRTCCloudDelegate__ios.html#a723002319845fbfc03db501aa9da6c28)をご参照ください。
+>? 詳細は[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a723002319845fbfc03db501aa9da6c28)をご参照ください。
 
 ### onUserVolumeUpdate
 
