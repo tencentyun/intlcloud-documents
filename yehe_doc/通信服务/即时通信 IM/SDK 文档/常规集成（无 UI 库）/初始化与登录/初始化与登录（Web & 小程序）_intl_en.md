@@ -12,7 +12,7 @@
 <span class="hljs-comment">// Create an SDK instance. The `TIM.create()` method returns the same instance for the same `SDKAppID`.</span>
 <span class="hljs-keyword">let</span> tim = TIM.create(options); <span class="hljs-comment">// The SDK instance is usually represented by `tim`.</span>
 
-<span class="hljs-comment">// Set the SDK log output level. For more information on each level, see <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#setLogLevel">setLogLevel API Description</a>.</span>
+<span class="hljs-comment">// Set the SDK log output level. For more information on each level, see <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setLogLevel">setLogLevel API Description</a>.</span>
 tim.setLogLevel(<span class="hljs-number">0</span>); <span class="hljs-comment">// Common level. You are advised to use this level during connection as it covers more logs.</span>
 <span class="hljs-comment">// tim.setLogLevel(1); // Release level, at which the SDK outputs important information. You are advised to use this log level in a production environment.</span>
 
@@ -33,7 +33,7 @@ tim.registerPlugin({<span class="hljs-string">'tim-upload-plugin'</span>: TIMUpl
 <span class="hljs-comment">// Create an SDK instance. The `TIM.create()` method returns the same instance for the same `SDKAppID`.</span>
 <span class="hljs-keyword">let</span> tim = TIM.create(options); <span class="hljs-comment">// The SDK instance is usually represented by `tim`.</span>
 
-<span class="hljs-comment">// Set the SDK log output level. For more information on each level, see <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#setLogLevel">setLogLevel API Description</a>.</span>
+<span class="hljs-comment">// Set the SDK log output level. For more information on each level, see <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setLogLevel">setLogLevel API Description</a>.</span>
 tim.setLogLevel(<span class="hljs-number">0</span>); <span class="hljs-comment">// Common level. You are advised to use this level during connection as it covers more logs.</span>
 <span class="hljs-comment">// tim.setLogLevel(1); //  Release level, at which the SDK outputs important information. You are advised to use this log level in a production environment.</span>
 
@@ -45,7 +45,7 @@ tim.registerPlugin({<span class="hljs-string">'tim-upload-plugin'</span>: TIMUpl
 
 ## Setting the Log Level
 
-<pre><code><span class="hljs-comment">// Set the SDK log output level. For more information on each level, see <a href="https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#setLogLevel">setLogLevel API Description</a>.</span>
+<pre><code><span class="hljs-comment">// Set the SDK log output level. For more information on each level, see <a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#setLogLevel">setLogLevel API Description</a>.</span>
 <span class="hljs-selector-tag">tim</span><span class="hljs-selector-class">.setLogLevel</span>(<span class="hljs-number">0</span>);</code></pre>
 
 
@@ -148,11 +148,11 @@ The `options` parameter is of the `Object` type:
 | ---------- | -------- | ----------------------- |
 | `SDKAppID` | `Number` | `SDKAppID` of the IM app |
 
-For more information on how to initialize the SDK and use APIs, see [SDK Initialization](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html).
+For more information on how to initialize the SDK and use APIs, see [SDK Initialization](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html).
 
 ## Login
 
-You can send and receive messages in the IM console only after logging in to the IM SDK. To log in to the IM SDK, you need to provide information such as the UserID and UserSig. For more information, see [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517). After successful login, to call APIs that require authentication, such as [sendMessage](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/SDK.html#sendMessage), you must wait until the SDK enters the ready state. You can obtain the status of the SDK by listening to events. For more information, see [TIM.EVENT.SDK_READY](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.SDK_READY).
+You can send and receive messages in the IM console only after logging in to the IM SDK. To log in to the IM SDK, you need to provide information such as the UserID and UserSig. For more information, see [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517). After successful login, to call APIs that require authentication, such as [sendMessage](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#sendMessage), you must wait until the SDK enters the ready state. You can obtain the status of the SDK by listening to events. For more information, see [TIM.EVENT.SDK_READY](https://web.sdk.qcloud.com/im/doc/zh-cn/module-EVENT.html#.SDK_READY).
 
 >!By default, multi-instance login is not supported. If you use an account that has been logged in on another page to log in on the current page, the account may be forcibly logged out on the other page, which will trigger the `TIM.EVENT.KICKED_OUT` event. You can proceed accordingly after detecting the event through listening. An example of listening for multi-instance login is shown below:
 
@@ -204,9 +204,9 @@ promise.then(function(imResponse) {
  This API is used to log out of the IM console. It is usually called when you switch between accounts. This API clears the login status of the current account and all the data in the memory. 
 
 >!
->- When calling this API, the instance publishes the [SDK_NOT_READY](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.SDK_NOT_READY) event. In this case, the instance is automatically logged out and cannot receive or send messages.
+>- When calling this API, the instance publishes the [SDK_NOT_READY](https://web.sdk.qcloud.com/im/doc/zh-cn/module-EVENT.html#.SDK_NOT_READY) event. In this case, the instance is automatically logged out and cannot receive or send messages.
 >- Assume that the value of the **Online Web Instances** configured in the [IM console](https://console.cloud.tencent.com/im) is greater than 1, and the same account has been used to log in to instances `a1` and `a2` (including a Mini Program instance). After `a1.logout()` is executed, `a1` is automatically logged out and cannot receive or send messages, whereas `a2` is not affected.
->- Assume that the **Online Web Instances** is set to 2, and your account has been used to log in to instances `a1` and `a2`. When you use this account to log in to instance `a3`, either `a1` or `a2` will be forcibly logged out. In most cases, the instance that first entered the login state is forcibly logged out. This is called **kicked offline due to multi-instance login**. If `a1` is forcibly logged out, a logout process is executed within `a1` and the [KICKED_OUT](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/module-EVENT.html#.KICKED_OUT) event is triggered. The access side can listen to this event and redirect to the login page when the event is triggered. At this time, `a1` is forcibly logged out, whereas instances `a2` and `a3` can continue to run properly.
+>- Assume that the **Online Web Instances** is set to 2, and your account has been used to log in to instances `a1` and `a2`. When you use this account to log in to instance `a3`, either `a1` or `a2` will be forcibly logged out. In most cases, the instance that first entered the login state is forcibly logged out. This is called **kicked offline due to multi-instance login**. If `a1` is forcibly logged out, a logout process is executed within `a1` and the [KICKED_OUT](https://web.sdk.qcloud.com/im/doc/zh-cn/module-EVENT.html#.KICKED_OUT) event is triggered. The access side can listen to this event and redirect to the login page when the event is triggered. At this time, `a1` is forcibly logged out, whereas instances `a2` and `a3` can continue to run properly.
 
 **API**
 
@@ -221,8 +221,8 @@ N\/A
 **Response**
 
 This API returns a `Promise` object.
-- The callback function parameter for `then` is [IMResponse](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMResponse). `IMResponse.data` is a null object, indicating that logout succeeded.
-- The callback parameter of `catch` is [IMError](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html#IMError).
+- The callback function parameter for `then` is [IMResponse](https://web.sdk.qcloud.com/im/doc/zh-cn/global.html#IMResponse). `IMResponse.data` is a null object, indicating that logout succeeded.
+- The callback parameter of `catch` is [IMError](https://web.sdk.qcloud.com/im/doc/zh-cn/global.html#IMError).
 
 **Example**
 
