@@ -17,5 +17,5 @@ TenentCloud API is easy to automate and supports remote call. It helps you custo
 You can use the following resources to familiarize yourself with TencentCloud API:
  -  **[APIs](https://intl.cloud.tencent.com/document/api)**: helps you quickly get started with APIs of Tencent Cloud services.
  -  **[API Explorer](https://console.cloud.tencent.com/api/explorer)**: helps you easily call APIs.
- -  **[SDKs](https://intl.cloud.tencent.com/document/494)**: provides you with an access to corresponding resources via SDKs.
+ -  **[SDKs](https://intl.cloud.tencent.com/document/product/494/)**: provides you with an access to corresponding resources via SDKs.
  -  **[API Inspector](https://console.cloud.tencent.com/cvm/instance/index?rid=1)**: records the API calls associated with console operations, and automatically generates API code snippets in various languages with prepopulated parameters.
