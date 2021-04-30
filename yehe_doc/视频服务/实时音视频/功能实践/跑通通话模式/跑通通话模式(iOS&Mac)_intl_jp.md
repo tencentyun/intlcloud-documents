@@ -16,7 +16,7 @@ TRTC クラウドサービスは、2種類の異なるタイプのサーバー�
  [Github] にログインし、本ファイルに関連するサンプルコードを取得することができます。
 ![](https://main.qcloudimg.com/raw/9cc33faf91173116e2d259f6b8b97d55.png)
 
-> Githubへのアクセスが遅い場合は、 [TXLiteAVSDK_TRTC_iOS_latest.zip](http://lliteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_iOS_latest.zip)を直接ダウンロードすることもできます。
+> Githubへのアクセスが遅い場合は、 [TXLiteAVSDK_TRTC_iOS_latest.zip](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html)を直接ダウンロードすることもできます。
 
 ##　操作手順
 <span id="step1"></span>
