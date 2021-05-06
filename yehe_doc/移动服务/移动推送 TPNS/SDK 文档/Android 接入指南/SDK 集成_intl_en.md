@@ -53,8 +53,8 @@ dependencies {
 ```
 
 >!
- - If the service access point of your application is Guangzhou, the SDK implements this configuration by default.
- - If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), please follow the step below to complete the configuration:
+ >- If the service access point of your application is Guangzhou, the SDK implements this configuration by default.
+ >- If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), please follow the step below to complete the configuration:
    Add the following metadata in the `application` tag in the `AndroidManifest` file:
 ```
 <application>
@@ -270,8 +270,8 @@ You need to configure the permissions required by the TPNS SDK to operate proper
 ```
 
 >!
- - If the service access point of your application is Guangzhou, the SDK implements this configuration by default.
- - If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), please follow the step below to complete the configuration:
+ >- If the service access point of your application is Guangzhou, the SDK implements this configuration by default.
+ >- If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), please follow the step below to complete the configuration:
    Add the following metadata in the `application` tag in the `AndroidManifest` file:
 ```
 <application>
