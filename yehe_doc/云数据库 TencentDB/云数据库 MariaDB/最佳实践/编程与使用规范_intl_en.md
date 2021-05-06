@@ -48,7 +48,7 @@ The naming conventions for different database objects are listed below:
 | Database Object | Format | Example | Description |
 | --- | --- | --- | --- |
 | Database (SCHEMA) | db\_&lt;database name&gt; | db\_user | It indicates that all data in this database is user-related information |
-| Table | tbl\_&lt;table name&gt; | tbl\_employees | tbl\_employees | It indicates a table that stores employee information |
+| Table | tbl\_&lt;table name&gt; | tbl\_employees | It indicates a table that stores employee information |
 | Primary key | pk\_&lt;table name&gt;\_&lt;field name&gt;[\_field name] | pk\_emlo\_id\_name | It indicates that the `id` and `name` fields of the `tbl\_employees` table comprise the primary key together. However, in TencentDB for MariaDB, this primary key name is meaningless and will be ignored and then changed to `PRIMARY` by the system |
 | Unique index | uidx\_&lt;table name&gt;\_&lt;field name&gt;[\_field name]\_&lt;number&gt; | uidx\_empl\_name\_age\_1 | It indicates the first unique index created by the `name` and `age` fields of the `tbl\_employees` table |
 | Normal index | idx\_&lt;table name abbreviation&gt;\_&lt;column name abbreviation&gt;[\_column name abbreviation]\_&lt;number&gt; | idx\_empl\_name\_age\_1 | It indicates the first normal index created by the `name` and `age` fields of the `tbl\_employees` table |
