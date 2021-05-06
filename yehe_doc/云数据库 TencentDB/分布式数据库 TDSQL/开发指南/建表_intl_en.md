@@ -6,7 +6,8 @@ Query OK, 0 rows affected (0.07 sec)
 ```
 
 In a TDSQL instance, the shardkey corresponds to the partition field of the backend database, so it must be part of all primary keys and unique indexes; otherwise, the table cannot be created.
-- Use case 1: an error occurs when there are multiple unique indexes.
+
+Use case 1: an error occurs when there are multiple unique indexes.
 ```
 mysql> create table test1 ( a int, b int, c char(20),primary key (a,b),unique key u_1(a,c),unique key u_2(b,c) ) shardkey=a;;
 ```
@@ -15,17 +16,6 @@ According to the above SQL statement, there is a unique index `u_2` that does no
 ERROR 1105 (HY000): A UNIQUE INDEX must include all columns in the table's partitioning function
 ```
 The index on the primary key or unique key has to be globally unique. To do so, the index must include the shardkey field.
-
-- Use case 2: an error occurs when an auto-increment column is the primary key.
-When you create a table, if the primary key is both an auto-increment column and the shardkey as shown below:
-```
-create table test1 ( a int UNSIGNED AUTO_INCREMENT, b int, c char(20),primary key (a),unique key u_2(b,c) ) shardkey=a;
-```
-Then, the table with such a primary key cannot be created and the following error message will be displayed:
-```
-1503, "A UNIQUE INDEX must include all colums in the table’s patitioning function"
-```
-In InnoDB, an auto-increment column does not need the primary key constraints to be unique. To create a sharded table successfully, you need to remove the primary key constraints from the auto-increment column and select a field of the unique key to be the shardkey.
 
 In addition to the above restrictions, the shardkey field has the following requirements:
 - The type of the shardkey field must be int, bigint, smallint, char, or varchar.
