@@ -24,8 +24,8 @@ DMC 提供 kill 会话的功能，方便用户对会话进行管理。
 
 | MySQL Status Information|  InnoDB Row Operation |   Threads   |Network| 
 | ---|---|---|---| 
-| [qps] 表示每秒响应的查询次数 | [read] 表示 InnoDB 存储引擎表的读取记录行数 | [running] 表示活跃的连接数，即正在执行 sql 的连接 |[in(KB)] 表示进入实例的网络流量
-| [tps] 表示每秒处理的事务个数 | [insert] 表示 InnoDB 存储引擎表的写入记录行数| [connected] 表示连接在实例上的空闲连接，即未执行 sql 的连接| [out(KB)] 表示流出实例的网络流量
+| [qps] 表示每秒响应的查询次数 | [read] 表示 InnoDB 存储引擎表的读取记录行数 | [running] 表示活跃的连接数，即正在执行 sql 的连接 |[in(KB)] 表示进入实例的网络流量 |
+| [tps] 表示每秒处理的事务个数 | [insert] 表示 InnoDB 存储引擎表的写入记录行数| [connected] 表示连接在实例上的空闲连接，即未执行 sql 的连接| [out(KB)] 表示流出实例的网络流量 |
 | [ins] 表示 insert 语句每秒执行次数 | [update] 表示 InnoDB 存储引擎表的更新记录行数 |-  |- |
 | [upd] 表示 update 语句每秒执行次数 | [delete] 表示 InnoDB 存储引擎表的删除记录行数|- |- |
 | [del] 表示 delete 语句每秒执行次数 |- |- |- |
