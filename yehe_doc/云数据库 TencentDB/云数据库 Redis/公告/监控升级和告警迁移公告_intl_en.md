@@ -26,7 +26,7 @@ After the monitoring granularity is narrowed from one minute to five seconds, mo
 | ---------------- | ---------------- | ------------------------------------------------------------ |
 | CpuUsMin         | CpuUtil          | Average CPU utilization                                                |
 | CpuMaxUs         | CpuMaxUtil       | The maximum CPU utilization of nodes (shards or replicas) in the instance                      |
-| StorageMin       | MemUsed          | Memory capacity actually used, including data and cache                         | |
+| StorageMin       | MemUsed          | Memory capacity actually used, including data and cache                          |
 | StorageUsMin     | MemUtil          | The ratio of the actually used memory to the requested total memory                                 |
 | StorageMaxUs     | MemMaxUtil       | The maximum memory utilization of nodes (shards or replicas) in the instance                     |
 | KeysMin          | Keys             | The total number of keys stored in an instance (first-level keys)                               |
