@@ -196,7 +196,7 @@ iOSシステムでアプリケーション間画面共有を行うには、Exten
 #### 手順4：画面共有のトリガーボタンの追加（オプション）
 [手順3](＃receive)までに、ユーザーがコントロールセンターからスクリーンキャプチャボタンを長押しして、画面共有を手動で開始する必要があります。では、TencentMeetingのように、ボタンをクリックすることでトリガーできる効果を実現するにはどうすればよいでしょうか。
 
-1. [Demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/Screen)において`TRTCBroadcastExtensionLauncher`というクラスを見つけて、お客様のプロジェクトに追加します。
+1. [Demo]において`TRTCBroadcastExtensionLauncher`というクラスを見つけて、お客様のプロジェクトに追加します。
 2. インターフェースにボタンを設置し、ボタンの応答関数において`TRTCBroadcastExtensionLauncher`の`launch`関数を呼び出すと、画面共有機能を呼び出すことができます。
 ```
 // カスタムボタンによる応答メソッド
