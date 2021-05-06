@@ -35,7 +35,7 @@ fdisk -l
      </tr>
 		 	 <tr>      
          <td>-</td>   
-	     <td nowrap="nowrap"><a href="https://cloud.tencent.com/document/product/362/53364">Extending file systems</a></td>
+	     <td nowrap="nowrap">Extending file systems</a></td>
 			 <td>Applicable to scenarios where a file system is created directly on a bare device and <b>no partition is created</b>.</td>
      </tr>
 	 <tr>      
