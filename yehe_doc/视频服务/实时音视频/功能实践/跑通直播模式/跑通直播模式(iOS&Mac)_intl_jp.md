@@ -15,10 +15,10 @@ TRTC クラウドサービスは、2種類の異なるタイプのサーバー�
 
 
 ## サンプルコード
- [Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo) にログインし、本ファイルに関連するサンプルコードを取得することができます。
+ [Github]にログインし、本ファイルに関連するサンプルコードを取得することができます。
 ![](https://main.qcloudimg.com/raw/7c894fa62fdffe32db8f8d7979d27501.png)
 
->Githubへのアクセスが遅い場合は、 [TXLiteAVSDK_TRTC_iOS_latest.zip](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip)を直接ダウンロードすることもできます。
+>Githubへのアクセスが遅い場合は、 [TXLiteAVSDK_TRTC_iOS_latest.zip](http://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_iOS_latest.zip)を直接ダウンロードすることもできます。
 
 
 ## 操作手順
@@ -76,7 +76,7 @@ func onError(_ errCode: TXLiteAVError, errMsg: String?, extInfo: [AnyHashable : 
 
 <span id="step4"> </span>
 ### 手順4：入室パラメータ TRTCParamsの組み立て
- [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) インターフェースをコールするとき、キーパラメータ [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCParams)を記入する必要があります。このパラメータに含まれる記入必須のフィールドは下表に示すとおりです。
+ [enterRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) インターフェースをコールするとき、キーパラメータ [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCParams)を記入する必要があります。このパラメータに含まれる記入必須のフィールドは下表に示すとおりです。
 
 | パラメータ名 | フィールドタイプ | 補足説明 |記入例 |
 |---------|---------|---------|---------|
@@ -90,12 +90,12 @@ func onError(_ errCode: TXLiteAVError, errMsg: String?, extInfo: [AnyHashable : 
 
 <span id="step5"> </span>
 ### 手順5：キャスター端末でのカメラのプレビューおよびマイク集音の起動
-1. キャスター端末が[startLocalPreview()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3fc1ae11b21944b2f354db258438100e) をコールすると、ローカルのカメラのプレビューを起動することができ、SDKはシステムにカメラのアクセス許可をリクエストします。
-2. キャスター端末が [setLocalViewFillMode()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a961596f832657bfca81fd675878a2d15) をコールすると、ローカルのビデオ画面の表示モードを設定することができます。
+1. キャスター端末が[startLocalPreview()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a3fc1ae11b21944b2f354db258438100e) をコールすると、ローカルのカメラのプレビューを起動することができ、SDKはシステムにカメラのアクセス許可をリクエストします。
+2. キャスター端末が [setLocalViewFillMode()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a961596f832657bfca81fd675878a2d15) をコールすると、ローカルのビデオ画面の表示モードを設定することができます。
  - Fill モードは塗りつぶしを意味し、画面は同じ比率で拡大およびトリミングできますが、黒い縁取りは付きません。
  - Fit モードは適応を意味し、画面は同じ比率で縮小してスクリーンにフィットしてそのコンテンツを完全に表示しますが、黒い縁取りが付くことがあります。
-3. キャスター端末が [setVideoEncoderParam()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e) インターフェースをコールすると、ローカルビデオのエンコードパラメータを設定できますが、そのパラメータはルームのその他ユーザーが視聴する画面の [画質](https://intl.cloud.tencent.com/document/product/647/35153)を決定します。
-4. キャスター端末が[startLocalAudio()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3177329bc84e94727a1be97563800beb) をコールすると、マイクを起動し、SDKはシステムにマイクの使用権限をリクエストします。
+3. キャスター端末が [setVideoEncoderParam()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e) インターフェースをコールすると、ローカルビデオのエンコードパラメータを設定できますが、そのパラメータはルームのその他ユーザーが視聴する画面の [画質](https://intl.cloud.tencent.com/document/product/647/35153)を決定します。
+4. キャスター端末が[startLocalAudio()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a3177329bc84e94727a1be97563800beb) をコールすると、マイクを起動し、SDKはシステムにマイクの使用権限をリクエストします。
 
 ```swift
 //サンプルコード：ローカルのオーディオ・ビデオストリーミングの公開
@@ -113,28 +113,28 @@ trtcCloud.startLocalAudio()
 <span id="step6"> </span>
 ### 手順6：キャスター端末による美顔効果の設定
 
-1.キャスター端末が[getBeautyManager()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a4fb05ae6b5face276ace62558731280a)をコールすると、美顔設定インターフェースを取得することができます[TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html#interfaceTXBeautyManager)。
-2. キャスター端末が [setBeautyStyle()](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html#a8f2378a87c2e79fa3b978078e534ef4a) をコールすると、美顔スタイルを設定できます：
+1.キャスター端末が[getBeautyManager()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a4fb05ae6b5face276ace62558731280a)をコールすると、美顔設定インターフェースを取得することができます[TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html#interfaceTXBeautyManager)。
+2. キャスター端末が [setBeautyStyle()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html#a8f2378a87c2e79fa3b978078e534ef4a) をコールすると、美顔スタイルを設定できます：
  - Smooth：スムース。明らかな効果が感じられます。インフルエンサーのスタイルに近づけます。
  - Nature：ナチュラル。美肌補正のアルゴリズムは顔の詳細な質感を維持し、より自然な感じになります。
  - Pitu ： [企業版](https://intl.cloud.tencent.com/document/product/647/34615) のみサポートしています。
 
-3.キャスター端末が [setBeautyLevel()](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html#af864d9466d5161e1926e47bae0e3f027) をコールすると、顔加工法のレベルを設定します。通常、5の設定でOKです。
+3.キャスター端末が [setBeautyLevel()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html#af864d9466d5161e1926e47bae0e3f027) をコールすると、顔加工法のレベルを設定します。通常、5の設定でOKです。
 
-4.キャスター端末が [setBeautyLevel()](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html#a199b265f6013e0cca0ff99f731d60ff4) をコールすると、美白レベルを設定します。通常、5の設定でOKです。
+4.キャスター端末が [setBeautyLevel()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html#a199b265f6013e0cca0ff99f731d60ff4) をコールすると、美白レベルを設定します。通常、5の設定でOKです。
 
-5.iPhoneのカメラの色調はデフォルトだと黄色味がかっているため、[setFilter()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a1b0c2a9e82a408881281c7468a74f2c0)を呼び出して、キャスターに美白特殊効果を追加し、美白特殊効果に対応するフィルターファイルを、以下のアドレスからダウンロードすることをお勧めします。[フィルターファイル](https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/filter/filterPNG.zip)。
+5.iPhoneのカメラの色調はデフォルトだと黄色味がかっているため、[setFilter()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a1b0c2a9e82a408881281c7468a74f2c0)を呼び出して、キャスターに美白特殊効果を追加し、美白特殊効果に対応するフィルターファイルを、以下のアドレスからダウンロードすることをお勧めします。[フィルターファイル](https://liteav.sdk.qcloud.com/doc/res/trtc/filter/filterPNG.zip)。
 
 
 
 <span id="step7"> </span>
 ### 手順7：キャスター端末によるルーム新規作成およびプッシュの開始
-1.キャスター端末が[TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCParams)のフィールド`role`を **`TRTCRoleType.anchor`**に設定し、現在のユーザーのキャラクターをキャスターとして表示します。
-2.キャスター端末が[enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d)をコールすると、TRTCParams パラメータフィールド`roomId`の値をルームナンバーとするオーディオ・ビデオルームを作成し、**`appScene`**パラメータを指定します。
+1.キャスター端末が[TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCParams)のフィールド`role`を **`TRTCRoleType.anchor`**に設定し、現在のユーザーのキャラクターをキャスターとして表示します。
+2.キャスター端末が[enterRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d)をコールすると、TRTCParams パラメータフィールド`roomId`の値をルームナンバーとするオーディオ・ビデオルームを作成し、**`appScene`**パラメータを指定します。
  - TRTCAppScene.LIVE：ビデオ・インタラクティブストリーミングモード。ここではこのモードを例として取り上げます。
  - TRTCAppScene.voiceChatRoom：ボイス・インタラクティブストリーミングモード。
 
-3. ルームの新規作成が成功したら、キャスター端末は音声ビデオデータのデコードおよび伝送フローを開始します。同時にSDK は [onEnterRoom(result)](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a6960aca54e2eda0f424f4f915908a3c5)  イベントをコールバックします。パラメータ`result`が0より大きいときは入室成功を意味し、具体的な数値は入室してからの消費時間であり、単位はミリ秒（ms）です；`result`が0より小さい時は入室失敗を意味し、具体的な数値は入室失敗のエラーコードになります。
+3. ルームの新規作成が成功したら、キャスター端末は音声ビデオデータのデコードおよび伝送フローを開始します。同時にSDK は [onEnterRoom(result)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a6960aca54e2eda0f424f4f915908a3c5)  イベントをコールバックします。パラメータ`result`が0より大きいときは入室成功を意味し、具体的な数値は入室してからの消費時間であり、単位はミリ秒（ms）です；`result`が0より小さい時は入室失敗を意味し、具体的な数値は入室失敗のエラーコードになります。
 
 ```swift
 func enterRoom() {
@@ -157,20 +157,20 @@ func onEnterRoom(_ result: Int) {
 
 <span id="step8"> </span>
 ### 手順8：視聴者端末が入室しライブストリーミングを視聴
-1.視聴者端末が[TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCParams)のフィールド`role`を**`TRTCRoleType.audience`**に設定し、現在のユーザーのキャラクターを視聴者として表示します。
-2. 視聴者端末が [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) をコールすると、 TRTCParams パラメータのフィールド`roomId`が示すオーディオ・ビデオルームに入室し、**`appScene`**パラメータを指定します。
+1.視聴者端末が[TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCParams)のフィールド`role`を**`TRTCRoleType.audience`**に設定し、現在のユーザーのキャラクターを視聴者として表示します。
+2. 視聴者端末が [enterRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) をコールすると、 TRTCParams パラメータのフィールド`roomId`が示すオーディオ・ビデオルームに入室し、**`appScene`**パラメータを指定します。
  - TRTCAppScene.LIVE：ビデオ・インタラクティブストリーミングモード。ここではこのモードを例として取り上げます。
  - TRTCAppScene.voiceChatRoom：ボイス・インタラクティブストリーミングモード。
 3. キャスターの画面の視聴：
- - 視聴者端末が事前にキャスターの userIdを知っていて、入室に成功後、直接キャスターの`userId`を使用して [startRemoteView(userId, view: view)](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49)をコールすると、キャスターの画面を表示することができます。
- - 視聴者端末がキャスターの userIdを知らず、視聴者端末が入室に成功後に[onUserVideoAvailable()](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80)イベント通知を受信してから、コールバックにより受け取ったキャスター`userId`を使用して[startRemoteView(userId, view: view)](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49)をコールすると、キャスターの画面を表示することができます。
+ - 視聴者端末が事前にキャスターの userIdを知っていて、入室に成功後、直接キャスターの`userId`を使用して [startRemoteView(userId, view: view)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49)をコールすると、キャスターの画面を表示することができます。
+ - 視聴者端末がキャスターの userIdを知らず、視聴者端末が入室に成功後に[onUserVideoAvailable()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80)イベント通知を受信してから、コールバックにより受け取ったキャスター`userId`を使用して[startRemoteView(userId, view: view)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49)をコールすると、キャスターの画面を表示することができます。
 
 
 <span id="step9"> </span>
 ### 手順9：視聴者とキャスターとのマイク接続
-1.視聴者端末が[switch(TRTCRoleType.anchor)](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a5f4598c59a9c1e66938be9bfbb51589c)をコールすると、ロールをキャスター(TRTCRoleType.anchor)に切り替えます。
-2. 視聴者端末が[startLocalPreview()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3fc1ae11b21944b2f354db258438100e) をコールすると、ローカルの画面をアクティブにすることができます。
-3. 視聴者端末が[startLocalAudio()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3177329bc84e94727a1be97563800beb) をコールすると、マイクの集音を開始します。
+1.視聴者端末が[switch(TRTCRoleType.anchor)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a5f4598c59a9c1e66938be9bfbb51589c)をコールすると、ロールをキャスター(TRTCRoleType.anchor)に切り替えます。
+2. 視聴者端末が[startLocalPreview()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a3fc1ae11b21944b2f354db258438100e) をコールすると、ローカルの画面をアクティブにすることができます。
+3. 視聴者端末が[startLocalAudio()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a3177329bc84e94727a1be97563800beb) をコールすると、マイクの集音を開始します。
 
 ```swift
 //サンプルコード：視聴者マイク・オン
@@ -190,10 +190,10 @@ trtcCloud.stopLocalPreview()
 
 TRTC ではの異なるオーディオ・ビデオルームのキャスターが2人、当初のライブストリーミングを退出しないというユースケースにおいて、“ルームを跨いだ通話”機能によってマイク接続通話機能をプルして“ルームを跨いだマイク接続PK”を実施することができます。
 
-1.キャスター A は、[connectOtherRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a062bc48550b479a6b7c1662836b8c4a5)インターフェースをコールします。インターフェースパラメータは現在、JSON形式を採用しており、キャスターBの`{"roomId": 978,"userId": "userB"}`のフォーマットに組み立てられた`roomId`と`userId`のパラメータをインターフェース関数に渡す必要があります。
-2．ルームを跨ぐことに成功した後は、キャスター A は [onConnectOtherRoom()](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a69e5b1d59857956f736c204fe765ea9a) イベントコールバックを受け取ります。同時に、2つのライブストリーミングルームのすべてのユーザーはいずれも [onUserVideoAvailable()](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80)  および [onUserAudioAvailable()](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a8c885eeb269fc3d2e085a5711d4431d5)  イベント通知を受け取ります。
+1.キャスター A は、[connectOtherRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a062bc48550b479a6b7c1662836b8c4a5)インターフェースをコールします。インターフェースパラメータは現在、JSON形式を採用しており、キャスターBの`{"roomId": 978,"userId": "userB"}`のフォーマットに組み立てられた`roomId`と`userId`のパラメータをインターフェース関数に渡す必要があります。
+2．ルームを跨ぐことに成功した後は、キャスター A は [onConnectOtherRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a69e5b1d59857956f736c204fe765ea9a) イベントコールバックを受け取ります。同時に、2つのライブストリーミングルームのすべてのユーザーはいずれも [onUserVideoAvailable()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80)  および [onUserAudioAvailable()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a8c885eeb269fc3d2e085a5711d4431d5)  イベント通知を受け取ります。
  例えば、ルーム「001」のキャスターAがルーム「002」のキャスターBと`connectOtherRoom()`を介してルーム間通話する場合、ルーム「001」のユーザーはキャスターBの`onUserVideoAvailable(B, available: true)`コールバックと`onUserAudioAvailable(B, available: true)`コールバックを受信します。ルーム「002」のユーザーはキャスターAの`onUserVideoAvailable(A, available: true)`コールバックと`onUserAudioAvailable(A, available: true)`コールバックを受信します。
-3.2つのルームにいるユーザーは、[startRemoteView(userId, view: view)](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49)をコールすることで、もう一方のルームのキャスターの画面を表示することができ、音声は自動再生されます。
+3.2つのルームにいるユーザーは、[startRemoteView(userId, view: view)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49)をコールすることで、もう一方のルームのキャスターの画面を表示することができ、音声は自動再生されます。
 
 ```swift
 //サンプルコード：ルームを跨いだマイク接続PK
@@ -209,7 +209,7 @@ trtcCloud.connectOtherRoom(jsonString)
 <span id="step11"> </span>
 ### 手順11：現在のルームからの退出
 
-[exitRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a715f5b669ad1d7587ae19733d66954f3) メソッドをコールしてルームを退出すると、SDK は、退室するときカメラ、マイクなどのハードデバイスを停止またはリリースする必要があるため、退室動作は一瞬で完了するものではなく、[onExitRoom()](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a6a98fcaac43fa754cf9dd80454897bea)のコールバックを受信してから、実際に退室操作を完了したとみなす必要があります。
+[exitRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a715f5b669ad1d7587ae19733d66954f3) メソッドをコールしてルームを退出すると、SDK は、退室するときカメラ、マイクなどのハードデバイスを停止またはリリースする必要があるため、退室動作は一瞬で完了するものではなく、[onExitRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a6a98fcaac43fa754cf9dd80454897bea)のコールバックを受信してから、実際に退室操作を完了したとみなす必要があります。
 
 ```swift
 // 退室のコール後は、onExitRoom イベントのコールバックをお待ちください
