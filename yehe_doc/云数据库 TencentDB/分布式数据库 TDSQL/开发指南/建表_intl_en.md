@@ -7,7 +7,7 @@ Query OK, 0 rows affected (0.07 sec)
 
 In a TDSQL instance, the shardkey corresponds to the partition field of the backend database, so it must be part of all primary keys and unique indexes; otherwise, the table cannot be created.
 
-Use case 1: an error occurs when there are multiple unique indexes.
+Use case : an error occurs when there are multiple unique indexes.
 ```
 mysql> create table test1 ( a int, b int, c char(20),primary key (a,b),unique key u_1(a,c),unique key u_2(b,c) ) shardkey=a;;
 ```
