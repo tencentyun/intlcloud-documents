@@ -31,5 +31,4 @@ In most other types of cases, the field of the data on which most (or core) data
 Once selected, the shardkey cannot be changed. If you want to modify the shardkey of a table, you need to create a new table.
 To modify a shardkey value in a row of a sharded table, you need to INSERT a new value and DELETE the old one. You cannot UPDATE it.
 
-### Are distributed joins and transaction supported?
-Currently, TDSQL for MySQL supports single-shardkey joins and transactions and cross-node transactions. Cross-node joins are unsupported.
+
