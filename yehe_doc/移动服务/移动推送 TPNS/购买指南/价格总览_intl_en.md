@@ -44,10 +44,10 @@ The total package fees will be: Monthly fees x Duration x (1 - Discount) = (10 x
 ### Pricing description
 
 The following applies for the daily pay-as-you-go billing mode:
-	- DAUs <= 1,000: No fees will be incurred for the day.
-	- 1,000 < DAUs <= 10,000: Fees will be incurred and settled at the fixed prices listed below.
-	- DAUs > 10,000: Fees will be incurred and settled at the elastic prices listed below.
-	- The continuous usage duration starts on the day when an application enables pay-as-you-go billing for the first time. If the service is suspended or terminated during usage, the duration will not revert to 0. If the number of DAUs is less than or equal to 1,000 with no fees incurred, that day will not be included in the continuous usage duration.
+- DAUs <= 1,000: No fees will be incurred for the day.
+- 1,000 < DAUs <= 10,000: Fees will be incurred and settled at the fixed prices listed below.
+- DAUs > 10,000: Fees will be incurred and settled at the elastic prices listed below.
+- The continuous usage duration starts on the day when an application enables pay-as-you-go billing for the first time. If the service is suspended or terminated during usage, the duration will not revert to 0. If the number of DAUs is less than or equal to 1,000 with no fees incurred, that day will not be included in the continuous usage duration.
 	
 
 Because service costs vary by service access points, their corresponding prices are also different, as shown below:
