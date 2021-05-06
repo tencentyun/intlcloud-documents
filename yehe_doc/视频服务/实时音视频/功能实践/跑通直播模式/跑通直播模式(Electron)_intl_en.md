@@ -115,6 +115,7 @@ encParam.videoFps = 25;
 encParam.videoBitrate = 600;
 encParam.enableAdjustRes = true;
 trtcCloud.setVideoEncoderParam(encParam);
+
 ```
 
 <span id="step6"></span>
@@ -133,6 +134,7 @@ trtcCloud.setVideoEncoderParam(encParam);
 ```javascript
 // Enable beauty filters. 
 trtcCloud.setBeautyStyle(TRTCBeautyStyle.TRTCBeautyStyleNature, 5, 5, 5);
+
 ```
 
 
@@ -267,6 +269,7 @@ let onConnectOtherRoom = function(userId, errCode, errMsg) {
 const paramJson = '{"roomId": "978","userId": "userB"}';
 trtcCloud.connectOtherRoom(paramJson);
 trtcCloud.on('onConnectOtherRoom', onConnectOtherRoom); 
+
 ```
 
 <span id="step11"></span>
