@@ -21,7 +21,7 @@
 | Zone          | 是     | string | 可用区 ID，当前支持 ap-shanghai-2、ap-beijing-3、ap-guangzhou-2。 |
 | DBInstanceName | 是     | string | 数据库实例名，同一个帐号下该值必须唯一。                    |
 | DBVersion      | 是     | string | 数据库版本，目前仅支持10.4。                                |
-| DBCharset      | 是     | string | PostgreSQL 数据库字符集，目前支持 UTF8、LATIN1 两种。        
+| DBCharset      | 是     | string | PostgreSQL 数据库字符集，目前支持 UTF8、LATIN1 两种。       | 
 | VpcId          | 否     | string | 私有网络 ID，若不指定此项，则为实例分配基础网络 IP 地址。     |
 | SubnetId       | 否     | string | 私有网络子网 ID，与私有网络 ID 同时搭配使用。                  |
 
