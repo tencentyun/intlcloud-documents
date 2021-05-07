@@ -1,16 +1,16 @@
 ### 扩容类型为系统盘的云硬盘
 当扩容类型为系统盘的云硬盘时，您可通过以下2种方式进行扩容。
-- [通过云服务器控制台扩容](https://intl.cloud.tencent.com/document/product/362/5747)
-- [通过重装系统扩容](https://intl.cloud.tencent.com/document/product/362/5747)
+- [通过云服务器控制台扩容](https://intl.cloud.tencent.com/document/product/362/5747#useCVMconsole)
+- [通过重装系统扩容](https://intl.cloud.tencent.com/document/product/362/5747#reinstallSystem)
 
 
 
 ### 扩容类型为数据盘的云硬盘
 
 当扩容类型为数据盘的云硬盘时，您可通过以下3种方式进行扩容。
-- [通过云服务器控制台扩容](https://intl.cloud.tencent.com/document/product/362/5747)
-- [通过云硬盘控制台扩容](https://intl.cloud.tencent.com/document/product/362/5747)
-- [通过 API 扩容](https://intl.cloud.tencent.com/document/product/362/5747)
+- [通过云服务器控制台扩容](https://intl.cloud.tencent.com/document/product/362/5747#useCVMConsole)
+- [通过云硬盘控制台扩容](https://intl.cloud.tencent.com/document/product/362/5747#useCBSConsole)
+- [通过 API 扩容](https://intl.cloud.tencent.com/document/product/362/5747#useAPI)
 
 
 
