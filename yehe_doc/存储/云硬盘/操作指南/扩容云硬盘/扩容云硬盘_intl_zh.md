@@ -26,7 +26,8 @@
 4. 完成支付。
 5. 根据目标云服务的操作系统类型，您需要执行 [扩展分区及文件系统（Windows）](https://intl.cloud.tencent.com/document/product/362/31601)或 [扩展分区及文件系统（Linux）](https://intl.cloud.tencent.com/document/product/362/39995)将扩容部分的容量划分至已有分区内，或者将扩容部分的容量格式化成新的独立分区。
 
-####  通过\sAPI\s扩容[](id:useAPI)
+[](id:useAPI)
+####  通过API扩容
 您可以使用 ResizeDisk 接口扩容指定的弹性云盘，具体操作请参考 [扩容云硬盘](https://intl.cloud.tencent.com/document/product/362/16310)。
 
 
@@ -69,10 +70,12 @@ ls -l /dev/disk/by-id
 1. [登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/5435)。
 2. 右键单击 <img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin:-6px 0px">，选择【运行】。
 3. 在“运行”窗口中，输入 `cmd` 并按 **Enter**。
+
 4. 执行以下命令，查看到云硬盘与设备名之间的对应关系。
 ```
 wmic diskdrive get caption,deviceid,serialnumber
 ```
+
 或执行以下命令
 
 ```
@@ -87,7 +90,8 @@ wmic path win32_physicalmedia get SerialNumber,Tag
 您可根据云服务器实际使用的操作系统，选择查看方式：
 
 [](id:confirmLinuxConfig)
-#### 查看\sLinux\s实例\scloudinit\s配置
+#### 查看Linux实例cloudinit配置
+
 完成扩容操作后，请 [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436) 确认 `/etc/cloud/cloud.cfg` 是否包含 growpart 及 resizefs 配置项。
  - 是，则无需进行其他操作。如下图所示：
 ![](https://main.qcloudimg.com/raw/03d38f34651d317176c50f1ed3a03f30.png)
@@ -96,7 +100,8 @@ wmic path win32_physicalmedia get SerialNumber,Tag
  - 否，则需根据目标云服务的操作系统类型，手动扩文件系统及分区。您需要执行 [扩展分区及文件系统（Linux）](https://intl.cloud.tencent.com/document/product/362/39995)，将扩容部分的容量划分至已有分区内或将扩容部分的容量格式化为新的独立分区。
 
 [](id:confirmwindowsConfig)
-#### 查看\sWindows\s实例\scloudinit\s配置
+#### 查看Windows实例cloudinit配置
+
 完成扩容操作后，请 [登录 Windows 实例](https://intl.cloud.tencent.com/document/product/213/5435) 确认 `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf\cloudbase-init.conf` 中的 plugin 是否包含 ExtendVolumesPlugin 配置项。
  - 是，则无需进行其他操作。
  - 否，则需根据目标云服务的操作系统类型，手动扩文件系统及分区。您需要执行 [扩展分区及文件系统（Windows）](https://intl.cloud.tencent.com/document/product/362/31601)，将扩容部分的容量划分至已有分区内或将扩容部分的容量格式化为新的独立分区。
