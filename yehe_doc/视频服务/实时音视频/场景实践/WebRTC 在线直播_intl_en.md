@@ -4,7 +4,7 @@ This document describes how to quickly enable browser-based live streaming featu
 
 ## How It Works
 
-[**TWebLive**](https://trtc.qcloud.com/tweblive/index.html#/) is a browser-based live streaming component Tencent Cloud developed based on its TRTC, IM and CDN services. With this component, you can use simple code to enable features including stream pushing/pulling and chat rooms.
+[**TWebLive**] is a browser-based live streaming component Tencent Cloud developed based on its TRTC, IM and CDN services. With this component, you can use simple code to enable features including stream pushing/pulling and chat rooms.
 
 ### Stream pushing
 To use the stream pushing feature, you need to create a pusher object. A simple stream pushing feature takes only three steps to implement:
