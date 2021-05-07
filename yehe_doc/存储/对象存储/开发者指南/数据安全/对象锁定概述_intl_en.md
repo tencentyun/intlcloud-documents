@@ -9,9 +9,9 @@ Object Lock is a bucket-level feature, that is, only one time-based Object Lock 
 
 During the retention period:
 
-a. The object cannot be deleted or modified.
-b. The object’s storage class cannot be modified.
-c. HTTP headers and user metadata (including `Content-Type`, `Content-Encoding`, `Content-Language`, `Content-Disposition`, `Cache-Control`, `Expires`, and `x-cos-meta-`) cannot be modified.
+- The object cannot be deleted or modified.
+- The object’s storage class cannot be modified.
+- HTTP headers and user metadata (including `Content-Type`, `Content-Encoding`, `Content-Language`, `Content-Disposition`, `Cache-Control`, `Expires`, and `x-cos-meta-`) cannot be modified.
 
 A time-based Object Lock rule has only one status, that is, once the rule is submitted, it takes effect. The rule cannot be modified or deleted. You can only extend the retention period.
 
