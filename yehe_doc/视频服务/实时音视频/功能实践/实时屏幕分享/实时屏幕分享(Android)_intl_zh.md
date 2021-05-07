@@ -7,9 +7,11 @@
 
 ## 支持的平台
 
-| iOS | Android | Mac OS | Windows |Electron| 微信小程序 | Chrome 浏览器|
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-|  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  |   ×   |  &#10003;  |
+| iOS | Android | Mac OS | Windows |Electron|  Chrome 浏览器|
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  | &#10003;  |
+
+
 
 ## 启动屏幕分享
 要开启 Android 端的屏幕分享，只需调用 `TRTCCloud` 中的  [startScreenCapture()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58) 接口即可。但如果要达到稳定和清晰的分享效果，您需要关注如下三个问题：
@@ -40,7 +42,7 @@
 从 Android 7.0 系统开始，切入到后台运行的普通 App 进程，但凡有 CPU 活动，都很容易会被系统强杀掉。 所以当 App 在切入到后台默默进行屏幕分享时，通过弹出悬浮窗的方案，可以避免被系统强杀掉。 同时，在手机屏幕上显示悬浮窗也有利于告知用户当前正在做屏幕分享，避免用户泄漏个人隐私。
 
 - **方案1：弹出普通的悬浮窗**
-要弹出类似“腾讯会议”的迷你悬浮窗，您只需要参考示例代码 [FloatingView.java](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTCSimpleDemo/screen/src/main/java/com/tencent/liteav/screen/FloatingView.java) 中的实现即可：
+要弹出类似“腾讯会议”的迷你悬浮窗，您只需要参考示例代码 [FloatingView.java] 中的实现即可：
 
 ```java
 public void showView(View view, int width, int height) {
