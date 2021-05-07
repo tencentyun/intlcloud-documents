@@ -132,9 +132,9 @@ For example, when anchor A in room "001" uses connectOtherRoom() to successfully
 In short, cross-room call is to share between two anchors in different rooms, so that users in either room can see both of them.
 
 <pre>
-                             Room 001                            Room 002
-                          ----------------                    ---------------
- Before cross-room call: | Anchor A      |                   | Anchor B     |
+                             Room 001                             Room 002
+                          ----------------                     ---------------
+ Before cross-room call: | Anchor A          |               |  Anchor B       |
                         | Viewers U, V, and W  |           | Viewers X, Y, and Z |
                           ----------------                   ---------------</pre>
 
