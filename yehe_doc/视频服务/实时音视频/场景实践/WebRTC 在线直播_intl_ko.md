@@ -4,7 +4,7 @@
 
 ## 구현 원리
 
-[**TWebLive**](https://trtc.qcloud.com/tweblive/index.html#/)는 Tencent Cloud의 TRTC, IM, CDN 등의 서비스를 기반으로 구축된 Web 라이브 방송 모듈로, 간편하게 몇 가지 코드만으로 다음과 같은 푸시 스트림, 풀 스트림, 채팅방 기능을 구현할 수 있습니다.
+[**TWebLive**]는 Tencent Cloud의 TRTC, IM, CDN 등의 서비스를 기반으로 구축된 Web 라이브 방송 모듈로, 간편하게 몇 가지 코드만으로 다음과 같은 푸시 스트림, 풀 스트림, 채팅방 기능을 구현할 수 있습니다.
 
 ### 푸시 스트림
 푸시 스트림이 필요한 경우 Pusher(푸시 스트림) 객체를 생성하면 되며, 세 단계만으로 간편하게 설정할 수 있습니다.
