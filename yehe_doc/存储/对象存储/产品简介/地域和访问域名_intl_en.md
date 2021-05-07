@@ -1,3 +1,4 @@
+
 ## Overview
 
 A **region** is an area where a Tencent Cloud managed data center is deployed. COS data is stored in buckets in these regions. You can use COS to store your data in multiple regions. In general, you are advised to create buckets in the region closest to the location where your business is conducted. In this way, latency and costs can be reduced and compliance requirements can be met.
@@ -10,6 +11,7 @@ For example, if your business is distributed in South China, creating buckets in
 > ? After a bucket is created, a corresponding default endpoint will be generated. You can go to [COS console](https://console.cloud.tencent.com/cos5) and view it on the **Basic Configurations** page of the bucket.
 
 
+
 ### Chinese mainland
 
 <table>
@@ -19,7 +21,7 @@ For example, if your business is distributed in South China, creating buckets in
       <th>Default Endpoint (Upload/Download/Management)</th>
    </tr>
    <tr>
-      <td rowspan=10>Chinese mainland</td>
+      <td rowspan=7>The Chinese mainland</td>
       <td rowspan=7 nowrap="nowrap">Public cloud regions</td>
       <td nowrap="nowrap">Beijing Zone 1 (sold out)</td>
       <td>ap-beijing-1</td>
@@ -69,8 +71,8 @@ For example, if your business is distributed in South China, creating buckets in
       <th>Default Endpoint (Upload/Download/Management)</th>
    </tr>
    <tr>
-      <td rowspan=6>Asia Pacific</td>
-      <td rowspan=11 nowrap="nowrap">Public cloud regions</td>
+      <td rowspan=7>Asia Pacific</td>
+      <td rowspan=12 nowrap="nowrap">Public cloud regions</td>
       <td>Hong Kong (China)</td>
       <td>ap-hongkong</td>
       <td>&lt;BucketName-APPID&gt;.cos.ap-hongkong.myqcloud.com</td>
@@ -84,6 +86,11 @@ For example, if your business is distributed in South China, creating buckets in
       <td>Mumbai</td>
       <td>ap-mumbai</td>
       <td>&lt;BucketName-APPID&gt;.cos.ap-mumbai.myqcloud.com</td>
+   </tr>
+   <tr>
+      <td  nowrap="nowrap">Jakarta (beta test)</td>
+      <td>ap-jakarta</td>
+      <td>&lt;BucketName-APPID&gt;.cos.ap-jakarta.myqcloud.com</td>
    </tr>
    <tr>
       <td>Seoul</td>
@@ -102,12 +109,12 @@ For example, if your business is distributed in South China, creating buckets in
    </tr>
    <tr>
       <td rowspan=3>North America</td>
-      <td>Silicon Valley (US West)</td>
+      <td  nowrap="nowrap">Silicon Valley (US Wes)</td>
       <td>na-siliconvalley</td>
       <td>&lt;BucketName-APPID&gt;.cos.na-siliconvalley.myqcloud.com</td>
    </tr>
    <tr>
-      <td>Virginia (US East)</td>
+      <td  nowrap="nowrap">Virginia (US East)</td>
       <td>na-ashburn</td>
       <td>&lt;BucketName-APPID&gt;.cos.na-ashburn.myqcloud.com</td>
    </tr>
@@ -129,13 +136,15 @@ For example, if your business is distributed in South China, creating buckets in
    </tr>
 </table>
 
+>?The Jakarta region is in beta testing. Therefore, some users may not see it in the console.
+
 
 ### Global acceleration endpoint
 
-A global acceleration endpoint is formatted as `<BucketName-APPID>.cos.accelerate.myqcloud.com`. For more information about global acceleration endpoints and the use cases, please see [Overview](https://intl.cloud.tencent.com/document/product/436/33409).
+A global acceleration endpoint is formatted as `&lt;BucketName-APPID&gt;.cos.accelerate.myqcloud.com`. For more information about global acceleration endpoints and the use cases, please see [Overview](https://intl.cloud.tencent.com/document/product/436/33409).
 
 
-### Sample
+### Samples
 
 Assume that you have logged in to COS console as the root account (`APPID` is `1250000000`) and created a bucket named **examplebucket** in the **Guangzhou** region, the default endpoint of the bucket will be:
 
@@ -167,3 +176,5 @@ Tencent Cloud COS adopts intelligent resolution for COS endpoints. In this way, 
 If you deploy a service in Tencent Cloud to access COS, intra-region access requests will be automatically directed to a private network address. Currently, cross-region requests do not support private network access and will be resolved to a public network address by default.
 
 For more information about private network and public network access, please see [Creating Request Overview](https://intl.cloud.tencent.com/document/product/436/30613).
+
+

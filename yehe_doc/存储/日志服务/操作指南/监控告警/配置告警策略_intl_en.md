@@ -17,7 +17,7 @@ Select the log topic to be monitored and configure the corresponding analysis st
 | Name | Description | Example |
 | ------------ | ----------------------------------------- | ------------------------------------------------------------ |
 | Log topic     | Target log topic for which to configure monitoring alarms            | Log topic `nginx`                                         |
-| Analysis statement     | Analysis statement that acts on the log topic | Example 1. Get the number of logs in the `error` status<br>status:error | select count(*) as ErrCount<br>Example 2. Get the average request latency of the domain name (url:aaa.com)<br>url:"aaa.com" \| select avg(request_time) as Latency |
+| Analysis statement     | Analysis statement that acts on the log topic | Example 1. Get the number of logs in the `error` status: </br>status:error \| select count(\*) as ErrCount</br>Example 2. Get the average request latency of the domain name: </br>url:"aaa.com" \| select avg(request_time) as Latency |
 | Query time range | Data time range in which to run the analysis statement             | Example 1. Get the number of logs in the `error` status in the last 5 minutes<br>Example 2. Get the average latency of the requests made in the last 1 minute |
 
 #### Monitoring period
@@ -53,7 +53,9 @@ You can set the interval between two notifications to avoid frequently sending a
 The notification channels and objects can be set by associating a notification template. Notifications can be sent by SMS, phone calls, WeChat, WeCom, and webhook. For more information, please see [Creating Notification Template](https://intl.cloud.tencent.com/document/product/614/39582).
 
 ## FAQs
-<span id="number"></span>
-### How do I view the number?
+
+### How do I view the number?[](id:number)
 
 On the monitoring rule page, the number of a monitoring object is displayed on its left. The query number for the 1st object is 1, the query number for the 2nd object is 2, and so on.
+
+![](https://main.qcloudimg.com/raw/c8356f8246fb821bd57e619c9827b17c.png)

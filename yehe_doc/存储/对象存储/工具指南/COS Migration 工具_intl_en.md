@@ -1,25 +1,26 @@
-## Feature
+## Feature Overview
 COS Migration is an all-in-one tool that integrates COS data migration feature. Users can quickly migrate data from various sources to COS through simple configurations and steps. It has the following features:
 - Diverse data sources:
    - Local data: migrate locally stored data to COS.
    - Other cloud storage services: Currently, it supports migration from AWS S3, Alibaba Cloud OSS, and Qiniu to COS. More services will be supported in the future.
    - URL list: download and migrate data from specified URLs to COS.
    - Bucket replication: data can be replicated among COS buckets. Cross-account and cross-region replication is supported.
-- Resume upload from breakpoints: resume uploads from breakpoints is supported. For large files, if the upload exits halfway or service failure occurs, you can run the tool again to resume the upload.
+- Checkpoint restart: restarting uploads from checkpoints is supported. For large files, if the upload exits halfway or service failure occurs, you can run the tool again to restart the upload.
 - Multipart upload: an object can be uploaded to COS by parts.
 - Parallel upload: multiple objects can be uploaded at the same time.
 - Migration verification: migrated objects can be verified.
 
->
+>!
 >- COS Migration only supports UTF-8 encoding.
 >- If you use this tool to upload a file whose name already exists, the older file will be overwritten. File name duplication cannot be checked.
 
-## Operating Environment
+## Operating Environments
 ### System environment
 Windows, Linux, and macOS.
 
 ### Software requirements
 - JDK 1.8 X64 or above. For more information on JDK installation and configuration, see [Java](https://intl.cloud.tencent.com/document/product/436/10865).
+- IFUNC needs to be supported on Linux and the binutils version should be later than 2.20.
 
 ## Directions
 ### 1. Get the tool
@@ -56,7 +57,7 @@ COS_Migrate_tool
 |——start_migrate.bat #Migration startup script for Windows
 </pre>
 
->
+>?
  - The db directory mainly records the IDs of files successfully migrated by the tool. Each migration job will first compare the records in db directory. If the ID of the current file has already been recorded, the current file will be skipped, otherwise it will be migrated.
  - The log directory keeps all the logs generated during tool migration. If an error occurs during migration, first check the error.log under this directory.
 
@@ -112,7 +113,7 @@ encryptionType=sse-cos
 | region | Region information of the destination bucket. For the region abbreviations in COS, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) |-|
 | storageClass | Storage class: Standard (standard storage), Standard_IA (standard infrequent access storage), or Archive (archive storage) | Standard |
 | cosPath | COS path to migrate to. `/` indicates to migrate to the root path of the bucket, `/folder/doc/` indicates to migrate to `/folder/doc/` in the bucket. If `/folder/doc/` does not exist, a path will be created automatically |/|
-| https | Whether to transfer via HTTPS. on :Yes, off: No. It takes time to enable transfer via HTTPS, which is suitable for scenarios that demand high security. | off |
+| https | Whether to transfer via HTTPS. on: Yes, off: No. It takes time to enable transfer via HTTPS, which is suitable for scenarios that demand high security. | off |
 | tmpFolder | The directory used to store temporary files when data is migrated from another cloud storage service to COS, which will be deleted after the migration is completed. The format must be an absolute path: <br>The separator on Linux is /, such as `/a/b/c`<br>The separator on Windows is \\, such as `E:\\a\\b\\c`<br>The default value is the tmp directory in the path of the tool | ./tmp |
 | smallFileThreshold| Number of bytes as the threshold for small files. If the size is greater than or equal to this threshold, multipart upload is used; otherwise, simple upload is used. The default value is 5 MB | 5242880 |
 | smallFileExecutorNum | Concurrency for uploading small files (smaller than smallFileThreshold) via simple upload. Decrease the concurrency if files are uploaded to COS via public network with low bandwidth | 64 |
@@ -139,7 +140,7 @@ ignoreModifiedTimeLessThanSeconds=
 
 | Configuration Item | Description |
 | ------| ------ |
-|localPath| An absolute path to a local directory: <br>The separator on Linux is /, such as `/a/b/c` <br>The separator on Windows is \\, such as `E:\\a\\b\\c` |
+| localPath | Absolute path of the local directory <br><li>Linux uses a slash (/) as the delimiter, for example, `/a/b/c` <br><li>Windows uses two backlashes (\\) as the delimiter, for example, `E:\\a\\b\\c` |
 | excludes | Absolute path of the directory or file to be excluded, meaning some directories or files under localPath are not to be migrated. Multiple absolute paths are separated by semicolons. If this is left blank, all files in the localPath will be migrated |
 | ignoreModifiedTimeLessThanSeconds | Exclude files whose update time is less than a certain period of time from the current time. Unit in seconds. This is left blank by default, indicating files are not to be filtered by lastmodified time. This is suitable for scenarios where users run the migration tool while updating files, and do not want files being updated to be migrated to COS. For example, if this is configured as 300, only files updated at least 5 minutes ago will be uploaded |
 
@@ -234,7 +235,7 @@ urllistPath=D:\\folder\\urllist.txt
 **3.3.6 Configure bucket replication migrateBucketCopy**
 
 If you migrate from one COS bucket to another bucket, configure this section. The specific configuration items and descriptions are as follows:
-> The account that initiate the migration needs to have the read permission to source bucket and write permission to destination bucket.
+>!The account that initiates the migration needs to have permissions to read the source bucket and write to the destination bucket.
 
 <pre>
 # Configuration section for migration from source bucket to destination bucket
@@ -295,7 +296,7 @@ sh start_migrate.sh
 sh start_migrate.sh -Dcommon.cosPath=/savepoint0403_10/
 </pre>
 
->
+>?
 >- The tool supports reading configuration items in two ways: command line or configuration file.
 >- The command line takes priority over the configuration file, i.e., for the same configuration item, parameters in command lines take priority.
 >- Reading configuration items from command lines allows users to run different migration jobs at the same time, provided that key configuration items (such as bucket name, COS path, source path to be migrated, etc.) in the two jobs are not exactly the same. Concurrent migration can be achieved because different migration jobs are written into different db directories. Please refer to db information in tool structure above.
@@ -315,5 +316,5 @@ COS migration tool has a status. Successful migrations will be recorded in the f
 4. Statistics are printed out after the migration is completed, which include the total number of migrated, failed, and skipped files as well as the amount of time consumed. For failures, check the error log, or rerun the migration job as the migration tool will skip successfully migrated files and retry migrating failed ones. The execution result of a migration job is shown below:
 ![](https://main.qcloudimg.com/raw/2534fd390218db29bb03f301ed2620c8.png)
 
-## FAQ
+## FAQs
 If an exception such as migration failure or execution error occurs when you use COS Migration tool, see [COS Migration Tool](https://intl.cloud.tencent.com/document/product/436/30585) for troubleshooting.
