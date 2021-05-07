@@ -140,7 +140,7 @@ In short, cross-room call is to share between two anchors in different rooms, so
 
 
 
-<pre>                         Room 001                            Room 002
+<pre>                            Room 001                            Room 002
                           ----------------                   -----------------
  After cross-room call: | Anchors A and B    |             | Anchors B and A   |
                        | Viewers U, V, and W  |           | Viewers X, Y, and Z |
