@@ -1,16 +1,16 @@
 ### Expanding cloud system disks
 If the cloud disk works as a system disk, you can expand it using the following two methods.
-- [Expanding via the CVM console](https://intl.cloud.tencent.com/document/product/362/5747)
-- [Reinstalling system](https://intl.cloud.tencent.com/document/product/362/5747)
+- [Expanding via the CVM console](https://intl.cloud.tencent.com/document/product/362/5747#useCVMconsole)
+- [Reinstalling system](https://intl.cloud.tencent.com/document/product/362/5747#reinstallSystem)
 
 
 
 ### Expanding cloud data disks
 
 If the cloud disk is a data disk, you can expand it using the following three methods.
-- [Expanding cloud disks via the CVM console](https://intl.cloud.tencent.com/document/product/362/5747)
-- [Expanding cloud disks via the CBS console](https://intl.cloud.tencent.com/document/product/362/5747)
-- [Expanding cloud disks via API](https://intl.cloud.tencent.com/document/product/362/5747)
+- [Expanding cloud disks via the CVM console](https://intl.cloud.tencent.com/document/product/362/5747#useCVMConsole)
+- [Expanding cloud disks via the CBS console](https://intl.cloud.tencent.com/document/product/362/5747#useCBSConsole)
+- [Expanding cloud disks via API](https://intl.cloud.tencent.com/document/product/362/5747#useAPI)
 
 
 
