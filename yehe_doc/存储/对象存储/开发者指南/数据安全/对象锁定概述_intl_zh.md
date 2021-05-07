@@ -9,9 +9,9 @@
 
 存储桶配置对象锁定后，在保留周期内：
 
-a. 对象不可删除、修改
-b. 对象存储类型不可修改
-c. 对象 HTTP 头部和用户元数据都不可修改，包括 Content-Type、Content-Encoding、 Content-Language、Content-Disposition、Cache-Control、Expires、x-cos-meta-。
+- 对象不可删除、修改。
+- 对象存储类型不可修改。
+- 对象 HTTP 头部和用户元数据都不可修改，包括 Content-Type、Content-Encoding、 Content-Language、Content-Disposition、Cache-Control、Expires、x-cos-meta-。
 
 基于时间策略的对象锁定只有一种状态，创建时间策略提交后，即生效，此状态下无法修改和删除规则，且只允许延长保留周期。
 
