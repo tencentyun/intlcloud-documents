@@ -4,7 +4,7 @@
 
 ## 实现原理
 
-[**TWebLive**](https://trtc.qcloud.com/tweblive/index.html#/) 是腾讯云基于 TRTC 、IM 以及 CDN 等服务构建的一套 Web 端直播组件，您只要简单几段代码就可以实现如下的推流、拉流和聊天室功能。
+[**TWebLive**] 是腾讯云基于 TRTC 、IM 以及 CDN 等服务构建的一套 Web 端直播组件，您只要简单几段代码就可以实现如下的推流、拉流和聊天室功能。
 
 ### 推流
 当需要推流时，创建 Pusher（推流）对象，最简单的推流仅需3步：
