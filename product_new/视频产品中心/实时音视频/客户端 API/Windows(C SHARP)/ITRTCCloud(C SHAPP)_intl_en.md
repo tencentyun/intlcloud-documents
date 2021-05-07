@@ -132,19 +132,19 @@ For example, when anchor A in room "001" uses connectOtherRoom() to successfully
 In short, cross-room call is to share between two anchors in different rooms, so that users in either room can see both of them.
 
 <pre>
-               Room 001                    Room 002
-            --------------              -------------
- Before cross-room call: | Anchor A      |             | Anchor B     |
-            | Viewers U, V, and W  |             | Viewers X, Y, and Z |
-            --------------              -------------</pre>
+                             Room 001                            Room 002
+                          ----------------                    ---------------
+ Before cross-room call: | Anchor A      |                   | Anchor B     |
+                        | Viewers U, V, and W  |           | Viewers X, Y, and Z |
+                          ----------------                   ---------------</pre>
 
 
 
-<pre>              Room 001                     Room 002
-            --------------              -------------
+<pre>                        Room 001                            Room 002
+                          ----------------                   -----------------
  After cross-room call: | Anchors A and B    |             | Anchors B and A   |
-            | Viewers U, V, and W  |             | Viewers X, Y, and Z |
-            --------------              -------------
+                       | Viewers U, V, and W  |           | Viewers X, Y, and Z |
+                          ----------------                   -----------------
 </pre>
 
 For the sake of compatibility of subsequent extended fields for cross-room call, parameters in JSON format are used currently and must contain at least two fields:
