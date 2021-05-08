@@ -2,7 +2,7 @@
 
 CSS 요금 항목에는 기본 서비스 요금과 부가 서비스 요금이 있습니다. Tencent Cloud에서는 다른 제품과 접목해 제공하는 부가 기능에 대해 서비스 확장 비용을 부과합니다. 요금 구성 항목은 다음 이미지와 같습니다.
 
-![](https://main.qcloudimg.com/raw/2ce6c231a986ddb89e2ae2680d2c2563.png)
+![](https://main.qcloudimg.com/raw/446418a33f13dc82bc9d26b7b6e96b89.png)
 
 
 - [기본 서비스 요금](#base): 라이브 방송(LVB 및 LEB 포함) 이용 후 발생하는 라이브 방송 소모 비용으로, LVB와 LEB는 트래픽 방식 또는 대역폭 피크 방식의 두 가지 과금 방식을 지원합니다.
