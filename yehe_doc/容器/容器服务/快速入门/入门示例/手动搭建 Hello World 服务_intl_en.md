@@ -49,7 +49,7 @@ If the following information appears, the Hello World program is running normall
 
 
 #### Creating a Docker image
->For more information on Docker images, see [How to Build a Docker Image](https://intl.cloud.tencent.com/document/product/457/9115).
+>?For more information on Docker images, see [How to Build a Docker Image](https://intl.cloud.tencent.com/document/product/457/9115).
 >
 1. Run the following commands in sequence to create a Dockerfile file in the `hellonode` directory.
 ```
@@ -79,7 +79,7 @@ The hello-node image is successfully built if the following information appears.
 
 
 #### Uploading the image to the Tencent Cloud image registry
->Prerequisites for uploading the image:
+>!Prerequisites for uploading the image:
 >- You have created a namespace in [My Images](https://console.cloud.tencent.com/tke2/registry/user/space).
 >- You have logged in to [Tencent Cloud Registry](https://intl.cloud.tencent.com/document/product/457/9117). For more information on using images, see [Image Registry User Guide](https://intl.cloud.tencent.com/document/product/457/9117).
 
@@ -90,7 +90,7 @@ sudo docker tag IMAGEID ccr.ccs.tencentyun.com/<Namespace>/helloworld:v1
 ```
 sudo docker push ccr.ccs.tencentyun.com/<Namespace>/helloworld:v1
 ```
->
+>?
 >- Replace IMAGEID in the command with the image ID mentioned in [Step 4](#search).
 >- Replace the namespace in the command with the created namespace.
 >
@@ -99,7 +99,7 @@ If the following information appears, the image was successfully uploaded.
 
 
 ### Creating a Hello World service using the image
->Before creating and using a Hello World service, ensure that:
+>!Before creating and using a Hello World service, ensure that:
 >- You have registered a Tencent Cloud account. To do this, go to the [registration page](https://intl.cloud.tencent.com/register) and fill in the required information to register a Tencent Cloud account.
 >- You have created a cluster. For more information, see [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/30637).
 >
@@ -136,7 +136,7 @@ If you do not set any image pull policy and leave **Image Tag** empty or set it 
  - **Service Access**: select "Public Network Access".
  - **Load Balancer**: create or select a load balancer as required.
  - **Port Mapping**: select the TCP protocol, and set both the container port and service port to port 80.
- >The node network, container network, and ports 30000 to 32768 in the security group of the cluster that the service belongs to must be opened to Internet. Otherwise, TKE may be unavailable. For more information, see [TKE Security Group Settings](https://intl.cloud.tencent.com/document/product/457/9084).
+ >!The node network, container network, and ports 30000 to 32768 in the security group of the cluster that the service belongs to must be opened to Internet. Otherwise, TKE may be unavailable. For more information, see [TKE Security Group Settings](https://intl.cloud.tencent.com/document/product/457/9084).
 7. Click **Create Workload** to create the Hello World service.
 
 ### Accessing the Hello World service
