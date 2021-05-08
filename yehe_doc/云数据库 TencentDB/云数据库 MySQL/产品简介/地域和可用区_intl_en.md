@@ -21,6 +21,8 @@ When launching an instance, you can select any AZ in the specified region. For h
 
 ## List of Regions and AZs
 Region and Availability Zones:
+>?Currently, public network access is supported in the following regions:
+>Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, Chongqing, Hong Kong (China), Singapore, Seoul, Tokyo, Silicon Valley, and Frankfurt.  
 
 ### China
 <table class="table-striped">
