@@ -53,7 +53,7 @@ If the following information appears, the Hello World program is running normall
 >
 1. Run the following commands in sequence to create a Dockerfile file in the `hellonode` directory.
 ```
-cd /hellonode
+cd hellonode
 ```
 ```
 vim Dockerfile
