@@ -9,10 +9,8 @@ The Kubernetes-csi-tencentcloud CFS-CSI plug-in allows you to use Tencent Cloud 
 
 | Kubernetes Object Name | Type | Default Resource Occupation | Namespace |
 | -------------------------- | ------------------------ | ------ | ------------ |
-| csi-attacher-cfsplugin | StatefulSet | - | kube-system |
 | csi-provisioner-cfsplugin | StatefulSet | - | kube-system |
 | csi-nodeplugin-cfsplugin | DaemonSet | - | kube-system |
-| csi-attacher-cfsplugin | Service | - | kube-system |
 | csi-provisioner-cfsplugin | Service | 1C2G | kube-system |
 
 ## Use Cases
