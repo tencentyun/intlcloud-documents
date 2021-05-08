@@ -855,6 +855,7 @@ NS_SWIFT_NAME(onAnchorLeaveSeat(user:));
 
 ### onSeatMute
 
+
 主播禁麦。
 
 ```Objective-C
