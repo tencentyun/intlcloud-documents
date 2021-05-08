@@ -109,7 +109,7 @@ __Parameters__
 
 __Overview__
 
-In the LVB scenario, a user may need to switch between "viewer" and "anchor" roles. You can use the `role` field in TRTCParams before room entry to determine the role or use the `switchRole` API to switch roles after room entry.
+In the LVB scenario, a user may need to switch between "audience" and "anchor" roles. You can use the `role` field in TRTCParams before room entry to determine the role or use the `switchRole` API to switch roles after room entry.
 
 
 ### connectOtherRoom
@@ -135,7 +135,7 @@ In short, cross-room call is to share between two anchors in different rooms, so
                              Room 001                             Room 002
                           ----------------                     ---------------
  Before cross-room call: | Anchor A          |               |  Anchor B       |
-                        | Users U, V, and W  |           | Users X, Y, and Z |
+                        | Users U, V, and W  |              | Users X, Y, and Z |
                           ----------------                   ---------------</pre>
 
 
