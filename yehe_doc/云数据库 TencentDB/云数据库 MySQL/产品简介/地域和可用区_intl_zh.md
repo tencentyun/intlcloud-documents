@@ -21,6 +21,10 @@
 
 ## 地域和可用性列表
 地域（Region）和可用区（Zone）构成：
+>?目前仅如下地域支持外网连接：
+>广州、上海、南京、北京、成都、重庆、中国香港、新加坡、首尔、东京、硅谷、法兰克福。
+
+
 
 ### 中国
 <table class="table-striped">
@@ -114,7 +118,7 @@
 			<th>可用区</th>
 		</tr>
 		<tr>
-			<td>亚太东南（新加坡）<br>ap-singapore</td>
+			<td rowspan="2">亚太东南（新加坡）<br>ap-singapore</td>
 			<td>新加坡一区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-1</td>
 		</tr>
 		<tr>
