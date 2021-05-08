@@ -49,11 +49,11 @@ curl 127.0.0.1:80
 
 
 #### 创建 Docker 镜像
->更多 Docker 镜像请参见 [如何构建 docker 镜像](https://intl.cloud.tencent.com/document/product/457/9115)。
+>?更多 Docker 镜像请参见 [如何构建 docker 镜像](https://intl.cloud.tencent.com/document/product/457/9115)。
 >
 1. 依次执行以下命令，在 hellonode 文件夹下，创建 Dockerfile 文件。
 ```
-cd /hellonode
+cd hellonode
 ```
 ```
 vim Dockerfile
@@ -79,7 +79,7 @@ docker images
 
 
 #### 上传该镜像到 qcloud 镜像仓库
->上传镜像需满足以下条件：
+>!上传镜像需满足以下条件：
 >- 已在 [我的镜像](https://console.cloud.tencent.com/tke2/registry/user/space) 创建命名空间。
 >- 已登录 [腾讯云 registry](https://intl.cloud.tencent.com/document/product/457/9117)，更多镜像操作请参见 [镜像仓库基本教程](https://intl.cloud.tencent.com/document/product/457/9117)。
 
@@ -90,7 +90,7 @@ sudo docker tag IMAGEID ccr.ccs.tencentyun.com/命名空间/helloworld:v1
 ```
 sudo docker push ccr.ccs.tencentyun.com/命名空间/helloworld:v1
 ```
->
+>?
 >- 请将命令中的 IMAGEID 替换为 [查看镜像](#search) 中记录的 IMAGEID。
 >- 请将命令中的命名空间替换为您已创建的命名空间。
 >
@@ -99,8 +99,8 @@ sudo docker push ccr.ccs.tencentyun.com/命名空间/helloworld:v1
 
 
 ### 通过该镜像创建 Hello World 服务
->在创建使用 Hello World 服务之前，您必须拥有：
->- 已注册腾讯云账户，请前往 [注册页面](https://cloud.tencent.com/register) 填写相关信息注册腾讯云账户。
+>!在创建使用 Hello World 服务之前，您必须拥有：
+>- 已注册腾讯云账户，请前往 [注册页面](https://intl.cloud.tencent.com/register) 填写相关信息注册腾讯云账户。
 >- 已创建集群，详情请参见 [创建集群](https://intl.cloud.tencent.com/document/product/457/30637)。
 >
 1. 登录容器服务控制台，选择左侧导航栏中的【[集群](https://console.cloud.tencent.com/tke2/cluster)】。
@@ -136,7 +136,7 @@ sudo docker push ccr.ccs.tencentyun.com/命名空间/helloworld:v1
  - **服务访问方式**：选择“提供公网访问”。
  - **负载均衡器**：根据实际需求进行选择。
  - **端口映射**：选择 TCP 协议，将容器端口和服务端口都设置为80 。
- >服务所在集群的安全组需要放通节点网络及容器网络，同时需要放通30000 - 32768端口，否则可能会出现容器服务无法使用问题，详情请参见 [容器服务安全组设置](https://intl.cloud.tencent.com/document/product/457/9084)。
+ >!服务所在集群的安全组需要放通节点网络及容器网络，同时需要放通30000 - 32768端口，否则可能会出现容器服务无法使用问题，详情请参见 [容器服务安全组设置](https://intl.cloud.tencent.com/document/product/457/9084)。
 7. 单击【创建Workload】，完成 Hello World 服务的创建。
 
 ### 访问 Hello World 服务
