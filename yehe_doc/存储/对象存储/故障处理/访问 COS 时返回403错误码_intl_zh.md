@@ -29,10 +29,10 @@
  - 否，请单击【编辑】，重新设置。
 7. 在“Policy权限设置”栏中，检查访问 COS 的账号是否配置了 policy 授权策略。
 >! 
->- 如果存储桶访问权限为私有读写，且 Policy 权限为匿名访问，那么 Policy 权限的优先级高于存储桶访问权限。
->- 在 Policy 授权策略中，如果同一个子用户同时设置了允许和禁止策略，那么禁止策略的优先级高于允许策略。
->- 在 Policy 授权策略中，“所有用户”策略的优先级低于“指定用户”策略。
->
+> - 如果存储桶访问权限为私有读写，且 Policy 权限为匿名访问，那么 Policy 权限的优先级高于存储桶访问权限。
+> - 在 Policy 授权策略中，如果同一个子用户同时设置了允许和禁止策略，那么禁止策略的优先级高于允许策略。
+> - 在 Policy 授权策略中，“所有用户”策略的优先级低于“指定用户”策略。
+> 
  - 是，请执行下一步。
  - 否，请单击【添加策略】，根据实际签名访问时账号所需权限进行设置。
 
@@ -43,8 +43,8 @@
  - 是，请执行下一步。
  - 否，请将 q-ak 参数修改为相应的目标桶所属账号。
 10. 检查访问 COS 资源时是否为跨账号访问。
- - 是，请为该账号进行跨账号授权，详细操作请参见 [授权跨账号的子账号对指定文件的读写权限](https://cloud.tencent.com/document/product/598/11092)。
- - 否，请联系 [在线客服](https://intl.cloud.tencent.com/support)。
+ - 是，请为该账号进行跨账号授权，详细操作请参见 [授权跨账号的子账号对指定文件的读写权限](https://intl.cloud.tencent.com/document/product/598/11092)。
+ - 否，请 [联系我们](https://intl.cloud.tencent.com/support)。
 
 
 ### Message 为 “AccessForbidden”
@@ -89,7 +89,7 @@ curl 'http://bucket-appid.cos.ap-guangzhou.myqcloud.com/object' -voa /dev/null -
 5. 在“防盗链设置”中，检查是否设置了防盗链。
 
  - 是，请执行下一步。
- - 否，请联系 [在线客服](https://intl.cloud.tencent.com/support)。
+ - 否，请 [联系我们](https://intl.cloud.tencent.com/support)。
 6. 执行以下命令，检查防盗链设置是否正确。
 ```
 curl 'http://bucket-appid.cos.ap-guangzhou.myqcloud.com/object' -voa /dev/null -H 'referer: Referer 的值'
@@ -113,7 +113,7 @@ curl 'http://bucket-appid.cos.ap-guangzhou.myqcloud.com/object' -voa /dev/null -
  - 否，请修改 q-ak 参数。密钥的 SecretId 需与 q-ak 参数保持一致，且区分大小写。
 2. 前往 [API密钥管理](https://console.cloud.tencent.com/cam/capi)，检查 API 密钥是否已启用。
 
- - 是，请联系 [在线客服](https://intl.cloud.tencent.com/support)。
+ - 是，请 [联系我们](https://intl.cloud.tencent.com/support)。
  - 否，请启用该 API 密钥。
 
 
@@ -128,8 +128,8 @@ curl 'http://bucket-appid.cos.ap-guangzhou.myqcloud.com/object' -voa /dev/null -
 需要您执行以下操作：
 
 检查请求的对象是否为归档类型或深度归档类型。
-- 是，请恢复对象，再进行访问。详细操作请参见 [POST Object restore](https://cloud.tencent.com/document/product/436/12633)。
-- 否，请联系 [在线客服](https://intl.cloud.tencent.com/support)。
+- 是，请恢复对象，再进行访问。详细操作请参见 [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633)。
+- 否，请 [联系我们](https://intl.cloud.tencent.com/support)。
 
 
 ### Message 为 “RequestTimeTooSkewed”
@@ -144,11 +144,12 @@ curl 'http://bucket-appid.cos.ap-guangzhou.myqcloud.com/object' -voa /dev/null -
 
 1. 根据操作系统类型，查看客户端当前时间。
  - Windows 系统（以 Windwos Server 2012 为例）：![](https://main.qcloudimg.com/raw/ac22b052ee24273ebeab1139dd7f4d58.png) > 【控制面板】>【时钟、语言和区域】>【设置日期和时间】。
+
  - Linux 系统：执行 `date -R` 命令。
 ![](https://main.qcloudimg.com/raw/88288162bd1de8c2ec0b640f0df6799e.png)
 2. 判断客户端当前时间与服务器的时间是否存有偏差（时间偏差超过15分钟）。
  - 是，请同步时间。
- - 否，请联系 [在线客服](https://intl.cloud.tencent.com/support)。
+ - 否，请 [联系我们](https://intl.cloud.tencent.com/support)。
 
 
 ### Message 为 “Request has expired”
@@ -163,7 +164,7 @@ curl 'http://bucket-appid.cos.ap-guangzhou.myqcloud.com/object' -voa /dev/null -
 - 发起请求的时间超过了签名的有效时间。
 - 本地系统时间和所在时区的时间不一致。
 
-需要您重新设置签名的有效时间，或者同步本地系统时间。若仍无法解决，请联系 [在线客服](https://intl.cloud.tencent.com/support)。
+需要您重新设置签名的有效时间，或者同步本地系统时间。若仍无法解决，请 [联系我们](https://intl.cloud.tencent.com/support)。
 
 
 ### Message 为 “SignatureDoesNotMatch”
@@ -177,5 +178,6 @@ curl 'http://bucket-appid.cos.ap-guangzhou.myqcloud.com/object' -voa /dev/null -
 需要您执行以下操作：
 
 检查客户端计算的签名与服务端计算的签名是否一致。
-- 是，请联系 [在线客服](https://intl.cloud.tencent.com/support)。
-- 否，请参阅 [请求签名](https://cloud.tencent.com/document/product/436/7778) 文档。
+- 是，请 [联系我们](https://intl.cloud.tencent.com/support)。
+- 否，请参阅 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档，并使用COS 签名工具检查自行实现的签名过程。
+

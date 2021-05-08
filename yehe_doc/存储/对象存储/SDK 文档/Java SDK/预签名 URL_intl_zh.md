@@ -1,5 +1,7 @@
 ## 简介
 Java SDK 提供获取请求预签名 URL 和生成签名接口，可以分发给客户端，用于下载或者上传。如果您的文件是私有读权限，那么请注意预签名链接只有一定的有效期。
+生成的预签名 URL 包含协议名（HTTP或者HTTPS），该协议名与发起预签名请求的 COS 客户端设置的协议保持一致。
+具体使用请参见请求示例。
 
 ## 获取请求预签名 URL 
 
@@ -35,6 +37,16 @@ Request 成员说明：
 
 [//]: # (.cssg-snippet-get-presign-download-url)
 ```java
+// 初始化永久密钥信息
+String secretId = "COS_SECRETID";
+String secretKey = "COS_SECRETKEY";
+COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
+Region region = new Region("COS_REGION");
+ClientConfig clientConfig = new ClientConfig(region);
+// 如果要生成一个使用 https 协议的 URL，则设置此行，推荐设置。
+// clientConfig.setHttpProtocol(HttpProtocol.https);
+// 生成 cos 客户端。
+COSClient cosClient = new COSClient(cred, clientConfig);
 // 存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
@@ -46,6 +58,7 @@ Date expirationDate = new Date(System.currentTimeMillis() + 30L * 60L * 1000L);
 req.setExpiration(expirationDate);
 URL url = cosClient.generatePresignedUrl(req);
 System.out.println(url.toString());
+cosClient.shutdown();
 ```
 
 #### 示例2
@@ -54,6 +67,19 @@ System.out.println(url.toString());
 
 [//]: # (.cssg-snippet-get-presign-download-url-override-headers)
 ```java
+// 传入获取到的临时密钥 (tmpSecretId, tmpSecretKey, sessionToken)
+String tmpSecretId = "COS_SECRETID";
+String tmpSecretKey = "COS_SECRETKEY";
+String sessionToken = "COS_TOKEN";
+COSCredentials cred = new BasicSessionCredentials(tmpSecretId, tmpSecretKey, sessionToken);
+// 设置 bucket 的区域, COS 地域的简称请参照 https://cloud.tencent.com/document/product/436/6224
+// clientConfig 中包含了设置 region, https(默认 http), 超时, 代理等 set 方法, 使用可参见源码或者常见问题 Java SDK 部分
+Region region = new Region("COS_REGION");
+ClientConfig clientConfig = new ClientConfig(region);
+// 如果要生成一个使用 https 协议的 URL，则设置此行，推荐设置。
+// clientConfig.setHttpProtocol(HttpProtocol.https);
+// 生成 cos 客户端
+COSClient cosClient = new COSClient(cred, clientConfig);
 // 存储桶的命名格式为 BucketName-APPID 
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
@@ -79,6 +105,7 @@ Date expirationDate = new Date(System.currentTimeMillis() + 30L * 60L * 1000L);
 req.setExpiration(expirationDate);
 URL url = cosClient.generatePresignedUrl(req);
 System.out.println(url.toString());
+cosClient.shutdown();
 ```
 
 #### 示例3
@@ -87,6 +114,13 @@ System.out.println(url.toString());
 
 [//]: # (.cssg-snippet-get-presign-download-url-public)
 ```java
+// 生成匿名的请求签名，需要重新初始化一个匿名的 cosClient
+// 初始化用户身份信息, 匿名身份不用传入 SecretId、SecretKey 等密钥信息
+COSCredentials cred = new AnonymousCOSCredentials();
+// 设置 bucket 的区域，COS 地域的简称请参照 https://cloud.tencent.com/document/product/436/6224
+ClientConfig clientConfig = new ClientConfig(new Region("ap-beijing"));
+// 生成 cos 客户端
+COSClient cosClient = new COSClient(cred, clientConfig);
 // bucket 名需包含 appid
 String bucketName = "examplebucket-1250000000";
 
@@ -95,6 +129,7 @@ GeneratePresignedUrlRequest req =
         new GeneratePresignedUrlRequest(bucketName, key, HttpMethodName.GET);
 URL url = cosClient.generatePresignedUrl(req);
 System.out.println(url.toString());
+cosClient.shutdown();
 ```
 
 #### 示例4
@@ -111,6 +146,7 @@ String key = "exampleobject";
 Date expirationTime = new Date(System.currentTimeMillis() + 30L * 60L * 1000L);
 URL url = cosClient.generatePresignedUrl(bucketName, key, expirationTime, HttpMethodName.PUT);
 System.out.println(url.toString());
+cosClient.shutdown();
 ```
 
 ## 生成签名

@@ -35,6 +35,7 @@ ping examplebucket-1250000000.cos.ap-beijing.mqcloud.com
 2. <span id="step02"></span>以 Chrome 浏览器为例，检查浏览器是否设置了代理。
     1. 打开 Chrome 浏览器，单击右上角的 <img src="https://main.qcloudimg.com/raw/41a048f92c3d6160faff7e211bacce76.png"/> > 【设置】，打开设置页面。
     2. 单击【高级】，在“系统”栏中选择【在您计算机的代理设置】，打开操作系统的设置窗口。
+
     检查是否设置了代理。
      - 是，关闭代理。
      - 否，请执行 [步骤3](#step03)。
@@ -49,18 +50,18 @@ coscmd probe -n 1 -s 20
 返回类似如下结果，分别得出平均速率（Average），最低速率（Min），最高速率（Max）。
 ![](https://main.qcloudimg.com/raw/2fcecb96df04acc6b0c32c120ccb3c39.png)
 5. 通过浏览器访问 [测速网](https://www.speedtest.cn/)，并结合 [步骤4](#step04) 检查客户端的网络带宽占用率是否达到上限。
- - 如果步骤4的速率低于客户端带宽速率，请联系 [在线客服](https://intl.cloud.tencent.com/support)。
+ - 如果步骤4的速率低于客户端带宽速率，请 [联系我们](https://intl.cloud.tencent.com/support)。
  - 如果步骤4的速率等于客户端带宽速率，且未达到运营商承诺的带宽，请联系运营商客服。
  - 如果步骤4的速率等于客户端带宽速率，且达到了运营商承诺的带宽，请执行 [步骤6](#step06)。
 6. <span id="step06"></span>检查是否存在国内客户端访问海外节点 bucket，或者存在海外客户端访问国内节点 bucket。
- - 是，建议使用 COS 的全球加速功能。详情请参阅 [全球加速概述](https://intl.cloud.tencent.com/zh/document/product/436/33409)。
- - 否，请联系 [在线客服](https://intl.cloud.tencent.com/support)。
+ - 是，建议使用 COS 的全球加速功能。
+ - 否，请 [联系我们](https://intl.cloud.tencent.com/support)。
 
 <span id="ModifyCustomDomainNameResolution"></span>
 ### 修改自定义域名解析
 
 1. 检查自定义域名解析是否为 COS 域名。
- - 是，请联系 [在线客服](https://intl.cloud.tencent.com/support)。
+ - 是，请 [联系我们](https://intl.cloud.tencent.com/support)。
  常见的 COS 域名如下：
 ```
 XXX.cos.ap-beijing.myqcloud.com  （COS 默认域名）
@@ -75,7 +76,7 @@ XXX.file.myqcloud.com 或 XXX.cdn.dnsv1.com（腾讯云 CDN 默认域名）
 XXX.w.kunlungr.com（aliyunCDN 默认域名）
 ```
 2. <span id="2_step02"></span>将自定义域名的 CNAME 解析到所需的 COS 域名中，并进行数据上传。
-例如 `upload.mydomain.com  cname XXX.cos.ap-beijing.myqcloud.com`，具体操作请参见 [开启自定义源站域名](https://cloud.tencent.com/document/product/436/36638)。
+例如 `upload.mydomain.com  cname XXX.cos.ap-beijing.myqcloud.com`，具体操作请参见 [开启自定义源站域名](https://intl.cloud.tencent.com/document/product/436/31507)。
 3. 修改客户端的默认 COS 域名。
 以 C# 代码为例：
 ```
@@ -88,4 +89,4 @@ CosXmlConfig config = new CosXmlConfig.Builder()
 .SetHost("XXXXXX.com") //输入自定义域名
 .SetDebugLog(true) .Build(); //创建 CosXmlConfig 对象
 ```
-其他 SDK 调用请参见 [SDK 概览](https://cloud.tencent.com/document/product/436/6474)。
+其他 SDK 调用请参见 [SDK 概览](https://intl.cloud.tencent.com/document/product/436/6474)。
