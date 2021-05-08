@@ -2,7 +2,7 @@
 
 CSS billable items include basic services and value-added services. Extended service fees will be incurred when value-added features provided jointly by CSS and other Tencent Cloud services are used. Please see the following figure for reference.
 
-![](https://main.qcloudimg.com/raw/2ce6c231a986ddb89e2ae2680d2c2563.png)
+![](https://main.qcloudimg.com/raw/446418a33f13dc82bc9d26b7b6e96b89.png)
 
 
 - [Basic service fees](#base): incurred by live streaming resource consumption when LVB or LEB is used. You can switch between the traffic and peak bandwidth billing modes.
