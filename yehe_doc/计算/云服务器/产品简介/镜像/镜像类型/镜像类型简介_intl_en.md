@@ -13,7 +13,7 @@ Features:
  - **Software:** public images are integrated with software packages (such as APIs) provided by Tencent Cloud, and support multiple versions of software with full permissions, such as Java, MySQL, SQL Server, Python, Ruby, and Tomcat.
  - **Security:** all provided operating systems are licensed. All images are created by Tencent Cloud’s security and OPS team, and are strictly tested. The Tencent Cloud security components are also available.
  - **Limit:** none.
- - **Fees:** all public images are free of charge, except for Windows images in certain regions outside Chinese mainland where a license fee may be charged.
+ - **Fees:** all public images are free of charge, except for Windows images in regions outside Chinese mainland where a license fee may be charged.
  - **Technical support:**
   - Tencent Linux is provided and maintained by Tencent Cloud.
   - For issues involving third-party images, contact the open-source community or the operating system vendor. Tencent Cloud will provide technical assistance during the troubleshooting process if needed.
