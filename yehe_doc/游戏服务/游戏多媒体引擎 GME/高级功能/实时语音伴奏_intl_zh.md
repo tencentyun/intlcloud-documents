@@ -56,7 +56,7 @@ ITMGContext.GetInstance(this).GetAudioEffectCtrl().StartAccompany(filePath,true,
 
 ### 开始播放伴奏（边下边播）
 
-调用 StartAccompanyDownloading 接口开始边下边播放伴奏。
+调用 StartAccompanyDownloading 接口开始边下载边播放伴奏。
 在代码中实现下载伴奏，未下载完时，可以先将文件路径作为参数传到 StartAccompanyDownloading 里面，可实现边下边播。fileSize为预估的完整文件大小。
 调用此接口传入未下载完的文件时，先保证文件至少有10k以上。
 
