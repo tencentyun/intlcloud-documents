@@ -178,8 +178,8 @@ chmod 640 /etc/passwd-cosfs
 
 >!V1.0.5及较早版本的 COSFS，配置文件格式如下：
 >```shell
-<BucketName>:<SecretId>:<SecretKey>
-```
+><BucketName>:<SecretId>:<SecretKey>
+>```
 
 ### 2. 运行工具
 将密钥文件中配置的存储桶挂载到指定目录，可以使用如下命令行：
