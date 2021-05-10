@@ -8,7 +8,8 @@ Tencent Cloud offers the following bandwidth packages according to the bandwidth
 <tr><td><a href="#anycast">AIA BGP Bandwidth Package</a></td><td>A bandwidth package using AIA BGP IP lines, which can only be automatically created by the system.</td></tr>
 </table>
 
-## [BGP Bandwidth Package](id:bgp)
+<span id="bgp"></span>
+## BGP Bandwidth Package
 <table>
 <thead>
 <tr>
@@ -23,8 +24,8 @@ Tencent Cloud offers the following bandwidth packages according to the bandwidth
 </tr>
 </tbody></table>
 
-
-## [AIA BGP Bandwidth Package](id:anycast)
+<span id="anycast"></span>
+## AIA BGP Bandwidth Package
 >?For more information about its billing details, see [AIA Purchase Guide](https://intl.cloud.tencent.com/document/product/644/12617).
 <table>
 <thead>
