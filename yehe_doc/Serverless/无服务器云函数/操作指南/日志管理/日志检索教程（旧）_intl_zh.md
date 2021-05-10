@@ -1,7 +1,7 @@
-<dx-alert infotype="explain" title="">
-云函数 SCF 于2021年01月29日起全量接入腾讯云 [日志服务 CLS](https://intl.cloud.tencent.com/document/product/614)，在此之后创建的函数调用日志将默认投递至 CLS，且支持日志实时输出。若您的函数于2021年01月29日前创建，且高级检索页面交互效果如下图所示，请参考本文档使用该功能。
-![](https://main.qcloudimg.com/raw/6e3543a033bccf644d85348d81595474.png)
-</dx-alert>
+
+>!云函数 SCF 于2021年01月29日起全量接入腾讯云 [日志服务 CLS](https://intl.cloud.tencent.com/document/product/614)，在此之后创建的函数调用日志将默认投递至 CLS，且支持日志实时输出。若您的函数于2021年01月29日前创建，且高级检索页面交互效果如下图所示，请参考本文档使用该功能。
+>![](https://main.qcloudimg.com/raw/6e3543a033bccf644d85348d81595474.png)
+
 
 
 
@@ -69,12 +69,12 @@ SCF_Duration:>20 AND error
 
 
 
-<dx-alert infotype="explain" title="">
-如果需要对请求日志进行去重，可以检索 “Report RequestId”。例如，想查看运行时间大于 20 ms 的请求有哪些，则可以使用：
-```
-"Report RequestId" AND SCF_Duration:>20
-```
-</dx-alert>
+>!
+>如果需要对请求日志进行去重，可以检索 “Report RequestId”。例如，想查看运行时间大于 20 ms 的请求有哪些，则可以使用：
+>```
+>"Report RequestId" AND SCF_Duration:>20
+>```
+
 
 
 
