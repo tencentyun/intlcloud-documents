@@ -22,7 +22,8 @@ The SCF platform supports both sync and async invocations of functions.
 ### Sync invocation
  Sync invocation will wait for the execution result of the function after the invocation request is sent.
 
-### Async invocation[](id:asynchronous)
+[](id:asynchronous)
+### Async invocation
 - Async invocation will only send the request and get the request ID of the current request but not wait for the result.
 - When an async invocation occurs, the async event will be placed in the async queue built in SCF and then consumed by the event execution function in the async queue. Async queues have the following restrictions:
  - Async queues are at the trigger level, and one function trigger has one queue.
