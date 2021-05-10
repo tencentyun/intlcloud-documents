@@ -12,15 +12,15 @@ This document only describes the most important APIs to help you get started wit
 |EnableMic	 	| Enables mic 	|
 |EnableSpeaker		| Enables speaker 	|
 
->
-- Configure your project before using GME; otherwise, the SDK will not take effect.
-- After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
-- GME APIs should be called in the same thread.
-- Authentication is required for room entry in GME. For more information, please see the authentication section in relevant documentation.
-- The `Poll` API should be called periodically for GME to trigger event callbacks.
-- For GME callback messages, please see the callback message list.
-- Operation on devices should be performed after successful room entry.
-- For detailed error codes, please see [Error Codes](https://intl.cloud.tencent.com/document/product/607/15173).
+>?
+>- Configure your project before using GME; otherwise, the SDK will not take effect.
+>- After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
+>- GME APIs should be called in the same thread.
+>- Authentication is required for room entry in GME. For more information, please see the authentication section in relevant documentation.
+>- The `Poll` API should be called periodically for GME to trigger event callbacks.
+>- For GME callback messages, please see the callback message list.
+>- Operation on devices should be performed after successful room entry.
+>- For detailed error codes, please see [Error Codes](https://intl.cloud.tencent.com/document/product/607/15173).
 
 
 ## Directions for Quick Access
@@ -44,7 +44,7 @@ _context.TMGDelegate =self;
 ### 2. Initialize the SDK
 For more information on how to get parameters, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/39698).
 This API requires the `SDKAppID` from the Tencent Cloud Console and the `openId` as parameters. The `openId` uniquely identifies a user with the rules stipulated by the application developer and must be unique in the application (currently, only INT64 is supported).
->The SDK must be initialized so that a room can be entered.
+>!The SDK must be initialized so that a room can be entered.
 #### Function prototype
 
 ```
