@@ -9,7 +9,7 @@ This document describes how to configure an iOS project for the GME APIs for iOS
  - libGMESDK.a: Unity resource related to iOS development (you can ignore this file if you don't use the Unity engine for development).
 
 
->The SDK can run on iOS 7.0 and higher.
+>?The SDK can run on iOS 7.0 and higher.
 
 
 ## Configuration Guide
