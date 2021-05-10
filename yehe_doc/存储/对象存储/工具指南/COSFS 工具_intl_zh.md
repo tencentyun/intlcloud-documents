@@ -203,8 +203,8 @@ cosfs examplebucket-1250000000 /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud
 
 >!V1.0.5及较早版本的 COSFS，挂载命令如下：
 >```shell
-cosfs <APPID>:<BucketName> <MountPoint> -ourl=<CosDomainName> -oallow_other
-```
+>cosfs <APPID>:<BucketName> <MountPoint> -ourl=<CosDomainName> -oallow_other
+>```
 
 
 #### 3. 卸载存储桶
