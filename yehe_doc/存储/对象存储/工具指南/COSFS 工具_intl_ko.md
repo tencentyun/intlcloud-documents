@@ -178,8 +178,8 @@ chmod 640 /etc/passwd-cosfs
 
 >!COSFS V1.0.5 이하 버전의 구성 파일 포맷은 다음과 같습니다.
 >```shell
-<BucketName>:<SecretId>:<SecretKey>
-```
+><BucketName>:<SecretId>:<SecretKey>
+>```
 
 ### 2. 툴 실행
 키 파일에 설정한 버킷을 지정 디렉터리에 마운트하는 명령 라인은 다음과 같습니다.
@@ -203,8 +203,8 @@ cosfs examplebucket-1250000000 /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud
 
 >!COSFS V1.0.5 이하 버전의 마운트 명령어는 다음과 같습니다.
 >```shell
-cosfs <APPID>:<BucketName> <MountPoint> -ourl=<CosDomainName> -oallow_other
-```
+>cosfs <APPID>:<BucketName> <MountPoint> -ourl=<CosDomainName> -oallow_other
+>```
 
 
 #### 3. 버킷 언마운트
