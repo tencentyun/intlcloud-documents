@@ -8,7 +8,8 @@
 <tr><td><a href="#anycast">Anycast 加速 BGP 带宽包</a></td><td>采用 Anycast 加速 BGP IP 线路类型的带宽包。自动创建，不支持手动创建。</td></tr>
 </table>
 
-## [常规 BGP 带宽包](id:bgp)
+<span id="bgp"></span>
+## 常规 BGP 带宽包
 <table>
 <thead>
 <tr>
@@ -23,8 +24,8 @@
 </tr>
 </tbody></table>
 
-
-## [Anycast 加速 BGP 带宽包](id:anycast)
+<span id="anycast"></span>
+## Anycast 加速 BGP 带宽包
 >?计费详情请参见 [Anycast 公网加速购买指南](https://intl.cloud.tencent.com/document/product/644/12617)。
 <table>
 <thead>
