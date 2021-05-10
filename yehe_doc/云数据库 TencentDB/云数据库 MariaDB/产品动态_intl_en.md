@@ -8,11 +8,11 @@
 <td>2021-03</td><td><a href="https://intl.cloud.tencent.com/document/product/248/40014" target="_blank">TencentDB for MariaDB Monitoring Metrics</a></td></tr>
 <tr>
 <td>One-primary-multi-replica instances are supported</td>
-<td>You can now create an instance with one primary node and up to five replica nodes. Such an architecture provides higher data availability.</td>
+<td>You can now create an instance with one primary node and up to five replica nodes, so as to provide higher data availability.</td>
 <td>2021-03</td><td>-</td></tr>
 <tr>
-<td>VPC configurations are modifiable</td>
-<td>You can now modify the access address of an instance or change its network.</td>
+<td>VPC configurations can be modified</td>
+<td>You can now modify the access address of an instance via network translation.</td>
 <td>2021-03</td><td><a href="https://intl.cloud.tencent.com/document/product/237/35410" target="_blank">Changing Networks</a></td></tr>
 </tbody></table>
 
