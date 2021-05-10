@@ -1,26 +1,25 @@
-## Expiration Reminder for Pay-as-You-Go Resources
-### Balance reminder
-We will estimate the number of days it takes for your account balance to become negative based on the past 24 hours usage and current balance under the pay-as-you-go mode. If it's less than 5 days, we will send you a reminder message. The reminder message will be sent to the Tencent Cloud account creator and all the collaborators via email and SMS.
+## Payment Overdue Reminder for Pay-as-You-Go Resources
+> !
+>- After you stop using pay-as-you-go resources, **terminate them as soon as possible** to avoid fee deduction.
+>- Since your actual resource consumption is constantly changing, some slight discrepancies may exist for your stated balance.
+>- If your account has overdue payment, pay-as-you-go instances **cannot be restored** from the recycle bin.
+>
+### Alerts
+- Pay-as-you-go resources are billed on the hour. When your account balance becomes negative, the system will send an alert to your Tencent Cloud account creator, global resource collaborators, and financial collaborators via email, SMS, and other methods as configured in message subscription in the [Message Center](https://console.cloud.tencent.com/message).
 
-### Overdue payment reminder
-Fees for pay-as-you-go resources are charged by the hour. When your account balance becomes negative, we will notify the Tencent Cloud account creator and all the collaborators via email and SMS.
 
-### Overdue payment processing
-**Starting from the moment your account balance becomes negative:**
-- You can continue to use your database within 24 hours from the moment your account balance becomes negative. We will also continue to bill you for this period.
-- When your account has been overdue for 24 hours, your database instances will **automatically shut down** and be removed from the instance list and put in to the recycle bin, and we will **stop billing you for this service**.
+### Processing for overdue payment
+**When your account balance becomes negative:**
+- TencentDB instances are still available for 24 hours, meanwhile the billing continues.
+- After 24 hours, TencentDB instances automatically shuts down and the billing stops. The instances are moved from the instance list to the recycle bin list.
 
 **After automatic shutdown:**
-- Within 3 days after automatic shutdown, if your account is not topped up to a positive balance, you will not be able to start your database; if your balance is positive, the billing continues, and you can start your database.
-- If your account balance remains negative for 3 days after shutdown, the database will be repossessed, and **all data will be deleted and cannot be recovered**.
+ - If the overdue payment is paid within 3 days, you can start up the instances and the billing continues.
+ - After 3 days of shutdown, the TencentDB instances will be repossessed by Tencent Cloud. All data will be erased and cannot be recovered. Tencent Cloud account creator, global resource collaborators, and financial collaborators will be notified via email, SMS, etc.
 
-We will notify the Tencent Cloud account creator and all the collaborators via email and SMS when the database is repossessed.
-> !
->- When you no longer use pay-as-you-go resources, **terminate them as soon as possible** to avoid additional fees.
->- Since your actual resource consumption changes from time to time, some deviation may exist for the stated balance.
->- **You cannot restore pay-as-you-go instances from the recycle bin** if your account is overdue.
+![](https://main.qcloudimg.com/raw/2a4084a3304cd60ede9a2675feda9e97.png)
 
-### Account top-up
-- After the account is topped up to a positive balance, you can restore instances in the recycle bin.
-- Only pay-as-you-go instances can be restored in batches in the recycle bin.
+### Restoring instances after making the payment
+- After you make the payment, pay-as-you-go instances in the recycle bin become restorable. Go to the recycle bin list to restore them.
+- You can restore instances in batches from the recycle bin, but pay-as-you-go instances and monthly-subscribed instances cannot be restored at the same time.
 
