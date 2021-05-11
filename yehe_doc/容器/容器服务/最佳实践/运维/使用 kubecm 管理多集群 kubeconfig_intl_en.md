@@ -13,7 +13,7 @@ Through kubecm tool, you can merge multiple cluster access credentials into kube
 
 
 - You have created a [TKE](https://intl.cloud.tencent.com/document/product/457/30637) or [EKS](https://intl.cloud.tencent.com/document/product/457/34048) cluster.
-- You have installed [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) command line tool on the device used for managing multiple clusters.
+- You have installed [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) command line tool on the device used for managing multiple clusters.
 
 
 ## Directions
