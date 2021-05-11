@@ -531,7 +531,7 @@ try {
 
 #### 适用场景
 
-屏幕分享模式适用于在线教育和互动课堂等场景，该类场景下您可以在调用 SDK 的 [enterRoom](/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) 接口时将 AppScene 参数设定为 `TRTCAppSceneLIVE`。
+屏幕分享模式适用于在线教育和互动课堂等场景，该类场景下您可以在调用 SDK 的 [enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) 接口时将 AppScene 参数设定为 `TRTCAppSceneLIVE`。
 屏幕分享模式下，SDK 会先根据您所选定的目标分辨率构建一张画布。当老师未开启屏幕分享时，SDK 会将摄像头画面等比例拉伸绘制到该画布上；当老师开启屏幕分享后，SDK 会将屏幕分享画面绘制到同样的画布上。通过构建画布可以确保混流模块的输出分辨率一致，防止录制和网页观看的视频兼容性问题（普通播放器不支持分辨率会变化的视频）。
 
 #### 使用步骤
@@ -582,7 +582,7 @@ try {
   - 调用 REST API [StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760) 主动停止混流。
 - 在**基于客户端 SDK API 混流方案下，要停止混流**，需要满足如下条件之一：
   - 发起混流（即调用了客户端 API `setMixTranscodingConfig`）的主播退出了房间。
-  - 调用 [setMixTranscodingConfig](/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 并将参数设置为 `nil/null` 主动停止混流。
+  - 调用 [setMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 并将参数设置为 `nil/null` 主动停止混流。
 
 在其他情况下，TRTC 云端都将会尽力持续保持混流状态。因此，为避免产生预期之外的混流费用，请在您不需要混流的时候尽早通过上述方法结束云端混流。
 
