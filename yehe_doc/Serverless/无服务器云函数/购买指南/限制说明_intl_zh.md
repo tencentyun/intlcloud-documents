@@ -74,13 +74,5 @@
 
 
 
-## 限制提升
-
-您可通过 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=668&source=0&data_title=%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%91%E5%87%BD%E6%95%B0%20SCF&step=1) 提升配额限制，目前可提升限制包括以下内容：
-- 最大函数数量
-- 每个地域的函数总并发配额
-- 单个函数的触发器限制
-- 单个函数的代码体积
-- 每个地域下的函数代码总体积
 
 
