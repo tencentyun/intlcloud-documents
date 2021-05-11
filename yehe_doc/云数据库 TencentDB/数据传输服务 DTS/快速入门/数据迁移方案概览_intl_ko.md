@@ -24,16 +24,6 @@ DTS의 데이터 마이그레이션 기능은 TencentDB for MySQL, Reids, MongoD
 <td>Tencent Cloud 데이터베이스 간의 마이그레이션</td>
 <td><a href="https://cloud.tencent.com/document/product/571/53375">TencentDB for MySQL 인스턴스 간 마이그레이션</a></td></tr>
 <tr>
-<td rowspan=3>클라우드 네이티브 데이터베이스 TDSQL-C로 마이그레이션</td>
-<td>자체구축 데이터베이스에서 Tencent Cloud로 마이그레이션</td>
-<td><a href="https://cloud.tencent.com/document/product/571/53377">공용 네트워크의 자체구축 MySQL에서 클라우드 네이티브 데이터베이스 TDSQL-C로 마이그레이션</a>
-</td></tr>
-<tr>
-<td rowspan=2>3rd party 클라우드에서 Tencent Cloud로 마이그레이션    </td>
-<td><a href="https://cloud.tencent.com/document/product/571/53378">AWS Aurora MySQL에서 클라우드 네이티브 데이터베이스 TDSQL-C로 마이그레이션</a></td></tr>
-<tr>
-<td><a href="https://cloud.tencent.com/document/product/571/53382">Alibaba Cloud PolarDB MySQL에서 클라우드 네이티브 데이터베이스 TDSQL-C로 마이그레이션</a></td></tr>
-<tr>
 <td>TencentDB for MariaDB로 마이그레이션</td>
 <td>자체구축 데이터베이스/CDB에서 Tencent Cloud로 마이그레이션</td>
 <td><a href="https://cloud.tencent.com/document/product/571/19542">TencentDB for MariaDB로 마이그레이션</a></td></tr>
@@ -41,10 +31,6 @@ DTS의 데이터 마이그레이션 기능은 TencentDB for MySQL, Reids, MongoD
 <td>TencentDB for PostgreSQL로 마이그레이션</td>
 <td>자체구축 데이터베이스/CDB에서 Tencent Cloud로 마이그레이션</td>
 <td><a href="https://cloud.tencent.com/document/product/571/16309">TencentDB for PostgreSQL로 마이그레이션</a></td></tr>
-<tr>
-<td>TencentDB for SQL Server로 마이그레이션</td>
-<td>자체구축 데이터베이스/CDB에서 Tencent Cloud로 마이그레이션</td>
-<td><a href="https://cloud.tencent.com/document/product/571/38039">TencentDB for SQL Server로 마이그레이션</a></td></tr>
 <tr>
 <td rowspan=2>TencentDB for Redis로 마이그레이션</td>
 <td rowspan=2>자체구축 데이터베이스/CDB에서 Tencent Cloud로 마이그레이션</td>
