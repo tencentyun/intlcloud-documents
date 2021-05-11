@@ -12,7 +12,7 @@
 	<tr><td rowspan=2><b>v2.5.2</b></td><td>新功能</td><td>支持解析失败日志上传需求。</td></tr>
 	<tr><td>Bug 修复</td><td>修复黑名单 bug，黑名单 FILE 模式支持通配符过滤。</td></tr>
 	<tr><td><b>v2.5.1</b></td><td>体验优化</td><td>优化当采集文件找不到断点元数据时的处理。</td></tr>
-	<tr><td><b>v2.5.0</b></td><td>新功能</td><td><ul  style="margin: 0;"><li>支持 Loglistener 自动升级。</li><li>支持在 Ubuntu 系统下，Loglistener 自启动。</li></ul></td></tr>
+	<tr><td><b>v2.5.0</b></td><td>新功能</td><td><ul  style="margin: 0;"><li>支持 LogListener自动升级。</li><li>支持在 Ubuntu 系统下，LogListener 自启动。</li></ul></td></tr>
 	<tr><td><b>v2.4.6</b></td><td>Bug 修复</td><td><ul  style="margin: 0;"><li>修复变更采集配置时，相关配置 cache 的数据残留问题。</li><li>修复处理软链接的 IN_DELETE 事件时，影响其他指向此 realpath 文件的软链接文件采集的问题。</li><li>修复对于同一源文件同时使用文件软链接和目录软连接进行采集时，LogListener会退出的问题。</li></ul></td></tr>
 	<tr><td><b>v2.4.5</b></td><td>新功能</td><td>新增 multiline_fullregex_log 日志采集类型支持。</td></tr>
 	<tr><td><b>v2.4.4</b></td><td>Bug 修复</td><td>修复 msec 功能导致的日志采集使用日志时间不准确的问题。</td></tr>
