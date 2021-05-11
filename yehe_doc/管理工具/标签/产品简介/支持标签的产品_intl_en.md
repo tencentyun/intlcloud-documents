@@ -171,7 +171,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/607"> Game Multimedia Engine (GME)</a></td>
 <td>Application</td>
 </tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1055"> Game Server Engine (GSE)</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1055"> Game Server Elastic-scaling (GSE)</a></td>
 <td><li>Asset package</li><li>Alias</li><li>Game server fleet</li><li>Game server session queue</li></td>
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1072"> Game Player Matchmaking (GPM)</a></td>
