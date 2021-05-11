@@ -18,7 +18,7 @@ The required push parameters refer to the parameters that must be carried in a p
 | Parameter | Type | Required | Description |
 | ------------- | ------- | ---------------------------------------- | ------------------------------------------------------------ |
 | audience_type | String  | Yes                                       | Push target. Valid values:<li>all: push to all devices</li><li>tag: push to devices with specified tags</li><li>token: push to a single device</li><li>token_list: push to a list of devices</li><li>account: push to a single account</li><li>account_list: push to a list of accounts</li><li>package_account_push: push by account package<li>package_token_push: push by token package |
-| message       | Object  | Yes                     | Message body. For more information, please see [message body type](#message body type)                     |
+| message       | Object  | Yes                     | Message body. For more information, please see [message body type](#message-body-type)                     |
 | message_type  | String  | Yes                                       | Message type. Valid values:<li>notify: notification</li><li>message: in-app message/silent message</li> |
 | environment   | String  | Yes (only for iOS)                    | Push environment (only available for pushes on iOS). Valid values:<li>product: production environment</li><li>dev: development environment</li> |
 | upload_id   | Integer  | Yes (only available for account package push/token package push)        | Account/token package upload ID  |
@@ -143,8 +143,7 @@ Push API supports a variety of push targets. For example, you can push to all de
   }
 ```
 
-<span id="message body type"></span>
-
+<span id="message-body-type"></span>
 ### message_type: message type
 
 The message types may vary slightly depending on the platform. For more information, see the table below:
@@ -396,7 +395,7 @@ Similar to in-app message on Android, silent message is unique to the iOS platfo
 
 The specific fields are as follows:
 
-| Field Name | Type | Default Value | Required | Description |
+| Field Name | Type | Parent Item | Default Value | Required | Description |
 | -------------- | ------ | ------- | ------ | -------- | ------------------------------------------------------------ |
 | ios            | Object | message | Empty     | Yes       | iOS message structure.                                               |
 | aps    | JSON       | ios  | Empty    | Yes    | APNs-specific field, where the most important key-value pair is as follows:<li>content-available: identifies the message type (which must be 1), in integer format.<li>The value cannot contain the `alert`, `sound`, or `badge_type` fields. For more information, see [Payload](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/PayloadKeyReference.html#//apple_ref/doc/uid/TP40008194-CH17-SW1). <br>**Note:** `content-available: 1` is mutually exclusive with [message_type:"notify"](#message body type). Do not use them at the same time. |
