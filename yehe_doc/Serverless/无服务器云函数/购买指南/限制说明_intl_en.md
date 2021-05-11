@@ -74,13 +74,6 @@ The limits for the function runtime environment are as follows:
 
 
 
-## Limit Increase
 
-You can [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=668&source=0&data_title=%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%91%E5%87%BD%E6%95%B0%20SCF&step=1) to increase the quota limits. Currently, the limits that can be increased include:
-- Maximum number of functions
-- Total function concurrency quota per region
-- Maximum number of triggers per function
-- Maximum code size per function
-- Total function code size per region
 
 
