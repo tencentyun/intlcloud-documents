@@ -2,8 +2,7 @@
 
 COS introduces Object Lock to meet the requirements of Securities Exchange Commission (SEC) Rule 17a-4. Object Lock can help prevent objects from being overwritten or deleted for a fixed amount of time and objects can still be accessed immediately.
 
->?
->SEC Rule 17a-4 is a regulation issued by the U.S. Securities and Exchange Commission under the US Securities Exchange Act of 1934. The rule outlines requirements for data retention, indexing, and accessibility for companies that deal in the trade or brokering of financial securities such as stocks, bonds, and futures. According to the rule, records of numerous types of transactions must be retained and cannot be rewritten or erased with immediate accessibility for a period of at least six years.
+>? SEC Rule 17a-4 is a regulation issued by the U.S. Securities and Exchange Commission under the US Securities Exchange Act of 1934. The rule outlines requirements for data retention, indexing, and accessibility for companies that deal in the trade or brokering of financial securities such as stocks, bonds, and futures. According to the rule, records of numerous types of transactions must be retained and cannot be rewritten or erased with immediate accessibility for a period of at least six years.
 
 Object Lock is a bucket-level feature, that is, only one time-based Object Lock rule can be configured for a bucket. A retention period is required, which can be set to 1 day to 100 years. Setting the retention period to permanent is not allowed.
 
@@ -51,7 +50,8 @@ Assume that you created a bucket named `examplebucket` on July 1, 2012, and uplo
 | test3.txt | July 30, 2017 | July 29, 2022 |
 
 3. Cross-bucket replication is not supported for Object Lock−enabled buckets. It can neither be the source bucket nor the destination bucket.
-4. Once an object is locked, its storage class cannot be modified and Lifecycle is no longer supported. Note that if an object is configured with both Object Lock and Lifecycle, the Lifecycle configuration will not take effect.
+4. Once an object is locked, its storage class cannot be modified and Lifecycle is no longer supported. 
+>? if an object is configured with both Object Lock and Lifecycle, the Lifecycle configuration will not take effect.
 5. You can still clean up the incomplete multipart uploads.
 6. An Object Lock rule cannot be deleted independently. Only when the bucket is empty and deleted can the rule be deleted along with the bucket.
 7. If Object Lock is enabled, ACLs of the bucket and objects can still be modified. 
