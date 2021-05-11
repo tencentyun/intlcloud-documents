@@ -7,13 +7,11 @@
 PHP 函数形态一般如下所示：
 ```
 <?php
-
 function main_handler($event, $context) {
     echo("hello world");
     print_r($event);
     return "hello world";
 }
-
 ?>
 ```
 
@@ -90,7 +88,6 @@ PHP 环境下的入参包括 $event 、$context。
 - zip
 - eio
 - protobuf
-- redis
 - Zend OPcache
 - mongodb
 - memcached 
