@@ -130,6 +130,7 @@ As shown in the figure below, the score of Node1 is the highest, so pods will be
 ### Dependency Deployment
 
 Dynamic Scheduler makes scheduling decisions based on the actual load of nodes at the current time and over a previous period. This requires monitoring components, such as Prometheus, to obtain the actual load information of nodes. Before using Dynamic Scheduler, you need to deploy monitoring components such as Prometheus. In TKE, users can use the self-built Prometheus monitoring service or use the cloud native monitoring provided by TKE.
+
 ### Self-built Prometheus monitoring services
 #### Deploying node-exporter and prometheus
 
@@ -140,42 +141,50 @@ We use node-exporter to monitor node metrics. You can deploy node-exporter and p
 
 After node-exporter obtains node monitoring data, Prometheus must aggregate the data collected in the native node-exporter. To obtain metrics required by Dynamic Scheduler, such as `cpu_usage_avg_5m`, `cpu_usage_max_avg_1h`, `cpu_usage_max_avg_1d`, `mem_usage_avg_5m`, `mem_usage_max_avg_1h`, and `mem_usage_max_avg_1d`, you need to configure rules in Prometheus as follows:
 
-```yaml
-groups:
-    - name: cpu_mem_usage_active
-      interval: 30s
-      rules:
-      - record: mem_usage_active
-        expr: 100*(1-node_memory_MemAvailable_bytes/node_memory_MemTotal_bytes)
-    - name: cpu-usage-5m
-      interval: 5m
-      rules:
-      - record: cpu_usage_max_avg_1h
-        expr: max_over_time(cpu_usage_avg_5m[1h])
-      - record: cpu_usage_max_avg_1d
-        expr: max_over_time(cpu_usage_avg_5m[1d])
-    - name: cpu-usage-1m
-      interval: 1m
-      rules:
-      - record: cpu_usage_avg_5m
-        expr: 100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
-    - name: mem-usage-5m
-      interval: 5m
-      rules:
-      - record: mem_usage_max_avg_1h
-        expr: max_over_time(mem_usage_avg_5m[1h])
-      - record: mem_usage_max_avg_1d
-        expr: max_over_time(mem_usage_avg_5m[1d])
-    - name: mem-usage-1m
-      interval: 1m
-      rules:
-      - record: mem_usage_avg_5m
-        expr: avg_over_time(mem_usage_active[5m])
+``` yaml
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+    name: example-record
+spec:
+    groups:
+      - name: cpu_mem_usage_active
+        interval: 30s
+        rules:
+        - record: cpu_usage_active
+          expr: 100*(1-(sum by (instance)(node_cpu_seconds_total{mode="idle"})/(sum by (instance)(node_cpu_seconds_total))))
+        - record: mem_usage_active
+          expr: 100*(1-node_memory_MemAvailable_bytes/node_memory_MemTotal_bytes)
+      - name: cpu-usage-5m
+        interval: 5m
+        rules:
+        - record: cpu_usage_max_avg_1h
+          expr: max_over_time(cpu_usage_avg_5m[1h])
+        - record: cpu_usage_max_avg_1d
+          expr: max_over_time(cpu_usage_avg_5m[1d])
+      - name: cpu-usage-1m
+        interval: 1m
+        rules:
+        - record: cpu_usage_avg_5m
+          expr: avg_over_time(cpu_usage_active[5m])
+      - name: mem-usage-5m
+        interval: 5m
+        rules:
+        - record: mem_usage_max_avg_1h
+          expr: max_over_time(mem_usage_avg_5m[1h])
+        - record: mem_usage_max_avg_1d
+          expr: max_over_time(mem_usage_avg_5m[1d])
+      - name: mem-usage-1m
+        interval: 1m
+        rules:
+        - record: mem_usage_avg_5m
+          expr: avg_over_time(mem_usage_active[5m])
 ```
 
 #### Prometheus file configuration
 
 1. After defining the rules for the calculation of metrics needed by Dynamic Scheduler, you need to set the rules for Prometheus. You can refer to a common Prometheus configuration file, The example is shown as follows:
+
 ```
 global:
       evaluation_interval: 30s
@@ -187,6 +196,45 @@ rule_files:
 2. Copy the configuration of rules to a file (such as dynamic-scheduler.yaml), place the file under `/etc/prometheus/rules/` of the above Prometheus container.
 3. Reload Prometheus server to obtain the metrics needed by Dynamic Scheduler from Prometheus.
 
+```yaml
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+    name: example-record
+spec:
+    groups:
+      - name: cpu_mem_usage_active
+        interval: 30s
+        rules:
+        - record: cpu_usage_active
+          expr: 100*(1-(sum by (instance)(node_cpu_seconds_total{mode="idle"})/(sum by (instance)(node_cpu_seconds_total))))
+        - record: mem_usage_active
+          expr: 100*(1-node_memory_MemAvailable_bytes/node_memory_MemTotal_bytes)
+      - name: cpu-usage-5m
+        interval: 5m
+        rules:
+        - record: cpu_usage_max_avg_1h
+          expr: max_over_time(cpu_usage_avg_5m[1h])
+        - record: cpu_usage_max_avg_1d
+          expr: max_over_time(cpu_usage_avg_5m[1d])
+      - name: cpu-usage-1m
+        interval: 1m
+        rules:
+        - record: cpu_usage_avg_5m
+          expr: avg_over_time(cpu_usage_active[5m])
+      - name: mem-usage-5m
+        interval: 5m
+        rules:
+        - record: mem_usage_max_avg_1h
+          expr: max_over_time(mem_usage_avg_5m[1h])
+        - record: mem_usage_max_avg_1d
+          expr: max_over_time(mem_usage_avg_5m[1d])
+      - name: mem-usage-1m
+        interval: 1m
+        rules:
+        - record: mem_usage_avg_5m
+          expr: avg_over_time(mem_usage_active[5m])
+```
 
 >?Normally, the above Prometheus configuration file and rules configuration file are stored via configmap and then mounted to the Prometheus server container. Therefore, you only need to modify the relevant configmap.
 
