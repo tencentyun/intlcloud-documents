@@ -11,7 +11,7 @@ This document only describes the most important APIs to help you get started wit
 |EnableMic	 	| Enables mic 	|
 |EnableSpeaker		| Enables speaker 	|
 
->
+>?
 >- Configure your project before using GME; otherwise, the SDK will not take effect.
 >- After a GME API is called successfully, `QAVError.OK` will be returned with the value being 0.
 >- GME APIs should be called in the same thread.
@@ -26,7 +26,7 @@ This document only describes the most important APIs to help you get started wit
 For more information on how to get parameters, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/39698).
 
 This API requires the `SDKAppID` from the Tencent Cloud Console and the `openID` as parameters. The `openID` uniquely identifies a user with the rules stipulated by the application developer and must be unique in the application (currently, only INT64 is supported).
->The SDK must be initialized before a client can enter a room.
+>!The SDK must be initialized before a client can enter a room.
 #### Function prototype
 
 ```
@@ -69,7 +69,7 @@ public void Update()
 ### 3. Authenticate
 Generate `AuthBuffer` for encryption and authentication of relevant features.  
 
->To get authentication for voice messaging and speech-to-text, the room ID parameter must be set to `null`.
+>?To get authentication for voice messaging and speech-to-text, the room ID parameter must be set to `null`.
 
 #### Function prototype
 ```
@@ -143,7 +143,7 @@ void OnEnterRoomComplete(int err, string errInfo)
 ### 6. Enable/Disable the mic
 This API is used to enable/disable the mic. Mic and speaker are not enabled by default after room entry.
 
->
+>?
 >- Please make sure that the mic permission has been granted in the project when executable files are exported for each platform and is enabled during use.
 >- On a mobile device, you can use the `CheckMicPermission` API to check whether the mic permission is granted.
 

@@ -1,5 +1,6 @@
 
->?云函数 SCF 于2021年01月29日起全量接入腾讯云 [日志服务 CLS](https://intl.cloud.tencent.com/document/product/614)，在此之后创建的函数调用日志将默认投递至 CLS，且支持日志实时输出。若您的函数于2021年01月29日前创建，且需进行日志检索，请参考本文档使用该功能。
+>!云函数 SCF 于2021年01月29日起全量接入腾讯云 [日志服务 CLS](https://intl.cloud.tencent.com/document/product/614)，在此之后创建的函数调用日志将默认投递至 CLS，且支持日志实时输出。若您的函数于2021年01月29日前创建，且高级检索页面交互效果如下图所示，请参考本文档使用该功能。
+>![](https://main.qcloudimg.com/raw/6e3543a033bccf644d85348d81595474.png)
 
 
 
@@ -38,8 +39,8 @@
 >- 语法中的字符均为保留字符，若检索关键字中包含这些语法保留字符，均需要转义。
 >- 使用键值检索时（形如 key：value），键名（key）必须在 [已支持的 key 列表](#key) 中。
 
+[](id:key)
 
-<span id="key"></span>
 ## 预置 key
 
 | Key           | 类型   | 含义           | 查询示例          |
@@ -68,13 +69,11 @@ SCF_Duration:>20 AND error
 
 
 
-
->?如果需要对请求日志进行去重，可以检索 “Report RequestId”。例如，想查看运行时间大于 20 ms 的请求有哪些，则可以使用：
-```
-"Report RequestId" AND SCF_Duration:>20
-```
-
-
+>!
+>如果需要对请求日志进行去重，可以检索 “Report RequestId”。例如，想查看运行时间大于 20 ms 的请求有哪些，则可以使用：
+>```
+>"Report RequestId" AND SCF_Duration:>20
+>```
 
 
 

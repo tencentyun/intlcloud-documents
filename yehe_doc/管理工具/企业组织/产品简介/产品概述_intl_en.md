@@ -3,8 +3,8 @@ This user guide defines key concepts for Tencent Cloud Organization and explains
 
 ## Features
 TCO offers the following features:
-#### Centralized management of Tencent Cloud accounts
-You can integrate your existing accounts into an organization for centralized management. Your newly created accounts will automatically be in your organization. You can also invite other accounts to join your organization.
 
-#### View all member accounts’ billing details
-The Tencent Cloud Organization master account can switch between accounts in the billing console to view the billing details of each member account under the organization.
+#### Centralized management of Tencent Cloud accounts
+You can integrate your existing accounts into an organization for centralized management. You can also invite other accounts to join your organization.
+
+

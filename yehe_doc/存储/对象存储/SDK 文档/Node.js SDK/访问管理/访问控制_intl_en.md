@@ -271,7 +271,7 @@ cos.putObjectAcl({
 | AccessControlPolicy | Sets the object's ACL attributes. | Object | No |
 | - Owner | Information about the object owner | Object | No |
 | - - ID | ID of the object owner in the format: `qcs::cam::uin/<OwnerUin>:uin/<SubUin>` <br>For root accounts, &lt;OwnerUin> and &lt;SubUin> have the same value. | String | No |
-| - - DisplayName | Name of the object owner | String |
+| - - DisplayName | Name of the object owner | String | No |
 | - Grants | A list of information about the grantee and granted permissions | ObjectArray | No |
 | - - Permission | Permission granted. Enumerated values: `READ`, `WRITE`, `READ_ACP`, `WRITE_ACP`, `FULL_CONTROL` | String | No |
 | - - Grantee | Information about the grantee | Object | No |

@@ -1,17 +1,15 @@
 ## 内容紹介
 
 TRTRTCCloudでは、以下の方式で画質を調整できます。
-- [TRTCCloud.enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) のTRTCAppScene パラメータ：アプリケーションユースケースを使用するのに使用します。
-- [TRTCCloud.setVideoEncoderParam](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e)：エンコードのパラメータを設定するのに使用します。
-- [TRTCCloud.setNetworkQosParam](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ac72a8a85131cb7716b1eec799250aba9)：ネットワークの制御ポリシーを設定するのに使用します。
+- [TRTCCloud.enterRoom]((https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) のTRTCAppScene パラメータ：アプリケーションユースケースを使用するのに使用します。
+- [TRTCCloud.setVideoEncoderParam]((https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e)：エンコードのパラメータを設定するのに使用します。
+- [TRTCCloud.setNetworkQosParam]((https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ac72a8a85131cb7716b1eec799250aba9)：ネットワークの制御ポリシーを設定するのに使用します。
 
 ここでは、主に上述のパラメータを設定し、TRTC SDKの画質効果を項目のニーズに適合させる方法を紹介します。
 以下のDemoを参照することもできます。
-- [iOS：LivePushViewController.swift](
-https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCSimpleDemo/Live/LivePushViewController.swift)
+- [iOS：LivePushViewController.swift]
 - [Android：LivePushActivity.java](https://github.com/tencentyun/TRTCSDK/blob/0123787812e04d3acb44eed06ec9803df363c580/Android/TRTCSimpleDemo/live/src/main/java/com/tencent/live/LivePushActivity.java)
 - [Windows：TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/MFCDemo/TRTCMainViewController.cpp)
-
 ## サポートするプラットフォーム
 
 | iOS | Android | Mac OS | Windows |  デスクトップブラウザ | Electron|Flutter |

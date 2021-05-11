@@ -55,13 +55,13 @@ CLS supports a histogram function that you can use to group and aggregate the lo
 Count the PV value every five minutes.
 
 ```
-* | select histogram( cast(__TIMESTAMP__ as timestamp),INTERVAL 5 MINUTE) AS time , count(*) as PV  group by time order by time
+* | select histogram( cast(__TIMESTAMP__ as timestamp),INTERVAL 5 MINUTE) AS dt, count(*) as PV  group by dt order by dt
 ```
 
 >!The minimum granularity of the histogram function is minute. If you need a finer granularity, we recommend using the modulus operation.
 
 ```
-* | select cast((__TIMESTAMP__-__TIMESTAMP__%60000) as timestamp) as time, count(1) as PV,count (distinct(remote_addr)) as UV group by time order by time
+* | select cast((__TIMESTAMP__-__TIMESTAMP__%60000) as timestamp) as dt, count(1) as PV,count (distinct(remote_addr)) as UV group by dt order by dt
 ```
 
 Where, `%60000` in the above formula indicates an aggregation by 60 seconds.

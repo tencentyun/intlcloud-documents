@@ -6,7 +6,7 @@ Characteristics of CKafka triggers:
 - **Sync invocation**: a CKafka trigger always invokes a function synchronously. For more information on invocation types, please see [Invocation Types](https://intl.cloud.tencent.com/document/product/583/9694).
 >?
 >- For execution errors (including user code errors and runtime errors), the CKafka trigger will retry according to the configured retry times, which is 10,000 by default.
->- For overrun errors and system errors, the CKafka trigger will continue to retry in an exponential backoff manner until it succeeds.
+>- For system errors, the CKafka trigger will continue to retry in an exponential backoff manner until it succeeds.
 
 
 ## CKafka Trigger Attributes

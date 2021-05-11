@@ -12,15 +12,15 @@ GME 快速入门文档只提供最主要的接入接口，更多详细接口请�
 |EnableMic	 	|开麦克风 	|
 |EnableSpeaker		|开扬声器 	|
 
->
-- GME 使用前请对工程进行配置，否则 SDK 不生效。
-- GME 的接口调用成功后返回值为 QAVError.OK，数值为 0。
-- GME 的接口调用要在同一个线程下。
-- GME 加入房间需要鉴权，请参考文档关于鉴权部分内容。
-- GME 需要周期性的调用 Poll 接口触发事件回调。
-- GME 回调信息参考回调消息列表。
-- 设备的操作要在进房成功之后。
-- 错误码详情可参考 [错误码](https://intl.cloud.tencent.com/document/product/607/15173)
+>?
+>- GME 使用前请对工程进行配置，否则 SDK 不生效。
+>- GME 的接口调用成功后返回值为 QAVError.OK，数值为 0。
+>- GME 的接口调用要在同一个线程下。
+>- GME 加入房间需要鉴权，请参考文档关于鉴权部分内容。
+>- GME 需要周期性的调用 Poll 接口触发事件回调。
+>- GME 回调信息参考回调消息列表。
+>- 设备的操作要在进房成功之后。
+>- 错误码详情可参考 [错误码](https://intl.cloud.tencent.com/document/product/607/15173)
 
 
 ## 快速接入步骤
@@ -44,7 +44,7 @@ _context.TMGDelegate =self;
 ### 2、初始化 SDK
 参数获取请查看 [接入指引](https://intl.cloud.tencent.com/document/product/607/39698)。
 此接口需要来自腾讯云控制台的 SDKAppID 号码作为参数，再加上 openId，这个 openId 是唯一标识一个用户，规则由 App 开发者自行制定，App 内不重复即可（目前只支持 INT64）。
->初始化 SDK 之后才可以进房。
+>!初始化 SDK 之后才可以进房。
 ####  函数原型
 
 ```

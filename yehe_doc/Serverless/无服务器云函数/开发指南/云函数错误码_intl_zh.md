@@ -112,6 +112,11 @@
 <td>用户代码起容器超时（15s），请检查代码后重试。若仍无法解决，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a>。</td>
 </tr>
 <tr>
+<td>449<br>InsufficientResources</td>
+<td>当大内存资源不足时，会有该返回信息。</td>
+<td>大内存资源不足，请稍后再试。</td>
+</tr>
+<tr>
 <td>500<br>InternalError</td>
 <td>内部错误。</td>
 <td>内部错误，请稍后重试。若仍无法解决，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单。</a></td>

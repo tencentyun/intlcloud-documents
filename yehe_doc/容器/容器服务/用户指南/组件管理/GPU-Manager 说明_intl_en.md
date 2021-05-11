@@ -8,7 +8,7 @@ GPU Manager is an all-in-one GPU manager. It is implemented based on the Kuberne
 ### Add-on features
 - **Topology assignment**: provides an assignment feature based on GPU topology. When you assign an application with more than one GPU card, this feature can select the fastest topology link method to assign the GPU device.
 - **GPU sharing**: allows you to submit tasks with less than one GPU card, and guarantees QoS.
-- **Query of application GPU metrics**: you can access the `/metrics` path of the CVM port (port 5678 by default) to provide the GPU metric collection feature for Prometheus. You can also access the `/usage` path to query the status of readable containers.
+- **Query of application GPU metrics**: you can access the `/metric` path of the CVM port (port 5678 by default) to provide the GPU metric collection feature for Prometheus. You can also access the `/usage` path to query the status of readable containers.
 
 ### Kubernetes objects deployed in a cluster
 
@@ -54,6 +54,7 @@ After the GpuManager add-on is successfully installed, you can use the following
 
 The following shows a YAML example:
 - A P4 device using 1 card:
+
 ```
 apiVersion: v1
 kind: Pod
@@ -64,7 +65,9 @@ containers:
 resources:
 tencent.com/vcuda-core: 100
 ```
+
 - An application using 5-GiB VRAM and 0.3 cards:
+
 ```
 apiVersion: v1
 kind: Pod

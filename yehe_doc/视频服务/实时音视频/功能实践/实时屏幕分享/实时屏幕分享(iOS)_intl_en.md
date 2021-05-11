@@ -196,12 +196,12 @@ Before screen sharing starts, the host app must be put on standby to receive scr
 #### Step 4. Add a screen sharing triggering button (optional)
 In [step 3](#receive), users need to start screen sharing manually by pressing and holding the screen recording button in the Control Center. To make it possible to start screen sharing by clicking a button in your app as in VooV Meeting, follow these steps:
 
-1. Find the `TRTCBroadcastExtensionLauncher` class in the [demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/Screen) and add it to your project.
+1. Find the `TRTCBroadcastExtensionLauncher` class in the [demo] and add it to your project.
 2. Add a button to your UI and call the `launch` function of `TRTCBroadcastExtensionLauncher` in the response function of the button to trigger screen sharing.
 ```
 // Customize a response for button clicking
 - (IBAction)onScreenButtonTapped:(id)sender {
-    [TRTCBroadcastExtensionLauncher launch];
+    [TRTCBroadcastExtensionLauncher launch
 }
 ```
 

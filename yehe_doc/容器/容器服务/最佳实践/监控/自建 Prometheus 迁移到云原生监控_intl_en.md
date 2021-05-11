@@ -7,7 +7,7 @@ This document describes how to use auxiliary scripts and migration tools to quic
 ## Prerequisites
 
 
-You have installed [Kubectl](https://kubernetes.io/zh/docs/tasks/tools/install-kubectl/) on the node of the self-built Prometheus cluster and configured Kubeconfig to ensure that you can manage the cluster through Kubectl.
+You have installed [Kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) on the node of the self-built Prometheus cluster and configured Kubeconfig to ensure that you can manage the cluster through Kubectl.
 
 ## Directions
 

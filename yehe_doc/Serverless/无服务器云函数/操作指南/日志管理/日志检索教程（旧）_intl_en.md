@@ -1,5 +1,5 @@
-
->?SCF was fully connected to [CLS](https://intl.cloud.tencent.com/document/product/614) on January 29, 2021, invocation logs of newly created functions have been delivered to CLS by default since then, and logs can be output in real time. If your function was created before January 29, 2021, but you need to search for logs, please do so as instructed in this document.
+>!SCF was fully connected to [CLS](https://intl.cloud.tencent.com/document/product/614) on January 29, 2021, invocation logs of newly created functions have been delivered to CLS by default since then, and logs can be output in real time. If your function was created before January 29, 2021, and the advanced retrieval page is as shown below, please do so as instructed in this document.
+>![](https://main.qcloudimg.com/raw/6e3543a033bccf644d85348d81595474.png)
 
 
 
@@ -38,8 +38,8 @@ The following query statements are supported:
 >- All the characters in the syntax are reserved characters. If a search keyword contains these syntactically reserved characters, they need to be escaped.
 >- For key-value search (in the format of `key:value`), the key name (key) must be in the [list of supported keys](#key).
 
+[](id:key)
 
-<span id="key"></span>
 ## Preset Keys
 
 | Key | Type | Description | Query Sample |
@@ -69,12 +69,10 @@ SCF_Duration:>20 AND error
 
 
 
->?To deduplicate request logs, you can search for "Report RequestId". For example, if you want to query which requests run more than 20 ms, you can use the following statement:
-```
-"Report RequestId" AND SCF_Duration:>20
-```
-
-
+>!To deduplicate request logs, you can search for "Report RequestId". For example, if you want to query which requests run more than 20 ms, you can use the following statement:
+>```
+>"Report RequestId" AND SCF_Duration:>20
+>```
 
 
 

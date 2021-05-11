@@ -64,7 +64,7 @@ function(err, data) { ... }
 | - - ID | Complete ID of the bucket owner in the format: `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`, such as `qcs::cam::uin/100000000001:uin/100000000001`| string |
 | - - DisplayName | Name of the bucket owner | String |
 | - Buckets | Bucket list | Object |
-| - - Name  | ListBucketResult | Bucket name in the format: `<BucketName-APPID>`, such as `examplebucket-1250000000` | string |
+| - - Name  | Bucket name in the format: `<BucketName-APPID>`, such as `examplebucket-1250000000` | string |
 | - - Location | Bucket region. For the enumerated values, such as `ap-guangzhou`, `ap-beijing`, and `ap-hongkong`, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String |
 | - - CreationDate | Time when the bucket was created, in ISO 8601 format, such as `2019-05-24T10:56:40Z` | string |
 

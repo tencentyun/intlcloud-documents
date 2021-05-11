@@ -141,41 +141,49 @@ Dynamic Scheduler 动态调度器依赖于 Node 当前和过去一段时间的�
 在 node-exporter 获取节点监控数据后，需要通过 Prometheus 对原始的 node-exporter 采集数据进行聚合计算。为了获取动态调度器中需要的 `cpu_usage_avg_5m`、`cpu_usage_max_avg_1h`、`cpu_usage_max_avg_1d`、`mem_usage_avg_5m`、`mem_usage_max _avg_1h`、`mem_usage_max_avg_1d` 等指标，需要在 Prometheus 的 rules 规则进行如下配置：
 
 ```yaml
-groups:
-    - name: cpu_mem_usage_active
-      interval: 30s
-      rules:
-      - record: mem_usage_active
-        expr: 100*(1-node_memory_MemAvailable_bytes/node_memory_MemTotal_bytes)
-    - name: cpu-usage-5m
-      interval: 5m
-      rules:
-      - record: cpu_usage_max_avg_1h
-        expr: max_over_time(cpu_usage_avg_5m[1h])
-      - record: cpu_usage_max_avg_1d
-        expr: max_over_time(cpu_usage_avg_5m[1d])
-    - name: cpu-usage-1m
-      interval: 1m
-      rules:
-      - record: cpu_usage_avg_5m
-        expr: 100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
-    - name: mem-usage-5m
-      interval: 5m
-      rules:
-      - record: mem_usage_max_avg_1h
-        expr: max_over_time(mem_usage_avg_5m[1h])
-      - record: mem_usage_max_avg_1d
-        expr: max_over_time(mem_usage_avg_5m[1d])
-    - name: mem-usage-1m
-      interval: 1m
-      rules:
-      - record: mem_usage_avg_5m
-        expr: avg_over_time(mem_usage_active[5m])
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+    name: example-record
+spec:
+    groups:
+      - name: cpu_mem_usage_active
+        interval: 30s
+        rules:
+        - record: cpu_usage_active
+          expr: 100*(1-(sum by (instance)(node_cpu_seconds_total{mode="idle"})/(sum by (instance)(node_cpu_seconds_total))))
+        - record: mem_usage_active
+          expr: 100*(1-node_memory_MemAvailable_bytes/node_memory_MemTotal_bytes)
+      - name: cpu-usage-5m
+        interval: 5m
+        rules:
+        - record: cpu_usage_max_avg_1h
+          expr: max_over_time(cpu_usage_avg_5m[1h])
+        - record: cpu_usage_max_avg_1d
+          expr: max_over_time(cpu_usage_avg_5m[1d])
+      - name: cpu-usage-1m
+        interval: 1m
+        rules:
+        - record: cpu_usage_avg_5m
+          expr: avg_over_time(cpu_usage_active[5m])
+      - name: mem-usage-5m
+        interval: 5m
+        rules:
+        - record: mem_usage_max_avg_1h
+          expr: max_over_time(mem_usage_avg_5m[1h])
+        - record: mem_usage_max_avg_1d
+          expr: max_over_time(mem_usage_avg_5m[1d])
+      - name: mem-usage-1m
+        interval: 1m
+        rules:
+        - record: mem_usage_avg_5m
+          expr: avg_over_time(mem_usage_active[5m])
 ```
 
 #### Prometheus 文件配置
 
 1. 上述定义了动态调度器所需要的指标计算的 rules，需要将 rules 配置到 Prometheus 中，参考一般的 Prometheus 配置文件。示例如下：
+
 ```
 global:
       evaluation_interval: 30s
@@ -186,6 +194,47 @@ rule_files:
 ```
 2. 将 rules 配置复制到一个文件（例如 dynamic-scheduler.yaml），文件放到上述 prometheus 容器的 `/etc/prometheus/rules/` 目录下。
 3. 加载 Prometheus server，即可从 Prometheus 获取到动态调度器需要的指标。
+
+```yaml
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+    name: example-record
+spec:
+    groups:
+      - name: cpu_mem_usage_active
+        interval: 30s
+        rules:
+        - record: cpu_usage_active
+          expr: 100*(1-(sum by (instance)(node_cpu_seconds_total{mode="idle"})/(sum by (instance)(node_cpu_seconds_total))))
+        - record: mem_usage_active
+          expr: 100*(1-node_memory_MemAvailable_bytes/node_memory_MemTotal_bytes)
+      - name: cpu-usage-5m
+        interval: 5m
+        rules:
+        - record: cpu_usage_max_avg_1h
+          expr: max_over_time(cpu_usage_avg_5m[1h])
+        - record: cpu_usage_max_avg_1d
+          expr: max_over_time(cpu_usage_avg_5m[1d])
+      - name: cpu-usage-1m
+        interval: 1m
+        rules:
+        - record: cpu_usage_avg_5m
+          expr: avg_over_time(cpu_usage_active[5m])
+      - name: mem-usage-5m
+        interval: 5m
+        rules:
+        - record: mem_usage_max_avg_1h
+          expr: max_over_time(mem_usage_avg_5m[1h])
+        - record: mem_usage_max_avg_1d
+          expr: max_over_time(mem_usage_avg_5m[1d])
+      - name: mem-usage-1m
+        interval: 1m
+        rules:
+        - record: mem_usage_avg_5m
+          expr: avg_over_time(mem_usage_active[5m])
+```
+
 
 
 >?通常情况下，上述 Prometheus 配置文件和 rules 配置文件都是通过 configmap 存储，再挂载到 Prometheus server 容器，因此修改相应的 configmap 即可。

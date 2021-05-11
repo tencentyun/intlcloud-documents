@@ -19,7 +19,7 @@
 </tr>
 <tr>
 <td>Sending health report via email is supported</td>
-<td>Users can easily know the health status of the database instance through the health reports email without logging in to the console. Users can also customize the health reports and recipients to send as needed.</td>
+<td>Users can easily know the health status of the database instance through the health reports email without logging in to the console. Users can also customize the health reports and recipients as needed.</td>
 <td>2020-12</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1035/39371" target="_blank">Sending Health Report Email</a></td>
 </tr>
@@ -119,7 +119,7 @@
 </tr>
 <tbody><tr>
 <td>Supported database inspection</td>
-<td>The database inspection feature regularly automates health inspection of full instances. You can also set up custom inspections based on your own needs to help troubleshoot potential instance issues and provide solutions.</td>
+<td>The database inspection feature regularly automates health inspection of full instance. You can also set up custom inspections based on your own needs to help troubleshoot potential instance issues and provide solutions.</td>
 <td>2020-05</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1035/37178" target="_blank">Database Inspection</a></td>
 </tr>
@@ -143,7 +143,7 @@
 </tr>
 <tr>
 <td>Added new exception diagnosis items</td>
-<td>New exception diagnosis items are added, including availability exception diagnosis (OOM, source-replica switch, failover, and delayed elimination) and root cause analysis.</td>
+<td>New exception diagnosis items are added, including availability exception diagnosis (OOM, primary-secondary switch, failover, and delayed elimination) and root cause analysis.</td>
 <td>2020-05</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1035/36036" target="_blank">Exception Diagnosis</a></td>
 </tr>

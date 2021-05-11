@@ -1,13 +1,13 @@
 ## 操作场景
 
-腾讯云容器服务 [云原生监控](https://intl.cloud.tencent.com/document/product/457/38824) 兼容 Prometheus 与 Grafana 的 API，同时也兼容主流 prometheus-operator 的 CRD 用法，为云原生监控提供了极大的灵活性与扩展性，结合 Prometheus 开源生态工具可以解锁更多高级用法。
+腾讯云容器服务 云原生监控 兼容 Prometheus 与 Grafana 的 API，同时也兼容主流 prometheus-operator 的 CRD 用法，为云原生监控提供了极大的灵活性与扩展性，结合 Prometheus 开源生态工具可以解锁更多高级用法。
 本文将介绍如何通过辅助脚本和迁移工具，快速将自建 Prometheus 迁移到云原生监控。
 
 
 ## 前提条件
 
 
-已在自建 Prometheus 集群的一个节点上安装 [Kubectl](https://kubernetes.io/zh/docs/tasks/tools/install-kubectl/) 并配置好 Kubeconfig，保证通过 Kubectl 能够管理集群。
+已在自建 Prometheus 集群的一个节点上安装 [Kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) 并配置好 Kubeconfig，保证通过 Kubectl 能够管理集群。
 
 
 
@@ -252,7 +252,7 @@ grafana-backup restore _OUTPUT_/202012151049.tar.gz
 4. 在 Grafana 中添加 Prometheus API 地址作为 Prometheus 数据源。如下图所示：
 ![](https://main.qcloudimg.com/raw/b6a14e36f3325034e2b84c63f605eaec.png)
 #### 接入自建\sAlertManager
-如需实现更复杂的告警需求，或期望使用自建的 AlertManager 来进行统一告警，可以选择让云原生监控的告警接入自建 AlertManager，您只需在 [创建监控实例](https://intl.cloud.tencent.com/document/product/457/38824) 时，在高级设置中填入自建 AlertManager 的地址，如下图所示：
+如需实现更复杂的告警需求，或期望使用自建的 AlertManager 来进行统一告警，可以选择让云原生监控的告警接入自建 AlertManager，您只需在 创建监控实例 时，在高级设置中填入自建 AlertManager 的地址，如下图所示：
 ![](https://main.qcloudimg.com/raw/8b5673273cc197e8f9cf141c243b9ea8.png)
 
 

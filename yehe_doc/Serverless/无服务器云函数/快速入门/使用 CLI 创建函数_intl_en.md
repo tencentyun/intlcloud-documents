@@ -14,7 +14,7 @@ Run the following command to quickly create a function in the Node.js language:
 ```
 sls init scf-demo
 ```
->?`scf-demo` in the command can be replaced with a template for another programming language. Currently, the SCF component supports the following components: `go1-helloworld`, `nodejs1015-helloworld`, `php72-helloworld`, and `python36-helloworld`.
+>?`scf-demo` in the command is the Node.js template by default, and you can replace it with function templates in other languages, such as `scf-golang`, `scf-php`, and `scf-python`.
 
 ### Deploying function
 Run the following command in the `scf-demo` directory to deploy the function:

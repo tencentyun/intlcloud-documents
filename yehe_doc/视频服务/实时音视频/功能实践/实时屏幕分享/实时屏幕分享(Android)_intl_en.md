@@ -6,9 +6,9 @@ TRTC supports screen sharing on Android, i.e., sharing the screen content of the
 
 ## Supported Platforms
 
-| iOS | Android | macOS | Windows | Electron | WeChat Mini Program | Chrome Browser|
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-|  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  |   ×   |  &#10003;  |
+| iOS | Android | macOS | Windows | Electron |  Chrome Browser|
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|  &#10003; |  &#10003; |  &#10003;  |&#10003;  |   &#10003;  |  &#10003;  |
 
 ## Starting Screen Sharing
 To start screen sharing on Android, you only need to call the [startScreenCapture()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58) API in `TRTCCloud`. If you want to achieve a more stable and clearer sharing effect, you need to address the following two issues:
@@ -31,7 +31,7 @@ By setting the first parameter `encParams` in [startScreenCapture()](http://doc.
 Starting from Android 7.0, common applications running on the background tend to be forcibly killed by the system if they use the CPU. Therefore, if an application carrying out screen sharing enters the background, you can display a floating window to prevent it from being killed by the system. In addition, a pop-up floating window also informs the user of the ongoing screen sharing, helping avoid the leakage of confidential information.
 
 - **Solution 1. Display a common floating window**
-You can display a mini floating window similar to that in VooV Meeting based on the implementation in the sample code [FloatingView.java](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTCSimpleDemo/screen/src/main/java/com/tencent/liteav/screen/FloatingView.java):
+You can display a mini floating window similar to that in VooV Meeting based on the implementation in the sample code [FloatingView.java](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTC-API-Example/Basic/ScreenShare/src/main/java/com/tencent/trtc/screenshare/FloatingView.java)
 
 ```java
 public void showView(View view, int width, int height) {

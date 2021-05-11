@@ -7,7 +7,7 @@ This document describes how to configure an Android project for GME APIs for And
 
 
 
->The SDK is supported on Android 4.2 or above; however, hardware encoding can be enabled only on Android 4.3 (API 18) or above.
+>?The SDK is supported on Android 4.2 or above; however, hardware encoding can be enabled only on Android 4.3 (API 18) or above.
 
 ## Configuration Guide
 

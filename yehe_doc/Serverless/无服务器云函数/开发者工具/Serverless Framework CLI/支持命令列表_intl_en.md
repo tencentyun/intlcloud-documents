@@ -1,4 +1,4 @@
-Serverless Framework supports the following CLI commands:
+Serverless SSR is deployed based on Serverless Framework and supports the following CLI commands:
 
 - **`serverless registry`**: views the list of available components.
 
@@ -19,6 +19,7 @@ Serverless Framework supports the following CLI commands:
     `---inputs publish=true`: publishes all function versions under project during deployment
 
     `---inputs traffic=0.1`: switches 10% traffic to the `$latest` function version during deployment and the rest traffic to the last published function version.
+
     >?The legacy command format `sls deploy --inputs.key=value` has been changed to `sls deploy --inputs key=value` since Serverless CLI v3.2.3. Legacy commands cannot be used in new versions of Serverless CLI. If you have upgraded Serverles CLI, please use the new commands.
 
 - **`serverless remove`**: removes component instance from cloud.
@@ -31,4 +32,5 @@ Serverless Framework supports the following CLI commands:
 
 - **`serverless dev`**: starts development mode ("DEV Mode") and automatically deploys changed information when component status changes are detected. In development mode, information such as execution logs, invocation information, and errors can be output on the command line in real time. In addition, it supports in-cloud debugging for Node.js applications.
 
+   
 

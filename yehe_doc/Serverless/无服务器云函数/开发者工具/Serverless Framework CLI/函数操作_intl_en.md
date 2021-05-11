@@ -12,7 +12,7 @@ Run the following command to quickly create a function in the Node.js language:
 ```
 sls init scf-demo
 ```
->?`scf-demo` in the command can be replaced with a template for another programming language. Currently, the SCF component supports the following components: `go1-helloworld`, `nodejs1015-helloworld`, `php72-helloworld`, and `python36-helloworld`.
+>?`scf-demo` in the command is the Node.js template by default, and you can replace it with function templates in other languages, such as `scf-golang`, `scf-php`, and `scf-python`.
 >
 After the function is successfully created, there will be a `serverless.yml` configuration file in the `scf-demo` project directory, which defines the SCF resource information for each deployment. For more information on the configuration file, please see [Configuration file](#configuration).
 
@@ -37,8 +37,10 @@ Run the following command to remove the deployed SCF resources:
 sls remove
 ```
 
+[](id:configuration)
 
-### Configuration file<span id="configuration"></span>
+### Configuration file
+
 Serverless Framework CLI relies on the configuration in the `serverless.yml` file when creating or updating a function. When the `sls deploy` command is executed to deploy a function, SCF resources will be created or updated according to the configuration in the `serverless.yml` file. Below is a simple example of this file. For more information on the configuration, please see [Full Configuration](https://github.com/serverless-components/tencent-scf/blob/master/docs/configure.md).
 ```
 # SCF component configuration sample

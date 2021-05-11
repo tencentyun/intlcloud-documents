@@ -10,7 +10,7 @@ Gradleを使って自動でローディングするか、または手動でaar�
 
 ### 方法1：自動ローディング（aar）
 TRTC SDK はjCenterでライブラリを公開していますので、Gradleを設定すれば、自動でダウンロードされ、更新されます。
-Android Studioを使って SDKを統合したいプログラム（ここでの例は、[TRTCSimpleDemo](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCSimpleDemo) ）を開き、その後簡単な3つのステップで app/build.gradle ファイルを修正しさえすれば、SDKの統合が完成します。
+Android Studioを使って SDKを統合したいプログラム（ここでの例は、[TRTCSimpleDemo](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo) ）を開き、その後簡単な3つのステップで app/build.gradle ファイルを修正しさえすれば、SDKの統合が完成します。
 ![](https://main.qcloudimg.com/raw/fd01c252724cbf31ec7356286a931661.png)
 
 1. dependenciesの中にTRTCSDKの依存を追加します。
@@ -42,7 +42,7 @@ defaultConfig {
 ### 方法2：手動ダウンロード（aar）
 お客様のネットワークとjCenterの接続に問題がある場合は、SDKを手動でダウンロードし、プログラムに統合することができます。
 
-1. 最新バージョンの[TRTC SDK](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip)をダウンロードします。
+1. 最新バージョンの[TRTC SDK](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip)をダウンロードします。
 2. ダウンロードした aar ファイルをプログラムの**app/libs** ディレクトリの下にコピーします。
 3. プログラムのルートディレクトリの下の build.gradle の中に、**flatDir**を追加し、ローカルライブラリのパスを指定します。
 ![](https://main.qcloudimg.com/raw/bc3215028103fe980aedcbf011b97b02.png)
@@ -64,7 +64,7 @@ defaultConfig {
 ## SDKの統合（jar）
 aarライブラリを統合したくない場合は、jarおよび soライブラリをインポートする方式で TRTC SDKを統合することが可能です。
 
-1. 最新バージョンのjar 圧縮パッケージを[ダウンロード](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip) します。ファイルパスは`SDK/LiteAVSDK_TRTC_xxx.zip` （このうち xxx は TRTC SDKのバージョンナンバー）です。
+1. 最新バージョンのjar 圧縮パッケージを[ダウンロード](http://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip) します。ファイルパスは`SDK/LiteAVSDK_TRTC_xxx.zip` （このうち xxx は TRTC SDKのバージョンナンバー）です。
 2. 解凍するとlibsディレクトリが取得できます。中には主に jar ファイルと so ファイルフォルダが含まれています。
 3. 解凍したjar ファイルおよび armeabi、 armeabi-v7a、 arm64-v8a ファイルフォルダを app/libs ディレクトリの下にコピーします。
 ![](https://main.qcloudimg.com/raw/5bf82ca89b3a14cca470fcedc048d7fa.png)
