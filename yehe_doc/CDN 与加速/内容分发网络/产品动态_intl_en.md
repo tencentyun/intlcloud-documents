@@ -33,6 +33,7 @@ table th:nth-of-type(4){ width:21%; }
 | Update | Description | Release Date | Documentation |
 | -------- | ------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
 | Copy configuration | Supports copying the configurations of an existing forwarding domain name to one or multiple new forwarding domain names. | November 3, 2020 | [Copying Configuration](https://intl.cloud.tencent.com/document/product/228/38936) |
+| Origin-pull request header configuration upgrade | Supports configuring the referer header. | November 25, 2020 | [Request Header Configuration](https://intl.cloud.tencent.com/document/product/228/37037) |
 
 ## October 2020
 
@@ -106,7 +107,7 @@ table th:nth-of-type(4){ width:21%; }
 
 | Update | Description | Release Date | Documentation |
 | --------------------------------- | -------------------------------------- | ---------- | ------------------------------------------------------------ |
-| Chinese mainland CDN <br>The fault self-diagnosis tool is upgraded | New features have been launched, including diagnosing the region or status and refreshing the list information. | May 29, 2019 | [Self-Diagnosis Tool](https://intl.cloud.tencent.com/document/product/228/6304) |
+| Chinese mainland CDN <br>The self-diagnosis tool is upgraded | Supports region and status diagnosis and list refreshing. | May 29, 2019 | [Self-Diagnosis Tool](https://intl.cloud.tencent.com/document/product/228/6304) |
 
 ## April 2019
 
@@ -211,7 +212,7 @@ table th:nth-of-type(4){ width:21%; }
 
 | Update | Description | Release Date | Documentation |
 | ------------------------------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
-| Overseas CDN <br>Purge and prefetch are supported             | The cache purge and cache prefetch features are launched in overseas CDN. | November 25, 2016 | [Purge Cache](https://intl.cloud.tencent.com/document/product/228/6299  )<br> [Prefetch Cache](https://intl.cloud.tencent.com/document/product/228/39000  ) |
+| Overseas CDN <br>Purge and prefetch are supported             | The cache purge and cache prefetch features are launched in overseas CDN. | November 25, 2016 | [Purge Cache](https://intl.cloud.tencent.com/document/product/228/6299)<br> [Prefetch Cache](https://intl.cloud.tencent.com/document/product/228/39000) |
 | Overseas CDN <br>Access log download is supported | The access logging feature is launched in Overseas CDN to help you analyze user access. | November 25, 2016 | [Log Download](https://intl.cloud.tencent.com/document/product/228/6316) |
 | Overseas CDN <br>COS origin server is supported | Static resources in COS can be connected to Overseas CDN for global acceleration and delivery to user clients. | November 1, 2016 | [COS as Origin Server of CDN](https://intl.cloud.tencent.com/document/product/228/32977) |
 
@@ -221,7 +222,7 @@ table th:nth-of-type(4){ width:21%; }
 | --------------------------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
 | Overseas CDN <br>HTTPS acceleration is supported | You can upload certificates for deployment or directly deploy certificates hosted in Tencent Cloud SSL Certificates Service to the CDN platform. In this way, you can enable HTTPS acceleration service to implement encrypted data transfer over the entire network. | October 28, 2016 | [HTTPS Acceleration Configuration Guide](https://intl.cloud.tencent.com/document/product/228/35213) |
 | Chinese mainland CDN <br>Real-time monitoring of origin-pull data is supported | This feature enables you to view monitoring curves in the last 6 hours at 1-minute granularity.  | October 26, 2016 | [Origin-Pull Monitoring](https://intl.cloud.tencent.com/document/product/228/32921) |
-| Batch certificates configuration is supported   | Certificates can be configured in batches in the console.   | October 26, 2016 | [Console Permissions](https://intl.cloud.tencent.com/document/product/228/35229) |
+| Batch certificates configuration is supported   | Certificates can be configured in batches in the console.   | October 26, 2016 | [Console Permissions](https://intl.cloud.tencent.com/document/product/228/35229#.E8.AF.81.E4.B9.A6.E7.AE.A1.E7.90.86) |
 
 ## September 2016
 
@@ -249,7 +250,7 @@ table th:nth-of-type(4){ width:21%; }
 | Update | Description | Release Date | Documentation |
 | ------------------------------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
 | The resource prefetch feature is launched<br>(In beta test)   | CDN offers a resource prefetch feature that enables you to load specified resources to a cache node by simply submitting the list of resources in the CDN console instead of waiting for user requests to trigger. | June 30, 2016 | [Prefetch Cache](https://intl.cloud.tencent.com/document/product/228/39000) |
-| Entry for Overseas CDN application is opened <br>(In beta test) | You can apply to enable Overseas CDN acceleration on this page. | June 30, 2016 | [Overseas Acceleration](https://intl.cloud.tencent.com/product/cdn)         |
+| Entry for Overseas CDN application is opened <br>(In beta test) | You can apply to enable Overseas CDN acceleration on this page. | June 30, 2016 | [Overseas Acceleration](https://intl.cloud.tencent.com/product/cdn)          |
 | The CDN monthly operational report feature is launched | Your monthly business status is displayed in multiple dimensions to facilitate analysis of your business operations. | June 13, 2016 | [Operational Report](https://intl.cloud.tencent.com/document/product/228/6312) |
 
 ## April 2016
@@ -287,7 +288,7 @@ table th:nth-of-type(4){ width:21%; }
 | Update | Description | Release Date | Documentation |
 | -------------------- | -------------------- | ---------- | ------------------------------------------------------------ |
 | Directory purge is supported | Resources can be purged by directory. | June 12, 2015 | [Purge Cache](https://intl.cloud.tencent.com/document/product/228/6299) |
-| Prefetch feature for large files | Large files can be prefetched. | June 12, 2015 | [Prefetch Cache](https://intl.cloud.tencent.com/document/product/228/39000  ) |
+| Prefetch feature for large files | Large files can be prefetched. | June 12, 2015 | [Prefetch Cache](https://intl.cloud.tencent.com/document/product/228/39000) |
 
 ## May 2015
 
@@ -300,7 +301,7 @@ table th:nth-of-type(4){ width:21%; }
 | Update | Description | Release Date | Documentation |
 | ---------------------- | ------------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
 | Origin domain can be configured | CDN supports modifying origin domains. | April 20, 2015 | [Origin Server Configuration](https://intl.cloud.tencent.com/document/product/228/6289) |
-| Referer hotlink protection can be configured | By setting an access control policy on the value of the referer field in the HTTP request header, you can restrict the access source to prevent hotlinking by malicious users. | April 20, 2015 | [Hotlink Protection Configuration](https://intl.cloud.tencent.com/document/product/228/6292) |
+| Referer hotlink protection can be configured | By setting an access control policy on the value of the referer field in the HTTP request header, the access source can be restricted to prevent hotlinking by malicious users. | April 20, 2015 | [Hotlink Protection Configuration](https://intl.cloud.tencent.com/document/product/228/6292) |
 | Advanced features such as cache validity are launched | Cache validity of resources of a particular type or resources in a particular directory or path can be specified. | April 20, 2015 | [Node Cache Validity Configuration (Legacy)](https://intl.cloud.tencent.com/document/product/228/35317) |
 
 ## March 2015
