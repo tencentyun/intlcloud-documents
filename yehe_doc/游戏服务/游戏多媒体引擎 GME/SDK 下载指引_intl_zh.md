@@ -30,7 +30,7 @@ v2.8.1 正式版本更新如下：
 <li>增加接口 SetSpeakerVolumeByOpenID，用于本端听到的房间内某成员的说话音量。</li>
 <li >增加设置使用区域接口，适用于海外发布（目前处于灰度内测阶段，您可以 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a> 申请使用）。</li>
 <li >性能优化，提升 SDK 稳定性。</li>
-<li >提升海外语音质量，有效解决出海业务跨地域语音延迟高进房慢的问题。</li>
+<li >提升海外语音质量。</li>
 </ul ></td>
 <td>2021-04-07</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/607/39525">自定义音频路由</tr>
