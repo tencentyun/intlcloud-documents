@@ -22,7 +22,7 @@ For the SCF quotas that exceed the limit, the corresponding solutions are as fol
 </tr>
 <tr>
 <td>The total concurrency quota of functions per region reaches the upper limit.</td>
-<td>Please adjust the **Total concurrency quota in the current region** in the **Concurrency Management** > **Concurrency Quota** page.</td>
+<td>Please adjust the <b>Total concurrency quota in the current region</b> in the <b>Concurrency Management</b> > <b>Concurrency Quota</b> page.</td>
 </tr>
 <tr>
 <td>The initialization timeout period of the function exceeds the limits.</td>
