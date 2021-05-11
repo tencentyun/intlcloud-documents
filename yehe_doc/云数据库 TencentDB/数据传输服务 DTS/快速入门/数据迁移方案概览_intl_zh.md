@@ -24,16 +24,6 @@
 <td>腾讯云数据库间迁移</td>
 <td><a href="https://cloud.tencent.com/document/product/571/53375">云数据库 MySQL 实例间迁移</a></td></tr>
 <tr>
-<td rowspan=3>迁移至云原生数据库 TDSQL-C</td>
-<td>从自建数据库迁移至腾讯云</td>
-<td><a href="https://cloud.tencent.com/document/product/571/53377">从公网自建 MySQL 迁移至云原生数据库 TDSQL-C</a>
-</td></tr>
-<tr>
-<td rowspan=2>从第三方云迁移至腾讯云    </td>
-<td><a href="https://cloud.tencent.com/document/product/571/53378">从 AWS Aurora MySQL 迁移至云原生数据库 TDSQL-C</a></td></tr>
-<tr>
-<td><a href="https://cloud.tencent.com/document/product/571/53382">从阿里云 PolarDB MySQL 迁移至云原生数据库 TDSQL-C</a></td></tr>
-<tr>
 <td>迁移至云数据库 MariaDB</td>
 <td>从自建数据库/云数据库迁移至腾讯云</td>
 <td><a href="https://cloud.tencent.com/document/product/571/19542">迁移至云数据库 MariaDB</a></td></tr>
@@ -41,10 +31,6 @@
 <td>迁移至云数据库 PostgreSQL</td>
 <td>从自建数据库/云数据库迁移至腾讯云</td>
 <td><a href="https://cloud.tencent.com/document/product/571/16309">迁移至云数据库 PostgreSQL</a></td></tr>
-<tr>
-<td>迁移至云数据库 SQL Server</td>
-<td>从自建数据库/云数据库迁移至腾讯云</td>
-<td><a href="https://cloud.tencent.com/document/product/571/38039">迁移至云数据库 SQL Server</a></td></tr>
 <tr>
 <td rowspan=2>迁移至云数据库 Redis</td>
 <td rowspan=2>从自建数据库/云数据库迁移至腾讯云</td>
