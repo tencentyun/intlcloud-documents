@@ -22,7 +22,7 @@ Based on the rules of the protocols supported by native Service, there are some 
    - When the extension protocol annotation does not cover the port described in Service Spec, Service Spec is configured according to the user description.
    - When the port described in the extension protocol annotation does not exist in Service Spec, the configuration is ignored.
    - When the port described in the extension protocol annotation exists in Service Spec, the protocol configuration that users state in Service Spec will be overwritten.
-- TCP SSL is a feature of the CLB that is currently in beta testing. If you need to use this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to apply for it.
+
 
 
 
