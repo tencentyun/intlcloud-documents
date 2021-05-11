@@ -7,13 +7,11 @@ Currently, the following versions of PHP programming language are supported:
 The PHP function format is generally as follows:
 ```
 <?php
-
 function main_handler($event, $context) {
     echo("hello world");
     print_r($event);
     return "hello world";
 }
-
 ?>
 ```
 
@@ -90,7 +88,6 @@ The currently installed PHP extensions are listed below:
 - zip
 - eio
 - protobuf
-- redis
 - Zend OPcache
 - mongodb
 - memcached 
