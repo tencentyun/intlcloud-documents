@@ -104,7 +104,7 @@ buffer 방식은 직접 TRTC SDK에 byte[] 포맷의 배열을 넣어야 하며,
 </tr></tbody></table>
 
 - **texture 방식**: 연결에는 기본적인 OpenGL이 필요하지만 성능이 좋습니다. 특히 화면 해상도가 비교적 높을 때 성능이 더 좋아집니다.
-texture는 TRTC SDK에 OpenGL 텍스쳐를 전달해야 하며, 해당 방식이 정상적으로 작동될 수 있도록 사전에 OpenGL 환경을 설정해야 합니다. 따라서 해당 방식의 연결은 매우 어렵습니다. OpenGL을 학습한 경험이 없는 경우, Tencent Cloud에서 제공하는 예시 코드 사용을 권장합니다. 해당 코드는 [Demo](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCSimpleDemo/customcapture/src/main/java/com/tencent/custom/customcapture)의 `customCapture` 폴더에 있고 다음과 같은 파일이 포함되어 있습니다.
+texture는 TRTC SDK에 OpenGL 텍스쳐를 전달해야 하며, 해당 방식이 정상적으로 작동될 수 있도록 사전에 OpenGL 환경을 설정해야 합니다. 따라서 해당 방식의 연결은 매우 어렵습니다. OpenGL을 학습한 경험이 없는 경우, Tencent Cloud에서 제공하는 예시 코드 사용을 권장합니다. 해당 코드는 [Demo](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTC-API-Example/Advanced/LocalVideoShare/src/main/java/com/tencent/trtc/mediashare)의 `customCapture` 폴더에 있고 다음과 같은 파일이 포함되어 있습니다.
 <table><thead><tr><th>파일 이름</th><th>소스 코드 로직</th></tr></thead>
 <tbody>
 <tr><td>TestSendCustomData.java</td>
