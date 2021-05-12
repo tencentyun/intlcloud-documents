@@ -70,7 +70,7 @@ buffer 方案要求直接向 TRTC SDK 塞入 byte[] 格式的数组，支持 i42
 
 **2. texture 方案**：对接需要一定的 OpenGL 基础，但是性能较好，尤其是画面分辨率较高的时候。
 
-texture 需要向 TRTC SDK 中传递 OpenGL 纹理，为了保证该方案能够正常运作，需要您提前设置好 OpenGL 环境，因此该方案的对接难度非常高。如果您没有学习过 OpenGL，建议直接使用我们提供的示例代码，它在 [Demo] 中的 `customCapture` 文件夹下，包含以下文件：
+texture 需要向 TRTC SDK 中传递 OpenGL 纹理，为了保证该方案能够正常运作，需要您提前设置好 OpenGL 环境，因此该方案的对接难度非常高。如果您没有学习过 OpenGL，建议直接使用我们提供的示例代码，它在 [Demo](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTC-API-Example/Advanced/LocalVideoShare/src/main/java/com/tencent/trtc/mediashare) 中的 `customCapture` 文件夹下，包含以下文件：
 
 | 文件名 | 源码逻辑 |
 |---------|---------|
