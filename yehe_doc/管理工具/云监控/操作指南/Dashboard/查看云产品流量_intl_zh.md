@@ -2,8 +2,8 @@
 
 通过 Dashboard 查看流量监控数据，可以进行单实例筛选，单实例筛选流量监控数据或查看流量总和情况。
 
-
-## 查看云服务器流量[](id:step1)
+[](id:step1)
+## 查看云服务器流量
 >?按流量计费模式根据“外网出流量指标”进行计费。
 
 1. 登录 [云监控控制台-Dashboard 列表](https://console.cloud.tencent.com/monitor/dashboard2/dashboards)。
@@ -47,14 +47,13 @@
 </table>
 
 
-![](https://main.qcloudimg.com/raw/c2f1180f09c7066f7e2b668d295052da.png)
 
-
-## 查看其它云产品流量[](id:step2)
+[](id:step2)
+## 查看其它云产品流量
 
 >?Dashboard 暂时只支持云服务器流量监控预设监控面板，其余云产品需要参考下列操作自建 Dashboard 查看流量变化趋势。在创建之前，请先快速了解 [Dashboard 创建流程](https://intl.cloud.tencent.com/document/product/248/35282) 。
 
-下列已创建查看云数据库内网流量总和图表为例：
+
 
 ### 步骤1：创建流量监控面板
 
@@ -70,7 +69,7 @@
 3. 单击【新建】，填写变量名，选择关联标签为“云数据库-MySQL-主机监控的实例”。
 4. 完成后，单击【确定】即可。
 
-![](https://main.qcloudimg.com/raw/e3fec24737b6a5a665905857e7f7afcf.png)
+
 
 ### 步骤3：创建图表
 1. 返回 Dashboard  管理页，单击【新建图表】。
@@ -79,6 +78,6 @@
    - 筛选条件：选择“模板变量”，选择对应的变量名称。
    - 图表名：命名为“内网出流量：总和”。
    - 图表类型：选择“数字”图表类型。
-   ![](https://main.qcloudimg.com/raw/760f43c45b76eeaa227c11beaa9e77e5.png)
+
 3. 完成后，单击右上角的【保存】按钮即可。
 > ?如需创建其它图表类型，请参考 [各图表类型应用场景](https://intl.cloud.tencent.com/document/product/248/38479)。
