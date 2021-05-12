@@ -310,10 +310,12 @@ TRTCCloud의 setLocalVideoRenderCallback과 setRemoteVideoRenderCallback을 통�
 
 [](id:example_windows)
 #### 예시 코드
-pixelFormat으로 TRTCVideoPixelFormat_BGRA32를 선택하고 bufferType으로 TRTCVideoBufferType_Buffer를 선택하면 전체적으로 편리하게 BGRA32 포맷의 PixelBuffer를 비디오 화면으로 전환할 수 있습니다. Demo 폴더에 있는 `TXLiveAvVideoView.cpp`라는 파일은 다음 예시 코드를 통한 사용 방법을 소개합니다.
+pixelFormat으로 TRTCVideoPixelFormat_BGRA32를 선택하고 bufferType으로 TRTCVideoBufferType_Buffer를 선택하면 전체적으로 편리하게 BGRA32 포맷의 PixelBuffer를 비디오 화면으로 전환할 수 있습니다. Demo 폴더에 있는 TXLiveAvVideoView.cpp`라는 파일은 다음 예시 코드를 통한 사용 방법을 소개합니다.
 
+```
 <dx-codeblock>
 ::: Window c++
+
 void TXLiveAvVideoView::renderFitMode(HDC hDC, unsigned char * buffer, int width, int height, RECT& rcImage)
 {
     Point origin;
@@ -340,10 +342,9 @@ void TXLiveAvVideoView::renderFitMode(HDC hDC, unsigned char * buffer, int width
         ::PatBlt(hDC, 0 + origin.X, 0 + origin.Y, viewWith, viewHeight, BLACKNESS);
     ::StretchDIBits(hDC, x + origin.X, y + origin.Y, width, height, 0, 0, width, height, m_argbRenderFrame.frameBuf, &m_bmi, DIB_RGB_COLORS, SRCCOPY);
 }
-:::
-</dx-codeblock>
-:::
+```
 </dx-tabs>
+
 
 ## 사용자 정의 오디오 수집
 
@@ -368,6 +369,7 @@ TRTCCloud의 enableCustomAudioCapture 인터페이스를 통해 TRTC SDK에 기�
 <li/><b>Windows: </b>setAudioFrameCallback
 </ul>
 </dx-alert>
+
 
 | 인터페이스                  | 설명                                                         |
 | --------------------- | ------------------------------------------------------------ |
