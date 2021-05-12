@@ -1,7 +1,7 @@
-이벤트 콜백 서비스는 TRTC 서비스의 이벤트를 HTTP/HTTPS 요청 형식으로 사용자의 서버에 공지합니다. 방 이벤트(Room Event) 그룹과 미디어 이벤트(Media Event) 그룹의 일부 이벤트를 통합하였으며, 사용자는 Tencent Cloud에 관련 설정 정보를 제공해 서비스를 활성화할 수 있습니다.
+이벤트 콜백 서비스는 TRTC 서비스의 이벤트를 HTTP/HTTPS 요청 형식으로 사용자의 서버에 공지합니다. 방 이벤트 그룹(Room Event)과 미디어 이벤트 그룹(Media Event)의 일부 이벤트를 통합하였으며, 사용자는 Tencent Cloud에 관련 설정 정보를 제공해 서비스를 활성화할 수 있습니다.
 
-<span id="deploy"></span>
-## 설정 정보
+[](id:deploy)
+## 정보 설정
 TRTC 콘솔은 콜백 정보 자체 설정을 지원하며, 설정이 완료되면 이벤트 콜백 공지를 수신할 수 있습니다. 자세한 작업 가이드는 [콜백 설정](https://intl.cloud.tencent.com/document/product/647/39559)을 참조하십시오.
 
 
@@ -12,21 +12,40 @@ TRTC 콘솔은 콜백 정보 자체 설정을 지원하며, 설정이 완료되�
 ## 요청시간 초과 후 재시도
 이벤트 콜백 서버가 메시지 공지를 발송한 후 5초 이내에 사용자의 서버로부터 응답을 받지 못할 경우 공지 실패로 간주합니다. 첫 번째 공지 실패 후 즉시 재시도하며, 그 이후 실패하면 메시지가 1분 이상 지속될 때까지 **10초** 간격으로 계속 재시도합니다.
 
-<span id="format"></span>
+[](id:format)
 ## 이벤트 콜백 메시지 포맷
 
 이벤트 콜백 메시지는 HTTP/HTTPS POST 요청 형식으로 사용자의 서버에 전송됩니다.
 
-- 문자 인코딩 포맷: UTF-8
-- 요청: body 포맷은 JSON
-- 응답: HTTP STATUS CODE = 200, 서버가 응답 패키지의 세부 콘텐츠를 무시합니다. 원활한 프로토콜 연결을 위해 클라이언트 응답 콘텐츠에 JSON: {"code":0} 추가를 권장합니다.
+- **문자 인코딩 포맷**: UTF-8
+- **요청**: body 포맷은 JSON
+- **응답**: HTTP STATUS CODE = 200, 서버가 응답 패키지의 세부 내용을 무시합니다. 원활한 프로토콜 연결을 위해 클라이언트 응답 콘텐츠에 JSON: {"code":0} 추가를 권장합니다.
+- **패킷 예시**: 다음은 '방 이벤트 그룹 - 방 입장' 이벤트의 패킷 예시입니다.
+<dx-codeblock>
+::: JSON JSON
+{
+	"EventGroupId": 1,        #방 이벤트 그룹
+	"EventType": 103,        #방 입장 이벤트
+	"CallbackTs": 1615554923704,        #콜백 시간, 단위: 밀리초
+	"EventInfo": {
+		"RoomId": 12345,        #방 번호 숫자
+		"EventTs": 1608441737,        #이벤트 발생 시간, 단위: 초
+		"UserId": "test",        #사용자 ID
+		"UniqueId": 1615554922656,        #고유 식별자
+		"Role": 20,        #사용자 역할: 호스트
+		"Reason": 1        #입장 원인: 정상 입장
+		}
+}
+:::
+</dx-codeblock>
+
 
 
 ## 매개변수 설명
-<span id="message"></span>
+[](id:message)
 ### 콜백 메시지 매개변수
 
-- 이벤트 콜백 메시지의 header는 다음과 같은 필드를 포함합니다:
+- 이벤트 콜백 메시지의 header는 다음과 같은 필드를 포함합니다.
 <table id="header">
 <tr><th>필드 이름</th><th>값</th></tr></thead><tr>
 <td>Content-Type</td><td>application/json</td>
@@ -48,7 +67,7 @@ TRTC 콘솔은 콜백 정보 자체 설정을 지원하며, 설정이 완료되�
 </tr><tr>
 <td>CallbackTs</td>
 <td>Number</td>
-<td>이벤트 콜백 서버가 사용자의 서버에 보낸 콜백 요청의 Unix 타임스탬프. 단위: 밀리초</td>
+<td>이벤트 콜백 서버가 사용자의 서버로 보낸 콜백 요청의 Unix 타임스탬프, 단위: 밀리초</td>
 </tr><tr>
 <td>EventInfo</td>
 <td>JSON Object</td>
@@ -56,7 +75,7 @@ TRTC 콘솔은 콜백 정보 자체 설정을 지원하며, 설정이 완료되�
 </tr>
 </tbody></table>
 
-<span id="eventId"></span>
+[](id:eventId)
 ### 이벤트 그룹 ID
 
 | 필드 이름            | 값   | 의미       |
@@ -64,7 +83,7 @@ TRTC 콘솔은 콜백 정보 자체 설정을 지원하며, 설정이 완료되�
 | EVENT_GROUP_ROOM  | 1    | 방 이벤트 그룹 |
 | EVENT_GROUP_MEDIA | 2    | 미디어 이벤트 그룹 |
 
-<span id="event_type"></span>
+[](id:event_type)
 ### 이벤트 유형
 
 | 필드 이름                  | 값   | 의미             |
@@ -76,23 +95,26 @@ TRTC 콘솔은 콜백 정보 자체 설정을 지원하며, 설정이 완료되�
 |  EVENT_TYPE_CHANGE_ROLE   | 105  |    역할 전환      |
 | EVENT_TYPE_START_VIDEO  | 201  | 비디오 데이터 푸시 시작 |
 | EVENT_TYPE_STOP_VIDEO   | 202  | 비디오 데이터 푸시 중지 |
-| EVENT_TYPE_START_AUDIO  | 203  | 음성 데이터 푸시 시작 |
-| EVENT_TYPE_STOP_AUDIO   | 204  | 음성 데이터 푸시 중지 |
-| EVENT_TYPE_START_ASSIT  | 205  | 보조 데이터 푸시 시작 |
-| EVENT_TYPE_STOP_ASSIT   | 206  | 보조 데이터 푸시 중지 |
+| EVENT_TYPE_START_AUDIO  | 203  | 오디오 데이터 푸시 시작 |
+| EVENT_TYPE_STOP_AUDIO   | 204  | 오디오 데이터 푸시 중지 |
+| EVENT_TYPE_START_ASSIT  | 205  | 서브 채널 데이터 푸시 시작 |
+| EVENT_TYPE_STOP_ASSIT   | 206  | 서브 채널 데이터 푸시 중지 |
 
-<span id="event_infor"></span>
+[](id:event_infor)
 ### 이벤트 정보
 
 | 필드 이름  | 유형   | 의미                              |
 | ------- | ------ | --------------------------------- |
-|RoomId      |     String/Number       |     방 이름(유형이 클라이언트 방 번호 유형과 일치)    |
-| EventTs | Number | 이벤트 발생 시간의 Unix 타임스탬프. 단위: 초    |
+RoomId      |     String/Number       |     방 이름(유형이 클라이언트 방 번호 유형과 일치)    |
+| EventTs | Number | 이벤트 발생 시간의 Unix 타임스탬프, 단위: 초    |
 | UserId  | String | 사용자 ID                            |
+| UniqueId  | Number | [고유 식별자](#UniqueId)(option: 방 이벤트 그룹 사용)                            |
 | Role    | Number | [역할 유형](#role_type)(option: 입장 및 퇴장 시 사용)  |
 | Reason  | Number | [구체적 원인](#reason) (option: 입장 및 퇴장 시 사용) |
 
-<span id="role_type"></span>
+>?[](id:UniqueId) ** 고유 식별자의 정의:** 클라이언트에 네트워크 전환, 진행 프로세스 이상으로 퇴장 및 재입장 등의 특수 상황이 발생하면 콜백 서버는 동일한 사용자의 방 입장/퇴장 콜백을 여러 번 수신하게 됩니다. UniqueId는 사용자의 동일한 회차의 방 입장/퇴장을 표시하는 데 사용합니다.
+
+[](id:role_type)
 ### 역할 유형
 
 | 필드 이름             | 값   | 의미 |
@@ -100,13 +122,13 @@ TRTC 콘솔은 콜백 정보 자체 설정을 지원하며, 설정이 완료되�
 | MEMBER_TRTC_ANCHOR | 20   | 호스트 |
 | MEMBER_TRTC_VIEWER | 21   | 시청자 |
 
-<span id="reason"></span>
+[](id:reason)
 ### 구체적 원인
 
 | 필드 이름    | 의미                              |
 | -------  | --------------------------------- |
 |방 입장   |<li/>1: 정상 입장 <li/>2: 네트워크 전환 <li/>3: 요청시간 초과 후 재시도 <li/>4: 크로스 룸 마이크 연결 방 입장 |
-|방 퇴장 | <li/>1: 정상 퇴장 <li/>2: 요청시간 초과 후 나가기 <li/>3: 방 사용자 삭제됨 <li/>4: 마이크 연결 취소 후 퇴장 <li/>5: 강제 종료|
+|방 퇴장 | <li/>1: 정상 퇴장 <li/>2: 요청시간 초과로 퇴장 <li/>3: 방 사용자 삭제됨 <li/>4: 마이크 연결을 취소하고 방 퇴장 <li/>5: 강제 종료|
 
 
 
@@ -117,5 +139,7 @@ TRTC 콘솔은 콜백 정보 자체 설정을 지원하며, 설정이 완료되�
 Sign = base64(hmacsha256(key, body))
 ```
 
-
-
+>! body는 콜백 요청을 수신하는 원시 패킷이므로 변경해서는 안 됩니다. 예시는 다음과 같습니다.
+>```
+body="{\n\t\"EventGroupId\":\t1,\n\t\"EventType\":\t103,\n\t\"CallbackTs\":\t1615554923704,\n\t\"EventInfo\":\t{\n\t\t\"RoomId\":\t12345,\n\t\t\"EventTs\":\t1608441737,\n\t\t\"UserId\":\t\"test\",\n\t\t\"UniqueId\":\t1615554922656,\n\t\t\"Role\":\t20,\n\t\t\"Reason\":\t1\n\t}\n}"
+```

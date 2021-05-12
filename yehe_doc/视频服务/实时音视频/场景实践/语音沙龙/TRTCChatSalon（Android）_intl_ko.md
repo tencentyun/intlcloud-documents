@@ -1,16 +1,16 @@
-TRTCChatSalon은 Tencent Cloud의 Real-Time Communication(TRTC)과 Instant Messaging(IM) 서비스를 기반으로 구성된 모듈이며, 다음 기능을 지원합니다.
+TRTCChatSalon은 Tencent Cloud의 TRTC와 IM 서비스를 기반으로 구성된 모듈이며, 다음 기능을 지원합니다.
 
 - 호스트가 신규 음성 살롱을 생성하면 시청자가 음성 살롱에 입장해 시청 및 인터랙션할 수 있습니다.
 - 호스트가 시청자에게 마이크 켜기를 요청하거나 마이크가 켜진 사용자의 마이크를 강제로 끌 수 있습니다.
 - 시청자가 마이크 켜기를 신청하여 마이크가 켜진 호스트가 될 수 있고, 다른 사람들과 음성으로 인터랙션할 수 있으며, 언제든지 마이크를 끄고 일반 시청자가 될 수 있습니다.
 - 다양한 텍스트 메시지 및 사용자 정의 메시지를 지원합니다. 사용자 정의 메시지를 이용해 댓글 자막, 좋아요, 선물 기능 등을 구현할 수 있습니다.
 
-TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소스 SDK에 종속됩니다. 자세한 구현 방법은 [음성 살롱(Android)](https://intl.cloud.tencent.com/document/product/647/39804)을 참조하십시오.
+TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소스 SDK에 종속됩니다. 자세한 구현 방법은 [음성 살롱(Android)](https://intl.cloud.tencent.com/document/product/647/39803)을 참조하십시오.
 
 - TRTC SDK: [TRTC SDK](https://intl.cloud.tencent.com/document/product/647)를 저딜레이 음성 채팅 모듈로 사용합니다.
-- IM SDK: [IM SDK](https://intl.cloud.tencent.com/document/product/1047)의 AVChatroom을 이용해 채팅방 기능을 구현하며, IM 속성 인터페이스를 통해 마이크 위치 리스트 등 방 정보를 저장하고 초대 신호를 마이크 켜기/끄기 신청에 사용할 수 있습니다.
+- IM SDK: [IM SDK](https://intl.cloud.tencent.com/document/product/1047)의 AVChatroom을 사용해 채팅방 기능을 구현하며, IM 속성 인터페이스를 통해 마이크 위치 리스트 등 방 정보를 저장하고 초대 신호를 마이크 켜기/끄기 신청에 사용할 수 있습니다.
 
-<span id="TRTCChatSalon"></span>
+[](id:TRTCChatSalon)
 
 ## TRTCChatSalon API 개요
 
@@ -21,7 +21,7 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 | [sharedInstance](#sharedinstance)               | 단일 항목 객체 획득           |
 | [destroySharedInstance](#destroysharedinstance) | 단일 항목 객체 폐기           |
 | [setDelegate](#setdelegate)                     | 이벤트 콜백 설정           |
-| [setDelegateHandler](#setdelegatehandler)       | 이벤트 콜백이 존재하는 스레드 설정 |
+| [setDelegateHandler](#setdelegatehandler)       | 이벤트 콜백이 있는 스레드 설정 |
 | [login](#login)                                 | 로그인                   |
 | [logout](#logout)                               | 로그아웃                   |
 | [setSelfProfile](#setselfprofile)               | 개인 정보 수정           |
@@ -30,12 +30,12 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 | API                                 | 설명                                                         |
 | ----------------------------------- | ------------------------------------------------------------ |
-| [createRoom](#createroom)           | 방 생성(호스트 호출). 방이 존재하지 않는 경우 시스템에서 자동으로 새로운 방 생성 |
+| [createRoom](#createroom)           | 방 생성(호스트 호출). 방이 없는 경우 시스템에서 자동으로 새로운 방 생성 |
 | [destroyRoom](#destroyroom)         | 방 폐기(호스트 호출)                                       |
 | [enterRoom](#enterroom)             | 방 입장(시청자 호출)                                       |
 | [exitRoom](#exitroom)               | 방 퇴장(시청자 호출)                                       |
 | [getRoomInfoList](#getroominfolist) | 방 리스트의 세부 정보 획득                                     |
-| [getUserInfoList](#getuserinfolist) | 특정 userId의 사용자 정보 획득. null인 경우 방 안에 있는 모든 사용자 정보 획득 |
+| [getUserInfoList](#getuserinfolist) | 지정 userId의 사용자 정보 획득. null인 경우 방 안에 있는 모든 사용자 정보 획득 |
 
 ### 마이크 켜짐/꺼짐 인터페이스
 
@@ -51,7 +51,7 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 | API                                             | 설명                 |
 | ----------------------------------------------- | -------------------- |
 | [startMicrophone](#startmicrophone)             | 마이크 수집 시작     |
-| [stopMicrophone](#stopmicrophone)               | 마이크 수집 종료     |
+| [stopMicrophone](#stopmicrophone)               | 마이크 수집 중지     |
 | [setAudioQuality](#setaudioquality)             | 오디오 품질 설정           |
 | [muteLocalAudio](#mutelocalaudio)               | 로컬 음소거 활성화/비활성화  |
 | [setSpeaker](#setspeaker)                       | 스피커 활성화 설정     |
@@ -88,7 +88,7 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 | [rejectInvitation](#rejectinvitation) | 초대 거부       |
 | [cancelInvitation](#cancelinvitation) | 초대 취소       |
 
-<span id="RTCChatSalonDelegate"></span>
+[](id:TRTCChatSalonDelegate)
 ## TRTCChatSalonDelegate API 개요
 
 ### 일반적인 이벤트 콜백
@@ -111,7 +111,6 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 | API                                            | 설명                                   |
 | ---------------------------------------------- | -------------------------------------- |
-| [onEnterRoomSeatListNotify](#onenterroomseatlistnotify) | 시청자 방 입장 후, 해당 방 호스트 정보 콜백 |
 | [onAnchorEnterSeat](#onanchorenterseat)        | 사용자 마이크 켜짐(직접 마이크 켬/호스트가 특정 사용자 마이크 켬)  |
 | [onAnchorLeaveSeat](#onanchorleaveseat)        | 사용자 마이크 꺼짐(직접 마이크 끔/호스트가 특정 사용자 마이크 끔)  |
 | [onSeatMute](#onseatmute)                      | 호스트 마이크 음소거                             |
@@ -143,7 +142,7 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 ### sharedInstance
 
-[TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39804) 단일 항목 객체 획득
+[TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39803) 단일 항목 객체 획득
 
 ```java
  public static synchronized TRTCChatSalon sharedInstance(Context context);
@@ -153,21 +152,21 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 | 매개변수    | 유형    | 의미                                                         |
 | ------- | ------- | ------------------------------------------------------------ |
-| context | Context | Android 컨텍스트이며, 내부가 ApplicationContext로 전환되어 시스템 API 호출에 사용됩니다. |
+| context | Context | Android 컨텍스트로, 내부가 ApplicationContext로 전환되어 시스템 API 호출에 사용됩니다. |
 
 
 ### destroySharedInstance
 
-[TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39804) 단일 항목 객체 폐기
+[TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39803) 단일 항목 객체 폐기
 
->?인스턴스 폐기 후에는 외부에 캐시된 TRTCChatSalon 인스턴스를 다시 사용할 수 없으며, 다시 [sharedInstance](#sharedinstance)를 호출해 새로운 인스턴스를 획득해야 합니다.
+>?인스턴스 폐기 후에는 외부에 캐시된 TRTCChatSalon 인스턴스를 더 이상 사용할 수 없으며, 다시 [sharedInstance](#sharedinstance)를 호출해 새로운 인스턴스를 획득해야 합니다.
 
 ```java
 public static void destroySharedInstance();
 ```
 
 ### setDelegate
-[TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39804) 이벤트 콜백은 TRTCChatSalonDelegate를 통해 [TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39804)의 다양한 상태 공지를 받아볼 수 있습니다.
+[TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39803) 이벤트 콜백입니다. TRTCChatSalonDelegate를 통해 [TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39803)의 다양한 상태 공지를 받아볼 수 있습니다.
 
 ```java
 public abstract void setDelegate(TRTCChatSalonDelegate delegate);
@@ -176,7 +175,7 @@ public abstract void setDelegate(TRTCChatSalonDelegate delegate);
 >?setDelegate는 TRTCChatSalon의 프록시 콜백입니다.   
 
 ### setDelegateHandler
-이벤트 콜백이 존재하는 스레드를 설정
+이벤트 콜백이 존재하는 스레드를 설정합니다.
 
 ```java
 public abstract void setDelegateHandler(Handler handler);
@@ -186,7 +185,7 @@ public abstract void setDelegateHandler(Handler handler);
 
 | 매개변수    | 유형    | 의미                                                         |
 | ------- | ------- | ------------------------------------------------------------ |
-| handler | Handler | TRTCChatSalon의 다양한 상태를 통지하며, 지정한 handler 스레드로 배포합니다. |
+| handler | Handler | 사용자가 지정한 handler 스레드에 TRTCChatSalon의 다양한 상태 공지를 배포합니다. |
 
    
 
@@ -260,8 +259,8 @@ public abstract void createRoom(int roomId, TRTCChatSalonDef.RoomParam roomParam
 
 | 매개변수      | 유형           | 의미                                                         |
 | --------- | -------------- | ------------------------------------------------------------ |
-| roomId    | int            | 방 식별 번호이며, 귀하가 할당하고 통합 관리합니다. 여러 개의 roomID를 1개의 음성 살롱 방 리스트로 통합할 수 있으며, Tencent Cloud는 현재 음성 살롱 리스트 관리 서비스를 제공하지 않으므로 직접 관리하시기 바랍니다. |
-| roomParam | RoomParam      | 방 정보입니다. 방 이름, 마이크 위치 정보, 썸네일 정보 등과 같이 방을 설명하는 데 사용됩니다. |
+| roomId    | int            | 방 식별 번호이며, 사용자가 할당하고 통합 관리합니다. 여러 개의 roomID를 1개의 음성 살롱 방 리스트로 통합할 수 있습니다. Tencent Cloud는 현재 음성 살롱 리스트 관리 서비스를 제공하지 않으므로 직접 관리하시기 바랍니다. |
+| roomParam | RoomParam      | 방 정보입니다. 방 이름, 마이크 위치 정보, 썸네일 정보와 같이 방을 설명하는 데 사용됩니다. |
 | callback  | ActionCallback | 방 생성 결과 콜백이며, 성공 시 code는 0입니다.                        |
 
 호스트의 정상적인 방송 시작 호출 프로세스는 다음과 같습니다. 
@@ -307,9 +306,8 @@ public abstract void enterRoom(int roomId, TRTCChatSalonCallback.ActionCallback 
 
 1. 시청자는 서버에서 최신 음성 살롱 리스트를 획득하며, 여기에는 여러 음성 살롱의 roomId 및 방 정보가 포함될 수 있습니다.
 2. 시청자가 음성 살롱 1개를 선택하고 `enterRoom`을 호출하여 해당 방으로 입장합니다.
-3. 방 입장 후 모듈의 `onRoomInfoChange` 방 속성 변경 이벤트 공지를 수신합니다. 이때 UI에 방 이름 표시, 마이크를 켤 때 호스트에게 동의 요청 필요 여부 등 방의 속성을 기록할 수 있으며 그에 해당하는 변경이 가능합니다.
-4. 방 입장 후, 모듈의 `onEnterRoomSeatListNotify` 현재 방 호스트 정보 콜백을 수신합니다. 이때 마이크 위치 리스트의 정보에 따라 현재 방 호스트의 사용자 정보를 조회하여 UI 인터페이스에 새로 고침합니다.
-5. 방 입장 후 마이크 위치 리스트에 호스트 입장 `onAnchorEnterSeat` 이벤트 공지도 수신합니다.
+3. 방 입장 후 모듈의 `onRoomInfoChange` 방 속성 변경 이벤트 공지를 수신합니다. 이때 UI에 방 이름 표시, 마이크를 켤 때 호스트에게 동의 요청 필요 여부 기록 등 방의 속성을 기록할 수 있으며 그에 해당하는 변경이 가능합니다.
+4. 방 입장 후 마이크 위치 리스트에 호스트 입장 `onAnchorEnterSeat` 이벤트 공지도 수신합니다.
 
 ### exitRoom
 
@@ -329,7 +327,7 @@ public abstract void exitRoom(TRTCChatSalonCallback.ActionCallback callback);
 
 ### getRoomInfoList
 
-방 리스트의 세부 정보를 획득. 방 이름, 방 썸네일은 호스트가 `createRoom()` 시 roomInfo를 통해 설정할 수 있습니다.
+방 리스트의 세부 정보를 획득합니다. 방 이름, 방 썸네일은 호스트가 `createRoom()` 생성 시 roomInfo를 통해 설정할 수 있습니다.
 
 >?방 리스트 및 방 정보를 모두 직접 관리하는 경우 해당 함수는 생략할 수 있습니다.
 
@@ -348,7 +346,7 @@ public abstract void getRoomInfoList(List<Integer> roomIdList, TRTCChatSalonCall
 
 ### getUserInfoList
 
-특정 userId의 사용자 정보 획득
+지정 userId의 사용자 정보 획득
 
 ```java
 public abstract void getUserInfoList(List<String> userIdList, TRTCChatSalonCallback.UserListCallback userlistcallback);
@@ -358,7 +356,7 @@ public abstract void getUserInfoList(List<String> userIdList, TRTCChatSalonCallb
 
 | 매개변수             | 유형               | 의미                                                         |
 | ---------------- | ------------------ | ------------------------------------------------------------ |
-| userIdList       | List&lt;String&gt; | 특정 사용자 ID 리스트를 획득합니다. null인 경우 방 안에 있는 모든 사용자 정보를 획득합니다. |
+| userIdList       | List&lt;String&gt; | 획득해야 할 사용자 ID 리스트입니다. null인 경우 방 안에 있는 모든 사용자 정보를 획득합니다. |
 | userlistcallback | UserListCallback   | 사용자 세부 정보 콜백                                           |
 
 
@@ -450,7 +448,7 @@ public abstract void startMicrophone();
 
 ### stopMicrophone
 
-마이크 수집 종료
+마이크 수집 중지
 
 ```java
 public abstract void stopMicrophone();
@@ -468,7 +466,7 @@ public abstract void setAudioQuality(int quality);
 
 | 매개변수    | 유형 | 의미                                                         |
 | ------- | ---- | ------------------------------------------------------------ |
-| quality | int  | 오디오의 품질로, 자세한 내용은 [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)를 참조하십시오. |
+| quality | int  | 오디오의 품질입니다. 자세한 내용은 [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)를 참조하십시오. |
 
 
 ### muteLocalAudio
@@ -534,7 +532,7 @@ public abstract void setAudioPlayoutVolume(int volume);
 
 ### muteRemoteAudio
 
-특정 사용자 음소거/음소거 해제
+지정 사용자 음소거/음소거 해제
 
 ```java
 public abstract void muteRemoteAudio(String userId, boolean mute);
@@ -578,7 +576,7 @@ public abstract TXAudioEffectManager getAudioEffectManager();
 
 ### sendRoomTextMsg
 
-방 안에서 텍스트 메시지 발송. 일반적으로 댓글 자막 채팅에 사용합니다.
+방 안에서 텍스트 메시지 발송, 일반적으로 댓글 자막 채팅에 사용
 
 ```java
 public abstract void sendRoomTextMsg(String message, TRTCChatSalonCallback.ActionCallback callback);
@@ -605,7 +603,7 @@ public abstract void sendRoomCustomMsg(String cmd, String message, TRTCChatSalon
 
 | 매개변수     | 유형           | 의미                                               |
 | -------- | -------------- | -------------------------------------------------- |
-| cmd      | String         | 명령어로, 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는 데 사용합니다. |
+| cmd      | String         | 명령어. 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는 데 사용합니다. |
 | message  | String         | 텍스트 메시지                                         |
 | callback | ActionCallback | 발송 결과 콜백                                     |
 
@@ -773,7 +771,7 @@ void onRoomInfoChange(TRTCChatSalonDef.RoomInfo roomInfo);
 
 ### onUserVolumeUpdate
 
-음량 크기 알림을 활성화하여 모든 참여자의 음량 크기를 통지합니다.
+음량 크기 알림을 활성화하여 모든 참여자의 음량 크기를 공지합니다.
 
 ```java
 void onUserVolumeUpdate(String userId, int volume);
@@ -789,20 +787,6 @@ void onUserVolumeUpdate(String userId, int volume);
 
 
 ## 마이크 위치 콜백
-
-### onEnterRoomSeatListNotify
-
-방 입장 후 현재 방의 호스트 정보를 콜백
-
-```java
-void onEnterRoomSeatListNotify(List<SeatInfo> seatInfoList);
-```
-
-매개변수는 다음과 같습니다.
-
-| 매개변수         | 유형                 | 의미                 |
-| ------------ | -------------------- | -------------------- |
-| seatInfoList | List&lt;SeatInfo&gt; | 모든 호스트의 마이크 위치 리스트 |
 
 ### onAnchorEnterSeat
 
@@ -913,7 +897,7 @@ void onRecvRoomCustomMsg(String cmd, String message, TRTCChatSalonDef.UserInfo u
 
 | 매개변수     | 유형     | 의미                                               |
 | -------- | -------- | -------------------------------------------------- |
-| command  | String   | 명령어로, 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는 데 사용합니다. |
+| command  | String   | 명령어. 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는 데 사용합니다. |
 | message  | String   | 텍스트 메시지                                         |
 | userInfo | UserInfo | 발신자 정보                                   |
 
@@ -933,7 +917,7 @@ void onReceiveNewInvitation(String id, String inviter, String cmd, String conten
 | ------- | -------- | ---------------------------------- |
 | id      | String   | 초대 ID                          |
 | inviter | String   | 초대한 사용자 ID                  |
-| cmd     | String   | 서비스에서 지정한 명령어. 개발자가 사용자 정의 |
+| cmd     | String   | 서비스에서 지정한 명령어. 개발자가 사용자 정의. |
 | content | UserInfo | 서비스에서 지정한 내용                   |
 
 ### onInviteeAccepted
@@ -980,3 +964,17 @@ void onInvitationCancelled(String id, String inviter);
 | ------- | ------ | ----------------- |
 | id      | String | 초대 ID         |
 | inviter | String | 초대한 사용자 ID |
+
+### onInvitationTimeout
+
+초대 시간 초과
+
+```java
+void onInvitationTimeout(String id);
+```
+
+매개변수는 다음과 같습니다.
+
+| 매개변수    | 유형   | 의미              |
+| ------- | ------ | ----------------- |
+| id      | String | 초대 ID         |

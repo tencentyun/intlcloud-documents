@@ -1,17 +1,17 @@
-TRTCChatSalon은 Tencent Cloud의 Real-Time Communication(TRTC)과 Instant Messaging(IM) 서비스를 기반으로 구성된 모듈이며, 다음 기능을 지원합니다.
+TRTCChatSalon은 Tencent Cloud의 TRTC와 IM 서비스를 기반으로 구성된 모듈이며, 다음 기능을 지원합니다.
 
 - 호스트가 신규 음성 살롱을 생성하면 시청자가 음성 살롱에 입장해 시청 및 인터랙션할 수 있습니다.
 - 호스트가 시청자에게 마이크 켜기를 요청하거나 마이크가 켜진 사용자의 마이크를 강제로 끌 수 있습니다.
 - 시청자가 마이크 켜기를 신청하여 마이크가 켜진 호스트가 될 수 있고, 다른 사람들과 음성으로 인터랙션할 수 있으며, 언제든지 마이크를 끄고 일반 시청자가 될 수 있습니다.
 - 다양한 텍스트 메시지 및 사용자 정의 메시지를 지원합니다. 사용자 정의 메시지를 이용해 댓글 자막, 좋아요, 선물 기능 등을 구현할 수 있습니다.
 
-TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소스 SDK에 종속됩니다. 자세한 구현 방법은 [음성 살롱(iOS)](https://intl.cloud.tencent.com/document/product/647/39803)을 참조하십시오.
+TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈드 소스 SDK에 종속됩니다. 자세한 구현 방법은 [음성 살롱(iOS)](https://intl.cloud.tencent.com/document/product/647/39804)을 참조하십시오.
 
 - TRTC SDK: [TRTC SDK](https://intl.cloud.tencent.com/document/product/647)를 저딜레이 음성 채팅 모듈로 사용합니다.
-- IM SDK: [IM SDK](https://intl.cloud.tencent.com/document/product/1047)의 AVChatroom을 이용해 채팅방 기능을 구현하며, IM 속성 인터페이스를 통해 마이크 위치 리스트 등 방 정보를 저장하고 초대 신호를 마이크 켜기/끄기 신청에 사용할 수 있습니다.
+- IM SDK: [IM SDK](https://intl.cloud.tencent.com/document/product/1047)의 AVChatroom을 사용해 채팅방 기능을 구현하며, IM 속성 인터페이스를 통해 마이크 위치 리스트 등 방 정보를 저장하고 초대 신호를 마이크 켜기/끄기 신청에 사용할 수 있습니다.
 
 
-<span id="TRTCChatSalon"></span>
+[](id:TRTCChatSalon)
 
 ## TRTCChatSalon API 개요
 
@@ -22,7 +22,7 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 | [sharedInstance](#sharedinstance)               | 단일 항목 객체 획득           |
 | [destroySharedInstance](#destroysharedinstance) | 단일 항목 객체 폐기           |
 | [setDelegate](#setdelegate)                     | 이벤트 콜백 설정           |
-| [setDelegateQueue](#setdelegatequeue)           | 이벤트 콜백이 존재하는 스레드 설정 |
+| [setDelegateQueue](#setdelegatequeue)           | 이벤트 콜백이 있는 스레드 설정 |
 | [login](#login)                                 | 로그인                   |
 | [logout](#logout)                               | 로그아웃                   |
 | [setSelfProfile](#setselfprofile)               | 개인 정보 수정           |
@@ -31,12 +31,12 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 | API                                 | 설명                                                         |
 | ----------------------------------- | ------------------------------------------------------------ |
-| [createRoom](#createroom)           | 방 생성(호스트 호출). 방이 존재하지 않는 경우 시스템에서 자동으로 새로운 방 생성 |
+| [createRoom](#createroom)           | 방 생성(호스트 호출). 방이 없는 경우 시스템에서 자동으로 새로운 방 생성 |
 | [destroyRoom](#destroyroom)         | 방 폐기(호스트 호출)                                       |
 | [enterRoom](#enterroom)             | 방 입장(시청자 호출)                                       |
 | [exitRoom](#exitroom)               | 방 퇴장(시청자 호출)                                       |
 | [getRoomInfoList](#getroominfolist) | 방 리스트의 세부 정보 획득                                     |
-| [getUserInfoList](#getuserinfolist) | 특정 userId의 사용자 정보 획득. nil인 경우 방 안에 있는 모든 사용자 정보 획득 |
+| [getUserInfoList](#getuserinfolist) | 지정 userId의 사용자 정보 획득. nil인 경우 방 안에 있는 모든 사용자 정보 획득 |
 
 ### 마이크 켜짐/꺼짐 인터페이스
 
@@ -52,7 +52,7 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 | API                                             | 설명                 |
 | ----------------------------------------------- | -------------------- |
 | [startMicrophone](#startmicrophone)             | 마이크 수집 시작     |
-| [stopMicrophone](#stopmicrophone)               | 마이크 수집 종료     |
+| [stopMicrophone](#stopmicrophone)               | 마이크 수집 중지     |
 | [setAudioQuality](#setaudioquality)             | 오디오 품질 설정           |
 | [muteLocalAudio](#mutelocalaudio)               | 로컬 음소거 활성화/비활성화  |
 | [setSpeaker](#setspeaker)                       | 스피커 활성화 설정     |
@@ -71,7 +71,7 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 | API                                             | 설명                                                         |
 | ----------------------------------------------- | ------------------------------------------------------------ |
-| [getAudioEffectManager](#getaudioeffectmanager) | 배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) 획득 |
+| [getAudioEffectManager](#getaudioeffectmanager) | 배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) 획득 |
 
 ### 메시지 발송 관련 인터페이스
 
@@ -89,7 +89,8 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 | [rejectInvitation](#rejectinvitation) | 초대 거부       |
 | [cancelInvitation](#cancelinvitation) | 초대 취소       |
 
-<span id="TRTCChatSalonDelegate"></span>
+[](id:TRTCChatSalonDelegate)
+
 ## TRTCChatSalonDelegate API 개요
 
 ### 일반적인 이벤트 콜백
@@ -110,12 +111,11 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 ### 마이크 위치 변경 콜백
 
-| API                                            | 설명                                   |
-| ---------------------------------------------- | -------------------------------------- |
-| [onEnterRoomSeatListNotify](#onenterroomseatlistnotify) | 시청자 방 입장 후, 해당 방 호스트 정보 콜백 |
-| [onAnchorEnterSeat](#onanchorenterseat)        | 사용자 마이크 켜짐(직접 마이크 켬/호스트가 특정 사용자 마이크 켬)  |
-| [onAnchorLeaveSeat](#onanchorleaveseat)        | 사용자 마이크 꺼짐(직접 마이크 끔/호스트가 특정 사용자 마이크 끔)  |
-| [onSeatMute](#onseatmute)                      | 호스트 마이크 음소거                             |
+| API                                     | 설명                                  |
+| --------------------------------------- | ------------------------------------- |
+| [onAnchorEnterSeat](#onanchorenterseat) | 사용자 마이크 켜짐(직접 마이크 켬/호스트가 특정 사용자 마이크 켬) |
+| [onAnchorLeaveSeat](#onanchorleaveseat) | 사용자 마이크 꺼짐(직접 마이크 끔/호스트가 특정 사용자 마이크 끔) |
+| [onSeatMute](#onseatmute)               | 호스트 마이크 음소거                            |
 
 ### 시청자 입장/퇴장 이벤트 콜백
 
@@ -142,11 +142,11 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 ## SDK 기본 함수
 
-<span id="sharedInstance"></span>
+[](id:sharedInstance)
 
 ### sharedInstance
 
-[TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39803) 단일 항목 객체 획득
+[TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39804) 단일 항목 객체 획득
 
 ```Objective-C
 /**
@@ -161,22 +161,22 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 ### destroySharedInstance
 
-[TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39803) 단일 항목 객체 폐기
+[TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39804) 단일 항목 객체 폐기
 
->?인스턴스 폐기 후에는 외부에 캐시된 TRTCChatSalon 인스턴스를 다시 사용할 수 없으며, 다시 [sharedInstance](#sharedinstance)를 호출해 새로운 인스턴스를 획득해야 합니다.
+>?인스턴스 폐기 후에는 외부에 캐시된 TRTCChatSalon 인스턴스를 더 이상 사용할 수 없으며, 다시 [sharedInstance](#sharedinstance)를 호출해 새로운 인스턴스를 획득해야 합니다.
 
 ```Objective-C
 /**
 * TRTCChatSalon 단일 항목 객체 폐기
 *
-* - note: 인스턴스 폐기 후에는 외부에 캐시된 TRTCChatSalon 인스턴스를 다시 사용할 수 없으며, 다시 {@link TRTCChatSalon#sharedInstance()}를 호출해 새로운 인스턴스를 획득해야 합니다.
+* - note: 인스턴스 폐기 후에는 외부에 캐시된 TRTCChatSalon 인스턴스를 더 이상 사용할 수 없으며, 다시 {@link TRTCChatSalon#sharedInstance()}를 호출해 새로운 인스턴스를 획득해야 합니다.
 */
 + (void)destroySharedInstance NS_SWIFT_NAME(destroyShared());
 ```
 
 ### setDelegate
 
-[TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39803) 이벤트 콜백은 TRTCChatSalonDelegate를 통해 [TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39803)의 다양한 상태 공지를 받아볼 수 있습니다.
+[TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39804) 이벤트 콜백입니다. TRTCChatSalonDelegate를 통해 [TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/39804)의 다양한 상태 공지를 받아볼 수 있습니다.
 
 ```Objective-C
 /**
@@ -185,7 +185,7 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 * TRTCChatSalonDelegate를 통해 TRTCChatSalon의 다양한 상태 공지를 받아볼 수 있습니다.
 *
 * - parameter delegate 콜백 인터페이스
-* - note: TRTCChatSalon의 이벤트 콜백은 기본적으로 Main Queue에서 귀하에게 콜백합니다. 이벤트 콜백이 존재하는 큐를 지정할 경우 {@link TRTCChatSalon#setDelegateQueue(queue)}를 이용할 수 있습니다.
+* - note: TRTCChatSalon의 이벤트 콜백은 기본적으로 Main Queue에서 사용자에게 콜백합니다. 이벤트 콜백이 있는 큐를 지정해야 할 경우 {@link TRTCChatSalon#setDelegateQueue(queue)}를 이용할 수 있습니다.
 */
 - (void)setDelegate:(id<TRTCChatSalonDelegate>)delegate NS_SWIFT_NAME(setDelegate(delegate:));
 ```
@@ -194,13 +194,13 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 ### setDelegateQueue
 
-이벤트 콜백이 존재하는 스레드 큐를 설정합니다. 기본적으로 메인 스레드 MainQueue로 발송합니다.
+이벤트 콜백이 있는 스레드 큐를 설정합니다. 기본적으로 메인 스레드 MainQueue로 발송합니다.
 
 ```Objective-C
 /**
-* 이벤트 콜백이 존재하는 큐 설정
+* 이벤트 콜백이 있는 큐 설정
 *
-* - parameter queue입니다. TRTCChatSalon의 다양한 상태 공지를 콜백하며 지정한 queue로 배포합니다.
+* - parameter queue 큐입니다. 사용자가 지정한 queue에 TRTCChatSalon의 다양한 상태 공지 콜백을 배포합니다.
 */
 - (void)setDelegateQueue:(dispatch_queue_t)queue NS_SWIFT_NAME(setDelegateQueue(queue:));
 ```
@@ -209,7 +209,7 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 | 매개변수  | 유형             | 의미                                                         |
 | ----- | ---------------- | ------------------------------------------------------------ |
-| queue | dispatch_queue_t | TRTCChatSalon의 다양한 상태를 통지하며, 지정한 스레드 큐로 배포합니다. |
+| queue | dispatch_queue_t | 사용자가 지정한 스레드 큐에 TRTCChatSalon의 다양한 상태 공지를 배포합니다. |
 
    
 
@@ -285,12 +285,11 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 | 매개변수      | 유형           | 의미                                                         |
 | --------- | -------------- | ------------------------------------------------------------ |
-| roomId    | int            | 방 식별 번호이며, 귀하가 할당하고 통합 관리합니다. 여러 개의 roomID를 1개의 음성 채팅방 리스트로 통합할 수 있으며, Tencent Cloud는 현재 음성 채팅방 리스트 관리 서비스를 제공하지 않으므로 직접 관리하시기 바랍니다. |
-| roomParam | ChatSalonParam | 방 정보입니다. 방 이름, 마이크 위치 정보, 썸네일 정보 등과 같이 방을 설명하는 데 사용됩니다. |
+| roomId    | int            | 방 식별 번호이며, 사용자가 할당하고 통합 관리합니다. 여러 개의 roomID를 1개의 음성 채팅방 리스트로 통합할 수 있습니다. Tencent Cloud는 현재 음성 채팅방 리스트 관리 서비스를 제공하지 않으므로 직접 관리하시기 바랍니다. |
+| roomParam | ChatSalonParam | 방 정보입니다. 방 이름, 마이크 위치 정보, 썸네일 정보와 같이 방을 설명하는 데 사용됩니다. |
 | callback  | ActionCallback | 방 생성 결과 콜백이며, 성공 시 code는 0입니다.                        |
 
 호스트의 정상적인 방송 시작 호출 프로세스는 다음과 같습니다. 
-
 1. 호스트가 `createRoom`을 호출하여 새로운 음성 채팅방을 생성합니다. 이때 방 ID, 마이크를 켤 때 방장 확인 필요 여부 등 방 속성 정보를 전송합니다.
 2. 호스트가 방 생성 후 `enterSeat`을 호출하여 자리에 입장합니다.
 3. 호스트는 마이크 위치 리스트에 사용자가 입장할 때 `onAnchorEnterSeat` 이벤트 공지도 수신하며, 이때 자동으로 마이크 수집이 활성화됩니다.
@@ -332,9 +331,8 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 1. 시청자는 서버에서 최신 음성 살롱 리스트를 획득하며, 여기에는 여러 음성 살롱의 roomId 및 방 정보가 포함될 수 있습니다.
 2. 시청자가 음성 채팅방 1개를 선택하고 `enterRoom`을 호출하여 해당 방으로 입장합니다.
-3. 방 입장 후 모듈의 `onRoomInfoChange` 방 속성 변경 이벤트 공지를 수신합니다. 이때 UI에 방 이름 표시, 마이크를 켤 때 호스트에게 동의 요청 필요 여부 등 방의 속성을 기록할 수 있으며 그에 해당하는 변경이 가능합니다.
-4. 방 입장 후, 모듈의 `onEnterRoomSeatListNotify` 현재 방 호스트 정보 콜백을 수신합니다. 이때 마이크 위치 리스트의 정보에 따라 현재 방 호스트의 사용자 정보를 조회하여 UI 인터페이스에 새로 고침합니다.
-5. 방 입장 후 마이크 위치 리스트에 호스트 입장 `onAnchorEnterSeat` 이벤트 공지도 수신합니다.
+3. 방 입장 후 모듈의 `onRoomInfoChange` 방 속성 변경 이벤트 공지를 수신합니다. 이때 UI에 방 이름 표시, 마이크를 켤 때 호스트에게 동의 요청 필요 여부 기록 등 방의 속성을 기록할 수 있으며 그에 해당하는 변경이 가능합니다.
+4. 방 입장 후 마이크 위치 리스트에 호스트 입장 `onAnchorEnterSeat` 이벤트 공지도 수신합니다.
 
 ### exitRoom
 
@@ -354,7 +352,7 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 ### getRoomInfoList
 
-방 리스트의 세부 정보를 획득. 방 이름, 방 썸네일은 호스트가 `createRoom()` 시 roomInfo를 통해 설정할 수 있습니다.
+방 리스트의 세부 정보를 획득합니다. 방 이름, 방 썸네일은 호스트가 `createRoom()` 생성 시 roomInfo를 통해 설정할 수 있습니다.
 
 >?방 리스트 및 방 정보를 모두 직접 관리하는 경우 해당 함수는 생략할 수 있습니다.
 
@@ -373,7 +371,7 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 ### getUserInfoList
 
-특정 userId의 사용자 정보 획득
+지정 userId의 사용자 정보 획득
 
 ```Objective-C
 - (void)getUserInfoList:(NSArray<NSString *> * _Nullable)userIDList callback:(ChatSalonUserListCallback _Nullable)callback NS_SWIFT_NAME(getUserInfoList(userIDList:callback:));
@@ -383,7 +381,7 @@ TRTCChatSalon은 오픈 소스 Class로, Tencent Cloud의 두 가지 클로즈�
 
 | 매개변수             | 유형                      | 의미                                                         |
 | ---------------- | ------------------------- | ------------------------------------------------------------ |
-| userIdList       | List&lt;String&gt;        | 특정 사용자 ID 리스트를 획득합니다. null인 경우 방 안에 있는 모든 사용자 정보를 획득합니다. |
+| userIdList       | List&lt;String&gt;        | 획득해야 할 사용자 ID 리스트입니다. null인 경우 방 안에 있는 모든 사용자 정보를 획득합니다. |
 | userlistcallback | ChatSalonUserListCallback | 사용자 세부 정보 콜백                                           |
 
 
@@ -475,7 +473,7 @@ NS_SWIFT_NAME(enterSeat(callback:));
 
 ### stopMicrophone
 
-마이크 수집 종료
+마이크 수집 중지
 
 ```Objective-C
 - (void)stopMicrophone;
@@ -493,7 +491,7 @@ NS_SWIFT_NAME(enterSeat(callback:));
 
 | 매개변수    | 유형 | 의미                                                         |
 | ------- | ---- | ------------------------------------------------------------ |
-| quality | int  | 오디오의 품질로, 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)를 참조하십시오. |
+| quality | int  | 오디오의 품질입니다. 자세한 내용은 [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)를 참조하십시오. |
 
 
 ### muteLocalAudio
@@ -508,7 +506,7 @@ NS_SWIFT_NAME(enterSeat(callback:));
 
 | 매개변수 | 유형    | 의미                                                         |
 | ---- | ------- | ------------------------------------------------------------ |
-| mute | boolean | 오디오를 음소거/음소거 취소합니다. 자세한 내용은 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86)를 참조하십시오. |
+| mute | boolean | 오디오를 음소거/음소거 취소합니다. 자세한 내용은 [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86)를 참조하십시오. |
 
 
 
@@ -559,7 +557,7 @@ NS_SWIFT_NAME(enterSeat(callback:));
 
 ### muteRemoteAudio
 
-특정 사용자 음소거/음소거 해제
+지정 사용자 음소거/음소거 해제
 
 ```Objective-C
 - (void)muteRemoteAudio:(NSString *)userID mute:(BOOL)mute NS_SWIFT_NAME(muteRemoteAudio(userId:mute:));
@@ -592,7 +590,7 @@ NS_SWIFT_NAME(enterSeat(callback:));
 
 ### getAudioEffectManager
 
-배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) 획득
+배경 음악 음향 효과 관리 객체 [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) 획득
 
 ```Objective-C
 - (TXAudioEffectManager * _Nullable)getAudioEffectManager;
@@ -603,7 +601,7 @@ NS_SWIFT_NAME(enterSeat(callback:));
 
 ### sendRoomTextMsg
 
-방 안에서 텍스트 메시지 발송. 일반적으로 댓글 자막 채팅에 사용합니다.
+방 안에서 텍스트 메시지 발송, 일반적으로 댓글 자막 채팅에 사용
 
 ```Objective-C
 - (void)sendRoomTextMsg:(NSString *)message callback:(ActionCallback _Nullable)callback NS_SWIFT_NAME(sendRoomTextMsg(message:callback:));
@@ -630,7 +628,7 @@ NS_SWIFT_NAME(enterSeat(callback:));
 
 | 매개변수     | 유형           | 의미                                               |
 | -------- | -------------- | -------------------------------------------------- |
-| cmd      | String         | 명령어로, 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는 데 사용합니다. |
+| cmd      | String         | 명령어. 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는 데 사용합니다. |
 | message  | String         | 텍스트 메시지                                         |
 | callback | ActionCallback | 발송 결과 콜백                                     |
 
@@ -808,7 +806,7 @@ NS_SWIFT_NAME(onRoomInfoChange(roomInfo:));
 
 ### onUserVolumeUpdate
 
-음량 크기 알림을 활성화하여 모든 참여자의 음량 크기를 통지합니다.
+음량 크기 알림을 활성화하여 모든 참여자의 음량 크기를 공지합니다.
 
 ```Objective-C
 - (void)onUserVolumeUpdate:(NSArray<TRTCVolumeInfo *> *)userVolumes totalVolume:(NSInteger)totalVolume
@@ -817,28 +815,13 @@ NS_SWIFT_NAME(onUserVolumeUpdate(userVolumes:totalVolume:));
 
 매개변수는 다음과 같습니다.
 
-| 매개변수        | 유형                      | 의미               |
-| ----------- | ------------------------- | ------------------ |
+| 매개변수        | 유형                            | 의미               |
+| ----------- | ------------------------------- | ------------------ |
 | userVolumes | NSArray&lt;TRTCVolumeInfo *&gt; | 각 사용자별 음량 정보 |
-| totalVolume | int                       | 전체 음량 정보     |
+| totalVolume | int                             | 전체 음량 정보     |
 
 
 ## 마이크 위치 콜백
-
-### onEnterRoomSeatListNotify
-
-방 입장 후 현재 방의 호스트 정보를 콜백
-
-```Objective-C
-- (void)onEnterRoomSeatListNotify:(NSArray<ChatSalonSeatInfo *> *)seatInfoList
-NS_SWIFT_NAME(onEnterRoomSeatListNotify(seatInfoList:));
-```
-
-매개변수는 다음과 같습니다.
-
-| 매개변수         | 유형                          | 의미                 |
-| ------------ | ----------------------------- | -------------------- |
-| seatInfoList | List&lt;ChatSalonSeatInfo&gt; | 모든 호스트의 마이크 위치 리스트 |
 
 ### onAnchorEnterSeat
 
@@ -957,7 +940,7 @@ NS_SWIFT_NAME(onRecvRoomCustomMsg(cmd:message:userInfo:));
 
 | 매개변수     | 유형              | 의미                                               |
 | -------- | ----------------- | -------------------------------------------------- |
-| command  | String            | 명령어로, 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는 데 사용합니다. |
+| command  | String            | 명령어. 개발자가 사용자 정의할 수 있으며 주로 서로 다른 메시지 유형을 구분하는 데 사용합니다. |
 | message  | String            | 텍스트 메시지                                         |
 | userInfo | ChatSalonUserInfo | 발신자 정보                                   |
 
@@ -981,7 +964,7 @@ NS_SWIFT_NAME(onReceiveNewInvitation(identifier:inviter:cmd:content:));
 | ---------- | ------ | ---------------------------------- |
 | identifier | String | 초대 ID                          |
 | inviter    | String | 초대한 사용자 ID                  |
-| cmd        | String | 서비스에서 지정한 명령어. 개발자가 사용자 정의 |
+| cmd        | String | 서비스에서 지정한 명령어. 개발자가 사용자 정의. |
 | content    | String | 서비스에서 지정한 내용                   |
 
 ### onInviteeAccepted
@@ -1033,3 +1016,17 @@ NS_SWIFT_NAME(onInviteeRejected(identifier:invitee:));
 | ---------- | ------ | ----------------- |
 | identifier | String | 초대 ID         |
 | inviter    | String | 초대한 사용자 ID |
+
+### onInvitationTimeout
+
+초대 시간 초과
+
+```Objective-C
+- (void)onInvitationTimeout:(NSString *)identifier;
+```
+
+매개변수는 다음과 같습니다.
+
+| 매개변수       | 유형   | 의미      |
+| ---------- | ------ | --------- |
+| identifier | String | 초대 ID |
