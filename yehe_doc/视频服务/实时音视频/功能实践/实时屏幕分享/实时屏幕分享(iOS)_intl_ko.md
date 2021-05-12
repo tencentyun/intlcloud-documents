@@ -49,7 +49,7 @@ iOS 화면 공유 시 다음과 같은 인코딩 매개변수를 권장합니다
 |  |  ├─ TRTCBroadcastExtensionLauncher.swift  // 시스템 녹화 알람에 사용하는 보조 코드
 ```
 
-[README](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCSimpleDemo/README.md)의 가이드를 참조해 해당 예시 Demo를 제작할 수 있습니다.
+[README]의 가이드를 참조해 해당 예시 Demo를 제작할 수 있습니다.
 
 
 ### 연결 절차
@@ -196,7 +196,7 @@ iOS 시스템에서 애플리케이션 간 화면 공유의 경우, 메인 App �
 #### 4단계: 화면 공유 트리거 버튼 추가(옵션)
 [3단계](#receive)까지는 화면 공유 시 사용자가 제어 센터에서 녹화 버튼을 길게 눌러야만 수동으로 실행되는 방법입니다. 이제 VooV Meeting과 유사하게 버튼 클릭으로 트리거할 수 있는 방법을 소개하겠습니다.
 
-1. [Demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/Screen)에서 `TRTCBroadcastExtensionLauncher` 클래스를 찾아 프로그램에 추가합니다.
+1. [Demo]에서 `TRTCBroadcastExtensionLauncher` 클래스를 찾아 프로그램에 추가합니다.
 2. 프로그램 인터페이스에 버튼을 만들고, 해당 버튼의 상응하는 함수에 `TRTCBroadcastExtensionLauncher`의 `launch` 함수를 호출하면 화면 공유 기능이 요청됩니다.
 
 ```
