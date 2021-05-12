@@ -14,7 +14,7 @@ TRTC 클라우드 서비스는 '인터페이스'와 '프록시' 라는 상이한
 
 
 ## 예시 코드
-[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo)에 로그인하면 본 문서와 관련된 예시 코드를 받을 수 있습니다.
+[Github]에 로그인하면 본 문서와 관련된 예시 코드를 받을 수 있습니다.
 ![](https://main.qcloudimg.com/raw/9cc33faf91173116e2d259f6b8b97d55.png)
 
 >?Github 액세스가 느리다면 [TXLiteAVSDK_TRTC_iOS_latest.zip](http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip)을 직접 다운로드하십시오.
@@ -74,7 +74,7 @@ func onError(_ errCode: TXLiteAVError, errMsg: String?, extInfo: [AnyHashable : 
 
 <span id="step4"> </span>
 ### 4단계: 방 입장 매개변수 TRTCParams 어셈블리
-[enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) 인터페이스 호출 시 핵심 매개변수[TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCParams) 하나를 입력해야 합니다. 다음 필드는 매개변수 필수 작성 사항입니다.
+[enterRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) 인터페이스 호출 시 핵심 매개변수[TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCParams) 하나를 입력해야 합니다. 다음 필드는 매개변수 필수 작성 사항입니다.
 
 | 매개변수 이름 | 필드 유형 | 보충 설명 | 작성 예시 |
 |---------|---------|---------|---------|
@@ -87,7 +87,7 @@ func onError(_ errCode: TXLiteAVError, errMsg: String?, extInfo: [AnyHashable : 
 
 <span id="step5"> </span>
 ### 5단계: 방 생성 및 입장
-1. [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d)을 호출하여 TRTCParams 매개변수 'roomId'가 지정한 멀티미디어 방에 들어갈 수 있습니다. 해당 방이 존재하지 않는 경우 SDK는 필드 'roomId'를 방 번호로 하는 신규 방을 자동 생성합니다.
+1. [enterRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d)을 호출하여 TRTCParams 매개변수 'roomId'가 지정한 멀티미디어 방에 들어갈 수 있습니다. 해당 방이 존재하지 않는 경우 SDK는 필드 'roomId'를 방 번호로 하는 신규 방을 자동 생성합니다.
 2. 응용 시나리오에 따라 적합한 **'appScene'** 매개변수를 설정하십시오. 잘못된 매개변수를 사용하는 경우 랙이 발생하거나 화면 해상도가 떨어질 수 있습니다.
  - 영상 통화는 'TRTCAppScene.videoCall'로 설정하십시오.
  - 음성 통화는 'TRTCAppScene.audioCall'로 설정하십시오.
@@ -122,13 +122,13 @@ SDK는 자동 구독 및 수동 구독 기능을 지원합니다.
 
 #### 자동 구독 모드(기본값)
 자동 구독 모드에서 특정 방에 입장하면 SDK가 방에 입장한 다른 사용자의 오디오 스트림을 자동 수신하여 '바로 재생' 수준으로 재생합니다.
-1. 같은 방에 입장한 사용자가 오디오 데이터를 업스트림하면 [onUserAudioAvailable()](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a8c885eeb269fc3d2e085a5711d4431d5) 이벤트가 공지되고, SDK는 원격 사용자의 음성을 자동 재생합니다.
-2. [muteRemoteAudio(userId, mute: true)](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#afede3cc79a8d68994857b410fb5572d2)를 이용하여 특정 userId의 오디오 데이터를 차단할 수 있으며, [muteAllRemoteAudio(true)](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a75148bf8a322c852965fe774cbc7dd14)를 통해 모든 원격 사용자의 오디오 데이터를 차단할 수 있습니다. 차단이 완료되면 SDK는 차단 대상 사용자의 오디오 데이터를 불러오지 않습니다.
-3. 같은 방에 입장한 사용자가 비디오 데이터를 업스트림하면 [onUserVideoAvailable()](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) 이벤트가 공지됩니다. 단, 이때 SDK는 비디오 데이터 명령어 처리법을 수신받지 못해 비디오 데이터를 자동 처리하지 않습니다. [startRemoteView(userId, view: view)](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49)를 호출하여 원격 사용자의 비디오 데이터와 표시 'view'를 연결하십시오.
-4. [setRemoteViewFillMode()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#afda6658d1bf7dc9bc1445838b95d21ff)를 통해 비디오 화면의 표시 모드를 지정하십시오.
+1. 같은 방에 입장한 사용자가 오디오 데이터를 업스트림하면 [onUserAudioAvailable()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a8c885eeb269fc3d2e085a5711d4431d5) 이벤트가 공지되고, SDK는 원격 사용자의 음성을 자동 재생합니다.
+2. [muteRemoteAudio(userId, mute: true)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afede3cc79a8d68994857b410fb5572d2)를 이용하여 특정 userId의 오디오 데이터를 차단할 수 있으며, [muteAllRemoteAudio(true)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a75148bf8a322c852965fe774cbc7dd14)를 통해 모든 원격 사용자의 오디오 데이터를 차단할 수 있습니다. 차단이 완료되면 SDK는 차단 대상 사용자의 오디오 데이터를 불러오지 않습니다.
+3. 같은 방에 입장한 사용자가 비디오 데이터를 업스트림하면 [onUserVideoAvailable()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) 이벤트가 공지됩니다. 단, 이때 SDK는 비디오 데이터 명령어 처리법을 수신받지 못해 비디오 데이터를 자동 처리하지 않습니다. [startRemoteView(userId, view: view)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49)를 호출하여 원격 사용자의 비디오 데이터와 표시 'view'를 연결하십시오.
+4. [setRemoteViewFillMode()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afda6658d1bf7dc9bc1445838b95d21ff)를 통해 비디오 화면의 표시 모드를 지정하십시오.
  - Fill 모드: 확대 화면을 뜻하며, 검은 여백 없이 화면을 일정 비율로 확대 및 편집할 수 있습니다.
  - Fit 모드: 축소 화면을 뜻하며, 일정 비율로 화면을 축소할 수 있습니다. 콘텐츠가 전부 표시되지만 검은 여백도 발생합니다.
-5. [stopRemoteView(userId)](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a2b7e96e4b527798507ff743c61a6a066)를 이용하여 특정 userId의 비디오 데이터를 차단할 수 있으며, [stopAllRemoteView()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aaa75cd1b98c226bb7b8a19412b204d2b)를 통해 모든 원격 사용자의 비디오 데이터를 차단할 수 있습니다. 차단이 완료되면 SDK는 차단 대상 원격 사용자의 비디오 데이터를 불러오지 않습니다.
+5. [stopRemoteView(userId)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2b7e96e4b527798507ff743c61a6a066)를 이용하여 특정 userId의 비디오 데이터를 차단할 수 있으며, [stopAllRemoteView()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aaa75cd1b98c226bb7b8a19412b204d2b)를 통해 모든 원격 사용자의 비디오 데이터를 차단할 수 있습니다. 차단이 완료되면 SDK는 차단 대상 원격 사용자의 비디오 데이터를 불러오지 않습니다.
 
 ```swift
 // 인스턴스 코드: 구독 통지(또는 구독 취소)한 원격 사용자의 비디오 화면
@@ -146,20 +146,20 @@ func onUserVideoAvailable(_ userId: String, available: Bool) {
 >? 'onUserVideoAvailable()' 이벤트 콜백이 발생한 뒤 즉시 'startRemoteView()'를 호출하여 비디오 스트림을 구독하지 않으면 SDK는 5초 이내에 원격 비디오 데이터의 수신을 중지합니다.
 
 #### 수동 구독 모드
-[setDefaultStreamRecvMode()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ada2e2155e0e7c3001c6bb6dca1d93048) 인터페이스를 이용해 SDK를 수동 구독 모드로 설정할 수 있습니다. 수동 구독 모드에서 SDK는 같은 방에 입장한 사용자의 멀티미디어 데이터를 자동 수신하지 않습니다. API 함수를 이용해 직접 트리거해야 합니다.
+[setDefaultStreamRecvMode()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ada2e2155e0e7c3001c6bb6dca1d93048) 인터페이스를 이용해 SDK를 수동 구독 모드로 설정할 수 있습니다. 수동 구독 모드에서 SDK는 같은 방에 입장한 사용자의 멀티미디어 데이터를 자동 수신하지 않습니다. API 함수를 이용해 직접 트리거해야 합니다.
 
-1. **방 입장 이전** [setDefaultStreamRecvMode(false, video: false)](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ada2e2155e0e7c3001c6bb6dca1d93048) 인터페이스를 호출하면 SDK가 수동 구독 모드로 설정됩니다.
-2. 같은 방에 입장한 사용자가 오디오 데이터를 업스트림하면 [onUserAudioAvailable()](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a8c885eeb269fc3d2e085a5711d4431d5) 이벤트가 공지됩니다. 이때 [muteRemoteAudio(userId, mute: false)](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#afede3cc79a8d68994857b410fb5572d2)를 호출하여 해당 사용자의 오디오 데이터를 수동 구독해야 SDK가 해당 사용자의 오디오 데이터를 수신한 뒤 디코딩하여 재생합니다.
-3. 같은 방에 입장한 사용자가 비디오 데이터를 업스트림하면 [onUserVideoAvailable()](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) 이벤트가 공지됩니다. 이때 [startRemoteView(userId, view: view)](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49)를 호출하여 해당 사용자의 비디오 데이터를 수동 구독해야 SDK가 해당 사용자의 비디오 데이터를 수신한 뒤 디코딩하여 재생합니다.
+1. **방 입장 이전** [setDefaultStreamRecvMode(false, video: false)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ada2e2155e0e7c3001c6bb6dca1d93048) 인터페이스를 호출하면 SDK가 수동 구독 모드로 설정됩니다.
+2. 같은 방에 입장한 사용자가 오디오 데이터를 업스트림하면 [onUserAudioAvailable()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a8c885eeb269fc3d2e085a5711d4431d5) 이벤트가 공지됩니다. 이때 [muteRemoteAudio(userId, mute: false)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#afede3cc79a8d68994857b410fb5572d2)를 호출하여 해당 사용자의 오디오 데이터를 수동 구독해야 SDK가 해당 사용자의 오디오 데이터를 수신한 뒤 디코딩하여 재생합니다.
+3. 같은 방에 입장한 사용자가 비디오 데이터를 업스트림하면 [onUserVideoAvailable()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) 이벤트가 공지됩니다. 이때 [startRemoteView(userId, view: view)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49)를 호출하여 해당 사용자의 비디오 데이터를 수동 구독해야 SDK가 해당 사용자의 비디오 데이터를 수신한 뒤 디코딩하여 재생합니다.
 
 <span id="step7"> </span>
 ### 7단계: 로컬의 멀티미디어 스트림 배포
-1. [startLocalAudio()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3177329bc84e94727a1be97563800beb)를 호출하면 로컬 마이크 수집 기능이 실행되고, 수집한 음성을 인코딩한 뒤 송신할 수 있습니다.
-2. [startLocalPreview()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3fc1ae11b21944b2f354db258438100e)를 호출하면 로컬 카메라가 실행되고, 수집한 화면을 인코딩한 뒤 송신할 수 있습니다.
-3. [setLocalViewFillMode()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a961596f832657bfca81fd675878a2d15)를 호출하면 로컬 비디오 화면의 표시 모드를 설정할 수 있습니다.
+1. [startLocalAudio()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a3177329bc84e94727a1be97563800beb)를 호출하면 로컬 마이크 수집 기능이 실행되고, 수집한 음성을 인코딩한 뒤 송신할 수 있습니다.
+2. [startLocalPreview()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a3fc1ae11b21944b2f354db258438100e)를 호출하면 로컬 카메라가 실행되고, 수집한 화면을 인코딩한 뒤 송신할 수 있습니다.
+3. [setLocalViewFillMode()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a961596f832657bfca81fd675878a2d15)를 호출하면 로컬 비디오 화면의 표시 모드를 설정할 수 있습니다.
  - Fill 모드는 확대 화면을 뜻하며, 검은 여백 없이 화면을 일정 비율로 확대 및 편집할 수 있습니다.
  - Fit 모드는 축소 화면을 뜻하며, 일정 비율로 화면을 축소할 수 있습니다. 콘텐츠가 전부 표시되지만 검은 여백도 발생합니다.
-4. [setVideoEncoderParam()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e) 인터페이스를 호출하면 로컬 비디오의 코드 매개변수를 설정할 수 있습니다. 해당 매개변수는 같은 방 사용자가 시청하는 화면의 [화면 질](https://intl.cloud.tencent.com/document/product/647/35153)을 결정합니다.
+4. [setVideoEncoderParam()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e) 인터페이스를 호출하면 로컬 비디오의 코드 매개변수를 설정할 수 있습니다. 해당 매개변수는 같은 방 사용자가 시청하는 화면의 [화면 질](https://intl.cloud.tencent.com/document/product/647/35153)을 결정합니다.
 
 ```swift
 //예시 코드: 로컬의 멀티미디어 스트림 배포
@@ -168,12 +168,12 @@ trtcCloud.startLocalPreview(frontCamera, view: localView)
 trtcCloud.startLocalAudio()
 ```
 
->! Mac 버전의 SDK는 카메라와 마이크의 기본값이 설정돼 있습니다. [setCurrentCameraDevice()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aae9955bb39985586f7faba841d2692fc)와 [setCurrentMicDevice()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a5141fec83e7f071e913bfc539c193ac6)를 통해 카메라와 마이크 설정을 변경할 수 있습니다.
+>! Mac 버전의 SDK는 카메라와 마이크의 기본값이 설정돼 있습니다. [setCurrentCameraDevice()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aae9955bb39985586f7faba841d2692fc)와 [setCurrentMicDevice()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a5141fec83e7f071e913bfc539c193ac6)를 통해 카메라와 마이크 설정을 변경할 수 있습니다.
 
 <span id="step8"> </span>
 ### 8단계: 현재 방에서 퇴장하기
 
-[exitRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a715f5b669ad1d7587ae19733d66954f3)을 호출하여 방에서 퇴장합니다. 이때 SDK가 카메라와 마이크 등 기기를 차단 및 릴리스하기 때문에 [onExitRoom()](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a6a98fcaac43fa754cf9dd80454897bea) 콜백을 수신한 뒤에야 퇴장 처리됩니다.
+[exitRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a715f5b669ad1d7587ae19733d66954f3)을 호출하여 방에서 퇴장합니다. 이때 SDK가 카메라와 마이크 등 기기를 차단 및 릴리스하기 때문에 [onExitRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a6a98fcaac43fa754cf9dd80454897bea) 콜백을 수신한 뒤에야 퇴장 처리됩니다.
 
 ```swift
 // 퇴장 호출 뒤 onExitRoom 이벤트 콜백 대기
