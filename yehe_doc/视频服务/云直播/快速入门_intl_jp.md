@@ -3,7 +3,8 @@
 <span id="step0"></span>
 ## 準備
 
-1. [Tencent Cloudアカウント](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fproduct%2Flvb)を登録して、 [実名認証](https://intl.cloud.tencent.com/document/product/378/3629)を完了します。
+1.[Tencent Cloudアカウント](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fproduct%2Flvb) を登録して、 実名認証を完了する必要があります。実名認証を行っていないユーザーは、中国本土のCSSインスタンスを購入できません。								
+
 2. [CSS service activation page](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)に入って、『Tencent Cloud Service Agreement』にチェックを入れて、【Apply for Activation】をクリックして、CSSサービスをアクティブにすることができます。
 
 <span id="step1"></span>
