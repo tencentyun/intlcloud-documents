@@ -4,7 +4,7 @@ Tencent Cloud CDN が生成した請求書および明細書を表示したい�
 
 ## 請求書の照会
 1. 左側のメニューバーで【請求書】＞【請求書明細】をクリックし、「請求書明細」ページに移動します。
-2. リソースID請求書ページでフィルタリングを行い、「全製品」から【Enterprise Content Delivery Network CDN】を選択すると、【中国国内CDN】請求書または【中国国外CDN】請求書を表示できます。
+2. リソースID請求書ページでフィルタリングを行い、「すべての製品」から【 Content Delivery Network 】を選択すると、【中国本土CDN】請求書または【中国本土以外CDN】請求書を表示できます。
 	
 ![](https://main.qcloudimg.com/raw/1ec635a98593544b9d027cf704f91a6d.png)
 
