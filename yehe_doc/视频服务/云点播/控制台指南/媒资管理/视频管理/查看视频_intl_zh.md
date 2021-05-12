@@ -6,8 +6,7 @@
 	- 该窗口中展示了视频的 ID、名称、分类、标签、大小、时长、过期时间、文件描述（部分属性可进行编辑）。
 	- 可以复制该视频的 URL 地址，用于视频处理和视频播放等。
 
-![](https://main.qcloudimg.com/raw/92ef3b25be1bbff64c8f2e6936666386.png)
-
+![](https://main.qcloudimg.com/raw/987ecd49bf7e7add5d0538fcb12bbc53.png)
 
 
 
