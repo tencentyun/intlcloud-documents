@@ -10,8 +10,7 @@
 >- 自适应码流播放时，播放器会实时切换当前网络下能流畅播放的最佳分辨率，转码视频播放时不会智能切换。
 >- 云点播提供的超级播放器 SDK 仅支持播放自适应码流的输出，不支持播放转码后的输出。
 
-<span id = "zsy"></span>
-## 转自适应码流模板
+## [](id:zsy)转自适应码流模板
 
 通过转自适应码流参数，可以控制自适应码流中各个子流的“视频转码参数”、“音频转码参数”等参数。云点播使用转自适应码流模板表示参数集合，通过转自适应码流模板，可以指定以下相关参数。
 
@@ -22,21 +21,22 @@
 | 是否过滤“低分辨率转高分辨率” | 通常来说，低分辨率的原始视频转码高分辨率无法获得画质和音质的提升。开启过滤“低分辨率转高分辨率”，可以避免不必要的转码|
 
 针对常见的参数组合，云点播提供了 [预置转自适应码流模板](https://intl.cloud.tencent.com/document/product/266/33932)，同时也支持自定义转自适应码流模板。
+
 ## 任务发起
 
-发起转自适应码流任务，有“通过服务端 API 直接发起”，“通过控制台直接发起”和“上传时指定要执行的任务”三种方式。具体请参照视频处理的 [任务发起](https://intl.cloud.tencent.com/document/product/266/33931#OriginatingTask)。
+发起转自适应码流任务，有“通过服务端 API 直接发起”，“通过控制台直接发起”和“上传时指定要执行的任务”三种方式。具体请参照视频处理的 [任务发起](https://intl.cloud.tencent.com/document/product/266/33931)。
 
 以下是各种方式发起转自适应码流任务的说明：
 
 * 调用服务端 API [ProcessMedia](https://intl.cloud.tencent.com/document/product/266/34125) 发起任务：在请求中的`MediaProcessTask.AdaptiveDynamicStreamingTaskSet`参数指定 [转自适应码流模板](#zsy) 的模板 ID。
-* 通过控制台对视频发起任务：调用 [服务端 API](https://intl.cloud.tencent.com/document/product/266/34167) 创建任务流，任务流中配置转自适应码流任务（`MediaProcessTask.AdaptiveDynamicStreamingTaskSet`中指定）；在控制台使用该任务流 [发起视频处理](https://intl.cloud.tencent.com/document/product/266/33892)。
-* 服务端上传时指定任务：调用 [服务端 API](https://intl.cloud.tencent.com/document/product/266/34167) 创建任务流，任务流中配置转自适应码流任务（`MediaProcessTask.AdaptiveDynamicStreamingTaskSet`中指定）；[申请上传](https://intl.cloud.tencent.com/document/product/266/34120#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0) 中的`procedure`参数指定为该任务流。
-* 客户端上传时指定任务：调用 [服务端 API](https://intl.cloud.tencent.com/document/product/266/34167) 创建任务流，任务流中配置转自适应码流任务（`MediaProcessTask.AdaptiveDynamicStreamingTaskSet`中指定）；在 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922#p3) 中的`procedure`指定该任务流。
-* 控制台上传：调用 [服务端 API](https://intl.cloud.tencent.com/document/product/266/34167) 创建任务流，任务流中配置转自适应码流任务（`MediaProcessTask.AdaptiveDynamicStreamingTaskSet`中指定）；通过控制台上传视频，选择[【上传的同时对视频进行处理操作】](https://intl.cloud.tencent.com/document/product/266/33890)并指定视频上传后执行该任务流。
+* 通过控制台对视频发起任务：调用 [服务端 API](https://intl.cloud.tencent.com/zh/document/product/266/38277) 创建任务流，任务流中配置转自适应码流任务（`MediaProcessTask.AdaptiveDynamicStreamingTaskSet`中指定）；在控制台使用该任务流 [发起视频处理](https://intl.cloud.tencent.com/document/product/266/33892)。
+* 服务端上传时指定任务：调用 [服务端 API](https://intl.cloud.tencent.com/zh/document/product/266/38277) 创建任务流，任务流中配置转自适应码流任务（`MediaProcessTask.AdaptiveDynamicStreamingTaskSet`中指定）；[申请上传] 中的`procedure`参数指定为该任务流。
+* 客户端上传时指定任务：调用 [服务端 API](https://intl.cloud.tencent.com/zh/document/product/266/38277) 创建任务流，任务流中配置转自适应码流任务（`MediaProcessTask.AdaptiveDynamicStreamingTaskSet`中指定）；在 [客户端上传签名](https://intl.cloud.tencent.com/document/product/266/33922) 中的`procedure`指定该任务流。
+* 控制台上传：调用 [服务端 API](https://intl.cloud.tencent.com/zh/document/product/266/38277) 创建任务流，任务流中配置转自适应码流任务（`MediaProcessTask.AdaptiveDynamicStreamingTaskSet`中指定）；通过控制台上传视频，选择[【上传的同时对视频进行处理操作】](https://intl.cloud.tencent.com/document/product/266/33890)并指定视频上传后执行该任务流。
 
 ## 结果获取
 
-发起转自适应码流任务后，您可以通过异步等待 [结果通知](https://intl.cloud.tencent.com/document/product/266/33931#ResultNotification) 和同步进行 [任务查询](https://intl.cloud.tencent.com/document/product/266/33931#TaskQuery) 两种方式获取转自适应码流任务的执行结果。下面是发起转自适应码流任务后，普通回调方式下结果通知的示例（省略了值为 null 的字段）：
+发起转自适应码流任务后，您可以通过异步等待 [结果通知](https://intl.cloud.tencent.com/document/product/266/33931) 和同步进行 [任务查询](https://intl.cloud.tencent.com/document/product/266/33931) 两种方式获取转自适应码流任务的执行结果。下面是发起转自适应码流任务后，普通回调方式下结果通知的示例（省略了值为 null 的字段）：
 
 ```json
 {
@@ -117,3 +117,4 @@
 ```
 
 回调结果中，`ProcedureStateChangeEvent.MediaProcessResultSet`有两个`Type`为`AdaptiveDynamicStreaming`类型的转自适应码流结果，`Definition`分别为10和20。
+
