@@ -63,3 +63,4 @@ VODの暗号化機能にすばやくアクセスできるよう、例を挙げ�
 VODの[アダプティブビットレートストリーミングへのトランスコード](https://intl.cloud.tencent.com/document/product/266/33942)機能は、ビデオを複数の解像度にトランスコードして暗号化することができます。具体的な実践方法については、 [アクセスガイド](https://intl.cloud.tencent.com/document/product/266/38294)をご参照ください。
 2. 暗号化されたビデオは端末でどのように再生されますか？
 VODで暗号化されたビデオを再生するには、端末にSuper Player SDKを統合すると同時に、署名配布サービスも構築する必要があります。具体的な実践方法については、[アクセスガイド](https://intl.cloud.tencent.com/document/product/266/38294)をご参照ください。
+
