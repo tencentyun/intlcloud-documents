@@ -7,10 +7,9 @@ VNC로 로그인하면 `/etc/pam.d/login`이라는 pam 모듈을 호출해 인�
 ![](https://main.qcloudimg.com/raw/334e393e16d8a03eec44009be9265ea9.png)
 로그인 실패의 원인은 `system-auth` 구성 파일 중 `pam_limits.so` 모듈의 경로 구성 오류 때문일 수 있습니다. 다음 이미지를 참고하십시오.
 ![](https://main.qcloudimg.com/raw/36f36e0f2f5d0954f6fcebd39095d3b6.png)
-<dx-alert infotype="explain" title="">
-`pam_limits.so` 모듈의 핵심 기능은 사용자가 대화 시 여러 시스템 리소스의 사용을 제한하는 것입니다. 모듈 경로는 운영 체제의 실제 상황에 따라 입력해야 하며, 경로를 잘못 입력하면 해당 인증 모듈을 찾을 수 없어 로그인 인증 오류가 발생합니다.
 
-</dx-alert>
+
+>?`pam_limits.so` 모듈의 핵심 기능은 사용자가 대화 시 여러 시스템 리소스의 사용을 제한하는 것입니다. 모듈 경로는 운영 체제의 실제 상황에 따라 입력해야 하며, 경로를 잘못 입력하면 해당 인증 모듈을 찾을 수 없어 로그인 인증 오류가 발생합니다.
 
 
 
