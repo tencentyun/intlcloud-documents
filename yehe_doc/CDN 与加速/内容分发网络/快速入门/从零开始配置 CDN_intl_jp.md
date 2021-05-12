@@ -8,10 +8,10 @@ Tencent Cloudのアカウント登録が済んでいる場合は、このステ�
 ## 手順2：CDNのアクティブ化 
 #### 1. 実名認証の完了
 実名認証をまだ行っていない場合は、先に実名認証を済ませる必要があります。CDNコンソールまたはアカウントセンターから実名認証を行うことができます。詳しい認証手順は、[実名認証ガイド](https://intl.cloud.tencent.com/document/product/378/3629)をご参照ください。
-<div style="background-color:#00A4FF; width: 425px; height: 35px; line-height:35px; text-align:center;;"><a href="https://console.cloud.tencent.com/cdn" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3149.btn2">ここをクリックして CDN コンソールに入ります。</a></div><br>
+<div style="background-color:#00A4FF; width: 425px; height: 35px; line-height:35px; text-align:center;;"><a href="https://console.cloud.tencent.com/cdn" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3149.btn2">ここをクリックして CDN コンソールに入ります</a></div><br>
 
 ![](https://main.qcloudimg.com/raw/e593cf6199d64fbcc5c6f50089778cf9.png)
-<div style="background-color:#00A4FF; width: 425px; height: 35px; line-height:35px; text-align:center;;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3149.btn2">ここをクリックしてアカウントセンターに入ります。</a></div><br>
+<div style="background-color:#00A4FF; width: 425px; height: 35px; line-height:35px; text-align:center;;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3149.btn2">ここをクリックしてアカウントセンターに入ります</a></div><br>
 
 ![](https://main.qcloudimg.com/raw/e71557f3118bf3579d551bb2ae2e2e9e.png)
 #### 2. CDNサービスのアクティブ化
