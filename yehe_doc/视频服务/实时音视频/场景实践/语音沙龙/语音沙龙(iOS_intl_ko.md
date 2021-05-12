@@ -60,7 +60,7 @@ Xcode(11.0 버전 이상)를 사용하여 소스 코드 프로그램인 `iOS/TRT
 ## 사용자 정의 UI 인터페이스 구현
 
 [소스 코드](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCChatSalonDemo)의 trtcchatsalondemo 폴더에는 ui 폴더와 model 폴더가 포함되어 있으며, model 폴더에는 재사용 가능한 오픈 소스 모듈인 TRTCChatSalon이 포함되어 있습니다. `TRTCChatSalon.h` 파일에서 해당 모듈이 제공하는 액세스 함수를 확인할 수 있으며 해당 액세스를 사용해 사용자 정의 UI 인터페이스를 구현할 수 있습니다.
-![](https://main.qcloudimg.com/raw/7613bd7ec5b4e665f32ee5df69e5de85.png)
+![](https://main.qcloudimg.com/raw/9c9b6537318b1fa8cd9c6e4e717c361a.png)
 
 [](id:model.step1)
 
@@ -154,7 +154,7 @@ self.chatSalon.login(sdkAppID: sdkAppID, userID: userId, userSig: userSig) { [we
 2. 호스트가 `createRoom`을 호출하여 새로운 음성 살롱을 생성합니다. 이때 방 ID, 마이크를 켤 때 방장 확인 필요 여부, 방 유형 등 방 속성 정보를 전송합니다.
 3. 호스트는 사용자가 입장할 때 `onAnchorEnterSeat` 이벤트 공지를 수신하며, 이때 자동으로 마이크 수집이 활성화됩니다.
 
-![](https://main.qcloudimg.com/raw/dfe6ed5d0c973e399e834eb233c96ec6.png)
+![](https://main.qcloudimg.com/raw/8966e7bf7dde578ad1ed85544c01b249.png)
 ```
 // 1. 호스트 닉네임 및 프로필 사진 설정
 self.chatSalon.setSelfProfile(userName: userName, avatarUrl: avatarURL) { (code, message) in
@@ -201,7 +201,7 @@ func onAnchorEnterSeat(user: ChatSalonUserInfo) {
 6. 방 입장 후, 모듈의 `onEnterRoomSeatListNotify` 현재 방 호스트 정보 콜백을 수신합니다. 이때 마이크 위치 리스트의 정보에 따라 현재 방 호스트의 사용자 정보를 조회하여 UI 인터페이스에 새로 고침합니다.
 7. 방 입장 후 마이크 위치 리스트에 호스트 입장 `onAnchorEnterSeat` 이벤트 공지도 수신합니다.
 
-![](https://main.qcloudimg.com/raw/6fbabfa4e217022cf3d05677e4a45538.png)
+![](https://main.qcloudimg.com/raw/117b4dbdaf146cc89b681d067503f0f0.png)
 ```
 // 1. 시청자 닉네임 및 프로필 사진 설정
 self.chatSalon.setSelfProfile(userName: userName, avatarUrl: avatarURL) { (code, message) in
@@ -246,7 +246,7 @@ func onAnchorEnterSeat(user: ChatSalonUserInfo) {
 1. `pickSeat`에 시청자 userId를 전달하면 특정 사용자의 마이크를 켤 수 있으며, 방 안에 있는 모든 사용자가 `onAnchorEnterSeat` 이벤트 공지를 수신합니다.
 2. `kickSeat`에 해당하는 사용자의 userId를 전달하면 특정 사용자의 마이크를 끌 수 있으며, 방 안에 있는 모든 사용자가 `onAnchorLeaveSeat` 이벤트 공지를 수신합니다.
 
-![](https://main.qcloudimg.com/raw/d968f479f51160f626d07ce8bf403f13.png)
+![](https://main.qcloudimg.com/raw/bcc53e5773fe25d76a1d243304cbb4b6.png)
 
 마이크 위치 작업 후의 이벤트 공지 순서는 다음과 같습니다. callback > onAnchorEnterSeat 등 독립 이벤트
 
