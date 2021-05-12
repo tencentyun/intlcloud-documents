@@ -73,7 +73,7 @@ buffer では、byte []型の配列をTRTCSDKに直接挿入することが要�
 
 **2. texture **：ドッキングには特定のOpenGL基盤が必要ですが、特に画面の解像度が高い場合は、パフォーマンスが向上します。
 
-textureはTRTC SDKにOpenGL テクスチャを渡す必要があります。この方法の正常な動作を保証するには、事前にOpenGL 環境を設定しておく必要があるため、この方法のドッキング難度は極めて高いものとなっています。OpenGLを学んだことがない場合は、当社が提供するサンプルコードを直接使用することを推奨します。サンプルコードは[Demo](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCSimpleDemo/customcapture/src/main/java/com/tencent/custom/customcapture) の `customCapture` フォルダにあり、次のファイルが含まれています。
+textureはTRTC SDKにOpenGL テクスチャを渡す必要があります。この方法の正常な動作を保証するには、事前にOpenGL 環境を設定しておく必要があるため、この方法のドッキング難度は極めて高いものとなっています。OpenGLを学んだことがない場合は、当社が提供するサンプルコードを直接使用することを推奨します。サンプルコードは[Demo](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTC-API-Example/Advanced/LocalVideoShare/src/main/java/com/tencent/trtc/mediashare) の `customCapture` フォルダにあり、次のファイルが含まれています。
 
 | ファイル名 | ソースコードロジック |
 |---------|---------|
