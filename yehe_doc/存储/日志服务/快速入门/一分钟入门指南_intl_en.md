@@ -30,7 +30,7 @@ telnet <region abbreviation>.cls.tencentyun.com 80
 #### 2.2 View/Create a key pair
 
 Log in to the [CAM console](https://console.cloud.tencent.com/cam/capi), view (or create) a key pair, and make sure that the key is enabled.
-![](https://main.qcloudimg.com/raw/def581cc17891febfab6ecd1d616327c.png)
+
 
 #### 2.3 Install LogListener
 
@@ -45,18 +45,18 @@ CLS introduces various regions. To lower network latency, please create log reso
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
 2. In the left sidebar, click **Log Topic** to go to the management page.
 3. Select a region and click **Create Log Topic**.
-![](https://main.qcloudimg.com/raw/3f525ef2794f3e2ba9913f9540ee6a5e.png)
+
 4. Configure as needed on the page that is displayed.</br>
-<img src="https://main.qcloudimg.com/raw/412d69a16806c585358cea858eec9a77.png" style="width: 50%"></img></br>
+
  - Log topic name: name of the log topic, such as topic_test
  - Logset: **Select an existing logset** is selected by default. Alternatively, you can select **Create Logset** and set the logset’s name (e.g., cls_test) as needed.
 >? A logset can be retained for 3−90 days. To retain it for a longer period, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 >
 5. Click **Confirm**.
  - A created log topic will be displayed in the log topic list.
-![](https://main.qcloudimg.com/raw/744532830cad015849860480edfe4674.png)
+
  - You can click **Manage Logset** to view the created logset.
-![](https://main.qcloudimg.com/raw/3eb0f40975cc63a742730ad4a270fee4.png)
+
 
 ### 4. Create a server group
 
@@ -68,7 +68,7 @@ CLS uses a [server group](https://intl.cloud.tencent.com/document/product/614/30
 Multiple IPs can be input in a server group (one IP per line). For CVM instances, please input the private IP addresses directly. For more information, please see [Server Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
 4. Click **OK**.
 After a server group is created, you can click **View** in the **Operation** column to check the connection between LogListener and servers.
-<img src="https://main.qcloudimg.com/raw/6d1b3a1c69c2fdff58cf94e5386af6b7.png" style="width: 50%"></img></br>
+
  - Normal: The client’s LogListener has successfully connected to CLS.
  - Abnormal: You can troubleshoot by referring to [Server Group Exception](https://intl.cloud.tencent.com/document/product/614/17424).
 
@@ -92,7 +92,7 @@ The collection path needs to match the absolute path of the log file on the serv
 | File name   | A log file name supports only the wildcard characters `\*` and `?`. `\*` indicates that one or more characters can be matched, while `?` indicates that any single character can be matched. |
 
 For example, if the absolute path of the file to be collected is `/cls/logs/access.log`, then the directory prefix entered for the collection path should be `/cls/logs`, and the file name `access.log`, as shown below:
-![](https://main.qcloudimg.com/raw/4645e7ffb34ec843ccd3b2e4eaee61cf.png)
+
 
 #### 5.2 Bind a server group
 
@@ -111,7 +111,7 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 - Inputting a sample log and extracting key-value pairs
   Enter a complete log in the log sample field, and key-value pairs will be automatically extracted. Then, you can define a unique key for each key-value pair.
   In this example, the log is parsed into `Tue Jan 22 14:49:45 2019`, `download`, `success`, `194`, and `a31f28ad59434528660c9076517dc23b`. The keys defined for these 5 fields are `time`, `action`, `status`, `size`, and `hashcode` respectively. LogListener will then use this defined structure to collect data.
-![](https://main.qcloudimg.com/raw/2adf2b037d9a39b9c1509bbc71f7af1a.png)
+
 
 ### 6. Configure indexes
 
@@ -123,7 +123,7 @@ CLS offers a log search and analysis feature based on segment indexing. We curre
 | Key-Value | Breaks a full log into key-value pairs according to the specifications, and executes field query based on the key-value pairs |
 
 Here we use key-value index as an example to describe how to configure indexes. In the log topic management page, go to the **Index Configuration** tab, click **Edit**, and toggle the key to enable index status. Toggle on **Key-Value Index**. Click **Add** to add keys. Select a field type for each key, currently `long`, `double`, and `text` are supported. `text` type allows you to specify delimiters, which separate a character string into segments. Continuing the above example, enter `time`, `action`, `status`, `size`, and `hashcode` as key-value indexes, and set the field type of `size` to `long`.
-![](https://main.qcloudimg.com/raw/638fc9d1064eb5be919f2cad085875f6.png)
+
 
 Once the index rule is enabled, indexes will be created for new input data accordingly, and stored over a specified period of time depending on your configured storage cycle. Only logs for which indexes have been created can be queried for analysis. **Therefore, modifying an index rule or disabling an index only affects new input data. Unexpired legacy data will still be searchable.**
 
@@ -142,7 +142,7 @@ To ship logs to COS, you can perform the following steps:
 Currently, CLS supports shipping logs in [CSV](https://intl.cloud.tencent.com/document/product/614/31582) and [JSON](https://intl.cloud.tencent.com/document/product/614/31583) formats.
 
 After a shipping task is created, CLS asynchronously ships data to the destination bucket. To view the shipping status, you can click the desired log topic and then choose the **Ship to COS** tab. Alternatively, you can click **Shipping task** in the left sidebar of the console.
-![](https://main.qcloudimg.com/raw/871008b8e1431902361f0b0a2c1f1dc6.png)
+
 
 
 #### 7.2 Ship to CKafka
@@ -157,4 +157,4 @@ To ship logs to CKafka, you can perform the following steps:
 6. Select the desired CKafka instance and click **OK** to enable CKafka consumption.
 
 Currently, CLS supports shipping original logs and JSON-formatted logs. To view the shipping status, you can click the consumed log topic and then select the **Ship to CKafka** tab.
-![](https://main.qcloudimg.com/raw/58230e299b5b33403e7240c6062c44a5.png)
+
