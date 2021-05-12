@@ -3,7 +3,7 @@
 - **短信接收不到告警**：
 	- 在 [访问管理控制台 ](https://console.cloud.tencent.com/cam)用户列表中，单击用户名称进入用户详情，查看手机是否验证。
 	- 在 [告警策略](https://console.cloud.tencent.com/monitor/policylist) 列表中，查看对应的告警策略是否被屏蔽了短信告警渠道。
-	- 在 [监控概览](https://console.cloud.tencent.com/monitor/overview) 页右侧查看免费短信是否已使用完。详情请参见 [短信告警渠道](https://intl.cloud.tencent.com/zh/document/product/248/38908)。
+	- 在 [监控概览](https://console.cloud.tencent.com/monitor/overview) 页右侧查看免费短信是否已使用完。详情请参见 [短信告警渠道](https://intl.cloud.tencent.com/document/product/248/38908)。
 - **邮件接收不到告警**：
 	- 在 [访问管理控制台 ](https://console.cloud.tencent.com/cam)用户列表中，单击用户名称进入用户详情，查看邮箱是否验证。
 	- 在 [告警策略](https://console.cloud.tencent.com/monitor/policylist) 列表中，查看对应的告警策略是否被屏蔽了邮件告警渠道。
@@ -22,7 +22,6 @@
 - 重复告警（5分钟、1小时、每天等）默认逻辑：
 	- 告警产生后的24小时内，将按您设定的重复通知频率重复给您发送告警信息。
 	- 告警产生满24小时，将默认切换为1天通知1次的策略进行重复通知。
-	- 告警产生满72小时，发送最后一次告警信息，过后不再重复发送此条告警的告警信息。
 
 ### 恢复告警后，会接收到告警通知吗？
 
@@ -63,11 +62,33 @@
 
 ### 有几种告警状态，分别是什么含义？
 
-未恢复：没有被处理或正在被处理的告警。
-恢复：已经恢复正常状态。
-数据不足：产生告警的告警策略已被删除；云服务器从一个项目迁移至另一个项目；未安装或者卸载云监控agent，无数据上报。
+<escape>
+<table>
+<tr>
+<th>告警状态</th>
+<th>含义</th>
+</tr>
+<tr>
+<td>未恢复</td>
+<td>没有被处理或正在被处理的告警</td>
+</tr>
+<tr>
+<td>恢复</td>
+<td>已经恢复正常状态</td>
+</tr>
+<tr>
+<td>数据不足</td>
+<td><ul style="margin:0;list-style-type:disc;"><li>产生告警的告警策略已被删除</li><li>云服务器从一个项目迁移至另一个项目</li><li>未安装或者卸载云监控控件，无数据上报</li></ul></td>
+</tr>
+<tr>
+<td>已失效</td>
+<td><ul style="margin:0;list-style-type:disc;"><li>告警策略发生变化</li><li>告警的最近告警时间超过24小时没有更新</li></ul></td>
+</tr>
+</table>
+</escape>
 
-### 若项目 A 的 CDN 域名告警策略关联了域 a.com，但用户迁移域名 a.com 至项目 B。则告警会有那些变化？
+
+### 若项目 A 的 CDN 域名告警策略关联了域 a.com，但用户迁移域名 a.com 至项目 B。则告警会有哪些变化？
 
 项目 A 的 CDN 域名策略将自动解绑与域名`a.com`的关联。解绑后，域名`a.com`不再关联任何 CDN 域名告警策略，则不会产生告警。自动解绑的逻辑将每天处理一次，控制台页面数据可能会有更新延时，属于正常情况。
 
