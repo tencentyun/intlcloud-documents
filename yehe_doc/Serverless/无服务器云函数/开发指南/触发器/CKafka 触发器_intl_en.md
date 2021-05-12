@@ -44,7 +44,7 @@ When the specified CKafka topic receives a message, the backend consumption modu
     {
       "Ckafka": {
         "topic": "test-topic",
-        "partition":1,
+        "Partition":1,
         "offset":36,
         "msgKey": "None",
         "msgBody": "Hello from Ckafka!"
@@ -53,7 +53,7 @@ When the specified CKafka topic receives a message, the backend consumption modu
     {
       "Ckafka": {
         "topic": "test-topic",
-        "partition":1,
+        "Partition":1,
         "offset":37,
         "msgKey": "None",
         "msgBody": "Hello from Ckafka again!"
