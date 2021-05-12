@@ -14,7 +14,7 @@ CVM 인스턴스를 생성하기 전에 다음 작업을 완료해야 합니다.
 
 ## 작업 순서
 
-1. [Tencent Cloud 공식 사이트](https://cloud.tencent.com)에 로그인하고 [제품]>[기본]>[컴퓨팅]>[CVM](https://intl.cloud.tencent.com/product/cvm)을 선택한 뒤, [구매하기]를 클릭하여 CVM 구매 페이지로 이동합니다.
+1. [Tencent Cloud 공식 사이트](https://intl.cloud.tencent.com)에 로그인하고 [제품]>[기본]>[컴퓨팅]>[CVM](https://intl.cloud.tencent.com/product/cvm)을 선택한 뒤, [구매하기]를 클릭하여 CVM 구매 페이지로 이동합니다.
  - <b>[사용자 정의 구성](https://buy.cloud.tencent.com/cvm?tab=custom): </b>사용자의 요구에 맞게 CVM 인스턴스를 선택하여 구매할 수 있으므로, 특정 시나리오에 사용하기 적합합니다.
 2. 페이지 안내에 따라 다음의 정보를 구성합니다.
 <table>
