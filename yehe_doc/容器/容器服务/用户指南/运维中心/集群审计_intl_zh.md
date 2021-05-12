@@ -1,3 +1,5 @@
+>?日志服务 CLS 为弹性容器服务 EKS 产生的所有审计、事件数据提供**免费服务**至2021年12月31日。请选择自动创建日志集，或在已有日志集中选择自动创建日志主题。活动详情请参见 [TKE 容器服务审计与事件中心日志免费说明](https://intl.cloud.tencent.com/document/product/614/37889)。
+
 ## 简介
 集群审计是基于 [Kubernetes Audit](https://kubernetes.io/docs/tasks/debug-application-cluster/audit) 对 kube-apiserver 产生的可配置策略的 JSON 结构日志的记录存储及检索功能。本功能记录了对 kube-apiserver 的访问事件，会按顺序记录每个用户、管理员或系统组件影响集群的活动。
 
