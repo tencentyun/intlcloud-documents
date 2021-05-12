@@ -56,7 +56,7 @@ If you need to access the service by domain name through the public network, run
 
 ![](https://main.qcloudimg.com/raw/653ebe0400dca5b21b3e25d01f93cb5b.png)
 > ?
->- We recommend that you use a collaborator key, and the collaborator should be assigned with the CLS read/write permission by the root account.
+>- It is recommended to use a collaborator key if the collaborator is granted the read and write permission of CLS by the root account.
 > - `region` indicates the region of your CLS, instead of the region where your business server resides.
 >- If your CVM instance and logset are in the same region, we recommend you access the service domain name over the private network; otherwise, use the public network.
 
@@ -122,11 +122,9 @@ In the `loglistener/tools` directory, run the uninstallation command as the admi
 
 1. Run the stop command to stop the existing LogListener.
 2. Back up the breakpoint file directory (`loglistener/data`) on the earlier version; for example, back up the legacy breakpoint file to the `/tmp/loglistener-backup` directory.
-<dx-codeblock>
-:::  plaintext
+```plaintext
 cp -r loglistener-2.2.3/data /tmp/loglistener-backup/
-:::
-</dx-codeblock>
+```
 3. Run the uninstallation command to uninstall the existing LogListener.
 4. Download the latest version of LogListener and install and initialize it with relevant commands.
 5. Copy the breakpoint file directory backed up in step 2 to the new LogListener directory.
