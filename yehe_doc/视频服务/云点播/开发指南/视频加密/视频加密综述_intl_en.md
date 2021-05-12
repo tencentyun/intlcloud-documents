@@ -63,3 +63,4 @@ To help you quickly integrate the encryption capabilities of VOD, we provide a v
 VOD's [adaptive bitrate streaming](https://intl.cloud.tencent.com/document/product/266/33942) feature can transcode videos into multiple resolutions and encrypt them.For specific steps, please see the [operation guide](https://intl.cloud.tencent.com/document/product/266/38294).
 2. How do I play back encrypted videos on terminal devices?
 To play back videos encrypted in VOD, you need to integrate the superplayer SDK on the terminal devices and build a signature distribution service.For specific steps, please see the [operation guide](https://intl.cloud.tencent.com/document/product/266/38294).
+
