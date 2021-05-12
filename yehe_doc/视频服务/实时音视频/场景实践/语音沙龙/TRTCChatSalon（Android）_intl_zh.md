@@ -157,7 +157,7 @@ TRTCChatSalon 是一个开源的 Class，依赖腾讯云的两个闭源 SDK，�
 
 ### destroySharedInstance
 
-销毁 [TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/53537) 单例对象。
+销毁 [TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647) 单例对象。
 
 >?销毁实例后，外部缓存的 TRTCChatSalon 实例无法再使用，需要重新调用 [sharedInstance](#sharedinstance) 获取新实例。
 
@@ -166,7 +166,7 @@ public static void destroySharedInstance();
 ```
 
 ### setDelegate
-[TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647/53537) 事件回调，您可以通过 TRTCChatSalonDelegate 获得 [TRTCChatSalon](https://cloud.tencent.com/document/product/647/53537) 的各种状态通知。
+[TRTCChatSalon](https://intl.cloud.tencent.com/document/product/647) 事件回调，您可以通过 TRTCChatSalonDelegate 获得 [TRTCChatSalon](https://cloud.tencent.com/document/product/647/53537) 的各种状态通知。
 
 ```java
 public abstract void setDelegate(TRTCChatSalonDelegate delegate);
