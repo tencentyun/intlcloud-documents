@@ -1,5 +1,5 @@
 ## 請求書ガイド
-Tencent Cloud Enterprise Content Delivery Network（CDN）が生成した請求書および明細書を表示したい場合は、[Tencent Cloud料金センターコンソール](https://console.cloud.tencent.com/expense/bill/overview) で表示することができます。
+Tencent Cloud CDN が生成した請求書および明細書を表示したい場合は、[Tencent Cloud料金センターコンソール](https://console.cloud.tencent.com/expense/bill/overview) で表示することができます。
 
 
 ## 請求書の照会
