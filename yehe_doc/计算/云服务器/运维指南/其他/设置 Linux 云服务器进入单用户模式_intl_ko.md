@@ -1,125 +1,69 @@
 ## 작업 시나리오
-
-Linux 사용자는 때로 단일 사용자 모드로 진입하여 몇 가지 특수 작업을 실행해야 합니다. 이는 비밀번호 관리 통제, sshd 손상 등을 예로 들 수 있습니다. 본 문서는 주요 Linux 운영 체제의 단일 사용자 모드 진입에 대한 작업 순서를 소개합니다.
+Linux 사용자는 일부 시나리오에서 단일 사용자 모드로 특수 작업 또는 점검 관련 작업을 진행해야 합니다. 예를 들어, 비밀번호 관리, sshd 손상 복구 또는 디스크 마운트 전에 해야하는 점검 등은 단일 사용자 모드로 진행해야 합니다. 본 문서에서는 주요 Linux 운영 체제의 단일 사용자 모드 진입 작업 순서를 소개합니다.
 
 ## 작업 순서
-
-### 운영 체제 유형 판단
-
-운영 체제 유형에 맞는 작업 순서를 선택합니다.
- - CentOS 6 운영 체제는 [CentOS 6 의 순서](#configCentOS6)를 실행합니다.
- - CentOS 7 운영 체제는 [CentOS 7 의 순서](#configCentOS7)를 실행합니다.
- - Ubuntu 운영 체제는 [Ubuntu 의 순서](#configUbuntu)를 실행합니다.
-
-<span id="configCentOS6"></span>
-### CentOS 6
-
->? Centos 6은 GRUB를 사용하여 가이드 프로그램을 실행합니다. 다음의 작업 순서는 CentOS 6.9를 예로 들며, 운영 체제 버전에 따라 세부 작업 순서에 약간의 차이가 있습니다.
-> 
-1. CVM 인스턴스에 원격 로그인합니다.
-2. 다음 명령어를 실행하여 `/etc/grub.conf` 파일을 엽니다.
-```
-vi /etc/grub.conf
-```
-3. **I** 를 눌러 편집 모드로 진입합니다.
-4. "GRUB_TIMEOUT" 실행 항목 대기 시간의 매개변수 기본 값을 조회하고, 실제 수요에 따라 해당 값을 설정 범위 내로 수정합니다.
-"GRUB_TIMEOUT" 기본 값은 5초입니다. 대기 시간이 너무 짧아 시작 인터페이스를 보지 못하는 경우를 방지하기 위해, 60초 혹은 더 긴 시간으로 조정하시기 바랍니다.
->! 해당 항목은 시스템의 실행 시간에 영향을 주므로, 설정을 완료한 후 이를 다시 기본 값으로 수정해야 합니다.
-5. **Esc**를 눌러 편집 모드에서 나간 후 **:wq**를 입력하고 **Enter**를 누릅니다.
-설정을 저장하고 VI 편집기에서 나갑니다.
-6. 다음 명령어를 실행하여 서버를 재시작합니다.
-```
-reboot
-```
-7. 약 1분간 기다린 후 [VNC로 해당 CVM 인스턴스에 로그인](https://intl.cloud.tencent.com/document/product/213/5436#.E4.BD.BF.E7.94.A8-vnc-.E7.99.BB.E5.BD.95.E5.AE.9E.E4.BE.8B)합니다. 로그인 인터페이스는 다음과 같습니다.
-![](https://main.qcloudimg.com/raw/82a82601e1545274c4f61c8f34f5c100.png)
-8. 아무 키를 눌러 메뉴에 진입합니다. 아래 그림 참조
-![](https://main.qcloudimg.com/raw/6336b8fd579799108a5765b5b58e2a21.png)
-9. **e**를 눌러 커널 편집 인터페이스에 진입하고 **single**을 입력합니다. 아래 그림 참조
-![](https://main.qcloudimg.com/raw/14168276d81a398702e80f9c83186869.png)
-10. **Enter**를 누릅니다. 아래 그림 참조
-![](https://main.qcloudimg.com/raw/149eeb5776329a5db1ea42ae20cd316d.png)
-11. 다음 그림과 같이 인터페이스에서 **b**를 눌러 단일 사용자 모드에 진입합니다.
-![](https://main.qcloudimg.com/raw/2d6d53de84cd78b3e88319b8538cec8e.png)
-12. 다음 명령어를 실행하여 단일 사용자 모드에서 나갑니다.
-```
-exec /sbin/init
-```
-
-<span id="configCentOS7"></span>
-### CentOS 7
-
->? CentOS 6과 달리 CentOS 7 이후 버전은 GRUB 2를 사용합니다. 다음의 작업 순서는 Centos 7.5를 예로 들며, 운영 체제 버전에 따라 세부 작업 순서에 약간의 차이가 있습니다.
-> 
-1. CVM 인스턴스에 원격 로그인합니다.
-2. 다음 명령어를 실행하여 `/etc/default/grub` 파일을 엽니다.
-```
-vi /etc/default/grub
-```
-3. **I** 를 눌러 편집 모드로 진입합니다.
-4. "GRUB_TIMEOUT" 실행 항목 대기 시간의 매개변수 기본 값을 조회하고, 실제 수요에 따라 해당 값을 설정 범위 내로 수정합니다. 아래 그림 참조
-"GRUB_TIMEOUT" 기본 값은 5초입니다. 대기 시간이 너무 짧아 시작 인터페이스를 보지 못하는 경우를 방지하기 위해, 60초 혹은 더 긴 시간으로 조정하시기 바랍니다.
->! 해당 항목은 시스템의 실행 시간에 영향을 주므로, 설정을 완료한 후 이를 다시 기본 값으로 수정해야 합니다.
+1. CVM 콘솔에서 VNC로 CVM에 로그인합니다. 자세한 내용은 [VNC로 Linux 인스턴스에 로그인](https://intl.cloud.tencent.com/document/product/213/32494)을 참조하십시오.
+2. VNC 로그인 인터페이스에서 좌측 상단의 [원격 명령어 전송]>[Ctrl-Alt-Delete]을 선택하고, 팝업창에서 [확인]을 클릭합니다.
+3. 연결 실패 알림 정보가 뜨면 빠르게 페이지를 새로고침하고 위, 아래 화살표 버튼(↑↓)을 눌러 시스템이 grub 메뉴에 멈추어 있도록 합니다. 다음 이미지를 참고하십시오.
+![](https://main.qcloudimg.com/raw/350187ce0a771d00e6d54e929291ebae.png)
+4. **c** 를 눌러 grub 모드로 진입합니다.
+5. grub 모드 진입 후 실제 사용하고 있는 운영 체제 유형에 맞는 작업 순서를 선택합니다.
+#### CentOS 6.x
+1. grub 모드 인터페이스에서 커널을 선택합니다. 다음 이미지를 참고하십시오.
+![](https://main.qcloudimg.com/raw/5abc9f57184cc74bba927513fb1c4a88.png)
+2. **e** 을 눌러 커널 편집 인터페이스로 이동한 뒤 ↑↓ 버튼을 사용해 **kernel**이 있는 행을 선택하고 다시 **e**를 누릅니다. 다음 이미지를 참고하십시오.
+![](https://main.qcloudimg.com/raw/1a596a48df87d1d619e415d8d5b0cb65.png)
+3. 행의 맨 끝에 **single**을 입력합니다. 다음 이미지를 참고하십시오.
+![](https://main.qcloudimg.com/raw/e1f74a4ce211a34301c4f74ffcc790b8.png)
+4. **Enter**를 눌러 입력을 완료한 뒤 **b**를 눌러 선택한 실행 명령어를 실행하면 단일 사용자 모드로 진입합니다. 다음 이미지를 참고하십시오.
+![](https://main.qcloudimg.com/raw/b379937bfc15e93f0823ec50095d1dc6.png)
+다음 그림과 같이 단일 사용자 모드로 진입하였습니다.
+![](https://main.qcloudimg.com/raw/517c4d2c24864f3fc8f5002bd1e2c2a1.png)
+>? `exec /sbin/init` 명령을 실행하면 단일 사용자 모드가 종료됩니다.
 >
-![](https://main.qcloudimg.com/raw/5ee3b8d8a4609ca846e3c1e929608b34.png)
-5. **Esc**를 눌러 편집 모드에서 나간 후 **:wq**를 입력하고 **Enter**를 누릅니다.
-설정을 저장하고 VI 편집기에서 나갑니다.
-6. 다음 명령어를 실행하여 grub.cfg 파일을 다시 컴파일링 및 생성합니다.
-```
-grub2-mkconfig -o /boot/grub2/grub.cfg
-```
-리턴 결과는 다음 그림과 같습니다.
-![](https://main.qcloudimg.com/raw/62da54e985f2f78efce045bb2da1e5e5.png)
-7. 다음 명령어를 실행하여 서버를 재시작합니다.
-```
-reboot
-```
-8. 약 1분간 기다린 후 [VNC로 해당 CVM 인스턴스에 로그인](https://intl.cloud.tencent.com/document/product/213/5436#.E4.BD.BF.E7.94.A8-vnc-.E7.99.BB.E5.BD.95.E5.AE.9E.E4.BE.8B)합니다. 로그인 인터페이스는 다음과 같습니다.
-![](https://main.qcloudimg.com/raw/95dba957dea2da680ffca516dc2b62b3.png)
-9. **e**를 눌러 커널 편집 인터페이스에 진입하고 **init=/bin/sh**를 붉은 테두리 부분에 추가합니다. 아래 그림 참조
-![](https://main.qcloudimg.com/raw/81173f4c723809f1b733a51a2eb002d5.png)
-7. **Ctrl+X**를 눌러 단일 사용자 모드를 실행 및 진입합니다. 아래 그림 참조
-![](https://main.qcloudimg.com/raw/b9004e2a1d58a9a09316cf2a8a907399.png)
-8. 다음 명령어를 실행하여 단일 사용자 모드에서 나갑니다.
-```
-exec /sbin/init
-```
 
-<span id="configUbuntu"></span>
-### Ubuntu 
-
->? 다음 작업 순서는 Ubuntu 16.04를 예로 들며, 운영 체제 버전에 따라 세부 작업 순서에 약간의 차이가 있습니다.
+#### CentOS 7.x
+1. grub 모드 인터페이스에서 커널을 선택합니다. 다음 이미지를 참고하십시오.
+![](https://main.qcloudimg.com/raw/2ddc7d1e4416d9fa763922e23b59d580.png)
+2. **e**를 눌러 커널 편집 인터페이스로 들어간 뒤, ↑↓ 버튼으로 linux16의 첫번째 항으로 이동해 `ro`를 `rw init=/bin/bash` 또는 `/usr/bin/bash`로 바꿉니다. 다음 이미지를 참고하십시오.
+![](https://main.qcloudimg.com/raw/1b861ba0ecee1cd82da4364523e8a1c6.png)
+3. **Ctrl+X**를 눌러 단일 사용자 모드를 실행 및 진입합니다.
+다음 그림과 같이 단일 사용자 모드로 진입하였습니다.
+![](https://main.qcloudimg.com/raw/fbe8cfcf43aa4c914882edc4c3ee5faf.png)
+>? `exec /sbin/init` 명령을 실행하면 단일 사용자 모드가 종료됩니다.
 >
-1. CVM 인스턴스에 원격 로그인합니다.
-2. 다음 명령어를 실행하여 `/etc/default/grub` 파일을 엽니다.
-```
-sudo vi /etc/default/grub
-```
-3. **I** 를 눌러 편집 모드로 진입합니다.
-4. "GRUB_TIMEOUT" 실행 항목 대기 시간의 매개변수 기본 값을 조회하고, 실제 수요에 따라 해당 값을 설정 범위 내로 수정합니다. 아래 그림 참조
-"GRUB_TIMEOUT" 기본 값은 5초입니다. 대기 시간이 너무 짧아 시작 인터페이스를 보지 못하는 경우를 방지하기 위해, 60초 혹은 더 긴 시간으로 조정하시기 바랍니다.
->! 
-> - 해당 항목은 시스템의 실행 시간에 영향을 주므로, 설정을 완료한 후 이를 다시 기본 값으로 수정해야 합니다.
-> - Ubuntu의 계정 기본 값은 비root입니다. sudo 명령어 사용에 유의하세요.
-> 
-```
-sudo vi /etc/default/grub
-```
-![](https://main.qcloudimg.com/raw/65553c2d5a01113e33b93caa93485dae.png)
-3. 다음 명령어를 실행하여 grub.cfg 파일을 다시 컴파일링 및 생성합니다.
-```
-sudo update-grub
-```
-리턴 결과는 다음 그림과 같습니다.
-![](https://main.qcloudimg.com/raw/9e685185ef67e7129ce34b11b5a16061.png)
-4. 다음 명령어를 실행하여 서버를 재시작합니다.
-```
-sudo reboot
-```
-5. 약 1분간 대기한 후 [VNC로 해당 CVM 인스턴스에 로그인](https://intl.cloud.tencent.com/document/product/213/5436#.E4.BD.BF.E7.94.A8-vnc-.E7.99.BB.E5.BD.95.E5.AE.9E.E4.BE.8B)합니다. 로그인 인터페이스는 다음과 같습니다.
-![](https://main.qcloudimg.com/raw/4893e2a2ed32bbe4241b33b468bdb8cf.png)
-6. **e**를 눌러 커널 편집 인터페이스에 진입하고 **rw single init=/bin/bash**를 붉은 테두리 부분에 추가합니다. 아래 그림 참조
-![](https://main.qcloudimg.com/raw/0879dd0c8c7a720542352a0722f9b9a7.png)
-7. **Ctrl+X**를 눌러 단일 사용자 모드를 실행 및 진입합니다. 아래 그림 참조
-![](https://main.qcloudimg.com/raw/ffc6c3cf07a9254fdcb4f6326c3daf75.png)
+
+#### CentOS 8.0
+1. grub 모드 인터페이스에서 커널을 선택합니다. 다음 이미지를 참고하십시오.
+![](https://main.qcloudimg.com/raw/a6ce701e5845141929d822635bd42b9a.png)
+2. **e**를 눌러 커널 편집 인터페이스로 들어간 뒤, ↑↓ 버튼으로 linux의 첫번째 항으로 이동해 `ro`를 `rw init=/sysroot/bin/bash`로 바꿉니다. 다음 이미지를 참고하십시오.
+![](https://main.qcloudimg.com/raw/d06effc3cab12d545fd7bc92f4577b14.png)
+3. **Ctrl+X**를 눌러 단일 사용자 모드를 실행 및 진입합니다.
+다음 그림과 같이 단일 사용자 모드로 진입하였습니다.
+![](https://main.qcloudimg.com/raw/126dcdb5916e57815c3632e9e4b24412.png)
+
+#### Ubuntu 또는 Debian
+1. grub 모드 인터페이스에서 커널을 선택합니다. 다음 이미지를 참고하십시오.
+![](https://main.qcloudimg.com/raw/c3c0be766481edf3f6521f7764f8d4cb.png)
+2. **e**를 눌러 커널 편집 인터페이스로 들어간 뒤, ↑↓ 버튼으로 linux의 첫번째 항으로 이동해 `ro`를 `quiet splash rw init=/bin/bash`로 바꿉니다. 다음 이미지를 참고하십시오.
+![](https://main.qcloudimg.com/raw/40882cf22d755c0338ea9d7c106bc280.png)
+3. **Ctrl+X**를 눌러 단일 사용자 모드를 실행 및 진입합니다.
+다음 그림과 같이 단일 사용자 모드로 진입하였습니다.
+![](https://main.qcloudimg.com/raw/df55d20b7eb087744fb6283c5124e7fc.png)
+
+#### SUSE
+1. grub 모드 인터페이스에서 커널을 선택합니다. 다음 이미지를 참고하십시오.
+![](https://main.qcloudimg.com/raw/4da4d0c5c98e4f0dbe4990e920a11daf.png)
+2. **e**를 눌러 커널 편집 인터페이스로 들어간 뒤, ↑↓ 버튼으로 linux의 첫번째 항으로 이동해 `splash` 매개변수 앞에는 `rw`를, 뒤에는 `1`을 추가합니다. 다음 이미지를 참고하십시오.
+![](https://main.qcloudimg.com/raw/013a0099ccb5c19d04441dd60ea7558b.png)
+3. **Ctrl+X**를 눌러 단일 사용자 모드를 실행 및 진입합니다.
+
+#### tlinux
+1. grub 모드 인터페이스에서 커널을 선택합니다. 다음 이미지를 참고하십시오.
+![](https://main.qcloudimg.com/raw/c497e63321b76e5cd1f0eea06f53cdb2.png)
+2. **e** 을 눌러 커널 편집 인터페이스로 이동한 뒤 ↑↓ 버튼을 사용해 **kernel**이 있는 행을 선택하고 다시 **e**를 누릅니다. 다음 이미지를 참고하십시오.
+![](https://main.qcloudimg.com/raw/06c66e0f30163e9fc7e6aafbf9463645.png)
+3. 행의 맨 끝, 즉 256M 빈칸 뒤에 `1`을 추가합니다. 다음 이미지를 참고하십시오.
+![](https://main.qcloudimg.com/raw/06efb32e3a2edb39f32e13be1ab8527f.png)
+4. **Enter**를 누르면 단일 사용자 모드로 진입합니다.
 
