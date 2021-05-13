@@ -15,20 +15,20 @@ You have [created an instance](https://cloud.tencent.com/document/product/597/54
 2. On the **Instance List** page, click the **ID/Name** of the target instance to enter the instance details page.
 3. On the instance details page, click **Topic Management** at the top and click **Create**.
 4. In the **Create Topic** window, set the number of partitions and replicas and other parameters.
-   ![](https://main.qcloudimg.com/raw/05f7dc495a90da08c2b1a5593b908c1f.png)
+   ![](https://main.qcloudimg.com/raw/b059e7bddbb29b16b9449e1dbbcf1b4d.png)
   - Name: the topic name, which cannot be changed once entered and can contain only letters, digits, "_", "-", and ".".
   - Partition Count: partition is the actual unit of storage. A topic can contain one or multiple partitions. CKafka allocates resources by partition.
   - Replica Count: the number of partition replicas, which ensure the availability of partitions. For data reliability concerns, CKafka does not support single-replica topics currently. 2 replicas are created by default.
     Replicas are counted into the number of partitions. For example, if you create 1 topic with 6 partitions, and 2 replicas, then you have a total of 1 x 6 x 2=12 partitions.
   - Allowlist: if the allowlist is enabled, the topic can be accessed only from IP addresses in the allowlist, which ensures data security. You can enable allowlist in either the **Create Topic** or **Edit Topic** window.
 5. Click **Submit** to complete topic creation.
-   ![](https://main.qcloudimg.com/raw/3c94aa49d3782429c433e239beceded4.png)
+   ![](https://main.qcloudimg.com/raw/e7bc2169b2d7985f287854f509f330c0.png)
 
 ### Viewing topic
 
 1. Click **[Instance List](https://console.cloud.tencent.com/ckafka/index)** on the left sidebar and click the **ID/Name** of the target instance to enter the instance details page.
 2. On the instance details page, click **Topic Management** to view the topic information.
-   ![](https://main.qcloudimg.com/raw/51252cbe37e61b6d8f647fb48754a0ad.png)
+   ![](https://main.qcloudimg.com/raw/6fea6378fa2710a6f8083723e1849601.png)
 
 ### Deleting topic
 
@@ -44,7 +44,7 @@ You have [created an instance](https://cloud.tencent.com/document/product/597/54
 1. On the **[Instance List](https://console.cloud.tencent.com/ckafka/index)** page, click the **ID/Name** of the target instance to enter the instance details page.
 2. On the instance details page, select **Topic Management**.
 3. In the **Operation** column, click **Edit** > **Show advanced configuration** and set the following parameters:
-   ![](https://main.qcloudimg.com/raw/8f81b750e5bac17a011c8c531a579129.png)
+   ![](https://main.qcloudimg.com/raw/52c8c0c4e99edd52247c1152129e5ddd.png)
 
 The parameters are described as follows:
 
