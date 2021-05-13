@@ -4,7 +4,7 @@
 <tbody>
 <tr>
 <td>Security enhancement</td>
-<td><li>You can now use security groups to control instance access.<li>Security groups control both public and private network access of instances in Beijing, Guangzhou, Shanghai, and Chengdu, but only the private network access of instances in other regions.<li>The security group of an RO group can be different from those of the read-only instances in the RO group.</td>
+<td><li>You can now use security groups to set instance access policy.<li>Security groups support both public and private network access of instances in Beijing, Guangzhou, Shanghai, and Chengdu, but only the private network access of instances in other regions.<li>The security group of an RO group can be different from those of the read-only instances in the RO group.</td>
 <td>2021-04</td><td><a href="https://intl.cloud.tencent.com/document/product/409/40112" target="_blank">Managing Security Groups</a></td></tr>
 <tr>
 <td>Instance recycle bin</td>
@@ -37,7 +37,7 @@
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr>
 <tbody><tr>
 <td>PostgreSQL v11.8 is now available</td>
-<td>Combined with optimized kernel and a complete set of management services, TencentDB for PostgreSQL v11.8 provides a more stable enterprise-level database service that is easier to deploy in more areas, helping you upgrade your business.</td>
+<td>Combined with optimized kernel and a complete set of management services, TencentDB for PostgreSQL v11.8 provides a more stable enterprise-grade database service that is easier to deploy in more areas, helping you upgrade your business.</td>
 <td>2020-09</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/409/7550" target="_blank">Purchasing Instances</a></td></tr>
 <tr>
