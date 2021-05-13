@@ -34,7 +34,7 @@ back-to-originリクエストのURLをオリジンサーバーと一致するURL
 ## 設定例：
 
 アクセラレーションドメイン名`www.test.com`の** back-to-origin URL書き換え設定**を行う場合は次となります。
-![](https://main.qcloudimg.com/raw/4797e184e62c1abd5ed3cf1d1091f3fb.png)
+![](https://main.qcloudimg.com/raw/c255f4e4643a15e2e47a29a608a9fd01.png)
 
 実際のback-to-originの状況は次のとおりです。
 
