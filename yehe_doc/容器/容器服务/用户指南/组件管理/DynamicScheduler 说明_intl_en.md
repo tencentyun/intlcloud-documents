@@ -152,7 +152,7 @@ spec:
         interval: 30s
         rules:
         - record: cpu_usage_active
-          expr: 100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[30s])) * 100)
+         expr: 100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[30s])) * 100)
         - record: mem_usage_active
           expr: 100*(1-node_memory_MemAvailable_bytes/node_memory_MemTotal_bytes)
       - name: cpu-usage-5m
@@ -196,6 +196,14 @@ rule_files:
 2. Copy the configuration of rules to a file (such as dynamic-scheduler.yaml), place the file under `/etc/prometheus/rules/` of the above Prometheus container.
 3. Reload Prometheus server to obtain the metrics needed by Dynamic Scheduler from Prometheus.
 
+>?Normally, the above Prometheus configuration file and rules configuration file are stored via configmap and then mounted to the Prometheus server container. Therefore, you only need to modify the relevant configmap.
+
+#### Cloud native monitoring via Prometheus
+1. Log in to the TKE console and click **[Cloud Native Monitoring](https://console.cloud.tencent.com/tke2/prometheus)** in the left sidebar to go to the **Cloud Native Monitoring** page.
+2. Create a cloud native monitoring RPOM instance under the same VPC as the target cluster, and associate it with the user cluster.
+3. After associating the instance with a native managed cluster, go to the user cluster to check that node-exporter has been installed on each node.
+4. Set the Prometheus aggregation rules. The rule content is the same as the aggregation rules configured in [Self-built Prometheus monitoring services](#rules).
+
 ```yaml
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
@@ -207,7 +215,7 @@ spec:
         interval: 30s
         rules:
         - record: cpu_usage_active
-          expr: 100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[30s])) * 100)
+         expr: 100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[30s])) * 100)
         - record: mem_usage_active
           expr: 100*(1-node_memory_MemAvailable_bytes/node_memory_MemTotal_bytes)
       - name: cpu-usage-5m
@@ -236,13 +244,7 @@ spec:
           expr: avg_over_time(mem_usage_active[5m])
 ```
 
->?Normally, the above Prometheus configuration file and rules configuration file are stored via configmap and then mounted to the Prometheus server container. Therefore, you only need to modify the relevant configmap.
 
-#### Cloud native monitoring via Prometheus
-1. Log in to the TKE console and click **[Cloud Native Monitoring](https://console.cloud.tencent.com/tke2/prometheus)** in the left sidebar to go to the **Cloud Native Monitoring** page.
-2. Create a cloud native monitoring RPOM instance under the same VPC as the target cluster, and associate it with the user cluster.
-3. After associating the instance with a native managed cluster, go to the user cluster to check that node-exporter has been installed on each node.
-4. Set the Prometheus aggregation rules. The rule content is the same as the aggregation rules configured in [Self-built Prometheus monitoring services](#rules).
 
 
 
