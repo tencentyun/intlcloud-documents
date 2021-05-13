@@ -8,7 +8,7 @@ Daily billing cycle overview:
 
 VOD billable items:
 
-- **Video storage**: the storage space taken up by the source video files and transcoded video files uploaded to Tencent Cloud VOD. This service is charged based on storage capacity and storage period.
+- **Video storage**: the storage space taken up by the source video files uploaded to Tencent Cloud VOD and transcoded video files generated. This service is charged based on storage capacity and storage period.
 - **Video transcoding**: basic transcoding of source video files stored in Tencent Cloud VOD. This service is charged according to specification and duration of output files. A duration less than 1 minute is counted as 1 minute. Each transcoding task is billed only once according to the specification. No fees will be charged for failed transcoding.
 - **Tencent Extreme Speed High Definition (TESHD)**: transcoding the video source files stored in the VOD into HD or FHD in TESHD. This service is charged according to specifications and durations of output files. A duration less than 1 minute will be calculated as 1 minute. Each transcoding task is billed only once according to the specification. No fees will be charged for failed transcoding.  
 - **Video editing**: using[Video Composition](https://intl.cloud.tencent.com/document/product/266/34127) and [Video Editing](https://intl.cloud.tencent.com/document/product/266/34126)。APIs to process source files stored in the VOD. Fees are calculated according to specifications and durations of output files. A duration less than 1 minute will be counted as 1 minute. Each trancoding task is only charged once according to the specification. No fees will be charged for failed transcoding.  
