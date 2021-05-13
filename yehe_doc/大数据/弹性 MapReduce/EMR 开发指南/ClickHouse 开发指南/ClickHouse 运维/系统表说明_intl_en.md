@@ -528,7 +528,7 @@ The `system.tables` table is used to implement `SHOW TABLES` queries.
 
 ### system.zookeeper
 
-This system table can exist if ZooKeeper is not configured. It allows reading data from the ZooKeeper cluster defined in the configuration. The query must have a `path` equality condition in the `WHERE` clause. This is the path to the descendants in ZooKeeper from which you want to get data.
+This system table can't exist if ZooKeeper is not configured. It allows reading data from the ZooKeeper cluster defined in the configuration. The query must have a `path` equality condition in the `WHERE` clause. This is the path to the descendants in ZooKeeper from which you want to get data.
 
 The `SELECT * FROM system.zookeeper WHERE path = '/clickhouse'` query outputs data of all descendants on the `/clickhouse` node. To output data of all root nodes, write the path `='/'`. If the path specified in `path` does not exist, an exception will be thrown.
 
