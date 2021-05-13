@@ -132,7 +132,7 @@ Log in to the [CLS console](https://console.cloud.tencent.com/cls) and [create a
 </tbody></table>
 
 
-For more features, such as real-time log search, log shipping and consumption, see the [CLS documents](https://cloud.tencent.com/document/product/614), and log in to the [CLS console](https://console.cloud.tencent.com/cls) to use them.
+For more features, such as real-time log search, log shipping and consumption, see the [CLS documents](https://intl.cloud.tencent.com/document/product/614), and log in to the [CLS console](https://console.cloud.tencent.com/cls) to use them.
 
 
 ### Real-time search sample
