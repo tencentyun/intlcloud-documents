@@ -55,7 +55,7 @@ Possible reasons and troubleshooting methods include:
 
 ### Why did transcoding fail?
 
-Transcoding failure refers to a failure that occurs during any subtask. This includes transcoding, screencapturing, watermarking, video audit, content recognition and content analysis.
+Transcoding failure refers to a failure that occurs during any subtask. This includes transcoding, screencapturing, watermarking,  content recognition and content analysis.
 You can determine the error type based on the returned error code and message, as shown below:
 - Incorrect source file metadata or unsupported format.
 - Failed screencapturing (due to lack of video stream), unknown errors, etc.
