@@ -1,6 +1,6 @@
 
 Superplayer is the player feature provided by VOD, which allows you to specify the adaptive bitrate streaming output, image sprites as thumbnails, and definition through relevant configuration items. It also supports preview in the console. For more information, please see [Superplayer Preview](https://intl.cloud.tencent.com/document/product/266/33896).
->!For the sake of security, only the `default` template in VOD currently does not require to enable key hotlink protection for the domain name, while other templates can take effect only after key hotlink protection is enabled. If you have not set key hotlink protection, click [Domain Management](https://console.cloud.tencent.com/vod/distribute-play/domain) to enable it.
+>!For the sake of security, only the `default` template in VOD does not require to enable key hotlink protection for the domain name, while other templates can take effect only after key hotlink protection is enabled. If you have not set key hotlink protection, click [Domain Management](https://console.cloud.tencent.com/vod/distribute-play/domain) to enable it.
 
 
 ## Preset Configuration
