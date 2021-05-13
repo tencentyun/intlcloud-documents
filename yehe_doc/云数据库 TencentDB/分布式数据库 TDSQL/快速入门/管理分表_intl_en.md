@@ -14,7 +14,7 @@ Query OK,0 rows affected(0.15 sec)
 
 Insert data into the table just created. The sample code is as follows:
 ```
-mysql> insert into test1(id,name);
+mysql> insert into test1(id,name) VALUES(1,'test');
 Query OK,1 rows affected(0.08 sec)
 mysql> insert into test3(name,addr) values('example','shenzhen');
 ERROR 7013 (HY000): Proxy ERROR:get_shardkeys return error
