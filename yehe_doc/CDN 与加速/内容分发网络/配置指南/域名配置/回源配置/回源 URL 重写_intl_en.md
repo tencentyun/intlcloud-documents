@@ -34,7 +34,7 @@ You can click **Add Rule** to add rewrite rules as needed.
 ## Configuration Samples:
 
 Suppose the **Origin URL Rewrite Configuration** of the acceleration domain name `www.test.com` is as follows:
-
+![](https://main.qcloudimg.com/raw/c255f4e4643a15e2e47a29a608a9fd01.png)
 
 The origin-pull URL will be re-written as follows:
 - In case `www.test.com/images/1.jpg` is requested, the request hits the first and third rule. As rules are executed from the bottom to top, the URL will be re-written to `www.test.com/index.html`.
