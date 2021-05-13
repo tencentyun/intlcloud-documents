@@ -8,7 +8,7 @@ Yes. Log in to the [VOD console](https://console.cloud.tencent.com/vod/license),
 
 <span id="que3"></span>
 ### 3. Can I change the PackageName on Android and BundleID on iOS for an official license?
-On the current version, you **cannot**change the PackageName and BundleID for an official license. This capability will be available on future versions.
+In the current version, you **cannot** change the PackageName and BundleID for an official license. This will be available in future versions.
 
 <span id="que4"></span>
 ### 4. Can one license be used for multiple applications simultaneously?
