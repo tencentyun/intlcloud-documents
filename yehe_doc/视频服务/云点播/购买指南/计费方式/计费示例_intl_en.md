@@ -1,6 +1,6 @@
 ## VOD Traffic Usage Estimation
 ### Example
-User A, who runs a video website platform, needs to estimate the traffic consumption for accelerated playback of a video via VOD console. The details are as follows:
+User A, who runs a video website platform, needs to estimate the traffic consumption for accelerated playback of a video via VOD. The details are as follows:
 
 - Viewers: 100
 - Duration: 1 hour
