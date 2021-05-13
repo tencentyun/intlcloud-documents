@@ -44,17 +44,21 @@
 ### 扩容文件系统
 >?
 >- 本文使用的 Linux 云服务器操作系统以 CentOS 7.8 为例，不同版本操作系统步骤有一定区别，请您结合实际情况进行操作。
->- 本文以扩展原有文件系统为例，即将扩容容量划分至 `/dev/vdb` 下。更多操作场景请参见 [扩展分区及文件系统（Linux）](https://intl.cloud.tencent.com/zh/document/product/362/39999)。
+>- 本文以扩展原有文件系统为例，即将扩容容量划分至 `/dev/vdb` 下。更多操作场景请参见 [扩展分区及文件系统（Linux）](https://intl.cloud.tencent.com/document/product/362/39999)。
 >
 1. 执行以下命令，扩容 ext 文件系统。
 ```
 resize2fs /dev/vdb
-​``` 返回结果如下图所示：
+​``` 
+返回结果如下图所示：
+
 ![](https://main.qcloudimg.com/raw/181bba4f10d3d5b48e2cbf331121affd.png)
 2. 执行以下命令，查看扩容结果。
 ```
 df -TH
-``` 返回结果如下图所示，则表示已扩容成功。
+``` 
+返回结果如下图所示，则表示已扩容成功。
+
 ![](https://main.qcloudimg.com/raw/7bb79ee4eca78a6ae77d2747967c0647.png)
 
 
@@ -62,5 +66,3 @@ df -TH
 ## 相关文档
 - [扩容场景介绍](https://intl.cloud.tencent.com/document/product/362/31600)
 - [快照概述](https://intl.cloud.tencent.com/document/product/362/31638)
-
-```
