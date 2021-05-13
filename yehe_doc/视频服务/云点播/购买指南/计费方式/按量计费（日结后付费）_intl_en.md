@@ -166,4 +166,4 @@ Tencent VOD traffic is billed on a daily basis with a tiered pricing model. The 
 -   VOD traffic fee on January 1 = 0.038 (USD/GB) * 550 (GB)=14.85 (USD)
 
 ## Remarks
-If you have a large business volume with storage capacity greater than 1 PB or daily traffic consumption over 10 TB, and the daily billing cycle cannot meet your needs, you can contact sales more flexible and cost-effective billing options.
+If you have a large business volume with storage capacity greater than 1 PB or daily traffic consumption over 10 TB, and the daily billing cycle cannot meet your needs, you can contact sales for more flexible and cost-effective billing options.
