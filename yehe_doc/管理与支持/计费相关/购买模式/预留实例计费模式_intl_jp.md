@@ -10,12 +10,12 @@ CVM
 
 - 予算とリソース状況に応じて、リザーブドインスタンスの種類（モデルと構成）、支払いタイプ、リージョン、有効期間および購入数量を選択できます。
 
-- 現在、Tencent Cloud APIまたはコンソールを介してリザーブドインスタンスを購入できます。詳細については、CVM製品の説明をご参照ください。
+- 現在、Tencent Cloud APIまたはコンソールを介してリザーブドインスタンスを購入できます。詳細については、[CVM製品の説明](https://intl.cloud.tencent.com/document/product/213)をご参照ください。
 
 - リザーブドインスタンスは返金不可です。
 
 **リザーブドインスタンスがサポートするインスタンスのタイプと価格：**
-リザーブドインスタンスがサポートするインスタンスタイプ、マッチングルールおよび価格設定の説明については、CVM製品の説明をご参照ください。
+リザーブドインスタンスがサポートするインスタンスタイプ、マッチングルールおよび価格設定の説明については、[CVM製品の説明](https://intl.cloud.tencent.com/document/product/213)をご参照ください。
 リザーブドインスタンスがサポートするアベイラビリティーゾーンとインスタンスタイプの詳細については、[価格設定センター](https://intl.cloud.tencent.com/pricing/cvm)で、またはAPI[DescribeReservedInstancesOfferings](https://intl.cloud.tencent.com/document/product/213/30575)を使用して確認できます。 
 [マッチングルール](https://intl.cloud.tencent.com/document/product/213/37265)および他の説明については、[リザーブドインスタンスの概要](https://intl.cloud.tencent.com/document/product/213/30571)をご参照ください。
 CVMはリザーブドインスタンスをサポートします。価格情報については、[リザーブドインスタンス価格の概要（Linux）](https://intl.cloud.tencent.com/document/product/213/30619)をご参照ください。 
