@@ -10,9 +10,9 @@ You can apply for a trial license to try out various features available in the U
 3. Click **Create for Free**.
 
 ### Step 2. Save the trial license
-After the free trial license is successfully created, the page will display the information of the generated license. You need to pass in two parameters `Key` and `LicenseUrl` during initial SDK configuration. Please store the following information properly.
+After the free trial license is successfully created, the page will display the information of the generated license. You need to pass in two parameters `Key` and `LicenseUrl` during initial SDK configuration. Please save the information properly.
 
-## Trial License Renewal
+## Renewing a Trial License
 You can check the validity period of the trial license in the [VOD console](https://console.cloud.tencent.com/vod/license), which is up to 28 days. Before the trial license expires in 14 days after application, you need to renew it by following the steps below:
 ### Step 1. Apply for license renewal
 Go to the **[UGSV SDK License](https://console.cloud.tencent.com/vod/license/video)** page and click **Renew** in the top-right corner of the trial license section.
@@ -21,7 +21,7 @@ Go to the **[UGSV SDK License](https://console.cloud.tencent.com/vod/license/vid
 After the pop-up window prompts that the renewal is successful, the **Renew** button in the top-right corner will disappear, indicating that the trial license is renewed for 14 days.
 
 
-## Trial License View
+## Viewing a Trial License
 After the license is configured successfully, wait for a while (subject to the network conditions) and then you can view the license information by calling the following methods:
 
 - iOS:
@@ -33,7 +33,7 @@ NSLog(@"%@", [TXUGCBase getLicenceInfo]);
 TXUGCBase.getInstance().getLicenceInfo(context);
 ```
 
-## License Usage
+## Using a License
 Call the following methods to configure the license before calling the relevant APIs of the SDK:
 
 - For iOS, we recommend you add the following in `[AppDelegate application:didFinishLaunchingWithOptions:]`:
