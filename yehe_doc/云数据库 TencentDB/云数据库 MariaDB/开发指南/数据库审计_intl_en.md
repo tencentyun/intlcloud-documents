@@ -21,7 +21,7 @@ You may face the following security risks when using databases, which calls for 
 **Audit rule:** a rule is a collection of behaviors that need to be audited as defined in an audit policy. A rule consists of rule parameters, each of which defines a specific characteristic for behavior matching.
 
 ### Capabilities and restrictions
-TencentDB provides a database audit feature. Audit logs are retained for 15 days by default to help you perform risk management on database access and improve database security.
+TencentDB provides a database audit feature. Audit logs are retained for 7 days by default to help you perform risk management on database access and improve database security.
 
 ## Audit Operations
 
