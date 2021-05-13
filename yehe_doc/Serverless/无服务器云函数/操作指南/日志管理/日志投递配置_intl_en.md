@@ -1,10 +1,16 @@
+<dx-alert infotype="explain" title="">
+If your function was created before January 29, 2021 and has not been migrated, but you need to use more log analysis features, please see [Log Delivery Configuration (Legacy)](https://intl.cloud.tencent.com/document/product/583/34876) to deliver function invocation logs to Cloud Log Service (CLS).
+</dx-alert>
 
 
->? If your function was created before January 29, 2021, but you need to deliver logs, please see [Connecting SCF Logs to CLS](https://intl.cloud.tencent.com/document/product/583/34876).
 
-SCF was fully connected to [CLS](https://intl.cloud.tencent.com/document/product/614) on January 29, 2021, invocation logs of newly created functions have been delivered to CLS since then, and logs can be output in real time.
+SCF was fully connected to [Tencent Cloud CLS](https://intl.cloud.tencent.com/document/product/614) starting from January 29, 2021. After then, the invocation logs of newly created functions will be delivered to CLS, and logs can be output in real time. The existing functions are gradually migrated by regions. For more information, please see [SCF Log Service Change Notification](https://intl.cloud.tencent.com/document/product/583/39328).
+
 This document describes the two log delivery methods of [default delivery](#MRTD) and [custom delivery](#ZDYTD) provided by SCF and how to configure them.
 
+## Permission Description
+
+To view the logs normally, please ensure that the sub-account at least has the read-only permission of CLS `QcloudCLSReadOnlyAccess`. For how the root account grant permissions for the sub-account, see [Authorization Management](https://intl.cloud.tencent.com/document/product/598/10602).
 
 
 ## Use Limits
@@ -17,22 +23,22 @@ Delivering function invocation logs to CLS has the following limits:
 Please pay attention to whether the CLS configuration can meet your business needs. Exceeding the limits may cause log write failures.
 
 ## Directions
-<span id ="MRTD"></span>
+[](id:MRTD)
 
 ### Default delivery
 
-When creating a function, if you don't specify the destination topic for log delivery, the default log delivery capability will be used. For default log delivery, SCF will activate the CLS service for you and deliver the function invocation logs to the log topic under the SCF-specific logset, which are prefixed with `SCF_logtopic` and `SCF_logset` respectively and will be created automatically if not existing. Function invocation logs will be retained for 7 days by default, and you can view and manage them in the [CLS console](https://console.cloud.tencent.com/cls/logset).
+When creating a function, if you don't specify the destination topic for log delivery, the default log delivery capability will be used. For default log delivery, SCF will activate the CLS service for you and deliver the function invocation logs to the log topic under the SCF-specific logset. The SCF-specific logset and log topic are prefixed with `SCF_logset` and `SCF_logtopic` respectively, and will be created automatically if they do not exist. Function invocation logs will be retained for 7 days by default, and you can view and manage them on the [CLS console](https://console.cloud.tencent.com/cls/logset).
 
-
-
->! CLS is billed separately, and the SCF-specific log topic will consume the free tier of CLS. For more information, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/614/37509).
+<dx-alert infotype="notice" title="">
+CLS is billed separately, and the SCF-specific log topic will consume the free tier of CLS. For more information, please see [CLS Billing Overview](https://intl.cloud.tencent.com/document/product/614/37509).
+</dx-alert>
 
 
 
 #### Configuring CLS
 
 1. Log in to the SCF console and select **[Function Service](https://console.cloud.tencent.com/scf/list)** on the left sidebar.
-2. Select the region where to create a function at the top of the page and click **Create** to enter the function creation process.
+2. Choose a region at the top of the **Function Service** page and click **Create** to start creating a function.
 3. Select **Template** or **Custom** to create a function. This document takes **Custom** as an example.
 4. In **Advanced Configuration**, select **Default publishing** in **Log Configuration** as shown below:
 ![](https://main.qcloudimg.com/raw/3954432a56fdc393ec4d0a72f663854f.png)
@@ -43,7 +49,7 @@ When creating a function, if you don't specify the destination topic for log del
 
 You can click the logset ID in **Log Configuration** in **Function Configuration** to enter the [CLS console](https://console.cloud.tencent.com/cls/logset) to view and manage logs. The SCF-specific logset is marked with the word `SCF` in the CLS console. If you need to persistently store, deliver, or consume logs or monitor and set alarms on log content, you can complete the configuration in the CLS console.
 
-<span id="ZDYTD"></span>
+[](id:ZDYTD)
 
 
 ### Custom delivery
@@ -53,7 +59,7 @@ When creating a function, if you need to specify the destination log topic to de
 
 #### Creating logset and log topic
 
-Log in to the [CLS console](https://console.cloud.tencent.com/cls) and [create a logset and log topic](https://intl.cloud.tencent.com/document/product/614/31592). This document uses the creation of the `SCF-test` logset and log topic in Guangzhou as an example as shown below:
+Log in to the [CLS console](https://console.cloud.tencent.com/cls) and [create a logset and log topic](https://intl.cloud.tencent.com/document/product/614/31592). This document uses the creation of the `SCF-test` logset and log topic in Guangzhou as an example, as shown below:
 >!For the logset region, please select the region where the SCF service is located. Cross-region log push is not supported currently.
 >
 ![](https://main.qcloudimg.com/raw/f3ffd10aaaeb6abc2a492e5840339c9f.png)
@@ -61,9 +67,9 @@ Log in to the [CLS console](https://console.cloud.tencent.com/cls) and [create a
 #### Configuring CLS
 
 1. Log in to the SCF console and select **[Function Service](https://console.cloud.tencent.com/scf/list)** on the left sidebar.
-2. Select the region where to create a function at the top of the page and click **Create** to enter the function creation process.
+2. Choose a region at the top of the **Function Service** page and click **Create** to start creating a function.
 3. Select **Template** or **Custom** to create a function. This document takes **Custom** as an example.
-4. In **Advanced Configuration**, select **Custom publishing** in **Log Configuration**, and select the logset and log topic already created for this function. This document uses `SCF-test` as an example as shown below:
+4. In **Advanced Configuration**, select **Custom publishing** in **Log Configuration**, and select the logset and log topic already created for this function. This document uses `SCF-test` as an example, as shown below:
 ![](https://main.qcloudimg.com/raw/53a703aee35dd6ed7967d981b139aff0.png)
 5. Click **Complete**.
 
@@ -100,72 +106,72 @@ The configuration method in step 4 is only valid for scenarios where there are f
 <tbody><tr>
 <td>SCF_FunctionName</td>
 <td>text</td>
-<td>Function name.</td>
+<td>Function name</td>
 </tr>
 <tr>
 <td>SCF_Namespace</td>
 <td>text</td>
-<td>Function namespace.</td>
+<td>Function namespace</td>
 </tr>
 <tr>
 <td>SCF_StartTime</td>
 <td>long</td>
-<td>Invocation start time.</td>
+<td>Invocation start time</td>
 </tr>
 <tr>
 <td>SCF_LogTime</td>
 <td>long</td>
-<td>Log generation time.</td>
+<td>Log generation time</td>
 </tr>
 <tr>
 <td>SCF_RequestId</td>
 <td>text</td>
-<td>Request ID.</td>
+<td>Request ID</td>
 </tr>
 <tr>
 <td>SCF_Duration</td>
 <td>long</td>
-<td>Function execution duration.</td>
+<td>Function execution duration</td>
 </tr>
 <tr>
 <td>SCF_Alias</td>
 <td>text</td>
-<td>Alias.</td>
+<td>Alias</td>
 </tr>
 <tr>
 <td>SCF_Qualifier</td>
 <td>text</td>
-<td>Version.</td>
+<td>Version</td>
 </tr>
 <tr>
 <td>SCF_MemUsage</td>
 <td>double</td>
-<td>Function runtime memory.</td>
+<td>Function runtime memory</td>
 </tr>
 <tr>
 <td>SCF_Level</td>
 <td>text</td>
-<td>Log4J log level. Default value: INFO.</td>
+<td>Log4J log level. Default value: INFO</td>
 </tr>
 <tr>
 <td>SCF_Message</td>
 <td>text</td>
-<td>Log content.</td>
+<td>Log content</td>
 </tr>
 <tr>
 <td>SCF_Type</td>
 <td>text</td>
-<td>Log type. Platform: platform log, Custom: user log.</td>
+<td>Log type. Platform: platform log, Custom: user log</td>
 </tr>
 <tr>
 <td>SCF_StatusCode</td>
 <td>long</td>
-<td>Function execution <a href="https://intl.cloud.tencent.com/document/product/583/35311">status code</a>.</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/583/35311">Status code</a> of function execution</td>
 </tr>
 <tr>
 <td>SCF_RetryNum</td>
 <td>long</td>
-<td>Number of retries.</td>
+<td>Number of retries</td>
 </tr>
 </tbody></table>
 

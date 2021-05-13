@@ -1,10 +1,16 @@
+<dx-alert infotype="explain" title="">
+若您的函数于2021年01月29日前创建且尚未进行迁移，如需使用更多日志分析功能，则请参见 [日志投递配置（旧）](https://intl.cloud.tencent.com/document/product/583/34876)，将函数调用日志投递到日志服务 CLS 使用。
+</dx-alert>
 
 
->? 若您的函数于2021年01月29日前创建，且需进行日志投递，则请参见 [日志投递教程（旧）](https://intl.cloud.tencent.com/document/product/583/34876)。
 
-云函数 SCF 于2021年01月29日起全量接入腾讯云 [日志服务 CLS](https://intl.cloud.tencent.com/document/product/614)，在此之后创建的函数调用日志将投递至 CLS，并支持日志实时输出。
+云函数 SCF 于2021年01月29日起全量接入腾讯云 [日志服务 CLS](https://intl.cloud.tencent.com/document/product/614)，在此之后创建的函数调用日志将投递至 CLS，并支持日志实时输出，在此日期前创建的函数正在按地域逐渐进行迁移，详情可参见 [云函数日志服务变更说明](https://intl.cloud.tencent.com/document/product/583/39328)。
+
 本文介绍云函数 SCF 所提供的 [默认投递](#MRTD) 和 [自定义投递](#ZDYTD) 两种日志服务投递方式及其配置方法。
 
+## 权限说明
+
+为保证日志正常查看，子账号下至少拥有日志服务 CLS 只读权限 `QcloudCLSReadOnlyAccess`。主账号为子账号授权方法请参见 [授权管理](https://intl.cloud.tencent.com/document/product/598/10602)。
 
 
 ## 限制说明
@@ -17,15 +23,15 @@
 请关注日志服务配置是否能够满足业务需求，超限可能会导致日志写入失败。
 
 ## 操作步骤
-<span id ="MRTD"></span>
+[](id:MRTD)
 
 ### 默认投递
 
 新建函数时，如不指定日志投递主题，将会使用默认投递日志能力。默认投递日志时，SCF 将会为您开通日志服务并将函数调用日志投递至 SCF 专用日志集下的日志主题中，SCF 专用日志集和日志主题分别以 `SCF_logset` 和 `SCF_logtopic` 为前缀命名，如不存在将自动创建。函数调用日志默认保留7天，您可在 [日志服务控制台](https://console.cloud.tencent.com/cls/logset) 查看及管理。
 
-
-
->! 日志服务为独立计费产品，SCF 专用日志主题会占用日志服务免费额度，详情可参见 [日志服务计费详情](https://intl.cloud.tencent.com/document/product/614/37509)。
+<dx-alert infotype="notice" title="">
+日志服务为独立计费产品，SCF 专用日志主题会占用日志服务免费额度，详情可参见 [日志服务计费详情](https://intl.cloud.tencent.com/document/product/614/37509)。
+</dx-alert>
 
 
 
@@ -43,7 +49,7 @@
 
 您可单击函数配置中“日志配置”的日志集 ID，前往 [日志服务控制台](https://console.cloud.tencent.com/cls/logset) 查看和管理日志。SCF 专用日志集在日志服务控制台已用 `SCF` 字样进行标记，如有日志持久化存储、投递或消费、对日志内容进行监控告警等需要，均可在日志服务控制台完成配置。
 
-<span id="ZDYTD"></span>
+[](id:ZDYTD)
 
 
 ### 自定义投递
