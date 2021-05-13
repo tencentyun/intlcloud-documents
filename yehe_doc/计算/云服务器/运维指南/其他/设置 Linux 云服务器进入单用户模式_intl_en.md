@@ -1,125 +1,69 @@
-## Scenario
-
-Linux users sometimes need to boot into single user mode to perform special operations, such as password management or sshd repair. This article describes how to boot into single user mode in common Linux distributions.
+## Overview
+For operations like password management, SSHD fixing and maintenance before disk mounting, Linux users need to enter the single user mode. This document describes how to boot into this mode in mainstream Linux distributions.
 
 ## Directions
-
-### Determining your Linux distribution
-
-Different distributions of Linux use different methods to boot into single user mode, so be sure to follow the instructions for your Linux distribution.
- - [Process for CentOS 6](#configCentOS6).
- - [Process for CentOS 7](#configCentOS7).
- - [Process for Ubuntu](#configUbuntu).
-
-<span id="configCentOS6"></span>
-### CentOS 6
-
-> CentOS 6 uses GRUB. The following process uses CentOS 6.9 as an example. Specific steps may vary slightly depending on the version of the operating system.
-> 
-1. Log in to the CVM.
-2. Run the following command to open `/etc/grub.conf`.
-```
-vi /etc/grub.conf
-```
-3. Press **i** to enter edit mode.
-4. Find “GRUB_TIMEOUT”, the waiting time before the default entry is booted, and modify its value based on your needs.
-The default value of “GRUB_TIMEOUT” is 5 seconds. In order to avoid missing the boot interface because the waiting time is too short, we recommend you change it to 60s or longer.
-> This setting affects the system start time. After you complete the tasks that require single user mode, change it back to the default value.
+1. On the CVM console, choose VNC to log in to a CVM. For detailed directions, see [Logging into Linux Instances via VNC](https://intl.cloud.tencent.com/document/product/213/32494).
+2. In the VNC login window, select **Send CtrlAltDel** in the upper-left corner, press **Ctrl-Alt-Delete**, and click **OK** in the prompt box.
+3. When a connection failure message appears, press Up or Down arrow to refresh the page and hovers the cursor over the `grub` menu, as shown below.
+![](https://main.qcloudimg.com/raw/350187ce0a771d00e6d54e929291ebae.png)
+4. Press **c** to enter the grub rescue mode.
+5. Perform the steps that suit your operating system version.
+#### CentOS 6.x
+1. Select a kernel in the grub mode, as shown below.
+![](https://main.qcloudimg.com/raw/5abc9f57184cc74bba927513fb1c4a88.png)
+2. Press **e** to enter the kernel edit page, choose the **kernel** line using Up or Down arrow, and press **e** again, as shown below.
+![](https://main.qcloudimg.com/raw/1a596a48df87d1d619e415d8d5b0cb65.png)
+3. Enter **single** at the end of line, as shown below.
+![](https://main.qcloudimg.com/raw/e1f74a4ce211a34301c4f74ffcc790b8.png)
+4. Press **Enter**, and then press **b** to boot the selected command line and enter single user mode, as shown below.
+![](https://main.qcloudimg.com/raw/b379937bfc15e93f0823ec50095d1dc6.png)
+The following figure indicates that the system boots into single user mode.
+![](https://main.qcloudimg.com/raw/517c4d2c24864f3fc8f5002bd1e2c2a1.png)
+>?You can run the `exec /sbin/init` command to exit the single user mode.
 >
-5. Press **Esc** to exit edit mode, enter **:wq**, and press **Enter** to
-save your file and exit the VI editor.
-6. Run the following command to reboot the server.
-```
-reboot
-```
-7. Wait for one minute and [use VNC to log into your CVM instance](https://intl.cloud.tencent.com/document/product/213/32494), as shown below:
-![](https://main.qcloudimg.com/raw/82a82601e1545274c4f61c8f34f5c100.png)
-8. Press any key to enter the menu shown below:
-![](https://main.qcloudimg.com/raw/6336b8fd579799108a5765b5b58e2a21.png)
-9. Press **e** to enter the kernel editing page and enter **single**, as shown below:
-![](https://main.qcloudimg.com/raw/14168276d81a398702e80f9c83186869.png)
-10. Press **Enter**, as shown below:
-![](https://main.qcloudimg.com/raw/149eeb5776329a5db1ea42ae20cd316d.png)
-11. In the interface shown below, press **b** to enter single user mode.
-![](https://main.qcloudimg.com/raw/2d6d53de84cd78b3e88319b8538cec8e.png)
-12. Run the following command to exit single user mode.
-```
-exec /sbin/init
-```
 
-<span id="configCentOS7"></span>
-### CentOS 7
-
->Unlike CentOS 6, CentOS 7 and above use GRUB 2. The following process uses CentOS 7.5 as an example. Specific steps may vary slightly depending on the version of the operating system.
-> 
-1. Log in to the CVM.
-2. Run the following command to open `/etc/default/grub`.
-```
-vi /etc/default/grub
-```
-3. Press **i** to enter edit mode.
-4. Find “GRUB_TIMEOUT”, the default boot item wait time, and modify its value based on your needs, as shown below:
-The default value of “GRUB_TIMEOUT” is 5 seconds. In order to avoid missing the boot interface because the waiting time is too short, we recommend you change it to 60s or longer.
-> This setting affects the system start time. After you complete the tasks that require single user mode, change it back to the default value.
+#### CentOS 7.x
+1. Select a kernel in the grub mode, as shown below.
+![](https://main.qcloudimg.com/raw/2ddc7d1e4416d9fa763922e23b59d580.png)
+2. Press **e** to enter the kernel edit page. Locate the line started with “linux16” using Up or Down arrow and replace `ro` with `rw init=/bin/bash` or `/usr/bin/bash`, as shown below.
+![](https://main.qcloudimg.com/raw/1b861ba0ecee1cd82da4364523e8a1c6.png)
+3. Press **Ctrl+X** to boot into the single user mode, as shown below:
+The following figure indicates that the system boots into the single user mode.
+![](https://main.qcloudimg.com/raw/fbe8cfcf43aa4c914882edc4c3ee5faf.png)
+>? You can run the `exec /sbin/init` command to exit the single user mode.
 >
-![](https://main.qcloudimg.com/raw/5ee3b8d8a4609ca846e3c1e929608b34.png)
-5. Press **Esc** to exit edit mode, enter **:wq**, and press **Enter** to
-save your file and exit the VI editor.
-6. Run the following command to recompile and generate `grub.cfg`.
-```
-grub2-mkconfig -o /boot/grub2/grub.cfg
-```
-The following appears:
-![](https://main.qcloudimg.com/raw/62da54e985f2f78efce045bb2da1e5e5.png)
-7. Run the following command to reboot the server.
-```
-reboot
-```
-8. Wait for one minute and [use VNC to log into your CVM instance](https://intl.cloud.tencent.com/document/product/213/32494), as shown below:
-![](https://main.qcloudimg.com/raw/95dba957dea2da680ffca516dc2b62b3.png)
-9. Press **e** to enter the kernel editing interface and add **init=/bin/sh** to the red box area as shown below:
-![](https://main.qcloudimg.com/raw/81173f4c723809f1b733a51a2eb002d5.png)
-7. Press **Ctrl+X** to start and enter single user mode, as shown below:
-![](https://main.qcloudimg.com/raw/b9004e2a1d58a9a09316cf2a8a907399.png)
-8. Run the following command to exit single user mode.
-```
-exec /sbin/init
-```
 
-<span id="configUbuntu"></span>
-### Ubuntu 
+#### CentOS 8.0
+1. Select a kernel in the grub mode, as shown below.
+![](https://main.qcloudimg.com/raw/a6ce701e5845141929d822635bd42b9a.png)
+2. Press **e** to enter the kernel edit page. Locate the line started with “linux” using Up or Down arrow and replace `ro` with `rw init=/sysroot/bin/bash`, as shown below.
+![](https://main.qcloudimg.com/raw/d06effc3cab12d545fd7bc92f4577b14.png)
+3. Press **Ctrl+X** to boot into the single user mode, as shown below:
+The following figure indicates that the system boots into the single user mode.
+![](https://main.qcloudimg.com/raw/126dcdb5916e57815c3632e9e4b24412.png)
 
-> The following process uses Ubuntu 16.04 as an example. Specific steps may vary slightly depending on the version of the operating system.
->
-1. Log in to the CVM.
-2. Run the following command to open `/etc/default/grub`.
-```
-sudo vi /etc/default/grub
-```
-3. Press **i** to enter edit mode.
-4. Find “GRUB_TIMEOUT”, the default boot item wait time, and modify its value based on your needs, as shown below:
-The default value of “GRUB_TIMEOUT” is 5 seconds. In order to avoid missing the boot interface because the waiting time is too short, we recommend you change it to 60s or longer.
-> 
-> - This setting affects the system start time. After you complete the tasks that require single user mode, change it back to the default value.
-> - The default account in Ubuntu is not `root`. Use `sudo` instead.
-> 
-![](https://main.qcloudimg.com/raw/65553c2d5a01113e33b93caa93485dae.png)
-5. Press **Esc** to exit edit mode, enter **:wq**, and press **Enter** to
-save your file and exit the VI editor.
-6. Run the following command to recompile and generate `grub.cfg`.
-```
-sudo update-grub
-```
-The following appears:
-![](https://main.qcloudimg.com/raw/9e685185ef67e7129ce34b11b5a16061.png)
-6. Run the following command to reboot the server.
-```
-sudo reboot
-```
-7. Wait for one minute and [use VNC to log into your CVM instance](https://intl.cloud.tencent.com/document/product/213/32494), as shown below:
-![](https://main.qcloudimg.com/raw/4893e2a2ed32bbe4241b33b468bdb8cf.png)
-8. Press **e** to enter the kernel editing interface and add **rw single init=/bin/bash** to the red box area as shown below:
-![](https://main.qcloudimg.com/raw/0879dd0c8c7a720542352a0722f9b9a7.png)
-9. Press **Ctrl+X** to start and enter single user mode, as shown below:
-![](https://main.qcloudimg.com/raw/ffc6c3cf07a9254fdcb4f6326c3daf75.png)
+#### Ubuntu or Debian
+1. Select a kernel in the grub mode, as shown below.
+![](https://main.qcloudimg.com/raw/c3c0be766481edf3f6521f7764f8d4cb.png)
+2. Press **e** to enter the kernel edit page. Locate the line started with “linux” using Up or Down arrow and append `quiet splash rw init=/bin/bash` to the end of the line, as shown below.
+![](https://main.qcloudimg.com/raw/40882cf22d755c0338ea9d7c106bc280.png)
+3. Press **Ctrl+X** to boot into the single user mode, as shown below:
+The following figure indicates that the system boots into single user mode.
+![](https://main.qcloudimg.com/raw/df55d20b7eb087744fb6283c5124e7fc.png)
+
+#### SUSE
+1. Select a kernel in the grub mode, as shown below.
+![](https://main.qcloudimg.com/raw/4da4d0c5c98e4f0dbe4990e920a11daf.png)
+2. Press **e** to enter the kernel edit page. Locate the line started with “linux” using Up or Down arrow, add `rw` to the beginning and `1` to the end of the `splash` parameter, as shown below.
+![](https://main.qcloudimg.com/raw/013a0099ccb5c19d04441dd60ea7558b.png)
+3. Press **Ctrl+X** to boot into the single user mode, as shown below:
+
+#### Tlinux
+1. Select a kernel in the grub mode, as shown below.
+![](https://main.qcloudimg.com/raw/c497e63321b76e5cd1f0eea06f53cdb2.png)
+2. Press **e** to enter the kernel edit page, choose the **kernel** line using Up or Down arrow, and press **e** again, as shown below.
+![](https://main.qcloudimg.com/raw/06c66e0f30163e9fc7e6aafbf9463645.png)
+3. Add a space and **1** to the end of the line (namely after **256M**), as shown below.
+![](https://main.qcloudimg.com/raw/06efb32e3a2edb39f32e13be1ab8527f.png)
+4. Press **Enter** to enter the single user mode.
 

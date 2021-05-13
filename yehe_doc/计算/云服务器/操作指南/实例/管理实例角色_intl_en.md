@@ -13,8 +13,7 @@ Binding a CAM role to instances comes with the following features and advantages
 
 
 ## Use Instructions
-- The instance only allows the role entity that contains `cvm.qcloud.com` to assume the role, as shown below. For more information, see [Concepts](https://intl.cloud.tencent.com/document/product/598/19421).
-![](https://main.qcloudimg.com/raw/e47a9bc5103e3c1f342e009429e44c3a.png)
+- The instance only allows the role entity that contains `cvm.qcloud.com` to assume the role. For more information, see [Concepts](https://intl.cloud.tencent.com/document/product/598/19421).
 - The instance must reside in a VPC.
 - An instance can only bind one CAM role at a time.
 - You can bind, modify or delete a role without paying extra fees.
@@ -22,21 +21,29 @@ Binding a CAM role to instances comes with the following features and advantages
 
 ## Directions
 
-### Binding/modifying one role
+### Binding/modifying roles
+#### Binding/modifying the role of one CVM
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm) and click **Instances** on the left sidebar.
-2. On the **Instances** page, select the CVM instance for which you want to bind or modify the role, and then click **More** -> **Instance Settings** -> **Bind/Modify a Role**.
+2. On the **Instances** page, select the CVM instance for which you want to bind or modify the role, and then click **More** > **Instance Settings** > **Bind/Modify a Role** under the **Operation** column, as shown below.
+![](https://main.qcloudimg.com/raw/34d5a9866aa28fdb8a3363884918e3bb.png)
 3. In the pop-up window, select the role you want to bind, and click **OK**.
-
-
-### Batch binding/modifying roles
-1. On the **Instances** page, select the CVM instances for which you want to bind or modify the roles, click **More Actions** -> **Instance Settings** -> **Bind/Modify a Role** at the top of list.
+#### Batch binding/modifying roles
+1. On the **Instances** page, select the CVM instances for which you want to bind or modify the roles, click **More Actions** > **Instance Settings** > **Bind/Modify a Role** at the top of list, as shown below.
+![](https://main.qcloudimg.com/raw/4093443ee4f5b484860f8c8eae3b3b3e.png)
 2. In the pop-up window, select the role you want to bind, and click **OK**.
 >?CVMs modified using this method will have the same role name.
 
-### Deleting one role
-1. On the **Instances** page, locate the CVM instance for which you want to delete the role, click **More** -> **Instance Settings** -> **Delete a Role**.
+
+
+### Deleting roles
+#### Deleting the role of one CVM
+1. On the **Instances** page, locate the CVM instance for which you want to delete the role, click **More** > **Instance Settings** > **Delete a Role** under the **Operation** column, as shown below.
+![](https://main.qcloudimg.com/raw/8b44772763ab60fa69c404360db1ebbf.png)
+2. Click **OK** in the pop-up window.
+#### Batch deleting roles
+1. On the **Instances** page, select the CVM instances for which you want to delete the roles, click **More Actions** > **Instance Settings** > **Delete a Role** above the list, as shown below.
+![](https://main.qcloudimg.com/raw/72669a0d3bbdde1491c24b5acc0eadbf.png)
 2. Click **OK** in the pop-up window.
 
-### Batch deleting roles
-1. On the **Instances** page, select the CVM instances for which you want to delete the roles, click **More Actions** -> **Instance Settings** -> **Delete a Role** at the top of list.
-2. Click **OK** in the pop-up window.
+
+
