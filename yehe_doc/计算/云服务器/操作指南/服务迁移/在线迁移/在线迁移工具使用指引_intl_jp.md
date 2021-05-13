@@ -127,7 +127,7 @@ Tencent Cloudは、[go2tencentcloud移行ツール](https://go2tencentcloud-1251
 <blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>説明：</p><p>上記のパラメータ以外、client.jsonファイルのその他の構成項目は通常、記入する必要はありません。</p>
 </blockquote>
 - <span id="_linuxTxtState">rsync\_excludes\_linux.txtファイル説明：</span>
-このファイルは、移行や転送が不要なLinuxの移行元サーバーのファイル、または指定されたディレクトリにある構成ファイルを除外するために使用されます。次のディレクトリとファイルはデフォルトで除外されていますので、**これらの設定を削除または変更しないでください**。　
+このファイルは、移行や転送が不要なLinuxの移行元サーバーのファイル、または指定されたディレクトリにある構成ファイルを除外するために使用されます。次のディレクトリとファイルはデフォルトで除外されていますので、**既存の設定を削除または変更しないでください**。　
 ```sh
 /dev/*
 /sys/*
