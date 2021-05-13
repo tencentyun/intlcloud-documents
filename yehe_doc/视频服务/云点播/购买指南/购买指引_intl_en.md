@@ -5,7 +5,7 @@ You need to [sign up for a Tencent Cloud account](https://intl.cloud.tencent.com
 
 ## Applying for the VOD Service
 1. Go to the [VOD product introduction page](https://intl.cloud.tencent.com/product/vod) and click **Get Started** to go to the **Developer Qualification Verification** page.
-2. Click **Verify** to go to the qualification verification page and enter the required information. After you pass the [identity verification](https://intl.cloud.tencent.com/document/product/378/3629), you can access the Tencent Cloud console. Unverified users cannot purchase VOD instances for the Chinese mainland.
+2. Click **Verify** to go to the qualification verification page and enter the required information. After passing the [identity verification](https://intl.cloud.tencent.com/document/product/378/3629), you can access the Tencent Cloud console. Unverified users cannot purchase VOD instances for the Chinese mainland.
 
 ## Purchasing the VOD Service
 VOD supports the **pay-as-you-go daily billing mode**.
