@@ -5,7 +5,7 @@
 - The performance of strong sync is comparable to that of async replication, allowing you to achieve high performance without data loss.
 
 ## Professional and Reliable
-- TDSQL has been massively verified by various types of Tencent's core products for over 10 years, such as social networking, ecommerce, payment, audio and video services.
+- TDSQL has been massively verified by various types of Tencent's core products for over 10 years, such as social networking, ecommerce, payment, and audio/video services.
 - It has comprehensive features of data backup, disaster recovery, and quick upgrade.
 - It boasts a complete monitoring and alarming system, where most of failures can be recovered through automated program processing.
 - It supports various cutting-edge features in the distributed database world, such as distributed multi-table join, small table broadcast, distributed transaction, and SQL passthrough.
