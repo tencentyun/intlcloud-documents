@@ -10,7 +10,7 @@
 4. 在 offset 设置窗口，选择以 Topic 或者 Partition 为维度进行设置，单击【下一步】。
 5. 选择需要重置 offset 的 Topic 信息（不选则默认全部 Topic 的 offset 均重置）或者 Partition 信息，单击【下一步】。
 6. 对 offset 进行指定。
-   ![](https://main.qcloudimg.com/raw/dae2ecebbdbf07712be90f3882df892d.png)
+   ![](https://main.qcloudimg.com/raw/3a8511972c57dff28b7203fd285da2e3.png)
 
 >!
 >- offset 设置范围要在最小 offset 和最大 offset 之间。在配置时，如果小于最小 offset 会从最小 offset 进行消费，如果大于最大 offset 会从最大 offset 进行消费。
