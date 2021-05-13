@@ -5,7 +5,7 @@
 ### Notes
 - After you stop using pay-as-you-go resources, **terminate them as soon as possible** to avoid fee deduction.
 - After a CVM instance is terminated or repossessed, its data will be cleared and cannot be recovered.
-- Since your actual resource consumption changes constantly, some slight discrepancies may exist for your stated balance.
+- Since your actual resource consumption changes constantly, some slight discrepancies may exist for the stated balance in the low balance alert.
 
 ### Alerts
 
