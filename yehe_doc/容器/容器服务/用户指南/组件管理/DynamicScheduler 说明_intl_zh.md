@@ -151,7 +151,7 @@ spec:
         interval: 30s
         rules:
         - record: cpu_usage_active
-          expr: 100*(1-(sum by (instance)(node_cpu_seconds_total{mode="idle"})/(sum by (instance)(node_cpu_seconds_total))))
+          expr: 100 - (avg by (instance)(irate(node_cpu_seconds_total{mode="idle"}[30s])) * 100)
         - record: mem_usage_active
           expr: 100*(1-node_memory_MemAvailable_bytes/node_memory_MemTotal_bytes)
       - name: cpu-usage-5m
@@ -195,6 +195,15 @@ rule_files:
 2. 将 rules 配置复制到一个文件（例如 dynamic-scheduler.yaml），文件放到上述 prometheus 容器的 `/etc/prometheus/rules/` 目录下。
 3. 加载 Prometheus server，即可从 Prometheus 获取到动态调度器需要的指标。
 
+
+>?通常情况下，上述 Prometheus 配置文件和 rules 配置文件都是通过 configmap 存储，再挂载到 Prometheus server 容器，因此修改相应的 configmap 即可。
+
+### 云原生监控 Prometheus
+1. 登录容器服务控制台，在左侧菜单栏中选择【[云原生监控](https://console.cloud.tencent.com/tke2/prometheus)】，进入“云原生监控”页面。
+2. 创建与 Cluster 处于同一 VPC 下的 云原生监控 Prometheus 实例，并 关联用户集群。
+3. 与原生托管集群关联后，可以在用户集群查看到每个节点都已安装 node-exporter。
+4. 设置 Prometheus 聚合规则，具体规则内容与上述 [自建Prometheus监控服务](#rules) 中的“聚合规则配置”相同。
+
 ```yaml
 apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
@@ -206,7 +215,7 @@ spec:
         interval: 30s
         rules:
         - record: cpu_usage_active
-          expr: 100*(1-(sum by (instance)(node_cpu_seconds_total{mode="idle"})/(sum by (instance)(node_cpu_seconds_total))))
+          expr: 100 - (avg by (instance) (irate(node_cpu_seconds_total{mode="idle"}[30s])) * 100)
         - record: mem_usage_active
           expr: 100*(1-node_memory_MemAvailable_bytes/node_memory_MemTotal_bytes)
       - name: cpu-usage-5m
@@ -237,13 +246,6 @@ spec:
 
 
 
->?通常情况下，上述 Prometheus 配置文件和 rules 配置文件都是通过 configmap 存储，再挂载到 Prometheus server 容器，因此修改相应的 configmap 即可。
-
-### 云原生监控 Prometheus
-1. 登录容器服务控制台，在左侧菜单栏中选择【[云原生监控](https://console.cloud.tencent.com/tke2/prometheus)】，进入“云原生监控”页面。
-2. 创建与 Cluster 处于同一 VPC 下的 云原生监控 Prometheus 实例，并 关联用户集群。
-3. 与原生托管集群关联后，可以在用户集群查看到每个节点都已安装 node-exporter。
-4. 设置 Prometheus 聚合规则，具体规则内容与上述 [自建Prometheus监控服务](#rules) 中的“聚合规则配置”相同。
 
 
 
