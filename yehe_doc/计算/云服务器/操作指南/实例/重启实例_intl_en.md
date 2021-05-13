@@ -4,7 +4,7 @@ Restarting the CVM instance is a common method to maintain it. It is equivalent 
 
 ## Notes
  - **Preparing to restart instances:** The instance cannot provide services during restart. Make sure before restarting the CVM that it has stopped receiving service requests.
- - **How to restart instances:** We recommended you restart an instance using the restart operations provided by Tencent Cloud instead of running the restart command in the instance (such as the relaunch command under Windows and the reboot command under Linux).
+ - **How to restart instances:** We recommended you to restart an instance using the restart operations provided by Tencent Cloud instead of running the restart command in the instance (such as the relaunch command under Windows and the reboot command under Linux).
  - **Restart time:** Generally, it takes only a few minutes to restart an instance.
  - **Physical features of instances:** Restarting an instance does not change its physical features. Its public and private IP addresses as well as stored data will not be changed.
  - **Billing:** Restarting an instance will not start a new instance billing period.
