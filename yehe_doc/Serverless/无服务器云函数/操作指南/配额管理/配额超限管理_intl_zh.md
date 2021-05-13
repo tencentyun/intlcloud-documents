@@ -14,7 +14,7 @@
 </tr>
 <tr>
 <td>命名空间下函数个数达到上限</td>
-<td><li>每个地域下可支持多个命名空间，可优先使用其他命名空间函数配额。</li><li>如当前地域下命名空间及函数个数均达到上限，可通过 <a href="https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=668&source=0&data_title=%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%91%E5%87%BD%E6%95%B0%20SCF&step=1">提交工单</a> 提升配额限制。</li><li> 云开发通过套餐进行配额管理，请查看  <a href="https://cloud.tencent.com/document/product/876/39095#.E5.85.8D.E8.B4.B9.E7.89.88">云开发产品定价</a> 了解各套餐包额度并通过升级套餐包提升配额。</li></td>
+<td><li>每个地域下可支持多个命名空间，可优先使用其他命名空间函数配额。</li><li>如当前地域下命名空间及函数个数均达到上限，可通过 <a href="https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=668&source=0&data_title=%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%91%E5%87%BD%E6%95%B0%20SCF&step=1">提交工单</a> 提升配额限制。</li></td>
 </tr>
 <tr>
 <td>单个函数的触发器个数达到上限</td>
