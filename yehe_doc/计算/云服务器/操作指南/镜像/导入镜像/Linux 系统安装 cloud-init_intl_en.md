@@ -195,7 +195,7 @@ apt-get/yum install cloud-init
 2. Replace the content of `/etc/cloud/cloud.cfg` with that of the downloaded cloud.cfg file.
 
 ## Relevant Operations
->! Do not restart the server after performing the following operations. Otherwise, you will need to perform them again.
+>! Do not restart the server after performing the above operations. Otherwise, you will need to perform them again.
 >
 1. Run the following commands to check whether the cloud-init configuration is successful.
 ```
