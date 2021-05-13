@@ -100,7 +100,8 @@ TRTC는 멀티미디어 범용 패키지를 제공합니다. 음성, 표준 화�
          <td style="text-align:center"><82%</td>   
      </tr> 
      <tr>
-         <td style="text-align:center" rowspan="5">사용자 정의 패키지</td>          <td style="text-align:center">0 ＜ T ＜ 25</td>   
+         <td style="text-align:center" rowspan="5">사용자 정의 패키지</td>   
+         <td style="text-align:center">0 ＜ T ＜ 25</td>   
          <td style="text-align:center">0.99</td>
          <td style="text-align:center">0.99</td>
          <td style="text-align:center" rowspan="5">패키지 단가*패키지 시간 T</td>   
@@ -131,7 +132,6 @@ TRTC는 멀티미디어 범용 패키지를 제공합니다. 음성, 표준 화�
          <td style="text-align:center"><82%</td>   
      </tr> 
 </table>
-
 
 >?표의 패키지 단가는 1,000분당 단가를 기준으로 소수점 셋째 자리까지 계산된 것이며, 실제 요금은 분당 단가를 기준으로 소수점 여덟째 자리까지 계산됩니다.
 

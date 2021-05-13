@@ -90,10 +90,10 @@ TRTC 결제 방식에는**선불 패키지**와 **후불**이 있습니다. 기�
          <td style="text-align:center"><92%</td>   
      </tr> 
      <tr>
-         <td style="text-align:center">1000 ≤ T ＜ 3000</td>
+         <td style="text-align:center">1000 ≤ T < 3000</td>
          <td style="text-align:center">0.99</td>
-         <td style="text-align:center">0.856</td>
-         <td style="text-align:center"><87%</td>   
+         <td style="text-align:center">0.842</td>
+         <td style="text-align:center">85%</td>   
      </tr> 
      <tr> 
          <td style="text-align:center">T ≥ 3000</td>   

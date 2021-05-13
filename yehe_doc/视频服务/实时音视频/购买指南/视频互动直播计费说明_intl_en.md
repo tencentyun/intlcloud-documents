@@ -24,8 +24,8 @@ Below is how video durations are categorized by resolution:
 - If a user subscribes to multiple channels of video streams, TRTC will add up the video duration of each channel.
 - The TRTC SDK does not set limits for the video resolution. You can [choose the video quality](https://intl.cloud.tencent.com/document/product/647/35153) that fits your needs.
 
-
 <span id="s_duration"></span>
+
 ### Audio duration
 In interactive live video streaming, audio duration is the total length of users’ stays in TRTC rooms minus the period during which video data is received.
 Suppose a user entered a TRTC room at 00:00 and left at 00:50. The details of the stay are as follows:
