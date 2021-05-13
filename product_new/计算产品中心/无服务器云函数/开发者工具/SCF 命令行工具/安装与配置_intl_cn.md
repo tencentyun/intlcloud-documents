@@ -226,4 +226,4 @@ Linux 中的 Docker，可以通过各个发行版中带有的包管理工具完�
 
 ## 常见问题
 
-工具安装或使用常见问题参考[ SCF 工具类常见问题](https://cloud.tencent.com/document/product/583/33456)。
+工具安装或使用常见问题参考[ SCF 工具类常见问题](https://intl.cloud.tencent.com/document/product/583/32772)。
