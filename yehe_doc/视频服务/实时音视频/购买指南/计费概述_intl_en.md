@@ -1,4 +1,4 @@
-TRTC offers two types of services: **basic services** and *value-added services*.
+TRTC offers two types of services: **basic services** and **value-added services**.
 
 ## Basic Services
 
