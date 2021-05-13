@@ -1,9 +1,9 @@
 
 云硬盘性能通常情况下与云硬盘容量相关，您可在云硬盘未达到性能最大值时，通过调整其容量以获得更高的性能。其中，增强型 SSD 云硬盘支持在性能达到基准性能的最大值后，通过配置额外性能以突破基准性能限制。您可在满足条件时，按需进行额外性能配置并随时调整额外性能。详情请参见 [增强型 SSD 云硬盘性能说明](https://intl.cloud.tencent.com/document/product/362/39611)。
 >!
-- 当前仅**增强型 SSD 云硬盘**支持性能独立调整。
-- [基准性能](https://intl.cloud.tencent.com/document/product/362/39611#.E5.A2.9E.E5.BC.BA.E5.9E.8B-ssd-.E4.BA.91.E7.A1.AC.E7.9B.98.E5.9F.BA.E5.87.86.E6.80.A7.E8.83.BD) 已达到最大值，才可独立调整 [额外性能](https://intl.cloud.tencent.com/document/product/362/39611#.E5.A2.9E.E5.BC.BA.E5.9E.8B-ssd-.E4.BA.91.E7.A1.AC.E7.9B.98.E9.A2.9D.E5.A4.96.E6.80.A7.E8.83.BD)。
--  云硬盘性能调整期间不影响业务运行及正常使用。
+>- 当前仅**增强型 SSD 云硬盘**支持性能独立调整。
+>- [基准性能](https://intl.cloud.tencent.com/document/product/362/39611#.E5.A2.9E.E5.BC.BA.E5.9E.8B-ssd-.E4.BA.91.E7.A1.AC.E7.9B.98.E5.9F.BA.E5.87.86.E6.80.A7.E8.83.BD) 已达到最大值，才可独立调整 [额外性能](https://intl.cloud.tencent.com/document/product/362/39611#.E5.A2.9E.E5.BC.BA.E5.9E.8B-ssd-.E4.BA.91.E7.A1.AC.E7.9B.98.E9.A2.9D.E5.A4.96.E6.80.A7.E8.83.BD)。
+>- 云硬盘性能调整期间不影响业务运行及正常使用。
 
 
 
