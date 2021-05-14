@@ -52,6 +52,7 @@ Create a configuration file named `ckafka.json`:
 ### Step 3. Send messages
 
 1. Write a message producer.
+
 ```go
 package main
 
@@ -149,6 +150,7 @@ Delivered message to test[0]@629
 ### Step 4. Consume messages
 
 1. Create a single consumer.
+
 ```go
 package main
 
