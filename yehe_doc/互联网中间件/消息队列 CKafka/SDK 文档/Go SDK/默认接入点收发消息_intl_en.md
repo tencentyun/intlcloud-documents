@@ -122,7 +122,7 @@ Delivered message to test[0]@629
 ```
 
 4. On the **Topic Management** tab page on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the target topic, and click **More** -> **Message Query** to view the message just sent.
-![](https://main.qcloudimg.com/raw/ec5fbf218cf50ff3d760be15f6331867.png)
+
 
 ### Step 4. Consume messages
 
@@ -200,5 +200,5 @@ Message on test[0]@629: Golang Client Message
 ```
 
 4. On the **Consumer Group** tab page on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding consumer group name, enter the topic name, and click **Query Details** to view the consumption details.
-![](https://main.qcloudimg.com/raw/27775267907600f4ff759e6a197195ee.png)
+![](https://main.qcloudimg.com/raw/588994dd93d9454f309564e42f61a0fd.png)
 
