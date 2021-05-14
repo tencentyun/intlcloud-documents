@@ -22,7 +22,7 @@ Before using the blacklist feature, you need to apply for an SMS signature and g
  ![](https://main.qcloudimg.com/raw/c0263291a6018aac1a4ee1d68c8f5b2c.png)
 
 
-## Unblacklisting Mobile Number
+## Revoking Blacklisted Mobile Number
 >!Removing a mobile number from the blacklist is **irreversible**, and the number can receive SMS messages sent with the corresponding signature normally.
 
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
