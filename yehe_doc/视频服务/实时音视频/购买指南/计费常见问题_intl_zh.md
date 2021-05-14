@@ -51,7 +51,7 @@
 - 2019年10月11日起新注册的腾讯云账号默认采用新计费模式。
 - 2019年10月11日前注册的腾讯云账号只能等老计费模式的套餐包用完或过期后的次月才能购买新计费套餐包，购买新计费套餐包后将自动升级到新计费模式。
 
-您可以继续 [购买](https://buy.cloud.tencent.com/rav_th5) 老计费模式的套餐包。如果您希望在老计费套餐包用完或过期之前就升级到新计费模式，可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
+您可以继续 [购买](https://buy.cloud.tencent.com/trtc) 老计费模式的套餐包。如果您希望在老计费套餐包用完或过期之前就升级到新计费模式，可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
 
 
 
