@@ -122,7 +122,7 @@ Delivered message to test[0]@629
 ```
 
 4. 在 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 的【topic管理】页面，选择对应的 topic ， 点击【更多】>【消息查询】，查看刚刚发送的消息。
-![](https://main.qcloudimg.com/raw/ec5fbf218cf50ff3d760be15f6331867.png)
+
 
 ### 步骤四：消费消息
 
@@ -200,5 +200,5 @@ Message on test[0]@629: Golang Client Message
 ```
 
 4. 在 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 的【Consumer Group】页面，选择对应的消费组名称，在主题名称输入topic名称，点击【查询详情】，查看消费详情。
-![](https://main.qcloudimg.com/raw/27775267907600f4ff759e6a197195ee.png)
+![](https://main.qcloudimg.com/raw/588994dd93d9454f309564e42f61a0fd.png)
 
