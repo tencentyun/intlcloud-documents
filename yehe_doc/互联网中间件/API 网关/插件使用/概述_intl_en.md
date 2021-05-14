@@ -13,13 +13,13 @@ Plugins have the following advantages over traditional configuration items:
 1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway).
 2. On the left sidebar, click **Plugin** to enter the plugin list page.
 3. Click **Create** in the top-left corner to create a plugin.
-	 ![](https://main.qcloudimg.com/raw/f235b18119f3c55a41f95d4bbebe42f5.png)
+
 
 ### Step 2. Bind an API and make the plugin effective
 
 1. Select the just created plugin in the list and click **Bind API** in the **Operation** column.
 2. In the **Bind API** pop-up window, select the service, environment, and the API that needs to be bound to the plugin.
-	 ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
+
 3. Click **OK** to bind the plugin to the API. At this time, the configuration of the plugin has taken effect for the API.
 
 ### Step 3. View the plugins bound to an API
@@ -28,7 +28,7 @@ Plugins have the following advantages over traditional configuration items:
 2. In the service list, click the name of the target service to view it.
 3. In the API list, click the name of the target API to enter the API details page.
 4. On the API details page, click the **Bound Plugin** tab to view the information of plugins bound to the target API.
-	 ![](https://main.qcloudimg.com/raw/171f9977f7617040ccc12258fa82ac15.png)
+
 
 ## Supported Plugin Type
 
