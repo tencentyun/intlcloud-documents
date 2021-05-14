@@ -2,7 +2,7 @@
 
 该任务以 Java 客户端为例指导您在 VPC 环境下使用 Java SDK 接入消息队列 CKafka 的默认接入点并收发消息。
 
-其他语言客户端请参考 [SDK文档](https://cloud.tencent.com/document/product/597/54816)。
+其他语言客户端请参考 [SDK文档](https://intl.cloud.tencent.com/document/product/597/40049)。
 
 ## 前提条件
 
@@ -124,7 +124,7 @@ Produce ok:ckafka-topic-demo-0@199
 ```
 
 4. 在 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 的【topic管理】页面，选择对应的 topic ，点击【更多】>【消息查询】，查看刚刚发送的消息。
-![](https://main.qcloudimg.com/raw/ec5fbf218cf50ff3d760be15f6331867.png)
+![](https://main.qcloudimg.com/raw/db9291c495b150ce8c278db808ae7bb6.png)
  
 
 ### 步骤四：消费消息
@@ -193,7 +193,7 @@ Consume partition:0 offset:299
 ```
 
 4. 在  [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 的【Consumer Group】页面，选择对应的消费组名称，在主题名称输入 topic 名称，点击【查询详情】，查看消费详情。
-![](https://main.qcloudimg.com/raw/27775267907600f4ff759e6a197195ee.png)
+![](https://main.qcloudimg.com/raw/94b9a8151db88307b91060cc5caf606b.png)
 
 
 
