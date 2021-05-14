@@ -91,7 +91,7 @@ TRTC는 Tencent Cloud의 LiteAV 시리즈 제품입니다. LiteAV 시스템의 S
 >? 
 > - SDK로 인한 설치 패키지 용량 증분을 줄여야 할 경우, [설치 패키지 용량 축소 방법](https://intl.cloud.tencent.com/document/product/647/35165)을 참조하십시오.
 > - QR 코드를 스캔해서 공식 계정을 팔로우하고 SDK의 버전 업데이트 및 최신 기술 동향을 알아보세요.
-> ![](https://main.qcloudimg.com/raw/d8a8c8c130ef7799feff6efbc0260ea2.jpg)
+> ![](https://main.qcloudimg.com/raw/d3c876e8d751709e1df52faf4c0bf012.jpg))
 
 
 <h2 id="Professional">프로 버전(Professional)</h2>
