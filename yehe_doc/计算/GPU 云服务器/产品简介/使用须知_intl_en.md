@@ -2,7 +2,7 @@
 
 **Notice the following points** to help you better use GPU Cloud Computing.
 #### 1. Data Backup
-GPU Cloud Computing provides powerful computing capabilities. [GN2](https://intl.cloud.tencent.com/document/product/560/19700) and [GN8](https://intl.cloud.tencent.com/document/product/560/19700) instances support mounting local SSDs. Please back up data periodically to ensure data security and prevent data loss.
+GPU Cloud Computing provides powerful computing capabilities. [GN8](https://intl.cloud.tencent.com/document/product/560/19700) instances support mounting local SSDs. Please back up data periodically to ensure data security and prevent data loss.
 You can also purchase and mount elastic cloud disks separately to further enhance data security and reliability.
 #### 2. Renewal
 You will receive an alert 7 days before the expiry date of GPU Cloud Computing. Renew your account or back up data before the date. GPU instances will be shut down, disconnected and moved to the recycle bin after expiration.
