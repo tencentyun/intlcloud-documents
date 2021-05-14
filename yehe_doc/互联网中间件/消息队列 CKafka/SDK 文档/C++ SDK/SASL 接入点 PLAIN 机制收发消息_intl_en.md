@@ -24,6 +24,7 @@ yum install cyrus-sasl{,-plain}
 ### Step 3. Send messages
 
 1. Create the `producer.c ` file.
+
 ```C++
 /*
  * librdkafka - Apache Kafka C library
@@ -351,6 +352,7 @@ gcc -lrdkafka ./producer.c -o producer
 ### Step 4. Consume messages
 
 1. Create the `consumer.c` file.
+
 ```C++
 /*
  * librdkafka - Apache Kafka C library
