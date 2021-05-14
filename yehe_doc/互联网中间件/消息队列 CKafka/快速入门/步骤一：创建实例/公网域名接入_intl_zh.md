@@ -19,7 +19,7 @@
    - 地域：选择和部署客户端的资源相近的地域。
    - 可用区：
      - 标准版：不支持多可用区部署。
-     - 专业版：若当前地域支持多可用区部署，则最多可选择2个可用区进行部署。关于跨可用区部署原理介绍请参考 [跨可用区部署](https://cloud.tencent.com/document/product/597/52786)。
+     - 专业版：若当前地域支持多可用区部署，则最多可选择2个可用区进行部署。关于跨可用区部署原理介绍请参考 [跨可用区部署](https://intl.cloud.tencent.com/document/product/597/40243)。
    - 产品规格：根据峰值带宽和磁盘容量选择对应的型号。
    - 消息保留：范围在 24 ～ 2160 小时。
      在磁盘容量不足（即磁盘水位达到90%）时，将会提前删除旧的消息，以确保服务可用性。
@@ -30,7 +30,7 @@
 
 1. 在实例列表页面，单击刚刚创建的实例的“ID/名称”。
 2. 在实例详情页面，选择【接入方式】模块中的【添加路由策略】，新增一条公网路由。
-   ![](https://main.qcloudimg.com/raw/fd4a5b95f21b4fd8effe7ec425c3ec3c.png)
+   ![](https://main.qcloudimg.com/raw/dcb5bb0a6975a847067387d7730efa0d.png)
    添加后获得公网访问的域名和接口。
-   ![](https://main.qcloudimg.com/raw/6855a9d500dcbefbabed91515b695050.png)
+   ![](https://main.qcloudimg.com/raw/71b6caefb12f44280d83b138df614845.png)
 
