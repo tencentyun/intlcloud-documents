@@ -2,7 +2,7 @@
 
 This document describes how to connect the Java SDK to CKafka via the SASL access point and send and receive messages based on the PLAIN mechanism in a public network environment.
 
-If you need to use SDKs based on other languages, see [SDK Documentation](https://cloud.tencent.com/document/product/597/54816).
+If you need to use SDKs based on other languages, see [SDK Documentation](https://intl.cloud.tencent.com/document/product/597/40049).
 
 ## Prerequisites
 
@@ -154,7 +154,7 @@ Produce ok:ckafka-topic-demo-0@199
 ```
 
 4. On the **Topic Management** tab page on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the target topic, and click **More** -> **Message Query** to view the message just sent.
-![](https://main.qcloudimg.com/raw/ec5fbf218cf50ff3d760be15f6331867.png)
+![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
 
 
 ### Step 4. Consume messages
@@ -229,5 +229,5 @@ public class KafkaSaslConsumerDemo {
    ```
 
 4. On the **Consumer Group** tab page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding consumer group, enter the topic name, and click **View Details** to view the consumption details.
-![](https://main.qcloudimg.com/raw/27775267907600f4ff759e6a197195ee.png)
+![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
 
