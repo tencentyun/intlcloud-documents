@@ -14,15 +14,15 @@
 
 ## 4. 新手入门
 #### 4.1 注册与认证
-在使用腾讯云云硬盘之前，您需要 [注册腾讯云账号](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内的腾讯云云硬盘资源。
+在使用腾讯云云硬盘之前，您需要 [注册腾讯云账号](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)，未进行实名认证的用户无法购买中国境内腾讯云云硬盘资源。
 
 #### 4.2 创建云硬盘
 完成注册与实名认证后，您可在云服务器所在的可用区按需选择云硬盘类型、容量、计费模式、购买时长、自动续费及到期/欠费保护，以确保满足您的实际业务需求。详情请参见 [创建云硬盘](https://intl.cloud.tencent.com/document/product/362/31647)。
 
 #### 4.3 使用云硬盘
 当您完成创建后，需将单独购买的云硬盘需挂载至同一可用区中的云服务器，并进行初始化操作。详情请参见：
-- [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/31645)
-- [初始化云硬盘](https://intl.cloud.tencent.com/document/product/362/31646)
+- [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/39991)
+- [初始化云硬盘](https://intl.cloud.tencent.com/document/product/362/31645)
 
 #### 4.4 创建快照（可选）
 当您已具备云硬盘后，可利用快照手动或定期备份业务的重要数据以应对误操作、攻击或病毒等导致的数据丢失或损坏的风险。详情请参见 [创建快照](https://intl.cloud.tencent.com/document/product/362/5755) 及 [定期快照](https://intl.cloud.tencent.com/document/product/362/35238)。
