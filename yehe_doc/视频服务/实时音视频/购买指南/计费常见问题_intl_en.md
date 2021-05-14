@@ -51,7 +51,7 @@ TRTC changed its billing standards on October 11, 2019. Audio and video duration
 - Tencent Cloud accounts created on and after October 11, 2019 use the new billing standards by default.
 - If your account was created before October 11, 2019, you can purchase a package that uses the new billing standards only starting from the second month after your old package is exhausted or expires. The new billing standards will apply after you purchase a new package.
 
-You can also continue to [purchase](https://buy.cloud.tencent.com/rav_th5) a package that uses the old billing standards. If you want to use the new billing standards before your old package is exhausted or expires, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+You can also continue to [purchase](https://buy.cloud.tencent.com/trtc) a package that uses the old billing standards. If you want to use the new billing standards before your old package is exhausted or expires, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 
 
