@@ -1,20 +1,22 @@
-## Feature description
+## Overview
 
 This API is used to download an object to the local file system. To make this request, you need to have read permission for the object, or the object must have public read permission enabled (i.e., everyone has permission to read the object).
 
->? If the `response-*` request parameter is used, this request operation will not support anonymous requests and will have to carry a signature.
+> !
+>- If the `response-*` parameter is used in a request, anonymous access will not be supported and the request must carry a signature.
+>- If you have [set origin-pull](https://intl.cloud.tencent.com/document/product/436/31508) in the COS console but haven’t enabled **sync origin-pull**, when COS pulls data from the configured origin server, `GET Object` will return 302 and redirect to the origin server address. If this address is not trusted, when you use the SDK or call the API, it is strongly recommended that COS verify the address on the backend before requesting it, rather than directly returning 302. Otherwise, security risks such as server-side request forgery (SSRF) (e.g., pulling from a private network address) may occur.
 
 #### Versioning
 
-With versioning enabled, you can specify the `versionId` request parameter to get a specific version of an object. If the version ID you specify corresponds to a delete marker, an HTTP `404` status code (Not Found) will be returned. If no version ID is specified, the latest version will be returned.
+With versioning enabled, you can specify the `versionId` request parameter to get a specific version of an object. If the version ID you specify corresponds to a delete marker, HTTP status code 404 (Not Found) will be returned. If no version ID is specified, the latest version will be returned.
 
-#### ARCHIVE storage class
+#### Archive storage classes
 
-If this API is used to get an **archived** object, and the object has not been restored using [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) or the restored copy has been deleted after expiration, the request will return an HTTP `403` status code (Forbidden) and include an error message in the response body. The error code will be `InvalidObjectState`, indicating that you cannot get the object in its current state with this API and you must restore it first.
+If this API is used to get an **ARCHIVE or DEEP ARCHIVE** object, and the object has not been restored using [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) or the restored copy has been deleted after expiration, the request will return HTTP status code 403 (Forbidden) and include an error message in the response body. The error code `InvalidObjectState` indicates that you cannot use this API to get the object in its current state unless you restore it first.
 
-## Request
+#### Request
 
-#### Sample request
+#### Sample request 
 
 ```shell
 GET /<ObjectKey> HTTP/1.1
@@ -23,34 +25,34 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
->? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+> ? Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 
 #### Request parameters
 
-| Name | Description | Type | Required |
+| Parameter | Description | Type | Required |
 | ---------------------------- | ------------------------------------------------------------ | ------ | -------- |
 | response-cache-control | Sets the value of the `Cache-Control` header in the response | string | No |
-| response-content-disposition | Sets the value of the `Content-Disposition` header in the response | string | No |
+| response-content-disposition | Sets the value of the `Content-Disposition` header in the response                    | string | No       |
 | response-content-encoding | Sets the value of the `Content-Encoding` header in the response | string | No |
 | response-content-language | Sets the value of the `Content-Language` header in the response | string | No |
 | response-content-type | Sets the value of the `Content-Type` header in the response | string | No |
 | response-expires | Sets the value of the `Expires` header in the response | string | No |
-| versionId | Specifies the version ID of the object if versioning is enabled; if this parameter is not specified, the latest version will be downloaded | string | No |
+| versionId | Specifies the version ID of the object if versioning is enabled; if this parameter is not specified, the object with the latest version will be downloaded | string | No |
 
 #### Request headers
 
-In addition to common request headers, this API also supports the following request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+In addition to common request headers, this API also supports the following request headers. For more information about common request headers, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-| Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | Required |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| Range  | Byte range of the object as defined in RFC 2616. You can specify only one byte range in the format of bytes=first-last, where both first and last are offsets starting from 0. For example, `bytes=0-9` downloads the first 10 bytes of data of the source object, and `bytes=5-9` downloads the 6th to 10th bytes. In these cases, HTTP 206 (Partial Content) is returned with Content-Range header.<br>If `first` exceeds the object size, HTTP error 416 (Requested Range Not Satisfiable) is returned. If this parameter is not specified, the entire object will be downloaded. | string | No      |
-| If-Modified-Since | If the object is modified after the specified time, the object will be returned; otherwise, HTTP status code `304` (Not Modified) will be returned. | string | No |
-| If-Unmodified-Since | If the object is not modified after the specified time, the object will be returned; otherwise, HTTP status code `412` (Precondition Failed) will be returned. | string | No |
-| If-Match | If the `ETag` of the object is the same as the specified value, the object will be returned; otherwise, HTTP status code `412` (Precondition Failed) will be returned. | string | No |
+| Header &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | Required |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------- | -------- |
+| Range | Byte range as defined in RFC 2616. The value must be in the format of `bytes=first-last` ("first" and "last" are offset relative to 0) and only one range can be set.<br>For example, `bytes=0-9` indicates to download the first 10 bytes of the object and `bytes=5-9` the 6th to 10th bytes. HTTP status code 206 (Partial Content) and the `Content-Range` response header will be returned.<br>If the value of "first" is smaller than the object size, HTTP status code 416 (Requested Range Not Satisfiable) will be returned. If this parameter is not set, the whole object will be downloaded. | string | No |
+| If-Modified-Since | If the object is modified after the specified time, the object will be returned; otherwise, HTTP status code 304 (Not Modified) will be returned. | string | No |
+| If-Unmodified-Since | If the object is not modified after the specified time, the object will be returned; otherwise, HTTP status code 412 (Precondition Failed) will be returned. | string | No |
+| If-Match | If the `ETag` of the object is the same as the specified value, the object will be returned; otherwise, HTTP status code 412 (Precondition Failed) will be returned. | string | No |
 | If-None-Match | If the `ETag` of the object is different from the specified value, the object will be returned; otherwise, HTTP status code 304 (Not Modified) will be returned. | string | No |
-| x-cos-traffic-limit | Specifies the traffic limit in bit/s on this upload. Value range: 819200-838860800, that is, 100 KB/s-100 MB/s. if this range is exceeded, a 400 error will be returned | integer | No       |
+| x-cos-traffic-limit | Limits the speed (in bit/s) for the current download for traffic control. Valid range: 819200-838860800 (i.e., 100 KB/s−100 MB/s). If the speed exceeds the limit, a 400 error will be returned. | integer | No |
 
-**Server-side Encryption Headers**
+**Server-side encryption headers**
 
 If server-side encryption is used for the specified object and the encryption method is SSE-C, you will need to specify the headers related to server-side encryption to decrypt the object. For more information, see [Server-side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7728#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
@@ -62,9 +64,9 @@ This API does not have a request body.
 
 #### Response headers
 
-In addition to common response headers, this API also returns the following response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+In addition to common response headers, this API also returns the following response headers. For more information about common response headers, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
-| Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type |
+| Header &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ |
 | Cache-Control | Cache directives as defined in RFC 2616, which will be returned only if it is contained in the object metadata or if it is specified in the request parameter | string |
 | Content-Disposition                                         | File name as defined in RFC 2616, which will be returned only if it is contained in the object metadata or if it is specified in the request parameter | string  |
@@ -72,17 +74,18 @@ In addition to common response headers, this API also returns the following resp
 | Content-Range                                                | Byte range of the returned content as defined in RFC 2616, which will be returned only if it is specified in the request | string |
 | Expires                                                    | Cache expiration time as defined in RFC 2616, which will be returned only if it is contained in the object metadata or if it is specified in the request parameter | string  |
 | x-cos-meta-\* | Contains user-defined metadata and header suffixes | string |
-| x-cos-storage-class | Object storage class, such as `STANDARD_IA`, `ARCHIVE` and `DEEP_ARCHIVE`. For the enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925). This header will be returned only if the storage class of the object is not `STANDARD`. | Enum |
+| x-cos-storage-class | Object storage class. For the enumerated values, such as `INTELLIGENT_TIERING`, `STANDARD_IA`, `ARCHIVE`, and `DEEP_ARCHIVE`, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). Note that this header will be returned only if the object’s storage class is not STANDARD. | enum |
+|  x-cos-storage-tier | Specifies the access tier of INTELLIGENT TIERING objects. Valid values: `FREQUENT`, `INFREQUENT` |  enum  |
 
-**Versioning-related Headers**
+**Versioning-related headers**
 
-If the target object is from a bucket where versioning is enabled, the following response headers will be returned:
+If the target object is from a versioning-enabled bucket, the following response header will be returned:
 
-| Name | Description | Type |
+| Header | Description | Type |
 | ---------------- | ------------- | ------ |
 | x-cos-version-id | Object version ID | string |
 
-**Server-side Encryption Headers**
+**Server-side encryption headers**
 
 If server-side encryption is used for the specified object, this API will return the server-side encryption headers. For more information, see [Server-side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
@@ -92,9 +95,9 @@ The response body of this API request is the object (file) content.
 
 #### Error codes
 
-This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) .
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Use Cases
+## Examples
 
 #### Example 1. Simple example (versioning not enabled)
 
@@ -122,6 +125,8 @@ Last-Modified: Fri, 10 Apr 2020 09:35:05 GMT
 Server: tencent-cos
 x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MDNkZDRfZDgyNzVkNjRfN2Q5M18xOWVi****
+
+
 
 [Object Content]
 ```
@@ -155,10 +160,12 @@ Server: tencent-cos
 x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MDNkZDVfNjZjODJhMDlfMTY2MDdfMThm****
 
+
+
 [Object Content]
 ```
 
-#### Example 3. Specifying query conditions using request headers and returning a HTTP status code 304 (Not Modified)
+#### Example 3. Specifying search criteria through the request headers with an HTTP status code 304 (Not Modified) returned
 
 #### Request
 
@@ -185,7 +192,7 @@ x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWYyMTFjODVfOGZiNzJhMDlfNDcxZjZfZDY2****
 ```
 
-#### Example 4. Specifying query conditions using request headers and returning a HTTP status code 412 (Precondition Failed)
+#### Example 4. Specifying search criteria through the request header with HTTP status code 412 (Precondition Failed) returned
 
 #### Request
 
@@ -208,13 +215,16 @@ Connection: close
 Date: Wed, 29 Jul 2020 06:51:50 GMT
 Server: tencent-cos
 x-cos-request-id: NWYyMTFjODZfOGRjOTJhMDlfMmIyMWVfOTJl****
+
+
+
 <?xml version='1.0' encoding='utf-8' ?>
 <Error>
-	<Code>PreconditionFailed</Code>
-	<Message>Precondition not match.</Message>
-	<Resource>examplebucket-1250000000.cos.ap-beijing.myqcloud.com/exampleobject</Resource>
-	<RequestId>NWYyMTFjODZfOGRjOTJhMDlfMmIyMWVfOTJl****</RequestId>
-	<TraceId>OGVmYzZiMmQzYjA2OWNhODk0NTRkMTBiOWVmMDAxODc0OWRkZjk0ZDM1NmI1M2E2MTRlY2MzZDhmNmI5MWI1OTdjMDczODYwZjM5YTU3ZmZmOWI5MmY4NjkxY2I3MGNiNjkyOWZiNzUxZjg5MGY2OWU4NmI0YWMwNTlhNTExYWU=</TraceId>
+			<Code>PreconditionFailed</Code>
+			<Message>Precondition not match.</Message>
+			<Resource>examplebucket-1250000000.cos.ap-beijing.myqcloud.com/exampleobject</Resource>
+			<RequestId>NWYyMTFjODZfOGRjOTJhMDlfMmIyMWVfOTJl****</RequestId>
+			<TraceId>OGVmYzZiMmQzYjA2OWNhODk0NTRkMTBiOWVmMDAxODc0OWRkZjk0ZDM1NmI1M2E2MTRlY2MzZDhmNmI5MWI1OTdjMDczODYwZjM5YTU3ZmZmOWI5MmY4NjkxY2I3MGNiNjkyOWZiNzUxZjg5MGY2OWU4NmI0YWMwNTlhNTExYWU=</TraceId>
 </Error>
 ```
 
@@ -245,6 +255,8 @@ Server: tencent-cos
 x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MDNlMDBfMzdiMDJhMDlfYTgyNl8xNjA2****
 x-cos-server-side-encryption: AES256
+
+
 
 [Object Content]
 ```
@@ -277,6 +289,8 @@ x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MDNlMGJfZGEyNzVkNjRfZDgxY18xYTBj****
 x-cos-server-side-encryption: cos/kms
 x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085****
+
+
 
 [Object Content]
 ```
@@ -313,6 +327,8 @@ x-cos-request-id: NWU5MDNlMTdfNzBiODJhMDlfZTVmMV8xNDAy****
 x-cos-server-side-encryption-customer-algorithm: AES256
 x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
 
+
+
 [Object Content]
 ```
 
@@ -343,6 +359,8 @@ Server: tencent-cos
 x-cos-hash-crc64ecma: 11596229263574363878
 x-cos-request-id: NWU5MDY2Y2FfMzFiYjBiMDlfMjE2NzVfMTgz****
 x-cos-version-id: MTg0NDUxNTc1NTE5MTc1NjM4MDA
+
+
 
 [Object Content Version 2]
 ```
@@ -375,10 +393,12 @@ x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MDNlMmRfNzBiODJhMDlfZTYwZl8xM2Fh****
 x-cos-version-id: MTg0NDUxNTc1NjIzMTQ1MDAwODg
 
+
+
 [Object Content]
 ```
 
-#### Example 10. Downloading partial content by specifying the Range request header
+#### Example 10. Specifying the Range request header to download partial content
 
 #### Request
 
@@ -407,10 +427,12 @@ Server: tencent-cos
 x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MDY3NjVfY2VjODJhMDlfOWVlZl8xNmMy****
 
+
+
 Content
 ```
 
-#### Example 11. Downloading an archived object that has not been restored
+#### Example 11. Downloading an ARCHIVE object that has not been restored
 
 #### Request
 
@@ -420,6 +442,7 @@ Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Thu, 26 Dec 2019 11:57:24 GMT
 Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1577361444;1577368644&q-key-time=1577361444;1577368644&q-header-list=date;host&q-url-param-list=&q-signature=d975dc7097b2dbffcf2ba001e6dec25dd80a****
 Connection: close
+
 ```
 
 #### Response
@@ -434,13 +457,15 @@ Server: tencent-cos
 x-cos-request-id: NWUwNGEwMjRfZDcyNzVkNjRfNjZlM183Zjcx****
 x-cos-storage-class: ARCHIVE
 
+
+
 <?xml version='1.0' encoding='utf-8' ?>
 <Error>
-	<Code>InvalidObjectState</Code>
-	<Message>The operation is not valid for the object storage class.</Message>
-	<Resource>examplebucket-1250000000.cos.ap-beijing.myqcloud.com/exampleobject</Resource>
-	<RequestId>NWUwNGEwMjRfZDcyNzVkNjRfNjZlM183Zjcx****</RequestId>
-	<TraceId>OGVmYzZiMmQzYjA2OWNhODk0NTRkMTBiOWVmMDAxODc0OWRkZjk0ZDM1NmI1M2E2MTRlY2MzZDhmNmI5MWI1OTBjNjIyOGVlZmJlNDg4NDQ1MzAzMjA2ZDg4OGQ3MDhlMjIzYjI1ZWUwODY5YjdlMTBjY2EwNTgyZWMyMjc0Mjc=</TraceId>
+			<Code>InvalidObjectState</Code>
+			<Message>The operation is not valid for the object storage class.</Message>
+			<Resource>examplebucket-1250000000.cos.ap-beijing.myqcloud.com/exampleobject</Resource>
+			<RequestId>NWUwNGEwMjRfZDcyNzVkNjRfNjZlM183Zjcx****</RequestId>
+			<TraceId>OGVmYzZiMmQzYjA2OWNhODk0NTRkMTBiOWVmMDAxODc0OWRkZjk0ZDM1NmI1M2E2MTRlY2MzZDhmNmI5MWI1OTBjNjIyOGVlZmJlNDg4NDQ1MzAzMjA2ZDg4OGQ3MDhlMjIzYjI1ZWUwODY5YjdlMTBjY2EwNTgyZWMyMjc0Mjc=</TraceId>
 </Error>
 ```
 
