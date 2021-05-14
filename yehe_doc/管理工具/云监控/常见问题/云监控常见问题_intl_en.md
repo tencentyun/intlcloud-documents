@@ -30,7 +30,6 @@ The possible causes are as follows:
 - The alarm SMS quota is insufficient.
 - The alarm notification channel has not been configured or verified.
 - No user has been added to the recipient group.
-- 取关微信公众号。
 - The alarm trigger conditions have not been met.
 
 To troubleshoot, please see [No Alarm Is Received](https://intl.cloud.tencent.com/document/product/248/38297).
