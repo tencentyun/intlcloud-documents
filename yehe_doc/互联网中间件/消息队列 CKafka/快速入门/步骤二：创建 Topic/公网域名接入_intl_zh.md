@@ -7,10 +7,10 @@
 ### 步骤1：创建 Topic
 
 1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 。
-2. 在【实例列表】页，单击 [步骤一](https://cloud.tencent.com/document/product/597/54840) 创建的实例的“ID/名称”，进入实例详情页。
+2. 在【实例列表】页，单击 [步骤一](https://intl.cloud.tencent.com/document/product/597/40044) 创建的实例的“ID/名称”，进入实例详情页。
 3. 在实例详情页，单击页面顶部的【Topic 管理】，单击【新建】。
 4. 在编辑 Topic 窗口中，选择分区数和副本数等信息。
-   ![](https://main.qcloudimg.com/raw/05f7dc495a90da08c2b1a5593b908c1f.png)
+   ![](https://main.qcloudimg.com/raw/a93a5c2ce385779e632965a4411903da.png)
   - 名称：Topic 名称，输入后无法更改，名称只能包含字母、数字、下划线、“-”和“.”。
   - 分区数：一个物理上分区的概念，一个 Topic 可以包含一个或者多个 Partition，CKafka 以 Partition 作为分配单位。
   - 副本数：Partition 的副本个数，用于保障 Partition 的高可用，为保障数据可靠性，当前不支持创建单副本 Topic，默认开启2副本。
@@ -21,6 +21,6 @@
 ### 步骤2：配置 ACL 策略
 
 1. 在实例详情页，选择【用户管理】，单击【新建】，添加一个用户，设置好用户名和密码。
-   ![img](https://main.qcloudimg.com/raw/b7b63153b61cfc04cc2b86ad7e177455.png)
+   ![img](https://main.qcloudimg.com/raw/5dad7d1f14bebd52b08a366bd356e638.png)
 2. 在【ACL策略管理】页面，选择刚刚创建的Topic操作列的【编辑ACL策略】，为用户添加读写权限。
-   ![img](https://main.qcloudimg.com/raw/e0392b776bfca180bf3c92496de87174.png)
+   ![img](https://main.qcloudimg.com/raw/5aae813035f9981c7fa975dea6a4b812.png)
