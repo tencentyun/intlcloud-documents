@@ -25,21 +25,18 @@
 
 
 ### 云监控未收到告警
-未收到告警主要有六大原因：
+未收到告警主要有五大原因：
 - 告警策略未启用。
 - 短信配额不足。
 - 未配置或未验证报告通知渠道。
 - 接收组未配置用户。
-- 取关微信公众号。
 - 未达到告警触发条件。
 
 如需排查具体原因，请参见 [未收到告警排查文档](https://intl.cloud.tencent.com/document/product/248/38297)。
 
 ### 云监控如何新建接收人/组
 
-告警接收人/组决定了哪些用户能够接收到告警信息。您也可以把关心相同告警的人聚合到一个组，触发告警时，组内的人员都会收到相应的告警。请参见以下操作为告警策略添加告警接收人/组。
-- [添加告警接收人](https://intl.cloud.tencent.com/document/product/248/38921)。
-- [添加告警接收组](https://intl.cloud.tencent.com/document/product/248/38921)。
+告警接收人/组决定了哪些用户能够接收到告警信息。您也可以把关心相同告警的人聚合到一个组，触发告警时，组内的人员都会收到相应的告警。详情请参见 [告警接收人/组](https://intl.cloud.tencent.com/document/product/248/38921)。
 
 ### 云服务器Ping不可达
 如收到云服务器 “ping 不可达” 事件告警通知，您可以点击参见 [排查步骤](https://intl.cloud.tencent.com/document/product/248/36205)  恢复告警，如告警通知打扰到您可以点击参见 [关闭告警功能](https://intl.cloud.tencent.com/document/product/248/36205)。
