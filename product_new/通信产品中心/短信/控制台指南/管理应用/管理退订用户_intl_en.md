@@ -1,9 +1,9 @@
-## Operation Scenarios
+## Scenarios
 >The former blocklist management feature has been renamed "unsubscribed user management", with the function unchanged.
 
 A user can reply with the specified content such as "TD", "T", or "N" to the SMS message received to unsubscribe from SMS notifications. After unsubscription, the system will keep a record of their mobile number, the signature used to send the unsubscribed message, and the message type, so that future messages of the same type will no longer reach their mobile phone. You can check whether the user's number is in the unsubscribed user list by searching with the number and signature and then apply to remove the unsubscribed status based on the query result.
 
-## Directions
+## Procedure
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/sms).
 2. In the application list, click the name of the target application to enter the application details page.
 3. Select the **Unsubscribed User Management** tab.
