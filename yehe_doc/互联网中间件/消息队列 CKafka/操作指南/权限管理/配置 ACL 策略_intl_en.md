@@ -22,10 +22,10 @@ This document describes how to configure SASL authentication and ACL rules in th
      **Fuzzy match by prefix**: fuzzy match topics that need to be configured with the same ACL policy by topic name prefix. You need to specify the fuzzy matching rule name. After this is set, when a new topic whose name contains the specified prefix is added, the system will automatically configure the specified ACL policy for it.
      >?Up to five fuzzy matching rules can be set.
      
- ![](https://main.qcloudimg.com/raw/8349bf070e1591ba133289677c97a9b2.png)
+
    - **Instances on other versions**: you can grant permissions to the user through **batch check**.
      Select multiple topics that need to be configured with the same ACL policy. The batch check mode only supports configuring one policy.
-		![](https://main.qcloudimg.com/raw/99f730464416e66b78de79553e60ebe7.png)
+
    > ?
    > - Enabling routing only affects the authentication method during access, while the set ACL policy takes effect globally.
    > - If you use the PLAINTEXT method to access Kafka while enabling public network access routing, the ACL previously set for the topics will still take effect.
