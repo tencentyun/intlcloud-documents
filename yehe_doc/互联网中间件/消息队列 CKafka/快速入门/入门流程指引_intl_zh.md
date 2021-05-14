@@ -5,5 +5,5 @@
 
 ### 操作流程
 
-![](https://main.qcloudimg.com/raw/b5c39f7c8e0a17ecdacf77633976f90c.png)
+![](https://main.qcloudimg.com/raw/30e64181949f2df1bc21cb81dbf2d020.png)
 
