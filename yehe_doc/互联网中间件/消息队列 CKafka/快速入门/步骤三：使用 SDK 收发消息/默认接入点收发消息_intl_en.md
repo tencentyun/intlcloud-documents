@@ -2,7 +2,7 @@
 
 This document describes how to connect the Java SDK to CKafka via the default access point and send and receive messages in a VPC environment.
 
-If you need to use SDKs based on other languages, see [SDK Documentation](https://cloud.tencent.com/document/product/597/54816).
+If you need to use SDKs based on other languages, see [SDK Documentation](https://intl.cloud.tencent.com/document/product/597/40049).
 
 ## Prerequisites
 
@@ -124,7 +124,7 @@ Produce ok:ckafka-topic-demo-0@199
 ```
 
 4. On the **Topic Management** tab page on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the target topic, and click **More** -> **Message Query** to view the message just sent.
-![](https://main.qcloudimg.com/raw/ec5fbf218cf50ff3d760be15f6331867.png)
+![](https://main.qcloudimg.com/raw/db9291c495b150ce8c278db808ae7bb6.png)
  
 
 ### Step 4. Consume messages
@@ -193,7 +193,7 @@ Consume partition:0 offset:299
 ```
 
 4. On the **Consumer Group** tab page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding consumer group, enter the topic name, and click **View Details** to view the consumption details.
-![](https://main.qcloudimg.com/raw/27775267907600f4ff759e6a197195ee.png)
+![](https://main.qcloudimg.com/raw/94b9a8151db88307b91060cc5caf606b.png)
 
 
 
