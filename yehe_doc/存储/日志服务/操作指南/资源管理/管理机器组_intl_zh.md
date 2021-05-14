@@ -1,0 +1,83 @@
+## 操作场景
+
+机器组是腾讯云日志服务（Cloud Log Service，CLS）中 LogListener 所采日志的服务器对象，通过机器组的方式来配置 LogListener 采集日志的服务器。一般而言，根据不同业务场景来划分不同的机器组，可以方便您管理日志服务。
+
+## 操作步骤
+
+### 通过配置机器组 IP 地址创建机器组
+
+1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls)。
+2. 在左侧导航栏中，单击【机器组管理】。
+3. 选择您日志服务所在的地域，例如广州，单击【新建机器组】。
+4. 在弹出的窗口中，设置如下信息。
+
+ - 机器组名称：例如 cls_test。
+ - 配置模式：选择**配置机器组IP地址**。
+ - IP地址：输入机器的 IP 地址。
+ >! 
+ > - 每行填写一个 IP 地址，暂不支持 Windows 系统机器。
+ > - 同园区内，腾讯云服务器填写内网 IP 地址即可，分行隔开。
+ > 
+ - LogListener自动升级：默认关闭，请根据实际需求进行配置。
+ - LogListener服务日志：默认开启 Loglistener 服务日志，记录 Loglistener 运行状态、采集状况等重要日志，详情可参见 [LogListener 服务日志](https://intl.cloud.tencent.com/document/product/614/40232)。
+5. 单击【确定】，即可完成创建。
+
+### 通过配置机器标识创建机器组
+
+如果您的机器 IP 地址经常变动，利用机器 IP 配置机器组操作繁琐，每次 IP 变更将需要修改对应的机器组配置。
+CLS 支持利用机器标识动态配置机器组，您只需要在 Loglistener 的配置信息中填入机器标识，CLS 即可识别并自动将机器添加至机器组。
+>! 通过配置机器标识创建机器组仅支持 LogListener 2.3.0 及以上版本，低版本的 LogListener 需手动更新。
+> 
+1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls)。
+2. 在左侧导航栏中，单击【机器组管理】。
+3. 选择您日志服务所在的地域，例如广州，单击【新建机器组】。
+4. 在弹出的窗口中，设置如下信息。
+
+ - 机器组名称：例如 cls_test。
+ - 配置模式：选择**配置机器标识**。
+ - 机器标识：输入机器的标识。
+ >! 每行填写一个标识名称，暂不支持识别 Windows 系统的机器。
+ >
+ - LogListener自动升级：建议开启 LogListener 自动升级，详情可参见 [LogListener 升级指南](https://intl.cloud.tencent.com/document/product/614/40233)。
+ - LogListener服务日志：默认开启 LogListener 服务日志，记录 LogListener 运行状态、采集状况等重要日志，详情可参见 [LogListener 服务日志](https://intl.cloud.tencent.com/document/product/614/40232)。
+5. 单击【确定】。
+6. 登录进行机器标识的目标机器，并执行如下命令，打开 Loglistener 安装目录下的`/etc/loglistener.conf`文件。
+此处安装目录以`/user/local`为例：
+```plaintext
+vi /usr/local/loglistener-2.3.0/etc/loglistener.conf
+```
+7. 按 **i**，进入编辑模式。
+8. 找到 group_label 参数，填写您自定义的机器标识（多个标识以英文逗号分割）。
+![img](https://main.qcloudimg.com/raw/1d17d38a70cdfbfb963a60fbec3b0c1b.png)
+9. 按 **Esc**，退出编辑模式。
+10. 输入 **:wq**，按 **Enter**，保存设置。
+11. 执行如下命令，重启 LogListener，即可完成创建。
+```plaintext
+/etc/init.d/loglistenerd restart
+```
+
+
+### 查看机器状态
+
+机器组与日志服务系统之间采用心跳机制保持连接，成功安装过 LogListener 的机器组会定时向日志服务发送心跳。
+
+1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls)。
+2. 在左侧导航栏中，单击【机器组管理】。
+3. 在机器组管理页面，找到需要操作的机器组，单击【查看】。
+
+2. 在弹出的窗口中，即可查看机器组的状态。
+通过查看机器组的状态可识别当前该机器是否工作正常。若状态显示正常，则说明您的服务器可以与腾讯云日志服务正常通信。
+
+
+
+### 删除机器组
+
+1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls)。
+2. 在左侧导航栏中，单击【机器组管理】。
+3. 在机器组管理页面，选择需要删除的机器组，单击【删除】。
+<img src="https://main.qcloudimg.com/raw/a5499d33aa8c2323697388334dc27584.png" alt="image-20210512174639165" style="zoom:50%;" />
+4. 在弹出的提示窗口，单击【确认】，完成机器组删除。
+</br><img src="https://main.qcloudimg.com/raw/e99130ce78d418e04c4f573fbcd112d0.png" alt="image-20210512174816939" style="zoom:50%;" />
+
+>! 机器组一旦删除，所关联的日志主题将无法继续采集日志。
+>
