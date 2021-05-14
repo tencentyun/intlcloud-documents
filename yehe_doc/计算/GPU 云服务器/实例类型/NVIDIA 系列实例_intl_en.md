@@ -50,11 +50,6 @@ NVIDIA GPU instances are categorized into rendering and computing types:
                 <td><ul class="params"><li>5.5 TFLOPS of single-precision floating point performance</li><li>22 TOPS for INT8</li></ul></td>
                 <td><ul class="params"><li>GN6: Chengdu</li><li>GN6S: Guangzhou, Shanghai, and Beijing</li></ul></td>
             </tr>
-                <tr><td>GN2</td> 
-                <td>Tesla M40</td>
-                <td><ul class="params"><li>7 TFLOPS of single-precision floating point performance with GPU Boost</li><li>0.2 TFLOPS of double-precision floating point performance</li></ul></td>
-                <td>Guangzhou, Shanghai, and Beijing</td>
-            </tr>
             <tr>
                 <td>Rendering</td>
                 <td>GN7vw</td> 
@@ -80,7 +75,6 @@ The table below lists **recommended NVIDIA GPU instances** provided by GCC. A ti
         <thead>
         <tr>
             <th width="20%">Feature\Instance</th>
-            <th width="13%">GN2</th>
             <th width="13%">GN6 or GN6S</th>
             <th width="13%">GN7</th>
             <th width="13%">GN8</th>
@@ -90,7 +84,6 @@ The table below lists **recommended NVIDIA GPU instances** provided by GCC. A ti
         <tbody>
             <tr>
                 <td>Graphic and image processing</td>
-                <td>-</td> 
                 <td>✓</td>
                 <td>✓</td>
                 <td>✓</td>
@@ -98,7 +91,6 @@ The table below lists **recommended NVIDIA GPU instances** provided by GCC. A ti
             </tr>
             <tr>
                 <td>Video encoding and decoding</td>
-                <td>✓</td> 
                 <td>✓</td>
                 <td>★</td>
                 <td>✓</td>
@@ -106,7 +98,6 @@ The table below lists **recommended NVIDIA GPU instances** provided by GCC. A ti
             </tr>
             <tr>
                 <td>Deep learning training</td>
-                <td>✓</td> 
                 <td>✓</td>
                 <td>✓</td>
                 <td>★</td>
@@ -114,7 +105,6 @@ The table below lists **recommended NVIDIA GPU instances** provided by GCC. A ti
             </tr>
             <tr>
                 <td>Deep learning inference</td>
-                <td>✓</td> 
                 <td>★</td>
                 <td>★</td>
                 <td>★</td>
@@ -122,7 +112,6 @@ The table below lists **recommended NVIDIA GPU instances** provided by GCC. A ti
             </tr>
             <tr>
                 <td>Scientific computing</td>
-                <td>✓</td> 
                 <td>-</td>
                 <td>-</td>
                 <td>-</td>
@@ -131,9 +120,6 @@ The table below lists **recommended NVIDIA GPU instances** provided by GCC. A ti
         </tbody>
 </table>
 
->?GN2 supports video encoding and decoding in H.264 format, but not H.265. For more information, please see [Video Encode and Decode GPU Support Matrix](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix).
-
-Except for GN2, other types of NVIDIA GN* instances allow you to install a GRID driver to process graphics and images. To use the GRID driver, you must purchase a license.
 
 ### Video encoding and decoding
 
@@ -609,109 +595,6 @@ GN6 and GN6S are cost-effective and applicable to the following scenarios:
 		</tbody>
 </table>
 
-
-
-
-## GN2 for computing tasks 
-**NVIDIA GPU instance GN2** supports not only general GPU computing tasks such as deep learning and scientific computing, but also graphic and image processing tasks such as video encoding and decoding.
-
-
-### Application scenarios
-
-GN2 is applicable to deep learning training and inference as well as scientific computing scenarios, such as:
-- Deep learning
-- High-performance database
-- Computational fluid dynamics
-- Computational finance
-- Seismic analysis
-- Molecular modeling
-- Genomics and others
-
-GN2 is also applicable to graphic and image processing scenarios. For example, GN2 supports video encoding and decoding in H.264 format, but not H.265. For more information, please see [Video Encode and Decode GPU Support Matrix](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix).
-
-### Hardware specifications
-
-- **CPU:** Intel<sup>®</sup> Xeon<sup>®</sup> E5-2680 v4 (Broadwell), 2.4 GHz.
-- **GPU:** NVIDIA<sup>®</sup> Tesla<sup>®</sup> M40, providing 7 TFLOPS of single-precision floating point performance with GPU Boost and 0.2 TFLOPS of double-precision floating point performance.
-- **Memory:** DDR4, providing memory bandwidth up to 2,666 MT/s.
-- **Storage:** local SSD disk. Currently, this instance type does not support cloud disks.	 
-- **Network:** network optimization is enabled by default. The network performance of an instance depends on its specification. You can purchase [public network bandwidth](https://intl.cloud.tencent.com/document/product/213/10578) as needed.
-
-**GN2 instance provides the following configurations:**
-
-<table>
-		<thead>
-		<tr>
-			<th width=10%>Model</th>
-			<th width=14%>GPU<br>(NVIDIA<br>Tesla M40)</th>
-            <th width=10%>GPU memory<br>(GDDR5)</th>
-			<th width=8%>vCPU</th>
-			<th>Memory<br>(DDR4)</th>
-            <th width=10%>Private network bandwidth</th>
-            <th>Packet forwarding rate (PPS)</th>
-            <th>Number of queues</th>
-			<th>Availability zone</th>
-		</tr>
-		</thead>
-		<tbody>
-            <tr>
-				<td>GN2.7XLARGE48</td>
-				<td>1</td> 
-        <td>24 GB</td>
-				<td>28 cores</td>
-				<td>48 GB</td>
-        <td>5 Gbps</td>
-				<td>400,000</td>
-        <td>8</td>
-        <td rowspan="2">Guangzhou Zone 3, Beijing Zone 2, and Shanghai Zone 2</td>
-			</tr>
-            <tr>
-                <td>GN2.14XLARGE96</td>
-				<td>2</td> 
-         <td>48 GB</td>
-				<td>56 cores</td>
-				<td>96 GB</td>
-        <td>10 Gbps</td>
-				<td>700,000</td>
-        <td>8</td>
-			</tr>
-			<tr>
-				<td>GN2.7XLARGE56</td>
-				<td>1</td> 
-        <td>24 GB</td>
-				<td>28 cores</td>
-				<td>56 GB</td>
-        <td>5 Gbps</td>
-				<td>400,000</td>
-        <td>8</td>
-        <td rowspan="2">Guangzhou Zone 3, Beijing Zone 2, and Shanghai Zone 2</td>
-			</tr>
-            <tr>
-				<td>GN2.14XLARGE112</td>
-				<td>2</td> 
-        <td>48 GB</td>
-				<td>56 cores</td>
-				<td>112 GB</td>
-        <td>10 Gbps</td>
-				<td>700,000</td>
-        <td>8</td>
-			</tr>
-		</tbody>
-</table>
-
-### Application scenarios
-GN7vw is applicable to graphic and image processing scenarios, such as:
-- Graphic and image processing
-- Video encoding and decoding
-- Graph database
-
-### Hardware specifications
-
-- **CPU:** Intel<sup>®</sup> Xeon<sup>®</sup> Platinum 8255C CPU, 2.5 GHz.
-- **GPU:** NVIDIA<sup>®</sup> Tesla<sup>®</sup> T4, providing 8.1 TFLOPS of single-precision floating point performance, 130 TOPS for INT8, and 260 TOPS for INT4.
-- **Memory:** DDR4, providing memory bandwidth up to 2,666 MT/s.
-- **Storage:** Select the appropriate CBS [cloud disk type](https://intl.cloud.tencent.com/document/product/362/31636). To [expand the cloud disk capacity](https://intl.cloud.tencent.com/document/product/362/31600), create and mount an elastic cloud disk.	 
-- **Network:** network optimization is enabled by default. The network performance of an instance depends on its specification. You can purchase [public network bandwidth](https://intl.cloud.tencent.com/document/product/213/10578) as needed.
 
 <style>
 	.params{margin:0px !important}
