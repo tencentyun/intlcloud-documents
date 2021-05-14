@@ -20,7 +20,7 @@ Product operations personnel of a business using SMS in an organization need to 
 ## Authorization Granularity
 The core feature of CAM is to **allow or forbid an account to perform some operations or manipulate some resources**. SMS access management supports [resource-level authorization](https://intl.cloud.tencent.com/document/product/598/10588#.E7.AE.80.E4.BB.8B). The resource granularity is the SMS application, and the operation granularity is the [TencentCloud API](https://intl.cloud.tencent.com/product/api), including server APIs and APIs that may be used when the SMS console is accessed. For more information, please see [Authorizable Resources and Actions](https://intl.cloud.tencent.com/document/product/382/38454).
 
-## Limits
+## Limitations
 - SMS access management supports authorization at the application level but not at the finer-grained resource level (such as the application information and the configuration information).
 - SMS access management does not support projects and tags.
 
