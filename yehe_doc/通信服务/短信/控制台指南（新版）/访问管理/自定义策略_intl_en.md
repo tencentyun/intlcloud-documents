@@ -1,6 +1,6 @@
 >!This document describes the access management feature of **SMS**. For more information on access management for other Tencent Cloud services, please see [CAM-Enabled Products](https://intl.cloud.tencent.com/document/product/598/10588).
 
-It is convenient to use a [preset policy](https://intl.cloud.tencent.com/document/product/382/38455) in SMS access control to implement authorization, but its granularity of permission control is coarse and cannot be refined to the SMS application and the [TencentCloud API](https://intl.cloud.tencent.com/product/api) levels. If you need fine-grained permissions control, you need to create custom policies.
+It is convenient to use a [default policy](https://intl.cloud.tencent.com/document/product/382/38455) in SMS access control to implement authorization, but its granularity of permission control is coarse and cannot be refined to the SMS application and the [TencentCloud API](https://intl.cloud.tencent.com/product/api) levels. If you need fine-grained permissions control, you need to create custom policies.
 
 ## Custom Policy Creation Methods
 There are multiple ways to create a custom policy. The table below shows a comparison of various methods. For detailed directions, please see further below.
