@@ -1,9 +1,9 @@
-This document describes how to use GSE in combination with GPM to enhance your gaming experience.
+This document describes how to use GSE in combination with GPM to enhance your game development experience.
 
 ## Prerequisites
 
 - You have [created a server fleet](https://intl.cloud.tencent.com/document/product/1055/36681) on the GSE console.
-- You have [created a match](https://intl.cloud.tencent.com/document/product/1072/39203) and selecting **Request GSE Resources**.
+- You have [created a match](https://intl.cloud.tencent.com/document/product/1072/39203) and selected **Request GSE Resources**.
 
 ## Process Architecture
 The process architecture of GSE+GPM is as follows:
@@ -63,10 +63,10 @@ For more information about region latency in GSE, see [Nearby Resource Schedulin
 
 - **GPM timeout**
 ![](https://main.qcloudimg.com/raw/523f3f40471f8888f2dc2c6eaac9c6f5.png)
-This timeout is the longest period during which GPM will search for a MatchTicket, and the MatchTicket is in `SEARCHING` status. If no other players are matched during the period, the MatchTicket status will change to `TimedOut`.
+This timeout is the longest period during which GPM will search for a MatchTicket, and the MatchTicket is in `SEARCHING` status. If no other matched players are found during the period, the `MatchTicket` status will change to `TimedOut`.
 - **GSE timeout**
 ![](https://main.qcloudimg.com/raw/dc9d48972e8de15d2bf1f57be02728ad.png)
-This timeout is the longest period for retaining a game session request during which GSE will search for eligible fleet in the queue after a placement request is received. If no fleet is found during the period, the status of all MatchTickets involved in this placement change to `Failed`.
+This timeout is the longest period for retaining a game session request during which GSE will search for eligible fleet in the queue after a placement request is received. If no matched fleet is found during the period, the status of all `MatchTickets` involved in this placement change to `Failed`.
 
 >? The time consumed for a matchmaking service mainly includes the GPM searching and GSE placing.
 
