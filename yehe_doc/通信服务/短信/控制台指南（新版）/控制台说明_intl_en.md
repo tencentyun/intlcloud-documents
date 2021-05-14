@@ -117,4 +117,8 @@ The following documents describe how to send SMS messages in some common scenari
 <td><a href="https://intl.cloud.tencent.com/document/product/382/35604">Sending Bulk Best Wishes Messages (for Organizational User)</a></td>
 <td>This document describes how to quickly send bulk best wishes messages to members.</td>
 </tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/382/35747">How to Send SMS Verification Codes</a></td>
+<td>Quick Start Quide of Sending SMS Verification Codes.</td>
+</tr>
 </table>
