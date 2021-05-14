@@ -30,7 +30,7 @@
  - Application: select the application that needs to send the SMS. 
 4. Click **OK**.
 5. Check the number of recipients, indicate your consent to the prompt about fees, and click **Send**.
- You can view the status of the task in the Delivery Records list. When the status is **sent**, the task has been completed.
+ You can view the status of the task in the Delivery Records list. When the status is **Sent**, the task has been completed.
 
 ## Subsequent Operations
 
