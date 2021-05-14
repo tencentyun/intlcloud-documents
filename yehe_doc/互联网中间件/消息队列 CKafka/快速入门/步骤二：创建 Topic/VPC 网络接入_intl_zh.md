@@ -5,10 +5,10 @@
 ## 操作步骤
 
 1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 。
-2. 在【实例列表】页，单击 [步骤一](https://cloud.tencent.com/document/product/597/54839) 创建的实例的“ID/名称”，进入实例详情页。
+2. 在【实例列表】页，单击 [步骤一](https://intl.cloud.tencent.com/document/product/597/40043) 创建的实例的“ID/名称”，进入实例详情页。
 3. 在实例详情页，单击页面顶部的【Topic 管理】，单击【新建】。
 4. 在编辑 Topic 窗口中，选择分区数和副本数等信息。
-   ![](https://main.qcloudimg.com/raw/05f7dc495a90da08c2b1a5593b908c1f.png)
+   ![](https://main.qcloudimg.com/raw/a0a6444b0bb665691a1e4c61ff1114ec.png)
   - 名称：Topic 名称，输入后无法更改，名称只能包含字母、数字、下划线、“-”和“.”。
   - 分区数：一个物理上分区的概念，一个 Topic 可以包含一个或者多个 Partition，CKafka 以 Partition 作为分配单位。
   - 副本数：Partition 的副本个数，用于保障 Partition 的高可用，为保障数据可靠性，当前不支持创建单副本 Topic，默认开启2副本。
