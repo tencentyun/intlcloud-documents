@@ -3,7 +3,7 @@
 SMS length = number of characters in the signature + number of characters in the body. A single SMS message can contain up to 500 characters.
 >Signature is optional for global SMS.
 
-### SMS containing only English characters 
+### SMS containing English characters only
 
  - A standard GSM character is calculated as **1 character**, while an extended GSM character is calculated as **2 characters**.
   <table>
