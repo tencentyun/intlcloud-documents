@@ -17,7 +17,7 @@ This document describes how to create an instance and deploy a VPC via the CKafk
    - Region: select a region close to the resource for client deployment.
    - AZ:
      - Standard Edition: does not support cross-AZ deployment.
-     - Pro Edition: if the current region supports multi-AZ deployment, you can select up to 2 AZs for deployment. For more information on cross-AZ deployment, please see [Cross-AZ Deployment](https://cloud.tencent.com/document/product/597/52786).
+     - Pro Edition: if the current region supports multi-AZ deployment, you can select up to 2 AZs for deployment. For more information on cross-AZ deployment, please see [Cross-AZ Deployment](https://intl.cloud.tencent.com/document/product/597/40243).
    - Product Specification: select a model based on the peak bandwidth and disk capacity.
    - Message Retention: the value must range from 24 hours to 2,160 hours.
      When the disk space is insufficient (the disk watermark reaches 90%), earlier messages will be deleted ahead of time to ensure service availability.
