@@ -19,7 +19,7 @@ To enable public network access, you need to add a public route for the instance
    - Region: select a region close to the resource for client deployment.
    - AZ:
      - Standard Edition: does not support cross-AZ deployment.
-     - Pro Edition: if the current region supports multi-AZ deployment, you can select up to 2 AZs for deployment. For more information on cross-AZ deployment, please see [Cross-AZ Deployment](https://cloud.tencent.com/document/product/597/52786).
+     - Pro Edition: if the current region supports multi-AZ deployment, you can select up to 2 AZs for deployment. For more information on cross-AZ deployment, please see [Cross-AZ Deployment](https://intl.cloud.tencent.com/document/product/597/40243).
    - Product Specification: select a model based on the peak bandwidth and disk capacity.
    - Message Retention: the value must range from 24 hours to 2,160 hours.
      When the disk space is insufficient (the disk watermark reaches 90%), earlier messages will be deleted ahead of time to ensure service availability.
@@ -30,7 +30,7 @@ To enable public network access, you need to add a public route for the instance
 
 1. In the instance list, click the ID of the created instance.
 2. On the instance details page, in the **Access Mode** section, click **Add a routing policy** to add a public route.
-   ![](https://main.qcloudimg.com/raw/fd4a5b95f21b4fd8effe7ec425c3ec3c.png)
+   ![](https://main.qcloudimg.com/raw/dcb5bb0a6975a847067387d7730efa0d.png)
    Then you get the domain name and port for public network access.
-   ![](https://main.qcloudimg.com/raw/6855a9d500dcbefbabed91515b695050.png)
+   ![](https://main.qcloudimg.com/raw/71b6caefb12f44280d83b138df614845.png)
 
