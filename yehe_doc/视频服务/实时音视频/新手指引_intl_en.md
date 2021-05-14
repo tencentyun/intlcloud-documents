@@ -15,16 +15,16 @@ TRTC offers two types of services: **basic services** and *value-added services*
 <tr>
 <td rowspan="4">Basic services</td>
 <td>Interactive live audio streaming</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">Billing of interactive live audio streaming</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/39785">Billing of interactive live audio streaming</a></td>
 </tr><tr>
 <td>Interactive live video streaming</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">Billing of interactive live video streaming</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/39786">Billing of interactive live video streaming</a></td>
 </tr><tr>
 <td>Audio call</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">Billing of audio calls</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/39787">Billing of audio calls</a></td>
 </tr><tr>
 <td>Video call</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">Billing of video calls</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/39788">Billing of video calls</a></td>
 </tr><tr>
 <td rowspan="2">Value-added services</td>
 <td>On-cloud recording</td>
@@ -142,7 +142,7 @@ TRTC, along with other Tencent Cloud products, offers free demos for a wide rang
 | View call quality statistics of a TRTC room via the dashboard               | Dashboard |
 | Download the demo source code and have a quick run of the demo                       | [Demo Quick Run](https://intl.cloud.tencent.com/document/product/647/39073) |
 | Generate a UserSig online or verify an existing UserSig         | [UserSig Generation and Verification](https://intl.cloud.tencent.com/document/product/647/39074)                |
-| Create an application | [Create Application](https://intl.cloud.tencent.com/document/product/647/39077) |
+| Create an application |  
 | Enable relayed push, on-cloud recording or advanced permission control for an application        | [Function Configuration](https://intl.cloud.tencent.com/document/product/647/39080) |
 | Add a custom image to be set as the background displayed during on-cloud stream mixing            | [Material Management](https://intl.cloud.tencent.com/document/product/647/39081) |
 | Configure a callback key and address based on your actual needs | [Callback Configuration](https://intl.cloud.tencent.com/document/product/647/39559) |
