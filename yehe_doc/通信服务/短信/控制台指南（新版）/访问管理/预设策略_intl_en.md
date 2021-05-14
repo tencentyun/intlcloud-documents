@@ -1,21 +1,21 @@
 >!This document describes the access management feature of **SMS**. For more information on access management for other Tencent Cloud services, please see [CAM-Enabled Products](https://intl.cloud.tencent.com/document/product/598/10588).
 
-SMS access management essentially binds sub-accounts to policies or grants policies to sub-accounts. You can use preset policies directly in the console to implement some simple authorization operations. For more complicated authorization operations, please see [Custom Policies](https://intl.cloud.tencent.com/document/product/382/38456).
+SMS access management essentially binds sub-accounts to policies or grants policies to sub-accounts. You can use default policies directly in the console to implement some simple authorization operations. For more complicated authorization operations, please see [Custom Policies](https://intl.cloud.tencent.com/document/product/382/38456).
 
-Currently, SMS provides the following preset policies:
+Currently, SMS provides the following default policies:
 
 | Policy Name | Description |
 |--------------------------|--------------|
-| QcloudSMSFullAccess     | Full access to SMS |
-| QcloudSMSReadonlyAccess | Read-only access to SMS |
+| QcloudSMSFullAccess     | Full access right |
+| QcloudSMSReadonlyAccess | Read-only access right |
 
-## Preset Policy Use Cases
-### Creating sub-accounts with full access to SMS
+## Default Policy Use Cases
+### Creating sub-accounts with full access right
 1. Access the [User List](https://console.cloud.tencent.com/cam) page in the CAM Console using the Tencent Cloud [root account](https://intl.cloud.tencent.com/document/product/598/32633) and click **Create User**.
 2. On the "Create User" page, select **Custom Create** to enter the "Create Sub-user" page.
 >?Please perform the steps before "User Permissions" as instructed in [Creating a Custom Sub-user](https://intl.cloud.tencent.com/document/product/598/13674).
 3. On the "User Permissions" page:
-	1. Search for and select the preset policy `QcloudSMSFullAccess`.
+	1. Search for and select the default policy `QcloudSMSFullAccess`.
 	2. Click **Next**.
 4. Click **Complete** in the "Review" column. After the sub-user is created successfully, download the login link and security credentials as shown below and keep them private.
 <table>
