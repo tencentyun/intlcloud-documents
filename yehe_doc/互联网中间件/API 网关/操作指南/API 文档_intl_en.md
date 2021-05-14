@@ -11,15 +11,14 @@ You have created a service and an API in API Gateway (as instructed in [Creating
 ### Creating document
 
 1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway/index?rid=1) and click **Tool** > **API Document** on the left sidebar.
-   ![](https://main.qcloudimg.com/raw/c2df5fec87cd2f29a4f27d540bd4abe7.png)
+
 2. On the **API Document** page, click **Create Now**, enter the document name in the pop-up window, select the environment, service, and API, and click **Submit**.
-   ![](https://main.qcloudimg.com/raw/7959f140dacae6911eedab4f0c397a4f.png)
+
 3. Wait patiently for the API document creation to complete.
 
 ### Viewing document details
 
-The following is the details page of an API document:
-![](https://main.qcloudimg.com/raw/450ea44198363f1b787a35a7cdbce174.png)
+
 
 The parameters are described as follows:
 
@@ -36,23 +35,23 @@ The parameters are described as follows:
 ### Accessing document
 
 1. Copy the API document address and paste it in a browser to open the document login page.
-   ![](https://main.qcloudimg.com/raw/8f617c72722008c7d51889912ae3da12.png)
+
 2. Enter the API document password on the document login page to view the content of the document.
-   ![](https://main.qcloudimg.com/raw/6af54019f8304f96d6729314a06d0c43.png)
+
 
 ### Updating document
 
 After editing the API for which an API document is generated, the document will not be updated synchronously. Using the "document update" feature can ensure that the API document is consistent with the API information. The steps are as follows:
 1. Click **Update** in the top-right corner of the document details page.
 2. Click **Confirm** in the pop-up window and wait for the document construction to complete.
-![](https://main.qcloudimg.com/raw/a7ec27c117b42b9a49aa33c1b6faa9ba.png)
+
 
 ### Resetting password
 
 After you reset the API document password, a new password will be generated. Users can only use the new password to access the document, while the old password will not work. The steps are as follows:
 1. Click **Reset** after the API document password.
 2. Click **Confirm** in the pop-up window to generate a new API document password.
-![](https://main.qcloudimg.com/raw/7f044807940c26b5835b0f4cf510e7b2.png)
+
 
 ### Deleting document
 
