@@ -76,7 +76,7 @@ TRTC 云端录制服务的刊例价如下表所示：
 ## 相关文档
 - [计费概述](https://intl.cloud.tencent.com/document/product/647/34610)
 - [基础服务费用](https://intl.cloud.tencent.com/document/product/647/34613)
-- [增值服务费用](https://intl.cloud.tencent.com/document/product/647/34614)
+- [增值服务费用](https://intl.cloud.tencent.com/zh/document/product/647/34610)
 - [云端录制计费说明](https://intl.cloud.tencent.com/document/product/647/38385)
 - [云端混流转码计费说明](https://intl.cloud.tencent.com/document/product/647/38929)
 - [欠费停服说明](https://intl.cloud.tencent.com/document/product/647/34611)
