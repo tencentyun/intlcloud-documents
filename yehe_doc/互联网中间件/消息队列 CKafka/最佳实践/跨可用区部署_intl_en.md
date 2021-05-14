@@ -24,7 +24,7 @@ For the client, after a certain AZ becomes unavailable due to an exception, if t
 
 The control layer of CKafka uses the same technical scheme as Kafka. It relies on ZooKeeper to manage service discovery and cluster controller election for broker nodes. **The ZK nodes in the ZooKeeper cluster of a CKafka instance that supports multi-AZ deployment are deployed in three AZs (or data centers).** In this way, even if the ZK nodes in any AZ fail and disconnect, the entire ZooKeeper cluster can still provide services.
 
-![](https://main.qcloudimg.com/raw/8f8a0366a8ab06e7322da604a4b1fa3a.png)
+![](https://main.qcloudimg.com/raw/da14fec605a5d8b97eb50583d35b673c.png)
 
 
 ## Pros and Cons of Multi-AZ Deployment
@@ -62,7 +62,7 @@ After the cluster network is back to normal, the client can resume production an
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
 2. Click **Instance List** on the left sidebar and click **Create** to enter the instance purchase page.
 3. On the instance purchase page, set the configuration information for purchase based on your actual needs.
-	 ![](https://main.qcloudimg.com/raw/2a92a8c04805a44645481bd56c41b377.png)
+	 ![](https://main.qcloudimg.com/raw/f83616b7644977fc0c1ada00b9b0b4ac.png)
   - Billing Mode: monthly subscription
   - Specs Type: Pro Edition
   - Region: select a region close to the resources for client deployment
@@ -74,5 +74,5 @@ After the cluster network is back to normal, the client can resume production an
   - Purchase Period: you can set auto-renewal by month upon expiration
 
 4. Click **Buy Now** to complete the instance creation process.
-   ![](https://main.qcloudimg.com/raw/326afc4cb9999f0193695fce03a6a98a.png)
+   ![](https://main.qcloudimg.com/raw/d06043a79f7664a81ed6304ffaaf63f8.png)
 
