@@ -50,11 +50,6 @@ NVIDIA 系列实例包括计算型和渲染型两类。其中：
                 <td><ul class="params"><li>5.5TFLOPS 单精度浮点计算</li><li>22INT8 TOPS</li></ul></td>
                 <td><ul class="params"><li>GN6：成都</li><li>GN6S：广州、上海、北京</li></ul></td>
             </tr>
-                <tr><td>GN2</td> 
-                <td>Tesla M40</td>
-                <td><ul class="params"><li>7TFLOPS 单精度浮点计算（GPU Boost 加速）</li><li>0.2TFLOPS 双精度浮点计算</li></ul></td>
-                <td>广州、北京、上海</td>
-            </tr>
             <tr>
                 <td>渲染型</td>
                 <td>GN7vw</td> 
@@ -80,7 +75,6 @@ NVIDIA 系列实例包括计算型和渲染型两类。其中：
         <thead>
         <tr>
             <th width="20%">功能\实例</th>
-            <th width="13%">GN2</th>
             <th width="13%">GN6/GN6S</th>
             <th width="13%">GN7</th>
             <th width="13%">GN8</th>
@@ -90,7 +84,6 @@ NVIDIA 系列实例包括计算型和渲染型两类。其中：
         <tbody>
             <tr>
                 <td>图形图像处理</td>
-                <td>-</td> 
                 <td>✓</td>
                 <td>✓</td>
                 <td>✓</td>
@@ -98,7 +91,6 @@ NVIDIA 系列实例包括计算型和渲染型两类。其中：
             </tr>
             <tr>
                 <td>视频编解码</td>
-                <td>✓</td> 
                 <td>✓</td>
                 <td>★</td>
                 <td>✓</td>
@@ -106,7 +98,6 @@ NVIDIA 系列实例包括计算型和渲染型两类。其中：
             </tr>
             <tr>
                 <td>深度学习训练</td>
-                <td>✓</td> 
                 <td>✓</td>
                 <td>✓</td>
                 <td>★</td>
@@ -114,7 +105,6 @@ NVIDIA 系列实例包括计算型和渲染型两类。其中：
             </tr>
             <tr>
                 <td>深度学习推理</td>
-                <td>✓</td> 
                 <td>★</td>
                 <td>★</td>
                 <td>★</td>
@@ -122,7 +112,6 @@ NVIDIA 系列实例包括计算型和渲染型两类。其中：
             </tr>
             <tr>
                 <td>科学计算</td>
-                <td>✓</td> 
                 <td>-</td>
                 <td>-</td>
                 <td>-</td>
@@ -131,9 +120,6 @@ NVIDIA 系列实例包括计算型和渲染型两类。其中：
         </tbody>
 </table>
 
->?GN2 视频编解码支持 H.264，不支持 H.265。详情请参见 [视频编码和解码 GPU 支持列表](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix)。
-
-NVIDIA GN* 系列其他实例（GN2 除外）可以通过安装 GRID Driver 的方式来支持图形图像处理，但是需要额外购买 License。
 
 ### 视频编解码
 
@@ -609,109 +595,6 @@ GN10X/GN10Xp 具有强大的双精度浮点运算能力 ，适用于如下场景
 		</tbody>
 </table>
 
-
-
-
-## 计算型 GN2 
-**NVIDIA 实例 GN2** 适用于深度学习、科学计算等 GPU 通用计算场景，也部分适用于图形图像处理（视频编解码）场景。
-
-
-### 适用场景
-
-适用于深度学习训练，推理和科学计算场景。例如：
-- 深度学习
-- 高性能数据库
-- 计算流体动力学
-- 计算金融
-- 地震分析
-- 分子建模
-- 基因组学及其他
-
-部分适用于图形图像处理。例如，视频编解码，支持 H.264，不支持 H.265。详情请参见 [视频编码和解码 GPU 支持列表](https://developer.nvidia.com/video-encode-decode-gpu-support-matrix)。
-
-### 硬件规格
-
-- **CPU：** Intel<sup>®</sup> Xeon<sup>®</sup> E5-2680 v4 (Broadwell)，主频2.4GHz 。
-- **GPU：** NVIDIA<sup>®</sup> Tesla<sup>®</sup> Ｍ40（GPU Boost加速下单精度浮点计算７TFLOPS，0.2TFLOPS 双精度浮点计算）。
-- **内存：** DDR4 ，内存带宽达2666MT/s。
-- **存储：** 本地 SSD 硬盘，本机型暂不支持购买云硬盘。	 
-- **网络：** 默认网络优化，实例网络性能与规格对应。[公网网络](https://intl.cloud.tencent.com/document/product/213/10578) 可按需配置。
-
-**GN2实例提供以下配置：**
-
-<table>
-		<thead>
-		<tr>
-			<th width=10%>型号</th>
-			<th width=14%>GPU<br>（NVIDIA<br>Tesla M40）</th>
-            <th width=10%>GPU 显存<br>（GDDR5）</th>
-			<th width=8%>vCPU</th>
-			<th>内存<br>(DDR4)</th>
-            <th width=10%>内网带宽</th>
-            <th>网络收发包</th>
-            <th>队列数</th>
-			<th>可用区</th>
-		</tr>
-		</thead>
-		<tbody>
-            <tr>
-				<td>GN2.7XLARGE48</td>
-				<td>1颗</td> 
-        <td>24GB</td>
-				<td>28核</td>
-				<td>48GB</td>
-        <td>5Gbps</td>
-				<td>40万PPS</td>
-        <td>8</td>
-        <td rowspan="2">广州三区，北京二区，上海二区</td>
-			</tr>
-            <tr>
-                <td>GN2.14XLARGE96</td>
-				<td>2颗</td> 
-         <td>48GB</td>
-				<td>56核</td>
-				<td>96GB</td>
-        <td>10Gbps</td>
-				<td>70万PPS</td>
-        <td>8</td>
-			</tr>
-			<tr>
-				<td>GN2.7XLARGE56</td>
-				<td>1颗</td> 
-        <td>24GB</td>
-				<td>28核</td>
-				<td>56GB</td>
-        <td>5Gbps</td>
-				<td>40万PPS</td>
-        <td>8</td>
-        <td rowspan="2">广州三区，北京二区，上海二区</td>
-			</tr>
-            <tr>
-				<td>GN2.14XLARGE112</td>
-				<td>2颗</td> 
-        <td>48GB</td>
-				<td>56核</td>
-				<td>112GB</td>
-        <td>10Gbps</td>
-				<td>70万PPS</td>
-        <td>8</td>
-			</tr>
-		</tbody>
-</table>
-
-### 适用场景
-适用于图形图像处理。例如：
-- 图形图像处理
-- 视频编解码
-- 图形数据库
-
-### 硬件规格
-
-- **CPU：** Intel<sup>®</sup> Xeon<sup>®</sup> Platinum 8255C CPU，主频 2.5 GHz。
-- **GPU：** NVIDIA<sup>®</sup> Tesla<sup>®</sup> T4（8.1 TFLOPS 单精度浮点计算，130 INT8 TOPS，260 INT4 TOPS）。
-- **内存：** DDR4 ，内存带宽达2666MT/s。
-- **存储：** 可选择 [云硬盘类型](https://intl.cloud.tencent.com/document/product/362/31636)，如需 [扩容](https://intl.cloud.tencent.com/document/product/362/31600) 可新建弹性云盘进行挂载。	 
-- **网络：** 默认网络优化，实例网络性能与规格对应。[公网网络](https://intl.cloud.tencent.com/document/product/213/10578) 可按需配置。
 
 <style>
 	.params{margin:0px !important}
