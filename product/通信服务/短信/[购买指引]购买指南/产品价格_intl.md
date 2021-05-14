@@ -1,9 +1,9 @@
-> Vouchers does not apply to SMS products.
+> !Vouchers does not apply to SMS products.
 
 ## Pricing for Global SMS
 Global SMS is daily [pay-as-you-go](https://intl.cloud.tencent.com/document/product/382/18052). The prices in the table are in US dollars.
 
-> As carriers in Indonesia, Egypt, Russia, Nigeria and Vietnam have adjusted their fees，Tencent Cloud Global SMS has adjusted the prices in these five countries accordingly from April 15, 2020 onwards. We will continue to provide you with stable, high-quality text messaging services worldwide. For more details, please refer to Tencent Cloud Global SMS Price Adjustment Notification.
+> !As carriers in Indonesia, Egypt, Russia, Nigeria and Vietnam have adjusted their fees，Tencent Cloud Global SMS has adjusted the prices in these five countries accordingly from April 15, 2020 onwards. We will continue to provide you with stable, high-quality text messaging services worldwide. For more details, please refer to [Tencent Cloud Global SMS Price Adjustment Notification](https://intl.cloud.tencent.com/document/product/382/35602).
 
 Download the Global SMS Price List [here](https://main.qcloudimg.com/raw/e96c3cdef2baab3b37a6b5f23ae78d5e.pdf).
 
