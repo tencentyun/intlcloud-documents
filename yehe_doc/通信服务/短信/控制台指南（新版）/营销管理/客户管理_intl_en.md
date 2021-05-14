@@ -3,7 +3,7 @@ Log in to the [SMS Console](https://console.cloud.tencent.com/sms) and select **
 
 ## Customer Pool
 You can **import** or **enter** numbers on this page for management.
-### Importing
+### BImporting
 1. Log in to the [SMS Console](https://console.cloud.tencent.com/sms).
 2. Select **Marketing Management** > **Customer Management** on the left sidebar and click **Import**.
 3. Configure the following parameters as needed:
