@@ -24,7 +24,7 @@ CKafka 数据层和原生 Kafka 采用相同的分布式部署方式，即多个
 
 CKafka 的控制层和原生 Kafka 采用相同的技术方案，依赖 zookeeper 对 broker 节点进行服务发现和集群 Controller 选举。**支持跨可用区部署的CKafka实例，其 zookeeper 集群中 zk 节点（以下简称 zk 节点）部署在三个可用区（或机房）。**当其中任意一个可用区的 zk 节点出现故障断连，整个 zk 集群仍可以正常提供服务。
 
-![](https://main.qcloudimg.com/raw/8f8a0366a8ab06e7322da604a4b1fa3a.png)
+![](https://main.qcloudimg.com/raw/da14fec605a5d8b97eb50583d35b673c.png)
 
 
 ## 跨可用区部署优劣势
@@ -62,7 +62,7 @@ CKafka 的控制层和原生 Kafka 采用相同的技术方案，依赖 zookeepe
 1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 。
 2. 在左侧导航栏单击【实例列表】，单击【新建】进入实例购买页。
 3. 在实例购买页，根据自身业务需求选择购买信息。
-	 ![](https://main.qcloudimg.com/raw/2a92a8c04805a44645481bd56c41b377.png)
+	 ![](https://main.qcloudimg.com/raw/f83616b7644977fc0c1ada00b9b0b4ac.png)
   - 计费模式：包年包月
   - 规格类型：专业版
   - 地域：选择和部署客户端的资源相近的地域
@@ -74,5 +74,5 @@ CKafka 的控制层和原生 Kafka 采用相同的技术方案，依赖 zookeepe
   - 购买时长：可设置到期后按月自动续费
 
 4. 单击【立即购买】，完成实例创建。
-   ![](https://main.qcloudimg.com/raw/326afc4cb9999f0193695fce03a6a98a.png)
+   ![](https://main.qcloudimg.com/raw/d06043a79f7664a81ed6304ffaaf63f8.png)
 
