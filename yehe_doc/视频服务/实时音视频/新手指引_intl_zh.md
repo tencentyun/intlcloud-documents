@@ -15,16 +15,16 @@
 <tr>
 <td rowspan="4">基础服务</td>
 <td>语音互动直播</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">语音互动直播计费说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/39785">语音互动直播计费说明</a></td>
 </tr><tr>
 <td>视频互动直播</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">视频互动直播计费说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/39786">视频互动直播计费说明</a></td>
 </tr><tr>
 <td>语音通话</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">语音通话计费说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/39787">语音通话计费说明</a></td>
 </tr><tr>
 <td>视频通话</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">视频通话计费说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/39788">视频通话计费说明</a></td>
 </tr><tr>
 <td rowspan="2">增值服务</td>
 <td>云端录制</td>
