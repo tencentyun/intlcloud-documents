@@ -13,12 +13,12 @@
 <td>新增 API 文档功能</td>
 <td>您可通过 API 文档功能把托管在 API 网关上的 API 生成一份精美的 API 文档，以提供给第三方调用您的 API。</td>
 <td>2021-04-14</td>
-<td><a href="https://cloud.tencent.com/document/product/628/54317">API 文档</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/628/40212">API 文档</a></td>
 </tr><tr>
 <td>新增插件功能</td>
 <td>插件是 API 网关提供的高级功能配置，您可以通过插件创建 IP 访问控制等配置项，再将插件绑定到 API 上生效。</td>
 <td>2021-04-13</td>
-<td><a href="https://cloud.tencent.com/document/product/628/53380">插件</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/628/40214">插件</a></td>
 </tr><tr>
 <td>资源包正式对外开放售卖</td>
 <td>API 网关资源包正式对外开放售卖，资源包可抵扣调用次数、出流量产生的费用，价格更优惠。</td>
