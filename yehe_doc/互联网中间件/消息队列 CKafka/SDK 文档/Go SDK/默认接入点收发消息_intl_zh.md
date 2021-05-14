@@ -42,6 +42,7 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
 ### 步骤三：发送消息
 
 1. 编写生产消息程序。
+
 ```go
  package main
 
@@ -127,6 +128,7 @@ Delivered message to test[0]@629
 ### 步骤四：消费消息
 
 1. 创建单个 Consumer。
+
 ```go
 package main
 
