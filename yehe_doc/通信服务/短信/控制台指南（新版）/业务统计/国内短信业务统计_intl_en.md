@@ -17,7 +17,7 @@ The data table supports displaying statistical data in multiple dimensions such 
 
 
 ## Receipt Analysis
-On the **Receipt Analysis** page, you can specify an application to filter and view the SMS receipt details and receipt failure analysis for today, yesterday, the last 7 days, the last 30 days, or a specified time period.
+On the **Receipt Analysis** page, you can specify an application to filter and view the SMS acknowledgement details and acknowledgement failure analysis for today, yesterday, the last 7 days, the last 30 days, or a specified time period.
 - The data table of SMS receipt details supports displaying statistical data in multiple dimensions such as messages with receipt, messages without receipt, successful receipts, failed receipts, receipt rate, and receipt success rate.
 - The data table of receipt failure analysis supports displaying statistical data in multiple dimensions such as failure reason, failures, and proportion.
 
