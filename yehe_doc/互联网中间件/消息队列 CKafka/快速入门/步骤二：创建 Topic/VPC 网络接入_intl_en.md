@@ -5,10 +5,10 @@ This document describes how to create a topic under an existing instance in the 
 ## Directions
 
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
-2. On the **Instance List** page, click the ID of the instance created in [step 1](https://cloud.tencent.com/document/product/597/54839) to go to the instance details page.
+2. On the **Instance List** page, click the ID of the instance created in [step 1](https://intl.cloud.tencent.com/document/product/597/40043) to go to the instance details page.
 3. On the instance details page, click the **Topic Management** tab and click **Create**.
 4. In the **Create Topic** dialog box, set parameters as needed.
-   ![](https://main.qcloudimg.com/raw/05f7dc495a90da08c2b1a5593b908c1f.png)
+   ![](https://main.qcloudimg.com/raw/a0a6444b0bb665691a1e4c61ff1114ec.png)
   - Name: topic name, which cannot be changed once entered and can contain only letters, digits, underscores (_), hyphens (-), and dots (.).
   - Partition Count: number of partitions (physical). A topic can contain one or multiple partitions. CKafka allocates resources by partition.
   - Replica Count: number of partition replicas, which ensure the availability of partitions. For data reliability concerns, CKafka does not support single-replica topics currently. Two replicas are created for each partition by default.
