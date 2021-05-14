@@ -15,6 +15,7 @@
 ### 步骤二：发送消息
 
 1. 创建 producer.c 文件。
+
 ```C++
 /*
  * librdkafka - Apache Kafka C library
@@ -339,6 +340,7 @@ gcc -lrdkafka ./producer.c -o producer
 ### 步骤三：消费消息
 
 1. 创建consumer.c 文件。
+
 ```C++
 /*
  * librdkafka - Apache Kafka C library
