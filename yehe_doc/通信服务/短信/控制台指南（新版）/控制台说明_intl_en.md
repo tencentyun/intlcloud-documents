@@ -23,7 +23,7 @@ Currently, Tencent Cloud SMS provides Mainland China SMS and Global SMS services
 </tr>
 </table>
 
-## Business Statistics
+## Statistics Report
 The SMS Console collects and displays details of Mainland China/Global SMS sending, delivery records, and failure analysis in multiple dimensions. For detailed directions, please see the following documents:
 
 <table>
@@ -32,11 +32,11 @@ The SMS Console collects and displays details of Mainland China/Global SMS sendi
 <th>Document</th>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/382/35464">Mainland China SMS Business Statistics</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/382/35464">Mainland China SMS Statistics Report</a></td>
 <td>This document describes how to view the details of Mainland China SMS sending, delivery records, and failure analysis within a specified time period.</td>
 </tr>
 <tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/382/35465">Global SMS Business Statistics</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/382/35465">Global SMS Statistics Report</a></td>
 <td>This document describes how to view the details of Global SMS sending, delivery records, and failure analysis within a specified time period.</td>
 </tr>
 </table>
