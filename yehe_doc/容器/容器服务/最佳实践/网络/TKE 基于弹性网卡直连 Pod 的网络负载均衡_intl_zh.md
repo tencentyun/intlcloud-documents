@@ -90,7 +90,7 @@ TKE 已上线 Pod 直连模式，此模式是对负载均衡的控制面优化�
 
 #### Pod 新直连模式
 
-![ENI弹性网卡直连](https://main.qcloudimg.com/raw/de1a453250a111505a7dccdfd3dade85.png)
+![ENI弹性网卡直连](https://main.qcloudimg.com/raw/8d726733d1484cb6d5919f3d8bc9eef1.png)
 请求过程：
 
 1. 请求流量进入负载均衡。
@@ -236,8 +236,8 @@ kubernetes          ClusterIP      10.187.252.1    <none>           443/TCP     
 3. [Kubernetes Deployments 滚动更新策略](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy)
 4. [Kubernetes Pods ReadinessGate 特性](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-readiness-gate)
 5. [Kubernetes 通过 Local 转发获取来源 IP](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip)
-6. [TKE 容器服务 网络模式选型](https://intl.cloud.tencent.com/document/product/457/35248)
-7. [TKE 容器服务 VPC-CNI网络模式](https://intl.cloud.tencent.com/document/product/457/35250)
+6. [TKE 容器服务 网络模式选型](https://intl.cloud.tencent.com/document/product/457/38966)
+7. [TKE 容器服务 VPC-CNI网络模式](https://intl.cloud.tencent.com/document/product/457/38971)
 8. [TKE 容器服务 配置kubectl并连接集群](https://intl.cloud.tencent.com/document/product/457/30639)
 9. [AWS ALB Ingress Controller](https://aws.amazon.com/cn/blogs/opensource/kubernetes-ingress-aws-alb-ingress-controller/)
 10. [GKE 通过独立 NEG 配置容器原生负载平衡](https://cloud.google.com/kubernetes-engine/docs/how-to/standalone-neg)
