@@ -4,16 +4,16 @@ This document describes the pricing and discount policies of two TPNS billing mo
 ## Glossary
 - Daily active users (DAUs): the number of unique online devices connected to the SDK on a day (the SDK will connect to the TPNS server when the application is running in the frontend or backend).
 - Monthly peak of DAUs: the highest number of DAUs in a month
-- Service access point: the region where the TPNS cluster is located. The restrictions on data access vary by region. You can select an application service access point when creating an instance on the console.
+- Service access point: the region where the TPNS cluster is located. The restrictions on data access vary by region. You can select an application service access point when creating an instance in the console.
 
 ## Monthly Subscription
 ### Notes
-- Monthly subscription is billed in units of 10,000 daily connected devices, making 10,000 daily connected devices the minimum purchase required.
+- Monthly subscription is billed per 10,000 DAUs, making 10,000 DAUs the minimum purchase required.
 
 ### Pricing description
 Because service costs vary by service access points, their corresponding prices are also different.
 
-| Service Access Point | Unit Price (USD/10,000 Daily Connected Devices/Month) |
+| Service Access Point | Unit Price (USD/10,000 DAUs/Month)
 | ---------- | --------------------------------- |
 | Guangzhou | 42.237                            |
 | Hong Kong (China) | 56.316                            |
@@ -29,13 +29,13 @@ Because service costs vary by service access points, their corresponding prices 
 ### Billing examples
 **Billing example 1:**
 - The service access point is Singapore.
-- The monthly peak of daily connected devices for the application on Android is 600,000.
+- The monthly peak of DAUs for the application on Android is 600,000.
 - The purchase duration of the package is 12 months.
 The total package fees will be: Monthly fees x Duration x (1 - Discount) = (60 x 56.316) x 12 x 0.65 = 26355.7944 USD.
 
 **Billing example 2:**
 - The service access point is Guangzhou.
-- The monthly peak of daily connected devices for the application on iOS is 100,000.
+- The monthly peak of DAUs for the application on iOS is 100,000.
 - The purchase duration of the package is 1 month.
 The total package fees will be: Monthly fees x Duration x (1 - Discount) = (10 x 42.237) x 1 x 1 = 422.37 USD.
 
@@ -44,15 +44,15 @@ The total package fees will be: Monthly fees x Duration x (1 - Discount) = (10 x
 ### Pricing description
 
 The following applies for the daily pay-as-you-go billing mode:
-- DAUs <= 1,000: No fees will be incurred for the day.
-- 1,000 < DAUs <= 10,000: Fees will be incurred and settled at the fixed prices listed below.
-- DAUs > 10,000: Fees will be incurred and settled at the elastic prices listed below.
-- The continuous usage duration starts on the day when an application enables pay-as-you-go billing for the first time. If the service is suspended or terminated during usage, the duration will not revert to 0. If the number of DAUs is less than or equal to 1,000 with no fees incurred, that day will not be included in the continuous usage duration.
+	- DAUs <= 1,000: No fees will be incurred for the day.
+	- 1,000 < DAUs <= 10,000: Fees will be incurred and settled at the fixed prices listed below.
+	- DAUs > 10,000: Fees will be incurred and settled at the elastic prices listed below.
+	- The continuous usage duration starts on the day when an application enables pay-as-you-go billing for the first time. If the service is suspended or terminated during usage, the duration will not revert to 0. If the number of DAUs is less than or equal to 1,000 with no fees incurred, that day will not be included in the continuous usage duration.
 	
 
 Because service costs vary by service access points, their corresponding prices are also different, as shown below:
 
-#### 1,000 < daily connected devices ≤ 10,000: fixed price
+#### 1,000 < DAUs <= 10,000: fixed price
 
 | Service Access Point | Unit Price (USD/Day) |
 | ---------- | ----------------- |
@@ -61,11 +61,11 @@ Because service costs vary by service access points, their corresponding prices 
 | Singapore | 2.14              |
 
 >! 
->- The threshold for elastic pricing was lowered from 50,000 to 10,000 daily connected devices on January 4, 2021.
->- If the number of daily connected devices was less than 50,000 and pay-as-you-go billing was adopted before January 4, 2021, elastic pricing will be automatically applied from January 4, 2021.
+>- The threshold for elastic pricing was lowered from 50,000 to 10,000 DAUs on January 4, 2021.
+>- If the number of DAUs was less than 50,000 and pay-as-you-go billing was adopted before January 4, 2021, elastic pricing will be automatically applied from January 4, 2021.
 
-#### Daily connected devices > 10,000: elastic pricing
-| Service Access Point | Unit Price (USD/Daily Connected Devices/Day) |
+#### DAUs > 10,000: elastic pricing
+| Service Access Point | Unit Price (USD/DAU/Day)
 | ---------- | ------------------------------ |
 | Guangzhou  | 0.000160                       |
 | Hong Kong (China) | 0.000214                       |
@@ -80,7 +80,7 @@ Because service costs vary by service access points, their corresponding prices 
 | Over 720              | 40% off |
 
 ### Billing examples
-- If the service access point is Singapore and the number of daily connected devices is less than or equal to 10,000, the daily fee will be fixed at 2.14 USD.
-- If the service access point is Singapore and the number of daily connected devices is 70,000, then:
+- If the service access point is Singapore and the number of DAUs is less than or equal to 10,000, the daily fee will be fixed at 2.14 USD.
+- If the service access point is Singapore and the number of DAUs is 70,000, then:
 	- If the service has been used continuously for 90 days, there will be no discount, and the daily fee will be 70,000 x 0.000214 = 14.98 USD.
 	- If the service has been used continuously for 200 days, then a 20% discount will be applied, and the daily fee will be 70,000 x 0.000214 x 0.8 = 11.984 USD.

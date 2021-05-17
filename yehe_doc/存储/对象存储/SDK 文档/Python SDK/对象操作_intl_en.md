@@ -2,7 +2,7 @@
 
 This document provides an overview of APIs and SDK code samples related to simple operations, multipart operations, and other object operations.
 
-**Simple operations**
+**Simple Operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
@@ -18,14 +18,14 @@ This document provides an overview of APIs and SDK code samples related to simpl
 | [SELECT Object content](https://intl.cloud.tencent.com/document/product/436/32360) | Extracting object content | Extracts the content of a specified object |
 
 
-**Multipart operations**
+**Multipart upload operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
 | [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying a multipart upload | Queries the information about an ongoing multipart upload |
 | [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload |
 | [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading a part | Uploads a part in a multipart upload |
-| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying a part | Copies an object as a part |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying a part | Uploads a part by copying data from an existing object as data source |
 | [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of an entire file |
 | [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload operation | Aborts a multipart upload and deletes the uploaded parts |
@@ -33,7 +33,7 @@ This document provides an overview of APIs and SDK code samples related to simpl
 
 
 
-## Simple Operations
+## Simple operations
 
 ### Querying an object list
 
@@ -126,20 +126,20 @@ The response contains object metadata in dict format:
 | IsTruncated   |  Indicates whether returned object list is truncated. | String |
 | EncodingType | Encoding type of the returned value. The returned value is not encoded by default. Valid value: `url` | String |
 | Contents | Lists all object metadata, including 'ETag', 'StorageClass', 'Key', 'Owner', 'LastModified', 'Size' | List |
-| CommonPrefixes | Groups all object keys starting with the `Prefix` and ending with the `Delimiter` as a common prefix | List |
+| CommonPrefixes | All objects starting with a particular prefix and ending with the delimiter are grouped into the same type | List |
 
-### Querying objects and their historical versions 
+### Querying objects and their version history 
 
-#### API description
+#### Feature description 
 
 This API is used to query some or all objects in a bucket as well as their version history.
 
-#### Method prototype
+#### Method Prototype
 
 ```
 list_objects_versions(Bucket, Prefix="", Delimiter="", KeyMarker="", VersionIdMarker="", MaxKeys=1000, EncodingType="", **kwargs)
 ```
-#### Sample request
+#### Sample request 
 
 [//]: # ".cssg-snippet-list-objects-versioning"
 ```python
@@ -149,7 +149,7 @@ response = client.list_objects_versions(
 )
 ```
 
-#### Sample request with all parameters
+#### Sample Request with All Parameters
 
 [//]: # ".cssg-snippet-list-objects-versioning-next-page"
 ```python
@@ -242,27 +242,105 @@ The response contains object metadata in dict format:
 | DeleteMarker | Lists the metadata of all delete markers, including 'Key', 'VersionId', 'IsLatest', 'Owner', and 'LastModified' | List |
 | CommonPrefixes | Groups all object keys starting with the `Prefix` and ending with the `Delimiter` as a common prefix | List |
 
-### Uploading an object using simple upload
+### Uploading an Object Using Simple Upload
 
-#### API description
+#### Feature description 
 
 This API is used to upload an object to a bucket.
 
-#### Method prototype
+#### Method Prototype
 
 ```
 put_object(Bucket, Body, Key, **kwargs)
 ```
-#### Sample request
+#### Sample request 
 
 [//]: # ".cssg-snippet-put-object"
 ```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+from qcloud_cos import CosServiceError
+from qcloud_cos import CosClientError
+
+import sys
+import logging
+
+
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+
+# Configure user attributes, including SecretId, SecretKey, and region
+# APPID has been removed from the configuration. Please specify it using the `Bucket` parameter in the format of `BucketName-APPID`.
+secret_id = 'COS_SECRETID'      # Replace with your secretId.
+secret_key = 'COS_SECRETKEY'      # Replace with your secretKey.
+region = 'ap-beijing'     # Replace with your region
+token = None                # If a temporary key is used, token needs to be passed in. This is optional and is left empty by default.
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # Get the configured object
+client = CosS3Client(config)
+
+### File stream - Simple upload
+file_name = 'test.txt'
+with open('test.txt', 'rb') as fp:
+    response = client.put_object(
+        Bucket: 'examplebucket-1250000000', // Format: BucketName-APPID
+        Body=fp,
+        Key=file_name,
+        StorageClass='STANDARD',
+        ResponseContentType='text/html; charset=utf-8'
+    )
+    print(response['ETag'])
+
+### Byte stream - Simple upload
 response = client.put_object(
     Bucket='examplebucket-1250000000',
-    Body=b'bytes',
-    Key='exampleobject',
-    EnableMD5=False
+    
+    Key=file_name
 )
+print(response['ETag'])
+
+### Simple upload from local path
+
+    Bucket='examplebucket-1250000000',
+    LocalFilePath='local.txt',
+    Key=file_name,
+)
+print(response['ETag'])
+
+### Simple upload by setting HTTP header
+response = client.put_object(
+    Bucket='examplebucket-1250000000',
+    
+    Key=file_name,
+    ResponseContentType='text/html; charset=utf-8'
+)
+print(response['ETag'])
+
+### Simple upload by setting custom header
+response = client.put_object(
+    Bucket='examplebucket-1250000000',
+    
+    Key=file_name,
+    Metadata={
+        'x-cos-meta-key1': 'value1',
+        'x-cos-meta-key2': 'value2'
+    }
+)
+print(response['ETag'])
+
+
+### Creating a Directory
+
+try:
+    
+    response = client.put_object(
+        $bucket= $bucket,
+        
+        
+    )
+    
+
+    
 ```
 
 #### Sample request with all parameters
@@ -273,7 +351,7 @@ response = client.put_object(
     Body=b'bytes'|file,
     Key='exampleobject',
     EnableMD5=False|True,
-    ACL='private'|'public-read',  # Please be aware that by using this parameter, the maximum of 1000 ACLs may be reached
+    ACL='private'|'public-read',
     GrantFullControl='string',
     GrantRead='string',
     StorageClass='STANDARD'|'STANDARD_IA'|'ARCHIVE',
@@ -304,7 +382,7 @@ response = client.put_object(
 | ACL | Sets the object ACL, e.g., 'private', 'public-read' | String | No |
 | GrantFullControl | Grants full permission in the format: `id="OwnerUin"` | String | No |
 | GrantRead | Grants read permission in the format: `id="OwnerUin"` | String | No |
-| StorageClass | Sets the object storage class. Enumerated values: `STANDARD` (default), `STANDARD_IA`, `ARCHIVE`. | String | No |
+| StorageClass | Storage class of the object. For the enumerated values, such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String | No |
 | Expires | Sets `Expires`. | String | No |
 | CacheControl | Cache policy. Sets `Cache-Control` | String | No |
 | ContentType | Content type. Sets `Content-Type` | String | No |
@@ -336,16 +414,16 @@ The response contains the attributes of the uploaded object in dict format:
 
 ### Querying object metadata
 
-#### API description
+#### Feature description 
 
 This API is used to query object metadata.
 
-#### Method prototype
+#### Method Prototype
 
 ```
 head_object(Bucket, Key, **kwargs)
 ```
-#### Sample request
+#### Sample request 
 
 [//]: # ".cssg-snippet-head-object"
 ```python
@@ -373,7 +451,7 @@ response = client.head_object(
 | VersionId | Version ID of the object if versioning is enabled  | String  | No |
 | IfModifiedSince | Returns the object metadata only if the object is modified after the time specified in GMT format | String | No |
 
-#### Response description
+#### Response Description
 
 The response contains object metadata in dict format:
 
@@ -410,18 +488,18 @@ The response contains object metadata in dict format:
 | x-cos-version-id |  Version ID of the object if versioning is enabled | String |
 
 
-### Downloading an object
+### Downloading an Object
 
-#### API description
+#### Feature description 
 
 This API is used to download an object.
 
-#### Method prototype
+#### Method Prototype
 
 ```
  get_object(Bucket, Key, **kwargs)
 ```
-#### Sample request
+#### Sample request 
 ```python
 response = client.get_object(
     Bucket='examplebucket-1250000000',
@@ -470,7 +548,7 @@ response = client.get_object(
 | ResponseContentType | Sets the value of `Content-Type` in the response header | String | No |
 | ResponseExpires | Sets the value of `Expires` in the response header | String | No |
 | VersionId | Version ID of the object to be downloaded | String | No |
-|  TrafficLimit | Specifies the bandwidth limit in bit/s for a single request (or a single thread for the advanced APIs). Value range: 819200 - 838860800, i.e., 100 KB/s - 100 MB/s | String |  No |
+|  TrafficLimit | Specifies the bandwidth limit in bit/s for a single request (or a single thread for the advanced download API). Value range: 819200 - 838860800, i.e., 100 KB/s - 100 MB/s | String |  No |
 
 #### Response description
 
@@ -500,7 +578,7 @@ The response contains the content and metadata of the downloaded object in dict 
    <tr>
       <th>Parameter Name</td>
       <th>Description</th>
-      <th>Type</th>
+      <th>API Type</th>
    </tr>
    <tr>
       <td>Body</td>
@@ -578,7 +656,7 @@ The response contains the content and metadata of the downloaded object in dict 
 
 ### Copying an object
 
-#### API description
+#### Feature description 
 
 This API is used to copy an existing object to a destination path.
 
@@ -587,7 +665,7 @@ This API is used to copy an existing object to a destination path.
 ```
 copy_object(Bucket, Key, CopySource, CopyStatus='Copy', **kwargs)
 ```
-#### Sample request
+#### Sample request 
 
 [//]: # ".cssg-snippet-copy-object"
 ```python
@@ -636,9 +714,9 @@ response = client.copy_object(
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
-| CopySource | Path of the source object to be copied, including `Bucket`, `Key`, `Region`, `VersionId` |  Dict | Yes |
+| CopySource  | Path of the source object to be copied, including `Bucket`, `Key`, `Region`, `VersionId` |  Dict | Yes |
 | CopyStatus | Valid values: 'Copy': ignore the configured metadata and copy the file directly; 'Replaced': modify the metadata according to the configured metadata. If the destination path is identical to the source path, this parameter must be set to ‘Replaced’. | String | Yes |
-| ACL | Sets the object ACL, e.g., 'private', 'public-read' |String| No |
+| ACL | Sets the object ACL, e.g., 'private', 'public-read'|String| No |
 | GrantFullControl | Grants full permission in the format: `id="OwnerUin"`| String | No |
 | GrantRead | Grants read permission in the format: `id="OwnerUin"`| String | No |
 | StorageClass | Sets the object storage class. Enumerated values: `STANDARD` (default) or `STANDARD_IA`. | String | No |
@@ -671,18 +749,18 @@ The response contains the attributes of the uploaded object in dict format:
 | x-cos-copy-source-version-id | Version ID of the source object | String |
 
 
-### Deleting a single object
+### Deleting a Single Object
 
-#### API description
+#### Feature description 
 
 This API is used to delete a specified object.
 
-#### Method prototype
+#### Method Prototype
 
 ```
 delete_object(Bucket, Key, **kwargs)
 ```
-#### Sample request
+#### Sample 1. Deleting an object
 
 [//]: # ".cssg-snippet-delete-object"
 ```python
@@ -691,6 +769,85 @@ response = client.delete_object(
     Key='exampleobject'
 )
 ```
+
+#### Sample 1. Deleting an object
+
+
+
+[//]: # ".cssg-snippet-delete-object"
+```python
+try:
+    
+    response = client.delete_object(
+        Bucket='examplebucket-1250000000',
+        
+    )
+    
+
+    
+```
+
+
+
+[//]: # ".cssg-snippet-delete-multi-object"
+```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+from qcloud_cos import CosServiceError
+from qcloud_cos import CosClientError
+
+import sys
+import os
+import logging
+
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+from qcloud_cos import CosServiceError
+from qcloud_cos import CosClientError
+
+import sys
+import os
+import logging
+
+# Configure user attributes, including SecretId, SecretKey, and region
+# APPID has been removed from the configuration. Please specify it using the `Bucket` parameter in the format of `BucketName-APPID`.
+
+secret_key = 'xxxxxxx'      # Replaced with user's secretKey
+
+token = None                # If a temporary key is used, token needs to be passed in. This is optional and is left empty by default.
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # Get the configured object
+client = CosS3Client(config)
+
+
+bucket = examplebucket-1250000000
+
+marker = ""
+
+
+    try:
+        
+        print(response['Contents'])
+            
+                
+                
+
+            if response['IsTruncated'] == 'false':
+                
+                marker = response['NextMarker']
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        break
+```
+
 #### Sample request with all parameters
 
 ```python
@@ -724,18 +881,20 @@ This response contains information on the deleted object in dict format:
 | x-cos-version-id | Version ID of the deleted object | String |
 | x-cos-delete-marker | Identifies whether the deleted object is a delete marker | String |
 
-### Deleting multiple objects
 
-#### API description
 
-The API is used to delete multiple objects.
+### Deleting Multiple Objects
 
-#### Method prototype
+#### Feature description 
+
+The API (DELETE Multiple Objects) is used to delete multiple objects.
+
+#### Method Prototype
 
 ```
 delete_objects(Bucket, Delete={}, **kwargs)
 ```
-#### Sample request
+#### Sample request 
 
 [//]: # ".cssg-snippet-delete-multi-object"
 ```python
@@ -781,7 +940,7 @@ response = client.delete_objects(
 | Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Delete  | Describes the objects to be deleted and the way the deletion results are returned | Dict | Yes |
 | Objects | Describes information on each object to be deleted | List | Yes |
-| Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | No|
+| Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String |
 | VersionId | Version IDs of the objects to be deleted if versioning is enabled | String  | No |
 | Quiet | Specifies how the deletion results are returned. Valid values: 'true', only information on failed deletions is returned; 'false', information on all deletions is returned. Default value: 'false' | String | No |
 
@@ -825,18 +984,19 @@ This response contains the deletion results in dict format:
 | Message | Error messages for the objects that failed to be deleted | string |
 
 
+
 ### Restoring an archived object 
 
-#### API description
+#### Feature description 
 
-This API is used to retrieve an archived object for access.
+This (POST Object restore) API is used to restore an archived object for access.
 
-#### Method prototype
+#### Method Prototype
 
 ```
 restore_object(Bucket, Key, RestoreRequest={}, **kwargs)
 ```
-#### Sample request
+#### Sample request 
 
 [//]: # ".cssg-snippet-restore-object"
 ```python
@@ -874,24 +1034,24 @@ response = client.restore_object(
 | RestoreRequest | Describes the rules of the retrieved temporary object | Dict | Yes |
 | Days | Specifies the number of days before the temporary object expires | Int | Yes |
 | CASJobParameters | Describes the configuration of the restoration type | Dict | No |
-| Tier | Describes the object’s restoration mode. Valid values: 'Expedited', 'Standard', and 'Bulk' | String| No |
 
-#### Response description
+
+#### Response description 
 This method returns None.
 
 
 ### Extracting object content 
 
-#### API description
+#### Feature description 
 
 This API is used to extract content from a specific object.
 
-#### Method prototype
+#### Method Prototype
 
 ```
 select_object_content(Bucket, Key, Expression, ExpressionType, InputSerialization, OutputSerialization, RequestProgress=None, **kwargs)
 ```
-#### Sample request
+#### Sample request 
 
 [//]: # ".cssg-snippet-select-object-content"
 ```python
@@ -972,7 +1132,7 @@ The response contains the content and metadata of the downloaded object in dict 
 ```
 
 
-## Multipart Operations
+## Multipart operations
 Operations related to multipart uploads include the following:
 
 - Uploading objects with multipart upload: initializing a multipart upload, uploading parts, and completing a multipart upload.
@@ -981,16 +1141,16 @@ Operations related to multipart uploads include the following:
 
 ### Querying a multipart upload
 
-#### API description
+#### Feature description 
 
 This API is used to query in-progress multipart uploads in a specified bucket.
 
-#### Method prototype
+#### Method Prototype
 
 ```
 list_multipart_uploads(Bucket, Prefix="", Delimiter="", KeyMarker="", UploadIdMarker="", MaxUploads=1000, EncodingType="", **kwargs)
 ```
-#### Sample request
+#### Sample request 
 
 [//]: # ".cssg-snippet-list-multi-upload"
 ```python
@@ -1024,7 +1184,7 @@ response = client.list_multipart_uploads(
 | MaxUploads | Maximum number of multipart uploads returned at a time. The default value is `1000`. | Int | No |
 | EncodingType | Encoding type of the returned value. The returned value is not encoded by default. Valid value: `url` | String | No |
 
-#### Response description
+#### Response Description
 
 This response contains information on the multipart uploads in dict format:
 
@@ -1082,16 +1242,16 @@ This response contains information on the multipart uploads in dict format:
 
 ### Initializing a multipart upload
 
-#### API description
+#### Feature description 
 
 This API is used to initialize a multipart upload operation and obtain its uploadId.
 
-#### Method prototype
+#### Method Prototype
 
 ```
 create_multipart_upload(Bucket, Key, **kwargs):
 ```
-#### Sample request
+#### Sample request 
 
 [//]: # ".cssg-snippet-init-multi-upload"
 ```python
@@ -1131,7 +1291,7 @@ uploadid = response['UploadId']
 | -------------- | -------------- |---------- | ----------- |
 | Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
-| StorageClass | Sets the object storage class. Enumerated values: `STANDARD` (default), `STANDARD_IA`, `ARCHIVE`. | String | No |
+| StorageClass | Storage class of the object. For the enumerated values, such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String | No |
 | Expires | Sets `Expires`. | String | No |
 | CacheControl | Cache policy. Sets `Cache-Control` | String | No |
 | ContentType | Content type. Sets `Content-Type` | String | No |
@@ -1166,12 +1326,12 @@ This response contains information on the initialization of the multipart upload
 
 This API is used to upload a part in a multipart upload.
 
-#### Method prototype
+#### Method Prototype
 
 ```
 upload_part(Bucket, Key, Body, PartNumber, UploadId, **kwargs)
 ```
-#### Sample request
+#### Sample request 
 
 [//]: # ".cssg-snippet-upload-part"
 ```python
@@ -1232,12 +1392,12 @@ This response contains the attributes of the uploaded parts in dict format:
 
 This API is used to upload a part by copying data from an existing object as data source.
 
-#### Method prototype
+#### Method Prototype
 
 ```
 upload_part_copy(Bucket, Key, PartNumber, UploadId, CopySource, CopySourceRange='', **kwargs)
 ```
-#### Sample request
+#### Sample request 
 
 [//]: # ".cssg-snippet-upload-part-copy"
 ```python
@@ -1307,18 +1467,18 @@ This response contains the attributes of the copied part in dict format:
 | LastModified | Time the copied part was last modified | string |
 | x-cos-copy-source-version-id | Version ID of the source object | String |
 
-### Querying uploaded parts
+### Querying Uploaded Parts
 
-#### API description
+#### Feature description 
 
-This API is used to query the uploaded parts of a specific multipart upload operation.
+This API (List Parts) is used to query the uploaded parts of a multipart upload.
 
-#### Method prototype
+#### Method Prototype
 
 ```
 list_parts(Bucket, Key, UploadId, MaxParts=1000, PartNumberMarker=0, EncodingType='', **kwargs)
 ```
-#### Sample request
+#### Sample request 
 
 [//]: # ".cssg-snippet-list-parts"
 ```python
@@ -1395,7 +1555,7 @@ This response contains information on all the uploaded parts in dict format:
 | IsTruncated | Indicates whether the returned part list is truncated | String |
 | PartNumberMarker | Specifies the part after which the listing should begin. The default value is `0`, meaning the parts are listed starting with the first part. | String |
 | NextPartNumberMarker | Specifies the part after which the next part listing should begin | String |
-| StorageClass | Sets the object storage class. Enumerated values: `STANDARD` (default), `STANDARD_IA`, `ARCHIVE`. | String |
+| StorageClass | Storage class of the object. For the enumerated values, such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String | No |
 | Part | Information on the uploaded parts, including `ETag`, `PartNumber`, `Size`, `LastModified` | String |
 | Initiator | Initiator of the multipart upload, including `DisplayName` and `ID` | Dict |
 | Owner | Information on the object owner, including `DisplayName` and `ID` | Dict |
@@ -1404,16 +1564,16 @@ This response contains information on all the uploaded parts in dict format:
 
 ### Completing a multipart upload
 
-#### API description
+#### Feature description
 
 This API is used to complete a multipart upload.
 
-#### Method prototype
+#### Method Prototype
 
 ```
 complete_multipart_upload(Bucket, Key, UploadId, MultipartUpload={}, **kwargs)
 ```
-#### Sample request
+#### Sample request 
 
 [//]: # ".cssg-snippet-complete-multi-upload"
 ```python
@@ -1443,7 +1603,7 @@ response = client.complete_multipart_upload(
 | Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
 | UploadId | ID of the multipart upload | String | Yes |
-| MultipartUpload | Information on all parts, including `ETag` and `PartNumber` | Dict |  Yes|
+| MultipartUpload | Information on all parts, including `ETag` and `PartNumber` | Dict |
 
 #### Response description
 
@@ -1466,18 +1626,18 @@ The response contains information on the merged object in dict format:
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String |
 
 
-### Aborting a multipart upload operation
+###  Aborting a multipart upload
 
-#### API description
+#### Feature description 
 
-This API is used to abort a multipart upload and delete the uploaded parts.
+This API (Abort Multipart Upload) is used to abort a multipart upload and delete the uploaded parts.
 
-#### Method prototype
+#### Method Prototype
 
 ```
 abort_multipart_upload(Bucket, Key, UploadId, **kwargs)
 ```
-#### Sample request
+#### Sample request 
 
 [//]: # ".cssg-snippet-abort-multi-upload"
 ```python
@@ -1495,47 +1655,65 @@ response = client.abort_multipart_upload(
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
 | UploadId | ID of the multipart upload | String | Yes |
 
-#### Response description
+#### Response description 
 This method returns None.
 
 
 
 
 
- ## Advanced APIs (Recommended)
+ ## Advanced APIs (recommended)
 
 ### Uploading an object (checkpoint restart)
 
-#### API description
+#### Feature description 
 The advanced upload API can automatically select between simple upload and multipart upload according to the file size. It uses simple upload for files smaller than or equal to 20 MB and multipart upload for files larger than 20 MB. It also supports automatic checkpoint restart for suspended multipart uploads.
 
-#### Method prototype
+
+#### Method Prototype
 
 ```
 upload_file(Bucket, Key, LocalFilePath, PartSize=1, MAXThread=5, **kwargs)
 ```
-#### Sample request
+#### Sample request 
 
 [//]: # ".cssg-snippet-transfer-upload-file"
 ```python
+
+
 response = client.upload_file(
     Bucket='examplebucket-1250000000',
     Key='exampleobject',
     LocalFilePath='local.txt',
-    EnableMD5=False
+    EnableMD5=False)
+    
 )
 ```
 
 #### Sample request with all parameters
 ```python
+
+
+    
+
+    
+    
+    """
+    
+        
+        
+        
+        
+
 response = client.upload_file(
     Bucket='examplebucket-1250000000',
     Key='exampleobject',
     LocalFilePath='local.txt',
     PartSize=1,
     MAXThread=5,
+    
     EnableMD5=False|True,
-    ACL='private'|'public-read', # Please be aware that by using this parameter, the maximum of 1000 ACLs may be reached
+    ACL='private'|'public-read',
     GrantFullControl='string',
     GrantRead='string',
     StorageClass='STANDARD'|'STANDARD_IA'|'ARCHIVE',
@@ -1564,11 +1742,12 @@ response = client.upload_file(
 | LocalFilePath | Path to the local file | String | Yes |
 | PartSize | Part size. Default value: 1 MB |  Int | No |
 |  MAXThread  | Maximum number of threads for concurrent multipart uploads. Default value: 5 |  Int |  No |
+
 | EnableMD5 | Specifies whether the SDK needs to calculate the Content-MD5 value. This feature is disabled by default. The upload will take longer if it is enabled | Bool | No |
-| ACL | Sets the object ACL, e.g., 'private', 'public-read' | String | No |
+| ACL | Sets the object ACL, e.g., 'private', 'public-read'|String| No |
 | GrantFullControl | Grants full permission in the format: `id="OwnerUin"` | String | No |
 | GrantRead | Grants read permission in the format: `id="OwnerUin"` | String | No |
-| StorageClass | Sets the object storage class. Enumerated values: `STANDARD` (default), `STANDARD_IA`, `ARCHIVE`. | String | No |
+| StorageClass | String | Storage class of the object, such as STANDARD (default), STANDARD_IA, and ARCHIVE. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | No |
 | Expires | Sets `Expires`. | String | No |
 | CacheControl | Cache policy. Sets `Cache-Control` | String | No |
 | ContentType | Content type. Sets the value of `Content-Type`. | String | No |
@@ -1599,12 +1778,12 @@ The response contains the attributes of the uploaded object in dict format:
 #### API description
 The advanced download API can automatically select between simple download and multipart download according to the file size. It uses simple download for files smaller than or equal to 20 MB and multipart upload for files larger than 20 MB. It also supports automatic checkpoint restart for suspended multipart downloads.
 
-#### Method prototype
+#### Method Prototype
 
 ```
 download_file(Bucket, Key, DestFilePath, PartSize=20, MAXThread=5, EnableCRC=False, **Kwargs)
 ```
-#### Sample request
+#### Sample request 
 
 [//]: # ".cssg-snippet-transfer-upload-file"
 ```python
@@ -1649,7 +1828,7 @@ response = client.download_file(
 | PartSize | Part size for multipart download. Default value: 20 MB |  Int | No |
 |  MAXThread  | Maximum number of concurrent threads for a multipart download. Default value: 5 |  Int |  No |
 | EnableCRC | Indicates whether to enable CRC check for local and remote files. Default: `False` | Bool | No |
-|  TrafficLimit | Specifies the bandwidth limit in bit/s for a single request (or a single thread for the advanced APIs). Value range: 819200 - 838860800, i.e., 100 KB/s - 100 MB/s | String |  No |
+|  TrafficLimit | Specifies the bandwidth limit in bit/s for a single request (or a single thread for the advanced download API). Value range: 819200 - 838860800, i.e., 100 KB/s - 100 MB/s | String |  No |
 |  IfMatch  | Returns the object only if the `ETag` matches the specified content. | String  | No |
 | IfModifiedSince | Returns the object only if it is modified after the time specified in GMT format | String | No |
 |  IfNoneMatch  |  Returns the object only if the ETag does not match the specified content | String  | No |
@@ -1665,17 +1844,220 @@ response = client.download_file(
 #### Response description
 None
 
+
+
+#### Feature description 
+
+
+#### Sample request 
+
+[//]: # ".cssg-snippet-transfer-upload-file"
+```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+from qcloud_cos import CosServiceError
+from qcloud_cos import CosClientError
+
+
+import sys
+import os
+import logging
+
+# Configure user attributes, including SecretId, SecretKey, and region
+# APPID has been removed from the configuration. Please specify it using the `Bucket` parameter in the format of `BucketName-APPID`.
+
+secret_key = 'xxxxxxx'      # Replaced with user's secretKey
+
+token = None                # If a temporary key is used, token needs to be passed in. This is optional and is left empty by default.
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # Get the configured object
+client = CosS3Client(config)
+
+
+bucket = examplebucket-1250000000
+
+
+
+
+    
+        
+        
+        
+        
+        try:
+            
+            isExit = true;
+        
+            
+                
+            else:
+                
+        
+            
+            
+
+
+
+
+
+    
+```
+
+
+
+#### Feature description 
+
+
+#### Sample request 
+
+[//]: # ".cssg-snippet-transfer-upload-file"
+```python
+# -*- coding=utf-8
+import logging
+import sys
+import json
+import os
+
+from qcloud_cos import CosServiceError
+from qcloud_cos import CosS3Client
+
+
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+# Configure user attributes, including SecretId, SecretKey, and region
+# appid has been removed from the configuration. Please include the appid in the parameter Bucket. Bucket is in a format of bucketname-appid.
+secret_id = 'COS_SECRETID'      # Replace with your secretId.
+secret_key = 'COS_SECRETKEY'      # Replace with your secretKey.
+
+
+token = None                # If a temporary key is used, token needs to be passed in. This is optional and is left empty by default.
+scheme = 'https'
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
+client = CosS3Client(config)
+
+
+
+
+
+
+
+Delimiter='/',
+
+
+
+
+    
+    
+    marker = ""
+    count = 1
+    while True:
+        
+        
+        
+        
+        
+        count = 1
+
+        
+            
+            
+
+        
+            
+            
+
+        
+            marker = response['NextMarker']
+        else:
+            break
+
+    
+
+    
+    
+    
+    
+    
+    
+
+    
+
+    
+    
+        
+    
+
+
+
+
+
+    
+
+    
+    
+        ### File download - Obtain file to local machine
+        
+        
+
+        
+        
+            
+
+        
+        
+            continue
+
+        
+        
+        
+
+        
+        response = client.get_object(
+        bucket: "testbucket-1010101010"
+        
+        # )
+        
+
+    
+    return None
+
+
+
+
+    
+
+    try:
+        
+
+    
+        
+        
+        
+        
+        
+        
+        
+        
+
+    
+    return None
+
+
+if __name__ == "__main__":
+    
+```
+
 ### Copying object
 
 #### API description
 This API is used to copy an object. If the object is smaller than 5 GB, call `copy_object`. If the object is larger than or equal to 5 GB, call `upload_part_copy`.
 
-#### Method prototype
+#### Method Prototype
 
 ```
 copy(Bucket, Key, CopySource, CopyStatus='Copy', PartSize=10, MAXThread=5, **kwargs)
 ```
-#### Sample request
+#### Sample 1. Copying an object
 
 [//]: # ".cssg-snippet-transfer-copy"
 ```python
@@ -1689,6 +2071,59 @@ response = client.copy(
     }
 )
 ```
+
+#### Sample 2. Moving an object
+```python
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+from qcloud_cos import CosServiceError
+from qcloud_cos import CosClientError
+
+import sys
+import os
+import logging
+
+# -*- coding=utf-8
+from qcloud_cos import CosConfig
+from qcloud_cos import CosS3Client
+from qcloud_cos import CosServiceError
+from qcloud_cos import CosClientError
+
+import sys
+import os
+import logging
+
+# Configure user attributes, including SecretId, SecretKey, and region
+# APPID has been removed from the configuration. Please specify it using the `Bucket` parameter in the format of `BucketName-APPID`.
+
+secret_key = 'xxxxxxx'      # Replaced with user's secretKey
+
+token = None               # If a temporary key is used, Token needs to be passed in, which is left empty by default
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token)  # Get the configured object
+client = CosS3Client(config)
+
+// Move the object.
+bucket = examplebucket-1250000000
+
+
+
+
+try:
+    response = client.copy_object(
+        $bucket= $bucket,
+        
+        CopySource={
+            'Bucket' => $bucket
+            
+            'Region': 'ap-guangzhou',
+        })
+    
+except Exception as e:
+     
+```
+
+
 
 #### Sample request with all parameters
 ```python
@@ -1713,7 +2148,7 @@ response = client.copy(
 | Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
 | CopySource  | Path of the source object to be copied, including `Bucket`, `Key`, `Region`, `VersionId` |  Dict | Yes |
- |  CopyStatus  | Copy status. Valid values: 'Copy', 'Replaced'  | String | No|
+ |  CopyStatus  | Copy status. Valid values: 'Copy', 'Replaced' | String | 否 ｜
  | PartSize | Part size for multipart download. Default value: 10 MB |  Int | No |
  |  MAXThread  | Maximum number of concurrent threads for a multipart download. Default value: 5 |  Int |  No |
 
@@ -1721,9 +2156,10 @@ response = client.copy(
 If the object is smaller than 5 GB, it will be the result of `copy_object` of the dict format. Otherwise, it will be the result of `complete_multipart_upload`.
 
 
+
 ## Client-Side Encryption
 
-#### API description
+#### Feature description 
 
 The SDK for Python allows client-side encryption that encrypts files before upload and decrypts them at the time of download. There are two types of client-side encryption: AES (symmetric) and RSA (asymmetric).
 These two types are for the encryption of generated random keys. File data, however, is always encrypted symmetrically using AES256.
@@ -1739,7 +2175,7 @@ Client-side encryption is suitable for users who store sensitive data and may af
 1. Get the necessary encryption information from the metadata of the file, Base64-decode it, and then decrypt it using the customer managed key (CMK) to get the encryption key at upload.
 2. Use the resulting key to decrypt the downloaded input stream using AES256.
 
-#### Sample request
+#### Sample request 
 
 Example 1: using symmetric AES256 encryption for random keys generated each time.
 
