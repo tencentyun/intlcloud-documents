@@ -7,19 +7,19 @@
 <td>Video call</td>
 <td><ul style="margin:0">
 <li>One-to-one or group video calls, which support 720p and 1080p definitions
-<li>Each room can accommodate up to 300 concurrent users, and up to 30 of them can enable their cameras at the same time.</li>
+<li>Each room can accommodate up to 300 concurrent users, and up to 50 of them can enable their cameras at the same time.</li>
 </ul></td>
 <td>One-to-one video calls, video conferences with up to 300 attendees, online medical consultation, video chat, video customer service, video interviews, audiovisual recording, online insurance claim settlement, and video Werewolf</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">Billing of video calls</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/39788">Billing of video calls</a></td>
 </tr>
 <tr>
 <td>Audio call</td>
 <td><ul style="margin:0">
 <li>One-to-one or group audio calls, which support the 48 kHz sample rate and dual channels.</li>
-<li>Each room can accommodate up to 300 concurrent users, and up to 30 of them can enable their mics at the same time.</li>
+<li>Each room can accommodate up to 300 concurrent users, and up to 50 of them can enable their mics at the same time.</li>
 </ul></td>
 <td>One-to-one or group audio calls, voice chat, audio conferences, audio customer service, and audio Werewolf</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">Billing of audio calls</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/39788">Billing of audio calls</a></td>
 </tr><tr>
 <td>Interactive video live streaming</td>
 <td><ul style="margin:0">
@@ -29,7 +29,7 @@
 <li>No upper limit on the number of viewers in the CDN relayed live streaming mode</li>
 </ul></td>
 <td>Low-latency video live streaming, interactive classrooms with up to 100,000 participants, live video competitions, video dating, remote training, large-scale conferences, etc.</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">Billing of interactive video live streaming</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/39788">Billing of interactive video live streaming</a></td>
 </tr><tr>
 <td>Interactive audio live streaming</td>
 <td><ul style="margin:0">
@@ -39,7 +39,7 @@
 <li>No upper limit on the number of viewers in the CDN relayed live streaming mode</li>
 </ul></td>
 <td>Low-latency audio live streaming, live audio co-anchoring, live audio competitions, voice chat rooms, audio dating, karaoke rooms, FM radio, etc.</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">Billing of interactive audio live streaming</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/39788">Billing of interactive audio live streaming</a></td>
 </tr></table>
 
 
