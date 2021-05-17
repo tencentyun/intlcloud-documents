@@ -14,16 +14,16 @@ Tencent Real-Time Communicationは、サービスタイプに応じて**基本�
 <tr>
 <td rowspan="4">基本サービス</td>
 <td>音声ILVB</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/34613">音声ILVBの課金説明</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/34610">音声ILVBの課金説明</a></td>
 </tr><tr>
 <td>ビデオILVB</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/34613">ビデオILVBの課金説明</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/34610">ビデオILVBの課金説明</a></td>
 </tr><tr>
 <td>音声通話</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/34613">音声通話の課金説明</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/34610">音声通話の課金説明</a></td>
 </tr><tr>
 <td>ビデオ通話</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/34613">ビデオ通話の課金説明</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/34610">ビデオ通話の課金説明</a></td>
 </tr><tr>
 <td rowspan="2">付加価値サービス</td>
 <td>クラウドレコーディング</td>
@@ -58,7 +58,7 @@ Tencent Real-Time Communicationは、以下に示すように、**簡易版**、
 
 ### APIの統合
 
-- **クライアントAPI：** [iOS](https://intl.cloud.tencent.com/document/product/647/35119)、[Mac](https://intl.cloud.tencent.com/document/product/647/35119)、[Android](https://intl.cloud.tencent.com/document/product/647/35125)、[Windows（C++）](https://intl.cloud.tencent.com/document/product/647/35131)、[Windows（C#）](https://intl.cloud.tencent.com/document/product/647/35136)、[デスクトップブラウザ](https://intl.cloud.tencent.com/document/product/647/35143)、[Electron](https://intl.cloud.tencent.com/document/product/647/35141)、[Flutter](https://intl.cloud.tencent.com/zh/document/product/647/39169)を含むプラットフォームでの機能の統合のためにSDKインターフェースの呼び出しをサポートします。
+- **クライアントAPI：** [iOS](https://intl.cloud.tencent.com/document/product/647/35119)、[Mac](https://intl.cloud.tencent.com/document/product/647/35119)、[Android](https://intl.cloud.tencent.com/document/product/647/35125)、[Windows（C++）](https://intl.cloud.tencent.com/document/product/647/35131)、[Windows（C#）](https://intl.cloud.tencent.com/document/product/647/35136)、[デスクトップブラウザ](https://intl.cloud.tencent.com/document/product/647/35143)、[Electron](https://intl.cloud.tencent.com/document/product/647/35141)、Flutterを含むプラットフォームでの機能の統合のためにSDKインターフェースの呼び出しをサポートします。
 - **サーバーAPI：** [通話品質の監視](https://intl.cloud.tencent.com/zh/document/product/647/36754)、[MixTranscoding](https://intl.cloud.tencent.com/document/product/647/37760)、[ルーム管理](https://intl.cloud.tencent.com/document/product/647/34268)といった機能の統合のためのAPI 3.0インターフェースの呼び出しをサポートします。
 
 
