@@ -4,7 +4,8 @@
 
 ## 구현 원리
 
-[**TWebLive**](https://trtc.qcloud.com/tweblive/index.html#/)는 Tencent Cloud의 TRTC, IM, CDN 등의 서비스를 기반으로 구성된 Web 라이브 방송 모듈입니다. 몇 개의 코드만으로 간편하게 다음과 같은 푸시 스트림, 풀 스트림, 채팅방 기능을 구현할 수 있습니다.
+[**TWebLive**]
+는 Tencent Cloud의 TRTC, IM, CDN 등의 서비스를 기반으로 구성된 Web 라이브 방송 모듈입니다. 몇 개의 코드만으로 간편하게 다음과 같은 푸시 스트림, 풀 스트림, 채팅방 기능을 구현할 수 있습니다.
 
 ### 푸시 스트림
 푸시 스트림이 필요할 경우 Pusher(푸시 스트림) 객체를 생성하고, 3단계만으로 간편하게 설정할 수 있습니다.
@@ -227,6 +228,6 @@ TRTC SDK 6.6 버전(2019년 08월)부터 신규 서명 알고리즘인 HMAC-SHA2
 ## 참고 자료
 
 - [TWebLive API 매뉴얼](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblive/TWebLive.html)
-- [온라인 Demo](https://trtc.qcloud.com/tweblive/index.html#/)
+- [온라인 Demo]
 
 
