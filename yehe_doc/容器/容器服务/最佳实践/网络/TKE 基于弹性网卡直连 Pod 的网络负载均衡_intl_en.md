@@ -90,7 +90,7 @@ The request process is as follows:
 
 #### New direct pod connection mode
 
-![ENI direct connection](https://main.qcloudimg.com/raw/de1a453250a111505a7dccdfd3dade85.png)
+![ENI direct connection](https://main.qcloudimg.com/raw/8d726733d1484cb6d5919f3d8bc9eef1.png)
 The request process is as follows:
 
 1. The request traffic reaches the CLB.
@@ -236,8 +236,8 @@ Comparison with similar solutions in the industry:
 3. [Strategy](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy)
 4. [Pod readiness](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-readiness-gate)
 5. [Preserving the client source IP](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip)
-6. [How to Choose TKE Network Mode](https://intl.cloud.tencent.com/document/product/457/35248)
-7. [GlobalRouter VPC-CNI Mode Description](https://intl.cloud.tencent.com/document/product/457/35250)
+6. How to Choose TKE Network Mode
+7. GlobalRouter VPC-CNI Mode Description
 8. [Connecting to a Cluster](https://intl.cloud.tencent.com/document/product/457/30639)
 9. [Kubernetes Ingress with AWS ALB Ingress Controller](https://aws.amazon.com/cn/blogs/opensource/kubernetes-ingress-aws-alb-ingress-controller/)
 10. [GKE Container-native Load Balancing Through Standalone Zonal NEGs](https://cloud.google.com/kubernetes-engine/docs/how-to/standalone-neg)
