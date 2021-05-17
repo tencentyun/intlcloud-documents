@@ -1,7 +1,8 @@
 ## Overdue Accounts
 - The current day's CSS pay-as-you-go daily billing items will be generated the morning of the next day. Bills for the pay-as-you-go monthly billing items will be generated on the first day of the next month. For billing details, see [Viewing Bills](https://intl.cloud.tencent.com/document/product/267/36278).
 - Tencent Cloud will send you a notification if your account becomes overdue. If you top up your account within 24 hours after receiving the notification, the CSS service will not be suspended. Otherwise, the service will be suspended.
-- When your account becomes overdue, CSS will not terminate ongoing live streaming, which will continue to incur costs.
+- When your account becomes overdue, CSS will not terminate any ongoing live streams, which will continue to incur costs as usual.
+- If your VOD service is suspended due to overdue payments, the CSS recording feature will be affected, while related service fees will continue to be billed as usual.
 
 
 
@@ -13,5 +14,5 @@
 
 
 ## Repossession
-- If any account is overdue for over **60 days**, Tencent Cloud will automatically repossess the CSS resources and regularly clear the CSS data and records (of configurations, service logs, and client authorizations, etc.) under that account.
+- If any account is overdue for over **60 days**, Tencent Cloud will automatically repossess the CSS resources and regularly clear the CSS data and records (of configurations, service logs, client authorizations, and more) under that account.
 - If you want to deactivate the CSS service and clear the CSS data under your account, please contact your Tencent Cloud representative or submit a [ticket](https://console.cloud.tencent.com/workorder/category).
