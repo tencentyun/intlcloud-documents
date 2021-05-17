@@ -51,7 +51,7 @@
 - 2019년 10월 11일 이후 가입한 Tencent Cloud 계정은 기본적으로 신규 과금 방식이 적용됩니다.
 - 2019년 10월 11일 이전에 가입한 Tencent Cloud 계정은 기존 과금 방식이 적용된 패키지를 모두 사용하거나, 기간 만료일의 다음 달에 신규 과금 패키지를 구매할 수 있습니다. 신규 과금 패키지를 구매하면 신규 과금 방식으로 자동 업그레이드됩니다.
 
-기존 과금 방식이 적용된 패키지도 계속 [구매](https://buy.cloud.tencent.com/rav_th5)할 수 있습니다. 기존 과금 패키지를 모두 사용하지 않았거나 기간이 만료되지 않았는데 신규 과금 방식으로 업그레이드하려면 [Submit Ticket](https://console.cloud.tencent.com/workorder/category)을 통해 도움을 요청하십시오.
+기존 과금 방식이 적용된 패키지도 계속 [구매](https://intl.cloud.tencent.com/zh/document/product/647/35440)할 수 있습니다. 기존 과금 패키지를 모두 사용하지 않았거나 기간이 만료되지 않았는데 신규 과금 방식으로 업그레이드하려면 [Submit Ticket](https://console.cloud.tencent.com/workorder/category)을 통해 도움을 요청하십시오.
 
 
 
