@@ -49,7 +49,7 @@
 |  |  ├─ TRTCBroadcastExtensionLauncher.swift  // 用于唤起系统录屏的辅助代码
 ```
 
-您可以通过 [README](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCSimpleDemo/README.md) 中的指引跑通该示例 Demo。
+您可以通过 [README](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTC-API-Example-OC/README.md) 中的指引跑通该示例 Demo。
 
 
 ### 对接步骤
