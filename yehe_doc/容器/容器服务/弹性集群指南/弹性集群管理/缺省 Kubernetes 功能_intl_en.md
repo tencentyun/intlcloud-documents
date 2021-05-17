@@ -1,10 +1,10 @@
 Elastic cluster is a service of Elastic Kubernetes Service (EKS). Before you use this service, please read the following information.
 
 ## Billing Method
-EKS adopts the pay-as-you-go billing method. For more information about the bills, please see [Billing Overview](https://cloud.tencent.com/document/product/457/39807), [Product Pricing](https://cloud.tencent.com/document/product/457/39806), and [Purchase Limits](https://cloud.tencent.com/document/product/457/39821).
+EKS adopts the pay-as-you-go billing method. For more information about the bills, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/457/34054), [Product Pricing](https://intl.cloud.tencent.com/document/product/457/34055), and [Purchase Limits](https://intl.cloud.tencent.com/document/product/457/34056).
 
 ## Pod Specification Configuration
-Container runtime resources and bills depend on the pod specification configuration. Please note the pod specification configuration and specific methods supported by elastic clusters. For more information, please see [Resource Specifications](https://cloud.tencent.com/document/product/457/39808) and [Specifying Resource Specifications](https://cloud.tencent.com/document/product/457/44174).
+Container runtime resources and bills depend on the pod specification configuration. Please note the pod specification configuration and specific methods supported by elastic clusters. For more information, please see [Resource Specifications](https://intl.cloud.tencent.com/document/product/457/34057) and [Specifying Resource Specifications](https://intl.cloud.tencent.com/document/product/457/36161).
 
 ## Pod Temporary Storage
 Upon the creation of each pod, temporary image storage less than 20 GiB is allocated.
