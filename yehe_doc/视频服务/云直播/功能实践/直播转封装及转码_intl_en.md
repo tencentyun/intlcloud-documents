@@ -74,8 +74,8 @@ Live transcoding (including both video transcoding and audio transcoding) is the
     </tr><tr>
         <td>Video resolution</td>
         <td><ul style="margin:0px;" >
-            <li>Supported width range: 128-4096.</li>
-            <li>Supported height range: 128-4096.</li>
+            <li>Supported width range: 0 - 3000.</li>
+            <li>Supported height range: 0 - 3000.</li>
             <li>You can only specify the width and the height will be scaled proportionally.</li>
             <li>You can only specify the height and the width will be scaled proportionally.</li>
             </ul></td>
