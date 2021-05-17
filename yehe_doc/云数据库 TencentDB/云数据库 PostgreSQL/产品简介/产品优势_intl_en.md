@@ -1,41 +1,38 @@
-## More Powerful
-Over the past few years, PostgreSQL has become the preferred open source relational database for businesses.
 
-- Follows the BSD protocol, which means there are no restrictions on using PostgreSQL.
-- Supports most of the programming languages such as C, C++, Java, PHP, Python and Perl, thus making the development of your business applications easier and faster.
-- PostgreSQL is the closest open source database to Oracle in terms of architecture, syntax and data types.
-- It is compatible with SQL standard "SQL 2003", and supports the main features of SQL 2011.
-- In addition to the traditional SQL LIKE operator, it also supports the new SIMILAR TO operator of SQL 99 and POSIX-style regular expressions.
-- Rich data types: geometry, network address, XML, JSON, RANGE, Array, etc.
-- Supports complex types (custom data types).
-- Supports complex multi-table join SQL query, and join algorithms are supported such as hash join, merge join, etc.
-- Supports window functions or complex analytic functions as the latter ones include window functions.
-- Supports function index, partial (row) index, custom index and full-text index.
-- Thanks to its multi-process architecture, it is more stable, and a high-throughput database can be implemented on a single machine.
-- Includes powerful, high-performance built-in plug-ins, such as PostGIS, which is a database extension for geo-spatial data and provides additional support for geography location objects, allowing you to run location queries with SQL.
-- Has strong data consistency required for commercial use. With synchronous replication, PostgreSQL guarantees zero data loss, and even suitable for financial trading systems.
+## Powerful Features
+Over the recent years, PostgreSQL has become the go-to open-source relational database for commercial use.
+
+- PostgreSQL is released under a BSD-style license, which means there are no restrictions on using PostgreSQL.
+- PostgreSQL supports C, C++, Java, PHP, Python, Perl and so on, making the development of your business easier and faster.
+- PostgreSQL is the best open-source alternative to Oracle in terms of architecture, syntax and data types.
+- PostgreSQL is compatible with the SQL standard SQL2003 and supports the main features of SQL2011.
+- PostgreSQL supports the traditional SQL LIKE operator, the more recent SQL99 SIMILAR TO operator, and POSIX-style regular expressions.
+- PostgreSQL supports rich data types including geometry, network address, XML, JSON, RANGE, array, etc.
+- PostgreSQL supports complex types (custom data types).
+- PostgreSQL supports complex multi-table joins and join algorithms such as hash joins, merge joins, etc.
+- PostgreSQL supports window functions or complex analytic functions (the latter include window functions).
+- PostgreSQL supports function indexes, partial (row) indexes, custom indexes, and full-text indexes.
+- The multi-process architecture makes PostgreSQL more stable, and even a standalone PostgreSQL database can achieve a high throughput.
+- PostgreSQL supports powerful, high-performance extensions. For example, PostGIS is a database extension for geo-spatial data and provides additional support for geographic objects, allowing you to run location queries with SQL.
+- PostgreSQL provides strong data consistency required for commercial use. With synchronous replication, PostgreSQL guarantees zero data loss, and is even suitable for financial trading systems.
+
+## High Performance
+PostgreSQL achieves high performance in OLAP or OLTP scenarios.
+- Provides query optimizers comparable to those of commercial databases. It also supports common multi-table join queries (such as nested loop joins, hash joins, sort-merge joins, etc.). For example, the performance of joining two tables, each with 100,000 rows, is 100 times faster than that of MySQL. With the capability of obtaining query results faster from more tables, you can make your analysis more accurate.
+- Uses NVMe SSDs as the storage media with a QPS as high as 230,000. You can support more concurrent business requests with fewer databases.
+- Supports a large number of performance profiles. You can view performance data such as the ongoing SQL queries, current lock waits, table scans, and index scans to help you quickly and accurately locate the performance problems.
+- TencentDB for PostgreSQL improves the performance of built-in operators by optimizing the PostgreSQL kernel, and provides a QPS at least 10 times that of SATA by using super-high-performance NVMe SSDs. To ensure high availability, it features a primary/standby deployment mode and enables sync replication by default; this enables you to avoid business interruptions and problems such as data corruption and loss.
+
+## Convenient Management
+You can launch a TencentDB for PostgreSQL instance and connect it to applications in minutes with no additional configuration required. The default configuration has universal parameters that can be modified at any time in the console. This eliminates laborious and complicated installation and configuration processes and improves your OPS efficiency.
+
+## Convenient Monitoring
+TencentDB for PostgreSQL provides key operational metrics for PostgreSQL databases for free, including performance monitoring data such as CPU utilization, storage utilization, and I/O. You can view them in the console to quickly locate and resolve issues. In addition, customizable metric alarms are also available to allow you to stay on top of exceptions via email and SMS without needing to monitor your databases round the clock.
+
+## Scalability
+TencentDB for PostgreSQL instances can be scaled in the Tencent Cloud console to meet your elastic business needs with no additional configuration needed. The scaling process won't change the IPs and settings of the original instances, and your business will be interrupted just for a second. If the existing instances cannot sustain your business, their capacity can be easily expanded to serve more end users with minor or no changes made to your business.
+
+## High Availability
+The cluster scheduler of TencentDB for PostgreSQL will automatically restore a node when it fails to a previous point in time for failover and disaster recovery. Moreover, it provides multiple default layers of security protection for each database that does not need to be purchased separately.
 
 
-## High performance
-
-High-performance databases that can be used in OLAP or OLTP scenarios. 
- - Provides query optimizers comparable to commercial databases. It also supports common multi-table join query (such as nested loop, hash join, sort merge join, etc.). For example, the performance of joining two tables, each with 100000 rows, is 100 times faster than that of MySQL. With the capability of obtaining query results faster from more tables, you can make your analysis more accurate. 
- - Built on NVMe SSD storage, with QPS as high as 230000. You can support more concurrent business requests with fewer databases. 
- - Supports a large number of performance profiles. You can view performance data such as the running SQL queries, current lock waits, table scan and index scan to help you quickly and accurately locate the performance problems.
- - Tencent Cloud improves the performance of built-in operators by optimizing the PostgreSQL kernel, and provides super high performance NVMe SSD with QPS configuration at least 10 times higher than SATA. TencentDB for PostgreSQL uses one-primary-one-secondary architecture for deployment by default. Synchronous replication is enabled by default, protecting your business from being interrupted and preventing problems such as data corruption and data loss.
-
-## Ease of Management
-
-Tencent Cloud allows you to connect to Launch's PostgreSQL instance and connect to the application in a few minutes without the need for other configuration. The default configuration has universal parameters, and can be modified in real time in Console parameter settings. Help you get rid of the heavy and complex installation and configuration process and improve your OPS efficiency.
-
-## Convenient monitoring
-
-Provides key operation Metric of PostgreSQL, including performance monitoring data such as CPU utilization, storage capacity utilization, and IPostgreSQL O activities, which you can view in Console without extra charge to help you quickly locate and solve problems. Customize the Metric alarm threshold. You don't need to pay attention to monitoring all the time, but you can keep abreast of the current exception via email or SMS.
-
-## Scalable
-
-You can upgrade to the target specification with one click through Tencent Cloud and Console without the need for additional operations. The upgraded instance inherits the IP and all configurations of the original instance. During the upgrade process, only a flash break occurs in the switching process, without long downtime, to meet the needs of business elasticity at any time. If the existing PostgreSQL is still unable to carry your business development, it can support a large number of users with unlimited capacity and no bottlenecks with only a few changes or no changes to the business.
-
-## High security
-
-After the node failure, the cluster scheduling will start to automatically retry the Resume node immediately. When there is a serious problem with your data, you can quickly Resume to a normal point in time to deal with upgrade failures, disasters, Resume and other situations. By default, cloud databases provide multiple security protection for each database, and you can own them without having to purchase them separately.
