@@ -10,7 +10,7 @@
 <li>单个房间最多支持300人同时在线，最多支持30人同时开启摄像头。</li>
 </ul></td>
 <td>1对1视频通话、300人视频会议、在线问诊、视频聊天、视频客服、视频面审、视频双录、在线理赔、视频狼人杀等。</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">视频通话计费说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/39788">视频通话计费说明</a></td>
 </tr>
 <tr>
 <td>语音通话</td>
@@ -19,7 +19,7 @@
 <li>单个房间最多支持300人同时在线，最多支持30人同时开启麦克风。</li>
 </ul></td>
 <td>1对1语音通话、多人语音通话、语音聊天、语音会议、语音客服、狼人杀等。</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">语音通话计费说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/39788">语音通话计费说明</a></td>
 </tr><tr>
 <td>视频互动直播</td>
 <td><ul style="margin:0">
@@ -29,7 +29,7 @@
 <li>CDN 旁路直播模式下，观众数量无限制。</li>
 </ul></td>
 <td>视频低延时直播、十万人互动课堂、视频直播 PK、视频相亲房、互动课堂、远程培训、大型会议等。</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">视频互动直播计费说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/39788">视频互动直播计费说明</a></td>
 </tr><tr>
 <td>语音互动直播</td>
 <td><ul style="margin:0">
@@ -39,7 +39,7 @@
 <li>CDN 旁路直播模式下，观众数量无限制。</li>
 </ul></td>
 <td>语音低延时直播、语音直播 PK、语聊房、语音相亲房、K 歌房、FM 电台等。</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">语音互动直播计费说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/647/39788">语音互动直播计费说明</a></td>
 </tr></table>
 
 
