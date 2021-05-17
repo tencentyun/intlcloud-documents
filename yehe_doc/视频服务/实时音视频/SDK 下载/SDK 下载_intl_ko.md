@@ -181,7 +181,7 @@ TRTC는 Tencent Cloud의 LiteAV 시리즈 제품입니다. LiteAV 시스템의 S
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1071/38150">라이브 방송 라이트 버전</a><br>LiteAV_Smart</th>
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/37914">UGSV 버전</a><br>LiteAV_UGC</th>
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/34615">TRTC 버전</a><br>LiteAV_TRTC</th>
-    <th width="100px" style="text-align:center"><a href="https://cloud.tencent.com/document/product/881/20205">플레이어 버전</a><br>LiteAV_Player</th>
+    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/34615">플레이어 버전</a><br>LiteAV_Player</th>
     <th width="100px" style="text-align:center"><a href="#Professional">프로 버전</a><br>Professional</th>
     <th width="100px" style="text-align:center"><a href="#Enterprise">엔터프라이즈 버전</a><br>Enterprise</th>
   </tr>
