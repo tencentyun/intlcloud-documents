@@ -15,16 +15,16 @@ TRTC 서비스 항목은 서비스 유형에 따라 크게 **기본 서비스**�
 <tr>
 <td rowspan="4">기본 서비스</td>
 <td>음성 ILVB</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">음성 ILVB 과금 설명</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34610">음성 ILVB 과금 설명</a></td>
 </tr><tr>
 <td>비디오 ILVB</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">비디오 ILVB 과금 설명</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34610">비디오 ILVB 과금 설명</a></td>
 </tr><tr>
 <td>음성 통화</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">음성 통화 과금 설명</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34610">음성 통화 과금 설명</a></td>
 </tr><tr>
 <td>영상 통화</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">영상 통화 과금 설명</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34610">영상 통화 과금 설명</a></td>
 </tr><tr>
 <td rowspan="2">부가 서비스</td>
 <td>클라우드 녹화</td>
