@@ -54,7 +54,7 @@ msg: java.lang.Exception: exception happened
 1. After the log topic is created successfully, enter the log topic management page.
 2. Select the **Collection Configuration** tab, and click the format in which you need to collect logs.
 3. On the **Machine Group Management** page, select the server group to which to bind the current log topic and click **Next** to proceed to collection configuration.
-For more information, please see [Machine Group Management](https://intl.cloud.tencent.com/document/product/614/17412?from_cn_redirect=1&lang=en&pg=#creating-a-server-group).
+For more information, please see [Machine Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
 
 ### Configuring collection
 
