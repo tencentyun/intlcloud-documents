@@ -75,7 +75,7 @@ An additional fee will be charged for the use of On-Cloud MixTranscoding. For de
 
 ## Documentation
 - [Billing Overview](https://intl.cloud.tencent.com/document/product/647/34610)
-- [Basic Service Fees](https://intl.cloud.tencent.com/document/product/647/34613)
+- [Basic Service Fees](https://intl.cloud.tencent.com/document/product/647/34610)
 - [Value-added Service Fees](https://intl.cloud.tencent.com/document/product/647/34610)
 - [On-Cloud Recording Billing](https://intl.cloud.tencent.com/document/product/647/38385)
 - [On-Cloud MixTranscoding Billing](https://intl.cloud.tencent.com/document/product/647/38929)
