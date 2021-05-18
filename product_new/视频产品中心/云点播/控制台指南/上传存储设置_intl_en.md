@@ -2,7 +2,7 @@
 The upload storage settings in VOD consist of category management and storage region management, helping you manage the files in the console more conveniently.
 
 ## Category Management Directions
-1. Log in to the [VOD Console](https://console.cloud.tencent.com/vod/overview), and click **Upload Storage** > **Category Management** on the left sidebar to enter the "Category Management" page.
+1. Log in to the [VOD console](https://console.cloud.tencent.com/vod/overview), and click **Upload Storage** > **Category Management** on the left sidebar to enter the "Category Management" page.
 ![](https://main.qcloudimg.com/raw/e9b6b780809c9857bc410c1b6c9a0a02.png)
 2. Click **Add Category** to pop up the "Add Category" dialog box, enter the category name, and click **OK**.
 3. The newly added category will be displayed in the category list on this page, where you can rename or delete a category or add a subcategory.
@@ -27,7 +27,7 @@ The upload storage settings in VOD consist of category management and storage re
 >	- If you need to enable a region within Chinese mainland (such as Beijing, Tianjin, Chongqing, or Shanghai), please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 #### Storage Rules
-- If no other regions are enabled, all files will be transferred to the default region by default.
+- If no other regions are enabled, all files will be transferred to the default region.
 - If other regions have been enabled:
 	- If an IP is **within the nearby upload storage range of the enabled region**, files will be uploaded to the nearby enabled region.
 	- If an IP is **outside the nearby upload storage range of the enabled region**, files will be uploaded to the default region.
