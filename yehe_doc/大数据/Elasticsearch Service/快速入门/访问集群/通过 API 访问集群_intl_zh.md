@@ -12,14 +12,14 @@ Elasticsearch 提供了功能全面的 RESTful API 与集群交互，详情请�
 - 对于内网地址，在基础配置中可直接查看。 
 - 对于外网地址，出于安全考虑默认是关闭的。对于已开启 [ES 集群用户登录认证](https://intl.cloud.tencent.com/document/product/845/35275) 的集群，支持开启公网地址。开启公网访问可能会为集群引入安全风险，同时也将允许通过 API 直接访问、操作甚至删除在 ElasticSearch 集群中的数据，请谨慎开启。
 
-![基本配置](https://main.qcloudimg.com/raw/3ebcfe6e8086785fcc1e4f93c1302969.jpg)
+![基本配置](https://main.qcloudimg.com/raw/7c56fbfedbcaac395b41c52b5a2b3f81.png)
 
 
 ## 测试访问
 可通过 curl 的方式测试访问集群，不支持通过 ping 的方式测试连通性。
 
 ### 测试服务是否可访问
->对于已开启 [ES 集群用户登录认证](https://intl.cloud.tencent.com/document/product/845/35275) 的集群，登录时需要用户名和密码认证，具体规则为`curl action -u user:password host ...`，需要将 user、password 替换为自己实际的用户名和密码。
+>?对于已开启 [ES 集群用户登录认证](https://intl.cloud.tencent.com/document/product/845/35275) 的集群，登录时需要用户名和密码认证，具体规则为`curl action -u user:password host ...`，需要将 user、password 替换为自己实际的用户名和密码，将 host 替换为自己的 IP。
 >
 下面将以内网地址访问来演示各访问操作。
 
