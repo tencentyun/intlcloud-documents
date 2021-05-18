@@ -27,9 +27,9 @@ Click [here](https://uploadasset-1301007756.cos.ap-guangzhou.myqcloud.com/upload
 
 #### Step 2: install the script dependency packages
 Running the script requires the following two dependency packages.
--  **tencentcloud-sdk-python**
- -  Installation command: `pip install tencentcloud-sdk-python`.
- -  Supported version: TencentCloud API SDK Python V2.7-V3.6. For more information, see [Python SDK](https://intl.cloud.tencent.com/document/product/494/7244).
+- **tencentcloud-sdk-python**
+ - Installation command: `pip install tencentcloud-sdk-python`.
+ - Supported version: TencentCloud API SDK Python V2.7-V3.6. For more information, see [Python SDK](https://intl.cloud.tencent.com/document/product/494/7244).
 - **cos-python-sdk-v5**
  - Installation command: `pip install -U cos-python-sdk-v5`.
  - Supported version: For more information, see [Python SDK](https://intl.cloud.tencent.com/document/product/436/12269).

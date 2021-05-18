@@ -1,5 +1,5 @@
 
-This document describes how to view monitoring information such as server fleets, game server queues, and instances.
+This document describes how to view monitoring data of server fleets, game server queues, and instances.
 ## Prerequisites
 
 You have [created a server fleet](https://intl.cloud.tencent.com/document/product/1055/36675).
@@ -7,7 +7,7 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 ## Directions
 
 1. Log in to the [GSE console](https://console.cloud.tencent.com/gse/asset) and click **Fleet** on the left sidebar.
-2. Click the server fleet **ID** to enter the server fleet details page.
+2. Click the server fleet ID to enter the server fleet details page.
 ![](https://main.qcloudimg.com/raw/42c96a345b41ae2545c10534cf8aee1e.png)
 3. On the server fleet details page, click **View Monitoring** in the top-right corner to enter the monitoring panel.
 ![](https://main.qcloudimg.com/raw/99e7932d115505db65079bd78ad71335.png)
@@ -16,7 +16,7 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 ![](https://main.qcloudimg.com/raw/40bfdf27116e1b8ebf6a16a33f840116.png)
 
 
- - Description of monitoring metrics available for **Game Server Engine - Fleet**:
+ - Description of monitoring metrics available for **Game Server Elastic-scaling - Fleet**:
 
 <table>
 <thead>
@@ -26,8 +26,8 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 </tr>
 </thead>
 <tbody><tr>
-<td>Game Server Sessions Being Activated(Count)</td>
-<td>Number of game server sessions in ACTIVATING status (a session in this status is being launched)</td>
+<td>Activating Game Server Sessions (Count)</td>
+<td>Number of game server sessions in ACTIVATING status (being launched)</td>
 </tr>
 <tr>
 <td>Active Game Server Sessions (Count)</td>
@@ -42,7 +42,7 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 <td>Number of active instances that are not hosting any game server sessions</td>
 </tr>
 <tr>
-<td>Percent of Idle Instances (%)</td>
+<td>Percent Idle Instances (%)</td>
 <td>Percentage of active instances in idle status</td>
 </tr>
 <tr>
@@ -78,7 +78,7 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 <td>Number of server processes in ACTIVE status (a process in this status is running and can host game server sessions)</td>
 </tr>
 <tr>
-<td>Percent of Healthy Server Processes (%)</td>
+<td>Percent Healthy Server Processes (%)</td>
 <td>Percentage of all active server processes that are running normally</td>
 </tr>
 <tr>
@@ -86,7 +86,7 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 <td>Number of idle game server session slots in the active server processes that are running normally</td>
 </tr>
 <tr>
-<td>Percent of Available Game Server Sessions (%)</td>
+<td>Percent Available Game Server Sessions (%)</td>
 <td>Percentage of idle game server session slots in all active server processes (no matter whether they are running normally or not)</td>
 </tr>
 <tr>
@@ -99,13 +99,13 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 </tr>
 <tr>
 <td>No Instances (Count)</td>
-<td>Number of instances that fail to be purchased</td>
+<td>Number of instances that failed to be purchased</td>
 </tr>
 </tbody></table>
 
 ![](https://main.qcloudimg.com/raw/610777f8db2c951e732fc3ac0b181633.png)
 
- - Description of available monitoring metrics for **Game Server Engine - Game Server Queue**:
+ - Description of available monitoring metrics for **Game Server Engine - GameServerSessionQueue**:
 
 <table>
 <thead>
@@ -120,15 +120,15 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 </tr>
 <tr>
 <td>First Choice Not Viable (Count)</td>
-<td>Number of game server sessions that have been successfully placed but not in the preferred server fleet, as it is considered as nonviable (for example, it is a Spot fleet with a high interruption rate)</td>
+<td>Number of game server sessions that are placed in to a fleet other than the preferred one as the preferred one is nonviable (for example, it is a Spot fleet with a high interruption rate)</td>
 </tr>
 <tr>
 <td>First Choice Out of Capacity (Count)</td>
-<td>Number of game server sessions that have been successfully placed but not in the preferred server fleet, as it has no available resources</td>
+<td>Number of game server sessions that are placed in to a fleet other than the preferred one as the preferred fleet does not have available resources</td>
 </tr>
 <tr>
 <td>Lowest Latency Placement (Count)</td>
-<td>Number of game server sessions that have been successfully placed into the region with the lowest latency for players</td>
+<td>Number of game server sessions that are placed into the region with the lowest latency for players</td>
 </tr>
 <tr>
 <td>Placements Canceled (Count)</td>
@@ -136,7 +136,7 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 </tr>
 <tr>
 <td>Placements Failed (Count)</td>
-<td>Number of game server session placement requests that have failed for any reason since the last report</td>
+<td>Number of failed game server session placement requests since the last report</td>
 </tr>
 <tr>
 <td>New Requests (Count)</td>
@@ -144,11 +144,11 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 </tr>
 <tr>
 <td>Placements Succeeded (Count)</td>
-<td>Number of game server session placement requests that have successfully placed new sessions since the last report</td>
+<td>Number of successful game server session placement requests since the last report</td>
 </tr>
 <tr>
 <td>Placements Timed Out (Count)</td>
-<td>Number of game server session placement requests that have exceeded the queue timeout limit and have not been executed since the last report</td>
+<td>Number of game server session placement requests that are not executed due to the queue timeout since the last report</td>
 </tr>
 <tr>
 <td>Queue Depth (Count)</td>
@@ -267,7 +267,7 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 </tr>
 <tr>
 <td>CPU Average Load</td>
-<td>Average number of tasks that are using and waiting to use the CPU in the last minute</td>
+<td>Average number of tasks that are using and waiting to use the CPU per minute</td>
 </tr>
 </tbody></table>
 
@@ -277,6 +277,6 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 ![](https://main.qcloudimg.com/raw/ee27d25d7e8e91e2713b1cd475aa0149.png)
 7. You can click **Chart Name** to rename the chart and click **OK** to create a monitoring chart as needed.
 ![](https://main.qcloudimg.com/raw/d486150aca8a7ae1afb716748628a4ca.png)
-8. You can also copy, edit, export the data of, export the image of, delete, and perform other operations on the chart subsequently.
+8. You can also copy, edit, export and delete the chart later when needed.
 ![](https://main.qcloudimg.com/raw/59b55a60695cd9652db14a9fd016f6f3.png)
 
