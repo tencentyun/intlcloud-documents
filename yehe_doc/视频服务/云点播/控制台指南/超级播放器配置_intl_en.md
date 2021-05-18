@@ -15,13 +15,13 @@ VOD provides the following two preset configurations for your convenience:
 
 ## Custom Configuration
 
-Log in to the console, select **Distribution and Playback Settings** > **[Superplayer Settings](https://console.cloud.tencent.com/vod/distribute-play/super-player)**, and click **Create**:
+Log in to the console, select **Distribution and Playback** > **[Superplayer Configuration](https://console.cloud.tencent.com/vod/distribute-play/super-player)**, and click **Create**:
 1. Enter the playback configuration name (only **digits** and **letters** are supported).
 2. Enter the playback configuration description (up to 15 characters).
 3. Select a preset or previously created custom template in **Adaptive bitrate streaming template for playback**.
->?This configuration item specifies the adaptive bitrate streaming template through which video files that can be played back by your player are transcoded. For example, if the adaptive bitrate streaming template `10` is selected in the playback configuration, then the player can play back only videos transcoded through this template.
+>?Your player can play back only the videos transcoded through the selected adaptive bitrate streaming template. For example, if the adaptive bitrate streaming template `10` is selected in the playback configuration, then your player can play back only videos transcoded through this template.
 4. Select a preset or previously created custom image sprite template in **Image sprite template for thumbnail preview**.
->?This configuration item specifies the image sprite file for thumbnail preview in the player. For example, if the `SpriteScreenShot10` template is selected in the playback configuration, only image sprites captured through the `SpriteScreenShot10` template can be used for preview in the player.
+>?Only the image sprites captured through the selected template can be used for thumbnail preview in your player. For example, if the `SpriteScreenShot10` template is selected in the playback configuration, only image sprites captured through the `SpriteScreenShot10` template can be used for preview in your player.
 5. Name the substreams for different resolutions for the player in **Definition used for the player to play substreams**. If this configuration item is left empty, the default value will be used. You can customize the video short side length and definition.
 6. Click **OK** to complete the creation.
 
