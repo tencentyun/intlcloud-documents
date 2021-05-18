@@ -25,6 +25,7 @@
 <td><a href="#S">Standard Instance Family</a></td>
 <td>
 <ul style="margin-bottom: 0;">
+	<li><a href="#SA3">Standard SA3</a> </li>
 	<li><a href="#S5">Standard S5</a> </li>
 	<li><a href="#S5se">Standard Storage Optimized S5se</a> </li>
 	<li><a href="#SA2">Standard SA2</a> </li>
@@ -97,6 +98,8 @@
 </div>
 </div>
 
+
+
 <div class="sect1">
 	<h2 id="_Glossary">Glossary</h2>
 	<div class="sectionbody">
@@ -146,6 +149,2064 @@
 		</div>
 	</div>
 </div>
+
+<table class="tableblock frame-none grid-all spread custom-style">
+				<colgroup>
+					<col style="width: 100%;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<td class="tableblock halign-left valign-top">
+							<div>
+								<div class="sect2">
+									<h3 id="SA3">Standard SA3</h3>
+									<div class="paragraph">
+										<p>SA3 instances are optimized with the latest generation of AMD EPYC<sup>TM</sup> processor. They deliver ultra-high cost performance with a variety of specifications, and provide a balance of compute, storage, and network resources, making them ideal for many applications.</p>
+										<p>SA3 instances come with the new AMD EPYC<sup>TM</sup> Milan processors with the latest DDR4 memory. They are network optimized by default, offering a private network throughput up to 19 million pps and a private network bandwidth up to 100 Gbps.</p>
+								<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note:</p><p>this instance type is now only available to beta users. Contact your account manager to purchase it.</p>
+								</blockquote>
+									</div>
+									<div class="sect3">
+										<h4 id="_Features">Features</h4>
+										<div class="ulist">
+											<ul>
+												<li>
+													<p>Provides high performance with high reliability, security, and stability based on the Star Lake servers developed by Tencent Cloud</p>
+												</li>
+												<li>
+													<p>Comes with 2.55 GHz AMD EPYC<sup>TM</sup> Milan processor, with a turbo frequency of 3.5GHz and the latest generation of 8-channel DDR4 for stable memory computing performance</p>
+												</li>
+												<li>
+													<p>Higher specification, SA3.58XLARGE940, offering 232 vCPUs and 940 GB memory</p>
+												</li>
+												<li>
+													<p>A wide range of processor to memory ratio, such as 1:2 and 1:4</p>
+												</li>
+												<li>
+													<p>Supports up to 100 Gbps of private network bandwidth for ultra-high packet throughput to meet extremely high private network transmission requirements</p>
+												</li>
+												<li>
+													<p>The network performance of an instance depends on its specification. A higher specification means a greater network forwarding performance and a higher private network bandwidth cap.</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="sect3">
+										<h4 id="_UseCases">Use Cases</h4>
+										<div class="paragraph">
+											<p>Standard SA3 instances are applicable to the following scenarios:</p>
+										</div>
+										<div class="ulist">
+											<ul>
+												<li>
+													<p>Enterprise applications of different types and sizes</p>
+												</li>
+												<li>
+													<p>Search and other computing clusters</p>
+												</li>
+												<li>
+													<p>Video encoding and decoding, video rendering and other applications sensitive to the single-core performance</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="sect3">
+										<h4 id="_Requirements">Requirements</h4>
+										<div class="ulist">
+											<ul>
+												<li>
+													<p>Supports pay-as-you-go.</p>
+												</li>
+												<li>
+													<p>Supports only VPC.</p>
+												</li>
+												<li>
+													<p>See below for available SA3 instance specifications. Make sure that the instance specification you choose meets the minimum CPU and memory requirements of your operating system and applications. In many cases, GUI operating systems (such as Windows) that consume extensive memory and CPU resources may need higher specifications. As the needs of your workload for memory and CPU increase, you can choose higher configurations or other instance types.</p>
+												</li>
+												<li>
+													<p>With the support of appropriate operating system kernel version and runtime environment, the instance’s network bandwidth can reach up to 100 Gbps. If the network throughput is larger than 10 million pps and the network bandwidth is higher than 50 Gbps, the kernel protocol stack consumes a lot of network resources. In this case, the resulted bandwidth of netperf test may not meet the expectation. To obtain the actual network performance of the instance, use the DPDK method to shield the difference caused by the kernel protocol stack.</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="sect3">
+										<h4 id="__a_href_instancetype_Back to Top_a">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back to Top</a></h4>
+									</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="tableblock halign-left valign-top">
+							<div>
+								<table class="tableblock frame-all grid-all spread">
+									<colgroup>
+										<col style="width: 20%;">
+										<col style="width: 10%;">
+										<col style="width: 10%;">
+										<col style="width: 10%;">
+										<col style="width: 10%;">
+										<col style="width: 10%;">
+										<col style="width: 10%;">
+										<col style="width: 10%;">
+										<col style="width: 10%;">
+									</colgroup>
+									<tbody>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>Specification</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>vCPU</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>Memory (GB)</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>Send/receive packets (pps) (outbound and inbound)</p>
+													</div>
+												</div>
+											</td>
+												<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>Connections</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>Number of queues</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>Private network bandwidth (Gbps) (outbound and inbound)</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>CPU frequency</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>Notes</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.SMALL1</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>1</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>1</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>250,000</p>
+													</div>
+												</div>
+											</td>
+												<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>250,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>1</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>1.5</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.SMALL2</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>1</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>250,000</p>
+													</div>
+												</div>
+											</td>
+												<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>250,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>1</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>1.5</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.SMALL4</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>1</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>4</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>250,000</p>
+													</div>
+												</div>
+											</td>
+												<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>250,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>1</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>1.5</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.MEDIUM4</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>4</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>300,000</p>
+													</div>
+												</div>
+											</td>
+												<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>250,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>1.5</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.MEDIUM8</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>8</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>300,000</p>
+													</div>
+												</div>
+											</td>
+												<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>250,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>1.5</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.LARGE8</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>4</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>8</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>500,000</p>
+													</div>
+												</div>
+											</td>
+												<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>250,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>4</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.LARGE16</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>4</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>16</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>500,000</p>
+													</div>
+												</div>
+											</td>
+												<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>250,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>4</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.2XLARGE16</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>8</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>32</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>800,000</p>
+													</div>
+												</div>
+											</td>
+												<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>500,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>8</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>4</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.2XLARGE32</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>8</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>32</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>800,000</p>
+													</div>
+												</div>
+											</td>
+												<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>500,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>8</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>4</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.4XLARGE32</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>16</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>32</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>1,500,000</p>
+													</div>
+												</div>
+											</td>
+												<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>1,100,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>16</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>7</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.4XLARGE64</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>16</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>64</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>1,500,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>1,100,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>16</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>7</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.8XLARGE64</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>32</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>64</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2,500,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2,200,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>32</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>14</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.8XLARGE128</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>32</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>128</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2,500,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2,200,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>32</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>14</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.12XLARGE96</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>48</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>96</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>4,000,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>3,300,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>48</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>21</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.12XLARGE192</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>48</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>192</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>4,000,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>3,300,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>48</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>21</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.16XLARGE128</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>64</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>128</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>5,200,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>4,400,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>48</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>28</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.16XLARGE256</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>64</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>256</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>5,200,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>4,400,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>48</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>28</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.20XLARGE160</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>80</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>160</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>6,500,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>5,500,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>48</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>35</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+												<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.20XLARGE320</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>80</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>320</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>6,500,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>5,500,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>48</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>35</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.24XLARGE192</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>96</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>192</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>7,800,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>6,600,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>48</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>42</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.24XLARGE384</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>96</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>384</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>7,800,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>6,600,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>48</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>42</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.29XLARGE216</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>116</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>216</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>9,500,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>8,000,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>48</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>50</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.29XLARGE470</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>116</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>470</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>9,500,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>8,000,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>48</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>50</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.32XLARGE256</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>128</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>256</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>10,000,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>8,800,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>48</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>56</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.32XLARGE512</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>128</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>512</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>10,000,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>8,800,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>48</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>56</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.40XLARGE320</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>160</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>320</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>13,000,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>11,000,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>48</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>69</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.40XLARGE640</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>160</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>640</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>13,000,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>11,000,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>48</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>69</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.58XLARGE432</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>232</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>432</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>19,000,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>16,000,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>48</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>100</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>SA3.58XLARGE940</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>232</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>940</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>19,000,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>16,000,000</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>48</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>100</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>2.55GHz</p>
+													</div>
+												</div>
+											</td>
+											<td class="tableblock halign-left valign-top">
+												<div>
+													<div class="paragraph">
+														<p>-</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+											</td>
+										</tr>
+</tbody>
+</table></div></td>
+</tr>
+</tbody>
+</table>
 
 <div class="sect1">
 	<h2 id="S">Standard Instance Family</h2>
@@ -12504,1243 +14565,3 @@
 </div>
 </div>
 
-
-<p>1</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1.5</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M3.MEDIUM16</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>16</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>400,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1.5</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M3.LARGE32</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>4</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>32</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>800,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>4</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1.5</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M3.2XLARGE64</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>64</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1,200,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1.5</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M3.3XLARGE96</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>12</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>96</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1,200,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>12</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1.5</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M3.3XLARGE144</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>12</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>144</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1,200,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>12</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1.5</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M3.4XLARGE128</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>16</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>128</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1,200,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>16</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.0</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M3.4XLARGE192</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>16</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>192</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1,200,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>16</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.0</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M3.8XLARGE256</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>32</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>256</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1,200,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>16</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>4.0</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M3.8XLARGE384</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>32</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>384</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1,200,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>16</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>4.0</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M3.16XLARGE512</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>64</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>512</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1,200,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>16</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>8.0</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5 GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-</tbody>
-</table></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-none grid-all spread custom-style">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="sect2">
-<h3 id="M2">Memory Optimized M2</h3>
-<div class="paragraph">
-<p>M2 instances are designed to deliver fast performance for workloads that process large data sets in memory. They feature a large memory, making them ideal for applications that require high in-memory computing performance.</p>
-</div>
-<div class="sect3">
-<h4 id="Application Scenarios_10">Application Scenarios</h4>
-<div class="paragraph">
-<p>These instances are ideal for:</p>
-<ul>
-<li><p>Applications that require extensive memory operations, searches, and computations, such as high-performance databases and distributed memory caching.</p></li>
-<li><p>Users who build their own Hadoop clusters or Redis to use in fields such as computational genomics.</p></li>
-</ul>
-</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_Features_10">Features</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>2.4 GHz Intel® Xeon® E5-2680v4 processor with DDR4 memory</p>
-</li>
-<li>
-<p>Memory of up to 448 GB is available. The M2.14XLARGE448 model offers 56 vCPUs and 448 GB memory</p>
-</li>
-<li>
-<p>1:8 processor to memory ratio</p>
-</li>
-<li>
-<p>Priced lower than any other memory-optimized instances with the same memory</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_Requirements_10">Requirements</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>M2 instances are pay-as-you-go. They can also be used as production instances of memory optimized host HM20 in CDHs.</p>
-</li>
-<li>
-<p>Supports only VPC.</p>
-</li>
-<li>
-<p>See below for available M2 specifications: </p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="__a_href_instancetype_Back to Top_a_10">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back to Top</a></h4>
-
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 20%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Specification</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>vCPU</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Memory (GB)</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Send/receive packets (pps) (outbound and inbound)</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Number of queues</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Private network bandwidth (Gbps) (outbound and inbound)</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>CPU frequency</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Notes</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M2.SMALL8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>200,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1.5</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M2.MEDIUM16</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>16</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>250,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1.5</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M2.LARGE32</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>4</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>32</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>450,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>4</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1.5</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M2.2XLARGE64</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>64</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>500,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1.5</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M2.3XLARGE96</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>12</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>96</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>500,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M2.4XLARGE128</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>16</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>128</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>500,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>3.0</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4 GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M2.6XLARGE192</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>24</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>192</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>700,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>4.5</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M2.8XLARGE256</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>32</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>256</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>700,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>6.0</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M2.12XLARGE384</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>48</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>384</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>700,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>9.0</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M2.14XLARGE448</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>56</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>448</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>700,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>10.0</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.4GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-</tbody>
-</table></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-none grid-all spread custom-style">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="sect2">
-<h3 id="M1">Memory Optimized M1</h3>
-<div class="paragraph">
-<p>M1 instances come with approximately 1:8 CPU to memory ratio. They are well suited for applications that require memory-intensive operations, searches, and computations, such as high-performance databases and distributed in-memory caching.</p>
-</div>
-<div class="sect3">
-<h4 id="_Features_11">Features</h4>
-<div class="ulist">
-<li><p>2.3 GHz Intel Xeon® E5-2670 v3 processor with DDR3 memory, providing more instance sizes with stronger computing capacities</p></li>
-<li><p>Golden CPU to memory ratio for memory-intensive applications, satisfying the needs for large-scale business deployment</p></li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_Application Scenarios_11">Application Scenarios</h4>
-<div class="paragraph">
-<p>These instances are ideal for:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Applications that require memory-intensive operations, searches, and computations, such as high-performance databases and distributed in-memory caching</p>
-</li>
-<li>
-<p>Self-built Hadoop clusters or Redis for fields such as computational genomics</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_Requirements_11">Requirements</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Supports pay-as-you-go.</p>
-</li>
-<li>
-<p>Supports both classic network and VPC.</p>
-</li>
-<li><p>In the M1 instance list, "-" indicates that, for this specification, the send/receive packets and CPU clock rate are not guaranteed. If you have a strict performance requirement, please choose models with performance guarantee.</p></li>
-<li><p>See below for available M1 specifications:</p></li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="__a_href_instancetype_Back To Top_a_11">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back To Top</a></h4>
-
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 20%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Specification</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>vCPU</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Memory (GB)</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Send/receive packets (pps) (outbound and inbound)</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Number of queues</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Private network bandwidth (Gbps) (outbound and inbound)</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>CPU frequency</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Notes</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M1.SMALL8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1.5</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.3GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M1.MEDIUM16</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>16</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1.5</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.3GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M1.LARGE32</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>4</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>32</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>4</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1.5</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.3GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M1.2XLARGE64</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>64</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.0</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.3GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M1.3XLARGE96</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>12</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>96</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.3GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M1.4XLARGE128</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>16</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>128</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>3.5</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.3GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M1.6XLARGE192</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>24</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>192</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>5.0</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.3GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M1.8XLARGE256</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>32</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>256</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>7.0</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.3GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>M1.12XLARGE368</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>48</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>368</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>10.0</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.3GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>-</p>
-</div></div></td>
-</tr>
-</tbody>
-</table></div>
-<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note:</p><p>In the M1 instance list, "-" indicates that, for this specification, the send/receive packets and CPU clock rate are not guaranteed. If you have a strict performance requirement, please choose models with performance guarantee.</p>
-</blockquote>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="I">High I/O Family</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This family features high random IOPS, high throughput and low latency, making it suitable for I/O-intensive applications that require high disk read/write performance and low latency, such as high-performance databases.</p>
-</div>
-<table class="tableblock frame-none grid-all spread custom-style">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note：</p><p>IT3 and IT5 instances use local disk as the data disk, which may lose data (e.g., when the host crashes). If your application cannot guarantee data reliability, we recommend you choose an instance that can use cloud disks as the data disk.</p>
-</blockquote>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="sect2">
-<h3 id="IT5">High I/O IT5</h3>
-<div class="paragraph">
-<p>IT5 instances, based on NVMe SSD storage, are designed for I/O-intensive workloads. They come with storage resources featuring low latency, ultra-high IOPS and high throughput. They offer an IOPS of up to 2.05 million and a throughput of up to 11 GB/s, allowing for an ultra-high IOPS at a low cost. This instance type is suitable for I/O-intensive applications including high-performance relational databases, Elasticsearch, etc.</p>
-</div>
-<div class="sect3">
-<h4 id="_Application Scenarios_13">Application Scenarios</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>High-performance databases, NoSQL databases (e.g. MongoDB), and clustered databases</p>
-</li>
-<li>
-<p>I/O intensive applications that require low latency, such as online transaction processing (OLTP) systems, and Elasticsearch</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_Features_13">Features</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>2.5 GHz Intel® Xeon® Cascade Lake processor, offering stable computing performance</p>
-</li>
-<li>
-<p>The latest generation of 6-channel DDR4 memory</p>
-</li>
-<li>
-<p>Supports up to 23 Gbps of private network bandwidth to meet extremely high private network transmission requirements</p>
-</li>
-<li><p>NVMe SSD is used for instance storage, offering low latency and ultra-high IOPS</p>
-<ul>
-<li><p>Up to 650,000 random read IOPS (block size of 4 KB), and up to 2.8 GB/s sequential read throughput (block size of 128 KB) for a single disk</p></li>
-<li><p>Up to 2.05 million random read IOPS (block size of 4 KB), and up to 11 GB/s sequential read throughput (block size of 128 KB) for a CVM</p></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_Requirements_13">Requirements</h4>
-<div class="ulist">
-<ul>
-<li><p>If the local disk is damaged, you will need to shut down the CVM instance for us to replace the local disk.</p></li>
-<li><p>If the CVM instance crashes, we will notify you and perform fixes.</p></li>
-</li>
-<li><p>If Agent has not been installed, IT5 instances cannot be monitored. You will not receive a notification when the CVM instance fails, which is very risky. For more information about how to install Agent, see <a href="https://intl.cloud.tencent.com/document/product/248/6211">Installing CVM Agents</a>.</p></li>
-<li>
-<p>Supports pay-as-you-go.</p>
-</li>
-<li>
-<p>Supports only VPC.</p>
-</li>
-<li>
-<p>The configuration of IT5 instances cannot be changed.</p>
-</li>
-<li>
-<p>See below for available IT5 specifications:</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="__a_href_instancetype_Back to Top_a_11">&nbsp; &nbsp;<a href="#INSTANCETYPE">Back to Top</a></h4>
-</div>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 20%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Specification</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>vCPU</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Memory (GB)</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Send/receive packets (pps) (outbound and inbound)</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Number of queues</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Private network bandwidth (Gbps) (outbound and inbound)</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>CPU frequency</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Notes</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>IT5.4XLARGE64</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>16</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>64</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1,500,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>4</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>6</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>1 x 3570 GB local NVMe SSD</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>IT5.8XLARGE128</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>32</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>128</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2,500,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>8</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>12</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2 x 3570 GB local NVMe SSDs</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>IT5.16XLARGE256</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>64</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>256</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>5,000,000</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>16</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>23</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>2.5GHz</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>4 x 3570 GB local NVMe SSDs</p>
-</div></div></td>
-</tr>
-</tbody>
-</table></div></td>
-</tr>
-</tbody>
-</table>
-<table class="tableblock frame-none grid-all spread custom-style">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div><div class="sect2">
-<h3 id="IT3">High I/O IT3</h3>
-<div class="paragraph">
-<p>IT3 instances, based on NVMe SSD storage, are designed for I/O-intensive workloads. They come with storage resources featuring low latency, ultra-high IOPS and high throughput. They offer an IOPS of up to 1.8 million and a throughput of up to 11 GB/s, allowing for an ultra-high IOPS at a low cost. This instance type is suitable for I/O-intensive applications including high-performance relational databases, Elasticsearch, etc.</p>
-</div>
-<div class="paragraph">
-<p>IT3 instances feature inexpensive and intensive storage. They can provide each CPU core with higher IOPS and larger private network bandwidth.</p>
-</div>
-<div class="sect3">
-<h4 id="_Application Scenarios_13">Application Scenarios</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>High-performance databases, NoSQL databases (e.g. MongoDB), and clustered databases</p>
-</li>
-<li>
-<p>I/O intensive applications that require low latency, such as online transaction processing (OLTP) systems, and Elasticsearch</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_Features_13">Features</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>2.5 GHz Intel® Xeon® Skylake 6133 processor, offering stable computing performance</p>
-</li>
-<li>
-<p>The latest generation of 6-channel DDR4 memory</p>
-</li>
-<li>
-<p>Supports up to 23 Gbps of private network bandwidth to meet extremely high private network transmission requirements</p>
-</li>
-<li><p>NVMe SSD is used for instance storage, offering low latency and ultra-high IOPS</p>
-<ul>
-<li><p>Up to 620,000 random read IOPS (block size of 4 KB), and up to 2.9 GB/s sequential read throughput (block size of 128 KB) for a single disk</p></li>
-<li><p>Up to 1.8 million random read IOPS (block size of 4 KB), and up to 11 GB/s sequential read throughput (block size of 128 KB) for a CVM</p></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_Requirements_13">Requirements</h4>
-<div class="u
