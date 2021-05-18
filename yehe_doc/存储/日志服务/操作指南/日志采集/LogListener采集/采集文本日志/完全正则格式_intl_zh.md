@@ -88,14 +88,13 @@ upstream_response_time: 0.354
 
 ### 5. 关联机器组
 
-从机器组列表中选择目标机器组，将其与当前日志主题进行关联，关联的机器组与日志主题所在的地域需保持一致。更多详情请参阅 [如何创建机器组](https://intl.cloud.tencent.com/document/product/614/17412)。
+从机器组列表中选择目标机器组，将其与当前日志主题进行关联，关联的机器组与日志主题所在的地域需保持一致。更多详情请参阅 [管理机器组](https://intl.cloud.tencent.com/document/product/614/17412)。
 ![](https://main.qcloudimg.com/raw/5bb42e4d8501b6a23e1b98cc7135d874.png)
 
 ### 6. 配置完全正则模式
 
 1. 单击【下一步】，配置日志解析方式。
-2. 【提取模式】，请选择【完全正则】，如下图所示：
-![](https://main.qcloudimg.com/raw/c736ff6fc55f90d51d3f558e1884e044.png)
+
 
 
 #### 6.1 定义正则表达式
@@ -106,12 +105,12 @@ upstream_response_time: 0.354
  b. 根据检索分析需要，将一部分日志内容选中，单击【分组】，成功分组后会特殊显示，表示该部分会作为一个 key-value 分组提取。
  c. 重复上述步骤 b，直到分组完所有需提取的 key-value。
  d. 单击【自动生成】，系统将日志分组生成正则提取模式。
-![](https://main.qcloudimg.com/raw/7c12371d56bd21fa5ba068e84521444b.png)
+
 - 手动模式
  a. 输入日志样例。
  b. 手动输入正则提取表达式。
  c. 单击【验证】，系统将判断日志样例与正则表达式是否匹配。
-![](https://main.qcloudimg.com/raw/f893329dde3e5200d4eb3ec68aa683a0.png)
+
 >无论是自动模式还是手动模式，一旦正则提取模式定义好并验证通过后，提取结果将会展示在下方，您需要对每一组 key-value 对定义好一个 key 名称，该名称会用于日志检索分析。
 
 ### 7. 配置采集时间
@@ -123,12 +122,12 @@ upstream_response_time: 0.354
 #### 7.1 采集时间作为日志的时间属性
 
 保持采集时间状态为开启状态即可，如下图所示：
-![](https://main.qcloudimg.com/raw/3275050d65b37111f68d8516444178ba.png)
+
 
 #### 7.2 日志的原始时间戳作为日志时间属性
 
 关闭采集时间状态，在时间键和时间格式解析处，填写原始时间戳的时间键以及对应的时间解析格式。时间解析格式详情参见 [配置时间格式](https://intl.cloud.tencent.com/document/product/614/32942)。
-![](https://main.qcloudimg.com/raw/1c4ed94b73b5597cd081f70ca2cac7ec.png)
+
 
 下面举例说明时间格式解析规则填写：  
 例1：日志样例原始时间戳：`10/Dec/2017:08:00:00`，解析格式为：`%d/%b/%Y:%H:%M:%S`。
@@ -148,6 +147,6 @@ upstream_response_time: 0.354
 ### 9. 检索日志
 
 登录 [日志服务控制台](https://console.cloud.tencent.com/cls)，在左侧导航栏中，单击【日志检索】，输入日志集与日志主题，单击【搜索】，即可开始按照设定的查询条件检索日志。
-![](https://main.qcloudimg.com/raw/13b64f9282e1fa6128d81d8187f77b86.png)
+
 
 >检索必须开启索引配置，否则无法检索。
