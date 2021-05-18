@@ -27,8 +27,8 @@ AI-based video analysis feature is billed on a postpaid monthly basis. The billi
 #### Pricing
 AI-based video analysis feature has the following billable items:
 
-- Intelligent highlights generation and video segmentation: intelligent video segmentation partitions videos into shots or scenes. This feature can be further optimized according to user requirements. **Highlights generation and video segmentation uses different APIs and are billed separately**.
-- Intelligent video tagging and classification: this feature intelligently identifies figures, scenarios, voices, text and other information in videos and then automatically generates video tags, categories, summaries among others. **Video tagging and classification uses different APIs and are billed separately**.
+- Intelligent highlights generation and video segmentation: intelligent video segmentation partitions videos into shots or scenes. This feature can be further optimized according to user requirements. **Highlights generation and video segmentation use different APIs and are billed separately**.
+- Intelligent video tagging and video classification: intelligently identify figures, scenarios, voices, text and other information in videos and then automatically generate video tags, categories, summaries among others. **Video tagging and video classification use different APIs and are billed separately**.
 - Intelligent video thumbnail recommendation: selects one or more screenshots of a video as the recommended thumbnails.
 
 The billing details are as follows:
