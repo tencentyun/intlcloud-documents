@@ -28,12 +28,12 @@ To statically create a PV of the file storage type, you need to bind an availabl
 2. Click **Create**. On the **Create File System** page, set the parameters as required, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/379085d126949f1d6bceb69c165a6f5c.png)
 	- **Name**: set a custom name. This document uses `cfs-test` as an example.
-	- **Region*: select a region in which to create the file system and ensure that the file system and the cluster are in the same region.
+	- **Region**: select a region in which to create the file system and ensure that the file system and the cluster are in the same region.
 	- **Availability Zone**: select an availability zone in which to create the file system.
 	- **Storage Class**: select **Standard Storage** or **High-Performance Storage**. Different availability zones support different storage classes. For more information, see [Available Regions](https://intl.cloud.tencent.com/document/product/582/35772).
 	- **File Service Protocol**: select a protocol type for the file system. Valid values include **NFS** and **CIFS/SMB**.
 		- NFS: better suited to Linux and Unix clients.
-		- CIFS/SMB: better suited to Windows clients. This protocol was launched for commercial use on September 1, 2020. For more information, see [Notes on Commercial Use of CIFS/SMB](https://intl.cloud.tencent.com/document/product/582/9553).
+		- CIFS/SMB: better suited to Windows clients. 
 	- **Client Type**: select the type of client that needs to access the file system. The value can be CVM (including TKE and BatchCompute) or CPM. Since CVM and CPM hosts belong to different networks, the system will allocate the file system to a specified network based on your client type.
 	- **Network Type**: select **Virtual Private Cloud** so that CVM hosts can share the file system in a VPC.
 	- **Select Network**: select a network to ensure that the file system and the cluster that uses the file system are in the same VPC.
