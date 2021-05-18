@@ -16,7 +16,7 @@ VOD billable items include storage, transcoding, traffic and other value-added s
 
 Billing modes of each billable item:
 
-|Billable Items|Daily Billing Cycle|Monthly Billing Cycle|
+|Billable Item|Daily Billing Cycle|Monthly Billing Cycle|
 |--|--|--|
 |Storage fee|√|√|
 |Transcoding fee|√|√|
@@ -27,8 +27,8 @@ Billing modes of each billable item:
 
 
 ## Related Documentation
-- For daily billing cycle product pricing, see [Pay-as-You-Go (Postpaid Daily Billing Cycle)](https://intl.cloud.tencent.com/document/product/266/14666).
-- For pricing of other value-added services, see [Other Value-Added Services](https://intl.cloud.tencent.com/document/product/266/38162).
-- To see examples of how billable items are priced, see [Billing Examples](https://intl.cloud.tencent.com/document/product/266/38163).
+- For VOD product pricing on the daily billing cycle, please refer to [Pay-as-You-Go (Postpaid Daily Billing Cycle)](https://intl.cloud.tencent.com/document/product/266/14666).
+- For pricing of VOD value-added services, please refer to [Other Value-Added Services](https://intl.cloud.tencent.com/document/product/266/38162).
+- To see examples of how billable items are priced, please refer to [Billing Examples](https://intl.cloud.tencent.com/document/product/266/38163).
 
 
