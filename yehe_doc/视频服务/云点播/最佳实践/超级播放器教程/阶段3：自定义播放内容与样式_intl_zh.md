@@ -10,7 +10,7 @@
 
 ## 步骤1：创建自适应码流模板
 
-1. 登录云点播控制台，选择【视频处理设置】>[【模板设置】](https://console.cloud.tencent.com/vod/video-process/template)，单击“转自适应码流模板”页签下的【创建自适应码流模板】。
+1. 登录云点播控制台，选择【视频处理设置】>[【模板设置】](https://console.cloud.tencent.com/vod/video-process/template)，单击“转自适应码流模板”页签下的【创建转自适应码流模板】。
 <img src="https://main.qcloudimg.com/raw/e9f8718aa8c6ae6dd05e4787cb76d586.png" width="800" />
 2. 进入“模板设置”页面后，单击【添加子流】，新建子流1、子流2和子流3，填写参数如下：
 	- **基本信息模块**：
