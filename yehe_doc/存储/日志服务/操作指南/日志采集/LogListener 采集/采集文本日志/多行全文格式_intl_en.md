@@ -35,7 +35,7 @@ __CONTENT__:10.20.20.10 - - [Tue Jan 22 14:24:03 CST 2019 +0800] GET /online/sam
 1. After the log topic is created successfully, go to the log topic management page.
 2. Select the **Collection Configuration** tab, click the format in which you need to collect logs.
 3. On the **Machine Group Management** page, select the server group to which to bind the current log topic and click **Next** to proceed to collection configuration.
-For more information, see [Server Group Management](https://intl.cloud.tencent.com/zh/document/product/614/17412).
+For more information, see [Server Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
 
 
 ### Collection configuration
