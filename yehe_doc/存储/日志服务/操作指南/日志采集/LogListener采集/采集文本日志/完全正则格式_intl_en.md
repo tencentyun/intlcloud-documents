@@ -88,14 +88,13 @@ Examples:
 
 ### 5. Associating a server group
 
-Select a server group from the server groups list, and associate it with the log topic. Note that this server group and log topic should be in the same region. For more information, see [Creating a Server Group](https://intl.cloud.tencent.com/document/product/614/17412) under Server Group Management.
+Select a server group from the server groups list, and associate it with the log topic. Note that this server group and log topic should be in the same region. For more information, see [Machine Group Management](https://intl.cloud.tencent.com/document/product/614/17412) .
 ![](https://main.qcloudimg.com/raw/5bb42e4d8501b6a23e1b98cc7135d874.png)
 
 ### 6. Configuring the parsing mode
 
 1. Click **Next** to the Log Parsing Mode page.
 2.  Select **Full RegEx** for **Extraction Mode**.
-![](https://main.qcloudimg.com/raw/c736ff6fc55f90d51d3f558e1884e044.png)
 
 
 #### 6.1 Defining RegEx
@@ -106,12 +105,12 @@ In this parsing mode, you can let CLS automatically extract key-value pairs usin
  b. Select part of the log content as needed, and click **Group**. A grouped part will be highlighted and to be extracted as a key-value pair.
  c. Repeat Step b until you get all the key-value pairs you want.
  d. Click **Auto-Generate** to generate a full RegEx log.
-![](https://main.qcloudimg.com/raw/7c12371d56bd21fa5ba068e84521444b.png)
+
 - Manual method
  a. Enter a sample log.
  b. Enter a regex manually.
  c. Click **Verify** to check if the sample log matches the regex.
-![](https://main.qcloudimg.com/raw/f893329dde3e5200d4eb3ec68aa683a0.png)
+
 >Both methods display search results below the regex once it is set correctly. You need to define a key name for each key-value pair for use in future log searches.
 
 ### 7. Configuring collection time
@@ -123,12 +122,12 @@ In this parsing mode, you can let CLS automatically extract key-value pairs usin
 #### 7.1 Using the collection time as the time attribute of logs
 
 Simply enable collection time as shown below:
-![](https://main.qcloudimg.com/raw/3275050d65b37111f68d8516444178ba.png)
+
 
 #### 7.2 Using the original timestamp as the time attribute of logs
 
 Disable collection time, and instead, enter the time key and parsing format of the original timestamp. For more information, see [Configuring Time Format](https://intl.cloud.tencent.com/document/product/614/32942).
-![](https://main.qcloudimg.com/raw/1c4ed94b73b5597cd081f70ca2cac7ec.png)
+
 
 The examples below show how to specify time parsing formats:  
 Example 1: original timestamp: `10/Dec/2017:08:00:00`; parsing format: `%d/%b/%Y:%H:%M:%S`.
@@ -148,6 +147,6 @@ To collect full RegEx logs, you need to set filtering rules based on the custom 
 ### 9. Searching logs
 
 Log in to the [CLS console](https://console.cloud.tencent.com/cls), and click **Log Search** in the left sidebar. Select **Logset** and **Log Topic** from their drop-down list, and click **Search Analysis** to begin the search.
-![](https://main.qcloudimg.com/raw/13b64f9282e1fa6128d81d8187f77b86.png)
+
 
 >A log topic must have index configuration enabled to be searchable.
