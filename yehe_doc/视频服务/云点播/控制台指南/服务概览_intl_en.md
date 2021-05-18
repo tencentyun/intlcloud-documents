@@ -24,7 +24,7 @@ The billing section displays the **billing mode** under the current Tencent Clou
 
 ## Resource Usage
 
-The resource usage section displays VOD resource usage information in the current month, including **total used storage**, **total transcoding duration for this month**, **total traffic used for this month**, and **total intelligent recognition duration for this month**.
+The resource usage section displays VOD resource usage information in the current month, including **total used storage**, **total transcoding duration for this month**, **total traffic used for this month**, and **total audit duration for this month**.
 ![](https://main.qcloudimg.com/raw/1f547963822f80ab6409a99238457fda.png)
 
 <table border=0 cellpadding="0" cellspacing="0">
@@ -52,8 +52,8 @@ The resource usage section displays VOD resource usage information in the curren
 <td>B</td>
 </tr>
 <tr>
-<td nowrap="nowrap">Total intelligent recognition duration for this month</td>
-<td>Total duration of the intelligent video recognition service used in the VOD console month to date</td>
+<td nowrap="nowrap">Total audit duration for this month</td>
+<td>Total duration of the audit service used in the VOD console month to date</td>
 <td>Minutes</td>
 </tr>
 </tbody></table>
