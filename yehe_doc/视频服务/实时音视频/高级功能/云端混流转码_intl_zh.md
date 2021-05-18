@@ -1,28 +1,37 @@
 ## 适用场景
+
 在 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 和 [云端录制回放](https://intl.cloud.tencent.com/document/product/647/35426) 等应用场景中，常需要将 TRTC 房间里的多路音视频流混合成一路，您可以使用腾讯云服务端的 MCU 的混流转码集群完成该项工作。MCU 集群能将多路音视频流进行按需混合，并将最终生成的视频流分发给直播 CDN 和云端录制系统。
 
 云端混流有两种控制方式：
-- **方案一**：使用服务端 REST API [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) 和 [StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760) 进行控制，该 REST API 还可以同时支持启动 CDN 观看和云端录制。
+
+- **方案一**：使用服务端 REST 接口 StartMCUMixTranscode（[数字房间号版本](https://intl.cloud.tencent.com/document/product/647/37761) / [字符串房间号版本](https://intl.cloud.tencent.com/document/product/647/39637)）和 StopMCUMixTranscode（[数字房间号版本](https://intl.cloud.tencent.com/document/product/647/37760) / [字符串房间号版本](https://intl.cloud.tencent.com/document/product/647/39636)）进行控制，该接口还可以同时支持启动 CDN 观看和云端录制。
 - **方案二**：使用客户端 TRTC SDK 的 [setMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 接口进行控制，其原理如下图： 
   ![](https://main.qcloudimg.com/raw/fd3017e7eb263b538fba858a362eab13.png)
 
+>! 方案二支持 iOS、Android、Windows、Mac、Electron、Flutter 和桌面浏览器平台的 SDK。
+
 ## 原理解析
+
 云端混流包含解码、混合和再编码三个过程：
 
 - **解码**：MCU 需要将多路音视频流进行解码，包括视频解码和音频解码。
 - **混合**：MCU 需要将多路画面混合在一起，并根据来自 SDK 的混流指令实现具体 的排版方案。同时，MCU 也需要将解码后的多路音频信号进行混音处理。
 - **编码**：MCU 需要将混合后的画面和声音进行二次编码，并封装成一路音视频流，交给下游系统（例如直播和录制）。
 
-![](https://main.qcloudimg.com/raw/a5ce0215228eca3375ce47133df0be95.png)
+![](https://main.qcloudimg.com/raw/fd3017e7eb263b538fba858a362eab13.png)
 
 [](id:restapi)
+
 ## 方案一：服务端 REST API 混流方案
+
 ### 启动混流
+
 由您的服务器调用 REST API [StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761) 可以启动云端混流，对于此 API 您需关注如下细节：
 
 [](id:restapi_step1)
-#### 1. 设置画面排版模式
-通过 `StartMCUMixTranscode` 中的 [LayoutParams](https://intl.cloud.tencent.com/document/product/647/36760#LayoutParams) 参数，可以设置如下几种排版模式：
+
+#### 步骤1：设置画面排版模式（必需）
+通过 `StartMCUMixTranscode` 中的 [LayoutParams](https://intl.cloud.tencent.com/ko/document/product/647/36760#LayoutParams) 参数，可以设置如下几种排版模式：
 ![](https://main.qcloudimg.com/raw/be0205b5f624679302e57ca5aa1b133f.png)
 
 **悬浮模板（LayoutParams.Template = 0）**
@@ -64,8 +73,8 @@
 >! 云端混流服务最多支持同时混合16路音视频流，如果用户只有音频也会被算作一路。
 
 [](id:restapi_step2)
-#### 2. 设置混流编码参数
-通过 `StartMCUMixTranscode` 中的 [EncodeParams](https://intl.cloud.tencent.com/document/product/647/36760#EncodeParams) 参数，可以设置混流编码参数：
+#### 步骤2：设置混流编码参数（必需）
+通过 `StartMCUMixTranscode` 中的 [EncodeParams](https://intl.cloud.tencent.com/ko/document/product/647/36760#EncodeParams) 参数，可以设置混流编码参数：
 
 | 名称            | 描述                                         | 推荐值 |
 | --------------- | -------------------------------------------- | ------ |
@@ -76,28 +85,25 @@
 | VideoHeight     | 混流-输出流高，音视频输出时必填              | 自定义 |
 | VideoBitrate    | 混流-输出流码率，单位 kbps，音视频输出时必填 | 自定义 |
 | VideoFramerate  | 混流-输出流帧率，音视频输出时必填            | 15     |
-| VideoGop        | 混流-输出流 gop，音视频输出时必填            | 3      |
+| VideoGop        | 混流-输出流 GOP，音视频输出时必填            | 3      |
 | BackgroundColor | 混流-输出流背景色                            | 自定义 |
 
-[](id:restapi_step3)
-#### 3. 设置是否开启云端录制
-
-通过  `StartMCUMixTranscode` 中的 [OutputParams](https://intl.cloud.tencent.com/document/product/647/36760#OutputParams) 参数，可以指定混流后视频流的去向。
-
-- **OutputParams.RecordId**
-  该参数用于指定是否启动 [云端录制](https://intl.cloud.tencent.com/document/product/647/35426)，如果您指定此参数，那么混流后的音视频流会被录制成文件并存储到 [云点播](https://intl.cloud.tencent.com/product/vod) 中。录制下来的文件会按照 `OutputParams.RecordId_开始时间_结束时间` 的格式命名，例如：`file001_2020-02-16-12-12-12_2020-02-16-13-13-13`。
-- **OutputParams.RecordAudioOnly**
-  如果您只希望录制音频而不需要视频内容，可以设置 `OutputParams.RecordAudioOnly` 参数为1，表示仅录制 MP3 格式的文件。
-
 [](id:restapi_step4)
-#### 4. 设置是否开启 CDN 直播
-
+#### 步骤3：指定混合后的 streamID（必需）
 - **OutputParams.StreamId**
-  该参数用于指定是否启动 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242)，如果您指定此参数，那么混流后的音视频流会被导入到 [云直播系统](https://intl.cloud.tencent.com/product/css) 中。不过只有在您已经开通了直播服务，并配置了播放域名的情况下，才能通过 CDN 正常观看这条直播流。
+  通过该参数您可以指定混合后的音视频流在直播 CDN 上的 streamID。不过只有在您已经开通了直播服务并配置了播放域名的情况下，才能通过 CDN 正常观看这条直播流。
 - **OutputParams.PureAudioStream**
   如果您只希望做纯音频直播，可以设置 `OutputParams.PureAudioStream` 参数为 1，代表仅把混音后的音频数据流转发到 CDN 上。
 
+[](id:restapi_step3)
+#### 步骤4：设置是否开启云端录制（可选）
+- **OutputParams.RecordId**
+  该参数用于指定是否启动 [云端录制](https://intl.cloud.tencent.com/document/product/647/35426)，如果您指定此参数，那么混流后的音视频流会被录制成文件并存储到 [云点播](https://intl.cloud.tencent.com/ko/product/vod) 中。录制下来的文件会按照 `OutputParams.RecordId_开始时间_结束时间` 的格式命名，例如：`file001_2020-02-16-12-12-12_2020-02-16-13-13-13`。
+- **OutputParams.RecordAudioOnly**
+  如果您只希望录制音频而不需要视频内容，可以设置 `OutputParams.RecordAudioOnly` 参数为1，表示仅录制 MP3 格式的文件。
+
 ### 结束混流
+
 由您的服务器调用 REST API  [StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760) 即可结束混流。
 
 [](id:sdkapi)
@@ -182,21 +188,24 @@
 </tr></tbody></table>
 
 
-
 [](id:PureAudio)
+
 ### 纯音频模式（PureAudio）
 
 #### 适用场景
+
 纯音频模式适用于语音通话（AudioCall）和语音聊天室（VoiceChatRoom）等纯音频应用场景，该类场景下您可以在调用 SDK 的 [enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) 接口时进行设定。
 纯音频模式下，SDK 会自动将房间里的多路音频流混合成一路。
 
 #### 使用步骤
+
 1. 在调用 `enterRoom()` 函数进入房间时，根据您的业务需要，设定 AppScene 参数为 `TRTCAppSceneAudioCall` 或 `TRTCAppSceneVoiceChatRoom`，明确当前房间中没有视频且只有音频。
 2. 开启 [旁路直播](https://intl.cloud.tencent.com/document/product/647/35242)，并设定 TRTCParams 中的 `streamId` 参数，指定 MCU 输出的混合音频流的去处。
 3. 调用 `startLocalAudio()` 开启本地音频采集和音频上行。
 >? 由于云端混流的本质是将多路流混合到当前（即发起混流指令的）用户所对应的音视频流上，因此当前用户本身必须有音频上行才能构成混流的前提条件。
 4. 调用 `setMixTranscodingConfig()` 接口启动云端混流，需要您在调用时将 `TRTCTranscodingConfig` 中的 `mode` 参数设定为 **TRTCTranscodingConfigMode_Template_PureAudio**，并指定 `audioSampleRate`、`audioBitrate` 和 `audioChannels` 等关乎音频输出质量的参数。
 5. 经过上述步骤，当前用户的旁路音频流中就会自动混合房间中其他用户的声音，之后您可以参考文档 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 配置播放域名进行直播观看，也可以参考文档 [云端录制](https://intl.cloud.tencent.com/document/product/647/35426) 录制混合后的音频流。
+
 >! 纯音频模式下 `setMixTranscodingConfig()` 接口无需多次调用，在进房成功并开启本地音频上行后调用一次即可。
 
 [](id:PresetLayout)
@@ -206,7 +215,6 @@
 预排版模式下，SDK 会自动按照您预先设定各路画面的排版规则将房间里的多路音频流混合成一路。
 
 #### 使用步骤
-
 1. 在调用 `enterRoom()` 函数进入房间时，根据您的业务需要，设定 AppScene 参数为 `TRTCAppSceneVideoCall` 或 `TRTCAppSceneLIVE`。
 2. 开启 [旁路直播](https://intl.cloud.tencent.com/document/product/647/35242)，并设定 TRTCParams 中的 `streamId` 参数，指定 MCU 输出的混合音频流的去处。
 3. 调用 `startLocalPreview()` 和 `startLocalAudio()` 开启本地的音视频上行。
@@ -222,14 +230,13 @@
 <td>$PLACE_HOLDER_REMOTE$</td><td>指代远端连麦者，可以同时设置多个</td><td>支持</td>
 </tr></table>
 6. 经过上述步骤，当前用户的旁路音频流中就会自动混合房间中其他用户的声音，之后您可以参考文档 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 配置播放域名进行直播观看，也可以参考文档 [云端录制](https://intl.cloud.tencent.com/document/product/647/35426) 录制混合后的音频流。
+
 ![](https://main.qcloudimg.com/raw/4119e41cefe59b7a8b8edf675babdd38.png)
 
 [](id:example_code)
 
 #### 示例代码
-
 您可根据下面的示例代码实现“一大二小，上下叠加”的混合效果：
-
 <dx-codeblock>
 ::: iOS  Objective-C 
 TRTCTranscodingConfig *config = [[TRTCTranscodingConfig alloc] init];
@@ -242,35 +249,35 @@ config.videoGOP        = 2;
 config.audioSampleRate = 48000;
 config.audioBitrate    = 64;
 config.audioChannels   = 2;
- 
 // 采用预排版模式
 config.mode = TRTCTranscodingConfigMode_Template_PresetLayout;
-config.mixUsers = [NSMutableArray new];
- 
+    
+NSMutableArray *mixUsers = [NSMutableArray new];
 // 主播摄像头的画面位置
 TRTCMixUser* local = [TRTCMixUser new];
-local.userId = @"$PLACE_HOLDER_LOCAL_MAIN$"; 
+local.userId = @"$PLACE_HOLDER_LOCAL_MAIN$";
 local.zOrder = 0;   // zOrder 为0代表主播画面位于最底层
 local.rect   = CGRectMake(0, 0, videoWidth, videoHeight);
 local.roomID = nil; // 本地用户不用填写 roomID，远程需要
-[config.mixUsers addObject:local];
- 
+[mixUsers addObject:local];
+
 // 连麦者的画面位置
 TRTCMixUser* remote1 = [TRTCMixUser new];
-remote1.userId = @"$PLACE_HOLDER_REMOTE$"; 
+remote1.userId = @"$PLACE_HOLDER_REMOTE$";
 remote1.zOrder = 1;
 remote1.rect   = CGRectMake(400, 800, 180, 240); //仅供参考
-remote1.roomID = 97392; // 本地用户不用填写 roomID，远程需要
-[config.mixUsers addObject:remote1];
- 
+remote1.roomID = @"97392"; // 本地用户不用填写 roomID，远程需要
+[mixUsers addObject:remote1];
+
 // 连麦者的画面位置
 TRTCMixUser* remote2 = [TRTCMixUser new];
-remote2.userId = @"$PLACE_HOLDER_REMOTE$"; 
+remote2.userId = @"$PLACE_HOLDER_REMOTE$";
 remote2.zOrder = 1;
 remote2.rect   = CGRectMake(400, 500, 180, 240); //仅供参考
-remote2.roomID = 97392; // 本地用户不用填写 roomID，远程需要
-[config.mixUsers addObject:remote2];
- 
+remote2.roomID = @"97392"; // 本地用户不用填写 roomID，远程需要
+[mixUsers addObject:remote2];
+
+config.mixUsers = mixUsers;
 // 发起云端混流
 [_trtc setMixTranscodingConfig:config];
 :::
@@ -285,11 +292,11 @@ config.videoGOP        = 2;
 config.audioSampleRate = 48000;
 config.audioBitrate    = 64;
 config.audioChannels   = 2;
- 
+
 // 采用预排版模式
 config.mode = TRTCCloudDef.TRTC_TranscodingConfigMode_Template_PresetLayout;
 config.mixUsers = new ArrayList<>();
- 
+
 // 主播摄像头的画面位置
 TRTCCloudDef.TRTCMixUser local = new TRTCCloudDef.TRTCMixUser();
 local.userId = "$PLACE_HOLDER_LOCAL_MAIN$";
@@ -300,7 +307,7 @@ local.width  = videoWidth;
 local.height = videoHeight;
 local.roomId = null; // 本地用户不用填写 roomID，远程需要
 config.mixUsers.add(local);
- 
+
 // 连麦者的画面位置
 TRTCCloudDef.TRTCMixUser remote1 = new TRTCCloudDef.TRTCMixUser();
 remote1.userId = "$PLACE_HOLDER_REMOTE$";
@@ -311,7 +318,7 @@ remote1.width  = 180; //仅供参考
 remote1.height = 240; //仅供参考
 remote1.roomId = "97392"; // 本地用户不用填写 roomID，远程需要
 config.mixUsers.add(remote1);
- 
+
 // 连麦者的画面位置
 TRTCCloudDef.TRTCMixUser remote2 = new TRTCCloudDef.TRTCMixUser();
 remote2.userId = "$PLACE_HOLDER_REMOTE$";
@@ -322,7 +329,7 @@ remote1.width  = 180; //仅供参考
 remote1.height = 240; //仅供参考
 remote1.roomId = "97393"; // 本地用户不用填写 roomID，远程需要
 config.mixUsers.add(remote2);
- 
+
 // 发起云端混流
 trtc.setMixTranscodingConfig(config);
 :::
@@ -337,7 +344,7 @@ config.videoGOP        = 2;
 config.audioSampleRate = 48000;
 config.audioBitrate    = 64;
 config.audioChannels   = 2;
- 
+
 // 采用预排版模式
 config.mode == TRTCTranscodingConfigMode_Template_PresetLayout
 TRTCMixUser* mixUsersArray = new TRTCMixUser[3];
@@ -348,7 +355,7 @@ mixUsersArray[0].rect.top    = 0;
 mixUsersArray[0].rect.right  = videoWidth;
 mixUsersArray[0].rect.bottom = videoHeight;
 mixUsersArray[0].roomId      = nullptr; // 本地用户不用填写 roomID，远程需要
- 
+
 mixUsersArray[1].userId      = "$PLACE_HOLDER_REMOTE$";
 mixUsersArray[1].zOrder      = 1;
 mixUsersArray[1].rect.left   = 400; //仅供参考
@@ -356,7 +363,7 @@ mixUsersArray[1].rect.top    = 800; //仅供参考
 mixUsersArray[1].rect.right  = 180; //仅供参考
 mixUsersArray[1].rect.bottom = 240; //仅供参考
 mixUsersArray[1].roomId      = "97392"; // 本地用户不用填写 roomID，远程需要
- 
+
 mixUsersArray[2].userId      = "$PLACE_HOLDER_REMOTE$";
 mixUsersArray[2].zOrder      = 1;
 mixUsersArray[2].rect.left   = 400; //仅供参考
@@ -365,7 +372,7 @@ mixUsersArray[2].rect.right  = 180; //仅供参考
 mixUsersArray[2].rect.bottom = 240; //仅供参考
 mixUsersArray[2].roomId      = "97393"; // 本地用户不用填写 roomID，远程需要
 config.mixUsersArray = mixUsersArray;
- 
+
 // 发起云端混流
 trtc->setMixTranscodingConfig(&config);
 :::
@@ -382,7 +389,7 @@ config.audioBitrate    = 64;
 config.audioChannels   = 2;
 config.mode = RTCTranscodingConfigMode.TRTCTranscodingConfigMode_Template_PresetLayout;
 TRTCMixUser[] mixUsersArray = new TRTCMixUser[3];
- 
+
 // 主播摄像头的画面位置
 TRTCMixUser local = new TRTCMixUser();
 local.userId = "$PLACE_HOLDER_LOCAL_MAIN$";
@@ -396,7 +403,7 @@ RECT rtLocal = new RECT() {
 };
 local.rect = rtLocal;
 mixUsersArray[0] = local;
- 
+
 // 连麦者的画面位置
 TRTCMixUser remote1 = new TRTCMixUser();
 remote1.userId = "$PLACE_HOLDER_REMOTE$";
@@ -410,7 +417,7 @@ RECT rtRemote1 = new RECT() { //仅供参考
 };
 remote1.rect = rtRemote1;
 mixUsersArray[1] = remote1;
- 
+
 // 连麦者的画面位置
 TRTCMixUser remote2 = new TRTCMixUser();
 remote2.userId = "$PLACE_HOLDER_REMOTE$";
@@ -424,7 +431,7 @@ RECT rtRemote2 = new RECT() { //仅供参考
 };
 rtRemote2.rect   = rtRemote2;
 mixUsersArray[2] = remote2;
- 
+
 // 发起云端混流
 config.mixUsersArray = mixUsersArray;
 trtc.setMixTranscodingConfig(config);
@@ -443,10 +450,10 @@ trtcCloud.setMixTranscodingConfig(TRTCTranscodingConfig(
   audioSampleRate: 48000,
   audioBitrate: 64,
   audioChannels: 2,
- 
+
   // 采用预排版模式
   mode: TRTCCloudDef.TRTC_TranscodingConfigMode_Template_PresetLayout,
- 
+
   mixUsers: [
   // 主播摄像头的画面位置
     TRTCMixUser(
@@ -526,16 +533,12 @@ try {
 >- Web 端接口命名与其他端稍有差异，详情请参见 [Client.startMixTranscode()](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#startMixTranscode)。
 
 [](id:ScreenSharing)
-
 ### 屏幕分享模式（ScreenSharing）
-
 #### 适用场景
-
 屏幕分享模式适用于在线教育和互动课堂等场景，该类场景下您可以在调用 SDK 的 [enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) 接口时将 AppScene 参数设定为 `TRTCAppSceneLIVE`。
 屏幕分享模式下，SDK 会先根据您所选定的目标分辨率构建一张画布。当老师未开启屏幕分享时，SDK 会将摄像头画面等比例拉伸绘制到该画布上；当老师开启屏幕分享后，SDK 会将屏幕分享画面绘制到同样的画布上。通过构建画布可以确保混流模块的输出分辨率一致，防止录制和网页观看的视频兼容性问题（普通播放器不支持分辨率会变化的视频）。
 
 #### 使用步骤
-
 1. 在调用 `enterRoom()` 函数进入房间时，根据您的业务需要，设定 AppScene 参数为 `TRTCAppSceneLIVE`。
 2. 开启 [旁路直播](https://intl.cloud.tencent.com/document/product/647/35242)，并设定 TRTCParams 中的 `streamId` 参数，指定 MCU 输出的混合音视频流的去处。
 3. 调用 `startLocalPreview()` 和 `startLocalAudio()` 开启本地的音视频上行。
@@ -554,14 +557,11 @@ try {
 [](id:Manual)
 
 ### 全手动模式（Manual）
-
 #### 适用场景
-
 全手动模式适合于上述自动模式均不适用的场景，全手动的灵活性最高，可以自由组合出各种混流方案，但易用性最差。
 全手动模式下，您需要设置 `TRTCTranscodingConfig` 中的所有参数，并需要监听 TRTCCloudDelegate 中的 `onUserVideoAvailable()` 和 `onUserAudioAvailable()` 回调，以便根据当前房间中各个上麦用户的音视频状态不断地调整 `mixUsers` 参数，否则会导致混流失败。
 
 #### 使用步骤
-
 1. 在调用 `enterRoom()` 函数进入房间时，根据您的业务需要，设定 AppScene 参数。
 2. 开启 [旁路直播](https://intl.cloud.tencent.com/document/product/647/35242)，并设定 TRTCParams 中的 `streamId` 参数，指定 MCU 输出的混合音视频流的去处。
 3. 根据您的业务需要，调用 `startLocalAudio()` 开启本地的音频上行（或同时调用 `startLocalPreview()` 开启视频上行）。
@@ -573,10 +573,13 @@ try {
 >! 全手动模式下，您需要实时监听房间中连麦者的上麦下麦动作，并根据连麦者的人数和音视频状态，多次调用 `setMixTranscodingConfig()` 接口。
 
 ## 相关费用
+
 ### 费用的计算
+
 云端混流转码需要对输入 MCU 集群的音视频流进行解码后重新编码输出，将产生额外的服务成本，因此 TRTC 将向使用 MCU 集群进行云端混流转码的用户收取额外的增值费用。云端混流转码费用根据**转码输出的分辨率大小**和**转码时长**进行计费，转码输出的分辨率越高、转码输出的时间越长，费用越高。详情请参见 [云端混流转码计费说明](https://intl.cloud.tencent.com/document/product/647/38929)。
 
 ### 费用的节约
+
 - 在**基于服务端 REST API 混流方案下，要停止混流**，需要满足如下条件之一：
   - 房间里的所有用户（包括主播和观众）都退出了房间。
   - 调用 REST API [StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760) 主动停止混流。
