@@ -37,7 +37,7 @@ Yes, provided that you [configure the server group by server ID](https://intl.cl
 
 ### How do I modify the LogListener configuration after the server IP address is changed?
 
-- If you configure the server group by server ID, you don’t need to modify the LogListener configuration. This method is recommended when the server IP frequently changes. For more information, see [Configuring the server group by server ID](https://intl.cloud.tencent.com/document/product/614/17412).
+- If you configure the server group by server ID, you don’t need to modify the LogListener configuration. This method is recommended when the server IP frequently changes. For more information, see [Configuring the server group by server ID](https://intl.cloud.tencent.com/document/product/614/17412#configuring-the-server-group-by-server-id).
 - If you configure the server group by server IP address, modify the configuration as follows:
   a. Add the new IP address to the `group_ip` field in the configuration file.
 ```shell
