@@ -1,7 +1,7 @@
 >!
 >- For accounts that created their first [application](https://intl.cloud.tencent.com/document/product/647/37714) on the TRTC console on or after November 1, 2020, billing will start from **November 1, 2020**.
 >- For accounts that created their first [application](https://intl.cloud.tencent.com/document/product/647/37714) on the TRTC console before November 1, 2020, billing is postponed to **December 8, 2020**.
->- This document describes billing for relayed transcoding of [On-Cloud MixTranscoding through the MCU cluster provided by TRTC](https://intl.cloud.tencent.com/document/product/647/34618). If you use the relayed push feature to push TRTC audio and video streams to LVB before using the [On-Cloud MixTranscoding feature provided by LVB](https://intl.cloud.tencent.com/document/product/267/37665), you will be charged [LVB transcoding](https://intl.cloud.tencent.com/document/product/267/2818?lang=en&pg=#lvb-transcoding) fees.
+>- This document describes billing for relayed transcoding of [On-Cloud MixTranscoding through the MCU cluster provided by TRTC](https://intl.cloud.tencent.com/document/product/647/34618). If you use the relayed push feature to push TRTC audio and video streams to LVB before using the [On-Cloud MixTranscoding feature provided by LVB](https://intl.cloud.tencent.com/document/product/267/37665), you will be charged [LVB transcoding](https://intl.cloud.tencent.com/zh/document/product/267/2818#.E5.9B.BD.E9.99.85.2F.E6.B8.AF.E6.BE.B3.E5.8F.B0.E5.B8.A6.E5.AE.BD.E8.AE.A1.E8.B4.B9) fees.
 >- If you push transcoded audio and video streams to LVB and enable [CDN relayed live streaming](https://intl.cloud.tencent.com/document/product/647/35242) for viewers, you will be charged [traffic/bandwidth](https://intl.cloud.tencent.com/zh/document/product/267/2818#.E6.B5.81.E9.87.8F.E5.B8.A6.E5.AE.BD) fees.
 
 
@@ -63,6 +63,6 @@ That means on January 2, the amount deducted from your payment account would be 
 
 - [Billing Overview](https://intl.cloud.tencent.com/document/product/647/34610)
 - [Basic Service Fees](https://intl.cloud.tencent.com/document/product/647/34613)
-- [Value-added Service Fees](https://intl.cloud.tencent.com/document/product/647/34614)
+- [Value-added Service Fees](https://intl.cloud.tencent.com/document/product/647/34610)
 - [On-Cloud Recording Billing Overview](https://intl.cloud.tencent.com/document/product/647/38385)
-- [Notes for Overdue Payment Processing](https://intl.cloud.tencent.com/document/product/647/34611)
+- [Notes for Arrears Processing](https://intl.cloud.tencent.com/document/product/647/34611)
