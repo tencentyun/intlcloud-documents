@@ -77,7 +77,7 @@ Samples:
 
 ### 5. Associate a machine group
 
-Select the target machine group from the machine group list and associate it with the current log topic. Please note that the associated machine group must be in the same region as the log topic. For detailed directions, please see [Machine Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
+Select the target machine group from the machine group list and associate it with the current log topic. Please note that the associated machine group must be in the same region as the log topic. For detailed directions, please see [Server Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
 
 
 ### 6. Select the JSON mode
