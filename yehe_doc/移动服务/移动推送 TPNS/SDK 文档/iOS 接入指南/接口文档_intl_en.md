@@ -135,7 +135,7 @@ If there is no account of this type, this API will add a new one; otherwise, it 
 >- You need to use the dictionary type, where `key` is the account type and `value` is the account, for example, @{@(accountType):@"account"}.
 >- Syntax for Objective-C: @{@(0):@"account0",@(1):@"account1"}; syntax for Swift:[NSNumber(0):@"account0",NSNumber(1):@"account1"]
 >- For more `accountType` values, see the enumerated values of `XGPushTokenAccountType` in the SDK demo package.
->- Currently, only pushes to accounts of the `UNKNOWN` type are supported. Other account types are expected to be available by the end of April 2021.
+>- Currently, only pushes to accounts of the UNKNOWN type are supported. Other account types are expected to be available recently.
 
 
 #### Sample code
