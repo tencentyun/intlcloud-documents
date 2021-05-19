@@ -75,7 +75,7 @@ Cloud MixTranscoding機能を利用すると、バイパストランスコード
 
 ## 関連ドキュメント
 - [課金概要](https://intl.cloud.tencent.com/document/product/647/34610)
-- [基本サービス費用](https://intl.cloud.tencent.com/document/product/647/34613)
+- [基本サービス費用](https://intl.cloud.tencent.com/document/product/647/34610)
 - [付加価値サービス費用](https://intl.cloud.tencent.com/document/product/647/34610)
 - [クラウドレコーディング課金説明](https://intl.cloud.tencent.com/document/product/647/38385)
 - [Cloud MixTranscoding課金説明](https://intl.cloud.tencent.com/document/product/647/38929)
