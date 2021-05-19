@@ -21,7 +21,7 @@
 ### 手順2：SDKおよびDemoソースコードをダウンロード
 1. 実際の業務ニーズに基づき、SDKおよび付属のDemoソースコードをダウンロードします。
 2. ダウンロード完了後、【ダウンロードしました。次のステップ】をクリックします。
-![](https://main.qcloudimg.com/raw/3b115019ddfd0866108ed1add30810d8.png)
+
 
 [](id:ui.step3)
 ### 手順3：Demoプロジェクトファイルの設定
@@ -30,7 +30,7 @@
 3. `GenerateTestUserSig.h`のファイルの関連するパラメータを設定します。
 <ul style="margin:0"><li/>SDKAPPID：デフォルトは0。実際のSDKAppIDを設定してください。
 <li/>SECRETKEY：デフォルトは空文字列。実際のキー情報を設定してください。</ul>
-<img src="https://main.qcloudimg.com/raw/144433d5562569cd6d0e9ad9804d6c48.png">
+<https://main.qcloudimg.com/raw/dfe6ed5d0c973e399e834eb233c96ec6.png">
 4. 貼り付け完了後、【貼り付けました。次のステップ】をクリックすれば、作成が完了します。
 5. コンパイル完了後、【コンソール概要に戻る】をクリックすればOKです。
 
@@ -62,7 +62,7 @@ Xcode（11.0およびそれ以降のバージョン）を使用してソース�
 ## カスタマイズUIの実装
 
 [ソースコード](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCChatSalonDemo)のtrtcchatsalondemoフォルダには、uiとmodelという2つのサブフォルダがあり、modelフォルダには再利用できるオープンソースコンポーネントTRTCChatSalonが含まれています。`TRTCChatSalon.h`ファイルでこのコンポーネントが提供するインターフェース関数を確認し、対応するインターフェースを使用してカスタマイズしたUIを実装することができます。
-![](https://main.qcloudimg.com/raw/fcf694c8550664623414604d14ffcd94.png)
+![](https://main.qcloudimg.com/raw/7613bd7ec5b4e665f32ee5df69e5de85.png)
 
 [](id:model.step1)
 
@@ -156,7 +156,7 @@ self.chatSalon.login(sdkAppID: sdkAppID, userID: userId, userSig: userSig) { [we
 2. キャスターは、`createRoom`を呼び出して新しいボイスサロンを作成します。このとき、ルームID、マイク・オンに管理者の確認の要否、ルームタイプなどルームの属性情報を渡します。
 3. キャスターは、メンバーが参加した`onAnchorEnterSeat`のイベント通知を受信します。このとき、マイク集音は自動的に開始されます。
 
-![](https://main.qcloudimg.com/raw/0b06ef225f749caa8b1f3a16c2316890.png)
+![](https://main.qcloudimg.com/raw/dfe6ed5d0c973e399e834eb233c96ec6.png)
 ```
 // 1.キャスターは、ニックネームおよびプロフィール画像を設定します
 self.chatSalon.setSelfProfile(userName: userName, avatarUrl: avatarURL) { (code, message) in
@@ -248,7 +248,7 @@ func onAnchorEnterSeat(user: ChatSalonUserInfo) {
 1. `pickSeat`は、視聴者のuserIdを渡し、ピックしてマイク・オンにできます。ルーム内の全メンバーは`onAnchorEnterSeat`のイベント通知を受信します。
 2. `kickSeat`は、対応するユーザーのuserIdを渡し、キックアウトしてマイク・オフできます。ルーム内の全メンバーは`onAnchorEnterSeat`のイベント通知を受信します。
 
-![](https://main.qcloudimg.com/raw/5a590df748b3cedd6eccd7d8e3027168.png)
+![](https://main.qcloudimg.com/raw/d968f479f51160f626d07ce8bf403f13.png)
 
 マイク操作後のイベント通知の順番は次のとおりです。callback > onAnchorEnterSeat など独立したイベント。
 
@@ -268,7 +268,7 @@ func onAnchorEnterSeat(user: ChatSalonUserInfo) {
 1. `enterSeat`はマイク・オンにし、ルーム内の全メンバーは`onAnchorEnterSeat`のイベント通知を受信します。
 2. `leaveSeat`は自主的にマイク・オフにし、ルーム内の全メンバーは`onAnchorLeaveSeat`のイベント通知を受信します。
 
-![](https://main.qcloudimg.com/raw/08f7bf725fa05e1d97a69aacdbd3986a.png)
+![](https://main.qcloudimg.com/raw/c9611b5017536604f63333ce7c19c309.png)
 マイク操作後のイベント通知の順番は次のとおりです。callback > onAnchorEnterSeat など独立したイベント。
 ```
 // 1.視聴者が自主的にマイク・オンします
@@ -295,7 +295,7 @@ Appが次の操作の業務フローを実施するために、相手の同意�
 3. キャスターが同意を選択後、`acceptInvitation`を呼び出してinviteIdを渡します。
 4. 視聴者側は、`onInviteeAccepted`のイベント通知を受信し、`enterSeat`を呼び出してマイク・オンにします。
 
-![](https://main.qcloudimg.com/raw/76f13e8118c49136fcfd99942e56a65e.png)
+![](https://main.qcloudimg.com/raw/71b657c495cb52317c4c32a919407b36.png)
 ```
 // 視聴者側の視点
 // 1. sendInvitationを呼び出し、マイク・オンをリクエストします
@@ -326,7 +326,7 @@ func onReceiveNewInvitation(identifier: String, inviter: String, cmd: String, co
 3. 視聴者が同意を選択後、`acceptInvitation`を呼び出してinviteIdを渡します。
 4. キャスター側は、`onInviteeAccepted`のイベント通知を受信し、`pickSeat`を呼び出し、視聴者をピックしてマイク・オンにします。
 
-![](https://main.qcloudimg.com/raw/3193dd17c510ca5a6583747c0bde0114.png)
+![](https://main.qcloudimg.com/raw/60025544abae69e22de22a4b81bf6951.png
 
 ```
 // キャスター側の視点
