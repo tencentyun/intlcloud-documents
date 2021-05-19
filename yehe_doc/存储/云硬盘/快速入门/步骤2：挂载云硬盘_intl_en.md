@@ -20,7 +20,7 @@ Return to the cloud disk list page. The status of the cloud disk is **Mounting**
 
 
 ## Subsequent Operations
-After the cloud disk is mounted to a CVM, the cloud disk acts as a data disk, which is offline by default. You need to initialize the cloud disks by formatting, partitioning, and creating a file system. For more information, see [Initializing Cloud Disks](https://intl.cloud.tencent.com/document/product/362/31646).
+After the cloud disk is mounted to a CVM, the cloud disk acts as a data disk, which is offline by default. You need to initialize the cloud disks by formatting, partitioning, and creating a file system. For more information, see [Initializing Cloud Disks](https://intl.cloud.tencent.com/zh/document/product/362/31645).
 
 
 
