@@ -89,8 +89,8 @@ func main () {
 	req.Header.Set("Authorization", sign)
 	
 	// If it is a microservice API, you need to add two fields in the header: 'X-NameSpace-Code' and 'X-MicroService-Name'. They are not needed for general APIs.
-	req.Header.set("x-NameSpace-Code", "testmic")
-	req.Header.set("x-MicroService-Name", "provider-demo")
+	req.Header.Set("x-NameSpace-Code", "testmic")
+	req.Header.Set("x-MicroService-Name", "provider-demo")
 
 	resp, err := client.Do(req)
 	if err != nil {
