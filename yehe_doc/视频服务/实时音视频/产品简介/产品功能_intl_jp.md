@@ -10,7 +10,7 @@
 <li>1つのルームで最大300人のオンライン同時接続、最大30人のカメラ同時起動をサポート。</li>
 </ul></td>
 <td>1対1のビデオ通話、300人規模のビデオミーティング、オンライン診断、ビデオチャット、ビデオカスタマーサービス、ビデオ対面審査、ビデオダブルレコーディング、オンライン賠償請求、ビデオ人狼ゲームなど。</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">ビデオ通話課金説明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34610">ビデオ通話課金説明</a></td>
 </tr>
 <tr>
 <td>音声通話</td>
@@ -19,7 +19,7 @@
 <li>1つのルームで最大300人のオンライン同時接続、最大30人のマイク同時起動をサポート。</li>
 </ul></td>
 <td>1対1音声通話、多人数音声チャット通話、音声チャット、音声ミーティング、音声カスタマーサービス、人狼ゲームなど。</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">音声通話課金説明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34610">音声通話課金説明</a></td>
 </tr><tr>
 <td>ビデオ・インタラクティブストリーミング</td>
 <td><ul style="margin:0">
@@ -29,7 +29,7 @@
 <li>CDN Relayed live streamingモードの場合は、視聴者数が無制限です。</li>
 </ul></td>
 <td>低遅延のビデオライブストリーミング、10万人規模のインタラクティブな授業、ビデオライブストリーミングのPK、ビデオお見合いルーム、双方向対話型授業、リモートトレーニング、大規模なミーティングなど。</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">ビデオ・インタラクティブストリーミング課金説明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34610">ビデオ・インタラクティブストリーミング課金説明</a></td>
 </tr><tr>
 <td>ボイス・インタラクティブストリーミング</td>
 <td><ul style="margin:0">
@@ -39,7 +39,7 @@
 <li>CDN Relayed live streamingモードの場合は、視聴者数が無制限です。</li>
 </ul></td>
 <td>低遅延の音声ライブストリーミング、音声ライブストリーミングのPK、チャットルーム、音声お見合いルーム、カラオケ、FMラジオなど。</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">ボイス・インタラクティブストリーミング課金説明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34610">ボイス・インタラクティブストリーミング課金説明</a></td>
 </tr></table>
 
 
