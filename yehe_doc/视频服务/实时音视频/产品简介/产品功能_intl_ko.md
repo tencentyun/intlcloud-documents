@@ -10,7 +10,7 @@
 <li>방은 최대 300명의 동시 접속이 가능하며, 최대 30명이 동시에 카메라를 활성화할 수 있습니다.</li>
 </ul></td>
 <td>일대일 영상 통화, 300인 화상 회의, 온라인 진료, 화상 채팅, 화상 고객서비스, 화상 심사, 화상 녹음 및 녹화, 온라인 클레임 처리, 화상 마피아 게임 등에 적합합니다.</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">영상 통화 과금 설명</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34610">영상 통화 과금 설명</a></td>
 </tr>
 <tr>
 <td>음성 통화</td>
@@ -19,7 +19,7 @@
 <li>방은 최대 300명의 동시 접속이 가능하며, 최대 30명이 동시에 마이크를 활성화할 수 있습니다.</li>
 </ul></td>
 <td>일대일 음성 통화, 그룹 음성 통화, 음성 채팅, 음성 회의, 음성 고객서비스, 마피아 게임 등에 적합합니다.</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">음성 통화 과금 설명</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34610">음성 통화 과금 설명</a></td>
 </tr><tr>
 <td>비디오 ILVB</td>
 <td><ul style="margin:0">
@@ -29,7 +29,7 @@
 <li>CDN 릴레이 라이브 방송 모드 시, 시청자 수는 무제한입니다.</li>
 </ul></td>
 <td>저 딜레이 ILVB, 10만 인터랙션 강의, 비디오 라이브 방송 PK, 화상 소개팅, 원격 교육, 대규모 회의 등에 적합합니다.</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">비디오 ILVB 과금 설명</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34610">비디오 ILVB 과금 설명</a></td>
 </tr><tr>
 <td>음성 ILVB</td>
 <td><ul style="margin:0">
@@ -39,7 +39,7 @@
 <li>CDN 릴레이 라이브 방송 모드 시, 시청자 수는 무제한입니다.</li>
 </ul></td>
 <td>음성 저 딜레이 라이브 방송, 음성 라이브 방송 PK, 음성 채팅방, 음성 소개팅, 노래방, FM 라디오 등에 적합합니다.</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/34613">음성 ILVB 과금 설명</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/34610">음성 ILVB 과금 설명</a></td>
 </tr></table>
 
 
