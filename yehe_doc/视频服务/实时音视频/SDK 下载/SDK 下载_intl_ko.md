@@ -103,7 +103,7 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
 
 <h2 id="Professional">프로 버전(Professional)</h2>
 
-프로 버전은 [Player+](https://cloud.tencent.com/product/player), [MLVB]와 [UGSV] 등 TRTC를 포함한 다양한 멀티미디어 관련 핵심 기능이 통합되어 있습니다. 하위 레이어 모듈을 효율적으로 재사용하여 통합 프로 버전의 증분 용량이 독립적인 SDK 2개를 통합한 용량보다 작으며, 부호 충돌(symbol duplicate) 문제도 방지할 수 있습니다.
+프로 버전은 [Player+](https://intl.cloud.tencent.com/), [MLVB]와 [UGSV] 등 TRTC를 포함한 다양한 멀티미디어 관련 핵심 기능이 통합되어 있습니다. 하위 레이어 모듈을 효율적으로 재사용하여 통합 프로 버전의 증분 용량이 독립적인 SDK 2개를 통합한 용량보다 작으며, 부호 충돌(symbol duplicate) 문제도 방지할 수 있습니다.
 
 <table>
    <tr>
