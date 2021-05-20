@@ -49,6 +49,15 @@ The lite edition only includes TRTC and TXLivePlayer and has the smallest storag
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35095">DOC</a></td>
       <td style="text-align:center">13.8 MB (C# x64)<br>13.3 MB (C# x86)</td>
    </tr>
+<tr>
+      <td style="text-align:center">Unity</td>
+      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_unity_trtc") href="https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/unity/TRTCUnitySDK.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a href="https://github.com/c1avie/TRTCUnity ">Github</a></td>
+      <td style="text-align:center">N/A</td>
+      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/55153">DOC</a></td>
+      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/55834">DOC</a></td>
+      <td style="text-align:center">N/A</td>
+   </tr>
      <tr>
       <td style="text-align:center">Mac</td>
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_mac_trtc") href="http://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2">DOWNLOAD</a></td>
@@ -88,10 +97,7 @@ The lite edition only includes TRTC and TXLivePlayer and has the smallest storag
 </table>
 
 > 
-> - Read [How to Downsize Installation Package](https://intl.cloud.tencent.com/document/product/647/35165) to learn how to reduce the storage footprint of the SDK.
-> - Scan the QR code to follow our WeChat Official Account to keep updated on the new SDK versions and features.
->   ![](https://main.qcloudimg.com/raw/d8a8c8c130ef7799feff6efbc0260ea2.jpg)
-> 
+> ! Read [How to Downsize Installation Package](https://intl.cloud.tencent.com/document/product/647/35165) to learn how to reduce the storage footprint of the SDK.
 
 <span id="Professional"></span>
 ## Professional Edition
