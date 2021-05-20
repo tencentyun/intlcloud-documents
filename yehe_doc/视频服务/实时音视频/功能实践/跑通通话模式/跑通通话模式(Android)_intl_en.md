@@ -12,7 +12,7 @@ With general lines and average-performance servers, this type of nodes is suitab
 In call mode, all users in the TRTC room will be assigned to access servers, which means that each user is an "anchor" and can speak at any time (up to 30 concurrent upstreams are supported), so it is suitable for scenarios such as online conferencing, but the number of members in a single room is limited to 300.
 
 ## Sample Code
-You can log in to [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCSimpleDemo) to get the sample code related to this document.
+You can log in to [GitHub] to get the sample code related to this document.
 
 >?If your access to GitHub is slow, you can directly download [TXLiteAVSDK_TRTC_Android_latest.zip](https://lliteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip).
 
