@@ -277,13 +277,13 @@
 													</div>
 												</div>
 											</td>
-																						</td>
 												<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
 														<p>接続数</p>
 													</div>
 												</div>
+											</td>
 											<td class="tableblock halign-left valign-top">
 												<div>
 													<div class="paragraph">
@@ -2171,8 +2171,7 @@
 													</div>
 												</div>
 											</td>
-										</tr>
-										<tr>		
+										</tr>	
 </tbody>
 </table></div></td>
 </tr>
@@ -7783,7 +7782,7 @@
 </table>
 </div>
 </div>
-<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>説明：</p><p>S1インスタンス仕様リスト中の「-」は、当該仕様のパケット転送速度とCPU周波数に特定のパフォーマンスコミットがないことを示します。パフォーマンスの適合性に対する強い要望がある場合は、パフォーマンスにコミットしたモデルのご購入を推奨します。
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>説明：</p><p>S1インスタンス仕様リスト中の「-」は、当該仕様のパケット転送速度とCPU周波数に特定のパフォーマンスコミットがないことを示します。パフォーマンスの適合性に対する強い要望がある場合は、パフォーマンスにコミットしたモデルのご購入を推奨します。</blockquote>
 <div class="sect1">
 <h2 id="M">メモリ最適化インスタンスファミリー</h2>
 <div class="sectionbody">
@@ -8112,6 +8111,7 @@
 </div></div>
 </td>
 </tr>
+<td class="tableblock halign-left valign-top"><div><div class="paragraph">
 <p>M5.16XLARGE512</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
@@ -9717,6 +9717,8 @@
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>说明：</p><p>IT3 及 IT5 实例的数据盘是本地存储，有丢失数据的风险（例如宿主机宕机时）。如果您的应用不能做到数据可靠性的架构，不建议使用 IT3 或 IT5 实例，我们强烈建议您使用可以选择云硬盘作为数据盘的实例。</p>
+</blockquote>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><div><div class="sect2">
@@ -9768,7 +9770,6 @@
 <ul>
 <li><p>ローカルハードディスクが破損している場合は、ローカルハードディスクの交換を実行する前に、CVMインスタンスのシャットダウン操作を実行する必要があります。</p></li>
 <li><p>CVMインスタンスがダウンした場合は、メンテナンス操作の実行を通知します。</p></li>
-</ul>
 </li>
 <li><p>監視コンポーネントをインストールしていない場合は、CVMインスタンスに対する詳細な監視が実行できません。CVMインスタンスに障害が発生した場合は、通知を受け取ることができず、リスクが高くなります。監視コンポーネントのインストールのその他詳細な内容については、<a href="https://intl.cloud.tencent.com/document/product/248/6211">CVM監視コンポーネントのインストール</a>に関するドキュメントをご参照ください。</p></li>
 <li>
