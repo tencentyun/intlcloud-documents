@@ -36,7 +36,7 @@ According to the principle of token bucket, a single bucket does not force throt
 #### 2. Why is the peak production/consumption traffic higher than the instance specification?
 Suppose again the bandwidth specification of instance A is 100 MB/s, then the traffic throttling threshold of each 100-ms time bucket is 10 MB. If the production traffic of instance A reaches 70 MB in the first 100-ms time bucket of a certain second (7 times the threshold), then the broker's traffic throttling policy will be triggered to increase the delayed response time. Suppose the original normal TCP response time is 100 ms, then the delay may be increased by 800 ms before response after the threshold is exceeded. After the response is returned at the 900th ms, the client immediately injects 70 MB of traffic into the 10th time bucket. The final traffic in this second is (70 MB * 1 + 0 MB * 8 + 70 MB * 1) = 140 MB, so the traffic speed in this second (140 MB/s) is higher than the instance specification (100 MB/s).
 
-![](https://main.qcloudimg.com/raw/08c055819baed6c403ef38c7ca42c0aa.png) 
+![](https://main.qcloudimg.com/raw/726f5a605fde9b087c818134124e887e.png) 
 
 #### 3. Why does the number of traffic throttling events surge?
 The number of traffic throttling events is counted based on TCP requests. If instance A exceeds the traffic threshold in the first time bucket in a certain second, all TCP requests in the remaining time of this time bucket after the threshold is exceeded will be throttled and counted as traffic throttling events.
