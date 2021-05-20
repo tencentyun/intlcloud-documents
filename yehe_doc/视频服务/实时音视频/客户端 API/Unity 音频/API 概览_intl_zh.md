@@ -3,8 +3,8 @@
 | API                                                          | 描述                              |
 | ------------------------------------------------------------ | --------------------------------- |
 | [getTRTCShareInstance](https://testcomm.qq.com/trtc/api/api/trtc.ITRTCCloud.html#trtc_ITRTCCloud_getTRTCShareInstance) | 创建 TRTCCloud 单例。             |
-| [destroyTRTCShareInstance](https://testcomm.qq.com/trtc/api/api/trtc.ITRTCCloud.html#trtc_ITRTCCloud_destroyTRTCShareInstance) | 释放 ITRTCCloud 单例对象。        |
-| [addCallback](https://testcomm.qq.com/trtc/api/api/trtc.ITRTCCloud.html#trtc_ITRTCCloud_addCallback_trtc_ITRTCCloudCallback_) | 设置回调接口 ITRTCCloudCallback。 |
+| [destroyTRTCShareInstance](https://testcomm.qq.com/trtc/api/api/trtc.ITRTCCloud.html#trtc_ITRTCCloud_destroyTRTCShareInstance) | 释放 TRTCCloud 单例对象。        |
+| [addCallback](https://testcomm.qq.com/trtc/api/api/trtc.ITRTCCloud.html#trtc_ITRTCCloud_addCallback_trtc_ITRTCCloudCallback_) | 设置回调接口 TRTCCloudCallback。 |
 | [removeCallback](https://testcomm.qq.com/trtc/api/api/trtc.ITRTCCloud.html#trtc_ITRTCCloud_removeCallback_trtc_ITRTCCloudCallback_) | 移除事件回调。                    |
 
 ### 房间相关接口函数
@@ -88,7 +88,8 @@
 | [setLogLevel](https://testcomm.qq.com/trtc/api/api/trtc.ITRTCCloud.html#trtc_ITRTCCloud_setLogLevel_trtc_TRTCLogLevel_) | 设置 Log 输出级别。         |
 | [setLogDirPath](https://testcomm.qq.com/trtc/api/api/trtc.ITRTCCloud.html#trtc_ITRTCCloud_setLogDirPath_System_String_) | 修改日志保存路径。          |
 | [setLogCompressEnabled](https://testcomm.qq.com/trtc/api/api/trtc.ITRTCCloud.html#trtc_ITRTCCloud_setLogCompressEnabled_System_Boolean_) | 启用或禁用 Log 的本地压缩。 |
-| [callExperimentalAPI](https://testcomm.qq.com/trtc/api/api/trtc.ITRTCCloud.html#trtc_ITRTCCloud_callExperimentalAPI_System_String_) | 启用或禁用 Log 的本地压缩。 |
+| [callExperimentalAPI](https://testcomm.qq.com/trtc/api/api/trtc.ITRTCCloud.html#trtc_ITRTCCloud_callExperimentalAPI_System_String_) | 调用实验性
+API 接口。 |
 
 
 
@@ -177,7 +178,7 @@
 | [TRTCParams](https://testcomm.qq.com/trtc/api/api/trtc.TRTCParams.html) | 进房参数。                                          |
 | [TRTCSwitchRoomConfig](https://testcomm.qq.com/trtc/api/api/trtc.TRTCSwitchRoomConfig.html) | 切换房间参数参数。                                  |
 | [TRTCNetworkQosParam](https://testcomm.qq.com/trtc/api/api/trtc.TRTCNetworkQosParam.html) | 网络流控相关参数。                                  |
-| [TXVoiceReverbType](https://testcomm.qq.com/trtc/api/api/trtc.TXVoiceReverbType.html) | 变声类型定义（KTV、小房间、大会堂、低沉、洪亮……）。 |
+| [TXVoiceReverbType](https://testcomm.qq.com/trtc/api/api/trtc.TXVoiceReverbType.html) | 混响类型定义（KTV、小房间、大会堂、低沉、洪亮……）。 |
 | [AudioMusicParam](https://testcomm.qq.com/trtc/api/api/trtc.AudioMusicParam.html) | 音乐和人声设置接口参数。                            |
 | [TRTCAudioRecordingParams](https://testcomm.qq.com/trtc/api/api/trtc.TRTCAudioRecordingParams.html) | 录音参数。                                          |
 
