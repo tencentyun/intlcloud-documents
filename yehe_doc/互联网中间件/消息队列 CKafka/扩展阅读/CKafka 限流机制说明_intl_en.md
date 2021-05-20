@@ -23,7 +23,7 @@ The underlying traffic throttling mechanism of a CKafka instance is implemented 
 
 The traffic throttling policy divides every second (1000 ms) into several time buckets. For example, if one second is divided into 10 time buckets, then the time of each bucket is 100 ms, and the traffic throttling threshold of each time bucket is 1/10 of the total instance specification speed. If the TCP request traffic in a certain time bucket exceeds such threshold, the delayed response time of the request will be increased according to the internal traffic throttling algorithm, so that the client cannot quickly receive the TCP response, thus achieving the traffic throttling effect in a period of time.
 
-![](https://main.qcloudimg.com/raw/226a722398cf3b6b638d1693dfd6ebd2.png)
+![](https://main.qcloudimg.com/raw/08c055819baed6c403ef38c7ca42c0aa.png)
 
 ## FAQs
 #### 1. Why is traffic throttling triggered when the monitored production/consumption traffic is lower than the instance specification?
@@ -31,12 +31,12 @@ As mentioned [above](#principle), traffic throttling is measured in ms, but the 
 
 According to the principle of token bucket, a single bucket does not force throttle the traffic. Suppose the bandwidth specification of instance A is 100 MB/s, then the traffic throttling threshold of each 100-ms time bucket is 100 MB/10 = 10 MB/bucket. If the production traffic of instance A reaches 30 MB in the first 100-ms time bucket of a certain second (3 times the threshold), then the broker's traffic throttling policy will be triggered to increase the delayed response time. Suppose the original normal TCP response time is 100 ms, then the delay may be increased by 500 ms before response after the threshold is exceeded. The final traffic in this second is (30 MB * 1 + 0 MB * 5 + 10 MB * 4) = 70 MB, so the traffic speed in this second (70 MB/s) is lower than the instance specification (100 MB/s).
 
-![](https://main.qcloudimg.com/raw/11423233a157761b51eb478d8be090aa.png) 
+![](https://main.qcloudimg.com/raw/6fc11aa3b0dceb38dcc6bb5477e4851a.png) 
 
 #### 2. Why is the peak production/consumption traffic higher than the instance specification?
 Suppose again the bandwidth specification of instance A is 100 MB/s, then the traffic throttling threshold of each 100-ms time bucket is 10 MB. If the production traffic of instance A reaches 70 MB in the first 100-ms time bucket of a certain second (7 times the threshold), then the broker's traffic throttling policy will be triggered to increase the delayed response time. Suppose the original normal TCP response time is 100 ms, then the delay may be increased by 800 ms before response after the threshold is exceeded. After the response is returned at the 900th ms, the client immediately injects 70 MB of traffic into the 10th time bucket. The final traffic in this second is (70 MB * 1 + 0 MB * 8 + 70 MB * 1) = 140 MB, so the traffic speed in this second (140 MB/s) is higher than the instance specification (100 MB/s).
 
-![](https://main.qcloudimg.com/raw/0a17a1c13b9e898f379a81a43f1ef078.png) 
+![](https://main.qcloudimg.com/raw/08c055819baed6c403ef38c7ca42c0aa.png) 
 
 #### 3. Why does the number of traffic throttling events surge?
 The number of traffic throttling events is counted based on TCP requests. If instance A exceeds the traffic threshold in the first time bucket in a certain second, all TCP requests in the remaining time of this time bucket after the threshold is exceeded will be throttled and counted as traffic throttling events.
