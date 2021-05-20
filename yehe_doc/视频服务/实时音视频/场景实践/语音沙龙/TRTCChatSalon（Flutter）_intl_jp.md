@@ -1,16 +1,16 @@
 TRTCChatSalonは、Tencent CloudのTRTCおよびIMサービスを基に組み合わせたコンポーネントで、以下の機能をサポートしています。
 
 - キャスターが新しいボイスサロンを作成して配信を開始し、視聴者がボイスサロンに参加して視聴/インタラクティブなコミュニケーションを図ります。
-- キャスターは、視聴者のマイク・オンに同意したり、マイク・オンのキャスターをマイク・オフにすることもできます。
+- キャスターは、視聴者のマイク・オンに同意したり、マイク・オンのキャスターをキックアウトしたりすることもできます。
 - 視聴者はマイク・オンを申請して、マイク・オンのキャスターになり、他者と対話することができます。また、いつでもマイク・オフにして、通常の視聴者になることも可能です。
 - 各種のテキストメッセージの送信をサポートします。
 
-TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つのクローズドソースであるSDKに依存しています。具体的な実装プロセスについては、[ボイスサロン（Flutter）](https://intl.cloud.tencent.com/document/product/647/39805)をご参照ください。
+TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つのクローズソースであるSDKに依存しています。具体的な実装プロセスについては、[ボイスサロン（Flutter）](https://cintl.loud.tencent.com/document/product/647/53582)をご参照ください。
 
-- TRTC SDK：[TRTC SDK](https://intl.cloud.tencent.com/document/product/647)を低遅延のボイスチャットコンポーネントとして使用しています。
+- TRTC SDK：[TRTC SDK](https://intl.cloud.tencent.com/zh/document/product/647)を低遅延のボイスチャットコンポーネントとして使用しています。
 - IM SDK：[IM SDK](https://intl.cloud.tencent.com/document/product/1047)のAVChatroomを使用してチャットルーム機能を実装します。同時にIMのインターフェース属性によって、マイクリストなどのルーム情報を保存し、招待シグナリングはマイク・オン/ピックのリクエストに用いることができます。
 
-<span id="TRTCChatSalon"></span>
+[](id:TRTCChatSalon)
 
 ## TRTCChatSalon API概要
 
@@ -71,7 +71,7 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | API                                             | 説明                                                         |
 | ----------------------------------------------- | ------------------------------------------------------------ |
-| [getAudioEffectManager](#getaudioeffectmanager) | バックグラウンド・サウンドエフェクト管理オブジェクト [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa)の取得。 |
+| [getAudioEffectManager](#getaudioeffectmanager) | バックグラウンド・サウンドエフェクト管理オブジェクト[TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa)の取得。 |
 
 ### メッセージ送信関連インターフェース
 
@@ -85,9 +85,9 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 | ------------------------------- | -------------- |
 | [raiseHand](#raisehand)         |視聴者からのマイク・オン申請。 |
 | [agreeToSpeak](#agreetospeak)   | グループマスターによるマイク・オンの同意。 |
-| [refuseToSpeak](#refusetospeak) | グループマスターによるマイク・オンの辞退。 |
+| [refuseToSpeak](#refusetospeak) | グループマスターによるマイク・オンの拒否。 |
 
-<span id="TRTCChatSalonDelegate"></span>
+[](id:TRTCChatSalonDelegate)
 ## TRTCChatSalonDelegate API概要
 
 ### 一般的なイベントコールバック
@@ -111,7 +111,7 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 | API                                   | 説明                                  |
 | ------------------------------------- | ------------------------------------- |
 | [onAnchorEnterMic](#onanchorentermic) | マイク・オンのメンバー（自主的にマイク・オン/グループマスターがピックしてマイク・オン）。 |
-| [onAnchorLeaveMic](#onanchorleavemic) | マイク・オフのメンバー（自主的にマイク・オフ／グループマスターがキックアウトしてマイク・オフ）。 |
+| [onAnchorLeaveMic](#onanchorleavemic) | マイク・オフのメンバー（自主的にマイク・オフ/グループマスターがキックアウトしてマイク・オフ）。 |
 | [onMicMute](#onmicmute)               | キャスターのマイクミュート。                          |
 
 ### 視聴者の入退室イベントのコールバック
@@ -131,7 +131,7 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | API                                    | 説明                                     |
 | -------------------------------------- | ---------------------------------------- |
-| [onRaiseHand](#onraisehand) | 視聴者によるマイク・オンの申請。                   |
+| [onRaiseHand](#onraisehand) | 視聴者の挙手によるマイク・オンの申請。                   |
 | [onAgreeToSpeak](#onagreetospeak)   | 視聴者は挙手を申請すると、グループマスターから挙手に同意するコールバックを受け取ります。 |
 | [onRefuseToSpeak](#onrefusetospeak)    | 視聴者は挙手を申請すると、グループマスターから挙手を拒否するコールバックを受け取ります。 |
 
@@ -194,7 +194,7 @@ Future<ActionCallback> login(int sdkAppId, String userId, String userSig)
 | パラメータ     | タイプ    | 意味                                                         |
 | -------- | ------ | ------------------------------------------------------------ |
 | sdkAppId | int    | TRTCコンソール >【[アプリケーション管理](https://console.cloud.tencent.com/trtc/app)】> アプリケーション情報の中でSDKAppIDを確認できます。 |
-| user     | String | 現在のユーザーID、文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（\_）のみ使用できます。|
+| userId   | String | 現在のユーザーID、文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（\_）のみ使用できます。|
 | userSig  | String | Tencent Cloudによって設計されたセキュリティ保護署名。取得方法については、[UserSigの計算方法](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。 |
 
 
@@ -235,7 +235,7 @@ Future<ActionCallback> createRoom(int roomId, RoomParam roomParam)
 
 | パラメータ      | タイプ      | 意味                                                         |
 | --------- | --------- | ------------------------------------------------------------ |
-| roomId    |  intt       | ルームIDは、ご自身でアサインし、統一管理する必要があります。複数のroomIDを、一つのボイスサロンのルームリストにまとめることができます。Tencent Cloudでは現在、ボイスサロンのルームリストの管理サービスを行っていませんので、ご自身でボイスサロンのルームリストを管理してください。 |
+| roomId    |  int       | ルームIDは、ご自身でアサインし、統一管理する必要があります。複数のroomIDを、一つのボイスサロンのルームリストにまとめることができます。Tencent Cloudでは現在、ボイスサロンのルームリストの管理サービスを行っていませんので、ご自身でボイスサロンのルームリストを管理してください。 |
 | roomParam | RoomParam | ルーム情報は、ルームについて説明するための情報です。例えば、ルーム名、カバー情報などです。     |
 
 キャスターがブロードキャストを開始する際の通常の呼び出しプロセスは次のとおりです。 
@@ -254,7 +254,7 @@ Future<ActionCallback> destroyRoom()
 
 ### enterRoom
 
-入室（視聴者がコール）
+入室（視聴者が呼び出し）
 
 ```dart
 Future<ActionCallback> enterRoom(int roomId)
@@ -345,7 +345,7 @@ Future<UserListCallback> getUserInfoList(List<String> userIdList)
 
 ### enterMic
 
-マイク・オン（視聴者／キャスターともに呼び出し可）。
+マイク・オン（視聴者/キャスターともに呼び出し可）。
 
 >?マイク・オンが成功した後、ルーム内の全メンバーは`onAnchorEnterSeat`のイベント通知を受信します。
 
@@ -377,7 +377,7 @@ Future<ActionCallback> muteMic(bool mute)
 
 ### kickMic
 
-キックアウトしてマイク・オフ（キャスターがコール）。
+キックアウトしてマイク・オフ（キャスターが呼び出し）。
 
 >? キャスターがキックアウトしてマイク・オフにすると、ルーム内の全メンバーは`onAnchorLeaveMic`のイベント通知を受信します。
 
@@ -408,7 +408,7 @@ void startMicrophone(int quality)
 
 | パラメータ    | タイプ | 意味                                                         |
 | ------- | ---- | ------------------------------------------------------------ |
-| quality | int  | 音声品質。詳細については、[TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)をご参照ください。 |
+| quality | int  | 音声品質。詳細は [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55)をご参照ください。 |
 
 ### stopMicrophone
 
@@ -430,7 +430,7 @@ void muteLocalAudio(bool mute)
 
 | パラメータ | タイプ    | 意味                                                         |
 | ---- | ------- | ------------------------------------------------------------ |
-| mute | boolean | ミュート/ミュート取り消し。詳細については[TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86)をご参照ください。 |
+| mute | boolean | ミュート/ミュート取り消し。詳細は [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86)をご参照ください。 |
 
 
 ### setSpeaker
@@ -490,7 +490,7 @@ void muteRemoteAudio(String userId, bool mute)
 
 | パラメータ   | タイプ    | 意味                              |
 | ------ | ------- | --------------------------------- |
-| userId | String  | 指定ユーザー ID。                   |
+| userId | String  | 指定ユーザーID。                   |
 | mute   | boolean | true：ミュート起動；false：ミュート停止。 |
 
 ### muteAllRemoteAudio
@@ -512,7 +512,7 @@ void muteAllRemoteAudio(bool mute)
 
 ### getAudioEffectManager
 
-バックグラウンド・サウンドエフェクト管理オブジェクト [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa)の取得。
+バックグラウンド・サウンドエフェクト管理オブジェクト [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa)の取得。
 
 ```dart
 TXAudioEffectManager getAudioEffectManager()
