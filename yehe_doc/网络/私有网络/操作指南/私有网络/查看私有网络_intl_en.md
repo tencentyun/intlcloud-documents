@@ -23,19 +23,19 @@ You can query all VPC resources via the VPC console, such as cloud resources and
 </tr>
 <tr>
 <td>Subnet</td>
-<td>The number of subnets in the VPC. Click the number to access the **Subnet** page.</td>
+<td>The number of subnets in the VPC. Click the number to access the <b>Subnet</b> page.</td>
 </tr>
 <tr>
 <td>Route Table</td>
-<td>The number of route tables in the VPC. Click the number to access the **Route Table** page.</td>
+<td>The number of route tables in the VPC. Click the number to access the <b>Route Table</b> page.</td>
 </tr>
 <tr>
 <td>NAT Gateway</td>
-<td>The number of NAT Gateways in the VPC. Click the number to access the **NAT Gateway** page.</td>
+<td>The number of NAT Gateways in the VPC. Click the number to access the <b>NAT Gateway</b> page.</td>
 </tr>
 <tr>
 <td>VPN Gateway</td>
-<td>The number of VPN gateways in the VPC. Click the number to access the **VPN Gateway** page.</td>
+<td>The number of VPN gateways in the VPC. Click the number to access the <b>VPN Gateway</b> page.</td>
 </tr>
 <tr>
 <td>CVM</td>
