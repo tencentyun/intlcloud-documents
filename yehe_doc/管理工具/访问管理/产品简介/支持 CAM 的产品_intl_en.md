@@ -1,3 +1,24 @@
+<style>
+table th:nth-of-type(1) {
+width: 27%;        
+}
+table th:nth-of-type(2) {
+width: 15%;        
+}
+table th:nth-of-type(3) {
+width:12%;        
+}
+table th:nth-of-type(4) {
+width: 13%;        
+}
+table th:nth-of-type(5) {
+width: 15%;        
+}
+table th:nth-of-type(6) {
+width: 18%;        
+}
+</style>
+
 ## Overview 
 
 Cloud Access Management (CAM) helps you securely manage permissions for most Tencent Cloud services. This document provides information on the products and services that support CAM in multiple dimensions, such as authorization granularity, console operation, authorization by tag, and reference documentation.
