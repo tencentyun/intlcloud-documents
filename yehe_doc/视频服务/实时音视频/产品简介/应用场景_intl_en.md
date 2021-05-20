@@ -6,7 +6,7 @@ Tencent Real-Time Communication (TRTC) features two major solutions: low-latency
 
 ### Voice chat room
 
-TRTC allows up to 30 users to mic on and chat at the same time and smoothly mic on/off with a latency below 300 ms, and supports multiple audio effects such as voice changing, ambient sound effects, and reverb, enriching and diversifying the voice chat experience. It can be integrated with Tencent Cloud IM to support various message interaction methods such as public chat, private chat, group chat, liking, and gifting, delivering an excellent interactive chat experience. In addition, it provides a scenario-based voice chat room component, which can be directly reused to minimize the development costs. For more information on how to use the component, please see [Voice Chat Room](https://intl.cloud.tencent.com/zh/document/product/647/37287).
+TRTC allows up to 50 users to mic on and chat at the same time and smoothly mic on/off with a latency below 300 ms, and supports multiple audio effects such as voice changing, ambient sound effects, and reverb, enriching and diversifying the voice chat experience. It can be integrated with Tencent Cloud IM to support various message interaction methods such as public chat, private chat, group chat, liking, and gifting, delivering an excellent interactive chat experience. In addition, it provides a scenario-based voice chat room component, which can be directly reused to minimize the development costs. For more information on how to use the component, please see [Voice Chat Room](https://intl.cloud.tencent.com/zh/document/product/647/37287).
 
 
 
@@ -64,19 +64,19 @@ TRTC supports low-latency live streaming under high concurrence, which minimizes
 
 ### Multi-person audio call
 
-TRTC allows 300 users to call at the same time and up to 30 of them to mic on at the same time. With a sample rate of 48 kHz, a bitrate of 128 Kbps, and integration with Tencent Cloud's outstanding 3A processing technologies, it can deliver a smooth and high-quality audio call experience. In addition, it provides a scenario-based multi-person audio call component, which can be directly reused to minimize the development costs. For more information on how to use the component, please see [Real-Time Audio Call](https://intl.cloud.tencent.com/document/product/647/36067).
+TRTC allows 300 users to call at the same time and up to 50 of them to mic on at the same time. With a sample rate of 48 kHz, a bitrate of 128 Kbps, and integration with Tencent Cloud's outstanding 3A processing technologies, it can deliver a smooth and high-quality audio call experience. In addition, it provides a scenario-based multi-person audio call component, which can be directly reused to minimize the development costs. For more information on how to use the component, please see [Real-Time Audio Call](https://intl.cloud.tencent.com/document/product/647/36067).
 
 
 
 ### One-to-One audio call
 
-With a call latency of less than 300 ms, packet loss prevention rate of over 40%, and network jitter prevention of over 1,000 ms, TRTC can deliver a smooth and stable one-to-one audio call experience even in weak network environments. By integrating with the rich variety of call signaling management APIs provided by Tencent Cloud IM, it is ideal for various audio call scenarios. In addition, it provides a scenario-based one-to-one audio call component, which can be directly reused to minimize the development costs. For more information on how to use the component, please see [Real-Time Audio Call](https://intl.cloud.tencent.com/document/product/647/36067).
+With a call latency of less than 300 ms, packet loss prevention rate of over 80%, and network jitter prevention of over 1,000 ms, TRTC can deliver a smooth and stable one-to-one audio call experience even in weak network environments. By integrating with the rich variety of call signaling management APIs provided by Tencent Cloud IM, it is ideal for various audio call scenarios. In addition, it provides a scenario-based one-to-one audio call component, which can be directly reused to minimize the development costs. For more information on how to use the component, please see [Real-Time Audio Call](https://intl.cloud.tencent.com/document/product/647/36067).
 
 
 
 ### Werewolf
 
-With a call latency of less than 300 ms, packet loss prevention rate of over 40%, and network jitter prevention of over 1,000 ms, TRTC guarantees smooth and stable werewolf gameplay even in weak network environments. It supports real-time monitoring of user network status in so as to ensure an outstanding gaming experience. Plus, it can test user audio devices to eliminate exceptional muting and further improve the gaming experience.
+With a call latency of less than 300 ms, packet loss prevention rate of over 80%, and network jitter prevention of over 1,000 ms, TRTC guarantees smooth and stable werewolf gameplay even in weak network environments. It supports real-time monitoring of user network status in so as to ensure an outstanding gaming experience. Plus, it can test user audio devices to eliminate exceptional muting and further improve the gaming experience.
 
 
 
@@ -91,7 +91,7 @@ TRTC supports cross-platform compatibility, enabling users to flexibly join meet
 
 ### Multi-person video call
 
-TRTC supports multi-person video call and provides HD image quality of 720p and 1080p, with one single room able to sustain up to 300 concurrent online users and allow 30 users to enable video at the same time. It has diverse features such as instant messaging, video on-demand, recording, and porn detection, making it ideal for a lot of use cases. In addition, it provides a scenario-based multi-person video call component, which can be directly reused to minimize the development costs. For more information on how to use the component, please see [Real-Time Video Call](https://intl.cloud.tencent.com/document/product/647/36065).
+TRTC supports multi-person video call and provides HD image quality of 720p and 1080p, with one single room able to sustain up to 300 concurrent online users and allow 50 users to enable video at the same time. It has diverse features such as instant messaging, video on-demand, recording, and porn detection, making it ideal for a lot of use cases. In addition, it provides a scenario-based multi-person video call component, which can be directly reused to minimize the development costs. For more information on how to use the component, please see [Real-Time Video Call](https://intl.cloud.tencent.com/document/product/647/36065).
 
 
 
@@ -115,7 +115,7 @@ TRTC supports 1080p FHD image quality and allows you to flexibly adjust the vide
 
 ### Video customer service
 
-With a call latency of less than 300 ms, packet loss prevention rate of over 40%, and network jitter prevention of over 1,000 ms, TRTC guarantees smooth and stable call communication even in weak network environments. It enables interconnection across various platforms such as mobile application, PC, Mini Program, and web, making the video customer service accessible any time, any where. Plus, it can record and play back the video service process, which helps greatly improve the service quality.
+With a call latency of less than 300 ms, packet loss prevention rate of over 70%, and network jitter prevention of over 1,000 ms, TRTC guarantees smooth and stable call communication even in weak network environments. It enables interconnection across various platforms such as mobile application, PC, Mini Program, and web, making the video customer service accessible any time, any where. Plus, it can record and play back the video service process, which helps greatly improve the service quality.
 
 
 
