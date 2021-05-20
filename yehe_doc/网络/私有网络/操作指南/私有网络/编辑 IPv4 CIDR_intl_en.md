@@ -11,9 +11,9 @@ Once created, the primary CIDR block of your VPC cannot be modified. When the pr
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
 2. Select the region of the VPC at the top of the **VPC** page.
 3. In the VPC list, locate the VPC and select **More** > **Edit IPv4 CIDR block** under the **Operation** column.
-	![](https://main.qcloudimg.com/raw/18d633a474b1818329fff952542f6bb2.png)
+
 4. In the pop-up dialog box, click **Add** to enter a secondary CIDR block.
-<img src="https://main.qcloudimg.com/raw/775126708149064bad3383f873fcc654.png" width="50%" />
+
 5. Click **OK**.
 
 <span id="32"></span>
@@ -22,5 +22,5 @@ Once created, the primary CIDR block of your VPC cannot be modified. When the pr
 2. Select the region of the VPC at the top of the **VPC** page.
 3. In the VPC list, locate the target VPC, and select **More** > **Edit IPv4 CIDR block** under the **Operation** column.
 4. In the pop-up dialog box, click **Delete** next to the secondary CIDR block.
-<img src="https://main.qcloudimg.com/raw/10602971a87c4babc86e2bb400cbc1b7.png" width="50%" />
+
 5. Click **OK**.
