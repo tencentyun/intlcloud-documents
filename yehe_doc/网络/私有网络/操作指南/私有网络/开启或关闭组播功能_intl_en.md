@@ -17,13 +17,12 @@ Multicast and broadcast are mostly used in the financial and game industries:
 ### Enabling multicast
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
 2. In the VPC list, locate the VPC for which you want to enable multicast, and click **Enable** under the **Multicast** column.
-![](https://main.qcloudimg.com/raw/8f9fce0a5f8c63074654c6e767412675.png)
 
 
 ### Disabling multicast
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
 2. In the VPC list, locate the VPC for which you want to disable multicast, and click **Disable** under the **Multicast** column.
-![](https://main.qcloudimg.com/raw/6fe4d555b23746c53f2dbab39e2fbd87.png)
+
 
 ## Relevant Operations
 For detailed directions regarding the subnet broadcast, see [Enabling or Disabling the Broadcasting and Multicasting](https://intl.cloud.tencent.com/document/product/215/31809).
