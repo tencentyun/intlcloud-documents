@@ -3,7 +3,6 @@
 ## 操作指南
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
 2. 在【私有网络】页面顶部，选择 VPC 所属地域，在 VPC 列表中，可查看该地域下所有的 VPC，其中界面展示的列表字段含义如下。
-![](https://main.qcloudimg.com/raw/2b22968f97386f7f32378adc87b873a6.png)
 
 <table>
 <tr>
@@ -65,7 +64,7 @@
 </table>
 
 3. 单击需要查看的 VPC ID，详情页中展示了 VPC 的基本信息、云联网的关联情况以及包含资源，单击资源数目，可进入相应的资源管理界面。
-![](https://main.qcloudimg.com/raw/c669e4f5a3dc6b53fa88dec0fe0dacf6.png)
+
 4. 返回 VPC 界面，单击右上方的搜索框，支持按照不同资源属性进行过滤，快速查看指定 VPC。
-![](https://main.qcloudimg.com/raw/13ffa1de5c9d9d1a10811471306eef55.png)
+
 5. 单击设置图标，可自定义列表字段。
