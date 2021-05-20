@@ -5,10 +5,10 @@ Referer 링크 도용 방지 설정을 통해 사용자 정의 Referer 블랙/�
 Referer 링크 도용 방지는 HTTP 프로토콜이 지원하는 Referer 매커니즘을 기반으로 하여 HTTP request에 포함된 Referer 필드를 통해 요청의 출처를 식별하고 액세스의 합법성을 검증하며, 이를 기준으로 라이브 방송 콘텐츠의 요청을 수락하거나 거부합니다.
 
 ## 주의 사항
-- Referer 정보는 HTTP에 포함되어 있습니다. 설정을 활성화한 뒤에는 RTMP를 재생할 수 없으며 LEB 스트림은 Referer 설정에 대한 검증을 진행하지 않습니다. Referer를 설정해야 하는 경우, FLV나 HLS로 재생하는 것을 권장합니다.
+- Referer 정보는 HTTP에 포함되어 있으며, RTMP, WebRTC 및 QUIC 등의 비 HTTP 프로토콜은 Referer 설정 제한을 받지 않습니다. RTMP를 제한해야 하는 경우, [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 오프라인 수정을 요청하시기 바랍니다.
 - Referer 링크 도용 방지 설정을 활성화, 비활성화 및 수정한 뒤 약 15-20분 후 적용되며 스트림을 다시 푸시하지 않아도 됩니다.
 
-## 전제 조건
+### 전제 조건
 
 - CSS 서비스가 활성화되어 있고 [CSS 콘솔](https://console.cloud.tencent.com/live/livestat)에 로그인되어 있어야 합니다.
 - [재생 도메인 추가](https://intl.cloud.tencent.com/document/product/267/35970)가 완료되어 있어야 합니다.
@@ -26,9 +26,9 @@ Referer 링크 도용 방지는 HTTP 프로토콜이 지원하는 Referer 매커
 <tr><th width="14%">설정 항목</th><th>설명</th>
 </tr><tr>
 <td>링크 도용 방지 유형</td>
-<td>클릭하여 Referer<b>블랙리스트</b> 또는 <b>화이트리스트</b>설정 선택:
+<td>Referer<b>블랙리스트</b> 또는 <b>화이트리스트</b>를 클릭하여 선택 설정.
 <ul style="margin:0">
-<li>블랙리스트와 화이트리스트는 서로 배척하므로 동시에 적용할 수 없습니다. </li>
+<li>블랙리스트와 화이트리스트는 상호 배타적이므로 동시에 적용할 수 없습니다. </li>
 <li>Referer 화이트리스트가 설정되면 화이트리스트에 있는 사용자의 액세스가 허용되고 라이브 방송 콘텐츠를 요청할 수 있습니다. 반대로 화이트리스트에 없는 사용자의 액세스는 거부되며 라이브 방송 콘텐츠도 요청할 수 없습니다. </li>
 <li>Referer 블랙리스트가 설정되면 블랙리스트에 있는 사용자의 액세스가 거부되고 라이브 방송 콘텐츠를 요청할 수 없게 됩니다. 반대로 블랙리스트에 없는 사용자의 액세스는 허용되며 라이브 방송 콘텐츠도 요청할 수 있습니다. </li>
 </ul></td>
@@ -42,13 +42,13 @@ Referer 링크 도용 방지는 HTTP 프로토콜이 지원하는 Referer 매커
 <td>링크 도용 방지 규칙</td>
 <td><ul style="margin:0">
 <li>최대<b>100</b>개의 규칙을 설정할 수 있으며, 줄 바꿈으로 구분하십시오. </li>
-<li><b>IP</b>와 <b>도메인</b>의 2가지 포맷 입력을 지원하며, 실제 매칭 시 경로 접두사 매칭(도메인과 IP)과 와일드카드 매칭(와일드카드 서브도메인)을 지원합니다. 예: <ul>
+<li><b>IP</b>와 <b>도메인</b> 2가지 포맷 입력을 지원하며, 실제 매칭 시 경로 접두사 매칭(도메인과 IP)과 와일드카드 매칭(와일드카드 서브도메인)을 지원합니다. 예: <ul>
 <li/><code>101.1.0.1</code>과 <code>www.test.com</code>을 설정하면, <code>101.1.0.1/157</code>과 <code>www.test.com/tencent</code>에 모두 적용됩니다.
 <li/><code>*.test.com</code>을 설정하면, <code>www.test.com</code>과 <code>a.test.com</code>에 모두 적용됩니다. </ul></li>
 <li>규칙 내용이 공란인 경우 블랙리스트와 화이트리스트 모두 미설정 상태임을 의미합니다. </li>
 </ul></td>
 </tr></table>
-4. [Save]을 클릭하여 설정을 저장합니다.
+4. [저장]을 클릭하여 설정을 저장합니다.
 
 
 [](id:change)
@@ -66,9 +66,9 @@ Referer 링크 도용 방지는 HTTP 프로토콜이 지원하는 Referer 매커
 1.   [[도메인 관리](https://console.cloud.tencent.com/live/domainmanage)]를 선택하고 Referer 링크 도용 방지 설정을 비활성화할 **재생 도메인** 또는 오른쪽의 [관리]를 클릭하여 도메인 관리 페이지로 이동합니다.
 2.   [액세스 제어]>[Referer 링크 도용 방지 설정]에서 [편집]을 클릭하여 Referer 링크 도용 방지 설정 페이지로 이동합니다.
 3.   ![](https://main.qcloudimg.com/raw/e72f89a0deb6858428dc3e93ce7e7088.png) 버튼을 클릭해 Referer 링크 도용 방지 비활성화를 선택합니다.
-4. [저장]을 클릭합니다.
+4.   [저장]을 클릭합니다.
 
-![](https://main.qcloudimg.com/raw/eb36bc40cca9f19e198fc742256fed21.png)
+![](https://main.qcloudimg.com/raw/eb36bc40cca9f19e198fc742256fed21.png))
 
 
 
