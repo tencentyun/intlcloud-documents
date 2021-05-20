@@ -1,125 +1,69 @@
-## ユースケース
-
-Linux ユーザーは、パスワード管理、sshd修復などの特別な操作を実行するためにシングルユーザーモードに入る必要がある場合があります。このドキュメントでは、主流Linux OSのシングルユーザーモードに入る操作手順について説明します。
+## 操作シナリオ
+Linuxユーザーは一部のケースで、単一ユーザーモードで特殊な操作またはメンテナンス関連の操作を実行する必要があります。例えば、パスワード管理の実行、sshd破損の修復またはディスクマウント前にメンテナンス作業を実行する必要がある場合などです。このドキュメントでは主要なLinuxオペレーティングシステムで単一ユーザーモードの操作に進む手順について説明します。
 
 ## 操作手順
-
-### OSの種類は判断する
-
-OSの種類に応じて、最適な操作手順を選択してください。
- - CentOS 6 OSの場合、[CentOS 6 の手順](#configCentOS6)を実行しください。
- - CentOS 7 OSの場合、[CentOS 7 の手順](#configCentOS7)を実行しください。
- - Ubuntu OSの場合、[Ubuntu の手順](#configUbuntu)を実行してください。
-
-<span id="configCentOS6"></span>
-### CentOS 6
-
->? Centos 6は GRUBブートローダーを使用します。以下の操作手順は CentOS 6.9 を例に説明します。OSのバージョンによって詳細の操作手順は若干異なる場合があります。
-> 
-1. リモートでCVMインスタンスにログインします。
-2. 以下のコマンドを実行して、 `/etc/grub.conf` ファイルを開きます。
-```
-vi /etc/grub.conf
-```
-3. **I** を押して、編集モードに入ります。
-4. 「GRUB_TIMEOUT」（デフォルトエントリが起動するまでの待機時間を設定するパラメータ）を検索し、実際のニーズに応じて、時間の範囲を変更します。
-「GRUB_TIMEOUT」のデフォルト値は5秒です。待機時間が短すぎるためにブートインターフェイスが見えない問題を回避するには、60秒以上に変更するのをお勧めします。
->! この設定は、システムの起動時間に影響します。設定が完了したら、デフォルト値に戻す必要があります。
-5. **Esc** キーを押して編集モードを終了し、**:wq** を入力し、**Enter** キーを押してください。
-設定を保存して、VIエディターを終了します。
-6. 以下のコマンドを実行して、サーバーを再起動します。
-```
-reboot
-```
-7. 1分待ってから、[VNCを介してCVMインスタンスにログイン](https://intl.cloud.tencent.com/document/product/213/5436#.E4.BD.BF.E7.94.A8-vnc-.E7.99.BB.E5.BD.95.E5.AE.9E.E4.BE.8B)します。ログインインターフェースは下図に示すように：
-![](https://main.qcloudimg.com/raw/82a82601e1545274c4f61c8f34f5c100.png)
-8. 任意のキーを押して、メニューに入ります。下図に示すように：
-![](https://main.qcloudimg.com/raw/6336b8fd579799108a5765b5b58e2a21.png)
-9. **e** を押してカーネル編集ページに入り、**single** を入力します。下図に示すように：
-![](https://main.qcloudimg.com/raw/14168276d81a398702e80f9c83186869.png)
-10. **Enter**キーを押します。下図に示すように：
-![](https://main.qcloudimg.com/raw/149eeb5776329a5db1ea42ae20cd316d.png)
-11. 以下に示すインターフェースで、**b** を押して、シングルユーザーモードに入ります。
-![](https://main.qcloudimg.com/raw/2d6d53de84cd78b3e88319b8538cec8e.png)
-12. 以下のコマンドを実行して、シングルユーザーモードを終了します。
-```
-exec /sbin/init
-```
-
-<span id="configCentOS7"></span>
-### CentOS 7
-
->? CentOS 6とは異なり、CentOS 7 以降のバージョンは GRUB 2を使用します。以下の操作手順は CentOS 7.5 を例に説明します。OSのバージョンによって詳細の操作手順は若干異なる場合があります。
-> 
-1. リモートで CVMインスタンスにログインします。
-2. 以下のコマンドを実行して、 `/etc/default/grub` ファイルを開きます。
-```
-vi /etc/default/grub
-```
-3. **I** を押して、編集モードに入ります。
-4. 「GRUB_TIMEOUT」（デフォルトエントリが起動するまでの待機時間を設定するパラメータ）を検索し、実際のニーズに応じて、時間の範囲を変更します。下図に示すように：
-「GRUB_TIMEOUT」のデフォルト値は5秒です。待機時間が短すぎるためにブートインターフェイスが見えない問題を回避するには、60秒以上に変更するのをお勧めします。
->! この設定は、システムの起動時間に影響します。設定が完了したら、デフォルト値に戻す必要があります。
+1. CVMコンソールから、VNCを使用してCVMにログインします。詳細については、[VNCを使用してLinuxインスタンスにログイン](https://intl.cloud.tencent.com/document/product/213/32494)をご参照ください。
+2. VNCのログインインターフェースで、左上隅の【リモートコマンドの送信】>【Ctrl-Alt-Delete】を選択して、ポップアップウィンドウで【OK】をクリックします。
+3. リンク失敗のメッセージが表示される時は、直ちにページをリフレッシュして上下キー（↑↓）を押し、システムがgrubメニューで止まるようにします。下図に示すとおりです。
+![](https://main.qcloudimg.com/raw/350187ce0a771d00e6d54e929291ebae.png)
+4. **c**を押してgrubモードに入ります。
+5. grubモードに入ってから、実際に使用するOSタイプに基づいて、以下のように異なる操作手順を選択する必要があります。
+#### CentOS 6.x
+1. grubモードのインターフェースで、下図のようにカーネルを選択します。
+![](https://main.qcloudimg.com/raw/5abc9f57184cc74bba927513fb1c4a88.png)
+2. **e**を押してカーネル編集インターフェースに入り、↑↓キーを使用して**kernel**のある行を選択し、再び**e**を押します。下図のようになります。
+![](https://main.qcloudimg.com/raw/1a596a48df87d1d619e415d8d5b0cb65.png)
+3. 行末に**single**を入力します。下図のとおりです。
+![](https://main.qcloudimg.com/raw/e1f74a4ce211a34301c4f74ffcc790b8.png)
+4. **Enter**を押して入力を確認してから、**b**を押して現在選択中の起動コマンドラインを開始すると、単一ユーザーモードに入ることができます。下図のとおりです。
+![](https://main.qcloudimg.com/raw/b379937bfc15e93f0823ec50095d1dc6.png)
+下図のように表示されれば、単一ユーザーモードが開始されています。
+![](https://main.qcloudimg.com/raw/517c4d2c24864f3fc8f5002bd1e2c2a1.png)
+>?`exec /sbin/init`コマンドを実行して、単一ユーザーモードを終了することができます。
 >
-![](https://main.qcloudimg.com/raw/5ee3b8d8a4609ca846e3c1e929608b34.png)
-5. **Esc**キーを押して編集モードを終了し、**:wq** を入力し、**Enter** キーを押してください。
-設定を保存して、VIエディターを終了します。
-6. 以下のコマンドを実行して、grub.cfgファイルを再コンパイルして生成します。
-```
-grub2-mkconfig -o /boot/grub2/grub.cfg
-```
-実行結果は下図に示すように：
-![](https://main.qcloudimg.com/raw/62da54e985f2f78efce045bb2da1e5e5.png)
-7. 以下のコマンドを実行して、サーバーを再起動します。
-```
-reboot
-```
-8. 1分待ってから、[VNCを介してCVMインスタンスにログイン](https://intl.cloud.tencent.com/document/product/213/5436#.E4.BD.BF.E7.94.A8-vnc-.E7.99.BB.E5.BD.95.E5.AE.9E.E4.BE.8B)します。ログインインターフェースは下図に示すように：
-![](https://main.qcloudimg.com/raw/95dba957dea2da680ffca516dc2b62b3.png)
-9. **e** を押してカーネル編集ページに入り、 **init=/bin/sh** を赤い枠のところに追加します。下図に示すように：
-![](https://main.qcloudimg.com/raw/81173f4c723809f1b733a51a2eb002d5.png)
-10. **Ctrl+X** を押して、シングルユーザーモードに入ります。下図に示すように：
-![](https://main.qcloudimg.com/raw/b9004e2a1d58a9a09316cf2a8a907399.png)
-11. 以下のコマンドを実行して、シングルユーザーモードを終了します。
-```
-exec /sbin/init
-```
 
-<span id="configUbuntu"></span>
-### Ubuntu 
-
->? 以下の操作手順は Ubuntu 16.04 を例に説明します。OSのバージョンによって詳細の操作手順は若干異なる場合があります。
+#### CentOS 7.x
+1. grubモードのインターフェースで、下図のようにカーネルを選択します。
+![](https://main.qcloudimg.com/raw/2ddc7d1e4416d9fa763922e23b59d580.png)
+2. **e**を押してカーネル編集インターフェースに入り、↑↓キーを使用してlinux16開始行まで移動し、`ro`を`rw init=/bin/bash`または`/usr/bin/bash`に変更します。下図のとおりです。
+![](https://main.qcloudimg.com/raw/1b861ba0ecee1cd82da4364523e8a1c6.png)
+3. **Ctrl+X**を押し、単一ユーザーモードを起動して入ります。
+下図のように表示されれば、単一ユーザーモードが開始されています。
+![](https://main.qcloudimg.com/raw/fbe8cfcf43aa4c914882edc4c3ee5faf.png)
+>?`exec /sbin/init`コマンドを実行して、単一ユーザーモードを終了することができます。
 >
-1. リモートでCVMインスタンスにログインします。
-2. 以下のコマンドを実行して、 `/etc/default/grub` ファイルを開きます。
-```
-sudo vi /etc/default/grub
-```
-3. **I** を押して、編集モードに入ります。
-4. 「GRUB_TIMEOUT」（デフォルトエントリが起動するまでの待機時間を設定するパラメータ）を検索し、実際のニーズに応じて、時間の範囲を変更します。下図に示すように：
-「GRUB_TIMEOUT」のデフォルト値は5秒です。待機時間が短すぎるためにブートインターフェースが見えない問題を回避するには、60秒以上に変更するのをお勧めします。
->! 
-> -この設定は、システムの起動時間に影響します。設定が完了したら、デフォルト値に戻す必要があります。
-> - Ubuntu のデフォルトアカウントはrootではないので、sudoコマンドを使用してください。
-> 
-```
-sudo vi /etc/default/grub
-```
-![](https://main.qcloudimg.com/raw/65553c2d5a01113e33b93caa93485dae.png)
-3. 以下のコマンドを実行して、grub.cfgファイルを再コンパイルして生成します。
-```
-sudo update-grub
-```
-実行結果は下図に示すように：
-![](https://main.qcloudimg.com/raw/9e685185ef67e7129ce34b11b5a16061.png)
-4. 以下のコマンドを実行して、サーバーを再起動します。
-```
-sudo reboot
-```
-5. 1分待ってから、[VNCを介してCVMインスタンスにログイン](https://intl.cloud.tencent.com/document/product/213/5436#.E4.BD.BF.E7.94.A8-vnc-.E7.99.BB.E5.BD.95.E5.AE.9E.E4.BE.8B)します。ログインインターフェースは下図に示すように：
-![](https://main.qcloudimg.com/raw/4893e2a2ed32bbe4241b33b468bdb8cf.png)
-6. **e** を押してカーネル編集ページに入り、 **rw single init=/bin/bash** を赤い枠のところに追加します。下図に示すように：
-![](https://main.qcloudimg.com/raw/0879dd0c8c7a720542352a0722f9b9a7.png)
-7. **Ctrl+X** を押して、シングルユーザーモードに入ります。下図に示すように：
-![](https://main.qcloudimg.com/raw/ffc6c3cf07a9254fdcb4f6326c3daf75.png)
+
+#### CentOS 8.0
+1. grubモードのインターフェースで、下図のようにカーネルを選択します。
+![](https://main.qcloudimg.com/raw/a6ce701e5845141929d822635bd42b9a.png)
+2. **e**を押してカーネル編集インターフェースに入り、↑↓キーを使用してlinux開始行まで移動し、`ro`を`w init=/sysroot/bin/bash`に変更します。下図のとおりです。
+![](https://main.qcloudimg.com/raw/d06effc3cab12d545fd7bc92f4577b14.png)
+3. **Ctrl+X**を押し、単一ユーザーモードを起動して入ります。
+下図のように表示されれば、単一ユーザーモードが開始されています。
+![](https://main.qcloudimg.com/raw/126dcdb5916e57815c3632e9e4b24412.png)
+
+#### UbuntuまたはDebian
+1. grubモードのインターフェースで、下図のようにカーネルを選択します。
+![](https://main.qcloudimg.com/raw/c3c0be766481edf3f6521f7764f8d4cb.png)
+2. **e**を押してカーネル編集インターフェースに入り、↑↓キーを使用してlinux開始行まで移動し、行末に`quiet splash rw init=/bin/bash`を追加します。下図のとおりです。
+![](https://main.qcloudimg.com/raw/40882cf22d755c0338ea9d7c106bc280.png)
+3. **Ctrl+X**を押し、単一ユーザーモードを起動して入ります。
+下図のように表示されれば、単一ユーザーモードが開始されています。
+![](https://main.qcloudimg.com/raw/df55d20b7eb087744fb6283c5124e7fc.png)
+
+#### SUSE
+1. grubモードのインターフェースで、下図のようにカーネルを選択します。
+![](https://main.qcloudimg.com/raw/4da4d0c5c98e4f0dbe4990e920a11daf.png)
+2. **e**を押してカーネル編集インターフェースに入り、↑↓キーを使用してlinux開始行まで移動し、`splash`パラメータの前に`rw`を追加し、後ろに`1`を加えます。下図のとおりです。
+![](https://main.qcloudimg.com/raw/013a0099ccb5c19d04441dd60ea7558b.png)
+3. **Ctrl+X**を押し、単一ユーザーモードを起動して入ります。
+
+#### tlinux
+1. grubモードのインターフェースで、下図のようにカーネルを選択します。
+![](https://main.qcloudimg.com/raw/c497e63321b76e5cd1f0eea06f53cdb2.png)
+2. **e**を押してカーネル編集インターフェースに入り、↑↓キーを使用して**kernel**のある行を選択し、再び**e**を押します。下図のようになります。
+![](https://main.qcloudimg.com/raw/06c66e0f30163e9fc7e6aafbf9463645.png)
+3. 行末、つまり256Mのスペースの後に`1`が追加されます。下図のとおりです。
+![](https://main.qcloudimg.com/raw/06efb32e3a2edb39f32e13be1ab8527f.png)
+4. **Enter**を押すと、単一ユーザーモードに入ることができます。
 
