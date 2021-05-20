@@ -29,12 +29,12 @@ This document describes how to implement nearby resource scheduling through a ga
 Call the `StartGameServerSessionPlacement` TencentCloud API in the code to place the game server session in the server fleet process. This example uses [TencentCloud API Explorer](https://console.cloud.tencent.com/api/explorer?Product=gse&Version=2019-11-12&Action=StartGameServerSessionPlacement&SignVersion=) for quick creation.
 
 >?Input parameter description
-- `Region` indicates the region, which is “ap-shanghai” (East China (Shanghai)) in this example;
-- `PlacementId` indicates the unique ID of the game server session placement, which is 1 in this example;
-- `GameServerSessionQueueName` indicates the game server session queue name, which is "dispatchingnearby" in this example;
-- `MaximumPlayerSessionCount` indicates the maximum number of concurrent players allowed by the game server to connect to the game session, which is 2 in this example;
-- `DesiredPlayerSessions.N` indicates the player game session information, where `PlayerId` is the unique player ID associated with the player session. In this example, two values of 1 and 2 are entered respectively;
-- `PlayerLatencies.N` indicates the player latency, where `PlayerId` is the player ID, `RegionIdentifier` is the name of the region where the latency occurs, and `LatencyInMilliseconds` is the latency in milliseconds. In this example, four value sets are entered, i.e., [1, ap-shanghai, 100], [1, na-siliconvalley, 50], [2, ap-shanghai, 60], and [2, na-siliconvalley, 80].
+>- `Region` indicates the region, which is “ap-shanghai” (East China (Shanghai)) in this example;
+>- `PlacementId` indicates the unique ID of the game server session placement, which is 1 in this example;
+>- `GameServerSessionQueueName` indicates the game server session queue name, which is "dispatchingnearby" in this example;
+>- `MaximumPlayerSessionCount` indicates the maximum number of concurrent players allowed by the game server to connect to the game session, which is 2 in this example;
+>- `DesiredPlayerSessions.N` indicates the player game session information, where `PlayerId` is the unique player ID associated with the player session. In this example, two values of 1 and 2 are entered respectively;
+>- `PlayerLatencies.N` indicates the player latency, where `PlayerId` is the player ID, `RegionIdentifier` is the name of the region where the latency occurs, and `LatencyInMilliseconds` is the latency in milliseconds. In this example, four value sets are entered, i.e., [1, ap-shanghai, 100], [1, na-siliconvalley, 50], [2, ap-shanghai, 60], and [2, na-siliconvalley, 80].
 
 ![](https://main.qcloudimg.com/raw/d0ef6f4ac7bcee9f340eecd53ae690cc.png)
 ![](https://main.qcloudimg.com/raw/e22e0c148d52885be3ceea010c13ce19.png)
