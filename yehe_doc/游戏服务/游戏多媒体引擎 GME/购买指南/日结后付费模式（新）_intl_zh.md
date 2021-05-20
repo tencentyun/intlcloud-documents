@@ -18,11 +18,12 @@
    </tr>
    <tr>
       <td  rowspan="2">语音时长计费</td>
-      <td rowspan="2">普通音质 <br/> 高清音质</td>
+      <td>普通音质</td>
       <td> <10000 分钟</td>
       <td>免费</td>
    </tr>
    <tr>
+      <td>高清音质</td>
       <td>≥10000 分钟</td>
       <td>0.00094 </td>
    </tr>
