@@ -33,7 +33,7 @@ We recommend the following encoding parameter settings for screen sharing on iOS
 ## Cross-app Sharing
 
 ### Sample code
-You can find the sample code for cross-app sharing in the **Screen** directory of [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/), which contains the following files:
+You can find the sample code for cross-app sharing in the **Screen** directory of [GitHub] which contains the following files:
 
 ```
 ├─ TRTCSimpleDemo              // A simple TRTC demo
@@ -49,7 +49,7 @@ You can find the sample code for cross-app sharing in the **Screen** directory o
 |  |  ├─ TRTCBroadcastExtensionLauncher.swift  // Auxiliary code for starting screen recording
 ```
 
-You can run the demo as instructed in [README](https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTCSimpleDemo/README.md).
+You can run the demo as instructed in [README](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTC-API-Example-OC).
 
 
 ### Directions
