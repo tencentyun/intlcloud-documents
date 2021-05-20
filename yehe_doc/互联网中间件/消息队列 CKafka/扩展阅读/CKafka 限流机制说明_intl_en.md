@@ -12,12 +12,12 @@ Take API traffic throttling as an example:
 
 Therefore, in high-traffic scenarios such as Kafka, soft traffic throttling is better for a smooth user experience.
 
->Relationship between purchased bandwidth and production/consumption bandwidth:
-- Maximum production bandwidth (per second) = purchased bandwidth/number of replicas
-- Maximum consumption bandwidth (per second) = purchased bandwidth 
+>?Relationship between purchased bandwidth and production/consumption bandwidth:
+>- Maximum production bandwidth (per second) = purchased bandwidth/number of replicas
+>- Maximum consumption bandwidth (per second) = purchased bandwidth 
 
-
-## How Delayed Response Works[](id:principle)
+<span id="principle"></span>
+## How Delayed Response Works
 
 The underlying traffic throttling mechanism of a CKafka instance is implemented based on token bucket. Each second is divided into multiple time buckets measured in ms.
 
