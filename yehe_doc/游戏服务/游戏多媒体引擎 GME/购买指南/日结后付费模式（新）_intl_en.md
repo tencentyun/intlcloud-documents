@@ -18,11 +18,12 @@ Voice chat is billed monthly by either voice duration or voice Peak Concurrent U
    </tr>
    <tr>
       <td  rowspan="2">Billed by voice duration</td>
-      <td rowspan="2">Standard <br/> HD</td>
+      <td>Standard</td>
       <td> < 10,000 minutes</td>
       <td>Free</td>
    </tr>
    <tr>
+      <td>HD</td>
       <td>≥ 10,000 minutes</td>
       <td>0.00094 </td>
    </tr>
