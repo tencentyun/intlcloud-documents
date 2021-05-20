@@ -3,7 +3,6 @@ You can query all VPC resources via the VPC console, such as cloud resources and
 ## Directions
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
 2. Select the region of the VPC at the top of the **VPC** page. You can check the information of all VPC in this region in the list.
-![](https://main.qcloudimg.com/raw/2b22968f97386f7f32378adc87b873a6.png)
 
 <table>
 <tr>
@@ -65,7 +64,7 @@ You can query all VPC resources via the VPC console, such as cloud resources and
 </table>
 
 3. Click the VPC ID to view details, including the basic information, CCN association, and associated resources. Click the number next to a resource to access the resource management page.
-![](https://main.qcloudimg.com/raw/c669e4f5a3dc6b53fa88dec0fe0dacf6.png)
+
 4. Return to the VPC list, and click in the top-right corner search box to filter VPC by different resource attributes.
-![](https://main.qcloudimg.com/raw/13ffa1de5c9d9d1a10811471306eef55.png)
+
 5. Click the setting icon in the upper-right corner to customize display columns.
