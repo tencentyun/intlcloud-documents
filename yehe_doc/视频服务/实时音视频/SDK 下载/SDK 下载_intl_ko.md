@@ -80,9 +80,7 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_wxmini_trtc") href="https://web.sdk.qcloud.com/trtc/miniapp/download/trtc-room.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32399">DOC</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32183">DOC</a></td>
-      <td style="text-align:center">N/A</td>
+       <td style="text-align:center">N/A</td>
    </tr>
 	    <tr>
       <td style="text-align:center">Flutter</td>
@@ -194,7 +192,7 @@ TRTC는 Tencent Cloud LiteAV 시리즈 제품 중 하나로, LiteAV 체제의 SD
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1071/38150">라이브 방송 라이트 버전</a><br>LiteAV_Smart</th>
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/37914">UGSV 버전</a><br>LiteAV_UGC</th>
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/34615">TRTC 버전</a><br>LiteAV_TRTC</th>
-    <th width="100px" style="text-align:center"><a href="https://cloud.tencent.com/document/product/881/20205">플레이어 버전</a><br>LiteAV_Player</th>
+    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/zh/document/product/647/34615">플레이어 버전</a><br>LiteAV_Player</th>
     <th width="100px" style="text-align:center"><a href="#Professional">프로 버전</a><br>Professional</th>
     <th width="100px" style="text-align:center"><a href="#Enterprise">엔터프라이즈 버전</a><br>Enterprise</th>
   </tr>
