@@ -7,7 +7,7 @@ VODをアクティブにすると、[VODコンソール](https://console.cloud.t
 ## ドメイン名の追加
 1. [VODコンソール](https://console.cloud.tencent.com/vod/overview)にログインし、左側ナビゲーションバーの[配信と再生の設定]>【Domain Management】を選択します。
 2. 【ドメイン名の追加】をクリックし、表示されたダイアログボックスにドメイン名を入力して、【OK】をクリックします。
-![](https://main.qcloudimg.com/raw/37dab10b1d498194b8ac7fbf4f977525.png)
+![]https://main.qcloudimg.com/raw/c80510a0917529ca9ea0f550ac9ebeae.png)
 >?
 >- ドメイン名の追加には数分かかります。ドメイン名を追加すると、ドメイン名リストで、ドメイン名のステータス、CNAME、ドメインタイプ情報を確認することができます。
 >- 1つのTencent Cloudアカウントで、最大20個のドメイン名を追加することができます。

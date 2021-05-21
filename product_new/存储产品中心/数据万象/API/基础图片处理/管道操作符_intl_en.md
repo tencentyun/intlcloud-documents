@@ -3,7 +3,7 @@ The pipeline operator `|` in Tencent Cloud CI can be used to perform multiple ty
 
 
 ## API Form
-Following an image URL, the style separator `?` is used to connect processing styles that are separated with the pipeline operator `|` and executed in a sequence. Currently, up to three layers of pipelines are supported.
+Following an image URL, the style separator `?` is used to connect processing styles that are separated with the pipeline operator `|` and executed in a sequence. Currently, up to ten layers of pipelines are supported.
 
 ## Example
 This example shows you how to scale an original image by 50% and then add the text watermark “CI” in the lower-right corner.

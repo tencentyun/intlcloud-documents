@@ -64,7 +64,7 @@ Content Delivery Network（CDN）は基本的なキャッシュ構成機能を�
 アクセラレーションドメイン名がpurge-test-1251991073.file.myqcloud.comであり、オリジンサーバーがTencent CloudのCloud Object Storage（COS）です。オリジンサーバーのリソースが下記のとおりです。
 ![](https://main.qcloudimg.com/raw/ed694acc98a8d3114c8a9922f7374a1b.png)
 
-1. それぞれリソース1.txt と2.txtのアクセスリクエストを送信し、X-Cache-Lookup: Hit From Distank3およびServer: NWS_SPMid によりヒットしたノードを判定することができます。ノードより直接にリソースを戻します。
+1. それぞれリソース1.txt と2.txtのアクセスリクエストを送信し、X-Cache-Lookup: Hit From Disktank3およびServer: NWS_SPMid によりヒットしたノードを判定することができます。ノードより直接にリソースを戻します。
    ![](https://main.qcloudimg.com/raw/9b307b80e7d1c759bb073eb9f2cf4b6c.png)
    ![](https://main.qcloudimg.com/raw/5fed8bff43d699f47235e5d0db1f2447.png)
 2. オリジンサーバーで同名ファイルの1.txtを差し替え、ファイル修正時間が変更されます。2.txtはそのままにします。

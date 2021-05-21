@@ -84,8 +84,8 @@ Messages that have been recalled cannot be restored. Therefore, use this API wit
 | ErrorCode | Integer | Error code. `0` indicates that the request was successful, and any non-zero value indicates that the request failed. |
 | ErrorInfo | String | Detailed error information |
 | RecallRetList | Array | Detailed result of the message recall request |
-| MsgSeq | String | Sequence number of the single recalled message |
-| RetCode | String | Recall result of the single message. 0: successful. Others: failed. For details, see the description of error codes below. |
+| MsgSeq | Integer | Sequence number of the single recalled message |
+| RetCode | Integer | Recall result of the single message. 0: successful. Others: failed. For details, see the description of error codes below. |
 
 
 ## Error Codes

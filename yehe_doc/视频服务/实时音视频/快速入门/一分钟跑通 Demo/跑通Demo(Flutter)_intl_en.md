@@ -1,7 +1,7 @@
 This document describes how to quickly run the TRTC demo for Flutter.
 
 ## Environment Requirements
-- Flutter 1.12 or above
+- Flutter 2.0 or above
 - Developing for Android:
   - Android Studio 3.5 or above
   - Devices with Android 4.1 or above

@@ -147,7 +147,7 @@ If you select bill-by-traffic mode, you will need to pay: 200 * 0.037 = 7.4 USD
 
 If you select bill-by-bandwidth mode, you will need to pay: 40 * 0.094 = 3.76 USD 
 
-We recommend bill-by-bandwidth as it is more cost-effective.
+In this specific example,  bill-by-bandwidth is a more cost-effective billing model.
 
 ## Overdue
 

@@ -64,7 +64,7 @@ In the **History** tab, you can query tasks by a specified time period, term, an
 The acceleration domain name is `purge-test-1251991073.file.myqcloud.com`, the origin server is Tencent Cloud Object Storage (COS), and resources on the origin server are as follows:
 ![](https://main.qcloudimg.com/raw/ed694acc98a8d3114c8a9922f7374a1b.png)
 
-1. Initiate requests to access resources `1.txt` and `2.txt` respectively. Nodes to be hit can be determined based on `X-Cache-Lookup: Hit From Distank3` and `Server: NWS_SPMid`, resources will be directly returned by the nodes:
+1. Initiate requests to access resources `1.txt` and `2.txt` respectively. Nodes to be hit can be determined based on `X-Cache-Lookup: Hit From Disktank3` and `Server: NWS_SPMid`, resources will be directly returned by the nodes:
    ![](https://main.qcloudimg.com/raw/9b307b80e7d1c759bb073eb9f2cf4b6c.png)
    ![](https://main.qcloudimg.com/raw/5fed8bff43d699f47235e5d0db1f2447.png)
 2. On the origin server, replace `1.txt` with a file that has the same name, and the file's last modified time changes, while `2.txt` stays the same:

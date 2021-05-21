@@ -1,7 +1,7 @@
 본 문서에서는 Tencent Cloud TRTC SDK(Flutter)를 귀하의 프로젝트에 빠르게 통합할 수 있는 방법에 대해 소개합니다. 다음 절차에 따라 설정하면 SDK 통합 작업을 완료할 수 있습니다.
 
 ## 환경 요건
-- Flutter 1.12 이상 버전
+- Flutter 2.0 이상 버전
 - Android 개발:
   - Android Studio 3.5 이상 버전
   - 앱에서 Android 4.1 이상 버전의 디바이스 요구됨

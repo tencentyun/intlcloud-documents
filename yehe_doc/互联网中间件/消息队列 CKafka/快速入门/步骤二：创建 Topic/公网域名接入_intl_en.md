@@ -23,4 +23,4 @@ To enable public network access, you need to configure an ACL policy for a topic
 1. On the instance details page, click the **User Management** tab, click **Create**, and set the username and password in the **Add User** dialog box displayed.
    ![img](https://main.qcloudimg.com/raw/5dad7d1f14bebd52b08a366bd356e638.png)
 2. On the **ACL Policy Management** tab page, locate the topic created and click **Edit ACL Policy** in the *Operation* column to add read/write permission for the user.
-   ![img](https://main.qcloudimg.com/raw/5aae813035f9981c7fa975dea6a4b812.png)
+    ![img](https://main.qcloudimg.com/raw/5aae813035f9981c7fa975dea6a4b812.png)

@@ -1,6 +1,6 @@
 Tencent Cloud provides the Cloud Monitor service for all users by default; therefore, you do not need to manually activate it. Cloud Monitor will start collecting monitoring data only after a Tencent Cloud product is used.
 
-CKafka allows you to monitor the resources created under your account, including instances, topics, and consumer groups, so that you can keep track of the status of your resources in real time. You can configure alarm rules for monitoring metrics. When a monitoring metric reaches the set alarm threshold, Cloud Monitor will notify you via email, SMS, WeChat, phone, etc., to help you deal with exceptions in time.
+CKafka allows you to monitor the resources created under your account, including instances, topics, and consumer groups, so that you can keep track of the status of your resources in real time. You can configure alarm rules for monitoring metrics. When a monitoring metric reaches the set alarm threshold, Cloud Monitor will notify you of exceptions by email, SMS, WeChat, and phone call.
 
 ## Monitoring Metric Description
 
@@ -61,7 +61,7 @@ The created alarm can determine whether an alarm notification should be sent bas
 2. In the instance list, click **Configure Alarms** in the **Operation** column to go to the alarm configuration page.
 3. On the alarm configuration page, select a policy type and instance, and set the alarm rule and notification template.
    >!Make sure to configure alarms for your instance to prevent exceptions caused by a sudden traffic spike or specification limits.
-4. Click **Done**.
+4. Click **Completed**.
 
 For more information on alarms, see [here](https://intl.cloud.tencent.com/document/product/248/38908).
 

@@ -22,7 +22,7 @@ To enable public network access, you need to add a public route for the instance
      - Pro Edition: if the current region supports multi-AZ deployment, you can select up to 2 AZs for deployment. For more information on cross-AZ deployment, please see [Cross-AZ Deployment](https://intl.cloud.tencent.com/document/product/597/40243).
    - Product Specification: select a model based on the peak bandwidth and disk capacity.
    - Message Retention: the value must range from 24 hours to 2,160 hours.
-     When the disk space is insufficient (the disk watermark reaches 90%), earlier messages will be deleted ahead of time to ensure service availability.
+     When the disk capacity is insufficient (i.e., the disk utilization reaches 90%), old messages will be deleted in advance to ensure the service availability.
    - VPC: select the created VPC.
 3. Click **Buy Now**. The instance created is displayed in the instance list in about 3-5 minutes.
 

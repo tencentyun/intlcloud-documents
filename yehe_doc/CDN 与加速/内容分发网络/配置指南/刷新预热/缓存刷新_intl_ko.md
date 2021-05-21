@@ -64,7 +64,7 @@ CDN은 기본 캐시 설정 기능을 제공하여 지정된 서비스 유형, �
 가속 도메인이 purge-test-1251991073.file.myqcloud.com이고 원본 서버가 Tencent Cloud Object Storage(COS)일 때 원본 서버 리소스는 다음과 같습니다.
 ![](https://main.qcloudimg.com/raw/ed694acc98a8d3114c8a9922f7374a1b.png)
 
-1. 리소스 1.txt 및 2.txt에 각각 액세스 요청을 시작합니다. X-Cache-Lookup: Hit From Distank3 및 Server: NWS_SPMid에 따라 노드 히트를 판별하고, 노드가 직접 리소스를 리턴합니다.
+1. 리소스 1.txt 및 2.txt에 각각 액세스 요청을 시작합니다. X-Cache-Lookup: Hit From Disktank3 및 Server: NWS_SPMid에 따라 노드 히트를 판별하고, 노드가 직접 리소스를 리턴합니다.
    ![](https://main.qcloudimg.com/raw/9b307b80e7d1c759bb073eb9f2cf4b6c.png)
    ![](https://main.qcloudimg.com/raw/5fed8bff43d699f47235e5d0db1f2447.png)
 2. 동일한 이름의 파일 1.txt가 원본 서버에서 대체될 때 파일 수정 시간이 변경되고 2.txt는 변경되지 않습니다.

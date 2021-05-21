@@ -5,10 +5,10 @@ A device name (mount point) is the location of a cloud disk mounted to the CVM i
 No. You can mount up to 20 cloud disks to the same CVM, but you cannot mount the same cloud disk to multiple CVMs. You can only share data by [unmounting the cloud disk](https://intl.cloud.tencent.com/document/product/362/32400) from CVM A and then [mounting](https://intl.cloud.tencent.com/document/product/362/32401) it to CVM B.
 
 ### Do I need to partition the cloud disk after purchasing and mounting it to a CVM instance?
-Yes. After you purchase a cloud disk, you must mount it to a CVM instance in the same availability zone, and then initialize it by formatting, partitioning, and creating the file system before using it as a data disk. For more information, see [Mounting Cloud Disks](https://intl.cloud.tencent.com/document/product/362/31645) and [Initializing Cloud Disks](https://intl.cloud.tencent.com/document/product/362/31646).
+Yes. After you purchase a cloud disk, you must mount it to a CVM instance in the same availability zone, and then initialize it by formatting, partitioning, and creating the file system before using it as a data disk. For more information, see [Mounting Cloud Disks](https://intl.cloud.tencent.com/document/product/362/31645) and [Initializing Cloud Disks](https://intl.cloud.tencent.com/document/product/362/31645).
 
 ### Why am I unable to locate the data disk that I purchased for a Linux instance?
-If you purchase a data disk separately, you must partition, format, and mount it to an instance to view and use its storage space. For more information, see [Mounting Cloud Disks](https://intl.cloud.tencent.com/document/product/362/31645) and [Initializing Cloud Disks](https://intl.cloud.tencent.com/document/product/362/31646).
+If you purchase a data disk separately, you must partition, format, and mount it to an instance to view and use its storage space. For more information, see [Mounting Cloud Disks](https://intl.cloud.tencent.com/document/product/362/31645) and [Initializing Cloud Disks](https://intl.cloud.tencent.com/document/product/362/31645).
 
 ### How many cloud disks can be mounted to one CVM instance?
 A maximum of 20 data disks can be mounted to one CVM instance.

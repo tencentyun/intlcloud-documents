@@ -227,6 +227,6 @@ TRTC SDK 6.6バージョン（2019年08月）では新しい署名アルゴリ�
 ## 参考資料
 
 - [TWebLive API マニュアル](https://webim-1252463788.cos.ap-shanghai.myqcloud.com/tweblive/TWebLive.html)
-- [オンラインDemo](https://trtc.qcloud.com/tweblive/index.html#/)
+- [オンラインDemo](https://web.sdk.qcloud.com/component/tweblive/demo/latest/index.html)
 
 

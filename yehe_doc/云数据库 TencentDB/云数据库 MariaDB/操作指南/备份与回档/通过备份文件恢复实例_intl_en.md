@@ -56,13 +56,12 @@ wget  --content-disposition 'http://1x.2xx.0.27:8083/2/noshard1/set_1464144850_5
 ```
 
 ## Restoring Databases from Backup Files (Unencrypted)
-<span id="mulu_jieya"></span>
-#### 1. Enter the cold backup file download directory and decompress the file with LZ4
+#### [1. Enter the cold backup file download directory and decompress the file with LZ4](id:mulu_jieya)
 ```
 lz4 -d set_1464144850_587.1464552298.xtrabackup.lz4
 ```
-<span id="gongju_jieya"></span>
-#### 2. Decompress the file to a temporary directory `xtrabackuptmp` with xbstream
+
+#### [2. Decompress the file to a temporary directory `xtrabackuptmp` with xbstream](id:gongju_jieya)
 ```
 mkdir xtrabackuptmp/
 mv set_1464144850_587.1464552298.xtrabackup xtrabackuptmp/
@@ -78,8 +77,8 @@ innobackupex --apply-log  --use-memory=1G --tmpdir='/root/dblogs_tmp/' /root/xtr
 ```
 After the operation succeeds, `completed OK!` will be displayed as shown below:
 ![](https://main.qcloudimg.com/raw/80a99e3a653a840655be806f92e5e434.png)
-<span id="tingzhi_qingkong"></span>
-#### 4. Stop the database and clear data files
+
+#### [4. Stop the database and clear data files](id:tingzhi_qingkong)
 ```
 service mysql stop
 ```
@@ -151,8 +150,7 @@ Before decrypting the data, you need to query the data key ciphertext in **Data 
     - --region: region information, which can be queried in KMS [Common Parameters](https://intl.cloud.tencent.com/document/product/1030/32175).
     - --ciphertext: data key ciphertext.
 ![](https://main.qcloudimg.com/raw/c0b8552753c094fc6b0257c57e59872e.png)
- - Below is a demo:  
-
+ - Below is a demo:
 ```
 python ./kms_tool.py --role="qcs::cam::uin/xxxxxxxxx:roleName/kmsTDSQLRole" 
 --secret_id="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" --secret_key="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"

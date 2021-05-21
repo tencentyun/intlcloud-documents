@@ -1,7 +1,7 @@
 ここでは、主にTencent Cloud TRTC Demo(Flutter)を素早く実行する方法をご紹介します。
 
 ## 環境要件
-- Flutter 1.12およびそれ以降のバージョン。
+- Flutter 2.0およびそれ以降のバージョン。
 - Androidの開発：
   -  Android Studio 3.5およびそれ以降のバージョン。
   -  AppにはAndroid 4.1およびそれ以降のバージョンのデバイスが必要です。
