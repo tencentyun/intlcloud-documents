@@ -13,7 +13,7 @@ TRTC クラウドサービスは、2種類の異なるタイプのサーバー�
 
 
 ## サンプルコード
- [Github](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCSimpleDemo) にログインし、本ファイルに関連するサンプルコードを取得することができます。
+ [Github] にログインし、本ファイルに関連するサンプルコードを取得することができます。
 ![](https://main.qcloudimg.com/raw/3ef83a68399c22ba0c1fbb079e3dfaf3.png)
 
 > Githubへのアクセスが遅い場合は、 [TXLiteAVSDK_TRTC_Android_latest.zip](http://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip)を直接ダウンロードすることもできます。
