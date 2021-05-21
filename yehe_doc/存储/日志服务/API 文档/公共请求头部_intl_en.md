@@ -1,15 +1,16 @@
 ## Overview
 
-This document describes common request headers that need to be included when CLS APIs are used. The following headers will not be detailed in specific API documents.
+This document describes common request headers that will be used in CLS API requests. The headers mentioned below will not be described again in related API documentation.
 
-## Common Request Header List
+## List of Common Request Headers
 
-| HTTP Header Name | Description                                        |
+| HTTP Header | Description |
 | ------------------- | ------------------------------------------------------------ |
-| Host                | Request host name, which varies by region, such as `ap-shanghai.cls.tencentyun.com` for the Shanghai region |
-| Authorization       | Signing information. For the calculation method, please see [Request Signature](https://intl.cloud.tencent.com/document/product/614/12445) |
-| Content-Length      | Request body length. If there is no body, this header can be optional              |
-| Content-Type        | Request body format. If there is no body, this header can be optional. It is determined by the specific API document. Currently, `application/json` and `application/x-protobuf` are supported |
-| Content-MD5         | MD5 value of request body. If there is no body, this header can be optional. The calculation result is in lower case |
-| x-cls-compress-type | Compression method used by requested body. Currently, lz4 compression is supported. This header is required only by the log upload API. If no compression is performed, it can be optional |
-| x-cls-token         | A temporary security token as part of temporary security credentials returned by a STS request. This parameter must be included if you access CLS using a temporary key.  |
+| Host                | Domain name, which differs by region. For example, the value for Shanghai is `ap-shanghai.cls.tencentyun.com`. For details, see [Available Regions](https://intl.cloud.tencent.com/document/product/614/18940). |
+| Authorization | Signature content. For details on how to calculate it, see [Request Signature](https://intl.cloud.tencent.com/document/product/614/12445). |
+| Content-Length | Length of the request body. If there is no request body, this header can be ignored. |
+| Content-Type | Format of the request body. Valid values: `application/json`, `application/x-protobuf`. You can select the value according to the corresponding API documentation. If there is no request body, this header can be ignored. |
+| Content-MD5 | MD5 value of the request body, which is expressed in lowercase letters. If there is no request body, this header can be ignored. |
+| x-cls-compress-type | The compression method (LZ4) for the request body, which is used only by log upload APIs. If the request body is not compressed, this header can be ignored. |
+| x-cls-token | Temporary key credential, which is the key token returned for an STS request. This header is required when CLS is accessed via temporary keys. |
+
