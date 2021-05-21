@@ -5,10 +5,10 @@
 暂不支持。您可以将多达20块云硬盘挂载到同一台云服务器，但目前暂不支持多台云服务器同时共享同一块云硬盘，只能通过从云服务器 A [卸载](https://intl.cloud.tencent.com/document/product/362/32400) 后 [挂载](https://intl.cloud.tencent.com/document/product/362/32401) 到云服务器 B 实现数据共享。
 
 ### 购买了云硬盘并挂载到云服务器实例后，还需要执行挂载分区的操作吗？
-购买云硬盘后，您需要将其挂载到同一可用区中的云服务器上，并对其进行格式化、分区及创建文件系统等初始化操作，才能被当做数据盘使用。具体操作请参考 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/31645) 和 [初始化云硬盘](https://intl.cloud.tencent.com/document/product/362/31646)。
+购买云硬盘后，您需要将其挂载到同一可用区中的云服务器上，并对其进行格式化、分区及创建文件系统等初始化操作，才能被当做数据盘使用。具体操作请参考 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/31645) 和 [初始化云硬盘](https://intl.cloud.tencent.com/document/product/362/31645)。
 
 ### 为 Linux 实例购买了数据盘，但是系统中看不到怎么办？
-如果是单独购买的数据盘，您需要分区格式化、挂载后才能使用和看到空间。具体操作请参考 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/31645) 和 [初始化云硬盘](https://intl.cloud.tencent.com/document/product/362/31646)。
+如果是单独购买的数据盘，您需要分区格式化、挂载后才能使用和看到空间。具体操作请参考 [挂载云硬盘](https://intl.cloud.tencent.com/document/product/362/31645) 和 [初始化云硬盘](https://intl.cloud.tencent.com/document/product/362/31645)。
 
 ### 一台云服务器实例能挂载多少块云硬盘？
 作数据盘用时，一台实例最多可挂载20块云硬盘。
