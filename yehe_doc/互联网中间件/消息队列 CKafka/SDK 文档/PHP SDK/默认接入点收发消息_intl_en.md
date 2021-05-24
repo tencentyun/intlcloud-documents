@@ -13,7 +13,6 @@ This document describes how to use the PHP SDK to connect to CKafka via the defa
 ### Step 1. Add rdkafka extension
 
 1. On the [rdkafka official website](http://pecl.php.net/package/rdkafka), find the PHP-rdkafka extension package of the latest version.
-   
 >?PHP-rdkafka extension packages of different versions have different requirements on the PHP version. This procedure takes the PHP-rdkafka extension package of version 4.1.2 as an example.
 
 2. Install the rdkafka extension.
@@ -21,7 +20,7 @@ This document describes how to use the PHP SDK to connect to CKafka via the defa
    wget --no-check-certificate https://pecl.php.net/get/rdkafka-4.1.2.tgz
    pear install rdkafka-4.1.2.tgz
    # If the installation is successful, `install ok` and `You should add "extension=rdkafka.so" to php.ini` are displayed
-   # If the installation fails, handle the problem as instructed
+   # If the installation fails, troubleshoot as instructed
    # After successful installation, add `extension=rdkafka.so` to `php.ini`
    # After you run `php --ini`, the value of `Loaded Configuration File` is the location of `php.ini` 
    echo 'extension=rdkafka.so' >> /etc/php.ini
@@ -139,7 +138,6 @@ php Producer.php
   ```
 
   4. On the **Topic Management** tab page on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the target topic, and click **More** -> **Message Query** to view the message just sent.
-
 
 ### Step 4. Consume messages
 

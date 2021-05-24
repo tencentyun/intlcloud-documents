@@ -14,7 +14,6 @@ This document describes how to use the PHP SDK to connect to CKafka via the SASL
 ### Step 1. Add rdkafka extension
 
 1. On the [rdkafka official website](http://pecl.php.net/package/rdkafka), find the PHP-rdkafka extension package of the latest version.
-   
 >?PHP-rdkafka extension packages of different versions have different requirements on the PHP version. This procedure takes the PHP-rdkafka extension package of version 4.1.2 as an example.
 
 2. Install the rdkafka extension.

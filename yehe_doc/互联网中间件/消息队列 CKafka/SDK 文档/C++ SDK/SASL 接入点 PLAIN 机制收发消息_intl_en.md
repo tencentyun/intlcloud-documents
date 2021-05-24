@@ -666,4 +666,4 @@ gcc -lrdkafka ./consumer.c -o consumer
 | group.id        | Consumer group name. A meaningful name is recommended.               |
 | username | Username for the SASL_Plaintext access mode. You can obtain it on the **User Management** tab page on the instance details page in the CKafka console. Note that the username must be in the `${instanceId}#username` format. |
 | password | User access password for the SASL_Plaintext access mode.                     |
-| topic1 topic2.. | Topic names. You can obtain them on the **Topic Management** tab page on the instance details page in the CKafka console.   |
+| topic1 topic2.. | Topic names. You can obtain them on the **Topic Management** tab page in the CKafka console.   |

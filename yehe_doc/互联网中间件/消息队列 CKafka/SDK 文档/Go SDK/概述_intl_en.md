@@ -8,3 +8,4 @@ The Go SDK can access CKafka via different types of access points to send and re
 | SASL mechanism | N/A                 | PLAIN (a simple username/password authentication mechanism)                       |
 | Demo     | [PLAINTEXT](https://github.com/TencentCloud/ckafka-sdk-demo/tree/main/gokafkademo)          | [SASL_PLAINTEXT/PLAIN](https://github.com/TencentCloud/ckafka-sdk-demo/tree/main/gokafkademo)                                     |
 | Document     | [Using the Default Access Point to Send and Receive Messages](https://intl.cloud.tencent.com/document/product/597/40059) | [Using the SASL Access Point and PLAIN Mechanism to Send and Receive Messages](https://intl.cloud.tencent.com/document/product/597/40060)                             |
+

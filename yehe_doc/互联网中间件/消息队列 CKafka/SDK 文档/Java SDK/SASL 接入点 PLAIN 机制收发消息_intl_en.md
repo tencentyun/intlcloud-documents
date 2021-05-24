@@ -151,7 +151,6 @@ Produce ok:ckafka-topic-demo-0@199
 4. On the **Topic Management** tab page on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the target topic, and click **More** -> **Message Query** to view the message just sent.
 
 
-
 ### Step 4. Consume messages
 
 1. Single consumer subscribing to messages: create a program named `KafkaSaslConsumerDemo.java` for a single consumer to subscribe to messages.
@@ -226,4 +225,5 @@ public class KafkaSaslConsumerDemo {
 
 4. On the **Consumer Group** tab page on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding consumer group, enter the topic name, and click **Query Details** to view the consumption details.
 ![](https://main.qcloudimg.com/raw/ac08523c05f4f363024ca1eb2965410f.png)
+
 
