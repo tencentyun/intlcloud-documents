@@ -23,7 +23,7 @@ Step 1. Check whether your origin server returns different resources according t
 
 [](id:step2)
 Step 2. Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar, click **Manage** on the right of a domain name to enter its configuration page. Open the **Cache Configuration** tab to find the **Cache Key Configuration** section, and check whether the **Ignore Query String** is configured as **Not Filter**.
-![](https://main.qcloudimg.com/raw/683059bf286ac3bd8d6c1526431741af.png)
+
    - If it is not, please go to [Step 3](##step3).
    - If it is, please go to [Step 4](#step4).
 
@@ -31,10 +31,10 @@ Step 2. Log in to the [CDN console](https://console.cloud.tencent.com/cdn), sele
 
 [](id:step3)
 Step 3. Click **Modify** on the right of the rule, tick **Not Filter**, and click **Save**.
-![](https://main.qcloudimg.com/raw/292cd75b54fc6bca0a5803f45957d971.png)
+
 > ?If this operation is not suitable for your business, you can use the **Reserve Specified Parameter** feature as needed. For more information, please see [Cache Key Configuration](https://intl.cloud.tencent.com/document/product/228/35316).
 
 [](id:step4)
 Step 4. Click **Purge and Prefetch** on the left sidebar to purge the resource that is updated on the origin server.
-![](https://main.qcloudimg.com/raw/71d2b90aa81377670c628ead3f3374e0.png)
+
 > ?You can also bind the API for resource purge, so that resources can be purged across the entire network immediately once updated, guaranteeing the content consistency for access. For more information, please see [PurgeUrlsCache](https://intl.cloud.tencent.com/document/product/228/33601) and [PurgePathCache](https://intl.cloud.tencent.com/document/product/228/33602).
