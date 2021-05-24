@@ -16,7 +16,7 @@ This document describes how to create instances and topics in the CKafka console
 		- Pro Edition: if the current region supports multi-AZ deployment, you can select up to 2 AZs for deployment. For more information on how multi-AZ deployment works, please see [Multi-AZ Deployment](https://intl.cloud.tencent.com/document/product/597/40243)
 	- Product Specs: select an appropriate model based on the peak bandwidth and disk capacity
 	- Message Retention: select a value between 24 and 2160 hours
-		When the disk capacity is insufficient (i.e., the disk utilization reaches 90%), old messages will be deleted in advance to ensure the service availability
+		When the disk capacity is insufficient (i.e., the disk utilization reaches 90%), old messages will be deleted in advance to ensure the service availability.
 	- VPC: if you need to access other VPCs, you can modify routing access rules as instructed in [Adding a Routing Policy](https://intl.cloud.tencent.com/document/product/597/32555)
 	- Purchase Period: you can set auto-renewal by month upon expiration
 4. Click **Buy Now** to complete the instance creation process.

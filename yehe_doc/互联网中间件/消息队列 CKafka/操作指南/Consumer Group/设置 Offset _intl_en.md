@@ -1,6 +1,6 @@
 ## Overview
 
-In scenarios such as offline data processing, sometimes it is necessary to reset the offset to consume message history.
+In scenarios such as offline data processing, sometimes it is necessary to reset the offset to consume earlier messages.
 
 ## Directions
 

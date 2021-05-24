@@ -21,7 +21,7 @@ This document describes how to configure SASL authentication and ACL rules in th
      **Batch check**: select multiple topics that need to be configured with the same ACL policy. The batch check mode only supports configuring one policy.
      **Fuzzy match by prefix**: fuzzy match topics that need to be configured with the same ACL policy by topic name prefix. You need to specify the fuzzy matching rule name. After this is set, when a new topic whose name contains the specified prefix is added, the system will automatically configure the specified ACL policy for it.
      >?Up to five fuzzy matching rules can be set.
-     
+
 
    - **Instances on other versions**: you can grant permissions to the user through **batch check**.
      Select multiple topics that need to be configured with the same ACL policy. The batch check mode only supports configuring one policy.

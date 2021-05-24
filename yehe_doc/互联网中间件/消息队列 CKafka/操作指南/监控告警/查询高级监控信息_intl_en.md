@@ -1,12 +1,12 @@
-Advanced monitoring supported in CKafka Pro Edition allows you to view metrics such as core services, production, consumption, and broker GC in the console, making it easier for OPS personnel to troubleshoot issues.
+CKafka Pro Edition supports advanced monitoring. You can view metrics such as core services, production, consumption, and broker GC in the console, making it easier for you to troubleshoot CKafka issues.
 
-This document describes how to view advanced monitoring metrics in the console and explains the meaning of advanced monitoring metrics.
+This document describes how to view advanced monitoring metrics in the console and explains their meanings.
 
-## Monitoring Metric Description
+## Descriptions of Monitoring Metrics
 
 ### Core service monitoring
 
-| Monitoring Metric | Description | Normal Range |
+| Monitoring Metric     | Description                                                     | Normal Range                                                   |
 | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Network busyness | This value is used to measure the current remaining I/O resources for concurrent request processing. The closer to 1 it is, the idler the instance is.    | This value generally fluctuates between 0.5 and 1. If it is below 0.3, the load is high.               |
 | Request queue depth | This value indicates the number of production requests that have not been processed. If this value is too large, it may be because that the number of concurrent requests is high, the CPU load is high, or the disk I/O hits a bottleneck. | If this value stays at 2000, the cluster load is high; if it is below 2000, it can be ignored.   |
@@ -17,18 +17,18 @@ This document describes how to view advanced monitoring metrics in the console a
 
 ### Production monitoring
 
-| Monitoring Metric  | Description | Normal Range |
+| Monitoring Metric     | Description                                                     | Normal Range                                                   |
 | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Total production duration | This value indicates the total duration of a production request, which is based on metrics such as the request queue duration, local processing duration, and delayed response duration. <br/>At each point in time, the total duration is not equal to the sum of the following five metrics, because each metric is averaged. | This value generally ranges between 0 and 100 ms. A value of 0–1000 ms is normal when the data volume is high. No action is required unless this value stays above 1000 ms. |
+| Total production duration  | This value indicates the total duration of a production request, which is based on metrics such as the request queue duration, local processing duration, and delayed response duration. <br/>At each point in time, the total duration is not equal to the sum of the following five metrics, because each metric is averaged. | This value generally ranges between 0 and 100 ms. A value of 0–1000 ms is normal when the data volume is high. No action is required unless this value stays above 1000 ms. |
 | Request queue duration | This value indicates the amount of time a production request waits in the queue of requests to be received. It means that the request packet waits for subsequent processing. | This value generally ranges between 0 and 50 ms. A value of 0–200 ms is normal when the data volume is high. No action is required unless this value stays above 200 ms. |
 | Local processing duration | This value indicates the amount of time a production request is processed by the leader broker, i.e., the duration between the request packet is obtained from the request queue and it is written to the local page cache. | This value generally ranges between 0 and 50 ms. A value of 0–200 ms is normal when the data volume is high. No action is required unless this value stays above 200 ms. |
-| ack wait duration | This value indicates the amount of time a production request waits for data to be synced. It is greater than 0 only when the client ack is -1; in other words, it is 0 as long as ack is 1 or 0. | This value generally ranges between 0 and 200 ms. A value of 0–500 ms is normal when the data volume is high. No action is required unless this value stays above 500 ms. This value for a multi-AZ instance is greater than that for a single-AZ instance when ack is -1. |
+| ack wait duration | This value indicates the amount of time a production request waits for data to be synced. It is greater than 0 only when the client ack is -1; in other words, it is 0 as long as ack is 1 or 0. | This value generally ranges between 0 and 200 ms. A value of 0–500 ms is normal when the data volume is high. No action is required unless this value stays above 500 ms. This value for a multi-AZ instance is greater than that for a single-AZ instance when ack is -1. For more information, please see [Multi-AZ Deployment](https://intl.cloud.tencent.com/document/product/597/40243). |
 | Delayed response duration | This value indicates the amount of time it takes the system to delay returning a packet to a production request. This value will always be 0 as long as the traffic of the instance does not exceed the purchased traffic, and it will be greater than 0 if the traffic is throttled. | This value will be 0 as long as the instance does not exceed the limit. If the limit is exceeded, there will be a delay of 0–5 minutes proportional to the excess; in other words, the maximum value is 5 minutes. |
 | Response queue duration | This value indicates the amount of time a production request waits in the response queue. It means that the request packet waits to be sent to the client. | This value generally ranges between 0 and 50 ms. A value of 0–200 ms is normal when the data volume is high. No action is required unless this value stays above 200 ms. |
 
 ### Consumption monitoring
 
-| Monitoring Metric     |  Description  | Normal Range |
+| Monitoring Metric     | Description                                                     | Normal Range                                                   |
 | ------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Total consumption duration   | This value indicates the total duration of a consumption request, which is based on metrics such as the request queue duration and local processing duration. <br/>At each point in time, the total duration is not equal to the sum of the following five metrics, because each metric is averaged. | This value generally ranges between 500 and 1000 ms (the default `fetch.max.wait.ms` on the client is 500 ms). A value of 500–5000 ms is normal when the data volume is high. |
 | Request queue duration | This value indicates the amount of time a consumption request waits in the request queue. It means that the request packet waits for subsequent processing. | This value generally ranges between 0 and 50 ms. A value of 0–200 ms is normal when the data volume is high. No action is required unless this value stays above 200 ms. |
@@ -39,7 +39,7 @@ This document describes how to view advanced monitoring metrics in the console a
 
 ### Broker GC monitoring
 
-| Monitoring Metric | Description | Normal Range |
+| Monitoring Metric       | Description             | Normal Range                                           |
 | -------------- | -------------------- | ---------------------------------------------------- |
 | Young GC count | Young GC count of the broker | This value generally ranges between 0 and 300. If it stays above 300, the GC parameters need to be adjusted. |
 | Full GC count | Full GC count of the broker | This value is generally 0, and actions are required if it is greater than 0.         |
@@ -47,5 +47,5 @@ This document describes how to view advanced monitoring metrics in the console a
 ## Viewing Monitoring Data
 
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
-2. In the instance list, click the ID/name of an instance to go to the instance details page.
-3. At the top of the instance details page, Click **Monitor** > **Advanced Monitoring**, select a metric tab, and set the time range to view the monitoring data.
+2. In the instance list, click the **ID/Name** of the target instance to enter the instance details page.
+3. At the top of the instance details page, click **Monitoring** > **Advanced Monitoring**, select the metric to be viewed, and set the time range to view the monitoring data.

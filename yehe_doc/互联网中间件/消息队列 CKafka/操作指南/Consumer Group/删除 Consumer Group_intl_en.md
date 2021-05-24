@@ -10,4 +10,3 @@ In some cases, a consumer group may not consume for a long time before consuming
 2. Click **Instance List** on the left sidebar and click the **ID/Name** of the target instance to enter the instance details page.
 3. On the instance details page, click **Delete** in the **Operation** column of the consumer group to be deleted.
 
-
