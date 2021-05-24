@@ -33,7 +33,7 @@ iOS 화면 공유 시 다음과 같은 인코딩 매개변수를 권장합니다
 ## 애플리케이션 간 공유
 
 ### 예시 코드
-[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/)의 **Screen** 디렉터리에 애플리케이션 간 공유 예시 코드가 저장되어 있으며, 다음 파일이 포함되어 있습니다.
+[Github]의 **Screen** 디렉터리에 애플리케이션 간 공유 예시 코드가 저장되어 있으며, 다음 파일이 포함되어 있습니다.
 
 ```
 ├─ TRTCSimpleDemo              // TRTC 간소화 Demo
