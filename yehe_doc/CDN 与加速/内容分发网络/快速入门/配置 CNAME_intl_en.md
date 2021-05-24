@@ -5,9 +5,10 @@ After your domain name is connected to CDN, you will be given a CNAME domain nam
 
 This document provides CNAME configuration directions on Tencent Cloud and Alibaba Cloud:
 
-- [Settings on Tencent Cloud](https://intl.cloud.tencent.com/document/product/228/3121)
-- [Settings on Alibaba Cloud](https://intl.cloud.tencent.com/document/product/228/3121)
+- [Settings on Tencent Cloud](#m1)
+- [Settings on Alibaba Cloud](#m2)
 
+[](id:m1)
 ### Settings on Tencent Cloud
 
 > !Records of different types have different priorities. For the same host, some record types cannot exist at the same time. CNAME type conflicts with any other record types. You need to delete records of other types to add CNAME records.
@@ -42,7 +43,7 @@ For example, if you want to point CMCC users to `1.com` and CUCC users to `2.com
 >?For more information on split zone configurations, please see [Split Zone Description](https://docs.dnspod.cn/dns/5f4775898ae73e11c5b01afc/).
 
 
-
+[](id:m2)
 ### Settings on Alibaba Cloud
 
 If your DNS service provider is Alibaba Cloud, you can add a CNAME record as follows.
