@@ -24,9 +24,9 @@ Click the ![img](https://main.qcloudimg.com/raw/16b5654ecd298d7cadc63b243413a31d
 You can change the projects of running domain names.
 
 - Change the project of one domain name: on the right of the target domain name, click **More** -> **Modify Project**.
-![](https://main.qcloudimg.com/raw/d89f96a923701b82cbd4f3ae28867fba.png)
+
 - Batch change the projects of multiple domain names: tick target domain names and click **More Actions** -> **Edit Project** on the top. You can change the projects of up to 50 domain names at a time.
-![](https://main.qcloudimg.com/raw/6c5056953000373df04dd272183fca78.png)
+
 
 
 
@@ -71,7 +71,7 @@ If the domain names are in **Disabled** status, you can delete them. Once they a
 ### Batch changing configurations	
 
 The Batch Change Configuration feature allows you to change a configuration item of multiple domain names at the same time. For more information, please see [Batch Changing Configuration](https://intl.cloud.tencent.com/document/product/228/39911).	
-![img](https://main.qcloudimg.com/raw/351f7e271ea154f93254f0b04ff956a7.png)	
+
 
 
 
@@ -79,7 +79,6 @@ The Batch Change Configuration feature allows you to change a configuration item
 
 The Copy Configuration feature allows you to duplicate configurations of an existing acceleration domain name to one or multiple new acceleration domain names. For more information, please see [Copying Configuration](https://intl.cloud.tencent.com/document/product/228/38936).
 
-![img](https://main.qcloudimg.com/raw/35dc5ed70d37ccba508f1ce8f49794e7.png)
 
 
 
