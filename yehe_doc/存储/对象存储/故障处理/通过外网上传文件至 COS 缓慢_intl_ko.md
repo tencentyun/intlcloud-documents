@@ -49,18 +49,18 @@ coscmd probe -n 1 -s 20
 다음과 유사한 결과가 반환되며 평균 속도(Average), 최저 속도(Min), 최고 속도(Max) 결과를 얻을 수 있습니다.
 ![](https://main.qcloudimg.com/raw/2fcecb96df04acc6b0c32c120ccb3c39.png)
 5. 브라우저에서 [속도 테스트 사이트](https://www.speedtest.cn/)에 액세스하여 [4단계](#step04)와 함께 클라이언트의 네트워크 대역폭 점유율이 한계값에 달하는지 확인합니다.
- - 4단계 속도가 클라이언트 대역폭 속도보다 느린 경우 [온라인 고객센터](https://cloud.tencent.com/act/event/Online_service)로 문의하시기 바랍니다.
+ - 4단계 속도가 클라이언트 대역폭 속도보다 느린 경우 [온라인 고객센터](https://intl.cloud.tencent.com/support)로 문의하시기 바랍니다.
  - 4단계 속도가 클라이언트 대역폭 속도와 동일하고 ISP가 약정한 대역폭보다 낮은 경우 ISP 고객센터로 문의하시기 바랍니다.
  - 4단계 속도가 클라이언트 대역폭 속도와 동일하고 ISP가 약정한 대역폭에 일치하는 경우 [6단계](#step06)를 실행합니다.
 6. <span id="step06"></span>중국 내 클라이언트에서 해외 노드 bucket으로 액세스하는지 또는 해외 클라이언트에서 중국 내 노드 bucket으로 액세스하는지 확인합니다.
  - 예, COS의 글로벌 가속 기능 사용을 권장합니다. 자세한 내용은 [글로벌 가속 개요](https://intl.cloud.tencent.com/zh/document/product/436/33409)를 참조하십시오.
- - 아니요. [온라인 고객센터](https://cloud.tencent.com/act/event/Online_service)로 문의하시기 바랍니다.
+ - 아니요. [온라인 고객센터](https://intl.cloud.tencent.com/support)로 문의하시기 바랍니다.
 
 <span id="ModifyCustomDomainNameResolution"></span>
 ### 사용자 정의 도메인 리졸브 수정
 
 1. 사용자 정의 도메인 리졸브가 COS 도메인인지 확인합니다.
- - 예. [온라인 고객센터](https://cloud.tencent.com/act/event/Online_service)로 문의하시기 바랍니다.
+ - 예. [온라인 고객센터](https://intl.cloud.tencent.com/support)로 문의하시기 바랍니다.
  COS 주요 도메인은 다음과 같습니다.
 ```
 XXX.cos.ap-beijing.myqcloud.com(COS 기본 도메인)
