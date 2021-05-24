@@ -49,13 +49,13 @@ To avoid a database from triggering the lock status repeatedly, a locked instanc
 
 Data synchronization for disaster recovery instances in TencentDB for MySQL is currently free of charge.
 
-We will notify users when this feature is commercialized. 
+We will notify users when this feature is commercialized.
 
 ## Pay-as-You-Go
 
 The pay-as-you-go tiered pricing model is based on usage duration.
 
-| Usage Duration              | Tiered Price             |
+| Usage Duration | Tiered Pricing |
 |---------|---------|
 | 0 hours<duration≤96 hours   | Tier 1 rate applies |
 | 96 hours<duration≤360 hours | Tier 2 rate applies |
@@ -71,7 +71,7 @@ The pay-as-you-go tiered pricing model is based on usage duration.
 <thead>
 <tr>
 <th width="15%">Billable Item</th>
-<th>Description</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -80,32 +80,32 @@ The pay-as-you-go tiered pricing model is based on usage duration.
 </tr>
 <tr>
 <td>Storage capacity fees</td>
-<td>The disk capacity selected on the purchase page is pay-as-you-go and supports tiered pricing. For detailed prices, please see <a href="https://buy.cloud.tencent.com/price/cdb/overview" target="_blank">Product Pricing</a>.</td>
-</tr>
+<td>The disk capacity selected on the purchase page is pay-as-you-go. For detailed prices, please see <a href="https://buy.cloud.tencent.com/price/cdb/overview" target="_blank">Product Pricing</a>.<br>The storage capacity stores data files, shared tablespaces, error logs, redo logs, undo logs, data dictionaries, and binlogs that are necessary for TencentDB for MySQL.</tr>
 <tr>
 <td>Backup capacity fees</td>
-<td>TencentDB for MySQL offers a certain amount of backup capacity free of charge based on the region, which is equivalent to the sum of storage capacity of all high-availability instances (including source and disaster recovery instances) in your region. <br>For more information on the fees for excessive backup capacity, please see <a href="https://intl.cloud.tencent.com/document/product/236/32344" target="_blank">Backup Space Billing</a>.</td>
+<td>TencentDB for MySQL offers a certain amount of backup capacity free of charge based on the region, which is equivalent to the sum of storage capacity of all two-node and three-node instances (including source instances) in your region. <br>For more information on the fees for excessive backup capacity, please see <a href="https://intl.cloud.tencent.com/document/product/236/32344" target="_blank">Backup Space Billing</a>.</td>
 </tr>
 <tr>
 <td>Traffic fees</td>
-<td>This refers to the fees of public network traffic (free of charge for now).</td>
+<td>Public network traffic fees (currently free of charge).</td>
 </tr>
 </tbody></table>
+
 
 #### Pay-as-you-go price
 
 ##### High-availability edition
-<table >
+<table>
   <td rowspan=2>Region</td>
   <td colspan=3 >Memory (USD/GB/Hour)</td>
   <td rowspan=2 >Disk (USD/GB/Hour)</td>
  </tr>
- <tr >
+ <tr  >
   <td >Tier 1</td>
   <td>Tier 2</td>
   <td>Tier 3</td>
  </tr>
- <tr >
+ <tr  >
   <td>Guangzhou</td>
   <td class=xl65 align=right>0.0500</td>
   <td class=xl65 align=right>0.0400</td>
@@ -234,7 +234,7 @@ The pay-as-you-go tiered pricing model is based on usage duration.
  </tr>
 </table>
 
-##### Read-only replica
+##### Read-only instances
 
 <table>
   <td rowspan=2>Region</td>
@@ -411,6 +411,12 @@ You can check the usage of backup capacity on the **Database Backup** page in th
 
 #### Will Tencent Cloud charge for pay-as-you-go instances if they are idle?
 Yes. If you stop using pay-as-you-go resources, please terminate them as soon as possible to avoid further fees.
+
+#### What files are stored in the storage capacity?
+
+- Data files: the space which your data takes up, including created tables and indexes
+- System files (necessary for the database): shared tablespaces, error logs, redo logs, undo logs, and data dictionaries
+- Binlogs: binlogs record all DDL and DML statements (except SELECT and SHOW statements) and are used to replicate and restore database data. The more data changes, the more binlogs. To reduce the space binlogs take up, they can be [uploaded to COS](https://cloud.tencent.com/document/product/236/53513).
 
 ## Documentation
 - You can purchase TencentDB for MySQL instances through the console or API. For more information, please see [Purchase Methods](https://intl.cloud.tencent.com/document/product/236/5160).

@@ -80,17 +80,17 @@
 </tr>
 <tr>
 <td>存储空间费用</td>
-<td>在购买页选择的硬盘大小的费用，支持按量计费阶梯价，价格请参见 <a href="https://buy.cloud.tencent.com/price/cdb/overview" target="_blank">产品定价</a>。</td>
-</tr>
+<td>在购买页选择的硬盘大小的费用，支持按量计费价，价格请参见 <a href="https://buy.cloud.tencent.com/price/cdb/overview" target="_blank">产品定价</a>。<br>存储空间用于存储云数据库 MySQL 运行所必须的数据文件、共享表空间、错误日志文件、REDO LOG、UNDO LOG、数据字典以及 binlog 等。</tr>
 <tr>
 <td>备份空间费用</td>
-<td>云数据库 MySQL 会按地域赠送一定额度的免费备份空间，免费备份空间大小为您在对应地域下所有高可用实例 （包括主实例、灾备实例）的存储空间之和。<br>超出免费备份空间的费用介绍请参见 <a href="https://intl.cloud.tencent.com/document/product/236/32344" target="_blank">备份空间收费说明</a>。</td>
+<td>云数据库 MySQL 会按地域赠送一定额度的免费备份空间，免费备份空间大小为您在对应地域下所有双节点、三节点实例 （包括主实例）的存储空间之和。<br>超出免费备份空间的费用介绍请参见 <a href="https://intl.cloud.tencent.com/document/product/236/32344" target="_blank">备份空间收费说明</a>。</td>
 </tr>
 <tr>
 <td>流量费用</td>
 <td>公网流量费用，目前免费。</td>
 </tr>
 </tbody></table>
+
 
 #### 按量计费价格
 
@@ -411,6 +411,12 @@
 
 #### 按量计费实例不使用的情况下，收费吗？
 按量计费实例会一直扣费，当实例不再使用时请及时销毁，以免继续扣费。
+
+#### 存储空间会存储哪些文件？
+
+- 数据文件：数据所占用的空间，包括创建的表、索引等。
+- 系统文件：包括共享表空间、错误日志文件、REDO LOG、UNDO LOG，以及数据字典，是系统必需的。
+- binlog 文件：记录了所有的 DDL 和 DML 语句（除了数据查询语句 select、show 等），binlog 的主要目的是复制和恢复，变更的数据越多，产生的 binlog 越多。生成的 [binlog 文件](https://cloud.tencent.com/document/product/236/53513) 会上传到对象存储 COS，减少本地 binlog 占用空间。
 
 ## 相关文档
 - 云数据库 MySQL 支持通过控制台和 API 购买实例，请参见 [购买方式](https://intl.cloud.tencent.com/document/product/236/5160)。
