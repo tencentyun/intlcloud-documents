@@ -1,73 +1,87 @@
-## Overview
+## Use Cases
 
-After a domain name is connected to Tencent Cloud CDN, if you need to view, enable, or disable domain names,
-you can log in to the [CDN console](https://console.cloud.tencent.com/cdn), and then click **Domain Management** on the left sidebar for these operations.
+After you connect a domain name to Tencent Cloud CDN, you can log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar to view the acceleration domain name list.
 
-CDN supports domain name list page customization for you to display multiple basic configurations and adjust their order as needed. In addition, you can batch enable or disable the acceleration service for domain names, improving business management efficiency.
+You can adjust the displayed columns, batch enable/disable the acceleration service for domain names and batch change domain name projects, tags, and configurations.
 
-## List Operation Guide
+## Operations Guide
 
-### Customizing the list fields
+### Adjusting displayed columns
 
-Click the <img src ="https://main.qcloudimg.com/raw/c8528c5a51cbea35ecb7e0414b51267e.png" style ="margin:0" data-nonescope="true"> icon on the right of the search bar to open the list field option list:
-![](https://main.qcloudimg.com/raw/790ae4b6c47b8b5ccd72e517701d34db.png)
-You can choose to display or hide fields and adjust their display order:
-![](https://main.qcloudimg.com/raw/1d123a3948ee2450204fa8cc78a11a36.png)
+Click the ![img](https://main.qcloudimg.com/raw/c8528c5a51cbea35ecb7e0414b51267e.png) icon on the right of the search bar to see all the available columns. Choose the columns you want to display, cancel the ones you want to hide an adjust their order:
+![img](https://main.qcloudimg.com/raw/790ae4b6c47b8b5ccd72e517701d34db.png)
 
-You can customize the following fields:
 
-+ Domain: required and cannot be hidden.
-+ Service type: static acceleration, download acceleration, or streaming VOD acceleration.
-+ Status: domain name service status (enabled, disabled, or deploying).
-+ CNAME: CNAME record of the domain name.
-+ Origin type: external origin server or COS origin server.
-+ Service region: Chinese mainland, outside the Chinese mainland, or global.
-+ Project: name of the project to which the domain name belongs.
-+ Primary origin configuration: primary origin server address.
-+ Secondary origin configuration: secondary origin server address.
-+ HTTPS configuration: configured or not configured.
-+ Origin-pull protocol: HTTP, HTTPS, or follow protocol.
-+ Origin domain: origin-pull domain name settings.
-+ Ignore query string: enabled or disabled.
-+ Tag: custom key value for resource classification and management.
 
 ### Exporting the configuration list
 
-Click the <img src ="https://main.qcloudimg.com/raw/16b5654ecd298d7cadc63b243413a31d.png" style ="margin:0" data-nonescope="true"> icon on the right of the search bar to export an Excel file of the domain name list content. You can select up to 1000 domain names to export each time.
-![](https://main.qcloudimg.com/raw/8065bb602460bf3fcf9a8dbec9c3bd67.png)
+Click the ![img](https://main.qcloudimg.com/raw/16b5654ecd298d7cadc63b243413a31d.png) icon on the right of the search bar to export the domain name list details in an Excel file. You can select up to 1000 domain names to export each time.
 
-## Domain Name Operation Guide
 
-On the CDN console, you can enable, disable, and delete the acceleration service as well as modify the projects for acceleration domain names.
 
-<span ID="close"></span>
+### Changing projects
+
+You can change the projects of running domain names.
+
+- Change the project of one domain name: on the right of the target domain name, click **More** -> **Modify Project**.
+![](https://main.qcloudimg.com/raw/d89f96a923701b82cbd4f3ae28867fba.png)
+- Batch change the projects of multiple domain names: tick target domain names and click **More Actions** -> **Edit Project** on the top. You can change the projects of up to 50 domain names at a time.
+![](https://main.qcloudimg.com/raw/6c5056953000373df04dd272183fca78.png)
+
+
+
+### Editing tags
+
+- Change the tag of one domain name: click the target domain name to enter its configuration page, open the **Basic Configuration** tab, click the pencil icon on the right of **Tag** in the **Basic Information** section.
+- Batch change the tags of multiple domain names: tick target domain names and click **More Actions** -> **Edit Tag** on the top. You can change the tags of up to 50 domain names at a time. The changes do not take effect immediately, please refresh to view the new tags.	
+
+
 
 ### Disabling the acceleration service
 
-After the acceleration service is disabled for a domain name, its configurations will be deactivated on CDN cache nodes across the entire network. If access requests to the domain name are still redirected to CDN nodes, error 404 will be returned. Therefore, before disabling a domain name, make sure that its CNAME record is resolved to a non-CDN CNAME address.
+You can disable the acceleration service for normally-running domain names. After the acceleration service is disabled for a domain name, its configurations will be deactivated on CDN cache nodes across the entire network. If access requests to the domain name are still redirected to CDN nodes, a 404 error will be returned. Therefore, before disabling a domain name, make sure that its CNAME record is resolved to a non-CDN CNAME address.
 
-> !
-> - You can only disable enabled acceleration domain names, the ones in deployment cannot be disabled.
-> - Configurations of disabled domain names will be retained and take effect when they are enabled.
-> - Consumption will no longer be generated after the acceleration service is completely disabled.
+> !Consumption will no longer be generated after the acceleration service is completely disabled.
 
-If the domain names are in **Enabled** status, you can disable them by clicking **Disable** or ticking multiple ones to disable them by the batch operation in **More Actions** on the top.
+- Disable the acceleration service for one domain name: on the right of the target domain name, click **More** -> **Disable**.
+- Batch disable the acceleration service for multiple domain names: tick enabled domain names and click **More Actions** -> **Disable Acceleration** on the top.
 
-![](https://main.qcloudimg.com/raw/6536bf6c02870b792031a2c65645c31a.png)
+
 
 ### Enabling the acceleration service
 
-If a domain name is in **Disabled** status, you can enable the acceleration service to distribute its configurations to cache nodes across the entire network again.
+You can enable the acceleration service for disabled domain names to distribute their configurations to cache nodes across the entire network again.
 
-If the domain names are in **Disabled** status, you can enable them by clicking **Enable** or ticking multiple ones to enable them by the batch operation in **More Actions** on the top.
+- Enable the acceleration service for one domain name: on the right of a disabled domain name, click **More** -> **Enable**.
+- Batch enable the acceleration service for multiple domain names: tick disabled domain names and click **More Actions** -> **Enable Acceleration** on the top.
 
 > !If an enabled domain name has no operations or consumption for 3 months, it will be considered inactive and CDN will automatically disable its acceleration service.
 
-![](https://main.qcloudimg.com/raw/fd6d029c82e516965ea6e093ef41c9f5.png)
 
 
-<span ID ="del"></span>
-### Deleting an acceleration domain name
+### Deleting acceleration domain names
 
-If the domain names are in **Disabled** status, you can delete them by clicking **More** -> **Delete**. Once they are deleted, their configurations will be cleared and cannot be restored, and their statistical data can no longer be viewed.
-![](https://main.qcloudimg.com/raw/bc58fc9c225efb79a0ec1454b6748e1c.png)
+If the domain names are in **Disabled** status, you can delete them. Once they are deleted, their configurations will be cleared and cannot be restored, and their statistical data can no longer be viewed. Please operate with caution.
+
+- Delete one domain name: on the right of the target domain name, click **More** -> **Delete**.
+- Batch delete multiple domain names: tick disabled domain names and click **More Actions** -> **Delete** on the top.
+
+
+
+### Batch changing configurations	
+
+The Batch Change Configuration feature allows you to change a configuration item of multiple domain names at the same time. For more information, please see [Batch Changing Configuration](https://intl.cloud.tencent.com/document/product/228/39911).	
+![img](https://main.qcloudimg.com/raw/351f7e271ea154f93254f0b04ff956a7.png)	
+
+
+
+### Copying configurations
+
+The Copy Configuration feature allows you to duplicate configurations of an existing acceleration domain name to one or multiple new acceleration domain names. For more information, please see [Copying Configuration](https://intl.cloud.tencent.com/document/product/228/38936).
+
+![img](https://main.qcloudimg.com/raw/35dc5ed70d37ccba508f1ce8f49794e7.png)
+
+
+
+
+
