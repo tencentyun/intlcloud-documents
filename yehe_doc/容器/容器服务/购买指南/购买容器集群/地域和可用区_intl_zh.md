@@ -145,7 +145,7 @@
 			<td>东京一区（东京节点可用区覆盖亚太东北地区）<br>ap-tokyo-1</td>
 		</tr>
        <tr>
-			<td>东京二区（孟买节点可用于覆盖亚太南部地区）<br>ap-tokyo-2</td>
+			<td>东京二区（东京节点可用区覆盖亚太东北地区）<br>ap-tokyo-2</td>
 		</tr>
 			<td  rowspan="2">亚太南部（孟买）<br>ap-mumbai</td>
 			<td>孟买一区（孟买节点可用于覆盖亚太南部地区）<br>ap-mumbai-1</td>
