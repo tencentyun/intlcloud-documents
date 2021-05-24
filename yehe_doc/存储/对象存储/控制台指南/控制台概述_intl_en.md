@@ -1,6 +1,6 @@
 ## Overview
 
-The COS console is an easy-to-use tool. It enables you to directly perform basic operations such as create, upload, and delete objects, and advanced operations such as data backup and batch operation, freeing you from the hassles associated with code writing and program running. The following table lists the features of the COS console as well as their related documents:
+The COS console is an easy-to-use tool. It allows you to directly create buckets, upload/share/back up data, and perform batch operations, freeing you from the hassles associated with code writing and program running. The following table lists the features of the COS console as well as their related documents:
 
 >? For more information about the features, please see [Feature Overview](https://intl.cloud.tencent.com/document/product/436/8186).
 
@@ -19,14 +19,12 @@ The COS console is an easy-to-use tool. It enables you to directly perform basic
 | Data Origin-pull     | [Setting Origin-Pull](https://intl.cloud.tencent.com/document/product/436/31508) |
 | Batch Jobs | [Batch Operation](https://intl.cloud.tencent.com/document/product/436/32956)  |
 | Data Extraction     | [Data Extraction](https://intl.cloud.tencent.com/document/product/436/32538) |
-| Versioning     | [Setting Versioning](https://intl.cloud.tencent.com/document/product/436/19881)   |
-| Bucket Replication | [Setting Cross-Bucket Replication](https://intl.cloud.tencent.com/document/product/436/19235)  |
+| Cross-Region Disaster Recovery | <li>[Setting Versioning](https://intl.cloud.tencent.com/document/product/436/19881) <br><li>[Setting Cross-Bucket Replication](https://intl.cloud.tencent.com/document/product/436/19235) |
 | Encryption         | <li>[Setting Object Encryption](https://intl.cloud.tencent.com/document/product/436/30929) <br><li>[Setting Bucket Encryption](https://intl.cloud.tencent.com/document/product/436/33455) |
 | Hotlink Protection       | [Setting Hotlink Protection](https://intl.cloud.tencent.com/document/product/436/13319) |
 | Cross-Origin Access     | [Setting Cross-Origin Access](https://intl.cloud.tencent.com/document/product/436/13318)  |
 | Bucket Policy   | [Adding Bucket Policies](https://intl.cloud.tencent.com/document/product/436/30927)   |
 | Access Control     | <li>[Setting Object Access Permission](https://intl.cloud.tencent.com/document/product/436/13327)<br><li>[Setting Bucket Access Permission](https://intl.cloud.tencent.com/document/product/436/13315)<br><li>[Accessing Bucket List Using a Sub-account](https://intl.cloud.tencent.com/document/product/436/17061)          |
 | Endpoints and Access Acceleration | <li>[Domain Name Management Overview](https://intl.cloud.tencent.com/document/product/436/18424)<br><li>[Enabling Default CDN Acceleration Domain Names](https://intl.cloud.tencent.com/document/product/436/31505)<br><li>[Enabling Custom Accelerated Domain Name](https://intl.cloud.tencent.com/document/product/436/31506)<br><li>[Enabling Custom Endpoints](https://intl.cloud.tencent.com/document/product/436/31507)<br><li>[Granting the Sub-account Accelerated Domain Name Configuration Permission](https://intl.cloud.tencent.com/document/product/436/31712)<br><li>[Enabling Global Acceleration](https://intl.cloud.tencent.com/document/product/436/33406)  |
-| Data Processing | Image processing <li>[Basic Image Processing](https://intl.cloud.tencent.com/document/product/436/36569) <br>Function service <br><li>[File Decompression](https://intl.cloud.tencent.com/document/product/436/35663)<br><li>[CDN Cache Purging](https://intl.cloud.tencent.com/document/product/436/37273)<br><li>[Setting Cloud Database Backup](https://intl.cloud.tencent.com/document/product/436/39629) |
-
-
+| Data Processing | Image processing: <br><li>[Basic Image Processing](https://intl.cloud.tencent.com/document/product/436/36569) <br>Function service: <br><li>[File Decompression](https://intl.cloud.tencent.com/document/product/436/35663)<br><li>[CDN Cache Purging](https://intl.cloud.tencent.com/document/product/436/37273)<li>[Setting Cloud Database Backup](https://intl.cloud.tencent.com/document/product/436/39629) |
+| Application Integration | <li>[CKafka Message Backup](https://cloud.tencent.com/document/product/436/54233)<br><li>[Log Cleansing](https://cloud.tencent.com/document/product/436/54234) |
