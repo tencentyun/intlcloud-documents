@@ -34,7 +34,7 @@
 ## 설정 예시:
 
 가속 도메인이 `www.test.com`인 경우 **Origin-pull URL 재작성 설정**은 다음과 같습니다.
-![](https://main.qcloudimg.com/raw/4797e184e62c1abd5ed3cf1d1091f3fb.png)
+![](https://main.qcloudimg.com/raw/c255f4e4643a15e2e47a29a608a9fd01.png)
 
 위와 같이 설정하면 실제 Origin-pull 상황은 다음과 같습니다.
 - `www.test.com/images/1.jpg` 원본 요청 시 규칙 1과 3이 히트되면 하단 우선순위가 가장 높으므로 실제 원본 요청은 `www.test.com/index.html`이 됩니다.
