@@ -1,6 +1,6 @@
 文件存储（Cloud File Storage，CFS）的计费方式分为按量计费（后付费）和资源包（预付费）两种，本文主要介绍按量计费的计费详情。按量计费方式适用于文件存储提供服务的所有地域。CFS 当前根据用户的存储容量计量项用量进行计费，对用户账户按小时进行扣费结算。
 
-若您对用量具有详细的评估或者有额外的吞吐需求，我们推荐您使用 [资源包（预付费）](https://cloud.tencent.com/document/product/582/47379) 的方式，这样能享受更多的优惠，您可以到 [资源包购买页](https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fbuy.cloud.tencent.com%2Fcfs_package%3Frid%3D1%26zoneId%3D100003%26StorageType%3DHP%26FileSystemId%3Dcfs-3bd20beed) 购买所需的资源包。
+若您对用量具有详细的评估或者有额外的吞吐需求，我们推荐您使用 [资源包（预付费）](https://intl.cloud.tencent.com/document/product/582/40330) 的方式，这样能享受更多的优惠，您可以到 [资源包购买页](https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fbuy.cloud.tencent.com%2Fcfs_package%3Frid%3D1%26zoneId%3D100003%26StorageType%3DHP%26FileSystemId%3Dcfs-3bd20beed) 购买所需的资源包。
 
 ## 计费说明
 
