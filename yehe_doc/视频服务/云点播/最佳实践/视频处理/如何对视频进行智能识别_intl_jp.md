@@ -3,6 +3,7 @@ UGC（ユーザー作成コンテンツ）およびPGC（プロフェッショ�
 ## 不適切なビデオコンテンツ問題の発生
 
 UGCまたはPGCのビデオプラットフォームでは、コンテンツプロバイダ、コンテンツ消費者、VODと以下の方法で対話します（手順1～3は [クライアントからのアップロード](https://intl.cloud.tencent.com/document/product/266/33921)をご参照ください）。
+<img src="https://main.qcloudimg.com/raw/f0af99e033b9dbb7f525e1b15bd679e2.png" width="400">
 1. ビデオAppバックエンドがコンテンツプロバイダを認証し、認証に通った後 [クライアントからのアップロード署名](https://intl.cloud.tencent.com/document/product/266/33922)を配布します。
 2. コンテンツプロバイダは共有するコンテンツをVODにアップロードします。
 3. VODは、アップロードしたFileIdおよび再生URLなどの [関連情報](https://intl.cloud.tencent.com/document/product/266/33950) をAppバックエンドに通知します。
@@ -18,7 +19,7 @@ VODは[ビデオコンテンツのインテリジェント認識](https://intl.c
 * インテリジェント認識の結果が｢review（再点検の提案）｣のときは、Appバックエンドは手動で再点検を行い、ビデオを公開するか選択します。
 
 VODのビデオコンテンツのインテリジェント認識を有効にした後、Appバックエンドは不適切なビデオを効果的に識別してフィルターにかけます。以下のフローを使用することを推奨します｡
-
+<img src="https://main.qcloudimg.com/raw/99544692ba8d62874a0f718e805f2d57.png" width="550">
 1. Appバックエンドがコンテンツプロバイダを認証し、認証に通った後 [クライアントからのアップロード署名](https://intl.cloud.tencent.com/document/product/266/33922)ビデオを配布します。
 2. コンテンツプロバイダは共有するコンテンツをVODにアップロードします。
 3. VODは、アップロードしたFileIdおよび再生URLなどの [関連情報](https://intl.cloud.tencent.com/document/product/266/33950) をAppバックエンドに通知します。
