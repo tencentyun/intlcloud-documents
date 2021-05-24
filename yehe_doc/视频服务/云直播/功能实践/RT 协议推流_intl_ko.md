@@ -1,0 +1,50 @@
+ts over SRT 푸시 스트리밍은 **SRT 프로토콜**을 통해 멀티미디어 데이터가 포함된 ts 스트림을 직접 전송하고 다운스트림에 기존 라이브 방송 시스템을 적용하였습니다. TS over SRT은 Haivision 하드웨어 및 OBS의 푸시 스트리밍 포맷의 표준으로 사용되었습니다.
+이 모드에서 SRT 서버는 부하(TS)를 분석하여 RTMP 프로토콜로 캡슐화한 뒤 백엔드의 RTMP 서버로 푸시합니다.
+![](https://main.qcloudimg.com/raw/5ceb4e1d0d3a2e1f07bb601d17d04eb5.png)
+
+>! 업스트림에 SRT 푸시 스트리밍 프로토콜을 사용해도 비용이 추가되지 않습니다.
+
+## 업스트림 랙 발생률 비교
+다음 품질 대비도표에서 볼 수 있듯이, 푸시 스트리밍에 SRT을 적용한 이후 랙 발생률이 눈에 띄게 감소하였습니다.
+![](https://main.qcloudimg.com/raw/8c55654a4d4050092f98a88b21949e4f.png)
+
+
+## 푸시 스트리밍 패킷 손실률 비교
+SRT 푸시 스트리밍 적용 후, 업스트림 품질이 최적화됨에 따라 다운스트림도 더욱 원활해졌습니다. 다음은 도우위 App에서의 실제 효과를 비교한 것입니다.
+- Android 플랫폼에서의 SRT 푸시 스트리밍 성능 테스트 데이터(테스트 플랫폼: MI9):
+![](https://main.qcloudimg.com/raw/91d7a0a3ba846ce2cb92415e4b096b16.png)
+- iOS 플랫폼에서의 SRT 푸시 스트리밍 성능 테스트 데이터(테스트 플랫폼: iphone XR):
+![](https://main.qcloudimg.com/raw/5104e085e29b7bea3b955407086ed342.png)
+
+
+
+## 패킷 손실 저항 비교
+전송 품질 지표의 경우, QUIC과 비교하였습니다. SRT는 더욱 정확하고 빠른 재송신 제어와 라이브 방송 스트림 미디어 시나리오에 대한 Pacing 매커니즘을 바탕으로, 동일한 패킷 손실률에서의 응용 레이어 패킷 손실을 줄입니다. 패킷 손실률이 50%일 때, SRT는 QUIC 보다 안정적인 전송이 가능합니다.
+
+QUIC의 업스트림과 비교했을 때, 푸시 스트리밍 단의 동일 링크 동일한 라이브 방송 파일에서 패킷 손실률이 5분마다 5%씩 증가하며, 다음 이미지를 통해 SRT의 푸시 스트리밍 프레임 레이트가 더욱 안정적임을 알 수 있습니다.
+![](https://main.qcloudimg.com/raw/638357e7bd47ae34b08423255f354922.png)
+
+## 라이브 방송 푸시 스트리밍
+### 액세스 방법
+라이브 방송 푸시 스트리밍은 SRT 프로토콜을 지원하며, 푸시 스트리밍을 위해 **9000포트**를 사용해야 합니다. 푸시 스트리밍 주소는 CSS 콘솔의 【[주소 생성기](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)】중, [푸시 스트리밍 주소 생성](https://intl.cloud.tencent.com/document/product/267/31084)에서 다음 규칙에 따라 조합합니다.
+
+Tencent Cloud SRT 푸시 스트리밍 URL:
+```
+srt://${rtmp-push-domain}:9000?streamid=#!::h=${rtmp-push-domain},r=${app}/${stream},txSecret=${txSecret},txTime=${txTime}
+```
+
+>!  `${App}`은 내용이 변경될 수 있음을 나타내며, 실제 입력 시`$`, `{`, `}` 이 3가지 부호는 생략합니다.
+
+### 구현 방법
+SRT 서버는 TS를 RTMP로 캡슐화하고 `${rtmp-push-domain}도메인`으로 푸시합니다.
+OBS 푸시 스트림 코드 입력 예시:
+![](https://main.qcloudimg.com/raw/d0257df71d0905036eeb0779bcbd74f9.png)
+
+>! SRT 프로토콜을 사용해 푸시 스트리밍 해야 하는 경우, OBS 버전은 25.0 이상이어야 합니다.
+
+
+## 라이브 방송 풀 스트리밍
+일반적인 풀 스트리밍 프로세스를 따릅니다. 자세한 내용은 [CSS 재생](https://intl.cloud.tencent.com/document/product/267/31559)을 참조하십시오.
+
+
+
