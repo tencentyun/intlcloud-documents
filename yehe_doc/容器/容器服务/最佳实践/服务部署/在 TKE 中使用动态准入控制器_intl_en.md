@@ -49,17 +49,25 @@ L = xi'an
 O = default
 OU = websever
 CN = webserver.default.svc
+
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = webserver.default.svc
+
 [ v3_ext ]
 authorityKeyIdentifier=keyid,issuer:always
 basicConstraints=CA:FALSE
 keyUsage=keyEncipherment,dataEncipherment
 extendedKeyUsage=serverAuth,clientAuth
+subjectAltName=@alt_names
 ```
 5. Run the following command to generate a CSR based on the configuration file `csr.conf`.
 ```bash
 openssl req -new -key server.key -out server.csr -config csr.conf
 ```
 6. Run the following commands to use `ca.key`, `ca.crt`, and `server.csr` to issue the generated server certificate (x509 signature).
+
 ```bash
 openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key \
  -CAcreateserial -out server.crt -days 10000 \
@@ -91,13 +99,13 @@ cat <<EOF | kubectl apply -f -
 apiVersion: certificates.k8s.io/v1beta1
 kind: CertificateSigningRequest
 metadata:
-  name: ${USERNAME}
+   name: ${USERNAME}
 spec:
-  request: $(cat ${USERNAME}.csr | base64 | tr -d '\n')
-  usages:
-  - digital signature
-  - key encipherment
-  - server auth
+   request: $(cat ${USERNAME}.csr | base64 | tr -d '\n')
+   usages:
+   - digital signature
+   - key encipherment
+   - server auth
 EOF
 # Approve the certificate as trustworthy
 kubectl certificate approve ${USERNAME}
