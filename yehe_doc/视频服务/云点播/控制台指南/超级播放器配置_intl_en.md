@@ -22,7 +22,7 @@ Log in to the console, select **System Settings** > **[Superplayer Configuration
 >?Your player can play back only the videos transcoded through the selected adaptive bitrate streaming template. For example, if the adaptive bitrate streaming template `10` is selected in the playback configuration, then your player can play back only videos transcoded through this template.
 4. Select a preset or previously created custom image sprite template in **Image sprite template for thumbnail preview**.
 >?Only the image sprites captured through the selected template can be used for thumbnail preview in your player. For example, if the `SpriteScreenShot10` template is selected in the playback configuration, only image sprites captured through the `SpriteScreenShot10` template can be used for preview in your player.
-5. **Substream Names** display the definitions as the names of substreams for playback. The default values will be used if you don't change them. You can also customize the video short side lengths and corresponding definitions.
+5. **Substream Names** displays the definitions as the names of substreams for playback. The default values will be used if you don't change them. You can also customize the video short side lengths and corresponding definitions.
 6. Click **Confirm** to complete the creation.
 
 After the configuration is successfully created, it will be displayed in the superplayer configuration list. You can also preview the corresponding configuration as instructed in [Superplayer Preview](https://intl.cloud.tencent.com/document/product/266/33896).
