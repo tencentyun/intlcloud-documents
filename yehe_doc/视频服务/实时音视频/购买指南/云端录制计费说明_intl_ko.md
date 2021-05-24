@@ -75,7 +75,7 @@ TRTC 클라우드 녹화 서비스의 정가는 다음과 같습니다.
 
 ## 관련 문서
 - [과금 개요](https://intl.cloud.tencent.com/document/product/647/34610)
-- [기본 서비스 요금](https://intl.cloud.tencent.com/document/product/647/34613)
+- [기본 서비스 요금](https://intl.cloud.tencent.com/document/product/647/34610)
 - [부가 서비스 요금](https://intl.cloud.tencent.com/document/product/647/34610)
 - [클라우드 녹화 과금 설명](https://intl.cloud.tencent.com/document/product/647/38385)
 - [클라우드 혼합 스트림 트랜스 코딩 과금 설명](https://intl.cloud.tencent.com/document/product/647/38929)
