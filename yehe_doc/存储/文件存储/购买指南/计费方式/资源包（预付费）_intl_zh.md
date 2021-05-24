@@ -62,7 +62,7 @@
       <td>200GB</td>
       <td>48</td>
       <td>249.6</td>
-      <td>468元</td>
+      <td>468</td>
    </tr>
   <tr>
       <td>500GB</td>
@@ -104,7 +104,7 @@
    </tr>
    <tr>
       <td>200GB</td>
-      <td>10元</td>
+      <td>10</td>
       <td>52</td>
       <td>90</td>
    </tr>
