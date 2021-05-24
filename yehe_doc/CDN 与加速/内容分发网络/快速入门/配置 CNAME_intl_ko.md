@@ -5,8 +5,10 @@
 
 본 문서는 Tencent Cloud 및 Alibaba Cloud의 CNAME 설정 방법을 설명합니다. 도메인 서비스 제공 업체에 따라 설정하십시오.
 
-- [Tencent Cloud 설정 방법](https://intl.cloud.tencent.com/document/product/228/3121)
-- [Alibaba Cloud 설정 방법](https://intl.cloud.tencent.com/document/product/228/3121)
+- [Tencent Cloud 설정 방법](#m1)
+- [Alibaba Cloud 설정 방법](#m2)
+
+[](id:m1)
 
 ### Tencent Cloud 설정 방법
 
@@ -42,7 +44,7 @@ China Mobile 사용자는 `1.com`으로, China Unicom 사용자는 `2.com`으로
 >?회선 설정에 대한 자세한 설명은 [리졸브 회선 설명](https://docs.dnspod.cn/dns/5f4775898ae73e11c5b01afc/)을 참조하십시오.
 
 
-
+[](id:m2)
 ### Alibaba Cloud 설정 방법
 
 DNS 서비스 제공 업체가 Alibaba Cloud인 경우 다음 순서에 따라 CNAME 기록을 추가할 수 있습니다.
