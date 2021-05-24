@@ -24,9 +24,9 @@ Tencent Cloud CDN은 도메인 리스트 사용자 정의 변경, 도메인 가�
 정상 실행되는 도메인에 대해 서브 프로젝트를 변경할 수 있습니다.
 
 - 단일 도메인 작업: 도메인 오른쪽 [더보기]를 클릭하여 도메인 서브 프로젝트를 변경합니다.
-![](https://main.qcloudimg.com/raw/d89f96a923701b82cbd4f3ae28867fba.png)
+
 - 일괄 작업: 여러 도메인을 선택한 후 상단의 [더 많은 조작]에 있는 '프로젝트 편집'을 클릭합니다. 참고: 한 번에 최대 50개의 도메인을 작업할 수 있습니다.
-![](https://main.qcloudimg.com/raw/6c5056953000373df04dd272183fca78.png)
+
 
 
 
@@ -71,7 +71,7 @@ Tencent Cloud CDN은 도메인 리스트 사용자 정의 변경, 도메인 가�
 ### 일괄 변경 설정	
 
 일괄 변경 설정 기능으로 여러 가속 도메인의 설정을 동시에 변경할 수 있습니다. 여러 도메인의 특정 항목을 변경해야 할 때, 도메인을 일일이 설정할 필요 없이 일괄 변경이 가능해 효율적으로 작업할 수 있습니다. 자세한 설명은 [일괄 변경 설정](https://intl.cloud.tencent.com/document/product/228/39911)을 참조하십시오.	
-![img](https://main.qcloudimg.com/raw/351f7e271ea154f93254f0b04ff956a7.png)	
+
 
 
 
@@ -79,7 +79,6 @@ Tencent Cloud CDN은 도메인 리스트 사용자 정의 변경, 도메인 가�
 
 설정 복사 기능으로 기존에 저장된 가속 도메인 설정을 하나 이상의 새로 추가된 가속 도메인에 복사할 수 있습니다. 필요에 따라 기존에 저장된 특정 도메인을 선택하여 해당 도메인 설정을 새로 추가한 도메인에 복사할 수 있습니다. 자세한 설명은 [설정 복사](https://intl.cloud.tencent.com/document/product/228/38936)를 참조하십시오.
 
-![img](https://main.qcloudimg.com/raw/35dc5ed70d37ccba508f1ce8f49794e7.png)
 
 
 
