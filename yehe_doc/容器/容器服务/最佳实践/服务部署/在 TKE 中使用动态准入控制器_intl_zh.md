@@ -49,17 +49,25 @@ L = xi'an
 O = default
 OU = websever
 CN = webserver.default.svc
+
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = webserver.default.svc
+
 [ v3_ext ]
 authorityKeyIdentifier=keyid,issuer:always
 basicConstraints=CA:FALSE
 keyUsage=keyEncipherment,dataEncipherment
 extendedKeyUsage=serverAuth,clientAuth
+subjectAltName=@alt_names
 ```
 5. 执行以下命令，基于配置文件 `csr.conf` 生成证书签名请求。
 ```bash
 openssl req -new -key server.key -out server.csr -config csr.conf
 ```
 6. 执行以下命令，使用 `ca.key`、`ca.crt` 和 `server.csr` 颁发生成服务器证书（x509签名）。
+
 ```bash
 openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key \
  -CAcreateserial -out server.crt -days 10000 \
@@ -91,13 +99,13 @@ cat <<EOF | kubectl apply -f -
 apiVersion: certificates.k8s.io/v1beta1
 kind: CertificateSigningRequest
 metadata:
-  name: ${USERNAME}
+   name: ${USERNAME}
 spec:
-  request: $(cat ${USERNAME}.csr | base64 | tr -d '\n')
-  usages:
-  - digital signature
-  - key encipherment
-  - server auth
+   request: $(cat ${USERNAME}.csr | base64 | tr -d '\n')
+   usages:
+   - digital signature
+   - key encipherment
+   - server auth
 EOF
 # 证书审批允许信任
 kubectl certificate approve ${USERNAME}
