@@ -141,10 +141,13 @@ Tencent Cloud services in the same VPC are interconnected through the private ne
 			<td>Seoul Zone 2 (Seoul nodes can cover Northeast Asia)<br>ap-seoul-2</td>
 		</tr>
 		<tr>
-			<td >Northeast Asia (Tokyo)<br>ap-tokyo</td>
+			<td rowspan="2" >Northeast Asia (Tokyo)<br>ap-tokyo</td>
 			<td>Tokyo Zone 1 (Tokyo nodes can cover Northeast Asia)<br>ap-tokyo-1</td>
 		</tr>
        <tr>
+			<td>Tokyo Zone 2 (Tokyo nodes can cover Northeast Asia)<br>ap-tokyo-2</td>
+		</tr>
+		<tr>
 			<td  rowspan="2">South Asia (Mumbai)<br>ap-mumbai</td>
 			<td>Mumbai Zone 1 (Mumbai nodes can cover South Asia)<br>ap-mumbai-1</td>
 		</tr>
@@ -156,7 +159,7 @@ Tencent Cloud services in the same VPC are interconnected through the private ne
 				 <td >Bangkok Zone 1 (Bangkok nodes can cover Southeast Asia)<br>ap-bangkok-1</td>
 		<tr>
 			<td>North America (Toronto)<br>na-toronto</td>
-			<td>Toronto Zone 1 (Tokyo nodes can cover North America)<br>na-toronto-1</td>
+			<td>Toronto Zone 1 (Toronto nodes can cover North America)<br>na-toronto-1</td>
 		</tr>
 		<tr>
 			<td rowspan="2">Western US (Silicon Valley)<br>na-siliconvalley</td>
