@@ -5,16 +5,17 @@
 
 このセクションではTencent CloudとAlibaba CloudのCNAME設定手順について説明します。ドメイン名が存在するサービスプロバイダに基づき設定することができます。
 
-- [Tencent Cloudの設定方法](https://intl.cloud.tencent.com/document/product/228/3121)
-- [Alibaba Cloudの設定方法](https://intl.cloud.tencent.com/document/product/228/3121)
+- [Tencent Cloudの設定方法](#m1)
+- [Alibaba Cloudの設定方法](#m2)
 
+[](id:m1)
 ### Tencent Cloudの設定方法
 
 > !ドメイン名の解析では、各種のレコードタイプの間で優先順位に差異があります。同じホストレコードで、同一配線で数種類の異なるレコードタイプは共有できません。競合が生じるからです。CNAMEレコードは、CNAMEレコード以外のすべてのレコードタイプと競合するので、先にその他のレコードタイプは削除してから構成します。
 
 
 1. [ドメイン名サービス](https://console.cloud.tencent.com/domain)コンソールにログインし、リストから、CNAMEレコードを追加するドメイン名がある行を見つけて、アクションバーの【解決】をクリックします。
-   ![CNAMEの設定](https://main.qcloudimg.com/raw/dd299f2ef44538523622a7de978d5995.png)
+
 2. リダイレクトしたDNSPOD画面で、【レコードの追加】をクリックし、以下の手順によってCNAMEレコードを追加します。
    ![img](https://main.qcloudimg.com/raw/36f84a0d21b51bc56d79544943f0f752.png)
 	
@@ -42,7 +43,7 @@
 >?回線設定の詳細については[解決回線の説明](https://docs.dnspod.cn/dns/5f4775898ae73e11c5b01afc/)をご参照ください。
 
 
-
+[](id:m2)
 ### Alibaba Cloud設定方法
 
 DNSプロバイダがAlibaba Cloudの場合は、下記の手順でCNAMEレコードを追加できます。
