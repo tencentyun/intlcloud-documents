@@ -133,7 +133,6 @@ QCloudCredentialProvider credentialProvider = new MyCredentialProvider();
 CosXmlService cosXmlService = new CosXmlService(context, cosXmlServiceConfig, credentialProvider);   
 ```
 
-코드 예시 전체는 [Android COS Transfer](https://github.com/tencentyun/qcloud-sdk-android-samples/tree/master/COSTransfer)에서 확인할 수 있습니다.
 
 Android에서 COS로 파일을 업로드 및 다운로드하는 방법은 Android SDK의 [시작하기](https://intl.cloud.tencent.com/document/product/436/12159)를 참조하십시오.
 
@@ -205,7 +204,6 @@ iOS에서 COS로 파일을 업로드 및 다운로드하는 방법은 iOS SDK의
 ![](https://main.qcloudimg.com/raw/8b19785ec487d3e89711063bf80716a6.png)
 
 
-전체 코드는 [COS Android Demo](https://github.com/tencentyun/qcloud-sdk-android-samples/tree/master/COSTransferPractice)에서 확인할 수 있습니다.
 
 #### iOS
 iOS의 전체 코드에 관한 내용은 [COS iOS Demo](https://github.com/tencentyun/qcloud-sdk-ios-samples)를 참조하십시오.
