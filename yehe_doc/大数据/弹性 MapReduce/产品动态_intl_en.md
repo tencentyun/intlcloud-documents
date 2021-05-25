@@ -1,3 +1,22 @@
+## April 2021
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Released Hadoop EMR v2.5.1.</td>
+<td>Added support for Alluxio v2.5.0 and Hudi v0.5.1. Alluxio supports COS Transparent-URI.</td>
+<td>April 10, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/40172" target="_blank">Support for COS Transparent-URI</a></td>
+</tr>
+</tbody></table>
+
 ## February 2021
 <table>
 <thead>
@@ -39,7 +58,7 @@
 <td>Added support for cross-model configuration change.</td>
 <td>You can select other models to change the node configuration when the current model is sold out.</td>
 <td>January 26, 2021</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31114" target="_blank">Adjusting Configuration</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31114" target="_blank">  Adjusting Configuration</a></td>
 </tr>
 <tr>
 <td>Added the auto scaling feature.</td>
