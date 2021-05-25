@@ -10,8 +10,10 @@ API Gateway triggers can be configured in the **[SCF console](https://console.cl
  - When configuring API rules in the **API Gateway console**, you can select SCF as the backend and select functions in the same region as the API service. In the API Gateway console, you can configure and manage advanced API services such as traffic throttling plan, blocklist, and allowlist.
 
 When you configure the connection with SCF in API Gateway, you also need to configure the timeout period. The request timeout period in API Gateway and the execution timeout period in SCF take effect respectively. The timeout rules are as follows:
-* API Gateway timeout period > SCF timeout period: the SCF timeout period takes effect first, the API request response is `200 HTTP code`, but the returned content is the error message of SCF timeout.
-* API Gateway timeout period < SCF timeout period: the API Gateway timeout period takes effect first, the API request response is `5xx HTTP code`, which indicates that the request timed out.
+**API Gateway timeout period > SCF timeout period**
+The SCF timeout period takes effect first, the API request response is `200 HTTP code`, but the returned content is the error message of SCF timeout.
+**API Gateway timeout period < SCF timeout period**
+The API Gateway timeout period takes effect first, the API request response is `5xx HTTP code`, which indicates that the request timed out.
 
 ## Limitation on API Gateway Trigger Binding
 
