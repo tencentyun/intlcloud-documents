@@ -14,7 +14,7 @@ eth0&#95;netmask=255.255.192.0
 eth0&#95;gateway=10.104.0.1
 dns&#95;nameserver="10.138.224.65 10.182.20.26 10.182.24.12"
 </pre>
-> The parameter names above are for reference, and the values are used as examples only.
+>? The parameter names above are for reference, and the values are used as examples only.
 >
 The description of each parameter in the os.conf configuration file is as follows:
 
@@ -46,7 +46,7 @@ Note the following when configuring script parsing:
 
 ## Directions
 
-> Tencent Cloud provides a script sample based on CentOS. You can refer to it to create script for your images. During the creation, note that:
+>! Tencent Cloud provides a script sample based on CentOS. You can refer to it to create script for your images. During the creation, note that:
 > - **The script must be properly placed in the system before image import**.
 > - The script is not applicable to all operating systems. You need to modify it according to your own operating systems.
 > 
@@ -54,6 +54,7 @@ Note the following when configuring script parsing:
 
 1. Create an `os_config` script based on the following script sample.
 You can modify the script as needed.
+
 ```
 #!/bin/bash
 ### BEGIN INIT INFO
@@ -170,6 +171,6 @@ chkconfig --add os_config
 ```
 chkconfig --list
 ```
-> You must ensure that the script is correctly executed. If you fail to connect to the instance via SSH or network exception occurs after the image import, try to connect to the instance via the console to execute the script again. If such problems remain, contact the customer service.
+>? You must ensure that the script is correctly executed. If you fail to connect to the instance via SSH or network exception occurs after the image import, try to connect to the instance via the console to execute the script again. If such problems remain, contact the customer service.
 
 
