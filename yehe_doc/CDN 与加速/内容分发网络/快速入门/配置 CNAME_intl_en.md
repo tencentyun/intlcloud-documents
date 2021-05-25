@@ -15,7 +15,7 @@ This document provides CNAME configuration directions on Tencent Cloud and Aliba
 
 
 1. Log in to the [DNSpod](https://www.dnspod.com/Products/dns/list), click the desired domain name in **My Domains** tab.
-   ![CNAME configuration](https://main.qcloudimg.com/raw/dd299f2ef44538523622a7de978d5995.png)
+ 
 2. Click **Add Records** and then configure it as instructed below:
    ![img](https://main.qcloudimg.com/raw/36f84a0d21b51bc56d79544943f0f752.png)
 	
