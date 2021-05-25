@@ -16,7 +16,7 @@
 
 
 1. [도메인 서비스](https://console.cloud.tencent.com/domain) 콘솔에 로그인한 후, 리스트에서 CNAME 기록을 추가할 도메인이 있는 행을 찾은 다음 작업 열에서 [리졸브]를 클릭합니다.
-   ![CNAME 설정](https://main.qcloudimg.com/raw/dd299f2ef44538523622a7de978d5995.png)
+
 2. DNSPOD 페이지로 이동하여 해당 페이지에서 [기록 추가]를 클릭하고 다음 순서에 따라 CNAME 기록을 추가합니다.
    ![img](https://main.qcloudimg.com/raw/36f84a0d21b51bc56d79544943f0f752.png)
 	
