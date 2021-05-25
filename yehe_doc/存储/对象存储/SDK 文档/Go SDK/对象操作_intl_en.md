@@ -1,18 +1,20 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to simple operations, multipart operations, and other object operations.
+This document provides an overview of APIs and SDK code samples related to simple operations, multipart operations, and advanced APIs.
 
 **Simple operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Bucket (List Object)](https://intl.cloud.tencent.com/document/product/436/30614) | Querying an object list | Queries some or all objects in a bucket |
+| [GET Bucket (List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | Querying an object list | Queries some or all objects in a bucket |
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object using simple upload | Uploads an object to a bucket |
 | [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Gets object metadata | Gets the meta information of an object |
 | [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object (file) to the local file system |
 | [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object | Copies an object to a destination path |
 | [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting a single object | Deletes a specified object from a bucket |
 | [DELETE Multiple Object](https://cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects from a bucket |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores an archived object for access|
+
 
 **Multipart upload operations**
 
@@ -23,15 +25,8 @@ This document provides an overview of APIs and SDK code samples related to simpl
 | [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading a part | Uploads a part in a multipart upload |
 | [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of an entire file |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload operation | Aborts a multipart upload operation and deletes the uploaded parts |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload operation | Aborts a multipart upload and deletes the uploaded parts |
 
-**Other operations**
-
-| API | Operation | Description |
-| ------------------------------------------------------------ | ------------ | --------------------------------------------- |
-| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores archived object for access |
-| [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting an object ACL | Sets an ACL for an object (file) in a bucket |
-| [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | Querying an object ACL | Queries the ACL of an object (file) |
 
 ## Simple Operations
 
@@ -47,7 +42,7 @@ This API is used to query some or all objects in a bucket.
 func (s *BucketService) Get(ctx context.Context, opt *BucketGetOptions) (*BucketGetResult, *Response, error)
 ```
 
-#### Sample request 
+#### Sample request
 
 [//]: # (.cssg-snippet-get-bucket)
 ```go
@@ -76,7 +71,7 @@ type BucketGetOptions struct {
 | Parameter | Description | Type | Required |
 | ------------ | ------------------------------------------------------------ | ------ | ---- |
 | Prefix | Filters object keys prefixed with the value of this parameter. It is left empty by default. | string | No |
-| Delimiter | A separator which is left empty by default. For example, you can specify it as `/` to indicate folders. | string | No |
+| Delimiter | A separator that is left empty by default. For example, you can specify it as `/` to indicate folders. | string | No |
 | EncodingType | Specifies the encoding method of the returned value. It is left empty by default. Valid value: url. | string | No |
 | Marker | Specifies the object after which the listing should begin. Objects are listed using UTF-8 binary order by default. | string | No |
 | MaxKeys | Maximum number of returned objects. It defaults to 1000. | int | No |
@@ -89,7 +84,7 @@ type BucketGetResult struct {
 	Prefix         string 
 	Marker         string 
 	NextMarker     string 
-	Delimiter='string', 
+	Delimiter      string 
 	MaxKeys        int
 	IsTruncated    bool
 	Contents       []Object 
@@ -104,7 +99,7 @@ type BucketGetResult struct {
 | Prefix | Filters the object keys prefixed with the value of this parameter. It is left empty by default. | string   |
 | Marker | Specifies the object after which the listing should begin. Objects are listed using UTF-8 binary order by default. | string |
 | NextMarker | Specifies the object after which the next listing should begin if IsTruncated is `true`. | string |
-| Delimiter | A separator which is left empty by default. For example, you can specify it as `/` to indicate folders. | string |
+| Delimiter | A separator that is left empty by default. For example, you can specify it as `/` to indicate folders. | string |
 | MaxKeys | Maximum number of returned objects. It defaults to 1000. | int |
 | IsTruncated | Indicates whether the returned objects are truncated | bool |
 | Contents | Lists metadata of all objects, including ETag, StorageClass, Key, Owner, LastModified, and Size. | []Object |
@@ -122,12 +117,14 @@ This API (PUT Object) is used to upload an object (file) of up to 5 GB to a buck
 
 ```go
 func (s *ObjectService) Put(ctx context.Context, key string, r io.Reader, opt *ObjectPutOptions) (*Response, error)
+func (s *ObjectService) PutFromFile(ctx context.Context, name string, filePath string, opt *ObjectPutOptions) (*Response, error)
 ```
 
 #### Sample 1. Uploading an object
 
 [//]: # (.cssg-snippet-put-object)
-```go	
+```go
+// Sample 1: Using Put to upload an object
 key := "exampleobject"
 f, err := os.Open("../test")
 opt := &cos.ObjectPutOptions{
@@ -143,8 +140,17 @@ _, err = client.Object.Put(context.Background(), key, f, opt)
 if err != nil {
     panic(err)
 }
+// Sample 2: Using PUtFromFile to upload a file to COS
+filepath := "./test"
+_, err = client.Object.PutFromFile(context.Background(), key, filepath, opt)
+if err != nil {
+    panic(err)
+}
 ```
+
 #### Sample 2. Creating a folder
+
+COS uses slashes (/) to separate object paths to simulate the effect of directories. Therefore, you can upload an empty stream and append a slash to its name to create an empty directory in COS.
 ```go
 // Folder name
 name := "folder/"
@@ -154,7 +160,72 @@ if err != nil {
 	// ERROR
 }
 ```
-#### Sample 3. Uploading objects with multiple threads
+
+#### Sample 3. Uploading an object to a COS directory
+
+You can upload an object whose name is separated with slashes. In this way, the directory that contains this object will be created automatically. If you need to upload new objects to this COS directory, you can pass the value of this directory to `dir`.
+```go
+dir := "exampledir/"
+filename := "exampleobject"
+key := dir + filename
+f := strings.NewReader("test file")
+_, err = c.Object.Put(context.Background(), key, f, nil)
+if err != nil {
+    // ERROR
+}
+```
+
+#### Sample 4. Viewing the upload progress
+
+```go
+type SelfListener struct {
+}
+// A custom progress callback, which requires the ProgressChangedCallback method to be implemented.
+func (l *SelfListener) ProgressChangedCallback(event *cos.ProgressEvent) {
+    switch event.EventType {
+    case cos.ProgressDataEvent:
+        fmt.Printf("\r[ConsumedBytes/TotalBytes: %d/%d, %d%%]",
+                    event.ConsumedBytes, event.TotalBytes, event.ConsumedBytes*100/event.TotalBytes)
+    case cos.ProgressFailedEvent:
+        fmt.Printf("\nTransfer Failed: %v", event.Err)
+    }
+}
+func main() {
+    // Initialize
+    ...
+ 
+    // Sample 1: Using the default callback function to view the upload progress
+    key := "exampleobject"
+    f, err := os.Open("../test")
+    opt := &cos.ObjectPutOptions{
+        ObjectPutHeaderOptions: &cos.ObjectPutHeaderOptions{
+            ContentType: "text/html",
+            // Set the default progress callback function.
+            Listener:    &cos.DefaultProgressListener{},
+        },
+        ACLHeaderOptions: &cos.ACLHeaderOptions{
+            // Considering the ACL limit, we recommend not setting an object ACL when uploading an object unless required. The object will then inherit the bucket ACL by default.
+            XCosACL: "private",
+        },
+    }
+    _, err = client.Object.Put(context.Background(), key, f, opt)
+    if err != nil {
+        panic(err)
+    }
+
+    // Sample 2: Using a custom way to view the upload progress
+    opt.Listener = &SelfListener{}
+    filepath := "./test"
+    _, err = client.Object.PutFromFile(context.Background(), key, filepath, opt)
+    if err != nil {
+        panic(err)
+    }
+}
+
+```
+
+#### Sample 5. Uploading objects with multiple threads
+
 ```
 func upload(wg *sync.WaitGroup, c *cos.Client, files <-chan string) {
     defer wg.Done()
@@ -196,6 +267,9 @@ func main() {
         wg.Wait()
 }
 ```
+
+#### Parameter description
+
 ```go
 type ObjectPutOptions struct {
 	*ACLHeaderOptions       
@@ -214,9 +288,11 @@ type ObjectPutHeaderOptions struct {
 	ContentType        string 
 	ContentLength      int64  
 	Expires            string 
-	Custom x-cos-meta-* header
+	// Custom x-cos-meta-* header
 	XCosMetaXXX        *http.Header 
 	XCosStorageClass   string      
+	XCosTrafficLimit   int
+	Listener           ProgressListener
 }
 ```
 
@@ -235,6 +311,8 @@ type ObjectPutHeaderOptions struct {
 | ContentEncoding | Encoding format. Sets Content-Encoding. | string | No |
 | ContentLength | Sets the length of the request content. | int64 | No |
 | XCosMetaXXX | User-defined file metadata. It must start with x-cos-meta. Otherwise, it will be ignored. | http.Header | No |
+| XCosTrafficLimit     | Limits the speed for a single URL.       | int    | No |
+| Listener             | Progress callback API                        | Struct | No |
 
 #### Response description
 
@@ -244,7 +322,9 @@ type ObjectPutHeaderOptions struct {
     'x-cos-expiration': 'string'
 }
 ```
-Return Response class.
+
+The result can be obtained from the response.
+
 ```go
 resp, err := client.Object.Put(context.Background(), key, f, nil)
 etag := resp.Header.Get("ETag")
@@ -267,7 +347,7 @@ The API is used to query object metadata.
 func (s *ObjectService) Head(ctx context.Context, key string, opt *ObjectHeadOptions) (*Response, error)
 ```
 
-#### Sample request 
+#### Sample request
 
 [//]: # (.cssg-snippet-head-object)
 ```go
@@ -302,7 +382,7 @@ type ObjectHeadOptions struct {
     'X-Cos-Request-Id': 'NTg3NzQ3ZmVfYmRjMzVfMzE5N182NzczMQ=='
 }
 ```
-Return Response class.
+The result can be obtained from the response.
 ```go
 resp, err := client.Object.Head(context.Background(), key, nil)
 contentType := resp.Header.Get("Content-Type")
@@ -391,6 +471,76 @@ func main() {
         wg.Wait()
 }
 ```
+
+#### Sample 3. Obtaining the download progress
+
+The Go SDK allows you to obtain the download progress via a callback. You need to implement the `cos.ProgressListener` API, which is defined as follows:
+
+```go
+const (
+    // Data transfer starts.
+    ProgressStartedEvent ProgressEventType = iota
+    // Transferring data
+    ProgressDataEvent
+    // Data transfer is completed, which does not mean the completion of the API call.
+    ProgressCompletedEvent
+    // Returned only when an error occurs during data transfer.
+    ProgressFailedEvent
+)
+type ProgressEvent struct {
+    EventType     ProgressEventType
+    RWBytes       int64  // Number of bytes read at a time
+    ConsumedBytes int64  // Number of bytes completed
+    TotalBytes    int64  // Total number of bytes
+    Err           error  // Error
+}
+type ProgressListener interface {
+    ProgressChangedCallback(event *ProgressEvent)
+}
+```
+```go
+type SelfListener struct {
+}
+// A custom progress callback, which requires the ProgressChangedCallback method to be implemented.
+func (l *SelfListener) ProgressChangedCallback(event *cos.ProgressEvent) {
+    switch event.EventType {
+    case cos.ProgressDataEvent:
+        fmt.Printf("\r[ConsumedBytes/TotalBytes: %d/%d, %d%%]",
+                    event.ConsumedBytes, event.TotalBytes, event.ConsumedBytes*100/event.TotalBytes)
+    case cos.ProgressFailedEvent:
+        fmt.Printf("\nTransfer Failed: %v", event.Err)
+    }
+}
+func main() {
+    // Initialize
+    ... 
+
+    key := "exampleobject"
+    opt := &cos.ObjectGetOptions{
+        ResponseContentType: "text/html",
+        // View the progress using the default progress listener.
+	Listener: &cos.DefaultProgressListener{},
+    }
+    // "opt" is optional. It can be set to “nil” unless otherwise specified.
+    // 1. Obtain the object from the response body
+    resp, err := client.Object.Get(context.Background(), key, opt)
+    if err != nil {
+        panic(err)
+    }
+    ioutil.ReadAll(resp.Body)
+    resp.Body.Close()
+
+    // 2. Download the object locally
+    // Use the custom progress callback method.
+    opt.Listener = &SelfListener{}
+    _, err = client.Object.GetToFile(context.Background(), key, "example.txt", opt)
+    if err != nil {
+        panic(err)
+    }
+}
+
+```
+
 #### Parameter description
 
 ```go
@@ -403,6 +553,8 @@ type ObjectGetOptions struct {
 	ResponseContentEncoding    string 
 	Range                      string 
 	IfModifiedSince            string 
+	XCosTrafficLimit           int
+	Listener                   ProgressListener
 }
 ```
 
@@ -418,6 +570,8 @@ type ObjectGetOptions struct {
 | ResponseContentEncoding | Sets the Content-Encoding in the response header | string | No |
 | Range | Sets the range of bytes for the file to download in the format of bytes=first-last | string | No |
 | IfModifiedSince | Returned only if the object has been modified after the specified time | string | No |
+| XCosTrafficLimit           | Limits the speed for a single URL                            | int    | No |
+| Listener                   | Progress callback API                              | Struct | No |
 
 #### Response description
 
@@ -434,7 +588,7 @@ type ObjectGetOptions struct {
     'X-Cos-Request-Id': 'NTg3NzQ3ZmVfYmRjMzVfMzE5N182NzczMQ=='
 }
 ```
-Return Response class.
+The result can be obtained from the response.
 ```go
 resp, err := client.Object.Get(context.Background(), key, nil)
 body, _ := ioutil.ReadAll(resp.Body)
@@ -549,7 +703,7 @@ Attributes of the uploaded file:
 ```go
 type ObjectCopyResult struct {
     ETag         string 
-    'LastModified': 'string',
+    LastModified string
 }
 ```
 | Parameter | Description | Type |
@@ -581,6 +735,9 @@ if err != nil {
 ```
 
 #### Sample 2. Deleting a folder
+
+This request does not delete objects in the folder but only the specified key.
+
 ```go
 key := "folder/"
 _, err := c.Object.Delete(context.Background(), key)
@@ -607,7 +764,7 @@ The API is used to delete multiple objects from a bucket. You can delete up to 1
 func (s *ObjectService) DeleteMulti(ctx context.Context, opt *ObjectDeleteMultiOptions) (*ObjectDeleteMultiResult, *Response, error)
 ```
 
-#### Sample request 
+#### Sample 1. Deleting multiple specified objects
 
 [//]: # (.cssg-snippet-delete-multi-object)
 ```go
@@ -620,7 +777,7 @@ for _, v := range objects {
 opt := &cos.ObjectDeleteMultiOptions{
     Objects: obs,
     // Boolean, which indicates whether to enable Quiet or Verbose mode.
-    // “true” indicates Quiet mode while “false”, the default value, indicates Verbose mode.
+    // “true” indicates the Quiet mode while “false” (default) indicates the Verbose mode.
     // Quiet: true,
 }
 
@@ -629,6 +786,38 @@ if err != nil {
     panic(err)
 }
 ```
+
+#### Sample 2. Deleting a folder and the objects contained
+
+COS uses slashes (/) to separate object paths to simulate the effect of a file system. Therefore, deleting a folder in COS means deleting all objects that have a specified prefix. For example, the folder 'prefix/' contains all objects prefixed with 'prefix/'. In other words, you can delete all objects prefixed with 'prefix/' to delete the 'prefix/' folder.
+Currently, COS’s Go SDK did not provide an API to perform this operation. However, you can still use a combination of basic operations to do so.
+
+```go
+dir := "exampledir/"
+var marker string
+opt := &cos.BucketGetOptions{
+    Prefix:  dir,
+    MaxKeys: 1000,
+}
+isTruncated := true
+for isTruncated {
+    opt.Marker = marker
+    v, _, err := c.Bucket.Get(context.Background(), opt)
+    if err != nil {
+        // Error
+        break
+    }
+    for _, content := range v.Contents {
+        _, err = c.Object.Delete(context.Background(), content.Key)
+        if err != nil {
+            // Error
+        }
+    }
+    isTruncated = v.IsTruncated
+    marker = v.NextMarker
+}
+```
+
 
 #### Parameter description
 
@@ -674,7 +863,82 @@ type ObjectDeleteMultiResult struct {
 | Code | Error code for the deletion failure | string |
 | Message | Error message for the deletion failure | string |
 
-## Multipart operations
+
+
+### Restoring an archived object 
+
+#### API description
+
+This (POST Object restore) API is used to restore an archived object for access.
+
+#### Method prototype
+
+```go
+func (s *ObjectService) PostRestore(ctx context.Context, key string, opt *ObjectRestoreOptions) (*Response, error) 
+```
+
+#### Sample request
+
+[//]: # (.cssg-snippet-restore-object)
+```go
+key := "example_restore"
+f, err := os.Open("../test")
+if err != nil {
+    panic(err)
+}
+opt := &cos.ObjectPutOptions{
+    ObjectPutHeaderOptions: &cos.ObjectPutHeaderOptions{
+        ContentType:      "text/html",
+        XCosStorageClass: "ARCHIVE", //ARCHIVE storage class
+    },
+    ACLHeaderOptions: &cos.ACLHeaderOptions{
+        // Considering the ACL limit, we recommend not setting an object ACL when uploading an object unless required. The object will then inherit the bucket ACL by default.
+        XCosACL: "private",
+    },
+}
+// Upload an object directly to ARCHIVE storage class
+_, err = client.Object.Put(context.Background(), key, f, opt)
+if err != nil {
+    panic(err)
+}
+
+opts := &cos.ObjectRestoreOptions{
+    Days: 2,
+    Tier: &cos.CASJobParameters{
+        // Standard, Expedited, and Bulk
+        Tier: "Expedited",
+    },
+}
+// Restore an archived object.
+_, err = client.Object.PostRestore(context.Background(), key, opts)
+if err != nil {
+    panic(err)
+}
+```
+
+#### Parameter description
+
+```go
+type ObjectRestoreOptions struct {        
+    Days    int               
+    Tier    *CASJobParameters 
+}
+type CASJobParameters struct {
+    Tier    string 
+}
+```
+
+| Parameter | Description | Type | Required |
+| -------------------- | ------------------------------------------------------------ | ------ | ---- |
+| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
+| ObjectRestoreOptions | Describes rules for retrieved temporary files | struct | Yes |
+| Days | Specifies the number of days before a temporary object expires | int | Yes |
+| CASJobParameters |Specifies the restoration configuration | struct | No |
+| Tier | Object restoration mode. For ARCHIVE, valid values are `Expedited`, `Standard`, and `Bulk`. For DEEP ARCHIVE, valid values are `Standard` and `Bulk` | string | No |
+
+
+
+## Multipart Operations
 
 ### Querying multipart upload operations
 
@@ -688,7 +952,7 @@ This API is used to query in-progress multipart uploads in a specified bucket.
 func (s *BucketService) ListMultipartUploads(ctx context.Context, opt *ListMultipartUploadsOptions) (*ListMultipartUploadsResult, *Response, error)
 ```
 
-#### Sample request 
+#### Sample request
 
 [//]: # (.cssg-snippet-list-multi-upload)
 ```go
@@ -803,7 +1067,7 @@ This API (Initiate Multipart Upload) is used to initialize a multipart upload op
 func (s *ObjectService) InitiateMultipartUpload(ctx context.Context, name string, opt *InitiateMultipartUploadOptions) (*InitiateMultipartUploadResult, *Response, error)
 ```
 
-#### Sample request 
+#### Sample request
 
 [//]: # (.cssg-snippet-init-multi-upload)
 ```go
@@ -836,7 +1100,7 @@ type ObjectPutHeaderOptions struct {
 	ContentType        string 
 	ContentLength      int64   
 	Expires            string 
-	Custom x-cos-meta-* header
+	// Custom x-cos-meta-* header
 	XCosMetaXXX        *http.Header 
 	XCosStorageClass   string      
 }
@@ -878,7 +1142,7 @@ type InitiateMultipartUploadResult struct {
 <span id="MULIT_UPLOAD_PART"></span>
 ###  Uploading a part 
 
-This API (Upload Part) is used to upload parts in a multipart upload.
+This API is used to upload a part in a multipart upload.
 
 #### Method prototype
 
@@ -886,7 +1150,7 @@ This API (Upload Part) is used to upload parts in a multipart upload.
 func (s *ObjectService) UploadPart(ctx context.Context, key, uploadID string, partNumber int, r io.Reader, opt *ObjectUploadPartOptions) (*Response, error)
 ```
 
-#### Sample request 
+#### Sample request
 
 [//]: # (.cssg-snippet-upload-part)
 ```go
@@ -926,7 +1190,7 @@ type ObjectUploadPartOptions struct {
     'ETag': 'string'
 }
 ```
-Return Response class.
+The result can be obtained from the response.
 ```go
 resp, err := client.Object.UploadPart(context.Background(), key, UploadID, 1, f, nil)
 etag := resp.Header.Get("ETag")
@@ -950,7 +1214,7 @@ func (s *ObjectService) ListParts(ctx context.Context, name, uploadID string, op
 
 ```
 
-#### Sample request 
+#### Sample request
 
 [//]: # (.cssg-snippet-list-parts)
 ```go
@@ -1019,7 +1283,7 @@ type Object struct {
 
 | Parameter | Description | Type |
 | -------------------- | ------------------------------------------------------------ | ------ |
-| Bucket | Bucket name in the format: BucketName-APPID, e.g. examplebucket-1250000000. | string |
+| Bucket name in the format: BucketName-APPID, e.g. examplebucket-1250000000. | string |
 | EncodingType | Specifies the encoding method of the returned value. It is left empty by default. Valid value: url | string |
 | key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string |
 | UploadId | ID that identifies the multipart upload; generated by InitiateMultipartUpload | string |
@@ -1047,7 +1311,7 @@ func (s *ObjectService) CompleteMultipartUpload(ctx context.Context, key, upload
 
 ```
 
-#### Sample request 
+#### Sample request
 
 [//]: # (.cssg-snippet-complete-multi-upload)
 ```go
@@ -1075,7 +1339,7 @@ type CompleteMultipartUploadOptions struct {
 	Parts   []Object 
 }
 type Object struct { 
-	'ETag': 'string', 
+	ETag         string 
 	PartNumber   int     
 }
 ```
@@ -1118,11 +1382,11 @@ This API (Abort Multipart Upload) is used to abort a multipart upload and delete
 func (s *ObjectService) AbortMultipartUpload(ctx context.Context, key, uploadID string) (*Response, error)
 ```
 
-#### Sample request 
+#### Sample request
 
 [//]: # (.cssg-snippet-abort-multi-upload)
 ```go
-$key = "exampleobject";
+key := "exampleobject"
 // Abort
 _, err := client.Object.AbortMultipartUpload(context.Background(), key, UploadID)
 if err != nil {
@@ -1137,218 +1401,11 @@ if err != nil {
 | key | ObjectKey is the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the ObjectKey is doc/pic.jpg | string | Yes |
 | UploadId | ID that identifies the multipart upload | string |Yes |
 
-## Other Operations
-
-### Restoring an archived object 
-
-#### API description
-
-This (POST Object restore) API is used to restore an archived object for access.
-
-#### Method prototype
-
-```go
-func (s *ObjectService) PostRestore(ctx context.Context, key string, opt *ObjectRestoreOptions) (*Response, error) 
-```
-
-#### Sample request 
-
-[//]: # (.cssg-snippet-restore-object)
-```go
-key := "example_restore"
-f, err := os.Open("../test")
-if err != nil {
-    panic(err)
-}
-opt := &cos.ObjectPutOptions{
-    ObjectPutHeaderOptions: &cos.ObjectPutHeaderOptions{
-        ContentType:      "text/html",
-        XCosStorageClass: "ARCHIVE", //ARCHIVE storage class
-    },
-    ACLHeaderOptions: &cos.ACLHeaderOptions{
-        We recommend you not to set permissions on individual files when uploading so as to avoid reaching the limit. Bucket permission sets the default limit.
-        XCosACL: "private",
-    },
-}
-// Upload an object directly to ARCHIVE storage class
-_, err = client.Object.Put(context.Background(), key, f, opt)
-if err != nil {
-    panic(err)
-}
-
-opts := &cos.ObjectRestoreOptions{
-    Days: 2,
-    Tier: &cos.CASJobParameters{
-        // Standard, Expedited, and Bulk
-        Tier: "Expedited",
-    },
-}
-### Restoring an archived object
-_, err = client.Object.PostRestore(context.Background(), key, opts)
-if err != nil {
-    panic(err)
-}
-```
-
-#### Parameter description
-
-```go
-type ObjectRestoreOptions struct {        
-    Days    int               
-    Tier    *CASJobParameters 
-}
-type CASJobParameters struct {
-    Tier    string 
-}
-```
-
-| Parameter | Description | Type | Required |
-| -------------------- | ------------------------------------------------------------ | ------ | ---- |
-| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
-| ObjectRestoreOptions | Describes rules for retrieved temporary files | struct | Yes |
-| Days | Specifies the number of days before a temporary object expires | int | Yes |
-| CASJobParameters |Specifies the restoration configuration | struct | No |
-| Tier | Specifies the mode for retrieving temporary files. Valid values: "Expedited", "Standard", and "Bulk" | string | No |
-
-### Setting an object ACL
-
-#### API description
-
-This API is used to set an ACL for an object.
-
-#### Method prototype
-
-```go
-func (s *ObjectService) PutACL(ctx context.Context, key string, opt *ObjectPutACLOptions) (*Response, error)
-```
-
-#### Sample request 
-
-[//]: # (.cssg-snippet-put-object-acl)
-```go
-// 1. Configuration via request header
-opt := &cos.ObjectPutACLOptions{
-    Header: &cos.ACLHeaderOptions{
-        XCosACL: "private",
-    },
-}
-key := "exampleobject"
-_, err := client.Object.PutACL(context.Background(), key, opt)
-if err != nil {
-    panic(err)
-}
-// 2. Configuration using the request body
-opt = &cos.ObjectPutACLOptions{
-    Body: &cos.ACLXml{
-        Owner: &cos.Owner{
-            ID: "qcs::cam::uin/100000000001:uin/100000000001",
-        },
-        AccessControlList: []cos.ACLGrant{
-            {
-                Grantee: &cos.ACLGrantee{
-                    Type: "RootAccount",
-                    ID:   "qcs::cam::uin/100000760461:uin/100000760461",
-                },
-
-                Permission: "FULL_CONTROL",
-            },
-        },
-    },
-}
-
-_, err = client.Object.PutACL(context.Background(), key, opt)
-if err != nil {
-    panic(err)
-}
-```
-
-#### Parameter description
-
-```go
-type ACLHeaderOptions struct {
-	XCosACL              string 
-	XCosGrantRead        string 
-	XCosGrantWrite       string 
-	XCosGrantFullControl string 
-}
-```
-
-| Parameter | Description | Type | Required |
-| -------------------- | ------------------------------------------------------------ | ------ | ---- |
-| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
-| XCosACL | Sets the object ACL, such as private, public-read | string | No |
-| XCosGrantFullControl  | Grants full permission in the format: `id="[OwnerUin]"` | string | No |
-| XCosGrantRead  | Grants read permission in the format: id="[OwnerUin]" | string | No |
-| ACLXML | Grants the specified account bucket access permission. For more information on the format, see the response to the "GET object acl" request. | struct | No |
-
-### Querying an object ACL
-
-#### API description
-
-This API is used to query the ACL of an object.
-
-#### Method prototype
-
-```go
-func (s *ObjectService) GetACL(ctx context.Context, key string) (*ObjectGetACLResult, *Response, error)
-```
-
-#### Sample request 
-
-[//]: # (.cssg-snippet-get-object-acl)
-```go
-key := "exampleobject"
-_, _, err := client.Object.GetACL(context.Background(), key)
-if err != nil {
-    panic(err)
-}
-```
-
-#### Parameter description
-
-| Parameter | Description | Type | Required |
-| -------- | ------------------------------------------------------------ | ------ | ---- |
-| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
-
-#### Response description
-
-```go
-type ACLXml struct {
-	Owner             *Owner
-	AccessControlList []ACLGrant 
-}
-type Owner struct { 
-	ID          string 
-	DisplayName string
-}
-type ACLGrant struct {
-	Grantee    *ACLGrantee
-	Permission string
-}
-type ACLGrantee struct {
-	Type        string 
-	ID          string 
-	DisplayName string
-    UIN         string 
-}
-```
-
-| Parameter | Description | Type |
-| ----------------- | ------------------------------------------------------------ | ------ |
-| Owner | Information on the bucket owner, including DisplayName and ID | struct |
-| AccessControlList | Information on the granted bucket permissions, including Grantee and Permission | struct |
-| Grantee | Information on the grantees, including DisplayName, Type, ID and UIN | struct |
-| Type | Type of grantee. Valid values: CanonicalUser and Group | string |
-| ID | ID of the grantee if “Type” is set to `CanonicalUser` | string |
-| DisplayName | Name of the grantee | string |
-| UIN | UIN of the grantee when “Type” is set to `Group` | string |
-| Permission | Bucket permission granted. Valid values: FULL_CONTROL (read and write), WRITE, and READ | string |
-
 
 
 ## Advanced APIs (Recommended)
 
-### Uploading an Object
+### Uploading an object
 
 #### API description
 
@@ -1360,7 +1417,7 @@ The advanced upload API automatically divides your data into parts based on the 
 func (s *ObjectService) Upload(ctx context.Context, key string, filepath string, opt *MultiUploadOptions) (*CompleteMultipartUploadResult, *Response, error)
 ```
 
-#### Sample request 
+#### Sample request
 
 [//]: # (.cssg-snippet-transfer-upload-file)
 ```go
@@ -1376,6 +1433,14 @@ if err != nil {
 ```
 
 #### Parameter description
+
+```go
+type MultiUploadOptions struct {
+    OptIni             *InitiateMultipartUploadOptions
+    PartSize           int64
+    ThreadPoolSize     int
+}
+```
 
 | Parameter | Description | Type | Required |
 | -------------- | ------------------------------------------------------------ | ------ | ---- |
@@ -1404,3 +1469,95 @@ type CompleteMultipartUploadResult struct {
 | Bucket        | Bucket name in the format: BucketName-APPID, e.g. examplebucket-1250000000. | string   |
 | key | ObjectKey is the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the ObjectKey is doc/pic.jpg | string | Yes |
 | ETag | The unique tag of a merged object. This value does not represent the MD5 checksum of the object content, but is used only to verify the uniqueness of the object as a whole. To verify the object content, you can check the ETag of each part during the upload process | string |
+
+### Downloading an object
+
+#### API description
+
+The multipart download API automatically downloads data concurrently with `Range` according to the object size.
+
+#### Method prototype
+
+```go
+func (s *ObjectService) Download(ctx context.Context, name string, filepath string, opt *MultiDownloadOptions) (*Response, error)
+```
+
+#### Sample request
+
+[//]: # ".cssg-snippet-download-file"
+```go
+key := "exampleobject"
+file := "localfile""
+
+opt := &cos.MultiDownloadOptions{
+	ThreadPoolSize: 5,
+}
+_, err := c.Object.Download(
+	context.Background(), key, file, opt,
+)
+if err != nil {
+    panic(err)
+}
+```
+
+#### Parameter description
+
+```go
+type MultiDownloadOptions struct {
+    Opt            *ObjectGetOptions
+    PartSize       int64
+    ThreadPoolSize int
+    CheckPoint     bool
+    CheckPointFile string
+}
+```
+
+| Parameter | Description | Type | Required |
+| -------------- | ------------------------------------------------------------ | ------ | ---- |
+| name | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | string | Yes |
+| filepath | Name of the local file | string | Yes |
+| opt            | Object download parameter             | Struct | No |
+| Opt | Request parameter. For more information, please see [ObjectGetOptions](#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1). | Struct | No |
+| PartSize | Part size (in MB). If this parameter is not specified or is set to a value smaller than or equal to 0, its value will be automatically determined. | int64 | No |
+| ThreadPoolSize | Size of the thread pool. Default: 1 | int | No |
+| CheckPoint     | Whether to enable checkpoint restart. Default value: `false`  | bool   | No   |
+| CheckPointFile | The path to save the download progress file when checkpoint restart is enabled. The default value is `<filepath>.cosresumabletask`. When the download is completed, this progress file will be cleared. | string   | No |
+
+#### Response description
+
+| Parameter | Description | Type |
+| -------- | ------------------------------------------------------------ | ------ |
+| \*Response| HTTP response, through which you can obtain the response status code, response headers, and other information. | Struct |
+| error    | Error message. If no error occurs, `nil` will be returned.                  | Struct |
+
+
+
+### Moving an object
+
+#### API description
+
+Object movement can be implemented using the object copy API and object delete API.
+
+#### Sample request
+
+```go
+source := "test/oldfile"
+f := strings.NewReader("test")
+// Upload the object.
+_, err := c.Object.Put(context.Background(), source, f, nil)
+if err != nil {
+   // Error
+}
+// Move the object.
+dest := "test/newfile"
+soruceURL := fmt.Sprintf("%s/%s", u.Host, source)
+_, _, err := c.Object.Copy(context.Background(), dest, soruceURL, nil)
+if err == nil {
+    _, err = c.Object.Delete(context.Background(), source, nil)
+    if err != nil {
+        // Error
+    }
+}
+```
+
+
