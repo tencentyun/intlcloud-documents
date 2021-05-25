@@ -71,7 +71,7 @@
 
 ### Traffic and connections
 #### Memory edition
-| Specification (GB) | Max. Connections | Max. Throughput (MB/s) |
+| Specification (GB) | Max Connections | Max Throughput (MB/s) |
 |  :----------: |  :----------: |  :-------------------: |
 | 0.25          | 3,000       | 10                  |
 | 1          | 40,000       | 16                  |
@@ -88,7 +88,7 @@
 | 60         | 40,000       | 64                  | 
 
 #### CKV edition
-| Specification (GB) | Max. Connections | Max. Throughput (MB/s) | 
+| Specification (GB) | Max Connections | Max Throughput (MB/s) | 
 |  :----------: |  :----------: |  :-------------------: |
 | 4          | 10,000       | 24                  |
 | 8          | 10,000       | 24                  |
@@ -115,7 +115,7 @@ Cluster Edition throughput = Shard throughput * number of shards
 The time needed to execute Redis commands varies. Businesses use different database commands in their production environments; therefore, the corresponding performance values will also vary. The test results listed here are obtained with specified parameters and are for your reference only. Please conduct tests in your actual business environment for more accurate results.
 
 #### Single-node test performance
-|  Redis Instance Specification | Connections | QPS |
+| Redis Instance Specification | Connections | QPS |
 |:---------:|:---------:|:--------:|
 | Memory edition (standard architecture), 8 GB | 10,000 | 80,000-100,000 |
 | Memory edition (cluster architecture), 8 GB (per shard) | 10,000 | 80,000-100,000 |
