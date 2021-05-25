@@ -1,16 +1,23 @@
-You can download TencentDB cold backup data and binlogs in the TencentDB for MariaDB Console.
+You can download database cold backup data, binlogs, and slow logs in the TencentDB for MariaDB console.
 
-## Downloading a Backup or Binlog
-1. Log in to the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/mariadb), click an instance name to enter the instance management page, select the **Backup and Restore** tab, and select cold backup list or binlog list.
-2. Select the backup to be downloaded and click **Download** in the "Operation" column.
-3. A VPC address is provided in the download dialog box that pops up. You can click **Copy** to get the address.
->?The address is valid for 15 minutes. After it expires, refresh the page to get a new one. For the VPC address, please access it in a VPC.
+## Downloading a Cold Backup or Binlog
+1. Log in to the [TencentDB for MariaDB console](https://console.cloud.tencent.com/mariadb), click an instance ID/name to enter the instance management page, and select **Backup and Restore** > **Cold Backup List** or **Binlog List**.
+2. Locate the file to be downloaded and click **Download** in the **Operation** column.
+3. In the pop-up dialog box, click **Copy** to get the download address used in a VPC.
+4. [Log in to the Linux CVM in the same VPC as the TencentDB instance](https://intl.cloud.tencent.com/document/product/213/10517) and run `wget` to download the file.
+>?
+>- Command syntax: `wget -c 'download address'`
+>- The download address can only be used in a VPC and is valid for 15 minutes. If it expires, you can refresh the page to get a new one.
 >
+![](https://main.qcloudimg.com/raw/c4dd3fd398fe0367dd4c7b9a4fc3dea4.png)
 
-
-## Downloading a Slow Query Log
-1. Click an instance name to enter the instance management page and select the **Performance Optimization** > **Slow Query Log** tab.
-2. Select the backup to be downloaded and click **Download** in the **Operation**column.
->?If the backup is 0 KB in size with no slow query log, it cannot be downloaded.
-3. A VPC address is provided in the download dialog box that pops up. You can click **Copy** to get the address.
->?The address is valid for 15 minutes. After it expires, refresh the page to get a new one. For the VPC address, please access it in a VPC.
+## Downloading a Slow Log
+1. Click an instance ID/name to enter the instance management page and select **Performance Optimization** > **Slow Log**.
+2. Locate the file to be downloaded and click **Download** in the **Operation** column.
+>?Note: if the file size is 0 KB, which means that no slow query record is available, it cannot be downloaded.
+3. In the pop-up dialog box, click **Copy** to get the download address used in a VPC.
+4. [Log in to the Linux CVM in the same VPC as the TencentDB instance](https://intl.cloud.tencent.com/document/product/213/10517) and run `wget` to download the file.
+>?
+>- Command syntax: `wget -c 'download address'`
+>- The download address can only be used in a VPC and is valid for 15 minutes. If it expires, you can refresh the page to get a new one.
+>
