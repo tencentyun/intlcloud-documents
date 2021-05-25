@@ -10,13 +10,13 @@ You should do the following:
 2. Check whether your email client forbids loading images. If yes, click the "Show Image" button.
 3. Check whether the images are blocked by the recipient.
 
-### What should I do if emails sent via Tencent Cloud SES are blocked by Tencent Enterprise Mailbox?
-Tencent Enterprise Mailbox blocks advertising emails. Try not to contain advertising content in your email subject and content unless necessary.
+### What should I do if emails sent via Tencent Cloud SES are blocked by Tencent Exmail?
+Tencent Exmail blocks advertising emails. Do not contain advertising content in your email subject and content unless necessary.
 
 ### Why emails fail to be sent?
 Please check the error codes document first to determine the error type.
 Then check the following items in order:
-1. Whether the account has the `QcloudFullAccess` permission and whether `SerectId` and `SecretKey` are correct.
+1. Whether the account has the `QcloudFullAccess` permission and whether `SecretId` and `SecretKey` are correct.
 2. Whether the sender domain is verified. (Do not modify the configured DNS after it passes verification.)
 3. Whether the recipient email address is correct.
 4. Whether the template is approved and whether the format of `TemplateData` is correct.
