@@ -1,4 +1,4 @@
-## Symptoms
+## Problem
 
 - 403 is returned when you use the APIs or SDKs of COS to upload/download files.
 - 403 is returned when you access COS resources using a sub-account or temporary account.
@@ -29,10 +29,10 @@ You can:
  - If not, click **Edit** to configure again.
 7. In the **Permission Policy Settings** area, check whether a policy has been configured for the account.
 >! 
->- If the bucket is set to **Private Read/Write** but anonymous access is set in the policy, the permission set in the policy takes effect.
->- If an action is set to **Allow** and **Deny** in different policies associated with the same sub-account, the action will be denied.
->- Policies set for **Everyone** have lower priorities than those set for a **Specified user**.
->
+> - If the bucket is set to **Private Read/Write** but anonymous access is set in the policy, the permission set in the policy takes effect.
+> - If an action is set to **Allow** and **Deny** in different policies associated with the same sub-account, the action will be denied.
+> - Policies set for **Everyone** have lower priorities than those set for a **Specified user**.
+> 
  - If yes, proceed with the next step.
  - If not, click **Add Policy** and add the needed permission to the sub-account that initiates the signed request.
 
@@ -43,7 +43,7 @@ You can:
  - If yes, proceed with the next step.
  - If not, change the value of `q-ak` to the `secretID` and `secretKey` of the root account.
 10. Check whether the resource is accessed by a cross-account.
- - If yes, authorize the sub-account by referring to [Authorizing Cross-Account’s Sub-account Read/Write Access to Specified File](https://cloud.tencent.com/document/product/598/11092).
+ - If yes, authorize the sub-account by referring to [Authorizing Cross-Account’s Sub-account Read/Write Access to Specified File](https://intl.cloud.tencent.com/document/product/598/11092).
  - If not, please [contact us](https://intl.cloud.tencent.com/support).
 
 
@@ -128,7 +128,7 @@ If the following message is displayed when you access COS:
 You can:
 
 Check whether the requested object is stored in ARCHIVE or DEEP ARCHIVE.
-- If yes, restore the object first. For more information, please see [POST Object restore](https://cloud.tencent.com/document/product/436/12633).
+- If yes, restore the object first. For more information, please see [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633).
 - If not, please [contact us](https://intl.cloud.tencent.com/support).
 
 
@@ -144,6 +144,7 @@ You can:
 
 1. Check the client-side time according to the OS as follows:
  - Windows (Windows Server 2012 is taken as an example): Click ![](https://main.qcloudimg.com/raw/ac22b052ee24273ebeab1139dd7f4d58.png) > **Control Panel** > **Clock, Language, and Region** > **Set the time and date**.
+
  - Linux: Run the `date -R` command.
 ![](https://main.qcloudimg.com/raw/88288162bd1de8c2ec0b640f0df6799e.png)
 2. Check whether the clock skew between the client and server is larger than 15 minutes.
@@ -178,4 +179,5 @@ You can:
 
 Check whether the signature calculated on the client side is the same as that calculated on the server side.
 - If yes, please [contact us](https://intl.cloud.tencent.com/support).
-- If not, please see [Request Signature](https://cloud.tencent.com/document/product/436/7778).
+- If not, please see [Request Signature](https://cloud.tencent.com/document/product/436/7778) and use COS’s signature tool to check how the signature is generated.
+

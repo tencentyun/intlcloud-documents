@@ -1,28 +1,28 @@
 ## Download and Installation
 
-#### Relevant resources
-- Download the COS XML SDK for Python source code [here](https://github.com/tencentyun/cos-python-sdk-v5).
-- Download the XML SDK for Python [here](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-python-sdk-v5/latest/cos-python-sdk-v5.zip).
-- Download the demo [here](https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py).
-- Find the complete sample code [here](https://github.com/tencentyun/cos-snippets/tree/master/Python).
+#### Related resources
+- Download the source code of COS’s XML Python SDK [here](https://github.com/tencentyun/cos-python-sdk-v5).
+- Download the XML Python SDK [here](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-python-sdk-v5/latest/cos-python-sdk-v5.zip).
+- Download the [XML Python Demo](https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py).
+- For the complete sample code, please see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/Python).
 - For the SDK changelog, please see [Changelog](https://github.com/tencentyun/cos-python-sdk-v5/blob/master/CHANGELOG.md).
 
-#### Environmental dependency
+#### Environment dependencies
 
-COS XML SDK for Python currently supports Python 2.7, 3.4, and above.
->?For the definitions of parameters such as `SecretId`, `SecretKey`, `Bucket`, and `Region`, please see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751#cos-glossary).
+Currently, COS’s XML Python SDK supports Python 2.7, Python 3.4, and later.
+>?For the definitions of terms such as SecretId, SecretKey, Bucket, and Region, please see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
 
 #### Installing SDK
 
-You can install the SDK in three ways: installation through pip, manual installation, and offline installation.
+You can install the SDK in three ways: installation via pip, manual installation, and offline installation.
 
-- Installing through pip (recommended)
+- Installing via pip (recommended)
 ```sh
  pip install -U cos-python-sdk-v5
 ```
 
 - Manual installation
-Download the source code [here](https://github.com/tencentyun/cos-python-sdk-v5) and install the SDK manually through setup by running the following command.
+Download the source code [here](https://github.com/tencentyun/cos-python-sdk-v5) and install the SDK manually via setup by running the following command.
 ```python
  python setup.py install
 ```
@@ -45,7 +45,7 @@ pip install cos-python-sdk-v5 --no-index -f cos-python-sdk-packages
 The section below describes how to use the COS SDK for Python to perform basic operations, such as initializing a client, creating a bucket, querying the bucket list, uploading an object, querying the object list, downloading an object, and deleting an object.
 
 ### Initialization
-Please see the following sample code:
+Please refer to the following code sample:
 
 [//]: # (.cssg-snippet-global-init)
 ```python
@@ -70,44 +70,63 @@ client = CosS3Client(config)
 # Refer to the description below or the demo. For more information, please visit https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py.
 ```
 
-Setting proxy:
+
+>?For more information on how to generate and use a temporary key, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
+
+Setting proxies:
 
 [//]: # (.cssg-snippet-global-init-proxy)
 ```python
 # APPID has been removed from the configuration. Please add the APPID to the Bucket parameter in the format of BucketName-APPID.
-# 1. Set user configuration, including secretId, secretKey, and region.
+# 1. Set user configuration, including secretId, secretKey, and region
 secret_id = 'COS_SECRETID'      # Replace with your secretId.
 secret_key = 'COS_SECRETKEY'      # Replace with your secretKey.
-region = 'COS_REGION'     # Replace with your region.
+region = 'COS_REGION'     # Replace with your region
 proxies = {
     'http': '127.0.0.1:80' # Replace with your HTTP Proxy IP.
     'https': '127.0.0.1:443' # Replace with your HTTPS Proxy IP.
 }
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Proxies=proxies)
-# 2. Get the client object
+# 2. Get the client object.
 client = CosS3Client(config)
 # Refer to the description below or the demo. For more information, please visit https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py.
 ```
 
-Set the endpoint:
+Setting an endpoint:
 
 [//]: # (.cssg-snippet-global-init-endpoint)
 ```python
 # APPID has been removed from the configuration. Please add the APPID to the Bucket parameter in the format of BucketName-APPID.
-# 1. Set user configuration, including secretId, secretKey, and region.
+# 1. Set user configuration, including secretId, secretKey, and region
 secret_id = 'COS_SECRETID'      # Replace with your secretId.
 secret_key = 'COS_SECRETKEY'      # Replace with your secretKey.
 region = 'COS_REGION'     # Replace with your region.
-endpoint = 'cos.accelerate.myqcloud.com' # Replace with your endpoint.
+endpoint = 'cos.accelerate.myqcloud.com' # Replace with your endpoint
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Endpoint=endpoint)
 # 2. Get the client object.
 client = CosS3Client(config)
 # Refer to the description below or the demo. For more information, please visit https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py.
 ```
 
->?For more information on how to generate and use a temporary key, please see [Generating and Using Temporary Keys](https://cloud.tencent.com/document/product/436/14048).
+Setting a global acceleration domain:
+```python
+# APPID has been removed from the configuration. Please specify it using the `Bucket` parameter in the format of `BucketName-APPID`.
+# 1. Set user configuration, including secretId, secretKey, and region
+secret_id = 'COS_SECRETID'      # Replace with your secretId.
+secret_key = 'COS_SECRETKEY'      # Replace with your secretKey.
+region = 'COS_REGION'     # Replace with your region.
 
-### Creating bucket
+# “domain” is the custom domain, which does not need to be set in most cases. To use a global acceleration domain, set “domain” to the corresponding domain name, such as examplebucket-1250000000.cos.accelerate.myqcloud.com.
+# For more information about global acceleration, please visit https://cloud.tencent.com/document/product/436/38864
+domain = 'examplebucket-1250000000.cos.accelerate.myqcloud.com'
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Domain=domain)
+# 2. Get the client object.
+client = CosS3Client(config)
+# Refer to the description below or the demo. For more information, please visit https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py.
+```
+
+
+### Creating a bucket
 
 [//]: # (.cssg-snippet-put-bucket)
 ```python
@@ -116,7 +135,7 @@ response = client.create_bucket(
 )
 ```
 
-### Querying bucket list
+### Querying a bucket list
 
 [//]: # (.cssg-snippet-get-service)
 ```python
@@ -124,14 +143,14 @@ response = client.list_buckets(
 )
 ```
 
-### Uploading object
+### Uploading an object
 
->!Simple upload cannot be used to upload files larger than 5 GB. For files larger than 5 GB, please use the advanced upload API described below. For parameter descriptions, please see [Object Operations](https://cloud.tencent.com/document/product/436/35151#.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1.EF.BC.88.E6.96.AD.E7.82.B9.E7.BB.AD.E4.BC.A0.EF.BC.89).
+>!Simple upload cannot be used to upload files larger than 5 GB. You can use the advanced upload API to upload large files. For more information about the related parameters, please see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31546).
 
 [//]: # (.cssg-snippet-put-object-comp-comp)
 ```python
 #### Upload a file stream with simple upload (which cannot be used to upload files larger than 5 GB. For files larger than 5 GB, please use the advanced upload API described below).
-# We strongly recommend you open the file in binary mode; otherwise, an error may occur.
+# It is strongly recommended to open the file in binary mode; otherwise, an error may occur.
 with open('picture.jpg', 'rb') as fp:
     response = client.put_object(
         Bucket='examplebucket-1250000000',
@@ -142,7 +161,7 @@ with open('picture.jpg', 'rb') as fp:
     )
 print(response['ETag'])
 
-#### Uploading byte stream with simple upload
+#### Upload a byte stream with simple upload
 response = client.put_object(
     Bucket='examplebucket-1250000000',
     Body=b'bytes',
@@ -177,7 +196,7 @@ response = client.upload_file(
 print(response['ETag'])
 ```
 
-### Querying object list
+### Querying an object list
 
 [//]: # (.cssg-snippet-get-bucket)
 ```python
@@ -204,18 +223,18 @@ while True:
     marker = response['NextMarker']
 ```
 
-### Downloading object
+### Downloading an object
 
 [//]: # (.cssg-snippet-get-object-comp)
 ```python
-#### Downloading object to local file system
+#### Download an object to the local file system
 response = client.get_object(
     Bucket='examplebucket-1250000000',
     Key='picture.jpg',
 )
 response['Body'].get_stream_to_file('output.txt')
 
-#### Downloading file stream
+#### Download a file stream
 response = client.get_object(
     Bucket='examplebucket-1250000000',
     Key='picture.jpg',
@@ -223,17 +242,17 @@ response = client.get_object(
 fp = response['Body'].get_raw_stream()
 print(fp.read(2))
 
-#### Setting response HTTP headers
+#### Set the response HTTP headers
 response = client.get_object(
     Bucket='examplebucket-1250000000',
     Key='picture.jpg',
     ResponseContentType='text/html; charset=utf-8'
 )
-print response['Content-Type']
+print(response['Content-Type'])
 fp = response['Body'].get_raw_stream()
 print(fp.read(2))
 
-#### Specifying download range
+#### Specify the download range
 response = client.get_object(
     Bucket='examplebucket-1250000000',
     Key='picture.jpg',
@@ -243,11 +262,11 @@ fp = response['Body'].get_raw_stream()
 print(fp.read())
 ```
 
-### Deleting object
+### Deleting an object
 
 [//]: # (.cssg-snippet-delete-object-comp)
 ```python
-# Delete one object
+# Delete an object
 ## deleteObject
 response = client.delete_object(
     Bucket='examplebucket-1250000000',
