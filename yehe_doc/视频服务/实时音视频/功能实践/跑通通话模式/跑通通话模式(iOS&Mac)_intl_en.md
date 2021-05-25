@@ -13,7 +13,7 @@ In call mode, all users in the TRTC room will be assigned to access servers, whi
 ![](https://main.qcloudimg.com/raw/e6a7492c3d0151252f7853373f6bcbbc.png)
 
 ## Sample Code
-You can log in to [GitHub] to get the sample code related to this document.
+You can log in to [GitHub]to get the sample code related to this document.
 ![](https://main.qcloudimg.com/raw/6baf3fba222db297fa4763d45b57b981.png)
 
 >?If your access to GitHub is slow, you can directly download [TXLiteAVSDK_TRTC_iOS_latest.zip](http://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_iOS_latest.zip).
