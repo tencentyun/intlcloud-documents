@@ -1,3 +1,4 @@
+
 本文为您介绍如何通过云数据库 PostgreSQL 控制台立即下线已隔离状态的实例。
 
 ## 操作场景
@@ -9,5 +10,5 @@
 ## 操作步骤
 1. 登录 [PostgreSQL 控制台](https://console.cloud.tencent.com/postgres/recycle)，在回收站列表找到待下线的实例，在“操作”列选择【下线】。
 2. 在弹出的对话框，确认无误后，单击【确定】。
-![](https://main.qcloudimg.com/raw/f329eda8945e6988eac11cf8afc3b43f.png)
+![](https://main.qcloudimg.com/raw/77e4ddf8f17342672d20a8dc212cc5fe.png)
 

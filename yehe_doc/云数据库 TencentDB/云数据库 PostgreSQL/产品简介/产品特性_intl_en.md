@@ -9,7 +9,7 @@ TencentDB for PostgreSQL provides key operational metrics for PostgreSQL databas
 TencentDB for PostgreSQL provides a QPS at least 10 times that of SATA by using NVMe SSDs. It features a primary/standby deployment mode and enables sync replication by default; this enables you to avoid business interruptions and problems such as data corruption and loss.
 
 ## Enhanced Security
-Databases by default adopt a primary/standby strong sync mechanism with database instance availability up to 99.95% and data reliability up to 99.99999%.
+Databases by default adopt a primary/standby strong sync mechanism with database instance availability of up to 99.95% and data reliability of up to 99.99999%.
 The cluster scheduler of TencentDB for PostgreSQL will automatically restore a node when it fails to a previous point in time for failover and disaster recovery. You can also manually restore database data from backups in the console. For more information, please see [Information Security > Backup and recovery](https://intl.cloud.tencent.com/document/product/409/7565). Moreover, TencentDB provides multiple default layers of security protection for each database that does not need to be purchased separately.
 
 ## Strong Scalability
