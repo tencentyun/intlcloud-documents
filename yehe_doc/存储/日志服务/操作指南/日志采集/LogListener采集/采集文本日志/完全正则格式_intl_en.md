@@ -34,7 +34,7 @@ time_local: [22/Jan/2019:19:19:30 +0800]
 upstream_response_time: 0.354
 ```
 
->In this mode, you can extract key-values only into single-line logs, but not multi-line logs. To collect multi-line logs, see [Collecting Logs with Full Text in Multi Lines](https://intl.cloud.tencent.com/document/product/614/32284).
+> !In this mode, you can extract key-values only into single-line logs, but not multi-line logs. To collect multi-line logs, see [Collecting Logs with Full Text in Multi Lines](https://intl.cloud.tencent.com/document/product/614/32284).
 
 ## Collection Configuration
 
@@ -64,7 +64,7 @@ A log path to collect logs from takes the form **[directory prefix expression]**
 | /**/   | Current directory and all its subdirectories                                  |
 | File name   | Name of a log file; supports only the wildcard characters `\*` and `?`. `\*` indicates that one or more characters can be matched, while `?` indicates that any single character can be matched. |
 
->Common configuration patterns include:
+>?Common configuration patterns include:
 >- [Common directory prefix]/\*\*/[Common filename prefix]\*
 >- [Common directory prefix]/\*\*/*[Common filename suffix]
 >- [Common directory prefix]/\*\*/[Common filename prefix]\*[Common filename suffix]
@@ -81,14 +81,14 @@ Examples:
 ![](https://main.qcloudimg.com/raw/4807b612fc06f4baeca8014a55f86edd.png)
 
 
->
+>!
 >1. The configuration of hierarchical directories and wildcards is only available for Loglistener version 2.2.2 or above. In order to be compatible with lower versions, you can modify the old path configuration which does not support hierarchical directories.
 >2. A log file will only be collected by one log topic.
 >3. LogListener does not collect those log files with symbolic links, or in shared file directories of NFS, CIFS, etc.
 
 ### 5. Associating a server group
 
-Select a server group from the server groups list, and associate it with the log topic. Note that this server group and log topic should be in the same region. For more information, see [Machine Group Management](https://intl.cloud.tencent.com/document/product/614/17412) .
+Select a server group from the server groups list, and associate it with the log topic. Note that this server group and log topic should be in the same region. For more information, see [Server Group Management](https://intl.cloud.tencent.com/document/product/614/17412) .
 ![](https://main.qcloudimg.com/raw/5bb42e4d8501b6a23e1b98cc7135d874.png)
 
 ### 6. Configuring the parsing mode
@@ -134,7 +134,7 @@ Example 1: original timestamp: `10/Dec/2017:08:00:00`; parsing format: `%d/%b/%Y
 Example 2: original timestamp: `2017-12-10 08:00:00`; parsing format: `%Y-%m-%d %H:%M:%S`.
 Example 3: original timestamp: `12/10/2017, 08:00:00`; parsing format: `%m/%d/%Y, %H:%M:%S`.
 
->Second can be used as the unit of log time. If the time is entered in a wrong format, the collection time is used as the log time.
+>!Second can be used as the unit of log time. If the time is entered in a wrong format, the collection time is used as the log time.
 
 ### 8. Setting filter conditions
 
@@ -142,11 +142,11 @@ The Filter is designed to help you get useful logs by adding filtering rules for
 
 To collect full RegEx logs, you need to set filtering rules based on the custom key-value pairs. For example, to collect all logs with the `status` field as 400 or 500, enter `status` under **Key**, and `400|500` under **Filtering Rule**.
 
-> The "AND" logic is used for multiple filtering rules; rules will be written if more than one rule is specified for one key.
+>! The "AND" logic is used for multiple filtering rules; rules will be written if more than one rule is specified for one key.
 
 ### 9. Searching logs
 
 Log in to the [CLS console](https://console.cloud.tencent.com/cls), and click **Log Search** in the left sidebar. Select **Logset** and **Log Topic** from their drop-down list, and click **Search Analysis** to begin the search.
 
 
->A log topic must have index configuration enabled to be searchable.
+> !A log topic must have index configuration enabled to be searchable.
