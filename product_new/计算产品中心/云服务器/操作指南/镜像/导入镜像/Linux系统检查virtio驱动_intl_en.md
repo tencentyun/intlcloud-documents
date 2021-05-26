@@ -100,14 +100,12 @@ cd /usr/src/linux
 1. Execute the following commands to compile the kernel.
 ```
 make mrproper
-symvers_path=$(find /usr/src/ -name "Module.symvers")
-test -f $symvers_path && cp $symvers_path .
 cp /boot/config-$(uname -r) ./.config
 make menuconfig
 ```
 Enter the “Linux Kernel vX.X.XX Configuration” interface as shown below:
 ![](https://main.qcloudimg.com/raw/72c3bea10627aaef022f1a72b72ac79a.png)
-> If you are not taken to the "Linux Kernel vX.X.XX Configuration" interface, please go to [Step 18](# OptionalStep).
+>? If you are not taken to the "Linux Kernel vX.X.XX Configuration" interface, please go to [Step 18](# OptionalStep).
 > “Linux Kernel vX.X.XX Configuration” interface:
 > - Press “Tab” or “↑” “↓” to move the cursor.
 > - Press “Enter” to select or execute the item selected by the cursor.
@@ -138,7 +136,7 @@ If it is not selected, press the space bar to select the "Virtio network driver 
 16. Press "Esc" to exit the kernel configuration interface, and select "YES" to save the `.config` file.
 17. Take [Step 1: Checking whether the kernel supports the virtio drivers](#CheckVirtioForKernel) to verify whether the virtio drivers have been configured correctly.
 18. <span id = "OptionalStep"></span> (Optional) Execute the following command to manually edit the `.config` file.
-> This step is recommended if any of the following two is true:
+>? This step is recommended if any of the following two is true:
 > - The kernel still contains no configuration information related to the virtio drivers after you finish checking.
 > - When compiling the kernel, you can not enter the kernel configuration interface or save the `.config` file.
 > 
