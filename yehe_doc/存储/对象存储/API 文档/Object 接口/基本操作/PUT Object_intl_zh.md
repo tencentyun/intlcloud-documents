@@ -7,6 +7,23 @@ PUT Object 接口请求可以将本地的对象（Object）上传至指定存储
 > - 如果请求头的 Content-Length 值小于实际请求体（body）中传输的数据长度，COS 仍将成功创建文件，但对象大小只等于 Content-Length 中定义的大小，其他数据将被丢弃。
 > - 如果试图添加已存在的同名对象且没有启用版本控制，则新上传的对象将覆盖原来的对象，成功时返回200 OK。
 
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                推荐使用 API Explorer
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=PutObject&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>点击调试</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer 提供了在线调用、签名验证、SDK 代码生成和快速检索接口等能力。您可查看每次调用的请求内容和返回结果以及自动生成 SDK 调用示例。
+            </div>
+        </div>
+    </div>
+</div>
+
+
 #### 版本控制
 
 - 如果对存储桶启用版本控制，对象存储将自动为要添加的对象生成唯一的版本 ID。对象存储使用 x-cos-version-id 响应头部在响应中返回此标识。
@@ -49,7 +66,7 @@ Authorization: Auth String
 | Expires             | RFC 2616 中定义的缓存失效时间，将作为对象元数据保存          | string  | 否       |
 | Transfer-Encoding   | 如果希望在上传时分块传输，则指定 Transfer-Encoding: chunked 请求头部，此时请求体遵循 RFC 2616 中定义的传输编码格式，且不能指定 Content-Length 请求头部 | string  | 否       |
 | x-cos-meta-\*       | 包括用户自定义元数据头部后缀和用户自定义元数据信息，将作为对象元数据保存，大小限制为2KB<br>**注意：**用户自定义元数据信息支持下划线（_），但用户自定义元数据头部后缀不支持下划线，仅支持减号（-） | string  | 否       |
-| x-cos-storage-class | 对象存储类型。枚举值请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925) 文档，例如 INTELLIGENT_TIERING，STANDARD_IA，ARCHIVE，DEEP_ARCHIVE。默认值：STANDARD | enum    | 否       |
+| x-cos-storage-class | 对象存储类型。枚举值请参见 [存储类型概述](https://intl.cloud.tencent.com/document/product/436/30925) 文档，例如 MAZ_STANDARD，MAZ_STANDARD_IA，INTELLIGENT_TIERING，MAZ_INTELLIGENT_TIERING，STANDARD_IA，ARCHIVE，DEEP_ARCHIVE。默认值：STANDARD | enum    | 否       |
 | x-cos-traffic-limit | 针对本次上传进行流量控制的限速值，必须为数字，单位默认为 bit/s。限速值设置范围为819200 - 838860800，即100KB/s - 100MB/s，如果超出该范围将返回400错误 | integer | 否       |
 | x-cos-tagging       | 对象的标签集合，最多可设置10个标签（例如，Key1=Value1&Key2=Value2）。 标签集合中的 Key 和 Value 必须先进行 URL 编码。 | string  | 否       |
 
@@ -107,7 +124,7 @@ Authorization: Auth String
 
 #### 请求
 
-```plaintext
+``` plaintext
 PUT /exampleobject HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Fri, 10 Apr 2020 09:35:05 GMT

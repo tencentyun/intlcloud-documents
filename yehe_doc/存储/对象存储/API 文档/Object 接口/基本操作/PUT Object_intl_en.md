@@ -1,4 +1,4 @@
-## Description
+## Overview
 
 This API is used to upload a local object to a specified bucket. To call this API, you need to have write permission for the bucket.
 
@@ -6,6 +6,23 @@ This API is used to upload a local object to a specified bucket. To call this AP
 >- The `PUT Object` API supports uploading a file of up to 5 GB. If you need to upload a file larger than 5 GB, please use the [Multipart Upload](https://intl.cloud.tencent.com/document/product/436/14112) API.
 > - If the `Content-Length` value in the request header is smaller than the length of the data in the actual request body, COS will still successfully create a file, but the object size will be equal to the size defined in `Content-Length`, and the remaining data will be discarded.
 > - If you upload an object with the same name as an object that already exists in the bucket and versioning is not enabled, the old object will be overwritten by the new one and "200 OK" will be returned upon successful upload.
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                We recommend using Tencent Cloud API Explorer.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=PutObject&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for the desired APIs. You can also use it to query the content of each request as well as its response, and obtain the auto-generated SDK calling samples.
+            </div>
+        </div>
+    </div>
+</div>
+
 
 #### Versioning
 
@@ -67,7 +84,7 @@ You can configure an access control list (ACL) for the object by specifying the 
 | x-cos-grant-write-acp | Grants a user write permission for the ACL of an object in the format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
 | x-cos-grant-full-control | Grants a user full permission to operate on an object in the format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
 
-**Headers Related to Server-Side Encryption (SSE)**
+**Headers related to SSE**
 
 Server-side encryption can be used during object upload. For more information, see [Server-side encryption headers](https://intl.cloud.tencent.com/document/product/436/7728#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
@@ -89,7 +106,7 @@ If the object is uploaded to a versioning-enabled bucket, the following response
 | ---------------- | ------------- | ------ |
 | x-cos-version-id | Object version ID | string |
 
-**Headers related to server-side encryption (SSE)**
+**Headers related to SSE**
 
 If server-side encryption is used during object upload, this API will return the headers used specifically for server-side encryption. For more information, see [Server-side encryption headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
@@ -101,13 +118,13 @@ The response body of this API is empty.
 
 This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Examples
 
-#### Sample 1. Simple use case (versioning disabled)
+#### Example 1. Simple use case (with versioning disabled)
 
 #### Request
 
-```plaintext
+``` plaintext
 PUT /exampleobject HTTP/1.1
 Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Fri, 10 Apr 2020 09:35:05 GMT
@@ -133,7 +150,7 @@ x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MDNkYzlfNjRiODJhMDlfMzFmYzhfMTFm****
 ```
 
-#### Sample 2. Specifying metadata and ACL using request headers
+#### Example 2. Specifying metadata and ACL using request headers
 
 #### Request
 
@@ -169,7 +186,7 @@ x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MDNkZTBfZjhjMDBiMDlfNzdmN18xMGFi****
 ```
 
-#### Sample 3. Using server-side encryption SSE-COS
+#### Example 3. Using server-side encryption SSE-COS
 
 #### Request
 
@@ -203,7 +220,7 @@ x-cos-request-id: NWU5MDNkZjVfYzVjNzJhMDlfMjVhNzNfMWMy****
 x-cos-server-side-encryption: AES256
 ```
 
-#### Sample 4. Using server-side encryption SSE-KMS
+#### Example 4. Using server-side encryption SSE-KMS
 
 #### Request
 
@@ -240,7 +257,7 @@ x-cos-server-side-encryption: cos/kms
 x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085****
 ```
 
-#### Sample 5. Using server-side encryption SSE-C
+#### Example 5. Using server-side encryption SSE-C
 
 #### Request
 
@@ -278,7 +295,7 @@ x-cos-server-side-encryption-customer-algorithm: AES256
 x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
 ```
 
-#### Sample 6. Enabling versioning
+#### Example 6. Enabling versioning
 
 #### Request
 
@@ -311,7 +328,7 @@ x-cos-request-id: NWU5MDNlMjNfMThiODJhMDlfNGQ1OF8xMWY4****
 x-cos-version-id: MTg0NDUxNTc1NjIzMTQ1MDAwODg
 ```
 
-#### Sample 7. Suspending versioning
+#### Example 7. Suspending versioning
 
 #### Request
 
@@ -343,7 +360,7 @@ x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MDNlNDNfZTZjNzJhMDlfMmYwMDlfMTVi****
 ```
 
-#### Sample 8. Using chunked transfer encoding for multipart transfer
+#### Example 8. Using chunked transfer encoding for multipart transfer
 
 The request in this example uses `Transfer-Encoding: chunked` encoding. This use case describes the raw data in the HTTP request. During use, calling methods vary depending on languages and libraries. Please refer to language- and library-related documents.
 

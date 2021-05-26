@@ -2,6 +2,23 @@
 
 HEAD Object 接口请求可以判断指定对象是否存在和有权限，并在指定对象可访问时获取其元数据。该 API 的请求者需要对目标对象有读取权限，或者目标对象向所有人开放了读取权限（公有读）。
 
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                推荐使用 API Explorer
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=HeadObject&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>点击调试</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer 提供了在线调用、签名验证、SDK 代码生成和快速检索接口等能力。您可查看每次调用的请求内容和返回结果以及自动生成 SDK 调用示例。
+            </div>
+        </div>
+    </div>
+</div>
+
+
 #### 版本控制
 
 当启用版本控制时，该 HEAD 操作可以使用 versionId 请求参数指定要返回的版本 ID，此时将返回指定版本的元数据，如指定版本为删除标记则返回 HTTP 响应码404（Not Found），否则将返回最新版本的元数据。
@@ -17,7 +34,7 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> ? Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 
 #### 请求参数
 
@@ -57,8 +74,8 @@ Authorization: Auth String
 | Content-Encoding                                             | RFC 2616 中定义的编码格式，仅当对象元数据包含此项时才会返回该头部 | string |
 | Expires                                                      | RFC 2616 中定义的缓存失效时间，仅当对象元数据包含此项时才会返回该头部 | string |
 | x-cos-meta-\*                                                | 包括用户自定义元数据头部后缀和用户自定义元数据信息           | string |
-| x-cos-storage-class                                          | 对象存储类型，枚举值请参见 [存储类型](https://intl.cloud.tencent.com/document/product/436/30925) 文档，例如 STANDARD_IA，ARCHIVE，DEEP_ARCHIVE。仅当对象不是标准存储（STANDARD）时才会返回该头部 | Enum   |
-| x-cos-storage-tier                                           |  当对象的存储类型为智能分层存储时，该头部表示对象所处的存储层，有效值：FREQUENT、INFREQUENT。  |  enum  |
+| x-cos-storage-class                                          | 对象存储类型，枚举值请参见 [存储类型](https://intl.cloud.tencent.com/document/product/436/30925) 文档，例如 MAZ_STANDARD，MAZ_STANDARD_IA，INTELLIGENT_TIERING，MAZ_INTELLIGENT_TIERING，STANDARD_IA，ARCHIVE，DEEP_ARCHIVE。仅当对象不是标准存储（STANDARD）时才会返回该头部 | enum   |
+|  x-cos-storage-tier  |  当对象的存储类型为智能分层存储时，该头部表示对象所处的存储层，有效值：FREQUENT、INFREQUENT。  |  enum  |
 
 #### 归档类型对象相关头部
 
@@ -66,8 +83,8 @@ Authorization: Auth String
 
 | 名称&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 描述 | 类型 |
 | --- | --- | --- |
-| x-cos-restore | 指示当前恢复操作的状态：<br><li>当恢复操作正在进行中时，该响应头部的值为`ongoing-request="true"`<li>当对象已经恢复时，该响应头部包含 COS 即将删除临时副本的时间，例如`ongoing-request="false", expiry-date="Tue, 19 Nov 2019 16:00:00 GMT"` | string |
-| x-cos-restore-status | 当恢复操作正在进行中时返回该响应头部，指示当前的恢复模式和恢复操作请求时间，例如`tier="bulk"; request-date="Mon, 18 Nov 2019 09:34:50 GMT"`，有关恢复模式请参见 [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | string  |
+| x-cos-restore | 指示当前恢复操作的状态：<br><li>当恢复操作正在进行中时，该响应头部的值为`ongoing-request="true"`<li>当对象已经恢复时，该响应头部包含 COS 即将删除临时副本的时间，例如`ongoing-request="false", expiry-date="Tue, 19 Nov 2019 16:00:00 GMT"` | string
+| x-cos-restore-status | 当恢复操作正在进行中时返回该响应头部，指示当前的恢复模式和恢复操作请求时间，例如`tier="bulk"; request-date="Mon, 18 Nov 2019 09:34:50 GMT"`，有关恢复模式请参见 [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | string
 
 **版本控制相关头部**
 
@@ -141,7 +158,7 @@ Connection: close
 Date: Wed, 29 Jul 2020 06:51:49 GMT
 Server: tencent-cos
 x-cos-request-id: NWYyMTFjODVfZDNjODJhMDlfMWU1MWVfOTUy****
-x-cos-trace-id:  OGVmYzZiMmQzYjA2OWNhODk0NTRkMTBiOWVmMDAxODczNTBmNjMwZmQ0MTZkMjg0NjlkNTYyNmY4ZTRkZTk0NzJmZTI0ZmJhYTZmZjYyNmU5ZGNlZDI5YjkyODkwYjNhZjhlNGQ0MDY1ZGIxNDEwMWYwOTg1NDc4Mzg4MTE3****
+x-cos-trace-id: OGVmYzZiMmQzYjA2OWNhODk0NTRkMTBiOWVmMDAxODczNTBmNjMwZmQ0MTZkMjg0NjlkNTYyNmY4ZTRkZTk0NzJmZTI0ZmJhYTZmZjYyNmU5ZGNlZDI5YjkyODkwYjNhZjhlNGQ0MDY1ZGIxNDEwMWYwOTg1NDc4Mzg4MTE3****
 ```
 
 #### 案例三：通过请求头指定查询条件并返回 HTTP 状态码为412（Precondition Failed）
@@ -225,6 +242,7 @@ x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MGI4NzZfN2FjODJhMDlfMjU3N18xYTEz****
 x-cos-server-side-encryption: cos/kms
 x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085****
+
 ```
 
 #### 案例六：使用服务端加密 SSE-C
@@ -257,7 +275,6 @@ x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MGI4ODFfN2NiODJhMDlfMmFmYTVfMWRh****
 x-cos-server-side-encryption-customer-algorithm: AES256
 x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG****
-
 ```
 
 #### 案例七：请求对象最新版本（启用版本控制）
@@ -270,7 +287,6 @@ Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Fri, 10 Apr 2020 18:19:15 GMT
 Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1586542755;1586549955&q-key-time=1586542755;1586549955&q-header-list=date;host&q-url-param-list=&q-signature=7909dc19780873dfaa51c8b238254098ca1a****
 Connection: close
-
 ```
 
 #### 响应
@@ -287,7 +303,6 @@ Server: tencent-cos
 x-cos-hash-crc64ecma: 11596229263574363878
 x-cos-request-id: NWU5MGI4YTNfZDZjODJhMDlfYmU0MV8xM2Y5****
 x-cos-version-id: MTg0NDUxNTc1MzA5NjQ2ODI5MTg
-
 ```
 
 #### 案例八：请求对象指定版本（启用版本控制）
@@ -300,7 +315,6 @@ Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Fri, 10 Apr 2020 18:19:04 GMT
 Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1586542744;1586549944&q-key-time=1586542744;1586549944&q-header-list=date;host&q-url-param-list=versionid&q-signature=1307acd3e8649087c738ecca452a54fa5a79****
 Connection: close
-
 ```
 
 #### 响应

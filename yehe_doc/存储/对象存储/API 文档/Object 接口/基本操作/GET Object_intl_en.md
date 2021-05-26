@@ -5,6 +5,24 @@ This API is used to download an object to the local file system. To make this re
 > !
 >- If the `response-*` parameter is used in a request, anonymous access will not be supported and the request must carry a signature.
 >- If you have [set origin-pull](https://intl.cloud.tencent.com/document/product/436/31508) in the COS console but haven’t enabled **sync origin-pull**, when COS pulls data from the configured origin server, `GET Object` will return 302 and redirect to the origin server address. If this address is not trusted, when you use the SDK or call the API, it is strongly recommended that COS verify the address on the backend before requesting it, rather than directly returning 302. Otherwise, security risks such as server-side request forgery (SSRF) (e.g., pulling from a private network address) may occur.
+>
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                We recommend using Tencent Cloud API Explorer.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=GetObject&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for the desired APIs. You can also use it to query the content of each request as well as its response, and obtain the auto-generated SDK calling samples.
+            </div>
+        </div>
+    </div>
+</div>
+
 
 #### Versioning
 
@@ -14,7 +32,7 @@ With versioning enabled, you can specify the `versionId` request parameter to ge
 
 If this API is used to get an **ARCHIVE or DEEP ARCHIVE** object, and the object has not been restored using [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) or the restored copy has been deleted after expiration, the request will return HTTP status code 403 (Forbidden) and include an error message in the response body. The error code `InvalidObjectState` indicates that you cannot use this API to get the object in its current state unless you restore it first.
 
-#### Request
+## Request
 
 #### Sample request 
 
@@ -69,7 +87,7 @@ In addition to common response headers, this API also returns the following resp
 | Header &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ |
 | Cache-Control | Cache directives as defined in RFC 2616, which will be returned only if it is contained in the object metadata or if it is specified in the request parameter | string |
-| Content-Disposition                                         | File name as defined in RFC 2616, which will be returned only if it is contained in the object metadata or if it is specified in the request parameter | string  |
+| Content-Disposition                                         | Filename as defined in RFC 2616, which will be returned only if it is contained in the object metadata or if it is specified in the request parameter | string  |
 | Content-Encoding                                            | Encoding format as defined in RFC 2616, which will be returned only if it is contained in the object metadata or if it is specified in the request parameter | string  |
 | Content-Range                                                | Byte range of the returned content as defined in RFC 2616, which will be returned only if it is specified in the request | string |
 | Expires                                                    | Cache expiration time as defined in RFC 2616, which will be returned only if it is contained in the object metadata or if it is specified in the request parameter | string  |
@@ -99,7 +117,7 @@ This API returns common error responses and error codes. For more information, p
 
 ## Examples
 
-#### Example 1. Simple example (versioning not enabled)
+#### Example 1. Simple use case (with versioning disabled)
 
 #### Request
 

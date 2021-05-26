@@ -1,10 +1,27 @@
-## Feature description
+## Overview
 
 This API is used to determine whether the specified object exists and whether you have the permission to access it. You can use this API to get the object metadata if you can access it. To make this request, you need to have read permission for the object or the object needs to have public read permission enabled.
 
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                We recommend using Tencent Cloud API Explorer.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=HeadObject&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for the desired APIs. You can also use it to query the content of each request as well as its response, and obtain the auto-generated SDK calling samples.
+            </div>
+        </div>
+    </div>
+</div>
+
+
 #### Versioning
 
-With versioning enabled, you can specify the `versionId` request parameter to get the metadata of a specific version of the object. If the version ID you specify corresponds to a delete marker, an HTTP `404` status code (Not Found) will be returned. If no version ID is specified, the metadata of the latest version will be returned.
+With versioning enabled, you can specify the `versionId` request parameter to get the metadata of a specific version of the object. If the version ID you specify corresponds to a delete marker, HTTP status code 404 (Not Found) will be returned. If no version ID is specified, the metadata of the latest version will be returned.
 
 ## Request
 
@@ -17,9 +34,9 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+> ? Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 
-#### Request Parameters
+#### Request parameters
 
 | Name | Description | Type | Required |
 | --------- | ------------------------------------------------------------ | ------ | -------- |
@@ -27,16 +44,16 @@ Authorization: Auth String
 
 #### Request headers
 
-In addition to common request headers, this API also supports the following request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+In addition to common request headers, this API also supports the following request headers. For more information about common request headers, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-| Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | Required |
+| Header &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Description | Type | Required |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| If-Modified-Since | If the object is modified after the specified time, HTTP status code `200` (OK) will be returned; otherwise, HTTP status code 304 (Not Modified) will be returned. | string | No |
-| If-Unmodified-Since | If the object is not modified after the specified time, HTTP status code `200` (OK) will be returned; otherwise, HTTP status code `412` (Precondition Failed) will be returned. | string | No |
-| If-Match | If the `ETag` of the object is the same as the specified value, HTTP status code `200` (OK) will be returned; otherwise, HTTP status code `412` (Precondition Failed) will be returned. | string | No |
-| If-None-Match | If the `ETag` of the object is different from the specified value, HTTP status code `200` (OK) will be returned; otherwise, HTTP status code `304` (Not Modified) will be returned. | string | No |
+| If-Modified-Since | If the object is modified after the specified time, HTTP status code 200 (OK) will be returned; otherwise, HTTP status code 304 (Not Modified) will be returned. | string | No |
+| If-Unmodified-Since | If the object is not modified after the specified time, HTTP status code 200 (OK) will be returned; otherwise, HTTP status code 412 (Precondition Failed) will be returned. | string | No |
+| If-Match | If the `ETag` of the object is the same as the specified value, HTTP status code 200 (OK) will be returned; otherwise, HTTP status code 412 (Precondition Failed) will be returned. | string | No |
+| If-None-Match | If the `ETag` of the object is different from the specified value, HTTP status code 200 (OK) will be returned; otherwise, HTTP status code 304 (Not Modified) will be returned. | string | No |
 
-**Server-side Encryption Headers**
+**Server-side encryption headers**
 
 If server-side encryption is used for the specified object and the encryption method is SSE-C, you will need to specify the headers related to server-side encryption to decrypt the object. For more information, see [Server-side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7728#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
@@ -48,36 +65,36 @@ This API does not have a request body.
 
 #### Response headers
 
-In addition to common response headers, this API also returns the following response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+In addition to common response headers, this API also returns the following response headers. For more information about common response headers, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 | Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ |
 | Cache-Control  | Cache directives as defined in RFC 2616, which will be returned only if it is contained in the object metadata | string |
-| Content-Disposition                                         | File name as defined in RFC 2616, which will be returned only if it is contained in the object metadata | String  |
+| Content-Disposition                                         | Filename as defined in RFC 2616, which will be returned only if it is contained in the object metadata | String  |
 | Content-Encoding | Encoding format as defined in RFC 2616, which will be returned only if it is contained in the object metadata | string |
 | Expires                                                    | Cache expiration time as defined in RFC 2616, which will be returned only if it is contained in the object metadata | string  |
 | x-cos-meta-\* | Contains user-defined metadata and header suffixes | string |
-| x-cos-storage-class | Object storage class, such as `STANDARD_IA`, `ARCHIVE` and `DEEP_ARCHIVE`. For enumerated values, see [Storage Class](https://intl.cloud.tencent.com/document/product/436/30925). This header will be returned only if the storage class of the object is not `STANDARD`. | Enum |
-| x-cos-storage-tier                                           |  Specifies the access tier for the object if it is stored in the INTELLIGENT TIERING storage class. Valid values: FREQUENT, INFREQUENT.  |  enum  |
+| x-cos-storage-class | Object storage class. For the enumerated values, such as `INTELLIGENT_TIERING`, `STANDARD_IA`, `ARCHIVE`, and `DEEP_ARCHIVE`, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). Note that this header will be returned only if the object’s storage class is not STANDARD. | enum |
+|  x-cos-storage-tier | Specifies the access tier of INTELLIGENT TIERING objects. Valid values: `FREQUENT`, `INFREQUENT` |  enum  |
 
-#### Archived Object-Related Headers
+#### Archived object−related headers
 
 If the storage class of the object is `ARCHIVE` and `POST Object restore` has been used to restore it, the following response headers will be returned:
 
-| Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type |
+| Header &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type |
 | --- | --- | --- |
-| x-cos-restore | Indicates the status of the restoration process:<br><li>If the restoration is ongoing, the value of the response header will be `ongoing-request="true"`<li>If the object has already been restored, the response header will include the time when COS will delete the temporary copy, e.g. `ongoing-request="false", expiry-date="Tue, 19 Nov 2019 16:00:00 GMT"` | string |
-| x-cos-restore-status | This parameter will be returned if the restoration is ongoing, indicating what restoration mode was used and when the restoration was requested, e.g. `tier="bulk"; request-date="Mon, 18 Nov 2019 09:34:50 GMT"`. For more information on restoration modes, see [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | string |
+| x-cos-restore | Indicates the status of the restoration process:<br><li>If the restoration is ongoing, the value of the response header will be `ongoing-request="true"`<li>If the object has already been restored, the response header will include the time when COS will delete the temporary copy, e.g., `ongoing-request="false", expiry-date="Tue, 19 Nov 2019 16:00:00 GMT"` | string
+| x-cos-restore-status | This parameter will be returned if the restoration is ongoing, indicating what restoration mode was used and when the restoration was requested, e.g., `tier="bulk"; request-date="Mon, 18 Nov 2019 09:34:50 GMT"`. For more information on restoration modes, see [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | string
 
-**Versioning-Related Headers**
+**Versioning-related headers**
 
-If the target object is from a bucket where versioning is enabled, the following response headers will be returned:
+If the target object is from a versioning-enabled bucket, the following response header will be returned:
 
-| Name | Description | Type |
+| Header | Description | Type |
 | ---------------- | ------------- | ------ |
 | x-cos-version-id | Object version ID | string |
 
-**Server-side Encryption Headers**
+**Server-side encryption headers**
 
 If server-side encryption is used for the specified object, this API will return the server-side encryption headers. For more information, see [Server-side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
@@ -87,11 +104,11 @@ The response body of this API is empty.
 
 #### Error codes
 
-This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) .
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Use Cases
+## Examples
 
-#### Example 1. Simple example (versioning not enabled)
+#### Example 1. Simple use case (with versioning disabled)
 
 #### Request
 
@@ -118,7 +135,7 @@ x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MGI4NDBfNjFjODJhMDlfMzY2NjVfMjNi****
 ```
 
-#### Example 2. Specifying query conditions using request headers and returning a HTTP status code 304 (Not Modified)
+#### Example 2. Specifying search criteria through the request headers with an HTTP status code 304 (Not Modified) returned
 
 #### Request
 
@@ -144,7 +161,7 @@ x-cos-request-id: NWYyMTFjODVfZDNjODJhMDlfMWU1MWVfOTUy****
 x-cos-trace-id: OGVmYzZiMmQzYjA2OWNhODk0NTRkMTBiOWVmMDAxODczNTBmNjMwZmQ0MTZkMjg0NjlkNTYyNmY4ZTRkZTk0NzJmZTI0ZmJhYTZmZjYyNmU5ZGNlZDI5YjkyODkwYjNhZjhlNGQ0MDY1ZGIxNDEwMWYwOTg1NDc4Mzg4MTE3****
 ```
 
-#### Example 3. Specifying query conditions using request headers and returning a HTTP status code 412 (Precondition Failed)
+#### Example 3. Specifying search criteria through the request header with HTTP status code 412 (Precondition Failed) returned
 
 #### Request
 
@@ -225,9 +242,10 @@ x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MGI4NzZfN2FjODJhMDlfMjU3N18xYTEz****
 x-cos-server-side-encryption: cos/kms
 x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085****
+
 ```
 
-#### Example 6. Using Server-side Encryption SSE-C
+#### Example 6. Using server-side encryption SSE-C
 
 #### Request
 
@@ -257,7 +275,6 @@ x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWU5MGI4ODFfN2NiODJhMDlfMmFmYTVfMWRh****
 x-cos-server-side-encryption-customer-algorithm: AES256
 x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG****
-
 ```
 
 #### Example 7. Requesting the latest version of an object (with versioning enabled)
@@ -270,7 +287,6 @@ Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Fri, 10 Apr 2020 18:19:15 GMT
 Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1586542755;1586549955&q-key-time=1586542755;1586549955&q-header-list=date;host&q-url-param-list=&q-signature=7909dc19780873dfaa51c8b238254098ca1a****
 Connection: close
-
 ```
 
 #### Response
@@ -287,7 +303,6 @@ Server: tencent-cos
 x-cos-hash-crc64ecma: 11596229263574363878
 x-cos-request-id: NWU5MGI4YTNfZDZjODJhMDlfYmU0MV8xM2Y5****
 x-cos-version-id: MTg0NDUxNTc1MzA5NjQ2ODI5MTg
-
 ```
 
 #### Example 8. Requesting a specific version of an object (with versioning enabled)
@@ -300,7 +315,6 @@ Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 Date: Fri, 10 Apr 2020 18:19:04 GMT
 Authorization: q-sign-algorithm=sha1&q-ak=AKID8A0fBVtYFrNm02oY1g1JQQF0c3JO****&q-sign-time=1586542744;1586549944&q-key-time=1586542744;1586549944&q-header-list=date;host&q-url-param-list=versionid&q-signature=1307acd3e8649087c738ecca452a54fa5a79****
 Connection: close
-
 ```
 
 #### Response
