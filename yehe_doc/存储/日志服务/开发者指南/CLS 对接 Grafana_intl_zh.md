@@ -36,8 +36,8 @@ service grafana-server restart
 1. 在`/var/lib/grafana/plugins/`插件目录下安装 CLS 对接 Grafana 插件。
 ```
 cd /var/lib/grafana/plugins/
-wget https://github.com/TencentCloud/cls-grafana-datasource/releases/latest/download/cls-grafana-datasource.zip
-unzip cls-grafana-datasource.zip
+wget https://github.com/TencentCloud/cls-grafana-datasource/releases/latest/download/tencent-cls-grafana-datasource.zip
+unzip tencent-cls-grafana-datasource
 ```
 >? 
 > - 如果您的云服务器非 CentOS 系统，请先确认 Grafana 的插件目录位置，再进入该插件目录进行安装。
@@ -54,8 +54,8 @@ allow_loading_unsigned_plugins = tencent-cls-grafana-datasource
 ```
    service grafana-server restart
 ```
-<span id="ConfigLogDataSource"></span>
-### 配置日志数据源
+### 配置日志数据源<span id="ConfigLogDataSource"></span>
+
 1. 在浏览器中访问以下地址，登录 Grafana。
 >? Grafana 的默认端口为3000端口。
 >
@@ -69,7 +69,7 @@ http://Grafana IP 地址:3000
 <table>
 <tr><th>配置项</th><th>说明</th><tr>
 <tr><td>Security Credentials</td><td>SecretId、SecretKey：API 请求密钥，用于身份鉴权。可前往 <a href="https://console.cloud.tencent.com/cam/capi">API 密钥管理</a> 获取地址。</td><tr>
-<tr><td>Log Service Info</td><td><ul><li>region：日志服务区域简称。例如，北京区域填写`ap-beijing`。</br>完整的区域列表格式请参考 <a href="https://intl.cloud.tencent.com/document/product/614/18940">地域列表</a>。</li><li>TopicId：日志主题 ID。</li></ul></td>
+<tr><td>Log Service Info</td><td><ul><li>region：日志服务区域简称。例如，北京区域填写`ap-beijing`。</br>完整的区域列表格式请参考 <a href="https://intl.cloud.tencent.com/document/product/614/18940">地域列表</a>。</li><li>TopicId：日志主题 ID。</li></ul></td><tr>
 </table>
 
 ### 配置 dashboard
@@ -147,6 +147,5 @@ http://Grafana IP 地址:3000
 
 ```
 - Format：Table
-
 
 
