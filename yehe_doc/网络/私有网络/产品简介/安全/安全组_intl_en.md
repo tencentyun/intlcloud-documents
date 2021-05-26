@@ -27,4 +27,4 @@ When creating a security group, you can use the two security group templates pro
 - Template that opens all ports: all inbound and outbound traffic will be permitted.
 - Template that opens major ports: TCP port 22 (for Linux SSH login), ports 80 and 443 (for web services), port 3389 (for Windows remote login), ICMP protocol (for ping commands), and private network ports will be open to traffic.
 
-If the provided security group templates cannot meet your actual needs, you can create custom security groups. For details, see [Creating a Security Group](https://intl.cloud.tencent.com/document/product/215/35506) and [Security Group Use Cases](https://intl.cloud.tencent.com/document/product/215/32507).
+If the provided security group templates cannot meet your actual needs, you can create custom security groups. For details, see [Creating a Security Group](https://intl.cloud.tencent.com/document/product/215/35506) and [Security Group Use Cases](https://intl.cloud.tencent.com/document/product/215/35519).
