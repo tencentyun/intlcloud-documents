@@ -23,8 +23,8 @@ TPNS provides you with a troubleshooting tool for message push exceptions such a
 4. Enter the user account and click **Query**.
 5. Select the token associated with the account to view device details.
 > ?
->- Account: refers to the unique ID of the user bound to the token, including OpenID and UID.
->- Token list: displays tokens in reverse chronological order by binding time. A maximum of 10 tokens are listed in a page. If the account is bound to multiple devices, the message will be pushed to the last device bound to this account. To push the message to all devices bound to this account, please change the push settings via the [console](https://console.cloud.tencent.com/tpns) or the [API](https://intl.cloud.tencent.com/document/product/1024/33764).
+> - Account: refers to the unique ID of the user bound to the token, including OpenID and UID.
+> - Token list: displays tokens in reverse chronological order by binding time. A maximum of 10 tokens are listed in a page. If the account is bound to multiple devices, the message will be pushed to the last device bound to this account. To push the message to all devices bound to this account, please change the push settings via the [console](https://console.cloud.tencent.com/tpns) or the [API](https://intl.cloud.tencent.com/document/product/1024/33764).
 
 ### Querying via a token
 
@@ -41,7 +41,7 @@ TPNS provides you with a troubleshooting tool for message push exceptions such a
 > ?`pushid` acquisition method:
 > 1. Select **Push Management** -> **Task List** on the left sidebar to obtain the `PushID` to be queried.
 > 2. Obtain it from the response parameter of the push API.
-> 3. If the query result does not match the actual situation, or the problem persists, you can view the [FAQs about push](#.E6.8E.A8.E9.80.81.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98) or [submit a ticket](https://console.cloud.tencent.com/workorder/category) with the `pushID` and token for assistance.
+3. If the query result does not match the actual situation, or the problem persists, you can view the [FAQs about push](#.E6.8E.A8.E9.80.81.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98) or [submit a ticket](https://console.cloud.tencent.com/workorder/category) with the `pushID` and token for assistance.
 
 ## FAQ
 
@@ -68,8 +68,7 @@ TPNS provides you with a troubleshooting tool for message push exceptions such a
  ```
  - If you’re using a Mi phone, check whether the message is included in the ordinary notifications.
  - If you’re using a Meizu phone, check whether the message is included in the message box.
- - If you’re using an OPPO phone, check whether the notification bar is manually enabled.
- - If you’re using a vivo phone, check whether the notification bar is manually enabled.
+ - If you’re using a vivo or OPPO phone, check whether the notification bar is manually enabled.
  - If you’re using a vivo or Huawei phone, check whether the notification banners and sounds are manually enabled.
  - Do not contain “test” and other sensitive words in your notifications because such notifications may be blocked by vendor channels.
  - Please note that the Vivo and OPPO push channels must be approved by vendors before being used.
