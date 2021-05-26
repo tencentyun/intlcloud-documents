@@ -157,7 +157,7 @@ Please see the following complete sample code:
 
 - (void) fenceQueue:(QCloudCredentailFenceQueue * )queue requestCreatorWithContinue:(QCloudCredentailFenceQueueContinue)continueBlock
 {
-    // Get the temporary key from the backend server synchronously
+    // Get the temporary key from the backend server synchronously. You are strongly advised to put the logic for getting the temporary key here to maximize the availability of the key.
     //...
 
     QCloudCredential* credential = [QCloudCredential new];
