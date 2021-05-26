@@ -101,7 +101,7 @@ This API (GET Bucket inventory) is used to query the inventory job information i
 #### Method prototype
 
 ```
-public Guzzle\Service\Resource\Model GutBucketInventory(array $args = array());
+public Guzzle\Service\Resource\Model GetBucketInventory(array $args = array());
 
 ```
 
