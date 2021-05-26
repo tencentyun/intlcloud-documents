@@ -16,11 +16,11 @@ LogListener 仅支持64位 Linux 操作系统环境（暂不支持 Windows），
 
 ### 1. 下载安装 LogListener
 
-LogListener 最新版本下载地址： [下载 LogListener](https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-linux-x64-2.5.6.tar.gz)
+LogListener 最新版本下载地址：[公网下载 LogListener](https://mirrors.tencent.com/install/cls/loglistener-linux-x64-2.5.8.tar.gz)、[内网下载 LogListener](http://mirrors.tencentyun.com/install/cls/loglistener-linux-x64-2.5.8.tar.gz)
 
 以安装路径`/usr/local/`为例： 下载 LogListener 安装包并解压，解压路径为`/usr/local/` ，解压完成后进入 LogListener 目录`loglistener/tools`，执行安装命令 。该操作命令如下：
 ```plaintext
-wget https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-linux-x64-2.5.6.tar.gz && tar -zxvf loglistener-linux-x64-2.5.6.tar.gz -C /usr/local && cd /usr/local/loglistener-2.5.6/tools && ./loglistener.sh install
+wget https://mirrors.tencentyun.com/install/cls/loglistener-linux-x64-2.5.8.tar.gz && tar -zxvf loglistener-linux-x64-2.5.8.tar.gz -C /usr/local && cd /usr/local/loglistener-2.5.8/tools && ./loglistener.sh install
 ```
 
 ### 2. 初始化 LogListener
@@ -29,7 +29,7 @@ wget https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-lin
 ```shell
 ./loglistener.sh init -secretid AKIDPEtPyKabfW8Z3Uspdz83xxxxxxxxxxx -secretkey whHwQfjdLnzzCE1jIf09xxxxxxxxxxxx -region ap-xxxxxx
 ```
->?初始化命令中 <b>-secretid</b>、<b>-secretkey</b>、<b>-region</b>、<b>-network</b> 为需要自主填写的参数，详细介绍请见如下 [参数说明](#parameterdescription)。
+>?初始化命令中 **-secretid**、**-secretkey**、**-region**、**-network** 为需要自主填写的参数，详细介绍请见如下 [参数说明](#parameterdescription)。
 
 <span id="parameterdescription"></span>
 
@@ -122,9 +122,11 @@ LogListener 正常情况会运行两个进程：
 
 1. 使用停止命令停止运行旧版本的 LogListener。
 2. 备份旧版本中的断点文件目录（`loglistener/data`）。例如，将旧版的断点文件备份至`/tmp/loglistener-backup`目录下。
-```plaintext
+<dx-codeblock>
+:::  plaintext
 cp -r loglistener-2.2.3/data /tmp/loglistener-backup/
-```
+:::
+</dx-codeblock>
 3. 使用卸载命令卸载旧版本的 LogListener。
 4. 下载最新版本的 LogListener，并使用相关命令安装和初始化新版本 LogListener。
 5. 复制所备份的断点文件目录（步骤2）到新版本 LogListener 目录下。
