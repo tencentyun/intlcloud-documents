@@ -16,12 +16,13 @@ LogListener supports only Linux 64-bit operating systems and does not support Wi
 
 ### 1. Downloading and installing LogListener
 
-Download link of the latest version LogListener: [Download LogListener](https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-linux-x64-2.5.3.tar.gz).
+Download link of the latest version LogListener: [download via the public network](https://mirrors.tencent.com/install/cls/loglistener-linux-x64-2.5.8.tar.gz)、[download via the private network](http://mirrors.tencentyun.com/install/cls/loglistener-linux-x64-2.5.8.tar.gz)
 
 Download the LogListener installation package and decompress it to the installation path (`/usr/local/` in this example). Then go to the LogListener directory `loglistener/tools` and run the following installation command:
 ```plaintext
-wget https://loglistener-1254077820.cos.ap-shanghai.myqcloud.com/loglistener-linux-x64-2.5.3.tar.gz && tar -zxvf loglistener-linux-x64-2.5.3.tar.gz -C /usr/local && cd /usr/local/loglistener-2.5.3/tools && ./loglistener.sh install
+wget https://mirrors.tencentyun.com/install/cls/loglistener-linux-x64-2.5.8.tar.gz && tar -zxvf loglistener-linux-x64-2.5.8.tar.gz -C /usr/local && cd /usr/local/loglistener-2.5.8/tools && ./loglistener.sh install
 ```
+
 
 ### 2. Initializing LogListener
 
@@ -56,7 +57,7 @@ If you need to access the service by domain name through the public network, run
 
 ![](https://main.qcloudimg.com/raw/653ebe0400dca5b21b3e25d01f93cb5b.png)
 > ?
->- It is recommended to use a collaborator key if the collaborator is granted the read and write permission of CLS by the root account.
+> - It is recommended to use a collaborator key if the collaborator is granted the read and write permission of CLS by the root account.
 > - `region` indicates the region of your CLS, instead of the region where your business server resides.
 >- If your CVM instance and logset are in the same region, we recommend you access the service domain name over the private network; otherwise, use the public network.
 
@@ -122,9 +123,12 @@ In the `loglistener/tools` directory, run the uninstallation command as the admi
 
 1. Run the stop command to stop the existing LogListener.
 2. Back up the breakpoint file directory (`loglistener/data`) on the earlier version; for example, back up the legacy breakpoint file to the `/tmp/loglistener-backup` directory.
-```plaintext
+<dx-codeblock>
+:::  plaintext
 cp -r loglistener-2.2.3/data /tmp/loglistener-backup/
-```
+:::
+</dx-codeblock>
+
 3. Run the uninstallation command to uninstall the existing LogListener.
 4. Download the latest version of LogListener and install and initialize it with relevant commands.
 5. Copy the breakpoint file directory backed up in step 2 to the new LogListener directory.
