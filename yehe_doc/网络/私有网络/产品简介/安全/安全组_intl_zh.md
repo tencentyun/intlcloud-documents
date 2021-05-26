@@ -27,4 +27,4 @@
 - 放通全部端口模版：将会放通所有出入站流量。
 - 放通常用端口模板：将会放通 TCP 22端口（Linux SSH 登录），80、443端口（Web 服务），3389端口（Windows 远程登录）、 ICMP 协议（Ping）、放通内网。
 
-如果提供的安全组模版不满足您的实际使用，您也可以新建自定义安全组，详情请参见 [创建安全组](https://intl.cloud.tencent.com/document/product/215/35506)、[安全组应用案例](https://intl.cloud.tencent.com/document/product/215/32507)。
+如果提供的安全组模版不满足您的实际使用，您也可以新建自定义安全组，详情请参见 [创建安全组](https://intl.cloud.tencent.com/document/product/215/35506)、[安全组应用案例](https://intl.cloud.tencent.com/document/product/215/35519)。
