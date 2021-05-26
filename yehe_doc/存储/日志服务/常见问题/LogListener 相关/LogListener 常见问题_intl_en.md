@@ -18,7 +18,7 @@ Yes. But LogListener earlier than version 2.3.0 does not collect those log files
 
 ### Are servers automatically added to a server group when LogListener is initialized?
 
-Yes, provided that you [configure the server group by server ID](https://intl.cloud.tencent.com/document/product/614/17412).
+Yes, provided that you [Server Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
 
 ### In what situations will LogListener upload logs?
 
