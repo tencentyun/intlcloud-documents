@@ -4,7 +4,7 @@
 3. [Domain Management](https://console.cloud.tencent.com/live/domainmanage)を選択して、【ドメイン名の追加】クリックし、ICP登録済みのドメイン名を入力して、タイプは【再生ドメイン名】を選択し、【保存】をクリックしてください。
 >!
 >
->- 再生ドメイン名がない場合は、 [【ドメイン名の登録】](https://buy.cloud.tencent.com/domain?from=console) に移動し、ドメイン名を購入することができます。また、その他のドメイン名サービスプロバイダからドメイン名を購入することもできます。
+>- 再生ドメイン名がない場合は、 [【ドメイン名の登録】](https://intl.cloud.tencent.com/login) に移動し、ドメイン名を購入することができます。また、その他のドメイン名サービスプロバイダからドメイン名を購入することもできます。
 4. [ドメイン名サービスコンソール](https://console.cloud.tencent.com/domain)にログインし、追加済みの再生ドメイン名に対するCNAME設定を行います。具体的な操作については、 [ドメイン名CNAME設定](https://intl.cloud.tencent.com/document/product/267/31057)をご参照ください。
 
 ## 再生アドレスの取得
