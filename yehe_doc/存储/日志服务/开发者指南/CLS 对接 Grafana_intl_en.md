@@ -36,8 +36,8 @@ For information on more plugins, please see [Grafana Plugins](https://grafana.co
 1. Install Grafana plugins for CLS in the `/var/lib/grafana/plugins/` plugin directory.
 ```
 cd /var/lib/grafana/plugins/
-wget https://github.com/TencentCloud/cls-grafana-datasource/releases/latest/download/cls-grafana-datasource.zip
-unzip cls-grafana-datasource.zip
+wget https://github.com/TencentCloud/cls-grafana-datasource/releases/latest/download/tencent-cls-grafana-datasource.zip
+unzip tencent-cls-grafana-datasource
 ```
 >? 
 > - If your CVM instance is not on CentOS, please confirm the location of the Grafana plugin directory first and go to the directory for installation.
@@ -68,22 +68,22 @@ http://Grafana IP address: 3000
 ![image-20201229200229285](https://main.qcloudimg.com/raw/275835ded7a0826d6027984ab9aa0b84.png)
 <table>
 <tr><th>Configuration Item</th><th>Description</th><tr>
-<tr><td>Security Credentials</td><td>**SecretId** and **SecretKey**: API request key, which is used for authentication. You can go to the <a href="https://console.cloud.tencent.com/cam/capi">API Key Management</a> page to get a key.</td><tr>
-<tr><td>Log Service Info</td><td><ul><li>**Region**: abbreviation of the CLS region. For example, enter `ap-beijing` for the Beijing region.</br>For the complete list of regions, please see <a href="https://intl.cloud.tencent.com/document/product/614/18940">Available Regions</a>.</li><li>**TopicId**: log topic ID.</li></ul></td></tr>
+<tr><td>Security Credentials</td><td> <b>SecretId</b> and  <b>SecretKey</b>: API request key, which is used for authentication. You can go to the <a href="https://console.cloud.tencent.com/cam/capi">API Key Management</a> page to get a key.</td><tr>
+<tr><td>Log Service Info</td><td><ul><li><b>Region</b>: abbreviation of the CLS region. For example, enter `ap-beijing` for the Beijing region.</br>For the complete list of regions, please see <a href="https://intl.cloud.tencent.com/document/product/614/18940">Available Regions</a>.</li><li><b>TopicId</b>: log topic ID.</li></ul></td></tr>
 </table>
 
 ### Configuring dashboard
 
-1. On the left sidebar, click **Creat Dashboards**.
-2. On the dashboard page, click **Add new panel**.
+1. On the left sidebar, click <b>Creat Dashboards</b>.
+2. On the dashboard page, click <b>Add new panel</b>.
 3. Select the log data source you just created as the data source as shown below:
    ![image-20201229200254913](https://main.qcloudimg.com/raw/b0981c7c5e43d803d0eb694f3b737060.png)
 4. Enter the query statement, select the format according to the panel type to be displayed, and the system will automatically convert the data for display in Grafana.
 <table>
 <tr><th>Format</th><th>Description</th><th>Configuration Item</th><tr>
-<tr><td>Log panel</td><td>Log panel is used to shown log search results. Query syntax supports searching by keyword and fuzzy match. For more information, see [Syntax and Rules](https://intl.cloud.tencent.com/document/product/614/30439). Eg. status:400</td><td>**limit**: specifies the number of log search results to be returned.</td><tr>
+<tr><td>Log panel</td><td>Log panel is used to shown log search results. Query syntax supports searching by keyword and fuzzy match. For more information, see [Syntax and Rules](https://intl.cloud.tencent.com/document/product/614/30439). Eg. status:400</td><td><b>limit</b>: specifies the number of log search results to be returned.</td><tr>
 <tr><td>Table panel</td><td>Table panel automatically shows the results of whatever columns and rows your query returns.</td><td>None</td><tr>
-<tr><td>Graph,Pie,Gauge panel</td><td>In this pattern, there is a format transformation where data will be adapted to graph,pie,gauge panel. </td><td><ul><li>**Metrics**: metrics to be collected.</li><li>**Bucket**: (optional) name of the aggregate column.</li><li>**Time**: (optional) if the result returned by a query is continuous time data, you need to specify the **Time** field; otherwise, leave it empty.</li></ul></td></tr>
+<tr><td>Graph,Pie,Gauge panel</td><td>In this pattern, there is a format transformation where data will be adapted to graph,pie,gauge panel. </td><td><ul><li><b>Metrics</b>: metrics to be collected.</li><li><b>Bucket</b>: (optional) name of the aggregate column.</li><li><b>Time</b>: (optional) if the result returned by a query is continuous time data, you need to specify the <b>Time</b> field; otherwise, leave it empty.</li></ul></td></tr>
 </table>
 
 
