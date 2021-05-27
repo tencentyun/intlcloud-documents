@@ -23,7 +23,7 @@ pod init
 ```
 
 #### 3. 编辑 Podfile 文件
-如果使用标准版 SDK，请您按照如下方式设置：
+如果使用标准版 SDK，请您按照如下方式设置 Podfile 文件：
 
 ```
 platform :ios, '8.0'
@@ -34,13 +34,43 @@ pod 'TXIMSDK_iOS'
 end
 ```
 
-如果使用精简版 SDK，请您按照如下方式设置：
+如果使用精简版 SDK，请您按照如下方式设置 Podfile 文件：
 ```
 platform :ios, '8.0'
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'App' do
 pod 'TXIMSDK_Smart_iOS'
+end
+```
+
+如果使用精简版 bitcode 版本 SDK，请您按照如下方式设置 Podfile 文件：
+```
+platform :ios, '8.0'
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'App' do
+pod 'TXIMSDK_Smart_iOS_Bitcode'
+end
+```
+
+如果使用精简版 xcframework 版本 SDK，请您按照如下方式设置 Podfile 文件：
+```
+platform :ios, '8.0'
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'App' do
+pod 'TXIMSDK_Smart_iOS_XCFramework'
+end
+```
+
+如果使用精简版 xcframework 版本 SDK（支持 bitcode），请您按照如下方式设置 Podfile 文件：
+```
+platform :ios, '8.0'
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'App' do
+pod 'TXIMSDK_Smart_iOS_Bitcode_XCFramework'
 end
 ```
 
@@ -55,12 +85,13 @@ pod update
 ```
 
 pod 命令执行完后，会生成集成了 SDK 的 .xcworkspace 后缀的工程文件，双击打开即可。
->? 若 pod 搜索失败，建议尝试更新 pod 的本地 repo 缓存。更新命令如下：
+>?若 pod 搜索失败，建议尝试更新 pod 的本地 repo 缓存。更新命令如下：
 >```
-> pod setup
-> pod repo update
-> rm ~/Library/Caches/CocoaPods/search_index.json
+>pod setup
+>pod repo update
+>rm ~/Library/Caches/CocoaPods/search_index.json
 >```
+
 
 ### 手动集成
 #### 1. 下载 SDK
@@ -127,7 +158,7 @@ pod 命令执行完后，会生成集成了 SDK 的 .xcworkspace 后缀的工程
 ```
 
 #### 方式二
- 
+
 在项目需要使用 SDK API 的文件里，引入具体的头文件。
 - 如果使用标准版，请按照如下方式引用头文件：
 ```
@@ -137,3 +168,4 @@ pod 命令执行完后，会生成集成了 SDK 的 .xcworkspace 后缀的工程
 ```
 #import <ImSDK_Smart/ImSDK_Smart.h>
 ```
+

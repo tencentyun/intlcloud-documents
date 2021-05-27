@@ -1,41 +1,52 @@
-This document describes how to quickly integrate the Tencent Cloud IM SDK in your projects. To configure and integrate the SDK, complete the following steps.
-## Development Environment Requirements
-- JDK 1.6
-- Android 4.1 (SDK API 16) or later
+﻿This document describes how to quickly integrate the Tencent Cloud IM SDK to your projects. To configure and integrate the SDK, follow these steps.
+## Production Environment Requirements
+- JDK 1.6.
+- Android 4.1 (SDK API 16) or above.
 
 ## Integrating the SDK (aar)
-You can automatically integrate the IM SDK by using Gradle or manually download aar and import it to your current project.
+You can choose to use Gradle to automatically load aar or manually download aar and import it into your current project.
 
 ### Method 1: automatic loading (aar)
-The IM SDK has been released to the JCenter repository, and you can configure Gradle to automatically download updates.
-Use Android Studio to open the project that you want to integrate the SDK into and modify the app/build.gradle file as follows to complete SDK integration:
+Because the JCenter service will be deprecated, subsequent IM SDKs will be published to the Maven Central repository. You can configure Gradle to automatically download updates.
+Use Android Studio to open your project and modify the `app/build.gradle` file in three simple steps to integrate the SDK to your project, as shown below:
 
-- **Step 1: Add SDK dependencies**
+- **Step 1: add SDK dependencies**
 
- Find build.gradle and add IM SDK dependencies to the "dependencies" section.
- If you are using the standard edition of IM SDK, add the following dependencies:
+ Find the `build.gradle` of the app and add `mavenCentral()` dependencies to `repositories`.
+```
+ repositories {
+        google()
+        jcenter()
+        // Add the `mavenCentral` repository.
+        mavenCentral()
+ }
+```
+ Add the IM SDK dependencies to `dependencies`.
+ If the IM SDK standard edition is used, add the following dependencies:
 ```
 dependencies {
-		api 'com.tencent.imsdk:imsdk: <Version number>'
+		api 'com.tencent.imsdk:imsdk:version number'
 }
 ```
-If you are using the lite edition of IM SDK, add the following dependencies:
+If the IM SDK lite edition is used, add the following dependencies:
 ```
 dependencies {
-		api 'com.tencent.imsdk:imsdk-smart: <Version number>'
+		api 'com.tencent.imsdk:imsdk-smart:version number'
 }
 ```
->? Replace "Version number" with the actual version number of the SDK. We recommend that you use the [latest version](https://github.com/tencentyun/TIMSDK/tree/master/Android/tuikit/libs).
-> The following code uses the version number `4.9.1` as an example.
+>?Replace `version number` with the actual version number of the SDK. You are advised to use the [latest version]( https://github.com/tencentyun/TIMSDK/tree/master/Android/tuikit/libs).
+>Take the version number `5.3.425` as an example:
+>
 >```
-> dependencies {
-> api 'com.tencent.imsdk:imsdk:4.9.1'
+>dependencies {
+>api 'com.tencent.imsdk:imsdk-smart:5.3.425'
 >}
 >```
 
- 
-- **Step 2: Specify the architecture used by the app**
-In defaultConfig, specify the CPU architecture used by the app (armeabi-v7a, arm64-v8a, x86, and x86_64 are supported from IM SDK V4.3.118.)
+
+
+- **Step 2: specify the application architecture**
+In `defaultConfig`, specify the CPU architecture used by the app (armeabi-v7a, arm64-v8a, x86, and x86_64 are supported starting from IM SDK v4.3.118).
 ```
    defaultConfig {
         ndk {
@@ -44,22 +55,22 @@ In defaultConfig, specify the CPU architecture used by the app (armeabi-v7a, arm
     }
 ```
 
-- **Step 3: Synchronize the SDK**
-Click "Sync Now". If the connection to JCenter is normal, the SDK will be automatically downloaded and integrated into your project.
+- **Step 3: sync the SDK**
+Click the `Sync` icon. If the connection to jCenter is normal, the SDK will be automatically downloaded and integrated to your project.
 ![](https://main.qcloudimg.com/raw/2e281799c00da2dba59551ff26c6561e.png)
 
 
 ### Method 2: manual download (aar)
-If you encounter problems when accessing JCenter, you can manually download the SDK and integrate it into your project.
-- **Step 1: Download the IM SDK**
-Download the latest version of [IM SDK](https://github.com/tencentyun/TIMSDK/tree/master/Android/SDK) from GitHub.
+If JCenter cannot be accessed, you can manually download the SDK and integrate it into your project:
+- **Step 1: download the IM SDK**
+Download the latest version of the [IM SDK](https://github.com/tencentyun/TIMSDK/tree/master/Android/SDK) from GitHub.
 
-- **Step 2: Copy the downloaded IM SDK to the project directory**
+- **Step 2: copy the IM SDK to the project directory**
 Copy the downloaded aar file to the **/libs** directory of the project.
 ![](https://main.qcloudimg.com/raw/4175f483d55c2f99b99c993ada8dd5a0.png)
 
-- **Step 3: Specify the architecture used by the app and then compile and run the architecture**
-In defaultConfig of app/build.gradle, specify the CPU architecture used by the app (armeabi-v7a, arm64-v8a, x86, and x86_64 are supported from IM SDK V4.3.118.)
+- **Step 3: specify the architecture used by the app and compile and run the architecture**
+In the `defaultConfig` of `app/build.gradle`, specify the CPU architecture used by the app (armeabi-v7a, arm64-v8a, x86, and x86_64 are supported starting from IM SDK v4.3.118).
 ```
 defaultConfig {
 	ndk {
@@ -72,16 +83,16 @@ defaultConfig {
 ## Integrating the SDK
 If you do not want to integrate the aar library, you can integrate the IM SDK by importing the jar and so libraries.
 
-- **Step 1: Download and decompress the IM SDK**
+- **Step 1: download and decompress the IM SDK**
 [Download](https://github.com/tencentyun/TIMSDK/tree/master/Android/SDK) the latest version of the aar file from GitHub and decompress it. The extracted folder contains a jar file and a so subfolder. Rename **classes.jar** to **imsdk.jar**.
-![](https://main.qcloudimg.com/raw/9a2cebad9475735c456fea0795088679.png)
+![](https://main.qcloudimg.com/raw/ecc6ae484565b0170c42698825951eba.png)
 
-- **Step 2: Copy the SDK files to the project directory**
+- **Step 2: copy the SDK files to the project directory**
 Copy the renamed jar file and so files of different architectures to the default loading directories of Android Studio.
 ![](https://main.qcloudimg.com/raw/237b44da2ec04ba87a6cef66aa0b5321.png)
 
-- **Step 3: Specify the architecture used by the app and then compile and run the architecture**
-In defaultConfig of app/build.gradle, specify the CPU architecture used by the app (armeabi-v7a, arm64-v8a, x86, and x86_64 are supported from IM SDK V4.3.118.)
+- **Step 3: specify the architecture used by the app and compile and run the architecture**
+In the `defaultConfig` of `app/build.gradle`, specify the CPU architecture used by the app (armeabi-v7a, arm64-v8a, x86, and x86_64 are supported starting from IM SDK v4.3.118).
 ```
    defaultConfig {
         ndk {
@@ -91,7 +102,7 @@ In defaultConfig of app/build.gradle, specify the CPU architecture used by the a
 ```
 
 ## Configuring App Permissions
-To configure app permissions in AndroidManifest.xml, the IM SDK must have the following permissions:
+To configure app permissions in `AndroidManifest.xml`, the IM SDK requires the following permissions:
 
 ```
 	<uses-permission android:name="android.permission.INTERNET" />
@@ -100,8 +111,9 @@ To configure app permissions in AndroidManifest.xml, the IM SDK must have the fo
 ```
 
 ## Configuring Obfuscation Rules
-In the `proguard-rules.pro` file, add the IM SDK classes that you do not want ProGuard to obfuscate.
+In the `proguard-rules.pro` file, add the IM SDK classes to the "do not obfuscate" list.
 
 ```
 -keep class com.tencent.imsdk.** { *; }
 ```
+
