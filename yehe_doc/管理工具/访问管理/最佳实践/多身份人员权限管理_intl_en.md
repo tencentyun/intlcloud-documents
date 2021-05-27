@@ -18,10 +18,10 @@ Suppose that:
 ![](https://main.qcloudimg.com/raw/445d5cf9dccc8c4c822faf71610f435b.png)
 5. Associate the `QcloudCDBFullAccess` policy with the sub-account `DevB` as instructed in steps 2 and 3.
 6. After the authorization is successful, the sub-account `DevA` has all the operation permissions of CVM instances, while the sub-account `DevB` has all the operation permissions of TencentDB for MySQL instances.
->?If you need to configure a CAM user as another role, you can follow the above process and search for and select the corresponding permissions policy name in steps 2 and 3. For specific permissions, please see [System Permissions](#System Permissions)
+>?If you need to configure a CAM user as another role, you can follow the above process and search for and select the corresponding permissions policy name in steps 2 and 3. For specific permissions, please see [System Permissions](#System-Permissions)
 
-[](id:System Permissions)
 
+<span id="System-Permissions"></span>
 ## System Permissions
 
 <table>
