@@ -69,7 +69,8 @@
 
 ## Extended Features
 
->?Extended features are value-added services provided by TRTC in collaboration with other Tencent Cloud products and are charged according to the billing standards of the corresponding products.
+>?
+Extended features are value-added services provided by TRTC in collaboration with other Tencent Cloud products and are charged according to the billing standards of the corresponding products.
 
 
 | Feature | Description | Common Use Cases | Billing |
