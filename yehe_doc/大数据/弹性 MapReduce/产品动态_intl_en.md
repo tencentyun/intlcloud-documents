@@ -1,3 +1,29 @@
+## May 2021
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Released a Kafka cluster version—Kafka v1.0.0.</td>
+<td>Added support for Kafka v1.1.1, KafkaManager v2.0.0.2, Knox v1.2.0, and ZooKeeper v3.6.1.</td>
+<td>May 13, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/40256" target="_blank">Kafka Development Guide</a></td>
+</tr>
+  <tr>
+<td>Released a Doris cluster version—Doris v1.0.0.</td>
+<td>Added support for Doris v0.13.0 and Knox v1.2.0.</td>
+<td>May 13, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/40258" target="_blank">Doris Development Guide</a></td>
+</tr>
+</tbody></table>
+
+
 ## April 2021
 <table>
 <thead>
@@ -10,12 +36,25 @@
 </thead>
 <tbody>
 <tr>
-<td>Released Hadoop EMR v2.5.1.</td>
+<td>Released a Hadoop cluster version—EMR v3.2.0.</td>
+<td>Added support for Hadoop v3.2.2, Spark v3.0.2, Presto v350, Flink v1.12.1, Alluxio v2.5.0, Ranger v2.1.0, Iceberg v0.11.0, and Hudi v0.7.0.</td>
+<td>April 30, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Versions</a></td>
+</tr>
+  <tr>
+<td>Added the **Start/Stop Services** feature.</td>
+<td>Added support for starting or stopping all services on a node.</td>
+<td>April 27, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/40259" target="_blank">Starting/Stopping Services</a></td>
+</tr>
+<tr>
+<td>Released a Hadoop cluster version—EMR v2.5.1.</td>
 <td>Added support for Alluxio v2.5.0 and Hudi v0.5.1. Alluxio supports COS Transparent-URI.</td>
 <td>April 10, 2021</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/40172" target="_blank">Support for COS Transparent-URI</a></td>
 </tr>
 </tbody></table>
+
 
 ## February 2021
 <table>
@@ -32,7 +71,7 @@
 <td>Released the EMR service in new regions on Tencent Cloud Chinese.</td>
 <td>Added support for the Bangkok, Seoul, Tokyo, Virginia, and Toronto regions on Tencent Cloud Chinese.</td>
 <td>February 02, 2021</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 </tbody></table>
 
@@ -76,7 +115,7 @@
 <td>Released the EMR service in Singapore on the international version.</td>
 <td>Added support for Singapore Zone 1 and Singapore Zone 2 on the international version.</td>
 <td>January 13, 2021</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 </tbody></table>
 
@@ -92,10 +131,10 @@
 </thead>
 <tbody>
 <tr>
-<td>Released Hadoop EMR v3.1.0.</td>
+<td>Released a Hadoop cluster version—EMR v3.1.0.</td>
 <td>Added support for Impala v3.4.0, Flink v1.10.0, HBase v2.3.3, Phoenix v5.0.0, Alluxio v2.3.0, Kudu v1.13.0, and ZooKeeper v3.6.1.</td>
 <td>December 14, 2020</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Versions</a></td>
 </tr>
 </tbody></table>
 
@@ -114,7 +153,7 @@
 <td>Released the EMR TianQiong edition.</td>
 <td>Added support for Spark materialized views.</td>
 <td>November 27, 2020</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/38962" target="_blank">EMR TianQiong Introduction</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Versions</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/38962" target="_blank">EMR TianQiong Introduction</a></td>
 </tr>
 <tr>
 <td>Optimized monitoring and alarming.</td>
@@ -142,7 +181,7 @@
 <td>Added support for Cloud Object Storage (COS) password-free access.</td>
 <td>Added support for authorizing access to COS through roles. Authorized users do not need to enter an authorization key and private key.</td>
 <td>October 26, 2020</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Added new service inspection items to the inspection system.</td>
@@ -173,7 +212,7 @@
 <td>Released Hadoop EMR v2.5.0.</td>
 <td>Upgraded the Alluxio component to the stable version 2.3.0, which delivers better performance in the use cases where compute and storage are separated.</td>
 <td>September 17, 2020</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Versions</a></td>
 </tr>
 </tbody></table>
 
@@ -192,7 +231,7 @@
 <td>Released Hadoop EMR v2.4.0.</td>
 <td>Added the Kudu component and upgraded some existing components.</td>
 <td>August 27, 2020</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Versions</a></td>
 </tr>
 <tr>
 <td>Added support for data migration in ClickHouse clusters.</td>
@@ -221,7 +260,7 @@
 <td>Optimized configuration item editing.</td>
 <td>Added descriptions for configuration items and support for restoring them to defaults.</td>
 <td>July 29, 2020</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 </tbody></table>
 
@@ -250,7 +289,7 @@
 <tr>
 <td>Released ClickHouse v1.1.0 for ClickHouse clusters.</td>
 <td>Upgraded the ClickHouse component version to the LTS version, and added support for the Superset component.</td><td>June 15, 2020</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Added support for cluster events and cluster inspections.</td>
@@ -273,7 +312,7 @@
 <tbody><tr>
 <td>Optimized console interactions, UI, and operation paths.</td>
 <td>Improved operation path hierarchy for easier service management.</td><td>May 15, 2020</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Added support for service monitoring for ClickHouse clusters.</td>
@@ -284,7 +323,7 @@
 <td>Added support for monitoring status for role management.</td>
 <td>Made it easier to keep track of the real-time status of role processes.</td>
 <td>May 15, 2020</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 </tbody></table>
 
@@ -307,13 +346,13 @@
 <tr>
 <td>Optimized bootstrap actions.</td>
 <td>Added support for the running occasions of bootstrap actions before a cluster starts. Added support for adjusting bootstrap actions after a cluster is created, so you can change your bootstrap actions based on business changes.</td><td>April 15, 2020</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Optimized service restart policies.</td>
 <td>Added support for setting service restart policies, so you can select a proper restart method and a policy for handling restart exceptions.</td>
 <td>April 15, 2020</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 </tbody></table>
 
@@ -331,7 +370,7 @@
 <tbody><tr>
 <td>Optimized the cluster monitoring page.</td>
 <td>Optimized the cluster overview, service monitoring, and node monitoring pages for improved readability. Monitoring metrics now support customization and heat maps about nodes.</td><td>March 2020</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Added support for log search.</td>
@@ -342,7 +381,7 @@
 <td>Released EMR v2.2.0.</td>
 <td>Upgraded Hadoop to v2.8.5. Upgraded common components such as Spark, Hive, and HBase. Added the Hudi, Superset, Livy, Impala, Zeppelin, and Kylin components.</td>
 <td>March 2020</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Versions</a></td>
 </tr>
 </tbody></table>
 
@@ -364,12 +403,12 @@
 <tr>
 <td>Optimized cluster operation logs.</td>
 <td>Added display items for cluster operation logs to increase the readability of operation logs.</td><td>February 2020</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Released the international version.</td>
 <td>Released the international version in the Beijing, Shanghai, Guangzhou, and Mumbai regions.</td><td>February 2020</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 </tbody></table>
 
@@ -391,12 +430,12 @@
 <tr>
 <td>Added support for mounting cloud disks to a task node.</td>
 <td>Added support for mounting cloud disks to a task node when creating or scaling out a cluster.</td><td>January 2020</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Released EMR in the Nanjing region.</td>
 <td>Released EMR in the Nanjing region.</td><td>January 2020</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 </tbody></table>
 
@@ -413,12 +452,12 @@
 <tbody><tr>
 <td>Released the feature of delivering group configuration.</td>
 <td>Added support for delivering group configuration. If the configuration of a node is different from that of the configuration group to which the node belongs, the configuration of the configuration group can be delivered to the node.</td><td>December 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Released the feature of resource-level CAM authorization.</td>
 <td>Added support for CAM authorization at the resource level.</td><td>December 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Released the feature of associating CHDFS.</td>
@@ -438,12 +477,12 @@
 <tr>
 <td>Added support for selecting metric display granularity as needed on the service monitoring page.</td>
 <td>Optimized the service monitoring page, so you can select a metric display granularity as needed.</td><td>December 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Added support for node service deployment and load status views on the node monitoring page.</td>
 <td>Optimized the node monitoring page, which provides the views about node service deployment and load status.</td><td>December 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 </tbody></table>
 
@@ -465,7 +504,7 @@
 <tr>
 <td>Added support for the configuration of the ZooKeeper, Alluxio, and Flink components.</td>
 <td>Added support for the configuration of the ZooKeeper, Alluxio, and Flink components.</td><td>November 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Released the feature of tagging clusters and nodes.</td>
@@ -475,9 +514,10 @@
 <tr>
 <td>Released new models in the Beijing, Shanghai, and Guangzhou regions.</td>
 <td>Released the S5, M5, C3, and CN3 models in the Beijing, Shanghai, and Guangzhou regions.</td><td>November 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 </tbody></table>
+
 
 ## October 2019
 <table>
@@ -492,7 +532,7 @@
 <tbody><tr>
 <td>Released EMR v3.0.0.</td>
 <td>Released EMR v3.0.0 with updated versions of major components.</td><td>October 2019</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Versions</a></td>
 </tr>
 </tbody></table>
 
@@ -509,17 +549,17 @@
 <tbody><tr>
 <td>Added full support for TencentCloud API 3.0.</td>
 <td>Added full support for TencentCloud API 3.0. Standardized the output/input parameters of certain existing v3.0 APIs. Added full support for v2.0 APIs in v3.0.</td><td>September 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Modified console configuration.</td>
 <td>Disused the escape feature for special characters.</td><td>September 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Added support for CM alarm policy configuration.</td>
 <td>Added support for configuring alarm policies in CM (in the Elastic MapReduce product category) for key metrics for node and service monitoring.</td><td>September 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 </tbody></table>
 
@@ -541,22 +581,22 @@
 <tr>
 <td>Added support for configuring the remote login port when you purchase a cluster.</td>
 <td>Added support for enabling or disabling the remote login port when you purchase a cluster.</td><td>August 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Added support for mounting multiple cloud disks to a new cluster.</td>
 <td>Added support for mounting multiple cloud disks to a new cluster.</td><td>August 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Released the feature of scaling specified components.</td>
 <td>Added support for scaling specified components.</td><td>August 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Added monitoring metrics.</td>
 <td>Added new monitoring metrics for the Spark, Hive, Presto, and ZooKeeper components.</td><td>August 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 </tbody></table>
 
@@ -578,22 +618,22 @@
 <tr>
 <td>Released EMR in new regions.</td>
 <td>Added support for the Singapore, Mumbai, and Chengdu regions.</td><td>July 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Released new models.</td>
 <td>Released the Standard S4 and Standard Network-Optimized SN3ne models in the Beijing, Shanghai, and Guangzhou regions.</td><td>July 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Optimized the interactions of monitoring pages and added new monitoring metrics.</td>
 <td>Optimized the interactions of monitoring pages and added new monitoring metrics.</td><td>July 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Optimized WebUI proxy address.</td>
 <td>Optimized WebUI proxy address.</td><td>July 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 </tbody></table>
 
@@ -611,7 +651,7 @@
 <td>Released the feature of accessing external clusters.</td>
 <td>Added support for accessing external clusters.</td>
 <td>June 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Released the feature of setting bootstrap actions.</td>
@@ -623,7 +663,7 @@
 <td>Released the feature of delivering component parameter configuration to nodes.</td>
 <td>Added support for delivering component parameter configuration to nodes.</td>
 <td>June 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Released the feature of rolling back parameter configuration.</td>
@@ -647,7 +687,7 @@
 <td>Released EMR v2.1.0.</td>
 <td>Released EMR v2.1.0 with updated versions of main components.</td>
 <td>May 2019</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Versions</a></td>
 </tr>
 <tr>
 <td>Added support for Kerberos security clusters.</td>
@@ -665,25 +705,25 @@
 <td>Optimized the style of console.</td>
 <td>Improved the style of console for a better interactive experience.</td>
 <td>May 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Optimized CVM and TencentDB naming.</td>
 <td>Optimized CVM and TencentDB naming with the EMR cluster serial number for easier locating of cluster information.</td>
 <td>May 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Changed the setting of public IPs of master nodes to optional.</td>
 <td>Changed the setting of public IPs of master nodes to optional.</td>
 <td>May 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Released the feature of adjusting the number of common nodes.</td>
 <td>Added support for adjusting the number of common nodes as needed.</td>
 <td>May 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 </tbody></table>
 
@@ -701,13 +741,13 @@
 <td>Released a new model.</td>
 <td>Released the I3 model in the Beijing, Shanghai, and Guangzhou regions. This model is a CVM allowlist model, and you can purchase it only if you are in the I3 allowlist.</td>
 <td>March 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Released EMR in a new region.</td>
 <td>Made the purchase of EMR clusters available in the Silicon Valley region.</td>
 <td>March 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr>
 <tr>
 <td>Added support for router nodes.</td>

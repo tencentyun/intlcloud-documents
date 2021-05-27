@@ -1,3 +1,29 @@
+## 2021年05月
+<table>
+<thead>
+<tr>
+<th width=20%>动态名称</th>
+<th width=45%>动态描述</th>
+<th width=15%>发布时间</th>
+<th width=20%>相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新增 Kafka 集群版本 Kafka-V1.0.0</td>
+<td>新增 KAFKA 标准发行版 KAFKA-V1.0.0，支持 Kafka1.1.1、KafkaManager2.0.0.2、Knox1.2.0、Zookeeper3.6.1</td>
+<td>  2021-05-13</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/40256" target="_blank">Kafka 开发指南</a></td>
+</tr>
+  <tr>
+<td>新增 Doris 集群版本 Doris-V1.0.0</td>
+<td>新增 DORIS 标准版发行版 DORIS-V1.0.0，支持 Doris0.13.0、Knox1.2.0</td>
+<td> 2021-05-13 </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/40258" target="_blank">Doris 开发指南</a></td>
+</tr>
+</tbody></table>
+
+
 ## 2021年04月
 <table>
 <thead>
@@ -10,12 +36,25 @@
 </thead>
 <tbody>
 <tr>
+<td>新增 hadoop 集群版本 EMR-V3.2.0</td>
+<td>新增 Hadoop3.x 标准发行版 EMR-V3.2.0，支持 hadoop3.2.2、Spark3.0.2、presto350、Flink1.12.1、Alluxio2.5.0、Ranger2.1.0、iceberg0.11.0、hudi0.7.0</td>
+<td> 2021-04-30 </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">组件版本</a></td>
+</tr>
+  <tr>
+<td>启停服务</td>
+<td>支持单节点上启停全部服务</td>
+<td> 2021-04-27 </td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/40259" target="_blank">启停服务</a></td>
+</tr>
+<tr>
 <td> 新增 Hadoop 集群版本 EMRv2.5.1  </td>
-<td> 新增 Hadoop2.x 标准版发型版 EMR-V2.5.1，支持 alluxio2.5.0、hudi0.5.1，alluxio 支持 cos 透明 URI</td>
+<td> 新增 Hadoop2.x 标准版发行版 EMR-V2.5.1，支持 alluxio2.5.0、hudi0.5.1，alluxio 支持 cos 透明 URI</td>
 <td> 2021-04-10 </td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/40172" target="_blank">Alluxio 支持 COS 透明 URI</a></td>
 </tr>
 </tbody></table>
+
 
 ## 2021年02月
 <table>
@@ -51,31 +90,31 @@
 <tr>
 <td> 新增集群脚本功能  </td>
 <td>  支持批量选择节点运行指定脚本，以便高效进行批量运维操作  </td>
-<td>  2021-1-26  </td>
+<td>  2021-01-26  </td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/39664" target="_blank">  集群脚本  </a></td>
 </tr>
 <tr>
 <td>支持跨机型变配  </td>
 <td>在节点配置变更时，可以选择其它机型，满足当前机型售罄场景的变配需求  </td>
-<td>  2021-1-26  </td>
+<td>  2021-01-26  </td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/31114" target="_blank">  变更配置  </a></td>
 </tr>
 <tr>
 <td>  自动伸缩  </td>
 <td>  根据预设策略自动增加或减少 Task 节点，在满足集群计算能力的同时并节约成本  </td>
-<td>  2021-1-26  </td>
+<td>  2021-01-26  </td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/39660" target="_blank">自动伸缩 </a></td>
 </tr>
 <tr>
 <td>新增监控指标</td>
 <td><ol style="margin:0"><li>hdfs、yarn、hbase、hive、druid 服务监控指标丰富</li><li>kudu、alluxio 新增服务监控</li></ol></td>
-<td>2021-1-13</td>
+<td>2021-01-13</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/36879" target="_blank">监控指标</a></td>
 </tr>
 <tr>
 <td>新加坡国际站开服</td>
 <td>新加坡一区、新加坡二区支持国际站购买</td>
-<td>2021-1-13</td>
+<td>2021-01-13</td>
 <td>-</td>
 </tr>
 </tbody></table>
@@ -478,6 +517,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
+
 
 ## 2019年10月
 <table>
