@@ -9,7 +9,7 @@
 - 인스턴스가 종료된 후 모든 스토리지가 인스턴스 상태와 연결을 유지하며, 모든 디스크 데이터도 보존됩니다. 메모리의 데이터는 손실됩니다.
 - 인스턴스의 종료는 인스턴스의 물리적 기능을 변경하지 않습니다. 인스턴스 공용 네트워크 IP와 개인 네트워크 IP는 변경되지 않으며, [EIPv6](https://intl.cloud.tencent.com/document/product/213/5733)는 바인딩 관계를 유지합니다. 하지만 서비스 중단 클래식링크 와 같은 IP를 액세스할 경우 오류 응답을 얻습니다. 관계는 변경되지 않고 유지됩니다. 
 - 만약 종료 인스턴스가 [CLB 인스턴스의 백엔드 서버 클러스터](https://intl.cloud.tencent.com/zh/document/product/214/32388)에 속할 경우 종료 후 지속적인 서비스를 제공하지 않습니다.
-상태 확인 정책이 구성되어 있는 경우 종료 인스턴스가 자동으로 차단되고 요청이 전달되지 않습니다. 상태 확인 정책의 구성되어 있지 않은 경우 클라이언트는 502 오류 리턴을 수신할 수 있습니다. 자세한 정보는 [상태 확인](https://intl.cloud.tencent.com/document/product/214/3394)을 참조하십시오.
+상태 확인 정책이 구성되어 있는 경우 종료 인스턴스가 자동으로 차단되고 요청이 전달되지 않습니다. 상태 확인 정책의 구성되어 있지 않은 경우 클라이언트는 502 오류 리턴을 수신할 수 있습니다. 자세한 정보는 [상태 확인](https://intl.cloud.tencent.com/document/product/214/38451)을 참조하십시오.
 - 만약 종료 인스턴스가 [Auto Scaling 그룹](https://intl.cloud.tencent.com/document/product/377/3590)에 있는 경우 Auto Scaling 서비스는 종료된 인스턴스의 운행 상황이 좋지 않다고 표시합니다. 이 경우 Auto Scaling 그룹에서 삭제된후 교체 인스턴스가 시작됩니다. 자세한 내용은 [Auto Scaling](https://intl.cloud.tencent.com/document/product/377)를 참조하십시오.
 
 ## 작업 절차
