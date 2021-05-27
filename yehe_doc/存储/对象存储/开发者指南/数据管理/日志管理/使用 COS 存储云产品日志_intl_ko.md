@@ -36,7 +36,7 @@ COS 스토리지 클라우드 서비스 로그를 사용하면 다음 문제를 
 | --------------- | ------------------------------------------------------------ | -------------------- | ------------------------------------------------------------ |
 |CA |[클릭해 알아보기](https://intl.cloud.tencent.com/document/product/1021/30338) | 10~15분 |  cloudaudit/customprefix/timestamp|
 | CLB    | [클릭해 알아보기](https://intl.cloud.tencent.com/document/product/214) | 60분               | lb-id/timestamp                                              |
-| 메시지 큐 CKafka | [클릭해 알아보기](https://intl.cloud.tencent.com/document/product/597/32552) | 5분~60분<br>전송 간격 지정 가능 | instance id/topic id/timestamp                           |
+| 메시지 큐 CKafka | [클릭해 알아보기](https://intl.cloud.tencent.com/document/product/597) | 5분~60분<br>전송 간격 지정 가능 | instance id/topic id/timestamp                           |
 | 객체 스토리지 COS    | [클릭해 알아보기](https://intl.cloud.tencent.com/document/product/436/17040) | 5분                | 경로 접두사는 자동 지정되며, 식별 가능한 경로 설정을 권장합니다. 예시: cos_bucketname_access_log/timestamp |
 
 >?메시지 큐는 해당 제품에서 생성된 정보 데이터의 전송을 지원합니다. CKafka 인스턴스 생성 등 동작 로그를 얻어야 할 경우, CA 제품을 전송할 로그를 선택하십시오.
