@@ -6,7 +6,7 @@
 
 已开通腾讯云消息队列 （CKafka），并在日志主题同地域下创建 Ckafka 消费实例和消息队列 topic。
 
->?Ckafka 实例的创建操作，请参阅 [创建实例和 Topic](https://intl.cloud.tencent.com/document/product/597/32543) 。
+>?Ckafka 实例的创建操作，请参阅 [创建实例和 Topic](https://intl.cloud.tencent.com/document/product/597/40039) 。
 
 ## 操作步骤
 
