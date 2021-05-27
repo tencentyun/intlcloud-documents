@@ -35,7 +35,7 @@ The Tencent Cloud products outlined below allow you to ship logs directly to COS
 | Product &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      | Documentation                                                 | Shipping Interval&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        | Shipping Path                                                |
 | --------------- | ------------------------------------------------------------ | -------------------- | ------------------------------------------------------------ |
 | CA | [Click here to view](https://intl.cloud.tencent.com/document/product/1021/30338) | 10-15 min |  cloudaudit/customprefix/timestamp|
-| CLB    | [Click here to view](https://intl.cloud.tencent.com/document/product/214/10329) | 60 min               | lb-id/timestamp                                              |
+| CLB    | [Click here to view](https://intl.cloud.tencent.com/document/product/214) | 60 min               | lb-id/timestamp                                              |
 | CKafka | [Click here to view](https://intl.cloud.tencent.com/document/product/597/32552) | 5-60 min<br>You can specify the interval | instance id/topic id/timestamp                           |
 | COS    | [Click here to view](https://intl.cloud.tencent.com/document/product/436/17040) | 5 min                | You can specify the path prefix. We recommend specifying an identifiable path, e.g. `cos_bucketname_access_log/timestamp`. |
 
