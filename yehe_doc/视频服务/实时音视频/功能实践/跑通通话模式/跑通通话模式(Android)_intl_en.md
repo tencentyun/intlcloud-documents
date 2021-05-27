@@ -137,6 +137,8 @@ public void onEnterRoom(long result) {
 >- If the room entry fails, the SDK will also call back the `onError` event and return the parameters `errCode` ([error code](https://intl.cloud.tencent.com/document/product/647/35130)), `errMsg` (error message), and `extraInfo` (reserved parameter).
 >- If you are already in a room, you must call `exitRoom()` to exit the current room first before entering the next room.
 
+To avoid unexpected events, make sure that the same `appScene` value is used by different clients.
+
 [](id:step6)
 ### Step 6. Subscribe to remote audio/video streams
 The SDK supports both automatic subscription and manual subscription.
