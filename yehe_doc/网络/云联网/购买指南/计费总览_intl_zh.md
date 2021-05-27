@@ -17,7 +17,7 @@
 <tr>
 <td align="left">月95后付费</td>
 <td align="left">先使用再付费</td>
-<td align="left">美元/月，根据当月实际使用带宽的月95带宽峰值及有效使用天占比计费</td>
+<td align="left">美元/月，根据当月实际使用带宽的月95带宽峰值及有效使用天占比计费。</td>
 <td align="left">适用于小带宽或有爆发业务的场景。月95后付费模式目前在灰度中，若需使用，请提 <a href="https://console.cloud.tencent.com/workorder/category" target="_blank">工单申请</a> 。</td>
 </tr>
 </tbody></table>
