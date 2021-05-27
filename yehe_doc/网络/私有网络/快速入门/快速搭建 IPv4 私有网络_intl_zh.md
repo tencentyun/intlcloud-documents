@@ -40,7 +40,7 @@
 3. 在列表中找到默认安全组，单击【修改规则】。
 4. 在页面中修改该安全组的入站规则和出站规则。
 
-关于安全组规则的配置，请参见 [安全组操作](https://intl.cloud.tencent.com/document/product/215/35506) 和 [安全组应用案例](https://intl.cloud.tencent.com/document/product/215/32507)。
+关于安全组规则的配置，请参见 [安全组操作](https://intl.cloud.tencent.com/document/product/215/35506) 和 [安全组应用案例](https://intl.cloud.tencent.com/document/product/215/35519)。
 
 ### 步骤4：配置路由表
 配置好云服务器和安全组后，您需要配置子网所关联的路由表。
