@@ -115,11 +115,11 @@ public void onRegisterResult(Context context, int errorCode, XGPushRegisterResul
 			}
 			String text = "";
 			if (errorCode == XGPushBaseReceiver.SUCCESS) {       // Registration succeeded
-			// Get the token here
-			String token = message.getToken();
-			text = "Registration succeeded. Token:" + token;
+				// Get the token here
+				String token = message.getToken();
+				text = "Registration succeeded. Token:" + token;
 			} else {
-			text = message + "Registration failed. Error code:" + errorCode;
+				text = message + "Registration failed. Error code:" + errorCode;
 			}
 			Log.d(LogTag, text);
 }
@@ -139,6 +139,9 @@ public void onRegisterResult(Context context, int errorCode, XGPushRegisterResul
 
 The following are unregistration API methods. For more information on the timing and principle of calls, please see [Device unregistration flow](https://intl.cloud.tencent.com/document/product/1024/32609#device-unregistration-flow).
 
+>! After calling the unregistration API, you need to call the registration API again before you can receive pushed messages.
+>
+
 #### API description
 
 When a user has logged out or the application is closed and it is no longer necessary to receive push messages, the device can be unregistered from the application. (Once the device is unregistered, push messages will no longer be received unless the device is successfully registered again).
@@ -156,24 +159,17 @@ context: context object of the application.
 #### Sample code
 
 ```java
-/**
-* Unregistration result
-* @param context //Current context
-* @param errorCode //0 indicates success, while other values are error codes
-*/
-@Override
-public void onUnregisterResult(Context context, int errorCode) {
-			if (context == null) {
-				return;
-			}
-			String text = "";
-			if (errorCode == XGPushBaseReceiver.SUCCESS) {
-				text = "Unregistration succeeded";
-			} else {
-				text = "Unregistration failed" + errorCode;
-			}
-			Log.d(LogTag, text);
-}
+XGPushManager.unregisterPush(getApplicationContext(), new XGIOperateCallback() {
+    @Override
+    public void onSuccess(Object data, int i) {
+        Log.d("TPush", "Unregistration succeeded");
+    }
+
+    @Override
+    public void onFail(Object data, int errCode, String msg) {
+        Log.d("TPush", "Unregistration failed. Error code: " + errCode + ", error message: " + msg);
+    }
+});
 ```
 
 
@@ -500,7 +496,7 @@ void clearAndAppendAccount(Context context, final String account, int accountTyp
 ```
 
 >?
-> - As the `appendAccount` API was seldom used and confusing to developers, it has been disused since October 26, 2020. If you used it previously, it will be replaced by the `clearAndAppendAccount` API.
+> - As the `appendAccount` API was seldom used and confusing to developers, it has been disused since October 26. If you used it previously, it will be replaced by the `clearAndAppendAccount` API.
 > - Each account can be bound to up to 100 tokens.
 > - The account can be email, QQ account number, mobile number, username, etc. For valid values, please see the enumeration class `XGPushManager.AccountType`. (Currently, only pushes to accounts of the `UNKNOWN` type are supported. Other account types are expected to be available by the end of April 2021.)
 > - If multiple devices are bound to the same account, the backend will push the message to the last bound device by default. If you want to push to all the bound devices, you can view the `account_push_type` parameter settings in [Push API](https://intl.cloud.tencent.com/document/product/1024/33764).
@@ -618,7 +614,7 @@ XGPushManager.delAccount(getApplicationContext(),"test");
 
 #### API description
 
-This API is used to unbind accounts in one or multiple types. (SDK v1.2.3.0+)
+This API is used to unbind accounts of one or multiple types. (SDK v1.2.3.0+)
 
 ```java
 public static void delAccounts(Context context, final Set<Integer> accountTypeSet, XGIOperateCallback callback)
@@ -683,59 +679,21 @@ context: context object of the current application, which cannot be null.
 XGPushManager.clearAccounts(getApplicationContext());
 ```
 
-## Tag management
+## Tag Management
 
 The following are tag management API methods. For more information on the timing and principle of calls, please see [Tag flow](https://intl.cloud.tencent.com/document/product/1024/32609#tag-flow).
 
 ### Preset tags
 
-Currently, TPNS provides two types of preset tags:
-
-- Geographic location (at the provincial level)
-- Application version number
-Preset tags are automatically reported in the SDK.
-
-
-
-### Setting custom tags
-
->? The `setTag` API is disused in SDK v1.2.3.0. The `appendTags` API is recommended.
->
-
-#### API description
-
-You can set tags for different users and then send mass notifications based on tag names on the frontend. An application can have up to 10,000 tags, and each token can have up to 100 tags in one application. If you want to increase the limits, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance. Each custom tag can be bound to an unlimited number of device tokens, and no spaces are allowed in the tag.
-
-```java
-public static void setTag(Context context, String tagName) 
-```
-
-
-#### Parameter description
-
-- context: `Context` object.
-- tagName: name of the tag to be set, which cannot be null or empty.
-
-#### Processing result
-
-The result can be obtained by reloading the `onSetTagResult` method of `XGPushBaseReceiver`.
-
-#### Sample code
-
-```java
-XGPushManager.setTag(this, "male"); 
-```
-
-
+Currently, TPNS preset tags include application version, system version, province, active information, system language, SDK version, country/region, phone brand, and phone model tags. Preset tags are automatically reported in the SDK.
 
 ### Setting multiple tags
 
->? The `setTags` API is disused in SDK v1.2.2.0. The `clearAndAppendTags` API is recommended.
->
 
 #### API description
 
 Setting multiple tags at a time will overwrite tags previously set for this device.
+You can set tags for different users and then send mass notifications based on tag names. An application can have up to 10,000 tags, and each token can have up to 100 tags in one application. If you want to increase the limits, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance. Each custom tag can be bound to an unlimited number of device tokens, and no spaces are allowed in the tag.
 
 ```java
 public static void clearAndAppendTags(Context context, String operateName, Set<String> tags) 
@@ -832,7 +790,7 @@ XGPushManager.delTag (this, "male");
 
 ### Deleting multiple tags
 
->?The `deleteTags` API is disused in SDK v1.2.2.0. The `delTags` API is recommended.
+>? The `deleteTags` API is disused in SDK v1.2.2.0. The `delTags` API is recommended.
 >
 
 #### API description
@@ -973,7 +931,7 @@ XGPushManager.upsertAttributes(context, "addAttributes-test", attr, xgiOperateCa
 
 
 
-### Deleting user attributes
+### Deleting a user attribute
 
 #### API description
 
@@ -1218,7 +1176,7 @@ A standard token will be returned upon success, and null or "0" upon failure.
 
 #### API description
 
-If the `accessId` is already set in `AndroidManifest.xml`, you do not need to call this API again; if you still call this API, the `accessId` set through this API will prevail.
+If the `accessKey` is already set in `AndroidManifest.xml`, you do not need to call this API again; if you still call this API, the `accessKey` set through this API will prevail.
 
 ```java
 public static boolean setAccessId(Context context, long accessId)

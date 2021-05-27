@@ -16,6 +16,19 @@
 
 ### Method 1. Automatic integration (recommended)
 
+>?As the Bintray repository is no longer available, COS’s SDK has been migrated to Maven Central. The import path is different and thus you need to use the new import path during the update.
+
+#### Using the Maven Central repository
+
+Add the following code to the project-level `build.gradle` file (usually in the root directory):
+```
+repositories {
+    google()
+    // Add the following line
+    mavenCentral() 
+}
+```
+
 #### Standard SDK
 
 Add dependencies to the app-level `build.gradle` file (usually under the app module).
@@ -23,55 +36,48 @@ Add dependencies to the app-level `build.gradle` file (usually under the app mod
 dependencies {
 	...
     // Add the following line
-    implementation 'com.tencent.qcloud:cosxml:5.5.5'
+    implementation 'com.qcloud.cos:cos-android:5.6.+'
 }
 ```
 
 If you are using Kotlin for development in your project, you can add our KTX extension package, which provides more user-friendly APIs.
-
 ```
 dependencies {
 	...
     // Add the following line
-    implementation 'com.tencent.qcloud:cosxml-ktx:5.5.0'
+    implementation 'com.qcloud.cos:cos-ktx:5.6.+'
 }
 ```
 
 #### Simplified SDK
 
-
-
-
-
-To provide better user experience, we have introduced Mobile Tencent Analytics (MTA) into the SDK to track down and optimize the SDK quality.
-
-To disable the MTA feature, add the following statement to the app-level `build.gradle` file (usually under the app module):
-
+Add dependencies to the app-level `build.gradle` file (usually under the app module).
 ```
 dependencies {
 	...
-    implementation ('com.tencent.qcloud:cosxml:x.x.x'){
-        // Add the following line
-        
-    }
+    // Add the following line
+    implementation 'com.qcloud.cos:cos-android-lite:5.6.+'
 }
 ```
 
 
 
-To provide better user experience, we have introduced Mobile Tencent Analytics (MTA) into the SDK to track down and optimize the SDK quality.
+#### Disabling the beacon report feature (applicable to 5.5.8 or later)
 
-To disable the MTA feature, add the following statement to the app-level `build.gradle` file (usually under the app module):
+We have introduced the beacon analysis feature into the SDK to track down and optimize the SDK quality for a better user experience.
+
+To disable the beacon analysis feature, add the following statement to the app-level `build.gradle` file (usually under the app module):
 
 ```
 dependencies {
 	...
-    implementation ('com.tencent.qcloud:cosxml:x.x.x'){
+    implementation ('com.qcloud.cos:cos-android:x.x.x'){
         // Add the following line
-        exclude group:'com.tencent.qcloud', module: 'mtaUtils'
+        exclude group: 'com.tencent.qcloud', module: 'beacon-android-release'
     }
 }
 ```
+
 
 ### Method 2. Manual integration 
 
@@ -81,15 +87,15 @@ You can directly download the latest SDK version [here](https://cos-sdk-archive-
 
 After downloading and decompressing the file, you can see that it contains multiple `JAR` or `AAR` packages as described below. Please choose the ones you want to integrate.
 
-
+Required libraries:
 - cosxml: COS protocol implementation
 - qcloud-foundation: foundation library
 - [bolts-tasks](https://github.com/BoltsFramework/Bolts-Android): third-party task library
 - [okhttp](https://github.com/square/okhttp): third-party networking library
 - [okio](https://github.com/square/okio): third-party I/O library
 
-
-
+Optional libraries:
+- beacon: mobile beacon analysis to improve the SDK
 - LogUtils: log module for improving the SDK
 - quic: QUIC protocol, required if you transfer data over QUIC
 
@@ -169,7 +175,7 @@ QCloudCredentialProvider myCredentialProvider = new MySessionCredentialProvider(
 
 #### Using a permanent key for local debugging
 
-You can use your Tencent Cloud permanent key for local debugging during the development phase. **Since this method exposes the key to leakage risks, please be sure to replace it with a temporary key before before launching your application.**
+You can use your Tencent Cloud permanent key for local debugging during the development phase. **Since this method exposes the key to leakage risks, please be sure to switch to the temporary key method before launching your application.**
 
 ```java
 String secretId = "COS_SECRETID"; // SecretId of the permanent key
@@ -217,7 +223,7 @@ val cos = cosService(context = application.applicationContext) {
 
     credentialProvider {
         lifecycleCredentialProvider {
-            // Fetch credential from backend
+            // fetch credential from backend
             // ...
             return@lifecycleCredentialProvider SessionQCloudCredentials(
                     "temp_secret_id",
@@ -232,7 +238,7 @@ val cos = cosService(context = application.applicationContext) {
 
 ## Step 4. Access COS
 
-### Uploading an Object
+### Uploading an object
 
 The SDK supports uploading local files, binary data, URIs, and input streams. The following uses uploading a local file as an example.
 
@@ -308,7 +314,7 @@ viewModelScope.launch {
     // Local file example
     val sourceFile = File(appContext.externalCacheDir, "sourceFile")
 
-    try{
+    try {
         // Call the "suspend" function for upload
         val result = `object`.upload(
             localFile = sourceFile,
@@ -332,7 +338,7 @@ viewModelScope.launch {
 >- For the complete sample, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java).
 >- After the upload, you can generate a download URL for the uploaded file with the same key. For detailed directions, please see [Generating Pre-signed Links](https://intl.cloud.tencent.com/document/product/436/37680). Please note that for private-read files, the download URL is only valid for a limited period of time.
 
-### Downloading an Object
+### Downloading an object
 
 [//]: # (.cssg-snippet-transfer-download-object)
 ```java
@@ -393,7 +399,7 @@ cosxmlDownloadTask.setTransferStateListener(new TransferStateListener() {
 });
 ```
 
-#### Use the KTX package to download an object
+#### Using the KTX package to download an object
 
 If you use KTX, please refer to the following sample code for the download:
 
@@ -409,7 +415,7 @@ viewModelScope.launch {
         key = "exampleObject"
     }
 
-    try{
+    try {
         // Call the "suspend" function for download
         val result = `object`.download(
             context = appContext,

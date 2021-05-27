@@ -1,36 +1,49 @@
-## Trial Application Limits
-- A trial application supports up to 1,000 devices in a test. It may be terminated if the testing devices are more than 1,000. Therefore, do not use it for commercial purpose to avoid potential losses.
-
-## Android/iOS Message Content Limit
-- On Android and iOS, the size of a push message body cannot exceed 4 KB, and this limit applies to the `message` field in the Push API.
-
-### Limit on using Android vendor channels
-#### Android message title
-Mi: up to 50 characters.
-Huawei: up to 40 characters.
-Meizu: up to 32 characters.
-OPPO: up to 32 characters.
-Vivo: up to 20 Chinese characters or 40 English characters.
+## Trial-Edition Application Limit
+For applications of the trial edition, up to 1,000 devices can be used for testing. If the limit is exceeded, the trial may be terminated. To avoid loss, do not use applications of the trial edition for commercial purposes.
 
 
-#### Android message content
-Mi: up to 128 characters.
-Huawei: up to 80 characters.
-Meizu: up to 100 characters.
-OPPO: up to 200 characters.
-Vivo: up to 50 Chinese characters or 100 English characters.
->If the length limit is exceeded, message push through the corresponding vendor channel will fail. In this case, the message will be pushed through the TPNS channel.
+## Notification Title and Content Length Limits
+
+
+###  Android push channel limits
+
+| Channel       |        Notification Title Length Limit           |    Notification Content Length Limit                  |
+| --------------- | ------| -------------------------------------------- |
+| TPNS | 20 characters (Excess parts will be displayed as an ellipsis.) | Unlimited |
+| Mi | 50 characters | 128 characters |
+| Huawei | 40 characters | 80 characters |
+| Meizu | 32 characters | 100 characters |
+| OPPO | 32 characters | 200 characters |
+| vivo | 40 characters | 128 characters |
+
+>?
+> - Pushes through vendor channels will fail if corresponding length limits are exceeded, and they will be retried through the TPNS channel.
+> - Pushes through vendor channels will fail if the notification title or content is empty, and they will be retried through the TPNS channel.
+> - For Android, the size of the pushed message body cannot exceed 4 KB, and this limit applies to the `message` field in the Push API.
+> 
+
+
+
+### iOS push channel limits
+
+| Channel       |        Notification Title Length Limit           |    Notification Content Length Limit                  |
+| --------------- | ------| -------------------------------------------- |
+| APNs | 40 characters (Excess parts will be displayed as an ellipsis.) | <li>Up to 110 characters will be displayed in the notification center, and excess parts will be displayed as an ellipsis.<li>Up to 110 characters will be displayed when the phone screen is locked, and excess parts will be displayed as an ellipsis.<li>Up to 62 characters will be displayed in the top pop-up window, and excess parts will be displayed as an ellipsis. |
+| TPNS | Same as that of APNs | Same as that of APNs |
+
+
+>? For iOS, the size of the pushed message body cannot exceed 4 KB, and this limit applies to the `message` field in the Push API.
 
 
 ## API Use Limits
-- When calling the API for batch push, you can specify up to 1,000 device tokens or accounts.
-- When calling the API for tag push, the list of tags can contain up to 512 characters.
-- In full push, the same message can be pushed only once per hour, but there are no limits on the frequency and number of pushes for other push objects.
-- The call frequency limit for a statistics-related API is 200 calls/hour.
-- One application can have up to 10,000 custom tags, and each device token can be bound to up to 100 custom tags. To increase this limit, please submit a ticket for application. One custom tag can be bound to an unlimited number of device tokens.
+- For batch pushes through APIs, you can specify up to 1,000 device tokens or accounts at a time.
+- For pushes to devices with specified tags, the tag list cannot exceed 512 characters.
+- For pushes to all devices, the same message can only be sent once per hour, and there is no limit on the frequency and number of sending times for other push targets.
+- The call frequency limit for statistics APIs is 200 times per hour.
+- One application can have up to 10,000 custom tags. One device token can be bound to a maximum of 100 custom tags (if you want to increase this limit, please [submit a ticket](https://console.cloud.tencent.com/workorder/category)). One custom tag can be bound to an unlimited number of device tokens.
 
-## Limits on Number of Pushes and Push Rate
+## Push Volume and Push Rate Limits
 
-- The number of pushes through the TPNS channel is unlimited. For more information on the limit on the number of pushes through Android vendor channels, please see [Vendor Channel Limit Description](https://intl.cloud.tencent.com/document/product/1024/35829).
-- The push rate for the TPNS channel is not limited by default. If you need to limit the rate, you can use the relevant API for customization. For more information, please see [Optional Parameter Description](https://intl.cloud.tencent.com/document/product/1024/33764).
-- For more information on the limit on the push rate for Android vendor channels, please see [Vendor Channel QPS Limit Description](https://intl.cloud.tencent.com/document/product/1024/35247).
+- For the TPNS channel, the push volume is unlimited. For Android vendor channels, see their push volume limits in [Vendor Channel Limit Description](https://intl.cloud.tencent.com/document/product/1024/35829).
+- For the TPNS channel, the push rate is unlimited by default. If necessary, you can call the relevant API to customize a push rate. For relevant parameter descriptions, see [Optional Parameters](https://intl.cloud.tencent.com/document/product/1024/33764#optional-parameters).
+- For Android vendor channels, see their push rate limits in [Vendor Channel QPS Limit Description](https://intl.cloud.tencent.com/document/product/1024/35247).

@@ -4,23 +4,23 @@ This document provides an overview of APIs and SDK code samples related to simpl
 
 **Simple operations**
 
-| API                                                          | Operation                   | Description                                       |
-| ------------------------------------------------------------ | ------------------------ | ---------------------------------------------- |
+| API | Operation | Description |
+| ------------------------------------------------------------ | -------------- | ----------------------------------------- |
 | [GET Bucket (List Object)](https://intl.cloud.tencent.com/document/product/436/30614) | Querying an object list | Queries some or all objects in a bucket |
-| [GET Bucket Object Versions](https://intl.cloud.tencent.com/zh/document/product/436/31551) | Querying a list objects and their version history | Queries some or all objects in a bucket and their version history |
-| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploads an object using simple upload | Uploads an object to a bucket |
+| [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551) | Querying a list of objects and their historical versions | Queries some or all objects in a bucket and their historical versions |
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object using simple upload | Uploads an object to a bucket |
 | [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Querying object metadata | Queries the metadata of an object |
 | [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system |
 | [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object | Copies an object to the destination path |
-| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting a single object | Deletes a specified object from a bucket |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting a single object | Deletes an object from a bucket |
 | [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects from a bucket in a single request |
-| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores an archived object for access |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores an archived object for access|
 | [SELECT Object content](https://intl.cloud.tencent.com/document/product/436/32360) | Extracting object content | Extracts the content of a specified object |
 
 
 **Multipart upload operations**
 
-| API          | Operation                   | Description                                       |
+| API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
 | [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying a multipart upload | Queries the information about an ongoing multipart upload |
 | [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload |
@@ -35,7 +35,7 @@ This document provides an overview of APIs and SDK code samples related to simpl
 
 ## Simple Operations
 
-### Querying object list
+### Querying an object list
 
 #### API description
 
@@ -72,15 +72,15 @@ response = client.list_objects(
 #### Parameter description
 
 | Parameter | Description | Type | Required |
-| ------------ | ------------------------------------------------------------ | ------ | -------- |
-| Bucket   | Bucket name in the format of `BucketName-APPID`     | Yes |
+| -------------- | -------------- |---------- | ----------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Prefix  |  Filters the object keys prefixed with the value of this parameter. It is left empty by default. | String  | No |
 | Delimiter | A separator that is left empty by default. For example, you can set it to `/` to indicate folders. | String | No |
 | Marker | Marks the starting point of the returned object list. Entries are listed in UTF-8 binary order by default. | String | No |
-| MaxKeys | The maximum number of objects to return. Default value: 1000 | Int  | No |
+| MaxKeys | The maximum number of returned objects. Default value: `1000`. | int | No |
 | EncodingType | Encoding type of the returned value. The returned value is not encoded by default. Valid value: `url` | String | No |
 
-#### Response Description
+#### Response description
 
 The response contains object metadata in dict format:
 
@@ -116,17 +116,17 @@ The response contains object metadata in dict format:
 ```
 
 | Parameter | Description | Type |
-| -------------- | ------------------------------------------------------------ | ------ |
- MaxKeys | The maximum number of objects to return. Default value: 1000 | String |
-| Prefix  |  Filters object keys prefixed with the value of this parameter. It is left empty by default. | String |
+| -------------- | -------------- |---------- |
+| MaxKeys | The maximum number of returned objects. Default value: `1000`. | String |
+| Prefix   | Filters objects prefixed with the value of this parameter. It is left empty by default. | String  | 
 | Delimiter | A separator that is left empty by default. For example, you can set it to `/` to indicate folders. | String |
 | Marker | Specifies the object after which the listing should begin. Objects are listed in UTF-8 binary order by default. | String |
 | NextMarker | Specifies the object after which the next listing should begin if `IsTruncated` is set to `true`. | String |
-| Name  | Bucket name in the format of `BucketName-APPID`  | String |
-| IsTruncated | Whether the returned object list is truncated. | String |
+| Name | Bucket name in the format: `BucketName-APPID` | String |
+| IsTruncated   |  Indicates whether returned object list is truncated. | String |
 | EncodingType | Encoding type of the returned value. The returned value is not encoded by default. Valid value: `url` | String |
 | Contents | Lists all object metadata, including 'ETag', 'StorageClass', 'Key', 'Owner', 'LastModified', 'Size' | List |
-| CommonPrefixes | Groups all object keys starting with the `Prefix` and ending with the `Delimiter` as a common prefix | List |
+| CommonPrefixes | All objects starting with a particular prefix and ending with the delimiter are grouped into the same type | List |
 
 ### Querying objects and their version history 
 
@@ -166,16 +166,16 @@ response = client.list_objects_versions(
 #### Parameter description
 
 | Parameter | Description | Type | Required |
-| --------------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket  | Bucket name in the format of `BucketName-APPID`  | String | Yes |
+| -------------- | -------------- |---------- | ----------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Prefix  |  Filters the object keys prefixed with the value of this parameter. It is left empty by default. | String  | No |
 | Delimiter | A separator that is left empty by default. For example, you can set it to `/` to indicate folders. | String | No |
 | KeyMarker | Specifies the key after which the listing should begin. Objects are listed in UTF-8 binary order by default. | String | No |
 | VersionIdMarker | Specifies the version ID after which the listing should begin. Objects are listed in UTF-8 binary order by default. | String  |  No |
-| MaxKeys | The maximum number of objects to return. Default value: 1000 | Int  | No |
+| MaxKeys | The maximum number of returned objects. Default value: `1000`. | Int | No |
 | EncodingType | Encoding type of the returned value. The returned value is not encoded by default. Valid value: `url` | String | No |
 
-#### Response Description
+#### Response description
 
 The response contains object metadata in dict format:
 
@@ -227,16 +227,16 @@ The response contains object metadata in dict format:
 ```
 
 | Parameter | Description | Type |
-| ------------------- | ------------------------------------------------------------ | ------ |
-| MaxKeys | Int  | The maximum number of objects to return. Default value: 1000 | String |
-| Prefix | Filters objects prefixed with the value of this parameter. It is left empty by default. | String |
+| -------------- | -------------- |---------- |
+| MaxKeys | The maximum number of returned objects. Default value: `1000`. | String |
+| Prefix   | Filters objects prefixed with the value of this parameter. It is left empty by default. | String  | 
 | Delimiter | A separator that is left empty by default. For example, you can set it to `/` to indicate folders. | String |
 | KeyMarker | Specifies the key after which the listing should begin. Objects are listed in UTF-8 binary order by default. | String |
 | VersionIdMarker | Specifies the version ID after which the listing should begin. Objects are listed in UTF-8 binary order by default. | String  |
 | NextKeyMarker | Specifies the key after which the next listing should begin if `IsTruncated` is set to `true` | String |
 | NextVersionIdMarker | Specifies the version ID after which the next listing should begin if `IsTruncated` is set to `true` | String |
-| Name | Bucket name in the format of `BucketName-APPID` | String |
-| IsTruncated  | Whether the returned object list is truncated       | String |
+| Name | Bucket name in the format: `BucketName-APPID` | String | 
+| IsTruncated   |  Indicates whether returned object list is truncated. | String |
 | EncodingType | Encoding type of the returned value. The returned value is not encoded by default. Valid value: `url` | String |
 | Version | Lists the metadata of all objects with multiple versions, including 'ETag', 'StorageClass', 'Key', 'VersionId', 'IsLatest', 'Owner', 'LastModified', and 'Size' | List |
 | DeleteMarker | Lists the metadata of all delete markers, including 'Key', 'VersionId', 'IsLatest', 'Owner', and 'LastModified' | List |
@@ -253,7 +253,7 @@ This API is used to upload an object to a bucket.
 ```
 put_object(Bucket, Body, Key, **kwargs)
 ```
-#### Sample request
+#### Sample 1. Simple object upload
 
 [//]: # ".cssg-snippet-put-object"
 ```python
@@ -343,6 +343,25 @@ except CosServiceError as e:
     print(e.get_status_code())
 ```
 
+#### Sample 2. Uploading to a specified directory
+[//]: # ".cssg-snippet-put-object-comp"
+
+```python
+# You can upload an object whose name is separated with slashes. In this way, the directory that contains this object will be created automatically. If you need to upload new objects to this COS directory, you can pass the value of this directory to `dir`.
+dir_name = 'path/to/dir/'
+file_name = 'test.txt'
+object_key = dir_name + file_name
+with open('test.txt', 'rb') as fp:
+    response = client.put_object(
+        Bucket='examplebucket-1250000000',  # Bucket name format: BucketName-APPID
+        Body=fp,
+        Key=object_key,
+        StorageClass='STANDARD',
+        ContentType='text/html; charset=utf-8'
+    )
+    print(response['ETag'])
+```
+
 #### Sample request with all parameters
 [//]: # ".cssg-snippet-put-object-comp"
 ```python
@@ -374,23 +393,23 @@ response = client.put_object(
 
 
 | Parameter | Description | Type | Required |
-| ------------------ | ------------------------------------------------------------ | ---------- | -------- |
-| Bucket  | Bucket name in the format of `BucketName-APPID`  | String | Yes  |
-| Body  | Content of the uploaded object, which can be file stream or byte stream     | file/bytes | Yes |
+| -------------- | -------------- |---------- | ----------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
+|  Body  | Content of the object to be uploaded. It can be a file stream or a byte stream |  file/bytes | Yes |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
 | EnableMD5 | Specifies whether the SDK needs to calculate the Content-MD5 value. This feature is disabled by default. The upload will take longer if it is enabled | Bool | No |
-| ACL | Sets the object ACL, such as 'private' or 'public-read'                | String     | No |
-| GrantFullControl | Grants the grantee full permission in the format of `id="OwnerUin"` | String | No |
-| GrantRead  | Grants the grantee read permission in the format of `id="OwnerUin"`                 | String     | No |
+| ACL | Sets the object ACL, e.g., 'private', 'public-read' | String | No |
+| GrantFullControl | Grants full permission in the format: `id="OwnerUin"` | String | No |
+| GrantRead | Grants read permission in the format: `id="OwnerUin"` | String | No |
 | StorageClass | Storage class of the object. For storage classes such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String     | No |
-| Expires            | Sets Expires                                                 | String     | No  |
-| CacheControl | Cache policy. Sets Cache-Control. | String | No |
-| ContentType | Content Type. Sets Content-Type. | String | No |
-| ContentDisposition | Filename. Sets Content-Disposition | String | No |
-| ContentEncoding | Encoding format. Sets Content-Encoding. | String | No |
-| ContentLanguage | Language type. Sets Content-Language | String | No |
-| ContentLength | Sets the length of the request content. | String | No |
-| ContentMD5 | Sets the MD5 checksum of the uploaded object | String | No |
+| Expires | Sets `Expires`. | String | No |
+| CacheControl | Cache policy. Sets `Cache-Control` | String | No |
+| ContentType | Content type. Sets `Content-Type` | String | No |
+| ContentDisposition | Object name. Sets `ContentDisposition` | String | No |
+| ContentEncoding | Encoding type. Sets `Content-Encoding`  | String | No |
+| ContentLanguage | Language type. Sets `Content-Language`  | String | No |
+| ContentLength | Sets the length of the request content  | String | No |
+| ContentMD5           | String      | Sets MD5 checksum of the uploaded object                                | No       |
 | Metadata | User-defined object metadata. This parameter must start with `x-cos-meta`; otherwise, it will be ignored | Dict | No |
 |  TrafficLimit | Specifies the bandwidth limit for a single request in bit/s. Value range: 819200 - 838860800, i.e., 100 KB/s - 100 MB/s | String |  No |
 
@@ -406,7 +425,7 @@ The response contains the attributes of the uploaded object in dict format:
 
 
 | Parameter | Description | Type |
-| ---------------- | ---------------------------- | ------ |
+| -------------- | -------------- |---------- |
 | ETag | MD5 checksum of the uploaded object | String |
 | x-cos-version-id | Version ID of the object if versioning is enabled | String  |
 
@@ -445,13 +464,13 @@ response = client.head_object(
 #### Parameter description
 
 | Parameter | Description | Type | Required |
-| --------------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket  | Bucket name in the format of `BucketName-APPID`  | String | Yes |
+| -------------- | -------------- |---------- | ----------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
-| VersionId  | Version ID of the object if versioning is enabled                   | String | No |
-| IfModifiedSince | Returns the object only if it is modified after the time specified in GMT format | String | No |
+| VersionId | Version ID of the object if versioning is enabled  | String  | No |
+| IfModifiedSince | Returns the object metadata only if the object is modified after the time specified in GMT format | String | No |
 
-#### Response Description
+#### Response description
 
 The response contains object metadata in dict format:
 
@@ -474,18 +493,18 @@ The response contains object metadata in dict format:
 
 
 | Parameter | Description | Type |
-| ------------------- | ------------------------------------------------------------ | ------ |
-| ETag | For multipart upload, this value is not necessarily the MD5 checksum of the object. It is used to verify the uniqueness of the multipart uploaded object. | String |
-| Last-Modified       | Last modified time of the object | String |
-| Cache-Control | Cache policy. Standard HTTP header                               | String |
-| Content-Type        | Content type. Standard HTTP header | String |
-| Content-Disposition | Filename. Standard HTTP header                                 | String |
-| Content-Encoding    | Encoding type. Standard HTTP header | String |
-| Content-Language    | Language type. Standard HTTP header | String |
-| Content-Length      | Object size                   | String |
-| Expires  | Cache expiration time. Standard HTTP header                             | String |
+| -------------- | -------------- |---------- |
+| ETag | This value does not represent the MD5 checksum of the object content, but is used only to verify the uniqueness of the object as a whole during multipart upload | String |
+| Last-Modified | Time the object was last modified | String |
+| Cache-Control | Cache policy. Standard HTTP header | String | 
+| Content-Type | Content type. Standard HTTP header | String | 
+| Content-Disposition | Filename. Standard HTTP header | String |
+| Content-Encoding | Encoding type. Standard HTTP header | String | 
+| Content-Language | Language type. Standard HTTP header | String | 
+| Content-Length  | Object size | String |
+| Expires | Cache expiration time. Standard HTTP header | String |
 | x-cos-meta-* | User-defined object metadata. This parameter must start with `x-cos-meta`; otherwise, it will be ignored  | String |
-| x-cos-version-id    | Version ID of the object if versioning is enabled                     | String |
+| x-cos-version-id |  Version ID of the object if versioning is enabled | String |
 
 
 ### Downloading an object
@@ -533,21 +552,21 @@ response = client.get_object(
 #### Parameter description
 
 | Parameter | Description | Type | Required |
-| -------------------------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
+| -------------- | -------------- |---------- | ----------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
-| Range | Sets the byte range of the object to download in the format of `bytes=first-last`. | String | No |
-| IfMatch  | Returns the object only if the `ETag` matches the specified value. | String | No |
-| IfModifiedSince  | Returns the object only if it is modified after the time specified in GMT format. | String | No |
-| IfNoneMatch | Returns the object only if the ETag does not match the specified value. | String | No |
-| IfUnmodifiedSince | Returns the object only if it is modified before or at the time specified in GMT format.  | String | No |
-| ResponseCacheControl | Sets Cache-Control in the response header | String | No |
-| ResponseContentDisposition | Sets Content-Disposition in the response header | String | No |
-| ResponseContentEncoding | Sets Content-Encoding in the response header | String | No |
-| ResponseContentLanguage | Sets Content-Language in the response header | String | No |
-| ResponseContentType | Sets Content-Type in the response header | String | No |
-| ResponseExpires | Sets Expires in the response header  | String | No |
-| VersionId | Version ID of the object to download | String | No |
+| Range | Sets the byte range of the object to be downloaded in the format: `bytes=first-last` | String | No |
+|  IfMatch  | Returns the object only if the `ETag` matches the specified content. | String  | No |
+| IfModifiedSince | Returns the object only if it is modified after the time specified in GMT format | String | No |
+|  IfNoneMatch  |  Returns the object only if the ETag does not match the specified content | String  | No |
+| IfUnmodifiedSince | Returns the object only if it is modified before or at the time specified in GMT format  | String | No |
+| ResponseCacheControl | Sets the value of `Cache-Control` in the response header | String | No |
+| ResponseContentDisposition | Sets the value of `Content-Disposition` in the response header | String | No |
+| ResponseContentEncoding | Sets the value of `Content-Encoding` in the response header | String | No |
+| ResponseContentLanguage | Sets the value of `Content-Language` in the response header | String | No |
+| ResponseContentType | Sets the value of `Content-Type` in the response header | String | No |
+| ResponseExpires | Sets the value of `Expires` in the response header | String | No |
+| VersionId | Version ID of the object to be downloaded | String | No |
 |  TrafficLimit | Specifies the bandwidth limit in bit/s for a single request (or a single thread for the advanced download API). Value range: 819200 - 838860800, i.e., 100 KB/s - 100 MB/s | String |  No |
 
 #### Response description
@@ -711,22 +730,22 @@ response = client.copy_object(
 #### Parameter description
 
 | Parameter | Description | Type | Required |
-| ------------------ | ------------------------------------------------------------ | ------ | -------- |
-| Bucket  | Bucket name in the format of `BucketName-APPID`  | String | Yes |
+| -------------- | -------------- |---------- | ----------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
 | CopySource  | Path of the source object to be copied, including `Bucket`, `Key`, `Region`, `VersionId` |  Dict | Yes |
 | CopyStatus | Valid values: <br>`Copy`: ignores the configured metadata and copy the file directly. <br>`Replaced`: modifies the metadata according to the configured metadata. <br>If the destination path and source path are the same, this parameter must be set to `Replaced` | String | Yes |
 | ACL  | Sets the object ACL, such as private or public-read                      | String | No |
-| GrantFullControl | Grants full permission in the format of `id="OwnerUin"`. | String | No |
-| GrantRead | Grants the grantee read permission on the object in the format of `id="OwnerUin"`           | String | No |
+| GrantFullControl | Grants full permission in the format: `id="OwnerUin"`| String | No |
+| GrantRead | Grants read permission in the format: `id="OwnerUin"`| String | No |
 | StorageClass | Sets the object storage class. Enumerated values: `STANDARD` (default) or `STANDARD_IA`. | String | No |
-| Expires            | Sets Expires                                                 | String | No |
-| CacheControl | Cache policy. Sets Cache-Control. | String | No |
-| ContentType | Content Type. Sets Content-Type. | String | No |
-| ContentDisposition | Filename. Sets Content-Disposition. | String | No |
-| ContentEncoding | Encoding format. Sets Content-Encoding. | String | No |
-| ContentLanguage | Language type. Sets Content-Language | String | No |
-| Metadata           | User-defined object metadata                      | Dict   | No  |
+| Expires | Sets `Expires` | String | No |
+| CacheControl | Cache policy. Sets `Cache-Control` | String | No |
+| ContentType | Content type. Sets `Content-Type` | String | No |
+| ContentDisposition | Filename. Sets `Content-Disposition` | String | No |
+| ContentEncoding | Encoding type. Sets `Content-Encoding` | String | No |
+| ContentLanguage | Language type. Sets the value of `Content-Language` | String | No |
+|  Metadata | User-defined object metadata | Dict |  No |
 
 
 #### Response description
@@ -742,10 +761,10 @@ The response contains the attributes of the uploaded object in dict format:
 ```
 
 | Parameter | Description | Type |
-| ---------------------------- | -------------------------------- | ------ |
-| ETag   | Copies the MD5 checksum of the object  | String |
-| LastModified                 | Last modified time of the copied object  | String |
-| versionId | Specifies the version ID of the copied object if versioning is enabled | String |
+| -------------- | -------------- |---------- |
+| ETag | MD5 hash of the copied object | String |
+| LastModified | Time the copied object was last modified | String |
+| VersionId | Specifies the version ID of the copied object if versioning is enabled | String  |
 | x-cos-copy-source-version-id | Version ID of the source object | String |
 
 
@@ -860,10 +879,10 @@ response = client.delete_object(
 #### Parameter description
 
 | Parameter | Description | Type | Required |
-| --------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
+| -------------- | -------------- |---------- | ----------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
-| VersionId | Version ID of the object if versioning is enabled          | String | No    |
+| VersionId | Version ID of the object if versioning is enabled | String  | No |
 
 #### Response description
 
@@ -877,8 +896,8 @@ This response contains information on the deleted object in dict format:
 ```
 
 | Parameter | Description | Type |
-| ------------------- | ---------------------------------- | ------ |
-| x-cos-version-id    | Version ID of the deleted object  | String |
+| -------------- | -------------- |---------- |
+| x-cos-version-id | Version ID of the deleted object | String |
 | x-cos-delete-marker | Identifies whether the deleted object is a delete marker | String |
 
 
@@ -936,12 +955,12 @@ response = client.delete_objects(
 #### Parameter description
 
 | Parameter | Description | Type | Required |
-| --------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket | Bucket name in the format of `BucketName-APPID`| String | Yes |
-| Delete    | Indicates how to return the deletion results and the target object               | Dict   | Yes |
-| Object | Provides information about each target object to be deleted | List | Yes |
+| -------------- | -------------- |---------- | ----------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
+| Delete  | Describes the objects to be deleted and the way the deletion results are returned | Dict | Yes |
+| Objects | Describes information on each object to be deleted | List | Yes |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String |
-| VersionId | Version IDs of the objects to be deleted if versioning is enabled           | String | No  |
+| VersionId | Version IDs of the objects to be deleted if versioning is enabled | String  | No |
 | Quiet | Specifies how the deletion results are returned. Valid values: <br>`true`: returns only the failed results. <br>`false` (default): returns all results. | String | No |
 
 #### Response description
@@ -971,17 +990,17 @@ This response contains the deletion results in dict format:
 ```
 
 | Parameter | Description | Type |
-| --------------------- | ------------------------------------------- | ------ |
-| Deleted               | Information on the successfully deleted object       | List   |
-| Key | Path of the successfully deleted objects | String |
-| VersionId   | Version IDs of the successfully deleted objects | String |
+| -------------- | -------------- |---------- |
+| Deleted | Information on the successfully deleted objects |  List |
+| Key | Paths to the successfully deleted objects | String |
+| VersionId | Version IDs of the successfully deleted objects | String |
 | DeleteMarker | Identifies whether the successfully deleted object is a delete marker | String |
 | DeleteMarkerVersionId | Version IDs of the delete markers of the successfully deleted objects | String |
-| Error   | Information on objects that fail to be deleted | List   |
-| Key                   | Paths to the objects that failed to be deleted     | String |
-| VersionId             | Version IDs of the objects that failed to be deleted      | String |
-| Code  | Error code for objects that fail to be deleted  | String |
-| Message | The error message for objects that failed to be deleted | String |
+| Error  |  Information on the objects that failed to be deleted | List |
+| Key | Paths to the objects that failed to be deleted | string |
+| VersionId | Version IDs of the objects that failed to be deleted | String |
+| Code | Error codes for the objects that failed to be deleted | string |
+| Message | Error messages for the objects that failed to be deleted | string |
 
 
 
@@ -1028,15 +1047,15 @@ response = client.restore_object(
 #### Parameter description
 
 | Parameter | Description | Type | Required |
-| ---------------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket  | Bucket name in the format of `BucketName-APPID`  | String | Yes |
+| -------------- | -------------- |---------- | ----------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
-| RestoreRequest   | Describes the rules of the retrieved temporary object                      | Dict   | Yes |
-| Days | Specifies the number of days for the temporary object to be effective. | Int    | Yes |
-| CASJobParameters | Specifies the restoration configuration | Dict | No |
+| RestoreRequest | Describes the rules of the retrieved temporary object | Dict | Yes |
+| Days | Specifies the number of days before the temporary object expires | Int | Yes |
+| CASJobParameters | Describes the configuration of the restoration type | Dict | No |
 | Tier  | Object restoration mode. For ARCHIVE objects, valid values are `Expedited`, `Standard`, and `Bulk`. For DEEP ARCHIVE objects, valid values are `Standard` and `Bulk` | String | No |
 
-#### Response description 
+#### Response description
 This method returns None.
 
 
@@ -1100,10 +1119,10 @@ response = client.select_object_content(
 #### Parameter description
 
 | Parameter | Description | Type | Required |
-| ------------------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket  | Bucket name in the format of `BucketName-APPID`  | String | Yes |
+| -------------- | -------------- |---------- | ----------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
-| Expression          | SQL expression for the retrieval | String | Yes |
+|Expression| SQL expression, representing the extract operation you need to initiate | String| Yes |
 | ExpressionType | Expression type, which is an extension. Currently, only SQL expressions and parameters are supported. | String | Yes |
 |InputSerialization| Specifies the format of the object to extract. For more information, see [Sample request](https://intl.cloud.tencent.com/document/product/436/32360#.E8.AF.B7.E6.B1.82)| Dict | Yes|
 |OutputSerialization| Specifies the output format of extraction results. For more information, see [Sample request](https://intl.cloud.tencent.com/document/product/436/32360#.E8.AF.B7.E6.B1.82)| Dict | Yes|
@@ -1175,13 +1194,13 @@ response = client.list_multipart_uploads(
 #### Parameter description
 
 | Parameter | Description | Type | Required |
-| -------------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket  | Bucket name in the format of `BucketName-APPID`  | String | Yes |
+| -------------- | -------------- |---------- | ----------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Prefix | Filters multipart uploads by object key prefixed with the value of this parameter. It is left empty by default. | String | No |
-| Delimiter | Sets a delimiter. It is left empty by default. | String | No |
-| KeyMarker | Marks the starting point of a multipart upload task. It is used with UploadIdMarker. | String | No |
+| Delimiter | A separator that is left empty by default. | String | No |
+| KeyMarker | Specifies the key after which the multipart upload listing should begin. It is used together with `UploadIdMarker`. | String | No |
 | UploadIdMarker | Specifies the upload ID after which the multipart upload list should begin. It is used together with `KeyMarker`. If `KeyMarker` is not specified, `UploadIdMarker` will be ignored. | String | No |
-| MaxUploads | The maximum number of returned multipart uploads. It defaults to 1000. | Int | No |
+| MaxUploads | Maximum number of multipart uploads returned at a time. The default value is `1000`. | Int | No |
 | EncodingType | Encoding type of the returned value. The returned value is not encoded by default. Valid value: `url` | String | No |
 
 #### Response description
@@ -1225,22 +1244,22 @@ This response contains information on the multipart uploads in dict format:
 ```
 
 | Parameter | Description | Type |
-| ------------------ | ------------------------------------------------------------ | ------ |
-| Bucket  | Bucket name in the format of `BucketName-APPID`  | String |
+| -------------- | -------------- |---------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String |
 | Prefix | Filters multipart uploads by object key prefixed with the value of this parameter. It is left empty by default. | String |
-| Delimiter | Sets a delimiter. It is left empty by default. | String |
+| Delimiter | A separator that is left empty by default. | String |
 | KeyMarker | Specifies the key after which the multipart upload listing should begin. It is used together with `UploadIdMarker`. | Sring |
 | UploadIdMarker | Specifies the upload ID after which the multipart upload listing should begin. It is used together with `KeyMarker`. If `KeyMarker` is not specified, `UploadIdMarker` will be ignored. | String |
 | NextKeyMarker | Specifies the key after which the next multipart upload listing should begin if `IsTruncated` is set to `true`. | String |
 | NextUploadIdMarker | Specifies the upload ID after which the next multipart upload listing should begin if `IsTruncated` is set to `true`. | String |
-| MaxUploads | Maximum number of multipart uploads to return at a time. Default value: `1000` | Int |
-| IsTruncated        | Whether the returned multipart upload list is truncated  | String |
+| MaxUploads | Maximum number of multipart uploads returned at a time. The default value is `1000`. | int |
+| IsTruncated | Indicates whether the returned multipart upload list is truncated | String |
 | EncodingType | Encoding type of the returned value. The returned value is not encoded by default. Valid value: `url` | String |
 | Upload | Lists information on all multipart uploads, including 'UploadId', 'StorageClass', 'Key', 'Owner', 'Initiator', 'Initiated' | List |
 | CommonPrefixes | Groups all keys starting with `Prefix` and ending with `Delimiter` as a common prefix | List |
 
 
-###  Initializing a multipart upload
+### Initializing a multipart upload
 
 #### API description
 
@@ -1288,20 +1307,20 @@ uploadid = response['UploadId']
 #### Parameter description
 
 | Parameter | Description | Type | Required |
-| ------------------ | ------------------------------------------------------------ | ------ | -------- |
-| Bucket  | Bucket name in the format of `BucketName-APPID`  | String | Yes |
+| -------------- | -------------- |---------- | ----------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
-| StorageClass       | Storage class of the object. For more information about storage classes such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String | No |
-| Expires            | Sets Expires                                                 | String | No  |
-| CacheControl | Cache policy. Sets Cache-Control. | String | No |
-| ContentType | Content Type. Sets Content-Type. | String | No |
-| ContentDisposition | Filename. Sets Content-Disposition. | String | No |
-| ContentEncoding | Encoding format. Sets Content-Encoding. | String | No |
-| ContentLanguage | Language type. Sets Content-Language | String | No |
-| Metadata           | User-defined object metadata                      | Dict   | No   |
-| ACL | Sets the object ACL, such as 'private' or 'public-read'                | String     | No |
-| GrantFullControl | Grants the grantee full permission in the format of `id="OwnerUin"` | String | No |
-| GrantRead          | Grants the grantee read permission in the format of `id="OwnerUin"`                 | String | No |
+| StorageClass | Storage class of the object. For storage classes such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String     | No |
+| Expires | Sets `Expires`. | String | No |
+| CacheControl | Cache policy. Sets `Cache-Control` | String | No |
+| ContentType | Content type. Sets `Content-Type` | String | No |
+| ContentDisposition | Filename. Sets `Content-Disposition` | String | No |
+| ContentEncoding | Encoding type. Sets `Content-Encoding` | String | No |
+| ContentLanguage | Language type. Sets `Content-Language` | String | No |
+|  Metadata | User-defined object metadata | Dict |  No |
+| ACL | Sets the object ACL, e.g., 'private', 'public-read'|String| No |
+| GrantFullControl | Grants full permission in the format: `id="OwnerUin"` | String | No |
+| GrantRead | Grants read permission in the format: `id="OwnerUin"` | String | No |
 
 #### Response description
 
@@ -1317,12 +1336,12 @@ This response contains information on the initialization of the multipart upload
 ```
 
 | Parameter | Description | Type |
-| -------- | ------------------------------------------------------------ | ------ |
-| UploadId | ID that identifies the multipart upload | String |
-| Bucket   | Bucket name in the format of `BucketName-APPID` | String |
+| -------------- | -------------- |---------- |
+| UploadId | ID of the multipart upload | String |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String |
 
-###  Uploading a part
+### Uploading a part
 
 This API is used to upload a part in a multipart upload.
 
@@ -1363,14 +1382,14 @@ response = client.upload_part(
 #### Parameter description
 
 | Parameter | Description | Type | Required |
-| ------------- | ------------------------------------------------------------ | ---------- | -------- |
-| Bucket | Bucket name in the format of `BucketName-APPID`| String | Yes |
+| -------------- | -------------- |---------- | ----------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
-| Body | Content of the uploaded part, which can be file stream or byte stream     | file/bytes | Yes |
-| PartNumber | Number that identifies the uploaded part | Int | Yes |
-| UploadId | ID of the current multipart upload  | String  | Yes |
-| EnableMD5 | Specifies whether the SDK needs to calculate the Content-MD5 value. This feature is disabled by default. The upload will take longer if it is enabled | Bool | No |
-| ContentLength | Sets the length of the request content. | String | No |
+| Body  | Content of the parts to be uploaded. It can be a local file stream or an input stream | file/bytes |  Yes|
+| PartNumber | Identifies the part number | int | Yes |
+| UploadId | ID of the multipart upload | string | Yes |
+| EnableMD5 | Indicates whether the SDK needs to calculate Content-MD5. This feature is disabled by default. The upload will take longer if it is enabled | Bool | No |
+| ContentLength | Sets the length of the request content | string | No |
 | ContentMD5 | Sets the MD5 checksum of the uploaded object | String | No |
 |  TrafficLimit | Specifies the bandwidth limit for a single request in bit/s. Value range: 819200 - 838860800, i.e., 100 KB/s - 100 MB/s | String |  No |
 
@@ -1384,9 +1403,9 @@ This response contains the attributes of the uploaded parts in dict format:
 }
 ```
 
-| Parameter Name | Description | Type |
-| -------- | ------------------- | ------ |
-| ETag | MD5 checksum of the uploaded part | String |
+| Parameter | Description | Type |
+| -------------- | -------------- |---------- |
+| ETag | MD5 hash of the uploaded part | String |
 
 ### Copying a part
 
@@ -1438,17 +1457,17 @@ response = client.upload_part_copy(
 #### Parameter description
 
 | Parameter | Description | Type | Required |
-| --------------------------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket  | Bucket name in the format of `BucketName-APPID`  | String | Yes  |
+| -------------- | -------------- |---------- | ----------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
-| PartNumber  | Identifies the part number | Int | Yes |
-| UploadId | ID of the multipart upload  | String  | Yes |
+| PartNumber | Identifies the part number | Int | Yes |
+| UploadId | ID of the multipart upload | String | Yes |
 | CopySource  | Path of the source object to be copied, including `Bucket`, `Key`, `Region`, `VersionId` |  Dict | Yes |
 | CopySourceRange | Describes the byte range of the source object to be copied in the format: `bytes=first-last`. The entire source will be copied by default if no range is specified | String | No |
-| CopySourceIfMatch | Copies only when the ETag of the source object equals a specified value. | String | No |
-| CopySourceIfModifiedSince | Copies only when the source object is modified after a specified time. | String | No |
-| CopySourceIfNoneMatch | Copies only when the ETag of the source object is different from a specified value. | String | No |
-| CopySourceIfUnmodifiedSince | Copies only when the source object is not modified after a specified time | String | No  |
+| CopySourceIfMatch | Copies the source object only if its ETag matches the specified value | String | No |
+| CopySourceIfModifiedSince | Copies the source object only if it is modified after the specified time | String | No |
+| CopySourceIfNoneMatch | Copies the source object only if its ETag does not match the specified value | String | No |
+| CopySourceIfUnmodifiedSince | Copies the source object only if it is not modified after the specified time | String | No |
 
 #### Response description
 
@@ -1462,12 +1481,12 @@ This response contains the attributes of the copied part in dict format:
 ```
 
 | Parameter | Description | Type |
-| ---------------------------- | -------------------------- | ------ |
-| ETag   | Copies the MD5 checksum of the part | String |
-| LastModified                 | Last modified time of the copied part | String |
+| -------------- | -------------- |---------- |
+| ETag | MD5 hash of the copied part | String |
+| LastModified | Time the copied part was last modified | string |
 | x-cos-copy-source-version-id | Version ID of the source object | String |
 
-###  Querying uploaded parts
+### Querying Uploaded Parts
 
 #### API description
 
@@ -1503,13 +1522,13 @@ response = client.list_parts(
 #### Parameter description
 
 | Parameter | Description | Type | Required |
-| ---------------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket  | Bucket name in the format of `BucketName-APPID`  | String | Yes |
+| -------------- | -------------- |---------- | ----------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
-| UploadId | ID that identifies the multipart upload | String |Yes |
-| MaxParts | The maximum number of returned parts. Default value: `1000` | Int | No |
+| UploadId | ID of the multipart upload | String | Yes |
+| MaxParts | Maximum number of parts returned at a time. The default value is `1000`. | Int | No |
 | PartNumberMarker | Specifies the part after which the listing should begin. The default value is `0`, meaning the parts are listed starting with the first part. | Int | No |
-| EncodingType | Encoding type of the returned value. The returned value is not encoded by default. Valid value: `url` | String | No |
+| EncodingType | Specifies the encoding method of the returned value. It is left empty by default. Valid value: `url`. | String | No |
 
 #### Response description
 
@@ -1546,19 +1565,19 @@ This response contains information on all the uploaded parts in dict format:
 ```
 
 | Parameter | Description | Type |
-| -------------------- | ------------------------------------------------------------ | ------ |
-| Bucket  | Bucket name in the format of `BucketName-APPID`  | String |
+| -------------- | -------------- |---------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String |
-| UploadId | ID that identifies the multipart upload | String |
+| UploadId | ID of the multipart upload | String |
 | EncodingType | Encoding type of the returned value. The returned value is not encoded by default. Valid value: `url` | String |
-| MaxParts | The maximum number of returned parts. Default value: `1000` | String |
-| IsTruncated | Indicates whether the returned list is truncated | String |
+| MaxParts | Maximum number of parts returned at a time. The default value is `1000`. | String |
+| IsTruncated | Indicates whether the returned part list is truncated | String |
 | PartNumberMarker | Specifies the part after which the listing should begin. The default value is `0`, meaning the parts are listed starting with the first part. | String |
-| NextPartNumberMarker | Specifies the part number after which the next listing should begin | String |
+| NextPartNumberMarker | Specifies the part after which the next part listing should begin | String |
 | StorageClass | Storage class of the object. For more information about storage classes such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String |
 | Part | Information on the uploaded parts, including `ETag`, `PartNumber`, `Size`, `LastModified` | String |
-| Initiator  | Initiator of the multipart upload, including `DisplayName` and `ID`  | Dict   |
-| Owner   | Information on the object owner, including `DisplayName` and `ID`  | Dict   |
+| Initiator | Initiator of the multipart upload, including `DisplayName` and `ID` | Dict |
+| Owner | Information on the object owner, including `DisplayName` and `ID` | Dict |
 
 
 
@@ -1599,11 +1618,11 @@ response = client.complete_multipart_upload(
 #### Parameter description
 
 | Parameter | Description | Type | Required |
-| --------------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket  | Bucket name in the format of `BucketName-APPID`  | String | Yes |
+| -------------- | -------------- |---------- | ----------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
-| UploadId | ID that identifies the multipart upload | String |Yes |
-| MultipartUpload | Information on all parts, including `ETag` and `PartNumber` | Dict | Yes |
+| UploadId | ID of the multipart upload | String | Yes |
+| MultipartUpload | Information on all parts, including `ETag` and `PartNumber` | Dict |
 
 #### Response description
 
@@ -1619,18 +1638,18 @@ The response contains information on the merged object in dict format:
 ```
 
 | Parameter | Description | Type |
-| -------- | ------------------------------------------------------------ | ------ |
+| -------------- | -------------- |---------- |
 | ETag | The unique tag of a merged object. This value is not necessarily the MD5 checksum of the object. It is used to verify the uniqueness of the merged object. To verify the object content, you can check the `ETag` of each part during the upload process. | String |
-| Bucket | Bucket name in the format of `BucketName-APPID` | String |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String |
 | Location | URL address | String |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String |
 
 
-###  Aborting a multipart upload
+### Aborting a multipart upload
 
 #### API description
 
-This API is used to abort a multipart upload and delete the uploaded parts.
+This API (Abort Multipart Upload) is used to abort a multipart upload and delete the uploaded parts.
 
 #### Method prototype
 
@@ -1650,19 +1669,19 @@ response = client.abort_multipart_upload(
 #### Parameter description
 
 | Parameter | Description | Type | Required |
-| -------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
+| -------------- | -------------- |---------- | ----------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
-| UploadId | ID that identifies the multipart upload | String |Yes |
+| UploadId | ID of the multipart upload | String | Yes |
 
-#### Response description 
+#### Response description
 This method returns None.
 
 
 
 
 
- ## Advanced APIs (recommended)
+ ## Advanced APIs (Recommended)
 
 ### Uploading an object (checkpoint restart)
 
@@ -1736,28 +1755,28 @@ response = client.upload_file(
 
 
 | Parameter | Description | Type | Required |
-| ------------------ | ------------------------------------------------------------ | ------ | -------- |
-| Bucket  | Bucket name in the format of `BucketName-APPID`  | String | Yes |
+| -------------- | -------------- |---------- | ----------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
-| LocalFilePath      | Path of the local file                    | String | Yes  |
-| PartSize           |  Part size. Default value: 1 MB                         | Int    | No |
-| MAXThread | Maximum number of threads for concurrent multipart uploads. Default value: 5 | Int    | No |
+| LocalFilePath | Path to the local file | String | Yes |
+| PartSize | Part size. Default value: 1 MB |  Int | No |
+|  MAXThread  | Maximum number of threads for concurrent multipart uploads. Default value: 5 |  Int |  No |
 | progress_callback | Callback function for the upload progress. You can customize this function to query the upload progress. | Func | No |
 | EnableMD5 | Specifies whether the SDK needs to calculate the Content-MD5 value. This feature is disabled by default. The upload will take longer if it is enabled | Bool | No |
 | ACL  | Sets the object ACL, such as private or public-read                    | String | No |
-| GrantFullControl | Grants the grantee full permission in the format of `id="OwnerUin"` | String | No |
-| GrantRead          | Grants the grantee read permission in the format of `id="OwnerUin"`                 | String | No |
+| GrantFullControl | Grants full permission in the format: `id="OwnerUin"` | String | No |
+| GrantRead | Grants read permission in the format: `id="OwnerUin"` | String | No |
 | StorageClass | Storage class of the object. For more information about storage classes such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String | No |
-| Expires            | Sets Expires                                                 | String | No  |
-| CacheControl | Cache policy. Sets Cache-Control. | String | No |
-| ContentType | Content Type. Sets Content-Type. | String | No |
-| ContentDisposition | Filename. Sets Content-Disposition. | String | No |
-| ContentEncoding | Encoding format. Sets Content-Encoding. | String | No |
-| ContentLanguage | Language type. Sets Content-Language | String | No |
-| ContentLength | Sets the length of the request content. | String | No |
+| Expires | Sets `Expires`. | String | No |
+| CacheControl | Cache policy. Sets `Cache-Control` | String | No |
+| ContentType | Content type. Sets the value of `Content-Type`. | String | No |
+| ContentDisposition | Filename. Sets `Content-Disposition` | String | No |
+| ContentEncoding | Encoding type. Sets `Content-Encoding`. | String | No |
+| ContentLanguage | Language type. Sets `Content-Language`  | String | No |
+| ContentLength | Sets the length of the request content  | String | No |
 | ContentMD5 | Sets the MD5 checksum of the uploaded object | String | No |
-| Metadata           | User-defined object metadata                         | Dict   | No     |
-|  TrafficLimit | Specifies the bandwidth limit in bit/s for a single request (or a single thread for the advanced download API). Value range: 819200 - 838860800, i.e., 100 KB/s - 100 MB/s | String |  No |
+|  Metadata | User-defined object metadata | Dict |  No |
+|  TrafficLimit | Specifies the bandwidth limit in bit/s for a single request (or a single thread for the advanced APIs). Value range: 819200 - 838860800, i.e., 100 KB/s - 100 MB/s | String |  No |
 
 #### Response description
 The response contains the attributes of the uploaded object in dict format:
@@ -1769,7 +1788,7 @@ The response contains the attributes of the uploaded object in dict format:
 ```
 
 | Parameter | Description | Type |
-| -------- | ------------------------------------------------------------ | ------ |
+| -------------- | -------------- |---------- |
 | ETag | This value is not necessarily the MD5 checksum of the object. It is used to verify the uniqueness of the multipart uploaded object. | String |
 
 
@@ -1821,25 +1840,25 @@ response = client.download_file(
 
 
 | Parameter | Description | Type | Required |
-| -------------------------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
-| Key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
-| DestFilePath | Destination path for the downloaded file                | String | Yes |
-| PartSize | Part size for the multipart download. Default value: 20 MB |  Int | No |
-|  MAXThread   | Maximum number of concurrent threads for the multipart download. Default value: 5 |  Int |  No |
-| EnableCRC  | Whether to enable CRC check for local and remote files. Default value: `False`          | Bool   | No |
+| -------------- | -------------- |---------- | ----------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
+| key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
+|  DestFilePath  | The destination local path to the downloaded file |  String |  Yes |
+| PartSize | Part size for multipart download. Default value: 20 MB |  Int | No |
+|  MAXThread  | Maximum number of concurrent threads for a multipart download. Default value: 5 |  Int |  No |
+| EnableCRC | Indicates whether to enable CRC check for local and remote files. Default: `False` | Bool | No |
 |  TrafficLimit | Specifies the bandwidth limit in bit/s for a single request (or a single thread for the advanced download API). Value range: 819200 - 838860800, i.e., 100 KB/s - 100 MB/s | String |  No |
-| IfMatch                    | Returns the object only if the `ETag` matches the specified value.                            | String | No  |
+|  IfMatch  | Returns the object only if the `ETag` matches the specified content. | String  | No |
 | IfModifiedSince | Returns the object only if it is modified after the time specified in GMT format | String | No |
-|  IfNoneMatch   |  Returns the object only if the `ETag` does not match the specified value.  | String  | No |
-| IfUnmodifiedSince | Returns the object only if it is modified before or at the time specified in GMT format.  | String | No |
-| ResponseCacheControl | Sets Cache-Control in the response header | String | No |
-| ResponseContentDisposition | Sets Content-Disposition in the response header | String | No |
-| ResponseContentEncoding | Sets Content-Encoding in the response header | String | No |
-| ResponseContentLanguage | Sets Content-Language in the response header | String | No |
-| ResponseContentType | Sets Content-Type in the response header | String | No |
-| ResponseExpires | Sets Expires in the response header  | String | No |
-| VersionId | Version ID of the object to download | String | No |
+|  IfNoneMatch  |  Returns the object only if the ETag does not match the specified content | String  | No |
+| IfUnmodifiedSince | Returns the object only if it is modified before or at the time specified in GMT format  | String | No |
+| ResponseCacheControl | Sets the value of `Cache-Control` in the response header | String | No |
+| ResponseContentDisposition | Sets the value of `Content-Disposition` in the response header | String | No |
+| ResponseContentEncoding | Sets the value of `Content-Encoding` in the response header | String | No |
+| ResponseContentLanguage | Sets the value of `Content-Language` in the response header | String | No |
+| ResponseContentType | Sets the value of `Content-Type` in the response header | String | No |
+| ResponseExpires | Sets the value of `Expires` in the response header | String | No |
+| VersionId | Version ID of the object to be downloaded | String | No |
 
 #### Response description
 None
@@ -2144,13 +2163,13 @@ response = client.copy(
 
 
 | Parameter | Description | Type | Required |
-| ---------- | ------------------------------------------------------------ | ------ | -------- |
-| Bucket  | Bucket name in the format of `BucketName-APPID` | String | Yes |
-| Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
+| -------------- | -------------- |---------- | ----------- |
+| Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
+| key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
 | CopySource  | Path of the source object to be copied, including `Bucket`, `Key`, `Region`, `VersionId` |  Dict | Yes |
-| CopyStatus | Copy status. Valid values: Copy, Replaced                              | String | No |
-| PartSize | Part size for multipart download. Default value: 10 MB |  Int | No |
-| MAXThread   | Maximum number of concurrent threads for a multipart download. Default value: 5 |  Int |  No |
+ | CopyStatus | Copy status. Valid values: `Copy`, `Replaced`                        | String | No |
+ | PartSize | Part size for multipart download. Default value: 10 MB |  Int | No |
+ |  MAXThread  | Maximum number of concurrent threads for a multipart download. Default value: 5 |  Int |  No |
 
 #### Response description
 If the object is smaller than 5 GB, it will be the result of `copy_object` of the dict format. Otherwise, it will be the result of `complete_multipart_upload`.
