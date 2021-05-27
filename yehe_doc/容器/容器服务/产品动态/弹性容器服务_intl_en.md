@@ -1,3 +1,13 @@
+
+## March 2021
+<table>
+<tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
+<th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
+<tr>
+    <td>EKS has connected to Tencent Cloud Tags.</td><td>Users can add Tencent Cloud tag to EKS cluster, and manage bills through tags.</td><td>2021-03-20</td><td>-</td>
+</tr>
+</table>
+
 ## December 2020
 <table>
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
@@ -76,6 +86,6 @@
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
 <td>Elastic Kubernetes Service (EKS) beta is launched. </td><td>EKS <b>allows users to deploy workloads without having to purchase nodes</b>. <b>It is fully compatible with native Kubernetes</b> and supports resource purchase and management in the native mode. Resources are billed based on the amount of resources used by the containers.</td> <td>2019-12-27</td>
-	<td><a href="https://intl.cloud.tencent.com/document/product/457/34040">EKS</a></td>
+	<td><a href="https://intl.cloud.tencent.com/document/product/457/34040">Elastic Kubernetes Service</a></td>
 </tr>
 </table>
