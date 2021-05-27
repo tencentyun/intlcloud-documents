@@ -9,7 +9,7 @@
 - 实例关机后，所有存储保持连接至实例状态，所有磁盘数据都被保留。内存中的数据将丢失。
 - 关机实例不改变实例的物理特性。实例公网 IP、内网 IP 保持不变； [弹性公网 IP](https://intl.cloud.tencent.com/document/product/213/5733) 维持绑定关系，但由于服务中断，访问这些 IP 时，会得到错误响应； [基础网络互通](https://intl.cloud.tencent.com/document/product/215/31807) 关系维持不变。
 - 如果关机实例属于 [负载均衡实例的后端服务器集群](https://intl.cloud.tencent.com/document/product/214/32388) ，关机后无法继续提供服务。
-若配置了健康检查策略，则可自动屏蔽关机实例并不再向其转发请求。若没有配置健康检查策略，客户端可能会收到502错误返回。有关更多信息，请参阅 [健康检查](https://intl.cloud.tencent.com/document/product/214/3394)。
+若配置了健康检查策略，则可自动屏蔽关机实例并不再向其转发请求。若没有配置健康检查策略，客户端可能会收到502错误返回。有关更多信息，请参阅 [健康检查](https://intl.cloud.tencent.com/document/product/214/38451)。
 - 如果关机实例处于 [弹性伸缩组](https://intl.cloud.tencent.com/document/product/377/3590) ，则 Auto Scaling 服务会将关机的实例标记为运行状况不佳，可能会将其移出弹性伸缩组并启动替换实例。有关更多信息，请参阅 [弹性伸缩](https://intl.cloud.tencent.com/document/product/377)。
 
 ## 操作步骤
