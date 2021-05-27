@@ -36,7 +36,7 @@
 
 示例一：列出目录 a 的所有文件。
 
-[//]: # ".cssg-snippet-get-bucket"
+[//]: # (.cssg-snippet-get-bucket)
 ```js
 cos.getBucket({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -75,7 +75,7 @@ cos.getBucket({
 
 示例二：列出目录 a 的文件，不深度遍历。
 
-[//]: # ".cssg-snippet-get-bucket-with-delimiter"
+[//]: # (.cssg-snippet-get-bucket-with-delimiter)
 ```js
 cos.getBucket({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -114,6 +114,32 @@ cos.getBucket({
     "statusCode": 200,
     "headers": {}
 }
+```
+
+示例三：列出目录下所有文件。
+
+```js
+var bucket = 'examplebucket-1250000000';
+var region = 'ap-beijing';
+var prefix = 'examplefolder/';  /* 要删除的目录，或要删除的前缀 */
+var listFolder = function(marker) {
+    cos.getBucket({
+        Bucket: bucket,
+        Region: region,
+        Prefix: prefix,
+        Marker: marker,
+        MaxKeys: 1000,
+    }, function(err, data) {
+        if (err) {
+            return console.log('list error:', err);
+        } else {
+            console.log('list result:', data.Contents);
+            if (data.IsTruncated === 'true') listFolder(data.NextMarker);
+            else return console.log('list complete');
+        }
+    });
+};
+listFolder();
 ```
 
 #### 参数说明
@@ -177,7 +203,7 @@ PUT Object 接口可以上传一个对象至指定存储桶中。该操作需要
 
 传字符串作为文件内容：
 
-[//]: # ".cssg-snippet-put-object-string"
+[//]: # (.cssg-snippet-put-object-string)
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -191,7 +217,7 @@ cos.putObject({
 
 创建目录：
 
-[//]: # ".cssg-snippet-put-object-folder"
+[//]: # (.cssg-snippet-put-object-folder)
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -261,17 +287,34 @@ POST Object 接口请求可以将用户 wx.chooseImage 选择的文件对象（O
 
 简单上传文件
 
-[//]: # ".cssg-snippet-post-object"
+[//]: # (.cssg-snippet-post-object)
 ```js
 cos.postObject({
     Bucket: 'examplebucket-1250000000',
     Region: 'ap-beijing',
     Key: filename,
     FilePath: tmpFilePath, // wx.chooseImage 选择文件得到的 tmpFilePath
-    onProgress: function (info) {
-        console.log(JSON.stringify(info));
+    onProgress: function(progressData) {
+        console.log(JSON.stringify(progressData));
     }
 }, function (err, data) {
+    console.log(err || data);
+});
+```
+
+上传文件到指定目录：
+
+```js
+var folder = 'examplefolder/';
+cos.postObject({
+    Bucket: 'examplebucket-1250000000',
+    Region: 'ap-beijing',
+    Key: folder + filename,              /* 必须 */
+    FilePath: tmpFilePath, // wx.chooseImage 选择文件得到的 tmpFilePath
+    onProgress: function(progressData) {
+        console.log(JSON.stringify(progressData));
+    }
+}, function(err, data) {
     console.log(err || data);
 });
 ```
@@ -326,7 +369,7 @@ function(err, data) { ... }
 
 #### 使用示例
 
-[//]: # ".cssg-snippet-head-object"
+[//]: # (.cssg-snippet-head-object)
 ```js
 cos.headObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -373,7 +416,7 @@ GET Object 接口请求可以获取存储桶里指定文件的内容，得到文
 
 #### 使用示例
 
-[//]: # ".cssg-snippet-get-object"
+[//]: # (.cssg-snippet-get-object)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -386,7 +429,7 @@ cos.getObject({
 
 指定 Range 获取文件内容：
 
-[//]: # ".cssg-snippet-get-object-range"
+[//]: # (.cssg-snippet-get-object-range)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -456,7 +499,7 @@ OPTIONS Object 接口实现对对象进行跨域访问配置的预请求。即�
 
 #### 使用示例
 
-[//]: # ".cssg-snippet-option-object"
+[//]: # (.cssg-snippet-option-object)
 ```js
 cos.optionsObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -515,7 +558,7 @@ PUT Object - Copy 请求创建一个已存在 COS 的对象的副本，即将一
 
 #### 使用示例
 
-[//]: # ".cssg-snippet-copy-object"
+[//]: # (.cssg-snippet-copy-object)
 ```js
 cos.putObjectCopy({
     Bucket: 'examplebucket-1250000000',                               /* 必须 */
@@ -573,7 +616,7 @@ DELETE Object 接口请求可以在 COS 的存储桶中将一个对象（Object�
 
 #### 使用示例
 
-[//]: # ".cssg-snippet-delete-object"
+[//]: # (.cssg-snippet-delete-object)
 ```js
 cos.deleteObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -618,7 +661,7 @@ DELETE Multiple Objects 接口请求实现在指定存储桶中批量删除对�
 
 删除多个文件：
 
-[//]: # ".cssg-snippet-delete-multi-object"
+[//]: # (.cssg-snippet-delete-multi-object)
 ```js
 cos.deleteMultipleObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -630,6 +673,44 @@ cos.deleteMultipleObject({
 }, function(err, data) {
     console.log(err || data);
 });
+```
+
+按前缀删除多个对象（删除指定目录下的文件）：
+
+```js
+var bucket: 'examplebucket-1250000000'; /* 必须 */
+var region: 'ap-beijing';     /* 存储桶所在地域，必须字段 */
+var prefix = 'examplefolder/';  /* 要删除的目录，或要删除的前缀 */
+var deleteFolder = function (marker) {
+    cos.getBucket({
+        Bucket: bucket,
+        Region: region,
+        Prefix: prefix,
+        Marker: marker,
+        MaxKeys: 1000,
+    }, function (listError, listResult) {
+        if (listError) return console.log('list error:', listError);
+        var nextMarker = listResult.NextMarker;
+        var objects = listResult.Contents.map(function (item) {
+            return {Key: item.Key}
+        });
+        cos.deleteMultipleObject({
+            Bucket: bucket,
+            Region: region,
+            Objects: objects,
+        }, function (delError, deleteResult) {
+            if (delError) {
+                console.log('delete error', delError);
+                console.log('delete stop');
+            } else {
+                console.log('delete result', deleteResult);
+                if (listResult.IsTruncated === 'true') deleteFolder(nextMarker);
+                else console.log('delete complete');
+            }
+        });
+    });
+}
+deleteFolder();
 ```
 
 #### 参数说明
@@ -677,7 +758,7 @@ POST Object restore 接口可以将归档类型的对象进行恢复，恢复出
 
 #### 使用示例
 
-[//]: # ".cssg-snippet-restore-object"
+[//]: # (.cssg-snippet-restore-object)
 ```js
 cos.restoreObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -731,7 +812,7 @@ PUT Object acl 接口用来设置特定存储桶中某个对象的访问控制�
 
 #### 使用示例
 
-[//]: # ".cssg-snippet-put-object-acl"
+[//]: # (.cssg-snippet-put-object-acl)
 ```js
 cos.putObjectAcl({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -745,7 +826,7 @@ cos.putObjectAcl({
 
 为某个用户赋予对象的所有权限：
 
-[//]: # ".cssg-snippet-put-object-acl-user"
+[//]: # (.cssg-snippet-put-object-acl-user)
 ```js
 cos.putObjectAcl({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -759,7 +840,7 @@ cos.putObjectAcl({
 
 通过 AccessControlPolicy 赋予对象写权限：
 
-[//]: # ".cssg-snippet-put-object-acl-acp"
+[//]: # (.cssg-snippet-put-object-acl-acp)
 ```js
 cos.putObjectAcl({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -824,7 +905,7 @@ GET Object acl 接口用来查询某个存储桶下的某个对象的访问权�
 
 #### 使用示例
 
-[//]: # ".cssg-snippet-get-object-acl"
+[//]: # (.cssg-snippet-get-object-acl)
 ```js
 cos.getObjectAcl({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -881,7 +962,7 @@ Slice Copy File 可用于实现通过分块复制将一个文件从源路径复�
 
 调用 Slice Copy File 操作：
 
-[//]: # ".cssg-snippet-transfer-copy-object"
+[//]: # (.cssg-snippet-transfer-copy-object)
 ```js
 cos.sliceCopyFile({
     Bucket: 'examplebucket-1250000000',                               /* 必须 */
@@ -948,7 +1029,7 @@ function(err, data) { ... }
 
 **使用示例**
 
-[//]: # ".cssg-snippet-transfer-upload-cancel"
+[//]: # (.cssg-snippet-transfer-upload-cancel)
 ```js
 var taskId = 'xxxxx';                   /* 必须 */
 cos.cancelTask(taskId);
@@ -966,7 +1047,7 @@ cos.cancelTask(taskId);
 
 **使用示例**
 
-[//]: # ".cssg-snippet-transfer-upload-pause"
+[//]: # (.cssg-snippet-transfer-upload-pause)
 ```js
 var taskId = 'xxxxx';                   /* 必须 */
 cos.pauseTask(taskId);
@@ -984,7 +1065,7 @@ cos.pauseTask(taskId);
 
 **使用示例**
 
-[//]: # ".cssg-snippet-transfer-upload-resume"
+[//]: # (.cssg-snippet-transfer-upload-resume)
 ```js
 var taskId = 'xxxxx';                   /* 必须 */
 cos.restartTask(taskId);
