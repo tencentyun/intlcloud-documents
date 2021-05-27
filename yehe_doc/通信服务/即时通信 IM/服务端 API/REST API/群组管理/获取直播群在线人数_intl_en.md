@@ -60,7 +60,6 @@ This API is used to obtain the number of online users in a live stream group (AV
     "ActionStatus":"OK",
     "ErrorInfo":"", 
     "ErrorCode": 0, 
-    "GroupId":"@TGS#a6I4ZUUGO",
     "OnlineMemberNum":1000 // Number of online users
 }
 ```
@@ -71,7 +70,6 @@ This API is used to obtain the number of online users in a live stream group (AV
 | ActionStatus | String | The request result. `OK`: succeeded. `FAIL`: failed. |
 | ErrorCode | Integer | The error code. `0`: succeeded. Other values: failed. |
 | ErrorInfo | String | The error information. |
-| groupID | String | The group ID. |
 | OnlineMemberNum | Integer | The number of online users in the group. |
 
 ## Error Codes
