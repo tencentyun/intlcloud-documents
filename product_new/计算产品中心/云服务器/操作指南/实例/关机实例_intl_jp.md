@@ -12,7 +12,7 @@
 - **インスタンスの物理的特性：**シャットダウンしたインスタンスはインスタンスの物理的特性が変更されません。インスタンスのパブリックネットワークIP、プライベートIPはそのまま保持されます。
 [ElasticパブリックネットワークIP](https://intl.cloud.tencent.com/document/product/213/5733) はバインディング関係を維持するが、サービスが中断されたため、これらのIPにアクセスする時、エラー応答を返される場合があります。基幹ネットワークの相互接続の関係はそのまま維持されます。
 
-- **Cloud Load Balancer：**シャットダウンしたインスタンスは [Cloud Load Balancerインスタンスのバックエンドサーバークラスター](https://intl.cloud.tencent.com/document/product/214/32388)に属する場合、シャットダウンした後、サービスを提供し続けることができません。ヘルスチェックポリシーを設定した場合、シャットダウンしたインスタンスを自動的にブロックされてリクエストも転送されません。ヘルスチェックポリシーを設定しなかった場合、クライアントに502エラーが返される場合があります。もっと詳細情報に関して、[ヘルスチェック](https://intl.cloud.tencent.com/document/product/214/3394)をご参照ください。
+- **Cloud Load Balancer：**シャットダウンしたインスタンスは [Cloud Load Balancerインスタンスのバックエンドサーバークラスター](https://intl.cloud.tencent.com/document/product/214/32388)に属する場合、シャットダウンした後、サービスを提供し続けることができません。ヘルスチェックポリシーを設定した場合、シャットダウンしたインスタンスを自動的にブロックされてリクエストも転送されません。ヘルスチェックポリシーを設定しなかった場合、クライアントに502エラーが返される場合があります。もっと詳細情報に関して、[ヘルスチェック](https://intl.cloud.tencent.com/document/product/214/38451)をご参照ください。
 - **Auto Scaling：**シャットダウンしたインスタンスは [Auto Scalingグループ](https://intl.cloud.tencent.com/document/product/377/3590) にある場合、Auto Scaling サービスはシャットダウンしたインスタンスを実行状況不良と認識し、これをAuto Scalingグループから削除して他のインスタンスを置き換えます。詳細情報に関して、[Auto Scaling](https://intl.cloud.tencent.com/document/product/377)をご参照ください。
 
 ## 操作手順
