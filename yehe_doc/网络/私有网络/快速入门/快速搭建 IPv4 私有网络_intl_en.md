@@ -40,7 +40,7 @@ When purchasing a CVM, you can select the default security group (Default) of th
 3. Find the default security group in the list and click **Modify Rules**.
 4. Modify the inbound and outbound rules of the security group on this page.
 
-For more information on configuring security group rules, see [Creating a Security Group](https://intl.cloud.tencent.com/document/product/215/35506) and [Security Group Use Cases](https://intl.cloud.tencent.com/document/product/215/32507).
+For more information on configuring security group rules, see [Creating a Security Group](https://intl.cloud.tencent.com/document/product/215/35506) and [Security Group Use Cases](https://intl.cloud.tencent.com/document/product/215/35519).
 
 ### Step 4: configure a route table.
 After finishing configuring the CVM and security group, you need to configure the route table associated with the subnet.
