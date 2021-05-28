@@ -14,7 +14,7 @@ You can download database cold backup data, binlogs, and slow logs in the Tencen
 ## Downloading a Slow Log
 1. Click an instance ID/name to enter the instance management page and select **Performance Optimization** > **Slow Log**.
 2. Locate the file to be downloaded and click **Download** in the **Operation** column.
->?Note: if the file size is 0 KB, which means that no slow query record is available, it cannot be downloaded.
+>?Note: if the file size is 0 KB, there is no slow query record and it cannot be downloaded.
 3. In the pop-up dialog box, click **Copy** to get the download address used in a VPC.
 4. [Log in to the Linux CVM in the same VPC as the TencentDB instance](https://intl.cloud.tencent.com/document/product/213/10517) and run `wget` to download the file.
 >?
