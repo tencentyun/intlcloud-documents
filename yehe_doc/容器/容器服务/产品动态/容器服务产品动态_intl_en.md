@@ -124,7 +124,7 @@
     <td>Event dashboard was launched.</td><td>This feature implements the aggregation search and trend observation of top events and exception events.</td><td>2020-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38892">Event Dashboard</a></td>
 </tr>
 <tr>
-    <td>Auditing dashboard was launched.</td><td>This feature implements the aggregation search and direct observation of cluster global, nodes, K8s objects and other important operations.</td><td>2020-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38890">Auditing Dashboard</a></td>
+    <td>Auditing dashboard was launched.</td><td>This feature implements the aggregation search and direct observation of cluster global, nodes, K8s objects and other important operations.</td><td>2020-11-26</td><td>Auditing Dashboard</td>
 </tr>
 <tr>
     <td>The node pool and cluster operating system can be changed.</td><td>Users can create node pools of different operating systems as needed to facilitate the standardized management of nodes.</td><td>2020-11-23</td><td><a href="https://intl.cloud.tencent.com/document/product/457/35901">Creating a Node Pool</a></td>
@@ -1124,7 +1124,7 @@ When a “self-deployed cluster” is created, a security group is automatically
 		<td>TKE supports CI source code building.</td>
         <td>Continuous container integration <b>enables the automatic and manual building of container images on the Tencent TKE Platform.</b></td>
 		<td>2017-07-18</td>
-		<td><a href="https://intl.cloud.tencent.com/document/product/1051/38869">Image Registry Overview</a></td>
+		<td>Image Registry Overview</td>
 	</tr>
 	<tr>
 		<td>Image Registry adds TencentHub images.</td>
