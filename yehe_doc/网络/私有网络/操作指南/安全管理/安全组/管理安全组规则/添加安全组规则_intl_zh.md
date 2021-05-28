@@ -10,7 +10,7 @@
 
 ## 前提条件
 - 您已经创建一个安全组。具体操作请参见 [创建安全组](https://intl.cloud.tencent.com/document/product/215/35506)。
-- 您已经知道云服务器实例需要允许或禁止哪些公网或内网的访问。更多安全组规则设置的相关应用案例，请参见 [安全组应用案例](https://intl.cloud.tencent.com/document/product/215/32507)。
+- 您已经知道云服务器实例需要允许或禁止哪些公网或内网的访问。更多安全组规则设置的相关应用案例，请参见 [安全组应用案例](https://intl.cloud.tencent.com/document/product/215/35519)。
 
 ## 操作步骤
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)。
