@@ -24,7 +24,7 @@ You can create a custom policy to grant the permissions of a specific API. The f
 
 1. Log in to the [CAM console](https://console.cloud.tencent.com/cam/policy), go to **Policies** from the left sidebar, and click **Create Custom Policy** on the upper left corner.
 2. Select **Create by Policy Generator** in the pop-up dialog box.
-3. Provide the following information in the **Visual Policy Generator* tab.
+3. Provide the following information in the **Visual Policy Generator** tab.
   - **Service** (required): select **CmqQueue (cmqqueue)** (if it is not found, please confirm whether you have activated the CMQ service).
   - **Action** (required): select the actions you want to authorize.
   - **Resource** (required): enter the six-segment description of the resource you want to authorize, for example, `qcs::cmqqueue:bj:uin/1238423:queueName/uin/3232/myqueue`. For more information, see [Authorization of CAM-Enabled APIs](#Authorization of CAM-Enabled APIs).
@@ -76,7 +76,7 @@ For more information about CAM policies, see [Policy](https://intl.cloud.tencent
 
 #### List of APIs not supporting authorization at resource level
 
-| API Name | API Description | Example of Resource Six-Segment Description |
+| API Name | API Description | Resource Type |Example of Resource Six-Segment Description |
 | ------------------------------ | ------------------ | ------------ | -------------- |
 | DescribeSubscriptionDetail | Queries subscription details. | Subscription API | * |
 | DescribeTopicDetail | Queries topic details. | Topic API | * |
