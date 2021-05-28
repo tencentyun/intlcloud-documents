@@ -1,9 +1,9 @@
-Cloud Connect Network (CCN) is billed according to the interconnection bandwidth and supports two billing modes (monthly subscription and pay-as-you-go by monthly 95th percentile) and three service levels ([platinum, gold, and silver](https://intl.cloud.tencent.com/document/product/1003/30217)).
-You can choose the cost-effective billing plan that best suits your application requirements. For example, we recommend choosing pay-as-you-go by monthly 95th percentile - gold for real-time audio/video and game acceleration. For business data backup, we recommend choosing monthly subscription - silver.
+Cloud Connect Network (CCN) is billed according to the interconnection bandwidth and supports the billing mode of pay-as-you-go by monthly 95th percentile and three service levels ([platinum, gold, and silver](https://intl.cloud.tencent.com/document/product/1003/30217)).
+You can choose the cost-effective billing plan that best suits your application requirements. For example, we recommend choosing pay-as-you-go by monthly 95th percentile - gold for real-time audio/video and game acceleration. 
 
 
 ## Billing
-The following table compares the two billing modes.
+The following table describes the billing mode.
 <table>
 <thead>
 <tr>
@@ -13,16 +13,11 @@ The following table compares the two billing modes.
 <th align="left" width="43%">Use Case</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">Monthly subscription</td>
-<td align="left">Pay before use</td>
-<td align="left">USD/month. Must use for at least a month. If the bandwidth exceeds the purchased value, packets will be lost</td>
-<td align="left">Suitable for business that requires stable or high bandwidth.</td>
-</tr>
+<tbody>
 <tr>
 <td align="left">Pay-as-you-go by monthly 95th percentile</td>
 <td align="left">Pay after use</td>
-<td align="left">USD/month. Fees are charged based on the 95th percentile of the monthly peak bandwidth and the proportion of valid days</td>
+<td align="left">USD/month. Fees are charged based on the 95th percentile of the monthly peak bandwidth and the proportion of valid days.</td>
 <td align="left">Suitable for business that requires low bandwidth or business volume grows significantly. (it is currently in beta. To try it out, please <a href="https://console.cloud.tencent.com/workorder/category" target="_blank">submit a ticket</a>.)</td>
 </tr>
 </tbody></table>
@@ -31,80 +26,15 @@ The three CCN service levels are as follows:
 
 | Service Level | Service Availability       | Price Ratio        | Use Case  |
 | :------- | :---------- | :----------------- | :----------------- |
-| Platinum   | 99.99%                   | 1.5                      | Suitable for business that requires extremely high communication quality, such as payment                           |
-| Gold | 99.95%                     | 1                            | Suitable for business that requires moderately high communication quality, such as game acceleration                                  |
-| Silver |  99.50% | 0.75 | Suitable for business that is cost-sensitive but less sensitive to communication quality, such as data backup  |
+| Platinum   | 99.99%                   | 1.5                      | Suitable for business that requires extremely high communication quality, such as payment.                           |
+| Gold | 99.95%                     | 1                            | Suitable for business that requires moderately high communication quality, such as game acceleration.                                  |
+| Silver |  99.50% | 0.75 | Suitable for business that is cost-sensitive but less sensitive to communication quality, such as data backup.  |
 
 >?
 >- You can test the network quality using the 10 Kbps of free bandwidth between regions.
 >- Bandwidth of 5 Gbps or less in the same region (same account or cross account) is free of charge. There is no free quota for cross-region bandwidth. If you need more than 5 Gbps of bandwidth in the same region, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to contact us.
 >- Cross-account and cross-region costs are paid by the account to which CCN instances belong.
 >- This price ratio is for reference only. Please refer to the actual prices.
-
-
-## Monthly Subscription
-Pay for the fixed bandwidth (by month) before use. The unit price of monthly subscription is lower than that of pay-as-you-go by monthly 95th percentile, making it suitable for business that requires stable bandwidth.
-For example, if you need 10 Mbps of bandwidth between Beijing and Shanghai regions, you need to first pay for 10 Mbps of bandwidth.
-
-### Billing cycle
-**Monthly subscription**: when purchasing fixed bandwidth (by month), you need to first pay for the fixed bandwidth.
-
-### Billing formula
-**Total CCN costs** = Sum of the interconnection costs of all regions
-
-**Interconnection cost between two regions** = Total purchased period x (Unit price of the corresponding tier x Usage in each tier)
-
-- **Unit price and usage**: progressive tiered pricing; usage in each tier is multiplied by the tiered price, and summed up for the total price.
-- **Purchased period:** by month.
-
-### Pricing
-
-<table>
-<thead>
-<tr>
-<th>Service Level</th>
-<th>Local Region</th>
-<th>Peer Region</th>
-<th>Tier 1 Price<br>(0 Mbps - 100 Mbps]<br>(USD/Mbps/month)</th>
-<th>Tier 2 Price<br>(100 Mbps - 1,000 Mbps]<br>(USD/Mbps/month)</th>
-<th>Tier 3 Price<br>(>1,000 Mbps)<br>(USD/Mbps/month)</th>
-</tr>
-</thead>
-<tbody><tr>
-
-<td>Platinum</td>
-<td rowspan="3">The Chinese mainland<br>(excluding Hong Kong, Macao, and Taiwan)</td>
-<td rowspan="3">The Chinese mainland<br>(excluding Hong Kong, Macao, and Taiwan)</td>
-<td>44</td>
-<td>17</td>
-<td>11</td>
-</tr>
-<tr>
-<td>Gold</td>
-<td>29</td>
-<td>11</td>
-<td>7</td>
-</tr>
-<tr>
-<td>Silver</td>
-<td>22</td>
-<td>9</td>
-<td>6</td>
-</tr>
-</tbody></table>
-
->?
->- Please consult your sales rep for prices between regions outside the Chinese mainland and other regions.
->- Currently, monthly-subscribed CCN instance can be upgraded but not downgraded.
->- If the bandwidth between regions exceeds the purchased value, packets will be lost. We recommend configuring alarms.
->- The bandwidth limit has a 3-5% deviation. If you purchased 100 Mbps of bandwidth, packet loss may occur when the bandwidth reaches 95 Mbps or above.
-
-### Billing example
-Suppose your CCN (service level: gold) is associated with network instances in Guangzhou, Beijing, and Shanghai regions. The estimated bandwidth is as follows and requires 2 months of usage. You need to purchase two bandwidths: Guangzhou - Beijing and Beijing - Shanghai.
-- Guangzhou - Beijing fees: 6,240 USD = 2 × (100 Mbps × 29 USD/Mbps/month + 20 Mbps × 11 USD/Mbps/month)
-- Beijing - Shanghai fees: 1,740 USD = 2 × 30 Mbps × 29 USD/Mbps/month
-The total upfront payment is: 7,980 USD.
-![](https://main.qcloudimg.com/raw/fed0ca551f967f9169427022010df878.png)
 
 ## Pay-As-You-Go by Monthly 95th Percentile
 Pay after use. Fees are charged based on the 95th percentile of the monthly peak bandwidth and the proportion of valid days. Monthly pay-as-you-go billing is suitable for business with large bandwidth fluctuations.
