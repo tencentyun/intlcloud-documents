@@ -19,13 +19,13 @@
 | 特殊应用 | 选填 | 最多可填写30个。对于特例，流控策略基础的 API 流量限制依然有效，您需要额外设定一个阈值作为该应用的流量限制值，同时流控策略基础的 App 流量限制和用户流量限制对该应用失效。|
 | <nobr>特殊 ClientIP</nobr> | 选填 | 最多可填写30个。对于特例，流控策略基础的 API 流量限制依然有效，您需要额外设定一个阈值作为该 ClientIP 的流量限制值，同时流控策略基础的 App 流量限制和 ClientIP 流量限制对该应用失效。|
  
- ![](https://main.qcloudimg.com/raw/2e72cefc1c2e5d3d277674c1e37af74a.png)
+ ![](https://main.qcloudimg.com/raw/d244afb76f2a5bfc3bea4cb9acb31cc0.png)
 
 ### 步骤2：绑定 API 并生效
 
 1. 在列表中选中刚刚创建好的插件，点击操作列的【绑定API】。
 2. 在绑定 API 弹窗中选择服务和环境，并选择需要绑定插件的 API。
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
+   ![](https://main.qcloudimg.com/raw/492616bda938ea67dc415e99e0dce50e.png)
 3. 单击【确定】，即可将插件绑定到 API，此时插件的配置已经对 API 生效。
 
 ## 注意事项
