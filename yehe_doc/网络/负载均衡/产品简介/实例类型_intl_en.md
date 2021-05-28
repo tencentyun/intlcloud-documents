@@ -34,7 +34,7 @@ CLB has all features of Classic CLB. Given their product features and performanc
         <tr>
             <td>Encrypted Layer-4 forwarding (TCP SSL)</td>
                         <td>&#10003;</td>
-                        <td>×</td>
+                        <td>&#10003;</td>
                         <td>×</td>
                         <td>×</td>
         </tr>    
@@ -97,18 +97,18 @@ CLB has all features of Classic CLB. Given their product features and performanc
          <tr>
             <td>Layer-7 redirect (rewrite)</td>
                         <td>&#10003;</td>
-                        <td>×</td>
+                        <td>&#10003;</td>
                         <td>×</td>
                         <td>×</td>
         </tr>
              <tr>
             <td>Cross-region binding support</td>
                         <td>&#10003;</td>
-                        <td>×</td>
+                        <td>&#10003;</td>
                         <td>×</td>
                         <td>×</td>
         </tr>   
-				<tr>
+                <tr>
             <td>Storing Layer-7 access logs in CLS</td>
                         <td>&#10003;</td>
                         <td>&#10003;</td>
