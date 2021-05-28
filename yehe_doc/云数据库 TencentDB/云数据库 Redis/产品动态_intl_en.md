@@ -20,7 +20,7 @@
 </tr>
 <tr>
 <td>Multi-AZ deployment is supported</td>
-<td>You can now deploy TencentDB for Redis master node and replica nodes in different availability zones of the same region. Multi-AZ deployed instances have higher availability and better disaster recovery capability than single-AZ deployed instances.</td>
+<td>You can now deploy TencentDB for Redis master node and replica nodes in different AZs of the same region. Multi-AZ deployed instances have higher availability and better disaster recovery capability than single-AZ deployed instances.</td>
 <td>2020-12</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/239/39812" target="_blank">Multi-AZ Deployment</a></td>
 </tr>
@@ -52,7 +52,7 @@
 </tr>
 <tr>
 <td>Version upgrade now supported</td>
-<td>TencentDB for Redis now supports version upgrade, so you can upgrade from a lower version of Standard Edition to a higher one, including from 2.8 to 4.0, from 2.8 to 5.0, and from 4.0 to 5.0.</td>
+<td>TencentDB for Redis now supports version upgrade, so you can upgrade from a lower version of Standard Edition to a higher one, including from v2.8 to v4.0, from v2.8 to v5.0, and from v4.0 to v5.0.</td>
 <td>2020-07</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/239/37710" target="_blank">Upgrading Instance Version</a></td>
 </tr>
