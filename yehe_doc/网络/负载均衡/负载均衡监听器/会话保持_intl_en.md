@@ -1,7 +1,7 @@
 Session persistence can forward requests from the same IP to the same real server. By default, a CLB instance will route requests to different real servers for load balancing; however, you can use session persistence to route requests from a specified user to the same real server, so that some applications that need to hold their session (such as shopping cart) can run properly.
 
 ## Layer-4 Session Persistence
-Layer-4 protocols (TCP/UDP) supports source IP-based session persistence. The session persistence duration can be set to any integer between 30 and 3600 seconds. If the time threshold is exceeded and the session has no new request, the connection will be disconnected. Session persistence is subject to the load balancing mode:
+Layer-4 protocols (TCP/UDP) support source IP-based session persistence. The session persistence duration can be set to any integer between 30 and 3600 seconds. If the time threshold is exceeded and the session has no new request, the session persistence will end. Session persistence is subject to the load balancing mode:
 - In the mode of "weighted round-robin" where requests are distributed based on the weight of real servers, session persistence based on source IP is supported.
 - In the mode of "weighted least-connection" where overall scheduling depends on server load and weight, session persistence is not supported.
 
