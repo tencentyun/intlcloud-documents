@@ -32,7 +32,7 @@ After integrating the Huawei channel SDK, you need to enable and configure the m
 ### Setting receipt parameters
 
 1. Set the message receipt address. Please view the service access point of your application in the [TPNS console](https://console.cloud.tencent.com/tpns) and select the corresponding receipt address for configuration.
-![](https://main.qcloudimg.com/raw/fbd7bb014dc5fa8bd1b2323471671e59.png)
+
 <table>
  <tbody><tr>
  <th>Service Access Point </th>
