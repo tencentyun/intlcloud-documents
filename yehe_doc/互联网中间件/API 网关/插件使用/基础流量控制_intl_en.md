@@ -19,13 +19,13 @@ Basic traffic throttling plugin is a powerful traffic throttling component provi
 | Special Application | No | Up to 30 items can be entered. For such applications, the basic API traffic throttling of the traffic throttling policy still takes effect, but you need to set an additional traffic throttling threshold for them. Meanwhile, the basic application traffic throttling and user traffic throttling of the traffic throttling policy will stop working for such applications. |
 | <nobr>Special Client IP</nobr> | No | Up to 30 items can be entered. For such IPs, the basic API traffic throttling of the traffic throttling policy still takes effect, but you need to set an additional traffic throttling threshold for them. Meanwhile, the basic application traffic throttling and client IP traffic throttling of the traffic throttling policy will stop working for such IPs. |
  
- ![](https://main.qcloudimg.com/raw/2e72cefc1c2e5d3d277674c1e37af74a.png)
+ ![](https://main.qcloudimg.com/raw/d244afb76f2a5bfc3bea4cb9acb31cc0.png)
 
 ### Step 2. Bind an API and make the plugin effective
 
 1. Select the just created plugin in the list and click **Bind API** in the **Operation** column.
 2. In the **Bind API** pop-up window, select the service, environment, and the API that needs to be bound to the plugin.
-   ![](https://main.qcloudimg.com/raw/d7fd3c3539d6f623f45ebfdf0674d97e.png)
+   ![](https://main.qcloudimg.com/raw/492616bda938ea67dc415e99e0dce50e.png)
 3. Click **OK** to bind the plugin to the API. At this time, the configuration of the plugin has taken effect for the API.
 
 ## Notes
