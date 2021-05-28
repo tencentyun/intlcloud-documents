@@ -1,4 +1,4 @@
-To help you analyze the full-linkage message push effect, TPNS supports the display of message arrival receipts for vendor channels. The support for message arrival receipts varies with the vendor channel inside Chinese mainland. The message arrival receipts of certain channels cannot be directly obtained without corresponding configuration.
+To help you analyze the full-linkage message push effect, TPNS supports the display of message arrival receipts for vendor channels. The support for message arrival receipts varies with the vendor channel inside the Chinese mainland. The message arrival receipts of certain channels cannot be directly obtained without corresponding configuration.
 
 After successfully configuring the message arrival receipt display feature, you can view the push conversion data in push details in the TPNS console or obtain the push conversion data through a TPNS RESTful API.
 
@@ -13,7 +13,8 @@ After successfully configuring the message arrival receipt display feature, you 
 | vivo channel | Yes               | No           |
 | FCM channel  | Yes           | No           |
 
-> ?The arrival receipt information of vendor channels is for reference only.
+>? The arrival receipt information of vendor channels is for reference only.
+>
 
 ## Receipt Configuration Guide for the Huawei Channel
 
@@ -22,16 +23,16 @@ After integrating the Huawei channel SDK, you need to enable and configure the m
 ### Enabling the message receipt feature
 
 1. Log in to [AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html) and select **My apps**.
-   ![](https://main.qcloudimg.com/raw/59521f7425a5d6e1bccae726635096dc.png)    
-2. Select the parent product name of the app for which the service is to enabled. The app information page is displayed.
-3. Click the **Develop** tab and choose **Growing** > **Push** on the left sidebar.
-4. In the **Service status** area, click **Activate**. After the service is activated, you can select whether to enable receipt.
-   ![](https://main.qcloudimg.com/raw/32556c2eb1d74756583cc8c27d436883.png)
+![](https://main.qcloudimg.com/raw/59521f7425a5d6e1bccae726635096dc.png)
+2. Select the parent product name of the application for which the service is to be enabled. The application information page is displayed.
+3. On the application information page, choose **All services** > **Push Kit**.
+4. On the **Push Kit** page, click **Enable** corresponding to **Receipt status**.
+![](https://main.qcloudimg.com/raw/32556c2eb1d74756583cc8c27d436883.png)
 
 ### Setting receipt parameters
 
 1. Set the message receipt address. Please view the service access point of your application in the [TPNS console](https://console.cloud.tencent.com/tpns) and select the corresponding receipt address for configuration.
-![](https://main.qcloudimg.com/raw/ccdcd39ece57703af3106fa756f98991.png)
+![](https://main.qcloudimg.com/raw/fbd7bb014dc5fa8bd1b2323471671e59.png)
 <table>
  <tbody><tr>
  <th>Service Access Point </th>
@@ -57,13 +58,34 @@ After integrating the Huawei channel SDK, you need to enable and configure the m
 
 > ?Replace **AccessID** in the addresses with the access ID of your application. For example, if your application uses the Guangzhou service access point, set the receipt address to `https://stat.tpns.tencent.com/log/statistics/hw/1500016691`. 
 
-
-2. Configure the HTTPS certificate. Click [here](https://api.tpns.tencent.com/v3/tpnscert/download) to download the certificate.
+2. Download the HTTPS certificate corresponding to the service access point of your application. Use a text editor to open the certificate file and copy the certificate to the certificate text box.
+<table>
+ <tbody><tr>
+ <th>Service Access Point </th>
+ <th>Download Address </th> 
+ </tr>
+ <tr>
+ <td >Guangzhou </td>
+ <td><a href="https://tpns-1259470370.cos.ap-guangzhou.myqcloud.com/tpnshttpscert/tpns-https-cert/tpns-gz1.crt">Download</a></td>
+ </tr>
+ <tr>
+ <td>Hong Kong (China) </td>
+ <td><a href=" https://tpns-1259470370.cos.ap-guangzhou.myqcloud.com/tpnshttpscert/tpns-https-cert/tpns-hk.crt">Download</a> </td>
+ </tr>
+ <tr>
+ <td>Singapore </td>
+ <td><a href="https://tpns-1259470370.cos.ap-guangzhou.myqcloud.com/tpnshttpscert/tpns-https-cert/tpns-sgp.crt">Download</a> </td>
+ </tr>
+ <tr>
+ <td>Shanghai </td>
+ <td><a href=" https://tpns-1259470370.cos.ap-guangzhou.myqcloud.com/tpnshttpscert/tpns-https-cert/tpns-sh.crt">Download</a> </td>
+ </tr>
+ </tbody></table>
 3. Configure the callback username and key (optional) for authentication.
 4. Click **Test Receipt** to test the receipt address.
 > !Currently, if you click **Test Receipt**, the error message "Failed to test the callback address" will be displayed. Ignore it and click **Submit**.
 5. Click **Submit** to activate the service.
-   ![](https://main.qcloudimg.com/raw/98a53519ef466977928ebfc1eac879fa.png)
+![](https://main.qcloudimg.com/raw/98a53519ef466977928ebfc1eac879fa.png)
 
 ## Receipt Configuration Guide for the Meizu Channel
 
@@ -104,9 +126,8 @@ After integrating the Meizu channel SDK, you need to create a receipt on the Fly
 	 </tr>
  </tbody></table>
 
+> ?For the Guangzhou service access point, both receipt addresses must be entered.
 
-   >! For the Guangzhou service access point, both receipt addresses must be entered.
-   > 
 4. After entering the receipt address, click **Add** on the right. If the newly created receipt is correctly displayed in **Receipt List**, the configuration is successful.
 
 
