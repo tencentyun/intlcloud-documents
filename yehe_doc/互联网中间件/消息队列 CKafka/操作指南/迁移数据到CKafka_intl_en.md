@@ -7,7 +7,7 @@ The prerequisite for guaranteeing message ordering is to strictly limit data con
 
 Detailed directions:
 1. Log in to the [CKafka Console](https://console.cloud.tencent.com/ckafka) and create a CKafka instance and a corresponding topic.
-For detailed directions, please see [Creating Instances](https://intl.cloud.tencent.com/document/product/597/32543) and [Creating Topics](https://intl.cloud.tencent.com/document/product/597/34003).
+For detailed directions, please see [Creating Instances](https://intl.cloud.tencent.com/document/product/597/40039) and [Creating Topics](https://intl.cloud.tencent.com/document/product/597/34003).
 2. Switch the production flow so that the producer produces data to the CKafka instance.
  Change the IP in the `broker-list` to the VIP of the CKafka instance and `topicName` to the topic name in the CKafka instance:
 ```
@@ -29,7 +29,7 @@ If the requirement for message ordering is not high, it is possible to migrate t
 
 Detailed directions:
 1. Log in to the [CKafka Console](https://console.cloud.tencent.com/ckafka) and create a CKafka instance and a corresponding topic.
-For detailed directions, please see [Creating Instances](https://intl.cloud.tencent.com/document/product/597/32543) and [Creating Topics](https://intl.cloud.tencent.com/document/product/597/34003).
+For detailed directions, please see [Creating Instances](https://intl.cloud.tencent.com/document/product/597/40039) and [Creating Topics](https://intl.cloud.tencent.com/document/product/597/34003).
 2. Switch the production flow so that the producer produces data to the CKafka instance.
  Change the IP in the `broker-list` to the VIP of the CKafka instance and `topicName` to the topic name in the CKafka instance:
 ```
