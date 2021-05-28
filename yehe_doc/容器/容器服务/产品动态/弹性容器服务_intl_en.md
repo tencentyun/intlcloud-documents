@@ -16,7 +16,7 @@
     <td>Supports spot instance</td><td>The spot instance costs are 20% of the original cost, which is expected to reduce business costs by 65%.</td><td>2020-12-25</td><td>-</td>
 </tr>
 <tr>
-    <td>Event dashboard was launched.</td><td>This feature supports the multi-dimensional statistics of top events, exception events, etc. and supports aggregation search and trend observation.</td><td>2020-12-08</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38892">Event Dashboard</a></td>
+    <td>Event dashboard was launched.</td><td>This feature supports the multi-dimensional statistics of top events, exception events, etc. and supports aggregation search and trend observation.</td><td>2020-12-08</td><td>Event Dashboard</td>
 </tr>
 </table>
 
