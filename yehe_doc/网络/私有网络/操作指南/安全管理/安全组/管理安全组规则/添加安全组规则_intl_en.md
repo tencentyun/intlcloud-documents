@@ -10,7 +10,7 @@ This document describes how to add security group rules to allow or forbid CVMs 
 
 ## Prerequisites
 - You have created a security group. 
-- You know what Internet or private network access requests need to be permitted or rejected for your CVM instance. For more use cases of security group rule settings, see [Security Group Use Cases](https://intl.cloud.tencent.com/document/product/215/32507).
+- You know what Internet or private network access requests need to be permitted or rejected for your CVM instance. For more use cases of security group rule settings, see [Security Group Use Cases](https://intl.cloud.tencent.com/document/product/215/35519).
 
 ## Steps
 1. Log in to [CVM Console](https://console.cloud.tencent.com/cvm/index).
