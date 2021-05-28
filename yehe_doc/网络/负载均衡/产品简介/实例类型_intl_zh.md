@@ -34,7 +34,7 @@
         <tr>
             <td>四层加密转发（TCP SSL）</td>
                         <td>&#10003;</td>
-                        <td>×</td>
+                       <td>&#10003;</td>
                         <td>×</td>
                         <td>×</td>
         </tr>    
@@ -97,31 +97,24 @@
          <tr>
             <td>七层重定向功能（rewrite）</td>
                         <td>&#10003;</td>
-                        <td>×</td>
+                        <td>&#10003;</td>
                         <td>×</td>
                         <td>×</td>
         </tr>
              <tr>
             <td>支持跨地域绑定功能</td>
                         <td>&#10003;</td>
-                        <td>×</td>
+                        <td>&#10003;</td>
                         <td>×</td>
                         <td>×</td>
         </tr>   
-				<tr>
+                <tr>
             <td>配置七层访问日志到 CLS</td>
                         <td>&#10003;</td>
                         <td>&#10003;</td>
                         <td>&#10003;</td>
                         <td>×</td>
-        </tr>   
-        <tr>
-            <td>配置七层访问日志到 COS</td>
-                        <td>&#10003;</td>
-                        <td>×</td>
-                        <td>&#10003;</td>
-                        <td>×</td>
-        </tr>   
+        </tr>    
 </tbody></table>
 
 >?  
