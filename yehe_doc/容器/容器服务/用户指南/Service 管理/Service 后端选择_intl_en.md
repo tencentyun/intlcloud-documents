@@ -24,7 +24,7 @@ For some large-scale clusters, you can use the annotation `service.kubernetes.io
 
 ### Use cases
 #### Application testing on a large–scale cluster
-On a large-scale cluster, deploy a test application that contains only one or two pods. During service opening via a Service, the CLB will carry out health checks on all backend NodePorts, and the number of such health check requests has a huge impact on the test application. To avoid this, you can use labels to specify a small portion of nodes in the cluster as the backends to relieve the pressure of the health checks. For more information, see [Notes on High-Frequency Health Checks](https://intl.cloud.tencent.com/document/product/214/3394).
+On a large-scale cluster, deploy a test application that contains only one or two pods. During service opening via a Service, the CLB will carry out health checks on all backend NodePorts, and the number of such health check requests has a huge impact on the test application. To avoid this, you can use labels to specify a small portion of nodes in the cluster as the backends to relieve the pressure of the health checks. For more information, see [Notes on High-Frequency Health Checks](https://intl.cloud.tencent.com/ko/document/product/214/38451).
 
 ## Sample
 ```
