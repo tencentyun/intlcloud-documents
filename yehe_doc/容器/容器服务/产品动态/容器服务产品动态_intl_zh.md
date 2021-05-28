@@ -159,7 +159,7 @@
     <td>TKE ServiceConfig 优化</td><td>新增支持配置 service/ingress 自动创建 tkeserviceconfig。</td><td>2020-09-23</td><td><a href="https://intl.cloud.tencent.com/document/product/457/37015">Ingress 使用 TKEServiceConfig 配置 CLB</a></td>
 </tr>
 <tr>
-    <td>上线 DNSAutoscaler 组件</td><td>通过 Deployment 获取集群的节点数和核数，并可以根据预设的伸缩策略，自动水平伸缩 DNS 的副本数，提高 DNS 组件的可用性。</td><td>2020-09-23</td>DNSAutoscaler 说明</td><td>-</td>
+    <td>上线 DNSAutoscaler 组件</td><td>通过 Deployment 获取集群的节点数和核数，并可以根据预设的伸缩策略，自动水平伸缩 DNS 的副本数，提高 DNS 组件的可用性。</td><td>2020-09-23</td>DNSAutoscaler 说明</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39122">DNSAutoscaler 说明</a></td>
 </tr>
 <tr>
     <td>云原生 etcd 服务内测发布</td><td>该功能能够帮助您一键部署经腾讯内部大规模验证的高可靠高性能 etcd 集群，支持跨可用区容灾能力、提供最优化的性能配置。</td><td>2020-09-16</td><td>-</td>
