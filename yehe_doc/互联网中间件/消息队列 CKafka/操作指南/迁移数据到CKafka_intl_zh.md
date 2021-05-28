@@ -7,7 +7,7 @@
 
 详细步骤说明：
 1. 登录腾讯云 [消息队列 CKafka 控制台](https://console.cloud.tencent.com/ckafka)，创建 CKafka 实例，并创建对应 Topic。
-详细操作请参考 [创建实例](https://intl.cloud.tencent.com/document/product/597/32543) 和 [创建 Topic](https://intl.cloud.tencent.com/document/product/597/34003)。
+详细操作请参考 [创建实例](https://intl.cloud.tencent.com/document/product/597/40039) 和 [创建 Topic](https://intl.cloud.tencent.com/document/product/597/34003)。
 2. 切换生产流，生产者将数据生产到 CKafka 实例。
  修改 broker-list 中的 IP 为 CKafka 实例的 vip，topicName 为 CKafka 实例中的 topic 名称：
 ```
@@ -20,7 +20,7 @@
 ```
 4. 新消费者持续消费 CKafka 集群中的数据，迁移完毕（如果消费者为云服务器，此处也可以继续使用原有消费者进行消费）。
 
->上文给出的是测试命令，正式业务的运行只需要修改相应应用程序配置的 broker 地址，然后重启相应的应用即可。
+>! 上文给出的是测试命令，正式业务的运行只需要修改相应应用程序配置的 broker 地址，然后重启相应的应用即可。
 
 ## 不保证数据有序，迁移数据到 CKafka
 
@@ -29,7 +29,7 @@
 
 详细步骤说明：
 1. 登录腾讯云 [消息队列 CKafka 控制台](https://console.cloud.tencent.com/ckafka)，创建 CKafka 实例，并创建对应 Topic。
-详细操作请参考 [创建实例](https://intl.cloud.tencent.com/document/product/597/32543) 和 [创建 Topic](https://intl.cloud.tencent.com/document/product/597/34003)。
+详细操作请参考 [创建实例](https://intl.cloud.tencent.com/document/product/597/40039) 和 [创建 Topic](https://intl.cloud.tencent.com/document/product/597/34003)。
 2. 切换生产流，生产者将数据生产到 CKafka 实例。
  修改 broker-list 中的 IP 为 CKafka 实例的 vip，topicName 为 CKafka 实例中的 Topic 名称：
 ```
@@ -41,4 +41,4 @@
 ./kafka-console-consumer.sh --bootstrap-server xxx.xxx.xxx.xxx:9092 --from-beginning --new-consumer --topic topicName --consumer.config ../config/consumer.properties
 ```
 
->上文给出的是测试命令，正式业务的运行只需要修改相应应用程序配置的 broker 地址，然后重启相应的应用即可。
+>! 上文给出的是测试命令，正式业务的运行只需要修改相应应用程序配置的 broker 地址，然后重启相应的应用即可。
