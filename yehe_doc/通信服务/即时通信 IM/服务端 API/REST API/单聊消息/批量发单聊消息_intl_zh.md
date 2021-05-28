@@ -106,6 +106,7 @@ From_Accout 为管理员指定的发送方，接收方看到发送者不是管�
 | MsgBody | Object |必填|  TIM 消息，请参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527)  |
 | MsgType | String | 必填|TIM 消息对象类型，目前支持的消息对象包括：TIMTextElem(文本消息), TIMFaceElem(表情消息)，TIMLocationElem(位置消息)，TIMCustomElem(自定义消息) |
 | MsgContent | Object |必填| MsgContent 为 TIM 消息对象，具体可参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527) |
+| SendMsgControl | Array |选填| 消息发送控制选项，是一个 String 数组，只对本次请求有效。"NoUnread"表示该条消息不计入未读数。示例："SendMsgControl": ["NoUnread"]  |
 | OfflinePushInfo | Object | 选填| 离线推送信息配置，具体可参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527) |
 
 
