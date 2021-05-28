@@ -1,6 +1,6 @@
 CLB supports creating Anycast CLB instances. Anycast CLB is a load balancing service that supports cross-region dynamic acceleration. CLB VIP is published in multiple regions. The client connects to the nearest POP and forwards traffic to a CVM instance through the high-speed internet of Tencent Cloud IDC.
 Anycast CLB can achieve network transfer optimization and multi-entry nearby access and reduce network jitter and packet loss, which can ultimately improve the service quality of in-cloud applications, expand the service scope, and streamline backend deployment.
->This feature is currently in beta test. To apply for a trial, submit an application for beta test eligibility.
+>?This feature is currently in beta test. To apply for a trial, submit an application for beta test eligibility.
 
 ## What is Anycast?
 Anycast means that when the same IP publishes a route in multiple locations simultaneously, the routing algorithm will deliver user traffic to the nearest router.
@@ -28,10 +28,11 @@ Just like a region of generic CLB instances, an Anycast CLB region is the one yo
 - Europe and the North America: Toronto, Silicon Valley, Frankfurt, Virginia, and Moscow.
 - Southeast Asia: Singapore, Seoul, Mumbai, Bangkok, and Tokyo.
 
->
+>?
 >- The anycast capability of Anycast CLB is implemented by binding an Anycast EIP to a private network CLB instance.
->- Anycast EIP can be bound to private network CLB instances but not classic private network CLB instances.
+>- Anycast EIP can be bound to private network CLB instances but not classic private network CLB instances or classic network CLB instances.
 >
+
 ## Anycast CLB Use Cases
 ### Unified server for cross-region access
 If you are in the gaming industry, you may hope that the players from different places are in the same server region or that your branches around the globe can share the same IDC. You can use Anycast CLB to deploy real servers in one region (such as Guangzhou), purchase an Anycast CLB instance in that region and select the publishing regions as needed. In this way, players or employees can obtain the nearby access to the same real servers.
