@@ -42,7 +42,7 @@ end
 4. Decompress the SDK package, go to the `demo` > `sdk` > `XGPushStatistics` > `extension` directory, and obtain the `XGExtension.h` and `libXGExtension.a` files.
 5. Add the `XGExtension.h` and `libXGExtension.a` files obtained to the notification service extension target:
  - System libraries: `libz.tbd`, `libsqlite3.tbd`
- - TPNS extension library: libXGExtension.a![](https://main.qcloudimg.com/raw/7587b8d1f108828b6289b402124b200b.jpg)
+ - TPNS extension library: libXGExtension.a
 
 After the integration, the directory structure is as follows:
  ![](https://main.qcloudimg.com/raw/4dcaaf779121fa80cb33e7f78e558a09.png)
