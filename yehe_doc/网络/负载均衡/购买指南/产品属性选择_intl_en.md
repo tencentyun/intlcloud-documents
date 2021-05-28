@@ -11,7 +11,7 @@ CLB instances can be classified into two types: CLB (formerly "application CLB")
 ## Network Types
 ### Public network CLB
 If you need to use CLB to distribute requests from the public network, please select "Public Network".
-Public network CLB instances obtain requests from the client via the internet and distribute them to the bound real servers. After you create a public network CLB instance, Tencent Cloud will assign it a VIP address to be resolved by DNS server. Public network CLB allows users to add CNAME and A records, and map them to custom domain names. VIPs of public network CLB instances are fixed VIP public network IPs. They can receive HTTP, HTTPS, TCP, UDP, and other requests from the client.
+Public network CLB instances obtain requests from the client via the internet and distribute them to the bound real servers. After you create a public network CLB instance, Tencent Cloud will assign it a VIP address to be resolved by DNS server. Public network CLB allows users to add CNAME and A records, and map them to custom domain names. VIPs of public network CLB instances are fixed public IPs. They can receive HTTP, HTTPS, TCP, UDP, and other requests from the client.
 - **Use Cases**
   - A server cluster is used to provide services to public networks. A unified entry is required, while requests from users of public networks should be assigned to server clusters.
   - Users of different ISPs are connected to networks closest to them to accelerate network access.
@@ -40,7 +40,7 @@ The IP version of a CLB instance. Available versions: IPv4, IPv6, and IPv6 NAT64
 If you enable Anycast during the CLB instance creation, an Anycast CLB instance will be created. Anycast CLB is a load balancing service that supports dynamic acceleration across regions. CLB VIP is published in multiple regions. The client connects to the nearest POP, and the traffic will be forwarded to a CVM instance through the high-speed internet of Tencent Cloud IDC. For more information, please see [Creating an Anycast Instance](https://intl.cloud.tencent.com/document/product/214/32426).
 
 ## Instance Name
-CLB instance name, which can contain 1 to 50 characters.
+CLB instance name, which can contain 1 to 60 characters.
 
 ## Purchase Quantity
 Number of purchased CLB instances.
