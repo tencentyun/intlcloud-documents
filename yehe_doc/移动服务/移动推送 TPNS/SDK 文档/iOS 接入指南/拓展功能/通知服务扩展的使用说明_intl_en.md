@@ -98,7 +98,9 @@ brew update && brew reinstall new_tpns_svc_ext
 
 1. Import the header file `NotificationService` into the notification extension class `XGExtension.h`.
 2. Call the following sample code in the callback method `didReceiveNotificationRequest:withContentHandler`:
-```objective-c
+
+```
+objective-c
 /**
  @brief //TPNS processes rich media notifications and device-reached messages, that is, message receipts.
  @param request //Push request
