@@ -32,7 +32,7 @@
 ### 回执参数配置
 
 1. 配置消息回执地址。请在 [TPNS 控制台](https://console.cloud.tencent.com/tpns) 查看您的应用的服务接入点，并复制该应用的 AccessID，选择对应服务接入点的回执地址进行配置：
-![](https://main.qcloudimg.com/raw/fbd7bb014dc5fa8bd1b2323471671e59.png)
+
 <table>
  <tbody><tr>
  <th>服务接入点 </th>
