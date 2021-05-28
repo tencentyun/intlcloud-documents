@@ -159,7 +159,7 @@
     <td>TKE ServiceConfig was optimized</td><td>You can configure service/ingress to create tkeserviceconfig automatically.</td><td>2020-09-23</td><td><a href="https://intl.cloud.tencent.com/document/product/457/37015">Using TKEServiceConfig to Configure CLBs</a></td>
 </tr>
 <tr>
-    <td>The DNSAutoscaler addon was launched.</td><td>This addon can obtain number of nodes and cores of the cluster via deployment, and auto-scaling the number of DNS replicas according to the preset scaling policy, so as to improve DNS availability.</td><td>2020-09-23</td>DNSAutoscaler Description</td><td>-</td>
+    <td>The DNSAutoscaler addon was launched.</td><td>This addon can obtain number of nodes and cores of the cluster via deployment, and auto-scaling the number of DNS replicas according to the preset scaling policy, so as to improve DNS availability.</td><td>2020-09-23</td>DNSAutoscaler Description</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39122">DNSAutoscaler</a></td>
 </tr>
 <tr>
     <td>The beta cloud native ETCD was launched.</td><td>This feature enables you to one-click deploy the high-reliability and high-performance ETCD cluster, which is profusely verified through Tencent’s internal services. It also provides cross-AZ disaster recovery capabilities and optimal performance configuration.</td><td>2020-09-16</td><td>-</td>
