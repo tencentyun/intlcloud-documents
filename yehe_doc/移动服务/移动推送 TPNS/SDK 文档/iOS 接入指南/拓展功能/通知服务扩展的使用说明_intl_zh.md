@@ -42,7 +42,7 @@ end
 4. 解压缩 SDK 包，并依次打开 demo > sdk > XGPushStatistics > extension 目录，获取 `XGExtension.h` 及 `libXGExtension.a` 文件。
 5. 将获取到的 `XGExtension.h`及 `libXGExtension.a` 文件添加至通知扩展 Target：
  - 添加系统库：libz.tbd, libsqlite3.tbd
- - TPNS 扩展库：libXGExtension.a![](https://main.qcloudimg.com/raw/7587b8d1f108828b6289b402124b200b.jpg)
+ - TPNS 扩展库：libXGExtension.a
 
 集成后的目录结构如下：
  ![](https://main.qcloudimg.com/raw/4dcaaf779121fa80cb33e7f78e558a09.png)
@@ -98,7 +98,9 @@ brew update && brew reinstall new_tpns_svc_ext
 
 1. 在通知扩展类 NotificationService 引入头文件 XGExtension.h。
 2. 在回调方法 didReceiveNotificationRequest:withContentHandler: 中调用如下示例代码：
-```objective-c
+
+```
+objective-c
 /**
  @brief TPNS处理富媒体通知和抵达到终端的消息，即消息回执
  @param request 推送请求
@@ -143,12 +145,11 @@ brew update && brew reinstall new_tpns_svc_ext
 ![](https://main.qcloudimg.com/raw/668c47734af4f25b087fbcc33a29d6ec.png)
 2. 通过 PID 或者 Name 将 UNNotificationServiceExtension 的实现 Target（Demo 中抵达插件为 TPNSService-Cloud）连接到主 Target。
 ![](https://main.qcloudimg.com/raw/e5d7615ad9c6379be595299bc5a2b651.png)
-3. 在如图代码34行、38行的位置加断点，发送一条通知配合调试，注意需要使用 APNS 通道，通知的内容中 mutable-content 字段必须为1（TPNS SDK 1.2.8.0开始，后台默认使用 APNS 通道，前台使用 TPNS 自建通道，调试抵达插件需要将 App 退到后台后）。如果看到断点被执行了，说明调试成功，否则停止所有 Target，重新重第1步开始。
+3. 在如图代码34行、38行的位置加断点，发送一条通知配合调试，注意需要使用 APNS 通道，通知的内容中 mutable-content 字段必须为1（TPNS SDK 1.2.8.0开始，后台默认使用 APNS 通道，前台使用 TPNS 自建通道，调试抵达插件需要将 App 退到后台后）。如果看到断点被执行了，说明调试成功，否则停止所有 Target，重新重第1步开始。
 ![](https://main.qcloudimg.com/raw/1667c3db7b2486ea45675cb2036da018.png)
 
 ## 常见问题
 
 #### 为何发送通知后，却没有看到抵达上报？
-客户端抵达上报需要集成【通知扩展服务插件】。若集成后，还没有抵达数据上报，则需要排查主工程与抵达插件的 ACCESS ID 和 ACCESS KEY 是否一致。 且需要排查 Web 管理台或者 RestAPI 通知的内容中 mutable-content 字段是否为1。
-只有主工程与抵达插件的 ACCESS ID 和 ACCESS KEY 一致， 且 Web 管理台或者 RestAPI 通知的内容中 mutable-content 字段为1，才会运行客户端抵达插件，从而有抵达数据上报。
-
+客户端抵达上报需要集成【通知扩展服务插件】。若集成后，还没有抵达数据上报，则需要排查主工程与抵达插件的 ACCESS ID 和 ACCESS KEY 是否一致。 且需要排查 Web 管理台或者 RestAPI 通知的内容中 mutable-content 字段是否为1。
+只有主工程与抵达插件的 ACCESS ID 和 ACCESS KEY 一致， 且 Web 管理台或者 RestAPI 通知的内容中 mutable-content 字段为1，才会运行客户端抵达插件，从而有抵达数据上报。
