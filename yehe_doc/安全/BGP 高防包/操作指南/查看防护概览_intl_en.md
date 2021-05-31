@@ -12,7 +12,7 @@ After an IP address is bound to an Anti-DDoS Pro instance, when you receive a DD
 		- **Attack Type Distribution** displays how the attacks suffered by the selected Anti-DDoS Pro instance distribute across different attack types within the queried period.
     ![](https://main.qcloudimg.com/raw/6f0fdfda81b3cbe3ef75ee044061d7d9.png)
 	- In the **Attack Source Distribution** section, you can view the distribution of DDoS attack sources in and outside Mainland China within the queried period, so that you can take further protective measures based on the displayed information.
-	![](https://main.qcloudimg.com/raw/16b8897eb10347cef60225c61d461179.png)
+	![](https://main.qcloudimg.com/raw/1481ba535a9e9499175f22167adb4bbc.png)
 	- In "DDoS Attack Records", you can view details of the DDoS attack events within the queried period, including the start time, duration, type, and status of each attack event.
 		- You can download DDoS attack packets to analyze and trace the attacks.
 		- Click **Attack Details** to view the maximum packet rate, maximum attack traffic bandwidth, and total amount of traffic cleansed during the DDoS attack event.
