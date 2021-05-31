@@ -36,14 +36,14 @@ For exceptions detected through monitoring charts, you can use the sorting featu
 If you receive an alarm during daily health check, you can go to [Monitoring Overview](https://console.cloud.tencent.com/monitor/overview) in the Cloud Monitor console.
 1. Go to the overview page > service health status module to view exceptions in each region and project.
    You can browse recent exceptions by clicking on the status of each service.
-![](https://main.qcloudimg.com/raw/24fd3a86fc19052de657fe35d580d520.png)
+![](https://main.qcloudimg.com/raw/bef2d6f00c46f99fc18c14f8026ced30.png)
 2. Click the number of exception objects to access the service monitoring page.
-![](https://main.qcloudimg.com/raw/8f683e5a6b52c7336997a0f3674ecc50.png)
+![](https://main.qcloudimg.com/raw/8485dd568f76e906d768361dd438eeb0.png)
 Affected resource objects are automatically filtered out on the service monitoring page.
 3. Click the ID of a specific object to go to the monitoring details page, where detailed information about its historical exceptions is provided.
    - The exception timeline allows you to view the current and historical information of the affected object. This helps you troubleshoot current exceptions based on historical alarms and status changes.
    - The monitoring data for resource performance allows you to compare the current and historical data of the same metric over a specified period of time or compare data changes of different metrics within the same period for troubleshooting.
-![](https://main.qcloudimg.com/raw/0f29918a5be34452d17206da191eca36.png)
+![](https://main.qcloudimg.com/raw/2af63a2c548ae9eec8608f83145bfe0f.png)
 
 
 ### Locating exception objects through dashboards
@@ -51,8 +51,7 @@ Affected resource objects are automatically filtered out on the service monitori
 Log in to the [Cloud Monitor console](https://console.cloud.tencent.com/monitor/overview). On the left sidebar, click **Dashboard** to access the dashboard management page.
 
 1. When you find an exceptional trend in the monitoring chart, click the time period when the exception occurs. A sorting list of corresponding instances is displayed below the chart. You can locate the specific exception objects based on the sorting list.
-![](https://main.qcloudimg.com/raw/742762e9377931bc9e7cb0492648426b.png)
+
 2. Click the name of an object in the sorting list to access its monitoring details page, where detailed information about its historical exceptions is provided.
    - The exception timeline allows you to view the current and historical information of the affected object. This helps you troubleshoot current exceptions based on historical alarms and status changes.
-   - The monitoring data for resource performance allows you to compare the current and historical data of the same metric over a specified period of time or compare data changes of different metrics within the same period for troubleshooting.
-![](https://main.qcloudimg.com/raw/0f29918a5be34452d17206da191eca36.png)
+   - The monitoring data for resource performance allows you to compare the current and historical data of the same metric over a specified period of time or compare data changes of different metrics within the 
