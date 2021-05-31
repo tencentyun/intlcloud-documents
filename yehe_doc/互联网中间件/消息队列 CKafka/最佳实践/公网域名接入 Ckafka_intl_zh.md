@@ -3,7 +3,7 @@
 
 
 ## 前提条件
-已 [创建实例](https://intl.cloud.tencent.com/document/product/597/32543)。
+已 [创建实例](https://intl.cloud.tencent.com/document/product/597/40039)。
 
 ## 操作步骤
 
