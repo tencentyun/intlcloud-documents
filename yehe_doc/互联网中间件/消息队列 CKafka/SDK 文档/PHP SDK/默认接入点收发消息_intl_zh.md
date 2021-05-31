@@ -138,8 +138,8 @@ php Producer.php
   >【Producer】消息发送成功
   ```
 
-  4. 在  [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 的【topic 管理】页面，选择对应的 topic，点击【更多】>【消息查询】，查看刚刚发送的消息。
-
+4. 在  [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 的【topic 管理】页面，选择对应的 topic，点击【更多】>【消息查询】，查看刚刚发送的消息。
+     ![](https://main.qcloudimg.com/raw/7a2410794186b47c9126dbe8b878228d.png)
 
 ### 步骤四：消费消息
 
@@ -227,5 +227,5 @@ php Consumer.php
 
   ```
 
-  4. 在 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 的【Consumer Group】页面，选择对应的消费者组名称，在主题名称输入 topic 名称，点击【查询详情】查看消费详情。
+4. 在 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 的【Consumer Group】页面，选择对应的消费者组名称，在主题名称输入 topic 名称，点击【查询详情】查看消费详情。
      ![](https://main.qcloudimg.com/raw/f054bfe1c177a324465334cb893ad871.png)
