@@ -11,7 +11,7 @@ Namespace=QCE/COS
 ### Requests
 
 | Parameter | Metric | Description | Unit | Dimension |
-| ------------------- | -------------------- | ------------------------------------------------------------ | ---- | ------------- |
+| -------------------- | ------------------------ | ------------------------------------------------------------ | ---- | ------------- |
 | StdReadRequests | STANDARD read requests | Number of STANDARD read requests, which is calculated based on the number of sent requests | - | appid, bucket |
 | StdWriteRequests | STANDARD write requests | Number of STANDARD write requests, which is calculated based on the number of sent requests | - | appid, bucket |
 | MazStdReadRequests | MAZ_STANDARD read requests | Number of MAZ_STANDARD read requests, which is calculated based on the number of sent requests | - | appid, bucket |
@@ -20,6 +20,12 @@ Namespace=QCE/COS
 | IaWriteRequests | STANDARD_IA write requests | Number of STANDARD_IA write requests, which is calculated based on the number of sent requests | - | appid, bucket |
 | MazIaReadRequests | MAZ_STANDARD_IA read requests | Number of MAZ_STANDARD_IA read requests, which is calculated based on the number of sent requests | - | appid, bucket |
 | MazIaWriteRequests | MAZ_STANDARD_IA write requests | Number of MAZ_STANDARD_IA write requests, which is calculated based on the number of sent requests | - | appid, bucket |
+| DeepArcReadRequests | DEEP_ARCHIVE read requests | Number of DEEP_ARCHIVE read requests, which is calculated based on the number of sent requests | - | appid, bucket |
+| DeepArcWriteRequests | DEEP_ARCHIVE write requests | Number of DEEP_ARCHIVE write requests, which is calculated based on the number of sent requests | - | appid, bucket |
+| ItReadRequests | INTELLIGENT_TIERING read requests | Number of INTELLIGENT_TIERING read requests, which is calculated based on the number of sent requests | - | appid, bucket |
+| ItWriteRequests | INTELLIGENT_TIERING write requests | Number of INTELLIGENT_TIERING write requests, which is calculated based on the number of sent requests | - | appid, bucket |
+| MazItReadRequests | MAZ_INTELLIGENT_TIERING read requests | Number of MAZ_INTELLIGENT_TIERING read requests, which is calculated based on the number of sent requests | - | appid, bucket |
+| MazItWriteRequests | MAZ_INTELLIGENT_TIERING write requests | Number of MAZ_INTELLIGENT_TIERING write requests, which is calculated based on the number of sent requests | - | appid, bucket |
 | TotalRequests | Total requests | Total number of read and write requests in all storage classes, which is calculated based on the number of sent requests | - | appid, bucket |
 | GetRequests | Total GET requests | Total number of GET requests in all storage classes, which is calculated based on the number of sent requests | - | appid, bucket |
 | PutRequests | Total PUT requests | Total number of PUT requests in all storage classes, which is calculated based on the number of sent requests | - | appid, bucket |
@@ -27,35 +33,47 @@ Namespace=QCE/COS
 ### Storage
 
 | Parameter | Metric | Unit | Dimension |
-| ---------------------------- | ----------------------------- | ---- | ------------- |
+| ---------------------------- | --------------------------------- | ---- | ------------- |
 | StdStorage | STANDARD - storage space | MB | appid, bucket |
 | MazStdStorage | MAZ_STANDARD - storage space | MB | appid, bucket |
 | SiaStorage | STANDARD_IA - storage space | MB | appid, bucket |
 | MazIaStorage                 | MAZ_STANDARD_IA - storage space      | MB   | appid, bucket |
-| ArcStorage | ARCHIVE - storage space | MB | appid, bucket |
+| ItFreqStorage                | INTELLIGENT_TIERING - frequent storage space       | MB   | appid, bucket |
+| ItInfreqStorage              | INTELLIGENT_TIERING - infrequent storage space       | MB   | appid, bucket |
+| MazItFreqStorage             | MAZ_INTELLIGENT_TIERING - frequent storage space | MB   | appid, bucket |
+| MazItInfreqStorage           | MAZ_INTELLIGENT_TIERING - infrequent storage space | MB   | appid, bucket |
+| ArcStorage                   | ARCHIVE - storage space                 | MB   | appid, bucket |
+| DeepArcStorage               | DEEP_ARCHIVE - storage space             | MB   | appid, bucket |
 | StdObjectNumber | STANDARD - number of objects | - | appid, bucket |
 | MazStdObjectNumber | MAZ_STANDARD - number of objects | - | appid, bucket |
 | IaObjectNumber | STANDARD_IA - number of objects | - | appid, bucket |
 | MazIaObjectNumber            | MAZ_STANDARD_IA - number of objects      | -   | appid, bucket |
+| ItFreqObjectNumber           | INTELLIGENT_TIERING - number of frequent objects       | -   | appid, bucket |
+| ItInfreqObjectNumber         | INTELLIGENT_TIERING - number of infrequent objects       | -   | appid, bucket |
+| MazItFreqObjectNumber        | MAZ_INTELLIGENT_TIERING - number of frequent objects       | -   | appid, bucket |
+| MazItInfreqObjectNumber      | MAZ_INTELLIGENT_TIERING - number of infrequent objects       | -   | appid, bucket |
+| ArcObjectNumber              | ARCHIVE - number of objects                  | -   | appid, bucket |
+| DeepArcObjectNumber          | DEEP_ARCHIVE - number of objects              | -   | appid, bucket |
 | StdMultipartNumber           | STANDARD - incomplete multipart uploads           | -   | appid, bucket |
 | MazStdMultipartNumber        | MAZ_STANDARD - incomplete multipart uploads     | -   | appid, bucket |
 | IaMultipartNumber            | STANDARD_IA - incomplete multipart uploads           | -   | appid, bucket |
 | MazIaMultipartNumber         | MAZ_STANDARD_IA - incomplete multipart uploads     | -   | appid, bucket |
-| ArcMultipartNumber           | ARCHIVE - incomplete multipart uploads           | -   | appid, bucket |
 | ItFrequentMultipartNumber    | INTELLIGENT_TIERING - incomplete multipart uploads       | -   | appid, bucket |
 | MazItFrequentMultipartNumber | MAZ_INTELLIGENT_TIERING - incomplete multipart uploads  | -   | appid, bucket |
+| ArcMultipartNumber           | ARCHIVE - incomplete multipart uploads           | -   | appid, bucket |
+| DeepArcMultipartNumber       | DEEP_ARCHIVE - incomplete multipart uploads           | -   | appid, bucket |
 
 ### Traffic
 
 | Parameter | Metric | Description | Unit | Dimension |
 | ----------------------------- | -------------------- | -------------------------------------------------------- | ---- | ------------- |
-| InternetTrafficDown           | Public network downstream traffic         | Traffic generated by data download from COS to client over the internet              | MB    | appid, bucket |
-| InternetTrafficUp             | Public network upstream traffic         | Traffic generated by data upload from client to COS over the internet              | MB    | appid, bucket |
-| InternalTrafficDown           | Private network downstream traffic         | Traffic generated by data download from COS to client over the Tencent Cloud private network          | MB    | appid, bucket |
-| InternalTrafficUp             | Private network upstream traffic         | Traffic generated by data upload from client to COS over the Tencent Cloud private network          | MB    | appid, bucket |
-| CdnOriginTraffic | CDN origin-pull traffic | Traffic generated by data transfer from COS to Tencent Cloud CDN edge server | MB | appid, bucket |
-| InboundTraffic | Total public and private network upload traffic | Traffic generated by data upload from client to COS over the internet and Tencent Cloud private network | MB | appid, bucket |
-| CrossRegionReplicationTraffic | Cross-region replication traffic       | Traffic generated by replication of data in a bucket in one region to another bucket in another region | MB    | appid, bucket |
+| InternetTraffic           | Public network downstream traffic         | Traffic generated by data download from COS to client over the internet              | B    | appid, bucket |
+| InternetTrafficUp             | Public network upstream traffic         | Traffic generated by data upload from client to COS over the internet              | B    | appid, bucket |
+| InternalTraffic           | Private network downstream traffic         | Traffic generated by data download from COS to client over the Tencent Cloud private network          | B    | appid, bucket |
+| InternalTrafficUp             | Private network upstream traffic         | Traffic generated by data upload from client to COS over the Tencent Cloud private network          | B    | appid, bucket |
+| CdnOriginTraffic | CDN origin-pull traffic | Traffic generated by data transfer from COS to Tencent Cloud CDN edge server | B | appid, bucket |
+| InboundTraffic | Total public and private network upload traffic | Traffic generated by data upload from client to COS over the internet and Tencent Cloud private network | B | appid, bucket |
+| CrossRegionReplicationTraffic | Cross-region replication traffic       | Traffic generated by replication of data in a bucket in one region to another bucket in another region | B    | appid, bucket |
 
 ### Return codes
 
@@ -96,9 +114,9 @@ Namespace=QCE/COS
 | Parameter | Dimension | Dimension Description | Format |
 | ------------------------------- | -------- | ----------------------- | -------------------------------------------------- |
 | &Instances.N.Dimensions.0.Name  | appid    | Root account APPID dimension name | Enter a String-type dimension name: appid                     |
-| &Instances.N.Dimensions.0.Value | appid    | Specific root account APPID      | Enter a root account APPID, such as `1250000000`                 |
+| &Instances.N.Dimensions.0.Value | appid    | Specific root account APPID      | Enter a root account APPID, such as 1250000000                 |
 | &Instances.N.Dimensions.1.Name  | bucket   | Bucket dimension name          | Enter a String-type dimension name: bucket                    |
-| &Instances.N.Dimensions.1.Value | bucket   | Specific bucket name          | Enter a specific bucket name, such as `examplebucket-1250000000` |
+| &Instances.N.Dimensions.1.Value | bucket   | Specific bucket name          | Enter a specific bucket name, such as examplebucket-1250000000 |
 
 ## Input Parameter Description
 
