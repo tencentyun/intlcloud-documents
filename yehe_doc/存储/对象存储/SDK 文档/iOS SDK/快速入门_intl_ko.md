@@ -157,7 +157,7 @@ COS 서비스 인스턴스 `QCloudCOSXMLService`와 `QCloudCOSTransferMangerServ
 
 - (void) fenceQueue:(QCloudCredentailFenceQueue * )queue requestCreatorWithContinue:(QCloudCredentailFenceQueueContinue)continueBlock
 {
-    //여기서 동기화하여 백그라운드 서버에서 임시 키를 획득합니다.
+    //여기서 동기화하여 백그라운드 서버에서 임시 키를 가져옵니다. 임시 키의 가용성을 최대한 보장하기 위해 임시 키를 가져오는 로직은 여기에 배치하는 것을 강력히 권장합니다.
     //...
 
     QCloudCredential* credential = [QCloudCredential new];
