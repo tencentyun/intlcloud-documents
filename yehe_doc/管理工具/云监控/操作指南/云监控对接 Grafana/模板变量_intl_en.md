@@ -57,15 +57,15 @@ After all the variable information is completed, you can preview the variable va
 
 The following shows how to configure the region and CVM instance variables by taking the CVM single-instance monitoring dashboard as an example:
 
-![](https://main.qcloudimg.com/raw/e6d84cf25f7972e5a253f354e75aaa6d.png)
+![](https://main.qcloudimg.com/raw/9cb96f9466fc242afddec1cef3cc1348.png)
 
-![](https://main.qcloudimg.com/raw/b4d6fd28caf9e72672b4a541ecee214d.png)
+![](https://main.qcloudimg.com/raw/d25fd9a3f7f57b2559261b555c07e189.png)
 
 >?If you want to monitor multiple instances, select `Mutli-value`.
 
 ## Applying Variables
 After the variables are created, selection boxes will be displayed in the top-left corner of the dashboard page, where you can switch the variable values. Variables can be imported with two syntaxes: `$varname` and `[[varname]]`. Variables are often used in panel query statements. The following shows how to use variables in queries by taking the CVM single-instance monitoring dashboard as an example. In addition, variables can also be used in panel titles and text panels.
 
-![](https://main.qcloudimg.com/raw/4f34b6e29cc4ad59c8168c51b1928044.png)
+![](https://main.qcloudimg.com/raw/88d375dc5b3a1d1f2c45ded2e4a476de.png)
 
-![](https://main.qcloudimg.com/raw/200266aa18796f3fdcc3d75793c2907c.png)
+![](https://main.qcloudimg.com/raw/92af2da5d807d30ced9edada617df573.png)
