@@ -137,7 +137,8 @@ php Producer.php
   >Producer successfully sent the message
   ```
 
-  4. On the **Topic Management** tab page on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the target topic, and click **More** -> **Message Query** to view the message just sent.
+4. On the **Topic Management** tab page on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the target topic, and click **More** -> **Message Query** to view the message just sent.
+     ![](https://main.qcloudimg.com/raw/7a2410794186b47c9126dbe8b878228d.png)
 
 ### Step 4. Consume messages
 
@@ -225,5 +226,5 @@ php Consumer.php
 
   ```
 
-  4. On the **Consumer Group** tab page on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding consumer group name, enter the topic name, and click **Query Details** to view the consumption details.
+4. On the **Consumer Group** tab page on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding consumer group name, enter the topic name, and click **Query Details** to view the consumption details.
      ![](https://main.qcloudimg.com/raw/f054bfe1c177a324465334cb893ad871.png)
