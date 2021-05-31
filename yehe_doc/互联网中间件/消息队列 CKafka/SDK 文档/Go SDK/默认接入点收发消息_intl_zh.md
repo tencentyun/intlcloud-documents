@@ -4,7 +4,7 @@
 
 ## 前提条件
 
-[安装 Go](https://golang.org/download)
+[安装 Go](https://golang.org/dl/)
 
 ## 操作步骤
 
@@ -123,7 +123,7 @@ Delivered message to test[0]@629
 ```
 
 4. 在 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 的【topic管理】页面，选择对应的 topic ， 点击【更多】>【消息查询】，查看刚刚发送的消息。
-
+      ![](https://main.qcloudimg.com/raw/7a2410794186b47c9126dbe8b878228d.png)
 
 ### 步骤四：消费消息
 
