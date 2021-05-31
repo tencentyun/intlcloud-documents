@@ -123,6 +123,7 @@ Delivered message to test[0]@629
 ```
 
 4. On the **Topic Management** tab page on the instance details page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the target topic, and click **More** -> **Message Query** to view the message just sent.
+![](https://main.qcloudimg.com/raw/7a2410794186b47c9126dbe8b878228d.png)
 
 ### Step 4. Consume messages
 
