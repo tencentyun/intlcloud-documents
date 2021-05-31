@@ -7,4 +7,4 @@ The Tencent Cloud Monitor App plugin gets the monitoring metric data of Tencent 
 4. Set `SecretId` and `SecretKey`: security certificate information required for CM API calls, which can be obtained on the [TencentCloud API Key](https://console.cloud.tencent.com/cam/capi) page in the Tencent Cloud console.
 5. Select Tencent Cloud services whose monitoring data you want to get.  
 6. Click **Save & Test** to test whether the data source is configured correctly, and if so, you can use it in the dashboard.
-![](https://main.qcloudimg.com/raw/a6bbd2367be4eb6b12497bb213a9ca27.png)
+![](https://main.qcloudimg.com/raw/fbd276eda59e6feb15fc08b79f5148c8.png)
