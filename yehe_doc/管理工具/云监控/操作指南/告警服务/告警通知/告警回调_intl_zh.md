@@ -184,8 +184,8 @@
 		"vip": "14.22.4.26",    // 负载均衡 VIP
 		"vpcId": vpc-1ywqac83,    //私有网络 ID
 		"vport": "443",          //后端服务器端口
-		"objId": "14.22.4.26#443#https",       //   后台绑定的实例维度，vip#vport#protocol
-		"objName": "14.22.4.26#443#https"       // 告警短信内返回的实例相关信息，vip#vport#protocol
+		"objId": "14.22.4.26#443#https",       //   后台绑定的实例维度，vip#vport#protocol
+		"objName": "14.22.4.26#443#https"       // 告警短信内返回的实例相关信息，vip#vport#protocol
 }
 ```
 
@@ -661,4 +661,3 @@ dimensions":{
             "unInstanceId":"dcx-881ekns2"
         }
 ```
-
