@@ -3,7 +3,7 @@ To access CKafka over a public network, you can add public routes in the CKafka 
 
 
 ## Prerequisites
-You have [created an instance](https://intl.cloud.tencent.com/document/product/597/32543).
+You have [created an instance](https://intl.cloud.tencent.com/document/product/597/40039).
 
 ## Directions
 
