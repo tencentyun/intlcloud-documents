@@ -18,10 +18,10 @@
 ![](https://main.qcloudimg.com/raw/6108f8baa95def11d082022aa163927f.png)
 
 ## TencentDB 云数据库 MySQL
-
 1. 单击 **New Panel** 面板的 **Add Query** 选项，进入 Panel 配置页面。在左侧第一个 `Query` 选项卡，通过配置选项获取腾讯云数据库 MySQL 的监控数据。
 2. `Queries to` 数据源列表，选择已配置的包含 TencentDB 监控服务的腾讯云监控数据源。
 3. 配置项的内容对齐腾讯云数据库MySQL监控接口的输入参数，可参见 [云数据库MySQL监控接口文档](https://intl.cloud.tencent.com/document/product/248/11006)，更好地理解各配置项。
+
     - `Namespace` 命名空间，云服务器监控的命名空间为 `QCE/CDB`。
     - `Region` 地域，地域列表会根据 `Namespace` 选项自动获取，单击选择某一地域。
     - `MetricName` 指标名称，指标列表会根据 `Namespace` 和 `Region` 选项自动获取，单击选择某一指标。
@@ -88,10 +88,9 @@
 
 ## 云数据库 CYNOSDB_MYSQL
 
-  1. 单击 **New Panel** 面板的 **Add Query** 选项，进入 Panel 配置页面。在左侧第一个 `Query` 选项卡，通过配置选项获取腾讯云云数据库  CYNOSDB(CYNOSDB_MYSQL) 的监控数据。
-  2. `Queries to` 数据源列表，选择已配置的包含 cynosdbMysql 监控服务的腾讯云监控数据源。
-  3. 配置项的内容对齐腾讯云监控cynosdbMysql监控接口的输入参数，可参见 [云数据库 CYNOSDB(CYNOSDB_MYSQL) 云监控接口文档](https://intl.cloud.tencent.com/document/product/248/37383)，更好地理解各配置项。
-
+1. 单击 **New Panel** 面板的 **Add Query** 选项，进入 Panel 配置页面。在左侧第一个 `Query` 选项卡，通过配置选项获取腾讯云云数据库  CYNOSDB(CYNOSDB_MYSQL) 的监控数据。
+2. `Queries to` 数据源列表，选择已配置的包含 cynosdbMysql 监控服务的腾讯云监控数据源。
+3. 配置项的内容对齐腾讯云监控cynosdbMysql监控接口的输入参数，可参见 [云数据库 CYNOSDB(CYNOSDB_MYSQL) 云监控接口文档](https://intl.cloud.tencent.com/document/product/248/37383)，更好地理解各配置项。
     - `Namespace` 命名空间，例如 `QCE/CYNOSDB_MYSQL`。
     - `Region` 地域，地域列表会根据 `Namespace` 选项自动获取，单击选择某一地域。
     - `MetricName` 指标名称，指标列表会根据 `Namespace` 和 `Region` 选项自动获取，单击选择某一指标。
@@ -208,7 +207,7 @@
       - 为了适应不同用户的习惯，监听器列表会以不同的字段展示，默认为 `As ListenerId`，以 **监听器ID** 展示实例列表。此外，可以选择 `As ListenerName` 监听器名称、`As Port` 端口。
       - 监听器列表的获取可参见 [负载均衡监听器列表接口文档](https://intl.cloud.tencent.com/document/product/214/33831)。
 
-![](https://main.qcloudimg.com/raw/b6b5d9dd11d07329dff32847b7816906.png)
+![](https://main.qcloudimg.com/raw/d82b9c974060162b0e8e3b80c3e169f0.png)
 
 ## LB 弹性公网 IP
 
