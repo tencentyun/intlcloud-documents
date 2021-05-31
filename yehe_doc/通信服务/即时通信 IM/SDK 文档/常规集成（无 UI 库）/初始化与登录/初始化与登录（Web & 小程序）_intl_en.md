@@ -163,7 +163,7 @@ let onKickedOut = function (event) {
 tim.on(TIM.EVENT.KICKED_OUT, onKickedOut);
 ```
 
-To support multi-instance login (allowing the use of the same account to log in concurrently on multiple pages), log in to the [IM console](https://console.cloud.tencent.com/im) and click **Feature Configuration** -> **Login and Messages**. In the drop-down list next to **Login and Messages**, select the corresponding `SDKAppID`. Then, in the **Login settings** module, click **Edit** and use the drop-down list next to **Online Web Instances** to configure the number of instances. The configuration will take effect within 50 minutes.
+To support multi-instance login (allowing the use of the same account to log in concurrently on multiple pages), log in to the [IM console](https://console.cloud.tencent.com/im) and click **Feature Configuration** -> **Login and Messages**. In the drop-down list next to **Login and Messages**, select the corresponding `SDKAppID`. Then, in the **Login settings** module, click **Edit** and use the drop-down list next to **Online Web Instances** to configure the number of instances. The configuration will take effect within 5 minutes.
 
 **API**
 
