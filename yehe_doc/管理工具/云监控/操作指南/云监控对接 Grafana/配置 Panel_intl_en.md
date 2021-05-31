@@ -15,7 +15,7 @@ After creating a dashboard, you can configure the panel information to get the m
       - **Note:** In this application, a single query to get the monitoring data is an atomic operation, i.e., querying the monitoring data of a certain metric of a certain instance. Therefore, you can select only one instance at a time. If you need to query the monitoring data of multiple instances, you can click `Add Query` in the upper-right corner to add new queries.
       - The `Show Details` button is displayed only when a non-template variable is selected.
 
-![](https://main.qcloudimg.com/raw/f36a04815d5d0c2157ef8450df658b1f.png)
+![](https://main.qcloudimg.com/raw/6108f8baa95def11d082022aa163927f.png)
 
 ## TencentDB for MySQL
 
@@ -32,7 +32,7 @@ After creating a dashboard, you can configure the panel information to get the m
       - **Note:** In this application, a single query to get the monitoring data is an atomic operation, i.e., querying the monitoring data of a certain metric of a certain instance. Therefore, you can select only one instance at a time. If you need to query the monitoring data of multiple instances, you can click `Add Query` in the upper-right corner to add new queries.  
       - The `Show Details` button is displayed only when a non-template variable is selected.
 
-![](https://main.qcloudimg.com/raw/fa269951d10a6bef77517b49bf15dc57.png)
+![](https://main.qcloudimg.com/raw/8f14371f5286e1f2bb1c09dadbafc006.png)
 
 ## TencentDB for PostgreSQL
 
@@ -49,7 +49,7 @@ After creating a dashboard, you can configure the panel information to get the m
       - **Note:** In this application, a single query to get the monitoring data is an atomic operation, i.e., querying the monitoring data of a certain metric of a certain instance. Therefore, you can select only one instance at a time. If you need to query the monitoring data of multiple instances, you can click `Add Query` in the upper-right corner to add new queries.  
       - The `Show Details` button is displayed only when a non-template variable is selected.
 
-![](https://main.qcloudimg.com/raw/23b08f6712bf0ab80a7fea0fdc1194dd.png)
+![](https://main.qcloudimg.com/raw/3b0f15968a4c049a23794e7116117298.png)
 
 ## TencentDB for MongoDB
 
@@ -66,7 +66,7 @@ After creating a dashboard, you can configure the panel information to get the m
       - **Note:** In this application, a single query to get the monitoring data is an atomic operation, i.e., querying the monitoring data of a certain metric of a certain instance. Therefore, you can select only one instance at a time. If you need to query the monitoring data of multiple instances, you can click `Add Query` in the upper-right corner to add new queries.  
       - The `Show Details` button is displayed only when a non-template variable is selected.
 
-![](https://main.qcloudimg.com/raw/e631aa55f937e03aa5a7a90fbaaf4cde.png)
+![](https://main.qcloudimg.com/raw/4b397465608905d153d970449b197c09.png)
 
 ## TencentDB for Redis
 
@@ -84,7 +84,7 @@ After creating a dashboard, you can configure the panel information to get the m
       - **Note:** In this application, a single query to get the monitoring data is an atomic operation, i.e., querying the monitoring data of a certain metric of a certain instance. Therefore, you can select only one instance at a time. If you need to query the monitoring data of multiple instances, you can click `Add Query` in the upper-right corner to add new queries.  
       - The `Show Details` button is displayed only when a non-template variable is selected.
 
-![](https://main.qcloudimg.com/raw/88d13ac80ec80bc2696371b43312f506.png)
+![](https://main.qcloudimg.com/raw/057de4d5a18efca58f8b2be365563b87.png)
 
 ## TencentDB for CYNOSDB_MYSQL
 
@@ -102,7 +102,7 @@ After creating a dashboard, you can configure the panel information to get the m
       - **Note:** In this application, a single query to get the monitoring data is an atomic operation, i.e., querying the monitoring data of a certain metric of a certain instance. Therefore, you can select only one instance at a time. If you need to query the monitoring data of multiple instances, you can click `Add Query` in the upper-right corner to add new queries.  
       - The `Show Details` button is displayed only when a non-template variable is selected.
 
-![](https://main.qcloudimg.com/raw/713309fe64571e80c221d7b110712c8e.png)
+![](https://main.qcloudimg.com/raw/9b8c3ad36e1de3f9053057bfc354e1e0.png)
     
 
 ## TencentDB for TcaplusDB
@@ -120,7 +120,7 @@ After creating a dashboard, you can configure the panel information to get the m
     - **Note:** In this application, a single query to get the monitoring data is an atomic operation, i.e., querying the monitoring data of a certain metric of a certain instance. Therefore, you can select only one instance at a time. If you need to query the monitoring data of multiple instances, you can click `Add Query` in the upper-right corner to add new queries.  
     - The `Show Details` button is displayed only when a non-template variable is selected.
 
-![](https://main.qcloudimg.com/raw/cd365a087b317d0af25daed5161651c4.png)
+![](https://main.qcloudimg.com/raw/69219fff55a5d40cbdb0fed31e13d900.png)
 
 ## TencentDB for SQL Server
 
@@ -137,7 +137,7 @@ After creating a dashboard, you can configure the panel information to get the m
     - **Note:** In this application, a single query to get the monitoring data is an atomic operation, i.e., querying the monitoring data of a certain metric of a certain instance. Therefore, you can select only one instance at a time. If you need to query the monitoring data of multiple instances, you can click `Add Query` in the upper-right corner to add new queries.  
     - The `Show Details` button is displayed only when a non-template variable is selected.
 
-![](https://main.qcloudimg.com/raw/abe8a325cd0ee17114f8eae4b76068d9.png)
+![](https://main.qcloudimg.com/raw/df5671f1b987dd68145ff522a38647f1.png)
 
 ## Content Delivery Network (CDN)
 
@@ -170,7 +170,7 @@ After creating a dashboard, you can configure the panel information to get the m
       - **Note:** In this application, a single query to get the monitoring data is an atomic operation, i.e., querying the monitoring data of a certain metric of a certain instance. Therefore, you can select only one instance at a time. If you need to query the monitoring data of multiple instances, you can click `Add Query` in the upper-right corner to add new queries.  
       - The `Show Details` button is displayed only when a non-template variable is selected.
 
-![](https://main.qcloudimg.com/raw/5ab6db7adb0dfe9ab98258b84d44ee95.png)
+![](https://main.qcloudimg.com/raw/dccea7d8c6dfe3bd080853906cf62fc7.png)
 
 ## Message Queue CKafka
 
@@ -187,7 +187,7 @@ After creating a dashboard, you can configure the panel information to get the m
       - **Note:** In this application, a single query to get the monitoring data is an atomic operation, i.e., querying the monitoring data of a certain metric of a certain instance. Therefore, you can select only one instance at a time. If you need to query the monitoring data of multiple instances, you can click `Add Query` in the upper-right corner to add new queries.  
       - The `Show Details` button is displayed only when a non-template variable is selected.
 
-![](https://main.qcloudimg.com/raw/a4dbbbc2012ef393cc87419d7e531b2b.png)
+![](https://main.qcloudimg.com/raw/a2f158398226dc3883ba115877da5d47.png)
 
 ## Cloud Load Balancer (CLB)
 
@@ -208,7 +208,7 @@ After creating a dashboard, you can configure the panel information to get the m
       - To adapt to the habits of different users, the listener list is displayed as different fields, which is `As ListenerId` by default, meaning that the listener list is displayed as **listener IDs**. You can also select `As ListenerName` (as listener names) or `As Port` (as ports).
       - For more information on how to get the listener list, please see [here](https://intl.cloud.tencent.com/document/product/214/33831).
 
-![](https://main.qcloudimg.com/raw/f0e32efbe3df41460ca53380baff3d25.png)
+![](https://main.qcloudimg.com/raw/d82b9c974060162b0e8e3b80c3e169f0.png)
 
 ## Elastic IP (EIP)
 
@@ -225,7 +225,7 @@ After creating a dashboard, you can configure the panel information to get the m
       - **Note:** In this application, a single query to get the monitoring data is an atomic operation, i.e., querying the monitoring data of a certain metric of a certain instance. Therefore, you can select only one instance at a time. If you need to query the monitoring data of multiple instances, you can click `Add Query` in the upper-right corner to add new queries.  
       - The `Show Details` button is displayed only when a non-template variable is selected.
 
-![](https://main.qcloudimg.com/raw/b9b926cd1a5e4720a99edaa1bd84dc21.png)
+![](https://main.qcloudimg.com/raw/952733c4781b975c5a7128785fac8e86.png)
 
 ## Cloud File Storage (CFS)
 
@@ -242,7 +242,7 @@ After creating a dashboard, you can configure the panel information to get the m
       - **Note:** In this application, a single query to get the monitoring data is an atomic operation, i.e., querying the monitoring data of a certain metric of a certain instance. Therefore, you can select only one instance at a time. If you need to query the monitoring data of multiple instances, you can click `Add Query` in the upper-right corner to add new queries.  
       - The `Show Details` button is displayed only when a non-template variable is selected.
 
-![](https://main.qcloudimg.com/raw/419b5c2db298315be1d8a704cc8c8b5d.png)
+![](https://main.qcloudimg.com/raw/e645a947e2e7491cb1de766652893a2b.png)
 
 ## Serverless Cloud Function (SCF)
 
@@ -259,7 +259,7 @@ After creating a dashboard, you can configure the panel information to get the m
       - **Note:** In this application, a single query to get the monitoring data is an atomic operation, i.e., querying the monitoring data of a certain metric of a certain instance. Therefore, you can select only one instance at a time. If you need to query the monitoring data of multiple instances, you can click `Add Query` in the upper-right corner to add new queries.  
       - The `Show Details` button is displayed only when a non-template variable is selected.
 
-![](https://main.qcloudimg.com/raw/1c5ce839f001757f149635d798f4f6b4.png)
+![](https://main.qcloudimg.com/raw/679409acfac1081ff87edd1883a7f6f9.png)
 
 ## Direct Connect - Dedicated Tunnel (DCX)
 
@@ -276,7 +276,7 @@ After creating a dashboard, you can configure the panel information to get the m
    - **Note:** In this application, a single query to get the monitoring data is an atomic operation, i.e., querying the monitoring data of a certain metric of a certain instance. Therefore, you can select only one instance at a time. If you need to query the monitoring data of multiple instances, you can click `Add Query` in the upper-right corner to add new queries.  
    - The `Show Details` button is displayed only when a non-template variable is selected.
 
-![](https://main.qcloudimg.com/raw/7bfa939046d03bddcab30c44b3e14490.png)
+![](https://main.qcloudimg.com/raw/87b7219031f6b0166c7057e974751b92.png)
     
 
 ## Direct Connect - Connection (DC)
@@ -294,7 +294,7 @@ After creating a dashboard, you can configure the panel information to get the m
     - **Note:** In this application, a single query to get the monitoring data is an atomic operation, i.e., querying the monitoring data of a certain metric of a certain instance. Therefore, you can select only one instance at a time. If you need to query the monitoring data of multiple instances, you can click `Add Query` in the upper-right corner to add new queries.  
     - The `Show Details` button is displayed only when a non-template variable is selected.
 
-![](https://main.qcloudimg.com/raw/7c509f6453fa4f07c05ca9a52e98e71d.png)
+![](https://main.qcloudimg.com/raw/c83992c63e875df31faf24a2e2162400.png)
 
 ## VPC - VPN Gateway
 
@@ -311,7 +311,7 @@ After creating a dashboard, you can configure the panel information to get the m
     - **Note:** In this application, a single query to get the monitoring data is an atomic operation, i.e., querying the monitoring data of a certain metric of a certain instance. Therefore, you can select only one instance at a time. If you need to query the monitoring data of multiple instances, you can click `Add Query` in the upper-right corner to add new queries.  
     - The `Show Details` button is displayed only when a non-template variable is selected.
 
-![](https://main.qcloudimg.com/raw/81b7d5b2b74fd9b3890ac3b47727e4ef.png)
+![](https://main.qcloudimg.com/raw/290e06d4329f852118fd19526d65b08c.png)
     
 
 ## VPC -Direct Connect Gateway (DCG)
@@ -329,7 +329,7 @@ After creating a dashboard, you can configure the panel information to get the m
     - **Note:** In this application, a single query to get the monitoring data is an atomic operation, i.e., querying the monitoring data of a certain metric of a certain instance. Therefore, you can select only one instance at a time. If you need to query the monitoring data of multiple instances, you can click `Add Query` in the upper-right corner to add new queries.  
     - The `Show Details` button is displayed only when a non-template variable is selected.
 
-![](https://main.qcloudimg.com/raw/e7a2af8cf618ccc6e84709c0db295273.png)
+![](https://main.qcloudimg.com/raw/d354fc6078787541da65d05567758ca0.png)
     
 
 ## CDN - Province Domain
@@ -350,7 +350,7 @@ After creating a dashboard, you can configure the panel information to get the m
     - `Province`: province list.
 
 
-![](https://main.qcloudimg.com/raw/9b09df7de6b157974d0bfcbbb38cd776.png)
+![](https://main.qcloudimg.com/raw/8135e3fcbbd3873eddf4d77c91e2e360.png)
     
 
 ## API Gateway
@@ -370,7 +370,7 @@ After creating a dashboard, you can configure the panel information to get the m
     - `EnvironmentName`: environment name, which is automatically obtained based on the instance content.
 
 
-![](https://main.qcloudimg.com/raw/a9ceee232b0d7e07c835e933a32c21e7.png)
+![](https://main.qcloudimg.com/raw/c7bcc133e8decde3a9f6814e2b7de4a5.png)
     
 
 ## Cloud Block Storage (CBS)
@@ -388,7 +388,7 @@ After creating a dashboard, you can configure the panel information to get the m
     - **Note:** In this application, a single query to get the monitoring data is an atomic operation, i.e., querying the monitoring data of a certain metric of a certain instance. Therefore, you can select only one instance at a time. If you need to query the monitoring data of multiple instances, you can click `Add Query` in the upper-right corner to add new queries.  
     - The `Show Details` button is displayed only when a non-template variable is selected.
 
-![](https://main.qcloudimg.com/raw/e022476856e5d42e2681d4dc608fba26.png)
+![](https://main.qcloudimg.com/raw/be10b0c4c15255344379f549f56a8f7d.png)
     
 
 ## Elasticsearch Service (ES)
@@ -406,7 +406,7 @@ After creating a dashboard, you can configure the panel information to get the m
     - **Note:** In this application, a single query to get the monitoring data is an atomic operation, i.e., querying the monitoring data of a certain metric of a certain instance. Therefore, you can select only one instance at a time. If you need to query the monitoring data of multiple instances, you can click `Add Query` in the upper-right corner to add new queries.  
     - The `Show Details` button is displayed only when a non-template variable is selected.
 
-![](https://main.qcloudimg.com/raw/62f83d047bd95887f5be0a315d022cbd.png)
+![](https://main.qcloudimg.com/raw/18ff8a75e3f4259bf0b613107f42335d.png)
     
 
 ## CMQ Queue Model
@@ -424,7 +424,7 @@ After creating a dashboard, you can configure the panel information to get the m
     - **Note:** In this application, a single query to get the monitoring data is an atomic operation, i.e., querying the monitoring data of a certain metric of a certain instance. Therefore, you can select only one instance at a time. If you need to query the monitoring data of multiple instances, you can click `Add Query` in the upper-right corner to add new queries.  
     - The `Show Details` button is displayed only when a non-template variable is selected.
 
-![](https://main.qcloudimg.com/raw/192fa4e13dd2a8374520373402c70dff.png)
+![](https://main.qcloudimg.com/raw/f4ce3fe963ee384797fbf8162e095da3.png)
     
 
 ## CMQ Topic Model
@@ -442,4 +442,4 @@ After creating a dashboard, you can configure the panel information to get the m
     - **Note:** In this application, a single query to get the monitoring data is an atomic operation, i.e., querying the monitoring data of a certain metric of a certain instance. Therefore, you can select only one instance at a time. If you need to query the monitoring data of multiple instances, you can click `Add Query` in the upper-right corner to add new queries.  
     - The `Show Details` button is displayed only when a non-template variable is selected.
 
-![](https://main.qcloudimg.com/raw/17ea626b3c07132396ff5aa6bb78312d.png)
+![](https://main.qcloudimg.com/raw/950d8ceea76ff95ce3df8c532baf6d2c.png)
