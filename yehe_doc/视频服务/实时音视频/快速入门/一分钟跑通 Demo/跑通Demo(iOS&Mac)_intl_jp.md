@@ -21,7 +21,7 @@
 【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS)】をクリックしてGithubにジャンプ または 【[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip?_ga=1.195966252.185644906.1567570704)】をクリック
 ![](https://main.qcloudimg.com/raw/d7b68212e6e63e81c1e0a19e1236a4b3/%E8%B7%91%E9%80%9ADemo(iOS&Mac)1-%E8%BF%94%E8%BF%98.png)
 #### Macプラットフォーム
-【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Mac)】をクリックしてGithubにジャンプまたは【[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2?_ga=1.195966252.185644906.1567570704)】をクリック
+【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Mac)】をクリックしてGithubにジャンプ（または【[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2?_ga=1.195966252.185644906.1567570704)】をクリック）
     ![](https://main.qcloudimg.com/raw/9f1ca4547228695031845d049dd7755d/%E8%B7%91%E9%80%9ADemo(iOS&Mac)2-%E8%BF%94%E8%BF%98.png)
 
 2. ダウンロード完了後、TRTCコンソールに戻り、【ダウンロードしました。次のステップ】をクリックすると、SDKAppIDおよびキー情報を確認できます。
@@ -68,9 +68,9 @@ TRTC SDK 6.6バージョン（2019年08月）では新しい署名アルゴリ�
  3．【クイックマスター】タブを選択して【ステップ2 UserSigを発行するためのキーを取得】エリアの【このアップグレードをクリック】、【非対称暗号化】または【HMAC-SHA256】をクリックします。
   - アップグレード：
   - 旧バージョンアルゴリズムのECDSA-SHA256に切り替えます。
-      ![](https://main.qcloudimg.com/raw/bc5cc756b93bd3e688f9f31a9c1efdfe/%E8%B7%91%E9%80%9ADemo(iOS&Mac)5-%E8%BF%94%E8%BF%98.png)
+      ![](https://main.qcloudimg.com/raw/bc5cc756b93bd3e688f9f31a9c1efdfe/%E8%B7%91%E9%80%9ADemoiOS&Mac5-%E8%BF%94%E8%BF%98.png)
   - 新バージョンアルゴリズムのHMAC-SHA256に切り替えます。
-      ![](https://main.qcloudimg.com/raw/2f55ac47bbff3257bfadc7e670e0ff1c/%E8%B7%91%E9%80%9ADemo(iOS&Mac)6-%E8%BF%94%E8%BF%98.png)
+      ![](https://main.qcloudimg.com/raw/2f55ac47bbff3257bfadc7e670e0ff1c/%E8%B7%91%E9%80%9ADemoiOS&Mac6-%E8%BF%94%E8%BF%98.png)
 
 ### 2. 2台の携帯電話で同時にDemoを実行しているのに、お互いの画面が表示されないのはなぜですか？
 2台の携帯電話でDemoを操作するとき、UserIDが異なるものを使用してください。TRTCでは、同一のUserID（SDKAppIDが異なる場合を除く）が2つの端末で同時に使用することをサポートしていません。
