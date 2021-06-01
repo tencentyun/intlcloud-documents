@@ -7,7 +7,7 @@ When the demand for resources in your cluster grows or shrinks, the auto scaling
 3. You can use either the load-based scaling policy or time-based scaling policy, but not both at the same time.
 4. Auto scaling instances are billed on the pay-as-you-go basis. 
 
-## Directions
+## Operation Directions
 Log in to the [EMR console](https://console.cloud.tencent.com/emr), click a cluster ID in the cluster list to go to the cluster information page, and click **Auto Scaling** > **Policy Management** > **Policy Restriction** > **Edit** to configure a scaling policy.
 ![](https://main.qcloudimg.com/raw/daeb0420d0cf9803526169ba30544c03.png)
                                 
@@ -17,7 +17,7 @@ Policy restriction is used to specify the number of auto scaling task nodes allo
 - Minimum instances: the minimum number of auto scaling task nodes allowed in the cluster when a scale-in policy is triggered.
 - Maximum instances: the maximum number of auto scaling task nodes allowed in the cluster when a scale-out policy is triggered. The total number of instances added under a single or multiple rules cannot exceed the maximum instances.
 ![](https://main.qcloudimg.com/raw/f912e2b7a9fe03f03f5bc6da8bf220f5.png)
-- Release all: clears all the nodes that are added in an auto scaling activity with one click, excluding non-auto scaling nodes.
+- Release all: clears all the nodes that are added in an auto scaling action with one click, excluding non-auto scaling nodes.
 
 ### Setting scaling specifications
 Scaling specifications refer to node specifications for auto scaling. Each cluster can be configured with up to three scaling specifications. When a scale-out rule is triggered, the scaling will be carried out according to the specification priority. When the high-priority specification has less nodes than the number of nodes to be added, the specification of the next priority will be used. In order to maintain the linear change of the cluster load, you are advised to keep the CPU and memory of the scaling specifications consistent.
@@ -27,7 +27,7 @@ Scaling specifications refer to node specifications for auto scaling. Each clust
 ![](https://main.qcloudimg.com/raw/3869d69900a8f74d60fe62ce31141917.png)
 
 ### Setting scaling rules
-Scaling rules are business policies used to configure the triggering conditions of scaling activities and the number of nodes to be added or removed. Auto scaling supports two kinds of policies, load-based scaling and time-based scaling. You can choose to use either of the two kinds of policies, but not both at the same time. When you switch the policies, the original scaling rules will be retained in an invalid state and will not be triggered. Those already added nodes will also be retained unless a scale-in rule is triggered. Each policies can be configured with up to 10 scaling rules. When two rules are triggered at the same time, the rule of the higher priority will be executed first.
+Scaling rules are business policies used to configure the triggering conditions of scaling actions and the number of nodes to be added or removed. Auto scaling supports two kinds of policies, load-based scaling and time-based scaling. You can choose to use either of the two kinds of policies, but not both at the same time. When you switch the policies, the original scaling rules will be retained in an invalid state and will not be triggered. Those already added nodes will also be retained unless a scale-in rule is triggered. Each policies can be configured with up to 10 scaling rules. When two rules are triggered at the same time, the rule of the higher priority will be executed first.
 ![](https://main.qcloudimg.com/raw/542494e6a15c96cb0a9503715beaef99.png)
 
 To set a scaling rule, select **Load-based scaling** or **Time-based scaling** as the **Auto Scaling Type** in the **Scaling Rule Management** section and click **Add Rule**.
@@ -69,7 +69,7 @@ To add a load-based scaling rule, select **Load-based scaling** as the **Auto Sc
 - Repeat Count: the number of times that the threshold of the aggregated load metric is reached. When the repeat count is reached, the cluster will be automatically scaled.
 - Scale-out Quantity: the number of task nodes to be added each time when the rule is triggered.
 - Scale-in Quantity: the number of task nodes to be removed each time when the rule is triggered.
-- Cooldown Period: the interval (600 to 43,200 seconds) before carrying out the next auto scaling activity after the rule is successfully executed.
+- Cooldown Period: the interval (600 to 43,200 seconds) before carrying out the next auto scaling action after the rule is successfully executed.
 - Rule Status: used to mark whether the rule is enabled. The default status of a rule is "enabled". When you don't want a rule to be executed but still wish to retain it, you can set the rule status to "disabled".     
 
 ![](https://main.qcloudimg.com/raw/751758d5778cc0ff2623843be3a8a224.png)
@@ -79,19 +79,19 @@ There are obvious peaks and troughs in cluster computing volume during a certain
 
 To add a time-based scaling rule, select **Time-based scaling** as the **Auto Scaling Type**, click **Add Rule**, and configure the following fields:
 - Rule Name: the name of the scaling rule. The scaling rule names in the same cluster must be unique (including scale-out and scale-in rules).
-- Once: triggers a scaling activity once at a specific time, accurate to the minute.
-- Recurring: triggers a scaling activity daily, weekly, or monthly at a specific time or time period.
+- Once: triggers a scaling action once at a specific time, accurate to the minute.
+- Recurring: triggers a scaling action daily, weekly, or monthly at a specific time or time period.
 - Retry Time after Expiration: auto scaling may not be executed for various reasons at the specified time. After you set the retry time after expiration, the system will try to execute the scaling every 30 seconds within the time until it is executed when the conditions are met.
 - Valid To: the time-based scaling rule is valid until the end of the date specified here.
 - Scale-out Quantity: the number of task nodes to be added each time when the rule is triggered.
 - Scale-in Quantity: the number of task nodes to be removed each time when the rule is triggered.
-- Cooldown Period: the interval (600 to 43,200 seconds) before carrying out the next auto scaling activity after the rule is successfully executed.
+- Cooldown Period: the interval (600 to 43,200 seconds) before carrying out the next auto scaling action after the rule is successfully executed.
 - Rule Status: used to mark whether the rule is enabled. The default status of a rule is "enabled". When you don't want a rule to be executed but still wish to retain it, you can set the rule status to "disabled".
 
 ![](https://main.qcloudimg.com/raw/bec5a2e47dff41cdd7cd20210355aef9.png)
 
 ### Viewing auto scaling records
-The records of auto scaling activities can be viewed in **Scaling History**.
+The records of auto scaling actions can be viewed in **Scaling History**.
 - Supports filtering the scaling records by time and searching by policy name.
 - Supports sorting by execution time, policy name, scaling type, execution status. You can click **Details** in the **Operation** column to view detailed information.
 - There are four execution statuses of auto scaling:
