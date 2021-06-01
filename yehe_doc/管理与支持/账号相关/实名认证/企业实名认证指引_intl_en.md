@@ -1,6 +1,6 @@
 ## Overview
-This document describes how to verify organization identity for your Tencent Cloud account. After successful verification, the account and Tencent Cloud resources under it will belong to your organization. You will be able to purchase and manage resources for organizations, but will not be able to purchase or use resources designated for individual businesses.
->One set of organization identity information (organization name/business number) can be used to verify the identity of up to three Tencent Cloud accounts.
+This document describes how to verify enterprise identity for your Tencent Cloud account. After successful verification, the account and Tencent Cloud resources under it will belong to your enterprise. You will be able to purchase and manage resources for enterprises, but will not be able to purchase or use resources designated for individual businesses.
+>One set of enterprise identity information (enterprise name/business number) can be used to verify the identity of up to three Tencent Cloud accounts.
 >
 >If you want to apply for ICP filing for service in Mainland China in the future, please make sure that the name in identity verification is the same as that of the ICP filing entity; otherwise, ICP filing application will fail.
 
@@ -13,29 +13,29 @@ You need to have a Tencent Cloud account. If you don't have an account, you can 
 
 ## Directions
 
-### Step 1. Select organization identity verification
+### Step 1. Select enterprise identity verification
 1. Log in to the Tencent Cloud Console and go to [Account Information](https://console.cloud.tencent.com/developer), navigate to **Basic Information** > **Verification Status**, and click **Submit for Verification**.
     ![image-20200701205840709](https://main.qcloudimg.com/raw/13e63c6eb445cdb3ca6b144bae3237dd.png)
 
   
 
-2. Select **Organization Verification**.
+2. Select **Enterprise Verification**.
 
 ![image-20200701174758776](https://main.qcloudimg.com/raw/cf47265fb6a0837b41bdeef45a8b615e.png)
 
 
 
-### Step 2. Enter basic organization information
+### Step 2. Enter basic enterprise information
 
 ![image-20200701205642590](https://main.qcloudimg.com/raw/a3dc3cfcfaea15b1165b083ecd0ea341.png)
 
-Enter the following organization information in the console:
+Enter the following enterprise information in the console:
 
 1. Registration region;
-2. Organization name;
+2. Enterprise name;
 3. Registered address;
-4. Organization business license ID;
-5. Photo for organization verification.
+4. Enterprise business license ID;
+5. Photo for enterprise verification.
 
 After entering the information above, click **Submit** to initiate identity verification.
 
