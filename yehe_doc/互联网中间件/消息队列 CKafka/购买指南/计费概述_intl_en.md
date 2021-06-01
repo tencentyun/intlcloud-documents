@@ -57,7 +57,7 @@ The price of the basic peak bandwidth package varies by tier, as detailed below:
 | Basic III  | 320–600               | Starting at 1,200 USD/month and 49 USD/month for each extra 20 MB/s    |
 | Basic IV  | 620–900               | Starting at 2,340 USD/month and 43 USD/month for each extra 20 MB/s    |
 | Basic V  | 920–1,200               | Starting at 3,090 USD/month and 34 USD/month for each extra 20 MB/s    |
-| Premium  | 1,600–3,200               | Starting at 4,150 USD/month and 856 USD/month for each extra 400 MB/s    |
+| Premium  | 1,600–10,000               | Starting at 4,150 USD/month and 856 USD/month for each extra 400 MB/s    |
 
 For example, a 180 MB/s instance falls into the Basic II tier with 60 MB/s added to 120 MB/s, so the price of the package is 630 + 51 x (60/20) = 783 (USD/month)
 
