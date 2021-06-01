@@ -11,17 +11,17 @@ Suppose that:
 ## Directions
 
 1. Log in to the [CAM console](https://console.cloud.tencent.com/cam) with the company account `CompanyExample`.
-2. Create two sub-accounts with usernames of `DevA` and `DevB` through [custom sub-User creation](https://intl.cloud.tencent.com/document/product/598/13674).
+2. Create two sub-accounts with usernames of `DevA` and `DevB` through [custom sub-user creation](https://intl.cloud.tencent.com/document/product/598/13674).
 3. On the **[User List](https://console.cloud.tencent.com/cam)** page, find the just created sub-user `DevA` and click **Authorize** in the **Operation** column on the right as shown below:
 ![](https://main.qcloudimg.com/raw/68e813264316ad2ef97249077068634c.png)
 4. In the **Associate Policy** window that pops up, search for and select `QcloudCVMFullAccess` and click **OK** as shown below:
 ![](https://main.qcloudimg.com/raw/445d5cf9dccc8c4c822faf71610f435b.png)
 5. Associate the `QcloudCDBFullAccess` policy with the sub-account `DevB` as instructed in steps 2 and 3.
 6. After the authorization is successful, the sub-account `DevA` has all the operation permissions of CVM instances, while the sub-account `DevB` has all the operation permissions of TencentDB for MySQL instances.
->?If you need to configure a CAM user as another role, you can follow the above process and search for and select the corresponding permissions policy name in steps 2 and 3. For specific permissions, please see [System Permissions](#System-Permissions)
+>?If you need to configure a CAM user as another role, you can follow the above process and search for and select the corresponding permissions policy name in steps 2 and 3. For specific permissions, please see [System Permissions](#System Permissions)
 
+[](id:System Permissions)
 
-<span id="System-Permissions"></span>
 ## System Permissions
 
 <table>
