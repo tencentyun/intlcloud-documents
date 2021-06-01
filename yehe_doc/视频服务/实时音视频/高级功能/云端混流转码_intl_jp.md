@@ -1,28 +1,37 @@
 ## 適用ケース
-[CDN relayed live streaming](https://intl.cloud.tencent.com/document/product/647/35242) および [クラウドレコーディングおよび再生](https://intl.cloud.tencent.com/document/product/647/35426) などのアプリケーションユースケースでは、 TRTCルームの複数のオーディオ・ビデオストリームを1つに常にミキシングする必要があります。Tencent CloudサーバーのMCUのCloud MixTranscodingのクラスターを使用してこの作業を完成させることができます。MCUクラスターはマルチチャネルオーディオ・ビデオストリームをニーズに応じてミキシングし、最終的に生成したビデオストリーミングをライブCDNおよびクラウドレコーディングシステムに送付します。
+
+[CDN Relayed live Streaming](https://intl.cloud.tencent.com/document/product/647/35242)および[クラウドレコーディングおよび再生](https://intl.cloud.tencent.com/document/product/647/35426) などのアプリケーションユースケースでは、TRTCルームの複数のオーディオ・ビデオストリーミングを1つに常にミキシングする必要があります。Tencent CloudサーバーのMCUのミクスストリーミングトランスコードクラスターを使用してこの作業を完成させることができます。MCUクラスターはマルチチャネルオーディオ・ビデオストリーミングをニーズに応じてミキシングし、最終的に生成したビデオストリームをライブCDNおよびクラウドレコーディングシステムに送付します。
 
 クラウドミクスストリーミングには、2種類の制御方式があります。
-- **方法1**：サーバーREST API[StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761)および[StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760)を使用して制御を行います。このREST APIは、CDNの表示とクラウドレコーディングの開始を同時にサポートすることもできます。
-- **方法2**：クライアントのTRTC SDKの[setMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) インターフェースを使用して制御します。その原理は下図のとおりです。 
+
+- **方法1**：サーバーのRESTインターフェースStartMCUMixTranscode（[数字のルーム番号バージョン](https://intl.cloud.tencent.com/document/product/647/37761) / [文字列のルーム番号バージョン](https://intl.cloud.tencent.com/document/product/647/39637)）およびStopMCUMixTranscode（[数字のルーム番号バージョン](https://intl.cloud.tencent.com/document/product/647/37760) / [文字列のルーム番号バージョン](https://intl.cloud.tencent.com/document/product/647/39636)）を使用して制御を実行します。そのインターフェースはCDN視聴およびクラウドレコーディングの起動もサポートしています。
+- **方法2**：クライアントのTRTC SDKの[setMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93)インターフェースを使用して制御します。その原理は下図のとおりです。 
   ![](https://main.qcloudimg.com/raw/fd3017e7eb263b538fba858a362eab13.png)
 
+>! 方法2は、iOS、Android、Windows、Mac、Electron、FlutterおよびデスクトップブラウザプラットフォームのSDKをサポートします。
+
 ## 原理解析
+
 クラウドミクスストリーミングには、デコード、ミキシングおよび再エンコードの3つのプロセスがあります。
 
 - **デコード**：MCUは、ビデオデコードやオーディオデコードなど、マルチチャネルオーディオ・ビデオストリーミングをデコードする必要があります。
-- **ミキシング**：MCU は複数の画像チャネルを一つにミキシングし、 SDK のミクスストリーミングコードコマンドに基づいて特定のレイアウトスキームを実現する必要があります。同時にMCUも、デコードされたマルチチャネルオーディオ信号をミキシング処理する必要があります。
-- **エンコード**：MCU はミキシングされた画像およびオーディオを再エンコードして、1チャネルのオーディオ・ビデオストリームにパッケージ化し、ダウンストリームのシステム（例：ライブストリーミングやレコーディング）に配信する必要があります。
+- **ミキシング**：MCUは複数の画像チャネルを一つにミキシングし、SDKのミクスストリーミングコードコマンドに基づいて特定のレイアウトスキームを実現する必要があります。同時にMCUも、デコードされたマルチチャネルオーディオ信号をミキシング処理する必要があります。
+- **エンコード**：MCUはミキシングされた画像およびオーディオを再エンコードして、1チャネルのオーディオ・ビデオストリーミングにパッケージ化し、ダウンストリームのシステム（例：ライブストリーミングやレコーディング）に配信する必要があります。
 
 ![](https://main.qcloudimg.com/raw/a5ce0215228eca3375ce47133df0be95.png)
 
 [](id:restapi)
+
 ## 方法1：サーバーREST APIのミクスストリーミング方法
+
 ### ミクスストリーミングの起動
+
 サーバーのREST API[StartMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37761)を呼び出してクラウドミクスストリーミングを起動できます。この APIについては、以下の詳細に注意していただく必要があります。
 
 [](id:restapi_step1)
-#### 1. 画面のレイアウトモードの設定
-`StartMCUMixTranscode`の[LayoutParams](https://intl.cloud.tencent.com/document/product/647/36760#LayoutParams) パラメータによって、以下のいくつかのレイアウトモードを設定できます。
+
+#### 手順1：画面のレイアウトモードの設定（必須）
+`StartMCUMixTranscode`内の[LayoutParams]パラメータを使用して、以下のような様々なレイアウトモードを設定することができます。
 ![](https://main.qcloudimg.com/raw/be0205b5f624679302e57ca5aa1b133f.png)
 
 **フロートテンプレート(LayoutParams.Template = 0)**
@@ -40,7 +49,7 @@
 **画面共有テンプレート(LayoutParams.Template = 2)**
 
 - ビデオミーティングおよびeラーニングユースケースのレイアウトに適しています。
-- 画面共有（またはスピーカーのカメラ）は常にスクリーン左側の大画面の位置を占有し、その他のユーザーは順次右側に縦方向に配列されます。
+- 画面共有（または話し手のカメラ）は常にスクリーン左側の大画面の位置を占有し、その他のユーザーは順次右側に縦方向に配列されます。
 - `LayoutParams.MainVideoUserId`および`LayoutParams.MainVideoStreamType`の2つのパラメータによって左側のメイン画面の内容を指定する必要があります。
 - 最大で2列、各列最大で小画面8個、最大で大画面1個および小画面15個をサポートします。
 - ユーザーが音声のみを送信する場合は、そのまま画面の位置を占用します。
@@ -48,14 +57,14 @@
 **ピクチャーインピクチャーテンプレート(LayoutParams.Template = 3)**
 
 - このテンプレートは、「大画面1つ小画面1つを前後に配置」というモードでルーム内の画面2つをミキシングします。これは、ルーム内で大画面1つを画面全体に表示し、小画面1つを大画面上に重ねて表示させた状態にします。小画面の位置はパラメータで指定できます。
--`LayoutParams`の`MainVideoUserId`および` MainVideoStreamType`パラメータを使用して、大画面のユーザーIDとストリームタイプを指定できます。
--`LayoutParams`の`SmallVideoLayoutParams`パラメータを使用して、小画面のユーザーIDとストリームタイプおよびレイアウト位置などの情報を指定できます。
+- `LayoutParams`の`MainVideoUserId`および` MainVideoStreamType`パラメータを使用して、大画面のユーザーIDとストリームタイプを指定できます。
+- `LayoutParams`の`SmallVideoLayoutParams`パラメータを使用して、小画面のユーザーIDとストリームタイプおよびレイアウト位置などの情報を指定できます。
 - シーン例1：eラーニングのシーンでは、講師側のカメラ（通常は小画面）と講師側のスクリーン（通常は大画面）という2つのチャネルの画面がミキシングされ、教室内の受講生の声がミキシングされます。
 - シーン例2：1対1のビデオ通話のシーンでは、リモートユーザーの画面（通常は大画面）とローカルユーザーの画面（通常は小画面）がミキシングされます。
 
 **カスタムテンプレート(LayoutParams.Template = 4)**
 
-- 各チャネルの画面位置をカスタマイズする必要があるシーンで使用します。`LayoutParams`の `PresetLayoutConfig`パラメータ（これは1つの配列）を介して、各チャネル画面の位置を事前に設定できます。
+- 各チャネルの画面位置をカスタマイズする必要があるシーンで使用します。`LayoutParams`の`PresetLayoutConfig`パラメータ（これは1つの配列）を介して、各チャネル画面の位置を事前に設定できます。
 - `PresetLayoutConfig`パラメータの`UserId`パラメータを指定しない場合、レイアウトエンジンは、入室するユーザーを入室する順序に従って、`PresetLayoutConfig`配列で指定された各位置に順番に割り当てます。
 - `PresetLayoutConfig`配列の1つが`UserId`パラメータに指定されている場合、レイアウトエンジンは指定されたユーザーのために画面内での位置を事前に確保します。
 - ユーザーがアップストリームオーディオのみを使用し、アップストリームビデオを使用しない場合でも、ユーザーは画面位置を占有します。
@@ -64,47 +73,44 @@
 >! クラウドミクスストリーミングサービスは、最大16チャネルのオーディオ・ビデオストリーミングを同時にサポートします。ユーザーがオーディオしか持っていない場合は、1チャネルとしてカウントされます。
 
 [](id:restapi_step2)
-#### 2. ミクスストリーミングエンコードパラメータの設定
-`StartMCUMixTranscode`の[EncodeParams](https://intl.cloud.tencent.com/document/product/647/36760#LayoutParams)パラメータによって、ミクスストリーミングエンコードパラメータを設定できます。
+#### 手順2：ミクスストリーミングコーデックパラメータ（必須）
+`StartMCUMixTranscode`内の[EncodeParams]パラメータを使用して、ミクスストリーミングコーデックパラメータを設定することができます。
 
 | 名称            | 説明                                         | 推奨値 |
 | --------------- | -------------------------------------------- | ------ |
 |AudioSampleRate | ミクスストリーミング-出力ストリームオーディオサンプルレート                       |  48000  |
 |AudioBitrate    |ミクスストリーミング-出力ストリームオーディオビットレート。単位はkbps               | 64     |
-|AudioChannels   |ミクスストリーミング-出力ストリームオーディオチャネル数                        | 2      |
+|AudioChannels   |ミクスストリーミング-出力ストリームオーディオサウンドチャネル数                        | 2      |
 | VideoWidth      | ミクスストリーミング-出力ストリーム幅。オーディオ・ビデオ出力時に入力必須              | カスタマイズ |
 | VideoHeight     | ミクスストリーミング-出力ストリーム高。オーディオ・ビデオ出力時に入力必須             | カスタマイズ |
 | VideoBitrate    | ミクスストリーミング-出力ストリームビットレート。単位はkbps。オーディオ・ビデオ出力時に入力必須 | カスタマイズ |
 | VideoFramerate | ミクスストリーミング-出力ストリームフレームレート。オーディオ・ビデオ出力時に入力必須            | 15     |
-|VideoGop        |ミクスストリーミング-出力ストリームgop。オーディオ・ビデオ出力時に入力必須            | 3      |
-| BackgroundColor |ミクスストリーミング-出力ストリーム背景色                            | カスタマイズ |
-
-[](id:restapi_step3)
-#### 3. クラウドレコーディングの起動の有無の設定
-
-`StartMCUMixTranscode`の[OutputParams](https://intl.cloud.tencent.com/document/product/647/36760#LayoutParams)パラメータによって、ミクスストリーミング後のビデオストリームの方向を指定できます。
-
-- **OutputParams.RecordId**
-  このパラメータは、 [クラウドレコーディング](https://intl.cloud.tencent.com/document/product/647/35426)の起動の有無を指定するのに使用します。このパラメータを指定した場合は、ミキシングされたオーディオ・ビデオストリームはファイルにレコーディングされ 、[VOD](https://intl.cloud.tencent.com/product/vod) に保存されます。レコーディングファイルは 、`OutputParams.RecordId_開始時間_終了時間` のフォーマットに従って命名されます。例：`file001_2020-02-16-12-12-12_2020-02-16-13-13-13`。
-- **OutputParams.RecordAudioOnly**
-  音声の録音だけを希望し、ビデオコンテンツが不要の場合は`OutputParams.RecordAudioOnly`パラメータを1に設定します。mp3フォーマットのファイルのみを録音することを意味します。
+| VideoGop        | ミクスストリーミング-出力ストリームGOP。オーディオ・ビデオ出力時に入力必須            | 3      |
+| BackgroundColor | ミクスストリーミング-出力ストリーム背景色                            | カスタマイズ |
 
 [](id:restapi_step4)
-#### 4. CDN relayed live streamingの起動の有無の設定
-
+#### 手順3：合成後のstreamIDを指定（必須）
 - **OutputParams.StreamId**
-  このパラメータは、[CDN relayed live streaming](https://intl.cloud.tencent.com/document/product/647/35242)の起動の有無を指定するのに使用します。このパラメータを指定する場合は、ミキシングされた後のオーディオ・ビデオストリームが[CSSシステム](https://intl.cloud.tencent.com/product/css) にインポートされます。しかし、ライブストリーミングサービスをアクティブにし、再生ドメイン名の状況を設定しないと、CDNによってこのライブストリーミングを正常に視聴することができません。
+  このパラメータを使用して、ミキシング後のオーディオ・ビデオストリーミングをライブCDN上のstreamIDで指定することができます。ただし、ライブストリーミングサービスを有効にして再生ドメイン名を設定済みの状況でのみ、CDNを使用してこのCSSストリームを正常に視聴することができます。
 - **OutputParams.PureAudioStream**
   ピュアオーディオのライブストリーミングのみを希望する場合は`OutputParams.PureAudioStream`パラメータを 1に設定します。これは、ミキシングされたオーディオデータストリームがCDNに転送されることを意味します。
 
+[](id:restapi_step3)
+#### 手順4：クラウドレコーディングの起動の有無の設定（オプション）
+- **OutputParams.RecordId**
+  このパラメータは、[クラウドレコーディング](https://intl.cloud.tencent.com/document/product/647/35426)の起動の有無を指定するのに使用します。このパラメータを指定した場合は、ミキシングされたオーディオ・ビデオストリーミングはファイルにレコーディングされ、[VOD](https://intl.cloud.tencent.com/zh/document/product/266)に保存されます。レコーディングファイルは、`OutputParams.RecordId_開始時間_終了時間`のフォーマットに従って命名されます。例：`file001_2020-02-16-12-12-12_2020-02-16-13-13-13`。
+- **OutputParams.RecordAudioOnly**
+  音声の録音だけを希望し、ビデオコンテンツが不要の場合は`OutputParams.RecordAudioOnly`パラメータを1に設定します。mp3フォーマットのファイルのみを録音することを意味します。
+
 ### ミクスストリーミングの終了
+
 サーバーからREST API[StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760)を呼び出すと、ミクスストリーミングはすぐに終了できます。
 
 [](id:sdkapi)
 
 ## 方法2：クライアントSDK APIのミクスストリーミング方法
 
-TRTC SDKを使用してミクスストリーミングコマンドを発出するのは非常に簡単です。各プラットフォームの [setMixTranscodingConfig()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93)APIを呼び出せば完了です。現在SDKは、一般的に使用されている4種類のミクスストリーミングスキームを提供しています。
+TRTC SDKを使用してミクスストリーミングコマンドを発出するのは非常に簡単です。各プラットフォームの[setMixTranscodingConfig()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93)APIを呼び出せば完了です。現在SDKは、一般的に使用されている4種類のミクスストリーミングスキームを提供しています。
 
 <table>
 <thead><tr><th>パラメータ項目</th>
@@ -182,31 +188,33 @@ TRTC SDKを使用してミクスストリーミングコマンドを発出する
 </tr></tbody></table>
 
 
-
 [](id:PureAudio)
+
 ### ピュアオーディオモード（PureAudio）
 
 #### 適用ケース
-ピュアオーディオモードは、オーディオ通話（AudioCall）およびボイスチャットルーム（VoiceChatRoom）などのピュアオーディオのユースケースに適用します。このユースケースでは、SDKの[enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) インターフェースを呼び出すときに設定することができます。
+
+ピュアオーディオモードは、オーディオ通話（AudioCall）およびボイスチャットルーム（VoiceChatRoom）などのピュアオーディオのユースケースに適用します。このユースケースでは、SDKの[enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d)インターフェースを呼び出すときに設定することができます。
 ピュアオーディオモードでは、SDKはルームのマルチチャネルのオーディオストリームを自動的に1チャネルにミキシングします。
 
 #### 使用手順
+
 1. `enterRoom()`関数を呼び出して入室するとき、業務のニーズに従ってAppSceneパラメータを`TRTCAppSceneAudioCall` または`TRTCAppSceneVoiceChatRoom`に設定します。現在のルームにはビデオはなく、オーディオしかないことを明確にします。
 2. [Relayed live streaming](https://intl.cloud.tencent.com/document/product/647/35242)を起動し、TRTCParamsの`streamId`パラメータを設定します。MCU出力のミキシングオーディオストリームの行先を指定します。
 3. `startLocalAudio()`を呼び出してローカルのオーディオキャプチャおよびオーディオのアップストリームを起動します。
 >? クラウドミクスストリーミングは、本質的に、現在（すなわち、ミクスストリーミングコマンドを発出する）ユーザーが対応しているオーディオ・ビデオストリーミング上でマルチチャネルストリームをミクスストリーミングすることですから、現在のユーザーは自身でオーディオのアップストリームを有していなければ、ミクスストリーミングの前提条件を構成できません。
 4. `setMixTranscodingConfig()`インターフェースを呼び出してクラウドミクスストリーミングを起動するには、呼び出すときに`TRTCTranscodingConfig`の`mode`パラメータを**TRTCTranscodingConfigMode_Template_PureAudio**に設定し、`audioSampleRate`、`audioBitrate`および`audioChannels`などオーディオ出力品質に関するパラメータを指定する必要があります。
 5. 上記手順を経て、現在のユーザーのリレーオーディオストリームは、ルームのその他のユーザーのオーディオを自動的にミキシングします。その後は、ドキュメント[CDN relayed live streaming](https://intl.cloud.tencent.com/document/product/647/35242)を参照して再生ドメイン名を設定し、ライブストリーミングで視聴できます。また、ドキュメント[クラウドレコーディング](https://intl.cloud.tencent.com/document/product/647/35426)を参照してミキシング後のオーディオストリーミングを録音することもできます。
+
 >! ピュアオーディオモードでは、`setMixTranscodingConfig()`インターフェースは何度も呼び出す必要はありません。入室に成功しローカルオーディオのアップストリームを起動してから1度呼び出せばOKです。
 
 [](id:PresetLayout)
 ### プリセットレイアウトモード（PresetLayout）
 #### 適用ケース
-プリセットレイアウトモードは、ビデオ通話（VideoCall）およびインタラクティブストリーミング（LIVE）などのオーディオやビデオによく見られるユースケースに適用します。このユースケースではSDKの[enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) インターフェースを呼び出すときに設定できます。
+プリセットレイアウトモードは、ビデオ通話（VideoCall）およびインタラクティブライブストリーミング（LIVE）などのオーディオとビデオの両方を利用するユースケースに適用します。このユースケースではSDKの[enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d)インターフェースを呼び出すときに設定できます。
 プリセットレイアウトモードでは、SDKは事前に設定した各チャネル画面のレイアウトルールに従って、ルームのマルチチャネルオーディオストリームを1チャネルに自動的にミキシングします。
 
 #### 使用手順
-
 1. `enterRoom()`関数を呼び出して入室するときは、業務のニーズに従ってAppSceneパラメータを`TRTCAppSceneVideoCall`または`TRTCAppSceneLIVE`に設定します。
 2. [Relayed live streaming](https://intl.cloud.tencent.com/document/product/647/35242)を起動し、TRTCParamsの`streamId`パラメータを設定します。MCU出力のミキシングオーディオストリームの行先を指定します。
 3. `startLocalPreview()`および`startLocalAudio()`を呼び出して、ローカルのオーディオ・ビデオのアップストリームを起動します。
@@ -221,17 +229,16 @@ TRTC SDKを使用してミクスストリーミングコマンドを発出する
 </tr><tr>
 <td>$PLACE_HOLDER_REMOTE$</td><td>リモートマイク接続者が同時に複数設定可能であることを示しています</td><td>サポートあり</td>
 </tr></table>
-6. 上記手順を経て、現在のユーザーのリレーオーディオストリームは、ルームのその他のユーザーのオーディオを自動的にミキシングします。その後は、ドキュメント[CDN relayed live streaming](https://intl.cloud.tencent.com/document/product/647/35242)を参照して再生ドメイン名を設定し、ライブストリーミングで視聴できます。また、ドキュメント[クラウドレコーディング](https://intl.cloud.tencent.com/document/product/647/35426)を参照してミキシング後のオーディオストリーミングを録音することもできます。
+6. 上記手順を経て、現在のユーザーのリレーオーディオストリームは、ルームのその他のユーザーのオーディオを自動的にミキシングします。その後は、ドキュメント[CDN Relayed live Streaming](https://intl.cloud.tencent.com/document/product/647/35242)を参照して再生ドメイン名を設定し、ライブストリーミングで視聴できます。また、ドキュメント[クラウドレコーディング](https://intl.cloud.tencent.com/document/product/647/35426)を参照してミキシング後のオーディオストリーミングを録音することもできます。
+
 ![](https://main.qcloudimg.com/raw/4119e41cefe59b7a8b8edf675babdd38.png)
 
 [](id:example_code)
 
 #### サンプルコード
-
 次のサンプルコードを使用して、「大画面1枚・小画面2枚を上下にオーバーレイ」というミキシング効果を実現できます。
-
-##### iOS
-```
+<dx-codeblock>
+::: iOS  Objective-C 
 TRTCTranscodingConfig *config = [[TRTCTranscodingConfig alloc] init];
 // 解像度は720 × 1280、ビットレートは1500kbps、フレームレートは20FPSに設定します
 config.videoWidth      = 720;
@@ -273,9 +280,8 @@ remote2.roomID = 97392; // ローカルユーザーはroomIDを入力する必�
 
 // クラウドミクスストリーミングを開始します
 [_trtc setMixTranscodingConfig:config];
-```
-##### Android
-```
+:::
+::: Android java
 TRTCCloudDef.TRTCTranscodingConfig config = new TRTCCloudDef.TRTCTranscodingConfig();
 // 解像度は720 × 1280、ビットレートは1500kbps、フレームレートは20FPSに設定します
 config.videoWidth      = 720;
@@ -326,9 +332,8 @@ config.mixUsers.add(remote2);
 
 // クラウドミクスストリーミングを開始します
 trtc.setMixTranscodingConfig(config);
-```
-##### C++
-```
+:::
+::: C++ C++
 TRTCTranscodingConfig config;
 // 解像度は1280 × 720、ビットレートは1500kbps、フレームレートは20fpsに設定します
 config.videoWidth      = 1280;
@@ -370,9 +375,8 @@ config.mixUsersArray = mixUsersArray;
 
 // クラウドミクスストリーミングを開始します
 trtc->setMixTranscodingConfig(&config);
-```
-##### C#
-```
+:::
+::: C# C#
 TRTCTranscodingConfig config = new TRTCTranscodingConfig();
 // 解像度は1280 × 720、ビットレートは1500kbps、フレームレートは20fpsに設定します
 config.videoWidth      = 1280;
@@ -431,9 +435,8 @@ mixUsersArray[2] = remote2;
 // クラウドミクスストリーミングを開始します
 config.mixUsersArray = mixUsersArray;
 trtc.setMixTranscodingConfig(config);
-```
-##### Flutter
-```
+:::
+::: Flutter java
 TRTCCloud trtcCloud = await TRTCCloud.sharedInstance();
 trtcCloud.setMixTranscodingConfig(TRTCTranscodingConfig(
   appId: 1252463788, //参照用
@@ -454,7 +457,7 @@ trtcCloud.setMixTranscodingConfig(TRTCTranscodingConfig(
   mixUsers: [
   // キャスターカメラの画面位置
     TRTCMixUser(
-      userId: "PLACE_HOLDER_LOCAL_MAIN",
+      userId: "$PLACE_HOLDER_LOCAL_MAIN$",
       roomId: null, // ローカルユーザーはroomIDを入力する必要はありませんが、リモートでは必要です
       zOrder: 0, // zOrder を0とすることは、キャスター画面を最下層に位置付けることを意味します
       x: 0, //参照用
@@ -463,7 +466,7 @@ trtcCloud.setMixTranscodingConfig(TRTCTranscodingConfig(
       width: 300,
       height: 400),
     TRTCMixUser(
-      userId: 'PLACE_HOLDER_REMOTE',
+      userId: '$PLACE_HOLDER_REMOTE$',
       roomId: '256', // ローカルユーザーはroomIDを入力する必要はありませんが、リモートでは必要です
       zOrder: 1,
       x: 100, //参照用
@@ -473,11 +476,11 @@ trtcCloud.setMixTranscodingConfig(TRTCTranscodingConfig(
       height: 200)
   ],
 ));
-```
-##### Web JavaScript
-```
-// プリセットレイアウトモード
-const config = {
+:::
+::: Web JavaScript
+try {
+  // プリセットレイアウトモード
+  const config = {
    mode: 'preset-layout',
    videoWidth: 720,
    videoHeight: 1280,
@@ -487,7 +490,7 @@ const config = {
    audioSampleRate: 48000,
    audioBitrate: 64,
    audioChannels: 2,
-   // 1チャンネルローカルカメラ、2チャンネルリモートストリーミングのレイアウト位置をプリセットします
+   // 1チャネルのローカルカメラ、2チャネルのリモートストリーミングのレイアウト位置をプリセットします
    mixUsers: [
       {
         width: 720,
@@ -495,7 +498,7 @@ const config = {
         locationX: 0,
         locationY: 0,
         pureAudio: false,
-        userId: '123456', // ローカルカメラプレースホルダー、入力プッシュカメラのclient userId
+        userId: 'jack', // ローカルカメラプレースホルダー、入力プッシュカメラのclient userId
         zOrder: 1
       },
       {
@@ -508,7 +511,7 @@ const config = {
         zOrder: 2
       },
       {
-        width: 320,
+        width: 180,
         height: 240,
         locationX: 400,
         locationY: 500,
@@ -517,34 +520,33 @@ const config = {
         zOrder: 2
       }
     ];
- }
- await client.startMixTranscode(config);
-} catch (e) {
- console.error('startMixTranscode failed ', e);
+  }
+  await client.startMixTranscode(config);
+} catch (error) {
+  console.error('startMixTranscode failed ', error);
 }
-```
+:::
+</dx-codeblock>  
 
->! プリセットレイアウトモードでは、`setMixTranscodingConfig()`インターフェースは何度も呼び出す必要はありません。入室に成功しローカルオーディオのアップストリームを起動してから1度呼び出せばOKです。
+>! 
+>- プリセットレイアウトモードでは、`setMixTranscodingConfig()`インターフェースは何度も呼び出す必要はありません。入室に成功しローカルオーディオのアップストリームを起動してから1度呼び出せばOKです。
+>- Web端末インターフェースの命名は他の端末と少々異なります。詳細については、[Client.startMixTranscode()](https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/web/docs/Client.html#startMixTranscode)をご参照ください。
 
 [](id:ScreenSharing)
-
 ### 画面共有モード（ScreenSharing）
-
 #### 適用ケース
-
-画面共有モードは、eラーニングおよびインタラクティブな授業などのケースに使用します。このケースではSDKの[enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d)インターフェースを呼び出すとき、AppSceneパラメータを`TRTCAppSceneLIVE`に設定できます。
+画面共有モードは、eラーニングおよびインタラクティブな授業などのケースに使用します。このケースではSDKの[enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d)インターフェースを呼び出すとき、AppSceneパラメータを`TRTCAppSceneLIVE`に設定できます。
 画面共有モードでは、SDKはまず選定したターゲット解像度に従って一枚のキャンバスを作成します。講師が画面共有していないとき、SDKはカメラ画像をキャンバスと同じ比率で拡大します。講師が画面共有を起動すると、SDKは画面共有した画面を同じキャンバスに描出します。キャンバスを作成することで、ミクスストリーミングモジュールの出力解像度の一致を確保でき、録画およびウェブサイト視聴時のビデオ互換性に関する問題を防止（一般的な再生プレーヤーは解像度が変化するビデオをサポートしません）することができます。
 
 #### 使用手順
-
 1. `enterRoom()`関数を呼び出して入室するときは、業務のニーズに応じてAppSceneパラメータを`TRTCAppSceneLIVE`に設定します。
-2. [Relayed live streaming](https://intl.cloud.tencent.com/document/product/647/35242)を起動し、TRTCParamsの`streamId`パラメータを設定し、MCU出力のミキシングオーディオ・ビデオストリームの行先を指定します。
+2. [Relayed live streaming](https://intl.cloud.tencent.com/document/product/647/35242)を起動し、TRTCParamsの`streamId`パラメータを設定し、MCU出力のミキシングオーディオ・ビデオストリーミングの行先を指定します。
 3. `startLocalPreview()`および`startLocalAudio()`を呼び出して、ローカルのオーディオ・ビデオのアップストリームを起動します。
 >? クラウドミクスストリーミングは、本質的に、現在（すなわち、ミクスストリーミングコマンドを発出する）ユーザーが対応しているオーディオ・ビデオストリーミング上でマルチチャネルストリームをミクスストリーミングすることですから、現在のユーザーは自身でオーディオ・ビデオのアップストリームを有していなければ、ミクスストリーミングの前提条件を構成できません。
 4. `setMixTranscodingConfig()`インターフェースを呼び出してクラウドミクスストリーミングを起動し、呼び出しが必要なときは`TRTCTranscodingConfig`の`mode`パラメータを**TRTCTranscodingConfigMode_Template_ScreenSharing**に設定し、`audioSampleRate`、`audioBitrate`および`audioChannels`などのオーディオ出力品質に関するパラメータ、並びに`videoWidth`、`videoHeight`、`videoBitrate`、`videoFramerate`などのビデオ出力品質に関するパラメータを指定します。
 >? `videoWidth`および`videoHeight`パラメータを0に指定する場合は、SDKはユーザーの現在のスクリーンのアスペクト比に従って、適切な解像度を自動的に計算します。
 5. 上記手順を経て、現在のユーザーのリレーオーディオストリームは、ルームのその他のユーザーのオーディオを自動的にミキシングします。その後は、ドキュメント[CDN relayed live streaming](https://intl.cloud.tencent.com/document/product/647/35242)を参照して再生ドメイン名を設定し、ライブストリーミングで視聴できます。また、ドキュメント[クラウドレコーディング](https://intl.cloud.tencent.com/document/product/647/35426)を参照してミキシング後のオーディオストリーミングを録音することもできます。
-![](https://main.qcloudimg.com/raw/675e67bfaff40451b60a21aa403217d4.gif)
+
 >! 
 >- 画面共有モードは、WindowsおよびMacのプラットフォームのみをサポートします。
 > 画面共有モードでは、`setMixTranscodingConfig()`インターフェースは何度も呼び出す必要はありません。入室に成功しローカルオーディオのアップストリームを起動してから1度呼び出せばOKです。
@@ -554,35 +556,37 @@ const config = {
 [](id:Manual)
 
 ### 全手動モード（Manual）
-
 #### 適用ケース
-
 全手動モードは、上述の自動モードがすべて適用できないケースに適合します。全手動は最もフレキシブルで、各種のミクスストリーミング方法を自由に組み合わせることができます。しかし、使い勝手は最も劣ります。
 全手動モードでは、`TRTCTranscodingConfig`のすべてのパラメータを設定し、TRTCCloudDelegateの`onUserVideoAvailable()`および`onUserAudioAvailable()`コールバックをモニタする必要があり、これによって現在のルームでの各マイク・オンしているユーザーのオーディオ・ビデオ状態に従って`mixUsers`パラメータを絶えず調整します。この設定がないとミクスストリーミングは失敗してしまいます。
 
 #### 使用手順
-
 1. `enterRoom()` 関数を呼び出して入室するときは、業務のニーズに応じてAppSceneパラメータを設定します。
-2. [Relayed live streaming](https://intl.cloud.tencent.com/document/product/647/35242)を起動し、TRTCParamsの`streamId`パラメータを設定し、MCU出力のミキシングオーディオ・ビデオストリームの行先を指定します。
+2. [Relayed live streaming](https://intl.cloud.tencent.com/document/product/647/35242)を起動し、TRTCParamsの`streamId`パラメータを設定し、MCU出力のミキシングオーディオ・ビデオストリーミングの行先を指定します。
 3. 業務のニーズに応じて、 `startLocalAudio()` を呼び出してローカルオーディオのアップストリームを起動します（または `startLocalPreview()` を同時に呼び出してビデオのアップストリームを起動します）。
 >? クラウドミクスストリーミングは、本質的に、現在（すなわち、ミクスストリーミングコマンドを発出する）ユーザーが対応しているオーディオ・ビデオストリーミング上でマルチチャネルストリームをミクスストリーミングすることですから、現在のユーザーは自身でオーディオ・ビデオのアップストリームを有していなければ、ミクスストリーミングの前提条件を構成できません。
 4. `setMixTranscodingConfig()`インターフェースを呼び出してクラウドミクスストリーミングを起動します。呼び出す必要があるときは、`TRTCTranscodingConfig`の`mode`パラメータを**TRTCTranscodingConfigMode_Manual**に設定し、`audioSampleRate`、`audioBitrate`および`audioChannels`などのオーディオ出力品質に関するパラメータを指定します。業務シーンにもビデオがある場合は、`videoWidth`、`videoHeight`、`videoBitrate`、`videoFramerate`などのビデオ出力品質に関するパラメータを同時に設定する必要があります。
 5. TRTCCloudDelegateの`onUserVideoAvailable()`および`onUserAudioAvailable()`コールバックをモニタし、ニーズによって**mixUsers**パラメータを指定します。
  >?プリセットレイアウト（PresetLayout）モードとは異なり、Manualでは各`mixUser`の`userId`パラメータを実際のマイク接続者IDに指定する必要があり、このマイク接続者がビデオを起動しているかどうかで`mixUser`の`pureAudio`パラメータもそのとおりに設定する必要があります。
-6. 上記手順を経て、現在のユーザーのリレーオーディオストリームは、ルームのその他のユーザーのオーディオを自動的にミキシングします。その後は、ドキュメント[CDN relayed live streaming](https://intl.cloud.tencent.com/document/product/647/35242)を参照して再生ドメイン名を設定し、ライブストリーミングで視聴できます。また、ドキュメント[クラウドレコーディング](https://intl.cloud.tencent.com/document/product/647/35426)を参照してミキシング後のオーディオストリーミングを録音することもできます。
+6. 上記手順を経て、現在のユーザーのリレーオーディオストリームは、ルームのその他のユーザーのオーディオを自動的にミキシングします。その後は、ドキュメント[CDN Relayed live Streaming](https://intl.cloud.tencent.com/document/product/647/35242)を参照して再生ドメイン名を設定し、ライブストリーミングで視聴できます。また、ドキュメント[クラウドレコーディング](https://intl.cloud.tencent.com/document/product/647/35426)を参照してミキシング後のオーディオストリーミングを録音することもできます。
 >! 全手動モードでは、ルームのマイク接続者のマイク・オン、マイク・オフ動作をリアルタイムでモニタし、マイク接続者の人数やオーディオ・ビデオ状態に従って、`setMixTranscodingConfig()`インターフェースを何度も呼び出す必要があります。
 
 ## 関連料金
+
 ### 料金の計算
+
 Cloud MixTranscodingでは、MCUクラスターに入力されたオーディオ・ビデオストリーミングをデコードし、出力を再エンコードする必要があり、このため追加のサービス料金が発生します。TRTCは、MCUクラスターを使用してCloud MixTranscodingを行ったユーザーに対し、追加の付加価値料金を請求します。Cloud MixTranscoding料金は、**トランスコーディング出力解像度サイズ**と**トランスコーディング期間**に応じて請求されます。トランスコーディングの出力解像度が高く、トランスコーディングの出力時間が長いほど、料金は高くなります。詳細については、[Cloud MixTranscoding課金説明](https://intl.cloud.tencent.com/document/product/647/38929)をご参照ください。
 
 ### 料金の節約
--**サーバーREST APIベースのミクスストリーミングスキームで、ミクスストリーミングを停止する場合**、次のいずれかの条件を満たす必要があります。
+
+- **サーバーREST APIベースのミクスストリーミングスキームで、ミクスストリーミングを停止する場合**、次のいずれかの条件を満たす必要があります。
   - ルームのすべてのユーザー（キャスターと視聴者を含む）が全員退室している。
   - REST API[StopMCUMixTranscode](https://intl.cloud.tencent.com/document/product/647/37760)を呼び出して、ミクスストリーミングを自主的に停止します。
--**クライアントのSDK APIベースのミクスストリーミングスキームで、ミクスストリーミングを停止する場合**、次のいずれかの条件を満たす必要があります。
+- **クライアントのSDK APIベースのミクスストリーミングスキームで、ミクスストリーミングを停止する場合**、次のいずれかの条件を満たす必要があります。
   - ミクスストリーミングを開始した（クライアントAPI `setMixTranscodingConfig`を呼び出した）キャスターが退室している。
-  - [setMixTranscodingConfig](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93)を呼び出して、パラメータを`nil/null`に設定し、ミクスストリーミングを自主的に停止する。
+  - [setMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93)を呼び出して、パラメータを`nil/null`に設定し、ミクスストリーミングを自主的に停止する。
 
 その他の場合、TRTC Cloudは、ミクスストリーミングの状態を継続して維持するために最善を尽くします。従って、予期せぬミクスストリーミング料金が発生しないよう、ミクスストリーミングが不要な場合は、上記の方法でクラウドミクスストリーミングを可能な限り速やかに終了してください。
+
+
 
