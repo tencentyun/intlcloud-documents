@@ -3,7 +3,6 @@
 - [Symptom 1](id:xz1): failed to connect to or log in to a TencentDB for MySQL instance from a CVM instance.
 - [Symptom 2](id:xz2): failed to connect to or log in to a TencentDB for MySQL instance from a local device.
 - [Symptom 3](id:xz3): failed to connect to or log in to a TencentDB for MySQL instance from DMC.
-![](https://main.qcloudimg.com/raw/f4ab12f5989b79ba88f309ed7a79f389.png)
 
 ## Possible Causes
 <table>
@@ -73,7 +72,6 @@ If the causes cannot be located by the one-click connectivity checker, you can [
 <td>MySQL security group policy</td>
 <td>The <strong>inbound rule</strong> of the MySQL instance's security group rejects the access from the IP and port of the CVM instance. Please refer to <a href="#maqzpzyw">Incorrect MySQL security group configuration</a> to modify the inbound rule to allow the access from the IP and port of the CVM instance.</td></tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/ae30ffd0f9df350e1360ed3f870ff441.png">
    - Check items and corresponding solutions in the public network check are as follows:
 <table>
 <thead><tr><th>Check Item</th><th>Exception Handling</th></tr></thead>
@@ -83,8 +81,6 @@ If the causes cannot be located by the one-click connectivity checker, you can [
 <td>Public network access status</td>
 <td>The public network access has been disabled for the MySQL instance. Please refer to <a href="https://intl.cloud.tencent.com/document/product/236/37788">Connecting to MySQL Instance</a> to enable it.</td></tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/502f00b7c8913baf52c9548a525c9772.png">
-
 #### [Step 2. If the causes cannot be located by the one-click connectivity checker, locate them by yourself](id:step2)
 [**Incorrect password**](id:mmwt)
 If the password used for connection is incorrect, you can [reset the password](https://intl.cloud.tencent.com/document/product/236/31901) or [create a temporary account with sufficient permissions](https://intl.cloud.tencent.com/document/product/236/31900).
@@ -172,7 +168,7 @@ Select **MySQL(3306)** as **Type**, enter your CVM IP address (range) in **Sourc
 ## Appendix 2
 ### [Viewing private and public network information](id:nwwpdff)
 Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance name in the instance list to enter the instance details page, and view the private/public network address.
-![](https://main.qcloudimg.com/raw/d46ec355dc10b9435c28c215db2e5444.png)
+![](https://main.qcloudimg.com/raw/322c89b12772441c4fd8e83f597092ed.png)
 
 ### [Viewing network type and VPC information](id:wllxvpdff)
 To enable connection between CVM and TencentDB for MySQL instances over the private network, they must be under the same account and in the same VPC in the same region, or both in the classic network.
