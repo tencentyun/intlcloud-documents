@@ -28,7 +28,7 @@
 <td>Instance architectures have been renamed</td>
 <td>TencentDB for MySQL now supports three types of architectures including single-node (formerly Basic Edition), two-node (formerly High-Availability Edition), and three-node (formerly Finance Edition), and three resource isolation policies including basic, general, and dedicated policies. Renaming won't change any features of these architectures.</td>
 <td>2021-03</td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/236/38328" target="_blank">Database Architecture > Overview</a><li><a href="https://intl.cloud.tencent.com/document/product/236/39794">Resource Isolation Policy</a></td></tr>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/236/38328" target="_blank">Database Architecture Overview</a><li><a href="https://intl.cloud.tencent.com/document/product/236/39794">Resource Isolation Policy</a></td></tr>
 <tr>
 <td>Read-only instances support exclusive private network addresses</td>
 <td>You can now configure a custom and exclusive private network address (IP and port) for a read-only instance.</td>
@@ -47,7 +47,7 @@
 <tbody>
 <tr>
 <td>Instances can be cloned</td>
-<td>You can now clone a TencentDB for MySQL instance, and restore the clone to any point in time within the log backup retention period or from a specific physical backup set.</td>
+<td>You can now restore a TencentDB for MySQL instance to any point in time within the log backup retention period or from a specific physical backup set by cloning.</td>
 <td>2020-11</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/38864" target="_blank">Cloning Instances</a></td>
 </tr>

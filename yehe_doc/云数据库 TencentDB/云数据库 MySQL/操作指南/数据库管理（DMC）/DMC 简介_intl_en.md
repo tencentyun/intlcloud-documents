@@ -1,15 +1,11 @@
 ## Overview
-Database Management Console (DMC) is a one-stop Tencent Cloud data management tool. Services supported include database/table-level operations, instance session management, real-time monitoring, InnoDB lock wait, and SQL window.
+Database Management Console (DMC) is a one-stop Tencent Cloud database management tool. Services supported include database/table-level operations, real-time monitoring, instance session management, SQL window, and data management.
 
-Currently, DMC supports TencentDB for MySQL, TencentDB for MariaDB, and TencentDB for TDSQL-C (compatible with MySQL). In addition, it has a built-in phpMyAdmin (PMA) management tool to help you manage your databases quickly and efficiently.
+Currently, DMC supports TencentDB for MySQL, TencentDB for MariaDB, TencentDB for Redis, and TDSQL for MySQL.
 
-There are two DMC versions:
-- DMC (legacy): provides features such as database/table-level operations, instance session management, real-time monitoring, and InnoDB lock wait.
-- DMC (new): provides features such as database/table-level operations, instance monitoring, instance session management, and SQL window.
-
-## Feature Overview
+## Features
 - **Data management**
-It supports database operations such as database/table addition and deletion, structure modification, and table data maintenance.
+It supports database operations such as creating and deleting databases/tables, modifying table structures, and maintaining table data.
 
 - **Database instance session management**
 It displays multidimensional instance session information to help you easily view and perform relevant operations.
@@ -17,15 +13,12 @@ It displays multidimensional instance session information to help you easily vie
 - **Database monitoring**
 It provides multidimensional monitoring data such as database status, row operations of InnoDB storage engine, database connections, and traffic.
 
-- **InnoDB lock wait**
-It allows you to view InnoDB holdlock and wait lock details and delete sessions.
-
 - **SQL window**
 It provides an SQL compiler and can save frequently used SQL templates and custom SQL statements. It can also display and export SQL statement execution results.
 
-## Benefits
+## Strengths
 - **Ease of use**
-DMC aims to provide easy-to-use data management services. You can use the convenient operation interface to perform database operations such as creating databases/tables.
+DMC aims to provide easy-to-use database management services. You can use the convenient operation interface to perform database operations such as creating databases/tables.
 
 - **Visualization**
 You do not need to separately install drivers or applications to use DMC. Instead, you just need to log in to DMC to manage, monitor, and manipulate databases in multiple dimensions through the visualization management page.

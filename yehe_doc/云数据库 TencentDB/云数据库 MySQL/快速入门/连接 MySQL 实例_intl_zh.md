@@ -1,3 +1,10 @@
+本文为您介绍创建初始化实例后，通过内网或外网地址来连接 MySQL 实例。
+
+## 准备工作
+- 准备已初始化好的 MySQL 实例，请参见 [初始化 MySQL 实例](https://intl.cloud.tencent.com/document/product/236/3128)。
+- 准备好数据库帐号并授权允许访问 MySQL 的 IP，请参见 [创建帐号](https://intl.cloud.tencent.com/document/product/236/31900)、[修改授权访问的主机地址](https://intl.cloud.tencent.com/document/product/236/31903)，您也可以直接使用 root 帐号。
+- 配置云服务器 CVM 和 MySQL 的安全组出入站规则，来限制允许访问 MySQL 的 IP，请参见 [管理云数据库安全组](https://intl.cloud.tencent.com/document/product/236/14470)。
+
 ## 连接方式
 连接云数据库 MySQL 的方式如下：
 - **内网地址连接**：通过内网地址连接云数据库 MySQL，使用云服务器 CVM 直接连接云数据库的内网地址，这种连接方式使用内网高速网络，延迟低。
@@ -43,7 +50,6 @@ yum install mysql
 ```
 提示`Complete!`说明 MySQL 客户端安装完成。
 ![](https://main.qcloudimg.com/raw/16c77e28c40ae9be9a182b1c61843ecd.png)
-
 3. 根据不同连接方式，选择相应的操作：
  - **内网连接时：**
     1. 执行如下命令，登录到 MySQL 数据库实例。
@@ -69,7 +75,7 @@ mysql -h hostname -P port -u username -p
 ![](https://main.qcloudimg.com/raw/16839344da3a588be93d814de224277a.png)
 4. 在`MySQL \[(none)]>`提示符下可以发送 SQL 语句到要执行的 MySQL 服务器，具体命令行请参见 [mysql Client Commands](https://dev.mysql.com/doc/refman/5.7/en/mysql-commands.html)。
 下图中以`show databases;`为例：
-![](https://mc.qcloudimg.com/static/img/76b4346a84f7388ae263dc6c09220fc0/image.png)
+![](https://main.qcloudimg.com/raw/2873c8675d0ce123771a63dbf05df8b9.png)
 
 
 ## [附录1：开启外网连接地址](id:waiwang)
