@@ -8,7 +8,7 @@ Referer 링크 도용 방지는 HTTP 프로토콜이 지원하는 Referer 매커
 - Referer 정보는 HTTP에 포함되어 있으며, RTMP, WebRTC 및 QUIC 등의 비 HTTP 프로토콜은 Referer 설정 제한을 받지 않습니다. RTMP를 제한해야 하는 경우, [티켓 제출](https://console.cloud.tencent.com/workorder/category)을 통해 오프라인 수정을 요청하시기 바랍니다.
 - Referer 링크 도용 방지 설정을 활성화, 비활성화 및 수정한 뒤 약 15-20분 후 적용되며 스트림을 다시 푸시하지 않아도 됩니다.
 
-### 전제 조건
+## 전제 조건
 
 - CSS 서비스가 활성화되어 있고 [CSS 콘솔](https://console.cloud.tencent.com/live/livestat)에 로그인되어 있어야 합니다.
 - [재생 도메인 추가](https://intl.cloud.tencent.com/document/product/267/35970)가 완료되어 있어야 합니다.
