@@ -1,11 +1,11 @@
-This document describes how to clone a TencentDB for MySQL instance and quickly restore data to the newly purchased clone in the console.
+This document describes how to quickly restore a TencentDB for MySQL instance to a new instance by cloning in the console.
 
 ## Overview
-You can clone a TencentDB for MySQL instance, and restore the clone to any point in time within the log backup retention period or from the backup set of a specific physical backup. The clone is a new instance created from the backup data according to the restoration point in time you have specified. After the clone has been verified, you can migrate its data back to the original instance with [DTS](https://intl.cloud.tencent.com/document/product/571/13709) or you can start using the clone.
+TencentDB for MySQL supports cloning instances. You can restore a TencentDB for MySQL instance to any point in time within the log backup retention period or from a physical backup set by cloning. The clone is a new instance created from the original instance's backup data at the restoration point in time or the physical backup set you have specified. After the clone has been verified, you can migrate its data back to the original instance with [DTS](https://intl.cloud.tencent.com/document/product/571/13709) or start using the clone.
 
 #### Clone mode
-- Clone an instance and restore the clone to any point in time within the log backup retention period you set.
-- Clone an instance and restore the clone from the backup set of a specific physical backup within the data backup retention period you set.
+- By time point: restore the original instance to the clone by using the original instance's backup data at any point in time within the log backup retention period you set.
+- By backup set: restore the original instance to the clone by using the original instance's physical backup set within the data backup retention period you set.
 
 #### Billing of the clone
 - The clone adopts the pay-as-you-go billing mode. For more information about this billing mode and fee calculation, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/236/18335).
@@ -27,8 +27,8 @@ You can clone a TencentDB for MySQL instance, and restore the clone to any point
 2. Select **Backup and Restore** > **Data Backup List**, click **Clone** on the upper left corner, or locate the desired backup and click **Clone** in the **Operation** column.
 ![](https://main.qcloudimg.com/raw/b53e3c4f249a5f22638c32f4c92c7f75.png)
 3. On the displayed purchase page, specify the restoration mode and other configurations, and click **Buy Now**.
- - **By time point**: you can restore the clone to a point in time within the log backup retention period you set.
- - **By backup set**: you can restore the clone from the backup set of a specific physical backup within the data backup retention period you set.
+ - **By time point**: restore the original instance to the clone by using the original instance's backup data at any point in time within the log backup retention period you set.
+ - **By backup set**: restore the original instance to the clone by using the original instance's physical backup set within the data backup retention period you set.
  >?You can log in to the [console](https://console.cloud.tencent.com/cdb), select **Database Backup** on the left sidebar, and view backup retention period on the **Backup List** tab.
  >
 ![](https://main.qcloudimg.com/raw/f2fcdd5471326b60f6ee7ea8872f00bc.png)
