@@ -35,6 +35,12 @@ Based on the brand of your certificate and the domains bound, SSL Certificate Se
 </tbody>
 </table>
 
+>?
+>- If the bound domain is a primary domain, some brands will offer the `www.` sub-domain for free. For example, if the bound domain is `tencent.com`, the `www.tencent.com` sub-domain will be offered for free.
+>- If the bound domain is a general or wildcard domain, some brands will offer the corresponding parent domain for free. For example, if the bound domain is `*.tencent.com`, `tencent.com` will be offered for free.
+>- A parent domain will only be offered for free if the general or wildcard domain is of level three or above.
+
+
 ### Wildcard domains
 A wildcard domain is one with a wildcard, for example, `*.tencent.com` and `*.cloud.tencent.com`. It includes all sub-domains at the same level.
 >!Cross-level domains are not supported. For example, `*.tencent.com` does not include the `*.cloud.tencent.com` child domains.
