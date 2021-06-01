@@ -18,7 +18,7 @@
 ### 手順2：SDKおよびDemoのソースコードをダウンロード
 1．マウスを該当するカードに移動し、関連するSDKおよび付属のDemoソースコードをダウンロードします。
 ### iOSプラットフォーム
-【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS)】をクリックしてGithubにジャンプ（または【[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip?_ga=1.195966252.185644906.1567570704)】をクリック）
+【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS)】をクリックしてGithubにジャンプ または 【[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip?_ga=1.195966252.185644906.1567570704)】をクリック
 ![](https://main.qcloudimg.com/raw/d7b68212e6e63e81c1e0a19e1236a4b3/%E8%B7%91%E9%80%9ADemo(iOS&Mac)1-%E8%BF%94%E8%BF%98.png)
 #### Macプラットフォーム
 【[Github](https://github.com/tencentyun/TRTCSDK/tree/master/Mac)】をクリックしてGithubにジャンプ（または【[ZIP](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2?_ga=1.195966252.185644906.1567570704)】をクリック）
