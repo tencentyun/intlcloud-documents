@@ -1,22 +1,17 @@
+
 文件存储（Cloud File Storage，CFS）提供了多种规格的文件系统，以下表格介绍了各类文件系统的特性，优势及使用场景。
 
 <table> 
     <tr align="center">
-        <td>产品大类</td>
-        <td width="21%" colspan="2" style="text-align: center;"
->标准型</td>
-        <td width="21%" colspan="2" style="text-align: center;"
->性能型</td>
+        <td width="" >产品大类</td>
+        <td width="21%" colspan="2">标准型</td>
+        <td width="21%" colspan="2">性能型</td>
     <tr align="center">
-        <td>产品名称</td>
-        <td width="21%" style="text-align: center;"
->通用标准型</td>
-        <td width="21%"  style="text-align: center;"
->Turbo 标准型</td>
-        <td width="21%"  style="text-align: center;"
->通用性能型</td>
-        <td width="21%" style="text-align: center;"
->Turbo 性能型 </td>
+        <td width="" >产品名称</td>
+        <td width="21%" >通用标准型</td>
+        <td width="21%" >Turbo 标准型</td>
+        <td width="21%" >通用性能型</td>
+        <td width="21%">Turbo 性能型 </td>
     </tr>
     <tr align="center">
         <td>产品定位</td>
@@ -41,17 +36,17 @@
     </tr>
     <tr align="center" >
         <td>带宽(MiB/S)</td>
-        <td>100+存储量GiB*0.1</td>
-        <td>存储量GiB*0.1</td>
-        <td>200+存储量GiB*0.2</td>
-        <td>存储量GiB*0.2</td>
+        <td>Min[100+存储量GiB*0.1,300]</td>
+        <td>Min[存储量GiB*0.1,102400]</td>
+        <td>Min[200+存储量GiB*0.2,10240]</td>
+        <td>Min[存储量GiB*0.2,102400]</td>
     </tr>
     <tr align="center" >
         <td>延迟</td>
         <td>延迟（4K单流读/写）：3ms/7ms</td>
-        <td>延迟（4K单流读/写）：0.2ms/3ms</td>
-        <td>延迟（4K单流读/写）：1ms/1.5ms</td>
-        <td>延迟（4K单流读/写）：0.2ms/1.5ms</td>
+        <td>延迟（4K单流读/写）:0.2ms/3ms</td>
+        <td>延迟（4K单流读/写）:1ms/1.5ms</td>
+        <td>延迟（4K单流读/写）:0.2ms/1.5ms</td>
     </tr>
     <tr align="center" >
         <td>OPS</td>
@@ -75,15 +70,20 @@
         <td>POSIX/MPI</td>
     </tr>
     <tr align="center" >
+        <td>扩容方式</td>
+        <td>系统自动扩容</td>
+        <td>手动扩容</td>
+        <td>系统自动扩容</td>
+        <td>手动扩容</td>
+    </tr>
+    <tr align="center" >
         <td>支持操作系统</td>
-        <td>Linux/windows</td>
+        <td>Linux/Windows</td>
         <td>Linux</td>
-        <td>Linux/windows</td>
+        <td>Linux/Windows</td>
         <td>Linux</td>
     </tr>
 </table>
 
->?
-> - 以上性能均是文件系统能提供的能力，若希望达到文件系统的性能上限、通常需要多计算节点进行多线程的压力读写。
-> - 通用性能型目前还在灰度中，暂时不对外开放。
-> 
+- 以上性能均是文件系统能提供的能力，若希望达到文件系统的性能上限、通常需要多计算节点进行多线程的压力读写。
+- 通用性能型目前还在灰度中，暂时不对外开放。
