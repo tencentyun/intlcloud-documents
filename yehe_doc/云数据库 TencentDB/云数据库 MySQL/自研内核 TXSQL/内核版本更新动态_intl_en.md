@@ -1,6 +1,25 @@
 This document describes the MySQL kernel version updates. For information on how to upgrade the kernel, please see [Upgrading Kernel Minor Version](https://intl.cloud.tencent.com/document/product/236/36816).
 
 ## MySQL 8.0
+### 20201230
+#### New features
+- Supports the official updates of MySQL [8.0.19](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-19.html), [8.0.20](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-20.html), [8.0.21](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-21.html), and [8.0.22](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-22.html).
+- Supports dynamic setting of thread pooling mode or connection pooling mode by using the `thread_handling` parameter.
+
+#### Performance optimizations
+- Optimizes the `BINLOG LOCK_done` conflict to improve write performance.
+- Optimizes the `trx_sys mutex` conflict by using lock free hash and improve performance.
+- Optimizes redo log flushing.
+- Optimizes the buffer pool initialization time.
+- Optimizes the clearing of adaptive hash indexes (AHI) during the `drop table` operations on big tables.
+- Optimizes audit performance.
+
+#### Bug fixes
+- Fixed performance fluctuation when cleaning InnoDB temporary tables.
+- Fixed the read-only performance decrease when the instance has many cores.
+- Fixed the error (error code: 1032) caused by hash scans.
+- Fixed concurrency security issues caused by hotspot update.
+
 ### 20200630
 #### New features
 - Supports async deletion of big tables. You can clear files asynchronously and slowly to avoid business performance fluctuation caused by deleting big tables. To apply for this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).

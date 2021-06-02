@@ -1,4 +1,3 @@
-
 ### 如何修改云数据库 MySQL 的配置参数？
 - **云数据库 MySQL 控制台方式**
 在 [云数据库 MySQL 控制台](https://console.cloud.tencent.com/cdb)，单击实例名称进入管理页，选择【数据库管理】>【参数设置】，其中常见的 var\_name 包括如下变量：
@@ -12,7 +11,7 @@
 <tr>
 <td>long_query_time</td><td>超过该时间的查询为慢查询</td></tr>
 <tr>
-<td> max_allowed_packet</td><td>最大包长度</td></tr>
+<td>max_allowed_packet</td><td>最大包长度</td></tr>
 <tr>
 <td>max_connections</td><td>最大连接数</td></tr>
 <tr>
@@ -48,3 +47,10 @@
 云数据库 MySQL  默认字符集编码格式是 UTF8，目前支持 LATIN1 、GBK、UTF8 、UTF8MB4 四种字符集设置。
 
 虽然云数据库支持默认字符集编码的设置，但我们还是建议您在创建表时，显式的指定表的编码，并在连接建立时指定连接的编码，这样，您的应用将会有更好的移植性，MySQL 默认字符集说明以及修改方法请参见 <a href="https://intl.cloud.tencent.com/document/product/236/7259" target="_blank">使用限制</a>，也可通过 [控制台](https://console.cloud.tencent.com/cdb) 修改字符集。
+
+### lower_case_table_names 参数修改失败，如何处理？
+您可以通过控制台修改参数 lower_case_table_names：设置1，不区分大小写。需要注意两点：
+- 修改此参数会造成数据库重启。
+- 需要核实下实例下的库，表是否都是小写，如有大写的库表名，需要全部改为小写，然后修改参数，否则修改会报错。
+- 8.0版本无法修改该参数，8.0版本默认区分大小写。
+

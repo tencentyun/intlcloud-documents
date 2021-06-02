@@ -54,7 +54,7 @@ grant SELECT,INSERT, UPDATE, DELETE, CREATE, DROP, ALTER on *.* to 'myuser'@'%' 
 ```
 
 ### [如何更换云数据库 MySQL 的地域？](id:genghuandiyu)
-暂不支持更换地域，您可以使用 [数据传输服务 DTS](https://intl.cloud.tencent.com/zh/document/product/571/13706) 来实现两地实例间数据迁移，DTS 支持实时数据同步。数据迁移完毕后，自助退还源实例即可。
+暂不支持更换地域，您可以使用 [数据传输服务 DTS](https://intl.cloud.tencent.com/document/product/571/13706) 来实现两地实例间数据迁移，DTS 支持实时数据同步。数据迁移完毕后，自助退还源实例即可。
 
 ### 哪些内容会占用实例的空间？
 用户正常的数据（不包括备份数据），以及数据库实例正常运行所需的数据（如系统数据库、数据库日志、索引等）。同时包含 MySQL 数据库产生的 Binlog 日志。
@@ -65,5 +65,20 @@ grant SELECT,INSERT, UPDATE, DELETE, CREATE, DROP, ALTER on *.* to 'myuser'@'%' 
 ### 单节点能否切换为双节点或三节点？
 目前暂不支持单节点切换为双节点或三节点。目前仅支持双节点升级为三节点。
 
+### innodb 改 myisam 修改表引擎，成功后不变，仍是 innodb？
+MySQL 5.6、MySQL 5.7 版本仅支持 innodb 引擎，若您需要 myisam 引擎，建议使用 MySQL 5.5版本。
 
+### 创建 RO 组是否有数量限制？
+每个主实例默认最多可以创建5个 RO 组。
 
+### canal 是否支持拉取数据库的 binlog？
+支持，但需要注意如下事项：
+- 保证 canal 所在云服务器与云数据库在一个 VPC 内，网络互通。
+- 云数据库上创建相应的数据库同步帐号，并授权正确。
+- 云数据库上需要设置参数 binlog_row_image=FULL 与 binlog_format=ROW。 
+
+### 云数据库 MySQL 是部署在物理机，还是云服务器上？
+云数据库 MySQL底层是物理集群，结合了虚拟化技术，部署在集群上，与云服务器是不太一样，云服务器主要是对外提供的服务。
+
+### 克隆实例对原实例是否有影响？
+克隆是通过备份拉取的，不会对您的原实例产生影响，克隆完成后，您可以根据自身需求销毁或继续使用原实例。
