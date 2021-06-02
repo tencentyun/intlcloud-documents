@@ -63,15 +63,15 @@ Then, create a PersistentVolumeClaim (PVC) and bind it to the PV.
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: cfsclaim
+   name: cfsclaim
 spec:
-  accessModes:
-    - ReadWriteMany
-  volumeMode: Filesystem
-  storageClassName: ""
-  resources:
-    requests:
-      storage: 10Gi
+   accessModes:
+		   - ReadWriteMany
+   volumeMode: Filesystem
+   storageClassName: ""
+   resources:
+     requests:
+       storage: 10Gi
 ```
 
 #### Step 4. Create a pod
