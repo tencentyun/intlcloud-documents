@@ -1,6 +1,6 @@
 A launch configuration is a template for the automatic creation of CVMs. It contains an image ID, CVM instance type, system disk/data disk types and capacities, key pair, security group, etc.
 
->
+>?
 >- The launch configuration must be specified when creating a scaling group.
 >- Once a launch configuration is created, its attributes cannot be edited.
 
@@ -10,4 +10,4 @@ Open the [Auto Scaling Console](https://console.cloud.tencent.com/autoscaling/co
 
 >!Launch configurations that are bound with a scaling group cannot be deleted.
 >
-![](https://main.qcloudimg.com/raw/ac8908ff988cd154d8ef26e699d4b99e.png)
+![](https://main.qcloudimg.com/raw/68b3b2b0d33140c6ca1d79492115bc30.png)
