@@ -37,7 +37,7 @@ Main parameters are described as follows:
 
 **[Paste the CSR](id:csr2)**
 1. Paste the CSR information into the text box (your domain information will be detected), enter the organization information (you can also select **Existing Organization**), administrator information (you can also select **Existing administrator**), and contact information (you can check **Same as administrator**), as shown in the following figure.
-![](https://main.qcloudimg.com/raw/17d32e3a89ca04fca1074858e0feffac.png)
+
 2. Click **Next** to go to [Step 2](#message).
 
 
@@ -48,7 +48,7 @@ Main parameters are described as follows:
 >- For GlobalSign EV certificates, the CA will email you the documents required for review in 2–3 business days after you submit the information, and you do not need to upload them to the console.
 >
 1. Click **Download Confirmation Letter** and fill it out as shown below:
-![](https://main.qcloudimg.com/raw/436ed66e75fda9a107f95d44ab056005.png)
+
 2. Fill out the confirmation letter, stick your organization's official stamp, and scan the document.
 3. Click **Upload** to upload the confirmation letter. Then, click **Next**.
 >? 
@@ -56,7 +56,6 @@ Main parameters are described as follows:
 >- After the confirmation letter is uploaded, you can re-upload the confirmation letter and modify the information during the manual review process.
 >
 4. In the **Confirmation letter uploaded successfully** pop-up window, click **OK**, as shown in the following figure. Then, you can wait for the CA to confirm and review your information.
-![](https://main.qcloudimg.com/raw/d7a87289ff857ebc00987955421f342d.png)
 
 ### Step 3. Wait for CA’s manual review
 After you upload the confirmation letter, the CA will contact you for identity verification. Please check your email and phone calls.
