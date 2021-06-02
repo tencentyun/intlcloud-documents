@@ -11,29 +11,29 @@ The HMAC-SHA256 algorithm is used to generate signing information according to `
 | --- | --- |
 | AccessId | Application ID assigned by the TPNS backend, which can be obtained in **Configuration Management** > **Basic Configuration** in the [TPNS console](https://console.cloud.tencent.com/tpns) |
 | SecretKey | `SecretKey` assigned by the TPNS backend, which corresponds to `AccessId` and can be obtained in **Configuration Management** > **Basic Configuration** in the [TPNS console](https://console.cloud.tencent.com/tpns) |
-| Sign | API signature method |
-| TimeStamp |      Request timestamp |
+| Sign | API signature |
+| TimeStamp | Request timestamp |
 
 
 ## Signature Generation Method
 
-1. Splice the request timestamp + `AccessId` + request body to get the original string to be signed:
-`String to be signed = ${TimeStamp} + ${AccessId} + ${request body}`
-2. Use `secretKey` as the key to sign the original string to be signed to generate a signature:
-`Sign = Base64(HMAC_SHA256(SecretKey, string to be signed))`
+1. Concatenate the request timestamp + `AccessId` + request body to get the original string to sign:
+`String to sign = ${TimeStamp} + ${AccessId}} + ${request body}`
+2. Use `SecretKey` as the key to sign the original string to generate a signature:
+`Sign = Base64(HMAC_SHA256(SecretKey, string to sign))`
 
-## HTTP Protocol Assembly Method
+## HTTP Request Description
 
-In addition to the general header protocol, the HTTP protocol header also needs to carry the current request timestamp, `AccessId`, and signature's `Sign` information. The specific parameters are as follows:
+In addition to the general headers, the HTTP request also needs to carry the current request timestamp, `AccessId`, and `Sign` information. The specific parameters are as follows:
 
-| Parameter Key in Header | Description | Required |
+| Parameter in Header | Description | Required |
 | --- | --- | --- |
 | Sign | Request signature | Yes |
 | AccessId | Application ID | Yes |
 | TimeStamp | Request timestamp | Yes |
 
-The specific HTTP request packet is as follows:
-```xml
+The specific HTTP request message is as follows:
+``` xml
 POST /v3/push/app HTTP/1.1
 Host: api.tpns.tencent.com
 Content-Type: application/json
@@ -45,18 +45,20 @@ Sign: Y2QyMDc3NDY4MmJmNzhiZmRiNDNlMTdkMWQ1ZDU2YjNlNWI3ODlhMTY3MGZjMTUyN2VmNTRjNj
 
 ## Signature Generation Sample
 
-1. The generated string to be signed is as follows:
+1. Generate the string to sign as follows:
 ```
-String to be encrypted =15653147891500001048{"audience_type": "account","platform": "android","message": {"title": "test title","content": "test content","android": { "action": {"action_type": 3,"intent": "xgscheme://com.xg.push/notify_detail?param1=xg"}}},"message_type": "notify","account_list": ["5822f0eee44c3625ef0000bb"] }
+String to be encrypted = 15653147891500001048{"audience_type": "account","platform": "android","message": {"title": "test title","content": "test content","android": { "action": {"action_type": 3,"intent": "xgscheme://com.xg.push/notify_detail?param1=xg"}}},"message_type": "notify","account_list": ["5822f0eee44c3625ef0000bb"] }
 ```
+>? The `${request body}` in the string to sign must be exactly the same as the data in the message body, including spaces and encoding.
+>
 2. Generate a hexadecimal hash based on the key through the HMAC-SHA256 algorithm, i.e., `secretKey =1452fcebae9f3115ba794fb0fff2fd73` in the sample.
 ```
-hashcode= hmac-sha256(SecretKey, string to be signed)
-Get hashcode="cd20774682bf78bfdb43e17d1d5d56b3e5b789a1670fc1527ef54c65d2d7b76d"
+hashcode = hmac-sha256(SecretKey, string to sign)
+Result: hashcode="cd20774682bf78bfdb43e17d1d5d56b3e5b789a1670fc1527ef54c65d2d7b76d"
 ```
 3. Base64-encode the hashcode to get the following signature string:
 ```
-Get Sign=Base64(hashcode)
+Sign=Base64(hashcode)
 Sign="Y2QyMDc3NDY4MmJmNzhiZmRiNDNlMTdkMWQ1ZDU2YjNlNWI3ODlhMTY3MGZjMTUyN2VmNTRjNjVkMmQ3Yjc2ZA=="
 ```
 
@@ -65,8 +67,8 @@ Sign="Y2QyMDc3NDY4MmJmNzhiZmRiNDNlMTdkMWQ1ZDU2YjNlNWI3ODlhMTY3MGZjMTUyN2VmNTRjNj
 
 ## Signature Code Samples in Various Languages
 
-#### Python2
-``` 
+<dx-codeblock>
+::: Python2 python
 #!/usr/bin/env python
 import hmac
 import base64
@@ -76,10 +78,8 @@ s = '15653147891500001048{"audience_type": "account","platform": "android","mess
 key = '1452fcebae9f3115ba794fb0fff2fd73'
 hashcode = hmac.new(key, s, digestmod=sha256).hexdigest()
 print base64.b64encode(hashcode)
-``` 
-
-#### Python3
-``` 
+:::
+::: Python3 python
 import hmac
 import base64
 from hashlib import sha256
@@ -89,10 +89,8 @@ key = '1452fcebae9f3115ba794fb0fff2fd73'
 hashcode = hmac.new(bytes(key, "utf-8"), bytes(s, "utf-8"),
                         digestmod=sha256).hexdigest()
 print(base64.b64encode(bytes(hashcode, "utf-8")))
-``` 
-
-#### Java
-``` 
+:::
+::: Java java
 package com.tencent.xg;
 
 import java.io.UnsupportedEncodingException;
@@ -123,10 +121,8 @@ public class SignTest {
         }
     }
 }
-``` 
-
-#### Golang go
-``` 
+:::
+::: Golang go
 import (
    "crypto/hmac"
    "crypto/sha256"
@@ -145,38 +141,36 @@ func TestSign(t *testing.T) {
    sign := base64.StdEncoding.EncodeToString([]byte(sha))
    println(sign)
 }
-``` 
-
-#### C#
-``` 
+:::
+::: C# c#
 using System;
 using System.Security.Cryptography;
 using System.Text;
-
 namespace tpns_server_sdk_cs
 {
     class GenSign { 
   
-        // Main Method 
-        // static public void Main(String[] args)
-        // {
-        //     string reqBody =
-        //         "{\"audience_type\": \"account\",\"platform\": \"android\",\"message\": {\"title\": \"test title\",\"content\": \"test content\",\"android\": { \"action\": {\"action_type\": 3,\"intent\": \"xgscheme://com.xg.push/notify_detail?param1=xg\"}}},\"message_type\": \"notify\",\"account_list\": [\"5822f0eee44c3625ef0000bb\"] }";
-        //     string genSign = GenSign.genSign("1565314789", "1500001048", "reqBody", "1452fcebae9f3115ba794fb0fff2fd73");
-        //     Console.WriteLine(genSign);
-        // } 
+        //Main Method 
+        static public void Main(String[] args)
+        {
+            string reqBody =
+                "{\"audience_type\": \"account\",\"platform\": \"android\",\"message\": {\"title\": \"test title\",\"content\": \"test content\",\"android\": { \"action\": {\"action_type\": 3,\"intent\": \"xgscheme://com.xg.push/notify_detail?param1=xg\"}}},\"message_type\": \"notify\",\"account_list\": [\"234\"] }";
+            string genSign = GenSign.genSign("1621307510", "1500004469", reqBody, "2b1163d904bd5f82dcf82dcf82dc4407");
+            Console.WriteLine(genSign);
+        } 
         public static string HmacSHA256(string key, string data)
         {
             string hash;
-			Byte[] code = Encoding.UTF8.GetBytes(key);
+            Byte[] code = System.Text.Encoding.UTF8.GetBytes(key);
             using (HMACSHA256 hmac = new HMACSHA256(code))
             {
-                Byte[] hmBytes = hmac.ComputeHash(encoder.GetBytes(data));
+                Byte[] d = System.Text.Encoding.UTF8.GetBytes(data);
+                //Byte[] hmBytes = hmac.ComputeHash(encoder.GetBytes(data));
+                Byte[] hmBytes = hmac.ComputeHash(d);
                 hash = ToHexString(hmBytes);
             }
             return hash;
         }
-
         public static string ToHexString(byte[] array)
         {
             StringBuilder hex = new StringBuilder(array.Length * 2);
@@ -202,9 +196,8 @@ namespace tpns_server_sdk_cs
         }
     }
 }
-``` 
-
-#### PHP
+:::
+::: PHP php
 ```
 <?php
 $accessId = "1500001048";
@@ -215,9 +208,11 @@ $hashData = "{$timeStamp}{$accessId}{$requestBody}";
 echo "reqBody: " . $hashData . "\n";
 //Get the SHA256 and hex results
 $hashRes = hash_hmac("sha256", $hashData, $secretKey, false);
-//Conduct Base64 encoding
+//Base64-encode the results
 $sign = base64_encode($hashRes);
 echo $sign . "\n";
 ?>
 ```
+:::
+</dx-codeblock>
 
