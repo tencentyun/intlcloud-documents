@@ -3,7 +3,7 @@
 - [現象1](id:xz1)：CVMからTencentDB for MySQLに接続してログインすると、接続に失敗する。
 - [現象2](id:xz2)：ローカルコンピュータからTencentDB for MySQLに接続してログインすると、接続に失敗する。
 - [現象3](id:xz3)：データベース管理DMCプラットフォームからTencentDB for MySQLに接続してログインすると、接続に失敗する。
-![](https://main.qcloudimg.com/raw/f4ab12f5989b79ba88f309ed7a79f389.png)
+
 
 ## 考えられる原因
 <table>
@@ -73,7 +73,7 @@ TencentDB for MySQLコンソールでは、[クイック接続チェックツー
 <td>MySQLセキュリティグループポリシー</td>
 <td>お客様のMySQLインスタンスにバインドされているセキュリティグループの<strong>インバウンドルール</strong>がIPポートへのアクセスを通過させていないことが検出されました。<a href="#maqzpzyw">MySQLセキュリティグループ設定エラー</a>を参考にインバウンドルールを開放してください</td></tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/ae30ffd0f9df350e1360ed3f870ff441.png">
+
    - パブリックネットワークのチェックの場合、検査項目および推奨する対処方法は次となります。
 <table>
 <thead><tr><th>検査項目</th><th>異常および対処方法</th></tr></thead>
@@ -83,7 +83,7 @@ TencentDB for MySQLコンソールでは、[クイック接続チェックツー
 <td>パブリックネットワーク接続の有効状態</td>
 <td>お客様のMySQLインスタンスはパブリックネットワーク接続が有効になっていないことが検出されました。<a href="https://intl.cloud.tencent.com/document/product/236/37788">パブリックネットワーク接続の有効化</a>をご参照ください</td></tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/502f00b7c8913baf52c9548a525c9772.png">
+
 
 #### [手順2：ツールチェックで問題を解決できないときは、以下の原因を参考にチェックできます](id:step2)
 [**パスワードエラー**](id:mmwt)
