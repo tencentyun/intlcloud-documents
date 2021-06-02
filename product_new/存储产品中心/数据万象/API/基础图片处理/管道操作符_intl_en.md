@@ -1,5 +1,5 @@
 ## Feature Overview
-The pipeline operator `|` in Tencent Cloud CI can be used to perform multiple types of processing on images in a sequence. You can use the pipeline operator to separate multiple processing parameters so that different types of processing can be performed on an image in a single access. The size of the input image to be processed cannot exceed 20 MB, its width and height cannot exceed 30,000 pixels respectively, and its total pixels cannot exceed 250 million. The width and height of the output image cannot exceed 9,999 pixels respectively. For animated images, the input image's Width x Height x Number of frames cannot exceed 250 million pixels.
+The pipeline operator `|` in Tencent Cloud CI can be used to perform multiple types of processing on images in a sequence. You can use the pipeline operator to separate multiple processing parameters so that different types of processing can be performed on an image in a single access. The size of the input image to be processed cannot exceed 32 MB, its width and height cannot exceed 30,000 pixels respectively, and its total pixels cannot exceed 250 million. The width and height of the output image cannot exceed 9,999 pixels respectively. For animated images, the input image's Width x Height x Number of frames cannot exceed 250 million pixels.
 
 
 ## API Form
