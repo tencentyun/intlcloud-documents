@@ -107,7 +107,7 @@ For example, if a function version with 128 MB memory has a provisioned concurre
 - Idle duration = 10s
 - Idle provisioned concurrency price = 0.00000847 USD/GBs
 
-**Idle provisioned concurrency fees** = 2 * 128 MB * 10s * 0.00000847 USD/GBs = 0.00002118 USD
+**Idle provisioned concurrency fees** = 2 * 128 / 1024GB * 10s * 0.00000847 USD/GBs = 0.00002118 USD
 
 
 ## Fees of Other Services
