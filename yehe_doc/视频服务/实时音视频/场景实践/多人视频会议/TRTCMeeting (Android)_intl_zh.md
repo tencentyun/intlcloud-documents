@@ -391,9 +391,6 @@ public abstract void setRemoteViewFillMode(String userId, int fillMode);
 |-----|-----|-----|
 | userId | String | 用户 ID。|
 | fillMode | int  | 填充或适应模式，默认值：填充（FILL） 详情请参见 
-   
-
-
 ### setRemoteViewRotation
 
 设置远端图像的顺时针旋转角度。
