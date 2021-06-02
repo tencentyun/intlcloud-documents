@@ -1,32 +1,32 @@
 
 ## API Description
-**Request method**: POST.
+**Request method**: POST
 
 ```plaintext
-request address/v3/device/account/query
+Service URL/v3/device/account/query
 ```
-The API request address is corresponding to the service access point. Select the [request address](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
+API service URLs correspond to service access points one to one. Please select the [service URL](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
 
 **Feature**: this API is used to query the binding relationships between accounts and tokens.
 
 
 
-## Parameter Description
+## Parameters
 #### Request parameters
-| Parameter Name | Type | Required | Description |
+| Parameter | Type | Required | Description |
 | -------------- | ------- | ---- | ---------------------------------------- |
-| operator_type | Integer | Yes | Operation type: <li>Batch queries the corresponding token according to account<li>Queries the account according to token |
-| account_list | Array | No | The account list to be queried, which is valid and required if `operator_type` is 1, with each element containing one set of accounts. Below is an example: `[{"account":"account1"},{"account":"account2"}]` |
-| token_list | Array | No | The token list to be queried, which is valid and required if `operator_type` is 2.|
+| operator_type | Integer | Yes | Operation type:<li>`1`: Batch query tokens by account<li>`2`: Query accounts by token |
+| account_list | Array | No | Account list. This parameter is valid and required when `operator_type` is `1`. Each element of the list contains one set of accounts. Example: `[{"account":"account1"},{"account":"account2"}]` |
+| token_list | Array | No | Token list. This parameter is valid and required when `operator_type` is `2`. |
 
 #### Response parameters
 
-| Parameter Name | Type | Description |
+| Parameter | Type | Description |
 | -------------- | ------- | ---------------------------------------- |
-| retCode | Integer | Return code |
+| retCode | Integer | Error code. For more information, please see [Server-Side Error Codes](https://intl.cloud.tencent.com/document/product/1024/33763).  |
 | errMsg | String | Error message|
-| account_tokens | Array |Array of mappings from account to token, for example:<br>`[{"account":"account1","token_list":["token1","token2"]}{"account":"account2","token_list":["token2","token3"]}`] |
-| token_accounts | Array |Array of mappings from token to account, for example:<br>`[{"token":"token1","account_list":[{"account":"926@126.com"},{"account":"1527000000",}]},`<br/>`{"token":"token2","account_list":[{"account":"926@163.com"},{"account":"1527000001"}]}]` |
+| account_tokens | Array | Array of mappings from accounts to tokens. Example:<br>`[{"account":"account1","token_list":["token1","token2"]}{"account":"account2","token_list":["token2","token3"]}`] |
+| token_accounts | Array | Array of mappings from tokens to accounts. Example:<br>`[{"token":"token1","account_list":[{"account":"926@126.com"},{"account":"1527000000",}]},`<br/>`{"token":"token2","account_list":[{"account":"926@163.com"},{"account":"1527000001"}]}]` |
 
 
 ## Samples
@@ -57,7 +57,7 @@ The API request address is corresponding to the service access point. Select the
 }
 ```
 
-#### Sample return
+#### Sample response
 - Batch query the tokens bound to accounts
 ```json
 {
