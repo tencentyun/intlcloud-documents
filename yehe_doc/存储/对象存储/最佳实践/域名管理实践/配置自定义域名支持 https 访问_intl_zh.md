@@ -22,7 +22,7 @@
 #### 操作步骤
 
 #### 1. 绑定自定义域名
-将存储桶 testhttps 绑定到域名`https://test.cos.com`，关闭 CDN 加速，详细操作指引请参见 [开启自定义源站域名](https://intl.cloud.tencent.com/document/product/436/31506) 文档。
+将存储桶 testhttps 绑定到域名`https://test.cos.com`，关闭 CDN 加速，详细操作指引请参见 [开启自定义源站域名](https://intl.cloud.tencent.com/document/product/436/31507) 文档。
 
 #### 2. 为域名配置反向代理
 在服务器上为域名`https://test.cos.com`配置反向代理。具体配置参考如下（以下 Nginx 配置仅供参考）：
@@ -53,7 +53,7 @@ ssl_certificate_key /usr/local/nginx/conf/server.key;
 
 #### 3. 解析域名到服务器
 
-在您域名的 DNS 解析服务商处解析您的域名。
+在您域名的 DNS 解析服务商处解析您的域名。若您使用的是腾讯云 DNS 解析，请前往 [DNS 解析控制台](https://console.cloud.tencent.com/cns)，将域名`test.cos.com`解析到步骤2中的服务器的 IP 上，详细指引请参见快速添加域名解析。
 
 #### 4. 进阶配置
 
