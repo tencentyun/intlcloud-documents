@@ -17,7 +17,7 @@ Select one of the following CSR generation methods as needed.
 1. Enter the domain name information, as shown below:
 >?You can go to the **SSL Certificate Service console** > [My Profile](https://console.cloud.tencent.com/ssl/info) to manage the information of **Existing Organization** or **Existing administrator** if it does not meet your requirements.
 >
-![](https://main.qcloudimg.com/raw/d0343ff167530dce485b8a27bd5cb36f.png)
+
 Main parameters are described as follows:
  - **Algorithm**: Select an encryption algorithm for your certificate.
  - **Key Length**: Select the key length for your certificate.
@@ -37,12 +37,12 @@ Main parameters are described as follows:
 
 **[Paste the CSR](id:csr2)**
 1. Paste the CSR information into the text box (your domain information will be detected), enter or select the existing organization information, administrator information, and contact information, as shown in the following figure.
-![](https://main.qcloudimg.com/raw/5be9216264255d632dc02fb05ca5fd7b.png)
+
 2. Click **Next** to go to [Step 2](#message).
 
 ### [Step. 2. Select the domain validation method](id:message)
 1. On the **Select Validation Method** page, select the domain validation method, as shown in the following figure.
-![](https://main.qcloudimg.com/raw/552ccc254b764ea15db8e1e6606a93dc.png)
+
 2. Click **Next** to go to the **Pre-review** page.
 
 
@@ -52,7 +52,7 @@ After you submit the information and select the domain validation method, your c
 
 ### Step 4. Validate your domain
 1. Validate the domain ownership by referring to the message displayed on the **Validate Domain** page. For example, if you have selected manual DNS validation, the following message will be displayed. Please go to the corresponding DNS hosting provider to add the DNS record, as shown in the following figure.
- ![](https://main.qcloudimg.com/raw/841d6defbe10950f7e9798d9614d1df8.png)
+
 You can validate your domain as follows:
  - **DNS validation**: For detailed directions, please see [Domain Ownership Verification](https://intl.cloud.tencent.com/document/product/1007/30168).
  - **File validation**: For detailed directions, please see [Domain Ownership Verification](https://intl.cloud.tencent.com/document/product/1007/30168).
