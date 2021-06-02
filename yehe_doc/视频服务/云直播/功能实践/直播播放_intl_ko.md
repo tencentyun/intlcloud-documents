@@ -40,7 +40,7 @@ SDK의 TCPlayerLite로 재생하는 것을 권장합니다. 해당 플레이어�
 - [재생 주소는 어떻게 구성되나요?](https://intl.cloud.tencent.com/document/product/267/7968)
 - [재생 트랜스 코딩은 어떻게 사용하나요?](https://intl.cloud.tencent.com/document/product/267/35598)
 - [타임 시프트 다시보기는 어떻게 사용하나요?](https://intl.cloud.tencent.com/document/product/267/35598)
-- [HTTPS 재생은 어떻게 사용하나요?] (https://intl.cloud.tencent.com/document/product/267/35598)
+- [HTTPS 재생은 어떻게 사용하나요？](https://intl.cloud.tencent.com/document/product/267/35598)
 - [해외 가속 노드 재생은 어떻게 사용하나요?](https://intl.cloud.tencent.com/document/product/267/35598)
 - [재생 링크 도용 방지 기능은 어떻게 활성화하나요?](https://intl.cloud.tencent.com/document/product/267/35598)
 
