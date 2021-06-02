@@ -109,11 +109,14 @@ Tencent Cloud services in the same VPC are interconnected through the private ne
 			<td>Chongqing Zone 1<br>ap-chongqing-1</td>
 	</tr>
 	<tr>
-			<td rowspan="2">Hong Kong/Macao/Taiwan (Hong Kong, China) <br>ap-hongkong</td>
+			<td rowspan="3">Hong Kong/Macao/Taiwan (Hong Kong, China) <br>ap-hongkong</td>
 			<td>Hong Kong Zone 1 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-1</td>
 	</tr>
 	<tr>
 			<td>Hong Kong Zone 2 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-2</td>
+	</tr>
+	<tr>
+			<td>Hong Kong Zone 3 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-3</td>
 	</tr>
 </tbody>
 </table>	
@@ -155,9 +158,12 @@ Tencent Cloud services in the same VPC are interconnected through the private ne
 			<td>Mumbai Zone 2 (Mumbai nodes can cover South Asia) <br>ap-mumbai-2</td>
 		</tr>
 		<tr>
-		  	<td >Southeast Asia (Bangkok)<br>ap-bangkok </td>
+		  	<td  rowspan="2">Southeast Asia (Bangkok)<br>ap-bangkok </td>
 				 <td >Bangkok Zone 1 (Bangkok nodes can cover Southeast Asia)<br>ap-bangkok-1</td>
-		<tr>
+		</tr>
+       <tr>
+				 <td >Bangkok Zone 2 (Bangkok nodes can cover Southeast Asia)<br>ap-bangkok-2</td>
+		</tr>
 			<td>North America (Toronto)<br>na-toronto</td>
 			<td>Toronto Zone 1 (Toronto nodes can cover North America)<br>na-toronto-1</td>
 		</tr>
@@ -176,8 +182,11 @@ Tencent Cloud services in the same VPC are interconnected through the private ne
 			<td>Virginia Zone 2 (Virginia nodes can cover Eastern US)<br>na-ashburn-2</td>
 		</tr>
 		<tr>
-			<td>Europe (Frankfurt) <br>eu-frankfurt</td>
+			<td  rowspan="2">Europe (Frankfurt) <br>eu-frankfurt</td>
 			<td>Frankfurt Zone 1 (Frankfurt nodes can cover Europe)<br>eu-frankfurt-1</td>
+		</tr>
+		<tr>
+			<td>Frankfurt Zone 2 (Frankfurt nodes can cover Europe)<br>eu-frankfurt-2</td>
 		</tr>
 		<td >Europe (Moscow)<br>eu-moscow</td>
 		<td>Moscow Zone 1 (Moscow nodes can cover Europe)<br>eu-moscow-1</td>
