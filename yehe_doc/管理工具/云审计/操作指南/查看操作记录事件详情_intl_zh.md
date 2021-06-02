@@ -5,7 +5,7 @@
 ### 查看操作记录
 1. 登录云审计控制台，选择左侧导航栏中的【[操作记录](https://console.cloud.tencent.com/cloudaudit)】。
 2. 在“操作记录”列表页面，可查看事件操作记录。如下图所示：
-![](https://main.qcloudimg.com/raw/6945823d57f4e90694c538314bda8e80.png)
+![](https://main.qcloudimg.com/raw/05997e3350e76763e3efe70e6610307f.png)
 其中，用户名指事件操作人，分为以下几种类型：
  - **主账号操作**：用户名显示为 root。
  - **子用户操作**：用户名显示子用户名称，如果子用户已被删除，则显示子用户 ID。
@@ -14,7 +14,7 @@
 
 ### 查看事件详情
 1. 若您需查看某一事件的详细信息，选择列表中事件前的 <img src="https://main.qcloudimg.com/raw/01149711e1d47fd4bbd2051a58b7211d.png" style="margin:-1px 0px">，并在展开的模块中，单击【查看事件】。如下图所示：
-![](https://main.qcloudimg.com/raw/3cf861313926aa692fca4262c681b67e.png)
+![](https://main.qcloudimg.com/raw/2e0478f26d9f947cb6929467bc20a4d9.png)
 2. 即可在右侧模块中查看事件详细信息，字段说明请参考 [附录](#appendix)。
 
 
