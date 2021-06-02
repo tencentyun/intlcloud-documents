@@ -9,8 +9,7 @@ Instant Messaging (IM) can host user relationship chains and offers a complete s
 
 A relationship chain is a set of data used to describe the relationships between one user and other users. The relationship chains supported by IM include friend lists and blocklists.
 
-<span id='relationship'></span>
-## Relationship Chain Fields
+## Relationship Chain Fields[](id:relationship)
 The IM relationship chain system supports standard and custom relationship chain fields. Relationship chain fields have the following features:
 
 - Relationship chain fields are displayed in key-value format.
@@ -75,8 +74,6 @@ IM supports two modes for deleting friends: one-way deletion and two-way deletio
 
 IM also supports deleting friends in batches. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/34905">Deleting Friends</a>.
 
-### Pulling friends
-IM supports the following three modes for pulling friends: incremental pulling without friends, full pulling by page, and pulling with friends. For more information, see <a href="https://intl.cloud.tencent.com/document/product/1047/34908">Pulling Friends</a>.
 
 ### Verifying friends
 
@@ -149,11 +146,11 @@ Possible results of two-way blocklist relationship verification are:
 For more information on blocklist verification, see <a href="https://intl.cloud.tencent.com/document/product/1047/34913">Verifying Blocklist</a>.
 
 
-## Relevant Documents
+## Relevant Document
 
 - [User Profile and Relationship Chain (Android)](https://intl.cloud.tencent.com/document/product/1047/34332)
 - [User Profile and Relationship Chain (iOS)](https://intl.cloud.tencent.com/document/product/1047/36284)
 - [Overview (Windows)](https://intl.cloud.tencent.com/document/product/1047/34304)
 - [User Profile (Web & Mini Program)](https://intl.cloud.tencent.com/document/product/1047/34334)
- 
+
 

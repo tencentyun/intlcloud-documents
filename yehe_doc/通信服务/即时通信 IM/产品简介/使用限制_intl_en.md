@@ -4,7 +4,7 @@
         <tr>
             <th  width="15%">Feature</th>
             <th  width="20%">Limit Item</th>
-            <th>Limit Description</th>
+            <th>Description</th>
         </tr>
         <tr>
             <td  rowspan="5">One-to-one/group message</td>
@@ -21,7 +21,7 @@
         </tr>	
         <tr>
             <td>Size of a single file</td>
-            <td>The SDK supports a maximum file size of 100 MB for any single file to be sent. </td>
+		<td><li>SDKs support a maximum file size of 100 MB for any single file to be sent. </li><li>Mini Program SDK does not support creating and sending file messages. </li><li>WebIM SDK does not support creating and sending voice messages.</li></td>
         </tr>
 	<tr>
             <td>Message history storage period</td>
@@ -55,7 +55,7 @@
         <tr>
             <td  rowspan="2">User relationship chain</td>
             <td>Friends and friend groups</td>
-            <td><ul style="margin:0;"><li>A single user can have up to 3,000 friends.</li><li>The maximum number of pending friend requests supported is 100.</li><li>The maximum number of friend groups supported is 32.</li><li>The maximum length of a friend group name is 30 bytes.</li><li>The maximum length of friend remarks is 96 bytes.</li></ul></td>
+            <td><ul style="margin:0;"><li>A single user can have up to 3,000 friends.</li><li>The maximum number of pending friend requests supported is 100.</li><li>The maximum number of friend lists supported is 32.</li><li>The maximum length of a friend list name is 30 characters.</li><li>The maximum length of friend remarks is 96 characters.</li><li>WebIM SDK does not support friend relationship chain.</li></ul></td>
         </tr>
         <tr>
             <td>Blocklist</td>
@@ -84,7 +84,7 @@
         </tr>
         <tr>
             <td>Group custom field</td>
-            <td>Groups support up to 10 custom fields: <ul style="margin:0;"><li>The Key field is String type, with a maximum length of 16 bytes. Its name can contain only uppercase and lowercase letters, numbers, and underscores.</li><li>The Value field is a user-defined buffer and can be binary data. The maximum Value length for groups is 512 bytes.</li></ul></td>
+            <td>Groups supports up to 10 custom fields: <ul style="margin:0;"><li>The Key field is String type, with a maximum length of 16 bytes. Its name can contain only uppercase and lowercase letters, numbers, and underscores.</li><li>The Value field is a user-defined buffer and can be binary data. The maximum Value length for groups is 512 bytes.</li></ul></td>
         </tr>
         <tr>
             <td>Group member custom field</td>
@@ -100,7 +100,7 @@
 <table>
         <tr>
             <th  width="30%">Limit Item</th>
-            <th>Limit Description</th>
+            <th>Description</th>
         </tr>
         <tr>
             <td>Call frequency</td>
@@ -115,7 +115,7 @@
 <table>
         <tr>
             <th  width="30%">API</th>
-            <th>Limit Description</th>
+            <th>Description</th>
         </tr>
         <tr>
             <td>Importing multiple accounts</td>
@@ -132,7 +132,7 @@
 <table>
         <tr>
             <th  width="30%">API</th>
-            <th>Limit Description</th>
+            <th>Description</th>
         </tr>
         <tr>
             <td>Sending one-to-one messages in batches</td>
@@ -147,7 +147,7 @@
 <table>
         <tr>
             <th  width="30%">API</th>
-            <th>Limit Description</th>
+            <th>Description</th>
         </tr>
         <tr>
             <td>Importing friends</td>
@@ -161,7 +161,7 @@
 <table>
         <tr>
             <th  width="30%">API</th>
-            <th>Limit Description</th>
+            <th>Description</th>
         </tr>
         <tr>
             <td>Adding group members</td>
