@@ -12,11 +12,11 @@ Basics of the two partition styles are shown in the following table：
 
 Select the appropriate operations guide according to disk capacity and the CVM‘s operating system type:
 - For disk capacity less than 2TB:
- - [Initializing cloud disks (Windows)](https://intl.cloud.tencent.com/document/product/362/31597#initializing-cloud-disks-(windows))
- - [Initializing cloud disks (Linux)](https://intl.cloud.tencent.com/document/product/362/31597#initializing-cloud-disks-(linux))
+ - [Initializing cloud disks (Windows)](https://intl.cloud.tencent.com/document/product/362/31597#Steps)
+ - [Initializing cloud disks (Linux)](https://intl.cloud.tencent.com/document/product/362/31597#Steps)
 - For disk capacity larger than or equal to 2TB:
- - [Initializing cloud disks (Windows)](https://intl.cloud.tencent.com/document/product/362/31598#initializing-cloud-disks-(windows))
- - [Initializing cloud disks (Linux)](https://intl.cloud.tencent.com/document/product/362/31598#initializing-cloud-disks-(linux))
+ - [Initializing cloud disks (Windows)](https://intl.cloud.tencent.com/document/product/362/31598#Steps)
+ - [Initializing cloud disks (Linux)](https://intl.cloud.tencent.com/document/product/362/31598#Steps)
 
 
 
