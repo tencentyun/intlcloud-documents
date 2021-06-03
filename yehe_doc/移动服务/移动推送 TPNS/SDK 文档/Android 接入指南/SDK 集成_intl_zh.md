@@ -42,8 +42,7 @@ android {
 
 dependencies {
     ......
-    //添加以下依赖
-    implementation 'com.tencent.jg:jg:1.1'                  
+    //添加以下依赖             
     implementation 'com.tencent.tpns:tpns:[VERSION]-release' 
 		  // TPNS 推送 [VERSION] 为最新 SDK 版本号，即为上述步骤2获取的版本号
 }
@@ -63,7 +62,7 @@ dependencies {
 >```
 ```
 > 其他服务接入点域名如下：
->   - 上海：`tpns.sh.tencent.com`
+>  - 上海：`tpns.sh.tencent.com`
 >  - 新加坡：`tpns.sgp.tencent.com`
 >  - 中国香港：`tpns.hk.tencent.com`
 >  
@@ -145,6 +144,7 @@ dependencies {
 
 
 #### 组件和应用信息配置
+
 
 
 ```xml
@@ -419,7 +419,6 @@ XGPushManager.uploadLogFile(context, new HttpRequestCallback() {
     }
 });
 ```
-
 
 
 
