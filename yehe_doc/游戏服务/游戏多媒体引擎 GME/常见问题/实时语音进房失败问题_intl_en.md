@@ -6,7 +6,7 @@ No.
 
 ### How many room members can speak at the same time?
 
-It only supports up to 6 members to speak at the same time. If you need it for more members, please see [Advanced GME APIs](https://intl.cloud.tencent.com/document/product/607/38334).
+It only supports up to 6 members to speak at the same time.
 >! GME supports up to 20 mixing channels. We do not recommend more channels as it will be hard to know which player is speaking.
 
 ### Is there a requirement for the value of room ID?
