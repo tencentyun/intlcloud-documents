@@ -535,7 +535,7 @@ XGPushManager.upsertAccounts(context, accountInfoList, xgiOperateCallback);
 
 >?
 > - 每个账号最多支持绑定100个 token。
-> - 账号可以是邮箱、QQ 号、手机号、用户名等任意类别的业务账号，账号类型取值可参考账号类型取值表。
+> - 账号可以是邮箱、QQ 号、手机号、用户名等任意类别的业务账号，账号类型取值可参考账号类型取值表
 > - 同一个账号绑定多个设备时，后台将默认推送消息到最后绑定的设备，如需推送所有绑定的设备可查看 [Rest API](https://intl.cloud.tencent.com/document/product/1024/33764) 文档中 account_push_type 参数设置。
 > 
 
@@ -545,7 +545,7 @@ XGPushManager.upsertAccounts(context, accountInfoList, xgiOperateCallback);
 
 添加或更新手机号码。若原来没有绑定手机号码，则绑定；若原来有，则覆盖（SDK 1.2.5.0+）
 
->? 手机号格式为 +[国家或地区码][手机号],例如+8613711112222（其中前面有一个+号 ，86为国家或地区码，13711112222为手机号）。若绑定的手机号不带**国家或地区码**，则 TPNS 下发短信时自动增加+86的前缀；若带上**国家或地区码**，则按照指定的号码绑定；如需删除绑定的手机号，则需调用 `delAccountsByKeys`接口并设置 `accountTypeSet 为 1002`。
+>? 手机号格式为 `+[国家或地区码][手机号]`，例如+8613711112222（其中前面有一个+号 ，86为国家或地区码，13711112222为手机号）。若绑定的手机号不带**国家或地区码**，则 TPNS 下发短信时自动增加+86的前缀；若带上**国家或地区码**，则按照指定的号码绑定。如需删除绑定的手机号，则需调用 `delAccountsByKeys`接口并设置 `accountTypeSet 为 1002`。
 >
 
 ```java
