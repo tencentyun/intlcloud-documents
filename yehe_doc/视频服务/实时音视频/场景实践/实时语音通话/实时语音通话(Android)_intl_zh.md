@@ -206,7 +206,7 @@ sCall.login(sdkappid, "aaa", usersig, new ActionCallback() {
 
 ### 步骤6：实现多人语音通话
 
-1. 发起方：多人视频通话需要调用 `TRTCCalling` 中的 `groupCall()` 函数，并传入用户列表（userIdList）、通话类型（type）、 IM 群组 ID（groupId），其中 userIdList 为必填参数，通话类型为必填参数传入`TYPE_AUDIO_CALL`， groupId 为选填参数。
+1. 发起方：多人语音通话需要调用 `TRTCCalling` 中的 `groupCall()` 函数，并传入用户列表（userIdList）、通话类型（type）、 IM 群组 ID（groupId），其中 userIdList 为必填参数，通话类型为必填参数传入`TYPE_AUDIO_CALL`， groupId 为选填参数。
 2. 接收端：通过 `onInvited()` 事件通知能够接收到此次请求。
 3. 接收端：收到事件通知后可以调用 `accept()` 方法接听此次通话，也可以选择用 `reject()` 方法拒绝通话。
 4. 如果超过一定时间（默认30s）没有回复，接收方会收到 `onCallingTimeOut()` 的事件通知，发起方会收到 `onNoResp(String userId)` 事件通知。通话发起方在多个接收均未应答时 `hangup()` ， 每个接收方均会收到 `onCallingCancel()` 事件通知。
