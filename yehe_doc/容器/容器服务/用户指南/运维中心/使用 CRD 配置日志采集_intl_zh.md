@@ -102,7 +102,7 @@ __CONTENT__:2019-12-15 17:13:06,043 [main] ERROR com.test.logging.FooFactory:\nj
 ```
 
 ### 完全正则格式
-完全正则格式通常用来处理结构化的日志，指将一条完整日志按正则方式提取多个 key-value 的日志解析模式。详情请参见  [完全正则格式](https://intl.cloud.tencent.com/document/product/614/32283)。
+完全正则格式通常用来处理结构化的日志，指将一条完整日志按正则方式提取多个 key-value 的日志解析模式。
 假设一条日志原始数据为：
 ```
 10.135.46.111 - - [22/Jan/2019:19:19:30 +0800] "GET /my/course/1 HTTP/1.1" 127.0.0.1 200 782 9703 "http://127.0.0.1/course/explore?filter%5Btype%5D=all&filter%5Bprice%5D=all&filter%5BcurrentLevelId%5D=all&orderBy=studentNum" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0"  0.354 0.354
