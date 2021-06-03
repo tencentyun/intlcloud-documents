@@ -31,5 +31,5 @@ phoneNumber：E.164标准，格式为+[国家或地区码][手机号]，例如+8
 ### 2. Demo 演示了"用户允许协议"后才进行 Push 通知弹窗的方法
 
  解除 AppDelegate.h 文件的18行注释，即可在 Demo 中演示功能，如下图：
- ![](https://main.qcloudimg.com/raw/5799568949d6174519a0ed21b8a6ad1d.png)
+ ![](https://main.qcloudimg.com/raw/6bcbd5ce23386a28d47aca3565f6dbd1.png)
 
