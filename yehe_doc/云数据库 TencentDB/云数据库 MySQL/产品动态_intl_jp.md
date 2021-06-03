@@ -1,10 +1,31 @@
 
-## 2021年03月
+## 2021年04月
 <table>
-<tr><th width="20%">更新</th><th width="50%">説明</th><th width="10%">発表時間</th><th width="20%">関連ドキュメント</th>
+<tr><th width=20%>更新</th><th width=50%>説明</th><th width=10%>発表時間</th><th width=20%>関連ドキュメント</th></tr>
 <tbody>
 <tr>
-<td>製品アーキテクチャ（名称）アップグレード</td>
+<td>データベースプロキシをサポートします</td>
+<td>データベースプロキシは、クラウドデータベースサービスとアプリケーションサービスの間にあるネットワークプロキシサービスであり、アプリケーションサービスがデータベースにアクセスするときにすべてのリクエストをプロキシするために用いられます。</td>データベースプロキシのアクセスアドレスは、元のデータベースのアクセスアドレスから独立しています。データベースプロキシアドレスを介したすべてのリクエストは、プロキシクラスターを介して中継され、データベースのマスターノードとスレーブノードにアクセスし、読み取り/書き込み分離を行います。読み取りリクエストは読み取り専用インスタンスに転送され、メインデータベースへの負荷が軽減されます。</td>
+<td>2021-04</td>
+<td><a href="https://cloud.tencent.com/document/product/236/54652" target="_blank">データベースプロキシ</a></td></tr>
+<tr>
+<td>binlog使用容量のディスク総使用容量への計上についての説明</td>
+<td>binlogの書き込み速度はデータベース稼働時の性能に影響します。TencentDB for MySQLの性能および安定性を向上させるため、TencentDB for MySQLでは、binlogのストレージに対するアップグレード実施し、今回のアップグレードによって、インスタンスbinlogのストレージメディアを高性能SSD（ユーザーインスタンスのストレージキャパシティ）に移行します。</td>
+<td>2021-04</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/40209" target="_blank">binlog使用容量のディスク総使用容量への計上についての説明</a></td></tr>
+<tr>
+<td>ローカルbinlogの保存期間の設定をサポートします</td>
+<td>TencentDB for MySQLは、コンソールからのローカルbinlog保存期間の設定をサポートしています。</td>
+<td>2021-04</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/40186" target="_blank">ローカルbinlogの保存設定</a></td></tr>
+</tbody></table>
+
+## 2021年03月
+<table>
+<tr><th width=20%>更新</th><th width=50%>説明</th><th width=10%>発表時間</th><th width=20%>関連ドキュメント</th></tr>
+<tbody>
+<tr>
+<td>製品アーキテクチャ（名称）のアップグレード</td>
 <td>TencentDB for MySQL製品アーキテクチャを単一ノード（元のBasic Edition）、2ノード（元のHigh-availability Edition）および3ノード（元のFinance Edition）にアップグレードし、分離ポリシーに基本型、汎用型および専用型を追加します。各アーキテクチャ機能に変更はありません。</td>
 <td>2021-03</td>
 <td><li><a href="https://intl.cloud.tencent.com/document/product/236/38328" target="_blank">アーキテクチャの概要</a><li><a href="https://intl.cloud.tencent.com/document/product/236/39794">分離ポリシー</a></td></tr>
@@ -26,7 +47,7 @@
 <tbody>
 <tr>
 <td>クローンインスタンスをサポートします</td>
-<td>TencentDB for MySQLインスタンスのクローンを作成し、ログバックアップ保留時間内の任意の時間点にリストアし、または指定する物理バックアップのバックアップセットからリストアする機能をサポートしています。</td>
+<td>TencentDB for MySQLは、クローン作成により、インスタンスをログバックアップ保存期間中の任意の時点に復元し、さらに指定された物理バックアップのバックアップセットへ復元する機能をサポートしています。</td>
 <td>2020-11</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/38864" target="_blank">クローンインスタンス</a></td>
 </tr>
@@ -35,7 +56,7 @@
 ## 2020年10月
 <table>
 <tr>
-<th width=20%>更新/th>
+<th width=20%>更新</th>
 <th width=50%>説明</th>
 <th width=10%>発表時間</th>
 <th width=20%>関連ドキュメント</th>
@@ -44,10 +65,10 @@
 <td>購入画面の機能が最適化されました</td>
 <td>TencentDB for MySQLの購入画面で、アラームポリシー、パラメータテンプレート、クロスプロジェクトを指定してセキュリティグループをバインドする機能をサポートします。</td>
 <td>2020-10</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/236/37785" target="_blank"> MySQLインスタンスの作成</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/37785" target="_blank">MySQLインスタンスの作成</a></td
 </tr>
 <tr>
-<td>8.0はTDE（透過的データ暗号化）をサポートします</td>
+<td>8.0はTDE機能（透過的データ暗号化）をサポートします</td>
 <td>TencentDB for MySQL 8.0バージョンはTDE（透過的データ暗号化）機能をサポートします。</td>
 <td>2020-10</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/38491" target="_blank">Transparent Data Encryptionの有効化</a></td>
@@ -85,8 +106,8 @@
 <td><li><a href="https://intl.cloud.tencent.com/document/product/236/35793" target="_blank">インスタンスのパラメータ設定</a><li><a href="https://intl.cloud.tencent.com/document/product/236/31906" target="_blank">パラメータテンプレートの使用</a></td>
 </tr>
 <tr>
-<td>TDE（透過的データ暗号化）をサポートします</td>
-<td>TencentDB for MySQLでは、TDE（透過的データ暗号化）機能を提供しています。TDEとは、データの暗号化/復号操作をユーザーに対して透明にすることを指し、データファイルに対するリアルタイムな I/Oの暗号化と復号をサポートしています。データをディスクに書き込む前に暗号化して、ディスクから内部記憶装置に読み込む時に復号しますので、静的データの暗号化におけるコンプライアンス要件を満たすことができます。</td>
+<td>TDE機能（透過的データ暗号化）をサポートします</td>
+<td>TencentDB for MySQLでは、TDE（透過的データ暗号化）機能を提供しています。TDEとは、データの暗号化/復号操作をユーザーに対して透明にすることを指し、データファイルに対するリアルタイムな I/Oの暗号化と復号化をサポートしています。データをディスクに書き込む前に暗号化して、ディスクから内部記憶装置に読み込む時に復号しますので、静的データの暗号化におけるコンプライアンス要件を満たすことができます。</td>
 <td>2020-07</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/38491" target="_blank">Transparent Data Encryptionの有効化</a></td>
 </tr>
@@ -319,7 +340,7 @@
 </tr>
 <tr>
 <td>製品名の変更</td>
-<td> CDB for MySQLからTencentDB for MySQLに名称を変更します。</td>
+<td>CDB for MySQLからTencentDB for MySQLに名称を変更します。</td>
 <td>2018-06</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236" target="_blank">TencentDB for MySQL </a></td>
 </tr>
@@ -412,7 +433,7 @@
 </thead>
 <tbody><tr>
 <td>読み取り専用インスタンス機能のリリース</td>
-<td> TencentDB for MySQLは、ユーザーによる1つまたは複数の読み取り専用インスタンスの作成をサポートし、また、ユーザーによる読み取り/書き込み分離と1つのマスターと複数のスレーブのユースケースをサポートすることで、データベースの読み取り負荷能力を明らかに向上させることができます。</td>
+<td>TencentDB for MySQLは、ユーザーによる1つまたは複数の読み取り専用インスタンスの作成をサポートし、また、ユーザーによる読み取り/書き込み分離と1つのマスターと複数のスレーブのユースケースをサポートすることで、データベースの読み取り負荷能力を明らかに向上させることができます。</td>
 <td>2016-03</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/7270" target="_blank">読み取り専用インスタンス</a></td>
 </tr>
