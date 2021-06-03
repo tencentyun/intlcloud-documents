@@ -16,10 +16,7 @@ By collecting data such as live streaming traffic consumption, requests, and con
 By leveraging Tencent Cloud's video AI recognition technology, CSS can effectively identify live streaming content and implement advanced features such as intelligent porn detection and subtitling based on smart learning and image analysis.  
 
 ### Video Encryption Security
-By providing protection in all aspects such as hotlink protection, URL authentication, IP blocklist/allowlist, and HTTPS-based secure acceleration, CSS can implement comprehensive detection and protection to eliminate piracy. Plus, it features a more specialized digital rights management (DRM) solution to fully protect the security of your video assets.
+By providing protection in four aspects of hotlink protection, URL authentication, IP blocklist/allowlist, and HTTPS-based secure acceleration, CSS can implement comprehensive detection and protection to eliminate piracy. Plus, it features a more specialized digital rights management (DRM) solution to fully protect the security of your video assets.
 
 ### Video Ecosystem
-Together with MLVB SDK, IM, VOD, and Tencent YouTu, CSS supports customized development to implement various features such as MLVB mic connect, live recording, beauty filters, and screen sharing.
-
-### Live Stream Switch and Mix
-Live streams can be switched and mixed in the cloud with the aid of Live Director, which supports custom image layout, temporary stream and roll, and synchronous audio/video switch.
+Together with MLVB SDK, IM, VOD, and Tencent YouTu, CSS supports customized development to implement various features such as MLVB mic connect, CSS recording, beauty filters, and CSS screen sharing.
