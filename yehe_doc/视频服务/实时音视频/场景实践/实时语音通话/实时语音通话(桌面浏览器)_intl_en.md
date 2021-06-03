@@ -5,7 +5,7 @@ This document describes how to implement a browser-based audio call solution.
 ## Environment Requirements
 Currently, the desktop version of Chrome offers better support for the features of the TRTC SDK for desktop browsers; therefore, Chrome is recommended for the demo.
 
-TRTCCalling uses the following ports for data transfer, which should be added to the allowlist of the firewall. After configuration, please use [Official Demo] to check whether the ports work.
+TRTCCalling uses the following ports and domain name for data transfer, which should be added to the allowlist of the firewall. After configuration, please use [Official Demo](https://demo-1252463788.cos.ap-shanghai.myqcloud.com/trtccalling/demo/index.html) to check whether the configuration has taken effect.
   - TCP port: 8687
   - UDP ports: 8000, 8080, 8800, 843, 443, 16285
   - Domain name: qcloud.rtc.qq.com
@@ -23,37 +23,33 @@ The service supports the following platforms:
 | Windows  |    Firefox     |        56+         |
 | Windows  |      Edge      |        80+         |
 
-## Running the Demo
+## Running Demo
 
 [](id:step1)
 ### Step 1. Create an application
-
-[Sign up](https://intl.cloud.tencent.com/document/product/378/17985) for a Tencent Cloud account and complete [Identity Verification](https://intl.cloud.tencent.com/document/product/378/3629).
+1. [Sign up](https://intl.cloud.tencent.com/document/product/378/17985) for a Tencent Cloud account and complete identity verification.
 2. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
-3. Click **Start Now**, enter an application name, e.g., `TestTRTC`, and click **Create Application**.
+3. Enter an application name, e.g., `TestTRTC`, and click **Create**.
 
 [](id:step2)
 ### Step 2. Download the SDK and demo source code
-1. Mouse over the corresponding block, and click **[GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Web/TRTCScenesDemo/trtc-calling-web)** (or click **[ZIP](https://liteavsdk-1252463788.cos.ap-guangzhou.myqcloud.com/H5_latest.zip?_ga=1.195966252.185644906.1567570704)**) to download the SDK and demo source code.
- ![](https://main.qcloudimg.com/raw/0f35fe3bafe9fcdbd7cc73f991984d1a.png)
-2. After the download, return to the TRTC console and click **Downloaded and Next** to view your `SDKAppID` and secret key.
-
+1. Download the SDK and demo source code for your platform.
+2. Click **Next**.
 
 [](id:step3)
 ### Step 3. Configure demo project files
-
-1. Decompress the source package downloaded in [step 2](#step2).
+1. In the **Modify Configuration** step, select the platform in line with the source package downloaded.
 2. Find and open the `Web/TRTCScenesDemo/trtc-calling-web/public/debug/GenerateTestUserSig.js` file.
-3. Set parameters in the `GenerateTestUserSig.js` file:
-  - SDKAPPID: 0 by default. Set it to the actual `SDKAppID`.
-  - SECRETKEY: an empty string by default. Set it to the actual key.
-<img src="https://main.qcloudimg.com/raw/0ae7a197ad22784384f1b6e111eabb22.png">
-4. Return to the TRTC console and click **Pasted and Next**.
-5. Click **Close Guide and Enter Console**.
+3. Set parameters in the `GenerateTestUserSig.js` file as follows:
+<ul style="margin:0"><li/>SDKAPPID: 0 by default. Set it to the actual `SDKAppID`.
+<li/>SECRETKEY: left empty by default. Set it to the actual key.</ul>
+4. Click **Next** to complete the creation.
+5. After compilation, click **Return to Overview Page**.
+
 
 >!
 >- The method for generating `UserSig` described in this document involves configuring `SECRETKEY` in client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is leaked, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for the local execution and debugging of the demo**.
->- The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, see [How do I calculate UserSig on the server?](https://intl.cloud.tencent.com/document/product/647/35166).
+>- The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, please see [How do I calculate UserSig on the server?](https://intl.cloud.tencent.com/document/product/647/35166).
 
 [](id:step4)
 ### Step 4. Run the demo
@@ -63,13 +59,9 @@ npm install
 npm run serve
 ```
 2. Open Chrome and go to `http://localhost:8080/`. If the above steps are performed correctly, the page shown in the following figure is displayed:
-![](https://main.qcloudimg.com/raw/03cc2aa792a0f885fe070eb86ada4ce4.png)
 3. Enter your user ID and click **Log In**. Then, click **Audio Call**.
-![](https://main.qcloudimg.com/raw/c1243956fe79d1361f3f0329e85f41d9.png)
-4. Enter the user ID of the callee and click **Call**.
-![](https://main.qcloudimg.com/raw/cdb27d63a75c83e99452923d5da05999.png)
+4. Enter the user ID of the receiver and click **Call**.
 5. Start the audio call.
-![](https://main.qcloudimg.com/raw/37f1e43114ea2ab6dc4b419d60002d09.png)
 
 
 ## Building Your Own Audio Call
@@ -87,7 +79,7 @@ npm run serve
 
 
   //If you use trtc-calling-js via script, you need to manually import trtc.js first in the specified order.
-  <script src="trtc.js"></script>
+  <script src="./trtc.js"></script>
   
   // First, manually import tim-js.js.
   <script src="./tim-js.js"></script>
@@ -130,7 +122,7 @@ trtcCalling.call({
 });
 ```
 
-#### Callee: answering a call
+#### Receiver: answering a call
 ```javascript
 // Accept
 trtcCalling.accept({

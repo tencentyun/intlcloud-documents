@@ -8,28 +8,28 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 
 [](id:step1)
 
-### Step 1. Create an application.
+### Step 1. Create an application
 
 1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
-2. Enter an application name, e.g. `TestTRTC`, and click **Create**.
+2. Enter an application name, e.g., `TestTRTC`, and click **Create**.
 
 [](id:step2)
 
-### Step 2. Download the SDK and demo source code.
+### Step 2. Download the SDK and demo source code
 1. Download the SDK and demo source code for your platform.
-2. Click **Next step**.
+2. Click **Next**.
 
 [](id:step3)
-### Step 3. Configure demo project files.
+### Step 3. Configure demo project files
 1. In the **Modify Configuration** step, select the platform in line with the source package downloaded.
-2. Decompress the source package and find the `TRTCSDK/Electron/TRTCSimpleDemo/` directory, which is the <span id="projectFolder" name="projectFolder">"**project directory**"</span> mentioned below.
-3. Find and open the `debug/gen-test-user-sig.js` file in the project directory.
-4. Set parameters in `gen-test-user-sig.js` as follows:
+2. Decompress the source package and find the `TRTCSDK/Electron/TRTCSimpleDemo/` directory, which is the <span id="projectFolder"></span>"**project directory**" mentioned below.
+2. Find and open the `debug/gen-test-user-sig.js` file in the project directory.
+3. Set parameters in `gen-test-user-sig.js` as follows:
 <ul>
  <li/>SDKAPPID: 0 by default. Set it to the actual `SDKAppID`.
  <li/>SECRETKEY: left empty by default. Set it to the actual key.</ul>
-5. Click **Next step** to complete the creation.
-6. After compilation, click **Return to Overview Page**.
+4. Click **Next** to complete the creation.
+5. After compilation, click **Return to Overview Page**.
 
 **File paths and description:**
 ```bash
@@ -71,19 +71,21 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 
 [](id:step4)
 
-### Step 4. Compile and run the project.
+### Step 4. Compile and run the demo
 #### Windows
 1. Install the latest version of Node.js. We recommend you use a 64-bit MSI file for the installation. Download [here](https://nodejs.org/en/download/).
 2. Press the Windows key and R and enter `cmd` to open Windows Command Prompt as Administrator, locate the [project directory](#projectFolder), and run the following command.
-```
+```shell
 $ npm install
 ```
 ![](https://main.qcloudimg.com/raw/5aba25ba2d5eddb5d956406ca5b6b9ac.png)
 3. After the npm dependencies are installed, run the following command in Command Prompt to run the demo.
 ```shell
-$ npm run start  # On first run, it may take a while for the UI to appear.
+$ npm run start  # During the first run, the UI will appear in the window after a while
 ```
 ![](https://main.qcloudimg.com/raw/47f6e01acb2d927f6d9e24a7c9f78af1.png)
+
+
 
 #### macOS
 1. Open a terminal window or Command Prompt and run the following command to install Homebrew. If you have already installed it, skip this step.
@@ -104,13 +106,12 @@ $ brew update
 ```shell
 $ npm install 
 ```
-![](https://main.qcloudimg.com/raw/8bcc95adad07ff37e7f0a27893b8b7cf.png)
+
 5. After the npm dependencies are installed, run the following command in Command Prompt to run the demo.
 ```shell
-$ npm run start  # On first run, it may take a while for the UI to appear.
+$ npm run start # On first run, it may take a while for the UI to appear.
 ```
-![](https://main.qcloudimg.com/raw/423dae368118e5250e7fa878022bb26f.png)
-    
+
 ### Main project commands
 
 | Command | Description |
@@ -134,12 +135,6 @@ TRTC SDK 6.6 (August 2019) and later versions use the new signature algorithm HM
 
 Make sure that the two devices use different `UserIDs`. With TRTC, you cannot use the same `UserID` on two devices simultaneously unless the `SDKAppIDs` are different.
 
-### 3. What firewall restrictions does the SDK face?
+### 3. What are firewall restrictions does the SDK face?
 
-The SDK uses the UDP protocol for audio/video transmission and therefore cannot be used in office networks that block UDP. If you encounter such a problem, see [How to Deal with Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35164).
-
-
-
-```
-
-```
+The SDK uses the UDP protocol for audio/video transmission and therefore cannot be used in office networks that block UDP. If you encounter such a problem, please see [How to Deal with Firewall Restrictions](https://intl.cloud.tencent.com/document/product/647/35164).
