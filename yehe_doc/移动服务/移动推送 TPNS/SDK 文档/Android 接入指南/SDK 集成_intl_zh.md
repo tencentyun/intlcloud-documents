@@ -53,13 +53,12 @@ dependencies {
 >- 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置。
 >在 AndroidManifest 文件 application 标签内添加以下元数据：
 >```
-><application>
->// 其他安卓组件
-><meta-data
->		android:name="XG_SERVER_SUFFIX"
->		android:value="其他服务接入点域名" />
-></application>
->```
+<application>
+// 其他安卓组件
+<meta-data
+		android:name="XG_SERVER_SUFFIX"
+		android:value="其他服务接入点域名" />
+</application>
 ```
 > 其他服务接入点域名如下：
 >  - 上海：`tpns.sh.tencent.com`
@@ -72,6 +71,7 @@ dependencies {
  - 如在添加以上 abiFilter 配置后， Android Studio 出现以下提示：
    NDK integration is deprecated in the current plugin. Consider trying the new experimental plugin，则在 Project 根目录的 gradle.properties 文件中添加  `android.useDeprecatedNdk=true`。
  - 如需监听消息请参考 XGPushBaseReceiver 接口或 Demo（在 SDK 压缩包内，可前往 [SDK 下载](https://console.cloud.tencent.com/tpns/sdkdownload) 页面获取 ）的 MessageReceiver 类。自行继承 XGPushBaseReceiver 并且在配置文件中配置如下内容（请勿在 receiver  里处理耗时操作）：
+
 ​```xml
 <receiver android:name="com.tencent.android.xg.cloud.demo.MessageReceiver">
     <intent-filter>
@@ -273,13 +273,12 @@ dependencies {
 > - 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置。
 > 在 AndroidManifest 文件 application 标签内添加以下元数据：
 >```
-><application>
->// 其他安卓组件
-><meta-data
->		android:name="XG_SERVER_SUFFIX"
->		android:value="其他服务接入点域名" />
-></application>
->```
+<application>
+// 其他安卓组件
+<meta-data
+		android:name="XG_SERVER_SUFFIX"
+		android:value="其他服务接入点域名" />
+</application>
 ```
 > 其他服务接入点域名如下：
 >   - 上海：`tpns.sh.tencent.com`
