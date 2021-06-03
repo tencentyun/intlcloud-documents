@@ -1,25 +1,28 @@
-## Use Cases
-Backing up MPS callback tasks to COS via SCF is a standard practice. MPS has a template in SCF which you can use to enable the feature. MPS executes video processing tasks; SCF handles callback messages, and COS provides permanent terminal storage.
+After a video is processed by MPS, it’s a standard practice to send a notification about the completion of the video processing task. MPS has a template in SCF which you can use to enable this feature.
+
+## Overview
+The example in this document uses MPS and SCF. MPS executes vide processing tasks, and SCF handles callback messages.
 
 ## Directions
 ### Step 1. Create a function
 1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/list), and click **[Function Service](https://console.cloud.tencent.com/scf/list)** on the left sidebar.
 ![](https://main.qcloudimg.com/raw/29cd2fc9d699ac2af763749c2e67a472.png)
-2. At the top of the **Function Service** page, select the **Beijing** region and click **Create** to enter the function creating page.
+2. At the top of the **Function Service** page, select **Beijing** and click **Create** to enter the function creating page.
 3. Set the following parameters:
-	- **Function name**: enter a name, e.g., MPSAnalysis.
-	- **Runtime**: message dump templates support only Python 2.7 at the moment.
+	- **Function name**: enter a name, e.g., `MPSAnalysis`.
+	- **Runtime**: task callback templates support only Nodejs 8.9 at the moment.
 	- **Create Method**: select **Function Template**.
-	- **Fuzzy search**: search **CLSSCFCOS**.
-![](https://main.qcloudimg.com/raw/c9accdd429f7f1616020caa38d4f6c5e.png)
+	- **Fuzzy search**: enter "MPS Webhook template" and search.
+![](https://main.qcloudimg.com/raw/43b6ba09c92932a51ccdec290eb11726.png)
 >? Click **Learn More** in the template to view details in the **Template Details** window, which can be downloaded.
 4. Click **Next** to go to the function configuration page.
-![](https://main.qcloudimg.com/raw/2342b403d79e55bca50c39b28fdcd634.png)
+![](https://main.qcloudimg.com/raw/2c06ed43e1a410f451c490cc4570c7b1.png)
 5. Keep the default configuration and click **Finish** to complete the creation.
+
 
 ### Step 2. Configure an MPS trigger
 1. In the **[SCF console](https://console.cloud.tencent.com/scf), click **[Function Service](https://console.cloud.tencent.com/scf/list)** on the left sidebar, and click the function created to go to the details page.
-![](https://main.qcloudimg.com/raw/ac998f631557ea2214d66c2be9faaf5a.png)
+![](https://main.qcloudimg.com/raw/8f4478df3d76662f8a5241bebe3761bf.png)
 2. Click **Trigger Management** > **Create a Trigger**. A trigger creation window pops up. Select **MPS trigger** for the trigger method.
 ![](https://main.qcloudimg.com/raw/e067ef8e3e09c07b723d041193b66c62.png)
 The information of the main parameters is as follows. Keep the default settings for other parameters.
@@ -33,9 +36,9 @@ The information of the main parameters is as follows. Keep the default settings 
 
 
 ### Step 3. Test the function
-1. Start an MPS video processing workflow in the **[MPS console](https://console.cloud.tencent.com/mps)**.
+1. Log in to the [MPS console](https://intl.cloud.tencent.com/login) and start a video processing workflow.
 2. Go to the **[SCF console](https://console.cloud.tencent.com/scf/list?rid=8&ns=default)** to view the execution result.
-Select the **Log Query** tab on the function details page to view the printed log information as shown below:
+Select the **Log Query** tab on the function details page to view the printed log information.
 ![](https://main.qcloudimg.com/raw/f5d10848b674f137826689ac1dc28c8a.png)
 3. Log in to the [COS console](https://console.cloud.tencent.com/cos5) to view the data dumping and processing result.
 
