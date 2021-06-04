@@ -2,10 +2,10 @@
 Private DNS 基于腾讯云专有网络VPC（Virtual Private Cloud）环境的私有域名解析和管理服务，为用户提供高安全的内网域名解析服务。
 
 ### Private DNS 如何开通？
-首次访问 Private DNS 控制台需要进行开通操作，详情请查看 [开通Private DNS](https://cloud.tencent.com/document/product/1338/50533)，开通成功后即可正常使用。
+首次访问 Private DNS 控制台需要进行开通操作，详情请查看 [开通Private DNS](https://intl.cloud.tencent.com/document/product/1097/40557)，开通成功后即可正常使用。
 
 ### 使用 Private DNS 需要修改云服务器的 DNS 配置吗？
-不需要。使用 Private DNS 服务只需要在腾讯云 [开通 Private DNS](https://cloud.tencent.com/document/product/1338/50533) 即可，不需要修改 CVM 等云资源上的 DNS 设置。
+不需要。使用 Private DNS 服务只需要在腾讯云 [开通 Private DNS](https://intl.cloud.tencent.com/document/product/1097/40557) 即可，不需要修改 CVM 等云资源上的 DNS 设置。
 
 ### Private DNS 和 DNS 解析 DNSPod 有什么区别？
 - **DNS 解析 DNSPod**
