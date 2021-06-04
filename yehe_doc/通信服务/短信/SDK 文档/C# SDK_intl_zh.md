@@ -1,9 +1,9 @@
-﻿SDK 3.0是云 API 3.0平台的配套工具，您可以通过 SDK 使用所有 [短信 API](https://intl.cloud.tencent.com/document/product/382/34689)。新版 SDK 实现了统一化，具有各个语言版本的 SDK 使用方法相同，接口调用方式相同，错误码相同以及返回包格式相同等优点。
+SDK 3.0是云 API 3.0平台的配套工具，您可以通过 SDK 使用所有 [短信 API](https://intl.cloud.tencent.com/document/product/382/40463)。新版 SDK 实现了统一化，具有各个语言版本的 SDK 使用方法相同，接口调用方式相同，错误码相同以及返回包格式相同等优点。
 >!
 >- 发送短信相关接口
 >一次群发请求最多支持200个号码。
 >- 签名、正文模板相关接口
->个人认证用户不支持使用签名、正文模板相关接口，只能通过短信控制台 [管理短信签名](https://intl.cloud.tencent.com/document/product/382/35456) 和 管理短信正文模板。如需使用该类接口，请将 “个人认证” 变更为 “企业认证”。
+>个人认证用户不支持使用签名、正文模板相关接口，只能通过短信控制台 [管理短信签名](https://intl.cloud.tencent.com/document/product/382/35456) 和 [管理短信正文模板](https://intl.cloud.tencent.com/document/product/382/35457)。如需使用该类接口，请将 “个人认证” 变更为 “企业认证”。
 
 
 
@@ -18,7 +18,7 @@
 - 短信的调用地址为`sms.tencentcloudapi.com`。
 
 ## 相关资料
-- 各个接口及其参数的详细介绍请参见 [API 文档](https://intl.cloud.tencent.com/document/product/382/34689)。
+- 各个接口及其参数的详细介绍请参见 [API 文档](https://intl.cloud.tencent.com/document/product/382/40463)。
 - 下载 SDK 源码请访问 [C# SDK 源码](https://github.com/TencentCloud/tencentcloud-sdk-dotnet)。
 
 ## 安装 SDK
@@ -113,7 +113,7 @@ namespace TencentCloudExamples
 	             * SDK 提供对基本类型的指针引用封装函数
 	             * 帮助链接：
 	             * 短信控制台：https://console.cloud.tencent.com/sms/smslist
-	             * sms helper：https://intl.cloud.tencent.com/document/product/382/3773 
+	             * sms helper：https://cloud.tencent.com/document/product/382/3773
 	             */
                 
 			        	/* 模板名称 */
@@ -131,7 +131,7 @@ namespace TencentCloudExamples
             
                 // 通过 client 对象调用 AddSmsTemplate 方法发起请求，注意请求方法名与请求对象是对应的
                 // 返回的 resp 是一个 AddSmsTemplateResponse 类的实例，与请求对象对应
-                AddSmsTemplateResponse resp = client.AddSmsTemplate(req);
+                AddSmsTemplateResponse resp = client.AddSmsTemplateSync(req);
 
                 // 输出 JSON 格式的字符串回包
                 Console.WriteLine(AbstractModel.ToJsonString(resp));
@@ -218,7 +218,7 @@ namespace TencentCloudExamples
 	             * SDK 提供对基本类型的指针引用封装函数
 	             * 帮助链接：
 	             * 短信控制台：https://console.cloud.tencent.com/sms/smslist
-	             * sms helper：https://intl.cloud.tencent.com/document/product/382/3773 
+	             * sms helper：https://cloud.tencent.com/document/product/382/3773
 	             */
                 
                 req.SmsSdkAppid = "1400787878";
@@ -241,7 +241,7 @@ namespace TencentCloudExamples
 
                 // 通过 client 对象调用 SendSms 方法发起请求，注意请求方法名与请求对象是对应的
                 // 返回的 resp 是一个 SendSmsResponse 类的实例，与请求对象对应
-                SendSmsResponse resp = client.SendSms(req);
+                SendSmsResponse resp = client.SendSmsSync(req);
 
                 // 输出 JSON 格式的字符串回包
                 Console.WriteLine(AbstractModel.ToJsonString(resp));
@@ -329,7 +329,7 @@ namespace TencentCloudExamples
 	             * SDK 提供对基本类型的指针引用封装函数
 	             * 帮助链接：
 	             * 短信控制台：https://console.cloud.tencent.com/sms/smslist
-	             * sms helper：https://intl.cloud.tencent.com/document/product/382/3773 */
+	             * sms helper：https://cloud.tencent.com/document/product/382/3773 */
                 
 				// 设置拉取最大条数，最多100条
                 req.Limit = 100;
@@ -338,7 +338,7 @@ namespace TencentCloudExamples
 
                 // 通过 client 对象调用 PullSmsSendStatus 方法发起请求，注意请求方法名与请求对象是对应的
                 // 返回的 resp 是一个 PullSmsSendStatusResponse 类的实例，与请求对象对应
-                PullSmsSendStatusResponse resp = client.PullSmsSendStatus(req);
+                PullSmsSendStatusResponse resp = client.PullSmsSendStatusSync(req);
 
                 // 输出 JSON 格式的字符串回包
                 Console.WriteLine(AbstractModel.ToJsonString(resp));
@@ -423,7 +423,7 @@ namespace TencentCloudExamples
 	             * SDK 提供对基本类型的指针引用封装函数
 	             * 帮助链接：
 	             * 短信控制台：https://console.cloud.tencent.com/sms/smslist
-	             * sms helper：https://intl.cloud.tencent.com/document/product/382/3773 
+	             * sms helper：https://cloud.tencent.com/document/product/382/3773
 	             */
                 
 				/* 短信应用 ID: 在 [短信控制台] 添加应用后生成的实际 SDKAppID，例如1400006666 */
@@ -440,7 +440,7 @@ namespace TencentCloudExamples
 
                 // 通过 client 对象调用 SendStatusStatistics 方法发起请求，注意请求方法名与请求对象是对应的
                 // 返回的 resp 是一个 SendStatusStatisticsResponse 类的实例，与请求对象对应
-                SendStatusStatisticsResponse resp = client.SendStatusStatistics(req);
+                SendStatusStatisticsResponse resp = client.SendStatusStatisticsSync(req);
 
                 // 输出 JSON 格式的字符串回包
                 Console.WriteLine(AbstractModel.ToJsonString(resp));
@@ -454,4 +454,3 @@ namespace TencentCloudExamples
     }
 }
 ```
-

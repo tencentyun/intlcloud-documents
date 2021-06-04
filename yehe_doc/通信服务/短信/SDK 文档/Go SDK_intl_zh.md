@@ -1,23 +1,23 @@
-SDK 3.0是云 API 3.0平台的配套工具，您可以通过 SDK 使用所有 [短信 API](https://intl.cloud.tencent.com/document/product/382/34689)。新版 SDK 实现了统一化，具有各个语言版本的 SDK 使用方法相同，接口调用方式相同，错误码相同以及返回包格式相同等优点。
+SDK 3.0是云 API 3.0平台的配套工具，您可以通过 SDK 使用所有 [短信 API](https://intl.cloud.tencent.com/document/product/382/40463)。新版 SDK 实现了统一化，具有各个语言版本的 SDK 使用方法相同，接口调用方式相同，错误码相同以及返回包格式相同等优点。
 >!
 >- 发送短信相关接口
 >一次群发请求最多支持200个号码。
 >- 签名、正文模板相关接口
->个人认证用户不支持使用签名、正文模板相关接口，只能通过短信控制台 [管理短信签名](https://intl.cloud.tencent.com/document/product/382/35456) 和 管理短信正文模板。如需使用该类接口，请将 “个人认证” 变更为 “企业认证”。
+>个人认证用户不支持使用签名、正文模板相关接口，只能通过短信控制台 [管理短信签名](https://intl.cloud.tencent.com/document/product/382/35456) 和 [管理短信正文模板](https://intl.cloud.tencent.com/document/product/382/35457)。如需使用该类接口，请将 “个人认证” 变更为 “企业认证”。
 
 
 ## 前提条件
 
 - 已开通短信服务，具体操作请参见 [国内短信快速入门](https://intl.cloud.tencent.com/document/product/382/35449)。
-- 如需发送国内短信，需要先购买国内短信套餐包。
-- 已准备依赖环境：NODEJS 7.10.1 及以上版本。
+- 如需发送国内短信，需要先 购买国内短信套餐包。
+- 已准备依赖环境：Go 1.9版本及以上。
 - 已在访问管理控制台 >【[API密钥管理](https://console.cloud.tencent.com/cam/capi)】页面获取 SecretID 和 SecretKey。
  - SecretID 用于标识 API 调用者的身份。
  - SecretKey 用于加密签名字符串和服务器端验证签名字符串的密钥，**SecretKey 需妥善保管，避免泄露**。
 - 短信的调用地址为`sms.tencentcloudapi.com`。
 
 ## 相关资料
-- 各个接口及其参数的详细介绍请参见 [API 文档](https://intl.cloud.tencent.com/document/product/382/34689)。
+- 各个接口及其参数的详细介绍请参见 [API 文档](https://intl.cloud.tencent.com/document/product/382/40463)。
 - 下载 SDK 源码请访问 [Golang SDK 源码](https://github.com/TencentCloud/tencentcloud-sdk-go)。
 
 ## 安装 SDK
@@ -43,7 +43,6 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-
 	"github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common"
 	"github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common/errors"
 	"github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common/profile"
@@ -97,7 +96,7 @@ func main() {
 	 * SDK 提供对基本类型的指针引用封装函数
 	 * 帮助链接：
 	 * 短信控制台：https://console.cloud.tencent.com/smsv2
-	 * sms helper：https://intl.cloud.tencent.com/document/product/382/3773 
+	 * sms helper：https://cloud.tencent.com/document/product/382/3773
 	 */
 
 	/* 模板名称 */
@@ -192,7 +191,7 @@ func main() {
 	 * SDK 提供对基本类型的指针引用封装函数
 	 * 帮助链接：
 	 * 短信控制台：https://console.cloud.tencent.com/smsv2
-	 * sms helper：https://intl.cloud.tencent.com/document/product/382/3773 
+	 * sms helper：https://cloud.tencent.com/document/product/382/3773
 	 */
 
 	/* 短信应用 ID: 在 [短信控制台] 添加应用后生成的实际 SDKAppID，例如1400006666 */
@@ -294,7 +293,7 @@ func main() {
 	 * SDK 提供对基本类型的指针引用封装函数
 	 * 帮助链接：
 	 * 短信控制台：https://console.cloud.tencent.com/smsv2
-	 * sms helper：https://intl.cloud.tencent.com/document/product/382/3773 
+	 * sms helper：https://cloud.tencent.com/document/product/382/3773
 	 */
 
 	/* 短信应用 ID: 在 [短信控制台] 添加应用后生成的实际 SDKAppID，例如1400006666 */
@@ -381,7 +380,7 @@ func main() {
 	 * SDK 提供对基本类型的指针引用封装函数
 	 * 帮助链接：
 	 * 短信控制台：https://console.cloud.tencent.com/smsv2
-	 * sms helper：https://intl.cloud.tencent.com/document/product/382/3773 
+	 * sms helper：https://cloud.tencent.com/document/product/382/3773
 	 */
 
 	/* 短信应用 ID: 在 [短信控制台] 添加应用后生成的实际 SDKAppID，例如1400006666 */
@@ -412,5 +411,4 @@ func main() {
 	fmt.Printf("%s", b)
 }
 ```
-
 

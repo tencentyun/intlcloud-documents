@@ -1,24 +1,24 @@
 
-SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use all [SMS APIs](https://intl.cloud.tencent.com/document/product/382/34689) through the SDK. The new SDK version is unified and features the same SDK usage, API call methods, error codes, and returned packet formats for different programming languages.
+SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use all [SMS APIs](https://intl.cloud.tencent.com/document/product/382/40463) through the SDK. The new SDK version is unified and features the same SDK usage, API call methods, error codes, and returned packet formats for different programming languages.
 >!
 >- SMS sending APIs
 >One message can be sent to up to 200 numbers at a time.
 >- Signature and body template APIs
->Individual users have no permission to use signature and body template APIs and can [manage SMS signatures](https://intl.cloud.tencent.com/document/product/382/35456) and [SMS body templates](https://intl.cloud.tencent.com/document/product/382/35457) only in the SMS Console. To use the APIs, change "Individual Identity" to "Organizational Identity".
+>Individual users have no permission to use signature and body template APIs and can [manage SMS signatures](https://intl.cloud.tencent.com/document/product/382/35456) and [SMS body templates](https://intl.cloud.tencent.com/document/product/382/35457) only in the SMS console. To use the APIs, change "Individual Identity" to "Organizational Identity".
 
 
 ## Prerequisites
 
 - You have activated SMS. For detailed directions, please see [Getting Started with Mainland China SMS](https://intl.cloud.tencent.com/document/product/382/35449).
-- If you need to send SMS messages in Mainland China, you need to purchase a Mainland China SMS package first.
+- If you need to send Mainland China SMS messages, you need to purchase a Mainland China SMS package first.
 - You have prepared the dependent environment: PHP 5.6.33 or above.
-- You have obtained the `SecretID` and `SecretKey` on the **[API Key Management](https://console.cloud.tencent.com/cam/capi)** page in the CAM Console.
+- You have obtained the `SecretID` and `SecretKey` on the **[API Key Management](https://console.cloud.tencent.com/cam/capi)** page in the CAM console.
  - `SecretID` is used to identify the API caller.
  - `SecretKey` is used to encrypt the string to sign that can be verified on the server. **You should keep it private and avoid disclosure.**
-- The call address of the SMS service is `sms.tencentcloudapi.com`.
+- The endpoint of the SMS service is `sms.tencentcloudapi.com`.
 
 ## Relevant Documents
-- For more information on the APIs and their parameters, please see [API Documentation](https://intl.cloud.tencent.com/document/product/382/34689).
+- For more information on the APIs and their parameters, please see [API Documentation](https://intl.cloud.tencent.com/document/product/382/40463).
 - You can download the SDK source code [here](https://github.com/TencentCloud/tencentcloud-sdk-php).
 
 ## Installing SDK
@@ -42,9 +42,8 @@ composer require tencentcloud/tencentcloud-sdk-php
 require '/path/to/vendor/autoload.php';
 ```
 
-<span id="example"></span>
-## Sample Code
->All samples are for reference only and cannot be directly compiled and executed. You need to modify them based on your actual needs. You can also use [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2019-07-11&Action=SendSms) to automatically generate the demo code as needed.
+## Sample Code[](id:example)
+>?All samples are for reference only and cannot be directly compiled and executed. You need to modify them based on your actual needs. You can also use [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2019-07-11&Action=SendSms) to automatically generate the demo code as needed.
 
 Each API has a corresponding request structure and a response structure. This document only lists the sample code of several common features. For more samples, please see [SDK for PHP Samples](https://github.com/TencentCloud/tencentcloud-sdk-php/tree/master/examples/sms).
 
@@ -69,7 +68,7 @@ try {
 	 * Instantiate an authentication object. The Tencent Cloud account key pair `secretId` and `secretKey` need to be passed in as the input parameters
 	 * This example uses the way to read from the environment variable, so you need to set these two values in the environment variable in advance
 	 * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others
-	 * Query the CAM key: https://console.cloud.tencent.com/cam/capi 
+	 * Query the CAM key: https://console.cloud.tencent.com/cam/capi
 	 */
     
 		$cred = new Credential("xxx", "xxx");
@@ -96,15 +95,15 @@ try {
      * You can view the definition of the request parameters in the API documentation at the official website or by redirecting to the definition of the request object
      * Settings of a basic parameter:
 	   * Help link:
-	   * SMS Console: https://console.cloud.tencent.com/smsv2
-  	   * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 
-  	   */
+	   * SMS console: https://console.cloud.tencent.com/smsv2
+  	 * SMS Helper: https://cloud.tencent.com/document/product/382/3773
+  	*/
 	
 	/* Template name */
 	$req->TemplateName = "Tencent Cloud";
 	/* Template content */
 	$req->TemplateContent = "Your login verification code is {1}. Please enter it within {2} minutes. If the login was not initiated by you, please ignore this message.";
-	/* SMS type. 0: general SMS; 1: marketing SMS */
+	/* SMS type. 0: regular SMS; 1: marketing SMS */
 	$req->SmsType = 0;
 	/* Whether it is Global SMS:
 		0: Mainland China SMS
@@ -147,7 +146,7 @@ try {
      * Instantiate an authentication object. The Tencent Cloud account key pair `secretId` and `secretKey` need to be passed in as the input parameters
      * This example uses the way to read from the environment variable, so you need to set these two values in the environment variable in advance
      * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others
-     * Query the CAM key: https://console.cloud.tencent.com/cam/capi 
+     * Query the CAM key: https://console.cloud.tencent.com/cam/capi
      */
 
     $cred = new Credential("xxx", "xxx");
@@ -174,23 +173,23 @@ try {
      * You can view the definition of the request parameters in the API documentation at the official website or by redirecting to the definition of the request object
      * Settings of a basic parameter:
        * Help link:
-       * SMS Console: https://console.cloud.tencent.com/smsv2
-       * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 */
+       * SMS console: https://console.cloud.tencent.com/smsv2
+       * SMS Helper: https://cloud.tencent.com/document/product/382/3773 */
 
-    /* SMS application ID, which is the actual `SDKAppID` generated after an application is added in the [SMS Console], such as 1400006666 */
+    /* SMS application ID, which is the `SDKAppID` generated after an application is added in the [SMS console], such as 1400006666 */
     $req->SmsSdkAppid = "1400787878";
-    /* The content of SMS signature should be encoded in UTF-8. You must enter an approved signature, which can be viewed in the [SMS Console] */
+    /* SMS signature content, which should be encoded in UTF-8. You must enter an approved signature, which can be viewed in the [SMS console] */
     $req->Sign = "xxx";
     /* SMS code number extension, which is not activated by default. If you need to activate it, please contact [SMS Helper] */
     $req->ExtendCode = "0";
     /* Target mobile number in the e.164 standard (+[country/region code][mobile number])
 	   * Example: +8613711112222, which has a + sign followed by 86 (country/region code) and then by 13711112222 (mobile number). Up to 200 mobile numbers are supported */
     $req->PhoneNumberSet = array("+8613711112222", "+8613711333222", "+8613711144422");
-    /* `senderid` for global SMS, which is not activated by default. If you need to activate it, please contact [SMS Helper] for assistance. This parameter should be left empty for Mainland China SMS */
+    /* `senderid` for Global SMS, which is not activated by default. If you need to activate it, please contact [SMS Helper] for assistance. This parameter should be left empty for Mainland China SMS */
     $req->SenderId = "xxx";
     /* User session content, which can carry context information such as user-side ID and will be returned as-is by the server */
     $req->SessionContext = "xxx";
-    /* Template ID. You must enter the ID of an approved template, which can be viewed in the [SMS Console] */
+    /* Template ID. You must enter the ID of an approved template, which can be viewed in the [SMS console] */
     $req->TemplateID = "449739";
     /* Template parameters. If there are no template parameters, leave it empty */
     $req->TemplateParamSet = array("0");
@@ -231,7 +230,7 @@ try {
      * Instantiate an authentication object. The Tencent Cloud account key pair `secretId` and `secretKey` need to be passed in as the input parameters
      * This example uses the way to read from the environment variable, so you need to set these two values in the environment variable in advance
      * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others
-     * Query the CAM key: https://console.cloud.tencent.com/cam/capi 
+     * Query the CAM key: https://console.cloud.tencent.com/cam/capi
      */
 
     $cred = new Credential("xxx", "xxx");
@@ -258,10 +257,10 @@ try {
      * You can view the definition of the request parameters in the API documentation at the official website or by redirecting to the definition of the request object
      * Settings of a basic parameter:
        * Help link:
-       * SMS Console: https://console.cloud.tencent.com/smsv2
-       * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 */
+       * SMS console: https://console.cloud.tencent.com/smsv2
+       * SMS Helper: https://cloud.tencent.com/document/product/382/3773 */
 
-    /* SMS application ID, which is the actual `SDKAppID` generated after an application is added in the [SMS Console], such as 1400006666 */
+    /* SMS application ID, which is the `SDKAppID` generated after an application is added in the [SMS console], such as 1400006666 */
     $req->SmsSdkAppid = "1400787878";
     /* Maximum number of pulled entries. Maximum value: 100 */
     $req->Limit = 10;
@@ -302,7 +301,7 @@ try {
      * Instantiate an authentication object. The Tencent Cloud account key pair `secretId` and `secretKey` need to be passed in as the input parameters
      * This example uses the way to read from the environment variable, so you need to set these two values in the environment variable in advance
      * You can also write the key pair directly into the code, but be careful not to copy, upload, or share the code to others
-     * Query the CAM key: https://console.cloud.tencent.com/cam/capi 
+     * Query the CAM key: https://console.cloud.tencent.com/cam/capi
      */
 
     $cred = new Credential("xxx", "xxx");
@@ -329,10 +328,10 @@ try {
      * You can view the definition of the request parameters in the API documentation at the official website or by redirecting to the definition of the request object
      * Settings of a basic parameter:
        * Help link:
-       * SMS Console: https://console.cloud.tencent.com/smsv2
-       * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 */
+       * SMS console: https://console.cloud.tencent.com/smsv2
+       * SMS Helper: https://cloud.tencent.com/document/product/382/3773 */
 
-    /* SMS application ID, which is the actual `SDKAppID` generated after an application is added in the [SMS Console], such as 1400006666 */
+    /* SMS application ID, which is the `SDKAppID` generated after an application is added in the [SMS console], such as 1400006666 */
     $req->SmsSdkAppid = "1400787878";
     /* Maximum number of pulled entries. Maximum value: 100 */
     $req->Limit = 10;
@@ -341,7 +340,7 @@ try {
     /* Start time of pull in the format of `yyyymmddhh` accurate to the hour */
     $req->StartDateTime = "2019122500";
     /* End time of pull in the format of `yyyymmddhh` accurate to the hour
-	 * Note: `EndDataTime` must be later than `StartDateTime` */
+	 * Note: `EndDataTime` must be after `StartDateTime` */
     $req->EndDataTime = "2019122523";
 
     // Initialize the request by calling the `SendStatusStatistics` method on the client object. Note: the request method name corresponds to the request object
@@ -358,7 +357,7 @@ catch(TencentCloudSDKException $e) {
 }
 ```
 
-## FAQs
+## FAQs[](id:point)
 ### Proxy
 If there is a proxy in your environment, you need to set the system environment variable `https_proxy`; otherwise, it may not be called normally, and a connection timeout exception will be thrown.
 You can also use `GuzzleHttp` to configure the proxy:

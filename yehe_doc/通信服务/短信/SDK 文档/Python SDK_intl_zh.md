@@ -1,16 +1,16 @@
-SDK 3.0是云 API 3.0平台的配套工具，您可以通过 SDK 使用所有 [短信 API](https://intl.cloud.tencent.com/document/product/382/34689)。新版 SDK 实现了统一化，具有各个语言版本的 SDK 使用方法相同，接口调用方式相同，错误码相同以及返回包格式相同等优点。
+SDK 3.0是云 API 3.0平台的配套工具，您可以通过 SDK 使用所有 [短信 API](https://intl.cloud.tencent.com/document/product/382/40463)。新版 SDK 实现了统一化，具有各个语言版本的 SDK 使用方法相同，接口调用方式相同，错误码相同以及返回包格式相同等优点。
 >!
 >- 发送短信相关接口
 >一次群发请求最多支持200个号码。
 >- 签名、正文模板相关接口
->个人认证用户不支持使用签名、正文模板相关接口，只能通过短信控制台 [管理短信签名](https://intl.cloud.tencent.com/document/product/382/35456) 和 管理短信正文模板。如需使用该类接口，请将 “个人认证” 变更为 “企业认证”。
+>个人认证用户不支持使用签名、正文模板相关接口，只能通过短信控制台 [管理短信签名](https://intl.cloud.tencent.com/document/product/382/35456) 和 [管理短信正文模板](https://intl.cloud.tencent.com/document/product/382/35457)。如需使用该类接口，请将 “个人认证” 变更为 “企业认证”。
 
 
 
 ## 前提条件
 
 - 已开通短信服务，具体操作请参见 [国内短信快速入门](https://intl.cloud.tencent.com/document/product/382/35449)。
-- 如需发送国内短信，需要先购买国内短信套餐包。
+- 如需发送国内短信，需要先 购买国内短信套餐包。
 - 已准备依赖环境：Python 2.7 - 3.6 版本。
 - 已在访问管理控制台 >【[API密钥管理](https://console.cloud.tencent.com/cam/capi)】页面获取 SecretID 和 SecretKey。
  - SecretID 用于标识 API 调用者的身份。
@@ -18,7 +18,7 @@ SDK 3.0是云 API 3.0平台的配套工具，您可以通过 SDK 使用所有 [�
 - 短信的调用地址为`sms.tencentcloudapi.com`。
 
 ## 相关资料
-- 各个接口及其参数的详细介绍请参见 [API 文档](https://intl.cloud.tencent.com/document/product/382/34689)。
+- 各个接口及其参数的详细介绍请参见 [API 文档](https://intl.cloud.tencent.com/document/product/382/40463)。
 - 下载 SDK 源码请访问 [Python SDK 源码](https://github.com/TencentCloud/tencentcloud-sdk-python)。
 
 ## 安装 SDK
@@ -38,8 +38,7 @@ pip install tencentcloud-sdk-python
     $ python setup.py install
 ```
 
-<span id="example"></span>
-## 示例代码
+## 示例代码[](id:example)
 >?所有示例代码仅作参考，无法直接编译和运行，需根据实际情况进行修改，您也可以根据实际需求使用 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2019-07-11&Action=SendSms) 自动化生成 Demo 代码。
 
 每个接口都有一个对应的 Request 结构和一个 Response 结构。本文仅列举几个常用功能的示例代码，更多示例请参见 [Python SDK 示例](https://github.com/TencentCloud/tencentcloud-sdk-python/tree/master/examples/sms)。
@@ -97,7 +96,7 @@ try:
     # SDK 提供对基本类型的指针引用封装函数
     # 帮助链接：
     # 短信控制台：https://console.cloud.tencent.com/smsv2
-    # sms helper：https://intl.cloud.tencent.com/document/product/382/3773
+    # sms helper：https://cloud.tencent.com/document/product/382/3773
 
     # 模板名称 
 	req.TemplateName = "腾讯云"
@@ -176,7 +175,7 @@ try:
     # SDK 提供对基本类型的指针引用封装函数
     # 帮助链接：
     # 短信控制台：https://console.cloud.tencent.com/smsv2
-    # sms helper：https://intl.cloud.tencent.com/document/product/382/3773
+    # sms helper：https://cloud.tencent.com/document/product/382/3773
 
     # 短信应用 ID: 在 [短信控制台] 添加应用后生成的实际 SDKAppID，例如1400006666
     req.SmsSdkAppid = "1400787878"
@@ -262,7 +261,7 @@ try:
     # SDK 提供对基本类型的指针引用封装函数
     # 帮助链接：
     # 短信控制台：https://console.cloud.tencent.com/smsv2
-    # sms helper：https://intl.cloud.tencent.com/document/product/382/3773
+    # sms helper：https://cloud.tencent.com/document/product/382/3773
 
     # 短信应用 ID: 在 [短信控制台] 添加应用后生成的实际 SDKAppID，例如1400006666
     req.SmsSdkAppid = "1400787878"
@@ -334,7 +333,7 @@ try:
     # SDK 提供对基本类型的指针引用封装函数
     # 帮助链接：
     # 短信控制台：https://console.cloud.tencent.com/smsv2
-    # sms helper：https://intl.cloud.tencent.com/document/product/382/3773
+    # sms helper：https://cloud.tencent.com/document/product/382/3773
 
     # 短信应用 ID: 在 [短信控制台] 添加应用后生成的实际 SDKAppID，例如1400006666
     req.SmsSdkAppid = "1400787878"
@@ -357,5 +356,4 @@ try:
 except TencentCloudSDKException as err:
     print(err)
 ```
-
 

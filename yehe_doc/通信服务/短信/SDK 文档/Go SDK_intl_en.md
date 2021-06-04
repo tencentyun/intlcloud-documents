@@ -1,28 +1,28 @@
-SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use all [SMS APIs](https://intl.cloud.tencent.com/document/product/382/34689) through the SDK. The new SDK version is unified and features the same SDK usage, API call methods, error codes, and returned packet formats for different programming languages.
+SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use all [SMS APIs](https://intl.cloud.tencent.com/document/product/382/40463) through the SDK. The new SDK version is unified and features the same SDK usage, API call methods, error codes, and returned packet formats for different programming languages.
 >!
 >- SMS sending APIs
 >One message can be sent to up to 200 numbers at a time.
 >- Signature and body template APIs
->Individual users have no permission to use signature and body template APIs and can [manage SMS signatures](https://intl.cloud.tencent.com/document/product/382/35456) and SMS body templates only in the SMS Console. To use the APIs, change "Individual Identity" to "Organizational Identity".
+>Individual users have no permission to use signature and body template APIs and can [manage SMS signatures](https://intl.cloud.tencent.com/document/product/382/35456) and [SMS body templates](https://intl.cloud.tencent.com/document/product/382/35457) only in the SMS console. To use the APIs, change "Individual Identity" to "Organizational Identity".
 
 
 ## Prerequisites
 
 - You have activated SMS. For detailed directions, please see [Getting Started with Mainland China SMS](https://intl.cloud.tencent.com/document/product/382/35449).
-- If you need to send SMS messages in Mainland China, you need to purchase a Mainland China SMS package first.
-- You have prepared the dependent environment: Node.js 7.10.1 or above.
-- You have obtained the `SecretID` and `SecretKey` on the **[API Key Management](https://console.cloud.tencent.com/cam/capi)** page in the CAM Console.
+- If you need to send Mainland China SMS messages, you need to purchase a Mainland China SMS package first.
+- You have prepared the dependent environment: Go 1.9 or above.
+- You have obtained the `SecretID` and `SecretKey` on the **[API Key Management](https://console.cloud.tencent.com/cam/capi)** page in the CAM console.
  - `SecretID` is used to identify the API caller.
  - `SecretKey` is used to encrypt the string to sign that can be verified on the server. **You should keep it private and avoid disclosure.**
-- The call address of the SMS service is `sms.tencentcloudapi.com`.
+- The endpoint of the SMS service is `sms.tencentcloudapi.com`.
 
 ## Relevant Documents
-- For more information on the APIs and their parameters, please see [API Documentation](https://intl.cloud.tencent.com/document/product/382/34689).
+- For more information on the APIs and their parameters, please see [API Documentation](https://intl.cloud.tencent.com/document/product/382/40463).
 - You can download the SDK source code [here](https://github.com/TencentCloud/tencentcloud-sdk-go).
 
 ## Installing SDK
 ### Installing through go get (recommended)
-You are recommended to install the SDK by using the tool that comes with the language:
+We recommend you install the SDK by using the tool that comes with the language:
 ```
  go get -u github.com/tencentcloud/tencentcloud-sdk-go
 ```
@@ -43,7 +43,6 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-
 	"github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common"
 	"github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common/errors"
 	"github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common/profile"
@@ -89,22 +88,22 @@ func main() {
 	/* Instantiate a request object. You can further set the request parameters according to the API called and actual conditions
 	* You can directly check the SDK source code to determine which attributes of the API can be set
 	 * An attribute may be of a basic type or import another data structure
-	 * You are recommended to use the IDE for development where you can easily redirect to and view the documentation of each API and data structure */
+	 * We recommend you use the IDE for development where you can easily redirect to and view the documentation of each API and data structure */
 	request := sms.NewAddSmsTemplateRequest()
 
 	/* Settings of a basic parameter:
 	 * The SDK uses the pointer style to specify parameters, so even for basic parameters, you need to use pointers to assign values to them
 	 * The SDK provides encapsulation functions for importing the pointers of basic parameters
 	 * Help link:
-	 * SMS Console: https://console.cloud.tencent.com/smsv2
-	 * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 
+	 * SMS console: https://console.cloud.tencent.com/smsv2
+	 * SMS Helper: https://cloud.tencent.com/document/product/382/3773
 	 */
 
 	/* Template name */
 	request.TemplateName = common.StringPtr("Tencent Cloud")
 	/* Template content */
 	request.TemplateContent = common.StringPtr("Your login verification code is {1}. Please enter it within {2} minutes. If the login was not initiated by you, please ignore this message.")
-	/* SMS type. 0: general SMS; 1: marketing SMS */
+	/* SMS type. 0: regular SMS; 1: marketing SMS */
 	request.SmsType = common.Uint64Ptr(0)
 	/* Whether it is Global SMS:
 	   0: Mainland China SMS
@@ -184,22 +183,22 @@ func main() {
 	/* Instantiate a request object. You can further set the request parameters according to the API called and actual conditions
 	* You can directly check the SDK source code to determine which attributes of the API can be set
 	 * An attribute may be of a basic type or import another data structure
-	 * You are recommended to use the IDE for development where you can easily redirect to and view the documentation of each API and data structure */
+	 * We recommend you use the IDE for development where you can easily redirect to and view the documentation of each API and data structure */
 	request := sms.NewSendSmsRequest()
 
 	/* Settings of a basic parameter:
 	 * The SDK uses the pointer style to specify parameters, so even for basic parameters, you need to use pointers to assign values to them
 	 * The SDK provides encapsulation functions for importing the pointers of basic parameters
 	 * Help link:
-	 * SMS Console: https://console.cloud.tencent.com/smsv2
-	 * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 
+	 * SMS console: https://console.cloud.tencent.com/smsv2
+	 * SMS Helper: https://cloud.tencent.com/document/product/382/3773
 	 */
 
-	/* SMS application ID, which is the actual `SDKAppID` generated after an application is added in the [SMS Console], such as 1400006666 */
+	/* SMS application ID, which is the `SDKAppID` generated after an application is added in the [SMS console], such as 1400006666 */
 	request.SmsSdkAppid = common.StringPtr("1400787878")
-	/* The content of SMS signature should be encoded in UTF-8. You must enter an approved signature, which can be viewed in the [SMS Console] */
+	/* SMS signature content, which should be encoded in UTF-8. You must enter an approved signature, which can be viewed in the [SMS console] */
 	request.Sign = common.StringPtr("xxx")
-	/* `senderid` for global SMS, which is not activated by default. If you need to activate it, please contact [SMS Helper] for assistance. This parameter should be left empty for Mainland China SMS */
+	/* `senderid` for Global SMS, which is not activated by default. If you need to activate it, please contact [SMS Helper] for assistance. This parameter should be left empty for Mainland China SMS */
 	request.SenderId = common.StringPtr("xxx")
 	/* User session content, which can carry context information such as user-side ID and will be returned as-is by the server */
 	request.SessionContext = common.StringPtr("xxx")
@@ -207,7 +206,7 @@ func main() {
 	request.ExtendCode = common.StringPtr("0")
 	/* Template parameters. If there are no template parameters, leave it empty */
 	request.TemplateParamSet = common.StringPtrs([]string{"0"})
-	/* Template ID. You must enter the ID of an approved template, which can be viewed in the [SMS Console] */
+	/* Template ID. You must enter the ID of an approved template, which can be viewed in the [SMS console] */
 	request.TemplateID = common.StringPtr("449739")
 	/* Target mobile number in the e.164 standard (+[country/region code][mobile number])
 	 * Example: +8613711112222, which has a + sign followed by 86 (country/region code) and then by 13711112222 (mobile number). Up to 200 mobile numbers are supported */
@@ -286,18 +285,18 @@ func main() {
 	/* Instantiate a request object. You can further set the request parameters according to the API called and actual conditions
 	 * You can directly check the SDK source code to determine which attributes of the API can be set
 	 * An attribute may be of a basic type or import another data structure
-	 * You are recommended to use the IDE for development where you can easily redirect to and view the documentation of each API and data structure */
+	 * We recommend you use the IDE for development where you can easily redirect to and view the documentation of each API and data structure */
 	request := sms.NewPullSmsSendStatusRequest()
 
 	/* Settings of a basic parameter:
 	 * The SDK uses the pointer style to specify parameters, so even for basic parameters, you need to use pointers to assign values to them
 	 * The SDK provides encapsulation functions for importing the pointers of basic parameters
 	 * Help link:
-	 * SMS Console: https://console.cloud.tencent.com/smsv2
-	 * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 
+	 * SMS console: https://console.cloud.tencent.com/smsv2
+	 * SMS Helper: https://cloud.tencent.com/document/product/382/3773
 	 */
 
-	/* SMS application ID, which is the actual `SDKAppID` generated after an application is added in the [SMS Console], such as 1400006666 */
+	/* SMS application ID, which is the `SDKAppID` generated after an application is added in the [SMS console], such as 1400006666 */
 	request.SmsSdkAppid = common.StringPtr("1400787878")
 	/* Maximum number of pulled entries. Maximum value: 100 */
 	request.Limit = common.Uint64Ptr(10)
@@ -373,18 +372,18 @@ func main() {
 	/* Instantiate a request object. You can further set the request parameters according to the API called and actual conditions
 	 * You can directly check the SDK source code to determine which attributes of the API can be set
 	 * An attribute may be of a basic type or import another data structure
-	 * You are recommended to use the IDE for development where you can easily redirect to and view the documentation of each API and data structure */
+	 * We recommend you use the IDE for development where you can easily redirect to and view the documentation of each API and data structure */
 	request := sms.NewSendStatusStatisticsRequest()
 
 	/* Settings of a basic parameter:
 	 * The SDK uses the pointer style to specify parameters, so even for basic parameters, you need to use pointers to assign values to them
 	 * The SDK provides encapsulation functions for importing the pointers of basic parameters
 	 * Help link:
-	 * SMS Console: https://console.cloud.tencent.com/smsv2
-	 * SMS helper: https://intl.cloud.tencent.com/document/product/382/3773 
+	 * SMS console: https://console.cloud.tencent.com/smsv2
+	 * SMS Helper: https://cloud.tencent.com/document/product/382/3773
 	 */
 
-	/* SMS application ID, which is the actual `SDKAppID` generated after an application is added in the [SMS Console], such as 1400006666 */
+	/* SMS application ID, which is the `SDKAppID` generated after an application is added in the [SMS console], such as 1400006666 */
 	request.SmsSdkAppid = common.StringPtr("1400787878")
 	/* Maximum number of pulled entries. Maximum value: 100 */
 	request.Limit = common.Uint64Ptr(0)
@@ -393,7 +392,7 @@ func main() {
 	/* Start time of pull in the format of `yyyymmddhh` accurate to the hour */
 	request.StartDateTime = common.Uint64Ptr(2019122400)
 	/* End time of pull in the format of `yyyymmddhh` accurate to the hour
-	 * Note: `EndDataTime` must be later than `StartDateTime` */
+	 * Note: `EndDataTime` must be after `StartDateTime` */
 	request.EndDataTime = common.Uint64Ptr(2019122523)
 
 	// Call the API you want to access through the client object. You need to pass in the request object
@@ -412,5 +411,4 @@ func main() {
 	fmt.Printf("%s", b)
 }
 ```
-
 
