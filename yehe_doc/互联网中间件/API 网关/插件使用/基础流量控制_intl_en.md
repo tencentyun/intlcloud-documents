@@ -8,7 +8,7 @@ Basic traffic throttling plugin is a powerful traffic throttling component provi
 
 1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway).
 2. On the left sidebar, click **Plugin** to enter the plugin list page.
-3. Click **Create** in the top-left corner of the page and select **Basic Traffic Throttling** as the plugin type to create a basic traffic throttling plugin.
+3. Click **Create** in the top-left corner of the page and select **Basic Throttling** as the plugin type to create a basic traffic throttling plugin.
 
 | Parameter | Required | Description |
 |---------|---------|---------|
@@ -18,7 +18,7 @@ Basic traffic throttling plugin is a powerful traffic throttling component provi
 | Client IP Threshold | No | The upper limit of the number of times a client IP can be accessed within a certain period of time, which takes effect for all client IPs bound to this API. |
 | Special Application | No | Up to 30 items can be entered. For such applications, the basic API traffic throttling of the traffic throttling policy still takes effect, but you need to set an additional traffic throttling threshold for them. Meanwhile, the basic application traffic throttling and user traffic throttling of the traffic throttling policy will stop working for such applications. |
 | <nobr>Special Client IP</nobr> | No | Up to 30 items can be entered. For such IPs, the basic API traffic throttling of the traffic throttling policy still takes effect, but you need to set an additional traffic throttling threshold for them. Meanwhile, the basic application traffic throttling and client IP traffic throttling of the traffic throttling policy will stop working for such IPs. |
- 
+
  ![](https://main.qcloudimg.com/raw/d244afb76f2a5bfc3bea4cb9acb31cc0.png)
 
 ### Step 2. Bind an API and make the plugin effective

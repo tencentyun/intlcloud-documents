@@ -28,7 +28,7 @@ You can click the following tabs to view the directions of the corresponding aut
 1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway) and click **Service** on the left sidebar.
 2. In the service list, click the name of the target service to view it.
 3. In the service information, click the **Manage API** tab and click **Authorization** behind the API list to start authorization.
-4. Select the environment and application to be authorized. On the left are your applications. Click **Search** directly, and the applications under the current account will be automatically loaded.
+4. Select the environment and application to be authorized. Your applications are on the left. Click **Search** directly, and the applications under the current account will be automatically loaded.
 :::
 ::: Partner authorization
 1. Log in to the API Gateway console and click **Service** on the left sidebar.
@@ -43,6 +43,6 @@ You can click the following tabs to view the directions of the corresponding aut
 
 ## Notes
 
-- The key pair of `AppKey` and `AppSecret` has all the permissions of the application and should be kept private. If it is leaked, you can reset it in the API Gateway console.
+- The key pair of `AppKey` and `AppSecret` has all the permissions of the application and should be kept private. If it is disclosed, you can reset it in the API Gateway console.
 - You can create multiple applications and authorize them to different APIs according to your business needs.
 - You can create, modify, and delete applications, view application details, manage keys, and view authorized APIs in the API Gateway console.
