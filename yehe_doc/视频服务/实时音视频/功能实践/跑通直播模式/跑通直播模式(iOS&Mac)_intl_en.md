@@ -14,10 +14,10 @@ If a "user" wants to mic on, the role needs to be switched (switchRole) to "anch
 
 
 ## Sample Code
-You can log in to [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo) to get the sample code related to this document.
+You can log in to [GitHub] to get the sample code related to this document.
 
 
->?If your access to GitHub is slow, you can directly download [TXLiteAVSDK_TRTC_iOS_latest.zip](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip).
+>?If your access to GitHub is slow, you can directly download [TXLiteAVSDK_TRTC_iOS_latest.zip](https://liteav.sdk.qcloud.com/download/latest.com/TXLiteAVSDK_TRTC_iOS_latest.zip).
 
 
 ## Directions
@@ -75,7 +75,7 @@ func onError(_ errCode: TXLiteAVError, errMsg: String?, extInfo: [AnyHashable : 
 
 <span id="step4"> </span>
 ### Step 4. Assemble the room entry parameter `TRTCParams`
-When calling the [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) API, you need to enter a key parameter [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCParams), which includes the following required fields:
+When calling the [enterRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) API, you need to enter a key parameter [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCParams), which includes the following required fields:
 
 | Parameter | Field Type | Description | Example | 
 |---------|---------|---------|---------|
@@ -89,12 +89,12 @@ When calling the [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.h
 
 <span id="step5"> </span>
 ### Step 5. The anchor enables camera preview and mic capture
-1. The anchor can call [startLocalPreview()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3fc1ae11b21944b2f354db258438100e) to enable the preview of local camera, and the SDK will request the system camera access.
-2. The anchor can call [setLocalViewFillMode()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a961596f832657bfca81fd675878a2d15) to set the display mode of the local video image:
+1. The anchor can call [startLocalPreview()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a3fc1ae11b21944b2f354db258438100e) to enable the preview of local camera, and the SDK will request the system camera access.
+2. The anchor can call [setLocalViewFillMode()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a961596f832657bfca81fd675878a2d15) to set the display mode of the local video image:
  - `Fill` indicates the fill mode where the image may be scaled up proportionally or cropped, but no black bars will exist.
  - `Fit` indicates the fit mode where the image may be scaled down proportionally to fit the screen, but black bars may exist.
-3. The anchor can call [setVideoEncoderParam()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e) to set the encoding parameter of the local video, which determines the [image quality](https://intl.cloud.tencent.com/document/product/647/35153) of the video watched by other users in the room.
-4. The anchor can call [startLocalAudio()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3177329bc84e94727a1be97563800beb) to enable the mic, and the SDK will request the system mic access.
+3. The anchor can call [setVideoEncoderParam()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e) to set the encoding parameter of the local video, which determines the [image quality](https://intl.cloud.tencent.com/document/product/647/35153) of the video watched by other users in the room.
+4. The anchor can call [startLocalAudio()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a3177329bc84e94727a1be97563800beb) to enable the mic, and the SDK will request the system mic access.
 
 ```swift
 // Sample code: send local audio/video streams
@@ -112,22 +112,22 @@ trtcCloud.startLocalAudio()
 <span id="step6"> </span>
 ### Step 6. The anchor sets beauty filters
 
-1. The anchor can call [getBeautyManager()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a4fb05ae6b5face276ace62558731280a) to get the beauty filter setting API [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html#interfaceTXBeautyManager).
-2. The anchor can call [setBeautyStyle()](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html#a8f2378a87c2e79fa3b978078e534ef4a) to set the beauty filter style.
+1. The anchor can call [getBeautyManager()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a4fb05ae6b5face276ace62558731280a) to get the beauty filter setting API [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html#interfaceTXBeautyManager).
+2. The anchor can call [setBeautyStyle()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html#a8f2378a87c2e79fa3b978078e534ef4a) to set the beauty filter style.
  - Smooth: smooth style, which has more obvious skin smoothing effect, similar to the selfie style of internet influencers.
  - Nature: natural style, which retains more facial details and seems more natural subjectively.
  - Pitu: it is supported only for the [Enterprise Edition](https://intl.cloud.tencent.com/document/product/647/34615#Enterprise).
-3. The anchor can call [setBeautyLevel()](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html#af864d9466d5161e1926e47bae0e3f027) to set the skin smoothing level (level 5 is generally okay).
-4. The anchor can call [setWhitenessLevel()](http://doc.qcloudtrtc.com/group__TXBeautyManager__ios.html#a199b265f6013e0cca0ff99f731d60ff4) to set the skin brightening level (level 5 is generally okay).
-5. As the tone of iPhone cameras is a little bit yellowish, it is recommended to call [setFilter()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a1b0c2a9e82a408881281c7468a74f2c0) to add the skin brightening effect. The corresponding filter file can be downloaded [here](https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/filter/filterPNG.zip).
+3. The anchor can call [setBeautyLevel()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html#af864d9466d5161e1926e47bae0e3f027) to set the skin smoothing level (level 5 is generally okay).
+4. The anchor can call [setWhitenessLevel()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__ios.html#a199b265f6013e0cca0ff99f731d60ff4) to set the skin brightening level (level 5 is generally okay).
+5. As the tone of iPhone cameras is a little bit yellowish, it is recommended to call [setFilter()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a1b0c2a9e82a408881281c7468a74f2c0) to add the skin brightening effect. The corresponding filter file can be downloaded [here](https://tliteav.sdk.qcloud.com/doc/res/trtc/filter/filterPNG.zip).
 
 <span id="step7"> </span>
 ### Step 7. The anchor creates a room and starts push
-1. The anchor sets the `role` field in [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCParams) to **`TRTCRoleType.anchor`**, which indicates that the current user role is anchor.
-2. The anchor can call [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) to create an audio/video room whose ID is the `roomId` field value in the `TRTCParams` parameter and specify the **`appScene`** parameter:
+1. The anchor sets the `role` field in [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCParams) to **`TRTCRoleType.anchor`**, which indicates that the current user role is anchor.
+2. The anchor can call [enterRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) to create an audio/video room whose ID is the `roomId` field value in the `TRTCParams` parameter and specify the **`appScene`** parameter:
  - TRTCAppScene.LIVE: interactive video live streaming mode, which is used as an example in this document.
  - TRTCAppScene.voiceChatRoom: interactive audio live streaming mode.
-3. After a room is successfully created, the anchor starts encoding and transferring audio/video data. At the same time, the SDK will call back the [onEnterRoom(result)](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a6960aca54e2eda0f424f4f915908a3c5) event. If `result` is greater than 0, the room entry succeeds, and the specific value indicates the time in milliseconds (ms) used for entering the room; if `result` is less than 0, the room entry fails, and the specific value indicates the error code of the failure.
+3. After a room is successfully created, the anchor starts encoding and transferring audio/video data. At the same time, the SDK will call back the [onEnterRoom(result)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a6960aca54e2eda0f424f4f915908a3c5) event. If `result` is greater than 0, the room entry succeeds, and the specific value indicates the time in milliseconds (ms) used for entering the room; if `result` is less than 0, the room entry fails, and the specific value indicates the error code of the failure.
 
 ```swift
 func enterRoom() {
@@ -150,20 +150,20 @@ func onEnterRoom(_ result: Int) {
 
 <span id="step8"> </span>
 ### Step 8. The viewer enters the room to watch the live stream
-1. The viewer sets the field `role` in [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCParams) to **`TRTCRoleType.audience`**, which indicates that the current user role is viewer.
-2. The viewer can call [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) to enter the audio/video room whose ID is the `roomId` field value in the `TRTCParams` parameter and specify the **`appScene`** parameter:
+1. The viewer sets the field `role` in [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCParams) to **`TRTCRoleType.audience`**, which indicates that the current user role is viewer.
+2. The viewer can call [enterRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d) to enter the audio/video room whose ID is the `roomId` field value in the `TRTCParams` parameter and specify the **`appScene`** parameter:
  - TRTCAppScene.LIVE: interactive video live streaming mode, which is used as an example in this document.
  - TRTCAppScene.voiceChatRoom: interactive audio live streaming mode.
 3. View the anchor's video image:
- - If the viewer knows the anchor's `userId` in advance, the viewer can use it to call [startRemoteView(userId, view: view)](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49) after successfully entering the room so as to display the anchor's video image.
- - If the viewer does not know the anchor's `userId`, the viewer will receive the [onUserVideoAvailable()](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) event notification after successfully entering the room. The viewer can use the anchor's `userId` obtained from the callback to call [startRemoteView(userId, view: view)](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49) so as to display the anchor's video image.
+ - If the viewer knows the anchor's `userId` in advance, the viewer can use it to call [startRemoteView(userId, view: view)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49) after successfully entering the room so as to display the anchor's video image.
+ - If the viewer does not know the anchor's `userId`, the viewer will receive the [onUserVideoAvailable()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) event notification after successfully entering the room. The viewer can use the anchor's `userId` obtained from the callback to call [startRemoteView(userId, view: view)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49) so as to display the anchor's video image.
 
 
 <span id="step9"> </span>
 ### Step 9. The viewer co-anchors with the anchor
-1. The viewer can call [switch(TRTCRoleType.anchor)](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a5f4598c59a9c1e66938be9bfbb51589c) to switch the role to anchor (TRTCRoleType.anchor).
-2. The viewer can call [startLocalPreview()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3fc1ae11b21944b2f354db258438100e) to enable the local image.
-3. The viewer can call [startLocalAudio()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3177329bc84e94727a1be97563800beb) to enable mic capture:
+1. The viewer can call [switch(TRTCRoleType.anchor)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a5f4598c59a9c1e66938be9bfbb51589c) to switch the role to anchor (TRTCRoleType.anchor).
+2. The viewer can call [startLocalPreview()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a3fc1ae11b21944b2f354db258438100e) to enable the local image.
+3. The viewer can call [startLocalAudio()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a3177329bc84e94727a1be97563800beb) to enable mic capture:
 
 ```swift
 // Sample code: the viewer mics on
@@ -183,10 +183,10 @@ trtcCloud.stopLocalPreview()
 
 In TRTC, two anchors in different rooms can use the "cross-room call" feature to engage in "cross-room co-anchoring" without the need to exit their current rooms.
 
-1. Anchor A calls the [connectOtherRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a062bc48550b479a6b7c1662836b8c4a5) API. Currently, the API parameters are in JSON format, and `roomId` and `userId` of anchor B need to be spliced into a parameter in the format of `{"roomId": "978","userId": "userB"}` and then passed in to the API function.
-2. After the cross-room call is successfully made, anchor A will receive the [onConnectOtherRoom()](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a69e5b1d59857956f736c204fe765ea9a) event callback. At the same time, all users in both rooms will receive the [onUserVideoAvailable()](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) and [onUserAudioAvailable()](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a8c885eeb269fc3d2e085a5711d4431d5) event callbacks.
+1. Anchor A calls the [connectOtherRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a062bc48550b479a6b7c1662836b8c4a5) API. Currently, the API parameters are in JSON format, and `roomId` and `userId` of anchor B need to be spliced into a parameter in the format of `{"roomId": "978","userId": "userB"}` and then passed in to the API function.
+2. After the cross-room call is successfully made, anchor A will receive the [onConnectOtherRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a69e5b1d59857956f736c204fe765ea9a) event callback. At the same time, all users in both rooms will receive the [onUserVideoAvailable()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a533d6ea3982a922dd6c0f3d05af4ce80) and [onUserAudioAvailable()](hhttps://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a8c885eeb269fc3d2e085a5711d4431d5) event callbacks.
  For example, when anchor A in room "001" uses `connectOtherRoom()` to successfully call anchor B in room "002", all users in room "001" will receive the `onUserVideoAvailable(B, available: true)` and `onUserAudioAvailable(B, available: true)` callbacks of anchor B, and all users in room "002" will receive the `onUserVideoAvailable(A, available: true)` and `onUserAudioAvailable(A, available: true)` callbacks of anchor A.
-3. Users in both rooms can call [startRemoteView(userId, view: view)](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49) to display the video image of the anchor in the other room, and audio will be automatically played back.
+3. Users in both rooms can call [startRemoteView(userId, view: view)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af85283710ba6071e9fd77cc485baed49) to display the video image of the anchor in the other room, and audio will be automatically played back.
 
 ```swift
 // Sample code: cross-room co-anchoring
@@ -202,7 +202,7 @@ trtcCloud.connectOtherRoom(jsonString)
 <span id="step11"> </span>
 ### Step 11. Exit the current room
 
-Call the [exitRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a715f5b669ad1d7587ae19733d66954f3) method to exit the room. The SDK needs to disable and release hardware devices such as the camera and mic during room exit. Therefore, room exit is not completed as soon as the method is called. Only after the [onExitRoom()](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a6a98fcaac43fa754cf9dd80454897bea) callback is received can the room exit be considered completed.
+Call the [exitRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a715f5b669ad1d7587ae19733d66954f3) method to exit the room. The SDK needs to disable and release hardware devices such as the camera and mic during room exit. Therefore, room exit is not completed as soon as the method is called. Only after the [onExitRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a6a98fcaac43fa754cf9dd80454897bea) callback is received can the room exit be considered completed.
 
 ```swift
 // Please wait for the `onExitRoom` event callback after calling the room exit method
