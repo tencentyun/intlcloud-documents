@@ -24,13 +24,13 @@ Authorization refers to granting an application the permission to call an API. T
 
 You can click the following tabs to view the directions of the corresponding authorization method.
 <dx-tabs>
-::: Direct authorization
+::: Direct\sauthorization
 1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway) and click **Service** on the left sidebar.
 2. In the service list, click the name of the target service to view it.
 3. In the service information, click the **Manage API** tab and click **Authorization** behind the API list to start authorization.
 4. Select the environment and application to be authorized. Your applications are on the left. Click **Search** directly, and the applications under the current account will be automatically loaded.
 :::
-::: Partner authorization
+::: Partner\sauthorization
 1. Log in to the API Gateway console and click **Service** on the left sidebar.
 2. In the service list, click the name of the target service to view it.
 3. In the service information, click the **Manage API** tab and click **Authorization** behind the API list to start authorization.
