@@ -18,12 +18,16 @@ LogListener supports only Linux 64-bit operating systems and does not support Wi
 
 Download link of the latest version LogListener: [download via the public network](https://mirrors.tencent.com/install/cls/loglistener-linux-x64-2.5.8.tar.gz)、[download via the private network](http://mirrors.tencentyun.com/install/cls/loglistener-linux-x64-2.5.8.tar.gz)
 
-Download the LogListener installation package and decompress it to the installation path (`/usr/local/` in this example). Then go to the LogListener directory `loglistener/tools` and run the following installation command:
+Download the LogListener installation package and decompress it to the installation path (`/usr/local/` in this example). Then go to the LogListener directory `loglistener/tools`.
+The action command in a public network is as follows: 
 ```plaintext
-wget https://mirrors.tencentyun.com/install/cls/loglistener-linux-x64-2.5.8.tar.gz && tar -zxvf loglistener-linux-x64-2.5.8.tar.gz -C /usr/local && cd /usr/local/loglistener-2.5.8/tools && ./loglistener.sh install
+wget https://mirrors.tencent.com/install/cls/loglistener-linux-x64-2.5.8.tar.gz  && tar -zxvf loglistener-linux-x64-2.5.8.tar.gz -C /usr/local && cd /usr/local/loglistener-2.5.8/tools && ./loglistener.sh install
 ```
 
-
+The action command in a private network is as follows:
+```
+wget http://mirrors.tencentyun.com/install/cls/loglistener-linux-x64-2.5.8.tar.gz  && tar -zxvf loglistener-linux-x64-2.5.8.tar.gz -C /usr/local && cd /usr/local/loglistener-2.5.8/tools && ./loglistener.sh install
+```
 ### 2. Initializing LogListener
 
 In the `loglistener/tools` path, run the following command to initialize LogListener as the root user. By default, a private network is used to access the service:
