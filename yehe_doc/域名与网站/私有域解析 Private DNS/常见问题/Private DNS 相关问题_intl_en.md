@@ -2,10 +2,10 @@
 Private DNS is a private domain DNS and management service based on Tencent Cloud Virtual Private Cloud (VPC) that provides highly secure private DNS services.
 
 ### How do I activate Private DNS?
-When you access the Private DNS console for the first time, you need to activate the service. For more information, please see [Activating Private DNS](https://cloud.tencent.com/document/product/1338/50533). After successful activation, you can use it normally.
+When you access the Private DNS console for the first time, you need to activate the service. For more information, please see [Activating Private DNS](https://intl.cloud.tencent.com/document/product/1097/40557). After successful activation, you can use it normally.
 
 ### Do I need to modify the DNS settings of my CVM instances to use Private DNS?
-No. To use the Private DNS service, you only need to [activate it](https://cloud.tencent.com/document/product/1338/50533). You don't need to modify the DNS settings of Tencent Cloud resources such as CVM instances.
+No. To use the Private DNS service, you only need to [activate it](https://intl.cloud.tencent.com/document/product/1097/40557). You don't need to modify the DNS settings of Tencent Cloud resources such as CVM instances.
 
 ### What are the differences between Private DNS and DNSPod?
 - **DNSPod**
