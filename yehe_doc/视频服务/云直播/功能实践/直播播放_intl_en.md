@@ -4,7 +4,7 @@
 3. Select [Domain Management](https://console.cloud.tencent.com/live/domainmanage), click **Add Domain**, enter your ICP filed domain name, select **Playback domain** as the type, and click **Save**.
 >!
 >
->- If you do not have a domain name, you can purchase one through **[Tencent Cloud Domain Service](https://buy.cloud.tencent.com/domain?from=console)**. You can also purchase one at another domain name service provider.
+>- If you do not have a domain name, you can purchase one through **[Tencent Cloud Domain Service](https://intl.cloud.tencent.com/)**. You can also purchase one at another domain name service provider.
 4. Log in to the [Tencent Cloud Domain Service console](https://console.cloud.tencent.com/domain) and configure CNAME for the successfully added playback domain name. For detailed directions, please see [Configuring CNAME for Domain Name](https://intl.cloud.tencent.com/document/product/267/31057).
 
 ## Getting Playback Address
