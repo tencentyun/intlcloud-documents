@@ -5,7 +5,7 @@ This document describes how to implement a browser-based video call solution.
 ## Environment Requirements
 Currently, the desktop version of Chrome offers better support for the features of the TRTC SDK for desktop browsers; therefore, Chrome is recommended for the demo.
 
-TRTCCalling uses the following ports and domain name for data transfer, which should be added to the allowlist of the firewall. After configuration, please use [Official Demo](https://demo-1252463788.cos.ap-shanghai.myqcloud.com/trtccalling/demo/index.html) to check whether the configuration has taken effect.
+TRTCCalling uses the following ports and domain name for data transfer, which should be added to the allowlist of the firewall. After configuration, please use [Official Demo]to check whether the configuration has taken effect.
   - TCP port: 8687
   - UDP ports: 8000, 8080, 8800, 843, 443, 16285
   - Domain name: qcloud.rtc.qq.com
