@@ -14,12 +14,12 @@
 1.	进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**推流域名**或【管理】进入域名详情页。
 2.	选择【模板配置】页签，单击【水印配置】标签右上角的【编辑】。
 ![](https://main.qcloudimg.com/raw/c46b5fc50d2bfaaa995f55750a05cca1.png)
-4.	选择水印配置模板，单击【保存】即可。
+4.	选择水印配置模板，单击【确定】即可。
 ![](https://main.qcloudimg.com/raw/94a9695a9b3f824356de93bbdd004822.png)
 >? 您可通过单击操作栏的【预览】查看水印效果。
 
 ## 解绑水印模板
 1. 进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**推流域名**或【管理】进入域名详情页。
 2. 选择【模板配置】页签，单击【水印配置】标签右上角的【编辑】。
-3. 单击取消相应模板的勾选，单击【保存】即可。
+3. 单击取消相应模板的勾选，单击【确定】即可。
 ![](https://main.qcloudimg.com/raw/94a9695a9b3f824356de93bbdd004822.png)
