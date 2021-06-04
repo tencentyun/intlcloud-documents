@@ -2,8 +2,7 @@
 
 Tencent Cloud의 Demo를 [다운로드](https://intl.cloud.tencent.com/document/product/647/35076) 후 설치하여 음성 살롱 기능을 체험해볼 수 있습니다. Demo에는 음성 채팅, 마이크 켜기/끄기, 저딜레이 음성 인터랙션 등 음성 채팅 시나리오에서의 TRTC 관련 기능이 포함되어 있습니다.
 
-
-빠른 음성 살롱 액세스 기능이 필요한 경우, Tencent Cloud에서 제공하는 Demo를 기반으로 설정을 적합하게 수정하거나 TRTCChatSalon 모듈을 사용해 사용자 정의 UI 인터페이스를 구현할 수 있습니다.
+빠른 음성 살롱 액세스 기능이 필요할 경우, Tencent Cloud에서 제공하는 Demo를 기반으로 설정을 적합하게 수정하거나 TRTCChatSalon 모듈을 사용해 사용자 정의 UI 인터페이스를 구현할 수 있습니다.
 
 [](id:DemoUI)
 
@@ -16,7 +15,7 @@ Tencent Cloud의 Demo를 [다운로드](https://intl.cloud.tencent.com/document/
 1. TRTC 콘솔에 로그인한 후, [개발 지원]>[Demo 빠른 실행](https://console.cloud.tencent.com/trtc/quickstart)을 선택합니다.
 2. 애플리케이션 이름(예: `TestChatSalon`)을 입력한 후 [생성]을 클릭합니다.
 
->!본 기능은 기본 PaaS 서비스인 Tencent Cloud [TRTC](https://intl.cloud.tencent.com/document/product/647/35078)와 [인스턴트 메시지 IM](https://intl.cloud.tencent.com/document/product/1047)을 동시에 사용하였으며, TRTC를 활성화하면 IM 서비스도 동시에 활성화됩니다. 인스턴트 메시지 IM은 부가 서비스이며, 자세한 과금 규정은 [인스턴트 메시지 IM 요금 가이드](https://intl.cloud.tencent.com/document/product/1047/34350)를 참조하십시오.
+>! 본 기능은 기본 PaaS 서비스인 Tencent Cloud [TRTC](https://intl.cloud.tencent.com/document/product/647/35078)와 [인스턴트 메시지 IM](https://intl.cloud.tencent.com/document/product/1047)을 동시에 사용하였으며, TRTC를 활성화하면 IM 서비스도 동시에 활성화됩니다. 인스턴트 메시지 IM은 부가 서비스이며, 자세한 과금 규정은 [인스턴트 메시지 IM 요금 가이드](https://intl.cloud.tencent.com/document/product/1047/34350)를 참조하십시오.
 
 
 
@@ -25,6 +24,7 @@ Tencent Cloud의 Demo를 [다운로드](https://intl.cloud.tencent.com/document/
 ### 2단계: SDK와 Demo 소스 코드 다운로드
 1. 실제 비즈니스 요구사항에 따라 SDK 및 관련 Demo 소스 코드를 다운로드합니다.
 2. 다운로드 완료 후 [다운로드 완료, 다음 단계]를 클릭합니다.
+   ![](https://main.qcloudimg.com/raw/3b115019ddfd0866108ed1add30810d8.png)
 
 [](id:ui.step3)
 ### 3단계: Demo 프로그램 파일 설정
@@ -34,6 +34,7 @@ Tencent Cloud의 Demo를 [다운로드](https://intl.cloud.tencent.com/document/
 3. `GenerateTestUserSig.h` 파일에서 관련 매개변수를 설정합니다.
 <ul style="margin:0"><li/>SDKAPPID: 0으로 기본 설정되어 있습니다. 실제 SDKAppID로 설정하십시오.
 <li/>SECRETKEY: 공백으로 기본 설정되어 있습니다. 실제 키 정보로 설정하십시오.</ul>
+<img src="https://main.qcloudimg.com/raw/144433d5562569cd6d0e9ad9804d6c48.png">
 4. 붙여넣기 완료 후 [붙여넣기 완료, 다음 단계]를 클릭하면 생성이 완료됩니다.
 5. 컴파일 완료 후 [콘솔 개요로 돌아가기]를 클릭합니다.
 
@@ -51,14 +52,14 @@ Xcode(11.0 버전 이상)를 사용하여 소스 코드 프로그램인 `iOS/TRT
 
 ### 5단계: Demo 소스 코드 수정
 
-소스 코드 TRTCChatSalonDemo 폴더에는 ui 폴더와 model 폴더가 포함되어 있으며, ui 폴더의 모든 파일은 인터페이스 관련 코드 및 인터페이스와 관련된 로직입니다. 다음 테이블에는 2차 수정을 위한 각 swift 파일 또는 폴더 및 해당 UI 인터페이스가 나열되어 있습니다.
+소스 코드의 TRTCChatSalonDemo 폴더에는 ui 폴더와 model 폴더가 포함되어 있으며, ui 폴더의 모든 파일은 인터페이스 관련 코드 및 로직입니다. 다음 테이블에는 2차 수정을 위한 각 파일 및 해당 인터페이스가 나열되어 있습니다.
 
 | 파일 또는 폴더                      | 기능 설명                             |
 | --------------------------------- | ------------------------------------ |
 | NetworkRoomManager                | 서비스 백그라운드 인터랙티브 관련                   |
 | TRTCCreateChatSalonViewController | 방 생성 페이지 로직                   |
 | TRTCChatSalonListViewController   | 리스트 페이지 로직                       |
-| TRTCChatSalonViewController       | 호스트와 시청자의 인터페이스를 포함하는 메인 방 페이지
+| TRTCChatSalonViewController       | 호스트와 시청자의 인터페이스를 포함하는 메인 방 페이지 |
 
 [](id:model)
 
@@ -94,7 +95,7 @@ cocoapods 라이브러리 액세스가 비교적 느린 개발 환경인 경우,
 
 ### 2단계: 권한 설정
 
-`info.plist` 파일에 `Privacy > Camera Usage Description`, `Privacy > Microphone Usage Description`을 추가해 마이크 권한을 신청해야 합니다.
+`info.plist` 파일에 `Privacy > Camera Usage Description`, `Privacy > Microphone Usage Description`을 추가하고 마이크 권한을 신청해야 합니다.
 
 [](id:model.step3)
 
@@ -107,9 +108,9 @@ cocoapods 라이브러리 액세스가 비교적 느린 개발 환경인 경우,
 
 ### 4단계: 모듈 생성 및 로그인
 
-1. TRTCChatSalon의 `sharedInstance` 유형 방법을 호출해 TRTCChatSalon 인스턴스 객체를 생성합니다.
+1. TRTCChatSalon의 `sharedInstance` 방법을 호출하여 TRTCChatSalon의 인스턴스 객체를 생성합니다.
 2. `setDelegate` 방법을 호출해 모듈의 이벤트 콜백 공지를 등록합니다.
-3. `login` 방법을 호출해 모듈에 로그인하고, 다음 표를 참조해 관련 매개변수를 입력합니다.
+3. `login` 방법을 호출해 모듈에 로그인하고, 다음 표를 참조하여 관련 매개변수를 입력합니다.
 <table>    
 <tr><th>매개변수 이름</th><th>역할</th></tr><tr>
 <td>sdkAppId</td>
@@ -153,10 +154,10 @@ self.chatSalon.login(sdkAppID: sdkAppID, userID: userId, userSig: userSig) { [we
 
 [](id:model.step5)
 
-### 5단계: 호스트 방송 시작
+### 5단계: 호스트의 방송 시작
 
-1. 호스트는 [4단계](#model.step4) 로그인 실행 후 `setSelfProfile`을 호출해 자신의 닉네임과 프로필 사진을 설정할 수 있습니다.
-2. 호스트가 `createRoom`을 호출해 새로운 음성 살롱을 생성합니다. 방 ID, 마이크를 켤 때 방장 확인 필요 여부, 방 유형 등 방 속성 정보를 전송합니다.
+1. 호스트는 [4단계](#model.step4) 로그인 실행 후 `setSelfProfile`을 호출하여 자신의 닉네임과 프로필 사진을 설정할 수 있습니다.
+2. 호스트가 `createRoom`을 호출하여 새로운 음성 살롱을 생성합니다. 이때 방 ID, 마이크를 켤 때 방장 확인 필요 여부, 방 유형 등 방 속성 정보를 전송합니다.
 3. 호스트는 사용자가 입장할 때 `onAnchorEnterSeat` 이벤트 공지를 수신하며, 이때 자동으로 마이크 수집이 활성화됩니다.
 
 ![](https://main.qcloudimg.com/raw/0b06ef225f749caa8b1f3a16c2316890.png)
@@ -171,7 +172,7 @@ self.chatSalon.setSelfProfile(userName: userName, avatarUrl: avatarURL) { (code,
 // 2. 호스트 방 생성
 let param = ChatSalonParam.init()
 param.roomName = "방 이름"
-param.needRequest = true // 시청자가 마이크를 켤 때 호스트 동의 필요 여부
+param.needRequest = true // 시청자 마이크 켤 때 호스트 동의 필요 여부
 param.coverUrl = "썸네일 URL"
 param.seatInfoList = []
 self.chatSalon.createRoom(roomID: yourRoomID, roomParam: param) { (code, message) in
@@ -198,13 +199,13 @@ func onAnchorEnterSeat(user: ChatSalonUserInfo) {
 
 ### 6단계: 시청자 시청
 
-1. 시청자는 [4단계](#model.step4) 로그인 실행 후 `setSelfProfile`을 호출해 자신의 닉네임과 프로필 사진을 설정할 수 있습니다.
+1. 시청자는 [4단계](#model.step4) 로그인 실행 후 `setSelfProfile`을 호출하여 자신의 닉네임과 프로필 사진을 설정할 수 있습니다.
 2. 시청자가 서비스 백그라운드에서 최신 음성 살롱 방 리스트를 가져옵니다.
  >?Demo의 음성 살롱 리스트는 참고용입니다. 음성 살롱 리스트의 서비스 로직은 매우 다양하여 Tencent Cloud에서는 현재 음성 살롱 리스트 관리 서비스를 제공하지 않습니다. 음성 살롱 리스트는 직접 관리하시기 바랍니다.
-3. 시청자가 `getRoomInfoList`를 호출해 방 세부 정보를 가져옵니다. 해당 정보는 호스트가 `createRoom`을 호출해 음성 살롱 생성 시 설정한 간단한 설명 정보입니다.
+3. 시청자가 `getRoomInfoList`를 호출해 방 세부 정보를 가져옵니다. 해당 정보는 호스트가 `createRoom`을 호출하여 음성 살롱 생성 시 설정한 간단한 설명 정보입니다.
  >!음성 살롱 리스트에 포괄적인 정보가 충분히 포함되어 있다면 `getRoomInfoList` 호출 관련 단계는 건너뛸 수 있습니다.
 4. 시청자가 음성 살롱 1개를 선택하고 `enterRoom`을 호출하여 해당 방으로 입장합니다.
-5. 방 입장 후 모듈의 `onRoomInfoChange` 방 속성 변경 이벤트 공지를 수신합니다. 이때 UI에 방 이름 표시, 마이크를 켤 때 호스트에게 동의 요청 필요 여부 기록 등 방의 속성을 기록할 수 있으며 그에 해당하는 변경이 가능합니다.
+5. 방 입장 후 모듈의 `onRoomInfoChange` 방 속성 변경 이벤트 공지를 수신합니다. 이때 UI에 방 이름 표시, 마이크를 켤 때 호스트에게 동의 요청 필요 여부 등 방의 속성을 기록할 수 있으며 그에 해당하는 변경이 가능합니다.
 6. 방 입장 후 마이크 위치 리스트에 호스트 입장 `onAnchorEnterSeat` 이벤트 공지도 수신합니다.
 
 ![](https://main.qcloudimg.com/raw/b08253d1835ca6e571378af76c84e275.png)
@@ -223,7 +224,7 @@ self.chatSalon.getRoomInfoList(roomIdList: roomIdsInt) { (code, message, roomInf
     // 결과 획득, UI 새로고침 가능
 }
 
-// 4. roomid를 전송하여 방 입장
+// 4. roomid를 전달하여 방 입장
 self.chatSalon.enterRoom(roomID: roomInfo.roomID) { (code, message) in
     // 방 입장 결과 콜백
     if code == 0 {
@@ -233,7 +234,7 @@ self.chatSalon.enterRoom(roomID: roomInfo.roomID) { (code, message) in
 
 // 5. 방 입장 완료 후 onRoomInfoChange 이벤트 공지 수신
 func onRoomInfoChange(roomInfo: ChatSalonInfo) {
-    // 방 이름 등 정보 새로고침 가능
+    // 방 이름 등 정보 새로 고침 가능
 }
 
 // 6. onAnchorEnterSeat 이벤트 공지 수신
@@ -250,8 +251,8 @@ func onAnchorEnterSeat(user: ChatSalonUserInfo) {
 <dx-tabs>
 ::: 호스트 측
 
-1. `pickSeat`로 시청자 userId를 전송하면 특정 사용자의 마이크를 켤 수 있으며, 방 안에 있는 모든 사용자가 `onAnchorEnterSeat` 이벤트 공지를 수신합니다.
-2. `kickSeat`로 해당하는 사용자의 userId를 전송하면 특정 사용자의 마이크를 끌 수 있으며, 방 안에 있는 모든 사용자가 `onAnchorLeaveSeat` 이벤트 공지를 수신합니다.
+1. `pickSeat`에 시청자 userId를 전달하면 특정 사용자의 마이크를 켤 수 있으며, 방 안에 있는 모든 사용자가 `onAnchorEnterSeat` 이벤트 공지를 수신합니다.
+2. `kickSeat`에 해당하는 사용자의 userId를 전달하면 특정 사용자의 마이크를 끌 수 있으며, 방 안에 있는 모든 사용자가 `onAnchorLeaveSeat` 이벤트 공지를 수신합니다.
 
 ![](https://main.qcloudimg.com/raw/5a590df748b3cedd6eccd7d8e3027168.png)
 
@@ -264,7 +265,7 @@ self.chatSalon.pickSeat(userID: "123") { (code, message) in
     // 2. callback 콜백 수신
 }
 
-// 3. 호스트가 마이크 위치를 공지하면 시청자가 실제로 마이크 켜기에 성공했는지 판단
+// 3. 호스트가 마이크 위치를 공지하면, 여기에서 시청자가 실제로 마이크 켜기에 성공했는지 여부 판단
 func onAnchorEnterSeat(user: ChatSalonUserInfo) {
     // 마이크 켜기 이벤트 처리
 }
@@ -286,7 +287,7 @@ self.chatSalon.enterSeat { (code, message) in
     // 2. callback 콜백 수신
 }
 
-// 3. 호스트가 마이크 위치를 공지하면 본인 여부 및 해당하는 프로세스 진행 여부 판단
+// 3. 호스트가 마이크 위치를 공지하면, 여기에서 본인 및 해당하는 프로세스 진행 여부 판단
 func onAnchorEnterSeat(user: ChatSalonUserInfo) {
     // 마이크 켜기 이벤트 처리
 }
@@ -298,23 +299,23 @@ func onAnchorEnterSeat(user: ChatSalonUserInfo) {
 
 [](id:model.step8)
 
-### 단계8: 초대 신호 사용
+### 8단계: 초대 신호 사용
 
-사용자 App이 상대방이 동의해야 다음 단계의 작업을 진행할 수 있는 비즈니스 프로세스인 경우, 초대 신호는 해당하는 지원을 제공할 수 있습니다.
+사용자 App이 상대방이 동의해야 다음 단계의 작업을 진행할 수 있는 비즈니스 프로세스인 경우, 초대 신호를 사용할 수 있습니다.
 
 <dx-tabs>
 ::: 시청자가 직접 마이크 켜기 신청
 
-1. 시청자가 `sendInvitation`을 호출해 호스트의 userId와 서비스 사용자 정의 명령어 등을 전송합니다. 이때 함수는 inviteId를 반환하고 해당 inviteId를 기록합니다.
+1. 시청자가 `sendInvitation`을 호출하여 호스트의 userId와 서비스 사용자 정의 명령어 등을 전송합니다. 이때 함수는 inviteId를 반환하고 해당 inviteId를 기록합니다.
 2. 호스트가 `onReceiveNewInvitation` 이벤트 공지를 수신합니다. 이때 UI에 호스트의 동의 여부를 묻는 팝업창을 띄울 수 있습니다.
 3. 호스트가 동의를 선택한 후 `acceptInvitation`을 호출하고 inviteId를 전송합니다.
-4. 시청자가 `onInviteeAccepted` 이벤트 공지를 수신하고 `enterSeat`를 호출해 마이크를 켭니다.
+4. 시청자가 `onInviteeAccepted` 이벤트 공지를 수신하고 `enterSeat`를 호출하여 마이크를 켭니다.
 
 ![](https://main.qcloudimg.com/raw/76f13e8118c49136fcfd99942e56a65e.png)
 <dx-codeblock>
 ::: Swift Swift
 // 시청자 측 앵글
-// 1. sendInvitation을 호출해 마이크 켜기 요청
+// 1. sendInvitation을 호출하여 마이크 켜기 요청
 let inviteId = self.chatSalon.sendInvitation(cmd: "ENTER_SEAT", userID: ownerUserId, content: "1") { (code, message) in
     // 발송 결과 콜백
 }
@@ -340,17 +341,17 @@ func onReceiveNewInvitation(identifier: String, inviter: String, cmd: String, co
 :::
 ::: 호스트가 시청자에게 마이크 켜기 초대
 
-1. 호스트가 `sendInvitation`을 호출해 시청자의 userId와 서비스 사용자 정의 명령어 등을 전송합니다. 이때 함수는 inviteId를 반환하고 해당 inviteId를 기록합니다.
+1. 호스트가 `sendInvitation`을 호출하여 시청자의 userId와 서비스 사용자 정의 명령어 등을 전송합니다. 이때 함수는 inviteId를 반환하고 해당 inviteId를 기록합니다.
 2. 시청자가 `onReceiveNewInvitation` 이벤트 공지를 수신합니다. 이때 UI에 시청자의 마이크 켜기 동의 여부를 묻는 팝업창을 띄울 수 있습니다.
 3. 시청자가 동의를 선택한 후 `acceptInvitation`을 호출하고 inviteId를 전송합니다.
-4. 호스트가 `onInviteeAccepted` 이벤트 공지를 수신하고 `pickSeat`를 호출해 시청자의 마이크를 켭니다.
+4. 호스트가 `onInviteeAccepted` 이벤트 공지를 수신하고 `pickSeat`를 호출하여 시청자의 마이크를 켭니다.
 
 ![](https://main.qcloudimg.com/raw/3193dd17c510ca5a6583747c0bde0114.png)
 
 <dx-codeblock>
 ::: Swift Swift
 // 호스트 측 앵글
-// 1. 호스트가 sendInvitation을 호출해 시청자 123에게 마이크 켜기 요청
+// 1. 호스트가 sendInvitation을 호출하여 시청자 123에게 마이크 켜기 요청
 let inviteId = self.chatSalon.sendInvitation(cmd: "PICK_SEAT", userID: ownerUserId, content: "2") { (code, message) in
     // 발송 결과 콜백
 }
