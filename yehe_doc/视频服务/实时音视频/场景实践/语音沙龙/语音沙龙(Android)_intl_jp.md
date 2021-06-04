@@ -1,28 +1,26 @@
 ## デモンストレーション
 
-[ダウンロード](https://intl.cloud.tencent.com/document/product/647/35076)してDemoをインストールし、ボイスチャット、マイクのオン・オフ、低遅延音声インタラクションなどのボイスチャットのユースケースにおけるTRTCの関連機能を含む、ボイスサロンの機能を体験できます。
+[ダウンロード](https://intl.cloud.tencent.com/document/product/647/35076)してDemoをインストールすると、ボイスサロンの機能をご体験いただけます。これには、ボイスチャット、マイクのオン・オフ、低遅延音声インタラクションなどのボイスチャットシナリオにおけるTRTCの関連機能が含まれています。
 
-ボイスサロン機能をすばやく実装する必要がある場合、当社が提供するDemoをもとにアダプタを直接修正するか、または当社が提供するTRTCChatSalonコンポーネントでUIのカスタマイズを実装することができます。
+
+ボイスサロン機能をすばやく実装する必要がある場合、当社が提供するDemoをもとにアダプタを直接修正するか、または当社が提供するTRTCChatSalonコンポーネントでカスタマイズしたUIを実装することができます。
 
 [](id:DemoUI)
 ## DemoのUIの再利用
 
 [](id:ui.step1)
-
 ### 手順1：アプリケーションの新規作成
 1．TRTCコンソールにログインし、【開発支援】>【[Demoクイックスタート](https://console.cloud.tencent.com/trtc/quickstart)】を選択します。
 2. アプリケーション名（例：`TestChatSalon`）を入力し、【作成】をクリックします。
 
->!本機能はTencent Cloud[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://ntl.cloud.tencent.com/document/product/1047)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期的にアクティブにすることができます。IMは付加価値サービスであり、課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。
+>!本機能はTencent Cloudの[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期的にアクティブにすることができます。IMは付加価値サービスであり、課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。
 
 
 
 [](id:ui.step2)
-
 ### 手順2：SDKおよびDemoソースコードをダウンロード
 1. 実際の業務ニーズに基づき、SDKおよび付属のDemoソースコードをダウンロードします。
 2. ダウンロード完了後、【ダウンロードしました。次のステップ】をクリックします。
-![](https://main.qcloudimg.com/raw/3b115019ddfd0866108ed1add30810d8.png)
 
 [](id:ui.step3)
 
@@ -33,7 +31,6 @@
 3. `GenerateTestUserSig.java`ファイル内の関連パラメータを設定します。
 <ul style="margin:0"><li/>SDKAPPID：デフォルトは0。実際のSDKAppIDを設定してください。
 <li/>SECRETKEY：デフォルトは空文字列。実際のキー情報を設定してください。</ul>
-<img src="https://main.qcloudimg.com/raw/586439966d8588888cecf80d3bb4fe46.png">
 4. 貼り付け完了後、【貼り付けました。次のステップ】をクリックすれば、作成が完了します。
 5. コンパイル完了後、【コンソール概要に戻る】をクリックすればOKです。
 
@@ -44,7 +41,7 @@
 
 [](id:ui.step4)
 ### 手順4：Demoの実行
-Android Studio（バージョン3.5以上）を使用してソースコードプロジェクトの`TRTCScenesDemo`を開き、【実行】をクリックすると、このDemoのデバッグが開始されます。
+Android Studio（バージョン3.5以上）を使用してソースコードの`TRTCScenesDemo`プロジェクトを開き、【実行】をクリックすると、このDemoのデバッグが開始されます。
 
 [](id:ui.step5)
 ### 手順5：Demoソースコードの修正
@@ -65,7 +62,7 @@ Android Studio（バージョン3.5以上）を使用してソースコードプ
 [](id:model.step1)
 ### 手順1：SDKへの統合
 
-ボイスサロンコンポーネント trtcchatsalondemo は、TRTC SDKとIM SDKに依存し、次の手順で2つのSDKをプロジェクトに統合することができます。
+ボイスサロンコンポーネントtrtcchatsalondemoは、TRTC SDKとIM SDKに依存し、次の手順で2つのSDKをプロジェクトに統合することができます。
 
 [](id:model.step1_m1)
 #### 方法1：Mavenリポジトリを介する依存
@@ -111,7 +108,7 @@ defaultConfig {
 [](id:model.step2)
 ### 手順2：権限の設定および難読化ルール
 
-AndroidManifest.xmlにAppの権限を設定します。SDKには次の権限が必要です（6.0以降のAndroidシステムではカメラ、読み取りストレージの権限を動的に申請する必要があります）。
+AndroidManifest.xmlにAppの権限を設定します。SDKには次の権限が必要です（6.0以上のAndroidシステムではカメラ、ストレージ読み取りの権限を動的に申請する必要があります）。
 
 ```
 <uses-permission android:name="android.permission.INTERNET" />
@@ -147,7 +144,7 @@ trtcchatsalondemo/src/main/java/com/tencent/liteav/trtcchatsalon/model
 <tr><th>パラメータ名</th><th>作用</th></tr>
 <tr>
 <td>sdkAppId</td>
-<td><a href="https://console.cloud.tencent.com/trtc/app">TRTCコンソール</a>でSDKAppIDを表示できます。</td>
+<td><a href="https://console.cloud.tencent.com/trtc/app">TRTCコンソール</a> でSDKAppIDを確認できます。</td>
 </tr>
 <tr>
 <td>userId</td>
@@ -224,10 +221,10 @@ public void onAnchorEnterSeat(TRTCChatSalonDef.UserInfo userInfo) {
 
 1. 視聴者側は、[手順4](#model.step4)でログイン後、`setSelfProfile`を呼び出して自身のニックネームおよびプロフィール画像を設定することができます。
 2. 視聴者側は、業務バックエンドから最新のボイスサロンのルームリストを取得します。
- >?Demoのボイスサロンリストは、デモンストレーションでの使用のみです。ボイスサロンリストのビジネスロジックは様々です。Tencent Cloudでは現在、ボイスサロンリストの管理サービスを提供していませんので、ご自身でボイスサロンリストを管理してください。
+ >?Demoのボイスサロンリストは、デモンストレーション用のためだけのものです。ボイスサロンリストのビジネスロジックは様々です。Tencent Cloudでは現在ボイスサロンリストの管理サービスを提供していません。ご自身でボイスサロンリストを管理してください。
 3. 視聴者側は、`getRoomInfoList`を呼び出してルームの詳細情報を取得します。この情報は、キャスター側が`createRoom`を呼び出してボイスサロンを作成するときに設定する簡単な説明情報です。
 >!ボイスサロンリストに十分に包括的な情報がある場合は、`getRoomInfoList`の呼び出しに関する手順をスキップできます。
-4．視聴者は一つのボイスサロンを選択し、`enterRoom`を呼び出してルームナンバーを渡すと、そのルームに参加できます。
+4. 視聴者はボイスサロンの1つを選択し、`enterRoom`を呼び出してルームナンバーを渡せば、そのルームに入室できます。
 5. 入室後、コンポーネントの`onRoomInfoChange`というルーム属性の変更イベント通知を受信します。このとき、ルーム属性を記録し、UIに表示されるルーム名、マイク・オンにキャスターへの同意のリクエストの要否の記録など、対応する変更を行うことができます。
 6. 入室後にマイクリストにキャスターが参加した`onAnchorEnterSeat`のイベント通知も受信します。
 
@@ -284,7 +281,7 @@ public void onAnchorEnterSeat(TRTCChatSalonDef.UserInfo userInfo) {
 <dx-tabs>
 ::: キャスター側
 1. `pickSeat`は、視聴者のuserIdを渡し、ピックしてマイク・オンにできます。ルーム内の全メンバーは`onAnchorEnterSeat`のイベント通知を受信します。
-2. `kickSeat`は、対応するユーザーのuserIdを渡し、キックアウトしてマイク・オフできます。ルーム内の全メンバーは`onAnchorEnterSeat`のイベント通知を受信します。
+2. `kickSeat`で該当するユーザーのuserIdを渡すと、その人をキックアウトしてマイク・オフにできます。ルーム内の全メンバーが`onAnchorLeaveSeat`のイベント通知を受信します。
 
 ![](https://main.qcloudimg.com/raw/5a590df748b3cedd6eccd7d8e3027168.png)
 マイク操作後のイベント通知の順番は次のとおりです。callback > onAnchorEnterSeatなど独立したイベント。
@@ -300,15 +297,15 @@ mTRTCChatSalon.pickSeat("123", new TRTCChatSalonCallback.ActionCallback() {
     }
 });
 
-// 3.キャスターはマイク通知に進むと、ここで視聴者が適切な処理を行っているかどうかを判断することができます
+// 3.キャスターがマイクリストに参加した通知により、視聴者が実際にマイク・オンに成功したかを判断できます
 public void onAnchorEnterSeat(TRTCChatSalonDef.UserInfo user) {
 }
 :::
 </dx-codeblock>
 :::
 ::: 視聴者側
-1. `enterSeat`はマイク・オンにし、ルーム内の全メンバーは`onAnchorEnterSeat`のイベント通知を受信します。
-2. `leaveSeat`は自主的にマイク・オフにし、ルーム内の全メンバーは`onAnchorLeaveSeat`のイベント通知を受信します。
+1. `enterSeat`でマイク・オンにすることができます。ルーム内の全メンバーが `onAnchorEnterSeat`のイベント通知を受信します。
+2. `leaveSeat`で自主的にマイク・オフにします。ルーム内の全メンバーが`onAnchorLeaveSeat`のイベント通知を受信します。
 
 ![](https://main.qcloudimg.com/raw/08f7bf725fa05e1d97a69aacdbd3986a.png)
 マイク操作後のイベント通知の順番は次のとおりです。callback > onAnchorEnterSeatなど独立したイベント。
@@ -339,8 +336,8 @@ Appが次の操作の業務フローを実施するために、相手の同意�
 
 <dx-tabs>
 ::: 視聴者からの自主的なマイク申請
-1. 視聴者側は、`sendInvitation`を呼び出してキャスターのuserIdおよび業務のカスタムコマンドワードなどを渡します。この時、関数は1個のinviteIdを返しこのinviteIdを記録します。
-2. キャスター側は、`onReceiveNewInvitation`のイベント通知を受信します。この時、UIはウィンドウをポップアップして、キャスターに同意するかどうか照会することができます。
+1. 視聴者側が`sendInvitation`を呼び出し、キャスターのuserIdおよび業務のカスタムコマンドなどを渡します。この時、関数が1つのinviteIdを返しますので、このinviteIdを記録します。
+2. キャスター側が`onReceiveNewInvitation`のイベント通知を受信します。この時UIでウィンドウをポップアップさせ、キャスターに同意の有無をたずねることができます。
 3. キャスターが同意を選択後、`acceptInvitation`を呼び出してinviteIdを渡します。
 4. 視聴者側は、`onInviteeAccepted`のイベント通知を受信し、`enterSeat`を呼び出してマイク・オンにします。
 
@@ -349,10 +346,10 @@ Appが次の操作の業務フローを実施するために、相手の同意�
 <dx-codeblock>
 ::: java java
 // 視聴者側の視点
-// 1. sendInvitationを呼び出し、マイク・オンをリクエストします
+// 1.sendInvitationを呼び出し、マイク・オンをリクエストします
 String inviteId = mTRTCChatSalon.sendInvitation("ENTER_SEAT", ownerUserId, "123", null);
 
-// 2.招待の同意リクエストを受信して、正式にマイク・オンにします
+// 2.招待のリクエスト同意を受信し、正式にマイク・オンになります
 @Override
 public void onInviteeAccepted(String id, String invitee) {
     if(id.equals(inviteId)) {
@@ -373,9 +370,8 @@ public void onReceiveNewInvitation(final String id, String inviter, String cmd, 
 </dx-codeblock>
 :::
 ::: キャスターから視聴者を招待してマイク・オン
-
-1. キャスター側は、`sendInvitation`を呼び出して視聴者のuserIdおよび業務のカスタマイズコマンドワードなどを渡します。この時、関数は1個のinviteIdを返しこのinviteIdを記録します。
-2. 視聴者側は、`onReceiveNewInvitation`のイベント通知を受信します。この時、UIはウィンドウをポップアップして、視聴者がマイク・オンに同意するかどうかを照会することができます。
+1. キャスター側は、`sendInvitation`を呼び出して視聴者のuserIdおよび業務のカスタマイズコマンドワードなどを渡します。この時、関数が1つのinviteIdを返しますので、このinviteIdを記録します。
+2. 視聴者側は、`onReceiveNewInvitation`のイベント通知を受信します。この時UIでウィンドウをポップアップさせ、視聴者に同意の有無をたずねることができます。
 3. 視聴者が同意を選択後、`acceptInvitation`を呼び出してinviteIdを渡します。
 4. キャスター側は、`onInviteeAccepted`のイベント通知を受信し、`pickSeat`を呼び出し視聴者をピックしてマイク・オンにします。
 
@@ -387,7 +383,7 @@ public void onReceiveNewInvitation(final String id, String inviter, String cmd, 
 // 1.キャスターはsendInvitationを呼び出して、視聴者123をピックしてマイク・オンをリクエストします
 String inviteId = mTRTCChatSalon.sendInvitation("PICK_SEAT", ownerUserId, "123", null);
 
-// 2.招待の同意リクエストを受信して、正式にマイク・オンにします
+// 2.招待のリクエスト同意を受信し、正式にマイク・オンになります
 @Override
 public void onInviteeAccepted(String id, String invitee) {
     if(id.equals(inviteId)) {
@@ -422,12 +418,12 @@ public void onReceiveNewInvitation(final String id, String inviter, String cmd, 
   mTRTCChatSalon.setDelegate(new TRTCChatSalonDelegate() {
    @Override
    public void onRecvRoomTextMsg(String message, TRTCChatSalonDef.UserInfo userInfo) {
-       Log.d(TAG、「が」 + userInfo.userName + 「から受信したメッセージ:」 + message);
+       Log.d(TAG、 + userInfo.userName + 「からのメッセージを受信:」 + message);
    }
   });
   :::
   </dx-codeblock>
-- `sendRoomCustomMsg`によってカスタマイズ（シグナリング）情報を送信することができます。そのルーム内のすべてのキャスターおよび視聴者は`onRecvRoomCustomMsg`のコールバックを受信することができます。
+- `sendRoomCustomMsg`によって、カスタム（シグナル）メッセージを送信できます。当該ルーム内のすべてのキャスターと視聴者が`onRecvRoomCustomMsg` コールバックを受信できます。
   カスタムメッセージは、カスタマイズ信号の送信によく用いられます。例えば、「いいね」情報の発信やブロードキャストに使用します。
   <dx-codeblock>
   ::: java java
@@ -441,7 +437,7 @@ public void onReceiveNewInvitation(final String id, String inviter, String cmd, 
     public void onRecvRoomCustomMsg(String cmd, String message, TRTCChatSalonDef.UserInfo userInfo) {
         if ("CMD_DANMU".equals(cmd)) {
             // 弾幕コメントの受信
-            Log.d(TAG、「が」 + userInfo.userName + 「から受信した弾幕コメント:」 + message);
+            Log.d(TAG、 + userInfo.userName + 「からの弾幕コメントを受信:」 + message);
         } else if ("CMD_LIKE".equals(cmd)) {
             // 「いいね」情報の受信
             Log.d(TAG、 userInfo.userName + 「いいねを付けました！」);

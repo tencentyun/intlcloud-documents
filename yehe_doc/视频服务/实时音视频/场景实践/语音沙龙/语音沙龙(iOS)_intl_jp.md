@@ -1,8 +1,9 @@
 ## デモンストレーション
 
-[ダウンロード](https://intl.cloud.tencent.com/document/product/647/35076)してDemoをインストールし、ボイスチャット、マイクのオン・オフ、低遅延音声インタラクションなどのボイスチャットのユースケースにおけるTRTCの関連機能を含む、ボイスサロンの機能を体験できます。
+[ダウンロード](https://intl.cloud.tencent.com/document/product/647/35076)してDemoをインストールすると、ボイスサロンの機能をご体験いただけます。これには、ボイスチャット、マイクのオン・オフ、低遅延音声インタラクションなどのボイスチャットシナリオにおけるTRTCの関連機能が含まれています。
 
-ボイスサロン機能をすばやく実装する必要がある場合、当社が提供するDemoをもとにアダプタを直接修正するか、または当社が提供するTRTCChatSalonコンポーネントでUIのカスタマイズを実装することができます。
+
+ボイスサロン機能をすばやく実装する必要がある場合、当社が提供するDemoをもとにアダプタを直接修正するか、または当社が提供するTRTCChatSalonコンポーネントでカスタマイズしたUIを実装することができます。
 
 [](id:DemoUI)
 
@@ -15,7 +16,7 @@
 1．TRTCコンソールにログインし、【開発支援】>【[Demoクイックスタート](https://console.cloud.tencent.com/trtc/quickstart)】を選択します。
 2. アプリケーション名（例：`TestChatSalon`）を入力し、【作成】をクリックします。
 
->!本機能はTencent Cloud[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期的にアクティブにすることができます。IMは付加価値サービスであり、課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。
+>!本機能はTencent Cloudの[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期的にアクティブにすることができます。IMは付加価値サービスであり、課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。
 
 
 
@@ -24,7 +25,6 @@
 ### 手順2：SDKおよびDemoソースコードをダウンロード
 1. 実際の業務ニーズに基づき、SDKおよび付属のDemoソースコードをダウンロードします。
 2. ダウンロード完了後、【ダウンロードしました。次のステップ】をクリックします。
-   ![](https://main.qcloudimg.com/raw/3b115019ddfd0866108ed1add30810d8.png)
 
 [](id:ui.step3)
 ### 手順3：Demoプロジェクトファイルの設定
@@ -34,7 +34,6 @@
 3. `GenerateTestUserSig.h`のファイルの関連するパラメータを設定します。
 <ul style="margin:0"><li/>SDKAPPID：デフォルトは0。実際のSDKAppIDを設定してください。
 <li/>SECRETKEY：デフォルトは空文字列。実際のキー情報を設定してください。</ul>
-<img src="https://main.qcloudimg.com/raw/144433d5562569cd6d0e9ad9804d6c48.png">
 4. 貼り付け完了後、【貼り付けました。次のステップ】をクリックすれば、作成が完了します。
 5. コンパイル完了後、【コンソール概要に戻る】をクリックすればOKです。
 
@@ -57,7 +56,7 @@ Xcode（11.0およびそれ以降のバージョン）を使用してソース�
 | ファイルまたはフォルダ                      | 機能の説明                             |
 | --------------------------------- | ------------------------------------ |
 | NetworkRoomManager                | 業務バックエンドインタラクション関連。                   |
-| TRTCCreateChatSalonViewController |ボイスチャットルームページのロジックを作成します。                   |
+| TRTCCreateChatSalonViewController | ルーム作成ページのロジックを作成します。                   |
 | TRTCChatSalonListViewController | リストページのロジック。 |
 | TRTCChatSalonViewController | メインルームページ。キャスターおよび視聴者という2種類のインターフェースがあります。 |
 
@@ -108,13 +107,13 @@ pod 'TXLiteAVSDK_TRTC'
 
 ### 手順4：コンポーネントの作成およびログイン
 
-1. TRTCChatSalonの`sharedInstance`クラスメソッドを呼び出すと、TRTCChatSalonのインスタンスを作成できます。
+1. TRTCChatSalonの`sharedInstance`クラスメソッドを呼び出すと、TRTCChatSalonのインスタンスオブジェクトを作成できます。
 2. `setDelegate`メソッドを呼び出して、コンポーネントのイベントコールバック通知を登録します。
 3. `login`メソッドを呼び出して、コンポーネントのログインを完了します。下表を参考にキーパラメータを入力してください。
 <table>    
 <tr><th>パラメータ名</th><th>機能</th></tr><tr>
 <td>sdkAppId</td>
-<td><a href="https://console.cloud.tencent.com/trtc/app">TRTCコンソール</a>でSDKAppIDを表示できます。</td>
+<td><a href="https://console.cloud.tencent.com/trtc/app">TRTCコンソール</a> でSDKAppIDを確認できます。</td>
 </tr><tr>
 <td>userId</td>
 <td>現在のユーザーID。文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（_）のみ使用できます。</td>
@@ -201,10 +200,10 @@ func onAnchorEnterSeat(user: ChatSalonUserInfo) {
 
 1. 視聴者側は、[手順4](#model.step4)でログイン後、`setSelfProfile`を呼び出して自身のニックネームおよびプロフィール画像を設定することができます。
 2. 視聴者側は、業務バックエンドから最新のボイスサロンのルームリストを取得します。
- >?Demoのボイスサロンリストは、デモンストレーションでの使用のみです。ボイスサロンリストのビジネスロジックは様々です。Tencent Cloudでは現在、ボイスサロンリストの管理サービスを提供していませんので、ご自身でボイスサロンリストを管理してください。
+ >?Demoのボイスサロンリストは、デモンストレーション用のためだけのものです。ボイスサロンリストのビジネスロジックは様々です。Tencent Cloudでは現在ボイスサロンリストの管理サービスを提供していません。ご自身でボイスサロンリストを管理してください。
 3. 視聴者側は、`getRoomInfoList`を呼び出してルームの詳細情報を取得します。この情報は、キャスター側が`createRoom`を呼び出してボイスサロンを作成するときに設定する簡単な説明情報です。
  >!ボイスサロンリストに十分に包括的な情報がある場合は、`getRoomInfoList`の呼び出しに関する手順をスキップできます。
-4．視聴者は一つのボイスサロンを選択し、`enterRoom`を呼び出してルームナンバーを渡すと、そのルームに参加できます。
+4. 視聴者はボイスサロンの1つを選択し、`enterRoom`を呼び出してルームナンバーを渡せば、そのルームに入室できます。
 5. 入室後、コンポーネントの`onRoomInfoChange`というルーム属性の変更イベント通知を受信します。このとき、ルーム属性を記録し、UIに表示されるルーム名、マイク・オンにキャスターへの同意のリクエストの要否の記録など、対応する変更を行うことができます。
 6. 入室後にマイクリストにキャスターが参加した`onAnchorEnterSeat`のイベント通知も受信します。
 
@@ -252,7 +251,7 @@ func onAnchorEnterSeat(user: ChatSalonUserInfo) {
 ::: キャスター側
 
 1. `pickSeat`は、視聴者のuserIdを渡し、ピックしてマイク・オンにできます。ルーム内の全メンバーは`onAnchorEnterSeat`のイベント通知を受信します。
-2. `kickSeat`は、対応するユーザーのuserIdを渡し、キックアウトしてマイク・オフできます。ルーム内の全メンバーは`onAnchorEnterSeat`のイベント通知を受信します。
+2. `kickSeat`で該当するユーザーのuserIdを渡すと、その人をキックアウトしてマイク・オフにできます。ルーム内の全メンバーが`onAnchorLeaveSeat`のイベント通知を受信します。
 
 ![](https://main.qcloudimg.com/raw/5a590df748b3cedd6eccd7d8e3027168.png)
 
@@ -265,7 +264,7 @@ self.chatSalon.pickSeat(userID: "123") { (code, message) in
     // 2. callbackコールバックを受信します
 }
 
-// 3.キャスターはマイク通知に進むと、ここで視聴者が適切な処理を行っているかどうかを判断することができます
+// 3.キャスターがマイクリストに参加した通知により、視聴者が実際にマイク・オンに成功したかを判断できます
 func onAnchorEnterSeat(user: ChatSalonUserInfo) {
     // マイク・オンイベントの処理
 }
@@ -275,8 +274,8 @@ func onAnchorEnterSeat(user: ChatSalonUserInfo) {
 :::
 ::: 視聴者側
 
-1. `enterSeat`はマイク・オンにし、ルーム内の全メンバーは`onAnchorEnterSeat`のイベント通知を受信します。
-2. `leaveSeat`は自主的にマイク・オフにし、ルーム内の全メンバーは`onAnchorLeaveSeat`のイベント通知を受信します。
+1. `enterSeat`でマイク・オンにすることができます。ルーム内の全メンバーが `onAnchorEnterSeat`のイベント通知を受信します。
+2. `leaveSeat`で自主的にマイク・オフにします。ルーム内の全メンバーが`onAnchorLeaveSeat`のイベント通知を受信します。
 
 ![](https://main.qcloudimg.com/raw/08f7bf725fa05e1d97a69aacdbd3986a.png)
 マイク操作後のイベント通知の順番は次のとおりです。callback > onAnchorEnterSeatなど独立したイベント。
@@ -306,8 +305,8 @@ Appが次の操作の業務フローを実施するために、相手の同意�
 <dx-tabs>
 ::: 視聴者からの自主的なマイク申請
 
-1. 視聴者側は、`sendInvitation`を呼び出してキャスターのuserIdおよび業務のカスタムコマンドワードなどを渡します。この時、関数は1個のinviteIdを返しこのinviteIdを記録します。
-2. キャスター側は、`onReceiveNewInvitation`のイベント通知を受信します。この時、UIはウィンドウをポップアップして、キャスターに同意するかどうか照会することができます。
+1. 視聴者側が`sendInvitation`を呼び出し、キャスターのuserIdおよび業務のカスタムコマンドなどを渡します。この時、関数が1つのinviteIdを返しますので、このinviteIdを記録します。
+2. キャスター側が`onReceiveNewInvitation`のイベント通知を受信します。この時UIでウィンドウをポップアップさせ、キャスターに同意の有無をたずねることができます。
 3. キャスターが同意を選択後、`acceptInvitation`を呼び出してinviteIdを渡します。
 4. 視聴者側は、`onInviteeAccepted`のイベント通知を受信し、`enterSeat`を呼び出してマイク・オンにします。
 
@@ -315,11 +314,11 @@ Appが次の操作の業務フローを実施するために、相手の同意�
 <dx-codeblock>
 ::: Swift Swift
 // 視聴者側の視点
-// 1. sendInvitationを呼び出し、マイク・オンをリクエストします
+// 1.sendInvitationを呼び出し、マイク・オンをリクエストします
 let inviteId = self.chatSalon.sendInvitation(cmd: "ENTER_SEAT", userID: ownerUserId, content: "1") { (code, message) in
     // 送信結果のコールバック
 }
-// 2.招待の同意リクエストを受信して、正式にマイク・オンにします
+// 2.招待のリクエスト同意を受信し、正式にマイク・オンになります
 func onInviteeAccepted(identifier: String, invitee: String) {
     if identifier == selfID {
         self.chatSalon.enterSeat { (code, message) in
@@ -341,8 +340,8 @@ func onReceiveNewInvitation(identifier: String, inviter: String, cmd: String, co
 :::
 ::: キャスターから視聴者を招待してマイク・オン
 
-1. キャスター側は、`sendInvitation`を呼び出して視聴者のuserIdおよび業務のカスタマイズコマンドワードなどを渡します。この時、関数は1個のinviteIdを返しこのinviteIdを記録します。
-2. 視聴者側は、`onReceiveNewInvitation`のイベント通知を受信します。この時、UIはウィンドウをポップアップして、視聴者がマイク・オンに同意するかどうかを照会することができます。
+1. キャスター側は、`sendInvitation`を呼び出して視聴者のuserIdおよび業務のカスタマイズコマンドワードなどを渡します。この時、関数が1つのinviteIdを返しますので、このinviteIdを記録します。
+2. 視聴者側は、`onReceiveNewInvitation`のイベント通知を受信します。この時UIでウィンドウをポップアップさせ、視聴者に同意の有無をたずねることができます。
 3. 視聴者が同意を選択後、`acceptInvitation`を呼び出してinviteIdを渡します。
 4. キャスター側は、`onInviteeAccepted`のイベント通知を受信し、`pickSeat`を呼び出し、視聴者をピックしてマイク・オンにします。
 
@@ -356,7 +355,7 @@ let inviteId = self.chatSalon.sendInvitation(cmd: "PICK_SEAT", userID: ownerUser
     // 送信結果のコールバック
 }
 
-// 2.招待の同意リクエストを受信して、正式にマイク・オンにします
+// 2.招待のリクエスト同意を受信し、正式にマイク・オンになります
 func onInviteeAccepted(identifier: String, invitee: String) {
     if identifier == selfID {
         self.chatSalon.pickSeat(userID: ) { (code, message) in
@@ -399,7 +398,7 @@ func onRecvRoomTextMsg(message: String, userInfo: ChatSalonUserInfo) {
 :::
 </dx-codeblock>
 
-- `sendRoomCustomMsg`によってカスタマイズ（シグナリング）情報を送信することができます。そのルーム内のすべてのキャスターおよび視聴者は`onRecvRoomCustomMsg`のコールバックを受信することができます。
+- `sendRoomCustomMsg`によって、カスタム（シグナル）メッセージを送信できます。当該ルーム内のすべてのキャスターと視聴者が`onRecvRoomCustomMsg` コールバックを受信できます。
   カスタムメッセージは、カスタマイズ信号の送信によく用いられます。例えば、「いいね」情報の発信やブロードキャストに使用します。
   <dx-codeblock>
   ::: Swift Swift
