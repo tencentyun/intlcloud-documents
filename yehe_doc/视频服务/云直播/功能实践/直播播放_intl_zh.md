@@ -27,7 +27,7 @@
 1. 下载安装 [腾讯视频云 Demo](https://intl.cloud.tencent.com/document/product/1071/38147)。
 2. 打开选择【移动直播】>【标准直播播放】或【快直播播放】。
 3. 在输入框中填入播放地址，或者扫描播放地址的二维码录入。
-
+4. 单击左下角播放按钮播放观看。
 
 >? 如需在 App 中进行推流/播放，可以集成 [移动直播 SDK](https://intl.cloud.tencent.com/product/mlvb) 配合云直播服务使用，移动直播 SDK 支持 RTMP、HTTP-FLV、HLS 播放协议。
 
