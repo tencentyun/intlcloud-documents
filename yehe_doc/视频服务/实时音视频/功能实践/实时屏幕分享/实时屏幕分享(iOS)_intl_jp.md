@@ -33,7 +33,7 @@ iOS画面共有に推奨されるエンコードパラメータは次のとお�
 ## アプリケーション間共有
 
 ### サンプルコード
-[Github](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/)の** Screen **ディレクトリに、アプリケーション間共有用のサンプルコードを設置しています。これには、次のようなテキストが含まれています。
+[Github]の** Screen **ディレクトリに、アプリケーション間共有用のサンプルコードを設置しています。これには、次のようなテキストが含まれています。
 
 ```
 ├─ TRTCSimpleDemo              // TRTC簡易化Demo
