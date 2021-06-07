@@ -10,7 +10,7 @@
 
 ## 步骤1：创建自适应码流模板
 
-1. 登录云点播控制台，选择【视频处理设置】>[【模板设置】](https://console.cloud.tencent.com/vod/video-process/template)，单击“转自适应码流模板”页签下的【创建转自适应码流模板】。
+1. 登录云点播控制台，选择【视频处理设置】>[【模板设置】](https://console.cloud.tencent.com/vod/video-process/template)，单击“转自适应码流模板”页签下的【创建自适应码流模板】。
 <img src="https://main.qcloudimg.com/raw/e9f8718aa8c6ae6dd05e4787cb76d586.png" width="800" />
 2. 进入“模板设置”页面后，单击【添加子流】，新建子流1、子流2和子流3，填写参数如下：
 	- **基本信息模块**：
@@ -118,7 +118,7 @@
 2. 【播放配置】选择 MyTestCfg。
 <img src="https://main.qcloudimg.com/raw/1518635e7f0b857e4406cd315e98ca3e.png" width="522" />
 3. 因为默认分发域名开启了防盗链，【播放控制】选项卡支持预览时选定防盗链的过期时间、试看时长等。此处可维持默认参数（播放防盗链过期时间默认1天，试看时长和最多可播放 IP 个数不填写）。
- 
+ <img src="https://main.qcloudimg.com/raw/132832fdc9e28f4e1377b6cdaaee5b53.png" width="522" />
 4. 在【Web 播放器】中，单击播放器中间的按钮，即可在 Web 端播放体验。
 <img src="https://main.qcloudimg.com/raw/976ec23a988bcb494c4b225e635a5dba.png" width="522" />
 
@@ -136,7 +136,7 @@
  * 【链接过期时间】：Key 防盗链过期时间，可以填6小时后的十六进制 Unix 时间：5ee09b44。
  * 【防盗链 Key】：填写之前获取到的防盗链 Key：2WExxx48eW。
 2. 单击【生成签名】，生成出来的签名显示在“生成签名结果”文本框中。
-
+img src="https://main.qcloudimg.com/raw/c7eff5906fbf01d8f28ec37119f8caf0.png" width="700" />
 
 获取超级播放器签名后，您可以分别使用 [Web](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-base.html)、[Android](https://github.com/tencentyun/SuperPlayer_Android) 和 [iOS](https://github.com/tencentyun/SuperPlayer_iOS)  三端的超级播放器 Demo 进行验证，具体请参考 Demo 的源码。
 >?在控制台的【媒资管理】>[【视频管理】](https://console.cloud.tencent.com/vod/media)>【超级播放器预览】中，可以获取预览视频对应的 Web 播放器源码，供您直接参考使用。
