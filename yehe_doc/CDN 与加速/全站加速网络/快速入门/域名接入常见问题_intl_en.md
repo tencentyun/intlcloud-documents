@@ -15,7 +15,7 @@ Whether the system checks the ICP filing status depends on your selected acceler
 
 ### Does ECDN support connecting to wildcard domain names?
 
-No. ECDN currently does not support connecting wildcard domain names.
+ECDN supports acceleration for wildcard domain names.
 
 ### What origin-pull methods are supported by ECDN?
 
