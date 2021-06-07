@@ -16,9 +16,6 @@ A ticket can have the following status:
 - Processing: the ticket has been received and reviewed the ticket. The technical support team is working on resolving the issue. You can submit additional information or close the ticket at this stage.
 - More information required: the technical support team has received and reviewed the ticket, but more information is required. You can close the ticket at this stage.
   
-  > The ticket will revert to "pending processing" status after you re-submit the ticket with more information.
+  >？ The ticket will revert to "pending processing" status after you re-submit the ticket with more information.
 - Closed: the ticket has been resolved, or you closed the ticket before it was processed
 
-## Technical Exchange
-Follow our WeChat Official Account at "Tencent Cloud Video" and type "technical support" in the chat window. We will get back to you as soon as possible.
-![](https://main.qcloudimg.com/raw/1c414d4d70e910289eac02b2e14e8c03.jpg)
