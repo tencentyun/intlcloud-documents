@@ -8,7 +8,7 @@ The nature of CSS is a streaming process, similar to the live broadcast of TV ch
 
 [](id:push_add)
 ## Getting Push Address
-Log in to the CSS console, select **Auxiliary Tools** > **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)** to generate a push address and configure as follows:
+Log in to the CSS console, select **CSS Toolkit** > **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)** to generate a push address and configure as follows:
 - Select **push domain name** as the type of address to generate.
 - Select the push domain name you added in domain management.
 - Enter an `AppName` (`live` by default). This is used to differentiate the paths of different applications under the same domain name.
