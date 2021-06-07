@@ -118,8 +118,10 @@
 2. 【再生設定】でMyTestCfgを選択します。
 <img src="https://main.qcloudimg.com/raw/1518635e7f0b857e4406cd315e98ca3e.png" width="522" />
 3. デフォルトの配信ドメイン名がホットリンク防止を有効にしているため、【再生制御】のオプションカードで、プレビュー時のホットリンク防止の期限切れ時間、テスト視聴時間などの選定をサポートしています。ここではデフォルトのパラメータを維持します（再生のホットリンク防止の期限切れ時間はデフォルトで1日、プレビュー時間、最大再生可能IP数は入力しません）。
- 
+ <img src="https://main.qcloudimg.com/raw/132832fdc9e28f4e1377b6cdaaee5b53.png" width="522" />
+
 4. 【Webプレーヤー】の中で、プレーヤーの中間のボタンをクリックすると、 Web端末での再生が体験できます。
+
 <img src="https://main.qcloudimg.com/raw/976ec23a988bcb494c4b225e635a5dba.png" width="522" />
 
 
@@ -137,7 +139,7 @@
  * 【ホットリンク防止Key】：入力の前に取得したホットリンク防止Key：2WExxx48eWを入力します。
 2. 【署名の生成】をクリックします。生成された署名が「署名生成結果」のテキストボックスに表示されます。
 
-
+<img src="https://main.qcloudimg.com/raw/c7eff5906fbf01d8f28ec37119f8caf0.png" width="700" />
 Super playerの署名を取得した後、[Web](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-base.html)、[Android](https://github.com/tencentyun/SuperPlayer_Android)、[iOS](https://github.com/tencentyun/SuperPlayer_iOS)の3種類の端末のSuper playerのDemoを使用してそれぞれ検証することができます。具体的な内容は、Demoのソースコードをご参照ください。
 >?コンソールの【メディア資産管理】>[【ビデオ管理】](https://console.cloud.tencent.com/vod/media)>【Super playerプレビュー】の中で、プレビューのビデオに対応するWebプレーヤーのソースコードを取得でき、これを直接参照して使用できるようにしています。
 <img src="https://main.qcloudimg.com/raw/c5756910c7958aae198804c91b76a89e.png" width="500" />
