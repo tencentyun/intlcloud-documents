@@ -5,19 +5,19 @@
 
 ## DB 테이블 생성
 1. [DMC 콘솔](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login)에 로그인 후, 상단 메뉴에서 [생성]>[데이터베이스 생성]>[신규 데이터베이스] 혹은 [생성]>[테이블 생성]을 선택합니다.
-![](https://main.qcloudimg.com/raw/655d55fd3304455269a547f90c96c91e.png)
+![](https://main.qcloudimg.com/raw/899520a477489601623a73558b9d5718.png)
 2. 팝업 대화 상자에서 새로 생성한 DB 테이블을 설정할 수 있습니다. 설정 완료 후 [제출]을 클릭합니다.
 >?문자 세트, 정렬 규칙은 [MySQL 공식 홈페이지 문서](https://dev.mysql.com/doc/)를 참조 바랍니다.
 >
  - 데이터베이스 생성 대화 상자:
-![](https://main.qcloudimg.com/raw/258605b4ac20f2136672bab0381e0f3f.png)
+![](https://main.qcloudimg.com/raw/3d894dd9ca840274ce66321a84089d00.png)
  - 테이블 생성 대화 상자:
-![](https://main.qcloudimg.com/raw/d2aec4106f019ff9d088be7c27737330.png)
+![](https://main.qcloudimg.com/raw/4423064c24df9f0b083fec5281b428c7.png)
 
 ## 인스턴스 세션 관리
 [DMC 콘솔](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login)에 로그인 후, 메뉴에서 [인스턴스 세션]을 클릭하여 인스턴스 세션 관리 페이지로 이동합니다. 현재 데이터베이스에서 모든 인스턴스 세션 세부 정보를 조회할 수 있습니다. 세션 개요, 사용자, 액세스 출처와 데이터베이스의 네 가지 범주 관련 정보가 표시됩니다.
 데이터 관리 콘솔은 kill 세션 기능을 제공하며, 사용자의 세션 관리를 지원합니다.
-![](https://main.qcloudimg.com/raw/dd87caaefb78386484ebb58bfdbdc6e4.png)
+![](https://main.qcloudimg.com/raw/0c16ea83442b6c61f2d237f95b60e768.png)
 
 ## 데이터베이스 Realtime Monitoring
 [DMC 콘솔](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login)에 로그인 후, 메뉴에서 [Realtime Monitoring]을 클릭하여 데이터베이스 Realtime Monitoring 페이지로 이동합니다. Realtime Monitoring 기능은 4초에 1번 새로 고쳐지며, 다음과 같이 모니터링 정보를 제공합니다.
@@ -36,8 +36,7 @@ MySQL Status Information|  InnoDB Row Operation |   Threads   |Network
 >- TencentDB for MySQL 8.0은 InnoDB Current-Lock 대기 관리 기능을 지원하지 않습니다.
 >
 [DMC 콘솔](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login)에 로그인 후, 메뉴에서 [InnoDB current-lock 대기]를 클릭하여 InnoDB Current-Lock 대기 관리 페이지로 이동합니다. 사용자는 HOLDLOCK 및 Current-Lock 대기 상세 정보를 시각적으로 조회할 수 있습니다. 또한, 세션 삭제 작업도 진행할 수 있습니다. 다음 이미지와 같습니다:
-![](https://main.qcloudimg.com/raw/ea4ebed0ba1a6e8b804af1554c09d3e6.png)
-![](https://main.qcloudimg.com/raw/746daa00522aa773c96c1248570a4537.png)
+
 
 ## 내장 phpMyAdmin
 >?TencentDB for MySQL 8.0은 phpMyAdmin 기능을 지원하지 않습니다.
