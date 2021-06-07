@@ -4,11 +4,11 @@
 创建集群时，在选择集群类型为 Hadoop 时可以在可选组件中选择 Ranger，Ranger 的版本根据您选择的 EMR 版本不同而存在差异。
 >?集群类型为 Hadoop 且选择了可选组件 Ranger 时，EMR-Ranger 默认会为 HDFS、YARN 创建服务并设置默认策略。
 >
-![](https://main.qcloudimg.com/raw/9f647836f1ef58b473f9e1481655034c.png)
+![](https://main.qcloudimg.com/raw/b27a043dda3df6f2cfa3ae7081dd4c0e.png)
 
 ## Ranger Web UI
 在访问 Ranger Web UI 之前，请务必确认当前所购买的集群是否配置了公网 IP，然后在集群服务中单击 Ranger 组件的 Web UI 地址链接。
-![](https://main.qcloudimg.com/raw/185a66ab82272bdec3b6db97071d0af3.png)
+![](https://main.qcloudimg.com/raw/75190f3ea2817fd96e8fa13801dc08a9.png)
 Web UI 地址链接跳转后，会提示输入用户名及密码，即在购买集群时设置的用户名及密码。
 ![](https://main.qcloudimg.com/raw/a0b4159c09c674773b2f3705abbd7d38.png)
 
