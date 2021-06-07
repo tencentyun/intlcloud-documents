@@ -62,11 +62,13 @@ The following table lists the GPU specifications that EKS provides for pods. Dif
 ## Supported Regions
 The following table describes the regions, availability zones, and resource types that are currently supported by EKS.
 
+
+### China
 <table class="table-striped">
 <tbody>
 	<tr>
 		<th>Region</th>
-		<th>Availability Zone</th>
+		<th>AZ</th>
 	</tr>
 	<tr>
 		<td rowspan="3">South China (Guangzhou)<br> ap-guangzhou</td>
@@ -129,4 +131,37 @@ The following table describes the regions, availability zones, and resource type
 </tbody>
 </table>
 
-
+### Other countries and regions	
+<table class="table-striped">
+	<tbody>
+	<tr>
+			<th>Region</th>
+			<th>Availability Zone</th>
+		</tr>
+		<tr>
+			<td>Southeast Asia (Jakarta)<br>ap-jakarta</td>
+			<td>Jakarta Zone 1 (Jakarta nodes can cover services in Southeast Asia)<br>ap-jakarta-1</td>
+		</tr>
+       <tr>
+			<td  rowspan="2">South Asia Pacific (Mumbai)<br>ap-mumbai</td>
+			<td>Mumbai Zone 1 (Mumbai nodes can cover services in South Asia)<br>ap-mumbai-1</td>
+		</tr>
+       <tr>
+			<td>Mumbai Zone 2 (Mumbai nodes can cover services in South Asia) <br>ap-mumbai-2</td>
+		</tr>
+		<tr>
+			<td rowspan="2">Western US (Silicon Valley)<br>na-siliconvalley</td>
+			<td>Silicon Valley Zone 1 (Silicon Valley nodes can cover services in Western US)<br>na-siliconvalley-1</td>
+		</tr>
+    <tr>
+			<td>Silicon Valley Zone 2 (Silicon Valley nodes can cover services in Western US)<br>na-siliconvalley-2</td>
+		</tr>
+		<tr>
+			<td>Europe (Frankfurt) <br>eu-frankfurt</td>
+			<td>Frankfurt Zone 1 (Frankfurt nodes can cover services in Europe)<br>eu-frankfurt-1</td>
+		</tr>
+		<td >Europe (Moscow)<br>eu-moscow</td>
+		<td>Moscow Zone 1 (Moscow nodes can cover services in Europe)<br>eu-moscow-1</td>
+		</tr>
+	</tbody>
+</table>

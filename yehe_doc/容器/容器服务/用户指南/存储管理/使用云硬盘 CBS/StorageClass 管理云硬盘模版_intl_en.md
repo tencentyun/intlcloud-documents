@@ -13,7 +13,7 @@ This document describes how to create a StorageClass of the Cloud Block Storage 
 3. Choose **Storage** > **StorageClass** in the left sidebar to go to the **StorageClass** page, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/9c08551ba5e4fe254cebf30eb34a01e1.png)
 4. Click **Create** to go to the **Create StorageClass** page, where you can set the parameters as required, as shown in the following figure.
-![](https://main.qcloudimg.com/raw/1654bb4dbce684a4492f3f155159f2b7.png)
+![](https://main.qcloudimg.com/raw/f0a35d376991444679f3cd7dbb79b434.png)
 Main parameters are described as follows:
 	- **Name**: set a custom name. This document uses `cbs-test` as an example.
 	- **Provisioner**: select **Cloud Block Storage**.
@@ -37,7 +37,7 @@ Main parameters are described as follows:
 2. On the cluster details page, choose **Storage** > **PersistentVolumeClaim** in the left sidebar to go to the **PersistentVolumeClaim** page, as shown in the following figure.
 ![](https://main.qcloudimg.com/raw/1ebfd35584e86e4ca050c03ffc0a979c.png)
 3. Click **Create** to go to the **Create a PersistentVolumeClaim** page, where you can set key PVC parameters as required, as shown in the following figure.
-![](https://main.qcloudimg.com/raw/8db59181d6d5df5129dd0b47d641bbc6.png)
+![](https://main.qcloudimg.com/raw/1654bb4dbce684a4492f3f155159f2b7.png)
 Main parameters are described as follows:
    - **Name**: set a custom name. This document uses `cbs-pvc` as an example.
    - **Namespace**: select **default**.
@@ -67,7 +67,7 @@ Main parameters are described as follows:
 ![](https://main.qcloudimg.com/raw/9574b60607fc80b0226136ca13f6fbdb.png)
 	- **Volume (optional)**:
 		- **Mount method**: select **Use existing PVC**.
-		- **Volume name**: set a custom name. This document uses `cbs-vol`as an example.
+		- **Volume name**: set a custom name. This document uses `cbs-vol` as an example.
 		- **Select PVC**: select an existing PVC. This document uses the `cbs-pvc`, which you created in the step of [Creating a PVC by using a specified StorageClass](#createPVC), as an example.
 	- **Containers in the pod**: click **Add Mount Point** to set a mount point.
 		- **Volume**: select the volume `cbs-vol` that you added in this step.
@@ -99,7 +99,7 @@ parameters:
  # renewflag: NOTIFY_AND_AUTO_RENEW
   # renewflag indicates the CBS renewal mode. NOTIFY_AND_AUTO_RENEW supports notifications upon expiration and automatic renewal by month. NOTIFY_AND_MANUAL_RENEW supports notifications upon expiration and but not automatic renewal. DISABLE_NOTIFY_AND_MANUAL_RENEW does not support notifications upon expiration or automatic renewal. If not specified, NOTIFY_AND_MANUAL_RENEW is used by default.
   # paymode: PREPAID
-  # paymode: the billing method of the cloud disk. The default value is POSTPAID (pay-as-you-go, which supports the **Retain** and **Delete** reclaim policies. **Retain** is only available in clusters later than V1.8).
+  - paymode: the billing method of the cloud disk. The default value is POSTPAID (pay-as-you-go, which supports the **Retain** and **Delete** reclaim policies. **Retain** is only available in cluster version 1.8 or later).
   # aspid:asp-123
   # You can specify a snapshot policy. After the cloud disk is created, it will be automatically bound to this policy. Binding failure does not affect the creation.
 ```
@@ -129,8 +129,13 @@ The following table lists the supported parameters.
 #### Creating a multi-pod StatefulSet
 
 You can use a cloud disk to create a multi-pod StatefulSet. The sample YAML file is as follows:
+
+<dx-alert infotype="explain" title="">
+The apiVersion of the resource object varies based on the cluster Kubernetes version. You can run the command `kubectl api-versions` to view the apiVersion of the current resource object.
+</dx-alert>
+
 ``` yaml
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: web
