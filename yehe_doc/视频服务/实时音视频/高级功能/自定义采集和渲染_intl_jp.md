@@ -38,7 +38,7 @@ TRTC SDKはNV12とi420という2種類のiOSバージョンのYUVデータ形式
 |  rotation   |  TRTCVideoRotation   |                       未入力                        | <ul style="margin:0"><li/>デフォルトは未入力。 <li/>画面を回転させたい場合は、`TRTCVideoRotation_0`、`TRTCVideoRotation_90`、`TRTCVideoRotation_180`、`TRTCVideoRotation_270`と入力します。SDKがその値に応じて対応する角度にビデオを時計回りに回転させます。例えば、縦画面の場合、`TRTCVideoRotation_90`と入力すると、SDKが画面を回転させて横表示にします。</ul> |
 
 #### サンプルコード
-[Demo](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCSimpleDemo/CustomCapture/testCustomVideo)フォルダの中に`TestSendCustomVideoData.m`という名のファイルがあり、これにはローカルビデオファイルの中からNV12形式のPixelBufferを読み取り、SDKを介して後続の処理を行う方法が示されています。
+[Demo]フォルダの中に`TestSendCustomVideoData.m`という名のファイルがあり、これにはローカルビデオファイルの中からNV12形式のPixelBufferを読み取り、SDKを介して後続の処理を行う方法が示されています。
 
 ```objectiveC
 //TRTCVideoFrameをアセンブルし、trtcCloudオブジェクトに送信します
