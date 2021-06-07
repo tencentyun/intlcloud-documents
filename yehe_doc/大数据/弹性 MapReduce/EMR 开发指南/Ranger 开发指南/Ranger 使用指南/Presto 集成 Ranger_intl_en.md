@@ -4,11 +4,11 @@ Ranger is available only when it is selected in **Optional Components** when you
 When creating a cluster of the Hadoop type, you can select Ranger in **Optional Components**. The Ranger version varies depending on the EMR version you choose.
 >?When the cluster type is Hadoop and the Ranger optional component is selected, EMR-Ranger will create services for HDFS and YARN by default and set default policies.
 >
-![](https://main.qcloudimg.com/raw/e744dc5ce95b1a2dc17f2765b4abe721.png)
+![](https://main.qcloudimg.com/raw/b27a043dda3df6f2cfa3ae7081dd4c0e.png)
 
 ## Ranger Web UI
 Before accessing the Ranger Web UI, make sure that the current cluster is configured with a public IP and click the Ranger Web UI URL on the **Cluster Service** page.
-![](https://main.qcloudimg.com/raw/002d2aeeb1349f12b3c811b1bbae7ea4.png)
+![](https://main.qcloudimg.com/raw/75190f3ea2817fd96e8fa13801dc08a9.png)
 After you are redirected, enter the username and password that you set when you purchased the cluster.
 ![](https://main.qcloudimg.com/raw/a0b4159c09c674773b2f3705abbd7d38.png)
 
