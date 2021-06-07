@@ -16,7 +16,7 @@ Download the demo from the repository on [GitHub](https://github.com/tencentyun/
 ### Configuring the client
 
 1. Download the project files from [GitHub](https://github.com/tencentyun/qcloud-sdk-android-samples/tree/master/COSTransferPractice), and open them in your IDE.
-2. Configure your COS_APP_ID, COS_SECRET_ID, and COS_SECRET_KEY in the environment variables.
+2. Configure your COS_APP_ID, SecretId、SecretKey in the environment variables.
 3. Run your project to try out the demo.
 
 >!
