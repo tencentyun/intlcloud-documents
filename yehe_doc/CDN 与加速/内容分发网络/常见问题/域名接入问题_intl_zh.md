@@ -85,7 +85,7 @@ CDN 配置时间一般不超过30分钟，若您设置后等待时间超过30分
 ### 如何判断 CDN 是否生效？
 
 用 nslookup 命令查询 CDN 加速域名 DNS 解析：nslookup 域名，若查询的域名解析中有上图红框后缀为 dnsv1.com 的 CNAME 解析记录，则说明您接入域名的 CDN 加速服务已生效。
-![](https://main.qcloudimg.com/raw/338c9de7a8c9fb4ab8682e5234ef1d76.png)
+![](https://main.qcloudimg.com/raw/4576b46fd8a04b726e6893a08f3fe61f.png)
 
 
 [](id:q19)
