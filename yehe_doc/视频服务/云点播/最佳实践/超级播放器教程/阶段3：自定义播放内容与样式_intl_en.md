@@ -118,7 +118,7 @@ In the previous step, you have processed the video. Now, you can use the superpl
 2. Select "MyTestCfg" as **Playback Configuration**.
 <img src="https://main.qcloudimg.com/raw/1518635e7f0b857e4406cd315e98ca3e.png" width="522" />
 3. As hotlink protection is enabled for the default distribution domain name, you can set the hotlink protection expiration time and the preview duration on the **Playback Control** tab. You can use the default parameter settings here (the default expiration time of playback hotlink protection is 1 day, and the preview duration and maximum number of IPs allowed for playback are left empty).
- 
+  <img src="https://main.qcloudimg.com/raw/132832fdc9e28f4e1377b6cdaaee5b53.png" width="522" />
 4. In **Web Player**, click the button in the middle of the player, and you can play back the video on web.
 <img src="https://main.qcloudimg.com/raw/976ec23a988bcb494c4b225e635a5dba.png" width="522" />
 
@@ -136,7 +136,7 @@ After hotlink protection is enabled, the superplayer requires a signature within
  * **Hotlink Protection Key**: previously obtained hotlink protection key, which is `2WExxx48eW`.
 2. Click **Generate Signature**, and the generated signature will be displayed in the "Signature Generation Result" text box.
 
-
+ <img src="https://main.qcloudimg.com/raw/132832fdc9e28f4e1377b6cdaaee5b53.png" width="522" />
 After getting the superplayer signature, you can use the superplayer demos for [web](https://imgcache.qq.com/open/qcloud/video/tcplayer/examples/vod/tcplayer-vod-base.html), [Android](https://github.com/tencentyun/SuperPlayer_Android), and [iOS](https://github.com/tencentyun/SuperPlayer_iOS) for verification. For more information, please see the demo source code.
 >?In **Media Assets** > **[Video Management](https://console.cloud.tencent.com/vod/media)** > **Superplayer Preview** in the console, you can get the corresponding web player source code for video preview for your reference.
 <img src="https://main.qcloudimg.com/raw/c5756910c7958aae198804c91b76a89e.png" width="500" />
