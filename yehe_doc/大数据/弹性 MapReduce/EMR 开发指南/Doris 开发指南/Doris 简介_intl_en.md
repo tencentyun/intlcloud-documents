@@ -37,7 +37,7 @@ For report analysis scenarios, data analysis and query modes are relatively fixe
 
 ### Multi-dimensional analysis
 Multi-dimensional analysis requires data to be structured and is suitable for scenarios where queries are relatively flexible, for example, data analysis criteria and aggregation dimensions are not definite.
-![](https://main.qcloudimg.com/raw/0a06ad799372b6c7cde7d0b0ccb3eca5.png)
+![](https://main.qcloudimg.com/raw/0f5cf3af939e33f4f426c65d9d992ec2.png)
 
 ## Structure
 Doris has three major components:
