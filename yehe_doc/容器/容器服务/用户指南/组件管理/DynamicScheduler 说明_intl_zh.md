@@ -7,7 +7,7 @@ Dynamic Scheduler 是容器服务 TKE 基于 Kubernetes 原生 Kube-scheduler Ex
 
 
 
-### 在集群内部署 Kubernetes 对象
+### 部署在集群内的 Kubernetes 对象
 
 
 | Kubernetes 对象名称        | 类型               |                   请求资源                   | 所属 Namespace |
@@ -130,13 +130,16 @@ Dynamic-scheduler 是一个 scheduler-extender，根据 node annotation 负载�
 ### 依赖部署
 
 Dynamic Scheduler 动态调度器依赖于 Node 当前和过去一段时间的真实负载情况来进行调度决策，需通过 Prometheus 等监控组件获取系统 Node 真实负载信息。在使用动态调度器之前，需要部署 Prometheus 等监控组件。在容器服务 TKE 中，您可按需选择采用自建的 Prometheus 监控服务或采用 TKE 推出的云原生监控。
-### 自建Prometheus监控服务
+
+[](id:rules)
+<dx-tabs>
+:::  自建Prometheus监控服务
 #### 部署 node-exporter 和 prometheus
 
 通过 node-exporter 实现对 Node 指标的监控，用户可以根据业务需求部署 node-exporter 和 prometheus。
 
 
-#### 聚合规则配置
+#### 聚合规则配置[](id:Prometheus1)
 
 在 node-exporter 获取节点监控数据后，需要通过 Prometheus 对原始的 node-exporter 采集数据进行聚合计算。为了获取动态调度器中需要的 `cpu_usage_avg_5m`、`cpu_usage_max_avg_1h`、`cpu_usage_max_avg_1d`、`mem_usage_avg_5m`、`mem_usage_max _avg_1h`、`mem_usage_max_avg_1d` 等指标，需要在 Prometheus 的 rules 规则进行如下配置：
 
@@ -198,7 +201,8 @@ rule_files:
 
 >?通常情况下，上述 Prometheus 配置文件和 rules 配置文件都是通过 configmap 存储，再挂载到 Prometheus server 容器，因此修改相应的 configmap 即可。
 
-### 云原生监控 Prometheus
+:::
+::: 云原生监控 Prometheus
 1. 登录容器服务控制台，在左侧菜单栏中选择【[云原生监控](https://console.cloud.tencent.com/tke2/prometheus)】，进入“云原生监控”页面。
 2. 创建与 Cluster 处于同一 VPC 下的 云原生监控 Prometheus 实例，并 关联用户集群。
 3. 与原生托管集群关联后，可以在用户集群查看到每个节点都已安装 node-exporter。
@@ -244,7 +248,8 @@ spec:
           expr: avg_over_time(mem_usage_active[5m])
 ```
 
-
+:::
+</dx-tabs>
 
 
 
