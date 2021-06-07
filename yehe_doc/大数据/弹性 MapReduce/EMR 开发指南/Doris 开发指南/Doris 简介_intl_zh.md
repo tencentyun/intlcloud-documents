@@ -37,7 +37,7 @@ Doris 采用自研的列式存储格式来提升 OLAP 领域的查询效率。�
 
 ### 多维分析
 多维分析要求数据是结构化的，适用于查询相对灵活的场景，例如数据分析条件以及聚合维度等方面不是很确定，一般将此类数据分析定义为多维分析。
-![](https://main.qcloudimg.com/raw/0a06ad799372b6c7cde7d0b0ccb3eca5.png)
+![](https://main.qcloudimg.com/raw/0f5cf3af939e33f4f426c65d9d992ec2.png)
 
 ## Doris 架构
 Doris 主要有三个组件：
