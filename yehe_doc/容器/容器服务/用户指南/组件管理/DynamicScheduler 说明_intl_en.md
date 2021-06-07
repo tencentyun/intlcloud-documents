@@ -131,7 +131,9 @@ As shown in the figure below, the score of Node1 is the highest, so pods will be
 
 Dynamic Scheduler makes scheduling decisions based on the actual load of nodes at the current time and over a previous period. This requires monitoring components, such as Prometheus, to obtain the actual load information of nodes. Before using Dynamic Scheduler, you need to deploy monitoring components such as Prometheus. In TKE, users can use the self-built Prometheus monitoring service or use the cloud native monitoring provided by TKE.
 
-### Self-built Prometheus monitoring services
+[](id:rules)
+<dx-tabs>
+::: Self-built\sPrometheus\smonitoring\sservices
 #### Deploying node-exporter and prometheus
 
 We use node-exporter to monitor node metrics. You can deploy node-exporter and prometheus based on your own requirements.
@@ -196,9 +198,10 @@ rule_files:
 2. Copy the configuration of rules to a file (such as dynamic-scheduler.yaml), place the file under `/etc/prometheus/rules/` of the above Prometheus container.
 3. Reload Prometheus server to obtain the metrics needed by Dynamic Scheduler from Prometheus.
 
->?Normally, the above Prometheus configuration file and rules configuration file are stored via configmap and then mounted to the Prometheus server container. Therefore, you only need to modify the relevant configmap.
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class ="doc-icon-tip"></i>Note</p><p>Normally, the above Prometheus configuration file and rules configuration file are stored via configmap and then mounted to the Prometheus server container. Therefore, you only need to modify the relevant configmap.</a></p></blockquote>
 
-#### Cloud native monitoring via Prometheus
+:::
+::: Cloud\snative\smonitoring\svia\sPrometheus
 1. Log in to the TKE console and click **[Cloud Native Monitoring](https://console.cloud.tencent.com/tke2/prometheus)** in the left sidebar to go to the **Cloud Native Monitoring** page.
 2. Create a cloud native monitoring RPOM instance under the same VPC as the target cluster, and associate it with the user cluster.
 3. After associating the instance with a native managed cluster, go to the user cluster to check that node-exporter has been installed on each node.
@@ -243,7 +246,8 @@ spec:
         - record: mem_usage_avg_5m
           expr: avg_over_time(mem_usage_active[5m])
 ```
-
+:::
+</dx-tabs>
 
 
 
