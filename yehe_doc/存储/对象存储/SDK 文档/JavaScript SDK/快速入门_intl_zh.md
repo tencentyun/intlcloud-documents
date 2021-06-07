@@ -14,7 +14,7 @@
 2. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5) ，[创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309)。获取存储桶名称和 [地域名称](https://intl.cloud.tencent.com/document/product/436/6224)。
 3. 登录 [访问管理控制台](https://console.cloud.tencent.com/capi) ，获取您的项目 SecretId 和 SecretKey。
 4. 配置 CORS 规则，AllowHeader 需配成`*`，ExposeHeaders 需要 ETag、Content-Length 以及其他 js 需要读取的 header 字段，如下图所示。操作详情请参见 [设置跨域访问](https://intl.cloud.tencent.com/document/product/436/13318) 文档。
-   ![](https://main.qcloudimg.com/raw/925cef63c1a4a5e849f464984e0446e7.png)
+   ![CORS示例](https://main.qcloudimg.com/raw/bdb4f616f2afe4ca18ba663446873fd4.png)
 
 > ?关于本文中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
 
@@ -72,7 +72,7 @@ var cos = new COS({
             callback({
                 TmpSecretId: credentials.tmpSecretId,
                 TmpSecretKey: credentials.tmpSecretKey,
-                XCosSecurityToken: credentials.sessionToken,
+                SecurityToken: credentials.sessionToken,
                 // 建议返回服务器时间作为签名的开始时间，避免用户浏览器本地时间偏差过大导致签名错误
                 StartTime: data.startTime, // 时间戳，单位秒，如：1580000000
                 ExpiredTime: data.expiredTime, // 时间戳，单位秒，如：1580000900
@@ -95,7 +95,7 @@ var cos = new COS({
 
 - 格式一（推荐）：后端通过获取临时密钥给到前端，前端计算签名。
 
-[//]: # ".cssg-snippet-global-init-sts"
+[//]: # (.cssg-snippet-global-init-sts)
 ```js
 var COS = require('cos-js-sdk-v5');
 var cos = new COS({
@@ -112,7 +112,7 @@ var cos = new COS({
             callback({
                 TmpSecretId: credentials.tmpSecretId,
                 TmpSecretKey: credentials.tmpSecretKey,
-                XCosSecurityToken: credentials.sessionToken,
+                SecurityToken: credentials.sessionToken,
                 // 建议返回服务器时间作为签名的开始时间，避免用户浏览器本地时间偏差过大导致签名错误
                 StartTime: data.startTime, // 时间戳，单位秒，如：1580000000
                 ExpiredTime: data.expiredTime, // 时间戳，单位秒，如：1580000900
@@ -124,7 +124,7 @@ var cos = new COS({
 
 - 格式二（推荐）：细粒度控制权限，后端通过获取临时密钥给到前端，只有在相同请求时，前端才重复使用临时密钥，后端可以通过 Scope 细粒度控制权限。
 
-[//]: # ".cssg-snippet-global-init-sts-scope"
+[//]: # (.cssg-snippet-global-init-sts-scope)
 ```js
 var COS = require('cos-js-sdk-v5');
 var cos = new COS({
@@ -145,7 +145,7 @@ var cos = new COS({
                 callback({
                     TmpSecretId: credentials.tmpSecretId,
                     TmpSecretKey: credentials.tmpSecretKey,
-                    XCosSecurityToken: credentials.sessionToken,
+                    SecurityToken: credentials.sessionToken,
                     // 建议返回服务器时间作为签名的开始时间，避免用户浏览器本地时间偏差过大导致签名错误
                     StartTime: data.startTime, // 时间戳，单位秒，如：1580000000
                     ExpiredTime: data.expiredTime, // 时间戳，单位秒，如：1580000900
@@ -159,7 +159,7 @@ var cos = new COS({
 
 - 格式三（不推荐）：前端每次请求前都需要通过 getAuthorization 获取签名，后端使用固定密钥或临时密钥计算签名返回至前端。该格式分块上传权限不便控制，不推荐您使用此格式。
 
-[//]: # ".cssg-snippet-global-init-signature"
+[//]: # (.cssg-snippet-global-init-signature)
 ```js
 var cos = new COS({
     // 必选参数
@@ -173,7 +173,7 @@ var cos = new COS({
             if (!data || !data.authorization) return console.error('authorization invalid');
             callback({
                 Authorization: data.authorization,
-                // XCosSecurityToken: data.sessionToken, // 如果使用临时密钥，需要把 sessionToken 传给 XCosSecurityToken
+                // SecurityToken: data.sessionToken, // 如果使用临时密钥，需要把 sessionToken 传给 SecurityToken
             });
         });
     },
@@ -186,11 +186,12 @@ var cos = new COS({
 
 - 格式四（不推荐）：前端使用固定密钥计算签名，该格式适用于前端调试，若使用此格式，请避免泄露密钥。
 
-[//]: # ".cssg-snippet-global-init"
+[//]: # (.cssg-snippet-global-init)
 ```js
+// SECRETID 和 SECRETKEY请登录 https://console.cloud.tencent.com/cam/capi 进行查看和管理
 var cos = new COS({
-    SecretId: 'COS_SECRETID',
-    SecretKey: 'COS_SECRETKEY',
+    SecretId: 'SECRETID',
+    SecretKey: 'SECRETKEY',
 });
 ```
 
@@ -214,7 +215,7 @@ var cos = new COS({
 | UploadQueueSize        | 上传队列最长大小，超出的任务如果状态不是 waiting、checking、uploading 会被清理，默认10000 | Number   | 否   |
 | ForcePathStyle         | 强制使用后缀式模式发请求。后缀式模式中 Bucket 会放在域名后的 pathname 里，并且 Bucket 会加入签名 pathname 计算，默认 false | Boolean  | 否   |
 | UploadCheckContentMd5  | 上传文件时校验 Content-MD5，默认 false。如果开启，上传文件时会对文件内容计算 MD5，大文件耗时较长 | Boolean  | 否   |
-| getAuthorization       | 获取签名的回调方法，如果没有 SecretId、SecretKey 时，这个参数必选 | Function | 否   |
+| getAuthorization       | 获取签名的回调方法，如果没有 SecretId、SecretKey 时，这个参数必选。<br> **注意: 该回调方法在初始化实例时传入，在使用实例调用接口时才会执行并获取签名。** | Function | 否   |
 | Timeout                | 超时时间，单位毫秒，默认为0，即不设置超时时间               | Number   | 否   |
 
 #### getAuthorization 回调函数说明的函数说明（使用格式一）
@@ -238,7 +239,7 @@ getAuthorization 的回调参数说明：
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
 | TmpSecretId       | 获取回来的临时密钥的 tmpSecretId                             | String | 是   |
 | TmpSecretKey      | 获取回来的临时密钥的 tmpSecretKey                            | String | 是   |
-| XCosSecurityToken | 获取回来的临时密钥的 sessionToken，对应 header 的 x-cos-security-token 字段 | String | 是   |
+| SecurityToken | 获取回来的临时密钥的 sessionToken，对应 header 的 x-cos-security-token 字段 | String | 是   |
 | StartTime         | 密钥获取的开始时间，即获取时刻的时间戳，单位秒，startTime，如：1580000000，用于签名开始时间，传入该参数可避免前端时间偏差签名过期问题 | String | 否   |
 | ExpiredTime       | 获取回来的临时密钥的 expiredTime，超时时刻的时间戳，单位秒，如：1580000900 | String | 是   |
 
@@ -255,7 +256,7 @@ getAuthorization 的函数说明回调参数说明：
 | options    | 获取签名需要的参数对象                                       | Object   |
 | - Method   | 当前请求的 Method                                            | String   |
 | - Pathname | 请求路径，用于签名计算                                       | String   |
-| - Key      | 对象键（Object 的名称），对象在存储桶中的唯一标识，了解更多可参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324) | String   |
+| - Key      | 对象键（Object 的名称），对象在存储桶中的唯一标识，了解更多可参见 [对象概述](https://intl.cloud.tencent.com/document/product/436/13324)。<br> **注意:当使用实例请求的接口不是对象操作相关接口时，该参数为空。** | String   |
 | - Query    | 当前请求的 query 参数对象，{key: 'val'} 的格式               | Object   |
 | - Headers  | 当前请求的 header 参数对象，{key: 'val'} 的格式              | Object   |
 | callback   | 临时密钥获取完成后的回调                                     | Function |
@@ -267,7 +268,7 @@ getAuthorization 计算完成后，callback 回传参数支持两种格式：
 | 属性名            | 参数描述                                                     | 类型   | 是否必填 |
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
 | Authorization     | 计算得到的签名字符串                                         | String | 是   |
-| XCosSecurityToken | 获取回来的临时密钥的 sessionToken，对应 header 的 x-cos-security-token 字段 | String | 否   |
+| SecurityToken | 获取回来的临时密钥的 sessionToken，对应 header 的 x-cos-security-token 字段 | String | 否   |
 
 #### 获取鉴权凭证
 
@@ -283,7 +284,7 @@ getAuthorization 计算完成后，callback 回传参数支持两种格式：
 
 简单上传接口适用于小文件上传，大文件请使用分块上传接口，详情请参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/31538) 文档。
 
-[//]: # ".cssg-snippet-put-object"
+[//]: # (.cssg-snippet-put-object)
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -301,7 +302,7 @@ cos.putObject({
 
 ### 查询对象列表
 
-[//]: # ".cssg-snippet-get-bucket"
+[//]: # (.cssg-snippet-get-bucket)
 ```js
 cos.getBucket({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -316,7 +317,7 @@ cos.getBucket({
 
 > !该接口用于读取对象内容，如果需要发起浏览器下载文件，可以通过 cos.getObjectUrl 获取 url 再触发浏览器下载，具体请参见 [预签名 URL](https://intl.cloud.tencent.com/document/product/436/31540) 文档。
 
-[//]: # ".cssg-snippet-get-object"
+[//]: # (.cssg-snippet-get-object)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -329,7 +330,7 @@ cos.getObject({
 
 ### 删除对象
 
-[//]: # ".cssg-snippet-delete-object"
+[//]: # (.cssg-snippet-delete-object)
 ```js
 cos.deleteObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */

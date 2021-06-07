@@ -13,7 +13,7 @@ COS XML API 的请求里，私有资源操作都需要鉴权凭证 Authorization
 
 COS.getAuthorization 方法用于计算鉴权凭证（Authorization），用以验证请求合法性的签名信息。
 
->该方法推荐只在前端调试时使用，项目上线不推荐使用前端计算签名的方法，有暴露密钥的风险。
+> !该方法推荐只在前端调试时使用，项目上线不推荐使用前端计算签名的方法，有暴露密钥的风险。
 
 #### 使用示例
 
@@ -21,10 +21,11 @@ COS.getAuthorization 方法用于计算鉴权凭证（Authorization），用以�
 
 [//]: # (.cssg-snippet-get-authorization)
 ```js
+// SECRETID 和 SECRETKEY请登录 https://console.cloud.tencent.com/cam/capi 进行查看和管理
 var COS = require('cos-nodejs-sdk-v5');
 var Authorization = COS.getAuthorization({
-    SecretId: 'COS_SECRETID',
-    SecretKey: 'COS_SECRETKEY',
+    SecretId: 'SECRETID',
+    SecretKey: 'SECRETKEY',
     Method: 'get',
     Key: 'a.jpg',
     Expires: 60,
@@ -55,7 +56,7 @@ var Authorization = COS.getAuthorization({
 
 示例一：获取不带签名 Object Url。
 
-[//]: # (.cssg-snippet-get-presign-download-url)
+[//]: # (.cssg-snippet-get-presign-download-url-nosign)
 ```js
 var url = cos.getObjectUrl({
     Bucket: 'examplebucket-1250000000',
@@ -67,7 +68,7 @@ var url = cos.getObjectUrl({
 
 示例二：获取带签名 Object Url。
 
-[//]: # (.cssg-snippet-get-presign-download-url-signed)
+[//]: # (.cssg-snippet-get-presign-download-url)
 ```js
 var url = cos.getObjectUrl({
     Bucket: 'examplebucket-1250000000',
@@ -117,7 +118,7 @@ cos.getObjectUrl({
     Key: '1.jpg',
     Sign: true
 }, function (err, data) {
-    if (!err) return console.log(err);
+    if (err) return console.log(err);
     console.log(data.Url);
     var req = request(data.Url, function (err, response, body) {
         console.log(err || body);
@@ -142,7 +143,7 @@ cos.getObjectUrl({
     Key: '1.jpg',
     Sign: true
 }, function (err, data) {
-    if (!err) return console.log(err);
+    if (err) return console.log(err);
     console.log(data.Url);
     var readStream = fs.createReadStream(__dirname + '/1.jpg');
     var req = request({
@@ -183,6 +184,6 @@ function(err, data) { ... }
 
 | 参数名 | 参数描述                                                     | 类型   |
 | ------ | ------------------------------------------------------------ | ------ |
-| err    | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://cloud.tencent.com/document/product/436/7730) 文档 | Object |
+| err    | 请求发生错误时返回的对象，包括网络错误和业务错误，如果请求成功则为空，更多详情请参见 [错误码](https://intl.cloud.tencent.com/document/product/436/7730) 文档 | Object |
 | data   | 请求成功时返回的对象，如果请求发生错误，则为空               | Object |
 | - Url  | 计算得到的 Url                                               | String |
