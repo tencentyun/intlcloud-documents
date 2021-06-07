@@ -22,5 +22,5 @@ The following table lists the components that can be integrated with Ranger.
 | YARN | ResourceManager | EMR v2.0.1 and above |
 | Presto | All coordinators | EMR v2.0.1 and above |
 | Impala | All daemons | EMR v2.2.0 and above |
-| Kudu | All masters | EMR v3.1.0 |
+| Kudu | All masters | EMR v3.2.0 |
 
