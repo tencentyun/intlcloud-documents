@@ -30,7 +30,7 @@ Whether the system checks the ICP filing status depends on your selected acceler
 
 
 
-No. ECDN currently does not support connecting wildcard domain names.
+ECDN supports acceleration for wildcard domain names.
 
 
 
@@ -114,7 +114,7 @@ They have the following differences when CDN or ECDN is used:
    </tr>
 </table>
 
->
+>!
 >- After ECDN is activated, if the client request port is different from the service ports opened on the node, client access requests cannot be accelerated by the node. 
 >- You can specify the origin-pull port on a node on the ECDN domain management page.
 
