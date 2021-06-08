@@ -50,7 +50,7 @@ rtmp://3891.livepush.myqcloud.com/live/3891_test?bizid=3891&txSecret=xxx&txTime=
 [](id:web)
 ### 场景二：Web 端推流
 1. 登录云直播控制台。
-2. 选择【辅助工具】>[【Web 推流】](https://console.cloud.tencent.com/live/tools/webpush)。
+2. 选择【直播工具箱】>[【Web 推流】](https://console.cloud.tencent.com/live/tools/webpush)。
 3. 在 Web 端推流的页面进行以下设置：
   1. 选择推流域名。
   2. 填写 AppName，AppName为区分同一个域名下多个 App 的地址路径，默认为 live。
