@@ -1,11 +1,11 @@
-## Introduction
+## Overview
 Elastic Kubernetes Service (EKS) is a TKE service mode that allows you to deploy workloads without purchasing any nodes. EKS is fully compatible with native Kubernetes, allowing you to purchase and manage resources natively. This service is billed based on the actual amount of resources used by containers. In addition, EKS provides extended support for Tencent Cloud products, such as storage and network products, and can ensure the secure isolation of containers. EKS is ready to use out-of-the-box.
 
 
 ## Concepts
 #### Containers and images
-Containerization is a form of lightweight operating system virtualization that isolates and controls system resources so that formerly global resources are only available for processes in a container. An image is similar to a lightweight snapshot of virtual machines (VMs) and can be interpreted as a static container. An image defines all files that run in a container and the dependencies between them to ensure consistent container runtime environments.
-By containerization, all applications and their dependencies are packaged into an image, and then the image is used to generate a resource-isolated environment to run the applications. This allows the applications to run independently in a consistent environment in a simple and efficient manner.
+Containers are virtualization tools applied at the process level. With the ability to isolate and control system resources, containers restrict global resources access to processes in selected containers. A container image is a virtual machine snapshot and can be seen as the static form of a container. An image defines all files and dependencies required to run a container, ensuring consistency for running the container.
+By containerization, all applications and their dependencies are packaged into an image, and then use the image to generate a resource-isolated environment to run the applications. This allows the applications to run independently in a consistent environment in a simple and efficient manner.
 
 #### Kubernetes
 Kubernetes is an open-source Container Orchestration Engine (COE) inspired by a Google project called Borg. It is one of the most important components of the Cloud Native Computing Foundation (CNCF). Kubernetes provides production-level features such as application orchestration, container scheduling, service discovery, and autoscaling. For more information, see [Kubernetes Documentation](https://kubernetes.io/docs/home).
@@ -15,7 +15,7 @@ Kubernetes is an open-source Container Orchestration Engine (COE) inspired by a 
 EKS is community-driven and supports the latest version of Kubernetes and native Kubernetes cluster management. It serves as a plug-in to provide extended support for Tencent Cloud products, such as storage, network, and load balancing products. EKS is ready to use out-of-the-box.
 
 #### Serverless
-EKS is a fully-managed Kubernetes service, which means that you do not need to manage any computing nodes. EKS delivers computing resources by using pods. It allows you to purchase, return, and manage cloud resources as in Kubernetes.
+EKS is a fully-managed Kubernetes service, which means that you do not need to manage any computing nodes. EKS delivers computing resources by using Pods. It allows you to purchase, return, and manage cloud resources as in Kubernetes.
 
 #### High security and reliability
 EKS can achieve 99.95% or higher availability based on the mature virtualization technology and network architecture of Tencent Cloud. Tencent Cloud ensures virtual isolation and network isolation between the EKS clusters of different users and allows users to configure network policies for a specific service by using services such as security groups and network Access Control List (ACL).
@@ -99,7 +99,7 @@ EKS can run online inference services by using CPU, GPU, and vGPU resources. The
 ## Additional Services
 - Storage: To use a cloud disk or file storage as the persistent storage of a container, you can use [CBS](https://intl.cloud.tencent.com/product/cbs) or [CFS](https://intl.cloud.tencent.com/product/cfs).
 - Network:
- - To create and manage your private network, for example, to create a VPC instance and a subnet, establish a peering connection, use the NAT Gateway, configure a route table, or configure a security policy, refer to the [VPC documentation](https://intl.cloud.tencent.com/product/vpc).
+ - To create and manage your private network, including to create a VPC instance and a subnet, establish a peering connection, use the NAT Gateway, configure a route table, or configure a security policy, please refer to the [VPC documentation](https://intl.cloud.tencent.com/product/vpc).
  - To manage service access configurations for private and public network traffic, you can use [CLB](https://intl.cloud.tencent.com/product/clb).
 - APIs: To gain access to Tencent Cloud products and services by calling Tencent Cloud APIs, refer to the [Tencent Cloud API documentation](https://intl.cloud.tencent.com/document/api).
 
