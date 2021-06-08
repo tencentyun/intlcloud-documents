@@ -1,1 +1,1 @@
-GPM is currently in beta and available for free. GPM is expected to exit beta on May 31, 2021.
+GPM is currently in beta and available for free. GPM is expected to exit beta on December 31，2021.
