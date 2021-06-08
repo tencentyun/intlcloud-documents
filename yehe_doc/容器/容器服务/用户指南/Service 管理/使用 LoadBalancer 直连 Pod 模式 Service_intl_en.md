@@ -29,7 +29,7 @@ For a service in native LoadBalancer mode, a Cloud Load Balancer (CLB) can be au
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. Go to the "Create a Service" page and configure the service parameters as required by referring to the step of [creating a service in the console](https://intl.cloud.tencent.com/document/product/457/36833).
     Configure some key parameters as follows:
-![](https://main.qcloudimg.com/raw/5190f97b699f9d0d856aeb0412a9428f.png)
+![](https://main.qcloudimg.com/raw/1f9ff7c6ebcffd2cfb35404f9d1f728e.png)
  - **Service Access**: select **LoadBalancer (public network)** or **LoadBalancer (private network)**.
  - **Network Mode**: **Enable CLB-to-Pod Direct Access**.
  - **Workload Binding**: select **Reference Workload**. In the displayed window, select the backend workload of the VPC-CNI mode.
@@ -111,7 +111,7 @@ service.cloud.tencent.com/tke-service-config: [tke-service-configName]
    1. Create a CCN instance. For more information, please see [Creating a CCN Instance](https://intl.cloud.tencent.com/document/product/1003/30062).
    2. Add the VPC where the cluster is located to the created CCN instance.
    3. Register the container network CIDR block of the relevant cluster to the CCN. In the cluster’s **Basic Information** page, enable the **CCN**.
-![](https://main.qcloudimg.com/raw/e9c44e7cb6ba38bc1ab34ea1f4d91cef.png)
+![](https://main.qcloudimg.com/raw/0f65c1e444196f44bfcdd47a02d97240.png)
  - You can [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1%20TKE&step=1) to apply for this feature. **CCN will not verify the IP address in this method** (not recommended).
 
 
@@ -122,7 +122,7 @@ service.cloud.tencent.com/tke-service-config: [tke-service-configName]
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. Go to the "Create a Service" page and configure the service parameters as required by referring to the step of [creating a service in the console](https://intl.cloud.tencent.com/document/product/457/36833).
     Configure some key parameters as follows:
-![](https://main.qcloudimg.com/raw/5190f97b699f9d0d856aeb0412a9428f.png)
+![](https://main.qcloudimg.com/raw/1f9ff7c6ebcffd2cfb35404f9d1f728e.png)
  - **Service Access**: select **LoadBalancer (public network)** or **LoadBalancer (private network)**.
  - **Network Mode**: **Enable CLB-to-Pod Direct Access**.
  - **Workload Binding**: select **Reference Workload**. In the displayed window, select the backend workload of the VPC-CNI mode.
