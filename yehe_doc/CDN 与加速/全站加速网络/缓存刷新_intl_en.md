@@ -5,7 +5,7 @@ In addition, ECDN can purge cache for specified URLs or directories in batches:
 - Purge URL: Delete the cache of corresponding resources on all ECDN nodes.
 - Purge directory: if you select the "Purge Changed Resources" mode, when an end user accesses a resource under the corresponding directory, the `Last-Modify` information of the resource will be obtained from the origin-pull. If it is the same as that of the currently cached resource, the cached resource will be directly returned; otherwise, the changed resource will be pulled from the origin server and cached again. If you select the "Purge All Resources" mode, when the user accesses a resource under the corresponding directory, the latest version of the resource will be directly pulled from the origin server and cached again.
 
->After a purge is successfully executed, the corresponding resource on the node does not have a valid cache. When the user initiates an access request again, the node will pull the required resource from the origin server and cache it on the node again. If you submit a large number of purge tasks, many caches will be cleared, resulting in a surge in origin-pull requests and high pressure on the origin server.
+After a purge is successfully executed, the corresponding resource on the node does not have a valid cache. When the user initiates an access request again, the node will pull the required resource from the origin server and cache it on the node again. If you submit a large number of purge tasks, many caches will be cleared, resulting in a surge in origin-pull requests and high pressure on the origin server.
 
 ## Use Cases
 
@@ -24,7 +24,7 @@ Log in to the [ECDN Console](https://console.cloud.tencent.com/ecdn), click **Pu
 In the **History** section, you can query tasks by specified time period, keyword, and purge task type. With regard to keyword, you can only query tasks by specifying a domain name or a complete purged URL/directory:
 ![](https://main.qcloudimg.com/raw/86e00c9652a635cf0a0007172119be92.png)
 
-> The console can return up to 10,000 operation records at a time, which can be exported to Excel. If you have a high number of purge tasks, please query and export them in batches.
+>?The console can return up to 10,000 operation records at a time, which can be exported to Excel. If you have a high number of purge tasks, please query and export them in batches.
 
 ### Precautions
 
@@ -53,7 +53,7 @@ In the **History** section, you can query tasks by specified time period, keywor
 ### Directory purge - purge changed resources
 The acceleration domain name is purge-test-1251991073.file.myqcloud.com, the origin server is Tencent Cloud Object Storage (COS), and resources on the origin server are as follows:
 ![](https://main.qcloudimg.com/raw/ed694acc98a8d3114c8a9922f7374a1b.png)
-1. Initiate requests to access resources `1.txt` and `2.txt` respectively. Nodes to be hit can be determined based on X-Cache-Lookup: Hit From Distank3 and Server: NWS_SPMid, resources will be directly returned by the nodes:
+1. Initiate requests to access resources `1.txt` and `2.txt` respectively. Nodes to be hit can be determined based on X-Cache-Lookup: Hit From Disktank3 and Server: NWS_SPMid, resources will be directly returned by the nodes:
 ![](https://main.qcloudimg.com/raw/ac358d3cca6618836113ca7e8e03475b.png)
 ![](https://main.qcloudimg.com/raw/fa4ad405deef4278e1a15baea0ac43de.png)
 2. On the origin server, replace `1.txt` with a file that has the same name, and the file’s last modified time changes, while `2.txt` stays the same:
