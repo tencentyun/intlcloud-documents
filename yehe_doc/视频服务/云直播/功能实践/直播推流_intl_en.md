@@ -50,7 +50,7 @@ rtmp://3891.livepush.myqcloud.com/live/3891_test?bizid=3891&txSecret=xxx&txTime=
 [](id:web)
 ### Scenario 2. Web push
 1. Log in to the CSS console.
-2. Select **Auxiliary Tools** > **[Web Push](https://console.cloud.tencent.com/live/tools/webpush)**.
+2. Select **CSS Toolkit** > **[Web Push](https://console.cloud.tencent.com/live/tools/webpush)**.
 3. Perform the following settings on the web push page:
   1. Select a push domain name.
   2. Enter an `AppName` (`live` by default). This is used to differentiate the paths of different applications under the same domain name.
