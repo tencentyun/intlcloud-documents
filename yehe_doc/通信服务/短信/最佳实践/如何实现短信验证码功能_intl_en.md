@@ -1,32 +1,29 @@
 Sending verification codes through SMS is the most popular and securest way to verify user identities. Currently, SMS verification codes are widely used in various application scenarios such as user registration, password reset, login protection, identity verification, random password generation, and transaction confirmation.
-This document uses developing a verification code-based login and signup service based on [SCF](https://intl.cloud.tencent.com/document/product/583) as an example to describe how to implement the SMS verification code feature.
+This document uses developing a verification code-enabled login and signup service based on [SCF](https://Intl.cloud.tencent.com/document/product/583) as an example to describe how to implement the SMS verification code feature.
+
+In addition to SCF, you can also use the [SendSms](https://intl.cloud.tencent.com/document/product/382/34859) API for this purpose.
 
 ## Preparations
-- You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and verified your organizational identity.
+- You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985) and [verified your organizational identity](https://intl.cloud.tencent.com/document/product/378/10496).
 - You have purchased an SMS package.
 - Prepare SMS signature owner qualification certificates.
  This document takes a business license as a qualification certificate for example.
 - Understand the SMS body content review standards.
 - Get the `SDKAppID` of the SMS application.
 
-## Relevant Materials
-- [Demo source code](https://github.com/qcloudsms/smsLogin)
+## Relevant Documents
+- [Demo source code](https://github.com/tencentyun/scf-demo-repo/tree/master/Nodejs8.9-SmsVerificationCode)
 - Other products' documentation
  - [VPC documentation](https://intl.cloud.tencent.com/document/product/215)
- - [TencentDB for MySQL documentation](https://intl.cloud.tencent.com/document/product/236)
- - [NAT Gateway documentation](https://intl.cloud.tencent.com/document/product/1015)
- - [SCF documentation](https://intl.cloud.tencent.com/document/product/583)
+ - [TencentDB for Redis documentation](https://intl.cloud.tencent.com/document/product/239/3205)
+ - [SCF documentation](https://intl.cloud.tencent.com/zh/document/product/583)
 
+## Step 1. Configure SMS content[](id:Step1)
+After an SMS signature or body template is submitted, it will be reviewed within two hours generally. You can [configure alarm contacts](https://intl.cloud.tencent.com/document/product/382/35470) and set template/signature review notifications to receive review result notifications.
 
+### Step 1.1. Create a signature[](id:Step1_1)
 
-<span id="Step1"></span>
-## Step 1. Configure the SMS content
-After an SMS signature or body template is submitted, it will be reviewed within two hours generally. You can [configure alarm contacts](https://intl.cloud.tencent.com/document/product/382/35470) to receive review result notifications.
-
-<span id="Step1_1"></span>
-### Step 1.1. Create a signature
-
-1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
+1. Log in to the [SMS console](https://console.cloud.tencent.com/smsv2).
 2. Select **Mainland China SMS** > **Signature Management** on the left sidebar and click **Create Signature**.
 3. Set the following parameters as needed:
  <table>
@@ -35,12 +32,12 @@ After an SMS signature or body template is submitted, it will be reviewed within
          <th>Sample Value</th>  
      </tr>
 	 <tr>      
-       <td>Signature use</td>   
+       <td>Signature purpose</td>   
 	     <td>For self-use (the signature is a company name, website, product name, or something else verified under the current account)</td>   
      </tr> 
 	 <tr>      
        <td>Signature type</td>   
-	     <td>Application</td>   
+	     <td>App</td>   
      </tr> 
 	 <tr>      
        <td>Signature content</td>   
@@ -56,13 +53,12 @@ After an SMS signature or body template is submitted, it will be reviewed within
      </tr> 
 </table>
 3. Click **OK**.
- Wait for signature review. The SMS signature will be available only after its status changes to **approved**.
+Wait for signature review. The SMS signature will be available only after its status changes to **approved**.
 
 
-<span id="Step1_2"></span>
-### Step 1.2. Create a body template
-1. Log in to the [SMS Console](https://console.cloud.tencent.com/smsv2).
-2. Select **Mainland China SMS** > **Template Management** on the left sidebar and click **Create Body Template**.
+### Step 1.2. Create a body template[](id:Step1_2)
+1. Log in to the [SMS console](https://console.cloud.tencent.com/smsv2).
+2. Select **Mainland China SMS** > **Body Templates** on the left sidebar and click **Create Body Template**.
 3. Set the following parameters as needed:
  <table>
      <tr>
@@ -75,7 +71,7 @@ After an SMS signature or body template is submitted, it will be reviewed within
      </tr> 
 	 <tr>      
         <td>SMS type</td>   
-	     <td>General SMS</td>   
+	     <td>Regular SMS</td>   
      </tr> 
 	 <tr>      
         <td>SMS content</td>   
@@ -83,20 +79,18 @@ After an SMS signature or body template is submitted, it will be reviewed within
      </tr> 
 </table>
 4. Click **OK**.
- Wait for body template review. The body template will be available only after its status changes to **approved**. Please note down the template ID.
+Wait for body template review. The body template will be available only after its status changes to **approved**. Please note down the template ID.
 
-<span id="Step2"></span>
-## Step 2. Set the SMS sending frequency limit (optional)
->!Individual users have no permission to modify the frequency limit. To use this feature, change "Individual Identity" to "Organizational Identity".
+## Step 2. Set the SMS delivery rate limit (optional)[](id:Step2)
+>!Individual users have no permission to modify the rate limit. To use this feature, change "Individual Identity" to "Organizational Identity".
 
-To ensure business and channel security and minimize potential financial losses caused by malicious calls of SMS APIs, you are recommended to [set the sending frequency limit](https://intl.cloud.tencent.com/document/product/382/35469#.E8.AE.BE.E7.BD.AE.E5.8F.91.E9.80.81.E9.A2.91.E7.8E.87.E9.99.90.E5.88.B6). In addition, you can use Tencent Cloud Captcha to maximize the protection of your business security.
-This document uses the default SMS sending frequency limit policy as an example.
+To ensure business and channel security and minimize potential financial losses caused by malicious calls of SMS APIs, you are recommended to [set the delivery rate limit](https://intl.cloud.tencent.com/document/product/382/35469). In addition, you can use Tencent Cloud Captcha to maximize the protection of your business security.
+This document uses the default SMS delivery rate limit policy as an example.
 
 - For SMS messages with the same content, a maximum of one such message can be sent to the same mobile number within 30 seconds.
 - A maximum of 10 messages can be sent to the same mobile number on a calendar day.
 
-<span id="Step3"></span>
-## Step 3. Configure the VPC and subnet
+## Step 3. Configure the VPC and subnet[](id:Step3)
 By default, SCF is deployed in the public network and can access public network only. If you need to access Tencent Cloud resources such as TencentDB instances, you need to build a VPC to ensure data and connection security.
 
 1. [Plan the network design](https://intl.cloud.tencent.com/document/product/215/31795) as needed.
@@ -134,11 +128,10 @@ By default, SCF is deployed in the public network and can access public network 
      </tr> 
 </table>
 
-<span id="Step4"></span>
-## Step 4. Configure a TencentDB for MySQL instance
-The region and subnet AZ of the TencentDB for MySQL instance must be the same as those of the VPC configured in [step 3](#Step3).
+## Step 4. Configure a TencentDB for Redis instance[](id:Step4)
+The region and subnet AZ of the TencentDB for Redis instance must be the same as those of the VPC configured in [step 3](#Step3).
 
-1. Purchase a TencentDB for MySQL instance. For detailed directions, please see [Purchase Methods](https://intl.cloud.tencent.com/document/product/236/5160).
+1. Purchase a TencentDB for Redis instance. For detailed directions, please see [Creating TencentDB for Redis Instance](https://intl.cloud.tencent.com/document/product/239/37712).
  <table>
      <tr>
          <th width="20%">Parameter</th>  
@@ -154,27 +147,11 @@ The region and subnet AZ of the TencentDB for MySQL instance must be the same as
      </tr> 
 	 <tr>      
         <td>Database version</td>   
-	     <td>MySQL 5.7</td>   
+	     <td>Redis 4.0	</td>   
      </tr> 
 	 <tr>      
         <td>Architecture</td>   
-	     <td>High-Availability Edition</td>   
-     </tr> 
-	 <tr>      
-        <td>Master AZ</td>   
-	     <td>Guangzhou Zone 3</td>   
-     </tr> 
-	 <tr>      
-        <td>Slave AZ</td>   
-	     <td>Guangzhou Zone 4</td>   
-     </tr> 
-	 <tr>      
-        <td>Instance specification</td>   
-	     <td>4-core 8,000 MB MEM</td>   
-     </tr> 
-	 <tr>      
-        <td>Disk</td>   
-	     <td>200 GB</td>   
+	     <td>Standard architecture</td>   
      </tr> 
 	 <tr>      
         <td>Network</td>   
@@ -189,38 +166,8 @@ The region and subnet AZ of the TencentDB for MySQL instance must be the same as
 	     <td>1</td>   
      </tr> 
 </table>
-2. Initialize the TencentDB for MySQL instance. For detailed directions, please see [Initializing TencentDB for MySQL Instance](https://intl.cloud.tencent.com/document/product/236/3128).
- <table>
-     <tr>
-         <th width="20%">Parameter</th>  
-         <th>Sample Value</th>  
-     </tr>
-	 <tr>      
-        <td>Supported character set</td>   
-	     <td>UTF-8</td>   
-     </tr> 
-	 <tr>      
-        <td>Table name case sensitivity</td>   
-	     <td>Yes</td>   
-     </tr> 
-	 <tr>      
-        <td>Custom port</td>   
-	     <td>3306</td>   
-     </tr> 
-	 <tr>      
-        <td>Root account and password</td>   
-	     <td>Set as needed</td>   
-     </tr> 
-	 <tr>      
-        <td>Confirm password</td>   
-	     <td>Enter the password again</td>   
-     </tr> 
-</table>
-3. Log in to the TencentDB for MySQL instance. For detailed directions, please see [Logging in to phpMyAdmin](https://intl.cloud.tencent.com/document/product/236/32341).
-4. Create a table and fields for storing information such as user phone numbers, profile photos, and nicknames as needed. For detailed directions, please see [Creating Database and Table](https://intl.cloud.tencent.com/document/product/236/8465).
 
-<span id="Step5"></span>
-## Step 5. Create a function
+## Step 5. Create a function[](id:Step5)
 SCF currently supports development in Python, Node.js, PHP, Java, and Go. This document uses Node.js as an example.
 
 1. Create a function in the region of the VPC created in [step 3](#Step3). For detailed directions, please see [Writing Function](https://intl.cloud.tencent.com/document/product/583/32742).
@@ -244,194 +191,69 @@ SCF currently supports development in Python, Node.js, PHP, Java, and Go. This d
 </table>
 2. Deploy the function and set **API Gateway Trigger** as the trigger. For detailed directions, please see [Deploying Function](https://intl.cloud.tencent.com/document/product/583/32742).
 
-<span id="Step6"></span>
-## Step 6. Enable public network access (optional)
+## Step 6. Enable public network access (optional)[](id:Step6)
 - Functions deployed in a VPC before April 29, 2020 are isolated from the public network by default. If you want them to have access to both private network and public network, you can do so by enabling public network access.
- Log in to the [SCF Console](https://console.cloud.tencent.com/scf/index?rid=1), select **Function Service**, click the name of the target function in the function list to enter the function configuration page. Click **Edit**, check **Public Network Access**, and click **Save** to save the configuration.
+ Log in to the [SCF console](https://console.cloud.tencent.com/scf/index?rid=1), select **Function Service**, click the name of the target function in the function list to enter the function configuration page. Click **Edit**, check **Public Network Access**, and click **Save** to save the configuration.
 - Functions deployed on or after April 29, 2020 have public network access enabled by default, and no additional operations are required.
 
+## Step 7. Deploy the SMS demo[](id:Step7)
+1. Go to the [SCF console](https://console.cloud.tencent.com/scf/) and select the SMS demo to deploy it.
+![](https://main.qcloudimg.com/raw/96ffd0253553107165d03d6c3038ff96.png)
 
-<span id="Step7"></span>
-## Step 7. Deploy the SMS SDK
-1. Run the following command to install the SDK:
-```
-npm install tencentcloud-sdk-nodejs --save
-```
-2. Import the SMS module code into your code.
-3. Configure the core logic for sending SMS messages.
-<pre>
-/*
- * Feature: using SDK to send SMS messages
- * Parameter: mobile number and SMS verification code
- */
-async function sendSms(phone, code) {
-  const tencentcloud = require('tencentcloud-sdk-nodejs');
-  const SmsClient = tencentcloud.sms.v20190711.Client;
-  const Credential = tencentcloud.common.Credential;
-  const ClientProfile = tencentcloud.common.ClientProfile;
-  const HttpProfile = tencentcloud.common.HttpProfile;
-  // `secretId` and `secretKey` of Tencent Cloud account, which should not be disclosed
-  const secretId = "secretId";// Set it to your real `secretId`
-  const secretKey = "secretKey";// Set it to your real `secretKey`
-
-  let cred = new Credential(secretId, secretKey);
-  let httpProfile = new HttpProfile();
-  httpProfile.endpoint = "sms.tencentcloudapi.com";
-  let clientProfile = new ClientProfile();
-  clientProfile.httpProfile = httpProfile;
-  let client = new SmsClient(cred, "ap-guangzhou", clientProfile);
-  phone = "+86" + phone;// Mobile number in Mainland China
-
-  let req = {
-      PhoneNumberSet: [phone],// Mobile number to which the SMS message is sent
-      TemplateID: "",// ID of the template created and recorded in <a href="#Step1_2">step 1.2</a>
-      Sign: "",// Signature created in <a href="#Step1_1">Step 1.1</a>
-      TemplateParamSet: [code],// Random verification code
-      SmsSdkAppid: ""// SMS application ID
-  }
-
-  function smsPromise() {
-      return new Promise((resolve, reject) => {
-          client.SendSms(req, function(errMsg, response) {
-              if (errMsg) {
-                  reject(errMsg)
-              } else {
-                  if(response.SendStatusSet && response.SendStatusSet[0] && response.SendStatusSet[0].Code === "Ok") {
-                      resolve({
-                          errorCode: 0,
-                          errorMessage: response.SendStatusSet[0].Message,
-                          data: {
-                              codeStr: response.SendStatusSet[0].Code,
-                              requestId: response.RequestId
-                          }
-                      })
-                  } else {
-                      resolve({
-                          errorCode: -1003,// SMS verification code sending failed
-                          errorMessage: response.SendStatusSet[0].Message,
-                          data: {
-                              codeStr: response.SendStatusSet[0].Code,
-                              requestId: response.RequestId
-                          }
-                          
-                      })
-                  }
-              }                
-          });
-      })
-  }
-  let queryResult = await smsPromise()
-  return queryResult
-}
-</pre>
-
-<span id="Step8"></span>
-## Step 8. Verify the core logic of verification code sending
-Verification codes have a high requirement for timeliness. You can store verification codes in the memory or TencentDB for Redis and use the mobile number as a key to store information such as sending time, verification code, number of verification attempts, and verification result. For the sake of security, you are recommended to set a limit on the number of verification attempts to prevent brute force attacks. In this document, a maximum of three attempts is used as an example.
-```
-/*
- * Feature: getting SMS verification code based on mobile number
- */
-async function getSms(queryString) {
-  const code = Math.random().toString().slice(-6);// Generate a random 6-digit verification code
-  const sessionId = Math.random().toString().slice(-8);// Generate a random 8-digit verification code
-  const sessionCode = {
-      code: code,
-      sessionId: sessionId,
-      sendTime: new Date().getTime(),
-      num: 0,// Number of verification attempts, which can be up to 3
-      used: 1// 1: not used; 2: used
-  }
-  clearCacheCode()
-
-  cacheCode[queryString.phone] = sessionCode
-```
-
-<span id="Step9"></span>
-## Step 9. Configure the login module
-The login module is mainly used for user signup or login. It stores user information such as mobile number, username, profile photo, and signup time upon the first login (i.e., signup).
-```
-/*
-* Feature: login
-*/
-async function loginSms(queryString) {
-  const connection = mysql.createConnection({
-    host: '', // TencentDB instance IP address
-    user: '', // TencentDB instance username, such as `root`
-    password: '', // TencentDB instance password
-    database: '' // TencentDB database name
-  });
-  connection.connect();
-
-  if(queryString.token) {
-    return await verifyToken(connection, queryString)
-  }
-
-  if(!queryString.code || !queryString.sessionId) {
-    return {
-        errorCode: -1001,
-        errorMessage: "Missing parameter"
-    }
-  }
-
-  let result = cacheCode[queryString.phone]
-  if(!result || result.used === 2 || result.num >= 3) {
-    return {
-      errorCode: -1100,
-      errorMessage: "The verification code has expired"
-    }
-  }
-  if(result.sessionId !== queryString.sessionId) {
-    return {
-      errorCode: -1103,
-      errorMessage: "Unmatched sessionId"
-    }
-  }
-  
-  if(result.code == queryString.code) {
-    cacheCode[queryString.phone].used = 2;// Update the verification code status to "used"
-    const queryInfoSql = `select * from info where phone = ?`
-    let queryInfoResult = await wrapPromise(connection, queryInfoSql, [queryString.phone])
-    if(queryInfoResult.length === 0) {// No records are found. The user has not signed up.
-      return await generateInfo(connection, queryString)
-    } else {
-      let infoResult = queryInfoResult[0]
-      return {
-        errorCode: 0,
-        errorMessage: "Logged in successfully",
-        data: {
-          phone: infoResult.phone,
-          token: getToken(infoResult.userId, infoResult),
-          name: infoResult.name,
-          avatar: infoResult.avatar,
-          userId: infoResult.userId.toString()
-        }
-      }
-    }
-  } else {
-    updateCacheCode(queryString.phone, result)
-    return {
-      errorCode: -1102,
-      errorMessage: "The verification code is incorrect. Please enter again."
-    }
-  }
-}
-```
-
-In addition, to make login easier, you can use the JSON web token standard to generate a token, which can be used to maintain the login status, so that the user can stay logged in for a short time period with no need to enter a new SMS verification code.
-
-```
-/*
-* Feature: using JSON web token to distribute token
-*/
-function getToken(userId, infoResult) {
-  return jwt.sign({
-    phone: infoResult.phone,
-    userId: userId,
-    name: infoResult.name,
-    avatar: infoResult.avatar
-  }, privateKey, {expiresIn: tokenExpireTime});
-}
-```
+2. Set the environment variables of the demo in **Advanced Configuration**.
+![](https://main.qcloudimg.com/raw/5d85b66aa467a3267f1ba25820381ffa.png)
 
 
+| Field | Description |
+| ----- | ----- |
+| REDIS_HOST| Redis database address. |
+|REDIS_PASSWORD| Redis database password. |
+| SMS_TEMPLATE_ID| Template ID. You must enter the ID of an approved template, which can be viewed in the [SMS console](https://console.cloud.tencent.com/smsv2). |
+| SMS_SIGN| Content of the SMS signature, which should be encoded in UTF-8. You must enter an approved signature, which can be viewed in the [SMS console](https://console.cloud.tencent.com/smsv2). Note: this parameter is required for Mainland China SMS. |
+| SMS_SDKAPPID| SMS `SdkAppid` actually generated after an application is added in the [SMS console](https://console.cloud.tencent.com/smsv2), such as 1400006666. |
+
+
+3. Set the same VPC environment as the Redis database in **Advanced Configuration**.
+![](https://main.qcloudimg.com/raw/447c4e1e03a60e2b1c0999a4a8ce32a1.png)
+
+
+4. Set the permissions of SCF **execution role** in **Advanced Configuration**.
+![](https://main.qcloudimg.com/raw/798b9d7f556d32dd04d432e0f07719a0.png)
+You need to associate the `QcloudSMSFullAccess` policy with the `SCF_QcsRole` role in the [CAM console](https://console.cloud.tencent.com/cam/role).
+![](https://main.qcloudimg.com/raw/accb8fe057f2790e8ac9244d08e69259.png)
+In this way, the ``TENCENTCLOUD_SECRETID`, `TENCENTCLOUD_SECRETKEY`, and `TENCENTCLOUD_SESSIONTOKEN` environment variables can be obtained in the code, which will be used by the SMS SDK.
+
+5. Click **Complete** to deploy the function.
+
+6. Create an SCF **API Gateway trigger** and request the trigger address to use SMS capabilities.
+![](https://main.qcloudimg.com/raw/b3ee5dcb7fef1cfb3e5657576bf0d865.png)
+
+## Step 8. Use the features
+Verification codes have a high requirement for timeliness. You can store verification codes in the memory or TencentDB for Redis and use the mobile number as a key to store information such as sending time, verification code, number of verification attempts, and verification result.
+
+### Features
+#### Sending SMS verification code
+Request parameters:
+
+| Field | Type | Description |
+| ----- | ----- | ----- |
+| method|string| Request method, whose value is `getSms` |
+|phone|string| Mobile number in the format of area code + mobile number, such as 86185662466** |
+
+#### Verifying verification code (login)
+Request parameters:
+
+| Field | Type | Description |
+| ----- | ----- | ----- |
+| method|string| Request method, whose value is `login` |
+|phone|string| Mobile number in the format of area code + mobile number, such as 86185662466** |
+| code|string| 6-digit verification code |
+
+### Error codes
+| Field | Description |
+| ----- | ----- |
+| InValidParam| Missing parameter |
+| MissingCode| Missing verification code parameter |
+| CodeHasExpired| The verification code has expired |
+| CodeHasValid| The verification code is invalid |
+| CodeIsError| Please check whether the mobile number and verification code are correct |
