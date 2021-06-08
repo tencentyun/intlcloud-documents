@@ -80,7 +80,7 @@ CloudAudit supports recording operations and API calls in the following Tencent 
 | ---------------------- | ---------------------- |
 | [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/1021/37648)               | 	trtc                |
 | [Live Video Broadcasting](https://intl.cloud.tencent.com/document/product/1021/37647)               | 	live                |
-| [Video On-demand](https://intl.cloud.tencent.com/document/product/1021/37649)               | vod                |
+| [Video on Demand](https://intl.cloud.tencent.com/document/product/1021/37649)               | vod                |
 
 
 ## Data Processing
