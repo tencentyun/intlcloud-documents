@@ -1,5 +1,5 @@
 ## Overview
-Kubernetes [Vertical Pod Autoscaler](https://github.com/kubernetes/autoscaler/tree/vpa-release-0.8/vertical-pod-autoscaler (VPA) can automatically adjust the reserved CPU and memory of Pod, improve cluster resource utilization and release CPU and memory for other Pods. This document describes how to use the VPA community edition in TKE to implement the scaling up and scaling down of Pods.
+Kubernetes [Vertical Pod Autoscaler](https://github.com/kubernetes/autoscaler/tree/vpa-release-0.8/vertical-pod-autoscaler) (VPA) can automatically adjust the reserved CPU and memory of Pod, improve cluster resource utilization and release CPU and memory for other Pods. This document describes how to use the VPA community edition in TKE to implement the scaling up and scaling down of Pods.
 
 ## Use Cases
 
@@ -16,9 +16,9 @@ Compared with [Horizontal Pod Autoscaler (HPA)](https://intl.cloud.tencent.com/d
 
 ## VPA Limits
 
-<dx-alert infotype="notice" title="">
-VPA community edition is in testing. Use this feature with caution. We recommend setting "updateMode" to "Off" to ensure that VPA will not automatically change the value of Request. You can still view the recommended value of request bound to the load in the VPA object.
-</dx-alert>
+
+>!VPA community edition is in testing. Use this feature with caution. We recommend setting "updateMode" to "Off" to ensure that VPA will not automatically change the value of Request. You can still view the recommended value of request bound to the load in the VPA object.
+
 
 - You can use the VPA to update the resource configurations of the running Pods. This feature is in testing. The configuration updates will lead to Pod restart and rebuilding, and the Pods may be scheduled to other nodes.
 - The VPA does not evict the Pods that are not run under a controller. For these Pods, the `Auto` mode is equivalent to the `Initial` mode.
@@ -73,8 +73,8 @@ After successfully creating the VPA component, you can check the three Deploymen
 ### Sample 1: using VPA to obtain the recommended value of Request
 
 >? 
-- We do not recommend using VPA to automatically update Request in a production environment.
-- You can use VPA to view the recommended value of Request and manually trigger the update as needed.
+>- We do not recommend using VPA to automatically update Request in a production environment.
+>- You can use VPA to view the recommended value of Request and manually trigger the update as needed.
 
 
 
