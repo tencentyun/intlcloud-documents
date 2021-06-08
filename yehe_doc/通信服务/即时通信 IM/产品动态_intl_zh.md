@@ -1,3 +1,73 @@
+## 2021年05月
+
+<table>
+<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th><th width="15%">发布时间</th><th width="15%">相关文档</th>
+</tr> 
+<tr>
+    <td> SDK 5.3.435 精简版本发布</td>
+    <td><ul style="margin:0">
+        <li> 增加删除会话漫游消息的接口。</li>
+    	<li> 修复部分安卓手机长连接连网收不到网络状态变化通知的问题。</li>
+    	<li> 优化好友资料拉取逻辑，针对陌生人请求好友资料时，避免每一次都请求后台。</li>
+     	<li> 修复解散群保留会话的场景下，获取不到群资料和会话历史消息的问题。</li>
+	<li> 修复获取会话列表接口出现会话顺序错乱的问题。</li>
+    	<li> 新增获取会话未读总数的接口。</li>
+    	<li> 获取会话未读总数时过滤掉设置了免打扰的群会话。</li>
+    	<li> 修复 iOS 平台 HTTP 请求偶现 Crash 的问题。</li>
+    </ul></td>
+    <td> 2021-05-20 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 下载</a></td>
+</tr>
+<tr>
+    <td> SDK 5.1.62 标准版本发布</td>
+    <td><ul style="margin:0">
+        <li> 修复已知问题。</li>
+    </ul></td>
+    <td> 2021-05-20 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 下载</a></td>
+</tr>
+</table>
+
+## 2021年04月
+
+<table>
+<tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th><th width="15%">发布时间</th><th width="15%">相关文档</th>
+</tr> 
+<tr>
+    <td> SDK 5.3.425 精简版本发布</td>
+    <td><ul style="margin:0">
+        <li> 支持设置会话置顶。</li>
+    	<li> 支持设置单聊消息免打扰。</li>
+    	<li> 支持发送不计入未读的消息。</li>
+     	<li> 支持在没有网络登录失败的情况下获取本地会话和消息数据。</li>
+	<li> iOS 版本新增 xcframework ( 支持 Mac Catalyst)。</li>
+    	<li> 新增获取会话未读总数的接口。</li>
+    	<li> 个人资料补齐 birthday 字段。</li>
+    	<li> 修复其他成员撤回群 @ 消息后，被 @ 成员对应会话仍然包含群 @ 提醒的问题。</li>
+    	<li> 修复部分安卓手机长连接初始连网成功后会出现一次断网重连的问题。</li>
+    	<li> 修复 iOS 版本创建群不支持设置自定义字段的问题。</li>
+    	<li> 修复特殊帐号用户 findMessage 查询不到本地消息的问题。</li>
+    </ul></td>
+    <td> 2021-04-19 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 下载</a></td>
+</tr>
+<tr>
+    <td> SDK 5.2.212 精简版本发布</td>
+    <td><ul style="margin:0">
+        <li> iOS : 优化 SDK 因使用 IDFA 相关关键字可能导致上架 App Store 被拒的问题。</li>
+    </ul></td>
+    <td> 2021-04-06 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 下载</a></td>
+</tr>
+<tr>
+    <td> SDK 5.1.60 标准版本发布</td>
+    <td><ul style="margin:0">
+        <li> iOS : 优化 SDK 因使用 IDFA 相关关键字可能导致上架 App Store 被拒的问题。</li>
+    </ul></td>
+    <td> 2021-04-06 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 下载</a></td>
+</tr>
+</table>
 
 ## 2021年03月
 
@@ -30,7 +100,7 @@
 	    <li> 修复若干稳定性问题。</li>
 	</ul></td>
 	<td> 2021-03-03 </td>
-	<td> <a href="https://cloud.tencent.com/document/product/269/36887">SDK 下载</a></td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 下载</a></td>
 </tr>
 </table>
 ## 2021年01月

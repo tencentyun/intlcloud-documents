@@ -1,3 +1,73 @@
+## May 2021
+
+<table>
+<tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
+</tr> 
+<tr>
+    <td> SDK 5.3.435 release (lite edition)</td>
+    <td><ul style="margin:0">
+        <li>Added the API for deleting roaming messages in conversations.</li>
+    	<li>Fixed the issue where some Android phones could not receive network status change notifications over persistent connections.</li>
+    	<li>Optimized the logic for pulling user profiles to avoid requesting the backend every time when strangers request for user profiles.</li>
+     	<li>Fixed the issue where group profiles and historical messages could not be obtained when the groups were deleted but conversations were retained.</li>
+	<li>Fixed the issue where conversations were out of order when you got them via the API for getting conversation list.</li>
+    	<li>Added the API for getting the total message unread count in conversations.</li>
+    	<li>Fixed the issue where group conversations in Mute Notifications mode were filtered out when getting the total message unread count.</li>
+    	<li>Fixed the occasional crashes caused by iOS HTTP requests.</li>
+    </ul></td>
+    <td>May 20, 2021</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+</tr>
+<tr>
+    <td> SDK 5.1.62 release (standard edition)</td>
+    <td><ul style="margin:0">
+        <li>Fixed known issues.</li>
+    </ul></td>
+    <td>May 20, 2021</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+</tr>
+</table>
+
+## April 2021
+
+<table>
+<tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
+</tr> 
+<tr>
+    <td> SDK 5.3.425 release (lite edition)</td>
+    <td><ul style="margin:0">
+        <li>Added support for pinning a conversion to the top.</li>
+    	<li>Added support for setting the Mute Notifications option for one-to-one messages.</li>
+    	<li>Added support for sending messages that are not counted as unread.</li>
+     	<li>Added support for getting local conversation and message data when there is no network connection or your login fails.</li>
+	<li>Added XCFramework (supporting Mac Catalyst) to the SDK for iOS.</li>
+    	<li>Added the API for getting the total message unread count in conversations.</li>
+    	<li>Added the `birthday` field to personal profiles.</li>
+    	<li>Fixed the issue where, when group @ messages were recalled, the conversations of the @ target users still contained the group @ notifications.</li>
+    	<li>Fixed the issue where, for some Android phones, the network would be disconnected and connected again after a successful initial network connection during persistent connections.</li>
+    	<li>Fixed the issue where users could not set custom fields when creating a group in the SDK for iOS.</li>
+    	<li>Fixed the issue where users with special accounts could not search for local messages via `findMessage`.</li>
+    </ul></td>
+    <td>April 19, 2021</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+</tr>
+<tr>
+    <td> SDK 5.2.212 release (lite edition)</td>
+    <td><ul style="margin:0">
+        <li>Fixed the issue where the SDK may be rejected by the App Store for using IDFA related keywords.</li>
+    </ul></td>
+    <td>April 06, 2021</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+</tr>
+<tr>
+    <td> SDK 5.1.60 release (standard edition)</td>
+    <td><ul style="margin:0">
+        <li>Fixed the issue where the SDK may be rejected by the App Store for using IDFA related keywords.</li>
+    </ul></td>
+    <td>April 06, 2021</td>
+    <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
+</tr>
+</table>
 
 ## March 2021
 
@@ -27,7 +97,7 @@
 	    <li>Optimized the logic of persistent connections, improving the quality of connections outside Chinese mainland.</li>
 	    <li>Optimized data reporting and specified error codes related to network timeout in a detailed way.</li>
 	    <li>Fixed occasional failures of extracting logs in the iOS SDK.</li>
-	    <li> Fixed several stability issues.</li>
+	    <li>Fixed several stability issues.</li>
 	</ul></td>
 	<td>March 03, 2021</td>
 	<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
@@ -458,7 +528,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 </tr> <tr>
 <td>SDK 4.8.50 release (Android, iOS, and Windows)</td>
 <td><ul style="margin:0;">
-    <li>Fixed the API 2.0 issue where the onMemberEnter callback was not triggered when someone entered a livestreaming group (AVChatRoom).</li>
+    <li>Fixed the API 2.0 issue where the onMemberEnter callback was not triggered when someone entered a audio-video group (AVChatRoom).</li>
     <li>Added the groupID parameter to the onGroupInfoChanged and onMemberInfoChanged callbacks of API 2.0.</li>
     <li>Fixed the issue where there was no conversation update callback after a C2C message was sent successfully.</li>
     <li>Fixed the issue where a user failed to receive messages after switching accounts and joining the same audio-video group (AVChatRoom).</li>
@@ -537,7 +607,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Optimized COS uploads.</li>
     <li>Improved the logic for processing pending requests for groups.</li></ul></td>
 <td>February 28, 2020</td>
-<td>-</td>
+<td>N/A</td>
 </tr><tr>
 <td>SDK 2.5 release (Mini Program and Web)</td>
 <td><ul style="margin:0;">
@@ -548,7 +618,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Fixed the issue where, when groups were frequently created and terminated in the console or through RESTful APIs, the SDK did not deliver the TIM.EVENT.GROUP_SYSTEM_NOTICE_RECEIVED event.</li>
     <li>Fixed an occasional issue where getMessageList would fail to pull group message lists.</li></ul></td>
 <td>February 28, 2020</td>
-<td>-</td>
+<td>N/A</td>
 </tr> </table>
 
 ## January 2020
@@ -572,7 +642,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Fixed the issue where the JOIN_STATUS_ALREADY_IN_GROUP event occasionally occurred when a user logged in and joined an audio-video chat room.</li>
     <li>Fixed potential performance issues caused by core-js.</li></ul></td>
 <td>January 03, 2020</td>
-<td>-</td>
+<td>N/A</td>
 </tr> </table>
 
 ## December 2019
@@ -586,7 +656,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Added the getSenderNickname API for messages.</li>
     <li>TUIKit/Demo: profile photos displayed in conversation lists can be set to have rounded corners.</li></ul></td>
 <td>December 23, 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr><tr>
 <td>SDK 2.3 release (Mini Program and Web)</td>
 <td><ul style="margin:0;">
@@ -604,7 +674,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Fixed the issue where, when "multi-instance" or "multi-client" login was enabled, other instances or clients failed to receive messages after a web instance was logged out.</li>
     <li>Fixed the issue where the SDK occasionally reported errors due to the structure of conversation lists that were pulled.</li></ul></td>
 <td>December 13, 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr> </table>
 
 ## November 2019
@@ -622,7 +692,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Fixed the issue where the Internet Explorer 10 browser would report errors.</li>
     <li>Fixed the issue where anonymous users could not join groups.</li></ul></td>
 <td>November 21, 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr><tr>
 <td>SDK 4.6 release (Android, iOS, and Windows)</td>
 <td><ul style="margin:0;">
@@ -633,7 +703,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>TUIKit/Demo: added the video call feature.</li>
     <li>TUIKit/Demo: added 3x3 grid display of group profile photos and optimized the conversation list, contacts, and chat UI.</li></ul></td>
 <td>November 13, 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr><tr>
 <td>Fixed pricing for message history storage</td>
 <td>With fixed pricing, message history storage is easier and more cost-efficient to use.</td>
@@ -666,7 +736,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Windows: improved the network reconnection speeds of different platforms across platform libraries.</li>
     <li>Windows: added JVM configurations to cross-platform libraries to facilitate passing jvm from an Android environment.</li></ul></td>
 <td>October 16, 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr><tr>
 <td>SDK 2.1 release (Mini Program and Web)</td>
 <td><ul style="margin:0;">
@@ -677,7 +747,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Fixed the issue where group system notifications did not show group names.</li>
     <li>Fixed the issue where a conversation created after receiving a new message did not have the profile of the message sender.</li></ul></td>
 <td>October 16, 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr> </table>
 
 ## September 2019
@@ -687,7 +757,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>SDK 2.0 release (Mini Program and Web)</td>
 <td>The new IM SDK for Mini Program and IM SDK for Web offer better module stability and overall connection experience, as well as visualized Demo for convenient and easy try-out by customers.</td>
 <td>September 19, 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr><tr>
 <td>SDK 4.5 improvements (Android, iOS, and Windows)</td>
 <td><ul style="margin:0;">
@@ -695,7 +765,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Improved network connection quality.</li>
     <li>Optimized the logic for pulling custom group/group member fields.</li></ul></td>
 <td>September 18, 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr> </table>
 
 ## August 2019
@@ -728,12 +798,12 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Improved the latest conversation list loading speed after login.</li>
     <li>Improved the file message sending speed for users outside Chinese mainland.</li></ul></td>
 <td>August 30, 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr><tr>
 <td>Renamed “Instant Messaging (IM)”</td>
 <td>“Cloud Communication” is now “Instant Messaging (IM)”.</td>
 <td>August 06, 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr> </table>
 
 ## July 2019
@@ -750,7 +820,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Fixed the issue where it took a long time to deliver messages when the app went to the foreground after remaining in the background for a long time.</li>
     <li>Optimized the one-to-one chat unread count.</li></ul></td>
 <td>July 16, 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr> </table>
 
 ## June 2019
@@ -765,7 +835,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Improved the message sending efficiency.</li>
     <li>Added the JSON key for getting the unique ID of messages for cross-platform library messages.</li></ul></td>
 <td>June 27, 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr> </table>
 
 ## May 2019
@@ -792,7 +862,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Improved the network reconnection speed when iOS devices switch to Wi-Fi networks.</li>
     <li>Optimized group message synchronization.</li></ul></td>
 <td>May 24, 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr> </table>
 
 ## April 2019
@@ -813,7 +883,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Fixed the issue where group messages occasionally could not be received.</li>
     <li>Added support for IP connection and login information reporting.</li></ul></td>
 <td>April 24, 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr> </table>
 
 ## March 2019
@@ -843,7 +913,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
     <li>Fixed the issue where messages occasionally failed to be sent.</li>
     <li>Fixed the issue where clients did not receive relevant instructions after a group was deleted in the backend.</li></ul></td>
 <td>March 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr> </table>
 
 ## January 2019
@@ -853,7 +923,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>SDK 4.0 release (Android, iOS, and Windows)</td>
 <td>The new IM client SDK fixed issues with network connection, sending and receiving messages, and unread count, significantly improved the stability of important underlying modules such as network and message, and provides open source TUIKit to simplify the connection process for customers.</td>
 <td>January 21, 2019</td>
-<td>-</td>
+<td>N/A</td>
 </tr> </table>
 
 ## July 2017
@@ -863,7 +933,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>Support for UGC short videos</td>
 <td>Added support for UGC short video messages with video editing feature, providing better content and user experience.</td>
 <td>July 2017</td>
-<td>-</td>
+<td>N/A</td>
 </tr> </table>
 
 ## May 2017
@@ -873,7 +943,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>SDK 3.0 release</td>
 <td>More features, smaller size, and optimized code structure to improve customer integration efficiency and download experience.</td>
 <td>May 2017</td>
-<td>-</td>
+<td>N/A</td>
 </tr> </table>
 
 ## December 2016
@@ -883,7 +953,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>Support for multi-instance force offline</td>
 <td>Meets the needs for multi-instance force offline and for customer service scenario on web clients.</td>
 <td>December 2016</td>
-<td>-</td>
+<td>N/A</td>
 </tr> </table>
 
 ## August 2016
@@ -893,12 +963,12 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>Support for broadcast messages</td>
 <td>Broadcast messages can now be pushed to all members to improve message delivery efficiency and meet customers’ needs for message push.</td>
 <td>August 2016</td>
-<td>-</td>
+<td>N/A</td>
 </tr><tr>
 <td>Support for multi-device login</td>
 <td>Multi-device login is now supported to meet the need for using both mobile phone and PC, improving user experience.</td>
-<td>August 2016</td>
-<td>-</td>
+<td>2016-08</td>
+<td>N/A</td>
 </tr> </table>
 
 ## May 2016
@@ -908,7 +978,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>Launch of audio-video chat rooms</td>
 <td>Audio-video chat rooms with unlimited participants are now available for live streaming scenarios, providing features such as message frequency limit and custom messages.</td>
 <td>May 2016</td>
-<td>-</td>
+<td>N/A</td>
 </tr> </table>
 
 ## March 2016
@@ -918,7 +988,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>Support for message push</td>
 <td>Push notifications in Android and iOS are now supported to ensure message delivery and better user experience.</td>
 <td>March 2016</td>
-<td>-</td>
+<td>N/A</td>
 </tr> </table>
 
 ## December 2015
@@ -928,7 +998,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>Support for short video messages</td>
 <td>Short video messages are now supported, providing richer message content.</td>
 <td>December 2015</td>
-<td>-</td>
+<td>N/A</td>
 </tr> </table>
 
 ## August 2015
@@ -938,7 +1008,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>Support for web platform</td>   
 <td>IM for web now supports custom emoji messages.</td>
 <td>August 2015</td>
-<td>-</td>
+<td>N/A</td>
 </tr> </table>
 
 ## July 2015
@@ -948,7 +1018,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>Support for Windows platform</td>
 <td>IM for Windows now supports location and audio messages.</td>
 <td>July 2015</td>
-<td>-</td>
+<td>N/A</td>
 </tr> </table>
 
 ## May 2015
@@ -958,7 +1028,7 @@ For more information about updates, see <a href="https://intl.cloud.tencent.com/
 <td>Launch of Instant Messaging IM (formerly Cloud Communication)</td>
 <td>IM for Android and IM for iOS support multiple message types including text, image, and emoji.</td>
 <td>May 2015</td>
-<td>-</td>
+<td>N/A</td>
 </tr> </table>
 
 
