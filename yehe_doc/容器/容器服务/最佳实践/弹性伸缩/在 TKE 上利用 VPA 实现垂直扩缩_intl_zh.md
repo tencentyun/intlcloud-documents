@@ -73,8 +73,8 @@ kubectl get deploy -n kube-system | grep vpa
 ### 示例1：使用 VPA 获取 Request 推荐值
 
 >? 
-- 不建议在生产环境中使用 VPA 自动更新 Request。
-- 您可以利用 VPA 查看 Request 推荐值，在合适条件下手动触发更新。
+>- 不建议在生产环境中使用 VPA 自动更新 Request。
+>- 您可以利用 VPA 查看 Request 推荐值，在合适条件下手动触发更新。
 
 
 
