@@ -1,6 +1,5 @@
 ## 现象描述
-部署 SSL 证书后，使用 HTTPS 协议访问网站，浏览器地址栏中域名前显示<span ><img src="https://main.qcloudimg.com/raw/fd19301d82877dddfb19dbba29366b17.png" style="margin-bottom:-5px;"/></span>图标和 “不安全” 字样。单击<span ><img src="https://main.qcloudimg.com/raw/fd19301d82877dddfb19dbba29366b17.png" style="margin-bottom:-5px;"/></span>，将提示红字警告 “你与此网站之间建立的连接不安全”。如下图所示：
-![](https://main.qcloudimg.com/raw/d0e139c4326a84444ab6fd2a68170440.png)
+部署 SSL 证书后，使用 HTTPS 协议访问网站，浏览器地址栏中域名前显示<span ><img src="https://main.qcloudimg.com/raw/fd19301d82877dddfb19dbba29366b17.png" style="margin-bottom:-5px;"/></span>图标和 “不安全” 字样。单击<span ><img src="https://main.qcloudimg.com/raw/fd19301d82877dddfb19dbba29366b17.png" style="margin-bottom:-5px;"/></span>，将提示红字警告 “你与此网站之间建立的连接不安全”。
 
 ## 可能原因
 - **SSL 证书过期**：为了确保私钥安全，SSL 证书均存在有效期限，最新的国际标准 SSL 证书最长有效期为1年。如 SSL 证书过了有效期，没有及时替换新证书，网站会出现红色 “不安全” 警告。
