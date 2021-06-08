@@ -18,7 +18,7 @@ To use CSS, you should have at least **two** domain names, one as the **push dom
 >?
 >- CSS provides a test domain name `xxxx.livepush.myqcloud.com` by default. You can use it for push testing, but we recommend you not use it as the push domain name for your real business.
 >- After the domain name is added successfully, you can view its information in the domain name list in **Domain Management**. If you need to manage it, please see [Domain Name Management](https://intl.cloud.tencent.com/document/product/267/31056).
->- For more information on live streaming domain names, please see [Basic CSS Features](https://intl.cloud.tencent.com/document/product/267/7968).
+>- For more information on CSS domain names, please see [Basic CSS Features](https://intl.cloud.tencent.com/document/product/267/7968).
 <span id="step1_1_1"></span>
 4. Once your domain name is added, the system will automatically assign it a CNAME domain name (suffixed with `.liveplay.myqcloud.com`), which cannot be accessed directly before you complete the CNAME configuration at your domain name service provider. After the configuration takes effect, CSS can be used properly. The following uses Tencent Cloud as the DNS service provider as an example to describe how to add a CNAME record:
 	1. Log in to the [Tencent Cloud Domain Name Service console](https://console.cloud.tencent.com/domain).
@@ -54,7 +54,7 @@ To use CSS, you should have at least **two** domain names, one as the **push dom
 
 You can enter the generated push address into the corresponding push software according to your business scenario.
 - For push on PCs, we recommend you use OBS. For detailed directions, please see [OBS Push](https://intl.cloud.tencent.com/document/product/267/31569).
-- For push on web, we recommend you go to **Auxiliary Tools** > **[Web Push](https://console.cloud.tencent.com/live/tools/webpush)**, select the push domain name, enter the custom `StreamName`, select the address expiration time, open the camera, and click **Start Push**.
+- For push on web, we recommend you go to **CSS Toolkit** > **[Web Push](https://console.cloud.tencent.com/live/tools/webpush)**, select the push domain name, enter the custom `StreamName`, select the address expiration time, open the camera, and click **Start Push**.
 - For push on mobile devices, download and install "Tencent Video Cloud Demo", open it, select **MLVB** > **Camera Push**, enter the push address into the address box manually or by scanning the QR code, and tap **Start** in the bottom-left corner to start push.
 
 >? Customized apps can integrate with the [MLVB SDK](https://intl.cloud.tencent.com/document/product/1071) provided by Tencent Cloud to implement the push function.
@@ -63,7 +63,7 @@ You can enter the generated push address into the corresponding push software ac
 ## Step 4. Get a playback address
 
 1. After push succeeds, select **[Stream Management](https://console.cloud.tencent.com/live/streammanage)** > **Online Streams**, view the status of the push address, and click **Test** to play back the stream online.
-2. Select **CSS Toolbox** > **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)** to get a playback address and configure as follows:
+2. Select **CSS Toolkit** > **[Address Generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)** to get a playback address and configure as follows:
    1. Select **Playback domain** as the type of generation.
    2. Select the playback domain name you added in **Domain Management**.
    3. Enter the same `StreamName` as that of the push address. The `StreamName` of the playback address must be the same as that of the push address to play back the corresponding stream.
@@ -72,25 +72,25 @@ You can enter the generated push address into the corresponding push software ac
 ![](https://main.qcloudimg.com/raw/d91fe5d373cfc03df2c87562f3984858.png)
 <span id="step4_1"></span>
 3. You can use the following methods to test whether a live stream can be played back normally based on your business scenario:
-   1. For stream test on PCs, we recommend you use tools such as [VLC](https://intl.cloud.tencent.com/document/product/267/32483). For more information, please see [Live Playback](https://intl.cloud.tencent.com/document/product/267/31559).
-   2. For stream test on web, we recommend you use TCPlayerLite in the Player SDK. For more information, please see [Live Playback](https://intl.cloud.tencent.com/document/product/267/31559).
-   4. For stream test on mobile devices, we recommend you download and install Tencent Video Cloud Demo, open it, select **MLVB** > **Live Pull**, enter the playback address into the address box manually or by scanning the QR code, and tap **Play** in the bottom-left corner to start watching.
+   1. For stream test on PCs, we recommend you use tools such as [VLC](https://intl.cloud.tencent.com/document/product/267/32483). For more information, please see [CSS Playback](https://intl.cloud.tencent.com/document/product/267/31559).
+   2. For stream test on web, we recommend you use TCPlayerLite in the Player SDK. For more information, please see [CSS Playback](https://intl.cloud.tencent.com/document/product/267/31559).
+   4. For stream test on mobile devices, we recommend you download and install Tencent Video Cloud Demo, open it, select **MLVB** > **CSS Pull**, enter the playback address into the address box manually or by scanning the QR code, and tap **Play** in the bottom-left corner to start watching.
 
 >? If you need to push/play back a stream in an app, you can integrate the [MLVB SDK](https://intl.cloud.tencent.com/zh/product/mlvb) to use the CSS service. If you encounter any problem during the trial, please see [FAQs](https://intl.cloud.tencent.com/zh/document/product/267/7968).
 
 ## Relevant Operations
-- To enable **live recording**, create a recording template and bind it to a domain name. For more information, please see [Recording Configuration](https://intl.cloud.tencent.com/document/product/267/34223).
-- To enable **live transcoding**, create a transcoding template and bind it to a domain name. For more information, please see [Transcoding Configuration](https://intl.cloud.tencent.com/document/product/267/31071).
-- To enable **live watermarking**, create a watermark template and bind it to a domain name. For more information, please see [Watermark Configuration](https://intl.cloud.tencent.com/document/product/267/31073).
-- To enable **live screencapture and porn detection**, create a screencapture and porn detection template and bind it to a domain name. For more information, please see [Screencapture and Porn Detection Configuration](https://intl.cloud.tencent.com/document/product/267/31072).
-- To enable **live stream mixing**, call the stream mixing API. For more information, please see [CreateCommonMixStream](https://intl.cloud.tencent.com/document/product/267/35997).
+- To enable **CSS recording**, create a recording template and bind it to a domain name. For more information, please see [Recording Configuration](https://intl.cloud.tencent.com/document/product/267/34223).
+- To enable **CSS transcoding**, create a transcoding template and bind it to a domain name. For more information, please see [Transcoding Configuration](https://intl.cloud.tencent.com/document/product/267/31071).
+- To enable **CSS watermark**, create a watermark template and bind it to a domain name. For more information, please see [Watermark Configuration](https://intl.cloud.tencent.com/document/product/267/31073).
+- To enable **CSS screencapture and porn detection**, create a screencapture and porn detection template and bind it to a domain name. For more information, please see [Screencapture and Porn Detection Configuration](https://intl.cloud.tencent.com/document/product/267/31072).
+- To enable **CSS stream mixing**, call the stream mixing API. For more information, please see [CreateCommonMixStream](https://intl.cloud.tencent.com/document/product/267/35997).
 
 
 
 
 ## FAQs
-- [What are the differences between push, live streaming, and VOD?](https://intl.cloud.tencent.com/document/product/267/7968#.E6.8E.A8.E6.B5.81.E3.80.81.E7.9B.B4.E6.92.AD.E5.92.8C.E7.82.B9.E6.92.AD.E5.88.86.E5.88.AB.E6.98.AF.E4.BB.80.E4.B9.88.EF.BC.9F)
+- [What are the differences between push, CSS, and VOD?](https://intl.cloud.tencent.com/document/product/267/7968#.E6.8E.A8.E6.B5.81.E3.80.81.E7.9B.B4.E6.92.AD.E5.92.8C.E7.82.B9.E6.92.AD.E5.88.86.E5.88.AB.E6.98.AF.E4.BB.80.E4.B9.88.EF.BC.9F)
 - [What push protocols are supported?](https://intl.cloud.tencent.com/document/product/267/7968#.E6.94.AF.E6.8C.81.E5.93.AA.E4.BA.9B.E6.8E.A8.E6.B5.81.E5.8D.8F.E8.AE.AE.EF.BC.9F)
 - [What playback protocols are supported?](https://intl.cloud.tencent.com/document/product/267/7968#.E6.94.AF.E6.8C.81.E5.93.AA.E4.BA.9B.E6.92.AD.E6.94.BE.E5.8D.8F.E8.AE.AE.EF.BC.9F)
 - [What does a playback address consist of?](https://intl.cloud.tencent.com/document/product/267/7968#.E6.92.AD.E6.94.BE.E5.9C.B0.E5.9D.80.E7.94.B1.E4.BB.80.E4.B9.88.E7.BB.84.E6.88.90.EF.BC.9F)
-- [How do I splice and generate multiple live stream URLs?](https://intl.cloud.tencent.com/zh/document/product/267/38393)
+- [How do I splice and generate multiple CSS URLs?](https://intl.cloud.tencent.com/zh/document/product/267/38393)
