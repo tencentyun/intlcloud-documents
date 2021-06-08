@@ -21,7 +21,7 @@
 ![](https://main.qcloudimg.com/raw/d4b01354bab726ea890e8167ccdbaffe.png)
 2. 在【操作记录】模块，可指定时间周期、查询关键字、类型对已提交的刷新操作进行状态查看：
 ![](https://main.qcloudimg.com/raw/86e00c9652a635cf0a0007172119be92.png)
-> 控制台最多可一次性返回 10000 条操作记录，并支持导出为完整的 excel 形式，若您的刷新任务较多，请分段批量查询导出。
+>? 控制台最多可一次性返回 10000 条操作记录，并支持导出为完整的 excel 形式，若您的刷新任务较多，请分段批量查询导出。
 
 ### 注意事项
 #### URL 刷新：
@@ -46,7 +46,7 @@
 ### 目录刷新-刷新变更资源
 加速域名为：purge-test-1251991073.file.myqcloud.com，源站为腾讯云对象存储（COS），源站资源如下：
 ![](https://main.qcloudimg.com/raw/ed694acc98a8d3114c8a9922f7374a1b.png)
-1. 分别发起请求访问资源 1.txt 与 2.txt，根据 X-Cache-Lookup: Hit From Distank3 与 Server: NWS_SPMid 可以判定命中节点， 由节点直接返回资源：
+1. 分别发起请求访问资源 1.txt 与 2.txt，根据 X-Cache-Lookup: Hit From Disktank3 与 Server: NWS_SPMid 可以判定命中节点， 由节点直接返回资源：
 ![](https://main.qcloudimg.com/raw/ac358d3cca6618836113ca7e8e03475b.png)
 ![](https://main.qcloudimg.com/raw/fa4ad405deef4278e1a15baea0ac43de.png)
 2. 在源站替换掉同名文件 1.txt，文件修改时间发生改变，2.txt 保持不变：
