@@ -20,13 +20,13 @@ Tencent Cloud CDN 사용 후에도 웹 페이지 액세스 속도가 느립니�
 ```
 nslookup 가속 도메인
 ```
-![](https://main.qcloudimg.com/raw/e60f03d058f29134524166c211791568.png)
+![](https://main.qcloudimg.com/raw/66c920f2edbc402f860461778c5d226a.png)
 쿼리한 도메인 리졸브에 위 이미지의 빨간 박스 부분과 같이 dnsv1.com 확장명의 CNAME 리졸브 레코드가 없다면 연결한 도메인의 CDN 가속 서비스가 적용되지 않았다는 의미입니다. 이는 도메인 DNS 서비스 제공 업체에서 CNAME 레코드를 설정하지 않아 발생하는 문제일 수 있습니다. [CNAME 설정](https://intl.cloud.tencent.com/document/product/228/3121) 문서에 따라 도메인 DNS 서비스 제공 업체에서 CNAME 레코드를 설정하십시오.
 
 [](id:step2)
 ###  노드 캐시 만료 시간 설정 확인
 [CDN 콘솔](https://console.cloud.tencent.com/cdn)에 로그인한 뒤 왼쪽 메뉴에서 [도메인 관리]를 선택하고, 도메인 작업 열의 [관리]를 클릭하면 도메인 설정 페이지로 이동합니다. Tab을 [캐시 설정]으로 전환하면 [노드 캐시 만료 설정]을 찾을 수 있습니다.
-![](https://main.qcloudimg.com/raw/7722e07d356878b4e031984df0328759.png)
+![](https://main.qcloudimg.com/raw/c65246f14eae93e66c0ecf33b4d8a778.png)
 
 - 액세스한 리소스에 해당하는 노드 캐시 규칙에서 노드 캐시 만료 시간을 0 또는 너무 짧게 설정했거나 캐시하지 않음으로 설정했는지 확인합니다.
   CDN 노드에 캐시가 없으면 액세스 요청 시 원본을 가져와 가속 효과가 적용되지 않습니다. 필요에 따라 노드에 캐시 시간을 설정하는 것을 권장합니다.
@@ -40,7 +40,7 @@ nslookup 가속 도메인
 ### URL 프리패치 진행
 
 이전에 해당 리소스에 프리패치를 진행한 적 없이 처음으로 액세스하는 경우 CDN 노드에서 리소스를 풀링할 때 첫 액세스 속도가 느린 것은 정상적인 현상입니다. [CDN 콘솔](https://console.cloud.tencent.com/cdn)에 로그인한 후 [퍼지와 프리패치]에서 URL 프리패치 기능을 찾아 [URL 프리패치](https://intl.cloud.tencent.com/document/product/228/39000)를 진행하는 것을 권장합니다.
-![](https://main.qcloudimg.com/raw/83e7ceeb26fca38870fe020231542988.png)
+![](https://main.qcloudimg.com/raw/d7af46ee572c005dcb7dafdcb03c01dd.png)
 
 [](id:step4)
 ### 웹 페이지 아키텍처 패턴 최적화
