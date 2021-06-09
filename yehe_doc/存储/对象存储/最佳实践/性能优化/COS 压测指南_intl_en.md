@@ -75,7 +75,8 @@ The sample configuration is as shown below.
 | Parameter | Description |
 |-----------|----------------|
 |    accesskey, secretkey    | Access key information, which you should replace with your own SecretId and SecretKey  |
-|      cprefix         | Name of the bucket, such as examplebucket            |
+|      cprefix         | Prefix of the bucket name, such as examplebucket            |
+|  containers |  Value range for bucket names. A bucket name is made up of `cprefix` and `containers`, such as `examplebucket1` or `examplebucket2`.   |
 |    csuffix          | User account APPID, which should be prefixed with the endash `-`, e.g. -1250000000      |
 |     runtime        | Specifies how long the test should run     |
 |     ratio       | The ratio of reads to writes          |

@@ -22,7 +22,7 @@ This section uses an example to describe how to support HTTPS access in COS by c
 #### Directions
 
 #### 1. Bind a custom endpoint
-Bind the `testhttps` bucket to the `https://test.cos.com` endpoint and disable CDN acceleration. For detailed directions, please see [Enabling Custom Accelerated Domain Name](https://intl.cloud.tencent.com/document/product/436/31506).
+Bind the `testhttps` bucket to the `https://test.cos.com` endpoint and disable CDN acceleration. For detailed directions, please see [Enabling Custom Accelerated Domain Name](https://intl.cloud.tencent.com/document/product/436/31507).
 
 #### 2. Configure a reverse proxy for the endpoint
 Configure a reverse proxy for the `https://test.cos.com` endpoint on the server, as shown below (the Nginx configuration is for reference only):
@@ -53,7 +53,7 @@ ssl_certificate_key /usr/local/nginx/conf/server.key;
 
 #### 3. Resolve the endpoint to the server
 
-Resolve your endpoint at your endpoint’s DNS provider.
+Resolve your endpoint at your DNS hosting provider. If you are using Tencent Cloud’s DNS service, please go to the [DNSPod console](https://console.cloud.tencent.com/cns) to map `test.cos.com` to the server’s IP in Step 2. For more information, please see **Adding a DNS Record**.
 
 #### 4. Advanced settings
 
