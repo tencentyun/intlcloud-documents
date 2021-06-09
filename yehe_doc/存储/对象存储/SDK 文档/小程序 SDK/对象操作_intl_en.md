@@ -24,9 +24,9 @@ This document provides an overview of APIs and SDK code samples related to simpl
 | [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting object ACL | Sets the ACL of a specified object in a bucket |
 | [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | Querying object ACL | Queries the ACL of an object |
 
-## Simple operations
+## Simple Operations
 
-### Querying object list
+### Querying an object list
 
 #### API description
 
@@ -36,10 +36,10 @@ Queries some or all objects in a bucket.
 
 Sample 1. List all files in directory `a`.
 
-[//]: # ".cssg-snippet-get-bucket"
+[//]: # (.cssg-snippet-get-bucket)
 ```js
 cos.getBucket({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /*Required*/
     Region: 'ap-beijing',     /* Required */
     Prefix: 'a/',           /* Optional */
 }, function(err, data) {
@@ -75,10 +75,10 @@ Response:
 
 Sample 2. List the files in directory `a` without deep traversal.
 
-[//]: # ".cssg-snippet-get-bucket-with-delimiter"
+[//]: # (.cssg-snippet-get-bucket-with-delimiter)
 ```js
 cos.getBucket({
-    Bucket: 'examplebucket-1250000000',                               /* Required */
+    Bucket: 'examplebucket-1250000000', /*Required*/
     Region: 'ap-beijing',    /* Required */
     Prefix: 'a/',              /* Optional */
     Delimiter: '/',            /* Optional */
@@ -116,19 +116,45 @@ Response:
 }
 ```
 
+Sample 3. Listing all files in a directory
+
+```js
+var bucket = 'examplebucket-1250000000';
+var region = 'ap-beijing';
+var prefix = 'examplefolder/';  /* A directory/prefix to delete */
+var listFolder = function(marker) {
+    cos.getBucket({
+        Bucket: bucket,
+        Region: region,
+        Prefix: prefix,
+        Marker: marker,
+        MaxKeys: 1000,
+    }, function(err, data) {
+        if (err) {
+            return console.log('list error:', err);
+        } else {
+            console.log('list result:', data.Contents);
+            if (data.IsTruncated === 'true') listFolder(data.NextMarker);
+            else return console.log('list complete');
+        }
+    });
+};
+listFolder();
+```
+
 #### Parameter description
 
 | Parameter | Description | Type | Required |
 | ------------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
-| Prefix | Matching prefix for object keys. This parameter limits the response to contain only object keys with the specified prefix. | String | No|
+| Prefix | Matching prefix for object keys. This parameter limits the response to contain only object keys with the specified prefix. | String |
 | Delimiter | A separating symbol (usually `\`) used to group object keys. The identical paths between a prefix or, if no prefix is specified, the beginning and the first `delimiter` are grouped and defined as a common prefix. All common prefixes will be listed. | String | No |
 | Marker | Marks the starting object key. Object key entries will be returned in UTF-8 lexicographical order starting from the first object key after the marker | String | No |
 | MaxKeys | Maximum number of entries returned in a single response. Defaults to `1000`. | String | No |
 | EncodingType | Encoding type of the returned value. Valid value: `url`, meaning that the returned object keys are URL-encoded (percent-encoded) values. For example, "Tencent Cloud" will be encoded to `%E8%85%BE%E8%AE%AF%E4%BA%91`. | String | No |
 
-### Callback function description
+#### Callback function description
 
 ```
 function(err, data) { ... }
@@ -177,7 +203,7 @@ This API (PUT Object) is used to upload an object to a bucket. To call this API,
 
 Upload a string as the file content:
 
-[//]: # ".cssg-snippet-put-object-string"
+[//]: # (.cssg-snippet-put-object-string)
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000',                               /* Required */
@@ -191,7 +217,7 @@ cos.putObject({
 
 Create a directory:
 
-[//]: # ".cssg-snippet-put-object-folder"
+[//]: # (.cssg-snippet-put-object-folder)
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000',                               /* Required */
@@ -243,7 +269,7 @@ function(err, data) { ... }
 | ------------ | ------------------------------------------------------------ | ------ |
 | err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode | HTTP status code returned by the request, such as "200", "403", and "404" | Number |
-| - headers | Header information returned by the request | Object |
+| - headers | Headers returned by the request | Object |
 | data | Object returned when the request is successful. If the request fails, this parameter is left empty. | Object |
 | - statusCode | HTTP status code returned by the request, such as "200", "403", and "404" | Number |
 | - headers | Headers returned by the request | Object |
@@ -251,27 +277,44 @@ function(err, data) { ... }
 | - Location | Public network access endpoint of the object | String |
 | - VersionId | Returns the version ID for versioning-enabled buckets. For buckets that have never had versioning enabled, this parameter is not returned. | String  |
 
-### Uploading an object using an HTML form
+### Uploading an object using a form
 
 This API (POST Object) is used to upload an object selected by the user through `wx.chooseImage` to a specified bucket. To call this API, you need to have permission to write the bucket.
 
 >! `onProgress` depends on the mini program [UploadTask.onProgressUpdate](https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/UploadTask.onProgressUpdate.html). The progress might be inaccurate on some Android models.
 
-#### Use case
+#### Use case 
 
 Upload a file using simple upload
 
-[//]: # ".cssg-snippet-post-object"
+[//]: # (.cssg-snippet-post-object)
 ```js
 cos.postObject({
     Bucket: 'examplebucket-1250000000',
     Region: 'ap-beijing',
     Key: filename,
     FilePath: tmpFilePath, // tmpFilePath obtained when you select the file through wx.chooseImage
-    onProgress: function (info) {
-        console.log(JSON.stringify(info));
+    onProgress: function(progressData) {
+        console.log(JSON.stringify(progressData));
     }
 }, function (err, data) {
+    console.log(err || data);
+});
+```
+
+Uploading an object to a specified directory:
+
+```js
+var folder = 'examplefolder/';
+cos.postObject({
+    Bucket: 'examplebucket-1250000000',
+    Region: 'ap-beijing',
+    Key: folder + filename,              /* Required */
+    FilePath: tmpFilePath, // tmpFilePath obtained when you select the file through wx.chooseImage
+    onProgress: function(progressData) {
+        console.log(JSON.stringify(progressData));
+    }
+}, function(err, data) {
     console.log(err || data);
 });
 ```
@@ -314,7 +357,7 @@ function(err, data) { ... }
 | data | Object returned when the request is successful. If the request fails, this parameter is left empty. | Object |
 | - statusCode | HTTP status code returned by the request, such as "200", "403", and "404" | Number |
 | - headers | Headers returned by the request | Object |
-| - ETag | Returns the MD5 checksum of the object. The value of `ETag` can be used to check whether the object was corrupted during upload. <br>For example, `"09cba091df696af91549de27b8e7d0f6"`. **Note: double quotation marks are required at the beginning and the end of the `ETag` value** |string |
+| - ETag | Returns the MD5 checksum of the object. The value of `ETag` can be used to check whether the object was corrupted during upload. <br>For example, `"09cba091df696af91549de27b8e7d0f6"`. **Note: double quotation marks are required at the beginning and the end of the `ETag` value string** |
 | - Location | Creates an object's access domain name for external networks | String |
 | - VersionId | The version ID of the returned object in a versioning-enabled bucket | String |
 
@@ -324,9 +367,9 @@ function(err, data) { ... }
 
 This API is used to query the metadata of an object.
 
-#### Use case
+#### Use case 
 
-[//]: # ".cssg-snippet-head-object"
+[//]: # (.cssg-snippet-head-object)
 ```js
 cos.headObject({
     Bucket: 'examplebucket-1250000000',                               /* Required */
@@ -343,7 +386,7 @@ cos.headObject({
 | --------------- | ------------------------------------------------------------ | ------ | ---- |
 | Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
-| Key | Object key (object name), the unique ID of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
+| Key | ObjectKey (object name) is the unique ID of an object in a bucket. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
 | IfModifiedSince | If the object is modified after the specified time, the corresponding object metadata will be returned; otherwise, 304 will be returned. | String | No |
 
 #### Callback function description
@@ -357,7 +400,7 @@ function(err, data) { ... }
 | err | Object returned when an error (network error or service error) occurs. If the request is successful, this parameter is left empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
 | - headers | Headers returned by the request | Object |
-| data | Object returned when the request is successful. If the request fails, this parameter is left empty. | Object |
+| data | Data returned when the request is successful. If the request fails, this is null. | Object |
 | - statusCode | HTTP status code returned by the request, such as 200 and 304. If no modification is made after the specified time, 304 will be returned. | Number |
 | - headers | Headers returned by the request | Object |
 | - x-cos-object-type | Indicates whether an object is appendable. Enumerated values: `normal`, `appendable`. The default value `normal` is not displayed if returned. | String |
@@ -371,9 +414,9 @@ function(err, data) { ... }
 
 This API is used to get the content, in string format, of a specified file in a bucket.
 
-#### Use case
+#### Use case 
 
-[//]: # ".cssg-snippet-get-object"
+[//]: # (.cssg-snippet-get-object)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000',                               /* Required */
@@ -386,7 +429,7 @@ cos.getObject({
 
 Get the file content with `Range` specified:
 
-[//]: # ".cssg-snippet-get-object-range"
+[//]: # (.cssg-snippet-get-object-range)
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000',                               /* Required */
@@ -411,12 +454,12 @@ cos.getObject({
 | ResponseCacheControl | Sets the `Cache-Control` parameter in the response header. | String | No |
 | ResponseContentDisposition | Sets the `Content-Disposition` parameter in the response header. | String | No |
 | ResponseContentEncoding | Sets the `Content-Encoding` parameter in the response header. | String | No |
-| Range | Byte range of the object as defined in RFC 2616. The range value must be in the format of `bytes=first-last`, where both `first` and `last` are offsets starting from 0. For example, `bytes=0-9` means that you want to copy the first 10 bytes of data of the source object. If this parameter is not specified, the entire object will be downloaded. | String | No |
+| Range | Byte range of the object as defined in RFC 2616. This value must be in the format of bytes=first-last, where both first and last are offsets starting from 0. For example, bytes=0-9 means that you want to download the first 10 bytes of data of the source object. If this parameter is not specified, the entire object will be downloaded | String | No |
 | If-Modified-Since | If the object is modified after the specified time, the corresponding object metadata will be returned; otherwise, "304 (not modified)" will be returned. | String | No |
 | IfUnmodifiedSince    | Returns the object if the object is not modified after the specified time; otherwise, an HTTP `412` (Precondition Failed) status code is returned | String | No |
 | IfMatch | Returns the object only if the `ETag` matches the specified content; otherwise, an HTTP `412` (Precondition Failed) status code is returned | String | No |
 | IfNoneMatch | Returns the object only if the `ETag` does not match the specified content; otherwise, an HTTP `304` (Not Modified) status code is returned | String | No |
-| VersionId | Version ID of the object to download | String | No |
+| VersionId | Version ID of the object to be downloaded | String | No |
 | onProgress | Callback of the progress. Attributes of the response object `progressData` are as follows: | Function | No |
 | - progressData.loaded | Size of the downloaded parts, in bytes | Number | No |
 | - progressData.total | Size of the entire object, in bytes | Number | No |
@@ -454,9 +497,9 @@ function(err, data) { ... }
 
 This API (OPTIONS Object) is used to send a pre-flight request for the CORS configuration of an object. Before making a real CORS request, you can send an OPTIONS request that includes the source origin, HTTP method, and headers to COS for it to determine whether a real CORS request can be sent. If there is no CORS configuration, "403 Forbidden" will be returned. **You can enable CORS for a bucket using the `PUT Bucket cors` API**.
 
-#### Use case
+#### Use case 
 
-[//]: # ".cssg-snippet-option-object"
+[//]: # (.cssg-snippet-option-object)
 ```js
 cos.optionsObject({
     Bucket: 'examplebucket-1250000000',                               /* Required */
@@ -497,7 +540,7 @@ function(err, data) { ... }
 | - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
 | - AccessControlAllowOrigin | Source origins (separated by commas) of the simulated CORS request. If the origins are not allowed, this header will not be returned. Example: `*` | String |
 | - AccessControlAllowMethods | HTTP methods of the simulated cross-origin access request separated by commas, such as `PUT`, `GET`, `POST`, `DELETE`, and `HEAD`. This header will not be returned if the request method is not allowed | String |
-| - AccessControlAllowHeaders | Headers (separated by commas) of the simulated CORS request (for example, `accept,content-type,origin,authorization`). If none of the stimulated request headers is allowed, this header will not be returned. | String |
+| - AccessControlAllowHeaders | Headers of the simulated cross-origin access request separated by commas, such as `accept`, `content-type`, `origin`, and `authorization`. This request header will not be returned if any of the simulated headers is not allowed | String |
 | - AccessControlExposeHeaders | Response headers supported by CORS, such as `ETag`. The headers are separated by commas | String |
 | - AccessControlMaxAge | Sets the validity period of the `OPTIONS` request result, such as `3600` | String  |
 | - OptionsForbidden | Indicates whether the `OPTIONS` request is forbidden. If the returned HTTP status code is 403, this value is `true`. | Boolean |
@@ -513,9 +556,9 @@ Users can use this API to create a copy, modify object metadata (the source obje
 
 
 
-#### Use case
+#### Use case 
 
-[//]: # ".cssg-snippet-copy-object"
+[//]: # (.cssg-snippet-copy-object)
 ```js
 cos.putObjectCopy({
     Bucket: 'examplebucket-1250000000',                               /* Required */
@@ -539,7 +582,7 @@ cos.putObjectCopy({
 | GrantRead | Grants the user read permission in the format: `id="[OwnerUin]"`. You can use commas (,) to separate multiple users. <br><li>To authorize a sub-account, use `id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`.<br><li>To authorize a root account, use `id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`.<br>Example: `'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'` | String | No |
 | GrantWrite | Grants the user write permission in the format: `id="[OwnerUin]"`.<br>You can use commas (,) to separate multiple users.<br><li>To authorize a sub-account, use `id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`.<br><li>To authorize a root account, use `id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`.<br>Example: `'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'` | String | No |
 | GrantFullControl | Grants the user full permission in the format: `id="[OwnerUin]"`. You can use commas (,) to separate multiple users. <br><li>To authorize a sub-account, use `id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`.<br><li>To authorize a root account, use `id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`.<br>Example: `'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'` | String | No |
-| MetadataDirective | Indicates whether to copy the metadata. Enumerated values: `Copy` (default), `Replaced`. If set to `Copy`, the metadata of the source object will be copied directly and the user-defined metadata in the header will be ignored. If set to `Replaced`, the metadata of the source object will be replaced with the user-defined metadata in the header. **If the destination and source paths are the same, that is, you want to modify the metadata, this parameter must be set to `Replaced`**. | String | No |
+| MetadataDirective | Indicates whether to copy the metadata. Enumerated values: `Copy`, `Replaced`. Default value: `Copy`. If you specify this parameter as `Copy`, the user metadata in the corresponding header will be ignored and the copy operation will be performed; if you specify this parameter as `Replaced`, the metadata will be replaced by the information in the corresponding header. **If the destination path is the same as the source path, which means you want to modify the metadata, you must specify this parameter as `Replaced`** | String | No |
 | CopySourceIfModifiedSince | If the object is modified after the specified time, the operation will be performed; otherwise, 412 will be returned. **This parameter can be used together with `CopySourceIfNoneMatch`. If it is used together with other conditions, a conflict will be returned**. | String | No |
 | CopySourceIfUnmodifiedSince | If the object is not modified after the specified time, the operation will be performed; otherwise, 412 will be returned. **This parameter can be used together with `CopySourceIfMatch`. If it is used together with other conditions, a conflict will be returned**. | String | No |
 | CopySourceIfMatch | If the `ETag` of the object is the same as the specified one, the operation will be performed; otherwise, 412 will be returned. **This parameter can be used together with `CopySourceIfUnmodifiedSince`. If it is used together with other conditions, a conflict will be returned**. | String | No |
@@ -553,7 +596,7 @@ cos.putObjectCopy({
 function(err, data) { ... }
 ```
 
-| Parameter | Description | Type |
+| Parameter Name | Description | Type |
 | -------------- | ------------------------------------------------------------ | ------ |
 | err | Object returned when an error (network error or service error) occurs. If the request is successful, this parameter is left empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
@@ -571,9 +614,9 @@ function(err, data) { ... }
 
 This API (DELETE Object) is used to delete an object from a COS bucket. To call this API, you need to have permission to write the bucket.
 
-#### Use case
+#### Use case 
 
-[//]: # ".cssg-snippet-delete-object"
+[//]: # (.cssg-snippet-delete-object)
 ```js
 cos.deleteObject({
     Bucket: 'examplebucket-1250000000',                               /* Required */
@@ -588,7 +631,7 @@ cos.deleteObject({
 
 | Parameter | Description | Type | Required |
 | --------- | ------------------------------------------------------------ | ------ | ---- |
-| Bucket | Bucket name in the format: `BucketName-APPID`. | String | Yes |
+| Bucket  | Bucket name is in the format of BucketName-APPID. The bucket name entered here must be in this format | String | Yes |
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
 | Key | Object key (object name), the unique ID of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
 | VersionId | Version ID of the object or delete marker to delete | String | No |
@@ -603,7 +646,7 @@ function(err, data) { ... }
 | ------------ | ------------------------------------------------------------ | ------ |
 | err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode | HTTP status code returned by the request, such as `200`, `403`, and `404` | Number |
-| - headers | Header information returned by the request | Object |
+| - headers | Headers returned by the request | Object |
 | data | Object returned when the request is successful. If the request fails, this parameter is left empty. | Object |
 | - statusCode | HTTP status code returned by the request, such as 200, 204, 403, and 404. **If the deletion is successful or the object does not exist, an HTTP 204 or 200 status code will be returned. If the specified bucket is not found, an HTTP 404 status code will be returned**. | Number |
 | - headers | Headers returned by the request | Object |
@@ -616,9 +659,9 @@ This API (DELETE Multiple Objects) is used to delete multiple objects from a buc
 
 #### Use case
 
-Delete multiple files:
+Deleting multiple files:
 
-[//]: # ".cssg-snippet-delete-multi-object"
+[//]: # (.cssg-snippet-delete-multi-object)
 ```js
 cos.deleteMultipleObject({
     Bucket: 'examplebucket-1250000000',                               /* Required */
@@ -632,12 +675,50 @@ cos.deleteMultipleObject({
 });
 ```
 
+Deleting multiple objects with a specified prefix (deleting files in a specified directory):
+
+```js
+var bucket: 'examplebucket-1250000000'; /* Required */
+var region: 'ap-beijing';     /* Region of the bucket (required) */
+var prefix = 'examplefolder/';  /* A directory/prefix to delete */
+var deleteFolder = function (marker) {
+    cos.getBucket({
+        Bucket: bucket,
+        Region: region,
+        Prefix: prefix,
+        Marker: marker,
+        MaxKeys: 1000,
+    }, function (listError, listResult) {
+        if (listError) return console.log('list error:', listError);
+        var nextMarker = listResult.NextMarker;
+        var objects = listResult.Contents.map(function (item) {
+            return {Key: item.Key}
+        });
+        cos.deleteMultipleObject({
+            Bucket: bucket,
+            Region: region,
+            Objects: objects,
+        }, function (delError, deleteResult) {
+            if (delError) {
+                console.log('delete error', delError);
+                console.log('delete stop');
+            } else {
+                console.log('delete result', deleteResult);
+                if (listResult.IsTruncated === 'true') deleteFolder(nextMarker);
+                else console.log('delete complete');
+            }
+        });
+    });
+}
+deleteFolder();
+```
+
 #### Parameter description
 
 | Parameter | Description | Type | Required |
 | ----------- | ------------------------------------------------------------ | ----------- | ---- |
 | Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
-| Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
+| Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224) | String | Yes |
 | Quiet | Specifies whether to use the `Quiet` mode. If set to `true`, the `Quiet` mode is enabled. If set to `false` (default), the `Verbose` mode is enabled. | Boolean | No |
 | Objects | The list of objects to delete | ObjectArray | Yes |
 | - Key | Object key (object name), the unique identifier of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
@@ -667,7 +748,7 @@ function(err, data) { ... }
 | - - Code                                                     | Deletion failure error codes                                             | String      |
 | - - Message                                                  | Deletion failure error messages                                      | String      |
 
-**Other Operations**
+## Other Operations
 
 ### Restoring an archived object
 
@@ -675,9 +756,9 @@ function(err, data) { ... }
 
 This API is used to restore an object archived by COS. The restored readable object is temporary, and you can configure the object to keep it readable and set the time when you want it to be deleted. You can use the `Days` parameter to specify the expiration time of the temporary object. If the object expires and you have not initiated any operation to copy the object or extend its validity period before it expires, the temporary object will be automatically deleted. A temporary object is only a copy of the source archived object and the source object will exist throughout this period.
 
-#### Use case
+#### Use case 
 
-[//]: # ".cssg-snippet-restore-object"
+[//]: # (.cssg-snippet-restore-object)
 ```js
 cos.restoreObject({
     Bucket: 'examplebucket-1250000000',                               /* Required */
@@ -700,7 +781,7 @@ cos.restoreObject({
 | ------------------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
-| Key | Object key (object name), the unique ID of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
+| Key | ObjectKey (object name) is the unique ID of an object in a bucket. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
 | RestoreRequest | A container for data restoration | Object | Yes |
 | - Days | Sets the expiration time of the temporary copy. | Number | Yes |
 | - CASJobParameters | A container for the archive job parameters | Object | Yes |
@@ -716,7 +797,7 @@ function(err, data) { ... }
 | ------------ | ------------------------------------------------------------ | ------ |
 | err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode | HTTP status code returned by the request, such as "200", "403", and "404" | Number |
-| - headers | Header information returned by the request | Object |
+| - headers | Headers returned by the request | Object |
 | data | Object returned when the request is successful. If the request fails, this parameter is left empty. | Object |
 | - statusCode | HTTP status code returned by the request, such as "200", "403", and "404" | Number |
 | - headers | Headers returned by the request | Object |
@@ -729,9 +810,9 @@ This API (PUT Object acl) is used to set the ACL of an object in a bucket.
 
 > !The total number of policies associated with bucket ACL, Policy, and CAM under a single root account (i.e., under the same `APPID`) cannot exceed 1,000. There is no upper limit on the number of object ACL rules. If you do not need access control for an object, do not make any configuration, and the object will inherit the permissions of its bucket.
 
-#### Use case
+#### Use case 
 
-[//]: # ".cssg-snippet-put-object-acl"
+[//]: # (.cssg-snippet-put-object-acl)
 ```js
 cos.putObjectAcl({
     Bucket: 'examplebucket-1250000000',                               /* Required */
@@ -745,7 +826,7 @@ cos.putObjectAcl({
 
 Grant a user all permissions for an object:
 
-[//]: # ".cssg-snippet-put-object-acl-user"
+[//]: # (.cssg-snippet-put-object-acl-user)
 ```js
 cos.putObjectAcl({
     Bucket: 'examplebucket-1250000000',                               /* Required */
@@ -759,7 +840,7 @@ cos.putObjectAcl({
 
 Grant the user permission to write the object via `AccessControlPolicy`:
 
-[//]: # ".cssg-snippet-put-object-acl-acp"
+[//]: # (.cssg-snippet-put-object-acl-acp)
 ```js
 cos.putObjectAcl({
     Bucket: 'examplebucket-1250000000',                               /* Required */
@@ -787,14 +868,14 @@ cos.putObjectAcl({
 | ------------------- | ------------------------------------------------------------ | ----------- | ---- |
 | Bucket | Bucket name, formatted as `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
-| Key | Object key (object name), the unique ID of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
+| Key | ObjectKey (object name) is the unique ID of an object in a bucket. For more information, see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
 | ACL | Defines the ACL attribute of the object. For the enumerated values, such as `default`, `private`, and `public-read`, please see the **Preset ACL** section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). Default value: `default` <br>**Note:** If you do not need access control for the object, set `default` for this parameter or leave it empty. In this way, the object will inherit the permissions of the bucket it is stored in. | String | No |
 | GrantRead | Grants the user read permission in the format: `id="[OwnerUin]"`. You can use commas (,) to separate multiple users.<br><li>To authorize a sub-account, use `id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`.<br><li>To authorize a root account, use `id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`.<br>Example: `'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'` | String | No |
 | GrantFullControl | Grants the user full permission in the format: `id="[OwnerUin]"`. You can use commas (,) to separate multiple users.<br><li>To authorize a sub-account, use `id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"`.<br><li>To authorize a root account, use `id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"`.<br>Example: `'id="qcs::cam::uin/100000000001:uin/100000000001", id="qcs::cam::uin/100000000001:uin/100000000011"'` | String | No |
 | AccessControlPolicy | Sets an object's ACL attributes | Object | No |
 | - Owner | Information about the object owner | Object | No |
 | - - - ID | Object owner ID in the format: `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`<br>For root accounts, `&lt;OwnerUin>` and `&lt;SubUin>` have the same value | String | No |
-| - - DisplayName | Name of the object owner | String | No|
+| - - DisplayName | Name of the object owner | String |
 | - Grants | A list of information about the grantee and granted permissions | ObjectArray | No |
 | - - Permission | Permission granted. Enumerated values: `READ`, `WRITE`, `READ_ACP`, `WRITE_ACP`, `FULL_CONTROL` | String | No |
 | - - Grantee | Information about the grantee | Object | No |
@@ -811,9 +892,9 @@ function(err, data) { ... }
 | ------------ | ------------------------------------------------------------ | ------ |
 | err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode | HTTP status code returned by the request, such as "200", "403", and "404" | Number |
-| - headers | Header information returned by the request | Object |
+| - headers | Headers returned by the request | Object |
 | data | Object returned when the request is successful. If the request fails, this parameter is left empty. | Object |
-| - statusCode | HTTP status code returned by the request, such as "200", "204", "403", and "404" | Number |
+| - statusCode | HTTP status code returned by the request, such as 200, 204, 403, and 404 | Number |
 | - headers | Headers returned by the request | Object |
 
 ### Querying object ACL
@@ -822,9 +903,9 @@ function(err, data) { ... }
 
 This API (GET Object acl) is used to query the access permissions of an object in a bucket. Only the bucket owner has permission to perform this operation.
 
-#### Use case
+#### Use case 
 
-[//]: # ".cssg-snippet-get-object-acl"
+[//]: # (.cssg-snippet-get-object-acl)
 ```js
 cos.getObjectAcl({
     Bucket: 'examplebucket-1250000000',                               /* Required */
@@ -854,7 +935,7 @@ function(err, data) { ... }
 | err | Object returned when an error (network error or service error) occurs. If the request is successful, this parameter is left empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
 | - headers | Headers returned by the request | Object |
-| data | Object returned when the request is successful. If the request fails, this parameter is left empty. | Object |
+| data | Object returned when the request succeeds. If the request fails, this is null | Object |
 | - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
 | - headers | Headers returned by the request | Object |
 | - ACL | Defines the access control list (ACL) attributes of the object. For the enumerated values such as `private` and `public-read`, see the “Preset ACL for buckets” section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). Default value: `private` | String |
@@ -862,7 +943,7 @@ function(err, data) { ... }
 | - - - ID | Object owner ID in the format: `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`<br>For root accounts, `&lt;OwnerUin>` and `&lt;SubUin>` have the same value | String |
 | - - DisplayName | Object owner name | String |
 | - Grants | List of information on the grantee and permissions | ObjectArray |
-| - - Permission | Specifies the permission granted to the authorized user. Enumerated values: `READ`, `WRITE`, `READ_ACP`, `WRITE_ACP`, `FULL_CONTROL` | String | 
+| - - Permission | Specifies the permission granted to the authorized user. Enumerated values: `READ`, `WRITE`, `READ_ACP`, `WRITE_ACP`, `FULL_CONTROL` | String | No |
 | - - Grantee | Authorized user’s information | Object |
 | - - - DisplayName | Name of the user | String |
 | - - - ID | User ID in the format: `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`<br>For root accounts, `&lt;OwnerUin>` and `&lt;SubUin>` have the same value | String |
@@ -871,7 +952,7 @@ function(err, data) { ... }
 
 The following methods encapsulate the native methods mentioned above. They can be used to implement the complete multipart replication process and support concurrent multipart replications, checkpoint restart, as well as canceling, pausing, and restarting replication tasks.
 
-### Copying object
+### Copying an object
 
 #### API description
 
@@ -881,7 +962,7 @@ This API (Slice Copy File) is used to copy a file from a source path to a destin
 
 Call `Slice Copy File`:
 
-[//]: # ".cssg-snippet-transfer-copy-object"
+[//]: # (.cssg-snippet-transfer-copy-object)
 ```js
 cos.sliceCopyFile({
     Bucket: 'examplebucket-1250000000',                               /* Required */
@@ -905,7 +986,7 @@ cos.sliceCopyFile({
 | Key | Object key (object name), the unique ID of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
 | CopySource | URL path to the source object. A past object version can be specified with the URL parameter `?versionId=\<versionId>` | String | Yes |
 | ChunkSize | Size (in bytes) of each part in the multipart copy. Defaults to `1048576` (1 MB). | Number | No |
-| SliceSize | Specifies the minimum file size (in bytes) to use multipart copy. The default value is 5 GB. If the file size is equal to or smaller than this value, the file will be uploaded using `putObjectCopy`; otherwise, it will be uploaded using `sliceCopyFile`. | Number | No | 
+| SliceSize | Specifies the minimum file size (in bytes) to use multipart copy. The default value is 5 GB. If the file size is equal to or smaller than this value, the file will be uploaded using `putObjectCopy`; otherwise, it will be uploaded using `sliceCopyFile`. | Number | No | | Number | No |
 | onProgress | Callback of the upload progress. The callback parameter is the progress object `progressData`. | Function | No |
 | - progressData.loaded | Size of the uploaded parts, in bytes | Number | No |
 | - progressData.total | Size of the entire object, in bytes | Number    | No   |
@@ -922,7 +1003,7 @@ function(err, data) { ... }
 | ------------ | ------------------------------------------------------------ | ------ |
 | err | Object returned when an error (network error or service error) occurs. If the request is successful, this is null. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) | Object |
 | - statusCode | HTTP status code returned by the request, such as "200", "403", and "404" | Number |
-| - headers | Header information returned by the request | Object |
+| - headers | Headers returned by the request | Object |
 | data | Object returned when the request is successful. If the request fails, this parameter is left empty. | Object |
 | - statusCode | HTTP status code returned by the request, such as "200", "403", and "404" | Number |
 | - headers | Headers returned by the request | Object |
@@ -932,7 +1013,7 @@ function(err, data) { ... }
 | - ETag | MD5 checksum of the merged file. <br>Example: `"22ca88419e2ed4721c23807c678adbe4c08a7880"` <br>**Note that double quotation marks are required at the beginning and the end**. | String |
 | - VersionId  | The version ID will be returned for buckets that have enabled versioning. If the bucket has never enabled versioning, no value will be returned | String |
 
-### Upload queue
+### Uploading queue
 
 The SDK for Wechat Mini Programs records all the `putObject` upload tasks in a queue; relevant queue operations are as follows:
 
@@ -942,13 +1023,13 @@ The SDK for Wechat Mini Programs records all the `putObject` upload tasks in a q
 
 For a complete example of queue usage, see the [demo](https://github.com/tencentyun/cos-js-sdk-v5/tree/master/demo/queue).
 
-#### Canceling an Upload Task
+#### Canceling an upload task
 
 This API cancels an upload task by `taskId`.
 
 **Use case**
 
-[//]: # ".cssg-snippet-transfer-upload-cancel"
+[//]: # (.cssg-snippet-transfer-upload-cancel)
 ```js
 var taskId = 'xxxxx';                   /* Required */
 cos.cancelTask(taskId);
@@ -966,13 +1047,13 @@ This API is used to suspend an upload task by `taskId`.
 
 **Use case**
 
-[//]: # ".cssg-snippet-transfer-upload-pause"
+[//]: # (.cssg-snippet-transfer-upload-pause)
 ```js
 var taskId = 'xxxxx';                   /* Required */
 cos.pauseTask(taskId);
 ```
 
-**Parameters description**
+**Parameter description**
 
 | Parameter | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |
@@ -984,13 +1065,13 @@ This API is used to restart an upload task by `taskId`. You can restart tasks th
 
 **Use case**
 
-[//]: # ".cssg-snippet-transfer-upload-resume"
+[//]: # (.cssg-snippet-transfer-upload-resume)
 ```js
 var taskId = 'xxxxx';                   /* Required */
 cos.restartTask(taskId);
 ```
 
-**Parameters description**
+**Parameter description**
 
 | Parameter | Description | Type | Required |
 | ------ | ------------------------------------------------------------ | ------ | ---- |

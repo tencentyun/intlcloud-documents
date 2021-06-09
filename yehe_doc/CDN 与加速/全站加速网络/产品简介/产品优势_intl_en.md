@@ -1,51 +1,52 @@
-Tencent Cloud Enterprise Content Delivery Network (ECDN) has the following strengths:
-## Meshed Interconnection and Global Acceleration
-**Nodes in Mainland China**
-Tencent Cloud has deployed more than 1,100 ECDN nodes across Mainland China, covering major ISPs such as China Mobile, China Unicom, and China Telecom, as well as small and mid-sized ISPs like China Mobile Tietong and Great Wall Broadband Network. With cache nodes interconnected in a meshed manner a high number of transfer linkages, ECDN helps you deliver your content to users more efficiently.
+Tencent Cloud Enterprise Content Delivery Network (ECDN) has the strengths below:
+
+## Mesh-like Interconnection and Global Acceleration
+**Nodes in the Chinese mainland**
+To allow your published content to reach users faster, Tencent Cloud has set up more than 2,000 ECDN nodes across the nation, covering mainstream ISPs such as China Mobile, China Unicom, and China Telecom as well as many medium and small-sized ISPs such as China Tietong and Great Wall Broadband. Mesh-like interconnection is implemented between cache nodes, and a huge number of transmission linkages are available.
 ![](https://main.qcloudimg.com/raw/487228cdfb5666b34edab2242db7c3c0.jpg)
 
-**Nodes outside Mainland China**
-ECDN has over 200 overseas nodes deployed in more than 50 countries and regions to help your business go global seamlessly.
+**Nodes outside the Chinese mainland**
+Tencent Cloud has been working industriously on global acceleration since 2017. As of May 2021, Tencent Cloud has over 800 cache nodes across more than 70 countries and regions with a total reserved bandwidth of over 40 Tbps, helping your business go global with ease and speed.
 
 
-## One-Stop Acceleration for Dynamic/Static Resources
-Your resources on origin servers usually include dynamic content (.asp, .php, etc.) and static content (text, image, audio/video, etc). ECDN can conveniently and efficiently accelerate data transfer for sites with both dynamic and static resources at one stop.
+## One-stop Acceleration for Dynamic and Static Contents
+For origin servers with dynamic resources such as ASP and PHP files and static resources such as text, images, audios, and videos, ECDN can deliver convenient data access and efficient data transmission.
 
-**Intelligent caching**
-You can customize the rules for caching static content on edge servers. When users access the content, edge servers will directly return the required content.
+**Intelligent cache**
+You can configure cache rules for static contents on edge servers, and the corresponding contents can be returned to requesters directly.
 
 **Origin-pull optimization**
-For origin-pull of dynamic content, ECDN can select and allocate the optimal origin-pull route with dynamic scheduling so as to ensure high origin-pull speed.
+For scenarios where dynamic contents are pulled from the origin server, ECDN dynamically schedules requests and adopts the optimal origin-pull path, guaranteeing access speed.
 
-## Dynamic Scheduling and Optimal Linkage Selection
-When your user requests resources, problems such as high latency and high packet loss rate may occur due to such factors as network, geographical location, and bandwidth. Through real-time monitoring of the linkages across the entire network and leveraging Tencent Cloud's proprietary Global Server Load Balance (GSLB) scheduling system and intelligent routing technology, ECDN optimizes the user access experience in the following ways:
+## Dynamic Scheduling and Optimal Linkage
+When requesting resources, your users may be faced up with problems of high delay and high packet loss due to such factors as network, region, or bandwidth. ECDN, through the real-time monitoring of the linkages across the network and by using the self-developed Global Server Load Balance (GSLB) scheduling system and intelligent routing technology, optimizes user's access experience in the following three ways.
 
 **Optimal connection**
-Through Tencent Cloud's proprietary GSLB scheduling system, requests made by your users will be routed to the optimal cache node closest to them so as to connect to ECDN.
+With Tencent Cloud's GSLB scheduling system, your users' requests will be allocated to the nearest, optimal cache node to connect to the acceleration network.
 
 **Optimal linkage**
-Based on real-time status monitoring over the entire network and the intelligent routing technology, ECDN can select the optimal network linkage to effectively bypass poor-quality and congested linkages, enabling fast access to the requested resources.
+ECDN selects the optimal network linkage for the requests to effectively bypass linkages with poor quality or congested linkages, to ensure rapid access to the content based on the real-time status monitoring across network and intelligent routing technology.
 
 **Protocol optimization**
-ECDN's proprietary protocol-layer optimization algorithm can make full use of bandwidth resources, which helps improve the network transfer stability and network performance.
+ECDN has independently developed an optimized algorithm for the protocol layer, which makes full use of the bandwidth resources to make the network transmission more stable and improve the network performance.
 
-## High Security and Reliability
-In a complex public network, your origin server may be subject to problems such as packet loss due to network jitters and hacker attacks, making it unable to serve your users properly. ECDN safeguards your business in an all-round way with the aid of the following security features:
+## Secure, Stable, and Reliable
+In a complex public network environment, your origin server may fail to serve when suffers packet loss caused by network jitters or attacks from hackers. ECDN comprehensively safeguards your businesses in the following two aspects:
 
 **Private protocol**
-When a user request reaches ECDN, it is transferred over the private network with the reliable Tencent's private protocol, which guarantees the security.
+When a user requests for a connection to the acceleration network, you can use a reliable Tencent private protocol for transmission through private network to ensure security.
 
-**Redundant transfer**
-ECDN supports multi-linkage redundant transfer to ensure data transfer reliability, helping your business deliver a reliable web experience.
+**Redundancy transmission**
+ECDN supports multi-linkage redundancy transmission, to guarantee the reliability of data transmission, so that users can enjoy a reliable web experience.
 
-## Quick Connection and Business Transparency
-Using ECDN is easy. You do not need to perform any business configurations, provide any business statistics and consumption details, or monitor business status in real time. ECDN features quick and simple connection and comes with a wide variety of management tools, presenting you with a comprehensive overview of the entire ECDN service.
+## One-click Connection and Transparency in Business
+Using ECDN is easy. You do not need to adjust your businesses, worry about not having clear business statistics and consumption details, or monitor business status in real time. ECDN features quick and simple connection and comes with a wide variety of management tools, presenting you with a comprehensive overview of the entire ECDN service.
 
-**Easy connection**
-To connect to ECDN, you only need to provide your domain name. ECDN will assign you a CNAME address in a fixed format, and you need to add the corresponding CNAME record at your domain name service provider to connect to ECDN. Once the DNS takes effect, you can start using ECDN.
+**Simple connection**
+To use the ECDN service, you only need to provide your domain name, and ECDN will assign you a standard CNAME. You then need to add a corresponding CNAME record at your domain name service provider to finish the service connection. You can use ECDN right after the DNS resolution takes effect.
 
 **Statistics monitoring**
-ECDN provides multi-dimensional data analysis, so that you can have a comprehensive view on user requests to your business. For real-time monitoring of such statistics, you can go to [Cloud Monitor](https://console.cloud.tencent.com/monitor) to configure relevant alarms that help you stay up to date on your business status.
+ECDN provides multi-dimensional data analysis for you to understand user requests. If you want to monitor the real-time data, you can use [Cloud Monitor](https://console.cloud.tencent.com/monitor) to configure related alarms to keep track of your businesses.
 
-**Diversified management features**
-You can manage domain names in the ECDN Console, such as activating, deactivating, or deleting domain names as well as modifying their configurations. You can also query all types of statistics in graphs and charts.
+**Diversified management tools**
+You can perform domain name management, setting changes, going online/going offline, deletion and other operations through the ECDN console. You can also make queries on the above statistics and charts.

@@ -1,8 +1,7 @@
-
-### How do I disable the keep-alive feature of TPNS?
+### How do I disable the session keep-alive feature of TPNS?
 
 To disable the feature, call the following API in `onCreate` of `Application` or `LauncherActivity` during application initialization and pass in `false`:
->!The session keep-alive feature can be disabled only in SDK versions later than v1.1.6.0. In SDK v1.1.6.0 and earlier versions, the feature is enabled by default and cannot be disabled.
+>!The session keep-alive feature can be disabled only in SDK v1.1.6.0 and later versions. In SDK versions earlier than v1.1.6.0, the feature is enabled by default and cannot be disabled.
 
 ```java
 XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
@@ -26,11 +25,11 @@ If the following log is printed in the console, the session keep-alive feature h
 
 | Vendor | Need to Be Launched to Application Markets |
 |---------|---------|
-| Mi | No. You only need an individual developer account to enable Mi Push. For details, see [here](https://dev.mi.com/console/doc/detail?pId=68). | 
-| Meizu | No. You only need an individual developer account to enable Meizu Push. For details, see [here](http://open.res.flyme.cn/fileserver/upload/file/201709/a271468fe23b47408fc2ec1e282f851f.pdf). | 
+| Mi | No. You only need an individual developer account to enable Mi Push. For details, see [here](https://dev.mi.com/console/doc/detail?pId=68). |
+| Meizu | No. You only need an individual developer account to enable Meizu Push. For details, see [here](http://open.res.flyme.cn/fileserver/upload/file/201709/a271468fe23b47408fc2ec1e282f851f.pdf). |
 | FCM | No. You only need an individual developer account to enable FCM Push. |
-| Huawei | No. You only need an individual developer account to enable Huawei Push. For details, see [here](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-enable_service#enable-service). | 
-| OPPO | Yes. You need an enterprise developer account to enable OPPO Push. For details, see [here](https://open.oppomobile.com/wiki/doc/#id=10195). | 
+| Huawei | No. You only need an individual developer account to enable Huawei Push. For details, see [here](https://developer.huawei.com/consumer/cn/doc/distribution/app/agc-enable_service#enable-service). |
+| OPPO | Yes. You need an enterprise developer account to enable OPPO PUSH. For details, see [here](https://open.oppomobile.com/wiki/doc/#id=10195). |
 | vivo | Yes. You need an enterprise developer account to enable vivo Push. For details, see [here](https://dev.vivo.com.cn/documentCenter/doc/2). |
 
 
@@ -44,7 +43,7 @@ Class file involved: `com.vivo.push.util.z`; sensitive permission string involve
 The problem code is from the vivo channel push SDK. The TPNS team is unable to change the code and has been reported the problem to vivo. vivo replied that the relevant static fields are the legacy code of the SDK and are not actually used, and they will schedule to fix the problem as soon as possible. The following is a quick solution for your reference:
 - Method 1 (recommended): Add the [TPNS privacy policy description](https://intl.cloud.tencent.com/document/product/1024/30713) to the App Privacy Statement. 
 - Method 2 (not recommended): Remove vivo-related JAR packages, which will make the vivo channel unavailable.
- 
+
 ### What is the TPNS channel?
 
 - The TPNS channel is a channel built by TPNS. It can deliver messages only when the TPNS service is online (maintaining a persistent connection with the TPNS backend server). Therefore, the actual delivery value of the TPNS channel is generally lower than that of other vendor channels.
@@ -67,7 +66,7 @@ The problem code is from the vivo channel push SDK. The TPNS team is unable to c
 - **No callback after registration:** check the current network condition. We recommend you use 4G network for testing. Wi-Fi used by many users may have insufficient network bandwidth.
 - **Nubia phones:** models released in the second half of 2015 and 2016 cannot be registered, including Nubia Z11 series, Nubia Z11S series, and Nubia Z9S series.
 
-### Why can't pushes be received after registration succeeded?
+### Why can't pushes be received after successful registration?
 
 Perform automated troubleshooting with the troubleshooting tool as instructed [here](https://intl.cloud.tencent.com/document/product/1024/38389). General errors include the following:
 
@@ -115,16 +114,18 @@ You can redirect subscribers who click your notification to a specified in-app p
 >
 
 
+### Why `title` and `content` obtained by `onNotifactionClickedResult` and `onNotificationShowedResult` are empty when the application is closed?
+
+For pushes through vendor channels, `title` and `content` are concatenated in `intent` and delivered. Therefore, they cannot be obtained by the `onNotifactionClickedResult` and `onNotificationShowedResult` methods. To obtain the two parameters, you need to use the intent mode. For more information, please see [Notification Tap-to-Redirect](https://intl.cloud.tencent.com/document/product/1024/38354).
+
+
 ### How do I fix the problem of null `other push Token` that occurs during debugging after my application is integrated with a vendor channel?
 
 
 Check whether the application operation logs contain information similar to the following: 
-
 ```
 [OtherPushClient] handleUpdateToken other push token is :  other push type: huawei
 ```
-
-
 
 If such log information exists, it means that your application failed to register with the vendor channel. In that case, get the return code for vendor channel registration failure to locate and troubleshoot the problem. For more information, please see [Troubleshooting Vendor Channel Registration Failures](https://intl.cloud.tencent.com/document/product/1024/37006).
 
@@ -132,14 +133,13 @@ If such log information exists, it means that your application failed to registe
 
 Currently, IM uses the vendor JAR packages provided by TPNS. Please replace the relevant dependency packages according to the following table to fix the problem.
 
-
- | Push Channel | System Requirement | Condition Description |
- | --------------- | ------| -------------------------------------------- | 
- | Mi Push | MIUI | To use Mi Push, add the following dependency: `implementation 'com.tencent.tpns:xiaomi:1.2.1.3-release'` |
- | Huawei Push | EMUI | To use Huawei Push, add the following dependencies: <li>`implementation 'com.tencent.tpns:huawei:1.2.1.3-release'`<li>`implementation 'com.huawei.hms:push:5.0.2.300'` | 
-| Google FCM Push | Android 4.1 and above | The mobile phone needs to install Google Play Services and be used outside Mainland China. Add the following dependency: `implementation 'com.google.firebase:firebase-messaging:20.2.3'` | 
-| Meizu Push | Flyme | To use Meizu Push, add the following dependency: `implementation 'com.tencent.tpns:meizu:1.2.1.3-release'` | 
-| OPPO Push | ColorOS | Not all OPPO models and versions support OPPO Push. To use OPPO Push, add the following dependency: `implementation 'com.tencent.tpns:oppo:1.2.1.3-release'` | 
+| Push Channel | System Requirement | Condition Description |
+| --------------- | ------| -------------------------------------------- |
+| Mi Push | MIUI | To use Mi Push, add the following dependency: `implementation 'com.tencent.tpns:xiaomi:1.2.1.3-release'` |
+| Huawei Push | EMUI | To use Huawei Push, add the following dependencies:<li>`implementation 'com.tencent.tpns:huawei:1.2.1.3-release'`</li><li>`implementation 'com.huawei.hms:push:5.0.2.300'`</li> |
+| Google FCM Push | Android 4.1 and above | The mobile phone needs to install Google Play Services and be used outside the Chinese mainland. Add the following dependency: `implementation 'com.google.firebase:firebase-messaging:20.2.3'` |
+| Meizu Push | Flyme | To use Meizu Push, add the following dependency: `implementation 'com.tencent.tpns:meizu:1.2.1.3-release'` |
+| OPPO PUSH | ColorOS | Not all OPPO models and versions support OPPO PUSH. To use OPPO PUSH, add the following dependency: `implementation 'com.tencent.tpns:oppo:1.2.1.3-release'` |
 | vivo Push | FuntouchOS | Not all vivo models and versions support vivo Push. To use vivo Push, add the following dependency: `implementation 'com.tencent.tpns:vivo:1.2.1.3-release'` |
 
 ### How do I adapt to small icons?
@@ -163,11 +163,12 @@ Below is an example of push API fields, where `icon_color: 123456` indicates the
 The display effect after adaption is as shown below. We recommend you draw an icon based on the demo logo.
 
 
+
 >?
->- The small icon must be a PNG image with an alpha channel.
->- The background must be transparent.
->- Do not leave too much padding around the icon.
->- We recommend you use an image with dimensions of 46x46, as smaller images will be blurry, while larger images will be automatically scaled down.
+- The small icon must be a PNG image with an alpha channel.
+- The background must be transparent.
+- Do not leave too much padding around the icon.
+- We recommend you use an image with dimensions of 46x46, as smaller images will be blurry, while larger images will be automatically scaled down.
 
 
 ### Why can't messages be displayed in the notification bar after arriving at mobile phones on Meizu Flyme 6.0 or below?
@@ -178,8 +179,6 @@ The display effect after adaption is as shown below. We recommend you draw an ic
 In the above two cases, you need to place an image exactly named `stat_sys_third_app_notify` in the `drawable` folders with different resolutions. The image is stored in the `flyme-notification-res` folder of the Meizu vendor dependency directory of [TPNS Android SDK](https://console.cloud.tencent.com/tpns/sdkdownload).
 
 
-
-
 ### How do I fix the exception that occurs when I use quick integration in the console?
 
 1. If an exception occurs during integration, set the `debug` field in the `tpns-configs.json` file to `true` and run the following command: 
@@ -188,15 +187,14 @@ In the above two cases, you need to place an image exactly named `stat_sys_third
 ```
 Then, use the `TpnsPlugin` keyword for analysis.
 2. Click the **sync projects** icon.
-   ![](https://main.qcloudimg.com/raw/5fecbe6b63374e7e0e58c4b2cd215acb.png)
+![](https://main.qcloudimg.com/raw/5fecbe6b63374e7e0e58c4b2cd215acb.png)
 3. Check whether relevant dependencies exist in **External Libraries** of the project.
-   ![](https://main.qcloudimg.com/raw/485c7595f1b478a6fad725d38deb87b4.png)
-
+![](https://main.qcloudimg.com/raw/485c7595f1b478a6fad725d38deb87b4.png)
 
 
 ### How do I convert Android extension library v4 to AndroidX?
 
-Add the following attribute to the `gradle.properties` file of the AndroidX project:
+Add the following attributes to the `gradle.properties` file of the AndroidX project:
 ```
 android.useAndroidX=trueandroid.enableJetifier=true
 ```
@@ -206,14 +204,13 @@ android.useAndroidX=trueandroid.enableJetifier=true
 > - `android.enableJetifier=true`: to migrate the dependency package to AndroidX. 
 > 
 
-### What should I do if " the application transferred information over HTTP in plaintext" is reported for vendor channel push SDKs?
+### What should I do if "the application transferred information over HTTP in plaintext" is reported for vendor channel push SDKs?
 
 After you integrate the push services of various vendor channels, certain security detection tools may prompt that "the application transferred information over HTTP in plaintext". HTTP addresses involved are as follows:
 1. Mi Push SDK: `http://new.api.ad.xiaomi.com/logNotificationAdActions，http://resolver.msg.xiaomi.net/psc/?t=a`
 2. Meizu Push SDK: `http://norma-external-collect.meizu.com/android/exchange/getpublickey.do，http://norma-external-collect.meizu.com/push/android/external/add.do`
 
 All the above HTTP URLs are from the push SDKs of relevant vendors. The TPNS team is unable to clarify their purposes or control their behaviors but is actively contacting them and promoting the adoption of transfer over HTTPS. Currently, you should evaluate and choose whether to continue to use the above vendors' push services.
-
 
 
 ### What should I do if Android v4.4.4 reports a compiling error?

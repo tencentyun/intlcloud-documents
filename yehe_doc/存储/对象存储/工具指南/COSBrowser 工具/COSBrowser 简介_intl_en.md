@@ -1,7 +1,7 @@
 COSBrowser is a visual interface tool launched by Tencent Cloud to make it easier and simpler for you to view, transfer, manage, and interact with COS resources. Currently, COSBrowser is available for desktop and mobile devices. For more information, see:
 
 - [User Guide for Desktop Version](https://intl.cloud.tencent.com/document/product/436/32565)
-- [User Guide for Mobile Version](https://intl.cloud.tencent.com/document/product/436/32566)
+- [User Guide for Mobile Edition](https://intl.cloud.tencent.com/document/product/436/32566)
 
 ## Download URL
 
@@ -25,7 +25,7 @@ COSBrowser is a visual interface tool launched by Tencent Cloud to make it easie
    </tr>
    <tr>
       <td>Linux</td>
-      <td>Includes GUI which supports <a href="https://appimage.org">AppImage</a> format</td>
+      <td>Includes a GUI that supports the <a href="https://appimage.org">AppImage</a> format<br>
           Note: To launch a client that runs CentOS, you need to run <code>./cosbrowser.AppImage --no-sandbox</code></td> in the terminal.
       <td><a href="https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest-linux.zip">Linux</a></td>
    </tr>
@@ -45,6 +45,12 @@ COSBrowser is a visual interface tool launched by Tencent Cloud to make it easie
       <td>Web</td>
       <td>Browsers such as Chrome, FireFox, Safari, and IE10+</td>
       <td><a href="https://cosbrowser.cloud.tencent.com/web">Web</a></td>
+   </tr>
+   <tr>
+      <td>Uploader Plugin</td>
+      <td>Web</td>
+      <td>Chrome browsers</td>
+      <td><a href="https://chrome.google.com/webstore/detail/cosbrowser-uploader/mggpkimgmmdbdbakdkaebhjhgomcmlnd">Web Store</a>/<a href="https://cos5.cloud.tencent.com/cosbrowser/latest-chrome.zip">Offline Download</a></td>
    </tr>
 </table>
 
@@ -91,7 +97,7 @@ COSBrowser for desktop has the following features:
 
 ## COSBrowser Mobile Version
 
-COSBrowser for mobile devices focuses on viewing and monitoring of resources and COS data such as storage and traffic anytime, anywhere.
+COSBrowser for mobile devices focuses on viewing and monitoring resources and COS data such as storage and traffic anytime, anywhere.
 
 COSBrowser for mobile devices has the following features:
 
@@ -101,15 +107,15 @@ COSBrowser for mobile devices has the following features:
 | [Data overview](https://intl.cloud.tencent.com/document/product/436/32566#dateview) | Views recent data usage |
 | [File batch operations](https://intl.cloud.tencent.com/document/product/436/32566#filebatch) |  Uploads, downloads, deletes, copies, or moves files in a bucket in batches |
 | [Sharing and uploading](https://intl.cloud.tencent.com/document/product/436/32566#shareupload) | Shares and uploads files from third-party apps to a bucket |
-| [Renaming file](https://intl.cloud.tencent.com/document/product/436/32566#rename) |  Renames files in your bucket |
-| [Creating folder](https://intl.cloud.tencent.com/document/product/436/32566#newfolder) | Creates folders in your bucket |
-| [Viewing file details](https://intl.cloud.tencent.com/document/product/436/32566#view) | Views the basic information of files in your bucket |
+| [Renaming files](https://intl.cloud.tencent.com/document/product/436/32566#rename) | Renames files in a bucket |
+| [Creating a folder](https://intl.cloud.tencent.com/document/product/436/32566#newfolder) |  Creates a folder in a bucket |
+| [Viewing file details](https://intl.cloud.tencent.com/document/product/436/32566#view) | Views the basic information of the files in a bucket |
 | [Previewing files](https://intl.cloud.tencent.com/document/product/436/32566#filepreview) | Previews media files (images, video, and audio) in a bucket |
 | [Generating a file link](https://intl.cloud.tencent.com/document/product/436/32566#generatelinks) | Generates a file access link with a certain validity period by requesting a temporary signature |
 | [Searching files](https://intl.cloud.tencent.com/document/product/436/32566#searchfile) | Searches files in a bucket through prefix search |
 | [Searching buckets](https://intl.cloud.tencent.com/document/product/436/32566#searchbuckete) | Searches existing buckets |
 | [Viewing bucket details](https://intl.cloud.tencent.com/document/product/436/32566#viewbucket) | Views the basic information and domain name of your bucket |
-| [Creating a bucket](https://intl.cloud.tencent.com/document/product/436/32566#createbucket) | Creates a new bucket |
+| [Creating bucket](https://intl.cloud.tencent.com/document/product/436/32566#createbucket) | Creates new buckets |
 | [Adding an access path](https://intl.cloud.tencent.com/document/product/436/32566#addaccess) | Allows a sub-account that does not have permission to access the bucket list to enter bucket resource management by adding an access path |
 | [Viewing storage pack](https://intl.cloud.tencent.com/document/product/436/32566#package)          | Views the usage of your current resource pack                          |
 
