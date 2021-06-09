@@ -57,8 +57,7 @@ Tencent Cloud will send you expiration reminders through SMS, email, and the Mes
 If your domain name is configured for global acceleration, the configured HTTPS certificate will take effect globally. Currently, the certificates configured for the regions in and outside the Chinese mainland must be the same.
 
 If a domain name has different certificates in/outside the Chinese mainland, you will see Chinese mainland and outside Chinese mainland tags on the **Certificate Management** page, which indicate that the domain names with tags have different legacy configurations.
-![](https://main.qcloudimg.com/raw/23192c43c0611c34d07490f19ea7dfb0.png)
+
 Under the **Advanced Configuration** tab of the domain name, you can also see two configurations:
-![](https://main.qcloudimg.com/raw/febb17a67f10eb81941013895e67913f.png)
 
 
