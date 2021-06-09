@@ -6,7 +6,7 @@ This document provides an overview of APIs and SDK code samples related to persi
 
 | API | Description |
 | :----------------------------------------------------------- | :----------------------------------- |
-| [Persistent Image Processing](https://cloud.tencent.com/document/product/436/54050) | COS supports processing images upon upload. You can also process images that are already stored in COS and save the processed images to COS. |
+| [Persistent Image Processing](https://intl.cloud.tencent.com/document/product/436/40482) | COS supports processing images upon upload. You can also process images that are already stored in COS and save the processed images to COS. |
 
 
 ## Processing upon Upload
