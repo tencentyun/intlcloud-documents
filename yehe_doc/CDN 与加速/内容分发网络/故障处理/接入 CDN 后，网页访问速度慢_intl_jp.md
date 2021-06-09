@@ -20,13 +20,13 @@ Tencent Cloud CDNを使用後、ウェブページのアクセス速度が非常
 ```
 nslookupアクセラレーションドメイン名
 ```
-![](https://main.qcloudimg.com/raw/e60f03d058f29134524166c211791568.png)
+![](https://main.qcloudimg.com/raw/66c920f2edbc402f860461778c5d226a.png)
 クエリーによるドメイン名解決で、上図の赤いボックスのサフィックスdnsv1.comを持つCNAME解決レコードがない場合は、接続したドメイン名のCDNアクセラレーションサービスが有効になっていないことを意味します。これはドメイン名DNSプロバイダでCNAMEレコードを設定していないためである可能性があります。[CNAMEの設定](https://intl.cloud.tencent.com/document/product/228/3121)ドキュメントに従い、ドメイン名のDNSプロバイダに移動してCNAMEレコードを設定することができます。
 
 [](id:step2)
 ###  ノードキャッシュ有効期限設定をチェック
 [CDNコンソール](https://console.cloud.tencent.com/cdn)にログインし、左側のメニューバーで【ドメイン名管理】を選択し、ドメイン名操作列の【管理】をクリックして、ドメイン名設定画面に入ります。Tabを【キャッシュ設定】に切り替えると、【ノードキャッシュ期限切れ設定】が表示されます。
-![](https://main.qcloudimg.com/raw/7722e07d356878b4e031984df0328759.png)
+![](https://main.qcloudimg.com/raw/c65246f14eae93e66c0ecf33b4d8a778.png)
 
 - アクセスしたリソースに対応するノードキャッシュルールをチェックし、ノードキャッシュの有効期限を0にした設定があるか、ノードキャッシュの有効期限が短すぎるか、またはキャッシュがないという状況が存在するかどうか確認します。
   CDNノードにキャッシュがない場合は、アクセスリクエストはback-to-originとなり、アクセラレーションの効果を得られなくなります。ユーザーの必要に応じてノードのキャッシュ時間を設定することをお勧めします。
@@ -40,7 +40,7 @@ nslookupアクセラレーションドメイン名
 ### URLプリフェッチの実行
 
 リソースへのアクセスが初めてで、そのリソースがプリフェッチ処理をされていない場合、CDNノードはback-to-originしてリソースをプルするため、初めてのアクセス速度が遅くても正常です。[CDNコンソール](https://console.cloud.tencent.com/cdn)にログインして、【パージとプリフェッチ】内でURLプリフェッチ機能を探し、[URLプリフェッチ](https://intl.cloud.tencent.com/document/product/228/39000)を実行することを推奨します。
-![](https://main.qcloudimg.com/raw/83e7ceeb26fca38870fe020231542988.png)
+![](https://main.qcloudimg.com/raw/d7af46ee572c005dcb7dafdcb03c01dd.png)
 
 [](id:step4)
 ### ウェブページアーキテクチャの最適化
