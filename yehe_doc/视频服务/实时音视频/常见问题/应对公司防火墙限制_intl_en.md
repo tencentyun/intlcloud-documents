@@ -7,7 +7,7 @@ The firewall ports are as follows:
 |  TRTC SDK (Native) | Allowed Items |
 |---------|---------|
 | TCP port | 443; 20166 |
-| UDP port | 8000; 8080; 16285 |
+| UDP port |  8000、8080、16285、9000  |
 
 Domain name allowlist:
 
