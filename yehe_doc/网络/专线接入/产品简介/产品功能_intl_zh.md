@@ -1,6 +1,3 @@
-您可通过如下视频了解专线接入各组成部分的功能。
-<div class="doc-video-mod"><iframe src="https://cloud.tencent.com/edu/learning/quick-play/1670-12009?source=gw.doc.media&withPoster=1&notip=1"></iframe></div>
-
 ## 物理专线
 连接腾讯云与本地数据中心的物理线路连接，您可以通过第三方网络服务商，在您的数据中心和腾讯云专线网络接入点间建立网络连接。
 ## 专用通道
