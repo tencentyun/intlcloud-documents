@@ -14,10 +14,24 @@ This Feature is available to users globally.
 
 We will use the information in the following ways and in accordance with the following legal bases:
 
-| **Personal Information**                                     | **Use**                                                      | **Legal Basis**                                              |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| **Log Data** Access Log: Page Address, Page Title, User ID, Play Status, Play Time | To report page views for the relevant service and to generate Dashboard Data (as described in the [Data Privacy and Security Agreement Module](https://intl.cloud.tencent.com/document/product/301/17347) for Tencent Cloud Conference). | We process this information as it’s necessary for us to perform our contract with you to provide the Services. |
-| **Organizer Data**Account Name, Organizer’s Name, Country/Region, Logo, Email Address, Contact Number, Address | To allow the relevant organizer to manage the Feature.       |                                                              |
+<table>
+  <tr>
+  <td><b>Personal Information</b></td>
+  <td><b>Use</b> </td>
+  <td><b>Legal Basis</b> </td>
+  </tr>
+  <tr>
+  <td>Log Data 
+Access Log: Page Address, Page Title, User ID, Play Status, Play Time</td>
+   <td> To report page views for the relevant service and to generate Dashboard Data (as described in the Data Privacy and Security Agreement Module for Tencent Cloud Conference https://intl.cloud.tencent.com/document/product/301/17347). </td>
+  <td  rowspan="2">We process this information as it’s necessary for us to perform our contract with you to provide the Services.</td>
+  </tr>
+  <tr>
+  <td>Organizer Data
+Account Name, Organizer’s Name, Country/Region, Logo, Email Address, Contact Number, Address</td>
+  <td>To allow the relevant organizer to manage the Feature.</td>
+  </tr>
+</table>
 
  
 
@@ -33,9 +47,17 @@ As specified in the Privacy Policy, including Aceville Pte Ltd.
 
 We will retain personal information in accordance with the following:
 
-| **Personal Information** | **Retention Policy**                                         |
-| ------------------------ | ------------------------------------------------------------ |
-| Log Data                 | For the duration of the customer account and then deleted within 30 days. |
-| Organizer Data           |                                                              |
-
+<table>
+  <tr>
+  <td><b>Personal Information</b></td>
+  <td><b>Retention Policy</b> </td>
+  </tr>
+  <tr>
+  <td>Log Data</td>
+  <td  rowspan="2">For the duration of the customer account and then deleted within 30 days. </td>
+  </tr>
+  <tr>
+  <td>Organizer Data</td>
+  </tr>
+</table>
  
