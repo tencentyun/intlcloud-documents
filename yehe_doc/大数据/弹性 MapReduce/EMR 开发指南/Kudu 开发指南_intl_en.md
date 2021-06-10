@@ -23,7 +23,7 @@ Kudu contains the following two types of components:
 - Tablet server, which is mainly responsible for tablet storage and data CRUD.
 
 ## Kudu Usage
-EMR 2.4.0 supports the Kudu component. If you check the Kudu component when creating a Hadoop cluster, a Kudu cluster will be created. By default, it contains 5 Kudu masters, and high availability is enabled for it. 
+EMR 2.4.0 supports the Kudu component. If you check the Kudu component when creating a Hadoop cluster, a Kudu cluster will be created. By default, it contains 3 Kudu masters, and high availability is enabled for it. 
 >?All IPs used below are private IPs.
 >
 - Integrate Impala with Kudu
