@@ -30,7 +30,7 @@ request.origin = @"http://cloud.tencent.com";
 request.accessControlRequestMethod = @"GET";
 request.accessControlRequestHeaders = @"host";
 
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 request.object = @"exampleobject";
 
 [request setFinishBlock:^(id outputObject, NSError* error) {
@@ -50,7 +50,7 @@ request.object = @"exampleobject";
 ```swift
 let optionsObject = QCloudOptionsObjectRequest.init();
 
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 optionsObject.object = "exampleobject";
 
 // 模拟跨域访问的请求来源域名，请求 method，请求头部
