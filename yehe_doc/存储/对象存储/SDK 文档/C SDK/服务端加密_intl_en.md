@@ -29,8 +29,8 @@ int main(int argc, char *argv[])
     options = cos_request_options_create(p);
     options->config = cos_config_create(options->pool);
     cos_str_set(&options->config->endpoint, "cos.ap-guangzhou.myqcloud.com"); // Your endpoint
-    cos_str_set(&options->config->access_key_id, "COS_SECRETID");// Your SecretId 
-    cos_str_set(&options->config->access_key_secret, "COS_SECRETKEY"); // Your SecretKey
+    cos_str_set(&options->config->access_key_id, "SECRETID");	// your SecretId 
+    cos_str_set(&options->config->access_key_secret, "SECRETKEY"); // your SecretKey
     cos_str_set(&options->config->appid, "APPID");// Your APPID
     options->config->is_cname = is_cname;
     options->ctl = cos_http_controller_create(options->pool, 0);
@@ -98,8 +98,8 @@ int main(int argc, char *argv[])
     options = cos_request_options_create(p);
     options->config = cos_config_create(options->pool);
     cos_str_set(&options->config->endpoint, "https://cos.ap-guangzhou.myqcloud.com"); // Your endpoint, which requires requests to be sent over HTTPS
-    cos_str_set(&options->config->access_key_id, "COS_SECRETID");// Your SecretId 
-    cos_str_set(&options->config->access_key_secret, "COS_SECRETKEY"); // Your SecretKey
+    cos_str_set(&options->config->access_key_id, "SECRETID");	// your SecretId 
+    cos_str_set(&options->config->access_key_secret, "SECRETKEY"); // your SecretKey
     cos_str_set(&options->config->appid, "APPID");// Your APPID
     options->config->is_cname = is_cname;
     options->ctl = cos_http_controller_create(options->pool, 0);
