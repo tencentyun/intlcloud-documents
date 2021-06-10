@@ -163,7 +163,7 @@ This API is used to set the access control list (ACL) on an object in a bucket.
 ```objective-c
 QCloudPutObjectACLRequest* request = [QCloudPutObjectACLRequest new];
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 request.object = @"exampleobject";
 
 // Bucket name in the format: BucketName-APPID
@@ -198,7 +198,7 @@ let putObjectACl = QCloudPutObjectACLRequest.init();
 // Bucket name in the format: `BucketName-APPID`
 putObjectACl.bucket = "examplebucket-1250000000";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the format should be: "dir1/object1"
+// Object key, i.e. the full path of a COS object. If the object is in a directory, the format should be: "video/xxx/movie.mp4"
 putObjectACl.object = "exampleobject";
 let grantString = "id=\"100000000001\"";
 
@@ -233,7 +233,7 @@ This API is used to query the ACL of an object.
 ```objective-c
 QCloudGetObjectACLRequest *request = [QCloudGetObjectACLRequest new];
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 request.object = @"exampleobject";
 
 // Bucket name in the format: BucketName-APPID
@@ -263,7 +263,7 @@ let getObjectACL = QCloudGetObjectACLRequest.init();
 // Bucket name in the format: `BucketName-APPID`
 getObjectACL.bucket = "examplebucket-1250000000";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 getObjectACL.object = "exampleobject";
 getObjectACL.setFinish { (result, error) in
     if let result = result {
