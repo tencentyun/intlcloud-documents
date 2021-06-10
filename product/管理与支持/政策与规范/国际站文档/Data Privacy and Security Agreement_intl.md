@@ -68,6 +68,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 8.[Face Recognition](https://intl.cloud.tencent.com/document/product/1059/38787).
 9.[Tencent Cloud MediaLive](https://intl.cloud.tencent.com/document/product/1048/38989).
 10.[Tencent Cloud MediaPackage](https://intl.cloud.tencent.com/document/product/1063/38992).
+11.[Tencent Cloud Conference](https://intl.cloud.tencent.com/document/product/1023/40236).
 
 
 ## Jurisdiction-specific Requirements
