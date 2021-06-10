@@ -15,7 +15,7 @@ The time required for upgrading an instance depends on its used capacity. Master
 On the [purchase page](https://buy.cloud.tencent.com/mongodb), you can specify the specification and usage period, and click **Buy Now** to create an instance.
 
 ### How do I find an instance with assigned projects in MongoDB?
-To find an instance with assigned projects, call the [DescribeMongoDBInstances](https://intl.cloud.tencent.com/document/product/240/32137) API to query the list of replica set instances.
+To find an instance with assigned projects, call the [DescribeDBInstances](https://intl.cloud.tencent.com/document/product/240/34702) API to query the list of set instances.
  
 ### What is the number of connections in MongoDB? Can I increase the number?
 Please see [Use Limits](https://intl.cloud.tencent.com/document/product/240/31183). The number of connections depends on instance specifications. You can increase the number by upgrading instance specifications.
@@ -24,5 +24,5 @@ Please see [Use Limits](https://intl.cloud.tencent.com/document/product/240/3118
 Log in to the [console](https://console.cloud.tencent.com/mongodb/instance), and choose **Manage Database** > **Slow Query Management** on the instance management page to query slow logs.
 
 ### How do I query the instance specifications supported by MongoDB?
-Call the [DescribeMongoDBProduct](https://intl.cloud.tencent.com/document/product/240/32137) API to query the supported instance specifications.
+Call the [DescribeSpecInfo](https://intl.cloud.tencent.com/document/product/240/34701) API to query the supported instance specifications.
 
