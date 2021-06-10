@@ -1,3 +1,6 @@
+### TPNS SDK 支持鸿蒙系统的推送吗 ？
+
+鸿蒙系统完全兼容 Android SDK，推送功能可正常使用。
 ### 如何关闭 TPNS 的保活功能？
 
 如需关闭联合保活功能，请在应用初始化的时候，例如 Application 或 LauncherActivity 的 onCreate 中调用如下接口，并传递 false 值：
@@ -133,14 +136,14 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 
 目前 IM 已使用 TPNS 提供的厂商 jar 包，请按照下方表格替换相关依赖包，替换后即可解决。
 
-| 推送通道 | 系统要求 | 条件说明 |
-| --------------- | ------| -------------------------------------------- |
-| 小米推送| MIUI|使用小米推送，添加依赖：`implementation 'com.tencent.tpns:xiaomi:1.2.1.3-release'`|
-| 华为推送| EMUI|使用华为推送，添加依赖：<li>`implementation 'com.tencent.tpns:huawei:1.2.1.3-release'`</li><li>`implementation 'com.huawei.hms:push:5.0.2.300'`</li>|
-| Google FCM 推送| Android 4.1及以上|手机端需安装 Google Play Services 且在中国大陆地区以外使用。添加依赖：`implementation 'com.google.firebase:firebase-messaging:20.2.3'`|
-| 魅族推送 | Flyme| 使用魅族推送，添加依赖：`implementation 'com.tencent.tpns:meizu:1.2.1.3-release'` |
-| OPPO 推送| ColorOS |并非所有 OPPO 机型和版本都支持使用 OPPO 推送，使用 OPPO 推送，添加依赖：`implementation 'com.tencent.tpns:oppo:1.2.1.3-release'`|
-| vivo 推送| FuntouchOS|并非所有 vivo 机型和版本都支持使用 vivo 推送，使用 vivo 推送，添加依赖：`implementation 'com.tencent.tpns:vivo:1.2.1.3-release'`|
+ | 推送通道 | 系统要求 | 条件说明 |
+ | --------------- | ------| -------------------------------------------- | 
+ | 小米推送| MIUI|使用小米推送，添加依赖：`implementation 'com.tencent.tpns:xiaomi:1.2.1.3-release'`|
+ | 华为推送| EMUI|使用华为推送，添加依赖：<li>`implementation 'com.tencent.tpns:huawei:1.2.1.3-release'`</li><li>`implementation 'com.huawei.hms:push:5.0.2.300'`</li>| 
+ | Google FCM 推送| Android 4.1及以上|手机端需安装 Google Play Services 且在中国大陆地区以外使用。添加依赖：`implementation 'com.google.firebase:firebase-messaging:20.2.3'`|
+ | 魅族推送 | Flyme| 使用魅族推送，添加依赖：`implementation 'com.tencent.tpns:meizu:1.2.1.3-release'` |
+ | OPPO 推送| ColorOS |并非所有 OPPO 机型和版本都支持使用 OPPO 推送，使用 OPPO 推送，添加依赖：`implementation 'com.tencent.tpns:oppo:1.2.1.3-release'`|
+ | vivo 推送| FuntouchOS|并非所有 vivo 机型和版本都支持使用 vivo 推送，使用 vivo 推送，添加依赖：`implementation 'com.tencent.tpns:vivo:1.2.1.3-release'`|
 
 ### 如何适配 small icon 小图标？
 
@@ -224,4 +227,3 @@ android.useAndroidX=trueandroid.enableJetifier=true
 
 ### 注册方法能在线程中创建吗？
 注册方法可以在任何地方调用，但注意要传递 ApplicationContext。
-
