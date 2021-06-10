@@ -1,3 +1,7 @@
+### Does TPNS SDK support push on HarmonyOS?
+
+HarmonyOS is fully compatible with Android SDK. Therefore, the push feature can be used properly.
+
 ### How do I disable the session keep-alive feature of TPNS?
 
 To disable the feature, call the following API in `onCreate` of `Application` or `LauncherActivity` during application initialization and pass in `false`:
