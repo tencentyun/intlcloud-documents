@@ -23,7 +23,7 @@ This API is used to query the metadata of an object.
 ```objective-c
 QCloudHeadObjectRequest* headerRequest = [QCloudHeadObjectRequest new];
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 headerRequest.object = @"exampleobject";
 
 // Specify the `versionId` of the object if versioning is enabled; if this parameter is not specified, the latest version will be queried
@@ -54,7 +54,7 @@ headObject.bucket = "examplebucket-1250000000";
 // Specify the `versionId` of the object if versioning is enabled; if this parameter is not specified, the latest version will be queried
 headObject.versionID = "versionID";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 headObject.object  = "exampleobject";
 headObject.finishBlock =  {(result,error) in
     if let result = result {
