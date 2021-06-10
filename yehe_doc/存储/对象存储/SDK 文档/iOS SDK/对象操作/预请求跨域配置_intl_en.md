@@ -30,7 +30,7 @@ request.origin = @"http://cloud.tencent.com";
 request.accessControlRequestMethod = @"GET";
 request.accessControlRequestHeaders = @"host";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 request.object = @"exampleobject";
 
 [request setFinishBlock:^(id outputObject, NSError* error) {
@@ -50,7 +50,7 @@ request.object = @"exampleobject";
 ```swift
 let optionsObject = QCloudOptionsObjectRequest.init();
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 optionsObject.object = "exampleobject";
 
 // Specify the domain the request that simuplates CORS comes from, request method and header
