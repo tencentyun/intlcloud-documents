@@ -20,7 +20,7 @@ getPresignedURLRequest.bucket = @"examplebucket-1250000000";
 // HTTP method of the request using a pre-signed URL. Valid values (case-sensitive): @"GET", @"PUT", @"POST", @"DELETE"
 getPresignedURLRequest.HTTPMethod = @"PUT";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 getPresignedURLRequest.object = @"exampleobject";
 
 [getPresignedURLRequest setFinishBlock:^(QCloudGetPresignedURLResult * _Nonnull result,
@@ -49,7 +49,7 @@ getPresign.bucket = "examplebucket-1250000000" ;
 // @"GET", @"PUT", @"POST", @"DELETE"
 getPresign.httpMethod = "PUT";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 getPresign.object = "exampleobject";
 getPresign.setFinish { (result, error) in
     if let result = result {
@@ -76,7 +76,7 @@ getPresignedURLRequest.bucket = @"examplebucket-1250000000";
 // HTTP method of the request using a pre-signed URL. Valid values (case-sensitive): @"GET", @"PUT", @"POST", @"DELETE"
 getPresignedURLRequest.HTTPMethod = @"GET";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 getPresignedURLRequest.object = @"exampleobject";
 
 [getPresignedURLRequest setFinishBlock:^(QCloudGetPresignedURLResult * _Nonnull result,
@@ -104,7 +104,7 @@ getPresign.bucket = "examplebucket-1250000000" ;
 // @"GET", @"PUT", @"POST", @"DELETE"
 getPresign.httpMethod = "GET";
 
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "video/xxx/movie.mp4"
 getPresign.object = "exampleobject";
 getPresign.setFinish { (result, error) in
     if let result = result {
