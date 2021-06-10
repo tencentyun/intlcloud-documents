@@ -14,15 +14,14 @@ Before being uploaded to COS, binlog files are stored on the instance disk (i.e.
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID/name in the instance list, and access the instance management page.
 2. On the **Backup and Restore** page, click **Configure Local Binlog**.
 3. In the pop-up dialog box, specify the retention period and space utilization threshold, and click **OK**.
->?After the available space protection is enabled, if the disk space utilization exceeds 80% or the remaining available space is less than 5 GB, some of the earliest binlog files will be automatically cleared until the disk space utilization drops down to less than 80% and the remaining available space is more than 5 GB.
->
+
 
 ## FAQs
 #### Will database restoration be affected if the local binlog retention period is too short?
 No. Because the generated binlog files will be uploaded to COS via the automatic backup feature as soon as possible and those not uploaded yet cannot be cleared. However, the speed of rollback will be affected if the retention period is too short.
 
 #### What is the default retention policy for local binlog?
-By default, the local binlog retention period is 120 hours, the maximum binlog space utilization is 30%, and the available space protection is enabled.
+By default, the local binlog retention period is 120 hours, the maximum binlog space utilization is 30%.
 
 #### Will binlog files take up the instance disk space?
 Yes. The binlog files are stored on the instance disk before they are uploaded to COS and cleared according to the retention policy.
