@@ -1,11 +1,3 @@
-<!--
- * @Author: your name
- * @Date: 2020-12-07 10:53:33
- * @LastEditTime: 2021-06-08 09:25:29
- * @LastEditors: your name
- * @Description: In User Settings Edit
- * @FilePath: /qcloud-documents/product/存储与CDN/对象存储 4.0/SDK文档/iOS SDK/对象操作/恢复归档对象.md
--->
 ## 简介
 
 本文档提供关于恢复归档对象操作相关的 API 概览以及 SDK 示例代码。
