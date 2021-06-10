@@ -527,3 +527,4 @@ trtcCalling.on(TRTCCalling.EVENT.ERROR, onError);
 > ?
 > - **多实例**：一个 UserID 重复登入，或在不同端登入，将会引起信令的混乱。
 > - **离线推送**：实例在线才能接收消息，实例离线时接收到的信令不会在上线后重新推送。
+v
