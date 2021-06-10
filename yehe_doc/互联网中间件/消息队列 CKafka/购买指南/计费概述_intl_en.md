@@ -13,13 +13,13 @@ CKafka instances are divided into Standard Edition and Pro Edition according to 
 | Topic/Partition specification | The topic/partition capacity is much larger than that on the Standard Edition under the same bandwidth. Additional partition packages can be purchased within a certain range to increase the upper limit | Each model has a fixed upper limit |
 | Scalability | Its scalability is high, and the upper limits of bandwidth, topics/partitions, and disks can be increased separately | Its scalability is low, and its disk can be expanded separately |
 | Performance tuning | The performance can be customized according to the business scenario with fewer parameter restrictions | The numbers of topics and partitions are limited according to the different instance specifications |
-| Automatic disk cleanup | Available. Expired data is cleared regularly | Unavailable. You need to [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=876&level2_id=951&source=0&data_title=消息队列 CKafka&level3_id=955&radio_title=配额提升申请&queue=81&scene_code=18356&step=2) for assistance when the disk is full |
+| Automatic disk cleanup | Available. Expired data is cleared regularly | Unavailable. You need to <a href="https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fworkorder%2Fcategory">submit a ticket</a> for assistance when the disk is full |
 | Broker repair and upgrade | Targeted upgrades are available, and the upgrade process is fast and almost imperceptible with high stability | Subject to shared cluster resources, upgrades for problem fixes take a long time |
-| High availability | Custom multi-AZ deployment in the same region is supported to improve the disaster recovery capabilities | Multi-AZ deployment in the same region is not supported. It relies on backend migration and requires you to [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=876&level2_id=951&source=0&data_title=消息队列 CKafka&level3_id=954&radio_title=使用咨询(SDK/API/产品等)&queue=81&scene_code=18346&step=2) to apply, which generally takes 10 business days for processing |
+| High availability | Custom multi-AZ deployment in the same region is supported to improve the disaster recovery capabilities | Multi-AZ deployment in the same region is not supported. It relies on backend migration and requires you to <a href="https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fworkorder%2Fcategory">submit a ticket</a> to apply, which generally takes 10 business days for processing |
 | Advanced features | Timed rebalance (you can customize the rebalance execution time during upgrade to avoid business peak hours. For more information, please see [Upgrading Instances](https://intl.cloud.tencent.com/document/product/597/40650)). Advanced monitoring (this includes network stability analysis and request delay analysis. For more information, please see [Querying Advanced Monitoring Information](https://intl.cloud.tencent.com/document/product/597/40038)). Dynamic message retention policy adjustments based on disk utilization (for more information, please see [Adding Dynamic Message Retention Policies](https://intl.cloud.tencent.com/document/product/597/40211)) | None |
-| Technical support | Parameter optimization consulting services are supported, helping you customize parameter configurations for certain special business scenarios. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=876&level2_id=951&source=0&data_title=消息队列 CKafka&level3_id=954&radio_title=使用咨询(SDK/API/产品等)&queue=81&scene_code=18346&step=2) to apply for parameter optimization consulting services | Basic troubleshooting and problem fixing |
+| Technical support | Parameter optimization consulting services are supported, helping you customize parameter configurations for certain special business scenarios. You can <a href="https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fworkorder%2Fcategory">submit a ticket</a> to apply for parameter optimization consulting services | Basic troubleshooting and problem fixing |
 
-> Note:
+> ?
 >
 > The automatic disk cleanup feature is enabled for the **Pro Edition** by default. When the instance disk is full, the oldest data will be automatically cleared to ensure that the instance is available.
 
@@ -38,7 +38,7 @@ The billable items are as follows:
 | Mode | Pro Edition | Standard Edition | Description |
 | :------- | :----- | :----- | :----------------------------------------------------------- |
 | Monthly subscription | ✔ | - | The total fees of a purchased Pro Edition instance are (basic package price + partition package price * number of additional partitions / 100 + disk capacity price * disk capacity / 100) * number of months. For detailed prices, please see [Pro Edition pricing](). |
-| Pay-as-You-Go | ✔ | ✔ | <li>The total fees of a purchased Pro Edition instance are (basic package price + partition package price * number of additional partitions / 100 + disk capacity price * disk capacity / 100) * number of hours. For detailed prices, please see [Pro Edition pricing](). </li><li>The total fees of a purchased Standard Edition instance are (basic package price + disk capacity price * disk capacity / 100) * number of hours. For detailed prices, please see [Standard Edition pricing]().<li/> |
+| Pay-as-You-Go | ✔ | ✔ | <li>The total fees of a purchased Pro Edition instance are (basic package price + partition package price * number of additional partitions / 100 + disk capacity price * disk capacity / 100) * number of hours. For detailed prices, please see [Pro Edition pricing](). </li><li>The total fees of a purchased Standard Edition instance are (basic package price + disk capacity price * disk capacity / 100) * number of hours. For detailed prices, please see [Standard Edition pricing]().</li> |
 
 > ?
 >
@@ -156,7 +156,7 @@ The tiers of peak bandwidth (x) are as follows:
 | x = 2,800             | 14,000                   |
 | x = 3,200             | 16,000                   |
 
-> ？
+> ?
 >
 > - The fees for the partitions in a package are already included in the package fees, so they will not incur additional fees.
 > - If you need CKafka instances with higher specifications, please contact your Tencent Cloud rep or [submit a ticket](https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fworkorder%2Fcategory) for assistance.
