@@ -8,7 +8,7 @@ The TCR add-on is a plug-in provided by the Tencent Container Registry (TCR) ser
 >- The startup parameters of the Kubernetes `controller manager` component must contain `authentication-kubeconfig` and `authorization-kubeconfig` (enabled by default in TKE v.12.x).
 
 
-### Resources created in Kubernetes clusters
+### Kubernetes objects deployed in a cluster
 
 | Name | Type | Resource Amount | Namespace |
 | ---------------------------------------------- | ------------------------------ | ---------------------- | -------------------- |
