@@ -339,7 +339,7 @@ function(err, data) { ... }
 | - - ID | ID of the object owner in the format of `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`<br>For root accounts, &lt;OwnerUin> and &lt;SubUin> have the same value. | String |
 | - - DisplayName | Name of the object owner | String |
 | - Grants | A list of information about the grantee and granted permissions | ObjectArray |
-| - - Permission | Permission granted. Enumerated values: `READ`, `WRITE`, `READ_ACP`, `WRITE_ACP`, `FULL_CONTROL` | String | No |
+| - - Permission | Permission granted. Enumerated values: `READ`, `WRITE`, `READ_ACP`, `WRITE_ACP`, `FULL_CONTROL` | String | 
 | - - Grantee | Information about the grantee | Object |
 | - - - DisplayName | Name of the user | String |
 | - - - ID | User ID in the format of `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`<br>For root accounts, &lt;OwnerUin> and &lt;SubUin> have the same value. | String |
