@@ -2,7 +2,6 @@
 
 ## 现象描述
 使用 VPN 连接建立 VPC 与 IDC 的通信，完成配置后，发现 VPN 通道状态为【未联通】。
-![](https://main.qcloudimg.com/raw/d37bb0a17e5b7ab17db816872ff5dfa5.png)
 
 ## 可能原因
 通道状态异常，一般有如下可能原因：
@@ -35,8 +34,8 @@ display current-configuration configuration security-policy      //此处以华�
 >- 任何一个参数不一致，VPN 通道都无法建立。
 >- 不同厂家设备、公有云服务提供商的默认 VPN 配置不尽相同。
 >
- 进入 [VPN 通道控制台](https://console.cloud.tencent.com/vpc/vpnConn?rid=17) ，单击实例 ID，进入详情页，在“高级配置”页签中查看：
-   ![](https://main.qcloudimg.com/raw/003f674d04966acebd7b713a64743609.png)
+ 进入 [VPN 通道控制台](https://console.cloud.tencent.com/vpc/vpnConn?rid=17) ，单击实例 ID，进入详情页，在“高级配置”页签中查看。
+
 	 IDC 侧设备配置参数可通过如下命令获取（此处以华为防火墙为例）：
 	  ```plaintext
 display current-configuration configuration ike profile
