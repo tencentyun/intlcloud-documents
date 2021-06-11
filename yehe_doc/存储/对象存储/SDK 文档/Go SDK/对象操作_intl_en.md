@@ -1366,7 +1366,7 @@ type CompleteMultipartUploadResult struct {
 | -------- | ------------------------------------------------------------ | ------ |
 | Location | URL address | string |
 | Bucket        | Bucket name in the format: BucketName-APPID, e.g. examplebucket-1250000000. | string   |
-| key | ObjectKey is the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the ObjectKey is doc/pic.jpg | string | Yes |
+| key | ObjectKey is the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the ObjectKey is doc/pic.jpg | string | 
 | ETag | The unique tag of a merged object. This value does not represent the MD5 checksum of the object content, but is used only to verify the uniqueness of the object as a whole. To verify the object content, you can check the ETag of each part during the upload process | string |
 
 <span id = "ABORT_MULIT_UPLOAD"></span>
@@ -1467,7 +1467,7 @@ type CompleteMultipartUploadResult struct {
 | -------- | ------------------------------------------------------------ | ------ |
 | Location | URL address | string |
 | Bucket        | Bucket name in the format: BucketName-APPID, e.g. examplebucket-1250000000. | string   |
-| key | ObjectKey is the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the ObjectKey is doc/pic.jpg | string | Yes |
+| key | ObjectKey is the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, the ObjectKey is doc/pic.jpg | string | 
 | ETag | The unique tag of a merged object. This value does not represent the MD5 checksum of the object content, but is used only to verify the uniqueness of the object as a whole. To verify the object content, you can check the ETag of each part during the upload process | string |
 
 ### Downloading an object
