@@ -32,12 +32,13 @@ pod 'TPNS-iOS', '~> version'  // If the version is not specified, the latest ver
 	```
 
 #### Method 2. Import manually
+
 1. Log in to the [TPNS console](https://console.cloud.tencent.com/tpns) and click **[SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload)** on the left sidebar to go to the download page. Select the SDK version to download, and click **Download** in the **Operation** column.
 2. Open the SDK folder under the `demo` directory. Add `XGPush.h` and `libXG-SDK-Cloud.a` to the project. Open the `XGPushStatistics` folder and obtain `XGMTACloud.framework`.
 3. Import the `InAppMessage` folder into the project and add the search path in **Build Settings** > **Framework Search Paths**. (If your SDK version is below 1.2.8.0, you can skip this step.)
 4. Add the following frameworks to `Build Phases`:
 
- ```
+```
  * TPNSInAppMessage.framework
  * XGMTACloud.framework
  * CoreTelephony.framework
@@ -48,7 +49,7 @@ pod 'TPNS-iOS', '~> version'  // If the version is not specified, the latest ver
  * CoreData.framework
  * CFNetwork.framework
  * libc++.tbd
- ```
+```
 5. After the frameworks are added, the library references are as follows:
 ![](https://main.qcloudimg.com/raw/79976648574060954cebfb894cc5cdd4.png)
 
