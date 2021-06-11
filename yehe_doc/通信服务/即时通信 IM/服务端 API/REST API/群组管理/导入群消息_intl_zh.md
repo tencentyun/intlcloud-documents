@@ -3,7 +3,6 @@
 - 当 App 需要从其他即时通信系统迁移到即时通信 IM 时，使用该协议导入存量群消息数据。
 
 ## 接口调用说明
-
 ### 适用的群组类型
 
 |群组类型| 支持此 REST API|
@@ -29,7 +28,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/import_group_msg?sdkappid=8888
 | ------------------ | ------------------------------------ |
 | v4/group_open_http_svc/import_group_msg | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
-| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
+| identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
 | random             | 请输入随机的32位无符号整数，取值范围0 - 4294967295                 |
 
@@ -49,7 +48,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/import_group_msg?sdkappid=8888
     "MsgList": [
         {
             "From_Account": "leckie", // 指定消息发送者
-            "SendTime":1448357837,
+            "SendTime":1620808101,
             "Random": 8912345, // 消息随机数（可选）
             "MsgBody": [ // 消息体，由一个 element 数组组成，详见 TIMMessage 消息对象
                 {
@@ -69,7 +68,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/import_group_msg?sdkappid=8888
         },
         {
             "From_Account": "peter", // 指定消息发送者
-            "SendTime":1448357837,
+            "SendTime":1620892821,
             "MsgBody": [ // 消息体，由一个 element 数组组成，详见 TIMMessage 消息对象
                 {
                     "MsgType": "TIMTextElem", // 文本
@@ -93,9 +92,9 @@ https://console.tim.qq.com/v4/group_open_http_svc/import_group_msg?sdkappid=8888
 | From_Account | String | 必填 |指定消息发送者  |
 | SendTime | Integer | 必填 |消息发送时间  |
 | Random | Integer | 选填 |32位随机数；如果5分钟内两条消息的随机值相同，后一条消息将被当做重复消息而丢弃  |
-| MsgBody | Object | 必填 |TIM 消息，详情请参阅 [TIMMsgElement对象的定义](https://intl.cloud.tencent.com/document/product/1047/33527#.E5.9B.BE.E5.83.8F.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0)   |
+| MsgBody | Object | 必填 |TIM 消息，详情请参阅 [TIMMsgElement对象的定义](https://intl.cloud.tencent.com/document/product/1047/33527)   |
 | MsgType | String | 必填 |TIM 消息对象类型，目前支持的消息对象包括： TIMTextElem(文本消息)，TIMFaceElem(表情消息)，TIMLocationElem(位置消息)，TIMCustomElem(自定义消息)|
-| MsgContent | Object | 必填 |MsgContent 为 TIM 消息对象， 详情可参阅 [TIMMsgElement对象的定义](https://intl.cloud.tencent.com/document/product/1047/33527#.E5.9B.BE.E5.83.8F.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0) |
+| MsgContent | Object | 必填 |MsgContent 为 TIM 消息对象， 详情可参阅 [TIMMsgElement对象的定义](https://intl.cloud.tencent.com/document/product/1047/33527) |
 
 ### 应答包体示例
 
@@ -106,21 +105,15 @@ https://console.tim.qq.com/v4/group_open_http_svc/import_group_msg?sdkappid=8888
     "ErrorCode": 0,
     "ImportMsgResult": [
         {
-            "Result": 0,
-            "MsgTime": 1449454106
+            "MsgSeq": 1,
+            "MsgTime": 1620808101,
+            "Result": 0
         },
         {
-            "Result": 0,
-            "MsgTime": 1449454116
+            "MsgSeq": 2,
+            "MsgTime": 1620892821,
+            "Result": 0
         },
-        {
-            "Result": 0,
-            "MsgTime": 1449454106
-        },
-        {
-            "Result": 0,
-            "MsgTime": 1449454116
-        }
     ]
 }
 ```
@@ -135,6 +128,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/import_group_msg?sdkappid=8888
 | ImportMsgResult | Array | 具体的消息导入结果 |
 | Result | Integer | 单条消息导入结果<ul><li>0表示单条消息成功</li><li>10004表示单条消息发送时间无效</li><li>80001表示单条消息包含脏字，拒绝存储此消息</li><li>80002表示为消息内容过长，目前支持8000字节的消息，请调整消息长度  |
 | MsgTime | Integer | 消息的时间戳   |
+|MsgSeq|Integer|消息序列号，唯一标示一条消息|
 
 ## 错误码说明
 

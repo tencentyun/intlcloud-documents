@@ -19,12 +19,12 @@ The following table only describes the modified parameters when this API is call
 | Parameter | Description |
 | ------------------ | ------------------------------------ |
 | v4/openim/batchsendmsg | Request API |
-| sdkappid | SDKAppID assigned by the IM console when an application is created |
+| sdkappid | `SDKAppID` assigned by the IM console when an app is created |
 | identifier | App admin account. For more information, please see the **App Admin** section in [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517). |
 | usersig | Signature generated in the app admin account. For details on how to generate the signature, please see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | random | A random 32-bit unsigned integer ranging from 0 to 4294967295 |
 
-### Maximum call frequency
+### Maximum calling frequency
 
 200 calls per second
 
@@ -51,7 +51,8 @@ Here, we use sending a text message as an example. To send messages of other typ
                 "Text": "hi, beauty" // Message text
             }
         }
-    ]
+    ],
+    "CloudCustomData": "your cloud custom data"
 }
 ```
 
@@ -77,10 +78,11 @@ Here, we use sending a text message as an example. To send messages of other typ
             }
         }
     ],
+    "CloudCustomData": "your cloud custom data",
     "OfflinePushInfo": {
         "PushFlag": 0,
-        "Desc": "The content to be pushed offline",
-        "Ext": "The passthrough content",
+        "Desc": "Content to push offline",
+        "Ext": "Passthrough content",
         "AndroidInfo": {
             "Sound": "android.mp3"
         },
@@ -99,14 +101,15 @@ Here, we use sending a text message as an example. To send messages of other typ
 
 | Field | Type | Required | Description |
 |---------|---------|---------|---------|
-| SyncOtherMachine | Integer | No | 1: synchronize the message to the online terminal and roaming server of `From_Account`. <br/>2: do not synchronize the message to `From_Account`. If this parameter is not specified, the message is synchronized to the roaming server of `From_Account` by default. |
-| From_Account | String | No | Sender account specified by the admin. To set the information of `From_Account`, the value of this parameter cannot be left empty. |
-| To_Account | Array | Yes | UserID of the recipient of the message |
+| SyncOtherMachine | Integer | No | `1`: synchronize the message to the online terminal and roaming server of `From_Account`. <br/>`2`: do not synchronize the message to `From_Account`. If this field is not specified, the message is synchronized to the roaming server of `From_Account`. |
+| From_Account | String | No | Sender account specified by the admin. To set the information of `From_Account`, the value of this field cannot be left empty. |
+| To_Account | Array | Yes | `UserID` of the message recipient |
 | MsgRandom | Integer | Yes | Random number of the message. It is used by the backend for message deduplication within a second. Make sure the random number is entered. |
 | MsgBody | Object | Yes | TIM message. For more information, please see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
-| MsgType | String | Yes | Object type of the TIM message. Supported message objects include TIMTextElem (text message), TIMFaceElem (emoji message), TIMLocationElem (location message), and TIMCustomElem (custom message). |
-| MsgContent | Object | Yes | Object of the TIM message. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
-| SendMsgControl | Array | No | Message sending control. This is a string array and is valid only for this request. `NoUnread` means not to include this message in the unread count. Example: "SendMsgControl": ["NoUnread"]  |
+| MsgType | String | Yes | TIM message object type. Valid values: <ul style="margin:0;"><li >`TIMTextElem` (text message) <li >`TIMLocationElem` (location message) <li >`TIMFaceElem` (emoji message) <li >`TIMCustomElem` (custom message) <li >`TIMSoundElem` (voice message) <li >`TIMImageElem` (image message) <li >`TIMFileElem` (file message) <li >`TIMVideoFileElem` (video message) |
+| MsgContent | Object | Yes | TIM message object. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
+| CloudCustomData | String | No | Custom message data. It is saved in the cloud and will be sent to the peer end. Such data can be pulled after the app is uninstalled and reinstalled. |
+| SendMsgControl | Array | No | Message sending control. This is a string array and takes effect on this request only. `NoUnread` means not to include this message in the unread count. Example: "SendMsgControl": ["NoUnread"]  |
 | OfflinePushInfo | Object | No | Information of offline push. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
 
 

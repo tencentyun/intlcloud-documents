@@ -1,4 +1,4 @@
-## Feature Overview
+## Feature Description 
 
 This API is used to pull friend lists. You can specify the lists to pull and pull the friends in the lists.
 
@@ -22,14 +22,14 @@ The following table only describes the modified parameters when this API is call
 | Parameter | Description |
 | ------------------ | ------------------------------------ |
 | v4/sns/group_get | Request API |
-| sdkappid | SDKAppID assigned by the IM console when an app is created |
+| sdkappid | `SDKAppID` assigned by the IM console when an app is created |
 | identifier | App admin account. For more information, please see the **App Admin** section in [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517). |
 | usersig | Signature generated in the app admin account. For details on how to generate the signature, please see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | random | A random 32-bit unsigned integer ranging from 0 to 4294967295 |
 
 
 
-### Maximum call frequency
+### Maximum calling frequency
 
 
 
@@ -43,12 +43,13 @@ The following table only describes the modified parameters when this API is call
 ```
 
 {
-
-    "From_Account":"id"
-
+  "From_Account":"id", 
+  "LastSequence":1
 }
 
+
 ```
+
 
 - **Complete request**
 ```
@@ -71,14 +72,14 @@ The following table only describes the modified parameters when this API is call
 
 
 
-### Request packet fields 
+### Request packet fields
 
 | Field | Type | Required | Description |
 |----|-----|------|-----|
-| From_Account | String | Yes | UserID of the account for which to pull friend lists |
-|LastSequence | Integer | No | Sequence of the last list pull. If the value of this field is consistent with the backend, the backend will not return the list data. This field is valid only when the `GroupName` is left empty. |
+| From_Account | String | Yes | `UserID` of the account for which to pull friend lists |
+| LastSequence | Integer | Yes | Sequence of the last list pull returned by the backend to the client. The value is `0` for the first pull. This field is valid only when `GroupName` is left empty. |
 | NeedFriend | String | No | Whether to pull the users in the list. `Need_Friend_Type_Yes`: pulls users. If this field is left empty, users will not be pulled. It is valid only when `GroupName` is left empty. |
-| GroupName | Array | No | Name of the group to be pulled |
+| GroupName | Array | No | Name of the list to pull |
 
 ### Sample response packets
 
@@ -113,21 +114,19 @@ The following table only describes the modified parameters when this API is call
 
         }
 
-    ]
+    ],
 
     "CurrentSequence": 2,
 
-    "ActionStatus":"OK",
+    "ActionStatus": "OK",
 
     "ErrorCode": 0,
 
-    "ErrorInfo":"",
+    "ErrorInfo": "",
 
     "ErrorDisplay": ""
 
 }
-
-
 
 ```
 
@@ -156,7 +155,7 @@ The following table only describes the modified parameters when this API is call
 
     "ErrorCode": 0,
 
-    "ErrorInfo":"",
+    "ErrorInfo": "",
 
     "ErrorDisplay": ""
 
@@ -172,8 +171,8 @@ The following table only describes the modified parameters when this API is call
 |-----|-------|------|
 |ResultItem | Array  | Result object array of pulling lists|
 |GroupName| String  | List name |
-| FriendNumber | Integer | Number of friends on the list |
-| To_Account | Array | UserID of friends on the list |
+| FriendNumber | Integer | Number of friends in the list |
+| To_Account | Array | `UserID` of friends in the list |
 | CurrentSequence | Integer  | Current sequence of the lists  |
 | ActionStatus | String | Request result. `OK`: successful; `FAIL`: failed |
 | ErrorCode | Integer | Error code. `0`: successful; other values: failed. For details on non-zero results, see [Error Codes](#ErrorCode). |
@@ -191,7 +190,7 @@ The following table describes the error codes specific to this API:
 | Error Code | Description |
 | ------ | ------------------------------------------------------------ |
 | 30001 | Incorrect request parameter. Check your request according to the error description. |
-| 30003 | The requested user account does not exist. |
+| 30003 | The requested account does not exist. |
 | 30004 | The request requires app admin permissions. |
 | 30006 | Internal server error. Try again. |
 | 30007 | Network timeout. Try again later. |

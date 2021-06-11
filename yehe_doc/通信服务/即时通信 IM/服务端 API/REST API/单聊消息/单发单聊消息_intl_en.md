@@ -1,9 +1,10 @@
-## Feature Description 
+## Feature Description
 - When the admin sends a message to an account, the sender displayed to the recipient is the admin.
 - When the admin specifies an account to send a message to another account, the sender displayed to the recipient is not the admin, but the account specified by the admin.
 - This API does not check whether the sender and the recipient are friends or blocklisted by either party or whether the recipient is muted.
 
->!When calling this API to send a one-to-one message, you must specify whether to synchronize the message to the sender, which is the admin account or the account specified by the admin. Synchronization can be implemented via online terminals and roaming servers. This API provides the `SyncOtherMachine` parameter to determine whether to synchronize the message. For more information, see **Sample request packets** below.
+>!When calling this API to send a one-to-one message, you must specify whether to synchronize the message to the sender, which is the admin account or the account specified by the admin. Synchronization can be implemented via online terminals and roaming servers. This API provides the `SyncOtherMachine` parameter to determine whether to synchronize the message. For more information, see **Sample request packet** below.
+
 
 ## API Calling Description
 ### Sample request URL
@@ -17,12 +18,12 @@ The following table only describes the modified parameters when this API is call
 | Parameter | Description |
 | ------------------ | ------------------------------------ |
 | v4/openim/sendmsg | Request API |
-| sdkappid | SDKAppID assigned by the IM console when an app is created |
+| sdkappid | `SDKAppID` assigned by the IM console when an app is created |
 | identifier | App admin account. For more information, please see the **App Admin** section in [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517). |
 | usersig | Signature generated in the app admin account. For details on how to generate the signature, please see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | random | A random 32-bit unsigned integer ranging from 0 to 4294967295 |
 
-### Maximum call frequency
+### Maximum calling frequency
 
 200 calls per second
 
@@ -47,7 +48,8 @@ Here, we use sending a text message as an example. To send messages of other typ
                 "Text": "hi, beauty"
             }
         }
-    ]
+    ],
+    "CloudCustomData": "your cloud custom data"
 }
 ```
 
@@ -72,7 +74,8 @@ Here, we use sending a text message as an example. To send messages of other typ
                 "Text": "hi, beauty"
             }
         }
-    ]
+    ],
+    "CloudCustomData": "your cloud custom data"
 }
 ```
 
@@ -84,7 +87,7 @@ Here, we use sending a text message as an example. To send messages of other typ
     "SyncOtherMachine": 2,
     "From_Account": "lumotuwe1",
     "To_Account": "lumotuwe2",
-    "MsgLifeTime":3600, // Retain the message for 1 hour.
+    "MsgLifeTime":3600, // Retain the message for one hour.
     "MsgRandom": 1287657,
     "MsgTimeStamp": 1557387418,
     "MsgBody": [
@@ -95,10 +98,11 @@ Here, we use sending a text message as an example. To send messages of other typ
             }
         }
     ],
+    "CloudCustomData": "your cloud custom data",
     "OfflinePushInfo": {
         "PushFlag": 0,
-        "Desc": "The content to be pushed offline",
-        "Ext": "The passthrough content",
+        "Desc": "Content to push offline",
+        "Ext": "Passthrough content",
         "AndroidInfo": {
             "Sound": "android.mp3"
         },
@@ -130,7 +134,8 @@ Here, we use sending a text message as an example. To send messages of other typ
                 "Text": "hi, beauty"
             }
         }
-    ]
+    ],
+    "CloudCustomData": "your cloud custom data"
 }
 ```
 
@@ -138,18 +143,19 @@ Here, we use sending a text message as an example. To send messages of other typ
 
 | Field | Type | Required | Description |
 |---------|---------|----|---------|
-| SyncOtherMachine | Integer | No | `1`: synchronize the message to the `From_Account` online terminal and roaming server.<br/>`2`: do not synchronize the message to `From_Account`.<br/>If this field is not specified, the message will be synchronized to the `From_Account` roaming server. |
-| From_Account | String | No | UserID of the sender (used to specify the message sender) |
-| To_Account | String | Yes | UserID of the recipient |
+| SyncOtherMachine | Integer | No | `1`: synchronize the message to the `From_Account` online terminal and roaming server.<br/>`2`: do not synchronize the message to `From_Account`.<br/>If this field is not specified, the message will be synchronized to the `From_Account` roaming server by default. |
+| From_Account | String | No | `UserID` of the sender (used to specify the message sender) |
+| To_Account | String | Yes | `UserID` of the recipient |
 | MsgLifeTime | Integer | No | Offline retention period (seconds) of the message; max. period: 7 days (604800 seconds). <li>If this field is set to `0`, the message will only be sent to the recipient online and not retained offline. </li><li>If this field is set to a period longer than 7 days (604800 seconds), the message will still be retained for only 7 days. </li><li>If this field is not set, the message will be retained for 7 days by default.</li> |
 | MsgRandom | Integer | Yes | Random number of the message. It is used by the backend for message deduplication within a second. Make sure the random number is entered. |
 | MsgTimeStamp | Integer | No | Message timestamp in UNIX format (unit: second) |
 | ForbidCallbackControl | Array | No | Message callback forbidding field, which is valid only for this message. `ForbidBeforeSendMsgCallback` forbids the callback before sending the message. `ForbidAfterSendMsgCallback` forbids the callback after sending the message. |
-| SendMsgControl | Array | No | Message sending control option. It is a string array and is valid only for this message. `NoUnread` means not to include this message in the unread count. Example: "SendMsgControl": ["NoUnread"]  |
+| SendMsgControl | Array | No | Message sending control option. It is a string array and takes effect on the current message only. `NoUnread` means not to include this message in the unread count. Example: "SendMsgControl": ["NoUnread"]  |
 | MsgBody | Object | Yes | Message body. For details on formats, please see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). (Note: a message can contain multiple message elements, in which case `MsgBody` is an array.) |
-| MsgType | String | Yes | TIM message object type. Supported message objects include `TIMTextElem` (text message), `TIMFaceElem` (emoji message), `TIMLocationElem` (location message), and `TIMCustomElem` (custom message). |
+| MsgType | String | Yes | TIM message object type. Valid values: <ul style="margin:0;"><li >`TIMTextElem` (text message) <li >`TIMLocationElem` (location message) <li >`TIMFaceElem` (emoji message) <li >`TIMCustomElem` (custom message) <li >`TIMSoundElem` (voice message) <li >`TIMImageElem` (image message) <li >`TIMFileElem` (file message) <li >`TIMVideoFileElem` (video message) |
 | MsgContent | Object | Yes | Different message object types (`MsgType`) have different formats (`MsgContent`). For details, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
-| OfflinePushInfo | Object | No | Offline push information. For details, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
+| CloudCustomData | String | No | Custom message data. It is saved in the cloud and will be sent to the peer end. Such data can be pulled after the app is uninstalled and reinstalled. |
+| OfflinePushInfo | Object | No | Information of offline push. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
 
 
 ### Sample response packets
@@ -185,14 +191,14 @@ Here, we use sending a text message as an example. To send messages of other typ
 
 ## Error Codes
 
-Unless a network error (such as error 502) occurs, the returned HTTP status code for this API is always 200. The specific error code and details can be found in the response packet fields `ErrorCode` and `ErrorInfo` respectively.
+The returned HTTP status code for this API is always 200 unless a network error (such as error 502) occurs. The specific error code and details can be found in the response fields `ErrorCode` and `ErrorInfo` respectively.
 For public error codes (60000 to 79999), please see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
 The following table describes the error codes specific to this API:
 
 | Error Code | Description |
 | ------------- | ------------------------------------------------------------ |
 | 20001 | Invalid request packet. |
-| 20002 | UserSig or A2 has expired. |
+| 20002 | `UserSig` or `A2` has expired. |
 | 20003 | The `UserID` of the sender or recipient is invalid or does not exist. Make sure that the `UserID` has been imported into IM. |
 | 20004 | Network exception. Try again. |
 | 20005 | Internal server error. Try again. |
