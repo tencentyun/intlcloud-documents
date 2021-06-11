@@ -2,7 +2,6 @@
 
 ## Error description
 A VPN connection is used to connect VPC to IDC, but the status of VPN tunnel is **Unconnected** after the configuration.
-![](https://main.qcloudimg.com/raw/d37bb0a17e5b7ab17db816872ff5dfa5.png)
 
 ## Possible causes
 An exception in tunnel status usually results from the following factors:
@@ -23,7 +22,7 @@ An exception in tunnel status usually results from the following factors:
 		![](https://main.qcloudimg.com/raw/8202c85bf541bcd3df296b72ce177a3a.png)
 3. <span id="step3"></span>Check the connection status of the public network on the IDC side and see whether it can be connected to the Internet.
     - If it is, please go to [Step 4](#step4).
-    -. If not, please check whether the VPN tunnel is connected after repairing the local network. If it is connected, the problem is solved. If not, please go to [Step 4](#step4).
+    - If not, please check whether the VPN tunnel is connected after repairing the local network. If it is connected, the problem is solved. If not, please go to [Step 4](#step4).
 4. <span id="step4"></span>Check the security policy of the VPN device on the IDC side, and whether the public IP address of the VPN gateway on the Tencent Cloud side and the private IP address are open to Internet.
 ```plaintext
 display current-configuration configuration security-policy      //Take Huawei Firewall as an example here
@@ -36,7 +35,7 @@ display current-configuration configuration security-policy      //Take Huawei F
 >- The default VPN configuration varies by devices and public cloud service providers.
 >
  Go to the [VPN tunnel console](https://console.cloud.tencent.com/vpc/vpnConn?rid=17). Click the instance ID to enter the details page, and check the consistency on the “Advanced Configuration” tab.
-   ![](https://main.qcloudimg.com/raw/003f674d04966acebd7b713a64743609.png)
+
 	 Device configuration parameters on the IDC side can be obtained through the following command. Take Huawei Firewall as an example here.
 	  ```plaintext
 display current-configuration configuration ike profile
