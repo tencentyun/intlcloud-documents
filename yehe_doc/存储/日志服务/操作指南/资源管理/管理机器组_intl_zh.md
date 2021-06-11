@@ -33,7 +33,7 @@ CLS 支持利用机器标识动态配置机器组，您只需要在 Loglistener 
 2. 在左侧导航栏中，单击【机器组管理】。
 3. 选择您日志服务所在的地域，例如广州，单击【新建机器组】。
 4. 在弹出的窗口中，设置如下信息。
-
+alt="image-20210512172151574" style="zoom:50%;" />
  - 机器组名称：例如 cls_test。
  - 配置模式：选择**配置机器标识**。
  - 机器标识：输入机器的标识。
@@ -76,7 +76,7 @@ vi /usr/local/loglistener-2.3.0/etc/loglistener.conf
 1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls)。
 2. 在左侧导航栏中，单击【机器组管理】。
 3. 在机器组管理页面，选择需要删除的机器组，单击【删除】。
-<img src="https://main.qcloudimg.com/raw/a5499d33aa8c2323697388334dc27584.png" alt="image-20210512174639165" style="zoom:50%;" />
+
 4. 在弹出的提示窗口，单击【确认】，完成机器组删除。
 </br><img src="https://main.qcloudimg.com/raw/e99130ce78d418e04c4f573fbcd112d0.png" alt="image-20210512174816939" style="zoom:50%;" />
 

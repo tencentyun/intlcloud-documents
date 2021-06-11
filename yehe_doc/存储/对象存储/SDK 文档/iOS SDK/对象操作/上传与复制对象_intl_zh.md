@@ -46,7 +46,7 @@ QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
 NSURL* url = [NSURL fileURLWithPath:@"文件的URL"];
 // 存储桶名称，格式为 BucketName-APPID
 put.bucket = @"examplebucket-1250000000";
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 put.object = @"exampleobject";
 // 需要上传的对象内容。可以传入NSData*或者NSURL*类型的变量
 put.body =  url;
@@ -70,6 +70,7 @@ put.body =  url;
     NSString* uploadId = multipleUploadInitResult.uploadId;
 }];
 [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:put];
+
 ```
 
 >?
@@ -85,7 +86,7 @@ let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObj
 // 存储桶名称，格式为 BucketName-APPID
 put.bucket = "examplebucket-1250000000";
 
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 put.object = "exampleobject";
 
 // 需要上传的对象内容。可以传入NSData*或者NSURL*类型的变量
@@ -134,7 +135,7 @@ QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
 // 存储桶名称，格式为 BucketName-APPID
 put.bucket = @"examplebucket-1250000000";
 
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 put.object = @"exampleobject";
 
 // 需要上传的对象内容。可以传入NSData*或者NSURL*类型的变量
@@ -170,7 +171,7 @@ let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObj
 // 存储桶名称，格式为 BucketName-APPID
 put.bucket = "examplebucket-1250000000";
 
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 put.object = "exampleobject";
 
 // 需要上传的对象内容
@@ -220,8 +221,9 @@ NSData *resmeData = [put cancelByProductingResumeData:&error];
 [//]: # (.cssg-snippet-transfer-upload-resume)
 ```objective-c
 QCloudCOSXMLUploadObjectRequest *resumeRequest = [QCloudCOSXMLUploadObjectRequest requestWithRequestData:resmeData];
-[[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:resumeRequest];
+[[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:resumeRequest];码
 ```
+
 
 也通过以下方式取消上传：
 
@@ -233,8 +235,7 @@ QCloudCOSXMLUploadObjectRequest *resumeRequest = [QCloudCOSXMLUploadObjectReques
 }];
 ```
 
->?
->- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m) 查看。
 
 **Swift**
 
@@ -254,6 +255,7 @@ var resumeRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>.init(request: upl
 QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(resumeRequest);
 ```
 
+
 也通过以下方式取消上传：
 
 [//]: # (.cssg-snippet-transfer-upload-cancel)
@@ -264,8 +266,7 @@ put.abort { (outputObject, error) in
 }
 ```
 
->?
->- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift) 查看。
+>?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift) 查看。
 
 #### 示例代码四: 批量上传
 **Objective-C**
@@ -278,7 +279,7 @@ for (int i = 0; i<20; i++) {
     // 存储桶名称，格式为 BucketName-APPID
     put.bucket = @"examplebucket-1250000000";
     
-    // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+  // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
     put.object = [NSString stringWithFormat:@"exampleobject-%d",i];
     
     // 需要上传的对象内容。可以传入NSData*或者NSURL*类型的变量
@@ -312,7 +313,7 @@ for i in 1...10 {
     // 存储桶名称，格式为 BucketName-APPID
     put.bucket = "examplebucket-1250000000";
     
-    // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+    // 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
     put.object = "exampleobject-".appendingFormat("%d", i);
     
     // 需要上传的对象内容
@@ -342,6 +343,62 @@ for i in 1...10 {
     QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 }
 ```
+#### 示例代码五: 创建目录
+**Objective-C**
+
+[//]: # (.cssg-snippet-transfer-upload-object-dir)
+```objective-c
+QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
+// 存储桶名称，格式为 BucketName-APPID
+put.bucket = @"examplebucket-1250000000";
+// 要创建的目录的名称
+put.object = @"dir1";
+    
+// 需要上传的对象内容，如需创建目录使用空串生成NSData即可
+put.body  = [@"" dataUsingEncoding:NSUTF8StringEncoding];
+    
+    // 监听上传结果
+[put setFinishBlock:^(id outputObject, NSError *error) {
+    // outputObject 包含所有的响应 http 头部
+    NSDictionary* info = (NSDictionary *) outputObject;
+}];
+[[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:put];
+```
+
+>?
+>- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m) 查看。
+>- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 **生成预签名链接** 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
+
+**Swift**
+
+[//]: # (.cssg-snippet-create-directory)
+```swift
+let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
+        
+// 存储桶名称，格式为 BucketName-APPID
+put.bucket = "examplebucket-1250000000";
+        
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
+put.object = "dir/";
+        
+// 需要上传的对象内容
+let dataBody:NSData = "".data(using: .utf8)! as NSData;
+put.body = dataBody;
+        
+// 监听上传结果
+put.setFinish { (result, error) in
+    // 获取上传结果
+    if let result = result {
+        } else {
+            print(error!);
+        }
+    }
+QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
+```
+
+>?
+>- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift) 查看。
+>- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 **生成预签名链接** 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
 
 ### 复制对象
 
@@ -357,7 +414,7 @@ QCloudCOSXMLCopyObjectRequest* request = [[QCloudCOSXMLCopyObjectRequest alloc] 
 // 存储桶名称，格式为 BucketName-APPID
 request.bucket = @"examplebucket-1250000000";
 
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 request.object = @"exampleobject";
 
 // 文件来源存储桶，需要是公有读或者在当前账号有权限
@@ -395,14 +452,14 @@ let copyRequest =  QCloudCOSXMLCopyObjectRequest.init();
 // 存储桶名称，格式为 BucketName-APPID
 copyRequest.bucket = "examplebucket-1250000000";
 
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 copyRequest.object = "exampleobject";
 
 // 文件来源存储桶，需要是公有读或者在当前账号有权限
 // 存储桶名称，格式为 BucketName-APPID
 copyRequest.sourceBucket = "sourcebucket-1250000000";
 
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 copyRequest.sourceObject = "sourceObject";
 
 // 源文件的 APPID
@@ -450,7 +507,7 @@ QCloudPutObjectRequest* put = [QCloudPutObjectRequest new];
 // 存储桶名称，格式为 BucketName-APPID
 put.bucket = @"examplebucket-1250000000";
 
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 put.object = @"exampleobject";
 
 // 文件内容，可以传入NSData*或者NSURL*类型的变量
@@ -480,7 +537,7 @@ putObject.bucket = "examplebucket-1250000000";
 let dataBody:NSData? = "wrwrwrwrwrw".data(using: .utf8) as NSData?;
 putObject.body =  dataBody!;
 
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 putObject.object = "exampleobject";
 putObject.finishBlock = {(result,error) in
     if let result = result {
@@ -504,11 +561,12 @@ QCloudCOSXMLService.defaultCOSXML().putObject(putObject);
 **Objective-C**
 
 [//]: # (.cssg-snippet-copy-object)
+
 ```objective-c
 QCloudPutObjectCopyRequest* request = [[QCloudPutObjectCopyRequest alloc] init];
 // 存储桶名称，格式为 BucketName-APPID
 request.bucket = @"examplebucket-1250000000";
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 request.object = @"exampleobject";
 // 是否拷贝元数据，枚举值：Copy，Replaced，默认值 Copy。
 // 假如标记为 Copy，忽略 Header 中的用户元数据信息直接复制
@@ -541,7 +599,7 @@ request.versionID = @"objectVersion1";
 let putObjectCopy = QCloudPutObjectCopyRequest.init();
 // 存储桶名称，格式为 BucketName-APPID
 putObjectCopy.bucket = "examplebucket-1250000000";
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 putObjectCopy.object = "exampleobject";
 // 源对象所在的路径
 putObjectCopy.objectCopySource = "sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject";
@@ -566,6 +624,7 @@ putObjectCopy.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().putObjectCopy(putObjectCopy);
 ```
 
+
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/CopyObject.swift) 查看。
 
 #### 示例代码二: 复制对象时替换对象属性
@@ -576,7 +635,7 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(putObjectCopy);
 QCloudPutObjectCopyRequest* request = [[QCloudPutObjectCopyRequest alloc] init];
 // 存储桶名称，格式为 BucketName-APPID
 request.bucket = @"examplebucket-1250000000";
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 request.object = @"exampleobject";
 // 是否拷贝元数据，枚举值：Copy，Replaced，默认值 Copy。
 // 假如标记为 Copy，忽略 Header 中的用户元数据信息直接复制
@@ -614,11 +673,13 @@ request.versionID = @"objectVersion1";
 **Swift**
 
 [//]: # (.cssg-snippet-copy-object-replaced)
+
+
 ```swift
 let request : QCloudPutObjectCopyRequest  = QCloudPutObjectCopyRequest();
 // 存储桶名称，格式为 BucketName-APPID
 request.bucket = "examplebucket-1250000000";
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 request.object = "exampleobject";
 // 是否拷贝元数据，枚举值：Copy，Replaced，默认值 Copy。
 // 假如标记为 Copy，忽略 Header 中的用户元数据信息直接复制
@@ -657,11 +718,12 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 **Objective-C**
 
 [//]: # (.cssg-snippet-modify-object-metadata)
+
 ```objective-c
 QCloudPutObjectCopyRequest* request = [[QCloudPutObjectCopyRequest alloc] init];
 // 存储桶名称，格式为 BucketName-APPID
 request.bucket = @"examplebucket-1250000000";
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 request.object = @"exampleobject";
 // 是否拷贝元数据，枚举值：Copy，Replaced，默认值 Copy。
 // 假如标记为 Copy，忽略 Header 中的用户元数据信息直接复制
@@ -686,6 +748,7 @@ request.objectCopySource =
 [[QCloudCOSXMLService defaultCOSXML]  PutObjectCopy:request];
 ```
 
+
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ModifyObjectProperty.m) 查看。
 
 **Swift**
@@ -697,7 +760,7 @@ let request : QCloudPutObjectCopyRequest = QCloudPutObjectCopyRequest();
 // 存储桶名称，格式为 BucketName-APPID
 request.bucket = "examplebucket-1250000000";
 
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 request.object = "exampleobject";
 
 // 是否拷贝元数据，枚举值：Copy，Replaced，默认值 Copy。
@@ -743,7 +806,7 @@ QCloudPutObjectCopyRequest* request = [[QCloudPutObjectCopyRequest alloc] init];
 // 存储桶名称，格式为 BucketName-APPID
 request.bucket = @"examplebucket-1250000000";
 
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 request.object = @"exampleobject";
 
 // 对象存储类型，枚举值请参见 存储类型概述 文档，例如 MAZ_STANDARD，MAZ_STANDARD_IA，
@@ -776,7 +839,7 @@ let request : QCloudPutObjectCopyRequest = QCloudPutObjectCopyRequest();
 // 存储桶名称，格式为 BucketName-APPID
 request.bucket = "examplebucket-1250000000";
 
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 request.object = "exampleobject";
 
 // 对象存储类型，枚举值请参见 存储类型概述 文档，例如 MAZ_STANDARD，MAZ_STANDARD_IA，
@@ -847,6 +910,7 @@ uploads.maxUploads = 100;
 [[QCloudCOSXMLService defaultCOSXML] ListBucketMultipartUploads:uploads];
 ```
 
+
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m) 查看。
 
 **Swift**
@@ -884,11 +948,11 @@ QCloudCOSXMLService.defaultCOSXML().listBucketMultipartUploads(listParts);
 **Objective-C**
 
 [//]: # (.cssg-snippet-init-multi-upload)
-```objective-c
+``` objective-c
 QCloudInitiateMultipartUploadRequest* initRequest = [QCloudInitiateMultipartUploadRequest new];
 // 存储桶名称，格式为 BucketName-APPID
 initRequest.bucket = @"examplebucket-1250000000";
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 initRequest.object = @"exampleobject";
 // 将作为对象的元数据返回
 initRequest.cacheControl = @"cacheControl";
@@ -911,6 +975,8 @@ initRequest.grantFullControl = @"grantFullControl";
 [[QCloudCOSXMLService defaultCOSXML] InitiateMultipartUpload:initRequest];
 ```
 
+
+
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m) 查看。
 
 **Swift**
@@ -922,7 +988,7 @@ let initRequest = QCloudInitiateMultipartUploadRequest.init();
 // 存储桶名称，格式为 BucketName-APPID
 initRequest.bucket = "examplebucket-1250000000";
 
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 initRequest.object = "exampleobject";
 
 initRequest.setFinish { (result, error) in
@@ -946,11 +1012,12 @@ QCloudCOSXMLService.defaultCOSXML().initiateMultipartUpload(initRequest);
 **Objective-C**
 
 [//]: # (.cssg-snippet-upload-part)
-```objective-c
+
+``` objective-c
 QCloudUploadPartRequest* request = [QCloudUploadPartRequest new];
 // 存储桶名称，格式为 BucketName-APPID
 request.bucket = @"examplebucket-1250000000";
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 request.object = @"exampleobject";
 // 块编号
 request.partNumber = 1;
@@ -979,6 +1046,7 @@ request.body = [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
 [[QCloudCOSXMLService defaultCOSXML]  UploadPart:request];
 ```
 
+
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m) 查看。
 
 **Swift**
@@ -990,7 +1058,7 @@ let uploadPart = QCloudUploadPartRequest<AnyObject>.init();
 // 存储桶名称，格式为 BucketName-APPID
 uploadPart.bucket = "examplebucket-1250000000";
 
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 uploadPart.object = "exampleobject";
 uploadPart.partNumber = 1;
 
@@ -1045,7 +1113,7 @@ QCloudUploadPartCopyRequest* request = [[QCloudUploadPartCopyRequest alloc] init
 // 存储桶名称，格式为 BucketName-APPID
 request.bucket = @"examplebucket-1250000000";
 
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 request.object = @"exampleobject";
 
 // 源文件 URL 路径，可以通过 versionid 子资源指定历史版本
@@ -1082,7 +1150,7 @@ let req = QCloudUploadPartCopyRequest.init();
 // 存储桶名称，格式为 BucketName-APPID
 req.bucket = "examplebucket-1250000000";
 
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 req.object = "exampleobject";
 
 // 源文件 URL 路径，可以通过 versionid 子资源指定历史版本
@@ -1124,7 +1192,7 @@ QCloudCOSXMLService.defaultCOSXML().uploadPartCopy(req);
 ```objective-c
 QCloudListMultipartRequest* request = [QCloudListMultipartRequest new];
 
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 request.object = @"exampleobject";
 
 // 存储桶名称，格式为 BucketName-APPID
@@ -1152,7 +1220,7 @@ request.uploadId = uploadId;
 ```swift
 let req = QCloudListMultipartRequest.init();
 
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 req.object = "exampleobject";
 
 // 存储桶名称，格式为 BucketName-APPID
@@ -1186,9 +1254,10 @@ QCloudCOSXMLService.defaultCOSXML().listMultipart(req);
 **Objective-C**
 
 [//]: # (.cssg-snippet-complete-multi-upload)
+
 ```objective-c
 QCloudCompleteMultipartUploadRequest *completeRequst = [QCloudCompleteMultipartUploadRequest new];
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 completeRequst.object = @"exampleobject";
 // 存储桶名称，格式为 BucketName-APPID
 completeRequst.bucket = @"examplebucket-1250000000";
@@ -1220,6 +1289,7 @@ completeRequst.parts = partInfo;
 [[QCloudCOSXMLService defaultCOSXML] CompleteMultipartUpload:completeRequst];
 ```
 
+
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m) 查看。
 
 **Swift**
@@ -1231,7 +1301,7 @@ let  complete = QCloudCompleteMultipartUploadRequest.init();
 // 存储桶名称，格式为 BucketName-APPID
 complete.bucket = "examplebucket-1250000000";
 
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 complete.object = "exampleobject";
 
 // 本次要查询的分块上传的 uploadId，可从初始化分块上传的请求结果
@@ -1279,7 +1349,7 @@ QCloudCOSXMLService.defaultCOSXML().completeMultipartUpload(complete);
 [//]: # (.cssg-snippet-abort-multi-upload)
 ```objective-c
 QCloudAbortMultipfartUploadRequest *abortRequest = [QCloudAbortMultipfartUploadRequest new];
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 abortRequest.object = @"exampleobject";
 // 存储桶名称，格式为 BucketName-APPID
 abortRequest.bucket = @"examplebucket-1250000000";
@@ -1293,6 +1363,7 @@ abortRequest.uploadId = @"exampleUploadId";
 [[QCloudCOSXMLService defaultCOSXML]AbortMultipfartUpload:abortRequest];
 ```
 
+
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/AbortMultiPartsUpload.m) 查看。
 
 **Swift**
@@ -1304,7 +1375,7 @@ let abort = QCloudAbortMultipfartUploadRequest.init();
 // 存储桶名称，格式为 BucketName-APPID
 abort.bucket = "examplebucket-1250000000";
 
-// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "dir1/object1"
+// 对象键，是对象在 COS 上的完整路径，如果带目录的话，格式为 "video/xxx/movie.mp4"
 abort.object = "exampleobject";
 
 // 本次要查询的分块上传的 uploadId，可从初始化分块上传的请求结果
