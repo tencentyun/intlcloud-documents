@@ -6,7 +6,9 @@ DeScheduler 是容器服务 TKE 基于 Kubernetes 原生社区 [DeScheduler](htt
 
 
 
-### 在集群内部署 Kubernetes 对象
+
+### 部署在集群内的 Kubernetes 对象
+
 
 | Kubernetes 对象名称  | 类型               |                   请求资源                   | 所属 Namespace |
 | :----------------- | :----------------- | :------------------------------------------ | ------------- |
@@ -70,7 +72,9 @@ DeScheduler  基于 [社区版本 Descheduler](https://github.com/kubernetes-sig
 ### 依赖部署
 
 DeScheduler 组件依赖于 Node 当前和过去一段时间的真实负载情况来进行调度决策，需要通过 Prometheus 等监控组件获取系统 Node 真实负载信息。在使用 DeScheduler 组件之前，您可以采用自建 Prometheus 监控或采用 TKE 云原生监控。
-####  自建Prometheus监控服务
+<span id ="rules"></span>
+<dx-tabs>
+::: 自建\sPrometheus\s监控服务
 #####  部署 node-exporter 和 Prometheus
 
 通过 node-exporter 实现对于 Node 指标的监控，您可按需部署 node-exporter 和 Prometheus。
@@ -79,6 +83,8 @@ DeScheduler 组件依赖于 Node 当前和过去一段时间的真实负载情�
 
 在 node-exporter 获取节点监控数据后，需要通过 Prometheus 对原始的 node-exporter 中采集数据进行聚合计算。为获取 DeScheduler 所需要的 `cpu_usage_avg_5m`、`mem_usage_avg_5m` 等指标，需要在 Prometheus 的 rules 规则中进行配置。示例如下：
 
+<dx-codeblock>
+:::  yaml
 ```
 groups:
    - name: cpu_mem_usage_active
@@ -97,7 +103,11 @@ groups:
      - record: mem_usage_avg_5m
        expr: avg_over_time(mem_usage_active[5m])
 ```
+:::
+</dx-codeblock>
 >!当您使用 TKE 提供的 DynamicScheduler 时，需在 Prometheus 配置获取 Node 监控数据的聚合规则。DynamicScheduler 聚合规则与 DeScheduler 聚合规则有部分重合，但并不完全一样，请您在配置规则时不要互相覆盖。同时使用 DynamicScheduler 和 DeScheduler 时应该配置如下规则：
+<dx-codeblock>
+:::  yaml
 ```
 groups:
    - name: cpu_mem_usage_active
@@ -130,6 +140,8 @@ groups:
      - record: cpu_usage_max_avg_1d
        expr: max_over_time(cpu_usage_avg_5m[1d])
 ```
+:::
+</dx-codeblock>
 
 #### Prometheus 文件配置
 1. 上述定义了 DeScheduler 所需要的指标计算的 rules，需要将 rules 配置到 Prometheus 中，参考一般的 Prometheus 配置文件。示例如下：
@@ -144,15 +156,16 @@ rule_files:
 2. 将 rules 配置复制到一个文件（例如 de-scheduler.yaml），文件放到上述 Prometheus 容器的 `/etc/prometheus/rules/` 下。
 3. 重新加载 Prometheus server，即可从 Prometheus 中获取到动态调度器需要的指标。
 >?通常情况下，上述 Prometheus 配置文件和 rules 配置文件都是通过 configmap 存储，再挂载到 Prometheus server 容器，因此修改相应的 configmap 即可。
-
-#### 云原生监控 Prometheus
+:::
+::: 云原生监控\sPrometheus
 1. 登录容器服务控制台，在左侧菜单栏中选择【[云原生监控](https://console.cloud.tencent.com/tke2/prometheus)】，进入“云原生监控”页面。
 2. 创建与 Cluster 处于同一 VPC 下的 云原生监控 Prometheus 实例，并 关联用户集群。如下图所示：
    ![](https://main.qcloudimg.com/raw/44979847793b5c363e440b9d8d7e29f3.png)
 3. 与原生托管集群关联后，可以在用户集群查看到每个节点都已安装 node-exporter。如下图所示：
    ![](https://main.qcloudimg.com/raw/baef0cd5cd292e4496241a9c8a4463ec.png)
 4. 设置 Prometheus 聚合规则，具体规则内容与上述 [自建Prometheus监控服务](#自建Prometheus监控服务) 中的“聚合规则配置”相同。规则保存后立即生效，无需重新加载 server。
-
+:::
+</dx-tabs>
 
 
 

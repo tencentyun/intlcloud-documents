@@ -70,7 +70,10 @@ If the average CPU utilization or average memory usage of a node over the past 5
 ### Dependency deployment
 
 The DeScheduler add-on relies on the actual load of nodes at the current moment and over a past period to make scheduling decisions. It requires monitoring components such as Prometheus to obtain actual node load information from the system. Before you use the DeScheduler add-on, we recommend that you adopt self-built Prometheus monitoring or TKE cloud native monitoring.
-#### Self-built Prometheus monitoring service
+
+<span id ="rules"></span>
+<dx-tabs>
+::: Self-built\sPrometheus\smonitoring\sservice
 ##### Deploying node-exporter and Prometheus
 
 We use node-exporter to monitor node metrics. You can deploy node-exporter and Prometheus based on your own requirements.
@@ -79,6 +82,8 @@ We use node-exporter to monitor node metrics. You can deploy node-exporter and P
 
 After node-exporter obtains node monitoring data, Prometheus is required to perform aggregation calculation of the data collected in the native node-exporter. To obtain the metrics required by DeScheduler, such as `cpu_usage_avg_5m` and `mem_usage_avg_5m`, you need to configure rules in Prometheus. See the sample below:
 
+<dx-codeblock>
+:::  yaml
 ```
 groups:
    - name: cpu_mem_usage_active
@@ -97,8 +102,12 @@ groups:
      - record: mem_usage_avg_5m
        expr: avg_over_time(mem_usage_active[5m])
 ```
+:::
+</dx-codeblock>
 
 >! When you use the DynamicScheduler provided by TKE, you need to configure the aggregation rules for obtaining node monitoring data in Prometheus. The aggregation rules of the DynamicScheduler partly overlap with those of DeScheduler, but they are not exactly the same. Therefore, mutual overwriting is not allowed during rule configuration. When you use DynamicScheduler and DeScheduler together, configure the following rules:
+<dx-codeblock>
+:::  yaml
 ```
 groups:
    - name: cpu_mem_usage_active
@@ -131,6 +140,8 @@ groups:
      - record: cpu_usage_max_avg_1d
        expr: max_over_time(cpu_usage_avg_5m[1d])
 ```
+:::
+</dx-codeblock>
 
 #### Prometheus file configuration
 1. The above step defined the rules for metric calculation needed by DeScheduler. Now you need to configure the rules in Prometheus, with reference to a general Prometheus configuration file. See the sample below:
@@ -145,15 +156,16 @@ rule_files:
 2. Copy the rules configuration to a file (such as de-scheduler.yaml) and place the file in the `/etc/prometheus/rules/` directory of the above Prometheus container.
 3. Reload the Prometheus server to obtain the metrics needed by the Dynamic Scheduler from Prometheus.
 >? Normally, the above Prometheus configuration file and rules configuration file are stored via configmap and then mounted to the Prometheus server container. Therefore, you only need to modify the relevant configmap.
-
-#### Cloud native monitoring Prometheus
+:::
+:::  Cloud\snative\smonitoring\sPrometheus
 1. Log in to the TKE console and click **[Cloud Native Monitoring](https://console.cloud.tencent.com/tke2/prometheus)** in the left sidebar to go to the **Cloud Native Monitoring** page.
 2. Create a cloud native monitoring Prometheus instance under the same VPC as the target cluster and associate it with the user cluster, as shown in the figure below:
    ![](https://main.qcloudimg.com/raw/44979847793b5c363e440b9d8d7e29f3.png)
 3. After associating the instance with a native managed cluster, go to the user cluster to check that node-exporter has been installed on each node, as shown in the figure below:
    ![](https://main.qcloudimg.com/raw/baef0cd5cd292e4496241a9c8a4463ec.png)
 4. Set the Prometheus aggregation rules. The rules are the same as the aggregation rules configured in the above [self-built Prometheus monitoring services](#Self-built-Prometheus-monitoring-service). The rules take effect immediately after being saved, and the server need not be reloaded.
-
+:::
+</dx-tabs>
 
 
 
