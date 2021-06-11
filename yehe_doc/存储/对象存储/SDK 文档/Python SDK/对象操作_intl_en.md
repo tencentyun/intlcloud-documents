@@ -959,7 +959,7 @@ response = client.delete_objects(
 | Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Delete  | Describes the objects to be deleted and the way the deletion results are returned | Dict | Yes |
 | Objects | Describes information on each object to be deleted | List | Yes |
-| Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String |
+| Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | No |
 | VersionId | Version IDs of the objects to be deleted if versioning is enabled | String  | No |
 | Quiet | Specifies how the deletion results are returned. Valid values: <br>`true`: returns only the failed results. <br>`false` (default): returns all results. | String | No |
 
@@ -1622,7 +1622,7 @@ response = client.complete_multipart_upload(
 | Bucket | Bucket name in the format: `BucketName-APPID` | String | Yes |
 | Key | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
 | UploadId | ID of the multipart upload | String | Yes |
-| MultipartUpload | Information on all parts, including `ETag` and `PartNumber` | Dict |
+| MultipartUpload | Information on all parts, including `ETag` and `PartNumber` | Dict | Yes |
 
 #### Response description
 
