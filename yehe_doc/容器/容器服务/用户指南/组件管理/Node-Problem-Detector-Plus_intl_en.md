@@ -4,7 +4,7 @@
 
 Node-Problem-Detector-Plus is an add-on that monitors the health status of Kubernetes cluster nodes. It runs in the TKE environment as a DaemonSet to help users detect various exceptions on nodes in real time and report the detection results to the upstream Kube-apiserver.
 
-### Resources Created in Kubernetes Clusters
+### Kubernetes objects deployed in a cluster
 
 
 
