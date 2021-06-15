@@ -8,9 +8,7 @@ Make sure the VPN gateway, customer gateway and VPN tunnel have been configured 
 2. Click **VPN Connection** > **VPN Gateway** on the left navigation bar.
 3. On the “VPN Gateway” page, select the region and VPC, and click the VPN gateway instance ID to go to the details page.
 4. Click the **Route Table** tab on the “Instance Details” page.
-   ![](https://main.qcloudimg.com/raw/d261071d65c453ecf21d3980d1b3a8cd.png)
 5. Click **Add Routing** and configure routing policies.
-![](https://main.qcloudimg.com/raw/288637983594aa439f67c2ee00a7a12a.png)
 <table>
 <tr>
 <th>Configuration Item</th>
@@ -22,7 +20,7 @@ Make sure the VPN gateway, customer gateway and VPN tunnel have been configured 
 </tr>
 <tr>
 <td>Next Hop Type</td>
-<td>VPN tunnel.<p>Note: In terms of a VPN gateway for CCN, if the VPN gateway is associated with the CCN, you also need to add next hop to the routing policies in **CCN**.</td>
+<td>VPN tunnel.<p>Note: In terms of a VPN gateway for CCN, if the VPN gateway is associated with the CCN, you also need to add next hop to the routing policies in <b>CCN</b>.</td>
 </tr>
 <tr>
 <td>Next Hop</td>
@@ -44,6 +42,4 @@ Make sure the VPN gateway, customer gateway and VPN tunnel have been configured 
 6. Click **Confirm** after configuring routing policies.
 7. Other executable operations.
     1. Enabling or disabling routing policies.
-      ![](https://main.qcloudimg.com/raw/1d2b107d0c80bb1a0a291b6e68f7455f.png)
     2. Disabled routing policies can be deleted.
-		![](https://main.qcloudimg.com/raw/dfb2085c28e54597fd1d399091cd9826.png)
