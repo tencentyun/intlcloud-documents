@@ -111,7 +111,7 @@ The Pods that mount volumes of hostpath type will not be scheduled to the virtua
 
 - The virtual node feature is not available for the cluster without any server nodes.
 - The Pods that occupy the CPU resource cannot be scheduled to the virtual node.
-- The Pods that have enabled the [Static IP Address](https://intl.cloud.tencent.com/document/product/457/35249) cannot be scheduled to the virtual node.
+- The Pods that have enabled the [Static IP Address](https://intl.cloud.tencent.com/document/product/457/38974) cannot be scheduled to the virtual node.
 - The Pods that have specified the hostPort will not be scheduled to the virtual node.
 - The Pods that have specified the hostIP will use the Pod IP as the value of hostIP by default.
 - If the anti-affinity feature is enabled, only one of the Pods with the same workload will be created on the virtual node.
