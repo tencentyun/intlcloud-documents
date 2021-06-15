@@ -33,7 +33,7 @@
         <td>Released SDK v1.2.3.1</td><td>Fixed a logic error of the Huawei disable component.</td>
         <td>February 04, 2021</td><td>-</td>
     </tr>
-<tr>
+
 </table>
 
 ## January 2021
