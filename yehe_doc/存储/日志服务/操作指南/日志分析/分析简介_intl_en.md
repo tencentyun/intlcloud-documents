@@ -4,7 +4,6 @@ The SQL statistics feature of CLS can analyze the collected logs and display the
 
 >!
 > - To use the log analysis feature, you must configure the key-value index for target fields and enable the statistics feature.
->![image-20200817202408930](https://main.qcloudimg.com/raw/c2f6b9608764c2007ee20cb2b7b7016f.png)
 > - When you use SQL statements for search and analysis, single quotes ('') indicate strings, and double quotes ("") indicate fields and aliases.
 > 
 
@@ -39,10 +38,6 @@ status:404 | select count(*) as pv
 
 
 
-## Example
-
-![image-20200818160724827](https://main.qcloudimg.com/raw/6a559058a9fcd13ce83df3e7a5d4f085.png)
-![image-20200818160904179](https://main.qcloudimg.com/raw/399efd6bd10617d65172bdbd1a86acad.png)
 
 ## Supported SQL Syntax and Functions
 
