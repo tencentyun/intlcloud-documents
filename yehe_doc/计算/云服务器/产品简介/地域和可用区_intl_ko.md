@@ -72,7 +72,7 @@ API 인터페이스의 [가용존 리스트 조회](https://intl.cloud.tencent.c
 			<td>난징 2존<br>ap-nanjing-2</td>
 	</tr>
 	<tr>
-			<td rowspan="5">화베이지역(베이징)<br>ap-beijing</td>
+			<td rowspan="7">화베이지역(베이징)<br>ap-beijing</td>
 			<td>베이징 1존<br>ap-beijing-1</td>
 	</tr>
 	<tr>
@@ -88,10 +88,10 @@ API 인터페이스의 [가용존 리스트 조회](https://intl.cloud.tencent.c
 			<td>베이징 5존<br>ap-beijing-5</td>
 	</tr>
 	<tr>
-			<td>베이징 6존<br>ap-beijing-5</td>
+			<td>베이징 6존<br>ap-beijing-6</td>
 	</tr>
 	<tr>
-			<td>베이징 7존<br>ap-beijing-5</td>
+			<td>베이징 7존<br>ap-beijing-7</td>
 	</tr>
 	<tr>
 		<td rowspan="2">시난지역(청두)<br>ap-chengdu</td>
