@@ -1,0 +1,2 @@
+Through an encrypted public network channel, a VPN connection can facilitate the safe communication between the user IDC and internal office network and Tencent Cloud Virtual Private Cloud (VPC). A VPN gateway provides IPsec VPN connections. You can configure and manage VPN connections, such as viewing monitoring data, modifying VPN tunnels and binding anti-DDoS products, on the VPN console. This document provides the console operation guides of VPN connections.
+
