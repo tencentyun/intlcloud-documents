@@ -8,7 +8,6 @@ Please create a VPC network in the same region in advance if you want to create 
 2. Click **VPN Connection** > **VPN Gateway** on the left sidebar to go to the management page.
 3. Click **+New** on the VPN gateway management page.
 4. Configure the following gateway parameters in the pop-up **Create VPN Gateway** dialog box.
-<img src="https://main.qcloudimg.com/raw/52f055358ccea8f1679ddb49a49b2d40.png" width="50%" />
 <table>
 <tr>
 <th>Parameter Name</th>
@@ -24,11 +23,11 @@ Please create a VPC network in the same region in advance if you want to create 
 </tr>
 <tr>
 <td>Associated Network</td>
-<td>This shows whether you will create a cloud connect network (CCN) VPN or a private network VPN, which is commonly known as VPN gateway for CCN or VPN gateway for VPC respectively.<ul><li>Choose **CCN** if you need to use VPN to connect to multiple VPC networks or other direct connect networks. Note: when being created, the VPN gateway for CCN cannot be directly associated with the CCN instance. After it is created, you can edit the associated network on the VPN gateway details page and choose the CCN instance.</li><li>Choose **VPC** if you need to use the VPN to connect to a single VPC network.</li></ul></td>
+<td>This shows whether you will create a cloud connect network (CCN) VPN or a private network VPN, which is commonly known as VPN gateway for CCN or VPN gateway for VPC respectively.<ul><li>Choose <b>CCN</b> if you need to use VPN to connect to multiple VPC networks or other direct connect networks. Note: when being created, the VPN gateway for CCN cannot be directly associated with the CCN instance. After it is created, you can edit the associated network on the VPN gateway details page and choose the CCN instance.</li><li>Choose <b>VPC</b> if you need to use the VPN to connect to a single VPC network.</li></ul></td>
 </tr>
 <tr>
 <td>Network</td>
-<td>Choose the private network to be associated with the VPN gateway only when the associated network is **VPC**.</td>
+<td>Choose the private network to be associated with the VPN gateway only when the associated network is <b>VPC</b>.</td>
 </tr>
 <tr>
 <td>Bandwidth Cap</td>
@@ -44,4 +43,3 @@ Please create a VPC network in the same region in advance if you want to create 
 </tr>
 </table>
 5. After configuring gateway parameters, click **Create** to create a VPN gateway, and the **Status** will be **In Progress**. About 1-2 minutes later, the status of the successfully created VPN gateway will be **In Service**. The system will assign the VPN gateway a public IP.
-<img src="https://main.qcloudimg.com/raw/880187e214d253d4fac8fd135b838ebf.png">
