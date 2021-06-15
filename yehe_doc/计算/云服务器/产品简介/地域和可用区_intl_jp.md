@@ -121,9 +121,10 @@ APIインターフェースを介して、[アベイラビリティーゾーン�
 <span id="InternationalArea"></span>
 
 ## その他の国及び地域	
+
 <table class="table-striped">
 	<tbody>
-	<tr>
+		<tr>
 			<th>リージョン</th>
 			<th>アベイラビリティーゾーン</th>
 		</tr>
@@ -139,7 +140,7 @@ APIインターフェースを介して、[アベイラビリティーゾーン�
 		</tr>
 		<tr>
 			<td>東南アジア（ジャカルタ）<br>ap-jakarta</td>
-			<td>ジャカルタ1区（ジャカルタのノードは東南アジア地域をカバーできる）<br>ap-jakarta-1</td></tr>
+			<td>ジャカルタ1区（ジャカルタのノードは東南アジア地域をカバーできる）<br>ap-jakarta-1</td>
 		</tr>
 		<tr>
 			<td rowspan="2">北東アジア（ソウル）<br>ap-seoul</td>
@@ -155,11 +156,11 @@ APIインターフェースを介して、[アベイラビリティーゾーン�
 		<tr>
 			<td>東京１区（東京のノードは北東アジア地域をカバーできる）<br>ap-tokyo-1</td>
 		</tr>
-       <tr>
+		<tr>
 			<td  rowspan="2">南アジア太平洋（ムンバイ）<br>ap-mumbai</td>
 			<td>ムンバイ1区（ムンバイのノードは南アジア太平洋地域をカバーできる）<br>ap-mumbai-1</td>
 		</tr>
-       <tr>
+		<tr>
 			<td>ムンバイ2区（ムンバイのノードは南アジア太平洋地域をカバーできる）<br>ap-mumbai-2</td>
 		</tr>
 		<tr>
@@ -173,7 +174,7 @@ APIインターフェースを介して、[アベイラビリティーゾーン�
 			<td rowspan="2">米国西部（シリコンバレー）<br>na-siliconvalley</td>
 			<td>リコンバレー1区（シリコンバレーノードは米国西部をカバーできる）<br>na-siliconvalley-1</td>
 		</tr>
-    <tr>
+		<tr>
 			<td>リコンバレー1区（シリコンバレーのノードは米国西部をカバーできる）<br>na-siliconvalley-2</td>
 		</tr>
 		<tr>
@@ -207,9 +208,13 @@ VPCが1つしかない場合でも、単一障害点が生じることを回避�
 
 ## リソースの可用性
 次の表は、グローバル、リージョン、アベイラビリティーゾーンに固有のTencent Cloudリソースを示しています。
-
 <table>
-	<tr><th>リソース</th><th>リソース ID形式<br><リソースの略語>-8桁の数字と文字</th><th>タイプ</th><th>説明</th></tr>
+<tr>
+	<th>リソース</th>
+	<th>リソース ID形式<br><リソースの略語>-8桁の数字と文字</th>
+	<th>タイプ</th>
+	<th>説明</th>
+</tr>
 	<tbody>
 	<tr>
 	  <td>ユーザーアカウント</td>
@@ -248,7 +253,7 @@ VPCが1つしかない場合でも、単一障害点が生じることを回避�
 	  <td>セキュリティグループは、同じリージョン内のインスタンスにのみ関連付けることができます。Tencent Cloudは、ユーザーに3つのデフォルトのセキュリティグループを自動的に作成します。</td>
 	</tr>
 	<tr>
-	<td> <a href="https://intl.cloud.tencent.com/document/product/362">Cloud Block Storage</a> </td>
+	  <td> <a href="https://intl.cloud.tencent.com/document/product/362">Cloud Block Storage</a> </td>
 	  <td>disk-xxxxxxxx</td>
 	  <td>単一リージョンの単一のアベイラビリティーゾーンでのみ利用可能</td>
 	  <td>ユーザーは、特定のアベイラビリティーゾーンでのみCloud Block Storageを作成でき、また、同じアベイラビリティーゾーンのインスタンスにマウントできます。</td>
@@ -260,25 +265,25 @@ VPCが1つしかない場合でも、単一障害点が生じることを回避�
 	  <td>特定のCloud Block Storageにスナップショットを作成した後、ユーザーは対象リージョンで作成されたスナップショットを使用して、他の操作（クラウドディスクの作成など）を行うことができます。</td>
 	</tr>
 	<tr>
-	<td> <a href="https://intl.cloud.tencent.com/document/product/214/524?from_cn_redirect=1">Cloud Load Balancer</a> </td>
+	  <td><a href="https://intl.cloud.tencent.com/document/product/214/524?from_cn_redirect=1">Cloud Load Balancer</a> </td>
 	  <td>clb-xxxxxxxx</td>
 	  <td>単一リージョンの複数のアベイラビリティーゾーンで利用可能</td>
 	  <td>Cloud Load Balancerは、同じリージョン内の異なるアベイラビリティーゾーンのCVMにバインドして、トラフィックを転送することができます。</td>
 	</tr>
 	<tr>
-	<td> <a href="https://intl.cloud.tencent.com/document/product/215/535">Virtual Private Cloud</a> </td>
+	  <td> <a href="https://intl.cloud.tencent.com/document/product/215/535">Virtual Private Cloud</a> </td>
 	  <td>vpc-xxxxxxxx</td>
 	  <td>単一リージョンの複数のアベイラビリティーゾーンで利用可能</td>
 	  <td>VPCは特定のリージョンに作成され、異なるアベイラビリティーゾーンで同じVPCに属するリソースを作成できます。</td>
 	</tr>
 	<tr>
-	<<td> <a href="https://intl.cloud.tencent.com/document/product/215/535#.E5.AD.90.E7.BD.91">サブネット</a> </td>
+	  <td> <a href="https://intl.cloud.tencent.com/document/product/215/535#.E5.AD.90.E7.BD.91">サブネット</a> </td>
 	  <td>subnet-xxxxxxxx</td>
 	  <td>単一のアベイラビリティーゾーンでのみ利用可能</td>
 	  <td>ユーザーは、異なるアベイラビリティーゾーン間でサブネットを作成することができません。</td>
 	</tr>
 	<tr>
-	<td><a href="https://intl.cloud.tencent.com/document/product/215/31810"> ルーティングテーブル</a> </td>
+	  <td><a href="https://intl.cloud.tencent.com/document/product/215/31810"> ルーティングテーブル</a> </td>
 	  <td>rtb-xxxxxxxx</td>
 	  <td>単一リージョンの複数のアベイラビリティーゾーンで利用可能</td>
 	  <td>ユーザーは、ルーティングテーブルを作成するときに特定のVPCを指定する必要があります。</td>
