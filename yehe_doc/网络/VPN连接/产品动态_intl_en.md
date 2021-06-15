@@ -10,10 +10,10 @@
 </thead>
 <tbody><tr>
 <td>VPN3.0 release</td>
-<td>Supports the VPN route table that directs the subnet traffic to VPN tunnel. This feature is currently in beta. To try it out, please submit <a href="https://console.cloud.tencent.com/workorder/category"> a ticket</a>.
+<td>Supports the VPN route table that directs the subnet traffic to VPN tunnel.
 </td>
 <td>2021-01</td>
-<td><ul><li>Configuring VPN Routing Policy</a><li>Connecting VPC to IDC (Destination Routing)</a></td>
+<td><ul><li><a href="https://intl.cloud.tencent.com/document/product/1037/39690">Configuring VPN Routing Policy</a><li><a href="https://intl.cloud.tencent.com/document/product/1037/39675">Connecting VPC to IDC (Destination Routing)</a></td>
 </tr>
 </tbody></table>
 
