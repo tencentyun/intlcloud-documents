@@ -6,10 +6,10 @@
 VPN 连接激活流程图如下所示：
 ![](https://main.qcloudimg.com/raw/1aa819dbe82889063db1afc22ec7097e.png)
 具体操作请参见：
-- [步骤 1： 创建 VPN 网关](https://intl.cloud.tencent.com/document/product/1037/32690)
+- [步骤 1：创建 VPN 网关](https://intl.cloud.tencent.com/document/product/1037/32690)
 - [步骤 2：创建对端网关](https://intl.cloud.tencent.com/document/product/1037/32691)
 - [步骤 3：创建 VPN 通道](https://intl.cloud.tencent.com/document/product/1037/32692)
 - [步骤 4：本地网关配置](https://intl.cloud.tencent.com/document/product/1037/32693)
-- [步骤 5：配置路由表](https://intl.cloud.tencent.com/document/product/1037/32694)
+- [步骤 5：配置路由策略](https://intl.cloud.tencent.com/document/product/1037/32694)
 - [步骤 6：激活 VPN 隧道](https://intl.cloud.tencent.com/document/product/1037/32695)
 
