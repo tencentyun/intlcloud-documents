@@ -5,7 +5,7 @@
 | API | Description |
 |-----|-----|
 | [delegate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a6a8e20d57b7890e4dbf6652c426d7015) | Sets the callback API [TRTCCloudDelegate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#protocolTRTCCloudDelegate). |
-| [delegateQueue](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a97158c52f2a4011454b4eb3ee369a8a1) | Sets the queue that drives the [TRTCCloudDelegate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#protocolTRTCCloudDelegate) callback. |
+| [delegateQueue](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a97158c52f2a4011454b4eb3ee369a8a1) | Sets the queue that drives [TRTCCloudDelegate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#protocolTRTCCloudDelegate) callbacks. |
 | [sharedInstance](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ab6884975e069628328d05cf0e2c3dc67) | Creates a [TRTCCloud](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#interfaceTRTCCloud) singleton. |
 | [destroySharedIntance](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ad8961d03736d8a52df5a3a991d0a77c4) | Terminates a [TRTCCloud](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#interfaceTRTCCloud) singleton. |
 
@@ -104,7 +104,7 @@
 | [setWatermark](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ad0bedbddf415d26cff8242d5842a0908) | Adds watermarks. |
 
 
-### Music and voice effect API
+### Music and voice effect APIs
 
 | API | Description |
 |-----|-----|
@@ -115,10 +115,10 @@
 
 | API | Description |
 |-----|-----|
-| [startScreenCaptureInApp](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a16d30ca3f89863da2581ff3872bf31f0) | Starts in-app screen sharing. This API works on iPhone or iPad with iOS 13.0 or above. |
+| [startScreenCaptureInApp](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a16d30ca3f89863da2581ff3872bf31f0) | Starts in-application screen sharing. This API works on iPhone or iPad with iOS 13.0 or above. |
 | [startScreenCaptureByReplaykit](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a12414559fc82b18e671262c4da37b171) | Starts system-level screen sharing. This API works on iPhone or iPad with iOS 11.0 or above. |
 | [startScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a9a4b3b61c39c1c65e3426b35b0ace95f) | Starts desktop screen sharing (for macOS only). |
-| [stopScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) | Stops screen capturing. |
+| [stopScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) | Stops screen sharing. |
 | [pauseScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a6f536bcc3df21b38885809d840698280) | Pauses screen sharing. |
 | [resumeScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af257a8fb6969fe908ca68a039e6dba15) | Resumes screen sharing. |
 | [getScreenCaptureSourcesWithThumbnailSize](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aa8e5286e1035b64b7d2bf8fadd721123) | Enumerates shareable windows (for macOS only). We recommend that you call this API before calling `startScreenCapture`. |
@@ -178,7 +178,7 @@
 | [setConsoleEnabled](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a177c4f1fbb2a011ff496417dc0245667) | Enables/Disables console log printing. |
 | [setLogCompressEnabled](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aa51a341a43a854ac6e3fa1d0093fec95) | Enables/Disables local log compression. |
 | [setLogDirPath](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a93b48089741f7022aea1f8f93ce8fff9) | Changes the path to save logs. |
-| [setLogDelegate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a41497e4242e3c42acfa35730cdc1ddf6) | Sets log callback. |
+| [setLogDelegate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a41497e4242e3c42acfa35730cdc1ddf6) | Sets the log callback. |
 | [showDebugView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a3bd71c8a99029c1a4708bf1c176aa299) | Displays the dashboard. |
 | [setDebugViewMargin](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aad41ff6d5b5565046911acf27bb3dee4) | Sets the dashboard margin. |
 | [callExperimentalAPI](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a16c53e91f9b32aaf4bf3d409a3790ef6) | Calls the experimental API. |
@@ -232,10 +232,10 @@
 | [setPriorRemoteVideoStreamType](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#adadb7a837e1b50ebdbb928d4bd81b5d5) | Sets video quality preferences for viewers. |
 | [setAudioQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2cdffa1529fcaec866404f4f9b92ec53) | Sets audio quality. |
 | [startLocalAudio](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a3177329bc84e94727a1be97563800beb) | Enables local audio capturing and upstream data transfer. |
-| [setFocusPosition](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a6a77cc99c41b926cd99909ae1ace39ae) | Sets camera focus. |
+| [setFocusPosition](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a6a77cc99c41b926cd99909ae1ace39ae) | Sets camera focus. This API does not work if `enableAutoFaceFocus` is set to `YES`. |
 | [enableAutoFaceFocus](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a32a8f584879b17f211df75494a5be96c) | Enables automatic recognition of the facial position. |
 | [setZoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a9777fe95f7830746c1ba6b10446c37a0) | Sets camera zoom factor (focal length). |
-| [enableTorch](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af6b128ee01d91a63dc1976db7a9be555) | Enables/Disables flash. |
+| [enbaleTorch](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#af6b128ee01d91a63dc1976db7a9be555) | Enables/Disables flash. |
 | [setSystemVolumeType](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ab098daa610ae506dbf6c2a4f666ae32c) | Sets the system volume type to use during calls. |
 | [startCameraDeviceTestInView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a1bd6289b969adde0096c83d6a5532332) | Starts camera testing. |
 | [startMicDeviceTest](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aa6f467c12fcea7e09cc97861d511498a) | Starts mic testing. |
@@ -245,7 +245,7 @@
 | [setCurrentMicDeviceMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a88569e62fe75b7ea98cc012169f22bfe) | Sets whether to mute the current mic. |
 | [setCurrentSpeakerDevice](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a6c951071ac218930680febd84314ee05) | Sets the speaker to use. |
 | [setCurrentSpeakerDeviceVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a019001b23569c8b6da7f3276af58e0a7) | Sets the current speaker volume. |
-| [setCurrentSpeakerDeviceMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a738ea0dffd48d5bc2b05b146eb79ec46) | Sets whether to mute the current system speaker. |
+| [setCurrentSpeakerDeviceMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a738ea0dffd48d5bc2b05b146eb79ec46) | Sets whether to mute the current speaker. |
 | [setCurrentCameraDevice](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aae9955bb39985586f7faba841d2692fc) | Sets the camera to use. |
 | [snapshotVideo](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a3769ecbff6c0c4ee7cc5e4b40aaafe962) | Takes a video screenshot. |
 | [enableCustomVideoCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ade46563b03208042e61bcc693e4a5d06) | Enables custom video capturing. |
@@ -257,7 +257,7 @@
 
 | API | Description |
 |-----|-----|
-| [onError](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a10a711eb68abcacc1ca690501fc7c9fb) | Error callback. This indicates that the SDK encountered an irrecoverable error. Such errors must be listened for, and UI messages should be displayed to users if necessary. |
+| [onError](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a10a711eb68abcacc1ca690501fc7c9fb) | Error callback. This indicates that the SDK encountered an unrecoverable error. Such errors must be listened for, and UI messages should be displayed to users if necessary. |
 | [onWarning](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a25ac0da9ad798a2313bdf8f296828541) | Warning callback. This alerts you to non-serious problems such as lag or recoverable decoding failure. |
 
 
@@ -294,8 +294,8 @@
 
 | API | Description |
 |-----|-----|
-| [onNetworkQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a723002319845fbfc03db501aa9da6c28) | Callback of network quality. This callback is triggered every 2 seconds to collect statistics on the quality of current upstream and downstream data transfer. |
-| [onStatistics](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#afb0811035e97c8544dbc9ecbef461dd9) | Callback of statistics on technical metrics. |
+| [onNetworkQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a723002319845fbfc03db501aa9da6c28) | Callback of network quality. This callback is triggered every 2 seconds to collect statistics on the current upstream and downstream data transfer. |
+| [onStatistics](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#afb0811035e97c8544dbc9ecbef461dd9) | Callback of statistics on technical metrics |
 
 
 ### Server event callback APIs
@@ -341,11 +341,11 @@
 | [onSetMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#ab5c98341b7536b5b65c04b835c4d28fb) | Callback of setting On-Cloud MixTranscoding parameters, which corresponds to the `setMixTranscodingConfig()` API in [TRTCCloud](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#interfaceTRTCCloud) |
 
 
-### Audio effect callback API
+### Audio effect callback APIs
 
 | API | Description |
 |-----|-----|
-| [onAudioEffectFinished](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a81bb22a3a908757f9ac2cb455d59e4be) | Callback of ending audio effects |
+| [onAudioEffectFinished](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a81bb22a3a908757f9ac2cb455d59e4be) | Callback of ending an audio effect |
 
 
 ### Screen sharing callback APIs
@@ -382,7 +382,7 @@
 | [onRenderVideoFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#gadbe65ee6ef1d72cd5207cd5a0eb78391) | Callback of custom video rendering |
 
 
-### Callbacks APIs for custom audio processing
+### Callback APIs for custom audio processing
 
 | API | Description |
 |-----|-----|
@@ -407,15 +407,15 @@ We recommend that you set the callback delegate object in a class that is initia
 |-----|-----|
 | [TRTCRenderParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCRenderParams) | Video rendering parameters |
 | [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCParams) | Room entry parameters |
-| [TRTCAudioFrameDelegateFormat](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCAudioFrameDelegateFormat) | Format of called back audio frames |
+| [TRTCAudioFrameDelegateFormat](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCAudioFrameDelegateFormat) | Format of the callback of audio frames |
 | [TRTCVideoEncParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCVideoEncParam) | Video encoding parameters |
 | [TRTCNetworkQosParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCNetworkQosParam) | QoS control parameters |
 | [TRTCQualityInfo](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCQualityInfo) | Network quality |
 | [TRTCVolumeInfo](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCVolumeInfo) | Volume |
 | [TRTCScreenCaptureSourceInfo](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCScreenCaptureSourceInfo) | Screen sharing target (for macOS only) |
 | [TRTCSpeedTestResult](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCSpeedTestResult) | Network speed testing result |
-| [TRTCVideoFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCVideoFrame) | Video frame |
-| [TRTCAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCAudioFrame) | Audio frame |
+| [TRTCVideoFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCVideoFrame) | Video frame information |
+| [TRTCAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCAudioFrame) | Audio frame information |
 | [TRTCMixUser](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCMixUser) | Position of the image of each channel in On-Cloud MixTranscoding |
 | [TRTCTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCTranscodingConfig) | On-Cloud MixTranscoding configuration |
 | [TRTCPublishCDNParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCPublishCDNParam) | CDN relayed push parameters |
@@ -455,5 +455,5 @@ We recommend that you set the callback delegate object in a class that is initia
 | [TRTCLogLevel](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#gacefec5143acae6d0524b5500f0155908) | Log level |
 | [TRTCGSensorMode](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#ga894251078222f9ac4ba5815aac4b493c) | G-sensor mode |
 | [TRTCScreenCaptureSourceType](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#gaeabd30a270055e48105a34c781c782b0) | Screen sharing target (for macOS only) |
-| [TRTCTranscodingConfigMode](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#ga907c7b1ef1f09fb7417a549e82110855) | Configuration mode for stream mixing parameters |
-| [TRTCRecordType](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#ga4bb9927d377aa27b781fcfef5cf1058a) | Recording media type |
+| [TRTCTranscodingConfigMode](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#ga907c7b1ef1f09fb7417a549e82110855) | Configuration mode for MixTranscoding parameters |
+| [TRTCRecordType](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#ga4bb9927d377aa27b781fcfef5cf1058a) | Type of media to record |
