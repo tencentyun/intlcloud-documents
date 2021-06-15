@@ -10,10 +10,10 @@
 </thead>
 <tbody><tr>
 <td>VPN3.0 版本发布</td>
-<td>支持配置 VPN 网关路由策略，引流子网流量到 VPN 通道。该功能当前处于灰度测试中，如需使用，请提交 <a href="https://console.cloud.tencent.com/workorder/category">工单申请</a>。
+<td>支持配置 VPN 网关路由策略，引流子网流量到 VPN 通道。
 </td>
 <td>2021-01</td>
-<td><ul><li>配置 VPN 路由策略</a><li>建立 VPC 到 IDC 的连接（目的路由）</a></td>
+<td><ul><li><a href="https://intl.cloud.tencent.com/document/product/1037/39690">配置 VPN 路由策略</a><li><a href="https://intl.cloud.tencent.com/document/product/1037/39675">建立 VPC 到 IDC 的连接（目的路由）</a></td>
 </tr>
 </tbody></table>
 
