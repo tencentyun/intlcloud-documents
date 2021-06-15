@@ -2,8 +2,8 @@
 
 The account, tag, and user attribute features in this document are applicable to **SDK v1.2.9.0 and above**.
 
-
 ## Launching the TPNS Service
+
 The following are device registration API methods. For more information on the timing and principle of calls, see [Device registration flow](https://intl.cloud.tencent.com/document/product/1024/30725#device-registration-flow).
 
 #### API description
@@ -22,8 +22,7 @@ This API is used to launch the TPNS service by using the information of the appl
 - `accessKey`: `AccessKey` applied through the frontend.
 - `Delegate`: callback object. 
 
->! The parameters required by the API must be entered correctly; otherwise, TPNS will not be able to push messages correctly for the application.
->
+> ! The parameters required by the API must be entered correctly; otherwise, TPNS will not be able to push messages correctly for the application.
 
 #### Sample code
 
@@ -32,6 +31,7 @@ This API is used to launch the TPNS service by using the information of the appl
 ```
 
 ## Terminating the TPNS Service
+
 The following are device unregistration API methods. For more information on the timing and principle of calls, please see [Device unregistration flow](https://intl.cloud.tencent.com/document/product/1024/30725#device-unregistration-flow).
 
 #### API description
@@ -103,6 +103,7 @@ This API is new in SDK v1.3.1.0 and used to call back the result of notification
 
 ```objective-c
 - (void)xgPushDidRequestNotificationPermission:(bool)isEnable error:(nullable NSError *)error;
+
 ```
 
 #### Response parameters
@@ -111,35 +112,36 @@ This API is new in SDK v1.3.1.0 and used to call back the result of notification
 - `error`: error message. If `error` is `nil`, the pop-up authorization result has been successfully obtained.
 
 ## Account Feature
+
 The following are account API methods. For more information on the timing and principle of calls, please see [Account flow](https://intl.cloud.tencent.com/document/product/1024/30725#account-flow).
+
 ### Adding an account
+
 #### API description
 
 If there is no account of this type, this API will add a new one; otherwise, it will overwrite the existing one. (Newly added in TPNS SDK v1.2.9.0+)
+
 ```Objective-C
 - (void)upsertAccountsByDict:(nonnull NSDictionary<NSNumber *, NSString *> *)accountsDict;
+
 ```
 
->? This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
->
+> ? This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
 
 
 
 #### Parameter description 
 
-
 `accountsDict`: account dictionary.
 
->?
->- The account type and account name together serve as the composite primary key.
->- You need to use the dictionary type, where `key` is the account type and `value` is the account, for example, @{@(accountType):@"account"}.
->- Syntax for Objective-C: @{@(0):@"account0",@(1):@"account1"}; syntax for Swift:[NSNumber(0):@"account0",NSNumber(1):@"account1"]
->- For more `accountType` values, see the enumerated values of `XGPushTokenAccountType` in the SDK demo package.
->- Currently, only pushes to accounts of the UNKNOWN type are supported. Other account types are expected to be available recently.
-
+> ?
+>
+> - The account type and account name together serve as the composite primary key.
+> - You need to use the dictionary type, where `key` is the account type and `value` is the account, for example, @{@(accountType):@"account"}.
+> - Syntax for Objective-C: @{@(0):@"account0",@(1):@"account1"}; syntax for Swift:[NSNumber(0):@"account0",NSNumber(1):@"account1"]
+> - For more `accountType` values, see the `XGPushTokenAccountType` enumerated values or account type value table in the SDK demo package.
 
 #### Sample code
-
 
 ```Objective-C
 XGPushTokenAccountType accountType = XGPushTokenAccountTypeUNKNOWN;
@@ -147,31 +149,54 @@ NSString *account = @"account";
 [[XGPushTokenManager defaultTokenManager] upsertAccountsByDict:@{ @(accountType):account }];
 ```
 
+### Adding a mobile number
+
+#### API description
+
+This API is used to add or update a mobile number. It is equivalent to calling `upsertAccountsByDict:@{@(1002):@"specific mobile number"}`.
+
+```objective-c
+/// @note TPNS SDK1.3.2.0+
+- (void)upsertPhoneNumber:(nonnull NSString *)phoneNumber;
+```
+
+#### Parameter description
+
+- phoneNumber: an E.164 mobile number in the format of `[+][country code or area code][mobile number]`, for example, +8613711112222. The SDK will encrypt the mobile number for transmission.
+
+#### Sample code
+
+```Objective-C
+[[XGPushTokenManager defaultTokenManager] upsertPhoneNumber:@"13712345678"];;
+
+```
+
+> ! 1. This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
+> 2. You can call `delAccountsByKeys:[[NSSet alloc] initWithObjects:@(1002), nil]` to delete a mobile number.
 
 ### Deleting accounts
+
 #### API description
 
 This API is used to delete all accounts of a specified account type. (Newly added in TPNS SDK v1.2.9.0+)
 
 ```Objective-C
 - (void)delAccountsByKeys:(nonnull NSSet<NSNumber *> *)accountsKeys;
+
 ```
 
->?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
-
+> ?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
 
 #### Parameter description 
 
-
 - `accountsKeys`: set of account types.
 
->?
->- A set is required, and the key is fixed.
->- For more values of `accountType`, please see the enumerated values of `XGPushTokenAccountType` in the `XGPush.h` file in the SDK package.
-
+> ?
+>
+> - A set is required, and the key is fixed.
+> - For more values of `accountType`, please see the enumerated values of `XGPushTokenAccountType` in the `XGPush.h` file in the SDK package.
 
 #### Sample code
-
 
 ```Objective-C
 XGPushTokenAccountType accountType = XGPushTokenAccountTypeUNKNOWN;
@@ -179,6 +204,7 @@ XGPushTokenAccountType accountType = XGPushTokenAccountTypeUNKNOWN;
 NSSet *accountsKeys = [[NSSet alloc] initWithObjects:@(accountType), nil];
 
 [[XGPushTokenManager defaultTokenManager] delAccountsByKeys:accountsKeys];
+
 ```
 
 ### Clearing accounts
@@ -189,6 +215,7 @@ This API is used to clear all set accounts.
 
 ```Objective-C
 - (void)clearAccounts;
+
 ```
 
 > ?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
@@ -197,9 +224,13 @@ This API is used to clear all set accounts.
 
 ```Objective-C
 [[XGPushTokenManager defaultTokenManager] clearAccounts];
+
 ```
+
 ## Tag Feature
+
 The following are tag API methods. For more information on the timing and principle of calls, please see [Tag flow](https://intl.cloud.tencent.com/document/product/1024/30725#tag-flow).
+
 ### Binding/Unbinding tags
 
 #### API description
@@ -209,9 +240,11 @@ This API is used to bind tags to different users so that push can be performed b
 ```Objective-C
 - (void)appendTags:(nonnull NSArray<NSString *> *)tags
 - (void)delTags:(nonnull NSArray<NSString *> *)tags
+
 ```
 
 > ?
+>
 > - This API works in an appending manner.
 > - This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
 > - One application can have up to 10,000 custom tags. One device token can be bound to a maximum of 100 custom tags (if you want to increase this limit, please [submit a ticket](https://console.cloud.tencent.com/workorder/category)). One custom tag can be bound to an unlimited number of device tokens.
@@ -220,7 +253,7 @@ This API is used to bind tags to different users so that push can be performed b
 
 `tags`: tag array.
 
->? For tag operations, `tags` is a tag string array, which cannot contain spaces or tabs.
+> ? For tag operations, `tags` is a tag string array, which cannot contain spaces or tab characters.
 
 #### Sample code
 
@@ -230,6 +263,7 @@ This API is used to bind tags to different users so that push can be performed b
 
 // Unbind tags
 [[XGPushTokenManager defaultTokenManager] delTags:@[ tagStr ]];
+
 ```
 
 
@@ -242,9 +276,11 @@ This API is used to clear all the existing tags and then add tags in batches.
 
 ```Objective-C
 - (void)clearAndAppendTags:(nonnull NSArray<NSString *> *)tags
+
 ```
 
 > ?
+>
 > - This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
 > - This API will replace all the old tags corresponding to the current token with the current tag.
 
@@ -252,7 +288,7 @@ This API is used to clear all the existing tags and then add tags in batches.
 
 `tags`: tag array.
 
->? For tag operations, `tags` is a tag string array, which cannot contain spaces or tabs.
+> ? For tag operations, `tags` is a tag string array, which cannot contain spaces or tab characters.
 
 
 
@@ -260,6 +296,7 @@ This API is used to clear all the existing tags and then add tags in batches.
 
 ```Objective-C
 [[XGPushTokenManager defaultTokenManager] clearAndAppendTags:@[ tagStr ]];
+
 ```
 
 ### Clearing all tags
@@ -270,14 +307,16 @@ This API is used to clear all set tags.
 
 ```Objective-C
 - (void)clearTags
+
 ```
 
->? This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
+> ? This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
 
 #### Sample code
 
 ```Objective-C
 [[XGPushTokenManager defaultTokenManager] clearTags];
+
 ```
 
 ### Querying tags
@@ -288,6 +327,7 @@ This API is new in SDK v1.3.1.0 and used to query the tags bound to the device.
 
 ```Objective-C
 - (void)queryTags:(NSUInteger)offset limit:(NSUInteger)limit;
+
 ```
 
 > ?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
@@ -301,6 +341,7 @@ This API is new in SDK v1.3.1.0 and used to query the tags bound to the device.
 
 ```Objective-C
  [[XGPushTokenManager defaultTokenManager] queryTags:0 limit:100];
+
 ```
 
 ### Callback for tag query results
@@ -311,6 +352,7 @@ This API is new in SDK v1.3.1.0 and used call back the result of tag query.
 
 ```objective-c
 - (void)xgPushDidQueryTags:(nullable NSArray<NSString *> *)tags totalCount:(NSUInteger)totalCount error:(nullable NSError *)error;
+
 ```
 
 #### Response parameters
@@ -320,7 +362,9 @@ This API is new in SDK v1.3.1.0 and used call back the result of tag query.
 - `error`: error message. If `error` is `nil`, the query is successful.
 
 ## User Attribute Feature
+
 The following are user attribute API methods. For more information on the timing and principle of calls, please see [User attribute flow](https://intl.cloud.tencent.com/document/product/1024/30725#user-attribute-flow).
+
 ### Adding user attributes
 
 #### API description
@@ -329,6 +373,7 @@ This API is used to add or update user attributes in the `key-value` structure (
 
 ```Objective-C
 - (void)upsertAttributes:(nonnull NSDictionary<NSString *,NSString *> *)attributes
+
 ```
 
 > ?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
@@ -338,6 +383,7 @@ This API is used to add or update user attributes in the `key-value` structure (
 `attributes`: dictionary of user attribute strings, which cannot contain spaces or tabs.
 
 > ? 
+>
 > - You need to configure user attribute keys in the console first before the operation can succeed.
 > - Both `key` and `value` can contain up to 50 characters.
 > - A dictionary is required, and `key` is fixed.
@@ -348,6 +394,7 @@ This API is used to add or update user attributes in the `key-value` structure (
 
 ```Objective-C
 [[XGPushTokenManager defaultTokenManager] upsertAttributes:attributes];
+
 ```
 
 ### Deleting user attributes
@@ -358,6 +405,7 @@ The API is used to delete existing user attributes.
 
 ```Objective-C
 - (void)delAttributes:(nonnull NSSet<NSString *> *)attributeKeys
+
 ```
 
 > ?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
@@ -372,6 +420,7 @@ The API is used to delete existing user attributes.
 
 ```Objective-C
 [[XGPushTokenManager defaultTokenManager] delAttributes:attributeKeys];
+
 ```
 
 ### Clearing all user attributes
@@ -382,6 +431,7 @@ This API is used to clear all existing user attributes.
 
 ```Objective-C
 - (void)clearAttributes;
+
 ```
 
 > ?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
@@ -390,6 +440,7 @@ This API is used to clear all existing user attributes.
 
 ```Objective-C
 [[XGPushTokenManager defaultTokenManager] clearAttributes];
+
 ```
 
 ### Updating user attributes
@@ -402,6 +453,7 @@ This API is used to clear all the existing user attributes and then add user att
 
 ```Objective-C
 - (void)clearAndAppendAttributes:(nonnull NSDictionary<NSString *,NSString *> *)attributes
+
 ```
 
 > ?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
@@ -410,6 +462,7 @@ This API is used to clear all the existing user attributes and then add user att
 
 ```Objective-C
 [[XGPushTokenManager defaultTokenManager] clearAndAppendAttributes:attributes];
+
 ```
 
 ## Badge Feature
@@ -422,6 +475,7 @@ This API is used to sync the modified local badge value of an application to the
 
 ```objective-c
 - (void)setBadge:(NSInteger)badgeNumber;
+
 ```
 
 #### Parameter description
@@ -431,6 +485,7 @@ This API is used to sync the modified local badge value of an application to the
 > ! After the local badge number is set for the application, call this API to sync it to the TPNS server, which will take effect in the next push. This API must be called after successful TPNS registration (`xgPushDidRegisteredDeviceToken`).
 
 #### Sample code
+
 ```Objective-C
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     /// Zero the badge number every time the application is started (you should set the local badge number for the application in the main thread)
@@ -446,11 +501,12 @@ This API is used to sync the modified local badge value of an application to the
         [[XGPush defaultManager] setBadge:0];
     }
 }
+
 ```
 
 
 
-## Querying Device Notification Permission
+## Querying device notification permission
 
 #### API description
 
@@ -458,6 +514,7 @@ This API is used to query whether the user allows device notifications.
 
 ```objective-c
 - (void)deviceNotificationIsAllowed:(nonnull void (^)(BOOL isAllowed))handler;
+
 ```
 
 #### Parameter description
@@ -470,6 +527,7 @@ This API is used to query whether the user allows device notifications.
 [[XGPush defaultManager] deviceNotificationIsAllowed:^(BOOL isAllowed) {
         <#code#>
     }];
+
 ```
 
 ## Querying the SDK Version
@@ -480,12 +538,14 @@ This API is used to query the current SDK version.
 
 ```objective-c
 - (nonnull NSString *)sdkVersion;
+
 ```
 
 #### Sample code
 
 ```objective-c
 [[XGPush defaultManager] sdkVersion];
+
 ```
 
 ## Log Reporting API
@@ -497,6 +557,7 @@ If you find push exceptions, you can call this API to trigger reporting of local
 ```
 /// @note TPNS SDK1.2.4.1+
 - (void)uploadLogCompletionHandler:(nullable void(^)(BOOL result,  NSString * _Nullable errorMessage))handler;
+
 ```
 
 #### Parameter description
@@ -508,8 +569,8 @@ If you find push exceptions, you can call this API to trigger reporting of local
 
 ```
 [[XGPush defaultManager] uploadLogCompletionHandler:nil];
-```
 
+```
 
 ## TPNS Log Hosting
 
@@ -525,6 +586,7 @@ This method is used to get TPNS logs, which is irrelevant to `XGPush > enableDeb
 
 ```
 - (void)xgPushLog:(nullable NSString *)logInfo;
+
 ```
 
 ## Customizing Notification Bar Message Action
@@ -537,6 +599,7 @@ This API is used to create a click event in the notification message.
 
 ```objective-c
 + (nullable id)actionWithIdentifier:(nonnull NSString *)identifier title:(nonnull NSString *)title options:(XGNotificationActionOptions)options;
+
 ```
 
 #### Parameter description
@@ -549,9 +612,10 @@ This API is used to create a click event in the notification message.
 
 ```objective-c
 XGNotificationAction *action1 = [XGNotificationAction actionWithIdentifier:@"xgaction001" title:@"xgAction1" options:XGNotificationActionOptionNone];
+
 ```
 
->! The notification bar has the event click feature, which is only supported in iOS 8.0 and later. For iOS 7.x or earlier, this method will return null.
+> ! The notification bar has the event click feature, which is only supported in iOS 8.0 and later. For iOS 7.x or earlier, this method will return null.
 
 ### Creating a category object
 
@@ -561,6 +625,7 @@ This API is used to create a category object to manage the action object of the 
 
 ```objective-c
 + (nullable id)categoryWithIdentifier:(nonnull NSString *)identifier actions:(nullable NSArray<id> *)actions intentIdentifiers:(nullable NSArray<NSString *> *)intentIdentifiers options:(XGNotificationCategoryOptions)options
+
 ```
 
 #### Parameter description
@@ -570,12 +635,12 @@ This API is used to create a category object to manage the action object of the 
 - `intentIdentifiers`: identifiers that can be recognized by Siri.
 - `options`: category characteristics.
 
->! The notification bar has the event click feature, which is only supported in iOS 8.0 and later. For versions earlier than iOS 8.0, this method will return null.
+> ! The notification bar has the event click feature, which is only supported in iOS 8.0 and later. For versions earlier than iOS 8.0, this method will return null.
 
 #### Sample code
 
 ```Objective-C
-XGNotificationCategory *category = [XGNotificationCategory categoryWithIdentifier:@"xgCategory" actions:@[action1, action2] intentIdentifiers:@[] options:XGNotificationCategoryOptionNone];
+XGNotificationCategory *category = [XGNotificationCategory categoryWithIdentifier:@"xgCategory" actions:@[action1, action2] intentIdentifiers:@[] options:XGNotificatio nCategoryOptionNone];
 ```
 
 ### Creating a configuration class
@@ -602,5 +667,3 @@ XGNotificationConfigure *configure = [XGNotificationConfigure configureNotificat
 ## Local Push
 
 For more information about the local push feature, please click [here](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/SchedulingandHandlingLocalNotifications.html#//apple_ref/doc/uid/TP40008194-CH5-SW1).
-
-

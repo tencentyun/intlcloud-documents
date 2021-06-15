@@ -20,8 +20,8 @@
 | <= | Range operator, which indicates the left operand is less than or equal to the right operand, such as `status:<=400`. |
 | [] | Range operator, which includes the upper and lower boundary values, such as `age:[20 TO 30]`. |
 | {} | Range operator, which excludes the upper and lower boundary values, such as `age:{20 TO 30}`. |
-| \  | Escape character. An escaped character represents the literal meaning of the character, such as`url:\/images\/favicon.ico"`. |
-| + | Logical operator (similar to AND).The term `+A` indicates `A` must exist, such as `+level:ERROR +pid:1234`. |
+| \  | Escape character. An escaped character represents the literal meaning of the character, such as `url:\/images\/favicon.ico"`. |
+| + | Logical operator (similar to AND). The term `+A` indicates `A` must exist, such as `+level:ERROR +pid:1234`. |
 | - | Logical operator (similar to NOT). The term `-A` indicates `A` must not exist, such as `+level:ERROR -pid:1234. |
 | \|\| | Logical operator (similar to OR), such as `level:ERROR \|\| level:WARNING`. |
 | && | Logical operator (similar to AND), such as `level:ERROR && pid:1234`. |
@@ -39,7 +39,7 @@
 
 
 
-## Search Statement Examples
+## Sample Search Statements
 
 | Expected Search Result  | Search Statement |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -57,4 +57,18 @@
 | Logs that contain the `message` field, or whose `message` field has a value | `message:*` or `_exists_:message` |
 | Logs that do not contain the `message` field  | `NOT _exists_:message` |
 | Logs whose `message` field is empty | `message:""` |
+
+
+## Fuzzy Search
+
+When you use CLS Lucene syntax for fuzzy search, you need to add wildcards in the middle or end of a field. You can use an asterisk (*) to match zero, one, or multiple characters, or use a question mark (?) to match one character.
+
+Example:
+- `addr*` means searching for all fields starting with `addr` and returning logs contains such fields.
+- `host:www.te?t.com` means searching for fields that start with `host:www.te`, end with `t.com` and contain one character between the two, and returning logs contains such fields. 
+
+>? 
+> - You cannot put an asterisk (*) or question mark (?) in the beginning of the field, meaning CLS does not support match by prefix.
+> - Data of `long` or `double` type does not support asterisk (*) or question mark (?) for fuzzy search, yet supports value range for fuzzy search, such as `status:[400 TO 500}`.
+> 
 

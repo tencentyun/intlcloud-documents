@@ -2,12 +2,15 @@ The SQL statistics feature of CLS can analyze the collected logs and display the
 
 ## Analysis Syntax
 
->!To use the log analysis feature, you must configure the key-value index of statistical fields and enable statistics.
+>!
+> - To use the log analysis feature, you must configure the key-value index for target fields and enable the statistics feature.
+>![image-20200817202408930](https://main.qcloudimg.com/raw/c2f6b9608764c2007ee20cb2b7b7016f.png)
+> - When you use SQL statements for search and analysis, single quotes ('') indicate strings, and double quotes ("") indicate fields and aliases.
+> 
 
-
-An analysis statement is composed of search criterion and SQL statement, which are separated by a vertical bar (|).
+An analysis statement is composed of a search rule and SQL statement, which are separated by a vertical bar (|).
 ```
-[Search criterion] | [SQL statement]
+[Search rule] | [SQL statement]
 ```
 **Examples**
 ```
@@ -30,13 +33,16 @@ status:404 | select count(*) as pv
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
 2. Select **Search and Analysis** on the left sidebar to go to the search and analysis page.
 3. Select the logset and log topic you want to search.
-   Set the time range. You can choose last 1 hour, last 4 hours, last 1 day, or last 3 days, or custom a time range. 
+   Set the time range. You can choose last 1 hour, last 4 hours, last 1 day, or last 3 days, or set a custom a time range. 
 4. Enter an analysis statement and click **Search and Analysis** to obtain the analysis result.
    For more information about analysis statements, see **[SQL syntax](#sql1)** and **[SQL functions](#sql2)**. 
 
 
 
+## Example
 
+![image-20200818160724827](https://main.qcloudimg.com/raw/6a559058a9fcd13ce83df3e7a5d4f085.png)
+![image-20200818160904179](https://main.qcloudimg.com/raw/399efd6bd10617d65172bdbd1a86acad.png)
 
 ## Supported SQL Syntax and Functions
 
@@ -61,9 +67,9 @@ CLS supports the following SQL syntax and functions. You can click them to view 
 ####  SQL functions
 
 - [Aggregate Function](https://intl.cloud.tencent.com/document/product/614/38728)
-  Support `avg`, `count`, `max`, `min`, and `sum` functions.
+  Support `AVG`, `COUNT`, `MAX`, `MIN`, and `SUM` functions.
 - [Mathematical Function](https://intl.cloud.tencent.com/document/product/614/38727)
-  Support `abs`, `sqrt`, `power`, `round`, `floor`, `log`, and `log10` functions.
+  Support `ABS`, `SQRT`, `POWER`, `ROUND`, `FLOOR`, `LOG`, and `LOG10` functions.
 - [Datetime Function](https://intl.cloud.tencent.com/document/product/614/36746)
   Support `cast` and `histogram` functions.
 - [Operator](https://intl.cloud.tencent.com/document/product/614/38729)
@@ -73,7 +79,7 @@ CLS supports the following SQL syntax and functions. You can click them to view 
 
 | Metric | Limit | Remarks |
 | ---------------------------------------- | ------------------------------------------------------------ | --------------------------- |
-| Maximum length of a single statistical field (Value) | The maximum length of a single statistical field (Value) is 32 KB. Any statement exceeding this limit will be truncated. | - |
-| Number of non-cluster analysis results (excluding `GROUP BY` clauses) | Each analysis returns up to 1,000 results. | Default: 100; Maximum: 1,000 |
-| Number of cluster analysis results (including `GROUP BY` clauses) | Each analysis returns up to 100 results. | Default: 100; Maximum: 2,000 |
-| `ORDER BY` clause limit | The `ORDER BY` operation is not supported for fields that have been calculated using one of the functions `round`, `sqrt`, `abs`, `power`, and `floor`, or the four arithmetic operations of addition, subtraction, multiplication, and division. | - |
+| The maximum length of a single statistical field value | The maximum length is 32 KB, and the excessive part will be truncated.                             | Fields exceeding 32 KB cannot be written to ES, which makes it hard to troubleshoot discarded log contents.                           |
+| Number of non-cluster analysis results (excluding `GROUP BY` clauses) | Each analysis returns up to 1,000 results. | Default: 100; Maximum: 1000 |
+| Number of cluster analysis results (including GROUP BY clauses) | Each analysis returns up to 100 results.                              | Default: 100; Maximum: 2000                        |
+| `ORDER BY` clause limit | The `ORDER BY` operation is not supported for fields that have been calculated using one of the functions `ROUND`, `SQRT`, `ABS`, `POWER`, and `FLOOR`, or the four arithmetic operations of addition, subtraction, multiplication, and division. | - |

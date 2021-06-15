@@ -1,4 +1,5 @@
-## February 2021
+## May 2021
+
 <table>
 	<tr>
 		<th width=20%>Update</th>
@@ -7,8 +8,30 @@
     <th width=20%>Documentation</th>
 	</tr>
 	<tr>
-        <td>Released SDK 1.2.3.1</td><td>A logic error of the Huawei disable component is fixed.</td>
-        <td>2021-02-04</td><td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
+        <td>Released SDK v1.2.5.0</td><td><li>Added the API for tag query.
+<li>Added the API for binding phone numbers to send ordinary and intelligent SMS messages.
+<li>Added support for SSL encrypted communication over persistent connection.
+<li>Upgraded the API for binding accounts by adding multiple preset account types.
+<li>Added support for clearing notifications pushed through the Mi channel (devices of MIUI 11 and below) via the API for clearing all notifications.
+<li>Added support for badge display on HONOR mobile phones.</td>
+        <td>May 26, 2021</td><td><li>Because JCenter has been deprecated, you may encounter issues when pulling SDK dependencies. Please see <a href="https://cloud.tencent.com/document/product/548/56364">Android SDK Upgrade Guide</a> to configure the dependency repository mirror source.
+<li>When using the new API for tag query, you need to add the implementation method <code>onQueryTagsResult</code> in the implementation class that inherits <code>XGPushBaseReceiver</code>.</td>
+    </tr>
+<tr>
+</table>
+
+## February 2021
+
+<table>
+	<tr>
+		<th width=20%>Update</th>
+    <th width=44%>Description</th>
+    <th width=16%>Release Date</th>
+    <th width=20%>Documentation</th>
+	</tr>
+	<tr>
+        <td>Released SDK v1.2.3.1</td><td>Fixed a logic error of the Huawei disable component.</td>
+        <td>February 04, 2021</td><td>-</td>
     </tr>
 <tr>
 </table>
@@ -21,19 +44,19 @@
     <th width=16%>Release Date</th>
     <th width=20%>Documentation</th>
 </tr>
-        <td>Released SDK v1.2.3.0</td>
-<td><li>Network communication protocol supports secondary message encryption.
-<li>APIs for client account, tag, and attribute settings are simplified.
-<li>The `traceId` and `templateId` fields are added in the notification callback.
-<li>Adds badge logic support for new HONOR phones.
-<li>The ANR issue that occasionally occurs during network connection checks is fixed.</td>
-        <td>2021-01-27</td>
+        <td>SDK v1.2.3.0 release</td>
+<td><li>Optimized the network communication protocol to support secondary message encryption.
+<li>Simplified APIs for client account, tag, and attribute settings.
+<li>Added the `traceId` and `templateId` fields to notification callback.
+<li>Added badge logic support for new Honor phones.
+<li>Fixed the ANR issue that occasionally occurred during network connection checks.</td>
+        <td>January 27, 2021</td>
         <td>-</td>
     </tr>
 <tr>
-        <td>SDK v1.2.2.4 is released.</td>
-<td><li>The special character handling issue in Intent strings of FCM notifications is fixed.<li>Other known issues are fixed.</td>
-        <td>2021-01-18</td>
+        <td>Released SDK v1.2.2.4</td>
+<td><li>Fixed the special character handling issue in Intent strings of FCM notifications.<li>Fixed other known issues.</td>
+        <td>January 18, 2021</td>
         <td>-</a></td>
     </tr>
 </table>
@@ -50,15 +73,15 @@
     <th width=20%>Documentation</th>
 </tr>
 <tr>
-        <td>SDK v1.2.2.0 is released.</td>
-       <td><li> The naming convention is unified for account and tag operation APIs.<li> SDK error code reporting is optimized.<li> The FCM channel protocol is upgraded, and the display of notifications sent through the FCM channel is taken over by the system.<li> Badge coloring is supported for messages sent through the TPNS channel.<li> Gzip compression is supported during network communication.<li>The exception of service unbinding that might occur in multi-thread environments is fixed.</td>
-        <td>2020-11-26</td>
+        <td>SDK v1.2.2.0 release</td>
+       <td><li> Unified the naming convention for account and tag operation APIs.<li> Optimized SDK error code reporting.<li> Upgraded the FCM channel protocol to enable the FCM system to take over the display of notifications sent through the FCM channel.<li> Added the support for badge coloring for messages sent through the TPNS channel.<li> Added the support for Gzip compression during network communication.<li>Fixed the exception of service unbinding that might occur in multi-thread environments.</td>
+        <td>November 26, 2020</td>
         <td>-</td>
     </tr>
         <tr>
-        <td>SDK v1.2.1.3 is released.</td>
-       <td><li>The internal logic is optimized.<li>Huawei Push SDK v5 is officially supported staring this version. Update the integration configuration as instructed in <a href="https://intl.cloud.tencent.com/document/product/1024/37176">Huawei Channel v5 Integration</a>.</td>
-        <td>2020-11-11</td>
+        <td>Released SDK v1.2.1.3</td>
+       <td><li>Optimized the internal logic.<li>Officially added the support for Huawei Push SDK v5 staring this version. Update the integration configuration as instructed in <a href="https://intl.cloud.tencent.com/document/product/1024/37176">Huawei Channel v5 Integration</a>.</td>
+        <td>November 11, 2020</td>
         <td>-</td>
     </tr>
 </table>
@@ -74,9 +97,9 @@
     <th width=20%>Documentation</th>
 </tr>
         <tr>
-        <td>SDK v1.2.1.1 is released.</td>
-				<td><li><b>User attribute</b> APIs are added for personalized push.</li> <li>The <b>in-app message</b> feature and several in-app message templates are added.</li><li>The SO files are optimized and updated.</li><li>The SDK is optimized internally.</li></td>
-        <td>2020-10-12</td>
+        <td>Released SDK v1.2.1.1</td>
+				<td><li><b>Added user attribute</b> APIs for personalized push.</li> <li>Added the <b>in-app message</b> feature and several in-app message templates.</li><li>Optimized and updated the SO files.</li><li>Optimized the SDK internally.</li></td>
+        <td>October 12, 2020</td>
         <td>-</td>
     </tr>
 </table>
@@ -94,15 +117,15 @@
     <th width=20%>Documentation</th>
 </tr>
         <tr>
-        <td>SDK v1.2.0.3 is released</td>
-       <td>Known issues are fixed. </td>
-        <td>2020-07-30</td>
+        <td>Released SDK v1.2.0.3</td>
+       <td>Fixed known issues. </td>
+        <td>July 30 2020</td>
         <td>-</a></td>
     </tr>
 <tr>
-        <td>SDK v1.2.0.2 is released.</td>
-       <td>The internal logic is optimized. </td>
-        <td>2020-07-01</td>
+        <td>Released SDK v1.2.0.2</td>
+       <td>Optimized the internal logic. </td>
+        <td>July 01, 2020</td>
         <td>-</td>
     </tr>
 </table>
@@ -117,17 +140,17 @@
     <th width=20%>Documentation</th>
 </tr>
 <tr>
-        <td>SDK v1.2.0.1 is released.</td>
-       <td><li> Statistics of vendor channel notification click events can be collected. </li> <li> More custom notification styles are added.</li> <li> The SDK for OPPO PUSH is upgraded to v2.1.0.</li> </td>
-        <td>2020-06-23</td>
+        <td>Released SDK v1.2.0.1</td>
+       <td><li> Added the support for collecting statistics on vendor channel notification click events. </li> <li> Added more custom notification styles.</li> <li> Upgraded the SDK for OPPO PUSH to v2.1.0.</li> </td>
+        <td>June 23, 2020</td>
         <td>This version involves package name changes. Please modify relevant configurations as instructed in <a href="https://intl.cloud.tencent.com/document/product/1024/30713">SDK Integration</a>:
 <li>Automatic integration: pay attention to the obfuscation configuration.</li>
 <li>Manual integration: pay attention to the SO files, manifest file, and obfuscation configuration.</li></td>
     </tr>
     <tr>
-        <td>SDK v1.1.6.3 is released.</td>
-        <td>Third-party vendor channel integration is optimized.</td>
-        <td>2020-06-04</td>
+        <td>Released SDK v1.1.6.3</td>
+        <td>Optimized third-party vendor channel integration.</td>
+        <td>June 04, 2020</td>
         <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">-</a></td>
     </tr>
 </table>
@@ -142,21 +165,21 @@
     <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>SDK v1.1.6.1 is released.</td>
-        <td>The vulnerability with HTTPS certificate verification is fixed.</td>
-        <td>2020-04-28</td>
+        <td>Released SDK v1.1.6.1</td>
+        <td>Fixed the vulnerability with HTTPS certificate verification.</td>
+        <td>April 28, 2020</td>
         <td>-</a></td>
     </tr>
     <tr>
-        <td>SDK v1.1.6.0 is released.</td>
-        <td><li> The encryption protocol is optimized. </li> <li> Network connection is optimized.</li> <li> Badge can now be configured for the Huawei channel.</li> <li> The SDK v3.7.5 for Mi Push and SDK v3.9.0 for Meizu Push are upgraded. </li><li> Realme and Black Shark channels are supported.</li><li> The call of Beacon to get QIMEI information is removed.</li></td>
-        <td>2020-04-21</td>
+        <td>Released SDK v1.1.6.0</td>
+        <td><li> Optimized the encryption protocol. </li> <li> Optimized network connection.</li> <li> Added the support for badge configuration for the Huawei channel.</li> <li> Upgraded the SDK v3.7.5 for Mi Push and SDK v3.9.0 for Meizu Push. </li><li> Added the support for Realme and Black Shark channels.</li><li> Removed the call of Beacon to get QIMEI information.</li></td>
+        <td>April 21, 2020</td>
         <td><a href="https://intl.cloud.tencent.com/document/product/1024/35828">Badge Adaptation Guide</a></td>
     </tr>
     <tr>
-        <td>SDK v1.1.5.5 is released.</td>
-        <td>The issue where DCL violation occurred when an application was released in Google Play is fixed.</li></td>
-        <td>2020-04-02</td>
+        <td>Released SDK v1.1.5.5</td>
+        <td>Fixed the issue where DCL violation occurred when an application was released in Google Play.</li></td>
+        <td>April 04, 2020</td>
         <td>-</td>
     </tr>
 </table>
@@ -170,9 +193,9 @@
     <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>SDK v1.1.5.4 is released.</td>
-        <td><li> Network connection is optimized.</li> <li>Account types are added. </li> <li> Issues with security alarming are fixed. </li> <li> TPNS is now compatible with XG Platform version upgrade. </li><li> The feature to get QIMEI information is added.</li> </td>
-        <td>2020-03-06</td>
+        <td>Released SDK v1.1.5.4</td>
+        <td><li> Optimized network connection.</li> <li>Added account types. </li> <li> Fixed issues with security alarming. </li> <li> Added the compatibility with XG Platform version upgrade. </li><li> Added the feature of getting QIMEI information.</li><li>Added the feature of disabling session keep-alive.</li></td>
+        <td>March 06, 2020</td>
         <td>-</td>
     </tr>
 </table>
@@ -187,9 +210,9 @@
     <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>SDK v1.1.5.3 is released.</td>
-        <td><li> Network is optimized.</li> <li> Security alarming is optimized.</li></td>
-        <td>2020-01-14</td>
+        <td>Released SDK v1.1.5.3</td>
+        <td><li> Optimized the network.</li> <li> Optimized security alarming.</li></td>
+        <td>January 14, 2020</td>
         <td>-</td>
     </tr>
 </table>
@@ -204,21 +227,21 @@
     <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>SDK v1.1.5.2 is released.</td>
-        <td>Error monitoring is optimized.</td>
-        <td>2019-12-19</td>
+        <td>Released SDK v1.1.5.2</td>
+        <td>Optimized error monitoring.</td>
+        <td>December 19, 2019</td>
         <td>-</td>
     </tr>
     <tr>
-        <td>SDK v1.1.5.1 is released.</td>
-        <td>Crash monitoring is optimized.</td>
-        <td>2019-12-12</td>
+        <td>Released SDK v1.1.5.1</td>
+        <td>Optimized crash monitoring.</td>
+        <td>December 12, 2019</td>
         <td>-</td>
     </tr>
     <tr>
-        <td>SDK v1.1.5.0 is released.</td>
-        <td><li> Huawei push is optimized.</li> <li> SDK v2.0.2 for OPPO PUSH is optimized.</li></td>
-        <td>2019-12-04</td>
+        <td>Released SDK v1.1.5.0</td>
+        <td><li> Optimized the TPNS SDK support for Huawei push.</li> <li> Upgraded the OPPO PUSH SDK to v2.0.2.</li></td>
+        <td>December 04, 2019</td>
         <td>-</td>
     </tr>
 </table>
@@ -233,21 +256,21 @@
     <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>SDK v1.1.4.0 is released.</td>
-        <td><li> Internal error reporting is added.</li> <li> TPNS is now compatible with Huawei Push v3.</li> <li> TPNS is now compatible with OnePlus devices.</li></td>
-        <td>2019-11-21</td>
+        <td>Released SDK v1.1.4.0</td>
+        <td><li> Added internal error reporting.</li> <li> Added the compatibility with Huawei Push v3.</li> <li> Added the compatibility with OnePlus devices.</li></td>
+        <td>November 21, 2019</td>
         <td>-</td>
     </tr>
     <tr>
-        <td>SDK v1.1.3.2 is released.</td>
-        <td>Statistics are optimized.</td>
-        <td>2019-11-13</td>
+        <td>Released SDK v1.1.3.2</td>
+        <td>Optimized statistics collection.</td>
+        <td>November 13, 2019</td>
         <td>-</td>
     </tr>
     <tr>
-        <td>SDK v1.1.3.1 is released.</td>
-        <td>Network is optimized.</td>
-        <td>2019-11-11</td>
+        <td>Released SDK v1.1.3.1</td>
+        <td>Optimized the network.</td>
+        <td>November 11, 2019</td>
         <td>-</td>
     </tr>
 </table>
@@ -262,9 +285,9 @@
     <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>SDK v1.1.3.0 is released.</td>
-        <td><li> Data reporting is optimized.</li> <li> Logging is optimized to add the local log reporting feature.</li> <li> API chaining call is added.</li> <li> The system is optimized internally to improve resource release.</li></td>
-        <td>2019-10-31</td>
+        <td>Released SDK v1.1.3.0</td>
+        <td><li> Optimized data reporting.</li> <li> Optimized logging to add the local log reporting feature.</li> <li> Added API call chaining.</li> <li> Optimized the system internally to improve resource release.</li></td>
+        <td>October 31, 2019</td>
         <td>-</td>
     </tr>
 </table>
@@ -279,9 +302,9 @@
     <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>SDK v1.1.2.1 is released.</td>
-        <td><li> The notification bar display is optimized.</li> <li> Some APIs are optimized.</li> <li> Audio rich media is now supported.</li> <li> The SDK is optimized internally.</li></td>
-        <td>2019-09-27</td>
+        <td>Released SDK v1.1.2.1</td>
+        <td><li> Optimized the notification bar display.</li> <li> Optimized some APIs.</li> <li> Added the support for audio rich media.</li> <li> Optimized the SDK internally.</li></td>
+        <td>September 09, 2019</td>
         <td><a href="https://intl.cloud.tencent.com/document/product/1024/30713#.E9.9B.86.E6.88.90.E6.96.B9.E6.B3.95">Usage of audiovisual rich media</a></td>
     </tr>
 </table>

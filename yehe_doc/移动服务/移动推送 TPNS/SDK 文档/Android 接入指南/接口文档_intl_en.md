@@ -1,3 +1,6 @@
+## Description
+
+
 The package name path prefix of all APIs is `com.tencent.android.tpush`. The following table lists important classes that provide APIs for external use.
 
 | Class | Description |
@@ -26,7 +29,6 @@ Standard registration only registers the current device, and the backend can sen
 public static void registerPush(Context context)
 ```
 
-
 #### Parameter description
 
 context: context object of the current application, which cannot be null.
@@ -51,6 +53,7 @@ public static void registerPush(Context context,final XGIOperateCallback callbac
 - callback: callback functions, including success and failure callbacks and cannot be null.
 
 #### Sample code
+
 ```java
 XGPushManager.registerPush(this, new XGIOperateCallback() {
 	@Override
@@ -72,6 +75,7 @@ There are two ways to check if the registration is successful.
 The `XGIOperateCallback` class provides an API to process registration success or failure. Please see the sample in the registration API.
 
 #### Sample code
+
 ```java
 /**
 * Operation callback API
@@ -155,7 +159,6 @@ public static void unregisterPush(Context context)
 context: context object of the application.
 
 
-
 #### Sample code
 
 ```java
@@ -173,17 +176,17 @@ XGPushManager.unregisterPush(getApplicationContext(), new XGIOperateCallback() {
 ```
 
 
-
 ### Getting the unregistration result
 
 The unregistration result can be obtained by reloading the `onUnregisterResult` method of `XGPushBaseReceiver`.
 
-> ?
+>?
 > - Frequent unregistration is not recommended because it may cause delay in backend sync.
 > - Switching accounts does not require unregistration. With multiple registrations, the last registration will automatically take effect.
 > 
 
 #### Sample code
+
 ```java
 /**
 * Unregistration result
@@ -203,13 +206,14 @@ public void onUnregisterResult(Context context, int errorCode) {
 	}
 	Log.d(LogTag, text);
 }
+
 ```
 
 ## Push Notification (Displayed on the Notification Bar)
 
 Push notifications are content displayed on the notification bar of devices. All operations are performed by the TPNS SDK. Applications can listen for clicks on notifications. In other words, push notifications delivered on the frontend do not need to be processed by applications and will be displayed on the notification bar by default.
 
-> ?
+>?
 > - After the TPNS service is successfully registered, notifications can be delivered without any configuration.
 > - In general, combined with custom notification styles, standard notifications can meet most business needs. If you need more flexible pushes, consider using messages.
 > 
@@ -225,6 +229,7 @@ The TPNS SDK provides a callback API for developers to get the content of arrive
 
 ```java
 public abstract void onNotificationShowedResult(Context context,XGPushShowedResult notifiShowedRlt); 
+
 ```
 
 #### Parameter description
@@ -241,15 +246,17 @@ The TPNS SDK collects statistics on notification/message arrivals and notificati
 >?
 > - Starting from v1.2.0.1, the TPNS SDK supports listening for the click events of notifications delivered through the TPNS channel and various vendor channels.
 > - If you want to deliver and get custom push parameters, the Intent mode is recommended. For more information, please see [Notification Tap-to-Redirect](https://intl.cloud.tencent.com/document/product/1024/38354).
->
+> 
 
 #### API description
 
 ```java
 public abstract void onNotificationClickedResult(Context context, XGPushClickedResult notifiClickedRlt); 
+
 ```
 
 #### Sample code
+
 ```java
 // If `actionType` of the notification click callback is `0`, the message was clicked; if it is `2`, the message was cleared
 @Override
@@ -272,6 +279,7 @@ public void onNotificationClickedResult(Context context, XGPushClickedResult mes
   
     Log.d(LogTag, "broadcast that the notification is received:" + text);
 }
+
 ```
 
 #### Parameter description
@@ -297,6 +305,7 @@ This API is used to clear a notification with a specified ID on the notification
 
 ```java
 public static void cancelNotifaction(Context context, int id) 
+
 ```
 
 #### Parameter description
@@ -338,6 +347,7 @@ This API is used to create a notification channel.
 
 ```java
 public static void createNotificationChannel(Context context, String channelId, String channelName, boolean enableVibration, boolean enableLights, boolean enableSound, Uri soundUri)
+
 ```
 
 >? This API is applicable to v1.1.5.4 and above.
@@ -357,6 +367,7 @@ public static void createNotificationChannel(Context context, String channelId, 
 
 ```java
 XGPushManager.createNotificationChannel(this.getApplicationContext(),"default_message", "Default notification",true, true, true, null);
+
 ```
 
 ## Push Message (Not Displayed on the Notification Bar)
@@ -373,6 +384,7 @@ Push messages are content delivered to an application by TPNS. The application n
 Inherit `XGPushBaseReceiver` and configure the following in the configuration file:
 
 #### Sample code
+
 ```xml
 <receiver android:name="com.tencent.android.xg.cloud.demo.MessageReceiver">
 	<intent-filter>
@@ -382,6 +394,7 @@ Inherit `XGPushBaseReceiver` and configure the following in the configuration fi
 		<action android:name="com.tencent.android.xg.vip.action.FEEDBACK" />
 	</intent-filter>
 </receiver>
+
 ```
 
 ### Getting in-app messages
@@ -393,6 +406,7 @@ A message delivered by you in the console can be received by the application if 
 
 ```java
 public void onTextMessage(Context context,XGPushTextMessage message)
+
 ```
 
 #### Parameter description
@@ -415,6 +429,7 @@ public void onTextMessage(Context context,XGPushTextMessage message)
 Local notifications are customized by users and saved locally. When an application is open, the TPNS service will determine whether there is a notification once every five minutes based on the network heartbeat. Local notifications will pop up only if the service is enabled, and there may be a delay of about five minutes. A notification will pop up when the time set is earlier than the current device time.
 
 #### Sample code
+
 ```java	
 // Create a local notification
 XGLocalMessage local_msg = new XGLocalMessage();
@@ -451,6 +466,7 @@ map.put("key2", "v2");
 local_msg.setCustomContent(map);
 // Add the notification to the local system     
 XGPushManager.addLocalNotification(context,local_msg);
+
 ```
 
 
@@ -478,71 +494,6 @@ XGPushManager.clearLocalNotifications(context);
 ## Account Management
 
 The following are account management API methods. For more information on the timing and principle of calls, please see [Account flow](https://intl.cloud.tencent.com/document/product/1024/32609#account-flow).
-
-### Binding an account
-
->? The `clearAndAppendAccount` API is disused in SDK v1.2.3.0. The `upsertAccounts` API is recommended.
->
-
-#### API description
-
-This API is used to register an application with a specified account so that the backend can send push messages to the specified account. There are two versions of the API method:
-
-```java
-Recommended for applications with an account system. This API will override all accounts previously bound to the device of the current account type, and only the current registered account will take effect.
-void clearAndAppendAccount(Context context, String account, int accountType, XGIOperateCallback callback)
-Recommended for applications with an account system. This API will override all accounts previously bound to the device of the current account type, and only the current registered account will take effect. There is no registration callback.
-void clearAndAppendAccount(Context context, final String account, int accountType)
-```
-
->?
-> - As the `appendAccount` API was seldom used and confusing to developers, it has been disused since October 26, 2020. If you used it previously, it will be replaced by the `clearAndAppendAccount` API.
-> - Each account can be bound to up to 100 tokens.
-> - The account can be email, QQ account number, mobile number, username, etc. For valid values, please see the enumeration class `XGPushManager.AccountType`. (Currently, only pushes to accounts of the `UNKNOWN` type are supported. Other account types are expected to be available by the end of April 2021.)
-> - If multiple devices are bound to the same account, the backend will push the message to the last bound device by default. If you want to push to all the bound devices, you can view the `account_push_type` parameter settings in [Push API](https://intl.cloud.tencent.com/document/product/1024/33764).
-> 
-
-
-
-#### Parameter description
-
-- context: context object of the current application, which cannot be null.
-- account: account.
-- accountType: account type of the account. For valid values, please see the enumeration class `XGPushManager.AccountType`.
-
-#### Sample code
-
-```java
-XGPushManager.clearAndAppendAccount(context, "1369999999", XGPushManager.AccountType.PHONE_NUMBER.getValue());
-```
-
-#### Getting the binding result
-
-Use the Callback version of the binding API.
-The `XGIOperateCallback` class provides an API to process success or failure. Please see the description of the account binding API.
-
-Sample code:
-```java
-public interface XGIOperateCallback {
-
-    /**
-     * Callback when the operation is successful
-     * @param data //Business data of a successful operation, such as the token information when registration is successful
-     * @param flag //Flag tag
-     */
-    public void onSuccess(Object data, int flag);
-    
-    /**
-     * Callback when the operation fails
-     * @param data //Business data of a failed operation
-     * @param errCode //Error code
-     * @param msg //Error message
-     */
-    public void onFail(Object data, int errCode, String msg);
-}
-```
-
-
 
 
 ### Adding an account
@@ -582,18 +533,61 @@ accountInfoList.add(new XGPushManager.AccountInfo(XGPushManager.AccountType.UNKN
 XGPushManager.upsertAccounts(context, accountInfoList, xgiOperateCallback);
 ```
 
-### Unbinding an account
-
->? The `delAccount` API is disused in SDK v1.2.3.0. The `delAccounts(Context, Set, XGIOperateCallback)` API is recommended.
+>?
+> - Each account can be bound to up to 100 tokens.
+> - The account can be any business account such as email address, QQ number, mobile number, username, etc. For account type values, see **Account Type Value Table**.
+> - If multiple devices are bound to the same account, the backend will push the message to the last bound device by default. If you want to push to all the bound devices, you can view the `account_push_type` parameter settings in [Push API](https://intl.cloud.tencent.com/document/product/1024/33764).
 > 
 
+### Add a mobile number
+
 #### API description
+
+This API is used to add or update a mobile number. If you have bound any mobile number before, it will overwrite the original number; if you haven’t, it will be bound (SDK 1.2.5.0+).
+
+>? The mobile number format is `+[country or area code][mobile number]`, for example +8613711112222 (there is a `+` sign in the front; `86` is the country code; `13711112222` is the mobile number). If the entered mobile number does not contain a country or area code, TPNS will automatically add `+86` as the prefix when sending SMS messages. If the mobile number contains a **country or area code**, it will be bound as is. To delete the bound mobile number, call the `delAccountsByKeys` API and set `accountTypeSet` to `1002`.
+>
+
+```java
+public static void upsertPhoneNumber(Context context, String phoneNumber, XGIOperateCallback callback) 
+```
+
+#### Parameter description
+
+- context: `Context` object.
+- phoneNumber: an E.164 mobile number in the format of `[+][country code or area code][mobile number]`, for example, +8613711112222.
+- callback: callback of the mobile number binding operation.
+
+#### Sample code
+
+```java
+XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
+  @Override
+  public void onSuccess(Object data, int flag) {
+      Log.i("TPush", "onSuccess, data:" + data + ", flag:" + flag);
+  }
+   @Override
+  public void onFail(Object data, int errCode, String msg) {
+      Log.w("TPush", "onFail, data:" + data + ", code:" + errCode + ", msg:" + msg);
+  }
+};
+
+XGPushManager.upsertPhoneNumber(context, phoneNumber, xgiOperateCallback);
+```
+
+### Unbinding an account
+
+
+#### API description
+
 This API is used to unbind a bound account.
+
 ```java
 // Unbind the specified account (with registration callback)
 void delAccount(Context context, final String account, XGIOperateCallback callback)	
 // Unbind the specified account (without registration callback)
 void delAccount(Context context, final String account )
+
 ```
 
 >? Account unbinding just removes the association between the token and the application account. If full/tag/token push is used, notifications/messages can still be received.
@@ -608,6 +602,7 @@ void delAccount(Context context, final String account )
 
 ```java
 XGPushManager.delAccount(getApplicationContext(),"test");
+
 ```
 
 ### Unbinding by account type
@@ -618,6 +613,7 @@ This API is used to unbind accounts of one or multiple types. (SDK v1.2.3.0+)
 
 ```java
 public static void delAccounts(Context context, final Set<Integer> accountTypeSet, XGIOperateCallback callback)
+
 ```
 
 #### Parameter description
@@ -646,13 +642,13 @@ accountTypeSet.add(XGPushManager.AccountType.CUSTOM.getValue());
 accountTypeSet.add(XGPushManager.AccountType.IMEI.getValue());
 XGPushManager.delAccounts(context, accountTypeSet, xgiOperateCallback);
 
-```
 
+```
 
 ### Clearing all accounts
 
 >? The `delAllAccount` API is disused in SDK v1.2.2.0. The `clearAccounts` API is recommended.
-> 
+>
 
 #### API description
 
@@ -663,11 +659,10 @@ This API is used to unbind all bound accounts.
 void clearAccounts(Context context, XGIOperateCallback callback)
 // Unbind all accounts (without registration callback)
 void clearAccounts(Context context)
+
 ```
 
->? Account unbinding just removes the association between the token and the application account. If full/tag/token push is used, notifications/messages can still be received.
->
-
+> ? Account unbinding just removes the association between the token and the application account. If full/tag/token push is used, notifications/messages can still be received.
 
 #### Parameter description
 
@@ -677,9 +672,10 @@ context: context object of the current application, which cannot be null.
 
 ```java
 XGPushManager.clearAccounts(getApplicationContext());
+
 ```
 
-## Tag Management
+## Tag management
 
 The following are tag management API methods. For more information on the timing and principle of calls, please see [Tag flow](https://intl.cloud.tencent.com/document/product/1024/32609#tag-flow).
 
@@ -687,8 +683,7 @@ The following are tag management API methods. For more information on the timing
 
 Currently, TPNS preset tags include application version, system version, province, active information, system language, SDK version, country/region, phone brand, and phone model tags. Preset tags are automatically reported in the SDK.
 
-### Setting multiple tags
-
+### Overwriting multiple tags
 
 #### API description
 
@@ -697,8 +692,8 @@ You can set tags for different users and then send mass notifications based on t
 
 ```java
 public static void clearAndAppendTags(Context context, String operateName, Set<String> tags) 
-```
 
+```
 
 #### Parameter description
 
@@ -718,8 +713,8 @@ The result can be obtained by reloading the `onSetTagResult` method of `XGPushBa
 String[] tags = "tag1 tag2".split(" ");
 Set<String> tagsSet = new HashSet<>(Arrays.asList(tags));
 XGPushManager.clearAndAppendTags(getApplicationContext(), "clearAndAppendTags :" + System.currentTimeMillis(), tagsSet); 
-```
 
+```
 
 ### Adding multiple tags
 
@@ -735,8 +730,8 @@ XGPushManager.clearAndAppendTags(getApplicationContext(), "clearAndAppendTags :"
 - This API should be called at a certain interval (an interval longer than 5 seconds is recommended); otherwise, update may fail.
 ```java
 public static void appendTags(Context context, String operateName, Set<String> tags) 
+
 ```
- 
 
 #### Parameter description
 
@@ -754,37 +749,10 @@ The result can be obtained by reloading the `onSetTagResult` method of `XGPushBa
 String[] tags = "tag1 tag2".split(" ");
 Set<String> tagsSet = new HashSet<>(Arrays.asList(tags));
 XGPushManager.appendTags(getApplicationContext(), "appendTags:" + System.currentTimeMillis(), tagsSet);
-```
 
-### Deleting tags
-
->? The `delTag` API is disused in SDK v1.2.3.0. The `delTags` API is recommended.
->
-
-#### API description
-
-This API is used to delete user tag data.
-
-```java
-public static void delTag(Context context, String tagName)
 ```
 
 
-
-#### Parameter description
-
-- context: `Context` object.
-- tagName: name of the tag to be set, which cannot be null or empty.
-
-#### Processing result
-
-The result can be obtained by reloading the `onDeleteTagResult` method of `XGPushBaseReceiver`.
-
-#### Sample code
-
-```java
-XGPushManager.delTag (this, "male");
-```
 
 
 
@@ -799,8 +767,8 @@ This API is used to delete multiple tags at a time.
 
 ```java
 public static void delTags(Context context, String operateName, Set<String> tags, XGIOperateCallback callback) 
-```
 
+```
 
 #### Parameter description
 
@@ -808,8 +776,6 @@ public static void delTags(Context context, String operateName, Set<String> tags
 - operateName: user-defined operation name. The callback result will return it as-is, which is used to identify the operation to which the callback belongs.
 - tags: a collection of tag names, and each tag is a string. Restrictions: each tag cannot exceed 40 bytes (otherwise, the tag will be discarded) nor contain spaces (all spaces will be deleted). Up to 100 tags can be set, and excessive ones will be discarded.
 - callback: callback of the tag deletion operation.
-
-
 
 #### Processing result
 
@@ -834,12 +800,12 @@ Set<String> tagSet = new HashSet<>();
 tagSet.add("tag1");
 tagSet.add("tag2");
 XGPushManager.delTags(context, "delTags", tagSet, xgiOperateCallback);
-```
 
+```
 
 ### Clearing all tags
 
->? The `cleanTags` API is disused in SDK v1.2.2.0. The `clearTags` API is recommended.
+>? The `cleanTags` API is disused in SDK v1.2.2.0 and later versions. You are advised to use the `clearTags` API.
 >
 
 #### API description
@@ -848,8 +814,8 @@ This API is used to clear all tags of a device.
 
 ```java
 public static void clearTags(Context context, String operateName, XGIOperateCallback callback)
-```
 
+```
 
 #### Parameter description
 
@@ -877,6 +843,7 @@ XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
 };
         
 XGPushManager.clearTags(context, "clearTags", xgiOperateCallback);
+
 ```
 
 ## User Attribute Management
@@ -891,8 +858,8 @@ This API is used to add an attribute (with callback). If there is no attribute, 
 
 ```java
 public static void upsertAttributes(Context context, String operateName, Map<String, String> attributes, XGIOperateCallback callback)
-```
 
+```
 
 #### Parameter description
 
@@ -901,13 +868,14 @@ public static void upsertAttributes(Context context, String operateName, Map<Str
 - attributes: attribute set, where each attribute is identified by `key-value`.
 - callback: callback of the attribute adding operation.
 
->!	
+> !	
+>
 > 1. Attributes are transferred through key-value pairs, and only non-empty strings can be accepted.
 > 2. There can be up to 50 attributes.
 > 3. Both the `key` and `value` of an attribute can contain up to 50 characters.
-> 
 
 #### Sample code
+
 ```java
 XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
     @Override
@@ -931,7 +899,7 @@ XGPushManager.upsertAttributes(context, "addAttributes-test", attr, xgiOperateCa
 
 
 
-### Deleting a user attribute
+### Deleting user attributes
 
 #### API description
 
@@ -939,6 +907,7 @@ This API is used to delete a specified attribute.
 
 ```java
 public static void delAttributes(Context context, String operateName, Set<String> attributes, XGIOperateCallback callback)
+
 ```
 
 #### Parameter description
@@ -948,13 +917,14 @@ public static void delAttributes(Context context, String operateName, Set<String
 - attributes: attribute set, where each attribute is identified by `key-value`.
 - callback: callback of the attribute deleting operation.
 
-
 > !	
+>
 > 1. Attributes are transferred through key-value pairs, and only non-empty strings can be accepted.
 > 2. There can be up to 50 attributes.
 > 3. Both the `key` and `value` of an attribute can contain up to 50 characters.
 
 #### Sample code
+
 ```java
 XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
     @Override
@@ -973,6 +943,7 @@ stringSet.add("name");
 stringSet.add("gender");
                 
 XGPushManager.delAttributes(context, "delAttributes-test", stringSet, xgiOperateCallback);
+
 ```
 
 ### Clearing all user attributes
@@ -983,6 +954,7 @@ This API is used to delete all configured attributes.
 
 ```java
 public static void clearAttributes(Context context, String operateName, XGIOperateCallback callback)
+
 ```
 
 #### Parameter description
@@ -992,6 +964,7 @@ public static void clearAttributes(Context context, String operateName, XGIOpera
 - callback: callback of attribute clearing operation.
 
 #### Sample code
+
 ```java
 XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
     @Override
@@ -1006,6 +979,7 @@ XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
 };
         
 XGPushManager.clearAttributes(context, "cleanAttributes-test", xgiOperateCallback);
+
 ```
 
 ### Updating user attributes
@@ -1015,13 +989,14 @@ XGPushManager.clearAttributes(context, "cleanAttributes-test", xgiOperateCallbac
 This API is used to set an attribute (with callback). It will overwrite all the attributes previously set for this device (i.e., clearing and setting).
 
 > !	
+>
 > 1. Attributes are transferred through key-value pairs, and only non-empty strings can be accepted.
 > 2. There can be up to 50 attributes.
 > 3. Both the `key` and `value` of an attribute can contain up to 50 characters.
-> 
 
 ```java
 public static void clearAndAppendAttributes(Context context, String operateName, Map<String, String> attributes, XGIOperateCallback callback)
+
 ```
 
 #### Parameter description
@@ -1032,6 +1007,7 @@ public static void clearAndAppendAttributes(Context context, String operateName,
 - callback: callback of attribute setting operation.
 
 #### Sample code
+
 ```java
 XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
     @Override
@@ -1051,6 +1027,7 @@ attr.put("gender", "male");
 attr.put("age", "100");
 
 XGPushManager.clearAndAppendAttributes(context, "setAttributes-test", attr, xgiOperateCallback);
+
 ```
 
 ## Configuration APIs
@@ -1063,6 +1040,7 @@ TPNS enables the session keep-alive feature by default. To disable it, please ca
 
 ```java
 XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
+
 ```
 
 #### Parameter description
@@ -1077,6 +1055,7 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 
 ```java
 XGPushConfig.enablePullUpOtherApp(context, false); // Default value: true (enable keep-alive)
+
 ```
 
 ### Debug mode
@@ -1087,6 +1066,7 @@ To ensure data security, make sure the debug mode is turned off when publishing.
 
 ```java
 public static void enableDebug(Context context, boolean debugMode)
+
 ```
 
 #### Parameter description
@@ -1098,6 +1078,7 @@ public static void enableDebug(Context context, boolean debugMode)
 
 ```java
 XGPushConfig.enableDebug(context, true); // Default value: false (do not enable)
+
 ```
 
 <span id="Getting token"></span>
@@ -1124,6 +1105,7 @@ Token is the identity ID of a device. It is randomly generated by the server bas
 
 ```java
 public static String getToken(Context context)
+
 ```
 
 >? A token is generated during the first application registration and will be stored in the mobile phone. The token always exists no matter whether unregistration is performed subsequently. After the application is uninstalled and reinstalled, the token will change. The token varies by application.
@@ -1137,6 +1119,7 @@ context: context object of the application.
 
 ```java
 XGPushConfig.getToken(context);
+
 ```
 
 #### Returned values
@@ -1151,10 +1134,10 @@ A third-party token is the identity ID of a vendor device. It is delivered to th
 
 ```java 
 public static String getOtherPushToken(Context context) 
+
 ```
 
->? This API can be called only after successful registration; otherwise, `null` will be returned.
->
+> ? This API can be called only after successful registration; otherwise, `null` will be returned.
 
 #### Parameter description
 
@@ -1164,11 +1147,12 @@ context: context object of the application.
 
 ```java
 XGPushConfig.getOtherPushToken(context);
+
 ```
 
 #### Returned values
 
-A standard token will be returned upon success, and null or "0" upon failure.  
+A standard token will be returned upon success, and `null` or "0" upon failure.  
 
 
 
@@ -1180,6 +1164,7 @@ If the `accessKey` is already set in `AndroidManifest.xml`, you do not need to c
 
 ```java
 public static boolean setAccessId(Context context, long accessId)
+
 ```
 
 #### Parameter description
@@ -1192,6 +1177,7 @@ public static boolean setAccessId(Context context, long accessId)
 ```java
 long accessId = 0L; // `accessId` of the current application
 XGPushConfig.setAccessId(context, accessId);
+
 ```
 
 #### Returned values
@@ -1210,6 +1196,7 @@ If the `accessKey` is already set in `AndroidManifest.xml`, you do not need to c
 
 ```java
 public static boolean setAccessKey(Context context, String accessKey) 
+
 ```
 
 #### Parameter description
@@ -1222,6 +1209,7 @@ public static boolean setAccessKey(Context context, String accessKey)
 ```java
 String accessKey = ""; // `accessKey` of your application
 XGPushConfig.setAccessKey(context, accessKey);
+
 ```
 
 #### Returned values
@@ -1250,6 +1238,7 @@ public static void uploadLogFile(Context context, HttpRequestCallback httpReques
 - httpRequestCallback: log reporting result callback, which include callbacks for success and failure and cannot be null.
 
 #### Sample code
+
 ```
 XGPushManager.uploadLogFile(context, new HttpRequestCallback() {
 	@Override
