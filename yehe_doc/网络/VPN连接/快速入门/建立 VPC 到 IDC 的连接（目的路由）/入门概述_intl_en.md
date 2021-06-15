@@ -1,5 +1,4 @@
 This document describes how to quickly create a VPN connection and configure routing and forwarding policies with a route table to ensure the secure communication between VPC and IDC.
-> ?The VPN route table is currently in a beta test. To try it out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ## Directions
 Below is the flowchart of activating a VPN connection:
