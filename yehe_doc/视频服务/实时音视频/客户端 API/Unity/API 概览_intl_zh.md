@@ -135,7 +135,7 @@
 | [onSwitchRole](https://testcomm.qq.com/trtc/api/api/trtc.ITRTCCloudCallback.html#trtc_ITRTCCloudCallback_onSwitchRole_trtc_TXLiteAVError_String_) | 切换角色的事件回调。                |
 | [onConnectOtherRoom](https://testcomm.qq.com/trtc/api/api/trtc.ITRTCCloudCallback.html#trtc_ITRTCCloudCallback_onConnectOtherRoom_System_String_trtc_TXLiteAVError_System_String_) | 请求跨房通话（主播 PK）的结果回调。         |
 | [onDisConnectOtherRoom](https://testcomm.qq.com/trtc/api/api/trtc.ITRTCCloudCallback.html#trtc_ITRTCCloudCallback_onDisconnectOtherRoom_trtc_TXLiteAVError_System_String_) | 结束跨房通话（主播 PK）的结果回调。        |
-| [onSwitchRoom](https://testcomm.qq.com/trtc/api/api/trtc.ITRTCCloud.html#trtc_ITRTCCloud_switchRoom_trtc_TRTCSwitchRoomConfig_) | 切换房间 (switchRoom) 的结果回调      |
+| [onSwitchRoom](https://testcomm.qq.com/trtc/api/api/trtc.ITRTCCloud.html#trtc_ITRTCCloud_switchRoom_trtc_TRTCSwitchRoomConfig_) | 切换房间 (switchRoom) 的结果回调。    |
 
 
 ### 成员事件回调
@@ -212,7 +212,7 @@
 | [TRTCTranscodingConfig](https://testcomm.qq.com/trtc/api/api/trtc.TRTCTranscodingConfig.html) | 云端混流（转码）配置。                           |
 | [TRTCSwitchRoomConfig](https://testcomm.qq.com/trtc/api/api/trtc.TRTCSwitchRoomConfig.html) | 切换房间参数参数。                              |
 | [TRTCNetworkQosParam](https://testcomm.qq.com/trtc/api/api/trtc.TRTCNetworkQosParam.html) | 网络流控相关参数。                      |
-| [TXVoiceReverbType](https://testcomm.qq.com/trtc/api/api/trtc.TXVoiceReverbType.html) | 变声类型定义（KTV、小房间、大会堂、低沉、洪亮...）。 |
+| [TXVoiceReverbType](https://testcomm.qq.com/trtc/api/api/trtc.TXVoiceReverbType.html) | 混响类型定义（KTV、小房间、大会堂、低沉、洪亮...）。 |
 | [AudioMusicParam](https://testcomm.qq.com/trtc/api/api/trtc.AudioMusicParam.html) | 音乐和人声设置接口参数。 |
 | [TRTCAudioRecordingParams](https://testcomm.qq.com/trtc/api/api/trtc.TRTCAudioRecordingParams.html) | 录音参数。 |
 
