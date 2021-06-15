@@ -261,12 +261,12 @@ When applying for application permissions, you can use the following content to 
 
 
 <pre>
-We use <a href="https://cloud.tencent.com/product/tpns">Tencent Cloud TPNS</a> to push product information. After you grant us the `android.permission.INTERNET` and `android.permission.ACCESS_NETWORK_STATE` permissions, you agree to the <a href="https://cloud.tencent.com/document/product/548/50955">Tencent SDK Privacy Agreement</a>. You can refuse to accept this SDK push service by disabling the notification option on the terminal device.
+We use <a href="https://intl.cloud.tencent.com/product/tpns">Tencent Cloud TPNS</a> to push product information. After you grant us the `android.permission.INTERNET` and `android.permission.ACCESS_NETWORK_STATE` permissions, you agree to the <a href="https://cloud.tencent.com/document/product/548/50955">Tencent SDK Privacy Agreement</a>. You can refuse to accept this SDK push service by disabling the notification option on the terminal device.
 </pre>
 
 
 
 The links to the two authorization items mentioned above are as follows:
-- Tencent Cloud TPNS: `https://cloud.tencent.com/product/tpns`
+- Tencent Cloud TPNS: `https://intl.cloud.tencent.com/product/tpns`
 - Tencent SDK Privacy Agreement: `https://cloud.tencent.com/document/product/548/50955`
 
