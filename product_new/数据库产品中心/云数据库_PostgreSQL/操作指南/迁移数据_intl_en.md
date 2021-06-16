@@ -1,7 +1,4 @@
-## Using Tencent Cloud DTS
-The **data migration** feature of Tencent Cloud **Data Transmission Service (DTS)** can be used to import data to TencentDB for PostgreSQL.
 
-For more information, please see [Data Migration](https://cloud.tencent.com/document/product/571/16309).
  
 ## Using `psql` Command
 If your data is already on PostgreSQL, you can easily migrate it to TencentDB for PostgreSQL by using the `psql` command.
