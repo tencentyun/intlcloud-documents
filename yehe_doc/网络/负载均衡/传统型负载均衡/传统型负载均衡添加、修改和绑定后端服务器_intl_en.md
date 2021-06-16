@@ -8,7 +8,7 @@ You have created a Classic CLB instance and configured a listener. For more info
 >- If you need to use API to add real servers, please see the [RegisterTargetsWithClassicalLB](https://intl.cloud.tencent.com/document/product/214/33802) API.
 >
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/loadbalance).
-2. On the "Instance Management" page, click **Classic CLB**.
+2. On the "Instance Management" page, select the **Classic Cloud Load Balancer** tab.
 3. Click **Configure Listener** in the "Operation" column on the right of the target Classic CLB instance.
 4. In the listener configuration module, click **Create**.
 5. In the "Create Listener" pop-up window, enter the "backend port" (for more information on port selection, please see [Common Server Ports](https://intl.cloud.tencent.com/document/product/213/12451)) and other related fields and click **Next** to complete the configuration. For more information, please see [Configuring Classic CLB](https://intl.cloud.tencent.com/document/product/214/32462).
@@ -16,7 +16,7 @@ You have created a Classic CLB instance and configured a listener. For more info
 >
 ![](https://main.qcloudimg.com/raw/b2d43b48851d5c021a95872613e359c3.png)
 6. After the listener is created, click **Bind** in the real server binding module.
-7. In the **Bind CVM Instance** pop-up window, select the CVM instance to be bound, enter the weight, and click **OK**.
+7. In the **Bind CVM** pop-up window, select the CVM instance to be bound, enter the weight, and click **OK**.
 >?
 >- The pop-up window only displays available CVM instances in the same region and same network environment that are not isolated and have not expired with peak bandwidth greater than 0.
 >- When multiple real servers are bound, CLB will forward traffic according to the hash algorithm to balance the load.
@@ -28,7 +28,7 @@ You have created a Classic CLB instance and configured a listener. For more info
 >?Currently, real server weight cannot be modified through APIs for Classic CLB.
 >
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/loadbalance).
-2. On the "Instance Management" page, click **Classic CLB**.
+2. On the "Instance Management" page, select the **Classic Cloud Load Balancer** tab.
 3. Click **Configure Listener** in the "Operation" column on the right of the target Classic CLB instance.
 4. In the real server binding module, modify the relevant server weight.
 >?The greater the weight of a server, the more the requests forwarded to it. The default value is 10, and the configurable value range is 0–100. If the weight is set to 0, the server will not accept new requests. If session persistence is enabled, it may cause uneven request distribution among real servers. For more information, please see [Algorithms and Weight Configuration](https://intl.cloud.tencent.com/document/product/214/5371).
@@ -51,7 +51,7 @@ You have created a Classic CLB instance and configured a listener. For more info
 >- If you need to use API to unbind real servers, please see the [DeregisterTargetsFromClassicalLB](https://intl.cloud.tencent.com/document/product/214/33807) API.
 >
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/loadbalance).
-2. On the "Instance Management" page, click **Classic CLB**.
+2. On the "Instance Management" page, select the **Classic Cloud Load Balancer** tab.
 3. Click **Configure Listener** in the "Operation" column on the right of the target Classic CLB instance.
 4. In the real server binding module, unbind the bound server.
 	- **Method 1**. Unbind one single server.
