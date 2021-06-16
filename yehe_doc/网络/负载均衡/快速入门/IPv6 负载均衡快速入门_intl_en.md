@@ -10,7 +10,7 @@ CLB supports three IP versions: IPv4, IPv6, and IPv6 NAT64. IPv6 CLB supports th
 - IPv6 CLB does not support classic CLB.
 - IPv6 CLB supports obtaining the client's IPv6 source address, which can be directly obtained by layer-4 IPv6 CLB or through the `X-Forwarded-For` header of HTTP layer-7 IPv6 CLB.
 - Currently, IPv6 CLB balances the load completely over the public network. Clients in the same VPC cannot access IPv6 CLB over the private network.
-- IPv6 implementations are still at the primary stage across the internet. In case of access failure, please [submit a ticket](https://console.cloud.tencent.com/workorder/category). SLA is not guaranteed during the beta test period.
+- IPv6 implementations are still at the preliminary stage across the internet. In case of access failure, please [submit a ticket](https://console.cloud.tencent.com/workorder/category). SLA is not guaranteed during the beta test period.
 
 ## Step 1. Create a CVM instance and configure IPv6
 1. Enter the [CVM Console](https://console.cloud.tencent.com/cvm/instance/index?rid=1), log in to the CVM instance, and complete basic IPv6 configuration.
@@ -39,7 +39,7 @@ vim  /etc/nginx/nginx.conf
  - IP Version: IPv6.
  - ISP Type: BGP.
  - Network: please select a VPC and subnet that have already obtained IPv6 CIDR.
-3. Select various configuration items on the purchase page and click **Buy Now**.
+3. Select respective configuration items on the purchase page and click **Buy Now**.
 ![](https://main.qcloudimg.com/raw/ccba9b3d7710815907210113364c4274.png)
 4. On the "CLB Instance List" page, select the corresponding region to view the instance just created.
 ![](https://main.qcloudimg.com/raw/f53a0d3da88b82071960522de6c2fdb8.png)
@@ -52,7 +52,7 @@ vim  /etc/nginx/nginx.conf
 4. In **HTTP/HTTPS Listeners** in "Listener Management", click **Create** to create a CLB listener.
 ![](https://main.qcloudimg.com/raw/301fbda84ff54f2026f79cf7063d3413.png)
 5. In the pop-up box, configure the following:
- - Set the name to "IPv6test".
+ - Set the name to "IPv6test", for example.
  - Set the listener protocol and port to `HTTP:80`.
 6. Click **Submit** to create the CLB listener.
 
@@ -70,9 +70,8 @@ vim  /etc/nginx/nginx.conf
 
 For more information on CLB listeners, please see [CLB Listener Overview](https://intl.cloud.tencent.com/document/product/214/6151).
 >?
->
 >- A listener (i.e., listening protocol:port) can be configured with multiple domain names, and a domain name can be configured with multiple URL paths. Select a listener or domain name and click **+** to create a new rule.
-- Session persistence: if session persistence is disabled and a round-robin method is used for scheduling, requests will be assigned to different real servers in sequence; if session persistence is enabled, or it is disabled but ip_hash scheduling is used, requests will always be assigned to the same real server.
+>- Session persistence: if session persistence is disabled and a round-robin method is used for scheduling, requests will be assigned to different real servers in sequence; if session persistence is enabled, or it is disabled but ip_hash scheduling is used, requests will always be assigned to the same real server.
 
 ### Binding CVM instance
 >?Before binding the listener to a CVM instance, please check whether the instance has obtained an IPv6 address.
