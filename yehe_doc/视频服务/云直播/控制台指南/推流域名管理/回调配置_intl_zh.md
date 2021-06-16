@@ -18,7 +18,7 @@
 1.	进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**推流域名**或【管理】进入域名详情页。
 2.	选择【模板配置】页签，单击【回调配置】标签右上角的【编辑】。
 ![](https://main.qcloudimg.com/raw/d3e31f428ab1463335e234007c663311.png)
-3.	选择指定对应的回调模板，单击【保存】即可。
+3.	选择指定对应的回调模板，单击【确定】即可。
 ![](https://main.qcloudimg.com/raw/27f9da682e20283e25cc2478e1a53a0b.png)
 
 <span id="untie"></span>
@@ -26,5 +26,5 @@
 
 1. 进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**推流域名**或【管理】进入域名详情页。
 2. 选择【模板配置】页签，单击【回调配置】标签右上角的【编辑】。
-3. 取消关联模板的勾选，单击【保存】即可。
+3. 取消关联模板的勾选，单击【确定】即可。
 ![](https://main.qcloudimg.com/raw/0f8ec4ae49d2f1c5329bdb509f056366.png)
