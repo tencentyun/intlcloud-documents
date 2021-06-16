@@ -11,7 +11,7 @@
 - 选择通过 COS 文件恢复数据时，需先存储备份文件至 COS，请参见 [上传备份至 COS](https://intl.cloud.tencent.com/document/product/238/32558)。
 
 ## 操作步骤
-1. 登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver#/)，在实例列表，单击实例名，进入实例管理页面。
+1. 登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver#/)，在实例列表，单击实例 ID，进入实例管理页面。
 2. 在实例管理页面，选择【备份恢复】页，单击【新建】。
 ![](https://main.qcloudimg.com/raw/ce56a4edf2e8f436d0bdfc56cb700e7d.png)
 3. 在备份恢复设置页面，配置备份还原任务后，单击【创建任务】。
