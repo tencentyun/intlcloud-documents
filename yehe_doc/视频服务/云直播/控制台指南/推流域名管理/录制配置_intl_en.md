@@ -1,9 +1,9 @@
-The recording feature is disabled for live push by default. This document describes how to bind a recording template to a specified push domain name to enable the recording feature and how to unbind the template after successful binding to disable the feature.
+The recording feature is disabled for CSS push by default. This document describes how to bind a recording template to a specified push domain name to enable the recording feature and how to unbind the template after successful binding to disable the feature.
 
 [](id:limit)
 ## Use Limits
 - The recorded video files are stored in the [VOD console](https://console.cloud.tencent.com/vod/overview) by default. You are recommended to activate the VOD service in advance and purchase appropriate resource packages so as to avoid service suspension due to overdue payment. For more information, please see [Getting Started with VOD](https://intl.cloud.tencent.com/document/product/266/8757).
-- After enabling the recording feature, please make sure that your VOD service is in normal status. If it is not activated or is suspended due to overdue payment, live recording will not be available, no recording files will be generated, and no recording fees will be incurred.
+- After enabling the recording feature, please make sure that your VOD service is in normal status. If it is not activated or is suspended due to overdue payment, CSS recording will not be available, no recording files will be generated, and no recording fees will be incurred.
 -  The template configuration will take effect in about 5–10 minutes. 
 -  After the template is bound successfully, the recording feature will be enabled for push addresses under the specified push domain name.
 - One domain name can be bound to only one recording template. After they are bound, all streams under the domain name will be recorded according to this template.
@@ -19,7 +19,7 @@ The recording feature is disabled for live push by default. This document descri
 1. 	Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the **push domain** to be configured or **Manage** to enter the domain name details page.
 2. 	Select the **Template Configuration** tab and click **Edit** in the top-right corner of the **Recording Configuration** block.
 ![](https://main.qcloudimg.com/raw/29bf30fa3b4ce940a9903c0331fc608e.png)
-3. Select a recording configuration template and click **Save**.
+3. Select a recording configuration template and click **OK**.
 ![](https://main.qcloudimg.com/raw/8ecacaebb47ab9ae476d9286c1796b46.png)
 
 
@@ -27,7 +27,7 @@ The recording feature is disabled for live push by default. This document descri
 ## Unbinding Recording Template
 1. Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, click the **push domain** to be configured or **Manage** to enter the domain name details page.
 2. Select the **Template Configuration** tab and click **Edit** in the top-right corner of the **Recording Configuration** block.
-3. Deselect the target template and click **Save**.
+3. Deselect the target template and click **OK**.
 ![](https://main.qcloudimg.com/raw/f2c5f091437cd8b873ed6447562fb697.png)
 
 >? 
