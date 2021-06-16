@@ -1,7 +1,7 @@
 ﻿
 ## 展示会话列表
 用户在登录 App 后，可以像微信那样展示最近会话列表。整个过程分为**拉取会话列表**、**处理更新通知**和**更新 UI 内容（包括未读计数）**，本文主要介绍这些步骤的详细细节。
-<img src="https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/res/Record_2020-05-12-20-05-54-getConvList-android.gif" width="40%">
+
 
 ### 拉取会话列表
 用户在登录后调用 [getConversationList()](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversationManager.html#a1bb5ba2beecb4f68146e7f664124fd8b) 拉取本地会话列表做 UI 展示，会话列表是一个 [V2TIMConversation](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html) 对象的列表，每一个对象都代表一个会话。
