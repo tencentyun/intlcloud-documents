@@ -8,7 +8,7 @@ Tencent Cloud CVMを使用すると、CPU、メモリ、ディスク、ネット
 Tencent Cloudは、以下のCVM構成方法と管理方法を提供します。
 - **コンソール**：Tencent Cloudが提供しているCVMを構成・管理するためのWebベースのサービスインターフェースです。
 - **API**：Tencent Cloudは、CVMを管理するためのAPIインターフェースも提供しています。APIの説明については、[API概要](https://intl.cloud.tencent.com/document/api/213/15689)ドキュメントをご参照ください。
-- **SDK**：[SDKプログラミング](https://intl.cloud.tencent.com/document/494) または [Tencent Cloud CLI](https://intl.cloud.tencent.com/document/product/1013) ツールを使用してCVM APIを呼び出すことができます。
+- **SDK**：[SDKプログラミング](https://intl.cloud.tencent.com/document/product/494) または [Tencent Cloud CLI](https://intl.cloud.tencent.com/document/product/1013) ツールを使用してCVM APIを呼び出すことができます。
 
 ## 関連概念
 
