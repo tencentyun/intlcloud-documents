@@ -24,7 +24,7 @@ Log in to the [ECDN Console](https://console.cloud.tencent.com/ecdn), click **Pu
 In the **History** section, you can query tasks by specified time period, keyword, and purge task type. With regard to keyword, you can only query tasks by specifying a domain name or a complete purged URL/directory:
 ![](https://main.qcloudimg.com/raw/86e00c9652a635cf0a0007172119be92.png)
 
->?The console can return up to 10,000 operation records at a time, which can be exported to Excel. If you have a high number of purge tasks, please query and export them in batches.
+
 
 ### Precautions
 
@@ -66,4 +66,3 @@ The acceleration domain name is purge-test-1251991073.file.myqcloud.com, the ori
 5. After the purge is completed, because `Last-Modified` of `1.txt` has been changed, the request will be forwarded to the origin server. As `2.txt` has not been changed, even after a directory purge task is submitted, it will still be hit by nodes and returned:
 ![](https://main.qcloudimg.com/raw/cf11384db9bbd96aa4526cf64420ee98.png)
 ![](https://main.qcloudimg.com/raw/eb1458ed2f2e1c301cf5b45b9b891fec.png)
-
