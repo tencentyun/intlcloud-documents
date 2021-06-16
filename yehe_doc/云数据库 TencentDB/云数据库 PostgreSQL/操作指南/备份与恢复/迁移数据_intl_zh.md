@@ -1,7 +1,4 @@
-## 使用腾讯云 DTS 服务
-PostgreSQL 数据库可使用腾讯云 [数据传输服务 DTS](https://intl.cloud.tencent.com/document/product/571/13709) 的【数据迁移】功能做数据导入。
 
-详细操作参考 [PostgreSQL 数据迁移](https://intl.cloud.tencent.com/document/product/571/34105)。
 
 ## 使用 psql 命令
 如果您的数据已经在 PostgreSQL 上，您可以 psql 命令将数据轻松的迁移到 TencentDB for PostgreSQL 中。
