@@ -13,7 +13,6 @@ After a successful purchase, the system will automatically assign a VIP to the C
 2. First, select the same region as your CVM instance. Next, select **Cloud Load Balancer** as the instance type, **Public Network** as the network type. For more attribute details, please see [Product Attribute Selection](https://intl.cloud.tencent.com/document/product/214/13629).
 >?Currently, the static single-line IP is supported only in Guangzhou, Shanghai, Nanjing, Jinan, Hangzhou, Fuzhou, Beijing, Shijiazhuang, Wuhan, Changsha, Chengdu, and Chongqing. For its support in other districts, please see the console. The feature is currently in beta, if you want to try it out, please submit an application. Once you are accepted, you can select an ISP (China Mobile, China Unicom, or China Telecom) on the purchase page.
 >
-![](https://main.qcloudimg.com/raw/235e67c8fbe5878a15163e13d0c2a9b6.png)
 3. Click **Buy Now** to make a payment.
 4. Return to the **Instance Management** page, select the region to see the new instance.
 ![](https://main.qcloudimg.com/raw/2c2afd943a9f6a6d03f55c00e62da8b5.png)
@@ -81,23 +80,10 @@ After configuring a CLB instance, you can verify whether it is effective by acce
 ![](https://main.qcloudimg.com/raw/ab7db7b5c3952739919ae6e271bb1348.png)
 >!The `/` in the `image/` cannot be omitted. `/` indicates that `image` is a default directory instead of a file name.
 
-### Method 2: Map the domain name to the CLB instance through DNSPod
-1. Go to the [Tencent Cloud DNSPod](https://dnspod.cloud.tencent.com) to query and register a domain name. `example.com` is used as an example.
-2. Log in to the [DNSPod console](https://console.cloud.tencent.com/cns), click **Domain Name Resolution List** on the left sidebar, and click **Resolve** on the right of a domain name.
-3. Open the **Record Management** tab, click **Add Records** to add an A record for the domain name with the following parameters:
-  - Host: The prefix of the domain name. Here takes resolving all prefixes as an example: `*.example.com`.
-  - Record Type: A
-  - Split Zone: Default
-  - Value: Click **Associate Tencent Cloud Resources** and then tick the CLB instance created above.
-  - TTL: Leave it as the default value **600** s.
-4. Click **Save**.
-5. About 10 minutes later, open the bound CNAME domain name in a browser (`www.example.com`). If the corresponding page can be normally displayed, it indicates that the CLB instance is in effect.
-
 ## Configuring Redirection (optional)
 CLB supports automatic redirection and manual redirection. For more information, please see [Configuring Layer-7 Redirection](https://intl.cloud.tencent.com/document/product/214/8839).
 - Automatic redirection (forced HTTPS): when a PC or mobile browser accesses a web service with an HTTP request, an HTTPS response is returned to the browser after the request passes through the CLB proxy, forcing the browser to access the webpage using HTTPS.
 - Manual redirection: if you want to temporarily deactivate your web business in cases such as product sellout, page maintenance, or update and upgrade, you need to redirect the original page to a new page. Otherwise, the old address in a visitor's favorites and search engine database will return a `404` or `503` error message page, degrading the user experience, resulting in traffic waste, and even invalidating the accumulated scores on search engines.
-
 
 ## Operations
 - [Deploying Java Web on CentOS](https://intl.cloud.tencent.com/document/product/214/32391) 
