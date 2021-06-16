@@ -12,7 +12,7 @@
 
 <span id="41"></span>
 ### Does TcaplusDB support data removal?
-TcaplusDB supports table-level data removal, where the data is removed according to the last time it is written. TcaplusDB also supports key-level data removal, and to use this feature, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) and select **Other** on the **Select the related product** page.
+TcaplusDB supports table-level data removal, where the data is removed according to the last time it is written.
 
 <span id="43"></span>
 ### What are the data structures of TcaplusDB?
