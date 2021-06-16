@@ -21,7 +21,7 @@
 ![](https://main.qcloudimg.com/raw/d4b01354bab726ea890e8167ccdbaffe.png)
 2. 在【操作记录】模块，可指定时间周期、查询关键字、类型对已提交的刷新操作进行状态查看：
 ![](https://main.qcloudimg.com/raw/86e00c9652a635cf0a0007172119be92.png)
->? 控制台最多可一次性返回 10000 条操作记录，并支持导出为完整的 excel 形式，若您的刷新任务较多，请分段批量查询导出。
+
 
 ### 注意事项
 #### URL 刷新：
@@ -59,4 +59,3 @@
 5. 刷新完成后，由于文件 1.txt Last-Modified 发生变更，请求直接回源，而文件 2.txt 由于未做变更，即时提交目录刷新，仍被节点命中返回：
 ![](https://main.qcloudimg.com/raw/cf11384db9bbd96aa4526cf64420ee98.png)
 ![](https://main.qcloudimg.com/raw/eb1458ed2f2e1c301cf5b45b9b891fec.png)
-
