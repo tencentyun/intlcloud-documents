@@ -11,7 +11,7 @@ TencentDB for SQL Server allows you to upload backups from your local device or 
 - To migrate data using backups in COS, you need to upload backups to COS first. For more information, please see [Same-version Migration > Uploading backup file to COS](https://intl.cloud.tencent.com/document/product/238/32558).
 
 ## Directions
-1. Log in to the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver#/). In the instance list, click an instance ID/name or **Manage** in the **Operation** column to access the instance management page.
+1. Log in to the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver#/). In the instance list, click an instance ID or **Manage** in the **Operation** column to access the instance management page.
 2. On the **Backup Restoration** page, click **Create**.
 ![](https://main.qcloudimg.com/raw/ce56a4edf2e8f436d0bdfc56cb700e7d.png)
 3. On the **Backup Restoration Settings** page, configure the backup restoration task, and click **Create Task**.
