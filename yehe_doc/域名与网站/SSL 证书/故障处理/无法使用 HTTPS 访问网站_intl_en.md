@@ -1,6 +1,6 @@
 ## Symptoms
 After the SSL certificate is deployed on the server, using HTTPS to access pages is slow, the page is blank, or “This page can’t be reached” is displayed, as shown in the following figure:
-
+![](https://main.qcloudimg.com/raw/0ba55ddaa87b4edb33552c25e9c81447.png)
 ## Possible Causes
 - **Port 443 is closed on the server firewall**: If port 443 is closed, you may not be able to access pages over HTTPS normally. In this case, please open port 443 on the server and then retry.
 - **Disabled security group**: A security group is a virtual firewall that features stateful data packet filtering. It is used for vendors to configure the network access control of CVM, Cloud Load Balancer, TencentDB, and other instances while controlling their outbound and inbound traffic. It is an important means of network security isolation. The security group is disabled by default. You can enable the security group on your server and then retry.
