@@ -2,7 +2,7 @@ You can create an account for connection to a TencentDB for MariaDB instance. Th
 >?The account cannot be created or modified through command lines `insert into mysql.user`, `grant`, or `drop` currently.
 
 ## Creating an Account
-1. Log in to the [MariaDB Console](https://console.cloud.tencent.com/mariadb) and click the instance name or **Manage** in the "Operation" column to enter the instance management page.
+1. Log in to the [MariaDB Console](https://console.cloud.tencent.com/mariadb) and click the instance ID or **Manage** in the "Operation" column to enter the instance management page.
 2. Select the **Manage Account** tab and click **Create**.
 3. In the pop-up dialog box, enter the account name, primary server, password, and remarks, and click **Confirm and Go Next**.
  - **Primary Server **: it is similar to a host, and supports IP, IP range, and %. % means all the IP addresses within a range. For example, to support all IPs from 10.10.10.1 to 10.10.10.254, enter `10.10.10.%`.
