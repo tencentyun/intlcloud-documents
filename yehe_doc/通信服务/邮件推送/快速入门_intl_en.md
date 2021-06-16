@@ -4,7 +4,7 @@
 - After the domain is configured, synchronization may take five minutes to two hours. Please wait patiently for the verification to finish.
 - After the domain verification is completed, do not delete or modify the configured SPF and MX records, otherwise errors may occur when sending emails.
 - To avoid conflicts between SPF and MX records, do not use corporate email domains.
-- Each Tencent Cloud account can be configured with up to 20 domains.
+- Each Tencent Cloud account can be configured with up to 10 domains.
 
 <span id ="Step1"></span>
 ## Step 1. Log in to the Console
