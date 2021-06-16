@@ -59,12 +59,12 @@ ECDN can automatically detect static/dynamic content access requests based on th
 
 <strong>Cache purge time description</strong>  
 
-- Cache purge time can be set by second, minute, hour, and day (up to 30 days).  
+- Cache purge time can be set by second, minute, hour, and day (up to 365 days).  
 - If the cache purge time is 0, it indicates dynamic content, all requests will be directly passed through to the origin server, and the response content will not be cached.  
 - If the cache purge time is greater than 0, it indicates static resource, and the edge caching feature will be enabled:
   - If the content accessed by the user has been cached on the edge server, and the cache has not expired, then the request does not need to be forwarded to the origin server, and the cached content will be directly returned, so that the user can enjoy nearby access to the content.
   - If the content accessed by the user has not been cached on the edge server, or the cache has expired, then the request needs to be forwarded to the origin server to get the content, which will be returned to the user and cached on the edge server.
-- When a domain name is connected, the cache purge time of all files is 0 seconds by default, indicating that the dynamic acceleration service is not used by default.
+
 
 <strong>Suggestions on setting cache purge time</strong>
 
