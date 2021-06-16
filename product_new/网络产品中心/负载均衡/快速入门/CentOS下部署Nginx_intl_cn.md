@@ -47,7 +47,6 @@ Hello nginx , This is rs-1!
 URL is image/index.html
 ```
    4. 按 “Esc”，输入`:wq `保存编辑。
- 
 >!Nginx 的默认端口是`80`，如果想修改端口请修改配置文件并重启 Nginx。
 
 ## 验证 Nginx 服务
