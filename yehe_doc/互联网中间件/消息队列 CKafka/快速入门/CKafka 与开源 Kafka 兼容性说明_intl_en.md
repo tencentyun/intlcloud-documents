@@ -1,4 +1,4 @@
-CKafka is compatible with the Producer and Consumer APIs of Apache Kafka 0.9 and later versions ( v0.10, v1.1.1, and v2.4.2 can be purchased). To connect to an on-premises Kafka of an earlier version (such as v0.8), partial rewriting of APIs is needed. This document compares the Producer and Consumer APIs of Kafka 0.8 and its later versions, and describes how to rewrite the APIs.
+CKafka is compatible with the Producer and Consumer APIs of Apache Kafka 0.9 and later versions ( v0.10, v1.1.1, and v2.4.2 can be purchased). To connect to an on-premises Kafka of an earlier version (such as v0.8), the APIs need to be rewritten. This document compares the Producer and Consumer APIs of Kafka 0.8 and its later versions, and describes how to rewrite the APIs.
 
 ## Kafka Producer 
 ### Overview
@@ -35,7 +35,7 @@ producer.send(data);
 producer.close();
 ```
 
-As shown in the previous code, the basic usage of the new and old versions are the same, except for some parameter settings. This means the cost of API partial rewriting is not high.
+As shown in the previous code, the basic usage of the new and old versions are the same, except for some parameter settings. This means the cost of rewriting APIs is not high.
 
 ### Compatibility description
 Producer API 0.8.x can be connected to CKafka successfully without partial rewriting. We recommend using the New Kafka Producer API.
