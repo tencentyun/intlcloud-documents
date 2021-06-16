@@ -52,4 +52,4 @@ TencentDB for PostgreSQL supports creating custom extensions (`CREATE EXTENSION 
 | postgis_topology       | 2.3.0  | 2.3.0  | 2.4.1  | 2.4.1  | 3.0.2  |
 | address_standardizer   | 2.3.0  | 2.3.0  | 2.4.1  | 2.4.1  | 3.0.2  |
 | postgis_sfcgal         | 2.3.0  | 2.3.0  | 2.4.1  | 2.4.1  | 3.0.2  |
-
+| pgagent         | 4.0.0  | 4.0.0  | 4.0.0  | 4.0.0  | 4.0.0  |
