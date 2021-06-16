@@ -6,7 +6,7 @@ Access logs of CLB are mainly used to quickly locate and troubleshoot issues. Th
 
 >?
 >- Currently, access logs can be stored in CLS only for layer-7 protocols (HTTP/HTTPS) but not layer-4 protocols (TCP/UDP/TCP SSL).
->- Storing CLB access logs in CLS is now free of charge. You only need to pay for the CLS service.
+>- Configuring CLB access logs to be stored in CLS is now free of charge. You only need to pay for the CLS service.
 >- Currently, access logs can be stored in CLS in the Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, Chongqing, Hong Kong (China), Singapore, Mumbai, Seoul, Tokyo, Silicon Valley, Virginia, Toronto, and Frankfurt regions through the console or APIs.
 
 ## Enabling Access Log Storage in CLS
