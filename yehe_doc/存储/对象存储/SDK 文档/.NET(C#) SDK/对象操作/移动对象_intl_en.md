@@ -15,11 +15,13 @@ For the parameters and method descriptions of all the APIs in the SDK, see [Api 
 
 Object movement involves copying the source object to the target location and deleting the source object.
 
-Objects stored in COS are identified using names formatted as 'bucket+key'. Therefore, the name of an object that is moved will be changed. Currently, this SDK does not provide a standalone API for object name changes. However, you can still move objects with basic operations.
+Since COS uses the bucket name (`Bucket`) and object key (`ObjectKey`) to identify objects, moving an object will change the object identifier. Currently, COS’s Java SDK does not provide a standalone API to change object identifiers. However, you can still move the object with a combination of basic operations (**object copy** and **object delete**).
 
-For example, within the 'mybucket' bucket, if you want to move the 'mykey' object to 'prefix/mykey', you can copy 'prefix/mykey' first and then delete 'mykey'.
+For example, if you want to move the `picture.jpg` object to the “doc” directory that is in the same bucket (`mybucket-1250000000`), you can copy the `picture.jpg` to the “doc” directory (making the object key `doc/picture.jpg`) and then delete the source object.
 
-Likewise, if you want to move 'mykey' to the 'myanothorbucket' bucket, you can copy the object to the destination bucket first and then delete the source object.
+Likewise, if you need to move `picture.jpg` in the `mybucket-1250000000` bucket to another bucket `myanothorbucket-1250000000`, you can copy the object to the `myanothorbucket-1250000000` bucket first and then delete the source object.
+
+
 
 #### Sample code
 
