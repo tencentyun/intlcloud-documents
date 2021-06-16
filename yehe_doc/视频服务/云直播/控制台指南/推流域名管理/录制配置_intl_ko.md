@@ -19,7 +19,7 @@
 1.	[Domain Management](https://console.cloud.tencent.com/live/domainmanage)로 이동하여 설정할 **푸시 스트리밍 도메인** 또는 [Manage]를 클릭해 도메인 상세 페이지로 이동합니다.
 2.	[Template Configuration] 탭을 선택해 [Recording Configuration] 부분 오른쪽 상단의 [Edit]를 클릭합니다.
 ![](https://main.qcloudimg.com/raw/29bf30fa3b4ce940a9903c0331fc608e.png)
-3. 설정할 녹화 템플릿을 선택하고 [Save]를 클릭합니다.
+3. 설정할 녹화 템플릿을 선택하고 [OK]를 클릭합니다.
 ![](https://main.qcloudimg.com/raw/8ecacaebb47ab9ae476d9286c1796b46.png)
 
 
@@ -27,7 +27,7 @@
 ## 녹화 템플릿 바인딩 해제
 1. [Domain Management](https://console.cloud.tencent.com/live/domainmanage)로 이동하여 설정할 **푸시 스트리밍 도메인** 또는 [Manage]를 클릭해 도메인 상세 페이지로 이동합니다.
 2. [Template Configuration] 탭을 선택해 [Recording Configuration] 부분 오른쪽 상단의 [Edit]를 클릭합니다.
-3. 해당 템플릿의 선택을 해제하고 [Save]을 클릭합니다.
+3. 해당 템플릿의 선택을 해제하고 [OK]을 클릭합니다.
 ![](https://main.qcloudimg.com/raw/f2c5f091437cd8b873ed6447562fb697.png)
 
 >? 
