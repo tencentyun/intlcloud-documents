@@ -27,5 +27,5 @@
 
 1. [Domain Management](https://console.cloud.tencent.com/live/domainmanage)로 이동하여 설정할 **푸시 스트리밍 도메인** 또는 [Manage]를 클릭해 도메인 상세 페이지로 이동합니다.
 2. [Template Configuration] 탭을 선택해 [Callback Configuration] 부분 오른쪽 상단의 [Edit]를 클릭합니다.
-3. 연결 취소할 템플릿의 선택을 해제하고 [Save]를 클릭합니다.
+3. 연결 취소할 템플릿의 선택을 해제하고 [확인]를 클릭합니다.
 ![](https://main.qcloudimg.com/raw/0f8ec4ae49d2f1c5329bdb509f056366.png)
