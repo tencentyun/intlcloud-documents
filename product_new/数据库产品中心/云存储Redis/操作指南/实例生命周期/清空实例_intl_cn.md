@@ -7,7 +7,7 @@
 
 ## 操作步骤
 
-1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，单击实例名，进入实例详情页。
+1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，单击实例 ID，进入实例详情页。
 2. 在实例详情页，单击【清空实例】。
 ![](https://main.qcloudimg.com/raw/9b5c4b5f4a344e1d62dbc2498f5aa53b.png)
 3. 在清空实例页面，输入实例密码，单击【确认】。
