@@ -2,12 +2,12 @@
 >- IPv6 NAT64 CLB can only be created in three regions: Beijing, Shanghai, and Guangzhou.
 >- IPv6 NAT64 CLB does not support classic CLB.
 >- IPv6 NAT64 CLB does not support getting client IPs.
->- IPv6 implementations are still at the primary stage across the internet, and SLA is not guaranteed. In case of access failure, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1) for assistance.
+>- IPv6 implementations are still at the preliminary stage across the internet, and SLA is not guaranteed. In case of access failure, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1) for assistance.
 
 CLB supports creating IPv6 NAT64 CLB instances. Tencent Cloud will assign an IPv6 public IP address, i.e., VIP of the IPv6 edition, to an instance, and the VIP will forward requests from IPv6 clients to the real IPv4 CVM instance.
 
 ## IPv6 NAT64 CLB Instance Overview
-An IPv6 NAT64 CLB instance is a load balancer implemented based on the IPv6 NAT64 transition technology. Through an IPv6 NAT64 CLB instance, real servers can be quickly accessed by IPv6 users without any IPv6 modification required.
+An IPv6 NAT64 CLB instance is a load balancer implemented based on the IPv6 NAT64 bridge technology. Through an IPv6 NAT64 CLB instance, real servers can be quickly accessed by IPv6 users without any IPv6 modification required.
 
 ## IPv6 NAT64 CLB Architecture
 The IPv6 NAT64 CLB architecture is as shown below.
