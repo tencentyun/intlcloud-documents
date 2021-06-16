@@ -13,9 +13,7 @@ To verify the result, in this example, Apache is deployed on both `rs-1` and `rs
 ## Purchasing Classic CLB Instance
 1. Log in to Tencent Cloud's official website and go to the [CLB purchase page](https://buy.cloud.tencent.com/lb).
 2. In this example, select **Guangzhou** as the region, which is the same as that of the CVM instances. Select **Classic** as the instance type, **Public Network** as the network attribute, and **Default-VPC (Default)** as the network and enter "clb-test" as the instance name.
-3. Click **Buy Now** and make the payment.
-For more information on CLB instances, please see [Product Attribute Selection](https://intl.cloud.tencent.com/document/product/214/13629).
-![](https://main.qcloudimg.com/raw/ac33c0df204af3b6aaa606c68fc2be62.png)
+3. Click **Buy Now** and make the payment. For more information on CLB instances, please see [Product Attribute Selection](https://intl.cloud.tencent.com/document/product/214/13629).
 4. On the "CLB Instance List" page, select the corresponding region to view the instance just created.
 ![](https://main.qcloudimg.com/raw/183ac407a68c4aafe440aa2c111a154e.png)
 
@@ -54,7 +52,7 @@ After configuring a security group, you can choose to enable or disable "Allow T
 
 ### Method 1. Enable "Allow Traffic by Default in Security Group"
 >?This feature is currently in beta test. To try it out, please submit a ticket for application. This feature is not supported for classic private network CLB.
-
+>
 For detailed directions, please see [Configuring CLB Security Group](https://intl.cloud.tencent.com/document/product/214/14733).
 
 
