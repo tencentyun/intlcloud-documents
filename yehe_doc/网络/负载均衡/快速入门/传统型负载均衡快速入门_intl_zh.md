@@ -13,9 +13,7 @@
 ## 购买传统型负载均衡实例
 1. 登录腾讯云 [负载均衡服务购买页](https://buy.cloud.tencent.com/lb)。
 2. 本例地域选择与云服务器相同的【广州】，实例类型选择【传统型】，网络属性选择【公网】，网络选择【Default-VPC（默认）】，实例名称填写“clb-test”。
-3. 单击【立即购买】，完成付款。
-有关负载均衡实例的更多内容，请参见 [产品属性选择](https://intl.cloud.tencent.com/document/product/214/13629) 。
-![](https://main.qcloudimg.com/raw/ac33c0df204af3b6aaa606c68fc2be62.png)
+3. 单击【立即购买】，完成付款。有关负载均衡实例的更多内容，请参见 [产品属性选择](https://intl.cloud.tencent.com/document/product/214/13629) 。
 4. 在“CLB 实例列表”页，选择对应的地域即可看到新建的实例。
 ![](https://main.qcloudimg.com/raw/183ac407a68c4aafe440aa2c111a154e.png)
 
@@ -53,8 +51,8 @@
 安全组配置完成后，您可以选择开启或关闭安全组默认放通，不同选择配置如下所示。
 
 ### 方法一：开启安全组默认放通
->?目前该功能处于内测阶段，如果您需要体验该功能，请提交 [内测申请](https://cloud.tencent.com/apply/p/njj5tl4a5j)。传统型内网负载均衡不支持安全组默认放通功能。
-
+>?目前该功能处于内测阶段，如果您需要体验该功能，请提交内测申请]。传统型内网负载均衡不支持安全组默认放通功能。
+>
 具体操作请参考 [配置安全组默认放通](https://intl.cloud.tencent.com/document/product/214/14733)。
 
 
