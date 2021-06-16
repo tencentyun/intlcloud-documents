@@ -7,7 +7,7 @@ This document describes how to clear the data of an instance in the TencentDB fo
 
 ## Directions
 
-1. Log in to the [Redis Console](https://console.cloud.tencent.com/redis) and click a instance name in the instance list to enter the instance details page.
+1. Log in to the [Redis Console](https://console.cloud.tencent.com/redis) and click an instance ID in the instance list to enter the instance details page.
 2. On the instance details page, click **Clear Instance** in the upper-right corner.
 ![](https://main.qcloudimg.com/raw/9b5c4b5f4a344e1d62dbc2498f5aa53b.png)
 3. In the pop-up dialog box, enter the instance password and click **OK**.
