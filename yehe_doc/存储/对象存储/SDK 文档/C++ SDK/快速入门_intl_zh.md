@@ -83,10 +83,10 @@ make
 make install
 ```
 
-> 您可以通过修改 CMakeList.txt 文件，指定本地 Boost 头文件路径，修改如下语句： 
+> ? 您可以通过修改 CMakeList.txt 文件，指定本地 Boost 头文件路径，修改如下语句： 
 >```
->SET(BOOST_HEADER_DIR "/root/boost_1_61_0")
->```
+SET(BOOST_HEADER_DIR "/root/boost_1_61_0")
+```
 
 #### 5. 编译 COS CPP SDK 
 
