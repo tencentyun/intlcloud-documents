@@ -1,6 +1,5 @@
 ## Symptoms
 After the SSL certificate is deployed on the server, using HTTPS to access pages is slow, the page is blank, or “This page can’t be reached” is displayed, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/74298fce54bbfa824f0af5ca74c95951.png)
 
 ## Possible Causes
 - **Port 443 is closed on the server firewall**: If port 443 is closed, you may not be able to access pages over HTTPS normally. In this case, please open port 443 on the server and then retry.
