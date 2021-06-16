@@ -40,7 +40,6 @@ vim  /etc/nginx/nginx.conf
  - ISP Type: BGP.
  - Network: please select a VPC and subnet that have already obtained IPv6 CIDR.
 3. Select respective configuration items on the purchase page and click **Buy Now**.
-![](https://main.qcloudimg.com/raw/ccba9b3d7710815907210113364c4274.png)
 4. On the "CLB Instance List" page, select the corresponding region to view the instance just created.
 ![](https://main.qcloudimg.com/raw/f53a0d3da88b82071960522de6c2fdb8.png)
 
