@@ -12,7 +12,7 @@
 
 <span id="41"></span>
 ### TcaplusDB 支持数据淘汰吗？
-TcaplusDB 支持表级别数据淘汰，淘汰的依据是记录最后的写时间；TcaplusDB 支持基于 key 的数据淘汰，如果您有需要，请 [提交工单](https://console.cloud.tencent.com/workorder/category)  选择“其他腾讯云产品”申请。
+TcaplusDB 支持表级别数据淘汰，淘汰的依据是记录最后的写时间。
 
 <span id="43"></span>
 ### TcaplusDB 的数据结构有哪些？
