@@ -29,7 +29,7 @@ vim /usr/share/nginx/html/index.html
 Hello nginx , This is rs-1!
 URL is index.html
 ```
-![](https://main.qcloudimg.com/raw/02e833dd08a6873d5d015f4531d24645.png)
+  ![](https://main.qcloudimg.com/raw/02e833dd08a6873d5d015f4531d24645.png)
    3. Press "Esc" and enter `:wq` to save the change.
 4. CLB (formerly "Application CLB") can forward requests according to the real server path and deploy a static page in the `/image` path. Relevant operations are as follows:
    1. Run the following commands to create and enter an `image` directory:
@@ -47,8 +47,7 @@ Hello nginx , This is rs-1!
 URL is image/index.html
 ```
    4. Press "Esc" and enter `:wq` to save the change.
- 
->The default port of Nginx is `80`. To change the port, please modify the configuration file and restart Nginx.
+>!The default port of Nginx is `80`. To change the port, please modify the configuration file and restart Nginx.
 
 ## Verifying the Nginx Service
 Access the public IP and path of your CVM instance. If the deployed static page is displayed, Nginx has been successfully deployed.
