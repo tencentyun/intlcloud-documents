@@ -11,8 +11,8 @@
 
 ## 操作步骤
 ### 设置维护时间
-1. 登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在实例列表，单击实例名或“操作”列的【管理】，进入实例详情页面。
-2. 在“维护信息”处，单击【修改】。
+1. 登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在实例列表，单击实例 ID 或“操作”列的【管理】，进入实例详情页面。
+2.在实例详情页的“维护信息”处，单击【修改】。
 ![](https://main.qcloudimg.com/raw/141ecd7d3a0ce63ac514aa6c8b4a530f.png)
 3. 在弹出的对话框，选择您所需的“维护周期”和“维护时间”，单击【确定】即可完成实例维护信息设置。
 ![](https://main.qcloudimg.com/raw/d3cdb9e92661e4cdf11bec5861bfb53d.png)
