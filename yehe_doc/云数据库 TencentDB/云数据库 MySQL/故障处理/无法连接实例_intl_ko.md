@@ -3,7 +3,7 @@
 - [현상1](id:xz1): CVM에서 TencentDB for MySQL에 로그인 시 연결 실패
 - [현상2](id:xz2): 로컬 PC에서 TencentDB for MySQL에 로그인 시 연결 실패
 - [현상3](id:xz3): 데이터베이스 관리 콘솔 플랫폼에서 TencentDB for MySQL에 로그인 시 연결 실패
-![](https://main.qcloudimg.com/raw/f4ab12f5989b79ba88f309ed7a79f389.png)
+
 
 ## 예상 원인
 <table>
@@ -73,7 +73,7 @@ TencentDB for MySQL 콘솔에서 [원클릭 연결 진단 툴](#step1)을 제공
 <td>MySQL 보안 그룹 정책</td>
 <td>MySQL 인스턴스에 바인딩된 보안 그룹의 <strong>인바운드 규칙</strong>이 IP 포트를 개방하지 않았습니다. <a href="#maqzpzyw">MySQL 보안 그룹 설정 오류</a>를 참조하여 인바운드 규칙을 개방하십시오.</td></tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/ae30ffd0f9df350e1360ed3f870ff441.png">
+
    - 공인 네트워크 진단의 진단 항목 및 권장 처리 방법은 다음과 같습니다.
 <table>
 <thead><tr><th>진단 항목</th><th>오류 및 처리 방법</th></tr></thead>
@@ -83,7 +83,7 @@ TencentDB for MySQL 콘솔에서 [원클릭 연결 진단 툴](#step1)을 제공
 <td>공인 네트워크 활성화 상태</td>
 <td>MySQL 인스턴스에 공인 네트워크가 활성화되어 있지 않습니다. <a href="https://intl.cloud.tencent.com/document/product/236/37788">공인 네트워크 활성화</a>를 참조하십시오.</td></tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/502f00b7c8913baf52c9548a525c9772.png">
+
 
 #### [2단계: 툴 진단으로 문제를 해결하지 못한 경우 참고할 수 있는 원인](id:step2)
 [**비밀번호 오류**](id:mmwt)
@@ -172,7 +172,7 @@ CVM을 사용해 MySQL에 연결하려면 CVM의 보안 그룹에 아웃바운�
 ## 부록2
 ### [내부/공인 네트워크 판단 방법](id:nwwpdff)
 [MySQL 콘솔](https://console.cloud.tencent.com/cdb)에 로그인한 후, 인스턴스 리스트에서 인스턴스 이름을 클릭하면 인스턴스 상세 페이지에서 내부/공인 네트워크 주소를 조회할 수 있습니다.
-![](https://main.qcloudimg.com/raw/d46ec355dc10b9435c28c215db2e5444.png)
+
 
 ### [네트워크 유형/VPC 판단 방법](id:wllxvpdff)
 내부 네트워크 주소를 통한 CDB 연결 시 CVM과 MySQL은 동일한 계정이어야 하며, 동일한 VPC(동일한 리전 보장) 또는 동일한 기본 네트워크에 있어야 합니다.
