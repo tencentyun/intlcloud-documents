@@ -28,7 +28,7 @@ Podfile 파일을 편집하고 필요에 따라 적합한 SDK 버전을 선택�
  platform: ios, '8.0'
   
   target 'App' do
-  pod 'TXLiteAVSDK_TRTC', :podspec => 'http://pod-1252463788.cosgz.myqcloud.com/liteavsdkspec/TXLiteAVSDK_TRTC.podspec'
+  pod 'TXLiteAVSDK_TRTC', :podspec => 'https://liteav.sdk.qcloud.com/pod/liteavsdkspec/TXLiteAVSDK_TRTC.podspec'
   end
 ```
 
@@ -37,7 +37,7 @@ Podfile 파일을 편집하고 필요에 따라 적합한 SDK 버전을 선택�
  platform: ios, '8.0'
   
   target 'App' do
-  pod 'TXLiteAVSDK_Professional', :podspec => 'http://pod-1252463788.cosgz.myqcloud.com/liteavsdkspec/TXLiteAVSDK_Professional.podspec'
+  pod 'TXLiteAVSDK_Professional', :podspec => 'https://liteav.sdk.qcloud.com/pod/liteavsdkspec/TXLiteAVSDK_Professional.podspec'
   end
 ```
 
