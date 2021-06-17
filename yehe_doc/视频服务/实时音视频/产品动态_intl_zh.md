@@ -764,7 +764,7 @@ Android：<ul style="margin:0">
 <tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th>  <th width="15%">发布时间</th>  <th width="15%">相关文档</th>  </tr> 
 <tr>      
          <td>SDK Version 6.2 版本发布</td>   
-         <td>Windows：<ul style="margin:0;"><li>TRTCCloud 类改为纯虚接口 ITRTCCloud，支持通过 LoadLibirary 动态加载 DLL。</li>
+         <td>Windows：<ul style="margin:0;"><li>TRTCCloud 类改为纯虚接口 ITRTCCloud，支持通过 LoadLibrary 动态加载 DLL。</li>
      <li>增加音频数据回调 ITRTCAudioFrameCallback。</li>
      <li>优化 camera 兼容性及采集性能。</li></ul><br>
      Android、iOS、Mac、Windows：<ul style="margin:0;"><li>增加跨房间通话能力 connectOtherRoom，即已存在的两个 TRTC 房间可以相互连通，该功能可用于直播间中的主播 PK 功能。</li>
