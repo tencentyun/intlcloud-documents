@@ -4,7 +4,7 @@
 
 如果您需要在清单投递成功后收到通知，可以在 [云函数](https://console.cloud.tencent.com/scf) 控制台上配置 COS 触发器，设置事件类型为【完成文件清单报告投递事件】。
 
-![](https://main.qcloudimg.com/raw/cfb17f03a9d103911a414ef8ec09a713.png)
+
 
 ### 如何分析清单文件报告？
 
