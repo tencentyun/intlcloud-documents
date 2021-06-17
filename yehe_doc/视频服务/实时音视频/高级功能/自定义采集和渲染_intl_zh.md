@@ -111,7 +111,7 @@ texture 需要向 TRTC SDK 中传递 OpenGL 纹理，为了保证该方案能够
 <tbody>
 
 <tr><td>LocalVideoShareActivity.java</td>
-<td>演示如何通过 TRTCloud 的 sendCustomVideoData 函数向 SDK 投喂视频纹理以及 通过 TRTCloud 的 sendCustomAudioData 函数向 SDK 投喂音频数据。</td>
+<td>演示如何通过 TRTCCloud 的 sendCustomVideoData 函数向 SDK 投喂视频纹理以及 通过TRTCCloud 的 sendCustomAudioData 函数向 SDK 投喂音频数据。</td>
 </tr><tr>
 
 <tr><td>Utils.java</td>
