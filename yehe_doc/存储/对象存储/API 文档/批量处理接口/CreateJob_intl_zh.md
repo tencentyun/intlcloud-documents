@@ -1,6 +1,6 @@
 ## 功能描述
 
-CreateJob 用于在存储桶中创建批量处理任务。详细信息可参见 [批量处理概述](https://cloud.tencent.com/document/product/436/38601)。
+CreateJob 用于在存储桶中创建批量处理任务。详细信息可参见 [批量处理概述](https://intl.cloud.tencent.com/document/product/436/32958)。
 
 调用该请求时，请确保您有足够的权限对存储桶的对象进行操作。存储桶所有者默认拥有该权限，若您无该项权限，请先向存储桶所有者申请该项操作的权限。
 
@@ -23,7 +23,7 @@ x-cos-appid: <APPID>
 </CreateJobRequest>
 ```
 
->?Authorization: Auth String（详情请参见 [请求签名](https://cloud.tencent.com/document/product/436/7778) 文档）。
+>?Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 
 #### 请求参数
 
@@ -34,7 +34,7 @@ x-cos-appid: <APPID>
 | x-cos-appid | 用户的 APPID，长度为1 - 64字节。 | 是       |
 
 #### 请求头
-此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://cloud.tencent.com/document/product/436/7728) 文档。
+此接口仅使用公共请求头部，详情请参见 [公共请求头部](https://intl.cloud.tencent.com/document/product/436/7728) 文档。
 
 #### 请求体
 用户在请求体中使用 XML 语言设置清单任务的具体配置信息。配置信息包括清单任务分析的对象，分析的频次，分析的维度，分析结果的格式及存储的位置等信息。
@@ -130,7 +130,7 @@ x-cos-appid: <APPID>
 </CreateJobRequest>
 ```
 
-请求体内相关元素的具体描述如下。其他元素请参见 [批量处理功能公共元素](https://cloud.tencent.com/document/product/436/38607)。
+请求体内相关元素的具体描述如下。其他元素请参见 [批量处理功能公共元素](https://intl.cloud.tencent.com/document/product/436/33786)。
 
 
 
@@ -139,8 +139,8 @@ x-cos-appid: <APPID>
 | ClientRequestToken   | CreateJobRequest | 每个请求唯一的 token，用于避免前端重复发起同一批处理任务。长度为1 - 64字节，建议使用 uuid。 | String           | 是       |
 | ConfirmationRequired | CreateJobRequest | 是否在执行任务前进行确认。默认值为 false。                   | Boolean          | 否       |
 | Description          | CreateJobRequest | 任务描述。若您在创建任务时配置了此信息，则会返回该项内容。描述长度范围为0 - 256字节。 | String           | 否       |
-| Manifest             | CreateJobRequest | 待处理的对象清单。您需要将待处理的对象记录在此对象清单内。   | Manifest Object  | 是       |
-| Operation            | CreateJobRequest | 选择对清单文件中的对象将要执行的操作。目前 COS 支持批量复制对象、批量恢复归档等操作，您可以据此处理存储桶内的存量数据。 | Operation Object | 是       |
+| Manifest             | CreateJobRequest | 待处理的对象清单。您需要将待处理的对象记录在此对象清单内。您可以使用 [清单功能](https://intl.cloud.tencent.com/document/product/436/30624) 生成文件清单。   | Manifest Object  | 是       |
+| Operation            | CreateJobRequest | 选择对清单文件中的对象将要执行的操作。目前 COS 支持 [批量复制对象](https://intl.cloud.tencent.com/document/product/436/32960)、[批量恢复归档](https://intl.cloud.tencent.com/document/product/436/34075) 等操作，您可以据此处理存储桶内的存量数据。 | Operation Object | 是       |
 | Priority             | CreateJobRequest | 任务优先级。越高的数值代表此项任务的优先级越高。优先级数值范围为0 - 2147483647。 | Integer          | 是       |
 | Report               | CreateJobRequest | 任务完成报告。您可配置此参数以在任务完成时输出报告，方便审计任务执行状况。 | Report Object    | 是       |
 | RoleArn              | CreateJobRequest | COS 资源标识符，此处用于标识您创建的角色。您需要此资源标识符以验证您的身份。 | String           | 是       |
@@ -149,7 +149,7 @@ x-cos-appid: <APPID>
 
 **响应头**
 
-此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://cloud.tencent.com/document/product/436/7729) 文档。
+此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/436/7729) 文档。
 
 **响应体**
 
@@ -167,7 +167,7 @@ x-cos-appid: <APPID>
 
 **错误分析**
 
-该请求操作可能会出现如下错误信息。其他错误请参见 [批量处理功能错误响应](https://cloud.tencent.com/document/product/436/38610)。
+该请求操作可能会出现如下错误信息。其他错误请参见 [批量处理功能错误响应](https://intl.cloud.tencent.com/document/product/436/33787)。
 
 | 错误代码           | 描述                                       | 状态码 | API       |
 | ------------------ | ------------------------------------------ | ------ | --------- |
@@ -247,4 +247,3 @@ x-cos-request-id: NWRmYmJhYmRfMjViMjU4NjRfNmIzYV8xMDE2****
 	<JobId>53dc6228-c50b-46f7-8ad7-65e7159f1aae</JobId>
 </CreateJobResult>
 ```
-
