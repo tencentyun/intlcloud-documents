@@ -15,7 +15,7 @@ You need to [create a CLB instance](http://intl.cloud.tencent.com/document/produ
 ![](https://main.qcloudimg.com/raw/31f6e12c1520d3cb4759b8e063bcdb40.png)
 
 ### Step 2. Configure a listener
-Click **Create** in **TCP/UDP Listener** and configure a TCP listener in the pop-up window.
+Click **Create** in **TCP/UDP/TCP SSL Listener** and configure a TCP listener in the pop-up window.
 #### 1. Basic configuration
 <table>
 <thead>
