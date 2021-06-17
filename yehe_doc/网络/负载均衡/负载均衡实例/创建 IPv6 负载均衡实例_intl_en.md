@@ -22,7 +22,6 @@ An IPv6 CLB instance can support IPv6 public network user's quick access and com
 The IPv6 CLB architecture is as shown below.
 ![](https://main.qcloudimg.com/raw/d86205a385506928dc13ef9646a91243.png)
 
-
 ## Operation Guide
 ### Step 1. Create an IPv6 CLB instance
 1. Log in to the Tencent Cloud's official website and enter the [CLB purchase page](https://buy.cloud.tencent.com/lb).
@@ -33,7 +32,6 @@ The IPv6 CLB architecture is as shown below.
  - ISP Type: BGP.
  - Network: please select a VPC and subnet that have already obtained IPv6 CIDR.
 3. After setting the configuration items on the purchase page, click **Buy Now** to return to the [CLB instance list page](https://console.cloud.tencent.com/loadbalance/index?rid=1&forward=1), where you can view the IPv6 CLB instance you just purchased.
-![](https://main.qcloudimg.com/raw/fa0f2f76d7457086d2b11ce69b76b8a7.png)
 
 ### Step 2. Create an IPv6 CLB listener
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3) and click the IPv6 CLB instance ID to enter the details page.
