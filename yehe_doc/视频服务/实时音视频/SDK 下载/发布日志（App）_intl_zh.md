@@ -14,7 +14,7 @@
 -  全平台：新增播片功能，您可以使用 [TXVodPlayer](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#classcom_1_1tencent_1_1rtmp_1_1TXVodPlayer) 与 TRTCCloud 绑定，把点播正在播放的内容通过 TRTC 的辅路推流分享出去。
 -  全平台：新增辅路自定义采集，请参见 API [sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#aeeff994b8a298fa4948a11225312f629)。
 -  全平台：新增自定义混音功能，您可以将自己的一路音轨混入 SDK 的音频处理流程中，SDK 会先将两路音轨混合后再一起发布出去，请参见 API [mixExternalAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a6d04ce887009661a551e23c61d41571f)。
--  全平台：支持指定纯视频混流，混流控制更灵活。
+-  支持指定纯视频混流”改为“支持只混视频流。
 
 **质量优化**
 - Mac：startSystemAudioLoopback 支持双声道。
