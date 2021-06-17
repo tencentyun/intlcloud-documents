@@ -7,9 +7,9 @@
 
 ## 支持的平台
 
-| iOS | Android | Mac OS | Windows | Electron|微信小程序 | Chrome 浏览器|
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| &#10003; |  &#10003; | &#10003; | &#10003; | &#10003;    | ×  | ×  |
+| iOS | Android | Mac OS | Windows | Electron | Chrome 浏览器|
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| &#10003; |  &#10003; | &#10003; | &#10003; | &#10003; | &#10003; 参考：[Web 端教程](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-24-advanced-network-quality.html)  |
 
 ## 测速的原理
 
@@ -37,7 +37,7 @@
 
 
 <dx-codeblock>
-::: Objective-C Objective-C
+``` Objective-C Objective-C
 // 启动网络测速的示例代码, 需要 sdkAppId 和 UserSig，(获取方式参考基本功能)
 // 这里以登录后开始测试为例
 - (void)onLogin:(NSString *)userId userSig:(NSString *)userSid 
@@ -50,7 +50,7 @@
                        NSLog(@"速度测试(第%d次/共%d次) %@", (int)completedCount, (int)totalCount, result);
                    }];
 }
-:::
+```
 ::: Java Java
 //启动网络测速的示例代码, 需要 sdkAppId 和 UserSig，(获取方式参考基本功能)
 // 这里以登录后开始测试为例
