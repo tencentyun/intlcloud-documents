@@ -8,7 +8,7 @@ CVM은 CPU, 메모리, 디스크, 네트워크, 보안 등 모든 리소스의 �
 Tencent Cloud에서는 CVM의 설정과 관리를 위해 다음과 같은 방식을 제공합니다.
 - **콘솔**: Tencent Cloud에서 제공하는 웹서비스 인터페이스로 CVM을 설정하고 관리하는 데 사용됩니다.
 - **API**: Tencent Cloud는 간편한 CVM 관리를 위해 API 인터페이스를 제공합니다. API에 대한 설명은 [API 개요](https://intl.cloud.tencent.com/document/api/213/15689)를 참조하십시오.
-- **SDK**: [SDK 프로그래밍](https://intl.cloud.tencent.com/document/494)이나 Tencent Cloud [TCCLI](https://intl.cloud.tencent.com/document/product/1013)를 사용해 CVM API를 호출할 수 있습니다.
+- **SDK**: [SDK 프로그래밍](https://intl.cloud.tencent.com/document/product/494)이나 Tencent Cloud [TCCLI](https://intl.cloud.tencent.com/document/product/1013)를 사용해 CVM API를 호출할 수 있습니다.
 
 ## 관련 개념
 
