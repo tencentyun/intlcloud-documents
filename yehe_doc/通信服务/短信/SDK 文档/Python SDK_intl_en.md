@@ -1,4 +1,4 @@
-SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use all [SMS APIs](https://intl.cloud.tencent.com/document/product/382/40463) through the SDK. The new SDK version is unified and features the same SDK usage, API call methods, error codes, and returned packet formats for different programming languages.
+SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use all [SMS APIs](https://intl.cloud.tencent.com/document/product/382/34689) through the SDK. The new SDK version is unified and features the same SDK usage, API call methods, error codes, and returned packet formats for different programming languages.
 >!
 >- SMS sending APIs
 >One message can be sent to up to 200 numbers at a time.
@@ -9,7 +9,7 @@ SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use a
 
 ## Prerequisites
 
-- You have activated SMS. For detailed directions, please see [Getting Started with Mainland China SMS](https://intl.cloud.tencent.com/document/product/382/35449).
+- You have activated SMS. For detailed directions, please see [Getting Started with Mainland China SMS](https://intl.cloud.tencent.com/document/product/382/34689).
 - If you need to send Mainland China SMS messages, you need to purchase a Mainland China SMS package first.
 - You have prepared the dependent environment: Python v2.7–3.6.
 - You have obtained the `SecretID` and `SecretKey` on the **[API Key Management](https://console.cloud.tencent.com/cam/capi)** page in the CAM console.
@@ -187,7 +187,7 @@ try:
     req.SessionContext = "xxx"
     # `senderid` for Global SMS, which is not activated by default. If you need to activate it, please contact [SMS Helper] for assistance. This parameter should be left empty for Mainland China SMS
     req.SenderId = ""
-    # Target mobile number in the e.164 standard (+[country/region code][mobile number])
+    # Target mobile number in the E.164 standard (+[country/region code][mobile number])
     # Example: +8613711112222, which has a + sign followed by 86 (country/region code) and then by 13711112222 (mobile number). Up to 200 mobile numbers are supported
     req.PhoneNumberSet = ["+8613711112222", "+8613711333222", "+8613711144422"]
     # Template ID. You must enter the ID of an approved template, which can be viewed in the [SMS console]
