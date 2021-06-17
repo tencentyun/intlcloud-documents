@@ -31,7 +31,6 @@ Tencent Cloud IPv6 NAT64 CLB has the following advantages when helping your busi
  - Network: VPC.
  - Other configurations are the same as general instance configurations.
 3. After setting the configuration items on the purchase page, click **Buy Now** to return to the [CLB instance list page](https://console.cloud.tencent.com/loadbalance/index?rid=1&forward=1), where you can view the IPv6 NAT64 CLB instance you just purchased.
-![](https://main.qcloudimg.com/raw/e06daecb599c6ea61cde9f2eba50baa9.png)
 
 ### Using IPv6 NAT64 CLB
 Log in to the [CLB Console](https://console.cloud.tencent.com/loadbalance/index?rid=1&forward=1) and click an instance ID to enter the details page. On the "Listener Management" tab, you can configure listeners and forwarding rules and bind CVM instances. For more information, please see [Getting Started with CLB](https://intl.cloud.tencent.com/document/product/214/8975).
