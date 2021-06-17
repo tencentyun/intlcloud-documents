@@ -25,7 +25,7 @@
 ### 3단계: Demo 프로그램 파일 설정
 
 1. 설정 변경 페이지로 들어가서 다운로드한 소스 패키지에 적합한 개발 환경을 선택합니다.
-2. `LiteAVSDK_TRTC_Android 버전/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java` 파일을 찾아 엽니다.
+2. `Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java` 파일을 찾아 엽니다.
 3. `GenerateTestUserSig.java` 파일에서 관련 매개변수를 설정합니다.
 	<ul>
 	<li/>SDKAPPID: PLACEHOLDER로 기본 설정되어 있으며, 실제 SDKAppID로 설정하십시오.
