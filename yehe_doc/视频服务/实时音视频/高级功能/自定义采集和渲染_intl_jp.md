@@ -108,10 +108,10 @@ textureはTRTC SDKにOpenGLテクスチャを渡す必要があります。こ�
 <table><thead><tr><th>ファイル名</th><th>ソースコードロジック</th></tr></thead>
 <tbody>
 <tr><td>TestSendCustomData.java</td>
-<td>TRTCloudのsendCustomVideoData関数を介して、SDKにビデオテクスチャをフィードする方法を示します。</td>
+<td>TRTCCloudのsendCustomVideoData関数を介して、SDKにビデオテクスチャをフィードする方法を示します。</td>
 </tr><tr>
 <td>TestRenderVideoFrame.java</td>
-<td>TRTCloudのオリジナルのレンダリングロジックをスキップして、自身でOpenGLを使用して画面をレンダリングする方法を示します。</td>
+<td>TRTCCloudのオリジナルのレンダリングロジックをスキップして、自身でOpenGLを使用して画面をレンダリングする方法を示します。</td>
 </tr><tr>
 <td>VideoFrameReader.java</td>
 <td>ローカルのビデオファイルから、1フレームずつ画面を読み取ります。</td>
