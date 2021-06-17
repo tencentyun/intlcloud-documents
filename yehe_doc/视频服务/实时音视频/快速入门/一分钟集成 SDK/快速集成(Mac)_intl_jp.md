@@ -30,7 +30,7 @@ Podfile ファイルを編集します。次の2種類の設定方法があり�
 	platform :osx, '10.10'
 
 	target 'Your Target' do
-	pod 'TXLiteAVSDK_TRTC_Mac', :podspec => 'http://pod-1252463788.cosgz.myqcloud.com/liteavsdkspec/TXLiteAVSDK_TRTC_Mac.podspec'
+	pod 'TXLiteAVSDK_TRTC_Mac', :podspec => 'https://liteav.sdk.qcloud.com/pod/liteavsdkspec/TXLiteAVSDK_TRTC_Mac.podspec'
 	end
 ```
 
