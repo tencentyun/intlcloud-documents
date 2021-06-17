@@ -60,13 +60,13 @@ Refer to [Creating a CLB Instance](https://intl.cloud.tencent.com/document/produ
 **Use case:**
 
 - Creating a NAT64 IPv6 instance
-  `service.kubernetes.io/service.extensiveParameters: '{"AddressIPVersion":"IPV6"}'`
+  `kubernetes.io/ingress.extensiveParameters: '{"AddressIPVersion":"IPV6"}'`
 - Creating an IPv6 Instance
-  `service.kubernetes.io/service.extensiveParameters: '{"AddressIPVersion":"IPv6FullChain"}'`
+  `kubernetes.io/ingress.extensiveParameters: '{"AddressIPVersion":"IPv6FullChain"}'`
 - Purchasing a CTCC CLB
-  `service.kubernetes.io/service.extensiveParameters: '{"VipIsp":"CTCC"}'`
+  `kubernetes.io/ingress.extensiveParameters: '{"VipIsp":"CTCC"}'`
 - Specifying a availability zone to create
-  `service.kubernetes.io/service.extensiveParameters: '{"ZoneId":"ap-guangzhou-1"}'`
+  `kubernetes.io/ingress.extensiveParameters: '{"ZoneId":"ap-guangzhou-1"}'`
 :::
 ::: kubernetes.io/ingress.subnetId
 **Note:**
@@ -77,9 +77,9 @@ This annotation is used to specify the creation of a private network CLB, and sp
 ::: kubernetes.io/ingress.existLbId
 **Note:**
 This annotation is used to specify the use of the existing CLB as the entry resource of the access layer.
-<dx-alert infotype="notice" title="">
-When using an existing CLB, you need to ensure that it does not include other listeners.
-</dx-alert>
+
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note</p><p>When using an existing CLB, you need to ensure that it does not include other listeners.</a></p></blockquote>
+
 
 **Use case:**
 `kubernetes.io/ingress.existLbId: "lb-342wppll"`
@@ -135,8 +135,8 @@ This annotation is used for Ingress cross-region binding, and is used to specify
 ::: ingress.cloud.tencent.com/cross-vpc-id
 **Note:**
 This annotation is used for Ingress cross-region binding, and is used to specify which VPC to access. It can be used together with `ingress.cloud.tencent.com/cross-region-id` annotation to specify the VPC of other region.
->! This annotation applies to the CLB created and managed by TKE. It is invalid for scenarios that use the existing CLB.
->
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note</p><p>This annotation applies to the CLB created and managed by TKE. It is invalid for scenarios that use the existing CLB.</a></p></blockquote>
+
 **Use case:**
 Creating CLB for remote access:
 `ingress.cloud.tencent.com/cross-region-id: "ap-guangzhou"`
