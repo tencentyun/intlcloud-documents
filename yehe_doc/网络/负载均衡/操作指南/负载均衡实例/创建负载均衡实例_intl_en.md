@@ -9,7 +9,6 @@ For the purchase method for bill-by-CVM accounts, please see [Purchase Methods](
 3. Select attributes as needed, including the network type and project. For attribute details, please see [Product Attribute Selection](https://intl.cloud.tencent.com/document/product/214/13629).
 >?Currently, the static single-line IP is supported only in Guangzhou, Shanghai, Nanjing, Jinan, Hangzhou, Fuzhou, Beijing, Shijiazhuang, Wuhan, Changsha, Chengdu, and Chongqing. For its support in other districts, please see the console. The feature is currently in beta, if you want to try it out, please submit an application. Once you are accepted, you can select an ISP (China Mobile, China Unicom, or China Telecom) on the purchase page.
 >
-![](https://main.qcloudimg.com/raw/907a33302d20a9b399067bee190a1d78.png)
 4. Confirm and pay for the selected CLB instance.
 5. CLB service will be activated once the payment completes. You can now configure and use the CLB instance.
 
