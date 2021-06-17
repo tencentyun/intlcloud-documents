@@ -1,4 +1,4 @@
-SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use all [SMS APIs](https://intl.cloud.tencent.com/document/product/382/34689) through the SDK. The new SDK version is unified and features the same SDK usage, API call methods, error codes, and returned packet formats for different programming languages.
+SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use all [SMS APIs](https://intl.cloud.tencent.com/document/product/382/40463) through the SDK. The new SDK version is unified and features the same SDK usage, API call methods, error codes, and returned packet formats for different programming languages.
 >!
 >- SMS sending APIs
 >One message can be sent to up to 200 numbers at a time.
@@ -17,7 +17,7 @@ SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use a
 - The endpoint of the SMS service is `sms.tencentcloudapi.com`.
 
 ## Relevant Documents
-- For more information on the APIs and their parameters, please see [API Documentation](https://intl.cloud.tencent.com/document/product/382/34689).
+- For more information on the APIs and their parameters, please see [API Documentation](https://intl.cloud.tencent.com/document/product/382/40463).
 - You can download the SDK source code [here](https://github.com/TencentCloud/tencentcloud-sdk-nodejs).
 
 ## Installing SDK
@@ -97,7 +97,7 @@ const params = {
   SenderId: "",
   /* User session content, which can carry context information such as user-side ID and will be returned as-is by the server */
   SessionContext: "",
-  /* Target mobile number in the e.164 standard (+[country/region code][mobile number])
+  /* Target mobile number in the E.164 standard (+[country/region code][mobile number])
    * Example: +8613711112222, which has a + sign followed by 86 (country/region code) and then by 13711112222 (mobile number). Up to 200 mobile numbers are supported */
   PhoneNumberSet: ["+8613711112222"],
   /* Template ID. You must enter the ID of an approved template, which can be viewed in the [SMS console] */
