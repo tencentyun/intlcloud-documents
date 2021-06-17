@@ -1,4 +1,4 @@
-SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use all [SMS APIs](https://intl.cloud.tencent.com/document/product/382/40463) through the SDK. The new SDK version is unified and features the same SDK usage, API call methods, error codes, and returned packet formats for different programming languages.
+SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use all [SMS APIs](https://intl.cloud.tencent.com/document/product/382/34689) through the SDK. The new SDK version is unified and features the same SDK usage, API call methods, error codes, and returned packet formats for different programming languages.
 
 >!
 >
@@ -21,7 +21,7 @@ SDK 3.0 is a companion tool for the TencentCloud API 3.0 platform. You can use a
 
 ## Relevant Documents
 
-- For more information on the APIs and their parameters, please see [API Documentation](https://intl.cloud.tencent.com/document/product/382/40463).
+- For more information on the APIs and their parameters, please see [API Documentation](https://intl.cloud.tencent.com/document/product/382/34689).
 - You can download the SDK source code [here](https://github.com/TencentCloud/tencentcloud-sdk-java).
 
 
@@ -265,7 +265,7 @@ public class SendSms
             String templateID = "400000";
             req.setTemplateID(templateID);
 
-            /* Target mobile number in the e.164 standard (+[country/region code][mobile number])
+            /* Target mobile number in the E.164 standard (+[country/region code][mobile number])
              * Example: +8613711112222, which has a + sign followed by 86 (country/region code) and then by 13711112222 (mobile number). Up to 200 mobile numbers are supported */
             String[] phoneNumbers = {"+8621212313123", "+8612345678902", "+8612345678903"};
             req.setPhoneNumberSet(phoneNumbers);
