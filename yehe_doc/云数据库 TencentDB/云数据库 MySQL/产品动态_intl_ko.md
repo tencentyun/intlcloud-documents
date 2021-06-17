@@ -1,4 +1,25 @@
 
+## 2021년 04월
+<table>
+<tr><th width=20%>업데이트 명칭</th><th width=50%>업데이트 설명</th><th width=10%>배포일</th><th width=20%>관련 문서</th></tr>
+<tbody>
+<tr>
+<td>데이터베이스 프록시 지원</td>
+<td>데이터베이스 프록시는 CDB 서비스와 애플리케이션 서비스 사이에 위치한 네트워크 프록시 서비스입니다. 애플리케이션 서비스가 CDB에 액세스할 때 발생하는 모든 요청을 중계하는 데 사용됩니다. <br>데이터베이스 프록시 액세스 주소는 기존의 데이터베이스 액세스 주소와 별개이며, 데이터베이스 프록시 주소의 요청을 통해 프록시 클러스터 내 데이터베이스의 마스터/슬레이브 노드에 액세스하여 읽기/쓰기를 분리하고, 읽기 요청을 읽기 전용 인스턴스에 전달해 마스터 데이터베이스의 부하를 낮춥니다.</td>
+<td>2021-04</td>
+<td><a href="https://cloud.tencent.com/document/product/236/54652" target="_blank">데이터베이스 프록시</a></td></tr>
+<tr>
+<td>binlog 사용 용량이 디스크 총 사용 용량에 포함된 내용에 대한 설명</td>
+<td>binlog의 입력 속도가 데이터베이스 실행 성능에 영향을 미칠 수 있습니다. TencentDB for MySQL의 성능 및 안정성 향상을 위해 TencentDB for MySQL에서 binglog 스토리지를 업그레이드합니다. 업그레이드가 완료되면 인스턴스 binlog의 스토리지 미디어가 고성능 SSD 디스크(사용자 인스턴스의 스토리지 용량)로 이동합니다.</td>
+<td>2021-04</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/40209" target="_blank">binlog 사용 용량이 디스크 총 사용 용량에 포함된 내용에 대한 설명</a></td></tr>
+<tr>
+<td>로컬 binlog 보관 주기 설정 지원</td>
+<td>TencentDB for MySQL은 콘솔을 통해 로컬 binlog 보관 주기 설정을 지원합니다.</td>
+<td>2021-04</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/236/40186" target="_blank">로컬 binlog 보관 설정</a></td></tr>
+</tbody></table>
+
 ## 2021년 03월
 <table>
 <tr><th width=20%>업데이트 명칭</th><th width=50%>업데이트 설명</th><th width=10%>배포일</th><th width=20%>관련 문서</th></tr>
@@ -151,7 +172,7 @@
 </tr>
 <tr>
 <td>슬로우 로그 및 오류 로그의 상세 내역 지원</td>
-<td>TencentDB for MySQL(기본 버전 미포함) 인스턴스는 작업 로그 관리 기능을 제공합니다. 콘솔의 작업 로그 페이지에서 인스턴스의 슬로우 로그 및 오류 로그의 상세 내역과 롤백 로그를 조회할 수 있으며 슬로우 로그를 다운로드할 수 있습니다.</td>
+<td>TencentDB for MySQL(기본 버전 미포함) 인스턴스는 작업 로그 관리 기능을 제공합니다. 콘솔의 작업 로그 페이지에서 인스턴스의 슬로우 로그 및 오류 로그 상세 내역과 롤백 로그를 조회할 수 있으며 슬로우 로그를 다운로드할 수 있습니다.</td>
 <td>2020-01</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/34588" target="_blank">작업 로그</a></td>
 </tr>
@@ -170,7 +191,7 @@
 </thead>
 <tbody><tr>
 <td>MySQL 백업 상용화 요금</td>
-<td>MySQL 인스턴스 백업이 제공된 용량을 초과하면 요금이 부과됩니다. 백업 상용화 후 데이터 압축, 백업의 안정성과 가용성이 크게 향상되고 백업의 보장성도 높아졌습니다. 사용자는 백업 보관 일수와 백업 빈도를 단축하여 백업 비용을 절감할 수 있습니다.</td>
+<td>MySQL 인스턴스 백업이 제공된 용량을 초과하면 요금이 부과됩니다. 백업 상용화 후 데이터 압축, 백업의 안정성과 가용성이 크게 향상되어 백업이 더욱 안전해졌습니다. 사용자는 백업 보관 일수와 백업 빈도를 줄여 백업 비용을 절감할 수 있습니다.</td>
 <td>2019-12</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/32344" target="_blank">백업 용량 요금 설명</a></td>
 </tr>
@@ -226,13 +247,13 @@
 </thead>
 <tbody><tr>
 <td>자동 백업의 백업 유형을 물리 백업으로 업그레이드</td>
-<td>TencentDB for MySQL은 자동 백업 이후 물리 백업만 지원합니다. 인벤토리 자동 백업이 로직 백업인 인스턴스는 계속해서 물리 백업으로 자동 전환됩니다. 로직 백업이 필요한 경우 TencentDB for MySQL 콘솔에서 수동 백업 기능 또는 API 호출로 로직 백업을 생성할 수 있습니다.</td>
+<td>TencentDB for MySQL은 자동 백업 이후 물리 백업만 지원합니다. 기존 저장 콘텐츠 자동 백업이 로직 백업인 인스턴스는 순차적으로 물리 백업으로 자동 전환됩니다. 로직 백업이 필요한 경우 TencentDB for MySQL 콘솔에서 수동 백업 기능 또는 API 호출로 로직 백업을 생성할 수 있습니다.</td>
 <td>2019-05</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/32340" target="_blank">백업 방식</a></td>
 </tr>
 <tr>
 <td>난징 1존 서버 오픈</td>
-<td>난징 1존 서버 오픈으로 TencentDB for MySQL은 화동 지역에서 상하이와 난징의 2개 리전을 보유하게 되었습니다.</td>
+<td>난징 1존 서버 오픈으로 TencentDB for MySQL은 화둥 지역에서 상하이와 난징의 2개 리전을 보유하게 되었습니다.</td>
 <td>2019-05</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/8458" target="_blank">리전과 가용존</a></td>
 </tr>
@@ -270,7 +291,7 @@
 </thead>
 <tbody><tr>
 <td>원클릭 연결 진단</td>
-<td>콘솔에서는 사용자가 내부/공인 네트워크 연결 문제를 빠르게 확인하고 해결할 수 있도록 원클릭 연결 진단 툴 및 적합한 솔루션을 제공합니다.</td>
+<td>콘솔에서는 사용자가 내부/외부 네트워크 연결 문제를 빠르게 확인하고 해결할 수 있도록 원클릭 연결 진단 툴 및 적합한 솔루션을 제공합니다.</td>
 <td>2019-02</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/31927" target="_blank">원클릭 연결 진단 툴</a></td>
 </tr>
@@ -337,8 +358,8 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>읽기 전용 인스턴스의 탄력적 규격 지원</td>
-<td>마스터 인스턴스와 동일한 규격일 필요가 없습니다.</td>
+<td>읽기 전용 인스턴스의 탄력적 사양 지원</td>
+<td>마스터 인스턴스와 동일한 사양이 아니어도 됩니다.</td>
 <td>2017-08</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/7270" target="_blank">읽기 전용 인스턴스</a></td>
 </tr>
@@ -368,7 +389,7 @@
 </tr>
 <tr>
 <td>데이터 구독 지원</td>
-<td>DTS는 사용자가 CDB의 실시간 증분 업데이트 데이터를 획득하도록 돕습니다. 사용자는 필요에 따라 증분 데이터를 소비합니다.</td>
+<td>DTS는 사용자가 CDB의 실시간 증분 업데이트 데이터를 획득하도록 돕습니다. 사용자는 비즈니스 요구사항에 따라 증분 데이터를 소비합니다.</td>
 <td>2017-08</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/571/8774" target="_blank">데이터 구독</a></td>
 </tr>
@@ -393,7 +414,7 @@
 </thead>
 <tbody><tr>
 <td>MySQL 5.7 지원</td>
-<td>MySQL 5.6 커널을 기반으로 MySQL 5.7(Percona 서브)이 추가되었습니다. MySQL 5.7 기능을 바탕으로 수평적 확장, 읽기/쓰기 분리 등 기존의 기능도 유지됩니다.</td>
+<td>MySQL 5.6 커널을 기반으로 MySQL 5.7(Percona 브랜치)이 추가되었습니다. MySQL 5.7 기능을 바탕으로 수평적 확장, 읽기/쓰기 분리 등 기존 기능도 유지됩니다.</td>
 <td>2017-06</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/31896" target="_blank">데이터베이스 버전</a></td>
 </tr>
