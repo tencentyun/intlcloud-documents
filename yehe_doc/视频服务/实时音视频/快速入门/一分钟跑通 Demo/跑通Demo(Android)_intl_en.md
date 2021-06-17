@@ -25,7 +25,7 @@ You have [signed up](https://intl.cloud.tencent.com/document/product/378/17985) 
 ### Step 3. Configure demo project files.
 
 1. In the **Modify Configuration** step, select the platform in line with the source package downloaded.
-2. Find and open `LiteAVSDK_TRTC_Android_version number/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java`.
+2. Find and open `Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java`.
 3. Set parameters in `GenerateTestUserSig.java` as follows.
 	<ul>
 	<li/>SDKAPPID: `PLACEHOLDER` by default. Set it to the actual `SDKAppID`.
