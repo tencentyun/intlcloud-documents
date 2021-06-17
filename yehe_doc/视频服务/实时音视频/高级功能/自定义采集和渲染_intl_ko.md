@@ -111,7 +111,7 @@ texture는 TRTC SDK에 OpenGL 텍스쳐를 전달해야 하며, 해당 방식이
 <tbody>
 
 <tr><td>LocalVideoShareActivity.java</td>
-<td>TRTCloud의 sendCustomVideoData 함수를 통해 SDK에 비디오 텍스쳐를 전달하고, TRTCloud의 sendCustomAudioData 함수를 통해 SDK에 오디오 데이터를 전달하는 방법의 예시입니다.</td>
+<td>TRTCCloud의 sendCustomVideoData 함수를 통해 SDK에 비디오 텍스쳐를 전달하고, TRTCCloud의 sendCustomAudioData 함수를 통해 SDK에 오디오 데이터를 전달하는 방법의 예시입니다.</td>
 </tr><tr>
 
 <tr><td>Utils.java</td>
