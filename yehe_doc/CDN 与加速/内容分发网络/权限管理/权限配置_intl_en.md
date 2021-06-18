@@ -13,11 +13,11 @@ CDN allows you to configure query and management policies for domain names at a 
 
 4. Enter the domain name to be authorized as the resource:
 	- For all domain names: check **All resources** and click **Confirm**.
-	![img](https://main.qcloudimg.com/raw/9ddd4b97828faeadd0063d0ede3283a0.png)
+
 	- For specific domain names: check **Specific Resources** and click **Add a 6-segment resource description**.
-	![img](https://main.qcloudimg.com/raw/05dd24c7e96e3ae6cd6aa2b9ee64641d.png)
+
 	In the pop-up window on the right, enter a domain name and click **Confirm**. You can repeat the operation to add multiple domain names.
-	![img](https://main.qcloudimg.com/raw/68715dd7708d3b79aac0d64ae713ae85.png)
+
 
 5. After the configuration is completed, click **Confirm** and **Next**. Associate the created policy with existing users or user groups, and finally click **Done** to grant them the permissions.
-![img](https://main.qcloudimg.com/raw/1232f5b90fa612ee32b560c83dd36c08.png)
+
