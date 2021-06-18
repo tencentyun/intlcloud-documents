@@ -14,7 +14,7 @@
 <li>Upgraded the API for binding accounts by adding multiple preset account types.
 <li>Added support for clearing notifications pushed through the Mi channel (devices of MIUI 11 and below) via the API for clearing all notifications.
 <li>Added support for badge display on HONOR mobile phones.</td>
-        <td>May 26, 2021</td><td><li>Because JCenter has been deprecated, you may encounter issues when pulling SDK dependencies. Please see <a href="https://cloud.tencent.com/document/product/548/56364">Android SDK Upgrade Guide</a> to configure the dependency repository mirror source.
+        <td>May 26, 2021</td><td><li>Because JCenter has been deprecated, you may encounter issues when pulling SDK dependencies. Please see Android SDK Upgrade Guide</a> to configure the dependency repository mirror source.
 <li>When using the new API for tag query, you need to add the implementation method <code>onQueryTagsResult</code> in the implementation class that inherits <code>XGPushBaseReceiver</code>.</td>
     </tr>
 <tr>
