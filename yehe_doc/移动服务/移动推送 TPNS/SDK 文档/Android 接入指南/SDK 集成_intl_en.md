@@ -54,25 +54,25 @@ dependencies {
 >- If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), please follow the step below to complete the configuration:
 >Add the following metadata in the `application` tag in the `AndroidManifest` file:
 >```
-><application>
->// Other Android components
-><meta-data
->android:name="XG_SERVER_SUFFIX"
->android:value="Domain names of other service access points" />
-></application>
->```
+<application>
+// Other Android components
+<meta-data
+android:name="XG_SERVER_SUFFIX"
+android:value="Domain names of other service access points" />
+</application>
 ```
 >The domain names of other service access points are as follows:
 >   - Shanghai: `tpns.sh.tencent.com`
 >   - Singapore: `tpns.sgp.tencent.com`
 >   - Hong Kong (China): `tpns.hk.tencent.com`
->  
+>
 
 #### Precautions
 
  - If the following notification pops up in Android Studio after you add the above-mentioned `abiFilter` configuration:
    "NDK integration is deprecated in the current plugin. Consider trying the new experimental plugin", then you need to add `android.useDeprecatedNdk=true` to the `gradle.properties` file in the project root directory.
  - If you need to listen for messages, please see the `XGPushBaseReceiver` API or the `MessageReceiver` class in the demo (in the SDK compression package, which can be obtained from the [SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload) page). You can inherit `XGPushBaseReceiver` and configure the following content in the configuration file (do not process time-consuming operations in the receiver):
+
 ​```xml
 <receiver android:name="com.tencent.android.xg.cloud.demo.MessageReceiver">
     <intent-filter>
@@ -273,13 +273,12 @@ You need to configure the permissions required by the TPNS SDK to operate proper
 > - If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), please follow the step below to complete the configuration:
 > Add the following metadata in the `application` tag in the `AndroidManifest` file:
 >```
-><application>
->// Other Android components
-><meta-data
->android:name="XG_SERVER_SUFFIX"
->android:value="Domain names of other service access points" />
-></application>
->```
+<application>
+// Other Android components
+<meta-data
+android:name="XG_SERVER_SUFFIX"
+android:value="Domain names of other service access points" />
+</application>
 ```
 >The domain names of other service access points are as follows:
 >   - Shanghai: `tpns.sh.tencent.com`
