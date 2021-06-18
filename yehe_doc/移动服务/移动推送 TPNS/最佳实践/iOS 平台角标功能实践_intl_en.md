@@ -13,9 +13,9 @@ This document describes iOS badge best practices. For Android badge adaptation, 
 For such a scenario, the badge number auto increase scheme is recommended. The process is as follows:
 **Step 1:** when a push task is created via the [push API](https://intl.cloud.tencent.com/document/product/1024/33764), set `badge_type` to `-2` to enable the application's badge number to automatically increase by 1.
 **Step 2:** when the application is started, call the "clearing the application's badge number and notification bar messages" method to clear the local badge number and notification bar messages. The implementation code is as follows:
-![](https://main.qcloudimg.com/raw/076ca2d56865d332b0821dca8ffcfdbb.png)
+
 **Step 3:** clear the badge number in the cloud. The implementation code is as follows:
-![](https://main.qcloudimg.com/raw/64bd9d0160d2a31bb60f70524c2f3e6e.png)
+
 **Step 4:** if the badge number in the cloud needs to be updated, call the following API to sync the badge value to the TPNS server, and the badge value will be used as the benchmark for the next push. For example, if the current TPNS server badge value is synchronized as N, then the application's badge value will be N+1 when the next push is received.
 ```
 //Sync the badge value to the TPNS server, and the value will be used as the benchmark for the next push
