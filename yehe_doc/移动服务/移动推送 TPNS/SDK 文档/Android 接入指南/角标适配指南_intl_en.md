@@ -25,7 +25,8 @@ You can configure the server delivery badge in the TPNS console or through the p
 ![](https://main.qcloudimg.com/raw/bd1156cf0106d3894c5aa900884c3988.png)
 
 #### Method 2: configure through the push API
-    In the push message body, add the `badge_type` field with the following attributes under `body.message.android`.
+In the push message body, add the `badge_type` field with the following attributes under `body.message.android`.
+
 <table>
 <thead>
 <tr>
@@ -46,9 +47,10 @@ You can configure the server delivery badge in the TPNS console or through the p
 <td>Notification badge:<li>-2: auto increased by 1 (for Huawei devices only)<li>-1: unchanged (for Huawei and vivo devices only)<li>[0, 100): direct configuration (for Huawei and vivo devices only)</td>
 </tr>
 </tbody></table>
-<dx-alert infotype="explain" title="">
-Badge adaptation capabilities vary by vendor device. For details, see the badge adaptation description of each vendor below.
-</dx-alert>
+
+>?
+> Badge adaptation capabilities vary by vendor device. For details, see the badge adaptation description of each vendor below.
+
 Sample message body:
 <dx-codeblock>
 :::  json
