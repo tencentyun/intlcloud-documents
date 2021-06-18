@@ -16,7 +16,7 @@ Android 阵营各厂商机型角标开放能力不同，移动推送 TPNS 对推
 
 您可以通过 TPNS 控制台或 Push API 设置服务端下发角标：
 
-#### 方式1：通过控制台推送页面设置
+####   方式1：通过控制台推送页面设置
 
 1. 登录 [TPNS 控制台](https://console.cloud.tencent.com/tpns)。
 2. 找到您需要配置的 Android 产品，在其右侧【操作】项下单击【推送管理】，进入推送管理页面。
@@ -24,8 +24,9 @@ Android 阵营各厂商机型角标开放能力不同，移动推送 TPNS 对推
 4. 在【高级设置】配置项中，开启角标数字：
 ![](https://main.qcloudimg.com/raw/bd1156cf0106d3894c5aa900884c3988.png)
 
-#### 通过\sPush\sAPI\s设置
-    在推送消息体 `body.message.android` 下添加字段 "badge_type" ，属性如下：
+####  方式2：通过Push API设置
+在推送消息体 `body.message.android` 下添加字段 "badge_type" ，属性如下：
+
 <table>
 <thead>
 <tr>
@@ -46,9 +47,10 @@ Android 阵营各厂商机型角标开放能力不同，移动推送 TPNS 对推
 <td>通知角标：<li>-2：自动增加1，支持华为设备<li>-1：不变，支持华为、vivo 设备<li>[0, 100)：直接设置，支持华为、vivo 设备</td>
 </tr>
 </tbody></table>
-<dx-alert infotype="explain" title="">
-不同厂商设备的角标适配能力不同，详情参考下方各厂商的角标适配说明。
-</dx-alert>
+
+>?
+> 不同厂商设备的角标适配能力不同，详情参考下方各厂商的角标适配说明。
+
 消息体示例：
 <dx-codeblock>
 :::  json
