@@ -25,25 +25,19 @@ pod 'TPNS-iOS', '~> version'  // If the version is not specified, the latest ver
 >?
 > - For a first download, you need to log in to [TGit](https://git.code.tencent.com/users/sign_in) to [set the username and password](https://code.tencent.com/help/productionDoc/profile#password) on the **Account** page. After successful setting, you only need to enter the corresponding username and password in the terminal, and you do not need to log in again on the current PC.
 > - Due to the change of the repository address, if the pod prompts `Unable to find a specification for 'TPNS-iOS'`, you need to run the following command to update the repository and confirm the version:
->	``` 
+>``` 
 	pod repo update
 	pod search TPNS-iOS
 	pod install // Install the SDK 
-		```
-	```  
-	
-	```
-
-	```
-	
-	```
+```
 
 #### Method 2. Import manually
 1. Log in to the [TPNS console](https://console.cloud.tencent.com/tpns) and click **[SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload)** in the left sidebar to go to the download page. Select the SDK version to download, and click **Download** in the **Operations** column.
 2. Open the SDK folder under the `demo` directory. Add `XGPush.h` and `libXG-SDK-Cloud.a` to the project. Open the `XGPushStatistics` folder and obtain `XGMTACloud.framework`.
 3. Import the `InAppMessage` folder into the project and add the search path in **Build Setting > **Framework Search Paths** (if your SDK version is below 1.2.8.0, you can skip this step).
 4. Add the following frameworks to `Build Phases`:
- ```
+
+```
  * TPNSInAppMessage.framework
  * XGMTACloud.framework
  * CoreTelephony.framework
@@ -54,7 +48,7 @@ pod 'TPNS-iOS', '~> version'  // If the version is not specified, the latest ver
  * CoreData.framework
  * CFNetwork.framework
  * libc++.tbd
- ```
+```
 5. After the frameworks are added, the library references are as follows:
 ![](https://main.qcloudimg.com/raw/79976648574060954cebfb894cc5cdd4.png)
 
@@ -144,10 +138,10 @@ For the integration steps, please see [Notification Service Extension](https://i
 
 
 Before integration:
-![](https://main.qcloudimg.com/raw/79c01ccaffca8be63341b18ad48ea9a7.png)
+
 
 After integration:
-![](https://main.qcloudimg.com/raw/9930f71a63d23b2da0c86b023f8e769f.png)
+
 
 
 ## Debugging Method
@@ -194,7 +188,7 @@ If the Xcode console displays a log similar to the one below, the client has pro
 - (void)xgPushDidReceiveRemoteNotification:(nonnull id)notification withCompletionHandler:(nullable void (^)(NSUInteger))completionHandler;
 ```
 >?
-- When the application receives a notification message in the foreground or a silent message in all states, the unified message receipt callback `xgPushDidReceiveRemoteNotification` will be triggered.
+>- When the application receives a notification message in the foreground or a silent message in all states, the unified message receipt callback `xgPushDidReceiveRemoteNotification` will be triggered.
 The following is the sample code for differentiating the receipt of a notification message in the foreground or a silent message in all states.
 ```
 NSDictionary *tpnsInfo = notificationDic[@"xg"];
@@ -219,10 +213,10 @@ if (msgType.integerValue == 1) {
 >!
 >
 >- The unified message receipt callback `xgPushDidReceiveRemoteNotification` of the TPNS will process message receipt and then automatically call the `application:didReceiveRemoteNotification:fetchCompletionHandler` method, which, however, may also be hooked by other SDKs.
-- If you have integrated only the TPNS platform, you are advised not to implement the system notification callback method; use only the TPNS notification callback method instead.
-- If you have integrated multiple push platforms and need to process the services of other platforms using the `application:didReceiveRemoteNotification:fetchCompletionHandler` method, please see the following guidelines to avoid repeated service processing:
- - You need to distinguish between message platforms. After getting the message dictionary in the two message callback methods, use the `xg` field to tell whether it is a TPNS message. If it is a TPNS message, process it using the `xgPushDidReceiveRemoteNotification` method; otherwise, process it using the `application:didReceiveRemoteNotification:fetchCompletionHandler` method.
- - If both `xgPushDidReceiveRemoteNotification` and `application:didReceiveRemoteNotification:fetchCompletionHandler` are executed, then `completionHandler` needs to be called only once in total. If it is also called by other SDKs, make sure that it is called only once overall; otherwise, crashes may occur.
+>- If you have integrated only the TPNS platform, you are advised not to implement the system notification callback method; use only the TPNS notification callback method instead.
+>- If you have integrated multiple push platforms and need to process the services of other platforms using the `application:didReceiveRemoteNotification:fetchCompletionHandler` method, please see the following guidelines to avoid repeated service processing:
+>- You need to distinguish between message platforms. After getting the message dictionary in the two message callback methods, use the `xg` field to tell whether it is a TPNS message. If it is a TPNS message, process it using the `xgPushDidReceiveRemoteNotification` method; otherwise, process it using the `application:didReceiveRemoteNotification:fetchCompletionHandler` method.
+>- If both `xgPushDidReceiveRemoteNotification` and `application:didReceiveRemoteNotification:fetchCompletionHandler` are executed, then `completionHandler` needs to be called only once in total. If it is also called by other SDKs, make sure that it is called only once overall; otherwise, crashes may occur.
 
 
 
