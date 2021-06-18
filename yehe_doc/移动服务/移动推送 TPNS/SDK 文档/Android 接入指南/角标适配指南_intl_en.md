@@ -16,22 +16,21 @@ For Android phones, the opened badge capabilities vary by vendor. TPNS' support 
 
 You can configure the server delivery badge in the TPNS console or through the push API.
 
-#### Method 1: Configure on the push page in the console
+#### Method 1: configuration in the TPNS console
+
 1. Log in to the [TPNS console](https://console.cloud.tencent.com/tpns).
 2. Locate the target Android product and click **Push Management** in the **Operation** column of the product to go to the **Push Management** page.
 3. Click the push to configure to go to the push configuration page.
 4. In the **Advanced Configuration** area, enable badge number.
 ![](https://main.qcloudimg.com/raw/bd1156cf0106d3894c5aa900884c3988.png)
 
-#### Method 2: Configure through the push API
-
-In the push message body, add the `badge_type` field with the following attributes under `body.message.android`.
-
+#### Method 2: configure through the push API
+    In the push message body, add the `badge_type` field with the following attributes under `body.message.android`.
 <table>
 <thead>
 <tr>
 <th>Parameter</th>
-<th>API Type</th>
+<th>Type</th>
 <th>Parent Item</th>
 <th>Required</th>
 <th>Default Value</th>
@@ -42,21 +41,17 @@ In the push message body, add the `badge_type` field with the following attribut
 <td>badge_type</td>
 <td>int</td>
 <td>android</td>
-<td>No</td>
+<td>Not supported</td>
 <td>-1</td>
 <td>Notification badge:<li>-2: auto increased by 1 (for Huawei devices only)<li>-1: unchanged (for Huawei and vivo devices only)<li>[0, 100): direct configuration (for Huawei and vivo devices only)</td>
 </tr>
 </tbody></table>
 <dx-alert infotype="explain" title="">
-
->!Badge adaptation capabilities vary by vendor device. For details, see the badge adaptation description of each vendor below.
-
+Badge adaptation capabilities vary by vendor device. For details, see the badge adaptation description of each vendor below.
 </dx-alert>
-
 Sample message body:
-
 <dx-codeblock>
-::: json
+:::  json
 {
 	"audience_type": "token",
 	"expire_time": 3600,
@@ -69,11 +64,9 @@ Sample message body:
 					"ring_raw": "xtcallmusic",
 					"vibrate": 1,
 					"lights": 1,
-  
 					"action": {
 							"action_type": 1,
 							"activity": "com.qq.xg4all.JumpActivity",
-   
 							"aty_attr": {
 							"if": 0,
 							"pf": 0
@@ -83,7 +76,6 @@ Sample message body:
 			"title": "android test",
 			"content": "android test 21"
 	},
-  
 	"token_list": [
 		"01f6ac091755a79015b4a30c9c4c7ddba1ea"
 	],
@@ -92,6 +84,9 @@ Sample message body:
 }
 :::
 </dx-codeblock>
+
+
+
 
 
 
@@ -127,9 +122,10 @@ This API allows you to reset the badge number. It applies to Huawei, OPPO, and v
 
 Example: when an in-app message is read or an application is opened, call `XGPushConfig.resetBadgeNum(context)` to reset the badge number.
 
+>!  For notifications delivered through vendor channels, the badge number cannot automatically decrease by 1 when the notifications are cleared. It is recommended that you call this API to clear the badge value when appropriate, for example, when re-opening the application from the home screen.
+>
 
-[](id:huawei)
-## Huawei Phone Badge Adaptation Guide
+## Huawei Phone Badge Adaptation Guide[](id:huawei)
 
 ### Limits
 
@@ -175,8 +171,8 @@ For Huawei phones, the badge number can be auto increased or decreased by 1. The
 Example: when an in-app message is received, call `XGPushConfig.changeHuaweiBadgeNum(context, 1)` to increase the badge number by 1; when the message badge needs to be dismissed, call `XGPushConfig.changeHuaweiBadgeNum(context, -1)` to decrease the badge number by 1.
 
 
-[](id:vivo)
-## vivo Phone Badge Adaptation Guide
+
+## vivo Phone Badge Adaptation Guide[](id:vivo)
 
 ### Limits
 
@@ -201,7 +197,7 @@ To implement the correct badge modification effect, please first add the vivo ph
 #### Enabling badge in phone settings
 
 After successful permission configuration, the **Badge** option is disabled by default and needs to be manually enabled.
-Enablement path: **Settings** > **Notification&Status Bar** > **Notifications Management** > **Application Name** > **Badge**
+Enable badge via **Settings** > **Status bar and notification** > **Manage notification** > **Application Name** > **Badge**.
 For applications without the badge feature, the **Badge** option is not provided.
 
->?For different OS versions, the name **Badge** can also be **App icon badges** or **Desktop badges**.
+>?For different OS versions, the name **Badge** can also be **App icon tag** or **Desktop badges**.
