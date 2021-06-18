@@ -2,7 +2,7 @@
 You have three chances each day to unblock the IP by yourself on the protection overview page in the console if you need to resume your business urgently. 
 
 ### Why is my IP blocked? 
-Tencent Cloud reduces costs of cloud services by sharing the infrastructure, with one public IP shared by many users. When a high-traffic attack occurs, the entire Tencent Cloud network may be affected, not only the target servers. To protect other users and ensure network stability, the target server IP needs to be blocked. 
+Tencent Cloud reduces costs of cloud services by sharing the infrastructure. All users share a single internet exit point. When a high-traffic attack occurs, the entire Tencent Cloud network may be affected, not only the attacked servers. To protect other users and ensure the network stability, the attacked server IPs need to be blocked. 
 
 ### Why can't my IP be unblocked immediately? 
 A DDoS attack usually does not stop immediately after the target IP is blocked and the attack duration varies. Tencent Cloud security team sets the default blocking duration based on big data analysis. 
