@@ -42,8 +42,7 @@ android {
 
 dependencies {
     ......
-    // Add the following dependencies:
-    implementation 'com.tencent.jg:jg:1.1'                  
+    // Add the following dependencies:                 
     implementation 'com.tencent.tpns:tpns:[VERSION]-release' 
 		  // TPNS push [VERSION] is the latest SDK version number, i.e., the version number obtained in step 2 above
 }
