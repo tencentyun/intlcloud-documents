@@ -85,7 +85,7 @@ Origin domain is the website domain name accessed on the origin server during or
 ### How do I tell whether CDN has taken effect?
 
 You can run the `nslookup` command to query the DNS resolution of your CDN acceleration domain name. If the resolution result domain name is suffixed with `dnsv1.com` (the CNAME record) as shown in the image, it indicates that the CDN acceleration service for your domain name has taken effect.
-![](https://main.qcloudimg.com/raw/338c9de7a8c9fb4ab8682e5234ef1d76.png)
+![](https://main.qcloudimg.com/raw/4576b46fd8a04b726e6893a08f3fe61f.png)
 
 
 [](id:q19)
