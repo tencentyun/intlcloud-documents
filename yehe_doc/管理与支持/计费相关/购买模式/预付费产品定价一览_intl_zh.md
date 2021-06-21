@@ -31,7 +31,7 @@
 
 ## 中间件
 
-消息队列Ckafka
+[消息队列Ckafka](https://intl.cloud.tencent.com/document/product/597/11745)
 
 ## 移动服务
 
