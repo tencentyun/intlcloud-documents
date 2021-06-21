@@ -14,9 +14,9 @@ This document uses the following software as an example to deploy RabbitMQ:
 
 ## Directions
 ### Installing Erlang
-1. See [Log in to Linux Instances Using the Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436). You can also use other login methods that you are more comfortable with:
+1. [Log in to a Linux instance using standard login method](https://intl.cloud.tencent.com/document/product/213/5436). You can also use other login methods that you are more comfortable with:
 	- [Log in to Linux Instances via Remote Login Tools](https://intl.cloud.tencent.com/document/product/213/32502)
-	- [Log in to Linux Instances via a SSH Key](https://intl.cloud.tencent.com/document/product/213/32501)
+	- [Log in to Linux Instances via SSH Key](https://intl.cloud.tencent.com/document/product/213/32501)
 1. Run the following command to install dependencies.
 ```
 yum -y install make gcc gcc-c++ m4 ncurses-devel openssl-devel unixODBC-devel
@@ -47,7 +47,7 @@ make && make install
 ```
 vi /etc/profile
 ```
-7. Press **i** to enter the editing mode, and append the following at the end of the file.
+7. Press **i** to enter the edit mode, and append the following at the end of the file.
 ```
 export PATH=$PATH:/usr/local/erlang/bin
 ```
@@ -56,8 +56,9 @@ export PATH=$PATH:/usr/local/erlang/bin
 ### Installing RabbitMQ Server
 1. Run the following command to download the RabbitMQ Server installation package.
 ```
-wget -P /root "https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.9/rabbitmq-server-3.6.9-1.el7.noarch.rpm"
+wget https://github.com/rabbitmq/rabbitmq-server/releases/download/rabbitmq_v3_6_9/rabbitmq-server-3.6.9-1.el7.noarch.rpm
 ```
+This example uses RabbitMQ 3.6.9 as an example. If the above download link has expired, or if you want to use other RabbitMQ versions, go to [rabbitmq-server](https://github.com/rabbitmq/rabbitmq-server/releases).
 10. Run the following command to import the signature key.
 ```
 rpm --import https://www.rabbitmq.com/rabbitmq-release-signing-key.asc

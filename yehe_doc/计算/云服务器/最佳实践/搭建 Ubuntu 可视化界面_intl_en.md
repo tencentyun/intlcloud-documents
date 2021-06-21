@@ -1,13 +1,9 @@
 ## Overview
 Virtual Network Console (VNC) is a remote control tool software developed by AT&T European Research Laboratory. An open-source software based on UNIX and Linux operating systems, VNC features robust remote control capability, high efficiency, and strong practicability. Its performance is comparable to any remote control software in Windows or Mac. This document will guide you through on how to build a visual Ubuntu desktop by using VNC.
 
-## Sample Software Versions
-The following software is used to build a visual Ubuntu desktop.
-Linux: Linux OS. This document uses Ubuntu Server 16.04.1 LTS 64-bit as an example.
-
 ## Prerequisites
-
 You have purchased a Linux CVM with the Ubuntu OS. If not, see [Customizing Linux CVM Configurations](https://intl.cloud.tencent.com/document/product/213/10517).
+
 
 ## Directions
 
@@ -20,10 +16,19 @@ sudo su root
 ```
 apt-get update
 ```
-4. Run the following command to install VNC.
+4. Select and run the command below according to your system version to install VNC.
+<dx-tabs>
+::: Ubuntu 16.04/18.04
 ```
 apt-get install vnc4server
 ```
+:::
+::: Ubuntu 20.04
+```
+apt-get install tightvncserver
+```
+:::
+</dx-tabs>
 5. <span id="step05"></span>Run the following command to launch VNC and set a password.
 ```
 vncserver
@@ -34,10 +39,19 @@ If the result similar to the following is returned, it indicates that VNC has be
 ```
 sudo apt-get install x-window-system-core
 ```
-7. Run the following command to install the login manager.
+7. Run the following system-specific command to install the login manager.
+<dx-tabs>
+::: Ubuntu 16.04/18.04
 ```
 sudo apt-get install gdm
 ```
+:::
+::: Ubuntu 20.04
+```
+sudo apt-get install gdm3
+```
+:::
+</dx-tabs>
 8. Run the following command to install Ubuntu desktop.
 ```
 sudo apt-get install ubuntu-desktop
@@ -65,7 +79,7 @@ metacity &
 nautilus &
 gnome-terminal &
 ```
-12. Press **Esc** and enter **:wq**. Save and close the file.
+12. Press **Esc** and enter **:wq** to save and close the file.
 13. Run the following commands to restart the desktop process.
 ```
 vncserver -kill :1 # Enter the command to terminate the original desktop process (wherein :1 is the number of the desktop)
@@ -78,6 +92,7 @@ vncserver :1 # Generate a new session
 ![](https://main.qcloudimg.com/raw/df25e2085e9d27d53b1827ccf98a3618.png)
 16. Click **Continue** in the pop-out dialog box.
 17. Enter the VNC password set in [Step 5](#step05) and click **OK**.
+>? In case of connection timeout, check the network connection and security group configurations. Create an inbound rule `TCP:5901` for the security group to open the listening port 5901 of the VNC Server. For detailed directions, see [Adding Security Group Rules](https://intl.cloud.tencent.com/document/product/213/34272).
 
 
 
