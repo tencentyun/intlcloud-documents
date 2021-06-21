@@ -167,7 +167,7 @@ This API is used to add or update a mobile number. It is equivalent to calling `
 #### Sample code
 
 ```Objective-C
-[[XGPushTokenManager defaultTokenManager] upsertPhoneNumber:@"13712345678"];;
+[[XGPushTokenManager defaultTokenManager] upsertPhoneNumber:@+8613712345678"];;
 
 ```
 
