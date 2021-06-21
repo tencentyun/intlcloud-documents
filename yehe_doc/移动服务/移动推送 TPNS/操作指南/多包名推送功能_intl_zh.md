@@ -38,10 +38,10 @@
 {
     "audience_type": "token",
     "token_list": [
-        "05da87c0ae5973bd2dfa9e08d884aada5bb2"
+        "05da87c0ae5973******9e08d884aada5bb2"
     ],
     "message_type": "notify",
-	"multi_pkg":true,
+    "multi_pkg":true,
     "message": {
         "title": "推送标题",
         "content": "推送内容",
@@ -51,3 +51,4 @@
     }
 }
 ```
+
