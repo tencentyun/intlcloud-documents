@@ -3,4 +3,4 @@ As of May 27, 2019, GlobalSign officially started using a new intermediate CA to
 
 ## Solution
 Use a text editor to open the CRT file in the Nginx directory of the downloaded certificate, and copy and paste the cross certificate to the end of the certificate chain. Then, restart the Nginx service for the certificate to work properly.
-**To download the cross certificate,** [click here](https://ssl-1259259126.cos.ap-nanjing.myqcloud.com/%E4%BA%A4%E5%8F%89%E8%AF%81%E4%B9%A6.zip).
+**To download the cross certificate,** [click here](https://da.do/t6za).
