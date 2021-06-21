@@ -13,7 +13,7 @@
 ## CVM Instance Purchase Limits
 
 - For each user, the **quota** of pay-as-you-go CVM instances in each availability zone is 30.
-- For more information, see [Purchase Limits](https://cloud.tencent.com/document/product/213/2664).
+- For more information, see [Purchase Limits](https://intl.cloud.tencent.com/document/product/213/2664).
 
 
 ## Image Limits
@@ -21,7 +21,7 @@
 - Public images: no use limits.
 - Custom images: each region supports a maximum of 10 custom images.
 - Shared images: each custom image can be shared with a maximum of 50 Tencent Cloud users. Custom images can only be shared with accounts in the same region as the source account.
-- For more information, see [Overview](https://intl.cloud.tencent.com/document/product/213/4941).
+- For more information, see [Image Types](https://intl.cloud.tencent.com/document/product/213/4941).
 
 ## EIP Limits
 
@@ -54,17 +54,838 @@ Starting on September 18, 2019, the maximum number of public IPs can be bound to
 ## ENI Limits
 
 Based on CPU and memory configurations, the number of ENIs bound to a CVM differs from the number of private IPs bound to an ENI. The quotes are as shown below:
-> The number of IP addresses bound to a single ENI indicates the maximum number allowed. The EIP quota is not provided based on this upper limit but based on EIP [use limits](https://intl.cloud.tencent.com/document/product/213/5733).
+>! The number of IP addresses bound to a single ENI indicates the maximum number allowed. The EIP quota is not provided based on this upper limit but based on EIP [use limits](https://intl.cloud.tencent.com/document/product/213/5733).
 
-| CVM configuration | Number of ENIs | Number of private IPs bound to a single ENI |
-| ------------------- | :---- | :------ |
-| CPU: 1 core </br>Memory: 1 GB   | 2     | 2       |
-| CPU: 1 core </br>Memory: >1 GB   | 2     | 6       |
-| CPU: 2 cores             | 2     | 10      |
-| CPU: 4 cores  </br>Memory: <16 GB | 4     | 10      |
-| CPU: 4 cores  </br>Memory: >16 GB | 4     | 20      |
-| CPU: 8-12 cores | 6 | 20 |
-| CPU: >12 cores | 8 | 30 |
+<dx-tabs>
+::: Number of ENIs bound to a CVM instance
+<table >
+   <tr >
+    <th width="6%"  rowspan="2" style = "text-align:center;">Model</th>
+    <th  width="8%"  rowspan="2" style = "text-align:center;">Instance Type</th>
+    <th width="86%" colspan="10" style = "text-align:center;">Number of ENIs</th>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">CPU: 1 core</th>
+    <th style = "text-align:center;">CPU: 2 cores</th>
+    <th style = "text-align:center;">CPU: 4 cores</th>
+    <th style = "text-align:center;">CPU: 6 cores</th>
+    <th style = "text-align:center;">CPU: 8 cores</th>
+    <th style = "text-align:center;">CPU: 10 cores</th>
+    <th style = "text-align:center;">CPU: 12 cores</th>
+    <th style = "text-align:center;">CPU: 14 cores</th>
+    <th style = "text-align:center;">CPU: 16 cores</th>
+    <th style = "text-align:center;">CPU: &gt;16 cores</th>
+   </tr>
+   <tr >
+    <th rowspan="9" style = "text-align:center;">Standard</th>
+    <th style="text-align:center">Standard S5</th>
+    <td >2</td>
+    <td >4</td>
+    <td >4</td>
+    <td >-</td>
+    <td >6</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >8</td>
+    <td >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">Standard Storage Optimized S5se</th>
+    <td >-</td>
+    <td >-</td>
+    <td >4</td>
+    <td >-</td>
+    <td >6</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >8</td>
+    <td >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">Standard SA2</th>
+    <td >2</td>
+    <td >4</td>
+    <td >4</td>
+    <td >-</td>
+    <td >6</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >8</td>
+    <td >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">Standard S4</th>
+    <td >2</td>
+    <td >4</td>
+    <td >4</td>
+    <td >-</td>
+    <td >6</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >8</td>
+    <td >8</td>
+   </tr>
+   <tr>
+    <th style = "text-align:center;">Standard Network-optimized SN3ne</th>
+    <td >2</td>
+    <td >4</td>
+    <td >4</td>
+    <td >-</td>
+    <td >6</td>
+    <td >-</td>
+    <td >8</td>
+    <td >-</td>
+    <td >8</td>
+    <td >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">Standard S3</th>
+    <td >2</td>
+    <td >4</td>
+    <td >4</td>
+    <td >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">Standard SA1</th>
+    <td >2</td>
+    <td >2</td>
+    <td >4</td>
+    <td >-</td>
+    <td >6</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >8</td>
+    <td >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">Standard S2</th>
+    <td >2</td>
+    <td >4</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">Standard S1</th>
+    <td  >2</td>
+    <td  >4</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th rowspan="2" style = "text-align:center;">High IO</th>
+    <th style = "text-align:center;">High IO IT5</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr  >
+    <th  style = "text-align:center;">High IO IT3</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th rowspan="5" style = "text-align:center;">MEM Optimized</th>
+    <th  style = "text-align:center;">Memory Optimized M5</th>
+    <td  >2</td>
+    <td  >4</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">Memory Optimized M4</th>
+    <td >2</td>
+    <td  >4</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr  >
+    <th  style = "text-align:center;">Memory Optimized M3</th>
+    <td  >2</td>
+    <td  >4</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr  >
+    <th  style = "text-align:center;">Memory Optimized M2</th>
+    <td  >2</td>
+    <td  >4</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr  >
+    <th  style = "text-align:center;">Memory Optimized M1</th>
+    <td  >2</td>
+    <td  >4</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th rowspan="4" style = "text-align:center;">Compute</th>
+    <th  style = "text-align:center;">Compute Optimized C4</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">Compute Network-optimized CN3</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr  >
+    <th  style = "text-align:center;">Compute C3</th>
+    <td  >-</td>
+    <td >-</td>
+    <td >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;" >Compute C2</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th  rowspan="7" style = "text-align:center;">GPU-based</th>
+   </tr>
+   <tr >
+    <th class="xl71" x:str style = "text-align:center;">GPU Compute GN6</th>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">GPU Compute GN6S</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >4</td>
+    <td  >-</td>
+    <td  >6</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">GPU Compute GN7</th>
+    <td >-</td>
+    <td >-</td>
+   <td  >4</td>
+    <td >-</td>
+    <td  >6</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >8</td>
+   </tr>
+   <tr  >
+    <th style = "text-align:center;">GPU Compute GN8</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >4</td>
+    <td >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >8</td>
+    <td  >-</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th  style = "text-align:center;">GPU Compute GN10X</th>
+   <td >-</td>
+    <td  >-</td>
+    <td  >-</td>
+     <td  >-</td>
+    <td  >6</td>
+      <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+     <td  >-</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">GPU Compute GN10Xp</th>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >6</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td >8</td>
+   </tr>
+   <tr >
+    <th rowspan="3" style = "text-align:center;">Big Data</th>
+    <th  style = "text-align:center;">Big Data D3</th>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >6</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >8</td>
+    <td  >8</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">Big Data D2</th>
+    <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >6</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td>8</td>
+    <td>8</td>
+   </tr>
+  </table>
+:::
+::: Number of private IPs bound to a single ENI on CVM instances
+<table >
+   <tr >
+    <th width="6%"  rowspan="2" style = "text-align:center;">Model</th>
+    <th  width="8%"  rowspan="2" style = "text-align:center;">Instance Type</th>
+    <th width="86%" colspan="10" style = "text-align:center;">Number of private IPs bound to a single ENI</th>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">CPU: 1 core</th>
+    <th style = "text-align:center;">CPU: 2 cores</th>
+    <th style = "text-align:center;">CPU: 4 cores</th>
+    <th style = "text-align:center;">CPU: 6 cores</th>
+    <th style = "text-align:center;">CPU: 8 cores</th>
+    <th style = "text-align:center;">CPU: 10 cores</th>
+    <th style = "text-align:center;">CPU: 12 cores</th>
+    <th style = "text-align:center;">CPU: 14 cores</th>
+    <th style = "text-align:center;">CPU: 16 cores</th>
+    <th style = "text-align:center;">CPU: &gt;16 cores</th>
+   </tr>
+   <tr >
+    <th rowspan="9" style = "text-align:center;">Standard</th>
+    <th style="text-align:center">Standard S5</th>
+    <td >6</td>
+    <td >10</td>
+    <td >10</td>
+    <td >-</td>
+    <td >20</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >30</td>
+    <td >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">Standard Storage Optimized S5se</th>
+    <td >-</td>
+    <td >-</td>
+    <td >20</td>
+    <td >-</td>
+    <td >20</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >30</td>
+    <td >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">Standard SA2</th>
+    <td >6</td>
+    <td >10</td>
+    <td >10</td>
+    <td >-</td>
+    <td >20</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >30</td>
+    <td >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">Standard S4</th>
+    <td >6</td>
+    <td >10</td>
+    <td >10</td>
+    <td >-</td>
+    <td >20</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >30</td>
+    <td >30</td>
+   </tr>
+   <tr>
+    <th style = "text-align:center;">Standard Network-optimized SN3ne</th>
+    <td >6</td>
+    <td >10</td>
+    <td >10</td>
+    <td >-</td>
+    <td >20</td>
+    <td >-</td>
+    <td >30</td>
+    <td >-</td>
+    <td >30</td>
+    <td >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">Standard S3</th>
+    <td >6</td>
+    <td >10</td>
+    <td >10</td>
+    <td >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">Standard SA1</th>
+    <td >1 GB memory: 2<br/>&gt;1 GB memory: 6</td>
+    <td >10</td>
+    <td >8 GB memory: 10<br/>16 GB memory: 20</td>
+    <td >-</td>
+    <td >20</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >30</td>
+    <td >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">Standard S2</th>
+    <td >6</td>
+    <td >10</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">Standard S1</th>
+    <td  >6</td>
+    <td  >10</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th rowspan="2" style = "text-align:center;">High IO</th>
+    <th style = "text-align:center;">High IO IT5</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr  >
+    <th  style = "text-align:center;">High IO IT3</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th rowspan="5" style = "text-align:center;">MEM Optimized</th>
+    <th  style = "text-align:center;">Memory Optimized M5</th>
+    <td  >6</td>
+    <td  >10</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">Memory Optimized M4</th>
+    <td >6</td>
+    <td  >10</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr  >
+    <th  style = "text-align:center;">Memory Optimized M3</th>
+    <td  >6</td>
+    <td  >10</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr  >
+    <th  style = "text-align:center;">Memory Optimized M2</th>
+    <td  >6</td>
+    <td  >10</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr  >
+    <th  style = "text-align:center;">Memory Optimized M1</th>
+    <td  >6</td>
+    <td  >10</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th rowspan="4" style = "text-align:center;">Compute</th>
+    <th  style = "text-align:center;">Compute Optimized C4</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">Compute Network-optimized CN3</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr  >
+    <th  style = "text-align:center;">Compute C3</th>
+    <td  >-</td>
+    <td >-</td>
+    <td >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;" >Compute C2</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th  rowspan="7" style = "text-align:center;">GPU-based</th>
+    <th  style = "text-align:center;">GPU Compute GN2</th>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >30</td>
+   </tr>
+   <tr >
+    <th class="xl71" x:str style = "text-align:center;">GPU Compute GN6</th>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">GPU Compute GN6S</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >10</td>
+    <td  >-</td>
+    <td  >20</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+    <td >-</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">GPU Compute GN7</th>
+    <td >-</td>
+    <td >-</td>
+   <td  >10</td>
+    <td >-</td>
+    <td  >20</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >30</td>
+   </tr>
+   <tr  >
+    <th style = "text-align:center;">GPU Compute GN8</th>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >10</td>
+    <td >-</td>
+    <td  >-</td>
+    <td  >-</td>
+    <td  >30</td>
+    <td  >-</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th  style = "text-align:center;">GPU Compute GN10X</th>
+   <td >-</td>
+    <td  >-</td>
+    <td  >-</td>
+     <td  >-</td>
+    <td  >20</td>
+      <td  >-</td>
+    <td  >-</td>
+    <td  >-</td>
+     <td  >-</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">GPU Compute GN10Xp</th>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >20</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td >30</td>
+   </tr>
+   <tr  >
+    <th style = "text-align:center;">FPGA-based</th>
+    <th style = "text-align:center;">FPGA Accelerated FX4</th>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >20</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th rowspan="3" style = "text-align:center;">Big Data</th>
+    <th  style = "text-align:center;">Big Data D3</th>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >20</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">Big Data D2</th>
+    <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >20</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >30</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th style = "text-align:center;">Big Data D1</th>
+    <td >-</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >20</td>
+     <td  >-</td>
+     <td  >-</td>
+     <td  >-</td>
+    <td  >-</td>
+    <td  >30</td>
+   </tr>
+   <tr >
+    <th colspan="2" style = "text-align:center;">Cloud Physical Machine 2.0</th>
+    <td colspan="10" style = "text-align:center;">Not supported</td>
+   </tr>
+  </table>
+:::
+</dx-tabs>
 
 
 ## Bandwidth Limits
@@ -74,7 +895,7 @@ Based on CPU and memory configurations, the number of ENIs bound to a CVM differ
 <table>
 <tr><th rowspan="2">Network Billing Method</th><th colspan="2">Instance</th><th rowspan="2">Maximum Bandwidth Range (Mbps)</th></tr>
 <tr><th>Instance Billing Method</th><th>Instance Configuration</th></tr>
-<tr><td>Bill-by-traffic</td><td>Pay-as-you-go instances</td><td>All</td><td>0–100</td></tr>
+<tr><td>Bill-by-traffic</td><td>Pay-as-you-go instances</td><td>All</td><td>0-100</td></tr>
 <tr><td>Bill-by-bandwidth</td><td>Pay-as-you-go instances</td><td>All</td><td>0-100</td></tr>
 <tr><td>Bandwidth package</td><td colspan="2">All</td><td>0-2000</td></tr>
 </table>
@@ -114,7 +935,7 @@ Based on CPU and memory configurations, the number of ENIs bound to a CVM differ
 - Each user can configure a maximum of 50 security groups for each project in a region.
 - A maximum of 100 inbound or outbound rules can be configured for a security group.
 - One CVM can be associated with multiple security groups, and a security group can be associated with multiple CVM instances.
-- Security groups associated with CVMs on the **classic network** **cannot filter** packets from or to TencentDB and the elastic cache (Redis or Memcached). Instead, you can use iptables to filter traffic for such instances.
+- Security groups associated with CVMs on the **classic network** cannot filter packets from or to TencentDB (MySQL, MariaDB, SQL Server, or PostgreSQL) and NoSQL (Redis or Memcached) databases. Instead, you can use iptables to filter traffic for such instances.
 - The quotas are as shown below:
 <table>
 <tr><th>Item</th><th>Limit</th></tr>
@@ -122,18 +943,18 @@ Based on CPU and memory configurations, the number of ENIs bound to a CVM differ
 <tr><td>Number of rules in a security group</td><td>100 for inbound rules and 100 for outbound rules</td></tr>
 <tr><td>Number of CVM instances associated with a security group</td><td>2,000</td></tr>
 <tr><td>Number of security groups associated with a CVM instance</td><td>5</td></tr>
-<tr><td>Number of rules in each security group that reference the security group ID</td><td>10</td></tr>
+<tr><td>Number of security groups that can be referenced by a security group</td><td>10</td></tr>
 </table>
 
 ## VPC Limits
 
 | Resource | Limit |
 |---------|---------|
-| Number of VPC instances per region for each account | 5 |
-| Number of subnets per VPC | 10 |
-| Number of classic network CVMs can be associated with each VPC instance | 100 |
+| Number of VPCs per region for each account | 20 |
+| Number of subnets per VPC | 100 |
+| Number of classic network-based CVMs can be associated with each VPC instance | 100 |
 | Number of route tables per VPC | 10 |
 | Number of route tables associated with each subnet | 1 |
-| Number of routing policies per route table | 100 |
+| Number of routing policies per route table | 50 |
 | Number of default HAVIPs per VPC | 10 |
 
