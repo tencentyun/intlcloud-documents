@@ -17,7 +17,6 @@
 **第三步：**清空云端角标数，实现代码如下图：
 
 **第四步：**需要更新云端角标数时，需调用下方接口将角标值同步到 TPNS 服务器，下次推送时以此值为基准。如当前 TPNS 服务器角标值同步为 n，则下次收到推送时 App 角标值为 n+1。
-
 ```
 //将角标值同步到 TPNS 服务器，下次推送时以此值为基准
 - (void)setBadge:(NSInteger)badgeNumber;
@@ -53,7 +52,6 @@ NSLog(@"notifications count:%d.",notifications.count);
 3. 建议使用**自定义角标数**方案，方法如下：
 通过[ API 创建 ](https://intl.cloud.tencent.com/document/product/1024/33764)推送时，直接设置应用角标数badge_type >= 0，自定义角标数字为总消息数。如总消息数为10，则设置badge_type = 10。
 
-
 ## 问题答疑
 #### 如何只清空角标数，但是在通知中心保留推送通知？
 ```
@@ -69,6 +67,29 @@ NSLog(@"notifications count:%d.",notifications.count);
         clearEpisodeNotification.applicationIconBadgeNumber = -1;
         [[UIApplication sharedApplication] scheduleLocalNotification:clearEpisodeNotification];
     }
+}
+```
+#### 如何设置角标数，但是在通知中心保留推送通知？
+```
+#define APNS_IS_IOS11_LATER ([UIDevice currentDevice].systemVersion.floatValue >= 11.0f)
+//在appIcon上推送角标数量逻辑，但是在系统通知栏保留推送通知的方法
++ (void)resetBageNumber:(int) number{
+/// 如果是非0数，直接设置
+if(number){
+[XGPush defaultManager].xgApplicationBadgeNumber = number;
+return;
+}
+/// 如果是0，则通过如下逻辑设置
+if(APNS_IS_IOS11_LATER){
+//iOS 11后，直接设置badgeNumber = -1就生效了
+[UIApplication sharedApplication].applicationIconBadgeNumber = -1;
+}else{
+UILocalNotification *clearEpisodeNotification = [[UILocalNotificationalloc] init];
+clearEpisodeNotification.fireDate = [NSDatedateWithTimeIntervalSinceNow:(0.3)];
+clearEpisodeNotification.timeZone = [NSTimeZonedefaultTimeZone];
+clearEpisodeNotification.applicationIconBadgeNumber = -1;
+[[UIApplication sharedApplication] scheduleLocalNotification:clearEpisodeNotification];
+}
 }
 ```
 

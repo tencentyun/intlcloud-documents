@@ -1,5 +1,5 @@
 ## 说明
-
+本文档中账号功能、删除标签功能适用于 SDK 1.2.3.0 或更高版本。
 
 所有 API 接口的包名路径前缀都是：`com.tencent.android.tpush`，其中有以下几个重要的对外提供接口的类名，如下表所示：
 
@@ -297,27 +297,6 @@ public void onNotificationClickedResult(Context context, XGPushClickedResult mes
 | getActionType()  | String | 无     | 0 表示该通知被点击，2 表示该通知被清除                       |
 | getPushChannel() | String | 100    | 被点击通知的所下发通道标识。<li>100：TPNS 通道。</li><li>101：FCM 通道。</li><li>102：华为通道。</li><li>103：小米通道。</li><li>104：vivo 通道。</li><li>105：OPPO 通道。</li><li>106：魅族通道。</li> |
 
-### 通知删除
-
-#### 接口说明
-
-清除通知栏上指定 ID 的通知。
-
-```java
-public static void cancelNotifaction(Context context, int id) 
-
-```
-
-#### 参数说明
-
-- context：Context 对象。
-- id：需要清除的通知 ID。
-
-#### 示例代码
-
-```java
-XGPushManager.cancelNotifaction(context, 1);
-```
 
 ### 清除所有通知
 
@@ -535,7 +514,7 @@ XGPushManager.upsertAccounts(context, accountInfoList, xgiOperateCallback);
 
 >?
 > - 每个账号最多支持绑定100个 token。
-> - 账号可以是邮箱、QQ 号、手机号、用户名等任意类别的业务账号，账号类型取值可参考账号类型取值表
+> - 账号可以是邮箱、QQ 号、手机号、用户名等任意类别的业务账号，账号类型取值可参考 [账号类型取值表](https://intl.cloud.tencent.com/document/product/1024/40598)。
 > - 同一个账号绑定多个设备时，后台将默认推送消息到最后绑定的设备，如需推送所有绑定的设备可查看 [Rest API](https://intl.cloud.tencent.com/document/product/1024/33764) 文档中 account_push_type 参数设置。
 > 
 
@@ -844,6 +823,49 @@ XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
         
 XGPushManager.clearTags(context, "clearTags", xgiOperateCallback);
 
+```
+### 查询标签
+
+>? 查询设备关联的标签（此接口仅适用于1.2.5.0及以上版本）。
+>
+
+#### 接口说明
+
+获取这个设备的标签。
+
+```java
+    public static void queryTags(final Context context, final String operateName, final int offset, final int limit, final XGIOperateCallback callback)
+```
+
+
+#### 参数说明
+
+- context：Context 对象
+- operateName：用户定义的操作名称，回调结果会原样返回，用于给用户区分是哪个操作
+- offset：开始的位置
+- limit：获取标签的数量，最多为100个
+- callback：获取标签操作的回调
+
+#### 处理结果
+
+可通过重载 XGPushBaseReceiver 的 onQueryTagsResult 方法获取。
+
+#### 示例代码
+
+```java
+XGIOperateCallback xgiOperateCallback = new XGIOperateCallback() {
+    @Override
+    public void onSuccess(Object data, int flag) {
+        Log.i("TPush", "onSuccess, data:" + data + ", flag:" + flag);
+    }
+
+    @Override
+    public void onFail(Object data, int errCode, String msg) {
+        Log.w("TPush", "onFail, data:" + data + ", code:" + errCode + ", msg:" + msg);
+    }
+};
+
+XGPushManager.queryTags(context, 0, 100, xgiOperateCallback);
 ```
 
 ## 用户属性管理

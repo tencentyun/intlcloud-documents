@@ -209,17 +209,21 @@ if (uri != null) {
 }
 ```
 
-2. 如果传参包含有特殊字符，例如 # 、& 等，可以参考使用如下方式解析：
+2. 如果传参包含有特殊字符，可以在创建推送时将参数值进行 URLEncode，然后在终端内使用 URLDecode 进行解析，示例如下：
 ```java
 Uri uri = getIntent().getData();
-if (uri != null) {                
-		String url = uri.toString();
-		UrlQuerySanitizer sanitizer = new UrlQuerySanitizer();
-		sanitizer.setUnregisteredParameterValueSanitizer(UrlQuerySanitizer.getAllButNulLegal());
-		sanitizer.parseUrl(url);
-		String value1 = sanitizer.getValue("key1");
-		String value2 = sanitizer.getValue("key2");
-		Log.i("TPNS" , "value1 = " + value1 + " value2 = " + value2);
+if (uri != null) {
+    String p1 = uri.getQueryParameter("param1");
+    String value1 = "";
+    try {
+        // 自定义参数 param1 的值包含特殊字符，创建推送时可将 param1 的值进行 URLEncode；此处获取时则进行 URLDecode
+        value1 = URLDecoder.decode(p1, "UTF-8");
+    } catch (UnsupportedEncodingException e) {
+        Log.w("TPNS", "URLDecode param failed: " + e.toString());
+    }
+    // 自定义参数 param2 未进行 URLEncode，直接获取即可
+    String value2 = uri.getQueryParameter("param2");
+    Log.i("TPNS" , "value1 = " + value1);
 }
 ```
 
@@ -264,6 +268,7 @@ if (uri != null) {
 }
 ```
 
+
 ### 客户端获取参数
 
 如果您通过 iOS SDK 集成，可以通过统一点击消息回调获取自定义参数，此回调方法是应用在所有状态（前台、后台、关闭）下的通知消息点击回调。
@@ -284,6 +289,7 @@ if (uri != null) {
     completionHandler();
 }
 ```
+
 如果您通过 Flutter 插件集成，冷启动时需要在 `runner->AppDelegate->didFinishLaunchingWithOptions` 方法通过以下接口获取：
 ```objective-c
 	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 

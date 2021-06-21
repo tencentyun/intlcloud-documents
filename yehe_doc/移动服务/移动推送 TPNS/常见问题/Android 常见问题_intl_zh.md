@@ -1,6 +1,4 @@
-### TPNS SDK 支持鸿蒙系统的推送吗 ？
 
-鸿蒙系统完全兼容 Android SDK，推送功能可正常使用。
 ### 如何关闭 TPNS 的保活功能？
 
 如需关闭联合保活功能，请在应用初始化的时候，例如 Application 或 LauncherActivity 的 onCreate 中调用如下接口，并传递 false 值：
@@ -24,6 +22,11 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 若控制台有以下日志打印，则表明联合保活功能已经关闭：`I/TPush: [ServiceUtil] disable pull up other app`。
 
 
+### TPNS SDK 支持鸿蒙系统的推送吗？
+
+鸿蒙系统完全兼容 Android SDK，推送功能可正常使用。
+
+
 ### 厂商推送服务需要上架应用市场才可以开通吗？
 
 | 厂商 | 是否需要上架应用市场 |
@@ -36,16 +39,6 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 | vivo | 是 ，且需要企业开发者账号可 [开通 vivo 平台推送服务](https://dev.vivo.com.cn/documentCenter/doc/2)|
 
 
-### 集成 vivo 厂商通道后 “APP 包含未使用的权限字符串”，如何处理？
-
-开发者在集成 vivo 厂商通道推送服务后，部分安全检测工具可能会提示 “APP 包含未使用的权限字符串”，详情如下： 
-问题来源：vivo 厂商通道推送 SDK 版本名 2.3.4。
-涉及类文件：com.vivo.push.util.z 涉及敏感权限字符串：android.permission.GET_ACCOUNTS。
->! 经检查发现最新的 vivo 厂商通道推送 SDK 版本名 3.0.0.0 中同样包含此问题。
-
-问题代码来源为 vivo 厂商通道推送 SDK，TPNS 项目组无法变更其内容；此问题已向 vivo 推送服务相关人员反馈，表示相关静态字段为 SDK 遗留代码，并无实际使用，会尽快排期修复。 当前可参考的快速解决办法如下：
-- 方式一（推荐）： 在《APP隐私声明》里增加 [移动推送 TPNS 的隐私说明](https://intl.cloud.tencent.com/document/product/1024/30713)。 
-- 方式二（不推荐）： 剔除掉 vivo 相关 jar 包，但是也会丧失掉 vivo 厂商通道的能力。
 
 ### 什么是 TPNS 通道？
 
@@ -136,14 +129,14 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 
 目前 IM 已使用 TPNS 提供的厂商 jar 包，请按照下方表格替换相关依赖包，替换后即可解决。
 
- | 推送通道 | 系统要求 | 条件说明 |
- | --------------- | ------| -------------------------------------------- | 
- | 小米推送| MIUI|使用小米推送，添加依赖：`implementation 'com.tencent.tpns:xiaomi:1.2.1.3-release'`|
- | 华为推送| EMUI|使用华为推送，添加依赖：<li>`implementation 'com.tencent.tpns:huawei:1.2.1.3-release'`</li><li>`implementation 'com.huawei.hms:push:5.0.2.300'`</li>| 
- | Google FCM 推送| Android 4.1及以上|手机端需安装 Google Play Services 且在中国大陆地区以外使用。添加依赖：`implementation 'com.google.firebase:firebase-messaging:20.2.3'`|
- | 魅族推送 | Flyme| 使用魅族推送，添加依赖：`implementation 'com.tencent.tpns:meizu:1.2.1.3-release'` |
- | OPPO 推送| ColorOS |并非所有 OPPO 机型和版本都支持使用 OPPO 推送，使用 OPPO 推送，添加依赖：`implementation 'com.tencent.tpns:oppo:1.2.1.3-release'`|
- | vivo 推送| FuntouchOS|并非所有 vivo 机型和版本都支持使用 vivo 推送，使用 vivo 推送，添加依赖：`implementation 'com.tencent.tpns:vivo:1.2.1.3-release'`|
+| 推送通道 | 系统要求 | 条件说明 |
+| --------------- | ------| -------------------------------------------- |
+| 小米推送| MIUI|使用小米推送，添加依赖：`implementation 'com.tencent.tpns:xiaomi:1.2.1.3-release'`|
+| 华为推送| EMUI|使用华为推送，添加依赖：<li>`implementation 'com.tencent.tpns:huawei:1.2.1.3-release'`</li><li>`implementation 'com.huawei.hms:push:5.0.2.300'`</li>|
+| Google FCM 推送| Android 4.1及以上|手机端需安装 Google Play Services 且在中国大陆地区以外使用。添加依赖：`implementation 'com.google.firebase:firebase-messaging:20.2.3'`|
+| 魅族推送 | Flyme| 使用魅族推送，添加依赖：`implementation 'com.tencent.tpns:meizu:1.2.1.3-release'` |
+| OPPO 推送| ColorOS |并非所有 OPPO 机型和版本都支持使用 OPPO 推送，使用 OPPO 推送，添加依赖：`implementation 'com.tencent.tpns:oppo:1.2.1.3-release'`|
+| vivo 推送| FuntouchOS|并非所有 vivo 机型和版本都支持使用 vivo 推送，使用 vivo 推送，添加依赖：`implementation 'com.tencent.tpns:vivo:1.2.1.3-release'`|
 
 ### 如何适配 small icon 小图标？
 
@@ -165,13 +158,11 @@ XGPushConfig.enablePullUpOtherApp(Context context, boolean pullUp);
 
 适配后的具体效果如下，建议参考 Demo logo 图标进行作图。
 
-
-
 >?
->- small icon 必须是带 Alpha 透明通道的 PNG 图片。
->- 背景必须是透明。
->- 周围不宜留过多 padding。
->- 建议统一使用46 x 46px，过小图片会模糊，过大系统会自动缩小。
+- small icon 必须是带 Alpha 透明通道的 PNG 图片。
+- 背景必须是透明。
+- 周围不宜留过多 padding。
+- 建议统一使用46 x 46px，过小图片会模糊，过大系统会自动缩小。
 
 
 ### Flyme 6.0 及以下版本的魅族手机，为何消息抵达设备却不在通知栏展示？
@@ -227,3 +218,4 @@ android.useAndroidX=trueandroid.enableJetifier=true
 
 ### 注册方法能在线程中创建吗？
 注册方法可以在任何地方调用，但注意要传递 ApplicationContext。
+
