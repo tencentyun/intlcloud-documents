@@ -50,7 +50,7 @@ buildscript {
     }
     dependencies {
         // 其他classpath配置
-        classpath 'com.huawei.agconnect:agcp:1.3.1.300'     // 华为推送 gradle 插件依赖
+        classpath 'com.huawei.agconnect:agcp:1.4.1.300'      // 华为推送 gradle 插件依赖
     }
 }
 ```
@@ -103,7 +103,7 @@ buildscript {
     }
     dependencies {
         // 其他 classpath 配置
-        classpath files('app/libs/agcp-1.3.1.300.jar')     // 华为推送 gradle 插件依赖
+        classpath files('app/libs/agcp-1.4.1.300.jar')     // 华为推送 gradle 插件依赖
     }
 }
 ```
@@ -172,7 +172,7 @@ I/TPush: [OtherPushClient] handleUpdateToken other push token is : IQAAAACy0PsqA
 ```
 
 
-> ?混淆规则需要放在 App 项目级别的 proguard-rules.pro 文件中。
+>? 混淆规则需要放在 App 项目级别的 proguard-rules.pro 文件中。
 
 ## 高级配置（可选）
 
