@@ -50,7 +50,7 @@ buildscript {
     }
     dependencies {
         // Other `classpath` configurations
-        classpath 'com.huawei.agconnect:agcp:1.3.1.300'     // Gradle plugin dependencies of Huawei Push
+        classpath 'com.huawei.agconnect:agcp:1.4.1.300'      // Gradle plugin dependencies of Huawei Push
     }
 }
 ```
@@ -103,7 +103,7 @@ buildscript {
     }
     dependencies {
         // Other `classpath` configurations
-        classpath files('app/libs/agcp-1.3.1.300.jar')     // Gradle plugin dependencies of Huawei Push
+        classpath files('app/libs/agcp-1.4.1.300.jar')     // Gradle plugin dependencies of Huawei Push
     }
 }
 ```
