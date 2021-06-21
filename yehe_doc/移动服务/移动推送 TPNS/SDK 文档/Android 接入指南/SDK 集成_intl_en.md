@@ -15,7 +15,7 @@ The SDK for Android is a set of APIs provided by TPNS Service for clients to imp
 
 1. Log in to the [TPNS console](https://console.cloud.tencent.com/tpns) and get the application's `AccessID` and `AccessKey` in **Product Management** > **Configuration Management**.
 2. Get the latest SDK version number on the [SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload) page.
-![](https://main.qcloudimg.com/raw/14e6c42845be00c1e2cf964482062794.png)
+
 3. In the `build.gradle` file of the application, configure the following content:
 
 ```
@@ -53,10 +53,10 @@ dependencies {
 ```
 
 >!
- - If the service access point of your application is Guangzhou, the SDK implements this configuration by default.
- - If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), please follow the step below to complete the configuration:
+> - If the service access point of your application is Guangzhou, the SDK implements this configuration by default.
+> - If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), please follow the step below to complete the configuration:
    Add the following metadata in the `application` tag in the `AndroidManifest` file:
-```
+>```
 <application>
 	// Other Android components
 	<meta-data
@@ -64,10 +64,10 @@ dependencies {
 			android:value="Domain names of other service access points" />
 </application>
 ```
-The domain names of other service access points are as follows:
-- Shanghai: `tpns.sh.tencent.com`
-- Singapore: `tpns.sgp.tencent.com`
-- Hong Kong (China): `tpns.hk.tencent.com`
+>The domain names of other service access points are as follows:
+>- Shanghai: `tpns.sh.tencent.com`
+>- Singapore: `tpns.sgp.tencent.com`
+>- Hong Kong (China): `tpns.hk.tencent.com`
 
 #### Precautions
 
@@ -269,10 +269,10 @@ You need to configure the permissions required by the TPNS SDK to operate proper
 ```
 
 >!
- - If the service access point of your application is Guangzhou, the SDK implements this configuration by default.
- - If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), please follow the step below to complete the configuration:
+> - If the service access point of your application is Guangzhou, the SDK implements this configuration by default.
+> - If the service access point of your application is Shanghai, Singapore, or Hong Kong (China), please follow the step below to complete the configuration:
    Add the following metadata in the `application` tag in the `AndroidManifest` file:
-```
+>```
 <application>
 	// Other Android components
 	<meta-data
@@ -280,10 +280,10 @@ You need to configure the permissions required by the TPNS SDK to operate proper
 			android:value="Domain names of other service access points" />
 </application>
 ```
-The domain names of other service access points are as follows:
-- Shanghai: `tpns.sh.tencent.com`
-- Singapore: `tpns.sgp.tencent.com`
-- Hong Kong (China): `tpns.hk.tencent.com`
+>The domain names of other service access points are as follows:
+>- Shanghai: `tpns.sh.tencent.com`
+>- Singapore: `tpns.sgp.tencent.com`
+>- Hong Kong (China): `tpns.hk.tencent.com`
 
 
 ## Debugging and Device Registration
@@ -393,5 +393,4 @@ Below is sample code:
 XGPushConfig.getToken(getApplicationContext());
 ```
 
-![](https://main.qcloudimg.com/raw/854020af14428df9972629e7dbbee55f.png)
 
