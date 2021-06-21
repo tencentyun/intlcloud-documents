@@ -41,7 +41,7 @@ end
 3. On the **SDK Download** page, select the iOS platform and click **Download**.
 4. Decompress the SDK package, go to the `demo` > `sdk` > `XGPushStatistics` > `extension` directory, and obtain the `XGExtension.h` and `libXGExtension.a` files.
 5. Add the `XGExtension.h` and `libXGExtension.a` files obtained to the notification service extension target:
- - System libraries: `libz.tbd`, `libsqlite3.tbd`
+ - System libraries: `libz.tbd`
  - TPNS extension library: libXGExtension.a
 
 After the integration, the directory structure is as follows:
