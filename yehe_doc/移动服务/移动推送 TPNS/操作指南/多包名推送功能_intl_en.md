@@ -38,10 +38,10 @@ Below is a sample push:
 {
     "audience_type": "token",
     "token_list": [
-        "05da87c0ae5973bd2dfa9e08d884aada5bb2"
+        "05da87c0ae5973******9e08d884aada5bb2"
     ],
     "message_type": "notify",
-	"multi_pkg":true,
+    "multi_pkg":true,
     "message": {
         "title": "Push title",
         "content": "Push content",
