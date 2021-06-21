@@ -20,7 +20,7 @@ Windows
 
 ## Directions
 <dx-tabs>
-::: Logging in with a password[](id:passwordLogin)
+::: Logging\sin\swith\sa\spassword[](id:passwordLogin)
 1. Download the Windows remote login software, PuTTY.
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe" target="_blank" style="color: white; font-size:16px;">Click here to download PuTTY</a></div>
 2. Double-click **putty.exe** to open the PuTTY client.
@@ -39,7 +39,7 @@ The entered password is not displayed by default, as shown below:
 ![](https://main.qcloudimg.com/raw/9e7ddc631de2a27bfd35f9225de85506.png)
 Once logged in, you can see the information about the CVM to which you are currently logged in on the left of the command prompt.
 :::
-::: Logging in with a key[](id:keyLogin)
+::: Logging\sin\swith\sa\skey[](id:keyLogin)
 1. Download the Windows remote login software, PuTTY. Both putty.exe and puttygen.exe are required.
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;margin:5px;"><a href="https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe" target="_blank" style="color: white; font-size:16px;">Download PuTTY</a></div><div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;margin:5px;"><a href="https://the.earth.li/~sgtatham/putty/latest/w64/puttygen.exe" target="_blank" style="color: white; font-size:16px;">Download PuTTYgen</a></div>
 2. Double-click **puttygen.exe** to open the PuTTY Key client.
