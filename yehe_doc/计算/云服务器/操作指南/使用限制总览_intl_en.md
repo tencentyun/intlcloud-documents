@@ -36,7 +36,7 @@
 #### Limits on public IPs bound to a CVM
 
 Starting on September 18, 2019, the maximum number of public IPs can be bound to a single CVM had changed based on CPU configuration. The quotas are as shown below:
-> This limit does not apply to CVM instances purchased before 00:00, September 18, 2019. For these instances, the number of public IPs can be bound to each instance is equal to the [number of private IPs](https://intl.cloud.tencent.com/document/product/576/18527) supported by your server.
+>? This limit does not apply to CVM instances purchased before 00:00, September 18, 2019. For these instances, the number of public IPs can be bound to each instance is equal to the [number of private IPs](https://intl.cloud.tencent.com/document/product/576/18527) supported by your server.
 >
 
 | Number of CPUs on a CVM | Maximum number of public IPs can be bound (including public and elastic IPs) |
@@ -57,7 +57,7 @@ Based on CPU and memory configurations, the number of ENIs bound to a CVM differ
 >! The number of IP addresses bound to a single ENI indicates the maximum number allowed. The EIP quota is not provided based on this upper limit but based on EIP [use limits](https://intl.cloud.tencent.com/document/product/213/5733).
 
 <dx-tabs>
-::: Number of ENIs bound to a CVM instance
+::: Number\sof\sENIs\sbound\sto\sa\sCVM\sinstance
 <table >
    <tr >
     <th width="6%"  rowspan="2" style = "text-align:center;">Model</th>
@@ -450,7 +450,7 @@ Based on CPU and memory configurations, the number of ENIs bound to a CVM differ
    </tr>
   </table>
 :::
-::: Number of private IPs bound to a single ENI on CVM instances
+::: Number\sof\sprivate\sIPs\sbound\sto\sa\ssingle\sENI\son\sCVM\sinstances
 <table >
    <tr >
     <th width="6%"  rowspan="2" style = "text-align:center;">Model</th>
