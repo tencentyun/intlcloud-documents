@@ -148,7 +148,7 @@ TPNS provides APIs for binding/unbinding a single tag to/from a single device, a
 ```json
 {
     "operator_type": 1,
-    "platform": "android",
+
     "tag_list": ["tag"],
     "token_list": ["token"]
 }
@@ -159,7 +159,7 @@ TPNS provides APIs for binding/unbinding a single tag to/from a single device, a
 ```json
 {
     "operator_type": 2,
-    "platform": "android",
+
     "tag_list": ["tag"],
     "token_list": ["token"]
 }
@@ -178,7 +178,7 @@ TPNS provides APIs for binding/unbinding a single tag to/from a single device, a
 ```json
 {
     "operator_type": 3,
-    "platform": "android",
+
     "tag_list": ["tag1","tag2"],
     "token_list": ["token"]
 }
@@ -189,7 +189,7 @@ TPNS provides APIs for binding/unbinding a single tag to/from a single device, a
 ```json
 {
     "operator_type": 4,
-    "platform": "android",
+
     "tag_list": ["tag1","tag2"],
     "token_list": ["token"]
 }
@@ -208,7 +208,7 @@ Call the RESTful API, for example, to bind/unbind the `football` tag to/from all
 ```json
 {
     "operator_type": 7,
-    "platform": "android",
+
     "tag_list": ["tag"],
     "token_list": ["token1","token2"]
 }
@@ -217,7 +217,7 @@ Call the RESTful API, for example, to bind/unbind the `football` tag to/from all
 ```json
 {
     "operator_type": 8,
-    "platform": "android",
+
     "tag_list": ["tag"],
     "token_list": ["token1","token2"]
 }
@@ -236,7 +236,7 @@ Call the RESTful API, for example, to bind/unbind the `football` and `basketball
 ```json
 {
     "operator_type": 9,
-    "platform": "android",
+
     "tag_token_list": [{"tag":"tag1","token":"token1"},{"tag":"tag2","token":"token2"}]
 }
 ```
@@ -245,7 +245,7 @@ Call the RESTful API, for example, to bind/unbind the `football` and `basketball
 ```json
 {
     "operator_type": 10,
-    "platform": "android",
+
     "tag_token_list": [{"tag":"tag1","token":"token1"},{"tag":"tag2","token":"token2"}]
 }
 ```
@@ -268,7 +268,7 @@ TPNS provides two tag overriding methods: general overriding and overriding by t
 ```json
 {
     "operator_type": 6,
-    "platform": "android",
+
     "tag_list": ["test", "level:1",, "level:2"], 
     "token_list": ["token"]
 }
@@ -288,7 +288,7 @@ TPNS provides two tag overriding methods: general overriding and overriding by t
 ```json
 {
     "operator_type": 6,
-    "platform": "android",
+
     "tag_list": ["test:2", "level:3"], 
     "token_list": ["token"]
 }
@@ -315,7 +315,7 @@ TPNS provides two tag overriding methods: general overriding and overriding by t
 ```json
 {
     "operator_type": 5,
-    "platform": "android", 
+
     "token_list": ["token"]
 }
 ```
