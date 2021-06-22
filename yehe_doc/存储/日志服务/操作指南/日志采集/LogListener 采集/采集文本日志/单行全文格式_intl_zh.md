@@ -18,28 +18,26 @@ __CONTENT__:Tue Jan 22 12:08:15 CST 2019 Installed: libjpeg-turbo-static-1.2.90-
 ### 登录控制台
 
 1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls)。
-2. 在左侧导航栏中，单击【日志集管理】，进入日志集管理页面。
+2. 在左侧导航栏中，单击【日志主题】，进入日志主题管理页面。
 
 ### 创建日志主题
 
-1. 选择您需要新增日志主题的日志集，单击该日志集ID/日志集名称，进入日志集信息页面。
-2. 单击【新增日志主题】。
-3. 在弹出的对话框中，将“日志主题名称”填写为“test_full”，单击【确定】，即可新增日志主题。
-
+1. 单击【创建日志主题】。
+2. 在弹出的对话框中，将“日志主题名称”填写为“test_full”，单击【确定】，即可新增日志主题。
 
 ### 机器组管理
 
 1. 日志主题创建成功后，进入该日志主题管理页面。
 2. 选择【采集配置】页签，单击您需要采集的日志数据源格式。
 3. 在“机器组管理”页面，勾选需要与当前日志主题进行绑定的机器组，单击【下一步】。
-即可进入采集配置阶段，更多详情请参阅 [管理机器组](https://intl.cloud.tencent.com/zh/document/product/614/17412)。
+即可进入采集配置阶段，更多详情请参阅 [管理机器组](https://intl.cloud.tencent.com/document/product/614/17412)。
 
 
 ### 采集配置
 
 #### 配置日志文件采集路径
 
-在“采集配置”页面，根据日志采集路径格式，填写“采集路径”。
+在“采集配置”页面，根据日志采集路径格式，填写“采集路径”。如下图所示：
 日志采集路径格式：`[目录前缀表达式]/**/[文件名表达式]`。
 
 填写日志采集路径后，LogListener 会按照**[目录前缀表达式]**匹配所有符合规则的公共前缀路径，并监听这些目录（包含子层目录）下所有符合**[文件名表达式]**规则的日志文件。其参数详细说明如下：
@@ -63,7 +61,6 @@ __CONTENT__:Tue Jan 22 12:08:15 CST 2019 Installed: libjpeg-turbo-static-1.2.90-
 | 1.   | /var/log/nginx | access.log   | 此例中，日志路径配置为`/var/log/nginx/**/access.log`，LogListener 将会监听`/var/log/nginx`前缀路径下所有子目录中以`access.log`命名的日志文件 |
 | 2.   | /var/log/nginx | \*.log       | 此例中，日志路径配置为`/var/log/nginx/**/*.log`，LogListener 将会监听`/var/log/nginx`前缀路径下所有子目录中以`.log`结尾的日志文件 |
 | 3.   | /var/log/nginx | error\*      | 此例中，日志路径配置为`/var/log/nginx/**/error*`，LogListener 将会监听`/var/log/nginx`前缀路径下所有子目录中以`error`开头命名的日志文件 |
-
 
 
 >!
@@ -102,7 +99,6 @@ __CONTENT__:Tue Jan 22 12:08:15 CST 2019 Installed: libjpeg-turbo-static-1.2.90-
 1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls)。
 2. 在左侧导航栏中，单击【检索分析】，进入检索分析页面。
 3. 根据实际需求，选择地域、日志集与日志主题，单击【检索分析】，即可开始按照设定的查询条件检索日志。
-
 
 
 

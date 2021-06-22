@@ -38,9 +38,6 @@ status:404 | select count(*) as pv
 
 
 
-## 效果展示
-
-
 
 ## 支持的 SQL 语法和函数
 

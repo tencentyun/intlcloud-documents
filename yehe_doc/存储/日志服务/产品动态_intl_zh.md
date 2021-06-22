@@ -1,3 +1,22 @@
+## 2021年05月
+
+<table>
+	<thead>
+		<tr>
+			<th width="20%">动态名称</th>
+			<th width="50%">动态描述</th>
+			<th width="15%">发布时间</th>
+			<th width="15%">相关文档</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr><td>仪表盘2.0重磅发布</td><td>新版2.0仪表盘 UI 界面全新发布，增强可视化功能，优化仪表盘样式。</td><td>2021-05-31</td><td>-</td></tr>
+		<tr><td>LogListener 支持内网下载</td><td>满足用户在不同地域下通过内网地址下载 LogListener 安装包，避免因链接外网导致安全风险。</td><td>2021-05-27</td><td><a href="https://intl.cloud.tencent.com/document/product/614/17414">LogListener 安装指南</a></td></tr>
+		<tr><td>日志主题量级统计</td><td>新增单个日志主题量级统计监控功能，支持用户查看日志主题流量动态。</td><td>2021-05-20</td><td>-</td></tr>
+		<tr><td>采集配置导入功能</td><td>可一键导入已有日志主题的配置规则，提高日志数据接入效率。</td><td>2021-05-17</td><td>LogListener 采集配置导入</a></td></tr>
+	</tbody>
+</table>
+
 ## 2021年04月
 
 <table>
@@ -10,7 +29,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>LogListener 服务日志上线</td><td>LogListener 服务日志功能支持记录 LogListener 端运行状态和采集监控的日志数据并配置可视化视图，提供重要指标数据。</td><td>2021-04-26</td><td><a href="https://cloud.tencent.com/document/product/614/55281">LogListener 服务日志</a></td></tr>
+		<tr><td>LogListener 服务日志上线</td><td>LogListener 服务日志功能支持记录 LogListener 端运行状态和采集监控的日志数据并配置可视化视图，提供重要指标数据。</td><td>2021-04-26</td><td><a href="https://intl.cloud.tencent.com/document/product/614/40232">LogListener 服务日志</a></td></tr>
 	</tbody>
 </table>
 
@@ -43,7 +62,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr><td>LogListener 自动升级</td><td>支持用户在控制台预设时间段指定机器组进行 agent 自动升级，也可对目标机器实行手动升级。</td><td>2021-02-27</td><td><a href="https://cloud.tencent.com/document/product/614/55468">LogListener 升级指南</a></td></tr>
+		<tr><td>LogListener 自动升级</td><td>支持用户在控制台预设时间段指定机器组进行 agent 自动升级，也可对目标机器实行手动升级。</td><td>2021-02-27</td><td><a href="https://intl.cloud.tencent.com/document/product/614/40233">LogListener 升级指南</a></td></tr>
 		<tr><td>CLS 全面支持毫秒级精度日志</td><td>LogListener 使用采集时间支持毫秒级时间戳。开启时间采集后，LogListener 携带毫秒级的 Unix 时间戳进行上传。</td><td>2021-02-20</td><td>-</td></tr>
 		<tr><td>百万级日志下载</td><td>最高可支持百万级日志下载，支持指定检索条件、检索时间范围自定义导出所需的日志数量，提供【CSV】和【JSON】两种导出格式。</td><td>2021-02-14</td><td><a href="https://intl.cloud.tencent.com/document/product/614/34234">日志下载</a></td></tr>
 		<tr><td>上下文检索</td><td><ul  style="margin: 0;"><li>增加定位当前日志功能，快速定位目标日志滚动查看上下文。</li><li>增加多个字符串高亮功能，快速标记出用户检索的关键词。</li><li>增加过滤条件功能，快速定位目标字符串所在日志。</li></ul></td><td>2021-02-06</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39795">上下文检索分析</a></td></tr>
