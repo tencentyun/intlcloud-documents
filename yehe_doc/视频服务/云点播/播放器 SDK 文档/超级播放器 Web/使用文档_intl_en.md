@@ -298,7 +298,7 @@ var player = TCPlayer('player-container-id', {
 The `psign` parameter is the superplayer signature. For its specific description, please see [Superplayer Signature](https://intl.cloud.tencent.com/document/product/266/38099).
 
 >!
->- If the URL of the playback page or Flash SWF has a different domain name from the decryption key server, the key server needs to deploy `corssdomain.xml` and cross-origin resource sharing (CORS) to allow Flash and JavaScript to obtain the decryption key across origins.
+>- If the URL of the playback page or Flash SWF has a different domain name from the decryption key server, the key server needs to deploy `crossdomain.xml` and cross-origin resource sharing (CORS) to allow Flash and JavaScript to obtain the decryption key across origins.
 >- The domain name of SWF URL is configured in `crossdomain.xml`, which must be placed in the root directory of the key server.
 >- The Flash SWF file of the player is stored under the `imgcache.qq.com` domain name by default. If you need to deploy it to your own server, you can download it [here](https://imgcache.qq.com/open/qcloud/video/tcplayer/player.swf) and deploy it by yourself.
 >- If your business is in a domain-limited region, the Flash SWF file needs to be stored under the `cloudcache.tencent-cloud.com` domain name by default.
