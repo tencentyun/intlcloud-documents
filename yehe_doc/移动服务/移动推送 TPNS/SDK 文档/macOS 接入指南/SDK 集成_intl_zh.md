@@ -60,7 +60,9 @@ pod 'TPNS-macOS'
 }
 ```
 2. 在 `AppDelegate`中选择实现 `XGPushDelegate ` 协议中的方法：
-```objective-c
+
+```
+objective-c
 /// 注册推送服务成功回调
 /// @param deviceToken APNs 生成的Device Token
 /// @param xgToken TPNS 生成的 Token，推送消息时需要使用此值。TPNS 维护此值与APNs 的 Device Token的映射关系
@@ -99,7 +101,8 @@ pod 'TPNS-macOS'
 
 如果 Xcode 控制台显示如下相似日志，表明客户端已经正确集成 SDK。
 
-```javascript
+```
+javascript
 [TPNS]  Current device token is 2117b45c7e32bcdae2939f******57e420a376bdd44cf6f58613129d2065370
 [TPNS]  Current TPNS token is 0304b8f5d4e*****0af06b37d8b850d95606
 [TPNS]  The server responds correctly, registering device successfully
@@ -111,7 +114,8 @@ pod 'TPNS-macOS'
 建议您完成 SDK 集成后，在 App 的【关于】、【意见反馈】等比较不常用的 UI 中，通过手势或者其他方式显示 Token，该操作便于我们后续进行问题排查。
 
 #### 示例代码
-```objective-c
+```
+objective-c
 //获取 TPNS 生成的 Token
 [[XGPushTokenManager defaultTokenManager] xgTokenString];
 //获取 APNs 生成的 DeviceToken
