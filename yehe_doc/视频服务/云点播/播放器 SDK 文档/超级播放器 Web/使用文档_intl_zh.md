@@ -298,7 +298,7 @@ var player = TCPlayer('player-container-id', {
 参数 psign 即超级播放器签名，其具体含义请参见 [超级播放器签名](https://intl.cloud.tencent.com/document/product/266/38099)。
 
 >!
->- 如果播放页面或者 Flash swf URL 与解密密钥服务器域名不一致，Key 服务器需要部署 corssdomain.xml 和 CORS（"跨域资源共享"，Cross-origin resource sharing），允许 Flash 和 JavaScript 跨域获取解密密钥。
+>- 如果播放页面或者 Flash swf URL 与解密密钥服务器域名不一致，Key 服务器需要部署 crossdomain.xml 和 CORS（"跨域资源共享"，Cross-origin resource sharing），允许 Flash 和 JavaScript 跨域获取解密密钥。
 >- crossdomain.xml 中配置的是 swf URL 的域名，并且 xml 文件必须放置在 Key 服务器的根目录。
 >- 播放器的 Flash swf 文件默认存放在`imgcache.qq.com`域名下，如需部署到自己的服务器上，可自行下载并部署，[swf 文件地址](https://imgcache.qq.com/open/qcloud/video/tcplayer/player.swf)。
 >- 如果是在域名限制区域，需要的播放器的 Flash swf 文件默认存放在`cloudcache.tencent-cloud.com`域名下。
