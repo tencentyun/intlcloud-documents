@@ -14,7 +14,7 @@
 2. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), [create a bucket](https://intl.cloud.tencent.com/document/product/436/13309), and get the bucket name and [region name](https://intl.cloud.tencent.com/document/product/436/6224).
 3. Log in to the [CAM console](https://console.cloud.tencent.com/capi) and get the SecretId and SecretKey of your project.
 4. Configure CORS rule. Put in `*` for `AllowHeader`. For `ExposeHeaders`, put in `ETag`, `Content-Length`, and the other header fields that JS needs to read as shown below. For more information, please see [Setting Cross-Origin Access](https://intl.cloud.tencent.com/document/product/436/13318).
-   ![CORS example](https://main.qcloudimg.com/raw/bdb4f616f2afe4ca18ba663446873fd4.png)
+
 
 > ?For the definition of parameters such as `SecretId`, `SecretKey`, and `Bucket`, please see COS’s [Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
 
