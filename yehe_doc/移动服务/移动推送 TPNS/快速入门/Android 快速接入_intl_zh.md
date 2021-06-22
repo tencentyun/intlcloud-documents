@@ -20,7 +20,7 @@
 3. 若出现以下提示，则表示 SDK 接入成功 。
 ![](https://main.qcloudimg.com/raw/20dcdc160613bf6b8552a508891cbda5.png)
 	若出现以下提示，请确认 App 是否成功注册推送服务，可参见 [接入结果验证](#jierujieguo)。
-	![](https://main.qcloudimg.com/raw/b234996ccd14cd5681bda3c5afcb5f30.png)
+
 >!为提升离线抵达率，TPNS SDK 默认开启联合保活能力，开发者可手动关闭，详情请参见 [关闭 TPNS 保活功能](https://intl.cloud.tencent.com/document/product/1024/32624)。
 
 
@@ -62,4 +62,4 @@ XG register push success with token:6ed8af8d7b18049d9fed116a9db9c71ab4aabb65
 4. 如果日志显示 `Execution failed for task ':Paracraft:checkTPNS'`，说明检查到有新版本的 TPNS Android SDK 可以升级。如果不希望检查更新，可以在 tpns-configs.json 文件中添加 `"upgrade": false`，效果如下图：
 <img src="https://main.qcloudimg.com/raw/9eb6a2e108a7a4d1abdd10ef5c1cffdd.png" width="70%"></img>
 5. 使用插件过程中，遇到 Android Gradle 插件版本跟 Gradle 版本不匹配的问题，可以参考 [Android Gradle 插件版本说明](https://developer.android.google.cn/studio/releases/gradle-plugin) 进行版本升级，下图列出了当前各个 Android Gradle 插件版本所需的 Gradle 版本：
-![](https://main.qcloudimg.com/raw/3b5fa0267d2a051bf55c9f4521cff844.png)
+![](https://main.qcloudimg.com/raw/dcdce69e543adef9d752ef216249da06.png)
