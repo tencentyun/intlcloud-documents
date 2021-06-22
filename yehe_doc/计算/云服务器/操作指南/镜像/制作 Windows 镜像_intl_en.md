@@ -73,21 +73,19 @@ After the migration to the cloud, hardware changes include but are not limited t
 ### Exporting an image
 You can use various tools to export an image according to your requirements.
 <dx-tabs>
-::: Using a platform tool to export an image[](id:Useplatform)
+::: Using\sa\splatform\stool\sto\sexport\san\simage[](id:Useplatform)
 For more information on how to use the image export tools of virtualization platforms, such as VMWare vCenter Convert and Citrix XenConvert, see the document for the respective platform.
->? Tencent Cloud’s service migration supports images in qcow2, vhd, raw, and vmdk formats.
->
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note</p><p>Tencent Cloud’s service migration supports images in qcow2, vhd, raw, and vmdk formats.</p>
+</blockquote>
 :::
-::: Using disk2vhd to export an image[](id:Usedisk2vhd)
+::: Using\sdisk2vhd\sto\sexport\san\simage[](id:Usedisk2vhd)
 If you need to export the system on a physical machine or if you do not want to use a platform tool to export an image, use disk2vhd instead.
 1. Install and start the Disk2vhd tool.
 [Click here to download disk2vhd >>](https://download.sysinternals.com/files/Disk2vhd.zip).
 2. Select the storage path of the image to export, select the volumes to copy, and click **Create**, as shown in the following figure.
->! 
-> - Disk2vhd can be started only after the Volume Shadow Copy Service (VSS) is installed in the Windows system. For more information about the VSS features, see [Volume Shadow Copy Service](https://docs.microsoft.com/zh-cn/windows/win32/vss/volume-shadow-copy-service-portal?redirectedfrom=MSDN).
-> - Do not select "Use Vhdx" because the system currently does not support VHDX images.
-> - We recommend that you select "Use volume Shadow Copy" to better ensure data integrity.
-> 
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note</p><ul><li><p>Disk2vhd can be started only after the Volume Shadow Copy Service (VSS) is installed in the Windows system. For more information about the VSS features, see <a href="https://docs.microsoft.com/zh-cn/windows/win32/vss/volume-shadow-copy-service-portal?redirectedfrom=MSDN">Volume Shadow Copy Service</a>.</p></li><li><p>Do not select "Use Vhdx" because the system currently does not support VHDX images.</p></li><li><p>We recommend that you select "Use volume Shadow Copy" to better ensure data integrity.</p></li></ul>
+</blockquote>
+
 ![image](https://main.qcloudimg.com/raw/68d9c4e5e7db49c4cefdd3785ce9b68d.jpg)
 :::
 </dx-tabs>
