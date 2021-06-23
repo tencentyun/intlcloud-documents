@@ -7,7 +7,7 @@ GPM can be used independently to generate player matches via custom matchmaking 
 
 ### Use Case 2: Hosted Game Solutions
 
-GPM can be used together with Tencent Cloud Game Server Engine (GSE) to form a streamlined gaming solution, where matchmaking results can be used to request resources from the game servers hosted with GSE to automatically start new game sessions for matched players. 
+GPM can be used together with Tencent Cloud Game Server Elastic-scaling (GSE) to form a streamlined gaming solution, where matchmaking results can be used to request resources from the game servers hosted with GSE to automatically start new game sessions for matched players. 
 ![](https://main.qcloudimg.com/raw/9cc184add5d43b899d2f53cb105d725f.png)
 
 ### Use Case 3: Matching Teams
