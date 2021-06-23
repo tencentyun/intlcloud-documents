@@ -29,7 +29,7 @@
 ## 相关服务
 使用计费相关工具来详细并精准计算出实际花费，请参考 [费用总览](https://intl.cloud.tencent.com/document/product/236/18335) 和 [价格计算器](https://buy.cloud.tencent.com/calculator/cdb)。
 
-通过购买云数据库 MySQL 实例来搭建云上的数据服务，请参考 [购买流程](https://intl.cloud.tencent.com/document/product/236/5160) 和  [快速入门](https://intl.cloud.tencent.com/document/product/236/3128)。
+通过购买云数据库 MySQL 实例来搭建云上的数据服务，请参考 [购买方式](https://intl.cloud.tencent.com/document/product/236/5160) 和  [快速入门](https://intl.cloud.tencent.com/document/product/236/3128)。
 
 使用云数据库 MySQL 数据库迁移工具，来实现云上云下数据的搬迁，请参考 [数据迁移](https://intl.cloud.tencent.com/document/product/571/13706)。
 
