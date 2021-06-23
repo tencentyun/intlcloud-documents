@@ -24,7 +24,7 @@
 
 1. 尝试使用 SSH 登录云服务器，详情请参见 [使用 SSH 登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32501)。
  - 登录成功，则执行下一步。
- - 登录失败，则需使用单用户模式。
+ - 登录失败，则需使用单用户模式，详情请参见 [通过控制台进入 Linux 实例单用户模式](https://intl.cloud.tencent.com/document/product/213/34819)。
 2. 登录成功后，执行以下命令查看日志信息。
 ```
 vim /var/log/secure
