@@ -18,7 +18,7 @@ The `/var/log/btmp` log file is oversized due to brute force attacks. This file 
 
 1. Try to [log in to Linux CVM via SSH key](https://intl.cloud.tencent.com/document/product/213/32501).
 	- If the login succeeded, proceed to the next step.
-	- If the login failed, try the single user mode.
+	- If the login failed, try the single user mode.For more information, see [Booting into Linux Single User Mode](https://intl.cloud.tencent.com/document/product/213/34819).
 2. Access `/var/log` and check the size of the `/var/log/btmp` log file.
 3. Run the following command to clear the oversized `/var/log/btmp` log file. Then you can log in normally.
 ```
