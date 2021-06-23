@@ -34,7 +34,7 @@ inputs:
       - .env
   region: ap-guangzhou
   runtime: Nodejs10.15
-  funcitonName: ${name}-${stage}-${app} # Function name
+  functionName: ${name}-${stage}-${app} # Function name
   apigatewayConf:
     protocols:
       - http
