@@ -14,7 +14,7 @@ If you do not need to manage multi-user resource access, you can skip this secti
 
 A CAM policy must allow or deny one or more CVM operations, as well as the resources these actions target. A policy can also include the conditions governing the use of resources.
 
-Some of the CVM APIs support resource-level permissions, which means that you must specify all resources, rather than specific resources, when performing such API operations.
+Some of the CVM APIs do not support resource-level permissions, which means that you must specify all resources, rather than specific resources, when performing such API operations.
 
 | Task | Link | 
 |---------|---------|
