@@ -40,9 +40,9 @@ In a meeting, click **Share Screen** on the toolbar, select **Whiteboard** as th
 
 ### Android/iOS:
 
-In a meeting, click **Share Screen** on the toolbar, select **Whiteboard**, and click **Share*.
+In a meeting, click **Share Screen** on the toolbar, select **Whiteboard**, and click **Share**.
 
-## <span id="白板工具栏">Whiteboard/Annotation Toolbar</span>
+## <span id="whiteboard toolbar">Whiteboard/Annotation Toolbar</span>
 
 ### macOS
 
