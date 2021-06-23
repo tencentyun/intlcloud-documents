@@ -43,7 +43,7 @@ Perform the [troubleshooting procedure](#ProcessingSteps) to correct the relatio
 
 1. Try to [log in to Linux CVM via SSH key](https://intl.cloud.tencent.com/document/product/213/32501).
 	- If login succeeded, proceed to the next step.
-	- If login failed, use single user mode.
+	- If login failed, use single user mode.For more information, see [Booting into Linux Single User Mode](https://intl.cloud.tencent.com/document/product/213/34819).
 2. Check whether the set values meet the relationship `soft nofile ≤ hard nofile ≤ fs.nr_open`.
  - Run the following command to obtain the values of `soft nofile` and `hard nofile`.
 ```
