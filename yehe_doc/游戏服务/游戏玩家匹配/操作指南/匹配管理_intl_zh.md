@@ -36,7 +36,7 @@
 
 - #### 请求对战服资源
 
-  GPM 可以为匹配结果请求 [游戏服务器引擎 GSE](https://intl.cloud.tencent.com/document/product/1055) 的服务器资源，从而启动一个游戏服务器会话。成功匹配的玩家，可以连接到 GSE 分配的资源进行游戏对战。创建此类型的匹配，您需要先在 GSE 中创建一个队列，详情可参见 [创建游戏服务器队列](https://intl.cloud.tencent.com/document/product/1055/36681)。关于此类型的匹配流程，详情可参见 [需要请求对战服资源的匹配](https://intl.cloud.tencent.com/document/product/1072/39217)。并填写以下信息：
+  GPM 可以为匹配结果请求 [游戏服务器伸缩 GSE](https://intl.cloud.tencent.com/document/product/1055) 的服务器资源，从而启动一个游戏服务器会话。成功匹配的玩家，可以连接到 GSE 分配的资源进行游戏对战。创建此类型的匹配，您需要先在 GSE 中创建一个队列，详情可参见 [创建游戏服务器队列](https://intl.cloud.tencent.com/document/product/1055/36681)。关于此类型的匹配流程，详情可参见 [需要请求对战服资源的匹配](https://intl.cloud.tencent.com/document/product/1072/39217)。并填写以下信息：
   ![](https://main.qcloudimg.com/raw/a692ca9c613e9bcc836ed41ae5af10c8.jpg)
 
    - 是否为匹配结果请求服务器资源：必填，此处选“请求 GSE 资源”。
