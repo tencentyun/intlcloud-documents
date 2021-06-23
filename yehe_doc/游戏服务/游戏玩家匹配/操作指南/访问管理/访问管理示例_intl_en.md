@@ -12,16 +12,16 @@ The detailed steps are as follows:
 1. Create a custom policy for viewing GPM statistics as instructed in [Policy](https://intl.cloud.tencent.com/document/product/598/35596). The example policy syntax is as follows:
 ```
 {
-  "version": "2.0",
-  "statement": [
-    {
-      "action": [
-        "gpm:*"
-      ],
-      "resource": "*",
-      "effect": "allow"
-    }
-  ]
+			"version": "2.0",
+			"statement": [
+				{
+					"action": [
+						"gpm:*"
+					],
+					"resource": "*",
+					"effect": "allow"
+				}
+			]
 }
 ```
 2. Locate the created policy and click **Bind User/Group** in the "Operation" column.
@@ -35,16 +35,16 @@ The detailed steps are as follows:
 1. Create a custom policy for viewing GPM statistics as instructed in [Policy](https://intl.cloud.tencent.com/document/product/598/35596). The example policy syntax is as follows:
 ```
 {
-  "version": "2.0",
-  "statement": [
-    {
-      "action": [
-        "gpm:Describe*",
-      ],
-      "resource": "*",
-      "effect": "allow"
-    }
-  ]
+			"version": "2.0",
+			"statement": [
+				{
+					"action": [
+						"gpm:Describe*",
+					],
+					"resource": "*",
+					"effect": "allow"
+				}
+			]
 }
 ```
 2. Locate the created policy and click **Bind User/Group** in the "Operation" column.
@@ -66,19 +66,19 @@ The detailed steps are as follows:
 1. Create a custom policy for matching on GPM as instructed in [Policy](https://intl.cloud.tencent.com/document/product/598/35596). The example policy syntax is as follows:
 ```
 {
-    "version": "2.0",
-    "statement": [
-        {
-            "action": [
-                "gpm:ModifyRule",
-                "gpm:DeleteRule",
-                "gpm:DescribeRule",
-                "gpm:DescribeRules"
-            ],
-            "resource": "*",
-            "effect": "allow"
-        }
-    ]
+			"version": "2.0",
+			"statement": [
+					{
+							"action": [
+									"gpm:ModifyRule",
+									"gpm:DeleteRule",
+									"gpm:DescribeRule",
+									"gpm:DescribeRules"
+							],
+							"resource": "*",
+							"effect": "allow"
+					}
+			]
 }
 ```
 2. Locate the created policy and click **Bind User/Group** in the "Operation" column.
@@ -101,20 +101,20 @@ The detailed steps are as follows:
 1. Create a custom policy for matching on GPM as instructed in [Policy](https://intl.cloud.tencent.com/document/product/598/35596). The example policy syntax is as follows:
 ```
 {
-    "version": "2.0",
-    "statement": [
-        {
-            "action": [
-                "gpm:ModifyMatch",
-                "gpm:DeleteMatch",
-                "gpm:DescribeMatch",
-                "gpm:DescribeMatches",
-                "gpm:DescribeRules"
-            ],
-            "resource": "*",
-            "effect": "allow"
-        }
-    ]
+			"version": "2.0",
+			"statement": [
+					{
+							"action": [
+									"gpm:ModifyMatch",
+									"gpm:DeleteMatch",
+									"gpm:DescribeMatch",
+									"gpm:DescribeMatches",
+									"gpm:DescribeRules"
+							],
+							"resource": "*",
+							"effect": "allow"
+					}
+			]
 }
 ```
 2. Locate the created policy and click **Bind User/Group** in the "Operation" column.
@@ -136,18 +136,18 @@ The detailed steps are as follows:
 1. Create a custom policy for matching on GPM as instructed in [Policy](https://intl.cloud.tencent.com/document/product/598/35596). The example policy syntax is as follows:
 ```
 {
-    "version": "2.0",
-    "statement": [
-        {
-            "action": [
-				"gpm:DescribeMatches",
-				"gpm:DescribeData",
-				"gpm:DescribeMatchCodes"
-            ],
-            "resource": "*",
-            "effect": "allow"
-        }
-    ]
+			"version": "2.0",
+			"statement": [
+					{
+							"action": [
+					"gpm:DescribeMatches",
+					"gpm:DescribeData",
+					"gpm:DescribeMatchCodes"
+							],
+							"resource": "*",
+							"effect": "allow"
+					}
+			]
 }
 ```
 2. Locate the created policy and click **Bind User/Group** in the "Operation" column.
@@ -170,18 +170,18 @@ The detailed steps are as follows:
 1. Create a custom policy for matching on GPM as instructed in [Policy](https://intl.cloud.tencent.com/document/product/598/35596). The example policy syntax is as follows:
 ```
 {
-    "version": "2.0",
-    "statement": [
-        {
-            "action": [
-                "gpm:StartMatching",
-                "gpm:CancelMatching",
-                "gpm:DescribeMatchingProgress"
-            ],
-            "resource": "*",
-            "effect": "allow"
-        }
-    ]
+			"version": "2.0",
+			"statement": [
+					{
+							"action": [
+									"gpm:StartMatching",
+									"gpm:CancelMatching",
+									"gpm:DescribeMatchingProgress"
+							],
+							"resource": "*",
+							"effect": "allow"
+					}
+			]
 }
 ```
 2. Locate the created policy and click **Bind User/Group** in the "Operation" column.
