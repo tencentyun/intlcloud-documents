@@ -1,8 +1,8 @@
 
-Horizontal Pod Autoscaler (HPA) can automatically scale the number of Pods for services according to the average CPU utilization of target Pods and other metrics. You can set auto-scaling triggering metrics in the console. Such metrics include CPU, memory, disk, network, and GPU metrics. You can also use these metrics when creating and editing HPAs with YAML files. This document provides an example of configuring a YAML file.
+Horizontal Pod Autoscaler (HPA) can automatically scale the number of Pods for services according to the average CPU utilization of target Pods and other metrics. You can set auto-scaling triggering metrics in the console including CPU, memory, disk, network, and GPU metrics. You can also use these metrics when creating and editing HPAs with YAML files. This document provides an example of configuring a YAML file.
 
 ## Autoscaling Metrics
-The following tables provide details about some autoscaling metrics:
+The following tables list the details of the autoscaling metrics:
 >?Each variable under `metricName` has its own unit which is listed in the default unit column. You can omit such units when compiling the YAML file.
 
 ### CPU metrics
@@ -90,7 +90,7 @@ The following tables provide details about some autoscaling metrics:
 </table>
 
 
-### Network metrics	
+### Network Metrics	
 
 <table>
 <tr>
@@ -224,7 +224,7 @@ The following tables provide details about some autoscaling metrics:
 
 
 
-### GPU metrics
+### GPU
 
 <table>
 <tr>
@@ -299,7 +299,7 @@ The following tables provide details about some autoscaling metrics:
 
 
 ## Creating and Editing an HPA by Using a YAML File 
-You can create and edit an HPA by using a YAML file. The following example shows a configuration file that defines an HPA named "example". The HPA enables the system to trigger HPA for 1 or 2 pods when the CPU usage reaches 1.
+You can create and edit an HPA by using a YAML file. The following example shows a configuration file that defines an HPA named "example". The HPA enables the system to trigger HPA for 1 or 2 Pods when the CPU usage reaches 1.
 
 >! TKE is compatible with the native Resource types.
 
