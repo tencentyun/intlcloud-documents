@@ -22,7 +22,7 @@
 ### 相关特性
 
 处于相同地域不同可用区，但在同一个私有网络下的云产品之间均通过内网互通，可以直接使用 [内网 IP](https://intl.cloud.tencent.com/document/product/213/5225) 访问。
->内网互通是指同一账户下的资源互通，不同账户的资源内网完全隔离。
+>?内网互通是指同一账户下的资源互通，不同账户的资源内网完全隔离。
 >
 
 <span id="MainlandChina"></span>
@@ -72,7 +72,7 @@
 			<td>南京二区<br>ap-nanjing-2</td>
 	</tr>
 	<tr>
-			<td rowspan="5">华北地区（北京）<br>ap-beijing</td>
+			<td rowspan="7">华北地区（北京）<br>ap-beijing</td>
 			<td>北京一区<br>ap-beijing-1</td>
 	</tr>
 	<tr>
@@ -88,6 +88,12 @@
 			<td>北京五区<br>ap-beijing-5</td>
 	</tr>
 	<tr>
+			<td>北京六区<br>ap-beijing-6</td>
+	</tr>
+	<tr>
+			<td>北京七区<br>ap-beijing-7</td>
+	</tr>
+	<tr>
 		<td rowspan="2">西南地区（成都）<br>ap-chengdu</td>
 		<td>成都一区<br>ap-chengdu-1</td>
 	</tr>
@@ -99,11 +105,14 @@
 			<td>重庆一区<br>ap-chongqing-1</td>
 	</tr>
 	<tr>
-			<td rowspan="2">港澳台地区（中国香港）<br>ap-hongkong</td>
+			<td rowspan="3">港澳台地区（中国香港）<br>ap-hongkong</td>
 			<td>香港一区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-1</td>
 	</tr>
 	<tr>
 			<td>香港二区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-2</td>
+	</tr>
+	<tr>
+			<td>香港三区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-3</td>
 	</tr>
 </tbody>
 </table>	
@@ -118,11 +127,18 @@
 			<th>可用区</th>
 		</tr>
 		<tr>
-			<td  rowspan="2">亚太东南（新加坡）<br>ap-singapore</td>
+			<td  rowspan="3">亚太东南（新加坡）<br>ap-singapore</td>
 			<td>新加坡一区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-1</td>
 		</tr>
 		<tr>
 			<td>新加坡二区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-2</td>
+		</tr>
+		<tr>
+			<td>新加坡三区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-3</td>
+		</tr>
+		<tr>
+			<td>亚太东南（雅加达）<br>ap-jakarta</td>
+			<td>雅加达一区（雅加达节点可用于覆盖亚太东南地区）<br>ap-jakarta-1</td>
 		</tr>
 		<tr>
 			<td  rowspan="2">亚太东北（首尔）<br>ap-seoul</td>
@@ -132,8 +148,11 @@
 			<td>首尔二区（首尔节点可用于覆盖亚太东北地区）<br>ap-seoul-2</td>
 		</tr>
 		<tr>
-			<td >亚太东北（东京）<br>ap-tokyo</td>
+			<td rowspan="2">亚太东北（东京）<br>ap-tokyo</td>
 			<td>东京一区（东京节点可用区覆盖亚太东北地区）<br>ap-tokyo-1</td>
+		</tr>
+		<tr>
+			<td>东京二区（东京节点可用区覆盖亚太东北地区）<br>ap-tokyo-2</td>
 		</tr>
        <tr>
 			<td  rowspan="2">亚太南部（孟买）<br>ap-mumbai</td>

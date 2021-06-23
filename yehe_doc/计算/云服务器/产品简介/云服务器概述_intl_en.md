@@ -1,35 +1,53 @@
 ## CVM Overview
 
-Tencent Cloud Virtual Machine (CVM) is a scalable cloud computing service that frees you from having to estimate your resources usage and investing up-front. With Tencent Cloud CVM, you can start CVMs and deploy applications immediately.
-Tencent Cloud CVM instances allow you to customize all resources, including CPU, memory, disk, network, and security. They also allow you to easily adjust the resources in response to any change in demand.
+Tencent Cloud Virtual Machine (CVM) is a scalable cloud computing service that frees you from estimation of resource usage and upfront investment. With Tencent Cloud CVM, you can start CVMs and deploy applications immediately.
+You can customize all resources of a CVM instance, including CPU, memory, disk, network, and security policies. You can also easily adjust the resources in response to any change in demand.
 
 ## Using CVM instances
 
-Tencent Cloud allows you to configure and manage CVM instances in the following ways:
+You can configure and manage CVM instances in the following ways:
 - **Console**: a web-based UI for configuring and managing CVM instances.
 - **API**: Tencent Cloud also provides APIs for configuring and managing CVM instances. For more information, see [API Category](https://intl.cloud.tencent.com/document/api/213/15689).
-- **SDK**: You can use [SDK](https://intl.cloud.tencent.com/document/product/494) or [Tencent Cloud CLI](https://intl.cloud.tencent.com/document/product/1013) to call CVM APIs.
+- **SDK**: you can use [SDK](https://intl.cloud.tencent.com/document/product/494) or [Tencent Cloud CLI](https://intl.cloud.tencent.com/document/product/1013) to call CVM APIs.
 
 ## Key Concepts
 
 Before using Tencent Cloud CVM, you should familiarize yourself with the following concepts:
-- **Instance**: a virtual cloud computing resource that includes CPU, memory, OS, network, disks, and other basic components.
-- **Instance type**: configurations of CPU, RAM, storage, and networking capacity for CVM instances. For more information, please see [Instance Types](https://intl.cloud.tencent.com/document/product/213/11518).
-- **Image**: a pre-configured template containing an operating system and applications that CVM instances run on. Tencent Cloud CVM provides pre-configured images for Windows, Linux, etc.
-- **Local disk**: a device that can be used for persistent storage by an instance on the same physical server as the disk.
-- **Cloud disk**: a distributed and persistent block storage device provided by Tencent Cloud that can serve as the system disk or an expandable data disk of an instance.
-- **VPC**: a virtual and isolated network space provided by Tencent Cloud that is logically separated from other resources.
-- **IP address**: Tencent Cloud provides [private network access](https://intl.cloud.tencent.com/document/product/213/5225) and [public network access](https://intl.cloud.tencent.com/document/product/213/5224). Private network access is for traffic between CVM instances within the same LAN, while public network access is for public-facing services.
-- **Elastic IP (EIP)**: static public network IP addresses designed especially for dynamic networks to meet the demands for fast troubleshooting.
-- **Security group**: security groups serve as virtual firewalls that are capable of status monitoring and packet filtering. They can be associated with one or more CVM instances to control network access. Security groups are an important measure for network security and isolation.
-- **Login**: you can log in to CVM instances using your [login password](https://intl.cloud.tencent.com/document/product/213/6093) or the more secure [SSH key](https://intl.cloud.tencent.com/document/product/213/6092).
-- **Region and availability zone**: physical locations where CVM instances and other resources reside and are launched.
-- **Tencent Cloud Console**: a web-based UI for managing resources.
+<table>
+<tr>
+<th width="12%">Concept</th><th>Description</th>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/213/4939">Instance</a></td>
+<td>A virtual computing resource containing basic computing components such as CPU, memory, OS, network, and disks. Tencent Cloud provides various configurations of CPU, MEM, storage, and networking capacity for CVM instances. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/213/11518">Instance Types</a>.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/213/4940">Image</a></td>
+<td>A pre-configured template containing an operating system and applications that CVM instances run on. Tencent Cloud CVM provides pre-configured images for Windows, Linux, etc.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/213/4953">Cloud Block Storage</a></td>
+<td>A distributed and persistent block storage device provided by Tencent Cloud that can serve as the system disk or an expandable data disk of an instance.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/215/535">Virtual Private Cloud</a></td>
+<td>A logically isolated virtual network space in Tencent Cloud.</td>
+</tr>
+<tr>
+<td>IP address</td>
+<td>Tencent Cloud provides <a href="https://intl.cloud.tencent.com/doc/product/213/5225">Private IP</a> and <a href="https://intl.cloud.tencent.com/document/product/213/5224">Public IP</a> addresses. Private IP addresses are for the interconnection of CVM instances within the same LAN, while public IP addresses are for public-facing services.</td>
+</tr>
+<tr>
+<td>Elastic IP</td>
+<td>Static public network IP addresses designed especially for dynamic networks to meet the demands for fast troubleshooting.</td>
+</tr>
+<tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/213/12452">Security group</a></td>
+<td>A virtual firewall that features stateful data packet filtering. It is used to configure the network access control of CVMs. Security groups are an important measure for network security and isolation.</td>
+</tr>
+</table>
 
-
-
-
-## Customizing CVM Configurations
+## Purchasing and Customizing CVM Instances
 
 If you have specific needs that our standard CVM specifications cannot meet, use the following guides to learn how to obtain custom configurations:
 - [Customizing Windows CVM Configurations](https://intl.cloud.tencent.com/document/product/213/10516)
@@ -37,7 +55,7 @@ If you have specific needs that our standard CVM specifications cannot meet, use
 
 ## CVM Prices
 
-CVM supports pay-as-you-go. For more information, see [Price Overview of CVM Instances](https://intl.cloud.tencent.com/document/product/213/2176).
+CVM supports pay-as-you-go. For more information, see [Price of CVM Instance](https://intl.cloud.tencent.com/document/product/213/2176).
 For pricing information on CVM instances and other resources, refer to [Product Pricing](https://buy.cloud.tencent.com/price/cvm/overview).
 
 ## Relevant Products

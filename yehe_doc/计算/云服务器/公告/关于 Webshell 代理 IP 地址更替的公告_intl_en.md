@@ -1,13 +1,19 @@
 ## Background
-Due to the expansion and upgrade of the WebShell server, we will update the WebShell proxy IP. To use WebShell login service, please open the new WebShell proxy IP range and the remote login port (port 22 by default) in the security group.
+The WebShell proxy IP ranges were updated on April 1, 2021. Please open the new WebShell proxy IP range and the remote login port (port 22 by default) accordingly in the security group.
 >?For more information about WebShell login, see [Logging in to Linux Instance Using Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436). 
 >
 
 
 
 ## Updates
-
-- **On and before March 31, 2021**, both the new and old IP addresses and IP ranges can be used, including:
+- IP ranges added on April 1, 2021:
+81.69.102.0/24
+106.55.203.0/24
+101.33.121.0/24
+101.32.250.0/24
+- Both the new and old IP addresses and IP ranges can be used, including:
+>?To use the WebShell login service, open all proxy IP ranges and remote login ports to internet in the inbound (source) rule of the security group.
+>
 81.69.102.0/24
 106.55.203.0/24
 101.33.121.0/24
@@ -18,11 +24,6 @@ Due to the expansion and upgrade of the WebShell server, we will update the WebS
 119.28.22.215
 119.29.96.147
 211.159.185.38
-- **Starting from April 1, 2021**, the old IP addresses are unavailable. Ensure that the following new proxy IP ranges and remote login ports are open to internet in the inbound (source) rule of the security group.
-81.69.102.0/24
-106.55.203.0/24
-101.33.121.0/24
-101.32.250.0/24
 
 
 ## Relevant Operations
