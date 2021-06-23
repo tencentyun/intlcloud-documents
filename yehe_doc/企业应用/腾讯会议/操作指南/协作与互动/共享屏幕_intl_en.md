@@ -88,7 +88,7 @@ During screen sharing, **New Share**, **Pause**, **Annotation**, and **Stop Shar
 
 2. Pause: this feature pauses the current screen sharing;
 
-3. <span id="批注协作”>Annotation</span>: after opening the annotation toolbar, you can annotate the currently shared content;
+3.  Annotation: after opening the annotation toolbar, you can annotate the currently shared content;
 
 After clicking the drop-down icon on the right of **Annotation**, you can enable **Allow other attendees to annotate** and **Show annotator name**;
 
