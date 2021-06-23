@@ -24,7 +24,7 @@ The `pam_limits.so` module limits the system resource usage of a user during the
 
 1. Try to [log in to Linux CVM via SSH key](https://intl.cloud.tencent.com/document/product/213/32501).
  - If the login succeeded, proceed to the next step.
- - If the login failed, try the single user mode.
+ - If login failed, use single user mode.For more information, see [Booting into Linux Single User Mode](https://intl.cloud.tencent.com/document/product/213/34819).
 2. Run the following command to view logs.
 ```
 vim /var/log/secure
