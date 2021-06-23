@@ -3,9 +3,9 @@
 
 ## 设置安全组
 1. 在设置安全组时，根据实际需求，选择【**新建安全组**】。如下图所示：
->? 如果您已有可使用的安全组，可选择【**已有安全组**】。
+> 如果您已有可使用的安全组，可选择【**已有安全组**】。
 >
-![](https://main.qcloudimg.com/raw/7bafed15a25c7fbfdb60d09069ea3d0b.png)
+![](https://main.qcloudimg.com/raw/c08ca9a0262f4911fdac90925762e4a6.png)
 2. 根据实际需求，勾选需要放通的 IP/端口。
 新建安全组提供以下规则：<ul>
 <li><b>ICMP</b>：放通 ICMP 协议，允许公网 Ping 服务器。</li>
@@ -14,11 +14,13 @@
 <li><b>TCP:443</b>：放通443端口，允许通过 HTTPS 访问 Web 服务。</li>
 <li><b>TCP:3389</b>：放通3389端口，允许 RDP 远程连接 Windows 云服务器。</li>
 <li><b>放通内网</b>：放通内网，允许不同云资源间内网互通（IPv4）。</li></ul>
-
->?
-> - 勾选需要放通的 IP/端口后，将在【安全组规则】中显示详细的安全组入站/出站规则。
-> - 如果您的业务需要放通其他端口，您还可以参考 <a href="https://intl.cloud.tencent.com/document/product/213/32369">安全组应用案例</a> 进行  <a href="https://intl.cloud.tencent.com/document/product/213/34271">创建安全组</a>。出于安全考虑，腾讯云建议您尽量只放通业务需要的端口，避免不必要的安全风险。
-
+<blockquote class="d-mod-explain">
+<div class="d-mod-title d-explain-title">
+<i class="d-icon-explain"></i>说明：
+</div>
+<ul><li>勾选需要放通的 IP/端口后，将在【安全组规则】中显示详细的安全组入站/出站规则。</li><li>如果您的业务需要放通其他端口，您还可以参考 <a href="https://intl.cloud.tencent.com/document/product/213/32369">安全组应用案例</a> 进行  <a href="https://intl.cloud.tencent.com/document/product/213/34271">创建安全组</a>。出于安全考虑，腾讯云建议您尽量只放通业务需要的端口，避免不必要的安全风险。
+</li></ul>
+</blockquote>
 3. 根据页面提示，配置其他信息。
 
 ## 安全组规则

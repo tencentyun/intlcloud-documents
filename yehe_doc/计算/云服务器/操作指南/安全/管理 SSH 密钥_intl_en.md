@@ -1,48 +1,65 @@
-## Scenario
-The password is a unique login credential for each CVM instance. To ensure the security of an instance, Tencent Cloud provides the following two login methods:
-- [Password Login](https://intl.cloud.tencent.com/document/product/213/6093)
-- SSH key pair login
-
-This document describes common operations related to using SSH key pair to log in to an instance.
+## Overview
+This document describes common operations related to using SSH key pair to log in to an instance. For example, you can create, bind, unbind, modify, or delete a SSH key pair.
+>!To bind an SSH key to or unbind it from an instance, please shut down the instance first. See [Shutdown Instances](https://intl.cloud.tencent.com/document/product/213/4929).
+>
 
 ## Directions
 
 <span id="creatSSH"></span>
-### Creating SSH keys
- 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/).
- 2. In the left sidebar, click **[SSH Key](https://console.cloud.tencent.com/cvm/sshkey)**.
- 3. In the SSH key management page, click **Create a key**.
- 4. In the **Create an SSH key** window that pops up, select how you will create the key, enter the related information, and click **OK**.
+### Creating a SSH key
+ 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/).
+ 2. Click **[SSH Key](https://console.cloud.tencent.com/cvm/sshkey)** on the left sidebar.
+ 3. Click **New** on the **SSH Key**page.
+ 4. In the pop-up window, select a creation method as needed, enter the related information, and click **OK**.
+>! After clicking **OK**, the private key will be automatically downloaded. Tencent Cloud will not retain your private key. Be sure to keep it safe.
+ > 
+![](https://main.qcloudimg.com/raw/a6675ade459e6bf236ff7301995a35f2.png)
   - If you select **Create a new key pair**, enter the key name.
   - If you select **Use an existing public key**, enter the key name and the original public key information.
- 5. In the prompt box that pops up, click **Download** to download the private key.
- > Tencent Cloud does not save your private key information. Download and obtain the private key within 10 minutes.
- > 
+
 
 <span id="bindingSSH"></span>
-### Binding/Unbinding a key to or from a CVM
- 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/).
- 2. In the left sidebar, click **[SSH Key](https://console.cloud.tencent.com/cvm/sshkey)**.
- 3. In the SSH key management page, select the SSH key of the CVM to be bound or unbound, and click **Bind/unbind Instance**.
- 4. In the **Bind/unbind Instance** window that pops up, select the region and the CVM to be bound or unbound, and click **OK**.
+### Binding a key to instance
+ 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/).
+ 2. Click **[SSH Key](https://console.cloud.tencent.com/cvm/sshkey)** on the left sidebar.
+ 3. On the SSH key management page, select the target SSH key, and click **Bind with instances**.
+![](https://main.qcloudimg.com/raw/7419df720863aa9463e0dcf478580bbd.png)
+ 4. In the pop-up window, select the target region and instances, and click **Bind**.
 
 
-### Modifying the SSH key name and description
- 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/).
- 2. In the left sidebar, click **[SSH Key](https://console.cloud.tencent.com/cvm/sshkey)**.
- 3. In the SSH key management page, select the key to be modified, and click **Modify**.
- 4. In the **Modify a key** window that pops up, enter the new key name and description, and click **OK**.
+### Unbinding a key from instance
+ 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/).
+ 2. Click **[SSH Key](https://console.cloud.tencent.com/cvm/sshkey)** on the left sidebar.
+ 3. On the SSH key management page, select the target SSH key, and click **Unbind from instances**.
+![](https://main.qcloudimg.com/raw/263f344c4bea3cdff4e422996821cb5d.png)
+ 4. In the pop-up window, select the region and instances to unbind from the key, and click **Unbind**.
+
+
+### Modifying the SSH key name or description
+ 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/).
+ 2. Click **[SSH Key](https://console.cloud.tencent.com/cvm/sshkey)** on the left sidebar.
+ 3. On the SSH key management page, select the key to be modified and click <img  style="margin:-3px 0px" src="https://main.qcloudimg.com/raw/9db81482f9242417d94a04f314b42b19.png"/> next to the key name, as shown below.
+![](https://main.qcloudimg.com/raw/e4c46354bafa78daa7efa24064eafea9.png)
+ 4. In the pop-up window, enter the new key name or description, and click **OK**.
 
 ### Deleting SSH keys
-> If the SSH key is associated with a CVM or a custom image, it cannot be deleted.
+>! An SSH key cannot be deleted when it is bound with CVM instances or custom images,  cannot be deleted.
 >
- 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/).
- 2. In the left sidebar, click **[SSH Key](https://console.cloud.tencent.com/cvm/sshkey)**.
- 3. In the SSH key management page, select all SSH keys to be deleted, and click **Delete**.
- 4. In the **Delete key** window that pops up, click **OK**.
+1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/).
+2. Click **[SSH Key](https://console.cloud.tencent.com/cvm/sshkey)** on the left sidebar. You can delete a single or multiple SSH keys as needed.
+ - **Deleting a single key**
+    1. On the SSH key management page, select the SSH key to be deleted, and click **Delete** under the **Operation** column, as shown below.
+![](https://main.qcloudimg.com/raw/96d57d5beb3d73c0978cc1464bc73c7e.png)
+    2. In the pop-up window, click **OK**.
+ - **Batch deleting keys**
+    1. On the SSH key management page, select SSH keys to be deleted, and click **Delete** above the list to batch delete them.
+    2. In the pop-up window, click **OK**, as shown below.
+    Only deletable ones of the selected key pairs will be deleted.
+		![](https://main.qcloudimg.com/raw/bfcdfb401f8906834b02372d3e50dbe0.png)
 
-### Using an SSH key to log in to a Linux CVM
 
-1. [Create an SSH key](#creatSSH).
-2. [Bind an SSH key to a CVM](#bindingSSH).
-3. [Log in to a Linux instance using SSH](https://intl.cloud.tencent.com/document/product/213/32501).
+### Using a SSH key to log in to a Linux CVM
+
+1. [Create a SSH key](#creatSSH).
+2. [Bind a SSH key to a CVM instance](#bindingSSH).
+3. [Log in to a Linux instance via SSH key](https://intl.cloud.tencent.com/document/product/213/32501).
