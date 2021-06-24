@@ -49,8 +49,9 @@ spec:
     behavior: # 重要
       scaleUp:
         policies:
-        - type: percent
-          value: 900%
+        - type: Percent
+          value: 900
+          periodSeconds: 15
 ```
 
 示例表示扩容时立即新增当前9倍数量的副本数，即立即扩容到当前10倍的 Pod 数量，最大不超过 `maxReplicas` 的限制。
@@ -83,7 +84,7 @@ behavior:
         periodSeconds: 600 # 每10分钟缩掉1个 Pod
 ```
 
-示例中增加了 `scaleDown` 配置，指定缩容时每10分钟减少1个 Pod，大大降低缩容速度，缩容时的 Pod 数量变化趋势如下：
+示例中增加了 `scaleDown` 配置，指定缩容时每10分钟减少1个 Pod，极大降低缩容速度，缩容时的 Pod 数量变化趋势如下：
 
 ```
 1000 -> … (10 min later) -> 999
