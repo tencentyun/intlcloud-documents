@@ -1,4 +1,4 @@
->2019年9月18日后申请开通短信服务的用户，默认使用新版控制台。
+>?2019年9月18日后申请开通短信服务的用户，默认使用新版控制台。
 
 
 
@@ -29,7 +29,7 @@
 <table>
 <tr>
 <th  width="30%">服务</th>
-<th>文档</th>
+<th>说明</th>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/382/35464">国内短信业务统计</a></td>
@@ -37,23 +37,11 @@
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/382/35465">国际/港澳台短信业务统计</a></td>
-<td>介绍如何可以查看指定时间段内的国内短信发送详情、下发记录以及失败分析等信息。</td>
+<td>介绍如何查看指定时间段内的国际/港澳台短信发送详情、下发记录以及失败分析等信息。</td>
 </tr>
 </table>
 
-## 管理套餐包
-您可以通过控制台管理国内短信套餐包。您可以通过以下文档，获取相关操作指引：
 
-<table>
-<tr>
-<th  width="30%">服务</th>
-<th>文档</th>
-</tr>
-<tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/382/35466">管理套餐包</a></td>
-<td>介绍如何购买套餐包，如何设置套餐包余量告警等。</td>
-</tr>
-</table>
 
 ## 管理应用
 在使用短信服务发送短信前，需要先在控制台创建应用。应用创建完成后，您可以配置应用中的相关参数，从而使用更丰富的短信功能。您可以通过以下文档，获取相关操作指引：
@@ -76,10 +64,11 @@
 <td>介绍如何添加新联系人，如何编辑或删除已有联系人。</td>
 </tr>
 <tr>
-<td>停用或删除应用</td>
+<td>停用或删除应用</a></td>
 <td>介绍如何停用、开启或删除已有应用。<strong>删除后不可直接恢复，需重新提交审核，请谨慎操作</strong>。</td>
 </tr>
 </table>
+
 
 
 
@@ -89,7 +78,7 @@
 <table>
 <tr>
 <th  width="30%">服务</th>
-<th>文档</th>
+<th>说明</th>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/382/35473">管理黑名单</a></td>
@@ -111,7 +100,7 @@
 <table>
 <tr>
 <th  width="30%">服务</th>
-<th>文档</th>
+<th>说明</th>
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/382/35604">如何群发祝福短信</a></td>
