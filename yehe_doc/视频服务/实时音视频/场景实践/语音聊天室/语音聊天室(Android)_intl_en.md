@@ -54,7 +54,7 @@ The `trtcvoiceroomdemo` folder in the source code contains two subfolders: `ui` 
 [](id:model)
 ## Implementing A Custom UI
 
-The `trtcvoiceroomdemo` folder in the [source code](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo/trtcvoiceroomdemo/src/main/java/com/tencent/liteav/trtcvoiceroom) contains two subfolders: `ui` and `model`. In the `model` subfolder is the reusable open-source component `TRTCVoiceRoom`. You can find the component’s API functions in `TRTCVoiceRoom.java` and use them to customize your own UI.
+The `trtcvoiceroomdemo` folder in the [source code] contains two subfolders: `ui` and `model`. In the `model` subfolder is the reusable open-source component `TRTCVoiceRoom`. You can find the component’s API functions in `TRTCVoiceRoom.java` and use them to customize your own UI.
 ![](https://main.qcloudimg.com/raw/319beb14d72a43120e102380278aa1da.png)
 
 [](id:model.step1)
