@@ -93,7 +93,7 @@ If information similar to what is shown below is returned, the partition has bee
 ### Extending a file system
 1. Use the file system-specific command to resize a file system based on the type obtained in [step](#Step3).
 <dx-tabs>
-::: Extending an \sEXT\s file system
+::: Extending\san\sEXT\sfile\ssystem
 
 Run the following command to extend the EXT file system.
 
@@ -104,7 +104,7 @@ resize2fs /dev/vdb1
 The following information will appear:
 ![](https://main.qcloudimg.com/raw/5bd3a9bba754bf21256e792860c6d799.png)
 :::
-::: Extending an \sXFS\s file system
+::: Extending\san\sXFS\sfile\ssystem
 
 Run the following command to extend the XFS file system.
 
