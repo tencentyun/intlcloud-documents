@@ -55,26 +55,33 @@ As shown in the figure,
  - For a MBR partition, skip this step.
  - For a GPT partition, run the following command according to the operating system of the CVM.
 
-#### CentOS
+<dx-tabs>
+::: CentOS
 ```
 yum install gdisk -y
 ```
-#### Ubuntu or Debian
+:::
+
+::: Ubuntu\sor\sDebian
 ```
 apt-get install gdisk -y
 ```
-
+:::
+</dx-tabs>
 2. Run the following command to install the growpart tool according to the operating system of the CVM.
-
-#### CentOS
+<dx-tabs>
+::: CentOS
 ```
 yum install -y cloud-utils-growpart
 ```
-
-#### Ubuntu or Debian
+:::
+::: Ubuntu\sor\sDebian
 ```
 apt-get install -y cloud-guest-utils
 ```
+:::
+</dx-tabs>
+
 3. Run the following command to extend partitions using growpart.
 Take extending the `/dev/vdb1` partition as an example. Note that there is a space between `/dev/vdb` and `1` in the command. Replace with your actual values.
 ```
@@ -85,8 +92,8 @@ If information similar to what is shown below is returned, the partition has bee
 
 ### Extending a file system
 1. Use the file system-specific command to resize a file system based on the type obtained in [step](#Step3).
-
-#### Extending an EXT file system
+<dx-tabs>
+::: Extending an \sEXT\s file system
 
 Run the following command to extend the EXT file system.
 
@@ -96,8 +103,8 @@ resize2fs /dev/vdb1
 
 The following information will appear:
 ![](https://main.qcloudimg.com/raw/5bd3a9bba754bf21256e792860c6d799.png)
-
-#### Extending an XFS file system
+:::
+::: Extending an \sXFS\s file system
 
 Run the following command to extend the XFS file system.
 
@@ -113,7 +120,8 @@ xfs_growfs /mnt/disk2
 
 The following information will appear:
 ![](https://main.qcloudimg.com/raw/6e76842b419bb054c9cae9f96fa0250b.png)
-
+:::
+</dx-tabs>
 2. Run the following command to view the result.
 ```
 df -TH
