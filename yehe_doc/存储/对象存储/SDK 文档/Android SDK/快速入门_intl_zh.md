@@ -151,9 +151,9 @@ public static class MySessionCredentialProvider
         // 首先从您的临时密钥服务器获取包含了密钥信息的响应
 
         // 然后解析响应，获取临时密钥信息
-        String tmpSecretId = "COS_SECRETID"; // 临时密钥 SecretId
-        String tmpSecretKey = "COS_SECRETKEY"; // 临时密钥 SecretKey
-        String sessionToken = "COS_SESSIONTOKEN"; // 临时密钥 Token
+        String tmpSecretId = "SECRETID"; // 临时密钥 SecretId
+        String tmpSecretKey = "SECRETKEY"; // 临时密钥 SecretKey
+        String sessionToken = "SESSIONTOKEN"; // 临时密钥 Token
         long expiredTime = 1556183496L;//临时密钥有效截止时间戳，单位是秒
 
         //建议返回服务器时间作为签名的开始时间，避免由于用户手机本地时间偏差过大导致请求过期
@@ -178,8 +178,8 @@ QCloudCredentialProvider myCredentialProvider = new MySessionCredentialProvider(
 您可以使用腾讯云的永久密钥来进行开发阶段的本地调试。**由于该方式存在泄漏密钥的风险，请务必在上线前替换为临时密钥的方式。**
 
 ```java
-String secretId = "COS_SECRETID"; //永久密钥 secretId
-String secretKey = "COS_SECRETKEY"; //永久密钥 secretKey
+String secretId = "SECRETID"; //永久密钥 secretId
+String secretKey = "SECRETKEY"; //永久密钥 secretKey
 
 // keyDuration 为请求中的密钥有效期，单位为秒
 QCloudCredentialProvider myCredentialProvider = 
@@ -254,7 +254,8 @@ String bucket = "examplebucket-1250000000"; //存储桶，格式：BucketName-AP
 String cosPath = "exampleobject"; //对象在存储桶中的位置标识符，即称对象键
 String srcPath = new File(context.getCacheDir(), "exampleobject")
         .toString(); //本地文件的绝对路径
-//若存在初始化分块上传的 UploadId，则赋值对应的 uploadId 值用于续传；否则，赋值 null
+// 若存在初始化分块上传的 UploadId，则赋值对应的 uploadId 值用于续传；否则，赋值 null。
+// 当次上传任务的 uploadid 可以在 TransferStateListener 的回调中拿到
 String uploadId = null; 
 
 // 上传文件
@@ -287,11 +288,12 @@ cosxmlUploadTask.setCosXmlResultListener(new CosXmlResultListener() {
         }
     }
 });
-//设置任务状态回调, 可以查看任务过程
+//设置任务状态回调, 可以查看任务过程，并拿到 uploadId 用于续传
 cosxmlUploadTask.setTransferStateListener(new TransferStateListener() {
     @Override
     public void onStateChanged(TransferState state) {
         // todo notify transfer state
+        uploadId = cosxmlUploadTask.getUploadId();  
     }
 });
 ```
