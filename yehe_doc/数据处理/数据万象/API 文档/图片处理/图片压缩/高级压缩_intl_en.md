@@ -8,9 +8,10 @@ CI’s advanced compression feature allows you to easily convert images into for
 | HEIF compression | If your images are used in iOS environments, you can convert them from JPG, PNG, GIF, WebP, or other formats into HEIF, which offers an ultra-high compression ratio. |
 
 >?
->-  To use the TPG format, ensure that **the environment where images are loaded supports TPG decoding**. CI provides the TPG decoder−integrated SDK for [Windows](https://main.qcloudimg.com/raw/851dd252378813d250eeca5ed55ffd36/TPG_win_SDK.zip) clients to facilitate quick integration with TPG.
->-  Currently, iOS 11 or later and Android P have native support for the HEIF format.
->-  For the pricing of advanced compression, please see [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/33431).
+>- To use Image Advanced Compression, you need to enable it on the bucket configuration page. For more information, please see [Image Advanced Compression](https://intl.cloud.tencent.com/document/product/1045/40106).
+>- To use the TPG format, ensure that **the environment where images are loaded supports TPG decoding**. CI provides the TPG decoder−integrated SDK for iOS, Android, and [Windows](https://main.qcloudimg.com/raw/851dd252378813d250eeca5ed55ffd36/TPG_win_SDK.zip) clients to facilitate quick integration with TPG.
+>- Currently, iOS 11 or later and Android P have native support for the HEIF format.
+>-  For the pricing of Image Advanced Compression, please see [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/33431).
 
 ## API Format
 
@@ -18,15 +19,15 @@ CI’s advanced compression feature allows you to easily convert images into for
 download_url?imageMogr2/format/<Format>
 ```
 
-## Parameter Description
+## Parameters
 
 | Parameter | Description |
 | -------------------- | ------------------------------------------------------------ |
-| download_url | Access URL of the file, formatted as `<BucketName-APPID>.cos.<picture region>.<domain>.com/<picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
+| download_url | URL of the input image, formatted as `<BucketName-APPID>.cos.<picture region>.<domain>.com/<picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
 | /format/&lt;Format>  | Target compression format, which can be TPG or HEIF |
 
 
-## Samples
+## Examples
 
 Assume that the input image is a 1,335.2 KB image in PNG format, as shown below:
 ![](https://main.qcloudimg.com/raw/8d539dcbea299f55ea786feb26f5c21b.png)
