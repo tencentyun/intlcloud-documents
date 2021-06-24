@@ -19,13 +19,13 @@ You can configure a cross-region bandwidth cap for pay-as-you-go CCN instances b
 3. (Optional) Perform the following steps to change the bandwidth limit mode to meet your requirements.
 
    1. Click **Change** on the right of the **Bandwidth limit mode**.
-      ![](https://main.qcloudimg.com/raw/475e679eed5da9dc87be2114198065ba.png)
+      ![](https://main.qcloudimg.com/raw/fa211668316de376d3321fe87137e3a4.png)
 
    2. Select a bandwidth limit mode from the drop-down list in the pop-up window.
 
       > !Changing the bandwidth limit mode will delete existing configurations. The bandwidth cap will be set to 1 Gbps by default. If you require a higher bandwidth, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
       >
-      ![](https://main.qcloudimg.com/raw/93232c58d1e626eaab54685923cc2009.png)
+      ![](https://main.qcloudimg.com/raw/d512626f5a9068673fbf2d1e1cc62abc.png)
 
       <table>
       	 <tr>
@@ -48,8 +48,8 @@ You can configure a cross-region bandwidth cap for pay-as-you-go CCN instances b
 
   - Set inter-region bandwidth limit
     Click **Change Bandwidth**. In the pop-up window, select **Region A** and **Region B** from the drop-down list and enter the **Bandwidth Cap**. You can also click **Add** to configure multiple bandwidth limit rules, and then click **OK**.
-    ![](https://main.qcloudimg.com/raw/9066db269b049a809dc060e676306b20.png)
+    ![](https://main.qcloudimg.com/raw/5c85f5e688d795af90d7e09bb38d905f.png)
   - Set the region outbound bandwidth limit
     Click **Adjust bandwidth cap**. In the pop-up window, select regions for which you want to limit the bandwidth on the left and set the bandwidth cap on the right. Click **OK**.
-    ![img](https://main.qcloudimg.com/raw/a961f2724eda0a156304dea7169ae319.png)
+    ![img](https://main.qcloudimg.com/raw/2c71d31b0cc2a9bd74f1224083b66cfe.png)
 
