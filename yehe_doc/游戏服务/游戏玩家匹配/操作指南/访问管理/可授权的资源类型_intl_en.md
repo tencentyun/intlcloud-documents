@@ -10,8 +10,8 @@ Cloud Access Management (CAM) allows you to grant access permissions to the foll
 | [Matchmaking](#matchCorrelation) | ` qcs::gpm:$region:$account:match/* ` |
 | [Rule](#ruleCorrelation)  | `qcs::gpm:$region:$account:rule/*` |
 
-[Matchmaking APIs](#matchCorrelation) and [Rule APIs](#ruleCorrelation) sections in this document describe GPM API operations that currently support resource-level permissions. When configuring the resource path, you need to replace values of the parameters such as `$region` and `$account` with your actual values. You can also use the wildcard `\*` in the path. For more information, please see [Console Example](https://intl.cloud.tencent.com/document/product/213/10312).
->! GPM API operations not listed in the table do not support resource-level permissions. You can still authorize a user to perform these operations, but you must specify `\*` as the resource element in the policy statement.
+[Matchmaking APIs](#matchCorrelation) and [Rule APIs](#ruleCorrelation) sections in this document describe GPM API operations that currently support resource-level permissions. When configuring the resource path, you need to replace values of the parameters such as `$region` and `$account` with your actual values. You can also use the wildcard `/*` in the path. For more information, please see [Console Example](https://intl.cloud.tencent.com/document/product/213/10312).
+>! GPM API operations not listed in the table do not support resource-level permissions. You can still authorize a user to perform these operations, but you must specify `/*` as the resource element in the policy statement.
 
 <span id="matchCorrelation"></span>
 
