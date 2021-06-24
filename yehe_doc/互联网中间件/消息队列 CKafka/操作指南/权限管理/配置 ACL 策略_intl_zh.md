@@ -28,12 +28,10 @@
 - **按前缀模糊：**按 Topic 名称前缀模糊匹配需要配置相同 ACL 策略的 Topic，需要指定模糊匹配规则名称。设置后，新增按指定前缀命名的 Topic 时，系统自动配置指定 ACL 策略。
 >?模糊匹配规则最多支持设置五条。  
 
-![](https://main.qcloudimg.com/raw/8349bf070e1591ba133289677c97a9b2.png)
 :::
 ::: 其他版本实例
 支持**批量勾选**为用户授予权限。
      选择多个需要配置相同 ACL 策略的 Topic，批量勾选模式只支持配置一条策略。
-		![](https://main.qcloudimg.com/raw/99f730464416e66b78de79553e60ebe7.png)
 :::
 </dx-tabs>
     
