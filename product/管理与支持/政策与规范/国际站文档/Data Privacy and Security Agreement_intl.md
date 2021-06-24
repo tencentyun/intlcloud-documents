@@ -59,16 +59,15 @@ Tencent and Organisation acknowledge that Organisation is the Controller and Ten
 ## MODULES
 The following Modules shall apply and be incorporated by reference into this DPSA if you use the specific Feature (as defined in each relevant Module).  
 1.[Tencent Push Notification Service](https://intl.cloud.tencent.com/document/product/1024/36174).
-2.[AI Transfy](https://intl.cloud.tencent.com/document/product/1049/36871).
-3.[Mobile Tencent Protect](https://intl.cloud.tencent.com/document/product/1018/36785).
-4.[Web Application Firewall](https://intl.cloud.tencent.com/document/product/627/37004).
-5.[Game Multimedia Engine](https://intl.cloud.tencent.com/document/product/607/37523).
-6.[Game Server Elastic-scaling](https://intl.cloud.tencent.com/document/product/1055/39482)
-7.[Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029/36804).
-8.[Face Recognition](https://intl.cloud.tencent.com/document/product/1059/38787).
-9.[Tencent Cloud MediaLive](https://intl.cloud.tencent.com/document/product/1048/38989).
-10.[Tencent Cloud MediaPackage](https://intl.cloud.tencent.com/document/product/1063/38992).
-11.[Tencent Cloud Conference](https://intl.cloud.tencent.com/document/product/1023/40236).
+2.[Mobile Tencent Protect](https://intl.cloud.tencent.com/document/product/1018/36785).
+3.[Web Application Firewall](https://intl.cloud.tencent.com/document/product/627/37004).
+4.[Game Multimedia Engine](https://intl.cloud.tencent.com/document/product/607/37523).
+5.[Game Server Elastic-scaling](https://intl.cloud.tencent.com/document/product/1055/39482)
+6.[Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029/36804).
+7.[Face Recognition](https://intl.cloud.tencent.com/document/product/1059/38787).
+8.[Tencent Cloud MediaLive](https://intl.cloud.tencent.com/document/product/1048/38989).
+9.[Tencent Cloud MediaPackage](https://intl.cloud.tencent.com/document/product/1063/38992).
+10.[Tencent Cloud Conference](https://intl.cloud.tencent.com/document/product/1023/40236).
 
 
 ## Jurisdiction-specific Requirements
