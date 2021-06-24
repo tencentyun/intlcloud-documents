@@ -1,12 +1,12 @@
-本文向您介绍如何搭配游戏服务器引擎 GSE 使用游戏玩家匹配 GPM 服务，使您拥有更便捷的游戏开发体验。
+本文向您介绍如何搭配游戏服务器伸缩 GSE 使用游戏玩家匹配 GPM 服务，使您拥有更便捷的游戏开发体验。
 
 ## 前提条件
 
-- 已在游戏服务器引擎 GSE 完成 [游戏服务器队列创建](https://intl.cloud.tencent.com/document/product/1055/36681)。
+- 已在游戏服务器伸缩 GSE 完成 [游戏服务器队列创建](https://intl.cloud.tencent.com/document/product/1055/36681)。
 - 已完成 [匹配创建](https://intl.cloud.tencent.com/document/product/1072/39203)，并选择“**请求对战服资源**”类型进行匹配创建。
 
 ## 流程架构
-搭配游戏服务器引擎 GSE 使用游戏玩家匹配 GPM 流程架构如下所示：
+搭配游戏服务器伸缩 GSE 使用游戏玩家匹配 GPM 流程架构如下所示：
 ![](https://main.qcloudimg.com/raw/aa2bb73826a1f8dd1319cb3a3fa8861a.png)
 
 ## 匹配状态流转
