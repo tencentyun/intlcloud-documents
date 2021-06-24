@@ -49,8 +49,9 @@ spec:
     behavior: # essential
       scaleUp:
         policies:
-        - type: percent
-          value: 900%
+        - type: Percent
+          value: 900
+          periodSeconds: 15
 ```
 
 The example indicates that 9 times the current number of pods can be added, effectively making the number of replicas 10 times the current size. The number of Pods cannot exceed the limit of `maxReplicas`.
