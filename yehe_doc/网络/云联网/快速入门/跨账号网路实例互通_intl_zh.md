@@ -10,7 +10,7 @@
 1. 使用账号 A  登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1) 。
 2. 单击左侧目录中的【云联网】，进入云联网管理页面。
 3. 单击【+新建】。 
-4. 在弹出框中填写云联网实例名称、描述，选择计费模式、服务质量、限速方式和关联实例的 VPC ID。![]https://main.qcloudimg.com/raw/b72cc7c286f94d8b958def554dfc0150.png)
+4. 在弹出框中填写云联网实例名称、描述，选择计费模式、服务质量、限速方式和关联实例的 VPC ID。![](https://main.qcloudimg.com/raw/b72cc7c286f94d8b958def554dfc0150.png)
 
 >?关联实例，可在新建云联网时关联，也可创建好云联网后再关联。
 >
