@@ -19,13 +19,13 @@
 3. （可选）若当前限速方式不满足您的需求，可按以下步骤变更限速方式。
 
    1. 在“限速方式”右侧，单击【变更】。
-      ![](https://main.qcloudimg.com/raw/475e679eed5da9dc87be2114198065ba.png)
+      ![](https://main.qcloudimg.com/raw/fa211668316de376d3321fe87137e3a4.png)
 
    2. 在“变更限速方式”弹窗中的下拉框内调整限速方式。
 
       > !限速方式变更后，原有限速配置将删除，带宽将设置为1Gbps（默认），如需更大默认带宽，请提[ 工单申请](https://console.cloud.tencent.com/workorder/category)。
       >
-      ![](https://main.qcloudimg.com/raw/93232c58d1e626eaab54685923cc2009.png)
+      ![](https://main.qcloudimg.com/raw/d512626f5a9068673fbf2d1e1cc62abc.png)
 
       <table>
       	 <tr>
@@ -48,8 +48,8 @@
 
   - 设置地域间带宽限速
     单击【调整带宽】，在“调整带宽”对话框中选择需限速的两个地域，并设置带宽上限。若需设置多条带宽限速，则单击【添加】进行配置。完成后单击【确定】。
-    ![](https://main.qcloudimg.com/raw/9066db269b049a809dc060e676306b20.png)
+    ![](https://main.qcloudimg.com/raw/5c85f5e688d795af90d7e09bb38d905f.png)
   - 设置地域出口带宽限速
     单击【调整带宽限速】，在弹框中勾选需要限速的地域，填写地域出口的带宽上限，单击【确定】即可。
-    ![img](https://main.qcloudimg.com/raw/a961f2724eda0a156304dea7169ae319.png)
+    ![img](https://main.qcloudimg.com/raw/2c71d31b0cc2a9bd74f1224083b66cfe.png)
 
