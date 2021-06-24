@@ -16,14 +16,13 @@
 - **解决思路2（对应原因2）**：
 通过 VNC 登录 Linux 云服务器，并进入单用户模式。在单用户模式下修复`/etc/fstab` 配置文件，并进行重新配置。具体操作请参见 [修复 /etc/fstab 文件](#RepairConfiguration)。
 
-[](id:ConfigurationFile)
-## 处理步骤
-### 配置 /etc/fstab 文件
-1. 登录 Linux 云服务器，详情请参见 [使用标准登录方式登录 Linux 实例（推荐）](https://intl.cloud.tencent.com/document/product/213/5436)。
-2. 选择配置方式，并获取对应信息。
-[](id:Step2)
 
-#### 使用弹性云硬盘的软链接（推荐）
+## 处理步骤
+### 配置 /etc/fstab 文件[](id:ConfigurationFile)
+1. 登录 Linux 云服务器，详情请参见 [使用标准登录方式登录 Linux 实例（推荐）](https://intl.cloud.tencent.com/document/product/213/5436)。
+2. 选择配置方式，并获取对应信息。[](id:Step2)
+<dx-tabs>
+::: 使用弹性云硬盘的软链接（推荐）
 #### 配置方式分析
 - **优点**：每个弹性云硬盘的软链接固定且唯一，不会随卸载挂载、格式化分区等操作而改变。
 - **缺点**：仅弹性云硬盘具备软链接，且系统无法感知分区的格式化操作。
@@ -36,7 +35,8 @@ ls -l /dev/disk/by-id
 返回结果如下图所示：
 ![](https://main.qcloudimg.com/raw/99c7d8362b4313a0366adace46563bb7.png)
 
-#### 使用文件系统的UUID
+:::
+::: 使用文件系统的\sUUID
 #### 配置方式分析
 可能会因文件系统的 UUID 变化而导致自动挂载设置失效。
 例如，重新格式化文件系统后，文件系统的 UUID 将会发生变化。
@@ -48,8 +48,8 @@ blkid /dev/vdb1
 ```
 返回结果如下图所示：
 ![](https://main.qcloudimg.com/raw/a1f6204b8f95f71609571612ff45aa42.png)
-
-#### 使用设备名称（不推荐）
+:::
+::: 使用设备名称（不推荐）
 
 #### 配置方式分析
 可能会因设备名称变化而导致自动挂载设置失效。
@@ -62,19 +62,17 @@ fdisk -l
 ```
 返回结果如下图所示：
 ![](https://main.qcloudimg.com/raw/1d09eba0c658fed0e9f5303e273b5539.png)
-
+:::
+</dx-tabs>
 3. 执行以下命令，备份 `/etc/fstab` 文件。本文以备份到 `/home` 目录下为例：
-
 ```
 cp /etc/fstab /home
 ```
 4. 执行以下命令，使用 VI 编辑器打开 `/etc/fstab` 文件。
-
 ```
 vi /etc/fstab
 ```
 5. 按 **i** 进入编辑模式，并在文件末尾处另起一行，输入以下配置信息。
-
 ```
 <设备信息> <挂载点> <文件系统格式> <文件系统安装选项> <文件系统转储频率> <启动时的文件系统检查顺序>
 ```
@@ -93,26 +91,20 @@ UUID=d489ca1c-5057-4536-81cb-ceb2847f9954 /data/newpart   ext4 defaults     0   
 ```
 6. 按 **Esc** 输入 **:wq** 后，再按 **Enter** 保存设置并退出编辑器。
 7. 执行以下命令，检查 `/etc/fstab` 文件是否写入成功。
-
 ```
 mount -a 
 ```
-
 返回结果如下图所示，则表示文件已写入成功。文件系统会在云服务器启动时自动挂载，您可重启云服务器进行验证。
 ![](https://main.qcloudimg.com/raw/4289f335d3373074d7fc799863fba498.png)
 
-[](id:RepairConfiguration)
-### 修复 /etc/fstab 文件
+### 修复 /etc/fstab 文件[](id:RepairConfiguration)
 1. 使用 VNC 登录云服务器，详情请参见 [使用 VNC 登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/32494)。
 2. 进入单用户模式，详情请参见 [设置 Linux 云服务器进入单用户模式](https://intl.cloud.tencent.com/document/product/213/34819)。
-
 3. 执行以下命令，备份 `/etc/fstab` 文件。本文以备份到 `/home` 目录下为例：
-
 ```
 cp /etc/fstab /home
 ```
 4. 执行以下命令，使用 VI 编辑器打开 `/etc/fstab` 文件。
-
 ```
 vi /etc/fstab
 ```
@@ -120,7 +112,6 @@ vi /etc/fstab
 >?该行配置了数据盘自动挂载，但由于错误配置实际云服务器重启时未能挂载。
 >
  ![](https://main.qcloudimg.com/raw/2e6106588877801aa38fbe4af3dc52a6.png)
-
 6. 按 **Esc** 输入 **:wq** 后，再按 **Enter** 保存设置并退出编辑器。
 7. 在单用户模式的命令行中输入 `exit`，退出单用户模式。
 8. 等待云服务器重启完成后，登录云服务器。

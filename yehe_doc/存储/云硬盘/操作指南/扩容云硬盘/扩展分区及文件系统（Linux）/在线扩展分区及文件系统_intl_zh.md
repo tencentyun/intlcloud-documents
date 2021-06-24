@@ -32,7 +32,6 @@
 ### 查看云硬盘分区信息
 1. 登录云服务器，详情请参见 [使用标准登录方式登录 Linux 实例（推荐）](https://intl.cloud.tencent.com/document/product/213/5436)。
 2. 执行以下命令，查询云硬盘的分区信息。
-
 ```
 fdisk -l
 ```
@@ -42,7 +41,6 @@ fdisk -l
  - `/dev/vdb` 数据盘容量为60GB，包含 MBR 分区 `/dev/vdb1`，容量为50GB。
  - `/dev/vdc` 数据盘容量为60GB，包含 GPT 分区 `/dev/vdc1`，容量为50GB。
 3. [](id:Step3)执行以下命令，确认已有分区的文件系统类型。
-
 ```
 df -TH
 ```
@@ -56,30 +54,33 @@ df -TH
 1. 根据实际情况执行命令，安装 gdisk 工具。
  - 若分区类型为 MBR，则请跳过此步骤。
  - 若分区类型为 GPT，则请对应云服务器操作系统类型，执行以下命令安装工具。
-
-#### CentOS
+<dx-tabs>
+::: CentOS
 ```
 yum install gdisk -y
 ```
-#### Ubuntu或Debian
+:::
+::: Ubuntu\s或\sDebian
 ```
 apt-get install gdisk -y
 ```
-
+:::
+</dx-tabs>
 2.  对应云服务器操作系统类型，执行以下命令，安装 growpart 工具。
-
-#### CentOS
+<dx-tabs>
+::: CentOS
 ```
 yum install -y cloud-utils-growpart
 ```
-#### Ubuntu或Debian
+:::
+::: Ubuntu\s或\sDebian
 ```
 apt-get install -y cloud-guest-utils
 ```
-
+:::
+</dx-tabs>
 3. 执行以下命令，使用 growpart 工具扩容分区。
 本文以扩容 `/dev/vdb1` 分区为例，命令中 `/dev/vdb` 与 `1` 间需使用空格分隔。您可按需修改命令。
-
 ```
 growpart /dev/vdb 1
 ```
@@ -88,36 +89,36 @@ growpart /dev/vdb 1
 
 ### 扩容文件系统
 1. 根据 [步骤3](#Step3) 获取到的文件系统类型，执行对应命令扩容文件系统：
-
-#### 扩容ext文件系统
+<dx-tabs>
+::: 扩容\sext\s文件系统
 执行以下命令，扩容 ext 文件系统。
-
 ```
 resize2fs /dev/vdb1 
-```
-返回结果如下图所示：
+​```返回结果如下图所示：
 ![](https://main.qcloudimg.com/raw/5bd3a9bba754bf21256e792860c6d799.png)
-
-#### 扩容xfs文件系统
-
+:::
+::: 扩容\sxfs\s文件系统
 执行以下命令，扩容 xfs 文件系统。
 ```
 xfs_growfs <挂载点>
-```
-本文示例为 `/dev/vdc1` 挂载至 `/mnt/disk2`，则执行以下命令。
+```本文示例为 `/dev/vdc1` 挂载至 `/mnt/disk2`，则执行以下命令。
 ```
 xfs_growfs /mnt/disk2
-```
-返回结果如下图所示：
+​```返回结果如下图所示：
 ![](https://main.qcloudimg.com/raw/6e76842b419bb054c9cae9f96fa0250b.png)
-
+:::
+</dx-tabs>
 2. 执行以下命令，查看扩容结果。
-
 ```
 df -TH
 ```
 返回结果如下图所示，则表示已扩容成功。
 ![](https://main.qcloudimg.com/raw/45bc319770858880a6b3cf35505bce46.png)
-
 3. 扩容成功后请检查数据完整性，观察云服务器中的业务是否正常运行。
 如果有异常可以使用回滚快照的方式进行数据恢复，详情请参见 [从快照回滚数据](https://intl.cloud.tencent.com/document/product/362/5756)。
+
+
+
+
+
+```

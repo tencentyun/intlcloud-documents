@@ -35,25 +35,25 @@ fdisk -l
      </tr>
 		 	 <tr>      
          <td>-</td>   
-	     <td nowrap="nowrap">扩容文件系统</a></td>
+	     <td nowrap="nowrap"><a href="https://cloud.tencent.com/document/product/362/53364">扩容文件系统</a></td>
 			 <td>适用于<b>没有创建分区</b>、直接在裸设备上创建了文件系统的场景。</td>
      </tr>
 	 <tr>      
          <td rowspan="2">GPT</td>   
-	     <td nowrap="nowrap"><a href="https://cloud.tencent.com/document/product/362/53366#Add">将扩容部分的容量划分至原有 GPT 分区</a></td>
+	     <td nowrap="nowrap"><a href="https://intl.cloud.tencent.com/document/product/362/39997#Add">将扩容部分的容量划分至原有 GPT 分区</a></td>
 	     <td>可用于格式化后未分区的云硬盘。</td>
      </tr> 
 	 <tr>
-         <td><a href="https://cloud.tencent.com/document/product/362/53366#New">将扩容部分的容量格式化成独立的 GPT 分区</a></td> 
+         <td><a href="https://intl.cloud.tencent.com/document/product/362/39997#New">将扩容部分的容量格式化成独立的 GPT 分区</a></td> 
 	     <td>可保持原有分区不变，使用扩容部分新建 GPT 分区。</td>
      </tr> 
 	 <tr>
          <td rowspan="2">MBR</td>   
-	     <td><a href="https://cloud.tencent.com/document/product/362/53365#Add">将扩容部分的容量划分至原有 MBR 分区</a></td> 
+	     <td><a href="https://intl.cloud.tencent.com/document/product/362/39998#Add">将扩容部分的容量划分至原有 MBR 分区</a></td> 
 	     <td>可用于格式化后未分区的云硬盘。</td>
      </tr> 
 	 <tr>
-         <td><a href="https://cloud.tencent.com/document/product/362/53365#New">将扩容部分的容量格式化成独立的 MBR 分区</a></td> 
+         <td><a href="https://intl.cloud.tencent.com/document/product/362/39998#New">将扩容部分的容量格式化成独立的 MBR 分区</a></td> 
 	     <td>可保持原有分区不变，使用扩容部分新建 MBR 分区。</td>
      </tr> 
 </table>
