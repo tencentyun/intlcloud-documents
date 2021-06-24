@@ -27,10 +27,11 @@ lsblk
  - The following output indicates there are two partitions: `vdb1` and `vdb2`. In this case, you need to choose a partition to be extended as instructed in [manual expansion](#ManualExpansion).
 ![](https://main.qcloudimg.com/raw/070f2144acc543c84d4ab8ab3db25620.png)
 
-[](id:AutomaticExpansion)
-#### Automatic Expansion
->?
->This method is only applicable to the scenario where there is only one partition. If you have two or more partitions, choose [manual expansion](#ManualExpansion).
+<dx-tabs>
+::: Automatic Expansion[](id:AutomaticExpansion)
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note</p>This method is only applicable to the scenario where there is only one partition. If you have two or more partitions, choose [manual expansion](#ManualExpansion).</p>
+</blockquote>
+
 
 1. Run the following command as the root user to unmount the partition.
 ``` 
@@ -85,9 +86,8 @@ If the result similar to the following figure is returned, the mounting is succe
 ```
 ll /data
 ```
-
- [](id:ManualExpansion)
-#### Manual Expansion
+:::
+::: Manual Expansion[](id:ManualExpansion)
 1. Run the following command as the root user to unmount the partition.
 ```
 umount <Mount point>
@@ -127,6 +127,8 @@ If the result similar to the following figure is returned, the mounting is succe
 ```
 ll /data
 ```
+:::
+</dx-tabs>
 
 
 [](id:New)
