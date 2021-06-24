@@ -2,8 +2,8 @@
 本文档旨在帮助大家了解如何快速创建一个容器集群内的 Nginx 服务。
 
 ## 前提条件
->- 已 [注册腾讯云账户](https://intl.cloud.tencent.com/register)。
->-  已创建集群。关于创建集群，详情请参见 [创建集群](https://intl.cloud.tencent.com/document/product/457/30637)。
+- 已 [注册腾讯云账户](https://intl.cloud.tencent.com/register)。
+-  已创建集群。关于创建集群，详情请参见 [创建集群](https://intl.cloud.tencent.com/document/product/457/30637)。
 
 ## 操作步骤
 
@@ -18,7 +18,7 @@
   -  **标签**：key = value 键值对，本例中标签默认值为 k8s-app = **nginx**。
   -  **命名空间**：根据实际需求进行选择。
   -  **类型**：根据实际需求进行选择。
-  -   **数据卷**：根据实需求设置工作负载的挂载卷，详情请参见 [Volume 管理](https://intl.cloud.tencent.com/document/product/457/30678)。
+  -   **数据卷**：根据实际需求设置工作负载的挂载卷，详情请参见 [Volume 管理](https://intl.cloud.tencent.com/document/product/457/30678)。
 4. 参考以下信息设置“实例内容器”。如下图所示：
 ![](https://main.qcloudimg.com/raw/2ec2c7c803ee61a2d218f17df785636e.png)
 主要参数信息如下：
@@ -40,7 +40,7 @@
  - **服务访问方式**：选择“提供公网访问”。
  - **负载均衡器**：根据实际需求进行选择。
  - **端口映射**：选择 TCP 协议，将容器端口和服务端口都设置为80 。
- >服务所在集群的安全组需要放通节点网络及容器网络，同时需要放通30000 - 32768端口，否则可能会出现容器服务无法使用问题，详情请参见 [容器服务安全组设置](https://intl.cloud.tencent.com/document/product/457/9084)。
+ >!服务所在集群的安全组需要放通节点网络及容器网络，同时需要放通30000 - 32768端口，否则可能会出现容器服务无法使用问题，详情请参见 [容器服务安全组设置](https://intl.cloud.tencent.com/document/product/457/9084)。
 7. 单击【创建Workload】，完成 Nginx 服务的创建。
 
 
@@ -65,5 +65,4 @@
 ![](https://main.qcloudimg.com/raw/156e6d3b804e6b214ef7600fee4fa9c1.png)
 
 ### 更多 Nginx 设置
-- 可查看 使用腾讯云容器服务来构建简单 web service。
-- 若容器创建失败，可查看 [事件常见问题](https://intl.cloud.tencent.com/document/product/457/8187)。
+若容器创建失败，可查看 [事件常见问题](https://intl.cloud.tencent.com/document/product/457/8187)。
