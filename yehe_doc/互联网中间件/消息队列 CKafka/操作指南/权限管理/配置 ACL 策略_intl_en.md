@@ -22,18 +22,18 @@ This document describes how to configure SASL authentication and ACL (access con
 >- If deny rules are configured only, any IPs other than those configured with deny rules can connect to the instance.
 >- If allow and deny rules are simultaneously configured, only IPs with allow rules can connect to the instance. 
 <dx-tabs>
-::: Instances on v2.4.2
+::: Instances\son\sv2.4.2
 You can grant permissions to the user through **Topics** or **Topic name prefix**.
 - **Topics:** select multiple topics that need to be configured with the same ACL policy. The “Topics” mode only supports configuring one policy.
 - **Topic name prefix:** fuzzy match topics that need to be configured with the same ACL policy by topic name prefix. You need to specify the fuzzy matching rule name. After this is set, when a new topic whose name contains the specified prefix is added, the system will automatically configure the specified ACL policy for it.
->?Up to five fuzzy matching rules can be set.  
 
-![](https://main.qcloudimg.com/raw/8349bf070e1591ba133289677c97a9b2.png)
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note : </p><p>Up to five fuzzy matching rules can be set.</p>
+</blockquote>   
+
 :::
-::: Instances on other versions
+::: Instances\son\sother\sversions
 You can grant permissions to the user through **Topics**.
      Select multiple topics that need to be configured with the same ACL policy. The “Topics” mode only supports configuring one policy.
-		![](https://main.qcloudimg.com/raw/99f730464416e66b78de79553e60ebe7.png)
 :::
 </dx-tabs>
     

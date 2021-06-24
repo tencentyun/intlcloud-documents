@@ -28,7 +28,7 @@ lsblk
 ![](https://main.qcloudimg.com/raw/070f2144acc543c84d4ab8ab3db25620.png)
 
 <dx-tabs>
-::: Automatic Expansion[](id:AutomaticExpansion)
+::: Automatic\sExpansion[](id:AutomaticExpansion)
 <blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note</p>This method is only applicable to the scenario where there is only one partition. If you have two or more partitions, choose [manual expansion](#ManualExpansion).</p>
 </blockquote>
 
@@ -87,7 +87,7 @@ If the result similar to the following figure is returned, the mounting is succe
 ll /data
 ```
 :::
-::: Manual Expansion[](id:ManualExpansion)
+::: Manual\sExpansion[](id:ManualExpansion)
 1. Run the following command as the root user to unmount the partition.
 ```
 umount <Mount point>
