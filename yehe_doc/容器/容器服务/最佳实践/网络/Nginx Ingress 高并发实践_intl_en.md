@@ -102,7 +102,7 @@ The number of keepalive connection requests between Nginx and the upstream is de
 
 ### Increasing the maximum number of idle keepalive connections
 
-For connections between Nginx and the upstream, you can configure the keepalive parameter, which determines the maximum number of idle connections and defaults to 32. In a high-concurrency environment, large numbers of requests and connections exist. However, in an actual production environment, requests are not fully balanced, and some connections may be temporarily idle. When the number of idle connections increases and idle connections are removed, Nginx may frequently disconnect from and reconnect to the upstream, significantly increasing the number of TIME_WAIT connections.
+For connections between Nginx and the upstream, you can configure the keepalive parameter, which determines the maximum number of idle connections and defaults to 320. In a high-concurrency environment, large numbers of requests and connections exist. However, in an actual production environment, requests are not fully balanced, and some connections may be temporarily idle. When the number of idle connections increases and idle connections are removed, Nginx may frequently disconnect from and reconnect to the upstream, significantly increasing the number of TIME_WAIT connections.
 In a high-concurrency environment, we recommend that you set keepalive to 1000. For more information, see [upstream-keepalive-connections](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#upstream-keepalive-connections).
 
 ### Increasing the maximum number of connections for a single worker
@@ -122,7 +122,7 @@ data:
   # The number of requests that can be processed by a persistent connection between Nginx and the client, which defaults to 100. We recommend that you increase this number in high-concurrency scenarios.
   # Reference: https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#keep-alive-requests
   keep-alive-requests: "10000"
-  # The maximum number of idle persistent connections (not the maximum number of connections) between Nginx and the upstream, which defaults to 32. We recommend that you increase this number in high-concurrency scenarios to prevent the frequent establishment of connections from significantly increasing the number of TIME_WAIT connections.
+  # The maximum number of idle persistent connections (not the maximum number of connections) between Nginx and the upstream, which defaults to 320. We recommend that you increase this number in high-concurrency scenarios to prevent the frequent establishment of connections from significantly increasing the number of TIME_WAIT connections.
   # Reference: https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/#upstream-keepalive-connections
   upstream-keepalive-connections: "200"
   # The maximum number of connections that can be used by each worker process, which defaults to 16384
