@@ -1,47 +1,45 @@
- CCN connects a VPC with another or with IDCs. This document introduces how to use CCN to interconnect VPCs in Guangzhou and Shanghai regions under the same account.
+﻿ CCN connects a VPC with another or with IDCs. This document describes how to use CCN to interconnect VPCs in the Guangzhou and Shanghai regions under the same account.
 
 ## Background
-When creating a CCN instance, you can select either of the billing mode as needed: monthly subscription or monthly 95th percentile pay-as-you-go. The instance creation varies by the billing mode, as shown below:
-![](https://main.qcloudimg.com/raw/f0fe23c7fbe4afa675bfb76b435726bf.png)
+
+You can create a pay-as-you-go CCN instance billed by monthly 95 percentile as instructed below.
+![](https://main.qcloudimg.com/raw/5fad5c7c765166f7225951606901f5e1.png)
 This document guides you through how to interconnect a VPC in Guangzhou with a VPC in Shanghai under the same account.
 
 ## Prerequisites
 
-You have created VPCs, subnets and CVMs in Shanghai and Guangzhou regions. The two subnets have no duplicate IP ranges, and CVMs reside in the subnets. For the step-by-step instructions, see [Building Up a IPv4 VPC](https://intl.cloud.tencent.com/document/product/215/31891).
+You have created VPCs, subnets and CVMs in the Shanghai and Guangzhou regions. The two subnets have no duplicate IP ranges, and CVMs reside in the subnets. For the step-by-step instructions, see [Building Up an IPv4 VPC](https://intl.cloud.tencent.com/document/product/215/31891).
 
 
-<span id="1"></span>
-## Step 1: create a CCN instance
-1. Log in to the [Virtual Private Cloud Console](https://console.cloud.tencent.com/vpc/vpc?rid=1).
-3. Click **Cloud Connect Network** in the left sidebar to go to the **CCN** page, and then click **+New**.
-4. In the **Create CCN instance** dialog box, complete the following configurations, and click **OK**.
+## Step 1. Create a CCN Instance[](id:1)
+
+1. Log in to the [Virtual Private Cloud console](https://console.cloud.tencent.com/vpc/vpc?rid=1).
+2. Click **Cloud Connect Network** on the left sidebar to go to the **CCN** page, and then click **+New**.
+3. In the **Create CCN instance** dialog box, complete the following configurations, and click **OK**.
+![](https://main.qcloudimg.com/raw/de3f3b573ed355ac53e9670493c05849.png)
 
  <table>
  <thead>
  <tr>
-  <th>Field</th>
-  <th>Subfield</th>
-  <th>Description</th>
+  <th >Field</th>
+  <th >Subfield</th>
+  <th >Description</th>
  </tr>
   </thead>
  <tr>
   <td align="center">Name</td>
    <td align="center">-</td>
-  <td >Name of the CCN instance.</td>
+  <td >Name of the CCN instance</td>
  </tr>
  <tr >
-  <td rowspan=2 align="center" >Billing Mode</td>
-  <td align="center" >Monthly subscription</td>
-  <td>Its unit price is about 20% lower than that of monthly 95th percentile billing. It's applicable to business with stable bandwidth needs.</td>
- </tr>
- <tr >
-  <td align="center" style='white-space:nowrap'>Monthly 95th percentile</td>
+  <td align="center" >Billing Mode</td>
+  <td align="center" style='white-space:nowrap'>Pay-as-you-go by monthly 95 percentile</td>
   <td>Bill the actual bandwidth usage of the current month on 95th percentile basis. It's applicable to business with fluctuating bandwidth demands.</td>
  </tr>
  <tr>
-  <td rowspan=3 align="center">Service Quality</td>
+  <td rowspan=3 align="center">Service Level</td>
   <td align="center">Platinum</td>
-  <td>It’s ideal for key businesses that require extremely high communication quality. Gold service is suitable for businesses that require high communication quality, such as payment and game acceleration./td>
+  <td>It’s ideal for key businesses that require extremely high communication quality. Gold service is suitable for businesses that require high communication quality, such as payment and game acceleration.</td>
  </tr>
  <tr>
   <td align="center" white-space="nowrap">Gold</td>
@@ -49,63 +47,75 @@ You have created VPCs, subnets and CVMs in Shanghai and Guangzhou regions. The t
  </tr>
  <tr >
   <td align="center">Silver</td>
-  <td >It’s suitable for cost-sensitive and jitter-insensitive businesses that require high security./td>
+  <td >It’s suitable for cost-sensitive and jitter-insensitive businesses that require high security.</td>
  </tr>
  <tr>
-  <td rowspan=2>Speed Limit Mode</td>
-  <td align="center" style='white-space:nowrap'>Region outbound speed limit</td>
-  <td >The overall outbound bandwidth limit from one region to another.</td>
+  <td rowspan=2>Bandwidth Limit Mode</td>
+  <td align="center" style='white-space:nowrap'>Regional Outbound Bandwidth Cap</td>
+  <td>The total outbound bandwidth cap from a single region to other regions</td>
  </tr>
  <tr>
-  <td align="center" style='white-space:nowrap'>Inter-region speed limit</td>
-  <td >It’s the total bandwidth limit for traffic from a certain region to other regions. A monthly subscription CCN instance only supports the inter-region speed limit.</td>
+   <td align="center" style='white-space:nowrap'>Inter-region Bandwidth Cap</td>
+  <td>The inbound and outbound bandwidth cap between two regions</td>
  </tr>
  <tr>
-  <td   align="center">Associate with Instance</td>
+  <td   align="center">Associated Instances</td>
   <td   align="center">-</td>
-  <td >The options include VPC, Direct Connect Gateway, BM Virtual Private Cloud, and VPN Gateway.
+  <td >The options include VPC, Direct Connect Gateway, BM Virtual Private Cloud, and VPN Gateway. 
   In this example, we choose to associate with VPC in the Shanghai region.</td>
  </tr>
 </table>
 
-<span id="2"></span>
-Step 2: associate a network instance
-To associate a VPC in the Guangzhou region with CCN, do as follows:
-1. On the **CCN** page, click the ID/Name of the CCN you want to associate with.
-2. On the **Associate with Instance** page, click **Add an instance**. 
-3. In the **Associate with Instance** dialog box, choose to associate the VPC instance in the Guangzhou region.
 
->? If you need to associate another network instance, click **Add**.
+## Step 2. Associate Instances[](id:2)
 
-4. Click **OK** to add the selected network instances to CCN.
+To associate a VPC in the Guangzhou region with CCN, perform the following steps.
 
-<span id="3"></span>
-Step 3: check the route table
+1. On the **CCN** page, click the **ID/Name** of the target CCN instance to enter its details page.
+2. Select the **Associated Instances* tab, and click **Add an instance**. 
+3. In the **Associated Instances** dialog box, choose to associate the VPC instance in the Guangzhou region.
 
-Check and confirm that routing policies of each subnet in the VPC associated with the CCN take effect. Any IP range conflicts between associated network instances will invalidate routes.
-1. On the **CCN** page, click ID/Name of the CCN instance for which you want to query the route table.
-2. Select the **Route table** tab on the details page of the CCN instance to view its route tables.
-3. Check for route in **invalid** status. If any, [modify the route](https://intl.cloud.tencent.com/document/product/1003/30052) and [enable it](https://intl.cloud.tencent.com/document/product/1003/30069).
-![](https://main.qcloudimg.com/raw/e802fd5a736644e0a6dc2757400adbf1.png)
-
-##Step 4: configure the bandwidth
--**Purchasing bandwidth in both regions (only for monthly subscription CCN instances)**
-For monthly subscription CCN instances, bandwidth of 10 Kbps or less is free of charge in any region. If you need a higher bandwidth, purchase it according to regions.
-   1. On the **CCN** page, click ID/Name of the CCN instance for which you want to purchase a bandwidth.
-   2. Select the **Bandwidth Management** tab on the details page of the CCN instance, and click **Purchase Bandwidth**.
-      3. On the **Purchase Bandwidth** dialog box, choose Guangzhou and Shanghai regions, configure the bandwidth cap and validity period, and click **Confirm**.
-
-
-- **Setting cross-region bandwidth limit (only for monthly 95th percentile CCN instance)**
-You can set the cross-region bandwidth cap for monthly 95th percentile CCN instances as needed:
->?The default bandwidth cap is 1 Gbps. If you want to increase the bandwidth, [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+>?If you need to associate another network instance, click **Add**.
 >
- - Setting inter-region bandwidth speed limit
-Click **Change Bandwidth** to go to the **Change Bandwidth** page. In the pop-up window, select the two regions where you want to limit the bandwidth, and enter the **Bandwidth Cap**. If you need to add more entries, click **Add**, and then click**OK** to complete the configurations.
- - Setting region outbound bandwidth speed limit
-Click **Adjust bandwidth speed limit**. In the pop-up window, select regions for which you want to limit the bandwidth on the left, enter the **Bandwidth Cap** on the right, and click **OK** to complete the configurations.
+![](https://main.qcloudimg.com/raw/155facd48c09466175f68f329d4ccda0.png)
 
->?Communications between CCN instances may incur fees. For pricing details, see [Pricing](https://intl.cloud.tencent.com/document/product/1003/30053).
+4. Click **OK** to add the selected network instance to CCN.
+
+
+## Step 3. Check the Route Table[](id:3)
+
+Check and confirm that routing policies of all subnets in the VPC associated with the CCN instance are valid. Any IP range conflicts between associated network instances will invalidate routes.
+
+1. On the **CCN** page, click the **ID/Name** of the target CCN instance.
+2. Select the **Route Table** tab on the details page of the CCN instance to view its route tables.
+3. Check if there is any **invalid** routing policy. If so, modify the route table according to [route limits](https://intl.cloud.tencent.com/document/product/1003/30052), and then [enable it](https://intl.cloud.tencent.com/document/product/1003/30069).
+   ![](https://main.qcloudimg.com/raw/3d9c915eb46b2bed59947105e611661c.png)
+
+## Step 4. Configure Bandwidth
+
+**Setting the cross-region bandwidth cap (only for pay-as-you-go CCN instances billed by monthly 95th percentile)
+  For pay-as-you-go CCN instances billed by monthly 95 percentile, you can configure a cross-region bandwidth cap as needed, including inter-region bandwidth limit and region outbound bandwidth limit.
+
+>?The default bandwidth cap is 1 Gbps. If you require a higher bandwidth, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+>
+  1. On the **CCN** page, click the **ID/Name** of the target CCN instance.
+  2. Select the **Bandwidth Management* tab on the details page of the CCN instance.
+  3. (Optional) Click **Change** and choose a bandwidth limit mode.![](https://main.qcloudimg.com/raw/748b997e3fa00a665c0268d219ac35ac.png) ![](https://main.qcloudimg.com/raw/93232c58d1e626eaab54685923cc2009.png)
+ 
+ > !Changing the bandwidth limit mode will delete existing configurations. The bandwidth cap will be set to 1 Gbps by default. If you require a higher bandwidth, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+ >     
+
+4. Configure the bandwidth cap depending on the bandwidth limit mode of the CCN instance:	 
+ - Setting inter-region bandwidth limit
+   Click **Change Bandwidth**. In the pop-up window, select **Region A** and **Region B** from the drop-down list and enter the **Bandwidth Cap**. You can also click **Add** to configure multiple bandwidth limit rules, and then click **OK**.
+   ![](https://main.qcloudimg.com/raw/7bd03d06460c424ab1f1fd74f9298c77.png)
+  - Setting region outbound bandwidth limit
+   Click **Adjust bandwidth cap**. In the pop-up window, select regions for which you want to limit the bandwidth on the left and set the bandwidth cap on the right. Click **OK**.
+    ![](https://main.qcloudimg.com/raw/a961f2724eda0a156304dea7169ae319.png)
+
+>?Communication between CCN instances may incur fees. For pricing details, refer to [Pricing](https://intl.cloud.tencent.com/document/product/1003/30053).
 
 ## Result Validation
-Log in to a CVM in Shanghai region, and run the `ping <IP address>` to connect the CVM in Guangzhou region. If the following result appears, the two CVMs are successfully connected. 
+
+Log in to a CVM in the Shanghai region, and run the `ping <IP address>` command to connect the CVM in the Guangzhou region. If the following result appears, the two CVMs are connected.
+![](https://main.qcloudimg.com/raw/c6270785b67e2ab9205ca8d370a2567d.png)
