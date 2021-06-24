@@ -4,7 +4,7 @@ This document describes how to use the C/C++ SDK to connect to CKafka via the de
 
 ## Prerequisites
 
-[Install GCC](https://gcc.gnu.org/install/)
+- [Install GCC](https://gcc.gnu.org/install/)
 
 ## Directions
 
@@ -14,7 +14,7 @@ For more information, please see [here](https://github.com/edenhill/librdkafka#i
 
 ### Step 2. Send messages
 
-1. Create the `producer.c ` file.
+1. Create the `producer.c` file.
 
 ```C++
 /*
@@ -114,10 +114,10 @@ int main (int argc, char **argv) {
         fprintf(stderr, "%% Usage: %s <broker> <topic> <username> <password>  \n Optional:username password\n", argv[0]);
         return 1;
     }
-    
+
     brokers = argv[1];
     topic   = argv[2];
-    
+
     if(argc == 5) {
         user = argv[3];
         passwd = argv[4];
@@ -128,7 +128,7 @@ int main (int argc, char **argv) {
      * Create Kafka client configuration place-holder
      */
     conf = rd_kafka_conf_new();
-    
+
     /* Set bootstrap broker(s) as a comma-separated list of
      * host or host:port (default port 9092).
      * librdkafka will use the bootstrap brokers to acquire the full
@@ -138,7 +138,7 @@ int main (int argc, char **argv) {
         fprintf(stderr, "%s\n", errstr);
         return 1;
     }
-    
+
     /* Set sasl config*/
     if( user && passwd ) {
         if(rd_kafka_conf_set(conf,"security.protocol","sasl_plaintext",errstr,sizeof(errstr)) !=RD_KAFKA_CONF_OK) {
@@ -152,13 +152,13 @@ int main (int argc, char **argv) {
         if(rd_kafka_conf_set(conf,"sasl.username",user,errstr,sizeof(errstr)) !=RD_KAFKA_CONF_OK) {
             fprintf(stderr,"%s\n",errstr);
             return 1;
-    
+
         }
         if(rd_kafka_conf_set(conf,"sasl.password",passwd,errstr,sizeof(errstr)) !=RD_KAFKA_CONF_OK) {
             fprintf(stderr,"%s\n",errstr);
             return 1;
         }
-    
+
     }
     /* Tencent Cloud recommended configuration parameters
       * https://cloud.tencent.com/document/product/597/30203
@@ -167,7 +167,7 @@ int main (int argc, char **argv) {
         fprintf(stderr,"%s\n",errstr);
         return 1;
     }
-    
+
     if(rd_kafka_conf_set(conf,"acks","1",errstr,sizeof(errstr)) != RD_KAFKA_CONF_OK) {
         fprintf(stderr,"%s\n",errstr);
         return 1;
@@ -180,12 +180,12 @@ int main (int argc, char **argv) {
         fprintf(stderr,"%s\n",errstr);
         return 1;
     }
-    
+
     if(rd_kafka_conf_set(conf,"retry.backoff.ms","1000",errstr,sizeof(errstr)) != RD_KAFKA_CONF_OK) {
         fprintf(stderr,"%s\n",errstr);
         return 1;
     }
-    
+
     /* Set the delivery report callback.
      * This callback will be called once per message to inform
      * the application if delivery succeeded or failed.
@@ -193,7 +193,7 @@ int main (int argc, char **argv) {
      * The callback is only triggered from rd_kafka_poll() and
      * rd_kafka_flush(). */
     rd_kafka_conf_set_dr_msg_cb(conf, dr_msg_cb);
-    
+
     /*
      * Create producer instance.
      *
@@ -207,28 +207,28 @@ int main (int argc, char **argv) {
                 "%% Failed to create new producer: %s\n", errstr);
         return 1;
     }
-    
+
     /* Signal handler for clean shutdown */
     signal(SIGINT, stop);
-    
+
     fprintf(stderr,
             "%% Type some text and hit enter to produce message\n"
             "%% Or just hit enter to only serve delivery reports\n"
             "%% Press Ctrl-C or Ctrl-D to exit\n");
-    
+
     while (run && fgets(buf, sizeof(buf), stdin)) {
         size_t len = strlen(buf);
         rd_kafka_resp_err_t err;
-    
+
         if (buf[len-1] == '\n') /* Remove newline */
             buf[--len] = '\0';
-    
+
         if (len == 0) {
             /* Empty line: only serve delivery reports */
             rd_kafka_poll(rk, 0/*non-blocking */);
             continue;
         }
-    
+
         /*
          * Send/Produce message.
          * This is an asynchronous call, on success it will only
@@ -255,7 +255,7 @@ int main (int argc, char **argv) {
                 RD_KAFKA_V_OPAQUE(NULL),
                 /* End sentinel */
                 RD_KAFKA_V_END);
-    
+
         if (err) {
             /*
              * Failed to *enqueue* message for producing.
@@ -263,7 +263,7 @@ int main (int argc, char **argv) {
             fprintf(stderr,
                     "%% Failed to produce to topic %s: %s\n",
                     topic, rd_kafka_err2str(err));
-    
+
             if (err == RD_KAFKA_RESP_ERR__QUEUE_FULL) {
                 /* If the internal queue is full, wait for
                  * messages to be delivered and then retry.
@@ -305,27 +305,28 @@ int main (int argc, char **argv) {
      * waits for all messages to be delivered. */
     fprintf(stderr, "%% Flushing final messages..\n");
     rd_kafka_flush(rk, 10*1000 /* wait for max 10 seconds */);
-    
+
     /* If the output queue is still not empty there is an issue
      * with producing messages to the clusters. */
     if (rd_kafka_outq_len(rk) > 0)
         fprintf(stderr, "%% %d message(s) were not delivered\n",
                 rd_kafka_outq_len(rk));
-    
+
     /* Destroy the producer instance */
     rd_kafka_destroy(rk);
-    
+
     return 0;
 }
 ```
 
+2. Compile `producer.c`. 
 
-2. Compile `producer.c`.
 ```
 gcc -lrdkafka ./producer.c -o producer
 ```
 
 3. Send messages.
+
 ```
 ./produce <broker> <topic> 
 ```
@@ -334,8 +335,14 @@ gcc -lrdkafka ./producer.c -o producer
 | :------- | ------------------------------------------------------------ |
 | broker   | Access point. You can obtain it as follows: in the CKafka console, go to the instance details page and click the **Basic Info** tab. Then you can find the default access point in the **Configuration Info** or **Access Mode** area. |
 | topic    | Topic name. You can obtain it on the **Topic Management** tab page on the instance details page in the CKafka console.   |
-| username | Username for the SASL_Plaintext access mode. You can obtain it on the **User Management** tab page on the instance details page in the CKafka console. Note that the username must be in the `${instanceId}#username` format. |
-| password | User access password for the SASL_Plaintext access mode.                     |
+
+The execution result is as follows:
+<img src="https://main.qcloudimg.com/raw/a7a4a02e8636045b7aeb852f47270059.png" width="500px">
+
+4. On the **Topic Management** tab page on the instance details page in the CKafka console, select the target topic, and click **More** > **Message Query** to view the message just sent.
+     ![](https://main.qcloudimg.com/raw/7a2410794186b47c9126dbe8b878228d.png)
+
+
 
 ### Step 3. Consume messages
 
@@ -432,7 +439,7 @@ int main (int argc, char **argv) {
                 argv[0]);
         return 1;
     }
-    
+
     brokers   = argv[1];
     groupid   = argv[2];
     topics    = &argv[3];
@@ -443,7 +450,7 @@ int main (int argc, char **argv) {
      * Create Kafka client configuration place-holder
      */
     conf = rd_kafka_conf_new();
-    
+
     /* Set bootstrap broker(s) as a comma-separated list of
      * host or host:port (default port 9092).
      * librdkafka will use the bootstrap brokers to acquire the full
@@ -454,7 +461,7 @@ int main (int argc, char **argv) {
         rd_kafka_conf_destroy(conf);
         return 1;
     }
-    
+
     /* Set the consumer group id.
      * All consumers sharing the same group id will join the same
      * group, and the subscribed topic' partitions will be assigned
@@ -466,7 +473,7 @@ int main (int argc, char **argv) {
         rd_kafka_conf_destroy(conf);
         return 1;
     }
-    
+
     /* If there is no previously committed offset for a partition
      * the auto.offset.reset strategy will be used to decide where
      * in the partition to start fetching messages.
@@ -485,7 +492,7 @@ int main (int argc, char **argv) {
         fprintf(stderr,"%s\n",errstr);
         return 1;
     }
-    
+
     if(rd_kafka_conf_set(conf,"session.timeout.ms","10000",errstr,sizeof(errstr)) != RD_KAFKA_CONF_OK) {
         fprintf(stderr,"%s\n",errstr);
         return 1;
@@ -494,7 +501,7 @@ int main (int argc, char **argv) {
         fprintf(stderr,"%s\n",errstr);
         return 1;
     }
-    
+
     /*
      * Create consumer instance.
      *
@@ -508,7 +515,7 @@ int main (int argc, char **argv) {
                 "%% Failed to create new consumer: %s\n", errstr);
         return 1;
     }
-    
+
     conf = NULL; /* Configuration object is now owned, and freed,
                       * by the rd_kafka_t instance. */
 
@@ -532,7 +539,7 @@ int main (int argc, char **argv) {
                 /* the partition is ignored
                  * by subscribe() */
                                           RD_KAFKA_PARTITION_UA);
-    
+
     /* Subscribe to the list of topics */
     err = rd_kafka_subscribe(rk, subscription);
     if (err) {
@@ -543,34 +550,34 @@ int main (int argc, char **argv) {
         rd_kafka_destroy(rk);
         return 1;
     }
-    
+
     fprintf(stderr,
             "%% Subscribed to %d topic(s), "
             "waiting for rebalance and messages...\n",
             subscription->cnt);
-    
+
     rd_kafka_topic_partition_list_destroy(subscription);
 
 
     /* Signal handler for clean shutdown */
     signal(SIGINT, stop);
-    
+
     /* Subscribing to topics will trigger a group rebalance
      * which may take some time to finish, but there is no need
      * for the application to handle this idle period in a special way
      * since a rebalance may happen at any time.
      * Start polling for messages. */
-    
+
     while (run) {
         rd_kafka_message_t *rkm;
-    
+
         rkm = rd_kafka_consumer_poll(rk, 100);
         if (!rkm)
             continue; /* Timeout: no message within 100ms,
                                    *  try again. This short timeout allows
                                    *  checking for `run` at frequent intervals.
                                    */
-    
+
         /* consumer_poll() will return either a proper message
          * or a consumer error (rkm->err is set). */
         if (rkm->err) {
@@ -583,26 +590,26 @@ int main (int argc, char **argv) {
             rd_kafka_message_destroy(rkm);
             continue;
         }
-    
+
         /* Proper message. */
         printf("Message on %s [%"PRId32"] at offset %"PRId64":\n",
                 rd_kafka_topic_name(rkm->rkt), rkm->partition,
                 rkm->offset);
-    
+
         /* Print the message key. */
         if (rkm->key && is_printable(rkm->key, rkm->key_len))
             printf(" Key: %.*s\n",
                    (int)rkm->key_len, (const char *)rkm->key);
         else if (rkm->key)
             printf(" Key: (%d bytes)\n", (int)rkm->key_len);
-    
+
         /* Print the message value/payload. */
         if (rkm->payload && is_printable(rkm->payload, rkm->len))
             printf(" Value: %.*s\n",
                    (int)rkm->len, (const char *)rkm->payload);
         else if (rkm->payload)
             printf(" Value: (%d bytes)\n", (int)rkm->len);
-    
+
         rd_kafka_message_destroy(rkm);
     }
 
@@ -614,18 +621,19 @@ int main (int argc, char **argv) {
 
     /* Destroy the consumer */
     rd_kafka_destroy(rk);
-    
+
     return 0;
 }
 ```
 
+2. Execute the following command to compile `consumer.c`. 
 
-2. Compile `consumer.c`. 
 ```
 gcc -lrdkafka ./consumer.c -o consumer
 ```
 
-3. Send messages.
+3. Execute the following command to send messages.
+
 ```   
 ./consumer <broker> <group.id> <topic1> <topic2>.. 
 ```
@@ -636,5 +644,9 @@ gcc -lrdkafka ./consumer.c -o consumer
 | group.id        | Consumer group name. A meaningful name is recommended.               |
 | topic1 topic2.. | Topic names. You can obtain them on the **Topic Management** tab page on the instance details page in the CKafka console.   |
 
+The execution result is as follows:
+<img src="https://main.qcloudimg.com/raw/e131edb96559186eeba25beb26994a2e.png" width="700px">
 
+4. On the **Consumer Group** page in the Ckafka console, select the corresponding consumer group name, enter the topic name, and click **Query Details** to view the consumption details.
+     ![](https://main.qcloudimg.com/raw/f054bfe1c177a324465334cb893ad871.png)
 
