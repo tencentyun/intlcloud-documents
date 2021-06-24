@@ -52,7 +52,7 @@ The `trtcmeetingdemo` folder in the source code contains two subfolders: `ui` an
 [](id:model)
 ## Implementing A Custom UI
 
-The `trtcmeetingdemo` folder in the [source code](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCMeetingDemo) contains two subfolders: `ui` and `model`. The `model` folder contains the reusable open-source component `TRTCMeeting`. You can find the component’s API functions in `TRTCMeeting.h` and use them to customize your own UI.
+The `trtcmeetingdemo` folder in the [source code] contains two subfolders: `ui` and `model`. The `model` folder contains the reusable open-source component `TRTCMeeting`. You can find the component’s API functions in `TRTCMeeting.h` and use them to customize your own UI.
 ![](https://main.qcloudimg.com/raw/2ac6fe9df1b43dae59271f4288f54ef3.png)
 
 
@@ -190,7 +190,7 @@ renderView?.refreshVideo(isVideoAvailable: available)
 
 [](id:model.step7)
 ### Step 7. Share the screen.
-1. Call `startScreenCapture`, pass in the encoding parameters and floating window to start screen sharing. For more information, see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a59b16baa51d86cc0465dc6edd3cbfc97).
+1. Call `startScreenCapture`, pass in the encoding parameters and floating window to start screen sharing. For more information, see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a59b16baa51d86cc0465dc6edd3cbfc97).
 2. Other attendees in the room will receive the `onUserVideoAvailable` event notification.
 
 >!Screen sharing and camera capturing are mutually exclusive. Before enabling screen sharing, you need to call `stopCameraPreview` to disable camera capturing.
