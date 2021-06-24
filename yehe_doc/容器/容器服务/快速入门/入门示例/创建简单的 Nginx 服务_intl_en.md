@@ -2,8 +2,8 @@
 This document describes how to quickly create an Nginx service in a container cluster.
 
 ## Prerequisites
->- Complete [Tencent Cloud account registration](https://intl.cloud.tencent.com/register).
->- Create a cluster. For more information, see [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/30637).
+- Complete [Tencent Cloud account registration](https://intl.cloud.tencent.com/register).
+- Create a cluster. For more information, see [Creating a Cluster](https://intl.cloud.tencent.com/document/product/457/30637).
 
 ## Directions
 
@@ -40,7 +40,7 @@ Main parameters include:
  - **Service Access**: select **Via Internet**.
  - **Load Balancer**: select according to your requirements.
  - **Port Mapping**: select TCP protocol, and set both the container port and service port to 80.
- >The security group of the service’s cluster must open the node network and container network to the Internet. It is also required to open ports 30000 to 32768 to the Internet. Otherwise, the problem of TKE being unusable could occur. For more information, see [TKE Security Group Settings](https://intl.cloud.tencent.com/document/product/457/9084).
+ >!The security group of the service’s cluster must open the node network and container network to the Internet. It is also required to open ports 30000 to 32768 to the Internet. Otherwise, the problem of TKE being unusable could occur. For more information, see [TKE Security Group Settings](https://intl.cloud.tencent.com/document/product/457/9084).
 7. Click **Create workload** to complete the creation of the Nginx service.
 
 
@@ -65,5 +65,4 @@ When the service is successfully created, you directly enter the Nginx server we
 ![](https://main.qcloudimg.com/raw/156e6d3b804e6b214ef7600fee4fa9c1.png)
 
 ### More Nginx settings
-- See Building a Simple Web Service with Tencent Cloud TKE.
-- If creation of the container failed, you can read the [Event FAQs](https://intl.cloud.tencent.com/document/product/457/8187).
+If creation of the container failed, you can read the [Event FAQs](https://intl.cloud.tencent.com/document/product/457/8187).
