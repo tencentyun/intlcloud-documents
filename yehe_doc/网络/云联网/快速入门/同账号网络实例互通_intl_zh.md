@@ -3,7 +3,7 @@
 ## 背景信息
 
 创建云联网实例时，您可以根据实际选择月95后付费模式，具体如下图所示：
-![](https://main.qcloudimg.com/raw/5fad5c7c765166f7225951606901f5e1.png)
+![](https://main.qcloudimg.com/raw/23e11b65f008292a6803ffe53fc786d1.png)
 本文以同账号下的广州和上海地域的 VPC 互通为例，为您介绍相关操作。
 
 ## 前提条件
@@ -16,7 +16,7 @@
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1) 。
 2. 在左侧导航栏中单击【云联网】，在云联网管理页面上方单击【+新建】。
 3. 在“新建云联网实例”对话框中配置以下信息，然后单击【确定】。
-![](https://main.qcloudimg.com/raw/de3f3b573ed355ac53e9670493c05849.png)
+![](https://main.qcloudimg.com/raw/67e42dd8cb0f3c2d509e59bcfc24df0a.png)
 
  <table>
  <thead>
@@ -77,7 +77,7 @@
 
 >?如还需关联其他网络实例，可单击【添加】继续关联。
 >
-![](https://main.qcloudimg.com/raw/155facd48c09466175f68f329d4ccda0.png)
+![](https://main.qcloudimg.com/raw/02cb17c3741827d4f01cecda590dd381.png)
 
 4. 单击【确定】，将所选网络实例加入云联网。
 
@@ -89,7 +89,7 @@
 1. 在云联网列表页面，单击目标云联网实例 ID。
 2. 在云联网实例详情页单击【路由表】标签页，查看该云联网路由表。
 3. 检查是否存在状态为**失效**的路由策略。若存在，则根据 [路由冲突原则 ](https://intl.cloud.tencent.com/document/product/1003/30052)修改路由表并启用路由，详情请参见 [启用路由](https://intl.cloud.tencent.com/document/product/1003/30069)。
-   ![](https://main.qcloudimg.com/raw/3d9c915eb46b2bed59947105e611661c.png)
+  ![](https://main.qcloudimg.com/raw/30e2fa3a3d0948d3dad64045040fff9f.png)
 
 ## 步骤四：配置带宽
 
@@ -100,7 +100,7 @@
 >
   1. 在云联网列表页面，单击目标云联网实例 ID。
   2. 在云联网实例详情页，单击【带宽管理】标签页。
-  3. (可选) 单击【变更】，在“变更限速方式”页签，按需选择配置跨地域带宽上限的方式。![](https://main.qcloudimg.com/raw/748b997e3fa00a665c0268d219ac35ac.png) ![](https://main.qcloudimg.com/raw/93232c58d1e626eaab54685923cc2009.png)
+  3. (可选) 单击【变更】，在“变更限速方式”页签，按需选择配置跨地域带宽上限的方式。![](https://main.qcloudimg.com/raw/b721393fb8cb95e9ebb14ee8c3db1536.png) ![](	https://main.qcloudimg.com/raw/e267c561ea9be180cd3dcdab451b1233.png)
  
  > !限速方式变更后，原有限速配置将删除，带宽将设置为1Gbps（默认），如需更大默认带宽，请提[ 工单申请](https://console.cloud.tencent.com/workorder/category)。
  >     
@@ -108,14 +108,14 @@
 4. 根据您创建的云联网限速方式，按需配置限速：	 
  -  设置地域间带宽限速
    单击【调整带宽】，在弹框中选择需要限速的两个地域，填写地域间的带宽上限，如需添加多条请单击【添加】继续，完成添加后单击【确定】。
-   ![](https://main.qcloudimg.com/raw/7bd03d06460c424ab1f1fd74f9298c77.png)
+    ![](https://main.qcloudimg.com/raw/8985f4739ef6e55716e4d56370745365.png)
   -  设置地域出口带宽限速
    单击【调整带宽限速】，在弹框中勾选需要限速的地域，填写地域出口的带宽上限，单击【确定】即可。
-    ![](https://main.qcloudimg.com/raw/a961f2724eda0a156304dea7169ae319.png)
+    ![](https://main.qcloudimg.com/raw/a204cb4fadc323ea81af2aa5daa00aa6.png)
 
 >?云联网实例间通信可能会产生费用，详情请参见 [计费总览](https://intl.cloud.tencent.com/document/product/1003/30053)。
 
 ## 结果验证
 
 登录上海地域的云服务器，向广州地域的云服务器执行 `ping <IP 地址>` 命令，若出现以下结果说明网络连接成功。
-![](https://main.qcloudimg.com/raw/c6270785b67e2ab9205ca8d370a2567d.png)
+![](https://main.qcloudimg.com/raw/85cf83efdb100080db078e4f497baf7e.png)
