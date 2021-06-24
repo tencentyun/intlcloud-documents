@@ -52,7 +52,7 @@
 [](id:model)
 ## 实现自定义 UI 界面
 
-[源码](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCMeetingDemo) 中的 trtcmeetingdemo 文件夹包含两个子文件夹 ui 和 model，model 文件夹中包含可重用的开源组件 TRTCMeeting，您可以在`TRTCMeeting.h`文件中看到该组件提供的接口函数，并使用对应接口实现自定义 UI 界面。
+[源码]中的 trtcmeetingdemo 文件夹包含两个子文件夹 ui 和 model，model 文件夹中包含可重用的开源组件 TRTCMeeting，您可以在`TRTCMeeting.h`文件中看到该组件提供的接口函数，并使用对应接口实现自定义 UI 界面。
 ![](https://main.qcloudimg.com/raw/2ac6fe9df1b43dae59271f4288f54ef3.png)
 
 
@@ -190,7 +190,7 @@ renderView?.refreshVideo(isVideoAvailable: available)
 
 [](id:model.step7)
 ### 步骤7：屏幕分享
-1. 调用 `startScreenCapture`，传入编码参数和录屏过程中的悬浮窗即可实现屏幕分享功能，具体信息请参见 [TRTC SDK](ttps://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a59b16baa51d86cc0465dc6edd3cbfc97)。
+1. 调用 `startScreenCapture`，传入编码参数和录屏过程中的悬浮窗即可实现屏幕分享功能，具体信息请参见 [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a59b16baa51d86cc0465dc6edd3cbfc97)。
 2. 会议中其他成员会收到 `onUserVideoAvailable` 的事件通知。
 
 >!屏幕分享和摄像头采集是两个互斥的操作，如果需要打开屏幕分享功能，请先调用`stopCameraPreview`关闭摄像头采集。
