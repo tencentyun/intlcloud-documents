@@ -19,12 +19,13 @@ Log in to the Linux CVM using VNC and enter single user mode. In this mode, fix 
 
 ## Troubleshooting Procedure
 
-[](id:ConfigurationFile)
-### Configuring the `/etc/fstab` file
+
+### Configuring the `/etc/fstab` file[](id:ConfigurationFile)
 1. [Log in to a Linux instance using standard login method](https://intl.cloud.tencent.com/document/product/213/5436).
 2. Choose a configuration method to obtain information.[](id:Step2)
 
-#### Using the soft link of elastic cloud disks (recommended)
+<dx-tabs>
+::: Using\sthe\ssoft\slink\sof\selastic\scloud\sdisks\s(recommended)
 #### Analyzing the configuration method
 - **Pros**: the soft link of an elastic cloud disk is fixed and unique. It does not change with operations such as mounting, unmounting, and formatting partitions.
 - **Cons**: only an elastic cloud disk can use the soft link, which operates imperceptibly for the partition formatting operation.
@@ -37,8 +38,8 @@ ls -l /dev/disk/by-id
 ```
 The following information will appear:
 ![](https://main.qcloudimg.com/raw/99c7d8362b4313a0366adace46563bb7.png)
-
-#### Using the UUID of the file system
+:::
+::: Using\sthe\sUUID\sof\sthe\sfile\ssystem
 
 #### Analyzing the configuration method
 Automatic mounting configuration may fail due to changes in a file system’s UUID.
@@ -51,8 +52,8 @@ blkid /dev/vdb1
 ```
 The following information will appear:
 ![](https://main.qcloudimg.com/raw/a1f6204b8f95f71609571612ff45aa42.png)
-
-#### Using device name (not recommended)
+:::
+::: Using\sdevice\sname\s(not\srecommended)
 
 #### Analyzing the configuration method
 Automatic mounting configuration may fail due to changes in device name.
@@ -65,7 +66,8 @@ fdisk -l
 ```
 The following information will appear:
 ![](https://main.qcloudimg.com/raw/1d09eba0c658fed0e9f5303e273b5539.png)
-
+:::
+</dx-tabs>
 3. Run the following command to back up the `/etc/fstab` file to the `/home` directory, for example:
 ```
 cp /etc/fstab /home
