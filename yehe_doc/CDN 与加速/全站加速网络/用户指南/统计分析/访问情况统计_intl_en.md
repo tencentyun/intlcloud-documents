@@ -12,7 +12,7 @@ You can log in to the [ECDN Console](https://console.cloud.tencent.com/dsa), the
 	4. For a period of 8–30 days, you can query data at a granularity of 1 hour, 2 hours, 4 hours or 24 hours.
 + Region: queries usage by geographic area (regions within Mainland China or outside, or global regions).
 
-![](https://main.qcloudimg.com/raw/f8374efc34eae11696d1b129561cfc70.png)
+![](https://main.qcloudimg.com/raw/3398341767d97905383a3ac3edb96a17.png)
 
 ## Usage Data Display
 The usage data is displayed in three statistics modules:  
