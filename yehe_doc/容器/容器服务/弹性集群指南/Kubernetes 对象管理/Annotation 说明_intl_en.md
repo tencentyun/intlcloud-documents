@@ -20,22 +20,22 @@ You can define `template annotation` in a YAML file to implement capabilities su
 <tbody>
 <tr>
 <td>eks.tke.cloud.tencent.com/security-group-id</td>
-<td>Default security group bound to a workload. Specify the <a href="https://console.cloud.tencent.com/cvm/securitygroup" target="_blank">security group ID</a>.
+<td>Default security group bound with a workload. Specify the <a href="https://console.cloud.tencent.com/cvm/securitygroup" target="_blank">security group ID</a>.
 	<ul class="params">
 	<li>Multiple security group IDs can be specified and separated by a comma (<code>,</code>), such as <code>sg-id1,sg-id2</code>.</li>
 	<li>Network policies take effect based on the sequence of security groups.</li>
-	<li>Please note that a single security group can be associated with only 2,000 computing instances, such as CVM instances and Elastic Kubernetes Service (EKS) Pods. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/15379" target="_blank">Security Group Restrictions</a>.</li>
+	<li>Please note that a single security group can be associated with only 2,000 computing instances, such as CVM instances and Elastic Kubernetes Service (EKS) Pods. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/15379" target="_blank">Security Group Limits</a>.</li>
 	</ul>
 </td>
-<td> No. If you do not specify it, the <code>default</code> security group in the same region bound to the workload is associated by default. <br>If you specify it, ensure that the security group ID already exists in the region where the workload resides. </td></tr>
+<td> No. If you do not specify it, the <code>default</code> security group in the same region bound to the workload is associated by default.<br>If you specify it, ensure that the security group ID already exists in the region where the workload resides.</td></tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/cpu</td>
-<td>Number of CPU cores required by a Pod. For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource specifications</a>. The unit is core by default.</td>
+<td>Number of CPU cores required by a Pod. For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>. The unit is core by default.</td>
 <td>No. If you specify it, ensure that the specifications are supported and specify the <code>cpu</code> and <code>mem</code> parameters.</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/mem</td>
-<td>Memory required by a Pod. For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource specifications</a>. The unit must be included in the value, for example, 512 MiB, 0.5 GiB, or 1 GiB.</td>
+<td>Memory required by a Pod. For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>. The unit must be included in the value, for example, 512 MiB, 0.5 GiB, or 1 GiB.</td>
 <td>No. If you specify it, ensure that the specifications are supported and specify the <code>cpu</code> and <code>mem</code> parameters.</td>
 </tr>
 <tr>
@@ -47,14 +47,12 @@ You can define `template annotation` in a YAML file to implement capabilities su
 <li>You can specify the model by priority. For example, `amd,intel` indicates AMD resource Pods will be created first. If the AMD resources in the selected region are insufficient, Intel resource Pods will be created.</li>
 </ul>
 For specific configurations supported by each model, please see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>.</td>
-<td>No. If you do not specify it, the CPU type is not specified forcibly by default. The system will calculate the most suitable specifications according to the <a href="https://intl.cloud.tencent.com/document/product/457/36161" target="_blank">Methods for Specifying Resource Specifications</a>. If the calculated specifications are supported by both Intel and AMD, Intel CPUs are preferred.</td>
+<td>No. If you do not specify it, the CPU type is not forcibly specified by default. The system will match the most suitable specifications according to <a href="https://intl.cloud.tencent.com/document/product/457/36161" target="_blank">Specifying Resource Specifications</a>. If the matched specifications are supported by both Intel and AMD, Intel CPUs are preferred.</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/gpu-type</td>
 <td>Model of the GPU resources required by a Pod. Currently, the supported models include:
 <ul  class="params">
-<li>1/4*V100</li>
-<li>1/2*V100</li>
 <li>V100</li>
 <li>1/4*T4</li>
 <li>1/2*T4</li>
@@ -62,7 +60,7 @@ For specific configurations supported by each model, please see <a href="https:/
 <li>You can specify the model by priority. For example, “T4,V100” indicates T4 resource Pods will be created first. If the T4 resources in the selected region are insufficient, V100 resource Pods will be created.</li>
 </ul>
 For specific configurations supported by each model, please see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>.</td>
-<td>If GPU resources are required, this option is required. When specifying it, ensure that the GPU model is supported. Otherwise, an error will be reported.</td>
+<td>If GPUs are required, this option is required. When specifying it, ensure that the GPU model is supported. Otherwise, an error will be reported.</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/gpu-count</td>
@@ -70,9 +68,14 @@ For specific configurations supported by each model, please see <a href="https:/
 <td>No. If you specify it, ensure that the specification is supported.</td>
 </tr>
 <tr>
-<td>eks.tke.cloud.tencent.com/static-ip</td>
-<td>The static IP of a Pod. Enter the value <code>"true"</code> to enable this feature. After this feature is enabled, the IP of `StatefulSet` and `Bare Pod` will remain unchanged after the Pod is updated or restarted.</td>
-<td>No. This annotation is only effective for workloads of the StatefulSet/Pod type.</td>
+<td>eks.tke.cloud.tencent.com/retain-ip</td>
+<td>The static IP of a Pod. Enter the value <code>"true"</code> to enable this feature. If a Pod with the static IP enabled is terminated, its IP will be retained 24 hours by default. If the Pod is rebuilt within 24 hours after termination, its IP can still be used. Otherwise, its IP may be occupied by other Pod.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>eks.tke.cloud.tencent.com/retain-ip-hours</td>
+<td>Modifies the default retention duration of the Pod’s static IP. Enter a number. Unit: hour. Default value: 24 hours. The IP can be retained up to one year.</td>
+<td>No</td>
 </tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/role-name</td>
@@ -92,7 +95,7 @@ For specific configurations supported by each model, please see <a href="https:/
 </tr>
 </tbody></table>
 
-## Sample
+### Sample
 The following example shows the complete GPU specifications of the security group bound to a Pod.
 ```
 apiVersion: apps/v1
@@ -125,7 +128,6 @@ spec:
          eks.tke.cloud.tencent.com/gpu-type: 1/4*V100
          eks.tke.cloud.tencent.com/mem: 10Gi
          eks.tke.cloud.tencent.com/security-group-id: "sg-dxxxxxx5,sg-zxxxxxxu"
-         eks.tke.cloud.tencent.com/static-ip: "true"
          eks.tke.cloud.tencent.com/role-name: "cam-role-name"
          eks.tke.cloud.tencent.com/monitor-port: "9123"
          eks.tke.cloud.tencent.com/custom-metrics-url: "http://localhost:8080/metrics"
@@ -159,9 +161,49 @@ spec:
 ```
 
 
+
+## Virtual Node Annotation Description
+EKS supports the virtual nodes. You can specify annotations in a YAML file to implement capabilities such as custom DNS, as shown below:
+
+<table>
+<thead>
+<tr>
+<th width="20%">Annotation Key</th>
+<th width="40%">Annotation Value and Description</th>
+<th width="40%">Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eks.tke.cloud.tencent.com/resolv-conf</td>
+<td>Queries the list of IP addresses for the DNS server while resolving the domain name, for example <code>nameserver 8.8.8.8</code>.
+<br>You can use <code>kubectl edit node eklet-subnet-xxxx</code> to add this annotation.
+<br>After the modification, the Pods scheduled to this virtual node will adopt this DNS configuration by default.</td>
+<td>No</td>
+</tr>
+</tr>
+</tbody></table>
+
+### Sample
+The example of a custom DNS configuration for a virtual node is as follows:
+
+```
+apiVersion: v1
+kind: Node
+metadata:
+    annotations:
+      eks.tke.cloud.tencent.com/resolv-conf:|
+	   	nameserver 4.4.4.4
+        nameserver 8.8.8.8
+    
+	
+```
+
+
+
 ## Service Annotation Description
 
-EKS allows you to use existing CLBs to create Services accessed via the public or private network. If you want to provide your idle CLBs for Services to be created or need to use the same CLB in a cluster, you can add annotations.
+EKS allows you to use existing CLBs to create services accessed through the public or private network. If you want to provide idle CLBs to created services or use the same CLB in a cluster, you can add annotations.
 
 <table>
 <thead>
@@ -188,7 +230,7 @@ EKS allows you to use existing CLBs to create Services accessed via the public o
 The elastic cluster also supports the same expansion protocol as the TKE cluster. For more information, see [Service Extension Protocol](https://intl.cloud.tencent.com/document/product/457/39141).
 
 >!
->- Ensure that your EKS and the CVM do not share the same CLB.
+>- Ensure that your EKS does not share the same CLB with the CVM.
 >- When the existing CLBs are used:
 >   - Only CLBs created through the CLB console can be used. You cannot reuse CLBs automatically created by TKE.
 >   - Ports of Services that share the same existing CLB cannot be the same.
