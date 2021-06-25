@@ -1,4 +1,6 @@
-If a published API uses the application authentication method (`ApiAppKey` and `ApiAppSecret`), when a client calls the API, it needs to use the signature key to perform signature calculation on the request content and transfer the signature to the server for signature verification. This document describes how to implement the signature calculation process on the client.
+If a published API uses the application-enabled authentication method (`ApiAppKey` and `ApiAppSecret`), when a client calls the API, it needs to use the signature key to perform signature calculation on the request content and transfer the signature to the server for signature verification. This document describes how to implement the signature calculation process on the client.
+
+>?For application-enabled authentication signature demos for common programming languages, please see [Development Guide - Application-Enabled Authentication Signature Generation in Multiple Programming Languages](https://intl.cloud.tencent.com/document/product/628/35254).
 
 ## Overview
 
@@ -15,7 +17,7 @@ When the client calls the API, it needs to use the authorized signature key to p
 ### Prerequisites
 
 - The API caller needs to get the signature key pair (`ApiAppKey` and `ApiAppSecret`) authorized to an API before calling the API.
-- The security authentication type of the called API is "application authentication".
+- The security authentication type of the called API is "Application-Enabled Authentication".
 
 ### Signature generation on client
 
@@ -108,7 +110,7 @@ Authorization: hmac id="secret_id", algorithm="hmac-sha1", headers="date source"
 
 The parameters in `Authorization` are described as follows:
 
-| Parameter | Description | 
+| Parameter | Description |
 |---------|---------|
 | hmac | Fixed and used to indicate the calculation method |
 | ID | Value of the `secret_id` in the key |
