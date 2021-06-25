@@ -10,7 +10,7 @@
 		<li>优化交互流程。</li>
 		<li>支持探测采集目标。</li></td>
 		<td>2021-05-28</td>
-		<td><a href="https://intl.cloud.tencent.com/document/product/457/38826">数据采集配置</a>
+		<td>数据采集配置</td>
 </tr>
 <tr>
     <td>上线 OLM 扩展组件</td>
