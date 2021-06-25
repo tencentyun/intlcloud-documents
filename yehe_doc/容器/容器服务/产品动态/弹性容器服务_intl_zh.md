@@ -1,3 +1,18 @@
+## 2021年05月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr> 
+    <td>支持创建 Pod 时自动为 Pod 分配 EIP。</td>	<td>支持创建 Pod 时自动为 Pod 分配 EIP，Pod 不再强依赖 NAT 网关进行外网通信。</td><td>2021-05-28</td><td>-</td>
+</tr>
+<tr> 
+    <td>支持虚拟节点修改自定义 DNS。</td>	<td>支持虚拟节点修改自定义 DNS，修改后调度到该虚拟节点的 Pod 默认全部采用该 DNS 配置。</td><td>2021-05-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39759">虚拟节点概述</a></td>
+</tr>
+<tr> 
+    <td>弹性集群支持通过 CRD 配置日志采集</td>	<td>弹性集群支持通过 CRD 的方式配置日志采集。CRD 对 Pod 无侵入性，支持多种日志解析方式，将标准输出、容器内文件日志发送至腾讯云日志服务 CLS，提供检索分析、可视化应用、日志下载消费等服务。推荐使用 CRD 配置日志采集。</td><td>2021-05-25</td><td><a href="https://intl.cloud.tencent.com/document/product/457/40585">使用 CRD 配置日志采集</a></td>
+</tr>
+</table>
+
 
 ## 2021年03月
 <table>

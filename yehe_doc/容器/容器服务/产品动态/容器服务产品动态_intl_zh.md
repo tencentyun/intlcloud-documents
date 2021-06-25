@@ -1,3 +1,47 @@
+## 2021年05月
+<table>
+<tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
+<th style="width:15%">发布时间</th>	<th style="width:15%">相关文档</th> </tr>
+<tr>
+    <td>云原生监控功能增强</td>
+		<td>
+		<li>优化数据采集配置流程。</li>
+		<li>新增采集目标状态信息。</li>
+		<li>优化交互流程。</li>
+		<li>支持探测采集目标。</li></td>
+		<td>2021-05-28</td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/457/38826">数据采集配置</a>
+</tr>
+<tr>
+    <td>上线 OLM 扩展组件</td>
+		<td>
+	OLM 扩展组件支持帮助用户进行 Operator 的自动安装，升级及生命周期的管理。
+	  </td>
+		<td>2021-05-28</td>
+		<td><a href="https://cloud.tencent.com/document/product/457/56752">OLM 说明</a>
+</tr>
+<tr>
+    <td>上线 HPC 扩展组件</td>
+		<td>
+	HPC 扩展组件是一种可以对 K8s workload 副本数进行定时修改的自研组件，配合 HPC CRD 使用，最小支持秒级的定时任务。
+	  </td>
+		<td>2021-05-28</td>
+		<td><a href="https://cloud.tencent.com/document/product/457/56753">HPC 说明</a>
+</tr>
+<tr>
+    <td>TKE 控制台功能增强</td>
+		<td>
+<li>新建节点支持选择操作系统。</li>
+<li>节点池支持扩容时修改期望节点数。</li>
+<li>工作负载支持按标签搜索。</li>
+	  </td>
+		<td>2021-05-20</td>
+		<td>
+<a href="https://intl.cloud.tencent.com/document/product/457/30652">新增节点</a>
+		</td>
+</tr>
+</table>
+
 ## 2021年04月
 <table>
 <tr><th style="width:20%">动态名称</th>	<th style="width:50%">动态描述</th> 
@@ -159,7 +203,7 @@
     <td>TKE ServiceConfig 优化</td><td>新增支持配置 service/ingress 自动创建 tkeserviceconfig。</td><td>2020-09-23</td><td><a href="https://intl.cloud.tencent.com/document/product/457/37015">Ingress 使用 TKEServiceConfig 配置 CLB</a></td>
 </tr>
 <tr>
-    <td>上线 DNSAutoscaler 组件</td><td>通过 Deployment 获取集群的节点数和核数，并可以根据预设的伸缩策略，自动水平伸缩 DNS 的副本数，提高 DNS 组件的可用性。</td><td>2020-09-23</td>DNSAutoscaler 说明</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39122">DNSAutoscaler 说明</a></td>
+    <td>上线 DNSAutoscaler 组件</td><td>通过 Deployment 获取集群的节点数和核数，并可以根据预设的伸缩策略，自动水平伸缩 DNS 的副本数，提高 DNS 组件的可用性。</td><td>2020-09-23</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39122">DNSAutoscaler 说明</a></td>
 </tr>
 <tr>
     <td>云原生 etcd 服务内测发布</td><td>该功能能够帮助您一键部署经腾讯内部大规模验证的高可靠高性能 etcd 集群，支持跨可用区容灾能力、提供最优化的性能配置。</td><td>2020-09-16</td><td>-</td>

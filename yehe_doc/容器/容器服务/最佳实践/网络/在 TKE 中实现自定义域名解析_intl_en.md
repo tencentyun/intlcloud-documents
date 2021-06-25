@@ -1,6 +1,7 @@
+容器服务-最佳实践-网络-在 TKE 中实现自定义域名解析
 ## Overview
 
-When using TKE or EKS, you need to resolve the custom internal domain names in the following scenarios:
+When using TKE or EKS, you may need to resolve the custom internal domain names in the following scenarios:
 
 - You build an external centralized storage service, and need to send the monitoring or log collection data in the cluster to the external storage service through a fixed internal domain name.
 - During the containerization of traditional services, the code of some services is configured to call other internal services with a fixed domain name, and the configuration cannot be modified, that is, the Service name of Kubernetes cannot be used for calling.
@@ -12,18 +13,18 @@ This document describes the following three solutions for using custom domain na
 
 | Solutions | Advantages |
 |---------|---------|
-| [Solution 1: Using CoreDNS Hosts plugin to configure arbitrary domain name resolution](#scheme1) | This solution is simple and intuitive. You can add arbitrary resolution records. |
-| [Solution 2: Using CoreDNS Rewrite plugin to map a domain name to the service in the cluster](#scheme2) | There is no need to know the IP address of the resolution record in advance, but the IP address mapped by the resolution record must be deployed in the cluster. |
-| [Solution 3: Using CoreDNS Forward plugin to set self-built DNS as the upstream DNS](#scheme3) | You can manage a large number of resolution records. As all records are managed in the self-built DNS, you do not need to modify the CoreDNS configuration when adding or deleting records. |
+| [Using CoreDNS Hosts plugin to configure arbitrary domain name resolution](#scheme1) | This solution is simple and intuitive. You can add arbitrary resolution records. |
+| [Using CoreDNS Rewrite plugin to map a domain name to the service in the cluster](#scheme2) | There is no need to know the IP address of the resolution record in advance, but the IP address mapped by the resolution record must be deployed in the cluster. |
+| [Using CoreDNS Forward plugin to set the external DNS as the upstream DNS](#scheme3) | You can manage a large number of resolution records. As all records are managed in the external DNS, you do not need to modify the CoreDNS configuration when adding or deleting records. |
 
->? In solution 1 and 2, you need to modify CoreDNS configuration file each time you add a resolution record. Please select the solution based on your actual needs.
+>? In the first two solutions, you need to modify CoreDNS configuration file each time you add a resolution record (no need to restart). Please select the solution based on your actual needs.
 
 
 ## Examples
 
 
 
-### Solution 1: Using CoreDNS Hosts plugin to configure arbitrary domain name resolution
+### Using CoreDNS Hosts plugin to configure arbitrary domain name resolution
 
 1. Run the following command to modify the `configmap` of `CoreDNS`, as shown below:
 ``` bash
@@ -73,11 +74,11 @@ metadata:
 
 
 
-### Solution 2: Using CoreDNS Rewrite plugin to map a domain name to the service in the cluster
+### Using CoreDNS Rewrite plugin to map a domain name to the service in the cluster
 
 
 
-If you need to deploy a service with a custom domain name in a cluster, you can use the Rewrite plugin of CoreDNS to specify the domain name to the ClusterIP of a Service.
+If you need to deploy a service with a custom domain name in a cluster, you can use the Rewrite plugin of CoreDNS to resolve the specified domain name to the ClusterIP of a Service.
 
 1. Run the following command to modify the `configmap` of `CoreDNS`, as shown below:
 ```bash
@@ -119,13 +120,13 @@ metadata:
 
 
 
-### Solution 3: Using CoreDNS Forward plugin to set self-built DNS as the upstream DNS
+### Using CoreDNS Forward plugin to set the external DNS as the upstream DNS
 
 1. Check the `forward` configuration. The default configuration of `forward` is as follows, which means that the domain name that is not in the cluster is resolved by the `nameserver` configured in the `/etc/resolv.conf` file of the node where CoreDNS is located.
 ```yaml
 forward . /etc/resolv.conf
 ```
-2. Configure `forward` and replace `/etc/resolv.conf` with the self-built DNS server address, as shown below:
+2. Configure `forward` and replace `/etc/resolv.conf` explicitly with the external DNS server address, as shown below:
 ```yaml
 forward . 10.10.10.10
 ```
@@ -155,7 +156,11 @@ metadata:
       name: coredns
       namespace: kube-system
 ```
-3. Configure the resolution record of the custom domain name to the self-built DNS. It is recommended to add the nameserver in `/etc/resolv.conf` on the node to the upstream of self-built DNS, because some services rely on Tencent Cloud internal DNS resolution. If it is not set as the upstream of self-built DNS, some services may fail to work properly. This document takes [BIND 9](https://www.bind9.net/) as an example to modify the configuration file and write the upstream DNS address into forwarders, as shown below:
+3. Configure the resolution record of the custom domain name to the external DNS. It is recommended to add the nameserver in `/etc/resolv.conf` on the node to the upstream of external DNS. Because some services rely on Tencent Cloud internal DNS resolution, if it is not set as the upstream of self-built DNS, some services may not work properly. This document takes [BIND 9](https://www.bind9.net/) as an example to modify the configuration file and write the upstream DNS address into forwarders, as shown below:
+
+
+>! If the external DNS Server and the request source are not in the same Region, some Tencent domain names that do not support cross-region access may become invalid.
+
 ```yaml
 options {
         forwarders {

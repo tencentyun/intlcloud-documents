@@ -1,3 +1,4 @@
+容器服务-最佳实践-网络-在 TKE 中实现自定义域名解析
 ## 操作场景
 
 在使用容器服务 TKE 或弹性容器集群 EKS 时，可能会有解析自定义内部域名的需求，例如：
@@ -23,7 +24,7 @@
 
 
 
-### 方案1：使用 CoreDNS Hosts 插件配置任意域名解析
+### 方案1：使用 CoreDNS Hosts 插件配置任意域名解析[](id:scheme1)
 
 1. 执行以下命令，修改 CoreDNS 的 configmap。示例如下：
 ``` bash
@@ -73,7 +74,7 @@ metadata:
 
 
 
-### 方案2：使用 CoreDNS Rewrite 插件指向域名到集群内服务
+### 方案2：使用 CoreDNS Rewrite 插件指向域名到集群内服务[](id:scheme2)
 
 
 
@@ -119,7 +120,7 @@ metadata:
 
 
 
-### 方案3：使用 CoreDNS Forward 插件将自建 DNS 设为上游 DNS
+### 方案3：使用 CoreDNS Forward 插件将自建 DNS 设为上游 DNS[](id:scheme3)
 
 1. 查看 forward 配置。forward 默认配置如下所示，指非集群内域名通过 CoreDNS 所在节点 `/etc/resolv.conf` 文件中配置的 nameserver 解析。
 ```yaml
@@ -156,6 +157,9 @@ metadata:
       namespace: kube-system
 ```
 3. 将自定义域名的解析记录配置到自建 DNS。建议将节点上 `/etc/resolv.conf` 中的 nameserver 添加到自建 DNS 的上游，因为部分服务依赖腾讯云内部 DNS 解析，如果未将其设为自建 DNS 的上游，可能导致部分服务无法正常工作。本文以 [BIND 9](https://www.bind9.net/) 为例修改配置文件，将上游 DNS 地址写入 forwarders 中。示例如下：
+
+>!自建 DNS Server 和请求源不在同个 Region，可能会导致部分不支持跨域访问的腾讯域名失效。
+
 ```yaml
 options {
         forwarders {

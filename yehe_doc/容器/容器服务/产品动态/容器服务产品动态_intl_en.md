@@ -1,3 +1,47 @@
+## May 2021
+<table>
+<tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
+<th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
+<tr>
+    <td>The features of cloud native monitoring were enhanced.</td>
+		<td>
+		<li>The data collection configuration is optimized.</li>
+		<li>The status information of the collection target is added.</li>
+		<li>The interaction process is optimized.</li>
+		<li>The detection of the collection target is supported.</li></td>
+		<td>2021-05-28</td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/457/38826">Log Collection</a>
+</tr>
+<tr>
+    <td>The OLM add-on was launched.</td>
+		<td>
+	The OLM add-on helps users install, update, and manage the lifecycle of Operators.
+	  </td>
+		<td>2021-05-28</td>
+		<td><a href="https://cloud.tencent.com/document/product/457/56752">OLM</a>
+</tr>
+<tr>
+    <td>The HPC add-on was launched.</td>
+		<td>
+	HPC is an add-on to periodically modify the number of replicas of K8s workload. Used in conjunction with HPC CRD resources, it can support scheduled actions in seconds.
+	  </td>
+		<td>2021-05-28</td>
+		<td><a href="https://cloud.tencent.com/document/product/457/56753">HPC</a>
+</tr>
+<tr>
+    <td>The feature of TKE console was enhanced.</td>
+		<td>
+<li>Users can select the operating system for when creating node.</li>
+<li>Users can modify the desired number of nodes during the node pool scaling out.</li>
+<li>Users can search for workload by tag.</li>
+	  </td>
+		<td>2021-05-20</td>
+		<td>
+<a href="https://intl.cloud.tencent.com/document/product/457/30652">Adding a Node</a></td>
+		</td>
+</tr>
+</table>
+
 ## April 2021
 <table>
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
@@ -6,15 +50,15 @@
     <td>The feature of TKE console was enhanced.</td>
 		<td>
 		<li>StatefulSet and DaemonSet can be redeployed with one-click.</li>
-		<li>Secret supports TLS type. You can import it from file or paste  multiple key-value pairs to enter in a batch.</li>
-		<li>The checking ports of liveness and readiness check of container health check support the use of port name.</li>
+		<li>Secret supports TLS certificate. You can import it from file or paste multiple key-value pairs to enter in a batch.</li>
+		<li>The container health check support the use of port name.</li>
 		<li>Namespace supports the selection of “All namespaces” and can be searched by keyword.</li></td>
 		<td>2021-04-30</td>
 		<td><li><a href="https://intl.cloud.tencent.com/document/product/457/30663">StatefulSet Management</a></li>
 		<li><a href="https://intl.cloud.tencent.com/document/product/457/30664"> DaemonSet Management</a></li>
 		<li><a href="https://intl.cloud.tencent.com/document/product/457/30676">Secret Management</a></li>
 		<li><a href="https://intl.cloud.tencent.com/document/product/457/30669">Setting the Health Check for a Workload</a></li>
-		<li><a href="https://intl.cloud.tencent.com/document/product/457/30660">Namespace</a></li></td>
+		<li><a href="https://intl.cloud.tencent.com/document/product/457/30660"> Namespaces</a></li></td>
 </tr>
 <tr>
     <td>The log collection capability is enhanced.</td>
@@ -31,7 +75,7 @@
 <tr><th style="width:20%">Update</th><th style="width:50%">Description</th> 
 <th style="width:15%">Date</th><th style="width:15%">Related Documents</th> </tr>
 <tr>
-    <td>The beta ARM cluster was launched.</td><td>The ARM cluster was launched for beta testing. You can <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> to apply for it.</td><td>2021-03-31</td><td>-</td>
+    <td>The beta ARM cluster starts.</td><td>The beta of ARM cluster starts. To join the beta, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td><td>2021-03-31</td><td>-</td>
 </tr>
 <tr>
     <td>The feature of TKE console was enhanced.</td><td>
@@ -124,7 +168,7 @@
     <td>Event dashboard was launched.</td><td>This feature implements the aggregation search and trend observation of top events and exception events.</td><td>2020-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38892">Event Dashboard</a></td>
 </tr>
 <tr>
-    <td>Auditing dashboard was launched.</td><td>This feature implements the aggregation search and direct observation of cluster global, nodes, K8s objects and other important operations.</td><td>2020-11-26</td><td>Auditing Dashboard</td>
+    <td>Auditing dashboard was launched.</td><td>This feature implements the aggregation search and direct observation of cluster global, nodes, K8s objects and other important operations.</td><td>2020-11-26</td><td><a href="https://intl.cloud.tencent.com/document/product/457/38890">Auditing Dashboard</a></td>
 </tr>
 <tr>
     <td>The node pool and cluster operating system can be changed.</td><td>Users can create node pools of different operating systems as needed to facilitate the standardized management of nodes.</td><td>2020-11-23</td><td><a href="https://intl.cloud.tencent.com/document/product/457/35901">Creating a Node Pool</a></td>
@@ -159,7 +203,7 @@
     <td>TKE ServiceConfig was optimized</td><td>You can configure service/ingress to create tkeserviceconfig automatically.</td><td>2020-09-23</td><td><a href="https://intl.cloud.tencent.com/document/product/457/37015">Using TKEServiceConfig to Configure CLBs</a></td>
 </tr>
 <tr>
-    <td>The DNSAutoscaler addon was launched.</td><td>This addon can obtain number of nodes and cores of the cluster via deployment, and auto-scaling the number of DNS replicas according to the preset scaling policy, so as to improve DNS availability.</td><td>2020-09-23</td>DNSAutoscaler Description</td><td><a href="https://intl.cloud.tencent.com/document/product/457/39122">DNSAutoscaler</a></td>
+    <td>The DNSAutoscaler add-on was launched.</td><td>This add-on can obtain number of nodes and cores of the cluster via Deployment, and auto-scaling the number of DNS replicas according to the preset scaling policy, so as to improve DNS availability.</td><td>2020-09-23</td></td><td><a href="https://intl.cloud.tencent.com/document/product/457/39122">DNSAutoscaler</a></td>
 </tr>
 <tr>
     <td>The beta cloud native ETCD was launched.</td><td>This feature enables you to one-click deploy the high-reliability and high-performance ETCD cluster, which is profusely verified through Tencent’s internal services. It also provides cross-AZ disaster recovery capabilities and optimal performance configuration.</td><td>2020-09-16</td><td>-</td>
@@ -1105,7 +1149,7 @@ When a “self-deployed cluster” is created, a security group is automatically
 		<td>TKE clusters integrate access permission management.</td>
         <td>Access management is mainly used to help you securely manage and control access to resources under your Tencent Cloud accounts. <b>Using CAM, you can create, manage, and terminate users (or user groups) and manage the use of Tencent Cloud resources through identity management and policies</b>.</td>
 		<td>2017-08-04</td>
-        <td><a href="https://intl.cloud.tencent.com/document/product/457/37499">TKE Resource-level Permission API List</a></td>
+        <td><a href="https://intl.cloud.tencent.com/document/product/457/37499">TKE Cluster-level Permission</a></td>
 	</tr>
 </table>
 
@@ -1124,7 +1168,7 @@ When a “self-deployed cluster” is created, a security group is automatically
 		<td>TKE supports CI source code building.</td>
         <td>Continuous container integration <b>enables the automatic and manual building of container images on the Tencent TKE Platform.</b></td>
 		<td>2017-07-18</td>
-		<td>Image Registry Overview</td>
+		<td><a href="https://intl.cloud.tencent.com/document/product/1051/38869">Image Registry Overview</a></td>
 	</tr>
 	<tr>
 		<td>Image Registry adds TencentHub images.</td>
@@ -1133,8 +1177,8 @@ When a “self-deployed cluster” is created, a security group is automatically
 		<td>TencentHub Product Overview</td>
 	</tr>
 	<tr>
-		<td>Image Registry adds "My Favorites".</td>
-		<td>"My Favorites" will display the images bookmarked by users, allowing users to query and use specific images.</td>
+		<td>Image Registry adds "Favorite Public Images".</td>
+		<td>"Favorite Public Images" will display the images bookmarked by users, allowing users to query and use specific images.</td>
 		<td>2017-07-18</td>
         <td><a href="https://intl.cloud.tencent.com/document/product/1051/38866">Image Registry Overview</a></td>
 	</tr>
