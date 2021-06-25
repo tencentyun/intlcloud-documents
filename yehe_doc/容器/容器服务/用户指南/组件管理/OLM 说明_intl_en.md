@@ -54,9 +54,9 @@ OLM helps users install, update, and manage the lifecycle of all Operators.
 To prevent user’s business from being affected, after the OLM add-on is uninstalled, the Operator deployed through OLM and the related CRDs will not be cleaned up. These CRDs can be removed manually.
 
 ## Limits
-<dx-alert infotype="explain" title="">
-If you create a cluster of version 1.12.4 or later. You can use the cluster directly without any parameter changes.
-</dx-alert>
+
+>?If you create a cluster of version 1.12.4 or later. You can use the cluster directly without any parameter changes.
+
 
 - This add-on is supported only by Kubernetes 1.12 or later versions.
 - The launch parameters of kube-apiserver must be set as follows: `--feature-gates=CustomResourceSubresources=true`.
