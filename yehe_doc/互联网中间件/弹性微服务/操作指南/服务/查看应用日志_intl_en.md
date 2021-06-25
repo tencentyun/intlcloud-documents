@@ -4,7 +4,7 @@ This document describes how to view the log information of a created application
 
 ## Prerequisites
 
-You have [created an application](https://cloud.tencent.com/document/product/1371/53294).
+You have [created an application](https://intl.cloud.tencent.com/document/product/1094/40362).
 
 ## Directions
 
