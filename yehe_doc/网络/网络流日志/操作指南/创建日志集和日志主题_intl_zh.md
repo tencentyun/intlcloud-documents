@@ -6,7 +6,7 @@
 1. 登录 [日志服务控制台](https://console.cloud.tencent.com/cls)，在左侧导航栏中单击【日志主题】，进入日志主题管理页面。 
 2. 在页面顶部选择合适的地域，单击【创建日志主题】。
 3. 在弹出的“创建日志主题”窗口中，填写日志主题名称、分区数量等信息，然后单击【确定】。
-    ![](https://main.qcloudimg.com/raw/d047a52433894be6abcdad790f220b6a.png)
+    ![](https://main.qcloudimg.com/raw/e86b5fceb9fdf2eb9cec876737f8c589.png)
     - 日志主题名称：例如：nginx。
     - 分区（Partition）数量： 默认新建 1 个分区。关于主题分区请参见 [主题分区介绍](https://intl.cloud.tencent.com/document/product/614/33779)。
     - 分区自动分裂：默认开启。
@@ -20,12 +20,11 @@
 >?
 >- 开启自动分裂功能后，如果主题分区持续触达了写请求或者写流量的阈值，日志服务会根据实际写入情况，自动分裂至合理的分区数（最大分裂数量为50个）。
 >- 如果日志主题的分区数已达到所设置的最大值，日志服务将不再触发自动分裂，所超限的部分将被拒绝，并返回 [请求超限错误码](https://intl.cloud.tencent.com/document/product/614/12402)。
+
 4. 在已创建的日志主题详情页中，选择【索引配置】选项卡，单击右上角的【编辑】。
-![](https://main.qcloudimg.com/raw/7b7461ff0020576c6b450ab82d117e62.png)
 5. 开启索引并单击【确定】，即可查看和检索流日志。
 >?
 >- 您无需安装 agent，也无需关心机器组状态。 
 >- 如果您没有将流日志导入 [COS](https://intl.cloud.tencent.com/document/product/436/6222) 等服务的需求，也无需关心投递任务。
 >
-![](https://main.qcloudimg.com/raw/408a6388431223d52a63a85f6e849791.png)
 
