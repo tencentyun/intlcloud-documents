@@ -60,7 +60,7 @@ Each `TRTC'XXXX'ViewController` folder contains `ViewController`, `RootView`, an
 
 [](id:model)
 ## Implementing A Custom UI
-The `TRTCVoiceRoomDemo` folder in the [source code](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCVoiceRoomDemo) contains two subfolders: `ui` and `model`. In the `model` subfolder is the reusable open-source component `TRTCVoiceRoom`. You can find the component’s APIs in `TRTCVoiceRoom.swift` and use them to customize your own UI.
+The `TRTCVoiceRoomDemo` folder in the [source code] contains two subfolders: `ui` and `model`. In the `model` subfolder is the reusable open-source component `TRTCVoiceRoom`. You can find the component’s APIs in `TRTCVoiceRoom.swift` and use them to customize your own UI.
 ![](https://main.qcloudimg.com/raw/319beb14d72a43120e102380278aa1da.png)
 
 
