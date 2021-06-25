@@ -6,7 +6,7 @@ You need to create logsets and log topics to store and view the flow logs.
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls) and click **Log Topic** on the left sidebar to access the **Log Topic** page. 
 2. Select a desired region at the top of the page and click **Create Log Topic**.
 3. In the pop-up window, enter log topic name and partition, and click **OK**.
-    ![](https://main.qcloudimg.com/raw/d047a52433894be6abcdad790f220b6a.png)
+    ![](https://main.qcloudimg.com/raw/e86b5fceb9fdf2eb9cec876737f8c589.png)
     - Log Topic Name: enter `nginx` as an example.
     - Partitions: enter an integer. The default value is 1. For more information about partitions, see [Topic Partition](https://intl.cloud.tencent.com/document/product/614/33779).
     - Partition Auto-Split: enabled by default.
@@ -20,12 +20,11 @@ You need to create logsets and log topics to store and view the flow logs.
 >?
 >- After the auto-split feature is enabled, CLS will automatically split a log topic into partitions (up to 50) when the write requests or write traffic exceed the capacity of the log topic.
 >- If the number of partitions of a log topic has reached the set maximum value, CLS will no longer trigger auto-split, and the excessive partitions will be rejected with an [error code](https://intl.cloud.tencent.com/document/product/614/12402) returned.
+
 4. On the details page of the log topic, select the **Index Configuration** tab and click **Edit** in the top-right corner.
-![](https://main.qcloudimg.com/raw/7b7461ff0020576c6b450ab82d117e62.png)
 5. Enable the index feature and click **OK**. Now you can view and search for flow logs.
 >?
 >- You do not need to install agents or care about the server group status. 
 >- If you do not need to publish flow logs to services such as [COS](https://intl.cloud.tencent.com/document/product/436/6222), ignore shipping task.
 >
-![](https://main.qcloudimg.com/raw/408a6388431223d52a63a85f6e849791.png)
 
