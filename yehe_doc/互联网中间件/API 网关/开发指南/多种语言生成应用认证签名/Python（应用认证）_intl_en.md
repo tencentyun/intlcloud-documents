@@ -8,7 +8,7 @@ This document describes how to use the application-enabled authentication mode f
 2. Publish the service to which the API belongs to the release environment. For details, see [Service Release and Deactivation](https://intl.cloud.tencent.com/document/product/628/11809).
 3. Create an application on the [Application](https://console.cloud.tencent.com/apigateway/app) page.
 4. Select the application you created in the application list and click **Bind API**. In the pop-up window, select a service and an API, and click **Submit**. Then you can bind the selected API to the application.
-5. Generate signing information in Python by referring to the [Sample Code](#sample code).
+5. Generate signing information in Python by referring to the [Sample Code](#sample-code).
 
 ## Environmental Dependencies
 
@@ -19,7 +19,7 @@ API Gateway provides sample codes for Python 2.7 and Python 3. Please select as 
 - For information on application lifecycle management, API authorization, and how to bind an API to an application, please see [Application Management](https://intl.cloud.tencent.com/document/product/628/40306).
 - For information on signature generation, please see [Application-Enabled Authentication](https://intl.cloud.tencent.com/document/product/628/40304).
 
-[](id: sample code)
+<span id="sample code"></span>
 ## Sample Code
 
 ### Sample codes for Python 2.7
