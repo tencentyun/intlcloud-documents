@@ -12,7 +12,7 @@ ECDN status code statistics allow you to query monitoring data of status codes. 
 + Region: queries usage by geographic area (regions within Mainland China or outside, or global regions).
 	
 
-![](https://main.qcloudimg.com/raw/58dccdea420d816b3be6bcc4a4502920.png)
+![](https://main.qcloudimg.com/raw/3398341767d97905383a3ac3edb96a17.png)
 
 ## Status Code Data Display
 Status code data is displayed in a pie chart and a trend curve. All data can be exported.
