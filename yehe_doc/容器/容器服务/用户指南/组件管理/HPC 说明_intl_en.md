@@ -34,9 +34,9 @@ Deploying HPC Add-on in a cluster will deploy the following Kubernetes objects i
 
 ### Environment requirements
 
-<dx-alert infotype="explain" title="">
-If you create a cluster of version 1.12.4 or later, you can use the cluster directly without any parameter changes.
-</dx-alert>
+
+>?If you create a cluster of version 1.12.4 or later, you can use the cluster directly without any parameter changes.
+
 
 - This add-on is supported only by Kubernetes 1.12 or later versions.
 - The launch parameters of kube-apiserver must be set as follows: `--feature-gates=CustomResourceSubresources=true`.
