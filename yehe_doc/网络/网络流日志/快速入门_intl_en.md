@@ -12,7 +12,6 @@ CVM A (10.16.0.22) and CVM B (10.16.0.40) reside in the same VPC. After you log 
 ## Directions
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1) and select **Diagnostic Tools** > **Flow Log** on the left sidebar.
 2. In the upper-left corner of the **Flow Log** page, choose the target region. Click **+New** and configure the following parameters in the pop-up dialog box.
-![](https://main.qcloudimg.com/raw/7357cc77440d826478bd35716283eddb.png)
 <table>
 <tr>
 <th width="15%">Field</th>
@@ -57,11 +56,10 @@ CVM A (10.16.0.22) and CVM B (10.16.0.40) reside in the same VPC. After you log 
 </table>
 3. Click **OK**.
 >!
- - You can view the record of a newly created flow log in CLS after 15 minutes upon the creation (10 minutes for the capture window and 5 minutes for data publishing).
- - FL is free of charge, but the data stored in CLS is charged at standard prices.
+> - You can view the record of a newly created flow log in CLS after 15 minutes upon the creation (10 minutes for the capture window and 5 minutes for data publishing).
+> - FL is free of charge, but the data stored in CLS is charged at standard prices.
 
 ## Result Validation
 After 15 minutes, locate the flow log you’ve created on the **Flow Log** page and click **Check** in the **Operation** column to access the **Search and Analysis** page. Select a time range and search for the IP of the CVM B. The result is the same as the response received by the CVM A.
-![](https://main.qcloudimg.com/raw/26fd7de53cea591b26169319ab31834d.png)
 
 
