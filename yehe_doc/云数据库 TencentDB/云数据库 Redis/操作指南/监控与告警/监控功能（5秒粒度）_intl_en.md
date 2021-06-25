@@ -9,7 +9,7 @@ TencentDB for Redis provides a complete and easy-to-use monitoring service where
 - In the [Cloud Monitor console](https://console.cloud.tencent.com/monitor/policylist/create), alarm policies for five-second granularity are of a different policy type from those for one-minute granularity. You can replicate the alarm policies for one-minute granularity and change their policy types to **Memory Edition (5-second granularity)**, so that these alarm policies can be associated with new instances supporting five-second granularity.
 ![](https://main.qcloudimg.com/raw/9bfa0b792d4c0ddc4b262ea5357575e3.png)
 ## Viewing Instance Monitoring Granularity
-- Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), click an instance name/ID and enter the instance management page, select **System Monitoring** > **Monitoring Metrics**, and click the **Period** drop-down list at the top. If you can select **5 seconds** from the drop-down list, this instance supports the monitoring granularity of five seconds, or else it supports only the monitoring granularity of one minute.
+- Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), click an instance ID and enter the instance management page, select **System Monitoring** > **Monitoring Metrics**, and click the **Period** drop-down list at the top. If you can select **5 seconds** from the drop-down list, this instance supports the monitoring granularity of five seconds, or else it supports only the monitoring granularity of one minute.
 ![](https://main.qcloudimg.com/raw/e7833ebba07a4dd949c911c58940a4d0.png)
 - Check the value of the `InstanceSet.MonitorVersion` field returned by the [DescribeInstances](https://intl.cloud.tencent.com/document/product/239/32065) API. If the value is `5s`, this instance supports the monitoring granularity of five seconds; if the value is `1m`, it supports only the monitoring granularity of one minute.
 
@@ -20,7 +20,7 @@ TencentDB for Redis currently supports monitoring metrics at the five-second, on
 You can view TencentDB for Redis monitoring information in the instance list and on the instance monitoring page in the TencentDB for Redis console, or in the Cloud Monitor console.
 - Instance list: log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), click the **View Monitoring** icon in the instance list as shown below, and view monitoring metrics in the pop-up window on the right.
 ![](https://main.qcloudimg.com/raw/e4e9781c7dc38505a1e08624f72f9dff.png)
-- Instance monitoring page: log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), click an instance name/ID in the instance list and enter the instance management page, select **System Monitoring**, and view monitoring data on the **Monitoring Metrics** tab.
+- Instance monitoring page: log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), click an instance ID in the instance list and enter the instance management page, select **System Monitoring**, and view monitoring data on the **Monitoring Metrics** tab.
 ![](https://main.qcloudimg.com/raw/aba46b1c932f11f173634f596b1dd69f.png)
 - Cloud Monitor console: log in to the [Cloud Monitor console](https://console.cloud.tencent.com/monitor/product/redis_mem_edition) to view the summary of monitoring data.
 ![](https://main.qcloudimg.com/raw/7289958cd8a4f4c8b4374d50031eb438.png)
