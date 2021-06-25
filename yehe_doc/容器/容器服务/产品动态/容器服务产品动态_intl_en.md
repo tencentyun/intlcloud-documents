@@ -10,7 +10,7 @@
 		<li>The interaction process is optimized.</li>
 		<li>The detection of the collection target is supported.</li></td>
 		<td>2021-05-28</td>
-		<td><a href="https://intl.cloud.tencent.com/document/product/457/38826">Log Collection</a>
+		<td>Log Collection</td>
 </tr>
 <tr>
     <td>The OLM add-on was launched.</td>
