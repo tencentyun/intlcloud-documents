@@ -3,16 +3,16 @@
 ## ご使用にあたっての注意事項
 
 ### Demo機能紹介
-このDemoは、VOD [Keyホットリンク防止](https://intl.cloud.tencent.com/document/product/266/33986) システムの使用方法を提示するもので、コンソールでのKeyホットリンク防止の有効化、ホットリンク防止署名の配布サービスの構築およびホットリンク防止署名を使用してのビデオ再生を含んでいます。
+このDemoは、VOD[Keyホットリンク防止](https://intl.cloud.tencent.com/document/product/266/33986)システムの使用方法を提示するもので、コンソールでのKeyホットリンク防止の有効化、ホットリンク防止署名の配布サービスの構築およびホットリンク防止署名を使用してのビデオ再生を含んでいます。
 
 ### アーキテクチャおよびフロー
 
-Demoは、Serverless Cloud Function（SCF）を基にHTTPサービスを構築して、クライアントからホットリンク防止署名を取得するためのリクエストを受信します。サービスは、リクエストBodyからのVODのビデオのオリジナルURLを取得し、ホットリンク防止署名を計算して、ホットリンク防止署名付きのURLをクライアントに返します。
+Demoは、Serverless Cloud Function（SCF）を基にHTTPサービスを構築して、クライアントからホットリンク防止署名を取得するためのリクエストを受信します。サービスは、リクエストBodyからのVODのビデオオリジナルURLを取得し、ホットリンク防止署名を計算して、ホットリンク防止署名付きのURLをクライアントに返します。
 
 システムは主に4つの構成部分に及びます：開発者、API Gateway、Serverless Cloud Function、VODであり、このうちAPI GatewayおよびServerless Cloud Functionは、下図に示すとおりこのDemoのデプロイオブジェクトです。
-<img src="https://main.qcloudimg.com/raw/f30d9b832b388c9ffe35551ef26743b4.png" width="600">
+<img src="https://main.qcloudimg.com/raw/e2397093b8cd9d0aabf228ef41ecac45.png" width="600">
 
-具体的な業務フローは次のとおりです：
+具体的な業務フローは次のとおりです。
 
 1. VODコンソールでビデオのオリジナルURLを取得します（実際の本番環境では、プレーヤーがビジネスバックエンドからビデオのURLをリクエストする必要がありますが、ここではフローを簡素化するために、開発者がその業務行為をシミュレーションします）。
 2. ビデオのオリジナルURLを使用して、SCFにホットリンク防止署名をリクエストします。
@@ -20,17 +20,18 @@ Demoは、Serverless Cloud Function（SCF）を基にHTTPサービスを構築�
 
 > ?DemoのSCFコードはPython3.6を使用して開発されており、このほかSCFはPython2.7、Node.js、Golang、PHP、Javaなどの複数のプログラミング言語もサポートしています。開発者は状況に応じて自由に選択できます。詳細は [SCF開発ガイド](https://intl.cloud.tencent.com/document/product/583/11061)をご参照ください。
 
-### 費用
-ここで提供するVOD Keyホットリンク防止の配布サービスであるDemoは無料のオープンソースですが、構築および使用のプロセスにおいて以下の費用が発生することがあります。
+### 料金
+ここで提供するVOD Keyホットリンク防止署名の配布サービスであるDemoは無料のオープンソースですが、構築および使用のプロセスにおいて以下の料金が発生することがあります。
 
-- Tencent CloudのCloud Virtual Machine（CVM）インスタンスの購入は、サービスデプロイスクリプトの実行に使用します。詳細は [CVM料金](https://intl.cloud.tencent.com/document/product/213/2180)をご参照ください。
+- サービスのデプロイスクリプト実行に使用するため、Tencent CloudのCloud Virtual Machine（CVM）を購入します。詳細については、[CVM料金](https://intl.cloud.tencent.com/zh/document/product/213/2180)をご参照ください。
 - Serverless Cloud Function（SCF）を使用して署名配布サービスを提供するには、 [SCF料金](https://intl.cloud.tencent.com/document/product/583/12284) および [SCF無料限度額](https://intl.cloud.tencent.com/document/product/583/12282)をご参照ください。
-- Tencent Cloud API Gatewayを使用して、 SCFのために外部ネットワークインターフェースを提供します。詳細は [API Gateway料金](https://intl.cloud.tencent.com/document/product/628/11771)をご参照ください。
-- VODのストレージスペースは、アップロードしたビデオに使用されます。
+- Tencent Cloud API Gatewayを使用して、 SCFのためにパブリックネットワークインターフェースを提供します。詳細は [API Gateway料金](https://intl.cloud.tencent.com/document/product/628/11771)をご参照ください。
+- VODのストレージはアップロードしたビデオを保存するために消費されます。詳細については、[ストレージ料金](https://intl.cloud.tencent.com/document/product/266/14666)および[ストレージリソースパック](https://intl.cloud.tencent.com/zh/document/product/266/14666)をご参照ください。
+- VODのトラフィックはビデオを再生するために消費されます。詳細については、[トラフィック課金](https://intl.cloud.tencent.com/document/product/266/14666)および[トラフィックリソースパック](https://cloud.tencent.com/document/product/266/14667)をご参照ください。
 
-##  Keyホットリンク防止署名の配信サービスのクイックデプロイ
+## Keyホットリンク防止署名の配信サービスのクイックデプロイ
 
-### 手順1：Tencent Cloud CVMの準備<span id="p1"></span>
+### 手順1：Tencent Cloud CVMの準備[](id:p1)
 
 デプロイスクリプトは、1台のTencent Cloud CVM上で実行させる必要があります。要件は次のとおりです。
 
@@ -42,44 +43,44 @@ Demoは、Serverless Cloud Function（SCF）を基にHTTPサービスを構築�
 CVMの購入方法は [操作ガイド - インスタンス作成](https://intl.cloud.tencent.com/document/product/213/4855)をご参照ください。システムの再インストール方法は [操作ガイド - システム再インストール](https://intl.cloud.tencent.com/document/product/213/4933)をご参照ください。
 
 >!
->- ホットリンク防止署名配布サービスのDemo自身はCVMに依存していません。CVMを使用してデプロイスクリプトを実行しているだけです。
+>- Keyホットリンク防止署名配布サービスのDemo自身はCVMに依存していません。CVMを使用してデプロイスクリプトを実行しているだけです。
 >- 上述の条件に適合するTencent Cloud CVMがない場合は、その他のパブリックネットワークアクセスを備えたLinux（CentOS、Debianなど）またはMac機器でデプロイスクリプトを実行することもできます。ただし、OSの違いによってスクリプトの特定のコマンドを修正する必要があります。具体的な修正方式については、開発者自身で検索してください。
 
-### 手順2：VODのアクティブ化およびKeyホットリンク防止の設定<span id="p2"></span>
+### 手順2：VODのアクティブ化ならびにKeyホットリンク防止の設定[](id:p2)
 
 1. [クイックスタート - 手順1](https://intl.cloud.tencent.com/document/product/266/8757) を参照してVODサービスをアクティブにします。
 2. アクティブにした後、 [ホットリンク防止の設定](https://intl.cloud.tencent.com/document/product/266/14060) ドキュメントを参照して、 Keyホットリンク防止を有効にし、ホットリンク防止Keyを記録します。
-![](https://main.qcloudimg.com/raw/209bb5a252765cc77fe4402fe7e76d49.png)
+![](https://main.qcloudimg.com/raw/04d1a39b76fdb3bef5acebe57f3edb16.png)
 >!ここではKeyホットリンク防止をアクティブにして、Refererホットリンク防止はアクティブにはしません。 Refererホットリンク防止を同時にアクティブにした場合、以下のテスト方法では、Refererホットリンク防止要件に適合しないことから、リクエストが失敗することがあります。
 
-### 手順3： APIキーおよびAPPIDの取得<span id="p3"></span>
+### 手順3：APIキーおよびAPPIDの取得[](id:p3)
 
 Keyホットリンク防止署名配布サービスのDemoのデプロイおよび稼働プロセスは、開発者のAPIキー（SecretIdおよびSecretKey）およびAPPIDまで使用する必要があります。
 
-- まだキーを作成していない場合は、 [キードキュメントの作成](https://intl.cloud.tencent.com/document/product/598/34228) を参照して、新しいAPIキーを作成してください。キーを作成済の場合は、 [キードキュメントの表示](https://intl.cloud.tencent.com/document/product/598/34228) を参照してAPIキーを取得してください。
+- まだキーを作成していない場合は、[キー作成ドキュメント](https://intl.cloud.tencent.com/document/product/598/34228) を参照して、新しいAPIキーを作成してください。キーを作成済みの場合は、[キー表示ドキュメント](https://intl.cloud.tencent.com/document/product/598/34228)を参照してAPIキーを取得してください。
 - コンソールの [アカウント情報](https://console.cloud.tencent.com/developer) 画面で下部に示すとおり、APPIDを表示することができます。
-  ![](https://main.qcloudimg.com/raw/6c9fe4238232392c8d914f9ebf0f53aa.png)
+  ![](https://main.qcloudimg.com/raw/0e7dda93add5f53b2da07d16cf6f4406.png)
 
 ### 手順4：ホットリンク防止署名配布サービスのデプロイ
 
- [手順1で準備したCVM](#p1)（ログイン方法の詳細は [操作ガイド - Linuxにログイン](https://intl.cloud.tencent.com/document/product/213/5436)をご参照ください）にログインして、リモートターミナルで以下のコマンドを入力して実行します。
+[手順1で準備したCVM](#p1)（ログイン方法の詳細は [操作ガイド - Linuxにログイン](https://intl.cloud.tencent.com/document/product/213/5436)をご参照ください）にログインして、リモートターミナルで以下のコマンドを入力して実行します。
 
 ```
 ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECRET_KEY=xxxxxxxxxxxxxxxxxxxxx;export APPID=125xxxxxxx;export ANTI_LEECH_KEY=xxxx;git clone https://github.com/tencentyun/vod-server-demo.git ~/vod-server-demo; bash ~/vod-server-demo/installer/anti_leech_sign_scf.sh
 ```
 
->? [手順3](#p3) で取得した内容をコマンドのSECRET_ID 、SECRET_KEY 、APPIDに割り当ててください。 [手順2](#p2) で取得したホットリンク防止KeyをANTI_LEECH_KEYに割り当てます。 
+>? [手順3](#p3) で取得した内容をコマンドのSECRET_ID 、SECRET_KEY 、APPIDに割り当ててください。 [手順2](#p2)で取得したホットリンク防止KeyをANTI_LEECH_KEYに割り当てます。
 
-このコマンドでは、GithubからDemoソースコードをダウンロードして、スクリプトのインストールを自動的に実行します。インストールのプロセスには数分間必要になり（CVMのネットワーク状況次第）、その間、リモートターミナルは以下に示す情報を出力します。
+このコマンドでは、GithubからDemoソースコードをダウンロードして、インストールスクリプトを自動的に実行します。インストールのプロセスには数分間必要になり（CVMのネットワーク状況次第）、その間、リモートターミナルは以下に示す情報を出力します。
 
 ```
-[2020-06-04 15:57:10]pip3のインストール開始。
-[2020-06-04 15:57:18]pip3のインストール成功。
-[2020-06-04 15:57:18]Tencent Cloud SCFツールのインストール開始。
-[2020-06-04 15:57:19]scfのインストール成功。
-[2020-06-04 15:57:19]scfの設定開始。
-[2020-06-04 15:57:20]scfの設定完了。
-[2020-06-04 15:57:20]VODのKeyホットリンク防止配布サービスのデプロイを開始。
+[2020-06-04 15:57:10]pip3インストール開始。
+[2020-06-04 15:57:18]pip3インストール成功。
+[2020-06-04 15:57:18]Tencent Cloud SCFツールインストール開始。
+[2020-06-04 15:57:19]scfインストール成功。
+[2020-06-04 15:57:19]scf設定開始。
+[2020-06-04 15:57:20]scf設定完了。
+[2020-06-04 15:57:20]VOD Keyホットリンク防止署名配布サービスのデプロイを開始。
 [2020-06-04 15:57:30]VOD Keyホットリンク防止署名配布サービスのデプロイを完了。
 [2020-06-04 15:57:32]サービスアドレス：https://service-xxxxxxxx-125xxxxxxx.gz.apigw.tencentcs.com/release/anti_leech_sign
 ```
@@ -93,8 +94,8 @@ ubuntu@VM-69-2-ubuntu:~$ export SECRET_ID=AKxxxxxxxxxxxxxxxxxxxxxxx; export SECR
 
 ### 手順5： Keyホットリンク防止のテスト
 
- [ビデオのアップロード - ローカルからのアップロード手順](https://intl.cloud.tencent.com/document/product/266/33890) の説明に従って、1個のテストビデオをVODにアップロードします。アップロードの完了後、【クイックビュー】をクリックしてから、右側の【アドレスコピー】をクリックしてそのビデオのURLをコピーします。
-![](https://main.qcloudimg.com/raw/1f319a8d52f046ad979ea9b66eec1023.png)
+[ビデオのアップロード - ローカルからのアップロード手順](https://intl.cloud.tencent.com/document/product/266/33890) の説明に従って、1個のテストビデオをVODにアップロードします。アップロードの完了後、【クイックビュー】をクリックしてから、右側の【アドレスコピー】をクリックしてそのビデオのURLをコピーします。
+![](https://main.qcloudimg.com/raw/b93899bb2d2335ce3212ca9c024df10a.png)
 CVMのコマンドラインで`curl`コマンドを実行してこのURLへの直接アクセスをテストします。結果はKeyホットリンク防止規則に適合しなかったことから、サーバーにアクセスを拒絶されます。HTTPリターンコードは403になります（テスト時は、コマンドのURLを実際のURLに置換してください。以下同じ）。
 
 ```
@@ -138,7 +139,7 @@ Access-Control-Allow-Origin: *
 
 ### インターフェースプロトコル
 
-Keyホットリンク防止署名配布クラウド関数は、API Gatewayによってインターフェースを提供します。具体的なインターフェースプロトコルは以下のとおりです。
+Keyホットリンク防止署名配布クラウド関数は、API Gatewayによって対外的なインターフェースを提供します。具体的なインターフェースプロトコルは以下のとおりです。
 
 | サービス               | クラウド関数名        | インターフェース形式  | リクエスト内容     | 返信内容         |
 | ------------------ | --------------- | --------- | ------------ | ---------------- |
@@ -178,7 +179,7 @@ Keyホットリンク防止署名配布クラウド関数は、API Gatewayによ
 <td>署名にアクセスできるクライアントIPの最大数</td>
 </tr>
 </tbody></table>
-3. リクエストのBodyから`Dir`パラメータを解析して、ローカルで`t`および`us`のパラメータを生成し、設定ファイルからは`exper`および`rlimit`のパラメータを読み取ります。 
+3. リクエストのBodyから`Dir`パラメータを解析して、ローカルで`t`および`us`のパラメータを生成し、設定ファイルからは`exper`および`rlimit`のパラメータを読み取ります。
 ```
        original_url = event["body"]
        parse_result = urlparse(original_url)
@@ -201,7 +202,7 @@ Keyホットリンク防止署名配布クラウド関数は、API Gatewayによ
        new_parse_result = parse_result._replace(query=query_string)
        signed_url = urlunparse(new_parse_result)
 ```
-6. 署名を返します 。返されるデータの形式と説明については [クラウド関数統合の応答](https://intl.cloud.tencent.com/document/product/583/12513)をご参照ください。
+6. 署名を返します 。返されるデータの形式と説明については [クラウド関数の統合レスポンス](https://intl.cloud.tencent.com/document/product/583/12513)をご参照ください。
 ```
        return {
            "isBase64Encoded": False,
@@ -214,3 +215,4 @@ Keyホットリンク防止署名配布クラウド関数は、API Gatewayによ
 ```
 
    
+
