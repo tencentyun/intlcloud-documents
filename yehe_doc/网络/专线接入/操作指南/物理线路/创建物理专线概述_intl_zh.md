@@ -59,14 +59,14 @@
 
 | 场景一 | 操作|
 |---------|---------|
-| IDC 与腾讯云接入点在同一机房 | 在腾讯云控制台申请物理专线，具体操作请参见 [申请物理专线](https://intl.cloud.tencent.com/document/product/216/19244)。同时，您需要联系符合[《专线接入审核标准》](https://cloud.tencent.com/document/product/216/45875)的运营商进行需求沟通。 |
+| IDC 与腾讯云接入点在同一机房 | 在腾讯云控制台申请物理专线，具体操作请参见 [申请物理专线](https://intl.cloud.tencent.com/document/product/216/19244)。同时，您需要联系符合《专线接入审核标准》的运营商进行需求沟通。 |
 | IDC 与腾讯云接入点不在同一机房| 在腾讯云控制台申请物理专线，具体操作请参见[ 申请物理专线](https://intl.cloud.tencent.com/document/product/216/19244)。 |
 
 ## 专线建设[](id:Railwayconstruction)
 - 本地 IDC 与腾讯云接入点不同机房
   专线建设阶段包含运营商的建设和腾讯云的专线建设两个流程并行，具体如下：
   - 运营商建设
-    ![](https://main.qcloudimg.com/raw/2b2cda7fea66bf8f0747c3847ecad234.png)
+    ![](https://main.qcloudimg.com/raw/009c74aaf73486a93f8d26cfa52fed21.png)
    1. 运营商工勘。
    2. 确认施工方案和相关费用。
    3. 运营商发起物理专线建设。
@@ -76,7 +76,7 @@
      1. 联系专线经理申请进入接入点机房操作，并提供入室工勘人员的姓名、身份证和联系方式。
      2. 审批通过后，专线经理会协助工勘人员在2个工作日完成入室。
  - 腾讯云建设
-   ![](https://main.qcloudimg.com/raw/772438dca47d158fbf08f157badfa5aa.png)
+   ![](https://main.qcloudimg.com/raw/db1253e4dad83b283758af31e6de706d.png)
 	 当您在控制台支付腾讯云端口费用后，腾讯云将进行接入端口配置，并配合运营商将物理专线接入腾讯云。
 - 本地 IDC 与腾讯云接入点同机房
  本地 IDC 与接入点同机房时，则直接联系腾讯云专线经理协调相关资源协助专线建设。
