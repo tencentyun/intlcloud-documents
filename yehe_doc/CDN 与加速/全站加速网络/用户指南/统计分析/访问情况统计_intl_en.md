@@ -29,7 +29,7 @@ The access statistics section displays curves of historical monitoring data. You
 + The real-time monitoring data you query will have a near 5-minute lag. If you run a query at 14:26:00, you will get the 00:00:00–14:21:00 data.
 + Monitoring data is tracked over a time interval. For a 5-minute interval, a query start at 10:00:00–10:04:59 will start at the 10:00:00 sample point.
 + If the time you query is longer than that of domain name connection, you will only get the connection statistics rather than those unconnected or deleted.
-+ To query monitoring data of multiple domain names or metrics, you can use the DescribeEcdnStatistics API.
++ To query monitoring data of multiple domain names or metrics, you can use the [DescribeEcdnStatistics](https://intl.cloud.tencent.com/document/product/570/36341) API.
 
 ![](https://main.qcloudimg.com/raw/6831a48251c2aa8adf03aa23b4b18f95.png)
 
