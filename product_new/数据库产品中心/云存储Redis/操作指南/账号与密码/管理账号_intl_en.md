@@ -15,6 +15,6 @@ TencentDB for Redis provides read/write permission control and routing policy co
   - If an instance has an account accessing a replica node, the **read-only replica** feature cannot be disabled. To disable it, you need to delete the account first.
   
 ## Directions
-1. Log in to the [Redis Console](https://console.cloud.tencent.com/redis) and click an instance name in the instance list to enter the instance management page.
+1. Log in to the [Redis Console](https://console.cloud.tencent.com/redis) and click an instance ID in the instance list to enter the instance management page.
 2. Select the **Manage Account** tab, on which you can create accounts, modify permissions, reset passwords, and delete accounts.
 ![](https://main.qcloudimg.com/raw/276fb5f3092f46c57d675b19d1a14962.png)
