@@ -11,7 +11,7 @@ For common operations on VPCs and subnets, please see [Managing VPC and Subnet](
 ## Redis Network Change
 >!To ensure service availability and keep your businesses uninterrupted during network change, update the IP address as needed promptly and be cautious in releasing the old IP address.
 >
-1. Log in to the [Redis Console](https://console.cloud.tencent.com/redis) and click an instance name in the instance list to enter the instance details page.
+1. Log in to the [Redis Console](https://console.cloud.tencent.com/redis) and click an instance ID in the instance list to enter the instance details page.
 2. In the "Network Info" module, you can view the network and private IP of the current TencentDB for Redis instance. You can also click **Change Network** to change from the classic network to VPC or from the current VPC to another VPC.
 ![](https://main.qcloudimg.com/raw/882d495354b725a4fa0b4d9b6b513d29.png)
 3. In the pop-up dialog box, configure new network information and click **OK**.
