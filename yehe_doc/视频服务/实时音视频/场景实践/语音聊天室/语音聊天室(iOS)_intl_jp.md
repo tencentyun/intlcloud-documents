@@ -71,7 +71,7 @@ Xcode（11.0以上のバージョン）を使用してソースコードプロ�
 
 <span id="model"> </span>
 ## UIカスタマイズの実装
-[ソースコード](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCVoiceRoomDemo)  のtrtcvoiceroomdemo フォルダには、 ui と modelの2つのサブフォルダがあり、model フォルダには再利用できるオープンソースコンポーネント TRTCVoiceRoomがあります。`TRTCVoiceRoom.swift`ファイルでこのコンポーネントが提供するインターフェース関数を見て、対応するインターフェースを使用してUI のカスタマイズ を実装することができます。
+[ソースコード]  のtrtcvoiceroomdemo フォルダには、 ui と modelの2つのサブフォルダがあり、model フォルダには再利用できるオープンソースコンポーネント TRTCVoiceRoomがあります。`TRTCVoiceRoom.swift`ファイルでこのコンポーネントが提供するインターフェース関数を見て、対応するインターフェースを使用してUI のカスタマイズ を実装することができます。
 ![](https://main.qcloudimg.com/raw/319beb14d72a43120e102380278aa1da.png)
 
 
