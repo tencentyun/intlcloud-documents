@@ -7,7 +7,7 @@ This document describes how to upgrade a TencentDB for MySQL instance from [two-
 >- You can also purchase three-node instances on the [purchase page](https://buy.cloud.tencent.com/cdb).
 
 ## Directions
-1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID/name or **Manage** in the **Operation** column to enter the instance details page.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance details page.
 2. In the **Configuration Info** section, click **Upgrade to Three-node** next to **Architecture**.
 ![](https://main.qcloudimg.com/raw/cbc0ef63b4b4824a8eedf92898a039f6.png)
 3. In the pop-up dialog box, specify the data replication mode and availability zones and click **OK**.
@@ -20,10 +20,10 @@ This document describes how to upgrade a TencentDB for MySQL instance from [two-
 
 ## FAQs
 #### How do I view the architecture information of an instance?
-Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, view the architecture information in the **Configuration** column; or click an instance ID/name or **Manage** in the **Operation** column to enter the instance details page, where you can view the architecture information in the **Configuration Info** > **Architecture** section.
+Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, view the architecture information in the **Configuration** column; or click an instance ID or **Manage** in the **Operation** column to enter the instance details page, where you can view the architecture information in the **Configuration Info** > **Architecture** section.
 ![](https://main.qcloudimg.com/raw/e783ce5c7070b8084cf03b053d7e5077.png)
 
 #### How do I view the source and replica availability zones of an instance?
-Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID/name or **Manage** in the **Operation** column to enter the instance details page, where you can view the source and replica availability zones in the **Availability Info** section.
+Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance details page, where you can view the source and replica availability zones in the **Availability Info** section.
 ![](https://main.qcloudimg.com/raw/f022ef04a1db5bf566cc626990e534f5.png)
 
