@@ -7,7 +7,7 @@
 >- 您也可以直接通过 [购买页](https://buy.cloud.tencent.com/cdb) 直接购买三节点实例。
 
 ## 操作步骤
-1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名或“操作”列的【管理】，进入实例详情页。
+1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例 ID 或“操作”列的【管理】，进入实例详情页。
 2. 在实例详情页“配置信息”的“架构”处，单击【升级为三节点】。
 ![](https://main.qcloudimg.com/raw/cbc0ef63b4b4824a8eedf92898a039f6.png)
 3. 在弹出对话框，选择数据复制方式和可用区，确认无误后，单击【确定】。
@@ -20,10 +20,10 @@
 
 ## 热点问题
 #### 如何查看实例的架构？
-您可登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表的“配置”处查看架构信息，也可单击实例名或“操作”列的【管理】，进入实例详情页，在配置信息的“架构”处查看架构信息。
+您可登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表的“配置”处查看架构信息，也可单击实例 ID 或“操作”列的【管理】，进入实例详情页，在配置信息的“架构”处查看架构信息。
 ![](https://main.qcloudimg.com/raw/e783ce5c7070b8084cf03b053d7e5077.png)
 
 #### 如何查看实例的主备库可用区？
-您可登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名或“操作”列的【管理】，进入实例详情页，在下方的可用性信息处查看可用区信息。
+您可登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例 ID 或“操作”列的【管理】，进入实例详情页，在下方的可用性信息处查看可用区信息。
 ![](https://main.qcloudimg.com/raw/f022ef04a1db5bf566cc626990e534f5.png)
 
