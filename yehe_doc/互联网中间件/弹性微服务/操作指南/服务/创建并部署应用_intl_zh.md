@@ -4,8 +4,8 @@
 
 ## 前提条件
 
-1. 已 [创建环境](https://cloud.tencent.com/document/product/1371/53293)。
-2. 已 [添加环境资源](https://cloud.tencent.com/document/product/1371/55684)（按需选用日志服务、存储服务、注册中心）。
+1. 已 [创建环境](https://intl.cloud.tencent.com/document/product/1094/40358)。
+2. 已 [添加环境资源](https://intl.cloud.tencent.com/document/product/1094/40361)（按需选用日志服务、存储服务、注册中心）。
 
 ## 操作步骤
 
@@ -34,14 +34,14 @@
 
    | 参数            | 说明                                                         |
    | --------------- | ------------------------------------------------------------ |
-   | 发布环境        | 选择应用所在的环境。如果没有合适的环境可前往 [环境页面](https://console.cloud.tencent.com/tem/env) 进行新建（参考 [创建环境](https://cloud.tencent.com/document/product/1371/53293)）。 |
+   | 发布环境        | 选择应用所在的环境。如果没有合适的环境可前往 [环境页面](https://console.cloud.tencent.com/tem/env) 进行新建（参考 [创建环境](https://intl.cloud.tencent.com/document/product/1094/40358)）。 |
    | JDK 版本        | 选择 JDK 版本，支持 OpenJDK 8和 KonaJDK 8。                  |
    | 上传程序包/镜像 | 上传您的程序包或者镜像，或者下载控制台上的体验 Demo 进行部署体验 TEM 完整功能。 |
    | 版本号          | 设置应用版本号，您可以选择输入版本号或者单击**使用时间戳为版本号**将时间戳作为应用版本号。 |
    | 版本描述        | 填写版本描述。                                               |
    | 启动参数        | 设置启动参数。                                               |
 
->?如果您的服务是 Java 语言，并且关联了注册中心，TEM 将为您提供自动注入注册中心信息的能力，详情请参考 [服务注册与发现](https://cloud.tencent.com/document/product/1371/56367)。
+>?如果您的服务是 Java 语言，并且关联了注册中心，TEM 将为您提供自动注入注册中心信息的能力，详情请参考 [服务注册与发现](https://intl.cloud.tencent.com/document/product/1094/40960)。
 
 6. （可选）您可以根据需要设置以下高级选项。
 
@@ -49,9 +49,9 @@
 | 参数       | 是否必选 | 说明                                                         |
 | ---------- | -------- | ------------------------------------------------------------ |
 | 资源配置   | 是       | 可以手动设置或者设置弹性规则自动弹性伸缩。                   |
-| 访问配置   | 否       | <li>访问方式：环境内访问，公网访问可前往 [环境](https://console.cloud.tencent.com/tem/env) 全局配置，参考 [配置服务访问与路由](https://cloud.tencent.com/document/product/1371/55685)。 </li><li>协议：支持 TCP 和 UDP 协议，使用公网/内网负载均衡时，TCP 和 UDP 协议不能混合使用。 </li> |
+| 访问配置   | 否       | <li>访问方式：环境内访问，公网访问可前往 [环境](https://console.cloud.tencent.com/tem/env) 全局配置，参考 [配置应用访问与路由](https://intl.cloud.tencent.com/document/product/1094/40359)。 </li><li>协议：支持 TCP 和 UDP 协议，使用公网/内网负载均衡时，TCP 和 UDP 协议不能混合使用。 </li> |
 | 环境变量   | 否       | 配置环境变量。                                               |
-| <nobr>持久化存储</nobr> | 否       | 持久化存储：为容器提供存储，目前支持腾讯云文件存储 CFS，需挂载到容器的指定路径中。<li>   数据卷：添加在 [添加环境资源](https://cloud.tencent.com/document/product/1371/55684) 中关联的 CFS 存储资源。</li><li> 挂载点：选择为该步骤中所添加的数据卷，挂载至目标路径。填写版本描述。</li> |
+| <nobr>持久化存储</nobr> | 否       | 持久化存储：为容器提供存储，目前支持腾讯云文件存储 CFS，需挂载到容器的指定路径中。<li>   数据卷：添加在 [添加环境资源](https://intl.cloud.tencent.com/document/product/1094/40361) 中关联的 CFS 存储资源。</li><li> 挂载点：选择为该步骤中所添加的数据卷，挂载至目标路径。填写版本描述。</li> |
 | 安全组     | 否       | 您可以通过配置安全组规则，允许或禁止安全组内的实例的出流量和入流量。如您有业务需要放通其他端口，您可以 [新建安全组](https://console.cloud.tencent.com/vpc/securitygroup)。 |
 | 日志配置   | 否       | 您可以开启“持久化存储至CLS”，支持标准输出“stdout”以及`*`配置路径，例如：`/logs/*`，使用半角逗号分隔，默认采集标准输出。 |
 
@@ -66,7 +66,7 @@
 - 外网访问：单击环境卡片，在【访问配置】页面可创建公网 LB 和 HTTP/HTTPS 协议的转发规则，对应用进行访问。
 
 以外网访问为例，操作步骤如下：
-1. 参考 [配置应用访问与路由](https://cloud.tencent.com/document/product/1371/52886) 建立一条公网访问路由。
+1. 参考 [配置应用访问与路由](https://intl.cloud.tencent.com/document/product/1094/40359) 建立一条公网访问路由。
 2. 单击应用的“ID”，进入实例列表页面。
 3. 选择页面顶部的【基本信息】，在【访问配置】模块可查看应用访问的的域名和路径。
 	![](https://main.qcloudimg.com/raw/bfb77deab6549a5c2f4ef908fc7ef133.png)
