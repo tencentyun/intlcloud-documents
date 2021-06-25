@@ -66,7 +66,7 @@ An access point is the location where you can access to Tencent Cloud connection
 - Local IDC and Tencent Cloud access point in different data centers
   Both the carrier and Tencent Cloud are responsible for the connection construction as follows:
   - Responsibilities of the carrier
-    ![](https://main.qcloudimg.com/raw/2b2cda7fea66bf8f0747c3847ecad234.png)
+    ![](https://main.qcloudimg.com/raw/009c74aaf73486a93f8d26cfa52fed21.png)
    1. Perform the engineering investigation.
    2. Confirm the construction solution and relevant fees.
    3. Initiate the connection construction.
@@ -76,7 +76,7 @@ An access point is the location where you can access to Tencent Cloud connection
      1. Apply to the Direct Connect representative and provide the name, ID card and contact information of engineers who need to investigate the access point's data center.
      2. After the application is approved, the Direct Connect representative will help engineers access the data center within two business days.
  - Responsibilities of Tencent Cloud
-   ![](https://main.qcloudimg.com/raw/772438dca47d158fbf08f157badfa5aa.png)
+   ![](	https://main.qcloudimg.com/raw/db1253e4dad83b283758af31e6de706d.png)
 	 After you pay for the Tencent Cloud port in the console, Tencent Cloud will complete the access port configuration, and support the carrier for the connection to Tencent Cloud.
 - Local IDC and Tencent Cloud access point in the same data center
  You only need to contact the Direct Connect representative for resource allocation and connection construction.
