@@ -13,7 +13,7 @@
 2. 在【环境】页面，选择部署地域后，单击目标环境，进入环境详情页面。
 3. 选择页面顶部的【访问配置】页签，单击【新建】，填写转发规则名称。
    ![](https://main.qcloudimg.com/raw/d123003055bc8ed29d40afb9dd020194.png)
-   - 网络类型：公网访问，环境内访问参考 [创建并部署应用](https://cloud.tencent.com/document/product/1371/53294)
+   - 网络类型：公网访问，环境内访问参考 [创建并部署应用](https://intl.cloud.tencent.com/document/product/1094/40362)
    - 负载均衡器：自动创建
    - 协议及端口：支持 HTTP:80 和 HTTPS:443，支持 HTTPS 域名绑定证书
    - 转发配置：
