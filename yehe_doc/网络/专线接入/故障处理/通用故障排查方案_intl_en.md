@@ -10,11 +10,10 @@ Troubleshoot the following items in sequence:
 - [Troubleshooting route failures](#5)
 </dx-steps>
 
-<span id="1"></span>
-## Troubleshooting Physical Layer Linkage Failures
+## Troubleshooting Physical Layer Linkage Failures[](id:1)
 When you encounter port failure, fiber optic components exception at either or both ends, CRC, or packet error, follow the steps below to troubleshot physical layer linkage failures.
-1. Confirm that your IDC CPE device is enabled with open ports.
-2. Contact your DC connection provider and obtain the relevant certificates indicating that the construction and end-to-end access has been completed.
+1. Confirm that your IDC CPE device is started with open ports.
+2. Contact your DC connection provider and obtain the relevant certificates indicating the completed construction and network connectivity.
 3. Check that the fiber optic components in IDC are normal. Please [submit a ticket](https://console.cloud.tencent.com/workorder/category) to request the after-sales manager to check fiber optic components in the access point’s data center.
 4. Contact your DC connection provider and access point’s carrier to test link segments.
 Assume that a Direct Connect service connects IDC to the access point’s data center through the optic splice box outside the data center building, and then to the destination data center through Optical Distribution Frame (ODF), then the segment testing should be performed as follows:
@@ -26,28 +25,25 @@ Assume that a Direct Connect service connects IDC to the access point’s data c
 (6) Contact the access point’s carrier to check that ODF can communicate with access devices at the access point.
 ![](https://main.qcloudimg.com/raw/023f9cc7595c3b77f0d5b87710e7de0c.png)
 
-<span id="2"></span>
-## Troubleshooting Data Link Layer Failures
+## Troubleshooting Data Link Layer Failures[](id:2)
 1. When VLAN ID is not 0:
  - Ensure any Layer 2/Layer 3 devices between the carrier’s connection, Tencent Cloud access devices and local IDC access devices (including the IDC access device itself) have enabled VLAN relay for your VLAN tags, that is, identify and allow your VLAN tag.
- - Ensure that any Layer 2/Layer 3 devices between the Tencent Cloud edge device and your local IDC edge device (including the IDC edge device itself) correctly relay the VLAN and there is no VLAN conversion.
+ - Ensure that any Layer 2/Layer 3 devices between the Tencent Cloud edge device and your local IDC edge device (including the IDC edge device itself) correctly relay without converting the VLAN.
 2. Check that the IP addresses are correctly configured. Ensure the IP addresses are correctly configured on the local access devices, which remain stable without MAC address flapping records.
 3. Ensure the layer-2 link detection protocols such as STP\Loop-detection are disabled on IDC access devices; otherwise, ports may be blocked.
 
-<span id="3"></span>
-## Troubleshooting Network Layer or Transport Layer Failures
+## Troubleshooting Network Layer or Transport Layer Failures[](id:3)
 1. Ensure that the IP addresses configured on both sides of the connection are in one subnet with the same subnet mask.
 2. Ensure that each side configured a unique IP address, and no IP is reused.
-3. If your connection has bidirectional forwarding Detection (BFD) enabled, ensure that the BFD message will be allowed to pass in the security policy of IDC devices.
-4. If your connection has NQA detection enabled, note that Tencent Cloud supports the ICMP-echo type. Ensure that the ICMP message will be allowed to pass in the security policy of IDC devices.
-5. If a BGP session is required on both sides of the connection for Tencent Cloud VPC routes and IDC routes propagation:
+3. If your connection has bidirectional forwarding Detection (BFD) enabled, ensure that the security policy of IDC devices allows the BFD message to pass.
+4. If your connection has NQA detection enabled, note that Tencent Cloud supports the ICMP-echo type. Ensure that the security policy of IDC devices allows the ICMP message to pass.
+5. If a BGP session is required on both sides of the connection for propagating Tencent Cloud VPC routes and IDC routes:
 	- Correctly configure BGP ASN and BGP PEER IP on IDC devices.
 	- Configure the same BGP MD5 authentication key on both sides.
 	- Allow the BGP message to pass in the security policy of IDC devices.
 	- Open the TCP 179 port for the BGP session in the security policy.
 
-<span id="4"></span>
-## Troubleshooting Security Issues
+## Troubleshooting Security Issues[](id:4)
 - Check the ACL settings
    - Ensure that the Tencent Cloud subnet ACL allows the traffic going from or to IDC hosts.
    - Ensure that the IDC subnet ACL allows the traffic going from or to Tencent Cloud CVMs.
@@ -55,66 +51,71 @@ Assume that a Direct Connect service connects IDC to the access point’s data c
    - Ensure that the Tencent Cloud CVM security group allows the traffic going from or to IDC hosts.
    - Ensure that the IDC security group allows the traffic going from or to Tencent Cloud CVMs.
 
-<span id="5"></span>
-## Troubleshooting Route Failures
+## Troubleshooting Route Failures[](id:5)
 ### VPC-based direct connect gateway
-
 - Static dedicated tunnel
 Check that IDC IP range is correctly configured on the dedicated tunnel and propagated to Tencent Cloud VPC. Otherwise, the Tencent Cloud VPC route to IDC server will be unreachable and cause business to be inaccessible.
-
-#### 1. Check the CPE IP range in the dedicated tunnel
+<dx-accordion>
+::: 1. Check the CPE IP range in the dedicated tunnel
 1. Log in to the [Direct Connect](https://console.cloud.tencent.com/dc/conn) console. Go to the **Dedicated Tunnels** page and click the **ID/Name** of the target dedicated tunnel to enter its details page. Select the **Advanced Configuration** tab and check whether the CPE IP range is correctly configured.
-2. Reconfigure the CPE IP range if the previous configuration is incorrect. For detailed directions, see [Applying for a Tunnel](https://intl.cloud.tencent.com/document/product/216/19250).
-
-#### 2. Check the route table
-1. Log in to the [Direct Connect](https://console.cloud.tencent.com/dc/conn) console. Go to the **Dedicated Tunnels** page and click the **ID/Name** of the target dedicated tunnel to enter its details page. Select the **Basic Info** tab and click the VPC ID to view VPC details.
+2. Reconfigure the CPE IP range if the previous configuration is incorrect. For detailed directions, see [Creating a Dedicated Tunnel](https://intl.cloud.tencent.com/document/product/216/19250).
+:::
+::: 2. Check the route table
+1. Log in to the [Direct Connect](https://console.cloud.tencent.com/dc/conn) console. Go to the **Dedicated Tunnels** page and click the **ID/Name** of the target dedicated tunnel to enter its details page. Select the **Basic Configuration** tab and click the VPC ID to view VPC details.
    ![](https://main.qcloudimg.com/raw/f84a103d210df5a70cf15fe6aea4b065.png)
 2. Click the **Route Table**.
-	 ![](https://main.qcloudimg.com/raw/62023a5e31fcef527441dfbb58ea4d2c.png)
+   ![](https://main.qcloudimg.com/raw/62023a5e31fcef527441dfbb58ea4d2c.png)
 3. Select the **Basic Information** tab and check if a routing policy with the CPE IP range as destination and the direct connect gateway as next hop type is enabled.
-	 ![](https://main.qcloudimg.com/raw/1983e523471d0e478f8272c42a611948.png)
-4. Reconfigure the routing policy if the previous configuration is incorrect. For detailed directions, see [Configuring the Route Table](https://intl.cloud.tencent.com/document/product/216/19259).
 
+  	 ![](https://main.qcloudimg.com/raw/1983e523471d0e478f8272c42a611948.png)
+4. Reconfigure the routing policy if the previous configuration is incorrect. For detailed directions, see [Configuring the Route Table](https://intl.cloud.tencent.com/document/product/216/19259).
+:::
+</dx-accordion>
 - BGP dedicated tunnel
- Check that IDC IP range is correctly synced to the direct connect gateway based on the BGP protocol and propagated to Tencent Cloud VPC. Otherwise, the Tencent Cloud VPC route to IDC server will be unreachable and cause business to be inaccessible.
-
-#### 1. Check the BGP route configurations
+ Check that the direct connect gateway has obtained the IDC IP range according to the BGP protocol and propagated it to Tencent Cloud VPC. Otherwise, the Tencent Cloud VPC route to IDC server will be unreachable and cause business to be inaccessible.
+  <dx-accordion>
+  ::: 1. Check the BGP route configurations
 1. Log in to the [Direct Connect](https://console.cloud.tencent.com/dc/conn) console. Go to the **Dedicated Tunnels** page and click the **ID/Name** of the target dedicated tunnel to enter its details page. Select the **Advanced Configuration** tab and check BGP configurations.
-2. Reconfigure BGP if the previous configuration is incorrect. For detailed directions, see [Applying for a Tunnel](https://intl.cloud.tencent.com/document/product/216/19250).
-
-#### 2. Check the route table
-1. Log in to the [Direct Connect](https://console.cloud.tencent.com/dc/conn) console. Go to the **Dedicated Tunnels** page and click the **ID/Name** of the target dedicated tunnel to enter its details page. Select the **Basic Info** tab and click the VPC ID to view VPC details.
-   ![](https://main.qcloudimg.com/raw/f84a103d210df5a70cf15fe6aea4b065.png)
+2. Reconfigure BGP if the previous configuration is incorrect. For detailed directions, see [Creating a Dedicated Tunnel](https://intl.cloud.tencent.com/document/product/216/19250).
+:::
+::: 2. Check the route table
+1. Log in to the [Direct Connect](https://console.cloud.tencent.com/dc/conn) console. Go to the **Dedicated Tunnels** page and click the **ID/Name** of the target dedicated tunnel to enter its details page. Select the **Basic Configuration** tab and click the VPC ID to view VPC details.
+    ![](https://main.qcloudimg.com/raw/f84a103d210df5a70cf15fe6aea4b065.png)
 2. Click the **Route Table**.
-	![](https://main.qcloudimg.com/raw/62023a5e31fcef527441dfbb58ea4d2c.png)
+    ![](https://main.qcloudimg.com/raw/62023a5e31fcef527441dfbb58ea4d2c.png)
 3. Select the **Basic Information** tab and check if a routing policy with the CPE IP range as destination and the direct connect gateway as next hop type is enabled.
-	 ![](https://main.qcloudimg.com/raw/1983e523471d0e478f8272c42a611948.png)
+    ![](https://main.qcloudimg.com/raw/1983e523471d0e478f8272c42a611948.png)
 4. Reconfigure the routing policy if the previous configuration is incorrect. For detailed directions, see [Configuring the Route Table](https://intl.cloud.tencent.com/document/product/216/19259).
-
+:::
+</dx-accordion>
 
 ### CCN-based direct connect gateway
 - Static dedicated tunnel
 Check that IDC IP range is correctly configured on the dedicated tunnel and propagated to CCN. Otherwise, the Tencent Cloud VPC route to IDC server will be unreachable and cause business to be unaccessible.
-
-#### 1. Check the CPE IP range in the dedicated tunnel
+<dx-accordion>
+::: 1. Check the CPE IP range in the dedicated tunnel
 1. Log in to the [Direct Connect](https://console.cloud.tencent.com/dc/conn) console. Go to the **Dedicated Tunnels** page and click the **ID/Name** of the target dedicated tunnel to enter its details page. Select the **Advanced Configuration** tab and check whether the CPE IP range is correctly configured.
-2. Reconfigure the CPE IP range if the previous configuration is incorrect. For detailed directions, see [Applying for a Tunnel](https://intl.cloud.tencent.com/document/product/216/19250).
-
-#### 2. Check the IDC IP range on the direct connect gateway
+2. Reconfigure the CPE IP range if the previous configuration is incorrect. For detailed directions, see [Creating a Dedicated Tunnel](https://intl.cloud.tencent.com/document/product/216/19250).
+:::
+::: 2. Check the IDC IP range on the direct connect gateway
 1. Log in to the [Direct Connect Gateway](https://console.cloud.tencent.com/vpc/dcgw?rid=8) console and click the **ID/Name** of the target direct connect gateway to enter its details.
 2. Select the **IDC IP Range** tab, and check the configurations.
-	![](https://main.qcloudimg.com/raw/691ad404b628d97d1581e88fbc2967bc.png)
-3. Reconfigure an IDC IP range if no configuration is available. For detailed directions, see [Adding IDC IP Ranges to the Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/39083).
+    ![](https://main.qcloudimg.com/raw/691ad404b628d97d1581e88fbc2967bc.png)
+3. Reconfigure the IDC IP range if no configuration is available. For detailed directions, see [Adding IDC IP Ranges to the Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/39083).
+:::
+</dx-accordion>
 
 - BGP dedicated tunnel
-Check that the dedicated tunnel BGP is correctly configured and IDC IP range is synced to direct connect gateway and propagated to CCN. Otherwise, the Tencent Cloud VPC route to IDC server will be unreachable and cause business to be unaccessible.
-
-#### 1. Check the BGP route configurations
+Check that the dedicated tunnel BGP is correctly configured and the IDC IP range is synced to direct connect gateway and propagated to CCN. Otherwise, the Tencent Cloud VPC route to IDC server will be unreachable and cause business to be unaccessible.
+<dx-accordion>
+::: 1. Check the BGP route configurations
 1. Log in to the [Direct Connect](https://console.cloud.tencent.com/dc/conn) console. Go to the **Dedicated Tunnels** page and click the **ID/Name** of the target dedicated tunnel to enter its details page. Select the **Advanced Configuration** tab and check BGP configurations.
-2. Reconfigure BGP if the previous configuration is incorrect. For detailed directions, see [Applying for a Tunnel](https://intl.cloud.tencent.com/document/product/216/19250).
-
-#### 2. Check the IDC IP range on the direct connect gateway
+2. Reconfigure BGP if the previous configuration is incorrect. For detailed directions, see [Creating a Dedicated Tunnel](https://intl.cloud.tencent.com/document/product/216/19250).
+:::
+::: 2. Check the IDC IP range on the direct connect gateway
 1. Log in to the [Direct Connect Gateway](https://console.cloud.tencent.com/vpc/dcgw?rid=8) console and click the **ID/Name** of the target direct connect gateway to enter its details.
 2. Select the **IDC IP Range** tab, and check the configurations.
 	![](https://main.qcloudimg.com/raw/691ad404b628d97d1581e88fbc2967bc.png)
-3. Reconfigure an IDC IP range if no configuration is available. For detailed directions, see [Adding IDC IP Ranges to the Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/39083).
+3. Reconfigure the IDC IP range if no configuration is available. For detailed directions, see [Adding IDC IP Ranges to the Direct Connect Gateway](https://intl.cloud.tencent.com/document/product/216/39083).
+:::
+</dx-accordion>
