@@ -19,7 +19,7 @@ You have registered a Tencent Cloud account and completed identity verification.
   - **Network**: select the network where the TencentDB for Redis instance resides. We recommend that you select the same VPC in the same region as the CVM instance to be connected to. After an instance is purchased, you can switch the instance from classic network to VPC, but you cannot switch it from VPC to classic network.
  - **Availability Zone**: select availability zones for the master node and replica nodes. Multi-AZ deployed instances have higher availability and better disaster recovery capability than single-AZ deployed instances. For more information, please see [Multi-AZ Deployment](https://intl.cloud.tencent.com/document/product/239/39812).
  - **Port**: the custom port number ranging from 1024 to 65535.
- - **Project** and **Security Group**: specify the project and security group for the instance.
+ - **Project** and **Security Group**: specify the project and [security group](https://intl.cloud.tencent.com/zh/document/product/239/31945) for the instance.
  - **Instance Name** and **Set Password**: you can set the instance name and password here or set them in the instance list after creation.
 2. After the purchase is completed, you will be redirected to the instance list. After the status of the instance becomes **Running**, it can be used normally.
 3. (Optional) Click the **Edit** icon in the **Instance ID/Name** column in the instance list to rename the instance.
