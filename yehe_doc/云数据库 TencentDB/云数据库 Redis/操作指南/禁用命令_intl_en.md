@@ -5,7 +5,7 @@ You can configure the `disable-command-list` parameter to disable such commands.
 
 ## Directions
 ### Disabling a command
-1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), click an instance ID/name in the instance list, and enter the instance management page.
+1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), click an instance ID in the instance list, and enter the instance management page.
 2. Select **Parameter Configuration** > **Modifiable Parameters** and configure the list of commands to be disabled in the `disable-command-list` parameter line.
 >?
 >- Commands that can be disabled include `flushall`, `flushdb`, `keys`, `hgetall`, `eval`, `evalsha`, and `script`, which are not disabled by default on new TencentDB for Redis instances purchased after January 1, 2019.
