@@ -5,7 +5,7 @@ TencentDB for Redis supports [read/write separation](https://intl.cloud.tencent.
 >- Disabling read/write separation may interrupt existing connections momentarily, so you are recommended to do so during off-peak hours.
 
 ## Directions
-1.Log in to the [Redis Console](https://console.cloud.tencent.com/redis) and click an instance name in the instance list to enter the instance management page.
+1.Log in to the [Redis Console](https://console.cloud.tencent.com/redis) and click an instance ID in the instance list to enter the instance management page.
 2. Select the **Manage Account** tab and click **Read-Only Replica** to enable read/write separation.
 ![](https://main.qcloudimg.com/raw/31acc5f160e4b4160f9b79a890990200.png)
 3. In the pop-up dialog box, confirm that everything is correct and click **OK**.
