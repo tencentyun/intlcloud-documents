@@ -11,7 +11,7 @@ Taking the database instance specification upgrade as an example, as this operat
 
 ## Directions
 ### Setting maintenance window
-1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb/). In the instance list, click an instance ID/name or **Manage** in the **Operation** column to enter the instance details page.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb/). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance details page.
 2. In the **Maintenance Info** section, click **Modify**.
 ![](https://main.qcloudimg.com/raw/388e3aa6ca18c6cb947eb4d053ad1eb5.png)
 3. In the pop-up dialog box, select **Maintenance Schedule** and **Maintenance Time**, and click **OK**.
