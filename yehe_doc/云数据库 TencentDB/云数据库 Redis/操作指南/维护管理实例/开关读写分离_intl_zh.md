@@ -5,7 +5,7 @@
 >- 关闭读写分离，可能会导致存量链接闪断，建议在业务低峰期进行操作。
 
 ## 操作步骤
-1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)， 在实例列表，单击实例名，进入实例管理页面。
+1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)， 在实例列表，单击实例 ID，进入实例管理页面。
 2. 在实例管理页面，选择【账号管理】页，单击副本只读按钮，开启读写分离。
 ![](https://main.qcloudimg.com/raw/31acc5f160e4b4160f9b79a890990200.png)
 3. 在弹出的对话框，确认信息无误后，单击【确定】即可。
