@@ -282,8 +282,8 @@ Height_pixel = 192 * 240 / 320 = 144
 <td><a href="https://intl.cloud.tencent.com/document/product/267/30789">トランスコードルールの削除</a></td>
 </tr><tr>
 <td rowspan=4>CSSウォーターマーク</td>
-<td><a href="https://cloud.tencent.com/document/api/267/30154">ウォーターマークの追加</a></td></tr><tr>
-<td><a href="https://cloud.tencent.com/document/api/267/30150">ウォーターマークの更新</a></td></tr><tr>
-<td><a href="https://cloud.tencent.com/document/api/267/30153">ウォーターマークの削除</a></td></tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30820">ウォーターマークリストのクエリー</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/267/30826">ウォーターマークの追加</a></td></tr><tr>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/267/30818">ウォーターマークの更新</a></td></tr><tr>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/267/30824">ウォーターマークの削除</a></td></tr><tr>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/267/30820">ウォーターマークリストのクエリー</a></td>
 </tr></table>
