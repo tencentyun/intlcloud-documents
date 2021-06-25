@@ -98,7 +98,7 @@ If you select **Event Based** for the **Trigger Mode**, when container images an
 1. Push the container image and view it in Harbor.
 Use the docker client to push the local container image `nginx:latest` to Harbor, and then log in to the Harbor console to view the pushed image.
 2. View the synchronization record and progress.
-Select **Administration** > **Replications** on the left sidebar and select the replication rule created in [Step 5](#createRule) to view the replication task of the rule.
+Select **Administration** > **Replications** on the left sidebar and select the replication rule created in [Step 6](#createRule) to view the replication task of the rule.
 3. View the synchronized image in TCR console.
 Log in to the TCR console and select **Image Repository** on the left sidebar. In the **Image Repository** page, select the instance used for synchronizing with the Harbor to view the successfully synchronized container image.
 
