@@ -5,7 +5,7 @@
 已备份实例数据，备份操作可参见 [备份数据](https://intl.cloud.tencent.com/document/product/239/7071)。
 
 ## 操作步骤
-1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表中，单击实例名称进入实例管理页面。
+1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表中，单击实例 ID 进入实例管理页面。
 2. 在实例管理页面，选择【备份与恢复】页，选中需要克隆的实例，单击【克隆实例】。
 ![](https://main.qcloudimg.com/raw/e7a2efc796c7682829c9568b2f81fc32.png)
 3. 在弹出的购买页，选择相关配置，单击【立即购买】。
