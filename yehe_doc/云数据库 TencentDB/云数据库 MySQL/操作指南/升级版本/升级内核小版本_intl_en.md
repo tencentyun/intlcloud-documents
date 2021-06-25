@@ -21,7 +21,7 @@ You can also manually upgrade kernel minor version in the console.
 - The kernel minor version cannot be downgraded once upgraded.
 
 ## Directions
-1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) and click the instance ID/name or **Manage** in the **Operation** column to enter the instance details page.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) and click the instance ID or **Manage** in the **Operation** column to enter the instance details page.
 2. In the **Configuration Info** section, click **Upgrade Kernel Minor Version**.
 ![](https://main.qcloudimg.com/raw/3fda3cffc784b3cde619e698d728d486.png)
 3. In the pop-up dialog box, select the switch time and click **Upgrade**.
