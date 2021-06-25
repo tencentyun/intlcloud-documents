@@ -13,7 +13,7 @@ This document describes how to configure application access and routing in the T
 2. On the **Environment** page, select a deployment region and click the target environment to enter the environment details page.
 3. Select the **Access Configuration** tab on the top, click **Create**, and enter the forwarding rule name.
    ![](https://main.qcloudimg.com/raw/d123003055bc8ed29d40afb9dd020194.png)
-   - Network Type: public network. For more information on intra-environment access, please see [Creating and Deploying Application](https://cloud.tencent.com/document/product/1371/53294).
+   - Network Type: public network. For more information on intra-environment access, please see [Creating and Deploying Application](https://intl.cloud.tencent.com/document/product/1094/40362).
    - Load Balancer: it will be automatically created.
    - Protocol and Port: HTTP:80 and HTTPS:443 are supported, and HTTPS domain names can be bound to certificates.
    - Forwarding Configuration:
