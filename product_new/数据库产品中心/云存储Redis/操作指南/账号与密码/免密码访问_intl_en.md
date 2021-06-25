@@ -11,10 +11,10 @@ TencentDB for Redis supports both password-enabled and password-free access.
 ![](https://main.qcloudimg.com/raw/03a688ea981ccaf28124b74ebb8d9223.png)
 
 #### Enable password-free access for existing instances
-In the instance list, click an instance name to enter the instance details page, and click **Password Exemption Access** in "Configuration Info" > "Connection Password".
+In the instance list, click an instance ID to enter the instance details page, and click **Password Exemption Access** in "Configuration Info" > "Connection Password".
 
 ## Viewing Password-free Access Status
-In the instance list, click an instance name to enter the instance details page, and you can view whether the instance has enabled password exemption access in "Configuration Info" > "Connection Password".
+In the instance list, click an instance ID to enter the instance details page, and you can view whether the instance has enabled password exemption access in "Configuration Info" > "Connection Password".
 ![](https://main.qcloudimg.com/raw/ddd227bf61e70cb72e3971ea58c9d773.png)
 
 ## Disabling Password-free Access
