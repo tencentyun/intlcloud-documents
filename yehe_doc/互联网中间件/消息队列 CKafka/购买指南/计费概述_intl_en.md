@@ -1,3 +1,5 @@
+>?Existing pay-as-you-go instances will be charged from 0:00:00 July 15, 2021.
+
 This document describes the product specifications, billable items, billing modes, and instance prices of CKafka.
 
 ## Product Specifications
