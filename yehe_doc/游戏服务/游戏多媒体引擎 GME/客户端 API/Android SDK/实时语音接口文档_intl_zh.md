@@ -137,7 +137,7 @@ ITMGContext.GetInstance(this).SetTMGDelegate(itmgDelegate);
 ### [初始化 SDK](id:Init)
 
 - 此接口用于初始化 GME 服务，建议应用侧在应用初始化时候调用。
-- **参数 sdkAppId 获取请参见 [接入指引](https://intl.cloud.tencent.com/document/product/607/10782)**。
+- **参数 sdkAppId 获取请参见 [接入指引](https://intl.cloud.tencent.com/document/product/607/39698)**。
 - **OpenId 用于唯一标识一个用户，目前只支持 INT64，规则由 App 开发者自行制定，App 内不重复即可**。
 
 > !
