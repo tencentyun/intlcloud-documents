@@ -8,10 +8,8 @@
 2. 在【环境】页面，选择部署地域后，单击目标环境卡片，进入环境基本信息页面。
 3. 在资源详情模块中，单击【添加】可添加存储、日志或注册中心资源。
    - 存储：选择已有的存储资源。如果没有合适的文件系统，您可以前往新建 [文件系统CFS](https://console.cloud.tencent.com/cfs/fs?rid=4)。
-	 ![](https://main.qcloudimg.com/raw/940243e7479d02e8745d5a1d99180050.png)
-   - 日志：选择已有的日志资源。如果没有合适的日志集，您可以前往新建 [日志集](https://console.cloud.tencent.com/cls/topic?region=ap-shanghai)。
-		![](https://main.qcloudimg.com/raw/60bff2ccdc80c0f0fa1cd5c60f2298a8.png)
-   - 注册中心：选择已有的注册资源。如果没有合适的注册中心实例，您可以前往 [注册中心 TSE](https://console.cloud.tencent.com/tse/registry?rid=4)新建实例。建议选择同一 VPC 下的注册中心，可实现服务间的内网访问。
-		![](https://main.qcloudimg.com/raw/6edf197b3eb3c2db85d1ccb4ed3cfff4.png)
-
-     
+	- 日志：选择已有的日志资源。如果没有合适的日志集，您可以前往新建 [日志集](https://console.cloud.tencent.com/cls/topic?region=ap-shanghai)。
+   	![](https://main.qcloudimg.com/raw/60bff2ccdc80c0f0fa1cd5c60f2298a8.png)
+	- 注册中心：选择已有的注册资源。如果没有合适的注册中心实例，您可以前往 [注册中心 TSE](https://console.cloud.tencent.com/tse/registry?rid=4)新建实例。建议选择同一 VPC 下的注册中心，可实现服务间的内网访问。
+   	
+	
