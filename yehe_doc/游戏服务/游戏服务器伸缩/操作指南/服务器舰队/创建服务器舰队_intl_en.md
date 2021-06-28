@@ -40,7 +40,8 @@ To create a server fleet, you can use **asset package** or **image** according t
   - Concurrent processes allowed: specify this configuration allows how many processes concurrently run on each CVM instance in the server fleet.
   - Max Concurrent Game Server Session Activation: set the number of game server sessions that can be concurrently activated on a CVM instance. You can select **Unlimited** or **Limited** (the maximum value is 20,000). When multiple new game server sessions are launched on one CVM instance, this limit can reduce their performance impact on each other.
   - Game Server Session Activation Timeout: enter the maximum time period for a new game server session to be activated. You can set the timeout period to be no more than 600s.
-        ![](https://main.qcloudimg.com/raw/c3bd554f125f7a73d5dea4ebb54d589a.jpg)
+
+![](https://main.qcloudimg.com/raw/c3bd554f125f7a73d5dea4ebb54d589a.jpg)
 
 >?
 >- Concurrent processes allowed: the total number of game processes that need to be launched for a launch path binary
@@ -51,7 +52,8 @@ To create a server fleet, you can use **asset package** or **image** according t
 ### Deployment configuration
   - Server Instance Type: server model of the server fleet to be created.
   - Enable VPC: after enabling access to Tencent Cloud VPC, you can access the servers and other resources in your VPC.
-        ![](https://main.qcloudimg.com/raw/5284d28b11f74f42a3a3c39e2fc2f45a.png)
+      
+  ![](https://main.qcloudimg.com/raw/5284d28b11f74f42a3a3c39e2fc2f45a.png)
 
 
  <span id="test12"></span>
@@ -66,7 +68,8 @@ To create a server fleet, you can use **asset package** or **image** according t
     - Time-period protection: in case of a scaling-in or an unhealthy process, the system will terminate the process after a period of time between 5 to 1,440 minutes (60 minutes by default).
     - Full protection: the process can be terminated only when there are no processes running on the CVM instance.
     - No protection: in case of a scaling-in or an unhealthy process, the system will terminate the process after up to 5 minutes.
-            ![](https://main.qcloudimg.com/raw/3478d408969d34e9daf49d199004c8df.png)
+         
+   ![](https://main.qcloudimg.com/raw/3478d408969d34e9daf49d199004c8df.png)
 
 4. After configuring the information above, click **Create** to create a server fleet.
 5. After the server fleet is successfully created, you can view, delete, or perform other operations on the server fleet page. You can also click the server fleet ID to view information such as basic information, events, instance list, scaling, game sessions, process management, ports and protocols, asset packages, and VPC.
