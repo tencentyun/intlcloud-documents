@@ -1,5 +1,5 @@
 
-This document describes how to view monitoring data of server fleets, game server queues, and instances.
+This document describes how to view monitoring information such as server fleets, game server queues, and instances.
 ## Prerequisites
 
 You have [created a server fleet](https://intl.cloud.tencent.com/document/product/1055/36675).
@@ -12,7 +12,7 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 3. On the server fleet details page, click **View Monitoring** in the top-right corner to enter the monitoring panel.
 ![](https://main.qcloudimg.com/raw/99e7932d115505db65079bd78ad71335.png)
 4. Click **Dashboard** > **Dashboard List** > **Create Dashboard** > **Create Chart** to create a monitoring chart.
-5. Select the namespace and metrics on the **Metric** tab to define data to be displayed on the monitoring chart. You can select **Fleet**, **Game Server Queue** or **Instance** as the namespace as needed.
+5. Select the namespace and metrics in the **Metric** to define data to be displayed on the monitoring chart. You can select **Fleet**, **GameServerSessionQueue** or **Instance** as the namespace as needed.
 ![](https://main.qcloudimg.com/raw/40bfdf27116e1b8ebf6a16a33f840116.png)
 
 
@@ -27,7 +27,7 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 </thead>
 <tbody><tr>
 <td>Activating Game Server Sessions (Count)</td>
-<td>Number of game server sessions in ACTIVATING status (being launched)</td>
+<td>Number of game server sessions in ACTIVATING status (a session in this status is being launched)</td>
 </tr>
 <tr>
 <td>Active Game Server Sessions (Count)</td>
@@ -86,7 +86,7 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 <td>Number of idle game server session slots in the active server processes that are running normally</td>
 </tr>
 <tr>
-<td>Percent Available Game Server Sessions (%)</td>
+<td>Percent Available Game Server Session (%)</td>
 <td>Percentage of idle game server session slots in all active server processes (no matter whether they are running normally or not)</td>
 </tr>
 <tr>
@@ -99,13 +99,13 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 </tr>
 <tr>
 <td>No Instances (Count)</td>
-<td>Number of instances that failed to be purchased</td>
+<td>Number of instances that fail to be purchased</td>
 </tr>
 </tbody></table>
 
 ![](https://main.qcloudimg.com/raw/610777f8db2c951e732fc3ac0b181633.png)
 
- - Description of available monitoring metrics for **Game Server Engine - GameServerSessionQueue**:
+ - Description of available monitoring metrics for **Game Server Elastic-scaling - GameServerSessionQueue**:
 
 <table>
 <thead>
@@ -139,7 +139,7 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 <td>Number of failed game server session placement requests since the last report</td>
 </tr>
 <tr>
-<td>New Requests (Count)</td>
+<td>Placements Started (Count)</td>
 <td>Number of new game server session placement requests that have been added to the queue since the last report</td>
 </tr>
 <tr>
@@ -198,13 +198,17 @@ You have [created a server fleet](https://intl.cloud.tencent.com/document/produc
 <td>Placement In ap-singapore (Count)</td>
 <td>Number of game server sessions that have been successfully placed in a server fleet in Singapore since the last report</td>
 </tr>
+<tr>
+<td>Placement In ap-bangkok (Count)</td>
+<td>Number of game server sessions that have been successfully placed in a server fleet in Bangkok since the last report</td>
+</tr>
 </tbody></table>
 
 ![](https://main.qcloudimg.com/raw/036fef271e25a599a9d50ad769f10614.png)
 
 
 
- - Description of available monitoring metrics for **Game Server Engine - Instance**:
+ - Description of available monitoring metrics for **Game Server Elastic-scaling - Instance**:
 
 <table>
 <thead>

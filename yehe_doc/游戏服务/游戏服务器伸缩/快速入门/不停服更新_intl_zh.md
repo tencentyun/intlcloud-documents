@@ -4,12 +4,10 @@
 
 ## 前提条件
 
-- 创建两个上海和硅谷的服务器舰队。操作步骤为：
+- 创建两个上海的服务器舰队。操作步骤为：
   - 完成 [入门示例](https://intl.cloud.tencent.com/document/product/1055/37401) 操作步骤的前三步：单击【一键上传示范包】、【一键创建服务器舰队】、【创建游戏服务器会话】，最后单击【完成】。
-- 已创建服务器舰队1（上海地区）。
-![](https://main.qcloudimg.com/raw/57e329af56b34ad437d8f1a28e6fde76.png)
-- 已创建服务器舰队2（美国地区）。
-![](https://main.qcloudimg.com/raw/a09178360cc2d92637c0c166135355be.png)
+- 已创建服务器舰队1、服务器舰队2（上海地区）
+  ![](https://main.qcloudimg.com/raw/ee8d09274e04c682d54893b187a6163b.png)
 
 ## 操作步骤
 ### 创建别名 
@@ -22,8 +20,9 @@
     - 终止别名：不指向舰队，不能使用的原因在终止信息中进行描述，将会发送给客户端。
  - 关联服务器舰队：类型选择常规别名后，选择“服务器舰队1”。
  - 描述：输入别名的简短描述以进一步帮助识别，此示例输入 “test”。
+ - 标签：标签用于从不同维度对资源分类管理。如现有标签不符合您的要求，请前往控制台 [管理标签](https://console.cloud.tencent.com/tag/taglist)。
 4. 信息填写完成后，单击【确定】，即可完成创建别名。
-![](https://main.qcloudimg.com/raw/ef04ad328a96e3b26031bf79577f335d.png)
+![](https://main.qcloudimg.com/raw/78bf5f7c5bf9b4faa316a97371f510c6.png)
 
 
 ### 创建游戏服务器会话
@@ -35,24 +34,24 @@
 >- MaximumPlayerSessionCount：最大玩家数量，此示例填10；
 >- AliasId：别名 ID，此示例填刚创建的别名 ID。
 
-![](https://main.qcloudimg.com/raw/bd50a2945932d10887767388ffe07710.png)
+![](https://main.qcloudimg.com/raw/87a3085470fd8eb4a9b848230aae0f08.png)
 
 通过 [云 API 调试](https://console.cloud.tencent.com/api/explorer?Product=gse&Version=2019-11-12&Action=CreateGameServerSession&SignVersion=) 成功创建一个游戏服务器会话，即可看到服务器舰队1产生一个游戏服务器会话。
-![](https://main.qcloudimg.com/raw/6531df797c5cd0486957a0e277de65e3.png)
+![](https://main.qcloudimg.com/raw/2c9c73bc0a8818bb057bb13b767f15ae.png)
 
 
 ### 修改别名的配置
 
 1. 在控制台上，单击左侧菜单【别名】，进入别名列表页面。
 2. 选择刚新建的别名，单击【修改】进入别名编辑页面，修改别名的配置，将关联服务器舰队修改为“服务器舰队2”。
-![](https://main.qcloudimg.com/raw/9b79109214516509c02a32bd55539eee.png)
+![](https://main.qcloudimg.com/raw/7abbb80626481a3bbcef57bf4ac3d3c2.png)
 
 ### 再次创建游戏服务器会话
 
 >?请使用相同的别名再次创建游戏服务器会话。
 
 通过 [云 API 调试](https://console.cloud.tencent.com/api/explorer?Product=gse&Version=2019-11-12&Action=CreateGameServerSession&SignVersion=) 再次创建一个游戏服务器会话，即可看到服务器舰队2产生了一个游戏服务器会话，可见新的游戏服务器会话被分配到了服务器舰队2上了。
-![](https://main.qcloudimg.com/raw/010f9f395bdb5d34df8518a04bda50cd.png)
+![](https://main.qcloudimg.com/raw/456b988a1a2822a387f8e30069d322a8.png)
 
 ## 不停服更新说明
 当需要版本更新时，新建一个服务器舰队，并将别名指向新的服务器舰队。

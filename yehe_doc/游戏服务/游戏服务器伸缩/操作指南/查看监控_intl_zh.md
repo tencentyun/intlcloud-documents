@@ -198,6 +198,10 @@
 <td>新加坡区域放置数(Count)</td>
 <td>自上次报告以来，游戏服务器会话成功放入新加坡区域中的服务器舰队</td>
 </tr>
+<tr>
+<td>曼谷区域放置数(Count)</td>
+<td>自上次报告以来，游戏服务器会话成功放入曼谷区域中的服务器舰队</td>
+</tr>
 </tbody></table>
 
 ![](https://main.qcloudimg.com/raw/036fef271e25a599a9d50ad769f10614.png)
