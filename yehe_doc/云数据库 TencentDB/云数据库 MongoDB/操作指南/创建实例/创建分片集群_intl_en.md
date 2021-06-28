@@ -1,12 +1,13 @@
-## Shard Instance Creation
-1. Log in to the [TencentDB for MongoDB Console](https://console.cloud.tencent.com/mongodb) and select **Shard Instance** on the left sidebar.
-2. Click **Create** to enter the [Purchase Page](https://buy.cloud.tencent.com/mongodb?clusterType=1).
-3. Select **Sharded Cluster** as the instance type and select the number of shards, number of nodes in a shard, and node specification as needed. Each shard is a multi-node replica set, and the multiple nodes in each shard implement automatic disaster recovery to ensure high service availability.
-4. After confirming that everything is correct, click **Buy Now**.
+
+## Creation of Sharded Cluster Instance
+1. Log in to the [TencentDB for MongoDB console](https://console.cloud.tencent.com/mongodb/sharding), select **Sharded Cluster Instance** on the left sidebar, and click **Create Instance** to enter the [purchase page](https://buy.cloud.tencent.com/mongodb?clusterType=1).
+2. Select **Sharded Cluster** as the instance type and select the number of shards, number of nodes in a shard, and node specification as needed. Each shard is a multi-node replica set, and the multiple nodes in each shard implement automatic disaster recovery to ensure high service availability.
+3. After confirming that everything is correct, click **Buy Now**.
 
 ## Sharded Cluster Console
 Click an instance name in the instance list to enter the details page where you can view the details of the sharded cluster instance, such as shard composition, shard node specification, and used capacity. You can also expand instance capacity in the console.
 ![](https://main.qcloudimg.com/raw/ff86a7a08d4990d542b64749440e4896.png)
+
 ## Sharded Cluster Expansion
 You can only expand the capacity of a TencentDB for MongoDB sharded cluster by expanding all nodes. Capacity expansion based on node scale-out is not supported currently.
 Click **Adjust Configuration** on the instance list page, select the target capacity specification, and click **Submit**.

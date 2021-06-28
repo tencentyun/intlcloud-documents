@@ -1,15 +1,14 @@
+
 ### Notes
-TencentDB for MongoDB provides two usernames `rwuser` and `mongouser` by default to support the MONGODB-CR and SCRAM-SHA-1 authentication methods, respectively, which have different configurations for URI connection. For more information, please see [Connecting to Instances](https://intl.cloud.tencent.com/document/product/240/7092).
+TencentDB for MongoDB provides two usernames `rwuser` and `mongouser` by default to support the MONGODB-CR and SCRAM-SHA-1 authentication methods, respectively. The connecting URIs for the two authentication methods are formed differently. For more information, please see [Connecting to TencentDB for MongoDB Instance](https://intl.cloud.tencent.com/document/product/240/7092).
 
-For PHP, there are [two drivers](https://docs.mongodb.com/ecosystem/drivers/php/) that can be used to connect to and manipulate a MongoDB database, namely:
-- MongoDB ([MongoDB driver](http://php.net/manual/en/set.mongodb.php)): the MongoDB driver is officially recommended by MongoDB, but it requires PHP 5.4 or above.
-- Mongo ([MongoDB driver (legacy)](http://php.net/manual/en/book.mongo.php)): Mongo is a legacy driver but can still be used. If you want to use it, please choose v1.6.
+For PHP, there is a driver that can be used to connect to and manipulate a MongoDB database, namely, [MongoDB driver](http://php.net/manual/en/set.mongodb.php). The MongoDB driver is officially recommended by MongoDB, but it requires PHP 5.4 or above.
 
-The following samples show you how to connect to TencentDB for MongoDB and read and write data by using the abovementioned drivers.
+The following shows you how to connect to TencentDB for MongoDB and read/write data by using the aforementioned driver.
 
-### Using the MongoDB driver
-For more information on how to install MongoDB, please see [Installation](http://php.net/manual/zh/mongodb.installation.php).
-**The MongoDB driver can use both the MONGODB-CR and SCRAM-SHA-1 authentication methods.** For more information, please see [Connecting to Instances](https://intl.cloud.tencent.com/document/product/240/3563).
+### Using MongoDB driver
+For more information on how to install the MongoDB driver, please see [Installation](http://php.net/manual/zh/mongodb.installation.php).
+**The MongoDB driver can use both the MONGODB-CR and SCRAM-SHA-1 authentication methods.** For more information, please see [Connection Sample](https://intl.cloud.tencent.com/document/product/240/3563).
 
 Sample code:
 ```
@@ -38,7 +37,7 @@ $result = $manager->executeBulkWrite('tsdb.table1', $bulk);
 // Query
 $filter = ['_id' => $_id1];
 $query = new MongoDB\Driver\Query($filter);
-$rows = $manager->executeQuery('tsdb.table1', $query); // You can also select to read a slave database first
+$rows = $manager->executeQuery('tsdb.table1', $query); // You can also select to read a secondary database first
 foreach($rows as $r){
    print_r($r);
 }
@@ -61,43 +60,8 @@ stdClass Object
 ```
 
 
-### Using the Mongo driver
-**The Mongo driver supports only the MONGODB-CR authentication method** and can use only the username `rwuser` for connection. For more information, please see [Connecting to Instances](https://intl.cloud.tencent.com/document/product/240/7092).
-
-Sample code:
-
-```
-<?php
-// You are recommended to use either of the following URIs for connection
-$uri = "mongodb://rwuser:thepasswordA1@10.66.187.127:27017/admin?authMechanism=MONGODB-CR";
-$uri = "mongodb://rwuser:thepasswordA1@10.66.187.127:27017/?authMechanism=MONGODB-CR&authSource=admin";
-$connection = new MongoClient($uri);
-
-/*
-// Alternatively, you can use the following code
-$connection = new MongoClient("mongodb://10.66.116.103:27017/admin",
-    array(
-        "username" => "rwuser",
-        "password" => "password",
-        "authMechanism" => "MONGODB-CR"
-    )
-);
-*/
-$db = $connection->tsdb;
-$collection = $db->table1;
-
-$q = array(
-    'id' => 1,
-    'test1' => 'xxx',
-    'ss' => 'xxxxxxxx',
-);
-$collection->save($q);
-$one = $collection->findOne();
-var_dump($one);
-```
-
 ### Using PHPLIB library (encapsulated based on MongoDB driver)
-You are recommended to use [PHPLIB](http://php.net/manual/zh/mongodb.tutorial.library.php) with the MongoDB driver. For more information, please see [CRUD Operations](http://mongodb.github.io/mongo-php-library/tutorial/crud/).
+We recommend you use [PHPLIB](http://php.net/manual/zh/mongodb.tutorial.library.php) with the MongoDB driver. For more information, please see [CRUD Operations](http://mongodb.github.io/mongo-php-library/tutorial/crud/).
 For more information on how to install PHPLIB, please see [Install the MongoDB PHP Library](http://mongodb.github.io/mongo-php-library/getting-started/). Please note that PHPLIB depends on the MongoDB driver.
 
 Sample code:
@@ -105,7 +69,7 @@ Sample code:
 <?php
 require_once __DIR__ . "/vendor/autoload.php";
 
-// Initialization
+// Initialize
 $mongoClient = new MongoDB\Client('mongodb://mongouser:thepasswordA1@10.66.187.127:27017/admin');
 
 // Use the `users` collection under the `demo` library
