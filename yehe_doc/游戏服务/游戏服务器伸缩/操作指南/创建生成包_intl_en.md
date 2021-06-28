@@ -50,7 +50,7 @@ You will see `help` after running the command code. Click `help` to view more pa
 >1. When you use the CLI to upload the asset package, you can configure the parameter `--local_path` to specify the upload folder path. The script will automatically compress and package the content under this path (only the contents under the path rather than the folder are packaged).
 >2. The operating system and bit can be uploaded. The following methods are recommended:
 >```
->python uploadasset.py  --local_path ./game_folder/ --os_type=Windows --os_bit=64
-> python uploadasset.py  --local_path ./game_folder/ --os_type=CentOS --os_bit=64
-> python uploadasset.py  --local_path ./game_folder/ --image_id=img-9qabwvbn
->```
+python uploadasset.py  --local_path ./game_folder/ --os_type=Windows --os_bit=64
+python uploadasset.py  --local_path ./game_folder/ --os_type=CentOS --os_bit=64
+python uploadasset.py  --local_path ./game_folder/ --image_id=img-9qabwvbn
+```
