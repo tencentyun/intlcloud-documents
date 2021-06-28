@@ -54,7 +54,7 @@ Xcode（11.0以上のバージョン）を使用してソースコードプロ�
 <span id="model"> </span>
 ## UIカスタマイズの実装
 
-[ソースコード](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCLiveRoomDemo) の中のtrtcliveroomdemoフォルダには、 ui と modelの2つのサブフォルダがあり、model フォルダには再利用できるオープンソースコンポーネント TRTCLiveRoomがあります。`TRTCLiveRoom.swift` ファイルでこのコンポーネントが提供するインターフェース関数を見て、対応するインターフェースを使用して UI のカスタマイズを実現することができます。
+[ソースコード] の中のtrtcliveroomdemoフォルダには、 ui と modelの2つのサブフォルダがあり、model フォルダには再利用できるオープンソースコンポーネント TRTCLiveRoomがあります。`TRTCLiveRoom.swift` ファイルでこのコンポーネントが提供するインターフェース関数を見て、対応するインターフェースを使用して UI のカスタマイズを実現することができます。
 ![](https://main.qcloudimg.com/raw/710358e4e170d44304cdb9bc991ad209.jpg)
 
 
