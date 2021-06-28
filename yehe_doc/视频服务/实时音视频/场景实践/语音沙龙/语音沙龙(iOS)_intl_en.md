@@ -64,7 +64,7 @@ The `TRTCChatSalonDemo` folder in the source code contains two subfolders: `ui` 
 
 ## Customizing UI
 
-The `trtcchatsalondemo` folder in the [source code](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCChatSalonDemo) contains two subfolders: `ui` and `model`. The `model` subfolder contains the reusable open-source component `TRTCChatSalon`. You can find the component's APIs in `TRTCChatSalon.h` and use them to customize your own UI.
+The `trtcchatsalondemo` folder in the [source code] contains two subfolders: `ui` and `model`. The `model` subfolder contains the reusable open-source component `TRTCChatSalon`. You can find the component's APIs in `TRTCChatSalon.h` and use them to customize your own UI.
 ![](https://main.qcloudimg.com/raw/9c9b6537318b1fa8cd9c6e4e717c361a.png)
 
 [](id:model.step1)
