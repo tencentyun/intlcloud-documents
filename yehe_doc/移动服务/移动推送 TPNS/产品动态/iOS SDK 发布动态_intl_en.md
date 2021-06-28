@@ -8,7 +8,7 @@
  <th width=20%>Documentation</th>
  </tr>
  <td>SDK v1.3.2.1 release</td>
- </td>  
+ <td>  
 <li>Fixes the compatibility issue of referencing `TPNSInAppMessage.framework` under Xcode v12.5.
 <li>Fixes the issue where two devices have the same TPNS token during iCloud backup and restoration.
 <li>Optimizes the logic to make sure that after a user switches access points, the logs of the original access point will not be reported.
@@ -39,7 +39,7 @@
  </tr>
  <tr>
  <td>SDK v1.3.1.0 release</td>
- </td>  
+ <td>  
 <li>Fixes the issue where the audio playback rules of TPNS and APNs channels are inconsistent.
 <li>Fixes the issue where the encrypted fields delivered via the cloud control emergency solution become invalid during cluster switching.
 <li>Fixes the issue where sometimes statistical log reporting fails.
