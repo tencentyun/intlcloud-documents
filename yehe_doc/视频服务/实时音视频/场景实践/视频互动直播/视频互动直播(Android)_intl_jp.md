@@ -2,14 +2,6 @@
 [ダウンロード](https://intl.cloud.tencent.com/document/product/647/35076)からDemoをインストールすると、インタラクティブストリーミング機能の効果を体験していただくことができます。これにはマイク接続によるインタラクション、キャスターPK、低レイテンシーの視聴、弾幕チャットなど、TRTCのインタラクティブライブストリーミングシーンにおける関連機能が含まれています。
 
 
-<table>
-<tr>
-<td><img width="260" height="561" src="https://liteav.sdk.qcloud.com/doc/res/trtc/picture/beauty.gif"/></td>
-<td><img width="260" height="561" src="https://liteav.sdk.qcloud.com/doc/res/trtc/picture/join.gif"/></td>
-<td><img width="260" height="561" src="https://liteav.sdk.qcloud.com/doc/res/trtc/picture/msg.gif"/></td>
-<td><img width="260" height="561" src="https://liteav.sdk.qcloud.com/doc/res/trtc/picture/pk.gif"/></td>
-</tr>
-</table>
 
 
 ビデオ・インタラクティブストリーミングの機能をすばやく実装する必要がある場合、当社が提供するDemoをもとに直接修正を加えてフィットさせることも、当社が提供するTRTCLiveRoomコンポーネントを使用し、カスタマイズしたUIを実現することも可能です。
@@ -29,7 +21,7 @@
 ### 手順2：SDKおよびDemoソースコードをダウンロード
 1. 実際の業務ニーズに基づき、SDKおよび付属のDemoソースコードをダウンロードします。
 2. ダウンロード完了後、【ダウンロードしました。次のステップ】をクリックします。
-![](https://main.qcloudimg.com/raw/3b115019ddfd0866108ed1add30810d8.png)
+
 
 [](id:ui.step3)
 ### 手順3：Demoプロジェクトファイルの設定
@@ -38,7 +30,7 @@
 3. `GenerateTestUserSig.java`ファイル内の関連パラメータを設定します。
 <ul style="margin:0"><li/>SDKAPPID：デフォルトは0。実際のSDKAppIDを設定してください。
 <li/>SECRETKEY：デフォルトは空文字列。実際のキー情報を設定してください。</ul>
-<img src="https://main.qcloudimg.com/raw/dad4c94a71b9330e09a8cbd5dce8fd39.png">
+
 
 4. 貼り付け完了後、【貼り付けました。次のステップ】をクリックすれば、作成が完了します。
 5. コンパイル完了後、【コンソール概要に戻る】をクリックすればOKです。
@@ -65,8 +57,8 @@ Android Studio（バージョン3.5以上）を使用してソースコードの
 [](id:model)
 ## カスタマイズUIの実装
 
-[ソースコード](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo/trtcliveroomdemo/src/main/java/com/tencent/liteav/liveroom)のtrtcliveroomdemoフォルダには、uiとmodelという2つのサブフォルダがあり、modelフォルダには再利用できるオープンソースコンポーネントTRTCLiveRoomがあります。`TRTCLiveRoom.java`ファイルでこのコンポーネントが提供するインターフェース関数を確認し、対応するインターフェースを使用してカスタマイズしたUIを実装することができます。
-![](https://main.qcloudimg.com/raw/b0c39e5b7ce3a6b1decb1fbbf7ec4ff1.png)
+[ソースコード]のtrtcliveroomdemoフォルダには、uiとmodelという2つのサブフォルダがあり、modelフォルダには再利用できるオープンソースコンポーネントTRTCLiveRoomがあります。`TRTCLiveRoom.java`ファイルでこのコンポーネントが提供するインターフェース関数を確認し、対応するインターフェースを使用してカスタマイズしたUIを実装することができます。
+<img src="https://main.qcloudimg.com/raw/87dc814a675692e76145d76aab91b414.png">
 
 [](id:model.step1)
 ### 手順1：SDKへの統合
