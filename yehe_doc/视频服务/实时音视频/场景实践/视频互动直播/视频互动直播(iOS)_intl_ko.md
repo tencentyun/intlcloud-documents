@@ -56,7 +56,7 @@ Xcode(11.0 버전 이상)를 사용하여 소스 코드 프로그램인 `iOS/TRT
 [](id:model)
 ## 사용자 정의 UI 인터페이스 구현
 
-[소스 코드](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCLiveRoomDemo)의 trtcliveroomdemo 폴더에는 ui 폴더와 model 폴더가 있으며, model 폴더에는 재사용 가능한 오픈 소스 모듈인 TRTCLiveRoom이 포함되어 있습니다. `TRTCLiveRoom.swift` 파일에서 해당 모듈이 제공하는 인터페이스 함수를 확인할 수 있으며, 해당 인터페이스를 사용해 사용자 정의 UI 인터페이스를 구현할 수 있습니다.
+[소스 코드]의 trtcliveroomdemo 폴더에는 ui 폴더와 model 폴더가 있으며, model 폴더에는 재사용 가능한 오픈 소스 모듈인 TRTCLiveRoom이 포함되어 있습니다. `TRTCLiveRoom.swift` 파일에서 해당 모듈이 제공하는 인터페이스 함수를 확인할 수 있으며, 해당 인터페이스를 사용해 사용자 정의 UI 인터페이스를 구현할 수 있습니다.
 ![](https://main.qcloudimg.com/raw/710358e4e170d44304cdb9bc991ad209.jpg)
 
 
