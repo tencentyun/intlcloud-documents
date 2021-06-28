@@ -65,7 +65,7 @@ Android Studio（バージョン3.5以上）を使用してソースコードの
 <span id="model"> </span>
 ## UIカスタマイズの実装
 
-[ソースコード](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo/trtcmeetingdemo/src/main/java/com/tencent/liteav/meeting)のtrtcmeetingdemoフォルダには、 ui と modelの2つのサブフォルダがあり、model フォルダには再利用できるオープンソースコンポーネントTRTCMeetingがあります。`TRTCMeeting.java`ファイルでこのコンポーネントが提供するインターフェース関数を見て、対応するインターフェースを使用して UI のカスタマイズを実現することができます。
+[ソースコード]のtrtcmeetingdemoフォルダには、 ui と modelの2つのサブフォルダがあり、model フォルダには再利用できるオープンソースコンポーネントTRTCMeetingがあります。`TRTCMeeting.java`ファイルでこのコンポーネントが提供するインターフェース関数を見て、対応するインターフェースを使用して UI のカスタマイズを実現することができます。
 ![](https://main.qcloudimg.com/raw/2ac6fe9df1b43dae59271f4288f54ef3.png)
 
 <span id="model.step1"> </span>
@@ -262,7 +262,7 @@ trtcMeeting.setDelegate(new TRTCMeetingDelegate() {
 ### 手順7：画面共有
 
 1. 画面共有機能は、システムにフローティングウィンドウの権限を申請する必要があり、自分で UIの中で特定のロジックを実装する必要があります。
-2. `startScreenCapture`を呼び出し、エンコードパラメータとスクリーンキャプチャのプロセスのフローティングウィンドウを渡すと、画面共有機能を実装できます。具体的な情報は、[TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58)をご参照ください。
+2. `startScreenCapture`を呼び出し、エンコードパラメータとスクリーンキャプチャのプロセスのフローティングウィンドウを渡すと、画面共有機能を実装できます。具体的な情報は、[TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58)をご参照ください。
 3. ミーティング中の他の参加者が、`onUserVideoAvailable`のイベントの通知を受信します。
 >!画面共有とカメラのキャプチャの2つは相互排他的な操作です。画面共有機能を立ち上げたい時は、先に`stopCameraPreview`を呼び出し、カメラのキャプチャをオフにしてください。
 
