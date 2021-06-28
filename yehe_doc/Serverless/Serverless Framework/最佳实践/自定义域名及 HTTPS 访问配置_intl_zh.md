@@ -81,7 +81,7 @@ inputs:
     - https
   serviceName: serverless
   environment: release
-  customDomain:
+  customDomains:
     - domain: www.example.com
       # 如要添加https，需先行在腾讯云-SSL证书进行认证获取cettificateId
       certificateId: abcdefg
