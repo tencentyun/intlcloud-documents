@@ -14,4 +14,5 @@ Note:
 
 3) Select the snapshot that needs to be rolled back to the disk in the snapshot list, and click "Rollback".
 
-
+## Rolling Back a Snapshot via an API
+You can use the [`ApplySnapshot`](https://intl.cloud.tencent.com/zh/document/product/362/15643) API to roll back a snapshot.
