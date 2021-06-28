@@ -7,7 +7,7 @@ After [expanding a cloud disk](https://intl.cloud.tencent.com/document/product/3
 >
 >- Extending the file system may affect the existing data. We strongly recommend you to manually [create a snapshot](https://intl.cloud.tencent.com/document/product/362/5755) to back up your data before the operation.
 >- To extend the file system, you need to [restart the instance](https://intl.cloud.tencent.com/document/product/213/4928) or rescan the disk, which will lead to business interruption for a certain period. We recommend that you choose an appropriate time for this operation.
->- After extending the file system, we strongly recommend you to [Rescan Disks) (#Scanning) to recognize the capacity. If you **Refresh** the system or do other operations, the expanded capacity may not be recognized.
+>- After extending the file system, we strongly recommend you to [rescan disks](#Scanning) to recognize the capacity. If you **Refresh** the system or do other operations, the expanded capacity may not be recognized.
 >
 
 
