@@ -10,7 +10,7 @@ Gradle 자동 로딩 방식을 사용하거나 수동으로 aar을 다운로드�
 
 ### 방법1: 자동 로딩(aar)
 TRTC SDK를 jcenter에 이미 배포했다면 gradle 자동 다운로드 설정을 통해 업데이트할 수 있습니다.
-Android Studio를 사용해 통합이 필요한 SDK 프로그램(본 문서는 [TRTCSimpleDemo](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo)를 예시로 함)을 연 후, 간단한 세 단계를 걸쳐 app/build.gradle 파일을 수정하면 SDK 통합이 완료됩니다.
+Android Studio를 사용해 통합이 필요한 SDK 프로그램(본 문서는 [TRTCSimpleDemo]를 예시로 함)을 연 후, 간단한 세 단계를 걸쳐 app/build.gradle 파일을 수정하면 SDK 통합이 완료됩니다.
 ![](https://main.qcloudimg.com/raw/fd01c252724cbf31ec7356286a931661.png)
 
 1. dependencies에서 TRTCSDK 종속을 추가합니다.
