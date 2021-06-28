@@ -104,7 +104,7 @@ restApi:
         function:
           functionName: myFunction # The function name to which the gateway connects
     # Add API Gateway custom domain name configuration
-    customDomain:
+    customDomains:
       - domain: www.example.com
         certificateId: axE1bo3
         protocols:
