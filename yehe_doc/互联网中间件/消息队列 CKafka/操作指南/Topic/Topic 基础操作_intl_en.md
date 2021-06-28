@@ -5,7 +5,7 @@ Topic is a category name where messages are stored and published. With CKafka, p
 This document describes how to manage the topics under an existing instance in the CKafka console.
 
 ## Prerequisites
-You have [created an instance](https://intl.cloud.tencent.com/document/product/597/40040).
+You have [created an instance](https://intl.cloud.tencent.com/document/product/597/39718).
 
 ## Directions
 
