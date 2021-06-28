@@ -31,5 +31,6 @@ phoneNumber: mobile number in E.164 format `[+][country code or area code][subsc
 ### 2. The demo demonstrates the method of push notification pop-up window after "license agreement".
 
  Uncomment the 18th line in the `AppDelegate.h` file to demonstrate the feature in the demo, as shown in the figure below:
- ![](https://main.qcloudimg.com/raw/5799568949d6174519a0ed21b8a6ad1d.png)
+ ![](https://main.qcloudimg.com/raw/6bcbd5ce23386a28d47aca3565f6dbd1.png)
+
 
