@@ -11,9 +11,8 @@ With GSE Local, you can test that:
 
 
 
-
-
 ## Setting Up GSE Local
+
 
 GSE Local can run on Windows, Linux and Mac in any GSE-supported languages. You can download the installation package according to the operating system:
 - [GSE Local for Windows](https://gselocal-1301007756.cos.ap-nanjing.myqcloud.com/gse-local/gselocal-master-windows-amd64.exe)
@@ -21,6 +20,8 @@ GSE Local can run on Windows, Linux and Mac in any GSE-supported languages. You 
 - [GSE Local for Mac](https://gselocal-1301007756.cos.ap-nanjing.myqcloud.com/gse-local/gselocal-master-darwin-amd64)
 
 
+>?The following sample code is applicable to Linux and MacOS. For Windows, we recommend to use the gitbash command line tool to run `curl` command.
+>
 
 <span id="test"></span>
 ## Testing Game Server
@@ -69,7 +70,7 @@ After receiving the ProcessReady request, GSE Local will also print logs and sta
 Use `curl` to simulate the client calls. For specific parameters, see [APIs](https://intl.cloud.tencent.com/document/product/1055/37120).
 
 <span id="test1"></span>
-#### Creating a game server session
+#### Create a game server session
 
 Run the following command to configure the `FleetId` parameter. You can set it to any valid strings `(^fleet-\S+)` in GSE Local.
 ```
@@ -99,7 +100,7 @@ The output is as shown below:
 <span id="test4"></span>
 ## Testing Game Server and Client
 
-### Prerequisites
+#### Prerequisites
 You have completed the [game server tests](#test).
 
 ### Step 1: add players
