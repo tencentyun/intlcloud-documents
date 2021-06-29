@@ -42,7 +42,7 @@ We provide an open-source module called `GenerateTestUserSig` in the TRTC SDK sa
 | :----------: | :------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------: |
 | iOS | [GitHub]| iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h |
 | Mac | [Github](https://github.com/tencentyun/TRTCSDK/blob/master/Mac/OCDemo/TRTCDemo/TRTC/GenerateTestUserSig.h) | Mac/OCDemo/TRTCDemo/TRTC/GenerateTestUserSig.h |
-| Android | [GitHub](https://github.com/tencentyun/TRTCSDK/blob/master/Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java) | Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java |
+| Android | [GitHub])  |   Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java  |
 | Windows (C++) |                           [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Windows/DuilibDemo/GenerateTestUserSig.h)                           |                           Windows/DuilibDemo/GenerateTestUserSig.h                           |
 | Windows (C#)  |                          [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Windows/CSharpDemo/GenerateTestUserSig.cs)                           |                          Windows/CSharpDemo/GenerateTestUserSig.cs                           |
 |  Desktop browsers  |                      [GitHub](https://github.com/tencentyun/TRTCSDK/blob/master/Web/TRTCSimpleDemo/js/debug/GenerateTestUserSig.js) | Web/TRTCSimpleDemo/js/debug/GenerateTestUserSig.js |
