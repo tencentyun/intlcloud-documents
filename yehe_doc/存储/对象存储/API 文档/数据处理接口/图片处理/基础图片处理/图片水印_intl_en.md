@@ -33,8 +33,8 @@ In the code above, `watermark` is the operation name and the number `1` indicate
 | /dx/ | Horizontal offset in pixels. Default value: 0 |
 | /dy/ | Vertical offset in pixels. Default value: 0 |
 | /blogo/ | Adaptation mode for an image watermark that is larger than the input image. Valid values: <br><li>`1`: scales the image watermark to the size of the input image. <br><li>`2`: crops the image watermark to the size of the input image. |
-| /scatype/ | Scaling mode for the image watermark (relative to the original image watermark). This parameter must be used together with `/spcent/`. Valid values:<br><li>`1`: scales by width.<br><li>`2`: scales by height.<br><li>`3`: scales by area. |
-| /spcent/ | Scale ratio of the image watermark relative to the input image, in permillage. This parameter must be used together with `/scatype/`. Value range: [1,1000]. Default value: 1000 (indicating to keep the original size) |
+| /scatype/ | Scaling mode for the image watermark (relative to the input image). This parameter must be used together with `/spcent/`. Valid values:<br><li>`1`: scales by width.<br><li>`2`: scales by height.<br><li>`3`: scales by area. |
+| /spcent/ | Scale ratio of the image watermark (relative to the input image), in permillage. This parameter must be used together with `/scatype/`. Value range: [1,1000]. By default, the image watermark is not scaled. |
 | /ignore-error/1 | If this parameter is carried and the image failed to be processed because it is too large, the input image will be returned with no error reported. |
 
 >! An image watermark must:  
