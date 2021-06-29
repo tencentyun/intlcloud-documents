@@ -43,10 +43,10 @@ TRTC SDK のサンプルコードの中で`GenerateTestUserSig`という名前�
 | iOS | [Github] | iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h |
 | Mac | Github| Mac/TRTCScenesDemo/TRTCDemo/TRTC/GenerateTestUserSig.h |
 | Android |Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java |
-| Windows(C++) | [Github](https://github.com/tencentyun/TRTCSDK/tree/master/Windows/DuilibDemo/GenerateTestUserSig.h) |                           Windows/DuilibDemo/GenerateTestUserSig.h |
+| Windows(C++) | [Github]  |                           Windows/DuilibDemo/GenerateTestUserSig.h |
 | Windows(C#)  | [Github](https://github.com/tencentyun/TRTCSDK/tree/master/Windows/CSharpDemo/GenerateTestUserSig.cs) |                          Windows/CSharpDemo/GenerateTestUserSig.cs |
 |  デスクトップブラウザ  | [Github](https://github.com/tencentyun/TRTCSDK/blob/master/Web/TRTCSimpleDemo/js/debug/GenerateTestUserSig.js) | Web/TRTCSimpleDemo/js/debug/GenerateTestUserSig.js |
-| Flutter | [Github](https://github.com/c1avie/trtc_demo/blob/master/lib/debug/GenerateTestUserSig.dart) | /lib/debug/GenerateTestUserSig.dart |
+| Flutter | [Github](https://github.com/c1avie/t ob/master/lib/debug/GenerateTestUserSig.dart) | /lib/debug/GenerateTestUserSig.dart |
 
 ![](https://main.qcloudimg.com/raw/3bb8aebe177b7bbc4aac7ea3bb134bc3.jpg)
 
