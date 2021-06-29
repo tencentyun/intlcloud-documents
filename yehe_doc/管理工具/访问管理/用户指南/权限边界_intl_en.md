@@ -4,10 +4,11 @@ Permissions boundary is an advanced feature used by Tencent Cloud to set a permi
 ## Use Cases
 You can use a preset or custom policy to set permissions for a sub-account/role. This policy is the maximum scope of permissions that the sub-account/role can have. This document describes how to use a permissions boundary to set the maximum scope of permissions for a sub-account.
 Suppose a company's Tencent Cloud resource admin needs to set permissions for OPS employees to meet the following requirements:
-● The company has two OPS employees, each of whom has a sub-account: ` test1` and `test2` respectively.
-● The employee with the sub-account `test1` only needs to manage all COS permissions under the root account.
-● The employee with the sub-account `test2` only needs to manage the operation permission for the server with the instance ID of `ins-1` under the root account.
-● The company stipulates that all operations on CVM and COS under the root account by sub-accounts must be performed in the IP range of the company (10.217.182.3/24 or 111.21.33.72/24).
+ - The company has two OPS employees, each of whom has a sub-account: ` test1` and `test2` respectively.
+ - The employee with the sub-account `test1` only needs to manage all COS permissions under the root account.
+ - The employee with the sub-account `test2` only needs to manage the operation permission for the server with the instance ID of `ins-1` under the root account.
+ - The company stipulates that all operations on CVM and COS under the root account by sub-accounts must be performed in the IP range of the company (10.217.182.3/24 or 111.21.33.72/24).
+
 ## Directions
 ### Setting permissions for sub-account test1
 1. Log in to the admin account and enter the [user list page](https://console.cloud.tencent.com/cam).
@@ -17,11 +18,11 @@ Suppose a company's Tencent Cloud resource admin needs to set permissions for OP
 5. On the permissions boundary setting page, click **Create Custom Policy** to enter the custom policy creation page.
 6. On the custom policy creation page, set the policy name as **policygen-1**.
 7. In the **Visual Policy Generator**, check to add the following information:
-● Effect: select **Allow**.
-● Service: select **COS**.
-● Action: select **All actions** and click **OK**.
-● Resource: the default value is all resources (*).
-● Condition: check the source IP and enter **10.217.182.3/24, 111.21.33.72/24** as the IP value.
+ - Effect: select **Allow**.
+ - Service: select **COS**.
+ - Action: select **All actions** and click **OK**.
+ - Resource: the default value is all resources (*).
+ - Condition: check the source IP and enter **10.217.182.3/24, 111.21.33.72/24** as the IP value.
 8. Click **Create** to enter the permissions boundary setting page.
 9. On the permissions boundary setting page, check the created custom policy in the policy list.
 10. Click **Set Boundary**.
@@ -48,17 +49,17 @@ Suppose a company's Tencent Cloud resource admin needs to set permissions for OP
 
 ```
 
-2. On the user list page, find the sub-account `test2` and click the user's nickname to enter the user details page.
+2. On the [user list page](https://console.cloud.tencent.com/cam), find the sub-account `test2` and click the user's nickname to enter the user details page.
 3. In the policy section, click **Associate Policy** and check the `policygen-2` policy to set the operation permission of the CVM instance named `ins-1` for the sub-account `test2`.
 4. In the permissions boundary section, click **Set Boundary** to enter the permissions boundary setting page.
 5. On the permissions boundary setting page, click **Create Custom Policy** to enter the custom policy creation page.
 6. On the custom policy creation page, set the policy name as **policygen-3**.
 7. In the **Visual Policy Generator**, check to add the following information:
-● Effect: select **Allow**.
-● Service: select **CVM**.
-● Action: select **All actions** and click **OK**.
-● Resource: the default value is all resources (*).
-● Condition: check the source IP and enter **10.217.182.3/24, 111.21.33.72/24** as the IP value.
+ - Effect: select **Allow**.
+ - Service: select **CVM**.
+ - Action: select **All actions** and click **OK**.
+ - Resource: the default value is all resources (*).
+ - Condition: check the source IP and enter **10.217.182.3/24, 111.21.33.72/24** as the IP value.
 8. Click **Create** to enter the permissions boundary setting page.
 9. On the permissions boundary setting page, check the `policygen-3` policy in the policy list.
 10. Click **Set Boundary**.
