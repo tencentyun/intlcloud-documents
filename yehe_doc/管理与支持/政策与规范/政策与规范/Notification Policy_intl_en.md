@@ -26,7 +26,7 @@ If you believe that material or content residing on or accessible through Tencen
 
 　　“I hereby state that the information in this notice is accurate and, under penalty of perjury, that I am the owner, or authorized to act on behalf of the owner, of the copyright or of an exclusive right under the copyright that is allegedly infringed.”
 
-Please contact the Designated Agent at [cloud_notice@tencent.com](mailto:cloud_notice@tencent.com), with a copy to [copyrightnotice@tencent.com](mailto:copyrightnotice@tencent.com), or at:
+Please contact the Designated Agent at [cloud_complaint@tencent.com](mailto:cloud_complaint@tencent.com), with a copy to [copyrightnotice@tencent.com](mailto:copyrightnotice@tencent.com), or at:
 
  
 
@@ -65,7 +65,7 @@ If you are a user who posted allegedly infringing material and who received noti
 3. A statement under penalty of perjury that you have a good faith belief that the material was removed, disabled, or identified as infringing as a result of mistake or misidentification.
 4. Your contact information, including your name, address, and telephone number, and a statement that you consent to the jurisdiction of Federal District Court for the judicial district in which the address is located, or if your address is outside of the United States, for any judicial district in which Tencent Cloud may be found, and that you will accept service of process from the person who provided the initial   copyright notification or an agent of such person.
 
-Such written notice should be sent to our Designated Agent at [cloud_notice@tencent.com](mailto:cloud_notice@tencent.com), with a copy to [copyrightnotice@tencent.com](mailto:copyrightnotice@tencent.com), or at:
+Such written notice should be sent to our Designated Agent at [cloud_complaint@tencent.com](mailto:cloud_complaint@tencent.com), with a copy to [copyrightnotice@tencent.com](mailto:copyrightnotice@tencent.com), or at:
 
 Tencent Cloud
 
