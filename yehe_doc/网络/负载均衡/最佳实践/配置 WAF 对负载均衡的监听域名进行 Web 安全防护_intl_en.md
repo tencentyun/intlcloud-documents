@@ -1,7 +1,7 @@
 By binding domain names with CLB listeners, [CLB Web Application Firewall (WAF)](https://intl.cloud.tencent.com/document/product/627/17470) can detect and block the HTTP or HTTPS traffic passing through CLB listeners. This document introduces how to use CLB WAF to apply Web security protection for the domain names added to CLB.
 
 ## Prerequisites
-- CLB WAF is currently in beta, if you want to try it out, please [Submit an Application](https://cloud.tencent.com/apply/p/b5e8c1wm1or).
+- CLB WAF is currently in beta, if you want to try it out, please Submit an Application.
 - You have successfully created an HTTP or HTTPS listener, and the domain name can be accessed. For more information, please see [Getting Started with CLB](https://intl.cloud.tencent.com/document/product/214/8975).
 - You have successfully purchased the CLB WAF service. For more information, please see [Purchase Guide](https://intl.cloud.tencent.com/document/product/627/11730).
 
@@ -28,9 +28,9 @@ To apply protection to a domain name with the CLB WAF service, you need to add a
 ![](https://main.qcloudimg.com/raw/fadb7336503e5ee808fe8a02d9b12005.png)
 5. Select your CLB region, then the domain name in the <a href="#step1">"Step 1: Confirm the CLB domain name configuration"</a>, and click **Select a Listener**.
 ![](https://main.qcloudimg.com/raw/4b632c6769bbbe105027e8bdf0b3ba1a.png)
-6. In the pop-up window, select the CLB listener in the <a href="#step1">"Step 1: Confirm the CLB domain name configuration"</a>, and then click **Confirm**.
+6. In the pop-up window, select the CLB listener in the <a href="#step1">"Step 1: Confirm the CLB domain name configuration"</a>, and then click **OK**.
 ![](https://main.qcloudimg.com/raw/2793320edb9a79b0c46e4ea4e92e38f6.png)
-7. Click **Confirm** in the **Select a Listener** step to finish binding a domain name with CLB listener in WAF.
+7. Click **Finish** in the **Select a Listener** step to finish binding a domain name with CLB listener in WAF.
 8. Back to the **Domain List** page, check the domain name, region, bound CLB instance ID, listener, and other information.
 
 ### Step 3: Verify the result
