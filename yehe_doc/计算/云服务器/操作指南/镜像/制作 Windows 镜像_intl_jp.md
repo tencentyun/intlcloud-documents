@@ -75,19 +75,22 @@ bootmenupolicy          Standard
 <dx-tabs>
 ::: プラットフォームツールを使用してイメージをエクスポートする[](id:Useplatform)
 VMWare vCenter ConvertまたはCitrix XenConvert などの仮想化プラトフォームのイメージエクスポートツールを使用できます。詳細について、対象プラットフォームのエクスポートツールのドキュメントをご参照ください。
->? 現在、Tencent Cloudのサービス移行は、qcow2、vhd、raw、およびvmdk形式のイメージをサポートします。
->
+<dx-alert infotype="explain">
+現在、Tencent Cloudのサービス移行は、qcow2、vhd、raw、およびvmdk形式のイメージをサポートします。
+</dx-alert>
 :::
 ::: disk2vhd\sを使用してイメージをエクスポートする[](id:Usedisk2vhd)
 物理マシンのシステムをエクスポートする場合、またはプラットフォームツールを使用してイメージをエクスポートしたくない場合は、disk2vhdツールを使用してイメージをエクスポートします。
 1. disk2vhdツールをインストールして実行します。
 [ここをクリックしてdisk2vhdツールをダウンロードする >>](https://download.sysinternals.com/files/Disk2vhd.zip)
-3. エスクポートするイメージの保存場所を選択し、コピーするボリュームをチェックして、【作成】をクリックします。次の図に示すように：
->! 
-> - disk2vhdは、Windowsシステムにボリュームシャドウコピーサービス（VSS）がインストールされた後にのみ起動できます。VSS機能の詳細については、 [Volume Shadow Copy Service](https://docs.microsoft.com/zh-cn/windows/win32/vss/volume-shadow-copy-service-portal?redirectedfrom=MSDN)をご参照ください。
-> - 「Use Vhdx」をチェックしないでください。システムは現在vhdx 形式のイメージをサポートしていません。
-> - データの整合性を確保するために、「Use volume Shadow Copy」を選択することをお勧めします。
-> 
+2. エスクポートするイメージの保存場所を選択し、コピーするボリュームをチェックして、【作成】をクリックします。次の図に示すように：
+
+<dx-alert infotype="notice">
+<li>disk2vhdは、Windowsシステムにボリュームシャドウコピーサービス（VSS）がインストールされた後にのみ起動できます。VSS機能の詳細については、 <a href="https://docs.microsoft.com/zh-cn/windows/win32/vss/volume-shadow-copy-service-portal?redirectedfrom=MSDN">Volume Shadow Copy Service</a>をご参照ください。</li>
+<li>「Use Vhdx」をチェックしないでください。システムは現在vhdx 形式のイメージをサポートしていません。</li>
+<li>データの整合性を確保するために、「Use volume Shadow Copy」を選択することをお勧めします。</li>
+</dx-alert>
+
 ![image](https://main.qcloudimg.com/raw/68d9c4e5e7db49c4cefdd3785ce9b68d.jpg)
 :::
 </dx-tabs>
