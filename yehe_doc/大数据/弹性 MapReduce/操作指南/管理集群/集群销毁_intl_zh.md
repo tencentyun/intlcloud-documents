@@ -10,5 +10,5 @@
 
 登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，选择【管理】>【更多】>【销毁】，进入集群销毁页面。在集群销毁页面，确认需要销毁的集群信息，确认无误后，勾选【已阅读并同意】并单击【下一步】。
 ![](https://main.qcloudimg.com/raw/50398d8c5468d4b4bb809785ca9de2de.png)
-在【确认销毁】页签中确认无误后，单击【开始销毁】即可销毁集群。
+在“确认销毁”页签中确认无误后，单击【开始销毁】即可销毁集群。
 ![](https://main.qcloudimg.com/raw/a8f60aac8339c6edbd510ae0deeb5d5d.png)
