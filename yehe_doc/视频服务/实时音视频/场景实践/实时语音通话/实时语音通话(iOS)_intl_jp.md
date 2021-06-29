@@ -77,7 +77,7 @@ Xcode（11.0以上のバージョン）を使用してソースコードプロ�
 
 ## UIカスタマイズの実装
 
-[ソースコード](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCCallingDemo) フォルダ `TRTCCallingDemo` 中には2つのサブフォルダ ui と modelが含まれ、その内、 model フォルダには当社が実装した再利用可能なオープンソースコンポーネント TRTCCallingが含まれています。 このコンポーネントが提供するインターフェース関数は `TRTCCalling.h` ファイルで確認できます。
+[ソースコード] フォルダ `TRTCCallingDemo` 中には2つのサブフォルダ ui と modelが含まれ、その内、 model フォルダには当社が実装した再利用可能なオープンソースコンポーネント TRTCCallingが含まれています。 このコンポーネントが提供するインターフェース関数は `TRTCCalling.h` ファイルで確認できます。
 ![](https://main.qcloudimg.com/raw/78cc06cd53538243bc52abc381350c55.jpg)
 
 オープンソースコンポーネント TRTCCalling を使用して自身の UIを実装することができます。つまり model パーツを再利用するだけで、自身で UI パーツを実装できます。
