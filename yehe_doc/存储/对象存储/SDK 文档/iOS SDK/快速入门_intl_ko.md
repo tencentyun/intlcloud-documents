@@ -24,11 +24,12 @@
 pod 'QCloudCOSXML'
 ```
 
-#### 비콘 리포트 기능 비활성화(5.8.3 이상 버전에 적용)
+#### Tencent 비콘 리포트 기능 비활성화(5.8.3 이상 버전에 적용)
 
-SDK의 품질을 지속적으로 추적 및 최적화하여 사용자에게 더 나은 경험을 제공하기 위해 SDK에 비콘 리포트 기능을 도입했습니다.
+SDK의 품질을 지속적으로 모니터링 및 최적화하여 사용자에게 더 나은 경험을 제공하기 위해 SDK에 [Tencent 비콘](https://beacon.qq.com) SDK를 도입했습니다.
+>? Tencent 비콘은 COS의 요청 성능만을 모니터링하며 서비스의 데이터는 리포트하지 않습니다.
 
-해당 기능을 비활성화할 경우, 프로젝트의 `Podfile` 파일에서 다음을 사용하십시오.
+해당 기능을 비활성화하려면 프로젝트의 `Podfile` 파일에서 다음을 사용하십시오.
 
 ```shell
 pod 'QCloudCOSXML/Slim'
@@ -36,9 +37,9 @@ pod 'QCloudCOSXML/Slim'
 
 #### 라이트 버전 SDK
 
-업로드/다운로드 기능만 사용하고 SDK 용량에 대한 요구가 높다면, 라이트 버전 SDK를 사용할 수 있습니다. 라이트 버전에는 mta 기능이 포함되지 않습니다.
+업로드/다운로드 기능만 사용하고 대용량의 SDK가 필요한 경우 Tencent Cloud의 라이트 버전 SDK를 사용할 수 있습니다.
 
-라이트 버전 SDK는 Cocoapods의 Subspec 기능을 통해 실현되기 때문에 현재 자동 통합만 지원됩니다. 프로젝트의 `Podfile` 파일에서 다음을 사용하십시오.
+라이트 버전 SDK는 Cocoapods의 Subspec 기능을 통해 구현되므로, 현재 자동 통합 방식만 지원됩니다. 프로젝트의 `Podfile` 파일에서 다음을 사용하십시오.
 
 ```shell
 pod 'QCloudCOSXML/Transfer'
@@ -120,8 +121,8 @@ COS 서비스 인스턴스 `QCloudCOSXMLService`와 `QCloudCOSTransferMangerServ
 
 ```objective-c
 //AppDelegate.m
-//AppDelegate는 QCloudSignatureProvider와 
-//QCloudCredentailFenceQueueDelegate 프로토콜을 따름
+//AppDelegate는 QCloudSignatureProvider를 따라야 함 
+//QCloudCredentailFenceQueueDelegate 프로토콜
 
 @interface AppDelegate()<QCloudSignatureProvider, QCloudCredentailFenceQueueDelegate>
 
@@ -136,12 +137,12 @@ COS 서비스 인스턴스 `QCloudCOSXMLService`와 `QCloudCOSTransferMangerServ
         didFinishLaunchingWithOptions:(NSDictionary * )launchOptions {
     QCloudServiceConfiguration* configuration = [QCloudServiceConfiguration new];
     QCloudCOSXMLEndPoint* endpoint = [[QCloudCOSXMLEndPoint alloc] init];
-    // 서비스 리전 약칭(예: 광저우 리전 ap-guangzhou)
+    // 서비스 리전 약칭, 예를 들어 광저우 리전은 ap-guangzhou
     endpoint.regionName = @"COS_REGION";
     // HTTPS 사용
     endpoint.useHTTPS = true;
     configuration.endpoint = endpoint;
-    // 키 제공자: 호스트
+    // 키 제공자: 사용자
     configuration.signatureProvider = self;
     // COS 서비스 초기화 예시
     [QCloudCOSXMLService registerDefaultCOSXMLWithConfiguration:configuration];
@@ -157,22 +158,20 @@ COS 서비스 인스턴스 `QCloudCOSXMLService`와 `QCloudCOSTransferMangerServ
 
 - (void) fenceQueue:(QCloudCredentailFenceQueue * )queue requestCreatorWithContinue:(QCloudCredentailFenceQueueContinue)continueBlock
 {
-    //여기서 동기화하여 백그라운드 서버에서 임시 키를 가져옵니다. 임시 키의 가용성을 최대한 보장하기 위해 임시 키를 가져오는 로직은 여기에 배치하는 것을 강력히 권장합니다.
+    //백그라운드 서버에서 가져온 임시 키를 여기에서 동기화합니다. 임시 키의 가용성을 최대한 보장하기 위해 임시 키를 가져오는 로직은 이곳에 배치하는 것을 강력히 권장합니다.
     //...
 
     QCloudCredential* credential = [QCloudCredential new];
     // 임시 키 SecretId
-    credential.secretID = @"COS_SECRETID";
+    credential.secretID = @"SECRETID";
     // 임시 키 SecretKey
-    credential.secretKey = @"COS_SECRETKEY";
+    credential.secretKey = @"SECRETKEY";
     // 임시 키 Token
-    credential.token = @"COS_TOKEN";
-    // 서버 반환 시간을 서명 시작 시간으로 설정할 것을 권장합니다.
-    // 사용자 휴대폰의 로컬 시간 오차로 서명 오류가 발생하는 것을 방지합니다.
-    credential.startDate = [[[NSDateFormatter alloc] init] 
-        dateFromString:@"startTime"]; // 단위: 초
-    credential.experationDate = [[[NSDateFormatter alloc] init] 
-        dateFromString:@"expiredTime"];
+    credential.token = @"TOKEN";
+    /** 휴대폰 로컬 시간과의 편차가 너무 커서 서명이 부정확해지지 않도록 서버 시간을 서명 시작 시간으로 반환할 것을 권장합니다(매개변수 startTime과 expiredTime의 단위: 초).
+    */
+    credential.startDate = [NSDate dateWithTimeIntervalSince1970:startTime]; // 단위: 초
+    credential.experationDate = [NSDate dateWithTimeIntervalSince1970:expiredTime]];// 단위: 초
 
     QCloudAuthentationV5Creator* creator = [[QCloudAuthentationV5Creator alloc]
         initWithCredential:credential];
@@ -180,7 +179,7 @@ COS 서비스 인스턴스 `QCloudCOSXMLService`와 `QCloudCOSTransferMangerServ
 }
 
 // 서명을 얻는 방법 게이트입니다. 임시 키를 얻고 서명을 계산하는 과정을 보여줍니다.
-// 서명 계산 과정을 사용자 정의할 수 있습니다.
+// 서명 계산 과정 사용자 정의 가능
 - (void) signatureWithFields:(QCloudSignatureFields*)fileds
                      request:(QCloudBizHTTPRequest*)request
                   urlRequest:(NSMutableURLRequest*)urlRequst
@@ -205,8 +204,8 @@ COS 서비스 인스턴스 `QCloudCOSXMLService`와 `QCloudCOSTransferMangerServ
 
 ```swift
 //AppDelegate.swift
-//AppDelegate는 QCloudSignatureProvider와 
-//QCloudCredentailFenceQueueDelegate 프로토콜을 따름
+//AppDelegate는 QCloudSignatureProvider를 따라야 함 
+//QCloudCredentailFenceQueueDelegate 프로토콜
 
 class AppDelegate: UIResponder, UIApplicationDelegate,
     QCloudSignatureProvider, QCloudCredentailFenceQueueDelegate {
@@ -219,12 +218,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         let config = QCloudServiceConfiguration.init();
 
         let endpoint = QCloudCOSXMLEndPoint.init();
-        // 서비스 리전 약칭(예: 광저우 리전 ap-guangzhou)
+        // 서비스 리전 약칭, 예를 들어 광저우 리전은 ap-guangzhou
         endpoint.regionName = "COS_REGION";
         // HTTPS 사용
         endpoint.useHTTPS = true;
         config.endpoint = endpoint;
-        // 키 제공자: 호스트
+        // 키 제공자: 사용자
         config.signatureProvider = self;
 
         // COS 서비스 초기화 예시
@@ -242,28 +241,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
     func fenceQueue(_ queue: QCloudCredentailFenceQueue!, 
         requestCreatorWithContinue continueBlock: 
         QCloudCredentailFenceQueueContinue!) {
-        //여기서 동기화하여 백그라운드 서버에서 임시 키를 획득합니다.
+        //백그라운드 서버에서 가져온 임시 키를 여기에서 동기화
         //...
 
         let credential = QCloudCredential.init();
         // 임시 키 SecretId
-        credential.secretID = "COS_SECRETID";
+        credential.secretID = "SECRETID";
         // 임시 키 SecretKey
-        credential.secretKey = "COS_SECRETKEY";
+        credential.secretKey = "SECRETKEY";
         // 임시 키 Token
-        credential.token = "COS_TOKEN";
-        // 서버 반환 시간을 서명 시작 시간으로 설정할 것을 권장합니다.
-        // 사용자 휴대폰의 로컬 시간 오차로 서명 오류가 발생하는 것을 방지합니다.
-        credential.startDate = DateFormatter().date(from: "startTime");
-        // 반환하는 시간의 단위: 초
-        credential.experationDate = DateFormatter().date(from: "expiredTime");
+        credential.token = "TOKEN";
+        /** 휴대폰 로컬 시간과의 편차가 너무 커서 서명이 부정확해지지 않도록 서버 시간을 서명 시작 시간으로 반환할 것을 권장합니다(매개변수 startTime과 expiredTime의 단위: 초).
+        */
+        credential.startDate = Date.init(timeIntervalSince1970: TimeInterval(startTime)!) DateFormatter().date(from: "startTime");
+        credential.experationDate = Date.init(timeIntervalSince1970: TimeInterval(expiredTime)!) 
 
         let auth = QCloudAuthentationV5Creator.init(credential: credential);
         continueBlock(auth,nil);
     }
 
     // 서명을 얻는 방법 게이트입니다. 임시 키를 얻고 서명을 계산하는 과정을 보여줍니다.
-    // 서명 계산 과정을 사용자 정의할 수 있습니다.
+    // 서명 계산 과정 사용자 정의 가능
     func signature(with fileds: QCloudSignatureFields!, 
         request: QCloudBizHTTPRequest!, 
         urlRequest urlRequst: NSMutableURLRequest!, 
@@ -306,8 +304,9 @@ Tencent Cloud의 영구 키로 개발 단계에 있는 로컬 디버깅을 진�
 {
     
     QCloudCredential* credential = [QCloudCredential new];
-    credential.secretID = @"COS_SECRETID"; // 영구 키 SecretId
-    credential.secretKey = @"COS_SECRETKEY"; // 영구 키 SecretKey
+    //SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리
+    credential.secretID = @"SECRETID"; // 영구 키 SecretId
+    credential.secretKey = @"SECRETKEY"; // 영구 키 SecretKey
 
     // 영구 키로 서명 계산
     QCloudAuthentationV5Creator* creator = [[QCloudAuthentationV5Creator alloc] 
@@ -325,8 +324,9 @@ func signature(with fileds: QCloudSignatureFields!,
                 urlRequest urlRequst: NSMutableURLRequest!, 
                 compelete continueBlock: QCloudHTTPAuthentationContinueBlock!) {
     let credential = QCloudCredential.init();
-    credential.secretID = "COS_SECRETID"; // 영구 키 SecretId
-    credential.secretKey = "COS_SECRETKEY"; // 영구 키 SecretKey
+    //SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리
+    credential.secretID = "SECRETID"; // 영구 키 SecretId
+    credential.secretKey = "SECRETKEY"; // 영구 키 SecretKey
 
     // 영구 키로 서명 계산
     let auth = QCloudAuthentationV5Creator.init(credential: credential);
@@ -383,17 +383,17 @@ SDK는 로컬 파일과 바이너리 데이터 NSData 업로드를 지원합니�
 QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
 // 로컬 파일 경로
 NSURL* url = [NSURL fileURLWithPath:@"파일의 URL"];
-// BucketName-APPID 포맷의 버킷 이름
+// 버킷 이름. 포맷은 BucketName-APPID
 put.bucket = @"examplebucket-1250000000";
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'dir1/object1'입니다.
+// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'
 put.object = @"exampleobject";
-// 업로드가 필요한 객체 콘텐츠입니다. NSData* 또는 NSURL* 유형의 변수를 전달할 수 있습니다.
+//업로드할 객체 콘텐츠. NSData* 또는 NSURL* 유형의 변수 전달 가능
 put.body =  url;
-// 업로드 진행률 수신
+//업로드 진행률 수신
 [put setSendProcessBlock:^(int64_t bytesSent,
                             int64_t totalBytesSent,
                             int64_t totalBytesExpectedToSend) {
-    //      bytesSent                 이번에 발송할 바이트 수. 대용량 파일은 여러 번으로 나누어 발송해야 할 수 있습니다.
+    //      bytesSent                 이번에 발송할 바이트 수(대용량 파일은 여러 번으로 나누어 발송해야 할 수 있음)
     //      totalBytesSent            발송한 바이트 수
     //      totalBytesExpectedToSend  이번 업로드에서 발송할 총 바이트 수(파일 1개의 크기)
 }];
@@ -409,17 +409,17 @@ put.body =  url;
 
 >?
 >- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m)를 참조하십시오.
->- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참조하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
+>- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명된 링크 생성** 문서를 참조하십시오. 문서의 권한이 개인 읽기인 경우, 다운로드 링크에 일정한 유효 기간이 있습니다.
 
 **Swift**
 
 ```swift
 let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
-// BucketName-APPID 포맷의 버킷 이름
+// 버킷 이름. 포맷은 BucketName-APPID
 put.bucket = "examplebucket-1250000000";
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'dir1/object1'입니다.
+// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'
 put.object = "exampleobject";
-// 업로드가 필요한 객체 콘텐츠입니다. NSData* 또는 NSURL* 유형의 변수를 전달할 수 있습니다.
+//업로드할 객체 콘텐츠. NSData* 또는 NSURL* 유형의 변수 전달 가능
 put.body = NSURL.fileURL(withPath: "Local File Path") as AnyObject;
 
 // 업로드 결과 수신
@@ -432,10 +432,10 @@ put.setFinish { (result, error) in
     }
 }
 
-// 업로드 진행률 수신
+//업로드 진행률 수신
 put.sendProcessBlock = { (bytesSent, totalBytesSent,
     totalBytesExpectedToSend) in
-    //      bytesSent                 이번에 발송할 바이트 수. 대용량 파일은 여러 번으로 나누어 발송해야 할 수 있습니다.
+    //      bytesSent                 이번에 발송할 바이트 수(대용량 파일은 여러 번으로 나누어 발송해야 할 수 있음)
     //      totalBytesSent            발송한 바이트 수
     //      totalBytesExpectedToSend  이번 업로드에서 발송할 총 바이트 수(파일 1개의 크기)
 };
@@ -452,7 +452,7 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 
 >?
 >- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift)를 참조하십시오.
->- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참조하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
+>- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명된 링크 생성** 문서를 참조하십시오. 문서의 권한이 개인 읽기인 경우, 다운로드 링크에 일정한 유효 기간이 있습니다.
 
 ### 객체 다운로드
 
@@ -461,17 +461,17 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 ```objective-c
 QCloudCOSXMLDownloadObjectRequest * request = [QCloudCOSXMLDownloadObjectRequest new];
     
-// BucketName-APPID 포맷의 버킷 이름
+// 버킷 이름. 포맷은 BucketName-APPID
 request.bucket = @"examplebucket-1250000000";
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'dir1/object1'입니다.
+// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'
 request.object = @"exampleobject";
 
-//다운로드할 경로 URL을 설정합니다. 설정 시 파일이 지정된 경로에 다운로드됩니다.
+//다운로드할 경로 URL 설정, 설정 시 파일이 지정된 경로에 다운로드됨
 request.downloadingURL = [NSURL fileURLWithPath:@"Local File Path"];
 
 // 다운로드 결과 수신
 [request setFinishBlock:^(id outputObject, NSError *error) {
-    // outputObject는 상응하는 모든 http 헤더를 포함합니다.
+    // outputObject는 모든 http 응답 헤더를 포함합니다.
     NSDictionary* info = (NSDictionary *) outputObject;
 }];
 
@@ -479,7 +479,7 @@ request.downloadingURL = [NSURL fileURLWithPath:@"Local File Path"];
 [request setDownProcessBlock:^(int64_t bytesDownload,
                                 int64_t totalBytesDownload,
                                 int64_t totalBytesExpectedToDownload) {
-    //      bytesDownload                   이번에 다운로드할 바이트 수. 대용량 파일은 여러 번으로 나누어 발송해야 할 수 있습니다.
+    //      bytesDownload                   이번에 다운로드할 바이트 수(대용량 파일은 여러 번으로 나누어 발송해야 할 수 있음)
     //      totalBytesDownload              다운로드한 바이트 수
     //      totalBytesExpectedToDownload    이번 다운로드의 총 바이트 수(파일 1개의 크기)
 }];
@@ -499,13 +499,13 @@ request.bucket = "examplebucket-1250000000";
 // 객체 키
 request.object = "exampleobject";
 
-//다운로드할 경로 URL을 설정합니다. 설정 시 파일이 지정된 경로에 다운로드됩니다.
+//다운로드할 경로 URL 설정, 설정 시 파일이 지정된 경로에 다운로드됨
 request.downloadingURL = NSURL.fileURL(withPath: "Local File Path") as URL?;
 
 // 다운로드 진행률 수신
 request.sendProcessBlock = { (bytesDownload, totalBytesDownload,
     totalBytesExpectedToDownload) in
-    //      bytesDownload                   이번에 다운로드할 바이트 수. 대용량 파일은 여러 번으로 나누어 발송해야 할 수 있습니다.
+    //      bytesDownload                   이번에 다운로드할 바이트 수(대용량 파일은 여러 번으로 나누어 발송해야 할 수 있음)
     //      totalBytesDownload              다운로드한 바이트 수
     //      totalBytesExpectedToDownload    이번 다운로드의 총 바이트 수(파일 1개의 크기)
 }
@@ -522,5 +522,5 @@ request.finishBlock = { (copyResult, error) in
 QCloudCOSTransferMangerService.defaultCOSTransferManager().downloadObject(request);
 ```
 
->?전체 예시는[GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferDownloadObject.swift)를 참조하십시오.
+>?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferDownloadObject.swift)를 참조하십시오.
 

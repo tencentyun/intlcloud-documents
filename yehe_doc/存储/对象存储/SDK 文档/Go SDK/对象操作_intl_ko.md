@@ -1,12 +1,12 @@
 ## 소개
 
-본 문서는 객체의 고급 인터페이스, 간단한 작업, 멀티파트 작업 관련 API 개요 및 SDK 예시 코드를 제공합니다.
+본 문서는 객체의 고급 인터페이스, 간단한 작업, 멀티파트 작업의 API 개요 및 SDK 예시 코드를 제공합니다.
 
 **간단한 작업**
 
 | API                                                          | 작업명         | 작업 설명                                  |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Bucket(List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | 객체 리스트 조회   | 버킷 하위의 일부 또는 전체 객체 조회            |
+| [GET Bucket（List Objects）](https://intl.cloud.tencent.com/document/product/436/30614) | 객체 리스트 조회   | 버킷의 일부 또는 모든 객체 조회            |
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 간편한 객체 업로드   | Bucket에 Object(파일/객체) 업로드     |
 | [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 객체 메타데이터 조회 | Object의 Meta 정보 조회                  |
 | [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 객체 다운로드       | 로컬에 Object(파일/객체) 다운로드        |
@@ -42,7 +42,7 @@
 func (s *BucketService) Get(ctx context.Context, opt *BucketGetOptions) (*BucketGetResult, *Response, error)
 ```
 
-#### 요청 예시
+#### 요청 예시1: 객체 리스트 나열
 
 [//]: # (.cssg-snippet-get-bucket)
 ```go
@@ -56,15 +56,46 @@ if err != nil {
 }
 ```
 
+#### 요청 예시2: 디렉터리의 객체 나열
+COS 자체에는 폴더 및 디렉터리의 개념이 없습니다. 사용자의 습관에 맞춰 세퍼레이터 /로 '폴더'를 모방할 수 있습니다.
+
+[//]: # (.cssg-snippet-get-bucket2)
+```go
+    var marker string
+    opt := &cos.BucketGetOptions{
+        Prefix:  "folder/",  // prefix는 삭제할 폴더를 의미합니다.
+        Delimiter: "/",		 // delimiter는 세퍼레이터를 의미합니다. /로 설정하면 현재 디렉터리의 object를 나열하고, 공백으로 설정하면 전체 object를 나열합니다.
+        MaxKeys: 1000,       // 순회할 최대 객체 수를 설정합니다. 한 번에 지원되는 listobject는 최대 1000개입니다.
+    }
+    isTruncated := true
+    for isTruncated {
+        opt.Marker = marker
+        v, _, err := c.Bucket.Get(context.Background(), opt)
+        if err != nil {
+            fmt.Println(err)
+            break
+        }
+        for _, content := range v.Contents {
+            fmt.Printf("Object: %v\n", content.Key)
+        }
+        // common prefix는 delimiter로 잘린 경로를 표시합니다. 예를 들어 delimiter를 /로 설정하면 common prefix는 모든 서브 디렉터리의 경로를 표시합니다.
+        for _, commonPrefix := range v.CommonPrefixes {
+            fmt.Printf("CommonPrefixes: %v\n", commonPrefix)
+        }
+        isTruncated = v.IsTruncated
+        marker = v.NextMarker
+}
+```
+
 #### 매개변수 설명
 
 ```go
 type BucketGetOptions struct {
-	Prefix       string 
-	Delimiter    string 
-	EncodingType string 
-	Marker       string 
-	MaxKeys      int    
+    Prefix       string 
+    Delimiter    string 
+    EncodingType string 
+    Marker       string 
+    MaxKeys      int    
 }
 ```
 
@@ -80,16 +111,16 @@ type BucketGetOptions struct {
 
 ```go
 type BucketGetResult struct {
-	Name           string
-	Prefix         string 
-	Marker         string 
-	NextMarker     string 
-	Delimiter      string 
-	MaxKeys        int
-	IsTruncated    bool
-	Contents       []Object 
-	CommonPrefixes []string 
-	EncodingType   string   
+    Name           string
+    Prefix         string 
+    Marker         string 
+    NextMarker     string 
+    Delimiter      string 
+    MaxKeys        int
+    IsTruncated    bool
+    Contents       []Object 
+    CommonPrefixes []string 
+    EncodingType   string   
 }
 ```
 
@@ -98,7 +129,7 @@ type BucketGetResult struct {
 | Name           | 버킷 이름. 포맷: BucketName-APPID, 예: examplebucket-1250000000 | string   |
 | Prefix         |기본값 null. 객체 키를 필터링해 접두사 prefix 값이 동일한 objects를 매칭 | string   |
 | Marker         | 기본적으로 UTF-8 이진법 순서로 나열. 반환된 objects list의 시작 위치 표시 | string   |
-| NextMarker     | IsTruncated가 true면 그다음 반환된 objects list의 시작 위치 표시 | string   |
+| NextMarker     | IsTruncated가 true면 그 다음 반환된 objects list의 시작 위치 표시 | string   |
 | Delimiter      | 기본값 null. 유사 폴더가 필요한 경우 세퍼레이터 `/` 설정 가능                   | string   |
 | MaxKeys        | 반환하는 최대 objects 수. 기본값: 최대 1000                    | int      |
 | IsTruncated    | 반환하는 objects의 잘림 여부 표시                                | bool     |
@@ -247,8 +278,8 @@ func main() {
         b := &cos.BaseURL{BucketURL: u}
         c := cos.NewClient(b, &http.Client{
                 Transport: &cos.AuthorizationTransport{
-                        SecretID:  os.Getenv("COS_SECRETID"),
-                        SecretKey: os.Getenv("COS_SECRETKEY"),
+                        SecretID:  os.Getenv("SECRETID"),
+                        SecretKey: os.Getenv("SECRETKEY"),
                 },
         })
 	// 파일 멀티 스레드 일괄 업로드
@@ -272,27 +303,27 @@ func main() {
 
 ```go
 type ObjectPutOptions struct {
-	*ACLHeaderOptions       
-	*ObjectPutHeaderOptions 
+    *ACLHeaderOptions       
+    *ObjectPutHeaderOptions 
 }
 type ACLHeaderOptions struct {
-	XCosACL              string                           
+    XCosACL              string                           
     XCosGrantRead        string
     XCosGrantWrite       string 
     XCosGrantFullControl string                                           
 } 
 type ObjectPutHeaderOptions struct {
-	CacheControl       string 
-	ContentDisposition string 
-	ContentEncoding    string 
-	ContentType        string 
-	ContentLength      int64  
-	Expires            string 
-	// 사용자 정의한 x-cos-meta-* header
-	XCosMetaXXX        *http.Header 
-	XCosStorageClass   string      
-	XCosTrafficLimit   int
-	Listener           ProgressListener
+    CacheControl       string 
+    ContentDisposition string 
+    ContentEncoding    string 
+    ContentType        string 
+    ContentLength      int64  
+    Expires            string 
+    // 사용자 정의한 x-cos-meta-* header
+    XCosMetaXXX        *http.Header 
+    XCosStorageClass   string      
+    XCosTrafficLimit   int
+    Listener           ProgressListener
 }
 ```
 
@@ -301,8 +332,8 @@ type ObjectPutHeaderOptions struct {
 | r                    | 파일 콘텐츠 업로드. 파일 스트림 또는 바이트 스트림이 될 수 있으며, r이 `bytes.Buffer/bytes.Reader/strings.Reader`가 아닌 경우 반드시 `opt.ObjectPutHeaderOptions.ContentLength`를 지정해야 함 | io.Reader   | 예   |
 | key                  | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | string      | 예   |
 | XCosACL              | 파일의 ACL 설정. 예: private, public-read, public-read-write   | string      | 아니요   |
-| XCosGrantFullControl | 권한을 부여받은 계정에 모든 권한 부여. 포맷: id="[OwnerUin]"                | string      | 아니요   |
-| XCosGrantRead        | 권한을 부여받은 계정에 읽기 권한 부여. 포맷: id="[OwnerUin]"                  | string      | 아니요   |
+| XCosGrantFullControl | 권한 피부여자에게 모든 권한 부여. 포맷: id="[OwnerUin]"                | string      | 아니요   |
+| XCosGrantRead        | 권한 피부여자에게 읽기 권한 부여. 포맷: id="[OwnerUin]"                  | string      | 아니요   |
 | XCosStorageClass     | 파일의 스토리지 유형(STANDARD, STANDARD_IA, ARCHIVE) 설정. 기본값: STANDARD | string      | 아니요   |
 | Expires              | Content-Expires 설정                                         | string      | 아니요   |
 | CacheControl         | 캐시 정책. Cache-Control 설정                                 | string      | 아니요   |
@@ -362,7 +393,7 @@ if err != nil {
 
 ```go
 type ObjectHeadOptions struct {
-	IfModifiedSince string 
+    IfModifiedSince string 
 }
 ```
 
@@ -452,8 +483,8 @@ func main() {
         b := &cos.BaseURL{BucketURL: u}
         c := cos.NewClient(b, &http.Client{
                 Transport: &cos.AuthorizationTransport{
-                        SecretID:  os.Getenv("COS_SECRETID"),
-                        SecretKey: os.Getenv("COS_SECRETKEY"),
+                        SecretID:  os.Getenv("SECRETID"),
+                        SecretKey: os.Getenv("SECRETKEY"),
                 },
         })
         keysCh := make(chan string, 2)
@@ -545,16 +576,16 @@ func main() {
 
 ```go
 type ObjectGetOptions struct {
-	ResponseContentType        string 
-	ResponseContentLanguage    string 
-	ResponseExpires            string 
-	ResponseCacheControl       string 
-	ResponseContentDisposition string 
-	ResponseContentEncoding    string 
-	Range                      string 
-	IfModifiedSince            string 
-	XCosTrafficLimit           int
-	Listener                   ProgressListener
+    ResponseContentType        string 
+    ResponseContentLanguage    string 
+    ResponseExpires            string 
+    ResponseCacheControl       string 
+    ResponseContentDisposition string 
+    ResponseContentEncoding    string 
+    Range                      string 
+    IfModifiedSince            string 
+    XCosTrafficLimit           int
+    Listener                   ProgressListener
 }
 ```
 
@@ -658,25 +689,25 @@ if err == nil {
 
 ```go
 type ObjectCopyOptions struct {
-	*ObjectCopyHeaderOptions 
-	*ACLHeaderOptions        
+    *ObjectCopyHeaderOptions 
+    *ACLHeaderOptions        
 }
 type ACLHeaderOptions struct {
-	XCosACL              string 
-	XCosGrantRead        string 
-	XCosGrantWrite       string 
-	XCosGrantFullControl string 
+    XCosACL              string 
+    XCosGrantRead        string 
+    XCosGrantWrite       string 
+    XCosGrantFullControl string 
 }
 type ObjectCopyHeaderOptions struct {
-	XCosMetadataDirective           string 
-	XCosCopySourceIfModifiedSince   string 
-	XCosCopySourceIfUnmodifiedSince string 
-	XCosCopySourceIfMatch           string 
-	XCosCopySourceIfNoneMatch       string 
-	XCosStorageClass                string 
-	// 사용자 정의한 x-cos-meta-* header
-	XCosMetaXXX    				    *http.Header 
-	XCosCopySource 					string      
+    XCosMetadataDirective           string 
+    XCosCopySourceIfModifiedSince   string 
+    XCosCopySourceIfUnmodifiedSince string 
+    XCosCopySourceIfMatch           string 
+    XCosCopySourceIfNoneMatch       string 
+    XCosStorageClass                string 
+    // 사용자 정의한 x-cos-meta-* header
+    XCosMetaXXX    				    *http.Header 
+    XCosCopySource 					string      
 }
 ```
 
@@ -685,9 +716,9 @@ type ObjectCopyHeaderOptions struct {
 | key                             | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | string      | 예   |
 | sourceURL                       | 복사할 원본 파일의 URL                                         | string      | 예   |
 | XCosACL                         | 파일의 ACL 설정. 예: private, public-read, public-read-write   | string      | 아니요   |
-| XCosGrantFullControl            | 권한을 부여받은 계정에 모든 권한 부여. 포맷: id="[OwnerUin]"                | string      | 아니요   |
-| XCosGrantRead                   | 권한을 부여받은 계정에 읽기 권한 부여. 포맷: id="[OwnerUin]"                  | string      | 아니요   |
-| XCosMetadataDirective           | 옵션값: Copy, Replaced: </br><li>Copy로 설정하는 경우, 설정된 사용자 메타데이터 정보를 무시하고 직접 파일 복사</br><li>Replaced로 설정하는 경우, 설정된 메타정보에 따라 메타데이터 수정</br>타깃 경로와 원본 경로가 같은 경우, 반드시 Replaced로 설정해야 합니다. | string      | 예   |
+| XCosGrantFullControl            | 권한 피부여자에게 모든 권한 부여. 포맷: id="[OwnerUin]"                | string      | 아니요   |
+| XCosGrantRead                   | 권한 피부여자에게 읽기 권한 부여. 포맷: id="[OwnerUin]"                  | string      | 아니요   |
+| XCosMetadataDirective           | 옵션값: Copy, Replaced: </br><li>Copy로 설정하는 경우, 설정된 사용자 메타데이터 정보를 무시하고 직접 파일 복사</br><li>Replaced로 설정하는 경우, 설정된 메타 정보에 따라 메타데이터 수정</br>타깃 경로와 원본 경로가 같은 경우, 반드시 Replaced로 설정해야 합니다. | string      | 예   |
 | XCosCopySourceIfModifiedSince   | Object가 지정된 시간 이후에 수정될 경우 작업을 수행하고, 그렇지 않을 경우 412를 반환합니다. XCosCopySourceIfNoneMatch와 함께 사용할 수 있으며, 다른 조건과 함께 사용할 경우 충돌합니다. | string      | 아니요   |
 | XCosCopySourceIfUnmodifiedSince | Object가 지정된 시간 이후에 수정되지 않을 경우 작업을 수행하고, 그렇지 않을 경우 412를 반환합니다. XCosCopySourceIfMatch 와 함께 사용할 수 있으며, 다른 조건과 함께 사용할 경우 충돌합니다. | string      | 아니요   |
 | XCosCopySourceIfMatch           | Object의 Etag와 일치할 경우 작업을 수행하고, 그렇지 않을 경우 412를 반환합니다. XCosCopySourceIfUnmodifiedSince와 함께 사용할 수 있으며, 다른 조건과 함께 사용할 경우 충돌합니다. | string      | 아니요   |
@@ -846,12 +877,12 @@ type Object struct {
 ```go
 // ObjectDeleteMultiResult에 DeleteMulti의 결과 저장
 type ObjectDeleteMultiResult struct {	
-	DeletedObjects []Object
-	Errors         []struct {
-		Key     string
-		Code    string
-		Message string
-	}
+    DeletedObjects []Object
+    Errors         []struct {
+		    Key     string
+		    Code    string
+		    Message string
+	   }
 }
 ```
 
@@ -966,12 +997,12 @@ if err != nil {
 
 ```go
 type ListMultipartUploadsOptions struct {
-	Delimiter      string
-	EncodingType   string
-	Prefix         string
-	MaxUploads     int
-	KeyMarker      string
-	UploadIDMarker string                                         
+    Delimiter      string
+    EncodingType   string
+    Prefix         string
+    MaxUploads     int
+    KeyMarker      string
+    UploadIDMarker string                                         
 }
 ```
 
@@ -981,8 +1012,8 @@ type ListMultipartUploadsOptions struct {
 | EncodingType   | 반환값의 인코딩 포맷 규정. 유효한 값: url                            | string | 아니요   |
 | Prefix         | 접두사가 Prefix인 Object key를 반환하도록 한정. prefix를 사용하여 조회할 경우 반환되는 key에는 Prefix가 포함되므로 주의해야 합니다. | string | 아니요   |
 | MaxUploads     | 반환하는 최대 multipart 수 설정. 유효한 값 범위: 1~1000, 기본값: 1000   | int | 아니요   |
-| KeyMarker      | upload-id-marker와 함께 사용합니다.</li><li>upload-id-marker 미지정 시, ObjectName 알파벳 순서가 key-marker보다 큰 항목 열거됩니다.</li><li>upload-id-marker 지정 시, ObjectName 알파벳 순서가 key-marker보다 큰 항목이 열거되고, ObjectName 알파벳 순서가 key-marker와 동일하고 UploadID가 upload-id-marker보다 큰 항목이 열거됩니다. | string | 아니요   |
-| UploadIDMarker | key-marker와 함께 사용합니다.</li><li>key-marker 미지정 시, upload-id-marker가 무시됩니다.</li><li>key-marker 지정 시, ObjectName 알파벳 순서가 key-marker보다 큰 항목이 열거되고, ObjectName 알파벳 순서가 key-marker와 동일하고 UploadID가 upload-id-marker보다 큰 항목이 열거됩니다. | string | 아니요   |
+| KeyMarker      | upload-id-marker와 함께 사용합니다. </li><li>upload-id-marker가 지정되지 않은 경우 ObjectName 알파벳 순서가 key-marker보다 큰 항목이 열거됩니다. </li><li>upload-id-marker가 지정된 경우 ObjectName 알파벳 순서가 key-marker보다 큰 항목이 열거되고, ObjectName 알파벳 순서가 key-marker와 동일하고 UploadID가 upload-id-marker보다 큰 항목이 열거됩니다. | string | 아니요   |
+| UploadIDMarker | key-marker와 함께 사용합니다. </li><li>key-marker가 지정되지 않은 경우 upload-id-marker가 무시됩니다. </li><li>key-marker가 지정된 경우 ObjectName 알파벳 순서가 key-marker보다 큰 항목이 열거되고, ObjectName 알파벳 순서가 key-marker와 동일하고 UploadID가 upload-id-marker보다 큰 항목이 열거됩니다.</li> | string | 아니요   |
 
 
 #### 반환 결과 설명
@@ -990,21 +1021,21 @@ type ListMultipartUploadsOptions struct {
 ```go
 // ListMultipartUploadsResult에 ListMultipartUploads의 결과 저장
 type ListMultipartUploadsResult struct {
-	Bucket             string
-	EncodingType       string
-	KeyMarker          string
-	UploadIDMarker     string
+    Bucket             string
+    EncodingType       string
+    KeyMarker          string
+    UploadIDMarker     string
     NextKeyMarker      string
     NextUploadIDMarker string
     MaxUploads         int
     IsTruncated        bool
     Uploads            []struct {
-    	Key          string
-    	UploadID     string
-    	StorageClass string
-    	Initiator    *Initiator
-    	Owner        *Owner
-    	Initiated    string
+        Key          string
+        UploadID     string
+        StorageClass string
+        Initiator    *Initiator
+        Owner        *Owner
+        Initiated    string
     }
     Prefix         string
     Delimiter      string
@@ -1014,8 +1045,8 @@ type ListMultipartUploadsResult struct {
 type Initiator Owner
 // Owner가 Bucket/Object's 소유자 정의
 type Owner struct {
-	ID          string
-	DisplayName string
+    ID          string
+    DisplayName string
 }
 ```
 
@@ -1025,8 +1056,8 @@ type Owner struct {
 | EncodingType       | 기본적으로 인코딩하지 않으며, 반환값의 인코딩 방식을 규정. 옵션값: url                | string    |
 | KeyMarker          | 해당 key 값부터 시작하여 항목 열거                                      | string    |
 | UploadIDMarker     | 해당 UploadId 값부터 시작하여 항목 열거                                 | string    |
-| NextKeyMarker      | 반환 항목이 잘린 경우 NextKeyMarker를 반환하고 다음 항목의 시작점이 됨 | string    |
-| NextUploadIDMarker | 반환 항목이 잘린 경우 UploadId를 반환하고 다음 항목의 시작점이 됨     | string    |
+| NextKeyMarker      | 반환 항목이 잘린 경우 반환된 NextKeyMarker가 다음 항목의 시작점이 됩니다. | string    |
+| NextUploadIDMarker | 반환 항목이 잘린 경우 반환된 UploadId가 다음 항목의 시작점이 됩니다.     | string    |
 | MaxUploads         | 반환하는 멀티파트의 최대 수. 기본값: 최대 1000                       | string    |
 | IsTruncated        | 반환하는 멀티파트의 잘림 여부 표시                                     | bool      |
 | Uploads            | 모든 Upload 정보                                           | Container |
@@ -1039,7 +1070,7 @@ type Owner struct {
 | Initiated          | 멀티파트 업로드 시작 시간                                           | string    |
 | Prefix             | 접두사가 Prefix인 Object key를 반환하도록 한정. Prefix를 사용하여 조회할 경우 반환되는 key에는 Prefix가 포함되므로 주의해야 합니다. | struct    |
 | Delimiter          | 구분 문자는 하나의 부호입니다. object 이름에 지정 접두사가 포함되어 있고, 처음으로 나타난 delimiter 문자 사이의 object가 하나의 요소(common prefix)가 됩니다. prefix가 없는 경우 경로 처음부터 시작합니다. | string    |
-| CommonPrefixes     |  prefix에서 delimiter 사이의 동일 경로를 같은 클래스로 분류하여 Common Prefix로 정의합니다. | string    |
+| CommonPrefixes     | prefix에서 delimiter 사이의 동일한 경로를 하나로 분류하고 Common Prefix로 정의합니다. | string    |
 | ID                 | 사용자의 고유 CAM 자격 ID                                       | string    |
 | DisplayName        | 사용자 자격 ID의 약칭(UIN)                                    | string    |
 
@@ -1051,15 +1082,15 @@ type Owner struct {
 - 객체 멀티파트 업로드: 멀티파트 업로드를 초기화하고 멀티파트를 업로드하면 완료됩니다.
 - 업로드된 멀티파트를 삭제합니다.
 
->?객체 멀티파트 업로드는 [고급 인터페이스](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89)를 사용해 업로드할 수 있습니다(권장).
-
+>? 객체 멀티파트 업로드는 [고급 인터페이스](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89)를 사용해 업로드할 수 있습니다(권장).
+>
 
 <span id="INIT_MULIT_UPLOAD"></span>
 ###  멀티파트 업로드 초기화 
 
 #### 기능 설명
 
-Multipart Upload 업로드 작업을 초기화하고 해당하는 uploadId를 가져옵니다(Initiate Multipart Upload).
+Multipart Upload 작업을 초기화하고 해당하는 uploadId를 가져옵니다(Initiate Multipart Upload).
 
 #### 방법 모델
 
@@ -1084,25 +1115,25 @@ UploadID = v.UploadID
 
 ```go
 type InitiateMultipartUploadOptions struct {
-	*ACLHeaderOptions       
-	*ObjectPutHeaderOptions 
+    *ACLHeaderOptions       
+    *ObjectPutHeaderOptions 
 }
 type ACLHeaderOptions struct {
-	XCosACL              string                           
-	XCosGrantRead        string
-	XCosGrantWrite       string 
-	XCosGrantFullControl string                                           
+    XCosACL              string                           
+    XCosGrantRead        string
+    XCosGrantWrite       string 
+    XCosGrantFullControl string                                           
 } 
 type ObjectPutHeaderOptions struct {
-	CacheControl       string 
-	ContentDisposition string 
-	ContentEncoding    string 
-	ContentType        string 
-	ContentLength      int64   
-	Expires            string 
-	// 사용자 정의한 x-cos-meta-* header
-	XCosMetaXXX        *http.Header 
-	XCosStorageClass   string      
+    CacheControl       string 
+    ContentDisposition string 
+    ContentEncoding    string 
+    ContentType        string 
+    ContentLength      int64   
+    Expires            string 
+    // 사용자 정의한 x-cos-meta-* header
+    XCosMetaXXX        *http.Header 
+    XCosStorageClass   string      
 }
 
 ```
@@ -1111,8 +1142,8 @@ type ObjectPutHeaderOptions struct {
 | -------------------- | ------------------------------------------------------------ | ----------- | ---- |
 | key                  | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | string      | 예   |
 | XCosACL              | 파일의 ACL 설정. 예: private, public-read                       | string      | 아니요   |
-| XCosGrantFullControl | 권한을 부여받은 계정에 모든 권한 부여. 포맷: id="[OwnerUin]"                | string      | 아니요   |
-| XCosGrantRead        | 권한을 부여받은 계정에 읽기 권한 부여. 포맷: id="[OwnerUin]"                  | string      | 아니요   |
+| XCosGrantFullControl | 권한 피부여자에게 모든 권한 부여. 포맷: id="[OwnerUin]"                | string      | 아니요   |
+| XCosGrantRead        | 권한 피부여자에게 읽기 권한 부여. 포맷: id="[OwnerUin]"                  | string      | 아니요   |
 | XCosStorageClass     | 파일의 스토리지 유형(STANDARD, STANDARD_IA, ARCHIVE) 설정. 기본값: STANDARD | string      | 아니요   |
 | Expires              | Content-Expires 설정                                         | string      | 아니요   |
 | CacheControl         | 캐시 정책. Cache-Control 설정                                 | string      | 아니요   |
@@ -1126,9 +1157,9 @@ type ObjectPutHeaderOptions struct {
 
 ```go
 type InitiateMultipartUploadResult struct {
-	Bucket   string
-	Key      string
-	UploadID string
+    Bucket   string
+    Key      string
+    UploadID string
 } 
 ```
 
@@ -1180,7 +1211,7 @@ type ObjectUploadPartOptions struct {
 | key           | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | string    | 예   |
 | UploadId      | 멀티파트 업로드의 식별 ID. InitiateMultipartUpload에서 생성           | string    | 예   |
 | PartNumber    | 업로드하는 파트의 시리얼 넘버                                           | int       | 예   |
-| r             | 멀티파트 콘텐츠 업로드. 로컬 파일 스트림 또는 입력 스트림이 될 수 있으며, r이 `bytes.Buffer/bytes.Reader/strings.Reader`가 아닌 경우 반드시 opt.ContentLength을 지정해야 함 | io.Reader | 예   |
+| r             | 멀티파트 콘텐츠 업로드. 로컬 파일 스트림 또는 입력 스트림이 될 수 있으며, r이 `bytes.Buffer/bytes.Reader/strings.Reader`가 아닌 경우 반드시 opt.ContentLength를 지정해야 함 | io.Reader | 예   |
 | ContentLength | 전송 길이 설정                                                 | int64     | 아니요   |
 
 #### 반환 결과 설명
@@ -1229,9 +1260,9 @@ if err != nil {
 
 ```go
 type ObjectListPartsOptions struct {
-	EncodingType     string
-	MaxParts         string
-	PartNumberMarker string                                      
+    EncodingType     string
+    MaxParts         string
+    PartNumberMarker string                                      
 }
 ```
 
@@ -1241,43 +1272,43 @@ type ObjectListPartsOptions struct {
 | UploadId | 멀티파트 업로드의 식별 ID. InitiateMultipartUpload에서 생성           | string | 예   |
 | EncodingType | 반환값의 인코딩 방식 규정           | string | 아니요   |
 | MaxParts | 한 번에 반환하는 최대 항목 수. 기본값: 1000           | string | 아니요   |
-| PartNumberMarker | 기본적으로 UTF-8 이진법 순서로 열거되며, 모든 열거 값은 Marker부터 시작           | string | 아니요   |
+| PartNumberMarker | 기본적으로 UTF-8 이진법 순서대로 항목을 나열합니다. 모든 나열 항목은 marker부터 시작합니다.           | string | 아니요   |
 
 #### 반환 결과 설명
 
 ```go
 type ObjectListPartsResult struct {
-	Bucket               string
-	EncodingType         string
-	Key                  string
-	UploadID             string
-	Initiator            *Initiator
-	Owner                *Owner
-	StorageClass         string
-	PartNumberMarker     string
-	NextPartNumberMarker string
-	MaxParts             string
-	IsTruncated          bool
-	Parts                []Object
+    Bucket               string
+    EncodingType         string
+    Key                  string
+    UploadID             string
+    Initiator            *Initiator
+    Owner                *Owner
+    StorageClass         string
+    PartNumberMarker     string
+    NextPartNumberMarker string
+    MaxParts             string
+    IsTruncated          bool
+    Parts                []Object
 }
 type Initiator struct {
-	UIN         string
-	ID          string
-	DisplayName string
+    UIN         string
+    ID          string
+    DisplayName string
 }
 type Owner struct {
-	UIN         string
-	ID          string
-	DisplayName string
+    UIN         string
+    ID          string
+    DisplayName string
 }
 type Object struct {
-	Key          string
-	ETag         string
-	Size         int
-	PartNumber   int
-	LastModified string
-	StorageClass string 
-	Owner        *Owner
+    Key          string
+    ETag         string
+    Size         int
+    PartNumber   int
+    LastModified string
+    StorageClass string 
+    Owner        *Owner
 }
 ```
 
@@ -1321,14 +1352,14 @@ uploadID := UploadID
 
 opt := &cos.CompleteMultipartUploadOptions{}
 opt.Parts = append(opt.Parts, cos.Object{
-	PartNumber: 1, ETag: PartETag},
+    PartNumber: 1, ETag: PartETag},
 )
 
 _, _, err := client.Object.CompleteMultipartUpload(
-	context.Background(), key, uploadID, opt,
+    context.Background(), key, uploadID, opt,
 )
 if err != nil {
-	panic(err)
+    panic(err)
 }
 ```
 
@@ -1336,11 +1367,11 @@ if err != nil {
 
 ```go
 type CompleteMultipartUploadOptions struct {
-	Parts   []Object 
+    Parts   []Object 
 }
 type Object struct { 
-	ETag         string 
-	PartNumber   int     
+    ETag         string 
+    PartNumber   int     
 }
 ```
 
@@ -1354,10 +1385,10 @@ type Object struct {
 
 ```go
 type CompleteMultipartUploadResult struct {
-	Location string
-	Bucket   string
-	Key      string
-	ETag     string
+    Location string
+    Bucket   string
+    Key      string
+    ETag     string
 }
 
 ```
@@ -1367,7 +1398,7 @@ type CompleteMultipartUploadResult struct {
 | Location | URL 주소                                                     | string |
 | Bucket   | 버킷 이름. 포맷: BucketName-APPID, 예: examplebucket-1250000000 | string |
 | Key      | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | string |
-| ETag     | 병합된 객체 고유의 태그값. 객체 콘텐츠의 MD5 검증값이 아니므로, 객체 고유성 검사에만 사용할 수 있음. 파일 콘텐츠 검증이 필요한 경우 업로드 과정에서 단일 파트의 ETag 값 검증 가능 | string |
+| ETag     | 병합된 객체 고유의 태그 값. 객체 콘텐츠의 MD5 검증값이 아니므로, 객체 고유성 검사에만 사용할 수 있음. 파일 콘텐츠 검증이 필요한 경우 업로드 과정에서 단일 파트의 ETag 값 검증 가능 | string |
 
 <span id = "ABORT_MULIT_UPLOAD"></span>
 ###  멀티파트 업로드 중지 
@@ -1409,7 +1440,7 @@ if err != nil {
 
 #### 기능 설명
 
-업로드 인터페이스는 파일 길이에 따라 자동으로 데이터를 분할하여 사용자의 사용 진입 장벽을 낮춰 줍니다. 사용자는 멀티파트 업로드의 모든 절차에 대해 신경 쓰지 않아도 됩니다.
+업로드 인터페이스는 파일 길이에 따라 자동으로 데이터를 분할하여 사용이 편리합니다. 사용자는 멀티파트 업로드의 모든 절차를 신경 쓸 필요가 없습니다. 파일 크기가 64MB를 초과하는 경우, 멀티파트 업로드를 사용하면 PartSize 매개변수를 통해 조정할 수 있습니다.
 
 #### 방법 모델
 
@@ -1448,17 +1479,17 @@ type MultiUploadOptions struct {
 | filepath       | 로컬 파일명                                                   | string | 예   |
 | opt            | 객체 속성                                                     | Struct | 아니요   |
 | OptIni         | 객체 속성과 ACL 설정. 자세한 내용은 [InitiateMultipartUploadOptions](#.E6.96.B9.E6.B3.95.E5.8E.9F.E5.9E.8B9) 참조          | Struct | 아니요   |
-| PartSize       | 파트 크기. 단위: MB. 사용자가 지정하지 않거나 partSize <= 0로 지정하는 경우 Go SDK가 자동 분할    | int    | 아니요   |
+| PartSize       | 파트 크기(단위: MB). 사용자가 지정하지 않거나 partSize <= 0으로 지정하는 경우 Go SDK가 자동 분할. 최신 버전의 기본 크기는 64MB    | int    | 아니요   |
 | ThreadPoolSize | 스레드 풀 크기. 기본값: 1                                          | int    | 아니요   |
 
 #### 반환 결과 설명
 
 ```go
 type CompleteMultipartUploadResult struct {
-	Location string
-	Bucket   string
-	Key      string
-	ETag     string
+    Location string
+    Bucket   string
+    Key      string
+    ETag     string
 }
 
 ```
@@ -1468,13 +1499,13 @@ type CompleteMultipartUploadResult struct {
 | Location | URL 주소                                                     | string |
 | Bucket   | 버킷 이름. 포맷: BucketName-APPID, 예: examplebucket-1250000000 | string |
 | Key      | 객체 키(Key)는 객체의 버킷 내 고유 식별자. 예: 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`에서 객체 키는 doc/pic.jpg임 | string |
-| ETag     | 병합된 객체 고유의 태그값. 객체 콘텐츠의 MD5 검증값이 아니므로, 객체 고유성 검사에만 사용할 수 있음. 파일 콘텐츠 검증이 필요한 경우 업로드 과정에서 단일 파트의 ETag 값 검증 가능 | string |
+| ETag     | 병합된 객체 고유의 태그 값. 객체 콘텐츠의 MD5 검증값이 아니므로, 객체 고유성 검사에만 사용할 수 있음. 파일 콘텐츠 검증이 필요한 경우 업로드 과정에서 단일 파트의 ETag 값 검증 가능 | string |
 
 ### 객체 다운로드
 
 #### 기능 설명
 
-멀티파트 다운로드 인터페이스는 객체 길이에 따라 자동으로 Range를 사용해 데이터를 다운로드하여 동시 다운로드를 구현합니다.
+멀티파트 다운로드 인터페이스는 객체 길이에 따라 자동으로 Range를 사용해 데이터를 다운로드하여 동시 다운로드를 구현합니다. 객체가 64MB를 초과하는 경우, Range 방식으로 파일을 다운로드하면 PartSize 매개변수를 통해 조정할 수 있습니다.
 
 #### 방법 모델
 
@@ -1518,10 +1549,10 @@ type MultiDownloadOptions struct {
 | filepath       | 로컬 파일명                                                   | string | 예   |
 | opt            | 객체 매개변수 다운로드                                                 | Struct | 아니요   |
 | Opt            | 요청 매개변수. 자세한 내용은 [ObjectGetOptions](#.E4.B8.8B.E8.BD.BD.E5.AF.B9.E8.B1.A1) 참조          | Struct | 아니요   |
-| PartSize       | 파트 크기. 단위: MB. 사용자가 지정하지 않거나 partSize <= 0로 지정하는 경우 Go SDK가 자동 분할    | int64    | 아니요   |
+| PartSize       | 파트 크기(단위: MB). 사용자가 지정하지 않거나 partSize <= 0으로 지정하는 경우 Go SDK가 자동 분할. 최신 버전 기본값은 64MB   | int64    | 아니요   |
 | ThreadPoolSize | 스레드 풀 크기. 기본값: 1                                          | int    | 아니요   |
 | CheckPoint     | 중단 지점부터 이어서 전송 활성화 여부. 기본값: false                                | bool   | 아니요   |
-| CheckPointFile | 중단 지점부터 이어서 전송 활성화 시, 다운로드 진행률을 저장하는 파일 경로 표시. 기본 경로: <filepath>.cosresumabletask. 다운로드 완료 후 해당 진행률 파일은 삭제됨 | string   | 아니요   |
+| CheckPointFile | 중단 지점부터 이어서 전송 활성화 시, 다운로드 진행률을 저장하는 파일 경로 표시. 기본 경로: &lt;filepath>.cosresumabletask. 다운로드 완료 후 해당 진행률 파일은 삭제됨 | string   | 아니요   |
 
 #### 반환 결과 설명
 

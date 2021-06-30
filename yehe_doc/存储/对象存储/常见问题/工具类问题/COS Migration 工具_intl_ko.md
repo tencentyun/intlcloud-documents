@@ -31,9 +31,28 @@
 Windows 환경의 경우 Microsoft Visual Studio 2015 환경에서 컴파일해야 합니다. 해당 오류가 보고되는 경우 [Visual C++ Redistributable for Visual Studio 2015](https://www.microsoft.com/zh-CN/download/details.aspx?id=48145) 설치가 필요합니다.
 
 ### 로그 레벨은 어떻게 수정하나요?
-src/main/resources/log4j.properties 파일을 수정합니다. DEBUG, INFO, ERROR와 같은 log4j.rootLogger의 값을 해당하는 로그 레벨에 복사합니다.
+src/main/resources/log4j.properties 파일을 수정합니다. log4j.rootLogger의 값을 DEBUG, INFO, ERROR와 같은 해당 로그 레벨에 복사합니다.
 
 ### Linux 환경에서 /tmp/librocksdbjnixxx.so: ELF file OS ABI invalid 오류가 보고됩니다. 어떻게 처리해야 하나요?
 Linux 환경에서는 툴에 IFUNC 지원이 필요합니다. 실행 환경에서 binutils 2.20 버전 이상을 유지하십시오.
 
-기타 문제가 발생한 경우 마이그레이션 툴을 재실행해 보십시오. 여전히 오류가 발생하는 경우 설정 정보(키 정보 숨김 필요) 및 log 디렉터리를 패키징하여 [고객센터](https://intl.cloud.tencent.com/support)로 문의하십시오.
+기타 문제가 발생한 경우 마이그레이션 툴을 재실행해 보십시오. 여전히 오류가 발생하는 경우 설정 정보(키 정보 숨김 필요) 및 log 디렉터리를 패키징한 후 [고객센터](https://intl.cloud.tencent.com/contact-sales)로 문의하십시오.
+
+
+### COS Migration을 사용해 3rd party 데이터를 Tencent Cloud에 마이그레이션할 때 로컬에서 데이터를 풀링해야 하나요?
+
+COS Migration은 3rd party 원본 주소 데이터를 COS에 빠르게 마이그레이션할 수 있으며, 로컬에서 데이터를 풀링할 필요가 없습니다. 자세한 내용은 [COS Migration 툴](https://intl.cloud.tencent.com/document/product/436/15392) 문서를 참조하십시오.
+
+현재 지원하는 마이그레이션 유형은 다음과 같습니다.
+
+| migrateType       | 설명                          |
+| :---------------- | :---------------------------- |
+| migrateLocal      | 로컬에서 COS로 마이그레이션              |
+| migrateAws        | AWS S3에서 COS로 마이그레이션          |
+| migrateAli        | Alibaba OSS에서 COS로 마이그레이션         |
+| migrateQiniu      | QINIU에서 COS로 마이그레이션              |
+| migrateUrl        | 다운로드 URL을 COS로 마이그레이션           |
+| migrateBucketCopy | 원본 Bucket에서 타깃 Bucket으로 복사|
+| migrateUpyun      | Upyun에서 COS로 마이그레이션            |
+
+

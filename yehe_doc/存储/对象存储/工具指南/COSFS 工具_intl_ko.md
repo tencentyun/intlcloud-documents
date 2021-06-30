@@ -1,5 +1,3 @@
-
-
 ## 기능 설명 
 
 COSFS 툴은 COS 버킷을 로컬로 마운트하는 기능을 제공하여 로컬 파일 시스템을 사용하듯이 직접 Tencent Cloud COS에 있는 객체를 조작할 수 있습니다. COSFS는 다음과 같은 주요 기능을 제공합니다.
@@ -10,6 +8,7 @@ COSFS 툴은 COS 버킷을 로컬로 마운트하는 기능을 제공하여 로�
 
 ## 제한성
 **COSFS는 S3FS를 기반으로 구축되어 읽기 및 쓰기 작업 시 디스크를 통해 전달됩니다. 마운트 후 파일에 대한 간단한 관리에만 적합하며, 로컬 파일 시스템의 일부 기능 및 사용법은 제공되지 않습니다. 성능 또한 CBS 또는 CFS를 대체할 수 없습니다.** 다음과 같은 부적합한 시나리오에 유의하십시오.
+
 - 랜덤 또는 추가 파일 작성 시 전체 파일을 다운로드하고 재업로드합니다. Bucket과 동일한 리전의 CVM을 사용해 파일의 업로드 및 다운로드 속도를 높일 수 있습니다.
 - 여러 클라이언트에 동일한 COS 버킷을 마운트하는 경우 사용자가 자체적으로 각 클라이언트를 조정하는 행위에 종속됩니다. 예: 여러 클라이언트에서 동일한 파일 쓰기 방지 등
 - 파일/폴더의 rename 작업에는 원자성(Atomicity)이 없습니다.
@@ -25,16 +24,24 @@ Ubuntu, CentOS, SUSE, macOS 주요 시스템을 지원합니다.
 COSFS는 패키지 방식과 컴파일 소스 코드 방식의 두 가지 설치 방법을 제공합니다.
 
 
-### 방법1: 패키지로 설치하기
+### 방법1: 설치 패키지로 설치하기
 >?해당 방법은 Ubuntu, CentOS 주요 시스템을 지원합니다.
+>
 
 #### Ubuntu 시스템
 
-1. 해당하는 시스템의 COSFS 설치 패키지 다운로드
-```shell
+1. 시스템 버전에 따라 해당하는 설치 패키지를 선택합니다. 현재 지원하는 Ubuntu 릴리스 버전은 Ubuntu14.04, Ubuntu16.04, Ubuntu18.04, Ubuntu20.04r를 포함합니다.
+```plaintext
+#Ubuntu14.04
+wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu14.04_amd64.deb
+#Ubuntu16.04
 wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu16.04_amd64.deb
+#Ubuntu18.04
+wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu18.04_amd64.deb
+#Ubuntu20.04
+wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu20.04_amd64.deb
 ```
-2. 설치
+2. 설치(예시: Ubuntu16.04)
 ```shell
 sudo dpkg -i cosfs_1.0.19-ubuntu16.04_amd64.deb
 ```
@@ -42,21 +49,27 @@ sudo dpkg -i cosfs_1.0.19-ubuntu16.04_amd64.deb
 #### CentOS 시스템
 
 1. 종속 설치
-```shell
-sudo yum install  libxml2-devel libcurl-devel -y
+```plaintext
+sudo yum install libxml2-devel libcurl-devel -y
 ```
-2. 해당하는 시스템의 COSFS 설치 패키지 다운로드
-```shell
+2. 시스템 버전에 따라 해당하는 설치 패키지를 선택합니다. 현재 지원하는 CentOS 릴리스 버전은 CentOS6.5, CentOS7.0을 포함합니다.
+```plaintext
+#CentOS6.5
+wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs-1.0.19-centos6.5.x86_64.rpm
+#CentOS7.0
 wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs-1.0.19-centos7.0.x86_64.rpm
 ```
-3. 설치
+3. 설치(예시: CentOS7.0)
 ```shell
-rpm -ivh cosfs-1.0.19-centos7.0.x86_64.rpm
+sudo rpm -ivh cosfs-1.0.19-centos7.0.x86_64.rpm
 ```
-
+>? 설치 시 오류가 보고되고 `conflicts with file from package fuse-libs-*`가 표시되는 경우, `--force` 매개변수를 추가한 후 다시 설치합니다.
+>
 
 ### 방법2: 컴파일 소스 코드로 설치하기
->?해당 방법은 Ubuntu, CentOS, SUSE, macOS 주요 시스템을 지원합니다.
+
+>? 해당 방법은 Ubuntu, CentOS, SUSE, macOS 주요 시스템을 지원합니다.
+>
 
 
 #### 1. 종속 소프트웨어 설치 
@@ -66,17 +79,14 @@ COSFS의 컴파일 설치는 automake, git, libcurl-devel, libxml2-devel, fuse-d
 ```shell
 sudo apt-get install automake autotools-dev g++ git libcurl4-gnutls-dev libfuse-dev libssl-dev libxml2-dev make pkg-config fuse
 ```
-
 - CentOS 시스템에서 종속 소프트웨어 설치
 ```shell
 sudo yum install automake gcc-c++ git libcurl-devel libxml2-devel fuse-devel make openssl-devel fuse
 ```
-
 - SUSE 시스템에서 종속 소프트웨어 설치
 ```shell
 sudo zypper install gcc-c++ automake make libcurl-devel libxml2-devel openssl-devel pkg-config
 ```
-
 - macOS 시스템에서 종속 소프트웨어 설치
 ```shell
 brew install automake git curl libxml2 make pkg-config openssl 
@@ -124,7 +134,6 @@ echo "/usr/local/lib" >> /etc/ld.so.conf
 ldconfig   #동적 링크 라이브러리 업데이트
 pkg-config --modversion fuse  #fuse 버전 넘버 조회. “2.9.4”가 표시되는 경우 fuse 2.9.4 설치가 완료되었다는 의미입니다. 
 ```
-
 - SUSE 시스템에서는 fuse 2.8.4 이상 버전을 직접 설치해야 하며 설치 명령어 예시는 다음과 같습니다.
 >!설치 시 `example/fusexmp.c` 파일의 222행 내용을 주석 처리해야 합니다. 주석 처리하지 않을 경우 make에 오류가 발생합니다. `/*content*/`로 주석 처리합니다.
 ```shell
@@ -141,7 +150,6 @@ echo "/usr/local/lib" >> /etc/ld.so.conf
 ldconfig   #동적 링크 라이브러리 업데이트
 pkg-config --modversion fuse   #fuse 버전 넘버 조회. “2.9.4”가 표시되는 경우 fuse2.9.4 설치가 완료되었다는 의미입니다. 
 ```
-
 - macOS에서 configure 작업 시 다음과 같은 안내가 표시될 수 있습니다.
 ```shell
 configure: error: Package requirements (fuse >= 2.7.3 libcurl >= 7.0 libxml-2.0 >2.6 libcrypto >= 0.9) were not met
@@ -164,47 +172,44 @@ echo <BucketName-APPID>:<SecretId>:<SecretKey> > /etc/passwd-cosfs
 chmod 640 /etc/passwd-cosfs
 ```
 
->?&lt;&gt;의 매개변수를 사용자 정보로 변경해야 합니다.
+>? &lt;&gt;의 매개변수를 사용자 정보로 변경해야 합니다.
 >- &lt;BucketName-APPID&gt;는 버킷 이름 포맷입니다. 버킷 이름 생성 규칙에 대한 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오.
 >- &lt;SecretId&gt;와 &lt;SecretKey&gt;는 키 정보입니다. CAM 콘솔의 [Tencent Cloud API 키 관리](https://console.cloud.tencent.com/cam/capi)에서 조회 및 생성할 수 있습니다.
->- 키는 $HOME/.passwd-cosfs 파일에서 설정하거나 -opasswd_file=[path]로 키 파일 경로를 지정할 수도 있습니다. 이 경우 키 파일의 권한 값을 600으로 설정해야 합니다.
+>- 키는 $HOME/.passwd-cosfs 파일에서 설정하거나 -opasswd_file=[path]로 키 파일 경로를 지정할 수 있으며, 키 파일의 권한 값은 600으로 설정해야 합니다.
+> 
 
-**예시:**
+**예시: **
 
 ```shell
 echo examplebucket-1250000000:AKIDHTVVaVR6e3****:PdkhT9e2rZCfy6**** > /etc/passwd-cosfs
 chmod 640 /etc/passwd-cosfs
 ```
 
->!COSFS V1.0.5 이하 버전의 구성 파일 포맷은 다음과 같습니다.
->```shell
-><BucketName>:<SecretId>:<SecretKey>
->```
+>! V1.0.5 이하 버전 COSFS의 구성 파일 포맷은 &lt;BucketName>:&lt;SecretId>:&lt;SecretKey>입니다.
+>
+
 
 ### 2. 툴 실행
 키 파일에 설정한 버킷을 지정 디렉터리에 마운트하는 명령 라인은 다음과 같습니다.
 
 ```shell
-cosfs <BucketName-APPID> <MountPoint> -ourl=<CosDomainName> -odbglevel=info -oallow_other
+cosfs <BucketName-APPID> <MountPoint> -ourl=cos.<Region>.myqcloud.com -odbglevel=info -oallow_other
 ```
-다음을 참고하십시오.
-- &lt;MountPoint&gt;:는 로컬 마운트 디렉터리(예: `/mnt`)입니다.
-- &lt;CosDomainName&gt;은 버킷의 해당 액세스 도메인으로, 형식은 `http://cos.<Region>.myqcloud.com`입니다. XML API에 적용하는 경우 해당 매개변수에 버킷 이름을 사용하지 마십시오. 여기서 &lt;Region&gt;은 리전의 약칭(예: ap-guangzhou, eu-frankfurt 등)입니다. 리전 약칭에 대한 자세한 정보는 [가용 리전](https://intl.cloud.tencent.com/document/product/436/6224)을 참조하십시오.
-- -odbglevel: 로그 레벨을 지정합니다.
-- -oallow_other: 마운트되지 않은 사용자의 마운트 폴더 액세스를 허용합니다.
+그 중
+- &lt;MountPoint&gt;는 로컬 마운트 디렉터리(예시: `/mnt`)입니다.
+- &lt;Region&gt;는 리전 약칭입니다(예시: ap-guangzhou, eu-frankfurt 등). 리전 약칭에 대한 자세한 정보는 [가용 리전](https://intl.cloud.tencent.com/document/product/436/6224)을 참조하십시오.
+- -odbglevel은 로그 레벨을 지정합니다. 기본 값은 crit이며, 옵션값은 crit, error, warn, info, debug입니다.
+- -oallow_other는 마운트되지 않은 사용자의 마운트 폴더 액세스를 허용합니다.
 
-
-**예시:**
+**예시: **
 
 ```shell
 mkdir -p /mnt/cosfs
 cosfs examplebucket-1250000000 /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud.com -odbglevel=info -onoxattr -oallow_other
 ```
 
->!COSFS V1.0.5 이하 버전의 마운트 명령어는 다음과 같습니다.
->```shell
->cosfs <APPID>:<BucketName> <MountPoint> -ourl=<CosDomainName> -oallow_other
->```
+>! V1.0.5 이하 버전 COSFS의 마운트 명령어는 cosfs &lt;APPID>:&lt;BucketName> &lt;MountPoint> -ourl=&lt;CosDomainName> -oallow_other입니다.
+>
 
 
 #### 3. 버킷 언마운트
