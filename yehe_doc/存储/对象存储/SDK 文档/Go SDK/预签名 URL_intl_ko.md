@@ -21,12 +21,12 @@ func (s *ObjectService) GetPresignedURL(ctx context.Context, httpMethod, name, a
 
 ## 영구 키로 사전 서명된 요청 예시
 
-#### 요청 예시 업로드
+#### 업로드 요청 예시
 
 [//]: # (.cssg-snippet-get-presign-upload-url)
 ```go
-ak := "COS_SECRETID"
-sk := "COS_SECRETKEY"
+ak := "SECRETID"
+sk := "SECRETKEY"
 
 name := "exampleobject"
 ctx := context.Background()
@@ -57,12 +57,12 @@ if err != nil {
 }
 ```
 
-#### 요청 예시 다운로드
+#### 다운로드 요청 예시
 
 [//]: # (.cssg-snippet-get-presign-download-url)
 ```go
-ak := "COS_SECRETID"
-sk := "COS_SECRETKEY"
+ak := "SECRETID"
+sk := "SECRETKEY"
 name := "exampleobject"
 ctx := context.Background()
 // 1. 일반적인 방식을 통한 객체 다운로드
@@ -99,8 +99,8 @@ type URLToken struct {
 
 func main() {
 	// 보유한 임시 키로 변경
-	tak := os.Getenv("COS_SECRETID")
-	tsk := os.Getenv("COS_SECRETKEY")
+	tak := os.Getenv("SECRETID")
+	tsk := os.Getenv("SECRETKEY")
 	token := &URLToken{
 		SessionToken: "<token>",
 	}
