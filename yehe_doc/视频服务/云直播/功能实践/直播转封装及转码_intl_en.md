@@ -224,7 +224,7 @@ You can add a watermark in the [CSS console](#W_control) or through a [server AP
 1. Call the [AddLiveWatermark](https://intl.cloud.tencent.com/document/product/267/30826) API to add a watermark by setting the watermark name and other parameters.
 2. Call the [CreateLiveWatermarkRule](https://intl.cloud.tencent.com/document/product/267/30825) API to create a watermark rule. Set `DomainName` (push domain name) and `WatermarkId` (returned in step 1). Use the same `AppName` as the `AppName` in push and playback addresses, which is `live` by default.
 
->! Using the watermark feature will incur standard transcoding fees.
+Note: Using the watermark feature will incur standard transcoding fees.
 
 
 
