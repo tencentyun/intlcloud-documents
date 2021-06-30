@@ -4,7 +4,7 @@ You can export the list of instances on a specified host in the console and cust
 
 1. Log in to the [CDH Console](https://console.cloud.tencent.com/cvm/cdh).
 
-2. Select a region. Click the ID/host name of the host for instance list export to open the host details page, switch to the CVM list tab and click the download icon as shown below.
+2. Select a region. Click the **ID/Host Name** of the target dedicated host to enter its details page, select the CVM list tab, and click **Download** as shown below.
 
    ![Instance list export entry](https://main.qcloudimg.com/raw/a0f8ddc84abdcb88c03560e5e5bebbe8.jpg)
 
