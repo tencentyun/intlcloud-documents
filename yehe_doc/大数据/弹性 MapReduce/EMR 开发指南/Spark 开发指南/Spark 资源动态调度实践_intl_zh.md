@@ -2,11 +2,11 @@
 
 确定您已经开通了腾讯云，并且创建了一个 EMR 集群。在创建 EMR 集群的时候，需要在软件配置界面选择 spark_hadoop 组件。
 
-Spark 安装在 EMR 云服务器的`/usr/local/service`路径下（`/usr/local/service/spark`）。
+Spark 安装在 EMR 云服务器的 `/usr/local/service` 路径下（`/usr/local/service/spark`）。
 
 ## 拷贝 jar 包
 
-需要将`spark-<version>-yarn-shuffle.jar`拷贝到集群各个节点的`/usr/local/service/hadoop/share/hadoop/yarn/lib`目录路径下。
+需要将 `spark-<version>-yarn-shuffle.jar` 拷贝到集群各个节点的 `/usr/local/service/hadoop/share/hadoop/yarn/lib` 目录路径下。
 
 ### 方法一：SSH 控制台操作
 
@@ -14,13 +14,13 @@ Spark 安装在 EMR 云服务器的`/usr/local/service`路径下（`/usr/local/s
 ![](https://main.qcloudimg.com/raw/82cbab09e1ca217e813c751dda026391.png)
 2. 依次登录每个 NodeManager 所在节点。
  - 首先，需要登录 EMR 集群中的任意机器，最好是登录到 Master 节点。登录 EMR 的方式请参考 [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436)，这里我们可以使用 XShell 登录 Master 节点。
- - 使用 SSH 登录到其他 NodeManager 所在节点。指令为`ssh $user@$ip`，$user 为登录的用户名，$ip 为远程节点 IP（即步骤1中确定的 IP 地址）。
+ - 使用 SSH 登录到其他 NodeManager 所在节点。指令为 `ssh $user@$ip`，$user 为登录的用户名，$ip 为远程节点 IP（即步骤1中确定的 IP 地址）。
 ![](https://main.qcloudimg.com/raw/d83d844103c4a6050a83700fadaf79dd.png)
  - 验证已经成功切换。
 ![](https://main.qcloudimg.com/raw/30f0578b2cc19daebbdd82df8d95c13e.png)
-3. 搜索`spark-<version>-yarn-shuffle.jar`文件路径。
+3. 搜索 `spark-<version>-yarn-shuffle.jar` 文件路径。
 ![](https://main.qcloudimg.com/raw/4927797f6ff300662f14dd3d0ae3b22a.png)
-4. 将`spark-<version>-yarn-shuffle.jar`拷贝到`/usr/local/service/hadoop/share/hadoop/yarn/lib`下。
+4. 将 `spark-<version>-yarn-shuffle.jar` 拷贝到 `/usr/local/service/hadoop/share/hadoop/yarn/lib` 下。
 ![](https://main.qcloudimg.com/raw/fab8b0abf34de2f4608924e9982f28ac.png)
 5. 退出登录，并切换其余节点。
 ![](https://main.qcloudimg.com/raw/a9d4b368807a974b618202af0173357c.png)
@@ -72,11 +72,11 @@ done
 ## 修改 Yarn 配置
 1. 在【集群服务】>【YARN】组件中，选择【操作】>【配置管理】。选中配置文件`yarn-site.xml`，【维度范围】选择“集群维度”（集群维度的配置项修改将应用到所有节点），然后单击【修改配置】。
 ![](https://main.qcloudimg.com/raw/58e2684f32c23c9abb05d49cf2e80d26.png)
-2. 修改配置项`yarn.nodemanager.aux-services`，添加 spark_shuffle。
+2. 修改配置项 `yarn.nodemanager.aux-services`，添加 spark_shuffle。
 ![](https://main.qcloudimg.com/raw/d264a6708b76c10d3239dd2eb50a09a8.png)
-3. 新增配置项`yarn.nodemanager.aux-services.spark_shuffle.class`，该配置项的值设置为`org.apache.spark.network.yarn.YarnShuffleService`。
+3. 新增配置项 `yarn.nodemanager.aux-services.spark_shuffle.class`，该配置项的值设置为 `org.apache.spark.network.yarn.YarnShuffleService`。
 ![](https://main.qcloudimg.com/raw/83993fcd50f163befd89dde88de4edae.png)
-4. 新增配置项`spark.yarn.shuffle.stopOnFailure`，该配置项的值设置为 false。
+4. 新增配置项 `spark.yarn.shuffle.stopOnFailure`，该配置项的值设置为 false。
 ![](https://main.qcloudimg.com/raw/c068045128997e8006c977ef7f622b6d.png)
 5. 保存设置并下发，重启 YARN 组件使得配置生效。
 
@@ -139,7 +139,7 @@ done
 测试环境下，共两个部署 NodeManager 服务的节点，每个节点资源配置为4核 CPU、8GB内存，集群总资源为8核 CPU、16GB内存。
 ###  2. 测试任务说明
 #### 测试一：
-- 在 EMR 控制台中，进入`/usr/local/service/spark`目录，切换 hadoop 用户，使用`spark-submit`提交一个任务，数据需存储在 hdfs 上。
+- 在 EMR 控制台中，进入 `/usr/local/service/spark` 目录，切换 hadoop 用户，使用 `spark-submit` 提交一个任务，数据需存储在 hdfs 上。
 ```
 [root@172 ~]# cd /usr/local/service/spark/
 [root@172 spark]# su hadoop
@@ -156,7 +156,7 @@ done
 
 #### 测试二：
 
-- 在 EMR 控制台中，进入`/usr/local/service/spark`目录，切换 hadoop 用户，使用`spark-sql`启动 SparkSQL 交互式控制台。交互式控制台被设置成占用测试集群的大部分资源，观察设置资源动态调度前后资源分配情况。
+- 在 EMR 控制台中，进入 `/usr/local/service/spark` 目录，切换 hadoop 用户，使用 `spark-sql` 启动 SparkSQL 交互式控制台。交互式控制台被设置成占用测试集群的大部分资源，观察设置资源动态调度前后资源分配情况。
 ```
 [root@172 ~]# cd /usr/local/service/spark/
 [root@172 spark]# su hadoop
@@ -173,6 +173,6 @@ done
 ![](https://main.qcloudimg.com/raw/ea7f6348bd1359ede90341bd1cb87397.png)
 - 提交 SparkPi 任务后，SparkSQL 资源占用率27.8%。
 
-结论：SparkSQL 任务虽然在提交时申请了大量资源，但并未执行任何分析任务，因此实际上有大量空闲的资源。当超过`spark.dynamicAllocation.executorIdleTimeout`设置时间时，空闲的 executor 被释放，其他任务获得资源。在本次测试中 SparkSQL 任务的集群资源占用率从90%降至28%，空闲资源分配给圆周率计算任务，自动调度有效。
+结论：SparkSQL 任务虽然在提交时申请了大量资源，但并未执行任何分析任务，因此实际上有大量空闲的资源。当超过 `spark.dynamicAllocation.executorIdleTimeout` 设置时间时，空闲的 executor 被释放，其他任务获得资源。在本次测试中 SparkSQL 任务的集群资源占用率从90%降至28%，空闲资源分配给圆周率计算任务，自动调度有效。
 
->?配置项`spark.dynamicAllocation.executorIdleTimeout`的值将影响资源动态调度的快慢，测试发现资源调度用时基本与该值相等，建议您根据实际需求调整该配置项的值以获得最佳性能。
+>?配置项 `spark.dynamicAllocation.executorIdleTimeout` 的值将影响资源动态调度的快慢，测试发现资源调度用时基本与该值相等，建议您根据实际需求调整该配置项的值以获得最佳性能。
