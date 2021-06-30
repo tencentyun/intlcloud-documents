@@ -103,7 +103,7 @@ cos.putBucketAcl({
 function(err, data) { ... }
 ```
 
-| 매개변수 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 매개변수 설명                                                     | 유형   |
+| 매개변수 이름 | 매개변수 설명                                                     | 유형   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ |
 | err                                                          | 요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 완료 시 빈칸으로 표시됩니다. 자세한 내용은 [에러 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참조하십시오. | Object |
 | - statusCode                                                 | 요청 시 반환되는 HTTP 상태 코드(예시: 200, 403, 404 등)                  | Number |
@@ -169,7 +169,7 @@ cos.getBucketAcl({
 function(err, data) { ... }
 ```
 
-| 매개변수 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 매개변수 설명                                                    | 유형        |
+| 매개변수 이름 | 매개변수 설명                                                    | 유형        |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
 | err                                                          | 요청 과정에서 오류 발생 시 반환되는 객체에는 네트워크 오류와 작업 오류가 포함됩니다. 요청 완료 시 빈칸으로 표시됩니다. 자세한 내용은 [에러 코드](https://intl.cloud.tencent.com/document/product/436/7730) 문서를 참조하십시오. | Object      |
 | - statusCode                                                 | 요청 시 반환되는 HTTP 상태 코드(예시: 200, 403, 404 등)                  | Number      |
