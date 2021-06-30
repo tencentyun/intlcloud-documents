@@ -44,8 +44,8 @@ Currently, you cannot specify a bootstrap action during scaling in the console. 
 If you want to specify a bootstrap action for scaling, use APIs to scale. If a bootstrap action is specified for scaling, it will be executed during scaling; otherwise, the one specified during cluster creation will be executed.
 
 Logs and script files to be executed are stored in the `/usr/local/service/scripts/` directory. The script system log is `script_syslog`.
-- Naming convention: "execution sequence" + "_" + "running occasion" + "script name" + "_" + stderr.
-- Naming convention: "execution sequence" + "_" + "running occasion" + "script name" + "_" + stdout.
+- Naming convention: "execution sequence" + "\_" + "running occasion" + "script name" + "\_" + stderr.
+- Naming convention: "execution sequence" + "\_" + "running occasion" + "script name" + "\_" + stdout.
 >!
 >The scripts will be executed on all types of nodes, and the script files and output log files of script execution will be stored on each node.
 > Bootstrap script content needs to be encoded in UTF-8.
