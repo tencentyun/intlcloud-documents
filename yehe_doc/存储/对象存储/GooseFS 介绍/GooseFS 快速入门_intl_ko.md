@@ -48,12 +48,14 @@ $ ./bin/goosefs-start.sh local SudoMount
 
 ## GooseFS를 사용하여 COS 마운트
 1. Namespace를 생성하여 COS를 마운트합니다.
+
 ```plaintext
 $ goosefs ns create myNamespace cosn://bucketName-125xxxxxx/ 3TB
 --option fs.cosn.userinfo.secretId=AKIDxxxxxxxxxxxxxx \
 --option fs.cosn.userinfo.secretKey=xxxxxxxxxxxxxxxxx \
 --option fs.cosn.bucket.region=ap-guangzhou \
 ```
+
 >! Namespace 생성 시 반드시 –-option 매개변수와 Hadoop-COS(COSN)의 모든 필수 매개변수를 지정해야 합니다. 필수 매개변수에 대한 자세한 내용은 [Hadoop 툴](https://intl.cloud.tencent.com/document/product/436/6884)을 참조하십시오. Namespace 생성 시 읽기/쓰기 정책(rPolicy/wPolicy)을 지정하지 않은 경우, 구성 파일에서 지정한 read/write type이나 기본값(CACHE/CACHE_THROUGH)을 사용합니다.
 >
 2. 다음 명령어와 같이, 마운트 성공 후 ls 명령어를 통해 클러스터에서 생성한 모든 namespace를 열거할 수 있습니다.
@@ -95,10 +97,12 @@ NamespaceStatus{name=myNamespace, path=/myNamespace, ttlTime=-1, ttlAction=DELET
 ## GooseFS를 사용하여 Table 데이터 프리패치
 
 1. GooseFS는 Hive Table의 데이터를 GooseFS로 프리패치할 수 있습니다. 프리패치 전에 관련 DB를 GooseFS에 연결해야 하며, 관련 명령어는 다음과 같습니다.
+
 ```plaintext
 $ goosefs table attachdb --db test_db hive thrift://
 172.16.16.22:7004 test_for_demo
 ```
+
 >! 명령어의 thrift는 실제 Hive Metastore 주소를 입력해야 합니다.
 >
 2. DB 추가 후 ls 명령어를 통해 현재 연결 중인 DB와 Table 정보를 조회할 수 있습니다.
@@ -153,12 +157,14 @@ $ goosefs fs
 $ goosefs fs ls /
 ```
 3. `copyFromLocal` 명령어를 통해 데이터를 로컬에서 GooseFS로 복사할 수 있습니다.
+
 ```plaintext
 $ goosefs fs copyFromLocal LICENSE /LICENSE
 Copied LICENSE to /LICENSE
 $ goosefs fs ls /LICENSE
 -rw-r--r--  hadoop         supergroup               20798       NOT_PERSISTED 03-26-2021 16:49:37:215   0% /LICENSE
 ```
+
 4. `cat` 명령어를 통해 파일 내용을 조회할 수 있습니다.
 ```plaintext
 $ goosefs fs cat /LICENSE                                                                         
@@ -177,11 +183,14 @@ persisted file /LICENSE with size 26847
 ## GooseFS를 사용하여 신속하게 파일 업로드/다운로드
 
 1. CFS 상태를 검사하여 파일이 캐시되었는지 확인합니다. 파일 상태가 `PERSISTED`인 경우 파일이 메모리에 저장된 것을 의미하며, 파일 상태가 `NOT_PERSISTED`인 경우 파일이 메모리에 없음을 의미합니다.
+
 ```plaintext
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 NOT_PERSISTED 01-09-2018 16:35:01:002   0% /data/cos/sample_tweets_150m.csv
 ```
+
 2. 파일에 단어 'tencent'가 몇 개 있는지 통계를 낸 후 작업 소요 시간을 계산합니다.
+
 ```plaintext
 $ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c kitten
 889
@@ -189,7 +198,9 @@ real	0m22.857s
 user	0m7.557s
 sys	0m1.181s
 ```
+
 3. 해당 데이터 캐시를 메모리에 저장하여 조회 속도를 효과적으로 향상시킬 수 있습니다. 자세한 예시는 다음과 같습니다.
+
 ```plaintext
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 PERSISTED 01-09-2018 16:35:01:002   0% /data/cos/sample_tweets_150m.csv
@@ -205,6 +216,7 @@ sys	    0m0.243s
 ## GooseFS 비활성화
 
 다음과 같은 명령어를 통해 GooseFS를 비활성화할 수 있습니다.
+
 ```plaintext
 $ ./bin/goosefs-stop.sh local
 ```
