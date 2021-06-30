@@ -56,7 +56,7 @@ The `trtcliveroomdemo` folder in the source code contains two subfolders: `ui` a
 [](id:model)
 ## Implementing A Custom UI
 
-The `trtcliveroomdemo` folder in the [source code](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCLiveRoomDemo) contains two subfolders: `ui` and `model`. The `model` folder contains the reusable open-source component `TRTCLiveRoom`. You can find the component’s APIs in `TRTCLiveRoom.swift` and use them to customize your own UI.
+The `trtcliveroomdemo` folder in the [source code] contains two subfolders: `ui` and `model`. The `model` folder contains the reusable open-source component `TRTCLiveRoom`. You can find the component’s APIs in `TRTCLiveRoom.swift` and use them to customize your own UI.
 ![](https://main.qcloudimg.com/raw/710358e4e170d44304cdb9bc991ad209.jpg)
 
 
