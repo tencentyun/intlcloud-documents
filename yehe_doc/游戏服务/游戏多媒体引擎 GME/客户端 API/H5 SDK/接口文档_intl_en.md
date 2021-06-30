@@ -30,7 +30,7 @@ This document describes how to access and debug the GME APIs for HTML5.
 Before initialization, the SDK is in the uninitialized state. A room can be entered only after the initialization authentication is performed and the SDK is initialized.
 
 ### Initializing the SDK
-For more information on how to get parameters, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/10782).
+For more information on how to get parameters, please see [Access Guide](https://intl.cloud.tencent.com/document/product/607/39698).
 This API requires the `SDKAppID` from the Tencent Cloud console and the `openId` as parameters. The `openId` uniquely identifies a user with the rules stipulated by the application developer and must be unique in the application (currently, only INT64 is supported).
 
 >!The SDK must be initialized so that a room can be entered.
