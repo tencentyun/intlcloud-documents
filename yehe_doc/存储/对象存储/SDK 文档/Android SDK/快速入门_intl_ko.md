@@ -16,7 +16,7 @@
 
 ### 방법1: 자동 통합(권장)
 
->?bintray 라이브러리는 이미 삭제되었으며, COS SDK는 mavenCentral에 마이그레이션되어 있습니다. 참조 경로가 변경되었으니 업데이트 시 새 참조 경로를 사용하십시오.
+>?bintray 라이브러리는 이미 삭제되었으며, COS SDK는 mavenCentral에 마이그레이션되어 있습니다. 참조 테이블 경로가 변경되었으니 업데이트 시 새 참조 테이블 경로를 사용하십시오.
 
 #### mavenCentral 라이브러리 사용
 
@@ -62,7 +62,7 @@ dependencies {
 
 
 
-#### beacon 리포트 기능 비활성화(5.5.8 이상 버전에 적용)
+#### beacon 리포트 기능 비활성화(5.5.8 이상 버전에 적합)
 
 SDK의 품질을 지속적으로 추적 및 최적화하여 사용자에게 더 나은 경험을 제공하기 위해 SDK에 beacon 분석 기능을 도입했습니다.
 
@@ -151,9 +151,9 @@ public static class MySessionCredentialProvider
         // 먼저 임시 키 서버로부터 키 정보가 포함된 응답 획득
 
         // 응답을 분석하여 임시 키 정보 획득
-        String tmpSecretId = "COS_SECRETID"; // 임시 키 SecretId
-        String tmpSecretKey = "COS_SECRETKEY"; // 임시 키 SecretKey
-        String sessionToken = "COS_SESSIONTOKEN"; // 임시 키 Token
+        String tmpSecretId = "SECRETID"; // 임시 키 SecretId
+        String tmpSecretKey = "SECRETKEY"; // 임시 키 SecretKey
+        String sessionToken = "SESSIONTOKEN"; // 임시 키 Token
         long expiredTime = 1556183496L;//임시 키 유효 기간 타임스탬프. 단위: 초
 
         //사용자 휴대폰 로컬 시간과의 편차가 너무 커 요청이 만료되지 않도록 서버 시간을 서명 시작 시간으로 반환할 것을 권장합니다.
@@ -178,8 +178,8 @@ QCloudCredentialProvider myCredentialProvider = new MySessionCredentialProvider(
 Tencent Cloud의 영구 키로 개발 단계에 있는 로컬 디버깅을 진행할 수 있습니다. **해당 방법은 키가 유출될 리스크가 있으니 런칭 전 반드시 임시 키로 대체하십시오.**
 
 ```java
-String secretId = "COS_SECRETID"; //영구 키 secretId
-String secretKey = "COS_SECRETKEY"; //영구 키 secretKey
+String secretId = "SECRETID"; //영구 키 secretId
+String secretKey = "SECRETKEY"; //영구 키 secretKey
 
 // keyDuration: 요청의 키 유효 시간, 단위: 초
 QCloudCredentialProvider myCredentialProvider = 
@@ -254,7 +254,8 @@ String bucket = "examplebucket-1250000000"; //버킷. 포맷: BucketName-APPID
 String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
 String srcPath = new File(context.getCacheDir(), "exampleobject")
         .toString(); //로컬 파일의 절대 경로
-//멀티파트 업로드를 초기화한 UploadId가 존재하는 경우 해당하는 uploadId 값을 대입하여 계속 전달합니다. 존재하지 않는 경우 null을 대입합니다.
+// 멀티파트 업로드를 초기화한 UploadId가 존재하는 경우 해당하는 uploadId 값을 대입하여 이어서 전송합니다. 존재하지 않는 경우 null을 대입합니다.
+// 이번 업로드 작업의 uploadid는 TransferStateListener 콜백에서 가져올 수 있습니다.
 String uploadId = null; 
 
 // 파일 업로드
@@ -287,11 +288,12 @@ cosxmlUploadTask.setCosXmlResultListener(new CosXmlResultListener() {
         }
     }
 });
-//작업 상태 콜백 설정. 작업 진행 과정을 확인할 수 있습니다.
+//작업 상태 콜백을 설정하면 작업 과정을 확인하고 uploadId를 가져와 이어서 전송할 수 있습니다.
 cosxmlUploadTask.setTransferStateListener(new TransferStateListener() {
     @Override
     public void onStateChanged(TransferState state) {
         // todo notify transfer state
+        uploadId = cosxmlUploadTask.getUploadId();  
     }
 });
 ```
