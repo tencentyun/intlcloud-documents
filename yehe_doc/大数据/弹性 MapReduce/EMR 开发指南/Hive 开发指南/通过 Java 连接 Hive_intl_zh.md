@@ -4,7 +4,7 @@ Hive 中集成了 Thrift 服务。Thrift 是 Facebook 开发的一个软件框�
 
 ## 1. 开发准备
 - 确认您已经开通了腾讯云，并且创建了一个 EMR 集群。在创建 EMR 集群的时候需要在软件配置界面选择 Hive 组件。 
-- Hive 等相关软件安装在路径 EMR 云服务器的`/usr/local/service/`路径下。
+- Hive 等相关软件安装在路径 EMR 云服务器的 `/usr/local/service/` 路径下。
 
 ## 2. 使用 Maven 来创建您的工程
 ### 查看参数
@@ -186,9 +186,9 @@ mvn package
 ```
 scp $localfile root@公网IP地址:/usr/local/service/hive
 ```
-其中，$localfile 是您的本地文件的路径加名称，root 为 CVM 服务器用户名，公网 IP 可以在 EMR 控制台的节点信息中或者在云服务器控制台查看。将打好的 jar 包上传到 EMR 集群的`/usr/local/service/hive`目录下。上传完成后，在 EMR 命令行中即可查看对应文件夹下是否有相应文件。**一定要上传具有依赖的 jar 包。**
+其中，$localfile 是您的本地文件的路径加名称，root 为 CVM 服务器用户名，公网 IP 可以在 EMR 控制台的节点信息中或者在云服务器控制台查看。将打好的 jar 包上传到 EMR 集群的 `/usr/local/service/hive` 目录下。上传完成后，在 EMR 命令行中即可查看对应文件夹下是否有相应文件。**一定要上传具有依赖的 jar 包。**
 
-登录 EMR 集群切换到 Hadoop 用户并且进入目录`/usr/local/service/hive`。接下来可以执行程序：
+登录 EMR 集群切换到 Hadoop 用户并且进入目录 `/usr/local/service/hive` 。接下来可以执行程序：
 ```
 [hadoop@172 hive]$ yarn jar $package.jar HiveTest
 ```
