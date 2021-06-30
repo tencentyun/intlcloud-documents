@@ -1,0 +1,23 @@
+도메인에 대한 조회 및 관리 권한을 더 세밀하게 설정할 수 있도록 CDN 권한 정책이 전반적으로 업그레이드되었습니다. 사용자 정의 정책 명령어를 통해 도메인별로 권한을 할당할 수 있습니다.	
+
+>?CDN2.0 인터페이스는 현재 점검 업데이트를 지원하지 않습니다. 따라서 [제품 기능 또는 프로젝트별 권한 생성]을 통한 정책 생성은 권장하지 않습니다. 조작이 편리하고 개선된 기능을 갖춘 [정책 생성기에서 생성] 또는 [태그별 권한 부여]를 권장합니다.
+
+1. [CAM 콘솔](https://console.cloud.tencent.com/cam/overview)에 로그인한 후 [정책]을 클릭하고 정책 관리 페이지로 이동하여 [사용자 정의 정책 생성]을 클릭합니다.
+![img](https://main.qcloudimg.com/raw/b986334f0d3acde5eb9526fe01d669bb.png)
+
+2. [정책 생성기에서 생성]을 선택합니다.
+![img](https://main.qcloudimg.com/raw/55a2e3b5b0011b2a8e520df6fc37ff57.png)
+
+3. 제품 선택 창에서 [CDN]을 선택하고 권한을 부여할 기능 그룹을 선택합니다. 읽기/쓰기 권한을 모두 부여하려면 [전체]를 선택합니다. 기능과 콘솔의 매핑 관계에 대한 설명은 [Action 매핑 리스트](https://intl.cloud.tencent.com/document/product/228/35229)를 참조하십시오.
+![img](https://main.qcloudimg.com/raw/43b88d53d2beb2b2c167a4a732dc6ded.png)
+
+4. 리소스 부분에 권한을 부여할 도메인을 입력한 후 [확인] 및 [다음 단계]를 클릭하면 정책을 생성할 수 있습니다. 생성한 정책을 기존 사용자/사용자 그룹에 연결하면 권한이 부여됩니다.
+	- 모든 도메인: 리소스 부분에서 [전체 리소스]를 선택하고 [확인]을 클릭합니다.
+	![img](https://main.qcloudimg.com/raw/9ddd4b97828faeadd0063d0ede3283a0.png)
+	- 단일/다중 도메인: [특정 리소스]를 선택하고 [리소스 6단식 추가]를 클릭합니다.
+	![img](https://main.qcloudimg.com/raw/05dd24c7e96e3ae6cd6aa2b9ee64641d.png)
+	오른쪽에 팝업되는 [리소스] 부분에 해당하는 단일 도메인을 입력한 후 [확인]을 클릭합니다. 여러 개의 도메인을 추가할 경우 [리소스 6단식 추가]를 클릭하면 하나씩 추가할 수 있습니다.
+	![img](https://main.qcloudimg.com/raw/68715dd7708d3b79aac0d64ae713ae85.png)
+
+5. 위의 조작을 완료한 후 [다음 단계]를 클릭하고, 권한을 부여할 서브 계정 사용자를 선택해 [완료]를 클릭하면 권한이 부여됩니다.
+![img](https://main.qcloudimg.com/raw/1232f5b90fa612ee32b560c83dd36c08.png)
