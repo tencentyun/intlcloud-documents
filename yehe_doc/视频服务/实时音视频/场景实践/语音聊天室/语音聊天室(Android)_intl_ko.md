@@ -54,7 +54,7 @@ Android Studio(3.5 버전 이상)를 사용하여 소스 코드 프로그램인 
 [](id:model)
 ## 사용자 정의 UI 인터페이스 구현
 
-[소스 코드](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo/trtcvoiceroomdemo/src/main/java/com/tencent/liteav/trtcvoiceroom)의 trtcvoiceroomdemo 폴더에는 ui 폴더와 model 폴더가 있으며, model 폴더에는 재사용 가능한 오픈 소스 모듈인 TRTCVoiceRoom이 포함되어 있습니다. `TRTCVoiceRoom.java` 파일에서 해당 모듈에서 제공하는 액세스 함수를 확인할 수 있으며 해당 액세스를 사용해 사용자 정의 UI 인터페이스를 구현할 수 있습니다.
+[소스 코드]의 trtcvoiceroomdemo 폴더에는 ui 폴더와 model 폴더가 있으며, model 폴더에는 재사용 가능한 오픈 소스 모듈인 TRTCVoiceRoom이 포함되어 있습니다. `TRTCVoiceRoom.java` 파일에서 해당 모듈에서 제공하는 액세스 함수를 확인할 수 있으며 해당 액세스를 사용해 사용자 정의 UI 인터페이스를 구현할 수 있습니다.
 ![](https://main.qcloudimg.com/raw/319beb14d72a43120e102380278aa1da.png)
 
 [](id:model.step1)
