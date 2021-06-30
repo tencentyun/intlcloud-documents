@@ -3,10 +3,10 @@
 
 ## 相关概念
 
-了解腾讯云 CDH 时，通常会涉及到以下概念：
+了解专用宿主机 时，通常会涉及到以下概念：
 - [**宿主机类型**](https://intl.cloud.tencent.com/document/product/416/6477)：宿主机的类型，不同类型的宿主机硬件配置不同。
 - **本地硬盘类型**：宿主机上的磁盘类型，不同类型的宿主机搭载的磁盘类型不同，有本地硬盘以及本地 SSD 硬盘两种类型。
-- **云服务器实例**：在宿主机上分配的云服务器实例，有些文档里也称为子机。
+- **云服务器实例**：在宿主机上分配的云服务器实例，有些文档里也称为实例。
 - [**云硬盘**](https://intl.cloud.tencent.com/zh/document/product/213/4953)：腾讯云提供的分布式持久块存储设备，可以用作实例的系统盘或可扩展数据盘使用。
 - [**镜像**](https://intl.cloud.tencent.com/zh/document/product/213/4940)：实例预置模版，包含服务器的预配置环境（操作系统和其他已安装的软件）。
 - [**私有网络**](https://intl.cloud.tencent.com/document/product/215/535)：自定义的虚拟网络空间，与其他资源逻辑隔离。
@@ -25,14 +25,14 @@
 
 ## 使用专用宿主机
 
-腾讯云 CDH 提供基于 Web 的用户界面，即控制台，如果您已注册腾讯云账户，您可以直接登录 [ CDH 控制台](https://console.cloud.tencent.com/cvm/cdh)，对您的 CVM 进行操作。
-腾讯云 CDH 也提供了 API 接口方便您管理专用宿主机 CDH，有关 CDH API 操作的更多信息，请参阅 [API 文档](https://intl.cloud.tencent.com/zh/document/product/213/15688)。
+专用宿主机 提供基于 Web 的用户界面，即控制台，如果您已注册腾讯云账户，您可以直接登录 [ 专用宿主机 控制台](https://console.cloud.tencent.com/cvm/cdh)，对您的 CVM 进行操作。
+专用宿主机 也提供了 API 接口方便您管理，有关 专用宿主机 API 操作的更多信息，请参阅 [API 文档](https://intl.cloud.tencent.com/zh/document/product/213/15688)。
 您可以使用 SDK（支持 PHP/Python/Java/.NET/Node.js）编程或使用腾讯云命令行工具调用 CVM API，具体请参考：
 
 - [使用命令行工具 >>](https://intl.cloud.tencent.com/document/product/1013/33463)
 
-## CDH 定价
-CDH 价格信息，请参考 [CDH 产品定价](https://buy.cloud.tencent.com/price/cdh) 。
+## 专用宿主机定价
+专用宿主机 价格信息，请参考 [专用宿主机 产品定价](https://buy.cloud.tencent.com/price/cdh) 。
 
 
 
