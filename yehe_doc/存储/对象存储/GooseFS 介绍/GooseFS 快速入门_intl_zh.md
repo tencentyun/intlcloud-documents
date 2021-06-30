@@ -48,12 +48,14 @@ $ ./bin/goosefs-start.sh local SudoMount
 
 ## 使用 GooseFS 挂载对象存储 COS
 1. 创建一个命名空间 Namespace 并挂载对象存储 COS：
+
 ```plaintext
 $ goosefs ns create myNamespace cosn://bucketName-125xxxxxx/ 3TB
 --option fs.cosn.userinfo.secretId=AKIDxxxxxxxxxxxxxx \
 --option fs.cosn.userinfo.secretKey=xxxxxxxxxxxxxxxxx \
 --option fs.cosn.bucket.region=ap-guangzhou \
 ```
+
 >! 在创建 Namespace 时必须指定 –-option 参数，并且指定 Hadoop-COS（COSN）所有必选参数，具体的必选参数可参考 [Hadoop 工具](https://intl.cloud.tencent.com/document/product/436/6884)。创建 Namespace 时，如果没有指定读写策略（rPolicy/wPolicy），默认会使用配置文件中指定的 read/write type，或使用默认值（CACHE/CACHE_THROUGH）。
 >
 2. 挂载成功后，可以通过 ls 指令列出集群中创建的所有 namespace，如下指令所示：
@@ -95,12 +97,15 @@ NamespaceStatus{name=myNamespace, path=/myNamespace, ttlTime=-1, ttlAction=DELET
 ## 使用 GooseFS 预热 Table 中的数据
 
 1. GooseFS 支持将 Hive Table 中的数据预热到  GooseFS 中，在预热之前需要先将相关的 DB 关联到 GooseFS 上，相关指令如下：
+
 ```plaintext
 $ goosefs table attachdb --db test_db hive thrift://
 172.16.16.22:7004 test_for_demo
 ```
+
 >! 指令中的 thrift 需要填写实际的 Hive Metastore 的地址。
 >
+
 2. 添加完 DB 后，可以通过 ls 指令查看当前关联的 DB 和 Table 的信息：
 ```plaintext
 $ goosefs table ls test_db web_page
@@ -153,13 +158,16 @@ $ goosefs fs
 $ goosefs fs ls /
 ```
 3. 可以通过`copyFromLocal`指令将数据从本地拷贝到 GooseFS 中：
+
 ```plaintext
 $ goosefs fs copyFromLocal LICENSE /LICENSE
 Copied LICENSE to /LICENSE
 $ goosefs fs ls /LICENSE
 -rw-r--r--  hadoop         supergroup               20798       NOT_PERSISTED 03-26-2021 16:49:37:215   0% /LICENSE
 ```
+
 4. 可以通过 `cat` 命令查看文件内容：
+
 ```plaintext
 $ goosefs fs cat /LICENSE                                                                         
 Apache License
@@ -177,11 +185,14 @@ persisted file /LICENSE with size 26847
 ## 使用 GooseFS 加速文件上传和下载操作
 
 1. 检查文件存储状态，确认文件是否已被缓存。文件状态 `PERSISTED` 代表文件已在内存中，文件状态 `NOT_PERSISTED` 则代表文件不在内存中：
+
 ```plaintext
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 NOT_PERSISTED 01-09-2018 16:35:01:002   0% /data/cos/sample_tweets_150m.csv
 ```
+
 2. 统计文件中有多少单词 “tencent”，并计算操作耗时：
+
 ```plaintext
 $ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c kitten
 889
@@ -189,7 +200,9 @@ real	0m22.857s
 user	0m7.557s
 sys	0m1.181s
 ```
+
 3. 将该数据缓存到内存中可以有效提升查询速度，详细示例如下：
+
 ```plaintext
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 PERSISTED 01-09-2018 16:35:01:002   0% /data/cos/sample_tweets_150m.csv
@@ -205,6 +218,7 @@ sys	    0m0.243s
 ## 关闭 GooseFS
 
 通过如下指令可以关闭 GooseFS：
+
 ```plaintext
 $ ./bin/goosefs-stop.sh local
 ```
