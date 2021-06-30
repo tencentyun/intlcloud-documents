@@ -56,7 +56,7 @@ The `trtcmeetingdemo` folder in the source code contains two subfolders: `ui` an
 [](id:model)
 ## Implementing A Custom UI
 
-The `trtcmeetingdemo` folder in the [source code](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo/trtcmeetingdemo/src/main/java/com/tencent/liteav/meeting) contains two subfolders: `ui` and `model`. The `model` folder contains the reusable open-source component `TRTCMeeting`. You can find the component’s API functions in `TRTCMeeting.java` and use them to customize your own UI.
+The `trtcmeetingdemo` folder in the [source code] contains two subfolders: `ui` and `model`. The `model` folder contains the reusable open-source component `TRTCMeeting`. You can find the component’s API functions in `TRTCMeeting.java` and use them to customize your own UI.
 ![](https://main.qcloudimg.com/raw/2ac6fe9df1b43dae59271f4288f54ef3.png)
 
 [](id:model.step1)
