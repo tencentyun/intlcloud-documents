@@ -3,7 +3,7 @@
 >!首次开通弹性 MapReduce 服务时，必须使用主账号完成角色授权流程，否则子账号和主账号均不能使用弹性 MapReduce。
 
 ## 角色授权流程
-1. 当用户创建集群或创建按需执行计划时，若为服务账号授予 EMR_QCSRole 角色失败，会有如下提示。此时需单击【前往访问管理】进行角色授权。
+1. 当用户创建集群或创建按需执行计划时，若为服务账号授予 EMR_QCSRole 角色失败，会有如下提示。然后需单击【前往访问管理】进行角色授权。
 ![](https://main.qcloudimg.com/raw/fec28f413d0423a4e42f57ee838299a2.png)
 2. 单击【同意授权】，将默认角色 EMR_QCSRole 授予弹性 MapReduce 的服务账号。
  ![](https://main.qcloudimg.com/raw/d8ad5786438aba4f5233f6117155e5bc.png)
