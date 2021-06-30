@@ -4,9 +4,9 @@
 
 1. 登录 [专用宿主机控制台](https://console.cloud.tencent.com/cvm/cdh)。
 2. 在“专用宿主机”界面顶部选择相应的地域，您就可以查看到您在当前地域所拥有的专用宿主机的信息，包括可用区、机型、总资源和剩余可用资源的情况、到期时间等。如下图所示：
-![](https://main.qcloudimg.com/raw/75abff63caa003799977d919105fcb9a.png)
+![](https://main.qcloudimg.com/raw/5fa434265fa18912f5c8f3014bcd5d51.png)
 3. 单击专用宿主机的 ID，进入专用宿主机详情页，可以查看专用宿主机的详细信息以及该宿主机上的子机信息。如下图所示：
-![](https://main.qcloudimg.com/raw/3c8ad82eb0a6379ba1ee45a2c2930735.png)
+![](https://main.qcloudimg.com/raw/e1244eda038f59c3afeea946e2f969c0.png)
 
 ### 使用 API 获取 CDH 实例信息
 请参考 [查看 CDH 实例列表](https://intl.cloud.tencent.com/document/product/213/33279)。
