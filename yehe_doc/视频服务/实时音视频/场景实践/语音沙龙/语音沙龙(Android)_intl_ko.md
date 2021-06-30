@@ -22,7 +22,7 @@ Tencent Cloud의 Demo를 [다운로드](https://intl.cloud.tencent.com/document/
 ### 2단계: SDK와 Demo 소스 코드 다운로드
 1. 실제 비즈니스 요구사항에 따라 SDK 및 관련 Demo 소스 코드를 다운로드합니다.
 2. 다운로드 완료 후 [다운로드 완료, 다음 단계]를 클릭합니다.
-![](https://main.qcloudimg.com/raw/3b115019ddfd0866108ed1add30810d8.png)
+
 
 [](id:ui.step3)
 
@@ -33,7 +33,7 @@ Tencent Cloud의 Demo를 [다운로드](https://intl.cloud.tencent.com/document/
 3. `GenerateTestUserSig.java` 파일에서 관련 매개변수를 설정합니다.
 <ul style="margin:0"><li/>SDKAPPID: 0으로 기본 설정되어 있습니다. 실제 SDKAppID로 설정하십시오.
 <li/>SECRETKEY: 공백으로 기본 설정되어 있습니다. 실제 키 정보로 설정하십시오.</ul>
-<img src="https://main.qcloudimg.com/raw/586439966d8588888cecf80d3bb4fe46.png">
+
 4. 붙여넣기 완료 후 [붙여넣기 완료, 다음 단계]를 클릭하면 생성이 완료됩니다.
 5. 컴파일 완료 후 [콘솔 개요로 돌아가기]를 클릭합니다.
 
@@ -59,8 +59,8 @@ Android Studio(3.5 버전 이상)를 사용하여 소스 코드 프로그램인 
 
 [](id:model)
 ## 사용자 정의 UI 인터페이스 구현
-[소스 코드](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo/trtcchatsalondemo/src/main/java/com/tencent/liteav/trtcchatsalon)의 trtcchatsalondemo 폴더에는 ui 폴더와 model 폴더가 포함되어 있으며, model 폴더에는 재사용 가능한 오픈 소스 모듈인 TRTCChatSalon이 포함되어 있습니다. `TRTCChatSalon.java` 파일에서 해당 모듈에서 제공하는 인터페이스 함수를 확인할 수 있으며 해당 인터페이스를 사용해 사용자 정의 UI 인터페이스를 구현할 수 있습니다.
-![](https://main.qcloudimg.com/raw/fcf694c8550664623414604d14ffcd94.png)
+[소스 코드]의 trtcchatsalondemo 폴더에는 ui 폴더와 model 폴더가 포함되어 있으며, model 폴더에는 재사용 가능한 오픈 소스 모듈인 TRTCChatSalon이 포함되어 있습니다. `TRTCChatSalon.java` 파일에서 해당 모듈에서 제공하는 인터페이스 함수를 확인할 수 있으며 해당 인터페이스를 사용해 사용자 정의 UI 인터페이스를 구현할 수 있습니다.
+![](https://main.qcloudimg.com/raw/7613bd7ec5b4e665f32ee5df69e5de85.png)
 
 [](id:model.step1)
 ### 1단계: SDK 통합
@@ -184,7 +184,8 @@ mTRTCChatSalon.login(SDKAPPID, userId, userSig, new TRTCChatSalonCallback.Action
 2. 호스트가 `createRoom`을 호출하여 새로운 음성 살롱을 생성합니다. 이때 방 ID, 마이크를 켤 때 방장 확인 필요 여부, 방 유형 등 방 속성 정보를 전송합니다.
 3. 호스트는 사용자가 입장할 때 `onAnchorEnterSeat` 이벤트 공지를 수신하며, 이때 자동으로 마이크 수집이 활성화됩니다.
 
-![](https://main.qcloudimg.com/raw/0b06ef225f749caa8b1f3a16c2316890.png)
+![](https://main.qcloudimg.com/raw/dfe6ed5d0c973e399e834eb233c96ec6.png)
+
 <dx-codeblock>
 ::: java java
 // 1. 호스트 닉네임 및 프로필 사진 설정
@@ -231,7 +232,8 @@ public void onAnchorEnterSeat(TRTCChatSalonDef.UserInfo userInfo) {
 5. 방 입장 후 모듈의 `onRoomInfoChange` 방 속성 변경 이벤트 공지를 수신합니다. 이때 UI에 방 이름 표시, 마이크를 켤 때 호스트에게 동의 요청 필요 여부 등 방의 속성을 기록할 수 있으며 그에 해당하는 변경이 가능합니다.
 6. 방 입장 후 마이크 위치 리스트에 호스트 입장 `onAnchorEnterSeat` 이벤트 공지도 수신합니다.
 
-![](https://main.qcloudimg.com/raw/b08253d1835ca6e571378af76c84e275.png)
+![](https://main.qcloudimg.com/raw/dfe6ed5d0c973e399e834eb233c96ec6.png)
+
 <dx-codeblock>
 ::: java java
 // 1. 시청자 닉네임 및 프로필 사진 설정
@@ -286,7 +288,8 @@ public void onAnchorEnterSeat(TRTCChatSalonDef.UserInfo userInfo) {
 1. `pickSeat`에 시청자 userId를 전달하면 특정 사용자의 마이크를 켤 수 있으며, 방 안에 있는 모든 사용자가 `onAnchorEnterSeat` 이벤트 공지를 수신합니다.
 2. `kickSeat`에 해당하는 사용자의 userId를 전달하면 특정 사용자의 마이크를 끌 수 있으며, 방 안에 있는 모든 사용자가 `onAnchorLeaveSeat` 이벤트 공지를 수신합니다.
 
-![](https://main.qcloudimg.com/raw/5a590df748b3cedd6eccd7d8e3027168.png)
+![](https://main.qcloudimg.com/raw/d968f479f51160f626d07ce8bf403f13.png)
+
 마이크 위치 작업 후의 이벤트 공지 순서는 다음과 같습니다. callback > onAnchorEnterSeat 등 독립 이벤트
 <dx-codeblock>
 ::: java java
@@ -310,7 +313,8 @@ public void onAnchorEnterSeat(TRTCChatSalonDef.UserInfo user) {
 1. `enterSeat`로 마이크를 켤 수 있으며 방 안에 있는 모든 사용자가 `onAnchorEnterSeat` 이벤트 공지를 수신합니다.
 2. `leaveSeat`로 직접 마이크를 끄면 방 안에 있는 모든 사용자가 `onAnchorLeaveSeat` 이벤트 공지를 수신합니다.
 
-![](https://main.qcloudimg.com/raw/08f7bf725fa05e1d97a69aacdbd3986a.png)
+![](https://main.qcloudimg.com/raw/c9611b5017536604f63333ce7c19c309.png)
+
 마이크 위치 작업 후의 이벤트 공지 순서는 다음과 같습니다. callback > onAnchorEnterSeat 등 독립 이벤트
 <dx-codeblock>
 ::: java java
@@ -344,7 +348,8 @@ public void onAnchorEnterSeat(int index, TRTCChatSalonDef.UserInfo user) {
 3. 호스트가 동의를 선택한 후 `acceptInvitation`을 호출하고 inviteId를 전송합니다.
 4. 시청자가 `onInviteeAccepted` 이벤트 공지를 수신하고 `enterSeat`를 호출하여 마이크를 켭니다.
 
-![](https://main.qcloudimg.com/raw/76f13e8118c49136fcfd99942e56a65e.png)
+![](https://main.qcloudimg.com/raw/3543bf768896cfd78b0163dc9378e659.png)
+
 
 <dx-codeblock>
 ::: java java
@@ -379,7 +384,8 @@ public void onReceiveNewInvitation(final String id, String inviter, String cmd, 
 3. 시청자가 동의를 선택한 후 `acceptInvitation`을 호출하고 inviteId를 전송합니다.
 4. 호스트가 `onInviteeAccepted` 이벤트 공지를 수신하고 `pickSeat`를 호출하여 시청자의 마이크를 켭니다.
 
-![](https://main.qcloudimg.com/raw/3193dd17c510ca5a6583747c0bde0114.png)
+![](https://main.qcloudimg.com/raw/60025544abae69e22de22a4b81bf6951.png)
+
 
 <dx-codeblock>
 ::: java java
