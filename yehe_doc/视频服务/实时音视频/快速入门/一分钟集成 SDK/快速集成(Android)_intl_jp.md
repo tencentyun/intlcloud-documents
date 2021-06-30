@@ -10,7 +10,7 @@ Gradleを使って自動でローディングするか、または手動でaar�
 
 ### 方法1：自動ローディング（aar）
 TRTC SDK はjCenterでライブラリを公開していますので、Gradleを設定すれば、自動でダウンロードされ、更新されます。
-Android Studioを使って SDKを統合したいプログラム（ここでの例は、[TRTCSimpleDemo](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo) ）を開き、その後簡単な3つのステップで app/build.gradle ファイルを修正しさえすれば、SDKの統合が完成します。
+Android Studioを使って SDKを統合したいプログラム（ここでの例は、[TRTCSimpleDemo]）を開き、その後簡単な3つのステップで app/build.gradle ファイルを修正しさえすれば、SDKの統合が完成します。
 ![](https://main.qcloudimg.com/raw/fd01c252724cbf31ec7356286a931661.png)
 
 1. dependenciesの中にTRTCSDKの依存を追加します。
