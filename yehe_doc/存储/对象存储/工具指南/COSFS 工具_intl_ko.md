@@ -178,7 +178,7 @@ chmod 640 /etc/passwd-cosfs
 >- 키는 $HOME/.passwd-cosfs 파일에서 설정하거나 -opasswd_file=[path]로 키 파일 경로를 지정할 수 있으며, 키 파일의 권한 값은 600으로 설정해야 합니다.
 > 
 
-**예시: **
+<b>예시: </b>
 
 ```shell
 echo examplebucket-1250000000:AKIDHTVVaVR6e3****:PdkhT9e2rZCfy6**** > /etc/passwd-cosfs
@@ -201,7 +201,7 @@ cosfs <BucketName-APPID> <MountPoint> -ourl=cos.<Region>.myqcloud.com -odbglevel
 - -odbglevel은 로그 레벨을 지정합니다. 기본 값은 crit이며, 옵션값은 crit, error, warn, info, debug입니다.
 - -oallow_other는 마운트되지 않은 사용자의 마운트 폴더 액세스를 허용합니다.
 
-**예시: **
+<b>예시: </b>
 
 ```shell
 mkdir -p /mnt/cosfs
