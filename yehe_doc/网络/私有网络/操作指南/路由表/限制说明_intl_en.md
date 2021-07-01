@@ -21,13 +21,13 @@
 
 <table><tbody>
 <tr><th>Next hop type</th><th>Forming ECMP with the same type</th><th>Forming ECMP with another type</th><th>Maximum number of ECMPs</th</tr>
-<tr><td>NAT Gateway</td><td>Supported</td><td>Supported, with public IP of CVM</td><td>Same type: up to 8; different types: 1</td></tr>
+<tr><td>NAT Gateway</td><td>Supported</td><td>Not supported</td><td>Same type: up to 8; different types: 1</td></tr>
 <tr><td>Inter-region peering connection</td><td>Not supported</td><td>Not supported</td><td>N/A</td></tr>
 <tr><td>Cross-region peering connection</td><td>Not supported</td><td>Supported, with CCN</td><td>Different types: 1</td></tr>
 <tr><td>Direct connect gateway</td><td>Not supported</td><td>Supported, with CCN</td><td>Different types: 1</td></tr>
 <tr><td>HAVIP</td><td>Not supported</td><td>Not supported</td><td>N/A</td></tr>
 <tr><td>VPN gateway</td><td>Not supported</td><td>Not supported</td><td>N/A</td></tr>
-<tr><td>CVM</td><td>Supported</td><td>Supported, with public IP of CVM</td><td>Same type: up to 8; different types: 1</td></tr>
+<tr><td>CVM</td><td>Supported</td><td>Not supported</td><td>Same type: up to 8; different types: 1</td></tr>
 <tr><td>CCN</td><td>Not supported</td><td>Supported, with direct connect gateway or cross-region peering connection</td><td>Different types: 1</td></tr>
 </tbody> </table>
 
