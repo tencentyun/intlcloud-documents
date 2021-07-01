@@ -13,7 +13,7 @@
 ![](https://main.qcloudimg.com/raw/1e0f8b71f125b857f6d421629e90e94f.png)
 
 ### 多个云服务器负载均衡
-当您有较多服务器来部署复杂业务、且公网流量较大时，可以使用 [负载均衡](https://intl.cloud.tencent.com/document/product/214)。负载均衡可以实现自动分配云中多个 CVM 实例间应用程序的访问流量，让您实现更高水平的应用程序容错能力。
+当您有较多服务器来部署复杂业务、且公网流量较大时，可以使用 [负载均衡 CLB](https://intl.cloud.tencent.com/document/product/214)。负载均衡 CLB 可以实现自动分配云中多个 CVM 实例间应用程序的访问流量，让您实现更高水平的应用程序容错能力。
 ![](https://main.qcloudimg.com/raw/d943efd83cc5d6df07e3e78954e681af.png)
 
 ## 应用容灾
