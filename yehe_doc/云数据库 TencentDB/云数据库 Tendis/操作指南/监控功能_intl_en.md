@@ -11,7 +11,7 @@ Tendis currently supports monitoring metrics at the 1-minute, 5-minutes, 1-hour,
 You can view TencentDB for Tendis monitoring information in the instance list and on the instance monitoring page in the TencentDB for Tendis console, or in the Cloud Monitor console.
 - Instance list: log in to the [TencentDB for Tendis console](https://console.cloud.tencent.com/tendis), click the **View Monitoring** icon in the instance list as shown below, and view monitoring metrics in the pop-up window on the right.
 ![](https://main.qcloudimg.com/raw/1bf892252c14a40f0162228ac28cc801.png)
-- Instance monitoring page: log in to the [TencentDB for Tendis console](https://console.cloud.tencent.com/tendis), click an instance name/ID in the instance list and enter the instance management page, select **System Monitoring**, and view monitoring data on the **Monitoring Metrics** tab.
+- Instance monitoring page: log in to the [TencentDB for Tendis console](https://console.cloud.tencent.com/tendis), click an instance ID in the instance list and enter the instance management page, select **System Monitoring**, and view monitoring data on the **Monitoring Metrics** tab.
 ![](https://main.qcloudimg.com/raw/6d293d768113036c6cacd4a46172a2c6.png)
 
 ## Monitoring Metric Description
