@@ -7,7 +7,7 @@
 
 생성한 시스템 디스크의 이미지를 내보낼 때 다음과 같은 검사를 진행해야 합니다.
 >? 데이터 디스크를 통해 이미지를 내보내는 경우 이 작업을 건너뛸 수 있습니다.
->
+
 
 #### OS 파티션 및 실행 모드 검사
 
@@ -73,21 +73,25 @@ bootmenupolicy          Standard
 ### 이미지 내보내기
 실제 필요에 맞는 이미지 내보내기 툴을 선택합니다.
 <dx-tabs>
-::: 플랫폼 툴로 이미지 내보내기[](id:Useplatform)
+::: 플랫폼\s툴로\s이미지\s내보내기[](id:Useplatform)
 VMWare vCenter Convert 혹은 Citrix XenConvert 등과 같은 가상화 플랫폼의 이미지 내보내기 툴을 사용합니다. 자세한 내용은 각 플랫폼의 내보내기 툴 문서를 참조하십시오.
->? 현재 Tencent Cloud의 서비스 마이그레이션이 지원하는 이미지 포맷은 qcow2, vhd, raw, vmdk입니다.
->
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note</p><p>현재 Tencent Cloud의 서비스 마이그레이션이 지원하는 이미지 포맷은 qcow2, vhd, raw, vmdk입니다.</p>
+</blockquote>
+
 :::
-::: \sdisk2vhd\s로 이미지 내보내기[](id:Usedisk2vhd)
+::: \sdisk2vhd\s로\s이미지\s내보내기[](id:Usedisk2vhd)
 물리 머신의 시스템을 내보내거나 플랫폼 툴을 사용하지 않을 경우, disk2vhd 툴을 사용하여 내보낼 수 있습니다.
 1. disk2vhd 툴을 설치하고 여십시오.
 [disk2vhd 툴 다운로드 클릭하기>>](https://download.sysinternals.com/files/Disk2vhd.zip)
 3. 다음 이미지와 같이 내보낼 이미지의 저장 경로를 선택하고, 복사할 볼륨을 선택한 다음 [Create]를 클릭합니다.
->! 
-> - disk2vhd 실행을 위해 Windows의 VSS(볼륨 섀도 복사 서비스) 기능을 사전에 설치해야 합니다. VSS 기능에 대한 자세한 정보는 [Volume Shadow Copy Service](https://docs.microsoft.com/zh-cn/windows/win32/vss/volume-shadow-copy-service-portal?redirectedfrom=MSDN)를 참조하십시오.
-> - 현재 시스템은 vhdx 포맷의 이미지를 지원하지 않으므로 "Use Vhdx"를 선택하지 마십시오.
-> - 데이터의 완전성을 보장하기 위해 "Use volume Shadow Copy"를 선택하여 볼륨 섀도 복사 기능을 사용하는 것이 좋습니다.
-> 
+
+<blockquote class="doc-tip"><p class="doc-tip-tit"><i class="doc-icon-tip"></i>Note</p><p>
+<li>disk2vhd 실행을 위해 Windows의 VSS(볼륨 섀도 복사 서비스) 기능을 사전에 설치해야 합니다. VSS 기능에 대한 자세한 정보는 <a href="https://docs.microsoft.com/zh-cn/windows/win32/vss/volume-shadow-copy-service-portal?redirectedfrom=MSDN">Volume Shadow Copy Service</a>를 참조하십시오.</li>
+<li>현재 시스템은 vhdx 포맷의 이미지를 지원하지 않으므로 "Use Vhdx"를 선택하지 마십시오.</li>
+<li>데이터의 완전성을 보장하기 위해 "Use volume Shadow Copy"를 선택하여 볼륨 섀도 복사 기능을 사용하는 것이 좋습니다.</li>
+</p>
+</blockquote>
+
 ![image](https://main.qcloudimg.com/raw/68d9c4e5e7db49c4cefdd3785ce9b68d.jpg)
 :::
 </dx-tabs>
