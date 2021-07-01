@@ -9,7 +9,7 @@
 
 ## KDC 高可用配置介绍
 
-配置`/etc/krb5.conf`文件，设置如下：
+配置 `/etc/krb5.conf` 文件，设置如下：
 >!示例中配置了两个 KDC 地址，active kdc 和 backup kdc，这样能保证当其中任意一个 KDC 服务异常时，仍可以对集群提供正常的 KDC 服务。
 >
 ```
@@ -38,13 +38,13 @@ admin_server = backup_kdc
 
 ## KDC 数据同步
 -  kprop 配置
-在两个 kdc server 上默认有`/var/kerberos/krb5kdc/kpropd.acl`配置文件。
+在两个 kdc server 上默认有 `/var/kerberos/krb5kdc/kpropd.acl` 配置文件。
 ```
 host/active_kdc@REALM
 host/backup_kdc@REALM
 ```
-2. 执行`/var/kerberos/krb5kdc/kpropd.acl`文件
-执行默认配置文件`/var/kerberos/krb5kdc/kpropd.acl`后，两个 kdc server 上会生成`/etc/krb5.keyta`文件。同时，两个 kdc server 也会启动 kprop 服务。
+2. 执行 `/var/kerberos/krb5kdc/kpropd.acl` 文件
+执行默认配置文件 `/var/kerberos/krb5kdc/kpropd.acl` 后，两个 kdc server 上会生成 `/etc/krb5.keyta` 文件。同时，两个 kdc server 也会启动 kprop 服务。
 ```
 [root@10 krb5kdc]# service kprop status 
 Redirecting to /bin/systemctl status kprop.service
