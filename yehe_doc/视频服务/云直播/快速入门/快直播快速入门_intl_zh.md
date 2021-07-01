@@ -1,23 +1,25 @@
 本教程将指引您快速了解快直播服务。在您使用快直播服务前，建议您提前阅读快直播 [价格总览](https://intl.cloud.tencent.com/document/product/267/2819)，了解**收费项目**和**价格**，避免产生误解。
 
 [](id:step0)
+
 ## 准备工作
 1. 注册 [腾讯云账号](https://cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fproduct%2Flvb)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
 2. 进入 [腾讯云直播服务开通页](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)，勾选同意《腾讯云服务协议》，并单击【申请开通】即可开通云直播服务。
 >?  
->- 云直播服务申请开通后，会赠送20GB直播流量资源包免费体验使用，直播流量资源包支持按比例抵扣快直播日结流量，详细请参见 [预付费资源包](https://cloud.tencent.com/document/product/267/34174#live_pag)。为避免赠送流量用完后自动扣费，导致欠费无法使用云直播服务，建议您根据实际业务需求，【[购买](https://buy.cloud.tencent.com/live?from=console-portal-buy-lvb)】相应规格的套餐包。
+>- 云直播服务申请开通后，会赠送20GB直播流量资源包免费体验使用，直播流量资源包支持按比例抵扣快直播日结流量，为避免赠送流量用完后自动扣费，导致欠费无法使用云直播服务，建议您根据实际业务需求，【[购买](https://intl.cloud.tencent.com)】相应规格的套餐包。
 >- 域名配置与标准直播一致，如您已接入标准直播，可直接从 [步骤4：获取播放地址](#step4) 部分了解快直播拉流。
 
 [](id:step1)
+
 ## 步骤1：添加域名
 使用云直播服务，至少需要**2**个域名，一个作为**推流域名**，一个作为**播放域名**，推流和播放不能使用相同的域名。
 您可通过使用[【自有域名】](https://intl.cloud.tencent.com/document/product/267/35970)添加已完成备案的自有域名。
 
 1. 准备自有域名，并完成域名备案。
-	- 若您需要购买域名，可前往[【域名注册】](https://cloud.tencent.com/document/product/242/9595)完成 [域名购买](https://buy.cloud.tencent.com/domain?from=console)。您也可以前往其它域名服务商进行购买。
-	- 若您的域名未完成备案，您可前往腾讯云的 [网站备案](https://cloud.tencent.com/document/product/243) 完成 [域名备案](https://cloud.tencent.com/product/ba)。
+	- 若您需要购买域名，可前往[【域名注册】]完成 [域名购买]。您也可以前往其它域名服务商进行购买。
+	- 若您的域名未完成备案，您可前往腾讯云的 [网站备案]() 完成 [域名备案]
 >!  根据国家工信部规定，域名必须备案，且备案时长需几个工作日，建议您提前进行。新备案成功的域名需要1天左右的时间同步到腾讯云服务器，添加该类域名时可能会显示域名未备案。
-2. 登录云直播控制台，进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)。
+2. 登录云直播控制台，进入[【域名管理】]
 3. 进入自有域名添加页， 单击【添加域名】。
 4. 填写已完成备案的域名，选择域名类型，单击【确定】。
 ![](https://main.qcloudimg.com/raw/bee8085a9d29641ddab913fdcd9c75ab.png)
@@ -58,8 +60,7 @@
 
 您可根据业务场景将生成好的推流地址输入到对应的推流软件中。
 - PC 端推流，建议使用 OBS 推流 ，具体操作请参见 [OBS推流](https://intl.cloud.tencent.com/document/product/267/31569)。
-- Web 端推流，建议使用【辅助工具】>[【Web 推流】](https://console.cloud.tencent.com/live/tools/webpush)，选择您需推流的域名，填写自定义的流名称 StreamName，选择地址过期时间，打开摄像头，单击【开始推流】即可。
-- 小程序推流，通过微信搜索小程序 [“腾讯视频云”](https://intl.cloud.tencent.com/document/product/1071/38147)，选择【RTMP 推流】，填入推流地址，单击【开始】开始推流。    
+- Web 端推流，建议使用【辅助工具】>[【Web 推流】](https://console.cloud.tencent.com/live/tools/webpush)，选择您需推流的域名，填写自定义的流名称 StreamName，选择地址过期时间，打开摄像头，单击【开始推流】即可。    
 - 移动端推流，下载安装 [腾讯云工具包 App](https://intl.cloud.tencent.com/document/product/1071/38147)，打开选择【移动直播 MLVB】>【推流演示（摄像头推流）】，手动输入或扫描二维码录入推流地址到地址编辑框内，单击【开始推流】即可。
 
 >? 
@@ -86,8 +87,8 @@
 >? 如需在 App 或小程序中进行推流，可以集成 [移动直播 SDK](https://cloud.tencent.com/product/mlvb) 配合快直播服务使用。使用过程中如果您遇到问题，请参见 [常见问题](#que)。
 
 ## 步骤5：快直播产品接入
-- **移动端方案**：支持 B 帧解码、AAC 音频格式，目前已集成至移动直播 SDK，接入方法请参见 [快直播拉流](https://cloud.tencent.com/document/product/454/55880)。
-- **Web 端方案**：已集成至 TCPlayerLite 播放器，接入方案请参见 [Web（H5）播放器](https://cloud.tencent.com/document/product/454/7503)。
+- **移动端方案**：支持 B 帧解码、AAC 音频格式，目前已集成至移动直播 SDK，接入方法请参见 [快直播拉流](https://intl.cloud.tencent.com/zh/document/product/1071/38567)。
+- **Web 端方案**：已集成至 TCPlayerLite 播放器，接入方案请参见 [Web（H5）播放器](https://intl.cloud.tencent.com/zh/document/product/1071/39360)。
 
 [](id:que)
 ## 常见问题
