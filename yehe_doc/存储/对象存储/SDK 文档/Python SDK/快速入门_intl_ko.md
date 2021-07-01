@@ -29,11 +29,11 @@ SDK 설치 방법에는 pip 설치, 수동 설치, 오프라인 설치의 세 �
 
 - 오프라인 설치
 ```python
-# 공인 네트워크가 연결된 기기에서 다음 명령어를 실행합니다.
+# 외부 네트워크가 연결된 기기에서 다음 명령어를 실행합니다.
 mkdir cos-python-sdk-packages
 pip download cos-python-sdk-v5 -d cos-python-sdk-packages
 tar -czvf cos-python-sdk-packages.tar.gz cos-python-sdk-packages
-# 설치 패키지를 공인 네트워크가 연결되지 않은 기기에 복사한 후 다음 명령어를 실행합니다.
+# 설치 패키지를 외부 네트워크가 연결되지 않은 기기에 복사한 후 다음 명령어를 실행합니다.
 # 두 기기의 python 버전은 동일해야 하며, 동일하지 않을 경우 설치에 실패합니다.
 tar -xzvf cos-python-sdk-packages.tar.gz
 pip install cos-python-sdk-v5 --no-index -f cos-python-sdk-packages
@@ -50,7 +50,7 @@ COS Python SDK를 사용한 클라이언트 초기화, 버킷 생성, 버킷 리
 [//]: # (.cssg-snippet-global-init)
 ```python
 # -*- coding=utf-8
-# appid는 설정에서 삭제되었으니 매개변수 Bucket에 appid를 입력하십시오. Bucket은 BucketName-APPID로 구성됩니다.
+# appid는 설정에서 삭제되었습니다. 매개변수 Bucket에 appid를 입력하십시오. Bucket은 BucketName-APPID로 구성됩니다.
 # 1. secretId, secretKey, Region을 포함한 사용자 설정
 from qcloud_cos import CosConfig
 from qcloud_cos import CosS3Client
@@ -59,11 +59,11 @@ import logging
 
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-secret_id = 'COS_SECRETID'      # 사용자 secretId로 변경
-secret_key = 'COS_SECRETKEY'      # 사용자 secretKey로 변경
+secret_id = 'SECRETID'      # 사용자 secretId로 변경(CAM 콘솔에 로그인하여 획득)
+secret_key = 'SECRETKEY'      # 사용자 secretKey로 변경(CAM 콘솔에 로그인하여 획득)
 region = 'COS_REGION'     # 사용자 Region으로 변경
-token = None                # 임시 키를 사용할 경우 Token 입력. 기본값이 null이면 입력하지 않음
-scheme = 'https'            # http/https 프로토콜로 COS에 액세스 지정. 기본값: https, 입력하지 않아도 됨
+token = None                # 임시 키를 사용할 경우 Token 입력, 기본값이 null이면 입력하지 않음
+scheme = 'https'            # http/https 프로토콜을 사용한 COS 액세스로 지정, 기본값이 https이면 입력하지 않음
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Token=token, Scheme=scheme)
 # 2. 클라이언트 객체 획득
 client = CosS3Client(config)
@@ -77,10 +77,10 @@ client = CosS3Client(config)
 
 [//]: # (.cssg-snippet-global-init-proxy)
 ```python
-# APPID는 설정에서 삭제되었으니 매개변수 Bucket에 APPID를 입력하십시오. Bucket은 BucketName-APPID로 구성됩니다.
+# APPID는 설정에서 삭제되었습니다. 매개변수 Bucket에 APPID를 입력하십시오. Bucket은 BucketName-APPID로 구성됩니다.
 # 1. secretId, secretKey, Region을 포함한 사용자 설정
-secret_id = 'COS_SECRETID'      # 사용자 secretId로 변경
-secret_key = 'COS_SECRETKEY'      # 사용자 secretKey로 변경
+secret_id = 'SECRETID'      # 사용자 secretId로 변경(CAM 콘솔에 로그인하여 획득)
+secret_key = 'SECRETKEY'      # 사용자 secretKey로 변경(CAM 콘솔에 로그인하여 획득)
 region = 'COS_REGION'     # 사용자 Region으로 변경
 proxies = {
     'http': '127.0.0.1:80', # 사용자 HTTP 프록시 주소로 변경
@@ -96,10 +96,10 @@ Endpoint 설정:
 
 [//]: # (.cssg-snippet-global-init-endpoint)
 ```python
-# APPID는 설정에서 삭제되었으니 매개변수 Bucket에 APPID를 입력하십시오. Bucket은 BucketName-APPID로 구성됩니다.
+# APPID는 설정에서 삭제되었습니다. 매개변수 Bucket에 APPID를 입력하십시오. Bucket은 BucketName-APPID로 구성됩니다.
 # 1. secretId, secretKey, Region을 포함한 사용자 설정
-secret_id = 'COS_SECRETID'      # 사용자 secretId로 변경
-secret_key = 'COS_SECRETKEY'      # 사용자 secretKey로 변경
+secret_id = 'SECRETID'      # 사용자 secretId로 변경(CAM 콘솔에 로그인하여 획득)
+secret_key = 'SECRETKEY'      # 사용자 secretKey로 변경(CAM 콘솔에 로그인하여 획득)
 region = 'COS_REGION'     # 사용자 Region으로 변경
 endpoint = 'cos.accelerate.myqcloud.com' # 사용자 endpoint로 변경
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Endpoint=endpoint)
@@ -108,12 +108,28 @@ client = CosS3Client(config)
 # 다음 설명 또는 Demo 프로그램을 참조하십시오. 자세한 내용은 https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py를 확인하십시오.
 ```
 
+사용자 정의 도메인 설정:
+```python
+# APPID는 설정에서 삭제되었습니다. 매개변수 Bucket에 APPID를 입력하십시오. Bucket은 BucketName-APPID로 구성됩니다.
+# 1. secretId, secretKey, Region을 포함한 사용자 설정
+secret_id = 'SECRETID'      # 사용자 secretId로 변경(CAM 콘솔에 로그인하여 획득)
+secret_key = 'SECRETKEY'      # 사용자 secretKey로 변경(CAM 콘솔에 로그인하여 획득)
+region = 'COS_REGION'     # 사용자 Region으로 변경
+
+# domain 사용자 정의 도메인 설정
+domain = 'user-define.example.com'
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Domain=domain)
+# 2. 클라이언트 객체 획득
+client = CosS3Client(config)
+# 다음 설명 또는 Demo 프로그램을 참조하십시오. 자세한 내용은 https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py를 확인하십시오.
+```
+
 글로벌 가속 도메인 설정:
 ```python
-# APPID는 설정에서 삭제되었으니 매개변수 Bucket에 APPID를 입력하십시오. Bucket은 BucketName-APPID로 구성됩니다.
+# APPID는 설정에서 삭제되었습니다. 매개변수 Bucket에 APPID를 입력하십시오. Bucket은 BucketName-APPID로 구성됩니다.
 # 1. secretId, secretKey, Region을 포함한 사용자 설정
-secret_id = 'COS_SECRETID'      # 사용자 secretId로 변경
-secret_key = 'COS_SECRETKEY'      # 사용자 secretKey로 변경
+secret_id = 'SECRETID'      # 사용자 secretId로 변경(CAM 콘솔에 로그인하여 획득)
+secret_key = 'SECRETKEY'      # 사용자 secretKey로 변경(CAM 콘솔에 로그인하여 획득)
 region = 'COS_REGION'     # 사용자 Region으로 변경
 
 # domain 사용자 정의 도메인. 일반적으로 설정할 필요 없으며, 글로벌 가속 도메인을 사용하는 경우 해당하는 도메인으로 설정합니다. 예: examplebucket-1250000000.cos.accelerate.myqcloud.com
@@ -124,7 +140,6 @@ config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Doma
 client = CosS3Client(config)
 # 다음 설명 또는 Demo 프로그램을 참조하십시오. 자세한 내용은 https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py를 확인하십시오.
 ```
-
 
 ### 버킷 생성
 

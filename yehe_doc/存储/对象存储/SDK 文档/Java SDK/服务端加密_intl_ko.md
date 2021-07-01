@@ -16,7 +16,7 @@
 
 #### 기능 설명
 
-Tencent Cloud COS에서 마스터 키를 호스팅하고 데이터를 관리합니다. COS는 데이터센터에 데이터를 쓸 때 자동으로 암호화하며, 해당 데이터 사용 시 자동으로 복호화합니다. 현재 COS의 마스터 키를 사용한 AES-256 데이터 암호화를 지원합니다.
+Tencent Cloud COS에서 마스터 키를 호스팅하고 데이터를 관리합니다. COS는 데이터센터에 데이터를 쓸 때 자동으로 암호화하며, 해당 데이터 사용 시 자동으로 암호화를 해제합니다. 현재 COS의 마스터 키를 사용한 AES-256 데이터 암호화를 지원합니다.
 
 
 #### 예시 코드
@@ -26,7 +26,10 @@ SDK는 `setServerSideEncryption`과 `setMetadata`를 호출하는 등의 방법�
 
 ```java
  // 사용자의 개인 정보(secretId, secretKey) 초기화
- COSCredentials cred = new BasicCOSCredentials("COS_SECRETID", "COS_SECRETKEY");
+// SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
+ COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
  // bucket의 리전 설정, COS 리전의 약칭은 https://cloud.tencent.com/document/product/436/6224 참조
  ClientConfig clientConfig = new ClientConfig(new Region("ap-guangzhou"));
 // cos 클라이언트 생성
@@ -82,7 +85,7 @@ String kmsKeyId = "your-kms-key-id";
 String encryptionContext = Base64.encodeAsString("{\"Ssekmstest\":\"Ssekmstest\"}".getBytes());
 SSECOSKeyManagementParams ssecosKeyManagementParams = new SSECOSKeyManagementParams(kmsKeyId, encryptionContext);
 putObjectRequest.setSSECOSKeyManagementParams(ssecosKeyManagementParams);
-// 서버 암호화 시나리오에서 반환되는 etag는 파일의 md5를 의미하지 않으므로 클라이언트의 md5 인증을 삭제해야 함
+// 서버 암호화 시나리오에서 반환되는 etag는 파일의 md5를 의미하지 않으므로 클라이언트의 md5 검증을 삭제해야 함
 // 필요한 경우 crc64를 획득하여 자체 검증 가능
 System.setProperty(SkipMd5CheckStrategy.DISABLE_PUT_OBJECT_MD5_VALIDATION_PROPERTY, "true");
 try {
@@ -118,7 +121,7 @@ String kmsKeyId = "your-kms-key-id";
 String encryptionContext = Base64.encodeAsString("{\"Ssekmstest\":\"Ssekmstest\"}".getBytes());
 InitiateMultipartUploadRequest initiateMultipartUploadRequest = new InitiateMultipartUploadRequest(bucketName, key);
 SSECOSKeyManagementParams ssecosKeyManagementParams = new SSECOSKeyManagementParams(kmsKeyId, encryptionContext);
-// 서버 암호화 시나리오에서 반환되는 etag는 파일의 md5를 의미하지 않으므로 클라이언트의 md5 인증을 삭제해야 함
+// 서버 암호화 시나리오에서 반환되는 etag는 파일의 md5를 의미하지 않으므로 클라이언트의 md5 검증을 삭제해야 함
 // 필요한 경우 crc64를 획득하여 자체 검증 가능
 System.setProperty(SkipMd5CheckStrategy.DISABLE_PUT_OBJECT_MD5_VALIDATION_PROPERTY, "true");
 initiateMultipartUploadRequest.setSSECOSKeyManagementParams(ssecosKeyManagementParams);
@@ -205,15 +208,18 @@ cosclient.shutdown();
 
 > !
 >- 해당 암호화로 실행되는 서비스는 HTTPS를 사용해 요청해야 합니다.
->- base64EncodedKey: 사용자가 제공하는 서버 암호화 키의 Base64 코드입니다.
->- 업로드하는 원본 파일에서 해당 메소드를 호출하는 경우 GET(다운로드), HEAD(조회) 사용 시, 원본 객체를 작업할 때에도 해당 메소드를 호출합니다.
+>- base64EncodedKey: 사용자가 제공하는 서버 암호화 키의 Base64 인코딩
+>- 업로드하는 원본 파일에서 해당 방법을 호출하는 경우 GET(다운로드), HEAD(조회) 사용 시, 원본 객체를 작업할 때도 해당 방법을 호출합니다.
 
 
 #### 예시 코드
 
 ```java
  // 사용자의 개인 정보(secretId, secretKey) 초기화
- COSCredentials cred = new BasicCOSCredentials("COS_SECRETID", "COS_SECRETKEY");
+// SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
+ COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
  // bucket의 리전 설정, COS 리전의 약칭은 https://www.qcloud.com/document/product/436/6224 참조
  ClientConfig clientConfig = new ClientConfig(new Region("ap-guangzhou"));
 // https 프로토콜 요청
@@ -227,7 +233,7 @@ String key = "doc/exampleobject.txt";
 File localFile = new File("test.txt");
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localFile);
 String base64EncodedKey = "MDEyMzQ1Njc4OUFCQ0RFRjAxMjM0NTY3ODlBQkNERUY=";
-// sseCustomerKey: base64 코드의 키
+// sseCustomerKey: base64 인코딩 키
 SSECustomerKey sseCustomerKey = new SSECustomerKey(base64EncodedKey);
 putObjectRequest.setSSECustomerKey(sseCustomerKey);
 ObjectMetadata objectMetadata = cosclient.getObjectMetadata();
