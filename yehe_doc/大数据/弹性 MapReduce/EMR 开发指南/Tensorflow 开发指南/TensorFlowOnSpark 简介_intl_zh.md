@@ -40,7 +40,7 @@ hdfs dfs -put TensorFlowOnSpark/tensorflow-hadoop-1.10.0.jar /tensorflow
 ```
 sh prepare_mnist.sh
 ```
-可以看到特征数据已经准备好：
+可以看到特征数据已准备就绪：
 ```
 hdfs dfs -ls /user/hadoop/mnist
 Found 2 items
