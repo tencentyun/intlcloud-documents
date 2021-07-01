@@ -21,7 +21,7 @@
 
 
 ## 场景服务
-场景服务集成了云直播的一些周边服务，包括：转码、水印、混流、截图和鉴黄、事件记录与通知服务的使用和管理等。如需要使用相关服务可在本模块进行相关配置。
+场景服务集成了云直播的一些周边服务，包括：转码、水印、混流、截图和鉴黄、事件记录与通知服务和直播 SDK的使用和管理等。如需要使用相关服务可在本模块进行相关配置。
 
 <table>
 <tr><th width="17%">功能名称</th><th>功能描述</th></tr>
@@ -45,6 +45,12 @@
 </tr><tr>
 <td><a href = "https://intl.cloud.tencent.com/document/product/267/31077">流数据查询</a></td>
 <td>可查询单个视频流的推流、播放数据详情，并将数据导出到本地。</td>
+</tr><tr>
+<td><a href = "https://intl.cloud.tencent.com/zh/document/product/266">SDK 质量监控</a></td>
+<td>可查询移动直播 SDK 近3天的推流数据信息。</td>
+</tr><tr>
+<td><a href = "https://cloud.tencent.com/document/product/267/33996">日志分析</a></td>
+<td><ul style = "margin-bottom: 0px;"><li>可通过对直播访问日志进行实时采集，再清洗、分析和检索，快速定位访问故障。</li><li>可对前一天、近一周、近一个月或自定义时间段的日志数据包进行下载。</li></ul></td>
 </tr>
 </table>
 
@@ -62,5 +68,9 @@
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/39467">自助诊断</a></td>
 <td>快速诊断常见直播推流/播放问题，目前此功能处于开放内测阶段，诊断结果仅供参考。</td>
-</tr></tr>
+</tr>
+<tr>
+<td><a href="https://cloud.tencent.com/document/product/267/55670">拉流转推</a></td>
+<td>提供内容拉取并推送的功能，无需进行直播推流，即可快速拉取已有的视频/直播，推送到目标地址。</td>
+</tr>
 </table>
