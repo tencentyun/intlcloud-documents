@@ -806,7 +806,7 @@ cos.restoreObject({
 | RestoreRequest     | 복구 데이터의 컨테이너에 사용합니다.                                           | Object | 예   |
 | - Days             | 임시 사본의 만료 기한을 설정합니다.                                       | Number | 예   |
 | - CASJobParameters | CAS 작업 매개변수의 컨테이너입니다.                                       | Object | 예   |
-| - - Tier           | CAS 유형의 데이터를 복구할 때 Tier는 COS가 지원하는 다음 3가지 복구 모드로 지정할 수 있습니다. <ul><li>Standard(표준 모드, 3~5시간 내에 복구 작업 완료)</li><li> Expedited(고속 모드, 15분 내에 복구 작업 완료)</li><li> Bulk(일괄 모드, 5~12시간 내에 복구 작업 완료) </li></ul>DEEP ARCHIVE 유형의 데이터 복구에는 다음 2가지 복구 모드가 있습니다.<ul><li> Standard(표준 모드, 12~24시간 내에 복구 작업 완료)</li><li> Bulk(일괄 모드, 24~48시간 내에 복구 작업 완료)</li></ul> | String | 예   |
+| - - Tier           | CAS 유형의 데이터를 복구할 때 Tier는 COS가 지원하는 다음 3가지 복구 모드로 지정할 수 있습니다. <ul><li>Standard(표준 모드, 3 ~ 5시간 내에 복구 작업 완료)</li><li> Expedited(고속 모드, 15분 내에 복구 작업 완료)</li><li> Bulk(일괄 모드, 5~12시간 내에 복구 작업 완료) </li></ul>DEEP ARCHIVE 유형의 데이터 복구에는 다음 2가지 복구 모드가 있습니다.<ul><li> Standard(표준 모드, 12 ~ 24시간 내에 복구 작업 완료)</li><li> Bulk(일괄 모드, 24 ~ 48시간 내에 복구 작업 완료)</li></ul> | String | 예   |
 
 #### 콜백 함수 설명
 
