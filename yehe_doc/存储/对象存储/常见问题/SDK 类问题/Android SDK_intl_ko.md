@@ -1,35 +1,35 @@
-### 클라이언트 네트워크는 정상인데 http로 cos 액세스가 굉장히 느리거나 Connection reset 오류가 발생합니다. 어떻게 해야 하나요?
-일부 지역 통신사가 COS 도메인에 하이재킹했을 수 있습니다. 최대한 https를 통해 COS에 액세스해주십시오.
+### 클라이언트 네트워크는 정상인데 HTTP로 COS 액세스가 굉장히 느리거나 Connection reset 오류가 발생합니다. 어떻게 처리해야 하나요?
+일부 지역의 ISP에서 COS 도메인을 하이재킹했을 수 있습니다. 최대한 HTTPS를 사용해 COS에 액세스하시기 바랍니다.
 
 ### 멀티파트 업로드 인터페이스를 호출할 때 etag 정보가 포함되지 않아 400 BadRequest 오류가 발생합니다. 어떻게 해야 하나요?
-해당 네트워크에서 Etag 헤더가 필터링되어 sdk가 멀티파트 업로드 후 대응되는 매개변수를 리졸브하지 못하여, 멀티파트 업로드 완료 시에 오류를 보고하는 것일 수 있습니다.
+해당 네트워크에서 Etag 헤더를 필터링했을 수 있습니다. SDK가 멀티파트 업로드 후 해당하는 매개변수를 리졸브하지 못하여 멀티파트 업로드 완료 후 오류를 보고했을 가능성이 있습니다.
 
 ### QCloudResultListener가 뜨거나 기타 콜백 함수가 콜백 작동하지 않을 경우 어떻게 해야 하나요?
 로그를 보고 콜백 기능이 작동하는지 조회한 경우 로그 필터 수준이 너무 높게 설정되어 있거나 로그가 기타 필터링 규칙에 의해 필터링되었기 때문일 수 있습니다. 필터링 규칙을 조정하거나 콜백 함수에서 중단점을 설정하여 콜백 함수가 제대로 작동하는지 확인하십시오.
 
-### 인터페이스 호출 시 NoClassDefFoundError가 발생하면 어떻게 해야 하나요? 
-sdk는 bolts와 okHttp 클래스에 종속됩니다. 이 두 클래스에서 방법을 찾을 수 없는 경우는 프로젝트에서 가져온 두 클래스의 버전이 낮기 때문일 수 있습니다. 최대한 sdk와 같은 버전을 사용하거나 더 높은 버전을 사용하십시오.
+### 인터페이스 호출 시 NoClassDefFoundError가 발생하면 어떻게 해야 하나요?
+SDK는 주요 유형인 bolts와 okHttp에 종속됩니다. 이 두 유형에서 방법을 찾을 수 없는 경우는 프로젝트에서 가져온 두 유형의 버전이 낮기 때문일 수 있습니다. 최대한 SDK와 같은 버전 또는 더 높은 버전을 사용하십시오.
 
 ### SDK가 휴대폰 권한을 얻는 데 문제가 생기면 어떻게 해야 하나요?
-외부 스토리지에 파일을 업로드 혹은 다운로드해야 할 경우 네트워크와 외부 스토리지 읽기/쓰기 권한이 반드시 있어야 합니다. 위치 측정, 디바이스 정보 권한과 같은 기타 권한은 필수 권한이 아닙니다. 권한 문제에 민감한 경우 MtaUtils 패킷을 가져오지 않게 않거나 5.5.8 이상 버전으로 업그레이드하십시오.
+외부 스토리지에 파일을 업로드 또는 다운로드해야 할 경우 네트워크와 외부 스토리지 읽기/쓰기 권한이 반드시 있어야 합니다. 위치 측정 권한, 디바이스 정보 권한과 같은 기타 권한은 필수 권한이 아닙니다. 권한 문제에 민감한 경우 MtaUtils 패킷을 가져오지 않게 않거나 5.5.8 이상 버전으로 업그레이드하십시오.
 
-### https 사용시 `java.security.cert.CertPathValidatorException: Trust anchor for certification path not found` 오류가 발생하면 어떻게 해야 하나요?
-프록시를 통해 COS에 액세스할 경우 https를 지원하는지 확인해야 합니다. 지원하지 않는 경우 [Submit Ticket](https://console.cloud.tencent.com/workorder/category)을 통해 처리하십시오.
+### HTTPS 사용 시 `java.security.cert.CertPathValidatorException: Trust anchor for certification path not found` 오류가 발생하면 어떻게 해야 하나요?
+프록시를 통해 COS에 액세스할 경우 HTTPS를 지원하는지 확인해야 합니다. 지원하지 않는 경우 [고객센터](https://intl.cloud.tencent.com/contact-sales)를 통해 문의하십시오.
 
-### 업로드가 100%까지 완료됐지만 여전히 onFailed 인터페이스를 호출하는 경우 어떻게 해야 하나요?
-업로드 현황은 sdk가 네트워크를 읽은 진도 현황을 나타낼 뿐이지 100%가 되었다고 해서 업로드가 완료된 것은 아닙니다. onSuccess 인터페이스 콜백이 있어야만 업로드가 정상 완료된 것이며, 마지막에 Complete Multipart Upload 요청을 보내는 데 오류가 발생한 경우 onFailed 인터페이스가 콜백됩니다.
+### 업로드 진행률이 100% 완료됐지만 여전히 onFailed 인터페이스가 콜백되는 경우 어떻게 해야 하나요?
+업로드 진행률은 단순히 SDK에서 네트워크 진행률을 읽어오는 것으로, 100%가 되었다고 해서 반드시 업로드가 완료된 것은 아닙니다. onSuccess 인터페이스 콜백이 있어야만 업로드가 정상적으로 완료된 것이며, 마지막에 Complete Multipart Upload 요청 전송 후 오류가 발생한 경우 onFailed 인터페이스가 콜백됩니다.
 
-### 멀티파트 업로드 시 400 BadRequest, 409 Conflict 등의 오류가 발생하면 어떻게 처리하나요?
-최대한 sdk가 제공하는 고급 인터페이스 TransferManager를 사용해주십시오. 업로드나 다운로드 시 개인이 멀티파트 업로드 캡슐화를 할 경우 쉽게 오류가 발생할 수 있습니다.
+### 멀티파트 업로드 시 400 BadRequest, 409 Conflict 등의 오류가 발생하면 어떻게 처리해야 하나요?
+가급적 SDK에서 제공하는 고급 인터페이스 TransferManager를 사용해 업로드 및 다운로드하십시오. 사용자가 직접 멀티파트 업로드 인터페이스를 캡슐화할 경우 쉽게 오류가 발생할 수 있습니다.
 
 ### TransferManager로 업로드 혹은 다운로드할 때 권한에 문제가 발생할 경우 어떻게 해야 하나요?
-TransferManager로 파일을 다운로드할 때 먼저 Head 조작을 통해 HeadObject와 GetObject 권한 2개를 모두 받아야 합니다. 업로드 진행 시에는 모든 인터페이스에 단일 업로드와 멀티파트 업로드 권한이 필요합니다.
+TransferManager로 파일을 다운로드할 때 먼저 Head 조작을 통해 HeadObject와 GetObject 권한 2개를 모두 받아야 합니다. 업로드 진행 시에는 모든 인터페이스에 간편 업로드와 멀티파트 업로드 권한이 필요합니다.
 
 ### 인터페이스 호출 시 lock timeout 오류나 no credential for sign 오류 혹은 서명 기간 만료 등의 오류가 발생할 경우 어떻게 하나요?
-직접 BasicLifecycleCredentialProvider#fetchNewCredentials() 방법을 시도했다면 키가 제때 업데이트되었는지, 키가 유효한지 확인해주십시오. 임시 키인 경우 token이 필요합니다. 
+직접 BasicLifecycleCredentialProvider#fetchNewCredentials() 방법을 시도했다면 키가 제때 업데이트되었는지, 키가 유효한지 확인해주십시오. 임시 키인 경우 token이 필요합니다.
 
-### 업데이트 시 `java.lang.RuntimeException: Can't create handler inside thread that has not called Looper.prepare()` 오류가 발생한 경우 어떻게 하나요?
-만약 메인 스레드에서 TransferManager#upload()를 호출하는 방식으로 업로드할 경우 위와 같은 오류가 발생할 수 있습니다. 이것은 mta에 잘못 보고되어 나타난 오류로 무시해도 됩니다. 5.5.8 이상 버전으로 업그레이드하여 이 문제를 해결할 수 있습니다.
+### 업로드 시 `java.lang.RuntimeException: Can't create handler inside thread that has not called Looper.prepare()` 오류가 발생한 경우 어떻게 하나요?
+만약 메인 스레드에서 TransferManager#upload() 방법을 호출하여 업로드할 경우 위와 같은 오류가 발생할 수 있습니다. 이것은 mta에 잘못 보고되어 나타난 오류로 무시해도 됩니다. 5.5.8 이상 버전으로 업그레이드하여 이 문제를 해결할 수 있습니다.
 
 ### 콜백 도중 ui를 직접 조작하여 애플리케이션에 오류가 발생한 경우 어떻게 하나요?
 sdk 콜백 스레드가 메인 스레드가 아닐 수 있으므로 ui를 직접 조작하지 마십시오.
@@ -38,7 +38,15 @@ sdk 콜백 스레드가 메인 스레드가 아닐 수 있으므로 ui를 직접
 업로드 중 파일을 수정하여 파일의 MD5 값이 바뀌었거나 네트워크 신호가 좋지 않아 서버에서 패킷 수신 오류가 발생했을 수 있습니다.
 
 ### 반환 요청 시 ServerError 오류가 발생한 경우 어떻게 해야 하나요?
-프록시로 COS 액세스를 진행했지만 프록시에서 전송 실패로 잘못된 패킷을 반환하여 sdk에 분석 오류가 발생했을 가능성이 있습니다. 클라이언트가 수신한 패킷을 캡처하여 정상 여부를 조회할 수 있습니다.
+프록시를 통해 COS에 액세스했지만 프록시에서 전달 실패로 잘못된 패킷을 반환하여 SDK에 분석 오류가 발생했을 가능성이 있습니다. 클라이언트가 수신한 패킷을 캡처하여 정상 여부를 조회할 수 있습니다.
 
 ### 인터페이스 호출 시 403 권한 오류가 발생한 경우 어떻게 해야 하나요?
-권한 문제는 일반적으로 sdk 문제가 아닙니다. 권한 정보를 확인하거나 [Submit Ticket](https://console.cloud.tencent.com/workorder/category)을 통해 처리하십시오.
+권한 문제는 일반적으로 SDK 문제가 아닙니다. 권한 정보를 확인하거나 [고객센터](https://intl.cloud.tencent.com/contact-sales)를 통해 문의하십시오.
+
+
+### Android SDK는 중단 지점부터 이어서 전송을 지원하나요?
+
+COS의 Android SDK 고급 인터페이스는 중단 지점부터 이어서 전송을 지원합니다. [객체 업로드 및 복사](https://intl.cloud.tencent.com/document/product/436/37674) 문서의 고급 인터페이스 구현을 참조하십시오.
+
+
+
