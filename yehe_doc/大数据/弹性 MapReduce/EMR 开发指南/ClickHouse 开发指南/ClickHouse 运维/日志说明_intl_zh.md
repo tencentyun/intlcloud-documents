@@ -1,6 +1,6 @@
 ## 	ClickHouse 服务端日志说明
 
-ClickHouse 服务端的日志配置默认在`/etc/clickhouse-server`目录的 config.xml 文件中。
+ClickHouse 服务端的日志配置默认在 `/etc/clickhouse-server` 目录的 config.xml 文件中。
 ```
     <logger>
         <level>trace</level>
@@ -31,7 +31,7 @@ Ok.
 ```
 clickhouse-client  --send_logs_level=trace --log-level=trace
 ```
-可以配合`--server_logs_file`使用，将日志保存到指定的文件中。
+可以配合 `--server_logs_file` 使用，将日志保存到指定的文件中。
 ```
 clickhouse-client  --send_logs_level=trace --log-level=trace --server_logs_file='/data/query.log'
 ```
