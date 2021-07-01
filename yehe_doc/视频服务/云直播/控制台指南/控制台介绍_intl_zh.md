@@ -49,7 +49,7 @@
 <td><a href = "https://intl.cloud.tencent.com/zh/document/product/266">SDK 质量监控</a></td>
 <td>可查询移动直播 SDK 近3天的推流数据信息。</td>
 </tr><tr>
-<td><a href = "https://intl.cloud.tencent.com/zh/document/product/266">日志分析</a></td>
+<td><a href = "https://intl.cloud.tencent.com/zh/document/product/266/7983">日志分析</a></td>
 <td><ul style = "margin-bottom: 0px;"><li>可通过对直播访问日志进行实时采集，再清洗、分析和检索，快速定位访问故障。</li><li>可对前一天、近一周、近一个月或自定义时间段的日志数据包进行下载。</li></ul></td>
 </tr>
 </table>
@@ -70,7 +70,7 @@
 <td>快速诊断常见直播推流/播放问题，目前此功能处于开放内测阶段，诊断结果仅供参考。</td>
 </tr>
 <tr>
-<td><a href="https://cloud.tencent.com/document/product/267/55670">拉流转推</a></td>
+<td><a href="https://intl.cloud.tencent.com/zh/document/product/266">拉流转推</a></td>
 <td>提供内容拉取并推送的功能，无需进行直播推流，即可快速拉取已有的视频/直播，推送到目标地址。</td>
 </tr>
 </table>
