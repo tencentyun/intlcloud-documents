@@ -49,7 +49,7 @@
 <td><a href = "https://intl.cloud.tencent.com/zh/document/product/266">SDK 质量监控</a></td>
 <td>可查询移动直播 SDK 近3天的推流数据信息。</td>
 </tr><tr>
-<td><a href = "https://cloud.tencent.com/document/product/267/33996">日志分析</a></td>
+<td><a href = "https://intl.cloud.tencent.com/zh/document/product/266">日志分析</a></td>
 <td><ul style = "margin-bottom: 0px;"><li>可通过对直播访问日志进行实时采集，再清洗、分析和检索，快速定位访问故障。</li><li>可对前一天、近一周、近一个月或自定义时间段的日志数据包进行下载。</li></ul></td>
 </tr>
 </table>
