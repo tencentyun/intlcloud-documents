@@ -13,19 +13,19 @@ First, complete group management by using the APIs for [creating a group](https:
 ### Canceling an invitation
 Before an invitation times out or is processed by the callee, the caller can [cancel](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSignalingManager.html#a9d69707620f038d6e47356cdaa3ab9bd) the invitation. The invitee will receive the cancellation notification [onInvitationCancelled](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSignalingListener.html#adbdb9fe903e032b94a82330649484642), and the invitation process ends.
 
-![Canceling an invitation](https://main.qcloudimg.com/raw/f941775dedf2de6b50119df1df3e426d.png)
+![Canceling an invitation](https://main.qcloudimg.com/raw/f482603761219a660d47098c8754ff5a.png)
 
 ### Accepting an invitation
 When receiving an invitation notification [onReceiveNewInvitation](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSignalingListener.html#aecc2341ca87eb58be37fdadf7a58c014), the callee can [accept](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSignalingManager.html#a4cd3629a0952db7c59186e0c222e17a0) the invitation before the invitation times out or is canceled by the caller. If the invitation is accepted, the caller will receive the invitation acceptance notification [onInviteeAccepted](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSignalingListener.html#af4896215b6bf6febda701c100566b04c). After all callees finish processing the invitation (through acceptance, rejection, and timeout), the invitation process ends.
 
-![Accepting/Rejecting an invitation](https://main.qcloudimg.com/raw/9d291afecc0283452115317ddae8ddd8.png)
+![Accepting/Rejecting an invitation](https://main.qcloudimg.com/raw/764eae198d01855a4e87f6611b056b28.png)
 
 ### Rejecting an invitation
 When receiving an invitation notification [onReceiveNewInvitation](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSignalingListener.html#aecc2341ca87eb58be37fdadf7a58c014), the callee can [reject](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSignalingManager.html#ad9510bf8a333189fd1a0c1eafbde2266) the invitation before the invitation times out or is canceled by the caller. If the invitation is rejected, the caller will receive the invitation rejection notification [onInviteeRejected](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSignalingListener.html#ad351469b5f2f3b36833ae9832ed80d27). After all callees finish processing the invitation (through acceptance, rejection, and timeout), the invitation process ends.
 ### Invitation timeout
 If the timeout threshold of the invitation API is greater than 0 and the callee does not respond before the timeout threshold is reached, then the invitation times out, and both the caller and callee will receive the timeout notification [onInvitationTimeout](http://doc.qcloudtrtc.com/im/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSignalingListener.html#ac5ee85faf06f5deb359afdf6d88d43f5). After all callees finish processing the invitation (through acceptance, rejection, and timeout), the invitation process ends. If the timeout threshold is 0, no timeout notification is sent.
 
-![Invitation timeout](https://main.qcloudimg.com/raw/82ffceea500434dea5a9e409a08a9fbe.png)
+![Invitation timeout](https://main.qcloudimg.com/raw/293e604a66d65413be7b3b1e68b299c5.png)
 
 ## Application Scenarios Cases
 ### Voice and video calls
@@ -42,7 +42,7 @@ In the open-source project [TUIKit Demo](https://github.com/tencentyun/TIMSDK), 
 5. When either party hangs up, the call ends, and the user quits the TRTC room. After the other party receives the `onRemoteUserLeaveRoom` callback of the TRTC SDK, calculate the total call duration, and initiate an invitation again. The custom data in this invitation indicates the end of the call with the call duration attached to facilitate UI display.
 
 **Timing diagram**
-![Signaling combined with TRTC](https://main.qcloudimg.com/raw/0282df9543e2f5fe1b5097c9e9253da1.png)
+![Signaling combined with TRTC](https://main.qcloudimg.com/raw/868a811fe706f1cbb04014c1058c393d.png)
 
 ### Teachers invite students to raise their hands and speak in turns in education scenarios
 In this scenario, the teacher first asks students to raise their hands, and then choose one of the students to speak. The detailed process is as follows:
