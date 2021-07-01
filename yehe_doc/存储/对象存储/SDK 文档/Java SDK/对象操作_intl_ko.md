@@ -97,7 +97,7 @@ do {
 
 Request 멤버 설명:
 
-| Request 멤버 | 설정 방법&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 설명                                                         | 유형    |
+| Request 멤버 | 설정 방법           | 설명                                                         | 유형    |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------- |
 | bucketName | 구조 함수 또는 set 방법 | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String  |
 | prefix       | 구조 함수 또는 set 방법 | 반환되는 결과 객체를 제한하고 prefix를 접두사로 합니다. 기본적으로 Bucket의 모든 멤버를 제한하지 않습니다.<br>기본값: ""(공백) | String  |
@@ -300,7 +300,7 @@ String crc64Ecma = putObjectResult.getCrc64Ecma();
 
 Request 멤버 설명:
 
-| Request 멤버 | 설정 방법 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   | 설명                                                         | 유형   | 필수 입력 |
+| Request 멤버 | 설정 방법   | 설명                                                         | 유형   | 필수 입력 |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |---|
 | bucketName | 구조 함수 또는 set 방법 | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String         | 예|
 | key          | 구조 함수 또는 set 방법 | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다.<br>예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String         | 예|
@@ -402,7 +402,7 @@ ObjectMetadata downObjectMeta = cosClient.getObject(getObjectRequest, downFile);
 
 Request 멤버 설명:
 
-| Request 멤버 | 설정 방법&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 설명                                                         | 유형   |
+| Request 멤버 | 설정 방법            | 설명                                                         | 유형   |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------ |
 | bucketName   | 구조 함수 또는 set 방법 | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String |
 | key          | 구조 함수 또는 set 방법 | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String |
@@ -980,7 +980,7 @@ CompleteMultipartUploadResult result = cosClient.completeMultipartUpload(compReq
 
 #### 매개변수 설명
 
-| 매개변수 이름   | 설정 방법&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 설명                                                         | 유형              |
+| 매개변수 이름   | 설정 방법           | 설명                                                         | 유형              |
 | ---------- | ------------------- | ------------------------------------------------------------ | ----------------- |
 | bucketName | 구조 함수 또는 set 방법 | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String            |
 | key        | 구조 함수 또는 set 방법 | 멀티파트 업로드할 COS 경로, 즉 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 지정합니다. 예를 들어 객체 키는 folder/picture.jpg입니다. | String            |
@@ -1150,7 +1150,7 @@ UploadResult uploadResult = upload.waitForUploadResult();
 
 Request 멤버 설명:
 
-| Request 멤버 | 설정 방법&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 설명                                                         | 유형           |
+| Request 멤버 | 설정 방법           | 설명                                                         | 유형           |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |
 | bucketName   | 구조 함수 또는 set 방법 | 버킷의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String         |
 | key          | 구조 함수 또는 set 방법 | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다.<br>예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String         |
@@ -1283,7 +1283,7 @@ cosclient.shutdown();
 
 Request 멤버 설명:
 
-| Request 멤버 | 설정 방법&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 설명                                                         | 유형   |
+| Request 멤버 | 설정 방법          | 설명                                                         | 유형   |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------ |
 | bucketName   | 구조 함수 또는 set 방법 | 버킷의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String |
 | key          | 구조 함수 또는 set 방법 | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String |
