@@ -2,9 +2,9 @@ Elasticsearch provides full-featured RESTful APIs for intercalation with cluster
 
 As Tencent Cloud ES is deployed in your VPC, you can use a CVM instance in the same VPC as the client to access the ES cluster over the **private network** or **public network**. **Public network access has security risks**; therefore, please enable it with caution.
 
->?
->Public network access is used for development and debugging only but cannot be used in the production environment, as the system limits the call frequency.
-> - Currently, ES access over the public network is free of charge for a bandwidth of up to 10 MB.
+> ?
+> - Public network access is used for development and debugging only but cannot be used in the production environment, as the system limits the call frequency.
+> - Currently, public network access to ES is free of charge with a bandwidth of 10 Mbps.
 
 ## Viewing Private/Public Network Access Addresses
 
@@ -12,14 +12,14 @@ On the [cluster list](https://console.cloud.tencent.com/es) page, click a **clus
 - The private address can be directly found in basic configuration. 
 - The public network address is disabled by default for the sake of security. For clusters having [ES cluster user authentication](https://intl.cloud.tencent.com/document/product/845/35275) enabled, the public network address can be enabled. Doing so may bring security risks to the clusters, as it allows data in ES clusters to be accessed, manipulated, and even deleted directly through APIs; therefore, please enable it with caution.
 
-![](https://main.qcloudimg.com/raw/3ebcfe6e8086785fcc1e4f93c1302969.jpg)
+![](https://main.qcloudimg.com/raw/7c56fbfedbcaac395b41c52b5a2b3f81.png)
 
 
 ## Testing Access
 You can test access to clusters by running the `curl` command. The `ping` command is not supported for connectivity test.
 
 ### Testing service accessibility
->For clusters having [ES cluster user authentication](https://intl.cloud.tencent.com/document/product/845/35275) enabled, login requires authentication of username and password in the format of `curl action -u user:password host ...`, where `user` and `password` should be replaced with the actual username and password.
+>?For clusters having [ES cluster user authentication](https://intl.cloud.tencent.com/document/product/845/35275) enabled, login requires authentication of username and password in the format of `curl action -u user:password host ...`, where `user`, `password`, and `host` should be replaced with the actual username, password, and IP.
 >
 The following uses a private network access address as an example to describe the access operations.
 
@@ -283,7 +283,7 @@ The following response will be returned:
 }
 ```
 
-### Aggregate query
+### Aggregation query
 
 Sample SQL statement:
 ```
