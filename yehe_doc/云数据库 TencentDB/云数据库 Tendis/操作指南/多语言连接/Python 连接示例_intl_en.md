@@ -13,12 +13,12 @@ import redis
 host = '192.xx.xx.195' 
 port = 6379 
 
-#Replace with the ID and password of the instance to be connected 
-user='username' 
+#Replace with the password of the instance to be connected 
+
 pwd='password' 
 
-#When connecting, specify the AUTH information through the "password" parameter in the format of "user+':'+pwd". 
-r = redis.StrictRedis(host=host, port=port, password=user+':'+pwd) 
+#When connecting, specify the AUTH information through the "password" parameter. 
+r= redis.StrictRedis(host=host, port=port, password=pwd)
 
 #Database operations can be performed after the connection is established. For more information, please visit https://github.com/andymccurdy/redis-py. 
 r.set('name', 'python_test'); 
