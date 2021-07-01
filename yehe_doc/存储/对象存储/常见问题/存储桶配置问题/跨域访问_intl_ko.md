@@ -18,7 +18,7 @@
 ### 업로드 시 "get ETag error, please add "ETag" to CORS ExposeHeader setting." 오류가 보고됩니다. 어떻게 처리해야 하나요?
 
 다음 이미지에 따라 크로스 도메인 규칙을 설정하고 브라우저를 전환하여 실행되는지 확인합니다. 자세한 내용은 [크로스 도메인 액세스 설정](https://intl.cloud.tencent.com/document/product/436/11488)을 참조하십시오.
-![](https://main.qcloudimg.com/raw/489ba5c2abee71caa34a58b8b6cb09db.png)
+![](https://main.qcloudimg.com/raw/e2cb8ce626ceaba0058423bb5eb72327.png)
 
 ### Tencent Cloud COS와 CDN 동시 사용 시 COS 크로스 도메인이 정상적으로 작동되지 않습니다. 어떻게 처리해야 하나요?
 
