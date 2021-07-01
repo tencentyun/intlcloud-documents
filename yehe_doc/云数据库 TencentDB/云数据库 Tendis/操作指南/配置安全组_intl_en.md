@@ -53,12 +53,12 @@ A security group is an instance-level firewall provided by Tencent Cloud for con
 
 >!Currently, security groups can be configured only for TencentDB for Tendis instances in VPC.
 
-1. Log in to the [TencentDB for Tendis console](https://console.cloud.tencent.com/tendis). In the instance list, click an instance ID/name or **Manage** in the **Operation** column to access the instance management page.
+1. Log in to the [TencentDB for Tendis console](https://console.cloud.tencent.com/tendis). In the instance list, click an instance ID or **Manage** in the **Operation** column to access the instance management page.
 2. On the **Security Group** page, click **Configure Security Group**.
 3. In the pop-up dialog box, select the security group to be bound and click **OK**. 
 
 ## Security Group Rule Import
-1. On the [Security Group](https://console.cloud.tencent.com/cvm/securitygroup) page, click the ID/name of the target security group.
+1. On the [Security Group](https://console.cloud.tencent.com/cvm/securitygroup) page, click the ID of the target security group.
 2. On the inbound rules or outbound rules tab, click **Import Rule**.
 3. In the pop-up dialog box, select an edited inbound/outbound rule template file and click **Import**.
 >? If there are existing rules in the security group, export them before importing new rules. Existing rules are overwritten after importing.
