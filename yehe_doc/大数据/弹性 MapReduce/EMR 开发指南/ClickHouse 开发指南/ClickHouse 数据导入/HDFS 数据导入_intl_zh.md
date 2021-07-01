@@ -12,7 +12,7 @@
 - 在 ClickHouse 中创建普通表（通常是 MergeTree 系列）存储 HDFS 中的数据。
 - 从外表中 SELECT 数据 INSERT 到普通表，完成数据导入。
 
-#### **步骤1：创建 HDFS Engine 外表**
+#### 步骤1：创建 HDFS Engine 外表
 ```
 CREATE TABLE source
 (
@@ -36,7 +36,7 @@ HDFS Engine 使用方法`ENGINE = HDFS(URI, format)`，可参考 [Table Engine H
 
 
 
-#### **步骤2：创建普通表**
+#### 步骤2：创建普通表
 ```
 CREATE TABLE dest
 (
@@ -123,10 +123,10 @@ if __name__ == '__main__':
 url 的格式为`jdbc:clickhouse://host:port/database`，其中 port 为 clickhosue 的 HTTP 协议端口，默认为8123。
 
 properties 中的部分参数含义如下：
-- `socket_timeout`为超时时间，单位 ms，详情可参考 [这里](https://github.com/ClickHouse/clickhouse-jdbc/issues/159#issuecomment-364423414)。
-- `rewriteBatchedStatements`打开 JDBC Driver 的批量执行 SQL 功能。
-- `batchsize`批量写入数据条数，可以适当调高，有利于提高写入性能。
-- `numPartitions`数据写入并行度，也决定了 JDBC 并发连接数。`batchsize`和`numPartitions`可参考 [JDBC To Other Databases](https://spark.apache.org/docs/latest/sql-data-sources-jdbc.html)。
+- `socket_timeout` 为超时时间，单位 ms，详情可参考 [这里](https://github.com/ClickHouse/clickhouse-jdbc/issues/159#issuecomment-364423414)。
+- `rewriteBatchedStatements` 打开 JDBC Driver 的批量执行 SQL 功能。
+- `batchsize` 批量写入数据条数，可以适当调高，有利于提高写入性能。
+- `numPartitions` 数据写入并行度，也决定了 JDBC 并发连接数。`batchsize`和`numPartitions` 可参考 [JDBC To Other Databases](https://spark.apache.org/docs/latest/sql-data-sources-jdbc.html)。
 
 
 #### 步骤3：提交 Spark 任务
