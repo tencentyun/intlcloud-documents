@@ -23,13 +23,13 @@ A lot of improvements have been made on EMR Druid based on Apache Druid, includi
 
 Currently, EMR Druid supports the following features:
 
-- Easy integration with EMR Hadoop cluster.
-- Easy and quick elastic scalability.
-- HA.
-- Using COS as deep storage.
-- Using COS file as data source for batch indexing.
-- Metadata storage in TencentDB.
-- Integration with tools such as Superset.
-- Various monitoring metrics and alarm rules.
-- Failover.
-- High security.
+- Easy integration with EMR Hadoop cluster
+- Easy and quick elastic scalability
+- HA
+- Using COS as deep storage
+- Using COS file as data source for batch indexing
+- Metadata storage in TencentDB
+- Integration with tools such as Superset
+- Various monitoring metrics and alarm rules
+- Failover
+- High security
