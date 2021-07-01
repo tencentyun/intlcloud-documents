@@ -21,7 +21,7 @@ COSBench는 CentOS 7.0 이상 버전에서 실행됩니다.
 
 ## COSBench 실행 단계
 
-1. [COSBench GitHub](https://github.com/intel-cloud/cosbench/releases) 웹 사이트에서 COSBench 0.4.2.c4 압축파일을 다운로드 한 뒤 서버에서 압축을 해제합니다.
+1. [COSBench GitHub](https://github.com/intel-cloud/cosbench/releases) 웹 사이트에서 COSBench 0.4.2.c4 압축 파일을 다운로드한 뒤 서버에서 압축을 해제합니다.
 2. COSBench의 종속 라이브러리를 설치한 뒤 다음 명령어를 실행합니다.
 ```
 yum install nmap-ncat java curl java-1.8.0-openjdk-devel -y
@@ -74,14 +74,15 @@ yum install nmap-ncat java curl java-1.8.0-openjdk-devel -y
 
 |  매개변수     |    설명       |
 |-----------|----------------|
-|    accesskey, secretkey    |    키 정보, 사용자의 SecretId와 SecretKey로 각각 대체  |
-|      cprefix         |       버킷 이름, 예시: examplebucket            |
-|    csuffix          |      사용자의 APPID, APPID 앞에 `-` 입력, 예시: -1250000000      |
+|    accesskey, secretkey    |    키 정보, 각각 사용자의 SecretId와 SecretKey로 대체  |
+|      cprefix         |       버킷 이름 접두사, 예시: examplebucket            |
+|  containers |   버킷 이름 값 구간이며 버킷의 마지막 이름은 cprefix와 containers로 구성, 예시: examplebucket1, examplebucket2   |
+|    csuffix          |      사용자의 APPID, APPID 앞에 `-` 입력 필요, 예시: -1250000000      |
 |     runtime        |    부하 테스트 실행 시간     |
 |     ratio       |       읽기와 쓰기 비율     |
 |   workers          |  부하 테스트 스레드 수       |
 
-4. cosbench-start.sh 파일을 편집하여 Java에서 다음 매개변수로 행 추가를 실행하고, s3의 md5 인증 기능을 비활성화합니다.
+4. cosbench-start.sh 파일을 편집하여 Java에서 다음 매개변수로 행 추가를 실행하고, s3의 md5 검증 기능을 비활성화합니다.
 ```plaintext
 -Dcom.amazonaws.services.s3.disableGetObjectMD5Validation=true
 ```
