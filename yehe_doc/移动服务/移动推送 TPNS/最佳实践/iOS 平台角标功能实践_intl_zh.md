@@ -13,9 +13,9 @@
 此类场景建议使用角标自增方案，如下：
 **第一步：**[通过 API 创建推送](https://intl.cloud.tencent.com/document/product/1024/33764) 时，设置应用角标数 badge_type = -2，角标数字自动加1。
 **第二步：**当 App 启动时，先调用「清空应用角标并清空通知栏」方法来清空本地角标数和通知栏消息，实现代码如下图：
-
+![](https://main.qcloudimg.com/raw/076ca2d56865d332b0821dca8ffcfdbb.png)
 **第三步：**清空云端角标数，实现代码如下图：
-
+![](https://main.qcloudimg.com/raw/64bd9d0160d2a31bb60f70524c2f3e6e.png)
 **第四步：**需要更新云端角标数时，需调用下方接口将角标值同步到 TPNS 服务器，下次推送时以此值为基准。如当前 TPNS 服务器角标值同步为 n，则下次收到推送时 App 角标值为 n+1。
 ```
 //将角标值同步到 TPNS 服务器，下次推送时以此值为基准
@@ -133,4 +133,66 @@ clearEpisodeNotification.applicationIconBadgeNumber = -1;
 
 #### 通过[ API 创建推送](https://intl.cloud.tencent.com/document/product/1024/33764) 时，如何让角标数不变？
 badge_type = -1：角标数字不变。
+#### 如何查询App的角标修改方法的函数堆栈？
+可以通过hook系统类UIApplication的setApplicationIconBadgeNumber:方法打印函数调用堆栈，从而发现调用者信息，代码如下：
+UIApplication+ApplicationIconBadgeNumber.h文件
+``` 
+#import <UIKit/UIKit.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface UIApplication (ApplicationIconBadgeNumber)
+
+@end
+
+NS_ASSUME_NONNULL_END
+
+```
+UIApplication+ApplicationIconBadgeNumber.m文件
+```
+#import "UIApplication+ApplicationIconBadgeNumber.h"
+#import <objc/runtime.h>
+
+@implementation UIApplication (ApplicationIconBadgeNumber)
+
+//load类方法(当某个类的代码被读到内存后调用)
++ (void)load
+{
+SEL origSel = @selector(setApplicationIconBadgeNumber:);
+SEL swizSel = @selector(swiz_setApplicationIconBadgeNumber:);
+[UIApplication swizzleMethods:[self class] originalSelector:origSel swizzledSelector:swizSel];
+}
+
+//交换两个方法的实现
++ (void)swizzleMethods:(Class)class originalSelector:(SEL)origSel swizzledSelector:(SEL)swizSel
+{
+Method origMethod = class_getInstanceMethod(class, origSel);
+Method swizMethod = class_getInstanceMethod(class, swizSel);
+BOOL didAddMethod = class_addMethod(class, origSel, method_getImplementation(swizMethod), method_getTypeEncoding(swizMethod));
+if (didAddMethod){
+class_replaceMethod(class, swizSel, method_getImplementation(origMethod), method_getTypeEncoding(origMethod));
+}else{
+method_exchangeImplementations(origMethod, swizMethod);
+}
+}
+
+/// hook设置角标
+- (void)swiz_setApplicationIconBadgeNumber:(NSInteger)number
+{
+NSLog(@"调用了swiz_setApplicationIconBadgeNumber方法");
+/// 打印当前函数调用堆栈
+NSArray *syms = [NSThread  callStackSymbols];
+for(int i = 0 ; i < [syms count]; i++){
+NSLog(@"<%@ %p> %@ - caller: %@ ", [self class], self, NSStringFromSelector(_cmd),[syms objectAtIndex:i]);
+}
+//执行这句的时候跳转到setApplicationIconBadgeNumber方法中
+[self swiz_setApplicationIconBadgeNumber:number];
+}
+
+@end
+
+```
+将上面的两个文件加入到自己的工程中使用。
+下图是加入到TPNS Demo示例：
+![](https://main.qcloudimg.com/raw/b079a5fbbd9b0c9f174e841db692330d.png)
 

@@ -24,7 +24,6 @@
 | upload_id     | Integer | 是（仅号码包推送\token文件包推送时使用） | 号码包或 token 包的上传 ID                                   |
 
 <span id="audience_type"></span>
-
 ### audience_type：推送目标
 
 推送目标，表示一条推送可以被推送到哪些设备。
@@ -162,8 +161,8 @@ Android 平台具体字段如下表：
 | android                  | Object | message | 无     | 否   | 安卓通知高级设置结构体，请参见 [Android 结构体说明](#intent1) |
 
 
-[](id:intent1)
-#### Android 结构体说明
+
+#### Android 结构体说明 [](id:intent1)
 
 | 字段名         | 类型    | 父项目  | 默认值 | 必需 | 参数描述                                                     |
 | -------------- | ------- | ------- | ------ | ---- | ------------------------------------------------------------ |
@@ -171,6 +170,7 @@ Android 平台具体字段如下表：
 | n_ch_name      | String  | android | 无     | 否   | 通知渠道名称（仅 TPNS  推送通道生效） ，请参见 [创建通知渠道](https://intl.cloud.tencent.com/document/product/1024/30715) |
 | xm_ch_id       | String  | android | 无     | 否   | 小米渠道 ID（仅小米推送通道生效）                            |
 | hw_ch_id       | String  | android | 无     | 否   | 华为渠道 ID（仅 华为推送通道生效）                           |
+| hw_importance       | Integer  | android | 0     | 否   | 华为厂商通知消息分类，决定用户设备消息通知行为，取值如下：<li>1：资讯营销类消息</li><li>2：服务与通讯类消息 </li>                          |
 | oppo_ch_id     | String  | android | 无     | 否   | OPPO渠道 ID（仅 OPPO 推送通道生效）                          |
 | vivo_ch_id     | String  | android | 0      | 否   | vivo 渠道 ID：“0”代表运营消息，“1”代表系统消息（仅 vivo 推送通道生效） |
 | n_id           | Integer | android | 0      | 否   | **（该字段已废弃，后续会下线，如需使用覆盖功能请使用覆盖参数：collapse_id）**<br>通知消息对象的唯一标识（TPNS 通道）<br>（1）大于0：会覆盖先前相同 id 的消息<br>（2）等于0：展示本条通知且不影响其他消息<br>（3）等于-1：将清除先前所有消息，仅展示本条消息 |
@@ -192,8 +192,8 @@ Android 平台具体字段如下表：
 
 
 
-[](id:action)
-**action 参数说明**
+
+**action 参数说明**[](id:action)
 
 | 字段名      | 类型    | 父项目 | 默认值 | 必需                                        | 参数描述                                                     |
 | ----------- | ------- | ------ | ------ | ------------------------------------------- | ------------------------------------------------------------ |
@@ -282,8 +282,8 @@ iOS 平台具体字段如下表：
 | xg_media_resources    | String     | message | 无    | 否    | 图片、音视频富媒体元素 url 地址                          |
 
 
-[](id:iOS)
-#### iOS 字段说明
+
+#### iOS 字段说明[](id:iOS)
 
 | 字段名         | 类型   | 父项目 | 默认值 | 必需 | 参数描述                                                     |
 | -------------- | ------ | ------ | ------ | ---- | ------------------------------------------------------------ |
@@ -291,8 +291,8 @@ iOS 平台具体字段如下表：
 | custom_content | String | ios    | 无     | 否   | 自定义下发的参数，需要序列化为 json string                   |
 | xg             | String | ios    | 无     | 否   | 系统保留 key，应避免使用                                     |
 
-[](id:aps)
-**aps 参数说明**
+
+**aps 参数说明**[](id:aps)
 
 | 字段名          | 类型    | 父项目 | 默认值 | 必需 | 参数描述                                                     |
 | --------------- | ------- | ------ | ------ | ---- | ------------------------------------------------------------ |
@@ -376,8 +376,8 @@ Android 平台具体字段如下表：
 }
 ```
 
-[](id:aps2)
-### iOS 静默消息
+
+### iOS 静默消息[](id:aps2)
 
 静默消息，iOS 平台特有，类似 Android 中的透传消息，消息不展示，当静默消息到达终端时，iOS 会在后台唤醒 App 一段时间（小于30s），让 App 来处理消息逻辑。
 
@@ -422,8 +422,10 @@ Push API 可选参数是除了`audience_type`、`message_type`、`message`以外
 | tag_rules             | Array   | 无     | 仅标签推送必需                 | 无                                   | <li>标签组合推送，可设置'与'、'或'、'非'组合规则</li><li>**注意：**当与 tag_list 二者共存时，tag_list 字段自动无效，参数说明请查看 [tag_rules 参数说明](#tag_rules)</li> |
 | account_list          | Array   | 无     | 单账号推送、账号列表推送时必需 | 无                                   | 若单账号推送：<li>要求 `audience_type = account`</li><li>参数格式：[ "account1" ]</li><br>若账号列表推送：<li>参数格式：`["account1","account2"]`</li><li>最多1000 个 account </li> |
 | account_push_type     | Integer | 无     | 账号推送时可选                 | 0                                    | <li> 0：往账号的最新的 device 上推送信息</li><li> 1：往账号关联的所有 device 设备上推送信息</li> |
+| account_type     | Integer | 无     | 否                 | 0                                    | 账号类型，需要与推送的账号所属类型一致，取值可参考 [账号类型取值表](https://intl.cloud.tencent.com/document/product/1024/40598)|
 | token_list            | Array   | 无     | 单设备推送、设备列表推送时必需 | 无                                   | 若单设备推送：<li>要求 audience_type=token<li>参数格式：[ "token1" ]<br>若设备列表推送：<li>参数格式：[ "token1","token2" ]</li><li>最多1000个 token </li> |
 | push_speed            | Integer | 无     | 否       | 无                                   | <li>推送限速设置每秒 X 条，X 取值参数范围1000 - 50000 </li><li>仅全量推送、号码包推送和标签推送有效</li>          |
+| hwBizType            | Integer | 无     | 否       | 0                                  |是否开启华为快通知:<li>1：开启<li>0：关闭</li>**注意**：仅华为通道有效，其需要 [联系华为商务](https://developer.huawei.com/consumer/cn/support/business) 开通。          |
 | collapse_id           | Integer | 无     | 否                             | 系统默认分配一个 collapse_id         | <li>消息覆盖参数，在前一条推送任务已经调度下发后，如果第二条推送任务携带相同的 collapse_id  则会停止前一条推送中尚未下发的 TPNS 通道数据，同时会覆盖展示第一条推送任务的消息。<li>已完成任务的 collapse_id 可以通过 [单个任务推送信息查询接口](https://intl.cloud.tencent.com/document/product/1024/33773) 获取。<li>目前仅支持全推、标签推送、号码包推送。 |
 | channel_rules         | Array   | 无     | 否                             | 无                                   | 推送通道选择策略。<li>可自定义该条推送允许通过哪些通道下发，默认允许通过所有通道下发，详细推送策略参考 [通道策略](https://intl.cloud.tencent.com/document/product/1024/36151)<li>channel_rules  数组单元素数据结构见下 [channel_rules 参数说明](#channel_rules参数说明1) |
 | tpns_online_push_type | Integer | 无     | 否                             | 0                                    | 在线设备是否通过 TPNS 通道下发：<li>0：默认在线走 TPNS 通道下发<li> 1：在线不优先走 TPNS 通道下发 |
@@ -436,10 +438,11 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
 > - 目前仅支持 TPNS 通道、APNS 通道、小米通道、魅族通道以及华为系统版本EMUI10及以上的设备。
 > - 对于华为通道，覆盖消息时携带自定义参数需要使用 [intent](#intent1) 方式，如使用 custom_content 方式携带自定义参数，接口层会进行拦截。
 > - 目前 OPPO 通道 vivo 通道不支持覆盖消息。当新创建覆盖消息时可通过 force_collapse 字段设置为 false 来关闭 vivo、OPPO 通道的下发。
+> 
 
 
-[](id:tag_rules)
-### tag_rules 参数说明
+
+### tag_rules 参数说明[](id:tag_rules)
 
 | 字段      | 类型    | 父项目    | 必填 | 描述                                                         |
 | --------- | ------- | --------- | ---- | ------------------------------------------------------------ |
@@ -447,8 +450,8 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
 | operator  | String  | tag_rules | 是   | tag_rules 数组内各元素的运算符，第一个 tag_rules 元素的 operator 为无效数据，第二个 tag_rules 元素的 operator 作为第一个和第二个 tag_rules 元素之间的运算符。<li>OR： 或运算<li>AND：且运算 |
 | is_not    | Boolean | tag_rules | 是   | 是否对 tag_items 数组的运算结果进行非运算。<li>true：进行非运算<li>false：不进行非运算。</li> |
 
-[](id:tag_items2)
-#### tag_items 说明
+
+#### tag_items 说明[](id:tag_items2)
 
 | 字段           | 类型    | 父项目    | 必填 | 描述                                                         |
 | -------------- | ------- | --------- | ---- | ------------------------------------------------------------ |
@@ -459,8 +462,8 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
 | tag_type       | String  | tag_items | 是   | 参见 [tag_type 取值表](#tag123)                              |
 
 
-[](id:tag123)
-#### tag_type 取值表
+
+#### tag_type 取值表[](id:tag123)
 
 | **标签名称** | **tag_type 取值**      | **标签名举例**          |
 | ------------ | ---------------------- | ----------------------- |
@@ -475,6 +478,7 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
 | 国家         | xg_auto_country        | CN，SG 等               |
 
 >? 详细使用方法可参见 [标签推送示例](#biaoqianshili)。
+>
 
 
 <span id="channel_rules参数说明1"></span>
@@ -651,8 +655,8 @@ force_collapse|Boolean|无|否|false|对于不支持消息覆盖的 OPPO 、vivo
 ```
 
 
-[](id:biaoqianshili)
-### 标签推送场景（tag_rules 方式）
+
+### 标签推送场景（tag_rules 方式）[](id:biaoqianshili)
 
 **场景一：广东和湖南，并且是20200408当天活跃过的男性用户**
 表达式：（xg_auto_province.guangdong 或 xg_auto_province.hunan）与 xg_auto_active.20200408 与 xg_user_define.male
