@@ -3,8 +3,8 @@
 >- 单个网卡绑定内网 IP 数量仅代表网卡可以绑定的内网 IP 数量上限，不承诺按照上限提供 EIP 配额，账号的 EIP 配额按照 EIP [使用限制](https://intl.cloud.tencent.com/document/product/213/5733) 提供。
 >- 弹性网卡数代表对应配置服务器可以绑定的网卡数量，同一个 VPC 下所有云服务器最多绑定1000个弹性网卡。
 
-#### 云服务器支持绑定的弹性网卡配额
-
+<dx-tabs>
+::: 云服务器支持绑定的弹性网卡配额
 <table >
    <tr >
     <th width="6%"  rowspan="2" style = "text-align:center;">机型</th>
@@ -288,20 +288,7 @@
     <td  >8</td>
    </tr>
    <tr >
-    <th  rowspan="7" style = "text-align:center;">GPU 机型</th>
-    <th  style = "text-align:center;">GPU 计算型 GN2</th>
-    <td >-</td>
-    <td >-</td>
-    <td >-</td>
-    <td >-</td>
-    <td >-</td>
-    <td >-</td>
-    <td >-</td>
-    <td >-</td>
-    <td >-</td>
-    <td >8</td>
-   </tr>
-   <tr >
+    <th  rowspan="6" style = "text-align:center;">GPU 机型</th>
     <th class="xl71" x:str style = "text-align:center;">GPU 计算型 GN6</th>
     <td >-</td>
     <td >-</td>
@@ -438,9 +425,8 @@
     <td colspan="10" style = "text-align:center;">不支持绑定弹性网卡</td>
    </tr>
   </table>
-
-#### 云服务器单网卡支持绑定的内网IP配额
-
+::: 
+::: 云服务器单网卡支持绑定的内网IP配额
 <table >
    <tr >
     <th width="6%"  rowspan="2" style = "text-align:center;">机型</th>
@@ -540,7 +526,7 @@
    </tr>
    <tr >
     <th style = "text-align:center;">标准型 SA1</th>
-    <td >内存=1G：2<br/>内存&gt;1G：6</td>
+    <td >内存=1G：2<br/>内存&#62;1G：6</td>
     <td >10</td>
     <td >内存=8G：10<br/>内存=16G：20</td>
     <td >-</td>
@@ -724,20 +710,7 @@
     <td  >30</td>
    </tr>
    <tr >
-    <th  rowspan="7" style = "text-align:center;">GPU 机型</th>
-    <th  style = "text-align:center;">GPU 计算型 GN2</th>
-    <td >-</td>
-    <td >-</td>
-    <td >-</td>
-    <td >-</td>
-    <td >-</td>
-    <td >-</td>
-    <td >-</td>
-    <td >-</td>
-    <td >-</td>
-    <td >30</td>
-   </tr>
-   <tr >
+    <th  rowspan="6" style = "text-align:center;">GPU 机型</th>
     <th class="xl71" x:str style = "text-align:center;">GPU 计算型 GN6</th>
     <td >-</td>
     <td >-</td>
@@ -874,5 +847,7 @@
     <td colspan="10" style = "text-align:center;">不支持绑定弹性网卡</td>
    </tr>
   </table>
+:::
+</dx-tabs>
 
 
