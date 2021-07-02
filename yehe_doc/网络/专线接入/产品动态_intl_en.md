@@ -25,7 +25,7 @@
 </tr>
 <tr>
 <td>Upgrade dedicated tunnels</td>
-<td>The dedicated tunnels are upgraded to versions 1.0 and 2.0, which change with the associated connection.<ul><li>The tunnel 1.0 now supports adjusting bandwidth.</li><li>The tunnel 2.0 supports features including bandwidth adjustment, health check, and network probe.</li></ul></td>
+<td>The dedicated tunnels are upgraded to versions 1.0 and 2.0, which change with the associated connection.<li>The tunnel 1.0 now supports adjusting bandwidth.</li><li>The tunnel 2.0 supports features including bandwidth adjustment, health check, and network probe.</li></td>
 <td>2021-02-01</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/216/19250">Creating a Dedicated Tunnel</td>
 </tr>
@@ -75,7 +75,7 @@
 </tr>
 <tr>
 <td>Update the route propagation of a CCN-based direct connect gateway</td>
-<td>For a CCN-based direct connect gateway created after September 15, 2020:<ul><li>If a static dedicated tunnel is used, the IDC route to Tencent Cloud VPC should be configured in the local router.</li><li>If a BGP dedicated tunnel is used, the IDC will automatically obtain the VPC CIDR block based on the BGP protocol.</li></ul></td>
+<td>For a CCN-based direct connect gateway created after September 15, 2020:<li>If a static dedicated tunnel is used, the IDC route to Tencent Cloud VPC should be configured in the local router.</li><li>If a BGP dedicated tunnel is used, the IDC will automatically obtain the VPC CIDR block based on the BGP protocol.</li></td>
 <td>2020-11-06</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/216/38746">Direct Connect Gateway Overview</td>
 </tr>
@@ -113,7 +113,7 @@
 </tr>
 <tr>
 <td>Update the compliance requirements of Direct Connect</td>
-<td><ul><li>The Tencent Cloud Direct Connect Service Level Agreement is released.</li><li>The shared connection feature of new dedicated tunnels has stopped accepting new applications through the console and the API since August 1, 2020. The shared connection in use will not be affected.</li></ul></td>
+<td><li>The Tencent Cloud Direct Connect Service Level Agreement is released.</li><li>The shared connection feature of new dedicated tunnels has stopped accepting new applications through the console and the API since August 1, 2020. The shared connection in use will not be affected.</li></td>
 <td>2020-06-29</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/216/37071">Notice on Changing the Direct Connect Features</td>
 </tr>
