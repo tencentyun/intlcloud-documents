@@ -13,6 +13,5 @@ For the common operations of ENI, please see:
 - [Unbinding EIPs](https://intl.cloud.tencent.com/document/product/576/18540)
 - [Modifying Primary Private IPs](https://intl.cloud.tencent.com/document/product/576/18541)
 - [Changing the Subnet of an ENI](https://intl.cloud.tencent.com/document/product/576/18542)
-- Requesting and Releasing IPv6 Addresses
 
 
