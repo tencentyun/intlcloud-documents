@@ -49,7 +49,7 @@ Xcode（11.0以上のバージョン）を使用してソースコードプロ�
 <span id="model"> </span>
 ## UIカスタマイズの実装
 
-[ソースコード](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCMeetingDemo)のtrtcmeetingdemoフォルダには、 ui と modelの2つのサブフォルダがあり、model フォルダには再利用できるオープンソースコンポーネント TRTCMeetingがあります。`TRTCMeeting.h`ファイルでこのコンポーネントが提供するインターフェース関数を見て、対応するインターフェースを使用して UI のカスタマイズを実現することができます。
+[ソースコード]のtrtcmeetingdemoフォルダには、 ui と modelの2つのサブフォルダがあり、model フォルダには再利用できるオープンソースコンポーネント TRTCMeetingがあります。`TRTCMeeting.h`ファイルでこのコンポーネントが提供するインターフェース関数を見て、対応するインターフェースを使用して UI のカスタマイズを実現することができます。
 ![](https://main.qcloudimg.com/raw/2ac6fe9df1b43dae59271f4288f54ef3.png)
 
 
@@ -249,5 +249,4 @@ func onRecvRoomCustomMsg(_ cmd: String?, message: String?, userInfo: TRTCMeeting
   }
 }
 ```
-
 
