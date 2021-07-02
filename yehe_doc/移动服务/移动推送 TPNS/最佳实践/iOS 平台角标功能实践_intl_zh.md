@@ -194,5 +194,5 @@ NSLog(@"<%@ %p> %@ - caller: %@ ", [self class], self, NSStringFromSelector(_cmd
 ```
 将上面的两个文件加入到自己的工程中使用。
 下图是加入到TPNS Demo示例：
-![](https://main.qcloudimg.com/raw/b079a5fbbd9b0c9f174e841db692330d.png)
+![](https://main.qcloudimg.com/raw/f09501633404a4545969f9958e1adac4.png)
 
