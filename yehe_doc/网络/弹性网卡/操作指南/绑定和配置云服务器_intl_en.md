@@ -1,4 +1,4 @@
-This document describes how to bind a [Linux](#centos) and [Windows](#windows) CVM.
+This document describes how to bind an ENI to a [Linux](#centos) and [Windows](#windows) CVM.
 ## Binding a CVM
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
 2. Choose **IP and ENI** > **ENI** in the left sidebar to go to the ENI list page.
@@ -12,13 +12,10 @@ This document describes how to bind a [Linux](#centos) and [Windows](#windows) C
 ## Configuring a CVM
 ### Configuring a Linux CVM
 This document provides instructions on how to configure ENI on two common server images: CentOS and Ubuntu.
++ [Configuring ENI on a CentOS CVM](#centos)
++ [Configuring ENI on a Ubuntu CVM](#ubuntu)
 
-[Configuring ENI on a CentOS CVM](#centos)
-
-[Configuring ENI on a Ubuntu CVM](#ubuntu)
-<span id="centos">
-
-Configuring ENI on a **CentOS CVM**
+Configuring ENI on a **CentOS CVM**[](id:centos)
  >? The following operations use CentOS 7 or later versions as an example.
  > 
 1. [Log in to the CVM](https://intl.cloud.tencent.com/document/product/213/32501) as the administrator and run the following command to locate the ENI to be configured (IP not shown). As shown in the figure, the ENI to be configured is `eth1`.
@@ -73,34 +70,33 @@ Configuring ENI on a **CentOS CVM**
 6. Configure the routing policy based on actual needs.
     After the preceding configuration, the Linux image still sends packets from the primary ENI by default. In this case, you can configure policy-based routing to specify the ENI through which packets are sent and returned.
 <span id="6.1">
-	
-  1. Create two route tables.
+
+   1. Create two route tables.
    ```plaintext
      echo "10 t1" >> /etc/iproute2/rt_tables
      echo "20 t2" >> /etc/iproute2/rt_tables 
    ```
->? Replace “10” and “20” with the actual route ID, and replace “t1” and “t2” with the actual route table names.
+    >? Replace “10” and “20” with the actual route ID, and replace “t1” and “t2” with the actual route table names.
 >
- 2. Add default routes for both route tables.
+   2. Add default routes for both route tables.
 	```plaintext
      ip route add default dev eth0 via 192.168.1.1 table 10
      ip route add default dev eth1 via 192.168.1.1 table 20 
 	```
-> ? The IPs in the above two commands should be replaced with the IP addresses of the subnet gateway of primary ENI, and that of the secondary ENI. For details on gateways, see [Viewing the gateway](#.E6.9F.A5.E7.9C.8B.E7.BD.91.E5.85.B3).
+      > ? The IPs in the above two commands should be replaced with the IP addresses of the subnet gateway of primary ENI, and that of the secondary ENI. For details on gateways, see [Viewing the gateway](#.E6.9F.A5.E7.9C.8B.E7.BD.91.E5.85.B3).
 > 
- 3. Configure policy-based routes.
+  3. Configure policy-based routes.
    ```plaintext
     ip rule add from 192.168.1.5 table 10
     ip rule add from 192.168.1.62 table 20 
    ```
-> ?
-> + The IPs in the above two commands should be replaced with the IP addresses of the primary ENI and that of the secondary ENI. Enter the actual route ID customized in [step 6.1](#6.1) to replace “10” and “20”.
-> + After completing the configuration, you can ping the private address of a CVM that is in the same subnet. If the pinging succeeds, the configuration is correct. If no other CVM exists, you can bind the private IP address of the secondary ENI to a public IP address and then ping the public IP address.
-> + The routes need to be reconfigured after network restart.
+    > ?
+    > + The IPs in the above two commands should be replaced with the IP addresses of the primary ENI and that of the secondary ENI. Enter the actual route ID customized in [step 6.1](#6.1) to replace “10” and “20”.
+    > + After completing the configuration, you can ping the private address of a CVM that is in the same subnet. If the pinging succeeds, the configuration is correct. If no other CVM exists, you can bind the private IP address of the secondary ENI to a public IP address and then ping the public IP address.
+    > + The routes need to be reconfigured after network restart.
 > 
-<span id="ubuntu">
 
-Configuring ENI on a **Ubuntu CVM**
+Configuring ENI on a **Ubuntu CVM**[](id:ubuntu)
 >? The following operations use Ubuntu 18.04 as an example.
 > 
 1. [Log in to the CVM](https://intl.cloud.tencent.com/document/product/213/32501) as the administrator and run the following command to locate the ENI to be configured (IP not shown). As shown in the figure, the ENI to be configured is `eth1`.
@@ -129,10 +125,9 @@ Configuring ENI on a **Ubuntu CVM**
       address 172.21.48.3 # Enter the actual IP address of the ENI.
       netmask 255.255.240.0 # Enter the actual subnet mask.
          ```
-  
    3. Press **Esc** when you get to the last line of vim, enter **wq!**, and then press **Enter** to save and close the configuration file.
 4. Restart the ENI eth1.
- 1. Run the following commands to switch to the “root” account and install ifupdown.
+   1. Run the following commands to switch to the “root” account and install ifupdown.
      ```plaintext
       sudo su
       apt install ifupdown
@@ -146,7 +141,7 @@ Configuring ENI on a **Ubuntu CVM**
      ```plaintext
       ifup eth1
       ```
-4. Check and verify IP configuration.
+5. Check and verify IP configuration.
       1. Run the following command to check the IP address.
        ```plaintext
       ip addr
@@ -160,46 +155,44 @@ Configuring ENI on a **Ubuntu CVM**
        ifdown eth1
        ifup eth1
 	```
-5. Configure the routing policy based on your actual needs.
+6. Configure the routing policy based on your actual needs.
       After the preceding configuration, the Linux image still sends packets from the primary ENI by default. In this case, you can configure policy-based routing to specify the ENI through which packets are sent and returned.
 <span id="Linux6.1">
    
- 1. Run the following commands to create two route tables.
+    1. Run the following commands to create two route tables.
      ```plaintext
      echo "10 t1" >> /etc/iproute2/rt_tables
      echo "20 t2" >> /etc/iproute2/rt_tables
      ```
->? Replace “10” and “20” with the actual route ID, and replace “t1” and “t2” with the actual route table names.
+     >? Replace “10” and “20” with the actual route ID, and replace “t1” and “t2” with the actual route table names.
  >
 
- 2. Run the following commands to add default routes for both route tables.
-  ```plaintext
- ip route add default dev eth0 via 172.21.48.1 table 10
-ip route add default dev eth1 via 172.21.48.1 table 20
-  ```
-> ? The IPs in the above two commands should be replaced with the IP addresses of the subnet gateway of primary ENI, and that of the secondary ENI. For details on gateways, see [Viewing the Gateway](#.E6.9F.A5.E7.9C.8B.E7.BD.91.E5.85.B3).
+    2. Run the following commands to add default routes for both route tables.
+    ```plaintext
+    ip route add default dev eth0 via 172.21.48.1 table 10
+    ip route add default dev eth1 via 172.21.48.1 table 20
+    ```
+     > ? The IPs in the above two commands should be replaced with the IP addresses of the subnet gateway of primary ENI, and that of the secondary ENI. For details on gateways, see [Viewing the Gateway](#.E6.9F.A5.E7.9C.8B.E7.BD.91.E5.85.B3).
 > 
- 3. Run the following commands to configure policy-based routing.
+    3. Run the following commands to configure policy-based routing.
      ```plaintext
     ip rule add from 172.21.48.11 table 10
-     ip rule add from 172.21.48.3 table 20 
+    ip rule add from 172.21.48.3 table 20 
     ```
-> ?
-> + The IPs in the above two commands should be replaced with the IP addresses of the primary ENI and that of the secondary ENI. Enter the actual route ID customized in [step 6.1](#Linux6.1) to replace “10” and “20”.
-> + After completing the configuration, you can ping the private address of a CVM that is in the same subnet. If the pinging succeeds, the configuration is correct. If no other CVM exists, you can bind the private IP address of the secondary ENI to a public IP address and then ping the public IP address.
-> + The routes need to be reconfigured after network restart.
+    > ?
+    > + The IPs in the above two commands should be replaced with the IP addresses of the primary ENI and that of the secondary ENI. Enter the actual route ID customized in [step 6.1](#Linux6.1) to replace “10” and “20”.
+    > + After completing the configuration, you can ping the private address of a CVM that is in the same subnet. If the pinging succeeds, the configuration is correct. If no other CVM exists, you can bind the private IP address of the secondary ENI to a public IP address and then ping the public IP address.
+    > + The routes need to be reconfigured after network restart.
 >
 
-<span id="windows">
-
-### Configuring a Windows CVM
+### Configuring a Windows CVM[](id:windows)
 >? The following operations use Windows 2012 as an example.
 >
 - Case 1: if CVM is provided with DHCP, you can view its secondary ENI and IP by following steps below without any further configuration:
- 1. Log in to the CVM, and select **Control Panel** -> **Network and Internet** -> **Network and Sharing Center** to check the secondary ENI that has been automatically obtained.
+  1. Log in to the CVM, and select **Control Panel** -> **Network and Internet** -> **Network and Sharing Center** to check the secondary ENI that has been automatically obtained.
   2. Click the “Ethernet 2” secondary ENI to view its information.
- 3. In the **Ethernet 2 Status** pop-up window, click **Properties**.
- 4. In the **Ethernet 2 Properties** pop-up window, double-click **Internet Protocol Version 4 (TCP/IPv4)**.
+  3. In the **Ethernet 2 Status** pop-up window, click **Properties**.
+  4. In the **Ethernet 2 Properties** pop-up window, double-click **Internet Protocol Version 4 (TCP/IPv4)**.
   5. In the **Internet Protocol Version 4 (TCP/IPv4)** pop-up window, you can see **Obtain an IP address automatically** is selected, so there is no need to enter one.
   6. Return to the **Ethernet 2 Status** pop-up window and click **Details**.  DHCP is enabled and the IP automatically obtained is displayed.
 - Case 2: if CVM is not provided with DHCP, you need to configure the private IP by following the steps below:
