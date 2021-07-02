@@ -52,7 +52,7 @@ Xcode(11.0 버전 이상)를 사용하여 소스 코드 프로그램인 `iOS/TRT
 [](id:model)
 ## 사용자 정의 UI 인터페이스 구현
 
-[소스 코드](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCMeetingDemo)의 trtcmeetingdemo 폴더에는 ui 폴더와 model 폴더가 있으며, model 폴더에는 재사용 가능한 오픈 소스 모듈인 TRTCMeeting이 포함되어 있습니다. `TRTCMeeting.h` 파일에서 해당 모듈이 제공하는 인터페이스 함수를 확인할 수 있으며, 해당 인터페이스를 사용해 사용자 정의 UI 인터페이스를 구현할 수 있습니다.
+[소스 코드]의 trtcmeetingdemo 폴더에는 ui 폴더와 model 폴더가 있으며, model 폴더에는 재사용 가능한 오픈 소스 모듈인 TRTCMeeting이 포함되어 있습니다. `TRTCMeeting.h` 파일에서 해당 모듈이 제공하는 인터페이스 함수를 확인할 수 있으며, 해당 인터페이스를 사용해 사용자 정의 UI 인터페이스를 구현할 수 있습니다.
 ![](https://main.qcloudimg.com/raw/2ac6fe9df1b43dae59271f4288f54ef3.png)
 
 
@@ -190,7 +190,7 @@ renderView?.refreshVideo(isVideoAvailable: available)
 
 [](id:model.step7)
 ### 7단계: 화면 공유
-1. `startScreenCapture`를 호출하여 인코딩 매개변수와 녹화 플로팅 창을 전송하면 화면 공유 기능을 구현할 수 있습니다. 자세한 정보는 [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a59b16baa51d86cc0465dc6edd3cbfc97)를 참조하십시오.
+1. `startScreenCapture`를 호출하여 인코딩 매개변수와 녹화 플로팅 창을 전송하면 화면 공유 기능을 구현할 수 있습니다. 자세한 정보는 [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a59b16baa51d86cc0465dc6edd3cbfc97)를 참조하십시오.
 2. 회의 중 다른 참여자들은 `onUserVideoAvailable` 이벤트 공지를 수신합니다.
 
 >!화면 공유와 카메라 수집은 상호 충돌되는 작업입니다. 화면 공유 기능을 활성화하고 싶은 경우, 먼저 `stopCameraPreview`를 호출하여 카메라 수집을 비활성화해야 합니다.
