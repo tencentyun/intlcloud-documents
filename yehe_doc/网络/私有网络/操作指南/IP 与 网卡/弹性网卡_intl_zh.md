@@ -13,6 +13,5 @@
 - [解绑弹性公网 IP](https://intl.cloud.tencent.com/document/product/576/18540)
 - [修改主内网 IP](https://intl.cloud.tencent.com/document/product/576/18541)
 - [修改所属子网](https://intl.cloud.tencent.com/document/product/576/18542)
-- 申请和释放 IPv6
 
 
