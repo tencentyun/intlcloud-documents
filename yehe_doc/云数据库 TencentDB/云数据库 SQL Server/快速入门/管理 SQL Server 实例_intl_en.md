@@ -9,7 +9,7 @@ You can log in to the [TencentDB for SQL Server Console](https://console.cloud.t
 | Termination/return | In the instance list, you can select **More** > **Terminate/Return** to terminate/return a database instance. For more information, please see [Terminating Instance](https://intl.cloud.tencent.com/document/product/238/35787). |
 
 ## Instance Management Page
-Log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver). On the instance list page, click the instance name/ID or click **Manage** in the "Operation" column and enter the instance management page, where you can view its details, monitor it, and manage databases.
+Log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver). On the instance list page, click the instance ID or click **Manage** in the "Operation" column and enter the instance management page, where you can view its details, monitor it, and manage databases.
 
 
 | Feature | Description |
