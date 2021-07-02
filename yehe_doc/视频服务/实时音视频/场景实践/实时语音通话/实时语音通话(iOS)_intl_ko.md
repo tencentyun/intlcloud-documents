@@ -60,7 +60,7 @@ Xcode(11.0 버전 이상)를 사용하여 소스 코드 프로그램인 `iOS/TRT
 
 ## 사용자 정의 UI 인터페이스 구현
 
-[소스 코드](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCCallingDemo) 폴더 `TRTCCallingDemo`에는 두 개의 하위 폴더 ui와 model이 있으며, model 폴더에는 Tencent Cloud가 구현한 재사용 가능 오픈 소스 모듈 TRTCCalling이 포함되어 있습니다. `TRTCCalling.h` 파일에서 이 모듈이 제공하는 인터페이스 함수를 확인할 수 있습니다.
+[소스 코드]폴더 `TRTCCallingDemo`에는 두 개의 하위 폴더 ui와 model이 있으며, model 폴더에는 Tencent Cloud가 구현한 재사용 가능 오픈 소스 모듈 TRTCCalling이 포함되어 있습니다. `TRTCCalling.h` 파일에서 이 모듈이 제공하는 인터페이스 함수를 확인할 수 있습니다.
 ![](https://main.qcloudimg.com/raw/78cc06cd53538243bc52abc381350c55.jpg)
 
 오픈 소스 모듈 TRTCCalling을 사용해 맞춤형 UI 인터페이스를 구현할 수 있습니다. 즉, model 부분만 재사용하여 UI 부분을 자체적으로 구현할 수 있습니다.
