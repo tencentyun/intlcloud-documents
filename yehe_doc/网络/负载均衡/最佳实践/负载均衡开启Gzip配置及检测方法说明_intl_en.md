@@ -1,4 +1,4 @@
-For instance of **public network CLB or public network CLB with fixed IP**, Gzip compression is enabled for **HTTP and HTTPS** protocols by default. Gzip feature compresses websites, which effectively reduces data volume in network transmission and speeds up access of client browser. Pay attention to the following:
+For instance of **public network CLB or public network CLB with fixed IP**, Gzip compression is enabled for **HTTP and HTTPS** protocols by default. Gzip features compresses websites, which effectively reduces data volume in network transmission and speeds up access of client browser. Pay attention to the following:
 
 ### Notes
 
