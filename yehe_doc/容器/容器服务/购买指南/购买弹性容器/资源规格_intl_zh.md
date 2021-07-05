@@ -1,5 +1,5 @@
 ## 概述
-使用弹性容器服务（EKS），您无需关心集群节点，但为了合理分配资源和准确核算，您需在部署工作负载时指定 Pod 申请的资源规格。腾讯云会根据您指定的规格为工作负载分配计算资源，也会根据此规格进行费用核算。
+使用弹性容器服务 EKS，您无需关心集群节点，但为了合理分配资源和准确核算，您需在部署工作负载时指定 Pod 申请的资源规格。腾讯云会根据您指定的规格为工作负载分配计算资源，也会根据此规格进行费用核算。
 
 当您使用 Kubernetes API 或 Kubectl 创建弹性容器工作负载时，可以通过 annotation 指定资源规格。如果不指定，EKS 会根据工作负载设置的容器 Request、Limit 等参数进行计算。详情请参考 [指定资源规格](https://intl.cloud.tencent.com/document/product/457/36161)。
 
@@ -35,8 +35,7 @@ EKS 在所有支持 CPU 资源类型的地域提供以下 CPU Pod 规格。EKS �
 | 2 | 2 - 8 | 1 |
 | 4 | 4 - 16 | 1 |
 | 8 | 8 - 32 | 1 |
-| 16 | 16 - 32 | 1 |
-| 32 | 32 - 64 | 1 |
+| 16 | 32 - 64 | 1 |
 
 ## GPU 规格
 
@@ -45,15 +44,15 @@ EKS 提供以下型号 GPU Pod 规格，不同的 GPU 卡型号和大小会对�
 
 | GPU 型号 | GPU/卡 | CPU/核 | 内存/GiB |
 | ------- | ------- | ------- | ------- |
-| 1/4 Tesla V100-NVLINK-32G | 1 | 2 | 10 |
-| 1/2 Tesla V100-NVLINK-32G | 1 | 4 | 20 |
 | Tesla V100-NVLINK-32G | 1 | 8 | 40 |
 | Tesla V100-NVLINK-32G | 2 | 18 | 80 |
 | Tesla V100-NVLINK-32G | 4 | 36 | 160 |
 | Tesla V100-NVLINK-32G | 8 | 72 | 320 |
 | 1/4 NVIDIA T4 | 1 | 4 | 20 |
 | 1/2 NVIDIA T4 | 1 | 10 | 40 |
+| NVIDIA T4 | 1 | 8 | 32 |
 | NVIDIA T4 | 1 | 20 | 80 |
+| NVIDIA T4 | 1 | 32 | 128 |
 | NVIDIA T4 | 2 | 40 | 160 |
 | NVIDIA T4 | 4 | 80 | 320 |
 
@@ -61,8 +60,6 @@ EKS 提供以下型号 GPU Pod 规格，不同的 GPU 卡型号和大小会对�
 
 ## 支持地域
 下表为 EKS 当前支持的地域、可用区及资源类型，其他地域将相继开放。
-
-
 ### 中国
 <table class="table-striped">
 <tbody>
@@ -94,10 +91,9 @@ EKS 提供以下型号 GPU Pod 规格，不同的 GPU 卡型号和大小会对�
 		<td>上海五区<br>ap-shanghai-5</td>
 	</tr>
 	<tr>
-		<td rowspan="3">华东地区（南京）<br> ap-nanjing</td>
+		<td rowspan="2">华东地区（南京）<br> ap-nanjing</td>
 		<td>南京一区<br> ap-nanjing-1</td></tr>
-			<tr><td>南京二区<br> ap-nanjing-2</td></tr>
-	<tr><td>南京三区<br> ap-nanjing-3</td></tr>
+		<tr><td>南京二区<br> ap-nanjing-2</td></tr>
 	<tr>
 			<td rowspan="5">华北地区（北京）<br>ap-beijing</td>
 			<td>北京三区<br>ap-beijing-3</td>
@@ -127,7 +123,6 @@ EKS 提供以下型号 GPU Pod 规格，不同的 GPU 卡型号和大小会对�
 		<td>香港二区（中国香港节点可用于覆盖港澳台地区）
 <br> ap-hongkong-2</td>
 	</tr>
-	
 </tbody>
 </table>
 
@@ -138,9 +133,28 @@ EKS 提供以下型号 GPU Pod 规格，不同的 GPU 卡型号和大小会对�
 			<th>地域</th>
 			<th>可用区</th>
 		</tr>
+			<tr>
+			<td  rowspan="2">亚太东南（新加坡）<br>ap-singapore</td>
+			<td>新加坡一区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-1</td>
+		</tr>
+		<tr>
+			<td>新加坡二区（新加坡节点可用于覆盖亚太东南地区）<br>ap-singapore-2</td>
+		</tr>
+		<tr>
 		<tr>
 			<td>亚太东南（雅加达）<br>ap-jakarta</td>
 			<td>雅加达一区（雅加达节点可用于覆盖亚太东南地区）<br>ap-jakarta-1</td>
+		</tr>
+		<tr>
+			<td  rowspan="2">亚太东北（首尔）<br>ap-seoul</td>
+			<td>首尔一区（首尔节点可用于覆盖亚太东北地区）<br>ap-seoul-1</td>
+		</tr>
+		<tr>
+			<td>首尔二区（首尔节点可用于覆盖亚太东北地区）<br>ap-seoul-2</td>
+		</tr>
+		<tr >
+			<td >亚太东北（东京）<br>ap-tokyo</td>
+			<td>东京二区（东京节点可用区覆盖亚太东北地区）<br>ap-tokyo-2</td>
 		</tr>
        <tr>
 			<td  rowspan="2">亚太南部（孟买）<br>ap-mumbai</td>
@@ -150,11 +164,19 @@ EKS 提供以下型号 GPU Pod 规格，不同的 GPU 卡型号和大小会对�
 			<td>孟买二区（孟买节点可用于覆盖亚太南部地区）<br>ap-mumbai-2</td>
 		</tr>
 		<tr>
-			<td rowspan="2">美国西部（硅谷）<br>na-siliconvalley</td>
-			<td>硅谷一区（硅谷节点可用于覆盖美国西部）<br>na-siliconvalley-1</td>
+		  	<td >亚太东南（曼谷）<br>ap-bangkok </td>
+				 <td >曼谷一区  （曼谷节点用户覆盖亚太东南地区）<br>ap-bangkok-1</td>
+		<tr>
+		<tr>
+			<td>北美地区（多伦多）<br>na-toronto</td>
+			<td>多伦多一区（多伦多节点可用于覆盖北美地区）<br>na-toronto-1</td>
 		</tr>
-    <tr>
-			<td>硅谷二区（硅谷节点可用于覆盖美国西部）<br>na-siliconvalley-2</td>
+		<tr>
+			<td rowspan="2">美国东部（弗吉尼亚）<br>na-ashburn</td>
+			<td>弗吉尼亚一区 （弗吉尼亚节点用户覆盖美国东部地区）<br>na-ashburn-1</td>
+		</tr>
+		<tr>
+			<td>弗吉尼亚二区 （弗吉尼亚节点用户覆盖美国东部地区）<br>na-ashburn-2</td>
 		</tr>
 		<tr>
 			<td>欧洲地区（法兰克福）<br>eu-frankfurt</td>
@@ -165,3 +187,4 @@ EKS 提供以下型号 GPU Pod 规格，不同的 GPU 卡型号和大小会对�
 		</tr>
 	</tbody>
 </table>
+

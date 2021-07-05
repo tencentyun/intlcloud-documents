@@ -5,6 +5,16 @@
 </thead>
 <tbody>
 <tr>
+    <td>2021-05-14</td>	
+    <td>v1.18.4-tke.9</td>	
+    <td><ul class="params">
+<li>Ported <a href="https://github.com/kubernetes/kubernetes/pull/93370" rel="nofollow">pr93370</a> to support CronJobControllerV2. (kube-controller-manager)</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/100376" rel="nofollow">pr100376</a> to enable HTTP/2 health check, which prevented the issue that the underlying layer connection is closed but can still be used incorrectly. (kube-apiserver, kube-controller-manager, kube-scheduler, kubelet, kube-proxy, kubectl)</li>
+<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/100317" rel="nofollow">pr100317</a>, which fixed the issue where CVE-2021-25735 node updates might bypass the Validating Admission Webhook. (kube-apiserver)</li>
+<li>When TKE cluster adds the virtual node, ComputeResource, EKS ClusterIP, and HPA are supported. (kube-controller-manager, kube-scheduler)</li>
+</ul></td>
+</tr>
+<tr>
     <td>2021-04-02</td>	
     <td>v1.18.4-tke.8</td>	
     <td><ul class="params">
@@ -98,6 +108,21 @@
 </thead>
 <tbody>
 <tr>
+    <td>2021-05-24</td>	
+    <td>v1.16.3-tke.17</td>	
+    <td><ul class="params">
+<li>Ported <a href="https://github.com/kubernetes/kubernetes/pull/93370" rel="nofollow">pr93370</a> to support CronJobControllerV2. (kube-controller-manager)</li>
+<li>When the TKE cluster adds the virtual node, the local replicas can be retained. (kube-scheduler)</li>
+	        </ul></td>
+</tr>	
+<tr>
+    <td>2021-05-06</td>	
+    <td>v1.16.3-tke.16</td>	
+    <td><ul class="params">
+<li>Updated the launch method of running kube-proxy as an image, and automatically adapted to the iptables running mode of the node to support the operating system that uses the NF_TABLES mode to run iptables by default.</li>
+	        </ul></td>
+</tr>	
+<tr>
     <td>2021-04-14</td>	
     <td>v1.16.3-tke.15</td>	
     <td><ul class="params">
@@ -113,7 +138,7 @@
     <td>v1.16.3-tke.14</td>	
     <td><ul class="params">
 		<li>Added metrics to QcloudCbs (kube-controller-manager).</li>
-	        <li>Fixed the issue where extra space exists when viewing the value of serial when mounting CBS disk (Kubelet).</li>
+	        <li>Fixed the issue where extra space exists in the value of serial when mounting CBS disk (Kubelet).</li>
 	        </ul></td>
 </tr>		
 <tr>
@@ -125,7 +150,7 @@
 		<li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/95245">pr95245</a>, which fixed CVE-2020-8566 - fixed the issue where Ceph RBD adminSecrets was exposed in the log when loglevel >= 4 (kube-controller-manager).</li>
 	        <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/86191">pr86191</a>, which fixed the issue where Pod might be in the wrong state when the node was restarted (kubelet).</li>
                 <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/86140">pr86140</a>, which fixed the issue where the Controller Manager did not handle the timeout error correctly, so that the expanded pod could not be created (kube-controller-manager).</li>
-	        <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/90825">pr90825</a>, which fixed the issue where the pop operation of the fifo queue in client-go might be stuck due to race condition, which caused the pod to remain in the pending state (kubelet).</li>
+	        <li>Merged <a href="https://github.com/kubernetes/kubernetes/pull/90825">pr90825</a>, which fixed the issue where the pop operation of the fifo queue in client-go might be stuck due to race condition, which caused the Pod to remain in the pending state (kubelet).</li>
 	        <li>The scheduler supports virtual nodes (kube-scheduler).</li>
 		<li>kube-controller-manager supports virtual nodes (kube-controller-manager).</li>
 		<li>Set the instance-type label based on the actual model of the node, instead of being fixed as QCLOUD (kubelet).</li>
@@ -206,6 +231,11 @@
 </thead>
 <tbody>
 <tr>
+    <td>2021-05-06</td>	
+    <td>v1.14.3-tke.22</td>	
+    <td>Updated the launch method of running kube-proxy as an image, and automatically adapted to the iptables running mode of the node to support the operating system that uses the NF_TABLES mode to run iptables by default.</td>
+</tr>	
+<tr>
     <td>2021-04-14</td>	
     <td>v1.14.3-tke.21</td>	
     <td><ul class="params">
@@ -221,7 +251,7 @@
     <td>v1.14.3-tke.19</td>	
     <td><ul class="params">
 		<li>Added metrics to QcloudCbs (kube-controller-manager).</li>
-	        <li>Fixed the issue where extra space exists when viewing the value of serial when mounting CBS disk (Kubelet).</li>
+	        <li>Fixed the issue where extra space exists in the value of serial when mounting CBS disk (Kubelet).</li>
 	        </ul></td>
 </tr>	
 <tr>
@@ -334,11 +364,16 @@
 </thead>
 <tbody>
 <tr>
+    <td>2021-05-06</td>	
+    <td>v1.12.4-tke.28</td>	
+    <td>Updated the launch method of running kube-proxy as an image, and automatically adapted to the iptables running mode of the node to support the operating system that uses the NF_TABLES mode to run iptables by default.</td>
+</tr>	
+<tr>
     <td>2020-12-28</td>	
     <td>v1.12.4-tke.27</td>	
     <td><ul class="params">
 		<li>Added metrics to QcloudCbs (kube-controller-manager).</li>
-	        <li>Fixed the issue where extra space exists when viewing the value of serial when mounting CBS disk (Kubelet).</li>
+	        <li>Fixed the issue where extra space exists in the value of serial when mounting CBS disk (Kubelet).</li>
 	        </ul></td>
 </tr>	
 <tr>
@@ -473,6 +508,11 @@
 <tr><th width="13%">Date</th><th width="13%">Version</th><th width="74%">Revisions</th></tr>
 </thead>
 <tbody>
+<tr>
+    <td>2021-05-06</td>	
+    <td>v1.10.5-tke.20</td>	 
+    <td>Updated the launch method of running kube-proxy as an image, and automatically adapted to the iptables running mode of the node to support the operating system that uses the NF_TABLES mode to run iptables by default.</td>
+<tr>
 <tr>
     <td>2020-06-10</td>	
     <td>v1.10.5-tke.19</td>	 

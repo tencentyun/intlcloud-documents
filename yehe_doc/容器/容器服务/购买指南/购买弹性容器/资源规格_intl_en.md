@@ -1,18 +1,18 @@
 ## Overview
-Elastic Kubernetes Service (EKS) frees you from managing cluster nodes. However, to properly allocate resources and accurately calculate fees, you need to specify resource specifications for pods when deploying a workload. Tencent Cloud allocates computing resources to the workload and calculates the corresponding fees based on the specified specifications.
+Elastic Kubernetes Service (EKS) frees you from managing cluster nodes. However, to properly allocate resources and accurately calculate fees, you need to specify resource specifications for Pods when deploying a workload. Tencent Cloud allocates computing resources to the workload and calculates the corresponding fees based on the specified specifications.
 
 When you use the Kubernetes API or Kubectl to create a workload for EKS, you can use annotations to specify resource specifications. If annotations are not used, EKS will calculate the specifications based on the container parameters set for the workload, such as Request and Limit. For more information, see [Specifying Resource Specifications](https://intl.cloud.tencent.com/document/product/457/36161).
 
 >!
-> - The resource specifications indicate the maximum amount of resources available for containers in a pod.
+> - The resource specifications indicate the maximum amount of resources available for containers in a Pod.
 > - The following tables list the supported CPU and GPU specifications. Ensure that allocated resources do not exceed the supported specifications.
-> - The total amount of resources specified by Request for all the containers in a pod cannot exceed the maximum pod specification.
-> - The amount of resources specified by Limit for any container in a pod cannot exceed the maximum pod specification.
+> - The total amount of resources specified by Request for all the containers in a Pod cannot exceed the maximum pod specification.
+> - The amount of resources specified by Limit for any container in a Pod cannot exceed the maximum Pod specification.
 
 
 ## CPU Specifications
 
-The following table lists CPU specifications that EKS provides for pods in all regions where CPU resources are supported. EKS also provides a set of CPU options. Different CPU sizes correspond to different memory ranges. Select the CPU specification as needed when creating a workload.
+The following table lists CPU specifications that EKS provides for Pods in all regions where CPU resources are supported. EKS also provides a set of CPU options. Different CPU sizes correspond to different memory ranges. Select the CPU specification as needed when creating a workload.
 
 #### Intel
 | CPU (Cores) | Memory Range (GiB) | Granularity of Memory Range (GiB) |
@@ -35,25 +35,24 @@ The AMD processor provides high performance with high reliability, security, and
 | 2 | 2 - 8 | 1 |
 | 4 | 4 - 16 | 1 |
 | 8 | 8 - 32 | 1 |
-| 16 | 16 - 32 | 1 |
-| 32 | 32 - 64 | 1 |
+| 16 | 32 - 64 | 1 |
 
 ## GPU Specifications
 
-The following table lists the GPU specifications that EKS provides for pods. Different GPU card models and sizes map to different CPU and memory options. Select the GPU specification as needed when creating a workload.
+The following table lists the GPU specifications that EKS provides for Pods. Different GPU card models and sizes map to different CPU and memory options. Select the GPU specification as needed when creating a workload.
 >!If you create, manage, and use GPU workloads using a YAML file, see [Annotation](https://intl.cloud.tencent.com/document/product/457/36162).
 
 | GPU Model | GPU (Cards) | CPU (Cores) | Memory (GiB) |
 | ------- | ------- | ------- | ------- |
-| 1/4 Tesla V100-NVLINK-32G | 1 | 2 | 10 |
-| 1/2 Tesla V100-NVLINK-32G | 1 | 4 | 20 |
 | Tesla V100-NVLINK-32G | 1 | 8 | 40 |
 | Tesla V100-NVLINK-32G | 2 | 18 | 80 |
 | Tesla V100-NVLINK-32G | 4 | 36 | 160 |
 | Tesla V100-NVLINK-32G | 8 | 72 | 320 |
 | 1/4 NVIDIA T4 | 1 | 4 | 20 |
 | 1/2 NVIDIA T4 | 1 | 10 | 40 |
+| NVIDIA T4 | 1 | 8 | 32 |
 | NVIDIA T4 | 1 | 20 | 80 |
+| NVIDIA T4 | 1 | 32 | 128 |
 | NVIDIA T4 | 2 | 40 | 160 |
 | NVIDIA T4 | 4 | 80 | 320 |
 
@@ -61,8 +60,6 @@ The following table lists the GPU specifications that EKS provides for pods. Dif
 
 ## Supported Regions
 The following table describes the regions, availability zones, and resource types that are currently supported by EKS.
-
-
 ### China
 <table class="table-striped">
 <tbody>
@@ -71,8 +68,8 @@ The following table describes the regions, availability zones, and resource type
 		<th>AZ</th>
 	</tr>
 	<tr>
-		<td rowspan="3">South China (Guangzhou)<br> ap-guangzhou</td>
-		<td>Guangzhou Zone 3<br> ap-guangzhou-3</td>	
+		<td rowspan="3">South China (Guangzhou)<br>ap-guangzhou</td>
+		<td>Guangzhou Zone 3<br>ap-guangzhou-3</td>	
 	</tr>
 	<tr>
 		<td>Guangzhou Zone 4<br>ap-guangzhou-4</td>
@@ -91,13 +88,12 @@ The following table describes the regions, availability zones, and resource type
 		<td>Shanghai Zone 4</br>ap-shanghai-4</td>
 	</tr>
 	<tr>
-		<td>Shanghai Zone 5 <br>ap-shanghai-5</td>
+		<td>Shanghai Zone 5<br>ap-shanghai-5</td>
 	</tr>
 	<tr>
-		<td rowspan="3">East China (Nanjing)<br> ap-nanjing</td>
+		<td rowspan="2">East China (Nanjing)<br>ap-nanjing</td>
 		<td>Nanjing Zone 1<br>ap-nanjing-1</td></tr>
-			<tr><td>Nanjing Zone 2<br> ap-nanjing-2</td></tr>
-	<tr><td>Nanjing Zone 3<br> ap-nanjing-3</td></tr>
+		<tr><td>Nanjing Zone 2<br>ap-nanjing-2</td></tr>
 	<tr>
 			<td rowspan="5">North China (Beijing)<br>ap-beijing</td>
 			<td>Beijing Zone 3</br>ap-beijing-3</td>
@@ -106,7 +102,7 @@ The following table describes the regions, availability zones, and resource type
 		<td>Beijing Zone 4</br>ap-beijing-4</td>
 	</tr>
 	<tr>
-		<td>Beijing Zone 5 <br>ap-beijing-5</td>
+		<td>Beijing Zone 5<br>ap-beijing-5</td>
 	</tr>
 	<tr>
 		<td>Beijing Zone 6<br>ap-beijing-6</td>
@@ -123,11 +119,10 @@ The following table describes the regions, availability zones, and resource type
 	</tr>	   
 			<tr>
 		<td rowspan="1">Hong Kong, Macao and Taiwan, China (Hong Kong)
-<br> ap-hongkong</td>
+<br>ap-hongkong</td>
 		<td>Hong Kong Zone 2 (Hong Kong nodes can cover services in the China regions of Hong Kong, Macao, and Taiwan)
-<br> ap-hongkong-2</td>
+<br>ap-hongkong-2</td>
 	</tr>
-	
 </tbody>
 </table>
 
@@ -136,11 +131,30 @@ The following table describes the regions, availability zones, and resource type
 	<tbody>
 	<tr>
 			<th>Region</th>
-			<th>Availability Zone</th>
+			<th>AZ</th>
 		</tr>
+			<tr>
+			<td  rowspan="2">Southeast Asia (Singapore)<br>ap-singapore</td>
+			<td>Singapore Zone 1 (Singapore nodes can cover services in Southeast Asia)<br>ap-singapore-1</td>
+		</tr>
+		<tr>
+			<td>Singapore Zone 2 (Singapore nodes can cover services in Southeast Asia)<br>ap-singapore-2</td>
+		</tr>
+		<tr>
 		<tr>
 			<td>Southeast Asia (Jakarta)<br>ap-jakarta</td>
 			<td>Jakarta Zone 1 (Jakarta nodes can cover services in Southeast Asia)<br>ap-jakarta-1</td>
+		</tr>
+		<tr>
+			<td  rowspan="2">Northeast Asia (Seoul)<br>ap-seoul</td>
+			<td>Seoul Zone 1 (Seoul nodes can cover services in Northeast Asia)<br>ap-seoul-1</td>
+		</tr>
+		<tr>
+			<td>Seoul Zone 2 (Seoul nodes can cover services in Northeast Asia)<br>ap-seoul-2</td>
+		</tr>
+		<tr >
+			<td >Northeast Asia (Tokyo)<br>ap-tokyo</td>
+			<td>Tokyo Zone 2 (Tokyo nodes can cover services in Northeast Asia)<br>ap-tokyo-2</td>
 		</tr>
        <tr>
 			<td  rowspan="2">South Asia Pacific (Mumbai)<br>ap-mumbai</td>
@@ -150,14 +164,22 @@ The following table describes the regions, availability zones, and resource type
 			<td>Mumbai Zone 2 (Mumbai nodes can cover services in South Asia) <br>ap-mumbai-2</td>
 		</tr>
 		<tr>
-			<td rowspan="2">Western US (Silicon Valley)<br>na-siliconvalley</td>
-			<td>Silicon Valley Zone 1 (Silicon Valley nodes can cover services in Western US)<br>na-siliconvalley-1</td>
-		</tr>
-    <tr>
-			<td>Silicon Valley Zone 2 (Silicon Valley nodes can cover services in Western US)<br>na-siliconvalley-2</td>
+		  	<td >Southeast Asia (Bangkok)<br>ap-bangkok</td>
+				 <td >Bangkok Zone 1 (Bangkok nodes can cover services in Southeast Asia)<br>ap-bangkok-1</td>
+		<tr>
+		<tr>
+			<td>North America (Toronto)<br>na-toronto</td>
+			<td>Toronto Zone 1 (Toronto nodes can cover services in North America)<br>na-toronto-1</td>
 		</tr>
 		<tr>
-			<td>Europe (Frankfurt) <br>eu-frankfurt</td>
+			<td rowspan="2">Eastern US (Virginia)<br>na-ashburn</td>
+			<td>Virginia Zone 1 (Virginia nodes can cover services in Eastern US)<br>na-ashburn-1</td>
+		</tr>
+		<tr>
+			<td>Virginia Zone 2 (Virginia nodes can cover services in Eastern US)<br>na-ashburn-2</td>
+		</tr>
+		<tr>
+			<td>Europe (Frankfurt)<br>eu-frankfurt</td>
 			<td>Frankfurt Zone 1 (Frankfurt nodes can cover services in Europe)<br>eu-frankfurt-1</td>
 		</tr>
 		<td >Europe (Moscow)<br>eu-moscow</td>
@@ -165,3 +187,4 @@ The following table describes the regions, availability zones, and resource type
 		</tr>
 	</tbody>
 </table>
+
