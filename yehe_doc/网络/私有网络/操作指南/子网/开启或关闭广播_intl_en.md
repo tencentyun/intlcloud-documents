@@ -18,13 +18,11 @@ This document describes how to enable or disable broadcast for subnets.
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
 2. Click **Subnet** on the left sidebar to access the management page.
 3. In the VPC list, locate the VPC for which you want to enable broadcast, and slide to **Enable** under the **Subnet broadcast** column.
-![](https://main.qcloudimg.com/raw/32f2b4fc747b7e9b3f68d3a166085133.png)
 
 ### Disabling broadcast
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
 2. Click **Subnet** on the left sidebar to access the management page.
 3. In the VPC list, locate the VPC for which you want to disable broadcast, and slide to **Disable** under the **Subnet broadcast** column.
-![](https://main.qcloudimg.com/raw/32f2b4fc747b7e9b3f68d3a166085133.png)
 
 ## Operations
 For detailed directions regarding VPC multicast, see [Enabling or Disabling the Broadcasting and Multicasting](https://intl.cloud.tencent.com/document/product/215/31809).
