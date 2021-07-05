@@ -1,4 +1,48 @@
+## June 2021
+<table>
+<thead>
+<tr>
+<th width=20%>Update</th>
+<th width=45%>Description</th>
+<th width=15%>Release Date</th>
+<th width=20%>Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Added support for automatic scaling for the spot instance mode.</td>
+<td>Added support for automatically adding compute nodes of the spot instance mode.</td>
+<td>June 03, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/39660" target="_blank">Auto Scaling</a></td>
+</tr>
+<tr>
+<td>Added support for graceful scale-in.</td>
+<td>When a scale-in action is triggered, nodes that are executing tasks will not be released immediately. Instead, they will be released after completing the tasks.</td>
+<td>June 03, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/40694" target="_blank">Graceful Scale-In</a></td>
+</tr>
+<tr>
+<td>Added support for integrating Knox with Tez.</td>
+<td>Added support for viewing Tez tasks via UI.</td>
+<td>June 03, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/40686" target="_blank">Integrating Knox with Tez</a></td>
+</tr>
+<tr>
+<td>Added availability zones.</td>
+<td>Added support for Singapore Zone 3 and Tokyo Zone 2.</td>
+<td>June 03, 2021</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Added regions.</td>
+<td>Added support for regions such as Moscow, Frankfurt, Virginia, Bangkok, Mumbai, Tokyo, Toronto, and Seoul.</td>
+<td>June 03, 2021</td>
+<td>N/A</td>
+</tr>
+</tbody></table>
+
 ## May 2021
+
 <table>
 <thead>
 <tr>
@@ -39,7 +83,7 @@
 <td>Released a Hadoop cluster version—EMR v3.2.0.</td>
 <td>Added support for Hadoop v3.2.2, Spark v3.0.2, Presto v350, Flink v1.12.1, Alluxio v2.5.0, Ranger v2.1.0, Iceberg v0.11.0, and Hudi v0.7.0.</td>
 <td>April 30, 2021</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Versions</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
 </tr>
   <tr>
 <td>Added the **Start/Stop Services** feature.</td>
@@ -134,7 +178,7 @@
 <td>Released a Hadoop cluster version—EMR v3.1.0.</td>
 <td>Added support for Impala v3.4.0, Flink v1.10.0, HBase v2.3.3, Phoenix v5.0.0, Alluxio v2.3.0, Kudu v1.13.0, and ZooKeeper v3.6.1.</td>
 <td>December 14, 2020</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Versions</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
 </tr>
 </tbody></table>
 
@@ -153,7 +197,7 @@
 <td>Released the EMR TianQiong edition.</td>
 <td>Added support for Spark materialized views.</td>
 <td>November 27, 2020</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Versions</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/38962" target="_blank">EMR TianQiong Introduction</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/38962" target="_blank">EMR TianQiong Introduction</a></td>
 </tr>
 <tr>
 <td>Optimized monitoring and alarming.</td>
@@ -209,10 +253,10 @@
 </thead>
 <tbody>
 <tr>
-<td>Released Hadoop EMR v2.5.0.</td>
+<td>Released a Hadoop cluster version—EMR v2.5.0.</td>
 <td>Upgraded the Alluxio component to the stable version 2.3.0, which delivers better performance in the use cases where compute and storage are separated.</td>
 <td>September 17, 2020</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Versions</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
 </tr>
 </tbody></table>
 
@@ -228,10 +272,10 @@
 </thead>
 <tbody>
 <tr>
-<td>Released Hadoop EMR v2.4.0.</td>
+<td>Released a Hadoop cluster version—EMR v2.4.0.</td>
 <td>Added the Kudu component and upgraded some existing components.</td>
 <td>August 27, 2020</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Versions</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
 </tr>
 <tr>
 <td>Added support for data migration in ClickHouse clusters.</td>
@@ -281,7 +325,7 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/36888" target="_blank">Druid Monitoring Metrics</a></td>
 </tr>
 <tr>
-<td>Released Hadoop EMR v2.3.0.</td>
+<td>Released a Hadoop cluster version—EMR v2.3.0.</td>
 <td>Added support for the TensorFlow and Jupyter Notebook components.</td>
 <td>June 15, 2020</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/36892" target="_blank">TensorFlow Overview</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/36894" target="_blank">Jupyter Notebook Overview</a></td>
@@ -381,7 +425,7 @@
 <td>Released EMR v2.2.0.</td>
 <td>Upgraded Hadoop to v2.8.5. Upgraded common components such as Spark, Hive, and HBase. Added the Hudi, Superset, Livy, Impala, Zeppelin, and Kylin components.</td>
 <td>March 2020</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Versions</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
 </tr>
 </tbody></table>
 
@@ -532,7 +576,7 @@
 <tbody><tr>
 <td>Released EMR v3.0.0.</td>
 <td>Released EMR v3.0.0 with updated versions of major components.</td><td>October 2019</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Versions</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
 </tr>
 </tbody></table>
 
@@ -687,7 +731,7 @@
 <td>Released EMR v2.1.0.</td>
 <td>Released EMR v2.1.0 with updated versions of main components.</td>
 <td>May 2019</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Versions</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31095" target="_blank">Component Version</a></td>
 </tr>
 <tr>
 <td>Added support for Kerberos security clusters.</td>
