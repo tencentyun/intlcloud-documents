@@ -19,10 +19,10 @@ The health check status description of backend CVM instances is as the following
 For layer-4 TCP listeners, you can configure TCP health check to obtain the status of backend CVM instances through SYN packets, i.e., TCP three-way handshake. Also, to this end, you can customize the request and return content of the protocol.
 ![](https://main.qcloudimg.com/raw/5f30ebbb5e061affeff6eb031facaf28.png)
 TCP health check mechanism is as follows:
-1. A CLB instance sends an SYN connection request packet to (the private IP and health check port of) a backend CVM instance.
-2. After receiving the SYN request packet, the backend CVM instance will return an SYN-ACK response packet if the port is listening normally.
-3. If the CLB instance receives the returned SYN-ACK response packet within the response timeout, it indicates that the real server is normal and the health check result is successful. Then the CLB instance will send the backend CVM instance a TCP Reset (RST) packet to cut the TCP connection.
-4. If the CLB instance does not receive the returned SYN-ACK response packet within the response timeout, it indicates that the real server is abnormal and the health check result is failed. Then the CLB instance will send the backend CVM instance a TCP Reset (RST) packet to cut the TCP connection.
+1. A CLB instance sends a SYN connection request packet to (the private IP and health check port of) a backend CVM instance.
+2. After receiving the SYN request packet, the backend CVM instance will return a SYN-ACK response packet if the port is listening normally.
+3. If the CLB instance receives the returned a SYN-ACK response packet within the response timeout, it indicates that the real server is normal and the health check result is successful. Then the CLB instance will send the backend CVM instance a TCP Reset (RST) packet to cut the TCP connection.
+4. If the CLB instance does not receive the returned a SYN-ACK response packet within the response timeout, it indicates that the real server is abnormal and the health check result is failed. Then the CLB instance will send the backend CVM instance a TCP Reset (RST) packet to cut the TCP connection.
 
 ## UDP Health Check
 For layer-4 UDP listeners, you can configure UDP health check to obtain the status of backend CVM instances by running the Ping command and sending UDP detection packets to the health check port. Also, to this end, you can customize the request and return content of the protocol.
