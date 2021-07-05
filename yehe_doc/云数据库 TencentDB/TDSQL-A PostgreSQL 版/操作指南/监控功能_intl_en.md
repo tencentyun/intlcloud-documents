@@ -3,15 +3,15 @@ This document describes how to view and export the monitoring data of a TDSQL-A 
 ## Viewing Monitoring Data
 1. Log in to the [TDSQL-A for PostgreSQL](https://console.cloud.tencent.com/tdsqla/tdapg) console and click an instance ID in the instance list to enter the instance management page.
 2. On the instance management page, select the **System Management** tab and select a time to view the monitoring data and load.
-![](https://main.qcloudimg.com/raw/9f91bddcb55d9ffc8827eaa48128f655.png)
+![](https://main.qcloudimg.com/raw/5cac2c87a258388ccee34671fabf63e9.png)
   - On the **System Management** tab, click **Restart Node** and select GTM, CN, or DN nodes.
 >!Node restart is a high-risk operation that makes the instance unavailable. Please evaluate its impact on your business before proceeding.
 >
-![](https://main.qcloudimg.com/raw/d9834a0a75e0ff79d960ad327fb60edb.png)
+![](https://main.qcloudimg.com/raw/eb4a503acae02d5402863e2968c96059.png)
   - View alarming and monitoring data at different time granularities. For example, you can click **Last 24 hours** to view the monitoring data for the last 24 hours.
-![](https://main.qcloudimg.com/raw/508bd5761786e9648e29f98cfb56d632.png)
+![](https://main.qcloudimg.com/raw/0d8d92034b28ae05f0e34a19ae3625a0.png)
   - Click **Export Data** on the right and select the monitoring data to be exported.
-![](https://main.qcloudimg.com/raw/a7ba1cd7c827a9abaf1a26b97423929b.png)
+![](https://main.qcloudimg.com/raw/497991ba14059266519f13368b3ea9b2.png)
 
 ## Monitoring Metrics
 Cloud Monitor provides the following monitoring metrics for TDSQL-A for PostgreSQL instances in the instance dimension:
