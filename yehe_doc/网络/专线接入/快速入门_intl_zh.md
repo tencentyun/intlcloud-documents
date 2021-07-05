@@ -2,7 +2,7 @@
 
 ## 背景信息
 本示例中，将实现单个腾讯云 VPC（172.21.0.0/24）与单个本地 IDC（192.168.0.0/24）互通，通信带宽为 2Mbps的场景。具体架构入下图所示：
-<img src="https://main.qcloudimg.com/raw/ddd1eb0c0094cdde693f24032345f3f8.png" width="80%" />
+<img src="https://main.qcloudimg.com/raw/92fffb3c128b9f8cf523d360e97cdc6b.png" width="80%" />
 
 操作流程如下：
 <dx-steps>
