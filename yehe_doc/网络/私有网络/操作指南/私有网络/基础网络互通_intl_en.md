@@ -13,7 +13,7 @@ VPC is more suitable for use cases requiring custom configurations.
 ## Overview
 By default, a VPC is a fully isolated network space that is inaccessible to other VPCs or the classic network via a private network. CCN ensures interconnections between VPCs, while the following solutions provide communications between a VPC and the classic network.
 + **Classiclink**: allows the classic network-based CVMs to communicate with VPC resources such as CVM, TencentDB, and CLB instances. However, this only provides access between VPC-based CVMs and classic network-based CVMs rather than other cloud resources including TencentDB and CLB within the classic network, as shown below.
- <img src="https://main.qcloudimg.com/raw/dc641ade1dbe4761f100088edcebaf85.png" width="50%" />
+ <img src="https://main.qcloudimg.com/raw/5c4c66605c6ecd04591dfff5236231df.png" width="50%" />
 + **Terminal connection**: helps to establish communication between instances in a VPC and resources in the classic network (except CVMs) through a private network. It maps the IP of a classic network-based instance to a VPC IP, allowing you to access the classic network-based instance through the VPC IP. This feature now supports classic network-based CLB, MySQL, Memcached, Redis and MongoDB instances. However, cross-region or cross-account communication is not supported. If you want to establish a terminal connection, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 
@@ -41,9 +41,9 @@ A Classiclink associates classic network-based CVMs with a VPC to enable interco
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
 2. Select the region, and click the ID of the VPC `TomVPC` which needs Classiclink to access the details page.
 3. Click the **Classiclink** tab and then click **+Associate with CVM**. 
-![](https://main.qcloudimg.com/raw/29347672a8b793f0e938ceda8b39eb77.png)
+![](https://main.qcloudimg.com/raw/ad9b76faac017dbc093b3710f0d5070b.png)
 4. In the pop-up window, select the CVM in the classic network to be associated with the VPC `TomCVM` and click **OK**.
-![](https://main.qcloudimg.com/raw/b3511df785851f67e0d878c473cee478.png)
+![](https://main.qcloudimg.com/raw/b99329129fc8de27dddfbe7897d59218.png)
 
 ## Viewing Classiclink
 You can view the list of classic network-based CVMs that interconnect with the VPC.
@@ -51,7 +51,7 @@ You can view the list of classic network-based CVMs that interconnect with the V
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
 2. Select the region, and click the ID of the VPC which needs Classiclink to access the details page.
 3. Click the **Classiclink** tab to view the list of classic network-based CVMs associated with the VPC.
-![](https://main.qcloudimg.com/raw/92cb69a2842ae03c54f64eb6d55ed2ef.png)
+![](https://main.qcloudimg.com/raw/3b4e1ad2a860c35f89b42315e709d11f.png)
 4. Enter a private IP in the top-right corner search box to quickly locate the CVM.
 
 <span id="release" ></span>
@@ -62,6 +62,6 @@ This action disassociates classic network-based CVMs from the VPC and terminates
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
 2. Click the ID of the VPC which needs Classiclink to access the details page.
 3. Click the **Classiclink** tab, select the CVM to be unassociated from the list of classic network-based CVMs, and click **Disassociate** in the **Operation** column.
-![](https://main.qcloudimg.com/raw/a7c164f1033b93a6722faad1ed9d2f1a.png)
+![](https://main.qcloudimg.com/raw/156dd9a80b6923a96bb52e2d76b55993.png)
 4. Double check the notes and click **OK**.
 5. To unassociate multiple CVMs, you can select these CVMs to be unassociated and click **Disassociate** above the list.
