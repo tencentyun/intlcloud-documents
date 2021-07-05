@@ -60,7 +60,7 @@ The specific configuration of health check is as shown below:
 #### 3. Session persistence
 | Configuration Item | Description | Example |
 | ------- | ------------------------ | ---------------------------------------- |
-| Session persistence status | Session persistence can be enabled or disabled. <br><li>If session persistence is enabled, the CLB listener will deliver access requests from the same client to the same real server.</li><li>TCP session persistence is implemented based on client IP addresses, i.e., access requests from the same IP address are forwarded to the same real server.</li><li>Session persistence can be enabled for WRR scheduling but not WLC scheduling.</li> | Enabled |
+| Session persistence status | Session persistence can be enabled or disabled. <br><li>If session persistence is enabled, the CLB listener will deliver the access requests from the same client to the same real server.</li><li>TCP session persistence is implemented based on client IP addresses, i.e., access requests from the same IP address are forwarded to the same real server.</li><li>Session persistence can be enabled for WRR scheduling but not WLC scheduling.</li> | Enabled |
 | Session persistence time | Session persistence time. <br><li>If there is no new request in the connection within the session persistence time, session persistence will be interrupted automatically.</li><li>Value range: 30-3,600s.</li> | 30s |
 
 The specific configuration of session persistence is as shown below:
