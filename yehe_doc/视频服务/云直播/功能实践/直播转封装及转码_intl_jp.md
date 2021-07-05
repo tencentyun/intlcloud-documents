@@ -1,6 +1,6 @@
 ## CSSカプセル化トランスコード機能
 
-CSSカプセル化トランスコード機能とは、ライブストリーミングからプッシュされたオリジナルストリーム（通常はRTMPプロトコルを使用してクラウドにプッシュ）が視聴者にプッシュされる前にクラウドでさまざまなカプセル化形式のビデオストリームに変換されるプロセスです。またオーディオのみまたはビデオのみの出力、デジタル著作権保護のニーズを満たすため、各種DRM暗号化スキームもサポートしています。
+CSSカプセル化トランスコード機能とは、ライブストリームからプッシュされたオリジナルストリーム（通常はRTMPプロトコルを使用してクラウドにプッシュ）が視聴者にプッシュされる前にクラウドでさまざまなカプセル化形式に変換されるプロセスです。また純粋なオーディオまたは純粋なビデオの出力、デジタル著作権保護のニーズを満たすため、各種DRM暗号化スキームもサポートしています。
 
  ### サポートする出力カプセル化トランスコード形式
 
@@ -36,8 +36,8 @@ CSSトランスコード機能（ビデオトランスコーディングとオ�
 
 - 元のビデオストリームは、さまざまな解像度のストリームにトランスコードできます。ユーザーは、ネットワーク状態に応じてさまざまなビットレートのビデオストリームを選択し、スムーズに再生できます。
 - 著作権表示とマーケティングのためにカスタマイズしたウォーターマークをオリジナルビデオストリームに挿入し、ビデオに独自のロゴを追加することができます。
-- ビデオストリームを、元のエンコード形式がH264であるビデオストリームなど、さらに高い圧縮率のビデオコーデック形式に変換します。例えば、視聴する人数が多い場合は、H264のビデオストリームをさらに圧縮率の高いH265のビデオストリームに変換することによって、帯域幅とコストを節約できます。
-- 特殊な端末の再生ニーズに対応するため、オリジナルビデオストリームを異なるコーデックに変換します。例えば、ある特殊なシナリオで、パフォーマンスの問題により、H264ビデオをデコードしてもリアルタイム再生できない場合は、元のH264ストリームをMpegコーデックのビデオに変換する必要があります。こうすることによって、端末でのリアルタイムのデコードと再生を体験することができます。
+- ビデオストリームをさらに高い圧縮率のビデオコーデックに変換できます。例えば、視聴する人数が多い場合は、H264のビデオストリームをさらに圧縮率の高いH265のビデオストリームに変換して帯域幅とコストを節約できます。
+- 特殊な端末の再生ニーズに対応するため、オリジナルビデオストリームを異なるコーデックに変換できます。例えば、ある特殊なシナリオで、H264ビデオをリアルタイム再生できない場合は、端末のリアルタイム再生のためにMpegコーデックのビデオに転換する必要があります。
 
 <span id="arameter"></span>
 
@@ -47,7 +47,7 @@ CSSトランスコード機能（ビデオトランスコーディングとオ�
     <tr><th width="20%">パラメータタイプ</th><th width="80%">説明</th></tr>
     <tr>
         <td>ビデオコーデック</td>
-        <td>次のビデオコーデック形式をサポート：<ul style="margin:0px;">
+        <td>次のビデオコーデックをサポート：<ul style="margin:0px;">
             <li>H264</li>
             <li>H265</li>
             </ul>
@@ -74,8 +74,8 @@ CSSトランスコード機能（ビデオトランスコーディングとオ�
     </tr><tr>
         <td>ビデオ解像度</td>
         <td><ul style="margin:0px;" >
-            <li>サポートする幅の範囲：128～4096。</li>
-            <li>サポートする高さの範囲：128～4096。</li>
+            <li>サポートする幅の範囲：128 - 4096。</li>
+            <li>サポートする高さの範囲：128 - 4096。</li>
             <li>幅の指定だけをサポートし、高さは幅に比例してスケーリングされます。</li>
             <li>高さの指定だけをサポートし、幅は高さに比例してスケーリングされます。</li>
             </ul></td>
@@ -130,7 +130,7 @@ CSSトランスコード機能（ビデオトランスコーディングとオ�
     </tr>
     <tr>
         <td>オーディオコーデックビットレート</td>
-        <td>サポートするオーディオビットレート範囲：20kbps～192kbps。一般的なオーディオビットレートは次のとおりです。
+        <td>サポートするオーディオビットレート範囲：20kbps - 192kbps。一般的なオーディオビットレートは次のとおりです。
                 <ul style="margin:0px">
                     <li>48kbps</li>
                     <li>64kbps</li>
@@ -159,7 +159,7 @@ CSSトランスコード機能（ビデオトランスコーディングとオ�
 
 ## 高速高画質トランスコーディング機能
 
-Tencent Video Cloudで長年にわたって蓄積されたオーディオ/ビデオコーデック技術、インテリジェントなシナリオ認識、動的コーデック技術、CTU/ライン/フレームの3レベルのビットレートによる正確な制御モデルに基づき、ライブストリーミング、オンデマンドなどの業界向けに、より低いビットレート（平均で30％以上削減）でより高解像度のストリーミングメディアサービスを提供できます。
+Tencent Video Cloudで長年にわたって蓄積されたオーディオ/ビデオエンコーディング、インテリジェントなシナリオ認識、動的コーデック、CTU/ライン/フレームの3レベルのビットレートによる正確な制御モデルに基づき、ライブストリーミング、オンデマンドなどの業界向けに、より低いビットレート（平均で30％以上削減）でより高解像度のストリーミングメディアサービスを提供できます。
 
 ### ユースケース
 
@@ -196,7 +196,7 @@ CSSのプッシュビットレートが高く、画面が複雑な場合は、�
 
 ![](https://main.qcloudimg.com/raw/b7341cfb465aae7a59ff24ca6abeecb2.png)
 
->! ストリームが複数のビットレートトランスコードを有効にする場合（つまり、オリジナルストリームが複数の解像度のストリームに変換される場合）は、ウォーターマークを追加する必要があります。[CSSコンソール](#W_control) または[API](#W_api) でX軸、Y軸の位置をパーセンテージで設定することができ、システムが自動的にウォーターマークの位置を調整します。
+>! ストリームが複数のビットレートトランスコードを有効にする場合（つまり、オリジナルストリームが複数の解像度のストリームに変換される場合）は、ウォーターマークを追加する必要があります。[CSSコンソール](#W_control) または [API](#W_api) でX軸、Y軸の位置をパーセンテージで設定することができ、システムが自動的にウォーターマークの位置を調整します。
 
 ### ウォーターマークのパラメータ例
 
@@ -216,8 +216,8 @@ Height_pixel = 192 * 240 / 320 = 144
 
 <span id="W_control"></span>
 #### CSSコンソール
-1. 【機能設定】>【[CSSウォーターマーク](https://console.cloud.tencent.com/live/config/watermark)】に進み、ウォーターマーク設定テンプレートを追加します。ウォーターマーク関連パラメータを設定し、さらに対応するウォーターマークテンプレートIDを生成します。具体的な操作については、[CSSウォーターマーク](https://intl.cloud.tencent.com/document/product/267/31073)をご参照ください。
-2. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)で操作が必要なプッシュドメイン名に対し、【管理】>【テンプレート設定】をクリックし、このドメイン名とウォーターマークテンプレートを関連付けます。具体的な操作については、[ウォーターマーク設定](https://intl.cloud.tencent.com/document/product/267/31064)をご参照ください。
+1. 【機能設定】>【[CSSウォーターマーク](https://console.cloud.tencent.com/live/config/watermark)】に進み、ウォーターマーク設定テンプレートを追加します。ウォーターマーク関連パラメータを設定し、さらに対応するウォーターマークテンプレートIDを生成します。具体的な操作は、[CSSウォーターマーク](https://intl.cloud.tencent.com/document/product/267/31073)をご参照ください。
+2. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)で操作が必要なプッシュドメイン名に対し、【管理】>【テンプレート設定】をクリックし、このドメイン名とウォーターマークテンプレートを関連付けます。具体的な操作については、 [ウォーターマーク設定](https://intl.cloud.tencent.com/document/product/267/31064)をご参照ください。
 
 <span id="W_api"></span>
 #### APIの呼び出し
@@ -232,13 +232,13 @@ Height_pixel = 192 * 240 / 320 = 144
 
 ### 使用法の概要
 
-トランスコードパラメータの設定は、[CSSコンソール](#T_control)と[サーバーAPI](#T_api)の2つの方法があります。いずれの方式を使用しても、主にウォーターマークテンプレート、トランスコードテンプレート、トランスコードルールの関連操作が必要です。
+トランスコードパラメータの設定は、[CSSコンソール](#T_control)と[サーバーAPI](#T_api) の2つの方法があります。いずれの方式を使用しても、主にウォーターマークテンプレート、トランスコードテンプレート、トランスコードルールの関連操作が必要です。
 
 <span id="T_control"></span>
 #### CSSコンソール
 1. 【機能設定】>【[CSSトランスコード](https://console.cloud.tencent.com/live/config/transcode)】に進み、トランスコード設定テンプレートを追加します。[標準トランスコーディング](https://intl.cloud.tencent.com/document/product/267/31071)、[高速高画質トランスコーディング](https://intl.cloud.tencent.com/document/product/267/31071)、[オーディオのみのトランスコーディング](https://intl.cloud.tencent.com/document/product/267/31071)のテンプレートの追加をサポートしています。
 2. ニーズに応じて対応するトランスコードタイプを作成し、トランスコード関連パラメータを設定します。システムのデフォルトパラメータを使用すると、対応するトランスコードテンプレートIDが生成されます。
-2. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)で操作が必要なプルストリームドメイン名を探し、【管理】>【テンプレート設定】をクリックし、このドメイン名とトランスコードテンプレートを関連付けます。具体的な操作については、 [トランスコーディング設定](https://intl.cloud.tencent.com/document/product/267/31062)をご参照ください。
+2. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)で操作が必要なプルドメイン名を探し、【管理】>【テンプレート設定】をクリックし、このドメイン名とトランスコードテンプレートを関連付けます。具体的な操作については、 [トランスコーディング設定](https://intl.cloud.tencent.com/document/product/267/31062)をご参照ください。
 
 <span id="T_api"></span>
 #### APIの呼び出し
@@ -272,18 +272,37 @@ Height_pixel = 192 * 240 / 320 = 144
 <tr><th>機能モジュール</th><th>APIインターフェース</th>
 </tr><tr>
 <td rowspan=8>CSSトランスコード</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30790">トランスコードテンプレートの作成</a></td></tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30784">トランスコードテンプレート設定の変更</a></td></tr>
-<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30786">単一トランスコードテンプレートの取得</a></td></tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30785">トランスコードテンプレートリストの取得</a></td></tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30788">トランスコードテンプレートの削除</a></td></tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30791">トランスコードルールの作成</a></td></tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/30787">トランスコードルールリストの取得</a></td></tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30790">トランスコードテンプレートの作成</a></td>
+</tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30784">トランスコードテンプレートの変更</a></td>
+</tr>
+<tr><td><a href="https://intl.cloud.tencent.com/document/product/267/30786">トランスコードテンプレート詳細情報のクエリー</a></td>
+</tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30785">トランスコードテンプレートリストのクエリー</a></td>
+</tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30788">トランスコードテンプレートの削除</a></td>
+</tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30791">トランスコードルールの作成</a></td>
+</tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/267/30787">トランスコードルールのクエリー</a></td>
+</tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/30789">トランスコードルールの削除</a></td>
 </tr><tr>
 <td rowspan=4>CSSウォーターマーク</td>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/267/30826">ウォーターマークの追加</a></td></tr><tr>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/267/30818">ウォーターマークの更新</a></td></tr><tr>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/267/30824">ウォーターマークの削除</a></td></tr><tr>
-<td><a href="https://intl.cloud.tencent.com/zh/document/product/267/30820">ウォーターマークリストのクエリー</a></td>
+<td><a href="https://cloud.tencent.com/document/api/267/30154">ウォーターマークテンプレートの作成</a></td>
+</tr><tr>
+<td><a href="https://cloud.tencent.com/document/api/267/30150">ウォーターマークテンプレートの変更</a></td>
+</tr><tr>
+<td><a href="https://cloud.tencent.com/document/api/267/30153">ウォーターマークテンプレートの削除</a></td>
+</tr><tr>
+<td><a href="https://cloud.tencent.com/document/api/267/30152">ウォーターマークリストのクエリー</a></td>
 </tr></table>
+
+
+
+
+
+
+
+
+ 
