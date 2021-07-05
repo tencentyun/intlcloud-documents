@@ -13,7 +13,8 @@
 ## 操作场景
 默认情况下，私有网络是完全隔离的网络空间，不管是与其他私有网络还是基础网络都不能通过内网与其互通。[云联网]( ) 解决了不同私有网络之间互相通信的问题，而私有网络与基础网络的通信场景则可以配合使用如下方式：
 + **基础网络互通**：实现基础网络中的云服务器与私有网络中的云服务器、云数据库、负载均衡等云资源的互通。需要注意的是：在基础网络互通中，私有网络内的云服务器，只能访问基础网络云服务器，不支持访问基础网络内的云数据库、负载均衡等其他云资源，如下图所示。
- <img src="https://main.qcloudimg.com/raw/dc641ade1dbe4761f100088edcebaf85.png" width="50%" />
+
+   <img src="https://main.qcloudimg.com/raw/5c4c66605c6ecd04591dfff5236231df.png" width="50%" />
 + **终端连接**：实现私有网络内实例通过内网与基础网络内非云服务器实例通信的功能。目前终端连接支持的基础网络产品包括：CLB、MySQL、Memcached、Redis、MongoDB。主要通过将基础网络实例 IP 与私有网络内 IP 建立映射，来实现访问该私有网络 IP 即访问基础网络实例。终端连接不支持跨地域、跨账号，如您有建立终端连接的需要，请提交[ 工单申请](https://console.cloud.tencent.com/workorder/category)。
 
 
@@ -41,9 +42,9 @@
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
 2. 选择地域，单击需要与基础网络互通的`TomVPC`的 ID，进入详情页。
 3. 单击【基础网络互通】选项卡，单击【+关联云服务器】。 
-![](https://main.qcloudimg.com/raw/29347672a8b793f0e938ceda8b39eb77.png)
+![](https://main.qcloudimg.com/raw/ad9b76faac017dbc093b3710f0d5070b.png)
 4. 在弹出框中，选择基础网络内需要关联至此私有网络的云服务器，例如`TomCVM`，单击【确定】即可。
-![](https://main.qcloudimg.com/raw/b3511df785851f67e0d878c473cee478.png)
+![](https://main.qcloudimg.com/raw/b99329129fc8de27dddfbe7897d59218.png)
 
 ## 查看基础网络互通
 可查看所有与私有网络互通的基础网络云服务器列表。
@@ -51,7 +52,7 @@
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
 2. 选择地域，单击需要与基础网络互通的 VPC ID，进入详情页。
 3. 单击【基础网络互通】选项卡，即可查看与该私有网络关联的基础网络云服务器列表。
-![](https://main.qcloudimg.com/raw/92cb69a2842ae03c54f64eb6d55ed2ef.png)
+![](https://main.qcloudimg.com/raw/3b4e1ad2a860c35f89b42315e709d11f.png)
 4. 在右上方的搜索框内，支持按照云服务器内网IP进行快速搜索。
 
 <span id="release" ></span>
@@ -62,6 +63,6 @@
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
 2. 单击需要与基础网络互通的 VPC ID，进入VPC详情页。
 3. 单击【基础网络互通】选项卡，在基础网络云服务器列表中，找到需要解关联的云服务器，单击操作栏中的【解关联】。
-![](https://main.qcloudimg.com/raw/a7c164f1033b93a6722faad1ed9d2f1a.png)
+![](https://main.qcloudimg.com/raw/156dd9a80b6923a96bb52e2d76b55993.png)
 4. 确认操作无误后，单击【确定】完成解关联即可。
 5. 如需批量解关联，可勾选云服务器列表，然后单击上方的【解除关联】进行批量解关联操作。
