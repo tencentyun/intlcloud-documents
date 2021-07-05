@@ -42,7 +42,7 @@ A CLB listener can listen to Layer-4 and Layer-7 requests on a CLB instance and 
 <tbody><tr>
 <td>The listening port is used by a CLB instance to receive and forward requests to real servers for load balancing.<br><br>You can configure CLB for the port range 1-65535, such as 21 (FTP), 25 (SMTP), 80 (HTTP), and 443 (HTTPS).</td>
 <td>A service port is used by the CVM to provide services, receives and processes traffic from the CLB instance.<br><br>On a CLB instance, one listening port can forward traffic to ports of multiple CVM instances.</td>
-<td>On a CLB instance,<li>a listening port must be unique.<br>For example, `TCP:80` and `HTTP:80` listeners cannot be created at the same time.</li><li>Only TCP and UDP ports can be the same.<br>For example, you can create both `TCP:80` and `UDP:80` listeners.</li><br>The same service ports can be used on a CLB instance.<br>For example, `HTTP:80` and `HTTPS:443` listeners can be bound to the same port of a CVM instance.</td>
+<td>On a CLB instance,<li>a listening port must be unique.<br>For example, TCP:80 and HTTP:80 listeners cannot be created at the same time.</li><li>Only TCP and UDP ports can be the same.<br>For example, you can create both TCP:80 and UDP:80 listeners.</li><br>The same service ports can be used on a CLB instance.<br>For example, HTTP:80 and HTTPS:443 listeners can be bound to the same port of a CVM instance.</td>
 </tr>
 </tbody></table>
 
