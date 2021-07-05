@@ -6,7 +6,7 @@ The versions of software tools used in this document are as follows, which may b
 - JDK: JDK 1.8.0_201
 
 ## Installing JDK
-After purchasing the CLB service, you can click **Login** on the CVM details page to log in to your CVM instance where you can enter your username and password to set up the Java web environment. For more information on how to create a CVM instance, please see [CVM - Creating Instance](https://intl.cloud.tencent.com/document/product/213/4855).
+After purchasing the CVM, you can click **Login** on the CVM details page to log in to your CVM instance where you can enter your username and password to set up the Java web environment. For more information on how to create a CVM instance, please see [CVM - Creating Instance](https://intl.cloud.tencent.com/document/product/213/4855).
 
 ### Downloading JDK
 Enter the following command:
