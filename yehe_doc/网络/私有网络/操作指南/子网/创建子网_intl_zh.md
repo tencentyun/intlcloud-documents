@@ -6,7 +6,7 @@
 2. 在左侧目录中单击【子网】，进入管理页面。
 3. 选择需要创建子网的地域和私有网络，单击【新建】。[](id:step3)
 4. 在弹出的【创建子网】对话框中，配置子网参数。
-    ![](https://main.qcloudimg.com/raw/d2301ae9adfccd21e335d8f94bb70bc6.png)
+    ![](https://main.qcloudimg.com/raw/fefbd7d65e21194d342728770f964a6b.png)
    + 所属网络：子网所在的私有网络，如果[ 步骤3 ](#step3)中已选择私有网络，则此处自动显示已选择的私有网络，如[ 步骤3 ](#step3)中未选择私有网络，则可以在下拉箭头中选择子网所在的私有网络。
    + 子网名称：自定义子网名称，字符长度在60个以内。
    + VPC 网段：此处自动展示已选择的私有网络的 CIDR。
@@ -17,9 +17,9 @@
    + 新增一行：用户可以创建一个或多个子网。单击【新增一行】可以同时创建多个子网，单击![](https://main.qcloudimg.com/raw/ae1ede733a45968e89f58c56aee3099f.png)可以删除子网。
    + 高级选项：此处可以设置子网的标签信息，标签信息有利于子网资源的管理，可按需设置，如需设置多个，可单击【添加】，如需删除请单击操作列的删除图标。
 5. 参数设置完成后，单击【创建】即可，创建成功的子网展示在列表中，如下图所示。
-![](https://main.qcloudimg.com/raw/9bc820feb956ea737b327968d6118923.png)
+![](https://main.qcloudimg.com/raw/fe8df992288fce35a67b0bac6861c58b.png)
 
 ## 后续操作
 子网创建成功后，即可在子网中部署云资源，例如云服务器、负载均衡等。
 可单击如下红框图标直接跳转至云服务器购买页面进行购买，详情请参见 [快速搭建 IPv4 私有网络](https://intl.cloud.tencent.com/document/product/215/31891)。
-![](https://main.qcloudimg.com/raw/8a54dc504e09ba4d61d89cae4efd262a.png)
+![](https://main.qcloudimg.com/raw/8fae00dfa94664159b9e98e283a2316f.png)
