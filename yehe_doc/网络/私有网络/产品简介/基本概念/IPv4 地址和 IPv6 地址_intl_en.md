@@ -4,7 +4,7 @@ IP addresses support IPv4 and IPv6 addressing protocols. IPv4 is widely used, bu
 Tencent Cloud provides IPv4 addresses for both the private and public network access. A public IPv4 address can be common or elastic. As shown in the following figure, **EIP** indicates an elastic IPv4 address, **Private** indicates a private IPv4 address, and **Public** indicates a public IPv4 address. These IPs will not change unless you unbind or change them.
 >?Unless otherwise specified, private IP, public IP and EIP all refer to IPv4 addresses.
 >
-![](https://main.qcloudimg.com/raw/218916809d252ce523763e8a514cec49.png)
+![](https://main.qcloudimg.com/raw/6bb952befc42a89392b4d2369f04820d.png)
 
 ### Private IPv4 addresses
 A private IPv4 address is used for Tencent Cloud private network access, which cannot be used to access the internet. Once a CVM instance is created, it will be automatically assigned with a private IPv4 address. The private IPv4 address can also be customized in a VPC environment.
