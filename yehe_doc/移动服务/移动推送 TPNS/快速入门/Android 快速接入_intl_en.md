@@ -20,7 +20,7 @@ This document describes how to quickly integrate the TPNS SDK into your Android 
 3. If the following prompt is displayed, the TPNS SDK is successfully integrated.
 ![](https://main.qcloudimg.com/raw/20dcdc160613bf6b8552a508891cbda5.png)
 	If verification failure is reported, please check whether the application has been successfully registered with the push service as instructed in [Verifying the Integration Result](#jierujieguo).
-	![](https://main.qcloudimg.com/raw/b234996ccd14cd5681bda3c5afcb5f30.png)
+
 >!To increase the offline reach rate, the TPNS SDK enables the session keep-alive feature by default. To disable the feature, see [here](https://intl.cloud.tencent.com/document/product/1024/32624).
 
 
@@ -62,4 +62,4 @@ Then, use the `TpnsPlugin` keyword for analysis.
 4. If the log displays `Execution failed for task ':Paracraft:checkTPNS'`, the TPNS Android SDK can be updated to a later version. If you do not want to check for updates, add `"upgrade": false` to the `tpns-configs.json` file, as shown below:
 <img src="https://main.qcloudimg.com/raw/9eb6a2e108a7a4d1abdd10ef5c1cffdd.png" width="70%"></img>
 5. If you encounter the version mismatch between the Android Gradle plugin and Gradle version when using the plugin, upgrade the Gradle version by referring to [Android Gradle plugin release notes](https://developer.android.google.cn/studio/releases/gradle-plugin). The table in following figure lists which version of Gradle is required for each version of the Android Gradle plugin.
-![](https://main.qcloudimg.com/raw/3b5fa0267d2a051bf55c9f4521cff844.png)
+![](https://main.qcloudimg.com/raw/dcdce69e543adef9d752ef216249da06.png)
