@@ -14,7 +14,7 @@
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
 2. 在【私有网络】页面顶部，选择 VPC 所属地域。
 3. 单击 VPC 名称旁的编辑图标，可对 VPC 的名称进行修改。
-![](https://main.qcloudimg.com/raw/e35cb4e4cc296f6fd36041074a7e5f69.png)
+![](https://main.qcloudimg.com/raw/a0f96b51068c3c081fbcbd7abb586911.png)
 4. 单击 VPC ID，进入 VPC 详情的【基本信息】界面。
 5. 分别单击如下编辑图标，可修改 DNS、Domain Name、标签参数。
    + DNS：DNS 服务器地址。
@@ -23,4 +23,4 @@
      + DNS 可以指定4个 IP，但某些操作系统可能无法支持4个 DNS 地址。
    + Domain Name：云服务器 hostname 后缀，例如 `example.com` 。最多支持60个字符，如无特殊需求，也可保持默认。
    + 标签：主要用于资源标识，以便后期管理，可根据实际情况选择设置，支持增、删多条标签。
-![](https://main.qcloudimg.com/raw/f15656ecb2cbb948c6b09bbe0d8f521b.png)
+![](https://main.qcloudimg.com/raw/50129c5b14c7c6d5923263719eec5bd2.png)
