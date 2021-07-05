@@ -3,15 +3,15 @@
 ## 查看监控
 1. 登录 [TDSQL-A  PostgreSQL版 控制台](https://console.cloud.tencent.com/tdsqla/tdapg)，在实例列表，单击实例 ID，进入实例管理页面。
 2. 在实例管理页面，选择【系统管理】页，选择时间，可以查看监控数据信息及负载。
-![](https://main.qcloudimg.com/raw/9f91bddcb55d9ffc8827eaa48128f655.png)
+![](https://main.qcloudimg.com/raw/5cac2c87a258388ccee34671fabf63e9.png)
   - 在系统管理页面，单击【重启节点】，选择节点信息，可以选择重启 GTM、CN、DN 等节点。
 >!节点重启期间实例将无法提供正常服务，本操作为高危操作，请您提前做好准备，以免造成影响。
 >
-![](https://main.qcloudimg.com/raw/d9834a0a75e0ff79d960ad327fb60edb.png)
+![](https://main.qcloudimg.com/raw/eb4a503acae02d5402863e2968c96059.png)
   - 查看告警及监控信息，根据时间查看监控信息粒度，单击【近24小时】可查看24小时监控数据。
-![](https://main.qcloudimg.com/raw/508bd5761786e9648e29f98cfb56d632.png)
+![](https://main.qcloudimg.com/raw/0d8d92034b28ae05f0e34a19ae3625a0.png)
   - 单击右侧的【导出数据】，选择需要导出的信息，可导出监控数据。
-![](https://main.qcloudimg.com/raw/a7ba1cd7c827a9abaf1a26b97423929b.png)
+![](https://main.qcloudimg.com/raw/497991ba14059266519f13368b3ea9b2.png)
 
 ## 监控指标
 腾讯云云监控从实例维度为 TDSQL-A PostgreSQL版 实例提供以下监控指标：
