@@ -10,7 +10,7 @@ Currently, CLB custom configuration supports the following fields:
 
 | Configuration Field | Default Value/Recommended Value | Parameter Range | Description |
 | :-------- | :-------- | :------ |:------ |
-|  ssl_protocols  | TLSv1 TLSv1.1 TLSv1.2 |  TLSv1 TLSv1.1 TLSv1.2 | Version of TLS protocol used; TLSv1.3 will be added later.|
+|  ssl_protocols  | TLSv1 TLSv1.1 TLSv1.2 |  TLSv1 TLSv1.1 TLSv1.2 | Version of TLS protocol used; TLSv1.3 will be supported later.|
 |  ssl_ciphers  | See further below | See further below | Encryption suite |
 |  client_header_timeout  | 60s |  [30-120]s | Timeout period of obtaining a client request header; in case of timeout, a 408 error will be returned.|
 |  client_header_buffer_size | 4k |[1-256]k | Size of default buffer where a client request header is stored. |
