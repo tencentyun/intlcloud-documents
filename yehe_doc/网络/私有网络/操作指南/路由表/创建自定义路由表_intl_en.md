@@ -5,7 +5,7 @@ A route table is used to control the outbound traffic of the subnet. It can cont
 2. Click **Route Tables** on the left sidebar to access the management page.
 3. Click **+ New**.
 4. In the pop-up dialog, enter the route table name, select the VPC to which the route table belongs, and configure the routing policies.
-    ![](https://main.qcloudimg.com/raw/9016a7369ffa96c05e00843602a54192.png)
+    ![](https://main.qcloudimg.com/raw/8d001c82ce2c4ada7fba9a723a2b4e0c.png)
     
 	>? You can configure routing policies when creating a route table. Alternatively, after a route table is created, you can click the route table ID to enter the **Basic Information** page and click **+ New routing policies** to configure routing policies.
 	>
@@ -36,12 +36,12 @@ A route table is used to control the outbound traffic of the subnet. It can cont
 </table>
 
 5. After completing the configurations, click **Create**. Then the route table will be displayed in the list.
-![](https://main.qcloudimg.com/raw/2cd194721906f97ff3c878b8a64a4341.png)
+![](https://main.qcloudimg.com/raw/c0e5611a3c21733e454ea0e7b8eb4430.png)
 
 ## Configuring HAVIP
 Currently, only the routing policies whose **Next hop type** is **High Availability Virtual IP**, **VPN Gateway**, or **CVM** in the default or custom route tables can be manually published to or withdrawn from CCN.
 1. Click the route table ID to enter the details page.
-    ![](https://main.qcloudimg.com/raw/db9290e78cfc13b9575e590a0f3fa680.png)
+    ![](https://main.qcloudimg.com/raw/7f74257af9225a09dbbf3d2f2366c779.png)
 2. You can perform the following operations as needed:
     + Click **Publish to CCN** to publish an enabled routing policy to CCN.
     + Click **Withdraw from CCN** to withdraw a custom routing policy that has been published to CCN.
