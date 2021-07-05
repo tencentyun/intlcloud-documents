@@ -36,6 +36,6 @@
 
 ## 相关操作
 - 云数据库 Redis 支持通过控制台配置多可用区和查看多可用区信息，请参见 [配置多可用区](https://intl.cloud.tencent.com/document/product/239/39799)。
-- 云数据库 Redis 支持通过控制台升级单可用区至多可用区，请参见 [单可用区升级多可用区](https://intl.cloud.tencent.com/document/product/239/39982)。
+- 云数据库 Redis 支持通过控制台升级单可用区至多可用区，请参见 [升级到多可用区部署](https://intl.cloud.tencent.com/document/product/239/39982)。
 - 云数据库 Redis 支持通过控制台开启和关闭读写分离功能，请参见 [开关读写分离](https://intl.cloud.tencent.com/document/product/239/31935)。
 
