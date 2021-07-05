@@ -117,7 +117,7 @@ The following table describes the IPsec VPN configuration data.
 ## Directions
 
 <dx-tabs>
-::: SPD policy-based VPN (IKEv1)
+::: SPD\spolicy-based\sVPN\s(IKEv1)
 
 1. Log in to the command-line interface of the firewall device.
    <dx-codeblock>
@@ -220,11 +220,9 @@ ASA(config ter)#
 
 10. Test the VPN connectivity.
     You can use the `ping` command to test the VPN connectivity.
-    ![](https://main.qcloudimg.com/raw/94c1317f84d1ee2440f7d0efcf914ced.png)
-
 :::
 
-::: Route-based VPN (IKEv1)
+::: Route-based\sVPN\s(IKEv1)
 
 1. Log in to the command-line interface of the firewall device.
    <dx-codeblock>
@@ -319,10 +317,9 @@ ASA(config ter)#
    </dx-codeblock>
 9. Test the VPN connectivity.
    You can use the `ping` command to test the VPN connectivity.
-   ![](https://main.qcloudimg.com/raw/94c1317f84d1ee2440f7d0efcf914ced.png)
    :::
 
-::: SPD policy-based VPN (IKEv2)
+::: SPD\spolicy-based\sVPN\s(IKEv2)
 
 1. Log in to the command-line interface of the firewall device.
    <dx-codeblock>
@@ -434,10 +431,9 @@ ASA(config)#
     </dx-codeblock>
 11. Test the VPN connectivity.
     You can use the `ping` command to test the VPN connectivity.
-    ![](https://main.qcloudimg.com/raw/94c1317f84d1ee2440f7d0efcf914ced.png)
     :::
 
-::: Route-based VPN (IKEv2)
+::: Route-based\sVPN\s(IKEv2)
 
 1. Log in to the command-line interface of the firewall device.
    <dx-codeblock>
@@ -546,7 +542,6 @@ ASA(config ter)#
 
 10. Test the VPN connectivity.
    You can use the `ping` command to test the VPN connectivity.
-   ![](https://main.qcloudimg.com/raw/94c1317f84d1ee2440f7d0efcf914ced.png)
    :::
    </dx-tabs>
 
