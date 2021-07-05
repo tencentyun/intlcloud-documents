@@ -3,6 +3,6 @@
 
 ## 操作步骤
 1. 登录 [TDSQL-A  PostgreSQL版 控制台](https://console.cloud.tencent.com/tdsqla/tdapg)，在实例列表，单击实例 ID 或“操作”列的【管理】，进入实例详情页。
-![](https://main.qcloudimg.com/raw/8e458593fec43a6cfaaf93da60f29f61.png)
+![](https://main.qcloudimg.com/raw/d130f102859bf103c2a69e13d368b180.png)
 2. 在实例详情页，可查看实例的基本信息、配置信息。
 
