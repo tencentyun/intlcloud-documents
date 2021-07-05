@@ -1,3 +1,20 @@
+## June 2021
+
+<table>
+<tr>
+    <th width=20%>Update</th>
+    <th width=44%>Description</th>
+    <th width=16%>Release Date</th>
+    <th width=20%>Documentation</th>
+</tr>
+    <tr>
+        <td>SDK v1.0.5.0 release</td>
+        <td><li>Optimizes the TPNS channel.</li><li>Optimizes data statistics.</li><li>Fixes known issues.</li></td>
+        <td>June 16, 2021</td>
+        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
+    </tr>
+</table>
+
 ## April 2020
 
 <table>
@@ -8,10 +25,10 @@
     <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>The SDK v1.0.4.0 is released</td>
-        <td><li>The access is optimized, and a registration callback method is added</li><li>The TPNS channel is added for message delivery</li><li>Data statistics are optimized</li><li>The stability is improved, and known issues are fixed</li></td>
+        <td>SDK v1.0.4.0 release</td>
+        <td><li>Optimizes integration and adds a registration callback method.</li><li>Adds support for sending messages via the TPNS channel.</li><li>Optimizes data statistics.</li><li>Improves stability and fixes known issues.</li></td>
         <td>April 28, 2020</td>
-        <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
+        <td>N/A</td>
     </tr>
 </table>
 
@@ -25,10 +42,10 @@
     <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>The SDK v1.0.2.9 is released</td>
-        <td><li>Precise push is improved, and enumeration of accounts is added</li><li>The stability is improved, and the log IO exception is fixed</li></td>
+        <td>SDK v1.0.2.9 release</td>
+        <td><li>Improves push precision and adds account type enumeration.</li><li>Improves stability and fixes the log I/O issue.</li></td>
         <td>March 19, 2020</td>
-        <td>-</td>
+        <td>N/A</td>
     </tr>
 </table>
 
@@ -42,10 +59,10 @@
     <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>The SDK v1.0.2.8 is released</td>
-        <td><li>The crash caused by message statistics collection is fixed</li><li>The access is simplified, and the usage of the reporting API is optimized (it is sufficient to call it in the start method; for more information, please see the demo)</li><li>The stability is improved, and known crashes are fixed</li><li>The compatibility of the SDK is improved</li></td>
-        <td>January 7, 2020</td>
-        <td>-</td>
+        <td>SDK v1.0.2.8 release</td>
+        <td><li>Fixes the crash caused by message statistics.</li><li>Simplifies integration and optimizes the usage of the reporting API. (You only need to call it in the start method. For more information, see the demo.)</li><li>Improves stability and fixes known crashes.</li><li>Improves SDK compatibility.</li></td>
+        <td>January 07, 2020</td>
+        <td>N/A</td>
     </tr>
 </table>
 
@@ -59,22 +76,22 @@
     <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>The SDK v1.0.2.6 is released</td>
-        <td><li>The stability is improved, and crashes caused by message statistics collection and logging are fixed</li></td>
+        <td>SDK v1.0.2.6 release</td>
+        <td><li>Improves stability and fixes crashes caused by message statistics or logging.</li></td>
         <td>December 19, 2019</td>
-        <td>-</td>
+        <td>N/A</td>
     </tr>
     <tr>
-        <td>The SDK v1.0.2.5 is released</td>
-        <td><li>The registration process in the SDK is optimized to improve the registration success rate</li><li>Rich media push is optimized to support resources with no file extensions</li><li>Known issues are fixed</li></td>
+        <td>SDK v1.0.2.5 release</td>
+        <td><li>Optimizes the SDK registration process and improves the registration success rate.</li><li>Optimizes rich media push. Supports non-suffixed resources.</li><li>Fixes known issues.</li></td>
         <td>December 16, 2019</td>
-        <td>-</td>
+        <td>N/A</td>
     </tr>
     <tr>
-        <td>The SDK v1.0.2.4 is released</td>
-        <td><li>Crash monitoring is added in the SDK</li><li>The statistics of cumulative devices are optimized</li><li>The I/O performance of the SDK is improved</li><li>The stability of the SDK is improved</li></td>
+        <td>SDK v1.0.2.4 release</td>
+        <td><li>Adds support for crash monitoring.</li><li>Optimizes the statistics of accumulated device numbers.</li><li>Optimizes SDK I/O performance.</li><li>Improves SDK stability.</li></td>
         <td>December 12, 2019</td>
-        <td>-</td>
+        <td>N/A</td>
     </tr>
 </table>
 
@@ -88,34 +105,34 @@
     <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>The SDK v1.0.2.3 is released</td>
-        <td><li>The compatibility of the SDK is improved</li><li>The registration process in the SDK is optimized to improve message delivery</li></td>
+        <td>SDK v1.0.2.3 release</td>
+        <td><li>Improves SDK compatibility.</li><li>Optimizes SDK registration process and improves message deliverability.</li></td>
         <td>November 28, 2019</td>
-        <td>-</td>
+        <td>N/A</td>
     </tr>
     <tr>
-        <td>The SDK v1.0.2.2 is released</td>
-        <td><li>The issue with getting the TPNS token in the SDK is fixed</li></td>
+        <td>SDK v1.0.2.2 release</td>
+        <td><li>Fixes the issue of obtaining the TPNS token via the SDK.</li></td>
         <td>November 26, 2019</td>
-        <td>-</td>
+        <td>N/A</td>
     </tr>
     <tr>
-        <td>The SDK v1.0.2.1 is released</td>
-        <td><li>The log upload API is added</li><li>The stability and compatibility of the SDK are improved</li></td>
+        <td>SDK v1.0.2.1 release</td>
+        <td><li>Adds the log upload API.</li><li>Improves SDK stability and compatibility.</li></td>
         <td>November 13, 2019</td>
-        <td>-</td>
+        <td>N/A</td>
     </tr>
     <tr>
-        <td>The SDK v1.0.2.0 is released</td>
-        <td><li>The issue with binding callback to a single account is fixed</li><li>The compatibility of the SDK is improved</li><li>Device push environments can now be differentiated between to optimize the statistics</li><li>The cache logic for changing application information is optimized</li><li>The registration success rate in the SDK is improved</li></td>
+        <td>SDK v1.0.2.0 release</td>
+        <td><li>Fixes the single-account binding callback issue.</li><li> Improves the compatibility between SDK and third parties.</li><li> Separates device push environments to optimize statistics.</li><li>Optimizes the caching logic for replacing app information.</li><li>Improves the SDK registration success rate.</li></td>
         <td>November 12, 2019</td>
-        <td>-</td>
+        <td>N/A</td>
     </tr>
     <tr>
-        <td>The SDK v1.0.1.2 is released</td>
-        <td><li>An issue that occurred when the token changed is fixed</li></td>
-        <td>November 2, 2019</td>
-        <td>-</td>
+        <td>SDK v1.0.1.2 release</td>
+        <td><li>Fixes the issue that occurs when the device token changes.</li></td>
+        <td>November 02, 2019</td>
+        <td>N/A</td>
     </tr>
 </table>
 
@@ -129,10 +146,10 @@
     <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>The SDK v1.0.1.1 is released</td>
-        <td><li>The issue with network connection that occurred when an API was called before the SDK was completely started is fixed</li></td>
+        <td>SDK v1.0.1.1 release</td>
+        <td><li>Fixes the network connection issue that occurs when an API is called during the SDK launch.</li></td>
         <td>October 21, 2019</td>
-        <td>-</td>
+        <td>N/A</td>
     </tr>
 </table>
 
@@ -146,21 +163,21 @@
     <th width=20%>Documentation</th>
 </tr>
     <tr>
-        <td>The SDK v1.0.1.0 is released</td>
-        <td><li>The issue with network connection during application status switch is fixed</li></td>
+        <td>SDK v1.0.1.0 release</td>
+        <td><li>Fixes the network connection issue that occurs during application status switch.</li></td>
         <td>August 21, 2019</td>
-        <td>-</td>
+        <td>N/A</td>
     </tr>
     <tr>
-        <td>The SDK v1.0.0.2 is released</td>
-        <td><li>The issue with click statistics is fixed</li><li>The API used to query the token generated by TPNS is added</li><li>The failure to bind a single account is fixed</li><li>The issue with the SDK version number in the reported data is fixed</li></td>
+        <td>SDK v1.0.0.2 release</td>
+        <td><li>Fixes the click statistics issue.</li><li>Adds the API for querying the token generated by TPNS.</li><li>Fixes the failure to bind a single account.</li><li>Fixes the issue with the SDK version number in the reported data.</li></td>
         <td>August 15, 2019</td>
-        <td>-</td>
+        <td>N/A</td>
     </tr>
     <tr>
-        <td>The SDK v1.0.0.0 is released</td>
-        <td><li>This is the initial version</li></td>
+        <td>SDK v1.0.0.0 release</td>
+        <td><li>Initial version</li></td>
         <td>August 1, 2019</td>
-        <td>-</td>
+        <td>N/A</td>
     </tr>
 </table>

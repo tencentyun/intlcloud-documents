@@ -2,8 +2,10 @@
 
 This document describes how to quickly integrate the TPNS SDK into your Android application. You can use the TPNS service on your application after performing the following steps.
 
+
 ## Preparing for Integration
 
+### Creating an Android platform application
 1. Before integrating the SDK, you need to log in to the [TPNS console](https://console.cloud.tencent.com/tpns) and create the product and Android application. For detailed directions, please see [Creating Products and Applications](https://intl.cloud.tencent.com/document/product/1024/32603).
    ![](https://main.qcloudimg.com/raw/748fd7e885077735bdb631aab2bae2b7.png)
 2. Go to the **Configuration Management** page of the application to prepare for the integration.
@@ -18,7 +20,8 @@ This document describes how to quickly integrate the TPNS SDK into your Android 
 3. If the following prompt is displayed, the TPNS SDK is successfully integrated.
 ![](https://main.qcloudimg.com/raw/20dcdc160613bf6b8552a508891cbda5.png)
 	If verification failure is reported, please check whether the application has been successfully registered with the push service as instructed in [Verifying the Integration Result](#jierujieguo).
->!To increase the offline reach rate, the TPNS SDK enables the session keep-alive feature by default. To disable the feature, see [here](https://intl.cloud.tencent.com/document/product/1024/32624#how-do-i-disable-the-keep-alive-feature-of-tpns.3F).
+	![](https://main.qcloudimg.com/raw/b234996ccd14cd5681bda3c5afcb5f30.png)
+>!To increase the offline reach rate, the TPNS SDK enables the session keep-alive feature by default. To disable the feature, see [here](https://intl.cloud.tencent.com/document/product/1024/32624).
 
 
 
@@ -58,5 +61,5 @@ Then, use the `TpnsPlugin` keyword for analysis.
  ![](https://main.qcloudimg.com/raw/1de82d05f351939883e1870ae7300c44.png)
 4. If the log displays `Execution failed for task ':Paracraft:checkTPNS'`, the TPNS Android SDK can be updated to a later version. If you do not want to check for updates, add `"upgrade": false` to the `tpns-configs.json` file, as shown below:
 <img src="https://main.qcloudimg.com/raw/9eb6a2e108a7a4d1abdd10ef5c1cffdd.png" width="70%"></img>
-5. If you encounter the version mismatch between the Android Gradle plugin and Gradle version when using the plugin, upgrade the Gradle version by referring to [Android Gradle plugin release notes](https://developer.android.google.cn/studio/releases/gradle-plugin). The table below lists which version of Gradle is required for each version of the Android Gradle plugin.
+5. If you encounter the version mismatch between the Android Gradle plugin and Gradle version when using the plugin, upgrade the Gradle version by referring to [Android Gradle plugin release notes](https://developer.android.google.cn/studio/releases/gradle-plugin). The table in following figure lists which version of Gradle is required for each version of the Android Gradle plugin.
 ![](https://main.qcloudimg.com/raw/3b5fa0267d2a051bf55c9f4521cff844.png)

@@ -1,22 +1,22 @@
 TPNS provides a series of badge control methods. The following introduces how to implement the badge feature in two classic scenarios.
-This document describes iOS badge best practices. For Android badge adaptation, see [here](https://intl.cloud.tencent.com/document/product/1024/35828).
+This document focuses on iOS badge best practices. For Android badge adaptation, see [here](https://intl.cloud.tencent.com/document/product/1024/35828).
 
-## Scenario 1: Clearing the Application's Badge Number and Notification Bar Messages When Opening the Application
+## Scenario 1: Clearing the Application's Badge Number and Notification Bar Messages when Opening the Application
 
 ### Scenario description
 
 - When the application is not started, make the badge number equal the number of the application's push messages received by the current device.
-- When the application enters the foreground, set the badge number to 0, clear notification bar messages, and set the badge number in the cloud to 0.
+- When the application enters the background, set the badge number to 0, clear notification bar messages, and set the cloud badge number to 0.
 
 ### Implementation method
 
 For such a scenario, the badge number auto increase scheme is recommended. The process is as follows:
 **Step 1:** when a push task is created via the [push API](https://intl.cloud.tencent.com/document/product/1024/33764), set `badge_type` to `-2` to enable the application's badge number to automatically increase by 1.
-**Step 2:** when the application is started, call the "clearing the application's badge number and notification bar messages" method to clear the local badge number and notification bar messages. The implementation code is as follows:
+**Step 2:** when the application is started, call the "clearing the application's badge number and notification bar messages" method to clear the local badge number and notification bar messages. The implementation code is as follows.
 
-**Step 3:** clear the badge number in the cloud. The implementation code is as follows:
+**Step 3:** clear the cloud badge number. The implementation code is as follows.
 
-**Step 4:** if the badge number in the cloud needs to be updated, call the following API to sync the badge value to the TPNS server, and the badge value will be used as the benchmark for the next push. For example, if the current TPNS server badge value is synchronized as N, then the application's badge value will be N+1 when the next push is received.
+**Step 4:** if the cloud badge number needs to be updated, call the following API to sync the badge value to the TPNS server, and the badge value will be used as the benchmark for the next push. For example, if the current TPNS server badge value is synchronized as N, then the application's badge value will be N+1 when the next push is received.
 ```
 //Sync the badge value to the TPNS server, and the value will be used as the benchmark for the next push
 - (void)setBadge:(NSInteger)badgeNumber;
@@ -43,15 +43,14 @@ In this scenario, developers need to maintain the device's total number of messa
 NSLog(@"notifications count:%d.",notifications.count);
 }];
 ```
-2. Assume that the number of notification bar messages is a and the number of in-app messages is b. The code for setting the application's badge number is as follows:
+2. Assume that the number of notification bar messages is a and the number of in-app messages is b. The code for setting the application's badge number is as follows.
 ```
 //Set the application's badge number
 [XGPush defaultManager].xgApplicationBadgeNumber = a + b;
 ```
 <span id="zidy"></span>
 3. Use the **custom badge number** scheme (recommended). The method is as follows:
-When a push task is created via the [push API](https://intl.cloud.tencent.com/document/product/1024/33764), set `badge_type` to the total number of messages (a custom badge number that is greater than or equal to 0). For example, if the total number of messages is 10, set `badge_type` to `10`.
-
+When a push task is created via the [push API](https://intl.cloud.tencent.com/document/product/1024/33764), set `badge_type` to the total number of messages (a custom badge number that is equal to or greater than 0). For example, if the total number of messages is 10, set `badge_type` to `10`.
 
 ## FAQs
 #### How to clear the badge number but retain the push notifications in the notification center?
@@ -68,6 +67,29 @@ When a push task is created via the [push API](https://intl.cloud.tencent.com/do
         clearEpisodeNotification.applicationIconBadgeNumber = -1;
         [[UIApplication sharedApplication] scheduleLocalNotification:clearEpisodeNotification];
     }
+}
+```
+#### How can I set the badge number but retain the push notifications in the notification center?
+```
+#define APNS_IS_IOS11_LATER ([UIDevice currentDevice].systemVersion.floatValue >= 11.0f)
+// Display the badge number in the application icon, but retain the push notifications in the system notification bar.
++ (void)resetBageNumber:(int) number{
+/// If the number is not `0`, set directly.
+if(number){
+[XGPush defaultManager].xgApplicationBadgeNumber = number;
+return;
+}
+/// If the number is `0`, set by the following logic:
+if(APNS_IS_IOS11_LATER){
+//For iOS 11 or later, you only need to set `badgeNumber` to `-1`
+[UIApplication sharedApplication].applicationIconBadgeNumber = -1;
+}else{
+UILocalNotification *clearEpisodeNotification = [[UILocalNotificationalloc] init];
+clearEpisodeNotification.fireDate = [NSDatedateWithTimeIntervalSinceNow:(0.3)];
+clearEpisodeNotification.timeZone = [NSTimeZonedefaultTimeZone];
+clearEpisodeNotification.applicationIconBadgeNumber = -1;
+[[UIApplication sharedApplication] scheduleLocalNotification:clearEpisodeNotification];
+}
 }
 ```
 

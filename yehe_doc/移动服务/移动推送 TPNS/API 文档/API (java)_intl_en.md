@@ -14,7 +14,7 @@ Import Maven dependencies:
 </dependency>
 ```
 
-## Directions
+## Usage
 
 ### XingeApp API description
 
@@ -256,3 +256,15 @@ Check whether the application `AccessID` matches with `SecretKey`, and whether `
 
 #### What should I do if the API returns the error code 1008007 that indicates invalid parameters?
 Refer to [Push API](https://intl.cloud.tencent.com/document/product/1024/33764#ios-.E5.8D.95.E8.AE.BE.E5.A4.87.E6.8E.A8.E9.80.81.E8.AF.B7.E6.B1.82.E6.B6.88.E6.81.AF) and enter all the parameters correctly.
+
+#### Are there SDKs in other programming languages?
+You can find more server SDKs in other programming languages on the [SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload) page.
+
+#### What should I do if the push API returns `Peer certificate cannot be authenticated with given CA certificates`?
+
+This is because the CA certificate has expired. Enter the certificate directory and run the `openssl` command to view the expiration time:
+
+```
+# openssl x509 -in signed.crt -noout -dates
+```
+Replace `signed.crt` with the name of the certificate on your server.
