@@ -31,15 +31,15 @@ After "Allow Traffic by Default in Security Group" is disabled:</p>
 <li>Traffic from public IPs (including general public IPs and EIPs) still needs to pass through the CVM security group.</li>
 <li>If a CLB instance has no security group configured, all traffic will be allowed, and only ports configured with listeners on the VIP of the CLB instance can be accessed; therefore, the listening port will allow traffic from all IPs.</li>
 <li>You can reject access in either the CLB security group or the CVM security group to reject traffic from a specified client IP.</li></ul>
-<p >After "Allow Traffic by Default in Security Group" is disabled, the CVM security group should be configured as follows to ensure effective health checks:</p>
+<p >After "Allow Traffic by Default in Security Group" is disabled, the CVM security group should be configured as follows to ensure effective health check:</p>
 <ol ><li>Configure public network CLB <br>You need to open the CLB VIP to the internet on the backend CVM security group, so that CLB can use the VIP to detect the backend CVM health status.</li>
-<li>Configure private network CLB<ul><li>For private network CLB (formerly "private network application CLB"), if your CLB instance is in a VPC, the CLB VIP needs to be opened to the internet in the backend CVM security group for health checks; if your CLB instance is in the classic network, no additional configuration is needed as the health check IP is opened to the internet by default. </li><li>For private network classic CLB, if your CLB instance was created before December 5, 2016 and is in a VPC, the CLB VIP needs to be opened to the internet (for health checks) in the backend CVM security group; otherwise, no additional configuration is needed as the health check IP is opened to the internet by default.</li></ul></li></ol>
+<li>Configure private network CLB<ul><li>For private network CLB (formerly "private network application CLB"), if your CLB instance is in a VPC, the CLB VIP needs to be opened to the internet in the backend CVM security group for health check; if your CLB instance is in the classic network, no additional configuration is needed as the health check IP is opened to the internet by default. </li><li>For private network classic CLB, if your CLB instance was created before December 5, 2016 and is in a VPC, the CLB VIP needs to be opened to the internet (for health check) in the backend CVM security group; otherwise, no additional configuration is needed as the health check IP is opened to the internet by default.</li></ul></li></ol>
 
 
 
 ## Directions
 The following public network CLB security group configuration example only allows business traffic to enter from CLB port 80 and make CVM port 8080 provide services. It does not limit the client IP but supports access from any IP.
-> !For the public network CLB instance used in this example, the CLB VIP needs to be opened to the internet in the backend CVM security group for health checks. The current IP `0.0.0.0/0` already contains the CLB VIP.
+> !For the public network CLB instance used in this example, the CLB VIP needs to be opened to the internet in the backend CVM security group for health check. The current IP `0.0.0.0/0` already contains the CLB VIP.
 
 ### Step 1. Create a CLB instance and listener and bind a CVM instance
 
