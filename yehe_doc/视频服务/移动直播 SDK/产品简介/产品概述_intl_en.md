@@ -1,41 +1,41 @@
-### Product Overview
-
-
-Mobile Live Video Broadcasting (MLVB) is an easy to use SDK containing all the fundamental features a live stream client would need. It supports all major video codecs and streaming protocols. It is compatible with standard live streaming services, making it easy for you to develop custom apps and launch end-to-end live streaming services. You can use it with Tencent Cloud’s Live Video Broadcast (LVB) and Video on Demand (VOD) services to build a professional one-stop cloud streaming solution. 
+Mobile Live Video Broadcasting (MLVB) is a mobile extension of Cloud Streaming Service (CSS). The RTMP-based MLVB SDK helps you quickly implement live streaming features for mobile clients. You can also use MLVB together with CSS, Video on Demand (VOD), and Instant Messaging (IM) to build a comprehensive cloud-based solution.
 
 
 ## Strengths
 
 ### Cross-platform compatibility
 
-MLVB is a cross-platform SDK featuring APIs that are straightforward to use and can be easily integrated into any iOS or Android app. A web client SDK is also available.
+MLVB comes with an open-source UI component that allows you to quickly build live streaming capabilities for mobile clients including iOS and Android and helps you deliver superior live streaming experience to users beyond the desktop.
 
 
 ### AI algorithm support
 
-MLVB comes with built-in content analysis algorithms, enabling smart features such as real-time face detection and beauty filters to enhance your live streaming solution. 
+MLVB uses AI-based facial recognition technologies to offer photo retouching capabilities such as skin brightening/smoothing and beauty filters, enriching the user experience of your live streaming solution.
 
-## Features
+## Product Features
 
-### Live stream push
+### Live stream publishing
 
-MLVB SDK utilizes a powerful encoder engine and a reliable packager. The SDK works well with all standard live streaming services. You can use it with Tencent Cloud LVB with RTMP over QUIC enabled for an ultra-fast and smooth live streaming experience.
+You can use the RTMP stream publishing feature of the MLVB SDK together with CSS to quickly enable live stream publishing.
 ![](https://imgcache.qq.com/open_proj/proj_qcloud_v2/gateway/product/mlvb/css/img/function/function-1.png)
 
 ### Live stream playback
 
-MLVB supports multiple network protocols including RTMP, FLV, and HLS. Adaptive bitrate streaming is also supported so your viewers can enjoy a smooth playback regardless of their network condition. 
+MLVB supports multiple network protocols including RTMP and HTTP-FLV, allowing you to deliver smooth and clear video to different devices.
 ![](https://imgcache.qq.com/open_proj/proj_qcloud_v2/gateway/product/mlvb/css/img/function/function-2.png)
 
-### Beauty effects
+### Built-in filters
 
-MLVB basic edition comes with built-in filters with airbrushing and whitening abilities for enhancing appearances without excessive GPU utilization, providing an improved mobile live streaming experience with lower power consumption.
+The MLVB basic edition comes with a built-in photo retouching component with beauty filter and skin smoothing abilities that enhance appearances without excessive GPU usage, delivering an improved mobile live streaming experience with less resource consumption.
 
-The MLVB enterprise edition SDK to be launched soon will come with an advanced set of beauty filters supported by cutting-edge AI facial recognition algorithms. Features supported include eye enlargement, face slimming, nose slimming, dynamic stickers, AI-based cropping, and green screen keying, all designed for an unique live streaming experience.
+In addition, the MLVB enterprise edition to be launched soon will come with a set of advanced beauty filters supported by cutting-edge AI facial recognition algorithms. Features supported include eye enlarging, face slimming, nose slimming, animated stickers, AI-based cropping, and green screen keying, all designed for a unique live streaming experience.
 ![](https://imgcache.qq.com/open_proj/proj_qcloud_v2/gateway/product/mlvb/css/img/function/function-4.png)
 
 ### Playback on mobile websites
 
-MLVB is completely cross-platform compatible and can be easily integrated to any iOS or Android app. A web client SDK is also provided.
+MLVB allows you to begin live streaming easily on any mobile websites and share your content to other platforms quickly. This full-featured solution ensures flawless streaming delivery and highly available viewing experiences to increase your outreach.
 ![](https://imgcache.qq.com/open_proj/proj_qcloud_v2/gateway/product/mlvb/css/img/function/function-5.png)
-
+Co-anchoring
+MLVB supports real-time audio/video co-anchoring, which, unlike the feature used in video calls, is optimized for live streaming to allow one-to-many co-anchoring and interaction.
+Co-anchoring is essentially audio/video calls between hosts or between hosts and audience. It improves user interaction during live streaming. You can implement the feature quickly using the MLVB SDK and IM’s room management capabilities.
+![](https://main.qcloudimg.com/raw/f2e76d09385435158539f0eea03aee50.png)
