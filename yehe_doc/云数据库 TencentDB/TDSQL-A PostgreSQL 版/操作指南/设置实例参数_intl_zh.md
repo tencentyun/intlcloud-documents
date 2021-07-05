@@ -5,14 +5,14 @@
 ## 批量修改参数
 1. 登录 [TDSQL-A  PostgreSQL版 控制台](https://console.cloud.tencent.com/tdsqla/tdapg)，在实例列表，单击实例 ID，进入实例管理页面。
 2. 在实例管理页面，选择【参数配置】页，单击【批量修改参数】。
-![](https://main.qcloudimg.com/raw/9c967affb9297711308122af080cb323.png)
+![](https://main.qcloudimg.com/raw/7f69403b1bc040177ff9d38ccc66661e.png)
 3. 根据“参数可修改值”列的提示，输入目标参数值，单击【确认修改】保存，单击【取消】可取消操作。
 >?CN 节点和 DN 节点可分开单独修改。
 >
-![](https://main.qcloudimg.com/raw/dfd50e8f9d8888f7b479f84d8a84e9a6.png)
+![](https://main.qcloudimg.com/raw/3957a40b8b580e613e5add190d911a26.png)
 
 
 ## 查看参数修改记录
 1. 登录 [TDSQL-A  PostgreSQL版 控制台](https://console.cloud.tencent.com/tdsqla/tdapg)，在实例列表，单击实例 ID，进入实例管理页面。
 2. 在实例管理页面，选择【参数配置】>【最近修改记录】页，可查看近期参数修改记录。
- ![](https://main.qcloudimg.com/raw/ff3401183f63b2b73ae6a5a1475aab48.png)
+ ![](https://main.qcloudimg.com/raw/af3f0f083be1b219c894cf2804eded2d.png)
