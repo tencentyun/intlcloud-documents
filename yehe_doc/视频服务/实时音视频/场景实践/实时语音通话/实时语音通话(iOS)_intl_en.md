@@ -60,7 +60,7 @@ The source code folder `TRTCCallingDemo` contains two subfolders: `ui` and `mode
 
 ## Implementing Your Custom UI
 
-The [source code](https://github.com/tencentyun/TRTCSDK/tree/master/iOS/TRTCScenesDemo/TXLiteAVDemo/TRTCCallingDemo) folder `TRTCCallingDemo` contains two subfolders: `ui` and `model`. The `model` folder contains the implemented reusable open-source component `TRTCCalling`. You can find the API functions provided by this component in the `TRTCCalling.h` file.
+The [source code] folder `TRTCCallingDemo` contains two subfolders: `ui` and `model`. The `model` folder contains the implemented reusable open-source component `TRTCCalling`. You can find the API functions provided by this component in the `TRTCCalling.h` file.
 ![](https://main.qcloudimg.com/raw/78cc06cd53538243bc52abc381350c55.jpg)
 
 You can use the open-source component `TRTCCalling` to implement your own UI, i.e., only reusing the `model` to implement your custom UI.
