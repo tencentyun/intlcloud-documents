@@ -28,7 +28,7 @@ Tencent Cloud CLB supports request forwarding over the following protocols:
 <th width="12%">Protocol Type</th>
 <th width="12%">Protocol</th>
 <th width="40%">Description</th>
-<th width="36%">Use Case</th>
+<th width="36%">Use Cases</th>
 </tr>
 <tr>
 <td rowspan="3">Layer-4 protocol</td>
