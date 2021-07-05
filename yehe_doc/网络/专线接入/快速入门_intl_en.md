@@ -2,7 +2,7 @@ A VPC-based direct connect gateway can be used to interconnect one Tencent Cloud
 
 ## Background
 The following figure shows you how to interconnect a Tencent VPC (172.21.0.0/24) and a local IDC (192.168.0.0/24) with a bandwidth of 2 Mbps.
-<img src="https://main.qcloudimg.com/raw/ddd1eb0c0094cdde693f24032345f3f8.png" width="80%" />
+<img src="https://main.qcloudimg.com/raw/92fffb3c128b9f8cf523d360e97cdc6b.png" width="80%" />
 
 Follow the steps below:
 <dx-steps>
