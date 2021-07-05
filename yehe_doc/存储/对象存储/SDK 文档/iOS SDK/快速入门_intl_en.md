@@ -1,4 +1,4 @@
-## Relevant Resources
+## Resources
 
 - Download the iOS SDK source code [here](https://github.com/tencentyun/qcloud-sdk-ios.git).
 - Access the demo [here](https://github.com/tencentyun/qcloud-sdk-ios-samples.git).
@@ -24,9 +24,10 @@ Add the following content to the `Podfile` of your project:
 pod 'QCloudCOSXML'
 ```
 
-#### Disabling the beacon report feature (applicable to 5.8.3 or later)
+#### Disabling the Tencent beacon report feature (applicable to 5.8.3 or later)
 
-We have introduced the beacon report feature into the SDK to track down and optimize the SDK quality for a better user experience.
+We have introduced the [Tencent Beacon](https://beacon.qq.com) into the SDK to track down and optimize the SDK quality for a better user experience.
+>? Tencent Beacon monitors only the COS-side request performance, and will not report the business-side data.
 
 If you want to disable this feature, add the following content to the `Podfile` file of your project:
 
@@ -36,7 +37,7 @@ pod 'QCloudCOSXML/Slim'
 
 #### Simplified SDK
 
-If you only need to perform upload and download operations and want a smaller sized SDK, you can use the simplified version, which does not contain the MTA feature.
+If you only need to perform upload and download operations and want a smaller sized SDK, you can use the simplified version.
 
 The simplified SDK is implemented through the CocoaPods subspec feature, so it currently can only be integrated automatically. Add the following content to the `Podfile` of your project:
 
@@ -157,22 +158,20 @@ Please see the following complete sample code:
 
 - (void) fenceQueue:(QCloudCredentailFenceQueue * )queue requestCreatorWithContinue:(QCloudCredentailFenceQueueContinue)continueBlock
 {
-    // Get the temporary key from the backend server synchronously. You are strongly advised to put the logic for getting the temporary key here to maximize the availability of the key.
+    // Here, get the temporary key from the background server synchronously. It is highly recommended that the logic for getting a temporary key be placed here to maximize the availability of the key
     //...
 
     QCloudCredential* credential = [QCloudCredential new];
     // Temporary key SecretId
-    credential.secretID = @"COS_SECRETID";
+    credential.secretID = @"SECRETID";
     // Temporary key SecretKey
-    credential.secretKey = @"COS_SECRETKEY";
+    credential.secretKey = @"SECRETKEY";
     // Temporary key Token
-    credential.token = @"COS_TOKEN";
-    // We strongly recommend using the server time as the start time of the signature
-    // to avoid signature errors caused by a deviation between your mobile phone's local time and standard time
-    credential.startDate = [[[NSDateFormatter alloc] init] 
-        dateFromString:@"startTime"]; // Unit: second
-    credential.experationDate = [[[NSDateFormatter alloc] init] 
-        dateFromString:@"expiredTime"];
+    credential.token = @"TOKEN";
+    /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of “startTime” and “expiredTime” is second).
+    */
+    credential.startDate = [NSDate dateWithTimeIntervalSince1970:startTime]; // Unit: second
+    credential.experationDate = [NSDate dateWithTimeIntervalSince1970:expiredTime]];// Unit: second
 
     QCloudAuthentationV5Creator* creator = [[QCloudAuthentationV5Creator alloc]
         initWithCredential:credential];
@@ -247,16 +246,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
 
         let credential = QCloudCredential.init();
         // Temporary key SecretId
-        credential.secretID = "COS_SECRETID";
+        credential.secretID = "SECRETID";
         // Temporary key SecretKey
-        credential.secretKey = "COS_SECRETKEY";
+        credential.secretKey = "SECRETKEY";
         // Temporary key Token
-        credential.token = "COS_TOKEN";
-        // We strongly recommend using the server time as the start time of the signature
-        // to avoid signature errors caused by a deviation between your mobile phone's local time and standard time
-        credential.startDate = DateFormatter().date(from: "startTime");
-        // Here, the value is measured in seconds
-        credential.experationDate = DateFormatter().date(from: "expiredTime");
+        credential.token = "TOKEN";
+        /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of “startTime” and “expiredTime” is second).
+        */
+        credential.startDate = Date.init(timeIntervalSince1970: TimeInterval(startTime)!) DateFormatter().date(from: "startTime");
+        credential.experationDate = Date.init(timeIntervalSince1970: TimeInterval(expiredTime)!) 
 
         let auth = QCloudAuthentationV5Creator.init(credential: credential);
         continueBlock(auth,nil);
@@ -306,8 +304,9 @@ When using a permanent key, you can choose not to implement the `QCloudCredentai
 {
     
     QCloudCredential* credential = [QCloudCredential new];
-    credential.secretID = @"COS_SECRETID"; // Permanent key SecretId
-    credential.secretKey = @"COS_SECRETKEY"; // Permanent key SecretKey
+    // You can log in to the CAM console to view and manage SECRETID and SECRETKEY.
+    credential.secretID = @"SECRETID"; // SecretId of the permanent key
+    credential.secretKey = @"SECRETKEY"; // SecretKey of the permanent key
 
     // Use the permanent key to calculate the signature
     QCloudAuthentationV5Creator* creator = [[QCloudAuthentationV5Creator alloc] 
@@ -325,8 +324,9 @@ func signature(with fileds: QCloudSignatureFields!,
                 urlRequest urlRequst: NSMutableURLRequest!, 
                 compelete continueBlock: QCloudHTTPAuthentationContinueBlock!) {
     let credential = QCloudCredential.init();
-    credential.secretID = "COS_SECRETID"; // Permanent key SecretId
-    credential.secretKey = "COS_SECRETKEY"; // Permanent key SecretKey
+    // You can log in to the CAM console to view and manage SECRETID and SECRETKEY.
+    credential.secretID = "SECRETID"; // SecretId of the permanent key
+    credential.secretKey = "SECRETKEY"; // SecretKey of the permanent key
 
     // Use the permanent key to calculate the signature
     let auth = QCloudAuthentationV5Creator.init(credential: credential);
@@ -385,7 +385,7 @@ QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
 NSURL* url = [NSURL fileURLWithPath:@"file URL"];
 // Bucket name in the format: `BucketName-APPID`
 put.bucket = @"examplebucket-1250000000";
-// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the format should be "video/xxx/movie.mp4"
 put.object = @"exampleobject";
 // Content of the object to be uploaded. You can pass in variables in `NSData*` or `NSURL*` format
 put.body =  url;
@@ -417,7 +417,7 @@ put.body =  url;
 let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
 // Bucket name in the format: `BucketName-APPID`
 put.bucket = "examplebucket-1250000000";
-// Object key, i.e., the full path of a COS object. If the object is in a directory, the path should be "dir1/object1".
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the format should be "video/xxx/movie.mp4"
 put.object = "exampleobject";
 // The object content to be uploaded. You can pass in variables in NSData *or NSURL* format
 put.body = NSURL.fileURL(withPath: "Local File Path") as AnyObject;
@@ -463,7 +463,7 @@ QCloudCOSXMLDownloadObjectRequest * request = [QCloudCOSXMLDownloadObjectRequest
     
 // Bucket name in the format: `BucketName-APPID`
 request.bucket = @"examplebucket-1250000000";
-// Object key, i.e. the full path of a COS object. If the object is in a directory, the path should be "dir1/object1"
+// Object key, i.e., the full path of a COS object. If the object is in a directory, the format should be "video/xxx/movie.mp4"
 request.object = @"exampleobject";
 
 // Set the download URL. Once set, the file will be downloaded to the specified path
@@ -480,7 +480,7 @@ request.downloadingURL = [NSURL fileURLWithPath:@"Local File Path"];
                                 int64_t totalBytesDownload,
                                 int64_t totalBytesExpectedToDownload) {
     //      bytesDownload                   Number of bytes to download in this request (a large file may require multiple requests)
-    //      totalBytesDownload              Total bytes downloaded so far
+    //      totalBytesDownload              Number of bytes downloaded so far
     //      totalBytesExpectedToDownload    Total number of bytes expected to download, i.e. the size of the file
 }];
 

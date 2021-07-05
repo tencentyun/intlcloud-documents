@@ -4,7 +4,6 @@ This document describes how to use simple code to upload files to a COS bucket d
 >! This document is based on the XML [APIs](https://intl.cloud.tencent.com/document/product/436/7751).
 
 <span id="1"></span>
-
 ## Prerequisites
 
 1. Log in to the [COS console](https://console.cloud.tencent.com/cos5) and create a bucket to obtain the `Bucket` (bucket name) and `Region` (region name). For more information, please see [Creating Buckets](https://intl.cloud.tencent.com/document/product/436/13309).
@@ -25,7 +24,7 @@ To use other languages or implement it on your own, please take the following st
 1. Obtain a temporary key from the server. The server first uses the `SecretId` and `SecretKey` of a fixed key to obtain the `tmpSecretId`, `tmpSecretKey`, and `sessionToken` of the temporary key from the STS service. For more information, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048) or [cos-sts-sdk](https://github.com/tencentyun/qcloud-cos-sts-sdk).
 2. The frontend calculates the signature based on the `tmpSecretId`, `tmpSecretKey`, `method`, and `pathname`. You can use [cos-auth.js](https://unpkg.com/cos-js-sdk-v5/demo/common/cos-auth.min.js) to calculate the signature as described in this document. If required by the actual business, the signature can also be calculated at the backend.
 3. If you use the `PutObject` API for the upload, you can specify the calculated signature and `sessionToken` in the `authorization` and `x-cos-security-token` fields, respectively, in the request header.
-3. If you use the `PostObject` API for the upload, you can specify the calculated signature and `sessionToken` in the `Signature` and `x-cos-security-token` fields, respectively, in the request form.
+If you use the `PostObject` API for the upload, you can specify the calculated signature and `sessionToken` in the `Signature` and `x-cos-security-token` fields, respectively, in the request form.
 
 
 ### Frontend upload
@@ -93,7 +92,7 @@ To upload with AJAX, your browser needs to support the basic features of HTML5. 
                 } catch (e) {}
                 if (credentials) {
                     callback(null, {
-                        XCosSecurityToken: credentials.sessionToken,
+                        SecurityToken: credentials.sessionToken,
                         Authorization: CosAuth({
                             SecretId: credentials.tmpSecretId,
                             SecretKey: credentials.tmpSecretKey,
@@ -123,12 +122,12 @@ To upload with AJAX, your browser needs to support the basic features of HTML5. 
                 }
 
                 var auth = info.Authorization;
-                var XCosSecurityToken = info.XCosSecurityToken;
+                var SecurityToken = info.SecurityToken;
                 var url = prefix + camSafeUrlEncode(Key).replace(/%2F/g, '/');
                 var xhr = new XMLHttpRequest();
                 xhr.open('PUT', url, true);
                 xhr.setRequestHeader('Authorization', auth);
-                XCosSecurityToken && xhr.setRequestHeader('x-cos-security-token', XCosSecurityToken);
+                SecurityToken && xhr.setRequestHeader('x-cos-security-token', SecurityToken);
                 xhr.upload.onprogress = function (e) {
                     console.log('Upload progress ' + (Math.round(e.loaded / e.total * 10000) / 100) + '%');
                 };
@@ -244,7 +243,7 @@ HTML form supports uploading with a lower browser version (e.g., IE8). The curre
                         } catch (e) {}
                         if (credentials) {
                             callback(null, {
-                                XCosSecurityToken: credentials.sessionToken,
+                                SecurityToken: credentials.sessionToken,
                                 Authorization: CosAuth({
                                     SecretId: credentials.tmpSecretId,
                                     SecretKey: credentials.tmpSecretKey,
@@ -303,7 +302,7 @@ HTML form supports uploading with a lower browser version (e.g., IE8). The curre
                 document.getElementById('success_action_redirect').value = location.href.substr(0, location.href.lastIndexOf('/') + 1) + 'empty.html';
                 document.getElementById('key').value = Key;
                 document.getElementById('Signature').value = AuthData.Authorization;
-                document.getElementById('x-cos-security-token').value = AuthData.XCosSecurityToken || '';
+                document.getElementById('x-cos-security-token').value = AuthData.SecurityToken || '';
                 form.submit();
             });
         };
@@ -316,6 +315,6 @@ HTML form supports uploading with a lower browser version (e.g., IE8). The curre
 The result is shown as follows:
 ![Upload with a form](https://main.qcloudimg.com/raw/90a3460c58ed7e056f08624ce329c1a4.png)
 
-## Documentation
+## Reference
 If you need to call more APIs, please see the following JavaScript SDK document:
 - [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/11459)
