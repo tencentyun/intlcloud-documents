@@ -56,7 +56,7 @@ The `trtcliveroomdemo` folder in the source code contains two subfolders: `ui` a
 
 [](id:model)
 ## Customizing UI
-The `trtcchatsalondemo` folder in the [source code](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCScenesDemo/trtcmeetingdemo/src/main/java/com/tencent/liteav/meeting) contains two subfolders: `ui` and `model`. The `model` folder contains the reusable open-source component `TRTCChatSalon`. You can find the component’s API functions in `TRTCChatSalon.java` and use them to customize your own UI.
+The `trtcchatsalondemo` folder in the [source code]contains two subfolders: `ui` and `model`. The `model` folder contains the reusable open-source component `TRTCChatSalon`. You can find the component’s API functions in `TRTCChatSalon.java` and use them to customize your own UI.
 ![](https://main.qcloudimg.com/raw/9c9b6537318b1fa8cd9c6e4e717c361a.png)
 
 [](id:model.step1)
