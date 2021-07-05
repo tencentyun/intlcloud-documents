@@ -5,11 +5,11 @@ An SQL statement query that takes more time than the specified value is referred
 
 1. Log in to the [TDSQL-A for PostgreSQL](https://console.cloud.tencent.com/tdsqla/tdapg) console and click an instance ID in the instance list to enter the instance management page.
 2. On the instance management page, select the **Operation Log** tab, click **Slow Log Details**, select a time to view the slow log information.
-![](https://main.qcloudimg.com/raw/1bc495cf724108d9cc0ee6e01ad69878.png)
+![](![](https://main.qcloudimg.com/raw/58e180e6bfe1e1b236bd0aafd24ae532.png))
  - You can query slow log information by time.
- ![](https://main.qcloudimg.com/raw/e5376762d6b2431af50692f8a72db504.png)
+ ![](https://main.qcloudimg.com/raw/9e0da9ed3e433a19d41dec65ab0e85c7.png)
  - You can also search by database name.
- ![](https://main.qcloudimg.com/raw/97b7abee37cec982f100e8b56a81bd33.png)
+ ![](https://main.qcloudimg.com/raw/9d69f6b8ab627efa43b7171cf972d093.png)
  
 ## Error Log Details
 Error information in the operation logs generated during database operation is recorded in error log details.
