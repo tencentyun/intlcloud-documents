@@ -117,7 +117,7 @@
 ## 操作步骤
 
 <dx-tabs>
-::: 适用于基于&nbsp;SPD&nbsp;策略转发的&nbsp;VPN（IKEv1）
+::: 适用于基于&#160;SPD&#160;策略转发的&#160;VPN（IKEv1）
 
 1. 登录防火墙设备命令配置界面。
    <dx-codeblock>
@@ -220,11 +220,9 @@ ASA(config)#
 
 10. 测试 VPN 连通性。
     执行 Ping 命令测试 VPN 的连通性。
-    ![](https://main.qcloudimg.com/raw/94c1317f84d1ee2440f7d0efcf914ced.png)
-
 :::
 
-::: 适用于基于路由转发的&nbsp;VPN（IKEv1）
+::: 适用于基于路由转发的&#160;VPN（IKEv1）
 
 1. 登录防火墙设备命令配置界面。
    <dx-codeblock>
@@ -319,10 +317,9 @@ ASA(config)#
    </dx-codeblock>
 9. 测试 VPN 连通性。
    执行 Ping 命令测试 VPN 的连通性。
-   ![](https://main.qcloudimg.com/raw/94c1317f84d1ee2440f7d0efcf914ced.png)
    :::
 
-::: 适用于基于&nbsp;SPD&nbsp;策略转发的&nbsp;VPN（IKEv2）
+::: 适用于基于&#160;SPD&#160;策略转发的&#160;VPN（IKEv2）
 
 1. 登录防火墙设备命令配置界面。
    <dx-codeblock>
@@ -434,10 +431,9 @@ ASA(config)#
     </dx-codeblock>
 11. 测试 VPN 连通性。
     执行 Ping 命令测试 VPN 的连通性。
-    ![](https://main.qcloudimg.com/raw/94c1317f84d1ee2440f7d0efcf914ced.png)
     :::
 
-::: 适用于基于路由转发的&nbsp;VPN（IKEv2）
+::: 适用于基于路由转发的&#160;VPN（IKEv2）
 
 1. 登录防火墙设备命令配置界面。
    <dx-codeblock>
@@ -546,7 +542,6 @@ ASA(config)#
 
 10. 测试 VPN 连通性。
    执行 Ping 命令测试 VPN 的连通性。
-   ![](https://main.qcloudimg.com/raw/94c1317f84d1ee2440f7d0efcf914ced.png)
    :::
    </dx-tabs>
 
