@@ -51,7 +51,7 @@ Run the `java -version` command. If the JDK version information is displayed, JD
 
 ## Installing Tomcat
 ### Downloading Tomcat
-Enter the following command:
+Enter the following commands:
 ```
 # The mirror address may change and the Tomcat version may be continuously upgraded. If the download link expired, please go to [Tomcat official website](https://tomcat.apache.org/download-80.cgi) and select an appropriate installation package address.
 wget http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.39/bin/apache-tomcat-8.5.39.tar.gz
