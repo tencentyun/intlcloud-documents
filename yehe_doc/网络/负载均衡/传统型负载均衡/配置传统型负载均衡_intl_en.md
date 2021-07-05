@@ -31,7 +31,7 @@ Click **Create** under **Listener Management** and configure a TCP listener in t
 <td><span>test-tcp-80&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
 </tr>
 <tr>
-<td>Listener Protocol and Ports</td>
+<td>Listener Protocol Ports</td>
 <td>Listener protocol and listening port<br><li>Listener protocol: CLB supports protocols such as TCP, UDP, HTTP, and HTTPS. This example uses TCP.</li><li>Listening port: used to receive and forward requests to real servers. The port range is 1-65535.</li><li>The listening port must be unique in the same CLB instance.</li></td>
 <td>TCP:80</td>
 </tr>
