@@ -14,7 +14,7 @@ CVMs in a Tencent Cloud VPC support DHCP. The configurable DHCP options includin
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
 2. Select the region of the VPC at the top of the **VPC** page.
 3. Click the edit icon next to a VPC name to modify it.
-![](https://main.qcloudimg.com/raw/e35cb4e4cc296f6fd36041074a7e5f69.png)
+![](https://main.qcloudimg.com/raw/a0f96b51068c3c081fbcbd7abb586911.png)
 4. Click the VPC ID to access the **Basic Information** page.
 5. Click the edit icon to modify DNS, domain name, and tag respectively.
    + DNS: DNS server addresses
@@ -23,4 +23,4 @@ CVMs in a Tencent Cloud VPC support DHCP. The configurable DHCP options includin
      + Although four IPs can be specified for DNS, certain operating systems might be unable to support four DNS addresses.
    + Domain Name: CVM hostname suffix, such as `example.com`. You can enter up to 60 characters, or keep the default configuration if you don’t have special requirements.
    + Tag: used to identify and manage resources. You can optionally add tags or delete them.
-![](https://main.qcloudimg.com/raw/f15656ecb2cbb948c6b09bbe0d8f521b.png)
+![](https://main.qcloudimg.com/raw/50129c5b14c7c6d5923263719eec5bd2.png)
