@@ -1,4 +1,4 @@
-After the first 3 steps, the VPN gateway and VPN tunnel on the Tencent Cloud are configured. Then, you need to configure the VPN tunnel on the local gateway of the IDC. For more information about local gateway, see [Local Gateway Configurations](https://intl.cloud.tencent.com/zh/document/product/1037/40707). The local gateway refers to the IPsec VPN device on the IDC side. The public IP of this device is recorded in the “customer gateway” created in [Step 2](https://intl.cloud.tencent.com/document/product/1037/32691).
+After the first 3 steps, the VPN gateway and VPN tunnel on the Tencent Cloud are configured. Then, you need to configure the VPN tunnel on the local gateway of the IDC. For more information about local gateway, see [Local Gateway Configurations](https://intl.cloud.tencent.com/document/product/1037/40707). The local gateway refers to the IPsec VPN device on the IDC side. The public IP of this device is recorded in the “customer gateway” created in [Step 2](https://intl.cloud.tencent.com/document/product/1037/32691).
 
 A local gateway is generally deployed in the following scenarios:
 >!
