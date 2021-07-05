@@ -36,6 +36,6 @@ Deploy the master node in the master AZ, one replica node in replica AZ 1, and o
 
 ## References
 - For more information on how to configure and view multi-AZ deployment in the TencentDB for Redis console, please see [Configuring Multi-AZ Deployment](https://intl.cloud.tencent.com/document/product/239/39799).
-- For more information on how to upgrade the deployment from single-AZ to multi-AZ in the TencentDB for Redis console, please see [Upgrading from Single-AZ to Multi-AZ](https://intl.cloud.tencent.com/document/product/239/39982).
+- For more information on how to upgrade the deployment from single-AZ to multi-AZ in the TencentDB for Redis console, please see [Upgrading to Multi-AZ Deployment](https://intl.cloud.tencent.com/document/product/239/39982).
 - For more information on how to enable and disable read/write separation in the TencentDB for Redis console, please see [Enabling/Disabling Read/write Separation](https://intl.cloud.tencent.com/document/product/239/31935).
 
