@@ -6,7 +6,7 @@ A subnet is specific to availability zone. A VPC allows subnets in different ava
 2. Click **Subnet** on the left sidebar to access the management page.
 3. Select the region and VPC in which the subnet will be created and click **+New**[](id:step3).
 4. Configure the subnet parameters in the pop-up dialog box.
-    ![](https://main.qcloudimg.com/raw/d2301ae9adfccd21e335d8f94bb70bc6.png)
+    ![](https://main.qcloudimg.com/raw/fefbd7d65e21194d342728770f964a6b.png)
    + Network: the VPC where the subnet resides. The VPC selected in [step 3](#step3) will be automatically displayed. Alternatively, you can select a VPC from the drop-down list.
    + Subnet Name: enter a custom subnet name within 60 characters.
    + VPC IP Range: the CIDR block of the selected VPC will be automatically displayed.
@@ -17,9 +17,9 @@ A subnet is specific to availability zone. A VPC allows subnets in different ava
    + Add a line: click **Add a line** to create multiple subnets at a time. Click ![](https://main.qcloudimg.com/raw/ae1ede733a45968e89f58c56aee3099f.png) to delete the selected subnet settings.
    + Advanced Options: you can optionally set tags for the subnet to better manage subnet resources. Click **Add** to set multiple tags at a time. You can click the icon in the **Operation** column to delete the selected tag settings.
 5. After completing the configurations, click **Create**. Then subnets that have been successfully created will be displayed in the list, as shown below.
-![](https://main.qcloudimg.com/raw/9bc820feb956ea737b327968d6118923.png)
+![](https://main.qcloudimg.com/raw/fe8df992288fce35a67b0bac6861c58b.png)
 
 ## Subsequent Operation
 After creating a subnet, you can deploy resources including CVM and CLB in it.
 Click the icon as shown below to directly purchase a CVM on the CVM purchase page. For more information, see [Building Up an IPv4 VPC](https://intl.cloud.tencent.com/document/product/215/31891).
-![](https://main.qcloudimg.com/raw/8a54dc504e09ba4d61d89cae4efd262a.png)
+![](https://main.qcloudimg.com/raw/8fae00dfa94664159b9e98e283a2316f.png)
