@@ -21,7 +21,7 @@ TDSQL-A for PostgreSQL provides two data encryption methods:
 - Encryption built in TDSQL-A for PostgreSQL: the encryption process is imperceptible to the business, which has the following advantages:
  - Encryption operations (function calls) are decoupled from the business. The business is only responsible for writing the original data to the database kernel, and the subsequent encryption calculation will be conducted inside the database, which is imperceptible to the business.
  - Encryption algorithms are maintained by the database, and operations such as encryption algorithm selection and key management are all performed by the security admin independently.
-   Kernel-based encryption calculation supports async encryption to implement data encryption while delivering a stable system throughput. The supported encryption algorithms include AES-128, AES-192, AES-256, and SM4.
+   Kernel-based encryption calculation supports async encryption to implement data encryption while delivering a stable system throughput. The supported encryption algorithms include AES-128, AES-192, AES-256.
 
 ### Data masking
 TDSQL-A for PostgreSQL supports transparent data masking that can return masked data to unauthorized users in an imperceptible manner.
