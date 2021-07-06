@@ -2,7 +2,6 @@
 ## 기능 설명
 Tencent Cloud CDN의 POST 요청 크기 제한, 즉 요청 body의 최대 크기 기본값은 32MB입니다. 실제 비즈니스 상황에 따라 이 부분의 상한값을 조정할 수 있습니다.
 
->! 해당 기능은 현재 HTTPS Origin-pull을 지원하지 않습니다. 도메인의 Origin-pull 프로토콜이 HTTP인지 확인하십시오.
 
 ## 설정 가이드
 
