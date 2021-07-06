@@ -38,13 +38,7 @@
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1007/38093">Weblogic 服务器证书安装</a></td>
 </tr>
-<tr>
-<td rowspan="3">国密标准证书（SM2）</td>
-</tr>
-<tr>
-<td>Windows 系统</td>
-<td><a href="https://cloud.tencent.com/document/product/400/47361">Nginx For Windows 服务器国密证书安装</a></td>
-</tr>
+
 </table>
 
 
