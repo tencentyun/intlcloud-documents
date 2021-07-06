@@ -1,6 +1,6 @@
 ### How do I modify the configuration parameters of a TencentDB for MySQL instance?
 - **In the TencentDB for MySQL console**
-In the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click the instance ID/name in the instance list and enter the management page. Select **Database Management** > **Parameter Settings**. Common `var\_name` includes:
+In the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click the instance ID in the instance list and enter the management page. Select **Database Management** > **Parameter Settings**. Common `var\_name` includes:
 <table>
 <tbody><tr>
 <th>Variable</th><th>Description</th></tr>
@@ -26,19 +26,19 @@ In the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), cli
 Log in to the TencentDB for MySQL instance through phpMyAdmin and click **Variables** on the top menu. Click **Edit** next to the variable to be modified. Modify and click **Save**.
 ![](https://main.qcloudimg.com/raw/214fec618ff4e166c6e4d747be3fea0b.png)
 
-To view more configuration parameters, click the instance ID/name in the instance list and go to **Database Management** > **Parameter Settings** in the TencentDB for MySQL console.
+To view more configuration parameters, click the instance ID in the instance list and go to **Database Management** > **Parameter Settings** in the TencentDB for MySQL console.
 
 ### How do I set Chinese queries in TencentDB for MySQL?
 Chinese characters are currently not supported in TencentDB for MySQL.
 
 ### How do I enable the scheduler feature in TencentDB for MySQL?
-In the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click the instance ID/name in the instance list and enter the management page. Select **Database Management** > **Parameter Settings** and set the `event_scheduler` parameter to `ON`.
+In the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click the instance ID in the instance list and enter the management page. Select **Database Management** > **Parameter Settings** and set the `event_scheduler` parameter to `ON`.
 
 ### How do I increase the connection timeout period in TencentDB for MySQL?
-In the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click the instance ID/name in the instance list and enter the management page. Select **Database Management** > **Parameter Settings** and modify the `wait_timeout` parameter.
+In the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click the instance ID in the instance list and enter the management page. Select **Database Management** > **Parameter Settings** and modify the `wait_timeout` parameter.
 
 ### How do I modify the `group_concat_max_len` parameter in TencentDB for MySQL?
-In the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click the instance ID/name in the instance list and enter the management page. Select **Database Management** > **Parameter Settings** and modify the `group_concat_max_len` parameter.
+In the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click the instance ID in the instance list and enter the management page. Select **Database Management** > **Parameter Settings** and modify the `group_concat_max_len` parameter.
 
 ### How do I locate the SQL statements for full-table scan in TencentDB for MySQL?
 Full-table scan statements are not recorded by default. To locate them, set the `log_queries_not_using_indexes` parameter to `ON` in **Parameter Settings** in the TencentDB for MySQL console. We recommend that you only enable this parameter for a short period of time.
