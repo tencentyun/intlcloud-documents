@@ -1,4 +1,4 @@
-容器服务-用户指南-组件管理-扩展组件概述
+
 Add-ons are extended feature packages provided by Tencent Cloud TKE. You can deploy add-ons based on your business requirements. Add-ons can help you manage Kubernetes components in clusters, including component deployment, upgrades, configuration updates, and removal.
 
 
@@ -40,4 +40,4 @@ Advanced add-ons are optional add-ons provided by TKE. You can deploy such add-o
 | [NetworkPolicy Controller](https://intl.cloud.tencent.com/document/product/457/39120) <br>(network policy controller add-on) | Others | Network Policy is a resource provided by Kubernetes. This add-on provides a controller for implementing resources of this type. |
 | [Nginx-Ingress](https://intl.cloud.tencent.com/document/product/457/39143)<br>(community Ingress add-on) | Others | Nginx can be used as a reverse proxy, load balancer, and for HTTP caching. Nginx-ingress is an Ingress controller for Kubernetes that uses NGINX as a reverse proxy and load balancer. |
 | [OLM]()<br>(Operator Lifecycle Management) | Others | OLM (Operator Lifecycle Manager) is part of the Operator Framework, which helps users install, update, and manage the lifecycle of Operators. |
-| [HPC]()<br>(modifying the number of replicas periodically) | Others | HorizontalPodCronscaler (HPC) is an add-on to modify the number of replicas of K8s workload periodically. Used in conjunction with HPC CRD resources, it can support scheduled actions in seconds.
+| [HPC]()<br>(modifying the number of replicas periodically) | Others | HorizontalPodCronscaler (HPC) is an add-on to modify the number of replicas of K8s workload periodically. Used in conjunction with HPC CRD resources, it can support scheduled actions in seconds. |
