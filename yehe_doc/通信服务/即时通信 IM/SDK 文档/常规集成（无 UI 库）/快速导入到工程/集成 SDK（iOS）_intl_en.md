@@ -126,7 +126,7 @@ Download the latest SDK version from [GitHub](https://github.com/tencentyun/TIMS
 <tbody><tr>
 <td>TXLiteAVSDK_UGC.framework</td>
 <td>Extension package for recording and editing short videos</td>
-<td>This package provides short video recording and editing features. For more information, see <a href="https://cloud.tencent.com/product/ugsv">UGSV SDK Documentation</a>.</td>
+<td>This package provides short video recording and editing features. For more information, see <a href="https://intl.cloud.tencent.com/zh/product/ugsv">UGSV SDK Documentation</a>.</td>
 </tr>
 </tbody></table>
 
@@ -167,8 +167,4 @@ Use the following codes to import specific header files into the project's files
 - If you use the SDK Lite Edition, reference the header file as follows:
 ```
 #import <ImSDK_Smart/ImSDK_Smart.h>
-```
-
-```
-
 ```
