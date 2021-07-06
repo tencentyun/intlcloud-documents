@@ -4,7 +4,7 @@ TencentDB for MySQLのデフォルトのスレーブデータベース、読み�
 
 ## 故障の影響
 - [スレーブデータベース](https://intl.cloud.tencent.com/document/product/236/38328) に遅延が存在する場合、マスター／スレーブインスタンスが短時間で切り替えを完了できなくなり、これにより業務にも影響が出て、短時間で正常にリストアできなくなります。
-- 読み取りサービスのデータ整合性に対する要求が高い場合、[読み取り専用グループ]（https://intl.cloud.tencent.com/document/product/236/11361）は遅延排除ポリシーを設定することができ、読み取り専用インスタンスとマスターインスタンスの遅延時間がしきい値を超えると、対応する読み取り専用インスタンスが自動的に削除されることにより、読み取りサービスは読み取り専用インスタンスに正常にアクセスできなくなります。
+- 読み取りサービスのデータ整合性に対する要求が高い場合、[読み取り専用グループ](https://intl.cloud.tencent.com/document/product/236/11361)は遅延排除ポリシーを設定することができ、読み取り専用インスタンスとマスターインスタンスの遅延時間がしきい値を超えると、対応する読み取り専用インスタンスが自動的に削除されることにより、読み取りサービスは読み取り専用インスタンスに正常にアクセスできなくなります。
 
 ## 考えられる原因
 - **非プライマリキーまたはセカンダリインデックス**
@@ -25,7 +25,7 @@ binlogがrow形式、かつテーブルが非プライマリキーまたはセ�
 
 - **Waiting for table metadata lockのエラー**
 大規模トランザクションを実行すると、DDLがブロックされ、これが続くと同一テーブルのすべての後続の操作に支障が出ます。また、トランザクションを送信しない場合もDDLがブロックされ、これが続くと同一テーブルのすべての後続の操作に支障が出ます。
-処理手順については、［Waiting for table metadata lockのエラー］(#wftmlbc)をご参照ください。
+処理手順については、[Waiting for table metadata lockのエラー](#wftmlbc)をご参照ください。
 
 ## 処理手順
 ### [非プライマリキーまたはセカンダリインデックス](id:wzjhejsy)
@@ -57,7 +57,7 @@ binlogがrow形式、かつテーブルが非プライマリキーまたはセ�
  - 非効率性の最適化については、[SQLの最適化](https://intl.cloud.tencent.com/document/product/1035/36040)をご参照ください。
  - インスタンス仕様のアップグレードについては、[データベースインスタンスの仕様の調整](https://intl.cloud.tencent.com/document/product/236/19707)をご参照ください。
 
-### ［Waiting for table metadata lockのエラー］(id:wftmlbc)
+### [Waiting for table metadata lockのエラー](id:wftmlbc)
 [TencentDB for DBbrain](https://intl.cloud.tencent.com/document/product/1035/36036) を使用して実際の業務およびインスタンスに対する診断を行い、スロークエリーなどの指標を調査して、大規模トランザクションを特定することをお勧めします。
 1. [DBbrainコンソール](https://console.cloud.tencent.com/dbbrain/event)にログインし、異常アラームページで対応するデータベースとリージョンを選択し、「診断項目」で次の診断項目にチェックを入れ、時間を消費する大規模トランザクションを特定します。
 ![](https://main.qcloudimg.com/raw/11e0dc3ba8fa61eaf07ec3ecf7e38474.png)
