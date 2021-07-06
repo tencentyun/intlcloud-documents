@@ -18,7 +18,7 @@
 <li>Supports log prompt when a hook conflict between the third-party SDK and `AppDelegate` occurs.
 <li>Deletes unnecessary log prompts in production environments.</td>
  <td>June 1, 2021</td>
- <td><ul  style="margin: 0;"><li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li><li><a href="https://cloud.tencent.com/document/product/548/56433">Upgrade Guide</a></li></ul></td>
+ <td><ul  style="margin: 0;"><li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li><li><a href="https://intl.cloud.tencent.com/document/product/1024/40597">Upgrade Guide</a></li></ul></td>
  </tr>
  </table>
 
