@@ -64,7 +64,7 @@ mv apache-tomcat-8.5.39 /usr/local/tomcat/
 - webapps：Tomcat 的主要 Web 发布目录，默认情况下把 Web 应用文件放于此目录。
 - logs：存放 Tomcat 执行时的日志文件。
 
->如果下载链接失效，请替换为 [Tomcat 官网](https://tomcat.apache.org/download-80.cgi ) 的最新下载链接。
+>!如果下载链接失效，请替换为 [Tomcat 官网](https://tomcat.apache.org/download-80.cgi ) 的最新下载链接。
 
 ### 添加用户
 ```
