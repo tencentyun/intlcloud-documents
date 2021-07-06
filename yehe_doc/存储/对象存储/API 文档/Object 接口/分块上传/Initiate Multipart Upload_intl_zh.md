@@ -2,12 +2,28 @@
 
 Initiate Multipart Upload 接口请求实现初始化分块上传，成功执行此请求后将返回 UploadId，用于后续的 Upload Part 请求。
 
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                推荐使用 API Explorer
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=InitiateMultipartUpload&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>点击调试</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer 提供了在线调用、签名验证、SDK 代码生成和快速检索接口等能力。您可查看每次调用的请求内容和返回结果以及自动生成 SDK 调用示例。
+            </div>
+        </div>
+    </div>
+</div>
+
 ## 请求
 
 #### 请求示例
 
 ```plaintext
-POST /<ObjectKey>uploads HTTP/1.1
+POST /<ObjectKey>?uploads HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
 Content-Type: Content Type
@@ -15,7 +31,7 @@ Content-Length: 0
 Authorization: Auth String
 ```
 
-> Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> ? Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 
 #### 请求参数
 
@@ -33,7 +49,7 @@ Authorization: Auth String
 | Content-Type        | RFC 2616 中定义的 HTTP 请求内容类型（MIME），此头部用于描述待上传对象的内容类型，将作为对象元数据保存。<br>例如`text/html`或 `image/jpeg` | string | 是       |
 | Expires             | RFC 2616 中定义的缓存失效时间，将作为对象元数据保存          | string | 否       |
 | x-cos-meta-\*       | 包括用户自定义元数据头部后缀和用户自定义元数据信息，将作为对象元数据保存，大小限制为2KB<br>**注意：**用户自定义元数据信息支持下划线（_），但用户自定义元数据头部后缀不支持下划线，仅支持减号（-） | string | 否       |
-| x-cos-storage-class | 对象存储类型。枚举值请参见 [存储类型](https://intl.cloud.tencent.com/document/product/436/30925) 文档，例如 INTELLIGENT_TIERING，STANDARD_IA，ARCHIVE，DEEP_ARCHIVE。默认值：STANDARD | Enum   | 否       |
+| x-cos-storage-class | 对象存储类型。枚举值请参见 [存储类型](https://intl.cloud.tencent.com/document/product/436/30925) 文档，例如 MAZ_STANDARD，MAZ_STANDARD_IA，INTELLIGENT_TIERING，MAZ_INTELLIGENT_TIERING，STANDARD_IA，ARCHIVE，DEEP_ARCHIVE。默认值：STANDARD | Enum   | 否       |
 |  x-cos-tagging   |对象的标签集合，最多可设置10个标签（例如，Key1=Value1&Key2=Value2）。 标签集合中的 Key 和 Value 必须先进行 URL 编码。| string| 否  |
 
 
@@ -70,6 +86,7 @@ Authorization: Auth String
 #### 响应体
 
 请求成功，返回 **application/xml** 数据，包含分块上传初始化信息。
+
 
 ```
 <InitiateMultipartUploadResult>
@@ -124,10 +141,12 @@ Date: Wed, 25 Mar 2020 10:07:01 GMT
 Server: tencent-cos
 x-cos-request-id: NWU3YjJkNDVfNDliNTJhMDlfYzZhMl8yOTVj****
 
+
+
 <InitiateMultipartUploadResult>
-	<Bucket>examplebucket-1250000000</Bucket>
-	<Key>exampleobject</Key>
-	<UploadId>1585130821cbb7df1d11846c073ad648e8f33b087cec2381df437acdc833cf654b9ecc6361</UploadId>
+			<Bucket>examplebucket-1250000000</Bucket>
+			<Key>exampleobject</Key>
+			<UploadId>1585130821cbb7df1d11846c073ad648e8f33b087cec2381df437acdc833cf654b9ecc6361</UploadId>
 </InitiateMultipartUploadResult>
 ```
 
@@ -160,10 +179,12 @@ Date: Thu, 28 May 2020 08:35:34 GMT
 Server: tencent-cos
 x-cos-request-id: NWVjZjc3ZDZfOThjMjJhMDlfMjg5N18zNWYy****
 
+
+
 <InitiateMultipartUploadResult>
-	<Bucket>examplebucket-1250000000</Bucket>
-	<Key>exampleobject</Key>
-	<UploadId>1590654934dfb1343b4323b711afc22569c18af51596d4f2e40faf392fe1bb469c5b77115f</UploadId>
+			<Bucket>examplebucket-1250000000</Bucket>
+			<Key>exampleobject</Key>
+			<UploadId>1590654934dfb1343b4323b711afc22569c18af51596d4f2e40faf392fe1bb469c5b77115f</UploadId>
 </InitiateMultipartUploadResult>
 ```
 
@@ -194,10 +215,12 @@ Server: tencent-cos
 x-cos-request-id: NWVjZjc5Y2VfZjhjODBiMDlfMjIyOGFfMzYxYWVm****
 x-cos-server-side-encryption: AES256
 
+
+
 <InitiateMultipartUploadResult>
-	<Bucket>examplebucket-1250000000</Bucket>
-	<Key>exampleobject</Key>
-	<UploadId>15906554384f160dd0a272ebb6fbcdb0ffbb61adb2b46fa6b9f2ffabcfb2940b8f72277952</UploadId>
+			<Bucket>examplebucket-1250000000</Bucket>
+			<Key>exampleobject</Key>
+			<UploadId>15906554384f160dd0a272ebb6fbcdb0ffbb61adb2b46fa6b9f2ffabcfb2940b8f72277952</UploadId>
 </InitiateMultipartUploadResult>
 ```
 
@@ -231,12 +254,15 @@ x-cos-request-id: NWVjZjc5ZTNfMmZiOTJhMDlfMzJlNDJfMjkzNGJi****
 x-cos-server-side-encryption: cos/kms
 x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085****
 
+
+
 <InitiateMultipartUploadResult>
-	<Bucket>examplebucket-1250000000</Bucket>
-	<Key>exampleobject</Key>
-	<UploadId>15906554607990121702e8e4b706eb0f12b8568a3f3b0b76b884e4df676ed50291f0b17131</UploadId>
+			<Bucket>examplebucket-1250000000</Bucket>
+			<Key>exampleobject</Key>
+			<UploadId>15906554607990121702e8e4b706eb0f12b8568a3f3b0b76b884e4df676ed50291f0b17131</UploadId>
 </InitiateMultipartUploadResult>
 ```
+
 
 #### 案例五：使用服务端加密 SSE-C
 
@@ -268,9 +294,11 @@ x-cos-request-id: NWVjZjc5ZjlfOGJjOTJhMDlfNzJmYV8xOTcy****
 x-cos-server-side-encryption-customer-algorithm: AES256
 x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
 
+
+
 <InitiateMultipartUploadResult>
-	<Bucket>examplebucket-1250000000</Bucket>
-	<Key>exampleobject</Key>
-	<UploadId>15906554815fb0c8bda2edae20d895ad7452e949bf51541b31ca14a029fb6f1617f10ca186</UploadId>
+			<Bucket>examplebucket-1250000000</Bucket>
+			<Key>exampleobject</Key>
+			<UploadId>15906554815fb0c8bda2edae20d895ad7452e949bf51541b31ca14a029fb6f1617f10ca186</UploadId>
 </InitiateMultipartUploadResult>
 ```

@@ -1,6 +1,6 @@
 ## 简介
 
-腾讯云对象存储 COS 集成了 [数据万象](https://intl.cloud.tencent.com/document/product/1045)（Cloud Infinite，CI）专业的一体化多媒体解决方案，涵盖以下图片处理功能，详情可见 [图片处理概述](https://intl.cloud.tencent.com/document/product/436/35280)。
+腾讯云对象存储（Cloud Object Storage，COS）集成了 [数据万象](https://intl.cloud.tencent.com/document/product/1045)（Cloud Infinite，CI）专业的一体化多媒体解决方案，涵盖以下图片处理功能，详情可见 [图片处理概述](https://intl.cloud.tencent.com/document/product/436/35280)。
 
 <table>
    <tr>
@@ -9,7 +9,7 @@
       <th>说明</td>
    </tr>
    <tr>
-      <td rowspan=12>基础图片处理服务</td>
+      <td rowspan=11>基础图片处理服务</td>
       <td><a href="https://intl.cloud.tencent.com/document/product/436/36366">缩放</a></td>
       <td>等比缩放、设定目标宽高缩放等多种方式</td>
    </tr>
@@ -53,10 +53,6 @@
       <td><a href="https://intl.cloud.tencent.com/document/product/436/36379">快速缩略模板</a></td>
       <td>快速实现图片格式转换、缩略、剪裁等功能，生成缩略图</td>
    </tr>
-   <tr>
-      <td><a href="https://intl.cloud.tencent.com/document/product/1045/33443">样式设置</a></td>
-      <td>设置图片的样式，方便管理不同需求的图片</td>
-   </tr>
 </table>
 
 
@@ -89,3 +85,4 @@ COSXMLUploadTask cosxmlUploadTask = transferManager.upload(bucket, cosPath,
 ```
 
 >?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/PictureOperation.java) 查看。
+

@@ -48,7 +48,7 @@ Content-Type：application/xml
 | 400 Bad Request                     | BadDigest                             | 提供的 [Content-MD5](https://intl.cloud.tencent.com/document/product/436/7728) 值与服务端收到的请求体的 MD5 哈希值不一致 |
 | 400 Bad Request                     | BadRquest                             | 参数错误                                                     |
 | 400 Bad Request                     | BucketAccelerateNotEnabled            | 该存储桶未启用加速域名                                       |
-| 400 Bad Request                     | BucketNameTooLong                     | 存储桶名称过长。详情请参见存储桶 [存储桶命名规范](https://intl.cloud.tencent.com/document/product/436/13312)                                                |
+| 400 Bad Request                     | BucketNameTooLong                     | 存储桶名称过长。详情请参见 [存储桶命名规范](https://intl.cloud.tencent.com/document/product/436/13312)                                                |
 | 400 Bad Request                     | BucketVersionNotOpen                  | 存储桶未启用版本控制                                         |
 | 400 Bad Request                     | DNSRecordVerifyFailed                 | DNS 记录验证失败，请添加 CNAME 或 TXT 记录。DNS 记录可能需要最多10分钟生效 |
 | 400 Bad Request                     | EntitySizeNotMatch                    | 请求体大小与 [Content-Length](https://intl.cloud.tencent.com/document/product/436/7728) 请求头不符                       |
@@ -59,7 +59,7 @@ Content-Type：application/xml
 | 400 Bad Request                     | ImageTooLarge                         | 图片超过限制大小                                             |
 | 400 Bad Request                     | IncompleteBody                        | 请求体大小小于 [Content-Length](https://intl.cloud.tencent.com/document/product/436/7728) 请求头                         |
 | 400 Bad Request                     | IncorrectNumberOfFilesInPostRequest   | POST   Object 请求每次只允许上传一个对象                     |
-| 400 Bad Request                     | InvalidArgument                       | 请求参数不合法，请确认是否允许携带该请求参数                                               |
+| 400 Bad Request                     | InvalidArgument                       | 请求参数不合法，请确认是否允许携带该请求参数       |
 | 400 Bad Request                     | InvalidBucketName                     | 存储桶名称不合法。详情请参见存储桶 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312)                                               |
 | 400 Bad Request                     | InvalidCopySource                     | 复制对象源不合法                                            |
 | 400 Bad Request                     | InvalidDelimiter                      | 分隔符（delimiter）参数不合法，分隔符只能为一个字符          |
@@ -122,7 +122,7 @@ Content-Type：application/xml
 | 403 Forbidden                       | NoProcessAuthority                    | 没有处理图片的权限                                           |
 | 403 Forbidden                       | RequestTimeTooSkewed                  | 本地时间与服务器时间相差过大，超过15分钟                     |
 | 403 Forbidden                       | Request has expired                   | 发起请求的时间超过了签名的有效时间，或者本地系统时间和所在时区的时间不一致。详情请参见 [常见问题](https://intl.cloud.tencent.com/document/product/436/10687) |
-| 403 Forbidden                       | SignatureDoesNotMatch                 | 客户端计算的签名与 COS 服务端计算的签名不一致。请参阅 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档。|
+| 403 Forbidden                       | SignatureDoesNotMatch                 | 客户端计算的签名与 COS 服务端计算的签名不一致。请参阅 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档并借助COS 请求签名工具检查自行实现的签名过程 |
 | 403 Forbidden                       | UserNotSourceBucketOwner              | 当前用户不是源存储桶的拥有者                                 |
 | 403 Forbidden                       | UserNotTargetBucketOwner              | 当前用户不是目标存储桶的拥有者                               |
 | 404 Not Found                       | InventoryConfigurationNotFoundError   | 清单配置未找到                                               |
@@ -132,7 +132,7 @@ Content-Type：application/xml
 | 404 Not Found                       | NoSuchCORSConfiguration               | 指定的跨域资源共享配置不存在                                 |
 | 404 Not Found                       | NoSuchEncryptionConfiguration         | 指定的存储桶加密配置不存在                                   |
 | 404 Not Found                       | NoSuchJob                             | 指定的批量处理任务不存在                                     |
-| 404 Not Found                       | NoSuchKey                             | 指定的对象键不存在。检查对象是否存在请使用 [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) 接口                                            |
+| 404 Not Found                       | NoSuchKey                             | 指定的对象键不存在。检查对象是否存在请使用 [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) 接口                                          |
 | 404 Not Found                       | NoSuchLifecycleConfiguration          | 指定的生命周期配置不存在                                     |
 | 404 Not Found                       | NoSuchObjectLockConfiguration         | 指定的对象锁定配置不存在                                     |
 | 404 Not Found                       | NoSuchPolicyVersion                   | 指定的策略版本不存在                                         |
@@ -166,7 +166,8 @@ Content-Type：application/xml
 | 412 Precondition Failed             | PreconditionFailed                    | 前置条件不匹配                                               |
 | 416 Requested Range Not Satisfiable | InvalidRange                          | 请求的对象范围不合法                                         |
 | 451 Unavailable For Legal Reasons   | DomainAuditFailed                     | 域名未备案                                                   |
-| 451 Unavailable For Legal Reasons   | UnavailableForLegalReasons            | 因法律原因不可用。可 [提交工单](https://console.cloud.tencent.com/workorder/category) 咨询                                             |
+| 451 Unavailable For Legal Reasons   | UnavailableForLegalReasons            | 当前服务不可用，请检查账号是否欠费        |
+
 
 **5XX 类型错误**
 

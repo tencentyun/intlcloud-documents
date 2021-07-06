@@ -7,6 +7,7 @@
 | API                                                          | 操作名         | 操作描述                                  |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
 | [GET Bucket（List Objects）](https://intl.cloud.tencent.com/document/product/436/30614) | 查询对象列表   | 查询存储桶下的部分或者全部对象            |
+| [GET Bucket Object versions ](https://intl.cloud.tencent.com/document/product/436/31551) | 查询对象版本 |   查询存储桶下的部分或者全部对象及其历史版本信息   |
 | [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 查询对象元数据 | 查询对象的元数据信息                  |
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 上传对象   | 上传一个对象至存储桶                      |
 | [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 下载对象       | 下载一个对象至本地        |
@@ -43,7 +44,7 @@ public ObjectListing listObjects(ListObjectsRequest listObjectsRequest) throws C
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```java
 // Bucket的命名格式为 BucketName-APPID ，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
@@ -110,6 +111,80 @@ Request 成员说明 ：
 - 成功：返回 ObjectListing 类型， 包含所有的成员， 以及 nextMarker。  
 - 失败：抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
+### 查询对象版本
+
+#### 功能说明
+
+查询存储桶下的部分或者全部对象及其历史版本信息。
+
+#### 方法原型
+
+```java
+public VersionListing listVersions(ListVersionsRequest listVersionsRequest)
+            throws CosClientException, CosServiceException;
+```
+
+#### 请求示例
+
+```java
+// Bucket的命名格式为 BucketName-APPID ，此处填写的存储桶名称必须为此格式
+String bucketName = "examplebucket-1250000000";
+
+ListVersionsRequest listVersionsRequest = new ListVersionsRequest();
+listVersionsRequest.setBucketName(bucketName);
+// prefix表示列出的object的key以prefix开始
+listVersionsRequest.setPrefix("");
+// 设置最大遍历出多少个对象, 一次listobject最大支持1000
+listObjectsRequest.setMaxKeys(1000);
+
+VersionListing versionListing = null;
+
+do {
+    try {
+        versionListing = cosclient.listVersions(listVersionsRequest);
+    } catch (CosServiceException e) {
+        e.printStackTrace();
+        return;
+    } catch (CosClientException e) {
+        e.printStackTrace();
+        return;
+    }
+
+    List<COSVersionSummary> cosVersionSummaries = versionListing.getVersionSummaries();
+    for (COSVersionSummary cosVersionSummary : cosVersionSummaries) {
+        System.out.println(cosVersionSummary.getKey() + ":" + cosVersionSummary.getVersionId());
+    }
+
+    String keyMarker = versionListing.getNextKeyMarker();
+    String versionIdMarker = versionListing.getNextVersionIdMarker();
+
+    listVersionsRequest.setKeyMarker(keyMarker);
+    listVersionsRequest.setVersionIdMarker(versionIdMarker);
+
+} while (versionListing.isTruncated());
+```
+
+#### 参数说明
+
+| 参数名称           | 描述             | 类型               |
+| ------------------ | ---------------- | ------------------ |
+| listVersionsRequest | 获取对象版本信息请求 | ListVersionsRequest |
+
+Request 成员说明 ：
+
+| Request 成员 | 设置方法            | 描述                                                         | 类型    |
+| ------------ | ------------------- | ------------------------------------------------------------ | ------- |
+| bucketName   | 构造函数或 set 方法 | Bucket 的命名格式为 BucketName-APPID ，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String  |
+| prefix       | 构造函数或 set 方法 | 限制返回的结果对象，以 prefix 为前缀。默认不进行限制，即 Bucket 下所有的成员。<默认值为`""`，表示空 | String  |
+| keyMarker       | 构造函数或 set 方法 | 标记 list 的起点位置，第一次可设置为空，后续请求需设置为上一次 listObjects 返回值中的 nextKeyMarker | String  |
+| versionIdMarker | 构造函数或 set 方法 | 标记 list 的起点位置，第一次可设置为空，后续请求需设置为上一次 listObjects 返回值中的 nextVersionIdMarker | String  |
+| delimiter    | 构造函数或 set 方法 | 分隔符，限制返回的是以 prefix 开头，并以 delimiter 第一次出现的结束的路径 | String  |
+| maxResults      | 构造函数或 set 方法 | 最大返回的成员个数（不得超过1000）。默认值： 1000          | Integer |
+
+#### 返回结果说明
+
+- 成功：返回 ObjectListing 类型， 包含所有的成员， 以及 nextKeyMarker 和 nextVersionIdMarker。
+- 失败：抛出异常 CosClientException 或者 CosServiceException。详情请参见 [异常处理](https://intl.cloud.tencent.com/document/product/436/31537)。
 
 ### 查询对象元数据
 
@@ -126,14 +201,24 @@ public ObjectMetadata getObjectMetadata(String bucketName, String key)
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-head-object)
+[//]: # ".cssg-snippet-head-object"
 ```java
 // Bucket的命名格式为 BucketName-APPID ，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 ObjectMetadata objectMetadata = cosClient.getObjectMetadata(bucketName, key);
-```
 
+// 获得本次请求的 requestId
+System.out.println(objectMetadata1.getRequestId());
+// 获得对象的 CRC64 校验值
+System.out.println(objectMetadata.getCrc64Ecma());
+// 获得对象最近一次上传时间
+System.out.println(objectMetadata1.getLastModified());
+// 获得对象大小
+System.out.println(objectMetadata.getContentLength());
+// 获得对象存储类型
+System.out.println(objectMetadata.getStorageClass());
+```
 
 #### 参数说明
 
@@ -160,7 +245,7 @@ ObjectMetadata 类用于记录对象的元信息，其主要成员说明如下�
 | restoreExpirationTime  | 归档对象恢复副本的过期时间  | Date |
 
 
-### 上传对象（创建文件夹)
+### 上传对象（创建文件夹）
 
 #### 功能说明
 
@@ -188,7 +273,7 @@ public PutObjectResult putObject(PutObjectRequest putObjectRequest)
 
 #### 请求示例1：上传本地文件
 
-[//]: # (.cssg-snippet-put-object-flex)
+[//]: # ".cssg-snippet-put-object-flex"
 <dx-codeblock>
 :::  java
 // Bucket的命名格式为 BucketName-APPID ，此处填写的存储桶名称必须为此格式
@@ -228,8 +313,8 @@ String bucketName = "examplebucket-1250000000";
 
 FileInputStream fileInputStream = new FileInputStream(localFile);
 ObjectMetadata objectMetadata = new ObjectMetadata();
-// 设置输入流长度为500
-objectMetadata.setContentLength(500);
+// 设置输入流长度（STREAMLENGTH根据自己流大小做替换）
+objectMetadata.setContentLength(STREAMLENGTH);
 // 设置 Content type, 默认是 application/octet-stream
 objectMetadata.setContentType("application/pdf");
 PutObjectResult putObjectResult = cosClient.putObject(bucketName, key, fileInputStream, objectMetadata);
@@ -357,7 +442,7 @@ public ObjectMetadata getObject(GetObjectRequest getObjectRequest, File destinat
 
 #### 请求示例1：获取下载输入流
 
-[//]: # (.cssg-snippet-get-object)
+[//]: # ".cssg-snippet-get-object"
 ```java
 // Bucket的命名格式为 BucketName-APPID ，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
@@ -446,7 +531,7 @@ public CopyObjectResult copyObject(CopyObjectRequest copyObjectRequest)
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-copy-object)
+[//]: # ".cssg-snippet-copy-object"
 ```java
 // 同地域同账号拷贝
 // 源 Bucket, Bucket的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式
@@ -509,7 +594,7 @@ public void deleteObject(String bucketName, String key)
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-delete-object)
+[//]: # ".cssg-snippet-delete-object"
 ```java
 // Bucket的命名格式为 BucketName-APPID ，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
@@ -546,7 +631,7 @@ public DeleteObjectsResult deleteObjects(DeleteObjectsRequest deleteObjectsReque
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-delete-multi-object)
+[//]: # ".cssg-snippet-delete-multi-object"
 ```java
 // Bucket的命名格式为 BucketName-APPID ，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
@@ -619,7 +704,7 @@ public void restoreObject(RestoreObjectRequest restoreObjectRequest)
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-restore-object)
+[//]: # ".cssg-snippet-restore-object"
 ```java
 // 存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
@@ -679,7 +764,7 @@ public MultipartUploadListing listMultipartUploads(
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-list-multi-upload)
+[//]: # ".cssg-snippet-list-multi-upload"
 ```java
 // Bucket的命名格式为 BucketName-APPID ，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
@@ -732,7 +817,7 @@ public InitiateMultipartUploadResult initiateMultipartUpload(
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-init-multi-upload)
+[//]: # ".cssg-snippet-init-multi-upload"
 ```java
 // Bucket的命名格式为 BucketName-APPID
 String bucketName = "examplebucket-1250000000";
@@ -774,7 +859,7 @@ public UploadPartResult uploadPart(UploadPartRequest uploadPartRequest) throws C
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-upload-part)
+[//]: # ".cssg-snippet-upload-part"
 ```java
 // 上传分块, 最多10000个分块, 分块大小支持为1M - 5G。
 // 分块大小设置为4M。如果总计 n 个分块, 则 1 ~ n-1 的分块大小一致，最后一块小于等于前面的分块大小。
@@ -848,7 +933,7 @@ public CopyPartResult copyPart(CopyPartRequest copyPartRequest) throws CosClient
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-upload-part-copy)
+[//]: # ".cssg-snippet-upload-part-copy"
 ```java
 // 存储桶名称，格式为：BucketName-APPID
 // 设置目标存储桶名称，对象名称和分块上传 ID
@@ -919,7 +1004,7 @@ public PartListing listParts(ListPartsRequest request)
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-list-parts)
+[//]: # ".cssg-snippet-list-parts"
 ```java
 // ListPart 用于在 complete 分块上传前或者 abort 分块上传前获取 uploadId 对应的已上传的分块信息, 可以用来构造 partEtags
 List<PartETag> partETags = new ArrayList<PartETag>();
@@ -968,7 +1053,7 @@ public CompleteMultipartUploadResult completeMultipartUpload(CompleteMultipartUp
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-complete-multi-upload)
+[//]: # ".cssg-snippet-complete-multi-upload"
 ```java
 // complete 完成分块上传.
 String bucketName = "examplebucket-1250000000";
@@ -1007,7 +1092,7 @@ public void abortMultipartUpload(AbortMultipartUploadRequest request)  throws Co
 
 #### 请求示例
 
-[//]: # (.cssg-snippet-abort-multi-upload)
+[//]: # ".cssg-snippet-abort-multi-upload"
 ```java
 // abortMultipartUpload 用于终止一个还未 complete 的分块上传
 String bucketName = "examplebucket-1250000000";
@@ -1036,7 +1121,7 @@ cosClient.abortMultipartUpload(abortMultipartUploadRequest);
 
 高级 API 由类 TransferManger 通过封装上传以及下载接口，内部有一个线程池，接受用户的上传和下载请求，因此用户可选择异步的提交任务。
 
-[//]: # (.cssg-snippet-transfer-init)
+[//]: # ".cssg-snippet-transfer-init"
 <dx-codeblock>
 :::  java
 // 线程池大小，建议在客户端与 COS 网络充足（例如使用腾讯云的 CVM，同地域上传 COS）的情况下，设置成16或32即可，可较充分的利用网络资源
@@ -1056,7 +1141,7 @@ transferManager.setConfiguration(transferManagerConfiguration);
 在不需要使用 transferManager 之后，请手动关闭，防止资源泄漏。
 
 ```java
-// 关闭 TransferManger
+// 关闭 TransferManger，并关闭其中的 cosClient。
 transferManager.shutdownNow();
 ```
 
@@ -1080,6 +1165,7 @@ TransferManagerConfiguration 类用于记录高级接口的配置信息，其主
 - 对大于分块上传阈值但未带 Content-Length 头部的流上传，高级接口会选择分块上传。
 - 对数据类型是 File 类型的文件上传，高级接口会多线程并发同时上传多个分块。
 - 对于分块上传，高级上传接口提供获取进度的功能，可以通过 getProgress() 方法获取。
+- 对于文件大小大于等于 5MB 的使用分块上传，这个界限值可以通过请求示例3中的方法进行调整。
 
 >? 有关其他一些设置属性，存储类别，MD5 校验等可参见 [PUT Object API](https://intl.cloud.tencent.com/document/product/436/7749)。
 >
@@ -1094,7 +1180,7 @@ public Upload upload(final PutObjectRequest putObjectRequest)
 
 #### 请求示例1：使用高级接口上传
 
-[//]: # (.cssg-snippet-transfer-upload-file1)
+[//]: # ".cssg-snippet-transfer-upload-file1"
 ```java
 // 存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
@@ -1103,13 +1189,13 @@ File localFile = new File(localFilePath);
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localFile);
 // 本地文件上传
 Upload upload = transferManager.upload(putObjectRequest);
-// 等待传输结束（如果想同步的等待上传结束，则调用 waitForCompletion）
+// 等待传输结束
 UploadResult uploadResult = upload.waitForUploadResult();
 ```
 
 #### 请求示例2：使用高级接口上传并显示上传进度
 
-[//]: # (.cssg-snippet-transfer-upload-file2)
+[//]: # ".cssg-snippet-transfer-upload-file2"
 ```java
 // 编写自己的上传时打印上传进度的回调函数
 void showTransferProgress(Transfer transfer) {
@@ -1137,8 +1223,26 @@ PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localF
 // 本地文件上传
 Upload upload = transferManager.upload(putObjectRequest);
 // 同步打印上传进度
+// 可以通过子线程调用这个函数，但是要注意要在 waitForUploadResult 前启动子线程，否则因为upload已完成看不到进度。
 showTransferProgress(upload);
-// 等待传输结束（如果想同步的等待上传结束，则调用 waitForCompletion）
+// 等待传输结束
+UploadResult uploadResult = upload.waitForUploadResult();
+```
+
+#### 请求示例3: 使用高级接口上传并设置分块上传的阈值
+```java
+// 存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式
+String bucketName = "examplebucket-1250000000";
+String key = "exampleobject";
+File localFile = new File(localFilePath);
+PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localFile);
+// 设置文件大小大于等于10MB才使用分块上传
+TransferManagerConfiguration transferManagerConfiguration = new TransferManagerConfiguration();
+transferManagerConfiguration.setMultipartUploadThreshold(10*1024*1024);
+transferManager.setConfiguration(transferManagerConfiguration);
+// 本地文件上传
+Upload upload = transferManager.upload(putObjectRequest);
+// 等待传输结束
 UploadResult uploadResult = upload.waitForUploadResult();
 ```
 
@@ -1150,14 +1254,14 @@ UploadResult uploadResult = upload.waitForUploadResult();
 
 Request 成员说明：
 
-| Request 成员 | 设置方法 | 描述                                                         | 类型           |
+| Request 成员 | 设置方法&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 描述                                                         | 类型           |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |
 | bucketName   | 构造函数或 set 方法 | 存储桶的命名格式为 BucketName-APPID，详情请参见 [命名规范](https://intl.cloud.tencent.com/document/product/436/13312) | String         |
 | key          | 构造函数或 set 方法 | 对象键（Key）是对象在存储桶中的唯一标识。<br>例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg` 中，对象键为 doc/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) | String         |
 | file         | 构造函数或 set 方法 | 本地文件                                                     | File           |
 | input        | 构造函数或 set 方法 | 输入流                                                       | InputStream    |
 | metadata     | 构造函数或 set 方法 | 文件的元数据                                                 | ObjectMetadata |
-|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|
+|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|否|
 
 >?并发上传多个分块时，trafficLimit 限制的是每个分块的上传速度，此时需要调整线程池中的线程数，以控制文件的上传速度。
 
@@ -1182,12 +1286,12 @@ Request 成员说明：
 
 #### 获取进度说明
 
-通过调用 Upload 的方法 getProgress() 获取上传的进度 TransferProgress 类，其主要方法说明如下：
+通过 upload 这个类的 getProgress 可以获得一个 TransferProgress 类，这个类的下面三个方法用来获取上传进度，说明如下：
 
 | 方法名称                 | 描述                | 类型    |
 | ----------------------- | ------------------ | -----   |
 | getBytesTransferred     | 获取已上传的字节数   | long   |
-| getTotalBytesToTransfer | 获取已上传的字节数   | long   |
+| getTotalBytesToTransfer | 获取总文件的字节数  | long   |
 | getPercentTransferred   | 获取已上传的字节百分比  | double |
 
 
@@ -1211,7 +1315,7 @@ public Download download(final GetObjectRequest getObjectRequest, final File fil
 
 #### 请求示例1：使用高级接口下载对象
 
-[//]: # (.cssg-snippet-transfer-download-object)
+[//]: # ".cssg-snippet-transfer-download-object"
 ```java
 // Bucket 的命名格式为 BucketName-APPID ，此处填写的存储桶名称必须为此格式
 String bucketName = "examplebucket-1250000000";
@@ -1255,6 +1359,7 @@ File localDownFile = new File(localFilePath);
 GetObjectRequest getObj = new GetObjectRequest(bucketName, key);
 
 Download download = transferManager.download(getObj, localDownFile, true);
+// 可以通过子线程调用这个函数，但是要注意要在 waitForCompletion 前启动子线程，否则因为download已完成看不到进度。
 showTransferProgress(download);
 try {
     download.waitForCompletion();
@@ -1267,7 +1372,6 @@ try {
 }
 
 transferManager.shutdownNow();
-cosclient.shutdown();
 ```
 
 #### 参数说明
@@ -1313,10 +1417,11 @@ public Copy copy(final CopyObjectRequest copyObjectRequest);
 
 >?同地域复制指在相同地域的存储桶中进行文件复制。
 
-[//]: # (.cssg-snippet-transfer-copy-object)
+[//]: # ".cssg-snippet-transfer-copy-object"
 ```java
-String secretId = "COS_SECRETID";
-String secretKey = "COS_SECRETKEY";
+// SECRETID和SECRETKEY请登录访问管理控制台进行查看和管理
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
 // 要复制的 bucket region
 COSCredentials credentials = new BasicCOSCredentials(secretId, secretKey);
 Region bucketRegion = new Region("COS_REGION");
@@ -1358,12 +1463,14 @@ try {
 #### 请求示例2：跨地域复制
 
 >!
+>
 >- 跨地域复制指将源文件复制到不同地域的存储桶中。例如将文件从北京地域复制到广州地域。
->- 金融云地域和公有云地域不互通，不可进行跨地域复制。
+
 
 ```java
-String secretId = "COS_SECRETID";
-String secretKey = "COS_SECRETKEY";
+// SECRETID和SECRETKEY请登录访问管理控制台进行查看和管理
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
 
 COSCredentials credentials = new BasicCOSCredentials(secretId, secretKey);
 
@@ -1405,6 +1512,60 @@ try {
 }
 ```
 
+#### 请求示例3：异步使用复制
+```java
+// SECRETID和SECRETKEY请登录访问管理控制台进行查看和管理
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
+// 要复制的 bucket region
+COSCredentials credentials = new BasicCOSCredentials(secretId, secretKey);
+Region bucketRegion = new Region("COS_REGION");
+
+// 源 Bucket, 存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式
+String srcBucketName = "sourcebucket-1250000000";
+// 要复制的源文件
+String srcKey = "sourceObject";
+// 目的 Bucket, 存储桶的命名格式为 BucketName-APPID，此处填写的存储桶名称必须为此格式
+
+String destBucketName = "examplebucket-1250000000";
+// 要复制的目标文件
+String destKey = "exampleobject";
+
+COSClient cosClient = new COSClient(credentials, new ClientConfig(bucketRegion));
+
+ExecutorService threadPool = Executors.newFixedThreadPool(5);
+// 传入一个threadpool, 若不传入线程池, 默认TransferManager中会生成一个单线程的线程池。
+final TransferManager transferManager = new TransferManager(cosClient, threadPool);
+
+CopyObjectRequest copyObjectRequest = new CopyObjectRequest(bucketRegion, srcBucketName,
+        srcKey, destBucketName, destKey);
+
+try {
+    Copy copy = transferManager.copy(copyObjectRequest);
+    // 在一个子线程中判断异步执行的 copy 是否已经结束。
+    new Thread(){
+        @Override
+        public void run() {
+            while(!copy.isDone()) {
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("wait for copy done");
+            }
+            transferManager.shutdownNow();
+        };
+    }.start();
+    // 继续其他逻辑
+} catch (CosServiceException e) {
+    e.printStackTrace();
+} catch (CosClientException e) {
+    e.printStackTrace();
+} catch (InterruptedException e) {
+    e.printStackTrace();
+}
+```
 
 #### 参数说明
 
@@ -1444,7 +1605,7 @@ public MultipleFileUpload uploadDirectory(String bucketName, String virtualDirec
 ```
 
 #### 请求示例
-[//]: # (.cssg-snippet-transfer-upload-directory)
+[//]: # ".cssg-snippet-transfer-upload-directory"
 ```java
 // 编写自己的上传时打印上传进度的回调函数
 void showTransferProgress(Transfer transfer) {
@@ -1476,6 +1637,7 @@ try {
     MultipleFileUpload upload = transferManager.uploadDirectory(bucketName, cos_path, new File(dir_path), recursive);
 
     // 可以选择查看上传进度
+    // 可以通过子线程调用这个函数，但是要注意要在 waitForCompletion 前启动子线程，否则因为upload已完成看不到进度。
     showTransferProgress(upload);
 
     // 或者阻塞等待完成
@@ -1520,7 +1682,7 @@ public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefi
 ```
 
 #### 请求示例
-[//]: # (.cssg-snippet-transfer-upload-directory)
+[//]: # ".cssg-snippet-transfer-upload-directory"
 ```java
 // 编写自己的进度回调函数
 void showTransferProgress(Transfer transfer) {
@@ -1550,6 +1712,7 @@ try {
     MultipleFileDownload download = transferManager.downloadDirectory(bucketName, cos_path, new File(dir_path));
 
     // 可以选择查看下载进度
+    // 可以通过子线程调用这个函数，但是要注意要在 waitForCompletion 前启动子线程，否则因为download已完成看不到进度。
     showTransferProgress(download);
 
     // 或者阻塞等待完成
@@ -1565,7 +1728,6 @@ try {
 }
 
 transferManager.shutdownNow();
-cosclient.shutdown();
 ```
 
 #### 参数说明
@@ -1707,4 +1869,3 @@ copySameRegion(srcBcuket, srcKey, destBucket, destKey);
 // 复制成功后，删除要移动的对象信息
 cosClient.deleteObject(srcBucket, srcKey);
 ```
-

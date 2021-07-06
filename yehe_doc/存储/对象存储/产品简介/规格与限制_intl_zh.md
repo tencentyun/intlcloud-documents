@@ -10,12 +10,12 @@
     			<td>1. 读写类请求：中国大陆公有云地域默认每个存储桶独享30000QPS，其他地域默认每个存储桶独享3000QPS。
 <br>2. List 类请求：所有地域默认1200QPS。
 <br>3. 数据取回请求：所有地域默认100QPS。
-<br>如需更高 QPS，请参见 <a href="https://intl.cloud.tencent.com/document/product/436/13653">请求速率与性能优化</a>。</td>
+<br>如需更高 QPS，请参见 <a href="/document/product/436/13653">请求速率与性能优化</a>。</td>
     </tr>
 		    <tr>
         <td>带宽</td>
     			<td>限制</td>
-    			<td>中国大陆公有云地域默认带宽为15Gbit/s、其他地域为10Gbit/s。如果带宽达到该阈值，请求会触发流控。如果有更高带宽需求，请联系 <a href="https://console.cloud.tencent.com/workorder/category">售后工程师</a>。</td>
+					<td>中国大陆公有云地域单个存储桶默认带宽为15Gbit/s、其他地域为10Gbit/s。如果带宽达到该阈值，请求会触发流控。如果有更高带宽需求，请联系 <a href="https://console.cloud.tencent.com/workorder/category">售后工程师</a>。</td>	
     </tr>
     	 <tr>
         <td rowspan="5">存储类型</td>
@@ -58,15 +58,15 @@
     		<tr>
     			<td rowspan="5">对象</td>
     			<td>限制</td>
-					<td >对象键长度支持1 - 850B，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/13324">对象概述</a>。</td>
+					<td >对象键长度支持1 - 850B，详情请参见 <a href="https://cloud.tencent.com/document/product/436/13324">对象概述</a>。</td>
     		</tr>
     			<tr>
     			<td>上传</td>
-    			<td>1. 控制台上传单个对象最大512GB。<br>2. API/SDK 上传单个对象最大48.82TB (50,000GB )。<br>上传接口规格：<br>&nbsp;&nbsp;（a）简单上传：单个对象最大5GB，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/14113">简单上传</a>。<br>&nbsp;&nbsp;（b）分块上传：单个对象最大48.82TB，块大小1MB - 5GB，最后一个块可小于1MB，分块数1 - 10000，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/14112">分块上传</a>。<br>3. 目前仅在存储桶启用智能分层存储配置的情况下，才可上传智能分层存储类型的对象。对象在不同存储层间的转换将由智能分层存储配置中的参数决定。</td>
+    			<td>1. 控制台上传单个对象最大512GB。<br>2. API/SDK 上传单个对象最大48.82TB (50,000GB )。<br>上传接口规格：<br>&nbsp;&nbsp;（a）简单上传：单个对象最大5GB，详情请参见 <a href="https://cloud.tencent.com/document/product/436/14113">简单上传</a>。<br>&nbsp;&nbsp;（b）分块上传：单个对象最大48.82TB，块大小1MB - 5GB，最后一个块可小于1MB，分块数1 - 10000，详情请参见 <a href="https://cloud.tencent.com/document/product/436/14112">分块上传</a>。<br>3. 目前仅在存储桶启用智能分层存储配置的情况下，才可上传智能分层存储类型的对象。对象在不同存储层间的转换将由智能分层存储配置中的参数决定。</td>
     		</tr>
     		<tr>
     			<td >复制</td>
-    			<td >1. 支持单个账号在相同地域或跨地域进行对象复制。<br>2. 同地域进行对象复制免费，跨地域进行对象复制会产生流量费用，详情请参见 <a href="https://buy.cloud.tencent.com/price/cos">费用说明</a> 中流量费用信息。 <br>3. 复制接口规格：<br>&nbsp;&nbsp;（a）简单复制：复制单个对象最大5GB，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/14117">简单复制</a>。<br>&nbsp;&nbsp;（b）大于5GB 必须用分块复制，复制单个对象最大48.82TB，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/436/14118">分块复制</a>。<br>4. 暂不支持将标准存储、低频存储、智能分层存储类型复制为智能分层存储类型。</td>
+    			<td >1. 支持单个账号在相同地域或跨地域进行对象复制。<br>2. 同地域进行对象复制免费，跨地域进行对象复制会产生流量费用，详情请参见 <a href="https://buy.cloud.tencent.com/price/cos">费用说明</a> 中流量费用信息。 <br>3. 复制接口规格：<br>&nbsp;&nbsp;（a）简单复制：复制单个对象最大5GB，详情请参见 <a href="https://cloud.tencent.com/document/product/436/14117">简单复制</a>。<br>&nbsp;&nbsp;（b）大于5GB 必须用分块复制，复制单个对象最大48.82TB，详情请参见 <a href="https://cloud.tencent.com/document/product/436/14118">分块复制</a>。<br>4. 暂不支持将标准存储、低频存储、智能分层存储类型复制为智能分层存储类型。</td>
     		</tr>
     		<tr>
     			<td>批量删除</td>
