@@ -20,7 +20,7 @@ You can click **Add Rewrite Rule** to add rules as needed.
 <img src="https://main.qcloudimg.com/raw/97ea8713395f3af8654c39be97f124d3.png"  style="height:300px"></img>
 
 **Configuration limitations**
-+ Each domain name can have up to 10 rewrite rules.
++ Each domain name can have up to 100 rewrite rules.
 + You can adjust the priority for multiple rules. Rules at the bottom of the list have higher priority.
 + Current URL: starting with `/`; supporting full-path matching (e.g., /test/a.jpg) and wildcard (*) matching (e.g., /test/*/*.jpg). If you want to specify a file directory, you cannot end the path with `/` (e.g., /test).
 + Target Host: it is the current domain name (starting with `http://`) by default. It can be modified to other domain names starting with `http://` or `https://`.
