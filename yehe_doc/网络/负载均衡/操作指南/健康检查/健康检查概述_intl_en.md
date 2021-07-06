@@ -34,8 +34,8 @@ UDP health check mechanism is as follows:
 4. If the Ping command fails or the backend CVM instance returns the error `port XX unreachable` within the response timeout, it indicates that the real server is abnormal and the health check result is failed.
 
 >!
-1. UDP health checks are based on ICMP, therefore, backend CVM instances need to be allowed to reply ICMP packets (i.e., Ping command is supported) and ICMP "port unreachable" packets (i.e., the port can be detected).
-2. If a Linux server is used as the backend CVM instance, the speed of the server to send ICMP packets will be limited during high concurrency as the Linux server has a mechanism of defending itself from ICMP attacks. In this case, although the real server is abnormal, it cannot return the error `port XX unreachable` to the CLB instance. Then the CLB instance will determine that the health check result is successful, so the actual status of the real server cannot be returned.
+>1. UDP health checks are based on ICMP, therefore, backend CVM instances need to be allowed to reply ICMP packets (i.e., Ping command is supported) and ICMP "port unreachable" packets (i.e., the port can be detected).
+>2. If a Linux server is used as the backend CVM instance, the speed of the server to send ICMP packets will be limited during high concurrency as the Linux server has a mechanism of defending itself from ICMP attacks. In this case, although the real server is abnormal, it cannot return the error `port XX unreachable` to the CLB instance. Then the CLB instance will determine that the health check result is successful, so the actual status of the real server cannot be returned.
 Solution: You can configure the UDP health check with custom input and output strings. So in a health check, the custom input string will be sent to the real server, and the result will be determined as successful only after the CLB instance receives the custom response string. This method is based on the real server, which needs to process the health check input string and return the custom output string.
 
 <span id="http"></span>
@@ -71,12 +71,12 @@ CLB health check mechanism improves business availability, but frequent health c
 </tr>
 <tr>
 <td>Unhealthy threshold</td>
-<td><ul><li>If the health check result is failed for n (a customizable value) times, it is considered that the backend CVM instance is unhealthy, and the status displayed in the console is **Abnormal**.</li><li>Value range: 2-10 times.</li></ul></td>
+<td><ul><li>If the health check result is failed for n (a customizable value) times, it is considered that the backend CVM instance is unhealthy, and the status displayed in the console is <b>Abnormal</b>.</li><li>Value range: 2-10 times.</li></ul></td>
 <td>3 times</td>
 </tr>
 <tr>
 <td>Healthy threshold</td>
-<td><ul><li>If the health check result is successful for n (a customizable value) times, it is considered that the backend CVM instance is healthy, and the status displayed in the console is **Healthy**.</li><li>Value range: 2-10 times.</li></ul></td>
+<td><ul><li>If the health check result is successful for n (a customizable value) times, it is considered that the backend CVM instance is healthy, and the status displayed in the console is <b>Healthy</b>.</li><li>Value range: 2-10 times.</li></ul></td>
 <td>3 times</td>
 </tr>
 </table>
