@@ -45,7 +45,8 @@ Anycast CLB has been widely used in gaming acceleration. Through Anycast CLB, ga
 
 ## Operation Guide
 ### Prerequisites
->This feature is currently in beta. Make sure that your application for beta test eligibility has been approved before using it.
+This feature is currently in beta. Make sure that your application for beta test eligibility has been approved before using it.
+
 ### Directions
 1. Log in to the [CVM Console](https://console.cloud.tencent.com/cvm/index).
 2. On the left sidebar, click **[EIP](https://console.cloud.tencent.com/cvm/eip2)** to enter the EIP management page.
