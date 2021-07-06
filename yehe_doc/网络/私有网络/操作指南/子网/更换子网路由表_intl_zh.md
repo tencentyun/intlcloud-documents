@@ -8,8 +8,8 @@
 2. 在左侧目录中单击【子网】，进入子网管理页面。
 3. 更换子网关联的路由表，系统提供两种方式：
     + 单击待更换路由表的子网右侧操作列的【更多】>【更换路由表】。
-        ![](https://main.qcloudimg.com/raw/5782077dea3fe147112e7ccdd68fae93.png)
+        ![](https://main.qcloudimg.com/raw/154c5a6ff6b746a1a593fc4ac6a5ece9.png)
 	+ 单击待更换路由表的子网 ID，进入详情页签，切换至【路由策略】页签，单击【更换路由表】。
-	    ![](https://main.qcloudimg.com/raw/13a97eecd61be194c3d59c312fae487b.png)
+	    ![](https://main.qcloudimg.com/raw/572762da3d2163b3c30ed07c8a167130.png)
 4. 在弹出的【更换路由表】对话框中，单击下箭头选择路由表，并知悉更换路由表的业务影响，确认无误后单击【确认】完成更换。
-    ![](https://main.qcloudimg.com/raw/be259e098bfe0cbd28e825f8ceaef6f7.png)
+    ![](https://main.qcloudimg.com/raw/c51606ba642517ffc01bcbf666abab49.png)
