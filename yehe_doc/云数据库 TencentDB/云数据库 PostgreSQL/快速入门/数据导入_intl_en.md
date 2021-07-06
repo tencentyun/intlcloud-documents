@@ -1,12 +1,13 @@
 This document describes how to restore logical backup data to a TencentDB for PostgreSQL instance.
 
 ## Step 1. Prepare a TencentDB for PostgreSQL instance
-Purchase a TencentDB for PostgreSQL instance, initialize it, and get its connection address.
->?Make sure that the character set configured when the instance is initialized is the same as that of the source instance.
+[Purchase a TencentDB for PostgreSQL instance](https://intl.cloud.tencent.com/document/product/409/40724) and get its connection address.
+>?Make sure that its character set is the same as that of the source instance.
 
 ## Step 2. Make a logical backup of the source instance
 1. Connect to the local (source) PostgreSQL database using a PostgreSQL client.
 2. Run the following command to back up data:
+
 ```
 pg_dump -U username -h hostname -p port databasename -f filename
 ```
@@ -45,5 +46,5 @@ psql -U pgtest -h 10.xxx.xxx.xxx -d pg001 -p 4321 -f pg001.sql
 Because the permission configuration of the source database may be different from that of the target database, permission-related warnings or errors may appear during the data import process, which can be ignored.
 
 ### Migrating data over the internet
-If the data volume is small (e.g., less than 10 GB), you can use tools such as pgAdmin to access the public network address of the target instance and import data to it over the internet, as shown below:
+If the data volume is small (e.g., less than 10 GB), you can use tools such as pgAdmin to access the public network address of the target instance and import data to it over the internet.
 

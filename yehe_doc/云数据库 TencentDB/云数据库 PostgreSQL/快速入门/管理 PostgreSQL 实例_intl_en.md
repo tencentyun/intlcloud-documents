@@ -14,19 +14,19 @@ In the **Instance List**, click **Adjust Configurations** in the **Operation** c
 
 In the **Instance List**, locate the instance to be restarted and click **More** > **Restart** in the **Operation** column. You can also select multiple instances and restart them in batches.
 >?
->- During the restart, the instance cannot be accessed and existing connections to it will be closed.
+>- Generally, it takes tens of seconds to a few minutes to restart an instance, during which the instance cannot be accessed and existing connections to it will be closed.
 >- Restart will fail if there are a large number of writes and dirty pages during the restart. In this case, the instance will roll back to the status before the restart and can still be accessed.
 >- There is a chance of failure in restarting a database. If it takes more than 10 minutes to restart, you can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for help.
 
 ## Instance Management Page
-After a TencentDB for PostgreSQL instance is initialized, click its ID/name in the [instance list](https://console.cloud.tencent.com/pgsql) or click **Manage** in the **Operation** column to enter the instance management page, where you can view its details, monitor it, and manage its databases.
+After a TencentDB for PostgreSQL instance is created, click its ID/name in the [instance list](https://console.cloud.tencent.com/pgsql) or click **Manage** in the **Operation** column to enter the instance management page, where you can view its details, monitor it, and manage its databases.
 ![](https://main.qcloudimg.com/raw/c938dee5a0cad0f4c8a4f2b1fafeb43c.png)
 
 ### Instance details
 On the **Instance Details** page, you can view and manage the basic information of the instance. The public network address is disabled by default; to use it, please enable it manually.
 
 ### System monitoring
-On the **System Monitoring** page, you can view the monitoring data of various core metrics of the instance, including access, load, cache hit rate, SQL execution latency, XLOG sync delay, etc.
+On the **System Monitoring** page, you can view the monitoring data of various core metrics of the instance, including access, load, cache hit rate, SQL execution latency, XLOG sync lag, etc.
 For more information on instance monitoring and alarming, please see [Monitoring Feature](https://intl.cloud.tencent.com/document/product/409/7564) and [Alarming Feature](https://intl.cloud.tencent.com/document/product/409/7563).
 
 ### Account management

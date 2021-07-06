@@ -1,12 +1,13 @@
 您可以选择通过 PostgreSQL 逻辑备份，将数据备份文件恢复到目标 TencentDB for PostgreSQL 中。
 
 ## 步骤1：准备 PostgreSQL 实例
-购买 PostgreSQL 实例，初始化完成，并拿到连接地址。
->?请确保初始化字符集与源实例一致。
+[购买 PostgreSQL 实例](https://intl.cloud.tencent.com/document/product/409/40724) 获取连接地址。
+>?请确保字符集与源实例一致。
 
 ## 步骤2：逻辑备份源实例数据
 1.通过 PostgreSQL 客户端，连接本地（源） PostgreSQL 数据库。
 2.执行如下命令，备份数据。
+
 ```
 pg_dump -U username -h hostname -p port databasename -f filename
 ```
@@ -45,5 +46,5 @@ psql -U pgtest -h 10.xxx.xxx.xxx -d pg001 -p 4321 -f pg001.sql
 由于源端和目标数据库的权限设置可能不一致，在数据导入过程当中可能会出现一些与权限相关的 WARNING 或 ERROR，可以忽略。
 
 ### 通过互联网迁移数据
-如果您的数据总量不大（例如不超过10GB），也可以使用 pgAdmin 等工具，并通过互联网使用实例外网地址访问数据库进行数据导入。导入方法如下图：
+如果您的数据总量不大（例如不超过10GB），也可以使用 pgAdmin 等工具，并通过互联网使用实例外网地址访问数据库进行数据导入。
 
