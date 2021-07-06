@@ -7,7 +7,7 @@
 
 >?
 >
->- 具体的なAPI機能パラメータの説明については、[Unity API概要](https://cloud.tencent.com/document/product/647/55158)をご参照ください。
+>- 具体的なAPI機能パラメータの説明については、[Unity API概要](https://intl.cloud.tencent.com/zh/document/product/647/34260)をご参照ください。
 ## 実行環境要件
 - Unityの推奨バージョン： 2020.2.1f1c1。
 - 現在、Android、iOS、Windows、Mac（Macはベータ版テスト中です)プラットフォームをサポートしています。
@@ -21,55 +21,53 @@
 ### 手順1：アプリケーションの新規作成
 1．TRTCコンソールにログインし、【開発支援】>【[Demoクイックスタート](https://console.cloud.tencent.com/trtc/quickstart)】を選択します。
 2．【今すぐ開始】をクリックし、`TestTRTC`などのアプリケーション名を入力して、【アプリケーションの作成】をクリックします。
-![](https://main.qcloudimg.com/raw/9b2db43594f4744b42ef74c94494ea8e.png)
+
 
 [](id:step2)
 ### 手順2： SDKとソースコードのダウンロード
 1. 自分の実際の業務ニーズに応じて、SDKおよび付属する[Demoソースコード](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/unity/TRTCUnitySDK.zip)をダウンロードします。
 2. ダウンロード完了後、【ダウンロードしました。次のステップ】をクリックします。（直接Unityを使用してこのプロジェクトを開くことができます。直接SDKファイルを使用する場合は、SDKパッケージ内の`TRTCUnitySDK/Assets/TRTCSDK/SDK`フォルダを自分のプロジェクトAssetsディレクトリ下にコピーすることができます。）
-<img src="https://imgcache.qq.com/operation/dianshi/other/unit_down.d5a5ae704fa1a0eec3c01d78fef924dd9e017014.png"/>
+
 3. `Assets/TRTCSDK/Demo/Tools/GenerateTestUserSig.cs`ファイルを見つけて開きます。
 4. `GenerateTestUserSig.cs`ファイルの関連パラメータを設定します。
   <ul><li>SDKAPPID：デフォルトは0。実際のSDKAppIDを設定してください。</li>
   <li>SECRETKEY：デフォルトは空文字列。実際のキー情報を設定してください。</li></ul> 
-	<img src="https://imgcache.qq.com/operation/dianshi/other/unity_config.ef41868fb36e8fc3a56652baf46c1f110c9f4a39.png"/>
-
+	
 [](id:step3)
 ### 手順3：コンパイル実行
 <dx-tabs>
 ::: Android\sプラットフォーム
 1. Unity Editorを設定して、【File】>【Build Setting】をクリックし、Androidに切り替えます。
-![](https://imgcache.qq.com/operation/dianshi/other/unnity_android.c411b5d2254a2567d5c00f09845c60b9c3ea43a0.png)
 2. Androidの実機に接続して、【Build And Run】をクリックすると、Demoを実行できます。
 3. インターフェーステストでは、まずenterRoomの呼び出しをクリックしてから他の関連テストを実行します。データ表示ウィンドウには呼び出しのクリックが成功したことが表示され、もう1つのウィンドウには呼び出した情報が表示されます。
 :::
 ::: iOS\sプラットフォーム
 1. Unity Editorを設定して、【File】>【Build Setting】をクリックし、iOSに切り替えます。
-![](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/unity/ios.png)
+
 2. iPhoneの実機に接続して、【Build And Run】をクリックします。1つの新しいディレクトリを選択して、コンパイルされたiOSプロジェクトに保存する必要があります。コンパイルが終了すると、新しいウィンドウにXcodeプロジェクトが表示されます。
 :::
 ::: Windows\sプラットフォーム
 1. Unity Editorを設定して、【File】>【Build Setting】をクリックし、`PC, Mac & Linux Standalone`に切り替え、Target PlatformにWindowsを選択します。
-![](https://main.qcloudimg.com/raw/580764f661c06cf71c4952727c409c5e.png)
+
 2. 【Build And Run】をクリックすると、Demoを実行できます。
 :::
 ::: macOS\sプラットフォーム
 1. Unity Editorを設定して、【File】>【Build Setting】をクリックし、`PC, Mac & Linux Standalone`に切り替え、Target PlatformにmacOSを選択します。
-![](https://imgcache.qq.com/operation/dianshi/other/macos.f2d60a6ef431222eb4944e95347584a1df2356ea.png)
+
 2. 【Build And Run】をクリックすると、Demoを実行できます。
 3. Unity Editorエミュレーターランタイムを使用して、最初に`Device Simulator Package`をインストールします。
 4. 【Window】>【General】>【Device Simulator】をクリックします
-![](https://imgcache.qq.com/operation/dianshi/other/sim.8678bc4b6cc328392fa9014105ad58a155b389da.png)
+
 :::
 </dx-tabs>
 
 
 [](id:demo)
 ## Demoサンプル
-Demo内にはアップロード済みのAPIの大部分が含まれており、テストおよび参考のために呼び出すことができます。APIドキュメントについては[SDK API（Unity）](https://cloud.tencent.com/document/product/647/55158)をご参照ください。
+Demo内にはアップロード済みのAPIの大部分が含まれており、テストおよび参考のために呼び出すことができます。APIドキュメントについては[SDK API（Unity）](https://intl.cloud.tencent.com/zh/document/product/647/34260)をご参照ください。
 >? UIは部分的に調整され更新される可能性があります。最新バージョンを基準としてください。
 
-![](https://imgcache.qq.com/operation/dianshi/other/unity_video.bd36c8bedacb14d718dec8779a8c9c2e6ef4a876.png)
+
 ## ディレクトリ構造
 ```
 ├─Assets
