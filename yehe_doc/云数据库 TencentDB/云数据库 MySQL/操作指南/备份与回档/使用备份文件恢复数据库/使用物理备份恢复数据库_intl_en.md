@@ -20,7 +20,7 @@ XtraBackup can be downloaded at [Percona's official website](https://www.percona
 You can download data backups and log backups of TencentDB for MySQL instances in the console.
 >?Each IP can have up to 10 download links by default, with a download speed limit of 20–30 Mbps each.
 >
-1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click the instance ID/name or **Manage** in the **Operation** column to access the instance management page.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click the instance ID or **Manage** in the **Operation** column to access the instance management page.
 2. On the **Backup and Restore** > **Data Backup List** tab, locate the backup file to be downloaded and click **Download** in the **Operation** column.
 3. We recommend you copy the download link in the pop-up dialog box, log in to a [(Linux) CVM instance in the same VPC as the TencentDB instance](https://intl.cloud.tencent.com/zh/document/product/213/10517#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8), and run the `wget` command for download over the private network at a higher speed.
 >?
