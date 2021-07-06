@@ -42,10 +42,10 @@ Anycast 发布域是加速 IP 地址发布的地点，即 Anycast CLB 的 VIP �
 Anycast CLB 在游戏加速中的应用也非常广泛，游戏请求就近接入腾讯云，通过腾讯云的内网到达游戏服务器，极大缩短经过的公网路径，减少了延时、抖动、丢包等问题的发生。跟传统加速比，入口无需额外部署流量接收设备，且无需区分地域，简化了 DNS 部署。
 ![](https://main.qcloudimg.com/raw/c1db004b30c41a6c0968e95a2197332b.png)
 
-
 ## 操作指南
 ### 前提条件
 本功能内测中，操作前请确保您的内测申请已通过。
+
 ### 操作步骤
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)。
 2. 在左侧导航栏中，单击 【[弹性公网IP ](https://console.cloud.tencent.com/cvm/eip2)】，进入 “弹性公网IP” 管理页面。
