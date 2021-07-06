@@ -3,7 +3,7 @@ If you are unable to access a TencentDB for MySQL instance over the private or p
 If you encounter a connectivity issue when accessing a TencentDB for MySQL instance from a CVM instance over the private or public network, you can use the connectivity check tool provided in the TencentDB for MySQL console to easily troubleshoot the issue.
 
 ## Private Network Connectivity Check
-1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click the ID/name of the instance to be checked and access the instance management page.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click the ID of the instance to be checked and access the instance management page.
 2. Select **Connection Check** > **Private Network Check**.
 3. Click **Add CVMs that can access this instance**.
 >?Only CVM instances in the same region as the TencentDB for MySQL instance are listed by default. If you need cross-region access, enable network interconnection through a [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003).
@@ -39,7 +39,7 @@ If you encounter a connectivity issue when accessing a TencentDB for MySQL insta
 <img src="https://main.qcloudimg.com/raw/b183b27af9c6b5a28cdb708f8a5c44d8.png">
 
 ## Public Network Connectivity Check
-1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click the ID/name of the instance to be checked and access the instance management page.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click the ID of the instance to be checked and access the instance management page.
 2. Select **Connection Check** > **Public Network Check**.
 3. Click **Add an external server to access this instance**.
 4. Click **Start Check** and a check report will be generated after the check is completed.
