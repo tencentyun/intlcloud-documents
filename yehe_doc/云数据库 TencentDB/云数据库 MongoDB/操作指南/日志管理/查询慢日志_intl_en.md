@@ -6,7 +6,7 @@ Slow logs are often used as the basis for optimizing business operations in Mong
 >- Only the first 10,000 slow logs can be queried. If the query is slow, you can narrow down the query time range.
 
 
-Log in to the [TencentDB for MongoDB Console](https://console.cloud.tencent.com/mongodb) and click an instance name to enter the instance management page. Select **Database Management** > **Slow Log Query**.
+Log in to the [TencentDB for MongoDB Console](https://console.cloud.tencent.com/mongodb) and click an instance ID to enter the instance management page. Select **Database Management** > **Slow Log Query**.
 
 #### Query Methods 
 The system provides two query methods as described below:
