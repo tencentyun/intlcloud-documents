@@ -14,7 +14,7 @@ TencentDB for SQL Server is billed on a pay-as-you-go basis.
 </tr>
 <tr>
 <th>Beijing, Shanghai, Guangzhou, Nanjing, Qingyuan</th>
-<th>Taipei (China), Seoul, Tokyo, Silicon Valley, Moscow</th>
+<th>Seoul, Tokyo, Silicon Valley, Moscow</th>
 </tr>
 <tr>
 <td>Per GB</td>
@@ -24,7 +24,7 @@ TencentDB for SQL Server is billed on a pay-as-you-go basis.
 </tbody></table>
 
 >?
->- Starting from May 27, 2020, users in Taipei (China), Seoul, Tokyo, Silicon Valley will receive 32% off when they purchase or renew TencentDB SQL Server pay-as-you-go instances. The discounted price is 0.0592 USD/hr x 0.68.
+>- Starting from May 27, 2020, users in Seoul, Tokyo, Silicon Valley will receive 32% off when they purchase or renew TencentDB SQL Server pay-as-you-go instances. The discounted price is 0.0592 USD/hr x 0.68.
 >- This discount is valid until December 31, 2020.
 >
 
@@ -39,7 +39,7 @@ TencentDB for SQL Server is billed on a pay-as-you-go basis.
 </tr>
 <tr>
 <th>Beijing, Shanghai, Guangzhou, Nanjing, Qingyuan</th>
-<th>Taipei (China), Seoul, Tokyo, Silicon Valley, Moscow</th>
+<th>Seoul, Tokyo, Silicon Valley, Moscow</th>
 </tr>
 <tr>
 <td>Per GB</td>
@@ -50,7 +50,7 @@ TencentDB for SQL Server is billed on a pay-as-you-go basis.
 </tbody></table>
 
 >?
->- Starting from May 27, 2020, users in Taipei (China), Seoul, Tokyo, Silicon Valley will receive 32% off when they purchase or renew TencentDB SQL Server pay-as-you-go instances. The discounted price is 0.000444 USD/hr x 0.68.
+>- Starting from May 27, 2020, users in Seoul, Tokyo, Silicon Valley will receive 32% off when they purchase or renew TencentDB SQL Server pay-as-you-go instances. The discounted price is 0.000444 USD/hr x 0.68.
 >- This discount is valid until December 31, 2020.
 >
 
