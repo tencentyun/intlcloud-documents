@@ -1,5 +1,5 @@
 ## 操作シナリオ
-Tencent Cloudの第5世代インスタンスS5、M5、C4、IT5、D3は、第2世代インテリジェントIntel <sup>®</ sup>Xeon<sup>®</ sup>スケーラブルプロセッサCascadeLakeを全面的に採用しています。より多くの命令セットや機能を提供して、人工知能のアプリケーションのアクセラレーションに使用するとともに、多数のハードウェア拡張技術を統合することができます。中でも、AVX-512（アドバンスト・ベクトル・エクステンション）は、AI推論プロセスに強力な並列コンピューティング機能を提供し、ユーザーのディープラーニングの効果をより高めることができます。
+Tencent Cloudの第5世代インスタンスS5、M5、C4、IT5、D3は、第2世代インテリジェントIntel <sup>®</sup>Xeon<sup>®</sup> スケーラブルプロセッサCascadeLakeを全面的に採用しています。より多くの命令セットや機能を提供して、人工知能のアプリケーションのアクセラレーションに使用するとともに、多数のハードウェア拡張技術を統合することができます。中でも、AVX-512（アドバンスト・ベクトル・エクステンション）は、AI推論プロセスに強力な並列コンピューティング機能を提供し、ユーザーのディープラーニングの効果をより高めることができます。
 
 ここではS5、M5インスタンスを例として、CVMでAVX512を介して人工知能アプリケーションをアクセラレーションする方法を説明します。
 
@@ -54,8 +54,8 @@ TensorFlow\*は、大規模な機械学習とディープラーニングに用�
 #### TensorFlow\*フレームワークのデプロイ
 1. CVMにPythonをインストールします。ここでは、Python3.7を例とします。
 2. 以下のコマンドを実行して、Intel<sup>®</sup>に最適化されたTensorFlow\*バージョンのintel-tensorflowをインストールします。
->?最新の機能と最適化を利用するため、**2.4.0およびそれ以降のバージョン**を使用することをお勧めします。
->
+<dx-alert infotype="explain">最新の機能と最適化を利用するため、**2.4.0およびそれ以降のバージョン**を使用することをお勧めします。
+</dx-alert>
 ```
 pip install intel-tensorflow
 ```
@@ -538,7 +538,7 @@ Intel<sup>®</sup> Distribution of OpenVINO™ Toolkitツールキットのワ�
 ![](https://main.qcloudimg.com/raw/98afcac361352773801fbe863d21b912.png)
 
 #### Intel<sup>®</sup> Distribution of OpenVINO™ Toolkitの推論性能
-The Intel® Distribution of OpenVINO™ツールは、さまざまなIntelプロセッサと高速ハードウェアで最適化を実装します。Intel <sup>®</ sup>Xeon<sup>®</ sup>スケーラブルプロセッサプラットフォームでは、Intel <sup>®</ sup> DLBoostおよびAVX-512命令セットを使用して推論ネットワークをアクセラレーションします。各プラットフォームのパフォーマンスデータについては、[Intel<sup>®</sup> OpenVINO™ツールキットベンチマークパフォーマンスデータ](https://docs.openvinotoolkit.org/latest/openvino_docs_performance_benchmarks_openvino.html)をご参照ください。
+The Intel® Distribution of OpenVINO™ツールは、さまざまなIntelプロセッサと高速ハードウェアで最適化を実装します。Intel <sup>®</sup>Xeon<sup>®</sup> スケーラブルプロセッサプラットフォームでは、Intel <sup>®</sup>  DLBoostおよびAVX-512命令セットを使用して推論ネットワークをアクセラレーションします。各プラットフォームのパフォーマンスデータについては、[Intel<sup>®</sup> OpenVINO™ツールキットベンチマークパフォーマンスデータ](https://docs.openvinotoolkit.org/latest/openvino_docs_performance_benchmarks_openvino.html)をご参照ください。
 
  #### Intel<sup>®</sup> Distribution of OpenVINO™ Toolkitディープラーニング開発キット（DLDT）の使用
  以下の資料をご参照ください
