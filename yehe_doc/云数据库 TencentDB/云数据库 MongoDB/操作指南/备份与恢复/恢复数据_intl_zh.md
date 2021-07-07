@@ -9,7 +9,7 @@
 已备份实例数据，请参见 [备份数据](https://intl.cloud.tencent.com/document/product/240/7108)。
 
 ## 操作步骤
-1. 登录 [MongoBD 控制台](https://console.cloud.tencent.com/mongodb) ，在实例列表，单击实例名，进入实例管理页面。
+1. 登录 [MongoBD 控制台](https://console.cloud.tencent.com/mongodb) ，在实例列表，单击实例 ID，进入实例管理页面。
 2. 在实例管理页面，选择【备份与回档】>【备份列表】页，在需要回档的备份文件列，单击【回档实例】。
 ![](https://main.qcloudimg.com/raw/b211048c4e8d23bd0f0ebea8c0c6d5f7.png)
 3. 在回档页，可选择回档的时间点，以及回档类型。回档类型包括整实例回档和库表回档。
