@@ -1,5 +1,5 @@
 ### How do I view instance details in MongoDB?
-On the instance list page, click the name of an instance to go to its details page.
+On the instance list page, click the ID of an instance to go to its details page.
 
 ### How do I access a MongoDB instance?
 TencentDB for MongoDB can be connected using a variety of languages, such as Shell, PHP, Node.js, Java, and Python.
