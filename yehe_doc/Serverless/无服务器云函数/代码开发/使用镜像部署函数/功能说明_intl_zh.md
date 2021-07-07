@@ -12,7 +12,7 @@
 云函数在函数实例初始化阶段，获得镜像仓库的临时用户名和密码作为访问凭证来拉取镜像。镜像拉取成功后，根据指定您所定义的启动命令 `Command`、参数 `Args` 及端口（固定为9000）启动您定义的 HTTP Server。最后，HTTP Server 将接收云函数的所有入口请求，包括来自您的事件函数调用及 Web 函数调用。
 
 函数工作原理如下图所示：
-![](https://main.qcloudimg.com/raw/f282ea394c70d8d897cecaf8fc785c3a.png)
+![](https://main.qcloudimg.com/raw/f884ec7454c39392e4b5b19752e8d732.png)
 
 
 

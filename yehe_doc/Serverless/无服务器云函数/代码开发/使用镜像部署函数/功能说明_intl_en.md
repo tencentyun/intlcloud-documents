@@ -12,7 +12,7 @@ Before you develop the function, you need to confirm the function type. SCF supp
 During the initialization of the function instance, SCF will obtain the temporary user name and password of the image repository as the access credential to pull the image. After the image is pulled successfully, start the HTTP Server you defined according to the specified start command `Command`, the parameter `Args` and the port (fixed to 9000). Finally, HTTP Server will receive all entry requests of SCF, including the event function invocations and Web function invocations.
 
 The following diagram illustrates how it works:
-![](https://main.qcloudimg.com/raw/f282ea394c70d8d897cecaf8fc785c3a.png)
+![](https://main.qcloudimg.com/raw/f884ec7454c39392e4b5b19752e8d732.png)
 
 
 
