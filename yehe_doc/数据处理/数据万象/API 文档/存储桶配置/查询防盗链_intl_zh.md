@@ -29,7 +29,7 @@ Authorization: Auth String
 此接口仅返回公共响应头部，详情请参见 [公共响应头部](https://intl.cloud.tencent.com/document/product/436/7729) 文档。
 
 #### 响应体
-具体内容包括防盗链的种类并枚举所有地址 A。
+具体内容包括防盗链的种类并枚举所有地址。
 
 ```
 <?xml version="1.0" encoding="UTF-8" ?>
