@@ -9,7 +9,7 @@ Tencent Cloud supports [classic network and VPC](https://intl.cloud.tencent.com/
 - After you switch a primary instance's network, the networks of read-only replicas or disaster recovery instances associated with the primary instance won’t be automatically switched, that is, you need to manually switch them.
 
 ## Directions
-1. Log in to the [TencentDB for MongoDB console](https://console.cloud.tencent.com/mongodb/instance), click an instance name/ID in the instance list, and enter the instance details page.
+1. Log in to the [TencentDB for MongoDB console](https://console.cloud.tencent.com/mongodb/instance), click an instance ID in the instance list, and enter the instance details page.
 2. Click **Change Network** next to **Network** in the **Basic Info** section.
 3. In the pop-up dialog box, select a VPC and a subnet and click **OK**.
 >?
