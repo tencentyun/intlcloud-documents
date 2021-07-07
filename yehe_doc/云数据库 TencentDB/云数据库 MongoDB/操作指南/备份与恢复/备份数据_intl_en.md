@@ -10,7 +10,7 @@ TencentDB for MongoDB by default automatically backs up on a daily basis, and yo
 >- Currently, physical backups are supported only in MongoDB v3.2.
 
 ## Automatic Backup
-1. Log in to the [TencentDB for MongoDB console](https://console.cloud.tencent.com/mongodb), click an instance name/ID in the instance list, and enter the instance management page.
+1. Log in to the [TencentDB for MongoDB console](https://console.cloud.tencent.com/mongodb), click an instance ID in the instance list, and enter the instance management page.
 2. Select **Backup and Rollback** > **Auto Backup Settings**, and click **Edit**.
 3. Specify the following backup parameters and click **Save**.
 <table>
@@ -28,7 +28,7 @@ TencentDB for MongoDB by default automatically backs up on a daily basis, and yo
 </tbody></table>
 
 ## Manual Backup
-1. Log in to the [TencentDB for MongoDB console](https://console.cloud.tencent.com/mongodb), click an instance name/ID in the instance list, and enter the instance management page.
+1. Log in to the [TencentDB for MongoDB console](https://console.cloud.tencent.com/mongodb), click an instance ID in the instance list, and enter the instance management page.
 2. Click **Manual Backup** in the upper right corner.
 3. In the pop-up dialog box, enter backup remarks and click **OK**.
 
