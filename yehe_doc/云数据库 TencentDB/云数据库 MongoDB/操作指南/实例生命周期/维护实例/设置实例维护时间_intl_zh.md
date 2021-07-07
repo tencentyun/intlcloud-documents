@@ -3,7 +3,7 @@
 
 
 ## 操作步骤
-1. 登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb/ )，在实例列表，选择所需实例，单击实例名或“操作”列的【更多】>【管理】进入实例详情页。
+1. 登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb/ )，在实例列表，选择所需实例，单击实例 ID 或“操作”列的【更多】>【管理】进入实例详情页。
 2. 在实例详情页的“维护时间”处，单击【修改】。
  ![](https://main.qcloudimg.com/raw/250f3544f118368d715fd017a7357fb6.png)
 3. 在弹出的对话框，选择维护时间后，单击【确定】。
