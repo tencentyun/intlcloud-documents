@@ -9,7 +9,7 @@ This document describes how to restore TencentDB for MongoDB data in the console
 The instance data has been backed up. For more information, please see [Backing up Data](https://intl.cloud.tencent.com/document/product/240/7108).
 
 ## Directions
-1. Log in to the [MongoBD Console](https://console.cloud.tencent.com/mongodb), click an instance name in the instance list and enter the management page.
+1. Log in to the [MongoBD Console](https://console.cloud.tencent.com/mongodb), click an instance ID in the instance list and enter the management page.
 2. Select **Backup and Rollback** > **Backup List** and click **Roll back Instance** in the row of the backup file to be rolled back.
 ![](https://main.qcloudimg.com/raw/b211048c4e8d23bd0f0ebea8c0c6d5f7.png)
 3. On the rollback page, you can select the time point to be rolled back to and rollback type (rollback of entire instance or database table rollback).
