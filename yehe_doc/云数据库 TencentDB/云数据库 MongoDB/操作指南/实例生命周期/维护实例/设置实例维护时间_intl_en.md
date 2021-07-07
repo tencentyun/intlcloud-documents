@@ -3,7 +3,7 @@ Maintenance time is a very important concept for TencentDB for MongoDB. To ensur
 
 
 ## Directions
-1. Log in to the [MongoDB Console](https://console.cloud.tencent.com/mongodb/). In the instance list, locate the instance to be modified and click the instance name or **More** > **Manage** in the "Operation" column to enter the instance details page.
+1. Log in to the [MongoDB Console](https://console.cloud.tencent.com/mongodb/). In the instance list, locate the instance to be modified and click the instance ID or **More** > **Manage** in the "Operation" column to enter the instance details page.
 2. In the "Maintenance Time" section, click **Modify**.
 ![](https://main.qcloudimg.com/raw/250f3544f118368d715fd017a7357fb6.png)
 3. In the pop-up dialog box, select the maintenance time and click **OK**.
