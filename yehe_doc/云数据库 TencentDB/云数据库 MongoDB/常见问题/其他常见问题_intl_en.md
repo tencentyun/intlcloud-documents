@@ -5,7 +5,7 @@ Currently, TencentDB for MongoDB 3.2, 3.6, and 4.0 are available.
 A TencentDB for MongoDB instance will be automatically terminated if it is not renewed after expiration. Please confirm and back up your data promptly. You can also manually terminate it by selecting **More** > **Return and Refund**/**Terminate** in its **Operation** column in the instance list in the [console](https://console.cloud.tencent.com/mongodb).
 
 ### How do I apply for security credentials for TencentDB for MongoDB?
-Before calling a TencentCloud API for the first time, you need to apply for security credentials in the Tencent Cloud [CVM console](https://console.cloud.tencent.com/cvm).
+Before calling a TencentCloud API for the first time, you need to apply for security credentials in the Tencent Cloud [console](https://console.cloud.tencent.com/cam/capi).
 Security credentials comprise a `SecretId` and a `SecretKey`:
  - `SecretId` is used to identify the API caller.
  - `SecretKey` is used to encrypt the strings to create a signature so that Tencent Cloud server can validate the identity of the caller.
