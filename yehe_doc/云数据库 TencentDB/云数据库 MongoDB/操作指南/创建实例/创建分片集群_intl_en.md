@@ -5,7 +5,7 @@
 3. After confirming that everything is correct, click **Buy Now**.
 
 ## Sharded Cluster Console
-Click an instance name in the instance list to enter the details page where you can view the details of the sharded cluster instance, such as shard composition, shard node specification, and used capacity. You can also expand instance capacity in the console.
+Click an instance ID in the instance list to enter the details page where you can view the details of the sharded cluster instance, such as shard composition, shard node specification, and used capacity. You can also expand instance capacity in the console.
 ![](https://main.qcloudimg.com/raw/ff86a7a08d4990d542b64749440e4896.png)
 
 ## Sharded Cluster Expansion
@@ -15,13 +15,13 @@ Click **Adjust Configuration** on the instance list page, select the target capa
 
 ## Backup and Rollback
 Backup and rollback operations in sharded cluster instances are the same with those in replica set instances. Currently, you can only back up and roll back data at the instance level.
-Click an instance name in the instance list to enter the management page and select **Backup and Rollback**.
+Click an instance ID in the instance list to enter the management page and select **Backup and Rollback**.
 ![](https://main.qcloudimg.com/raw/b211048c4e8d23bd0f0ebea8c0c6d5f7.png)
 You need to enter a date to which you want to roll the instance back. You can enter any time point within the last 6 days, but you can only select a time between two backups (backup succeeds and oplog is not fully occupied). If there are no backups to satisfy this condition, please perform manual backup.
 ![](https://main.qcloudimg.com/raw/99545980a00cb7c8a4bc34351bb6efbf.png)
 
 ## Cluster Instance Monitoring
 Monitoring metrics in three dimensions are provided to monitor data in an entire TencentDB for MongoDB sharded cluster: instance, shard, and node. Monitoring data of multiple metrics is provided, such as operation requests, capacity usage, and load.
-Click an instance name in the instance list to enter the management page and select **System Monitoring** for query.
+Click an instance ID in the instance list to enter the management page and select **System Monitoring** for query.
 ![](https://main.qcloudimg.com/raw/7f1957c3dbdf9b71959cf5494718b949.png)
 
