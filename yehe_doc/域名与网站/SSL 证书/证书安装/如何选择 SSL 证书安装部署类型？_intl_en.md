@@ -2,7 +2,7 @@
 You can choose an appropriate method to install a certificate based on the encryption standard of your certificate and your server type.
 >? 
 >
->- Currently, 9 methods are available for installing a certificate.
+>- Currently, 8 methods are available for installing a certificate.
 
 
 <table>
@@ -38,13 +38,7 @@ You can choose an appropriate method to install a certificate based on the encry
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1007/38093">Installing a Certificate on WebLogic Servers</a></td>
 </tr>
-<tr>
-<td rowspan="3">Chinese national cryptography standard certificate (SM2)</td>
-</tr>
-<tr>
-<td>Windows</td>
-<td><a href="https://cloud.tencent.com/document/product/400/47361">Installing a Chinese national cryptography certificate on an Nginx server for Windows</a></td>
-</tr>
+
 </table>
 
 
