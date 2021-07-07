@@ -111,7 +111,7 @@ CSS 과금 항목에는 기본 서비스 요금과 부가 서비스 요금이 �
 <td>녹화 저장</td>
 <td>라이브 방송 녹화 파일은 VOD에 저장해야 하며 비용이 발생합니다. <b>데이터의 실제 저장 시간 및 저장 용량에 따라 과금되며</b> 별도의 VOD 저장 비용이 발생합니다.
 </td>
-<td> <li><a href="https://cloud.tencent.com/document/product/266/14667#storage_page">VOD-종량제</a> </td>
+<td> <li><a href="https://intl.cloud.tencent.com/zh/document/product/266/39506">VOD-종량제</a> </td>
 </tr><tr>
 <td>화면 캡처 저장</td>
 <td>라이브 방송 화면 캡처 및 음란물 감지로 생성되는 화면 캡처 파일은 COS에 저장되어야 하며 비용이 발생합니다. <strong>데이터 실제 저장 시간 및 저장 용량에 따라 과금되며</strong> 별도의 COS 저장 비용이 발생합니다.</td>
