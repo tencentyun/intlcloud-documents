@@ -15,16 +15,16 @@ A style separator is a character that separates the filename and the processing 
 Assume that you have selected the exclamation (!) as the separator, the style name is `yunstyle`, and the input image’s `fileid` is `sample.jpg`. The URL of the stylized image will be `http://space.image.com/sample.jpg!yunstyle`. If a signature needs to be carried, the URL will be `http://space.image.com/sample.jpg!yunstyle?q-sign-algorithm=<signature>`, where `/sample.jpg!yunstyle` will be used to calculate the signature `<signature>`.
 
 >!
--  You can set up to 100 styles for each bucket.
--  To avoid ambiguity, do not use separators in style names.
--  The settings take effect in about 30 minutes on average.
--  Changing separators requires purging the cache. It takes at least 24 hours for separator changes to take effect for both public and private networks.
--  Canceling a separator used may cause product feature malfunctions.
+>-  You can set up to 100 styles for each bucket.
+>-  To avoid ambiguity, do not use separators in style names.
+>-  The settings take effect in about 30 minutes on average.
+>-  Changing separators requires purging the cache. It takes at least 24 hours for separator changes to take effect for both public and private networks.
+>-  Canceling a separator used may cause product feature malfunctions.
 
 
 ## Style Management
 Style management allows you to **preview**, **edit**, **delete**, or **export** a style. You can also import a style or use the visualization method to **add a style**.
-![](https://main.qcloudimg.com/raw/5a39eb00c8f80ec7a1132b5515992a16.png)
+
 
 ### Style overview
 You can set styles for images in the bucket to manage images as needed. A style is an alias of a set of parameters that process images in real time upon download.
