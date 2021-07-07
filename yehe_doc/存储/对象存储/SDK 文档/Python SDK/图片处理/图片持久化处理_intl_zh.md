@@ -4,7 +4,7 @@
 
 | API                                                          | 操作描述                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [图片持久化处理](https://cloud.tencent.com/document/product/436/54050) | 对象存储提供的上传时处理功能可以帮助使用者在上传时实现图片处理。此外能够对已存储在 COS 的图片进行相应处理操作，并将结果存入到 COS |
+| 图片持久化处理 | 对象存储提供的上传时处理功能可以帮助使用者在上传时实现图片处理。此外能够对已存储在 COS 的图片进行相应处理操作，并将结果存入到 COS |
 
 ## 上传时处理
 
@@ -66,7 +66,7 @@ response = client.ci_put_object(
 | Bucket             | 存储桶名称，由 BucketName-APPID 构成                         | String     | 是       |
 | Body               | 上传对象的内容，可以为文件流或字节流                         | file/bytes | 是       |
 | Key                | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String     | 是       |
-| PicOperations      | 万象图片处理参数，请参见 [图片持久化处理](https://cloud.tencent.com/document/product/436/54050) | String     | 是       |
+| PicOperations      | 万象图片处理参数，请参见 图片持久化处理 | String     | 是       |
 | EnableMD5          | 是否需要 SDK 计算 Content-MD5，默认关闭，打开后将增加上传耗时 | Bool       | 否       |
 | ACL                | 设置对象的 ACL，例如 'private'，'public-read'                | String     | 否       |
 | GrantFullControl   | 赋予被授权者所有的权限，格式为 `id="OwnerUin"`               | String     | 否       |
@@ -222,7 +222,7 @@ response, data = client.ci_image_process(
 | ------------- | ------------------------------------------------------------ | ------ | -------- |
 | Bucket        | 存储桶名称，由 BucketName-APPID 构成                         | String | 是       |
 | Key           | 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` 中，对象键为 doc/pic.jpg | String | 是       |
-| PicOperations | 万象图片处理参数，请参见 [图片持久化处理](https://cloud.tencent.com/document/product/436/54050) | String | 是       |
+| PicOperations | 万象图片处理参数，请参见 图片持久化处理 | String | 是       |
 
 PicOperations 为 json 格式的字符串，具体参数如下：
 
