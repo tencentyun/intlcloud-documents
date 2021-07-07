@@ -111,7 +111,7 @@ CSSの課金項目には、基本サービス料金と付加価値サービス�
 <td>レコーディングの保存</td>
 <td>>CSSレコーディングのファイルはVODに保存する必要があり、発生したサービス料金は、<b>データの実際の保存時間とストレージ容量に応じて課金されます</b>。VOD保存料金が別途必要です。
 </td>
-<td> <li><a href="https://cloud.tencent.com/document/product/266/14667#storage_page">VOD-従量課金</a></td>
+<td> <li><a href="https://intl.cloud.tencent.com/zh/document/product/266/39506">VOD-従量課金</a></td>
 </tr><tr>
 <td>スクリーンキャプチャストレージ</td>
 <td> CSSスクリーンキャプチャとポルノ検出で生成したスクリーンキャプチャのファイルはCOSに保存する必要があり、発生したサービス料金は、<strong>データの実際の保存時間とストレージ容量に応じて課金されます</strong>。COSの保存料金が別途必要です。</td>
