@@ -1,5 +1,5 @@
 
-# Overview
+## Overview
 Classic CLB is easy to configure and supports simple load balancing scenarios:
 - **Public network** classic CLB: supports TCP/UDP/HTTP/HTTPS protocols.
 - **Private network** classic CLB: supports TCP/UDP protocols.
@@ -10,6 +10,7 @@ CLB includes all features of classic CLB. Based on their features and performanc
 >!Currently, there are two types of Tencent Cloud accounts: bill-by-EIP/CLB and bill-by-CVM. All Tencent Cloud accounts registered after June 17, 2020 00:00:00 are bill-by-EIP/CLB accounts. For Tencent Cloud accounts registered before June 17, 2020, [check your account types](https://intl.cloud.tencent.com/document/product/684/15246) in the console. Bill-by-EIP/CLB accounts no longer support classic CLB. You can now only purchase a CLB instance.
 >
 This document introduces classic CLB instances. After creating an instance, you need to configure a listener for it. The listener listens to requests on the CLB instance and distributes traffic to the real server based on the load balancing policy.
+
 ## Listener Configurations
 You need to configure a CLB listener as follows:
 1. Listener protocol and listening port. The listening port, or frontend port, is used to receive and forward requests to real servers.
@@ -20,7 +21,7 @@ You need to configure a CLB listener as follows:
 
 > ?If you configure multiple listeners to a classic CLB instance and bind multiple real servers, each listener will forward requests to all real servers based on its configuration.
 
-## Supported protocol types
+### Supported protocol types
 A CLB listener can listen to Layer-4 and Layer-7 requests on a CLB instance and distribute them to real servers for processing. The main difference between Layer-4 CLB and Layer-7 CLB is which protocol is used to forward traffic when load balancing user requests.
 - Layer-4 protocols: transport layer protocols, including TCP and UDP.
 - Layer-7 protocols: application layer protocols, including HTTP and HTTPS.
@@ -30,7 +31,7 @@ A CLB listener can listen to Layer-4 and Layer-7 requests on a CLB instance and 
 >2. A private network classic CLB instance only supports Layer-4 protocols, not Layer-7 protocols.
 >3. If you need aforementioned advanced features, we recommend choosing CLB over classic CLB. For more information, see [Instance Types](https://intl.cloud.tencent.com/document/product/214/8847).
 
-## Port Configuration
+### Port Configuration
 <table>
 <thead>
 <tr>
