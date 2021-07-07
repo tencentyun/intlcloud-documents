@@ -6,7 +6,36 @@
 
 >!
 > - 製品の安定性を高め、より良いオンラインサポートをご利用いただくため、速やかに最新バージョンに更新することをお勧めします。
-> - バージョンのアップグレードに関する注意事項については、[アップグレードガイドライン](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)をご参照ください。
+> - バージョンアップに関する注意事項については、[アップグレードガイドライン](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-00-info-update-guideline.html)をご参照ください。
+
+## Version 4.10.2 @2021.05.24
+
+**Improvement**
+
+- switchDeviceインターフェースの実装ロジックを最適化して、Huaweiブラウザがフロントカメラを切り替えられないことがある問題を回避しました。
+- [StreamEvent.CONNECTION_STATE_CHANGED](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-StreamEvent.html#.CONNECTION_STATE_CHANGED)イベント通知の精度を向上させました。
+
+**Bug Fixed**
+
+- Native画面共有が再生できないことがある問題を修正しました。
+- 再接続後にstream-removedイベントを受信できないことがある問題を修正しました。
+
+## Version 4.10.1 @2021.04.30
+
+**Feature**
+
+- Stream接続ステータスの変更の監視をサポートする[StreamEvent.CONNECTION_STATE_CHANGED](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/module-StreamEvent.html#.CONNECTION_STATE_CHANGED)イベントを追加しました。
+- ダウンリンクRTT統計データを取得するため、[Client.getTransportStats](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#getTransportStats)インターフェースをサポートしました。
+- セカンダリストリーム（画面共有）の統計データを取得するため、[Client.getRemoteVideoStats](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#getRemoteVideoStats)インターフェースをサポートしました。
+
+**Improvement**
+
+[Client.switchRole](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#switchRole)インターフェースの実装ロジックを最適化しました。
+
+**Bug Fixed**
+
+- stream-addedが追加される前に、mute関連イベントがトリガーされることがある問題を修正しました。
+- ルーム参加時に無音になることがある問題を修正しました。
 
 ## Version 4.10.0 @2021.04.16
 
@@ -260,13 +289,9 @@ createStreamインターフェースにscreenAudioパラメータを追加しま
 **Feature**
 
 Chrome >= 74の画面共有およびキャプチャシステム(Windows)または現在のTabページ(Mac)の音声をサポートします。
-  
-## Version 4.3.14 @ 2020.04.29
 
-**Bug Fixes**
 
-ミニプログラムのオーディオmuted unmuteイベントを修正しました。
-  
+
 ## Version 4.3.13 @ 2020.04.16
 
 **Improvement**
@@ -278,16 +303,8 @@ Chrome >= 74の画面共有およびキャプチャシステム(Windows)また�
 **Bug Fixes**
 
 潜在的なRTCPeerConnectionのステータス変更異常を修正しました。
-  
-## Version 4.3.11 @ 2020.03.28
 
-**Improvement**
 
-スマホのQQブラウザ検出を追加しました。スマホのQQブラウザは、現時点ではTRTCデスクトップブラウザSDKをサポートできません。
-
-**Bug Fixes**
-
-Boolean戻り値タイプを修正しました。
 
 ## Version 4.3.10 @ 2020.03.17
 
@@ -320,11 +337,7 @@ createClientにstreamId userdefinerecordidフィールドを追加しました�
 - デバイスを切り替えるときにMediaStreamをリリースして、デバイスが占有してしまう問題を解決しました。
 - 潜在的なエラーを処理するためのサブスクリプションインターフェースを追加しました。
 
-## Version 4.3.6 @ 2020.02.05
 
-**Bug Fixes**
-
-Stream.resume()オーディオ・ビデオの再生シーケンスを調整し、iOSのWeChatブラウザでの自動再生異常の問題を修正しました。
 
 ## Version 4.3.5 @ 2020.02.05
 
@@ -335,9 +348,9 @@ publishタイムアウトチェックを追加して、シグナリング送信�
 ## Version 4.3.4 @ 2020.01-06
 
 **Improvement**
- 
+
 core-jsをv3.6.1にアップグレードしました。
-  
+
 **Bug Fixes**
 
 - unpublishは、タイムアウト後に外部に異常イベントをスローします。
