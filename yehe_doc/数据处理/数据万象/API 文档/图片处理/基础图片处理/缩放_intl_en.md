@@ -13,7 +13,7 @@ download_url?imageMogr2/thumbnail/<imageSizeAndOffsetGeometry>
 
 ## Parameters
 
-Operation: thumbnail
+Operation name: thumbnail
 
 | Parameter | Description |
 | ----------------------------- | ------------------------------------------------------------ |
@@ -33,7 +33,7 @@ Operation: thumbnail
 | /color/ | Padding color. The value must be in hexadecimal format, for example, `#FF0000`. For format conversion, please see [RGB Color Codes Chart](https://www.rapidtables.com/web/color/RGB_Color.html). The value must be [URL-safe Base64-encoded](https://intl.cloud.tencent.com/document/product/1045/33430). Default value: `#3D3D3D` (gray)|
 | /ignore-error/1 | If this parameter is carried and the image failed to be processed because it is too large, the input image will be returned with no error reported. |
 
-## Examples
+## Example
 
 Input image:
 ![](https://main.qcloudimg.com/raw/3d4682ff8e622425ebd29913810a5c38.jpeg)
@@ -67,4 +67,15 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/t
 
 Output image:
 ![](https://main.qcloudimg.com/raw/5f1d9423eaa73e2115fa969667738dee.jpg)
+
+#### Scaling in padding mode with a signature carried
+
+This example processes the image as the example above but also adds a signature, which is joined with other processing parameters using an ampersand (&):
+
+```
+http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&imageMogr2/thumbnail/!50px
+```
+
+>? You can obtain the value of `<signature>` by referring to [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+>
 
