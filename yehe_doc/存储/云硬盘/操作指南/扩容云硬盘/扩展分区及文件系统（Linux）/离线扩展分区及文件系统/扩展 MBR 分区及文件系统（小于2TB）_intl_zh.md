@@ -29,8 +29,8 @@ lsblk
 
 <dx-tabs>
 ::: 使用工具扩容[](id:AutomaticExpansion)
->?使用工具扩容的方式支持仅1个分区的场景。若存在2个及以上分区，请使用 [手动扩容](#ManualExpansion) 方式。
->
+使用工具扩容的方式支持仅1个分区的场景。若存在2个及以上分区，请使用 [手动扩容](#ManualExpansion) 方式。
+
 1. 以 root 用户执行以下命令，卸载分区。
 ``` 
 umount <挂载点>
@@ -218,4 +218,3 @@ cat /etc/fstab
 - [使用相关问题](https://intl.cloud.tencent.com/document/product/362/32409)
 - [功能相关问题](https://intl.cloud.tencent.com/document/product/362/32408)
 
-```
