@@ -116,9 +116,41 @@ CIObject 유형은 이미지 처리 결과를 기록하는 데 사용됩니다. 
 
 [//]: # ".cssg-snippet-process-with-pic-operation"
 ```java
-GetObjectRequest getObj = new GetObjectRequest(bucketName, key);
-// 다음은 기본 이미지 처리인 [크기 조정]의 예시이며, 다른 처리 기능도 동일한 원리로 작동됩니다. 자세한 내용은 CI API를 참조하십시오. 이것은 예시일 뿐입니다.
-// 이미지의 폭과 높이는 원본 이미지의 50%로 지정
-String scale = "imageMogr2/thumbnail/! 50p";
-getObj.putCustomQueryParameter(scale, null);
+String bucketName = "examplebucket-1250000000";
+String key = "test.jpg";
+ImageProcessRequest imageReq = new ImageProcessRequest(bucketName, key);
+
+PicOperations picOperations = new PicOperations();
+picOperations.setIsPicInfo(1);
+List<PicOperations.Rule> ruleList = new LinkedList<>();
+PicOperations.Rule rule1 = new PicOperations.Rule();
+rule1.setBucket(bucketName);
+rule1.setFileId("test-1.jpg");
+rule1.setRule("imageMogr2/rotate/90");
+ruleList.add(rule1);
+PicOperations.Rule rule2 = new PicOperations.Rule();
+rule2.setBucket(bucketName);
+rule2.setFileId("test-2.jpg");
+rule2.setRule("imageMogr2/rotate/180");
+ruleList.add(rule2);
+picOperations.setRules(ruleList);
+
+imageReq.setPicOperations(picOperations);
+
+CIUploadResult result = cosClient.processImage(imageReq);
+result.getProcessResults();
+result.getOriginalInfo();
+
+try {
+    CIUploadResult ciUploadResult = cosClient.processImage(imageReq);
+    System.out.println(ciUploadResult.getOriginalInfo().getEtag());
+    for(CIObject ciObject:ciUploadResult.getProcessResults().getObjectList()) {
+        System.out.println(ciObject.getLocation());
+        System.out.println(ciObject.getEtag());
+    }
+} catch (CosServiceException e) {
+    e.printStackTrace();
+} catch (CosClientException e) {
+    e.printStackTrace();
+}
 ```
