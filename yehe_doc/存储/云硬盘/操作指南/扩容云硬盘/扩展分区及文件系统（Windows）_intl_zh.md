@@ -28,24 +28,23 @@
 ### 重新扫描磁盘[](id:Scaning)
 1. 右键单击<img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin:-3px 0px">，并选择【计算机管理】。
 2. 在“计算机管理”窗口的左侧导航栏中，选择【存储】>【磁盘管理】。
-3. 右键单击 【磁盘管理】，选择 【重新扫描磁盘】。如下图所示：
-![](https://main.qcloudimg.com/raw/e86a6974b7a49108a4d12a300ffc4c87.png)
-4. 扫描完成后，查看数据盘是否已经变为扩容后的大小（本例中执行扫描操作后识别到硬盘由原来的10GB扩容到了50GB）。如下图所示：
-![](https://main.qcloudimg.com/raw/9612c8f95826b401d3a7c111fe632b05.png)
+3. 右键单击 【磁盘管理】，选择 【重新扫描磁盘】。
+
+4. 扫描完成后，查看数据盘是否已经变为扩容后的大小（本例中执行扫描操作后识别到硬盘由原来的10GB扩容到了50GB）。
 
 
 ### 扩容原有分区的文件系统或新建分区[](id:Extending)
 您可根据实际需求，参考以下步骤扩容数据盘原有分区的文件系统，或创建新分区：
 <dx-tabs>
 ::: 扩容原有分区的文件系统
-1. 右键单击磁盘空间的任一空白处，选择【扩展卷】。如下图所示：
-![](https://main.qcloudimg.com/raw/6b19804749d997c9aa008dfa1d37b5cd.png)
+1. 右键单击磁盘空间的任一空白处，选择【扩展卷】。
+
 2. 根据扩展卷向导的指引完成扩展卷操作。
 完成后新增的数据盘空间将会合入原有卷中。
 :::
 ::: 创建新分区
-1. 右键单击磁盘未分配空白处，选择【新建简单卷】。如下图所示：
-![](https://main.qcloudimg.com/raw/bf0c7eb05e2658d5b426e85112bbaf0a.png)
+1. 右键单击磁盘未分配空白处，选择【新建简单卷】。
+
 2. 根据新建简单卷向导的默认设置完成简单卷操作。
 完成后新增的数据盘空间会新建一个分区。
 :::
@@ -57,7 +56,7 @@
 1. 右键单击<img src="https://main.qcloudimg.com/raw/87d894e564b7e837d9f478298cf2e292.png" style="margin:-3px 0px">，并选择【设备管理器】。
 2. 在“设备管理器”窗口中，展开【存储控制器】项，并双击【Tencent VirtIO SCSI controller】。
 3. 在 “Tencent VirtIO SCSI controller 属性”窗口中，选择【驱动程序】，查看当前版本。如下图所示，当前版本为58005。
-![](https://main.qcloudimg.com/raw/d6df197dfc47a719edc42a9b7ed0d4f2.png)
+
 
 
 ## 相关文档
