@@ -2,7 +2,7 @@
 
 The following example shows how to automatically process an image when you upload it to COS.
 
-When the image is uploaded successfully, COS will save both the input and output images. You can later obtain the processing results using a general download request.
+When the image is uploaded successfully, COS(Cloud Object Storage) will save both the input and output images. You can later obtain the processing results using a general download request.
 
 ## Persistent Image Processing upon Upload
 
@@ -116,9 +116,42 @@ The following example shows how to process an in-cloud image and store the proce
 
 [//]: # ".cssg-snippet-process-with-pic-operation"
 ```java
-GetObjectRequest getObj = new GetObjectRequest(bucketName, key);
-// The following sample scales an image. You can perform other basic processing operations on the image likewise. For the parameter description, please see CI’s documentation.
-// Scale down the image’s width and height to 50%.
-String scale = "imageMogr2/thumbnail/!50p";
-getObj.putCustomQueryParameter(scale, null);
+String bucketName = "examplebucket-1250000000";
+String key = "test.jpg";
+ImageProcessRequest imageReq = new ImageProcessRequest(bucketName, key);
+
+PicOperations picOperations = new PicOperations();
+picOperations.setIsPicInfo(1);
+List<PicOperations.Rule> ruleList = new LinkedList<>();
+PicOperations.Rule rule1 = new PicOperations.Rule();
+rule1.setBucket(bucketName);
+rule1.setFileId("test-1.jpg");
+rule1.setRule("imageMogr2/rotate/90");
+ruleList.add(rule1);
+PicOperations.Rule rule2 = new PicOperations.Rule();
+rule2.setBucket(bucketName);
+rule2.setFileId("test-2.jpg");
+rule2.setRule("imageMogr2/rotate/180");
+ruleList.add(rule2);
+picOperations.setRules(ruleList);
+
+imageReq.setPicOperations(picOperations);
+
+CIUploadResult result = cosClient.processImage(imageReq);
+result.getProcessResults();
+result.getOriginalInfo();
+
+try {
+    CIUploadResult ciUploadResult = cosClient.processImage(imageReq);
+    System.out.println(ciUploadResult.getOriginalInfo().getEtag());
+    for(CIObject ciObject:ciUploadResult.getProcessResults().getObjectList()) {
+        System.out.println(ciObject.getLocation());
+        System.out.println(ciObject.getEtag());
+    }
+} catch (CosServiceException e) {
+    e.printStackTrace();
+} catch (CosClientException e) {
+    e.printStackTrace();
+}
+```
 ```
