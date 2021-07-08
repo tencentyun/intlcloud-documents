@@ -29,7 +29,7 @@ You can create one or more subnets at a time.
 
 ## Step 3. Create a route table and associate it with a subnet
 You can create a custom route table, edit its routing policy, and associate it with a specified subnet. The route table associated with a subnet is used to specify the outbound routes for the subnet.
-1. Log in to the VPC console and select **Route Tables** on the left sidebar.
+1. Log in to the  [VPC console](https://console.cloud.tencent.com/vpc) and select **Route Tables** on the left sidebar.
 2. Select the region and VPC at the top of the list and click **+New**.
 3. In the pop-up dialog box, enter the name, network, routing rules and click **Create**. Return to the route table list to view the newly created route table.
 ![](https://main.qcloudimg.com/raw/4e59f2e780b5296fe85b204bd86b8b73.png)
@@ -49,5 +49,5 @@ You can create a custom route table, edit its routing policy, and associate it w
 ![](https://main.qcloudimg.com/raw/c8f5065a7ceafc763163b4abe82564bf.png)
 
 #### Existing database
-1. In the instance list, click an instance name/ID or **Manage** in the **Operation** column to enter the instance details page.
+1. In the [instance list](https://console.cloud.tencent.com/cdb), click an instance ID or **Manage** in the **Operation** column to enter the instance details page.
 2. In the **Network** section on the details page, switch to the corresponding VPC.
