@@ -17,7 +17,7 @@ TencentDB for MySQL comes with the transparent data encryption (TDE) feature. Tr
 
 ## Directions
 ### Enabling TDE
-1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb). In the instance list, click the instance ID/name or **Manage** in the "Operation" column to access the instance management page.
+1. Log in to the [TencentDB for MySQL Console](https://console.cloud.tencent.com/cdb). In the instance list, click the instance ID or **Manage** in the "Operation" column to access the instance management page.
 2. On the **Data Encryption** tab, click the toggle button next to **Encryption Status**.
 >!
 >- An instance with TDE enabled cannot be restored from a physical backup to a self-created database on another server.
