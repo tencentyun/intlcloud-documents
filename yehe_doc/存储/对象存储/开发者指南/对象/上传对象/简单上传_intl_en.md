@@ -6,8 +6,8 @@ To upload an object larger than 5 GB, you can use:
 - Multipart upload with APIs or SDKs: You can upload an object up to 48.82 TB (i.e., 50,000 GB). For more information, please see [Multipart Upload](https://intl.cloud.tencent.com/document/product/436/14112)
 - COSCMD: You can upload an object up to 40 TB. For more information, please see [COSCMD](https://intl.cloud.tencent.com/document/product/436/10976).
 
->?
->When initiating a request, if you want to specify a directory or path, you can use `/`. For example, if you need to upload `picture.png` to the `doc` directory, set the object key to `doc/picture.png`.
+>?When initiating a request, if you want to specify a directory or path, you can use `/`. For example, if you need to upload `picture.png` to the `doc` directory, set the object key to `doc/picture.png`.
+>
 
 ## Use Cases
 
