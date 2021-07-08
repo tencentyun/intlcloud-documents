@@ -20,32 +20,32 @@ MBR 支持的磁盘最大容量为2TB，因此当为容量大于2TB的磁盘分�
 2. 在云服务器桌面，单击 <img src="https://main.qcloudimg.com/raw/0a02193a82217974f650bbcaf4e1ed2d.png"  style="margin:-5px 0px">。进入【服务器管理器】页面。
 3. 在左侧导航树中，单击【文件和存储服务】。
 4. 在左侧导航树中，选择【卷】>【磁盘】。
-![](https://main.qcloudimg.com/raw/e21c6ae7dbd7b41a3bfe9c5e2fd25c50.png)
->?若新增磁盘处于脱机状态（如上图），需要先执行 [步骤5](#online) 联机后再执行 [步骤6](#initialize) 进行初始化。否则直接执行 [步骤6](#initialize) 进行初始化。
->
+
+若新增磁盘处于脱机状态（如上图），需要先执行 [步骤5](#online) 联机后再执行 [步骤6](#initialize) 进行初始化。否则直接执行 [步骤6](#initialize) 进行初始化。
+
 5. [](id:online)在右侧窗格中出现磁盘列表，右键单击1所在行，在菜单列表中选择【联机】，进行联机。联机后，1由【脱机】状态变为【联机】。
-![](https://main.qcloudimg.com/raw/e8bf6970a2b203a3fc926a35322680c2.png)
+
 6. [](id:initialize)右键单击1所在行，在菜单列表中选择【初始化】。
-![](https://main.qcloudimg.com/raw/9cb41b9ea7d29115035e15924e65a86f.png)
+
 7. 根据界面提示，单击【是】。
-![](https://main.qcloudimg.com/raw/4bd1346cb8f15bda39fb6ab399a3b2e2.png)
+
 8. 初始化后，1由【未知】分区变为【GPT】，右键单击1所在行，在菜单列表中选择【新建简单卷】。
-![](https://main.qcloudimg.com/raw/d9dbae385dee6e92534db02b3a1cf443.png)
+
 9. 弹出【新建卷向导】对话框，根据界面提示，单击【下一步】。
-![](https://main.qcloudimg.com/raw/896583a11d0004c9172c0d1a31f0ff74.png)
+
 10. 选择服务器和磁盘，单击【下一步】。
-![](https://main.qcloudimg.com/raw/368ee2e2a5b858504a931d0aa0888915.png)
+
 11. 根据实际情况指定卷大小，默认为最大值，单击【下一步】。
-![](https://main.qcloudimg.com/raw/4a6b81ca6a0034fd409289fee70374a1.png)
+
 12. 分配驱动器号，单击【下一步】。
-![](https://main.qcloudimg.com/raw/4c6f82f8e0027ffbbf20869ed4df5dfb.png)
+
 13. 根据实际情况设置参数，格式化新分区，单击【下一步】完成分区创建。
-![](https://main.qcloudimg.com/raw/952b5425be9d7b3c44730801b3563d6b.png)
+
 14. 确认信息无误后，单击【创建】。
-![](https://main.qcloudimg.com/raw/61f81b09d6244962379dda362e07b660.png)
+
 15. 需要等待片刻让系统完成新建卷操作，单击【关闭】。
  初始化成功后，进入【这台电脑】界面可以查看到新磁盘。
-![](https://main.qcloudimg.com/raw/1053f9ea5f3ab8cf85f7c81ba1bf53b8.png)
+
 :::
 ::: 初始化云硬盘（Linux） [](id:2TBLinux)
 请根据您实际使用场景选择初始化方式：
@@ -68,7 +68,7 @@ mkfs -t <文件系统格式> /dev/vdb
 ```
 mkfs -t ext4 /dev/vdb
 ```
->! 格式化需要等待一段时间，请观察系统运行状态，不要退出。
+格式化需要等待一段时间，请观察系统运行状态，不要退出。
 4. 执行以下命令，新建挂载点。
 ```
 mkdir <挂载点>
@@ -87,7 +87,7 @@ mount /dev/vdb /data
 ```
 df -TH
 ```
->? 若无需设置开机自动挂载磁盘，则跳过后续步骤。
+若无需设置开机自动挂载磁盘，则跳过后续步骤。
 7. 确认挂载方式并获取对应信息。
 您可以根据业务需求选择使用弹性云硬盘的软链接、文件系统的 UUID（universally unique identifier）或设备名称自动挂载磁盘，相关说明和信息获取方式如下：
 <table>
@@ -148,7 +148,7 @@ mount -a
 
 ### 在分区上构建文件系统 [](id:CreateFileSystemOnPartition)
 
->?本文将以在 CentOS 7.5 操作系统中使用 parted 分区工具将数据盘 `/dev/vdc` 设置为主分区，分区形式默认设置为 GPT，文件系统设置为 EXT4 格式，挂载在 `/data/newpart2` 下，并设置开机启动自动挂载为例，不同操作系统的格式化操作可能不同，本文仅供参考。
+本文将以在 CentOS 7.5 操作系统中使用 parted 分区工具将数据盘 `/dev/vdc` 设置为主分区，分区形式默认设置为 GPT，文件系统设置为 EXT4 格式，挂载在 `/data/newpart2` 下，并设置开机启动自动挂载为例，不同操作系统的格式化操作可能不同，本文仅供参考。
 
 1. [登录 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/5436)
 2. 以 root 用户执行以下命令，查看磁盘名称。
@@ -221,8 +221,8 @@ df -TH
 ```  回显信息类似如下图：
 ![](https://main.qcloudimg.com/raw/774c2d9ff266634c4836df6456b9dd4d.png)
 表示新建分区 `/dev/vdc1` 已挂载至 `/data/newpart2`。
->?若无需设置开机自动挂载磁盘，则跳过后续步骤。
->
+若无需设置开机自动挂载磁盘，则跳过后续步骤。
+
 16. 确认挂载方式并获取对应信息。
  您可以根据业务需求选择使用弹性云硬盘的软链接、文件系统的 UUID（universally unique identifier）或设备名称自动挂载磁盘，相关说明和信息获取方式如下：
  <table>
