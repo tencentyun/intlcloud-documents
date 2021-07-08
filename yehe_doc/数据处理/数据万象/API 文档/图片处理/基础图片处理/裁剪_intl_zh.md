@@ -85,8 +85,8 @@ download_url?imageMogr2/cut/<width>x<height>x<dx>x<dy>
 
 >!
 > - 当 gravity 参数设置为 center 时，dx、dy 参数无效。
-> - 当 gravity 参数设置为 north 或 south 时，dx 参数无效（水印会水平居中）。
-> - 当 gravity 参数设置为 west 或 east 时，dy 参数无效（水印会垂直居中）。
+> - 当 gravity 参数设置为 north 或 south 时，dx 参数无效。
+> - 当 gravity 参数设置为 west 或 east 时，dy 参数无效。
 > 
 
 
