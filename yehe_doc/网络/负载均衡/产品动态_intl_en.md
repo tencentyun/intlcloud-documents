@@ -13,7 +13,7 @@
 <td>Supports health check logs</td> 
 <td>CLB supports storing layer-4 and layer-7 health check logs in CLS, reporting logs every minute, and querying logs with multiple rules.</td> 
 <td>May 21, 2021</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/214/40509">Configuring Health Check Logs</a></td> 
+<td>Configuring Health Check Logs</a></td> 
 </tbody>
 </table>
 
@@ -489,6 +489,6 @@
 <td>Releases Cloud Load Balancer</td>
 <td>CLB provides secure and fast traffic distribution services. It can seamlessly allocate the load balancing capacity required for application traffic, and automatically distribute application access traffic among CVM instances in the cloud to enhance fault tolerance.</td>
 <td>December 2014</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/2144">Cloud Load Balancer</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214">Cloud Load Balancer</a></td>
 </tr>
 </tbody></table>
