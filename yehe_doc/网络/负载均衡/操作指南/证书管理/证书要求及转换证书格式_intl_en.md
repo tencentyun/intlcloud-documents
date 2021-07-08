@@ -56,7 +56,7 @@ Upload `new_server_key.pem` content together with the certificate.
 ## Converting Certificates to PEM Format
 Currently, CLB only supports certificates in the PEM format. Certificates in other formats need to be converted to the PEM format first before uploading. We recommend using OpenSSL. The following shows how to convert several common formats to PEM.
 <dx-tabs>
-::: From DER\s to \sPEM\s
+::: From\sDER\sto\sPEM
 The DER format is generally used on Java platforms.
 Certificate conversion: 
 ```
@@ -67,7 +67,7 @@ Private key conversion:
 openssl rsa -inform DER -outform PEM -in privatekey.der -out privatekey.pem
 ```
 :::
-::: From P7B\s to \sPEM\s
+::: From\sP7B\sto\sPEM
 The P7B format is generally used on Windows Server and Tomcat.
 Certificate conversion: 
 ```
@@ -76,7 +76,7 @@ openssl pkcs7 -print_certs -in incertificat.p7b -out outcertificate.cer
 You need to get the content of "——-BEGIN CERTIFICATE——-" and "——-END CERTIFICATE——-" in `outcertificat.cer` and upload it as the certificate.
 Private key conversion: private keys can be exported on IIS servers.
 :::
-::: From PFX\s to \sPEM\s
+::: From\sPFX\sto\sPEM
 The PFX format is generally used on Windows Server.
 Certificate conversion: 
 ```
@@ -87,7 +87,7 @@ Private key conversion:
 openssl pkcs12 -in certname.pfx -nocerts -out key.pem -nodes
 ```	
 :::
-::: From CER/CRT\s to \sPEM\s
+::: From\sCER/CRT\sto\sPEM
 You can convert certificates in CER/CRT formats to PEM by directly modifying their file extension names. For example, you can rename the `servertest.crt` certificate file as `servertest.pem`.
 :::
 </dx-tabs>
