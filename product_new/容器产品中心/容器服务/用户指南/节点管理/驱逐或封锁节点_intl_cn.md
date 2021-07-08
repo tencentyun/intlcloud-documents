@@ -11,14 +11,18 @@
 #### 方法一
 
 [新增节点](https://intl.cloud.tencent.com/document/product/457/30652) 时，在 “云服务器配置” 页面，单击【高级设置】，勾选 “开启封锁”。
+![](https://main.qcloudimg.com/raw/037232a406de9c6aba88662896edb9d5.png)
+
 
 #### 方法二
 
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 在左侧导航栏中，单击【[集群](https://console.cloud.tencent.com/tke2/cluster?rid=1)】，进入集群管理页面。
-3. 单击需要封锁节点的集群 ID/名称，进入该集群的管理页面。
+3. 单击需要封锁节点的集群 ID/名称，进入该集群的管理页面。如下图所示：
+![](https://main.qcloudimg.com/raw/b8c00a8ebed60c3e7c2169ae901f2eb1.png)
 4. 在左侧导航栏中，选择 “节点管理” > “节点”，进入“节点列表” 页面。
-5. 在节点列表中，选择需要封锁的节点行，单击【封锁】。
+5. 在节点列表中，选择需要封锁的节点行，单击【封锁】。如下图所示：
+![](https://main.qcloudimg.com/raw/1223786bd47bd64f72a2610093d9cf82.png)
 6. 在弹出的对话框中，单击【确定】，即可完成封锁。
 
 ### 取消封锁节点
@@ -45,9 +49,11 @@ kubectl uncordon ${node} --kubeconfig=/root/.kube/config
 
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 在左侧导航栏中，单击【[集群](https://console.cloud.tencent.com/tke2/cluster?rid=1)】，进入集群管理页面。
-3. 单击需要取消封锁节点的集群 ID/名称，进入该集群的管理页面。
+3. 单击需要取消封锁节点的集群 ID/名称，进入该集群的管理页面。如下图所示：
+![](https://main.qcloudimg.com/raw/90b8582a585f296f797c0ecd316c3045.png)
 4. 在左侧导航栏中，选择 “节点管理” > “节点”，进入“节点列表” 页面。
-5. 在节点列表中，选择需要取消封锁的节点行，单击【取消封锁】。
+5. 在节点列表中，选择需要取消封锁的节点行，单击【取消封锁】。如下图所示：
+![](https://main.qcloudimg.com/raw/cc8c6f0b271ad7fb839dd689348104a1.png)
 6. 在弹出的对话框中，单击【确定】，即可完成取消封锁。
 
 ### 驱逐节点
@@ -61,8 +67,10 @@ kubectl uncordon ${node} --kubeconfig=/root/.kube/config
 
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 在左侧导航栏中，单击【[集群](https://console.cloud.tencent.com/tke2/cluster?rid=1)】，进入集群管理页面。
-3. 单击需要取消封锁节点的集群 ID/名称，进入该集群的管理页面。
+3. 单击需要驱逐节点的集群 ID/名称，进入该集群的管理页面。如下图所示：
+![](https://main.qcloudimg.com/raw/549dd5be2af3ebf26a31a313e832bbf0.png)
 4. 在左侧导航栏中，选择 “节点管理” > “节点”，进入“节点列表” 页面。
-5. 在需要驱逐节点的节点行中，单击【更多】>【驱逐】。
+5. 在需要驱逐节点的节点行中，单击【更多】>【驱逐】。如下图所示：
+![](https://main.qcloudimg.com/raw/d1d4f0fdd6cd819958046aa36a2f0f24.png)
 6. 在弹出的对话框中，单击【确定】，即可完成驱逐。
 
