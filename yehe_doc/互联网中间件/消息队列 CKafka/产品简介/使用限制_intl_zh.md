@@ -3,11 +3,11 @@
 
 | 限制项 | 说明 |
 |---------|---------|
-| Topic 总数量 | 根据产品规格不同固定上限。|
-| Partition 数量 | <li>标准版：单 Topic 支持的 Partition 数量限制为24个。</li><li>实例级别 Partition 数量限制包含了副本数量，副本数量一般为2或者3。</li><li>不支持缩减partition数量。</li>|
-| Consumer group 数量 |<li>标准版：实例级别 Consumer group 默认限制为50个。</li>|
-| 实例 | <li>不支持变更实例地域属性。</li><li>客户端实例最大连接数量为5000。</li>|
-| 版本 | <li>标准版：兼容开源0.9、0.10、1.1版本，默认安装1.1版本，不支持定制版本。</li> |
+| Topic 总数量 | 根据产品规格不同固定上限。 |
+| Partition 数量 | <li>标准版：单 Topic 支持的 Partition 数量限制为24个。</li><li>专业版：单 Topic 支持的 Partition 数量限制为500个。</li><li>实例级别 Partition 数量限制包含了副本数量，副本数量一般为2或者3。</li><li>不支持缩减partition数量。</li>|
+| Consumer group 数量 |<li>标准版：实例级别 Consumer group 默认限制为50个。</li><li>专业版：实例级别 Consumer group 限制初始为50个，可以 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 申请升级到最高500个。</li>|
+| 实例 | <li>不支持变更实例地域属性。</li><li>客户端实例最大连接数量为5000，实例连接超过该最大值会导致客户端无法创建新的连接，如评估该最大值在实际业务中不合理可以 [提交工单](https://console.intl.cloud.tencent.com/workorder/category) 申请扩大。</li>|
+| 版本 | <li>标准版：兼容开源0.9、0.10、1.1版本，默认安装1.1版本，不支持定制版本。</li><li>专业版：兼容开源0.9、0.10、1.1、2.4版本。</li> |
 | 多路由 | 单个实例最多创建5条路由，只能创建1条公网路由。|
 | 暴露 Zookeeper | 不支持。|
 | 暴露底层资源 | 不支持，避免用户自行操作所带来的风险。|

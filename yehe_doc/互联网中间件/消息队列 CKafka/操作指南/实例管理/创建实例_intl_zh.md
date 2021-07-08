@@ -1,18 +1,24 @@
 ## 操作场景
 
-该任务指导您通过 CKafka 控制台创建实例，快速了解 CKafka 控制台操作流程。
+该任务指导您通过 CKafka 控制台创建实例和 Topic，快速了解 CKafka 控制台操作流程。
 
 ## 操作步骤
 
 1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 。
 2. 在左侧导航栏单击【实例列表】，单击【新建】进入实例购买页。
 3. 在实例购买页，根据自身业务需求选择购买信息。
-   ![](https://main.qcloudimg.com/raw/053e51b2105b9ac14f4eacdb33130bb2.png)
-  - 计费模式：按需计费
-  - 地域：选择和部署客户端的资源相近的地域
-  - 可用区：根据实际需要选择可用区
-  - 峰值带宽：根据实际需要选择峰值带宽
-  - 消息保留：1-2160小时
-  - 私有网络：若用户需要接入其他私有网络可参考 [添加路由策略](https://intl.cloud.tencent.com/document/product/597/32555) 修改路由接入规则
+	 ![](https://main.qcloudimg.com/raw/7fa7a951705943382c2836afc78a022c.png)
+	- 计费模式：包年包月
+	- 规格类型：根据自身业务需求选择标准版或者专业版。
+	- Kafka 版本：根据您的业务需求选择 Kafka 版本，可参考 [CKafka 版本选择建议](https://cloud.tencent.com/document/product/597/57243)。
+	- 地域：选择和部署客户端的资源相近的地域。
+	- 可用区：根据实际需要选择可用区。
+		- 标准版：不支持多可用区部署。
+		- 专业版：若当前地域支持多可用区部署，则最多可选择2个可用区进行部署。关于跨可用区部署原理介绍请参考 [跨可用区部署](https://intl.cloud.tencent.com/document/product/597/40243)。
+	- 产品规格：根据峰值带宽和磁盘容量选择对应的型号。
+	- 消息保留：范围在 24 ～ 2160 小时。
+		在磁盘容量不足（即磁盘水位达到90%）时，将会提前删除旧的消息，以确保服务可用性。
+	- 私有网络：若用户需要接入其他私有网络可参考 [添加路由策略](https://intl.cloud.tencent.com/document/product/597/32555) 修改路由接入规则。
+	- 购买时长：可设置到期后按月自动续费。
 4. 单击【立即购买】，完成实例创建。
-   ![](https://main.qcloudimg.com/raw/38933dab24f3e9a16941609518d73c70.png)
+   ![](https://main.qcloudimg.com/raw/d7df4ac342594f0016e57878921ba06d.png)
