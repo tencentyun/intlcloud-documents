@@ -1,21 +1,19 @@
-Apache Spark is an open-source project for fast, general-purpose, large-scale data processing. Its framework is similar to Hadoop's MapReduce but faster and more efficient for batch processing. It utilizes in-memory caching and optimized execution for fast performance, and it supports reading/writing Hadoop data in any format. Now Apache Spark has become a unified big data processing platform with a lightning-fast unified analysis engine for real-time streaming processing, machine learning, and ad hoc queries.
+Apache Spark is an open-source project for fast, general-purpose, large-scale data processing. It is similar to Hadoop's MapReduce but faster and more efficient for batch processing. It utilizes in-memory caching and optimized execution for fast performance, and it supports reading/writing Hadoop data in any format. Now Spark has become a unified big data processing platform with a lightning-fast analysis engine for real-time streaming processing, machine learning, and interactive queries.
 
 Spark is an in-memory parallel computing framework for big data processing. Its in-memory computing feature improves the real-time performance of data processing in a big data environment, while ensuring high fault tolerance and scalability. Spark can be deployed on a large number of inexpensive hardware devices to create clusters.
 
-- The job submitted in this tutorial is a wordcount job, i.e., counting the number of words. You need to upload the file for counting to the cluster in advance.
+The task submitted in this tutorial is a wordcount task, i.e., counting the number of words. You need to upload the file for counting to the cluster in advance.
 
-## 1. Preparations for Development
-- You need to [create a bucket](https://intl.cloud.tencent.com/document/product/436/13309) in COS for this job.
-- Confirm that you have activated Tencent Cloud and created an EMR cluster. When creating your EMR cluster, click the Spark component on the software configuration page, click "Enable COS" on the basic configuration page and then enter your SecretId and SecretKey. You can find your SecretId and SecretKey at [API Key Management](https://console.cloud.tencent.com/cam/capi). If you don’t have a SecretKey, click **Create Key** to create one.
+## 1. Development Preparations
+- This task requires access to COS, so you need to [create a bucket](https://intl.cloud.tencent.com/document/product/436/13309) in COS first.
+- Create an EMR cluster. When creating the EMR cluster, you need to select the Spark component on the software configuration page and enable access to COS on the basic configuration page.
 
-## 2. Using Maven to Create a Project
-In this tutorial, the demo that comes with the system is not used; instead, you need to create a project and compile, compress, and upload it to the EMR cluster on your own for execution.
+## 2. Creating a Project with Maven
+Here, the demo that comes with the system is not used; instead, you need to create a project and compile, compress, and upload it to the EMR cluster on your own for execution. Maven is recommended for project management, as it can help you manage project dependencies with ease. Specifically, it can get .jar packages through the configuration of the `pom.xml` file, eliminating the need to add them manually.
 
-Maven is recommended for project management, as it can help you manage project dependencies with ease. Specifically, it can get .jar packages through the configuration of the pom.xml file, eliminating your need to add them manually.
+Download and install Maven, then configure its environment variables. If you are using the IDE, please set the Maven-related configuration in the IDE.
 
-Download and install Maven first and then configure its environment variables. If you are using the IDE, please set the Maven-related configuration items in the IDE.
-
-###	 Creating a Maven project
+###	 Creating a Maven Project
 
 In the local shell environment, enter the directory where you want to create the Maven project, such as `D://mavenWorkplace`, and enter the following command to create it:
 ```
@@ -23,7 +21,7 @@ mvn archetype:generate -DgroupId=$yourgroupID -DartifactId=$yourartifactID -Darc
 ```
 Here, $yourgroupID is your package name, $yourartifactID is your project name, and maven-archetype-quickstart indicates to create a Maven Java project. Some files need to be downloaded during the project creation, so please keep the network connected.
 
-After successfully creating the project, you will see a folder named $yourartifactID in the `D://mavenWorkplace` directory. The files included in the folder have the following structure:
+After successfully creating the project, you will see a folder named `$yourartifactID` in the `D://mavenWorkplace` directory. Files in the folder have the following structure:
 ```
 simple
 	---pom.xml　　　　Core configuration, under the project root directory
@@ -35,7 +33,7 @@ simple
 			 ---java　　　　  Test source code directory
 			 ---resources　  Test configuration directory
 ```
-Among the files above, pay extra attention to the pom.xml file and the Java folder under the main directory. The pom.xml file is primarily used to create dependencies and package configurations; the Java folder is used to store your source code.
+Among the files above, pay extra attention to the pom.xml file and the Java folder under the main directory. The pom.xml file is primarily used to create dependencies and package configurations; the Java folder is used to store your source codes.
 
 First, add the Maven dependencies to pom.xml:
 ```
@@ -110,21 +108,21 @@ mvn package
 ```
 Some files may need to be downloaded during the running process. "Build success" indicates that package is successfully created. You can see the generated .jar package in the target folder under the project directory.
 
-### Data preparations
-First, you need to upload the compressed .jar package to the EMR cluster with the scp or sftp tool by running the following command in local command line mode:
+### Data Preparations
+First, you need to upload the compressed .jar package to the EMR cluster using the scp or sftp tool by running the following command in local command line mode:
 ```
 scp $localfile root@public IP address:$remotefolder
 ```
-Here, $localfile is the path and the name of your local file; root is the CVM instance username. You can look up the public IP address in the node information in the EMR or CVM Console. $remotefolder is the path where you want to store the file in the CVM instance. After the upload is completed, you can check whether the file is in the corresponding folder on the EMR command line.
+Here, `$localfile` is the path plus name of your local file; `root` is the CVM instance username. You can look up the public IP address in the node information in the EMR console or the CVM console. `$remotefolder` is the path where you want to store the file in the CVM instance. After the upload is completed, you can check whether the file is in the corresponding folder on the EMR command line.
 
-The file to be processed needs to be uploaded to COS in advance. If the file is in your local file system, you can upload it directly through the [COS Console](https://intl.cloud.tencent.com/document/product/436/13321); if it is in the EMR cluster, you can upload it by running the following Hadoop command:
+You need to upload the to-be-processed file to COS in advance. If the file is in your local storage, you can upload it directly via the [COS console](https://intl.cloud.tencent.com/document/product/436/13321); if it is in the EMR cluster, you can upload it by running the following Hadoop command:
 ```
 [hadoop@10 hadoop]$ hadoop fs -put $testfile cosn://$bucketname/
 ```
-Here, $testfile is the full path plus name of the file for counting, and $bucketname is your bucket name. After the upload is completed, you can check whether the file is present in COS in the COS Console.
+Here, `$testfile` is the full path plus name of the file for counting, and `$bucketname` is your bucket name. After the upload is completed, you can check whether the file is present in COS in the COS console.
 
-### Running the demo
-First, you need to log in to any node (preferably a master one) in the EMR cluster. For more information on how to log in to EMR, please see [Logging in to Linux Instances](https://intl.cloud.tencent.com/document/product/213/5436). Here, you can choose to log in with WebShell. Click "Log in" on the right of the desired CVM instance to enter the login page. The default username is `root`, and the password is the one you set when creating the EMR cluster. Once the correct credentials are entered, you can enter the command line interface.
+### Running the Demo
+First, log in to any node (preferably a master one) in the EMR cluster. For information about how to log in to EMR, see [Logging in to Linux Instance Using Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436). Here, you can use WebShell to log in. Click **Login** on the right of the desired CVM instance to go to the login page. The default username is `root`, and the password is the one you set when creating the EMR cluster. Once your credentials are validated, you can enter the command line interface.
 
 Run the following command in EMR command-line interface to switch to the Hadoop user:
 ```
@@ -132,13 +130,13 @@ Run the following command in EMR command-line interface to switch to the Hadoop 
 ```
 Then, go to the folder where the .jar package is stored and run the following command:
 ```
-[hadoop@10spark]$ spark-submit    --class    $WordCountOnCOS    --master 
+[hadoop@10spark]$    spark-submit    --class    $WordCountOnCOS    --master 
 yarn-cluster $packagename.jar cosn:// $bucketname /$testfile cosn:// $bucketname 
 /output
 ```
-Here, $WordCountOnCOS is your Java Class name, $packagename is the name of the .jar package generated in the new Maven project you created, $bucketname is your bucket name plus path, and $testfile is the name of the file for counting. The output file is stored in the output folder **which cannot be created beforehand; otherwise, the execution will fail**.
+Here, `$WordCountOnCOS` is your Java Class name, `$packagename` is the name of the .jar package generated in the new Maven project you created, `$bucketname` is your bucket name plus path, and `$testfile` is the name of the file for counting. The output file is stored in the output folder, **which cannot be created beforehand; otherwise, the execution will fail**.
 
-After successful execution, you can see the result of the wordcount job in the specified bucket and folder.
+After successful execution, you can see the result of the wordcount task in the specified bucket and folder.
 ```
 [hadoop@172 /]$ hadoop fs -ls cosn:// $bucketname /output
 Found 3 items

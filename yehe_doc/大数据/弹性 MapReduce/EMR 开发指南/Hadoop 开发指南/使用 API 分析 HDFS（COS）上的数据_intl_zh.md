@@ -2,8 +2,7 @@
 
 ## 1. 开发准备
 - 由于任务中需要访问腾讯云对象存储（COS），所以需要在 COS 中先 [创建一个存储桶（Bucket）](https://intl.cloud.tencent.com/document/product/436/13309)。
-
-- 确认您已经开通了腾讯云，并且创建了一个 EMR 集群。在创建 EMR 集群的时候在基础配置页面勾选“开启 COS”，并在下方填写自己的 SecretId 和 SecretKey。SecretId 和 SecretKey 可以在 [API 密钥管理界面](https://console.cloud.tencent.com/cam/capi) 查看。如果还没有密钥，请单击【新建密钥】建立一个新的密钥。
+- 确认您已经开通了腾讯云，并且创建了一个 EMR 集群。在创建 EMR 集群的时候需要选择包含 HDFS 的集群类型，并在基础配置页面开启对象存储的授权。
 
 ## 2. 登录 EMR 服务器
 在做相关操作前需要登录到 EMR 集群中的任意一个机器，最好是登录到 Master 节点。EMR 是建立在 Linux 操作系统的腾讯云服务器 CVM 上的，所以在命令行模式下使用 EMR 需要登录 CVM 服务器。
@@ -61,14 +60,12 @@ scp $localfile root@公网IP地址:$remotefolder
 ### 数据存放在 COS
 数据存放在 COS 中有两种方式：**从本地直接通过 COS 的控制台上传**和**通过 Hadoop 命令上传**。
 - 从本地直接通过 [COS 控制台直接上传](https://intl.cloud.tencent.com/document/product/436/13321)，数据文件上传后，可通过如下命令查看：
-
 ```
 [hadoop@10 hadoop]$ hadoop fs -ls cosn://$bucketname/ test.txt
 -rw-rw-rw- 1 hadoop hadoop 1366 2017-03-15 19:09 cosn://$bucketname/test.txt
 ```
 其中 $bucketname 替换成您的储存桶的名字加路径。
 - 通过 Hadoop 命令上传，指令如下：
-
 ```
 [hadoop@10 hadoop]$ hadoop fs -put test.txt cosn://$bucketname /
 [hadoop@10 hadoop]$ hadoop fs -ls cosn:// $bucketname / test.txt
@@ -81,12 +78,13 @@ scp $localfile root@公网IP地址:$remotefolder
 首先下载并安装 Maven，配置好 Maven 的环境变量，如果您使用 IDE，请在 IDE 中设置好 Maven 相关配置。
 
 ### 新建一个 Maven工程
-在命令行下进入您想要新建工程的目录，例如 `D://mavenWorkplace` 中，输入如下命令新建一个 Maven 工程：
+在命令行下进入您想要新建工程的目录，例如`D://mavenWorkplace`中，输入如下命令新建一个 Maven 工程：
 ```
 mvn     archetype:generate     -DgroupId=$yourgroupID     -DartifactId=$yourartifactID 
 -DarchetypeArtifactId=maven-archetype-quickstart
 ```
 其中 `$yourgroupID` 即为您的包名；`$yourartifactID` 为您的项目名称；`maven-archetype-quickstart` 表示创建一个 Maven Java  项目，工程创建过程中需要下载一些文件，请保持网络通畅。
+
 创建成功后，在`D://mavenWorkplace`目录下就会生成一个名为`$yourartifactID`的工程文件夹。其中的文件结构如下所示：
 ```
 simple
@@ -231,11 +229,13 @@ public class WordCount {
 }
 ```
 可以看到其中有一个 Map 函数和一个 Reduce 函数。
+
 如果您的 Maven 配置正确并且成功的导入了依赖包，那么整个工程即可直接编译。在本地 shell 下进入工程目录，执行下面的命令对整个工程进行打包：
 ```
 mvn package
 ```
 运行过程中可能还需要下载一些文件，直到出现 build success 表示打包成功。然后您可以在工程目录下的 target 文件夹中看到打好的 jar 包。
+
 使用 scp 或者 sftp 服务来把打包好的工程文件上传到 EMR 集群的云服务器中。在本地 shell 使用：
 ```
 scp $jarpackage root@公网IP地址: /usr/local/service/hadoop
@@ -244,7 +244,6 @@ scp $jarpackage root@公网IP地址: /usr/local/service/hadoop
 
 ### 统计 HDFS 中的文本文件
 进入 `/usr/local/service/hadoop` 目录，和数据准备中一样。通过如下命令来提交任务：
-
 ```
 [hadoop@10 hadoop]$ bin/hadoop jar 
 /usr/local/service/hadoop/WordCount-1.0-SNAPSHOT-jar-with-dependencies.jar

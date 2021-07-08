@@ -1,19 +1,17 @@
 The WordCount application is a great example that gives you a hands-on experience in developing your first Hadoop MapReduce application. In this tutorial, you will learn how to implement WordCount example code in MapReduce to count the number of occurrences of a given word in the input file stored in HDFS or in COS. The program is the same as the one shown in the Hadoop community.
 
-## 1. Prerequisites
-- You need to [create a bucket](https://intl.cloud.tencent.com/document/product/436/13309) in COS for this task.
-
-- Confirm that you have activated Tencent Cloud and created an EMR cluster. When creating the EMR cluster, select "Enable COS" on the basic configuration page and enter your SecretId and SecretKey, which can be found on the [API Key Management](https://console.cloud.tencent.com/cam/capi) page. If you don't have a key yet, click **Create Key** to create one.
+## 1. Development Preparations
+- This task requires access to COS, so you need to [create a bucket](https://intl.cloud.tencent.com/document/product/436/13309) in COS first.
+- Create an EMR cluster. When creating the EMR cluster, you need to select a cluster type that includes HDFS and enable access to COS on the basic configuration page.
 
 ## 2. Logging in to an EMR Server
-You need to log in to any server in the EMR cluster first before performing the relevant operations. A master node is recommended for this step. EMR is built on CVM instances running on Linux; therefore, using EMR in command line mode requires logging in to an CVM instance.
+Log in to any node (preferably a master node) in the EMR cluster before performing relevant operations. EMR is built on CVM instances running on Linux; therefore, using EMR in command line mode requires logging in to an CVM instance.
 
-After creating the EMR cluster, select Elastic MapReduce in the console, find the cluster you just created in the cluster list, select the CVM instance ID of the active master node in **Details** > **Cluster Resource** > **Resource Management** > **Master Nodes** on the right to enter the CVM Console, and find the instance of the EMR cluster.
+After creating the EMR cluster, select **Elastic MapReduce** in the console, click the ID/name of the cluster you just created in the cluster list, click **Cluster Resource** > **Resource Management** > **Master**, and click the resource ID of an active master node to enter the CVM console and find the CVM instance of the EMR cluster.
 
+For information about how to log in to a CVM instance, see [Logging in to Linux Instance Using Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436). Here, you can use WebShell to log in. Click **Login** on the right of the desired CVM instance to go to the login page. The default username is `root`, and the password is the one you set when creating the EMR cluster.
 
-For more information about how to log in to a CVM instance, please see [Logging in to a Linux Instance](https://intl.cloud.tencent.com/document/product/213/5436). Here, you can use WebShell to log in. Click *Login* on the right of the desired CVM instance and then enter the login page. The default username is root, and the password is the one you set when creating the EMR cluster.
-
-Once your credentials have been validated, you can access the EMR command-line interface. All Hadoop operations are under the Hadoop user. The root user is logged in by default when you log in to the EMR server, so you need to switch to the Hadoop user. Run the following command to switch users and go to the Hadoop folder:
+Once your credentials are validated, you can enter the EMR command line interface. All Hadoop operations should be performed under the `Hadoop` user. The `root` user is logged in by default when you log in to the EMR node, so you need to switch to the `Hadoop` user. Run the following command to switch users and go to the `Hadoop` folder:
 ```
 [root@172 ~]# su hadoop
 [hadoop@172 root]$ cd /usr/local/service/hadoop
@@ -21,9 +19,9 @@ Once your credentials have been validated, you can access the EMR command-line i
 ```
 
 ## 3. Data Preparations
-Prepare a input text file. You can either **store data in an HDFS cluster** or **store data in COS**. 
+Prepare an input text file. You can either **store data in an HDFS cluster** or **store data in COS**. 
 
-First, create a .txt file named test.txt locally and add the following English sentences to the file:
+First, create a .txt file named `test.txt` locally and add the following sentences to the file:
 ```
 Hello World.
 this is a message.
@@ -42,10 +40,10 @@ After the upload is completed, you can check whether the file is in the correspo
 [hadoop@172 hadoop]$ ls –l
 ```
 
-### Storing data in HDFS
-After uploading the data to the CVM instance, you can copy it to the HDFS cluster. Copy the file to the Hadoop cluster by running the following command:
+### Storing Data in HDFS
+After uploading the data to the CVM instance, you can copy the data file to the Hadoop cluster by running the following command:
 ```
-[hadoop@172 hadoop]$ hadoop fs -put /usr/local/service/Hadoop/test.txt /user/hadoop/
+[hadoop@172 hadoop]$ hadoop fs -put /usr/local/service/hadoop/test.txt /user/hadoop/
 ```
 After the copy is completed, run the following command to view the copied file:
 ```
@@ -57,21 +55,17 @@ If there is no `/user/hadoop` folder in Hadoop, you can create it on your own by
 ```
 [hadoop@172 hadoop]$ hadoop fs –mkdir /user/hadoop
 ```
-For more Hadoop commands, please see [Common HDFS Operations](https://intl.cloud.tencent.com/document/product/1026/31124).
+For more Hadoop commands, see [HDFS Common Operations](https://intl.cloud.tencent.com/document/product/1026/31124).
 
-### Storing data in COS
-There are two ways to store data in COS: **uploading via the COS Console from the local file system** and **uploading via Hadoop command**.
-- When [uploading through the COS Console](https://intl.cloud.tencent.com/document/product/436/13321) from the local file system, you can view the data file after uploaded by running the following command:
-
+### Storing Data in COS
+There are two ways to store data in COS: **uploading via the COS console from the local storage** and **uploading via a Hadoop command**.
+- When [uploading via the COS console from the local storage](https://intl.cloud.tencent.com/document/product/436/13321), you can view the uploaded data file by running the following command:
 ```
 [hadoop@10 hadoop]$ hadoop fs -ls cosn://$bucketname/ test.txt
 -rw-rw-rw- 1 hadoop hadoop 1366 2017-03-15 19:09 cosn://$bucketname/test.txt
 ```
-
-Replace $bucketname with the name and path of your bucket.
-
+Replace `$bucketname` with the name and path of your bucket.
 - To upload via Hadoop command, run the following command:
-
 ```
 [hadoop@10 hadoop]$ hadoop fs -put test.txt cosn://$bucketname /
 [hadoop@10 hadoop]$ hadoop fs -ls cosn:// $bucketname / test.txt
@@ -79,18 +73,19 @@ Replace $bucketname with the name and path of your bucket.
 ```
 
 ## 4. Creating a Project with Maven
-Maven is recommended for project management, as it can help you manage project dependencies with ease. Specifically, it can get .jar packages through the configuration of the pom.xml file, eliminating your need to add them manually.
+Maven is recommended for project management. It can help you manage project dependencies with ease. Specifically, it can get .jar packages through the configuration of the `pom.xml` file, eliminating the need to add them manually.
 
 Download and install Maven first and then configure its environment variables. If you are using the IDE, please set the Maven-related configuration items in the IDE.
 
-### Creating a Maven project
-Enter the directory of the Maven project, such as `D://mavenWorkplace`, and create the project by running the following commands:
+### Creating a Maven Project
+Enter the directory of the Maven project, such as `D://mavenWorkplace`, and create the project using the following commands:
 ```
 mvn     archetype:generate     -DgroupId=$yourgroupID     -DartifactId=$yourartifactID 
 -DarchetypeArtifactId=maven-archetype-quickstart
 ```
-Here, `$yourgroupID` is your package name, `$yourartifactID` is your project name, and `maven-archetype-quickstart` indicates to create a Maven Java project. Some files need to be downloaded for creating the project, so please keep the network connected.
-After successfully creating the project, you will see a folder named `$yourartifactID` in the `D://mavenWorkplace` directory. The files included in the folder have the following structure:
+Here, `$yourgroupID` is your package name, `$yourartifactID` is your project name, and `maven-archetype-quickstart` indicates to create a Maven Java project. Some files need to be downloaded during the project creation, so please keep the network connected.
+
+After successfully creating the project, you will see a folder named `$yourartifactID` in the `D://mavenWorkplace` directory. Files in the folder have the following structure:
 ```
 simple
 　　　---pom.xml　　　　Core configuration, under the project root directory
@@ -234,26 +229,27 @@ public class WordCount {
 }
 ```
 As you can see, there is a Map function and a Reduce function.
-If your Maven is configured correctly and its dependencies are successfully imported, the project will be compiled directly. Enter the project directory in the local shell, and run the following command to package the entire project:
+
+If your Maven is configured correctly and its dependencies are successfully imported, the project can be compiled directly. Enter the project directory in the local shell, and run the following command to package the entire project:
 ```
 mvn package
 ```
 Some files may need to be downloaded during the running process. "Build success" indicates that package is successfully created. You can see the generated .jar package in the target folder under the project directory.
-Upload the packaged project file to the CVM instance of the EMR cluster by using the scp or sftp service. Run the following command in the local shell:
+
+Upload the packaged project file to the CVM instance of the EMR cluster using the scp or sftp service. Run the following command in the local shell:
 ```
 scp $jarpackage root@public IP address: /usr/local/service/hadoop
 ```
-Here, `$jarpackage` is the path plus name of your local .jar package; root is the CVM instance username; and the public IP address can be viewed in the node information in the EMR or CVM Console. The file is uploaded to the `/usr/local/service/hadoop` folder in the EMR cluster.
+Here, `$jarpackage` is the path plus name of your local .jar package; `root` is the CVM instance username; and the public IP address can be viewed in the node information in the EMR console or the CVM console. The file is uploaded to the `/usr/local/service/hadoop` folder of the EMR cluster.
 
-### Counting a text file in HDFS
+### Counting a Text File in HDFS
 Go to the `/usr/local/service/hadoop` directory as described in data preparations, and submit the task by running the following command:
-
 ```
 [hadoop@10 hadoop]$ bin/hadoop jar 
 /usr/local/service/hadoop/WordCount-1.0-SNAPSHOT-jar-with-dependencies.jar
 WordCount /user/hadoop/test.txt /user/hadoop/WordCount_output
 ```
-> Above is a complete command, where `/user/hadoop/ test.txt` is the input file and `/user/hadoop/ WordCount_output` is the address of the output folder. You should not create the `WordCount_output` folder before the command is submitted; otherwise, the submission will fail.
+>!Above is a complete command, where `/user/hadoop/ test.txt` is the input file and `/user/hadoop/ WordCount_output` is the output folder. You should not create the `WordCount_output` folder before the command is submitted; otherwise, the submission will fail.
 
 After the execution is completed, view the output file by running the following command:
 
@@ -279,7 +275,7 @@ world,	1
 you?	1……
 ```
 
-### Counting a text file in COS
+### Counting a Text File in COS
 Go to the `/usr/local/service/hadoop` directory and submit the task by running the following command:
 ```
 [hadoop@10 hadoop]$ hadoop jar

@@ -1,8 +1,8 @@
 This document describes more ways to use Impala based on COS with data from direct data insertion and COS.
 
-## Preparations
-1. To access COS in the task, you need to [create a bucket](https://intl.cloud.tencent.com/document/product/436/13309) in COS first. To access CHDFS in the task, you need to create and mount a CHDFS instance. Make sure you have activated the Tencent Cloud service and created an EMR cluster.
-2. When creating your EMR cluster, select the Impala component on the software configuration page, select **Enable COS** on the basic configuration page, and enter your SecretId and SecretKey. You can find your SecretId and SecretKey at the [API key management](https://console.cloud.tencent.com/cam/capi) page. If you don't have a key, click **Create Key** to create one.
+## Development Preparations
+1. This task requires access to COS, so you need to [create a bucket](https://intl.cloud.tencent.com/document/product/436/13309) in COS first.
+2. Create an EMR cluster. When creating the EMR cluster, you need to select the Impala component on the software configuration page and enable access to COS on the basic configuration page.
 3. Relevant software programs such as Impala are installed in the `/usr/local/service/` directory of the CVM instance for the EMR cluster.
 
 ## Directions
