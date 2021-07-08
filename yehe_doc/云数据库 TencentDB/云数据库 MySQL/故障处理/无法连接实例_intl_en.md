@@ -4,6 +4,7 @@
 - [Symptom 2](id:xz2): failed to connect to or log in to a TencentDB for MySQL instance from a local device.
 - [Symptom 3](id:xz3): failed to connect to or log in to a TencentDB for MySQL instance from DMC.
 
+
 ## Possible Causes
 <table>
 <thead><tr><th width=15%>Possible Cause</th><th width=35%>Description</th><th width=15%>Possible Cause</th><th width=35%>Description</th></tr></thead>
@@ -41,7 +42,7 @@ If the causes cannot be located by the one-click connectivity checker, you can [
 ## Troubleshooting Procedure
 ### Symptom 1 and 2: troubleshooting the CVM or local connection issues
 #### [Step 1. Use the one-click connectivity checker to locate causes and solve the issues](id:step1)
-1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click the ID/name of the instance to be checked and access the instance management page.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click the ID of the instance to be checked and access the instance management page.
 2. Select **Connection Check** > **Private Network Check** or **Public Network Check**.
 >?You can view the private and public network addresses in the **Basic Info** section on the **Instance Details** page.
 3. Add CVMs or public network servers that need to access the MySQL instance.
@@ -72,6 +73,7 @@ If the causes cannot be located by the one-click connectivity checker, you can [
 <td>MySQL security group policy</td>
 <td>The <strong>inbound rule</strong> of the MySQL instance's security group rejects the access from the IP and port of the CVM instance. Please refer to <a href="#maqzpzyw">Incorrect MySQL security group configuration</a> to modify the inbound rule to allow the access from the IP and port of the CVM instance.</td></tr>
 </tbody></table>
+
    - Check items and corresponding solutions in the public network check are as follows:
 <table>
 <thead><tr><th>Check Item</th><th>Exception Handling</th></tr></thead>
@@ -81,6 +83,8 @@ If the causes cannot be located by the one-click connectivity checker, you can [
 <td>Public network access status</td>
 <td>The public network access has been disabled for the MySQL instance. Please refer to <a href="https://intl.cloud.tencent.com/document/product/236/37788">Connecting to MySQL Instance</a> to enable it.</td></tr>
 </tbody></table>
+
+
 #### [Step 2. If the causes cannot be located by the one-click connectivity checker, locate them by yourself](id:step2)
 [**Incorrect password**](id:mmwt)
 If the password used for connection is incorrect, you can [reset the password](https://intl.cloud.tencent.com/document/product/236/31901) or [create a temporary account with sufficient permissions](https://intl.cloud.tencent.com/document/product/236/31900).
@@ -94,7 +98,7 @@ Check whether the IP and port displayed in the [TencentDB for MySQL console](htt
 [**Incorrect database account permissions**](id:sjkzhzjpzyw)
 Besides security groups, subnets, and other network configurations, database accounts control the access to MySQL. If a database account only allows some specific host addresses to access MySQL, the access from other host addresses will be rejected.
 You can modify the host addresses authorized by a database account in the console to control the access to MySQL, thus enhancing database connection security.
-1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID/name in the instance list, and enter the instance management page.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID in the instance list, and enter the instance management page.
 2. Select **Database Management** > **Account Management**, find the account for which to modify the host, and select **More** > **Modify Host** in the **Operation** column.
 3. In the pop-up dialog box, enter the new host address and click **OK**.
 >?The host address can be an IP and contain `%` (indicating not to limit the IP range). Multiple hosts should be separated by line breaks, spaces, semicolons, commas, or vertical bars.
@@ -167,7 +171,7 @@ Select **MySQL(3306)** as **Type**, enter your CVM IP address (range) in **Sourc
 
 ## Appendix 2
 ### [Viewing private and public network information](id:nwwpdff)
-Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance name in the instance list to enter the instance details page, and view the private/public network address.
+Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID in the instance list to enter the instance details page, and view the private/public network address.
 ![](https://main.qcloudimg.com/raw/322c89b12772441c4fd8e83f597092ed.png)
 
 ### [Viewing network type and VPC information](id:wllxvpdff)
