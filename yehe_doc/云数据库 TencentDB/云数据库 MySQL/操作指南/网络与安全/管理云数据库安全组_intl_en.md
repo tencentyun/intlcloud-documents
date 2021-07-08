@@ -64,7 +64,7 @@ A security group is an instance-level firewall provided by Tencent Cloud for con
 
 >!Currently, security groups can be configured only for **TencentDB for MySQL instances in VPC**.
 
-1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID/name or **Manage** in the **Operation** column to access the instance management page.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column to access the instance management page.
 2. On the **Security Group** tab, click **Configure Security Group**.
 3. In the pop-up dialog box, select the security group to be bound and click **OK**. 
 
