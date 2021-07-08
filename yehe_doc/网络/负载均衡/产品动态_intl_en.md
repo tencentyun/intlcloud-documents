@@ -1,3 +1,23 @@
+## May 2021
+<table>
+<thead>
+<tr>
+<th width="25%">Update</th>
+<th width="40%">Description</th>
+<th width=15%>Release Date</th>
+<th width="20%">Documentation</th>
+</tr>
+</thead>
+<tbody>
+ <tr>
+<td>Supports health check logs</td> 
+<td>CLB supports storing layer-4 and layer-7 health check logs in CLS, reporting logs every minute, and querying logs with multiple rules.</td> 
+<td>May 21, 2021</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/214/40509">Configuring Health Check Logs</a></td> 
+</tbody>
+</table>
+
+
 ## January 2021
 <table>
 <thead>
@@ -78,28 +98,6 @@
 </table>
 
 
-## August 2020
-<table>
-<thead>
-<tr>
-<th width="25%">Update</th>
-<th width="40%">Description</th>
-<th width=15%>Release Date</th>
-<th width="20%">Documentation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CLB supports traffic packs</td>
-<td>For bill-by-traffic CLB instances purchased with a bill-by-IP account, traffic packs have been used preferentially for billing since 12:00:00 on August 26, 2020.</td>
-<td>August 26, 2020</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/684/15245">Product Overview
-</a></td>
-</tr>
-</tbody>
-</table>
-
-
 ## June 2020
 <table>
 <thead>
@@ -143,7 +141,7 @@
 <td>Supports "Allow Traffic by Default" on security groups</td>
 <td>After "Allow Traffic by Default" is enabled, client IPs and service ports to the Internet do not need to be opened in the backend CVM security group. Access traffic from a CLB instance only needs to pass through the CLB security group, while the backend CVM allows CLB traffic by default and does not need to open any ports.</td>
 <td>May 27, 2020</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/14733#.E5.BC.80.E5.90.AF.E5.AE.89.E5.85.A8.E7.BB.84.E9.BB.98.E8.AE.A4.E6.94.BE.E9.80.9A">CLB Security Group Configuration</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/14733#open-security-group">CLB Security Group Configuration</a></td>
 </tr>
 <tr>
 <td>Updates the default domain name policy for layer-7 listeners</td>
@@ -422,6 +420,7 @@
 </tr>
 </tbody></table>
 
+
 ## November 2016
 <table>
 <thead>
@@ -490,6 +489,6 @@
 <td>Releases Cloud Load Balancer</td>
 <td>CLB provides secure and fast traffic distribution services. It can seamlessly allocate the load balancing capacity required for application traffic, and automatically distribute application access traffic among CVM instances in the cloud to enhance fault tolerance.</td>
 <td>December 2014</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214">Cloud Load Balancer</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/2144">Cloud Load Balancer</a></td>
 </tr>
 </tbody></table>

@@ -1,3 +1,23 @@
+## 2021年5月
+<table>
+<thead>
+<tr>
+<th width="25%">动态名称</th>
+<th width="40%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="20%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+ <tr>
+<td>CLB 支持健康检查日志</td> 
+<td>负载均衡支持配置四、七层健康检查日志到日志服务 CLS 中，能够进行分钟级粒度的日志上报和多种规则在线检索。</td> 
+<td>2021-05-21</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/214/40509">配置健康检查日志</a></td> 
+</tbody>
+</table>
+
+
 ## 2021年1月
 <table>
 <thead>
@@ -78,28 +98,6 @@
 </table>
 
 
-## 2020年08月
-<table>
-<thead>
-<tr>
-<th width="25%">动态名称</th>
-<th width="40%">动态描述</th>
-<th width="15%">发布时间</th>
-<th width="20%">相关文档</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CLB 支持共享流量包</td>
-<td>自2020-08-26 12:00:00开始，标准账户类型购买的按流量计费的 CLB 实例，将优先通过共享流量包进行优惠扣费。</td>
-<td>2020-08-26</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/684/15245">共享流量包
-</a></td>
-</tr>
-</tbody>
-</table>
-
-
 ## 2020年06月
 <table>
 <thead>
@@ -143,7 +141,7 @@
 <td>支持安全组默认放通</td>
 <td>开启安全组默认放通后，后端 CVM 的安全组不必放通 Client IP 和服务端口。来自 CLB 的访问流量仅需通过 CLB 的安全组，后端 CVM 会默认放通来自 CLB 的流量，后端 CVM 不必对外暴露端口。</td>
 <td>2020-05-27</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/14733#.E5.BC.80.E5.90.AF.E5.AE.89.E5.85.A8.E7.BB.84.E9.BB.98.E8.AE.A4.E6.94.BE.E9.80.9A">开启安全组默认放通</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/14733#open-security-group">开启安全组默认放通</a></td>
 </tr>
 <tr>
 <td>更新七层监听器的默认域名策略</td>
@@ -422,6 +420,7 @@
 </tr>
 </tbody></table>
 
+
 ## 2016年11月
 <table>
 <thead>
@@ -490,6 +489,6 @@
 <td>负载均衡（CLB）产品上线</td>
 <td>负载均衡提供安全快捷的流量分配服务，它可以无缝提供分配应用程序流量所需的负载均衡容量，以实现自动分配云中多个 CVM 实例间应用程序的访问流量，让您实现更高水平的应用程序容错能力。</td>
 <td>2014-12</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214">负载均衡</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/2144">负载均衡</a></td>
 </tr>
 </tbody></table>
