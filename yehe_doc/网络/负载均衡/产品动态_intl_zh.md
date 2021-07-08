@@ -13,7 +13,7 @@
 <td>CLB 支持健康检查日志</td> 
 <td>负载均衡支持配置四、七层健康检查日志到日志服务 CLS 中，能够进行分钟级粒度的日志上报和多种规则在线检索。</td> 
 <td>2021-05-21</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/214/40509">配置健康检查日志</a></td> 
+<td>配置健康检查日志</td> 
 </tbody>
 </table>
 
@@ -489,6 +489,6 @@
 <td>负载均衡（CLB）产品上线</td>
 <td>负载均衡提供安全快捷的流量分配服务，它可以无缝提供分配应用程序流量所需的负载均衡容量，以实现自动分配云中多个 CVM 实例间应用程序的访问流量，让您实现更高水平的应用程序容错能力。</td>
 <td>2014-12</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/2144">负载均衡</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214">负载均衡</a></td>
 </tr>
 </tbody></table>
