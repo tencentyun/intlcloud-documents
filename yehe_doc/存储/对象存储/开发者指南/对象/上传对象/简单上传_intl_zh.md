@@ -6,8 +6,8 @@
 - 使用 API/SDK 的分块上传：可支持上传最大48.82TB (即50000GB)的单个对象，请参见 [分块上传](https://intl.cloud.tencent.com/document/product/436/14112)。
 - 使用 COSCMD 工具支持上传最大40TB的单个对象，详情请参见 [COSCMD 工具](https://intl.cloud.tencent.com/document/product/436/10976)。
 
->?
->在发起上传请求时，如需上传到指定的文件夹或路径，可通过`/`实现，例如将 picture.png 上传到 doc 文件夹，则对象键设置为 doc/picture.png。
+>? 在发起上传请求时，如需上传到指定的文件夹或路径，可通过`/`实现，例如将 picture.png 上传到 doc 文件夹，则对象键设置为 doc/picture.png。
+>
 
 ## 适用场景
 
