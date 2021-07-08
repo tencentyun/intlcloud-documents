@@ -7,22 +7,22 @@
 
 ## 修改参数
 ### [修改单个参数](id:xgdgcs)
-1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，单击实例名，进入实例管理页面。
-2. 选择【参数配置】页，选择目标参数所在行，在“当前参数运行值”列，单击<img src="https://main.qcloudimg.com/raw/788902e3f8c335cf17de420f7181c2a8.png"  style="margin:0;">修改参数值。
+1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，单击实例 ID，进入实例管理页面。
+2. 在实例管理页面，选择【参数配置】页，选择目标参数所在行，在“当前参数运行值”列，单击<img src="https://main.qcloudimg.com/raw/788902e3f8c335cf17de420f7181c2a8.png"  style="margin:0;">修改参数值。
 ![](https://main.qcloudimg.com/raw/1c715f076679b7aa7405b7dc35e744f5.png)
 3. 根据修改参数所在“参考值”列的提示，输入参数值，单击<img src="https://main.qcloudimg.com/raw/1f4c7f2e0744bc601efb5d9fb04a7a04.png"  style="margin:0;">保存，单击<img src="https://main.qcloudimg.com/raw/2106cb4b9337a1a2fff5908581d2a908.png"  style="margin:0;">可取消操作。
 ![](https://main.qcloudimg.com/raw/b3cd3751c3b57a4e2fa5bee19dd82198.png)
 
 ### [批量修改参数](id:plxgcs)
-1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，单击实例名，进入实例管理页面。
-2. 选择【参数配置】页，单击【修改运行值】。
+1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，单击实例 ID，进入实例管理页面。
+2. 在实例管理页面，选择【参数配置】页，单击【修改运行值】。
 ![](https://main.qcloudimg.com/raw/c9dcf38d03f68dae0b8b56b291c14f98.png)
 3. 在“当前参数运行值”列，选择需要修改的参数进行修改，确认修改无误后，单击【确认】，参数将被修改。
 ![](https://main.qcloudimg.com/raw/e078a0b0108606456b2e569084ccab5e.png)
 
 ## 查看参数修改记录
-1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，单击实例名，进入实例管理页面。
-2. 选择【参数配置】>【修改历史】页，可查看近期参数修改记录。
+1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，单击实例 ID，进入实例管理页面。
+2. 在实例管理页面，选择【参数配置】>【修改历史】页，可查看近期参数修改记录。
 ![](https://main.qcloudimg.com/raw/91089fb8d13721731d18a804fcaded3a.png)
 
 ## 支持自定义的参数
