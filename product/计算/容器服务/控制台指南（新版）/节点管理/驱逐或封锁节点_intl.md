@@ -60,13 +60,13 @@ The `kubectl uncordon` command indicates uncordoning the node.
 #### Overview
 
 Before performing maintenance on a node, you can safely evict a Pod from a node by draining the node. After the node is drained, all Pods (excluding those managed by DaemonSet) in the node will be automatically evicted to other nodes in the cluster, and the drained node will be set to cordoned status.
-> For locally stored Pods, data will be lost after they are evicted. Please be cautious when doing so.
+>! For locally stored Pods, data will be lost after they are evicted. Please be cautious when doing so.
 
 #### Directions
 
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. In the left sidebar, click **[Clusters](https://console.cloud.tencent.com/tke2/cluster?rid=1)** to go to the cluster management page.
-3. Click the ID/name of the cluster where node needs to be uncordoned to enter the cluster management page. See the figure below:
+3. Click the ID/name of the cluster where node needs to be drained to enter the cluster management page. See the figure below:
 ![](https://main.qcloudimg.com/raw/549dd5be2af3ebf26a31a313e832bbf0.png)
 4. In the left sidebar, select "Node Management" > "Nodes" to go to the "Node list" page.
 5. In the row of the node to be drained, click **More** > **Drain**. See the figure below:
