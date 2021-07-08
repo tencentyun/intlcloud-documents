@@ -3,7 +3,7 @@
 - [现象1](id:xz1)：从 CVM 连接登录云数据库 MySQL，连接失败。
 - [现象2](id:xz2)：从本地电脑连接登录云数据库 MySQL，连接失败。
 - [现象3](id:xz3)：从数据库管理 DMC 平台连接登录云数据库MySQL，连接失败。
-![](https://main.qcloudimg.com/raw/f4ab12f5989b79ba88f309ed7a79f389.png)
+
 
 ## 可能原因
 <table>
@@ -42,7 +42,7 @@
 ## 处理步骤
 ### 现象1、2：CVM、本地连接失败处理方法
 #### [步骤1：通过一键连接检查工具定位原因并进行相应处理](id:step1)
-1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，选择需要排查的实例，单击实例名，进入实例管理页面。
+1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，选择需要排查的实例，单击实例 ID，进入实例管理页面。
 2. 在实例管理页面，选择【连接检查】>【内网检查】或【外网检查】页面。
 >?判断内外网地址，可在实例详情页的基本信息处查看。
 3. 添加访问此 MySQL 实例的 CVM 或外网服务器。
@@ -73,7 +73,7 @@
 <td>MySQL 安全组策略</td>
 <td>检测到您 MySQL 实例所绑定安全组的<strong>入站规则</strong>未放通对 IP 端口的访问，请参见 <a href="#maqzpzyw">MySQL 安全组配置有误</a> 放通入站规则</td></tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/ae30ffd0f9df350e1360ed3f870ff441.png">
+
    - 若为外网检查，检查项及对应处理建议如下：
 <table>
 <thead><tr><th>检查项</th><th>异常及处理方法</th></tr></thead>
@@ -83,7 +83,7 @@
 <td>外网开通状态</td>
 <td>检测到您的 MySQL 实例未开启外网，可参考 <a href="https://intl.cloud.tencent.com/document/product/236/37788">开启外网</a></td></tr>
 </tbody></table>
-<img src="https://main.qcloudimg.com/raw/502f00b7c8913baf52c9548a525c9772.png">
+
 
 #### [步骤2：若工具检查未能解决问题时，可以参考如下原因检查](id:step2)
 [**密码有误**](id:mmwt)
@@ -98,7 +98,7 @@
 [**帐号的权限配置有误**](id:sjkzhzjpzyw)
 数据库帐号除安全组，子网等网络环境限制以外，还会受到 MySQL 自身帐号体系的限制。若数据库帐号指定了具体主机地址，则其他地址无法连接 MySQL。
 您可以通过 MySQL 控制台修改数据库帐号所授权的主机地址，来限制对数据库的连接，进而提升数据库的连接安全。
-1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名，进入实例管理页面。
+1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例 ID，进入实例管理页面。
 2. 选择【数据库管理】>【帐号管理】页，找到需要修改主机的帐号，在“操作”列选择【更多】>【修改主机】。
 3. 在弹出对话框，输入新主机地址，单击【确定】即可修改帐号所授权的主机地址。
 >?主机地址支持 IP 形式的地址，也支持填入%（表示不做 IP 范围限制）；多个主机以分隔符分隔，分隔符支持换行符、空格和`; , |`。
@@ -171,8 +171,8 @@ CVM 和 MySQL 不在同一个地域内，属于不同的 VPC 网络，则 CVM �
 
 ## 附录2
 ### [内外网判断方法](id:nwwpdff)
-登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名，进入实例详情页可查看内外网地址。
-![](https://main.qcloudimg.com/raw/d46ec355dc10b9435c28c215db2e5444.png)
+登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例 ID，进入实例详情页可查看内外网地址。
+![](https://main.qcloudimg.com/raw/322c89b12772441c4fd8e83f597092ed.png)
 
 ### [网络类型/ VPC 判断方法](id:wllxvpdff)
 使用内网地址连接云数据库时，CVM 和 MySQL 须是同一账号，且同一个 VPC 内（保障同一个地域），或同在基础网络。
