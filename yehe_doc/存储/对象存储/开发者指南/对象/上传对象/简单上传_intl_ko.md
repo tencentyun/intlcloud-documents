@@ -6,8 +6,8 @@
 - API/SDK를 통한 멀티파트 업로드: 최대 48.82TB(50000GB)의 단일 객체를 업로드할 수 있습니다. 자세한 내용은 [멀티파트 업로드](https://intl.cloud.tencent.com/document/product/436/14112)를 참조하십시오.
 - COSCMD 툴을 사용해 최대 40TB의 단일 객체를 업로드할 수 있습니다. 자세한 내용은 [COSCMD 툴](https://intl.cloud.tencent.com/document/product/436/10976)을 참조하십시오.
 
->?
->지정된 폴더 또는 경로로 업로드를 요청하는 경우 `/`를 사용할 수 있습니다(예시: picture.png를 doc 폴더에 업로드 하는 경우 객체 키를 doc/picture.png로 설정).
+>?지정된 폴더 또는 경로로 업로드를 요청하는 경우 `/`를 사용할 수 있습니다(예시: picture.png를 doc 폴더에 업로드 하는 경우 객체 키를 doc/picture.png로 설정).
+>
 
 ## 적용 시나리오
 
