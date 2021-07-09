@@ -29,7 +29,7 @@ SQL Server 2017 Enterprise
 
 >?镜像（Mirror）具有完整的数据副本，本身不提供读写服务，通过接收来自 Principal 的更新日志实现数据同步，允许创建快照实现报表；在镜像集群中，Principal 和 Mirror 的数据同步依靠事务日志来实现，SQL Server 的事务日志是 Database 级别的，非实例级别，每个 Database 都具有单独的事务日志，SQL Server 的镜像是基于 Database 层面实现。
 
-![](https://main.qcloudimg.com/raw/6d5bd0293f81a1f2d9a3f32ee908adc7.png)
+![](https://main.qcloudimg.com/raw/908fda85784c6d198536e44980715d5a.png)
 
 ## 基础版
 ### 支持版本
