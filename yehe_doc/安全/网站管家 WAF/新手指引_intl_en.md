@@ -17,7 +17,7 @@ You can choose the WAF service based on your business connection method.
 Tencent Cloud WAF offers **SaaS WAF** and **CLB WAF** services, which have different main features. For more information, please see [Product Category](https://intl.cloud.tencent.com/document/product/627/34717).
 
 #### 3.2 Purchasing WAF
-You can purchase the service in the [WAF purchase page](https://buy.cloud.tencent.com/buy/wsm).
+You can purchase the service in the [WAF purchase page](https://buy.cloud.tencent.com/buy/waf).
 
 #### 3.3 Connecting WAF
 Tencent Cloud **SaaS WAF** and **CLB WAF** are different in connecting domain names. For more information, please see [Getting Started](https://intl.cloud.tencent.com/document/product/627/18635).
