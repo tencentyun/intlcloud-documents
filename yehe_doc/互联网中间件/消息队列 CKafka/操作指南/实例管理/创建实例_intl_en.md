@@ -10,7 +10,7 @@ This document describes how to create instances and topics in the CKafka console
 	 ![](https://main.qcloudimg.com/raw/7fa7a951705943382c2836afc78a022c.png)
 	- Billing Mode: monthly subscription
 	- Specs Type: select the Standard or Pro Edition based on your business needs.
-	- Kafka Version: select a Kafka version based on your business needs. For more information, please see [Suggestions for CKafka Edition Selection](https://cloud.tencent.com/document/product/597/57243).
+	- Kafka Version: select a Kafka version based on your business needs. For more information, please see [Suggestions for CKafka Edition Selection](https://intl.cloud.tencent.com/document/product/597/40964).
 	- Region: select a region close to the resource for client deployment.
 	- AZ: select an AZ according to your actual needs.
 		- Standard Edition: it does not support multi-AZ deployment.
