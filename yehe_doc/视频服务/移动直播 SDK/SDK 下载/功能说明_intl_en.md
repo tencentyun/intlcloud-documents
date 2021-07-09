@@ -1,11 +1,11 @@
 
 
-Mobile Live Video Broadcasting (MLVB) currently provides an easy-to-use **basic edition SDK**. With a basic edition license, you can use live streaming features including stream publishing/playback and beauty filters such as skin smoothing and brightening. We also plan to launch an **enterprise edition SDK** in the near future, which includes advanced features for an enhanced live streaming experience.
+Mobile Live Video Broadcasting (MLVB) currently provides an easy-to-use SDK **LiteAV_Smart**. With a basic edition license, you can use live streaming features including stream publishing/playback and beauty filters such as skin smoothing and brightening. We also plan to launch an **enterprise edition SDK** in the near future, which includes advanced features for an enhanced live streaming experience.
 
 
 ### SDK and license 
 
-You can apply for a free trial license or purchase a license to use the MLVB basic edition SDK.
+You can apply for a free trial license or purchase a license to use LiteAV_Smart.
 
 ### Features
 
@@ -14,7 +14,7 @@ You can apply for a free trial license or purchase a license to use the MLVB bas
     <th width="10%" style="text-align:center">Module</th>
     <th width="14%" style="text-align:center">Feature</th>
     <th  style="text-align:center">Description</th>
-    <th width="10%" style="text-align:center">Basic Edition SDK</th>
+    <th width="10%" style="text-align:center">LiteAV_Smart</th>
   </tr>
   <tr>
     <td rowspan='1' style="text-align:center">UI</td>
@@ -24,23 +24,23 @@ You can apply for a free trial license or purchase a license to use the MLVB bas
     </tr>
   <tr>
     <td rowspan='2' style="text-align:center">Stream publishing</td>
-    <td style="text-align:center">RTMP publishing</td>
-    <td style="text-align:left">Stream publishing by hosts from mobile phones (live show room)</td>
+    <td style="text-align:center">RTMP</td>
+    <td style="text-align:left">Stream publishing by hosts from mobile phones (live showroom)</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
    <tr>
-    <td style="text-align:center">Publishing from screen</td>
+    <td style="text-align:center">Screen</td>
     <td style="text-align:left">Screen sharing by hosts from mobile phones (game streaming)</td>
     <td style="text-align:center">&#10003;</td>
      </tr>
   <tr>
     <td rowspan='2' style="text-align:center">Stream playback</td>
-    <td style="text-align:center">RTMP playback</td>
+    <td style="text-align:center">RTMP</td>
     <td style="text-align:left">RTMP stream playback</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
   <tr>
-    <td style="text-align:center">FLV playback</td>
+    <td style="text-align:center">FLV</td>
     <td style="text-align:left">HTTP-FLV stream playback</td>
     <td style="text-align:center">&#10003;</td>
   </tr>
@@ -86,36 +86,10 @@ You can apply for a free trial license or purchase a license to use the MLVB bas
       <td style="text-align:center">&#10003;</td>
    </tr>
    <tr>
-      <td style="text-align:center">Basic retouching</td>
+      <td style="text-align:center">Retouching</td>
       <td>Skin smoothing/brightening and rosy skin, whose strength can be adjusted</td>
       <td style="text-align:center">&#10003;</td>
    </tr>
   </tr>
 </table>
-
-<table>
-  <tr>
-    <th width="10%" style="text-align:center">Module</th>
-    <th width="14%" style="text-align:center">Feature</th>
-    <th  style="text-align:center">Description</th>
-    <th width="10%" style="text-align:center">Basic Edition SDK </th>
-  </tr>
-  <tr>
- <td rowspan='1' style="text-align:center">Stream playback</td>
-    <td style="text-align:center">HLS playback UI</td>
-    <td style="text-align:left">HLS (M3U8) stream playback</td>
-    <td style="text-align:center">&#10003;</td>
-    </tr>
-  <tr>
-<td rowspan='1' style="text-align:center">Stream playback</td>
-    <td style="text-align:center">WebRTC playback</td>
-    <td style="text-align:left">WebRTC playback for LEB</td>
-    <td style="text-align:center">&#10003;</td>
-    </tr>
-  <tr>
-<td rowspan='1' style="text-align:center">VOD playback</td>
-    <td style="text-align:center">VOD playback</td>
-    <td style="text-align:left">Playing video on demand</td>
-    <td style="text-align:center">&#10003;</td>
-<table>
 
