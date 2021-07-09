@@ -48,7 +48,6 @@
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc)。
 2. 单击左侧目录下方的【诊断工具】>【实例端口验通】，进入管理页面。
 3. 在页面上方选择【地域】，并在列表中，找到您要验证的实例所在行，单击【一键检测】。
-<img src="https://main.qcloudimg.com/raw/ed252bca2b78442e05ccc3e583206649.png" width="100%" />
 4. 您可以在弹窗中看到端口验通的详情，请根据实际情况选择执行如下操作。
    + 如不需要检测常用端口，可以取消勾选该条检测条目。
    + 如常用端口不满足检测要求，可在下方的自定义端口中输入需要检测的端口号，并单击【保存】。
@@ -58,14 +57,10 @@
       + IP：当方向为入站时，请填写输入源IP；当方向为出站时，请填写目的IP；所有来源或目的地址，请填写ALL。
       + 自定义端口检测最多支持15个。
    
- 例如，除检测常用端口外，还需要自定义检测 TCP 协议、30端口，出站方向，目的 IP 为10.0.1.12的安全策略，可在自定义端口检测区域框中输入如下图所示的信息。
-<img src="https://main.qcloudimg.com/raw/2213473926593397b08ec79bac3df91e.png" width="100%" />
+ 例如，除检测常用端口外，还需要自定义检测 TCP 协议、30端口，出站方向，目的 IP 为10.0.1.12的安全策略，可在自定义端口检测区域框中输入。
 5. 完成端口检查设置后，单击【开始检测】，【策略】列将展示检测结果。
-<img src="https://main.qcloudimg.com/raw/134efcaa4a488783d120e1a23079e0b8.png" width="100%" />
 <p>如果您存在某条端口策略为【未放通】，且有放通该端口的需求（例如 `TCP:22`），如下图所示。</p>
- <img src="https://main.qcloudimg.com/raw/41275f43eda53554b7b9af4aa1bab8b2.png" width="80%" />
-<p>那么，您可以在 <a href="https://console.cloud.tencent.com/vpc/securitygroup">安全组控制台</a> 进入实例绑定的安全组，添加一条放通 `TCP:22` 端口的入站规则，可根据实际需求，在【来源】中默认选择 all 放通全部 IP，或填写指定 IP（IP 段），如下图所示。<p>
- <img src="https://main.qcloudimg.com/raw/9d875c3e500d4eb6d258a7b9ea58d6b6.png" width="100%" />
+<p>那么，您可以在 <a href="https://console.cloud.tencent.com/vpc/securitygroup">安全组控制台</a> 进入实例绑定的安全组，添加一条放通 `TCP:22` 端口的入站规则，可根据实际需求，在【来源】中默认选择 all 放通全部 IP，或填写指定 IP（IP 段）。<p>
 
 ## 相关信息
 - 如需了解安全组相关内容，请参见 [安全组概述](https://intl.cloud.tencent.com/document/product/215/38750)、 [添加安全组规则](https://intl.cloud.tencent.com/document/product/215/35513)。
