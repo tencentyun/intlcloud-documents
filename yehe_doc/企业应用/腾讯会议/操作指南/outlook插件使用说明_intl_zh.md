@@ -1,5 +1,3 @@
-# Outlook插件使用说明
-
 ## 功能介绍
 VooV Meeting Outlook插件让您在Microsoft Outlook的工具栏中快捷开始一场快速会议或预定一场会议。
 
