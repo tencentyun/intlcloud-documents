@@ -12,7 +12,7 @@ TencentDB for SQL Server Cluster Edition adopts the Always On architecture, incl
 >?Basic sync process of Always On:
 >The logs (commits and log block writes) of the primary node will be flushed from the log cache to the disk. At the same time, the Log Capture thread of the primary node will also send the logs to all other replica nodes, and the Log Receive threads of the corresponding nodes will also flush the received logs from the log cache to the disk. Eventually, the Redo thread flushes these logs to the data file.
 >
-![](https://main.qcloudimg.com/raw/e282782dd413238f1b2b6f7b9a0306b0.png)
+![](https://main.qcloudimg.com/raw/32fbdee7b03ed0b44aae3b539f0ca78f.png)
 
 
 ## Dual-Server High Availability Edition
@@ -29,7 +29,7 @@ TencentDB for SQL Server Dual-Server High Availability Edition consists of one p
 
 >? A mirror has a complete copy of data but does not provide read/write services by itself; instead, it implements data sync by receiving update logs from the primary and allows the creation of snapshots for reporting. In a mirror cluster, data sync between the primary and mirror relies on transaction logs. SQL Server's transaction logs are at the database level rather than instance level, and each database has separate transaction logs, so SQL Server mirroring is implemented at the database level.
 
-![](https://main.qcloudimg.com/raw/6d5bd0293f81a1f2d9a3f32ee908adc7.png)
+![](https://main.qcloudimg.com/raw/908fda85784c6d198536e44980715d5a.png)
 
 ## Basic Edition
 ### Supported versions
@@ -45,5 +45,5 @@ The Basic Edition adopts a single-node deployment method and offers extremely hi
 > - As it adopts a single-node architecture, when the node fails, it takes slightly longer to recover than CVM (due to instance startup and data restoration).
 >- If your business requires high availability, we recommend you use the Dual-Server High Availability Edition or Cluster Edition.
 
-![](https://main.qcloudimg.com/raw/89b7de103f8fe6e251f5dc58fc81cf34.svg)
+![](https://main.qcloudimg.com/raw/e16d9a236cf2c6f9c6ce174486c1fcce.svg)
 
