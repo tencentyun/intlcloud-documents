@@ -4,8 +4,6 @@
 1. 登录 [路由表控制台](https://console.cloud.tencent.com/vpc/route?rid=1)，进入路由表管理界面。
 2. 在列表中，单击需要修改的路由表 ID，进入详情页。
 3. 单击【新增路由策略】。
-
- 	<img src="https://main.qcloudimg.com/raw/5bde7782edfd3a7ade82aa669bd5a7a1.png" width="80%">
 4. 在弹出框中，<span id="routeParam" />配置路由策略。
  >? 当您在 VPC 中部署了<a href="https://intl.cloud.tencent.com/document/product/457/6759"> 容器服务</a>，在配置 VPC 子网路由表策略时，目的端不能在 VPC 的 CIDR 范围内，也不能包含容器网段。例如某 VPC CIDR 为172.168.0.0/16，容器网络 CIDR 为192.168.0.0/16，那么配置 VPC 子网路由表策略时，目的端网段不能在172.168.0.0/16范围内，也不能包含192.168.0.0/16。
  >
@@ -30,7 +28,6 @@
     <tr><td>备注</td><td>可自行添加路由条目的描述信息，便于资源管理。</td></tr>
     <tr><td>新增一行</td><td>如需配置多条路由策略，可单击【新增一行】，如需删除可单击操作列的删除图标。</td></tr>
      </tbody> </table>
-		 <img src="https://main.qcloudimg.com/raw/c449580ff5918822373d9b0067ee877e.png">
 5. 单击【创建】，完成路由策略的配置。
 
 ## 发布/撤销路由策略到云联网
@@ -43,8 +40,8 @@
 ### 操作步骤
 1. 登录 [路由表控制台](https://console.cloud.tencent.com/vpc/route?rid=1)，进入路由表管理界面。
 2. 在列表中，单击需要修改的路由表 ID，进入详情页。
-   ![](https://main.qcloudimg.com/raw/db9290e78cfc13b9575e590a0f3fa680.png)
-2. 可根据实际需求执行如下操作：
+   ![](https://main.qcloudimg.com/raw/351e5dec96293642293015fcebdc3ba5.png)
+3. 可根据实际需求执行如下操作：
    + 对于自定义路由策略，可单击【发布到云联网】，可手动将该条路由策略发布到云联网。
    + 对于已发布到云联网的自定义路由策略，可单击【从云联网撤回】回收策略。
    + 单击【编辑】可修改该条路由策略。
@@ -56,14 +53,14 @@
 1. 登录 [路由表控制台](https://console.cloud.tencent.com/vpc/route?rid=1)，进入路由表管理界面。
 2. 在列表中，单击路由表 ID，进入详情页。
 3. 单击路由策略右侧的【编辑】，可对该条路由条目进行修改。
-![](https://main.qcloudimg.com/raw/77dad0c5a0e0247b73e585cfa8075448.png)
+![](https://main.qcloudimg.com/raw/6f817db7223a5f5f2ae146fc6a39d28b.png)
 4. 修改完成后，单击【确定】即可，单击【取消】可取消该操作。
 
 ## 查询与导出路由策略
 1. 登录 [路由表控制台](https://console.cloud.tencent.com/vpc/route?rid=1)，进入路由表管理界面。
 2. 在列表中，单击路由表 ID，进入详情页，可查看到当前路由表中包含的路由策略。
 3. 在右上方搜索框中，支持通过目标地址快速插叙。
-![](https://main.qcloudimg.com/raw/31318f03c644f0ac7b20dddced6ed026.png)
+![](https://main.qcloudimg.com/raw/0fb54a38484b8525e5cdd9fdc904a183.png)
 4. 单击【导出】，可导出当面界面显示的路由策略，以.csv 格式保存。
 
 ## 删除路由策略
@@ -71,7 +68,5 @@
 1. 登录 [路由表控制台](https://console.cloud.tencent.com/vpc/route?rid=1)，进入路由表管理界面。
 2. 在列表中，单击需要修改的路由表 ID，进入详情页。
 3. 单击需要删除的路由策略条目右侧的【删除】。
-![](https://main.qcloudimg.com/raw/dd381c2cddc335bf6e178013ad8b5424.png)
+![](https://main.qcloudimg.com/raw/9ab1d9bcca75ba9f4cfdd4abfbddd58e.png)
 4. 请评估策略删除可能存在的业务影响，确认无误后，单击【确定】即可。
-
- 	<img src="https://main.qcloudimg.com/raw/bcb484e30a79717e40c8dc9b228757ff.png" width="70%" />
