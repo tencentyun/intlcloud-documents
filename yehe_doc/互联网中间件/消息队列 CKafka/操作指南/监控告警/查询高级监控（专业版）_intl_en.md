@@ -10,8 +10,6 @@ This document describes how to view advanced monitoring metrics in the console a
 2. In the instance list, click the **ID/Name** of the target instance to enter the instance details page.
 3. At the top of the instance details page, click **Monitoring** > **Advanced Monitoring**, select the metric to be viewed, and set the time range to view the monitoring data.
 
-![](https://main.qcloudimg.com/raw/af8dcc058b765c4f116cba7a89850904.png)
-
 ## Descriptions of Monitoring Metrics
 
 **Core service monitoring**
