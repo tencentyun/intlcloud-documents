@@ -17,7 +17,7 @@
 腾讯云 WAF 提供两种产品形态，**SaaS 型 WAF** 和**负载均衡型 WAF**，不同版本所提供的主要功能不同，详情请参见 [产品分类](https://intl.cloud.tencent.com/document/product/627/34717)。
 
 #### 3.2 购买 WAF
-您可以在 [Web 应用防火墙购买页](https://buy.cloud.tencent.com/buy/wsm) 选购产品。
+您可以在 [Web 应用防火墙购买页](https://buy.cloud.tencent.com/buy/waf) 选购产品。
 
 #### 3.3 接入 WAF
 腾讯云 WAF 分为两种类型，**SaaS 型 WAF** 和**负载均衡型 WAF**，两种类型 WAF 域名接入方式不同，详情请参见 [入门概述](https://intl.cloud.tencent.com/document/product/627/18635)。
@@ -25,7 +25,7 @@
 
 #### 3.4 相关实践
 WAF 可在某些特定场景进行使用，同时可结合腾讯云其他产品为您提供安全防护：
-- [Web 应用防火墙与 DDoS 高防包结合应用](https://intl.cloud.tencent.com/zh/document/product/627/34723)
+- [WAF 与 DDoS 高防包结合应用](https://intl.cloud.tencent.com/zh/document/product/627/34723)
 - [WAF 结合 API 网关提供安全防护](https://intl.cloud.tencent.com/document/product/627/38375)
 - [HTTPS 免费证书申请和应用](https://intl.cloud.tencent.com/document/product/627/34724)
 
