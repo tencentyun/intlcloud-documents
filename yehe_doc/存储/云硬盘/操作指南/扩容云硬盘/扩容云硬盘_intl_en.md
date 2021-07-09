@@ -1,11 +1,11 @@
 ## Overview
 A cloud disk is an expandable storage device on cloud. After a cloud disk is created, you can expand its capacity at any time to increase its storage capacity without losing any data in it.
 After a cloud disk is expanded, you need to either assign its expanded capacity to an existing partition, or format it into an independent new partition. For more information, see [Extending Partitions and File Systems (Windows)](https://intl.cloud.tencent.com/document/product/362/31601) or [Determining the Expansion Method](https://intl.cloud.tencent.com/document/product/362/39995).
->!MBR partition supports disk with a maximum capacity of 2 TB. When you partition disk with a capacity greater than 2 TB, we recommend that you create and mount a new data disk and use the GPT partition format to copy data.
+>!MBR partition supports disk with a maximum capacity of 2 TB. When you partition disk with a capacity greater than 2 TB, we recommend that you create and attach a new data disk and use the GPT partition format to copy data.
 
 ## Expanding Data Disks
 If the cloud disk is a data disk, you can expand it using the following three methods.
->!If multiple cloud disks of the same capacity and type are mounted to the CVM, you can identify them using the method shown in [Distinguishing data disks](#distinguish). Select a data disk and expand its capacity as instructed below.
+>!If multiple cloud disks of the same capacity and type are attached to the CVM, you can identify them using the method shown in [Distinguishing data disks](#distinguish). Select a data disk and expand its capacity as instructed below.
 
 [](id:useCVMConsole)
 
@@ -91,12 +91,12 @@ Check cloud disks according to the operating system of the CVM.
 After the system disk is expanded, [log in to the Linux instance](https://intl.cloud.tencent.com/document/product/213/5436) and check whether the `/etc/cloud/cloud.cfg` file contains the `growpart` and `resizefs` configuration items.
  - If yes, ignore other operations.
 ![](https://main.qcloudimg.com/raw/03d38f34651d317176c50f1ed3a03f30.png)
-    - **growpart**: expands the partition to the disk size.
-    - **resizefs**: expands or adjusts the file system in the `/` partition to the partition size.
- - If no, manually [extending partitions and file systems (Linux)](https://intl.cloud.tencent.com/document/product/362/39995) according to the operating system, and assign its expanded capacity to an existing partition, or format it into an independent new partition.
+    - **growpart**: extends the partition to the disk size.
+    - **resizefs**: extends or adjusts the file system in the `/` partition to the partition size.
+ - If no, manually [extend partitions and file systems (Linux)](https://intl.cloud.tencent.com/document/product/362/39995) according to the operating system, and assign its extended capacity to an existing partition, or format it into an independent new partition.
 
 [](id:confirmwindowsConfig)
 #### Checking the cloudinit configuration for Windows instances
 After the system disk is expanded, [log in to the Windows instance](https://intl.cloud.tencent.com/document/product/213/5435) and check whether the `ExtendVolumesPlugin` configuration item exists under `plugin` in `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf\cloudbase-init.conf`.
  - If yes, ignore other operations.
- - If no, manually [extending partitions and file systems (Windows)](https://intl.cloud.tencent.com/document/product/362/31601) according to the operating system, and assign its expanded capacity to an existing partition, or format it into an independent new partition.
+ - If no, manually [extend partitions and file systems (Windows)](https://intl.cloud.tencent.com/document/product/362/31601) according to the operating system, and assign its expanded capacity to an existing partition, or format it into an independent new partition.
