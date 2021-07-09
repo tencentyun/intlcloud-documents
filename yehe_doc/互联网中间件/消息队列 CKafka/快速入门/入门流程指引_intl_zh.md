@@ -5,6 +5,6 @@
 - 公网路由访问时，需要单独开通一条公网路由，并且对 Topic 进行 ACL 策略的设置。
 
 ### 操作流程
-![](https://main.qcloudimg.com/raw/caa55ccb349157034f8e3ad260c4e6e3.png)
+![](https://main.qcloudimg.com/raw/a910d6bff17b993ccc07328fe3c53932.png)
 
 
