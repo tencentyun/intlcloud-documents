@@ -131,7 +131,7 @@ CKafka Standard Edition is available in 8 instance types such as small and stand
 
 | Disk Type | Disk Capacity (GB) | Price (USD/Hour) |
 | :--------- | :------------- | :---------------- |
-| SSD cloud disk | 100            | 0.03              |
+| Premium cloud disk | 100            | 0.01              |
 
 > ? If you need CKafka instances with higher specifications, please contact your Tencent Cloud rep or [submit a ticket](https://intl.cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fworkorder%2Fcategory) for assistance.
 
