@@ -1,5 +1,3 @@
-# **Joining Meeting From Browser**
-
 # **Overview**
 
 VooV meeting allows you to join a meeting from browser: 
@@ -11,16 +9,16 @@ This document describes how to join a meeting from browser.
 
 
 
-#**Prerequisites**
+# **Prerequisites**
 
 1. Log in to VooV Meeting on the web portal before joining a meeting from browser.
 2. We recommend Google Chrome browser.
 
 
 
-#**Join Meeting From Browser**
+# **Join Meeting From Browser**
 
-##**Joining the Meeting**
+## **Joining the Meeting**
 
 There are two ways to join a meeting from browser:
 
@@ -28,12 +26,11 @@ There are two ways to join a meeting from browser:
 2. Open the link “https://voovmeeting.com/r” in browser, enter meeting ID and click **Join Meeting**.
 
 
-
 ## **During the Meeting**
 
 1. Toolbar: 
 
--In the bottom of the page, you can mute or unmute, turn on or off video, add invitees, rename yourself and mute or unmute attendees in attendees list.
+- In the bottom of the page, you can mute or unmute, turn on or off video, add invitees, rename yourself and mute or unmute attendees in attendees list.
 - In the lower-right corner of the page:
   As a host or co-host, you can click **End Meeting** to leave or end meeting.
   As attendees, you can click **Leave Meeting** to leave meeting.
@@ -51,8 +48,6 @@ Thumbnails and name of all attendees are displayed.
 - When some attendees turn on video or share screen:
   - The video is in the large display and a trip of thumbnails are displayed in the right side. Click other attendees’ video in the right side to switch the video display.
   - For attendees with video off, only thumbnails are displayed.
-
-
 
 ## **Meeting Management**
 
