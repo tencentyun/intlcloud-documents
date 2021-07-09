@@ -3,7 +3,7 @@ This document describes how to configure WAF to protect the security of APIs in 
 
 ## Prerequisites
 
-- You have activated [WAF](https://buy.cloud.tencent.com/buy/wsm).
+- You have activated [WAF](https://buy.cloud.tencent.com/buy/waf).
 - You have published the API in API Gateway as instructed in [Getting Started](https://intl.cloud.tencent.com/document/product/628/34889).
 
 ## Directions
