@@ -3,7 +3,7 @@
 地域具备以下特性：
 
 - 不同地域之间网络完全隔离，不同地域之间的云产品**默认不能通过内网通信**。
-- 不同地域之间云产品可以通过 [公网服务](https://intl.cloud.tencent.com/document/product/213/5224) 进行 Internet 访问。处于私有网络中的云产品也可以通过腾讯云提供的 [对等连接](https://intl.cloud.tencent.com/document/product/215/20082) 经由腾讯云高速互联网络通信，以获得比 Internet 访问更稳定高速的互联。
+- 不同地域之间云产品可以通过 [公网服务](https://intl.cloud.tencent.com/document/product/213/5224) 进行 Internet 访问。处于私有网络中的云产品也可以通过腾讯云提供的 [对等连接](https://intl.cloud.tencent.com/zh/document/product/553) 经由腾讯云高速互联网络通信，以获得比 Internet 访问更稳定高速的互联。
 - [负载均衡](https://intl.cloud.tencent.com/document/product/214) 当前默认支持同地域流量转发，绑定本地域的云服务器。如果开通 [跨地域绑定负载均衡](https://intl.cloud.tencent.com/document/product/214/12014) 功能，则可支持负载均衡跨地域绑定云服务器。
 
 
