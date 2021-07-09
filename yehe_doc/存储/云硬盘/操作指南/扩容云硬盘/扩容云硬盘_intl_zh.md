@@ -88,4 +88,3 @@ wmic path win32_physicalmedia get SerialNumber,Tag
 :::
 </dx-tabs>
 
-```
