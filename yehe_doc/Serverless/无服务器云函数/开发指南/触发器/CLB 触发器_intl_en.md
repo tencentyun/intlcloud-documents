@@ -45,8 +45,8 @@ When a CLB trigger receives a request, event data will be sent to the bound func
     "X-Real-IP": "9.43.175.219",
     "X-Forwarded-For": "9.43.175.xx"  
  
-    "X-Vip": "121.23.21.xx",  
-    "X-Vport": "xx",  
+    "X-clb-stgw-vip": "121.23.21.xx",  
+    "X-Forwarded-Port": "xx",  
     "X-Uri": "/scf_location",  
     "X-Method": "POST"    
     "X-Real-Port": "44347",  
@@ -69,9 +69,9 @@ The data structures are as detailed below:
 | X-Real-IP | Client IP address |
 | X-Forward-For | Passed proxy IP address |
 | X-Real-Port | Records the `Path` parameters configured in API Gateway and their actual values (optional custom configuration of CLB) |
-| X-Vip | CLB VIP address (optional custom configuration of CLB) |
-| X-Vport | CLB Vport (optional custom configuration of CLB) |
-| X-Url | CLB request path (optional custom configuration of CLB) |
+| X-clb-stgw-vip | CLB VIP address (optional custom configuration of CLB) |
+| X-Forwarded-Port | CLB Vport (optional custom configuration of CLB) |
+| X-Uri | CLB request path (optional custom configuration of CLB) |
 | X-Method | CLB request method (optional custom configuration of CLB) |
 
 >! 
