@@ -2,7 +2,7 @@
 <dx-tabs>
 
 ::: Pay-as-you-go cloud disks
->!
+
 - After you stop using pay-as-you-go resources, **terminate them as soon as possible** to avoid fee deduction.
 - Since your actual resource consumption changes constantly, some slight discrepancies may exist for your stated balance.
 
@@ -23,7 +23,7 @@
 </tr>
 </table>
 
-### Processing for overdue payment
+Processing for overdue payment
 
 - You can continue to use the pay-as-you-go cloud disk for 2 hours from the moment your account balance becomes negative. You will be billed for this period. After 2 hours (Point 2 in the figure above), its services will be suspended (cloud disk is unavailable and can only store data). You will still be billed according to the billing standard (even if the account balance is negative) until data is completely erased.
 - If your Tencent Cloud account is topped up to a positive balance within 15 days after the cloud disk has its services suspended, the disk can be restored.
