@@ -22,12 +22,12 @@ For use cases of tags, see [Tag Feature](https://intl.cloud.tencent.com/document
 | tag_token_list | Array  | No | Tag-device pair list:<li>Required when `operator_type` is `9` or `10`.<li>Format example: [{"tag":"tag123", "token":"token123"}]<li>In each pair, the tag is before the token.<li>The list can contain up to 20 values.<li>A tag string cannot exceed 50 characters.<li>A token string cannot exceed 64 characters. |
 
 >!
-- An application can have up to 10,000 custom tags. A single device token can be bound to up to 100 custom tags (if you want to raise this limit, submit a ticket). A single custom tag can be bound to an unlimited number of device tokens.
-- If the API needs to be called only once, then there are no restrictions on the API call method.
-- If the API needs to be called continuously, note the following:
- - If the API needs to be called continuously to set more than 10 tags or tokens, you are advised to use batch APIs. It is recommended that the interval between API calls be no less than 1s to guarantee correct tag operations.
- - If not using batch APIs, you should make the next call of the non-batch tag API after the TPNS server returns a value. You are not advised to concurrently make multiple tag API calls in the multi-thread async mode.
-- Colon `:` is a keyword used by the TPNS backend for tag categorization. If you include `:` in a tag when setting it, the string before the first `:` serves as the category name of the tag. This is only used when `operator_type` is `6`, which means overwriting tags by category. For example, if the existing tags of a device are `level:1`, `level:2`, and `male`, you can directly overwrite `level:1` and `level:2` with `level:3` without having to unbind `level:1` and `level:2` one by one, and then bind `level:3`. For more information, please see the following sample request where `operator_type` is `6`.
+>- An application can have up to 10,000 custom tags. A single device token can be bound to up to 100 custom tags (if you want to raise this limit, submit a ticket). A single custom tag can be bound to an unlimited number of device tokens.
+>- If the API needs to be called only once, then there are no restrictions on the API call method.
+>- If the API needs to be called continuously, note the following:
+    - If the API needs to be called continuously to set more than 10 tags or tokens, you are advised to use batch APIs. It is recommended that the interval between API calls be no less than 1s to guarantee correct tag operations.
+    - If not using batch APIs, you should make the next call of the non-batch tag API after the TPNS server returns a value. You are not advised to concurrently make multiple tag API calls in the multi-thread async mode.
+>- Colon `:` is a keyword used by the TPNS backend for tag categorization. If you include `:` in a tag when setting it, the string before the first `:` serves as the category name of the tag. This is only used when `operator_type` is `6`, which means overwriting tags by category. For example, if the existing tags of a device are `level:1`, `level:2`, and `male`, you can directly overwrite `level:1` and `level:2` with `level:3` without having to unbind `level:1` and `level:2` one by one, and then bind `level:3`. For more information, please see the following sample request where `operator_type` is `6`.
 
 
 #### Response parameters
