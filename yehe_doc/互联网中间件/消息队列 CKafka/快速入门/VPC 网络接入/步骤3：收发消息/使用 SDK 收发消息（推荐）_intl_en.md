@@ -39,8 +39,8 @@ group.id=XXX
 
 | Parameter | Description |
 | ----------------- | ------------------------------------------------------------ |
-| bootstrap.servers | Accessed network, which can be copied from the **Network** column in the **Access Mode** section on the **Instance Details** page in the console. <br/>![](https://main.qcloudimg.com/raw/88b29cffdf22e3a0309916ea715057a1.png) |
-| topic             | Topic name, which can be copied from the **Topic Management** page in the console. <br/>![](https://main.qcloudimg.com/raw/6fea6378fa2710a6f8083723e1849601.png) |
+| bootstrap.servers | Accessed network, which can be copied from the **Network** column in the **Access Mode** section on the **Instance Details** page in the console. <br/>![](https://main.qcloudimg.com/raw/6b12eca18662d26a334d55b743c825ef.png) |
+| topic             | Topic name, which can be copied from the **Topic Management** page in the console. <br/>![](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png) |
 | group.id          | You can customize it. After the demo runs successfully, you can see the consumer on the **Consumer Group** page. |
 
 2. Create the configuration file loading program `CKafkaConfigurer.java`. 
