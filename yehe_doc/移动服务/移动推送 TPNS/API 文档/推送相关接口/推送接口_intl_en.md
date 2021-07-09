@@ -18,7 +18,7 @@ The required push parameters refer to the parameters that must be carried in a p
 | Parameter | Type | Required | Description |
 | ------------- | ------- | ---------------------------------------- | ------------------------------------------------------------ |
 | audience_type | String  | Yes                                       | Push target. Valid values:<li>`all`: push to all devices</li><li>`tag`: push to devices with specified tags</li><li>`token`: push to a single device</li><li>`token_list`: push to a list of devices</li><li>`account`: push to a single account</li><li>`account_list`: push to a list of accounts</li><li>`package_account_push`: push by account package<li>`package_token_push`: push by token package |
-| message       | Object  | Yes                     | Message body. For more information, please see [message body type](#message body type).                     |
+| message       | Object  | Yes                     | Message body. For more information, please see [message body type](#message-body-type)  .                     |
 | message_type  | String  | Yes                                       | Message type. Valid values:<li>`notify`: notification</li><li>`message`: in-app message/silent message</li> |
 | environment   | String  | Yes (only for iOS)                    | Push environment (only available for pushes on iOS). Valid values:<li>`product`: production environment</li><li>`dev`: development environment</li> |
 | upload_id   | Integer  | Yes (only available for push by account/token package)        | Account/Token package upload ID  |
@@ -129,7 +129,7 @@ Push API supports a variety of push targets. For example, you can push to all de
   }
 ```
 
-<span id="message body type"></span>
+<span id="message-body-type"></span>
 
 ### message_type: message type
 
