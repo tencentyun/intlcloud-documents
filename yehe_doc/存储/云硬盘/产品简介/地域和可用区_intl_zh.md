@@ -37,7 +37,6 @@
 	<tr>
 		<td>广州六区<br> ap-guangzhou-6</td>
 	</tr>
-
 	<tr>
 		<td rowspan="5">华东地区（上海）<br>ap-shanghai</td>
 		<td>上海一区<br>ap-shanghai-1</td>
@@ -51,62 +50,61 @@
 	<tr>
 		<td>上海四区<br>ap-shanghai-4</td>
 	</tr>
- <tr>
+	<tr>
 		<td>上海五区<br>ap-shanghai-5</td>
 	</tr>
-	
-		<tr>
-			<td rowspan="3">华东地区（南京）<br>ap-nanjing</td>
-			<td>南京一区<br>ap-nanjing-1</td>
+	<tr>
+		<td rowspan="3">华东地区（南京）<br>ap-nanjing</td>
+		<td>南京一区<br>ap-nanjing-1</td>
 	</tr>
 	<tr>
-			<td>南京二区<br>ap-nanjing-2</td>
+		<td>南京二区<br>ap-nanjing-2</td>
 	</tr>
 	<tr>
-			<td>南京三区<br>ap-nanjing-3</td>
-	</tr>
-		<tr>
-			<td rowspan="7">华北地区（北京）<br>ap-beijing</td>
-			<td>北京一区<br>ap-beijing-1</td>
+		<td>南京三区<br>ap-nanjing-3</td>
 	</tr>
 	<tr>
-			<td>北京二区<br>ap-beijing-2</td>
+		<td rowspan="7">华北地区（北京）<br>ap-beijing</td>
+		<td>北京一区<br>ap-beijing-1</td>
 	</tr>
 	<tr>
-			<td>北京三区<br>ap-beijing-3</td>
+		<td>北京二区<br>ap-beijing-2</td>
 	</tr>
 	<tr>
-			<td>北京四区<br>ap-beijing-4</td>
+		<td>北京三区<br>ap-beijing-3</td>
 	</tr>
 	<tr>
-			<td>北京五区<br>ap-beijing-5</td>
+		<td>北京四区<br>ap-beijing-4</td>
 	</tr>
-		<tr>
-			<td>北京六区<br>ap-beijing-6</td>
+	<tr>
+		<td>北京五区<br>ap-beijing-5</td>
 	</tr>
-		<tr>
-			<td>北京七区<br>ap-beijing-7</td>
+	<tr>
+		<td>北京六区<br>ap-beijing-6</td>
+	</tr>
+	<tr>
+		<td>北京七区<br>ap-beijing-7</td>
 	</tr>
 	<tr>
 		<td rowspan="2">西南地区（成都）<br>ap-chengdu</td>
 		<td>成都一区<br>ap-chengdu-1</td>
 	</tr>
 	<tr>
-			<td>成都二区<br>ap-chengdu-2</td>
+		<td>成都二区<br>ap-chengdu-2</td>
 	</tr>    
 	<tr>
-			<td >西南地区（重庆）<br>ap-chongqing</td>
-			<td>重庆一区<br>ap-chongqing-1</td>
+		<td >西南地区（重庆）<br>ap-chongqing</td>
+		<td>重庆一区<br>ap-chongqing-1</td>
 	</tr>
 	<tr>
-			<td rowspan="3">港澳台地区（中国香港）<br>ap-hongkong</td>
-			<td>香港一区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-1</td>
+		<td rowspan="3">港澳台地区（中国香港）<br>ap-hongkong</td>
+		<td>香港一区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-1</td>
 	</tr>
 	<tr>
-			<td>香港二区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-2</td>
+		<td>香港二区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-2</td>
 	</tr>
-		<tr>
-			<td>香港三区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-3</td>
+	<tr>
+		<td>香港三区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-3</td>
 	</tr>
 </tbody>
 </table>	
