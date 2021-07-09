@@ -10,7 +10,7 @@
 	 ![](https://main.qcloudimg.com/raw/7fa7a951705943382c2836afc78a022c.png)
 	- 计费模式：包年包月
 	- 规格类型：根据自身业务需求选择标准版或者专业版。
-	- Kafka 版本：根据您的业务需求选择 Kafka 版本，可参考 [CKafka 版本选择建议](https://cloud.tencent.com/document/product/597/57243)。
+	- Kafka 版本：根据您的业务需求选择 Kafka 版本，可参考 [CKafka 版本选择建议](https://intl.cloud.tencent.com/document/product/597/40964)。
 	- 地域：选择和部署客户端的资源相近的地域。
 	- 可用区：根据实际需要选择可用区。
 		- 标准版：不支持多可用区部署。
