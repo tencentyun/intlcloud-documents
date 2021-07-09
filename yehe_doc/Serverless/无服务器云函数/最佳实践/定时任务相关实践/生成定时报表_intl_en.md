@@ -1,6 +1,6 @@
 ## Overview
 
-This document uses SCF, [MTA](https://mta.qq.com/), and WeCom bot to perform scheduled tasks such as report content collection and data display.
+This document uses SCF, [MTA](https://mta.qq.com/docs/), and WeCom bot to perform scheduled tasks such as report content collection and data display.
 
 ## Directions
 
