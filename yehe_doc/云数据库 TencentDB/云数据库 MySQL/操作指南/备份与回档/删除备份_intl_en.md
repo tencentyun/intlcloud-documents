@@ -4,7 +4,7 @@ You can delete database backups to reduce backup space costs.
 
 
 ## Directions
-1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID/name or **Manage** in the "Operation" column to access the instance’s management page.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the "Operation" column to access the instance’s management page.
 2. On the **Backup and Restore** tab, locate the backup you want to delete in the backup list, and click **Delete** in the "Operation" column.
 ![](https://main.qcloudimg.com/raw/32ddb8d2ad17032351d44d149c8b5033.png)
 3. In the pop-up dialog box, confirm that all information is correct and click **OK**.
