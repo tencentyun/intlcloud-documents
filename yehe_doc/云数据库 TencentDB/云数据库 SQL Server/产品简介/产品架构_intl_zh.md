@@ -12,7 +12,7 @@ SQL Server 2017 Enterprise
 >?Always On 的基本同步过程：
 >Primary 节点的日志（Commit、Log Block Write）会从 Log Cache 刷到磁盘，同时 Primary 节点的 Log Capture 也会将日志发送到其它所有 Replica 节点，对应节点的 Log Receive 线程将收到的日志同样从 Log Cache 刷到磁盘，最后由 Redo Thread 应用这些日志刷到数据文件。
 >
-![](https://main.qcloudimg.com/raw/908fda85784c6d198536e44980715d5a.png)
+![](https://main.qcloudimg.com/raw/32fbdee7b03ed0b44aae3b539f0ca78f.png)
 
 
 ## 双机高可用版
@@ -45,5 +45,5 @@ SQL Server 2008/2012/2014/2016/2017 Enterprise
 >- 由于基础版是单节点架构，当该节点出现故障，恢复时长比云服务器故障恢复稍长（涉及实例启动与数据恢复）。
 >- 建议对高可用有要求的业务，使用双机高可用版或集群版。
 
-![](https://main.qcloudimg.com/raw/89b7de103f8fe6e251f5dc58fc81cf34.svg)
+![](https://main.qcloudimg.com/raw/e16d9a236cf2c6f9c6ce174486c1fcce.svg)
 
