@@ -12,7 +12,7 @@ SQL Server 2017 Enterprise
 >?Always On 的基本同步过程：
 >Primary 节点的日志（Commit、Log Block Write）会从 Log Cache 刷到磁盘，同时 Primary 节点的 Log Capture 也会将日志发送到其它所有 Replica 节点，对应节点的 Log Receive 线程将收到的日志同样从 Log Cache 刷到磁盘，最后由 Redo Thread 应用这些日志刷到数据文件。
 >
-![](https://main.qcloudimg.com/raw/e282782dd413238f1b2b6f7b9a0306b0.png)
+![](https://main.qcloudimg.com/raw/908fda85784c6d198536e44980715d5a.png)
 
 
 ## 双机高可用版
