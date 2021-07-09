@@ -3,7 +3,7 @@ Instances in VPC with the same network security isolation demands in one region 
 >!TencentDB security group currently only supports network access control for VPCs but not the classic network or the public network.
 
 ## TencentDB Security Group Management
-1. Log in to the [TencentDB for MariaDB console](https://console.cloud.tencent.com/mariadb), click an instance name in the instance list, and enter the instance management page.
+1. Log in to the [TencentDB for MariaDB console](https://console.cloud.tencent.com/mariadb), click an instance ID in the instance list, and enter the instance management page.
 2. Select **Data Security** > **Security Group** to manage TencentDB security groups.
 >!
 > 1. TencentDB shares the security group rules of CVM. You can match or adjust the rule priority as needed on the TencentDB security group management page.
