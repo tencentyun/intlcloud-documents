@@ -33,7 +33,7 @@ The request timed out in 30000ms.Please confirm your http server have enabled li
 
 ### Function Input Parameters
 
-- **envet**: POST request body (HTTP Body)
+- **event**: POST request body (HTTP Body)
 The request body contains the event data. For the structure, see [Trigger Event Message Structure Summary](https://intl.cloud.tencent.com/document/product/583/31439).
 
 - **context**: request header (HTTP Header).
