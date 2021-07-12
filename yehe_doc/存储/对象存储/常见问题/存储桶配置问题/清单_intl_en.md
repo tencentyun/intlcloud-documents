@@ -4,7 +4,6 @@ When an inventory file is generated depends on your configuration. If you have s
 
 If you want to be notified upon a successful inventory file delivery, you can go to the [SCF console](https://console.cloud.tencent.com/scf) to configure a COS trigger and set **Event Type** to **Use Put Bucket inventory API to create an inventory task**.
 
-![](https://main.qcloudimg.com/raw/cfb17f03a9d103911a414ef8ec09a713.png)
 
 ### How can I analyze an inventory report?
 
