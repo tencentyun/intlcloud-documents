@@ -153,9 +153,9 @@ try {
 
 ### 上传对象
 >!
-* 使用 putObject 接口上传文件（最大5G）。
-* 使用 Upload 接口分块上传文件，Upload 接口为复合上传接口，对小文件进行简单上传，对大文件进行分块上传。
-* 参数说明可参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/31542#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1) 文档。
+>* 使用 putObject 接口上传文件（最大5G）。
+>* 使用 Upload 接口分块上传文件，Upload 接口为复合上传接口，对小文件进行简单上传，对大文件进行分块上传。
+>* 参数说明可参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/31542#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1) 文档。
 
 [//]: # ".cssg-snippet-put-object-comp"
 ```php
