@@ -1,4 +1,4 @@
-容器服务-用户指南-组件管理-扩展组件概述
+
 扩展组件是腾讯云容器服务 TKE 提供的扩展功能包，您可以根据业务诉求选择部署所需的扩展组件。扩展组件可帮助您管理集群的 Kubernetes 组件，包括组件部署、升级、更新配置和卸载等。
 
 
@@ -22,8 +22,6 @@
 
 | 组件名称                                                     | 使用场景 | 组件介绍                                                     |
 | ------------------------------------------------------------ | -------- | ------------------------------------------------------------ |
-| [PersistentEvent](https://intl.cloud.tencent.com/document/product/457/33989)<br>（事件持久化组件） | 日志     | 该组件支持为集群配置事件持久化功能，集群事件会被实时导出到配置的存储端。 |
-| [LogCollector](https://intl.cloud.tencent.com/document/product/457/33990)<br>（日志采集组件） | 日志     | 该组件可以将集群内服务或节点特定路径文件的日志发送至 Kafka 的指定 topic 或日志服务 CLS 的指定日志主题。 |
 | [OOMGuard](https://intl.cloud.tencent.com/document/product/457/38709)<br>（内存溢出守护） | 监控     | 该组件在用户态降低了由于 cgroup 内存回收失败而产生的各种内核故障的发生几率。 |
 | [NodeProblemDetectorPlus](https://intl.cloud.tencent.com/document/product/457/38784)<br>（节点异常检测 Plus） | 监控     | 该组件可以实时检测节点上的各种异常情况，并将检测结果报告给 kube-apiserver。 |
 | [NodeLocalDNSCache](https://intl.cloud.tencent.com/document/product/457/38711)<br>（本地 DNS 缓存组件） | DNS      | 该组件通过在集群节点上作为 DaemonSet 运行 DNS 缓存代理来提高集群 DNS 性能。 |
@@ -39,5 +37,5 @@
 | [Descheduler](https://intl.cloud.tencent.com/document/product/457/39146)<br>（重调度组件） | 调度     | 在 TKE 集群中安装该插件后，该插件会和 Kube-scheduler 协同生效，实时监控集群中高负载节点并驱逐低优先级 Pod。建议您搭配 TKE Dynamic Scheduler（动态调度器扩展组件）一起使用，多维度保障集群负载均衡。 |
 | [NetworkPolicy Controller](https://intl.cloud.tencent.com/document/product/457/39120) <br>（网络策略控制器组件） | 其他     | Network Policy 是 Kubernetes 提供的一种资源，本组件提供了针对该资源的 Controller 实现。 |
 | [Nginx-Ingress](https://intl.cloud.tencent.com/document/product/457/39143)<br>（社区 Ingress 组件） | 其他     | Nginx 可以用作反向代理、负载平衡器和 HTTP 缓存。Nginx-ingress 组件是使用 Nginx 作为反向代理和负载平衡器的 Kubernetes 的 Ingress 控制器。 |
-| [OLM]()<br>（Operator 生命周期管理） | 其他     | OLM（Operator Lifecycle Manager）作为 Operator Framework 的一部分，可以帮助用户进行 Operator 的自动安装，升级及生命周期的管理。 |
-| [HPC]()<br>（定时修改副本数） | 其他     | HPC（HorizontalPodCronscaler）是一种可以对 K8s workload 副本数进行定时修改的自研组件，配合 HPC CRD 使用，最小支持秒级的定时任务。 |
+| [OLM](https://intl.cloud.tencent.com/document/product/457/40955)<br>（Operator 生命周期管理） | 其他     | OLM（Operator Lifecycle Manager）作为 Operator Framework 的一部分，可以帮助用户进行 Operator 的自动安装，升级及生命周期的管理。 |
+| [HPC](https://intl.cloud.tencent.com/document/product/457/40956)<br>（定时修改副本数） | 其他     | HPC（HorizontalPodCronscaler）是一种可以对 K8s workload 副本数进行定时修改的自研组件，配合 HPC CRD 使用，最小支持秒级的定时任务。 |
