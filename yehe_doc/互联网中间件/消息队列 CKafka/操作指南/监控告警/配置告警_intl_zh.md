@@ -35,9 +35,9 @@
    - **策略类型**：选择【消息服务CKafka】。
    - **使用预置触发条件**：勾选此选项，会出现系统建议的告警策略。
 5. 确认无误后，单击【保存】。
-   ![](https://main.qcloudimg.com/raw/0313713fbda620c46c7dce64fcff6a50.png)
+   ![](![](https://main.qcloudimg.com/raw/df3e52dff6035c3870ce442d028a4dd6.png)
 6. 返回新建告警策略页，单击【刷新】，就会出现刚配置的告警策略模板。
-   ![](https://main.qcloudimg.com/raw/e3dcb4d55755fac09ebb004e96622bcd.png)
+   ![](https://main.qcloudimg.com/raw/84d19941c57fb42a5839cd730c79c376.png)
 
 ## CKafka 推荐监控告警策略[](id:CKafka推荐监控告警策略)
 
