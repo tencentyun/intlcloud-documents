@@ -95,7 +95,7 @@ cos.putBucketAcl({
 | - - Grantee | Authorized user information | Object | No |
 | - - - ID | Complete ID of the grantee in the format of `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`</br>Example: `qcs::cam::uin/100000000001:uin/100000000001` where 100000000001 is the uin | String | No |
 | - - - DisplayName | String representing the username, which is usually the same as the string you enter for `ID` | String | No |
-| - - - URI | Preset user groups. For more information, see the `Identity (Grantee)` section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583), such as <br>`http://cam.qcloud.com/groups/global/AllUsers` or <br>`http://cam.qcloud.com/groups/global/AuthenticatedUsers` | String |
+| - - - URI | Preset user groups. For more information, see the `Identity (Grantee)` section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583), such as <br>`http://cam.qcloud.com/groups/global/AllUsers` or <br>`http://cam.qcloud.com/groups/global/AuthenticatedUsers` | String | No |
 
 #### Callback function description
 
@@ -103,7 +103,7 @@ cos.putBucketAcl({
 function(err, data) { ... }
 ```
 
-| Parameter Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
+| Parameter Name       | Description                                                     | Type   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ |
 | err | Object returned when an error (network error or service error) occurs. If the request is successful, this parameter is left empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
@@ -169,7 +169,7 @@ cos.getBucketAcl({
 function(err, data) { ... }
 ```
 
-| Parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type |
+| Parameter  | Description | Type |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- |
 | err | Object returned when an error (network error or service error) occurs. If the request is successful, this parameter is left empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
