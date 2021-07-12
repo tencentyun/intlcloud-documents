@@ -4,7 +4,7 @@ TencentDB for MySQL supports importing SQL files in the console. This feature al
 >?Only two-node and three-node TencentDB for MySQL instances support importing SQL files.
 
 ## Directions
-1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID/name or **Manage** in the **Operation** column to enter the instance management page.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance management page.
 2. Select **Database Management** > **Database List** and click **Import Data**.
 ![](https://main.qcloudimg.com/raw/a8854e74caebb9c69d831dc1583c10c0.png)
 3. On the pop-up page, click **Add File** to import the file. After the upload is completed, click **Next**.
