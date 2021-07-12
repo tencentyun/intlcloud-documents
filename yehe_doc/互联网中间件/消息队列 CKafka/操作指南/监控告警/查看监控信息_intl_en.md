@@ -9,24 +9,20 @@ This document describes how to view monitoring metrics and their descriptions in
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
 2. In the instance list, click the **ID/Name** of the target instance to enter the instance details page.
 3. At the top of the instance details page, Click **Monitor**, select resource tags, and set the time range to view the monitoring data about the instance.
-   - You can click <img src="https://main.qcloudimg.com/raw/9ba57bbd3b8ef3efc4f687d63d27a46d.png" width="25px"> to view the historical monitoring data.
-   - You can click <img src="https://main.qcloudimg.com/raw/34bdbdbdabb7b5720bf17d78c636a4ad.png" width="60px"> to refresh and get the latest monitoring data.
-   - You can click <img src="https://main.qcloudimg.com/raw/8f2bf7f4df9ddd959f0ecb69fdda8e4c.png" width="25px"> to copy the chart to a dashboard. For more information on dashboard, please see [What Is a Dashboard?](https://intl.cloud.tencent.com/document/product/248/38461).
-   - You can select <img src="https://main.qcloudimg.com/raw/af20129df7be46f33ab7d3598f6e9213.png" width="60px"> to display the legend information on the chart.
 
 ### Monitoring information display
 
 **Instance**
 
-![](https://main.qcloudimg.com/raw/eb8a8817490f2266e831df14e7df339a.png)
+![](https://main.qcloudimg.com/raw/d37b3b60346ad1c69533478109fb04d2.png)
 
 **Topic**
 
-![](https://main.qcloudimg.com/raw/92b112b02d460b61ba046815ef7e2316.png)
+![](https://main.qcloudimg.com/raw/8060fed44eb38eb2f0eb3b0fb9e9171d.png)
 
 **Consumer Group**
 
-![](https://main.qcloudimg.com/raw/0b008c55fbcb549b7aacd77a47b0101f.png)
+![](https://main.qcloudimg.com/raw/377865e2102df5de14adcfcec0b3c5c0.png)
 
 ### Descriptions of metrics
 
