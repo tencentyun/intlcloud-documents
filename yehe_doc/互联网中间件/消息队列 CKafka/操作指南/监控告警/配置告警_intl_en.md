@@ -16,17 +16,17 @@ The created alarm can determine whether an alarm notification should be sent bas
 3. On the alarm configuration page, select a policy type and instance and set the alarm rule and notification template.
    - **Policy Type**: select **CKafka**.
    - **Alarm Object**: select the CKafka resource for which to configure the alarm policy.
-   - **Trigger Condition**: you can select **Select template** or **Configure manually**. The latter is selected by default. For more information on manual configuration, please see the description below. For more information on how to create a template, please see [Creating trigger condition template](#新建触发条件模板).
+   - **Trigger Condition**: you can select **Select template** or **Configure manually**. The latter is selected by default. For more information on manual configuration, please see the description below. For more information on how to create a template, please see [Creating trigger condition template](#Creating-trigger-condition-template).
      >- Metric: for example, if you select 1 minute as the statistical period for the "Disk Utilization" metric, then if the disk utilization exceeds the threshold for N consecutive data points, an alarm will be triggered.
      >- Alarm Frequency: for example, "Alarm once every 30 minutes" means that there will be only one alarm triggered every 30 minutes if a metric exceeds the threshold in several consecutive statistical periods. Another alarm will be triggered only if the metric exceeds the threshold again in the next 30 minutes.
    
-	For metrics for which configuring an alarm policy is recommended, please see [Monitoring Alarm Policies Recommended for CKafka](#CKafka推荐监控告警策略).
+	For metrics for which configuring an alarm policy is recommended, please see [Monitoring Alarm Policies Recommended for CKafka](#Monitoring-Alarm-Policies-Recommended-for-CKafka).
    - **Notification Template**: you can select an existing notification template or create one to set the alarm recipient objects and receiving channels.
 4. Click **Complete** to complete the configuration.
 
 For more information on alarms, please see [Creating Alarm Policy](https://intl.cloud.tencent.com/document/product/248/38916).
 
-### Creating trigger condition template[](id:新建触发条件模板)
+### Creating trigger condition template[](id:Creating-trigger-condition-template)
 
 1. Log in to the [Cloud Monitor console](https://console.cloud.tencent.com/monitor/).
 2. On the left sidebar, click **Trigger Condition Template** to enter the trigger template list page.
@@ -35,11 +35,11 @@ For more information on alarms, please see [Creating Alarm Policy](https://intl.
    - **Policy Type**: select **CKafka**.
    - **Use preset trigger condition**: select this option and the system recommended alarm policy will be displayed.
 5. After confirming that everything is correct, click **Save**.
-   ![](https://main.qcloudimg.com/raw/0313713fbda620c46c7dce64fcff6a50.png)
+   ![](	https://main.qcloudimg.com/raw/df3e52dff6035c3870ce442d028a4dd6.png)
 6. Return to alarm policy creation page and click **Refresh**. The alarm policy template just configured will be displayed.
-   ![](https://main.qcloudimg.com/raw/e3dcb4d55755fac09ebb004e96622bcd.png)
+   ![](https://main.qcloudimg.com/raw/84d19941c57fb42a5839cd730c79c376.png)
 
-## Monitoring Alarm Policies Recommended for CKafka[](id:CKafka推荐监控告警策略)
+## Monitoring Alarm Policies Recommended for CKafka[](id:Monitoring-Alarm-Policies-Recommended-for-CKafka)
 
 For more information on metrics that may affect the business data stability, please see [CKafka Data Reliability](https://cloud.tencent.com/document/product/597/36186).
 
