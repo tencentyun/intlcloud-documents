@@ -85,44 +85,44 @@ postgres=# SELECT * FROM tdapg ORDER BY nickname nulls last;
 
 **Sorting by Pinyin**
 ```
-postgres=# SELECT * FROM (VALUES ('张三'), ('李四'),('陈五')) t(myname) ORDER BY myname;               
+postgres=# SELECT * FROM (VALUES ('张三'), ('王四'),('陈五')) t(myname) ORDER BY myname;               
  myname 
 --------
  张三
- 李四
+ 王四
  陈五
 (3 rows)
 ```
 
 If the entries are not processed, they will be sorted by UTF-8 encoding of Chinese characters, which does not conform to usage habits:
 ```
-postgres=# SELECT * FROM (VALUES ('张三'), ('李四'),('陈五')) t(myname) ORDER BY convert(myname::bytea,'UTF-8','GBK');
+postgres=# SELECT * FROM (VALUES ('张三'), ('王四'),('陈五')) t(myname) ORDER BY convert(myname::bytea,'UTF-8','GBK');
  myname 
 --------
  陈五
- 李四
+ 王四
  张三
 (3 rows)
 ```
 
 Use the `convert` function to sort the Chinese character entries by Pinyin:
 ```
-postgres=# SELECT * FROM (VALUES ('张三'), ('李四'),('陈五')) t(myname) ORDER BY convert_to(myname,'GBK');      
+postgres=# SELECT * FROM (VALUES ('张三'), ('王四'),('陈五')) t(myname) ORDER BY convert_to(myname,'GBK');      
  myname 
 --------
  陈五
- 李四
+ 王四
  张三
 (3 rows)
 ```
 
 Use the `convert_to` function to sort the Chinese character entries by Pinyin:
 ```
-postgres=# SELECT * FROM (VALUES ('张三'), ('李四'),('陈五')) t(myname) ORDER BY myname  collate "zh_CN.utf8";
+postgres=# SELECT * FROM (VALUES ('张三'), ('王四'),('陈五')) t(myname) ORDER BY myname  collate "zh_CN.utf8";
  myname 
 --------
  陈五
- 李四
+ 王四
  张三
 (3 rows)
 ```
