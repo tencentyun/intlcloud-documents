@@ -10,12 +10,12 @@ URL 사전 서명 시 서명에 객체 키를 설정하여 지정한 객체 키�
 
 SDK에서 사전 서명된 URL 메서드를 직접 호출할 수 있습니다. 자세한 내용은 다음 언어별 SDK 문서를 참조하십시오.
 
-- [Android SDK](https://intl.cloud.tencent.com/document/product/436/31516)
-- [C SDK](https://intl.cloud.tencent.com/document/product/436/31520)
+- [Android SDK](https://intl.cloud.tencent.com/document/product/436/37680)
+-  [C SDK](https://intl.cloud.tencent.com/document/product/436/31520)
 - [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31524)
-- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/30598)
+- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/38068)
 - [Go SDK](https://intl.cloud.tencent.com/document/product/436/31528)
-- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31532)
+- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/37690)
 - [Java SDK](https://intl.cloud.tencent.com/document/product/436/31536)
 - [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31540)
 - [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/32455)
