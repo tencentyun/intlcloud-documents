@@ -6,11 +6,16 @@
 - 示例 Demo 程序地址：[PHP sample](https://github.com/tencentyun/cos-php-sdk-v5/tree/master/sample)。
 - SDK 文档中的所有示例代码请参见 [SDK 代码示例](https://github.com/tencentyun/cos-snippets/tree/master/php)。
 - SDK 更新日志请参见 [ChangeLog](https://github.com/tencentyun/cos-php-sdk-v5/blob/master/CHANGELOG.md)。
+- SDK 常见问题请参见：[PHP SDK 常见问题](https://intl.cloud.tencent.com/document/product/436/40543)。
+
+
+>? 如果您在使用 XML 版本 SDK 时遇到函数或方法不存在等错误，请先将 XML 版本 SDK 升级到最新版再重试。
+>
 
 #### 环境依赖
 
-*   PHP 5.6+
-    您可以通过`php -v`命令查看当前的 PHP 版本。
+-   PHP 5.6+
+    您可以通过 `php -v` 命令查看当前的 PHP 版本。
 >!如果您的 PHP 版本`>=5.3` 且`<5.6` ，请使用 [ v1.3 ](https://github.com/tencentyun/cos-php-sdk-v5/tree/1.3) 版本。
 -  cURL 扩展
 您可以通过`php -m`命令查看 cURL 扩展是否已经安装好。
@@ -33,11 +38,11 @@ SDK 安装有三种方式：[Composer 方式](#composer)、[Phar 方式](#phar) 
 
 **安装步骤**
 1. 打开终端。
-2. 下载 Composer，执行以下命令。
+2. 执行以下命令，下载 Composer。
 ```shell
 curl -sS https://getcomposer.org/installer | php
 ```
-3. 创建一个名为`composer.json`的文件，内容如下。
+3. 创建一个名为 `composer.json`的文件，内容如下：
 ```json
 {
     "require": {
@@ -45,7 +50,7 @@ curl -sS https://getcomposer.org/installer | php
     }
 }
 ```
-4. 使用 Composer 安装，执行以下命令。
+4. 执行以下命令，使用 Composer 安装。
 ```shell
 php composer.phar install
 ```
@@ -71,7 +76,8 @@ require  '/path/to/cos-sdk-v5.phar';
 源码方式安装 SDK 的步骤如下：
 1.  在 [ SDK 下载页面](https://github.com/tencentyun/cos-php-sdk-v5/releases) 下载`cos-sdk-v5.tar.gz`压缩文件。
 >!`Source code`压缩包为 Github 默认打包的代码包，里面不包含`vendor`目录。
-2.  解压后通过 `autoload.php` 脚本加载 SDK：
+>
+>2.  解压后通过 `autoload.php` 脚本加载 SDK：
 
 ```php
 require '/path/to/sdk/vendor/autoload.php';
@@ -83,7 +89,7 @@ require '/path/to/sdk/vendor/autoload.php';
 
 ### 初始化
 
-[//]: # (.cssg-snippet-global-init)
+[//]: # ".cssg-snippet-global-init"
 ```php
 $secretId = "COS_SECRETID"; //"云 API 密钥 SecretId";
 $secretKey = "COS_SECRETKEY"; //"云 API 密钥 SecretKey";
@@ -97,9 +103,9 @@ $cosClient = new Qcloud\Cos\Client(
             'secretKey' => $secretKey)));
 ```
 
-若您使用 [临时密钥](https://intl.cloud.tencent.com/document/product/436/14048) 初始化，请用下面方式创建实例。
+若您使用 [临时密钥](https://intl.cloud.tencent.com/document/product/436/14048) 初始化，请用下面方式创建实例：
 
-[//]: # (.cssg-snippet-global-init-sts)
+[//]: # ".cssg-snippet-global-init-sts"
 ```php
 $tmpSecretId = "COS_SECRETID"; //"临时密钥 SecretId";
 $tmpSecretKey = "COS_SECRETKEY"; //"临时密钥 SecretKey";
@@ -117,7 +123,7 @@ $cosClient = new Qcloud\Cos\Client(
 
 ### 创建存储桶
 
-[//]: # (.cssg-snippet-put-bucket)
+[//]: # ".cssg-snippet-put-bucket"
 ```php
 try {
     $bucket = "examplebucket-1250000000"; //存储桶名称 格式：BucketName-APPID
@@ -132,7 +138,7 @@ try {
 
 ### 查询存储桶列表
 
-[//]: # (.cssg-snippet-get-service)
+[//]: # ".cssg-snippet-get-service"
 ```php
 try {
     //请求成功
@@ -147,11 +153,11 @@ try {
 
 ### 上传对象
 >!
->- 使用 putObject 接口上传文件（最大5G）。
->- 使用 Upload 接口分块上传文件，Upload 接口为复合上传接口，对小文件进行简单上传，对大文件进行分块上传。
->- 参数说明可参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/31542#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1) 文档。
+* 使用 putObject 接口上传文件（最大5G）。
+* 使用 Upload 接口分块上传文件，Upload 接口为复合上传接口，对小文件进行简单上传，对大文件进行分块上传。
+* 参数说明可参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/31542#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1) 文档。
 
-[//]: # (.cssg-snippet-put-object-comp)
+[//]: # ".cssg-snippet-put-object-comp"
 ```php
 # 上传文件
 ## putObject(上传接口，最大支持上传5G文件)
@@ -219,7 +225,7 @@ try {
 
 ### 查询对象列表
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```php
 try {
     $bucket = "examplebucket-1250000000"; //存储桶名称 格式：BucketName-APPID
@@ -240,7 +246,7 @@ try {
 
 单次调用`listObjects`接口一次只能查询1000个对象，如需要查询所有的对象，则需要循环调用。
 
-[//]: # (.cssg-snippet-get-bucket-recursive)
+[//]: # ".cssg-snippet-get-bucket-recursive"
 ```php
 try {
     $bucket = "examplebucket-1250000000"; //存储桶名称 格式：BucketName-APPID
@@ -272,7 +278,7 @@ try {
 * 使用 getObject 接口下载文件。
 * 使用 getObjectUrl 接口获取文件下载 URL。
 
-[//]: # (.cssg-snippet-get-object-comp)
+[//]: # ".cssg-snippet-get-object-comp"
 ```php
 # 下载文件
 ## getObject(下载文件)
@@ -337,7 +343,7 @@ try {
 
 ### 删除对象
 
-[//]: # (.cssg-snippet-delete-object-comp)
+[//]: # ".cssg-snippet-delete-object-comp"
 ```php
 # 删除 object
 ## deleteObject

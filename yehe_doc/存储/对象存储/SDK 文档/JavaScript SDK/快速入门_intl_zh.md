@@ -7,6 +7,11 @@
 - 演示示例 Demo 下载地址：[XML JavaScript SDK Demo](https://github.com/tencentyun/cos-js-sdk-v5/tree/master/demo)。
 - SDK 文档中的所有示例代码请参见 [SDK 代码示例](https://github.com/tencentyun/cos-snippets/tree/master/JavaScript)。
 - SDK 更新日志请参见 [ChangeLog](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/CHANGELOG.md)。
+- SDK 常见问题请参见：[JavaScript SDK 常见问题](https://intl.cloud.tencent.com/document/product/436/40775)。
+
+
+>? 如果您在使用 XML 版本 SDK 时遇到函数或方法不存在等错误，请先将 XML 版本 SDK 升级到最新版再重试。
+>
 
 #### 准备环境
 
@@ -14,7 +19,7 @@
 2. 登录 [对象存储控制台](https://console.cloud.tencent.com/cos5) ，[创建存储桶](https://intl.cloud.tencent.com/document/product/436/13309)。获取存储桶名称和 [地域名称](https://intl.cloud.tencent.com/document/product/436/6224)。
 3. 登录 [访问管理控制台](https://console.cloud.tencent.com/capi) ，获取您的项目 SecretId 和 SecretKey。
 4. 配置 CORS 规则，AllowHeader 需配成`*`，ExposeHeaders 需要 ETag、Content-Length 以及其他 js 需要读取的 header 字段，如下图所示。操作详情请参见 [设置跨域访问](https://intl.cloud.tencent.com/document/product/436/13318) 文档。
-   ![CORS示例](https://main.qcloudimg.com/raw/bdb4f616f2afe4ca18ba663446873fd4.png)
+
 
 > ?关于本文中出现的 SecretId、SecretKey、Bucket 等名称的含义和获取方式请参见 [COS 术语信息](https://intl.cloud.tencent.com/document/product/436/7751)。
 
@@ -95,7 +100,7 @@ var cos = new COS({
 
 - 格式一（推荐）：后端通过获取临时密钥给到前端，前端计算签名。
 
-[//]: # (.cssg-snippet-global-init-sts)
+[//]: # ".cssg-snippet-global-init-sts"
 ```js
 var COS = require('cos-js-sdk-v5');
 var cos = new COS({
@@ -124,7 +129,7 @@ var cos = new COS({
 
 - 格式二（推荐）：细粒度控制权限，后端通过获取临时密钥给到前端，只有在相同请求时，前端才重复使用临时密钥，后端可以通过 Scope 细粒度控制权限。
 
-[//]: # (.cssg-snippet-global-init-sts-scope)
+[//]: # ".cssg-snippet-global-init-sts-scope"
 ```js
 var COS = require('cos-js-sdk-v5');
 var cos = new COS({
@@ -159,7 +164,7 @@ var cos = new COS({
 
 - 格式三（不推荐）：前端每次请求前都需要通过 getAuthorization 获取签名，后端使用固定密钥或临时密钥计算签名返回至前端。该格式分块上传权限不便控制，不推荐您使用此格式。
 
-[//]: # (.cssg-snippet-global-init-signature)
+[//]: # ".cssg-snippet-global-init-signature"
 ```js
 var cos = new COS({
     // 必选参数
@@ -186,7 +191,7 @@ var cos = new COS({
 
 - 格式四（不推荐）：前端使用固定密钥计算签名，该格式适用于前端调试，若使用此格式，请避免泄露密钥。
 
-[//]: # (.cssg-snippet-global-init)
+[//]: # ".cssg-snippet-global-init"
 ```js
 // SECRETID 和 SECRETKEY请登录 https://console.cloud.tencent.com/cam/capi 进行查看和管理
 var cos = new COS({
@@ -284,7 +289,7 @@ getAuthorization 计算完成后，callback 回传参数支持两种格式：
 
 简单上传接口适用于小文件上传，大文件请使用分块上传接口，详情请参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/31538) 文档。
 
-[//]: # (.cssg-snippet-put-object)
+[//]: # ".cssg-snippet-put-object"
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -302,7 +307,7 @@ cos.putObject({
 
 ### 查询对象列表
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```js
 cos.getBucket({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -317,7 +322,7 @@ cos.getBucket({
 
 > !该接口用于读取对象内容，如果需要发起浏览器下载文件，可以通过 cos.getObjectUrl 获取 url 再触发浏览器下载，具体请参见 [预签名 URL](https://intl.cloud.tencent.com/document/product/436/31540) 文档。
 
-[//]: # (.cssg-snippet-get-object)
+[//]: # ".cssg-snippet-get-object"
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */
@@ -330,7 +335,7 @@ cos.getObject({
 
 ### 删除对象
 
-[//]: # (.cssg-snippet-delete-object)
+[//]: # ".cssg-snippet-delete-object"
 ```js
 cos.deleteObject({
     Bucket: 'examplebucket-1250000000', /* 必须 */

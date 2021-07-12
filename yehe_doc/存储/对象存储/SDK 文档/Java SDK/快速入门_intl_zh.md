@@ -6,9 +6,10 @@
 - 示例 Demo 下载地址：[COS XML Java SDK 示例](https://github.com/tencentyun/cos-java-sdk-v5/tree/master/src/main/java/com/qcloud/cos/demo)。
 - SDK 文档中的所有示例代码请参见 [SDK 代码示例](https://github.com/tencentyun/cos-snippets/tree/master/Java)。
 - SDK 更新日志请参见 [ChangeLog](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/CHANGELOG.md)。
+- SDK 常见问题请参见：[Java SDK 常见问题](https://intl.cloud.tencent.com/document/product/436/38956)。
+
 
 >? 如果您在使用 XML 版本 SDK 时遇到函数或方法不存在等错误，请先将 XML 版本 SDK 升级到最新版再重试。
->
 
 
 #### 环境依赖
@@ -149,7 +150,7 @@ for (Bucket bucketElement : buckets) {
 
 - 若本地文件大部分在20M以上，建议您参考使用高级 API 接口进行上传。
 - 若 COS 上已存在同样 Key 的对象，上传时则会覆盖旧的对象。
-- 若要创建目录对象，请参见 [SDK 如何创建目录](https://intl.cloud.tencent.com/document/product/436/38956)。
+- 若要创建目录对象，请参见 [SDK 如何创建目录](https://intl.cloud.tencent.com/document/product/436/38956#sdk-.E5.A6.82.E4.BD.95.E5.88.9B.E5.BB.BA.E7.9B.AE.E5.BD.95.EF.BC.9F)。
 - 对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/images/picture.jpg` 中，对象键为 images/picture.jpg，详情请参见 [对象键](https://intl.cloud.tencent.com/document/product/436/13324) 的说明。
 
 

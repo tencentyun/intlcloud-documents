@@ -7,6 +7,11 @@
 - SDK 文档中的所有示例代码请参见 [SDK 代码示例](https://github.com/tencentyun/cos-snippets/tree/master/Python)。
 - SDK 更新日志请参见 [ChangeLog](https://github.com/tencentyun/cos-python-sdk-v5/blob/master/CHANGELOG.md)。
 
+
+
+>? 如果您在使用 XML 版本 SDK 时遇到函数或方法不存在等错误，请先将 XML 版本 SDK 升级到最新版再重试。
+>
+
 #### 环境依赖
 
 对象存储的 XML Python SDK  目前可以支持 Python 2.7 以及 Python 3.4 及以上。
@@ -22,7 +27,7 @@
 ```
 
 - 手动安装
-从 [XML Python SDK](https://github.com/tencentyun/cos-python-sdk-v5) 下载源码，通过 setup 手动安装，执行以下命令。
+从 [XML Python SDK](https://github.com/tencentyun/cos-python-sdk-v5) 下载源码，通过 setup 手动安装，执行以下命令：
 ```python
  python setup.py install
 ```
@@ -47,7 +52,7 @@ pip install cos-python-sdk-v5 --no-index -f cos-python-sdk-packages
 ### 初始化
 请参考以下示例代码：
 
-[//]: # (.cssg-snippet-global-init)
+[//]: # ".cssg-snippet-global-init"
 ```python
 # -*- coding=utf-8
 # appid 已在配置中移除,请在参数 Bucket 中带上 appid。Bucket 由 BucketName-APPID 组成
@@ -71,11 +76,12 @@ client = CosS3Client(config)
 ```
 
 
->?关于临时密钥如何生成和使用，请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
+>? 关于临时密钥如何生成和使用，请参见 [临时密钥生成及使用指引](https://intl.cloud.tencent.com/document/product/436/14048)。
+>
 
 设置代理：
 
-[//]: # (.cssg-snippet-global-init-proxy)
+[//]: # ".cssg-snippet-global-init-proxy"
 ```python
 # APPID 已在配置中移除,请在参数 Bucket 中带上 APPID。Bucket 由 BucketName-APPID 组成
 # 1. 设置用户配置, 包括 secretId，secretKey 以及 Region
@@ -94,7 +100,7 @@ client = CosS3Client(config)
 
 设置 Endpoint：
 
-[//]: # (.cssg-snippet-global-init-endpoint)
+[//]: # ".cssg-snippet-global-init-endpoint"
 ```python
 # APPID 已在配置中移除,请在参数 Bucket 中带上 APPID。Bucket 由 BucketName-APPID 组成
 # 1. 设置用户配置, 包括 secretId，secretKey 以及 Region
@@ -108,7 +114,7 @@ client = CosS3Client(config)
 # 参照下文的描述。或者参照 Demo 程序，详见 https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py
 ```
 
-设置自定义域名:
+设置自定义域名：
 ```python
 # APPID 已在配置中移除，请在参数 Bucket 中带上 APPID。Bucket 由 BucketName-APPID 组成
 # 1. 设置用户配置, 包括 secretId，secretKey 以及 Region
@@ -124,7 +130,7 @@ client = CosS3Client(config)
 # 参照下文的描述。或者参照 Demo 程序，详见 https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py
 ```
 
-设置全球加速域名:
+设置全球加速域名：
 ```python
 # APPID 已在配置中移除，请在参数 Bucket 中带上 APPID。Bucket 由 BucketName-APPID 组成
 # 1. 设置用户配置, 包括 secretId，secretKey 以及 Region
@@ -143,7 +149,7 @@ client = CosS3Client(config)
 
 ### 创建存储桶
 
-[//]: # (.cssg-snippet-put-bucket)
+[//]: # ".cssg-snippet-put-bucket"
 ```python
 response = client.create_bucket(
     Bucket='examplebucket-1250000000'
@@ -152,7 +158,7 @@ response = client.create_bucket(
 
 ### 查询存储桶列表
 
-[//]: # (.cssg-snippet-get-service)
+[//]: # ".cssg-snippet-get-service"
 ```python
 response = client.list_buckets(
 )
@@ -162,7 +168,7 @@ response = client.list_buckets(
 
 >!简单上传不支持超过5G的文件，推荐使用下方高级上传接口。参数说明可参见 [对象操作](https://intl.cloud.tencent.com/document/product/436/31546) 文档。
 
-[//]: # (.cssg-snippet-put-object-comp-comp)
+[//]: # ".cssg-snippet-put-object-comp-comp"
 ```python
 #### 文件流简单上传（不支持超过5G的文件，推荐使用下方高级上传接口）
 # 强烈建议您以二进制模式(binary mode)打开文件,否则可能会导致错误
@@ -213,7 +219,7 @@ print(response['ETag'])
 
 ### 查询对象列表
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```python
 response = client.list_objects(
     Bucket='examplebucket-1250000000',
@@ -221,9 +227,9 @@ response = client.list_objects(
 )
 ```
 
-单次调用`list_objects`接口一次只能查询1000个对象，如需要查询所有的对象，则需要循环调用。
+单次调用 `list_objects` 接口一次只能查询1000个对象，如需要查询所有的对象，则需要循环调用。
 
-[//]: # (.cssg-snippet-get-bucket-recursive)
+[//]: # ".cssg-snippet-get-bucket-recursive"
 ```python
 marker = ""
 while True:
@@ -240,7 +246,7 @@ while True:
 
 ### 下载对象
 
-[//]: # (.cssg-snippet-get-object-comp)
+[//]: # ".cssg-snippet-get-object-comp"
 ```python
 ####  获取文件到本地
 response = client.get_object(
@@ -279,7 +285,7 @@ print(fp.read())
 
 ### 删除对象
 
-[//]: # (.cssg-snippet-delete-object-comp)
+[//]: # ".cssg-snippet-delete-object-comp"
 ```python
 # 删除object
 ## deleteObject
