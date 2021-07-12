@@ -85,44 +85,44 @@ postgres=# SELECT * FROM tdapg ORDER BY nickname nulls last;
 
 **按拼音排序**
 ```
-postgres=# SELECT * FROM (VALUES ('张三'), ('李四'),('陈五')) t(myname) ORDER BY myname;               
+postgres=# SELECT * FROM (VALUES ('张三'), ('王四'),('陈五')) t(myname) ORDER BY myname;               
  myname 
 --------
  张三
- 李四
+ 王四
  陈五
 (3 rows)
 ```
 
 如果不加处理，则按汉字的 utf8 编码进行排序，不符合使用习惯：
 ```
-postgres=# SELECT * FROM (VALUES ('张三'), ('李四'),('陈五')) t(myname) ORDER BY convert(myname::bytea,'UTF-8','GBK');
+postgres=# SELECT * FROM (VALUES ('张三'), ('王四'),('陈五')) t(myname) ORDER BY convert(myname::bytea,'UTF-8','GBK');
  myname 
 --------
  陈五
- 李四
+王四
  张三
 (3 rows)
 ```
 
 使用 convert 函数实现汉字按拼音进行排序：
 ```
-postgres=# SELECT * FROM (VALUES ('张三'), ('李四'),('陈五')) t(myname) ORDER BY convert_to(myname,'GBK');      
+postgres=# SELECT * FROM (VALUES ('张三'), ('王四'),('陈五')) t(myname) ORDER BY convert_to(myname,'GBK');      
  myname 
 --------
  陈五
- 李四
+ 王四
  张三
 (3 rows)
 ```
 
 使用 convert_to 函数实现汉字按拼音进行排序：
 ```
-postgres=# SELECT * FROM (VALUES ('张三'), ('李四'),('陈五')) t(myname) ORDER BY myname  collate "zh_CN.utf8";
+postgres=# SELECT * FROM (VALUES ('张三'), ('王四'),('陈五')) t(myname) ORDER BY myname  collate "zh_CN.utf8";
  myname 
 --------
  陈五
- 李四
+ 王四
  张三
 (3 rows)
 ```
