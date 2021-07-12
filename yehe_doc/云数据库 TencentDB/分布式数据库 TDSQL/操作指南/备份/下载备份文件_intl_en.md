@@ -2,7 +2,7 @@
 You can download TencentDB cold backup data and binlogs in the TDSQL for MySQL Console.
 
 ## Directions
-1. Log in to the [TDSQL Console](https://console.cloud.tencent.com/dcdb) and click the instance name or **Manage** in the "Operation" column to enter the instance management page.
+1. Log in to the [TDSQL Console](https://console.cloud.tencent.com/dcdb) and click the instance ID or **Manage** in the "Operation" column to enter the instance management page.
 2. Select **Shard Management** and click the shard ID to enter the shard management page.
 3. Go to the **Backup and Restore** tab and select **Cold Backup List** or **Binlog List** and click **Download** in the "Operation" column.
 4. A VPC address is provided in the download dialog box that pops up. You can click **Copy** to get the address.
