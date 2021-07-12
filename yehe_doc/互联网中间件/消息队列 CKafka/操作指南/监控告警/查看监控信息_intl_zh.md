@@ -9,24 +9,20 @@
 1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)。
 2. 在实例列表中，单击需要查看的“实例 ID/名称”，进入实例详情页。
 3. 在实例详情页顶部，单击【监控】，选择要查看的实例资源标签，设置好时间范围，可以查看实例监控数据。
-   - 单击<img src="https://main.qcloudimg.com/raw/9ba57bbd3b8ef3efc4f687d63d27a46d.png" width="25px">，可查看监控指标同环比。
-   - 单击<img src="https://main.qcloudimg.com/raw/34bdbdbdabb7b5720bf17d78c636a4ad.png" width="60px">，可刷新获取最新的监控数据。
-   - 单击<img src="https://main.qcloudimg.com/raw/8f2bf7f4df9ddd959f0ecb69fdda8e4c.png" width="25px">，可将图表复制到 Dashboard。Dashboard 相关说明请参考 [什么是 Dashboard](https://intl.cloud.tencent.com/document/product/248/38461)。
-   - 选中<img src="https://main.qcloudimg.com/raw/af20129df7be46f33ab7d3598f6e9213.png" width="60px">，可在图表上显示图例信息。
 
 ### 监控信息展示
 
 **实例**
 
-![](https://main.qcloudimg.com/raw/eb8a8817490f2266e831df14e7df339a.png)
+![](https://main.qcloudimg.com/raw/d37b3b60346ad1c69533478109fb04d2.png)
 
 **Topic**
 
-![](https://main.qcloudimg.com/raw/92b112b02d460b61ba046815ef7e2316.png)
+![](https://main.qcloudimg.com/raw/8060fed44eb38eb2f0eb3b0fb9e9171d.png)
 
 **Consumer Group**
 
-![](https://main.qcloudimg.com/raw/0b008c55fbcb549b7aacd77a47b0101f.png)
+![](https://main.qcloudimg.com/raw/377865e2102df5de14adcfcec0b3c5c0.png)
 
 ### 监控指标含义及说明
 
