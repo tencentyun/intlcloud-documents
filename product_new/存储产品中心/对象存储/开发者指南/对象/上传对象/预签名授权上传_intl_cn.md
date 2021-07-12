@@ -10,12 +10,12 @@
 
 您可以直接调用 SDK 的预签名 URL 方法，请参见下列各语言 SDK 文档：
 
-- [Android SDK](https://intl.cloud.tencent.com/document/product/436/31516)
+- [Android SDK](https://intl.cloud.tencent.com/document/product/436/37680)
 -  [C SDK](https://intl.cloud.tencent.com/document/product/436/31520)
 - [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31524)
-- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/30598)
+- [.NET SDK](https://intl.cloud.tencent.com/document/product/436/38068)
 - [Go SDK](https://intl.cloud.tencent.com/document/product/436/31528)
-- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/31532)
+- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/37690)
 - [Java SDK](https://intl.cloud.tencent.com/document/product/436/31536)
 - [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31540)
 - [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/32455)
