@@ -1,10 +1,9 @@
 ## Flume Overview
-Apache Flume is a highly available, distributed, and configurable tool/service that collects data resources such as logs and events and aggregates large amounts of such data from different sources. It is designed to collect data flows (e.g., log data) from various web servers and store them in centralized data stores like HDFS and HBase.
+Apache Flume is a highly available, distributed, and configurable tool/service that collects and aggregates large amounts of data such as logs and events from different sources. It is designed to collect data flows (e.g., log data) from various web servers and store them in centralized data storage system like HDFS and HBase.
 
-## Flume architecture
-A Flume event is defined as a unit of data flow. A Flume agent is a JVM process that contains the components required for completing a task. Among them, the three core ones are Source, Channel, and Sink.
-![](https://main.qcloudimg.com/raw/886ecba4612fa557b9316b4ff74bd4e3.png)
-
+## Flume Architecture
+A Flume event is defined as a unit of data flow. A Flume agent is a JVM process that contains the components required for completing a task. Among them, Source, Channel, and Sink are the core ones.
+![](https://main.qcloudimg.com/raw/b09b330fba73733c011b36ed1d914962.png)
 - **Source**
 It consumes an event passed to it by an external source (e.g., web servers or other sources) and save it to one or more channels.
 - **Channel**
@@ -13,12 +12,13 @@ Located between a source and a sink, a channel is used to cache incoming events.
 A sink is responsible for transferring the events to the next hop or final destination and removing them from the channel upon transfer completion.
 
 ## Instructions
-
 ### Preparations
-- An EMR cluster has been created. When [creating the EMR cluster](https://intl.cloud.tencent.com/document/product/1026/31099), you need to select the Flume component on the software configuration page.
-- Flume is installed in the `/usr/local/service/flume` path on the core and task nodes of the EMR cluster.
+- Create an EMR cluster. When [creating the EMR cluster](https://intl.cloud.tencent.com/document/product/1026/31099), you need to select the Flume component on the software configuration page.
+- Install Flume in the `/usr/local/service/flume` path on the core and task nodes (CVM instances) of the EMR cluster. The installation path for master nodes is `/usr/local/service/apps/`.
 
 ### Configuring Flume 
+Go to the `/usr/local/service/flume` folder and create a file named `example.conf`.
+![](https://main.qcloudimg.com/raw/ac14a7fa53ba406cbc48e6c2b1c0a201.png)
 ```
  # example.conf: A single-node Flume configuration
  

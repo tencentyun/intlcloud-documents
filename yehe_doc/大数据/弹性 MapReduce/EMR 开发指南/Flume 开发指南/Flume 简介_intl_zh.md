@@ -3,7 +3,7 @@ Apache Flume 是可以收集例如日志、事件等数据资源，并将这些�
 
 ## Flume 架构
 一个 Flume 事件被定义为一个数据流单元。Flume agent 其实是一个 JVM 进程，该进程中包含完成任务所需要的各个组件，其中最核心的三个组件是 Source、Chanel 以及 Sink。
-![](https://main.qcloudimg.com/raw/886ecba4612fa557b9316b4ff74bd4e3.png)
+![](https://main.qcloudimg.com/raw/b09b330fba73733c011b36ed1d914962.png)
 - **Source**
 消费外部源（例如 Web 服务器或者其他 Source）传递给它的事件，并将其保存到 Channel（一个或多个）中。
 - **Channel**
@@ -12,10 +12,9 @@ Channel 位于 Source 和 Sink 之间，用于缓存进来的 events，当 Sink 
 Sink 负责将 events 传输到下一跳或最终目的，成功完成后将 events 从 Channel 移除。
 
 ## 使用指南
-
 ### 使用准备
 - 已创建一个 EMR 集群。[创建 EMR 集群](https://intl.cloud.tencent.com/document/product/1026/31099) 时需要在软件配置界面选择 flume 组件。
-- flume 安装在 EMR 云服务器（core 节点和 task 节点）的`/usr/local/service/flume`路径下。
+- flume 安装在 EMR 云服务器（core 节点和 task 节点）的 `/usr/local/service/flume` 路径下；master 节点的安装路径是  `/usr/local/service/apps/`。
 
 ### 配置 Flume 
 进入 `/usr/local/service/flume` 文件夹，并创建 example.conf 文件。
