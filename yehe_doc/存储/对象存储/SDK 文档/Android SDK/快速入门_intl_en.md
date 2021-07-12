@@ -151,9 +151,9 @@ public static class MySessionCredentialProvider
         // First, obtain the response containing the key from your temporary key server
 
         // Then, parse the response to obtain the temporary key
-        String tmpSecretId = "COS_SECRETID"; // SecretId of the temporary key
-        String tmpSecretKey = "COS_SECRETKEY"; // SecretKey of the temporary key
-        String sessionToken = "TOKEN"; // Token of the temporary key
+        String tmpSecretId = "SECRETID"; // SecretId of the temporary key
+        String tmpSecretKey = "SECRETKEY"; // SecretKey of the temporary key
+        String sessionToken = "SESSIONTOKEN"; // Token of the temporary key
         long expiredTime = 1556183496L;// End timestamp (in seconds) of the effective period of the temporary key
 
         // To avoid request expiration caused by the large discrepancy between the phone’s local time and the standard time, we recommend that the time returning to the server be used as the signature start time.
@@ -178,15 +178,15 @@ QCloudCredentialProvider myCredentialProvider = new MySessionCredentialProvider(
 You can use your Tencent Cloud permanent key for local debugging during the development phase. **Since this method exposes the key to leakage risks, please be sure to switch to the temporary key method before launching your application.**
 
 ```java
-String secretId = "COS_SECRETID"; // SecretId of the permanent key
-String secretKey = "COS_SECRETKEY"; // SecretKey of the permanent key
+String secretId = "SECRETID"; // SecretId of the permanent key
+String secretKey = "SECRETKEY"; // SecretKey of the permanent key
 
 // keyDuration is the effective duration (in seconds) of the key in your request
 QCloudCredentialProvider myCredentialProvider = 
     new ShortTimeCredentialProvider(secretId, secretKey, 300);
 ```
 
-### 2. Initialize a COS Instance
+### 2. Initialize a COS instance
 
 Use your `myCredentialProvider` instance that provides the key to initialize a `CosXmlService` instance.
 
@@ -251,10 +251,11 @@ TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
 String bucket = "examplebucket-1250000000"; // Bucket, formatted as BucketName-APPID
-String cosPath = "exampleobject"; // Location identifier of the object in the bucket, also known as the object key
+String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 String srcPath = new File(context.getCacheDir(), "exampleobject")
         .toString(); // The absolute path of the local file
-String uploadId = null; // If there is an uploadId for the initialized multipart upload, assign the value of uploadId here to resume the upload. Otherwise, assign null
+// If there is an uploadId for an initialized multipart upload, assign the value of the uploadId here to resume the upload; otherwise, assign null
+// uploadId for the current upload task can be obtained from the callback of TransferStateListener.
 String uploadId = null; 
 
 // Upload the object.
@@ -287,11 +288,12 @@ cosxmlUploadTask.setCosXmlResultListener(new CosXmlResultListener() {
         }
     }
 });
-// Set the job status callback to view the job progress
+// Set the task status callback to view the task process and obtain the uploadId for checkpoint restart.
 cosxmlUploadTask.setTransferStateListener(new TransferStateListener() {
     @Override
     public void onStateChanged(TransferState state) {
         // todo notify transfer state
+        uploadId = cosxmlUploadTask.getUploadId();  
     }
 });
 ```
@@ -399,7 +401,7 @@ cosxmlDownloadTask.setTransferStateListener(new TransferStateListener() {
 });
 ```
 
-#### Using the KTX package to download an object
+#### Use the KTX package to download an object
 
 If you use KTX, please refer to the following sample code for the download:
 

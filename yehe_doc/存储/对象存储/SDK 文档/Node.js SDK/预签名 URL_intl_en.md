@@ -40,7 +40,7 @@ var Authorization = COS.getAuthorization({
 | --------- | ------------------------------------------------------------ | ------ | ---- |
 | SecretId | User SecretId | String | No |
 | SecretKey | User's SecretKey | String | Yes |
-| Method | HTTP request method such as `GET`, `POST`, `DELETE`, and `HEAD` | String | Yes |
+| Method | HTTP request method such as `GET`, `POST`, `DELETE`, or `HEAD` | String | Yes |
 | Key | Object key (object name), a unique ID of an object in a bucket. **If the request operation is to be performed on a file, this parameter is required and should be a filename.** If the operation is on a bucket, this parameter should be left empty | String | No |
 | Query | Query parameter object of the request | Object | No |
 | Headers | Header parameter object of the request | Object | No |
@@ -156,7 +156,7 @@ cos.getObjectUrl({
 });
 ```
 
-### Parameter description
+#### Parameter Description
 
 | Parameter | Description | Type | Required |
 | ------- | ------------------------------------------------------------ | ------- | ---- |
@@ -164,7 +164,9 @@ cos.getObjectUrl({
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
 | Key | Object key (object name), a unique ID of an object in a bucket. **If the request operation is to be performed on a file, this parameter is required and should be a filename.** If the operation is on a bucket, this parameter should be left empty | String | Yes |
 | Sign | Whether to return a signed URL | Boolean | No |
-| Method | HTTP request method such as `GET`, `POST`, `DELETE`, and `HEAD`. Default value: `GET` | String | No |
+| Protocol    | It can be `http:` (default) or `https:` | String | No |
+| Domain    | Bucket access domain. Default value: `{BucketName-APPID}.cos.{Region}.myqcloud.com` | String | No |
+| Method | HTTP request method such as `GET`, `POST`, `DELETE`, or `HEAD`. Default value: `GET` | String | No |
 | Query | Query parameter object used in the signature calculation | Object | No |
 | Headers | Header parameter object used in the signature calculation | Object | No |
 | Expires | Signature expiration time in seconds. Default value: 900 seconds | Number | No |
