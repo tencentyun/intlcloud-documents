@@ -1,6 +1,6 @@
 
 ## Read/Write Separation Based on Read-only Account
-1. Log in to the [TDSQL for MySQL Console](https://console.cloud.tencent.com/dcdb). In the instance list, click an instance name or **Manage** in the "Operation" column to enter the instance management page.
+1. Log in to the [TDSQL for MySQL Console](https://console.cloud.tencent.com/dcdb). In the instance list, click an instance ID or **Manage** in the "Operation" column to enter the instance management page.
 2. Select the **Manage Account** tab and click **Create**.
 3. In the pop-up dialog box, set the account information, set **Create as read-only account** to **Yes**, and click **Confirm and Go Next**.
 4. In the pop-up dialog box, you can set **Read-Only Request Allocation Policy** to define the read policy when a secondary server failure (or long delay) occurs and configure the " Read-Only Secondary Server Delay Parameter", and then click **OK**.
