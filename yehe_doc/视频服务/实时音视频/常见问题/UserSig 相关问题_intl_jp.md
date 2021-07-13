@@ -42,7 +42,7 @@ TRTC SDK のサンプルコードの中で`GenerateTestUserSig`という名前�
 | :----------: | :------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------: |
 | iOS | [Github] | iOS/TRTCScenesDemo/TXLiteAVDemo/Debug/GenerateTestUserSig.h |
 | Mac | Github| Mac/TRTCScenesDemo/TRTCDemo/TRTC/GenerateTestUserSig.h |
-| Android |Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java |
+| Android| [Github] |Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java |
 | Windows(C++) | [Github]  |                           Windows/DuilibDemo/GenerateTestUserSig.h |
 | Windows(C#)  | [Github](https://github.com/tencentyun/TRTCSDK/tree/master/Windows/CSharpDemo/GenerateTestUserSig.cs) |                          Windows/CSharpDemo/GenerateTestUserSig.cs |
 |  デスクトップブラウザ  | [Github] | Web/TRTCSimpleDemo/js/debug/GenerateTestUserSig.js |
