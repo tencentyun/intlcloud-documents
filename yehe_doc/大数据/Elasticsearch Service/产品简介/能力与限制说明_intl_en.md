@@ -31,7 +31,7 @@ See [Evaluation of Cluster Specification and Capacity Configuration](https://int
 ## Network Access
 
 **Private network access in VPC** 
-In order to ensure data security, ES is built in your VPC, and you can only access an ES cluster from your VPC to write and query data. If you need to access a cluster over the public network for development and debugging purposes, you can connect your local IDC to the VPC using [VPN](https://intl.cloud.tencent.com/document/product/1037). In this case, please take effective measures to protect your data.
+In order to ensure data security, ES is built in your VPC, and you can only access an ES cluster from your VPC to write and query data. If you need to access a cluster over the public network for development and debugging purposes, you can connect your local IDC to the VPC using [VPN Connections](https://intl.cloud.tencent.com/document/product/1037). In this case, please take effective measures to protect your data.
 
 **Kibana page** 
 You can access the Kibana page over the public network. For the sake of data security, a password and access IP blocklist/allowlist need to be set for the Kibana page.
