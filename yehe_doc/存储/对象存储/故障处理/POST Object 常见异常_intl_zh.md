@@ -73,8 +73,6 @@ Policy 中的 expiration 值已过期。
 #### 解决方法
 
 请参考 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档，检查 POST 签名串生成规则是否正确。
- - 是，请 [联系我们](https://intl.cloud.tencent.com/contact-sales)。
- - 否，请使用 [在线辅助工具：COS 签名工具](https://cloud.tencent.com/document/product/436/30442) 重新计算 POST 请求签名。
 
 
 <span id="InvalidPolicyDocument_JSONFormat"></span>
