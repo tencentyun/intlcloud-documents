@@ -26,6 +26,7 @@ Without CCN, if you want to interconnect multiple VPCs or your IDC with multiple
 
 On the other hand, doing the same with CCN would only require a CCN instance and adding all VPCs and the IDC to the CCN instance. After you add the instances to the CCN, it will automatically forward and learn all routes, saving you the hassle of manually configuring and managing the route tables of the instances.
 >? For more information on how to migrate existing applications to CCN, see [Migrating VPCs with Peering Connection to CCN](https://intl.cloud.tencent.com/document/product/1003/30078) under Best Practices.
+
 ![](https://main.qcloudimg.com/raw/7ea188ff1d607fc0141fee39ca4b2841.png)
 
 <table>
