@@ -11,7 +11,7 @@
   A web function runs in the image environment built in it based on the standard programming language. You must create an executable file `scf_bootstrap` to start your web server, and then package the file with your code files for deployment to create a web function. During actual request processing, your `scf_bootstrap` file will start the service first, after which your web server will receive all HTTP requests by listening on the specified `9000` port, forward them to the backend service for logic processing, and return the responses to end users.
 
 ### Can I simulate the cloud environment during local development?
-  Currently, the standard SCF runtime environment image has been opened up. For directions on how to use it, please see [Using Container Image](https://cloud.tencent.com/document/product/583/50826). You can select an appropriate image tag for local development and testing based on your actual development scenario. Before deploying a web function, please make sure that your project can be normally started in the local image.
+  Currently, the standard SCF runtime environment image has been opened up. For directions on how to use it, please see [Using Container Image](https://intl.cloud.tencent.com/document/product/583/39009). You can select an appropriate image tag for local development and testing based on your actual development scenario. Before deploying a web function, please make sure that your project can be normally started in the local image.
 
 ### Why don't some header requests work?
   When an HTTP request is sent, certain header fields will be entered automatically by API Gateway and cannot be customized, because information exchange between the function and gateway has certain requirements and capability limits. Such fields mainly include the following:
@@ -19,6 +19,6 @@
   - Custom fields starting with `X-SCF-`
 
 ### How do I quickly troubleshoot function execution failures?
-  You can quickly identify the cause of failure and find the solution based on the returned error code. For more information, please see [Common Error Codes and Solutions](https://cloud.tencent.com/document/product/583/56125#.E5.B8.B8.E8.A7.81.E9.94.99.E8.AF.AF.E7.A0.81.E8.A7.A3.E5.86.B3.E6.96.B9.E6.B3.95).
+  You can quickly identify the cause of failure and find the solution based on the returned error code. For more information, please see [Common Error Codes and Solutions](https://intl.cloud.tencent.com/document/product/583/40689).
 
 
