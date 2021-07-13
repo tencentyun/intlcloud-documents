@@ -37,9 +37,9 @@ If your business hits a bottleneck, you need to consider which configuration adj
 </tr>
 </tbody></table>
 
-Note:
-- The table above focuses on the mappings between different scenarios and configuration adjustment methods. The description of how it works is applicable to the scenarios where only the corresponding configuration item is adjusted. If multiple configuration items (such as node specification, disk capacity, and disk quantity) are adjusted at the same time, the actual adjustment method may be different.
-- An expansion operation can adjust either vertical (node specification, disk capacity, and disk quantity) or horizontal (node quantity) configuration items at a time. You cannot adjust vertical and horizontal configuration items at the same time.
+>?
+>- The table above focuses on the mappings between different scenarios and configuration adjustment methods. The description of how it works is applicable to the scenarios where only the corresponding >configuration item is adjusted. If multiple configuration items (such as node specification, disk capacity, and disk quantity) are adjusted at the same time, the actual adjustment method may be different.
+>- An expansion operation can adjust either vertical (node specification, disk capacity, and disk quantity) or horizontal (node quantity) configuration items at a time. You cannot adjust vertical and horizontal >configuration items at the same time.
 
 ## Basic Configuration Adjustment Concepts
 Common cluster configuration adjustment modes include direct adjustment mode, rolling mode, blue-green mode, etc. as detailed below:
