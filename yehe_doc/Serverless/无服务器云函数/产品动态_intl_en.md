@@ -1,3 +1,37 @@
+## June 2021
+<table>
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="40%">Description</th>
+<th width="20%">Release Date</th>
+<th width="20%">Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Added support for container image delivery of SCF</td>
+<td>SCF supports container image delivery, richer repository types, non-intrusive log collection and aggregation, image pull based on image digest, and custom image, so that you don't need to modify the code or recompile binary dependencies, which accelerates the serverless transformation of your applications.</td>
+<td>2021-06-08</td>
+<td>
+<li><a href="https://cloud.tencent.com/document/product/583/56051">Feature Description</a></li>
+<li><a href="https://cloud.tencent.com/document/product/583/56052">Usage</a></li>
+</td>
+</tr>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Added web function type to SCF</td>
+<td>SCF supports creating web functions that can accept and process native HTTP requests.
+</td>
+<td>2021-06-08</td>
+<td>
+<a href="https://cloud.tencent.com/document/product/583/56124">Web Function Overview</a>
+</td>
+</tr>
+</tbody></table>
+
 ## January 2021
 
 <table>
@@ -266,7 +300,7 @@ Node.js 10 and above runtime environments were added for cloud debugging.</td>
 </tr>
 <tr>
 <td>Released the layer feature</td>
-<td>SCF allows you to use layers to manage dependent libraries and common code files.</td>
+<td>SCF allows you to use layers to manage dependency libraries and common code files.</td>
 <td>2020-04-07</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/583/37039">Layer Management</a>
 </td>
