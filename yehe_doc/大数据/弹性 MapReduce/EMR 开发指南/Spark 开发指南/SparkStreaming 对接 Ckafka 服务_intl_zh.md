@@ -11,20 +11,20 @@
 ## 2. 在 EMR 集群使用 Kafka 工具包
 首先需要查看 CKafka 的内网 IP 与端口号。登录消息队列 CKafka 的控制台，选择您要使用的 CKafka 实例，在基本消息中查看其内网 IP 为 $kafkaIP，而端口号一般默认为9092。在 topic 管理界面新建一个 topic 为 spark_streaming_test。
 
-登录 EMR 集群中的任意机器，最好是登录到 Master 节点。登录 EMR 的方式请参考 [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436)。这里我们可以选择使用 WebShell 登录。单击对应云服务器右侧的登录，进入登录界面，用户名默认为 root，密码为创建 EMR 时用户自己输入的密码。输入正确后，即可进入命令行界面。
+登录 EMR 集群中的任意机器，最好是登录到 Master 节点。登录 EMR 的方式请参考 [登录 Linux 实例](https://intl.cloud.tencent.com/document/product/213/5436)。这里可选择使用 WebShell 登录。单击对应云服务器右侧的登录，进入登录界面，用户名默认为 root，密码为创建 EMR 时用户自己输入的密码。输入正确后，即可进入命令行界面。
 
-在 EMR 命令行先使用以下指令切换到 Hadoop 用户，并进入目录`/usr/local/service/spark`：
+在 EMR 命令行先使用以下指令切换到 Hadoop 用户，并进入目录 `/usr/local/service/spark`：
 ```
 [root@172 ~]# su hadoop
 [root@172 root]$ cd / usr/local/service/spark
 ```
 
-从 [Kafka 官网](http://kafka.apache.org/downloads) 下载安装包，注意选择合适的版本，具体可参考 [EMR 各版本 Kafka 与 Spark 版本说明](https://intl.cloud.tencent.com/document/product/1026/34562)。kafka 客户端版和腾讯云 ckafka 兼容性强，安装对应的 kafka 客户端版本即可。解压压缩包并将解压出来的文件夹移动到`/opt`目录下：
+从 [Kafka 官网](http://kafka.apache.org/downloads) 下载安装包，注意选择合适的版本，具体可参考 [EMR 各版本 Kafka 与 Spark 版本说明](https://intl.cloud.tencent.com/document/product/1026/34562)。kafka 客户端版和腾讯云 ckafka 兼容性强，安装对应的 kafka 客户端版本即可。解压压缩包并将解压出来的文件夹移动到 `/opt` 目录下：
 ```
 [hadoop@172 data]$ tar -xzvf kafka_2.10-0.10.2.0.tgz
 [hadoop@172 data]$ mv kafka_2.10-0.10.2.0 /opt/
 ```
-解压完成后，Kafka 工具直接能使用。可以使用`telnet`命令来测试 EMR 集群是否能够连接到 CKafka 实例：
+解压完成后，Kafka 工具直接能使用。可以使用 `telnet` 命令来测试 EMR 集群是否能够连接到 CKafka 实例：
 ```
 [hadoop@172 kafka_2.10-0.10.2.0]$ telnet $kafkaIP 9092
 Trying $kafkaIP...
@@ -58,14 +58,14 @@ this is a message
 首先 [下载并安装 Maven](http://maven.apache.org/download.cgi)，配置好 Maven 的环境变量，如果您使用 IDE，请在 IDE 中设置好 Maven 相关配置。
 
 ### 创建 Spark Streamin 消费者工程
-在本地命令行下进入您想要新建工程的目录，例如`D://mavenWorkplace`中，输入如下命令新建一个 Maven 工程：
+在本地命令行下进入您想要新建工程的目录，例如 `D://mavenWorkplace` 中，输入如下命令新建一个 Maven 工程：
 ```
 mvn   archetype:generate   -DgroupId=$yourgroupID   -DartifactId=$yourartifactID 
 -DarchetypeArtifactId=maven-archetype-quickstart
 ```
 其中 $yourgroupID 即为您的包名。$yourartifactID 为您的项目名称，maven-archetype-quickstart 表示创建一个 Maven Java 项目。工程创建过程中需要下载一些文件，请保持网络通畅。
 
-创建成功后，在`D://mavenWorkplace`目录下就会生成一个名为 $yourartifactID 的工程文件夹。其中的文件结构如下所示：
+创建成功后，在 `D://mavenWorkplace` 目录下就会生成一个名为 $yourartifactID 的工程文件夹。其中的文件结构如下所示：
 ```
 simple
 　　　---pom.xml　　　　核心配置，项目根下
@@ -209,7 +209,7 @@ scp $localfile root@公网IP地址:$remotefolder
 其中，$localfile 是您的本地文件的路径加名称，root 为 CVM 服务器用户名，公网 IP 可以在 EMR 控制台的节点信息中或者在云服务器控制台查看。$remotefolder 是您想存放文件的 CVM 服务器路径。上传完成后，在 EMR 集群命令行中即可查看对应文件夹下是否有相应文件。
 
 ### 创建 Spark Streaming 生产者工程
-在本地命令行下进入您想要新建工程的目录，例如`D://mavenWorkplace`中，输入如下命令新建一个 Maven 工程：
+在本地命令行下进入您想要新建工程的目录，例如 `D://mavenWorkplace` 中，输入如下命令新建一个 Maven 工程：
 ```
 mvn archetype:generate -DgroupId=$yourgroupID -DartifactId=$yourartifactID 
 -DarchetypeArtifactId=maven-archetype-quickstart
@@ -367,5 +367,5 @@ drwxr-xr-x - hadoop supergroup 0 2018-07-05 20:25 /user/sparkstreamingtest-15307
 ```
 [hadoop@172 ~]$ yarn application –kill $Application-Id
 ```
-其中 $Application-Id 为使用`yarn application –list`命令查找到的 ID。
+其中 $Application-Id 为使用 `yarn application –list` 命令查找到的 ID。
 更多 Kafka 的相关信息请查看 [官方文档](http://kafka.apache.org/)。
