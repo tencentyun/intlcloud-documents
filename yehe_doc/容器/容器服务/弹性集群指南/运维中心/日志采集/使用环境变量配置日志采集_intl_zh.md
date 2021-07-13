@@ -63,10 +63,13 @@ Kafka 的 Topic 配置中 `cleanup.policy` 参数需选择 delete，选择 compa
 </dx-tabs>
 
 6. 选择角色或者密钥进行授权。
+
 <dx-alert infotype="notice"> 
 <li>同一 pod 下的容器只能选择同一种授权方式，以您最后修改的授权方式为准。例如第一个容器选择了密钥授权，第二个选择了角色授权，最终两个容器都是角色授权。</li>
 <li>同一 pod 下的容器只能选择同一个角色授权。</li>
 </dx-alert>
+
+<dx-tabs>
 ::: 角色授权
  - 选择具有访问日志服务 CLS 权限的角色名称，如下图所示：
 ![](https://main.qcloudimg.com/raw/890940885a3fd7502cf28aa62f970e2c.png)
@@ -79,6 +82,7 @@ Kafka 的 Topic 配置中 `cleanup.policy` 参数需选择 delete，选择 compa
     <dx-alert infotype="notice" title="">
 必须选择【云服务器（cvm）】作为角色载体，选择容器服务则无法完成授权。
     </dx-alert>
+
   5. 在“配置角色策略”步骤中，选择【QcloudCLSAccessForApiGateWayRole】策略，单击【下一步】。
   6. 在“审阅”步骤中，输入您的角色名称，审阅您即将创建角色的相关信息，单击【完成】后即完成自定义角色创建。详情请参见 [创建角色](https://intl.cloud.tencent.com/document/product/598/19381)。
 :::
@@ -86,9 +90,11 @@ Kafka 的 Topic 配置中 `cleanup.policy` 参数需选择 delete，选择 compa
 - 选择您利用账号 API 密钥的 SecretId 和 SecretKey 作为变量值进行创建的集群 Secret 配置名称。
 ![](https://main.qcloudimg.com/raw/c03d348d34fc5c5d2666b1e883138bab.png)
 - 若无合适的 Secret，需新建 Secret。详情请参见 [Secret 管理](https://intl.cloud.tencent.com/document/product/457/30676)。其中 SecretId 和 SecretKey 可在 [API 密钥](https://console.cloud.tencent.com/cam/capi) 中查看。
->! API 密钥对应的用户需具备访问日志服务 CLS 的权限。若无 API 密钥，需新建 API 密钥。详情请参见 [访问密钥](https://intl.cloud.tencent.com/document/product/598/34228)。
+<dx-alert infotype="notice"> API 密钥对应的用户需具备访问日志服务 CLS 的权限。若无 API 密钥，需新建 API 密钥。详情请参见 [访问密钥](https://intl.cloud.tencent.com/document/product/598/34228)。
+</dx-alert>
 :::
 </dx-tabs>
+
 7. 配置采集路径。如下图所示：
 ![](https://main.qcloudimg.com/raw/4f9fb3635b7a3c3ab35e8387d877a08b.png)
 至此已完成日志采集功能配置，您可按需进行该工作负载的其他配置。
@@ -181,19 +187,14 @@ labels:
 	</tr>
 </table>
 
-对于开启按 key 投递到 kafka 指定分区，验证方式如下：
-- 未开启时，查询消息不显示 key，如下图所示：
-![](https://main.qcloudimg.com/raw/0cd127b53979d5b1d82374f940e6a312.png)
-- 当开启后，查询消息显示 key，如下图所示：
-![](https://main.qcloudimg.com/raw/faff38628da1647e9126f0c93b562c3c.png)
 
 :::
 
 
 ::: 通过secret采集日志到CLS
 #### 创建 secret[](id:z)
->! 以下示例为通过 yaml 手动创建 secret。如通过控制台创建 secret，则不需要进行64编码，详情请参考 [secret 管理](https://intl.cloud.tencent.com/document/product/457/30676)。
->
+<dx-alert infotype="notice"> 以下示例为通过 yaml 手动创建 secret。如通过控制台创建 secret，则不需要进行64编码，详情请参考 [secret 管理](https://intl.cloud.tencent.com/document/product/457/30676)。
+</dx-alert>
 通过 kubectl 执行以下命令，获取进行 base64编码的 secretid 和 secretkey。其中，secretid 及 secretkey 请替换为您账号的 secretid 和 secretkey，可在 [API 密钥](https://console.cloud.tencent.com/cam/capi) 中查看。
 ```shell
 $ echo -n 'secretid' | base64
