@@ -47,9 +47,9 @@ TRTC SDK 6.6 版本（2019年08月）开始启用新的签名算法 HMAC-SHA256�
  3. 选择【快速上手】页签，单击【第二步 获取签发UserSig的密钥】区域的【点此升级】、【非对称式加密】或【HMAC-SHA256】。
   - 升级：
   - 切换回老版本算法 ECDSA-SHA256：
-    
+      ![](https://main.qcloudimg.com/raw/02a17c4c68682fd9d0da349b31d71a38.png)
   - 切换为新版本算法 HMAC-SHA256：
-     
+      ![](https://main.qcloudimg.com/raw/a14fb9a73b294f0c78c0b10e2694d4c9.png)
 
 ### 2. 两台手机同时运行 工程，为什么看不到彼此的画面？
 请确保两台手机在运行 工程 时使用的是不同的 UserID，TRTC 不支持同一个 UserID （除非 SDKAppID 不同）在两个终端同时使用。
