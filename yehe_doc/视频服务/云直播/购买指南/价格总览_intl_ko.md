@@ -30,7 +30,7 @@ CSS 과금 항목에는 기본 서비스 요금과 부가 서비스 요금이 �
 <li/>LVB 시청으로 발생하는 다운스트림 대역폭 피크값
 <li/>중국(대륙), 중국 홍콩/마카오/대만 및 GCD의 과금 기준은 각각 상이합니다.
 </td><td>
-<li/><a href="https://cloud.tencent.com/document/product/267/34175#bandwidth">후불-일 결산</a>
+<li/><a href="https://intl.cloud.tencent.com/document/product/267/2818#bandwidth">후불-일 결산</a>
 <li/>후불-월 결산
 </tr><tr>
 <td>LEB 트래픽<br>(기본)</td>
@@ -56,22 +56,23 @@ CSS 과금 항목에는 기본 서비스 요금과 부가 서비스 요금이 �
 <tr>
 <td rowspan=3>라이브 방송 트랜스 코딩</td>
 <td>표준 트랜스 코딩</td>
-<td><ul style="margin:0">
-<li/>라이브 방송 표준 트랜스 코딩 기능을 사용하는 경우 과금됩니다.
-<li/><a href="https://intl.cloud.tencent.com/document/product/267/31064">라이브 방송 워터마크</a>, <a href="https://intl.cloud.tencent.com/document/product/267/31071">표준 트랜스 코딩</a>, <a href="https://intl.cloud.tencent.com/document/product/267/37665">라이브 방송 혼합 스트림</a> 등의 기능을 사용하는 경우, 표준 트랜스 코딩 비용이 발생합니다.
-<li/>발생 비용은 <b>트랜스 코딩 시간에 따라 과금</b>되며, 송출하는 라이브 방송 스트림 화면 크기의 범위 구간 가격이 과금 단가가 됩니다.
-</ul></td>
 <td>
-<li><a href="https://intl.cloud.tencent.com/document/product/267/39604">후불-일 결산</a></li></ul>
+<li>라이브 방송 표준 트랜스 코딩 기능을 사용하는 경우 과금됩니다.</li>
+<li><a href="https://intl.cloud.tencent.com/document/product/267/31064">라이브 방송 워터마크</a>, <a href="https://intl.cloud.tencent.com/document/product/267/31071">표준 트랜스 코딩</a>, <a href="https://intl.cloud.tencent.com/document/product/267/37665">라이브 방송 혼합 스트림</a> 등의 기능을 사용하는 경우, 표준 트랜스 코딩 비용이 발생합니다.</li>
+<li>발생 비용은 <b>트랜스 코딩 시간에 따라 과금</b>되며, 송출하는 라이브 방송 스트림 화면 크기의 범위 구간 가격이 과금 단가가 됩니다.</li>
 </td>
-</tr><tr>
+<td>
+<li><a href="https://intl.cloud.tencent.com/document/product/267/39604">후불-일 결산</a></li>
+</td>
+</tr>
+<tr>
 <td>초고속 고화질 트랜스 코딩</td>
-<td><ul style="margin:0">
+<td>
  <li>라이브 방송 초고속 고화질 트랜스 코딩 기능을 사용하는 경우 과금됩니다.
 <li><a href="https://intl.cloud.tencent.com/document/product/267/31071">초고속 고화질 트랜스 코딩</a> 기능 사용 시 비용이 발생합니다.
 <li>발생 비용은 <b>트랜스 코딩 시간에 따라 과금</b>되며, 송출하는 라이브 방송 스트림 화면 크기의 범위 구간 가격이 과금 단가가 됩니다.
-</ul><td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/267/39604">후불-일 결산</a></li></ul>
+</td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/267/39604">후불-일 결산</a></li></td>
 </tr><tr>
 <td>오디오 트랜스 코딩</td>
 <td>
