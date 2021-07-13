@@ -41,9 +41,8 @@ exports.main_handler = async (event, context) => {
 4. 将函数代码及依赖库一同压缩为 zip 包，在 [云函数控制台](https://console.cloud.tencent.com/scf) 中上传打包的 zip 包并创建一个新函数。操作步骤如下：
 	1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的【函数服务】。
 	2. 在主界面上方选择期望创建函数的地域，并单击【新建】，进入函数创建流程。
-	3. 在“新建函数”页面，填写函数基本信息。如下图所示：
-	![](https://main.qcloudimg.com/raw/1ba726eeafcf0faf04db9d285382157d.png)
-		- **创建方式**：选择使用【自定义创建】来新建函数。
+	3. 在“新建函数”页面，填写函数基本信息。
+	- **创建方式**：选择使用【自定义创建】来新建函数。
 		- **运行环境**：选择【Node.js12.16】。
 		- **提交方法**：选择【本地上传zip包】。
 	4. 单击【完成】即可创建函数。
@@ -65,8 +64,7 @@ cd src  # 依赖库需要安装在与函数入口文件同一级的目录下，�
 npm install lodash
 ```
 6. 安装完成后，在 IDE 左侧的文件树中查看 `package.json` 和 `node_modules`。
-7. 单击【部署】后依赖库即可与函数代码一同打包上传到云端。如下图所示：
-![](https://main.qcloudimg.com/raw/413d775f6f23200feeccef87d29f13f7.png)
+7. 单击【部署】后依赖库即可与函数代码一同打包上传到云端。
 :::
 </dx-tabs>
 
@@ -108,13 +106,12 @@ def main_handler(event, context):
 4. 将函数代码及依赖库一同压缩为 zip 包，在 [云函数控制台](https://console.cloud.tencent.com/scf) 中上传打包的 zip 包并创建一个新函数。操作步骤如下：
 	1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的【函数服务】。
 	2. 在主界面上方选择期望创建函数的地域，并单击【新建】，进入函数创建流程。
-	3. 在“新建函数”页面，填写函数基本信息。如下图所示：
-	![](https://main.qcloudimg.com/raw/1ba726eeafcf0faf04db9d285382157d.png)
-		- **创建方式**：选择使用【自定义创建】来新建函数。
+	3. 在“新建函数”页面，填写函数基本信息。
+	- **创建方式**：选择使用【自定义创建】来新建函数。
 		- **运行环境**：选择【Python 3.6】。
 		- **提交方法**：选择【本地上传zip包】。
 	4. 单击【完成】即可创建函数。
-:::
+	:::
 ::: 使用依赖管理工具
 云函数在线编辑器 [Serverless Web IDE](https://intl.cloud.tencent.com/document/product/583/39962) 提供了终端功能，并在终端中内置了包管理工具 `pip`。本文以在终端中安装 `numpy` 库为例：
 1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf/index?rid=1)，在左侧选择【函数服务】。
@@ -165,9 +162,8 @@ pip install numpy -t .
 4. 将函数代码及依赖库一同压缩为 jar 包，在 [云函数控制台](https://console.cloud.tencent.com/scf) 中上传打包的 jar 包并创建一个新函数。操作步骤如下：
 	1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的【函数服务】。
 	2. 在主界面上方选择期望创建函数的地域，并单击【新建】，进入函数创建流程。
-	3. 在“新建函数”页面，填写函数基本信息。如下图所示：
-	![](https://main.qcloudimg.com/raw/1ba726eeafcf0faf04db9d285382157d.png)
-		- **创建方式**：选择使用【自定义创建】来新建函数。
+	3. 在“新建函数”页面，填写函数基本信息。
+	- **创建方式**：选择使用【自定义创建】来新建函数。
 		- **运行环境**：选择【Java8】。
 		- **提交方法**：选择【本地上传zip包】。
 	4. 单击【完成】即可创建函数。
@@ -189,9 +185,8 @@ pip install numpy -t .
 Go 运行时的依赖库同代码一起编译后得到二进制文件，在 [云函数控制台](https://console.cloud.tencent.com/scf) 中上传打包的二进制文件并创建一个新函数。操作步骤如下：
 1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的【函数服务】。
 2. 在主界面上方选择期望创建函数的地域，并单击【新建】，进入函数创建流程。
-3. 在“新建函数”页面，填写函数基本信息。如下图所示：
-![](https://main.qcloudimg.com/raw/1ba726eeafcf0faf04db9d285382157d.png)
-	- **创建方式**：选择使用【自定义创建】来新建函数。
+3. 在“新建函数”页面，填写函数基本信息。
+- **创建方式**：选择使用【自定义创建】来新建函数。
 	- **运行环境**：选择【Go1】。
 	- **提交方法**：选择【本地上传zip包】。
 4. 单击【完成】即可创建函数。

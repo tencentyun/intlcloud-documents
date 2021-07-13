@@ -41,9 +41,8 @@ exports.main_handler = async (event, context) => {
 4. Compress the function code and dependency libraries into a zip package, upload the package in the [SCF console](https://console.cloud.tencent.com/scf), and create a function in the following steps:
 	1. Log in to the [SCF console](https://console.cloud.tencent.com/scf) and click **Function Service** on the left sidebar.
 	2. Select the region where to create a function at the top of the page and click **Create** to enter the function creation process.
-	3. Enter the basic information of the function on the **Create Function** page as shown below:
-	![](https://main.qcloudimg.com/raw/1ba726eeafcf0faf04db9d285382157d.png)
-		- **Creation Method**: select **Custom Creation**.
+	3. Enter the basic information of the function on the **Create Function** page.
+	- **Creation Method**: select **Custom Creation**.
 		- **Runtime Environment**: select **Node.js 12.16**.
 		- **Submitting Method**: select **Local ZIP file**.
 	4. Click **Complete**.
@@ -65,8 +64,7 @@ cd src  # The dependency library needs to be installed in a directory at the sam
 npm install lodash
 ```
 6. After the installation is completed, view `package.json` and `node_modules` in the file tree on the left side of the IDE.
-7. After you click **Deploy**, the dependency library can be packaged and uploaded to the cloud together with the function code as shown below:
-![](https://main.qcloudimg.com/raw/413d775f6f23200feeccef87d29f13f7.png)
+7. After you click **Deploy**, the dependency library can be packaged and uploaded to the cloud together with the function code.
 :::
 </dx-tabs>
 
@@ -108,13 +106,12 @@ def main_handler(event, context):
 4. Compress the function code and dependency libraries into a zip package, upload the package in the [SCF console](https://console.cloud.tencent.com/scf), and create a function in the following steps:
 	1. Log in to the [SCF console](https://console.cloud.tencent.com/scf) and click **Function Service** on the left sidebar.
 	2. Select the region where to create a function at the top of the page and click **Create** to enter the function creation process.
-	3. Enter the basic information of the function on the **Create Function** page as shown below:
-	![](https://main.qcloudimg.com/raw/1ba726eeafcf0faf04db9d285382157d.png)
-		- **Creation Method**: select **Custom Creation**.
+	3. Enter the basic information of the function on the **Create Function** page.
+	- **Creation Method**: select **Custom Creation**.
 		- **Runtime Environment**: select **Python 3.6**.
 		- **Submitting Method**: select **Local ZIP file**.
 	4. Click **Complete**.
-:::
+	:::
 ::: Use dependency management tools
 [Serverless Web IDE](https://intl.cloud.tencent.com/document/product/583/39962), SCF's online editor, provides a terminal feature and builds the package management tool `pip` in the terminal. This document takes installing the `numpy` library in the terminal as an example:
 1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/index?rid=1) and select **Function Service** on the left sidebar.
@@ -165,9 +162,8 @@ Use a dependency management tool such as Maven to install the dependencies local
 4. Compress the function code and dependency libraries into a JAR package, upload the package in the [SCF console](https://console.cloud.tencent.com/scf), and create a function in the following steps:
 	1. Log in to the [SCF console](https://console.cloud.tencent.com/scf) and click **Function Service** on the left sidebar.
 	2. Select the region where to create a function at the top of the page and click **Create** to enter the function creation process.
-	3. Enter the basic information of the function on the **Create Function** page as shown below:
-	![](https://main.qcloudimg.com/raw/1ba726eeafcf0faf04db9d285382157d.png)
-		- **Creation Method**: select **Custom Creation**.
+	3. Enter the basic information of the function on the **Create Function** page.
+	- **Creation Method**: select **Custom Creation**.
 		- **Runtime Environment**: select **Java 8**.
 		- **Submitting Method**: select **Local ZIP file**.
 	4. Click **Complete**.
@@ -189,9 +185,8 @@ Use a dependency management tool such as Maven to install the dependencies local
 Compile the dependency libraries of the Go runtime with the code to get a binary file, upload the packaged binary file in the [SCF console](https://console.cloud.tencent.com/scf), and create a function in the following steps:
 1. Log in to the [SCF console](https://console.cloud.tencent.com/scf) and click **Function Service** on the left sidebar.
 2. Select the region where to create a function at the top of the page and click **Create** to enter the function creation process.
-3. Enter the basic information of the function on the **Create Function** page as shown below:
-![](https://main.qcloudimg.com/raw/1ba726eeafcf0faf04db9d285382157d.png)
-	- **Creation Method**: select **Custom Creation**.
+3. Enter the basic information of the function on the **Create Function** page.
+- **Creation Method**: select **Custom Creation**.
 	- **Runtime Environment**: select **Go 1**.
 	- **Submitting Method**: select **Local ZIP file**.
 4. Click **Complete**.
