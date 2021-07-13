@@ -71,7 +71,7 @@
 <li>当使用 <a href="https://intl.cloud.tencent.com/document/product/267/31071">极速高清转码</a> 功能时，将产生极速高清转码费用。
 <li>产生的费用按<b>转码时长计费</b>，以您输出的直播流画面尺寸的范围区间价格为计费单价。
 </ul><td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/267/39604">后付费-日结</a></li></ul>
+<li><a href="https://intl.cloud.tencent.com/document/product/267/39604">后付费-日结</a></li></ul></td>
 </tr><tr>
 <td>音频转码</td>
 <td>
@@ -101,6 +101,32 @@
 </td>
 <td> <li><a href="https://intl.cloud.tencent.com/document/product/267/39607">后付费-月结</a></td>
 </tr><tr>
+</tr><tr>
+<td colspan=2> 移动直播 SDK  License</td>
+<td>用于解锁移动直播基础版 SDK 在 iOS 和 Android 上的使用权限，联系商务购买移动直播 SDK License 使用授权。</td>
+<td><li>联系商务</li></td>
+</tr><tr>
+<td colspan=2>移动直播连麦</td>
+<td><li>移动直播连麦需先购买<b>正式版连麦</b>开通连麦互动服务。</li><li>直播连麦产生的服务费用<b>按连麦时长计费</b>。</li></td>
+<td>
+<li><a href="https://cloud.tencent.com/document/product/267/52714">后付费-日结</a></li>
+<li/>后付费-月结
+</td>
+</tr>
+<tr><td colspan=2>拉流转推</td>
+<td>拉流转推任务按任务时长计费。</td>
+<td><li><a href="https://intl.cloud.tencent.com/document/product/267/41059#time">后付费-日结</a>
+</td>
+</tr><tr>
+<td colspan=2>拉流转推第三方计费</td>
+<td>非当前账号的云直播推流地址均为第三方地址，按转推第三方带宽计费。</td>
+<td>
+<li><a href="https://intl.cloud.tencent.com/document/product/267/41059#third_part">后付费-月结</a>
+</td>
+</tr><tr>
+
+
+
 [](id:extensions)
 
 ## 拓展服务费用
@@ -117,4 +143,3 @@
 <td>直播截图和鉴黄生成的截图文件需存储到 COS，产生的服务费用<strong>按数据的实际存储时间和存储量计费</strong>，需额外支付 COS 存储费用。</td>
 <td> <li><a href="https://intl.cloud.tencent.com/document/product/436/32534">COS-按量计费</a></td>
 </tr></table>
-
