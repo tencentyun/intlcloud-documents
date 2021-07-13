@@ -51,7 +51,7 @@ scp $localfile root@公网IP地址:$remotefolder
 如果 Hadoop下面没有 `/user/hadoop` 文件夹，用户可以自己创建，指令如下：
 
 ```
-[hadoop@172 hadoop]$ hadoop fs –mkdir /user
+[hadoop@172 hadoop]$ hadoop fs –mkdir /user/hadoop
 ```
 更多 Hadoop 指令见 [HDFS 常见操作](https://intl.cloud.tencent.com/document/product/1026/31124)。
 
@@ -114,7 +114,7 @@ Found 2 items
 [hadoop@10 hadoop]$ bin/yarn jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.3.jar  wordcount
 cosn://$bucketname/README.txt /user/hadoop/output
 ```
-命令的输入文件改为了`cosn:// $bucketname /README.txt`，即处理 COS 中的文件，其中 $bucketname 为您的存储桶的名字加路径。依然输出到 HDFS 集群中，也可以选择输出到 COS 中。查看输出的方法和上文一样。
+命令的输入文件改为了 `cosn:// $bucketname /README.txt`，即处理 COS 中的文件，其中 $bucketname 为您的存储桶的名字加路径。依然输出到 HDFS 集群中，也可以选择输出到 COS 中。查看输出的方法和上文一样。
 
 ### 查看任务日志
 ```
