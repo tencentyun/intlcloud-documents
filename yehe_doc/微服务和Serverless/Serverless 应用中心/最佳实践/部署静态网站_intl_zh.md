@@ -53,6 +53,8 @@ $ cd website-demo
 $ serverless deploy
 ```
 
+如您的账号未 [登录](https://intl.cloud.tencent.com/login) 或 [注册](https://intl.cloud.tencent.com/register) 腾讯云，您可以直接通过**微信**扫描命令行中的二维码进行授权登录和注册。
+
 如果希望查看更多部署过程的信息，可以通过`sls deploy --debug` 命令查看部署过程中的实时日志信息，`sls`是 `serverless` 命令的缩写。
 
 
@@ -68,23 +70,27 @@ $ serverless deploy
 
 component: website # (必填) 引用 component 的名称，当前用到的是 tencent-website 组件
 name: websitedemo # (必填) 该 website 组件创建的实例名称
+
 app: websiteApp # (可选) 该 website 应用名称
 stage: dev # (可选) 用于区分环境信息，默认值是 dev
 
 inputs:
-  src:
-    root: ./
-    src: ./src
-    hook: npm run build
-    index: index.html
-    websitePath: ./
-  region: ap-guangzhou
-  bucketName: my-bucket
-  protocol: http
-  hosts:
-    - host: anycoder.cn
-      https:
-        certId: 123
+    src:
+      src: ./src  # 部署项目的目录路径
+      # dist: ./dist # build 完成后输出目录，如果配置 hook， 此参数必填
+      # hook: npm run build # hook 脚本
+      index: index.html
+      websitePath: ./
+    region: ap-guangzhou
+    bucketName: my-bucket
+    protocol: http
+    hosts:
+      - host: abc.com
+        https:
+          switch: on
+          http2: on
+          certInfo:
+            certId: 'abc'
 ```
 
 查看 [全量配置及配置说明 >>](https://github.com/serverless-components/tencent-website/blob/master/docs/configure.md)

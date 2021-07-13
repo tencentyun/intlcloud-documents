@@ -1,5 +1,7 @@
 ## Overview
-This document uses a function written in Node.js as an example to describe how to quickly create a TDSQL-C Serverless MySQL instance and call it in SCF.
+Currently, [TDSQL-C](https://intl.cloud.tencent.com/document/product/1098/40626) for MySQL supports serverless billing. In this billing mode, the service is billed based on the actual computing and storage usage which is calculated by second and settled by hour. The TDSQL-C component of Serverless Framework also supports creating this type of databases.
+
+This document uses a function written in Node.js as an example to describe how to quickly create a TDSQL-C for MySQL serverless instance and call it in SCF.
 
 ## Directions
 
@@ -7,15 +9,12 @@ This document uses a function written in Node.js as an example to describe how t
 |---------|---------|
 | [Step 1. Configure environment variables](#step1) | - |
 | [Step 2. Configure a VPC](#step2) | Use the Serverless Framework VPC component to create a VPC and subnet for communications between the function and the database. |
-| <nobr>[Step 3. Configure Serverless DB](#step3)</nobr> | Use the Serverless Framework CynosDB component to create a MySQL instance to provide database services for the function project. |
+| <nobr>[Step 3. Configure Serverless DB](#step3)</nobr> | Use the Serverless Framework TDSQL-C component to create a MySQL instance to provide database services for the function project. |
 | [Step 4. Write business code](#step4) | Use the Serverless DB SDK to call the database. SCF allows you to directly call the Serverless DB SDK to connect to and manage a PostgreSQL database. |
 | [Step 5. Deploy an application](#step5) | Use Serverless Framework to deploy the project in the cloud and test it in the SCF console. |
 | [Step 6. Remove the project (optional)](#remove) | You can use Serverless Framework to remove the project. |
 
-<span id="step1"></span>
-
-### Step 1. Configure environment variables
-
+### Step 1. Configure environment variables[](id:step1)
 1. Create a local directory to store code and dependent modules. This document uses the `test-MySQL` folder as an example.
 ```
 mkdir test-MySQL && cd test-MySQL
@@ -28,10 +27,7 @@ REGION=xxx
 ZONE=xxx 
 ```
 
-<span id="step2"></span>
-
-### Step 2. Configure a VPC
-
+### Step 2. Configure a VPC[](id:step2)
 1. Create a `VPC` folder in the `test-MySQL` directory.
 ```
 mkdir VPC && cd VPC
@@ -39,7 +35,8 @@ mkdir VPC && cd VPC
 
 2. Create a `serverless.yml` file in `VPC` and use the [VPC component](https://github.com/serverless-components/tencent-vpc) to create the VPC and subnet.
 The sample content of `serverless.yml` is as follows (for all configuration items, please see the [product documentation](https://github.com/serverless-components/tencent-vpc/blob/master/docs/configure.md)):
-``` yml
+<dx-codeblock>
+:::  yml
 #serverless.yml
 app: mysql-app
 stage: dev
@@ -50,15 +47,16 @@ inputs:
     zone: ${env:ZONE}
     vpcName: serverless-mysql
     subnetName: serverless-mysql
-```
+:::
+</dx-codeblock>
 
-<span id="step3"></span>
-### Step 3. Configure Serverless DB
+### Step 3. Configure Serverless DB[](id:step3)
 1. Create a `DB` folder in `test-MySQL`.
 
 2. Create a `serverless.yml` file in the `DB` folder and enter the following content to use the Serverless Framework component to configure the TCB environment:
 The sample content of `serverless.yml` is as follows (for all configuration items, please see the [product documentation](https://github.com/serverless-components/tencent-cynosdb/blob/master/docs/configure.md)):
-``` yml
+<dx-codeblock>
+:::  yml
 # serverless.yml 
 app: mysql-app
 stage: dev
@@ -70,14 +68,16 @@ inputs:
   vpcConfig:
     vpcId: ${output:${stage}:${app}:mysql-app-vpc.vpcId}
     subnetId: ${output:${stage}:${app}:mysql-app-vpc.subnetId}
-```
+:::
+</dx-codeblock>
 
-<span id="step4"></span>
-### Step 4. Write the business code and configuration file
+
+### Step 4. Write the business code and configuration file[](id:step4)
 1. Create an `src` folder in `test-MySQL` to store the business logic code and relevant dependencies.
 
 2. Create an `index.js` file in the `src` folder and enter the following sample code, so that you can use the SDK to connect to the MySQL database through the function and call the database in the environment:
-``` js
+<dx-codeblock>
+:::  js
 exports.main_handler = async (event, context, callback) => {
     var mysql      = require('mysql2');
     var connection = mysql.createConnection({
@@ -92,7 +92,8 @@ exports.main_handler = async (event, context, callback) => {
     });
     connection.end();
  }
-```
+:::
+</dx-codeblock>
 
 3. Install the required dependent modules.
 ```
@@ -100,8 +101,8 @@ npm install mysql2
 ```
 
 4. After writing the business code and installing the dependencies, create a `serverless.yml` file as shown below:
-
-``` yml
+<dx-codeblock>
+:::  yml
 app: mysql-app
 stage: dev
 component: scf
@@ -120,12 +121,11 @@ inputs:
     variables:
       HOST: ${output:${stage}:${app}:mysql-app-db.connection.ip}
       PASSWORD: ${output:${stage}:${app}:mysql-app-db.adminPassword}
-```
+:::
+</dx-codeblock>
 
-<span id="step5"></span>
-### Step 5. Deploy
+### Step 5. Deploy[](id:step5)
 After the creation, the project directory structure is as follows:
-
 ```
    ./test-MySQL
    ├── vpc
@@ -142,13 +142,13 @@ After the creation, the project directory structure is as follows:
 ```bash
 sls deploy
 ```
->?
+ >?
 >- During deployment, you need to scan the QR code to authorize. If you don't have a Tencent Cloud account yet, please [sign up](https://intl.cloud.tencent.com/register) first.
 >- If your account is a sub-account, please get the authorization first as instructed in [Account and Permission Configuration](https://intl.cloud.tencent.com/document/product/1040/36793).
 
  If the following result is returned, the deployment is successful:
-
-``` mysql
+<dx-codeblock>
+::: mysql
 mysql-app-vpc: 
   region:        xxx
   zone:          xxx
@@ -167,12 +167,13 @@ mysql-app-scf:
   ...
 
 59s › test-MySQL › "deploy" ran for 3 apps successfully.
-```
+:::
+</dx-codeblock>
 
-2. After the deployment succeeds, you can view and debug the function in the [SCF console](https://console.cloud.tencent.com/scf/index?rid=1). 
+2. After the deployment succeeds, you can view and debug the function in the [SCF console](https://console.cloud.tencent.com/scf/index?rid=1).
 
-<span id="step6"></span>
-### Step 6. Remove the project (optional)
+
+### Step 6. Remove the project (optional)[](id:step6)
 Run the following command in the `test-MySQL` directory to remove the project:
 ```
 sls remove
@@ -186,8 +187,8 @@ serverless ⚡ framework
 ## Sample Code
 ### Python
 In Python, you can use the built-in **pymysql** dependency package in the SCF environment to connect to the database. The sample code is as follows:
-
-```  python
+<dx-codeblock>
+:::  python
 # -*- coding: utf8 -*-
 from os import getenv
 
@@ -222,14 +223,16 @@ def main_handler(event, context):
         print(myresult)
         for x in myresult:
             print(x)
-```
+:::
+</dx-codeblock>
 
 
 ### Node.js
 Node.js allows you to use a connection pool for connection, which supports automatic reconnection to effectively avoid connection unavailability due to connection release by the SCF underlying layer or database. The sample code is as follows:
 >?Before using a connection pool, you need to install the **mysql2** dependency package first. For more information, please see [Dependency Installation](https://intl.cloud.tencent.com/document/product/583/34879).
 
-```  nodejs
+<dx-codeblock>
+:::  nodejs
 'use strict';
 
 const DB_HOST       = process.env[`DB_HOST`]
@@ -251,13 +254,13 @@ exports.main_handler = async (event, context, callback) => {
   let result = await promisePool.query('select * from employee');
   console.log(result);
 }
-```
+:::
+</dx-codeblock>
 
 
 ### PHP
 In PHP, you can use the **pdo_mysql** or **mysqli** dependency package for data connection. The sample code is as follows:
 - **pdo_mysql**
-
 ```php
 <?php
 function handler($event, $context) {
@@ -296,7 +299,8 @@ function main_handler($event, $context) {
 
 ### Java
 1. Please install the following dependencies as instructed in [Dependency Installation](https://intl.cloud.tencent.com/document/product/583/34879#java-.E8.BF.90.E8.A1.8C.E6.97.B6).
-```  xml
+<dx-codeblock>
+:::  xml
 <dependencies>
     <dependency>
         <groupId>com.tencentcloudapi</groupId>
@@ -314,11 +318,12 @@ function main_handler($event, $context) {
         <version>8.0.11</version>
     </dependency>
 </dependencies>
-```
+:::
+</dx-codeblock>
 
 2. Use HikariCP for connection. The sample code is as follows:
-
-``` java
+<dx-codeblock>
+:::  java
 package example;
 
 import com.qcloud.scf.runtime.Context;
@@ -379,12 +384,13 @@ public class Http {
         return apiGatewayProxyResponseEvent.toString();
     }
 }
-```
+:::
+</dx-codeblock>
 
 
 ### SCF DB SDK for MySQL
 
-For ease of use, the SCF team encapsulated the code related to connection pools in Node.js and Python as SCF DB SDK for MySQL. Please refer to [Dependency Installation](https://intl.cloud.tencent.com/document/product/583/34879) for installation and use. With this SDK, you can connect to [MySQL](https://intl.cloud.tencent.com/document/product/236/5147) or [TDSQL for MySQL](https://intl.cloud.tencent.com/document/product/1042/33311) databases and performs operations such as insertion and query.
+For ease of use, the SCF team encapsulated the code related to connection pools in Node.js and Python as SCF DB SDK for MySQL. Please refer to [Dependency Installation](https://intl.cloud.tencent.com/document/product/583/34879) for installation and use. With this SDK, you can connect to [MySQL](https://intl.cloud.tencent.com/document/product/236/5147), [TDSQL-C](https://intl.cloud.tencent.com/document/product/1098/40615), or [TDSQL for MySQL](https://intl.cloud.tencent.com/document/product/1042/33311) databases and performs operations such as insertion and query.
 
 SCF DB SDK for MySQL has the following features:
 - It can automatically initialize the database client from environment variables.
@@ -392,8 +398,8 @@ SCF DB SDK for MySQL has the following features:
 - The SCF team will continuously check issues to ensure that the database connection is available, so you don't need to pay attention to connection issues.
 
 **1. SDK for Node.js**
-
-```  JavaScript
+<dx-codeblock>
+:::  JavaScript
 'use strict';
 const database = require('scf-nodejs-serverlessdb-sdk').database;
 
@@ -406,14 +412,15 @@ exports.main_handler = async (event, context, callback) => {
 
   console.log('db2 query result:',result)
 }
-```
+:::
+</dx-codeblock>
 
 >?For specific usage of the SDK for Node.js, please see [SCF DB SDK for MySQL](https://www.npmjs.com/package/scf-nodejs-serverlessdb-sdk).
 
 
 **2. SDK for Python**
-
-``` Python
+<dx-codeblock>
+:::  Python
 from serverless_db_sdk import database
 
 def main_handler(event, context):
@@ -427,4 +434,5 @@ def main_handler(event, context):
     
     for x in myresult:
         print(x)
-```
+:::
+</dx-codeblock>
