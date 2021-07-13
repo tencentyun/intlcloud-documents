@@ -1,6 +1,7 @@
 The billable items of SCF are priced as follows:
 
 Event function:
+
 | Billable Item | Unit | Price |
 |---|---|---|
 | Resource usage | GBs | 0.0000167 USD/GBs |
@@ -9,6 +10,7 @@ Event function:
 | Idle provisioned concurrency | GBs | 0.00000847 USD/GBs |
 
 Web function:
+
 | Billable Item | Unit | Price |
 |---|---|---|
 | Resource usage | GBs | 0.0000167 USD/GBs |
