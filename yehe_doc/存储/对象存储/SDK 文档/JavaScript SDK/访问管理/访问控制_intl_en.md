@@ -269,7 +269,7 @@ cos.putObjectAcl({
 | AccessControlPolicy | Sets the object's ACL attributes. | Object | No |
 | - Owner | Information about the object owner | Object | No |
 | - - ID | ID of the object owner in the format: `qcs::cam::uin/<OwnerUin>:uin/<SubUin>` <br>For root accounts, &lt;OwnerUin> and &lt;SubUin> have the same value. | String | No |
-| - - DisplayName | Name of the object owner | String |
+| - - DisplayName | Name of the object owner | String | No   |
 | - Grants | A list of information about the grantee and granted permissions | ObjectArray | No |
 | - - Permission | Permission granted. Enumerated values: `READ`, `WRITE`, `READ_ACP`, `WRITE_ACP`, `FULL_CONTROL` | String | No |
 | - - Grantee | Information about the grantee | Object | No |
@@ -332,7 +332,7 @@ function(err, data) { ... }
 | data | Object returned when the request is successful. If the request fails, this parameter is left empty. | Object |
 | - statusCode | HTTP status code returned by the request, such as 200, 403, and 404 | Number |
 | - headers | Headers returned by the request | Object |
-| - ACL | Defines the ACL attribute of the object. For the enumerated values, such as `default`, `private`, and `public-read`, please see the **Preset ACL** section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). Default value: `default` <br>**Note:** If you do not need access control for the object, set `default` for this parameter or leave it empty. In this way, the object will inherit the permissions of the bucket it is stored in. | String | No |
+| - ACL | Defines the ACL attribute of the object. For the enumerated values, such as `default`, `private`, and `public-read`, please see the **Preset ACL** section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). Default value: `default` <br>**Note:** If you do not need access control for the object, set `default` for this parameter or leave it empty. In this way, the object will inherit the permissions of the bucket it is stored in. | String |
 | - Owner | Owner of the resource | Object |
 | - - ID | Object owner ID in the format of `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`<br>For root accounts, &lt;OwnerUin> and &lt;SubUin> have the same value. | String |
 | - - DisplayName | Object owner name | String |
