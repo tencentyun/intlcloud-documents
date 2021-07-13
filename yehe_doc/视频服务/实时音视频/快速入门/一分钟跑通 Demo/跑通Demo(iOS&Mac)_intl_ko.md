@@ -56,9 +56,9 @@ TRTC SDK 6.6 버전(2019년 08월)부터 새로운 서명 알고리즘 HMAC-SHA2
  3. [퀵 스타트] 탭을 선택한 후 [2단계: UserSig 발급 키 획득]의 [업데이트], [비대칭 암호화] 또는 [HMAC-SHA256]을 클릭합니다.
   - 업데이트:
   - 기존 버전 알고리즘 ECDSA-SHA256으로 전환:
-      ![](https://main.qcloudimg.com/raw/bc5cc756b93bd3e688f9f31a9c1efdfe/%E8%B7%91%E9%80%9ADemoiOS&Mac5-%E8%BF%94%E8%BF%98.png)
+      ![](https://main.qcloudimg.com/raw/02a17c4c68682fd9d0da349b31d71a38.png)
   - 신규 버전 알고리즘 HMAC-SHA256으로 전환- 최신 버전 알고리즘 HMAC-SHA256으로 전환:
-      ![](https://main.qcloudimg.com/raw/2f55ac47bbff3257bfadc7e670e0ff1c/%E8%B7%91%E9%80%9ADemoiOS&Mac6-%E8%BF%94%E8%BF%98.png)
+      ![](https://main.qcloudimg.com/raw/a14fb9a73b294f0c78c0b10e2694d4c9.png)
 
 ### 2. 2대의 휴대폰에서 동시에 Demo를 실행할 경우 서로의 화면이 보이지 않는 이유는 무엇인가요?
 2대의 휴대폰에서 Demo를 실행할 경우 각자 다른 UserID를 사용해야 합니다. TRTC에서는 동일 UserID(SDKAppID가 다를 경우 제외)를 2개의 단말에서 동시에 사용할 수 없습니다.
