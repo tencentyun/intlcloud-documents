@@ -39,7 +39,7 @@ The EKS log collection feature collects the log information and outputs it to th
 ![](https://main.qcloudimg.com/raw/2359897f61c9c663d31db1cdca03f3c4.png)
 5. Refer to the following information to configure the log consumer end. You can choose CLS or Kafka as the log consume end.
 <dx-tabs>
-::: Configuring CLS as the log consumer end
+::: Configuring\sCLS\sas\sthe\slog\sconsumer\send
 1. Select **CLS** as the **Consumer End**, and select the **Log set** and **Log topic**, as shown below:
 ![](https://main.qcloudimg.com/raw/37623ea379501b3b431fac609b9681c0.png)
 If there is no suitable log set, you can [create a logset and a log topic](https://intl.cloud.tencent.com/document/product/614/31592).
@@ -51,7 +51,7 @@ You can go to the **[CLS console](https://console.cloud.tencent.com/cls/topic?re
 ![](https://main.qcloudimg.com/raw/a6f481ce07cafd4ecb8d13ac05950b99.png)
 
 :::
-::: Configuring Kafka as the log consumer end
+::: Configuring\sKafka\sas\sthe\slog\sconsumer\send
 If you select Kafka as the consumer end, it is recommended you to use CKafka. The experience of its consumption and production modes are the same as the native version, and it supports alarm configurations.
 Specify the Broker address and Topic of Kafka in the container configuration, and ensure that all resources in the cluster can access the user-specified Kafka Topic, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/27e5173a642dfd0e2c84c93c0b319bcc.png)
@@ -87,9 +87,11 @@ You must select **Cloud Virtual Machine (cvm)** rather than TKE as the role enti
 - Select the “SecretId” and “SecretKey” of your account API key as the variable values to create the cluster Secret.
 ![](https://main.qcloudimg.com/raw/c03d348d34fc5c5d2666b1e883138bab.png)
 - If there is no suitable Secret, you need to create one. For more information, see [Secret Management](https://intl.cloud.tencent.com/document/product/457/30676). You can view the SecretId and SecretKey in [API Keys](https://console.cloud.tencent.com/cam/capi).
->! The user corresponding to the API key must have the permission to access the CLS. If there is no API key, you need to create one. For more information, see [Access Key](https://intl.cloud.tencent.com/document/product/598/34228).
+<dx-alert infotype="notice"> The user corresponding to the API key must have the permission to access the CLS. If there is no API key, you need to create one. For more information, see [Access Key](https://intl.cloud.tencent.com/document/product/598/34228).
+</dx-alert>
 :::
 </dx-tabs>
+
 7. Configure the collection path, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/4f9fb3635b7a3c3ab35e8387d877a08b.png)
 At this point, you have configured the log collection feature. You can set other configurations of the workload as needed.
@@ -182,19 +184,14 @@ labels:
 	</tr>
 </table>
 
-Verify whether the delivery by key is enabled, as shown below:
-- If it is not enabled, the key is not displayed in the message details, as shown below:
-![](https://main.qcloudimg.com/raw/0cd127b53979d5b1d82374f940e6a312.png)
-- If it is enabled, the key is displayed in the message details, as shown below:
-![](https://main.qcloudimg.com/raw/faff38628da1647e9126f0c93b562c3c.png)
 
 :::
 
 
 ::: Collecting\slogs\sto\sCLS\svia\sa\ssecret
 #### Creating a secret[](id:z)
->! The following sample is to manually create a secret through yaml. If you create a secret through the console, you do not need to perform 64 encoding. For more information, see [Secret Management](https://intl.cloud.tencent.com/document/product/457/30676).
->
+<dx-alert infotype="notice">The following sample is to manually create a secret through yaml. If you create a secret through the console, you do not need to perform 64 encoding. For more information, see [Secret Management](https://intl.cloud.tencent.com/document/product/457/30676).
+</dx-alert>
 Run the following command via kubectl to obtain the secretid and secretkey for base64 encoding. Replace secretid and secretkey with the actual secretid and secretkey that you use. For more information, see [API Keys](https://console.cloud.tencent.com/cam/capi).
 ```shell
 $ echo -n 'secretid' | base64
