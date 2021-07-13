@@ -17,16 +17,16 @@ Tag API 是所有 tag 接口的统称。Tag API 有多种设置、更新、删�
 | 参数名 | 类型 | 是否必需 | 参数说明 |
 | -------------- | ------- | ---- | ---------------------------------------- |
 | operator_type | Integer | 是 | 操作类型：<br>1 - 增加单个 tag，对单个 token 而言<br>2 - 删除单个 tag，对单个 token 而言<br>3 - 增加多个 tag，对单个 token 而言<br>4 - 删除多个 tag，对单个 token 而言<br>5 - 删除所有标签，对单个 token 而言<br>6 - 标签覆盖接口（支持多个标签或自定义类标签覆盖），对单个 token 而言<br>（此接口要清除历史标签之后，才开始设置新的标签，所以针对单个相同 token 的调用，需要间隔一段时间（建议大于1s），否则可能造成更新失败）<br>7 - 添加单个 tag，对多个 token 而言<br>8 - 删除单个 tag，对多个 token 而言<br>9 - 批量添加标签（每次调用最多允许设置20对，每个对里面标签在前，token 在后）<br>10 - 批量删除标签（每次调用最多允许设置20对，每个对里面标签在前，token 在后） |
-| token_list | Array  | 否 | 设备列表：<li>operator_type = 1,2,3,4,5,6,7,8时，必填 <li>operator_type = 1,2,3,4,5,6时如果该参数包含多个 token 只会设置第一个 token<li>格式 eg：["token1","token2"] <li>列表最大不能超过20个值 <li>token 字符串长度不能超过36 |
-| tag_list | Array  | 否 | 标签列表：<li>operator_type = 1,2,3,4,6,7,8时，必填，operator_type = 5时忽略<li>operator_type = 1,2,7,8 时，如果该参数包含多个 tag 时，如果只是对单个 tag 操作，则只会设置第一个 tag<li>格式 eg：["tag1","tag2"]<li>列表最大不能超过20个值<li>tag 字符串长度不能超过50 |
-| tag_token_list | Array  | 否 | 标签、设备对应列表：<li>operator_type =9,10时，必填 <li>格式 eg： [{"tag":"tag123", "token":"token123"}]<li>每个对里面标签在前，token 在后 <li>列表最大不能超过20个值 <li>tag 字符串长度不能超过50<li>token 字符串长度不能超过64</li> |
+| token_list | Array  | 否 | 设备列表：<li>operator_type = 1,2,3,4,5,6,7,8时，必填 <li>operator_type = 1,2,3,4,5,6时如果该参数包含多个 token 只会设置第一个 token<li>格式 eg：["token1","token2"] <li>列表最大不能超过500个值 <li>token 字符串长度不能超过36 |
+| tag_list | Array  | 否 | 标签列表：<li>operator_type = 1,2,3,4,6,7,8时，必填，operator_type = 5时忽略<li>operator_type = 1,2,7,8 时，如果该参数包含多个 tag 时，如果只是对单个 tag 操作，则只会设置第一个 tag<li>格式 eg：["tag1","tag2"]<li>列表最大不能超过500个值<li>tag 字符串长度不能超过50 |
+| tag_token_list | Array  | 否 | 标签、设备对应列表：<li>operator_type =9,10时，必填 <li>格式 eg： [{"tag":"tag123", "token":"token123"}]<li>每个对里面标签在前，token 在后 <li>列表最大不能超过500个值 <li>tag 字符串长度不能超过50<li>token 字符串长度不能超过36</li> |
 
 >!
 >- 单个应用最多可以有10000个自定义`Tag`， 每个设备`Token`最多可绑定100个自定义`Tag`，如需提高该限制，请与我们客服联系，每个自定义`Tag`可绑定的设备 token 数量无限制。
 >- 如果仅单次而非连续的标签设置接口调用，则接口调用方式无限制。
 >- 如果为连续标签设置接口调用，则需要注意如下：
-    - 如果需要对超过10个标签或超过10个 token 的连续标签设置接口调用时，建议使用批量接口，但为保证标签操作的正确，建议两次接口调用的时间间隔不低于1s。
-    - 如果调用非批量接口，则在明确拿到 TPNS 服务器的返回值时，再进行下次非批量标签接口调用，不建议使用多线程异步同时进行标签接口调用。
+>   - 如果需要对超过10个标签或超过10个 token 的连续标签设置接口调用时，建议使用批量接口，但为保证标签操作的正确，建议两次接口调用的时间间隔不低于1s。
+>   - 如果调用非批量接口，则在明确拿到 TPNS 服务器的返回值时，再进行下次非批量标签接口调用，不建议使用多线程异步同时进行标签接口调用。
 >- 英文冒号“:”是 TPNS 后台的关键字，用作标签的分类，如果设置标签时带了“:”，则将第一个“:”前面的字符串作为这个标签的类名，仅为了用于 operator_type 为6时按类进行标签覆盖的场景，如设备原来的标签为 level:1, level:2, male 这3个时，此种方式可直接用 level:3标签覆盖 level 类标签下的 level:1和 level:2标签，而无需先逐个解绑 level:1和 level:2后再绑定 level:4标签，详情见下面请求示例中  operator_type 为6的示例。
 
 
@@ -43,7 +43,7 @@ Tag API 是所有 tag 接口的统称。Tag API 有多种设置、更新、删�
 ## 示例说明
 #### 标签绑定解绑请求示例
 
-- 增加单个 tag1，对单个 token1
+- 增加单个 tag1，对单个 token1
 ```json
 {
     "operator_type": 1,
@@ -55,7 +55,7 @@ Tag API 是所有 tag 接口的统称。Tag API 有多种设置、更新、删�
     ]
 }
 ```
-- 删除单个 tag1，对单个 token1
+- 删除单个 tag1，对单个 token1
 ```json
 {
     "operator_type": 2,
@@ -67,7 +67,7 @@ Tag API 是所有 tag 接口的统称。Tag API 有多种设置、更新、删�
     ]
 }
 ```
-- 增加多个 tag1、tag2，对单个 token1
+- 增加多个 tag1、tag2，对单个 token1
 ```json
 {
     "operator_type": 3,
@@ -80,7 +80,7 @@ Tag API 是所有 tag 接口的统称。Tag API 有多种设置、更新、删�
     ]
 }
 ```
-- 删除多个 tag1、tag2，对单个 token1
+- 删除多个 tag1、tag2，对单个 token1
 ```json
 {
     "operator_type": 4,
@@ -93,7 +93,7 @@ Tag API 是所有 tag 接口的统称。Tag API 有多种设置、更新、删�
     ]
 }
 ```
-- 删除所有标签，对单个 token1
+- 删除所有标签，对单个 token1
 ```json
 {
     "operator_type": 5,
@@ -106,7 +106,7 @@ Tag API 是所有 tag 接口的统称。Tag API 有多种设置、更新、删�
     ]
 }
 ```
-- 标签覆盖自定义类标签，对单个 token1
+- 标签覆盖自定义类标签，对单个 token1
 ```json
 {
     "operator_type": 6,
@@ -121,7 +121,7 @@ Tag API 是所有 tag 接口的统称。Tag API 有多种设置、更新、删�
 ```
 >? 若有其中一个或多个标签不带“：”号，则将 test:2 和 level 标签覆盖 token1 的全部自定义标签。
 >
-- 批量覆盖自定义类标签，对单个 token（此接口只覆盖到自定义类标签，而不是全部覆盖）
+- 批量覆盖自定义类标签，对单个 token（此接口只覆盖到自定义类标签，而不是全部覆盖）
 ```json
 {
     "operator_type": 6,
@@ -136,7 +136,7 @@ Tag API 是所有 tag 接口的统称。Tag API 有多种设置、更新、删�
 ```
 >? 若全部标签都带“:”，由于第一个“:”前面的字符串为标签的类，则仅会覆盖设备对应相同类的标签，如test:2覆盖test:*， level:2覆盖level:*，不会影响其它标签。
 >
-- 为多个 token1、token2 添加单个 tag1
+- 为多个 token1、token2 添加单个 tag1
 ```json
 {
     "operator_type": 7,
@@ -149,7 +149,7 @@ Tag API 是所有 tag 接口的统称。Tag API 有多种设置、更新、删�
     ]
 }
 ```
-- 多个 token1、token2 删除单个 tag1
+- 多个 token1、token2 删除单个 tag1
 ```json
 {
     "operator_type": 8,
@@ -162,7 +162,7 @@ Tag API 是所有 tag 接口的统称。Tag API 有多种设置、更新、删�
     ]
 }
 ```
-- 批量设置标签
+- 批量设置标签
 ```json
 {
     "operator_type": 9,
@@ -174,7 +174,7 @@ Tag API 是所有 tag 接口的统称。Tag API 有多种设置、更新、删�
     ]
 }
 ```
-- 批量删除标签，为 tag1、tag2、tag3 删除标签
+- 批量删除标签，为 tag1、tag2、tag3 删除标签
 ```json
 {
     "operator_type": 10,
