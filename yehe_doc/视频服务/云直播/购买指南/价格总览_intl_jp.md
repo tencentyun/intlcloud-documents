@@ -30,7 +30,7 @@ CSSの課金項目には、基本サービス料金と付加価値サービス�
 <li/>標準ライブストリーミングの視聴により発生するダウンストリーム帯域幅ピーク値。
 <li/>中国本土（大陸）、中国香港・マカオ・台湾、海外のアクセラレーション課金基準はそれぞれ異なります。
 </td><td>
-<li/><a href="https://cloud.tencent.com/document/product/267/34175#bandwidth">後払い-日次決済</a>
+<li/><a href="https://intl.cloud.tencent.com/document/product/267/2818#bandwidth">後払い-日次決済</a>
 <li/>後払い-月次決済
 </tr><tr>
 <td>ライブイベントストリーミングトラフィック<br>（デフォルト）</td>
@@ -56,23 +56,27 @@ CSSの課金項目には、基本サービス料金と付加価値サービス�
 <tr>
 <td rowspan=3>CSSトランスコード</td>
 <td>標準トランスコーディング</td>
-<td><ul style="margin:0">
+<td>
 <li/>CSSの標準トランスコーディング機能を使用した時に課金されます。
 <li/><a href="https://intl.cloud.tencent.com/document/product/267/31064">CSSウォーターマーク</a>、<a href="https://intl.cloud.tencent.com/document/product/267/31071">標準トランスコーディング</a>、<a href="https://intl.cloud.tencent.com/document/product/267/37665">ライブミクスストリーミング</a>などの機能を使用した時は、標準トランスコーディングの費用が発生します。
 <li/>発生した料金は<b>トランスコーディングの時間に応じて課金され</b>、CSSストリームを出力する画面サイズに対応する価格が料金の単価となります。
-</ul></td>
+</td>
 <td>
 <li><a href="https://intl.cloud.tencent.com/document/product/267/39604">後払い-日次決済</a></li></ul>
 </td>
-</tr><tr>
+</tr>
+<tr>
 <td>高速高画質トランスコーディング</td>
-<td><ul style="margin:0">
- <li>CSSの高速高画質トランスコーディング機能を使用したときに課金されます。
-<li><a href="https://intl.cloud.tencent.com/document/product/267/31071">高速高画質トランスコーディング</a>の機能を使用したときは、高速高画質トランスコーディングの料金が発生します。
-<li>発生した料金は<b>トランスコーディングの時間に応じて課金され</b>、CSSストリームを出力する画面サイズに対応する価格が料金の単価となります。
-</ul><td>
-<td><li><a href="https://intl.cloud.tencent.com/document/product/267/39604">後払い-日次決済</a></li></ul>
-</tr><tr>
+<td>
+<li>CSSの高速高画質トランスコーディング機能を使用したときに課金されます。
+<li><a href="https://intl.cloud.tencent.com/document/product/267/31071">高速高画質トランスコーディング</a>の機能を使用したときは、高速高画質トランスコーディングの料金が発生します。</li>
+<li>発生した料金は<b>トランスコーディングの時間に応じて課金され</b>、CSSストリームを出力する画面サイズに対応する価格が料金の単価となります。</li>
+</td>
+<td>
+<li><a href="https://intl.cloud.tencent.com/document/product/267/39604">後払い-日次決済</a></li>
+</td>
+</tr>
+<tr>
 <td>オーディオトランスコーディング</td>
 <td>
 <li/>CSSのオーディオトランスコーディング機能を使用した時に課金されます。
