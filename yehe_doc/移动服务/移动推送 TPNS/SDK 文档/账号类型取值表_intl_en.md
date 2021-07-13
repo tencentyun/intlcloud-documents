@@ -5,7 +5,7 @@
 | 0           | Default | It will be categorized as this type when `accountType` is not passed in. | - |
 | 1-16        | Custom | The business side binds a custom account with a token, such as uin.  | - |
 | 989         | TAID       | Unique device fingerprint ID created by Tencent | -                                    |
-| 989         | QIMEI      | Unique device ID provided by Tencent | -                                    |
+| 990         | QIMEI      | Unique device ID provided by Tencent | -                                    |
 | 991         | QQ account number       | Five to 12 digits | 12345                                |
 | 992         | QQ account number - MD5 | Encrypted QQ account number. Before encryption, a QQ account number is a 5- to 12-character numeric string; after encryption, it becomes a 32-character case-insensitive alphanumeric string. | -                                    |
 | 993         | IDFA       | Apple device ID, which is a 32-character uppercase alphanumeric string and divided into several parts by `-`.   | 49E2084A-290C-41EF-AD20-E540CD6AE841 |
