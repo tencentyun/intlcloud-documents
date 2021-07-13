@@ -4,27 +4,17 @@ To ensure business and channel security and minimize potential financial losses 
 - A maximum of 10 messages can be sent to the same mobile number on a calendar day.
 
 Organizational users can log in to the [SMS console](https://console.cloud.tencent.com/smsv2) to set or modify the corresponding delivery rate limit policy. For detailed directions, please see [Setting Delivery Rate Limit](https://intl.cloud.tencent.com/document/product/382/35469).
-Note: individual users have no permission to modify the delivery rate limit. To use this feature, change "Individual Identity" to "Organizational Identity".
+Note: individual users have no permission to modify the delivery rate limit. To use this feature, change "Individual Identity" to "Organizational Identity". For more information on the rights of organizational users, please see [Differences in rights](https://intl.cloud.tencent.com/document/product/382/40653).
 
 ### How do I add an alarm contact?
 For detailed directions, please see [Configuring Alarm Contact](https://intl.cloud.tencent.com/document/product/382/35470).
 
-### How do I prevent SMS bombing?[](id:Q4)
-SMS bombing refers to using malicious programs or tools and exploiting vulnerabilities in website clients or servers to send a large number of SMS verification codes to many irrelevant mobile numbers in a short period of time (for example, within a day), which cause harassment to such users.
+### How do I prevent SMS bombing (cheating)?[](id:Q4)
+SMS bombing (cheating) refers to using malicious programs or tools and exploiting vulnerabilities in website clients or servers to send a large number of SMS verification codes to many irrelevant mobile numbers in a period of time (for example, within a day), which cause harassment to such users.
+SMS bombing (cheating) not only causes harassment to innocent users, but also leads to a high number of complaints, which makes the SMS channel unavailable and results in economic losses to customers; therefore, preventive measures should be taken in advance.
 The figure below shows a real case encountered by a customer (only dozens of messages are sent per day under normal circumstances, but tens of thousands of messages were sent per day during a bombing attack):
 ![](https://main.qcloudimg.com/raw/071fbb50d64aa2dcc1f44e0e12ced9eb.png)
-SMS bombing not only causes harassment to innocent users, but also leads to a high number of complaints, which makes the SMS channel unavailable and results in economic losses to customers; therefore, preventive measures should be taken in advance.
-In view of the fact that SMS bombing attacks are generally initiated by servers, the following comprehensive measures are recommended for defense:
-
-- Added image captchas. Tencent Cloud provides the [Captcha](https://cloud.tencent.com/product/yy) anti-cheating features.
-- Limit the number of requests allowed per IP.
-- Limit the number of delivery tasks allowed per mobile number. To do so, you can [set the delivery rate limit](https://intl.cloud.tencent.com/document/product/382/35469) and [configure alarm contacts](https://intl.cloud.tencent.com/document/product/382/35470).
-- [Set over-limit delivery notifications](https://intl.cloud.tencent.com/document/product/382/35469).
-- Log in to the [SMS console](https://console.cloud.tencent.com/smsv2) to regularly (for example, once every day) view specific statistics and check SMS deliveries. If an exception is found, you can disable the SMS service in the console in emergency circumstances.
-
-### How do I prevent SMS cheating?
-SMS cheating refers to using malicious programs or tools and exploiting vulnerabilities in website clients or servers to cheat on SMS verification codes.
-The following comprehensive measures are recommended for defense:
+In view of the fact that SMS bombing (cheating) attacks are generally initiated by servers, the following comprehensive measures are recommended for defense:
 
 - Limit the number of requests allowed per IP.
 - Limit the number of delivery tasks allowed per mobile number. To do so, you can [set the delivery rate limit](https://intl.cloud.tencent.com/document/product/382/35469) and [configure alarm contacts](https://intl.cloud.tencent.com/document/product/382/35470).
@@ -47,7 +37,7 @@ SDK AppID is used to identify applications. Each SMS application has a unique SD
 You can log in to the [SMS console](https://console.cloud.tencent.com/smsv2), select **Application Management** > **Application List**, and click the name of the target application to enter the application details page and view its SDK AppID.
 
 ### How do I enable the rate limit allowlist for testing and alarming mobile numbers?
-If you need to remove the rate limit for testing mobile numbers, please [contact us](https://intl.cloud.tencent.com/document/product/382/3773).
+If you need to remove the rate limit for testing mobile numbers, please contact [SMS Helper](https://tccc.qcloud.com/web/im/index.html#/chat?webAppId=8fa15978f85cb41f7e2ea36920cb3ae1&title=Sms).
 
 ### How do I check whether a specific mobile number has received a message?
 You can log in to the [SMS console](https://console.cloud.tencent.com/smsv2), click the name of the target application to enter the application details page, and select one the following methods to query or export records according to your actual needs:
@@ -55,4 +45,4 @@ You can log in to the [SMS console](https://console.cloud.tencent.com/smsv2), cl
 - Global SMS: select **Statistics and Analytics** > **Global SMS** > **Message Records** to query or export records within a specified time period.
 
 ### Is there a limit on the number of Global SMS messages that can be sent?
-Up to 1,000 Global SMS messages can be sent per day under one Tencent Cloud account. If you need to adjust this limit, please [contact us](https://intl.cloud.tencent.com/document/product/382/3773).
+Up to 1,000 Global SMS messages can be sent per day under one Tencent Cloud account. If you need to adjust this limit, please contact [SMS Helper](https://tccc.qcloud.com/web/im/index.html#/chat?webAppId=8fa15978f85cb41f7e2ea36920cb3ae1&title=Sms).

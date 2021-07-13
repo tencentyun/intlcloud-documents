@@ -4,28 +4,19 @@
 - 同一手机号一个自然日最多发送10条。
 
 企业认证用户可以登录 [短信控制台](https://console.cloud.tencent.com/smsv2) 设置或修改相应的频率限制策略，具体操作请参见 [设置发送频率限制](https://intl.cloud.tencent.com/document/product/382/35469)。
-个人认证用户不提供修改频率限制的权限。如需使用该功能，请将 “个人认证” 修改为 “企业认证”。
+个人认证用户不提供修改频率限制的权限。如需使用该功能，请将 “个人认证” 修改为 “企业认证”，更多企业认证用户权益信息请参见 [权益区别](https://intl.cloud.tencent.com/document/product/382/40653)。
 
 ### 如何添加告警联系人？
 详细操作请参见 [配置告警联系人](https://intl.cloud.tencent.com/document/product/382/35470)。
 
-### 如何预防短信轰炸？[](id:Q4)
-短信轰炸是指通过恶意程序或者工具，利用网站客户端或服务端漏洞，在短时间内（例如一天以内）给很多无关的手机号码发送大量的验证码短信，导致手机用户被骚扰。
+### 如何预防短信轰炸（盗刷）？[](id:Q4)
+短信轰炸（盗刷）是指通过恶意程序或者工具，利用网站客户端或服务端漏洞，在短时间内（例如一天以内）给很多无关的手机号码发送大量的验证码短信，导致手机用户被骚扰。
+出现短信轰炸（盗刷）后，既会对无辜用户造成骚扰，引起大量投诉导致短信通道不可用，也会给业务方造成大量的经济损失，所以需要提前做好预防措施。
 下图是客户遇到的一个实际案例（正常情况下每天几十条短信下发量，被轰炸期间每天几万条短信下发量）
 ![](https://main.qcloudimg.com/raw/071fbb50d64aa2dcc1f44e0e12ced9eb.png)
-出现短信轰炸后，既会对无辜用户造成骚扰，引起大量投诉导致短信通道不可用，也会给业务方造成大量的经济损失，所以需要提前做好预防措施。
-鉴于短信轰炸的发起一般都是服务器行为，建议采用以下综合手段进行防御：
-- 增加图形验证码，腾讯云提供了 [天御](https://cloud.tencent.com/product/yy) 防刷功能。
+鉴于短信轰炸（盗刷）的发起一般都是服务器行为，还可采用以下综合手段进行防御：
+
 - 单 IP 请求次数限制。
-- 限制单个号码发送次数，可 [设置发送频率限制](https://intl.cloud.tencent.com/document/product/382/35469) ，并 [配置告警联系人](https://intl.cloud.tencent.com/document/product/382/35470)。
-- [设置发送超量提醒](https://intl.cloud.tencent.com/document/product/382/35469)。
-- 定期（例如每天）登录 [短信控制台](https://console.cloud.tencent.com/smsv2) 查看具体统计数据，关注短信下发情况。如发现异常及时处理，紧急情况下可在短信控制台停用短信服务。
-
-### 如何预防短信被盗刷？
-短信盗刷是指通过恶意程序或者工具，利用网站客户端或服务端漏洞，导致短信验证码被盗刷的情况。
-可采用以下综合手段进行防御：
-
-- 增加单 IP 请求次数限制。
 - 限制单个号码发送次数，可 [设置发送频率限制](https://intl.cloud.tencent.com/document/product/382/35469) ，并 [配置告警联系人](https://intl.cloud.tencent.com/document/product/382/35470)。
 - [设置发送超量提醒](https://intl.cloud.tencent.com/document/product/382/35469)。
 - 定期（例如每天）登录 [短信控制台](https://console.cloud.tencent.com/smsv2) 查看具体统计数据，关注短信下发情况。如发现异常及时处理，紧急情况下可在短信控制台停用短信服务。
@@ -46,7 +37,7 @@ SDK AppID 用于标识应用，每个短信应用拥有唯一的 SDK AppID，添
 您可以登录 [短信控制台](https://console.cloud.tencent.com/smsv2) ，选择【应用管理】>【应用列表】，单击目标应用名称进入应用详情页查看已有应用的 SDK AppID。
 
 ### 测试、告警手机号如何开通频率限制白名单？
-如需开通测试手机号无频率限制，请 [联系我们](https://intl.cloud.tencent.com/document/product/382/3773)。
+如需开通测试手机号无频率限制，请联系 [腾讯云短信小助手](https://tccc.qcloud.com/web/im/index.html#/chat?webAppId=8fa15978f85cb41f7e2ea36920cb3ae1&title=Sms)。
 
 ### 需要知道具体哪个手机号是否收到短信怎么查？
 您可以登录 [短信控制台](https://console.cloud.tencent.com/smsv2) ，单击目标应用名称进入应用详情页，根据实际需求选择以下方式进行查询或导出记录：
@@ -54,4 +45,4 @@ SDK AppID 用于标识应用，每个短信应用拥有唯一的 SDK AppID，添
 - 国际/港澳台短信：选择【统计分析】>【国际/港澳台短信】>【短信记录】页面查询或导出指定时间段内的记录。
 
 ### 发送国际/港澳台短信是否有数量限制？
-单个腾讯云账户的国际/港澳台短信每日发送量限额为1000条，如需调整，请 [联系我们](https://intl.cloud.tencent.com/document/product/382/3773)。
+单个腾讯云账户的国际/港澳台短信每日发送量限额为1000条，如需调整，请联系 [腾讯云短信小助手](https://tccc.qcloud.com/web/im/index.html#/chat?webAppId=8fa15978f85cb41f7e2ea36920cb3ae1&title=Sms)。
