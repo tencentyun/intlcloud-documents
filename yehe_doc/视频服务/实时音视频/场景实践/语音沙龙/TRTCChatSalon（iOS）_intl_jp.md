@@ -209,7 +209,7 @@ TRTCChatSalonは、オープンソースのClassであり、Tencent Cloudの2つ
 
 | パラメータ  | タイプ             | 意味                                                       |
 | ----- | ---------------- | ------------------------------------------------------------ |
-| queue | dispatch_queue_t | TRTCChatSalonの各種ステータス通知は、指定したスレッドキューに発信されます。
+| queue | dispatch_queue_t | TRTCChatSalonの各種ステータス通知は、指定したスレッドキューに発信されます。|
 
    
 
