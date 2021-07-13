@@ -1,3 +1,5 @@
+本文主要为您列举支持标签的产品名称和资源名称。您可以通过点击产品名称查看各个产品的产品文档。
+
 ## 计算
 <table>
 <tr><th width="50%">产品名称</th><th width="50%">资源</th></tr><tr>
@@ -53,31 +55,56 @@
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/608">全球应用加速 GAAP</a></td>
 <td><li>通道</li><li>通道组</li><li>源站</li> </td>
+</tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/570">全站加速网络</a></td>
+<td>全站加速网络</td>
 </tr></table>
 
-## 数据库
+## 关系型数据库
 <table>
 <tr><th width="50%">产品名称</th><th width="50%">资源</th></tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/236/31917">云数据库 MySQL</a></td>
 <td>MySQL 实例</td>
 </tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1003"> 云数据库 CynosDB</a></td>
-<td>CynosDB集群</td>
-</tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/237">云数据库 MariaDB</a></td>
 <td>云数据库 MariaDB 实例</td>
 </tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/1042">TDSQL MySQL版</a></td>
-<td>TDSQL MySQL版 实例</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/238">云数据库 SQL Server</a></td>
+<td>云数据库 SQLServer 实例</td>
 </tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/409">云数据库 PostgreSQL</a></td>
+<td>PostgreSQL 实例</td>
+</tr><tr>
+</tr>
+</table>
+
+## 企业级分布式数据库
+<table>
+<tr><th width="50%">产品名称</th><th width="50%">资源</th></tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1098">云数据库 CynosDB</a></td>
+<td>CynosDB 集群</td>
+</tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1042">TDSQL MySQL 版</a></td>
+<td>TDSQL MySQL 版实例</td>
+</tr><tr>
+</tr>
+</table>
+
+## NoSQL数据库
+<table>
+<tr><th width="50%">产品名称</th><th width="50%">资源</th></tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/240">云数据库 MongoDB</a></td>
 <td>MongoDB 实例</td>
-</tr>
-<tr>
+</tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1016">游戏数据库 TcaplusDB</a></td>
 <td><li>集群</li><li>表格</li></td>
+</tr><tr>
 </tr>
-<tr>
+</table>
+
+## 数据库 SaaS 工具
+<table>
+<tr><th width="50%">产品名称</th><th width="50%">资源</th></tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/571">数据传输服务</a></td>
 <td><li>迁移任务</li><li>订阅实例</li></td>
 </tr>
@@ -103,7 +130,7 @@
 ## 视频服务
 <table>
 <tr><th width="50%">产品名称</th><th width="50%">资源</th></tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267">云直播</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267">云直播</a><sup>1</sup></td>
 <td><li>域名</li><li>导播台</li></td>
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/266">云点播 </a></td>
@@ -112,6 +139,8 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/647">实时音视频 </a></td>
 <td>实时音视频应用</td>
 </tr></table>
+
+> ?<sup>1</sup> 云直播仅支持资源关联标签，分标签管理资源，不支持按标签授权。
 
 
 ## 中间件
@@ -164,6 +193,13 @@
 <td><li>弹性 MapReduce 实例</li><li>弹性 MapReduce 节点</li></td>
 </tr></table>
 
+## 移动服务
+<table>
+<tr><th width="50%">产品名称</th><th width="50%">资源</th></tr><tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/1024"> 腾讯移动推送</a></td>
+<td>移动推送 TPNS 应用</td>
+</tr></table>
+
 ## 游戏服务
 <table>
 <tr><th width="50%">产品名称</th><th width="50%">资源</th>
@@ -175,7 +211,7 @@
 <td><li>生成包</li><li>别名</li><li>游戏服务器舰队</li><li>游戏服务器会话队列</li></td>
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1072"> 游戏玩家匹配</a></td>
-<td><li>匹配Code</li><li>规则Code</li></td>
+<td><li>匹配 Code</li><li>规则 Code</li></td>
 </tr></table>
 
 
@@ -183,6 +219,6 @@
 <table>
 <tr><th width="50%">产品名称</th><th width="50%">资源</th></tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/248"> 云监控</a></td>
-<td>Prometheus服务</td>
+<td>Prometheus 服务</td>
 </tr></table>
 
