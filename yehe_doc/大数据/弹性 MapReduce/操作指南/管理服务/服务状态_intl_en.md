@@ -10,7 +10,7 @@ Service status provides detailed monitoring for main services installed in the c
 ![](https://main.qcloudimg.com/raw/12c9e198bd534098a84e6b89ce9f1df8.png)
 ![](https://main.qcloudimg.com/raw/8955aa65869661cd2422b0195290844f.png)
 5. **Service Summary** displays the current overall status of the service.
-6. **Role List** displays the service deployment status of each role of the current service component. You can click a **node IP** to view the monitoring metrics and their statistical rules of the current node. Six metrics are displayed by default, and up to 12 metrics can be displayed.
+6. **Role List** displays the service deployment status of each role of the current service component. You can click a **node IP** to view the monitoring metrics and their statistical rules of the current node. Six metrics are displayed by default.
 ![](https://main.qcloudimg.com/raw/5502b61780676857e2a9a2ce941aa80f.png)
 7. After entering a node page, you can click **Set Metric** to customize the displayed metrics.
 >!
