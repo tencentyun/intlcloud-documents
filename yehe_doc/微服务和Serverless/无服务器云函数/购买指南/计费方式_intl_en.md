@@ -2,12 +2,26 @@
 
 You can estimate your SCF usage and calculate the corresponding fees by using the [SCF Price Calculator](https://buy.cloud.tencent.com/price/scf/calculator). For more information on SCF billing, please see [Billing Mode](https://intl.cloud.tencent.com/document/product/583/12284), [Pricing](https://intl.cloud.tencent.com/document/product/583/12281), and [Notes on Overdue Payment](https://intl.cloud.tencent.com/document/product/583/12283).
 
-SCF is pay-as-you-go hourly in **USD** based on your actual usage. An SCF bill consists of the following four parts (each part is billed according to its statistics and calculation method, and the fees are accurate to two decimal places in **USD**).
+SCF is pay-as-you-go hourly in **USD** based on your actual usage. An event or web function bill consists of the following parts (each part is billed according to its statistics and calculation method, and the fees are accurate to two decimal places in **USD**).
+<table>
+	<tr>
+	<th>Event Function</th>
+	<th>Web Function</th>
+	</tr>
+<td>
+<li>Resource usage fees</li>
+<li>Invocation fees</li>
+<li>Public network outbound traffic fees</li>
+<li>Idle provisioned concurrency fees</li>
+</td>
+<td>
+<li>Resource usage fees</li>
+<li>Web function invocation fees</li>
+<li>Public network outbound traffic fees</li>
+<li>Idle provisioned concurrency fees</li>
+</td>
+</table>
 
-- Resource usage fees 
-- Invocation fees
-- Public network outbound traffic fees
-- Idle provisioned concurrency fees
 
 For the unit prices of resource usage, invocations, public network outbound traffic, and idle provisioned concurrency, please see [Pricing](https://intl.cloud.tencent.com/document/product/583/12281). Here, the public network outbound traffic is calculated in GB. For more information, please see the "Bill-by-traffic" section in [Public Network Billing](https://buy.cloud.tencent.com/price/idc).
 
@@ -107,7 +121,7 @@ For example, if a function version with 128 MB memory has a provisioned concurre
 - Idle duration = 10s
 - Idle provisioned concurrency price = 0.00000847 USD/GBs
 
-**Idle provisioned concurrency fees** = 2 * 128 / 1024GB * 10s * 0.00000847 USD/GBs = 0.00002118 USD
+**Idle provisioned concurrency fees** = 2 * 128 / 1024 GB * 10s * 0.00000847 USD/GBs = 0.00002118 USD
 
 
 ## Fees of Other Services
