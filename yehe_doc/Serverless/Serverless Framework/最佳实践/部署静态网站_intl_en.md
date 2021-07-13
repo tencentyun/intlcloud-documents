@@ -53,6 +53,8 @@ Run the following command in the directory under the `serverless.yml` file to de
 $ serverless deploy
 ```
 
+If you have not [logged in to](https://intl.cloud.tencent.com/login) or [signed up for](https://intl.cloud.tencent.com/register) a Tencent Cloud account, you can directly log in or sign up by scanning the QR code on the command line with **WeChat**.
+
 If you want to view more information on the deployment process, you can run the `sls deploy --debug` command to view the real-time log information during the deployment process (`sls` is an abbreviation for the `serverless` command).
 
 
@@ -68,23 +70,27 @@ The following describes certain configuration items in `serverless.yml` of the s
 
 component: website # Name of the imported component, which is required. The `tencent-website` component is used in this example
 name: websitedemo # Name of the instance created by this `website` component, which is required
+
 app: websiteApp # Website application name, which is optional
 stage: dev # Information for identifying environment, which is optional. The default value is `dev`
 
 inputs:
-  src:
-    root: ./
-    src: ./src
-    hook: npm run build
-    index: index.html
-    websitePath: ./
-  region: ap-guangzhou
-  bucketName: my-bucket
-  protocol: http
-  hosts:
-    - host: anycoder.cn
-      https:
-        certId: 123
+    src:
+      src: ./src  # Directory path of the deployed project
+      # dist: ./dist # Output directory after build completion. If a hook is configured, this parameter is required
+      # hook: npm run build # Hook script
+      index: index.html
+      websitePath: ./
+    region: ap-guangzhou
+    bucketName: my-bucket
+    protocol: http
+    hosts:
+      - host: abc.com
+        https:
+          switch: on
+          http2: on
+          certInfo:
+            certId: 'abc'
 ```
 
 View the [complete configuration and configuration description >>](https://github.com/serverless-components/tencent-website/blob/master/docs/configure.md)
