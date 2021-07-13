@@ -14,7 +14,7 @@ You can save all the dependency libraries of the SCF code in the code package an
 The Node.js runtime supports the following three dependency library installation methods:
 
 <dx-tabs>
-::: Package the dependency libraries and code together for upload
+::: Package\sthe\sdependency\slibraries\sand\scode\stogether\sfor\supload
 Use a dependency management tool such as npm to install the dependencies locally and upload them together with the function code.
 <dx-alert infotype="notice" title="">
 When you package them, the function entry file needs to be put in the root directory of the `zip` package. If you package the entire folder as the `zip` package and upload it, function creation will fail because the entry file cannot be found in the root directory after decompression.
@@ -48,10 +48,10 @@ exports.main_handler = async (event, context) => {
 	4. Click **Complete**.
 
 :::
-::: Install dependencies online
+::: Install\sdependencies\sonline
 The Node.js runtime provides an online dependency installation feature, which can install dependencies online according to the dependency information configured in `package.json`. For more information, please see [Online Dependency Installation](https://intl.cloud.tencent.com/document/product/583/38105).
 :::
-::: Use dependency management tools
+::: Use\sdependency\smanagement\stools
 [Serverless Web IDE](https://intl.cloud.tencent.com/document/product/583/39962), SCF's online editor, provides a terminal feature and builds the package management tool `npm` in the terminal. This document takes installing the `lodash` library in the terminal as an example:
 
 1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/index?rid=1) and select **Function Service** on the left sidebar.
@@ -77,7 +77,7 @@ npm install lodash
 The Python runtime supports the following two dependency library installation methods:
 
 <dx-tabs>
-::: Package the dependency libraries and code together for upload
+::: Package\sthe\sdependency\slibraries\sand\scode\stogether\sfor\supload
 Use a dependency management tool such as pip to install the dependencies locally and upload them together with the function code.
 <dx-alert infotype="notice" title="">
 - When you package them, the function entry file needs to be put in the root directory of the `zip` package. If you package the entire folder as the `zip` package and upload it, function creation will fail because the entry file cannot be found in the root directory after decompression.
@@ -111,8 +111,8 @@ def main_handler(event, context):
 		- **Runtime Environment**: select **Python 3.6**.
 		- **Submitting Method**: select **Local ZIP file**.
 	4. Click **Complete**.
-	:::
-::: Use dependency management tools
+:::
+::: Use\sdependency\smanagement\stools
 [Serverless Web IDE](https://intl.cloud.tencent.com/document/product/583/39962), SCF's online editor, provides a terminal feature and builds the package management tool `pip` in the terminal. This document takes installing the `numpy` library in the terminal as an example:
 1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/index?rid=1) and select **Function Service** on the left sidebar.
 2. In the function list, click a function name to enter the function details page.
