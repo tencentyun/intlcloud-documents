@@ -1,5 +1,5 @@
 ## Purchasable Regions 
-CTSDB is purchasable in multiple regions around the world. For more information, please see [Regions and AZs](https://cloud.tencent.com/document/product/652/31908). CTSDB supports separate billing for memory and disks to provide you with more flexible options.
+CTSDB is purchasable in multiple regions around the world. For more information, please see [Regions and AZs](https://intl.cloud.tencent.com/document/product/1100/40937). CTSDB supports separate billing for memory and disks to provide you with more flexible options.
 
 ## Price Calculation
 
