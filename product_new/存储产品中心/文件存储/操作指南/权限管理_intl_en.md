@@ -45,7 +45,7 @@ You can add, edit, or delete rules in the rule list. If no rule is added to the 
 ### Configuring a permission group for a file system
 The configuration of a permission group can be modified after the file system is created. You can choose to create a permission group first and select it when creating a file system. You can also select the default permission group when creating a file system and then go to the file system details page to change the permission group.
 
->Note: if the file system is mounted with the NFS v4 protocol, the modification to the permission group rules of the file system will take effect in 2 minutes.
+>!Note: if the file system is mounted with the NFS v4 protocol, the modification to the permission group rules of the file system will take effect in 2 minutes.
 
 
 ### Modifying the information and rule of a permission group
