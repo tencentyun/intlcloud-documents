@@ -15,7 +15,7 @@ You can operate EIPs independently, without needing to purchase them with CVMs.
 EIPs can be bound and unbound with CVMs and other resources at any time. 
 
 ## NAT Gateways
-An NAT gateway provides the SNAT and DNAT features, which enables you to easily establish an Internet egress and provide services for CVMs in a VPC to access the Internet with the same public IP address. 
+A NAT gateway provides the SNAT and DNAT features, which enables you to easily establish an Internet egress and provide services for CVMs in a VPC to access the Internet with the same public IP address. 
 For information on how to configure the NAT gateway, see [NAT Gateways - Operation Overview](https://intl.cloud.tencent.com/document/product/1015/12958).
 NAT gateways offer the following advantages: 
 - Secure Internet access 
@@ -35,5 +35,5 @@ A CLB cluster consists of multiple physical servers, with an availability of up 
 With the BGP anti-DDoS system, the CLB can defend against most network attacks (such as DDoS attacks) and cleanse traffic attacks in seconds, preventing blocked IP addresses or full bandwidth consumption.
 
 ## Public Gateways
-A public gateway is a CVM with the forwarding feature enabled. In a VPC, CVMs without a public IP address can access the Internet through public gateways on different subnets. Public gateways can covert the source addresses in Internet traffic from other CVMs to their own IP addresses.
+A public gateway is a CVM with the forwarding feature enabled. In a VPC, CVMs without a public IP address can access the Internet through public gateways on different subnets. Public gateways can covert the source addresses of Internet traffic from other CVMs to their own IP addresses.
 For information on how to configure a public gateway, see [Configuring Public Gateways](https://intl.cloud.tencent.com/document/product/215/33404).
