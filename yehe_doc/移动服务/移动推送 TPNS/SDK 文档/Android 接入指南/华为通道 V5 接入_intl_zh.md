@@ -181,7 +181,7 @@ I/TPush: [OtherPushClient] handleUpdateToken other push token is : IQAAAACy0PsqA
 ### 华为通道抵达回执配置
 
 华为通道抵达回执需要开发者自行配置，您可参见 [华为厂商通道回执配置指引](https://intl.cloud.tencent.com/document/product/1024/35246) 进行配置。完成后，可在推送记录中查看华为推送通道的抵达数据。
-![](https://main.qcloudimg.com/raw/c5247214fb095b300091bb62629dd57a.png)
+
 
 ### 华为设备角标适配
 
