@@ -54,7 +54,7 @@ java.security.auth.login.config.plain=/xxxx/ckafka_client_jaas.conf
 | Parameter | Description |
 | ------------------------------------- | ------------------------------------------------------------ |
 | bootstrap.servers | Accessed network, which can be copied from the **Network** column in the **Access Mode** section on the **Instance Details** page in the console. <br/>![](https://main.qcloudimg.com/raw/afc2a197f4e0646f40aa6280c5f6414d.png) |
-| topic             | Topic name, which can be copied from the **Topic Management** page in the console. <br/>![](https://main.qcloudimg.com/raw/6fea6378fa2710a6f8083723e1849601.png) |
+| topic             | Topic name, which can be copied from the **Topic Management** page in the console. <br/>![](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png)  |
 | group.id          | You can customize it. After the demo runs successfully, you can see the consumer on the **Consumer Group** page. |
 | java.security.auth.login.config.plain | Enter the path of the JAAS configuration file `ckafka_client_jaas.conf`.              |
 
@@ -68,7 +68,7 @@ public class CKafkaConfigurer {
     public static void configureSaslPlain() {
         // If you have used the `-D` parameter or another method to set the path, do not set it again here
         if (null == System.getProperty("java.security.auth.login.config")) {
-            // Replace `XXX` to your own path
+            // Replace `XXX` with your own path
             System.setProperty("java.security.auth.login.config",
                     getCKafkaProperties().getProperty("java.security.auth.login.config.plain"));
         }

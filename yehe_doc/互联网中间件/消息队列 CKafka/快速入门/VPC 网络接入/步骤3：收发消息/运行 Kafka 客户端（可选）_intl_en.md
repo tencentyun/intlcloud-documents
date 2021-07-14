@@ -1,6 +1,6 @@
 ## Overview
 
-This document explains how to start using Kafka APIs after you purchase the CKafka service. After setting up a CKafka environment on an CVM instance, you need to download and decompress the Kafka installation file and perform simple testing on Kafka APIs.
+This document explains how to start using Kafka APIs after you purchase the CKafka service. After setting up a CKafka environment on a CVM instance, you need to download and decompress the Kafka installation file and perform simple testing on Kafka APIs.
 
 ## Directions
 
@@ -53,7 +53,7 @@ Go to the `./bin` directory and produce and consume a message with CLI commands.
    ```
    >?
    >- Replace `XXXX:port` with the domain name and port for VPC access, which can be obtained in the **Access Mode** section on the **Instance Details** page in the console.
-   >  ![](https://main.qcloudimg.com/raw/1233548b38c82e92116eedbba9de534e.png)
+   > ![](https://main.qcloudimg.com/raw/1233548b38c82e92116eedbba9de534e.png)
    >- topic: replace `XXXX` with the topic name, which can be obtained on the **Topic Management** page in the console.
 
 2. Open another terminal window to start the producer.
@@ -62,7 +62,7 @@ Go to the `./bin` directory and produce and consume a message with CLI commands.
    ```
    >?
    >- Replace `XXXX:port` with the domain name and port for VPC access, which can be obtained in the **Access Mode** section on the **Instance Details** page in the console.
-   >  ![](https://main.qcloudimg.com/raw/1233548b38c82e92116eedbba9de534e.png)
+   > ![](https://main.qcloudimg.com/raw/1233548b38c82e92116eedbba9de534e.png)
    >- topic: replace `XXXX` with the topic name, which can be obtained on the **Topic Management** page in the console.
 
    Enter the content of the message, press Enter, and you can see that the consumer received the message almost at the same time.

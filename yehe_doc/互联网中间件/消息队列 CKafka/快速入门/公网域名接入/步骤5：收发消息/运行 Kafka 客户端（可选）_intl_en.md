@@ -1,6 +1,6 @@
 ## Overview
 
-This document explains how to start using Kafka APIs after you purchase the CKafka service. After setting up a CKafka environment on an CVM instance, you need to download and decompress the Kafka installation file and perform simple testing on Kafka APIs.
+This document explains how to start using Kafka APIs after you purchase the CKafka service. After setting up a CKafka environment on a CVM instance, you need to download and decompress the Kafka installation file and perform simple testing on Kafka APIs.
 
 ## Directions
 

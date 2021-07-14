@@ -40,7 +40,7 @@ group.id=XXX
 | Parameter | Description |
 | ----------------- | ------------------------------------------------------------ |
 | bootstrap.servers | Accessed network, which can be copied from the **Network** column in the **Access Mode** section on the **Instance Details** page in the console. <br/>![](https://main.qcloudimg.com/raw/6b12eca18662d26a334d55b743c825ef.png) |
-| topic             | Topic name, which can be copied from the **Topic Management** page in the console. <br/>![](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png) |
+| topic             | Topic name, which can be copied from the **Topic Management** page in the console. <br/>![](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png)  |
 | group.id          | You can customize it. After the demo runs successfully, you can see the consumer on the **Consumer Group** page. |
 
 2. Create the configuration file loading program `CKafkaConfigurer.java`. 
@@ -206,4 +206,5 @@ Consume partition:0 offset:299
 ```
 
 4. On the **Consumer Group** page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding consumer group, enter the topic name in **Topic Name**, and click **Query Details** to view the consumption details.
-   ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
+   ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)	
+
