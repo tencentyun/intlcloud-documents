@@ -2,7 +2,7 @@
 
 Tencent Cloud provides the Cloud Monitor service for all users by default; therefore, you do not need to manually activate it. Cloud Monitor will start collecting monitoring data only after a Tencent Cloud product is used.
 
-CKafka allows you to monitor the resources created under your account, including instances, topics, and consumer groups, so that you can keep track of the status of your resources in real time. You can configure alarm rules for monitoring metrics. When a monitoring metric reaches the set alarm threshold, Cloud Monitor will notify you via email, SMS, WeChat, phone, etc., to help you deal with exceptions in time.
+CKafka allows you to monitor the resources created under your account, including instances, topics, and consumer groups, so that you can keep track of the status of your resources in real time. You can configure alarm rules for monitoring metrics. When a monitoring metric reaches the set alarm threshold, Cloud Monitor will notify you of exceptions in time via email, SMS, WeChat, phone, etc.
 
 ## Directions
 ### Configuring alarm policy
@@ -35,13 +35,13 @@ For more information on alarms, please see [Creating Alarm Policy](https://intl.
    - **Policy Type**: select **CKafka**.
    - **Use preset trigger condition**: select this option and the system recommended alarm policy will be displayed.
 5. After confirming that everything is correct, click **Save**.
-   ![](	https://main.qcloudimg.com/raw/df3e52dff6035c3870ce442d028a4dd6.png)
+    ![](https://main.qcloudimg.com/raw/df3e52dff6035c3870ce442d028a4dd6.png)
 6. Return to alarm policy creation page and click **Refresh**. The alarm policy template just configured will be displayed.
    ![](https://main.qcloudimg.com/raw/84d19941c57fb42a5839cd730c79c376.png)
 
 ## Monitoring Alarm Policies Recommended for CKafka[](id:Monitoring-Alarm-Policies-Recommended-for-CKafka)
 
-For more information on metrics that may affect the business data stability, please see [CKafka Data Reliability](https://cloud.tencent.com/document/product/597/36186).
+For more information on metrics that may affect the business data stability, please see [CKafka Data Reliability](https://intl.cloud.tencent.com/document/product/597/31586).
 
 Based on user feedback, we recommend you configure alarm policies in the following 3 dimensions (6 metrics in total) for CKafka, but you should configure them reasonably based on your actual business conditions.
 

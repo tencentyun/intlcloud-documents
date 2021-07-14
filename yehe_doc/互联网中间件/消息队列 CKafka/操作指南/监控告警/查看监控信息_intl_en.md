@@ -2,7 +2,7 @@
 
 CKafka allows you to monitor the resources created under your account, such as instances, topics, and consumer groups, so that you can keep track of the status of your resources in real time and troubleshoot possible issues to ensure stable business operations.
 
-This document describes how to view monitoring metrics and their descriptions in the console.
+This document describes how to view monitoring metrics and their descriptions in the CKafka console.
 
 ## Directions
 
@@ -81,3 +81,4 @@ For more information on CKafka monitoring APIs, please see:
 - [Topic Monitoring Metrics](https://intl.cloud.tencent.com/document/product/248/17296)
 - [Instance Monitoring Metrics](https://intl.cloud.tencent.com/document/product/248/17297) 
 - [Consumer Group Monitoring Metrics](https://intl.cloud.tencent.com/document/product/248/17298)
+

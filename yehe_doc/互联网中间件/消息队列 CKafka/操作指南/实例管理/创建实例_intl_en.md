@@ -22,3 +22,4 @@ This document describes how to create instances and topics in the CKafka console
 	- Purchase Period: you can set auto-renewal by month upon expiration
 4. Click **Buy Now** to complete the instance creation process.
    ![](https://main.qcloudimg.com/raw/d7df4ac342594f0016e57878921ba06d.png)
+

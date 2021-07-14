@@ -37,7 +37,7 @@ During consumption, if you set `auto.offset.reset` to `none` for the consumer, a
 
 - Specify the offset. You need to maintain the offset, which is convenient for retries.
 - Specify to start consuming from the beginning.
-- Specify the latest available offset as the offset.
+- Specify the nearest available offset as the offset.
 - Get and set the offset based on the timestamp.
 
 **Below is the sample code:**
@@ -136,7 +136,7 @@ public class KafkaPlainConsumerDemo {
                 // Sample 2. Specify to start consuming from the beginning
                 consumer.seekToBeginning(Lists.newArrayList(new TopicPartition(topicStr, 0)));
 
-                // Sample 3. Specify the latest available offset as the offset
+                // Sample 3. Specify the nearest available offset as the offset
                 consumer.seekToEnd(Lists.newArrayList(new TopicPartition(topicStr, 0)));
 
                 // Sample 4. Get and set the offset based on the timestamp; for example, reset the offset to 10 minutes ago
@@ -158,7 +158,7 @@ public class KafkaPlainConsumerDemo {
     }
 
     /**
-     * Get the earliest and latest offsets of the topic
+     * Get the earliest and nearest offsets of the topic
      * @param consumer
      * @param topicStr
      * @param beginOrEnd true begin; false end
