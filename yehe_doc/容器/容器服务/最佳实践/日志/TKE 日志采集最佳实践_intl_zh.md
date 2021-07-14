@@ -77,7 +77,7 @@ TKE 支持单行文本、JSON、分隔符、多行文本和完全正则5种提�
 Mozilla/5.0 (Windows NT 10.0; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0 0.310 0.310
 :::
 </dx-codeblock>则首行正则表达式就可以设置为：`\d+\.\d+\.\d+\.\d+\s-\s.*`。如下图所示：
-![](https://main.qcloudimg.com/raw/20d59a46cee1651a4fcd0643eb878976.png)
+![](https://main.qcloudimg.com/raw/1d828be6eb27cd41306ea1cab8a85a21.png)
 :::
 ::: 分隔符及完全正则模式
 如果日志内容是以固定格式输出的单行文本，则考虑使用“分隔符”或“完全正则”提取模式：
