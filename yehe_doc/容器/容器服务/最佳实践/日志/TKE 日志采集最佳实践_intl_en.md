@@ -61,13 +61,13 @@ TKE supports five extraction modes: single-line text, JSON, separator, multi-lin
 
 
 <dx-tabs>
-::: JSON mode
+::: JSON\smode
 You can only select JSON mode when logs are output in JSON format, in which case this mode is recommended. In JSON format, the logs are already structured, allowing CLS to extract the JSON key as the field name and value as the corresponding key value. This means you do not have to configure complex matching rules based on the business log output format. A sample of such logs is as follows:
 ```
 {"remote_ip":"10.135.46.111","time_local":"22/Jan/2019:19:19:34 +0800","body_sent":23,"responsetime":0.232,"upstreamtime":"0.232","upstreamhost":"unix:/tmp/php-cgi.sock","http_host":"127.0.0.1","method":"POST","url":"/event/dispatch","request":"POST /event/dispatch HTTP/1.1","xff":"-","referer":"http://127.0.0.1/my/course/4","agent":"Mozilla/5.0 (Windows NT 10.0; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0","response_code":"200"}
 ```
 :::
-::: Single-line text and multi-line text modes
+::: Single-line\stext\sand\smulti-line\stext\smodes
 If the log does not have a fixed output format, you can consider using the single-line text or multi-line text extraction mode. In these two modes, the log content is not structured and log fields are not extracted. The timestamp of each log is determined by the log collection time, so only simple fuzzy searches are supported. The difference between these two modes is whether the log content is in a single line or multiple lines:
  - Single-line: each single line is an independent log, and no matching conditions need to be set.
  - Multi-line: you need to set the first-line regular expression, that is, the regular expression for matching the first line of each log. When a line of log content matches the preset regular expression, it is considered as the beginning of a log, and the next matching line will be the end mark of the log. Assume that the multi-line log content is as follows:
@@ -77,9 +77,9 @@ If the log does not have a fixed output format, you can consider using the singl
 Mozilla/5.0 (Windows NT 10.0; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0 0.310 0.310
 :::
 </dx-codeblock>In this case, you can set the first-line regular expression as: `\d+\.\d+\.\d+\.\d+\s-\s.*`, as shown in the figure below:
-![](https://main.qcloudimg.com/raw/20d59a46cee1651a4fcd0643eb878976.png)
+![](https://main.qcloudimg.com/raw/1d828be6eb27cd41306ea1cab8a85a21.png)
 :::
-::: Separator and full RegEx modes
+::: Separator\sand\sfull\sRegEx\smodes
 If the log content is a single-line text output in a fixed format, you can consider using the separator or full RegEx extraction mode:
 - The separator mode is applicable to simple formats. In this mode, field values in the log are separated by a fixed string. For example, a log with `:::` as the separator is as follows:
 <dx-codeblock>
