@@ -11,12 +11,12 @@ If the **Delivery Status** is "successful", but an error code is displayed in **
  - The mobile phone cannot receive SMS messages due to a settings or hardware issue: try changing the settings or removing the SIM card and inserting it into another mobile phone for testing (if the mobile phone is a dual SIM phone, try removing the SIM card and inserting it into the other card slot for testing).
  - The message has been blocked by the system/software in the mobile phone: check the blocklist.
 
-If the issue persists, please consult [SMS Helper](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/382/3773).
+If the problem persists, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ### What should I do if it takes a long time to call an API?[](id:jump)
 If you find that it takes a long time to call a Tencent Cloud SMS API, you can troubleshoot the issue in the following steps:
 1. Run the `dig yun.tim.qq.com` command to check whether a private DNS is used, and if so, select a nearby Tencent Cloud SMS IP from the same carrier to configure the host and check whether the issue is fixed.
-  - If the issue persists, the cause may be that the DNS resolution is stuck or there is a latency caused by cross-region or cross-carrier access. You are recommended to use a DNS proxy or set up a public DNS server.
+  - If the issue persists, the cause may be that the DNS resolution is stuck or there is a latency caused by cross-region or cross-carrier access. We recommend you use a DNS proxy or set up a public DNS server.
   - If the issue persists, please follow [step 2](#Q2step2).
 2. Check which connection mode is used and whether a connection pool is used.[](id:Q2step2)
  - If a single persistent connection is used, according to the HTTP request/response model, if a request gets stuck, subsequent requests on the connection will be affected. The "persistent connection + connection pool" model is recommended.
@@ -32,7 +32,7 @@ If you find that it takes a long time to call a Tencent Cloud SMS API, you can t
 2. Check the **Delivery Time** and **Status Report Time** for the SMS message and calculate the difference between them.[](id:Q3step2)
  - If the difference is large (such as more than 10 seconds for regular SMS or more than 5 minutes for marketing SMS), the cause may be that the SMS message is under review as it contains sensitive words, the mobile phone reception is poor, or the mobile number is in an exceptional state (for example, it has run out of credit or is out of service).
  - If the difference is small, the cause may be that the mobile phone reception is poor or the mobile phone is in an exceptional state (for example, it has been powered off).
-3. If the issue persists, please consult [SMS Helper](https://intl.cloud.tencent.com/document/product/382/3773).
+3. If the issue persists, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
 ### What is a mobile number blocklist?
 
@@ -43,22 +43,23 @@ Currently, there are blocklists in the following types:
 
 ### What should I do if error 1004 is returned?
 When you call a Tencent Cloud SMS API to send an SMS message, if the response packet returns error 1004, you can troubleshoot the issue in the following steps:
-1. Check whether the sent request is in standard JSON format. You are recommended to search for a JSON format checker on the internet to identify the issue; for example, single quotation marks are used as double quotation marks by mistake, but double quotation marks should be used for standard JSON format.
+1. Check whether the sent request is in standard JSON format. We recommend you search for a JSON format checker on the internet to identify the issue; for example, single quotation marks are used as double quotation marks by mistake, but double quotation marks should be used for standard JSON format.
 2. Check whether the parameter names are correct.
 3. Check whether the field types of the request are the same as those as described in the [API documentation](https://intl.cloud.tencent.com/document/product/382/34689). For example, JSON strings and JSON integers are incorrectly used (e.g., `{"Name":"Tom", "Age":23}`, where "Name" should be a JSON string, while "Age" a JSON integer).
 4. Check whether the field values of the request are within the value ranges as described in the API documentation. For example, the `international` field can only take a value of 0 or 1.
 5. Check whether the API call is initiated as described in the API documentation. For example, when you call the API for sending bulk messages, you should not use the body for sending a message to a single recipient.
-6. If the issue persists, please consult [SMS Helper](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/382/3773).
+6. If the problem persists, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ### What should I do if error 1014 is returned?
 When you call a Tencent Cloud SMS API to send an SMS message, if the response packet returns error 1014, you can troubleshoot the issue in the following steps:
 1. Check whether the content template applied for is correctly formatted. For example, the "{}" in the content template should be English brackets, and the numbers in the brackets should start from 1, i.e., {1}, {2}, and so on.
-2. Check whether the corresponding template has been approved.
-3. Check whether the value of the `type` parameter in the request packet is the same as the type of the content template applied for (0 indicates regular SMS, while 1 indicates marketing SMS).
-4. Check whether the request content is in the same format as the content template applied for. For example, **a mismatch may occur due to invisible characters such as spaces.**
-5. If the content contains Chinese characters, please make sure that they need to be encoded in UTF-8.
-6. A Mainland China SMS template can only be used for sending messages to mobile numbers in Mainland China, while a Global SMS template can only be used for sending messages to mobile numbers outside Mainland China.
-7. If the issue persists, please consult [SMS Helper](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/382/3773).
+2. Check whether the template contains variable values, and if so, you need to pass in the variables when sending the message. If multiple variable values are set in the template, you also need to pass in multiple variables when sending the message.
+3. Check whether the corresponding template has been approved.
+4. Check whether the value of the `type` parameter in the request packet is the same as the type of the content template applied for (0 indicates regular SMS, while 1 indicates marketing SMS).
+5. Check whether the request content is in the same format as the content template applied for. For example, **a mismatch may occur due to invisible characters such as spaces.**
+6. If the content contains Chinese characters, please make sure that they need to be encoded in UTF-8.
+7. A Mainland China SMS template can only be used for sending messages to mobile numbers in Mainland China, while a Global SMS template can only be used for sending messages to mobile numbers outside Mainland China.
+8. If the problem persists, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ### What should I do if error 1016 is returned?
 When you call a Tencent Cloud SMS API to send an SMS message, if the response packet returns error 1016, you can troubleshoot the issue in the following steps:
@@ -74,7 +75,7 @@ When you call a Tencent Cloud SMS API to send an SMS message, if the response pa
 3. Check whether the `Content-Type` of the request is the same as that of the body (`Content-Type: application/json;charset=utf-8` for SMS).
 4. Check the DNS configuration to ensure that a public DNS server is used.
 5. An HTTP persistent connection and a connection pool are recommended to improve network quality.
-6. If the issue persists, please consult [SMS Helper](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/382/3773).
+6. If the problem persists, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
 ### What should I do if error 1001 (sig verification failed) is returned?
 When you call a Tencent Cloud SMS API to send an SMS message, if the response packet returns error 1001, you can troubleshoot the issue in the following steps:
@@ -120,18 +121,18 @@ Yes, and no additional fees will be incurred by SMS replies. Replies can be view
 You can send different SMS messages to different mobile numbers by calling the API for sending a message to a single recipient in multiple processes.
 
 ### What should I do if I cannot troubleshoot the issue that occurs while sending an SMS message?
-You can consult [SMS Helper](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/382/3773).
+You can [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
 
 ### The application has been approved, but an SMS message fails to be sent, and the record indicates that it contains sensitive words. Why?
-The vocabulary of sensitive words is provided by the carrier. You can contact [SMS Helper](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/382/3773) and provide the mobile number to which the message fails to be sent. A customer service agent will communicate with the carrier to fix the issue.
+The vocabulary of sensitive words is provided by the carrier. You can [submit a ticket](https://console.cloud.tencent.com/workorder/category) and provide the mobile number to which the message fails to be sent. A customer service agent will communicate with the carrier to fix the issue.
 
 ### Will each SMS message be reviewed after the SMS signature and body have been approved?
 Individual users must obtain approval first before using the console to send SMS messages and are recommended to verify organizational identities.
 
 
 ### I sent an SMS message to a mobile number, but the message was not received, and the mobile number cannot be found in the console. What should I do?
-- If the message was sent through the console, you are recommended to check whether the mobile number in the sent file contains any extra characters, and if so, delete them.
-- If the message was sent through the API, you are recommended to check whether the request has been properly sent to Tencent Cloud and whether any response has been returned.
+- If the message was sent through the console, we recommend you check whether the mobile number in the sent file contains any extra characters, and if so, delete them.
+- If the message was sent through the API, we recommend you check whether the request has been properly sent to Tencent Cloud and whether any response has been returned.
 
 
 ### Can I use a server outside Mainland China to send SMS messages?

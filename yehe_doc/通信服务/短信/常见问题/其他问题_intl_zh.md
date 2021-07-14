@@ -11,7 +11,7 @@
  - 手机设置异常或硬件异常引起无法正常接收短信：可尝试修改相关设置或将 SIM 卡换到其他手机上进行测试（双卡手机可交换卡槽测试）。
  - 短信被用户手机中的系统/软件拦截屏蔽：检查屏蔽列表。
 
-如仍然无法解决，请咨询 [sms helper](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/382/3773)。
+如仍然无法解决，请[提交工单](https://console.cloud.tencent.com/workorder/category)。
 
 ### 调用接口耗时比较长怎么办？[](id:jump)
 如果发现访问腾讯云短信接口时请求耗时较长，可参考以下方法进行定位：
@@ -32,7 +32,7 @@
 2. 在控制台查询该短信【发送时间】与【状态上报时间】，计算两者之间的时间差。[](id:Q3step2)
  - 如果时间差较大（例如普通短信超过数10秒，营销短信超过5分钟），可能原因有短信内容有敏感词进入人工审核、手机信号不佳或手机处于异常状态（例如欠费或停机）等。
  - 如果时间差较小，可能原因有手机信号不佳或手机处于异常状态（例如关机）等。
-3. 如果以上场景都不满足，请咨询 [sms helper](https://intl.cloud.tencent.com/document/product/382/3773) 。
+3. 如果以上场景都不满足，请[提交工单](https://console.cloud.tencent.com/workorder/category)。
 
 ### 手机黑名单是什么？
 
@@ -48,17 +48,18 @@
 3. 检查请求的字段类型是否与 [API 文档](https://intl.cloud.tencent.com/document/product/382/34689) 中描述的字段类型一致。 例如，将 JSON 字符串和 JSON 整型混淆使用（`{"姓名":"小明", "年龄":23}`，"姓名"应为 JSON 字符串，"年龄"应为 JSON 整型）。
 4. 检查请求的字段的取值是否在 API 文档中描述的取值范围内。 例如，international 字段只能取0或1。
 5. 检查对 API 的调用是否与 API 文档描述的一致。 例如，调用群发短信的 API 时，包体的格式不能是单发短信的。
-6. 如果仍旧无法解决，请咨询 [sms helper](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/382/3773)。
+6. 如果仍旧无法解决，请[提交工单](https://console.cloud.tencent.com/workorder/category)。
 
 ### 返回1014错误如何处理？
 调用腾讯云短信接口发送短信时，如果应答包返回1014错误，可通过以下方式定位解决：
 1. 确认申请的内容模版格式是否正确。例如内容模版中的“{}”为英文的括号，括号中的数字需从1开始连续编号，即{1}，{2}等。
-2. 确认请求内容对应的模版是否审批通过。
-3. 确认请求包中 type 参数的值（0表示普通短信，1表示营销短信）与申请的内容模版类型是否一致。
-4. 确认请求的内容与申请的内容模版格式是否一致，例如**因空格等不可见字符导致不匹配。**
-5. 如果内容中含有中文，请确认中文需使用 UTF-8 编码。
-6. 国内文本短信模板只能发中国大陆手机号，国际/港澳台短信模板只能发境外手机号。
-7. 如果仍旧无法解决，请咨询 [sms helper](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/382/3773)。
+2. 确认模板中是否含变量值，若模板中含变量值，则发送短信时需传入变量进行发送，若模板中设置了多个变量值，则发送短信时也应该传入多个变量进行发送。
+3. 确认请求内容对应的模版是否审批通过。
+4. 确认请求包中 type 参数的值（0表示普通短信，1表示营销短信）与申请的内容模版类型是否一致。
+5. 确认请求的内容与申请的内容模版格式是否一致，例如**因空格等不可见字符导致不匹配。**
+6. 如果内容中含有中文，请确认中文需使用 UTF-8 编码。
+7. 国内文本短信模板只能发中国大陆手机号，国际/港澳台短信模板只能发境外手机号。
+8. 如果仍旧无法解决，请[提交工单](https://console.cloud.tencent.com/workorder/category)。
 
 ### 返回1016错误如何处理？
 调用腾讯云短信接口发送短信时，如果应答包返回1016错误，可通过以下方式定位解决：
@@ -74,7 +75,7 @@
 3. 确认请求 Content-Type 是否与包体相符（短信服务应该是`Content-Type: application/json;charset=utf-8`）。
 4. 确认 DNS 配置是否正常，确保使用的是公网 DNS server。
 5. 推荐业务使用 HTTP 长连接并使用连接池，以提升网络质量。
-6. 如果仍旧无法解决，请咨询 [sms helper](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/382/3773)。
+6. 如果仍旧无法解决，请[提交工单](https://console.cloud.tencent.com/workorder/category)。
 
 ### 返回1001（sig 校验失败）错误如何处理？
 调用腾讯云短信接口发送短信时，如果应答包返回1001错误，可通过以下方式定位解决：
@@ -120,10 +121,10 @@ SDK AppID 和 AppKey 是开发者在申请开发新应用时获得的由腾讯�
 可以多进程调用单发接口，实现对不同手机号发送不同短信内容。
 
 ### 发送短信报错，自己排查不出来该怎么办？
-您可以咨询 [sms helper](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/382/3773)。
+您可以[提交工单](https://console.cloud.tencent.com/workorder/category)。
 
 ### 短信发送失败，记录提示含有敏感词，但是申请时已通过审核，是什么情况？
-敏感词库是由运营商反馈的，可以联系 [sms helper](https://intl.cloud.tencent.comhttps://intl.cloud.tencent.com/document/product/382/3773) 并提供发送失败的手机号码，人工客服将与运营商沟通确认能否解除。
+敏感词库是由运营商反馈的，可以[提交工单](https://console.cloud.tencent.com/workorder/category)并提供发送失败的手机号码，人工客服将与运营商沟通确认能否解除。
 
 ### 短信签名和正文已审核通过，是否每发送一次短信都需要进行审核？
 个人认证用户使用控制台的发送功能是需先经过审核后才可以发送的，建议升级为企业认证用户。
@@ -147,7 +148,7 @@ SDK AppID 和 AppKey 是开发者在申请开发新应用时获得的由腾讯�
 ### 是否可以开发票？
 如果您需要开具发票，可以进入控制台，在【[发票管理](https://console.cloud.tencent.com/expense/invoice)】页面申请。
 
-### 为什么预览短信内容时，数字会出现星号？例如`尊敬的客户，您充值的1**2美元已到账，请在系统查看！`
+### 为什么预览短信内容时，数字会出现星号？例如`尊敬的客户，您充值的1**2元已到账，请在系统查看！`
 控制台会对数字进行加密入库，所以预览时数字会出现星号，但用户接收到的短信是正常显示的。
 
 ### 国家（或地区）码分别是多少？
