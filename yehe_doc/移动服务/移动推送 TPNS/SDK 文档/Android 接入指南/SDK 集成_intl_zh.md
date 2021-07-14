@@ -2,6 +2,7 @@
 
 Android SDK 是移动推送 TPNS 服务为客户端实现消息推送而提供给开发者的接口，本文将提供 AndroidStudio Gradle 自动集成和 Android Studio 手动集成两种方式。
 
+
 ## SDK 集成（二选一）
 
 ### AndroidStudio Gradle 自动集成
@@ -53,15 +54,16 @@ dependencies {
 >- 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置。
 >在 AndroidManifest 文件 application 标签内添加以下元数据：
 >```
-<application>
-// 其他安卓组件
-<meta-data
-		android:name="XG_SERVER_SUFFIX"
-		android:value="其他服务接入点域名" />
-</application>
+><application>
+>// 其他安卓组件
+><meta-data
+>		android:name="XG_SERVER_SUFFIX"
+>		android:value="其他服务接入点域名" />
+></application>
+>```
 ```
 > 其他服务接入点域名如下：
->  - 上海：`tpns.sh.tencent.com`
+>   - 上海：`tpns.sh.tencent.com`
 >  - 新加坡：`tpns.sgp.tencent.com`
 >  - 中国香港：`tpns.hk.tencent.com`
 >  
@@ -71,7 +73,6 @@ dependencies {
  - 如在添加以上 abiFilter 配置后， Android Studio 出现以下提示：
    NDK integration is deprecated in the current plugin. Consider trying the new experimental plugin，则在 Project 根目录的 gradle.properties 文件中添加  `android.useDeprecatedNdk=true`。
  - 如需监听消息请参考 XGPushBaseReceiver 接口或 Demo（在 SDK 压缩包内，可前往 [SDK 下载](https://console.cloud.tencent.com/tpns/sdkdownload) 页面获取 ）的 MessageReceiver 类。自行继承 XGPushBaseReceiver 并且在配置文件中配置如下内容（请勿在 receiver  里处理耗时操作）：
-
 ​```xml
 <receiver android:name="com.tencent.android.xg.cloud.demo.MessageReceiver">
     <intent-filter>
@@ -144,7 +145,6 @@ dependencies {
 
 
 #### 组件和应用信息配置
-
 
 
 ```xml
@@ -273,12 +273,13 @@ dependencies {
 > - 如果您的应用服务接入点为上海、新加坡或中国香港，请按照下文步骤完成其他服务接入点域名配置。
 > 在 AndroidManifest 文件 application 标签内添加以下元数据：
 >```
-<application>
-// 其他安卓组件
-<meta-data
-		android:name="XG_SERVER_SUFFIX"
-		android:value="其他服务接入点域名" />
-</application>
+><application>
+>// 其他安卓组件
+><meta-data
+>		android:name="XG_SERVER_SUFFIX"
+>		android:value="其他服务接入点域名" />
+></application>
+>```
 ```
 > 其他服务接入点域名如下：
 >   - 上海：`tpns.sh.tencent.com`
@@ -300,6 +301,7 @@ XGPushConfig.enableDebug(this,true);
 
 ### Token 注册
 
+
 ```java
 XGPushManager.registerPush(this, new XGIOperateCallback() {
     @Override
@@ -320,7 +322,13 @@ XGPushManager.registerPush(this, new XGIOperateCallback() {
 ```xml
 TPNS register push success with token : 6ed8af8d7b18049d9fed116a9db9c71ab44d5565
 ```
+### 关闭日志打印
+调用 XGPushConfig.enableDebug(context, false) 关闭 SDK debug 日志开关时，SDK 默认仍会打印部分日常运行日志（包含 TPNS Token）。
 
+您可以通过在 Application.onCreate 内调用如下方法，来关闭这些日常运行日志在控制台的输出打印：
+```java
+new XGPushConfig.Build(context).setLogLevel(Log.ERROR);
+```
 
 ## 代码混淆
 
