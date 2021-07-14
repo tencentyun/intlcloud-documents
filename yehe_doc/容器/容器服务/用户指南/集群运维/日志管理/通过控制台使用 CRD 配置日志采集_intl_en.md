@@ -47,18 +47,18 @@ You need to manually enable log collection for each cluster, and configure the c
 ![](https://main.qcloudimg.com/raw/e94605fda5b4039d2c3eb285ffb415c0.png)
 3. On the **Create Log Collecting Policy** page, select the collection type and configure the log source. Currently, the following collection types are supported: **Container Standard Output**, **Container File Path**, and **Node File Path**.
 <dx-tabs>
-::: Collecting standard output logs of a container
+::: Collecting\sstandard\soutput\slogs\sof\sa\scontainer
 Select **Container Standard Output** as the collection type and configure the log source as needed. This type of log source allows you to select the workloads of multiple namespaces at a time, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/698a5beae709d6a78ac79579592dc70e.png)
 
 :::
-::: Collecting file logs in containers 
+::: Collecting\sfile\slogs\sin\scontainers 
 Select **Container File Path** as the collection type and configure the log source, as shown in the figure below:
 ![](https://main.qcloudimg.com/raw/5f1e65b240377f296eaf17a5750c9f91.png)
 You can specify a file path or use wildcards. For example, when the container file path is `/opt/logs/*.log`, you can specify the collection path as `/opt/logs` and the file name as `*.log`.
 
->?  For container standard output and container files (not mounted in hostPath), besides the original log content, the metadata related to the container or Kubernetes (such as the ID of the container that generated the logs) will also be reported to the CLS. Therefore, when viewing logs, users can trace the log source or search based on the container identifier or characteristics (such as container name and labels).
-
+<dx-alert infotype=“note”>For container standard output and container files (not mounted in hostPath), besides the original log content, the metadata related to the container or Kubernetes (such as the ID of the container that generated the logs) will also be reported to the CLS. Therefore, when viewing logs, users can trace the log source or search based on the container identifier or characteristics (such as container name and labels).
+</dx-alert>
 The metadata related to the container or Kubernetes is shown in the table below:
 <table>
 	<tr>
@@ -90,11 +90,11 @@ the reported log will have two metadata entries attached: pod_label_app:nginx an
 </table>
 
 :::
-::: Collecting file logs on nodes
+::: Collecting\sfile\slogs\son\snodes
 Select **Node File Path** as the collection type. You can add custom `metadata` as needed. Attach `metadata` with a specified key-value pair to the collected log information to add the attached metadata to log records, as shown in the figure below:
 
->! One node log file can be collected for only one log topic.
->
+<dx-alert infotype="notice">One node log file can be collected for only one log topic.
+</dx-alert>
 ![](https://main.qcloudimg.com/raw/7c5c8341315408c5668add566a3ff550.png)
 You can specify a file path or use wildcards. For example, when the container file paths for collection are `/opt/logs/service1/*.log` and `/opt/logs/service2/*.log`, you can specify the folder of the collection path as `/opt/logs/service*` and the file name as `*.log`.
 :::
