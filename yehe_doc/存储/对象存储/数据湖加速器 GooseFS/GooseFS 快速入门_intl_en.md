@@ -48,12 +48,14 @@ After the command above is executed, you can access http://localhost:9201 and ht
 
 ## Using GooseFS to Mount COS
 1. Create a namespace and mount it to COS:
+
 ```plaintext
 $ goosefs ns create myNamespace cosn://bucketName-125xxxxxx/ 3TB
 --option fs.cosn.userinfo.secretId=AKIDxxxxxxxxxxxxxx \
 --option fs.cosn.userinfo.secretKey=xxxxxxxxxxxxxxxxx \
 --option fs.cosn.bucket.region=ap-guangzhou \
 ```
+
 >! When creating the namespace, the `–-option` parameter, as well as all required parameters of Hadoop-COS (COSN), must be specified. For more information about the parameters required, please see [Hadoop](https://intl.cloud.tencent.com/document/product/436/6884). When you create the namespace, if there is no read/write permission (rPolicy/wPolicy) specified, the read/write type specified in the configuration file, or the default value (CACHE/CACHE_THROUGH) will be used.
 >
 2. After the mount succeeds, you can run the `ls` command to list all namespaces created in the cluster as follows:
@@ -95,10 +97,12 @@ Information recorded in the metadata is as follows:
 ## Restoring table data to GooseFS
 
 1. You can restore hive table data to GooseFS. Before the restoration, attach the database to GooseFS using the following command:
+
 ```plaintext
 $ goosefs table attachdb --db test_db hive thrift://
 172.16.16.22:7004 test_for_demo
 ```
+
 >! Replace `thrift` in the command with the actual Hive Metastore address.
 >
 2. After the database is attached, run the `ls` command to view information about the attached database and table:
@@ -153,12 +157,14 @@ $ goosefs fs
 $ goosefs fs ls /
 ```
 3. Run the `copyFromLocal` command to copy a local file to GooseFS:
+
 ```plaintext
 $ goosefs fs copyFromLocal LICENSE /LICENSE
 Copied LICENSE to /LICENSE
 $ goosefs fs ls /LICENSE
 -rw-r--r--  hadoop         supergroup               20798       NOT_PERSISTED 03-26-2021 16:49:37:215   0% /LICENSE
 ```
+
 4. Run the `cat` command to view the file content:
 ```plaintext
 $ goosefs fs cat /LICENSE                                                                         
@@ -177,10 +183,12 @@ persisted file /LICENSE with size 26847
 ## Using GooseFS to Accelerate Uploads/Downloads
 
 1. Check the file status to determine whether a file is cached. The file status `PERSISTED` indicates that the file is in the memory, and `NOT_PERSISTED` indicates not.
+
 ```plaintext
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 NOT_PERSISTED 01-09-2018 16:35:01:002   0% /data/cos/sample_tweets_150m.csv
 ```
+
 2. Count how many times “tencent” appeared in the file and calculate the time consumed:
 ```plaintext
 $ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c kitten
@@ -190,6 +198,7 @@ user	0m7.557s
 sys	0m1.181s
 ```
 3. Caching data in memory can effectively speed up queries. An example is as follows:
+
 ```plaintext
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 PERSISTED 01-09-2018 16:35:01:002   0% /data/cos/sample_tweets_150m.csv
