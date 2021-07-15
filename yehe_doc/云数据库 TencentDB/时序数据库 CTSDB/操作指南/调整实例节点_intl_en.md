@@ -11,7 +11,7 @@ CTSDB supports flexible instance node adjustments. You can elastically adjust th
 ## Node Adjustment Method
 1. Log in to the [CTSDB console](https://console.cloud.tencent.com/ctsdb) and select the target region. In the instance list, click an instance ID or **Manage** in the **Operation** column to enter the instance details page.
 2. In the **Node Quantity ** section on the instance details page, click **Add Node**.
-![](https://main.qcloudimg.com/raw/6bca38c2fb0aa6e8e416692be0475c6f.png)
+![](https://main.qcloudimg.com/raw/3ef4b65d36ee84fc168eeaadea510cff.png)
 3. Select the number of nodes to be added in the pop-up window and click **Upgrade**.
 
 ## Fees Calculation
