@@ -7,6 +7,6 @@ Based on your business needs, you can manually terminate pay-as-you-go instances
 
 ## Directions
 1. Log in to the [CTSDB console](https://console.cloud.tencent.com/ctsdb), select the instance to be terminated in the instance list, and select **More** > **Terminate** in the **Operation** column.
-![](https://main.qcloudimg.com/raw/387616675cd1bb053bb6c9dd604d6731.png)
+![](https://main.qcloudimg.com/raw/238c68cdfc4d1d4f8c8f1e0de57d16b3.png)
 2. In the pop-up window, indicate your consent and click **Terminate Now**.
 
