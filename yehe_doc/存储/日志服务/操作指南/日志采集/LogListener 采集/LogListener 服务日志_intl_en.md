@@ -105,7 +105,7 @@ The fields of the log topic Loglistener_status are specified as follows:
 ### LogListener alert log
 The fields of the log topic Loglistener_alarm are specified as follows.
 
-| Fields | Monitoring Metrics Categories |
+| Monitoring Metrics Categories      |Fields    |
 | :----------- | :-------------------- |
 | InstanceId | LogListener Unique Identifier |
 | Label | Machine label array |
