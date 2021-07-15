@@ -7,5 +7,5 @@ CTSDB provides the QuickConfig mode, where you only need to select the volume of
 
 ## CustomConfig
 In CustomConfig mode, you can select the number of nodes, node specification, and node capacity as desired as shown below:
-![](https://main.qcloudimg.com/raw/f9c88cf9dfa1c16be031781b817f5cac.png)
+![](https://main.qcloudimg.com/raw/59103f74ee45b5438add945e58b4a295.png)
 >!Be cautious when selecting a two-node instance, as it cannot fully ensure data integrity due to the characteristics of a distributed system.
