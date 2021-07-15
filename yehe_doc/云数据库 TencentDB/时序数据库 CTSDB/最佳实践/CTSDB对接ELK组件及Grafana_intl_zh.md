@@ -24,16 +24,16 @@ max_procs: 4 # 可同时执行的最大cpu数，默认为操作系统可用的�
 filebeat.spool_size: 102400
 filebeat.idle_timeout: 2s
 processors:
-- drop_fields: # 需要drop掉的字段
+  drop_fields: # 需要drop掉的字段
   fields: ["beat","input_type","source","offset"]
 filebeat.prospectors:
-- paths: ["/data/log/filebeat-tutorial.log"]   # 样例数据所在的路径
+  paths: ["/data/log/filebeat-tutorial.log"]   # 样例数据所在的路径
   fields:
     metricname: metric1
   harvester_buffer_size: 1638400
   close_timeout: 0.5h
   scan_frequency: 2s
-- paths: ["/mylog/*.log","/mylog1/*.log"]
+  paths: ["/mylog/*.log","/mylog1/*.log"]
   fields:
     metricname: table2
   harvester_buffer_size: 1638401
@@ -294,7 +294,7 @@ elasticsearch.password: "changeme"
 nohup bin/kibana &
 ```
 利用 ip:port 或者域名访问 kibana server，如下： 
-![](https://main.qcloudimg.com/raw/d80dffb54f752ee2927bfae3e76b220b.png)
+
 利用开发工具，我们可以很方便的访问 CTSDB，如下图所示： 
 ![](https://main.qcloudimg.com/raw/2e240510f9f4fac37ddbb61eacbc3c4d.png)
 在管理页面创建需要访问的索引，如下所示： 
@@ -329,9 +329,9 @@ sudo service grafana-server start
 3. 创建数据源，建立 dashboard，如下所示：
 ![](https://main.qcloudimg.com/raw/2580d7a51918fa6beb9819182fca889b.png)
 4. 利用 dashboard 创建可视化图表，如下图所示：
-![](https://main.qcloudimg.com/raw/9f5659391a8c9c21955438029892edbe.png)
+![](https://main.qcloudimg.com/raw/0f13d15fe87ce7c8766345209d90940f.png)
 5. 从上图可以看出，Grafana 的图表展示效果和 Kibana 略有区别，但是功能本质上是一样的，这个看您的个人使用习惯和爱好。同样，Grafana 的 dashboard 也能同时展示多个可视化图表，如下图所示：
-![](https://main.qcloudimg.com/raw/858e82acd2d5dcb4872445b9085fa6d8.png)
+![](https://main.qcloudimg.com/raw/ed8a50aec05aea155bfd951d9a0bcac3.png)
 
 ## 小结  
 以上为 ELK 生态组件及 Grafana 对接 CTSDB 的详细使用过程，如在使用过程中遇到问题需要解决，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。
