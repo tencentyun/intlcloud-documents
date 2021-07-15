@@ -6,4 +6,4 @@
 - 用户须在新购实例时为实例指定所属的项目，缺省为【默认项目】。
 - 已指定项目的实例，可通过 [控制台](https://console.cloud.tencent.com/ctsdb) 的实例详情页，更改项目重新指定到其他项目。
 
-![](https://main.qcloudimg.com/raw/09dc8d04d101d356d757a9b9698383b6.png)
+![](https://main.qcloudimg.com/raw/3b9a5985cbf5ed5a9f75d660cee593ab.png)
