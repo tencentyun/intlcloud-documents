@@ -6,4 +6,4 @@ Notes:
 - You need to specify a project to which a new instance belongs when purchasing it. The **Default Project** will be used if you don't specify one.
 - Assigned instances can be reassigned to other projects on the instance details page in the [console](https://console.cloud.tencent.com/ctsdb).
 
-![](https://main.qcloudimg.com/raw/09dc8d04d101d356d757a9b9698383b6.png)
+![](https://main.qcloudimg.com/raw/3b9a5985cbf5ed5a9f75d660cee593ab.png)
