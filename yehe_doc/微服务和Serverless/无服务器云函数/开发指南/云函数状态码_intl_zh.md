@@ -31,6 +31,11 @@
 <td>检查函数的 <a href="https://intl.cloud.tencent.com/document/product/583/38377">网络配置</a> 信息是否正确以及子网 id 是否有效。</td>
 </tr>
 <tr>
+<td>405<br>ContainerStateExited	</td>
+<td>容器退出。</td>
+<td>请检查您的镜像或启动文件，是否可以本地正常启动。</td>
+</tr>
+<tr>
 <td>406<br>RequestTooLarge</td>
 <td>函数调用请求参数体太大时，会有该返回信息。</td>
 <td>请求事件大小超限，同步请求事件最大为6MB，异步请求事件最大为128KB。</td>
@@ -39,6 +44,11 @@
 <td>407<br>The size of response exceeds the upper limit (6MB)</td>
 <td>函数返回值超出 6MB 限制。</td>
 <td>函数返回值过大，超出 6MB 限制，请调整函数返回值大小后重试。</td>
+</tr>
+<tr>
+<td>410<br>InsufficientBalance</td>
+<td>账号余额不足。</td>
+<td>由于您的腾讯云账户欠费导致服务停止，请充值后重试。</td>
 </tr>
 <tr>
 <td>429<br>ResourceLimit</td>
@@ -112,15 +122,40 @@
 <td>443<br>UserCodeError</td>
 <td>当用户代码执行出现错误时，会有该返回信息。</td>
 <td>可以根据控制台的错误日志，查看代码错误堆栈信息，检查代码是否能正常执行。</td>
+</tr>	
+<tr>
+<td>444<br>PullImageFailed</td>
+<td>拉取镜像失败。</td>
+<td>请您确认所选择镜像的完整性和有效性后重试，如本地可正常下载。若仍无法解决，请 <a href=“https://console.cloud.tencent.com/workorder/category” target=“_blank”> 提交工单 </a>。</td>
+</tr>
+<tr>
+<td>445<br>ContainerInitError</td>
+<td>容器启动失败。</td>
+<td>容器启动失败，请检查您的启动文件是否已成功上传，并且保证调用路径正确。</td>
+</tr>	
+<tr>
+<td>446<br>PortBindingFailed</td>
+<td>端口监听失败。</td>
+<td>容器初始化超过30s最大时间，请检查您的监听端口是否为<code>9000</code>。</td>
+</tr>
+<tr>
+<td>447<br>PullImageTimeOut</td>
+<td>拉取镜像超时</td>
+<td>可能是由于镜像较大或网络抖动原因引起的超时，建议在最小化镜像后重试。若仍无法解决，请 <a href=“https://console.cloud.tencent.com/workorder/category” target=“_blank”> 提交工单 </a>。</td>
 </tr>
 <td>450<br>InitContainerTimeout</td>
 <td>当用户代码起容器超时情况下，会有该返回信息。</td>
-<td>用户代码起容器超时（15s），请检查代码后重试。若仍无法解决，请或 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a>。</td>
+<td>用户代码起容器超时（15s），请检查代码后重试。若仍无法解决，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单</a>。</td>
+</tr>
+<tr>
+<td>449<br>InsufficientResources</td>
+<td>当大内存资源不足时，会有该返回信息。</td>
+<td>大内存资源不足，请稍后再试。</td>
 </tr>
 <tr>
 <td>500<br>InternalError</td>
 <td>内部错误。</td>
-<td>内部错误，请稍后重试。若仍无法解决，请 <a href="https://console.cloud.tencent.com/workorder/category">提交工单。</a></td>
+<td>内部错误，请稍后重试。若仍无法解决，请联系 <a href="https://console.cloud.tencent.com/workorder/category">提交工单。</a></td>
 </tr>
 </tbody>
 </table>
@@ -130,7 +165,8 @@
 </style>
 
 ## 相关概念
-#### 执行方法<div id="handler"></div>
+#### 执行方法
+
 执行方法表明了调用云函数时需要从哪个文件中的哪个函数开始执行。如下图所示：
 ![](https://main.qcloudimg.com/raw/81835da7292ef575fde6d634a99bb1e5.png)
 

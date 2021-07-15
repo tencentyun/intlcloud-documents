@@ -31,6 +31,11 @@ If an error code is returned after the function is executed, you can find the ca
 <td>Check whether the <a href="https://intl.cloud.tencent.com/document/product/583/38377">network configuration</a> of the function is correct and whether the subnet ID is valid.</td>
 </tr>
 <tr>
+<td>405<br>ContainerStateExited	</td>
+<td>The container exits.</td>
+<td>Please check your image or bootstrap file to see whether it can be properly started locally.</td>
+</tr>
+<tr>
 <td>406<br>RequestTooLarge</td>
 <td>The request body size is too large.</td>
 <td>The request event size exceeds the upper limit, which is 6 MB for sync request events or 128 KB for async ones.</td>
@@ -39,6 +44,11 @@ If an error code is returned after the function is executed, you can find the ca
 <td>407<br>The size of response exceeds the upper limit (6MB)</td>
 <td>The size of function response exceeds the upper limit of 6 MB.</td>
 <td>The size of function response exceeds the upper limit of 6 MB. Please adjust it and try again.</td>
+</tr>
+<tr>
+<td>410<br>InsufficientBalance</td>
+<td>The account balance is insufficient.</td>
+<td>The SCF service is suspended because the Tencent Cloud account has overdue payments. Please top up and try again.</td>
 </tr>
 <tr>
 <td>429<br>ResourceLimit</td>
@@ -112,10 +122,35 @@ If an error code is returned after the function is executed, you can find the ca
 <td>443<br>UserCodeError</td>
 <td>A user code execution error occurs.</td>
 <td>Based on the error log on the console, check the error stack of the code and see whether the code can be executed properly.</td>
+</tr>	
+<tr>
+<td>444<br>PullImageFailed</td>
+<td>Image pull fails.</td>
+<td>Please check the integrity and validity of the selected image and try again; for example, check whether it can be downloaded locally. If the problem persists, please <a href="https://console.cloud.tencent.com/workorder/category" target="_blank">submit a ticket</a>.</td>
+</tr>
+<tr>
+<td>445<br>ContainerInitError</td>
+<td>Container start fails.</td>
+<td>Container start fails. Please check whether your bootstrap file has been uploaded successfully and ensure that the invocation path is correct.</td>
+</tr>	
+<tr>
+<td>446<br>PortBindingFailed</td>
+<td>Port listening fails.</td>
+<td>The initialization of the container exceeds the maximum time of 30s. Please check whether the listening port is <code>9000</code>.</td>
+</tr>
+<tr>
+<td>447<br>PullImageTimeOut</td>
+<td>Image pull times out.</td>
+<td>It may be a timeout caused by a large image or network jitters. Please minimize the image and try again. If the problem persists, please <a href="https://console.cloud.tencent.com/workorder/category" target="_blank">submit a ticket</a>.</td>
 </tr>
 <td>450<br>InitContainerTimeout</td>
 <td>The user code container times out.</td>
 <td>The user code container times out (15s). Please check the code and try again. If the problem persists, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
+</tr>
+<tr>
+<td>449<br>InsufficientResources</td>
+<td>The memory resources are insufficient.</td>
+<td>The memory resources are insufficient. Please try again later.</td>
 </tr>
 <tr>
 <td>500<br>InternalError</td>
@@ -130,7 +165,8 @@ If an error code is returned after the function is executed, you can find the ca
 </style>
 
 ## Concepts
-#### Execution method<div id="handler"></div>
+#### Execution method
+
 The execution method specifies the starting file and function while invoking the cloud function as shown below:
 ![](https://main.qcloudimg.com/raw/81835da7292ef575fde6d634a99bb1e5.png)
 

@@ -1,49 +1,49 @@
 
 
-SCF allows developers to deploy container images as functions. This document describes the background, working principle, function development, function log printing, cold start optimization, billing instructions and usage limits of deploying the image as the function.
+SCF allows you to deploy container images as functions. This document describes the background, principles, development, log printing, cold start optimization, billing, and use limits of image deployment functions.
 
 ## Background
 
-SCF was designed as a FaaS product based on cloud native architecture. After the deployment of container images as functions is supported in the runtime layer, the overall product form moves towards a containerized ecology. On the one hand, it solves the problem of environment dependence when the function is running, and users can use it more flexibility. On the other hand, it frees users from being trapped by technical thresholds such as Kubernetes cluster management, security maintenance, troubleshooting, etc., and processes the requirements for auto scaling and usability in the computing platform, which further releases the cloud computing capabilities.
+SCF is a FaaS service based on the cloud native architecture from the very beginning of design. After adding support for deploying container images as functions at the runtime layer, its entire service form has evolved towards a containerized ecosystem. On the one hand, it solves the environment dependency problem in function runtime and gives you more freedom to customize. On the other hand, this service form enables you to cross the technical thresholds, such as Kubernetes cluster management, security maintenance, and troubleshooting, and sinks auto scaling, availability, and other needs to the computing platform, further unleashing the capabilities of cloud computing.
 
-## How it Works
-Before you develop the function, you need to confirm the function type. SCF supports two function types including event function and Web function.
+## How It Works
+Before developing specific function logic, you need to determine the function type. SCF provides event functions and web functions.
 
-During the initialization of the function instance, SCF will obtain the temporary user name and password of the image repository as the access credential to pull the image. After the image is pulled successfully, start the HTTP Server you defined according to the specified start command `Command`, the parameter `Args` and the port (fixed to 9000). Finally, HTTP Server will receive all entry requests of SCF, including the event function invocations and Web function invocations.
+During function instance initialization, SCF gets the temporary username and password as the access credentials to pull the image. After successfully pulling the image, SCF starts the HTTP server defined by you based on the defined `Command` start command, `Args` parameter, and port (which is fixed at 9000). Finally, the HTTP server receives all entry requests of SCF, including those from your event and web function invocations.
 
-The following diagram illustrates how it works:
+How a function works is as shown below:
 ![](https://main.qcloudimg.com/raw/f884ec7454c39392e4b5b19752e8d732.png)
 
 
 
 
 
-## Function Development Based on Image
+## Developing Function Deployed Based on Image
 
-### Building the HTTP Server
+### Building HTTP server
 
-To deploy a function based on the image, you need to build an HTTP Server. The configuration requirements are as follows:
-- Listen on `0.0.0.0:9000` or `*:9000`.
-- The HTTP Server should be started within 30 seconds.
+For a function deployed based on an image, you need to build an HTTP server and configure it as follows:
+- It should listen on `0.0.0.0:9000` or `*:9000`.
+- It should be started within 30 seconds.
 
-If the above configurations are not completed, it may cause the health check to time out, and the following error may occur:
+If the above step is not completed, health check may time out, and the following error may be reported:
 ```
 The request timed out in 30000ms.Please confirm your http server have enabled listening on port 9000.
 ```
 
-### Function Input Parameters
+### Function input parameters
 
-- **event**: POST request body (HTTP Body)
-The request body contains the event data. For the structure, see [Trigger Event Message Structure Summary](https://intl.cloud.tencent.com/document/product/583/31439).
+- **event**: POST request body (HTTP body)
+The request body contains the event data. For its structure, please see [Trigger Event Message Structure Summary](https://intl.cloud.tencent.com/document/product/583/31439).
 
-- **context**: request header (HTTP Header).
-	- Common parameter: it is used to identify the user and API signatures, which needs to be carried in each request.
-	- Obtain the current request ID through X-Scf-Request-Id.
+- **context**: request header (HTTP header)
+	- Common parameters: parameters used to identify the user and API signature, which must be carried in each request.
+	- Use `X-Scf-Request-Id` to get the current request ID.
 <dx-alert infotype="explain" title="">
-<li>Both event function and Web function contain the Common Headers.</li>
-<li>The common request header is generated by SCF, and mainly contains permissions, basic function information, etc.</li>
+<li>Both event and web functions should contain common headers.</li>
+<li>The common request headers are generated by SCF, which mainly contain permissions and basic function information.</li>
 </dx-alert>
-The detailed list is shown in the following table:
+The input parameters are as detailed below:
 <table>
 <thead>
 <tr>
@@ -53,15 +53,15 @@ The detailed list is shown in the following table:
 </thead>
 <tbody><tr>
 <td>X-Scf-Request-Id</td>
-<td>The current request ID</td>
+<td>Current request ID</td>
 </tr>
 <tr>
 <td>X-Scf-Memory</td>
-<td>The maximum memory that can be used during the runtime of the function instance</td>
+<td>Maximum memory that can be used during function instance execution</td>
 </tr>
 <tr>
 <td>X-Scf-Timeout</td>
-<td>The timeout period of function execution</td>
+<td>Timeout period for function execution</td>
 </tr>
 <tr>
 <td>X-Scf-Version</td>
@@ -81,27 +81,27 @@ The detailed list is shown in the following table:
 </tr>
 <tr>
 <td>X-Scf-Appid</td>
-<td>The Appid of the function owner</td>
+<td>`Appid` of function owner</td>
 </tr>
 <tr>
 <td>X-Scf-Uin</td>
-<td>The UIN of the function owner</td>
+<td>`Uin` of function owner</td>
 </tr>
 <tr>
 <td>X-Scf-Session-Token</td>
-<td>Temporary SESSION TOKEN</td>
+<td>Temporary `SESSION TOKEN`</td>
 </tr>
 <tr>
 <td>X-Scf-Secret-Id</td>
-<td>Temporary SECRET ID</td>
+<td>Temporary `SECRET ID`</td>
 </tr>
 <tr>
 <td>X-Scf-Secret-Key</td>
-<td>Temporary SECRET KEY</td>
+<td>Temporary `SECRET KEY`</td>
 </tr>
 <tr>
 <td>X-Scf-Trigger-Src</td>
-<td>Timer (when the scheduled trigger is used）</td>
+<td>Timer (if a timer trigger is used)</td>
 </tr>
 </tbody></table>
 
@@ -110,7 +110,7 @@ The detailed list is shown in the following table:
 
 ### Built-in environment variables
 
-Compared with the deployment based on code packages, the custom images have changed the environment variables built-in the container, which you can refer to as needed.
+Environment variables built in the container in custom image-based deployment are different from those in code package-based deployment. You can import them as needed.
 
 | Environment Variable Key | Specific Value or Value Source |
 | -------------------------------- |---------------|
@@ -118,59 +118,58 @@ Compared with the deployment based on code packages, the custom images have chan
 | USER_CODE_ROOT | /var/user/ |
 | USER | qcloud |
 | SCF_FUNCTIONNAME | Function name |
-| X-Scf-Name | Function name |
 | SCF_FUNCTIONVERSION | Function version |
 | TENCENTCLOUD_REGION | Region |
-| TENCENTCLOUD_APPID | Account APPID |
-| TENCENTCLOUD_UIN | Account UIN |
+| TENCENTCLOUD_APPID | Account `APPID` |
+| TENCENTCLOUD_UIN | Account `UIN` |
 
 ### Function invocation
 
-- For the event function, user needs to listen on the path `/event-invoke` to receive the function invocation request.
-- For the Web function, users do not need to listen on the specified path, and the API gateway will pass through the request path in the way of layer-7 reverse proxy.
+- For event functions, you need to listen on the fixed path `/event-invoke` to receive function invocation requests.
+- For web functions, you don't need to listen on a specified path; instead, API Gateway uses layer-7 reverse proxy to pass through the request path.
 
 ### Function log printing
 
-The SCF will collect the stdout, stderr and other standard output logs generated in the container in a non-intrusive way and report them to the log module. After invoking the function, you can view the display effect of log aggregation in the console.
+SCF collects standard output logs such as `stdout` and `stderr` generated in the container in a non-intrusive manner and reports them to the log module. After invoking a function, you can view the aggregated logs in the console.
 
 ## Cold Start Optimization
 
-Since image has added the file layers such as the basic environment and system dependencies, compared to the fully built-in deployment based on code packages, there will be extra time for file download and image decompression. To further reduce the cold start time, the following policies are recommended:
- - Create image repository and function in the same region. When the function triggers the image pull, it can pull image faster and more stable through the VPC.
- - The image is based on the principle of minimization, that is, only the necessary basic environment and running dependencies are contained, and the unnecessary files are removed.
- - The image deployments can be used together with the provisioned concurrency feature to start the function instances in advance to achieve the optimal reduction of cold start time. For more information, see [Provisioned Concurrency](https://intl.cloud.tencent.com/document/product/583/37704).
+As file layers such as basic environment and system dependency are added to the image, compared with code package-based function deployment where files are completely built-in, image-based function deployment requires extra file download and image decompression time. To further reduce the cold start time, we recommend you use the following practices:
+ - Create an image repository and a function in the same region, so that the image can be pulled over VPC when the function triggers image pull, which makes the pull faster and more stable.
+ - The image should be as small as possible, that is, it should contain only the necessary basic environment and execution dependencies without any unnecessary files.
+ - Use provisioned concurrency when deploying an image to start a function instance in advance and thus reduce the cold start time and optimize the user experience. For more information, please see [Provisioned Concurrency](https://intl.cloud.tencent.com/document/product/583/37704).
 
-## Billing Overview
+## Billing Description
 
-The billing items of deploying functions via image are the same as that of using code packages to deploy. For billing details, see [Billing Mode](https://intl.cloud.tencent.com/document/product/583/12284).
+The billable items of image-based functions are the same as those of code package-based functions. For more information on billing, please see [Billing Mode](https://intl.cloud.tencent.com/document/product/583/12284).
 
 
-## Limits
+## Use Limits
 
 #### Image size
-Currently, only the images (before decompression) less than 1Gi are supported. We recommend that you choose the appropriate memory for function instance execution based on the image size.
+Currently, only images below 1 GiB in size are supported. We recommend you select an appropriate function instance execution memory based on the image size.
 
 | Image Size (X) | Execution Memory (Y) |
 | -------------------------------- |---------------|
-| X < 256MB  |  256MB < Y < 512MB  |
-| 256MB < X <512MB | 512MB < Y < 1Gi |
-| 512MB < X < 1Gi | Y>1Gi |
+| X < 256 MB | 256 MB < Y < 512 MB |
+| 256 MB < X < 512 MB | 512 MB < Y < 1 GiB |
+| 512 MB < X < 1 GiB | Y > 1 GiB |
 
 #### Image repository access
-- Only Tencent Cloud TCR Enterprise Edition and Personal Edition are supported. For more information, see [Tencent Container Registry](https://intl.cloud.tencent.com/document/product/1051).
-	- For more information about the image repository of TCR Enterprise Edition, see [Basic Image Repository Operations](https://intl.cloud.tencent.com/document/product/1051/35488).
-	- For more information about the image repository of TCR Personal Edition, see [Activating Image Registry](https://intl.cloud.tencent.com/document/product/1051/38866).
-- Only the image pull of private image repositories in the same region is supported.
+- Currently, only the TCR Enterprise Edition and Personal Edition are supported. For more information, please see [Tencent Container Registry](https://intl.cloud.tencent.com/document/product/1051).
+	- For more information on the TCR Enterprise Edition, please see [Basic Image Repository Operations](https://intl.cloud.tencent.com/document/product/1051/35488).
+	- For more information on the TCR Personal Edition, please see [Getting Started](https://intl.cloud.tencent.com/document/product/1051/38866).
+- Currently, only images in a private image repository in the same region can be read.
 
-#### The read and write permissions of the files in the container
-- The `/tmp` can be read and written by default. We recommend you to select `/tmp` when output files. The read and write permissions of other directories are controlled by the image file system.
-- Avoid using other users’ files that are restricted from being accessed or executed.
-- The storage capacity of the writable layer of files in the container is limited to 512M.
+#### Permission to read/write file in container
+- `/tmp` is readable and writable by default. We recommend you select `/tmp` when outputting a file. The read/write permission of other directories are controlled by the image file system.
+- Avoid using other users' files with restricted access or execution.
+- The storage space of the writable layer in the container is 512 MB.
 
-#### Client limits for building the image
-Either of the conditions is met:
-- Docker image manifest V2, schema 2 (using Docker version 1.10 or later)
-- Open Container Initiative (OCI) Specifications (v1.0.0 and later)
+#### Image build client limits
+The client should meet one of the following requirements:
+- Docker Image Manifest v2, Schema 2 (Docker should be on v1.10 or above)
+- Open Container Initiative (OCI) Specifications (v1.0.0 or above)
 
 
 
