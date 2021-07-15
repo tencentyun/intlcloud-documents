@@ -55,7 +55,7 @@ spec:
 
 ## Log Parsing Format
 <dx-tabs>
-::: Full text in a single line
+::: Full\stext\sin\sa\ssingle\sline
 A log with full text in a single line means a line is a full log. When CLS collects logs, it uses the line break `\n` to mark the end of a log. For easier structural management, a default key value `__CONTENT__` is given to each log, but the log data itself will no longer be structured, nor will the log field be extracted. The time attribute of a log is determined by the collection time. For more information, see [Full Text in a Single Line](https://intl.cloud.tencent.com/document/product/614/32287).
 
 Assume that the raw data of a log is:
@@ -77,7 +77,7 @@ The data collected to CLS is as follows:
 __CONTENT__:Tue Jan 22 12:08:15 CST 2019 Installed: libjpeg-turbo-static-1.2.90-6.el7.x86_64
 ```
 :::
-::: Full text in multi lines
+::: Full\stext\sin\smulti\slines
 A log with full text in multi lines means that a full log may occupy multiple lines (such as Java stacktrace). In this format, the line break `\n` cannot be used as the end mark of a log. To help the CLS system distinguish among the logs, "First Line Regular Expression" is used for matching. When a log in a line matches the preset regular expression, it is considered the beginning of a log, and the next matching line will be the end mark of the log. In this format, a default key value `__CONTENT__` is also set. However, the log data itself is no longer structured, and the log fields are not extracted. The `Time` log attribute depends on the time the log is collected. For more information, see [Full Text in Multi Lines](https://intl.cloud.tencent.com/document/product/614/32284).
 
 Assume that the raw data of a multi-line log is:
@@ -111,7 +111,7 @@ The data collected to CLS is as follows:
 :::
 </dx-codeblock>
 :::
-::: Single line - full regex
+::: Single\sline - full\sregex
 Full Regex is often used to process structured logs. It parses a full log by extracting multiple key-value pairs based on a regex. For more information, see [Collecting Full RegEx Logs](https://intl.cloud.tencent.com/document/product/614/32283).
 Assume that the raw data of a log is:
 <dx-codeblock>
@@ -156,7 +156,7 @@ upstream_response_time: 0.354
 :::
 </dx-codeblock>
 :::
-::: Multiple lines - full regex
+::: Multiple\slines - full\sregex
 The multi-line - full regular expression mode is a log parsing mode where multiple key-value pairs can be extracted from a complete piece of log data that spans multiple lines in a log text file (such as Java program logs) based on a regular expression. If you don't need to extract key-value pairs, please configure it as instructed in full text in multi lines. For more information, see [Full Text in Multi Lines](https://intl.cloud.tencent.com/document/product/614/32284).
 
 Assume that the raw data of a log is:
@@ -202,7 +202,7 @@ msg: java.lang.Exception: exception happened
 :::
 </dx-codeblock>
 :::
-::: JSON format
+::: JSON\sformat
 A JSON log automatically extracts the key at the first layer as the field name and the value at the first layer as the field value to implement structured processing of the entire log. Each complete log ends with a line break `\n`. For more information, see [JSON Format](https://intl.cloud.tencent.com/document/product/614/32286).
 
 Assume the raw data of a JSON log is as follows:
@@ -243,7 +243,7 @@ xff: -
 :::
 </dx-codeblock>
 :::
-::: Separator format
+::: Separator\sformat
 In a separator log, the entire log data can be structured according to the specified separator, and each complete log ends with a line break `\n`. When CLS processes separator logs, you need to define a unique key for each separate field. For more information, see [Separator Format](https://intl.cloud.tencent.com/document/product/614/32285).
 
 Assume the raw log is as follows:
