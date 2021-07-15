@@ -7,6 +7,6 @@
 
 ## 操作步骤
 1. 登录 [CTSDB 控制台](https://console.cloud.tencent.com/ctsdb)，在实例列表，选择需要销毁的实例，在“操作”列选择【更多】>【销毁】。
-![](https://main.qcloudimg.com/raw/387616675cd1bb053bb6c9dd604d6731.png)
+![](https://main.qcloudimg.com/raw/238c68cdfc4d1d4f8c8f1e0de57d16b3.png)
 2. 在弹出的对话框，勾选同意规则，单击【立即销毁】。
 
