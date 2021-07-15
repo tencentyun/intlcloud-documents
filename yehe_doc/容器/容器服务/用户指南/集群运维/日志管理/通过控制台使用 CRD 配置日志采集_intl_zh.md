@@ -92,9 +92,9 @@
 :::
 ::: 采集节点文件日志
 选择【节点文件路径】采集类型，用户可根据实际需求进行添加自定义的 “metadata” ，将采集到的日志信息附加指定 Key-Value 形式的 “metadata”，附加 metadata 将会添加到日志记录中。如下图所示：
-
->! 一个节点日志文件只能被一个日志主题采集。
->
+<dx-alert infotype="notice">
+一个节点日志文件只能被一个日志主题采集。
+</dx-alert>
 ![](https://main.qcloudimg.com/raw/7c5c8341315408c5668add566a3ff550.png)
 路径支持文件路径和通配规则，例如当需要采集所有文件路径形式为 `/opt/logs/service1/*.log`，`/opt/logs/service2/*.log`，可以指定采集路径的文件夹为 `/opt/logs/service*`，文件名为 `*.log`。
 :::
