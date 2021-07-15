@@ -10,7 +10,7 @@ CTSDB supports flexible instance node specifications. You can elastically adjust
 
 ## Configuration Adjustment Method
 1. Log in to the [CTSDB console](https://console.cloud.tencent.com/ctsdb) and select the target region. In the instance list, select **More** > **Adjust Configurations** in the **Operation** column.
-![](https://main.qcloudimg.com/raw/7aedf6e2d04af42510a92d9dbfa55357.png)
+![](https://main.qcloudimg.com/raw/212b00c1eafee6cf21e0781ac87ab9cb.png)
 2. Select the specification to be upgraded to in the pop-up window and click **Submit**.
 3. You will be redirected to the instance list. After the status of the instance becomes **Running**, it can be used normally.
 
