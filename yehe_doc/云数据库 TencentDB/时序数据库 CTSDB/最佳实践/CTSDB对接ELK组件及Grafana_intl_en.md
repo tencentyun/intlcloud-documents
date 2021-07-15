@@ -24,16 +24,16 @@ max_procs: 4 # Maximum number of CPUs that can run concurrently, which is the nu
 filebeat.spool_size: 102400
 filebeat.idle_timeout: 2s
 processors:
-- drop_fields: # Fields to be dropped
+  drop_fields: # Fields to be dropped
   fields: ["beat","input_type","source","offset"]
 filebeat.prospectors:
-- paths: ["/data/log/filebeat-tutorial.log"]   # Path of the sample data
+  paths: ["/data/log/filebeat-tutorial.log"]   # Path of the sample data
   fields:
     metricname: metric1
   harvester_buffer_size: 1638400
   close_timeout: 0.5h
   scan_frequency: 2s
-- paths: ["/mylog/*.log","/mylog1/*.log"]
+  paths: ["/mylog/*.log","/mylog1/*.log"]
   fields:
     metricname: table2
   harvester_buffer_size: 1638401
@@ -294,7 +294,7 @@ elasticsearch.password: "changeme"
 nohup bin/kibana &
 ```
 Access the Kibana server through `IP:port` or the domain name as shown below: 
-![](https://main.qcloudimg.com/raw/d80dffb54f752ee2927bfae3e76b220b.png)
+
 You can use the development tool to conveniently access CTSDB as shown below: 
 ![](https://main.qcloudimg.com/raw/2e240510f9f4fac37ddbb61eacbc3c4d.png)
 Create the index to be accessed on the management page as shown below: 
@@ -329,9 +329,9 @@ sudo service grafana-server start
 3. Create a data source and dashboard as shown below:
 ![](https://main.qcloudimg.com/raw/2580d7a51918fa6beb9819182fca889b.png)
 4. Use the dashboard to create a visual graph as shown below:
-![](https://main.qcloudimg.com/raw/9f5659391a8c9c21955438029892edbe.png)
+![](https://main.qcloudimg.com/raw/0f13d15fe87ce7c8766345209d90940f.png)
 5. As shown above, the graph display effect of Grafana is slightly different from that of Kibana, but their features are essentially the same, so you can choose either one of them based on your use habits and preferences. Similarly, Grafana dashboard can also display multiple visual graphs as shown below:
-![](https://main.qcloudimg.com/raw/858e82acd2d5dcb4872445b9085fa6d8.png)
+![](https://main.qcloudimg.com/raw/ed8a50aec05aea155bfd951d9a0bcac3.png)
 
 ## Summary  
 This document describes how to connect ELK ecosystem components and Grafana to CTSDB in detail. If you have any questions during use, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
