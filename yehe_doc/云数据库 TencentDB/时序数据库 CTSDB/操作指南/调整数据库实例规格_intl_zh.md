@@ -10,7 +10,7 @@
 
 ## 调整配置方法
 1. 登录 [CTSDB 控制台](https://console.cloud.tencent.com/ctsdb)，选择对应地域，在实例列表，选择“操作”列的【更多】>【调整配置】。
-![](https://main.qcloudimg.com/raw/7aedf6e2d04af42510a92d9dbfa55357.png)
+![](https://main.qcloudimg.com/raw/212b00c1eafee6cf21e0781ac87ab9cb.png)
 2. 在弹出的对话框，选择升级后的规格，单击【提交】。
 3. 返回实例列表，待实例状态变为“运行中”，即可正常使用。
 
