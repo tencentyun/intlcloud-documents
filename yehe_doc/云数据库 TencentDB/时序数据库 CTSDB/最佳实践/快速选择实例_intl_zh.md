@@ -7,5 +7,5 @@
 
 ## 自定义选择
 在自定义选择模式下，您可自助选择节点数量，节点规格和节点容量。具体如下图所示：
-![](https://main.qcloudimg.com/raw/f9c88cf9dfa1c16be031781b817f5cac.png)
+![](https://main.qcloudimg.com/raw/59103f74ee45b5438add945e58b4a295.png)
 >!请慎重选择2节点实例。基于分布式系统的特点，2节点实例无法完全保证数据不丢失。
