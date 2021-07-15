@@ -46,7 +46,7 @@ Additional provisions with respect to certain jurisdictions are included in the 
 
 **Modules**
 
-The Modules set out below in the section Modules to this privacy policy shall apply and form part of this privacy policy if you use the specific Feature (as defined in each relevant Module). You acknowledge we will collect, process, use and store your personal information, as described in the applicable Module. See below at Modules for more information.
+The Modules set out below in the section [Modules](#MODULES) to this privacy policy shall apply and form part of this privacy policy if you use the specific Feature (as defined in each relevant Module). You acknowledge we will collect, process, use and store your personal information, as described in the applicable Module. See below at [Modules](#MODULES) for more information.
 
 ### INTRODUCTION
 
@@ -102,7 +102,7 @@ We will use the information in the following ways and in accordance with the fol
 | Log Data, Metadata, IP  Address, User Tickets, User Agent, Date and Time of Access, each URL visit  within the Tencent Cloud website whether direct or referred from third party  website, [Optional] | We use this information  for strategy and Service improvement and for analytics. | It is in our legitimate  interests to improve our strategy and Services. |
 | Customer Service Ticket/  Chat Content, IP Address, Tencent Cloud ID, incident details and response  steps [Mandatory] | We use this information  to:   <br/>· deal with your concerns and complaints about the Service; and    <br/>· improve and administer our Services and for internal operations, including  troubleshooting, data analysis, testing, research, statistical and survey  purposes, and to keep our Services safe and secure. | It is in our legitimate  interests to improve our Services and provide support in connection with the  Services supplied to you. |
 | Log and Metadata in  relation to incidents [Optional]        | We use this information  in order to improve our Service and responses. | It is in our legitimate  interests to improve our Service and responses. |
-| Enquiry Data (data  provided when you submit an enquiry via our website contact form or as part  of a sales enquiry), including:  ·  your name, email, company name and business service [Mandatory]</br>   ·  Phone number and location [Optional]</br> | We use this information  to respond to your request.         | It is in our legitimate  interests to process this information as it is needed to respond to your  request. |
+| Enquiry Data (data  provided when you submit an enquiry via our website contact form or as part  of a sales enquiry), including:</br>  ·  your name, email, company name and business service [Mandatory]</br>   ·  Phone number and location [Optional]</br> | We use this information  to respond to your request.         | It is in our legitimate  interests to process this information as it is needed to respond to your  request. |
 | Promotional Contact Data: Name, Email Phone Number, Business Service and Industry [Optional] | We use this information  to promote our products and services to you. | We process this information with your consent. You can withdraw this consent at any time. |
 | Marketing Data: Name, Business Email, Phone Number, Company Name, Country/Region, Industry and Job Title [Mandatory]. | We use this information: <br/>· to reserve you a place on our online events and webinars<br/>· for product notifications; and<br/>· for order confirmations. | We process this information with your consent. You can withdraw this consent at any time. |
 | Name, Email Address, Country Code, Phone Number, Company Name, Business Service, Inquiry [Mandatory]. | We use this information: <br/>· to process your application for the COVID-19 Cloud Resources Support Program;<br/>· to respond to requests for our products; <br/>· for product notifications; and <br/>· for order confirmations.  | We process this information pursuant to our contract with you to provide the support. |
@@ -205,7 +205,7 @@ If we make any material changes to this policy, we will post the updated policy 
 
 ### SOUTH KOREA
 
-Last updated: 11 / 23 / 2019
+Last updated: 12 / 07 / 2020
 
 This Addendum to the Tencent Cloud Privacy Policy (the "Addendum") is to address matters that are necessary to process your personal information in compliance with the Act on Promotion of Information and Communications Network Utilization and Information Protection Etc. (the "Network Act") and the Personal Information Protection Act (the "PIPA") of Korea. Please refer Tencent Cloud Privacy Policy for more details on the conditions of using the Services.
 
@@ -247,7 +247,7 @@ If you have any questions or comments about the Privacy Policy, if you need to r
 
  - Person in Charge: Timothy Ma
 
- - E-mail: <cloudlegalnotices@tencent.com>
+ - E-mail: cloudlegalnotices@tencent.com
 
 
 
@@ -261,7 +261,7 @@ Pursuant to the Network Act and Article 39-11 of the amended PIPA, the informati
 
  - Telephone Number: +82-2185-0902
 
- - E-mail: <cloudlegalnotices@tencent.com>
+ - E-mail: cloudlegalnotices@tencent.com
 
 
 ### California
@@ -463,7 +463,7 @@ This right may be exercised upon your discovery and substantial proof of any of 
 By consenting to this Privacy Policy, you consent to us:
  - collecting and processing your personal information as described in the section “[How We Use Your Personal Information](https://intl.cloud.tencent.com/document/product/301/17345#how-we-use-your-personal-information)”;
  - sharing your personal information with third parties, companies within our corporate group, and a third party that acquires substantially all or substantially all of us or our business, as described in this Privacy Policy and for the purposes stated herein; and
- - transferring or storing your personal information in destinations outside the Philippines when the processing shall need to occur outside the Philippines, as described in the section “How We Store and Share Your Personal Information”.
+ - transferring or storing your personal information in destinations outside the Philippines when the processing shall need to occur outside the Philippines, as described in the section “[How We Store and Share Your Personal Information](#How-We-Share-and-Store-Your-Personal-Information)”.
 
 ### SAUDI ARABIA 
 You consent to the disclosure, transfer and export of your personal information outside of Saudi Arabia or any other jurisdiction in which you provided it.
@@ -530,11 +530,15 @@ Your personal information, if required to be disclosed to the law enforcement ag
 You have the right to access, correct, and erase the personal information we hold about you. You also have the right to withdraw your earlier provided consent to collect, store, process, use and disclose your personal information and to request us to stop providing your personal information to a third party.
 
 ### MODULES
-Last updated: [2020-11-19]
-The following Modules shall apply and form part of this privacy policy if you use the specific Feature (as defined in each relevant Module). You acknowledge we will collect, process, use and store your personal information, as described in the applicable Module:</br>
-1.[Tencent Push Notification Service](https://intl.cloud.tencent.com/document/product/1024/36175).</br>
-2.[Mobile Tencent Protect](https://intl.cloud.tencent.com/document/product/1018/36786).</br>
-3.[Web Application Firewall](https://intl.cloud.tencent.com/document/product/627/37005).</br>
-4.[Game Multimedia Engine](https://intl.cloud.tencent.com/document/product/607/37524).</br>
-5.[Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029/36805).</br>
+Last updated: [2020-06-10]
+The following Modules shall apply and form part of this privacy policy if you use the specific Feature (as defined in each relevant Module). You acknowledge we will collect, process, use and store your personal information, as described in the applicable Module:
+1.[Tencent Push Notification Service](https://intl.cloud.tencent.com/document/product/1024/36175).
+2.[Mobile Tencent Protect](https://intl.cloud.tencent.com/document/product/1018/36786).
+3.[Web Application Firewall](https://intl.cloud.tencent.com/document/product/627/37005).
+4.[Game Multimedia Engine](https://intl.cloud.tencent.com/document/product/607/37524).
+5.[Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029/36805).
 6.[Face Recognition](https://intl.cloud.tencent.com/document/product/1059/38786).
+7.[Tencent Cloud MediaLive](https://intl.cloud.tencent.com/document/product/1048/38990).
+8.[Tencent Cloud MediaPackage](https://intl.cloud.tencent.com/document/product/1063/38993).
+9.[Tencent Cloud Conference](https://intl.cloud.tencent.com/document/product/1023/40237).
+10.[Cloud Native Database TDSQL-C](https://intl.cloud.tencent.com/document/product/1098/41228)
