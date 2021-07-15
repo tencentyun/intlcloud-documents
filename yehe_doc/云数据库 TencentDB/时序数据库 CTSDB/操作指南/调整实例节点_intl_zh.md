@@ -11,7 +11,7 @@
 ## 调整节点方法
 1. 登录 [CTSDB 控制台](https://console.cloud.tencent.com/ctsdb)，选择对应地域，在实例列表，单击实例 ID 或“操作”列的【管理】，进入实例详情页。
 2. 在实例详情页的“节点数”处，单击【增加节点】。
-![](https://main.qcloudimg.com/raw/6bca38c2fb0aa6e8e416692be0475c6f.png)
+![](https://main.qcloudimg.com/raw/3ef4b65d36ee84fc168eeaadea510cff.png)
 3. 在弹出的对话框，选择需要增加的节点数，单击【升级】。
 
 ## 如何计算费用
