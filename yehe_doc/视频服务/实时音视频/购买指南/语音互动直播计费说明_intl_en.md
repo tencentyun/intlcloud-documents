@@ -22,8 +22,7 @@ The price of interactive live audio streaming is listed below:
 |Audio|0.99|
 
 <span id="Billing_method"></span>
-## Billing Mode
-TRTC supports two billing modes: **prepaid packages** (default) and **pay-as-you-go**. You will be switched to the pay-as-you-go mode automatically after your prepaid package is exhausted or expires. You cannot switch to the pay-as-you-go mode by yourself.
+
 
 <span id="pre-payment"></span>
 ### Prepaid packages
@@ -148,4 +147,3 @@ The **total cost** would be `the unit price of the audio duration x the total au
 - [On-cloud MixTranscoding Billing](https://intl.cloud.tencent.com/document/product/647/38929)
 - [Purchase Guide](https://intl.cloud.tencent.com/document/product/647/35440)
 - [FAQs](https://intl.cloud.tencent.com/document/product/647/39789)
-- 
