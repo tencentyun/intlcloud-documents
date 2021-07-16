@@ -14,7 +14,7 @@ This document describes how to access CKafka to send/receive messages with the S
 
 1. Upload the `javakafkademo` in the downloaded demo to the Linux server.
 2. Log in to the Linux server, enter the `javakafkademo` directory, and configure related parameters.
-  2.1 Add the following Java dependency library information to the `pom.xml` file:
+   2.1 Add the following Java dependency library information to the `pom.xml` file:
       ```xml
       <dependency>
           <groupId>org.apache.kafka</groupId>
@@ -33,11 +33,11 @@ This document describes how to access CKafka to send/receive messages with the S
       ```
 | Parameter | Description |
 | ----------------- | ------------------------------------------------------------ |
-| bootstrap.servers | Accessed network, which can be copied from the **Network** column in the **Access Mode** section on the **Instance Details** page in the console. <br/>![](https://main.qcloudimg.com/raw/88b29cffdf22e3a0309916ea715057a1.png) |
-| topic             | Topic name, which can be copied from the **Topic Management** page in the console. <br/>![](https://main.qcloudimg.com/raw/e7d353c89bbb204303501e8366f59d2c.png) |
+| bootstrap.servers | Accessed network, which can be copied from the **Network** column in the **Access Mode** section on the **Instance Details** page in the console. <br/>![](https://main.qcloudimg.com/raw/6b12eca18662d26a334d55b743c825ef.png) |
+| topic             | Topic name, which can be copied from the **Topic Management** page in the console. <br/>![](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png) |
 | group.id          | You can customize it. After the demo runs successfully, you can see the consumer on the **Consumer Group** page. |
 
-2.3 Create the configuration file loading program `CKafkaConfigurer.java`. 
+   2.3 Create the configuration file loading program `CKafkaConfigurer.java`. 
       ```
       public class CKafkaConfigurer {
       
@@ -125,7 +125,7 @@ Produce ok:ckafka-topic-demo-0@198
 Produce ok:ckafka-topic-demo-0@199
 ```
 4. On the **Topic Management** page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding topic and click **More** > **Message Query** to view the just sent message.
-   ![](https://main.qcloudimg.com/raw/ec5fbf218cf50ff3d760be15f6331867.png)
+   ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
 
 
 ### Step 3. Consume the message
@@ -192,4 +192,4 @@ Consume partition:0 offset:298
 Consume partition:0 offset:299
 ```
 4. On the **Consumer Group** page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding consumer group, enter the topic name in **Topic Name**, and click **Query Details** to view the consumption details.
-   ![](https://main.qcloudimg.com/raw/27775267907600f4ff759e6a197195ee.png)
+   ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
