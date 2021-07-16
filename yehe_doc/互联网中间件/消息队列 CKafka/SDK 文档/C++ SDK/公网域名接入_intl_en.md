@@ -343,8 +343,8 @@ gcc -lrdkafka ./producer.c -o producer
 
 | **Parameter** | **Description** |
 | :------- | ------------------------------------------------------------ |
-| broker | Accessed network, which can be copied from the **Network** column in the **Access Mode** section on the **Instance Details** page in the console. <br/>![img](https://main.qcloudimg.com/raw/c5cf200a66f6dcf627d2ca6f1c747ecf.png) |
-| topic             | Topic name, which can be copied from the **Topic Management** page in the console. <br/>![img](https://main.qcloudimg.com/raw/e7d353c89bbb204303501e8366f59d2c.png) |
+| broker | Accessed network, which can be copied from the **Network** column in the **Access Mode** section on the **Instance Details** page in the console. <br/>![img](https://main.qcloudimg.com/raw/afc2a197f4e0646f40aa6280c5f6414d.png) |
+| topic             | Topic name, which can be copied from the **Topic Management** page in the console. <br/>![img](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png) |
 | username | Username in the format of `instance ID` + `#` + `configured username`. The instance ID can be obtained in **Basic Info** on the **Instance Details** page in the CKafka console, and the username is set when the user is created on the **User Management** page in the console. |
 | password | Configured password, which is set when the user is created on the **User Management** page in the console. |
 
@@ -352,7 +352,7 @@ The execution result is as follows:
 <img src="https://main.qcloudimg.com/raw/610f4f54108504fc34888cdab0c3175f.jpg" width="600px">
 
 4. On the **Topic Management** page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding topic and click **More** > **Message Query** to view the just sent message.
-<img src="https://main.qcloudimg.com/raw/3224bd16d182ca02d3ce4e65e172b540.png" width="700px">
+<img src="https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png" width="700px">
 
 
 
@@ -670,14 +670,14 @@ gcc -lrdkafka ./consumer.c -o consumer
 
 | **Parameter** | **Description** |
 | :-------------- | ------------------------------------------------------------ |
-| broker | Accessed network, which can be copied from the **Network** column in the **Access Mode** section on the **Instance Details** page in the console. <br/>![img](https://main.qcloudimg.com/raw/c5cf200a66f6dcf627d2ca6f1c747ecf.png) |
+| broker | Accessed network, which can be copied from the **Network** column in the **Access Mode** section on the **Instance Details** page in the console. <br/>![img](https://main.qcloudimg.com/raw/afc2a197f4e0646f40aa6280c5f6414d.png) |
 | group.id          | Consumer group name. You can customize it. After the demo runs successfully, you can see the consumer on the **Consumer Group** page. |
 | username | Username in the format of `instance ID` + `#` + `configured username`. The instance ID can be obtained in **Basic Info** on the **Instance Details** page in the CKafka console, and the username is set when the user is created on the **User Management** page in the console. |
 | password |  Configured password, which is set when the user is created on the **User Management** page in the console. |
-| topic1 topic2.. | Topic name, which can be copied from the **Topic Management** page in the console. <br/>![img](https://main.qcloudimg.com/raw/e7d353c89bbb204303501e8366f59d2c.png) |
+| topic1 topic2.. | Topic name, which can be copied from the **Topic Management** page in the console. <br/>![img](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png) |
 
 The execution result is as follows:
 ![](https://main.qcloudimg.com/raw/4c2679cc3c9f2469760b087dbd469de7.jpg)
 
 4. On the **Consumer Group** page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding consumer group, enter the topic name in **Topic Name**, and click **Query Details** to view the consumption details.
-   ![](https://main.qcloudimg.com/raw/3020dcb5f8fd73e02949b20fef4f956f.png)
+   ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
