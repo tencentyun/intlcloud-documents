@@ -1,70 +1,77 @@
-### Prerequisites
+## Notes
+After you create a [transcoding template](https://intl.cloud.tencent.com/document/product/267/31071) and [bind](https://intl.cloud.tencent.com/document/product/267/31071#related) it with a playback domain name, you need to add the transcoding template name after the `StreamName` of the live stream with the transcoding configuration in the format of `StreamName_transcoding template name`. For details, see [Playback Configuration](https://intl.cloud.tencent.com/document/product/267/31058).
+
+## Prerequisites
 - You have signed up for a Tencent Cloud account and activated the [CSS service](https://intl.cloud.tencent.com/product/css).
-- You have your own domain name.
-- You have added push/playback domain names in the **CSS Console** > **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** and successfully configured the CNAME record. For detailed directions, please see [Adding Domain Names](https://intl.cloud.tencent.com/document/product/267/35970).
+- You have applied for a domain name through [Tencent Cloud Domain Service](https://dnspod.cloud.tencent.com/?from=qcloudProductDns).
+- You have added push/playback domain names in **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** of the CSS console and successfully configured the CNAME record. For detailed directions, please see [Adding Domain Names](https://intl.cloud.tencent.com/document/product/267/35970).
 
-<span id="push"></span>
-### Splicing Push URLs
-During actual service use, if there are many live rooms, you will not be able to manually create push and playback URLs for each host. In this case, you can **splice** such addresses on the server. Any URL that meets Tencent Cloud standards can be used for push. A standard push URL consists of four parts, as shown below:
-![](https://main.qcloudimg.com/raw/679602c838e8dfd3b61acefebb221d13.jpg)
-
+[](id:push)
+## Splicing Push URLs
+If you run a large number of live streaming rooms, it is impossible to manually generate a push and playback URL for each host. In such cases, you can use the server to automatically **splice** the addresses. Any URL that meets Tencent Cloud standards can be used for push. A standard push URL consists of four parts, as shown below:
+![](https://main.qcloudimg.com/raw/095b7c120b62ac8a171603d4fff67cb2.png)
 - **Domain**
-Push domain name, which can be the default push domain name provided by Tencent Cloud CSS or your own push domain name with a successfully configured CNAME record.
+Push domain name, which can be the default push domain name provided by Tencent Cloud CSS or a push domain name that you have added and created a CNAME record for.
 - **AppName**
-CSS application name, which is `live` by default and customizable.
+Live streaming application name, which is `live` by default and is customizable.
 - **StreamName (stream ID)**
-Custom stream name and unique ID of a live stream. We recommend you use a random numerical or alphanumerical string.
+Custom stream name, which is the unique ID of a live stream. We recommend that you use a random numeric or alphanumeric string for this parameter.
 - **Authentication key (optional)**
-It consists of `txSecret` and `txTime`: `txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)`.
-If push authentication is enabled, the URL used for push should contain the authentication key. If push authentication has not been enabled, the URL used for push does not need to contain "?" and the content following it.
- - **txTime (address expiration time)** 
-It indicates the time when the URL expires, which is expressed as a hexadecimal Unix timestamp.
-	
-	>?For example, `5867D600` indicates that the URL will expire at 00:00:00, January 1, 2017. Generally, `txTime` is set to 24 hours later. The expiration time should be neither too early nor too late. If it is too early, when the host encounters network jitters during live streaming, the push will not be resumed because the push URL will have expired.
+An authentication key consists of `txSecret` and `txTime`: `txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)`.
+If push authentication is enabled, the URL used for push must contain an authentication key. If push authentication is disabled, the push URL does not need to contain "?" and the content following it.
+ - **txTime (URL expiration time)** 
+The time when the URL expires, in the format of hexadecimal Unix timestamp.
+  >?For example, `5867D600` means that the URL expires at 00:00:00, January 1, 2017. The validity period should neither be too short nor too long. Most of our clients set `txTime` to a point 24 hours or longer from the current time. If the validity period is too short, after a host is disconnected due to network problems during a live broadcast, it may be impossible to resume the push due to expiration of the push URL.
  - **txSecret (hotlink protection signature)**
-It is used to prevent attackers from forging your backend to generate push URLs. For more information on the calculation method, please see [Best Practices - Hotlink Protection URL Calculation](https://intl.cloud.tencent.com/document/product/267/31560).
+The `txSecret` signature serves to prevent attackers from forging a backend to generate push URLs. For the calculation method, see [Best Practice - Hotlink Protection URL Calculation](https://intl.cloud.tencent.com/document/product/267/31560).
 
-<span id="play"></span>
-### Splicing Playback URLs
-A playback address is mainly composed of the playback prefix, playback domain name (`domain`), application name (`AppName`), stream name (`StreamName`), playback protocol suffix, authentication parameter, and other custom parameters, as shown below:	
+[](id:play)
+## Splicing Playback URLs
+A playback URL consists of a playback protocol prefix, domain name (`domain`), application name (`AppName`), stream name (`StreamName`), playback protocol suffix, authentication key, and other custom parameters. Below are a few examples. 
 
-```	
-http://domain/AppName/StreamName.flv?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time) 	
-rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)	
-http://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)	
+``` 
+webrtc://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
+http://domain/AppName/StreamName.flv?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
+rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
+http://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 ```
 
-- **Playback prefix**	
+- **Playback prefix**  
 <table>
     <tr><th>Playback Protocol</th><th>Playback Prefix</th><th>Notes</th></tr>
-    <tr>
-        <td>RTMP</td>
-        <td><code>rtmp://</code> </td>
-        <td>We do not recommend RTMP as it has poor instant streaming performance and does not support high concurrence.</td>
+		<tr>
+        <td>WebRTC</td>
+        <td><code>webrtc://</code> </td>
+        <td>We recommend WebRTC most as it has the best instant streaming performance and supports ultra-high concurrency.</td>
     </tr><tr>
-        <td>HTTP-FLV</td>
-				<td><code>http://</code> or <code>https://</code></td>
-        <td>We recommend HTTP-FLV as it has good instant streaming performance and supports high concurrence.</td>
+        <td>HTTP-FLV </td>
+        <td><code>http://</code> or <code>https://</code></td>
+        <td>We recommend HTTP-FLV as it has good instant streaming performance and supports high concurrency.</td>
+    </tr><tr>
+				<td>RTMP</td>
+        <td><code>rtmp://</code> </td>
+        <td>We do not recommend RTMP as it has poor instant streaming performance and does not support high concurrency.</td>
     </tr><tr>
         <td>HLS (M3U8)</td>
         <td><code>http://</code> or <code>https://</code></td>
-        <td>We recommend HLS for mobile users and for the Safari browser on macOS.</td>
+        <td>We recommend HLS for mobile clients and for the Safari browser on macOS.</td>
     </tr>
 </table>
-- **Domain**	
-	Playback domain name, which should be your own domain name with a successfully configured CNAME record.
-- **AppName**	
-  CSS application name used to identify the storage path of a live streaming media file. The CSS application name is `live` by default and customizable.
-- **StreamName (stream name)<span id="streamname"></span>**	
-  Custom stream name and unique ID of a live stream. We recommend you use a random numerical or alphanumerical string.
-- **Authentication parameters (optional)**	
-	It consists of `txSecret` and `txTime`: `txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)`.
-If playback authentication is enabled, the URL used for playback should contain the authentication key. If playback authentication has not been enabled, the URL used for playback does not need to contain "?" and the content following it.
- - **txTime (address validity period):** indicates the time when the URL expires, which is expressed as a hexadecimal Unix timestamp.
- - **txSecret (hotlink protection signature):** used to prevent attackers from forging your backend to generate playback URLs. For more information on the calculation method, please see [Best Practices - Hotlink Protection URL Calculation](https://intl.cloud.tencent.com/document/product/267/31560).
+- **Domain**  
+  Playback domain name, a domain name you have added and created a CNAME record for.
+- **AppName** 
+  Live streaming application name used to identify the storage path of a live streaming media file. The application name is `live` by default and customizable.
+- **StreamName (stream name)[](id:streamname)**  
+  Custom stream name, which is the unique ID of a live stream. We recommend you use a random numerical or alphanumerical string.
+- **Authentication key (optional)** 
+  An authentication key consists of `txSecret` and `txTime`: `txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)`.
+If playback authentication is enabled, the URL used for playback must contain an authentication key. If it is disabled, the playback URL does not need to contain "?" and the content following it.
+ - **txTime (address expiration time):** the time when the URL expires, in the format of hexadecimal Unix timestamp.
+ - **txSecret (hotlink protection signature):** it serves to prevent attackers from forging a backend to generate playback URLs. For the calculation method, see [Best Practice - Hotlink Protection URL Calculation](https://intl.cloud.tencent.com/document/product/267/31560).
 
 
-<span id="push_code"></span>
-### Viewing Sample Push Codes
-Go to the **CSS Console** > **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**, select a pre-configured push domain name, and click **Manage** > **Push Configuration** to display the **Push Address Sample Code** (for both PHP and Java) that demonstrates how to generate a hotlink protection address. For detailed directions, please see [Push Configuration](https://intl.cloud.tencent.com/document/product/267/31059).
+[](id:push_code)
+## Viewing Sample Push Codes
+Go to **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)** of the CSS console, select a pre-configured push domain name, and click **Manage** > **Push Configuration** to display the **Push Address Sample Code** (for both PHP and Java) that demonstrates how to generate a hotlink protection address. For detailed directions, please see [Push Configuration](https://intl.cloud.tencent.com/document/product/267/31059).
+
 

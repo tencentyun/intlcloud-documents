@@ -1,70 +1,106 @@
-<span id="Que1"></span>
-### What are the differences between push, live streaming, and VOD?
-- **Push**: this refers to the process in which the host pushes local video and audio sources to Tencent Video Cloud servers. It is also known as "RTMP publishing" in some cases.
-- **Live streaming**: CSS video source is generated in real time. It is only meaningful if someone pushes a live stream. Once the host stops streaming, the live streaming URL will become invalid, and since the live streams are played back in real time, no progress bar will be displayed on the player during the playback.   
-- **VOD**: a video source in VOD is a file in the cloud, which can be played back at any time as long as it is not deleted by the provider (such as Youku Tudou, iQIYI, and Tencent Video). Since the entire video file is stored on the server, a progress bar will be displayed during the playback.
+[](id:Que1)
+### What are push, live streaming, and video on demand?
+- **Push**: the process of hosts pushing local video and audio to Tencent Video Cloud servers. It is called "RTMP publishing" in some scenarios.
+- **Live streaming**: live streaming generates video streams in real time. It works only if someone is pushing live streams. A live streaming URL becomes invalid the moment the host stops pushing streams. Because live streams are played back in real time, viewers cannot see a progress bar during live streaming.   
+**Video on demand (VOD)**: VOD allows you to play files in the cloud. A file can be played at any time unless it is deleted by its provider (e.g., Tencent Video). Because videos are already stored in the server, viewers can see a progress bar during playback.
 
-<span id="Que2"></span>
-### What are the requirements for a playback domain name in CSS?	
-You need to apply for an ICP filing for your domain name for service in Chinese mainland before submitting it to the console for management. The domain name can contain up to 29-bit characters and cannot contain uppercase letters.
+[](id:Que2)
+### What are the requirements for a playback domain name in CSS?   
+The domain name can contain up to 29 characters and cannot contain uppercase letters. For more information, please see [Adding Domain Name](https://intl.cloud.tencent.com/document/product/267/35970).
 
-<span id="Que3"></span>
-### Can the playback and push domain names in CSS be the same? Can I use second-level domain names for them?
-The connected playback and push domain names must be different, but they can be distinguished between with second-level domain names.
-For example, `123.abc.com` can be used as the push domain name, while `456.abc.com` the playback domain name.
+[](id:Que3)
+### Can I use the same domain name for playback and push? Can I use second-level domain names?
+You must use different domain names for playback and push, but you can use the same second-level domain to indicate that the stream is the same.
+For example, you can use `123.abc.com` for push, and `456.abc.com` for playback.
 
 
-<span id="Que4"></span>
-### What push protocols are supported?
-Although RTMP is not commonly used in live streaming, it is dominant in push service (pushing data from "host" to "server"). Most Chinese video cloud services use RTMP as the main push protocol. MLVB SDK's first module is host push, so the SDK is also called RTMP SDK.
+[](id:Que4)
+### What push protocols can I use?
+RTMP may not be a widely adopted protocol for live streaming, but it is the most common protocol used for stream pushing (pushing data from hosts to servers). Most video cloud services in the Chinese mainland use RTMP as their main push protocol. The MLVB SDK is also called RTMP SDK because its first feature module is stream publishing.
 
-<span id="Que5"></span>
-### What playback protocols are supported?
-Three live streaming protocols are commonly used: RTMP, FLV, and HLS.
-- **RTMP**: the RTMP protocol can be used for both push and live streaming. It involves breaking large video and audio frames into smaller fragments and transmitting them as small packets over the internet. RTMP supports encryption and thus ensures privacy. However, its complicated fragmentation and reassembling process brings about some unforeseeable stability issues in high-concurrency scenarios. 
-- **FLV**: the FLV protocol is mainly implemented by Adobe. It simply places header information into large video and audio frame headers. This simplicity makes it a sophisticated format in terms of delay control and high-concurrency performance. Its only disadvantage is the limited capability on mobile browsers. However, it is especially suitable for live streaming on mobile apps.  
-- **HLS**: this solution is provided by Apple. It divides a video into video segments of 5–10s in length and then manages them with an m3u8 index table. As the video segments downloaded by the client contain full data of 5–10s, video playback can be very smooth. However, this causes a high delay (about 10–30s in general). Compared with FLV, HLS features better compatibility with iPhone and most Android browsers, so it is often used for URL-based sharing on QQ and WeChat Moments.
+[](id:Que5)
+### What playback protocols can I use?
+Common live streaming protocols include RTMP, HTTP-FLV, HLS, and WebRTC.
+- **RTMP** can be used for both live push and live playback. It works by splitting long video and audio chunks into short fragments and transporting them as small data packets over the internet. RTMP supports encryption and therefore ensures privacy. However, the complicated splitting and splicing processes add uncertainty to the stability of data transmission in high concurrency scenarios. 
+- **HTTP-FLV** is developed by Adobe Systems and is a rather simple video format. It works by adding a header to large video and audio data chunks. This simplicity makes it superb in delay control and high-concurrency performance. The only drawback is that HTTP-FLV is poorly supported on mobile browsers, but it is an ideal option for mobile apps.  
+- **HLS** is released by Apple. It splits video streams into segments of 5-10s and manages them using M3U8 playlists. The protocol ensures smooth playback as clients download data chunks of 5-10s. However, it comes with high latency of about 10-30s. Unlike HTTP-FLV, HLS is well supported on iPhone and most Android browsers and is therefore often used for URL sharing on QQ and WeChat Moments. 
+- **WebRTC** is short for Web Real-Time Communication. It is an API that allows real-time audio/video calls on web browsers. Supported by Google, Mozilla, and Opera, WebRTC specifications were published by the World Wide Web Consortium (W3C) on June 1, 2011. WebRTC is adopted by LEB, which is an ultra-low-latency version of LVB and offers streaming with millisecond latency. It is suitable for scenarios with high requirements on latency, such as online education, sports streaming, and online quizzes.
 
-| Live Streaming Protocol | Advantage | Disadvantage | Playback Delay |
+|Protocol|Pro|Con|Playback Latency|
 |::|::|::|::|
-| FLV | High maturity and performance in high-concurrency scenarios | SDK integration is required for playback | 2–3s |
-| RTMP | Lowest delay on high-quality connections in theory | Poor performance in high-concurrency scenarios | 1–3s |
-| HLS (m3u8) | Highest compatibility with mobile browsers | Extremely high delay |10–30s|
+| HTTP-FLV | Mature, suited for high-concurrency scenarios | SDK integration is required. | 2-3s |
+|RTMP|Relatively low latency|Poor performance in high-concurrency scenarios |1-3s |
+| HLS (M3U8) | Well supported on mobile browsers | High latency |10-30s|
+|WebRTC |Lowest latency |SDK integration is required. |< 1s |
 
-<span id="Que6"></span>
-### What does a playback address consist of?
-A Tencent Cloud playback address is mainly composed of playback prefix, playback domain name (`domain`), application name (`AppName`), stream name (`StreamName`), playback protocol suffix, authentication parameter, and other custom parameters as shown below:
+[](id:Que6)
+### What is the format of a playback URL?
+A Tencent Cloud playback URL consists of a playback protocol prefix, domain name (`domain`), application name (`AppName`), stream name (`StreamName`), playback protocol suffix, authentication key, and other custom parameters. Below are examples:
 ```
 rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 http://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 http://domain/AppName/StreamName.flv?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 https://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 https://domain/AppName/StreamName.flv?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
+webrtc://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 ```
-- **Playback prefix**
-RTMP playback protocol: **rtmp://**.
-HTTP-FLV playback protocol: **http://** or **https://**.
-HLS playback protocol: **http://** or **https://**.
-
+- **Prefix**
+RTMP: **rtmp://**
+HTTP-FLV: **http://** or **https://**
+HLS: **http://** or **https://**
+WebRTC: **webrtc://**
 - **Application name (`AppName`)**
-Application name refers to the storage path of a live streaming media file. By default, CSS assigns a unified path: **live**.
-
-- <span id="streamname">**Stream name (`StreamName`)**</span>
-Stream name (`StreamName`) is the unique identifier of a live stream.
-
-- **Authentication parameter and other custom parameters**
-Authentication parameter: **txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)**.
+Application name specifies the storage path of a live streaming file. It is **live** by default.
+- [](id:streamname">**stream name (`StreamName`)**</span>
+Stream name (`StreamName`) uniquely identifies a live stream.
+- **Authentication key and other custom parameters**
+Authentication key: **txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)**.
 
 
-<span id="Que7"></span>
-### What are common push methods?
-- **Camera on Android/iOS devices**: use third-party software or MSDK to capture camera video and push the video stream to the push address.
-- **Camera or screencapturing tool on desktops/laptops**: use third-party software to capture camera video or screen and push the video or screen content to the push address. Third-party push applications include [OBS (recommended)](https://intl.cloud.tencent.com/document/product/267/31569), XSplit, FMLE, etc.
-- **Video capturing device**: if an HD camcorder has an HDMI or SDI output interface, it can be connected to an encoder to push live content to CSS through RTMP push. You need to configure the push address as the RTMP publishing address of the encoder.
-For a webcam, if it supports RTMP push, you can configure the live push address as its RTMP publishing address.
-- **Video file converted to video stream**: read a video file and use RTMP stream output as a video source to push the video to the RTMP push address of CSS for video publishing. This can be done with the `ffmpeg` command (which works on Windows, Linux, and macOS).
+[](id:Que7)
+### What are the common push methods?
+- **Camera on Android/iOS devices**: use third-party software or the [MLVB SDK](https://cloud.tencent.com/product/mlvb) to capture camera video and push the video stream to your push URL.
+- **Camera or screen recorder on PCs**: use third-party software to capture camera video or record the screen and then push the data to your push URL. Such third-party software includes [OBS (recommended)](https://intl.cloud.tencent.com/document/product/267/31569), XSplit, FMLE, etc.
+- **Video capturing device**: connect an HD camcorder with HDMI or SDI output to an encoder and push RTMP streams to live streaming applications. You need to set the RTMP publishing address of the encoder to your push URL.
+If you use a webcam that supports RTMP, you can also set the RTMP publishing address of the webcam to your push URL.
+- **Converting video files to video streams**: read video files and push them as RTMP streams to your RTMP push URL. This can be achieved using the `FFmpeg` command, which works on Windows, Linux, and macOS.
 
-<span id="Que8"></span>
-### What are the differences between stream interruption and stream forbidding?
-- **Stream interruption**: if a stream that is being streamed is interrupted, the push will stop, and viewers will be unable to watch the stream. When a stream interruption occurs, the host can initiate the push again to resume the stream.
-- **Stream forbidding**: if a stream that is being streamed is forbidden, the push will stop, and viewers will be unable to watch the stream. When a stream forbidding occurs, the host cannot initiate the push again during the forbidding duration. The stream forbidding feature can be configured on the stream management page in the CSS console. The forbidden stream will be displayed in the forbidden stream list, and it can be recovered by clicking **Enable**.
+[](id:Que8)
+### What are the differences between stream interruption and stream suspension?
+- **Stream interruption**: if a live stream is interrupted, the push will stop, and viewers will be unable to watch the stream. However, the host can start the push again to resume live streaming.
+- **Stream disabling**: if a live stream is disabled, the push will stop, and viewers will be unable to watch the stream. The host cannot start the push again. You can disable a stream on the stream management page of the CSS console. Disabled streams can be found in the list of disabled streams. You can click **Enable** to enable a disabled stream.
+
+[](id:Que9)
+  
+  
+ 
+
+[](id:Que10)
+### Can I enable text chat for live streaming?
+Yes. You can use the Instant Messaging (IM) component to realize text chat for live streaming. In addition, IM provides on-screen comments, likes, gifts, repeat notifications and other interactive features. You can also use the room management feature to realize co-anchoring, manage user identities and the permission to mute members, among others.
+
+[](id:Que11)
+### Can I activate CSS with a new account after using the service? 
+Any account can activate CSS as long as it has completed identify verification. 
+>
+
+
+
+[](id:Que13)
+ 
+ 
+
+
+
+[](id:Que15)
+
+### Is CSS a software?
+ No. CSS provides APIs for you to develop live streaming applications. 
+
+[](id:Que16)
+### How do I get the number of live streaming viewers?
+You can call the CSS v3.0 API [DescribeStreamPlayInfoList](https://intl.cloud.tencent.com/document/product/267/37297) to get the number of online viewers.
+
+
+
+

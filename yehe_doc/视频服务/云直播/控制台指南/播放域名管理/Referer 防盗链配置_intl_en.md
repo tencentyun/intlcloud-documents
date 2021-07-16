@@ -5,13 +5,13 @@ You can set referer blocklist/allowlist and rules to block/allow playback reques
 Referer URL supports HTTP protocol. CSS uses the referer field in an HTTP request to identify the source and verify the request, and then determine whether to accept or reject the request.
 
 ## Notes
-- Referer information is included in HTTP requests. After you enable referer configuration, live streams cannot be played back using RTMP, and the configuration is invalid for LEB streams as they do not verify referer configuration. If you are to configure the referer information, the FLV or HLS protocol is recommended for playback.
+- Referer information is included in HTTP requests. Therefore, referer configuration is ineffective for non-HTTP (such as RTMP, WebRTC, QUIC) requests. If you want to restrict the access of RTMP requests, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 - Enabling, disabling, or modifying the referer takes effects in 15-20 minutes after the configuration. You don't need to push again.
 
 ## Prerequisites
 
 - You have activated CSS service and logged in to the [CSS console](https://console.cloud.tencent.com/live/livestat).
-- You have added a [playback domain name](https://intl.cloud.tencent.com/document/product/267/35970).
+- You have [added a playback domain name](https://intl.cloud.tencent.com/document/product/267/35970).
 
 
 [](id:open)
@@ -43,8 +43,8 @@ Referer URL supports HTTP protocol. CSS uses the referer field in an HTTP reques
 <td><ul style="margin:0">
 <li>You can enter up to <b>100</b> patterns. Please separate them with line breaks.</li>
 <li>You can enter <b>IPs</b> or <b>domain names</b>. The field supports path prefixes (domain names and IPs) and wildcards (domain names) for match. For example:<ul>
-<li/>If you enter <code>`101.1.0.1`</code> and <code>`www.test.com`</code>, the configuration will take effect for both <code>`101.1.0.1/157`</code> and <code>`www.test.com/tencent`</code>.
-<li/>If you enter <code>`*.test.com`</code>, the configuration will take effect for both <code>`www.test.com`</code> and <code>`a.test.com`</code>.</ul></li>
+<li/>If you enter <code>101.1.0.1</code> and <code>www.test.com</code>, the configuration will take effect for both <code>101.1.0.1/157</code> and <code>www.test.com/tencent</code>.
+<li/>If you enter <code>*.test.com</code>, the configuration will take effect for both <code>www.test.com</code> and <code>a.test.com</code>.</ul></li>
 <li>If you enter no referer pattern, the blocklist/allowlist is not configured.</li>
 </ul></td>
 </tr></table>
@@ -68,7 +68,7 @@ After [enabling the referer](#open), you can disable it by performing the follow
 3. Click ![](https://main.qcloudimg.com/raw/e72f89a0deb6858428dc3e93ce7e7088.png) to disable the referer.
 4. Click **Save**.
 
-![](https://main.qcloudimg.com/raw/eb36bc40cca9f19e198fc742256fed21.png)
+![](https://main.qcloudimg.com/raw/eb36bc40cca9f19e198fc742256fed21.png))
 
 
 
