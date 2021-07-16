@@ -19,10 +19,6 @@ The price of audio calls is listed below:
 |Audio duration|0.99|
 
 <span id="Billing_method"></span>
-## Billing Mode
-TRTC supports two billing modes: **prepaid packages** (default) and **pay-as-you-go**. You will be switched to the pay-as-you-go mode automatically after your prepaid package is exhausted or expires. You cannot switch to the pay-as-you-go mode by yourself.
-
-
 
 <span id="pre-payment"></span>
 ### Prepaid packages
