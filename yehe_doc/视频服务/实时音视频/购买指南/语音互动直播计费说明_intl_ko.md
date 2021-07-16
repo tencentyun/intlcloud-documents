@@ -21,10 +21,6 @@ TRTC는 [방](https://intl.cloud.tencent.com/document/product/647/37714) 안의 
 |---|---|
 |음성|0.99|
 
-<span id="Billing_method"></span>
-## 과금 방식
-TRTC 결제 방식에는**선불 패키지**와 **후불**이 있습니다. 기본적으로 선불 패키지를 적용하며, 후불은 구매한 패키지가 소진되거나 기간이 만료된 경우 자동 활성화됩니다(수동 활성화 불가).
-
 <span id="pre-payment"></span>
 ### 선불 패키지
 
