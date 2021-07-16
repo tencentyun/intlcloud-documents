@@ -381,6 +381,7 @@ __介绍__
 |  V2TXLivePixelFormatTexture2D | OpenGL 2D 纹理。 |
 
 [](id:V2TXLiveBufferType)
+
 #### V2TXLiveBufferType 枚举值
 | 取值 | 说明 |
 |---------|---------|
@@ -541,8 +542,9 @@ __介绍__
 
 ### setMixTranscodingConfig
 设置云端的混流转码参数。如果您在 [实时音视频控制台](https://console.cloud.tencent.com/trtc/) 中的功能配置页开启了“启用旁路推流”功能，每一路画面都会有一个默认的直播 [CDN 地址](https://intl.cloud.tencent.com/document/product/647/35242)。一个直播间中可能有不止一位主播，而且每个主播都有自己的画面和声音，但对于 CDN 观众来说，他们只需要一路直播流，所以您需要将多路音视频流混成一路标准的直播流，这就需要混流转码。
-```
-- (V2TXLiveCode)setMixTranscodingConfig:(V2TXLiveTranscodingConfig *)config
+
+
+
 ```
 #### 参数
 
@@ -550,13 +552,6 @@ __介绍__
 |-----|-----|-----|
 | config | V2TXLiveTranscodingConfig * | 云端混流（转码）配置。 |
 
-#### V2TXLiveTranscodingConfig 
-| 取值 | 说明 |
-|---------|---------|
-| V2TXLiveBufferTypeUnknown | 未知。 |
-| V2TXLiveBufferTypeByteBuffer|  DirectBuffer，装载 I420 等 buffer，在 native 层使用。 |
-| V2TXLiveBufferTypeByteArray|  byte[]，装载 I420 等 buffer，在 Java 层使用。 |
-| V2TXLiveBufferTypeTexture| 直接操作纹理 ID，性能最好，画质损失最少。 |
 
 ***
 
@@ -572,3 +567,5 @@ __介绍__
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | isShow | BOOL | 是否显示，默认值：NO。 |
+
+```
