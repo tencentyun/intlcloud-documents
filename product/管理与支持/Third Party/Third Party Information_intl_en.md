@@ -17,7 +17,7 @@ Your Content (see [Data Processing and Security Addendum](https://intl.cloud.ten
 | Tencent Europe B.V.                        | Data center services and infrastructure |
 | Tencent (Thailand) Company Limited         | Data center services and infrastructure |
 | Glorybird India Private Limited            | Data center services and infrastructure |
-| ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ   | Data center services and infrastructure |
+| Общество с ограниченной ответственностью «Кайт Бёрд АР»   | Data center services and infrastructure |
 | Kite Bird Korea Yuhan Hoesa                | Data center services and infrastructure |
 | Tencent Japan GK                           | Data center services and infrastructure |
 | PETRICHOR TELECOMUNICAÇÕES BRASIL LIMITADA | Data center services and infrastructure |
@@ -27,10 +27,11 @@ Your Content (see [Data Processing and Security Addendum](https://intl.cloud.ten
 | Kite Bird South Africa (Pty) Ltd           | Data center services and infrastructure |
 | RADWARE China Ltd.                         | Anti-DDOS                               |
 
-Admin Data ([Privacy Policy](https://intl.cloud.tencent.com/document/product/301/17345) for more detail)
+Administrative Information ([Privacy Policy](https://intl.cloud.tencent.com/document/product/301/17345) for more detail)
 
 | Entity                                | Purpose                    |
 | ------------------------------------- | -------------------------- |
 | Tencent Computing (Beijing) Co., Ltd. | Providing back-end support |
 | Paypal Inc.                           | Payment processor          |
-| salesforce.com, inc.                  | Customer support           |
+| Frensworkz Software Technology Co., Limited               | Backend support |
+| Salesforce.com Singapore Pte. Ltd                 | Customer support           |
