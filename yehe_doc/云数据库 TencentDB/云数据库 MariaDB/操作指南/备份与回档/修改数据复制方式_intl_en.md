@@ -13,7 +13,7 @@ To address this problem, TencentDB provides a scheme where the strong sync mecha
 ## Modifying Data Replication Mode
 >?The one-primary-one-replica architecture of TencentDB for MariaDB provides only two schemes: strong sync (downgradable) replication and async replication. If data consistency is required, please purchase the three-node edition with one primary and two replicas.
 
-1. Log in to the [TencentDB for MariaDB console](https://console.cloud.tencent.com/mariadb), click an instance ID/name in the instance list, and enter the instance details page.
+1. Log in to the [TencentDB for MariaDB console](https://console.cloud.tencent.com/mariadb), click an instance ID in the instance list, and enter the instance details page.
 2. Click the edit icon next to **Data Replication Mode** in the **Availability Info** section.
 >?The modification will not affect normal operations of the instance and will take effect in up to five seconds.
 >
