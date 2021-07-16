@@ -82,8 +82,8 @@ module.exports = {
 
 | 参数              | 描述                                                         |
 | ----------------- | ------------------------------------------------------------ |
-| bootstrap_servers | 接入网络，在控制台的实例详情页面【接入方式】模块的网络列复制。<br/>![img](https://main.qcloudimg.com/raw/88b29cffdf22e3a0309916ea715057a1.png) |
-| topic_name        | Topic名称，您可以在控制台上【topic管理】页面复制。<br/>![img](https://main.qcloudimg.com/raw/e7d353c89bbb204303501e8366f59d2c.png) |
+| bootstrap_servers | 接入网络，在控制台的实例详情页面【接入方式】模块的网络列复制。<br/>![img](https://main.qcloudimg.com/raw/6b12eca18662d26a334d55b743c825ef.png) |
+| topic_name        | Topic名称，您可以在控制台上【topic管理】页面复制。<br/>![img](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png) |
 | group_id          | 您可以自定义设置，Demo 运行成功后可以在【Consumer Group】页面看到该消费者。 |
 
 ### 步骤四：发送消息
@@ -171,7 +171,7 @@ const Kafka = require('node-rdkafka');
    ![](https://main.qcloudimg.com/raw/195f4aee06ba86755407b4a75812c256.png)
 
 4. 在 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)【topic管理】页面，选择对应的 Topic，单击【更多】>【消息查询】，查看刚刚发送的消息。
-   ![](https://main.qcloudimg.com/raw/e20a0809942f90e0efd5fd1f217574b0.png)
+   ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
 
 ### 步骤五：订阅消息
 
@@ -235,4 +235,4 @@ const Kafka = require('node-rdkafka');
    ![](https://main.qcloudimg.com/raw/deecbf58c00e07531b4ea703c4046b46.png)
 
 4. 在 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)【Consumer Group】页面，选择对应的消费组，在主题名称输入 Topic 名称，单击【查询详情】，查看消费详情。
-   ![](https://main.qcloudimg.com/raw/3020dcb5f8fd73e02949b20fef4f956f.png)
+   ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
