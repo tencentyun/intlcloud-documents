@@ -2,17 +2,17 @@
 
 ### GitHub Actions
 
-ワールドクラスのCI/CDツールを統合することで、ユーザーがGithubのworkflowを簡単に使用できるようにします。[公式ドキュメント](https://docs.github.com/en/actions)を参照すれば、ご自分で学べます。
+ワールドクラスのCI/CDツールを統合することで、ユーザーがGithubのworkflowを簡単に使用できるようにします。GitHub Actionsの詳細は[Github Actionsドキュメント](https://docs.github.com/en/actions)をご参照ください。
 
 > GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD.
 
 ### TEMでサポートされているアプリケーションのパブリッシュタイプ
 
-TEMプラットフォームはCloud Nativeをインフラストラクチャとし、すべてのアプリケーションはruntimeのときにContainer形式で存在します。TEMはjavaアプリケーション用として、JAR、WARパッケージのパブリッシュをサポートしており、プラットフォームはImageのビルドと管理を担当します。これ以外のその他言語では、独自のImageをビルドして、Tencent Cloudのイメージレジストリにプッシュする必要があります。
+TEMプラットフォームはCloud Nativeをインフラストラクチャとし、すべてのアプリケーションはruntimeのときにContainer形式で存在します。javaアプリケーションの場合、TEMはJAR、WARパッケージのパブリッシュをサポートしており、プラットフォームはImageのビルドと管理を担当します。これ以外のその他言語では、独自のImageをビルドして、Tencent Container Registryにプッシュする必要があります。
 
 ### 利用方法
 
-.Netを例として、基本的なGitHub Actionsの利用方法を示します
+下記は.Netの例で、基本的なGitHub Actionsの利用方法を示します
 
 ```yaml
 name: .NET
@@ -56,7 +56,7 @@ jobs:
           tags: ccr.ccs.tencentyun.com/han_test/my-web-app:${{ steps.vars.outputs.sha_short }}
 ```
 
-1. 顧客は、コードレジストリ内にdockerfileファイルを含めて、ビルドされたactionに使用する必要があります
+1. ビルドされたactionに使用するために、ソースコードレジストリ内にdockerfileファイルを用意する必要があります。
 
    ```yaml
    FROM mcr.microsoft.com/dotnet/aspnet:5.0
@@ -65,13 +65,13 @@ jobs:
    ENTRYPOINT ["dotnet", "myWebApp.dll"]
    ```
 
-2. ここではcommitIdがミラーリングされたtagとなるため、runtimeアプリケーションコードのバージョンを確認するのに便利です。必要がない場合は、latestイメージのバージョンをそのまま使用できます
+2. runtimeアプリケーションコードのバージョンを確認するために、ここではイメージのtagをcommitIdにとします。必要がない場合は、latestイメージのバージョンをそのまま使用できます
 
    ```bash
    git rev-parse --short HEAD
    ```
 
-3. Tencent Cloudの[パーソナル版イメージレジストリ](https://console.cloud.tencent.com/tke2/registry/user/self?rid=1)には、ユーザーのログイン情報が必要です。パーソナル版ページを初めて開くと、アカウント情報が自動的にポップアップ表示されます。エンタープライズ版と同様に、クラウド上で関連ドキュメントをご自分で探すことができます
+3. Tencent Container Registry[パーソナル版](https://console.cloud.tencent.com/tke2/registry/user/self?rid=1)には、ユーザーのログイン情報の設定が必要です。パーソナル版ページを開くと、アカウント情報が自動的にポップアップ表示されます。エンタープライズ版と同様に、関連ドキュメントをご確認ください。
 
    ```yaml
          - name: Login to Registry
@@ -82,7 +82,7 @@ jobs:
              password: ${{ secrets.REGISTRY_TOKEN }}
    ```
 
-4. 関連する秘密鍵は、レジストリ設定ページのSecretsを使用して管理できます
+4. 秘密鍵には、レジストリ設定ページのSecretsをご利用ください。
    ![](https://main.qcloudimg.com/raw/de0b2cc6f187ce140f7d132d638d8849.png)
 
 
