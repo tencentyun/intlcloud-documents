@@ -9,10 +9,12 @@
 ## 安装步骤
 
 1. 创建 ufs 目录，将本机目录挂载到 GooseFS 根目录：
+
 ```shell
 mkdir /tmp/goosefs_ufs 
 ```
 2. 启动 master 进程：
+
 ```shell
 docker run -d  --rm \
 --net=host \
@@ -23,6 +25,7 @@ docker run -d  --rm \
 -Dgoosefs.master.mount.table.root.ufs=/opt/data" \
 goosefs:v1.0.0 master
 ```
+
  <dx-alert infotype="explain" title="说明">
 - goosefs.master.hostname：设置 master 地址。
 - goosefs.master.mount.table.root.ufs：设置 GooseFS 根目录挂载点。
@@ -54,6 +57,7 @@ b6260f9a0134        goosefs:v1.0.0     "/entrypoint.sh work…"   About an hour 
 docker exec -it 0bda1cac76f4 /bin/bash
 ```
 3. 挂载 COS 目录：
+
 ```shell
 goosefs fs mount --option fs.cosn.userinfo.secretId={secretId} \
     --option fs.cosn.userinfo.secretKey={secretKey} \
@@ -63,12 +67,14 @@ goosefs fs mount --option fs.cosn.userinfo.secretId={secretId} \
     /cosn {cos桶}
 ```
 4. 查看目录：
+
 ```shell
 [goosefs@VM-0-7-centos goosefs-1.0.0-SNAPSHOT-noUI-noHelm]$ goosefs fs ls /
 drwxrwxrwx  goosefs        goosefs                      1       PERSISTED 01-01-1970 08:00:00:000  DIR /cosn
 drwxr-xr-x  root           root                         0       PERSISTED 06-25-2021 11:01:24:000  DIR /my 
 ```
 5. 查看 worker 节点：
+
 ```shell
 
  [goosefs@VM-0-7-centos goosefs-1.0.0-SNAPSHOT-noUI-noHelm]$ goosefs fsadmin report capacity
