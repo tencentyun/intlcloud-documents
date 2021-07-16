@@ -50,12 +50,6 @@
 |高清 HD|3.99|
 |超清 HD+|14.99|
 
-<span id="Billing_method"></span>
-## 计费方式
-即支付方式，TRTC 支持**预付费套餐包**和**后付费**，默认采用预付费套餐包，后付费只能通过购买的套餐包消耗完或过期后自动开通，无法直接开通。
-
-<span id="pre-payment"></span>
-### 预付费套餐包
 
 TRTC 为您提供音视频通用套餐包，可按照**1:2:4:15**分别抵扣语音、标清 SD、高清 HD 和超清 HD+ 时长，例如1分钟高清视频时长扣除4分钟通用套餐包时长。
 通用套餐包定价如下表所示：
@@ -246,3 +240,4 @@ TRTC 后付费有 [日结](#daily) 和 [月结](#monthly) 两种结算周期：
 - [云端混流转码计费说明](https://intl.cloud.tencent.com/document/product/647/38929)
 - [购买指引](https://intl.cloud.tencent.com/document/product/647/35440)
 - [计费常见问题](https://intl.cloud.tencent.com/document/product/647/39789)
+v
