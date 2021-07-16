@@ -23,7 +23,7 @@ This document describes how to join a meeting from browser.
 There are two ways to join a meeting from browser:
 
 1. Open the meeting link in browser and Click **Join From Browser** to join the meeting.
-2. Open the link “https://voovmeeting.com/r” in browser, enter meeting ID and click **Join Meeting**.
+2. Open the link “https://voovmeeting.com/user-center/join” in browser, enter meeting ID and click **Join Meeting**.
 
 
 ## **During the Meeting**
