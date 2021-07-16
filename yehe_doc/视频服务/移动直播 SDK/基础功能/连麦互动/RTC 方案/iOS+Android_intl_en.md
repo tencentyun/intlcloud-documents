@@ -45,7 +45,7 @@ Before you start ultra-low-latency playback, follow the steps bellow to activate
 >- The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, see [How do I calculate UserSig on the server?](https://intl.cloud.tencent.com/document/product/647/35166).
 
 > ? After activating TRTC, you are advised to compile the SimpleCode (a simplified demo) we provide to try out the service and learn to use the demo’s APIs with the help of the following documents.
-> - [Android](https://github.com/tencentyun/MLVBSDK/tree/master/Android/SimpleDemo)
+> - [Android](https://github.com/tencentyun/LiteAVProfessional_Android)
 > - [iOS](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/SimpleDemo)
 
 ### Step 2. Learn about publishing and playback protocols.
