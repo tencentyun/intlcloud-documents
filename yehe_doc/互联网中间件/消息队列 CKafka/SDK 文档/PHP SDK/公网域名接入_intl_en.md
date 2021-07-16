@@ -46,10 +46,10 @@ return [
 
 | Parameter | Description |
 | ------------------ | ------------------------------------------------------------ |
-| bootstrap_servers | Accessed network, which can be copied from the **Network** column in the **Access Mode** section on the **Instance Details** page in the console. <br/>![img](https://main.qcloudimg.com/raw/c5cf200a66f6dcf627d2ca6f1c747ecf.png) |
-| topic_name          | Topic name, which can be copied from the **Topic Management** page in the console. <br/>![img](https://main.qcloudimg.com/raw/e7d353c89bbb204303501e8366f59d2c.png) |
+| bootstrap_servers | Accessed network, which can be copied from the **Network** column in the **Access Mode** section on the **Instance Details** page in the console. <br/>![img](https://main.qcloudimg.com/raw/afc2a197f4e0646f40aa6280c5f6414d.png) |
+| topic_name          | Topic name, which can be copied from the **Topic Management** page in the console. <br/>![img](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png) |
 | group_id          | Consumer group ID. You can customize it according to your business needs. After the demo runs successfully, you can see the consumer on the **Consumer Group** page. |
-| ckafka_instance_id | Instance ID, which can be obtained in **Basic Info** on the **Instance Details** page in the CKafka console.<br/>![](https://main.qcloudimg.com/raw/9c417da4953669372fa4c13973096d3b.png) |
+| ckafka_instance_id | Instance ID, which can be obtained in **Basic Info** on the **Instance Details** page in the CKafka console.<br/>![](https://main.qcloudimg.com/raw/8bbcbd1ff38405a32caf953dd2809512.png) |
 | sasl_username    | Username, which is set when the user is created on the **User Management** page in the console.             |
 | sasl_password    | Password, which is set when the user is created on the **User Management** page in the console.             |
 
@@ -158,7 +158,7 @@ php Producer.php
   ```
 
 4. On the **Topic Management** page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding topic and click **More** > **Message Query** to view the just sent message.
-![](https://main.qcloudimg.com/raw/c18f71eecfa5f2d9ef9df19b7eb876fc.png)
+![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
 
 
 ### Step 4. Consume the message
@@ -258,4 +258,4 @@ php Consumer.php
   ```
 
 4. On the **Consumer Group** page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding consumer group, enter the topic name in **Topic Name**, and click **Query Details** to view the consumption details.
-![](https://main.qcloudimg.com/raw/3020dcb5f8fd73e02949b20fef4f956f.png)
+![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
