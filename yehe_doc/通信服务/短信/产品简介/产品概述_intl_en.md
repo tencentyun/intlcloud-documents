@@ -1,4 +1,4 @@
-Tencent Cloud Short Message Service (SMS) leverages Tencent's more than a decade of technology accumulation and experience in SMS service to provide fast and flexible access to high-quality Mainland China SMS and Global SMS capabilities for billion-user applications including QQ and WeChat and more than 100,000 customers.
+By leveraging Tencent's more than a decade of technology accumulation and experience in SMS service, Tencent Cloud Short Message Service (SMS) provides fast and flexible access to high-quality Mainland China SMS and Global SMS capabilities for billion-user applications including QQ and WeChat and more than 100,000 customers.
 - Through Mainland China SMS, verification codes can be received in seconds with a 99% deliverability.
 - Through Global SMS, messages can be sent stably and reliably in over 200 countries and regions.
 

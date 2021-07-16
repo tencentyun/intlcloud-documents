@@ -13,7 +13,7 @@ You must select the signature type when creating a signature:
 ## Content Specifications
 
 - The signature content cannot contain non-compliant information such as information related to pornography, gambling, drugs, religion, and politics.
-- The organization or individual to which the signature belongs must be identifiable. Neutral signatures are not allowed.
+- The organization or individual to which the signature belongs must be identifiable. Non-identifiable signatures are not allowed.
 - A Mainland China SMS signature consists of "[]" and signature content in the format of `[signature content]`. The signature content can contain 2–12 Chinese characters, letters, or digits (excluding "[]"). We recommend you use Chinese for the content of Mainland China SMS signatures as much as possible.
 - A Global SMS signature consists of "\[]" and signature content in the format of `\[signature content]`. The signature content can contain 2–15 characters (excluding "\[]").
 
