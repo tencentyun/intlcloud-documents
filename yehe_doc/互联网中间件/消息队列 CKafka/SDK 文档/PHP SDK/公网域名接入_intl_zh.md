@@ -46,10 +46,10 @@ return [
 
 | 参数               | 描述                                                         |
 | ------------------ | ------------------------------------------------------------ |
-| bootstrap_servers  | 接入网络，在控制台的实例详情页面【接入方式】模块的网络列复制。<br/>![img](https://main.qcloudimg.com/raw/c5cf200a66f6dcf627d2ca6f1c747ecf.png) |
-| topic_name         | Topic 名称，您可以在控制台上【topic管理】页面复制。<br/>![img](https://main.qcloudimg.com/raw/e7d353c89bbb204303501e8366f59d2c.png) |
+| bootstrap_servers  | 接入网络，在控制台的实例详情页面【接入方式】模块的网络列复制。<br/>![img](https://main.qcloudimg.com/raw/afc2a197f4e0646f40aa6280c5f6414d.png) |
+| topic_name         | Topic 名称，您可以在控制台上【topic管理】页面复制。<br/>![img](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png) |
 | group_id           | 消费者的组 Id，根据业务需求自定义，demo运行成功后可以在【Consumer Group】页面看到该消费者。 |
-| ckafka_instance_id | 实例 ID，在 CKafka 控制台的实例详情页面的基本信息获取。<br/>![](https://main.qcloudimg.com/raw/9c417da4953669372fa4c13973096d3b.png) |
+| ckafka_instance_id | 实例 ID，在 CKafka 控制台的实例详情页面的基本信息获取。<br/>![](https://main.qcloudimg.com/raw/8bbcbd1ff38405a32caf953dd2809512.png) |
 | sasl_username      | 用户名，在控制台【用户管理】页面创建用户时设置。               |
 | sasl_password      | 用户密码，在控制台【用户管理】页面创建用户时设置。             |
 
@@ -158,7 +158,7 @@ php Producer.php
   ```
 
 4. 在 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 的【topic 管理】页面，选择对应的 Topic，单击【更多】>【消息查询】，查看刚刚发送的消息。
-![](https://main.qcloudimg.com/raw/c18f71eecfa5f2d9ef9df19b7eb876fc.png)
+![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
 
 
 ### 步骤四：消费消息
@@ -258,4 +258,4 @@ php Consumer.php
   ```
 
 4. 在 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 的【Consumer Group】页面，选择对应的消费者组，在主题名称输入 Topic 名称，单击【查询详情】查看消费详情。
-![](https://main.qcloudimg.com/raw/3020dcb5f8fd73e02949b20fef4f956f.png)
+![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
