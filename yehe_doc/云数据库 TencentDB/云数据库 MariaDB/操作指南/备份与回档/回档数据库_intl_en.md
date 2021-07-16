@@ -8,9 +8,9 @@ The rollback feature of TencentDB for MariaDB does not affect a production insta
 - After rollback, the temp instance will inherit the parameters of the production instance such as account and database parameters, which cannot be modified.
 
 ## Instance Rollback
-1. Log in to the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/mariadb), click the instance name to enter the instance details page, and click **Rollback** in the top-right corner.
+1. Log in to the [TencentDB for MariaDB Console](https://console.cloud.tencent.com/mariadb), click the instance ID to enter the instance details page, and click **Rollback** in the top-right corner.
 2. In the pop-up dialog box, set the rollback time and click **OK**.
-
+![](https://main.qcloudimg.com/raw/cc7616136889c7481c7a9c61bdc6f542.png)
 ## Temp Instance
 A temp instance is an instance created by TencentDB for MariaDB based on backup and used for only temporary adjustment. It has the following features:
 - It supports read/write operations.
