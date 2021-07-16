@@ -335,14 +335,14 @@ gcc -lrdkafka ./producer.c -o producer
 
 | **Parameter** | **Description** |
 | :------- | ------------------------------------------------------------ |
-| broker | Accessed network, which can be copied from the **Network** column in the **Access Mode** section on the **Instance Details** page in the console. <br/>![img](https://main.qcloudimg.com/raw/88b29cffdf22e3a0309916ea715057a1.png) |
-| topic             | Topic name, which can be copied from the **Topic Management** page in the console. <br/>![img](https://main.qcloudimg.com/raw/e7d353c89bbb204303501e8366f59d2c.png) |
+| broker | Accessed network, which can be copied from the **Network** column in the **Access Mode** section on the **Instance Details** page in the console. <br/>![img](https://main.qcloudimg.com/raw/6b12eca18662d26a334d55b743c825ef.png) |
+| topic             | Topic name, which can be copied from the **Topic Management** page in the console. <br/>![img](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png) |
 
 The execution result is as follows:
 <img src="https://main.qcloudimg.com/raw/a7a4a02e8636045b7aeb852f47270059.png" width="520px">
 
 4. On the **Topic Management** page in the CKafka console, select the corresponding topic and click **More** > **Message Query** to view the just sent message.
-   ![](https://main.qcloudimg.com/raw/7d5143969f3f1c799420cf7a388f3a6d.png)
+   ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
 
 
 
@@ -642,13 +642,13 @@ gcc -lrdkafka ./consumer.c -o consumer
 
 | **Parameter** | **Description** |
 | :-------------- | ------------------------------------------------------------ |
-| broker | Accessed network, which can be copied from the **Network** column in the **Access Mode** section on the **Instance Details** page in the console. <br/>![img](https://main.qcloudimg.com/raw/88b29cffdf22e3a0309916ea715057a1.png) |
+| broker | Accessed network, which can be copied from the **Network** column in the **Access Mode** section on the **Instance Details** page in the console. <br/>![img](https://main.qcloudimg.com/raw/6b12eca18662d26a334d55b743c825ef.png) |
 | group.id          | Consumer group name. You can customize it. After the demo runs successfully, you can see the consumer on the **Consumer Group** page. |
-| topic1 topic2.. | Topic name, which can be copied from the **Topic Management** page in the console. <br/>![img](https://main.qcloudimg.com/raw/e7d353c89bbb204303501e8366f59d2c.png) |
+| topic1 topic2.. | Topic name, which can be copied from the **Topic Management** page in the console. <br/>![img](https://main.qcloudimg.com/raw/1b34ab83490f228ba0683609e0202c54.png) |
 
 The execution result is as follows:
 <img src="https://main.qcloudimg.com/raw/e131edb96559186eeba25beb26994a2e.png" width="700px">
 
 4. On the **Consumer Group** page in the CKafka console, select the corresponding consumer group, enter the topic name in **Topic Name**, and click **Query Details** to view the consumption details.
-   ![](https://main.qcloudimg.com/raw/3020dcb5f8fd73e02949b20fef4f956f.png)
+   ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
 
