@@ -20,25 +20,18 @@ qcs:project_id:service_type:region:account:resource
 - **resource**：描述各产品的具体资源详情。
     -  有几种描述方式，该字段是必填项。
         - 表示某个资源子类下的资源 ID 。如 CVM 产品的 `instance/ins-abcdefg`。
-
 ```
 	<resource_type>/<resource_id> 
 ```
-
         -  表示某个资源子类下的带路径的资源 ID 。如 COS 产品的`prefix//10001234/bucket1/object2`。该方式下，支持目录级的前缀匹配。如`prefix//10001234/bucket1/*`，表示 bucket1 下的所有 Object 。
-
 ```
 	<resource_type>/<resource_path>
 ```
-
         - 表示某个资源子类下的所有资源。如 `instance/*`。
-
 ```
 	<resource_type>/*
 ```
-
         -  表示某产品下的所有资源。
-
 ```
 	*
 ```
