@@ -43,7 +43,7 @@ status:404 | select count(*) as pv
 
 CLS supports the following SQL syntax and functions. You can click them to view details.
 
-<span id="sql1"></span>
+[](id:sql1)
 
 #### SQL syntax
 
@@ -57,7 +57,8 @@ CLS supports the following SQL syntax and functions. You can click them to view 
 | [WHERE](https://intl.cloud.tencent.com/document/product/614/38736) | Extracts the logs that meet the specified criteria. |
 
 
-<span id="sql2"></span>
+
+[](id:sql2)
 
 ####  SQL functions
 
@@ -74,7 +75,6 @@ CLS supports the following SQL syntax and functions. You can click them to view 
 
 | Metric | Limit | Remarks |
 | ---------------------------------------- | ------------------------------------------------------------ | --------------------------- |
-| The maximum length of a single statistical field value | The maximum length is 32 KB, and the excessive part cannot be written to ES.                             | Fields exceeding 32 KB cannot be written to ES, which makes it hard to troubleshoot discarded log contents.                           |
 | Number of non-cluster analysis results (excluding `GROUP BY` clauses) | Each analysis returns up to 1,000 results. | Default: 100; Maximum: 1,000 |
 | Number of cluster analysis results (including GROUP BY clauses) | Each analysis returns up to 2,000 results.                              | Default: 100; Maximum: 2,000                        |
 | `ORDER BY` clause limit | The `ORDER BY` operation is not supported for fields that have been calculated using one of the functions `ROUND`, `SQRT`, `ABS`, `POWER`, and `FLOOR`, or the four arithmetic operations of addition, subtraction, multiplication, and division. | - |
