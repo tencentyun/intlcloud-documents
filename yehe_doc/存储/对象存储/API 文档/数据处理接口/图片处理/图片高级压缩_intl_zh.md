@@ -18,7 +18,7 @@ COS 通过数据万象 imageMogr2 接口提供图片高级压缩功能。图片�
 > - 使用图片高级压缩功能时，您需要在相应的存储桶配置页中通过开关按钮开启服务，详情请参见 [设置图片高级压缩](https://intl.cloud.tencent.com/document/product/436/40117)。
 > - TPG 是腾讯自研的图片格式，如需使用请确认**图片加载环境支持 TPG 解码**，腾讯云数据万象提供集成 TPG 解码器的 iOS、Android、[Windows](https://main.qcloudimg.com/raw/851dd252378813d250eeca5ed55ffd36/TPG_win_SDK.zip) 终端 SDK，可帮助您快速接入和使用 TPG。
 > - 目前 iOS 11以上及 Android P 系统已原生支持 HEIF 格式。
-> - 图片高级压缩为付费服务，由数据万象收取，具体费用请参见数据万象的定价文档。
+> - 图片高级压缩为付费服务，由数据万象收取，具体费用请参见数据万象的[定价文档](https://intl.cloud.tencent.com/document/product/1045/33431)。
 > 
 
 ## 接口示例
