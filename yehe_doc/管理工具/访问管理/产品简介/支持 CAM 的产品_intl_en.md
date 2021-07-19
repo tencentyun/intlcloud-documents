@@ -51,6 +51,8 @@ Definitions:
 
 
 ## Container
+| Service | Authorization Granularity | Console | Authorization by Tag | Service Role | 	Reference Document |	
+| ------------------------------------------------------------ | ------ | --------  | ------- | ---- |	---- |	
 | [Tencent Kubernetes Engine (TKE)](https://intl.cloud.tencent.com/document/product/457) | Resource level | &#10003;       | &#10003; | &#10003;    |	[CAM Guide](https://intl.cloud.tencent.com/document/product/457/11542)  |	
 | [Tencent Container Registry (TCR)](https://intl.cloud.tencent.com/document/product/1051) | Resource level  | Resource level | &#10003; | - | &#10003; |	[CAM Guide](https://intl.cloud.tencent.com/document/product/1051/37246)  |	
 
