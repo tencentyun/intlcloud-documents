@@ -79,11 +79,11 @@ https://IP:10086/
 在这里输入刚设置的密码后即可进入 jupyter 主页。
 
 ### 使用 jupyter 进行开发操作
-#### **创建目录**
+#### 创建目录
 ![](https://main.qcloudimg.com/raw/a3f45bd82c24abf780f9916ea388f693.png)
-#### **rename 目录**
+#### rename 目录
 ![](https://main.qcloudimg.com/raw/7ec7be4ee84cd0a2ba5ac9e69561856b.png)
-#### **编写 tensorflow 代码**
+#### 编写 tensorflow 代码
 可参考 [tensorflow 官网](https://github.com/tensorflow/docs/tree/master/site/en/r1/tutorials)。
 ![](https://main.qcloudimg.com/raw/ae58da462ab0f93f1078737959998397.png)
 >?这里需下载数据集，国内网速会比较慢。
