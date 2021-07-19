@@ -101,7 +101,7 @@ Definitions:
 | [Data Transmission Service (DTS)](https://intl.cloud.tencent.com/document/product/571)  | Resource level |  &#10003;  | &#10003;   | &#10003;    | - |
 | [TcaplusDB](https://intl.cloud.tencent.com/document/product/1016)  | Resource level |  &#10003;  | &#10003;    | -    | - |		
 | [TencentDB for DBbrain](https://intl.cloud.tencent.com/document/product/1035) | Resource | &#10003;  | -    | -    |[CAM Guide](https://intl.cloud.tencent.com/document/product/1035/36050)|	
-| [TDSQL-A for PostgreSQL](https://cloud.tencent.com/document/product/1378) | Resource level | &#10003; | &#10003; | &#10003; | [CAM Guide](https://cloud.tencent.com/document/product/1378/54476) |
+| [TDSQL-A for PostgreSQL](https://intl.cloud.tencent.com/document/product/1099) | Resource level | &#10003; | &#10003; | &#10003; | [CAM Guide](https://intl.cloud.tencent.com/document/product/1099/40845) |
 
 
 ## Serverless	
