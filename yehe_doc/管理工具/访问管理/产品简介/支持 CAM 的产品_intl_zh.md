@@ -101,7 +101,7 @@ width: 18%;
 | [数据传输服务](https://intl.cloud.tencent.com/document/product/571)  | 资源级 |  &#10003;  | &#10003;    | &#10003;    | - |
 | [游戏数据库 TcaplusDB](https://intl.cloud.tencent.com/document/product/1016)  | 资源级 |  &#10003;  | &#10003;   | -    | - |		
 | [数据库智能管家 DBbrain](https://intl.cloud.tencent.com/document/product/1035) |资源级 | &#10003;  | -    | -    |[访问管理指南](https://intl.cloud.tencent.com/document/product/1035/36050)|	
-| [TDSQL-A PostgreSQL 版](https://cloud.tencent.com/document/product/1378) | 资源级 | &#10003; | &#10003; | &#10003; | [访问管理指南](https://cloud.tencent.com/document/product/1378/54476) |
+| [TDSQL-A PostgreSQL 版](https://intl.cloud.tencent.com/document/product/1099) | 资源级 | &#10003; | &#10003; | &#10003; | [访问管理指南](https://intl.cloud.tencent.com/document/product/1099/40845) |
 
 
 ## Serverless	
