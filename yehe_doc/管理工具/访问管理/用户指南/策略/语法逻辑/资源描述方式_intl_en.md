@@ -20,25 +20,18 @@ qcs:project_id:service_type:region:account:resource
 - **resource** describes the detailed resource information of the specific service.
     - This field is required. The resource can be described as follows:
         - It can indicate the ID of a resource in a resource subcategory, such as `instance/ins-abcdefg` for CVM.
-
 ```
 	<resource_type>/<resource_id> 
 ```
-
         - It can indicate the ID of a resource with a path in a resource subcategory, such as `prefix//10001234/bucket1/object2` for COS. Prefix match at the directory level is supported for this type of description. For example, `prefix//10001234/bucket1/*` indicates all the objects in `bucket1`.
-
 ```
 	<resource_type>/<resource_path>
 ```
-
         - It can indicate all the resources in a resource subcategory, such as `instance/*`.
-
 ```
 	<resource_type>/*
 ```
-
         - It can indicate all the resources of a service.
-
 ```
 	*
 ```
