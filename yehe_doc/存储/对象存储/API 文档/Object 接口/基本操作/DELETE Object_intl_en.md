@@ -1,22 +1,38 @@
-## Description
+## API Description
 
-This API is used to delete a single object from a COS bucket. To make this request, you need to have the permission to write to the bucket.
+This API is used to delete a specified object. To call this API, you need to have permission to write to the object.
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer is recommended.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=DeleteObject&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+            </div>
+        </div>
+    </div>
+</div>
 
 #### Versioning
 
-To delete a specified version including delete marker (the same below) of an object, specify the version ID of the object using the `versionId` parameter in your request. Then, the response will return the `x-cos-version-id` header to represent the deleted version ID.
+To delete a specified version of object/delete marker, use the `versionId` request parameter to specify the ID of the object version/delete marker. In this way, the `x-cos-version-id` response header will be returned, indicating the version ID to delete.
 
-In cases where `versionId` is not specified:
-- If versioning is enabled, this DELETE operation will create a delete marker as the latest version of the specified object. Then, the response will return the `x-cos-version-id` header, which represents the version ID of this delete marker.
-- If versioning is suspended, this DELETE operation will create a delete marker with a null version ID as the latest version of the specified object, and delete any existing versions with a null version ID (if any).
+If `versionId` is not specified:
+- When versioning is enabled, the `DELETE` operation will create the latest version of delete marker for this object, and the `x-cos-version-id ` response header will be returned to indicate the version ID of the delete marker created in this request.
+- When versioning is suspended, the `DELETE` operation will create a delete marker whose ID is `null` as the latest version of the object, and all other versions whose ID is `null` (if any) will be deleted.
 
-If this DELETE operation creates or deletes a delete marker, the response will return the `x-cos-delete-marker: true` header, which represents this delete marker.
+If the `DELETE` operation has successfully created/deleted a delete marker, the `x-cos-delete-marker: true` response header will be returned.
 
-For more information on versioning state, see [Versioning Overview](https://intl.cloud.tencent.com/document/product/436/19883).
+For more information about the enabled/suspended status of versioning, please see [Versioning Overview](https://intl.cloud.tencent.com/document/product/436/19883).
 
-## Request
+## Requests
 
-#### Sample request
+#### Sample request 
 
 ```shell
 DELETE /<ObjectKey> HTTP/1.1
@@ -29,13 +45,13 @@ Authorization: Auth String
 
 #### Request parameters
 
-| Name | Description | Type | Required |
+| Parameter | Description | Type | Required |
 | --- | --- | --- | --- |
-| versionId | Specifies the version ID of the object to be deleted | string | No |
+| versionId | ID of an object version to delete | string | No |
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
@@ -45,28 +61,28 @@ The request body of this request is empty.
 
 #### Response headers
 
-In addition to common response headers, this API also returns the following response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+In addition to common response headers, this API also returns the following response headers. For more information about common response headers, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 **Versioning-related headers**
 
-To delete an object or its specified version from a versioning-enabled bucket will return the following response headers:
+If you delete an object or a specified version of object from a versioning-enabled bucket, the following response headers will be returned:
 
-| Name | Description | Type |
+| Parameter | Description | Type |
 | --- | --- | --- |
-| x-cos-version-id | Version ID of an object’s version or delete marker | string |
-| x-cos-delete-marker | <li>Returned with a value `true` to indicate the deleted version ID is for a delete marker if you specified the version ID of a delete marker using the `versionId` request parameter<br><li>Returned with a value `true` to indicate the DELETE request has created a delete marker as the latest version of the object if you didn’t use `versionId` and the object was from a versioning-enabled bucket  | boolean |
+| x-cos-version-id | ID of the object version/delete marker | string |
+| x-cos-delete-marker | <li>If `versionId` is specified, the value of this parameter will be `true`, indicating that the deleted version of object corresponds to a delete marker.<br><li>If `versionId` is not specified, and the specified object resides in a versioning-enabled bucket, the value of this parameter will be `true`, indicating that this request has created the latest version of delete marker for this object. | boolean |
 
 #### Response body
 
-This response body is empty.
+The response body is empty.
 
 #### Error codes
 
-This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Examples
+## Samples
 
-#### Example 1. Versioning not enabled
+#### Sample 1: versioning disabled
 
 #### Request
 
@@ -89,7 +105,7 @@ Server: tencent-cos
 x-cos-request-id: NWQ1M2Y3YWNfMzdiMDJhMDlfODA1Yl8xZThj****
 ```
 
-#### Example 2. Versioning enabled (creating delete marker)
+#### Sample 2: enabling versioning (creating a delete marker)
 
 #### Request
 
@@ -114,7 +130,7 @@ x-cos-request-id: NWQ1M2Y3ZDVfN2RiNDBiMDlfMmMwNmVfMTc4****
 x-cos-version-id: MTg0NDUxNzgyODk2ODc1NjY0NzQ
 ```
 
-#### Example 3. Deleting a specified version permanently
+#### Sample 3: deleting a specified version of object permanently
 
 #### Request
 
@@ -138,7 +154,7 @@ x-cos-request-id: NWQ1M2Y3ZTBfODhjMjJhMDlfMWNkOF8xZDZi****
 x-cos-version-id: MTg0NDUxNzgyODk3MDgyMzI4NDY
 ```
 
-#### Example 4. Deleting a delete marker permanently
+#### Sample 4: deleting a specified delete marker permanently
 
 #### Request
 

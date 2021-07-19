@@ -1,4 +1,4 @@
-## Overview
+# Overview
 
 COS supports object-based lifecycle configuration. If you set rules for a bucket, COS can automatically perform predefined operations on objects to which the rule is applied.
 
@@ -39,9 +39,9 @@ When you use COS for file archive management, you need to save all historical ve
 - Based on the number of days: You can specify in how many days after an object is last modified to perform the corresponding operation.
 - Based on a specific date: You can specify a date to perform the corresponding operation.
 
-## Use Instructions
+## Directions
 
-### Data Transition
+### Data transition
 
 #### Supported regions
 
@@ -65,13 +65,16 @@ When an object matches the specified lifecycle rule of deletion upon expiration,
 #### Eventual consistency
 If multiple conflicting rules are configured for the same set of objects, the rule that will expire first will be performed first. **Deletion upon expiration will be performed before the transition**.
 
->!It is strongly recommended that you do not configure conflicting lifecycle rules for the same set of objects in COS, because this may result in different fees.
+>! It is strongly recommended that you do not configure conflicting lifecycle rules for the same set of objects in COS, because this may result in different fees.
+>
 
 ### Cost considerations
 
 #### Execution instructions
 
 Once triggered, actions configured at any time will always be executed at 00:00 the next day Beijing time (GMT+8) on Tencent Cloud COS. As objects need to be added to an asynchronous queue before execution, for those who match the rules after the configuration time, actions are performed before 24:00 the next day.
+
+For example, you configured a lifecycle rule at 15:00 on the 1st day of the month to delete files one day or longer after they are modified. Then, at 00:00 on the 2nd day, the lifecycle task scans for files that were modified over one day ago and deletes them. Files uploaded on the 1st day will not be deleted at 00:00 on the 2nd day, as the time elapsed since their modification is less than one day. Instead, these files will be deleted at 00:00 on the 3rd day.
 
 When an accident occurs or there are too many objects in the bucket, lifecycle execution may fail. For failures due to other reasons, perform the GET or HEAD Object operation to get the current object status.
 

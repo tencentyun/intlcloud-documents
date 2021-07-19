@@ -1,13 +1,29 @@
-## Feature
+## Overview
 
-This API is used to initialize a multipart upload. A successful request to this API will return an UploadId that is used in the subsequent `Upload Part` requests.
+This API is used to initialize a multipart upload. After a successful operation, `UploadId` will be returned, which can be used in subsequent `Upload Part` requests.
 
-## Request
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer is recommended.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=InitiateMultipartUpload&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+            </div>
+        </div>
+    </div>
+</div>
 
-#### Request samples
+## Requests
+
+#### Sample request
 
 ```plaintext
-POST /<ObjectKey>uploads HTTP/1.1
+POST /<ObjectKey>?uploads HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
 Content-Type: Content Type
@@ -15,42 +31,43 @@ Content-Length: 0
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information)
+> ? Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 
 #### Request parameters
 
-This API does not use any request parameter.
+This API has no request parameter.
 
 #### Request headers
 
-In addition to common request headers, this API also supports the following request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+In addition to common request headers, this API also supports the following request headers. For more information about common request headers, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-| Name | Description | Type | Required |
+| Header | Description | Type | Required |
 | ------------------- | ------------------------------------------------------------ | ------ | -------- |
-| Cache-Control | Cache directives as defined in RFC 2616, which are stored as part of object metadata | string | No |
-| Content-Disposition | File name as defined in RFC 2616, which is stored as part of object metadata | string | No |
-| Content-Encoding | Encoding format as defined in RFC 2616, which is stored as part of object metadata | string | No |
-| Content-Type                                                 | HTTP request content type (MIME) as defined in RFC 2616 of the object to upload, and stored as part of object metadata<br>Example: `text/html` or `image/jpeg` | string | Yes       |
-| Expires | The cache expiration time as defined in RFC 2616, which is stored as part of object metadata | string | No |
-| x-cos-meta-\* | Includes custom metadata and its header suffix, which are stored as part of object metadata. Maximum size: 2 KB.<br>**Note:** custom metadata can contain underscores (_), whereas its header suffix can only contain minus signs (-). | string | No |
-| x-cos-storage-class | Specifies the storage class of the object. For enumerated values, see [Storage Class Overview](https://intl.cloud.tencent.com/zh/document/product/436/30925), such as INTELLIGENT_TIERING, STANDARD_IA, ARCHIVE and DEEP_ARCHIVE. Default value: STANDARD | Enum   | No       |
-|  x-cos-tagging | Specifies a tag set that can contain up to 10 object tags, e.g., "Key1=Value1&Key2=Value2", where the "Key" and "Value" must be URL-encoded first | string| No |
+| Cache-Control | Cache directives as defined in RFC 2616. It will be stored as object metadata. | string | No |
+| Content-Disposition | Filename as defined in RFC 2616. It will be stored as object metadata. | string | No |
+| Content-Encoding | Encoding format as defined in RFC 2616. It will be stored as object metadata. | string | No |
+| Content-Type | HTTP request content type (MIME) as defined in RFC 2616. This header describes the content type of the object to be uploaded and will be stored as object metadata.<br>Example: `text/html`, `image/jpeg` | string | Yes |
+| Expires | The cache expiration time as defined in RFC 2616. It will be stored as object metadata. | string | No |
+| x-cos-meta-\* | Contains user-defined metadata and header suffixes. It will be stored as object metadata. Maximum size: 2 KB. <br>**Note:** User-defined metadata can contain underscores (_), whereas the header suffixes of user-defined metadata can only contain minus signs (−) but not underscores. | string | No |
+| x-cos-storage-class | Object storage class. For the enumerated values, such as `STANDARD` (default), `INTELLIGENT_TIERING`, `STANDARD_IA`, `ARCHIVE`, and `DEEP_ARCHIVE`, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | Enum | No |
+| x-cos-tagging | A set of up to 10 object tags (for example, `Key1=Value1&Key2=Value2`). Tag key and tag value in the set must be URL-encoded. | string  | No |
+
 
 **ACL-related headers**
 
-You can configure object access permissions when uploading an object using the following request headers:
+You can configure an access control list (ACL) for the object by specifying the following request headers during the upload:
 
-| Name | Description | Type | Required |
+| Header | Description | Type | Required |
 | ------------------------ | ------------------------------------------------------------ | ------ | -------- |
-| x-cos-acl | Defines the access control list (ACL) attributes of the object. For enumerated values such as `default`, `private`, and `public-read`, see the Preset ACL section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583).<br>**Note:** If you do not need an object ACL, set this parameter to `default` (inherit bucket permissions), or leave it empty. | Enum | No |
-| x-cos-grant-read | Allows grantee to read the object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | String | No |
-| x-cos-grant-read-acp | Allows grantee to read the object ACL; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | String | No |
-|  x-cos-grant-write-acp | Allows grantee to write the object ACL; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | String | No |
-| x-cos-grant-full-control | Allows grantee full control over the object; format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | String | No |
+| x-cos-acl | Defines the ACL attribute of the object. For the enumerated values, such as `default`, `private`, and `public-read`, please see the **Preset ACL** section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583). Default value: `default`. <br>**Note**: If you do not need to set an ACL for the object, set this parameter to `default` or leave it empty. In this way, the object will inherit the permissions of the bucket it is stored in. | Enum | No |
+| x-cos-grant-read | Grants a user read permission for an object in the format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
+| x-cos-grant-read-acp | Grants a user read permission for the ACL of an object in the format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
+| x-cos-grant-write-acp | Grants a user write permission for the ACL of an object in the format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
+| x-cos-grant-full-control | Grants a user full permission to operate on an object in the format: `id="[OwnerUin]"`, such as `id="100000000001"`. You can use a comma (,) to separate multiple users, such as `id="100000000001",id="100000000002"` | string | No |
 
-**Headers related to server-side encryption (SSE)**
+**Headers Related to Server-Side Encryption (SSE)**
 
-To use SSE encryption for uploading objects, see [Server-side encryption headers](https://intl.cloud.tencent.com/document/product/436/7728#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
+Server-side encryption can be used during object upload. For more information, see [Server-side encryption headers](https://intl.cloud.tencent.com/document/product/436/7728#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
 #### Request body
 
@@ -60,15 +77,16 @@ This API does not have a request body.
 
 #### Response headers
 
-In addition to common response headers, this API also returns the following response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+In addition to common response headers, this API also returns the following response headers. For more information about common response headers, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
-**Headers related to server-side encryption (SSE)**
+**Headers related to SSE**
 
-If you uploaded the object using SSE encryption, this API will return SSE headers. For more information, see [Server-side encryption headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
+If server-side encryption is used during object upload, this API will return the headers used specifically for server-side encryption. For more information, see [Server-side encryption headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
 #### Response body
 
-A successful request returns **application/xml** data, including the initialization of multipart upload.
+**application/xml** data that contains the multipart upload initialization information will be returned for a successful request.
+
 
 ```
 <InitiateMultipartUploadResult>
@@ -78,27 +96,27 @@ A successful request returns **application/xml** data, including the initializat
 </InitiateMultipartUploadResult>
 ```
 
-The detailed nodes are described as follows:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ----------------------------- | ------ | --------------------------------------------- | --------- |
-| InitiateMultipartUploadResult | None     | Contains all results of the Initiate Multipart Upload action | Container |
+| InitiateMultipartUploadResult | None | Stores the result of `Initiate Multipart Upload` | Container |
 
-**Content of the Container node `InitiateMultipartUploadResult`:**
+**Content of `InitiateMultipartUploadResult**:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ----------------------------- | ------------------------------------ | ------ |
-| Bucket             | InitiateMultipartUploadResult | Destination bucket                           | string |
-| Key                | InitiateMultipartUploadResult | Destination object key                           | string |
-| UploadId           | InitiateMultipartUploadResult | The UploadId used in subsequent Upload Part requests | string |
+| Bucket | InitiateMultipartUploadResult | Destination bucket | string |
+| Key | InitiateMultipartUploadResult | Destination object key  | string |
+| UploadId | InitiateMultipartUploadResult | `UploadId` that can be used in subsequent `Upload Part` requests | string |
 
 #### Error codes
 
-This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) .
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Examples
+## Samples
 
-#### Example 1. Simple example
+#### Sample 1: simple use case
 
 #### Request
 
@@ -123,14 +141,16 @@ Date: Wed, 25 Mar 2020 10:07:01 GMT
 Server: tencent-cos
 x-cos-request-id: NWU3YjJkNDVfNDliNTJhMDlfYzZhMl8yOTVj****
 
+
+
 <InitiateMultipartUploadResult>
-	<Bucket>examplebucket-1250000000</Bucket>
-	<Key>exampleobject</Key>
-	<UploadId>1585130821cbb7df1d11846c073ad648e8f33b087cec2381df437acdc833cf654b9ecc6361</UploadId>
+			<Bucket>examplebucket-1250000000</Bucket>
+			<Key>exampleobject</Key>
+			<UploadId>1585130821cbb7df1d11846c073ad648e8f33b087cec2381df437acdc833cf654b9ecc6361</UploadId>
 </InitiateMultipartUploadResult>
 ```
 
-#### Sample 2. Specifying metadata and ACL using request headers
+#### Sample 2: specifying metadata and ACL using request headers
 
 #### Request
 
@@ -159,14 +179,16 @@ Date: Thu, 28 May 2020 08:35:34 GMT
 Server: tencent-cos
 x-cos-request-id: NWVjZjc3ZDZfOThjMjJhMDlfMjg5N18zNWYy****
 
+
+
 <InitiateMultipartUploadResult>
-	<Bucket>examplebucket-1250000000</Bucket>
-	<Key>exampleobject</Key>
-	<UploadId>1590654934dfb1343b4323b711afc22569c18af51596d4f2e40faf392fe1bb469c5b77115f</UploadId>
+			<Bucket>examplebucket-1250000000</Bucket>
+			<Key>exampleobject</Key>
+			<UploadId>1590654934dfb1343b4323b711afc22569c18af51596d4f2e40faf392fe1bb469c5b77115f</UploadId>
 </InitiateMultipartUploadResult>
 ```
 
-#### Example 3. Using server-side encryption SSE-COS
+#### Sample 3: using server-side encryption SSE-COS
 
 #### Request
 
@@ -193,14 +215,16 @@ Server: tencent-cos
 x-cos-request-id: NWVjZjc5Y2VfZjhjODBiMDlfMjIyOGFfMzYxYWVm****
 x-cos-server-side-encryption: AES256
 
+
+
 <InitiateMultipartUploadResult>
-	<Bucket>examplebucket-1250000000</Bucket>
-	<Key>exampleobject</Key>
-	<UploadId>15906554384f160dd0a272ebb6fbcdb0ffbb61adb2b46fa6b9f2ffabcfb2940b8f72277952</UploadId>
+			<Bucket>examplebucket-1250000000</Bucket>
+			<Key>exampleobject</Key>
+			<UploadId>15906554384f160dd0a272ebb6fbcdb0ffbb61adb2b46fa6b9f2ffabcfb2940b8f72277952</UploadId>
 </InitiateMultipartUploadResult>
 ```
 
-#### Example 4. Using server-side encryption SSE-KMS
+#### Sample 4: using server-side encryption SSE-KMS
 
 #### Request
 
@@ -230,14 +254,17 @@ x-cos-request-id: NWVjZjc5ZTNfMmZiOTJhMDlfMzJlNDJfMjkzNGJi****
 x-cos-server-side-encryption: cos/kms
 x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085****
 
+
+
 <InitiateMultipartUploadResult>
-	<Bucket>examplebucket-1250000000</Bucket>
-	<Key>exampleobject</Key>
-	<UploadId>15906554607990121702e8e4b706eb0f12b8568a3f3b0b76b884e4df676ed50291f0b17131</UploadId>
+			<Bucket>examplebucket-1250000000</Bucket>
+			<Key>exampleobject</Key>
+			<UploadId>15906554607990121702e8e4b706eb0f12b8568a3f3b0b76b884e4df676ed50291f0b17131</UploadId>
 </InitiateMultipartUploadResult>
 ```
 
-#### Example 5. Using server-side encryption SSE-C
+
+#### Sample 5: using server-side encryption SSE-C
 
 #### Request
 
@@ -267,9 +294,11 @@ x-cos-request-id: NWVjZjc5ZjlfOGJjOTJhMDlfNzJmYV8xOTcy****
 x-cos-server-side-encryption-customer-algorithm: AES256
 x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
 
+
+
 <InitiateMultipartUploadResult>
-	<Bucket>examplebucket-1250000000</Bucket>
-	<Key>exampleobject</Key>
-	<UploadId>15906554815fb0c8bda2edae20d895ad7452e949bf51541b31ca14a029fb6f1617f10ca186</UploadId>
+			<Bucket>examplebucket-1250000000</Bucket>
+			<Key>exampleobject</Key>
+			<UploadId>15906554815fb0c8bda2edae20d895ad7452e949bf51541b31ca14a029fb6f1617f10ca186</UploadId>
 </InitiateMultipartUploadResult>
 ```

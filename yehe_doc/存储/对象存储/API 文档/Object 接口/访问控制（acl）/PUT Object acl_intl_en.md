@@ -1,4 +1,4 @@
-## Description
+## Overview
 
 This API is used to write an access control list (ACL) to an object. You can set the ACL information through the `x-cos-acl` and `x-cos-grant-*` request headers or the request body in XML format.
 > !
@@ -6,6 +6,23 @@ This API is used to write an access control list (ACL) to an object. You can set
 > - `PUT Object acl` is an overwriting operation. The new ACL will overwrite the old one.
 > - You can only grant permissions to Tencent Cloud CAM root accounts or anonymous users. To grant permissions to sub-accounts or user groups, please use the [PUT Bucket policy](https://intl.cloud.tencent.com/document/product/436/8282) API. For more information about ACL, please see [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583).
 > - To call this API, you need to have permission to write ACL to the object.
+> 
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer is recommended.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=PutObjectAcl&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+            </div>
+        </div>
+    </div>
+</div>
 
 ## Request
 
@@ -83,39 +100,39 @@ The request body contains the **application/xml** request data, including inform
 ```
 
 
-The nodes are described as follows:
+The nodes are described in details below:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
 | AccessControlPolicy | None | All request information about the `PUT Object acl` operation | Container | Yes |
 
-**Content of the Container node `AccessControlPolicy`:**
+**Content of `AccessControlPolicy`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
 | Owner | AccessControlPolicy | Information about the object owner | Container | Yes |
 | AccessControlList | AccessControlPolicy | Information about the grantee and permissions | Container | Yes |
 
-**Content of the Container node `AccessControlPolicy.Owner`:**
+**Content of `AccessControlPolicy.Owner`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
 | ID | AccessControlPolicy.Owner | Complete ID of the object owner in the format of `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`<br>Example: `qcs::cam::uin/100000000001:uin/100000000001` | string | Yes |
 
-**Content of the Container node `AccessControlPolicy.AccessControlList`:**
+**Content of `AccessControlPolicy.AccessControlList`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
 | Grant | AccessControlPolicy.<br>AccessControlList | A single permission. Each `AccessControlList` supports up to 100 `Grant` nodes. | Container | Yes |
 
-**Content of the Container node `AccessControlPolicy.AccessControlList.Grant`:**
+**Content of `AccessControlPolicy.AccessControlList.Grant`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
 | Grantee | AccessControlPolicy.<br>AccessControlList.Grant | Grantee information. `xsi:type` can be set to `Group` or `CanonicalUser`. If set to `Group`, the child node can only include `URI`. If set to `CanonicalUser`, the child node can only include `ID`. | Container | Yes |
 | Permission | AccessControlPolicy.<br>AccessControlList.Grant | Permission granted. For the enumerated values, such as `READ` and `FULL_CONTROL`, please see <b>Actions on objects</b> in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583#.E6.93.8D.E4.BD.9C-permission). | Enum | Yes |
 
-**Content of the Container node `AccessControlPolicy.AccessControlList.Grant.Grantee`:**
+**Content of `AccessControlPolicy.AccessControlList.Grant.Grantee`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
@@ -138,7 +155,7 @@ This API returns common error responses and error codes. For more information, p
 
 ## Samples
 
-#### Sample 1. Configuring ACL through request headers
+#### Sample 1: configuring ACL through request headers
 
 #### Request
 
@@ -164,7 +181,7 @@ Server: tencent-cos
 x-cos-request-id: NWQ3NjRmNmRfZjZjMjBiMDlfMmE5MWJfMTI3OWZh****
 ```
 
-#### Sample 2. Configuring ACL through the request body
+#### Sample 2: configuring ACL through the request body
 
 #### Request
 
