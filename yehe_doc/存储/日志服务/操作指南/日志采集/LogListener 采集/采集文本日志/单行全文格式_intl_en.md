@@ -18,29 +18,26 @@ __CONTENT__:Tue Jan 22 12:08:15 CST 2019 Installed: libjpeg-turbo-static-1.2.90-
 ### Logging in to the console
 
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
-2. On the left sidebar, click **Logset** to go to the logset management page.
+2. In the left sidebar, click **Log Topic** to go to the log topic management page.
 
 ### Creating a log topic
 
-1. Select the logset for which to create a log topic and click the logset ID/name to go to the logset information page.
-2. Click **Create Log Topic**.
-3. In the pop-up dialog box, enter `test_full` as the **Log Topic Name** and click **OK**.
-
-
+1. Click **Create Log Topic**.
+2. In the pop-up dialog box, enter `test_full` as **Log Topic Name** and click **OK**.
 
 ### Server group management
 
 1. After the log topic is created successfully, go to the log topic management page.
-2. Select the **Collection Configuration** tab, click the format in which you need to collect logs.
-3. On the **Machine Group Management** page, select the server group to which to bind the current log topic and click **Next** to proceed to collection configuration.
+2. Click the **Collection Configuration** tab and click the format in which you need to collect logs.
+3. On the **Server Group Management** page, select the server group to which to bind the current log topic and click **Next** to proceed to collection configuration.
 For more information, see [Machine Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
 
 
 ### Collection configuration
 
-#### Configuring log file collection path
+#### Configuring the log file collection path
 
-On the **Collection Configuration** page, enter a **Collection Path** according to the log collection path format as shown below:
+On the **Collection Configuration** page, set **Collection Path** according to the log collection path format as shown below:
 Log collection path format: `[directory prefix expression]/**/[filename expression]`.
 
 After the log collection path is entered, LogListener will match all common prefix paths that meet the **[directory prefix expression]** rule and listen for all log files in the directories (including subdirectories) that meet the **[filename expression]** rule. The parameters are as detailed below:
@@ -48,8 +45,8 @@ After the log collection path is entered, LogListener will match all common pref
 | Field     | Description                                                         |
 | -------- | ------------------------------------------------------------ |
 | Directory prefix | Directory structure of the log file prefix. Only wildcards `\*` and `?` are supported.<ul style="margin: 0;"><li>`\*` indicates to match any multiple characters.</li><li>`?` indicates to match any single character.</li></ul> |
-| /\*\*/     | Current directory and all its subdirectories                                  |
-| Filename   | Log filename. Only wildcards `\*`  and `?` are supported.<ul style="margin: 0;"><li>`\*` indicates to match any multiple characters.</li><li>`?` indicates to match any single character.</li></ul> |
+| /\*\*/     | Current directory and all its subdirectories.                                  |
+| Filename   | Log filename. Only wildcards `\*` and `?` are supported.<ul style="margin: 0;"><li>`\*` indicates to match any multiple characters.</li><li>`?` indicates to match any single character.</li></ul> |
 
 Common configuration modes are as follows:
 - [Common directory prefix]/\*\*/[common filename prefix]\*
@@ -66,7 +63,6 @@ Below is an example:
 | 3.   | /var/log/nginx | error\*      | In this example, the log path is configured as `/var/log/nginx/**/error*`. LogListener will listen for log files prefixed with `error` in all subdirectories in the `/var/log/nginx` prefix path. |
 
 
-
 >!
 > - Only LogListener 2.3.9 or above allows adding multiple collection paths.
 > - By default, a log file can only be collected by one log topic. If you want to have multiple collection configurations for the same file, please add a soft link to the source file and add it to another collection configuration.
@@ -75,7 +71,6 @@ Below is an example:
 #### Configuring the "full text in a single line" mode
 
 In the **Collection Configuration** page, select **Full text in a single line** as the **Extraction Mode**.
-
 
 ### Configuring filter rules
 
@@ -89,22 +84,21 @@ By default, this "full text in a single line" mode uses `__CONTENT__` as the key
 ### Index configuration
 
 1. Click **Next** to go to the **Index Configuration** page.
-2. On the **Index Configuration** page, set the following information.
+2. On the **Index Configuration** page, set the following information:
 
- - **Index Status**: select whether to enable it.
- - **Full-Text Index**: select whether to set it to case-sensitive.
- - **Full-Text Delimiter**: they are `@&()='",;:<>[]{}/ \n\t\r` by default and can be modified as needed.
- - **Key-Value Index**: disabled by default. You can configure the field type, delimiters, and whether to enable statistical analysis according to the key name as needed. To enable key-value index, you can set <img src="https://main.qcloudimg.com/raw/bd22396a4acfbf6d96def87060207a46.png" /> to <img src="https://main.qcloudimg.com/raw/d7ba8412e263386b627369741b457f2e.png" />.
+ - Index Status: select whether to enable it.
+ - Full-Text Index: select whether to set it to case-sensitive.
+ - Full-Text Delimiter: they are `@&()='",;:<>[]{}/ \n\t\r` by default and can be modified as needed.
+ - Key-Value Index: disabled by default. You can configure the field type, delimiters, and whether to enable statistical analysis according to the key name as needed. To enable key-value index, you can set <img src="https://main.qcloudimg.com/raw/bd22396a4acfbf6d96def87060207a46.png" /> to <img src="https://main.qcloudimg.com/raw/d7ba8412e263386b627369741b457f2e.png" />.
  >! Index configuration must be enabled before you can perform searches.
 >
 3. Click **Submit** to finish collection configuration.
 
-## Operations
+## Relevant Operations
 ### Log search
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
-2. On the left sidebar, click **Search and Analysis** to go to the search and analysis page.
+2. On the left sidebar, click **Search and Analysis** to enter the search and analysis page.
 3. Select the region, logset, and log topic as needed and click **Search and Analysis** to search for logs according to the set query criteria.
-
 
 
 

@@ -12,17 +12,18 @@ You can perform the following actions on CLS resources through the CAM console:
 | createLogset       | Creates a logset                     |
 | modifyLogset       | Modifies a logset                     |
 | deleteLogset       | Deletes a logset                     |
-| listMachineGroup   | Lists machine groups                 |
-| getMachineGroup    | Views machine group information                 |
-| createMachineGroup | Creates a machine group                     |
-| modifyMachineGroup | Modifies a machine group                     |
-| deleteMachineGroup | Deletes a machine group                     |
-| getMachineStatus   | Views the machine group status                 |
-| pushLog                   | Uploads logs                      |
+| listMachineGroup   | Lists server groups                 |
+| getMachineGroup    | Views server group information                 |
+| createMachineGroup | Creates a server group                     |
+| modifyMachineGroup | Modifies a server group                     |
+| deleteMachineGroup | Deletes a server group                     |
+| getMachineStatus   | Views the server group status                 |
+| pushLog                   | Uploads a log                       |
 | searchLog          | Queries logs                      |
+| searchLog          | Queries logs                       |
 | downloadLog        | Downloads logs                       |
 | getCursor          | Obtains a cursor based on time               |
-| getIndex                  | Views indexes                        |
+| getIndex                  | Views an index                       |
 | modifyIndex        | Modifies indexes                       |
 | listShipper        | Lists the shipping configuration of log topics     |
 | createShipper      | Creates shipping configuration                   |
@@ -30,20 +31,20 @@ You can perform the following actions on CLS resources through the CAM console:
 | deleteShipper      | Deletes shipping configuration                   |
 | listShipperTask    | Lists shipping tasks               |
 | modifyShipperTask  | Retries the failed shipping task             |
-| consumerGroupHeartBeat    | Gets the heartbeat of a consumer group                    |
-| createConsumerGroup       | Creates a consumer group                     |
-| getConsumerGroupCursor    | Gets a consumer group cursor                 |
-| pullLogs                  | Gets the consumption data                       |
+| consumerGroupHeartBeat    | User group heartbeat                     |
+| createConsumerGroup       | Creates a user group                     |
+| getConsumerGroupCursor    | Gets a user group cursor                 |
+| pullLogs                  | Consumption data                       |
 | updatePartition           | Splits/merges topic partitions              |
-| deleteConsumerGroup       | Deletes a consumer group                     |
-| modifyConsumerGroup       | Modifies a consumer group                     |
-| listConsumerGroup         | Gets a list of consumer groups                 |
-| modifyConsumerGroupCursor | Modifies a consumer group cursor                 |
+| deleteConsumerGroup       | Deletes a user group                     |
+| modifyConsumerGroup       | Modifies a user group                     |
+| listConsumerGroup         | Gets a list of user groups                 |
+| modifyConsumerGroupCursor | Modifies a user group cursor                 |
 | listPartitions            | Gets a list of topic partitions               |
 | CreateChart | Creates a chart  |
 | ModifyChart | Modifies a chart |
 | DeleteChart | Deletes a chart |
-| GetChart | Gets chart information | 
+| GetChart | Gets chart information |
 | ListChart | Gets a list of charts  |
 | CreateDashboard | Creates a dashboard |
 | ModifyDashboard | Modifies a dashboard              |

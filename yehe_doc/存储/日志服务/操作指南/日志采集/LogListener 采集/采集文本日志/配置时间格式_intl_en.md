@@ -1,46 +1,45 @@
 
 
-CLS requires a time attribute for each log so that the system can manage the data by the time dimension. When logs are collected by LogListener, the time attribute can be configured in the following two methods:
+CLS requires a time attribute for each log so that the system can manage the data by the time dimension. When logs are collected using LogListener, the time attribute can be configured using two methods:
 
 - Default method: use LogListener collection time as the time attribute.
-- Custom method: use a time field in the log content as the time attribute. For this method, you need to configure a time parsing format.
+- Custom method: use a time field in the log content as the time attribute. In this method, you need to configure a time parsing format.
 
->?The LogListener collection time can be accurate down to the second. Therefore, the time parsing format only needs to be configured at the second level.
+>? The time precision of LogListener collection is "second". Therefore, the time parsing format needs to be accurate to seconds.
+>
 
-
-
-## Parsing Format Description
+## About Parsing Formats
 
 | Parameter Format | Description                                                         | Example        |
 | -------- | ------------------------------------------------------------ | ----------- |
-| %a       | Abbreviation of a day in a week                                       | Fri         |
-| %A       | Full name of a day in a week                                       | Friday      |
-| %b       | Abbreviation of a month                                       | Jan         |
-| %B       | Full name of a month                                       | January     |
-| %d       | A day in a month (01–31)                                    | 31          |
-| %h       | Abbreviation of a month, which is the same as `%b`                         | Jan         |
-| %H       | An hour in the 24-hour system (00–23)                                      | 22          |
-| %I       | An hour in the 12-hour system (01–12)                                      | 11          |
-| %m       | Month (01–12), with 01 indicating January                                  | 08          |
-| %M       | Minute (00–59), with 01 indicating the first minute                                | 59          |
+| %a       | Abbreviation for a weekday                                       | Fri         |
+| %A       | Full name for a weekday                                       | Friday      |
+| %b       | Abbreviation for a month                                       | Jan         |
+| %B       | Full name for a month                                       | January     |
+| %d       | A day of a month (01 to 31)                                    | 31 
+| %h       | Abbreviation for a month, same as `%b`                         | Jan         |
+| %H       | An hour in the 24-hour system (00 to 23)                                      | 22          |
+| %I       | An hour in the 12-hour system (01 to 12)                                      | 11          |
+| %m       | Month (01 to 12), with 01 indicating January                                  | 08          |
+| %M       | Minute (00 to 59), with 01 indicating one minute                                | 59          |
 | %n       | Line break                                                       | Line break      |
 | %p       | Morning (AM) or afternoon (PM)                                       | AM/PM       |
-| %r       | Specific 12-hour combined time format, which is equivalent to `%I:%M:%S %p`          | 11:59:59 AM |
-| %R       | Specific 24-hour combined time format, which is equivalent to `%H:%M`                  | 23:59       |
-| %S       | Second (00–59)                                                | 59          |
+| %r       | Specific 12-hour combined time format, equivalent to `%I:%M:%S %p`          | 11:59:59 AM |
+| %R       | Specific 24-hour combined time format, equivalent to `%H:%M`                  | 23:59       |
+| %S       | Second (00 to 59)                                                | 59          |
 | %f       | Millisecond |0.123          |
 | %t       | Tab                                                    | Tab   |
-| %y       | Year without the century (00–99)                                | 19          |
-| %Y       | Year with the century, with 2018 indicating the year of 2018                           | 2019        |
-| %C       | Century in the range from 00 to 99, which is obtained by dividing the year by 100                             | 20          |
-| %e       | A day in a month (01–31)                                    | 31          |
-| %j       | A day in a year (001–366)                                    | 365         |
-| %u       | A day in a week represented by a digit (1–7), with 1 indicating Monday and 7 indicating Sunday          | 1           |
-| %U       | A week in a year (00–53), with the week starting on Sunday, that is, the first Sunday is the first day of the first week | 23          |
-| %w       | A day in a week represented by a digit (0–6), with 0 indicating Sunday and 6 indicating Saturday          | 5           |
-| %W       | A week in a year (00–53), with the week starting on Monday, that is, the first Monday is the first day of the first week | 23          |
-| %s       | Second-level (10-digit) Unix timestamp                                       | 1571394459  |
-| %F      | Millisecond-level (13-digit) Unix timestamp                                        | 1571394459123  |
+| %y       | Year, without the century (00 to 99)                                | 19          |
+| %Y       | Year, with the century, with 2018 indicating the year of 2018                           | 2019        |
+| %C       | Century (obtained by dividing the year by 100, ranging from 00 to 99)                             | 20          |
+| %e       | A day of a month (01 to 31)                                    | 31          |
+| %j       | A day of a year (001 to 366)                                    | 365         |
+| %u       | Weekday represented by a digit (1 to 7), with 1 indicating Monday and 7 indicating Sunday          | 1           |
+| %U       | A week of a year (00 to 53), with the weeks starting from Sunday, that is, the first Sunday as the first day of the first week | 23          |
+| %w       | Weekday represented by a digit (0 to 6), with 0 indicating Sunday and 6 indicating Saturday          | 5           |
+| %W       | A week of a year (00 to 53), with the weeks starting from Monday, that is, the first Monday as the first day of the first week | 23          |
+| %s       | Second-level (10-digit) UNIX timestamp                                       | 1571394459  |
+| %F      | Millisecond-level (13-bit) UNIX timestamp                                        | 1571394459123  |
 
 
 
