@@ -1,7 +1,7 @@
 本节简单介绍如何从远程 Hadoop 集群中批量加载数据文件到 Druid 集群中。本文操作均是以 Hadoop 用户进行，请先在 Druid 集群和 Hadoop 集群上都切换到 Hadoop 用户。
 
 ## 批量加载数据到 Druid 集群
-1. 在对应远程 hadoop 集群上以 Hadoop 用户执行以下命令新建目录：
+1. 在对应远程 hadoop 集群上，以 Hadoop 用户执行以下新建目录命令：
 ```
 hdfs dfs -mkdir /druid
 hdfs dfs -mkdir /druid/segments
@@ -12,12 +12,12 @@ hdfs dfs -chmod 777 /quickstart
 ```
 >!如果 Druid 集群和 Hadoop 集群是两个独立集群，则目录需要建立在对应 Hadoop 集群上（之后的操作类似，注意分辨正确操作对应的集群）；如果在测试环境下 Druid 集群和 Hadoop 集群是同一个集群，则在同集群操作即可。
 2. 上传测试包
-Druid 集群下自带一个名为 Wikiticker 的数据集示例（默认路径`/usr/local/service/druid/quickstart/tutorial/wikiticker-2015-09-12-sampled.json.gz`），将 Druid 集群内的数据集上传到对应远程 Hadoop 集群，**是在远程 Hadoop 集群上传**。
+Druid 集群下自带一个名为 Wikiticker 的数据集示例（默认路径 `/usr/local/service/druid/quickstart/tutorial/wikiticker-2015-09-12-sampled.json.gz`），将 Druid 集群内的数据集上传到对应远程 Hadoop 集群，**是在远程 Hadoop 集群上传**。
 ```
 hdfs dfs -put wikiticker-2015-09-12-sampled.json.gz /quickstart/wikiticker-2015-09-12-sampled.json.gz
 ```
 3. 编译索引文件
-准备一个索引文件，仍然使用 Druid 集群的样例文件`/usr/local/service/druid/quickstart/tutorial/wikipedia-index-hadoop.json`，命令如下：
+准备一个索引文件，仍然使用 Druid 集群的样例文件 `/usr/local/service/druid/quickstart/tutorial/wikipedia-index-hadoop.json`，命令如下：
 ```
 {
   "type" : "index_hadoop",
@@ -95,7 +95,7 @@ hdfs dfs -put wikiticker-2015-09-12-sampled.json.gz /quickstart/wikiticker-2015-
 ```
 **说明：**
  - hadoopDependencyCoordinates 为依赖的 Hadoop 版本。
- - spec.ioConfig.inputSpec.paths 为输入文件路径。如果已经在 common.runtime.properties 配置中设置好集群连通性，可以使用相对路径（可参考 [Druid 使用](https://intl.cloud.tencent.com/document/product/1026/35874)）。否则，应该根据情况使用以`hdfs://`或者`cosn://`开头的相对路径。
+ - spec.ioConfig.inputSpec.paths 为输入文件路径。如果已经在 common.runtime.properties 配置中设置好集群连通性，可以使用相对路径（可参考 [Druid 使用](https://intl.cloud.tencent.com/document/product/1026/35874)）。否则，应该根据情况使用以 `hdfs://`或者`cosn://` 开头的相对路径。
  - tuningConfig.jobProperties 参数可以设置 mapreduce job 的相关参数。
 4. 提交索引任务
 接下来可以在 Druid 集群上提交任务将数据摄入，在 Druid 目录下以 Hadoop 用户执行：
@@ -124,7 +124,7 @@ GROUP BY page
 ORDER BY Edits DESC
 LIMIT 10
 ```
-- 在查询节点上使用命令行工具`bin/dsql`进行交互式查询。
+- 在查询节点上使用命令行工具 `bin/dsql` 进行交互式查询。
 ```
 [hadoop@172 druid]$ ./bin/dsql
 Welcome to dsql, the command-line client for Druid SQL.
