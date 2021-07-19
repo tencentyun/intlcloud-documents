@@ -43,12 +43,16 @@ width: 18%;
 
  | 服务                                                         | 授权粒度 | 控制台 | 根据标签进行授权 |  服务角色 |	参考文档 |	
 | ------------------------------------------------------------| ------ | -------- | ------- |  ---- |	---- |	
-| [云服务器](https://intl.cloud.tencent.com/document/product/213) <sup>1</sup> | 资源级  | &#10003;      |&#10003;    |  &#10003;  |	 [访问管理指南](https://intl.cloud.tencent.com/document/product/213/10315)   |		
-| [容器服务](https://intl.cloud.tencent.com/document/product/457) | 资源级  | &#10003;       | &#10003; | &#10003;    |	[访问管理指南](https://intl.cloud.tencent.com/document/product/457/11542)  |	
+| [云服务器](https://intl.cloud.tencent.com/document/product/213) <sup>1</sup> | 资源级  | &#10003;      |&#10003;    |  &#10003;  |	 [访问管理指南](https://intl.cloud.tencent.com/document/product/213/10315)   |
 | [弹性伸缩](https://intl.cloud.tencent.com/document/product/377) | 资源级   | &#10003;      | &#10003;  | &#10003;    |	-    |	
 | [批量计算](https://intl.cloud.tencent.com/document/product/599)  | 资源级 | &#10003;         |  &#10003;  | -    |[访问管理指南](https://intl.cloud.tencent.com/document/product/599/33471)   |		
-| [容器镜像服务](https://intl.cloud.tencent.com/document/product/1051)  | 资源级 | &#10003;         |  -  | &#10003;     | -  |	
+
 >?<sup>1</sup> 云服务器中 [GPU 云服务器](https://intl.cloud.tencent.com/document/product/560)、[专用宿主机](https://intl.cloud.tencent.com/document/product/416)  均已支持使用 CAM。
+
+
+## 容器
+| [容器服务](https://intl.cloud.tencent.com/document/product/457) | 资源级  | &#10003;       | &#10003; | &#10003;    |	[访问管理指南](https://intl.cloud.tencent.com/document/product/457/11542)  |	
+| [容器镜像服务](https://intl.cloud.tencent.com/document/product/1051) | 资源级  | 资源级 | &#10003; | - | &#10003; |	[访问管理指南](https://intl.cloud.tencent.com/document/product/1051/37246)  |	
 
 ## 存储	
 
@@ -64,11 +68,12 @@ width: 18%;
 
 ## 网络	
 
- | 服务                                                       | 授权粒度 | 控制台 | 根据标签进行授权  |  服务角色 |	参考文档 |	
+| 服务                                                       | 授权粒度 | 控制台 | 根据标签进行授权  |  服务角色 |	参考文档 |	
 | ------------------------------------------------------------ | ------ | -------- | ------- | ---- |	 ---- |
 | [负载均衡](https://intl.cloud.tencent.com/document/product/214)   | 资源级  | &#10003;      | &#10003;    |    &#10003;  |	[访问管理指南](https://intl.cloud.tencent.com/document/product/214/9777) |	
 | [私有网络 VPC ](https://intl.cloud.tencent.com/document/product/215)<sup>1</sup>  | 资源级 | &#10003;        | &#10003;     | - |	 - |	
-| [专线接入](https://intl.cloud.tencent.com/document/product/216) | 资源级   | &#10003;       | -       | -  |	 - |	
+| [专线接入](https://intl.cloud.tencent.com/document/product/216) | 资源级   | &#10003;       | &#10003;       | -  |	 - |	
+
 >?<sup>1</sup> 私有网络中 [弹性网卡](https://intl.cloud.tencent.com/document/product/576)、[NAT 网关](https://intl.cloud.tencent.com/document/product/1015)、[对等连接](https://intl.cloud.tencent.com/document/product/553)、[VPN 连接](https://intl.cloud.tencent.com/document/product/1037)、[网络流日志](https://intl.cloud.tencent.com/document/product/682) 、[Anycast 公网加速](https://intl.cloud.tencent.com/document/product/644)、[云联网](https://intl.cloud.tencent.com/document/product/1003)、[共享带宽包](https://intl.cloud.tencent.com/document/product/684) 均已支持使用 CAM。
 
 ## CDN 与加速	
@@ -76,7 +81,7 @@ width: 18%;
 | 服务                                                      | 授权粒度 | 控制台  | 根据标签进行授权 | 服务角色 |	参考文档 |	
 | ------------------------------------------------------------| ------ | -------- | -------- |  ---- |	---- |	
 | [全球应用加速](https://intl.cloud.tencent.com/document/product/608)  | 资源级 | &#10003;  |  &#10003;   |  -  |-  |
-| [全站加速网络](https://intl.cloud.tencent.com/document/product/570)  | 资源级 | &#10003;  |  - | -  | -  |
+| [全站加速网络](https://intl.cloud.tencent.com/document/product/570)  | 资源级 | &#10003;  |  &#10003; | -  | -  |
 | [内容分发网络](https://intl.cloud.tencent.com/document/product/228)<sup>1</sup>| 资源级 | &#10003;   |  &#10003;   | &#10003; |[访问管理指南](https://intl.cloud.tencent.com/document/product/228/35229)  |
 
 
@@ -94,6 +99,7 @@ width: 18%;
 | [数据传输服务](https://intl.cloud.tencent.com/document/product/571)  | 资源级 |  &#10003;  | &#10003;    | &#10003;    | - |
 | [游戏数据库 TcaplusDB](https://intl.cloud.tencent.com/document/product/1016)  | 资源级 |  &#10003;  | &#10003;   | -    | - |		
 | [数据库智能管家 DBbrain](https://intl.cloud.tencent.com/document/product/1035) |资源级 | &#10003;  | -    | -    |[访问管理指南](https://intl.cloud.tencent.com/document/product/1035/36050)|	
+| [TDSQL-A PostgreSQL 版](https://cloud.tencent.com/document/product/1378) | 资源级 | &#10003; | &#10003; | &#10003; | [访问管理指南](https://cloud.tencent.com/document/product/1378/54476) |
 
 
 ## Serverless	
@@ -102,6 +108,8 @@ width: 18%;
 | ------------------------------------------------------------| ------ | -------- | -------- |  ---- |	---- |	
 | [云函数](https://intl.cloud.tencent.com/document/product/583)  | 资源级 | &#10003;        |  &#10003;  | &#10003;   |[访问管理指南](https://intl.cloud.tencent.com/document/product/583/18014)  |	
 | [Serverless 应用中心](https://intl.cloud.tencent.com/document/product/1040)  | 资源级 | - |  -   |  &#10003;   | -   |
+| Serverless Framework | -    | -    | -    | &#10003; | -    |
+
 
 
 ## 中间件	
@@ -129,16 +137,16 @@ width: 18%;
 
 ## 数据安全
 
- | 服务                                                         | 授权粒度  | 控制台  | 根据标签进行授权 | 服务角色 | 参考文档 |
-| ------------------------------------------------------------ | ------ | -------- | ------- | ---- |  ---- | 
-| [密钥管理系统](https://intl.cloud.tencent.com/document/product/1030) | 资源级   | &#10003;  | &#10003;  |  -     |[访问管理指南](https://intl.cloud.tencent.com/document/product/1030/31978) |	
+| 服务                                                         | 授权粒度  | 控制台  | 根据标签进行授权 | 服务角色 | 参考文档 |
+| ------------------------------------------------------------ | ------ | -------- | ------- | ---- |  ---- |
+| [密钥管理系统](https://intl.cloud.tencent.com/document/product/1030) | 资源级   | &#10003;  | &#10003;  |  -     |[访问管理指南](https://intl.cloud.tencent.com/document/product/1030/31978) |
 
 
 ## 安全管理
 
- | 服务                                                         | 授权粒度  | 控制台  | 根据标签进行授权 | 服务角色 | 参考文档 |
-| ------------------------------------------------------------ | ------ | -------- | ------- | ---- |  ---- | 
-| [安全运营中心](https://intl.cloud.tencent.com/document/product/1008)    | 操作级  | &#10003; | -   | &#10003; |-  | 
+| 服务                                                         | 授权粒度  | 控制台  | 根据标签进行授权 | 服务角色 | 参考文档 |
+| ------------------------------------------------------------ | ------ | -------- | ------- | ---- |  ---- |
+| [安全运营中心](https://intl.cloud.tencent.com/document/product/1008)    | 操作级  | &#10003; | -   | &#10003; |-  |
 
 ## 应用安全
 
@@ -151,7 +159,7 @@ width: 18%;
  | 服务                                                         | 授权粒度 | 控制台 | 根据标签进行授权 | 服务角色 |	参考文档 |
 | ------------------------------------------------------------ | ------ | -------- | -------- | ---- |	---- |	
 | [实时音视频](https://intl.cloud.tencent.com/document/product/647)   | 资源级| &#10003; | &#10003;  |  - |	-|	
-| [云直播](https://intl.cloud.tencent.com/document/product/267)   | 资源级| &#10003; | - |  &#10003;  |	[访问管理指南](https://intl.cloud.tencent.com/document/product/267/32468) |	
+| [云直播](https://intl.cloud.tencent.com/document/product/267)   | 资源级| &#10003; | &#10003; |  &#10003;  |	[访问管理指南](https://intl.cloud.tencent.com/document/product/267/32468) |	
 | [云点播](https://intl.cloud.tencent.com/document/product/266)    | 资源级   | &#10003;  | &#10003;   |  &#10003; |	[访问管理指南](https://intl.cloud.tencent.com/document/product/266/33970)  |	
 | [视频处理](https://intl.cloud.tencent.com/document/product/1041)    | 服务级   | &#10003;  | -    |   &#10003;   |	-  |		
 | [媒体直播](https://intl.cloud.tencent.com/document/product/1048)    | 操作级   | &#10003;  | -    |   -   |	-  |	
@@ -178,7 +186,7 @@ width: 18%;
 | [游戏服务器伸缩](https://intl.cloud.tencent.com/document/product/1055)  | 资源级 | &#10003;| &#10003;   |  &#10003;    |  [访问管理指南](https://intl.cloud.tencent.com/zh/document/product/1055/37776)   |
 | [游戏玩家匹配](https://intl.cloud.tencent.com/document/product/1072) | 资源级   | &#10003; | &#10003;         | &#10003; | - |
 
-	
+
 ## 移动服务	
 
  | 服务                                                        | 授权粒度  | 控制台 | 根据标签进行授权 |  服务角色 |	参考文档 |
@@ -189,7 +197,7 @@ width: 18%;
 
  | 服务                                                         | 授权粒度 | 控制台 | 根据标签进行授权 | 服务角色 |	参考文档 |
 | ------------------------------------------------------------ | ------ | -------- | ----- | ---- |	---- |
-| [即时通信](https://intl.cloud.tencent.com/document/product/1047)   | 资源级 | &#10003;   | -  |  - | - |
+| [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047)   | 资源级 | &#10003;   | -  |  - | - |
 | [短信](https://intl.cloud.tencent.com/document/product/382) | 资源级 | &#10003; | &#10003;   | -  |	-  |	
 
 ## 云资源管理
