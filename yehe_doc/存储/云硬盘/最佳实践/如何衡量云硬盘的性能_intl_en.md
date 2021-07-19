@@ -12,7 +12,7 @@ We recommend that you use FIO together with libaio’s I/O engine to perform the
 
 >
 >- **To avoid damaging important files in the system, do not perform FIO test on the system disk**.
->- **To avoid data corruption caused by corruption of the metadata of the underlying file system, do not perform the test on the business data disk. **
+>- **To avoid data corruption caused by corruption of the metadata of the underlying file system, do not perform the test on the business data disk.**
 >- Ensure the `/etc/fstab` file **DOES NOT contain** the mount configuration of the disk to be tested. Otherwise, CVM may fail to launch.
 
 ## Recommended Test Objects
