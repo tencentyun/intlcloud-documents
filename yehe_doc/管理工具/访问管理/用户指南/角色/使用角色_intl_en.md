@@ -15,7 +15,7 @@ For example:
 ## Directions
 You can click the following tabs to view the corresponding directions.
 <dx-tabs>
-::: Using the role in the console
+::: Using\sthe\srole\sin\sthe\sconsole
 1. Company A creates a role (as instructed in [Creating a Role](https://intl.cloud.tencent.com/document/product/598/19381)).
 Select **Tencent Cloud Account** as the role entity and create a role (`DevOpsRole` for example). Then, set company B's enterprise account "67890" as its role entity and add it the permission to manipulate company A's CVM resources in the Guangzhou region.
 
@@ -27,10 +27,10 @@ Log in to the console with company B's sub-account `DevB` and click **Switch Rol
 Enter company A's root account "12345" and the role name "DevOpsRole". After confirmation, company B can switch to the `DevOpsRole` role of company A (ownerUin: 12345).
 You can also switch to other roles by clicking **Switch Role** in the drop-down list.
 If you want to return to the original sub-account after switching the role, you can click **Back to Sub-user** in the drop-down list.
->!You can only switch to a role after being authorized to use it, and the role entity must be a Tencent Cloud account. You cannot switch to unauthorized roles.
-
+<dx-alert infotype="explain">You can only switch to a role after being authorized to use it, and the role entity must be a Tencent Cloud account. You cannot switch to unauthorized roles.
+</dx-alert>
 :::
-::: Using roles through \sAPI\s
+::: Using\sroles\sthrough\sAPI\s
 Company A takes the following steps as instructed in [Creating a Role](https://intl.cloud.tencent.com/document/product/598/19381#.E9.80.9A.E8.BF.87-api-.E5.88.9B.E5.BB.BA):
 1. Create a role and set the role entity to company B's enterprise account `CompanyExampleB`.
 2. Call the `CreateRole` API to create a role with the `roleName` as `DevOpsRole` and grant the role the permission to manipulate company A's all CVM resources in the Guangzhou region.
@@ -38,7 +38,9 @@ Company A takes the following steps as instructed in [Creating a Role](https://i
 Company B takes the following steps as instructed in [Authorizing a Sub-account with the Policy of Assuming a Role](https://intl.cloud.tencent.com/document/product/598/19422):
 1. Authorize the sub-account `DevB` to assume the `DevOpsRole` role.
 2. Call the [AssumeRole](https://intl.cloud.tencent.com/document/product/598/35840) API to apply for temporary credentials for the role `DevOpsRole`. Input parameters are as follows: 
->?If company B (`CompanyExampleB`) wants to directly manipulate the resources of company A (`CompanyExampleA`), they can also request temporary credentials to perform operations.
+
+<dx-alert infotype="notice">If company B (`CompanyExampleB`) wants to directly manipulate the resources of company A (`CompanyExampleA`), they can also request temporary credentials to perform operations.
+</dx-alert>
 
  ```
 roleArn=qcs::cam::uin/12345:roleName/DevOpsRole,
@@ -59,7 +61,7 @@ If this API is called successfully, the response will be as follows:
 ```
 3. `DevB` can perform operations on company A's resources within the scope of permissions during the validity period of the credentials.
 For example, if `DevB` wants to call the [DescribeInstances](https://intl.cloud.tencent.com/document/product/213/33258) API to view the CVM list, then `DevB` needs to replace the values of `SecretId` and `SecretKey` with the values of `tmpSecretId` and `tmpSecretKey` and set the `Token` in [common parameters](https://intl.cloud.tencent.com/document/product/213/31574) to the value of `sessionToken`.
->! To stop authorizing company B, company A only needs to delete the `DevOpsRole` role.
+<dx-alert infotype="explain">To stop authorizing company B, company A only needs to delete the `DevOpsRole` role.</dx-alert>
 :::
 </dx-tabs>
 
