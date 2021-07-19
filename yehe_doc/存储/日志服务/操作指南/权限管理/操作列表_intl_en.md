@@ -20,7 +20,6 @@ You can perform the following actions on CLS resources through the CAM console:
 | getMachineStatus   | Views the server group status                 |
 | pushLog                   | Uploads a log                       |
 | searchLog          | Queries logs                      |
-| searchLog          | Queries logs                       |
 | downloadLog        | Downloads logs                       |
 | getCursor          | Obtains a cursor based on time               |
 | getIndex                  | Views an index                       |
