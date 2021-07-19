@@ -36,6 +36,6 @@ Supported regions:
 7. Click **Save**. If the status of **Ship to CKafka** is displayed as "Enabled", it has been enabled successfully.
 ![](https://main.qcloudimg.com/raw/f964f0a141123a7926b8fd1a1eb1b5ba.png)
 
->! To cleanse the log data before shipping to CKafka, please see [CLS Dump to CKafka]https://intl.cloud.tencent.com/document/product/614/38885).
+>! To cleanse the log data before shipping to CKafka, please see [CLS Dump to CKafka](https://intl.cloud.tencent.com/document/product/614/38885).
 >
 
