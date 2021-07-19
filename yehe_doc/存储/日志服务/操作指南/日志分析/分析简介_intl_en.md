@@ -30,12 +30,15 @@ status:404 | select count(*) as pv
 ## Directions
 
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
-2. Select **Search and Analysis** on the left sidebar to go to the search and analysis page.
+2. Select **Search and Analysis** in the left sidebar to go to the search and analysis page.
 3. Select the logset and log topic you want to search.
-   Set the time range. You can choose last 1 hour, last 4 hours, last 1 day, or last 3 days, or set a custom a time range. 
+   Set the time range. You can choose last hour, last 4 hours, last day, or last 3 days, or set a custom a time range. 
 4. Enter an analysis statement and click **Search and Analysis** to obtain the analysis result.
    For more information about analysis statements, see **[SQL syntax](#sql1)** and **[SQL functions](#sql2)**. 
 
+
+
+## Example
 
 
 
@@ -74,7 +77,7 @@ CLS supports the following SQL syntax and functions. You can click them to view 
 
 | Metric | Limit | Remarks |
 | ---------------------------------------- | ------------------------------------------------------------ | --------------------------- |
-| The maximum length of a single statistical field value | The maximum length is 32 KB, and the excessive part will be truncated.                             | Fields exceeding 32 KB cannot be written to ES, which makes it hard to troubleshoot discarded log contents.                           |
+| The maximum length of a single statistical field value | The maximum length is 32 KB, and the excessive part cannot be written to ES.                             | Fields exceeding 32 KB cannot be written to ES, which makes it hard to troubleshoot discarded log contents.                           |
 | Number of non-cluster analysis results (excluding `GROUP BY` clauses) | Each analysis returns up to 1,000 results. | Default: 100; Maximum: 1000 |
 | Number of cluster analysis results (including GROUP BY clauses) | Each analysis returns up to 100 results.                              | Default: 100; Maximum: 2000                        |
 | `ORDER BY` clause limit | The `ORDER BY` operation is not supported for fields that have been calculated using one of the functions `ROUND`, `SQRT`, `ABS`, `POWER`, and `FLOOR`, or the four arithmetic operations of addition, subtraction, multiplication, and division. | - |
