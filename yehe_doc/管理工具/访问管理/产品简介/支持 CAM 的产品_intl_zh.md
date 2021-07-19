@@ -51,6 +51,8 @@ width: 18%;
 
 
 ## 容器
+| 服务                                                          | 授权粒度 | 控制台  | 根据标签进行授权 |  服务角色 |	参考文档 |	
+| ------------------------------------------------------------ | ------ | --------  | ------- | ---- |	---- |	
 | [容器服务](https://intl.cloud.tencent.com/document/product/457) | 资源级  | &#10003;       | &#10003; | &#10003;    |	[访问管理指南](https://intl.cloud.tencent.com/document/product/457/11542)  |	
 | [容器镜像服务](https://intl.cloud.tencent.com/document/product/1051) | 资源级  | 资源级 | &#10003; | - | &#10003; |	[访问管理指南](https://intl.cloud.tencent.com/document/product/1051/37246)  |	
 
