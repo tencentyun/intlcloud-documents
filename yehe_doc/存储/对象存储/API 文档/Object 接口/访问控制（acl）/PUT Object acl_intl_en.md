@@ -65,7 +65,7 @@ This API has no request parameter.
 
 In addition to common request headers, this API also supports the following request headers. For more information about common request headers, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-| Header &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | Required |
+| Header     | Description | Type | Required |
 | --- | --- | --- | --- |
 | x-cos-acl | Defines the ACL attribute of the object. For the enumerated values, such as `default`, `private`, and `public-read`, please see the <b>Preset ACL</b> section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583#.E9.A2.84.E8.AE.BE.E7.9A.84-acl). Default value: `default` <br>**Note**: If you do not need access control for the object, set this header to `default` or leave it empty. In this way, the object will inherit the permissions of the bucket it is stored in. | Enum | No |
 | x-cos-grant-read | Grants a user read permission for an object in the format: `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
