@@ -27,7 +27,7 @@
 输入公司 A 的主账号“12345”，以及角色名称“DevOpsRole”，确定后即可切换为公司 A（ownerUin 为 12345）的 DevOpsRole 角色身份。
 相同地，若有切换其他角色的需求，可在控制台头像下拉菜单中，选择“切换角色”，进入切换角色页面切换其他角色。
 控制台切换角色登录后，若要返回原子用户，控制台头像下拉菜单中，选择“返回子用户”即可退出角色返回原子用户。
->!子账号仅能切换已授权的，且角色载体为云账户的角色，其他未授权的角色不可切换。
+<dx-alert infotype="notice">子账号仅能切换已授权的，且角色载体为云账户的角色，其他未授权的角色不可切换。</dx-alert>
 
 :::
 ::: 通过\sAPI\s使用角色
@@ -38,7 +38,7 @@
 公司 B 参考 [为子账号赋予扮演角色策略](https://intl.cloud.tencent.com/document/product/598/19422) 文档，执行以下操作：
 1. 授权子账号 DevB 扮演 CompanyExampleA 的 DevOpsRole 角色。
 2. 调用 [AssumeRole](https://intl.cloud.tencent.com/document/product/598/35840) 接口，申请角色 DevOpsRole 的临时凭证。输入参数如下: 
->?若公司 B（CompanyExampleB）希望直接操作公司 A（CompanyExampleA）的资源，也可以通过申请角色的临时凭证进行操作。
+<dx-alert infotype="explain">若公司 B（CompanyExampleB）希望直接操作公司 A（CompanyExampleA）的资源，也可以通过申请角色的临时凭证进行操作。</dx-alert>
 
  ```
 roleArn=qcs::cam::uin/12345:roleName/DevOpsRole，
@@ -59,7 +59,7 @@ durationSeconds=7200
 ```
 3. 在凭证有效期内，根据实际需求，DevB 对公司 A 执行权限范围内的操作。
 例如，通过 API 查看云服务器列表，在调用 [DescribeInstances](https://intl.cloud.tencent.com/document/product/213/33258) 接口时，将 API 密钥 SecretId 和 SecretKey 的值替换为 tmpSecretId 和 tmpSecretKey 的值，同时将 [公共参数](https://intl.cloud.tencent.com/document/product/213/31574) 中的 Token 设置为 sessionToken 的值。
->! 当公司 A 想终止对公司 B 的授权时，删除角色 DevOpsRole 即可。
+<dx-alert infotype="notice">当公司 A 想终止对公司 B 的授权时，删除角色 DevOpsRole 即可。</dx-alert>
 :::
 </dx-tabs>
 
