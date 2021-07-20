@@ -28,7 +28,7 @@ To resolve this issue, run the `sync` command to forcibly write the data in the 
 ### Creating a snapshot via the console
 1. Log in to the [CBS console](https://console.cloud.tencent.com/cvm/cbs).
 2. Select the target cloud disk, and click **Create a snapshot** under the **Operation** column, as shown below:
-![](https://main.qcloudimg.com/raw/915ac748e739b49a295a06c965c93239.png)
+
 3. In the pop-up window, enter a snapshot name and click **OK**.
 
 ### Creating a snapshot via an API
