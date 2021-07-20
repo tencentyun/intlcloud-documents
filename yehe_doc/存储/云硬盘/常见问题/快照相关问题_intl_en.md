@@ -10,7 +10,7 @@ A cloud disk snapshot is a block-level clone or backup. In general, the snapshot
 
 
 ### What are the differences between snapshots and images?
-If no data disk is mounted to an instance and all data is written on the system disk, the data on the system disk cannot be protected by creating an image. Images cannot be scheduled for continuous backup. Once the system disk data is damaged, you can only recover the data to the state when the image was initially created. Therefore, images are not suitable for data protection. Specific differences are as follows:
+If no data disk is attached to an instance and all data are written on the system disk, the data on the system disk cannot be protected by creating an image. Images cannot be scheduled for continuous backup. Once the system disk data are damaged, you can only recover the data to the state when the image was initially created. Therefore, images are not suitable for data protection. Specific differences are as follows:
 
 <table>
 		<tr>
@@ -58,7 +58,7 @@ The owner of shared images is charged the snapshot fee, while the recipient acco
 
 
 ### What is a scheduled snapshot?
-A scheduled snapshot is automatically created for the cloud disk according to the associated scheduled snapshot policy. To use this feature, you must first create a scheduled snapshot policy and associate it with the cloud disk. For more information, see [Scheduled Snapshots](https://intl.cloud.tencent.com/document/product/362/35238).
+A scheduled snapshot is automatically created for the cloud disk according to the associated scheduled snapshot policy. To use this feature, you must first create a scheduled snapshot policy and associate it with the cloud disk. For more information, see [Scheduling Snapshots](https://intl.cloud.tencent.com/document/product/362/35238).
 
 
 ### What limits do scheduled snapshots have?
@@ -67,15 +67,15 @@ A maximum of 30 scheduled snapshot policies can be created in one region. Each s
 ### How are snapshots created?
 You can create a snapshot using the following methods:
 - Custom snapshot: you can manually create a snapshot to quickly save data of the cloud disk at a specified point in time. For more information, see [Creating Snapshots](https://intl.cloud.tencent.com/document/product/362/5755).
-- Scheduled snapshot: you can associate a scheduled snapshot policy with the cloud disk to periodically create and delete snapshots.
+- Scheduled snapshot: you can associate a scheduled snapshot policy with the cloud disk to periodically create and delete snapshots. For more information, see [Scheduled Snapshots](https://intl.cloud.tencent.com/document/product/362/35238).
 
 ### Is snapshot available in all availability zones?
 Yes.
 
-## How are snapshots billed?
+### How are snapshots billed?
 Snapshots are billed according to your total snapshot storage size in each region in a **pay-as-you-go** manner; and the fee is calculated and deducted on the dot of every hour. For more information about billing, see [Billing Overview](https://intl.cloud.tencent.com/document/product/362/32415) and [Price Overview](https://intl.cloud.tencent.com/document/product/362/2413).
 
-### Do I need to unmount a disk or interrupt all reads and writes before creating a snapshot?
+### Do I need to detach a disk or interrupt all reads and writes before creating a snapshot?
 No. You can create a real-time snapshot while the disk is connected and in use, without affecting the normal operation of your business. However, the snapshot can only capture the written data but not cached data of the cloud disk. To ensure all application data is captured, we recommend that you suspend all disk I/O operations before creating a snapshot. For a cloud disk that is used as a system disk, we recommend that you shut down the CVM to create a more complete snapshot.
 
 ### Will creating a snapshot affect the disk performance?
@@ -91,8 +91,8 @@ For more information, see [Creating Cloud Disks Using Snapshots](https://intl.cl
 For more information, see [Rolling Back Snapshots](https://intl.cloud.tencent.com/document/product/362/5756).
 
 ### Do I need to shut down the CVM to roll back to a snapshot?
-- For a cloud disk that has been mounted to a CVM, you have to shut down the CVM to roll back to a snapshot.
-- For a cloud disk that has not been mounted, you can directly roll back to a snapshot.
+- For a cloud disk that has been attached to a CVM, you have to shut down the CVM to roll it back to a snapshot.
+- For a cloud disk that has not been attached to a CVM, you can directly roll it back to a snapshot.
 
 ### Can I read a previous snapshot to restore a cloud disk?
 Yes. You can use an existing snapshot created at any point in time to restore data, regardless of the snapshot’s point in time.
