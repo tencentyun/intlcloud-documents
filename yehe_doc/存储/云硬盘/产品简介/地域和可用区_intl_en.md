@@ -37,7 +37,6 @@ Availability zones have the following characteristics:
 	<tr>
 		<td>Guangzhou Zone 6<br>ap-guangzhou-6</td>
 	</tr>
-
 	<tr>
 		<td rowspan="5">East China (Shanghai)<br>ap-shanghai</td>
 		<td>Shanghai Zone 1<br>ap-shanghai-1</td>
@@ -51,62 +50,61 @@ Availability zones have the following characteristics:
 	<tr>
 		<td>Shanghai Zone 4<br>ap-shanghai-4</td>
 	</tr>
- <tr>
+	<tr>
 		<td>Shanghai Zone 5 <br>ap-shanghai-5</td>
-	</tr>
-	
-		<tr>
-			<td rowspan="3">East China (Nanjing)<br>ap-nanjing</td>
-			<td>Nanjing Zone 1<br>ap-nanjing-1</td>
+	</tr>	
+	<tr>
+		<td rowspan="3">East China (Nanjing)<br>ap-nanjing</td>
+		<td>Nanjing Zone 1<br>ap-nanjing-1</td>
 	</tr>
 	<tr>
-			<td>Nanjing Zone 2<br>ap-nanjing-2</td>
+		<td>Nanjing Zone 2<br>ap-nanjing-2</td>
 	</tr>
 	<tr>
-			<td>Nanjing Zone 3<br>ap-nanjing-3</td>
-	</tr>
-		<tr>
-			<td rowspan="7">North China (Beijing)<br>ap-beijing</td>
-			<td>Beijing Zone 1<br>ap-beijing-1</td>
+		<td>Nanjing Zone 3<br>ap-nanjing-3</td>
 	</tr>
 	<tr>
-			<td>Beijing Zone 2<br>ap-beijing-2</td>
+		<td rowspan="7">North China (Beijing)<br>ap-beijing</td>
+		<td>Beijing Zone 1<br>ap-beijing-1</td>
 	</tr>
 	<tr>
-			<td>Beijing Zone 3<br>ap-beijing-3</td>
+		<td>Beijing Zone 2<br>ap-beijing-2</td>
 	</tr>
 	<tr>
-			<td>Beijing Zone 4<br>ap-beijing-4</td>
+		<td>Beijing Zone 3<br>ap-beijing-3</td>
 	</tr>
 	<tr>
-			<td>Beijing Zone 5 <br>ap-beijing-5</td>
+		<td>Beijing Zone 4<br>ap-beijing-4</td>
 	</tr>
-		<tr>
-			<td>Beijing Zone 6<br>ap-beijing-6</td>
+	<tr>
+		<td>Beijing Zone 5 <br>ap-beijing-5</td>
 	</tr>
-		<tr>
-			<td>Beijing Zone 7<br>ap-beijing-7</td>
+	<tr>
+		<td>Beijing Zone 6<br>ap-beijing-6</td>
+	</tr>
+	<tr>
+		<td>Beijing Zone 7<br>ap-beijing-7</td>
 	</tr>
 	<tr>
 		<td rowspan="2">Southwest China (Chengdu)<br>ap-chengdu</td>
 		<td>Chengdu Zone 1<br>ap-chengdu-1</td>
 	</tr>
 	<tr>
-			<td>Chengdu Zone 2<br>ap-chengdu-2</td>
+		<td>Chengdu Zone 2<br>ap-chengdu-2</td>
 	</tr>    
 	<tr>
-			<td >Southwest China (Chongqing)<br>ap-chongqing</td>
-			<td>Chongqing Zone 1<br>ap-chongqing-1</td>
+		<td >Southwest China (Chongqing)<br>ap-chongqing</td>
+		<td>Chongqing Zone 1<br>ap-chongqing-1</td>
 	</tr>
 	<tr>
-			<td rowspan="3">Hong Kong, Macao and Taiwan, China (Hong Kong)<br>ap-hongkong</td>
-			<td>Hong Kong Zone 1 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-1</td>
+		<td rowspan="3">Hong Kong, Macao and Taiwan, China (Hong Kong)<br>ap-hongkong</td>
+		<td>Hong Kong Zone 1 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-1</td>
 	</tr>
 	<tr>
-			<td>Hong Kong Zone 2 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-2</td>
+		<td>Hong Kong Zone 2 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-2</td>
 	</tr>
-		<tr>
-			<td>Hong Kong Zone 3 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-3</td>
+	<tr>
+		<td>Hong Kong Zone 3 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-3</td>
 	</tr>
 </tbody>
 </table>	
@@ -144,11 +142,11 @@ Availability zones have the following characteristics:
 			<tr>
 			<td>Tokyo Zone 2 (Nodes in Tokyo can cover Northeast Asia)<br>ap-tokyo-2</td>
 		</tr>
-       <tr>
+			<tr>
 			<td  rowspan="2">South Asia (Mumbai)<br>ap-mumbai</td>
 			<td>Mumbai Zone 1 (Nodes in Mumbai can cover South Asia)<br>ap-mumbai-1</td>
 		</tr>
-       <tr>
+			<tr>
 			<td>Mumbai Zone 2 (Nodes in Mumbai can cover South Asia) <br>ap-mumbai-2</td>
 		</tr>
 		<tr>
@@ -162,7 +160,7 @@ Availability zones have the following characteristics:
 			<td rowspan="2">Western US (Silicon Valley)<br>na-siliconvalley</td>
 			<td>Silicon Valley Zone 1 (Nodes in Silicon Valley can cover Western US)<br>na-siliconvalley-1</td>
 		</tr>
-    <tr>
+			<tr>
 			<td>Silicon Valley Zone 2 (Nodes in Silicon Valley can cover Western US)<br>na-siliconvalley-2</td>
 		</tr>
 		<tr>
