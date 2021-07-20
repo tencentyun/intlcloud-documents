@@ -32,7 +32,6 @@
 
 ## Use Limits on Snapshot
 <table>
-
 		<th width="22%">Limit Type</th>
 		<th>Description</th>
 	</tr>
@@ -44,9 +43,9 @@
 	<td>Capacity of cloud disk created using a snapshot</td>
 	<td>The capacity of the cloud disk created using a snapshot should be greater than or equal to that of the snapshot.</td>
 	</tr>
-			<tr>
-			<td>Snapshot rollback</td>
-			<td>Snapshot data can only be rolled back to the source cloud disk from which the snapshot was created. If you want to create a cloud disk with data in an existing snapshot, see <a href="https://intl.cloud.tencent.com/document/product/362/5757">Creating Cloud Disks Using Snapshots<a>.
+		<tr>
+		<td>Snapshot rollback</td>
+		<td>Snapshot data can only be rolled back to the source cloud disk from which the snapshot was created. If you want to create a cloud disk with data in an existing snapshot, see <a href="https://intl.cloud.tencent.com/document/product/362/5757">Creating Cloud Disks Using Snapshots<a>.
 		</td>
 	</tr>
 	<tr>
