@@ -42,7 +42,7 @@ Log in to the [ES Console](https://console.cloud.tencent.com/es) and click **Cre
 
 #### 2. Set the name and password
 
-Click **Next: Set Name and Password**.
+Click **Next** and set a name and password.
 - Cluster Name: name the cluster as desired. This name is not a globally unique identifier and can be set as a business-related description.
 - Username: username used for Kibana page login and [ES cluster user authentication](https://intl.cloud.tencent.com/document/product/845/35275). It is `elastic` by default and cannot be modified.
 - Password: password corresponding to the aforementioned username. Please set it as required and keep it private. If you forgot it, you can reset it on the details page.
@@ -52,7 +52,7 @@ Click **Next: Set Name and Password**.
 
 #### 3. Confirm configuration information
 
-Click **Next: Confirm Configuration Information** to confirm the configuration.
+Click **Next** and confirm configuration information.
 ![](https://main.qcloudimg.com/raw/d151fbccf049b07854c9f2420994088a.jpg)
 - Click **Activate** to create the cluster directly if the pay-as-you-go billing mode is selected. You do not need to confirm the order or pay for it, as your account balance will be deducted on an hourly basis during cluster use.
 
