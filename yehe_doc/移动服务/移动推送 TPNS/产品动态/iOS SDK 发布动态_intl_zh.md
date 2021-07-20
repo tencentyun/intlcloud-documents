@@ -240,7 +240,7 @@
         <td>SDK1.2.5.3 版本发布</td>
         <td><li> 支持对信鸽免费集群进行反注册token，防止重复推送</li><li>新增支持在通知扩展中对重复的消息进行替换</li></td>
         <td>2020-03-19</td>
-        <td><a href="https://cloud.tencent.com/document/product/548/36668#.E6.B3.A8.E9.94.80.E4.BF.A1.E9.B8.BD.E5.B9.B3.E5.8F.B0.E6.8E.A8.E9.80.81.E6.9C.8D.E5.8A.A1">注销信鸽平台推送服务</a></td>
+        <td>注销信鸽平台推送服务</a></td>
     </tr>
     <tr>
         <td>SDK 1.2.5.2 版本发布</td>
