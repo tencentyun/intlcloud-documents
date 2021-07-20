@@ -13,36 +13,36 @@ You have [attached the cloud disk](https://intl.cloud.tencent.com/document/produ
 ## Directions[](id:Steps)
 
 <dx-tabs>
-::: Initializing cloud disks (Windows)[](id:Windows2008)
->?This document uses a CVM with Windows Server 2012 R2 installed. Note that the steps may vary according to the operating system version.
->
+::: Initializing\scloud\sdisks\s(Windows)[](id:Windows2008)
+This document uses a CVM with Windows Server 2012 R2 installed. Note that the steps may vary according to the operating system version.
+
 1. [Log in to the Windows CVM instance](https://intl.cloud.tencent.com/document/product/213/5435).
 2. On the desktop, right click <img src="https://main.qcloudimg.com/raw/3d815ac1c196b47b2eea7c3a516c3d88.png" style="margin:-6px 0px"> in the lower-left corner.
 3. Select **Disk Management** in the pop-up menu to open the **Disk Management** window.
-![](https://main.qcloudimg.com/raw/fcf4fe5cafbbf4e3a52db750a4c3e2e2.png)
->?If the newly added disk is in offline status, execute [Step 4](#online) before [Step 5](#initialize) to perform initialization. Otherwise, you can directly execute [Step 5](#initialize).
+
+If the newly added disk is in offline status, execute [Step 4](#online) before [Step 5](#initialize) to perform initialization. Otherwise, you can directly execute [Step 5](#initialize).
 4. [](id:online)Disks are listed on the right-side pane. Right click disk 1 area, and select **Online** to bring it online. The status of disk 1 changes from **Offline** to **Not Initialized**.
-![](https://main.qcloudimg.com/raw/4d3c952ca5ffdd3b1a4874191c33dc8c.png)
+
 5. [](id:initialize)Right click disk 1 area, and select **Initialize Disk** in the menu.
-![](https://main.qcloudimg.com/raw/e20181dc979f1b018baba0ccaa0c5291.png)
+
 6. In the pop-up dialog box, the disk you need to initialize is displayed. Select **MBR** or **GPT** and click **OK**.
->!If the disk partition format is changed after the disk is put into use, the original data on the disk will be erased. Please select an appropriate partition format based on actual needs.
->
-![](https://main.qcloudimg.com/raw/688d59f40d9d26ae59ee201e433cee2e.png)
+If the disk partition format is changed after the disk is put into use, the original data on the disk will be erased. Please select an appropriate partition format based on actual needs.
+
+
 7. Right click the unallocated space of the disk, and select **New Simple Volume**.
-![](https://main.qcloudimg.com/raw/912b77a52bb1e531d4c6bf5403841657.png)
+
 8. In the pop-up **New Simple Volume Wizard** dialog box, follow instructions on the interface and click **Next**.
 9. Specify the volume size as needed, which is the maximum value by default. Click **Next**.
 10. Assign a drive letter, and click **Next**.
-![](https://main.qcloudimg.com/raw/1f61b5dcd5c965fa3e3bc11983475d38.png)
+
 11. Select **Format this volume with the following settings**, configure parameters as needed, format the partition, and click **Next** to complete the partition creation.
-![](https://main.qcloudimg.com/raw/608ffc67e52b53691bf64f2b2411b948.png)
+
 12. Click **Complete** to complete the wizard. Wait for the completion of initialization. When the volume status becomes **Healthy**, the disk initialization is successful.
-![](https://main.qcloudimg.com/raw/148e9db3163df781b0832df1da25059f.png)
+
   After the initialization is complete, enter the **PC** interface to view the new disk.
-![](https://main.qcloudimg.com/raw/05261659e6d9eed38da84a933c20ba12.png)
+
 :::
-::: Initializing cloud disks [](id:Linux)
+::: Initializing\scloud\sdisks [](id:Linux)
 Select the initialization method according to your actual use cases:
 - If the entire disk is presented as one independent partition (there is no logical disks such as vdb1 and vdb2), we strongly recommend that you not use partition, and directly [create the file system on bare devices](#CreateFileSystemOnBareDevice).
 - If the entire disk needs to be presented as multiple logical partitions (there are multiple logical disks), you need to first partition the disk, and then [create the file system on a partition](#CreateFileSystemOnPartition).
@@ -63,7 +63,7 @@ mkfs -t <File system format> /dev/vdb
 ```
 mkfs -t ext4 /dev/vdb
 ```
->! The formatting takes a while. Please pay attention to the system’s running status and do not exit.
+The formatting takes a while. Please pay attention to the system’s running status and do not exit.
 4. Run the following command to create a new mount point.
 ```
 mkdir <Mount point>
@@ -82,7 +82,7 @@ mount /dev/vdb /data
 ```
 df -TH
 ```
->? If you do not need to configure disk automount at startup, skip the following steps.
+If you do not need to configure disk automount at startup, skip the following steps.
 7. Confirm the mount method and obtain the corresponding information.
 Based on business needs, you can use an elastic cloud disk’s soft link, file system’s UUID (universally unique identifier), or device name to automatically mount a disk. The descriptions and information acquisition methods are as follows:
 <table>
@@ -143,8 +143,8 @@ mount -a
 
 ### Creating a file system on a partition[](id:CreateFileSystemOnPartition)
 
->?This example uses the parted partition tool in the CentOS 7.5 operating system to configure data disk `/dev/vdc` as the primary partition. MBR is used as the default partition format, EXT4 format as the file system, and `/data/newpart` as the mount point. Disk automount at startup is configured. Note that the formatting operation may vary according to the operating system.
->
+This example uses the parted partition tool in the CentOS 7.5 operating system to configure data disk `/dev/vdc` as the primary partition. MBR is used as the default partition format, EXT4 format as the file system, and `/data/newpart` as the mount point. Disk automount at startup is configured. Note that the formatting operation may vary according to the operating system.
+
 
 1. [Log in to the Linux CVM instance](https://intl.cloud.tencent.com/document/product/213/5436).
 2. Run the following command as the root user to view the disk name.
@@ -186,8 +186,8 @@ fdisk /dev/vdb
  The returned information is similar to what is shown below:
  ![](https://main.qcloudimg.com/raw/98427c11e0a181e02eb23a95fc1e908c.png)
  This indicates the detailed information of the newly created partition `/dev/vdb1`.
->?If an error occurs during the partitioning operation, enter `q` to exit the fdisk tool and the prior partition result will not be retained.
->
+If an error occurs during the partitioning operation, enter `q` to exit the fdisk tool and the prior partition result will not be retained.
+
 10. Enter `w` and press **Enter** to write the partition result into the partition table.
  If the returned information is similar to what is shown below, the partition has been created.
  ![](https://main.qcloudimg.com/raw/7011369be260150fcddf272b4a4ab2fa.png)
@@ -224,8 +224,8 @@ df -TH
 ```  The returned information is similar to what is shown below:
  ![](https://main.qcloudimg.com/raw/b7e5501fed8d7d648b48dc66685baf94.png)
  This indicates that the newly created partition `/dev/vdb1` has been mounted to `/data/newpart`.
->?If you do not need to configure disk automount at startup, skip the following steps.
->
+If you do not need to configure disk automount at startup, skip the following steps.
+
 16. Confirm the mount method and obtain the corresponding information.
  Based on business needs, you can use an elastic cloud disk’s soft link, file system’s UUID (universally unique identifier), or device name to automatically mount a disk. The descriptions and information acquisition methods are as follows:
  <table>
