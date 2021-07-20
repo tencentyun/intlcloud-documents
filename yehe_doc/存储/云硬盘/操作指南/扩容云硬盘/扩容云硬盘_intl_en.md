@@ -9,7 +9,7 @@ If the cloud disk is a data disk, you can expand it using the following three me
 >
 
 <dx-tabs>
-::: Expanding data disks via the CVM console (recommended)[](id:useCVMConsole)
+::: Expanding\sdata\sdisks\svia\sthe\sCVM\sconsole\s(recommended)[](id:useCVMConsole)
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
 2. Locate the CVM on which you want to expand the data disk, and select **More** > **Resource Adjustment** > **Expand Data Disk** in the **Operation** column.
 3. Select the data disk to be expanded in the pop-up window, and click **Next**.
@@ -17,14 +17,14 @@ If the cloud disk is a data disk, you can expand it using the following three me
 5. Read the notes and click **Adjust Now**.
 6. Assign its expanded capacity to an existing partition, or format it into an independent new partition. Depending on the operating system of the CVM, see [Extending Partitions and File Systems (Windows)](https://intl.cloud.tencent.com/document/product/362/31601) or [Determining the Expansion Method](https://intl.cloud.tencent.com/document/product/362/39995).
 :::
-::: Expanding data disks via the CBS console[](id:useCBSConsole)
+::: Expanding\sdata\sdisks\svia\sthe\sCBS\sconsole[](id:useCBSConsole)
 1. Log in to the [CBS console](https://console.cloud.tencent.com/cvm/cbs).
 2. Locate the cloud disk to be expanded, and select **More** > **Expand** in the **Operation** column.
 3. Select a new capacity. It must be greater than or equal to the current capacity.
 4. Complete the payment.
 5. Assign its expanded capacity to an existing partition, or format it into an independent new partition. Depending on the operating system of the CVM, see [Extending Partitions and File Systems (Windows)](https://intl.cloud.tencent.com/document/product/362/31601) or [Determining the Expansion Method](https://intl.cloud.tencent.com/document/product/362/39995).
 :::
-::: Expanding data disks via an API[](id:useAPI)
+::: Expanding\sdata\sdisks\svia\san\sAPI[](id:useAPI)
 You can use the `ResizeDisk` API to expand the specified cloud disks. For more information, see [ResizeDisk](https://intl.cloud.tencent.com/document/product/362/16310).
 :::
 </dx-tabs>
@@ -73,7 +73,7 @@ Note that `disk-xxxx` is the ID of a cloud disk. You can use it to view cloud di
 ### Checking the cloudinit configuration
 Check cloud disks according to the operating system of the CVM.
 <dx-tabs>
-::: Checking the cloudinit configuration for Linux instances[](id:confirmLinuxConfig)
+::: Checking\sthe\scloudinit\sconfiguration\sfor\sLinux\sinstances[](id:confirmLinuxConfig)
 After the system disk is expanded, [log in to the Linux instance](https://intl.cloud.tencent.com/document/product/213/5436) and check whether the `/etc/cloud/cloud.cfg` file contains the `growpart` and `resizefs` configuration items.
  - If yes, ignore other operations.
 ![](https://main.qcloudimg.com/raw/03d38f34651d317176c50f1ed3a03f30.png)
@@ -81,11 +81,9 @@ After the system disk is expanded, [log in to the Linux instance](https://intl.c
     - **resizefs**: expands or adjusts the file system in the `/` partition to the partition size.
  - If no, manually [extending partitions and file systems (Linux)](https://intl.cloud.tencent.com/document/product/362/39995) according to the operating system, and assign its expanded capacity to an existing partition, or format it into an independent new partition.
 :::
-::: Checking the cloudinit configuration for Windows instances[](id:confirmwindowsConfig)
+::: Checking\sthe\scloudinit\sconfiguration\sfor\sWindows\sinstances[](id:confirmwindowsConfig)
 After the system disk is expanded, [log in to the Windows instance](https://intl.cloud.tencent.com/document/product/213/5435) and check whether the `ExtendVolumesPlugin` configuration item exists under `plugin` in `C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf\cloudbase-init.conf`.
  - If yes, ignore other operations.
  - If no, manually [extending partitions and file systems (Windows)](https://intl.cloud.tencent.com/document/product/362/31601) according to the operating system, and assign its expanded capacity to an existing partition, or format it into an independent new partition.
 :::
 </dx-tabs>
-
-```
