@@ -94,13 +94,13 @@ GET /china/city/_search
 
 ### 访问索引
 #### 配置 Kibana 访问索引
-为了使用 Kibana，需要配置至少一个可以匹配到的索引。输入上文创建的索引 china，单击【Next step】进入下一步：
+为了使用 Kibana，需要配置至少一个可以匹配到的索引。输入上文创建的索引 china，单击【Next step】进入下一步。
 ![](https://main.qcloudimg.com/raw/62c1496812dbab3bb7b9a87ec269929f.png)
-**配置时间过滤字段**用于通过时间过滤索引中的数据，如果索引中没有表示时间的字段，可以选择不使用时间过滤功能。单击【Create index pattern】创建索引模式：
+**配置时间过滤字段**用于通过时间过滤索引中的数据，如果索引中没有表示时间的字段，可以选择不使用时间过滤功能。单击【Create index pattern】创建索引模式。
 ![](https://main.qcloudimg.com/raw/69338e77375c153c3d381e52dbccd4d5.png)
-查看索引对应的字段：
+查看索引对应的字段。
 ![](https://main.qcloudimg.com/raw/dba7c606063277a509f79c5838d2f34a.png)
-单击左侧菜单【Discover】，查看该索引下已经添加的文档：
+单击左侧菜单【Discover】，查看该索引下已经添加的文档。
 ![](https://main.qcloudimg.com/raw/91e42b3495a32c1ecb8f39665a3e0aba.png)
 
 ## 可视化查询分析
