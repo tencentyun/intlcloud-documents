@@ -14,7 +14,8 @@
 
 ## 前提条件
 
-- 已通过 LogListener 采集到日志，详情请参见 [LogListener 安装指南](https://intl.cloud.tencent.com/document/product/614/17414)。
+- 上下文检索分析仅支持2.3.5以上版本使用，建议 [安装或升级至最新版本](https://intl.cloud.tencent.com/document/product/614/17414)。
+- 只有通过 LogListener 采集到的日志才支持上下文功能。
 - 已开启并配置索引，详情请参见 [配置索引](https://intl.cloud.tencent.com/document/product/614/39594)。
 
 ## 场景示例

@@ -21,9 +21,9 @@
 	1. 登录 [访问管理 CAM](https://console.cloud.tencent.com/cam/overview) 控制台。
 	2. 单击左侧菜单栏中的【角色】，进入角色页面。
 	3. 选择【新建角色】>【腾讯云账户】，开始新建自定义角色。
-	4. 选择【当前主账号】并勾选【允许当前角色访问控制台】，单击【下一步】。
-	>!若无 “允许角色登录控制台” 选项，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们开通白名单。
+	4. 选择【当前主账号】并勾选【允许当前角色服务控制台】，单击【下一步】。
 
+	>!若无 “允许角色登录控制台” 选项，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们开通白名单。
 	5. 为角色设置访问策略，例如只读策略权限 QcloudCLSReadOnlyAccess，单击【下一步】。
 
 	6. 输入角色名，完成创建。
@@ -41,8 +41,8 @@ https://cam.tencentcloudapi.com/?Action=CreateRole&RoleName=CompanyOpsRole&Conso
 
 1. 用户登录访问腾讯云外部的 Web 服务。
 2. Web 服务端根据登录用户身份分配对应的角色名，例如 CompanyOpsRole（需预先创建好，此为前提条件1）。
-3. Web 服务端系统根据角色名访问腾讯云 STS 服务，使用前提条件2中获取到的访问密钥调用 [AssumeRole](https://intl.cloud.tencent.com/zh/document/product/598/35840) 接口，申请角色 CompanyOpsRole 的临时密钥。
-4. 用户调用 [AssumeRole](https://intl.cloud.tencent.com/zh/document/product/598/35840) 接口成功后，获取到角色 CompanyOpsRole 的临时密钥。
+3. Web 服务端系统根据角色名访问腾讯云 STS 服务，使用前提条件2中获取到的访问密钥调用 [AssumeRole](https://intl.cloud.tencent.com/document/product/598/35840) 接口，申请角色 CompanyOpsRole 的临时密钥。
+4. 用户调用 [AssumeRole](https://intl.cloud.tencent.com/document/product/598/35840) 接口成功后，获取到角色 CompanyOpsRole 的临时密钥。
 5. 用户通过该角色的临时密钥生成登录签名信息。详细可参考以下步骤：
  1. **参数排序**
      对要求签名的参数按照字母表或数字表递增顺序的排序，先考虑第一个字母，在相同的情况下考虑第二个字母，依此类推。您可以借助编程语言中的相关排序函数来实现这一功能，例如 PHP中 的 ksort 函数。其中签名参数包含以下内容：	 
@@ -172,16 +172,10 @@ https://console.cloud.tencent.com/cls/search?region=<region>&logset_id=<logset_i
 <td align="left">日志主题 ID</td>
 </tr>
 <tr>
-<td align="left">start_time</td>
+<td align="left">time </td>
 <td align="left">否</td>
 <td align="left">String</td>
-<td align="left">要检索日志的起始时间，格式样例：2019-11-13 10:00:00</td>
-</tr>
-<tr>
-<td align="left">end_time</td>
-<td align="left">否</td>
-<td align="left">String</td>
-<td align="left">要检索日志的结束时间，格式样例：2019-11-13 20:00:00</td>
+<td align="left">要检索日志的起始时间至结束时间，格式样例： ```2021-07-15T10:00:00.000,2021-07-15T12:30:00.000```</td>
 </tr>
 <tr>
 <td align="left">query</td>
