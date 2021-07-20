@@ -27,7 +27,7 @@ public abstract void setObserver(V2TXLivePlayerObserver observer);
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| observer | V2TXLivePlayerObserver | 播放器的回调目标对象，更多详情请参见 [V2TXLivePlayerObserver](https://intl.cloud.tencent.com/zh/document/product/454/56049)。 |
+| observer | V2TXLivePlayerObserver | 播放器的回调目标对象，更多详情请参见 [V2TXLivePlayerObserver](https://intl.cloud.tencent.com/document/product/1071/41277)。 |
 
 ***
 
