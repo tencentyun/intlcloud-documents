@@ -25,7 +25,7 @@ This document guides you through how to create a cloud disk `cbs-test` in the Be
 4. Click **OK**.
 5. After confirming the configurations, click **OK** and make the payment.
 Return to the Cloud Block Storage list page. You can now view the purchased elastic cloud disk `cbs-test`, whose status is **To be attached**.
-![](https://main.qcloudimg.com/raw/67aed726d126b14e9d82db12f10efbdb.png)
+
 
 ## Subsequent Operations
 After the cloud disk is created, you need to first attach it to a CVM in the same availability zone as a data disk. For more information about this operation, see [Step 2. Attaching Cloud Disks](https://intl.cloud.tencent.com/document/product/362/39991).
