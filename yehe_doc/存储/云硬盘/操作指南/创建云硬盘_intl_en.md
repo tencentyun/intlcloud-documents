@@ -7,7 +7,7 @@ You can create different types of CBS cloud disks based on business needs. For m
 
 ## Directions
 <dx-tabs>
-::: Creating a cloud disk through the console
+::: Creating\sa\scloud\sdisk\sthrough\sthe\sconsole
 1. Log in to the [CBS console](https://console.cloud.tencent.com/cvm/cbs).
 2. Select a region and click **Create**.
 3. In the **Purchase Data Disk** dialog box, configure the following parameters:
@@ -25,10 +25,10 @@ You can create different types of CBS cloud disks based on business needs. For m
          <td>Required.</br>Four CBS cloud disk types are available:<ul><li>Premium Cloud Storage</li><li>SSD</li><li>Enhanced SSD</li><li>Tremendous SSD. This type can only be purchased with the Standard Storage Optimized S5se CVM instance.</li></ul></td>
      </tr>
 		 <tr>
-			 <td>Quick Disk Creation<td>
+			 <td>Quick Disk Creation</td>
 			 <td>Optional. To create a cloud disk using a snapshot, you need to tick <b>Create a cloud disk with a snapshot</b> and select the snapshot you want to use.
 				 <ul><li>The capacity of a cloud disk created using a snapshot is equal to that of the snapshot by default. You can adjust the disk capacity.</li>
-         <li>When you create a cloud disk using a snapshot, the disk type is the same as that of the snapshot’s source disk. You can change the disk type.</li></ul></td>
+				<li>When you create a cloud disk using a snapshot, the disk type is the same as that of the snapshot’s source disk. You can change the disk type.</li></ul></td>
 		 </tr>
 	 <tr>
          <td>Capacity</td>
@@ -67,18 +67,15 @@ You can create different types of CBS cloud disks based on business needs. For m
 </table>
 
 4. Click **OK**.
- - If **Billing Mode** is **Pay as you go**, the creation is completed.
-  <ol>
-  1. Once you confirm your configuration, select whether to use the voucher based on actual needs, and then click **Confirm**.
-  2. Complete the payment.
- </ol>
+ - **Billing Mode** is **Pay as you go**, the creation is completed.
+
 5. You can view the cloud disk(s) you created in the [Cloud Block Storage](https://console.cloud.tencent.com/cvm/cbs) list page. The new elastic cloud disk is in the **To be attached** status. To attach it to a CVM instance in the same availability zone, see [Attaching Cloud Disks](https://intl.cloud.tencent.com/document/product/362/32401).
 
 :::
-::: Creating a cloud disk using a snapshot
+::: Creating\sa\scloud\sdisk\susing\sa\ssnapshot
 If you want to create a cloud disk that contains all data upon creation, you can [create cloud disks using snapshots](https://intl.cloud.tencent.com/document/product/362/5757).
 :::
-::: Creating a cloud disk using the API
+::: Creating\sa\scloud\sdisk\susing\sthe\sAPI
 You can use the `CreateDisks` API to create a cloud disk. For more information, see [CreateDisks](https://intl.cloud.tencent.com/document/product/362/16312).
 :::
 </dx-tabs>
