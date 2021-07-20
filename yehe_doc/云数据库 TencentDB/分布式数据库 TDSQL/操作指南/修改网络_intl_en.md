@@ -5,14 +5,14 @@ This document describes how to change the instance network type and modify the i
 
 ## Modifying the Private IP
 You can modify the private IP of a TencentDB instance in VPC.
-1. Log in to the [TDSQL for MySQL console](https://console.cloud.tencent.com/tdsqld), click an instance ID/name in the instance list, and enter the instance details page.
+1. Log in to the [TDSQL for MySQL console](https://console.cloud.tencent.com/tdsqld), click an instance ID in the instance list, and enter the instance details page.
 2. In the **Basic Info** section, click <img src="https://main.qcloudimg.com/raw/071659c8118f8c9b94d4ab90cebbd955.png"  style="margin:0;"> next to **Private IP** to modify it. You can do so only when the current subnet has available IPs.
 ![](https://main.qcloudimg.com/raw/25931632d09fe7f90719db45bdaad8b5.png)
 3. In the pop-up dialog box, modify the private IP and click **OK**.
 
 ## Switching between VPC Subnets
 You can switch an instance between VPC subnets.
-1. Log in to the [TDSQL for MySQL console](https://console.cloud.tencent.com/tdsqld), click an instance ID/name in the instance list, and enter the instance details page.
+1. Log in to the [TDSQL for MySQL console](https://console.cloud.tencent.com/tdsqld), click an instance ID in the instance list, and enter the instance details page.
 2. In the **Basic Info** section, click **Change Subnet** next to **Network**.
 3. In the pop-up dialog box, select a subnet, select **Auto-assign IP** or **Specify IP**, and click **OK**.
 >?
@@ -22,7 +22,7 @@ You can switch an instance between VPC subnets.
 ![](https://main.qcloudimg.com/raw/c228774130d9932505ae8661d5a7e4fe.png)
 
 ## Switching between VPCs
-1. Log in to the [TDSQL for MySQL console](https://console.cloud.tencent.com/tdsqld), click an instance ID/name in the instance list, and enter the instance details page.
+1. Log in to the [TDSQL for MySQL console](https://console.cloud.tencent.com/tdsqld), click an instance ID in the instance list, and enter the instance details page.
 2. In the **Basic Info** section, click **Change Subnet** next to **Network**.
 3. In the pop-up dialog box, select a VPC and a subnet, select **Auto-assign IP** or **Specify IP**, and click **OK**.
 >?
@@ -31,7 +31,7 @@ You can switch an instance between VPC subnets.
 
 
 ## Switching from a Classic Network to a VPC
-1. Log in to the [TDSQL for MySQL console](https://console.cloud.tencent.com/tdsqld), click an instance ID/name in the instance list, and enter the instance details page.
+1. Log in to the [TDSQL for MySQL console](https://console.cloud.tencent.com/tdsqld), click an instance ID in the instance list, and enter the instance details page.
 2. In the **Basic Info** section, click **Switch to VPC** next to **Network**.
 ![](https://main.qcloudimg.com/raw/5d7751c75d3d8109b33f4676e414e42c.png)
 3. In the pop-up dialog box, select a VPC and a subnet, select **Auto-assign IP** or **Specify IP**, and click **OK**.
