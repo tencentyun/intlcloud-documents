@@ -45,8 +45,8 @@
 > - 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。
 
 > ?在服务开通后，建议先可以编译&体验一下腾讯云提供的 SimpleCode（一个极简的Demo），配合下文说明，方便您快速了解API的使用。
-> - [Android](https://github.com/tencentyun/MLVBSDK/tree/master/Android/SimpleDemo)
-> - [iOS](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/SimpleDemo)
+> - [Android](https://github.com/tencentyun/LiteAVProfessional_Android)
+> - [iOS](https://github.com/tencentyun/LiteAVProfessional_iOS)
 
 ### 步骤2：了解推拉流协议
 在直播场景中，不论是推流还是拉流都离不开对应的 URL，在超低延时直播中，URL 的示例如下：
