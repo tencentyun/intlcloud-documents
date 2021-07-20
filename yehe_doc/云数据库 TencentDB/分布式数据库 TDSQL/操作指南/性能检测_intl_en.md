@@ -8,7 +8,7 @@ This feature is currently available in the following instance editions:
 >!For certain test items, the performance test report provides a series of optimization suggestions. Please carefully test the suggested measures before applying them so as to prevent the instance performance problems from getting worse.
 
 ## Feature Overview
-Log in to the [Console](https://console.cloud.tencent.com/dcdb), click an instance name in the instance list to enter the management page, and select the **Performance Optimization** > **Performance Test** tab where you can perform a performance test.
+Log in to the [Console](https://console.cloud.tencent.com/dcdb), click an instance ID in the instance list to enter the management page, and select the **Performance Optimization** > **Performance Test** tab where you can perform a performance test.
 - **Health rating:** you can view the current database performance score out of 100 points. If your database scores below 60 for a long time, please optimize your business or database configuration.
 - **Report generation, viewing, and saving:** you can create a report or view the last report as desired. The report can be saved as a webpage for download.
 
