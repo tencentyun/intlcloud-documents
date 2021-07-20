@@ -18,7 +18,18 @@ Operation: strip
 
 ## Examples
 
-**Removing image metadata**
+#### Sample request 1: public-read
 ```
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageMogr2/strip	
 ```
+
+#### Sample request 2: private-read with a signature carried
+
+This example processes the image in the same way as in the example above except that a signature is added. The signature is joined with other processing parameters using an ampersand (&):
+
+```
+http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&imageMogr2/strip
+```
+
+>? You can obtain the value of `<signature>` by referring to [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+>

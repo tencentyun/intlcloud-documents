@@ -4,7 +4,7 @@ CI uses the **imageAve** API to obtain the average hue of an image. The input im
 
 ## API Format
 ```
-download_url?imageAve       				
+download_url?imageAve
 ```
 
 ## Parameters
@@ -13,13 +13,12 @@ download_url?imageAve
 
 | Parameter | Description |
 | ------------ | ------------------------------------------------------------ |
-| download_url | URL of the input image, formatted as `<BucketName-APPID>.cos.<picture region>.<domain>.com/<picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
-| /ignore-error/1 | If this parameter is carried and the image failed to be processed because it is too large, the input image will be returned with no error reported. |
+| download_url | URL of the input image, formatted as `&lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com/&lt;picture name>`<br>Example: `examplebucket-1250000000.cos.ap-shanghai.myqcloud.com/picture.jpeg` |
 
 
-## Example
+## Examples
 
-#### Request
+#### Sample request 1: public-read
 
 ```
 http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageAve
@@ -29,3 +28,14 @@ http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?imageAve
 ```
 {"RGB": "0x736246"}
 ```
+
+#### Sample request 2: private-read with a signature carried
+
+This example obtains the average hue in the same way as in the example above except that a signature is carried. The signature is joined with other parameters using an ampersand (&):
+
+```
+http://examples-1251000004.cos.ap-shanghai.myqcloud.com/sample.jpeg?q-sign-algorithm=<signature>&imageAve
+```
+
+>? You can obtain the value of `<signature>` by referring to [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778).
+>
