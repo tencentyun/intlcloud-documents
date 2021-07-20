@@ -94,13 +94,13 @@ GET /china/city/_search
 
 ### Accessing index
 #### Configuring Kibana to access index
-To use Kibana, you need to configure at least one index that can be matched. Enter the index `china` created above and click **Next step** to proceed to the next step:
+To use Kibana, you need to configure at least one index that can be matched. Enter the index `china` created above and click **Next step** to proceed to the next step.
 ![](https://main.qcloudimg.com/raw/62c1496812dbab3bb7b9a87ec269929f.png)
-You need to **configure a time filter field to filter** the data in an index by time. If there is no field in the index that indicates time, you can choose not to use the time filter feature. Click **Create index pattern** to create an index pattern:
+You need to **configure a time filter field to filter** the data in an index by time. If there is no field in the index that indicates time, you can choose not to use the time filter feature. Click **Create index pattern** to create an index pattern.
 ![](https://main.qcloudimg.com/raw/69338e77375c153c3d381e52dbccd4d5.png)
-View the fields for the index:
+View the fields for the index.
 ![](https://main.qcloudimg.com/raw/dba7c606063277a509f79c5838d2f34a.png)
-Click **Discover** on the left sidebar to view the documents that have been added under the index:
+Click **Discover** on the left sidebar to view the documents that have been added under the index.
 ![](https://main.qcloudimg.com/raw/91e42b3495a32c1ecb8f39665a3e0aba.png)
 
 ## Visual Query and Analysis
