@@ -7,7 +7,6 @@ This document describes how to create instances and topics in the CKafka console
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
 2. Click **Instance List** on the left sidebar and click **Create** to enter the instance purchase page.
 3. On the instance purchase page, set the configuration information for purchase based on your actual needs.
-	 ![](https://main.qcloudimg.com/raw/7fa7a951705943382c2836afc78a022c.png)
 	- Billing Mode: monthly subscription
 	- Specs Type: select the Standard or Pro Edition based on your business needs.
 	- Kafka Version: select a Kafka version based on your business needs. For more information, please see [Suggestions for CKafka Edition Selection](https://intl.cloud.tencent.com/document/product/597/40964).
