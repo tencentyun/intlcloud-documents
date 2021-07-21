@@ -12,12 +12,14 @@ The fixed public outbound IP feature of SCF has the following capabilities:
 - The EIP is shared based on the subnet of the VPC.
  If a function is configured with a VPC and has fixed public outbound IP enabled, it will get a random EIP. If another function in the same VPC subnet has fixed public outbound IP enabled, it will share the same fixed outbound IP.
 
+#### Sample
 The following example shows the use limits of fixed public outbound IP:
->?Assume your account has the following objects in a region:
-> - Functions a and b have been created under namespace A.
-> - Functions c and d have been created under namespace B.
-> - EIPs IP-x, IP-y, and IP-z represent three different EIPs.
-> 
+
+Assume your account has the following objects in a region:
+- Functions a and b have been created under namespace A.
+- Functions c and d have been created under namespace B.
+- EIPs IP-x and IP-y represent two different EIPs.
+
 Their EIP and function binding relationships are as shown below:
 <table>
 <tr><th rowspan=2 align="center"><b>Network Configuration</b></th><th colspan=2 align="center"><b>Namespace A</b></th><th colspan=2  align="center"><b>Namespace B</b></th></tr>
@@ -42,15 +44,15 @@ Their EIP and function binding relationships are as shown below:
 	<td>Public network access and fixed public outbound IP are enabled</td>
 	<td>EIP IP-x</td>
 	<td>EIP IP-x </td>
-	<td>EIP IP-y </td>
-	<td>EIP IP-y</td>
+	<td>EIP IP-x </td>
+	<td>EIP IP-x</td>
 	</tr>
 			<tr>
 	<td>The same VPC is used for access, and fixed public outbound IP is enabled</td>
-	<td>EIP IP-z</td>
-	<td>EIP IP-z</td>
-	<td>EIP IP-z</td>
-	<td>EIP IP-z</td>
+	<td>EIP IP-y</td>
+	<td>EIP IP-y</td>
+	<td>EIP IP-y </td>
+	<td>EIP IP-y</td>
 	</tr>
 </table>
 
