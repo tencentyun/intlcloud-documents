@@ -1,4 +1,3 @@
-Existing technologies cannot guarantee that data will never be lost, but you can maximize the reliability of data as possible as you can by using certain configuration parameters.
 This document describes the factors that affect the reliability of CKafka from the perspectives of the producer, the service (CKafka), and the consumer, respectively, and provides corresponding solutions.
 
 ### What should I do if data is lost on the producer?
