@@ -25,7 +25,8 @@ Web 函数基于函数内置的标准语言镜像环境中，您需要创建一�
 ::: 控制台快速创建
 您可以在控制台创建流程"高级配置"模块编辑您的启动文件，云函数 SCF 为常用 Web 框架提供了通用启用模版，您也可以根据实际情况进行修改，创建完成后，控制台将自动把您的代码和 scf_bootstrap 一起打包部署。
 
->! 控制台配置仅在上传的代码里未检测到 scf_bootstrap 时生效，如果您的项目里有 scf_bootstrap 文件，系统会以项目里的 scf_bootstrap 为准进行部署。
+<dx-alert infotype="notice">控制台配置仅在上传的代码里未检测到 scf_bootstrap 时生效，如果您的项目里有 scf_bootstrap 文件，系统会以项目里的 scf_bootstrap 为准进行部署。
+</dx-alert>
 :::
 </dx-tabs>
 
