@@ -19,13 +19,14 @@ A web function runs in the image environment built in it based on the standard p
 
 ### Creation Method
 <dx-tabs>
-::: Local package upload
+::: Local\spackage\supload
 You can write your `scf_bootstrap` file locally, make sure that the file permission meets the requirements, package it with the project code, and deploy them together on the web function.
 :::
-::: Quick creation in console
+::: Quick\screation\sin\sconsole
 You can edit your bootstrap file in the **Advanced Configuration** module in the console during creation. SCF provides a general enablement template for commonly used web frameworks. You can also modify it as needed. After the creation is completed, the console will automatically package your code and `scf_bootstrap` for deployment.
 
->! The configuration in the console takes effect only if no `scf_bootstrap` is detected in the uploaded code. If there is an `scf_bootstrap` file in your project, the system will deploy the function based on it.
+<dx-alert inftotype="notice">The configuration in the console takes effect only if no `scf_bootstrap` is detected in the uploaded code. If there is an `scf_bootstrap` file in your project, the system will deploy the function based on it.
+</dx-alert>
 :::
 </dx-tabs>
 
