@@ -59,5 +59,5 @@
 </tr>
 </tbody></table>
 
->?If the parameter template is referenced by a security group, the IPs and ports in the template will be converted multiple security group rules (up to 2000).
+>?If the parameter template is referenced by a security group, the IPs and ports in the template will be converted to multiple security group rules (up to 2000).
 
