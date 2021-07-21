@@ -14,8 +14,8 @@ A VPC includes at least one subnet. When a VPC is created, the system will creat
 The features of the default VPC are the same as those of the custom VPC that you create.
 
 1. Log in to [VPC Console](https://console.cloud.tencent.com/vpc).
-2. After selecting the region of the VPC on the top bar, click **+Create**.
-3. Enter the VPC information and initial subnet information, and click **Create**. If you need multiple subnets, see [Creating a Subnet](https://intl.cloud.tencent.com/document/product/215/31806#.E5.88.9B.E5.BB.BA.E5.AD.90.E7.BD.91).
+2. After selecting the region of the VPC on the top bar, click **+New**.
+3. Enter the VPC information and initial subnet information, and click **OK**. If you need multiple subnets, see [Creating a Subnet](https://intl.cloud.tencent.com/document/product/215/31806#.E5.88.9B.E5.BB.BA.E5.AD.90.E7.BD.91).
 
 >The CIDR blocks (IP ranges) of VPC instances and subnets cannot be modified once they are created. Therefore, complete [network planning](https://intl.cloud.tencent.com/document/product/215/31795) in advance.
 
