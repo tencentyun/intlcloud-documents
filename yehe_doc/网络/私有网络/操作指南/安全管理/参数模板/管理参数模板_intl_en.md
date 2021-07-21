@@ -5,10 +5,10 @@ Tencent Cloud supports four types of parameter templates:
 - Protocol port (ppm): supports a single port, multiple ports, consecutive ports, and all ports. The supported protocols are TCP, UDP, ICMP, and GRE.
 - Protocol port group (ppmg): supports a group of protocol port objects.
 
-## Operation Scenarios
-The operation scenarios of parameter templates are as follows:
-- Central management of IP addresses or protocol port groups with the same requirements.
-- Central management of IP addresses or protocol port groups with frequent editing needs.
+## Scenarios
+Parameter templates are applicable to the following scenarios:
+- Manage multiple IP addresses or protocol port groups with the same requirements.
+- Manage multiple IP addresses or protocol port groups with frequent editing needs.
 
 ## Step 1: Create a Parameter Template
 ### 1. Create an IP address parameter template
