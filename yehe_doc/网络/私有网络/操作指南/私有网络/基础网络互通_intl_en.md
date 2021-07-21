@@ -25,7 +25,7 @@ A Classiclink associates classic network-based CVMs with a VPC to enable interco
 + A classic network-based CVM can only be associated with one VPC at a time.
 + One VPC supports associating with up to 100 classic network-based CVMs.
 + VPC resources can access classic network-based CVM rather than resources including TencentDB and CLB.
-+ After associating with a VPC, classic network-based CVMs can only communicate with resources in primary CIDR block rather than secondary CIDR block of the VPC.
++ After the classic-network CVMs are associated with a VPC, classic network-based CVMs can only communicate with resources in primary CIDR block rather than secondary CIDR block of the VPC.
 - A VPC can only be interconnected with the classic network in the same region.
 
 ### Notes
