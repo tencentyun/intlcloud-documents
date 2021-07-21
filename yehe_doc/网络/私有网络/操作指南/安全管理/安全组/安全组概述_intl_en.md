@@ -25,7 +25,7 @@ A security group rule consists of:
 
 - The rules in a security group are prioritized from top to bottom. The rule at the top of the list has the highest priority and will take effect first, while the rule at the bottom has the lowest priority and will take effect last.
 - If there is a rule conflict, the rule with the higher priority will prevail by default.
-- When traffic goes in or out of an instance that is bound to a security group, the security group rules will be matched sequentially from top to bottom. If a rule is matched successfully and takes effect, the subsequent rules will not be matched.
+- When traffic goes in or out of an instance bound to a security group, the security group rules will be matched sequentially from top to bottom. If a rule is matched successfully and takes effect, the subsequent rules will not be matched.
 
 ### Multiple security groups
 
