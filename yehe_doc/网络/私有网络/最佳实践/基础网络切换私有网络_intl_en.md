@@ -52,11 +52,11 @@ Suppose a classic network-based service uses four Tencent Cloud services, includ
 ![](https://main.qcloudimg.com/raw/bf54dd1832d0e16c756984e305772e06.png)
 
 ## Migration Directions
-1. Migrate TencentDB instances to a VPC. After the migration, the original classic network access remains available for a certain period, thus maintaining the database connection and and your service availability. During this period, you can complete migration of other services.
+1. Migrate TencentDB instances to a VPC. After the migration, the original classic network access remains available for a certain period, thus maintaining the database connection and your service availability. During this period, you can complete the migration of other services.
 ![](https://main.qcloudimg.com/raw/427fe3f0445056c94332df90d4cd9bb3.png)
 2. Create two CVMs and deploy services as needed in the VPC where the databases are migrated to. Then test whether the CVMs can access TencentDB instances.
 ![](https://main.qcloudimg.com/raw/4425f9af34e3df70a84f1a80e8a7ba40.png)
-3. Create a public CLB in the VPC of databases, and associate it with the two CVMs created in the previous step. Perform health check to avoid service interruption due to an exception.
+3. Create a public CLB in the VPC of databases, and associate it with the two CVMs created in the previous step. Perform a health check to avoid service interruption due to an exception.
 ![](https://main.qcloudimg.com/raw/8dab2d96a40f1df4eefa9ad04117cb2b.png)
 4. Wait for the migration to complete. Release the original public network CLB and CVM resources in the classic network.
 ![](https://main.qcloudimg.com/raw/cb567a4a3f88c4bc4c8d787d60f512f3.png)
