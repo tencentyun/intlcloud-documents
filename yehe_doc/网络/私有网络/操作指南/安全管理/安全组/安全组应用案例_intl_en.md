@@ -4,7 +4,7 @@ Default inbound and outbound rules for security groups are as follows:
 - The outbound rule for a security group specifies whether your CVM can access external network resources. If you select **Open All Ports** or **Open Ports 22, 80, 443, and 3389 and ICMP**, the outbound rule for the security group opens the ports to the Internet. If you select a custom security group rule, the outbound rule blocks all ports by default, and you need to set the outbound rule to allow the corresponding port to access external network resources.
 
 ## Common Use Cases
-This document describes several common use cases for security groups. If any of the following cases meets your requirements, you can set your security groups according to the configuration recommended for the corresponding use case.
+This document describes several common use cases for security groups. If any of the following cases meet your requirements, you can set your security groups according to the configuration recommended for the corresponding use case.
 
 ### Scenario 1: remotely connecting to a Linux CVM through SSH
 **Case**: you have created a Linux CVM and want to remotely connect to the CVM through SSH.
