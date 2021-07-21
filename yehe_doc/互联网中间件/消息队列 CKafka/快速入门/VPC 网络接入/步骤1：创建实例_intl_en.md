@@ -5,7 +5,6 @@ This document describes how to create an instance and deploy a VPC via the CKafk
 ## Prerequisites
 
 - You have [signed up for a Tencent Cloud account](https://intl.cloud.tencent.com/document/product/378/17985).
-- You have [purchased a CVM](https://buy.cloud.tencent.com/cvm).
 - You have [created a VPC](https://intl.cloud.tencent.com/document/product/215/31805).
 
 ## Directions
