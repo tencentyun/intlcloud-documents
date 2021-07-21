@@ -10,7 +10,7 @@ For information on how to create a security group and add security group rules, 
 2. In the left sidebar, click **[Security Group](https://console.cloud.tencent.com/cvm/securitygroup)** to enter the security group management page.
 3. On the security group management page, choose **Region**, and locate the security group whose rules that you want to view.
 4. Click the ID or name of the target security group to enter the security group rule page.
-5. On the security group rule page, click the **Inbound Rules or Outbound Rules** tab to view inbound or outbound rules of the security group.
+5. On the security group rule page, click the **Inbound Rules or Outbound Rules** tab to view the inbound or outbound rules of the security group.
 
 
 
