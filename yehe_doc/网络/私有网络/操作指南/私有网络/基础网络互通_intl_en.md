@@ -34,15 +34,15 @@ A Classiclink associates classic network-based CVMs with a VPC to enable interco
 + CLB instances within a VPC cannot be bound to a classic network-based CVM that interconnects with the same VPC.
 - Changing the private IP of a classic network-based CVM will invalidate its association with the VPC, and cause the configurations become invalid. To associate them, you need to add a Classiclink again on the VPC console.
 - The Classiclink will not be affected by actions taken regarding the CVM such as isolation due to overdue payment, security isolation, cold migration, failover, configuration modification, and operating system switching.
-- The CVM will be automatically unassociated from the VPC if the CVM is returned.
+- The CVM will be automatically disassociated from the VPC if the CVM is returned.
 + In Classiclink situations, the CVM traffic can only be routed to private IP addresses within the VPC rather than destinations outside the VPC. That is, the classic network-based CVM cannot access the public or private network resources outside the current VPC through network devices such as VPN gateway, direct connect gateway, public gateway, peering connection, and NAT Gateway. Likewise, the peer of a VPN gateway, direct connect gateway, and peering connection cannot access classic network-based CVMs.
 
 ### Directions
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
-2. Select the region, and click the ID of the VPC `TomVPC` which needs Classiclink to access the details page.
+2. Select the region, and click the ID of the VPC which needs Classiclink to access the details page.
 3. Click the **Classiclink** tab and then click **+Associate with CVM**. 
 ![](https://main.qcloudimg.com/raw/ad9b76faac017dbc093b3710f0d5070b.png)
-4. In the pop-up window, select the CVM in the classic network to be associated with the VPC `TomCVM` and click **OK**.
+4. In the pop-up window, select the CVM in the classic network to be associated with the VPC and click **OK**.
 ![](https://main.qcloudimg.com/raw/b99329129fc8de27dddfbe7897d59218.png)
 
 ## Viewing Classiclink
