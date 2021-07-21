@@ -1,4 +1,4 @@
-Before using Tencent Cloud VPC, you need to plan the quantity and IP range of the VPCs commensurate with your business to smoothen the temporary scale-out.
+Prior to beginning the network scale-out and building of your VPC, you need to plan the quantity and IP ranges of the VPC commensurate with your business needs.
 - [How to Plan the Quantity of VPCs?](#planVPC)
 - [How to Plan the Quantity of Subnets?](#planSubnet)
 - [How to Plan the IP Ranges (CIDR Blocks) of VPCs and Subnets?](#planCIDR)
@@ -9,17 +9,17 @@ Before using Tencent Cloud VPC, you need to plan the quantity and IP range of th
 ## How to Plan the Quantity of VPCs?
 
 - **Planning one VPC**
-If you have small scale business that is deployed in the same region without the need for network isolation, we recommend that you plan one VPC.
+If you have a small scale business that is deployed in the same region without the need for network isolation, we recommend that you plan one VPC.
 You can create multiple subnets and route tables in a single VPC for detailed traffic management. In addition, we recommend that you deploy subnets in different availability zones for AZ disaster recovery.
 ![](https://main.qcloudimg.com/raw/22c3ea70430c6eaf50c994f5cb5923bc.png)
 - **Planning multiple VPCs**
 We recommend that you plan multiple VPCs in any of the following scenarios:
  - **Your business is deployed in multiple regions**
-If your business is deployed in multiple regions, you need to plan multiple VPCs and deploy at least one in each region because VPC cannot be deployed across regions.
+If your business is deployed in multiple regions, you need to plan multiple VPCs and deploy at least one in each region because a VPC cannot be deployed across regions.
 By default, VPCs are not interconnected. To interconnect VPCs, use [peering connection](https://intl.cloud.tencent.com/document/product/553) or [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003).
 ![](https://main.qcloudimg.com/raw/8e08edafd53646887f337be56836e56c.png)
  - **Multiple businesses are deployed in the same region and require isolation**
-If you have multiple businesses deployed in the same region and these businesses must be isolated from each other, you need to plan multiple VPCs and deploy one VPC for each business. Only doing this can isolate businesses because VPCs are not interconnected by default.
+If you have multiple businesses deployed in the same region and these businesses must be isolated from each other, you need to plan multiple VPCs and deploy one VPC for each business. Doing this can isolate businesses since VPCs are not interconnected by default.
 ![](https://main.qcloudimg.com/raw/ec02b9e821f2a723a3e2d90bfab553bb.png)
 
 <span id="planSubnet" ></span>
@@ -30,7 +30,7 @@ If you have multiple businesses deployed in the same region and these businesses
 <span id="planCIDR"></span>
 ## How to Plan the IP Ranges (CIDR Blocks) of VPCs and Subnets?
 
-**Once set, the IP range masks of VPCs and subnets cannot be modified.** Therefore, be sure to carefully plan VPCs and subnets based on your business scale and communication scenarios. This will facilitate smooth scaling and OPS in the future.
+**Once set, the IP range masks of VPCs and subnets cannot be modified.** Therefore, be sure to carefully plan VPCs and subnets based on your business scale and communication scenarios. This will facilitate smooth scaling and operations in the future.
 #### Planning VPC IP ranges
 - **You can use any of the following IP ranges as your VPC IP ranges:**
  - **10.0**.0.0 - **10.255**.255.255 (**the mask range must be 16 to 28**)
