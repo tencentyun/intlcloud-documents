@@ -77,7 +77,7 @@ The following routes can be published to CCN.
 
 >?
 > - A disabled custom route cannot be published to CCN.
-> - To disable a custom route that has been published to CCN, first withdraw it.
+> - A custom route should be withdrawn first before it can be disabled if it has been published to a CCN.
 
 ### Quota Limits
 
