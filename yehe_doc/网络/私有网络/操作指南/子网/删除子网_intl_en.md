@@ -1,8 +1,8 @@
-You can delete the subnets that are no longer in use and do not have any resources.
+You can delete the subnets that are no longer in use and do not have any associated resources.
 
 ## Prerequisites
-+ The IPs in the subnet are not occupied.
-+ There are no resources in the subnet, such as CVM, TencentDB.
++ The available IPs in the subnet to be deleted are not in use.
++ There are no resources associated with the subnet, such as CVM, TencentDB etc.
 
 ## Directions
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
