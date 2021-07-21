@@ -135,7 +135,7 @@ Tencent may provide links to other third party websites as a convenience to you 
 
 #### The Security of Your Personal Information
 
-Unfortunately, the transmission of information via the internet is not completely secure. Although we will do our best to protect your personal information, we cannot guarantee the security of the information transmitted to our site; any transmission of your information is at your own risk.
+Unfortunately, the transmission of information via the internet is not completely secure. Although we will do our best to protect your personal information, we cannot guarantee the security of the information transmitted to our site.
 
 
 ### Data Retention
