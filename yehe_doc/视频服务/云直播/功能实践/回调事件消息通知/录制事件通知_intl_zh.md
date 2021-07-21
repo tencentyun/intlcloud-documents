@@ -1,141 +1,101 @@
-为了保护直播推流的信息安全，云直播推流域名默认开启推流鉴权。您可通过推流地址详情页中的推流地址生成器，在线生成对应的推流地址。通过使用推流地址在线推流，实现直播流传输到云直播服务，即实现直播视频上传。
+直播录制是根据推流域名已绑定好的录制模板实时录制直播流画面，并生成对应的录制文件存储到云点播中。而录制回调则用于推送录制文件信息，主要包括录制的开始时间、结束时间、生成的录制文件 ID、录制文件大小和文件下载地址。您需在回调模板中配置录制回调消息接收服务器地址，并将该模板与推流域名进行关联。当直播流触发录制事件后，腾讯云直播后台会将录制文件信息回调到您设置的接收服务器中。
+
+本文主要讲解触发录制回调事件后，腾讯云直播发送给用户的回调消息通知字段。
 
 ## 注意事项
 
-- 云直播默认提供测试域名 `xxxx.livepush.myqcloud.com`，您可通过该域名进行推流测试，但不建议您在正式业务中使用这个域名作为推流域名。 
-- 仅支持生成 RTMP 格式的推流地址。
-- 生成的推流地址在设定的过期时间内均可使用，过期后需要重新生成新的推流地址。
-
-## 前提条件
-
-已开通云直播服务，并完成实名认证，未进行实名认证的用户无法购买中国境内的云直播实例。
-
-## 鉴权配置
-1.  进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)，单击需配置的**推流域名**或【管理】进入域名详情页。 
-2.  单击【推流配置】，查看【鉴权配置】标签，单击右侧的【编辑】。
-	![](https://main.qcloudimg.com/raw/f57795fb5a6497ff59a1612c5d805ad2.png)
-3.  进入推流鉴权配置页，单击![](https://main.qcloudimg.com/raw/5637a9d55de965fa5d35725a955f4c00.png)按钮选择开启/关闭推流鉴权。
-4. 修改主 KEY 和备 KEY 信息，单击【保存】即可成功生效。
-![](https://main.qcloudimg.com/raw/a12dc5bb7d739ca7d526f35e9f22e81e.png)
->? 主 KEY 为必填、备 KEY 为选填，主备 KEY 可实现当 KEY 泄露时平滑更换 KEY 不影响业务。
+- 阅读本文之前，希望您已经了解腾讯云直播是如何配置回调功能、您是如何接收回调消息的，具体请参见 [如何接收事件通知](https://intl.cloud.tencent.com/document/product/267/38080)。
+- 录制的视频文件默认保存至 [云点播](https://console.cloud.tencent.com/vod/overview) 控制台，建议提前开通点播服务，避免点播业务欠费停用。
+- 当通过 API [创建录制任务](https://intl.cloud.tencent.com/document/product/267/37309) 时，录制回调不会返回用户推流 URL 所带 [stream_param](#message) 参数，其它录制方式会返回。
+- 配置了 HLS 续录功能后，中间断流不会回调，默认续流只回调最终生成文件。
 
 
+## 录制事件参数说明
+### 事件类型参数
 
-## 推流地址生成器
+| 事件类型 | 字段取值说明           |
+| :------- | :------------- |
+| 直播录制 | event_type = 100 |
 
-### 操作步骤
+<span id="public"></span> 
+### 回调公共参数
+<table>
+<tr><th>字段名称</th><th>类型</th><th>说明</th></tr>
+<tr>
+<td>t</td>
+<td>int64</td>
+<td>过期时间，事件通知签名过期 UNIX 时间戳。<ul style="margin:0"><li>来自腾讯云的消息通知默认过期时间是10分钟，如果一条消息通知中的 t 值所指定的时间已经过期，则可以判定这条通知无效，进而可以防止网络重放攻击。<li>t 的格式为十进制 UNIX 时间戳，即从1970年01月01日（UTC/GMT 的午夜）开始所经过的秒数。</ul></td>
+</tr><tr>
+<td>sign</td>
+<td>string</td>
+<td>事件通知安全签名 sign = MD5（key + t）。<br>说明：腾讯云把加密 <a href="#key">key</a> 和 t 进行字符串拼接后通过 MD5 计算得出 sign 值，并将其放在通知消息里，您的后台服务器在收到通知消息后可以根据同样的算法确认 sign 是否正确，进而确认消息是否确实来自腾讯云后台。</td>
+</tr></table>
 
-1. 进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)选择需配置的推流域名或单击【管理】，进入域名详情页。
-2. 选择【推流配置】>【推流地址生成器】，进行如下配置：
-   1. 选择过期时间，例如：`2019-10-31 23:59:59`。
-   2. 填写自定义的流名称 StreamName，例如：`liveteststream`。
-   3. 单击【生成推流地址】即可生成带着 StreamName 的 RTMP 推流地址。
- ![](https://main.qcloudimg.com/raw/6f5ac8dcac2082aedca950c5341946ab.png)
-4. 您可在根据业务场景实现 [直播推流](https://intl.cloud.tencent.com/document/product/267/31558) 后，在 [流管理](https://intl.cloud.tencent.com/document/product/267/31068) 进行测试、禁用和删除。
-5. 生成推流地址即可进行直播推流开播，但是观看直播要获取播放地址，具体请参见 [播放配置](https://intl.cloud.tencent.com/document/product/267/31058)。
+>? <span id="key"></span>key 为【事件中心】>[【直播回调】](https://console.cloud.tencent.com/live/config/callback)中的回调密钥，主要用于鉴权。为了保护您的数据信息安全，建议您填写。
+>![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
 
 
+<span id="message"></span> 
+### 回调消息参数
 
-### 推流地址说明
+| 字段名称     | 类型   | 说明                                                 |
+| :----------- | :----- | :--------------------------------------------------- |
+| appid        | int    | 用户 [APPID](https://console.cloud.tencent.com/developer)                                           |
+|app       | string       | 推流域名            |
+|appname       | string | 推流路径               |
+| stream_id    | string | 直播流名称                                           |
+| channel_id   | string | 同直播流名称                                         |
+| file_id      | string | 点播 file ID，在 [云点播平台](https://intl.cloud.tencent.com/document/product/266/33895) 可以唯一定位一个点播视频文件 |
+| file_format  | string | flv，hls，mp4，aac                                   |
+| task_id	| string| 录制任务 ID，仅 API 创建的录制任务有意义，即 [CreateRecordTask](https://cloud.tencent.com/document/product/267/45983) 返回的任务 ID| 
+| start_time   | int64  | 录制文件起始时间戳                                   |
+| end_time     | int64  | 录制文件结束时间戳                                   |
+| duration     | int64  | 录制文件时长，单位秒                                 |
+| file_size    | uint64 | 录制文件大小，单位字节                               |
+| stream_param | string | 用户推流 URL 所带参数（自定义）                                |
+| video_url    | string | 录制文件下载 URL                                 |
 
-RTMP 推流地址格式为：
+
+<span id="example"></span> 
+### 回调消息示例
+
 ```
-rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
-```
-其中：
-- `domain`：直播推流域名。
-- `AppName`：直播的应用名称，默认为 live，可自定义。
-- `StreamName`：流名称，用户自定义，用于标识直播流。
-- `txSecret`：开启推流鉴权后生成的鉴权串。
-- `txTime`：推流地址设置的时间戳，是控制台推流地址的有效时间。
+{
+"event_type":100,
 
->! 若您开启了域名鉴权，实际过期时间 = txTime + Key 有效时间。
+"appid":12345678,
 
+"app":yourapp
 
-## 推流地址示例代码
+"appname":yourappname
 
-腾讯云为您提供的 PHP 和 Java 语言的推流地址示例代码，您可直接参考示例代码完成推流地址的接入。具体查看操作如下：
+"stream_id":"stream_test",
 
-1. 进入【[域名管理](https://console.cloud.tencent.com/live/domainmanage)】。
-2. 选择推流域名或单击右侧的【管理】，进入域名详情页。
-3. 选择【推流配置】，下拉到底查看【推流地址示例代码】标签。
-4. 单击切换标签按钮查看 PHP/Java 示例代码。
+"channel_id":"stream_test",
 
-<dx-codeblock>
-::: PHP php
-```
-/**
-    * 获取推流地址
-    * 如果不传key和过期时间，将返回不含防盗链的url
-    * @param domain 您用来推流的域名
-    *        streamName 您用来区别不同推流地址的唯一流名称
-    *        key 安全密钥
-    *        time 过期时间 sample 2016-11-12 12:00:00
-    * @return String url
-*/
-function getPushUrl($domain, $streamName, $key = null, $time = null){
-	if($key && $time){
-		$txTime = strtoupper(base_convert(strtotime($time),10,16));
-		//txSecret = MD5( KEY + streamName + txTime )
-		$txSecret = md5($key.$streamName.$txTime);
-		$ext_str = "?".http_build_query(array(
-			       "txSecret"=> $txSecret,
-			       "txTime"=> $txTime
-		));
-    }
-	return "rtmp://".$domain."/live/".$streamName . (isset($ext_str) ? $ext_str : "");
-}
-echo getPushUrl("123.test.com","123456","69e0daf7234b01f257a7adb9f807ae9f","2016-09-11 20:08:07");
-```
+"file_id":"1234567890",
 
-::: Java java
-```
-package com.test;
-import java.io.UnsupportedEncodingException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-public class Test {
-    public static void main(String[] args) {
-        System.out.println(getSafeUrl("txrtmp", "11212122", 1469762325L));
-    }
-    private static final char[] DIGITS_LOWER =
-        {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
-    /*
-    * KEY+ streamName + txTime
-    */
-    private static String getSafeUrl(String key, String streamName, long txTime) {
-        String input = new StringBuilder().
-                            append(key).
-                            append(streamName).
-                            append(Long.toHexString(txTime).toUpperCase()).toString();
-        String txSecret = null;
-        try {
-            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
-            txSecret  = byteArrayToHexString(
-                        messageDigest.digest(input.getBytes("UTF-8")));
-        } catch (NoSuchAlgorithmException e) {
-                e.printStackTrace();
-        } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-        }
-        return txSecret == null ? "" :
-                           new StringBuilder().
-                           append("txSecret=").
-                           append(txSecret).
-                           append("&").
-                           append("txTime=").
-                           append(Long.toHexString(txTime).toUpperCase()).
-                           toString();
-        }
-    private static String byteArrayToHexString(byte[] data) {
-        char[] out = new char[data.length << 1];
-        for (int i = 0, j = 0; i < data.length; i++) {
-                out[j++] = DIGITS_LOWER[(0xF0 & data[i]) >>> 4];
-                out[j++] = DIGITS_LOWER[0x0F & data[i]];
-        }
-        return new String(out);
-    }
+"file_format":"hls",
+"task_id":"UpTbk5RSVhRQ********************0xTSlNTQltlRVRLU1JAWW9EUb",
+
+"start_time":1545047010,
+
+"end_time":1545049971,
+
+"duration":2962,
+
+"file_size":277941079,
+
+"stream_param":"stream_param=test",
+
+"video_url":"http://12345678.vod2.myqcloud.com/xxxx/yyyy/zzzz.m3u8",
+
+"sign":"ca3e25e5dc17a6f9909a9ae7281e300d",
+
+"t":1545030873
 }
 ```
-## 后续操作
-生成推流地址后，可根据业务场景使用直播推流，具体操作请参见 [直播推流](https://intl.cloud.tencent.com/document/product/267/31558)。
+
+
+
+
