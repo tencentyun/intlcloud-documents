@@ -18,7 +18,7 @@ If you do not want your CVM instance to join the default security group, you can
 	<tr><td>Custom</td><td>After creating a security group, you can add security group rules as required. For details about the operation, see <a href="https://intl.cloud.tencent.com/document/product/215/35513">Adding Security Group Rules</a>.</td><td>-</rd></tr>
 </table>
  - Name: customize the name of a security group.
- - Project: by default, **Default project** is selected. You can also specify another project to facilitate future management.
+ - Project: by default, the **Default project** is selected. You can also specify another project to facilitate future management.
  - Remarks: briefly describe the security group to facilitate future management.
 5. Click **OK** to finish creating the security group.
 If you select the "Custom" template when creating a security group, click **Set rules now** after the creation to [add security group rules](https://intl.cloud.tencent.com/document/product/215/35513).
