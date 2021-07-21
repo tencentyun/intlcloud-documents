@@ -13,7 +13,7 @@ Multicast and broadcast are mostly used in the financial and game industries:
 - Broadcast services or market data of the financial industry. For example, after obtaining stock prices and other real-time data, brokers can broadcast stock data to multiple clients in real time, effectively reducing network load.
 - For the game industry, broadcast and multicast are mainly used for heartbeat holding between multiple servers.
 
-## Directions
+## Instructions
 ### Enabling multicast
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
 2. In the VPC list, locate the VPC for which you want to enable multicast, and click **Enable** under the **Multicast** column.
