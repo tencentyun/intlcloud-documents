@@ -8,7 +8,7 @@ If you do not want your CVM instance to join the default security group, you can
 1. Log in to [CVM Console](https://console.cloud.tencent.com/cvm/index).
 2. In the left sidebar, click **[Security Group](https://console.cloud.tencent.com/cvm/securitygroup)** to enter the security group management page.
 3. On the security group management page, choose **Region** and click **+Create**.
-4. In the **Create Security Group** window that appears, complete the configuration, as shown in the following figure:
+4. In the **Create a security group** window that appears, complete the configuration, as shown in the following figure:
 ![](https://main.qcloudimg.com/raw/dc265c99d23e7a05bb9cc8b72f2cebee.png)
  - Template: based on the services to be deployed for the CVM instances in the security group, select an appropriate template to simplify security group rule configuration, as described in the following table:
 <table>
@@ -21,4 +21,4 @@ If you do not want your CVM instance to join the default security group, you can
  - Project: by default, the **Default project** is selected. You can also specify another project to facilitate future management.
  - Remarks: briefly describe the security group to facilitate future management.
 5. Click **OK** to finish creating the security group.
-If you select the "Custom" template when creating a security group, click **Set rules now** after the creation to [add security group rules](https://intl.cloud.tencent.com/document/product/215/35513).
+If you select the **Custom** template when creating a security group, click **Set rules now** after the creation to [add security group rules](https://intl.cloud.tencent.com/document/product/215/35513).
