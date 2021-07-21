@@ -26,7 +26,7 @@ According to the example figure, CVM1 and CVM2 can be built into a high availabi
 
 ## Common Use Cases
 - **Cloud load balancer HA**
-  To deploy Cloud Load Balancers (CLB), you will generally take HA between CLB instances and configure real servers as a cluster. Therefore, you must deploy and use HAVIP as a virtual IP between two CLB servers.
+  To deploy Cloud Load Balancers (CLB), you will generally have HA between CLB instances and configure real servers as a cluster. Therefore, you must deploy and use HAVIP as a virtual IP between two CLB servers.
 - **Relational database primary/secondary**
   If Keepalived or Windows Server Failover Cluster are used between two databases to build a highly available primary/secondary cluster, use HAVIP as a virtual IP. For more information, see [Building High Availability Primary/Secondary Cluster by Using HAVIP + Keepalived](https://intl.cloud.tencent.com/document/product/215/31877) and [Creating a High-availability Database by Using HAVIP + Windows Server Failover Cluster](https://intl.cloud.tencent.com/document/product/215/31878) under Best Practice.
 
