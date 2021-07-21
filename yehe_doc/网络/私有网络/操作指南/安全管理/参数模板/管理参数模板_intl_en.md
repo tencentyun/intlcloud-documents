@@ -15,7 +15,7 @@ The operation scenarios of parameter templates are as follows:
 Add IP addresses with the same requirements or frequent editing needs to the IP address object.
 1. Log in to [VPC Console](https://console.cloud.tencent.com/vpc).
 2. Click **Security** > **Parameter Template** in the left sidebar to go to the management page.
-3. On the **IP Address** tab page, click **+Create**.
+3. On the **IP Address** tab page, click **+New**.
 4. In the pop-up box, enter the name and IP address, and click **Submit**.
 To add multiple IP addresses, separate them with line breaks. Only IPv4 addresses in the following formats are supported:
  - A single IP address, for example, `10.0.0.1`;
@@ -23,7 +23,7 @@ To add multiple IP addresses, separate them with line breaks. Only IPv4 addresse
  - Consecutive IP addresses, for example, `10.0.0.1` - `10.0.0.100`.
 ![](https://main.qcloudimg.com/raw/64ecfd48ffdc728506ef328a0ee19921.png)
 5. (Optional) You can add multiple created IP addresses to a group to create an IP address group.
-	1. Click the **IP Address Group** tab to enter the management page. On this page, click **+Create**.
+	1. Click the **IP Address Group** tab to enter the management page. On this page, click **+New**.
 	2. In the pop-up box, enter the name, select the IP addresses that you want to add, and click **Submit**.
 	![](https://main.qcloudimg.com/raw/5b40b996461455a77b723cdd828fd4f3.png)
 
@@ -31,7 +31,7 @@ To add multiple IP addresses, separate them with line breaks. Only IPv4 addresse
 Add protocol ports with the same requirements or frequent editing needs to the protocol port object.
 1. Log in to [VPC Console](https://console.cloud.tencent.com/vpc).
 2. Click **Security** > **Parameter Template** in the left sidebar to go to the management page.
-3. Click the **Protocol Port** tab to enter the **Protocol Port** tab page. On this tag page, click **+Create**.
+3. Click the **Protocol Port** tab to enter the **Protocol Port** tab page. On this tag page, click **+New**.
 4. In the pop-up box, enter the name and protocol port, and click **Submit**.
 To add multiple protocol ports, separate them with line breaks. The following protocol port formats are supported:
 	- A single port, for example, `TCP:80`;
@@ -40,7 +40,7 @@ To add multiple protocol ports, separate them with line breaks. The following pr
 	- All ports, for example, `TCP:ALL`.
 ![](https://main.qcloudimg.com/raw/aae45c5c950f4e6b6cc75aaedebc48e3.png)
 5. (Optional) You can add multiple created protocol ports to a group to create a protocol port group.
-	1. Click the **Protocol Port Group** tab to enter the management page. On this page, click **+Create**.
+	1. Click the **Protocol Port Group** tab to enter the management page. On this page, click **+New**.
 	2. In the pop-up box, enter the name, select the protocol ports that you want to add, and click **Submit**.
 	![](https://main.qcloudimg.com/raw/91f6da2d037239206dcadbdf9a02570a.png)
 
