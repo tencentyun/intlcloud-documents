@@ -62,7 +62,6 @@ After the cluster network is back to normal, the client can resume production an
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
 2. Click **Instance List** on the left sidebar and click **Create** to enter the instance purchase page.
 3. On the instance purchase page, set the configuration information for purchase based on your actual needs.
-	 ![](https://main.qcloudimg.com/raw/f83616b7644977fc0c1ada00b9b0b4ac.png)
   - Billing Mode: monthly subscription
   - Specs Type: Pro Edition
   - Region: select a region close to the resources for client deployment
