@@ -1,5 +1,5 @@
 A subnet is a network space in a VPC, which carries all the cloud resource deployments. A VPC has at least one subnet. A subnet will be created together with the VPC. You can also create more subnets in a VPC according to your business needs.
-A subnet is specific to availability zone. A VPC allows subnets in different availability zones, and these subnets can communicate with each other via a private network by default. This document guides you through how to create a subnet in a VPC.
+A subnet is specific to an availability zone. A VPC allows subnets in different availability zones, and these subnets can communicate with each other via a private network by default. This document guides you through how to create a subnet in a VPC.
 
 ## Directions
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
