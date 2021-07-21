@@ -62,7 +62,6 @@ CKafka 的控制层和原生 Kafka 采用相同的技术方案，依赖 zookeepe
 1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 。
 2. 在左侧导航栏单击【实例列表】，单击【新建】进入实例购买页。
 3. 在实例购买页，根据自身业务需求选择购买信息。
-	 ![](https://main.qcloudimg.com/raw/f83616b7644977fc0c1ada00b9b0b4ac.png)
   - 计费模式：包年包月
   - 规格类型：专业版
   - 地域：选择和部署客户端的资源相近的地域
