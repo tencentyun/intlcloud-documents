@@ -22,7 +22,7 @@
 
 위의 날짜 이전에 CSS 서비스를 개통한 경우, 기본 도메인이 제공됩니다. Tencent Cloud는 2018년 12월 31일부터 점진적으로 기본 도메인 사용을 중단하고 있으니 신속히 자체 도메인으로 교체하실 것을 권장합니다.
 
->! 기본 도메인은 CSS에서 할당한 시스템 도메인입니다. 포맷은 `bizid.livepush.myqcloud.com` 과 `bizid.liveplay.myqcloud.com`입니다.
+>! 기본 도메인은 CSS에서 할당한 시스템 도메인입니다. 포맷은 `bizid.livepush.myqcloud.com` 과 `bizid.tlivecdn.com`입니다.
 
 <span id="que4"></span>
 ### 기본 도메인으로 특수 설정을 진행한 경우, 자체 도메인을 기존의 기본 도메인에 리졸브할 수 있나요?
