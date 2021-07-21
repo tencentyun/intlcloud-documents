@@ -11,7 +11,7 @@ CFS 文件存储支持 NFS v3.0 及 NFS v4.0 协议， 其中 NFS v3.0 是 NFS �
 上述问题出现的主要原因是 NFS v4.0 协议的限制， 客户端使用 NFS v4.0 同时大批量读写文件时由于协议的 OPEN/CLOSE 操作为串行化，因此在客户端大量操作请求并发情况下，协议处理会形成阻塞。具体协议描述如下，
 
 - There is a limitation to the Linux NFS4.0 client implementation that an "open_owner" is mapped to a userid. This results in a bottleneck if one user opens and closes a lot of files in a short period of time. Each OPEN / CLOSE operation has to wait for a sequence id, which essentially serializes each OPEN / CLOSE request. If an NFS server's response time for OPEN / CLOSE requests increases due to some secondary load or complication, this NFS4 client limitation can become pronounced, and in some cases, cause an unresponsive machine.
-- The NFS4.1 protocol addresses the limitation of serialization of OPENs per open_owner. For more information, see [RFC 5661 Section 9.10](http://tools.ietf.org/html/rfc5661#section-9.10)
+- The NFS4.1 protocol addresses the limitation of serialization of OPENs per open_owner. For more information, see RFC 5661 Section 9.10.
 
 ## 使用优化
 
@@ -21,7 +21,6 @@ CFS 文件存储支持 NFS v3.0 及 NFS v4.0 协议， 其中 NFS v3.0 是 NFS �
 
 进入 [文件存储 CFS](https://console.cloud.tencent.com/cfs/fs?rid=4) 控制台，打开待挂载的文件系统详情中的【挂载点信息】，找到如下图的 NFS v3.0 挂载命令。使用该挂载命令挂载文件系统即可。
 
-![](https://main.qcloudimg.com/raw/0fe94db8f4582c8c45cead14de0f10c0.png)
 
 #### 容器客户端挂载方法
 
