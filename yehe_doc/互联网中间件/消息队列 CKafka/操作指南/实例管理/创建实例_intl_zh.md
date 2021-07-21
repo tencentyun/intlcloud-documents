@@ -7,7 +7,6 @@
 1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka) 。
 2. 在左侧导航栏单击【实例列表】，单击【新建】进入实例购买页。
 3. 在实例购买页，根据自身业务需求选择购买信息。
-	 ![](https://main.qcloudimg.com/raw/7fa7a951705943382c2836afc78a022c.png)
 	- 计费模式：包年包月
 	- 规格类型：根据自身业务需求选择标准版或者专业版。
 	- Kafka 版本：根据您的业务需求选择 Kafka 版本，可参考 [CKafka 版本选择建议](https://intl.cloud.tencent.com/document/product/597/40964)。
