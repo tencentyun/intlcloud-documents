@@ -1,4 +1,4 @@
-The routing policies in the route table can be real-time added, deleted, queried, exported, or manually published to CCN or withdrawn from CCN. This document describes the relevant operations of routing policy.
+The routing policies in the route table can be operated in a real-time manner. Some of the available routing policy actions are adding, deleting, quering, exporting, or publishing and withdrawing to/from CCN. This document describes all the aforementioned operations of the routing policies.
 
 ## Adding a Routing Policy
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/route?rid=1), and select **[Route Tables](https://console.cloud.tencent.com/vpc/route?rid=1)** in the left sidebar to go to the **Route Table** page.
@@ -59,7 +59,7 @@ The VPCs where the high available virtual IP, VPN gateway, and CVM are located h
 ## Querying and Exporting a Routing Policy
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/route?rid=1), and select **[Route Tables](https://console.cloud.tencent.com/vpc/route?rid=1)** in the left sidebar to go to the **Route Table** page.
 2. In the list, click a route table ID to go to the details page. You can find the routing policies in this route table.
-3. In the search box on the top right, you can query the routing policy by destination address.
+3. In the search box on the top right, you can query the routing policy by entering the destination address.
 ![](https://main.qcloudimg.com/raw/0fb54a38484b8525e5cdd9fdc904a183.png)
 4. Click **Export** to export the routing policies in the list, and save it .csv format.
 
@@ -69,4 +69,4 @@ You can delete the unnecessary routing policies. Only the custom routing policie
 2. In the list, click the route table ID to be modified to go to the details page.
 3. Click **Delete** on the right of the routing policy that you want to delete.
 ![](https://main.qcloudimg.com/raw/9ab1d9bcca75ba9f4cfdd4abfbddd58e.png)
-4. Please confirm the possible impact of deleting the policy, and click **OK**.
+4. Please make sure that you are aware of any possible impact of deleting the routing policy, and then click **OK**.
