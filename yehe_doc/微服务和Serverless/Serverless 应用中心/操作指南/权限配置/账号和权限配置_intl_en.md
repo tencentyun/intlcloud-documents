@@ -9,7 +9,7 @@ Serverless Framework helps you quickly deploy your project to **SAC**. Before de
 
 ### Configuring with permanent key
 
-You can run the `sls credentials` command to quickly set the persistent storage of the global key information.
+You can run the `sls credentials` command to quickly set the persistent storage of the global key information. This command must be configured under the created SLS project. Please make sure that you have created a project with `serverless.yml` through `sls init` or manually.
 
 - **Below are all the commands:**
 ```plaintext
@@ -103,18 +103,18 @@ TENCENT_SECRET_KEY=xxxxxxxx # `SecretKey` of your account
 If you use a Tencent Cloud sub-account, it does not have the operation permissions by default; therefore, it needs to be authorized by the **root account (or a sub-account with the authorization permission)** in the following steps:
 
 1. On the [CAM User List](https://console.cloud.tencent.com/cam/user) page, select the target sub-account and click **Authorize**.
-![](https://main.qcloudimg.com/raw/3d6e465aa4d6d50233e125e599475585.png)
+    ![](https://main.qcloudimg.com/raw/3d6e465aa4d6d50233e125e599475585.png)
 2. Search for and select `QcloudSLSFullAccess` in the pop-up window and click **OK** to grant the sub-account the permission to manipulate all Serverless Framework resources.
-![](https://main.qcloudimg.com/raw/80c98249cbdb327a80d8941ce54c962f.png)
+    ![](https://main.qcloudimg.com/raw/80c98249cbdb327a80d8941ce54c962f.png)
 3. On the [CAM User List](https://console.cloud.tencent.com/cam/user) page, select the target sub-account and click the username to enter the user details page.
-![](https://main.qcloudimg.com/raw/00be606ee5a4f48dd956a8488f9f0d06.png)
+    ![](https://main.qcloudimg.com/raw/00be606ee5a4f48dd956a8488f9f0d06.png)
 4. Click **Associate Policy**. On the policy adding page, click **Select policies from the policy list** > **Create Custom Policy**.
 Policy association page:
 ![](https://main.qcloudimg.com/raw/f08bcaaf91105a8fdb86a0487e6a734d.png)
 Policy creation page:
 ![](https://main.qcloudimg.com/raw/47ac3d10b3dcae6d828ccc056393cee3.png)
 5. Click **Create by Policy Syntax** > **Blank Template** and enter the following content. Be sure to replace the role parameter with the UIN of your root account:
-   ```
+```
    {
     "version": "2.0",
     "statement": [
@@ -138,7 +138,7 @@ Policy creation page:
         }
     ]
    }
-   ```
+```
 
 6. After completing the custom policy configuration, go back to the authorization page in step 4, search for the custom policy just created, and click **Next** > **OK** to grant the sub-account the operation permissions of `SLS_QcsRole`. At this point, your sub-account should have a custom policy and a preset policy **QcloudSLSFullAccess** and can use Serverless Framework normally.
 ![](https://main.qcloudimg.com/raw/b062490a1703b7fac049c43c8e598c96.png)
@@ -166,3 +166,4 @@ Policy creation page:
 | QcloudCynosDBFullAccess | Full access to TDSQL-C for MySQL |
 | QcloudCLSFullAccess    | Full access to CLS |
 | QcloudAccessForSLSRole | This policy can be associated with the Serverless Framework (SLS) service role (SLS_QCSRole) for SLS' quick experience feature to access other Tencent Cloud service resources. It contains permissions of CAM-related operations. |
+

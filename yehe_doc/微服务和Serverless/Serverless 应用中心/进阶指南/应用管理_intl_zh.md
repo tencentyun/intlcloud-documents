@@ -25,8 +25,7 @@ serverless.yml 文件中定义了应用组织参数及组件 inputs 参数，每
 
 #应用信息
 app: expressDemoApp #  应用名称，默认为与组件实例名称
-stage: ${env:STAGE} #  用于开发环境的隔离，默认为dev
-
+stage: ${env:STAGE} #  用于开发环境的隔离，非必填，默认为dev
 #组件信息
 component: express # (必填) 引用 component 的名称，当前用到的是 express-tencent 组件
 name: expressDemo # (必填) 组件创建的实例名称
@@ -54,12 +53,12 @@ yml 文件中配置信息：
 |参数 | 说明 |
 |---------|---------|
 | org | 组织信息，默认腾讯云 APPID。保留字段，不建议使用。|
-| app | 应用名称，默认与组件信息中的实例名称一致。对于单实例应用和多实例应用 app 参数的定义方式会有不同，详情请参考 [部署应用](https://intl.cloud.tencent.com/zh/document/product/1040/38288#.E9.83.A8.E7.BD.B2.E5.BA.94.E7.94.A8)。|
-| stage | 环境信息，默认为 dev。通过定义不同的 stage，为serverless应用开发、测试、发布提供独立的运行环境。详情请参考 [环境隔离](https://intl.cloud.tencent.com/zh/document/product/1040/38289#.E7.8E.AF.E5.A2.83.E9.9A.94.E7.A6.BB)。|
+| app | 应用名称，默认与组件信息中的实例名称一致。对于单实例应用和多实例应用 app 参数的定义方式会有不同，详情请参考 [部署应用](https://intl.cloud.tencent.com/document/product/1040/38288)。|
+| stage | 环境信息，默认为 dev。通过定义不同的 stage，为serverless应用开发、测试、发布提供独立的运行环境。详情请参考 [环境隔离](https://intl.cloud.tencent.com/document/product/1040/38289)。|
 
 #### 组件信息
 
-| 参数 | 说明 | 
+| 参数 | 说明 |
 |---------|---------|
 | component |  引用 component 的名称，`sls registry` 查询您可以引入的组件。|
 | name |  创建的实例名称，每个组件在部署时将创建一个实例。|
