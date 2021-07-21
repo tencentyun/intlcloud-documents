@@ -1,6 +1,6 @@
 ## Live Remuxing
 
-Live remuxing is the process of converting the original stream pushed from the live streaming site (commonly using the RTMP protocol) into different container formats in the cloud before pushing to viewers. This feature supports audio-only or video-only output and a variety of DRM solutions to meet the requirements of digital copyrights protection.
+Live remuxing is the process of converting the original stream pushed from the live streaming site (commonly using the RTMP protocol) into different container formats in the cloud before pushing to viewers. 
 
  ### Supported output container formats
 
