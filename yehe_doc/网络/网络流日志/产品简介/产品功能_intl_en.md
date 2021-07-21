@@ -26,15 +26,15 @@ It refers to a time period of 5 to 10 minutes, during which FL aggregates data a
 | interface-id | ENI ID. |
 | srcaddr | Source IP. |
 | dstaddr | Destination IP. |
-| srcport | Source port of the traffic. |
-| dstport | Destination port of the traffic. |
-| protocol | IANA protocol number of the traffic. For more information, see the assigned [Internet Protocol Numbers](https://www.iana.org/numbers). |
+|srcport | Source port of the traffic. This field will be displayed as `-1` for ICMP traffic.|
+|dstport | Destination port of the traffic. This field will be displayed as `-1` for ICMP traffic.|
+| protocol | IANA protocol number of the traffic. For more information, see the [Assigned Internet Protocol Numbers](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml#protocol-numbers-1). |
 | packets | Number of packets transferred in the capture window. |
 | bytes | Number of bytes transferred in the capture window. |
 | start | Start time of the capture window in Unix seconds. |
 | end | End time of the capture window in Unix seconds. |
 |action | Traffic-related action. Valid values: <br/>ACCEPT: the traffic allowed by the security group or network ACL. <br/>REJECT: the traffic rejected by the security group or network ACL. |
-| log-status | Logging status of the flow log.<br/>OK: data is logging normally to the specified destination.<br/>NODATA: there was no network flow passing through the ENI in the capture window.<br/>SKIPDATA: some flow log records were skipped in the capture window. This may be caused by an internal capacity constraint or an internal error. |
+|log-status | Logging status of the flow log. Valid values:<br>OK: data is logging normally to the specified destination.<br/>NODATA: there was no incoming or outgoing network flow in the capture window. In this case, both `packets` and `bytes` fields are displayed as `-1`.<br/>SKIPDATA: some flow log records were skipped in the capture window. This may be caused by an internal capacity constraint or an internal error. |
 
 
 ### Samples
@@ -66,10 +66,10 @@ It refers to a time period of 5 to 10 minutes, during which FL aggregates data a
  - The security group is stateful; therefore, it allows response to the accepted traffic.
  - The network ACL is stateless; therefore, the response to the accepted traffic should follow the network ACL rules.
 
-  For example, if you ping your instance (private IP of the network interface: 172.31.16.139) from your home computer (IP: 203.0.113.12), and the security group's inbound rule allows the ICMP traffic while its outbound rule does not, your instance will respond to the ping request as the security group is stateful.
-  If your network ACL allows the inbound but rejects the outbound ICMP traffic, response to the ping request will be discarded and will not be sent to your home computer as the network ACL is stateless. In this case, the flow log has two records:
-  - The ACCEPT record for sending the ping request allowed by both network ACL and security group (so that the traffic can reach your instance).
-  - The REJECT record for the response to ping request rejected by the network ACL.
+  For example, if you ping your instance (private IP of the network interface: 172.31.16.139) from your home computer (IP: 203.0.113.12), and the security group's inbound rule allows the ICMP traffic while its outbound rule does not, your instance will respond to the ping command as the security group is stateful.
+  If your network ACL allows the inbound but rejects the outbound ICMP traffic, response to the ping command will be discarded and will not be sent to your home computer as the network ACL is stateless. In this case, the flow log has two records:
+  - The ACCEPT record for sending the ping command allowed by both network ACL and security group (so that the traffic can reach your instance).
+  - The REJECT record for the response to the ping command rejected by the network ACL.
 
   ```
   V1 1251762227 eni-lq6mkcis 203.0.113.12 172.31.16.139 0 0 1 4 336 1432917027 1432917142 ACCEPT OK
@@ -79,4 +79,4 @@ It refers to a time period of 5 to 10 minutes, during which FL aggregates data a
   V1 1251762227 eni-lq6mkcis 172.31.16.139 203.0.113.12 0 0 1 4 336 1432917094 1432917142 REJECT OK
   ```
 
-  If your network ACL allows the outbound ICMP traffic, your flow log will have two ACCEPT records (one for sending the ping request and the other for responding). If your security group rejects the inbound ICMP traffic and the traffic does not reach your instance, the flow log has one REJECT record.
+  If your network ACL allows the outbound ICMP traffic, your flow log will have two ACCEPT records (one for sending the ping command and the other for responding). If your security group rejects the inbound ICMP traffic and the traffic does not reach your instance, the flow log has one REJECT record.
