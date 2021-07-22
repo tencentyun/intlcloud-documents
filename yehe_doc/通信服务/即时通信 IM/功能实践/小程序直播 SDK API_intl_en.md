@@ -36,7 +36,7 @@ npm i im-live-sells --save
 ## Initialization Example
 
 ```javascript
-import TIMLiveSell from 'im-live-sell'
+import TIMLiveSell from 'im-live-sells'
 import TIM from 'tim-js-sdk' // Web environment
 import TIM from 'tim-wx-sdk' // Mini Program environment
 const tls = new TIMLiveSell({
@@ -104,7 +104,7 @@ tls.on(TLS.EVENT.NOTIFACATION, async(data) => {
 
 This callback is triggered when a user sends a group message.
 
-> Messages that you send yourself cannot be found through this callback. To display messages you sent on the screen, use the data returned by the sendMessage method. This is consistent with the IM SDK.
+>? Messages that you send yourself cannot be found through this callback. To display messages you sent on the screen, use the data returned by the sendMessage method. This is consistent with the IM SDK.
 
 ```javascript
 tls.on(TLS.EVENT.MESSAGE, async(data) => {
@@ -256,7 +256,7 @@ const {nick,avatar,message} = await tls.sendMessage(msg);
 
 This method is used to like the host.
 
-> `extension` indicates the additional information when a like is given, for example, the user level.
+>? `extension` indicates the additional information when a like is given, for example, the user level.
 
 ```javascript
 /**
@@ -273,7 +273,7 @@ const {nick,avatar} = await tls.like(extension);
 
 This method is used to send a gift to the host.
 
-> `extension` indicates the additional information when a gift is sent, for example, the gift information.
+>? `extension` indicates the additional information when a gift is sent, for example, the gift information.
 
 ```javascript
 /**
@@ -384,7 +384,7 @@ tls.destroy();
 
 This method is used to send a custom message and trigger the callback event of the specified type.
 
->
+>?
 > - eventName: event name
 > - extension: additional information about the custom message sender
 
