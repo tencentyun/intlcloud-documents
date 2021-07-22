@@ -1,6 +1,6 @@
 在创建并编写完云函数之后，您可以通过以下方式测试云函数，了解函数运行情况，并检查代码执行流程。
 
-- SCF 控制台：[云端测试](<https://intl.cloud.tencent.com/document/product/583/32742#.E4.BA.91.E7.AB.AF.E6.B5.8B.E8.AF.95>)
+- SCF 控制台：[云端测试](https://intl.cloud.tencent.com/document/product/583/32742#.E4.BA.91.E7.AB.AF.E6.B5.8B.E8.AF.95)
 
 ## 测试事件及模板
 
@@ -14,7 +14,7 @@
 * **API Gateway 事件模板**：模拟 API 网关收到 API 请求事件。
 * **Ckafka 事件模板**：模拟 Ckafka topic 收到消息事件。
 
-通过控制台模板管理位置的【更换】操作，更换当前使用的测试模板，也可以更换为提供的测试事件模板或自定义的测试模板。关于事件模板的消息结构，详情请参见 [触发器事件消息结构汇总](<https://intl.cloud.tencent.com/document/product/583/31439>)。
+通过控制台模板管理位置的【更换】操作，更换当前使用的测试模板，也可以更换为提供的测试事件模板或自定义的测试模板。关于事件模板的消息结构，详情请参见 [触发器事件消息结构汇总](https://intl.cloud.tencent.com/document/product/583/31439)。
 
 ## 自定义模板配置及使用
 
