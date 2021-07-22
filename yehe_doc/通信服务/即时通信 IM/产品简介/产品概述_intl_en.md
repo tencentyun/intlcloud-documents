@@ -15,8 +15,8 @@ When terminals log in, the IM SDK connects to the nearest access nodes. IM acces
 
 - China: South China, North China, East China, Hong Kong, and Taiwan
 - Other regions:
- - Asia: Singapore, Indonesia, UAE, Thailand, Japan, Vietnam, India, South Korea, and Philippines
- - Europe: United Kingdom, Netherlands, Germany, Italy, Norway, France, Russia, and Spain
+ - Asia: Singapore, Indonesia, UAE, Thailand, Malaysia, Japan, Vietnam, India, South Korea, and Philippines
+ - Europe: United Kingdom, Netherlands, France, Germany, Italy, Norway, France, Russia, and Spain
  - South America: Brazil
  - North America: United States, Canada, and Mexico
  - Oceania: Australia
