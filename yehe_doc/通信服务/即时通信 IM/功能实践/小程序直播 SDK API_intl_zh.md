@@ -34,7 +34,7 @@ npm i im-live-sells --save
 ## 初始化示例
 
 ```javascript
-import TIMLiveSell from 'im-live-sell'
+import TIMLiveSell from 'im-live-sells'
 import TIM from 'tim-js-sdk' //Web 环境
 // import TIM from 'tim-wx-sdk' 小程序环境
 const tls = new TIMLiveSell({
@@ -102,7 +102,7 @@ tls.on(TLS.EVENT.NOTIFACATION, async(data) => {
 
 有人发送群消息时触发。
 
-> 自己发送的消息不会在这个回调里，自己发送的消息上屏请使用 sendMessage 方法返回的数据，这里与 IM SDK 保持一致。
+>? 自己发送的消息不会在这个回调里，自己发送的消息上屏请使用 sendMessage 方法返回的数据，这里与 IM SDK 保持一致。
 
 ```javascript
 tls.on(TLS.EVENT.MESSAGE, async(data) => {
@@ -254,7 +254,7 @@ const {nick,avatar,message} = await tls.sendMessage(msg);
 
 给主播点赞。
 
-> extension：点赞时的附加信息，如用户等级。
+>? extension：点赞时的附加信息，如用户等级。
 
 ```javascript
 /**
@@ -271,7 +271,7 @@ const {nick,avatar} = await tls.like(extension);
 
 给主播送礼。
 
-> extension：送礼时的附加信息，如礼物信息等。
+>? extension：送礼时的附加信息，如礼物信息等。
 
 ```javascript
 /**
@@ -382,7 +382,7 @@ tls.destroy();
 
 发送自定义消息，并触发 type 类型的回调事件。
 
->
+>?
 > - eventName：事件名。
 > - extension：自定义消息发送者附带信息。
 
