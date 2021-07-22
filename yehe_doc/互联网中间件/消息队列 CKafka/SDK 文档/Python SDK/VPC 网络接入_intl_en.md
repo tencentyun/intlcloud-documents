@@ -15,6 +15,7 @@ Upload the `pythonkafkademo` in the downloaded demo to the Linux server, log in 
 ### Step 1. Add the Python dependency library
 
 Run the following command to install:
+
 ```bash
 pip install kafka-python
 ```
@@ -27,7 +28,7 @@ pip install kafka-python
 ```python
 #coding:utf8
 from kafka import KafkaProducer
-
+import json
 producer = KafkaProducer(
    bootstrap_servers = ['$domainName:$port'],
    api_version = (0,10,0)
@@ -46,9 +47,9 @@ producer.close()
 
 2. Compile and run `producer.py`.
 3. View the operation result.
-![](https://main.qcloudimg.com/raw/312d264676c655838e398ab9fa03b491.png) 
+   ![](https://main.qcloudimg.com/raw/312d264676c655838e398ab9fa03b491.png) 
 4. On the **Topic Management** page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding topic and click **More** > **Message Query** to view the just sent message.
-	![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
+   ![](https://main.qcloudimg.com/raw/417974c1d8df4a5ff409138e7c6b3def.png)
 
 
 
@@ -56,6 +57,7 @@ producer.close()
 ### Step 3. Consume the message
 
 1. Modify the configuration parameters in the message consumption program `consumer.py`.
+
 ```python
 #coding:utf8
 from kafka import KafkaConsumer
