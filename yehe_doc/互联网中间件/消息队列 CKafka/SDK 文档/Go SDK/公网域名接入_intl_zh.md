@@ -67,7 +67,7 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
   
   func main() {
   
-      cfg, err := config.ParseConfig("../../config/kafka.json")
+      cfg, err := config.ParseConfig("../config/kafka.json")
       if err != nil {
           log.Fatal(err)
       }
@@ -134,11 +134,13 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
 ```
 
 2. 编译并运行程序发送消息。
+
 ```bash
 go run main.go
 ```
 
 3. 查看运行结果，示例如下。
+
 ```bash
 Delivered message to test[0]@628
 Delivered message to test[0]@629
@@ -165,7 +167,7 @@ Delivered message to test[0]@629
   
   func main() {
   
-      cfg, err := config.ParseConfig("../../config/kafka.json")
+      cfg, err := config.ParseConfig("../config/kafka.json")
       if err != nil {
           log.Fatal(err)
       }
@@ -213,11 +215,13 @@ Delivered message to test[0]@629
 ```
 
 2. 编译并运行程序消费消息。
+
 ```bash
 go run main.go
 ```
 
 3. 查看运行结果，示例如下。
+
 ```bash
 Message on test[0]@628: Confluent-Kafka
 Message on test[0]@629: Golang Client Message
