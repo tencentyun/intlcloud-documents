@@ -1,5 +1,3 @@
-
-
 ## 操作背景
 
 该任务以 Python 客户端为例指导您使用公网网络接入消息队列 CKafka 并收发消息。
@@ -27,7 +25,7 @@ pip install kafka-python
 ```python
 #coding:utf8
 from kafka import KafkaProducer
-
+import json
 producer = KafkaProducer(
 bootstrap_servers = ['$domainName:$port'],
 ssl_check_hostname = False,
@@ -62,7 +60,9 @@ producer.close()
 
 
 ### 步骤三：消费消息
+
 1. 修改消费消息程序 consumer.py 中配置参数。
+
 ```python
 #coding:utf8
 from kafka import KafkaConsumer
