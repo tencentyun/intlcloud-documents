@@ -42,21 +42,21 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
 ### Step 2. Send a message
 
 1. Write the message production program.
-
-   ```go
+<dx-codeblock>
+:::  go
    package main
    import (
-   "fmt"
-   "gokafkademo/config"
-   "log"
-   "strings"
+     		"fmt"
+   		"gokafkademo/config"
+   		"log"
+   		"strings"
        "github.com/confluentinc/confluent-kafka-go/kafka"
    )
    func main() {
-       cfg, err := config.ParseConfig("../../config/kafka.json")
-   if err != nil {
-       log.Fatal(err)
-   }
+       cfg, err := config.ParseConfig("../config/kafka.json")
+   		if err != nil {
+       		log.Fatal(err)
+   		}
        p, err := kafka.NewProducer(&kafka.ConfigMap{
        // Set the access point of the corresponding topic, which can be obtained in the console
        "bootstrap.servers": strings.Join(cfg.Servers, ","),
@@ -70,35 +70,37 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
        "socket.timeout.ms": 6000,
        // Set the internal retry interval of the client
        "reconnect.backoff.max.ms": 3000,
-   })
-   if err != nil {
-       log.Fatal(err)
-   }
+   		})
+   		if err != nil {
+       		log.Fatal(err)
+   		}
        defer p.Close()
        // Pass the produced message to the report handler
-   go func() {
-       for e := range p.Events() {
-           switch ev := e.(type) {
-           case *kafka.Message:
-               if ev.TopicPartition.Error != nil {
-                   fmt.Printf("Delivery failed: %v\n", ev.TopicPartition)
-               } else {
-                   fmt.Printf("Delivered message to %v\n", ev.TopicPartition)
-               }
-           }
-       }
-   }()
+   		go func() {
+       		for e := range p.Events() {
+           		switch ev := e.(type) {
+           		case *kafka.Message:
+               		if ev.TopicPartition.Error != nil {
+                   		fmt.Printf("Delivery failed: %v\n", ev.TopicPartition)
+                 	} else {
+                     fmt.Printf("Delivered message to %v\n",ev.TopicPartition)
+               		}
+           		}
+       		}
+   		}()
        // Send the message asynchronously
-   topic := cfg.Topic[0]
-   for _, word := range []string{"Confluent-Kafka", "Golang Client Message"} {
-       _ = p.Produce(&kafka.Message{
-           TopicPartition: kafka.TopicPartition{Topic: &topic, Partition: kafka.PartitionAny},
-           Value:          []byte(word),
-       }, nil)
-   }
+   		topic := cfg.Topic[0]
+   		for _, word := range []string{"Confluent-Kafka", "Golang Client Message"} {
+       		_ = p.Produce(&kafka.Message{
+           		TopicPartition: kafka.TopicPartition{Topic: &topic, Partition: 		kafka.PartitionAny},
+           		Value:          []byte(word),
+       		}, nil)
+   		}
        // Wait for message delivery
-   p.Flush(10 * 1000)
-   ```
+   		p.Flush(10 * 1000)
+   }
+:::
+</dx-codeblock>
 
 2. Compile and run the program to send the message.
    ```go
@@ -117,8 +119,8 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
 ### Step 3. Consume the message
 
 1. Write the message consumption program.
-
-```go
+<dx-codeblock>
+:::  go
   package main
   
   import (
@@ -132,7 +134,7 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
   
   func main() {
   
-      cfg, err := config.ParseConfig("../../config/kafka.json")
+      cfg, err := config.ParseConfig("../config/kafka.json")
       if err != nil {
           log.Fatal(err)
       }
@@ -170,18 +172,19 @@ go get -v gopkg.in/confluentinc/confluent-kafka-go.v1/kafka
   
       c.Close()
   }
-```
+:::
+</dx-codeblock>
 
 2. Compile and run the program to consume the message.
-```bash
-  go run main.go
-```
+	```bash
+		go run main.go
+	```
 
 3. View the execution result. Below is a sample:
-```bash
-Message on test[0]@628: Confluent-Kafka
-Message on test[0]@629: Golang Client Message
-```
+	```bash
+	Message on test[0]@628: Confluent-Kafka
+	Message on test[0]@629: Golang Client Message
+	```
 
 4. On the **Consumer Group** page in the [CKafka console](https://console.cloud.tencent.com/ckafka), select the corresponding consumer group, enter the topic name in **Topic Name**, and click **Query Details** to view the consumption details.
    ![](https://main.qcloudimg.com/raw/22b1e4dd27a79cb96c76f01f2aa7e212.png)
