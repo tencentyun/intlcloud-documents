@@ -67,7 +67,7 @@ Create the configuration file `kafka.json`.
   
   func main() {
   
-      cfg, err := config.ParseConfig("../../config/kafka.json")
+      cfg, err := config.ParseConfig("../config/kafka.json")
       if err != nil {
           log.Fatal(err)
       }
@@ -134,11 +134,13 @@ Create the configuration file `kafka.json`.
 ```
 
 2. Compile and run the program to send the message.
+
 ```bash
 go run main.go
 ```
 
 3. View the execution result. Below is a sample:
+
 ```bash
 Delivered message to test[0]@628
 Delivered message to test[0]@629
@@ -165,7 +167,7 @@ Delivered message to test[0]@629
   
   func main() {
   
-      cfg, err := config.ParseConfig("../../config/kafka.json")
+      cfg, err := config.ParseConfig("../config/kafka.json")
       if err != nil {
           log.Fatal(err)
       }
@@ -213,11 +215,13 @@ Delivered message to test[0]@629
 ```
 
 2. Compile and run the program to consume the message.
+
 ```bash
 go run main.go
 ```
 
 3. View the execution result. Below is a sample:
+
 ```bash
 Message on test[0]@628: Confluent-Kafka
 Message on test[0]@629: Golang Client Message
