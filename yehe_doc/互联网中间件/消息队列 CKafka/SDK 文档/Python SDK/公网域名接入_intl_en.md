@@ -1,5 +1,3 @@
-
-
 ## Overview
 
 This document describes how to access CKafka to send/receive messages with the SDK for Python over the public network.
@@ -16,6 +14,7 @@ This document describes how to access CKafka to send/receive messages with the S
 ### Step 1. Add the Python dependency library
 
 Run the following command to install:
+
 ```bash
 pip install kafka-python
 ```
@@ -27,7 +26,7 @@ pip install kafka-python
 ```python
 #coding:utf8
 from kafka import KafkaProducer
-
+import json
 producer = KafkaProducer(
 bootstrap_servers = ['$domainName:$port'],
 ssl_check_hostname = False,
@@ -62,7 +61,9 @@ producer.close()
 
 
 ### Step 3. Consume the message
+
 1. Modify the configuration parameters in the message consumption program `consumer.py`.
+
 ```python
 #coding:utf8
 from kafka import KafkaConsumer
