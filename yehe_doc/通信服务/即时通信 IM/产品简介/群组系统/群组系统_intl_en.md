@@ -128,7 +128,7 @@ Based on common use cases, IM provides the following default group types:
 >!To enable group repossession, submit a ticket. After configuration, inactive groups will be cleaned up by group type. An inactive group is a group in which no messages are sent and no member changes occur.
 
 ## Group Data Structure
-### Group profile
+### Group profile[](id:GroupBaseInfoFilter)
 
 | Field Name | Type | Description | Remarks |
 |--- |--- |--- |--- |
@@ -153,7 +153,7 @@ Based on common use cases, IM provides the following default group types:
 >- In a work group, any member can modify them.
 >- For other group types, only **non-ordinary members** can modify them.
 
-### Group member profile
+### Group member profile[](id:SelfInfoFilter)
 
 | Field | Type | Description | Remarks |
 |--- |--- |--- |--- |
