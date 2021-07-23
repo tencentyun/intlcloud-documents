@@ -11,7 +11,7 @@ In cases that involve a large number of small files or mixed use of large and sm
 The above problems happen mainly due to the NFS v4.0 limitation as described below. If the client uses NFS v4.0 to read and write a lot of files at the same time, the large number of OPEN/CLOSE requests in parallel may result in a bottleneck on the client because the OPEN/CLOSE operations are serialized in NFS v4.0.
 
 - There is a limitation to the Linux NFS4.0 client implementation that an "open_owner" is mapped to a userid. This results in a bottleneck if one user opens and closes a lot of files in a short period of time. Each OPEN / CLOSE operation has to wait for a sequence id, which essentially serializes each OPEN / CLOSE request. If an NFS server's response time for OPEN / CLOSE requests increases due to some secondary load or complication, this NFS4 client limitation can become pronounced, and in some cases, cause an unresponsive machine.
-- The NFS4.1 protocol addresses the limitation of serialization of OPENs per open_owner. For more information, see [RFC 5661 Section 9.10](http://tools.ietf.org/html/rfc5661#section-9.10)
+- The NFS4.1 protocol addresses the limitation of serialization of OPENs per open_owner. For more information, see RFC 5661 Section 9.10.
 
 ## Solution
 
