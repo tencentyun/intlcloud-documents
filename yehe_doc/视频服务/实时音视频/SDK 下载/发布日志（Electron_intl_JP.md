@@ -118,7 +118,7 @@ Windows & Mac：PCのマイクとスピーカーを制御するため、[setCurr
 
 **追加**
 
-[ビッグストリーム](https:/(https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCVideoStreamType)を使用した[画面共有](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startScreenCapture)をサポートします。
+[ビッグストリーム]((https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCVideoStreamType)を使用した[画面共有](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startScreenCapture)をサポートします。
 
 **改善**
 - [ミクスストリーミングプリセットテンプレート](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCTranscodingConfigMode)の使いやすさを最適化しました。
