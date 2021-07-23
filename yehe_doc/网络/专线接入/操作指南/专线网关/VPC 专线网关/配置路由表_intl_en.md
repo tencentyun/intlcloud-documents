@@ -30,10 +30,10 @@ After creating a direct connect gateway and constructing a dedicated tunnel, you
 <tr><td>Notes</td><td>Enter the route description for resource management. This parameter is optional.</td></tr>
 </tr>
 <tr>
-<td>Add a line</td><td>Configure multiple routing policies if needed. You can click the deletion icon in the **Operation** column to delete the unnecessary routing policies. A custom route table should contain at least one routing policy.</td></tr>
+<td>Add a line</td><td>Configure multiple routing policies if needed. You can click the deletion icon in the <b>Operation</b> column to delete the unnecessary routing policies. A custom route table should contain at least one routing policy.</td></tr>
 </tr>
 </tbody> 
 </table>
-6. Click **Create**.
+6. Click  <b>Create</b>.
 Now, you can direct the traffic from the specific destination to the direct connect gateway to associate it with your local IDC.
 
