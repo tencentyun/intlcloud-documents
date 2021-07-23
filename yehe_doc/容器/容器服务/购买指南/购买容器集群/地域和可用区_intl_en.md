@@ -145,10 +145,6 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 			<td>Singapore Zone 3 (Singapore nodes can cover services in Southeast Asia)<br>ap-singapore-3</td>
 		</tr>
 		<tr>
-			<td>Southeast Asia (Jakarta)<br>ap-jakarta</td>
-			<td>Jakarta Zone 1 (Jakarta nodes can cover services in Southeast Asia)<br>ap-jakarta-1</td>
-		</tr>
-		<tr>
 			<td  rowspan="2">Northeast Asia (Seoul)<br>ap-seoul</td>
 			<td>Seoul Zone 1 (Seoul nodes can cover services in Northeast Asia)<br>ap-seoul-1</td>
 		</tr>
