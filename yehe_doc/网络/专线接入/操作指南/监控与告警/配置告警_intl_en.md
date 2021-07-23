@@ -19,7 +19,7 @@ You can configure alarm rules for the connection, dedicated tunnel and direct co
   Select **Configure manually** and configure **Metric Alarm** and **Event Alarm** as needed.
        - Set the trigger condition. You can click **Add Metric** to configure a new metric. For more information about metric alarms, see [Alarm Overview](https://intl.cloud.tencent.com/document/product/216/38403).
  For example, if you choose **BandwidthIn** metric and configure as follows: **statistical period: 1 minute**, **>**, **100 Mbps**, **at 2 consecutive data points**, and **Alarm once a day**, then the inbound bandwidth data will be collected once every minute. An alarm will be triggered once a day if the inbound bandwidth of a connection, dedicated tunnel or direct connect gateway exceeds 100 Mbps for two consecutive minutes.
- >  ? Click **Add Metric** to configure a new trigger condition. You can choose to trigger an alarm when any or all conditions are met.
+ >? Click **Add Metric** to configure a new trigger condition. You can choose to trigger an alarm when any or all conditions are met.
  >
        - Select a specific event such as DirectConnectDown for the event alarm. You can click **Add Event** to configure a new event alarm. For more information about event alarms, see [Alarm Overview](https://intl.cloud.tencent.com/document/product/216/38403).
  >? Click **Add Event** to configure a new event alarm.
