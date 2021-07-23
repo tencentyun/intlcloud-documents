@@ -30,7 +30,7 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 - [屏幕分享（Mac）](https://intl.cloud.tencent.com/document/product/647/37336)
 - [屏幕分享（桌面浏览器）](https://intl.cloud.tencent.com/document/product/647/35163)
 
-屏幕分享接口详情请参见 [Windows（C++）API](https://intl.cloud.tencent.com/document/product/647/35131) 或 [Windows（C#）API](https://intl.cloud.tencent.com/document/product/647/35136)。另外，您也可以使用 [Electron 接口](https://intl.cloud.tencent.com/document/product/647/35141)。
+屏幕分享接口详情请参见 [Windows（C++）API](https://intl.cloud.tencent.com/document/product/647/35131) 或 [Windows（C#）API](https://intl.cloud.tencent.com/document/product/647/)。另外，您也可以使用 [Electron 接口](https://intl.cloud.tencent.com/document/product/647/35141)。
 
 
 [](id:que5)
@@ -137,7 +137,6 @@ TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决�
 - 清晰度主要和码率有关，检查 SDK 码率是否配置的比较低，如果高分辨率低码率容易产生马赛克现象。
 - TRTC 会通过云端 QOS 流控策略，根据网络状况动态调整码率、分辨率，网络比较差时容易降低码率导致清晰度下降。
 - 检查进房时使用的 VideoCall 模式还是 Live 模式，针对通话场景 VideoCall 模式主打低延时和保流畅，所以在弱网情况下会更容易牺牲画质确保流畅，对画质更加看重的场景建议使用 Live 模式。
-
 
 [](id:que21)
 ### 如何查询 SDK 最新版本号？
