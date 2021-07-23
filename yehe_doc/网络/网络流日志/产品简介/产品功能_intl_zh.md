@@ -17,7 +17,7 @@
 即源 IP 地址，源端口，目的 IP 地址，目的端口，和传输层协议这五个量组成的一个集合。
 - **捕获窗口**
 即一段持续时间，在这段时间内流日志服务会聚合数据，然后再发布流日志记录。捕获窗口大约为5 - 10分钟，推送时间约为5分钟。流日志记录是以空格分隔的字符串，采用以下格式：
-`version account-id interface-id srcaddr dstaddr srcport dstport protocol packets bytes start end action log-status`
+`version account-id interface-id srcaddr dstaddr srcport dstport protocol packets bytes start end action log-status`。
 
 |字段 | 说明 |
 |---------|---------|
@@ -26,8 +26,8 @@
 |interface-id | 弹性网卡 ID。 |
 |srcaddr | 源 IP。|
 |dstaddr | 目标 IP。|
-|srcport | 流量的源端口。当流量为 ICMP 协议时，该字段显示为“-1”。|
-|dstport | 流量的目标端口。当流量为 ICMP 协议时，该字段显示为“-1”。|
+|srcport | 流量的源端口。当流量为 ICMP 协议时，该字段表示 ICMP 的 id。|
+|dstport | 流量的目标端口。当流量为 ICMP 协议时，该字段表示 ICMP 的 type（高8bit）+code（低8bit）组合。|
 |protocol | 流量的 IANA 协议编号。有关更多信息，请转到分配的 [ Internet 协议](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml#protocol-numbers-1) 编号。 |
 |packets | 捕获窗口中传输的数据包的数量。 |
 |bytes | 捕获窗口中传输的字节数。 |

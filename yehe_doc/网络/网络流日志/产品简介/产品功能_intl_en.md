@@ -26,8 +26,8 @@ It refers to a time period of 5 to 10 minutes, during which FL aggregates data a
 | interface-id | ENI ID. |
 | srcaddr | Source IP. |
 | dstaddr | Destination IP. |
-|srcport | Source port of the traffic. This field will be displayed as `-1` for ICMP traffic.|
-|dstport | Destination port of the traffic. This field will be displayed as `-1` for ICMP traffic.|
+|srcport | Source port of the traffic. This field indicates the ICMP ID for ICMP traffic.|
+|dstport | Destination port of the traffic. This field indicates a combination of IMCP type (bits 0-7) and code (bits 8-15) for ICMP traffic. |
 | protocol | IANA protocol number of the traffic. For more information, see the [Assigned Internet Protocol Numbers](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml#protocol-numbers-1). |
 | packets | Number of packets transferred in the capture window. |
 | bytes | Number of bytes transferred in the capture window. |
@@ -67,7 +67,7 @@ It refers to a time period of 5 to 10 minutes, during which FL aggregates data a
  - The network ACL is stateless; therefore, the response to the accepted traffic should follow the network ACL rules.
 
   For example, if you ping your instance (private IP of the network interface: 172.31.16.139) from your home computer (IP: 203.0.113.12), and the security group's inbound rule allows the ICMP traffic while its outbound rule does not, your instance will respond to the ping command as the security group is stateful.
-  If your network ACL allows the inbound but rejects the outbound ICMP traffic, response to the ping command will be discarded and will not be sent to your home computer as the network ACL is stateless. In this case, the flow log has two records:
+  If your network ACL allows the inbound but rejects the outbound ICMP traffic, response to the ping request will be discarded and will not be sent to your home computer as the network ACL is stateless. In this case, the flow log has two records:
   - The ACCEPT record for sending the ping command allowed by both network ACL and security group (so that the traffic can reach your instance).
   - The REJECT record for the response to the ping command rejected by the network ACL.
 
