@@ -13,9 +13,9 @@ This document focuses on iOS badge best practices. For Android badge adaptation,
 For such a scenario, the badge number auto increase scheme is recommended. The process is as follows:
 **Step 1:** when a push task is created via the [push API](https://intl.cloud.tencent.com/document/product/1024/33764), set `badge_type` to `-2` to enable the application's badge number to automatically increase by 1.
 **Step 2:** when the application is started, call the "clearing the application's badge number and notification bar messages" method to clear the local badge number and notification bar messages. The implementation code is as follows.
-
+![](https://main.qcloudimg.com/raw/076ca2d56865d332b0821dca8ffcfdbb.png)
 **Step 3:** clear the cloud badge number. The implementation code is as follows.
-
+![](https://main.qcloudimg.com/raw/64bd9d0160d2a31bb60f70524c2f3e6e.png)
 **Step 4:** if the cloud badge number needs to be updated, call the following API to sync the badge value to the TPNS server, and the badge value will be used as the benchmark for the next push. For example, if the current TPNS server badge value is synchronized as N, then the application's badge value will be N+1 when the next push is received.
 ```
 //Sync the badge value to the TPNS server, and the value will be used as the benchmark for the next push
@@ -133,4 +133,66 @@ For SDK v1.3.1.0 or later, the recommended method is as follows:
 
 #### How to keep the badge number unchanged when I create a push via the [push API](https://intl.cloud.tencent.com/document/product/1024/33764)?
 Set `badge_type` to `-1` to make the badge number remain unchanged.
+#### How can I query the function stack of the app's badge modification method?
+You can use the `setApplicationIconBadgeNumber:` method of the `UIApplication` hook system class to print the function call stack to find out the caller information. The code is as follows:
+`UIApplication+ApplicationIconBadgeNumber.h` file
+``` 
+#import <UIKit/UIKit.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface UIApplication (ApplicationIconBadgeNumber)
+
+@end
+
+NS_ASSUME_NONNULL_END
+
+```
+`UIApplication+ApplicationIconBadgeNumber.m` file
+```
+#import "UIApplication+ApplicationIconBadgeNumber.h"
+#import <objc/runtime.h>
+
+@implementation UIApplication (ApplicationIconBadgeNumber)
+
+// Load class method (called when the code of a certain class is read into memory)
++ (void)load
+{
+SEL origSel = @selector(setApplicationIconBadgeNumber:);
+SEL swizSel = @selector(swiz_setApplicationIconBadgeNumber:);
+[UIApplication swizzleMethods:[self class] originalSelector:origSel swizzledSelector:swizSel];
+}
+
+// Swap the implementations of the two methods.
++ (void)swizzleMethods:(Class)class originalSelector:(SEL)origSel swizzledSelector:(SEL)swizSel
+{
+Method origMethod = class_getInstanceMethod(class, origSel);
+Method swizMethod = class_getInstanceMethod(class, swizSel);
+BOOL didAddMethod = class_addMethod(class, origSel, method_getImplementation(swizMethod), method_getTypeEncoding(swizMethod));
+if (didAddMethod){
+class_replaceMethod(class, swizSel, method_getImplementation(origMethod), method_getTypeEncoding(origMethod));
+}else{
+method_exchangeImplementations(origMethod, swizMethod);
+}
+}
+
+/// Set the badge using hook.
+- (void)swiz_setApplicationIconBadgeNumber:(NSInteger)number
+{
+NSLog(@" called the `swiz_setApplicationIconBadgeNumber` method.");
+/// Print the current function call stack.
+NSArray *syms = [NSThread  callStackSymbols];
+for(int i = 0 ; i < [syms count]; i++){
+NSLog(@"<%@ %p> %@ - caller: %@ ", [self class], self, NSStringFromSelector(_cmd),[syms objectAtIndex:i]);
+}
+// Jump to the `setApplicationIconBadgeNumber` method when this statement is executed.
+[self swiz_setApplicationIconBadgeNumber:number];
+}
+
+@end
+
+```
+Add the above two files to your project.
+The following figure is an example of adding them to the TPNS demo:
+![](https://main.qcloudimg.com/raw/b079a5fbbd9b0c9f174e841db692330d.png)
 

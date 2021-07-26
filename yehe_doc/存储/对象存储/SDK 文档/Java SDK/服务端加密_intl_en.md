@@ -25,8 +25,11 @@ You can call the `setServerSideEncryption`, `setMetadata`, and other methods in 
 
 
 ```java
- // Initialize user authentication information (secretId and secretKey).
- COSCredentials cred = new BasicCOSCredentials("COS_SECRETID", "COS_SECRETKEY");
+ // Initialize user authentication information (`secretId` and `secretKey`).
+// Log in to the CAM console to check and manage the `SecretId` and `SecretKey` of your project.
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
+ COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
  // Set the bucket region. For abbreviations of COS regions, see https://cloud.tencent.com/document/product/436/6224
  ClientConfig clientConfig = new ClientConfig(new Region("ap-guangzhou"));
 // Generate the COS client.
@@ -38,7 +41,7 @@ String key = "doc/exampleobject.txt";
 File localFile = new File("test.txt");
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localFile);
 ObjectMetadata objectMetadata = new ObjectMetadata();
-// Set the encryption algorithm to AES256.
+// Set the encryption algorithm to AES-256.
 objectMetadata.setServerSideEncryption(SSEAlgorithm.AES256.getAlgorithm());
 putObjectRequest.setMetadata(objectMetadata);
 try {
@@ -104,7 +107,7 @@ Sample 2: Using KMS encryption for objects uploaded with multipart upload
 
 ```java
 COSCredentials cred = new BasicCOSCredentials("SECRET_ID", "SECRET_KEY");
-// 2. Set the bucket region. For abbreviations of COS regions, please see https://intl.cloud.tencent.com/zh/document/product/436/6224
+// 2. Set the bucket region. For abbreviations of COS regions, please see https://cloud.tencent.com/document/product/436/6224
 ClientConfig clientConfig = new ClientConfig(new Region("ap-guangzhou"));
 // Use the HTTPS protocol.
 clientConfig.setHttpProtocol(HttpProtocol.https);
@@ -201,7 +204,7 @@ cosclient.shutdown();
 
 #### Feature description
 
-Users can provide a key for the encryption. In this way, the key will be used to AES-256 encrypt objects during the upload. You can call the `setHttpProtocol`, `setSSECustomerKey`, and other methods in the SDK for the implementation.
+Users can provide a key for the encryption. In this way, the key will be used to AES-256 encrypt objects during the upload. You can call the `setHttpProtocol`, `setSSECustomerKey`, and other methods in the SDK for implementation.
 
 > !
 >- This type of encryption requires using HTTPS requests.
@@ -212,9 +215,12 @@ Users can provide a key for the encryption. In this way, the key will be used to
 #### Sample code
 
 ```java
- // Initialize user authentication information (secretId and secretKey).
- COSCredentials cred = new BasicCOSCredentials("COS_SECRETID", "COS_SECRETKEY");
- // Set the bucket region. For abbreviations of COS regions, please see https://intl.cloud.tencent.com/document/product/436/6224
+ // Initialize user authentication information (`secretId` and `secretKey`).
+// Log in to the CAM console to check and manage the `SecretId` and `SecretKey` of your project.
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
+ COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
+ // Set the bucket region. For abbreviations of COS regions, please visit https://intl.cloud.tencent.com/document/product/436/6224
  ClientConfig clientConfig = new ClientConfig(new Region("ap-guangzhou"));
 // The HTTPS protocol is required.
 clientConfig.setHttpProtocol(HttpProtocol.https);

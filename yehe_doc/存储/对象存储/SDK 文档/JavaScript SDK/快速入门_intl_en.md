@@ -7,6 +7,11 @@
 - Download the demo: [JS Sample](https://github.com/tencentyun/cos-js-sdk-v5/tree/master/demo).
 - For the complete sample code, please see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/JavaScript).
 - For the SDK changelog, please see [Changelog](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/CHANGELOG.md).
+- For SDK FAQs, please see [JavaScript SDK FAQs](https://intl.cloud.tencent.com/document/product/436/40775).
+
+
+>? If you encounter errors such as non-existent functions or methods when using the XML version of the SDK, please update the SDK to the latest version and try again.
+>
 
 #### Environment requirements
 
@@ -95,7 +100,7 @@ Create a COS SDK instance in one of the following ways:
 
 - Method 1 (recommended): The backend gets a temporary key and sends it to the frontend for signature calculation.
 
-[//]: # (.cssg-snippet-global-init-sts)
+[//]: # ".cssg-snippet-global-init-sts"
 ```js
 var COS = require('cos-js-sdk-v5');
 var cos = new COS({
@@ -124,7 +129,7 @@ var cos = new COS({
 
 - Method 2 (recommended). Permissions are controlled in a more refined manner. The backend gets a temporary key and sends it to the frontend. The frontend reuses the key only for the same request, and the backend can granularly manage permissions through Scope.
 
-[//]: # (.cssg-snippet-global-init-sts-scope)
+[//]: # ".cssg-snippet-global-init-sts-scope"
 ```js
 var COS = require('cos-js-sdk-v5');
 var cos = new COS({
@@ -159,7 +164,7 @@ var cos = new COS({
 
 - Method 3 (not recommended): the frontend needs to get a signature through `getAuthorization` before each request, and the backend uses a permanent or temporary key to calculate the signature and returns it to the frontend. This method makes it difficult to control permissions for multipart upload and thus is not recommended.
 
-[//]: # (.cssg-snippet-global-init-signature)
+[//]: # ".cssg-snippet-global-init-signature"
 ```js
 var cos = new COS({
     // Required parameters
@@ -186,7 +191,7 @@ var cos = new COS({
 
 - Method 4 (not recommended): the frontend uses a permanent key to calculate the signature. This method can be used for frontend debugging. If you use this method, be sure to avoid key disclosure.
 
-[//]: # (.cssg-snippet-global-init)
+[//]: # ".cssg-snippet-global-init"
 ```js
 // You can obtain/manage SECRETID and SECRETKEY at https://console.cloud.tencent.com/cam/capi
 var cos = new COS({
@@ -207,7 +212,7 @@ var cos = new COS({
 | ChunkSize | Part size in the multipart upload in bytes. Default value: 1048576 (1 MB) | Number | No |
 | SliceSize | When files are uploaded in batches using `uploadFiles`, if the file size is greater than the value of this parameter (measured in bytes), multipart upload is used; otherwise, simple upload is used. Default value: 1048576 (1 MB) | Number | No |
 | CopyChunkParallelLimit | Number of concurrent multipart copy uploads for the same multipart copy operation. Default value: 20 | Number | No |
-| CopyChunkSize | Number of bytes in each part during a multipart copy operation with `sliceCopyFile`. Default value: 10485760 (10 MB) | Number | No |
+| CopyChunkSize | Number of bytes in each part during a multipart copy operation with `sliceCopyFile`. Default value: `10485760` (10 MB) | Number | No |
 | CopySliceSize | When a file is copied by using `sliceCopyFile`, if the file size is greater than the value of this parameter, multipart copy is used; otherwise, simple copy is used. Default value: 10485760 (10 MB) | Number | No |
 | ProgressInterval | Callback frequency of the upload progress callback method `onProgress` in milliseconds. Default value: 1000 | Number | No |
 | Protocol | The protocol used when the request is made. Valid values: `https:`, `http:`. By default, `http:` is used when the current page is determined to be in `http:` format; otherwise, `https:` is used | String | No |
@@ -240,7 +245,7 @@ After the temporary key is obtained, the callback returns an object. The attribu
 | TmpSecretId | `tmpSecretId` of the obtained temporary key | String | Yes |
 | TmpSecretKey | `tmpSecretKey` of the obtained temporary key | String | No |
 | SecurityToken | sessionToken of the obtained temporary key, which corresponds to the `x-cos-security-token` field in the header | String | Yes |
-| StartTime | Key acquisition start time measured in seconds, i.e., the timestamp of the key acquisition time, such as 1580000000. This parameter is used as the signature start time. Passing in this parameter can avoid signature expiration issues due to time deviation on the frontend  | String | No |
+| StartTime | Key acquisition start time measured in seconds, i.e., the timestamp of the key acquisition time, such as 1580000000. This parameter is used as the signature start time. Passing in this parameter can avoid signature expiration issues due to time deviation on the frontend |
 | ExpiredTime | `expiredTime` of the obtained temporary key measured in seconds, i.e., the timeout timestamp, such as 1580000900 | String | Yes |
 
 #### getAuthorization Callback function description (Format 2)
@@ -262,7 +267,7 @@ getAuthorization function callback parameter descriptions:
 | callback | Callback after the temporary key is obtained | Function | 
 
 Once the getAuthorization callback function is finished, it returns one of the following:
-Format 1: The authentication credential string `Authorization` is called back.
+An Authorization string.
 Format 2: An object is called back with the following attributes:
 
 | Attribute | Description | Type  |Required |
@@ -284,7 +289,7 @@ Below are some examples of common APIs. For more detailed initialization methods
 
 This API is suitable for uploading small files. For large files, please use the multipart upload API. For more information, see [Actions on Objects](https://intl.cloud.tencent.com/document/product/436/31538).
 
-[//]: # (.cssg-snippet-put-object)
+[//]: # ".cssg-snippet-put-object"
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000',                               /* Required */
@@ -302,7 +307,7 @@ cos.putObject({
 
 ### Querying an object list
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```js
 cos.getBucket({
     Bucket: 'examplebucket-1250000000',                               /* Required */
@@ -317,7 +322,7 @@ cos.getBucket({
 
 > !This API is used to read object content. If you need to launch a browser to download the file, you can get the URL through `cos.getObjectUrl` and then start the download in the browser. For more information, please see [Pre-signed URL](https://intl.cloud.tencent.com/document/product/436/31540).
 
-[//]: # (.cssg-snippet-get-object)
+[//]: # ".cssg-snippet-get-object"
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000',                               /* Required */
@@ -330,7 +335,7 @@ cos.getObject({
 
 ### Deleting an object
 
-[//]: # (.cssg-snippet-delete-object)
+[//]: # ".cssg-snippet-delete-object"
 ```js
 cos.deleteObject({
     Bucket: 'examplebucket-1250000000',                               /* Required */

@@ -2,7 +2,7 @@
 
 You can redirect subscribers who tap your notification to the specified in-app page, HTML5 page and Deeplink to meet your needs in different use cases.
 
-## Scope
+## Application Scope
 
 | Platform   | Type                                                    |
 | ------- | ------------------------------------------------------------ |
@@ -22,14 +22,14 @@ If you want to redirect to the page specified by `AboutActivity`, use the follow
 <activity
     android:name="com.qq.xg.AboutActivity"
     android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
-    <intent-filter >
+    <intent-filter>
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT"/>
-        <!-- The custom data block specifies your complete scheme, which will generate a URL in the format of "scheme name://hostname/pathname" based on your configuration -->
-        <!-- You may use application name, application package name, or another field that uniquely identifies the application to avoid conflicting redirection with other applications-->
+        <!-- Specify your complete scheme by customizing the content of the data block. According to your configuration, a URL identifier in the format of "semantic name://host name/path name" will be formed -->
+        <!-- To avoid conflicts with the redirection destination pages of other applications, you can use fields that can uniquely identify the application for configuration, such as those with the application name or application package name -->
         <data
               android:scheme="Scheme name"
-              android:host="Hostname"
+              android:host="Host name"
               android:path="/Path name" />
     </intent-filter>
 </activity>
@@ -65,7 +65,7 @@ This method will be deactivated, so we don’t recommend using it. Go to **Advan
 
 Add the `action` and `action_type` fields under `body.message.android` of the push message body.
 
-| Field Name | Type | Parent Item | Default Value | Required | Description |
+| Field Name | Type | Parent Project | Default Value | Required | Description |
 | ----------- | ------- | ------- | ------ | ---- | ------------------------------------------------------------ |
 | action         | Object  | Android | 1    | No | This sets the action after the notification bar is tapped; the default action is to open application. |
 | action_type | Integer | Action  | 1     | No   | One-tap action. Valid values: <li>1: opens Activity or application</li><li>2: opens the browser</li><li>3: Opens Intent (recommended; for more information, see [Configuring SDK](#sdk-.E9.85.8D.E7.BD.AE))</li> |
@@ -87,14 +87,14 @@ Below is a sample of a complete message:
     "android": {
       "action": {
             "action_type": 3,// Action type; 1. Open Activity or application; 2. Open browser; 3. Open Intent          
-            "intent": "xgscheme://com.tpns.push/notify_detail" // The SDK must be version 1.0.9 or later. Configure the data tag in the client's Intent and set the scheme attribute
+            "intent": "xgscheme://com.tpns.push/notify_detail" // The SDK must be version 1.0.9 or later. Configure the data tag in the client's intent and set the scheme attribute.
         }
       }
    }	
 }
 ```
 
-If you want to pass in custom parameters such as `param1` and `param2`, use the sample code below
+If you want to pass in custom parameters such as `param1` and `param2`, use the sample code below:
 ```json
 {
   "audience_type": "token",
@@ -107,8 +107,8 @@ If you want to pass in custom parameters such as `param1` and `param2`, use the 
     "content": "xxx",
     "android": {
       "action": {
-            "action_type": 3, // Action type; 1. Open Activity or application; 2. Open browser; 3. Open Intent          
-            "intent": "xgscheme://com.tpns.push/notify_detail?param1=aa&param2=bb" // The SDK must be version 1.0.9 or later. Configure the data tag in the client's intent and set the scheme attribute
+            "action_type": 3, // Action type. `1`: open activity or application; `2`: open browser; `3`: open intent.          
+            "intent": "xgscheme://com.tpns.push/notify_detail?param1=aa&param2=bb" // The SDK must be version 1.0.9 or later. Configure the data tag in the client's intent and set the scheme attribute.
         }
       }
    }
@@ -199,7 +199,9 @@ Below is a sample of a complete message:
 
 ### Getting parameters on the client
 
-1. In the `onCreate` method of the page you specify for redirect to, add the following code:
+1. In the `onCreate` method of the activity page you specified to redirect to, add the following code:
+>! If your activity page is a resident page of the application, that is, `launchMode` is set to `singleTop` or `singleTask`, the intent content of the push click will be triggered via the `onNewIntent` method of the activity page. Please also obtain parameters in the `onNewIntent` method.
+>
 ```java
 Uri uri = getIntent().getData();
 if (uri != null) {                
@@ -209,17 +211,21 @@ if (uri != null) {
 }
 ```
 
-2. If the parameters passed in contain special characters such as # and &, you can parse them using the following method:
+2. If the parameters passed in contain special characters, you can use URLEncode to encode the parameter values when creating the push and use URLDecode to decode them at the terminal. The following is a sample:
 ```java
 Uri uri = getIntent().getData();
-if (uri != null) {                
-		String url = uri.toString();
-		UrlQuerySanitizer sanitizer = new UrlQuerySanitizer();
-		sanitizer.setUnregisteredParameterValueSanitizer(UrlQuerySanitizer.getAllButNulLegal());
-		sanitizer.parseUrl(url);
-		String value1 = sanitizer.getValue("key1");
-		String value2 = sanitizer.getValue("key2");
-		Log.i("TPNS" , "value1 = " + value1 + " value2 = " + value2);
+if (uri != null) {
+    String p1 = uri.getQueryParameter("param1");
+    String value1 = "";
+    try{
+        // The value of the custom parameter `param1` contains special characters. You can use URLEncode to encode it when creating the push and use URLDecode to decode it when obtaining it.
+        value1 = URLDecoder.decode(p1, "UTF-8");
+    } catch (UnsupportedEncodingException e) {
+        Log.w("TPNS", "URLDecode param failed: " + e.toString());
+    }
+    // The custom parameter `param2` is not encoded with URLEncode and can be obtained directly.
+    String value2 = uri.getQueryParameter("param2");
+    Log.i("TPNS" , "value1 = " + value1);
 }
 ```
 
@@ -238,7 +244,7 @@ Add the following `custom_content` field under `body.message.ios` of the push me
 
 | Field Name | Type | Parent Project | Default Value | Required | Parameter Description |
 | -------------- | ------ | ------ | ------ | ---- | ------------------------------------------ |
-| custom_content  | String  | ios    | Empty    | No    | Parameters for custom delivery, which must be serialized to a JSON string.                                |
+| custom_content  | String  | ios    | Empty    | No    | Custom parameter for delivery, which must be serialized to a JSON string.                                |
 
 Below is a sample of a complete message:
 ```
@@ -264,9 +270,10 @@ Below is a sample of a complete message:
 }
 ```
 
+
 ### Getting parameters on the client
 
-If you use iOS SDK integration, you can obtain custom parameters using click callback. This callback applies to the notification messages of the app in foreground, background and shutdown status.
+If you integrate via TPNS SDK for iOS, use the unified message click callback to obtain custom parameters. This callback applies to notification messages of applications in all statuses (foreground, background, and shutdown).
 
 ```objective-c
 /// Click callback
@@ -284,12 +291,13 @@ If you use iOS SDK integration, you can obtain custom parameters using click cal
     completionHandler();
 }
 ```
-If you use Flutter plugin integration, use the following APIs in the `runner->AppDelegate->didFinishLaunchingWithOptions` method at cold startup to:
+
+If you integrate via the Flutter plugin, use the `runner->AppDelegate->didFinishLaunchingWithOptions` method of the following API at cold startup to obtain:
 ```objective-c
 	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions 
 	{
-			// Get message content
+			// Get the message content.
 			NSDictionary *remoteNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
-			// Process logically based on the message content
+			// Perform logical processing according to the message content.
 	}
 ```

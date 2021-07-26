@@ -1,18 +1,23 @@
 ## Download and Installation
 
 #### Related resources
-- Download the source code of COS’s XML Python SDK [here](https://github.com/tencentyun/cos-python-sdk-v5).
+- Download the source code of COS's XML Python SDK [here](https://github.com/tencentyun/cos-python-sdk-v5).
 - Download the XML Python SDK [here](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-python-sdk-v5/latest/cos-python-sdk-v5.zip).
 - Download the [XML Python Demo](https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py).
 - For the complete sample code, please see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/Python).
 - For the SDK changelog, please see [Changelog](https://github.com/tencentyun/cos-python-sdk-v5/blob/master/CHANGELOG.md).
+
+
+
+>? If you encounter errors such as non-existent functions or methods when using the XML version of the SDK, please update the SDK to the latest version and try again.
+>
 
 #### Environment dependencies
 
 Currently, COS’s XML Python SDK supports Python 2.7, Python 3.4, and later.
 >?For the definitions of terms such as SecretId, SecretKey, Bucket, and Region, please see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
 
-#### Installing SDK
+#### Installing SDKs
 
 You can install the SDK in three ways: installation via pip, manual installation, and offline installation.
 
@@ -22,7 +27,7 @@ You can install the SDK in three ways: installation via pip, manual installation
 ```
 
 - Manual installation
-Download the source code [here](https://github.com/tencentyun/cos-python-sdk-v5) and install the SDK manually via setup by running the following command.
+Download the source code [here](https://github.com/tencentyun/cos-python-sdk-v5) and install the SDK manually via setup by running the following command:
 ```python
  python setup.py install
 ```
@@ -47,7 +52,7 @@ The section below describes how to use the COS SDK for Python to perform basic o
 ### Initialization
 Please refer to the following code sample:
 
-[//]: # (.cssg-snippet-global-init)
+[//]: # ".cssg-snippet-global-init"
 ```python
 # -*- coding=utf-8
 # APPID has been removed from the configuration. Please add the APPID to the Bucket parameter in the format of BucketName-APPID.
@@ -59,8 +64,8 @@ import logging
 
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
-secret_id = 'COS_SECRETID'      # Replace with your secretId.
-secret_key = 'COS_SECRETKEY'      # Replace with your secretKey.
+secret_id = 'SECRETID'      # Replace with your secretId (obtained from the CAM console).
+secret_key = 'SECRETKEY'      # Replace with your secretKey (obtained from the CAM console).
 region = 'COS_REGION'     # Replace with your region.
 token = None                # If a temporary key is used, token needs to be passed in. This is optional and is left empty by default.
 scheme = 'https'            # Specify whether to use HTTP or HTTPS protocol to access COS. This is optional and is https by default.
@@ -71,16 +76,17 @@ client = CosS3Client(config)
 ```
 
 
->?For more information on how to generate and use a temporary key, see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
+>? For more information about how to generate and use a temporary key, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
+>
 
 Setting proxies:
 
-[//]: # (.cssg-snippet-global-init-proxy)
+[//]: # ".cssg-snippet-global-init-proxy"
 ```python
 # APPID has been removed from the configuration. Please add the APPID to the Bucket parameter in the format of BucketName-APPID.
-# 1. Set user configuration, including secretId, secretKey, and region
-secret_id = 'COS_SECRETID'      # Replace with your secretId.
-secret_key = 'COS_SECRETKEY'      # Replace with your secretKey.
+# 1. Set user configuration, including secretId, secretKey, and region.
+secret_id = 'SECRETID'      # Replace with your secretId (obtained from the CAM console).
+secret_key = 'SECRETKEY'      # Replace with your secretKey (obtained from the CAM console).
 region = 'COS_REGION'     # Replace with your region
 proxies = {
     'http': '127.0.0.1:80' # Replace with your HTTP Proxy IP.
@@ -94,12 +100,12 @@ client = CosS3Client(config)
 
 Setting an endpoint:
 
-[//]: # (.cssg-snippet-global-init-endpoint)
+[//]: # ".cssg-snippet-global-init-endpoint"
 ```python
 # APPID has been removed from the configuration. Please add the APPID to the Bucket parameter in the format of BucketName-APPID.
-# 1. Set user configuration, including secretId, secretKey, and region
-secret_id = 'COS_SECRETID'      # Replace with your secretId.
-secret_key = 'COS_SECRETKEY'      # Replace with your secretKey.
+# 1. Set user configuration, including secretId, secretKey, and region.
+secret_id = 'SECRETID'      # Replace with your secretId (obtained from the CAM console).
+secret_key = 'SECRETKEY'      # Replace with your secretKey (obtained from the CAM console).
 region = 'COS_REGION'     # Replace with your region.
 endpoint = 'cos.accelerate.myqcloud.com' # Replace with your endpoint
 config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Endpoint=endpoint)
@@ -108,12 +114,28 @@ client = CosS3Client(config)
 # Refer to the description below or the demo. For more information, please visit https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py.
 ```
 
-Setting a global acceleration domain:
+Set the custom domain name:
 ```python
 # APPID has been removed from the configuration. Please specify it using the `Bucket` parameter in the format of `BucketName-APPID`.
-# 1. Set user configuration, including secretId, secretKey, and region
-secret_id = 'COS_SECRETID'      # Replace with your secretId.
-secret_key = 'COS_SECRETKEY'      # Replace with your secretKey.
+# 1. Set user configuration, including secretId, secretKey, and region.
+secret_id = 'SECRETID'      # Replace with your secretId (obtained from the CAM console).
+secret_key = 'SECRETKEY'      # Replace with your secretKey (obtained from the CAM console).
+region = 'COS_REGION'     # Replace with your region.
+
+# Set `domain` to a user-defined domain name.
+domain = 'user-define.example.com'
+config = CosConfig(Region=region, SecretId=secret_id, SecretKey=secret_key, Domain=domain)
+# 2. Get the client object.
+client = CosS3Client(config)
+# Refer to the description below or the demo. For more information, please visit https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py.
+```
+
+Set a global acceleration domain name:
+```python
+# APPID has been removed from the configuration. Please specify it using the `Bucket` parameter in the format of `BucketName-APPID`.
+# 1. Set user configuration, including secretId, secretKey, and region.
+secret_id = 'SECRETID'      # Replace with your secretId (obtained from the CAM console).
+secret_key = 'SECRETKEY'      # Replace with your secretKey (obtained from the CAM console).
 region = 'COS_REGION'     # Replace with your region.
 
 # “domain” is the custom domain, which does not need to be set in most cases. To use a global acceleration domain, set “domain” to the corresponding domain name, such as examplebucket-1250000000.cos.accelerate.myqcloud.com.
@@ -125,10 +147,9 @@ client = CosS3Client(config)
 # Refer to the description below or the demo. For more information, please visit https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py.
 ```
 
-
 ### Creating a bucket
 
-[//]: # (.cssg-snippet-put-bucket)
+[//]: # ".cssg-snippet-put-bucket"
 ```python
 response = client.create_bucket(
     Bucket='examplebucket-1250000000'
@@ -137,7 +158,7 @@ response = client.create_bucket(
 
 ### Querying a bucket list
 
-[//]: # (.cssg-snippet-get-service)
+[//]: # ".cssg-snippet-get-service"
 ```python
 response = client.list_buckets(
 )
@@ -147,7 +168,7 @@ response = client.list_buckets(
 
 >!Simple upload cannot be used to upload files larger than 5 GB. You can use the advanced upload API to upload large files. For more information about the related parameters, please see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31546).
 
-[//]: # (.cssg-snippet-put-object-comp-comp)
+[//]: # ".cssg-snippet-put-object-comp-comp"
 ```python
 #### Upload a file stream with simple upload (which cannot be used to upload files larger than 5 GB. For files larger than 5 GB, please use the advanced upload API described below).
 # It is strongly recommended to open the file in binary mode; otherwise, an error may occur.
@@ -198,7 +219,7 @@ print(response['ETag'])
 
 ### Querying an object list
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```python
 response = client.list_objects(
     Bucket='examplebucket-1250000000',
@@ -206,9 +227,9 @@ response = client.list_objects(
 )
 ```
 
-A single call to the `list_objects` API can query up to 1,000 objects. If you want to query all objects, you need to call repeatedly.
+A single call to the `list_objects` API can query up to 1,000 objects. If you want to query all objects, you need to call it repeatedly.
 
-[//]: # (.cssg-snippet-get-bucket-recursive)
+[//]: # ".cssg-snippet-get-bucket-recursive"
 ```python
 marker = ""
 while True:
@@ -225,7 +246,7 @@ while True:
 
 ### Downloading an object
 
-[//]: # (.cssg-snippet-get-object-comp)
+[//]: # ".cssg-snippet-get-object-comp"
 ```python
 #### Download an object to the local file system
 response = client.get_object(
@@ -264,16 +285,16 @@ print(fp.read())
 
 ### Deleting an object
 
-[//]: # (.cssg-snippet-delete-object-comp)
+[//]: # ".cssg-snippet-delete-object-comp"
 ```python
-# Delete an object
+# Delete an object.
 ## deleteObject
 response = client.delete_object(
     Bucket='examplebucket-1250000000',
     Key='exampleobject'
 )
 
-# Delete multiple objects
+# Delete multiple objects.
 ## deleteObjects
 response = client.delete_objects(
     Bucket='examplebucket-1250000000',

@@ -1,4 +1,3 @@
-
 Tag is a feature used in targeted push where you can call TPNS SDKs or server APIs to bind one or more tags to devices. After that, you can push messages based on the tags, which makes lean operations easier.
 
 ## Tag Push Scenarios
@@ -33,9 +32,9 @@ TPNS provides two types of tags: custom tags and TPNS preset tags. Tag categorie
             <td>Custom tag</td>
             <td>Custom tag, such as meeting ID, class ID, and user hobbies (like basketball and digital products)</td>
 						<td>xg_user_define</td>
-						<td><li>Up to 10,000 custom tags are allowed (to increase the quota, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>).
-<li>One device token can be bound to up to 100 custom tags (to increase the quota, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>).
-<li>One custom tag can be bound to an unlimited number of device tokens.</td>
+						<td><li>Up to 10,000 custom tags are allowed (to increase the quota, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>)
+<li>One device token can be bound to up to 100 custom tags (to increase the quota, <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>)
+<li>One custom tag can be bound to an unlimited number of device tokens</td>
 <td>love_basketball, love_shopping, male</td>
         </tr>
         <tr>
@@ -82,7 +81,7 @@ TPNS provides two types of tags: custom tags and TPNS preset tags. Tag categorie
 				<tr><!--<td>61td>-->
 				  <td>Model</td>
 					<td>xg_auto_deviceversion</td>
-					<td>Samsung Note4, vivo Y75A</td>
+					<td>Samsung Note4, Vivo Y75A</td>
 				</tr>			
 						<tr><!--<td>61td>-->
 				  <td>Continuously active</td>
@@ -99,11 +98,11 @@ TPNS provides two types of tags: custom tags and TPNS preset tags. Tag categorie
 						<tr><!--<td>61td>-->
 				  <td>Recently registered</td>
 					<td>Does not support API call currently</td>
-						<td><li>Devices recently registered. The tag value is [startDate,endDate] in the format of [YYYYmmdd,YYYYmmdd].
-<li>The interval between `startDate` and `endDate` cannot exceed 30 days.
-<li>`endDate` cannot be the current date.
-<li>`startDate` cannot be more than 90 days ago.
-<li>`startDate` and `endDate` can be the same.</td>
+						<td><li>Devices recently registered. The tag value is [startDate, endDate] in the format of [YYYYmmdd,YYYYmmdd]
+<li>The range between `startDate` and `endDate` cannot exceed 30 days
+<li>`endDate` cannot be the current date
+<li>`startDate` cannot be more than 90 days ago
+<li>`startDate` and `endDate` can be the same</td>
 					<td>Devices registered within [20200901,20200910]</td>
 				</tr>		
 </table>
@@ -123,13 +122,13 @@ For the iOS SDK, see [here](https://intl.cloud.tencent.com/document/product/1024
 For the Android SDK, see [Setting custom tag](https://intl.cloud.tencent.com/document/product/1024/30715#setting-custom-tag).
 
 >?
->- One device can be bound to up to 100 tags (to increase the quota, [submit a ticket](https://console.cloud.tencent.com/workorder/category)).
->- One application can be bound to up to 10,000 tags (to increase the quota, [submit a ticket](https://console.cloud.tencent.com/workorder/category)).
->- One tag can contain up to 50 bytes.
->- One request can be used to bind or unbind up to 500 tags.
+- One device can be bound to up to 100 tags (to increase the quota, [submit a ticket](https://console.cloud.tencent.com/workorder/category)).
+- One application can be bound to up to 10,000 tags (to increase the quota, [submit a ticket](https://console.cloud.tencent.com/workorder/category)).
+- One tag can contain up to 50 bytes.
+- Up to 500 tags can be bound or unbound in one request.
 
 #### Custom tag use cases and keywords
-Tag push is suitable for scenarios where more than 10 devices are bound to a tag and no more than 10 pushes are required per day. For other scenarios, account push (binding an account instead of a tag to multiple devices for push) is recommended.
+Tag push is suitable for scenarios where more than 10 devices are bound to a tag and less than 10 pushes are required per day. For other scenarios, account push (binding an account instead of a tag to multiple devices for push) is recommended.
 
 **Keyword**
 A colon (:) is the keyword for separating the key and value in a key-value pair for user tag binding. For example, if you assign the tag `level:3` to a device token, the TPNS backend will take `level` as the tag key and `3` as the tag value, while the original tag `level:3` is pushed. Storage based on key-value is mainly to facilitate subsequent overriding of tags of the same type.
@@ -148,7 +147,7 @@ TPNS provides APIs for binding/unbinding a single tag to/from a single device, a
 ```json
 {
     "operator_type": 1,
-
+    "platform": "android",
     "tag_list": ["tag"],
     "token_list": ["token"]
 }
@@ -159,7 +158,7 @@ TPNS provides APIs for binding/unbinding a single tag to/from a single device, a
 ```json
 {
     "operator_type": 2,
-
+    "platform": "android",
     "tag_list": ["tag"],
     "token_list": ["token"]
 }
@@ -172,13 +171,13 @@ TPNS provides APIs for binding/unbinding a single tag to/from a single device, a
 ##### Binding/Unbinding multiple tags to/from a single device
 **Recommended scenarios**
 1. Call the device SDK API, for example, to get a user's characteristics tags such as age, province, and gender in the application and bind/unbind them to/from the device token in batches.
-2. Call the RESTful API, for example, to get a device's user subscription information tags such as marital status and hobbies (football, movies, etc.) through other internal channels, bind/unbind them to/from the device token in batches.
+2. Call the Restful API, for example, to get a device's user subscription information tags such as marital status and hobbies (football, movies, etc,) through other internal channels, bind/unbind them to/from the device token in batches.
 
 **Tag binding method**
 ```json
 {
     "operator_type": 3,
-
+    "platform": "android",
     "tag_list": ["tag1","tag2"],
     "token_list": ["token"]
 }
@@ -189,7 +188,7 @@ TPNS provides APIs for binding/unbinding a single tag to/from a single device, a
 ```json
 {
     "operator_type": 4,
-
+    "platform": "android",
     "tag_list": ["tag1","tag2"],
     "token_list": ["token"]
 }
@@ -208,7 +207,7 @@ Call the RESTful API, for example, to bind/unbind the `football` tag to/from all
 ```json
 {
     "operator_type": 7,
-
+    "platform": "android",
     "tag_list": ["tag"],
     "token_list": ["token1","token2"]
 }
@@ -217,7 +216,7 @@ Call the RESTful API, for example, to bind/unbind the `football` tag to/from all
 ```json
 {
     "operator_type": 8,
-
+    "platform": "android",
     "tag_list": ["tag"],
     "token_list": ["token1","token2"]
 }
@@ -236,7 +235,7 @@ Call the RESTful API, for example, to bind/unbind the `football` and `basketball
 ```json
 {
     "operator_type": 9,
-
+    "platform": "android",
     "tag_token_list": [{"tag":"tag1","token":"token1"},{"tag":"tag2","token":"token2"}]
 }
 ```
@@ -245,7 +244,7 @@ Call the RESTful API, for example, to bind/unbind the `football` and `basketball
 ```json
 {
     "operator_type": 10,
-
+    "platform": "android",
     "tag_token_list": [{"tag":"tag1","token":"token1"},{"tag":"tag2","token":"token2"}]
 }
 ```
@@ -262,13 +261,13 @@ TPNS provides two tag overriding methods: general overriding and overriding by t
 ##### General overriding
 **Recommended scenarios**
 1. Call the device SDK API. For example, if all channel information subscribed by a device has expired, you need to unbind all the channel tags from the device. However, traversing all tags to unbind them one by one is inconvenient. In this case, you can call this API to override the tags.
-2. Call the RESTful API. For example, to set new tags for a device so that it will not be affected by legacy tags, call this API to override them.
+2. Call the RESTful API. For example, to set new tags for a device so that it will not be affected by legacy tags, this API can be called to override them.
 
 **Tag overriding method**
 ```json
 {
     "operator_type": 6,
-
+    "platform": "android",
     "tag_list": ["test", "level:1",, "level:2"], 
     "token_list": ["token"]
 }
@@ -288,12 +287,12 @@ TPNS provides two tag overriding methods: general overriding and overriding by t
 ```json
 {
     "operator_type": 6,
-
+    "platform": "android",
     "tag_list": ["test:2", "level:3"], 
     "token_list": ["token"]
 }
 ```
-**API description:** key-value overriding can be performed properly only when all tags in the `tag_list` have a colon (:). For example, if a token has the tags `test` and `level:1`, after this API is called, the tag list of the token will include `test`, `test:2`, and `level:3`.
+**API description:** key-value overwriting can be performed properly only when all tags in the `tag_list` have a colon (:). For example, if a token has the tags `test` and `level:1`, after this API is called, the tag list of the token will include `test`, `test:2`, and `level:3`.
 **Use limits**
 - A tag can contain up to 50 bytes.
 - Up to 500 tags can be included in one call.
@@ -315,7 +314,7 @@ TPNS provides two tag overriding methods: general overriding and overriding by t
 ```json
 {
     "operator_type": 5,
-
+    "platform": "android", 
     "token_list": ["token"]
 }
 ```
@@ -349,10 +348,11 @@ Call the RESTful API.
  ![](https://main.qcloudimg.com/raw/960e8eb3678ebe7457b5887966abed5f.png)
 
 ## Getting Started
-Tag push supports a single tag or multiple tags. For push by multiple tags, TPNS currently supports only tags in the same category (combined in the "AND" or "OR" relationship). If you push messages by custom tags, only custom tags can be combined in the "AND" or "OR" relationship. If you push messages by preset tags, only preset tags in the same category can be combined. For example, you can push a message to users in Guangdong and Hunan, but you cannot push a message to users in Guangdong who were active in the last three days.
 
-### Using the console
-You can push a message by tag in the Tencent Cloud console as follows:
+Tag push allows you to push messages by preset or custom tags or combinations of preset and custom tags (combined by the "AND" or "OR" relationship) according to your operational requirements.
+
+### Using the console for tag push
+You can push a message by tag in the Tencent Cloud console as follows.
 1. Select the tag type, e.g., custom tag or a category of preset tags.
 ![](https://main.qcloudimg.com/raw/62e856a901b5be9980f2c6102b0f020c.png)
 2. Select the tags for which you want to push a message after selecting the tag type.

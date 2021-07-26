@@ -6,10 +6,15 @@
 - Download the PHP demo [here](https://github.com/tencentyun/cos-php-sdk-v5/tree/master/sample).
 - For the complete sample code, please see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/php).
 - For the SDK changelog, please see [Changelog](https://github.com/tencentyun/cos-php-sdk-v5/blob/master/CHANGELOG.md).
+- For SDK FAQs, please see [PHP SDK FAQs](https://intl.cloud.tencent.com/document/product/436/40543).
 
-#### Environmental dependencies
 
-*   PHP 5.6+
+>? If you encounter errors such as non-existent functions or methods when using the XML version of the SDK, please update the SDK to the latest version and try again.
+>
+
+#### Environment dependencies
+
+-   PHP 5.6+
     You can run the `php -v` command to view the current PHP version.
 >!If your PHP version is `>=5.3` and `<5.6`, please use [v1.3](https://github.com/tencentyun/cos-php-sdk-v5/tree/1.3).
 - cURL extension
@@ -29,11 +34,11 @@ You can install the SDK using [Composer](#composer), [Phar](#phar), or the [sour
 <span id="composer"></span>
 #### Composer
 It is recommended to install cos-php-sdk-v5 with Composer, a PHP dependency manager that allows you to declare the dependencies necessary for your project and then automatically installs them into your project.
->? You can find more information such as how to install Composer, how to configure auto-load, and other best practices for defining dependencies at [Composer official website](https://getcomposer.org/).
+> You can find more information such as how to install Composer, how to configure auto-load, and other best practices for defining dependencies at [Composer official website](https://getcomposer.org/).
 
 **Installation steps**
 1. Start the terminal.
-2. Download Composer and run the following command.
+2. Run the following command to download Composer:
 ```shell
 curl -sS https://getcomposer.org/installer | php
 ```
@@ -71,7 +76,8 @@ require  '/path/to/cos-sdk-v5.phar';
 Install the SDK using the source code as instructed below:
 1. Download `cos-sdk-v5.tar.gz` compressed file on the [SDK releases page](https://github.com/tencentyun/cos-php-sdk-v5/releases).
 >!`Source code` is packaged by GitHub by default. The `vendor` directory is not included.
-2. After decompressing it, load the SDK through the `autoload.php` script.
+>
+>2.  After decompressing it, load the SDK through the `autoload.php` script.
 
 ```php
 require '/path/to/sdk/vendor/autoload.php';
@@ -83,7 +89,7 @@ The following describes how to use the PHP SDK of COS to perform basic operation
 
 ### Initialization
 
-[//]: # (.cssg-snippet-global-init)
+[//]: # ".cssg-snippet-global-init"
 ```php
 $secretId = "COS_SECRETID"; //"TencentCloud API key's SecretId";
 $secretKey = "COS_SECRETKEY"; // "SecretKey of your Tencent Cloud API key";
@@ -99,7 +105,7 @@ $cosClient = new Qcloud\Cos\Client(
 
 If you initialize a client with a [temporary key](https://intl.cloud.tencent.com/document/product/436/14048), create an instance in the following way.
 
-[//]: # (.cssg-snippet-global-init-sts)
+[//]: # ".cssg-snippet-global-init-sts"
 ```php
 $tmpSecretId = "COS_SECRETID"; //"Temporary key's SecretId";
 $tmpSecretKey = "COS_SECRETKEY"; //"Temporary key's SecretKey";
@@ -117,12 +123,12 @@ $cosClient = new Qcloud\Cos\Client(
 
 ### Creating a bucket
 
-[//]: # (.cssg-snippet-put-bucket)
+[//]: # ".cssg-snippet-put-bucket"
 ```php
 try {
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
     $result = $cosClient->createBucket(array('Bucket' => $bucket));
-    // Request successful
+    //Request succeeded
     print_r($result);
 } catch (\Exception $e) {
     // Request failed
@@ -130,12 +136,12 @@ try {
 }
 ```
 
-### Querying the bucket list
+### Querying a bucket list
 
-[//]: # (.cssg-snippet-get-service)
+[//]: # ".cssg-snippet-get-service"
 ```php
 try {
-    // Request successful
+    // Request successful 
     $result = $cosClient->listBuckets();
     print_r($result);
 } catch (\Exception $e) {
@@ -147,13 +153,13 @@ try {
 
 ### Uploading an object
 >!
->- Upload a file (up to 5 GB) using the putObject API.
->- Upload a file using the Upload API. The Upload API is a composition API that uses simple upload for small files and uses multipart upload for large files.
->- For the parameter description, please see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31542#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1).
+* Upload a file (up to 5 GB) using the putObject API.
+* Upload a file using the Upload API. The Upload API is a composition API that uses simple upload for small files and uses multipart upload for large files.
+* For the parameter description, please see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31542#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1).
 
-[//]: # (.cssg-snippet-put-object-comp)
+[//]: # ".cssg-snippet-put-object-comp"
 ```php
-# Upload a file
+# Upload a file.
 ## putObject (an API that can upload files of up to 5 GB)
 ### Upload strings in memory
 try {
@@ -217,9 +223,9 @@ try {
 }
 ```
 
-### Querying the object list
+### Querying an object list
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```php
 try {
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
@@ -240,7 +246,7 @@ try {
 
 A single call to the `listObjects` API can query up to 1,000 objects. If you want to query all objects, you need to call it repeatedly.
 
-[//]: # (.cssg-snippet-get-bucket-recursive)
+[//]: # ".cssg-snippet-get-bucket-recursive"
 ```php
 try {
     $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
@@ -272,9 +278,9 @@ try {
 * Download a file using the getObject API.
 * Get the file download URL using the getObjectUrl API.
 
-[//]: # (.cssg-snippet-get-object-comp)
+[//]: # ".cssg-snippet-get-object-comp"
 ```php
-# Download a file
+# Download a file.
 ## getObject (download file)
 ### Download to memory
 try {
@@ -283,7 +289,7 @@ try {
     $result = $cosClient->getObject(array(
         'Bucket' => $bucket,
         'Key' => $key));
-    // Request successful
+    // Request succeeded
     echo($result['Body']);
 } catch (\Exception $e) {
     // Request failed
@@ -337,9 +343,9 @@ try {
 
 ### Deleting an object
 
-[//]: # (.cssg-snippet-delete-object-comp)
+[//]: # ".cssg-snippet-delete-object-comp"
 ```php
-# Delete an object
+# Delete an object.
 ## deleteObject
 try {
     $bucket = "examplebucket-1250000000"; // Bucket in the format of BucketName-APPID
@@ -355,7 +361,7 @@ try {
     // Request failed
     echo($e);
 }
-# Delete multiple objects
+# Delete multiple objects.
 ## deleteObjects
 try {
     $bucket = "examplebucket-1250000000"; // Bucket in the format of BucketName-APPID

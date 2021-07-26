@@ -1,7 +1,7 @@
-### What do I do if the client network is normal, while the access to COS over HTTP is very slow, or the error message “Connection reset” is reported?
+### What do I do if the client network is normal, while the access to COS over HTTP is very slow, or the error message "Connection reset" is reported?
 In some regions, carriers may hijack COS endpoints. Therefore, you are advised to access COS over HTTPS.
 
-### What do I do if `ETag` is not included in the `Complete Multipart Upload` request and an error message “400 Bad Request” is reported?
+### What do I do if `ETag` is not included in the `Complete Multipart Upload` request and an error message "400 Bad Request" is reported?
 The possible cause is that the `ETag` header is filtered out by the network. After the parts are uploaded, the SDK fails to parse the `ETag` parameter and reports the error in the Complete Multipart Upload operation.
 
 ### What do I do if `QCloudResultListener` or other callback functions did not work?
@@ -14,7 +14,7 @@ The SDK depends on the bolts and OkHttp common classes. If the methods in these 
 To upload files to or download files from an external storage device, you must have network permission and read/write permissions on the device. Other permissions, such as location permission and device information permission, are not mandatory. If you have strict requirements on permissions, you can skip importing the MtaUtils package or upgrade the SDK to 5.5.8 or above.
 
 ### What do I do if the `java.security.cert.CertPathValidatorException: Trust anchor for certification path not found` error is reported when HTTPS is used?
-If you access COS via a proxy, check whether the proxy supports HTTPS. If not, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+If you access COS via a proxy, check whether the proxy supports HTTPS. If not, please [contact us](https://intl.cloud.tencent.com/contact-sales).
 
 ### What do I do if the upload progress reaches 100%, while the `onFailed` method is called?
 The 100% upload progress indicates only the SDK packet sending progress. The upload is successful only when the `onSuccess` method is called. If an exception occurs when the `Complete Multipart Upload` request is sent, the `onFailed` method will be called.
@@ -41,4 +41,12 @@ The possible cause is either that you have modified the file during the upload, 
 If you access COS using a proxy, the possible cause is that the proxy returned the incorrect packet, causing the SDK to fail the parsing. You can capture the packet received by the client to verify the packet.
 
 ### What do I do if the 403 permission error is reported when I call an API?
-In general, a permission error is irrelevant to SDK. You can check your permissions or [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+In general, a permission error is irrelevant to SDK. You can check your permissions or [contact us](https://intl.cloud.tencent.com/contact-sales).
+
+
+### Does Android SDK support checkpoint restart?
+
+Advanced APIs of the Android SDK of COS support checkpoint restart. To implement checkpoint restart, refer to the descriptions of the advanced APIs in [Uploading and Copying Objects](https://intl.cloud.tencent.com/document/product/436/37674).
+
+
+

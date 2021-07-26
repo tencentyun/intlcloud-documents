@@ -1,22 +1,25 @@
 
-The fixed-speed push feature is to solve the problem where TPNS may push messages so fast that some customer servers experience too much connection pressure. TPNS provides API settings to allow you to control the push speed according to your own server conditions.
+The Custom Push Speed feature is to solve the problem where TPNS may push messages so fast that some customer servers experience too much connection pressure. TPNS provides API settings to allow you to control the push speed according to your own server conditions.
 ## Scenarios
 - Scenario 1:
-You want to push a promotional message to all users, but there is a limit on the number of concurrent visitors on the event page; therefore, you want to control the push speed in order to reduce the connection pressure on your server. In this case, you can set fixed-speed push to limit the number of users allowed to open the event page simultaneously.
+You want to push a promotional message to all users, but there is a limit on the number of concurrent visitors on the event page; therefore, you want to control the push speed in order to reduce the connection pressure on your server. In this case, you can set a push speed to limit the number of users allowed to open the event page simultaneously.
 - Scenario 2:
-You have tagged a group of users as "lost users" and want to push a "benefit claim" message to them, so that they will be attracted to open your app; however, you don't want too many users to visit the event page at the same time. In this case, you can set fixed-speed push to limit the number of users allowed to open the event page simultaneously.
+You have tagged a group of users as "lost users" and want to push a "benefit claim" message to them, so that they will be attracted to open your app; however, you don't want too many users to concurrently visit the event page. In this case, you can set a push speed to limit the number of users allowed to open the event page simultaneously.
 
 ## Directions
-### Console
-Go to **Message Push** > **Create Push** > **Advanced Settings** in the [console](https://console.cloud.tencent.com/tpns), enable fixed-speed push, and select a push speed.
+### Using the console
+1. Log in to the [TPNS console](https://console.cloud.tencent.com/tpns).
+2. Go to **Push Management** > **Task List**.
+3. Click **Create Push**, expand the **Advanced** section, enable **Custom Push Speed**, and set a speed.
+<img src="https://main.qcloudimg.com/raw/e3605e2cecd30b3e46eb4a376dd15dcd.png" style="width: 75%"/><br/>
+After Custom Push Speed is enabled, the message will be pushed to devices that match the push target at the set speed.
+>?
+> - Only push to all devices and push by tag support Custom Push Speed.
+> - The push speed can range from 1,000 to 50,000 pushes per second.
+> 
 
-After fixed-speed push is enabled, the message will be pushed to devices that match the push target at the selected speed.
->
->- Only push to all devices and push by tag support fixed-speed push.
->- The push speed can range from 1,000 to 50,000 pushes per second.
-
-### RESTful API
-Set the optional `push_speed` parameter for the RESTful API to implement fixed-speed push. For more information, please see [Push API Parameter Description](https://intl.cloud.tencent.com/document/product/1024/33764).
+### Using RESTful APIs
+When calling the RESTful API, you can set the `push_speed` parameter to push messages at a custom speed. For more information, see the **Optional Parameters** section in [Push API](https://intl.cloud.tencent.com/document/product/1024/33764).
 Below is a sample push:
 ```
 {
@@ -31,7 +34,7 @@ Below is a sample push:
 	"push_speed":50000,
     "message_type": "notify",
     "message": {
-        "title": "Push title",
+        "Title": "Push title",
         "content": "Push content",
         "android": {
         	 "custom_content":"{\"key\":\"value\"}"

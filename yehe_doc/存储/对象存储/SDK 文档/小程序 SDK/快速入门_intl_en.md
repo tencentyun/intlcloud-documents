@@ -7,6 +7,10 @@
 - Download the demo here [XML SDK for WeChat Mini Program Demo](https://github.com/tencentyun/cos-wx-sdk-v5/tree/master/demo).
 - For the complete sample code, please see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/MiniProgram).
 - For the SDK changelog, please see [Changelog](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/CHANGELOG.md).
+- For SDK FAQs, please see [Mini Program SDK FAQs](https://intl.cloud.tencent.com/document/product/436/38958).
+
+>? If you encounter errors such as non-existent functions or methods when using the SDK, please update the SDK to the latest version and try again.
+>
 
 #### Environment dependencies
 
@@ -14,7 +18,8 @@
 2. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), create a bucket, and get the bucket name and [region information](https://intl.cloud.tencent.com/document/product/436/6224).
 3. Log in to the [CAM Console](https://console.cloud.tencent.com/capi) and get your project's SecretId and SecretKey.
 
-> ?For the definition of parameters such as `SecretId`, `SecretKey`, and `Bucket`, please see COS’s [Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
+>? For the definition of terms such as SecretId, SecretKey, and Bucket, please see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
+>
 
 #### Installing SDKs
 
@@ -129,9 +134,10 @@ var cos = new COS({
     }
 });
 ```
->?For more information on how to generate and use a temporary key, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
+>? For more information about how to generate and use a temporary key, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
+>
 
-- Method 2 (recommended). Permissions are controlled in a more refined manner. The backend gets a temporary key and sends it to the frontend. The frontend reuses the key only for the same request, and the backend can granularly manage permissions through Scope.
+- Method 2 (recommended): Permissions are controlled in a more refined manner. The backend gets a temporary key and sends it to the frontend. The frontend reuses the key only for the same request, and the backend can granularly manage permissions through Scope.
 
 ```js
 var cos = new COS({
@@ -160,9 +166,10 @@ var cos = new COS({
 });
 ```
 
->?For more information on how to generate and use a temporary key, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
+>? For more information about how to generate and use a temporary key, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
+>
 
-- Method 3 (not recommended). The frontend needs to get a signature through `getAuthorization` before each request, and the backend uses a fixed or temporary key to calculate the signature and returns it to the frontend. This method makes it difficult to control permissions for multipart upload and thus is not recommended.
+- Method 3 (not recommended): the frontend needs to get a signature through getAuthorization before each request, and the backend uses a permanent or temporary key to calculate the signature and returns it to the frontend. This method makes it difficult to control the permission to multipart uploads and thus is not recommended.
 
 ```js
 var cos = new COS({
@@ -204,11 +211,11 @@ var cos = new COS({
 | SecretKey | User's `SecretKey`, which we recommend to be used only for frontend debugging and should not be disclosed | String | No |
 | FileParallelLimit | Number of concurrent file uploads in the same instance. Default value: 3 | Number | No |
 | ChunkParallelLimit | Number of concurrent part uploads for the same uploaded file. Default value: 3 | Number | No |
-| ChunkRetryTimes | Number of retries for multipart upload failure. Default value: 3 (a request will be made 4 time in total, including the initial one) | Number | No|
+| ChunkRetryTimes | Number of retries upon multipart upload/copy failure. Default value: 3 (a request will be made 4 times in total, including the initial one) | Number | No|
 | ChunkSize | Part size in the multipart upload in bytes. Default value: 1048576 (1 MB) | Number | No |
 | SliceSize | When files are uploaded in batches using uploadFiles, if the file size is greater than the value of this parameter, multipart upload (sliceUploadFile) is used; otherwise, simple upload (putObject) is used. Default value: 1048576 (1 MB) | Number | No |
 | CopyChunkParallelLimit | Number of concurrent part uploads for the same multipart copy operation. Default value: 20 | Number | No |
-| CopyChunkSize  | Number of bytes in each part during a multipart copy operation with sliceCopyFile. Default value: 10485760 (10 MB) | Number | No |
+| CopyChunkSize  | Number of bytes in each part during a multipart copy operation with `sliceCopyFile`. Default value: `10485760` (10 MB) | Number | No |
 | CopySliceSize | When a file is copied using sliceCopyFile, if the file size is greater than the value of this parameter, multipart copy (sliceCopyFile) is used; otherwise, simple copy (putObjectCopy) is used. Default value: 10485760 (10 MB) | Number | No |
 | ProgressInterval | Callback frequency of the upload progress callback method `onProgress` in milliseconds. Default value: 1000 | Number | No |
 | Protocol | Protocol used when the request is made. Valid values: `https:`, `http:`. By default, `http:` is used when the current page is determined to be in `http:` format; otherwise, `https:` is used | String | No |
@@ -263,8 +270,8 @@ getAuthorization function callback parameter descriptions:
 | callback | Callback after the temporary key is obtained | Function | 
 
 Once the getAuthorization callback function is finished, it returns one of the following:
-Format 1: The authentication credential string `Authorization` is called back.
-Format 2: An object is called back with the following attributes:
+An Authorization string.
+An object whose attributes are listed as follows:
 
 | Attribute | Description | Type | Required |
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
@@ -292,7 +299,8 @@ cos.putBucket({
 });
 ```
 
-> ! If you need to create a bucket in the WeChat Mini Program, but the bucket name is unknown, you cannot configure the bucket name as a whitelisted domain name. Instead, you can use suffixed calls. For details, see [FAQs](https://intl.cloud.tencent.com/document/product/436/10687).
+>! If you need to create a bucket via the WeChat Mini Program, but the bucket name is unknown, you cannot configure the bucket name as a allowlisted domain name. Instead, you can use suffixed calls. For more information, please see [FAQs](https://intl.cloud.tencent.com/document/product/436/10687).
+>
 
 ### Querying a bucket list
 
@@ -344,7 +352,8 @@ cos.getBucket({
 
 ### Downloading an object
 
-> ! This API is used to read the object content. If you need to launch a browser to download the file, you can get the URL through cos.getObjectUrl and then start a download in the browser. For more information, see [Pre-signed URL](https://intl.cloud.tencent.com/document/product/436/31711).
+>! This API is used to read object content. To download a file using your browser, you should first get a download URL through the `cos.getObjectUrl` method. For more information, please see [Pre-signed URLs](https://intl.cloud.tencent.com/document/product/436/31711).
+>
 
 ```js
 cos.getObject({

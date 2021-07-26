@@ -8,13 +8,16 @@
 - For the complete sample code, please see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/NodeJS).
 - For the SDK changelog, please see [Changelog](https://github.com/tencentyun/cos-nodejs-sdk-v5/blob/master/CHANGELOG.md).
 
+>? If you encounter errors such as non-existent functions or methods when using the SDK, please update the SDK to the latest version and try again.
+>
+
 #### Environment dependencies
 
 1. The SDK requires your runtime environment to include Node.js (v6 or later) and NPM.
 2. Log in to the [COS Console](https://console.cloud.tencent.com/cos5), create a bucket, and get the bucket name and [region name](https://intl.cloud.tencent.com/document/product/436/6224).
 3. Log in to the [CAM console](https://console.cloud.tencent.com/capi) and get your project's `SecretId` and `SecretKey`.
 
-> ?For the definition of parameters such as `SecretId`, `SecretKey`, and `Bucket`, please see COS’s [Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
+> ?For the definitions of parameters such as `SecretId`, `SecretKey`, and `Bucket`, please see COS’s [Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
 
 #### Installing SDKs
 
@@ -43,7 +46,7 @@ var cos = new COS({
 });
 ```
 
-#### Initializing with a temporary key
+#### Initializing with a temporary Key
 
 For more information on how to generate and use a temporary key, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048). The SDK for Node.js supports initialization by passing in a temporary key as shown in the sample code below:
 
@@ -88,11 +91,11 @@ Below are some examples of common APIs. For more detailed initialization methods
 | SecretKey | User SecretKey. We recommend you only use the SecretKey for frontend debugging to avoid key exposure | String | Yes |
 | FileParallelLimit | Number of concurrent file uploads in the same instance. Default value: 3 | Number | No |
 | ChunkParallelLimit | Number of concurrent part uploads for the same uploaded file. Default value: 3 | Number | No |
-| ChunkRetryTimes | Number of retries for multipart upload failure. Default value: 3 (a request will be made 4 time in total, including the initial one) | Number | No|
+| ChunkRetryTimes | Number of retries upon multipart upload/copy failure. Default value: 3 (a request will be made 4 times in total, including the initial one) | Number | No|
 | ChunkSize | Part size in the multipart upload in bytes. Default value: 1048576 (1 MB) | Number | No |
 | SliceSize | When files are uploaded in batches using `uploadFiles`, if the file size is greater than the value of this parameter (measured in bytes), multipart upload is used; otherwise, simple upload is used. Default value: 1048576 (1 MB) | Number | No |
 | CopyChunkParallelLimit | Number of concurrent part uploads for the same multipart copy operation. Default value: 20 | Number | No |
-| CopyChunkSize | Number of bytes in each part during a multipart copy operation with `sliceCopyFile`. Default value: 10485760 (10 MB) | Number | No |
+| CopyChunkSize | Number of bytes in each part during a multipart copy operation with `sliceCopyFile`. Default value: `10485760` (10 MB) | Number | No |
 | CopySliceSize | When a file is copied using `sliceCopyFile`, if the file size is greater than the value of this parameter, multipart copy is used; otherwise, simple copy is used. Default value: 10485760 (10 MB) | Number | No |
 | ProgressInterval | Callback frequency of the upload progress callback method `onProgress` in milliseconds. Default value: 1000 | Number | No |
 | Protocol | Protocol used when the request is made. Valid values: `https:`, `http:`. By default, `http:` is used when the current page is determined to be in `http:` format; otherwise, `https:` is used | String | No |
@@ -123,9 +126,9 @@ getAuthorization function parameters:
 | - Region | Bucket region. For the enumerated values, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224). | String |
 | callback | Callback method after the temporary key is obtained | Function |
 
-`Callback` passes back an object after the temporary key is acquired. Here is a list of the  object attributes:
+After the temporary key is obtained, the callback returns an object. The attributes of the returned object are as listed below:
 
-| Attribute | Description | Type | Required |
+| Attribute | Description | Type  |Required |
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
 | TmpSecretId | `tmpSecretId` of the obtained temporary key | String | Yes |
 | TmpSecretKey | `tmpSecretKey` of the obtained temporary key | String | No |
@@ -152,11 +155,11 @@ getAuthorization function parameters:
 | callback | Callback after the temporary key is obtained | Function | 
 
 Once the getAuthorization callback function is finished, it returns one of the following:
-Format 1: The authentication credential string `Authorization` is called back.
+An Authorization string.
 Format 2: An object is called back with the following attributes:
 
 
-| Attribute | Description | Type | Required |
+| Attribute | Description | Type  |Required |
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
 | Authorization | Calculated signature string | String | Yes |
 | SecurityToken | `sessionToken` of the obtained temporary key, which corresponds to the `x-cos-security-token` field in the header | String | No |
@@ -181,7 +184,7 @@ cos.putBucket({
 });
 ```
 
-### Querying bucket list
+### Querying a bucket list
 
 [//]: # (.cssg-snippet-get-service)
 ```js

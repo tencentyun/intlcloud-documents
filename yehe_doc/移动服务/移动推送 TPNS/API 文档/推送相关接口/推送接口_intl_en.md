@@ -6,7 +6,7 @@
 Service URL/v3/push/app
 ```
 
-API service URLs correspond to service access points one to one. Please select the [service URL](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
+API service URLs correspond to service access points one by one. Please select the [service URL](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
 
 **Feature**: Push API is the general term for all push APIs. Push API supports different push targets, as described below.
 All request parameters are JSON encapsulated and uploaded to the backend, which differentiates push targets based on the request parameters. If an error code is returned, see [Server-Side Error Codes](https://intl.cloud.tencent.com/document/product/1024/33763).
@@ -18,7 +18,7 @@ The required push parameters refer to the parameters that must be carried in a p
 | Parameter | Type | Required | Description |
 | ------------- | ------- | ---------------------------------------- | ------------------------------------------------------------ |
 | audience_type | String  | Yes                                       | Push target. Valid values:<li>`all`: push to all devices</li><li>`tag`: push to devices with specified tags</li><li>`token`: push to a single device</li><li>`token_list`: push to a list of devices</li><li>`account`: push to a single account</li><li>`account_list`: push to a list of accounts</li><li>`package_account_push`: push by account package<li>`package_token_push`: push by token package |
-| message       | Object  | Yes                     | Message body. For more information, please see [message body type](#message-body-type)  .                     |
+| message       | Object  | Yes                     | Message body. For more information, please see [message body type](#message body type)                     |
 | message_type  | String  | Yes                                       | Message type. Valid values:<li>`notify`: notification</li><li>`message`: in-app message/silent message</li> |
 | environment   | String  | Yes (only for iOS)                    | Push environment (only available for pushes on iOS). Valid values:<li>`product`: production environment</li><li>`dev`: development environment</li> |
 | upload_id   | Integer  | Yes (only available for push by account/token package)        | Account/Token package upload ID  |
@@ -129,7 +129,7 @@ Push API supports a variety of push targets. For example, you can push to all de
   }
 ```
 
-<span id="message-body-type"></span>
+<span id="message body type"></span>
 
 ### message_type: message type
 
@@ -149,10 +149,10 @@ Push API handles messages on iOS and Android differently, so you need to impleme
 
 The table below specifies parameters for the Android platform:
 
-| Parameter | Type | Parent Item | Default Value | Required | Description |
+| Parameter | Type | Parent Project | Default Value | Required | Description |
 | ------------------------ | ------ | ------- | ------ | ---- | ------------------------------------------------------------ |
-| title                    | String | message | Empty     | Yes   | Message title                                                     |
-| content                  | String | message | Empty     | Yes   | Message content                                                     |
+| title                    | String | message | Empty     | Yes   | Message title.                                                     |
+| content                  | String | message | Empty     | Yes   | Message content.                                                     |
 | accept_time    | Array  | message |  Empty    | No    | The time period that allows pushes.<li>A single element is formed by a "start" time and an "end" time.</li><li>"start" and "end" are indicated by hour and minute. For more information, please see the samples.</br>**Note:** this is valid only for the TPNS channel due to vendor restrictions.</li> |
 | thread_id                | String | message | Empty     | No   |Thread ID for collapsed notification in threaded display. </br>**Note:** this is valid only for the TPNS channel due to vendor restrictions. |
 | thread_sumtext           | String | message | Empty     | No   | Summary displayed after the notification is collapsed in a thread, which is valid if `thread_id` is not empty. </br>**Note:** this is valid only for the TPNS channel due to vendor restrictions. |
@@ -164,44 +164,44 @@ The table below specifies parameters for the Android platform:
 
 #### Android structure description [](id:intent1)
 
-| Parameter | Type | Parent Item | Default Value | Required | Description |
+| Parameter | Type | Parent Project | Default Value | Required | Description |
 | -------------- | ------- | ------- | ------ | ---- | ------------------------------------------------------------ |
 | n_ch_id        | String  | android | Empty    | No    | Notification channel ID (valid only for the TPNS channel). For more information, see [Creating a notification channel](https://intl.cloud.tencent.com/document/product/1024/30715).                                 |
 | n_ch_name      | String  | android | Empty    | No    | Notification channel name (valid only for the TPNS channel). For more information, please see [Creating a notification channel](https://intl.cloud.tencent.com/document/product/1024/30715).                                 |
-| xm_ch_id       | String  | android | Empty     | No   | Mi channel ID (valid only for the Mi channel)                            |
-| hw_ch_id       | String  | android | Empty     | No   | Huawei channel ID (valid only for the Huawei channel)                           |
+| xm_ch_id       | String  | android | Empty     | No   | Mi channel ID (valid only for the Mi channel).                            |
+| hw_ch_id       | String  | android | Empty     | No   | Huawei channel ID (valid only for the Huawei channel).                           |
 | hw_importance       | Integer  | android | 0     | No   | Notification message type defined by Huawei, which determines the notification behavior of the user’s device. Valid values:<li>`1`: information and marketing messages</li><li>`2`: service and communication messages</li> |
-| oppo_ch_id     | String  | android | Empty     | No   | OPPO channel ID (valid only for the OPPO channel)                          |
+| oppo_ch_id     | String  | android | Empty     | No   | OPPO channel ID (valid only for the OPPO channel).                          |
 | vivo_ch_id     | String  | android | 0      | No   | vivo channel ID (valid only for the vivo channel). Valid values: `0`: operation message; `1`: system message |
 | n_id           | Integer | android | 0      | No   | **(This parameter has been disused and will be unavailable in the future. If you need the override feature, please use the overriding parameter `collapse_id`.)**<br>Unique ID of the notification message object (valid only for the TPNS channel)<br>(1) Greater than 0: overrides the previous message with the same ID<br>(2) Equal to 0: displays this message without affecting other messages<br>(3) Equal to -1: clears all previous messages and displays this message only. |
-| builder_id     | Integer | android | 0      | No   | Local notification style identifier                                             |
+| builder_id     | Integer | android | 0      | No   | Local notification style identifier.                                             |
 | badge_type     | Integer | android | -1     | No   | Notification badge: <li>-2: automatically increased by 1, valid only for Huawei devices</li><li>-1: unchanged, valid only for Huawei and vivo devices</li><li>[0, 100): direct configuration, valid only for Huawei and vivo devices</li>**Note**: the badge adaptation capabilities vary depending on the vendor device. For details about the implementation effect of each parameter value, see <a href="https://intl.cloud.tencent.com/document/product/1024/35828">Badge Adaptation Guide<a>. |
 | ring           | Integer | android | 1      | No   | Whether there is a ringtone. Valid values:<li>0: no</li><li>1: yes</li>           |
-| ring_raw       | String  | android | Empty     | No   | Name of the ringtone file in the `raw` directory of the Android project; no extension is needed.     |
+| ring_raw       | String  | android | Empty     | No   | This specifies the name of the ringtone file in the `raw` directory of the Android project; no extension is needed.     |
 | vibrate        | Integer | android | 1      | No   | Whether the device vibrates. Valid values:<li>0: no</li><li>1: yes</li>           |
 | lights         | Integer | android | 1      | No    | Whether the breathing light is used. Valid values:<li>0: no</li><li>1: yes</li>        |
 | clearable      | Integer | android | 1      | No   | Whether the notification bar can be cleared. Valid values:<li>0: no</li><li>1: yes</li> |
 | icon_type      | Integer | android | 0      | No   | Whether the notification bar thumbnail is an in-app icon or an uploaded icon. Valid values:<li>0: in-app icon</li><li>1: uploaded icon</li>This parameter is supported only for the TPNS and Huawei channels. |
 | icon_res       | String  | android | Empty     | No   | URL of the uploaded notification thumbnail. This parameter is supported only for the TPNS and Huawei channels. For more information about the thumbnail formats, see [Rich Media Notification](https://intl.cloud.tencent.com/document/product/1024/37858). |
-| style_id       | Integer | android | 1      | No   | Whether the notification style with the specified number will be overwritten |
-| small_icon     | String  | android | Empty | No | The icon that the message displays in the status bar. If this parameter is not set, the application icon will be displayed. |
-| icon_color      | Integer | android | 0      | No | Color of the icon in the notification bar <li>This parameter takes effect only for the TPNS channel. </li> <li>To use an RGB color such as #01e240, enter `123456`.</li> |
+| style_id       | Integer | android | 1      | No   | Whether the notification style with the specified number will be overwritten. |
+| small_icon     | String  | android | Empty | No | The icon that the message displays in the status bar. If not set, the application icon will be displayed. |
+| icon_color      | Integer | android | 0      | No | Color of the icon in the notification bar. <li>This parameter takes effect only for the TPNS channel. </li> <li>To use an RGB color such as #01e240, enter `123456`.</li> |
 | action         | Object  | android | Yes | No | The action after the notification bar is clicked; the default action is to open the app. For more information, see [action parameter description](#action). |
 | custom_content | String  | android | Empty     | No   | User-defined field (which should be serialized into a JSON string)<br><b> Note:</b>Huawei has officially notified that the "V2 protocol will be suspended from September 30, 2021." TPNS has upgraded the Huawei push protocol to V5. The V5 protocol does not support carrying custom parameters through the "Extra Parameters" parameter. If you have integrated the Huawei vendor channel, we recommend you use the <a href="https://cloud.tencent.com/document/product/548/48572#android-.E4.BD.BF.E7.94.A8">Intent</a> method to carry custom parameters, otherwise the custom parameters will not be successfully delivered through the Huawei push channel. |
-| show_type      | Integer | android | 2      | No  | Whether to display notification when the application is running in the foreground, which is displayed by default. This parameter takes effect only for TPNS and FCM channels. Valid values:<li>`1`: no</li><li>`2`: yes</br>Note: if the value is `1` and the application is running in the foreground, this push is imperceptible to end users, but arrival data will be reported.</li> |
+| show_type      | Integer | android | 2      | No  | Whether to display notification when the application is running in the foreground, which is displayed by default. This takes effect only for TPNS and FCM channels. Valid values:<li>`1`: no</li><li>`2`: yes</br>Note: if the value is `1` and the application is running in the foreground, this push is imperceptible to end users, but arrival data will be reported.</li> |
 
 
 
 
 **action parameter description**[](id:action)
 
-| Parameter | Type | Parent Item | Default Value | Required | Description |
+| Parameter | Type | Parent Project | Default Value | Required | Description |
 | ----------- | ------- | ------ | ------ | ------------------------------------------- | ------------------------------------------------------------ |
-| action_type    | Integer | action  | 1     | No   | Action type. Valid values:<li>1: open activity or the application</li><li>2: open the browser</li><li>3: open the application’s custom page (recommended; for more information, see [Notification Tap-to-Redirect](https://intl.cloud.tencent.com/document/product/1024/38354)).</li> |
-| activity    | String  | action | Empty     | Yes if `action_type` is `1` and an activity needs to be opened | Full name of activity, such as `com.x.y.PushActivity`                   |
+| action_type    | Integer | action  | 1     | No   | One-click actions. Valid values:<li>1: open activity or the application</li><li>2: open the browser</li><li>3: open the application’s custom page (recommended; for more information, see [here](https://intl.cloud.tencent.com/document/product/1024/32624)).</li> |
+| activity    | String  | action | Empty     | Yes if `action_type` is `1` and an activity needs to be opened | Full name of activity, such as `com.x.y.PushActivity`.                   |
 | aty_attr    | Object  | action | Empty     | No if `action_type` is `1` and an activity needs to be opened | Activity attribute<li>if: `Flag` attribute of `Intent` in `Integer` type<li>pf: `Flag` attribute of `PendingIntent` in `Integer` type |
-| browser     | Object  | action | Empty     | Yes if `action_type` is `2`                       | Action to open a browser<li>url: webpage URL in `String` type. Only HTTP and HTTPS URLs are supported</li><li>confirm: whether user's confirmation is required. The value is in `Integer` type.</li>1: yes<br>0: no |
-| intent      | String  | action | Empty     | Yes if `action_type` is `3`                       | Custom scheme, such as `xgscheme://com.tpns.push/notify_detail`     |
+| browser     | Object  | action | Empty     | Yes if `action_type` is `2`                       | Action to open a browser.<li>url: webpage URL in `String` type. Only HTTP and HTTPS URLs are supported</li><li>confirm: whether user's confirmation is required. The value is in `Integer` type</li>1: yes<br>0: no |
+| intent      | String  | action | Empty     | Yes if `action_type` is `3`                       | Custom scheme, such as `xgscheme://com.tpns.push/notify_detail`.     |
 
 Below is a sample of a complete message:
 
@@ -273,19 +273,19 @@ Below is a sample of a complete message:
 
 The table below specifies parameters for the iOS platform.
 
-| Parameter | Type | Parent Item | Default Value | Required | Description |
+| Parameter | Type | Parent Project | Default Value | Required | Description |
 | ------ | ------ | ------- | ------ | ---- | -------------------------------------------------- |
 | title                    | String | message | Empty     | Yes   | Message title, which will override the content in `title` under `alert`.                                                   |
 | content                  | String | message | Empty     | Yes   | Message content, which will override the content in `body` under `alert`.
-| thread_id                | String | message | Empty     | No   | Thread ID for collapsed notification in threaded display                                     |
+| thread_id                | String | message | Empty     | No   | Thread ID for collapsed notification in threaded display.                                     |
 | ios    | Object       | message  | Empty    | Yes    | iOS message structure. See [iOS parameter description](#iOS) for more information. |
-| xg_media_resources    | String     | message | Empty    | No    | URL of rich media elements such as image, audio, and video                          |
+| xg_media_resources    | String     | message | Empty    | No    | URL of rich media elements such as image, audio, and video.                          |
 
 
 
 #### iOS parameter description[](id:iOS)
 
-| Parameter | Type | Parent Item | Default Value | Required | Description |
+| Parameter | Type | Parent Project | Default Value | Required | Description |
 | -------------- | ------ | ------ | ------ | ---- | ------------------------------------------------------------ |
 | aps             | Object  | ios    | Empty    | Yes    | APNs-specific parameter. For more information, see [aps parameter description](#aps). For further information, see [Payload](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/PayloadKeyReference.html#//apple_ref/doc/uid/TP40008194-CH17-SW1). |
 | custom_content  | String  | ios    | Empty    | No    | Custom parameter for delivery, which must be serialized to a JSON string.                                |
@@ -294,7 +294,7 @@ The table below specifies parameters for the iOS platform.
 
 **aps parameter description**[](id:aps)
 
-| Parameter | Type | Parent Item | Default Value | Required | Description |
+| Parameter | Type | Parent Project | Default Value | Required | Description |
 | --------------- | ------- | ------ | ------ | ---- | ------------------------------------------------------------ |
 | alert           | Object  | aps    | Empty     | Yes   | Contains the title and message content.                                           |
 | badge_type      | Integer | aps    | Empty                 | No        | User-configured badge number. Valid values:<li>-1: the badge number does not change.</li> <li> -2: the badge number automatically increases by 1.</li><li> >=0: a custom badge number is configured.</li> |
@@ -334,13 +334,13 @@ In-app message is unique to the Android platform and not displayed in the notifi
 
 The table below specifies parameters for the Android platform:
 
-| Parameter | Type | Parent Item | Default Value | Required | Description |
+| Parameter | Type | Parent Project | Default Value | Required | Description |
 | -------------- | ------ | ------- | ------ | -------- | ------------------------------------------------------------ |
-| title          | String | message | Empty     | Yes       | Command description                                                    |
-| content                  | String | message | Empty     | Yes   | Command content                                                     |
-| android        | Object | message | Empty     | No       | Android message structure                                               |
+| title          | String | message | Empty     | Yes       | Command description.                                                    |
+| content                  | String | message | Empty     | Yes   | Command content.                                                     |
+| android        | Object | message | Empty     | No       | Android message structure.                                               |
 | accept_time    | Array  | message |  Empty    | No    | The time period that allows pushes.<li>A single element is formed by a "start" time and an "end" time.</li><li>"start" and "end" are indicated by hour and minute. For more information, please see the samples.</li><li>**Note:** this is valid only for the TPNS channel due to vendor restrictions.</li> |
-| custom_content | String | android | Empty     | No       | Custom content, which must be serialized to a JSON string                                    |
+| custom_content | String | android | Empty     | No       | Custom content, which must be serialized to a JSON string.                                    |
 
 Complete sample:
 
@@ -383,9 +383,9 @@ Similar to in-app messages on Android, silent messages are unique to the iOS pla
 
 The specific parameters are as follows:
 
-| Parameter | Type | Parent Item | Default Value | Required | Description |
+| Parameter | Type | Parent Project | Default Value | Required | Description |
 | -------------- | ------ | ------- | ------ | -------- | ------------------------------------------------------------ |
-| ios            | Object | message | Empty     | Yes       | iOS message structure                                               |
+| ios            | Object | message | Empty     | Yes       | iOS message structure.                                               |
 | aps    | Object       | ios  | Empty    | Yes    | APNs-specific parameter, where the most important key-value pair is as follows:<li>content-available: identifies the message type (which must be 1), in integer format.</li><li>The value cannot contain the `alert`, `sound`, or `badge_type` parameters. For more information, see [Payload](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/PayloadKeyReference.html#//apple_ref/doc/uid/TP40008194-CH17-SW1). </li>**Note:** `content-available: 1` is mutually exclusive with [message_type:"notify"](#message body type). Do not use them at the same time. |
 | custom_content | String | ios     | Empty    | No    | Custom content, which must be serialized to a JSON string.                                |
 | xg             | String | ios     | Empty     | No       | Reserved key, which should not be used.                                     |
@@ -411,7 +411,7 @@ Complete sample:
 Optional push API parameters refer to advanced parameters that can be carried in a push message, except `audience_type`, `message_type`, and `message`.
 
 
-| Parameter            | Type    | Parent Item | Required                          | Default Value                   | Description                                                         |
+| Parameter            | Type    | Parent Project | Required                          | Default Value                   | Description                                                         |
 | --------------------- | ------- | ------ | ------------------------------ | ------------------------------------ | ------------------------------------------------------------ |
 | expire_time          | Integer | None     | No                            | 259200 (72 hours)                     | Offline message retention duration (in seconds), up to 72 hours.<li>If `expire_time` is equal to `0`, it indicates a real-time message.</li><li>If `expire_time` is greater than 0 and less than 800 seconds, the system will reset it to 800 seconds.</li><li>If `expire_time` is greater than or equal to 800 seconds, the message will be retained according to the set value, up to 72 hours.</li><li>The value set cannot exceed `2147483647`; otherwise, the push will fail.</li> |
 | send_time            | String  | None     | No                             | Current system time                         | Push time. You can specify a push time in the next 90 days.<li>The format is yyyy-MM-DD HH:MM:SS.</li><li>If the push time specified is earlier than the current server time, the push starts immediately.</li><li>This parameter is supported only for push to all devices, push by account package, or push to devices with specified tags.</li> |
@@ -422,12 +422,14 @@ Optional push API parameters refer to advanced parameters that can be carried in
 | tag_rules             | Array  | None     | Yes for tag push only                 | Empty                                   |  <li>For push based on a combination of tags, you can set 'AND', 'OR', and 'NOT' rules</li><li>**Note:** if both `tag_rules` and `tag_list` are specified, `tag_list` becomes invalid automatically. For parameter descriptions, please see [tag_rules parameter description](#tag_rules).</li> |
 | account_list         | Array   | None | Yes for push to a single account or a list of accounts | Empty       | For push to a single account:<li>`audience_type` must be `account`</li><li>Format: ["account1"]</li><br>For push to a list of accounts: <li>Format: `["account1","account2"]`</li><li>Up to 1,000 accounts</li> |
 | account_push_type    | Integer | None     | No for push by account                 | 0                                    | Push type. Valid values: <li>0: push messages to the latest device of the account</li><li>1: push messages to all devices associated with the account</li> |
+| account_type     | Integer | None     | No                 | 0                                    | Account type, which must be consistent with that of the accounts to push to. For valid values, see [Account Type Value Table](https://intl.cloud.tencent.com/document/product/1024/40598). |
 | token_list    | Array   | None | Yes for push to a single device or a list of devices | Empty       | For push to a single device: <li>`audience_type` must be `token`<li>Format: ["token1"]<br>For push to a list of devices:<li>Format: ["token1","token2"]</li><li>Up to 1,000 tokens</li> |
 | push_speed           | Integer | None    | No  | Empty                                  |<li>Push speed limit to X pushes per second. Value range of X: 1000-50000</li><li>This parameter is valid only for push to all devices, push by account package, and push to devices with specified tags.</li> |
+| hwBizType            | Integer | None     | No       | 0                                  |Whether to enable Huawei Push Kit:<li>`1`: enable<li>`0`: disable</li>**Note**: this is only valid for the Huawei channel. To activate the service, [contact Huawei business team](https://developer.huawei.com/consumer/cn/support/business).          |
 | collapse_id          | Integer | None    | No                             | System-assigned `collapse_id`       | <li>Message overriding parameter. After the first push task has been scheduled and delivered, if the second push task carries the same `collapse_id`, it will stop the TPNS channel data in the first push task that has not been delivered yet and will also overwrite the message in the first push task.<li>The `collapse_id` of a completed task can be obtained via the [Querying Push Information for One Task](https://intl.cloud.tencent.com/document/product/1024/33773) API.<li>Currently, this is supported only for push to all devices, push to devices with specified tags, and push by account package. |
 | channel_rules        | Array   | None    | No                             | Empty                                   | Push channel selection policy.<li>You can select the channels through which a push can be delivered. Messages are pushed through all channels by default. For more information about the push policy, see [Channel Policies](https://intl.cloud.tencent.com/document/product/1024/36151).<li>For the data structure of single elements in the `channel_rules` array, see [channel_rules parameter description](#channel_rules parameter description 1) below. |
-| tpns_online_push_type | Integer | None | No | 0 | Whether to push the message to online devices through the TPNS channel. Valid values: <li>`0`: yes<li> `1`: no |
-| force_collapse | Boolean | None | No | false | Whether to deliver messages to OPPO or Vivo devices that do not support message overriding. Valid values:<li>`false`: no</li><li>`true`: yes</li> |
+| tpns_online_push_type | Integer | None | No | 0 | Whether to push the message to online devices through the TPNS channel. Valid values: <li>0: yes<li> 1: no |
+| force_collapse | Boolean | None | No | false | Whether to deliver messages to OPPO or Vivo devices that do not support message overriding. Valid values:<li>false: no</li><li>true: yes</li> |
 
 
 
@@ -442,22 +444,22 @@ Optional push API parameters refer to advanced parameters that can be carried in
 
 ### tag_rules parameter description[](id:tag_rules)
 
-| Parameter     | Type    | Parent Item    | Required | Description                                                         |
+| Parameter     | Type    | Parent Project    | Required | Description                                                         |
 | --------- | ------- | --------- | ---- | ------------------------------------------------------------ |
-| tag_items | Array   | tag_rules | Yes   | Tag rule. See [tag_items description](#tag_items2).                 |
-| operator  | String  | tag_rules | Yes   | Operator between elements in the `tag_rules` array. The operator of the first `tag_rules` element is invalid data. The operator of the second `tag_rules` element is the operator between the first and second `tag_rules` elements, and so on. Valid values:<li>`OR`: OR operation<li>`AND`: AND operation |
-| is_not    | Boolean | tag_rules | Yes   | Whether to perform "NOT" operation on the calculation result of the `tag_items` array.<li>`true`: yes<li>`false`: no</li> |
+| tag_items | Array   | tag_rules | Yes   | Tag rule. See [tag_items description](#tag_items2)                 |
+| operator  | String  | tag_rules | Yes   | Operator between elements in the `tag_rules` array. The operator of the first `tag_rules` element is invalid data. The operator of the second `tag_rules` element is the operator between the first and second `tag_rules` elements, and so on. Valid values:<li>OR: OR operation<li>AND: AND operation |
+| is_not    | Boolean | tag_rules | Yes   | Whether to perform "NOT" operation on the calculation result of the `tag_items` array.<li>true: yes<li>false: no</li> |
 
 
 #### tag_items description[](id:tag_items2)
 
-| Parameter      | Type    | Parent Item    | Required | Description                                                         |
+| Parameter      | Type    | Parent Project    | Required | Description                                                         |
 | -------------- | ------- | --------- | ---- | ------------------------------------------------------------ |
 | tags           | Array   | tag_items | Yes   | Specific tag value in string type, such as `tag1` and `guangdong`.            |
-| is_not         | Boolean | tag_items | Yes   | Whether to perform "NOT" operation on the calculation result of the `tags` array. Valid values:<li>`true`: yes<li>`false`: no |
-| tags_operator  | String  | tag_items | Yes   | Operator for tag in `tags`. Valid values: <li>`OR`: OR operation<li>`AND`: AND operation    |
-| items_operator | String  | tag_items | Yes   | Operator between elements in the `tag_items` array. The `items_operator` of the first `tag_items` element is invalid. The `items_operator` of the second `tag_items` element is the operator between the first and second `tag_items` elements, and so on. Valid values:<li>`OR`: OR operation<li>`AND`: AND operation</li>**Note:** between different rules, AND takes precedence over OR. |
-| tag_type       | String  | tag_items | Yes   | See [tag_type value table](#tag123).                              |
+| is_not         | Boolean | tag_items | Yes   | Whether to perform "NOT" operation on the calculation result of the `tags` array. Valid values:<li>true: yes<li>false: no |
+| tags_operator  | String  | tag_items | Yes   | Operator for tag in `tags`. Valid values: <li>OR: OR operation<li>AND: AND operation    |
+| items_operator | String  | tag_items | Yes   | Operator between elements in the `tag_items` array. The `items_operator` of the first `tag_items` element is invalid. The `items_operator` of the second `tag_items` element is the operator between the first and second `tag_items` elements, and so on. Valid values:<li>OR: OR operation<li>AND: AND operation</li>**Note:** between different rules, AND takes precedence over OR. |
+| tag_type       | String  | tag_items | Yes   | See [tag_type value table](#tag123)                              |
 
 
 
@@ -472,7 +474,7 @@ Optional push API parameters refer to advanced parameters that can be carried in
 | XG SDK version   | xg_auto_sdkversion     | 1.1.5.2, 1.1.5.3      |
 | System language     | xg_auto_systemlanguage | zh, en                |
 | Mobile phone brand     | xg_auto_devicebrand    | Mi, vivo         |
-| Mobile phone model     | xg_auto_deviceversion  | MI 9 SE, vivo X9Plus |
+| Mobile phone model     | xg_auto_deviceversion  | MI 9 SE, Vivo X9Plus |
 | Country/Region | xg_auto_country | CN, SG |
 
 >? For more information about the usage, see [Sample tag push](#biaoqianshili).
@@ -483,16 +485,16 @@ Optional push API parameters refer to advanced parameters that can be carried in
 
 ### channel_rules parameter description
 
-| Parameter | Type    | Parent Item | Required | Description                                                        |
+| Parameter | Type    | Parent Project | Required | Description                                                        |
 | ------- | ------- | ------------- | -------- | ------------------------------------------------------------ |
-| channel | String  | channel_rules | Yes       | Delivery push channel. Valid values:<li> `hw`: Huawei channel</li><li> `xm`: Mi channel</li><li> `mz`: Meizu channel</li><li> `vivo`: vivo channel</li><li>`oppo`: OPPO channel</li><li>`apns`: APNs channel</li> |
-| disable | Boolean | channel_rules | Yes       | Whether to disable the channel specified in `channel`, which is enabled by default. Valid values:<li>`true`: disable</li><li>`false`: enable</li> |
+| channel | String  | channel_rules | Yes       | Delivery push channel. Valid values:<li> hw: Huawei channel</li><li> xm: Mi channel</li><li> mz: Meizu channel</li><li> vivo: vivo channel</li><li>oppo: OPPO channel</li><li>apns: APNs channel</li> |
+| disable | Boolean | channel_rules | Yes       | Whether to disable the channel specified in `channel`, which is enabled by default. Valid values:<li>true: disable</li><li>false: enable</li> |
 
 <span id="loop_param parameter description"></span>
 
 ### loop_param parameter description
 
-| Parameter | Type    |  Parent Item | Required | Description                                                        |
+| Parameter | Type    |  Parent Project | Required | Description                                                        |
 | ------------- | ------- | ---------- | -------- | ------------------------------------------------------------ |
 | startDate     | String  | loop_param | Yes       | Loop interval start date in YYYY-MM-DD format, such as 2019-07-01. You can choose a date in the next 90 days. |
 | endDate       | String  | loop_param | Yes       | Loop interval end date in YYYY-MM-DD format, such as 2019-07-07. You can choose a date in the next 90 days. |
@@ -506,12 +508,12 @@ Optional push API parameters refer to advanced parameters that can be carried in
 
 | Parameter      | Type    | Description                                                         |
 | ----------- | -------| ------------------------------------------------------------ |
-| seq         | Integer | Same as the request (if the request does not contain this parameter, this parameter returns `0`).              |
-| push_id     | String | Push ID                                                      |
+| seq         | Integer | Same as the request packet (if the request packet does not contain this parameter, this parameter returns `0`).              |
+| push_id     | String | Push ID.                                                      |
 | invalid_targe_list | Array      |  A value is returned only when the push target is `token_list`. This parameter stores filtered invalid tokens, and valid tokens will be delivered normally. |
 | ret_code    | Integer | Error code. For more information, please see the error codes table.                                 |
-| environment | String  | Push environment specified by the user (only for iOS). Valid values: <li>`product`: production environment</li><li>`dev`: development environment</li> |
-| err_msg     | String  | Error message when a request error occurs                                         |
+| environment | String  | Push environment specified by the user (only for iOS). Valid values: <li>product: production environment</li><li>dev: development environment</li> |
+| err_msg     | String  | Error message when a request error occurs.                                         |
 | result      | String   | When the request is correct:<li>If there is extra data to be returned, the result will be encapsulated in this parameter in JSON format.<li>If there is no extra data, this parameter may not exist.</li> |
 
 
@@ -590,7 +592,7 @@ Optional push API parameters refer to advanced parameters that can be carried in
 						},
 						"browser": {
 								"url": "xxxx ", // Only HTTP and HTTPS URLs are supported
-								"confirm": 1 // Whether user's confirmation is required
+								"confirm": 1 // Whether user’s confirmation is required
 						},
 						"intent": "xxx" // The SDK must be version 1.0.9 or later. Configure the data tag in the client's intent and set the scheme attribute
 				 },
@@ -620,7 +622,7 @@ Optional push API parameters refer to advanced parameters that can be carried in
     "token_list": [ "05da87c0ae********fa9e08d884aada5bb2"],
     "message_type":"notify",
     "message":{
-     "Title":"Push title",
+     "title": "Push title",
     "content": "Push content",
     "ios":{
         "aps": {
@@ -670,7 +672,7 @@ Expression: (xg_auto_province.guangdong OR xg_auto_province.hunan) AND xg_auto_a
                         "guangdong",
                         "hunan"
                     ],
-                    "is_not": false,   //Whether to perform the "NOT" operation on the calculation result of the tags in `tags`. Valid values: `true`: yes; `false`: no
+                    "is_not": false,   //Whether to perform the "NOT" operation on the calculation result of the tags in `tags`. Valid values: true: yes; false: no
                     "tags_operator": "OR",  //Operator for tags in `tags`
                     "items_operator": "OR", //Operator between elements in `tag_items`. The `items_operator` of the first element is invalid data. The `items_operator` of the second element is the operator between the first and second elements, and so on.
                     "tag_type": "xg_auto_province" //Type of tags in `tags`
@@ -716,7 +718,7 @@ Expression: (xg_auto_active.20200406 OR xg_auto_active.20200407 OR xg_auto_activ
                         "20200407",
                         "20200408"
                     ],
-                    "is_not": false,   //Whether to perform the "NOT" operation on the calculation result of the tags in `tags`. Valid values: `true`: yes; `false`: no
+                    "is_not": false,   //Whether to perform the "NOT" operation on the calculation result of the tags in `tags`. Valid values: true: yes; false: no
                     "tags_operator": "OR",  //Operator for tags in `tags`
                     "items_operator": "OR", //Operator between elements in `tag_items`. The `items_operator` of the first element is invalid data. The `items_operator` of the second element is the operator between the first and second elements, and so on.
                     "tag_type": "xg_auto_active" //Type of tags in `tags`

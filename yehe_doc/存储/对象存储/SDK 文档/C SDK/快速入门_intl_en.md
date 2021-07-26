@@ -1,18 +1,23 @@
 ## Download and Installation
 
-#### Relevant resources
+#### Related resources
 
-- Download the COS XML SDK for C source code [here](https://github.com/tencentyun/cos-c-sdk-v5).
-- Download the demo [here](https://github.com/tencentyun/cos-c-sdk-v5/blob/master/cos_c_sdk_test/cos_demo.c).
+- Download COS XML C SDK source code: [XML C SDK](https://github.com/tencentyun/cos-c-sdk-v5).
+- Download demo: [XML C SDK Demo](https://github.com/tencentyun/cos-c-sdk-v5/blob/master/cos_c_sdk_test/cos_demo.c).
 - For the SDK changelog, please see [Changelog](https://github.com/tencentyun/cos-c-sdk-v5/blob/master/CHANGELOG.md).
+- For SDK FAQs, please see [C SDK FAQs](https://intl.cloud.tencent.com/document/product/436/40772).
 
-#### Environmental dependency
+
+>? If you encounter errors such as non-existent functions or methods when using the SDK, please update the SDK to the latest version and try again.
+>
+
+#### Environment dependencies
 
 Dependent library: libcurl apr apr-util minixml.
 
-#### Installing SDK
+#### Installing SDKs
 
-1. Download the CMake tool (v2.6.0 or higher recommended) [here](http://www.cmake.org/download/) and install it as shown below:
+1. Download the CMake tool (v2.6.0 and higher recommended) [here](http://www.cmake.org/download/) and install it as shown below:
 ```bash
 ./configure
 make
@@ -54,10 +59,11 @@ make install
 Below is the general process of using COS XML C SDK.
 
 1. Initialize the SDK.
-2. Set the request option parameters. For the definitions of parameters such as `APPID`, `SecretId`, `SecretKey`, and `Bucket`, please see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751#cos-glossary).
-- APPID is one of the account identifiers assigned by the system after you register a Tencent Cloud account.
-- `access_key_id` and `access_key_secret` are account API keys.
-- `endpoint` is the COS access domain name. For more information, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). For example, the endpoint of the Guangzhou region is `cos.ap-guangzhou.myqcloud.com`, and the global acceleration endpoint is `cos.accelerate.myqcloud.com`.
+2. Set the request option parameters. For the definitions of parameters such as APPID, SecretId, SecretKey, and Bucket, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
+ - APPID is one of the account IDs assigned by the system after you register for a Tencent Cloud account.
+ - `access_key_id` and `access_key_secret` are account API keys.
+ - `endpoint` is the COS access domain name. For more information, see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). For example, the endpoint of the Guangzhou region is `cos.ap-guangzhou.myqcloud.com`, and the endpoint of a global acceleration domain name is `cos.accelerate.myqcloud.com`. You can add "http" or "https" to the endpoints. The SDK accesses COS via HTTP by default. For example, the endpoint for accessing the Guangzhou region via HTTPS is `https://cos.ap-guangzhou.myqlcoud.com`.
+ - `is_cname` specifies whether an endpoint is a custom domain name. If `is_cname` is set to 1, the endpoint is a custom domain name.
 3. Set the parameters required for APIs.
 4. Call the SDK API to initiate a request and get the response.
 
@@ -71,8 +77,8 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
-    /* Call the COS SDK API to upload or download a file */
-    /* ... user logic code which is omitted here */
+    /* Call a COS SDK API to upload/download files */
+    /* ... User logic code, omitted here */
 
     /* Call the cos_http_io_deinitialize method to release global resources allocated previously before the program ends */
     cos_http_io_deinitialize();
@@ -83,15 +89,15 @@ int main(int argc, char *argv[])
 ### Initializing request options
 
 ```cpp
-/* This is equivalent to apr_pool_t, which is the memory pool for memory management. Its implementation code is in the apr library */
+/* Equivalent to `apr_pool_t`, the memory pool for memory management. The implementation code can be found in the apr library */
 cos_pool_t *pool;
 cos_request_options_t *options;
 
 /* Create a new memory pool. The second parameter is NULL, indicating that it is not inherited from other memory pools */
 cos_pool_create(&pool, NULL);
 
-/* Create and initialize `options`. This parameter contains global configuration information such as endpoint, access_key_id, access_key_secret, is_cname, and curl
- * The memory of `options` is allocated by the pool and will be released upon pool release, so there is no need to release the memory separately.
+/* Create and initialize `options`. This parameter contains global configuration information such as endpoint, access_key_id, acces_key_secret, is_cname, and curl
+ * The memory of `options` is allocated by the pool, and will be released upon pool release, so there is no need to release the memory separately.
  */ 
 options = cos_request_options_create(pool);
 options->config = cos_config_create(options->pool);
@@ -102,12 +108,17 @@ cos_str_set(&options->config->access_key_id, "<user's SecretId>");         // Th
 cos_str_set(&options->config->access_key_secret, "<user's SecretKey>");    // This is the SecretKey obtained after you register for the COS service
 cos_str_set(&options->config->appid, "<user's AppId>");                    // This is the AppId obtained after you register for the COS service
 
-/* You can use a temporary key by setting sts_token. When you use a temporary key, you need to set access_key_id and access_key_secret to its SecretId and SecretKey */
+/* You can use a temporary key by setting `sts_token`. When you use a temporary key, you need to set `access_key_id` and `access_key_secret` to its SecretId and SecretKey */
 //cos_str_set(&options->config->sts_token, "MyTokenString");
 /* Whether CNAME is used */
 options->config->is_cname = 0;
+/* Use a custom domain name to access COS */
+/*
+options->config->is_cname = 1;
+cos_str_set(&options->config->endpoint, "<Custom domain name>");
+*/
 
-/* Used to set network-related parameters, such as timeout period */
+/* Used to set network-related parameters, such as the timeout duration */
 options->ctl = cos_http_controller_create(options->pool, 0);
 
 /* Used to set whether to add Content-MD5 header automatically to the upload request. If `enable` is COS_FALSE, the header will not be automatically added; if `enable` is COS_TRUE, the header will be automatically added. If this parameter is not set, the header will be added by default */
@@ -117,9 +128,11 @@ cos_set_content_md5_enable(options->ctl, COS_FALSE);
 //cos_set_request_route(options->ctl, "192.168.12.34", 80);
 ```
 
->?For more information on how to generate and use a temporary key, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
+>? For more information about how to generate and use a temporary key, please see [Generating and Using Temporary Keys](https://intl.cloud.tencent.com/document/product/436/14048).
+>
 
-### Creating bucket
+
+### Creating a bucket
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -133,7 +146,7 @@ cos_table_t *resp_headers = NULL;
 /* Create a new memory pool. The second parameter is NULL, indicating that it is not inherited from other memory pools */
 cos_pool_create(&p, NULL);
 
-/* Create and initialize `options`. This parameter contains global configuration information such as endpoint, access_key_id, access_key_secret, is_cname, and curl
+/* Create and initialize `options`. This parameter contains global configuration information such as endpoint, access_key_id, acces_key_secret, is_cname, and curl
  * The memory of `options` is allocated by the pool, and will be released upon pool release, so there is no need to release the memory separately.
  */
 options = cos_request_options_create(p);
@@ -147,7 +160,7 @@ cos_str_set(&options->config->access_key_secret, TEST_ACCESS_KEY_SECRET);
 cos_str_set(&options->config->appid, TEST_APPID);
 options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
-/* Enter the bucket name in the format of BucketName-APPID */
+/* Enter the bucket name in the format of BucketName-APPID. */
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
 /* Call an API to create a bucket */
@@ -162,7 +175,7 @@ if (cos_status_is_ok(s)) {
 cos_pool_destroy(p); 
 ```
 
-### Querying object list
+### Querying an object list
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -173,11 +186,11 @@ cos_list_object_params_t *list_params = NULL;
 cos_string_t bucket;
 cos_table_t *resp_headers = NULL;
 
-/* Create a new memory pool. The second parameter is NULL, indicating that it is not inherited from other memory pools */
+/* Re-create a new memory pool. The second parameter is NULL, which indicates it is not inherited from other memory pools */
 cos_pool_create(&p, NULL);
 
 /* Create and initialize `options`. This parameter contains global configuration information such as endpoint, access_key_id, acces_key_secret, is_cname, and curl
- * The memory of `options` is allocated by the pool and will be released upon pool release, so there is no need to release the memory separately.
+ * The memory of `options` is allocated by the pool, and will be released upon pool release, so there is no need to release the memory separately.
  */
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
@@ -207,7 +220,7 @@ if (cos_status_is_ok(s)) {
 cos_pool_destroy(p); 
 ```
 
-### Uploading object
+### Uploading an object
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -219,11 +232,11 @@ cos_string_t object;
 cos_string_t file;
 cos_table_t *resp_headers = NULL;
 
-/* Create a new memory pool. The second parameter is NULL, indicating that it is not inherited from other memory pools */
+/* Re-create a new memory pool. The second parameter is NULL, which indicates it is not inherited from other memory pools */
 cos_pool_create(&p, NULL);
 
 /* Create and initialize `options`. This parameter contains global configuration information such as endpoint, access_key_id, acces_key_secret, is_cname, and curl
- * The memory of `options` is allocated by the pool and will be released upon pool release, so there is no need to release the memory separately.
+ * The memory of `options` is allocated by the pool, and will be released upon pool release, so there is no need to release the memory separately.
  */
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
@@ -253,7 +266,7 @@ if (cos_status_is_ok(s)) {
 cos_pool_destroy(p); 
 ```
 
-### Downloading object
+### Downloading an object
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -265,11 +278,11 @@ cos_string_t object;
 cos_string_t file;
 cos_table_t *resp_headers = NULL;
 
-/* Create a new memory pool. The second parameter is NULL, indicating that it is not inherited from other memory pools */
+/* Re-create a new memory pool. The second parameter is NULL, which indicates it is not inherited from other memory pools */
 cos_pool_create(&p, NULL);
 
 /* Create and initialize `options`. This parameter contains global configuration information such as endpoint, access_key_id, acces_key_secret, is_cname, and curl
- * The memory of `options` is allocated by the pool and will be released upon pool release, so there is no need to release the memory separately.
+ * The memory of `options` is allocated by the pool, and will be released upon pool release, so there is no need to release the memory separately.
  */
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);
@@ -299,7 +312,7 @@ if (cos_status_is_ok(s)) {
 cos_pool_destroy(p); 
 ```
 
-### Deleting object
+### Deleting an object
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -314,7 +327,7 @@ cos_table_t *resp_headers = NULL;
 cos_pool_create(&p, NULL);
 
 /* Create and initialize `options`. This parameter contains global configuration information such as endpoint, access_key_id, access_key_secret, is_cname, and curl
- * The memory of `options` is allocated by the pool and will be released upon pool release, so there is no need to release the memory separately.
+ * The memory of `options` is allocated by the pool, and will be released upon pool release, so there is no need to release the memory separately.
  */
 options = cos_request_options_create(p);
 options->config = cos_config_create(options->pool);

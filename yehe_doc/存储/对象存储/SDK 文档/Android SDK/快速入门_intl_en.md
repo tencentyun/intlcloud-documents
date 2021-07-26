@@ -5,6 +5,11 @@
 - For SDK APIs and parameters, please see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com).
 - For the complete sample code, please see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/Android).
 - For the SDK changelog, please see [ChangeLog](https://github.com/tencentyun/qcloud-sdk-android/blob/master/CHANGELOG.md).
+- For SDK FAQs, please see [Android SDK FAQs](https://intl.cloud.tencent.com/document/product/436/38955).
+
+>? If you encounter errors such as non-existent functions or methods when using the XML version of the SDK, please update the SDK to the latest version and try again.
+>
+
 
 ## Preparations
 
@@ -16,7 +21,8 @@
 
 ### Method 1. Automatic integration (recommended)
 
->?As the Bintray repository is no longer available, COS’s SDK has been migrated to Maven Central. The import path is different and thus you need to use the new import path during the update.
+>? As the Bintray repository is no longer available, COS’s SDK has been migrated to Maven Central. The import path is different and thus you need to use the new import path during the update.
+>
 
 #### Using the Maven Central repository
 
@@ -132,7 +138,8 @@ If you need to read and write files from external storage, please add the follow
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 ```
 
-Note that for Android 6.0 (API level 23) or above, you need to dynamically request storage permissions at runtime.
+>! For Android 6.0 (API level 23) or above, you need to dynamically request storage permissions at runtime.
+>
 
 ## Step 3. Use the SDK
 
@@ -208,6 +215,7 @@ CosXmlService cosXmlService = new CosXmlService(context,
 ```
 
 >? For more information on the abbreviations of the COS bucket regions, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
+>
 
 #### Using the KTX package to initialize the COS service
 
@@ -242,7 +250,7 @@ val cos = cosService(context = application.applicationContext) {
 
 The SDK supports uploading local files, binary data, URIs, and input streams. The following uses uploading a local file as an example.
 
-[//]: # (.cssg-snippet-transfer-upload-file)
+[//]: # ".cssg-snippet-transfer-upload-file"
 ```java
 // Initialize TransferConfig. The default configuration is used here. To customize the configuration, please see the SDK API documentation.
 TransferConfig transferConfig = new TransferConfig.Builder().build();
@@ -254,7 +262,7 @@ String bucket = "examplebucket-1250000000"; // Bucket, formatted as BucketName-A
 String cosPath = "exampleobject"; // The location identifier of the object in the bucket, i.e., the object key
 String srcPath = new File(context.getCacheDir(), "exampleobject")
         .toString(); // The absolute path of the local file
-// If there is an uploadId for an initialized multipart upload, assign the value of the uploadId here to resume the upload; otherwise, assign null
+// If there is an `uploadId` for an initialized multipart upload, assign the value of the `uploadId` here to resume the upload; otherwise, assign `null`
 // uploadId for the current upload task can be obtained from the callback of TransferStateListener.
 String uploadId = null; 
 
@@ -342,7 +350,7 @@ viewModelScope.launch {
 
 ### Downloading an object
 
-[//]: # (.cssg-snippet-transfer-download-object)
+[//]: # ".cssg-snippet-transfer-download-object"
 ```java
 // The advanced download API supports checkpoint restart. Therefore, a HEAD request will be sent before the download to obtain the file information.
 // If you are using a temporary key or accessing with a sub-account, ensure that your permission list includes HeadObject.
@@ -441,3 +449,4 @@ viewModelScope.launch {
 >?
 >- For the complete sample, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferDownloadObject.java).
 >- The advanced download API supports checkpoint restart. Therefore, a HEAD request will be sent before the download to obtain the file information. If you are using a temporary key or accessing with a sub-account, ensure that your permission list includes `HeadObject`.
+>
