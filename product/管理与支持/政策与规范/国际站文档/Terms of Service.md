@@ -243,6 +243,10 @@ To the extent you wish to receive Services under the Tencent Cloud Terms of Serv
 
 (d) YOU AND TENCENT AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING. Further, unless both you and Tencent agree otherwise, the arbitrator may not consolidate more than one person’s claims, and may not otherwise preside over any form of a representative or class proceeding.
 
+**2. Third Party Connectivity Services** 
+
+ The Services provided to you may include broadband data connectivity services that connect your location(s) to Tencent Cloud (the “Third Party Connectivity Services”).  Tencent acts as a network manager and obtains the Third Party Connectivity Services on your behalf as an element of the Services you receive.  The Third Party Connectivity Services are provided by one or more broadband service provider(s) subject to the terms and conditions of such provider(s).  The Third Party Connectivity Services are subject to certain performance limitations that impact your use of the same.  You may contact Tencent at cloudlegalnotices@tencent.com to obtain additional information about the Third Party Connectivity Services that are being used as an element of your Services, including the provider(s)’ network practices, performance characteristics, and applicable commercial terms.  Tencent passes through any costs for the Third Party Connectivity Services from the provider(s) to you and may charge a network manager fee as part of the Services offered.
+
 ## TENCENT CLOUD EUROPEAN ECONOMIC AREA AND SWITZERLAND (“EEA”)  CONSUMER TERMS ##
 
 If you are not a business user and you are purchasing the Services for personal use, to the extent you wish to receive Services under the Tencent Cloud Terms of Service (“**Terms**”) and the country specified in your registered billing information is in the EEA, such Services shall be subject to the terms of these EEA Consumer Terms. Any terms used but not defined in these EEA Consumer Terms have the meaning given to them in the Terms.
@@ -281,7 +285,6 @@ If any Services you order are defective (in other words, they do not comply with
 
 If you are a consumer residing in France, please note that the exclusion and limitation of liability provisions included in Sections 11(a) and 11(b) of the Terms above, will not apply to you. 
 
-------
 
 ## TENCENT CLOUD GERMANY TERMS ##
 
