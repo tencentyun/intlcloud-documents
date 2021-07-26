@@ -1,12 +1,10 @@
-Classiclink or terminal connection are two methods for interconnecting VPC resources and classic network resources.
-
 ## Classiclink
 ### Operation scenario
 By default, a VPC is a fully isolated network space that cannot interconnect with other VPC instances or the classic network through a private network. [Peering connections](https://intl.cloud.tencent.com/document/product/553) enable different VPC instances to communicate with each other, and Classiclink enables VPC instances to communicate with the classic network.
 
-As shown in the following figure, classic network CVMs can access cloud resources in a VPC, such as CVMs, cloud databases, private network CLBs, and cloud caches. However, the CVMs in the VPC can only access the classic network CVMs that are interconnected with it but not other computing resources within the classic network.
-![] (https://main.qcloudimg.com/raw/ee81676f03ae38e10d71c934b9300070.png)
->Classiclink is available only for intra-region interconnection.
+Classic network CVMs can access cloud resources in a VPC, such as CVMs, cloud databases, private network CLBs, and cloud caches. However, the CVMs in the VPC can only access the classic network CVMs that are interconnected with it but not other computing resources within the classic network.
+
+>?Classiclink is available only for intra-region interconnection.
 
 ### Basic configuration impacts
 - The private IP addresses of associated classic network CVMs will be automatically added to the local policy of the VPC's route table. In this way, CVMs in the VPC and CVMs in this classic network can communicate with each other, without needing to manually modify the route table policy in the current VPC. 
@@ -36,6 +34,6 @@ Terminal connection is another method to connect VPC instances and the classic n
 
 A terminal connection establishes mapping between classic network instance IP addresses and VPC IP addresses so that classic network instances can be accessed by accessing VPC IP addresses.
 
->Cross-region or inter-account terminal connections are not supported. If you do need to establish a terminal connection in these situations, submit a [ticket to apply for it](https://console.cloud.tencent.com/workorder/category).
+>?Cross-region or inter-account terminal connections are not supported. If you do need to establish a terminal connection in these situations, submit a [ticket to apply for it](https://console.cloud.tencent.com/workorder/category).
 
 
