@@ -9,7 +9,7 @@
         <tr>
             <td  rowspan="5">One-to-one/group message</td>
             <td>Content length</td>
-            <td>The maximum length for a single one-to-one/group message is 8,000 bytes. If this limit is exceeded, the message will fail to be sent.</td>
+            <td>The maximum length for a single one-to-one/group message is 8,000 bytes. </td>
         </tr>
 	<tr>
             <td>Sending frequency</td>
