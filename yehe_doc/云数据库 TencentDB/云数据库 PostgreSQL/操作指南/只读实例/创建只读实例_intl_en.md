@@ -27,7 +27,7 @@ Read-only replicas adopt PostgreSQL streaming replication, which can sync the ch
 - The specification of a read-only replica can be different from that of the primary instance, which makes it easier for you to upgrade the read-only replica according to the load. We recommend you keep the same specifications of read-only replicas in one RO group.
 
 ## Directions
-1. Log in to the [TencentDB for PostgreSQL console](https://console.cloud.tencent.com/postgres). In the instance list, click the instance ID/name or **Manage** in the **Operation** column to access the instance management page.
+1. Log in to the [TencentDB for PostgreSQL console](https://console.cloud.tencent.com/postgres). In the instance list, click the instance ID or **Manage** in the **Operation** column to access the instance management page.
 2. Click **Add Read-only Replica** in the **Instance Architecture Diagram** section on the **Instance Details** tab or click **Create** on the **Read-only Replica** tab.
 ![](https://main.qcloudimg.com/raw/a5bb132bfaa35bb3529fa040dc021d9f.png)
 3. On the displayed purchase page, specify the following read-only replica configurations, confirm that everything is correct, and click **Buy Now**.
