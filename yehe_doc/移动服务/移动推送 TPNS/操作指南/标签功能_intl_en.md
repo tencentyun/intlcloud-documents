@@ -122,10 +122,10 @@ For the iOS SDK, see [here](https://intl.cloud.tencent.com/document/product/1024
 For the Android SDK, see [Setting custom tag](https://intl.cloud.tencent.com/document/product/1024/30715#setting-custom-tag).
 
 >?
->- One device can be bound to up to 100 tags (to increase the quota, [submit a ticket](https://console.cloud.tencent.com/workorder/category)).
->- One application can be bound to up to 10,000 tags (to increase the quota, [submit a ticket](https://console.cloud.tencent.com/workorder/category)).
->- One tag can contain up to 50 bytes.
->- Up to 500 tags can be bound or unbound in one request.
+- One device can be bound to up to 100 tags (to increase the quota, [submit a ticket](https://console.cloud.tencent.com/workorder/category)).
+- One application can be bound to up to 10,000 tags (to increase the quota, [submit a ticket](https://console.cloud.tencent.com/workorder/category)).
+- One tag can contain up to 50 bytes.
+- Up to 500 tags can be bound or unbound in one request.
 
 #### Custom tag use cases and keywords
 Tag push is suitable for scenarios where more than 10 devices are bound to a tag and less than 10 pushes are required per day. For other scenarios, account push (binding an account instead of a tag to multiple devices for push) is recommended.
@@ -147,7 +147,7 @@ TPNS provides APIs for binding/unbinding a single tag to/from a single device, a
 ```json
 {
     "operator_type": 1,
-    "platform": "android",
+
     "tag_list": ["tag"],
     "token_list": ["token"]
 }
@@ -158,7 +158,7 @@ TPNS provides APIs for binding/unbinding a single tag to/from a single device, a
 ```json
 {
     "operator_type": 2,
-    "platform": "android",
+
     "tag_list": ["tag"],
     "token_list": ["token"]
 }
@@ -177,7 +177,7 @@ TPNS provides APIs for binding/unbinding a single tag to/from a single device, a
 ```json
 {
     "operator_type": 3,
-    "platform": "android",
+
     "tag_list": ["tag1","tag2"],
     "token_list": ["token"]
 }
@@ -188,7 +188,7 @@ TPNS provides APIs for binding/unbinding a single tag to/from a single device, a
 ```json
 {
     "operator_type": 4,
-    "platform": "android",
+
     "tag_list": ["tag1","tag2"],
     "token_list": ["token"]
 }
@@ -207,7 +207,7 @@ Call the RESTful API, for example, to bind/unbind the `football` tag to/from all
 ```json
 {
     "operator_type": 7,
-    "platform": "android",
+
     "tag_list": ["tag"],
     "token_list": ["token1","token2"]
 }
@@ -216,7 +216,7 @@ Call the RESTful API, for example, to bind/unbind the `football` tag to/from all
 ```json
 {
     "operator_type": 8,
-    "platform": "android",
+
     "tag_list": ["tag"],
     "token_list": ["token1","token2"]
 }
@@ -235,7 +235,7 @@ Call the RESTful API, for example, to bind/unbind the `football` and `basketball
 ```json
 {
     "operator_type": 9,
-    "platform": "android",
+
     "tag_token_list": [{"tag":"tag1","token":"token1"},{"tag":"tag2","token":"token2"}]
 }
 ```
@@ -244,7 +244,7 @@ Call the RESTful API, for example, to bind/unbind the `football` and `basketball
 ```json
 {
     "operator_type": 10,
-    "platform": "android",
+
     "tag_token_list": [{"tag":"tag1","token":"token1"},{"tag":"tag2","token":"token2"}]
 }
 ```
@@ -267,7 +267,7 @@ TPNS provides two tag overriding methods: general overriding and overriding by t
 ```json
 {
     "operator_type": 6,
-    "platform": "android",
+
     "tag_list": ["test", "level:1",, "level:2"], 
     "token_list": ["token"]
 }
@@ -287,7 +287,7 @@ TPNS provides two tag overriding methods: general overriding and overriding by t
 ```json
 {
     "operator_type": 6,
-    "platform": "android",
+
     "tag_list": ["test:2", "level:3"], 
     "token_list": ["token"]
 }
@@ -314,7 +314,7 @@ TPNS provides two tag overriding methods: general overriding and overriding by t
 ```json
 {
     "operator_type": 5,
-    "platform": "android", 
+
     "token_list": ["token"]
 }
 ```
