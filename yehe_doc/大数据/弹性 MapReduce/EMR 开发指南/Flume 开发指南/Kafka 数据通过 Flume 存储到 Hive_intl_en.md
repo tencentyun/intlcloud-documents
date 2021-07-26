@@ -72,10 +72,6 @@ In the console, add the following configuration items to `hive-site.xml`.
 </property>
 <property>
 <name>hive.txn.manager</name>
-<value>nonstrict</value>
-</property>
-<property>
-<name>hive.exec.dynamic.partition.mode</name>
 <value>org.apache.hadoop.hive.ql.lockmgr.DbTxnManager</value>
 </property>
 <property>
