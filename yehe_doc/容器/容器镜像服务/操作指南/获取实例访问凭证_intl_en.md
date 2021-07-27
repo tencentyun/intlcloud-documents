@@ -34,7 +34,7 @@ Before obtaining an access credential for a TCR Enterprise Edition instance, you
 
 ## Reference
 
-You can also use the `CreateInstanceToken` API to create the instance access credential. For more information, see [CreateInstanceToken API Documentation](https://cloud.tencent.com/document/product/1141/41571).
+You can also use the `CreateInstanceToken` API to create the instance access credential. For more information, see CreateInstanceToken API Documentation.
 
 
 
