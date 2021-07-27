@@ -1,7 +1,24 @@
-## Description
+## Overview
 This API is used to delete a permission policy of a bucket.
 
->!Only the bucket owner is allowed to initiate this request. If the permission policy does not exist, "204 No Content" will be returned.
+>! Only the bucket owner is allowed to initiate this request. If the permission policy does not exist, "204 No Content" will be returned.
+>
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                You are advised to use API Explorer.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=DeleteBucketPolicy&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+            </div>
+        </div>
+    </div>
+</div>
 
 ## Request
 
@@ -21,7 +38,7 @@ This API only uses common request headers. For more information, please see [Com
 
 
 #### Request body
-The request body of this request is empty.
+This request has no request body.
 
 ## Response
 #### Response headers

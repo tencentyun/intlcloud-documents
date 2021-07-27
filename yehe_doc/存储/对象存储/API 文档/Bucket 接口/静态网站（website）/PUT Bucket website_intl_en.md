@@ -2,6 +2,23 @@
 
 This API is used to configure a static website for a bucket by importing configuration files in XML format. The file size is limited to 64 KB.
 
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                You are advised to use API Explorer.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=PutBucketWebsite&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+            </div>
+        </div>
+    </div>
+</div>
+
+
 ## Request
 
 #### Sample request
@@ -18,19 +35,19 @@ Authorization: Auth String
 [Request Body]
 ```
 
->? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+>? Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
 
 #### Request parameters
 
-This API does not use any request parameters.
+This API has no request parameter.
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
-This request body submits the **application/xml** request data which includes all information about the static website configuration on the bucket.
+This request body submits the **application/xml** data that includes all information about the static website configuration of the bucket.
 
 ```xml
 <WebsiteConfiguration>
@@ -70,80 +87,80 @@ This request body submits the **application/xml** request data which includes al
 </WebsiteConfiguration>
 ```
 
-The nodes are described in details below:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
-| WebsiteConfiguration | None | Contains all information on the PUT Bucket website request | Container | No |
+| WebsiteConfiguration | None | Contains all the request information about PUT Bucket website | Container | No |
 
-**Container node `WebsiteConfiguration`:**
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-| --- | --- | --- | --- | --- |
-| IndexDocument | WebsiteConfiguration | Configures the index document | Container | Yes |
-| RedirectAllRequestsTo | WebsiteConfiguration | Configures the redirect for all requests | Container | No |
-| AutoAddressing     |   WebsiteConfiguration | Specifies whether to ignore the file extension  | Container | No |
-| ErrorDocument | WebsiteConfiguration | Configures the error document | Container | No |
-| RoutingRules | WebsiteConfiguration | Configures the routing rule.  A `RoutingRules` container can contain up to 100 `RoutingRule` elements | Container | No |
-
-**Container node `IndexDocument`:**
+**Content of the Container node `WebsiteConfiguration`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
-| Suffix | WebsiteConfiguration.IndexDocument | Specifies the object key suffix for the index document. For example, if it is specified as `index.html`, the request automatically returns `index.html` when you access the root directory of the bucket, or `article/index.html` when you access the directory `article/`. | String | Yes |
+| IndexDocument | WebsiteConfiguration | Index document configuration | Container | Yes |
+| RedirectAllRequestsTo | WebsiteConfiguration | Configures redirection for all requests | Container | No |
+| AutoAddressing     |   WebsiteConfiguration | Whether to ignore all file extensions  | Container | No |
+| ErrorDocument | WebsiteConfiguration | Error document configuration | Container | No  |
+| RoutingRules | WebsiteConfiguration | Routing rule configuration. A `RoutingRules` container can contain up to 100 `RoutingRule` elements. | Container | No |
 
-**Container node `RedirectAllRequestsTo`:**
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-| --- | --- | --- | --- | --- |
-| Protocol | WebsiteConfiguration.RedirectAllRequestsTo | Specifies the destination protocol for redirecting all requests. Currently, only HTTPS is supported | String | Yes |
-
-**Container node `AutoAddressing`:**
+**Content of the Container node `IndexDocument`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
-| Status  |  WebsiteConfiguration.AutoAddressing   | Specifies whether to ignore HTML file extension. Valid values: Enabled, Disabled (default) | String | No |
+| Suffix | WebsiteConfiguration.IndexDocument | Specifies the object key suffix for index documents. For example, if it is specified as `index.html`, the request automatically returns `index.html` when you access the root directory of the bucket, or `article/index.html` when you access the directory `article/`. | String | Yes |
 
-**Container node `ErrorDocument`:**
+**Content of the Container node `RedirectAllRequestsTo`:**
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
+| --- | --- | --- | --- | --- |
+| Protocol | WebsiteConfiguration.RedirectAllRequestsTo | Specifies the target protocol to redirect all requests. Only HTTPS is supported. | String | Yes |
+
+**Content of the Container node `AutoAddressing`:**
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
+| --- | --- | --- | --- | --- |
+| Status  |  WebsiteConfiguration.AutoAddressing   | Whether to ignore the HTML file extension. Valid values: `Enabled`, `Disabled` (default) | String | No |
+
+**Content of the Container node `ErrorDocument`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
 | Key | WebsiteConfiguration.ErrorDocument | Specifies the object key to return for the error document if an error occurs and does not match the error code in the routing rule | String | Yes |
-|  OriginalHttpStatus   |  WebsiteConfiguration.ErrorDocument  | Specifies the HTTP status code to match in the error document. Valid values: Enabled (default), Disabled  |  String  |  No  |
+| OriginalHttpStatus | WebsiteConfiguration.ErrorDocument  | Configures whether to return the corresponding HTTPS status code if the error documents are hit. Valid values: `Enabled` (default), `Disabled` |  String  |  No  |
 
-**Container node `RoutingRules`:**
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-| --- | --- | --- | --- | --- |
-| RoutingRule | WebsiteConfiguration.RoutingRules | Specifies a routing rule | Container | Yes |
-
-**Container node `RoutingRules.RoutingRule`:**
+**Content of the Container node `RoutingRules`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
-| Condition | WebsiteConfiguration.RoutingRules.RoutingRule | Sets the condition in the routing rule | Container | Yes |
-| Redirect | WebsiteConfiguration.RoutingRules.RoutingRule | Sets the redirect destination in the routing rule | Container | Yes |
+| RoutingRule | WebsiteConfiguration.RoutingRules | Sets a single redirect rule. | Container | Yes |
 
-**Container node `RoutingRules.RoutingRule.Condition`:**
-
-| Node Name (Keyword) | Parent Node | Description | Type | Required |
-| --- | --- | --- | --- | --- |
-| HttpErrorCodeRetu<br>rnedEquals | WebsiteConfigura<br>tion.RoutingRules.<br>RoutingRule.Condition | Specifies the error code to match in the routing rule. Only 4XX response codes are allowed, such as 403 or 404 | Integer | Either or both of this parameter and `KeyPrefixEquals` must be specified |
-| KeyPrefixEquals | WebsiteConfigura<br>tion.RoutingRules.<br>RoutingRule.Condition | Specifies the object key prefix to match in the routing rule | String | Either or both of this parameter and `HttpErrorCodeReturnedEquals` must be specified |
-
-**Container node `RoutingRules.RoutingRule.Redirect`:**
+**Content of the Container node `RoutingRules.RoutingRule`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | --- | --- | --- | --- | --- |
-| Protocol | WebsiteConfigura<br>tion.RoutingRules.<br>RoutingRule.Redirect | Specifies the destination protocol in the routing rule. Only HTTPS is allowed | String | No |
-| ReplaceKeyWith | WebsiteConfigura<br>tion.RoutingRules.<br>RoutingRule.Redirect | Specifies the object key to redirect to in the routing rule. It replaces the entire object key included in the request | String | Either or both of this parameter and `ReplaceKeyPrefixWith` must be specified |
-| ReplaceKeyPrefixWith | WebsiteConfigura<br>tion.RoutingRules.<br>RoutingRule.Redirect | Specifies the object key prefix to redirect to in the routing rule. It replaces the prefix matched in the request. It is set only if `Condition` is set to `KeyPrefixEquals`. | String | Either or both of this parameter and `ReplaceKeyWith` must be specified |
+| Condition | WebsiteConfiguration.RoutingRules.RoutingRule | Sets the condition for the redirect rule | Container | Yes |
+| Redirect | WebsiteConfiguration.RoutingRules.RoutingRule | Sets the redirect destination for the redirect rule | Container | Yes |
+
+**Content of the Container node `RoutingRules.RoutingRule.Condition`:**
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
+| --- | --- | --- | --- | --- |
+| HttpErrorCodeRetu<br>rnedEquals | WebsiteConfigura<br>tion.RoutingRules.<br>RoutingRule.Condition | Specifies the error code as the match condition for the routing rule. Valid values: only 4xx return codes, such as 403 or 404. | Integer | Either this parameter or `KeyPrefixEquals` must be specified. |
+| KeyPrefixEquals | WebsiteConfigura<br>tion.RoutingRules.<br>RoutingRule.Condition | Specifies the object key prefix as the match condition for the routing rule | String | Either this parameter or `HttpErrorCodeReturnedEquals` must be specified. |
+
+**Content of the Container node `RoutingRules.RoutingRule.Redirect`:**
+
+| Node Name (Keyword) | Parent Node | Description | Type | Required |
+| --- | --- | --- | --- | --- |
+| Protocol | WebsiteConfigura<br>tion.RoutingRules.<br>RoutingRule.Redirect | Specifies the target protocol for the routing rule. Only HTTPS is supported. | String | No |
+| ReplaceKeyWith | WebsiteConfigura<br>tion.RoutingRules.<br>RoutingRule.Redirect | Specifies the object key of the redirect destination in the routing rule to replace the entire object key included in the original request | String | Either this parameter or `ReplaceKeyPrefixWith` must be specified. |
+| ReplaceKeyPrefixWith | WebsiteConfigura<br>tion.RoutingRules.<br>RoutingRule.Redirect | Specifies the object key prefix of redirect destination in the routing rule to replace the prefix which the original request used for match. It is set only if the condition is `KeyPrefixEquals`. | String | Either this parameter or `ReplaceKeyWith` must be specified.|
 
 ## Response
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API returns only common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
@@ -151,9 +168,9 @@ The response body of this API is empty.
 
 #### Error codes
 
-This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Sample
 
 #### Request
 

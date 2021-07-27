@@ -1,10 +1,27 @@
-## Description
+## Overview
 
 COS allows you to manage the lifecycle of objects in buckets through the lifecycle configuration, which contains one or more rule sets that will be applied to a set of objects. Each rule defines a COS operation.
 There are two types of operations:
 
 - **Transition**: defines when an object is transitioned to another storage class. For example, you can transition an object to STANDARD_IA (suitable for infrequently accessed objects) 30 days after its creation. You can also transition the object to INTELLIGENT TIERING (suitable for objects with irregular access patterns) or ARCHIVE (offering lower costs). For specific parameters, please see `Transition` in the sample request description.
 - **Expiration**: specifies when an object shall expire. COS will automatically delete expired objects.
+
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                You are advised to use API Explorer.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=PutBucketLifecycle&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+            </div>
+        </div>
+    </div>
+</div>
 
 #### Notes
 
@@ -40,54 +57,54 @@ Nodes of the request body for this API are as follows:
 
 ```shell
 <LifecycleConfiguration>
-  <Rule>
-    <ID></ID>
-    <Filter>
-	   <And>
-          <Prefix></Prefix>
-		  <Tag>
-			 <Key></Key>
-			 <Value></Value>
-		  </Tag>
-	   </And>
-    </Filter>
-    <Status></Status>
-    <Transition>
-      <Days></Days>
-      <StorageClass></StorageClass>
-    </Transition>
-    <NoncurrentVersionExpiration>
-      <NoncurrentDays></NoncurrentDays>
-    </NoncurrentVersionExpiration>
-  </Rule>
-  <Rule>
-    <ID></ID>
-    <Filter>
-      <Prefix></Prefix>
-    </Filter>
-    <Status></Status>
-    <Transition>
-      <Days></Days>
-      <StorageClass></StorageClass>
-    </Transition>
-    <NoncurrentVersionTransition>
-      <NoncurrentDays></NoncurrentDays>
-      <StorageClass></StorageClass>
-    </NoncurrentVersionTransition>
-  </Rule>
-  <Rule>
-    <ID></ID>
-    <Filter>
-      <Prefix></Prefix>
-    </Filter>
-    <Status></Status>
-    <Expiration>
-      <ExpiredObjectDeleteMarker></ExpiredObjectDeleteMarker>
-    </Expiration>
-    <NoncurrentVersionExpiration>
-      <NoncurrentDays></NoncurrentDays>
-    </NoncurrentVersionExpiration>
-  </Rule>
+      <Rule>
+            <ID></ID>
+            <Filter>
+                  <And>
+                        <Prefix></Prefix>
+                        <Tag>
+                              <Key></Key>
+                              <Value></Value>
+                        </Tag>
+                  </And>
+            </Filter>
+            <Status></Status>
+            <Transition>
+                  <Days></Days>
+                  <StorageClass></StorageClass>
+            </Transition>
+            <NoncurrentVersionExpiration>
+                  <NoncurrentDays></NoncurrentDays>
+            </NoncurrentVersionExpiration>
+      </Rule>
+      <Rule>
+            <ID></ID>
+            <Filter>
+                  <Prefix></Prefix>
+            </Filter>
+            <Status></Status>
+            <Transition>
+                  <Days></Days>
+                  <StorageClass></StorageClass>
+            </Transition>
+            <NoncurrentVersionTransition>
+                  <NoncurrentDays></NoncurrentDays>
+                  <StorageClass></StorageClass>
+            </NoncurrentVersionTransition>
+      </Rule>
+      <Rule>
+            <ID></ID>
+            <Filter>
+                  <Prefix></Prefix>
+            </Filter>
+            <Status></Status>
+            <Expiration>
+                  <ExpiredObjectDeleteMarker></ExpiredObjectDeleteMarker>
+            </Expiration>
+            <NoncurrentVersionExpiration>
+                  <NoncurrentDays></NoncurrentDays>
+            </NoncurrentVersionExpiration>
+      </Rule>
 </LifecycleConfiguration>
 ```
 
@@ -106,14 +123,14 @@ The nodes are described as follows:
 |  Value  |    LifecycleConfiguration.Rule<br>.Filter.And.Tag | Value of the tag. It can be up to 256 bytes. Letters, digits, spaces, plus signs (+), minus signs (-), underscores (_), equal signs (=), dots (.), colons (:), and slashes (/) are supported. | String | No |
 | Status | LifecycleConfiguration.Rule | Indicates whether the rule is enabled. Enumerated values: `Enabled`, `Disabled` | String | Yes |
 | Expiration | LifecycleConfiguration.Rule | Expiration attributes of the rule | Container | No |
-| Transition | LifecycleConfiguration.Rule | Specifies when to transition the object to another storage class and the storage class to transition to. | Container | No |
+| Transition | LifecycleConfiguration.Rule    | Specifies when to transition the object and the target storage class. | Container | No  |
 | Days | LifecycleConfiguration.Rule<br>.Transition or Expiration | Specifies the number of days between the date an object was last modified and the date when the operation corresponding to the rule is performed. <br><li>If it is a `Transition` operation, this value should be a non-negative integer. <br><li>If it is an `Expiration` operation, this value should be a positive integer. The maximum value is 3650 (days). | Integer | No |
 | Date | LifecycleConfiguration.Rule<br>.Transition or Expiration | Specifies when the operation corresponding to the rule is performed. Supported formats are `2007-12-01T12:00:00.000Z` <br>and `2007-12-01T00:00:00+08:00`. | String | No |
 | ExpiredObjectDeleteMarker | LifecycleConfiguration.Rule<br>.Expiration | Indicates whether the delete marker of an expired object will be removed. Enumerated values: `true`, `false` | String | No |
 | AbortIncompleteMultipartUpload | LifecycleConfiguration.Rule | Specifies the time to abort the multipart upload. | Container | No |
 | DaysAfterInitiation | LifecycleConfiguration.Rule<br>.AbortIncompleteMultipartUpload | Specifies the number of days within which the multipart upload must be completed after it starts. | Integer | Yes |
 | NoncurrentVersionExpiration | LifecycleConfiguration.Rule | Specifies when noncurrent object versions shall expire. | Container | No |
-| NoncurrentVersionTransition | LifecycleConfiguration.Rule | Specifies when to transition noncurrent objects to another storage class and the storage class to transition to. | Container | No |
+| NoncurrentVersionTransition | LifecycleConfiguration.Rule | Specifies when to transition objects of noncurrent versions and the target storage class. | Container | No |
 | NoncurrentDays | LifecycleConfiguration.Rule<br>.NoncurrentVersionExpiration <br>or NoncurrentVersionTransition | Specifies the number of days between the date when an object becomes noncurrent and the date when the operation corresponding to a rule is performed.<br><li>If it is a `Transition` operation, this value should be a non-negative integer.<br><li>If it is an `Expiration` operation, this value should be a positive integer. The maximum value is 3650 (days). | Integer | No |
 | StorageClass | LifecycleConfiguration.Rule<br>.Transition or <br>NoncurrentVersionTransition | Specifies the storage class of the transitioned object. Enumerated values: `STANDARD_IA`, `INTELLIGENT_TIERING`, `ARCHIVE`, `DEEP_ARCHIVE`. | String | Yes |
 
@@ -144,28 +161,31 @@ Content-MD5: LcNUuow8OSZMrEDnvndw1Q==
 Content-Length: 348
 Content-Type: application/x-www-form-urlencoded
 
+
+
 <LifecycleConfiguration>
-  <Rule>
-    <ID>id1</ID>
-    <Filter>
-       <Prefix>documents/</Prefix>
-    </Filter>
-    <Status>Enabled</Status>
-    <Transition>
-      <Days>100</Days>
-      <StorageClass>ARCHIVE</StorageClass>
-    </Transition>
-  </Rule>
-  <Rule>
-    <ID>id2</ID>
-    <Filter>
-       <Prefix>logs/</Prefix>
-    </Filter>
-    <Status>Enabled</Status>
-    <Expiration>
-      <Days>10</Days>
-    </Expiration>
-  </Rule>
+      <Rule>
+            <ID>id1</ID>
+            <Filter>
+                  <Prefix>documents/</Prefix>
+            </Filter>
+            <Status>Enabled</Status>
+            <Transition>
+                  <Days>100</Days>
+                  <StorageClass>ARCHIVE</StorageClass>
+            </Transition>
+      </Rule>
+      <Rule>
+            <ID>id2</ID>
+            <Filter>
+                  <Prefix>logs/</Prefix>
+            </Filter>
+            <Status>Enabled</Status>
+            <Transition>
+                  <Days>10</Days>
+                  <StorageClass>STANDARD_IA</StorageClass>
+            </Transition>
+      </Rule>
 </LifecycleConfiguration>
 ```
 
