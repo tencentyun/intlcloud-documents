@@ -11,7 +11,7 @@ You have tagged a group of users as "lost users" and want to push a "benefit cla
 1. Log in to the [TPNS console](https://console.cloud.tencent.com/tpns).
 2. Go to **Push Management** > **Task List**.
 3. Click **Create Push**, expand the **Advanced** section, enable **Custom Push Speed**, and set a speed.
-<img src="https://main.qcloudimg.com/raw/e3605e2cecd30b3e46eb4a376dd15dcd.png" style="width: 75%"/><br/>
+
 After Custom Push Speed is enabled, the message will be pushed to devices that match the push target at the set speed.
 >?
 > - Only push to all devices and push by tag support Custom Push Speed.
