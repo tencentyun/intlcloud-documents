@@ -1,69 +1,119 @@
 
-## Overview
-In Tencent Container Registry (TCR), an image repository is used to manage container images. A single image repository may contain container images with different tags. An image repository belongs to a namespace and inherits the public or private attribute and security scan triggering mode from its namespace.
+## 操作场景
+腾讯云容器镜像服务（Tencent Container Registry，TCR）中的镜像仓库用于直接管理容器镜像，单个镜像仓库可包含不同版本的容器镜像。镜像仓库归属于命名空间，并从命名空间继承了公开、私有属性及安全扫描触发方式。
 
-An image repository is the minimum unit for permission management in TCR. The instance admin can grant image repository management or read-only permission to a sub-user. For example, the instance admin can grant the "tom" sub-account only the permission to pull images from the "project-a-frontend" image repository, but disallow the sub-account to push or delete images. For more information about other permission management and authorization methods, see [Example of Authorization Solution of the Enterprise Edition](https://intl.cloud.tencent.com/document/product/1051/37248). This document describes how to create and manage an image repository in a TCR enterprise edition instance.
-
-
-
-## Prerequisites
-
-Before creating and managing an image repository for a TCR enterprise edition instance, complete the following tasks:
-- [Create an enterprise edition instance](https://intl.cloud.tencent.com/document/product/1051/35486).
-- If you are using a sub-account, you must have granted the sub-account operation permissions for the corresponding instance. For more information, see [Example of Authorization Solution of the Enterprise Edition](https://intl.cloud.tencent.com/document/product/1051/37248).
-
-## Directions
+镜像仓库是 TCR 中进行权限管理的最小单位，实例管理员可授予子用户镜像仓库的管理或只读权限。例如，授权子账户 tom 仅能拉取镜像仓库 project-a-frontend 中的镜像，但无法推送或删除镜像的权限。更多权限管理及授权方式请参考 [企业版授权方案示例](https://intl.cloud.tencent.com/document/product/1051/37248)。本文档介绍如何在 TCR 企业版实例内创建并管理镜像仓库。
 
 
-### Creating an image repository
-1. Log in to the [TCR console](https://console.cloud.tencent.com/tcr) and select **Image Repository** in the left sidebar.
-On the "Image Repository" page, you can view the image repository list of the current instance. To change the instance, select the desired instance name from the "Instance Name" drop-down list at the top of the page.
-2. Click **Create**. In the "Create an Image Repository" window, configure the following shown in the figure below for the image repository.
+
+## 前提条件
+
+在创建并管理 TCR 企业版实例的镜像仓库前，您需要完成以下准备工作：
+- 已成功 [购买企业版实例](https://intl.cloud.tencent.com/document/product/1051/39088)。
+- 如果使用子账号进行操作，请参考 [企业版授权方案示例](https://intl.cloud.tencent.com/document/product/1051/37248) 提前为子账号授予对应实例的操作权限。
+
+## 操作步骤
+
+
+### 创建镜像仓库
+1. 登录 [容器镜像服务](https://console.cloud.tencent.com/tcr) 控制台，选择左侧导航栏中的【镜像仓库】。
+在“镜像仓库”页面即可查看当前实例内的镜像仓库列表。如需切换实例，请在页面上方的“实例名称”下拉列表中进行选择。
+2. 单击【新建】，在“新建镜像仓库”窗口中，参考以下提示进行镜像仓库配置。如下图所示：
 ![](https://main.qcloudimg.com/raw/d2c65e5fb0dfcad5b119c39bca4506d0.png)
- - **Associated Instance**: currently selected instance, to which the created image repository belongs.
- - **Namespace**: namespace to which the image repository belongs. If the list is empty, you must [create a namespace](https://intl.cloud.tencent.com/document/product/1051/35487) in the instance.
- **Name**: name of the image repository. The value must be 2 to 200 characters in length and can only contain lowercase letters, numbers, and separators (including periods (.), underscores (_), hyphens (-), and slashes (/). It cannot start or end with a separator or contain several consecutive separators. The name can be a multi-level path, such as `team-01/front/nginx`. You can set the name flexibly based on your business requirements.
- - **Image Source**: "Local Push" and "Auto Build" are supported. 
- - **Summary**: brief description of the image repository. It is a string of up to 100 characters. You can re-edit the summary after the image repository is created.
- - **Description**: detailed description of the image repository. This parameter supports the Markdown syntax. It is a string of up to 1000 characters. You can modify the description after the image repository is created.
-3. Click **OK** to create the image repository.
+ - **所属实例**：当前所选实例，新建的命名空间将属于该实例。
+ - **命名空间**：镜像仓库所属的命名空间，如果列表为空，请先在该实例内 [新建命名空间](https://intl.cloud.tencent.com/document/product/1051/35487)。
+ - **名称**：镜像仓库名称，长度为2 - 200个字符，只能包含小写字母、数字及分隔符（`.`、`_`、`-`、`/`），且不能以分隔符开头、结尾或连续。名称支持多级路径，例如 `team-01/front/nginx`，可根据业务需要灵活设置。
+ - **镜像来源**：支持“本地推送镜像”及“平台构建镜像”，如何通过平台构建镜像请参见 [配置镜像构建](https://intl.cloud.tencent.com/document/product/1051/37252)。
+ - **简短描述**：简短描述镜像仓库信息。支持中文输入，最长为100个字符，可在创建后重新编辑。
+ - **详细描述**：详细描述镜像仓库信息。支持 Markdown，最长为1000个字符，可在创建后继续编辑。
+3. 单击【确定】即可创建镜像仓库。
 
-### Basic image repository operations
-After the image repository is created, you can view the image repository on the "Image Repository" page. Then, you can perform the operations shown in the figure below to manage the image repository.
+### 镜像仓库相关操作
+成功创建后即可在“镜像仓库”页面查看，此时您可执行以下操作对镜像仓库进行管理。如下图所示：
 ![](https://main.qcloudimg.com/raw/4670963ae339d0a177d29a247294281e.png)
+-  **筛选命名空间**
+在“镜像仓库”列表中选择<img src="https://main.qcloudimg.com/raw/cec7f1733d3e76d18c27b0bcbb65965b.png" style="margin: -3px 0px">进行筛选，即可在下拉列表中选择仅需要查看的命名空间。
+- **查看仓库详情**
+单击指定镜像仓库的名称即可进入该仓库的详情页面，可在详情页中管理镜像版本，编辑镜像仓库的基本信息。
+-  **删除镜像仓库**
+单击指定镜像仓库所在行右侧的【删除】即可删除该镜像仓库。为避免您误删重要数据，删除镜像仓库时需要二次确认。
+>!镜像仓库被删除后，**镜像仓库内的所有容器镜像均被直接删除**。 
 
-- **Filtering namespaces**
-Select <img src="https://main.qcloudimg.com/raw/cec7f1733d3e76d18c27b0bcbb65965b.png" style="margin: -3px 0px"> from the "Image Repository" list for filtering. Then, you can select a namespace to view from the drop-down list.
-- **Viewing details of a repository**
-Click the name of a specified image repository. The repository details page is displayed, where you can manage the image tag and edit the basic information of the image repository.
-- **Deleting an image repository**
-You can click **Delete** next to an image repository to delete it. Carefully review the deletion operation before confirming it to prevent important data from being deleted by mistake.
->! After the image repository is deleted, **all container images in the image repository are deleted**. 
 
-
-### Managing image tags
-Click the name of a specified image repository. The repository details page is displayed, and the **Tag Management** tab is selected by default. On this page, you can manage all the image tags in the repository, perform security scans, and view the layer information, as shown in the figure below.
+### 管理镜像版本
+单击指定镜像仓库名称，即可进入该仓库的详情页面，默认选择【版本管理】页签。您可在此页面管理仓库内的镜像版本，并执行安全扫描，查看层信息等操作。如下图所示：
 ![](https://main.qcloudimg.com/raw/ce5ffd78da771800385e27118a9c98be.png)
+- **筛选镜像版本**
+在版本列表右上方搜索框中输入指定的镜像版本即可镜像搜索，支持模糊搜索。
+- **获取拉取指令**
+选择指定镜像版本所在行右侧的【拉取指令】即可复制该镜像版本的拉取指令。
+- **执行安全扫描**
+选择指定镜像版本所在行右侧的【扫描】即可主动触发安全扫描，待对应的“安全级别”属性出现扫描结果时，即可单击<img src="https://main.qcloudimg.com/raw/269b8df52ed30d1c102de61bcb5e1b6a.png" style="margin:-3px 0px">查看结果详情。
+- **查看镜像层信息**
+选择指定镜像仓库的所在行右侧的【层信息】即可在弹窗中查看该镜像的层信息。
+- **删除镜像版本**
+ 选择指定镜像仓库的所在行右侧的【删除】即可删除该镜像版本。为避免您误删重要数据，删除镜像版本时需要二次确认。
+ >!删除指定镜像版本可能会同时删除与其镜像 ID 相同的其他镜像版本，造成其他镜像版本不可用。
 
-- **Filtering image tags**
-In the search box in the upper-right part of the tag list, you can enter an image tag to search for this image tag. Fuzzy search is supported.
-- **Obtaining the pulling command**
-You can click **Pull Command** next to the target image tag to copy the pulling command of the image tag.
-- **Performing a security scan**
-You can click **Scan** next to the target image tag to actively trigger a security scan. When the result is available for the corresponding "Security Level" attribute, click <img src="https://main.qcloudimg.com/raw/269b8df52ed30d1c102de61bcb5e1b6a.png" style="margin:-3px 0px"> to view the detailed result.
-- **Viewing the image layer information**
-You can click **Layer Information** next to a target image repository to view the layer information for this image in the pop-up window.
-- **Deleting an image tag**
- You can click **Delete** next to the target image tag to delete this image tag. Carefully review the deletion operation before confirming it to prevent important data being deleted by mistake.
- >! When a specified image tag is deleted, other image tags that have the same image ID as the deleted image tag may also be deleted. Consequently, these image tags will become unavailable.
+### 镜像构建
+支持使用托管在 GitHub、GitLab.com、Gitee 码云 及 CODING 上的源代码进行编译构建，详情请参见 [配置镜像构建](https://intl.cloud.tencent.com/document/product/1051/37252)。
 
-### Building images
-You can use the source code hosted on GitHub, GitLab.com, Gitee code cloud, or CODING to compile and build an image.
-
-### Editing the repository information
-On the details page of the image repository, you can select the **Repository Information** tab to view and edit basic information about the image repository, as shown in the figure below.
+### 编辑仓库信息
+在镜像仓库的详情页面选择【仓库信息】页签，即可查看并编辑仓库的基本信息。如下图所示：
 ![](https://main.qcloudimg.com/raw/cba04ac5a3c628095d8d02b95b4b1581.png)
-- **Editing the summary**
-Select <img src="https://main.qcloudimg.com/raw/f6a3c9acf9c397aa917299582b7b7523.png" style="margin:-3px 0px"> next to "Summary" to enter the editing state. After editing the summary, click **Save** to save the modification.
-- **Editing the description**
-Select <img src="https://main.qcloudimg.com/raw/f6a3c9acf9c397aa917299582b7b7523.png" style="margin:-3px 0px"> next to "Description" to enter the editing state. After editing the description, click "Save" to save the modification. "Description" supports the Markdown syntax. You can view the rendered text effect after the modification is saved.
+- **编辑简短描述**
+选择“简短描述”后的<img src="https://main.qcloudimg.com/raw/f6a3c9acf9c397aa917299582b7b7523.png" style="margin:-3px 0px">，即可进入编辑状态，完成修改后单击【保存】即可完成编辑。
+- **编辑详细描述**
+选择“详细描述”后的<img src="https://main.qcloudimg.com/raw/f6a3c9acf9c397aa917299582b7b7523.png" style="margin:-3px 0px">，即可进入编辑状态，完成修改后单击【保存】即可完成编辑。详细描述支持 Markdown 语法，保存后可查看渲染后的文本效果。
+
+
+
+
+
+## 相关操作
+### 使用正则表达式新建规则 [](id:RE)
+#### 正则匹配规则
+以下是填写“仓库名称”和“版本Tag”时，其正则表达式支持的匹配规则：
+- `*`：匹配所有不包含路径分隔符（`/`）的任意长字符串。
+- `**`：匹配所有的任意长字符串，包括路径分隔符（`/`）。
+<dx-alert infotype="notice" title="">
+`**` 必须作为一段完整的相对路径，如果使用 `/path**`，其作用将等同于 `/path*`，仅能匹配以path为名称前缀的一级仓库。要想匹配path下的所有仓库，应使用 `/path/**`；要想匹配以path为名称前缀的所有仓库，则应使用 `/path*/**`。
+</dx-alert>
+- `?`：匹配除 ‘/’ 以外的任意单个字符。
+- `{alt1, alt2, …}`：同时匹配多个正则表达式。
+
+
+#### 典型场景
+
+<table>
+<tbody>
+<tr>
+<td>匹配选定命名空间内所有仓库</td>
+<td><code>**</code> 或者不填</td>
+</tr>
+<tr>
+<td>匹配选定命名空间内以 path 为名称前缀的所有一级仓库</td>
+<td><code>/path*</code> 
+</tr>
+<tr>
+<td>匹配选定命名空间内以 path1 和 path2 为名称前缀的所有一级仓库</td>
+<td><code>/{path1, path2}*</code></td>
+</tr>
+<tr>
+<td>匹配选定命名空间内 path1 和 path2 目录下的所有仓库</td>
+<td><code>/{path1, path2}/**</code></td>
+</tr>
+<tr>
+<td>匹配选定命名空间内以 path1 和 path2 为名称前缀的所有仓库</td>
+<td><code>/{path1, path2}*/**</code> </td>
+</tr>
+<tr>
+<td>匹配选定仓库内所有 1.x 的版本Tag</td>
+<td><code>1.?</code> </td>
+</tr>
+<tr>
+<td>匹配选定仓库内所有以 env1 和 env2 为名称前缀的版本 Tag</td>
+<td><code>{env1*, env2*}</code> </td>
+</tr>
+</tbody>
+</table>

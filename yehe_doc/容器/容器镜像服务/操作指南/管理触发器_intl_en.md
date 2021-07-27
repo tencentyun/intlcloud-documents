@@ -17,14 +17,15 @@ Before creating and managing a trigger in an TCR Enterprise Edition instance, co
 On the "Trigger" page, you can view the list of trigger rules for the current instance. To change the instance, select the desired instance name from the "Instance Name" drop-down list at the top of the page.
 2. Click **Create**. In the "Create a Trigger" window, configure the rule based on the following information. See the figure below.
 ![](https://main.qcloudimg.com/raw/70e694eb396edf97d548fd300307bb81.png)
+
  - **Name**: instance rule name. It supports lowercase letters, numbers, and three symbols (`-`, `.`, and `_`). It must start with a letter or number. In this document, `webhook-demo` is used as an example.
  - **Description**: rule description.
  - **Action**: currently, four trigger actions are supported: push image, delete image, upload Chart, and delete Chart. During the trigger execution, the initiated webhook request will contain information about the trigger action.
- - **Triggerring Rule**:
+ - **Triggering Rule**:
     - **Triggered Instance**: the instance to which the trigger belongs, which is the currently selected instance and cannot be changed.
     - **Namespace**: the namespace for which the trigger takes effect. If the list is empty, please first [create namespaces](https://intl.cloud.tencent.com/document/product/1051/35487) in the instance.
-    - **Repository Name**: the name of the repository for which the trigger takes effect. [Regular matching](#RE) of image repositories and Helm Charts is supported.
-    - **Tag**: the tag for which the trigger takes effect. It supports regular matching. If you want the trigger to take effect for all tags, you need not specify this parameter.
+    - **Repository Name**: the name of the repository for which the trigger takes effect. [Regular matching](https://intl.cloud.tencent.com/document/product/1051/35488) of image repositories and Helm Charts is supported.
+    - **Tag**: the tag for which the trigger takes effect. It supports [regular matching](https://intl.cloud.tencent.com/document/product/1051/35488). If you want the trigger to take effect for all tags, you can leave this parameter empty.
  - **URL**: the target URL for request initiation after the trigger is triggered. The trigger will send a POST request to the URL, and the request body contains the trigger action, triggering rule, and other information.
  - **Header**: the Header information in Key:Value format to be carried in a POST request initiated by the trigger, for example, `Authentication: xxxxxxx`.
 3. Click **Confirm**.
@@ -32,19 +33,21 @@ On the "Trigger" page, you can view the list of trigger rules for the current in
 ### Managing trigger rules
 After a trigger rule is created, you can view the trigger rule on the "Trigger" page. Then, you can perform the following operations to manage trigger rules. See the figure below:
 ![](https://main.qcloudimg.com/raw/408ac4c6409ae1f24f8a90c8652120bc.png)
-- **View Triggering Log**: you can click the name of a specific trigger rule or click **Triggering Log** to the right of the trigger rule name to view the triggering log of the rule. For more information, see [Viewing Trigger Logs](#CheckLog).
+
+- **View Triggering Log**: you can click the name of a specific trigger rule or click **Triggering Logs** to the right of the trigger rule name to view the triggering log of the rule. For more information, see [Viewing Trigger Logs](#CheckLog).
 - **Modify Rule Status**: <img src="https://main.qcloudimg.com/raw/d31873587cb976e1429768b2dc2b0e16.png" style="margin:-6px 0px"> indicates that a rule is enabled, and <img src="https://main.qcloudimg.com/raw/5ba06490364505efc4d698e3adb1064e.png" style="margin:-6px 0px"> indicates that a rule is disabled. A newly created trigger rule is enabled by default, and you can change its status as needed.
-- **Configure**: you can re-configure all parameters of the trigger rule.
+- **Configuration**: you can re-configure all parameters of the trigger rule.
 - **Delete**: you can delete the trigger rule.
 
 
 ### Viewing trigger logs[](id:CheckLog)
-You can click the name of a specific trigger rule or click **Triggering Log** to the right of the trigger rule name to view the triggering log of the rule. See the figure below:
+You can click the name of a specific trigger rule or click **Triggering Logs** to the right of the trigger rule name to view the triggering log of the rule. See the figure below:
 ![](https://main.qcloudimg.com/raw/71ffa1471545e6bd8ceb57222fa396ed.png)
+
 The log contains the following information:
 - **Task ID**: trigger task ID, which is unique in the instance.
 - **Action**: the action that launched the trigger, such as image push.
-- **Trigger Repository**: the repository resources that launched the trigger.
+- **Triggered Repository**: the repository resources that launched the trigger.
 - **Status**: success status of the trigger in executing the webhook request.
 - **Creation Time**: the time when the trigger was launched, that is, the time when the webhook request was initiated.
 
@@ -77,51 +80,5 @@ When users perform a relevant action on resources that meet a trigger rule, for 
 
 
 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
-
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
-  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
 
 
