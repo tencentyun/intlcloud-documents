@@ -1,7 +1,7 @@
 ## Feature
 This API **imageView2** from Tencent Cloud CI is used to provide common image processing templates in COS. You only need to add appropriate parameters to the downloading URL to generate thumbnails that you want. Currently, supported images are smaller than 20 MB in size and smaller than 9,999 pixels in length and width.
 
->Image processing is a paid service, the fees of which are charged by Cloud Infinite. For detailed billing instructions, see Cloud Infinite’s [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/33431).
+>!Image processing is a paid service, the fees of which are charged by Cloud Infinite. For detailed billing instructions, see Cloud Infinite’s [Billing and Pricing](https://intl.cloud.tencent.com/document/product/1045/33431).
 
 ## API Form
 
@@ -14,7 +14,7 @@ imageView2/<mode>/w/<Width>
                  /lq/<Quality>			
 ```
 
->Quality conversion parameters are only applicable to **jpg** and **webp** images.
+>!Quality conversion parameters are only applicable to **jpg** and **webp** images.
 
 
 ## Parameter Description
