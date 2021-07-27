@@ -27,15 +27,6 @@ You can log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?ri
 ### How can I modify the VPN tunnel configuration?
 You can log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1) to modify the VPN tunnel configuration as instructed in [Modifying VPN Tunnel](https://intl.cloud.tencent.com/document/product/1037/32701).
 
-### How can I enable gateway traffic monitoring details?
-You can log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1) to enable gateway traffic monitoring details as instructed in [Enabling Gateway Traffic Monitoring Details](https://intl.cloud.tencent.com/document/product/1037/32702).
-
-### How can I set gateway traffic monitoring details?
-You can log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1) to set gateway traffic monitoring details as instructed in [Setting Gateway Traffic Monitoring Details](https://intl.cloud.tencent.com/document/product/1037/32703).
-
-### How can I view gateway traffic monitoring details?
-You can log in to the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1) to view gateway traffic monitoring details as instructed in [Viewing Gateway Traffic Monitoring Details](https://intl.cloud.tencent.com/document/product/1037/32704).
-
 ### How can I bind an Anti-DDoS instance?
 You can log in to the [Anti-DDoS Pro console](https://console.cloud.tencent.com/ddos/overview) to bind an Anti-DDoS instance as instructed in [Binding an Anti-DDoS Instance](https://intl.cloud.tencent.com/document/product/1037/32705).
 
