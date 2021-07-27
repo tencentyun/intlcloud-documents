@@ -6,8 +6,8 @@ TencentDB for Tendis Hybrid Storage Edition (cluster architecture) is based on T
 - Hybrid Storage Edition (cluster architecture) stores all data on disk, and caches all keys and the values of hot keys in the memory.
 
 ## Features
-#### Low cost
-- Data is automatically cached and automatically degraded to cold data. All data is stored on disk, and hot data is cached in the memory. Hybrid Storage Edition reduces operating costs by 40% to 80% compared with TencentDB for Redis Memory Edition.
+#### Low costs
+- Data is automatically cached and automatically degraded to cold data. All data is stored on disk, and hot data is cached in the memory. Hybrid Storage Edition reduces operating costs by 40% to 80% compared with TencentDB for Tendis Memory Edition.
 - Hybrid Storage Edition adopts the LZ4 data compression algorithm to automatically compress data once stored on disk, which balances performance and capacity and saves up to 90% of the disk capacity.
 
 #### High efficiency
@@ -15,17 +15,17 @@ TencentDB for Tendis Hybrid Storage Edition (cluster architecture) is based on T
 - In Hybrid Storage Edition, the business does not need to swap hot and cold data, or deal with the data inconsistency, cache breakdown, cache avalanche and other problems existing in traditional caching schemes. Hybrid Storage Edition reduces the complexity of the business, improves the development efficiency and reduces the OPS cost.
 
 #### High performance
-- Up to 3,000,000+ [QPS](https://intl.cloud.tencent.com/document/product/1083/39245) for hot data access, comparable to native Redis
-- Up to 1,000,000 QPS for concurrent writes
+- Hot data access performance comparable to native Redis that can sustain more than 3 million [QPS](https://intl.cloud.tencent.com/document/product/1083/39245).
+- Up to 1 million QPS for concurrent writes.
 
 #### Large capacity
-- Super-large storage capacity of 240 GB to 32 TB
+- Super-Large storage capacity of 240 GB to 32 TB
 - The data stored on disk can have 6 replicas, fully ensuring data reliability.
 
 ## Architecture
 The core components of TencentDB for Tendis Hybrid Storage Edition (cluster architecture) include Proxy, Redis cache, and Tendis engine, as described below:
 - Proxy: it routes and distributes client requests, distributes commands to the correct shard according to their keys, collects part of monitoring data, and disables high-risk commands online, etc.
-- Redis cache: it is based on Redis 4.0 Cluster Edition. In order to achieve automatic degradation to cold data, Hybrid Storage Edition modifies core Redis features, including value eviction, value eviction based on time, synchronization of written data to Tendis, cold data access, and master/slave synchronization of hot data, etc. The modified Redis in Hybrid Storage Edition is 100% compatible with Redis 4.0 Cluster Edition commands.
+- Redis cache: it is based on Redis 4.0 Cluster Edition. In order to achieve automatic degradation to cold data, Hybrid Storage Edition modifies core Redis features, including value eviction, value eviction based on time, synchronization of written data to Tendis, cold data access, and primary/secondary synchronization of hot data, etc. The modified Redis in Hybrid Storage Edition is 100% compatible with Redis 4.0 Cluster Edition commands.
 - Tendis engine: it is a KV storage engine developed by Tencent and compatible with Redis protocols. Tendis has been used in Tencent for many years with its performance and stability being fully verified. In the hybrid storage system, its key features include the storage and reading of full data, data backup, incremental log backup, etc.
 
 
@@ -48,28 +48,28 @@ redis-benchmark -h 10.0.0.5 -p 6379 -c 100 -n 60000000 -r 1000000000 -d 128 -t s
 | 8 | 512 | 2,000 - 4,000|120,000|
 | 16 | 256 | 960 - 1,920|240,000|
 | 16 | 512 | 1,920 - 3,840|240,000|
-| 16 | 1,024 | 4,000 - 8,000|240,000|
+| 16 | 1024 | 4,000 - 8,000|240,000|
 | 32 | 512 | 3,840 - 7,680|480,000|
-| 32 | 1,024 | 7,680 - 15,360|480,000|
-| 32 | 2,048 | 16,000 - 32,000|480,000|
+| 32 | 1024 | 7,680 - 15,360|480,000|
+| 32 | 2048 | 16,000 - 32,000|480,000|
 
 
 ## Degradation to Cold Data
 #### Value eviction policy
-- **Value eviction only**
-When you set a timeout period for keys or use the `expire` command, both keys and values will be evicted from the memory; otherwise, only values will be evicted.
 - **value-eviction-policy**
- - Through `value-eviction-policy`, you can set how many days a key has not been accessed before it is automatically evicted from the memory.
- - The default value of this parameter is 7 days, which can be modified by users in the console.
+ - Valid values of the `value-eviction-policy` parameter include `time-to-eviction` and `none`. The default value is `none`, indicating that keys will not be evicted from the memory by default if the memory is sufficient.
+ - By setting `value-eviction-policy` to `time-to-eviction`, you can specify that keys that have not been accessed in N minutes will be automatically evicted from the memory. The default value of the `value-time-to-eviction` parameter is 10,080 minutes (7 days), which can be customized in the [console](https://console.cloud.tencent.com/tendis#/).
 - **maxmemory-policy**
  - Hybrid Storage Edition only supports `allkeys-lru` (default) and `allkeys-random`.
  - When memory usage reaches `maxmemory`, the system evicts values from the memory according to `maxmemory-policy`.
 
 #### Value cache policy
 - **value-cache-policy**
-You can use this parameter to configure when disk data is cached into memory: Tendis caches a value into the memory if the number of times the value is accessed within 5 minutes is greater than `value-cache-policy`. This parameter can avoid cache invalidation caused by, such as, data traversal. If this parameter is configured to `1`, the cold data is immediately cached.
+You can use this parameter to configure when the data will be cached into the Tendis cache. You can also use the following parameters to avoid cache invalidation issues caused by data traversal and other operations.
+ - The default value of the `value-cache-policy-period` parameter is 300 seconds (5 minutes). You can specify that if the number of key accesses within N seconds is greater than or equal to N (value of `value-cache-policy-threshold`), Tendis will cache the value into the memory.
+ - The default value of the `value-cache-policy-threshold` parameter is 1, and its range value is 1–100. If it is set to 1, cold data will be cached immediately.
 
-- **The `expire` command description**
+- **`expire` command description**
 If you use `Expire Time` to set a timeout period for keys, Hybrid Storage Edition will follow the original semantics of this command to evict expired keys and values from the memory and disks. The same is true for keys set with `EXPIRE`, `EXPIREAT`, `PEXPIRE`, and `PEXPIREAT` commands. 
 
 - **Big key eviction**
@@ -112,21 +112,18 @@ Through VIP encapsulation, Hybrid Storage Edition (cluster architecture) provide
   Custom command:
   info server ef3cf5e20e1a7cf5f9cc259ed488c82c4aa17171
 
-  SCAN command examples:
+  Sample `SCAN` command:
   scan 0 238b45926a528c85f40ae89d6779c802eaa394a2
   scan 0 match a* 238b45926a528c85f40ae89d6779c802eaa394a2
 
-  KEYS command example:
+  Sample `KEYS` command:
   keys a* 238b45926a528c85f40ae89d6779c802eaa394a2
 ```
 
-- **Transactional support**
-Hybrid Storage Edition (cluster architecture) supports transactional commands. The keys of a transaction should be stored in the same slot, and the keys of the `WATCH` command and transaction-related keys should be stored in the same slot too. HashTag is recommended for multikey transactions in cluster mode.
-
-- **Multi-database support**
+- **Multi-Database support**
 Hybrid Storage Edition (cluster architecture) supports the `SELECT 0` command but not multiple databases.
 
-- **Poor-performance commands**
-  - `linsert` and `lrem`: the `linsert` and `lrem` commands in the List command family have poor performance and are not recommended thus. They will traverse the list nodes in the disk with the O(n) execution time complexity. If there are many list nodes, the command execution will time out.
+- **Poor-Performance commands**
+  - `linsert` and `lrem`: the `linsert` and `lrem` commands in the List command group have poor performance and are not recommended thus. They will traverse the list nodes in the disk with the O(n) execution time complexity. If there are many list nodes, the command execution will time out.
   - `append`: the `append` command performs poorly when the character size exceeds 1 MB.
 
