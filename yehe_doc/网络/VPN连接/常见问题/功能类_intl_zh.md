@@ -27,5 +27,34 @@ IPsec VPN 可以在控制台实现全自助配置，详情请参见 [快速入�
 ### 如何修改 VPN 通道配置？
 用户可以进入 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1) 修改 VPN 通道配置，详情请参见 [修改 VPN 通道配置](https://intl.cloud.tencent.com/document/product/1037/32701)。
 
+### 如何开启网关流控明细？
+用户可以进入 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1) 开启网关流控明细，详情请参见 [开启网关流控明细](https://intl.cloud.tencent.com/document/product/1037/32702)。
+
+### 如何设置网关流控明细？
+用户可以进入 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1) 设置网关流控明细，详情请参见 [设置网关流控明细](https://intl.cloud.tencent.com/document/product/1037/32703)。
+
+### 如何查看网关流控明细？
+用户可以进入 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1) 查看网关流控明细，详情请参见 [查看网关流控明细](https://intl.cloud.tencent.com/document/product/1037/32704)。
+
 ### 如何绑定高防包？
 用户可以进入 [DDoS 防护（大禹）管理控制台](https://console.cloud.tencent.com/ddos/overview) 绑定高防包，详情请参见 [绑定高防包](https://intl.cloud.tencent.com/document/product/1037/32705)。
+
+### 为什么创建不了100MB以上的VPN连接？
+- 部分地域还未开放，请在控制台进行查看。
+- A5路由未配置。
+- 您的账户还未开通该功能，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。
+
+### 健康检查怎么配置？
+1. 首先确保与 VPN 相连的对端是否为路由型网关，需要进行路由型做对接。
+2. 在腾讯云控制台侧配置健康检查。
+>?
+>- 在进行健康检查配置前，请做好隧道主备，以防业务受到影响。
+>- 需要确保两端 IP 不冲突，如果两端 IP 在同一网段，则不需要单独配置路由来指定对端。
+3. 配置 VPN 网关路由并设置优先级。
+
+### 通道未联通/已删除，为什么还在自动扣费？
+腾讯云 VPN 收取的是出 VPN 网关的流量的费用，不使用时请及时删除。
+
+
+
+
