@@ -34,7 +34,7 @@ You can install the SDK using [Composer](#composer), [Phar](#phar), or the [sour
 <span id="composer"></span>
 #### Composer
 It is recommended to install cos-php-sdk-v5 with Composer, a PHP dependency manager that allows you to declare the dependencies necessary for your project and then automatically installs them into your project.
-> You can find more information such as how to install Composer, how to configure auto-load, and other best practices for defining dependencies at [Composer official website](https://getcomposer.org/).
+>!You can find more information such as how to install Composer, how to configure auto-load, and other best practices for defining dependencies at [Composer official website](https://getcomposer.org/).
 
 **Installation steps**
 1. Start the terminal.
@@ -153,9 +153,9 @@ try {
 
 ### Uploading an object
 >!
-* Upload a file (up to 5 GB) using the putObject API.
-* Upload a file using the Upload API. The Upload API is a composition API that uses simple upload for small files and uses multipart upload for large files.
-* For the parameter description, please see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31542#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1).
+>* Upload a file (up to 5 GB) using the putObject API.
+>* Upload a file using the Upload API. The Upload API is a composition API that uses simple upload for small files and uses multipart upload for large files.
+>* For the parameter description, please see [Object Operations](https://intl.cloud.tencent.com/document/product/436/31542#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1).
 
 [//]: # ".cssg-snippet-put-object-comp"
 ```php
