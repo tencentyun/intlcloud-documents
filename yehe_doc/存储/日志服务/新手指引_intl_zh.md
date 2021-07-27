@@ -8,10 +8,13 @@
 - [腾讯云日志服务有哪些可用地域？](https://intl.cloud.tencent.com/document/product/614/18940)
 
 
+-----
+
 ## 2. 日志服务的计费模式
 
 CLS 支持按量计费（后付费）方式，即根据用户的实际使用资源情况进行计量，并按日进行费用扣除。按量计费适用于日志服务所有地域。详情请参见 [价格总览](https://intl.cloud.tencent.com/document/product/1007/30945)。
 
+-----
 
 ## 3. 新手入门
 
@@ -56,7 +59,7 @@ telnet <region 简称>.cls.tencentyun.com
 >
 5. 单击【确定】。
  - 创建好的日志主题会出现在日志主题列表中。
-
+![](https://main.qcloudimg.com/raw/744532830cad015849860480edfe4674.png)
  - 新创建的日志集可单击【管理日志集】，在展开的日志集列表页面进行查看。
 
 
@@ -149,10 +152,17 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 日志服务目前支持 [CSV 格式](https://intl.cloud.tencent.com/document/product/614/31582)、[JSON 格式](https://intl.cloud.tencent.com/document/product/614/31583) 投递方式，创建好投递任务后，日志服务异步地将数据投递到目标存储桶中，您可以在控制台右侧导航栏的“投递任务管理”中查看数据投递情况。
 
 
+-----
+
+## 4. 控制台界面
+
+以下为日志服务控制台总览页面：
 
 
 
-## 4. 控制台功能概述
+-----
+
+## 5. 控制台功能概述
 
 <table>
 <thead>
@@ -191,7 +201,9 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 </tr>
 </tbody></table>
 
-## 5. 新手常见问题
+-----
+
+## 6. 新手常见问题
 #### LogListener 相关
 - [机器组状态异常问题](https://intl.cloud.tencent.com/document/product/614/17424)
 - [LogListener 常见问题](https://intl.cloud.tencent.com/document/product/614/38444)
@@ -202,8 +214,9 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 
 [检索不到日志问题](https://intl.cloud.tencent.com/document/product/614/38446)
 
+-----
 
-## 6. 反馈与建议
+## 7. 反馈与建议
 使用腾讯云日志服务产品和服务中有任何问题或建议，您可以通过以下渠道反馈，将有专人跟进解决您的问题：
 - 如果发现产品文档的问题，如链接、内容、API 错误等，您可以单击文档页右侧 【文档反馈】或选中存在问题的内容进行反馈。
 - 如果遇到产品相关问题，您可 [提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
