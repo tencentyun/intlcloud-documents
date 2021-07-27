@@ -5,7 +5,7 @@ TencentDB for PostgreSQL allows you to create one or more read-only replicas to 
 - You have created one or more read-only replicas. For more information, please see [Creating Read-only Replicas](https://intl.cloud.tencent.com/document/product/409/39545).
 
 ## [Creating an RO Group](id:cjzdslrz)
-1. Log in to the [TencentDB for PostgreSQL console](https://console.cloud.tencent.com/postgres). In the instance list, click the instance ID/name or **Manage** in the **Operation** column to access the instance management page.
+1. Log in to the [TencentDB for PostgreSQL console](https://console.cloud.tencent.com/postgres). In the instance list, click the instance ID or **Manage** in the **Operation** column to access the instance management page.
 2. Click **Add Read-only Replica** in the **Instance Architecture Diagram** section on the **Instance Details** tab or click **Create** on the **Read-only Replica** tab.
 ![](https://main.qcloudimg.com/raw/bcc375d86e0cbccea0c51fc473dab6da.png)
 3. On the displayed purchase page, specify the following read-only replica configurations, confirm that everything is correct, and click **Buy Now**.
@@ -22,7 +22,7 @@ TencentDB for PostgreSQL allows you to create one or more read-only replicas to 
 On the RO group configuration page, you can configure the basic information of the group such as name, removal policy, delay threshold, minimum number of retained read-only replicas, and read weights.
 >?Read-only replicas in an RO group can have different specifications, and read weights are automatically allocated to each replica according to its specification.
 >
-1. Log in to the [TencentDB for PostgreSQL console](https://console.cloud.tencent.com/postgres). In the instance list, click the primary instance ID/name or **Manage** in the **Operation** column to access the instance management page.
+1. Log in to the [TencentDB for PostgreSQL console](https://console.cloud.tencent.com/postgres). In the instance list, click the primary instance ID or **Manage** in the **Operation** column to access the instance management page.
 2. On the **Read-only Replica** tab, click **Configuration** in the **Operation** column in the RO group list to access the RO group configuration page.
 ![](https://main.qcloudimg.com/raw/3d3181b7bc09b6bc484e78a4e4011f0c.png)
 3. Configure the RO group and click **Submit**.
