@@ -27,15 +27,6 @@ IPsec VPN 可以在控制台实现全自助配置，详情请参见 [快速入�
 ### 如何修改 VPN 通道配置？
 用户可以进入 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1) 修改 VPN 通道配置，详情请参见 [修改 VPN 通道配置](https://intl.cloud.tencent.com/document/product/1037/32701)。
 
-### 如何开启网关流控明细？
-用户可以进入 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1) 开启网关流控明细，详情请参见 [开启网关流控明细](https://intl.cloud.tencent.com/document/product/1037/32702)。
-
-### 如何设置网关流控明细？
-用户可以进入 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1) 设置网关流控明细，详情请参见 [设置网关流控明细](https://intl.cloud.tencent.com/document/product/1037/32703)。
-
-### 如何查看网关流控明细？
-用户可以进入 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1) 查看网关流控明细，详情请参见 [查看网关流控明细](https://intl.cloud.tencent.com/document/product/1037/32704)。
-
 ### 如何绑定高防包？
 用户可以进入 [DDoS 防护（大禹）管理控制台](https://console.cloud.tencent.com/ddos/overview) 绑定高防包，详情请参见 [绑定高防包](https://intl.cloud.tencent.com/document/product/1037/32705)。
 
