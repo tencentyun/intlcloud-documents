@@ -34,7 +34,7 @@ TCR 企业版实例同时支持使用长期访问凭证及临时登录指令，�
 
 ## 相关文档
 
-您还可以使用 CreateInstanceToken 接口创建实例访问凭证。详细信息请参见 [创建实例访问凭证 API 文档](https://cloud.tencent.com/document/product/1141/41571)。
+您还可以使用 CreateInstanceToken 接口创建实例访问凭证。详细信息请参见 创建实例访问凭证 API 文档。
 
 
 
