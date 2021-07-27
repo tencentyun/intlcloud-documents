@@ -65,7 +65,7 @@ Before using the Tencent Cloud SMS service to send SMS messages, you need to cre
 </tr>
 <tr>
 <td>Disabling or Deleting Application</a></td>
-<td>This document describes how to disable, enabled, or delete an existing application. <strong>Once deleted, the application cannot be restored directly; instead, you will have to submit a new application for review; therefore, please do so with caution.</strong>. </td>
+<td>This document describes how to disable, enable, or delete an existing application. <strong>Once deleted, the application cannot be restored directly; instead, you will have to submit a new application for review; therefore, please do so with caution.</strong>. </td>
 </tr>
 </table>
 
