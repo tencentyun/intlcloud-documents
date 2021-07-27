@@ -4,7 +4,7 @@ TencentDB for PostgreSQL allows you to create one or more read-only replicas to 
 ## Rebalancing Traffic
 - If load rebalancing is disabled, modifying weight will take effect only for new loads but not affect the read-only replicas accessed by existing persistent connections or cause short disconnection from the database.
 - If load rebalancing is enabled, the read weights of upgraded read-only replicas will change, which causes all connections to the RO group to be disconnected after the upgrade is completed, and all new connections will be rebalanced according to the new weights.
-If you are not satisfied with the connection distribution of each read-only replica in the RO group, you can also manually rebalance it: log in to the [console](https://console.cloud.tencent.com/postgres), click the primary instance name/ID to access the instance management page, select the **Read-only Replica** tab, locate the desired read-only replica in the RO group, and click **Rebalance** in the **Operation** column.
+If you are not satisfied with the connection distribution of each read-only replica in the RO group, you can also manually rebalance it: log in to the [console](https://console.cloud.tencent.com/postgres), click the primary instance ID to access the instance management page, select the **Read-only Replica** tab, locate the desired read-only replica in the RO group, and click **Rebalance** in the **Operation** column.
 
 >!Make sure your business has an automatic reconnection mechanism. Neither enable automatic rebalancing nor manually rebalance if there is no automatic reconnection mechanism.
 
