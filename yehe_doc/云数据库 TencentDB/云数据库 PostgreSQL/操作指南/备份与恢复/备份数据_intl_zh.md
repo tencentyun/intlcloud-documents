@@ -8,10 +8,12 @@
 
 
 ## 操作步骤
-1. 登录 [PostgreSQL 控制台](https://console.cloud.tencent.com/pgsql)，单击实例名，进入实例管理页面。
+1. 登录 [PostgreSQL 控制台](https://console.cloud.tencent.com/pgsql)，单击实例 ID，进入实例管理页面。
 2. 在实例管理页面，选择【备份管理】页，选择【备份列表】或【xlog 列表】， 选择需要下载的备份，在“操作”列单击【下载】。
 >?【备份列表】的备份数据即全量备份；【xlog 列表】的备份数据即增量备份。
 >
+![](https://main.qcloudimg.com/raw/712ca9abd8c60e73fa2db04698cdb84e.png)
 3. 在弹出的对话框，提供内网 VPC 网络地址和本地下载两种下载方式。
 >?为保证数据安全，地址有效期为15分钟，过期后请刷新页面重新获取，VPC 网络地址请在 VPC 网络进行访问。
 >
+![](https://main.qcloudimg.com/raw/ae960550c29dd4422bb0abc40ad44393.png)
