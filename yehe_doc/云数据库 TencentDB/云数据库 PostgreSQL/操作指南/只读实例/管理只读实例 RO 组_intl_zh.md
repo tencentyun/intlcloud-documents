@@ -5,7 +5,7 @@
 - 已创建只读实例实例，请参见 [创建只读实例](https://intl.cloud.tencent.com/document/product/409/39545)。
 
 ## [创建只读实例 RO 组](id:cjzdslrz)
-1. 登录 [PostgreSQL控制台](https://console.cloud.tencent.com/postgres)，在实例列表，单击实例名或“操作”列的【管理】，进入实例管理页面。
+1. 登录 [PostgreSQL控制台](https://console.cloud.tencent.com/postgres)，在实例列表，单击实例 ID 或“操作”列的【管理】，进入实例管理页面。
 2. 在实例详情页，单击“实例架构图”中的【添加只读实例】，或在只读实例页，单击【新建】，进入购买页。
 ![](https://main.qcloudimg.com/raw/bcc375d86e0cbccea0c51fc473dab6da.png)
 3. 在购买页，选择只读实例的相应配置，确认无误后，单击【立即购买】。
@@ -22,7 +22,7 @@
 在只读实例 RO 组的配置界面，可以配置只读实例 RO 组的名称、延时超限策略、延时阈值、最少保留实例等基本信息。
 >?RO 组内只读实例可使用不同规格，读写权重由系统根据实例规格进行自动分配。
 >
-1. 登录 [PostgreSQL控制台](https://console.cloud.tencent.com/postgres)，在实例列表，单击主实例名，进入实例管理页面。
+1. 登录 [PostgreSQL控制台](https://console.cloud.tencent.com/postgres)，在实例列表，单击主实例 ID，进入实例管理页面。
 2. 在实例管理页面，选择【只读实例】页，在 RO 组列单击【配置】，进入 RO 组配置页。
 ![](https://main.qcloudimg.com/raw/3d3181b7bc09b6bc484e78a4e4011f0c.png)
 3. 在 RO 组配置页，配置 RO 组信息，单击【提交】。
