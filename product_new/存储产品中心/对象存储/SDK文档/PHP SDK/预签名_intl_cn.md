@@ -4,6 +4,7 @@ PHP SDK 提供获取请求预签名 URL 接口，请求示例如下。
 ## 永久密钥预签名请求示例
 
 ### 上传请求示例
+[//]: # (.cssg-snippet-get-presign-upload-url)
 ```php
 $secretId = "COS_SECRETID"; //替换为您的永久密钥 SecretId
 $secretKey = "COS_SECRETKEY"; //替换为您的永久密钥 SecretKey
@@ -17,7 +18,7 @@ $cosClient = new Qcloud\Cos\Client(
             'secretKey' => $secretKey)));
 ### 简单上传预签名
 try {
-    $signedUrl = $cosClient->getPresignetUrl('putObject', array(
+    $signedUrl = $cosClient->getPreSignedUrl('putObject', array(
         'Bucket' => "examplebucket-1250000000", //存储桶，格式：BucketName-APPID
         'Key' => "exampleobject", //对象在存储桶中的位置，即对象键
         'Body' => 'string' //可为空或任意字符串
@@ -31,7 +32,7 @@ try {
 
 ### 分块上传预签名
 try {
-    $signedUrl = $cosClient->getPresignetUrl('uploadPart', array(
+    $signedUrl = $cosClient->getPreSignedUrl('uploadPart', array(
             'Bucket' => "examplebucket-1250000000", //存储桶，格式：BucketName-APPID
             'Key' => "exampleobject", //对象在存储桶中的位置，即对象键
             'UploadId' => 'string',
@@ -46,6 +47,7 @@ try {
 ```
 
 ### 下载请求示例
+[//]: # (.cssg-snippet-get-presign-download-url)
 ```php
 $secretId = "COS_SECRETID"; //替换为您的永久密钥 SecretId
 $secretKey = "COS_SECRETKEY"; //替换为您的永久密钥 SecretKey
@@ -59,7 +61,7 @@ $cosClient = new Qcloud\Cos\Client(
             'secretKey' => $secretKey)));
 ### 简单下载预签名
 try {
-    $signedUrl = $cosClient->getPresignetUrl('getObject', array(
+    $signedUrl = $cosClient->getPreSignedUrl('getObject', array(
         'Bucket' => "examplebucket-1250000000", //存储桶，格式：BucketName-APPID
         'Key' => "exampleobject", //对象在存储桶中的位置，即对象键
         ), '+10 minutes'); //签名的有效时间
@@ -86,6 +88,7 @@ try {
 ## 临时密钥预签名请求示例
 
 ### 上传请求示例
+[//]: # (.cssg-snippet-get-presign-sts-upload-url)
 ```php
 $tmpSecretId = "COS_SECRETID"; //替换为您的临时密钥 SecretId
 $tmpSecretKey = "COS_SECRETKEY"; //替换为您的临时密钥 SecretKey
@@ -101,7 +104,7 @@ $cosClient = new Qcloud\Cos\Client(
             'token' => $tmpToken)));
 ### 简单上传预签名
 try {
-    $signedUrl = $cosClient->getPresignetUrl('putObject', array(
+    $signedUrl = $cosClient->getPreSignedUrl('putObject', array(
         'Bucket' => "examplebucket-1250000000", //存储桶，格式：BucketName-APPID
         'Key' => "exampleobject", //对象在存储桶中的位置，即对象键
         'Body' => 'string'), '+10 minutes'); //签名的有效时间
@@ -114,7 +117,7 @@ try {
 
 ### 分块上传预签名
 try {
-    $signedUrl = $cosClient->getPresignetUrl('uploadPart', array(
+    $signedUrl = $cosClient->getPreSignedUrl('uploadPart', array(
         'Bucket' => "examplebucket-1250000000", //存储桶，格式：BucketName-APPID
         'Key' => "exampleobject", //对象在存储桶中的位置，即对象键
         'UploadId' => '',
@@ -129,6 +132,7 @@ try {
 ```
 
 ### 下载请求示例
+[//]: # (.cssg-snippet-get-presign-sts-download-url)
 ```php
 $tmpSecretId = "COS_SECRETID"; //替换为您的临时密钥 SecretId
 $tmpSecretKey = "COS_SECRETKEY"; //替换为您的临时密钥 SecretKey
@@ -144,7 +148,7 @@ $cosClient = new Qcloud\Cos\Client(
             'token' => $tmpToken)));
 ### 简单下载预签名
 try {
-    $signedUrl = $cosClient->getPresignetUrl('getObject', array(
+    $signedUrl = $cosClient->getPreSignedUrl('getObject', array(
         'Bucket' => "examplebucket-1250000000", //存储桶，格式：BucketName-APPID
         'Key' => "exampleobject" //对象在存储桶中的位置，即对象键
     ), '+10 minutes'); //签名的有效时间
