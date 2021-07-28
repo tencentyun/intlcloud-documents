@@ -8,7 +8,7 @@ A configuration group is used to group and manage nodes that are equipped with t
 >?After a cluster is created, a default configuration group that inherits the cluster-level configuration is generated for each component, which can be modified but cannot be deleted. You can add new configuration groups to a component as needed. Each component can have up to 10 configuration groups.
 4. Click **Manage Configuration Group** to enter the "Manage Configuration Group" page. You can click **Add Configuration Group**, **Modify**, or **Delete** to add, modify, or delete a configuration group, respectively.
 ![](https://main.qcloudimg.com/raw/ff447e9c6676627682ca593f857900b9.png)
-![](https://main.qcloudimg.com/raw/2fce4a94775737259e58268c2038e1a9.png)
+![](https://main.qcloudimg.com/raw/a0b2473ce46ffa36cf7ee5c090777b65.png)
 ![](https://main.qcloudimg.com/raw/9f7d7373ed884a0251e52ee133c98fa0.png)
 5. If the configuration of a node is different from that in the current configuration group, click **Sync Configuration** in the top-right corner to deliver the configuration in the configuration group to the node.
 ![](https://main.qcloudimg.com/raw/7286e6eb52685a59dfb0e53eed087dd5.png)
