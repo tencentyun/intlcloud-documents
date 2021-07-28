@@ -3,5 +3,5 @@ This document describes how to set the single login session expiration time for 
 
 ## Directions
 1. Log in to the CAM console and find **Advanced Settings** on the **User** >**[User Settings](https://console.cloud.tencent.com/cam/security/subAccount)** page.
-2. Set the duration in **Single Login Session Expiration Time**
+2. Set the duration in **Max Login Session Persistence**
 3. Click **Save**.
