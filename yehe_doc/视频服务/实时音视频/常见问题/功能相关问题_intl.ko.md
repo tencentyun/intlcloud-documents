@@ -114,7 +114,7 @@ iOS, Android, Windows(C++), Windows(C#), Mac, 데스크톱 브라우저, Electro
 - [화면 공유(Mac)](https://intl.cloud.tencent.com/document/product/647/37336)
 - [화면 공유(데스크톱 브라우저)](https://intl.cloud.tencent.com/document/product/647/35163)
 
-화면 공유 인터페이스에 대한 자세한 내용은 [Windows(C++) API](https://intl.cloud.tencent.com/document/product/647/35131) 또는 [Windows(C#) API](https://intl.cloud.tencent.com/document/product/647/35136)를 참조하십시오. 그 외 [Electron 인터페이스](https://intl.cloud.tencent.com/document/product/647/35141)를 사용할 수도 있습니다.
+화면 공유 인터페이스에 대한 자세한 내용은 [Windows(C++) API](https://intl.cloud.tencent.com/document/product/647/35131) 또는 Windows(C#) API를 참조하십시오. 그 외 [Electron 인터페이스](https://intl.cloud.tencent.com/document/product/647/35141)를 사용할 수도 있습니다.
 
 [](id:que23)
 
