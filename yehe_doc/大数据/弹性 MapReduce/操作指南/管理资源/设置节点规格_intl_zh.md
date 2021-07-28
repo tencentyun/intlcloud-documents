@@ -4,7 +4,7 @@
 ## 操作步骤
 1. 登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，在【集群列表】中单击对应的集群【ID/名称】进入集群详情页。
 2. 在集群详情页中选择【集群资源】>【资源管理】>【更多操作】中的【设置节点规格】。
-![](https://main.qcloudimg.com/raw/bee79bdccb2bd86d061d1d7f5c712549.png)
+![](https://main.qcloudimg.com/raw/83d138072dfcf665261d7cc5253560b9.png)
 3. CORE 节点初始默认规格为集群创建时所选规格，您可以通过添加或删除来调整默认规格，以便用于正常的扩容。
 4. TASK 节点和 ROUTER 节点无初始默认规格，请根据页面提示添加。
-![](https://main.qcloudimg.com/raw/ff26c5cdaef9e4407cbbb82715df6809.png)
+![](https://main.qcloudimg.com/raw/55f5cb1d030a7dec7769fd5143dc2541.png)
