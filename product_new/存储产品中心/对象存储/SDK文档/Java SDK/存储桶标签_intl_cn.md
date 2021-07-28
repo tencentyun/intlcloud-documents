@@ -25,6 +25,7 @@ public void setBucketTaggingConfiguration(String bucketName, BucketTaggingConfig
 
 #### 请求示例
 
+[//]: # (.cssg-snippet-put-bucket-tagging)
 ```java
 String bucketName = "examplebucket-1250000000";
 List<TagSet> tagSetList = new LinkedList<TagSet>();
@@ -43,7 +44,7 @@ cosclient.setBucketTaggingConfiguration(setBucketTaggingConfigurationRequest);
 
 | 参数名称                             | 描述               | 类型                                 |
 | ------------------------------------ | ------------------ | ------------------------------------ |
-| setBucketLoggingConfigurationRequest | 存储桶标签设置请求 | SetBucketLoggingConfigurationRequest |
+| setBucketTaggingConfigurationRequest | 存储桶标签设置请求 | SetBucketTaggingConfigurationRequest |
 
 Request 成员说明 ：
 
@@ -56,13 +57,13 @@ BucketLoggingConfiguration 成员说明:
 
 | 参数名称 | 描述                 | 类型         |
 | -------- | -------------------- | ------------ |
-| tagSets  | 存储桶的标签配置集合 | List<TagSet> |
+| tagSets  | 存储桶的标签配置集合 | List&lt;TagSet&gt; |
 
 TagSet 成员说明：
 
 | 参数名称 | 描述                                                         | 类型                |
 | -------- | ------------------------------------------------------------ | ------------------- |
-| tags     | 标签的 Key 和 Value，长度不超过128字节,  Key 和 Value 支持英文字母、数字、空格、加号、减号、下划线、等号、点号、冒号、斜线 | Map<String, String> |
+| tags     | 标签的 Key 和 Value，长度不超过128字节,  Key 和 Value 支持英文字母、数字、空格、加号、减号、下划线、等号、点号、冒号、斜线 | Map&lt;String, String&gt; |
 
 #### 返回结果说明
 
@@ -83,6 +84,7 @@ public BucketTaggingConfiguration getBucketTaggingConfiguration(String bucketNam
 
 #### 请求示例
 
+[//]: # (.cssg-snippet-get-bucket-tagging)
 ```java
 String bucketName = "examplebucket-1250000000";
 BucketTaggingConfiguration bucketTaggingConfiguration = cosclient.getBucketTaggingConfiguration(bucketName);
@@ -113,9 +115,10 @@ public void deleteBucketTaggingConfiguration(String bucketName);
 
 #### 请求示例
 
+[//]: # (.cssg-snippet-delete-bucket-tagging)
 ```java
 String bucketName = "examplebucket-1250000000";
-BucketTaggingConfiguration bucketTaggingConfiguration = cosclient.deleteBucketTaggingConfiguration(bucketName);
+cosclient.deleteBucketTaggingConfiguration(bucketName);
 ```
 
 #### 参数说明
