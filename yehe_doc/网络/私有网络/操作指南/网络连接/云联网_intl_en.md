@@ -1,4 +1,4 @@
-[Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003) (CCN) is the bridge that connects Tencent Cloud VPCs, and VPCs with local IDCs. It provides public and private network multi-point interconnection, self-taught learning routing, linkage prioritization, and fast failure convergence.
+[Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003) (CCN) is a global private connectivity service running on top of the Tencent Cloud network backbone. CCN allows connectivity between VPCs in all regions, IDCs through VPN or Direct Connect links and even other Cloud or service providers. CCN's multi-level routing is capable of autonomous learning, so when the network topology changes, you do not need to perform tedious network based operations.
 
 For the common CCN operations, please see:
 + [Network Instance Interconnection in One Account](https://intl.cloud.tencent.com/document/product/1003/31986)
