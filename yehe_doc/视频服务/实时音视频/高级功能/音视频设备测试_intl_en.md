@@ -7,9 +7,9 @@ Before a video call is made, it is recommended to test the devices such as camer
 
 ## Platforms That Support This Feature
 
-| iOS | Android | macOS | Windows | Electron | WeChat Mini Program | Chrome Browser |
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-|     ×  |    ×    |    &#10003;   |    &#10003;    |&#10003;  |   ×    |  ×   |
+| iOS | Android | macOS | Windows | Electron | web |  
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|     ×  |    ×    |    &#10003;   |    &#10003;    |&#10003;  |   ×   |
 
 ## Testing Camera
 
