@@ -162,7 +162,7 @@ Currently, only images below 1 GiB in size are supported. We recommend you selec
 - Currently, only images in a private image repository in the same region can be read.
 
 #### Permission to read/write file in container
-- `/tmp` is readable and writable by default. We recommend you select `/tmp` when outputting a file. The read/write permission of other directories are controlled by the image file system.
+- `/tmp` is readable and writable by default. We recommend you select `/tmp` when outputting a file.
 - Avoid using other users' files with restricted access or execution.
 - The storage space of the writable layer in the container is 512 MB.
 
