@@ -5,13 +5,13 @@ This document describes how to create an HAVIP on the console and configure it i
 2. Select the target region on the HAVIP management page and click **Apply**.
 3. In the pop-up dialog box, configure HAVIP parameters.
  + **Name**: enter a name for the HAVIP.
- + **Virtual Private Cloud**: select a VPC where the HAVIP to be created resides.
+ + **Virtual Private Cloud**: select a VPC where the HAVIP is to be created resides.
  + **Subnet**: select a subnet for the HAVIP, which is subnet-specific.
  + **IP address**: the IP address of the HAVIP can be automatically assigned or manually specified. If you choose **Automatic Assignment**, a subnet IP address will be automatically assigned. If you choose **Enter manually**, make sure that the entered IP address is within the subnet IP range and is not a reserved IP address of the system. For example, if the subnet IP range is `10.0.0.0/24`, the entered private IP address should be within `10.0.0.2-10.0.0.254`.
 4. Click **OK**. After the HAVIP is successfully created, it will be displayed in the list, and its status will be **Not bound with CVM yet**.
 
 ## Configuring an HAVIP
-An HAVIP is designed to use together with third-party HA software, which should be configured in third-party HA software. An HAVIP is only an operation object and a private IP address that can be bound through announcement. Therefore, the binding and unbinding of HAVIP to CVMs are not done in the Tencent Cloud console. Instead, you only need to specify the HAVIP as a floating virtual IP address (VIP) in the third-party HA software which in turn specifies an ENI to be bound to the HAVIP through ARP. The following shows you how to bind or unbind an HAVIP:
+An HAVIP is designed to be used together with third-party HA software, which should be configured in third-party HA software. An HAVIP is only an operation object and a private IP address that can be bound through announcement. Therefore, the binding and unbinding of HAVIP to CVMs are not done in the Tencent Cloud console. Instead, you only need to specify the HAVIP as a floating virtual IP address (VIP) in the third-party HA software, which in turn specifies an ENI to be bound to the HAVIP through ARP. The following shows you how to bind or unbind an HAVIP:
 ![](https://main.qcloudimg.com/raw/1007a3d550fda9bf404673be571bf2dc.png)
 In a traditional physical device environment, all private IP addresses are bound to ENIs through ARP by default and can be specified as floating IP addresses in the HA software. In a public cloud environment, a private IP cannot use ARP, or be specified as a floating IP address in the HA software. Therefore, you need to follow the same steps as that of the third-party software to specify the HAVIP as a floating IP address instead.
 
