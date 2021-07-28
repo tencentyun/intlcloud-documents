@@ -4,7 +4,7 @@
 1. 登录 [弹性 MapReduce 控制台](https://console.cloud.tencent.com/emr)，在【集群列表】中单击对应的集群【ID/名称】进入集群详情页。
 2. 选择【集群资源】>【节点状态】可查看集群中所有节点监控信息。
 3. 在节点监控中，可查当前集群所有节点聚合监控指标概览和所有节点列表。
-![](https://main.qcloudimg.com/raw/7f8569a5f4a75b6f44859a3b56b55283.png)
+![](https://main.qcloudimg.com/raw/745169626c6d481fa469375e6b1f1f27.png)
  - 【概览】可直观查看对应时间段所有节点聚合监控指标及指标各项统计规则，默认最多展示6个指标项。可单击【设置指标】自定义展示指标。
 ![](https://main.qcloudimg.com/raw/1cff3fb7d4b6fb87745db3e015d24588.png)
  - 【热点图】负载热点图更加直观的展示了节点的负载情况，同时可指定时间段和负载条件进行查看。负载热点图主要分为两部分，一部分为当前集群所有节点聚合负载图；一部分为所有节点单个热点图，可直观查看所有节点的负载情况。
@@ -17,4 +17,4 @@
         - 负载状态：可查看当前节点维度 TOP N 进程情况，同时可根据指定时间进行查看。
 ![](https://main.qcloudimg.com/raw/dc6ce906148b1ceb3f1763197f2059cf.png)
        - 节点监控：可查看当前节点各分组指标负载趋势图，默认展示6个指标，最多可展示12个指标。可单击【设置指标】自定义展示指标。
-![](https://main.qcloudimg.com/raw/d1660300a091c465ee47114eb9fc52fe.png)
+![](https://main.qcloudimg.com/raw/2949a56dfa4e4b9a25b26d8a75e976dc.png)
