@@ -8,11 +8,11 @@
 ## 通过客户端工具连接
 使用的云服务器 CVM 访问自动分配给云数据库的内网地址，这种连接方式使用内网高速网络，延迟低。云服务器和数据库须是同一账号，且同一个[ VPC](https://intl.cloud.tencent.com/document/product/215/535) 内（保障同一个地域），或同在基础网络内。
 >?
->- 对于不同的 VPC 下（包括同账号/不同账号，同地域/不同地域）的云服务器和数据库，内网连接方式请参见  [对等连接](https://intl.cloud.tencent.com/document/product/553/18827)。
->- Redis 暂不支持外网地址，如需通过外网地址连接实例，可参见 [iptable 转发](https://intl.cloud.tencent.com/document/product/239/35905)。
+>- 对于不同的 VPC 下（包括同账号/不同账号，同地域/不同地域）的云服务器和数据库，内网连接方式请参见  [云联网](https://intl.cloud.tencent.com/document/product/1003)。
+>- Redis 暂不支持外网地址，如需通过外网地址连接实例，可参见 [连接 Redis 实例（外网）](https://intl.cloud.tencent.com/document/product/239/35905)。
 
 ### 步骤1：准备环境
-1. 登录到 Linux 云服务器，请参见 [快速配置 Linux 云服务器](https://intl.cloud.tencent.com/zh/document/product/213/10517)。
+1. 登录到 Linux 云服务器，请参见 [快速配置 Linux 云服务器](https://intl.cloud.tencent.com/document/product/213/10517)。
 2. 以 CentOS 系统的云服务器为例，执行如下命令安装 Redis 客户端：
 ```
 yum install redis -y
@@ -49,7 +49,7 @@ redis-cli -h IP地址 -p 端口 -a 账号名@密码
 
 
 ## 通过数据库管理工具 DMC 连接
-通过腾讯云数据库管理工具 [DMC 控制台](https://bj-dmc.cloud.tencent.com/v2/qcloudLogin/login)，选择 Redis 实例登录，可便捷地访问实例、操作库表级、管理实例会话、实时监控、InnoDB 锁等待、SQL 窗口等。
+通过腾讯云数据库管理工具 [DMC 控制台](https://dms.cloud.tencent.com/#/login)，选择 Redis 实例登录，可便捷地访问实例、操作库表级、管理实例会话、实时监控、InnoDB 锁等待、SQL 窗口等。
 
 ## 通过多语言 SDK 连接
 各连接示例请参见 [多语言 SDK 连接](https://intl.cloud.tencent.com/document/product/239/7042)。

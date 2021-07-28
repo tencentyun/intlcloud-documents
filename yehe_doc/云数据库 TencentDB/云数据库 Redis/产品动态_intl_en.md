@@ -1,3 +1,28 @@
+## June 2021
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr>
+<tr>
+<td>Auto-failover is now supported</td>
+<td>TencentDB for Redis supports the auto-failover feature for proxy nodes and Redis server nodes to ensure service availability.</td>
+<td>2021-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/41052" target="_blank">Failover</a></td></tr>
+<tr>
+<td>Auto-failback is now supported</td>
+<td>TencentDB for Redis provides the auto-failback feature for instances deployed across AZs. After the feature is enabled, if the master node is switched from the master AZ or master node group (cluster architecture) to another AZ or group after a failover occurs, it will be automatically switched back, simplifying subsequent OPS operations.</td>
+<td>2021-06</td>
+<td><a href="hhttps://intl.cloud.tencent.com/document/product/239/41051" target="_blank">Auto-Failback</a></td></tr>
+<tr>
+<td>You can now manually promote a replica node/node group to master node/node group</td>
+<td>For multi-AZ deployed TencentDB for Redis instances in the standard/cluster architecture, you can manually promote a replica node/node group to master node/node group. You can deploy the master node in a specified AZ/node group.</td>
+<td>2021-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/41050" target="_blank">Manually Promoting to Master Node/Node Group</a></td></tr>
+<tr>
+<td>You can now read local nodes only</td>
+<td>To reduce the access latency of a multi-AZ deployed instance, TencentDB for Redis allows you to read local nodes only.</td>
+<td>2021-06</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/41049" target="_blank">Reading Local Nodes Only</a></td></tr>
+</table>
+
 ## March 2021
 <table>
 <tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr>
@@ -20,7 +45,7 @@
 </tr>
 <tr>
 <td>Multi-AZ deployment is supported</td>
-<td>You can now deploy TencentDB for Redis master node and replica nodes in different AZs of the same region. Multi-AZ deployed instances have higher availability and better disaster recovery capability than single-AZ deployed instances.</td>
+<td>You can now deploy TencentDB for Redis master node and replica nodes in different availability zones of the same region. Multi-AZ deployed instances have higher availability and better disaster recovery capability than single-AZ deployed instances.</td>
 <td>2020-12</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/239/39812" target="_blank">Multi-AZ Deployment</a></td>
 </tr>
@@ -38,7 +63,7 @@
 <td>Monitoring at five-second granularity is supported</td>
 <td>The monitoring feature of TencentDB for Redis has been updated, with the monitoring granularity being narrowed down from one minute to five seconds.</td>
 <td>2020-09</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/239/38743" target="_blank">Monitoring at Five-second Granularity</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/38743" target="_blank">Monitoring at Five-Second Granularity</a></td>
 </tr>
 </table>
 
@@ -52,7 +77,7 @@
 </tr>
 <tr>
 <td>Version upgrade now supported</td>
-<td>TencentDB for Redis now supports version upgrade, so you can upgrade from a lower version of Standard Edition to a higher one, including from v2.8 to v4.0, from v2.8 to v5.0, and from v4.0 to v5.0.</td>
+<td>TencentDB for Redis now supports version upgrade, so you can upgrade from a lower version of Standard Edition to a higher one, including from 2.8 to 4.0, from 2.8 to 5.0, and from 4.0 to 5.0.</td>
 <td>2020-07</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/239/37710" target="_blank">Upgrading Instance Version</a></td>
 </tr>
@@ -114,13 +139,13 @@
 <td>Adjusting bandwidth in the console now supported</td>
 <td>You can now adjust instance network bandwidth on the instance details page in the Redis console. The bandwidth specifications for the cluster edition have been fully upgraded, with shard specifications upgraded to 384 Mbps.</td>
 <td>2020-03</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Monitoring view for Redis 2.8 now updated</td>
 <td>To provide more accurate monitoring information, Tencent Cloud has updated the monitoring view of Redis 2.8 instance to cluster view. If you use APIs to get monitoring data from Cloud Monitor, you need to change the view parameter from `redisuuid` to `cluster` in the code.</td>
 <td>2020-03</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 </table>
 
