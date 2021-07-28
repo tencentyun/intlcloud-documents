@@ -6,7 +6,7 @@
 - For more information, please see [COS Go SDK API](https://godoc.org/github.com/tencentyun/cos-go-sdk-v5).
 - For the complete sample code, please see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/Go).
 - For the SDK changelog, please see [Changelog](https://github.com/tencentyun/cos-go-sdk-v5/blob/master/CHANGELOG.md).
-- For SDK FAQs, please see [Go SDK FAQs](https://intl.cloud.tencent.com/document/product/436/40774).
+- For SDK FAQs, please see Go SDK FAQs.
 
 >? If you encounter errors such as non-existent functions or methods when using the SDK, please update the SDK to the latest version and try again.
 >
