@@ -4,6 +4,7 @@ COS SDK for PHP provides the API for getting the presigned URL for a request. Pl
 ## Generating Pre-signed URL with Permanent Key
 
 ### Examples for Upload Requests
+[//]: # (.cssg-snippet-get-presign-upload-url)
 ```php
 $secretId = "COS_SECRETID"; //Replace with your permanent key’s SecretId
 $secretKey = "COS_SECRETKEY"; //Replace with your permanent key’s SecretKey
@@ -17,7 +18,7 @@ $cosClient = new Qcloud\Cos\Client(
             'secretKey' => $secretKey)));
 ### Get pre-signed URL for simple upload
 try {
-    $signedUrl = $cosClient->getPresignetUrl('putObject', array(
+    $signedUrl = $cosClient->getPreSignedUrl('putObject', array(
         'Bucket' => "examplebucket-1250000000", //Bucket in the format of BucketName-APPID
         'Key' => "exampleobject", //Location of the object in the bucket, i.e., the object key
         'Body' => 'string' //It can be empty or any string.
@@ -31,7 +32,7 @@ try {
 
 ### Get pre-signed URL for multipart upload
 try {
-    $signedUrl = $cosClient->getPresignetUrl('uploadPart', array(
+    $signedUrl = $cosClient->getPreSignedUrl('uploadPart', array(
             'Bucket' => "examplebucket-1250000000", //Bucket in the format of BucketName-APPID
             'Key' => "exampleobject", //Location of the object in the bucket, i.e., the object key
             'UploadId' => 'string',
@@ -46,6 +47,7 @@ try {
 ```
 
 ### Examples for Download Requests
+[//]: # (.cssg-snippet-get-presign-download-url)
 ```php
 $secretId = "COS_SECRETID"; //Replace with your permanent key’s SecretId
 $secretKey = "COS_SECRETKEY"; //Replace with your permanent key’s SecretKey
@@ -59,7 +61,7 @@ $cosClient = new Qcloud\Cos\Client(
             'secretKey' => $secretKey)));
 ### Get pre-signed URL for simple download
 try {
-    $signedUrl = $cosClient->getPresignetUrl('getObject', array(
+    $signedUrl = $cosClient->getPreSignedUrl('getObject', array(
         'Bucket' => "examplebucket-1250000000", //Bucket in the format of BucketName-APPID
         'Key' => "exampleobject", //Location of the object in the bucket, i.e., the object key
         ), '+10 minutes'); //Validity period of the signature
@@ -86,6 +88,7 @@ try {
 ## Generating Pre-signed URL with Temporary Key
 
 ### Examples for Upload Requests
+[//]: # (.cssg-snippet-get-presign-sts-upload-url)
 ```php
 $tmpSecretId = "COS_SECRETID"; //Replace with your temporary key’s SecretId
 $tmpSecretKey = "COS_SECRETKEY"; //Replace with your temporary key’s SecretKey 
@@ -101,7 +104,7 @@ $cosClient = new Qcloud\Cos\Client(
             'token' => $tmpToken)));
 ### Get pre-signed URL for simple upload
 try {
-    $signedUrl = $cosClient->getPresignetUrl('putObject', array(
+    $signedUrl = $cosClient->getPreSignedUrl('putObject', array(
         'Bucket' => "examplebucket-1250000000", //Bucket in the format of BucketName-APPID
         'Key' => "exampleobject", //Location of the object in the bucket, i.e., the object key
         'Body' => 'string'), '+10 minutes'); //Validity period of the signature
@@ -114,7 +117,7 @@ try {
 
 ### Get pre-signed URL for multipart upload
 try {
-    $signedUrl = $cosClient->getPresignetUrl('uploadPart', array(
+    $signedUrl = $cosClient->getPreSignedUrl('uploadPart', array(
         'Bucket' => "examplebucket-1250000000", //Bucket in the format of BucketName-APPID
         'Key' => "exampleobject", //Location of the object in the bucket, i.e., the object key
         'UploadId' => '',
@@ -129,6 +132,7 @@ try {
 ```
 
 ### Examples for Download Requests
+[//]: # (.cssg-snippet-get-presign-sts-download-url)
 ```php
 $tmpSecretId = "COS_SECRETID"; //Replace with your temporary key’s SecretId
 $tmpSecretKey = "COS_SECRETKEY"; //Replace with your temporary key’s SecretKey
@@ -144,7 +148,7 @@ $cosClient = new Qcloud\Cos\Client(
             'token' => $tmpToken)));
 ### Get pre-signed URL for simple download
 try {
-    $signedUrl = $cosClient->getPresignetUrl('getObject', array(
+    $signedUrl = $cosClient->getPreSignedUrl('getObject', array(
         'Bucket' => "examplebucket-1250000000", //Bucket in the format of BucketName-APPID
         'Key' => "exampleobject" //Location of the object in the bucket, i.e., the object key
     ), '+10 minutes'); //Validity period of the signature
