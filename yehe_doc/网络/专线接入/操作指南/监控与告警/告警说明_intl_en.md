@@ -1,6 +1,6 @@
 This document describes the metric alarms and event alarms for a connection, dedicated tunnel and direct connect gateway to help you configure alarm policies.
 
-## Metric Alarms
+## Metric Alarms[](id:gjzb)
 
 To create a metric alarm policy, you can configure the outbound bandwidth, inbound bandwidth, and bandwidth utilization as the trigger conditions for a connection; configure the outbound bandwidth and inbound bandwidth for a dedicated tunnel; and configure the outbound bandwidth, inbound bandwidth, outbound packet, and inbound packet for a direct connect gateway.
 
@@ -12,7 +12,7 @@ To create a metric alarm policy, you can configure the outbound bandwidth, inbou
 | Outbound packet  | Average outbound packets of the direct connect gateway per second                   |
 | Inbound packet | Average inbound packets of the direct connect gateway per second.                  |
 
-## Event Alarms
+## Event Alarms[](id:gjsj)
 
 You can use the `DirectConnectDown` event as the trigger condition of event alarms for a dedication. You can use the `DirectConnectTunnelDown`, `DirectConnectTunnelBGPSessionDown`, `DirectConnectTunnelRouteTableOverload`, and `DirectConnectTunnelBFDDown` events as the trigger conditions of event alarms for a dedicated tunnel.
 
