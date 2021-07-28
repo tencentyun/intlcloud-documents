@@ -1,40 +1,6 @@
 After a CCN instance is created, the system will automatically create a route table and control route entries to manage traffic on CCN. You cannot manually add or delete routes, but you can enable or disable them.
 
-
-## Route Table
-
-Tencent Cloud CCN provides two kinds of route tables: default and custom. The routing policy matched to instance network requests depends on the route table associated with instances and the route table selection policy. Each CCN route table is independently managed.
-
-
-### Default route table vs. custom route table
-
-
-| Item | Default Route Table | Custom Route Table|
-| :--- | :--- | :--- |
-| Creation method | Automatically created together with a CCN instance.| Manually created.|
-| Number of route tables| Only one. | Up to 10. To create more custom route tables, please submit a ticket.|
-| Routing policy| The initial policy allows all routes, which cannot be modified. | The initial policy rejects all routes. You need to configure the routing policies for a custom route table before using it. |
-| Deletable| No. | Yes, except when it is bound to network instances or referred by the route table selection policy.|
-
-
->?
- 
- 
- 
-
-
- 
-
- 
- 
- 
-
-
-
-
-## Routing
-
- 
+## Adding Routes
 
 To automatically add a CCN route, there are three stages:
 1. Before addition: logic for receiving routes, i.e., determining which routes can be added to the CCN route table.
