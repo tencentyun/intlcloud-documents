@@ -1,20 +1,24 @@
-## Prerequisites
-To make a purchase, you need to verify your identity first. For more information, please see [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629).
 
-## Purchasing at Official Website
-1. Log in to the [TencentDB for SQL Server Console](https://console.cloud.tencent.com/sqlserver) and click **Create** in the instance list.
-3. Select the desired configuration of the database on the purchase page. After confirming that everything is correct, click **Buy Now**.
- - Billing Mode: pay-as-you-go billing is supported.
- - Region and AZ: for more information, please see [Regions and AZs](https://intl.cloud.tencent.com/document/product/238/7520).
- - Network: the basic network and VPC are supported. For more information on the differences and connectivity testing, please see [Network Environment](https://intl.cloud.tencent.com/document/product/238/32562).
+## Prerequisites
+To purchase instances, you need to verify your identity first. For more information, please see the [Identity Verification Guide](https://intl.cloud.tencent.com/document/product/378/3629).
+
+## Purchasing Instances in the TencentDB Console
+1. Log in to the [TencentDB for SQL Server console](https://console.cloud.tencent.com/sqlserver), click **Create Instance** at the top of the instance list.
+2. Select the desired configuration of the database and read and indicate your consent to the Terms of Service on the purchase page. After confirming that everything is correct, click **Buy Now**.
+ - Billing Mode: pay-as-you-go
+ - Region and AZ: for more information, please see [Regions and Availability Zones](https://intl.cloud.tencent.com/document/product/238/7520).
+ - Network: VPC (recommended) and the classic network are supported. For more information on the differences and connectivity testing, please see [Network Environment](https://intl.cloud.tencent.com/document/product/238/32562).
+ >?
+ >- It is recommended that the CVM and TencentDB instances be under the same account and in the same VPC in the same region.
+ >- As the classic network resources become increasingly scarce and cannot be expanded, Tencent Cloud accounts registered after June 13, 2017 can create instances (including CVM and TencentDB) only in a VPC rather than the classic network.
+ >- If your business has to use the [classic network](https://intl.cloud.tencent.com/document/product/215/31807), please submit a ticket for application.
  - Instance Type: Dual-Server High-Availability Edition and Cluster Edition are supported.
- >The Cluster Edition currently supports only SQL Server 2017 Enterprise, which uses the Always On technology to build SQL Server clusters with high performance, availability, reliability, and ease of maintenance.
- - Database Version: SQL Server 2008, SQL Server 2012, SQL Server 2016, and SQL Server 2017 (Enterprise/Standard) are supported. The versions available may vary by AZ.
+ >?The Cluster Edition currently supports SQL Server 2017 Enterprise and SQL Server 2019 Enterprise, which use the Always On technology to build SQL Server clusters with high performance, availability, reliability, and ease of maintenance.
+ - Database Version: the Enterprise and Standard Editions of SQL Server 2008 R2, SQL Server 2012, SQL Server 2016, SQL Server 2017, and SQL Server 2019 are supported. Each AZ supports different database versions.
+ - Select an instance specification and required capacity.
  - Multi-AZ: currently, only the Shanghai, Beijing, and Guangzhou regions support selecting multi-AZ. By combining multiple AZs into a single "multi-AZ", the multi-AZ deployment mode protects databases from database instance failures and AZ outage.
- - Select an instance specification and required disk capacity.
  - Select the quantity and length of purchase.
 3. After the purchase is made, return to the instance list and view the created instance. When the running status becomes **Running**, the instance is successfully created.
 
-
-## Purchasing Through API
-For more information on how to purchase a TencentDB instance through the API, please see [Creating Instance](https://intl.cloud.tencent.com/document/product/238/32119).
+## Purchasing Instances via an API
+For more information on how to purchase TencentDB instances via an API, please see [CreateDBInstances](https://intl.cloud.tencent.com/document/product/238/32119).
