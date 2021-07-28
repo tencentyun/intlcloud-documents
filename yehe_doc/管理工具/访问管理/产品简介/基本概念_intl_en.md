@@ -11,7 +11,7 @@ A sub-account is an entity you create in Tencent Cloud with a specific ID and cr
 
 ### Admin User
 
-An admin user is a sub-account with the permissions of the `AdministratorAccess` policy. It is create by the root account or another admin user and can manage all users and their permissions, financial information, and Tencent Cloud service assets under your Tencent Cloud account.
+An admin user is a sub-account with the permissions of the `AdministratorAccess` policy. It is created by the root account or another admin user and can manage all users and their permissions, financial information, and Tencent Cloud service assets under your Tencent Cloud account.
 
 ### User Group
 

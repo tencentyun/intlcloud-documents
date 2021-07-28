@@ -8,4 +8,4 @@ The API key is the access key. For more information on how to view the root acco
 
 ### How do I authorize a sub-account key?
 
-The sub-account key is consistent with the permissions of the sub-account. You only need to grant the sub-account permissions, and the sub-account key will have the same permissions. For more information on sub-account permission settings, please see Setting Sub-user Permission.
+The sub-account key is consistent with the permissions of the sub-account. You only need to grant the sub-account permissions, and the sub-account key will have the same permissions. For more information on sub-account permission settings, please see “Setting Sub-user Permission”.

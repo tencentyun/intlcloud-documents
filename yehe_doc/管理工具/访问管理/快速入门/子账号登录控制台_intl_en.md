@@ -15,8 +15,8 @@ You can click the following tabs to view the directions of the corresponding log
 1. Go to the [Tencent Cloud login](https://intl.cloud.tencent.com/login) page and select **CAM user sign in**.
 2. On the **CAM user sign in** page, enter the root account ID, sub-user name, and password.
 Root account ID: please contact the root account to view it on the [Account Info](https://console.cloud.tencent.com/developer) page.
-3. Click **Sign in** to log in with the sub-user through account and password.
-![](https://main.qcloudimg.com/raw/bfc9b7442367bc97557dde6cb1a0d364.png)
+3. Click **Sign in** to log in as the sub-user through account and password.
+![](https://main.qcloudimg.com/raw/1f64a9fece5b3d3bb804ab660a632cad.png)
 :::
 ::: Collaborator\slogin
 1. Go to the [Tencent Cloud login](https://intl.cloud.tencent.com/login) page and log in to your account by using the login method associated with your root account.
