@@ -5,7 +5,7 @@
 - Download COS XML C SDK source code: [XML C SDK](https://github.com/tencentyun/cos-c-sdk-v5).
 - Download demo: [XML C SDK Demo](https://github.com/tencentyun/cos-c-sdk-v5/blob/master/cos_c_sdk_test/cos_demo.c).
 - For the SDK changelog, please see [Changelog](https://github.com/tencentyun/cos-c-sdk-v5/blob/master/CHANGELOG.md).
-- For SDK FAQs, please see [C SDK FAQs](https://intl.cloud.tencent.com/document/product/436/40772).
+- For SDK FAQs, please see C SDK FAQs.
 
 
 >? If you encounter errors such as non-existent functions or methods when using the SDK, please update the SDK to the latest version and try again.
