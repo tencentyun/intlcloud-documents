@@ -8,7 +8,7 @@
 >?集群创建完后，每个组件会生成一个默认的配置组，默认配置组支持修改不支持删除，默认配置组初始化时继承集群维度配置，可根据需要增加新的配置组，每个组件配置组不超过10个。
 4. 单击【管理配置组】设置配置组，进入“管理配置组”页，可分别单击【添加配置组】、【修改】和【删除】对配置组进行新增、修改和删除。
 ![](https://main.qcloudimg.com/raw/ff447e9c6676627682ca593f857900b9.png)
-![](https://main.qcloudimg.com/raw/2fce4a94775737259e58268c2038e1a9.png)
+![](https://main.qcloudimg.com/raw/a0b2473ce46ffa36cf7ee5c090777b65.png)
 ![](https://main.qcloudimg.com/raw/9f7d7373ed884a0251e52ee133c98fa0.png)
 5. 配置组中存在节点配置与当前配置组配置不一致时，可单击右上角【同步配置】将配置组配置下发到配置不一致的节点。
 ![](https://main.qcloudimg.com/raw/7286e6eb52685a59dfb0e53eed087dd5.png)
