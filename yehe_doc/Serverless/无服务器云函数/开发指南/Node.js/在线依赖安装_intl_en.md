@@ -6,7 +6,7 @@ Tencent Cloud SCF supports online dependency installation during function deploy
 
 >?Currently, online dependency installation is supported only for Node.js.
 
-If "Online install dependency" is enabled in the function configuration, each time the code is uploaded, the SCF backend will check the `package.json` file in the root directory of the code package and try using npm to install the dependencies based on the dependencies in `package.json`.
+If "Online install dependency" is enabled in the function configuration, each time the code is uploaded, the SCF backend will check the `package.json` file in the root directory of the code package and try using `npm install` to install the dependencies based on the dependencies in `package.json`.
 
 For example, if the `package.json` file in the project lists the following dependency:
 
