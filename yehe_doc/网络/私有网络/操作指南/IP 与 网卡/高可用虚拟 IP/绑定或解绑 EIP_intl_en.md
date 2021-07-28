@@ -1,4 +1,4 @@
-Similar to a private IP, HAVIP can also be bound or unbound on the console. Binding a HAVIP refers to EIP operations. Please skip this section if you don't need public network communication.
+Similar to a private IP, HAVIP binding can also be configured in the console. Binding a HAVIP refers to EIP operations. You can skip this section if no public network connection is needed.
 
 ## Binding an EIP
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/) and select **IP and Interface** > **HAVIP** on the left sidebar. 
@@ -7,8 +7,8 @@ Similar to a private IP, HAVIP can also be bound or unbound on the console. Bind
     ![](https://main.qcloudimg.com/raw/8ff34853fe60fa3ec2d9010df1bd3bbf.png)
 4. In the pop-up dialog box, select an EIP to be bound.
     >!
-    >+ A HAVIP can only be bound with one EIP. If no EIP is available, first go to the EIP console to create one.
-    >+ If the HAVIP is not bound with a CVM instance, the EIP bound to this HAVIP will be in **idle** status and incur an idle fee. Please correctly configure HAVIP and bind it to instances by referring to the following cases:
+    >+ An HAVIP can only be bound with one EIP.  If no EIP is available, you must first create an EIP in the console.
+    >+ If the HAVIP is not bounded with a CVM instance, the corresponding EIP will be in idle status and will incur an idle fee. Please configure the HAVIP correctly and bind it to an instance by referring to the following cases:
     >  + [Building High Availability Primary/Secondary Cluster by Using HAVIP + Keepalived](https://intl.cloud.tencent.com/document/product/215/31877) under Best Practice
     >  + [Creating a High-availability Database by Using HAVIP + Windows Server Failover Cluster](https://intl.cloud.tencent.com/document/product/215/31878) under Best Practice 
 5. Click **OK**.
