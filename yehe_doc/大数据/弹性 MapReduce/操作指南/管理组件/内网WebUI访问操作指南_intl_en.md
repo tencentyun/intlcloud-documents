@@ -22,7 +22,7 @@ You can use a browser to access a component's WebUI over the private network. Be
 You can bind an elastic public IP (EIP) to the master node by following the steps below to access component WebUIs from a browser over the public network:
 1. Log in to the [EMR Console](https://console.cloud.tencent.com/emr), select **Cluster List**, and click the ID/Name of the target cluster to enter the cluster details page. Select the primary node to which an EIP binds in **Cluster Resources** ->**Resource Management** and click its Instance ID/Resource Name to enter the CVM Console.
 
-![](https://main.qcloudimg.com/raw/1320e6c28fa4a13289c7bdf671e42517.png)
+![](https://main.qcloudimg.com/raw/ecb4451fbe49fe2c0c7c1907500f8f24.png)
 2. Adjust the network bandwidth settings of the CVM instance to which the EIP will be bound and make sure that its bandwidth is not 0; otherwise, the node cannot be connected.
 In the CVM instance list in the CVM Console, select **More** > **Resource Adjustment** > **Adjust Network** for the target instance.
 ![](https://main.qcloudimg.com/raw/aef059daeec7e0094375874239f044ee.png)
