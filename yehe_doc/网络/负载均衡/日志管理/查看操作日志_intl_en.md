@@ -4,7 +4,7 @@ You can query and download the operation history of CLB in the [CloudAudit Conso
 
 ## Directions
 1. Log in to the [CloudAudit Console](https://console.cloud.tencent.com/cloudaudit).
-2. On the left sidebar, click **Event History** to enter the event history page. You can also log in to the [CLB Console](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3) and select <img src="https://main.qcloudimg.com/raw/e1247ab643027572becf802b57dbc681.png" style="margin:-3px 0px;width:18px"> in the top-right corner to enter the event history page.
+2. On the left sidebar, click **Event History** to enter the event history page.
 3. On the event history page, you can query the operations by username, resource type, resource name, event source, event ID, etc. By default, only partial data will be displayed, and you can click **View More** at the bottom of the page to get more results.
 ![](https://main.qcloudimg.com/raw/0fd8f42069917095cd025f4124f4f98e.png)
 4. You can click <img src="https://main.qcloudimg.com/raw/f01f02d97967565cc6dc65629b0cab3d.png" style="margin:-2px 0px;width:15px"> on the left of an operation to view its details such as access key, error code, and event ID. You can also click **View Event** to view the details of an event.
