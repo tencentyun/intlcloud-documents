@@ -30,7 +30,7 @@ The quota limits for each user account are as follows:
 <td>10</td>
 </tr>
 <tr>
-<td>Maximum code size (including bound layers) per function (version)</td>
+<td>Maximum code size before compression (including bound layers) per function (version)</td>
 <td>500 MB</td>
 </tr>
 <tr>
