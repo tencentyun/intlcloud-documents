@@ -24,7 +24,7 @@ public void setBucketTaggingConfiguration(String bucketName, BucketTaggingConfig
 ```
 
 #### Sample request
-
+[//]: # (.cssg-snippet-put-bucket-tagging)
 ```java
 String bucketName = "examplebucket-1250000000";
 List<TagSet> tagSetList = new LinkedList<TagSet>();
@@ -43,7 +43,7 @@ cosclient.setBucketTaggingConfiguration(setBucketTaggingConfigurationRequest);
 
 | Parameter Name | Description | Type |
 | ------------------------------------ | ------------------ | ------------------------------------ |
-| setBucketLoggingConfigurationRequest | Request to set bucket tag | SetBucketLoggingConfigurationRequest |
+| setBucketTaggingConfigurationRequest | Request to set bucket tag | SetBucketTaggingConfigurationRequest  |
 
 `Request` member description:
 
@@ -56,13 +56,13 @@ cosclient.setBucketTaggingConfiguration(setBucketTaggingConfigurationRequest);
 
 | Parameter Name | Description | Type |
 | -------- | -------------------- | ------------ |
-| tagSets  | Bucket tag configuration set | List<TagSet> |
+| tagSets  | Bucket tag configuration set | List&lt;TagSet&gt; |
 
 `TagSet` member description:
 
 | Parameter Name | Description | Type |
 | -------- | ------------------------------------------------------------ | ------------------- |
-| tags | Tag key and value, which can contain letters, digits, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes with a maximum length of 128 bytes | Map<String, String> |
+| tags | Tag key and value, which can contain letters, digits, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes with a maximum length of 128 bytes | Map&lt;String, String&gt; |
 
 #### Returned result description
 
@@ -82,7 +82,7 @@ public BucketTaggingConfiguration getBucketTaggingConfiguration(String bucketNam
 ```
 
 #### Sample request
-
+[//]: # (.cssg-snippet-get-bucket-tagging)
 ```java
 String bucketName = "examplebucket-1250000000";
 BucketTaggingConfiguration bucketTaggingConfiguration = cosclient.getBucketTaggingConfiguration(bucketName);
@@ -112,10 +112,10 @@ public void deleteBucketTaggingConfiguration(String bucketName);
 ```
 
 #### Sample request
-
+[//]: # (.cssg-snippet-delete-bucket-tagging)
 ```java
 String bucketName = "examplebucket-1250000000";
-BucketTaggingConfiguration bucketTaggingConfiguration = cosclient.deleteBucketTaggingConfiguration(bucketName);
+cosclient.deleteBucketTaggingConfiguration(bucketName);
 ```
 
 #### Parameter description
