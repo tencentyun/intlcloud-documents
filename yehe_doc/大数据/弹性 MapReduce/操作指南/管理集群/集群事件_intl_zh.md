@@ -3,4 +3,4 @@
 
 ## 操作步骤
 集群创建成功后，登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，在【集群列表】中单击对应的集群【ID/名称】进入集群详情页，然后单击左侧菜单栏【操作日志】。**可单击【集群列表】左上角进行切换地域。**
- ![](https://main.qcloudimg.com/raw/43a97810c5d2b96d4889e638bce73e52.png)
+ ![](https://main.qcloudimg.com/raw/068d8c7cd5fa384dcf12d0b85477f06d.png)
