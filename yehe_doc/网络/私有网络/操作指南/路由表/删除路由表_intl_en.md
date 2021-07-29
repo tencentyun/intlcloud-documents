@@ -3,4 +3,4 @@ You can delete the route table that is not associated with any subnet. You can o
 ## Directions
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/route?rid=1), and select **Route Tables**.
 2. In the list, select the route table to delete. Click **Delete** in the **Operation** column.
-![](https://main.qcloudimg.com/raw/4f43f5be36c962ec6459eebd4612f995.png)
+![](https://main.qcloudimg.com/raw/ca1bbb3e3d46581c16936ec1808efab2.png)
