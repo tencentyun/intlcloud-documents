@@ -9,7 +9,7 @@
 
 ## 지원 플랫폼
 
-| iOS | Android | Mac OS | Windows | Electron| Chrome 브라우저|
+| iOS | Android | Mac OS | Windows | Electron| web|
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | &#10003;  |  &#10003; |  &#10003; |  &#10003;  |&#10003;  |  × |
 
