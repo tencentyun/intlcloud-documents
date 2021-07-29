@@ -12,7 +12,7 @@ This section uses a QtTest project created from scratch as an example to show yo
 
 [](id:mac_step1)
 #### Step 1. Download TRTC SDK for C++.
-1. Download the [SDK](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2), and decompress and open the file.
+1. Download the [SDK](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2), and decompress and open the file.
 2. Create an empty folder for the SDK in the directory of your QtTest project, and copy `TXLiteAVSDKTRTCMacx.x.x/SDK/TXLiteAVSDKTRTC_Mac.framework` from the package downloaded in step 1 to the folder.
 
 [](id:mac_step2)
@@ -63,7 +63,7 @@ This section uses a simple QtTest project as an example to show you how to integ
 
 [](id:win_step1)
 #### Step 1. Download TRTC SDK for C++.
-1. Download the [SDK](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Win_latest.zip), and decompress and open the file.
+1. Download the [SDK](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_latest.zip), and decompress and open the file.
 2. Create an empty folder for the SDK in the directory of your QtTest project, and copy `TXLiteAVSDKTRTCWin_latest/SDK/CPlusPlus` from the package downloaded in step 1 to the folder.
 
 [](id:win_step2)
@@ -83,19 +83,19 @@ CONFIG += opengl
 CONFIG += debug_and_release
 
 debug {
-contains(QT_ARCH,i386) {
-LIBS += -L$$PWD/../SDK/CPlusPlus/Win32/lib -lliteav
-} else {
-LIBS += -L$$PWD/../SDK/CPlusPlus/Win64/lib -lliteav
-}
+	contains(QT_ARCH,i386) {
+		LIBS += -L$$PWD/../SDK/CPlusPlus/Win32/lib -lliteav
+	} else {
+		LIBS += -L$$PWD/../SDK/CPlusPlus/Win64/lib -lliteav
+	}
 }
 
 release {
-contains(QT_ARCH,i386) {
-LIBS += -L$$PWD/../SDK/CPlusPlus/Win32/lib -lliteav
-} else {
-LIBS += -L$$PWD/../SDK/CPlusPlus/Win64/lib -lliteav
-}
+	contains(QT_ARCH,i386) {
+		LIBS += -L$$PWD/../SDK/CPlusPlus/Win32/lib -lliteav
+	} else {
+		LIBS += -L$$PWD/../SDK/CPlusPlus/Win64/lib -lliteav
+	}
 }
 ```
 ##### Scenario 2: using Visual Studio
