@@ -70,7 +70,7 @@ TRTC 6.3 버전부터 arm64-v8a 아키텍처를 제공하여 ABI를 지원하고
 - 자동 로딩 방식을 사용하는 경우, `latest.release`가 최신 버전과 매칭되어 자동 로딩되므로 버전 넘버를 수정하지 않아도 됩니다. 자세한 방법은 [1분 내에 SDK 통합하기](https://intl.cloud.tencent.com/document/product/647/35092)를 참조하십시오.
 - 현재 SDK 최신 버전 넘버는 로그 배포를 통해 조회 가능하며, 자세한 내용은 다음을 참조하십시오.
   - iOS & Android는 [로그 배포(App)](https://intl.cloud.tencent.com/document/product/647/39426)를 참조하십시오.
-  - 데스크톱 브라우저는 [로그 배포(데스크톱 브라우저)](https://intl.cloud.tencent.com/document/product/647/39779)를 참조하십시오.
+  -  Web[로그 배포(Web)](https://intl.cloud.tencent.com/document/product/647/39779)를 참조하십시오.
   - Electron은 [로그 배포(Electron)](https://intl.cloud.tencent.com/document/product/647/38702)를 참조하십시오.
 
 
