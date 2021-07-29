@@ -8,7 +8,7 @@
 - **方案二**：使用客户端 TRTC SDK 的 [setMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 接口进行控制，其原理如下图： 
   ![](https://main.qcloudimg.com/raw/fd3017e7eb263b538fba858a362eab13.png)
 
->! 方案二支持 iOS、Android、Windows、Mac、Electron、Flutter 和桌面浏览器平台的 SDK。
+>! 方案二支持 iOS、Android、Windows、Mac、Electron、Flutter 和Web平台的 SDK。
 
 ## 原理解析
 
