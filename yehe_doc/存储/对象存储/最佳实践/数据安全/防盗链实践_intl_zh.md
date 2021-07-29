@@ -56,4 +56,4 @@
 ![](https://main.qcloudimg.com/raw/ab894ac9faf520c07454d87eb10c2b37.png)
 
 ## 常见问题
-关于防盗链的相关的疑问，可前往 COS 常见问题中的 [数据安全](https://intl.cloud.tencent.com/document/product/436/17039) 文档寻求解答。
+关于防盗链的相关的疑问，可前往 COS 常见问题中的 [数据安全](https://intl.cloud.tencent.com/document/product/436/40946) 文档寻求解答。
