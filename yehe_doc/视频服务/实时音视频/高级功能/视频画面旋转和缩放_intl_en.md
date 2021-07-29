@@ -9,7 +9,7 @@ Mobile live streaming uses mainly the portrait mode, but TRTC supports both the 
 
 ## Supported Platforms
 
-|   iOS    | Android  | macOS  | Windows  | Electron |  Chrome |
+|   iOS    | Android  | macOS  | Windows  | Electron |  web |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | &#10003;  |  &#10003; |  &#10003; |  &#10003;  |&#10003;  |  × |
 
