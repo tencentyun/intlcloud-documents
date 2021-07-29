@@ -7,8 +7,8 @@ Similar to a private IP, HAVIP binding can also be configured in the console. Bi
     ![](https://main.qcloudimg.com/raw/8ff34853fe60fa3ec2d9010df1bd3bbf.png)
 4. In the pop-up dialog box, select an EIP to be bound.
     >!
-    >+ An HAVIP can only be bound with one EIP.  If no EIP is available, you must first create an EIP in the console.
-    >+ If the HAVIP is not bounded with a CVM instance, the corresponding EIP will be in idle status and will incur an idle fee. Please configure the HAVIP correctly and bind it to an instance by referring to the following cases:
+    >+ An HAVIP can only be bound with one EIP. If no EIP is available, you must first create an EIP in the console.
+    >+ If the HAVIP is not bounded with a CVM instance, the corresponding EIP will be in idle status and will incur an idle fee. Please configure the HAVIP correctly and bind it to an instance by referring to the following cases: 
     >  + [Building High Availability Primary/Secondary Cluster by Using HAVIP + Keepalived](https://intl.cloud.tencent.com/document/product/215/31877) under Best Practice
     >  + [Creating a High-availability Database by Using HAVIP + Windows Server Failover Cluster](https://intl.cloud.tencent.com/document/product/215/31878) under Best Practice 
 5. Click **OK**.
@@ -18,7 +18,7 @@ Similar to a private IP, HAVIP binding can also be configured in the console. Bi
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/) and select **IP and Interface** > **HAVIP** on the left sidebar. 
 2. Select the target region on the HAVIP management page.
 3. Select the HAVIP from which EIP will be unbound, and click **Unbind** under the **Operation** column.
-4. In the pop-up dialog box, read the notes, and click **OK** to unbind the EIP.
+4. In the pop-up, read the notes, and click **OK** to unbind the EIP.
    >!
    >+ Your public network business may be affected after unbinding the EIP. Please get ready in advance.
    >+ After being unbound, the EIP will be idle and incur an idle fee. You can directly release unused EIPs to avoid costs.
