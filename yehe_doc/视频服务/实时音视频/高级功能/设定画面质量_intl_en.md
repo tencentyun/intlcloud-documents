@@ -14,11 +14,11 @@ https://github.com/tencentyun/TRTCSDK/blob/master/iOS/TRTC-API-Example-OC/Advanc
 
 ## Supported Platforms
 
-| iOS | Android | Mac OS | Windows |  Desktop Browser | Electron|Flutter |
+| iOS | Android | Mac OS | Windows | Web | Electron|Flutter |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | &#10003; | &#10003;   | &#10003;  |  &#10003;   | &#10003;  |&#10003;  |&#10003;  |
 
-For detailed directions on how to set video quality for the desktop browser, please see [Configuration Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-14-basic-set-video-profile.html).
+For detailed directions on how to set video quality for the Web, please see [Configuration Guide](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-14-basic-set-video-profile.html).
 
 ## TRTCAppScene
 
