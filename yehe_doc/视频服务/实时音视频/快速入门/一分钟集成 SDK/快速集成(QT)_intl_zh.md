@@ -83,19 +83,19 @@ CONFIG += opengl
 CONFIG += debug_and_release
 
 debug {
-contains(QT_ARCH,i386) {
-LIBS += -L$$PWD/../SDK/CPlusPlus/Win32/lib -lliteav
-} else {
-LIBS += -L$$PWD/../SDK/CPlusPlus/Win64/lib -lliteav
-}
+	contains(QT_ARCH,i386) {
+		LIBS += -L$$PWD/../SDK/CPlusPlus/Win32/lib -lliteav
+	} else {
+		LIBS += -L$$PWD/../SDK/CPlusPlus/Win64/lib -lliteav
+	}
 }
 
 release {
-contains(QT_ARCH,i386) {
-LIBS += -L$$PWD/../SDK/CPlusPlus/Win32/lib -lliteav
-} else {
-LIBS += -L$$PWD/../SDK/CPlusPlus/Win64/lib -lliteav
-}
+	contains(QT_ARCH,i386) {
+		LIBS += -L$$PWD/../SDK/CPlusPlus/Win32/lib -lliteav
+	} else {
+		LIBS += -L$$PWD/../SDK/CPlusPlus/Win64/lib -lliteav
+	}
 }
 ```
 ##### 场景二：使用VS配置依赖环境
