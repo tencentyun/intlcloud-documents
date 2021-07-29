@@ -77,7 +77,7 @@ TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使
 | iOS 和 Mac    | [跑通 Demo（iOS&Mac）](https://intl.cloud.tencent.com/document/product/647/35086) |
 | Android    | [跑通 Demo（Android）](https://intl.cloud.tencent.com/document/product/647/35084) |
 | Windows    | [跑通 Demo（Windows）](https://intl.cloud.tencent.com/document/product/647/35085) |
-|Web | [跑通 Demo（桌面浏览器）](https://intl.cloud.tencent.com/document/product/647/35607) |
+|Web | [跑通 Demo（Web）](https://intl.cloud.tencent.com/document/product/647/35607) |
 | Electron   | [跑通 Demo（Electron）](https://intl.cloud.tencent.com/document/product/647/35089) |
 | Flutter | [跑通 Demo（Flutter）](https://intl.cloud.tencent.com/document/product/647/39243) |
 
@@ -92,7 +92,7 @@ SDK 下载完成后，您可通过以下方式快速将 TRTC SDK 集成到您的
 | Mac        | [快速集成（Mac）](https://intl.cloud.tencent.com/document/product/647/35094) |
 | Android    | [快速集成（Android）](https://intl.cloud.tencent.com/document/product/647/35093) |
 | Windows    | [快速集成（Windows）](https://intl.cloud.tencent.com/document/product/647/35095) |
-| Web | [快速集成（桌面浏览器）](https://intl.cloud.tencent.com/document/product/647/35096) |
+| Web | [快速集成（Web）](https://intl.cloud.tencent.com/document/product/647/35096) |
 | Electron   | [快速集成（Electron）](https://intl.cloud.tencent.com/document/product/647/35097) |
 | Flutter | [快速集成（Flutter）](https://intl.cloud.tencent.com/document/product/647/35098) |
 
