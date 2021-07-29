@@ -17,23 +17,23 @@
 ## 跨平台 Demo
 <table style="text-align:center;vertical-align:middle;">
 <tr>
-<th>桌面浏览器</th><th>Flutter </th><th>Electron</th>
+<th>Web</th><th>Flutter </th><th>Electron</th>
 </tr>
 <tr>
 </div></a></td>
-<td><input type="button" value="视频通话" style="height: 30px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;
-    color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;
+<td><input type="button" value="视频通话" style="height: 50px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;
+    color: #fff;border: 1px solid #00a4ff;line-height: 50px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;
     box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;"  onclick="window.open('https://trtc-1252463788.file.myqcloud.com/web/demo/official-demo/index.html')" /><br><br>
-      <input type="button" value="互动直播" style="height: 30px;width: 150px;margin-top: 5px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;
-    color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;
+      <input type="button" value="互动直播" style="height: 50px;width: 150px;margin-top: 5px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;
+    color: #fff;border: 1px solid #00a4ff;line-height: 50px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;
     box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;" onclick="window.open('https://trtc.qcloud.com/tweblive/index.html#/')" />
 </td>
 <td><img style="width:150px" src="https://main.qcloudimg.com/raw/30938d823c61f718e4a2564c0304030c.png" data-nonescope="true"><br><img style="width:150px" src="https://main.qcloudimg.com/raw/ab9f45c1dfcbf0c88f3776ffbd19c02f.png" data-nonescope="true"></td>
-<td><input type="button" value="Windows 版" style="height: 30px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;
-    color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;
+<td><input type="button" value="Windows 版" style="height: 50px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;
+    color: #fff;border: 1px solid #00a4ff;line-height: 50px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;
     box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;"  onclick="window.open('https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/electron_sdk/solution/education/TRTC_Education_Demo%20Setup%201.1.0.exe?_ga=1.35276513.1325816544.1607066203')" /><br><br>
-      <input type="button" value="MacOS 版" style="height: 30px;width: 150px;margin-top: 5px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;
-    color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;
+      <input type="button" value="MacOS 版" style="height: 50px;width: 150px;margin-top: 5px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;
+    color: #fff;border: 1px solid #00a4ff;line-height: 50px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;
     box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;" onclick="window.open('https://trtc-1252463788.cos.ap-guangzhou.myqcloud.com/electron_sdk/solution/education/TRTC_Education_Demo-1.1.0.dmg?_ga=1.35276513.1325816544.1607066203/')" /></td>
 </tr>
 </table>
@@ -50,5 +50,5 @@
 **Windows** 
 ![](https://main.qcloudimg.com/raw/b0094b94a9d8855a1047adaa3efc2d28.png)
 
-**桌面浏览器**
+**Web**
 ![](https://main.qcloudimg.com/raw/ac6593a0f82fdbf3643ca1214de154fb.jpg)
