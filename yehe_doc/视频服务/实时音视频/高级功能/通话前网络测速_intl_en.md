@@ -7,9 +7,9 @@ It is difficult for ordinary users to evaluate the network quality. It is recomm
 
 ## Supported Platforms
 
-| iOS | Android | macOS | Windows | Electron | WeChat Mini Program | Chrome Browser |
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| &#10003; |  &#10003; | &#10003; | &#10003; | &#10003;    | ×  | ×  |
+| iOS | Android | macOS | Windows | Electron | web |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+| &#10003; |  &#10003; | &#10003; | &#10003; | &#10003;    |&#10003;  |
 
 ## How Speed Test Works
 
@@ -37,7 +37,7 @@ The speed test feature can be started through the `startSpeedTest` function of T
 
 
 <dx-codeblock>
-::: Objective-C Objective-C
+``` Objective-C Objective-C
 // The sample code for starting the network speed test requires `sdkAppId` and `UserSig` (for more information on how to get them, please see the basic features)
 // Here uses starting the test after login as an example
 - (void)onLogin:(NSString *)userId userSig:(NSString *)userSid 
@@ -50,7 +50,7 @@ The speed test feature can be started through the `startSpeedTest` function of T
                        NSLog(@"Speed test (test %d of %d) %@", (int)completedCount, (int)totalCount, result);
                    }];
 }
-:::
+```
 ::: Java Java
 // The sample code for starting the network speed test requires `sdkAppId` and `UserSig` (for more information on how to get them, please see the basic features)
 // Here uses starting the test after login as an example
