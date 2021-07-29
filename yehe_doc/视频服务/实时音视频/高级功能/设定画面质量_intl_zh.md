@@ -13,11 +13,11 @@
 
 ## 支持的平台
 
-| iOS | Android | Mac OS | Windows |  桌面浏览器 | Electron|Flutter |
+| iOS | Android | Mac OS | Windows |  Web | Electron|Flutter |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | &#10003; | &#10003;   | &#10003;  |  &#10003;   | &#10003;  |&#10003;  |&#10003;  |
 
-桌面浏览器端设定画面质量的详细操作，请参见 [设定指引](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-14-basic-set-video-profile.html)。
+Web端设定画面质量的详细操作，请参见 [设定指引](https://trtc-1252463788.file.myqcloud.com/web/docs/tutorial-14-basic-set-video-profile.html)。
 
 ## TRTCAppScene
 
@@ -109,7 +109,6 @@ controlMode 参数选择 **TRTCQosControlModeServer** 即可，TRTCQosControlMod
 
 **3. 码率越高越好？**
 较高的码率也需要较高的分辨率来匹配，对于 320 x 240 这样分辨率，1000kbps 的码率就很浪费了，推荐参考 [分辨率码率参照表](https://intl.cloud.tencent.com/document/product/647/35153?lang=en&pg=#detailed-description-of-fields) 进行设置。
-
 
 **4. 用 Wi-Fi 的时候就可以设置很高的分辨率和码率**
 并不是说 Wi-Fi 的网速是恒定不变的，如果离无线路由器较远， 或者路由器信道被占用，可能网速还不如 4G。
