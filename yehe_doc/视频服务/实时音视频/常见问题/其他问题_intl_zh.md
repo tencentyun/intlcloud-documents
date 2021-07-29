@@ -207,7 +207,7 @@ TRTC 支持手动录制，具体操作办法如下：
 
 <span id="que36"></span>
 ###  邀请嘉宾连线如何告知嘉宾房间号？
-告知嘉宾房间号的操作可以加在自定义消息中，解析消息内容获取roomid，相关说明请参见 [创建自定义消息](https://intl.cloud.tencent.com/document/product/1047/34322#.E5.88.9B.E5.BB.BA.E8.87.AA.E5.AE.9A.E4.B9.89.E6.B6.88.E6.81.AF) 、 [TIMMsgSendNewMsg](https://intl.cloud.tencent.com/document/product/1047/34391#timmsgsendnewmsg)。
+告知嘉宾房间号的操作可以加在自定义消息中，解析消息内容获取 roomid，相关说明请参见 [创建自定义消息](https://intl.cloud.tencent.com/document/product/1047/34322#.E5.88.9B.E5.BB.BA.E8.87.AA.E5.AE.9A.E4.B9.89.E6.B6.88.E6.81.AF) 、 [TIMMsgSendNewMsg](https://intl.cloud.tencent.com/document/product/1047/34391#timmsgsendnewmsg)。
 
 <span id="que37"></span>
 ###  是否可以至少两个人进入房间，才开始录音？
