@@ -1,7 +1,7 @@
 ### 跨平台全球互通
-**业界真正实现全平台互通的解决方案，5000+终端完美适配**。提供覆盖手机、桌面全平台的客户端 SDK 以及云端 API，支持 iOS、Android、Windows、Mac、桌面浏览器等平台全球互通。
+**业界真正实现全平台互通的解决方案，5000+终端完美适配**。提供覆盖手机、桌面全平台的客户端 SDK 以及云端 API，支持 iOS、Android、Windows、Mac、Web 等平台全球互通。
 
-### 低门槛快速接入
+### 低门槛快速接入 
 仅需 2 行代码即可跑通测试 Demo，10 行代码完成通用能力接入。最快1分钟即可从零开始快速搭建低延时、低卡顿、高品质的实时音视频互动产品。详细操作指引请参见 [一分钟跑通 Demo](https://intl.cloud.tencent.com/document/product/647/35086) 和 [一分钟集成 SDK](https://intl.cloud.tencent.com/document/product/647/35092) 系列文档。
 
 ### 场景化定制组件
