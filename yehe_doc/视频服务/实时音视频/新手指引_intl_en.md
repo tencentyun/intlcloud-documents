@@ -15,16 +15,16 @@ TRTC offers two types of services: **basic services** and *value-added services*
 <tr>
 <td rowspan="4">Basic services</td>
 <td>Interactive live audio streaming</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/39785">Billing of interactive live audio streaming</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/">Billing of interactive live audio streaming</a></td>
 </tr><tr>
 <td>Interactive live video streaming</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/39786">Billing of interactive live video streaming</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/">Billing of interactive live video streaming</a></td>
 </tr><tr>
 <td>Audio call</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/39787">Billing of audio calls</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/">Billing of audio calls</a></td>
 </tr><tr>
 <td>Video call</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/647/39788">Billing of video calls</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647">Billing of video calls</a></td>
 </tr><tr>
 <td rowspan="2">Value-added services</td>
 <td>On-cloud recording</td>
@@ -42,7 +42,7 @@ TRTC offers two types of services: **basic services** and *value-added services*
 [](id:demo)
 ### Free Demos
 
-TRTC offers free demos for **iOS**, **Android**, **macOS**, **Windows**, **desktop browsers**, **Electron**, and **Flutter**. For details, see [Free Demo](https://intl.cloud.tencent.com/document/product/647/35076).
+TRTC offers free demos for **iOS**, **Android**, **macOS**, **Windows**, **Web**, **Electron**, and **Flutter**. For details, see [Free Demo](https://intl.cloud.tencent.com/document/product/647/35076).
 
 [](id:sdk)
 ### SDK download
@@ -61,7 +61,7 @@ TRTC is one of Tencent Cloud’s LiteAV products. Because all LiteAV products us
 [](id:api)
 ### API integration
 
-- **Client APIs:** you can implement different features by calling SDK-side APIs on platforms including [iOS](https://intl.cloud.tencent.com/document/product/647/35119), [macOS](https://intl.cloud.tencent.com/document/product/647/35119), [Android](https://intl.cloud.tencent.com/document/product/647/35125), [Windows(C++)](https://intl.cloud.tencent.com/document/product/647/35131), [Windows(C#)](https://intl.cloud.tencent.com/document/product/647/35136), [desktop browsers](https://intl.cloud.tencent.com/document/product/647/35143), [Electron](https://intl.cloud.tencent.com/document/product/647/35141), and [Flutter](https://intl.cloud.tencent.com/document/product/647/39169).
+- **Client APIs:** you can implement different features by calling SDK-side APIs on platforms including [iOS](https://intl.cloud.tencent.com/document/product/647/35119), [macOS](https://intl.cloud.tencent.com/document/product/647/35119), [Android](https://intl.cloud.tencent.com/document/product/647/35125), [Windows(C++)](https://intl.cloud.tencent.com/document/product/647/35131), [Windows(C#)](https://intl.cloud.tencent.com/document/product/647/), [Web](https://intl.cloud.tencent.com/document/product/647/35143), [Electron](https://intl.cloud.tencent.com/document/product/647/35141), and [Flutter](https://intl.cloud.tencent.com/document/product/647/39169).
 - **Server APIs:** you can call API 3.0 to implement features including [call quality monitoring](https://intl.cloud.tencent.com/document/product/647/36754), [stream mixing and transcoding](https://intl.cloud.tencent.com/document/product/647/37760), and [room management](https://intl.cloud.tencent.com/document/product/647/34268).
 
 
@@ -77,7 +77,7 @@ The TRTC console offers demo source code for different platforms. See the docume
 | iOS and macOS    | [Demo Quick Start (iOS & macOS)](https://intl.cloud.tencent.com/document/product/647/35086) |
 | Android    | [Demo Quick Start (Android)](https://intl.cloud.tencent.com/document/product/647/35084) |
 | Windows    | [Demo Quick Start (Windows)](https://intl.cloud.tencent.com/document/product/647/35085) |
-| Desktop browsers | [Demo Quick Start (Desktop Browser)](https://intl.cloud.tencent.com/document/product/647/35607) |
+|Web | [Demo Quick Start (Web)](https://intl.cloud.tencent.com/document/product/647/35607) |
 | Electron   | [Demo Quick Start (Electron)](https://intl.cloud.tencent.com/document/product/647/35089) |
 - [Demo Quick Start (Flutter)](https://intl.cloud.tencent.com/document/product/647/39243)
 
@@ -92,7 +92,7 @@ After downloading the TRTC SDK, you can integrate it into your project. For deta
 | macOS        | [SDK Quick Integration (macOS)](https://intl.cloud.tencent.com/document/product/647/35094) |
 | Android    | [SDK Quick Integration (Android)](https://intl.cloud.tencent.com/document/product/647/35093) |
 | Windows    | [SDK Quick Integration (Windows)](https://intl.cloud.tencent.com/document/product/647/35095) |
-| Desktop browsers | [SDK Quick Integration (Desktop Browser)](https://intl.cloud.tencent.com/document/product/647/35096) |
+| Web | [SDK Quick Integration (Web)](https://intl.cloud.tencent.com/document/product/647/35096) |
 | Electron   | [SDK Quick Integration (Electron)](https://intl.cloud.tencent.com/document/product/647/35097) |
 | Flutter | [SDK Quick Integration (Flutter)](https://intl.cloud.tencent.com/document/product/647/35098) |
 
