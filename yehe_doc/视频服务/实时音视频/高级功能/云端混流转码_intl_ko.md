@@ -8,7 +8,7 @@
 - **방법2**: 클라이언트 TRTC SDK의 [setMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 인터페이스를 사용해 제어하며, 원리는 다음 이미지와 같습니다. 
   ![](https://main.qcloudimg.com/raw/fd3017e7eb263b538fba858a362eab13.png)
 
->! 방법2는 iOS, Android, Windows, Mac, Electron, Flutter, 데스크톱 브라우저 플랫폼의 SDK를 지원합니다.
+>! 방법2는 iOS, Android, Windows, Mac, Electron, Flutter,Web 플랫폼의 SDK를 지원합니다.
 
 ## 원리 분석
 
