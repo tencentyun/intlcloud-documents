@@ -4,8 +4,6 @@ The routing policies in the route table can be operated in a real-time manner. S
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/route?rid=1), and select **[Route Tables](https://console.cloud.tencent.com/vpc/route?rid=1)** in the left sidebar to go to the **Route Table** page.
 2. In the list, click the route table ID to be modified to go to the details page.
 3. Click **+New routing policies**.
-
- 	<img src="https://main.qcloudimg.com/raw/5bde7782edfd3a7ade82aa669bd5a7a1.png" width="80%">
 4. In the pop-up window, <span id="routeParam" />configure the routing policy.
  >? If you have deployed a <a href="https://int/product/457/6759">TKE service</a> in the VPC, when you configure the routing policy of the route table for the VPC subnet, the destination cannot be within the CIDR block range of the VPC, nor can it contain the container IP range. For example, if a VPC CIDR block is 172.168.0.0/16 and the container network CIDR block is 192.168.0.0/16, when you configure the routing policy for the VPC subnet, the destination IP range cannot be in the range of 172.168.0.0/16, and cannot contain 192.168.0.0/16.
  >
@@ -28,9 +26,8 @@ The routing policies in the route table can be operated in a real-time manner. S
        </td></tr>
    <tr><td>Next hop</td><td>Specify the next hop instance to redirect to, such as the gateway or CVM IP.</td></tr>
     <tr><td>Notes</td><td>You can custom the description of the route for resource management.</td></tr>
-    <tr><td>Add a line</td><td>You can click **+Add a line** to configure multiple routing policies, or click the deletion icon in the **Operation** column to delete the unnecessary routing policies.</td></tr>
+    <tr><td>Add a line</td><td>You can click <b>+Add a line</b> to configure multiple routing policies, or click the deletion icon in the <b>Operation</b> column to delete the unnecessary routing policies.</td></tr>
      </tbody> </table>
-		 <img src="https://main.qcloudimg.com/raw/c449580ff5918822373d9b0067ee877e.png">
 5. Click **Create** to complete the creation.
 
 ## Publishing a Routing Policy to CCN/Withdrawing a Routing Policy from CCN
@@ -43,8 +40,8 @@ The VPCs where the high available virtual IP, VPN gateway, and CVM are located h
 ### Directions
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/route?rid=1), and select **[Route Tables](https://console.cloud.tencent.com/vpc/route?rid=1)** in the left sidebar to go to the **Route Table** page.
 2. In the list, click the route table ID to be modified to go to the details page.
-   ![](https://main.qcloudimg.com/raw/db9290e78cfc13b9575e590a0f3fa680.png)
-2. You can perform the following operations as needed:
+   ![](https://main.qcloudimg.com/raw/351e5dec96293642293015fcebdc3ba5.png)
+3. You can perform the following operations as needed:
    + For the custom routing policy, you can click **Publish to CCN** to manually publish this routing policy to CCN.
    + For the custom routing policy that have been published to CCN, you can click **Withdrawn from CCN** to reclaim the policy.
    + Click **Edit** to modify the routing policy.
@@ -56,14 +53,14 @@ The VPCs where the high available virtual IP, VPN gateway, and CVM are located h
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/route?rid=1), and select **[Route Tables](https://console.cloud.tencent.com/vpc/route?rid=1)** in the left sidebar to go to the **Route Table** page.
 2. In the list, click the route table ID to go to the details page.
 3. Click **Edit** on the right of the routing policy to modify it.
-![](https://main.qcloudimg.com/raw/77dad0c5a0e0247b73e585cfa8075448.png)
+![](https://main.qcloudimg.com/raw/6f817db7223a5f5f2ae146fc6a39d28b.png)
 4. Click **OK** to complete the modification, or click **Cancel** to cancel the modification.
 
 ## Querying and Exporting a Routing Policy
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/route?rid=1), and select **[Route Tables](https://console.cloud.tencent.com/vpc/route?rid=1)** in the left sidebar to go to the **Route Table** page.
 2. In the list, click a route table ID to go to the details page. You can find the routing policies in this route table.
 3. In the search box on the top right, you can query the routing policy by entering the destination address.
-![](https://main.qcloudimg.com/raw/31318f03c644f0ac7b20dddced6ed026.png)
+![](https://main.qcloudimg.com/raw/0fb54a38484b8525e5cdd9fdc904a183.png)
 4. Click **Export** to export the routing policies in the list, and save it .csv format.
 
 ## Deleting a Routing Policy
@@ -71,7 +68,5 @@ You can delete the unnecessary routing policies. Only the custom routing policie
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/route?rid=1), and select **[Route Tables](https://console.cloud.tencent.com/vpc/route?rid=1)** in the left sidebar to go to the **Route Table** page.
 2. In the list, click the route table ID to be modified to go to the details page.
 3. Click **Delete** on the right of the routing policy that you want to delete.
-![](https://main.qcloudimg.com/raw/dd381c2cddc335bf6e178013ad8b5424.png)
+![](https://main.qcloudimg.com/raw/9ab1d9bcca75ba9f4cfdd4abfbddd58e.png)
 4. Please make sure that you are aware of any possible impact of deleting the routing policy, and then click **OK**.
-
- 	<img src="https://main.qcloudimg.com/raw/bcb484e30a79717e40c8dc9b228757ff.png" width="70%" />
