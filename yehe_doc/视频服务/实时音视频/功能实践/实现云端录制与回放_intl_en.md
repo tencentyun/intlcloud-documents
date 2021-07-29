@@ -43,11 +43,11 @@ TRTC can record streams in four formats, namely HLS, MP4, FLV, and AAC, whose di
 </tr>
 <tr>
 <td nowrap="nowrap">Maximum file length (min)</td>
-<td><ul style="margin:0"><li/>You can set a maximum length for recording files based on your needs. The system will automatically segment files that exceed the limit. The valid value range is 5-120 (minutes).<li/>When **HLS** is selected for **File Type**, no limit is set on the length of recording files, and this parameter becomes invalid.</td>
+<td><ul style="margin:0"><li/>You can set a maximum length for recording files based on your needs. The system will automatically segment files that exceed the limit. The valid value range is 1-120 (minutes).<li/>When **HLS** is selected for **File Type**, no limit is set on the length of recording files, and this parameter becomes invalid.</td>
 </tr>
 <tr>
 <td>File retention duration (day)</td>
-<td>You can set for how many days you want VOD to save your recording files based on your needs. The valid value range is 0-1080 (days). Files that expire will be deleted and cannot be retrieved. 0 means saving the files indefinitely.</td>
+<td>You can set for how many days you want VOD to save your recording files based on your needs. The valid value range is 0-1500(days). Files that expire will be deleted and cannot be retrieved. 0 means saving the files indefinitely.</td>
 </tr>
 <tr>
 <td>Resumption timeout (sec)</td>
@@ -163,7 +163,7 @@ param.userDefineRecordId = @"1001_rexchang";  // Recording ID, i.e. the user who
   Recording files are named `userDefineRecordId_start time_end time`.
 
 - **Supported platforms**
-  Recording tasks can be initiated on [iOS](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce), [Android](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#a154fa0570c3bb6a9f99fb108bda02520), [Windows](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#a3a7a5e6144aa337752d22269d25f7cfc), [macOS](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce), and [Electron](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCParams.html).
+  Recording tasks can be initiated on [iOS](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce), [Android](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#a154fa0570c3bb6a9f99fb108bda02520), [Windows](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#a3a7a5e6144aa337752d22269d25f7cfc), [macOS](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce), and [Electron](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCParams.html).
 
 <span id="recordRESTAPI"></span>
 
