@@ -9,7 +9,7 @@
 
 ## 平台支持
 
-| iOS | Android | Mac OS | Windows | Electron| Chrome 浏览器|
+| iOS | Android | Mac OS | Windows | Electron|web|
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | &#10003;  |  &#10003; |  &#10003; |  &#10003;  |&#10003;  |  × |
 
