@@ -9,7 +9,7 @@ Tencent Real-Time Communication(TRTC)は、携帯電話のライブストリー�
 
 ## サポートプラットフォーム
 
-| iOS | Android | Mac OS | Windows | Electron| Chromeブラウザ|
+| iOS | Android | Mac OS | Windows | Electron| web|
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | &#10003;  |  &#10003; |  &#10003; |  &#10003;  |&#10003;  |  × |
 
