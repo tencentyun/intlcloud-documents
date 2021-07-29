@@ -12,7 +12,7 @@
 
 [](id:mac_step1)
 #### 1단계: C++ 크로스 플랫폼 SDK 다운로드
-1. [SDK](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2) 다운로드 후 압축을 해제하고 파일을 엽니다.
+1. [SDK](https:/liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2) 다운로드 후 압축을 해제하고 파일을 엽니다.
 2. QTTest와 동일한 레벨의 디렉터리에 빈 SDK 폴더를 생성하고, 생성된 SDK 폴더에 1번에서 다운로드한 `TXLiteAVSDKTRTCMacx.x.x/SDK/TXLiteAVSDKTRTC_Mac.framework`를 복사합니다.
 
 [](id:mac_step2)
@@ -63,7 +63,7 @@ NSCameraUsageDescription: 카메라 사용 권한 신청
 
 [](id:win_step1)
 #### 1단계: C++ 크로스 플랫폼 SDK 다운로드
-1. [SDK](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Win_latest.zip) 다운로드 후 압축을 해제하고 파일을 엽니다.
+1. [SDK](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_latest.zip) 다운로드 후 압축을 해제하고 파일을 엽니다.
 2. QTTest와 동일한 레벨의 디렉터리에 빈 SDK 폴더를 생성하고, 생성된 SDK 폴더에 1번에서 다운로드한 `TXLiteAVSDKTRTCWin_latest/SDK/CPlusPlus`를 복사합니다.
 
 [](id:win_step2)
@@ -83,19 +83,19 @@ CONFIG += opengl
 CONFIG += debug_and_release
 
 debug {
-contains(QT_ARCH,i386) {
-LIBS += -L$$PWD/../SDK/CPlusPlus/Win32/lib -lliteav
-} else {
-LIBS += -L$$PWD/../SDK/CPlusPlus/Win64/lib -lliteav
-}
+	contains(QT_ARCH,i386) {
+		LIBS += -L$$PWD/../SDK/CPlusPlus/Win32/lib -lliteav
+	} else {
+		LIBS += -L$$PWD/../SDK/CPlusPlus/Win64/lib -lliteav
+	}
 }
 
 release {
-contains(QT_ARCH,i386) {
-LIBS += -L$$PWD/../SDK/CPlusPlus/Win32/lib -lliteav
-} else {
-LIBS += -L$$PWD/../SDK/CPlusPlus/Win64/lib -lliteav
-}
+	contains(QT_ARCH,i386) {
+		LIBS += -L$$PWD/../SDK/CPlusPlus/Win32/lib -lliteav
+	} else {
+		LIBS += -L$$PWD/../SDK/CPlusPlus/Win64/lib -lliteav
+	}
 }
 ```
 ##### 시나리오2: VS를 사용한 종속 환경 설정
