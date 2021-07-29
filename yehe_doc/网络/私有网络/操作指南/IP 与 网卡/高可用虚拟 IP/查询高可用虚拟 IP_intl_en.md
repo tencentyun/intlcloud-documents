@@ -4,7 +4,6 @@ You can view all HAVIP details in a specific region on the HAVIP console.
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc/).
 2. Select **IP and Interface** > **HAVIP** on the left sidebar to enter the HAVIP management page.
 3. Select a target region to view the details of all HAVIPs you have applied for.
-    ![](https://main.qcloudimg.com/raw/a5b4737bf70d4e184c7581b52686a58d.png)
 	The field description is as follows:
 	+ ID/Name: ID refers to the auto-generated ID of the HAVIP after being created. You can click on it to view the basic information of the HAVIP. Name is defined by the user when the HAVIP is created.
 	+ Status: indicates whether the HAVIP is specified as a floating IP address in the configuration file of the HA software on CVM. A successfully configured HAVIP will be in **Bound with CVM** status, otherwise it is in the **Not bound with CVM yet** status.
