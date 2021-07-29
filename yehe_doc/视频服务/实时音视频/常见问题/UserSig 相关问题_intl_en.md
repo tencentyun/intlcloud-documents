@@ -45,7 +45,7 @@ We provide an open-source module called `GenerateTestUserSig` in the TRTC SDK sa
 | Android | [GitHub])  |   Android/TRTCScenesDemo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java  |
 | Windows (C++) |                           [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Windows/DuilibDemo/GenerateTestUserSig.h)                           |                           Windows/DuilibDemo/GenerateTestUserSig.h                           |
 | Windows (C#)  |                          [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Windows/CSharpDemo/GenerateTestUserSig.cs)                           |                          Windows/CSharpDemo/GenerateTestUserSig.cs                           |
-|  Desktop browsers  |                      [GitHub] | Web/TRTCSimpleDemo/js/debug/GenerateTestUserSig.js |
+|  Web  | [Github](https://github.com/tencentyun/TRTCSDK/blob/master/Web/base-js/js/debug/GenerateTestUserSig.js) | Web/base-js/js/debug/GenerateTestUserSig.js |
 | Flutter | [GitHub](https://github.com/c1avie/trtc_demo/blob/master/lib/debug/GenerateTestUserSig.dart) | /lib/debug/GenerateTestUserSig.dart |
 
 ![](https://main.qcloudimg.com/raw/3bb8aebe177b7bbc4aac7ea3bb134bc3.jpg)
