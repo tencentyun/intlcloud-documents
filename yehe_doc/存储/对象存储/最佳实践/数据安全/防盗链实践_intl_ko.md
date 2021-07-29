@@ -56,4 +56,4 @@ Tencent Cloud COS는 링크 도용 방지 설정을 지원합니다. 사용자�
 ![](https://main.qcloudimg.com/raw/ab894ac9faf520c07454d87eb10c2b37.png)
 
 ## FAQ
-링크 도용 방지에 대해 궁금한 사항은 COS FAQ의 [데이터 보안](https://intl.cloud.tencent.com/document/product/436/17039) 문서에서 확인할 수 있습니다.
+링크 도용 방지에 대해 궁금한 사항은 COS FAQ의 [데이터 보안](https://intl.cloud.tencent.com/document/product/436/40946) 문서에서 확인할 수 있습니다.
