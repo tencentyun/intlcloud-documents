@@ -43,11 +43,11 @@ TRTCのクラウドレコーディングサービスは、「Global Auto-Recordi
 </tr>
 <tr>
 <td nowrap="nowrap">単一ファイルの最長時間（分）</td>
-<td><ul style="margin:0"><li/>実際の業務ニーズに応じて1ビデオファイルの最大時間制限を設定できます。時間制限を超過すると、システムはビデオファイルを自動的に分単位で分割します。数値範囲は5～120。<li/>この【ファイルタイプ】を【HLS】に設定するとき、1ファイルの最大時間を制限しなければ、そのパラメータは無効になります。</td>
+<td><ul style="margin:0"><li/>実際の業務ニーズに応じて1ビデオファイルの最大時間制限を設定できます。時間制限を超過すると、システムはビデオファイルを自動的に分単位で分割します。数値範囲は1 - 120。<li/>この【ファイルタイプ】を【HLS】に設定するとき、1ファイルの最大時間を制限しなければ、そのパラメータは無効になります。</td>
 </tr>
 <tr>
 <td>ファイルの保存期間（日）</td>
-<td>実際の業務ニーズに応じて、ビデオファイルをVODプラットフォームの日数の間保存します。日数単位で数値範囲は0～1080。期限後は、ファイルはVODプラットフォームによって自動的に削除され、回復できなくなります。 0は永久保存を表します。</td>
+<td>実際の業務ニーズに応じて、ビデオファイルをVODプラットフォームの日数の間保存します。日数単位で数値範囲は0 - 1500。期限後は、ファイルはVODプラットフォームによって自動的に削除され、回復できなくなります。 0は永久保存を表します。</td>
 </tr>
 <tr>
 <td>連続レコーディングタイムアウト時間（秒）</td>
@@ -162,7 +162,8 @@ param.userDefineRecordId = @"1001_rexchang";  // レコーディングID。そ�
   レコーディングファイルは、 `userDefineRecordId_開始時間_終了時間` のフォーマットで命名されます。
 
 - **サポート済みのプラットフォーム**
-  [iOS](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Android](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a154fa0570c3bb6a9f99fb108bda02520)、[Windows](http://doc.qcloudtrtc.com/group__TRTCTypeDef__cplusplus.html#a3a7a5e6144aa337752d22269d25f7cfc)、[Mac](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Electron](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCParams.html) などの端末をサポートして、レコーディング制御を起動します。
+  [iOS](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Android](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a154fa0570c3bb6a9f99fb108bda02520)、[Windows](http://doc.qcloudtrtc.com/group__TRTCTypeDef__cplusplus.html#a3a7a5e6144aa337752d22269d25f7cfc)、[Mac](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、
+[Electron](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCParams.html) などの端末をサポートして、レコーディング制御を起動します。
 
 <span id="recordRESTAPI"></span>
 
@@ -351,4 +352,3 @@ HLSは最長30分間のブレークポイントの継続レコーディングを
 ミクスストリーミングレコーディングを作動させた場合は、ミクスストリーミング自体はデコーディングとコーディングする必要があるため、追加ミクスストリーミングトランスコード料金が発生します。ミクスストリーミングトランスコーディングは、解像度の大きさおよびトランスコーディング時間によって計算され、キャスター用の解像度が高く、マイク接続時間（通常はマイク接続のシーンではMixTranscodingが必要です）が長いほど、料金は高くなります。費用計算の詳細は[LVBトランスコード](https://intl.cloud.tencent.com/document/product/267/39604)をご参照ください。
 
 >例えば、 [setVideoEncodrParam()](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCVideoEncParam) によってキャスターのビットレート（videoBitrate）を1500kbps、解像度を720Pに設定するとします。1人のキャスターが視聴者と1時間マイク接続した場合 、マイク接続時間は [クラウドミクスストリーミング](https://intl.cloud.tencent.com/document/product/647/34618)を開始します。そのときに発生するトランスコード料金は `0.0057 米ドル/分 × 60分間 = 0.342米ドル`になります。
->
