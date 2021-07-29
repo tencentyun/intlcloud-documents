@@ -98,9 +98,10 @@ The corresponding fees will be:(266- 26) \* 12 / (365 / 12) \* 1 =94.74 USD.
 The number of additional dashboards is zero, so the total fees are 94.74 USD.
 
 ## Consultation
-You can directly call the sales team for consultation.
-- Contact number: 4009100100 ext. 1
-- Business hours: 9:00 AM–6:00 PM on business days
+You can directly [call the sales team](https://intl.cloud.tencent.com/zh/contact-us) for consultation.
+
+
+
 
 ## Refund
 TCV supports 5-day unconditional refund. If you want to refund, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
