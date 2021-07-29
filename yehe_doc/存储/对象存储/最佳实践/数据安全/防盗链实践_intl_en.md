@@ -56,4 +56,4 @@ In the above [Hotlink Protection Case Study](#fenxi), user A can prevent user B 
 ![](https://main.qcloudimg.com/raw/ab894ac9faf520c07454d87eb10c2b37.png)
 
 ## FAQs
-For questions about hotlink protection, see the [Data Security](https://intl.cloud.tencent.com/document/product/436/17039) section in COS FAQs.
+For questions about hotlink protection, see the [Data Security](https://intl.cloud.tencent.com/document/product/436/40946) section in COS FAQs.
