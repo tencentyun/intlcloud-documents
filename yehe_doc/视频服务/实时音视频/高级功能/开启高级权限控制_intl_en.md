@@ -16,7 +16,7 @@ We recommend enabling advanced permission control for better security in the sce
 
 ## Supported Platforms
 
-|   iOS    | Android  | Mac OS  | Windows  | Electron |  Chrome browser |
+|   iOS    | Android  | Mac OS  | Windows  | Electron |  web |
 | :------: | :------: | :------: | :------: | :------: |  :-----------: |
 | &#10003; | &#10003; | &#10003; | &#10003; | &#10003; |     &#10003;    |
 
@@ -74,7 +74,7 @@ We provided the following samples of `PrivateMapKey` for Java, PHP, Node.js. and
 As shown in the figure above, the PrivateMapKey will be distributed to your application after being calculated on your server, and then the application will deliver it to SDK in two ways below:
 
 #### Solution 1: Deliver to SDK when calling `enterRoom`.
-You can set **privateMapKey** in [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCParams) when calling the `enterRoom` API of `TRTCCloud` to control the permission of room entry.
+You can set **privateMapKey** in [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCParams) when calling the `enterRoom` API of `TRTCCloud` to control the permission of room entry.
 
 This solution verifies PrivateMapKey when users enter the room. It is simple and can control a user's permissions before the user enters.
 
