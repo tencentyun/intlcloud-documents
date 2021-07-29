@@ -8,7 +8,7 @@ You can enable or disable On-Cloud MixTranscoding using the following methods.
 - **Method 2**: via the client-side API [setMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93). The figure below explains how it works. 
   ![](https://main.qcloudimg.com/raw/fd3017e7eb263b538fba858a362eab13.png)
 
->! Method 2 can be used in TRTC SDK for iOS, Android, Windows, macOS, Electron, Flutter, and desktop browsers.
+>! Method 2 can be used in TRTC SDK for iOS, Android, Windows, macOS, Electron, Flutter, and Web.
 
 ## How It Works
 
