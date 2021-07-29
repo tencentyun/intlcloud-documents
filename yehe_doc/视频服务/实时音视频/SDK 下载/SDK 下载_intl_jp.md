@@ -58,7 +58,7 @@ TRTCは、Tencent CloudのLiteAVシリーズ製品の1つです。LiteAVシス�
       <td style="text-align:center">2.05M(arm64)</td>
    </tr>
      <tr>
-      <td style="text-align:center">デスクトップブラウザ</td>
+      <td style="text-align:center">web</td>
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_web_trtc") href="https://web.sdk.qcloud.com/trtc/webrtc/download/webrtc_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
@@ -80,8 +80,8 @@ TRTCは、Tencent CloudのLiteAVシリーズ製品の1つです。LiteAVシス�
       <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_wxmini_trtc") href="https://web.sdk.qcloud.com/trtc/miniapp/download/trtc-room.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32399">DOC</a></td>
-      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32183">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
+      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
       <td style="text-align:center">N/A</td>
    </tr>
 	    <tr>
@@ -103,7 +103,7 @@ TRTCは、Tencent CloudのLiteAVシリーズ製品の1つです。LiteAVシス�
 
 <h2 id="Professional">プロフェッショナル版（Professional）</h2>
 
-プロフェッショナル版は、TRTCを含む複数のオーディオ・ビデオ関連のコア機能を統合したものです。[Super Player （Player+）](https://cloud.tencent.com/product/player)、[モバイルライブストリーミング]および[UGSV]などが含まれます。基盤モジュールを高度に再利用することにより、統合したプロフェッショナル版の容量増加は同時に2つの独立したSDKを統合させた場合よりも小さくなります。さらにシンボル重複（symbol duplicate）の問題も回避できます。
+プロフェッショナル版は、TRTCを含む複数のオーディオ・ビデオ関連のコア機能を統合したものです。[Super Player （Player+）](https://intl.cloud.tencent.com/jp/)、[モバイルライブストリーミング]および[UGSV]などが含まれます。基盤モジュールを高度に再利用することにより、統合したプロフェッショナル版の容量増加は同時に2つの独立したSDKを統合させた場合よりも小さくなります。さらにシンボル重複（symbol duplicate）の問題も回避できます。
 
 <table>
    <tr>
@@ -188,7 +188,7 @@ TRTCは、Tencent CloudのLiteAVシリーズ製品の1つです。LiteAVシス�
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1071/38150">ライブストリーミング簡易版</a><br>LiteAV_Smart</th>
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/37914">UGSV版</a><br>LiteAV_UGC</th>
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/34615">TRTC版</a><br>LiteAV_TRTC</th>
-    <th width="100px" style="text-align:center"><a href="https://cloud.tencent.com/document/product/881/20205">プレーヤー版</a><br>LiteAV_Player</th>
+    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/34615">プレーヤー版</a><br>LiteAV_Player</th>
     <th width="100px" style="text-align:center"><a href="#Professional">プロフェッショナル版</a><br>Professional</th>
     <th width="100px" style="text-align:center"><a href="#Enterprise">エンタープライズ版</a><br>Enterprise</th>
   </tr>
