@@ -8,8 +8,7 @@ You can adjust the bandwidth or the billing mode of public network CLB instances
 ## Bandwidth Cap
 <table>
 <tbody><tr><th>Instance Billing Mode</th><th>Network Billing Mode</th><th >Bandwidth Cap Range (in Mbps)</th></tr>
-<tr><td>Monthly subscription</td><td>Bill-by-bandwidth (monthly)</td><td  rowspan="4">0 - 2048 (inclusive)</td></tr>
-<tr><td rowspan="3">Pay-as-you-go</td><td>Bill-by-bandwidth (hourly)</td></tr>
+<tr><td rowspan="3">Pay-as-you-go</td><td>Bill-by-bandwidth (hourly)</td><td  rowspan="3">0 - 2048 (inclusive)</td></tr>
 <tr><td>Bill-by-traffic</td></tr>
 <tr><td>Bandwidth package</td></tr>
 </tbody></table>
@@ -27,27 +26,9 @@ You can adjust the bandwidth or the billing mode of public network CLB instances
 2. On the **Instance Management** page, select a region, click **More** on the right of a public network CLB instance and continue to adjust the network billing mode.
 <table>
 <tbody><tr><th>Instance Billing Mode</th><th>Network Billing Mode</th><th >Adjustment</th></tr>
-<tr><td>Monthly subscription</td><td>Bill-by-bandwidth (monthly)</td><td>Switch to pay-as-you-go: instance billing mode is switched to pay-as-you-go; network billing mode is switched to bill-by-traffic; each instance can have its billing mode switched once only.</td></tr>
 <tr><td rowspan="3">Pay-as-you-go</td><td>Bill-by-bandwidth (hourly)</td><td>Add IP to a bandwidth package: instance billing mode remains the same; network billing mode is switched to using a bandwidth package; each instance can have its billing mode switched once only.</td></tr>
 <tr><td>Bill-by-traffic</td><td><ul><li>Switch to monthly subscription: instance billing mode is switched to monthly subscription; network billing mode is switched to bill-by-bandwidth (monthly); each instance can have its billing mode switched once only.</li><li>Add IP to a bandwidth package: instance billing mode remains the same; network billing mode is switched to using a bandwidth package; each instance has unlimited chances for switching billing modes.</li></ul></td></tr>
 <tr><td>Bandwidth package</td><td>Remove IP from bandwidth package: instance billing mode remains the same; network billing mode is switched to bill-by-traffic; each instance has unlimited chances for switching billing modes.</td></tr>
 </tbody></table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 3. Click **Submit** in the pop-up dialog box.
 
