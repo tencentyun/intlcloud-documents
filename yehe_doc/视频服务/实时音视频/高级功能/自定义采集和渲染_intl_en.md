@@ -12,7 +12,7 @@
 
 ## Supported Platforms
 
-|   iOS    | Android  |  macOS  | Windows  | Chrome |
+|   iOS    | Android  |  macOS  | Windows  | web |
 | :------: | :------: | :------: | :------: | :--------: |
 | &#10003; | &#10003; | &#10003; | &#10003; |    ×       |
 
