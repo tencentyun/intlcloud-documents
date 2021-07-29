@@ -7,7 +7,7 @@ Tencent Real-Time Communication（TRTC）はTencentが21年間に蓄積したネ
 
 
 ## 製品アーキテクチャ
-TRTCは、全プラットフォームでの相互接続による多人数の音声ビデオ通話と低遅延のインタラクティブライブストリーミングソリューションをメインに打ち出しています。WeChatミニプログラム、デスクトップブラウザー、Android、iOS、Electron、Windows、macOS、Linux等のプラットフォームのSDKを提供し、開発者が素早く統合し、TRTCクラウドサービスのバックエンドと連携できるようにしています。またTencent Cloudの様々な製品と連動させることで、TRTCとInstant Messaging（IM）、Live Video Broadcasting（LVB）、Video on Demand（VOD）等のクラウド製品の機能を一緒に使用することができ、業務でのユースケースをより広げることが可能です。製品アーキテクチャは下図の通りとなります。
+TRTCは、全プラットフォームでの相互接続による多人数の音声ビデオ通話と低遅延のインタラクティブライブストリーミングソリューションをメインに打ち出しています。WeChatミニプログラム、Web、Android、iOS、Electron、Windows、macOS、Linux等のプラットフォームのSDKを提供し、開発者が素早く統合し、TRTCクラウドサービスのバックエンドと連携できるようにしています。またTencent Cloudの様々な製品と連動させることで、TRTCとInstant Messaging（IM）、Live Video Broadcasting（LVB）、Video on Demand（VOD）等のクラウド製品の機能を一緒に使用することができ、業務でのユースケースをより広げることが可能です。製品アーキテクチャは下図の通りとなります。
 ![](https://main.qcloudimg.com/raw/be1345a58328913f7dae524a4cc5e153.svg)
 
 ## プラットフォームのサポート
@@ -19,7 +19,7 @@ TRTCは、**業界で真の全プラットフォームの相互接続を実現�
 | Android    | <li>Android Studio 3.5+</li><li>Android 4.1（SDK API Level 16）以上のシステムを使用することを推奨。</li> |
 | Windows    | <li>Windows 7 以上のバージョンをサポート。</li><li>Visual Studio 2010以上のバージョンは、Visual Studio 2015の使用を推奨。</li><li>.Net Framework 4.0以上のバージョン</li> |
 | Mac OS     | <li>Xcode 9.0+</li><li>OS X10.10+ の Macマシン</li><li>プログラムに有効な開発者署名を設定済み。</li> |
-| デスクトップブラウザー | デスクトップ版 Chrome 52+ の使用を推奨。 |
+| Web | デスクトップ版 Chrome 52+ の使用を推奨。 |
 | Electron   | <li>Windows 7 以上、Mac OS 10.10 以上のバージョンをサポート。</li><li>Electron 4.0.0より上のバージョンをサポート。但し最新版のElectron SDKの使用を推奨。</li> |
 | WeChat Mini Program | <li>WeChat App iOS版 最低バージョン要件：7.0.9</li><li>WeChat App Android版 最低バージョン要件：7.0.8</li><li>WeChat Mini Program 基本ライブラリ 最低バージョン要件：2.10.0</li><li>WeChat Mini Programの開発者ツールがネイティブコンポーネント（&lt;live-pusher&gt;  &lt;live-player&gt; タグ）をサポートしていないため、実際のデバイスでの運用体験が必要。</li> |
 | Linux      | <li>CentOS 7.6 Server版の使用を推奨。組み込みまたはデスクトップ版 Linux ディストリビューションは未サポート。</li><li>Linux SDKはサーバープラットフォームのデプロイのみサポート。</li> |
