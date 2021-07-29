@@ -7,7 +7,7 @@
 
 ## 支持的平台
 
-| iOS | Android | Mac OS | Windows | Electron | Chrome 浏览器|
+| iOS | Android | Mac OS | Windows | Electron | web|
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
 | &#10003; |  &#10003; | &#10003; | &#10003; | &#10003; | &#10003; 参考：[Web 端教程](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-24-advanced-network-quality.html)  |
 
