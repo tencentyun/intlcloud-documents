@@ -50,7 +50,7 @@ To add multiple protocol ports, separate them with line breaks. The following pr
 3. In the list, find the security group to which a parameter template needs to be imported, and click its ID to enter the details page.
 4. On the **Inbound Rules or Outbound Rules** tab page, click **Add Rules**.
 5. In the pop-up box, choose the corresponding parameter template for the source and protocol port. For detailed instructions for adding inbound and outbound rules, see [Adding Security Group Rules](https://intl.cloud.tencent.com/document/product/215/35513).
-> Subsequently, if you need to add new IP addresses or protocol ports, you only need to add them in the corresponding IP address group or protocol port group, without having to modify the security group rules or create another security group.
+>? Subsequently, if you need to add new IP addresses or protocol ports, you only need to add them in the corresponding IP address group or protocol port group, without having to modify the security group rules or create another security group.
 >
 ![](https://main.qcloudimg.com/raw/3a06123b12ef4814c0c95e33418952cc.png)
 
