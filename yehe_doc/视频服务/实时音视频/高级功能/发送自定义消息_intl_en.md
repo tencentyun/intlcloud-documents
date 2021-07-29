@@ -4,9 +4,9 @@ The TRTC SDK provides the ability to send custom messages. With this feature, an
 
 ## Supported Platforms
 
-| iOS | Android | macOS | Windows | Electron | WeChat Mini Program | Chrome Browser |
-|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-|   &#10003;  |   &#10003;   |   &#10003;  |   &#10003;   | &#10003;  |  ×  |   ×  |
+| iOS | Android | macOS | Windows | Electron | web |
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|   &#10003;  |   &#10003;   |   &#10003;  |   &#10003;   | &#10003;  |   ×  |
 
 ## How It Works
 A user's custom message will be combined into the audio/video data streams and transmitted to other users in the same room alongside. As audio/video channels themselves are not completely reliable, in order to improve the reliability, the TRTC SDK implements a reliability guarantee mechanism internally.
