@@ -9,7 +9,7 @@ Tencent Cloud supports [classic network and VPC](https://intl.cloud.tencent.com/
 
 ## Notes
 - Switching the network may cause the change of the instance's private IP. The original IP will become invalid after the repossession time has elapsed. Please modify the instance IP on the client promptly.
-The default repossession time for the original IP is 24 hours and the longest repossession time can be 168 hours. If "Time to Release Old IP" is set to 0 hours, the IP is released immediately after the network is changed.
+The default repossession time for the original IP is 24 hours and the longest repossession time can be 168 hours. If "Valid Hours of Old IPs" is set to 0 hours, the IP is released immediately after the network is changed.
 - The switch from classic network to VPC is irreversible. After the switch to a VPC, the TencentDB instance cannot communicate with Tencent Cloud services in another VPC or classic network.
 - After you switch a source instance's network, the networks of read-only instances associated with the source instance won't be automatically switched, that is, you need to manually switch them.
 
