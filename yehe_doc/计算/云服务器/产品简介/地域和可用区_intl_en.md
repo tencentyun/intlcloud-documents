@@ -10,7 +10,7 @@ You can view the following table or use the [DescribeRegions](https://intl.cloud
 
 - The networks of different regions are fully isolated. Tencent Cloud services in different regions **cannot communicate via a private network by default**.
 - Tencent Cloud services across regions can communicate with each other through [public IPs](https://intl.cloud.tencent.com/document/product/213/5224) over the Internet, while those in different VPCs can communicate with each other through [CCN](https://intl.cloud.tencent.com/document/product/1003), which is faster and more stable.
-- [Cloud Load Balancer (CLB)](https://intl.cloud.tencent.com/document/product/214) currently supports intra-region traffic forwarding by default. If you enable the [cross-region binding](https://intl.cloud.tencent.com/document/product/214/12014) feature, cross-region binding of CLB and CVM instances is supported.
+- [Cloud Load Balancer (CLB)](https://intl.cloud.tencent.com/document/product/214) currently supports intra-region traffic forwarding by default. If you enable the [cross-region binding](https://intl.cloud.tencent.com/document/product/214/38441) feature, cross-region binding of CLB and CVM instances is supported.
 
 ## Availability Zones
 
@@ -50,7 +50,7 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 		<td>Guangzhou Zone 6<br>ap-guangzhou-6</td>
 	</tr>
 		<td rowspan="5">East China (Shanghai)<br>ap-shanghai</td>
-		<td>Shanghai Zone 1<br>ap-shanghai-1</td>
+		<td>Shanghai Zone 1 (sold out)<br>ap-shanghai-1</td>
 	</tr>
 	<tr>
 		<td>Shanghai Zone 2<br>ap-shanghai-2</td>
@@ -106,7 +106,7 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 	</tr>
 	<tr>
 			<td rowspan="3">Hong Kong, Macao and Taiwan, China (Hong Kong)<br>ap-hongkong</td>
-			<td>Hong Kong Zone 1 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-1</td>
+			<td>Hong Kong Zone 1 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions) (sold out)<br>ap-hongkong-1</td>
 	</tr>
 	<tr>
 			<td>Hong Kong Zone 2 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-2</td>
@@ -135,7 +135,7 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 			<td>Singapore Zone 2 (Nodes in Singapore can cover Southeast Asia)<br>ap-singapore-2</td>
 		</tr>
 		<tr>
-			<td>Singapore Zone 3 (Singapore nodes can cover services in Southeast Asia)<br>ap-singapore-3</td>
+			<td>Singapore Zone 3 (Nodes in Singapore can cover Southeast Asia)<br>ap-singapore-3</td>
 		</tr>
 		<tr>
 			<td>Southeast Asia (Jakarta)<br>ap-jakarta</td>
