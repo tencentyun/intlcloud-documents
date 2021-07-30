@@ -16,7 +16,11 @@ The following describes the compatibility:
 | ---------- | -------------- | ------ |
 | 0.10.2     | ≤ 0.10.x      | 100%   |
 | 1.1.1      |  ≤ 1.1.x        | 100%   |
-| 2.4.2      |  ≤ 2.4.x        | 100%   |
+| 2.4.1      |  ≤ 2.4.x        | 100%   |
+
+**Note for CKafka v2.4.1**
+
+When CKafka launched v2.4, the stable branch in the community was v2.4.1. Later, the community launched a development branch v2.4.2. After some repairs were merged, it was positioned as v2.4.2. Then, the community deleted v2.4.2, so there was no v2.4.2 in the community eventually. Therefore, the v2.4.2 previously displayed by CKafka is aligned with the current v2.4.1.
 
 
 ## Suggestions for CKafka Version Selection
