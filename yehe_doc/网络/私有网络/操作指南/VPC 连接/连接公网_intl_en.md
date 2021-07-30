@@ -3,7 +3,6 @@ Tencent Cloud provides you with various methods to access the Internet, such as 
 ## Common Public IP Addresses
 When creating a CVM instance, you can assign a common public IP address to the instance. The system will assign an IP address to your CVM to enable it to access the Internet and also be accessible through the Internet. 
 Common public IP addresses cannot be dynamically bound or unbound with resources such as CVMs, but you can convert them to EIPs. For details, see [Converting Public IP Addresses into EIPs](https://intl.cloud.tencent.com/document/product/213/16586).
-![](https://main.qcloudimg.com/raw/bf56f0daee011ea0ecbce39bce58a44a.png)
 
 ## Elastic IP Addresses
 Unlike public IP addresses that need to be applied for and released with CVMs, elastic IP addresses (EIPs) are independent cloud resources that are decoupled from the CVM lifecycle and can be operated separately. 
@@ -16,7 +15,7 @@ EIPs can be bound and unbound with CVMs and other resources at any time.
 
 ## NAT Gateways
 A NAT gateway provides the SNAT and DNAT features, which enables you to easily establish an Internet egress and provide services for CVMs in a VPC to access the Internet with the same public IP address. 
-For information on how to configure the NAT gateway, see [NAT Gateways - Operation Overview](https://intl.cloud.tencent.com/document/product/1015/12958).
+For information on how to configure the NAT gateway, see [NAT Gateways - Operation Overview](https://intl.cloud.tencent.com/document/product/1015/30235).
 NAT gateways offer the following advantages: 
 - Secure Internet access 
 NAT gateways provide the SNAT and DNAT features to hide the IP addresses of CVMs in a VPC during Internet communication, ensuring security. 
