@@ -25,7 +25,7 @@ Configure `fs.gfs.impl` as follows:
 com.qcloud.cos.goosefs.hadoop.FileSystem
 ```
 
-![](https://main.qcloudimg.com/raw/0f62582177918a965dd1d231af323830.png)
+![](https://main.qcloudimg.com/raw/281b9a9021337b5b6fc5a70eb7033c59.png)
 
 
 After the configurations are delivered, you can restart YARN-related components for the configurations to take effect.
@@ -46,7 +46,7 @@ spark.hadoop.fs.AbstractFileSystem.gfs.impl com.qcloud.cos.goosefs.hadoop.GooseF
 
 This configuration can also be done and delivered on the Spark component configuration page in the EMR console 
 
-![](https://main.qcloudimg.com/raw/6bf4295b7bbddf2e11108e2cec52e4ee.png)
+![](https://main.qcloudimg.com/raw/0f62582177918a965dd1d231af323830.png)
 
 ## Flink Support
 
