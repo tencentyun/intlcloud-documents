@@ -10,7 +10,7 @@
 
 - 異なるリージョン間のネットワークは完全に分離されており、異なるリージョン間のクラウド製品は、**デフォルトではプライベートネットワークを介して通信できません**。
 - 異なるリージョン間のクラウド製品は、[パブリックIP](https://intl.cloud.tencent.com/document/product/213/5224)を介してインターネットへアクセスする方式により相互に通信できます。異なるVPC内のクラウド製品は、より高速で安定した[Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003)を介して相互に通信できます。
-- [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214 )は現在、デフォルトでは、同一リージョン内のトラフィック転送をサポートします。[リージョン間のバインディング](https://intl.cloud.tencent.com/document/product/214/12014)機能をアクティブにすると、Cloud Load BalancerとCVMのクロスリージョンバインディングがサポートされます。
+- [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214 )は現在、デフォルトでは、同一リージョン内のトラフィック転送をサポートします。[リージョン間のバインディング](https://intl.cloud.tencent.com/document/product/214/38441)機能をアクティブにすると、Cloud Load BalancerとCVMのクロスリージョンバインディングがサポートされます。
 
 ## アベイラビリティーゾーン
 
@@ -50,7 +50,7 @@ APIインターフェースを介して、[アベイラビリティーゾーン�
 		<td>広州6区<br> ap-guangzhou-6</td>
 	</tr>
 		<td rowspan="5">華東地区（上海）<br>ap-shanghai</td>
-		<td>上海1区<br>ap-shanghai-1</td>
+		<td>上海1区（売り切れ）<br>ap-shanghai-1</td>
 	</tr>
 	<tr>
 		<td>上海2区<br>ap-shanghai-2</td>
@@ -106,7 +106,7 @@ APIインターフェースを介して、[アベイラビリティーゾーン�
 	</tr>
 	<tr>
 			<td rowspan="3">香港・マカオ・台湾リージョン（中国香港）<br>ap-hongkong</td>
-			<td>香港1区（中国香港のノードは香港・マカオ・台湾地域をカバーできる）<br>ap-hongkong-1</td>
+			<td>香港1区（中国香港のノードは香港・マカオ・台湾地域をカバーできる）（売り切れ）<br>ap-hongkong-1</td>
 	</tr>
 	<tr>
 			<td>香港2区（中国香港のノードは香港・マカオ・台湾地域をカバーできる）<br>ap-hongkong-2</td>
