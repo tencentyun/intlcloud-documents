@@ -122,12 +122,14 @@ To mount COS or Tencent Cloud HDFS to the root directory of GooseFS, configure t
 The following describes how to create a namespace to mount COS or CHDFS.
 
 1. Create a namespace and mount COS:
+
 ```shell
 $ goosefs ns create myNamespace cosn://bucketName-1250000000/3TB \
 --secret fs.cosn.userinfo.secretId=AKXXXXXXXXXXX \
 --secret fs.cosn.userinfo.secretKey=XXXXXXXXXXXX \
 --attribute fs.cosn.bucket.region=ap-xxx \
 ```
+
 >! 
 > - When creating the namespace that mounts COSN, you must use the `–-secret` parameter to specify the key, and use `--attribute` to specify all required parameters of Hadoop-COS (COSN). For the required parameters, please see [Hadoop](https://intl.cloud.tencent.com/document/product/436/6884).
 > - When you create the namespace, if there is no read/write policy (rPolicy/wPolicy) specified, the read/write type set in the configuration file, or the default value (CACHE/CACHE_THROUGH) will be used.
@@ -178,14 +180,17 @@ Information recorded in the metadata is as follows:
 ## Loading Table Data to GooseFS
 
 1. You can load Hive table data to GooseFS. Before the loading, attach the database to GooseFS using the following command:
+
 ```shell
 $ goosefs table attachdb --db test_db hive thrift://
 172.16.16.22:7004 test_for_demo
 ```
+
 >! Replace `thrift` in the command with the actual Hive Metastore address.
 >
 2. After the database is attached, run the `ls` command to view information about the attached database and table:
-```shell
+```
+shell
 $ goosefs table ls test_db web_page
 
 OWNER: hadoop
@@ -217,6 +222,7 @@ PARTITION LIST (
    }
 )
 ```
+
 3. Run the `load` command to load table data:
 ```shell
 $ goosefs table load test_db web_page
@@ -235,12 +241,14 @@ $ goosefs fs
 $ goosefs fs ls /
 ```
 3. Run the `copyFromLocal` command to copy a local file to GooseFS:
+
 ```shell
 $ goosefs fs copyFromLocal LICENSE /LICENSE
 Copied LICENSE to /LICENSE
 $ goosefs fs ls /LICENSE
 -rw-r--r--  hadoop         supergroup               20798       NOT_PERSISTED 03-26-2021 16:49:37:215   0% /LICENSE
 ```
+
 4. Run the `cat` command to view the file content:
 ```shell
 $ goosefs fs cat /LICENSE                                                                         
@@ -259,12 +267,15 @@ persisted file /LICENSE with size 26847
 ## Using GooseFS to Accelerate Uploads/Downloads
 
 1. Check the file status to determine whether a file is cached. The file status `PERSISTED` indicates that the file is in the memory, and `NOT_PERSISTED` indicates not.
+
 ```shell
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 NOT_PERSISTED 01-09-2018 16:35:01:002   0% /data/cos/sample_tweets_150m.csv
 ```
+
 2. Count how many times “tencent” appeared in the file and calculate the time consumed:
-```shell
+```
+shell
 $ time goosefs fs cat /data/s3/sample_tweets_150m.csv | grep-c kitten
 889
 real	0m22.857s
@@ -272,6 +283,7 @@ user	0m7.557s
 sys	0m1.181s
 ```
 3. Caching data in memory can effectively speed up queries. An example is as follows:
+
 ```shell
 $ goosefs fs ls /data/cos/sample_tweets_150m.csv
 -r-x------ staff  staff 157046046 
@@ -282,6 +294,7 @@ real	0m1.917s
 user	0m2.306s
 sys	    0m0.243s
 ```
+
  The data above shows that the system delay is reduced from 1.181s to 0.243s, achieving a 10-times improvement.
 
 ## Shutting Down GooseFS
