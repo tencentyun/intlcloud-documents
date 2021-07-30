@@ -5,7 +5,7 @@ Tencent Cloud will upgrade the authentication feature for certain APIs of the VP
 <tr >
 <td colspan=2>API Name</td><td>Description</td></tr>
 <tr>
-<td rowspan=4>GET</td>
+<td rowspan=5>GET</td>
 <td><a href="https://intl.cloud.tencent.com/document/api/215/41055">DescribeVpnGatewayRoutes</a></td>
 <td>Queries routes of a VPN gateway</td></tr>
 <tr>
@@ -22,7 +22,11 @@ Tencent Cloud will upgrade the authentication feature for certain APIs of the VP
 </td>
 </tr>
 <tr>
-<td rowspan= 5>POST</td>
+<td><a href="https://intl.cloud.tencent.com/document/api/215/17513">DownloadCustomerGatewayConfiguration</a></td><td>Downloads a VPN tunnel configuration
+</td>
+</tr>
+<tr>
+<td rowspan= 4>POST</td>
 <td><a href="https://intl.cloud.tencent.com/document/api/215/41056">DeleteVpnGatewayRoutes</a></td>
 <td>Deletes routes of a VPN gateway
 </td>
@@ -37,10 +41,6 @@ Tencent Cloud will upgrade the authentication feature for certain APIs of the VP
 </tr>
 <tr>
 <td><a href="https://intl.cloud.tencent.com/document/api/215/36074">ModifyVpnGatewayCcnRoutes</a></td><td>Modifies VPN gateway-based CCN routes
-</td>
-</tr>
-<tr>
-<td><a href="https://intl.cloud.tencent.com/document/api/215/17513">DownloadCustomerGatewayConfiguration</a></td><td>Downloads a VPN tunnel configuration
 </td>
 </tr>
 </table>
