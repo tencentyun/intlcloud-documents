@@ -8,6 +8,6 @@
 ![](https://main.qcloudimg.com/raw/f5b9ca9a1cb30a1489219e0a9aa0b533.png)
 ![](https://main.qcloudimg.com/raw/e5bfc906bc4339504cee648e092f3f21.png)
 ## 3. 在线咨询
-单击【立即咨询】，前往“售前在线咨询”页，联系客服人员进行咨询。
-
+填写问题信息，单击【提交工单】，等待视频处理进行审核退费。
+![](https://main.qcloudimg.com/raw/1ba9bdb5d03c9e81eb60e46a59496427.png)
 >会有专人跟进处理您的退款需求。
