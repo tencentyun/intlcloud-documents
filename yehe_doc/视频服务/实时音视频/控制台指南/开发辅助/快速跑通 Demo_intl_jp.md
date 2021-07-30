@@ -29,7 +29,7 @@ TRTCサービスをアクティブにして、 [TRTCコンソール](https://con
 - [Demoクイックスタート(iOS&Mac)](https://intl.cloud.tencent.com/document/product/647/35086)
 - [Demoクイックスタート(Android)](https://intl.cloud.tencent.com/document/product/647/35084)
 - [Demoクイックスタート(Windows)](https://intl.cloud.tencent.com/document/product/647/35085)
-- [Demoクイックスタート(デスクトップブラウザ)](https://intl.cloud.tencent.com/document/product/647/35607)
+- [Demoクイックスタート(Web)](https://intl.cloud.tencent.com/document/product/647/35607)
 - [Demoクイックスタート(Electron)](https://intl.cloud.tencent.com/document/product/647/35089)
 - [Demoクイックスタート(Flutter)](https://intl.cloud.tencent.com/document/product/647/39243)
 
