@@ -68,10 +68,10 @@ chmod 700 get_helm.sh
 >! Ensure that the server where this command is run is in the Internet allowlist or connected VPC of the instance. For more information, see [Public Network Access Control](https://intl.cloud.tencent.com/document/product/1051/35491) and [Private Network Access Control](https://intl.cloud.tencent.com/document/product/1051/35492).
 >
 ```
-helm repo add $instance-$namespace https://$instance.tencentcloudcr.com/chartrepo/$namesapce --username $username --password $instance-token
+helm repo add $instance-$namespace https://$instance.tencentcloudcr.com/chartrepo/$namespace --username $username --password $instance-token
 ```
  - `$instance-$namespace`: indicates the name of the Helm repository. We recommend that you name this Helm repository in the following format to differentiate instances and namespaces: **<Instance name> + <Namespace name>**.
- - `https://$instance.tencentcloudcr.com/chartrepo/$namesapce`: indicates the remote address of the Helm repository.
+ - `https://$instance.tencentcloudcr.com/chartrepo/$namespace`: indicates the remote address of the Helm repository.
     - `$username`: indicates the username obtained in [Step 2](#Step2).
     - `$instance-token`: indicates the login password obtained in [Step 2](#Step2).
 The following information appears if the namespace has been added successfully.
