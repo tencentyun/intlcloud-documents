@@ -3,9 +3,7 @@ Tencent Cloud VPN Connections provides Internet-based remote network connection 
 VPN has two routing and forwarding methods:
 + Matching the source and destination IP ranges of data flow based on the SPD policy-based routing, and forwarding according to the set forwarding policy. Routing cannot be realized through this method, so traffic cannot be forwarded, but the first, fourth and sixth communication scenarios can be realized.
 + By configuring the VPN route table, you can route and forward data packets based on the destination IP range. This method is called destination routing, and all the following communication scenarios can be realized with this method. The sixth scenario can not only be realized through SPD policy-based routing alone but also through SPD policy-based routing and destination routing at the same time.
-   >?
-   >- The VPN route table is currently in a beta test. To try it out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
-   >- The “customer gateway” in the following figures means the logical object that records the public IP address of the IPsec VPN device on the IDC side. Each customer gateway corresponds to the IPsec VPN device on the IDC side.
+   >? The “customer gateway” in the following figures means the logical object that records the public IP address of the IPsec VPN device on the IDC side. Each customer gateway corresponds to the IPsec VPN device on the IDC side.
    >
 
 ## Scenario 1: communication between VPC and IDC
@@ -35,6 +33,6 @@ If the customer IDC migrates to cloud via active/standby VPN tunnels, when the a
 
 ## Scenario 6: communication between a single VPC and multiple IDCs via multiple VPN tunnels
 This communication scenario is similar to the second scenario. The difference between them is that in this scenario, the customer IDC-1, IDC-2, and IDC-3 only need to communicate with VPC and don’t need to communicate with each other.
-+ In terms of this scenario, we recommend that SPD policy-based routing method be used to create the VPC->IDC1, VPC->IDC2, and VPC->IDC3 rules.
-+ If the destination routing method is used alone, IDC-1, IDC-2, and IDC-3 can communicate with each other, which does not conform to the communication scenario. You can configure the VPC->IDC1 and VPC->IDC2 rules when using the SPD policy-based routing method, and then configure in the route table a routing policy whose destination IP range is IDC3. As SPD policy-based routing has higher priority over destination routing, this communication scenario can also be realized.
++ In terms of this scenario, we recommend that SPD policy-based routing method be used to create the VPC > IDC1, VPC > IDC2, and VPC > IDC3 rules.
++ If the destination routing method is used alone, IDC-1, IDC-2, and IDC-3 can communicate with each other, which does not conform to the communication scenario. You can configure the VPC > IDC1 and VPC > IDC2 rules when using the SPD policy-based routing method, and then configure in the route table a routing policy whose destination IP range is IDC3. As SPD policy-based routing has higher priority over destination routing, this communication scenario can also be realized.
 <img src="https://main.qcloudimg.com/raw/3066f0ee52d966f517172d83699c0b49.png" width="90%"/>
