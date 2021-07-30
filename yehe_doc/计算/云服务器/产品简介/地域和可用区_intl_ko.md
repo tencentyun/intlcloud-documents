@@ -10,7 +10,7 @@
 
 - 각 리전 간 네트워크는 완벽히 격리됩니다. 리전 간 클라우드 서비스는 **기본적으로 내부 네트워크를 통해 통신할 수 없습니다**.
 - 리전 간 클라우드 서비스는 [공용 IP](https://intl.cloud.tencent.com/document/product/213/5224)를 통해 Internet에 액세스하는 방식으로 통신할 수 있습니다. 각 VPC의 클라우드 서비스는 빠르고 안정적인 [CCN](https://intl.cloud.tencent.com/document/product/1003)을 통해 통신합니다.
-- [CLB](https://intl.cloud.tencent.com/document/product/214)는 현재 기본적으로 리전 내 트래픽 전달과 로컬 리전 CVM 바인딩을 지원합니다. [리전 간 바인딩](https://intl.cloud.tencent.com/document/product/214/12014) 기능을 활성화하면 CLB의 리전 간 CVM 바인딩이 지원됩니다.
+- [CLB](https://intl.cloud.tencent.com/document/product/214)는 현재 기본적으로 리전 내 트래픽 전달과 로컬 리전 CVM 바인딩을 지원합니다. [리전 간 바인딩](https://intl.cloud.tencent.com/document/product/214/38441) 기능을 활성화하면 CLB의 리전 간 CVM 바인딩이 지원됩니다.
 
 ## 가용존
 
@@ -50,7 +50,7 @@ API 인터페이스의 [가용존 리스트 조회](https://intl.cloud.tencent.c
 		<td>광저우 6존<br> ap-guangzhou-6</td>
 	</tr>
 		<td rowspan="5">화둥지역(상하이)<br>ap-shanghai</td>
-		<td>상하이 1존<br>ap-shanghai-1</td>
+		<td>상하이 1존(품절)<br>ap-shanghai-1</td>
 	</tr>
 	<tr>
 		<td>상하이 2존<br>ap-shanghai-2</td>
@@ -106,7 +106,7 @@ API 인터페이스의 [가용존 리스트 조회](https://intl.cloud.tencent.c
 	</tr>
 	<tr>
 			<td rowspan="3">중국 홍콩/마카오/대만 지역(중국 홍콩)<br>ap-hongkong</td>
-			<td>중국 홍콩 1존(중국 홍콩 노드로 중국 홍콩/마카오/대만 지역 커버 가능)<br>ap-hongkong-1</td>
+			<td>중국 홍콩 1존(중국 홍콩 노드로 중국 홍콩/마카오/대만 지역 커버 가능)(품절)<br>ap-hongkong-1</td>
 	</tr>
 	<tr>
 			<td>중국 홍콩 2존(중국 홍콩 노드로 중국 홍콩/마카오/대만 지역 커버 가능)<br>ap-hongkong-2</td>
