@@ -31,7 +31,6 @@ goosefs:v1.0.0 master
 - -v /tmp/goosefs_ufs:/opt/data: maps the local directory to the docker container.
 - --net=host: Docker uses the host’s network.
 </dx-alert>
-
 3. Run the worker process.
 
 ```shell
@@ -67,15 +66,12 @@ goosefs fs mount --option fs.cosn.userinfo.secretId={secretId} \
     --option fs.AbstractFileSystem.cosn.impl=org.apache.hadoop.fs.CosN \
     /cosn {COS bucket}
 ```
-
 4. View the directory:
-
 ```shell
 [goosefs@VM-0-7-centos goosefs-1.0.0-SNAPSHOT-noUI-noHelm]$ goosefs fs ls /
 drwxrwxrwx  goosefs        goosefs                      1       PERSISTED 01-01-1970 08:00:00:000  DIR /cosn
 drwxr-xr-x  root           root                         0       PERSISTED 06-25-2021 11:01:24:000  DIR /my 
 ```
-
 5. View the worker node:
 
 ```shell
@@ -93,4 +89,3 @@ drwxr-xr-x  root           root                         0       PERSISTED 06-25-
  172.31.0.7       0                capacity      1024.00MB
                                   used          0B (0%)
 ```
-
