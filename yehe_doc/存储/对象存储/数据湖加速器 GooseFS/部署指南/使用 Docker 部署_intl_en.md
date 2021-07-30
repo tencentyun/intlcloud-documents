@@ -13,6 +13,7 @@ This document describes how to use Docker to deploy GooseFS.
 mkdir /tmp/goosefs_ufs 
 ```
 2. Run the master process:
+
 ```shell
 docker run -d  --rm \
 --net=host \
@@ -23,13 +24,16 @@ docker run -d  --rm \
 -Dgoosefs.master.mount.table.root.ufs=/opt/data" \
 goosefs:v1.0.0 master
 ```
+
  <dx-alert infotype="explain" title="Note">
 - goosefs.master.hostname: sets the master address.
 - goosefs.master.mount.table.root.ufs: sets the mount point in the root directory of GooseFS.
 - -v /tmp/goosefs_ufs:/opt/data: maps the local directory to the docker container.
 - --net=host: Docker uses the host’s network.
 </dx-alert>
+
 3. Run the worker process.
+
 ```shell
 docker run -d --rm \
 --net=host \
@@ -54,6 +58,7 @@ b6260f9a0134        goosefs:v1.0.0     "/entrypoint.sh work…"   About an hour 
 docker exec -it 0bda1cac76f4 /bin/bash
 ```
 3. Mount the COS directory:
+
 ```shell
 goosefs fs mount --option fs.cosn.userinfo.secretId={secretId} \
     --option fs.cosn.userinfo.secretKey={secretKey} \
@@ -62,13 +67,17 @@ goosefs fs mount --option fs.cosn.userinfo.secretId={secretId} \
     --option fs.AbstractFileSystem.cosn.impl=org.apache.hadoop.fs.CosN \
     /cosn {COS bucket}
 ```
+
 4. View the directory:
+
 ```shell
 [goosefs@VM-0-7-centos goosefs-1.0.0-SNAPSHOT-noUI-noHelm]$ goosefs fs ls /
 drwxrwxrwx  goosefs        goosefs                      1       PERSISTED 01-01-1970 08:00:00:000  DIR /cosn
 drwxr-xr-x  root           root                         0       PERSISTED 06-25-2021 11:01:24:000  DIR /my 
 ```
+
 5. View the worker node:
+
 ```shell
 
  [goosefs@VM-0-7-centos goosefs-1.0.0-SNAPSHOT-noUI-noHelm]$ goosefs fsadmin report capacity
@@ -84,3 +93,4 @@ drwxr-xr-x  root           root                         0       PERSISTED 06-25-
  172.31.0.7       0                capacity      1024.00MB
                                   used          0B (0%)
 ```
+
