@@ -2,7 +2,7 @@
 
 GooseFS’s metadata management feature can be used to manage structured data. It manages database tables of upper-layer computing applications such as Spark SQL, Hive, and Presto. You can connect it to the underlying Hive Metastore. Metadata management allows SQL engines to read specified data and speeds up data access when the data volume is high.
 
-![](https://main.qcloudimg.com/raw/e35a2c0320da700c3af72deefece71f5.png)          
+![](https://main.qcloudimg.com/raw/c3616ae043e36bc5ea462fa960e20fbb.png)        
 
 GooseFS’s metadata management introduces the following features:
 
