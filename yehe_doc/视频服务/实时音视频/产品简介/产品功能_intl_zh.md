@@ -10,7 +10,7 @@
 <li>单个房间最多支持300人同时在线，最多支持50人同时开启摄像头。</li>
 </ul></td>
 <td>1对1视频通话、300人视频会议、在线问诊、视频聊天、视频客服、视频面审、视频双录、在线理赔、视频狼人杀等。</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44246">视频通话计费说明</a></td>
+<td><a href="https://cloud.tencent.com/document/product/647/">视频通话计费说明</a></td>
 </tr>
 <tr>
 <td>语音通话</td>
@@ -19,7 +19,7 @@
 <li>单个房间最多支持300人同时在线，最多支持50人同时开启麦克风。</li>
 </ul></td>
 <td>1对1语音通话、多人语音通话、语音聊天、语音会议、语音客服、狼人杀等。</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44226">语音通话计费说明</a></td>
+<td><a href="https://cloud.tencent.com/document/product/647">语音通话计费说明</a></td>
 </tr><tr>
 <td>视频互动直播</td>
 <td><ul style="margin:0">
@@ -31,7 +31,7 @@
 <li>CDN 旁路直播模式下，观众数量无限制。</li>
 </ul></td>
 <td>视频低延时直播、十万人互动课堂、视频直播 PK、视频相亲房、互动课堂、远程培训、大型会议等。</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44247">视频互动直播计费说明</a></td>
+<td><a href="https://cloud.tencent.com/document/product/647">视频互动直播计费说明</a></td>
 </tr><tr>
 <td>语音互动直播</td>
 <td><ul style="margin:0">
@@ -43,7 +43,7 @@
 <li>CDN 旁路直播模式下，观众数量无限制。</li>
 </ul></td>
 <td>语音低延时直播、语音直播连麦、语音直播 PK、语聊房、语音相亲房、K 歌房、FM 电台等。</td>
-<td><a href="https://cloud.tencent.com/document/product/647/44248">语音互动直播计费说明</a></td>
+<td><a href="https://cloud.tencent.com/document/product/647/">语音互动直播计费说明</a></td>
 </tr></table>
 
 
@@ -54,7 +54,7 @@
 | 互动连麦       | 支持连麦互动，观众可自由、平滑上下麦，切换过程无需等待。     | 互动直播、在线课堂、聊天房等。                               | 使用互动连麦功能将产生基础服务用量，需支付 [基础服务费用](https://intl.cloud.tencent.com/document/product/647/34610)。 |
 | 跨房 PK        | 也称作“跨直播间 PK”，多个主播跨房间互动 PK，观众观看。       | 秀场直播、PK 连麦、跨房授课等。                              | 使用跨房 PK 功能将产生基础服务用量，需支付 [基础服务费用](https://intl.cloud.tencent.com/document/product/647/34610)。 |
 | 屏幕分享       | 又称屏幕共享，支持将本地电脑桌面、窗口、画面区域分享给他人，例如 Microsoft PowerPoint 播放 PPT 的窗口。 | 在线课堂、PPT 共享、远程协助等。                             | 使用屏幕分享功能将产生基础服务用量，需支付 [基础服务费用](https://intl.cloud.tencent.com/document/product/647/34610)。 |
-| 云端录制       | 采用旁路推流的方式使用 [云直播](https://intl.cloud.tencent.com/document/product/267) 的能力为您提供全程的云端录制功能（即录音/录像），并将录制下来的文件存储到 [云点播](https://intl.cloud.tencent.com/document/product/266) 平台，保证录制过程的可靠性和实时性。 | 双录、存档、合规等。                                         | 云端录制属于增值服务，需额外支付 [云端录制](https://intl.cloud.tencent.com/document/product/647/38385) 费用。 |
+| 云端录制       | 采用旁路推流的方式使用 [云直播](https://intl.cloud.tencent.com/document/product/267) 的能力为您提供全程的云端录制功能（即录音/录像），并将录制下来的文件存储到 [云点播](https://intl.cloud.tencent.com/document/product/266) 平台，保证录制过程的可靠性和实时性。 | 双录、存档、合规等。                                         | 云端录制属于增值服务，需额外支付 [云端录制费用](https://intl.cloud.tencent.com/document/product/647/38385) 。 |
 | 服务端本地录制 | 支持自有服务端录制（即录音/录像），如需使用请 [联系我们](https://intl.cloud.tencent.com/zh/support) 获取 SDK 及相关指引。 | 双录、存档、合规等。                                         | 使用服务端本地录制功能将产生基础服务用量，需支付 [基础服务费用](https://intl.cloud.tencent.com/document/product/647/34610)。 |
 | 高音质         | <li>支持48kHz采样的高音质。</li><li>支持真左右声道立体声音频，媲美纯正 CD 效果。</li> | 语音通话、视频通话、互动直播、语聊房、高音质 FM、音乐教学课、K 歌房、在线课堂等。 | 免费                                                         |
 | 高画质         | 支持720P、1080P的高清画质视频。                              | 视频通话、互动直播、在线课堂等。                             | 免费                                                         |
