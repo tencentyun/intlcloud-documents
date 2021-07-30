@@ -2,7 +2,7 @@
 
 PUT Bucket domain 请求用于设置存储桶的自定义域名。
 
->
+> !
 > - 目前最多支持用户添加20条自定义域名，如需添加更多自定义域名，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们的技术服务团队。
 > - 自定义域名支持默认源站、静态网站源站、全球加速源站三种源站类型，如果需要使用静态网站源站，需要 [开启静态网站](https://intl.cloud.tencent.com/document/product/436/14984)；如果需要使用全球加速源站，需要 [开启全球加速](https://intl.cloud.tencent.com/document/product/436/33406)。
 > - 主账号默认拥有添加存储桶域名的权限，子账号如需添加存储桶自定义域名，需要主账号在 [访问管理控制台](https://console.cloud.tencent.com/cam/overview) 授予`PutBucketDomain`接口的权限。
@@ -23,7 +23,10 @@ Authorization: Auth String
 [Request Body]
 ```
 
-> Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+>? 
+> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com，其中 &lt;BucketName-APPID> 为带 APPID 后缀的存储桶名字，例如 examplebucket-1250000000，可参阅 [存储桶概览 > 基本信息](https://intl.cloud.tencent.com/document/product/436/38493) 和 [存储桶概述 > 存储桶命名规范](https://intl.cloud.tencent.com/document/product/436/13312) 文档；&lt;Region> 为 COS 的可用地域，可参阅 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) 文档。
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> 
 
 #### 请求参数
 
