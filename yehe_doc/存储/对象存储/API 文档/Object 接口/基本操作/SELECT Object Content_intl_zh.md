@@ -39,9 +39,11 @@ Authorization: Auth String
 Request body
 ```
 
-> ?
+>?
+> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com，其中 &lt;BucketName-APPID> 为带 APPID 后缀的存储桶名字，例如 examplebucket-1250000000，可参阅 [存储桶概览 > 基本信息](https://intl.cloud.tencent.com/document/product/436/38493) 和 [存储桶概述 > 存储桶命名规范](https://intl.cloud.tencent.com/document/product/436/13312) 文档；&lt;Region> 为 COS 的可用地域，可参阅 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) 文档。
 > - Authorization: Auth String （详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
 > - 请求参数中 select 和 select-type=2 参数均为必填参数，其中 select 代表发起 select 请求，select-type=2 代表这一接口的版本信息。
+> 
 
 #### 请求头
 
@@ -239,7 +241,7 @@ COS 将检索结果切成多个分块，每个分块即一个 Message。每一�
 > !所有分块 Message 中的整数值均以网络字节序，即大端编码，传输。
 
 下图展示了分块 Message 以及检索结果中的响应报头 header 是如何构成的。每一个分块 Message 中可能包含多个 header 。
-![Message construction](https://main.qcloudimg.com/raw/854fe989e1f98b168a038b4fb615d4e5.png)
+![Message construction](https://main.qcloudimg.com/raw/aeb1263d0c9af56842997327514f13aa.png)
 
 如上图所示，每一个分块 Message 均由预响应 prelude，预响应校验码 prelude CRC（由两个记录字节数的信息组成），报头信息 header ，响应正文 Payload 和正文校验码 Message CRC 构成。从上图可以看到，整个响应体的长度计算方式如下：
 ```shell
@@ -288,7 +290,7 @@ COS Select 的响应类型主要可以分为以下几种：
 
 - 报头格式
   Records message 包括":message-type"， ":event-type"， ":content-type"3种类型的报头。如下所示：
-  ![Records message ](https://main.qcloudimg.com/raw/7e04ad30a1ce335a67975a291bffdac5.png) 
+  ![Records message ](https://main.qcloudimg.com/raw/922e7b72b786ff478d022bf3a5b62166.png) 
 - 正文格式
   Records message 正文可能包含单条记录，部分记录或者多条记录，取决于检索结果的多少。
 
@@ -296,7 +298,7 @@ COS Select 的响应类型主要可以分为以下几种：
 
 - 报头格式
   Continuation Message 包括":message-type"， ":event-type"2种类型的报头，如下所示：
-  ![ Continuation Message ](https://main.qcloudimg.com/raw/b8488620e8f2989f993e9b5488dfe52b.png) 
+  ![ Continuation Message ](https://main.qcloudimg.com/raw/46f32071a712ecf39af238629fd746fc.png) 
 - 正文格式
   Continuation Message 中不包含正文内容。
 
@@ -304,7 +306,7 @@ COS Select 的响应类型主要可以分为以下几种：
 
 - 报头格式
   Progress Message 包括":message-type"， ":event-type"， ":content-type"3种类型的报头，如下所示：
-  ![Progress Message](https://main.qcloudimg.com/raw/6f262224260381b3c7b233b25ce0fbb0.png) 
+  ![Progress Message](https://main.qcloudimg.com/raw/fbbfc15950e7a063fdfa38cb349c40aa.png) 
 - 正文格式
   Progress Message 的正文是一个包含了当前查询进度的 XML 文本，主要包含以下信息：
 	- BytesScanned：如果文件是压缩文件，该数值代表文件解压前的字节大小。如果文件不是压缩文件，该数值即文件的字节大小。
@@ -326,7 +328,7 @@ COS Select 的响应类型主要可以分为以下几种：
 
 - 报头格式
   Stats Message 包括":message-type"， ":event-type"， ":content-type"3种类型的报头，如下所示：
-  ![ Stats Message ](https://main.qcloudimg.com/raw/8fbe1d40ec19c4f72d18275ff087f264.png)
+  ![ Stats Message ](https://main.qcloudimg.com/raw/e565c09f71267eba208206fcaceaf991.png)
 - 正文格式
   Stats message 的正文是一个包含了本次查询统计的 XML 文本，主要包含以下信息：
   - BytesScanned：如果文件是压缩文件，该数值代表文件解压前的字节大小；如果文件不是压缩文件，该数值即文件的字节大小。
@@ -348,7 +350,7 @@ COS Select 的响应类型主要可以分为以下几种：
 
 - 报头格式
   End messages 包括":message-type"，":event-type"2种类型的报头，如下所示：
-  ![ End messages ](https://main.qcloudimg.com/raw/f28f76c719b02258379adf1fcc71f484.png)
+  ![ End messages ](https://main.qcloudimg.com/raw/b079e8945f1a70aa474a0da7c7763311.png)
 - 正文格式
   End messages 中不包含正文内容。
 
@@ -356,7 +358,7 @@ COS Select 的响应类型主要可以分为以下几种：
 
 - 报头格式
   Request Level Error Message 包括“:error-code”，“:error-message”，“:message-type”3种类型的报头，如下所示：
-  ![ Request Level Error Message](https://main.qcloudimg.com/raw/72fc70c4cabbc86b67d1cf8cc46a8d70.png) 
+  ![ Request Level Error Message](https://main.qcloudimg.com/raw/2617ffc28532fb49f53de576e20629d4.png) 
 
 如果您需要了解 Request Level Error Message 中记录的错误码详情，可以查看 [特殊错误码](#.E7.89.B9.E6.AE.8A.E9.94.99.E8.AF.AF.E7.A0.81)。
 

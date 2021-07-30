@@ -6,6 +6,7 @@
 >- 实时日志服务已全量发布。您可通过控制台，使用主账号自助开通并使用。使用前需先授权并开通 [日志服务（CLS）](https://console.cloud.tencent.com/cls/search?region=ap-shanghai)。
 >- 实时日志服务暂不支持中国境外日志的投递。
 >- 实时日志服务仅支持主账号开通。
+>- 同一个日志主题下不可混选 CDN 与 ECDN 域名。
 
 ## 适用场景
 实时查看 / 分析用户访问情况。
@@ -37,7 +38,7 @@
 ### 新建日志主题
 单击【新建】，创建日志主题。
 >! 一个日志集下至多可创建10个主题。
-
+>
 ![](https://main.qcloudimg.com/raw/94136aa047219848f82948e19cd8dc06.png)
 
 ### 配置日志主题
@@ -46,7 +47,7 @@
 >- 新建日志主题名称不可与现存日志主题名称相同。
 >- 一个域名只能绑定到一个日志主题下，不可绑定多个日志主题。
 >- 配置信息保存后，配置生效时间大约为15分钟。
-
+>
 ![](https://main.qcloudimg.com/raw/6e820577732ecc679aae25386683c57e.png)
 
 ### 管理日志主题
@@ -97,7 +98,7 @@
 | request_range | String       | text         | Range 参数，请求范围                                         |
 | request_time  | Integer      | long         | 响应时间（毫秒），指节点从收到请求后响应所有回包再到客户端所花费的时间 |
 | rsp_size      | Integer      | long         | 返回字节数                                                   |
-| time          | Integer      | long         | 请求时间，UNIX 时间戳                                        |
+| time          | Integer      | long         | 请求时间，UNIX 时间戳，单位为：秒。                                        |
 | ua            | String       | text         | User-Agent 信息                                              |
 | url           | String       | text         | 请求路径                                                     |
 | uuid          | String       | text         | 请求的唯一标识                                               |

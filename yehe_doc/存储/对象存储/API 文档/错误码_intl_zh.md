@@ -6,7 +6,7 @@
 
 Content-Type：application/xml
 
-对应 HTTP 状态码：3XX，4XX，5XX。特别的，对于 [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) 接口，即使 HTTP 状态码为200也有可能在响应体中包含错误。
+对应 HTTP 状态码：3XX，4XX，5XX。对于 [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) 接口，即使 HTTP 状态码为200也有可能在响应体中包含错误。
 
 #### 响应体
 
@@ -122,7 +122,7 @@ Content-Type：application/xml
 | 403 Forbidden                       | NoProcessAuthority                    | 没有处理图片的权限                                           |
 | 403 Forbidden                       | RequestTimeTooSkewed                  | 本地时间与服务器时间相差过大，超过15分钟                     |
 | 403 Forbidden                       | Request has expired                   | 发起请求的时间超过了签名的有效时间，或者本地系统时间和所在时区的时间不一致。详情请参见 [常见问题](https://intl.cloud.tencent.com/document/product/436/10687) |
-| 403 Forbidden                       | SignatureDoesNotMatch                 | 客户端计算的签名与 COS 服务端计算的签名不一致。请参阅 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档并借助COS 请求签名工具检查自行实现的签名过程 |
+| 403 Forbidden                       | SignatureDoesNotMatch                 | 客户端计算的签名与 COS 服务端计算的签名不一致。请参阅 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档并借助 COS 请求签名工具 检查自行实现的签名过程 |
 | 403 Forbidden                       | UserNotSourceBucketOwner              | 当前用户不是源存储桶的拥有者                                 |
 | 403 Forbidden                       | UserNotTargetBucketOwner              | 当前用户不是目标存储桶的拥有者                               |
 | 404 Not Found                       | InventoryConfigurationNotFoundError   | 清单配置未找到                                               |
@@ -166,7 +166,7 @@ Content-Type：application/xml
 | 412 Precondition Failed             | PreconditionFailed                    | 前置条件不匹配                                               |
 | 416 Requested Range Not Satisfiable | InvalidRange                          | 请求的对象范围不合法                                         |
 | 451 Unavailable For Legal Reasons   | DomainAuditFailed                     | 域名未备案                                                   |
-| 451 Unavailable For Legal Reasons   | UnavailableForLegalReasons            | 当前服务不可用，请检查账号是否欠费        |
+| 451 Unavailable For Legal Reasons   | UnavailableForLegalReasons            | 当前服务不可用，请检查账号是否欠费，若无欠费可通过 [内容合规](https://console.cloud.tencent.com/cos5/compliance) 查看是否存在违规内容                              |
 
 
 **5XX 类型错误**

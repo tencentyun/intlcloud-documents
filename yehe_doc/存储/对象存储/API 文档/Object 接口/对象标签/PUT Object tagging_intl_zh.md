@@ -4,7 +4,7 @@ COS 支持为已存在的对象设置标签。PUT Object tagging 接口通过为
 
 如您使用子账号调用此项接口，请确保您已经在主账号处获取了`PUT Object tagging`这个接口的权限。
 
->目前对象标签功能最多支持一个对象下设置10个不同的标签，如果超出设置上限，COS 将覆盖已有的对象标签为新的对象标签。
+> !目前对象标签功能最多支持一个对象下设置10个不同的标签，如果超出设置上限，COS 将覆盖已有的对象标签为新的对象标签。
 
 #### 版本控制
 
@@ -15,13 +15,16 @@ COS 支持为已存在的对象设置标签。PUT Object tagging 接口通过为
 #### 请求示例
 
 ```plaintext
-PUT /<ObjectKey>tagging&VersionId=VersionId HTTP 1.1
+PUT /<ObjectKey>?tagging&VersionId=VersionId HTTP 1.1
 Host:<BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
 Authorization: Auth String
 ```
 
->Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+>? 
+> - Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com，其中 &lt;BucketName-APPID> 为带 APPID 后缀的存储桶名字，例如 examplebucket-1250000000，可参阅 [存储桶概览 > 基本信息](https://intl.cloud.tencent.com/document/product/436/38493) 和 [存储桶概述 > 存储桶命名规范](https://intl.cloud.tencent.com/document/product/436/13312) 文档；&lt;Region> 为 COS 的可用地域，可参阅 [地域和访问域名](https://intl.cloud.tencent.com/document/product/436/6224) 文档。
+> - Authorization: Auth String（详情请参见 [请求签名](https://intl.cloud.tencent.com/document/product/436/7778) 文档）。
+> 
 
 #### 请求参数
 
