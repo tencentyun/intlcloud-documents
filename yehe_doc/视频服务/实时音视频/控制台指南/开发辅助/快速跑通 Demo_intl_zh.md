@@ -29,7 +29,7 @@
 - [跑通 Demo（iOS&Mac）](https://intl.cloud.tencent.com/document/product/647/35086)
 - [跑通 Demo（Android）](https://intl.cloud.tencent.com/document/product/647/35084)
 - [跑通 Demo（Windows）](https://intl.cloud.tencent.com/document/product/647/35085)
-- [跑通 Demo（桌面浏览器）](https://intl.cloud.tencent.com/document/product/647/35607)
+- [跑通 Demo（web）](https://intl.cloud.tencent.com/document/product/647/35607)
 - [跑通 Demo（Electron）](https://intl.cloud.tencent.com/document/product/647/35089)
 - [跑通 Demo（Flutter）](https://intl.cloud.tencent.com/document/product/647/39243)
 
