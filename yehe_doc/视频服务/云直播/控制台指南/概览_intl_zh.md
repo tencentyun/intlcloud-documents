@@ -2,13 +2,13 @@
 
 ## 前提条件
 
-- 已开通 [腾讯云直播服务](https://cloud.tencent.com/product/css)。 
+- 已开通 [腾讯云直播服务](https://intl.cloud.tencent.com)。 
 - 已登录 [云直播控制台](https://console.cloud.tencent.com/live/livestat)。
 
 ## 概览
 
 单击左侧导航栏【概览】，可以查看昨日流量计费、直播的实时数据、当前推流路数、并发连接数以及近几天的计费带宽、计费流量和推流路数的趋势等相关数据，也可按需切换计费模式或更改时间粒度。若有指引需要，可单击右上角的【新手接入指引】，查看云直播入门步骤指引。
-![](https://main.qcloudimg.com/raw/505780f9025a4d767c3117c8178df0f9.png)
+
 
 
 ### 今日数据
@@ -58,7 +58,7 @@
 #### 更改时间粒度
 
 云直播控制台支持在查看计费带宽趋势、计费流量趋势、推流路数时更改时间粒度，单击【时间粒度】，单击右侧是粒度时间类型即可。
-![](https://main.qcloudimg.com/raw/cffb2b56653a752bf65ccb85f94d1afa.png)
+
 
 ### 计费情况
 
@@ -76,12 +76,6 @@
 
 - **切换计费模式**
   若当前计费方式为日结计费，可通过【昨日流量消耗】统计项，单击【切换】 ，查看计费切换提醒，单击【确定】即可切换计费模式 。更多计费切换详细信息，请参见 [计费变更](https://intl.cloud.tencent.com/document/product/267/30411)。
-- **查看流量包消耗详情**
-  若需要查看当前账号下流量资源包的使用情况，单击【流量包】统计项下的【详情】，进入[【资源包/插件管理】](https://console.cloud.tencent.com/live/resources/package?type=traffic)即可查看流量资源包/转码资源包使用情况、购买时间、到期时间以及状态情况。
-  ![](https://main.qcloudimg.com/raw/d8340f75d822acb666432bdf4598e014.png)
-- **购买流量资源包**
-  单击【流量包】统计项下的【购买】，进入标准直播流量资源包购买页，即可购买相关资源包。
->? 了解计费价格相关信息，详情请参见 [价格总览](https://intl.cloud.tencent.com/document/product/267/2819)。
 
 ### 相关动态
 
