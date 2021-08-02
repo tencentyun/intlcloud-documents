@@ -46,7 +46,7 @@ CSSレコーディングは、ファイルをVODプラットフォームにス�
 
 ### CSSコンソール
 1. 【機能設定】>[【CSSレコーディング】](https://console.cloud.tencent.com/live/config/record)に入り、レコーディング設定テンプレートを追加します。
-2. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)でプッシュドメイン名を追加して、【管理】をクリックし、このドメイン名とレコーディングテンプレートを関連付けます。具体的な操作については、 [レコーディング設定](https://intl.cloud.tencent.com/document/product/267/34224)をご参照ください。
+2. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)でプッシュドメイン名を追加して、【管理】をクリックし、このドメイン名とレコーディングテンプレートをバインドします。具体的な操作については、 [レコーディング設定](https://intl.cloud.tencent.com/document/product/267/34224)をご参照ください。
 
 ### APIの呼び出し
 
@@ -54,7 +54,7 @@ CSSレコーディングは、ファイルをVODプラットフォームにス�
 2. [CreateLiveRecordRule](https://intl.cloud.tencent.com/document/product/267/30846)を呼び出し、パラメータプッシュドメイン名DomainNameとTemplateId（第1ステップに戻ります）を設定します。AppNameおよびStreamNameに空の文字列を入力します。本操作は本ドメイン名ですべてのプッシュが共通化されることを意味します。
 
 同様に、レコーディングテンプレートを異なるストリーム名とバインドすることによって、一部のCSSストリームのレコーディング開始の効果を実現します。
-さらに同一のレコーディングテンプレートを各種の異なるプッシュドメイン名、ストリーム名に連結させることができるため、同一のCSSストリームが同時に複数のレコーディングテンプレートに関連付けられる場合がありますが、最終的に優先度が最も高いテンプレートのみと関連付けられます。テンプレートの関連付けルールには下表に示す優先度があります（煩雑な工程を含むシナリオでのみ使用されます）。
+さらに同一のレコーディングテンプレートを各種の異なるプッシュドメイン名、ストリーム名に連結させることができるため、同一のCSSストリームが同時に複数のレコーディングテンプレーにバインドされる場合がありますが、最終的に優先度が最も高いテンプレートのみとバインドされます。テンプレートのバインドルールには下表に示す優先度があります（煩雑な工程を含むシナリオでのみ使用されます）。
 
 | DomainName | StreamName | 優先度 |
 | ---------- | ---------- | ------ |
@@ -76,7 +76,7 @@ CSSレコーディングは、ファイルをVODプラットフォームにス�
    &Description=test
    &<パブリックリクエストパラメータ>
 ```
-2. [CSSコンソール](https://intl.cloud.tencent.com/document/product/267/34223#conect)またはTencent Cloud API [CreateLiveRecordRule](https://intl.cloud.tencent.com/document/product/267/30846)を介して、DomainNameとStreamName パラメータを設定すると、上述のレコーディングテンプレートと指定プッシュドメイン名、ストリーム名の関連付けが行われます。
+2. [CSSコンソール](https://intl.cloud.tencent.com/document/product/267/34223#conect)またはTencent Cloud API [CreateLiveRecordRule](https://intl.cloud.tencent.com/document/product/267/30846)を介して、DomainNameとStreamName パラメータを設定すると、上述のレコーディングテンプレートと指定プッシュドメイン名、ストリーム名のバインドが行われます。
 
 > ! 上述のスキームは一部のプッシュのレコーディングが不要な場合のみに対応します。操作する必要があるライブストリーミングのストリーム数が多い場合は、主に次の点を考慮しつつ、別のプッシュドメイン名を使用して個別に管理することをお勧めします。
 > - レコーディングテンプレートかレコーディングルールかを問わず、最大数に制限があります（50）。
