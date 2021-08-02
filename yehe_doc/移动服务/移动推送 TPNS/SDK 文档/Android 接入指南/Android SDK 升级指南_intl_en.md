@@ -7,10 +7,10 @@ If you cannot pull the dependencies when using SDK dependencies, you can conside
 allprojects {
     repositories {
         google()
-        jcenter()
 
         // Google-recommended image source `MavenCentral`
         mavenCentral()
+        jcenter()
         // Tencent Cloud image source
         maven { url 'https://mirrors.tencent.com/nexus/repository/maven-public/' }
     }
