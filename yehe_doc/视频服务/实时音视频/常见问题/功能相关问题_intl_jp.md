@@ -114,7 +114,7 @@ Relayed live streamingをアクティブ化する必要がある場合は、国�
 - [画面共有(Mac)](https://intl.cloud.tencent.com/document/product/647/37336)
 - [画面共有(デスクトップブラウザ)](https://intl.cloud.tencent.com/document/product/647/35163)
 
-画面共有インターフェースの詳細は[Windows（C++）API](https://intl.cloud.tencent.com/document/product/647/35131) または[Windows（C#）API](https://intl.cloud.tencent.com/document/product/647/35136)をご参照ください。そのほか、[Electronインターフェース](https://intl.cloud.tencent.com/document/product/647/35141)もご使用になれます。
+画面共有インターフェースの詳細は[Windows（C++）API](https://intl.cloud.tencent.com/document/product/647/35131) または[Windows（C#）API](https://intl.cloud.tencent.com/document/product/647)をご参照ください。そのほか、[Electronインターフェース](https://intl.cloud.tencent.com/document/product/647/35141)もご使用になれます。
 
 [](id:que23)
 
