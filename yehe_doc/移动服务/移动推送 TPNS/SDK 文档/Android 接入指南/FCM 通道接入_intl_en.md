@@ -5,8 +5,8 @@ The FCM channel is a system-level push channel provided by Google. On mobile pho
 
 ## Directions
 ### Getting key
-Register the application at FireBase official website. Go to **Firebase Project**, **select a specific project application**, click **Settings** > **Cloud Messaging** to get the FCM application push **server key**, and enter it in **[TPNS Console](https://console.cloud.tencent.com/tpns)** > **Configuration Management** > **Basic Configuration** > **FCM Push Channel**.
-![](https://main.qcloudimg.com/raw/d82c9dd04fe986ffc35a57e30eefce4f.png)
+Register the application at [FireBase official website](https://firebase.google.com/?hl=zh-cn). Go to **Firebase Project**, **select a specific project application**, click **Settings** > **Cloud Messaging** to get the FCM application push **server key**, and enter it in **[TPNS Console](https://console.cloud.tencent.com/tpns)** > **Configuration Management** > **Basic Configuration** > **FCM Push Channel**.
+
 ### Configuration
 1. Configure the `google-services.json` file as shown below:
 ![](https://main.qcloudimg.com/raw/568561b72a775058bf06750bfab38ed0.png)
