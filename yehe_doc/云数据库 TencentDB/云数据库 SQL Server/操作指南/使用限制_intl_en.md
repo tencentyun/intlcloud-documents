@@ -3,4 +3,4 @@
 - For dual-server high availability or cluster instances, TencentDB for SQL Server prohibits the `sysadmin` role by default to avoid the risk of intrusion. If your business has to use this role, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 When you try to manage databases in SSMS, the message "You must be a member of the sysadmin role to perform this operation" may be prompted.
 
-- For basic edition instances, TencentDB for SQL Server allows the admin account to grant a user the permission to use the `sysadmin` role. This feature is currently in beta. To use it, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+- For basic edition instances, TencentDB for SQL Server allows the admin account to grant a user the permission to use the `sysadmin` role. 
