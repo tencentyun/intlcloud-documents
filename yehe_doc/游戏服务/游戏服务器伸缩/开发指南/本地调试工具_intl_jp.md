@@ -11,9 +11,8 @@ GSEを介して、次の内容を検証できます。
 
 
 
-
-
 ## GSE Localの設定
+
 
 GSE Localは、Windows、LinuxおよびMacで実行でき、GSEがサポートする言語で使用できます。ローカルデバッグツールのインストールパッケージは次のとおりです。
 - [Windowsローカルデバッグツールのダウンロード](https://gselocal-1301007756.cos.ap-nanjing.myqcloud.com/gse-local/gselocal-master-windows-amd64.exe)
@@ -21,6 +20,8 @@ GSE Localは、Windows、LinuxおよびMacで実行でき、GSEがサポート�
 - [Macローカルデバッグツールのダウンロード](https://gselocal-1301007756.cos.ap-nanjing.myqcloud.com/gse-local/gselocal-master-darwin-amd64)
 
 
+>?以下のサンプルコードは、Linuxおよびmacosオペレーティングシステムに適しています。Windowsオペレーティングシステムでcurlコマンドを実行する場合は、gitbashコマンドラインツールを使用することをお勧めします。
+>
 
 <span id="test"></span>
 ## ゲームサーバーのテスト
