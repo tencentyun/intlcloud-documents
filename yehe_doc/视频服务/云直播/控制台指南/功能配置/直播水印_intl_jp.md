@@ -71,5 +71,5 @@ Tencent Cloud CSSサービスをアクティブ化し、[プッシュドメイ�
 ![](https://main.qcloudimg.com/raw/155bafdc4af5f98e3bfdee525720e3f3.png)
 
 ## 関連操作
-**ドメイン名の次元によるウォーターマークテンプレートのバインド**と**バインドの解除**についての具体的な操作および関連説明は、[ウォーターマーク設定](https://intl.cloud.tencent.com/document/product/267/31064)をご参照ください。
+**ドメイン次元によるウォーターマークテンプレートのバインド**と**バインドの解除**についての具体的な操作および関連説明は、[ウォーターマーク設定](https://intl.cloud.tencent.com/document/product/267/31064)をご参照ください。
 
