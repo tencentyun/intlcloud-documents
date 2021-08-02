@@ -14,10 +14,15 @@ Tencent Cloud Cloud Block Storage（CBS）は、CVMインスタンスに永続�
 
 
 ## ライフサイクル
-**Elastic Cloud Disk**のライフサイクルは、CVMインスタンスに依存しません。インスタンス実行の影響を受けません。複数のクラウドディスクをCVMインスタンスにマウントすることができ、またクラウドディスクをインスタンスからアンマウントして、他のインスタンスにマウントすることもできます。
+- **非エラスティックCBS**のライフサイクルは完全にCVMに追従し、CVMと一緒に購入し、システムディスクとして使用します。マウントやアンマウントはサポートしていません。
+- **エラスティックCBS**のライフサイクルはCVMインスタンスから独立し、インスタンスの運用状況の影響を受けません。複数のCBSを同一のインスタンスにつなげてマウントすることができ、またCBSをインスタンスから切り離して、別のインスタンスにマウントし、データディスクとして使用することもできます。
 
-## 購入と利用
-- クラウドディスクタイプについては、[クラウドディスクタイプ](https://intl.cloud.tencent.com/document/product/362/31636)をご参照ください。
-- クラウドディスクの購入方法については、[Cloud Block Storage価格一覧](https://intl.cloud.tencent.com/document/product/362/2413)をご参照ください。
-- CVMインスタンスとクラウドディスクの仕様については、[クラウドディスクの作成](https://intl.cloud.tencent.com/document/product/362/5744)と[クラウドディスクのマウント](https://intl.cloud.tencent.com/document/product/362/5745)をご参照ください。
-- クラウドディスクの容量拡張、アンマウント、廃棄およびクラウドディスクのベストプラクティスについては、 [CBS製品ドキュメント](https://intl.cloud.tencent.com/document/product/362)をご参照ください。
+## タイプの選択
+CBS製品では**高性能CBS**、**SSD CBS**、**強化型SSD CBS**、**超高速型SSD CBS**の4種類のCBSタイプを提供し、それぞれのハードディスクタイプ、性能、特徴、価格はいずれも異なります。[CBSタイプ](https://intl.cloud.tencent.com/document/product/362/31636) および[CBS価格一覧](https://intl.cloud.tencent.com/document/product/362/2413)ドキュメントを参照し、デプロイするユースケースの要件に基づき、ご自身で選択いただけます。
+
+## 関連操作
+- CVMとCBSの設定については、[CBSの作成](https://intl.cloud.tencent.com/document/product/362/5744) および[CBSのマウント](https://intl.cloud.tencent.com/document/product/362/32401)をご参照ください。
+- CBSの拡張、アンマウント、廃棄およびその他のCBSのベストプラクティスの操作については、[CBS製品ドキュメント](https://intl.cloud.tencent.com/document/product/362)をご参照ください。
+
+
+
