@@ -8,7 +8,7 @@ CSSポルノ検出は、CSSスクリーンキャプチャに基づくため、CS
 [CreateLiveSnapshotTemplate](https://intl.cloud.tencent.com/document/product/267/30834)を呼び出し、PornFlag = 1と設定することによって、ポルノ検出機能を備えたCSSスクリーンキャプチャテンプレートを作成します。
 
 ### 2. ポルノ検出機能を付帯するCSSスクリーンキャプチャルールの作成
-[CreateLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30835)を呼び出し、ポルノ検出機能を付帯するCSSスクリーンキャプチャルールを作成するには、第1ステップで作成したCSSスクリーンキャプチャテンプレートIDをポルノ検出が必要なライブストリーミングAppId、DomainName、AppName、StreamNameに関連付けます。
+[CreateLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30835)を呼び出し、ポルノ検出機能を付帯するCSSスクリーンキャプチャルールを作成するには、第1ステップで作成したCSSスクリーンキャプチャテンプレートIDをポルノ検出が必要なライブストリーミングAppId、DomainName、AppName、StreamNameにバインドします。
 
 ### 3. CSSを開始し、ポルノ検出を開始
 ポルノ検出機能を付帯するCSSスクリーンキャプチャルールを作成した後、新たに開始するCSSでは自動的にポルノ検出機能が開始されます。現在ライブストリーミング中のストリームに、CSSのポルノ検出を開始したい場合は、ライブストリーミングを停止、再開して、この機能の開始を有効にする必要があります。
@@ -21,7 +21,7 @@ CSSポルノ検出機能をアクティブにした後、ポルノ検出コー�
 [CreateLiveCallbackTemplate](https://intl.cloud.tencent.com/document/product/267/30815)を呼び出し、PornCensorshipNotifyUrl パラメータをお客様のドメイン名として設定し、CSSポルノ検出コールバックテンプレートを作成します。
 ### 2. CSSポルノ検出コールバックルールの作成
 
-[CreateLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30816)を呼び出し、ポルノ検出機能を付帯するCSSスクリーンキャプチャルールを作成するには、直前のステップで作成したCSSスクリーンキャプチャテンプレートIDをポルノ検出が必要なライブストリーミングAppId、DomainName、AppNameに関連付けます。
+[CreateLiveSnapshotRule](https://intl.cloud.tencent.com/document/product/267/30816)を呼び出し、ポルノ検出機能を付帯するCSSスクリーンキャプチャルールを作成するには、直前のステップで作成したCSSスクリーンキャプチャテンプレートIDをポルノ検出が必要なライブストリーミングAppId、DomainName、AppNameにバインドします。
 
 ### 3. ポルノ検出結果の取得
 CSSのバックエンドは、HTTP POSTリクエストを介して登録されたドメイン名にポルノ検出結果を送信します。ポルノ検出結果はJSON 形式でHTTP Bodyに保存されます。ライブストリーミングがポルノであるかどうかは、typeフィールドのみで判断できます。
