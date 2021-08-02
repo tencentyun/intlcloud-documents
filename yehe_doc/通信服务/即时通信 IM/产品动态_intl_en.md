@@ -26,6 +26,7 @@
     <td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
 </tr>
 </table>
+
 ## June 2021
 
 <table>
@@ -159,14 +160,16 @@
 	<td><a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK Download</a></td>
 </tr>
 </table>
+
 ## January 2021
+
 <table>
 <tr>
     <th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
 </tr>
 <tr>
     <td> SDK 5.1.138 release (lite edition)</td>
-    </td>
+    <td>
         <ul style="margin:0">
             <li>Optimized logging.</li>
 	    <li>Optimized the policy of persistent connections, improving the quality of connections outside Chinese mainland.</li>
@@ -182,7 +185,7 @@
 </tr>
 <tr>
     <td> SDK 5.1.50 release (standard edition)</td>
-    </td>
+    <td>
         <ul style="margin:0">
             	<li>V2 APIs added the `random` field for message objects.</li>
 	    	<li>Added support for recalling the `lastMsg` message in a conversation.</li>
@@ -201,7 +204,7 @@
 </tr>
 <tr>
     <td> SDK 5.1.137 release (lite edition)</td>
-    </td>
+    <td>
         <ul style="margin:0">
             <li>Fixed the issue where sometimes there was no callback for the login API when a user logged in to the same account repeatedly on multiple iOS devices or Android devices.</li>
 	    <li>Fixed occasional crashes when a low-end Android device tried to obtain the log path.</li>
@@ -212,7 +215,7 @@
 </tr>
 <tr>
     <td> SDK 5.1.136 release (lite edition)</td>
-    </td>
+    <td>
         <ul style="margin:0">
             <li>V2 APIs added the API for log callbacks.</li>
 	    <li>Fixed the issue where the UserID of the @ target user in the group @ message was empty.</li>
@@ -227,7 +230,7 @@
 </tr>
 <tr>
     <td> SDK 5.1.132 release (lite edition)</td>
-    </td>
+    <td>
         <ul style="margin:0">
             <li>Added support for overload protection in the network module.</li>
 	    <li>Fixed the issue where sometimes some sessions were lost when the standard edition was upgraded to the lite edition.</li>
@@ -240,7 +243,7 @@
 </tr>
 <tr>
     <td> SDK 5.1.131 release (lite edition)</td>
-    </td>
+    <td>
         <ul style="margin:0">
             <li>Added the API for forwarding a single message.</li>
 	    <li>Optimized the logic of receiving audio-video group messages. When an audio-video group receives a message, the sender's nickname and profile photo are no longer queried.</li>
@@ -256,7 +259,7 @@
 </tr>
 <tr>
     <td> SDK 5.1.21 release (standard edition)</td>
-    </td>
+    <td>
         <ul style="margin:0">
             <li>Improved internationalization support by eliminating the issue where there were Chinese characters in the English version.</li>
 						<li>Fixed the issue on the Android platform where custom messages with the extended field `extension` failed to be sent.</li>
@@ -267,7 +270,7 @@
 </tr>
 <tr>
     <td> SDK 5.1.129 release (lite edition)</td>
-    </td>
+    <td>
         <ul style="margin:0">
             <li>Fixed the issue where a conversation update callback was triggered when a user tried to get the conversation list and there was no conversation update.</li>
             <li>Fixed the issue where the last message in a conversation was not cleared when a user tried to delete all the messages in the conversation.</li>
@@ -280,7 +283,7 @@
 </tr>
 <tr>
     <td> SDK 5.1.125 release (lite edition)</td>
-    </td>
+    <td>
         <ul style="margin:0">
             <li>V2 APIs added the `random` field for message objects.</li>
             <li>V2 APIs added the `description` and `extension` fields for custom messages.</li>
@@ -298,7 +301,7 @@
 </tr>
 <tr>
     <td> SDK 5.1.20 release (standard edition)</td>
-    </td>
+    <td>
         <ul style="margin:0">
             <li>V2 custom messages added the `desc` and `ext` fields.</li>
             <li>V2 user profile APIs added the `role` and `level` fields.</li>
@@ -325,7 +328,7 @@
 </tr>
 <tr>
     <td> SDK 5.1.123 release (lite edition)</td>
-    </td>
+    <td>
         <ul style="margin:0">
             <li> Fixed the issue where the Android edition cannot receive custom group system messages sent via the RESTful API.</li>
             <li> Optimized the method of generating the value of the `random` field for a message.</li>
@@ -338,7 +341,7 @@
 </tr>
 <tr>
     <td> SDK 5.1.122 release (lite edition)</td>
-    </td>
+    <td>
         <ul style="margin:0">
             <li> Fixed the issue where there might be no callbacks for setting conversion drafts.</li>
             <li> Fixed the issue where the message sender information was not completed when searching for messages via `findMessage`.</li>
@@ -356,7 +359,7 @@
 </tr>
 <tr>
     <td> SDK 5.1.121 release (lite edition)</td>
-    </td>
+    <td>
         <ul style="margin:0">
             <li> Optimized the logic of pulling group profiles, so you don’t need to pull the group member information for audio-video groups.</li>
             <li> Improved log printing and added the device type field.</li>
@@ -372,7 +375,7 @@
 </tr>
 <tr>
     <td> SDK 5.1.118 release (lite edition)</td>
-    </td>
+    <td>
         <ul style="margin:0">
             <li> Optimized the message deduplication logic and fixed the issue where repeated callbacks were triggered for the same message.</li>
             <li> Added an API for the local insertion of C2C messages.</li>
@@ -390,7 +393,7 @@
 </tr>
 <tr>
     <td> SDK 5.1.115 release (lite edition)</td>
-    </td>
+    <td>
         <ul style="margin:0">
             <li> Optimized the signaling timeout threshold and server time synchronization.</li>
             <li> Fixed occasional failures in establishing connections on a weak network.</li>
@@ -403,7 +406,7 @@
 </tr>
 <tr>
     <td> SDK 5.1.10 release (standard edition)</td>
-    </td>
+    <td>
         <ul style="margin:0">
             <li> V2 APIs: added support for custom group fields and multi-element messages.</li>
             <li> V2 APIs: added an API for local insertion of C2C messages.</li>
@@ -420,7 +423,7 @@
 </tr>
 <tr>
     <td> SDK 5.1.111 release (lite edition)</td>
-    </td>
+    <td>
         <ul style="margin:0">
             <li> Improved log printing.</li>
             <li> Fixed several stability issues.</li>
@@ -440,7 +443,7 @@
 </tr>
 <tr>
     <td> SDK 5.1.110 release (lite edition)</td>
-    </td>
+    <td>
         <ul style="margin:0">
             <li> Supplemented all V2 APIs.</li>
             <li> Supplemented the conversation feature.</li>
@@ -457,7 +460,7 @@
 </tr>
 <tr>
     <td> SDK 5.1.2 release (standard edition)</td>
-    </td>
+    <td>
         <ul style="margin:0">
             <li> iOS now allows users to be online on both their iPhones and iPads at the same time.</li>
             <li> Mac added support for the ARM64 architecture.</li>
@@ -470,7 +473,7 @@
 </tr>
 <tr>
     <td> SDK 5.1.1 release (standard edition)</td>
-    </td>
+    <td>
         <ul style="margin:0">
             <li> Added an API to obtain the number of online users in an audio-video group (AVChatRoom).</li>
             <li> Added an API to query messages by unique ID.</li>
@@ -487,14 +490,13 @@
 </tr>
 </table>
 
-
 ## October 2020
 
 <table>
 <tr><th width="20%">Update</th>  <th width="50%">Description</th><th width="15%">Release Date</th><th width="15%">Document</th>
 </tr> <tr>
 <td>SDK 5.0.108 release (lite edition)</td>
-</td>
+<td>
     <li>Fixed a stability issue in the iOS edition.</li>
     <li>Fixed the occasional message callback failure issue for the Android edition.</li>
 </td>
