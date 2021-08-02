@@ -50,7 +50,7 @@ python uploadasset.py  --local_path ./game_folder/
 >1. コマンドラインからアップロードする場合、パラメータ`--local_path`でアップロードするフォルダパスを指定できます。スクリプトはこのパスの下のコンテンツを自動的に圧縮してパッケージ化します（パスの下のコンテンツのみパッケージ化し、フォルダ自体はパッケージ化されません）ので、ユーザーが自分で圧縮する必要はありません。
 >2. オペレーティングシステムのタイプとビット数のアップロードをサポートします。次の方法を使用することをお勧めします。
 >```
->python uploadasset.py  --local_path ./game_folder/ --os_type=Windows --os_bit=64
-> python uploadasset.py  --local_path ./game_folder/ --os_type=CentOS --os_bit=64
-> python uploadasset.py  --local_path ./game_folder/ --image_id=img-9qabwvbn
->```
+python uploadasset.py  --local_path ./game_folder/ --os_type=Windows --os_bit=64
+python uploadasset.py  --local_path ./game_folder/ --os_type=CentOS --os_bit=64
+python uploadasset.py  --local_path ./game_folder/ --image_id=img-9qabwvbn
+```
