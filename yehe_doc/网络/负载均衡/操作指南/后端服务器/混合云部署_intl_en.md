@@ -12,7 +12,7 @@ This feature is currently in beta. If you want to use it, for cross-region bindi
 - Cross-network CVM instance binding is currently not supported for classic CLB instances.
 - This feature is available only to bill-by-IP accounts. To check your account type, please see [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246).
 - Cross-region binding 2.0 and hybrid cloud deployment do not support [Allow Traffic by Default in security groups](https://intl.cloud.tencent.com/document/product/214/14733), for which you need to allow the client IP and service port on the real server.
-- Currently, this feature is supported only in the Beijing, Shanghai, Guangzhou, Chengdu, Chongqing, and Hong Kong (China) regions.
+- This feature is currently supported only in Guangzhou, Shenzhen, Shanghai, Jinan, Hangzhou, Beijing, Tianjin, Chengdu, Chongqing, Hong Kong (China), Singapore, and Silicon Vally.
 - TCP and TCP SSL listeners need to use TOA on the real server to get the source IP. For more information, please see [TOA Module Loading Method](https://intl.cloud.tencent.com/document/product/608/18945).
 - HTTP and HTTPS listeners need to use `X-Forwarded-For` (XFF) to get the source IP.
 - UDP listeners cannot get the source IP.
