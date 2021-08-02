@@ -216,7 +216,7 @@ Height_pixel = 192 * 240 / 320 = 144
 <span id="W_control"></span>
 #### CSSコンソール
 1. 【機能設定】>【[CSSウォーターマーク](https://console.cloud.tencent.com/live/config/watermark)】に進み、ウォーターマーク設定テンプレートを追加します。ウォーターマーク関連パラメータを設定し、さらに対応するウォーターマークテンプレートIDを発行します。具体的な操作については、[CSSウォーターマーク](https://intl.cloud.tencent.com/document/product/267/31073)をご参照ください。
-2. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)で操作が必要なプッシュドメイン名に対し、【管理】>【テンプレート設定】を選択し、このドメイン名とウォーターマークテンプレートを関連付けます。具体的な操作については、[ウォーターマーク設定](https://intl.cloud.tencent.com/document/product/267/31064)をご参照ください。
+2. [【Domain Management】](https://console.cloud.tencent.com/live/domainmanage)で操作が必要なプッシュドメイン名に対し、【管理】>【テンプレート設定】を選択し、このドメイン名とウォーターマークテンプレートをバインドします。具体的な操作については、[ウォーターマーク設定](https://intl.cloud.tencent.com/document/product/267/31064)をご参照ください。
 
 <span id="W_api"></span>
 #### APIの呼び出し
@@ -243,7 +243,7 @@ Height_pixel = 192 * 240 / 320 = 144
 #### APIの呼び出し
 
 1. [CreateLiveTranscodeTemplate](https://intl.cloud.tencent.com/document/product/267/30790)トランスコードテンプレート作成のインターフェースを呼び出し、必要なトランスコードタイプとパラメータ情報を設定します。
-2. [CreateLiveTranscodeRule](https://intl.cloud.tencent.com/document/product/267/30791) トランスコード作成ルールを呼び出し、プルドメイン名DomainNameとTemplateId（第1ステップに戻ります）のパラメータを設定します。AppNameおよびStreamNameに空文字列を入力します。本操作は1つのドメイン名ですべてのプルトランスコードが共通化されたことを意味します。またトランスコードテンプレートを異なるストリーム名と関連付けて、特定のライブストリーミングのトランスコードを有効にすることもできます。
+2. [CreateLiveTranscodeRule](https://intl.cloud.tencent.com/document/product/267/30791) トランスコード作成ルールを呼び出し、プルドメイン名DomainNameとTemplateId（第1ステップに戻ります）のパラメータを設定します。AppNameおよびStreamNameに空文字列を入力します。本操作は1つのドメイン名ですべてのプルトランスコードが共通化されたことを意味します。またトランスコードテンプレートを異なるストリーム名とバインドして、特定のライブストリーミングのトランスコードを有効にすることもできます。
 3. 各トランスコードテンプレートには対応する**唯一**の**トランスコードテンプレート名**があり、トランスコードテンプレート名はトランスコードストリームを再生するための一意の識別子として使用されます。トランスコードテンプレート名を再生プルアドレスのストリームID の末尾に追加して、各種トランスコードテンプレートに対応するトランスコードストリームをプルすることができます。
 
 >! トランスコードルールについての操作は、主に特定のドメイン名または特定のストリームに対して特定のトランスコードテンプレートを有効にするために使用されます。トランスコードルールが作成された場合にのみ、対応する再生ドメイン名が対応するトランスコードテンプレートをプルできます。トランスコードルールが作成されていない場合は、直接スプライスされたトランスコードテンプレート名を利用してもプルストリーミングアドレスは無効になります。
