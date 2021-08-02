@@ -47,8 +47,8 @@ CDNサービスでは、IPブラックリスト/ホワイトリスト設定を�
 
 ### CDNでRange back-to-originはどのように設定しますか。
 [CDNコンソール](https://console.cloud.tencent.com/cdn)にログインし、左側のナビゲーションメニューバーで【ドメイン管理】を選択し、編集するドメイン名の右側にある【管理】をクリックします。詳細については、[back-to-originの設定](https://intl.cloud.tencent.com/document/product/228/7184)をご参照ください。 
-![設定画面イメージ](https://main.qcloudimg.com/raw/d3e75f57d7731cedbbc55690fccf8e42.png)
-【back-to-originの設定】をクリックすると、Range back-to-origin設定モジュールが表示されます。![設定画面イメージ](https://main.qcloudimg.com/raw/8a7e81c54c7cb0f950441759c0e62f48.png)
+![設定画面イメージ](https://main.qcloudimg.com/raw/af642b65bed86a97fadaf229e26aceac.png)
+【back-to-originの設定】をクリックすると、Range back-to-origin設定モジュールが表示されます。![設定画面イメージ](https://main.qcloudimg.com/raw/79d08718f1399b735b9b2dc804bf383e.png)
 
 ### CDNでIPアドレスを完全に隠すことができないのはなぜですか。
 1. IPはCDNが使用される前にすでに公開されていました。
