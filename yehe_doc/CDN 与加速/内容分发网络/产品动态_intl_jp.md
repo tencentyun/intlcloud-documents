@@ -23,7 +23,7 @@ table th:nth-of-type(4){ width:21%; }
 | -------- | ------------------------------------------------------ | ---------- | ------------------------------------------------------------ |
 |自己診断ツールの全面的なアップグレード|自己診断ツールは中国本土以外とグローバルドメイン名をサポートします。|2020-12-03|[自己診断ツール](https://intl.cloud.tencent.com/document/product/228/6304)|
 | ブラウザキャッシュ期限切れ設定 | クライアントブラウザのキャッシュポリシーのカスタマイズ設定をサポートし、back-to-origin率を減らします。 | 2020-12-07 | [ブラウザキャッシュ期限切れの設定](https://intl.cloud.tencent.com/document/product/228/38932) |
-| back-to-origin URL書き換え設定 | back-to-origin URLの書き換え設定機能をサポートします。 |  2020-12-07 | 【back-to-origin URL書き換え設定】(https://intl.cloud.tencent.com/document/product/228/38933) |
+| back-to-origin URL書き換え設定 | back-to-origin URLの書き換え設定機能をサポートします。 |  2020-12-07 |  [back-to-origin URL書き換え設定](https://intl.cloud.tencent.com/document/product/228/38933) |
 | TLSバージョン設定 | 必要に応じてTLSバージョンを有効化または無効化するのをサポートします。 | 2020-12-07 | [TLSバージョン設定](https://intl.cloud.tencent.com/document/product/228/38934) |
 | エラーページのカスタマイズ |必要に応じて、指定されたエラー状態コードで返されたリクエストを指定されたアドレスにリダイレクトすることをサポートします。 | 2020-12-07 | [エラーページのカスタマイズ](https://intl.cloud.tencent.com/document/product/228/38935) |
 | 高度なback-to-origin設定 | より詳細なback-to-origin設定をサポートします。例：分割パスback-to-origin（ファイルタイプ/フォルダ/フルパスファイル/トップページback-to-originの指定）、Client IPの所在リージョンに応じたback-to-origin（完全でない）など。 | 2020-12-29 | [高度なback-to-origin設定](https://intl.cloud.tencent.com/document/product/228/39745) |
