@@ -806,7 +806,7 @@ cos.restoreObject({
 | RestoreRequest     | 복구 데이터의 컨테이너에 사용                                           | Object | 예   |
 | - Days             | 임시 사본의 만료 시간 설정                                       | Number | 예   |
 | - CASJobParameters | CAS 작업 매개변수의 컨테이너                                       | Object | 예   |
-| - - Tier           | CAS 유형의 데이터를 복구할 때 Tier는 COS가 지원하는 다음 3가지 복구 모드로 지정할 수 있습니다. <ul><li>Standard(표준 모드, 3~5시간 내에 복구 작업 완료)</li><li> Expedited(고속 모드, 15분 내에 복구 작업 완료)</li><li> Bulk(일괄 모드, 5~12시간 내에 복구 작업 완료) </li></ul>DEEP ARCHIVE 유형의 데이터 복구에는 다음 2가지 복구 모드가 있습니다.<ul><li> Standard(표준 모드, 12~24시간 내에 복구 작업 완료)</li><li> Bulk(일괄 모드, 24~48시간 내에 복구 작업 완료)</li></ul> | String | 예   |
+| - - Tier           | CAS 유형의 데이터를 복구할 때 Tier는 COS가 지원하는 다음 3가지 복구 모드로 지정할 수 있습니다. <ul><li>Standard(표준 모드, 3~5시간 내에 복구 작업 완료)</li><li> Expedited(고속 모드, 15분 내에 복구 작업 완료)</li><li> Bulk(일괄 모드, 5 ~ 12시간 내에 복구 작업 완료) </li></ul>DEEP ARCHIVE 유형의 데이터 복구에는 다음 2가지 복구 모드가 있습니다.<ul><li> Standard(표준 모드, 12 ~ 24시간 내에 복구 작업 완료)</li><li> Bulk(일괄 모드, 24 ~ 48시간 내에 복구 작업 완료)</li></ul> | String | 예   |
 
 #### 콜백 함수 설명
 
@@ -957,7 +957,7 @@ function(err, data) { ... }
 
 #### 기능 설명
 
-Upload Part 인터페이스 요청으로 초기화된 멀티파트 업로드를 실행합니다. 지원하는 파트 수: 1~10000개, 파트 크기: 1MB~5GB
+Upload Part 인터페이스 요청으로 초기화된 멀티파트 업로드를 실행합니다. 지원하는 파트 수: 1 ~ 10000개, 파트 크기: 1MB~5GB
 <li>멀티파트 업로드를 초기화하려면, Initiate Multipart Upload 인터페이스로 멀티파트 업로드를 초기화한 후 uploadId를 획득합니다. 이 ID는 멀티파트 데이터의 고유 식별자일 뿐만 아니라 전체 파일에서 멀티파트 데이터의 상대적 위치를 식별합니다.</li>
 <li>Upload Part를 요청할 때마다 partNumber와 uploadId가 필요합니다. partNumber는 파트의 번호로, 비순차 업로드를 지원합니다.</li>
 <li>uploadId와 partNumber가 동일할 때, 나중에 전송되는 파트가 이전 파트를 덮어씁니다. uploadId가 존재하지 않을 경우 404 오류가 반환되며, 에러 코드는 NoSuchUpload입니다.</li>
@@ -1286,7 +1286,7 @@ cos.uploadFile({
 
 #### 매개변수 설명
 
-| 매개변수 이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 매개변수 설명                                                     | 유형      | 필수 입력 여부 |
+| 매개변수 이름                                                   | 유형      | 필수 입력 여부 | ---- |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | ---- |
 | Bucket                                                       | 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다. | String    | 예   |
 | Region                                                       | 버킷이 위치한 리전. 열거 값은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참조하십시오. | String    | 예   |
@@ -1644,7 +1644,7 @@ Node.js SDK에서 putObject와 sliceUploadFile을 대상으로 한 업로드 작
 
 taskId에 따라 업로드 작업을 취소합니다.
 
-** 이용 사례**
+**이용 사례**
 
 [//]: # (.cssg-snippet-transfer-upload-cancel)
 ```js
