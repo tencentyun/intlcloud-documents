@@ -49,20 +49,19 @@ cd boost_1_54_0
 
 >? CMakeList.txt 파일을 수정하여 로컬 Boost 헤더 파일 경로를 지정하고 다음 명령어를 수정합니다. 
 >```
->SET(BOOST_HEADER_DIR "/root/boost_1_61_0")
+SET(BOOST_HEADER_DIR "/root/boost_1_61_0")
 >```
-```
 
 
 #### 3. OpenSSL 설치
 
-** 방법1(권장) **
+**방법1(권장)**
 
 ​```shell
 yum install openssl openssl-devel
 ```
 
-** 방법2(권장하지 않음) **
+**방법2(권장하지 않음)**
 
 ```shell
 wget https://www.openssl.org/source/openssl-1.1.1d.tar.gz  
@@ -354,7 +353,7 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-###버킷 생성하기
+### 버킷 생성하기
 
 ```cpp
 #include "cos_api.h"
