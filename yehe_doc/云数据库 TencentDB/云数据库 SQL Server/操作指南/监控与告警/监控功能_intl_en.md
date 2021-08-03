@@ -1,5 +1,5 @@
 To make it easier for you to view and stay up to date with how instances work, TencentDB for SQL Server provides a wide variety of performance monitoring metrics and convenient monitoring features (custom view, time comparison, merged monitoring metrics, etc).
->?If the number of tables in a single instance exceeds one million, database monitoring may be affected. Please make sure the number of tables in a single instance is no more than one million.
+>?If the number of tables in a single instance exceeds one million, database monitoring may be affected. Please make sure that the number of tables in a single instance is below one million.
   
 ## Types of Instances for Monitoring
 TencentDB for SQL Server primary and read-only instances can be monitored, and each instance is provided with a separate monitoring view for easy query.

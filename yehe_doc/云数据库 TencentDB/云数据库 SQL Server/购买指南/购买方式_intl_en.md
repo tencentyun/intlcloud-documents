@@ -9,7 +9,7 @@ To purchase instances, you need to verify your identity first. For more informat
  - Region and AZ: for more information, please see [Regions and Availability Zones](https://intl.cloud.tencent.com/document/product/238/7520).
  - Network: VPC (recommended) and the classic network are supported. For more information on the differences and connectivity testing, please see [Network Environment](https://intl.cloud.tencent.com/document/product/238/32562).
  >?
- >- It is recommended that the CVM and TencentDB instances be under the same account and in the same VPC in the same region.
+ >- It is recommended that the CVM and TencentDB instances should be under the same account and in the same VPC in the same region.
  >- As the classic network resources become increasingly scarce and cannot be expanded, Tencent Cloud accounts registered after June 13, 2017 can create instances (including CVM and TencentDB) only in a VPC rather than the classic network.
  >- If your business has to use the [classic network](https://intl.cloud.tencent.com/document/product/215/31807), please submit a ticket for application.
  - Instance Type: Dual-Server High-Availability Edition and Cluster Edition are supported.
