@@ -1,118 +1,74 @@
-Tencent Cloud Advisor is a ready-to-use product that assesses the risk of cloud resources. Based on the [CAM Service Role Authorization](https://intl.cloud.tencent.com/document/product/598/19421) mechanism, Advisor allows you to analyze potential risks of your cloud resources with one click. It also provides resource optimization advice online according to your business needs so that you can improve your system security and service reliability. 
+云顾问（Tencent Cloud Advisor）是一款开箱即用的云资源风险评估产品。 基于 [CAM 服务角色授权](https://intl.cloud.tencent.com/document/product/598/19421) 机制，一键分析云资源、应用架构、业务性能及安全方面存在的风险，并根据业务实际使用情况，在线提供优化建议，助您提升系统安全性、业务稳定性以及服务可靠性。
 
-## Feature Overview
+## Overview
 
 Advisor improves business continuity by providing various assessment items, flexible assessment configurations, and systematic optimization advice.
 
 #### Various assessment items
 
-Advisor supports multiple Tencent Cloud services from various dimensions (such as security, reliability, and service restriction), covering dozens of assessment items. Advisor is constantly upgrading to support more services. Currently, the following Tencent Cloud services and assessment items are supported.
+从安全性、可靠、成本、服务限制、性能这几个维度覆盖多个云产品，每维度均包含多个风险评估项目。 目前支持评估的云产品有：
 
 <table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Service</th>
-<th>Assessment Item</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td rowspan=11>Security
-</td>
-<td  rowspan=2>COS</td>
-<td>COS sub-account access permission not set</td>
-</tr>
-<tr>
-<td>COS sub-account access permission not restricted</td>
-</tr>
-<tr>
-<td rowspan=3>CVM</td>
-<td>CVM public access not restricted</td>
-</tr>
-<tr>
-<td>CVM public network ports with high risks enabled</td>
-</tr>
-<tr>
-<td>CVM public login not restricted</td>
-</tr>
-<tr>
-<td  rowspan=2>Elasticsearch Service</td>
-<td>Elasticsearch public access not restricted</td>
-</tr>
-<tr>
-<td>Kibana public access not restricted</td>
-</tr>
-<td  rowspan=2>TencentDB for MySQL</td>
-<td>Root account security of TencentDB for MySQL</td>
-</tr>
-<tr>
-<td>High-risk operations of TencentDB for MySQL not restricted</td>
-</tr>
-<td  rowspan=2>TencentDB for Redis</td>
-<td>Default account security of TencentDB for Redis</td>
-</tr>
-<tr>
-<td>High-risk commands of TencentDB for Redis not disabled</td>
-</tr>
-<td rowspan=6>Reliability
-</td>
-<td>COS</td>
-<td>COS bucket versioning</td>
-<tr>
-<td>CVM</td>
-<td>System disk snapshot of CVM</td>
-</tr>
-<td>Elasticseach Service</td>
-<td>Automatic snapshot backup of ES cluster</td>
-</tr>
-<td  rowspan=2>TencentDB for MySQL</td>
-<td>Automatic backup of TencentDB for MySQL</td>
-</tr>
-<tr>
-<td>Cross-region disaster recovery of TencentDB for MySQL</td>
-</tr>
-<td rowspan=1>TencentDB for Redis</td>
-<td>Automatic backup of TencentDB for Redis</td>
-</tr>
-<tbody><tr>
-<td rowspan=8>Service Restriction
-</td>
-<td>CBS</td>
-<td>CBS storage capacity</td>
-<tr>
-<td>CVM</td>
-<td>CVM instance expired</td>
-</tr>
-<td  rowspan=2>TencentDB for MongoDB</td>
-<td>TencentDB for MongoDB instance expired</td>
-</tr>
-<tr>
-<td>Storage capacity of TencentDB for MongoDB</td>
-</tr>
-<td  rowspan=2>TencentDB for MySQL</td>
-<td>TencentDB for MySQL instance expired</td>
-</tr>
-<tr>
-<td>Disk capacity of TencentDB for MySQL</td>
-</tr>
-<td  rowspan=2>TencentDB for Redis</td>
-<td>TencentDB for Redis instance expired</td>
-</tr>
-<tr>
-<td>Memory capacity of TencentDB for Redis</td>
-</tr>
-</tr>
-</tbody></table>
+   <tr>
+      <td>Anti-DDoS</td>
+   </tr>
+   <tr>
+      <td>弹性公网 IP（EIP) </td>
+   </tr>
+   <tr>
+      <td>Elasticseach Service</td>
+   </tr>
+   <tr>
+      <td>消息队列（TDMQ）</td>
+   </tr>
+   <tr>
+      <td>消息队列（TDMQ）  </td>
+   </tr>
+   <tr>
+      <td>COS</td>
+   </tr>
+   <tr>
+      <td>访问管理（CAM）  </td>
+   </tr>
+   <tr>
+      <td>CDN</td>
+   </tr>
+   <tr>
+      <th>TKE</th>
+   </tr>
+   <tr>
+      <td>云防火墙（CFW）  </td>
+   </tr>
+   <tr>
+      <td>CVM</td>
+   </tr>
+   <tr>
+      <td>TencentDB for MongoDB instance expired</td>
+   </tr>
+   <tr>
+      <td>Automatic backup of TencentDB for MySQL</td>
+   </tr>
+   <tr>
+      <td>Automatic backup of TencentDB for Redis</td>
+   </tr>
+   <tr>
+      <td>云数据库（TDSQL）  </td>
+   </tr>
+   <tr>
+      <td>CBS</td>
+   </tr>
+</table>
 
+随着腾讯云产品的迭代，我们会逐步覆盖更多云产品，并提供更多的风险评估项目。
 
 
 #### Flexible assessment configurations
 
-- Assessment items can be added, deleted, or ignored as needed. Concise assessment reports allow you to focus on the key metrics.
+- 支持自定义选择评估项目，您可以屏蔽不关注的评估项目，精简评估报告结果，聚焦核心指标；
 - You can ignore specific cloud resources to focus on assessing the execution status of key resources.
 
 #### Systematic optimization advice
 
-With the assessment results as well as Tencent Cloud’s years of best practices in customer services, Advisor offers systematic, targeted, and operable optimization advice to help you take preventive measures and improve business continuity.
+针对每项评估结果，结合腾讯云多年服务客户沉淀的最佳实践，在线提供有针对性且可操作的优化建议，您可以按照检查建议来优化服务和资源。
+您也可以授权我们的技术专家在线获取您的巡检报告，提供更加系统和专业的建议来助您防患于未然，提升业务连续性。
 
