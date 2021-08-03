@@ -22,8 +22,10 @@ The cluster network and the container network are the basic attributes of a clus
 - Containers in the same cluster can communicate with one another.
 - Containers and nodes in the same cluster can communicate with one another.
 - Containers in a cluster can communicate via private network with resources in the same VPC, such as TencentDB, [TencentDB for Redis](https://intl.cloud.tencent.com/document/product/239/3205), and TencentDB for Memcached.
+<dx-alert infotype="notice">
  - When connecting containers in a cluster to other resources in the same VPC instance, check that the security group has opened the container IP range.
  - The ip-masq component in a TKE cluster prevents containers from accessing the container network and VPC network through SNAT without affecting other IP ranges. Therefore, the container IP range needs to be opened to the Internet when containers access other resources (for example, Redis) in the same VPC instance.
+</dx-alert>
 - See Configuring Intra-region Peering.
 - See Setting Cross-region Peering.
 - See Setting Communication Between Cluster Container and IDC.
