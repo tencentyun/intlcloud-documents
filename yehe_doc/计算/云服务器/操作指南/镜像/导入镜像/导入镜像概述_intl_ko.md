@@ -78,7 +78,7 @@ COS 무효 링크에 대한 오류 보고를 받은 후, 서술된 원인에 따
 
 형식 또는 크기가 조건에 부합하지 않는다는 오류 보고를 받는 경우
 - [Linux 미러 이미지 생성](https://intl.cloud.tencent.com/document/product/213/17814)의 미러 이미지 형식 전환 콘텐츠에 따라 미러 이미지 파일을 적합한 파일 형식으로 전환할 수 있습니다. 간단한 미러 이미지 콘텐츠로 크기 제한을 만족시킨 후 다시 미러 이미지를 가져오기 할 수 있습니다.
-- [오프라인 인스턴스 마이그레이션](https://console.cloud.tencent.com/csm/importOfflineCvm) 기능을 사용해 인스턴스를 마이그레이션할 수 있습니다. 최대 500GB의 미러 이미지 파일 마이그레이션을 지원합니다.
+- [오프라인 인스턴스 마이그레이션](https://intl.cloud.tencent.com/document/product/213/19233) 기능을 사용해 인스턴스를 마이그레이션할 수 있습니다. 최대 500GB의 미러 이미지 파일 마이그레이션을 지원합니다.
 
 #### VirtioNotInstall: Virtio 드라이버가 설치되지 않았습니다.
 
