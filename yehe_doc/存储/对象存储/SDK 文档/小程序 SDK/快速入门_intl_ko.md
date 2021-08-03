@@ -5,8 +5,12 @@
 - COS의 XML 미니프로그램 SDK 소스 코드 다운로드 주소: [XML 미니프로그램 SDK](https://github.com/tencentyun/cos-wx-sdk-v5)
 - SDK 고속 다운로드 주소: [XML 미니프로그램 SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-wx-sdk-v5/latest/cos-wx-sdk-v5.zip)
 - 예시 Demo 다운로드 주소: [XML 미니프로그램 SDK Demo](https://github.com/tencentyun/cos-wx-sdk-v5/tree/master/demo)
-- SDK 문서의 모든 예시 코드는 [SDK 코드 예시](https://github.com/tencentyun/cos-snippets/tree/master/MiniProgram)를 참조하십시오.
-- SDK 로그 업데이트는 [ChangeLog](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/CHANGELOG.md)를 참조하십시오.
+- SDK 문서의 모든 예시 코드는 [SDK 코드 예시](https://github.com/tencentyun/cos-snippets/tree/master/MiniProgram)를 참고하십시오.
+- SDK 로그 업데이트는 [ChangeLog](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/CHANGELOG.md)를 참고하십시오.
+- SDK FAQ는 [미니프로그램 SDK FAQ](https://intl.cloud.tencent.com/document/product/436/38958)를 참고하십시오.
+
+>? SDK 사용 시 함수 또는 메소드 없음 등 오류가 발생하였을 경우, 먼저 SDK를 최신 버전으로 업데이트한 후 재시도하십시오.
+>
 
 #### 환경 종속
 
@@ -14,7 +18,8 @@
 2. [COS 콘솔](https://console.cloud.tencent.com/cos5)에 로그인해 버킷을 생성한 후 버킷 이름과 [리전 정보](https://intl.cloud.tencent.com/document/product/436/6224)를 획득합니다.
 3. [CAM 콘솔](https://console.cloud.tencent.com/capi)에 로그인해 프로젝트의 SecretId와 SecretKey를 획득합니다.
 
-> ?본 문서에 나오는 SecretId, SecretKey, Bucket 등의 명칭에 대한 의미와 획득 방법은 [COS 용어 정보](https://intl.cloud.tencent.com/document/product/436/7751)를 참조하십시오.
+>? 본 문서에 나오는 SecretId, SecretKey, Bucket 등의 명칭에 대한 의미와 획득 방법은 [COS 용어 정보](https://intl.cloud.tencent.com/document/product/436/7751)를 참고하십시오.
+>
 
 #### SDK 설치
 
@@ -22,7 +27,7 @@
 
 #### 수동 설치
 
-소스 코드 파일의 [cos-wx-sdk-v5.js](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/demo/lib/cos-wx-sdk-v5.js)를 사용자의 미니프로그램 코드와 루트 디렉터리의 임의 경로로 복사하고, 상대 경로를 참조합니다.
+소스 코드 파일의 [cos-wx-sdk-v5.js](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/demo/lib/cos-wx-sdk-v5.js)를 사용자의 미니프로그램 코드와 루트 디렉터리의 임의 경로로 복사하고, 상대 경로를 참고합니다.
 
 ```js
 var COS = require('./lib/cos-wx-sdk-v5.js')
@@ -36,7 +41,7 @@ var COS = require('./lib/cos-wx-sdk-v5.js')
 npm install cos-wx-sdk-v5
 ```
 
-그중 미니프로그램 코드는 `var COS = require('cos-wx-sdk-v5');`를 사용하여 참조합니다.
+그 중 미니프로그램 코드는 `var COS = require('cos-wx-sdk-v5');`를 사용하여 참고합니다.
 
 ## 사용하기
 
@@ -47,7 +52,7 @@ npm install cos-wx-sdk-v5
 1. cos.postObject는 wx.uploadFile 방법을 사용합니다.
 2. 기타 방법은 wx.request 방법을 사용합니다.
 
-해당 화이트리스트에서 COS 도메인을 설정해야 합니다. 화이트리스트 포맷은 두 가지가 있습니다.
+해당 화이트리스트에서 COS 도메인을 설정해야 합니다. 화이트리스트 형식은 두 가지가 있습니다.
 
 1. 표준 요청인 경우 버킷 도메인을 화이트리스트로 설정할 수 있습니다. 예:
    `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com`
@@ -96,9 +101,9 @@ var cos = new COS({
 
 #### 사용 예시
 
-COS SDK 인스턴스 한 개를 생성합니다. COS SDK는 다음과 같은 포맷 생성을 지원합니다.
+COS SDK 인스턴스 한 개를 생성합니다. COS SDK는 다음과 같은 형식 생성을 지원합니다.
 
-- 포맷1(권장): 백그라운드에서 임시 키를 획득하여 프런트 엔드로 보내고, 프런트 엔드에서 서명을 계산합니다.
+- 형식1(권장): 백그라운드에서 임시 키를 획득하여 프런트 엔드로 보내고, 프런트 엔드에서 서명을 계산합니다.
 
 ```js
 var cos = new COS({
@@ -129,9 +134,10 @@ var cos = new COS({
     }
 });
 ```
->?임시 키 생성 및 사용에 대한 자세한 내용은 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048)를 참조하십시오.
+>? 임시 키 생성 및 사용에 대한 자세한 내용은 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048)를 참고하십시오.
+>
 
-- 포맷2(권장): 세밀한 권한 제어. 백그라운드에서 임시 키를 획득하여 프런트 엔드로 보냅니다. 동일한 요청을 하는 경우에만 프런트 엔드가 임시 키를 재사용합니다. 백그라운드는 Scope을 통해 권한을 세밀하게 제어합니다.
+- 형식2(권장): 세밀한 권한 제어. 백그라운드에서 임시 키를 획득하여 프런트 엔드로 보냅니다. 동일한 요청을 하는 경우에만 프런트 엔드가 임시 키를 재사용합니다. 백그라운드는 Scope을 통해 권한을 세밀하게 제어합니다.
 
 ```js
 var cos = new COS({
@@ -160,9 +166,10 @@ var cos = new COS({
 });
 ```
 
->?임시 키 생성 및 사용에 대한 자세한 내용은 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048)를 참조하십시오.
+>? 임시 키 생성 및 사용에 대한 자세한 내용은 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048)를 참고하십시오.
+>
 
-- 포맷3(권장하지 않음): 매번 프런트 엔드가 요청하기 전에 getAuthorization을 통해 서명을 획득하고, 백그라운드는 고정 키 또는 임시 키를 사용해 서명을 계산하여 프런트 엔드로 반환해야 합니다. 해당 포맷의 멀티파트 업로드 권한은 제어하기 쉽지 않기 때문에 사용을 권장하지 않습니다.
+- 형식3(권장하지 않음): 매번 프런트 엔드가 요청하기 전에 getAuthorization을 통해 서명을 획득하고, 백그라운드는 고정 키 또는 임시 키를 사용해 서명을 계산하여 프런트 엔드로 반환해야 합니다. 해당 형식의 멀티파트 업로드 권한은 제어하기 쉽지 않기 때문에 사용을 권장하지 않습니다.
 
 ```js
 var cos = new COS({
@@ -186,7 +193,7 @@ var cos = new COS({
 });
 ```
 
-- 포맷4(권장하지 않음): 프런트 엔드는 고정 키를 사용해 서명을 계산합니다. 해당 포맷은 프런트 엔드 디버깅에 적합하며, 사용 시 키가 노출되지 않도록 주의하십시오.
+- 형식4(권장하지 않음): 프런트 엔드는 고정 키를 사용해 서명을 계산합니다. 해당 형식은 프런트 엔드 디버깅에 적합하며, 사용 시 키가 노출되지 않도록 주의하십시오.
 
 ```js
 // SECRETID와 SECRETKEY는 https://console.cloud.tencent.com/cam/capi에 로그인하여 조회 및 관리하십시오.
@@ -219,7 +226,7 @@ var cos = new COS({
 | UploadCheckContentMd5  | 파일을 강제 업로드하여 Content-MD5 검증. 파일에 대해 Body를 요청하여 md5를 계산하고 header의 Content-MD5 필드에 올립니다. 기본값: false | Boolean  | 아니요   |
 | getAuthorization       | 서명을 획득하는 콜백 방법. SecretId, SecretKey가 없는 경우 이 매개변수는 필수입니다. <br> **주의사항: 해당 콜백 방법은 인스턴스 초기화 시 전송되며, 인스턴스로 인터페이스를 호출해야 실행되어 서명을 획득합니다. ** | Function | 아니요   |
 
-#### getAuthorization 콜백 함수 설명의 함수 설명(포맷1 사용)
+#### getAuthorization 콜백 함수 설명의 함수 설명(형식1 사용)
 
 ```
 getAuthorization: function(options, callback) { ... }
@@ -227,11 +234,11 @@ getAuthorization: function(options, callback) { ... }
 
 getAuthorization의 콜백 매개변수 설명:
 
-| 매개변수 이름   | 매개변수 설명                                                     | 유형     |
+| 매개변수 이름   | 매개변수 설명                                                     | 유형   |
 | -------- | ------------------------------------------------------------ | -------- |
-| options  | 임시 키에 필요한 매개변수 객체 획득                                   | Object |
-| - Bucket | 버킷의 이름. 이름 생성 규칙은 BucketName-APPID이며, 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다. | String   |
-| - Region | 버킷이 위치한 리전. 열거 값은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참조하십시오. | String   |
+| options  | 임시 키에 필요한 매개변수 객체 획득                                   | Object   |
+| - Bucket | 버킷의 이름. 이름 생성 규칙은 BucketName-APPID이며, 여기에 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다. | String   |
+| - Region | 버킷이 위치한 리전. 열거 값은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오. | String   |
 | callback | 임시 키 획득 후 리턴 방법                                 | Function |
 
 임시 키 획득 후 callback은 하나의 객체를 리턴합니다. 리턴 객체의 속성 리스트는 다음과 같습니다.
@@ -244,7 +251,7 @@ getAuthorization의 콜백 매개변수 설명:
 | StartTime         | 키를 획득한 시작 시간. 즉 획득한 시간의 타임스탬프. 단위: 초. startTime. 예: 1580000000. 서명 시작 시간에 사용됩니다. 해당 매개변수를 전송하면 프런트 엔드 시간의 편차로 인한 서명 만료 문제를 방지할 수 있습니다. | String | 아니요   |
 | ExpiredTime       | 획득한 임시 키의 expiredTime, 타임아웃 시간의 타임스탬프. 단위 초. 예: 1580000900 | String | 아니요   |
 
-#### getAuthorization 콜백 함수 설명(포맷2 사용)
+#### getAuthorization 콜백 함수 설명(형식2 사용)
 
 ```
 getAuthorization: function(options, callback) { ... }
@@ -257,14 +264,14 @@ getAuthorization 함수 설명 및 콜백 매개변수 설명:
 | options    | 서명에 필요한 매개변수 객체 획득                                       | Object   |
 | - Method   | 현재 요청한 Method                                            | Object   |
 | - Pathname | 요청 경로. 서명 계산에 사용                                       | String   |
-| - Key      | 객체 키(Object의 이름). 객체는 버킷에 있는 고유 식별자입니다. 자세한 내용은 [객체 개요](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오.<br> **주의사항: 인스턴스로 요청한 인터페이스가 객체 작업과 관련된 인터페이스가 아닐 경우, 해당 매개변수는 빈칸으로 표시됩니다. ** | String   |
-| - Query    | 현재 요청한 query 매개변수 객체. {key: 'val'} 의 포맷               | Object   |
-| - Headers  | 현재 요청한 header 매개변수 객체. {key: 'val'}의 포맷              | Object   |
+| - Key      | 객체 키(Object의 이름). 객체는 버킷에 있는 고유 식별자입니다. 자세한 내용은 [객체 개요](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오.<br> **주의사항: 인스턴스로 요청한 인터페이스가 객체 작업과 관련된 인터페이스가 아닐 경우, 해당 매개변수는 빈칸으로 표시됩니다. ** | String   |
+| - Query    | 현재 요청한 query 매개변수 객체. {key: 'val'} 의 형식               | Object   |
+| - Headers  | 현재 요청한 header 매개변수 객체. {key: 'val'}의 형식              | Object   |
 | callback   | 임시 키 획득 후 콜백                                     | Function |
 
-getAuthorization 계산 완료 후 callback 리턴 매개변수는 두 가지 포맷을 지원합니다.
-포맷1: 자격 증명 문자열 Authorization 리턴
-포맷2: 하나의 객체 리턴. 리턴 속성 리스트는 다음과 같습니다.
+getAuthorization 계산 완료 후 callback 리턴 매개변수는 두 가지 형식을 지원합니다.
+형식1: 자격 증명 문자열 Authorization 리턴
+형식2: 하나의 객체 리턴. 리턴 속성 리스트는 다음과 같습니다.
 
 | 속성 이름            | 매개변수 설명                                                     | 유형   | 필수 입력 |
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
@@ -279,9 +286,9 @@ getAuthorization 계산 완료 후 callback 리턴 매개변수는 두 가지 �
 2. 인스턴스화 시 getAuthorization 콜백을 전송합니다. 서명이 필요할 때마다 해당 콜백으로 계산하고, 서명을 인스턴스로 반환합니다.
 3. 인스턴스화 시 getSTS 콜백을 전송합니다. 임시 키가 필요할 때마다 해당 콜백을 통해 돌아가 인스턴스에 반환합니다. 요청할 때마다 인스턴스 내부에서 임시 키로 계산하여 서명을 얻습니다.
 
-다음은 자주 사용하는 일부 인터페이스 예시입니다. 자세한 초기화 방법은 [demo](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/demo/) 예시를 참조하십시오.
+다음은 자주 사용하는 일부 인터페이스 예시입니다. 자세한 초기화 방법은 [demo](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/demo/) 예시를 참고하십시오.
 
-### 버킷 생성
+###버킷 생성하기
 
 ```js
 cos.putBucket({
@@ -292,7 +299,8 @@ cos.putBucket({
 });
 ```
 
-> !미니프로그램에서 버킷을 생성해야 하지만 버킷 이름을 모르는 경우, 버킷 이름을 도메인 화이트리스트로 설정할 수 없지만 확장명으로 호출할 수 있습니다. 관련 처리 조치는 [FAQ](https://intl.cloud.tencent.com/document/product/436/10687)를 참조하십시오.
+>! 미니프로그램에서 버킷을 생성해야 하지만 버킷 이름을 모르는 경우, 버킷 이름을 도메인 화이트리스트로 설정할 수 없지만 확장명으로 호출할 수 있습니다. 관련 처리 조치는 [FAQ](https://intl.cloud.tencent.com/document/product/436/10687)를 참고하십시오.
+>
 
 ### 버킷 리스트 조회
 
@@ -304,7 +312,7 @@ cos.getService(function (err, data) {
 
 ### 객체 업로드
 
-미니프로그램 업로드 인터페이스 wx.uploadFile은 POST 요청만 지원합니다. SDK 파일 업로드는 postObject 인터페이스를 사용해야 합니다. 미니프로그램에서 파일 업로드 인터페이스만 사용해야 하는 경우 SDK를 참조하지 않는 것을 권장합니다. 간단한 예시는 [demo](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/demo/demo-no-sdk.js)를 참조하십시오.
+미니프로그램 업로드 인터페이스 wx.uploadFile은 POST 요청만 지원합니다. SDK 파일 업로드는 postObject 인터페이스를 사용해야 합니다. 미니프로그램에서 파일 업로드 인터페이스만 사용해야 하는 경우 SDK를 참고하지 않는 것을 권장합니다. 간단한 예시는 [demo](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/demo/demo-no-sdk.js)를 참고하십시오.
 
 ```js
 // 먼저 파일을 선택하고 임시 경로를 획득합니다.
@@ -344,7 +352,8 @@ cos.getBucket({
 
 ### 객체 다운로드
 
-> !이 인터페이스는 객체 콘텐츠를 가져오는 데 사용합니다. 브라우저에서 파일 다운로드 요청이 필요한 경우 cos.getObjectUrl을 통해 url을 획득하여 브라우저 다운로드를 트리거할 수 있습니다. 자세한 내용은 [사전 서명된 URL](https://intl.cloud.tencent.com/document/product/436/31711) 문서를 참조하십시오.
+>! 이 인터페이스는 객체 콘텐츠를 가져오는 데 사용합니다. 브라우저에서 파일 다운로드 요청이 필요한 경우 cos.getObjectUrl을 통해 url을 획득하여 다시 브라우저 다운로드를 트리거할 수 있습니다. 자세한 내용은 [사전 서명된 URL](https://intl.cloud.tencent.com/document/product/436/31711) 문서를 참고하십시오.
+>
 
 ```js
 cos.getObject({

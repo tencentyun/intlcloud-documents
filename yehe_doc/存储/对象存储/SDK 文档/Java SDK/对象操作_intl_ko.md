@@ -4,16 +4,17 @@
 
 **간단한 작업**
 
-| API                                                          | 작업명         | 작업 설명                                  |
+| API                                                          | 작업명         | 작업 설명                                 |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
 | [GET Bucket(List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | 객체 리스트 조회   | 버킷의 일부 또는 모든 객체 조회            |
-| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 객체 메타데이터 조회 | 객체의 메타데이터 정보 조회                  |
+| [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551) | 객체 버전 조회 |   버킷의 일부 또는 모든 객체와 이전 버전 정보 조회|
+| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 객체 메타데이터 조회 | 객체 메타데이터 정보 조회           |
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 객체 업로드   | 객체를 버킷에 업로드                      |
 | [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 객체 다운로드       | 로컬에 객체 다운로드        |
 | [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | 객체 복사   | 파일을 타깃 경로에 복사                        |
 | [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | 객체 삭제   | 버킷에서 지정 객체 삭제 |
 | [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | 객체 일괄 삭제   | 버킷에서 지정 객체를 일괄 삭제                |
-| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 보관된 객체 복구 | 아카이브 유형의 객체 검색 및 액세스           |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 보관된 객체 복구 | 아카이브 유형의 객체 검색 후 액세스           |
 
 **멀티파트 작업**
 
@@ -43,7 +44,7 @@ public ObjectListing listObjects(ListObjectsRequest listObjectsRequest) throws C
 
 #### 요청 예시
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```java
 // Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
@@ -54,7 +55,7 @@ listObjectsRequest.setBucketName(bucketName);
 listObjectsRequest.setPrefix("images/");
 // delimiter는 세퍼레이터를 의미합니다. /로 설정하면 현재 디렉터리의 object를 나열하고, 공백으로 설정하면 전체 object를 나열합니다.
 listObjectsRequest.setDelimiter("/");
-// 순회할 최대 객체 수를 설정합니다. 한 번에 지원되는 listobject는 최대 1000개입니다.
+// 순회 가능한 객체의 최대 수량을 설정합니다. listobject 1회당 최대 1000개까지 지원합니다.
 listObjectsRequest.setMaxKeys(1000);
 ObjectListing objectListing = null;
 do {
@@ -70,7 +71,7 @@ do {
     // common prefix는 delimiter로 잘린 경로를 표시합니다. 예를 들어 delimiter를 /로 설정하면 common prefix는 모든 서브 디렉터리의 경로를 표시합니다.
     List<String> commonPrefixs = objectListing.getCommonPrefixes();
 
-    // object summary는 나열된 모든 object 리스트를 표시합니다.
+    // object summary는 나열된 모든 object 리스트를 의미합니다.
     List<COSObjectSummary> cosObjectSummaries = objectListing.getObjectSummaries();
     for (COSObjectSummary cosObjectSummary : cosObjectSummaries) {
         // 파일의 경로 key
@@ -97,7 +98,7 @@ do {
 
 Request 멤버 설명:
 
-| Request 멤버 | 설정 방법           | 설명                                                         | 유형    |
+| Request 멤버 | 설정 방법&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 설명                                                         | 유형    |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------- |
 | bucketName | 구조 함수 또는 set 방법 | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String  |
 | prefix       | 구조 함수 또는 set 방법 | 반환되는 결과 객체를 제한하고 prefix를 접두사로 합니다. 기본적으로 Bucket의 모든 멤버를 제한하지 않습니다.<br>기본값: ""(공백) | String  |
@@ -108,8 +109,82 @@ Request 멤버 설명:
 #### 반환 결과 설명
 
 - 성공: 모든 멤버 및 nextMarker를 포함한 ObjectListing 유형을 반환합니다.  
-- 실패: 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+- 실패: 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
+### 객체 버전 조회
+
+#### 기능 설명
+
+버킷의 일부 또는 모든 객체와 이전 버전 정보를 조회합니다.
+
+#### 메소드 프로토타입
+
+```java
+public VersionListing listVersions(ListVersionsRequest listVersionsRequest)
+            throws CosClientException, CosServiceException;
+```
+
+#### 요청 예시
+
+```java
+// Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+String bucketName = "examplebucket-1250000000";
+
+ListVersionsRequest listVersionsRequest = new ListVersionsRequest();
+listObjectsRequest.setBucketName(bucketName);
+// prefix는 나열된 object의 key가 prefix로 시작함을 의미합니다.
+listVersionsRequest.setPrefix("");
+// 순회할 객체의 최대 수량을 설정합니다. listobject 1회당 최대 1000개까지 지원합니다.
+listObjectsRequest.setMaxKeys(1000);
+
+VersionListing versionListing = null;
+
+do {
+    try {
+        versionListing = cosclient.listVersions(listVersionsRequest);
+    } catch (CosServiceException e) {
+        e.printStackTrace();
+        return;
+    } catch (CosClientException e) {
+        e.printStackTrace();
+        return;
+    }
+
+    List<COSVersionSummary> cosVersionSummaries = versionListing.getVersionSummaries();
+    for (COSVersionSummary cosVersionSummary : cosVersionSummaries) {
+        System.out.println(cosVersionSummary.getKey() + ":" + cosVersionSummary.getVersionId());
+    }
+
+    String keyMarker = versionListing.getNextKeyMarker();
+    String versionIdMarker = versionListing.getNextVersionIdMarker();
+
+    listVersionsRequest.setKeyMarker(keyMarker);
+    listVersionsRequest.setVersionIdMarker(versionIdMarker);
+
+} while (versionListing.isTruncated());
+```
+
+#### 매개변수 설명
+
+| 매개변수 이름           | 설명             | 유형               |
+| ------------------ | ---------------- | ------------------ |
+| listVersionsRequest | 객체 버전 정보 요청 획득 | ListVersionsRequest |
+
+Request 멤버 설명:
+
+| Request 멤버    | 설정 방법            | 설명                                                         | 유형                    |
+| ------------ | ------------------- | ------------------------------------------------------------ | ------- |
+| bucketName | 구조 함수 또는 set 방법 | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오. | String  |
+| prefix       | 구조 함수 또는 set 방법 | 반환되는 결과 객체를 제한하고 prefix를 접두사로 합니다. 기본적으로 Bucket의 모든 멤버를 제한하지 않습니다. <기본값: ""(공백) | String  |
+| keyMarker       | 구조 함수 또는 set 방법 | list의 시작 위치를 표시합니다. 처음에는 공백으로 설정해도 되지만, 다음 요청은 이전 listObjects 반환값의 nextKeyMarker로 설정해야 합니다. | String  |
+| versionIdMarker | 구조 함수 또는 set 방법 | list의 시작 위치를 표시합니다. 처음에는 공백으로 설정해도 되지만, 다음 요청은 이전 listObjects 반환값의 nextVersionIdMarker로 설정해야 합니다. | String  |
+| delimiter    | 구조 함수 또는 set 방법 | 세퍼레이터. prefix로 시작하며 delimiter가 처음 나타나 끝나는 경로의 반환을 제한합니다. | String  |
+| maxResults      | 구조 함수 또는 set 방법 | 멤버 최대 반환 수(1000을 초과할 수 없음). 기본값: 1000          | Integer |
+
+#### 반환 결과 설명
+
+- 성공: 모든 멤버 및 nextKeyMarker와 nextVersionIdMarker를 포함한 ObjectListing 유형을 반환합니다.
+- 실패: 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
 ### 객체 메타데이터 조회
 
@@ -117,7 +192,7 @@ Request 멤버 설명:
 
 지정한 객체가 버킷에 있는지 확인합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```java
 public ObjectMetadata getObjectMetadata(String bucketName, String key)
@@ -126,14 +201,24 @@ public ObjectMetadata getObjectMetadata(String bucketName, String key)
 
 #### 요청 예시
 
-[//]: # (.cssg-snippet-head-object)
+[//]: # ".cssg-snippet-head-object"
 ```java
 // Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 ObjectMetadata objectMetadata = cosClient.getObjectMetadata(bucketName, key);
-```
 
+// 이번 요청의 requestId 획득
+System.out.println(objectMetadata1.getRequestId());
+// 객체의 CRC64 검증값 획득
+System.out.println(objectMetadata.getCrc64Ecma());
+// 객체의 마지막 업로드 시간 획득
+System.out.println(objectMetadata1.getLastModified());
+// 객체의 크기 획득
+System.out.println(objectMetadata.getContentLength());
+// COS 유형 획득
+System.out.println(objectMetadata.getStorageClass());
+```
 
 #### 매개변수 설명
 
@@ -145,7 +230,7 @@ ObjectMetadata objectMetadata = cosClient.getObjectMetadata(bucketName, key);
 #### 반환 결과 설명
 
 - 성공: 사용자 정의 헤더, Etag 등 객체 메타 정보를 포함한 ObjectMetadata 유형을 반환합니다.
-- 실패: 오류가 발생하여(예: 실명 인증 실패) 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
 #### 반환 매개변수 설명
 
@@ -172,7 +257,7 @@ ObjectMetadata 유형은 객체의 메타 정보를 기록하는 데 사용됩�
 - COS는 '/'로 구분하는 객체 경로를 가상 폴더로 인식합니다. 이러한 특성에 따라 이름이 '/'로 끝나는 빈 스트림을 업로드하면 COS에 빈 폴더를 생성할 수 있습니다.
 또는, '/'로 구분되는 객체 이름을 업로드하면 파일이 포함된 폴더를 자동으로 생성합니다. 이에 따라 해당 폴더에 새로운 파일을 추가할 경우 COS에 파일 업로드 시 Key를 해당 디렉터리 접두사로 입력하기만 하면 됩니다. 
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```java
 // 방법1 로컬 파일을 COS에 업로드
@@ -188,7 +273,7 @@ public PutObjectResult putObject(PutObjectRequest putObjectRequest)
 
 #### 요청 예시1: 로컬 파일 업로드
 
-[//]: # (.cssg-snippet-put-object-flex)
+[//]: # ".cssg-snippet-put-object-flex"
 <dx-codeblock>
 :::  java
 // Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
@@ -228,9 +313,9 @@ String bucketName = "examplebucket-1250000000";
 
 FileInputStream fileInputStream = new FileInputStream(localFile);
 ObjectMetadata objectMetadata = new ObjectMetadata();
-// 입력 스트림의 길이를 500으로 설정
-objectMetadata.setContentLength(500);
-// Content type을 설정. 기본값: application/octet-stream
+// 입력 스트림 길이를 설정합니다.（STREAMLENGTH는 자신의 스트림 크기에 맞게 교체）
+objectMetadata.setContentLength(STREAMLENGTH);
+// Content type을 설정합니다. 기본값은 application/octet-stream입니다.
 objectMetadata.setContentType("application/pdf");
 PutObjectResult putObjectResult = cosClient.putObject(bucketName, key, fileInputStream, objectMetadata);
 String etag = putObjectResult.getETag();
@@ -300,7 +385,7 @@ String crc64Ecma = putObjectResult.getCrc64Ecma();
 
 Request 멤버 설명:
 
-| Request 멤버 | 설정 방법   | 설명                                                         | 유형   | 필수 입력 |
+| Request 멤버 | 설정 방법 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   | 설명                                                         | 유형   | 필수 입력 |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |---|
 | bucketName | 구조 함수 또는 set 방법 | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String         | 예|
 | key          | 구조 함수 또는 set 방법 | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다.<br>예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String         | 예|
@@ -309,7 +394,7 @@ Request 멤버 설명:
 | metadata     | 구조 함수 또는 set 방법 | 객체의 메타데이터                                                 | ObjectMetadata | 아니요|
 |trafficLimit | set 방법| 객체 업로드의 트래픽 제어에 사용됩니다. 단위는 bit/s이며, 기본적으로 트래픽 제어가 비활성화되어 있습니다. | Int|아니요|
 
-ObjectMetadata 유형은 객체의 메타 정보를 기록하는 데 사용됩니다. 주요 멤버 설명은 다음과 같습니다.
+ObjectMetadata 유형은 객체의 메타데이터를 기록하는 데 사용됩니다. 주요 멤버 설명은 다음과 같습니다.
 
 | 멤버 이름        | 설명                                                | 유형                |
 | --------------- | --------------------------------------------------- | ------------------- |
@@ -323,7 +408,7 @@ ObjectMetadata 유형은 객체의 메타 정보를 기록하는 데 사용됩�
 #### 반환 결과 설명
 
 - 성공: 파일의 eTag 등 정보를 포함한 PutObjectResult입니다.
-- 실패: 오류가 발생하여(예: 실명 인증 실패) 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+- 실패: 오류 발생(실명 인증 실패), 오류 osClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
 
 #### 반환 매개변수 설명
 
@@ -344,7 +429,7 @@ PutObjectResult 유형은 결과 정보 반환에 사용됩니다. 주요 멤버
 
 객체를 로컬에 다운로드합니다(GET Object).
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```java
 // 방법1 파일을 다운로드하고 입력 스트림을 획득
@@ -357,7 +442,7 @@ public ObjectMetadata getObject(GetObjectRequest getObjectRequest, File destinat
 
 #### 요청 예시1: 다운로드한 파일의 입력 스트림 획득
 
-[//]: # (.cssg-snippet-get-object)
+[//]: # ".cssg-snippet-get-object"
 ```java
 // Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
@@ -402,7 +487,7 @@ ObjectMetadata downObjectMeta = cosClient.getObject(getObjectRequest, downFile);
 
 Request 멤버 설명:
 
-| Request 멤버 | 설정 방법            | 설명                                                         | 유형   |
+| Request 멤버 | 설정 방법&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 설명                                                         | 유형   |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------ |
 | bucketName   | 구조 함수 또는 set 방법 | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String |
 | key          | 구조 함수 또는 set 방법 | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String |
@@ -414,10 +499,10 @@ Request 멤버 설명:
 
 - **방법1 (다운로드한 파일의 입력 스트림 획득)**
   - 성공: 입력 스트림 및 객체 속성을 포함한 COSObject 유형을 반환합니다.
-  - 실패: 오류가 발생하여(예: 실명 인증 실패) 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+  - 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 - **방법2 (로컬에 파일 다운로드)**
   - 성공: 파일의 사용자 정의 헤더와 content-type 등 속성을 포함한 파일의 속성 ObjectMetadata를 반환합니다.
-  - 실패: 오류가 발생하여(예: 실명 인증 실패) 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+  - 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
 #### 반환 매개변수 설명
 
@@ -437,7 +522,7 @@ COSObject 유형은 결과 정보 반환에 사용됩니다. 주요 멤버 설�
 
 한 객체를 다른 객체에 복사합니다(Put Object Copy). 리전 간, 계정 간, Bucket 간 복사를 지원하며, 원본 파일의 읽기 권한 및 타깃 파일의 쓰기 권한이 필요합니다. 최대 5GB의 파일 복사를 지원하며, 5GB 이상의 파일은 [고급 API](#.E5.A4.8D.E5.88.B6.E5.AF.B9.E8.B1.A1)를 사용해 복사하십시오.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```java
 public CopyObjectResult copyObject(CopyObjectRequest copyObjectRequest)
@@ -446,16 +531,16 @@ public CopyObjectResult copyObject(CopyObjectRequest copyObjectRequest)
 
 #### 요청 예시
 
-[//]: # (.cssg-snippet-copy-object)
+[//]: # ".cssg-snippet-copy-object"
 ```java
 // 리전 내 동일 계정 복사
 // 원본 Bucket. Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
 String srcBucketName = "sourcebucket-1250000000";
-// 복사할 원본 파일
+// 복사할 원본 파일입니다.
 String srcKey = "sourceObject";
 // 타깃 버킷. Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
 String destBucketName = "examplebucket-1250000000";
-// 복사할 타깃 파일
+// 복사할 타깃 파일입니다.
 String destKey = "exampleobject";
 CopyObjectRequest copyObjectRequest = new CopyObjectRequest(srcBucketName, srcKey, destBucketName, destKey);
 CopyObjectResult copyObjectResult = cosClient.copyObject(copyObjectRequest);
@@ -491,25 +576,25 @@ Request 멤버 설명:
 #### 반환 결과 설명
 
 - 성공: 신규 파일의 Etag 등 정보를 포함한 CopyObjectResult가 반환됩니다.
-- 실패: 오류가 발생하여(예: 실명 인증 실패) 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
 
 ### 객체 삭제
 
 #### 기능 설명
 
-버킷에서 지정 Object(파일/객체)를 삭제합니다.
+버킷에서 지정 객체(파일/객체)를 삭제합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```java
 public void deleteObject(String bucketName, String key)
             throws CosClientException, CosServiceException;
 ```
 
-#### 요청 예시
+#### 요청 샘플
 
-[//]: # (.cssg-snippet-delete-object)
+[//]: # ".cssg-snippet-delete-object"
 ```java
 // Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
@@ -527,8 +612,8 @@ cosClient.deleteObject(bucketName, key);
 
 #### 반환 결과 설명
 
-- 성공: 반환값이 없습니다.
-- 실패: 오류가 발생하여(예: 실명 인증 실패) 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+- 성공: 반환 값 없음
+- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
 
 ### 객체 일괄 삭제
@@ -537,7 +622,7 @@ cosClient.deleteObject(bucketName, key);
 
 다수의 지정 객체를 삭제합니다(DELETE Multiple Objects).
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```java
 public DeleteObjectsResult deleteObjects(DeleteObjectsRequest deleteObjectsRequest)
@@ -546,7 +631,7 @@ public DeleteObjectsResult deleteObjects(DeleteObjectsRequest deleteObjectsReque
 
 #### 요청 예시
 
-[//]: # (.cssg-snippet-delete-multi-object)
+[//]: # ".cssg-snippet-delete-multi-object"
 ```java
 // Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
@@ -600,8 +685,8 @@ DeleteObjectsRequest.KeyVersion 멤버 설명:
 
 #### 반환 결과 설명
 
-- 성공: 반환값이 없습니다.
-- 실패: 오류가 발생하여(예: 실명 인증 실패) 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+- 성공: 반환 값이 없습니다.
+- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
 
 ### 보관된 객체 복구 
@@ -610,7 +695,7 @@ DeleteObjectsRequest.KeyVersion 멤버 설명:
 
 아카이브 유형의 객체를 검색하여 액세스합니다(POST Object restore).
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```java
 public void restoreObject(RestoreObjectRequest restoreObjectRequest)
@@ -619,7 +704,7 @@ public void restoreObject(RestoreObjectRequest restoreObjectRequest)
 
 #### 요청 예시
 
-[//]: # (.cssg-snippet-restore-object)
+[//]: # ".cssg-snippet-restore-object"
 ```java
 // 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
@@ -652,16 +737,16 @@ Request 멤버 설명:
 #### 반환 결과 설명
 
 - 성공: 반환값이 없습니다.
-- 실패: 오류가 발생하여(예: 실명 인증 실패) 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
 
 ## 멀티파트 작업
 
-다음은 객체의 멀티파트 업로드 작업 내용입니다.
+다음은 객체의 멀티파트 업로드 작업 내용입니다. 
 
 - 객체 멀티파트 업로드: 멀티파트 업로드를 초기화하고 멀티파트를 업로드하면 완료됩니다.
 - 멀티파트 이어 보내기: 업로드된 멀티파트를 조회하고 멀티파트를 업로드하면 완료됩니다.
-- 업로드된 멀티파트를 삭제합니다.
+- 업로드된 멀티파트를 삭제합니다. 
 
 ### 멀티파트 업로드 조회
 
@@ -669,7 +754,7 @@ Request 멤버 설명:
 
 지정 버킷에서 진행 중인 멀티파트 업로드를 조회합니다(List Multipart Uploads).
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```java
 public MultipartUploadListing listMultipartUploads(
@@ -679,7 +764,7 @@ public MultipartUploadListing listMultipartUploads(
 
 #### 요청 예시
 
-[//]: # (.cssg-snippet-list-multi-upload)
+[//]: # ".cssg-snippet-list-multi-upload"
 ```java
 // Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
@@ -713,7 +798,7 @@ Request 멤버 설명:
 #### 반환 결과 설명
 
 - 성공: 현재 진행 중인 멀티파트 업로드 정보를 포함한 MultipartUploadListing을 반환합니다.
-- 실패: 오류가 발생하여(예: 실명 인증 실패) 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
 
 
@@ -723,7 +808,7 @@ Request 멤버 설명:
 
 멀티파트 업로드 작업을 초기화합니다(Initiate Multipart Upload).
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```java
 public InitiateMultipartUploadResult initiateMultipartUpload(
@@ -732,7 +817,7 @@ public InitiateMultipartUploadResult initiateMultipartUpload(
 
 #### 요청 예시
 
-[//]: # (.cssg-snippet-init-multi-upload)
+[//]: # ".cssg-snippet-init-multi-upload"
 ```java
 // Bucket의 이름 생성 포맷은 BucketName-APPID입니다.
 String bucketName = "examplebucket-1250000000";
@@ -759,14 +844,14 @@ Request 멤버 설명:
 #### 반환 결과 설명
 
 - 성공: 이번 멀티파트 업로드의 uploadId를 포함한 InitiateMultipartUploadResult를 반환합니다.
-- 실패: 오류가 발생하여(예: 실명 인증 실패) 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
 
 ### 멀티파트 업로드
 
 멀티파트 업로드합니다(Upload Part).
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```java
 public UploadPartResult uploadPart(UploadPartRequest uploadPartRequest) throws CosClientException, CosServiceException;
@@ -774,7 +859,7 @@ public UploadPartResult uploadPart(UploadPartRequest uploadPartRequest) throws C
 
 #### 요청 예시
 
-[//]: # (.cssg-snippet-upload-part)
+[//]: # ".cssg-snippet-upload-part"
 ```java
 // 멀티파트 업로드 시 최대 10000개까지 가능하며, 1MB~5GB 크기의 멀티파트를 지원합니다.
 // 멀티파트 크기를 4MB로 설정합니다. 총 n개의 멀티파트가 있다면 1~n-1개의 멀티파트는 크기가 동일하고, 마지막 한 개 멀티파트는 이전 멀티파트와 동일하거나 작습니다.
@@ -820,7 +905,7 @@ Request 멤버 설명:
 #### 반환 결과 설명
 
 - 성공: 멀티파트 업로드의 eTag 정보를 포함한 UploadPartResult를 반환합니다.
-- 실패: 오류가 발생하여(예: 실명 인증 실패) 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
 
 #### 반환 매개변수 설명
@@ -840,7 +925,7 @@ UploadPartResult 유형은 결과 정보 반환에 사용됩니다. 주요 멤�
 
 한 객체의 멀티파트 콘텐츠를 원본 경로에서 타깃 경로로 복사합니다(Upload Part-Copy).
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```java
 public CopyPartResult copyPart(CopyPartRequest copyPartRequest) throws CosClientException, CosServiceException
@@ -848,7 +933,7 @@ public CopyPartResult copyPart(CopyPartRequest copyPartRequest) throws CosClient
 
 #### 요청 예시
 
-[//]: # (.cssg-snippet-upload-part-copy)
+[//]: # ".cssg-snippet-upload-part-copy"
 ```java
 // BucketName-APPID 포맷의 버킷 이름
 // 타깃 버킷 이름, 객체 이름, 멀티파트 업로드 ID를 설정합니다.
@@ -901,7 +986,7 @@ Request 멤버 설명:
 #### 반환 결과 설명
 
 - 성공: 멀티파트의 ETag 정보를 포함한 CopyPartResult를 반환합니다.
-- 실패: 오류가 발생하여(예: 실명 인증 실패) 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
 
 ### 업로드된 파트 조회
@@ -910,7 +995,7 @@ Request 멤버 설명:
 
 특정 멀티파트 업로드 작업에서 업로드된 파트를 조회합니다(List Parts).
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```java
 public PartListing listParts(ListPartsRequest request)
@@ -919,7 +1004,7 @@ public PartListing listParts(ListPartsRequest request)
 
 #### 요청 예시
 
-[//]: # (.cssg-snippet-list-parts)
+[//]: # ".cssg-snippet-list-parts"
 ```java
 // ListParts는 멀티파트 업로드 complete 이전 또는 멀티파트 업로드 abort 이전에 업로드된 멀티파트 중에서 uploadId에 해당하는 멀티파트의 정보를 획득하는 데 사용되며, partEtags 구성에도 사용할 수 있습니다.
 List<PartETag> partETags = new ArrayList<PartETag>();
@@ -951,7 +1036,7 @@ do {
 #### 반환 결과 설명
 
 - 성공: 모든 파트의 ETag와 번호 및 다음 list의 시작 marker를 포함한 PartListing을 반환합니다.
-- 실패: 오류가 발생하여(예: 실명 인증 실패) 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
 
 ### 멀티파트 업로드 완료 
@@ -960,7 +1045,7 @@ do {
 
 전체 파일의 멀티파트 업로드를 완료합니다(Complete Multipart Upload).
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```java
 public CompleteMultipartUploadResult completeMultipartUpload(CompleteMultipartUploadRequest request) throws CosClientException, CosServiceException;
@@ -968,7 +1053,7 @@ public CompleteMultipartUploadResult completeMultipartUpload(CompleteMultipartUp
 
 #### 요청 예시
 
-[//]: # (.cssg-snippet-complete-multi-upload)
+[//]: # ".cssg-snippet-complete-multi-upload"
 ```java
 // complete 멀티파트 업로드를 완료합니다.
 String bucketName = "examplebucket-1250000000";
@@ -980,7 +1065,7 @@ CompleteMultipartUploadResult result = cosClient.completeMultipartUpload(compReq
 
 #### 매개변수 설명
 
-| 매개변수 이름   | 설정 방법           | 설명                                                         | 유형              |
+| 매개변수 이름   | 설정 방법&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 설명                                                         | 유형              |
 | ---------- | ------------------- | ------------------------------------------------------------ | ----------------- |
 | bucketName | 구조 함수 또는 set 방법 | Bucket의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String            |
 | key        | 구조 함수 또는 set 방법 | 멀티파트 업로드할 COS 경로, 즉 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 지정합니다. 예를 들어 객체 키는 folder/picture.jpg입니다. | String            |
@@ -990,7 +1075,7 @@ CompleteMultipartUploadResult result = cosClient.completeMultipartUpload(compReq
 #### 반환 결과 설명
 
 - 성공: 완료된 객체의 eTag 정보를 포함한 CompleteMultipartUploadResult를 반환합니다.
-- 실패: 오류가 발생하여(예: 실명 인증 실패) 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
 
 ### 멀티파트 업로드 중지
@@ -999,7 +1084,7 @@ CompleteMultipartUploadResult result = cosClient.completeMultipartUpload(compReq
 
 멀티파트 업로드 작업을 중지하고 업로드된 파트를 삭제합니다(Abort Multipart Upload).
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```java
 public void abortMultipartUpload(AbortMultipartUploadRequest request)  throws CosClientException, CosServiceException;
@@ -1007,7 +1092,7 @@ public void abortMultipartUpload(AbortMultipartUploadRequest request)  throws Co
 
 #### 요청 예시
 
-[//]: # (.cssg-snippet-abort-multi-upload)
+[//]: # ".cssg-snippet-abort-multi-upload"
 ```java
 // abortMultipartUpload는 아직 complete되지 않은 멀티파트 업로드를 중지하는 데 사용합니다.
 String bucketName = "examplebucket-1250000000";
@@ -1028,7 +1113,7 @@ cosClient.abortMultipartUpload(abortMultipartUploadRequest);
 #### 반환 결과 설명
 
 - 성공: 반환값이 없습니다.
-- 실패: 오류가 발생하여(예: 실명 인증 실패) 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
 
 
@@ -1056,7 +1141,7 @@ transferManager.setConfiguration(transferManagerConfiguration);
 transferManager를 사용하지 않을 경우 리소스 유출 방지를 위해 수동으로 비활성화하십시오.
 
 ```java
-// TransferManger 비활성화
+// TransferManger를 비활성화하고 그중의 cosClient를 비활성화하십시오.
 transferManager.shutdownNow();
 ```
 
@@ -1078,13 +1163,14 @@ TransferManagerConfiguration 유형은 고급 인터페이스의 설정 정보�
 고급 업로드 인터페이스는 사용자 파일의 길이와 데이터 유형에 따라 자동으로 간편 업로드 또는 멀티파트 업로드 중 하나를 선택합니다. 자세한 설명은 아래를 참조하십시오.
 - 멀티파트 업로드 임계값보다 작거나 Content-Length 헤더가 없는 스트림 업로드의 경우 고급 인터페이스는 간편 업로드를 선택합니다.
 - 멀티파트 업로드 임계값보다 크지만 Content-Length 헤더가 없는 스트림 업로드의 경우 고급 인터페이스는 멀티파트 업로드를 선택합니다.
-- 데이터 유형이 File 유형인 파일 업로드의 경우 고급 인터페이스는 멀티 스레드로 동시 접속하여 다수의 파트를 동시에 업로드합니다.
+- 데이터 유형이 File 유형인 파일 업로드의 경우 고급 인터페이스는 멀티 스레드로 다수의 파트를 동시에 업로드합니다.
 - 고급 업로드 인터페이스는 멀티파트 업로드에 대해 진행률 확인 기능을 제공하며, getProgress() 방법으로 확인할 수 있습니다.
+- 파일 크기가 5MB 이상인 파일을 멀티파트 업로드하는 경우, 해당 임계값은 요청 예시 3을 통해 조정할 수 있습니다.
 
->? 기타 관련 설정 속성, 스토리지 유형, MD5 검증 등은 [PUT Object API](https://intl.cloud.tencent.com/document/product/436/7749)를 참조하십시오.
+>? 기타 관련 설정 속성, 스토리지 유형, MD5 검증 등은 [PUT Object API](https://intl.cloud.tencent.com/document/product/436/7749)를 참고하십시오.
 >
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```java
 // 객체 업로드
@@ -1094,7 +1180,7 @@ public Upload upload(final PutObjectRequest putObjectRequest)
 
 #### 요청 예시1: 고급 인터페이스를 사용하여 업로드
 
-[//]: # (.cssg-snippet-transfer-upload-file1)
+[//]: # ".cssg-snippet-transfer-upload-file1"
 ```java
 // 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
@@ -1103,13 +1189,13 @@ File localFile = new File(localFilePath);
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localFile);
 // 로컬 파일 업로드
 Upload upload = transferManager.upload(putObjectRequest);
-// 전송 종료를 기다립니다. 업로드가 끝날 때까지 기다리려면 waitForCompletion을 호출합니다.
+// 전송 완료 대기
 UploadResult uploadResult = upload.waitForUploadResult();
 ```
 
 #### 요청 예시2: 고급 인터페이스를 사용하여 업로드하고 업로드 진행률 표시
 
-[//]: # (.cssg-snippet-transfer-upload-file2)
+[//]: # ".cssg-snippet-transfer-upload-file2"
 ```java
 // 업로드 시 출력할 업로드 진행률의 콜백 함수를 작성합니다.
 void showTransferProgress(Transfer transfer) {
@@ -1137,8 +1223,26 @@ PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localF
 // 로컬 파일 업로드
 Upload upload = transferManager.upload(putObjectRequest);
 // 업로드 진행률 출력
+// 서브 스레드를 통해 이 함수를 호출할 수 있습니다. 하지만 waitForUploadResult 전에 서브 스레드를 실행해야 합니다. 그렇지 않으면 upload 완료로 인해 진행률을 볼 수 없습니다.
 showTransferProgress(upload);
-// 전송 종료를 기다립니다. 업로드가 끝날 때까지 기다리려면 waitForCompletion을 호출합니다.
+// 전송 완료 대기
+UploadResult uploadResult = upload.waitForUploadResult();
+```
+
+#### 요청 예시3: 고급 인터페이스를 사용하여 업로드 및 멀티파트 업로드의 임계값을 설정
+```java
+// 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+String bucketName = "examplebucket-1250000000";
+String key = "exampleobject";
+File localFile = new File(localFilePath);
+PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localFile);
+// 파일 크기가 10MB 이상인 파일만 멀티파트 업로드 사용하도록 설정
+TransferManagerConfiguration transferManagerConfiguration = new TransferManagerConfiguration();
+transferManagerConfiguration.setMultipartUploadThreshold(10*1024*1024);
+transferManager.setConfiguration(transferManagerConfiguration);
+// 로컬 파일 업로드
+Upload upload = transferManager.upload(putObjectRequest);
+// 전송 완료 대기
 UploadResult uploadResult = upload.waitForUploadResult();
 ```
 
@@ -1150,7 +1254,7 @@ UploadResult uploadResult = upload.waitForUploadResult();
 
 Request 멤버 설명:
 
-| Request 멤버 | 설정 방법           | 설명                                                         | 유형           |
+| Request 멤버 | 설정 방법&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 설명                                                         | 유형           |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |
 | bucketName   | 구조 함수 또는 set 방법 | 버킷의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String         |
 | key          | 구조 함수 또는 set 방법 | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다.<br>예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String         |
@@ -1161,10 +1265,10 @@ Request 멤버 설명:
 
 >?다수의 멀티파트를 동시 업로드할 경우 trafficLimit은 모든 멀티파트의 업로드 속도를 제한합니다. 이때 스레드 풀의 스레드 수를 조정하여 파일의 업로드 속도를 제어해야 합니다.
 
-#### 반환값
+#### 반환 값
 
 - 성공: Upload를 반환합니다. 업로드의 종료 여부를 확인할 수 있으며, 업로드가 끝날 때까지 기다릴 수도 있습니다.
-- 실패: 오류가 발생하여(예: 실명 인증 실패) 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
 #### 반환 매개변수 설명
 
@@ -1182,12 +1286,12 @@ Upload의 waitForUploadResult() 방법을 호출하여 획득한 객체 업로�
 
 #### 진행률 가져오기 설명
 
-Upload의 getProgress() 방법을 호출하여 업로드의 진행률인 TransferProgress 유형을 획득할 수 있습니다. 주요 방법 설명은 다음과 같습니다.
+이 클래스의 getProgress를 업로드하여 TransferProgress 클래스를 얻을 수 있습니다. 이 클래스의 아래 세 가지 방법으로 업로드 진행률을 얻을 수 있습니다.
 
-| 방법 이름                 | 설명                | 유형    |
+| 메소드 이름                 | 설명                | 유형    |
 | ----------------------- | ------------------ | -----   |
 | getBytesTransferred     | 업로드된 바이트 수 획득   | long   |
-| getTotalBytesToTransfer | 업로드된 바이트 수 획득   | long   |
+| getTotalBytesToTransfer | 총 파일의 바이트 수 획득   | long   |
 | getPercentTransferred   | 업로드된 바이트 백분율 획득  | double |
 
 
@@ -1197,7 +1301,7 @@ Upload의 getProgress() 방법을 호출하여 업로드의 진행률인 Transfe
 
 COS의 객체를 로컬에 다운로드합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```java
 // 객체 다운로드
@@ -1211,7 +1315,7 @@ public Download download(final GetObjectRequest getObjectRequest, final File fil
 
 #### 요청 예시1: 고급 인터페이스를 사용하여 객체 다운로드
 
-[//]: # (.cssg-snippet-transfer-download-object)
+[//]: # ".cssg-snippet-transfer-download-object"
 ```java
 // Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
@@ -1222,7 +1326,7 @@ GetObjectRequest getObjectRequest = new GetObjectRequest(bucketName, key);
 getObjectRequest.setTrafficLimit(80*1024*1024);
 // 파일 다운로드
 Download download = transferManager.download(getObjectRequest, localDownFile);
-// 전송 종료를 기다립니다. 업로드가 끝날 때까지 기다리려면 waitForCompletion을 호출합니다.
+// 전송 종료를 기다립니다(업로드 종료 대기와 동기화를 원하는 경우 waitForCompletion을 호출합니다).
 download.waitForCompletion();
 ```
 
@@ -1255,8 +1359,9 @@ File localDownFile = new File(localFilePath);
 GetObjectRequest getObj = new GetObjectRequest(bucketName, key);
 
 Download download = transferManager.download(getObj, localDownFile, true);
+// 서브 스레드를 통해 이 함수를 호출할 수 있습니다. 하지만 waitForCompletion 전에 서브 스레드를 실행해야 합니다. 그렇지 않으면 download 완료로 인해 진행률을 볼 수 없습니다.
 showTransferProgress(download);
-try {
+try{
     download.waitForCompletion();
 } catch (CosServiceException e) {
     e.printStackTrace();
@@ -1267,7 +1372,6 @@ try {
 }
 
 transferManager.shutdownNow();
-cosclient.shutdown();
 ```
 
 #### 매개변수 설명
@@ -1283,17 +1387,17 @@ cosclient.shutdown();
 
 Request 멤버 설명:
 
-| Request 멤버 | 설정 방법          | 설명                                                         | 유형   |
+| Request 멤버 | 설정 방법&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;            | 설명                                                         | 유형   |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------ |
 | bucketName   | 구조 함수 또는 set 방법 | 버킷의 이름 생성 포맷은 BucketName-APPID이며, 자세한 내용은 [이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오. | String |
-| key          | 구조 함수 또는 set 방법 | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오. | String |
+| key          | 구조 함수 또는 set 방법 | 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어, 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`에서 객체 키는 doc/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오. | String |
 | range    | set 방법            | 다운로드 range 범위                       | Long[] |
 | trafficLimit | set 방법    | 객체 다운로드의 트래픽 제어에 사용됩니다. 단위는 bit/s이며, 기본적으로 트래픽 제어가 비활성화되어 있습니다.  | int |
 
 #### 반환값
 
 - 성공: Download를 반환합니다. 다운로드의 종료 여부를 확인할 수 있으며, 다운로드가 끝날 때까지 기다릴 수도 있습니다.
-- 실패: 오류가 발생하여(예: 실명 인증 실패) 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
 
 ### 객체 복사
@@ -1302,7 +1406,7 @@ Request 멤버 설명:
 
 Copy 인터페이스는 객체 크기에 따라 자동으로 간편 복사 또는 멀티파트 복사 중 하나를 선택합니다. 사용자는 복사할 파일의 크기를 고려하지 않아도 됩니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```java
 // 객체 업로드
@@ -1313,10 +1417,11 @@ public Copy copy(final CopyObjectRequest copyObjectRequest);
 
 >?리전 내 복사란 동일한 리전의 버킷에서 파일을 복사하는 것을 의미합니다.
 
-[//]: # (.cssg-snippet-transfer-copy-object)
+[//]: # ".cssg-snippet-transfer-copy-object"
 ```java
-String secretId = "COS_SECRETID";
-String secretKey = "COS_SECRETKEY";
+// SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
 // 복사할 bucket region
 COSCredentials credentials = new BasicCOSCredentials(secretId, secretKey);
 Region bucketRegion = new Region("COS_REGION");
@@ -1358,12 +1463,14 @@ try {
 #### 요청 예시2: 리전 간 복제
 
 >!
+>
 >- 리전 간 복제란 원본 파일을 다른 리전의 버킷으로 복사하는 것을 의미합니다(예: 파일을 베이징 리전에서 광저우 리전으로 복사).
->- 금융 클라우드 리전과 퍼블릭 클라우드 리전은 서로 통신할 수 없으며, 리전 간 복제를 진행할 수 없습니다.
+
 
 ```java
-String secretId = "COS_SECRETID";
-String secretKey = "COS_SECRETKEY";
+// SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
 
 COSCredentials credentials = new BasicCOSCredentials(secretId, secretKey);
 
@@ -1405,6 +1512,60 @@ try {
 }
 ```
 
+#### 요청 예시3：비동기화 사용 복제
+```java
+// SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
+// 복사할 bucket region
+COSCredentials credentials = new BasicCOSCredentials(secretId, secretKey);
+Region bucketRegion = new Region("COS_REGION");
+
+// 원본 Bucket입니다. 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+String srcBucketName = "sourcebucket-1250000000";
+// 복사할 원본 파일
+String srcKey = "sourceObject";
+// 타깃 Bucket입니다. 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+
+String destBucketName = "examplebucket-1250000000";
+// 복사할 타깃 파일
+String destKey = "exampleobject";
+
+COSClient cosClient = new COSClient(credentials, new ClientConfig(bucketRegion));
+
+ExecutorService threadPool = Executors.newFixedThreadPool(5);
+// threadpool을 전송합니다. 스레드 풀을 전송하지 않을 경우 기본적으로 TransferManager에 싱글 스레드의 스레드 풀이 생성됩니다.
+final TransferManager transferManager = new TransferManager(cosClient, threadPool);
+
+CopyObjectRequest copyObjectRequest = new CopyObjectRequest(bucketRegion, srcBucketName,
+        srcKey, destBucketName, destKey);
+
+try {
+    Copy copy = transferManager.copy(copyObjectRequest);
+    // 하나의 서브 스레드에서 비동기화 실행된 copy가 완료되었는지 판단합니다.
+    new Thread(){
+        @Override
+        public void run() {
+            while(!copy.isDone()) {
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("wait for copy done");
+            }
+            transferManager.shutdownNow();
+        };
+    }.start();
+    // 다른 로직 계속 진행
+} catch (CosServiceException e) {
+    e.printStackTrace();
+} catch (CosClientException e) {
+    e.printStackTrace();
+} catch (InterruptedException e) {
+    e.printStackTrace();
+}
+```
 
 #### 매개변수 설명
 
@@ -1427,7 +1588,7 @@ Request 멤버 설명:
 #### 반환값
 
 - 성공: Copy를 반환합니다. Copy의 종료 여부를 확인할 수 있으며, 업로드가 끝날 때까지 기다릴 수도 있습니다.
-- 실패: 오류가 발생하여(예: 실명 인증 실패) 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
 
 ### 객체 일괄 업로드
@@ -1436,7 +1597,7 @@ Request 멤버 설명:
 
 로컬 폴더 안에 있는 모든 파일을 업로드합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```java
 public MultipleFileUpload uploadDirectory(String bucketName, String virtualDirectoryKeyPrefix,
@@ -1444,7 +1605,7 @@ public MultipleFileUpload uploadDirectory(String bucketName, String virtualDirec
 ```
 
 #### 요청 예시
-[//]: # (.cssg-snippet-transfer-upload-directory)
+[//]: # ".cssg-snippet-transfer-upload-directory"
 ```java
 // 업로드 시 출력할 업로드 진행률의 콜백 함수를 작성합니다.
 void showTransferProgress(Transfer transfer) {
@@ -1476,6 +1637,7 @@ try {
     MultipleFileUpload upload = transferManager.uploadDirectory(bucketName, cos_path, new File(dir_path), recursive);
 
     // 업로드 진행률 조회를 선택할 수 있습니다.
+    // 서브 스레드를 통해 이 함수를 호출할 수 있습니다. 하지만 waitForCompletion 전에 서브 스레드를 실행해야 합니다. 그렇지 않으면 upload 완료로 인해 진행률을 볼 수 없습니다.
     showTransferProgress(upload);
 
     // 또는 정체된 대기를 완료합니다.
@@ -1503,7 +1665,7 @@ try {
 #### 반환값
 
 - 성공: MultipleFileUpload를 반환합니다. 업로드의 종료 여부를 확인할 수 있으며, 업로드가 끝날 때까지 기다릴 수도 있습니다.
-- 실패: 오류가 발생하여(예: 실명 인증 실패) 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
 
 ### 객체 일괄 다운로드
@@ -1512,7 +1674,7 @@ try {
 
 COS에서 접두사가 동일한 객체(가상 폴더)를 지정한 로컬 디렉터리로 다운로드합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```java
 public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefix,
@@ -1520,7 +1682,7 @@ public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefi
 ```
 
 #### 요청 예시
-[//]: # (.cssg-snippet-transfer-upload-directory)
+[//]: # ".cssg-snippet-transfer-upload-directory"
 ```java
 // 진행률 콜백 함수를 작성합니다.
 void showTransferProgress(Transfer transfer) {
@@ -1550,6 +1712,7 @@ try {
     MultipleFileDownload download = transferManager.downloadDirectory(bucketName, cos_path, new File(dir_path));
 
     // 다운로드 진행률 조회를 선택할 수 있습니다.
+    // 서브 스레드를 통해 이 함수를 호출할 수 있습니다. 하지만 waitForCompletion 전에 서브 스레드를 실행해야 합니다. 그렇지 않으면 download 완료로 인해 진행률을 볼 수 없습니다.
     showTransferProgress(download);
 
     // 또는 정체된 대기를 완료합니다.
@@ -1565,7 +1728,6 @@ try {
 }
 
 transferManager.shutdownNow();
-cosclient.shutdown();
 ```
 
 #### 매개변수 설명
@@ -1579,7 +1741,7 @@ cosclient.shutdown();
 #### 반환값
 
 - 성공: MultipleFileUpload를 반환합니다. 다운로드의 종료 여부를 확인할 수 있으며, 다운로드가 끝날 때까지 기다릴 수도 있습니다.
-- 실패: 오류가 발생하여(예: 실명 인증 실패) 오류 CosClientException 또는 CosServiceException이 표시됩니다. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참조하십시오.
+- 실패: 오류 발생(예: 실명 인증 실패), 오류 CosClientException 또는 CosServiceException이 표시됩니다. 세부 사항은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
 
 ### 폴더 및 하위 파일 삭제
@@ -1622,7 +1784,7 @@ listObjectsRequest.setBucketName(bucketName);
 listObjectsRequest.setPrefix("images/");
 // delimiter는 세퍼레이터를 의미합니다. /로 설정하면 현재 디렉터리의 object를 나열하고, 공백으로 설정하면 전체 object를 나열합니다.
 listObjectsRequest.setDelimiter("/");
-// 순회할 최대 객체 수를 설정합니다. 한 번에 지원되는 listobject는 최대 1000개입니다.
+// 순회 가능한 객체의 최대 수량을 설정합니다. listobject 1회당 최대 1000개까지 지원합니다.
 listObjectsRequest.setMaxKeys(1000);
 ObjectListing objectListing = null;
 
@@ -1642,7 +1804,7 @@ do {
     // common prefix는 delimiter로 잘린 경로를 표시합니다. 예를 들어 delimiter를 /로 설정하면 common prefix는 모든 서브 디렉터리의 경로를 표시합니다.
     List<String> commonPrefixs = objectListing.getCommonPrefixes();
 
-    // object summary는 나열된 모든 object 리스트를 표시합니다.
+    // object summary는 나열된 모든 object 리스트를 의미합니다.
     List<COSObjectSummary> cosObjectSummaries = objectListing.getObjectSummaries();
     for (COSObjectSummary cosObjectSummary : cosObjectSummaries) {
         // 파일의 경로 key
@@ -1707,4 +1869,3 @@ copySameRegion(srcBcuket, srcKey, destBucket, destKey);
 // 복사 완료 후 이동할 객체의 정보를 삭제합니다.
 cosClient.deleteObject(srcBucket, srcKey);
 ```
-

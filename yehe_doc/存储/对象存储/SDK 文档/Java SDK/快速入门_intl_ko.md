@@ -4,16 +4,21 @@
 - COS 서비스의 XML Java SDK 소스 코드 다운로드 주소: [XML Java SDK](https://github.com/tencentyun/cos-java-sdk-v5)
 - SDK 고속 다운로드 주소: [XML Java SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-java-sdk-v5/latest/cos-java-sdk-v5.zip)
 - 예시 Demo 다운로드 주소: [COS XML Java SDK 예시](https://github.com/tencentyun/cos-java-sdk-v5/tree/master/src/main/java/com/qcloud/cos/demo)
-- SDK 문서의 모든 예시 코드는 [SDK 코드 예시](https://github.com/tencentyun/cos-snippets/tree/master/Java)를 참조하십시오.
-- SDK 로그 업데이트는 [ChangeLog](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/CHANGELOG.md)를 참조하십시오.
+- SDK 문서의 모든 예시 코드는 [SDK 코드 예시](https://github.com/tencentyun/cos-snippets/tree/master/Java)를 참고하십시오.
+- SDK 로그 업데이트는 [ChangeLog](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/CHANGELOG.md)를 참고하십시오.
+- SDK FAQ는 [Java SDK FAQ](https://intl.cloud.tencent.com/document/product/436/38956)를 참고하십시오.
+
+
+>? SDK 사용 시 함수 또는 메소드 없음 등 오류가 발생하였을 경우, 먼저 SDK를 최신 버전으로 업데이트한 후 재시도하십시오.
+
 
 #### 환경 종속
 - SDK는 JDK 1.7, 1.8 이상 버전을 지원합니다.
-- JDK 설치 방법은 [Java 설치 및 설정](https://intl.cloud.tencent.com/document/product/436/10865)을 참조하십시오.
+- JDK 설치 방법은 [Java 설치 및 설정](https://intl.cloud.tencent.com/document/product/436/10865)을 참고하십시오.
 
 >?
->- 본 문서에 나오는 SecretId, SecretKey, Bucket 등의 명칭에 대한 의미 및 획득 방법은 [COS 용어 정보](https://intl.cloud.tencent.com/document/product/436/7751)를 참조하십시오.
->- COS Java SDK에서 주로 사용하는 클래스는 다음 패키지에 포함되어 있습니다.
+>- 본 문서에 나오는 SecretId, SecretKey, Bucket 등의 명칭에 대한 의미 및 획득 방법은 [COS 용어 정보](https://intl.cloud.tencent.com/document/product/436/7751)를 참고하십시오.
+>- COS Java SDK에서 주로 사용하는 클래스는 각각 다음 패키지에 포함되어 있습니다.
  - 클라이언트 설정 관련 클래스: com.qcloud.cos.\* 패키지
  - 권한 관련 클래스: com.qcloud.cos.auth.\* 서브 패키지
  - 이상 경고 관련 클래스: com.qcloud.cos.exception.\* 서브 패키지
@@ -30,7 +35,7 @@ maven 및 소스 코드 방식으로 Java SDK를 설치할 수 있습니다.
 <dependency>
        <groupId>com.qcloud</groupId>
        <artifactId>cos_api</artifactId>
-       <version>5.6.38</version>
+       <version>5.6.45</version>
 </dependency>
 ```
 - 소스 코드 설치
@@ -57,14 +62,15 @@ COS 서비스와 관련된 모든 요청을 실행하기 전에 COSClient 클래
 
 영구 키를 사용해 COSClient를 초기화하는 경우, 먼저 CAM 콘솔의 [API 키 관리](https://console.cloud.tencent.com/cam/capi) 페이지에서 SecretId, SecretKey를 획득하십시오. 영구 키 사용은 대부분의 응용 시나리오에 적용할 수 있으며, 참고 예시는 다음과 같습니다.
 
-[//]: # (.cssg-snippet-global-init)
+[//]: # ".cssg-snippet-global-init"
 ```java
 // 1 사용자의 개인 정보(secretId, secretKey) 초기화
-String secretId = "COS_SECRETID";
-String secretKey = "COS_SECRETKEY";
+// SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
 COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
-// 2 bucket의 리전 설정. COS 리전의 약칭은 https://intl.cloud.tencent.com/document/product/436/6224를 참조하십시오.
-// clientConfig에 region, https(기본값: http), 타임아웃 시간, 프록시 등을 설정하는 set 방법이 포함되어 있습니다. 사용 시 소스 코드 또는 FAQ의 Java SDK 부분을 참조하십시오.
+// 2 bucket의 리전 설정. COS 리전의 약칭은 https://intl.cloud.tencent.com/document/product/436/6224를 참고하십시오.
+// clientConfig에 region, https(기본값: http), 타임아웃 시간, 프록시 등을 설정하는 set 방법이 포함되어 있습니다. 사용 시 소스 코드 또는 FAQ의 Java SDK 부분을 참고하십시오.
 Region region = new Region("COS_REGION");
 ClientConfig clientConfig = new ClientConfig(region);
 // https 프로토콜 사용 설정 권장
@@ -73,17 +79,17 @@ clientConfig.setHttpProtocol(HttpProtocol.https);
 COSClient cosClient = new COSClient(cred, clientConfig);
 ```
 
-임시 키를 사용해 COSClient를 초기화할 수도 있습니다. 임시 키 생성 및 사용에 대한 자세한 내용은 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048)를 참조하십시오. 참고 예시는 다음과 같습니다.
+임시 키를 사용해 COSClient를 초기화할 수도 있습니다. 임시 키 생성 및 사용에 대한 자세한 내용은 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048)를 참고하십시오. 참고 예시는 다음과 같습니다.
 
-[//]: # (.cssg-snippet-global-init-sts)
+[//]: # ".cssg-snippet-global-init-sts"
 ```java
 // 1 획득한 임시 키(tmpSecretId, tmpSecretKey, sessionToken) 전송
-String tmpSecretId = "COS_SECRETID";
-String tmpSecretKey = "COS_SECRETKEY";
-String sessionToken = "COS_TOKEN";
+String tmpSecretId = "SECRETID";
+String tmpSecretKey = "SECRETKEY";
+String sessionToken = "TOKEN";
 BasicSessionCredentials cred = new BasicSessionCredentials(tmpSecretId, tmpSecretKey, sessionToken);
-// 2 bucket의 리전 설정. COS 리전의 약칭은 https://intl.cloud.tencent.com/document/product/436/6224를 참조하십시오.
-// clientConfig에 region, https(기본값: http), 타임아웃 시간, 프록시 등을 설정하는 set 방법이 포함되어 있습니다. 사용 시 소스 코드 또는 FAQ의 Java SDK 부분을 참조하십시오.
+// 2 bucket의 리전 설정. COS 리전의 약칭은 https://intl.cloud.tencent.com/document/product/436/6224를 참고하십시오.
+// clientConfig에 region, https(기본값: http), 타임아웃 시간, 프록시 등을 설정하는 set 방법이 포함되어 있습니다. 사용 시 소스 코드 또는 FAQ의 Java SDK 부분을 참고하십시오.
 Region region = new Region("COS_REGION");
 ClientConfig clientConfig = new ClientConfig(region);
 // 3 cos 클라이언트 생성
@@ -95,7 +101,7 @@ ClientConfig 클래스는 정보 설정 클래스입니다. 주요 구성은 다
 
 |  구성 이름 | 설정 방법            | 설명                                                         | 유형    |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------- |
-| region   | 구조 함수 또는 set 방법 | 버킷이 위치한 리전. COS 리전의 약칭은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224) 문서를 참조하십시오. | Region  |
+| region   | 구조 함수 또는 set 방법 | 버킷이 위치한 리전. COS 리전의 약칭은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224) 문서를 참고하십시오. | Region  |
 | httpProtocol       | set 방법 |  요청 시 사용하는 프로토콜. 기본적으로 HTTP 프로토콜을 사용해 COS와 인터랙티브됩니다.| HttpProtocol  |
 | signExpired      | set 방법 | 서명 요청 유효 시간. 단위: 초, 기본값: 3600s   | int |
 | connectionTimeout      | set 방법 | COS 서비스 연결의 타임아웃 시간. 단위: 밀리초, 기본값: 30000ms        | int |
@@ -104,13 +110,13 @@ ClientConfig 클래스는 정보 설정 클래스입니다. 주요 구성은 다
 | httpProxyPort    |  set 방법 | 프록시 서버의 포트 | int  |
 
 
-### 버킷 생성
+###버킷 생성하기
 
 리전 및 버킷 이름을 확인한 후, 다음 예시를 참고하여 버킷을 생성합니다.
 
-[//]: # (.cssg-snippet-put-bucket-and-grant-acl)
+[//]: # ".cssg-snippet-put-bucket-and-grant-acl"
 ```java
-String bucket = "examplebucket-1250000000"; //버킷 이름, 포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //버킷 이름, 형식: BucketName-APPID
 CreateBucketRequest createBucketRequest = new CreateBucketRequest(bucket);
 // bucket의 권한을 Private(개인 읽기/쓰기)으로 설정. 기타 옵션으로 PublicRead(공개 읽기 및 개인 쓰기), PublicReadWrite(공개 읽기/쓰기)가 있습니다.
 createBucketRequest.setCannedAcl(CannedAccessControlList.Private);
@@ -127,7 +133,7 @@ try{
 
 사용자의 버킷 리스트를 조회합니다. 참고 예시는 다음과 같습니다.
 
-[//]: # (.cssg-snippet-get-service)
+[//]: # ".cssg-snippet-get-service"
 ```java
 List<Bucket> buckets = cosClient.listBuckets();
 for (Bucket bucketElement : buckets) {
@@ -144,13 +150,13 @@ for (Bucket bucketElement : buckets) {
 
 - 로컬 파일이 대부분 20M 이상인 경우, 고급 API 인터페이스 사용을 참고하여 업로드하시기 바랍니다.
 - COS에 동일한 Key의 객체가 존재하는 경우, 업로드 시 기존 객체를 덮어씁니다.
-- 디렉터리 객체를 생성할 경우 [SDK의 디렉터리 생성 방법](https://intl.cloud.tencent.com/document/product/436/38956)을 참조하십시오.
-- 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/images/picture.jpg`에서 객체 키는 images/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)의 설명을 참조하십시오.
+- 디렉터리 객체 생성은 [SDK에서 어떻게 디렉터리를 생성하나요?](https://intl.cloud.tencent.com/document/product/436/38956#sdk-.E5.A6.82.E4.BD.95.E5.88.9B.E5.BB.BA.E7.9B.AE.E5.BD.95.EF.BC.9F)를 참고하십시오.
+- 객체 키(Key)는 버킷에 있는 객체의 고유 식별자입니다. 예를 들어 객체의 액세스 도메인 `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/images/picture.jpg`에서 객체 키는 images/picture.jpg입니다. 자세한 내용은 [객체 키](https://intl.cloud.tencent.com/document/product/436/13324)의 설명을 참고하십시오.
 
 
 5GB 이하의 파일 업로드에 대한 참고 예시는 다음과 같습니다.
 
-[//]: # (.cssg-snippet-put-object)
+[//]: # ".cssg-snippet-put-object"
 ```java
 // 업로드할 파일 지정
 File localFile = new File(localFilePath);
@@ -166,9 +172,9 @@ PutObjectResult putObjectResult = cosClient.putObject(putObjectRequest);
 
 버킷의 객체 리스트 조회에 대한 참고 예시는 다음과 같습니다.
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```java
-// Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// Bucket 이름 생성 형식은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 ListObjectsRequest listObjectsRequest = new ListObjectsRequest();
 // bucket 이름 설정
@@ -193,7 +199,7 @@ do {
     // common prefix는 delimiter로 잘린 경로를 표시합니다. 예를 들어 delimiter를 /로 설정하면 common prefix는 모든 서브 디렉터리의 경로를 표시합니다.
     List<String> commonPrefixs = objectListing.getCommonPrefixes();
 
-    // object summary는 나열된 모든 object 리스트를 표시합니다.
+    // object summary는 나열된 모든 object 리스트를 의미합니다.
     List<COSObjectSummary> cosObjectSummaries = objectListing.getObjectSummaries();
     for (COSObjectSummary cosObjectSummary : cosObjectSummaries) {
         // 파일의 경로 key
@@ -212,12 +218,12 @@ do {
 ```
 
 ### 객체 다운로드
-객체를 업로드한 후, 동일한 key를 사용하여 GetObject 인터페이스를 호출해 객체를 로컬에 다운로드할 수 있습니다. 또한 사전 서명 링크를 생성해 기타 터미널에 공유하여 다운로드할 수도 있습니다. 다운로드 시 method를 GET으로 지정합니다. 자세한 내용은 [사전 서명 URL](https://intl.cloud.tencent.com/document/product/436/31536)을 참조하십시오. 단, 파일을 개인 읽기 권한으로 설정한 경우 사전 서명 링크의 유효 기간에 주의하십시오.
+객체를 업로드한 후, 동일한 key를 사용하여 GetObject 인터페이스를 호출해 객체를 로컬에 다운로드할 수 있습니다. 또한 사전 서명 링크를 생성해 기타 터미널에 공유하여 다운로드할 수도 있습니다. 다운로드 시 method를 GET으로 지정합니다. 자세한 내용은 [사전 서명 URL](https://intl.cloud.tencent.com/document/product/436/31536)을 참고하십시오. 단, 파일을 개인 읽기 권한으로 설정한 경우 사전 서명 링크의 유효 기간에 주의하십시오.
 파일을 로컬 지정 경로에 다운로드하는 참고 예시는 다음과 같습니다.
 
-[//]: # (.cssg-snippet-get-object)
+[//]: # ".cssg-snippet-get-object"
 ```java
-// Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// Bucket 이름 생성 형식은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 // 파일이 있는 COS 경로(즉, 객체 키) 지정. 예를 들어 객체 키가 folder/picture.jpg인 경우 다운로드할 picture.jpg 파일이 folder 경로에 있다는 것을 의미합니다.
 String key = "exampleobject";
@@ -225,7 +231,7 @@ String key = "exampleobject";
 GetObjectRequest getObjectRequest = new GetObjectRequest(bucketName, key);
 COSObject cosObject = cosClient.getObject(getObjectRequest);
 COSObjectInputStream cosObjectInput = cosObject.getObjectContent();
-// 객체의 CRC64 다운로드
+//객체의 CRC64 다운로드
 String crc64Ecma = cosObject.getObjectMetadata().getCrc64Ecma();
 // 입력 스트림 비활성화
 cosObjectInput.close();
@@ -241,9 +247,9 @@ ObjectMetadata downObjectMeta = cosClient.getObject(getObjectRequest, downFile);
 
 COS에 저장된 지정 경로의 객체를 삭제하는 코드는 다음과 같습니다.
 
-[//]: # (.cssg-snippet-delete-object)
+[//]: # ".cssg-snippet-delete-object"
 ```java
-// Bucket 이름 생성 포맷은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// Bucket 이름 생성 형식은 BucketName-APPID이며, 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
 // 삭제할 파일이 있는 COS 경로(즉, 객체 키) 지정. 예를 들어 객체 키가 folder/picture.jpg인 경우 folder 경로에 있는 picture.jpg 파일을 삭제한다는 의미입니다.
 String key = "exampleobject";
@@ -261,7 +267,7 @@ SDK로 생성한 cosClient가 발송한 요청은 기본적으로 응답 오류 
 
 재시도 횟수 설정:
 
-[//]: # (.cssg-snippet-error-retry)
+[//]: # ".cssg-snippet-error-retry"
 ```java
 Region region = new Region("COS_REGION");
 ClientConfig clientConfig = new ClientConfig(region);
@@ -271,7 +277,7 @@ clientConfig.setMaxErrorRetry = 4;
 
 재시도 정책 설정:
 
-[//]: # (.cssg-snippet-retry-policy)
+[//]: # ".cssg-snippet-retry-policy"
 ```java
 // 사용자 정의 재시도 정책
 public class OnlyIOExceptionRetryPolicy extends RetryPolicy {
@@ -302,3 +308,7 @@ cosClient를 비활성화하고 HTTP로 연결된 백그라운드 관리 스레�
 // 클라이언트 비활성화(백그라운드 스레드 비활성화)
 cosClient.shutdown();
 ```
+
+## FAQ
+
+사용 과정 중 발생할 수 있는 일반적인 문제의 해결방안은 [Java SDK FAQ](https://intl.cloud.tencent.com/document/product/436/38956)를 참고하십시오.

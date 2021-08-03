@@ -1,11 +1,11 @@
 ## 소개
-Java SDK는 사전 서명된 URL 요청을 획득하거나 서명 인터페이스를 생성하여 클라이언트에 배포할 수 있습니다. 이는 다운로드 및 업로드에 사용됩니다. 파일 권한이 개인 읽기인 경우 사전 서명된 링크에 유효 시간이 있으므로 주의하시기 바랍니다.
-생성한 사전 서명된 URL에는 프로토콜 이름(HTTP 또는 HTTPS)이 포함되어 있으며, 해당 프로토콜 이름은 사전 서명을 요청한 COS 클라이언트에 설정한 프로토콜과 동일해야 합니다.
+Java SDK는 사전 서명된 URL 요청을 획득하거나 서명 인터페이스를 생성하여 클라이언트에 배포할 수 있습니다. 이는 다운로드 또는 업로드에 사용됩니다. 파일 권한이 개인 읽기인 경우 사전 서명된 링크에 유효 시간이 있으므로 주의하시기 바랍니다.
+생성된 사전 서명된 URL은 프로토콜명 (HTTP 또는 HTTPS)을 포함합니다. 해당 프로토콜명과 사전 서명을 요청한 COS(Cloud Object Storage) 클라이언트가 설정한 프로토콜은 일치합니다.
 구체적인 사용 방법은 요청 예시를 참조하십시오.
 
 ## 사전 서명된 URL 요청 획득 
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```java
 public URL generatePresignedUrl(GeneratePresignedUrlRequest req) throws CosClientException
@@ -27,7 +27,7 @@ Request 멤버 설명:
 | expiration      | set 방법            | 서명 만료 시간                                               | Date                    |
 | contentType     | set 방법            | 서명 요청의 Content-Type                                | String                  |
 | contentMd5      | set 방법            | 서명 요청의 Content-Md5                                 | String                  |
-| responseHeaders | set 방법            | 서명 다운로드 요청 중 덮어쓰고 반환활 HTTP 헤더                      | ResponseHeaderOverrides |
+| responseHeaders | set 방법            | 서명 다운로드 요청 중 덮어쓰고 반환할 HTTP 헤더                      | ResponseHeaderOverrides |
 | versionId | set 방법            | 버킷에 여러 버전을 활성화할 경우, 객체의 버전 번호 지정                       | String |
 
 
@@ -38,8 +38,9 @@ Request 멤버 설명:
 [//]: # (.cssg-snippet-get-presign-download-url)
 ```java
 // 영구 키 정보 초기화
-String secretId = "COS_SECRETID";
-String secretKey = "COS_SECRETKEY";
+// SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
 COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
 Region region = new Region("COS_REGION");
 ClientConfig clientConfig = new ClientConfig(region);
@@ -47,8 +48,9 @@ ClientConfig clientConfig = new ClientConfig(region);
 // clientConfig.setHttpProtocol(HttpProtocol.https);
 // cos 클라이언트 생성
 COSClient cosClient = new COSClient(cred, clientConfig);
-// 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
+// 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 본 포맷을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
+// 여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자입니다.
 String key = "exampleobject";
 GeneratePresignedUrlRequest req =
         new GeneratePresignedUrlRequest(bucketName, key, HttpMethodName.GET);
@@ -63,14 +65,44 @@ cosClient.shutdown();
 
 #### 예시 2
 
-임시 키를 사용해 서명이 있는 다운로드 링크를 생성하고 반환하는 일부 공용 헤더(예: content-type, content-language)를 덮어쓰도록 설정하는 예시 코드는 다음과 같습니다.
+영구 키를 사용해 무기한 유효 서명이 있는 다운로드 링크를 생성하는 예시 코드는 다음과 같습니다.
+
+```java
+// 영구 키 정보 초기화
+// SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리하십시오.
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
+COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
+Region region = new Region("COS_REGION");
+ClientConfig clientConfig = new ClientConfig(region);
+// https 프로토콜을 사용하는 URL을 생성할 경우, 이 행을 설정하길 권장합니다.
+// clientConfig.setHttpProtocol(HttpProtocol.https);
+// cos 클라이언트 생성
+COSClient cosClient = new COSClient(cred, clientConfig);
+// 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 본 포맷을 따라야 합니다.
+String bucketName = "examplebucket-1250000000";
+// 여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자입니다.
+String key = "exampleobject";
+GeneratePresignedUrlRequest req =
+        new GeneratePresignedUrlRequest(bucketName, key, HttpMethodName.GET);
+// 서명 만료 기간을 아주 먼 미래의 날짜로 설정합니다. 예시: 3000년 12월 31일.
+Date expirationDate = new Date(3000, 12, 31);
+req.setExpiration(expirationDate);
+URL url = cosClient.generatePresignedUrl(req);
+System.out.println(url.toString());
+cosClient.shutdown();
+```
+
+#### 예시 3
+
+임시 키를 사용해 서명이 있는 다운로드 링크를 생성하고, 반환할 일부 공용 헤더(예: content-type, content-language)를 덮어쓰도록 설정합니다. 예시 코드는 다음과 같습니다.
 
 [//]: # (.cssg-snippet-get-presign-download-url-override-headers)
 ```java
-// 획득한 임시 키(tmpSecretId, tmpSecretKey, sessionToken) 전달
-String tmpSecretId = "COS_SECRETID";
-String tmpSecretKey = "COS_SECRETKEY";
-String sessionToken = "COS_TOKEN";
+// 획득한 임시 키(tmpSecretId, tmpSecretKey, sessionToken) 전송
+String tmpSecretId = "SECRETID";
+String tmpSecretKey = "SECRETKEY";
+String sessionToken = "TOKEN";
 COSCredentials cred = new BasicSessionCredentials(tmpSecretId, tmpSecretKey, sessionToken);
 // bucket 리전 설정. COS 리전의 약칭은 https://cloud.tencent.com/document/product/436/6224 참조
 // clientConfig에 region, https(기본값: http), 타임아웃 시간, 프록시 등을 설정하는 set 방법이 포함되어 있습니다. 사용 시 소스 코드 또는 FAQ의 Java SDK 부분을 참조하십시오.
@@ -82,6 +114,7 @@ ClientConfig clientConfig = new ClientConfig(region);
 COSClient cosClient = new COSClient(cred, clientConfig);
 // 버킷의 이름 생성 포맷: BucketName-APPID 
 String bucketName = "examplebucket-1250000000";
+// 여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자입니다.
 String key = "exampleobject";
 GeneratePresignedUrlRequest req =
         new GeneratePresignedUrlRequest(bucketName, key, HttpMethodName.GET);
@@ -89,6 +122,7 @@ GeneratePresignedUrlRequest req =
 ResponseHeaderOverrides responseHeaders = new ResponseHeaderOverrides();
 String responseContentType = "image/x-icon";
 String responseContentLanguage = "zh-CN";
+// 반환 헤더에 포함되는 파일명 정보 설정
 String responseContentDispositon = "filename=\"exampleobject\"";
 String responseCacheControl = "no-cache";
 String cacheExpireStr =
@@ -108,7 +142,7 @@ System.out.println(url.toString());
 cosClient.shutdown();
 ```
 
-#### 예시 3
+#### 예시 4
 
 공개 읽기 Bucket(익명 읽기 가능)의 서명이 필요 없는 링크를 생성하는 예시 코드는 다음과 같습니다.
 
@@ -124,6 +158,7 @@ COSClient cosClient = new COSClient(cred, clientConfig);
 // bucket 이름에는 반드시 appid를 포함
 String bucketName = "examplebucket-1250000000";
 
+// 여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자입니다.
 String key = "exampleobject";
 GeneratePresignedUrlRequest req =
         new GeneratePresignedUrlRequest(bucketName, key, HttpMethodName.GET);
@@ -132,7 +167,7 @@ System.out.println(url.toString());
 cosClient.shutdown();
 ```
 
-#### 예시 4
+#### 예시 5
 
 클라이언트에 직접 배포해 파일을 업로드할 수 있는 사전 서명된 업로드 링크를 생성하는 예시 코드는 다음과 같습니다.
 
@@ -140,6 +175,7 @@ cosClient.shutdown();
 ```java
 // 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다.
 String bucketName = "examplebucket-1250000000";
+// 여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자입니다.
 String key = "exampleobject";
 // 서명 만료 시간 설정(옵션). 설정하지 않을 경우 기본적으로 ClientConfig의 서명 만료 시간(1시간)을 사용합니다.
 // 본 예시에서는 30분 후 만료로 설정합니다.
@@ -187,14 +223,16 @@ public String buildAuthorizationStr(HttpMethodName methodName, String resouce_pa
 
 [//]: # (.cssg-snippet-get-authorization-for-upload)
 ```java
-String secretId = "COS_SECRETID";
-String secretKey = "COS_SECRETKEY";
+// SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리하십시오.
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
 COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
 COSSigner signer = new COSSigner();
 //만료 시간을 1시간으로 설정
 Date expiredTime = new Date(System.currentTimeMillis() + 3600L * 1000L);
-// 서명할 key. 생성한 서명은 해당 key 업로드에만 사용 가능
-String key = "/exampleobject";
+// 서명할 key, 생성된 서명은 해당 key 업로드에만 사용 가능합니다.
+// 여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자입니다.
+String key = "exampleobject";
 String sign = signer.buildAuthorizationStr(HttpMethodName.PUT, key, cred, expiredTime);
 ```
 
@@ -202,14 +240,16 @@ String sign = signer.buildAuthorizationStr(HttpMethodName.PUT, key, cred, expire
 
 [//]: # (.cssg-snippet-get-authorization-for-download)
 ```java
-String secretId = "COS_SECRETID";
-String secretKey = "COS_SECRETKEY";
+// SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리하십시오.
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
 COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
 COSSigner signer = new COSSigner();
 // 만료 시간을 1시간으로 설정
 Date expiredTime = new Date(System.currentTimeMillis() + 3600L * 1000L);
-// 서명할 key. 생성한 서명은 해당 key 다운로드에만 사용 가능
-String key = "/exampleobject";
+// 서명할 key, 생성된 서명은 해당 key 다운로드에만 사용 가능합니다.
+// 여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자입니다.
+String key = "exampleobject";
 String sign = signer.buildAuthorizationStr(HttpMethodName.GET, key, cred, expiredTime);
 ```
 
@@ -217,13 +257,15 @@ String sign = signer.buildAuthorizationStr(HttpMethodName.GET, key, cred, expire
 
 [//]: # (.cssg-snippet-get-authorization-for-delete)
 ```java
-String secretId = "COS_SECRETID";
-String secretKey = "COS_SECRETKEY";
+// SECRETID와 SECRETKEY는 CAM 콘솔에 로그인하여 조회 및 관리
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
 COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
 COSSigner signer = new COSSigner();
 // 만료 시간을 1시간으로 설정
 Date expiredTime = new Date(System.currentTimeMillis() + 3600L * 1000L);
-// 서명할 key. 생성한 서명은 해당 key 삭제에만 사용 가능
-String key = "/exampleobject";
+// 서명할 key, 생성된 서명은 해당 key 삭제에만 사용 가능합니다.
+// 여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자입니다.
+String key = "exampleobject";
 String sign = signer.buildAuthorizationStr(HttpMethodName.DELETE, key, cred, expiredTime);
 ```

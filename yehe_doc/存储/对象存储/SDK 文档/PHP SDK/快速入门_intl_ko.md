@@ -6,10 +6,15 @@
 - 예시 Demo 프로그램 주소: [PHP sample](https://github.com/tencentyun/cos-php-sdk-v5/tree/master/sample)
 - SDK 문서의 모든 예시 코드는 [SDK 코드 예시](https://github.com/tencentyun/cos-snippets/tree/master/php)를 참조하십시오.
 - SDK 로그 업데이트는 [ChangeLog](https://github.com/tencentyun/cos-php-sdk-v5/blob/master/CHANGELOG.md)를 참조하십시오.
+- SDK FAQ는 [PHP SDK FAQ](https://intl.cloud.tencent.com/document/product/436/40543)를 참고하십시오.
+
+
+>? XML 버전 SDK 사용 시 함수 또는 메소드 없음 등 오류가 발생하였을 경우, 먼저 XML 버전 SDK를 최신 버전으로 업데이트한 후 재시도하십시오.
+>
 
 #### 환경 종속
 
-*   PHP 5.6+
+-   PHP 5.6+
     `php -v` 명령어를 통해 현재의 PHP 버전을 확인할 수 있습니다.
 >!PHP 버전이 `5.3 이상`, `5.6 미만`인 경우 [v1.3](https://github.com/tencentyun/cos-php-sdk-v5/tree/1.3) 버전을 사용하십시오.
 -  cURL 확장
@@ -37,7 +42,7 @@ Composer를 사용한 cos-php-sdk-v5 설치를 권장합니다. Composer는 PHP�
 ```shell
 curl -sS https://getcomposer.org/installer | php
 ```
-3. 파일 이름이 `composer.json`인 파일을 생성하고, 내용은 다음과 같이 작성합니다.
+3. 파일 이름이 `composer.json`인 파일을 생성합니다. 내용은 다음과 같습니다.
 ```json
 {
     "require": {
@@ -45,7 +50,7 @@ curl -sS https://getcomposer.org/installer | php
     }
 }
 ```
-4. Composer를 사용해 설치하고 다음 명령어를 실행합니다.
+4. 다음 명령어를 실행하여 Composer를 사용해 설치합니다.
 ```shell
 php composer.phar install
 ```
@@ -71,7 +76,8 @@ require  '/path/to/cos-sdk-v5.phar';
 소스 코드 방식으로 SDK를 설치하는 방법은 다음과 같습니다.
 1. [SDK 다운로드 페이지](https://github.com/tencentyun/cos-php-sdk-v5/releases)에서 `cos-sdk-v5.tar.gz` 압축 파일을 다운로드합니다.
 >!`Source code` 압축 패키지는 Github 기본 패키지의 코드 패키지이며, `vendor` 디렉터리가 포함되어 있지 않습니다.
-2. 압축 해제 후, `autoload.php` 스크립트를 통해 SDK를 로딩합니다.
+>
+>2. 압축 해제 후, `autoload.php` 스크립트를 통해 SDK를 로딩합니다.
 
 ```php
 require '/path/to/sdk/vendor/autoload.php';
@@ -83,7 +89,7 @@ COS PHO SDK를 사용한 클라이언트 초기화, 버킷 생성, 버킷 리스
 
 ### 초기화
 
-[//]: # (.cssg-snippet-global-init)
+[//]: # ".cssg-snippet-global-init"
 ```php
 $secretId = "COS_SECRETID"; //"Tencent Cloud API 키 SecretId";
 $secretKey = "COS_SECRETKEY"; //"Tencent Cloud API 키 SecretKey";
@@ -99,7 +105,7 @@ $cosClient = new Qcloud\Cos\Client(
 
 [임시 키](https://intl.cloud.tencent.com/document/product/436/14048)를 사용하여 초기화하는 경우, 다음 방법으로 인스턴스를 생성하십시오.
 
-[//]: # (.cssg-snippet-global-init-sts)
+[//]: # ".cssg-snippet-global-init-sts"
 ```php
 $tmpSecretId = "COS_SECRETID"; //"임시 키 SecretId";
 $tmpSecretKey = "COS_SECRETKEY"; //"임시 키 SecretKey";
@@ -115,12 +121,12 @@ $cosClient = new Qcloud\Cos\Client(
             'token' => $tmpToken)));
 ```
 
-### 버킷 생성
+###버킷 생성하기
 
-[//]: # (.cssg-snippet-put-bucket)
+[//]: # ".cssg-snippet-put-bucket"
 ```php
-try {
-    $bucket = "examplebucket-1250000000"; //버킷 이름 포맷: BucketName-APPID
+try{
+    $bucket = "examplebucket-1250000000"; //버킷 이름 형식: BucketName-APPID
     $result = $cosClient->createBucket(array('Bucket' => $bucket));
     //요청 완료
     print_r($result);
@@ -132,9 +138,9 @@ try {
 
 ### 버킷 리스트 조회
 
-[//]: # (.cssg-snippet-get-service)
+[//]: # ".cssg-snippet-get-service"
 ```php
-try {
+try{
     //요청 완료
     $result = $cosClient->listBuckets();
     print_r($result);
@@ -151,13 +157,13 @@ try {
 * Upload 인터페이스를 사용하여 파일을 멀티파트 업로드합니다. Upload 인터페이스는 복합 업로드 인터페이스로, 용량이 작은 파일은 간편 업로드를 진행하고, 용량이 큰 파일은 멀티파트 업로드를 진행합니다.
 * 매개변수 설명은 [객체 작업](https://intl.cloud.tencent.com/document/product/436/31542#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1) 문서를 참조하십시오.
 
-[//]: # (.cssg-snippet-put-object-comp)
+[//]: # ".cssg-snippet-put-object-comp"
 ```php
 # 파일 업로드
 ## putObject(업로드 인터페이스, 최대 5G 파일까지 업로드 가능)
 ### 메모리에 있는 문자열 업로드
-try {
-    $bucket = "examplebucket-1250000000"; //버킷 이름 포맷: BucketName-APPID
+try{
+    $bucket = "examplebucket-1250000000"; //버킷 이름 형식: BucketName-APPID
     $key = "exampleobject"; //여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자임
     $result = $cosClient->putObject(array(
         'Bucket' => $bucket,
@@ -169,8 +175,8 @@ try {
 }
 
 ### 파일 스트림 업로드
-try {
-    $bucket = "examplebucket-1250000000"; //버킷 이름 포맷: BucketName-APPID
+try{
+    $bucket = "examplebucket-1250000000"; //버킷 이름 형식: BucketName-APPID
     $key = "exampleobject"; //여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자임
     $srcPath = "path/to/localFile";//로컬 파일의 절대 경로
     $file = fopen($srcPath, "rb");
@@ -187,8 +193,8 @@ try {
 
 ## Upload(고급 업로드 인터페이스, 기본적으로 멀티파트 업로드를 사용하며 최대 50TB까지 업로드 지원)
 ### 메모리에 있는 문자열 업로드
-try {    
-    $bucket = "examplebucket-1250000000"; //버킷 이름 포맷: BucketName-APPID
+try{    
+    $bucket = "examplebucket-1250000000"; //버킷 이름 형식: BucketName-APPID
     $key = "exampleobject"; //여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자임
     $result = $cosClient->Upload(
         $bucket = $bucket,
@@ -200,8 +206,8 @@ try {
 }
 
 ### 파일 스트림 업로드
-try {    
-    $bucket = "examplebucket-1250000000"; //버킷 이름 포맷: BucketName-APPID
+try{    
+    $bucket = "examplebucket-1250000000"; //버킷 이름 형식: BucketName-APPID
     $key = "exampleobject"; //여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자임
     $srcPath = "path/to/localFile";//로컬 파일의 절대 경로
     $file = fopen($srcPath, 'rb');
@@ -219,10 +225,10 @@ try {
 
 ### 객체 리스트 조회
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```php
-try {
-    $bucket = "examplebucket-1250000000"; //버킷 이름 포맷: BucketName-APPID
+try{
+    $bucket = "examplebucket-1250000000"; //버킷 이름 형식: BucketName-APPID
     $result = $cosClient->listObjects(array(
         'Bucket' => $bucket
     ));
@@ -240,10 +246,10 @@ try {
 
 `listObjects` 인터페이스 1회 호출당 조회 가능한 객체 수는 1000개입니다. 모든 객체를 조회할 경우 순환 호출이 필요합니다.
 
-[//]: # (.cssg-snippet-get-bucket-recursive)
+[//]: # ".cssg-snippet-get-bucket-recursive"
 ```php
-try {
-    $bucket = "examplebucket-1250000000"; //버킷 이름 포맷: BucketName-APPID
+try{
+    $bucket = "examplebucket-1250000000"; //버킷 이름 형식: BucketName-APPID
     $prefix = ''; //객체의 접두사 나열
     $marker = ''; //이전에 나열한 객체의 중단 지점
     while (true) {
@@ -272,13 +278,13 @@ try {
 * getObject 인터페이스를 사용해 파일을 다운로드합니다.
 * getObjectUrl 인터페이스를 사용해 파일 다운로드 URL을 획득합니다.
 
-[//]: # (.cssg-snippet-get-object-comp)
+[//]: # ".cssg-snippet-get-object-comp"
 ```php
 # 파일 다운로드
 ## getObject(파일 다운로드)
 ### 메모리에 다운로드
-try {
-    $bucket = "examplebucket-1250000000"; //버킷, 포맷: BucketName-APPID
+try{
+    $bucket = "examplebucket-1250000000"; //버킷, 형식: BucketName-APPID
     $key = "exampleobject"; //여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자임
     $result = $cosClient->getObject(array(
         'Bucket' => $bucket,
@@ -291,8 +297,8 @@ try {
 }
 
 ### 로컬에 다운로드
-try {
-    $bucket = "examplebucket-1250000000"; //버킷, 포맷: BucketName-APPID
+try{
+    $bucket = "examplebucket-1250000000"; //버킷, 형식: BucketName-APPID
     $key = "exampleobject"; //여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자임
     $localPath = @"path/to/localFile";//지정된 로컬 경로에 다운로드
     $result = $cosClient->getObject(array(
@@ -306,10 +312,10 @@ try {
 
 ### 다운로드 범위 지정
 /*
- * Range 필드 포맷: 'bytes=a-b'
+ * Range 필드 형식: 'bytes=a-b'
  */
-try {
-    $bucket = "examplebucket-1250000000"; //버킷, 포맷: BucketName-APPID
+try{
+    $bucket = "examplebucket-1250000000"; //버킷, 형식: BucketName-APPID
     $key = "exampleobject"; //여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자임
     $localPath = @"path/to/localFile";//지정된 로컬 경로에 다운로드
     $result = $cosClient->getObject(array(
@@ -323,8 +329,8 @@ try {
 }
 
 ## getObjectUrl(파일 UrL 획득)
-try {    
-    $bucket = "examplebucket-1250000000"; //버킷, 포맷: BucketName-APPID
+try{    
+    $bucket = "examplebucket-1250000000"; //버킷, 형식: BucketName-APPID
     $key = "exampleobject"; //여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자임
     $signedUrl = $cosClient->getObjectUrl($bucket, $key, '+10 minutes');
     // 요청 완료
@@ -337,12 +343,12 @@ try {
 
 ### 객체 삭제
 
-[//]: # (.cssg-snippet-delete-object-comp)
+[//]: # ".cssg-snippet-delete-object-comp"
 ```php
 # object 삭제
 ## deleteObject
-try {
-    $bucket = "examplebucket-1250000000"; //버킷, 포맷: BucketName-APPID
+try{
+    $bucket = "examplebucket-1250000000"; //버킷, 형식: BucketName-APPID
     $key = "exampleobject"; //여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자임
     $result = $cosClient->deleteObject(array(
         'Bucket' => $bucket,
@@ -357,8 +363,8 @@ try {
 }
 # 여러 object 삭제
 ## deleteObjects
-try {
-    $bucket = "examplebucket-1250000000"; //버킷, 포맷: BucketName-APPID
+try{
+    $bucket = "examplebucket-1250000000"; //버킷, 형식: BucketName-APPID
     $key1 = "exampleobject1";  //여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자임
     $key2 = "exampleobject2";  //여기서 key는 객체 키로, 버킷 내 객체의 고유 식별자임
     $result = $cosClient->deleteObjects(array(

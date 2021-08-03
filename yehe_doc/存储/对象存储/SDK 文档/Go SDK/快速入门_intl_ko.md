@@ -3,9 +3,13 @@
 #### 관련 리소스
 - COS의 XML Go SDK 소스 코드 다운로드 주소: [XML Go SDK](https://github.com/tencentyun/cos-go-sdk-v5)
 - 예시 Demo 다운로드 주소: [COS XML Go SDK 예시](https://github.com/tencentyun/cos-go-sdk-v5/tree/master/example)
-- 자세한 내용은 [COS Go SDK API](https://godoc.org/github.com/tencentyun/cos-go-sdk-v5) 문서를 참조하십시오.
-- SDK 문서의 모든 예시 코드는 [SDK 코드 예시](https://github.com/tencentyun/cos-snippets/tree/master/Go)를 참조하십시오.
-- SDK 로그 업데이트는 [ChangeLog](https://github.com/tencentyun/cos-go-sdk-v5/blob/master/CHANGELOG.md)를 참조하십시오.
+- 자세한 내용은 [COS Go SDK API](https://godoc.org/github.com/tencentyun/cos-go-sdk-v5) 문서를 참고하십시오.
+- SDK 문서의 모든 예시 코드는 [SDK 코드 예시](https://github.com/tencentyun/cos-snippets/tree/master/Go)를 참고하십시오.
+- SDK 로그 업데이트는 [ChangeLog](https://github.com/tencentyun/cos-go-sdk-v5/blob/master/CHANGELOG.md)를 참고하십시오.
+- SDK FAQ는 [Go SDK FAQ](https://intl.cloud.tencent.com/document/product/436/40774)를 참고하십시오.
+
+>? SDK 사용 시 함수 또는 메소드 없음 등 오류가 발생하였을 경우, 먼저 SDK를 최신 버전으로 업데이트한 후 재시도하십시오.
+>
 
 #### 환경 종속
 Golang: Go 컴파일 실행 환경을 다운로드 및 설치하는 데 사용합니다. Golang 공식 홈페이지에서 다운로드하십시오.
@@ -40,6 +44,7 @@ type BaseURL struct {
     CIURL *url.URL
 }
 ```
+
 | 매개변수 이름  | 매개변수 설명                                                     | 유형   | 필수 입력 여부 |
 | --------- | ------------------------------------------------------------ | ------ | ---- |
 | BucketURL | bucket, object 관련 API에 액세스하는 기본 URL(path 부분 미포함)  | string | 예   |
@@ -85,7 +90,8 @@ if client != nil {
 }
 
 ```
->?임시 키 생성 및 사용에 대한 자세한 내용은 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048)를 참조하십시오.
+>? 임시 키 생성 및 사용에 대한 자세한 내용은 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048)를 참고하십시오.
+>
 
 #### 요청 예시3: 도메인 설정
 
@@ -104,7 +110,7 @@ client := cos.NewClient(b, &http.Client{
 })
 ```
 
-### 버킷 생성
+###버킷 생성하기
 
 ```Go
 package main
@@ -128,7 +134,7 @@ func main() {
     c := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             SecretID:  "SECRETID",
-            SecretKey: "SECRETKEY",
+            SecretKey:    "SECRETKEY",
         },
     })
 
@@ -161,7 +167,7 @@ func main() {
     c := cos.NewClient(nil, &http.Client{
         Transport: &cos.AuthorizationTransport{
             SecretID:  "SECRETID",
-            SecretKey: "SECRETKEY",
+            SecretKey:    "SECRETKEY",
         },
     })
 
@@ -201,7 +207,7 @@ func main() {
     c := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             SecretID:  "SECRETID",
-            SecretKey: "SECRETKEY",
+            SecretKey:    "SECRETKEY",
         },
     })
     // 객체 키(Key)는 버킷 내 객체의 고유 식별자입니다.
@@ -256,7 +262,7 @@ func main() {
     c := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             SecretID:  "SECRETID",
-            SecretKey: "SECRETKEY",
+            SecretKey:    "SECRETKEY",
         },
     })
 
@@ -301,7 +307,7 @@ func main() {
     c := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             SecretID:  "SECRETID",
-            SecretKey: "SECRETKEY",
+            SecretKey:    "SECRETKEY",
         },
     })
     // 1. 응답 본문으로 객체 가져오기
@@ -343,7 +349,7 @@ func main() {
     c := cos.NewClient(b, &http.Client{
         Transport: &cos.AuthorizationTransport{
             SecretID:  "SECRETID",
-            SecretKey: "SECRETKEY",
+            SecretKey:    "SECRETKEY",
         },
     })
     name := "test/objectPut.go"

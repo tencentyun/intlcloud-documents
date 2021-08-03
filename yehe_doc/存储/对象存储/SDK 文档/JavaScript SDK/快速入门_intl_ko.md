@@ -5,18 +5,23 @@
 - COS의 XML JS SDK 소스 코드 다운로드 주소: [XML JavaScript SDK](https://github.com/tencentyun/cos-js-sdk-v5)
 - SDK 고속 다운로드 주소: [XML JavaScript SDK](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-js-sdk-v5/latest/cos-js-sdk-v5.zip)
 - 예시 Demo 다운로드 주소: [XML JavaScript SDK Demo](https://github.com/tencentyun/cos-js-sdk-v5/tree/master/demo)
-- SDK 문서의 모든 예시 코드는 [SDK 코드 예시](https://github.com/tencentyun/cos-snippets/tree/master/JavaScript)를 참조하십시오.
-- SDK 로그 업데이트는 [ChangeLog](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/CHANGELOG.md)를 참조하십시오.
+- SDK 문서의 모든 예시 코드는 [SDK 코드 예시](https://github.com/tencentyun/cos-snippets/tree/master/JavaScript)를 참고하십시오.
+- SDK 로그 업데이트는 [ChangeLog](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/CHANGELOG.md)를 참고하십시오.
+- SDK FAQ는 [JavaScript SDK FAQ](https://intl.cloud.tencent.com/document/product/436/40775)를 참고하십시오.
+
+
+>? SDK 사용 시 함수 또는 메소드 없음 등 오류가 발생하였을 경우, 먼저 SDK를 최신 버전으로 업데이트한 후 재시도하십시오.
+>
 
 #### 환경 준비
 
 1. JavaScript SDK에는 ajax로 파일을 업로드하거나 파일의 MD5 값을 계산할 수 있도록 HTML5의 기본 특성을 지원하는 브라우저(IE10 이상을 지원하는 브라우저)가 필요합니다.
 2. [COS 콘솔](https://console.cloud.tencent.com/cos5)에 로그인해 [버킷 생성](https://intl.cloud.tencent.com/document/product/436/13309)을 참고해 버킷을 생성하고, 버킷 이름과 [리전 이름](https://intl.cloud.tencent.com/document/product/436/6224)을 획득합니다.
 3. [CAM 콘솔](https://console.cloud.tencent.com/capi)에 로그인해 프로젝트의 SecretId와 SecretKey를 획득합니다.
-4. CORS 규칙을 설정하고 AllowHeader를 `*`로 설정합니다. ExposeHeaders에는 ETag, Content-Length 및 기타 js가 읽어야 하는 header 필드가 필요합니다(아래 이미지 참조). 작업에 대한 자세한 내용은 [크로스 도메인 액세스 설정](https://intl.cloud.tencent.com/document/product/436/13318) 문서를 참조하십시오.
-   ![CORS 예시](https://main.qcloudimg.com/raw/bdb4f616f2afe4ca18ba663446873fd4.png)
+4. CORS 규칙을 설정하고 AllowHeader를 `*`로 설정합니다. 아래 이미지와 같이, ExposeHeaders에는 ETag, Content-Length 및 기타 js가 읽어야 하는 header 필드가 필요합니다. 작업에 대한 자세한 내용은 [크로스 도메인 액세스 설정](https://intl.cloud.tencent.com/document/product/436/13318) 문서를 참고하십시오.
 
-> ?본 문서에 나오는 SecretId, SecretKey, Bucket 등의 명칭에 대한 의미와 획득 방법은 [COS 용어 정보](https://intl.cloud.tencent.com/document/product/436/7751)를 참조하십시오.
+
+> ?본 문서에 나오는 SecretId, SecretKey, Bucket 등의 명칭에 대한 의미와 획득 방법은 [COS 용어 정보](https://intl.cloud.tencent.com/document/product/436/7751)를 참고하십시오.
 
 #### SDK 설치
 
@@ -28,7 +33,7 @@
 <script src="https://unpkg.com/cos-js-sdk-v5/dist/cos-js-sdk-v5.min.js"></script>
 ```
 
-script 태그가 SDK를 참조할 때, SDK는 전역 변수 이름 COS를 점유하며 해당 구조 함수를 통해 SDK 인스턴스를 생성할 수 있습니다.
+script 태그가 SDK를 참고할 때, SDK는 전역 변수 이름 COS를 점유하며 해당 구조 함수를 통해 SDK 인스턴스를 생성할 수 있습니다.
 
 #### webpack 도입 방식
 
@@ -42,7 +47,7 @@ var COS = require('cos-js-sdk-v5');
 
 ### 임시 키 획득
 
-프런트 엔드에 고정 키를 두면 보안 리스크가 있기 때문에, 정식 배포 시 임시 키 사용을 권장합니다. 구현 과정은 다음과 같습니다. 우선, 프런트 엔드가 서버를 요청하면 서버가 고정 키로 STS 서비스를 호출해서 임시 키를 신청합니다. 자세한 내용은 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048) 문서를 참조하십시오. 이후 임시 키를 프런트 엔드로 반환합니다.
+프런트 엔드에 고정 키를 두면 보안 리스크가 있기 때문에, 정식 배포 시 임시 키 사용을 권장합니다. 구현 과정은 다음과 같습니다. 우선, 프런트 엔드가 서버를 요청하면 서버가 고정 키로 STS 서비스를 호출해서 임시 키를 신청합니다. 자세한 내용은 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048) 문서를 참고하십시오. 이후 임시 키를 프런트 엔드로 반환합니다.
 
 >!웹 사이트에 로그인 상태가 있는 경우, 로그인 상태 검증을 임시 키 획득 인터페이스에 추가해야 합니다.
 
@@ -91,11 +96,11 @@ var cos = new COS({
 
 #### 사용 예시
 
-COS SDK 인스턴스 한 개를 생성합니다. COS SDK는 다음과 같은 포맷 생성을 지원합니다.
+COS SDK 인스턴스 한 개를 생성합니다. COS SDK는 다음과 같은 형식 생성을 지원합니다.
 
-- 포맷1(권장): 백그라운드에서 임시 키를 획득하여 프런트 엔드로 보내고, 프런트 엔드에서 서명을 계산합니다.
+- 형식1(권장): 백그라운드에서 임시 키를 획득하여 프런트 엔드로 보내고, 프런트 엔드에서 서명을 계산합니다.
 
-[//]: # (.cssg-snippet-global-init-sts)
+[//]: # ".cssg-snippet-global-init-sts"
 ```js
 var COS = require('cos-js-sdk-v5');
 var cos = new COS({
@@ -122,9 +127,9 @@ var cos = new COS({
 });
 ```
 
-- 포맷2(권장): 세밀한 권한 제어. 백그라운드에서 임시 키를 획득하여 프런트 엔드로 보냅니다. 동일한 요청을 하는 경우에만 프런트 엔드가 임시 키를 재사용합니다. 백그라운드는 Scope을 통해 권한을 세밀하게 제어합니다.
+- 형식2(권장): 세밀한 권한 제어. 백그라운드에서 임시 키를 획득하여 프런트 엔드로 보냅니다. 동일한 요청을 하는 경우에만 프런트 엔드가 임시 키를 재사용합니다. 백그라운드는 Scope을 통해 권한을 세밀하게 제어합니다.
 
-[//]: # (.cssg-snippet-global-init-sts-scope)
+[//]: # ".cssg-snippet-global-init-sts-scope"
 ```js
 var COS = require('cos-js-sdk-v5');
 var cos = new COS({
@@ -157,9 +162,9 @@ var cos = new COS({
 });
 ```
 
-- 포맷3(권장하지 않음): 매번 프런트 엔드가 요청하기 전에 getAuthorization을 통해 서명을 획득하고, 백그라운드는 고정 키 또는 임시 키를 사용해 서명을 계산하여 프런트 엔드로 반환해야 합니다. 해당 포맷의 멀티파트 업로드 권한은 제어하기 쉽지 않기 때문에 사용을 권장하지 않습니다.
+- 형식3(권장하지 않음): 매번 프런트 엔드가 요청하기 전에 getAuthorization을 통해 서명을 획득하고, 백그라운드는 고정 키 또는 임시 키를 사용해 서명을 계산하여 프런트 엔드로 반환해야 합니다. 해당 형식의 멀티파트 업로드 권한은 제어하기 쉽지 않기 때문에 사용을 권장하지 않습니다.
 
-[//]: # (.cssg-snippet-global-init-signature)
+[//]: # ".cssg-snippet-global-init-signature"
 ```js
 var cos = new COS({
     // 필수 매개변수
@@ -184,9 +189,9 @@ var cos = new COS({
 });
 ```
 
-- 포맷4(권장하지 않음): 프런트 엔드는 고정 키를 사용해 서명을 계산합니다. 해당 포맷은 프런트 엔드 디버깅에 적합하며, 사용 시 키가 노출되지 않도록 주의하십시오.
+- 형식4(권장하지 않음): 프런트 엔드는 고정 키를 사용해 서명을 계산합니다. 해당 형식은 프런트 엔드 디버깅에 적합하며, 사용 시 키가 노출되지 않도록 주의하십시오.
 
-[//]: # (.cssg-snippet-global-init)
+[//]: # ".cssg-snippet-global-init"
 ```js
 // SECRETID와 SECRETKEY는 https://console.cloud.tencent.com/cam/capi에 로그인하여 조회 및 관리하십시오.
 var cos = new COS({
@@ -218,7 +223,7 @@ var cos = new COS({
 | getAuthorization       | 서명을 획득하는 콜백 방법. SecretId, SecretKey가 없는 경우 이 매개변수는 필수입니다. <br> **주의사항: 해당 콜백 방법은 인스턴스 초기화 시 전송되며, 인스턴스로 인터페이스를 호출해야 실행되어 서명을 획득합니다. ** | Function | 아니요   |
 | Timeout                | 타임아웃 시간. 단위: 밀리초. 기본값: 0. 즉 타임아웃 시간을 설정하지 않습니다.               | Number   | 아니요   |
 
-#### getAuthorization 콜백 함수 설명의 함수 설명(포맷1 사용)
+#### getAuthorization 콜백 함수 설명의 함수 설명(형식1 사용)
 
 ```
 getAuthorization: function(options, callback) { ... }
@@ -226,11 +231,11 @@ getAuthorization: function(options, callback) { ... }
 
 getAuthorization의 콜백 매개변수 설명:
 
-| 매개변수 이름   | 매개변수 설명                                                     | 유형     |
+| 매개변수 이름   | 매개변수 설명                                                     | 유형   |
 | -------- | ------------------------------------------------------------ | -------- |
-| options  | 임시 키에 필요한 매개변수 객체 획득                                   | Object |
-| - Bucket | 버킷의 이름. 이름 생성 포맷이 BucketName-APPID이며, 여기에 입력하는 버킷 이름은 반드시 해당 포맷을 따라야 합니다. | String   |
-| - Region | 버킷이 위치한 리전. 열거 값은 [버킷 리전 정보](https://intl.cloud.tencent.com/document/product/436/6224)를 참조하십시오. | String   |
+| options  | 임시 키에 필요한 매개변수 객체 획득                                   | Object   |
+| - Bucket | 버킷의 이름. 이름 생성 형식이 BucketName-APPID이며, 여기에 입력하는 버킷 이름은 반드시 해당 형식을 따라야 합니다. | String   |
+| - Region | 버킷이 위치한 리전. 열거 값은 [버킷 리전 정보](https://intl.cloud.tencent.com/document/product/436/6224)를 참고하십시오. | String   |
 | callback | 임시 키 획득 후 리턴 방법                                 | Function |
 
 임시 키 획득 후 callback은 하나의 객체를 리턴합니다. 리턴 객체의 속성 리스트는 다음과 같습니다.
@@ -243,7 +248,7 @@ getAuthorization의 콜백 매개변수 설명:
 | StartTime         | 키를 획득한 시작 시간. 즉 획득한 시간의 타임스탬프. 단위: 초. startTime. 예: 1580000000. 서명 시작 시간에 사용됩니다. 해당 매개변수를 전송하면 프런트 엔드 시간의 편차로 인한 서명 만료 문제를 방지할 수 있습니다. | String | 아니요   |
 | ExpiredTime       | 획득한 임시 키의 expiredTime. 타임아웃 시간의 타임스탬프. 단위: 초. 예: 1580000900 | String | 예   |
 
-#### getAuthorization 콜백 함수 설명(포맷2 사용)
+#### getAuthorization 콜백 함수 설명(형식2 사용)
 
 ```
 getAuthorization: function(options, callback) { ... }
@@ -256,14 +261,14 @@ getAuthorization 함수 설명 및 콜백 매개변수 설명:
 | options    | 서명에 필요한 매개변수 객체 획득                                       | Object   |
 | - Method   | 현재 요청한 Method                                            | String   |
 | - Pathname | 요청 경로. 서명 계산에 사용                                       | String   |
-| - Key      | 객체 키(Object의 이름). 객체는 버킷에 있는 고유 식별자입니다. 자세한 내용은 [객체 개요](https://intl.cloud.tencent.com/document/product/436/13324)를 참조하십시오.<br> **주의사항: 인스턴스로 요청한 인터페이스가 객체 작업과 관련된 인터페이스가 아닐 경우, 해당 매개변수는 빈칸으로 표시됩니다. ** | String   |
-| - Query    | 현재 요청한 query 매개변수 객체. {key: 'val'}의 포맷               | Object   |
-| - Headers  | 현재 요청한 header 매개변수 객체. {key: 'val'}의 포맷              | Object   |
+| - Key      | 객체 키(Object의 이름). 객체는 버킷에 있는 고유 식별자입니다. 자세한 내용은 [객체 개요](https://intl.cloud.tencent.com/document/product/436/13324)를 참고하십시오.<br> **주의사항: 인스턴스로 요청한 인터페이스가 객체 작업과 관련된 인터페이스가 아닐 경우, 해당 매개변수는 빈칸으로 표시됩니다. ** | String   |
+| - Query    | 현재 요청한 query 매개변수 객체. {key: 'val'} 의 형식               | Object   |
+| - Headers  | 현재 요청한 header 매개변수 객체. {key: 'val'}의 형식              | Object   |
 | callback   | 임시 키 획득 후 콜백                                     | Function |
 
-getAuthorization 계산 완료 후 callback 리턴 매개변수는 두 가지 포맷을 지원합니다.
-포맷1: 자격 증명 문자열 Authorization 리턴
-포맷2: 하나의 객체 리턴. 리턴 속성 리스트는 다음과 같습니다.
+getAuthorization 계산 완료 후 callback 리턴 매개변수는 두 가지 형식을 지원합니다.
+형식1: 자격 증명 문자열 Authorization 리턴
+형식2: 하나의 객체 리턴. 리턴 속성 리스트는 다음과 같습니다.
 
 | 속성 이름            | 매개변수 설명                                                     | 유형   | 필수 입력 여부 |
 | ----------------- | ------------------------------------------------------------ | ------ | ---- |
@@ -278,13 +283,13 @@ getAuthorization 계산 완료 후 callback 리턴 매개변수는 두 가지 �
 2. 인스턴스화 시 getAuthorization 콜백을 전송합니다. 서명이 필요할 때마다 해당 콜백으로 계산하고, 서명을 인스턴스로 반환합니다.
 3. 인스턴스화 시 getAuthorization 콜백을 전송하고, 콜백 호출 시 임시 키 자격 증명을 반환합니다. 임시 키 자격 증명이 만료되면 다시 해당 콜백을 호출합니다.
 
-다음은 자주 사용하는 일부 인터페이스 예시입니다. 자세한 초기화 방법은 [demo](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/demo/demo.js) 예시를 참조하십시오.
+다음은 자주 사용하는 일부 인터페이스 예시입니다. 자세한 초기화 방법은 [demo](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/demo/demo.js) 예시를 참고하십시오.
 
 ### 객체 업로드
 
-간편 업로드는 용량이 작은 파일을 업로드하는 데 적합합니다. 큰 파일은 멀티파트 업로드 인터페이스를 사용하십시오. 자세한 내용은 [객체 작업](https://intl.cloud.tencent.com/document/product/436/31538) 문서를 참조하십시오.
+간편 업로드는 용량이 작은 파일을 업로드하는 데 적합합니다. 큰 파일은 멀티파트 업로드 인터페이스를 사용하십시오. 자세한 내용은 [객체 작업](https://intl.cloud.tencent.com/document/product/436/31538) 문서를 참고하십시오.
 
-[//]: # (.cssg-snippet-put-object)
+[//]: # ".cssg-snippet-put-object"
 ```js
 cos.putObject({
     Bucket: 'examplebucket-1250000000', /* 필수 */
@@ -302,7 +307,7 @@ cos.putObject({
 
 ### 객체 리스트 조회
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```js
 cos.getBucket({
     Bucket: 'examplebucket-1250000000', /* 필수 */
@@ -315,9 +320,9 @@ cos.getBucket({
 
 ### 객체 다운로드
 
-> !이 인터페이스는 객체 콘텐츠를 가져오는 데 사용합니다. 브라우저에서 파일 다운로드 요청이 필요한 경우 cos.getObjectUrl을 통해 url을 획득하여 브라우저 다운로드를 트리거할 수 있습니다. 자세한 내용은 [사전 서명된 URL](https://intl.cloud.tencent.com/document/product/436/31540) 문서를 참조하십시오.
+> !이 인터페이스는 객체 콘텐츠를 가져오는 데 사용합니다. 브라우저에서 파일 다운로드 요청이 필요한 경우 cos.getObjectUrl을 통해 url을 획득하여 브라우저 다운로드를 트리거할 수 있습니다. 자세한 내용은 [사전 서명된 URL](https://intl.cloud.tencent.com/document/product/436/31540) 문서를 참고하십시오.
 
-[//]: # (.cssg-snippet-get-object)
+[//]: # ".cssg-snippet-get-object"
 ```js
 cos.getObject({
     Bucket: 'examplebucket-1250000000', /* 필수 */
@@ -330,7 +335,7 @@ cos.getObject({
 
 ### 객체 삭제
 
-[//]: # (.cssg-snippet-delete-object)
+[//]: # ".cssg-snippet-delete-object"
 ```js
 cos.deleteObject({
     Bucket: 'examplebucket-1250000000', /* 필수 */

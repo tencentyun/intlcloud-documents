@@ -1,4 +1,5 @@
 ## 소개
+
 COS 콘솔에서 버킷 내 객체에 대해 크로스 도메인 간 액세스를 설정할 수 있습니다. COS는 OPTIONS 요청에 응답하기 위한 여러 규칙을 지원합니다. 크로스 도메인 간 액세스는 HTTP를 통해 한 출처에서 다른 출처의 리소스를 요청하는 것으로서, 프로토콜, 도메인, 포트 가운데 어느 하나라도 다르면 다른 출처로 간주합니다.
 
 COS 서비스는 크로스 도메인 간 액세스를 위한 OPTIONS 요청 응답 기능을 지원하며, 개발자가 설정한 규칙에 따라 브라우저로 세부 설정 규칙을 반환합니다. 하지만 이후 실행되는 크로스 도메인 요청이 규칙에 부합하는지 여부는 서버에서 검사하지 않습니다. 자세한 내용은 [HTTP 액세스 제어에 관한 설명](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)과 [크로스 도메인 간 액세스 설정](https://intl.cloud.tencent.com/document/product/436/11488)의 모범 사례 문서를 참조하십시오.
@@ -6,9 +7,8 @@ COS 서비스는 크로스 도메인 간 액세스를 위한 OPTIONS 요청 응�
 ## 작업 순서
 
 1. [객체 버킷 콘솔](https://console.cloud.tencent.com/cos5)에 로그인한 뒤, 왼쪽 메뉴바에서 [버킷 리스트]를 클릭하여 버킷 리스트 페이지로 이동합니다. 다시 크로스 도메인 간 액세스 설정이 필요한 버킷을 클릭합니다.
-
 2. [보안 관리] > [크로스 도메인 간 액세스 CORS 설정]을 클릭하여 **크로스 도메인 간 액세스 CORS 설정**을 찾은 뒤 [규칙 추가]를 클릭합니다.
-![](https://main.qcloudimg.com/raw/1659089c942ec8fadd77c880f1d4f492.png)
+   ![](https://main.qcloudimg.com/raw/1659089c942ec8fadd77c880f1d4f492.png)
 3. 규칙을 추가할 때(*는 필수 항목), 다음과 같은 설정 항목이 있습니다.
 
  **출처 Origin**: 크로스 도메인 요청의 출처를 허용합니다.
@@ -20,13 +20,14 @@ COS 서비스는 크로스 도메인 간 액세스를 위한 OPTIONS 요청 응�
 
  **Methods 작동**: GET, PUT, POST, DELETE, HEAD를 지원하며, ENUM은 한 개 또는 여러 개의 크로스 도메인 요청 방법을 허용합니다.
  **Allow-Headers**: OPTIONS 요청이 발생하면 x-cos-meta-md5와 같이 해당 요청이 사용할 수 있는 사용자 정의 HTTP 요청 헤더를 서버에 알립니다.
- - 동시에 여러 개의 Header를 지정할 수 있으며, 한 행에는 한 개만 입력할 수 있습니다.
+ - 동시에 여러 개의 Header를 지정할 수 있으며, 한 행에는 한 개만 입력할 수 있습니다. 예: Content-type.
  - Header는 누락되기 쉬우니 특별한 경우가 아니라면 `*`을 추가하여 모두 허용 상태로 설정하십시오.
  - 영어 대소문자 [a-z, A-Z]를 입력할 수 있으며, 언더바 `_`는 허용하지 않습니다.
  - Access-Control-Request-Headers에서 지정한 각 Header는 Allowed-Header에 대응하는 항목이 있어야 합니다.
- 
+
  **Expose-Headers**: Expose-Header는 COS의 상용 Header를 반환합니다. 자세한 내용은 [공용 요청 헤더](https://intl.cloud.tencent.com/document/product/436/7728)를 참조하십시오. 실제 상황에 맞춰 세부 설정을 할 수 있으며, 기본값으로 Etag 입력을 권장합니다. 임의 문자 기호는 허용하지 않으며, 대소문자를 구분하지 않습니다. 다수 행을 생성할 수 있으나, 각 행에는 한 개만 입력할 수 있습니다.
  **Max-Age 만료 시간**: OPTIONS를 요청하여 결과를 얻는 시간(초)을 설정합니다. 값은 600과 같이 자연수여야 합니다.
  ![](https://main.qcloudimg.com/raw/6a1f4bed7f42fba69449514822759c42.png)
+
 4. 설정 완료 후 [제출]을 클릭하면 크로스 도메인 간 액세스 규칙이 추가된 것을 확인할 수 있습니다. 수정하려면 [수정]을 클릭하십시오.
-![](https://main.qcloudimg.com/raw/c4399193611b4f81e57a549634ea865a.png)
+   ![](https://main.qcloudimg.com/raw/c4399193611b4f81e57a549634ea865a.png)

@@ -5,7 +5,7 @@
 
 **간단한 작업**
 
-| API                                                          | 작업명         | 작업 설명                                  |
+| API                                                          | 작업명         | 작업 설명                                 |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 간편한 객체 업로드       | 객체를 버킷에 업로드     |
 | [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | 폼을 사용한 객체 업로드   | 폼을 사용해 객체 업로드 요청                      |
@@ -23,9 +23,9 @@
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | 멀티파트 업로드 완료   | 전체 파일의 멀티파트 업로드 완료               |
 | [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 멀티파트 업로드 중지   | 멀티파트 업로드 작업 중지 및 업로드된 파트 삭제 |
 
-## SDK API 참조
+## SDK API 참고
 
-SDK 모든 인터페이스의 구체적인 매개변수와 방법 설명은 [SDK API](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/)를 참조하십시오.
+SDK 모든 인터페이스의 구체적인 매개변수와 방법 설명입니다. [SDK API](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com/)를 참고하십시오.
 
 ## 고급 인터페이스(권장)
 
@@ -39,28 +39,28 @@ SDK 모든 인터페이스의 구체적인 매개변수와 방법 설명은 [SDK
 [//]: # (.cssg-snippet-transfer-upload-file)
 ```objective-c
 QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
-/** 로컬 파일 경로. URL이 file:// 로 시작되는지 확인하십시오. 포맷은 다음과 같습니다.
+/** 로컬 파일 경로. URL이 file:// 로 시작되는지 확인하십시오. 형식은 다음과 같습니다.
 1. [NSURL URLWithString:@"file:////var/mobile/Containers/Data/Application/DBPF7490-D5U8-4ABF-A0AF-CC49D6A60AEB/Documents/exampleobject"]
 2. [NSURL fileURLWithPath:@"/var/mobile/Containers/Data/Application/DBPF7490-D5U8-4ABF-A0AF-CC49D6A60AEB/Documents/exampleobject"]
 */
 NSURL* url = [NSURL fileURLWithPath:@"파일의 URL"];
-// BucketName-APPID 포맷의 버킷 이름
+// 버킷 이름. 형식은 BucketName-APPID
 put.bucket = @"examplebucket-1250000000";
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 put.object = @"exampleobject";
-// 업로드할 객체 콘텐츠. NSData* 또는 NSURL* 유형의 변수 전달 가능
+// 업로드가 필요한 객체 콘텐츠입니다. NSData* 또는 NSURL* 유형의 변수를 전달할 수 있습니다.
 put.body =  url;
-// 업로드 진행률 수신
+// 업로드 진행도 수신
 [put setSendProcessBlock:^(int64_t bytesSent,
                            int64_t totalBytesSent,
                            int64_t totalBytesExpectedToSend) {
-    // bytesSent                   증가 바이트 수
-    // totalBytesSent              이번 업로드의 총 바이트 수
-    // totalBytesExpectedToSend    로컬 업로드의 타깃 바이트 수
+    //      bytesSent                 이번에 발송할 바이트 수. 대용량 파일은 여러 번으로 나누어 발송해야 할 수 있습니다.
+    //      totalBytesSent            발송한 바이트 수
+    //      totalBytesExpectedToSend  이번 업로드에서 발송할 총 바이트 수(파일 1개의 크기)
 }];
 // 업로드 결과 수신
 [put setFinishBlock:^(id outputObject, NSError *error) {
-    // outputObject에서 response의 etag 또는 사용자 정의 헤더 등 정보를 획득할 수 있습니다.
+    // outputObject에서 response의 etag 혹은 사용자 정의 헤더 등 정보 획득 가능
     NSDictionary * result = (NSDictionary *)outputObject;
 }];
 [put setInitMultipleUploadFinishBlock:^(QCloudInitiateMultipartUploadResult *
@@ -74,8 +74,8 @@ put.body =  url;
 ```
 
 >?
->- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m)를 참조하십시오.
->- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명된 링크 생성** 문서를 참조하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
+>- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m)를 참고하십시오.
+>- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참고하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
 
 **Swift**
 
@@ -83,13 +83,13 @@ put.body =  url;
 ```swift
 let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
 
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 put.bucket = "examplebucket-1250000000";
 
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 put.object = "exampleobject";
 
-// 업로드할 객체 콘텐츠. NSData* 또는 NSURL* 유형의 변수 전달 가능
+// 업로드가 필요한 객체 콘텐츠입니다. NSData* 또는 NSURL* 유형의 변수를 전달할 수 있습니다.
 put.body = NSURL.fileURL(withPath: "Local File Path") as AnyObject;
 
 // 업로드 결과 수신
@@ -103,12 +103,12 @@ put.setFinish { (result, error) in
     }
 }
 
-// 업로드 진행률 수신
+// 업로드 진행도 수신
 put.sendProcessBlock = { (bytesSent, totalBytesSent,
     totalBytesExpectedToSend) in
-    // bytesSent                   증가 바이트 수
-    // totalBytesSent              이번 업로드의 총 바이트 수
-    // totalBytesExpectedToSend    로컬 업로드의 타깃 바이트 수
+    //      bytesSent                 이번에 발송할 바이트 수. 대용량 파일은 여러 번으로 나누어 발송해야 할 수 있습니다.
+    //      totalBytesSent            발송한 바이트 수
+    //      totalBytesExpectedToSend  이번 업로드에서 발송할 총 바이트 수(파일 1개의 크기)
 };
 // 업로드 매개변수 설정
 put.initMultipleUploadFinishBlock = {(multipleUploadInitResult, resumeData) in
@@ -122,26 +122,26 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 ```
 
 >?
->- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift)를 참조하십시오.
->- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명된 링크 생성** 문서를 참조하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
+>- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift)를 참고하십시오.
+>- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참고하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
 
-#### 예시 코드2: 바이너리 데이터 업로드
+#### 예시 코드2: 이진법 데이터 업로드
 **Objective-C**
 
 [//]: # (.cssg-snippet-transfer-upload-bytes)
 ```objective-c
 QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
 
-// BucketName-APPID 포맷의 버킷 이름
+// 버킷 이름. 형식은 BucketName-APPID
 put.bucket = @"examplebucket-1250000000";
 
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 put.object = @"exampleobject";
 
-// 업로드할 객체 콘텐츠. NSData* 또는 NSURL* 유형의 변수 전달 가능
+// 업로드가 필요한 객체 콘텐츠입니다. NSData* 또는 NSURL* 유형의 변수를 전달할 수 있습니다.
 put.body = [@"My Example Content" dataUsingEncoding:NSUTF8StringEncoding];
 
-// 업로드 진행률 수신
+// 업로드 진행도 수신
 [put setSendProcessBlock:^(int64_t bytesSent,
                            int64_t totalBytesSent,
                            int64_t totalBytesExpectedToSend) {
@@ -152,15 +152,15 @@ put.body = [@"My Example Content" dataUsingEncoding:NSUTF8StringEncoding];
 
 // 업로드 결과 수신
 [put setFinishBlock:^(id outputObject, NSError *error) {
-    // outputObject에 모든 http 응답 헤더 포함
+    // outputObject는 모든 상응하는 http 헤더 포함
     NSDictionary* info = (NSDictionary *) outputObject;
 }];
 [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:put];
 ```
 
 >?
->- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m)를 참조하십시오.
->- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명된 링크 생성** 문서를 참조하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
+>- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m)를 참고하십시오.
+>- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참고하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
 
 **Swift**
 
@@ -168,10 +168,10 @@ put.body = [@"My Example Content" dataUsingEncoding:NSUTF8StringEncoding];
 ```swift
 let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
 
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 put.bucket = "examplebucket-1250000000";
 
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 put.object = "exampleobject";
 
 // 업로드가 필요한 객체 콘텐츠
@@ -189,7 +189,7 @@ put.setFinish { (result, error) in
     }
 }
 
-// 업로드 진행률 수신
+// 업로드 진행도 수신
 put.sendProcessBlock = { (bytesSent, totalBytesSent,
     totalBytesExpectedToSend) in
     
@@ -202,13 +202,13 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 ```
 
 >?
->- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift)를 참조하십시오.
->- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명된 링크 생성** 문서를 참조하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
+>- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift)를 참고하십시오.
+>- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참고하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
 
-#### 예시 코드3: 업로드 일시 중지, 계속 및 취소
+#### 예시 코드3: 업로드 일시 정지, 계속 및 취소
 **Objective-C**
 
-업로드 작업은 다음 방식으로 일시 중지할 수 있습니다.
+업로드 작업은 다음 방식으로 일시 정지할 수 있습니다.
 
 [//]: # (.cssg-snippet-transfer-upload-pause)
 ```objective-c
@@ -216,16 +216,16 @@ NSError *error;
 NSData *resmeData = [put cancelByProductingResumeData:&error];
 ```
 
-일시 중지 후 다음 방식으로 재개할 수 있습니다.
+일시 중지 후 다음 방식으로 업로드를 재개할 수 있습니다.
 
 [//]: # (.cssg-snippet-transfer-upload-resume)
 ```objective-c
 QCloudCOSXMLUploadObjectRequest *resumeRequest = [QCloudCOSXMLUploadObjectRequest requestWithRequestData:resmeData];
-[[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:resumeRequest];코드
+[[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:resumeRequest];
 ```
 
 
-다음과 같은 방식으로 업로드를 취소할 수 있습니다.
+다음 방식으로 업로드를 취소할 수 있습니다.
 
 [//]: # (.cssg-snippet-transfer-upload-cancel)
 ```objective-c
@@ -235,11 +235,11 @@ QCloudCOSXMLUploadObjectRequest *resumeRequest = [QCloudCOSXMLUploadObjectReques
 }];
 ```
 
->?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m)를 참조하십시오.
+>?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m)를 참고하십시오.
 
 **Swift**
 
-업로드 작업은 다음 방식으로 일시 중지할 수 있습니다.
+업로드 작업은 다음과 같은 방식으로 일시 중지할 수 있습니다.
 
 [//]: # (.cssg-snippet-transfer-upload-pause)
 ```swift
@@ -247,7 +247,7 @@ var error : NSError?;
 var uploadResumeData:Data = put.cancel(byProductingResumeData:&error) as Data;
 ```
 
-일시 중지 후 다음 방식으로 재개할 수 있습니다.
+일시 중지 후 다음과 같은 방식으로 업로드를 재개할 수 있습니다.
 
 [//]: # (.cssg-snippet-transfer-upload-resume)
 ```swift
@@ -266,7 +266,7 @@ put.abort { (outputObject, error) in
 }
 ```
 
->?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift)를 참조하십시오.
+>?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift)를 참고하십시오.
 
 #### 예시 코드4: 일괄 업로드
 **Objective-C**
@@ -276,27 +276,27 @@ put.abort { (outputObject, error) in
 for (int i = 0; i<20; i++) {
     QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
     
-    // BucketName-APPID 포맷의 버킷 이름
+    // 버킷 이름. 형식은 BucketName-APPID
     put.bucket = @"examplebucket-1250000000";
     
-  // 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+  // 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
     put.object = [NSString stringWithFormat:@"exampleobject-%d",i];
     
-    // 업로드할 객체 콘텐츠. NSData* 또는 NSURL* 유형의 변수 전달 가능
+    // 업로드가 필요한 객체 콘텐츠입니다. NSData* 또는 NSURL* 유형의 변수를 전달할 수 있습니다.
     put.body = [@"My Example Content" dataUsingEncoding:NSUTF8StringEncoding];
     
-    // 업로드 진행률 수신
+    // 업로드 진행도 수신
     [put setSendProcessBlock:^(int64_t bytesSent,
                                int64_t totalBytesSent,
                                int64_t totalBytesExpectedToSend) {
-        // bytesSent                   증가 바이트 수
-        // totalBytesSent              이번 업로드의 총 바이트 수
-        // totalBytesExpectedToSend    로컬 업로드의 타깃 바이트 수
+    //      bytesSent                 이번에 발송할 바이트 수. 대용량 파일은 여러 번으로 나누어 발송해야 할 수 있습니다.
+    //      totalBytesSent            발송한 바이트 수
+    //      totalBytesExpectedToSend  이번 업로드에서 발송할 총 바이트 수(파일 1개의 크기)
     }];
     
     // 업로드 결과 수신
     [put setFinishBlock:^(id outputObject, NSError *error) {
-        // outputObject에 모든 http 응답 헤더 포함
+        // outputObject는 모든 상응하는 http 헤더 포함
         NSDictionary* info = (NSDictionary *) outputObject;
     }];
     [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:put];
@@ -310,10 +310,10 @@ for (int i = 0; i<20; i++) {
 for i in 1...10 {
     let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
     
-    // BucketName-APPID 포맷의 버킷 이름
+    // BucketName-APPID 형식의 버킷 이름
     put.bucket = "examplebucket-1250000000";
     
-    // 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+    // 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
     put.object = "exampleobject-".appendingFormat("%d", i);
     
     // 업로드가 필요한 객체 콘텐츠
@@ -331,25 +331,181 @@ for i in 1...10 {
         }
     }
 
-    // 업로드 진행률 수신
+    // 업로드 진행도 수신
     put.sendProcessBlock = { (bytesSent, totalBytesSent,
         totalBytesExpectedToSend) in
         
-        // bytesSent                   증가 바이트 수
-        // totalBytesSent              이번 업로드의 총 바이트 수
-        // totalBytesExpectedToSend    로컬 업로드의 타깃 바이트 수
+    //      bytesSent                 이번에 발송할 바이트 수. 대용량 파일은 여러 번으로 나누어 발송해야 할 수 있습니다.
+    //      totalBytesSent            발송한 바이트 수
+    //      totalBytesExpectedToSend  이번 업로드에서 발송할 총 바이트 수(파일 1개의 크기)
     };
     
     QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 }
 ```
-#### 예시 코드5: 디렉터리 생성
+
+#### 샘플 코드 5: 간편 업로드 및 멀티파트 업로드 임계값 사용자 정의
+**Objective-C**
+
+[//]: # (.cssg-snippet-transfer-batch-upload-objects)
+```objective-c
+for (int i = 0; i<20; i++) {
+    QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
+    
+    // 버킷 이름. 형식은 BucketName-APPID
+    put.bucket = @"examplebucket-1250000000";
+    
+  // 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
+    put.object = [NSString stringWithFormat:@"exampleobject-%d",i];
+    
+    // 업로드가 필요한 객체 콘텐츠입니다. NSData* 또는 NSURL* 유형의 변수를 전달할 수 있습니다.
+    put.body = [@"My Example Content" dataUsingEncoding:NSUTF8StringEncoding];
+    // 간편 업로드 및 멀티파트 업로드 임계값 사용자 지정: 기본적으로 파일이 1MB보다 클 때 멀티파트 업로드가 활성화됩니다.
+    put.mutilThreshold = 10 *1024*1024;
+    // 업로드 진행도 수신
+    [put setSendProcessBlock:^(int64_t bytesSent,
+                               int64_t totalBytesSent,
+                               int64_t totalBytesExpectedToSend) {
+    //      bytesSent                 이번에 발송할 바이트 수. 대용량 파일은 여러 번으로 나누어 발송해야 할 수 있습니다.
+    //      totalBytesSent            발송한 바이트 수
+    //      totalBytesExpectedToSend  이번 업로드에서 발송할 총 바이트 수(파일 1개의 크기)
+    }];
+    
+    // 업로드 결과 수신
+    [put setFinishBlock:^(id outputObject, NSError *error) {
+        // outputObject는 모든 상응하는 http 헤더 포함
+        NSDictionary* info = (NSDictionary *) outputObject;
+    }];
+    [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:put];
+}
+```
+
+**Swift**
+
+[//]: # (.cssg-snippet-transfer-batch-upload-objects)
+```swift
+for i in 1...10 {
+    let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
+    
+    // BucketName-APPID 형식의 버킷 이름
+    put.bucket = "examplebucket-1250000000";
+    
+    // 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
+    put.object = "exampleobject-".appendingFormat("%d", i);
+    
+    // 업로드가 필요한 객체 콘텐츠
+    let dataBody:NSData = "wrwrwrwrwrw".data(using: .utf8)! as NSData;
+    put.body = dataBody;
+    // 간편 업로드 및 멀티파트 업로드 임계값 사용자 지정: 기본적으로 파일이 1MB보다 클 때 멀티파트 업로드가 활성화됩니다.
+    put.mutilThreshold = 10 *1024*1024;
+    // 업로드 결과 수신
+    put.setFinish { (result, error) in
+        // 업로드 결과 획득
+        if let result = result {
+            // 파일의 etag
+            let eTag = result.eTag
+        } else {
+            print(error!);
+        }
+    }
+
+    // 업로드 진행도 수신
+    put.sendProcessBlock = { (bytesSent, totalBytesSent,
+        totalBytesExpectedToSend) in
+        
+    //      bytesSent                 이번에 발송할 바이트 수. 대용량 파일은 여러 번으로 나누어 발송해야 할 수 있습니다.
+    //      totalBytesSent            발송한 바이트 수
+    //      totalBytesExpectedToSend  이번 업로드에서 발송할 총 바이트 수(파일 1개의 크기)
+    };
+    
+    QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
+}
+```
+
+
+#### 샘플 코드 6: 멀티파트 크기 사용자 지정
+**Objective-C**
+
+[//]: # (.cssg-snippet-transfer-batch-upload-objects)
+```objective-c
+for (int i = 0; i<20; i++) {
+    QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
+    
+    // 버킷 이름. 형식은 BucketName-APPID
+    put.bucket = @"examplebucket-1250000000";
+    
+  // 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
+    put.object = [NSString stringWithFormat:@"exampleobject-%d",i];
+    
+    // 업로드가 필요한 객체 콘텐츠입니다. NSData* 또는 NSURL* 유형의 변수를 전달할 수 있습니다.
+    put.body = [@"My Example Content" dataUsingEncoding:NSUTF8StringEncoding];
+    // 샤드 크기를 사용자 정의합니다. 기본값은 1MB입니다.
+    put.sliceSize = 10 *1024*1024;
+    // 업로드 진행도 수신
+    [put setSendProcessBlock:^(int64_t bytesSent,
+                               int64_t totalBytesSent,
+                               int64_t totalBytesExpectedToSend) {
+    //      bytesSent                 이번에 발송할 바이트 수. 대용량 파일은 여러 번으로 나누어 발송해야 할 수 있습니다.
+    //      totalBytesSent            발송한 바이트 수
+    //      totalBytesExpectedToSend  이번 업로드에서 발송할 총 바이트 수(파일 1개의 크기)
+    }];
+    
+    // 업로드 결과 수신
+    [put setFinishBlock:^(id outputObject, NSError *error) {
+        // outputObject는 모든 상응하는 http 헤더 포함
+        NSDictionary* info = (NSDictionary *) outputObject;
+    }];
+    [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:put];
+}
+```
+
+**Swift**
+
+[//]: # (.cssg-snippet-transfer-batch-upload-objects)
+```swift
+for i in 1...10 {
+    let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
+    
+    // BucketName-APPID 형식의 버킷 이름
+    put.bucket = "examplebucket-1250000000";
+    
+    // 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
+    put.object = "exampleobject-".appendingFormat("%d", i);
+    
+    // 업로드가 필요한 객체 콘텐츠
+    let dataBody:NSData = "wrwrwrwrwrw".data(using: .utf8)! as NSData;
+    put.body = dataBody;
+    // 샤드 크기를 사용자 정의합니다. 기본값은 1MB입니다.
+    put.sliceSize = 10 *1024*1024
+    // 업로드 결과 수신
+    put.setFinish { (result, error) in
+        // 업로드 결과 획득
+        if let result = result {
+            // 파일의 etag
+            let eTag = result.eTag
+        } else {
+            print(error!);
+        }
+    }
+
+    // 업로드 진행도 수신
+    put.sendProcessBlock = { (bytesSent, totalBytesSent,
+        totalBytesExpectedToSend) in
+    //      bytesSent                 이번에 발송할 바이트 수. 대용량 파일은 여러 번으로 나누어 발송해야 할 수 있습니다.
+    //      totalBytesSent            발송한 바이트 수
+    //      totalBytesExpectedToSend  이번 업로드에서 발송할 총 바이트 수(파일 1개의 크기)
+    };
+    
+    QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
+}
+```
+#### 예시 코드 7: 디렉터리 생성
 **Objective-C**
 
 [//]: # (.cssg-snippet-transfer-upload-object-dir)
 ```objective-c
 QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
-// BucketName-APPID 포맷의 버킷 이름
+// 버킷 이름. 형식은 BucketName-APPID
 put.bucket = @"examplebucket-1250000000";
 // 생성할 디렉터리 이름
 put.object = @"dir1";
@@ -359,15 +515,15 @@ put.body  = [@"" dataUsingEncoding:NSUTF8StringEncoding];
     
     // 업로드 결과 수신
 [put setFinishBlock:^(id outputObject, NSError *error) {
-    // outputObject에 모든 http 응답 헤더 포함
+    // outputObject는 모든 상응하는 http 헤더 포함
     NSDictionary* info = (NSDictionary *) outputObject;
 }];
 [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:put];
 ```
 
 >?
->- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m)를 참조하십시오.
->- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명된 링크 생성** 문서를 참조하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
+>- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferUploadObject.m)를 참고하십시오.
+>- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참고하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
 
 **Swift**
 
@@ -375,10 +531,10 @@ put.body  = [@"" dataUsingEncoding:NSUTF8StringEncoding];
 ```swift
 let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
         
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 put.bucket = "examplebucket-1250000000";
         
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 put.object = "dir/";
         
 // 업로드가 필요한 객체 콘텐츠
@@ -397,69 +553,69 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 ```
 
 >?
->- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift)를 참조하십시오.
->- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명된 링크 생성** 문서를 참조하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
+>- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferUploadObject.swift)를 참고하십시오.
+>- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참고하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
 
 ### 객체 복사
 
 고급 인터페이스는 간편 복사 및 멀티파트 복사 인터페이스의 비동기화 요청을 캡슐화합니다. 일시 중지, 복구 및 복사 요청 취소를 지원합니다.
 
-#### 예시 코드
+#### 예시코드
 **Objective-C**
 
 [//]: # (.cssg-snippet-transfer-copy-object)
 ```objective-c
 QCloudCOSXMLCopyObjectRequest* request = [[QCloudCOSXMLCopyObjectRequest alloc] init];
 
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 request.bucket = @"examplebucket-1250000000";
 
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 request.object = @"exampleobject";
 
-// 파일 원본 버킷. 공개 읽기 혹은 현재 계정에 권한이 있어야 합니다.
+// 파일 원본 버킷은 공개 읽기 혹은 현재 계정에 권한이 있어야 합니다.
 request.sourceBucket = @"sourcebucket-1250000000";
 
 // 원본 파일 이름
 request.sourceObject = @"sourceObject";
 
-// 원본 파일의 APPID
+// 소스 파일의 APPID
 request.sourceAPPID = @"1250000000";
 
 // 출처 리전
 request.sourceRegion= @"COS_REGION";
 
 [request setFinishBlock:^(QCloudCopyObjectResult* result, NSError* error) {
-    // outputObject에서 response의 etag 또는 사용자 정의 헤더 등 정보를 획득할 수 있습니다.
+    // outputObject에서 response의 etag 또는 사용자 정의 헤더 등 정보 획득 가능
 }];
 
 // 리전 간 복제를 할 경우 이곳에 사용한 transferManager가 있는 region은 반드시 타깃 버킷이 있는 region이어야 합니다.
 [[QCloudCOSTransferMangerService defaultCOSTransferManager] CopyObject:request];
 
 // copy 취소
-// copy를 취소할 경우 cancel 방법 호출
+// copy를 취소할 경우 cancel 호출 방식
 [request cancel];
 ```
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferCopyObject.m)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferCopyObject.m)을 참고하십시오.
 
 **Swift**
 
 [//]: # (.cssg-snippet-transfer-copy-object)
 ```swift
-let copyRequest =  QCloudCOSXMLCopyObjectRequest.init();
+let copyRequest = QCloudCOSXMLCopyObjectRequest.init();
 
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 copyRequest.bucket = "examplebucket-1250000000";
 
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 copyRequest.object = "exampleobject";
 
-// 파일 원본 버킷. 공개 읽기 혹은 현재 계정에 권한이 있어야 합니다.
-// BucketName-APPID 포맷의 버킷 이름
+// 파일 원본 버킷은 공개 읽기 혹은 현재 계정에 권한이 있어야 합니다.
+// BucketName-APPID 형식의 버킷 이름
 copyRequest.sourceBucket = "sourcebucket-1250000000";
 
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 copyRequest.sourceObject = "sourceObject";
 
 // 원본 파일의 APPID
@@ -481,15 +637,15 @@ copyRequest.setFinish { (copyResult, error) in
 QCloudCOSTransferMangerService.defaultCOSTransferManager().copyObject(copyRequest);
 
 // copy 취소
-// copy를 취소할 경우 cancel 방법 호출
+// copy를 취소할 경우 cancel 메소드 호출
 copyRequest.cancel();
 ```
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferCopyObject.swift)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferCopyObject.swift)을 참고하십시오.
 
 ## 간단한 작업
 
-### 간편한 객체 업로드
+### 간단한 객체 업로드
 
 #### 기능 설명
 
@@ -497,24 +653,24 @@ PUT Object 인터페이스는 한 객체를 지정 버킷으로 업로드할 수
 
 > ! Key(파일명) `/`로 끝날 수 없습니다. 그렇지 않을 경우 폴더로 식별됩니다.
 
-#### 예시 코드
+#### 예시코드
 **Objective-C**
 
 [//]: # (.cssg-snippet-put-object)
 ```objective-c
 QCloudPutObjectRequest* put = [QCloudPutObjectRequest new];
 
-// BucketName-APPID 포맷의 버킷 이름
+// 버킷 이름. 형식은 BucketName-APPID
 put.bucket = @"examplebucket-1250000000";
 
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 put.object = @"exampleobject";
 
 // 파일 내용, NSData* 혹은 NSURL* 유형의 변수를 전달할 수 있습니다.
 put.body =  [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
 
 [put setFinishBlock:^(id outputObject, NSError *error) {
-    // outputObject에 모든 http 응답 헤더 포함
+    // outputObject는 모든 상응하는 http 헤더 포함
     NSDictionary* info = (NSDictionary *) outputObject;
 }];
 
@@ -522,8 +678,8 @@ put.body =  [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
 ```
 
 >?
->- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/PutObject.m)를 참조하십시오.
->- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명된 링크 생성** 문서를 참조하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
+>- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/PutObject.m)를 참고하십시오.
+>- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참고하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
 
 **Swift**
 
@@ -531,17 +687,17 @@ put.body =  [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
 ```swift
 let putObject = QCloudPutObjectRequest<AnyObject>.init();
 
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 putObject.bucket = "examplebucket-1250000000";
-// 업로드할 객체 콘텐츠. NSData* 또는 NSURL* 유형의 변수 전달 가능
+// 업로드가 필요한 객체 콘텐츠입니다. NSData* 또는 NSURL* 유형의 변수를 전달할 수 있습니다.
 let dataBody:NSData? = "wrwrwrwrwrw".data(using: .utf8) as NSData?;
 putObject.body =  dataBody!;
 
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 putObject.object = "exampleobject";
 putObject.finishBlock = {(result,error) in
     if let result = result {
-        // result에 응답 header 정보 포함
+        // result에 상응하는 header 정보 포함
     } else {
         print(error!);
     }
@@ -550,8 +706,8 @@ QCloudCOSXMLService.defaultCOSXML().putObject(putObject);
 ```
 
 >?
->- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/PutObject.swift)를 참조하십시오.
->- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명된 링크 생성** 문서를 참조하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
+>- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/PutObject.swift)을 참고하십시오.
+>- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참고하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
 
 ### 객체 복사(속성 수정)
 
@@ -564,55 +720,55 @@ QCloudCOSXMLService.defaultCOSXML().putObject(putObject);
 
 ```objective-c
 QCloudPutObjectCopyRequest* request = [[QCloudPutObjectCopyRequest alloc] init];
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 request.bucket = @"examplebucket-1250000000";
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 request.object = @"exampleobject";
 // 메타데이터 복사 여부, 열거 값: Copy, Replaced, 기본값 Copy
 // Copy로 표기할 경우 Header의 사용자 메타데이터 정보를 무시하고 복사
-// Replaced로 표기할 경우 Header 정보에 따라 메타데이터를 수정합니다. 타깃 경로와 소스 경로가 일치하고 사용자가 메타데이터 수정을 시도할 경우 반드시 Replaced됩니다.
+// 표시가 Replaced일 경우 Header 정보에 따라 메타데이터를 수정합니다. 타깃 경로와 소스 경로가 일치하고 사용자가 메타데이터 수정을 시도할 경우 반드시 Replaced됩니다.
 request.metadataDirective = @"Copy";
 // Object의 ACL 속성 정의, 유효값: private, public-read, default
 // 기본값: default(Bucket의 권한 상속)
 // 주의사항: Object ACL 컨트롤이 필요한 경우 default를 입력하십시오.
 // 혹은 이 옵션을 설정하지 않으면 기본적으로 Bucket 권한을 상속합니다.
 request.accessControlList = @"default";
-// 원본 객체 소재 경로
+// 소스 객체 소재 경로
 request.objectCopySource =
 @"sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject";
-// 원본 파일의 versionID 지정, 활성화되거나 활성화 후 일시 중지된 버킷만 해당 매개변수에 영향을 줍니다.
+// 소스 파일의 versionID 지정, 활성화되거나 활성화 후 일시 정지된 버킷만 해당 매개변수에 영향을 줍니다.
 request.versionID = @"objectVersion1";
 [request setFinishBlock:^(QCloudCopyObjectResult * _Nonnull result,
                           NSError * _Nonnull error) {
-    // result 구체적인 정보 반환
+    // result 반환 구체 정보
  
 }];
 [[QCloudCOSXMLService defaultCOSXML]  PutObjectCopy:request];
 ```
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/CopyObject.m)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/CopyObject.m)을 참고하십시오.
 
 **Swift**
 
 [//]: # (.cssg-snippet-copy-object)
 ```swift
 let putObjectCopy = QCloudPutObjectCopyRequest.init();
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 putObjectCopy.bucket = "examplebucket-1250000000";
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 putObjectCopy.object = "exampleobject";
-// 원본 객체 소재 경로
+// 소스 객체 소재 경로
 putObjectCopy.objectCopySource = "sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject";
 // 메타데이터 복사 여부, 열거 값: Copy, Replaced, 기본값 Copy
 // Copy로 표기할 경우 Header의 사용자 메타데이터 정보를 무시하고 복사
-// Replaced로 표기할 경우 Header 정보에 따라 메타데이터를 수정합니다. 타깃 경로와 소스 경로가 일치하고 사용자가 메타데이터 수정을 시도할 경우 반드시 Replaced됩니다.
+// 표시가 Replaced일 경우 Header 정보에 따라 메타데이터를 수정합니다. 타깃 경로와 소스 경로가 일치하고 사용자가 메타데이터 수정을 시도할 경우 반드시 Replaced됩니다.
 putObjectCopy.metadataDirective = "Copy";
 // Object의 ACL 속성 정의, 유효값: private, public-read, default
 // 기본값: default(Bucket의 권한 상속)
 // 주의사항: Object ACL 컨트롤이 필요한 경우 default를 입력하십시오.
 // 혹은 이 옵션을 설정하지 않으면 기본적으로 Bucket 권한을 상속합니다.
 putObjectCopy.accessControlList = "default";
-// 원본 파일의 versionID 지정, 활성화되거나 활성화 후 일시 중지된 버킷만 해당 매개변수에 영향을 줍니다.
+// 소스 파일의 versionID 지정, 활성화되거나 활성화 후 일시 정지된 버킷만 해당 매개변수에 영향을 줍니다.
 putObjectCopy.versionID = "versionID";
 putObjectCopy.setFinish { (result, error) in
     if let result = result {
@@ -625,7 +781,7 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(putObjectCopy);
 ```
 
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/CopyObject.swift)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/CopyObject.swift)을 참고하십시오.
 
 #### 예시 코드2: 객체 복사 시 객체의 속성 변경
 **Objective-C**
@@ -633,18 +789,18 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(putObjectCopy);
 [//]: # (.cssg-snippet-copy-object-replaced)
 ```objective-c
 QCloudPutObjectCopyRequest* request = [[QCloudPutObjectCopyRequest alloc] init];
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 request.bucket = @"examplebucket-1250000000";
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 request.object = @"exampleobject";
 // 메타데이터 복사 여부, 열거 값: Copy, Replaced, 기본값 Copy
 // Copy로 표기할 경우 Header의 사용자 메타데이터 정보를 무시하고 복사
-// Replaced로 표기할 경우 Header 정보에 따라 메타데이터를 수정합니다. 타깃 경로와 소스 경로가 일치하고 사용자가 메타데이터 수정을 시도할 경우 반드시 Replaced됩니다.
+// 표시가 Replaced일 경우 Header 정보에 따라 메타데이터를 수정합니다. 타깃 경로와 소스 경로가 일치하고 사용자가 메타데이터 수정을 시도할 경우 반드시 Replaced됩니다.
 request.metadataDirective = @"Replaced";
 // 메타데이터 수정
 [request.customHeaders setValue:@"newValue" forKey:@"x-cos-meta-*"];
-// 객체 스토리지 유형, 열거 값은 스토리지 유형 개요 문서를 참조하십시오. 예시: MAZ_STANDARD, MAZ_STANDARD_IA,
-// STANDARD_IA, ARCHIVE. 객체가 표준 스토리지(STANDARD)가 아닐 경우에만 해당 헤더가 반환됩니다.
+// 객체 스토리지 유형, 열거 값은 스토리지 유형 개요 문서를 참고하십시오. 예시: MAZ_STANDARD, MAZ_STANDARD_IA,
+// STANDARD_IA, ARCHIVE. 객체가 표준 스토리지가 아닐 경우에만(STANDARD) 해당 헤더가 반환됩니다.
 // 스토리지 유형 수정
 [request.customHeaders setValue:@"newValue" forKey:@"x-cos-storage-class"];
 // Object의 ACL 속성 정의, 유효값: private, public-read, default
@@ -653,22 +809,22 @@ request.metadataDirective = @"Replaced";
 // 혹은 이 옵션을 설정하지 않으면 기본적으로 Bucket 권한을 상속합니다.
 // acl 수정
 request.accessControlList = @"private";
-// 원본 객체 소재 경로
+// 소스 객체 소재 경로
 request.objectCopySource =
     @"sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject";
 
-// 원본 파일의 versionID 지정, 활성화되거나 활성화 후 일시 중지된 버킷만 해당 매개변수에 영향을 줍니다.
+// 소스 파일의 versionID 지정, 활성화되거나 활성화 후 일시 정지된 버킷만 해당 매개변수에 영향을 줍니다.
 request.versionID = @"objectVersion1";
 
 [request setFinishBlock:^(QCloudCopyObjectResult * _Nonnull result,
                           NSError * _Nonnull error) {
-    // result 구체적인 정보 반환
+    // result 반환 구체 정보
     
 }];
 [[QCloudCOSXMLService defaultCOSXML]  PutObjectCopy:request];
 ```
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/CopyObject.m)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/CopyObject.m)을 참고하십시오.
 
 **Swift**
 
@@ -677,18 +833,18 @@ request.versionID = @"objectVersion1";
 
 ```swift
 let request : QCloudPutObjectCopyRequest  = QCloudPutObjectCopyRequest();
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 request.bucket = "examplebucket-1250000000";
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 request.object = "exampleobject";
 // 메타데이터 복사 여부, 열거 값: Copy, Replaced, 기본값 Copy
 // Copy로 표기할 경우 Header의 사용자 메타데이터 정보를 무시하고 복사
-// Replaced로 표기할 경우 Header 정보에 따라 메타데이터를 수정합니다. 타깃 경로와 소스 경로가 일치하고 사용자가 메타데이터 수정을 시도할 경우 반드시 Replaced됩니다.
+// 표시가 Replaced일 경우 Header 정보에 따라 메타데이터를 수정합니다. 타깃 경로와 소스 경로가 일치하고 사용자가 메타데이터 수정을 시도할 경우 반드시 Replaced됩니다.
 request.metadataDirective = "Replaced";
 // 메타데이터 수정
 request.customHeaders.setValue("newValue", forKey: "x-cos-meta-*");
-// 객체 스토리지 유형, 열거 값은 스토리지 유형 개요 문서를 참조하십시오. 예시: MAZ_STANDARD, MAZ_STANDARD_IA,
-// STANDARD_IA, ARCHIVE. 객체가 표준 스토리지(STANDARD)가 아닐 경우에만 해당 헤더가 반환됩니다.
+// 객체 스토리지 유형, 열거 값은 스토리지 유형 개요 문서를 참고하십시오. 예시: MAZ_STANDARD, MAZ_STANDARD_IA,
+// STANDARD_IA, ARCHIVE. 객체가 표준 스토리지가 아닐 경우에만(STANDARD) 해당 헤더가 반환됩니다.
 // 스토리지 유형 수정
 request.customHeaders.setValue("newValue", forKey: "x-cos-storage-class");
 // Object의 ACL 속성 정의, 유효값: private, public-read, default
@@ -696,10 +852,10 @@ request.customHeaders.setValue("newValue", forKey: "x-cos-storage-class");
 // 주의사항: Object ACL 컨트롤이 필요한 경우 default를 입력하십시오.
 // 혹은 이 옵션을 설정하지 않으면 기본적으로 Bucket 권한을 상속합니다.
 // acl 수정
-request.accessControlList = "원본 파일 acl";
-// 원본 객체 소재 경로
+request.accessControlList = "소스 파일 acl";
+// 소스 객체 소재 경로
 request.objectCopySource = "sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject";
-// 원본 파일의 versionID 지정, 활성화되거나 활성화 후 일시 중지된 버킷만 해당 매개변수에 영향을 줍니다.
+// 소스 파일의 versionID 지정, 활성화되거나 활성화 후 일시 정지된 버킷만 해당 매개변수에 영향을 줍니다.
 request.versionID = "versionID";
 request.setFinish { (result, error) in
     if let result = result {
@@ -712,7 +868,7 @@ request.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 ```
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/CopyObject.swift)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/CopyObject.swift)을 참고하십시오.
 
 #### 예시 코드3: 객체 메타데이터 수정
 **Objective-C**
@@ -721,13 +877,13 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 
 ```objective-c
 QCloudPutObjectCopyRequest* request = [[QCloudPutObjectCopyRequest alloc] init];
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 request.bucket = @"examplebucket-1250000000";
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 request.object = @"exampleobject";
 // 메타데이터 복사 여부, 열거 값: Copy, Replaced, 기본값 Copy
 // Copy로 표기할 경우 Header의 사용자 메타데이터 정보를 무시하고 복사
-// Replaced로 표기할 경우 Header 정보에 따라 메타데이터를 수정합니다. 타깃 경로와 소스 경로가 일치하고 사용자가 메타데이터 수정을 시도할 경우 반드시 Replaced됩니다.
+// 표시가 Replaced일 경우 Header 정보에 따라 메타데이터를 수정합니다. 타깃 경로와 소스 경로가 일치하고 사용자가 메타데이터 수정을 시도할 경우 반드시 Replaced됩니다.
 request.metadataDirective = @"Replaced";
 // 사용자 정의 객체 header
 [request.customHeaders setValue:@"newValue" forKey:@"x-cos-meta-*"];
@@ -736,20 +892,20 @@ request.metadataDirective = @"Replaced";
 // 주의사항: Object ACL 컨트롤이 필요한 경우 default를 입력하십시오.
 // 혹은 이 옵션을 설정하지 않으면 기본적으로 Bucket 권한을 상속합니다.
 request.accessControlList = @"default";
-// 원본 객체 소재 경로
+// 소스 객체 소재 경로
 request.objectCopySource =
     @"examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/exampleobject";
 
 [request setFinishBlock:^(QCloudCopyObjectResult * _Nonnull result,
                           NSError * _Nonnull error) {
-    // result 구체적인 정보 반환
+    // result 반환 구체 정보
     
 }];
 [[QCloudCOSXMLService defaultCOSXML]  PutObjectCopy:request];
 ```
 
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ModifyObjectProperty.m)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ModifyObjectProperty.m)을 참고하십시오.
 
 **Swift**
 
@@ -757,16 +913,16 @@ request.objectCopySource =
 ```swift
 let request : QCloudPutObjectCopyRequest  = QCloudPutObjectCopyRequest();
 
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 request.bucket = "examplebucket-1250000000";
 
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 request.object = "exampleobject";
 
 // 메타데이터 복사 여부, 열거 값: Copy, Replaced, 기본값 Copy
 // Copy로 표기할 경우 Header의 사용자 메타데이터 정보를 무시하고 복사
-// Replaced로 표기할 경우 Header 정보에 따라 메타데이터를 수정합니다. 타깃 경로와 소스 경로가 일치하고
-// 사용자가 메타데이터 수정을 시도할 경우 반드시 Replaced됩니다.
+// 표시가 Replaced일 경우 Header 정보에 따라 메타데이터를 수정합니다. 타깃 경로와 소스 경로가 일치하고
+//  사용자가 메타데이터 수정을 시도할 경우 반드시 Replaced됩니다.
 request.metadataDirective = "Replaced";
 
 // 사용자 정의 객체 header
@@ -778,7 +934,7 @@ request.customHeaders.setValue("newValue", forKey: "x-cos-meta-*")
 // 혹은 이 옵션을 설정하지 않으면 기본적으로 Bucket 권한을 상속합니다.
 request.accessControlList = "default";
 
-// 원본 객체 소재 경로
+// 소스 객체 소재 경로
 request.objectCopySource =
     "examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/exampleobject";
 
@@ -794,7 +950,7 @@ request.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 ```
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ModifyObjectProperty.swift)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ModifyObjectProperty.swift)을 참고하십시오.
 
 #### 예시 코드4: 객체 스토리지 유형 수정
 **Objective-C**
@@ -803,32 +959,32 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 ```objective-c
 QCloudPutObjectCopyRequest* request = [[QCloudPutObjectCopyRequest alloc] init];
 
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 request.bucket = @"examplebucket-1250000000";
 
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 request.object = @"exampleobject";
 
-// 객체 스토리지 유형, 열거 값은 스토리지 유형 개요 문서를 참조하십시오. 예시: MAZ_STANDARD, MAZ_STANDARD_IA,
-// STANDARD_IA, ARCHIVE. 객체가 표준 스토리지(STANDARD)가 아닐 경우에만 해당 헤더가 반환됩니다.
+// 객체 스토리지 유형, 열거 값은 스토리지 유형 개요 문서를 참고하십시오. 예시: MAZ_STANDARD, MAZ_STANDARD_IA,
+// STANDARD_IA, ARCHIVE. 객체가 표준 스토리지가 아닐 경우에만(STANDARD) 해당 헤더가 반환됩니다.
 [request.customHeaders setValue:@"ARCHIVE" forKey:@"x-cos-storage-class"];
 
-// 원본 객체 소재 경로
+// 소스 객체 소재 경로
 request.objectCopySource =
     @"examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/exampleobject";
 
-// 원본 파일의 versionID 지정, 활성화되거나 활성화 후 일시 중지된 버킷만 해당 매개변수에 영향을 줍니다.
+// 소스 파일의 versionID 지정, 활성화되거나 활성화 후 일시 정지된 버킷만 해당 매개변수에 영향을 줍니다.
 request.versionID = @"";
 
 [request setFinishBlock:^(QCloudCopyObjectResult * _Nonnull result,
                           NSError * _Nonnull error) {
-    // result 구체적인 정보 반환
+    // result 반환 구체 정보
    
 }];
 [[QCloudCOSXMLService defaultCOSXML]  PutObjectCopy:request];
 ```
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ModifyObjectProperty.m)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ModifyObjectProperty.m)을 참고하십시오.
 
 **Swift**
 
@@ -836,16 +992,16 @@ request.versionID = @"";
 ```swift
 let request : QCloudPutObjectCopyRequest  = QCloudPutObjectCopyRequest();
 
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 request.bucket = "examplebucket-1250000000";
 
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 request.object = "exampleobject";
 
-// 객체 스토리지 유형, 열거 값은 스토리지 유형 개요 문서를 참조하십시오. 예시: MAZ_STANDARD, MAZ_STANDARD_IA,
-// STANDARD_IA, ARCHIVE. 객체가 표준 스토리지(STANDARD)가 아닐 경우에만 해당 헤더가 반환됩니다.
+// 객체 스토리지 유형, 열거 값은 스토리지 유형 개요 문서를 참고하십시오. 예시: MAZ_STANDARD, MAZ_STANDARD_IA,
+// STANDARD_IA, ARCHIVE. 객체가 표준 스토리지가 아닐 경우에만(STANDARD) 해당 헤더가 반환됩니다.
 request.customHeaders.setValue("newValue", forKey: "x-cos-storage-class");
-// 원본 객체 소재 경로
+// 소스 객체 소재 경로
 request.objectCopySource =
     "examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/exampleobject";
 
@@ -861,7 +1017,7 @@ request.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 ```
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ModifyObjectProperty.swift)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ModifyObjectProperty.swift)을 참고하십시오.
 
 ## 멀티파트 작업
 
@@ -891,15 +1047,15 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 
 지정 버킷에서 진행 중인 멀티파트 업로드를 조회합니다(List Multipart Uploads).
 
-#### 예시 코드
+#### 예시코드
 **Objective-C**
 
 [//]: # (.cssg-snippet-list-multi-upload)
 ```objective-c
 QCloudListBucketMultipartUploadsRequest* uploads = [QCloudListBucketMultipartUploadsRequest new];
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 uploads.bucket = @"examplebucket-1250000000";
-// 반환되는 최대 multipart 수량 설정, 유효한 값 범위: 1~1000
+// 반환되는 최대 multipart 수량 설정, 값 범위는 1부터 1,000까지
 uploads.maxUploads = 100;
 [uploads setFinishBlock:^(QCloudListMultipartUploadsResult* result,
                           NSError *error) {
@@ -911,7 +1067,7 @@ uploads.maxUploads = 100;
 ```
 
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m)을 참고하십시오.
 
 **Swift**
 
@@ -919,10 +1075,10 @@ uploads.maxUploads = 100;
 ```swift
 let listParts = QCloudListBucketMultipartUploadsRequest.init();
 
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 listParts.bucket = "examplebucket-1250000000";
 
-// 반환되는 최대 multipart 수량 설정, 유효한 값 범위: 1~1000
+// 반환되는 최대 multipart 수량 설정, 값 범위는 1부터 1,000까지
 listParts.maxUploads = 100;
 
 listParts.setFinish { (result, error) in
@@ -936,23 +1092,23 @@ listParts.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().listBucketMultipartUploads(listParts);
 ```
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift)을 참고하십시오.
 
-### 멀티파트 업로드 초기화
+###  멀티파트 업로드 초기화
 
 #### 기능 설명
 
 Multipart Upload 업로드 작업을 초기화하고 해당하는 uploadId를 가져옵니다(Initiate Multipart Upload).
 
-#### 예시 코드
+#### 예시코드
 **Objective-C**
 
 [//]: # (.cssg-snippet-init-multi-upload)
 ``` objective-c
 QCloudInitiateMultipartUploadRequest* initRequest = [QCloudInitiateMultipartUploadRequest new];
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 initRequest.bucket = @"examplebucket-1250000000";
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 initRequest.object = @"exampleobject";
 // 객체로 메타데이터 반환
 initRequest.cacheControl = @"cacheControl";
@@ -963,7 +1119,7 @@ initRequest.accessControlList = @"public";
 initRequest.grantRead = @"grantRead";
 // 쓰기 권한을 부여합니다.
 initRequest.grantWrite = @"grantWrite";
-// 읽기/쓰기 권한을 부여합니다. grantFullControl == grantWrite + grantRead
+// 읽고 쓰기 권한을 부여합니다. grantFullControl == grantWrite + grantRead
 initRequest.grantFullControl = @"grantFullControl";
 [initRequest setFinishBlock:^(QCloudInitiateMultipartUploadResult* outputObject,
                               NSError *error) {
@@ -977,7 +1133,7 @@ initRequest.grantFullControl = @"grantFullControl";
 
 
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m)을 참고하십시오.
 
 **Swift**
 
@@ -985,10 +1141,10 @@ initRequest.grantFullControl = @"grantFullControl";
 ```swift
 let initRequest = QCloudInitiateMultipartUploadRequest.init();
 
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 initRequest.bucket = "examplebucket-1250000000";
 
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 initRequest.object = "exampleobject";
 
 initRequest.setFinish { (result, error) in
@@ -1002,22 +1158,22 @@ initRequest.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().initiateMultipartUpload(initRequest);
 ```
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift)을 참고하십시오.
 
-### 멀티파트 업로드
+###  멀티파트 업로드
 
 객체를 멀티파트 업로드합니다(Upload Part).
 
-#### 예시 코드
+#### 예시코드
 **Objective-C**
 
 [//]: # (.cssg-snippet-upload-part)
 
 ``` objective-c
 QCloudUploadPartRequest* request = [QCloudUploadPartRequest new];
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 request.bucket = @"examplebucket-1250000000";
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 request.object = @"exampleobject";
 // 파트 번호
 request.partNumber = 1;
@@ -1028,7 +1184,7 @@ request.body = [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
 [request setSendProcessBlock:^(int64_t bytesSent,
                                int64_t totalBytesSent,
                                int64_t totalBytesExpectedToSend) {
-    // 업로드 진행률 정보
+    // 업로드 진행도 정보
     // bytesSent                   증가 바이트 수
     // totalBytesSent              이번 업로드의 총 바이트 수
     // totalBytesExpectedToSend    로컬 업로드의 타깃 바이트 수
@@ -1047,7 +1203,7 @@ request.body = [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
 ```
 
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m)을 참고하십시오.
 
 **Swift**
 
@@ -1055,10 +1211,10 @@ request.body = [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
 ```swift
 let uploadPart = QCloudUploadPartRequest<AnyObject>.init();
 
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 uploadPart.bucket = "examplebucket-1250000000";
 
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 uploadPart.object = "exampleobject";
 uploadPart.partNumber = 1;
 
@@ -1086,7 +1242,7 @@ uploadPart.setFinish { (result, error) in
 }
 uploadPart.sendProcessBlock = {(bytesSent,totalBytesSent,
                                 totalBytesExpectedToSend) in
-    // 업로드 진행률 정보
+    // 업로드 진행도 정보
     // bytesSent                   증가 바이트 수
     // totalBytesSent              이번 업로드의 총 바이트 수
     // totalBytesExpectedToSend    로컬 업로드의 타깃 바이트 수
@@ -1095,7 +1251,7 @@ uploadPart.sendProcessBlock = {(bytesSent,totalBytesSent,
 QCloudCOSXMLService.defaultCOSXML().uploadPart(uploadPart);
 ```
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift)을 참고하십시오.
 
 ### 멀티파트 복사
 
@@ -1103,26 +1259,26 @@ QCloudCOSXMLService.defaultCOSXML().uploadPart(uploadPart);
 
 다른 객체를 한 파트로 복사합니다(Upload Part-Copy).
 
-#### 예시 코드
+#### 예시코드
 **Objective-C**
 
 [//]: # (.cssg-snippet-upload-part-copy)
 ```objective-c
 QCloudUploadPartCopyRequest* request = [[QCloudUploadPartCopyRequest alloc] init];
 
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 request.bucket = @"examplebucket-1250000000";
 
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 request.object = @"exampleobject";
 
-// 원본 파일 URL 경로, versionid 하위 리소스로 역대 버전을 지정할 수 있습니다.
+// 소스 파일 URL 경로, versionid 하위 리소스로 역대 버전을 지정할 수 있습니다.
 request.source = @"sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject";
 
 // 멀티파트 업로드의 응답 초기화 중 유일한 디스크립터 1개 반환(upload ID)
 request.uploadID = uploadId;
 
-// 현재 파트의 번호 표시
+// 현재 파트의 시리얼 넘버 표시
 request.partNumber = 1;
 
 [request setFinishBlock:^(QCloudCopyObjectResult* result, NSError* error) {
@@ -1139,7 +1295,7 @@ request.partNumber = 1;
 [[QCloudCOSXMLService defaultCOSXML]UploadPartCopy:request];
 ```
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsCopyObject.m)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsCopyObject.m)을 참고하십시오.
 
 **Swift**
 
@@ -1147,20 +1303,20 @@ request.partNumber = 1;
 ```swift
 let req = QCloudUploadPartCopyRequest.init();
 
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 req.bucket = "examplebucket-1250000000";
 
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 req.object = "exampleobject";
 
-// 원본 파일 URL 경로, versionid 하위 리소스로 역대 버전을 지정할 수 있습니다.
+// 원본 파일 URL 경로. versionid 하위 리소스로 이전 버전을 지정할 수 있습니다.
 req.source = "sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject";
 // 멀티파트 업로드의 응답 초기화 중 유일한 디스크립터 1개 반환(upload ID)
 if let uploadId = self.uploadId {
     req.uploadID = uploadId;
 }
 
-// 현재 파트의 번호 표시
+// 현재 파트의 시리얼 넘버 표시
 req.partNumber = 1;
 req.setFinish { (result, error) in
     if let result = result {
@@ -1177,7 +1333,7 @@ req.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().uploadPartCopy(req);
 ```
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsCopyObject.swift)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsCopyObject.swift)을 참고하십시오.
 
 ### 업로드된 파트 조회
 
@@ -1185,17 +1341,17 @@ QCloudCOSXMLService.defaultCOSXML().uploadPartCopy(req);
 
 특정 멀티파트 업로드 작업에서 업로드된 파트를 조회합니다(List Parts).
 
-#### 예시 코드
+#### 예시코드
 **Objective-C**
 
 [//]: # (.cssg-snippet-list-parts)
 ```objective-c
 QCloudListMultipartRequest* request = [QCloudListMultipartRequest new];
 
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 request.object = @"exampleobject";
 
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 request.bucket = @"examplebucket-1250000000";
 
 // 멀티파트 업로드의 응답 초기화 중 유일한 디스크립터 1개 반환(upload ID)
@@ -1212,7 +1368,7 @@ request.uploadId = uploadId;
 [[QCloudCOSXMLService defaultCOSXML] ListMultipart:request];
 ```
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m)을 참고하십시오.
 
 **Swift**
 
@@ -1220,10 +1376,10 @@ request.uploadId = uploadId;
 ```swift
 let req = QCloudListMultipartRequest.init();
 
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 req.object = "exampleobject";
 
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 req.bucket = "examplebucket-1250000000";
 
 // 멀티파트 업로드의 응답 초기화 중 유일한 디스크립터 1개 반환(upload ID)
@@ -1242,26 +1398,26 @@ req.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().listMultipart(req);
 ```
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift)을 참고하십시오.
 
-### 멀티파트 업로드 완료
+###  멀티파트 업로드 완료
 
 #### 기능 설명
 
 전체 파일의 멀티파트 업로드를 완료합니다(Complete Multipart Upload).
 
-#### 예시 코드
+#### 예시코드
 **Objective-C**
 
 [//]: # (.cssg-snippet-complete-multi-upload)
 
 ```objective-c
 QCloudCompleteMultipartUploadRequest *completeRequst = [QCloudCompleteMultipartUploadRequest new];
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 completeRequst.object = @"exampleobject";
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 completeRequst.bucket = @"examplebucket-1250000000";
-// 이번에 조회할 멀티파트 업로드의 uploadId는 멀티파트 업로드 초기화의 요청 결과 QCloudInitiateMultipartUploadResult에서 획득 가능
+// 이번에 조회할 멀티파트 업로드의 uploadId는 멀티파트 업로드 초기화의 요청 결과 QCloudInitiateMultipartUploadResult에서 획득
 completeRequst.uploadId = uploadId;
 // 업로드한 파트의 정보
 QCloudCompleteMultipartUploadInfo *partInfo = [QCloudCompleteMultipartUploadInfo new];
@@ -1290,7 +1446,7 @@ completeRequst.parts = partInfo;
 ```
 
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/MultiPartsUploadObject.m)을 참고하십시오.
 
 **Swift**
 
@@ -1298,14 +1454,14 @@ completeRequst.parts = partInfo;
 ```swift
 let  complete = QCloudCompleteMultipartUploadRequest.init();
 
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 complete.bucket = "examplebucket-1250000000";
 
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 complete.object = "exampleobject";
 
 // 이번에 조회할 멀티파트 업로드의 uploadId는 멀티파트 업로드 초기화의 요청 결과
-// QCloudInitiateMultipartUploadResult에서 획득 가능
+// QCloudInitiateMultipartUploadResult에서 획득
 complete.uploadId = "exampleUploadId";
 if let uploadId = self.uploadId {
     complete.uploadId = uploadId;
@@ -1335,36 +1491,36 @@ complete.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().completeMultipartUpload(complete);
 ```
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/MultiPartsUploadObject.swift)을 참고하십시오.
 
-### 멀티파트 업로드 중지
+###  멀티파트 업로드 중지
 
 #### 기능 설명
 
 멀티파트 업로드 작업을 중지하고 업로드된 파트를 삭제합니다(Abort Multipart Upload).
 
-#### 예시 코드
+#### 예시코드
 **Objective-C**
 
 [//]: # (.cssg-snippet-abort-multi-upload)
 ```objective-c
 QCloudAbortMultipfartUploadRequest *abortRequest = [QCloudAbortMultipfartUploadRequest new];
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 abortRequest.object = @"exampleobject";
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 abortRequest.bucket = @"examplebucket-1250000000";
 // 이번에 중지할 멀티파트 업로드의 uploadId
 // 멀티파트 업로드 초기화의 요청 결과 QCloudInitiateMultipartUploadResult에서 획득
 abortRequest.uploadId = @"exampleUploadId";
 [abortRequest setFinishBlock:^(id outputObject, NSError *error) {
-    // outputObject에서 response의 etag 또는 사용자 정의 헤더 등 정보를 획득할 수 있습니다.
+    // outputObject에서 response의 etag 혹은 사용자 정의 헤더 등 정보 획득 가능
     NSDictionary * result = (NSDictionary *)outputObject;
 }];
 [[QCloudCOSXMLService defaultCOSXML]AbortMultipfartUpload:abortRequest];
 ```
 
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/AbortMultiPartsUpload.m)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/AbortMultiPartsUpload.m)을 참고하십시오.
 
 **Swift**
 
@@ -1372,19 +1528,19 @@ abortRequest.uploadId = @"exampleUploadId";
 ```swift
 let abort = QCloudAbortMultipfartUploadRequest.init();
 
-// BucketName-APPID 포맷의 버킷 이름
+// BucketName-APPID 형식의 버킷 이름
 abort.bucket = "examplebucket-1250000000";
 
-// 객체 키는 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 포맷은 'video/xxx/movie.mp4'입니다.
+// 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 abort.object = "exampleobject";
 
 // 이번에 조회할 멀티파트 업로드의 uploadId는 멀티파트 업로드 초기화의 요청 결과
-// QCloudInitiateMultipartUploadResult에서 획득 가능
+// QCloudInitiateMultipartUploadResult에서 획득
 abort.uploadId = self.uploadId!;
 
 abort.finishBlock = {(result,error)in
     if let result = result {
-        // result에서 서버에 반환되는 header 정보를 획득할 수 있습니다.
+        // result에서 서버 반환의 header 정보를 획득할 수 있습니다.
     } else {
         print(error!)
     }
@@ -1392,4 +1548,4 @@ abort.finishBlock = {(result,error)in
 QCloudCOSXMLService.defaultCOSXML().abortMultipfartUpload(abort);
 ```
 
->? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/AbortMultiPartsUpload.swift)를 참조하십시오.
+>? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/AbortMultiPartsUpload.swift)을 참고하십시오.

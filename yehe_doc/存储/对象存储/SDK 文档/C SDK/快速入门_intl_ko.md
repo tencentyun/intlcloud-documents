@@ -4,7 +4,12 @@
 
 - COS의 XML C SDK 소스 코드 다운로드 주소: [XML C SDK](https://github.com/tencentyun/cos-c-sdk-v5)
 - 예시 Demo 다운로드 주소: [XML C SDK Demo](https://github.com/tencentyun/cos-c-sdk-v5/blob/master/cos_c_sdk_test/cos_demo.c)
-- SDK 로그 업데이트는 [ChangeLog](https://github.com/tencentyun/cos-c-sdk-v5/blob/master/CHANGELOG.md)를 참조하십시오.
+- SDK 로그 업데이트는 [ChangeLog](https://github.com/tencentyun/cos-c-sdk-v5/blob/master/CHANGELOG.md)를 참고하십시오.
+- SDK FAQ는 [C SDK FAQ](https://intl.cloud.tencent.com/document/product/436/40772)를 참고하십시오.
+
+
+>? SDK 사용 시 함수 또는 메소드 없음 등 오류가 발생하였을 경우, 먼저 SDK를 최신 버전으로 업데이트한 후 재시도하십시오.
+>
 
 #### 환경 종속
 
@@ -54,10 +59,10 @@ make install
 다음은 XML C SDK를 사용하는 일반적인 프로세스입니다.
 
 1. SDK를 초기화합니다.
-2. 요청 옵션 매개변수를 설정합니다. APPID, SecretId, SecretKey, Bucket 등의 명칭에 대한 의미 및 획득 방법은 [COS 용어 정보](https://intl.cloud.tencent.com/document/product/436/7751)를 참조하십시오.
+2. 요청 옵션 매개변수를 설정합니다. APPID, SecretId, SecretKey, Bucket 등의 명칭에 대한 의미 및 획득 방법은 [COS 용어 정보](https://intl.cloud.tencent.com/document/product/436/7751)를 참고하십시오.
  - APPID는 Tencent Cloud 계정 신청 후 시스템에서 할당하는 계정 식별자 중 하나입니다.
  - access_key_id와 access_key_secret는 계정 API 키입니다.
- - endpoint는 COS 액세스 도메인 정보입니다. 자세한 내용은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224) 문서를 참조하십시오. 예를 들어, 광저우 리전의 endpoint는 `cos.ap-guangzhou.myqcloud.com`이며, 글로벌 가속 도메인의 endpoint는 `cos.accelerate.myqcloud.com`입니다. endpoint에는 http 또는 https를 추가할 수 있으며, SDK는 기본적으로 http를 통해 COS에 액세스합니다. https를 통한 광저우 리전 액세스의 endpoint는 `https://cos.ap-guangzhou.myqlcoud.com`입니다.
+ - endpoint는 COS 액세스 도메인 정보입니다. 자세한 내용은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224) 문서를 참고하십시오. 예를 들어, 광저우 리전의 endpoint는 `cos.ap-guangzhou.myqcloud.com`이며, 글로벌 가속 도메인의 endpoint는 `cos.accelerate.myqcloud.com`입니다. endpoint에는 http 또는 https를 추가할 수 있으며, SDK는 기본적으로 http를 통해 COS에 액세스합니다. https를 통한 광저우 리전 액세스의 endpoint는 `https://cos.ap-guangzhou.myqlcoud.com`입니다.
  - is_cname은 endpoint의 사용자 정의 도메인 여부를 의미합니다. is_cname이 1로 설정된 경우 endpoint는 사용자 정의 도메인이라는 의미입니다.
 3. API 인터페이스에 필요한 매개변수를 설정합니다.
 4. SDK API를 호출하여 요청을 실행하고 요청 응답 결과를 획득합니다.
@@ -123,10 +128,11 @@ cos_set_content_md5_enable(options->ctl, COS_FALSE);
 //cos_set_request_route(options->ctl, "192.168.12.34", 80);
 ```
 
->?임시 키 생성 및 사용에 대한 자세한 내용은 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048)를 참조하십시오.
+>? 임시 키 생성 및 사용에 대한 자세한 내용은 [임시 키 생성 및 사용 가이드](https://intl.cloud.tencent.com/document/product/436/14048)를 참고하십시오.
+>
 
 
-### 버킷 생성
+###버킷 생성하기
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -154,7 +160,7 @@ cos_str_set(&options->config->access_key_secret, TEST_ACCESS_KEY_SECRET);
 cos_str_set(&options->config->appid, TEST_APPID);
 options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
-/* 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다. */
+/* 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 형식을 따라야 합니다. */
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
 /* api를 호출해 버킷 생성 */
@@ -197,7 +203,7 @@ cos_str_set(&options->config->access_key_secret, TEST_ACCESS_KEY_SECRET);
 cos_str_set(&options->config->appid, TEST_APPID);
 options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
-/* 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다. */
+/* 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 형식을 따라야 합니다. */
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
 /* api를 호출해 객체 리스트 조회 */
@@ -243,7 +249,7 @@ cos_str_set(&options->config->access_key_secret, TEST_ACCESS_KEY_SECRET);
 cos_str_set(&options->config->appid, TEST_APPID);
 options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
-/* 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다. */
+/* 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 형식을 따라야 합니다. */
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
 /* api를 호출해 객체 업로드 */
@@ -289,7 +295,7 @@ cos_str_set(&options->config->access_key_secret, TEST_ACCESS_KEY_SECRET);
 cos_str_set(&options->config->appid, TEST_APPID);
 options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
-/* 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다. */
+/* 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 형식을 따라야 합니다. */
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
 /* api를 호출해 객체 다운로드 */
@@ -334,7 +340,7 @@ cos_str_set(&options->config->access_key_secret, TEST_ACCESS_KEY_SECRET);
 cos_str_set(&options->config->appid, TEST_APPID);
 options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
-/* 버킷의 이름 생성 포맷은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 포맷을 따라야 합니다. */
+/* 버킷의 이름 생성 형식은 BucketName-APPID이며, 입력할 버킷 이름은 반드시 해당 형식을 따라야 합니다. */
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
 /* api를 호출해 객체 삭제 */

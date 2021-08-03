@@ -5,7 +5,7 @@
 
 **간단한 작업**
 
-| API                                                          | 작업명         | 작업 설명                                  |
+| API                                                          | 작업명         | 작업 설명                                 |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 간편한 객체 업로드       | 객체를 버킷에 업로드     |
 | [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | 폼을 사용한 객체 업로드   | 폼을 사용해 객체 업로드 요청                      |
@@ -18,14 +18,14 @@
 | [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | 멀티파트 업로드 조회   | 현재 진행 중인 멀티파트 업로드 정보 조회         |
 | [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | 멀티파트 업로드 초기화 | 멀티파트 업로드 작업 초기화     |
 | [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | 멀티파트 업로드       | 객체 멀티파트 업로드                        |
-| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | 멀티파트 복사       | 다른 객체를 한 파트로 복사             |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | 파트 복사       | 다른 객체를 한 파트로 복사             |
 | [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | 업로드된 파트 조회   | 특정 멀티파트 업로드 작업에서 업로드된 파트 조회   |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | 멀티파트 업로드 완료   | 전체 파일의 멀티파트 업로드 완료               |
 | [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 멀티파트 업로드 중지   | 멀티파트 업로드 작업 중지 및 업로드된 파트 삭제 |
 
-## SDK API 참조
+## SDK API 참고
 
-SDK 모든 인터페이스의 구체적인 매개변수와 방법 설명은 [SDK API](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/)를 참조하십시오.
+SDK 모든 인터페이스의 구체적인 매개변수와 방법 설명은 [SDK API](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/)를 참고하십시오.
 
 ## 고급 인터페이스(권장)
 
@@ -37,13 +37,13 @@ SDK 모든 인터페이스의 구체적인 매개변수와 방법 설명은 [SDK
 
 [//]: # (.cssg-snippet-transfer-upload-file)
 ```java
-// TransferConfig 초기화. 본 예시는 기본 설정을 사용합니다. 사용자 정의할 경우에는 SDK 인터페이스 문서를 참조하십시오.
+// TransferConfig 초기화. 본 예시는 기본 설정을 사용합니다. 사용자 정의할 경우에는 SDK 인터페이스 문서를 참고하십시오.
 TransferConfig transferConfig = new TransferConfig.Builder().build();
 // TransferManager 초기화
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; //버킷. 포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //버킷. 형식: BucketName-APPID
 String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
 String srcPath = new File(context.getCacheDir(), "exampleobject")
         .toString(); //로컬 파일의 절대 경로
@@ -90,8 +90,8 @@ cosxmlUploadTask.setTransferStateListener(new TransferStateListener() {
 ```
 
 >?
->- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java)를 참조하십시오.
->- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참조하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
+>- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java)를 참고하십시오.
+>- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참고하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
 
 #### 예시 코드2: 바이너리 데이터 업로드
 
@@ -101,7 +101,7 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; //버킷. 포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //버킷. 형식: BucketName-APPID
 String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
 
 // 바이트 배열 업로드
@@ -131,8 +131,8 @@ cosxmlUploadTask.setCosXmlResultListener(new CosXmlResultListener() {
 ```
 
 >?
->- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java)를 참조하십시오.
->- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참조하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
+>- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java)를 참고하십시오.
+>- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참고하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
 
 #### 예시 코드3: 스트림 방식 업로드
 
@@ -142,7 +142,7 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; //버킷. 포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //버킷. 형식: BucketName-APPID
 String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
 
 // 스트림 방식 업로드
@@ -174,8 +174,8 @@ cosxmlUploadTask.setCosXmlResultListener(new CosXmlResultListener() {
 ```
 
 >?
->- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java)를 참조하십시오.
->- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참조하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
+>- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java)를 참고하십시오.
+>- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참고하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
 
 #### 예시 코드4: URI를 통한 업로드
 
@@ -185,7 +185,7 @@ TransferConfig transferConfig = new TransferConfig.Builder().build();
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; //버킷. 포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //버킷. 형식: BucketName-APPID
 String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
 
 // 파일의 Uri
@@ -217,10 +217,24 @@ cosxmlUploadTask.setCosXmlResultListener(new CosXmlResultListener() {
 ```
 
 >?
->- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java)를 참조하십시오.
->- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참조하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
+>- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java)를 참고하십시오.
+>- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참고하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
 
-#### 예시 코드5: 업로드 일시 중지, 계속 및 취소
+#### 예시 코드5: 스마트 멀티파트 임계값 설정
+
+`TransferManager`는 2M보다 크거나 같은 파일을 자동으로 멀티파트 업로드 하도록 기본 설정 되어있습니다. 다음 코드를 통해 멀티파트 임계값을 수정할 수 있습니다.
+
+```
+TransferConfig transferConfig = new TransferConfig.Builder()
+	.setDivisionForUpload(2 * 1024 * 1024) // 2M보다 크거나 같은 파일을 자동으로 멀티파트 업로드하도록 설정 
+	.build();
+	
+TransferManager transferManager = new TransferManager(cosXmlService,
+        transferConfig);	
+```
+
+
+#### 예시 코드6: 업로드 일시 중지, 계속 및 취소
 
 업로드 작업은 다음과 같은 방식으로 일시 중지할 수 있습니다.
 
@@ -248,9 +262,9 @@ cosxmlUploadTask.cancel();
 ```
 
 >?
->- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java)를 참조하십시오.
+>- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java)를 참고하십시오.
 
-#### 예시 코드6: 일괄 업로드
+#### 예시 코드7: 일괄 업로드
 
 [//]: # (.cssg-snippet-transfer-batch-upload-objects)
 ```java
@@ -288,11 +302,11 @@ for (File file : files) {
 }
 ```
 
-#### 예시 코드7: 디렉터리 생성
+#### 예시 코드8: 디렉터리 생성
 
 [//]: # (.cssg-snippet-create-directory)
 ```java
-String bucket = "examplebucket-1250000000"; //버킷. 포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //버킷. 형식: BucketName-APPID
 // 버킷 내 폴더 위치 식별자. 즉, 객체 키이며 반드시 '/'로 끝나야 합니다.
 String cosPath = "exampleobject/";
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucket, cosPath, new byte[0]);
@@ -317,8 +331,8 @@ cosXmlService.putObjectAsync(putObjectRequest, new CosXmlResultListener() {
 ```
 
 >?
->- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java)를 참조하십시오.
->- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참조하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
+>- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java)를 참고하십시오.
+>- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참고하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
 
 ### 우선순위가 낮은 작업 설정
 
@@ -369,7 +383,7 @@ uploadTask.setCosXmlResultListener(new CosXmlResultListener() {
 
 [//]: # (.cssg-snippet-transfer-copy-object)
 ```java
-// TransferConfig 초기화. 본 예시는 기본 설정을 사용합니다. 사용자 정의할 경우에는 SDK 인터페이스 문서를 참조하십시오.
+// TransferConfig 초기화. 본 예시는 기본 설정을 사용합니다. 사용자 정의할 경우에는 SDK 인터페이스 문서를 참고하십시오.
 TransferConfig transferConfig = new TransferConfig.Builder().build();
 //TransferManager 초기화
 TransferManager transferManager = new TransferManager(cosXmlService,
@@ -384,7 +398,7 @@ CopyObjectRequest.CopySourceStruct copySourceStruct =
         new CopyObjectRequest.CopySourceStruct(
                 sourceAppid, sourceBucket, sourceRegion, sourceCosPath);
 //타깃 버킷
-String bucket = "examplebucket-1250000000"; //버킷. 포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //버킷. 형식: BucketName-APPID
 //타깃 객체
 String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
 
@@ -420,25 +434,25 @@ cosxmlCopyTask.setTransferStateListener(new TransferStateListener() {
 });
 ```
 
->?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferCopyObject.java)를 참조하십시오.
+>?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferCopyObject.java)를 참고하십시오.
 
 ## 간단한 작업
 
-### 간편한 객체 업로드
+### 간단한 객체 업로드
 
 #### 기능 설명
 
 PUT Object 인터페이스는 객체를 지정된 버킷에 업로드할 수 있습니다. 이 작업은 요청자가 버킷에 대한 WRITE 권한을 가지고 있어야 합니다. 최대 5GB 미만인 객체의 업로드를 지원합니다. 5GB 이상의 객체는 [멀티파트 업로드](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) 혹은 [고급 인터페이스](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) 업로드를 사용하십시오.
 
 > !
-> 1. Key(파일명)는 `/`로 끝나면 안 됩니다. 그렇지 않을 경우 폴더로 인식될 수 있습니다.
+> 1. Key(파일명)는 `/`로 끝날 수 없습니다. 그렇지 않으면 폴더로 인식될 수 있습니다.
 > 2. 루트 계정(동일한 APPID)당 버킷의 ACL 규칙 수량은 최대 1000개이며 객체 ACL 규칙 수량은 제한이 없습니다. 객체 ACL 제어가 필요하지 않을 경우 업로드 시 설정하지 마십시오. 기본적으로 버킷 권한이 상속됩니다.
 
-#### 예시 코드
+#### 예시코드
 
 [//]: # (.cssg-snippet-put-object)
 ```java
-String bucket = "examplebucket-1250000000"; //버킷. 포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //버킷. 형식: BucketName-APPID
 String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
 String srcPath = new File(context.getCacheDir(), "exampleobject")
         .toString();//"로컬 파일의 절대 경로";
@@ -471,8 +485,8 @@ cosXmlService.putObjectAsync(putObjectRequest, new CosXmlResultListener() {
 ```
 
 >?
->- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/PutObject.java)를 참조하십시오.
->- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참조하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
+>- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/PutObject.java)를 참고하십시오.
+>- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 **사전 서명 링크 생성** 문서를 참고하십시오. 문서의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 기간이 있습니다.
 
 ### 폼을 사용한 객체 업로드
 
@@ -480,11 +494,11 @@ cosXmlService.putObjectAsync(putObjectRequest, new CosXmlResultListener() {
 
 폼을 사용해 객체 업로드를 요청합니다.
 
-#### 예시 코드
+#### 예시코드
 
 [//]: # (.cssg-snippet-post-object)
 ```java
-String bucket = "examplebucket-1250000000"; //버킷 이름. 포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //버킷 이름. 형식: BucketName-APPID
 String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
 String srcPath = new File(context.getCacheDir(), "exampleobject")
         .toString();//"로컬 파일의 절대 경로";
@@ -517,7 +531,7 @@ cosXmlService.postObjectAsync(postObjectRequest, new CosXmlResultListener() {
 });
 ```
 
->?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/PostObject.java)를 참조하십시오.
+>?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/PostObject.java)를 참고하십시오.
 
 ### 객체 복사(속성 수정)
 
@@ -536,7 +550,7 @@ CopyObjectRequest.CopySourceStruct copySourceStruct =
         new CopyObjectRequest.CopySourceStruct(
         sourceAppid, sourceBucket, sourceRegion, sourceCosPath);
 
-String bucket = "examplebucket-1250000000"; //버킷. 포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //버킷. 형식: BucketName-APPID
 String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
 CopyObjectRequest copyObjectRequest = new CopyObjectRequest(bucket, cosPath,
         copySourceStruct);
@@ -560,7 +574,7 @@ cosXmlService.copyObjectAsync(copyObjectRequest, new CosXmlResultListener() {
 });
 ```
 
->?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/CopyObject.java)를 참조하십시오.
+>?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/CopyObject.java)를 참고하십시오.
 
 #### 예시 코드2: 객체 복사 시 객체 속성 변경
 
@@ -575,7 +589,7 @@ CopyObjectRequest.CopySourceStruct copySourceStruct =
         new CopyObjectRequest.CopySourceStruct(
         sourceAppid, sourceBucket, sourceRegion, sourceCosPath);
 
-String bucket = "examplebucket-1250000000"; //버킷. 포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //버킷. 형식: BucketName-APPID
 String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
 CopyObjectRequest copyObjectRequest = new CopyObjectRequest(bucket, cosPath,
         copySourceStruct);
@@ -601,14 +615,14 @@ cosXmlService.copyObjectAsync(copyObjectRequest, new CosXmlResultListener() {
 });
 ```
 
->?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/CopyObject.java)를 참조하십시오.
+>?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/CopyObject.java)를 참고하십시오.
 
 #### 예시 코드3: 객체 메타데이터 수정
 
 [//]: # (.cssg-snippet-modify-object-metadata)
 ```java
 String appId = "1250000000"; //계정 APPID
-String bucket = "examplebucket-1250000000"; //버킷. 포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //버킷. 형식: BucketName-APPID
 String region = "COS_REGION"; //원본 객체 버킷이 있는 리전
 String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
 // 원본 객체 속성 구성
@@ -641,14 +655,14 @@ cosXmlService.copyObjectAsync(copyObjectRequest, new CosXmlResultListener() {
 });
 ```
 
->?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/ModifyObjectProperty.java)를 참조하십시오.
+>?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/ModifyObjectProperty.java)를 참고하십시오.
 
 #### 예시 코드4: 객체 스토리지 유형 수정
 
 [//]: # (.cssg-snippet-modify-object-storage-class)
 ```java
 String appId = "1250000000"; //계정 APPID
-String bucket = "examplebucket-1250000000"; //버킷. 포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //버킷. 형식: BucketName-APPID
 String region = "COS_REGION"; //원본 객체 버킷이 있는 리전
 String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
 // 원본 객체 속성 구성
@@ -680,7 +694,7 @@ cosXmlService.copyObjectAsync(copyObjectRequest, new CosXmlResultListener() {
 });
 ```
 
->?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/ModifyObjectProperty.java)를 참조하십시오.
+>?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/ModifyObjectProperty.java)를 참고하십시오.
 
 ## 멀티파트 작업
 
@@ -710,11 +724,11 @@ cosXmlService.copyObjectAsync(copyObjectRequest, new CosXmlResultListener() {
 
 지정 버킷에서 진행 중인 멀티파트 업로드를 조회합니다(List Multipart Uploads).
 
-#### 예시 코드
+#### 예시코드
 
 [//]: # (.cssg-snippet-list-multi-upload)
 ```java
-String bucket = "examplebucket-1250000000"; //포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //형식: BucketName-APPID
 ListMultiUploadsRequest listMultiUploadsRequest =
         new ListMultiUploadsRequest(bucket);
 cosXmlService.listMultiUploadsAsync(listMultiUploadsRequest,
@@ -738,19 +752,19 @@ cosXmlService.listMultiUploadsAsync(listMultiUploadsRequest,
 });
 ```
 
->?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/MultiPartsUploadObject.java)를 참조하십시오.
+>?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/MultiPartsUploadObject.java)를 참고하십시오.
 
-### 멀티파트 업로드 초기화
+###  멀티파트 업로드 초기화
 
 #### 기능 설명
 
 Multipart Upload 업로드 작업을 초기화하고 해당하는 uploadId를 가져옵니다(Initiate Multipart Upload).
 
-#### 예시 코드
-
+#### 예시코드
+g
 [//]: # (.cssg-snippet-init-multi-upload)
 ```java
-String bucket = "examplebucket-1250000000"; //포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //형식: BucketName-APPID
 String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
 
 InitMultipartUploadRequest initMultipartUploadRequest =
@@ -777,17 +791,17 @@ cosXmlService.initMultipartUploadAsync(initMultipartUploadRequest,
 });
 ```
 
->?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/MultiPartsUploadObject.java)를 참조하십시오.
+>?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/MultiPartsUploadObject.java)를 참고하십시오.
 
-### 멀티파트 업로드
+###  멀티파트 업로드
 
 객체를 멀티파트 업로드합니다(Upload Part).
 
-#### 예시 코드
+#### 예시코드
 
 [//]: # (.cssg-snippet-upload-part)
 ```java
-String bucket = "examplebucket-1250000000"; //버킷. 포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //버킷. 형식: BucketName-APPID
 String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
 UploadPartRequest uploadPartRequest = new UploadPartRequest(bucket, cosPath,
         partNumber, srcFile.getPath(), offset, PART_SIZE, uploadId);
@@ -819,7 +833,7 @@ cosXmlService.uploadPartAsync(uploadPartRequest, new CosXmlResultListener() {
 });
 ```
 
->?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/MultiPartsUploadObject.java)를 참조하십시오.
+>?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/MultiPartsUploadObject.java)를 참고하십시오.
 
 ### 멀티파트 복사
 
@@ -840,7 +854,7 @@ CopyObjectRequest.CopySourceStruct copySourceStruct =
         new CopyObjectRequest.CopySourceStruct(
         sourceAppid, sourceBucket, sourceRegion, sourceCosPath);
 
-String bucket = "examplebucket-1250000000"; //버킷. 포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //버킷. 형식: BucketName-APPID
 String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
 
 String uploadId = "exampleUploadId";
@@ -872,7 +886,7 @@ cosXmlService.copyObjectAsync(uploadPartCopyRequest,
 });
 ```
 
->?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/MultiPartsCopyObject.java)를 참조하십시오.
+>?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/MultiPartsCopyObject.java)를 참고하십시오.
 
 ### 업로드된 멀티파트 조회
 
@@ -884,7 +898,7 @@ cosXmlService.copyObjectAsync(uploadPartCopyRequest,
 
 [//]: # (.cssg-snippet-list-parts)
 ```java
-String bucket = "examplebucket-1250000000"; //포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //형식: BucketName-APPID
 String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
 
 ListPartsRequest listPartsRequest = new ListPartsRequest(bucket, cosPath,
@@ -908,9 +922,9 @@ cosXmlService.listPartsAsync(listPartsRequest, new CosXmlResultListener() {
 });
 ```
 
->?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/MultiPartsUploadObject.java)를 참조하십시오.
+>?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/MultiPartsUploadObject.java)를 참고하십시오.
 
-### 멀티파트 업로드 완료
+###  멀티파트 업로드 완료
 
 #### 기능 설명
 
@@ -919,7 +933,7 @@ cosXmlService.listPartsAsync(listPartsRequest, new CosXmlResultListener() {
 #### 예시 코드
 [//]: # (.cssg-snippet-complete-multi-upload)
 ```java
-String bucket = "examplebucket-1250000000"; //포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //형식: BucketName-APPID
 String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
 
 CompleteMultiUploadRequest completeMultiUploadRequest =
@@ -946,19 +960,19 @@ cosXmlService.completeMultiUploadAsync(completeMultiUploadRequest,
 });
 ```
 
->?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/MultiPartsUploadObject.java)를 참조하십시오.
+>?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/MultiPartsUploadObject.java)를 참고하십시오.
 
-### 멀티파트 업로드 중지
+###  멀티파트 업로드 중지
 
 #### 기능 설명
 
 멀티파트 업로드 작업을 중지하고 업로드된 파트를 삭제합니다(Abort Multipart Upload).
 
-#### 예시 코드
+#### 예시코드
 
 [//]: # (.cssg-snippet-abort-multi-upload)
 ```java
-String bucket = "examplebucket-1250000000"; //포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //형식: BucketName-APPID
 String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
 
 AbortMultiUploadRequest abortMultiUploadRequest =
@@ -985,5 +999,5 @@ cosXmlService.abortMultiUploadAsync(abortMultiUploadRequest,
 });
 ```
 
->?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/AbortMultiPartsUpload.java)를 참조하십시오.
+>?전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/AbortMultiPartsUpload.java)를 참고하십시오.
 

@@ -1,22 +1,28 @@
 ## 관련 리소스
 
-- SDK 소스 코드는 [XML Android SDK](https://github.com/tencentyun/qcloud-sdk-android)를 참조하십시오.
-- 예시 Demo는 [XML Android SDK Demo](https://github.com/tencentyun/qcloud-sdk-android-samples)를 참조하십시오.
-- SDK 인터페이스 및 매개변수 문서는 [SDK API 참조](https://cos-android-sdk-doc-1253960454.file.myqcloud.com)를 참조하십시오.
-- SDK 문서의 모든 예시 코드는 [SDK 코드 예시](https://github.com/tencentyun/cos-snippets/tree/master/Android)를 참조하십시오.
-- SDK 로그 업데이트는 [ChangeLog](https://github.com/tencentyun/qcloud-sdk-android/blob/master/CHANGELOG.md)를 참조하십시오.
+- SDK 소스 코드는 [XML Android SDK](https://github.com/tencentyun/qcloud-sdk-android)를 참고하십시오.
+- 예시 Demo는 [XML Android SDK Demo](https://github.com/tencentyun/qcloud-sdk-android-samples)를 참고하십시오.
+- SDK 인터페이스 및 매개변수 문서는 [SDK API 참고](https://cos-android-sdk-doc-1253960454.file.myqcloud.com)를 참고하십시오.
+- SDK 문서의 모든 예시 코드는 [SDK 코드 예시](https://github.com/tencentyun/cos-snippets/tree/master/Android)를 참고하십시오.
+- SDK 로그 업데이트는 [ChangeLog](https://github.com/tencentyun/qcloud-sdk-android/blob/master/CHANGELOG.md)를 참고하십시오.
+- SDK FAQ는 [Android SDK FAQ](https://intl.cloud.tencent.com/document/product/436/38955)를 참고하십시오.
+
+>? XML 버전 SDK 사용 시 함수 또는 메소드 없음 등 오류가 발생하였을 경우, 먼저 XML 버전 SDK를 최신 버전으로 업데이트한 후 재시도하십시오.
+>
+
 
 ## 준비 작업
 
 1. Android 애플리케이션이 필요합니다. 기존의 프로젝트 또는 새로 생성한 프로젝트 모두 가능합니다.
 2. Android 애플리케이션의 타깃은 API 레벨 15(Ice Cream Sandwich) 버전 이상이어야 합니다.
-3. Tencent Cloud 임시 키를 받을 수 있는 원격 주소가 필요합니다. 임시 키에 대한 설명은 [모바일 애플리케이션 다이렉트 업로드 사례](https://intl.cloud.tencent.com/document/product/436/30618)를 참조하십시오.
+3. Tencent Cloud 임시 키를 받을 수 있는 원격 주소가 필요합니다. 임시 키에 대한 설명은 [모바일 애플리케이션 다이렉트 업로드 사례](https://intl.cloud.tencent.com/document/product/436/30618)를 참고하십시오.
 
 ## 1단계: SDK 설치
 
 ### 방법1: 자동 통합(권장)
 
->?bintray 라이브러리는 이미 삭제되었으며, COS SDK는 mavenCentral에 마이그레이션되어 있습니다. 참조 테이블 경로가 변경되었으니 업데이트 시 새 참조 테이블 경로를 사용하십시오.
+>?bintray 리포지토리는 이미 삭제되었으며, COS SDK는 mavenCentral에 마이그레이션되어 있습니다. 참고 경로가 변경되었으니 업데이트 시 새 참고 경로를 사용하십시오.
+>
 
 #### mavenCentral 라이브러리 사용
 
@@ -62,7 +68,7 @@ dependencies {
 
 
 
-#### beacon 리포트 기능 비활성화(5.5.8 이상 버전에 적합)
+#### beacon 리포트 기능 비활성화(5.5.8 이상 버전에 적용)
 
 SDK의 품질을 지속적으로 추적 및 최적화하여 사용자에게 더 나은 경험을 제공하기 위해 SDK에 beacon 분석 기능을 도입했습니다.
 
@@ -132,7 +138,8 @@ SDK는 COS 서버와 통신을 위해 네트워크 권한이 필요합니다. �
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 ```
 
-Android 6.0(API level 23) 이상에서 실행 시 스토리지 권한 동적 신청이 필요하므로 주의하시기 바랍니다.
+>! Android 6.0(API level 23) 이상에서 실행 시 스토리지 권한 동적 신청이 필요합니다.
+>
 
 ## 3단계: 사용하기
 
@@ -207,7 +214,8 @@ CosXmlService cosXmlService = new CosXmlService(context,
     serviceConfig, myCredentialProvider);
 ```
 
->? 버킷의 각 리전에 대한 약칭은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참조하십시오.
+>? 버킷의 각 리전에 대한 약칭은 [리전 및 액세스 도메인](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오.
+>
 
 #### ktx 패키지로 COS Service 초기화
 
@@ -242,19 +250,19 @@ val cos = cosService(context = application.applicationContext) {
 
 SDK는 로컬 파일, 바이너리 데이터, Uri, 입력 스트림을 지원합니다. 아래는 로컬 파일 업로드 예시입니다.
 
-[//]: # (.cssg-snippet-transfer-upload-file)
+[//]: # ".cssg-snippet-transfer-upload-file"
 ```java
-// TransferConfig 초기화. 본 예시는 기본 설정을 사용합니다. 사용자 정의할 경우에는 SDK 인터페이스 문서를 참조하십시오.
+// TransferConfig 초기화. 본 예시는 기본 설정을 사용합니다. 사용자 정의할 경우에는 SDK 인터페이스 문서를 참고하십시오.
 TransferConfig transferConfig = new TransferConfig.Builder().build();
 // TransferManager 초기화
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; //버킷. 포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //버킷. 형식: BucketName-APPID
 String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
 String srcPath = new File(context.getCacheDir(), "exampleobject")
         .toString(); //로컬 파일의 절대 경로
-// 멀티파트 업로드를 초기화한 UploadId가 존재하는 경우 해당하는 uploadId 값을 대입하여 이어서 전송합니다. 존재하지 않는 경우 null을 대입합니다.
+// 멀티파트 업로드를 초기화한 UploadId가 존재하는 경우 해당하는 uploadId 값을 대입하여 계속 전달합니다. 존재하지 않는 경우 null을 대입합니다.
 // 이번 업로드 작업의 uploadid는 TransferStateListener 콜백에서 가져올 수 있습니다.
 String uploadId = null; 
 
@@ -300,7 +308,7 @@ cosxmlUploadTask.setTransferStateListener(new TransferStateListener() {
 
 #### ktx 패키지로 객체 업로드
 
-ktx를 사용하는 경우 아래 업로드 예시 코드를 참조하십시오.
+ktx를 사용하는 경우 아래 업로드 예시 코드를 참고하십시오.
 
 ```kotlin
 // 본 예시는 viewModel의 ktx 확장 사용
@@ -316,7 +324,7 @@ viewModelScope.launch {
     // 로컬 예시 파일
     val sourceFile = File(appContext.externalCacheDir, "sourceFile")
 
-    try {
+    try{
         // upload 방법: suspend function
         val result = `object`.upload(
             localFile = sourceFile,
@@ -337,23 +345,23 @@ viewModelScope.launch {
 ```
 
 >?
->- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java)를 참조하십시오.
->- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 [사전 서명된 링크 생성](https://intl.cloud.tencent.com/document/product/436/37680) 문서를 참조하십시오. 파일의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 시간이 있습니다.
+>- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferUploadObject.java)를 참고하십시오.
+>- 업로드 후 같은 Key를 사용해 파일 다운로드 링크를 생성할 수 있습니다. 자세한 사용 방법은 [사전 서명된 링크 생성](https://intl.cloud.tencent.com/document/product/436/37680) 문서를 참고하십시오. 파일의 권한이 개인 읽기일 경우, 다운로드 링크에 유효 시간이 있습니다.
 
 ### 객체 다운로드
 
-[//]: # (.cssg-snippet-transfer-download-object)
+[//]: # ".cssg-snippet-transfer-download-object"
 ```java
 // 고급 다운로드 인터페이스는 중단된 지점부터 이어 올리기를 지원합니다. 따라서 다운로드 전에 HEAD를 요청하여 파일 정보를 획득하시기 바랍니다.
 // 임시 키 또는 서브 계정을 사용해 액세스하는 경우 권한 리스트에 HeadObject 권한이 포함되어 있는지 확인하십시오.
 
-// TransferConfig 초기화. 본 예시는 기본 설정을 사용합니다. 사용자 정의할 경우에는 SDK 인터페이스 문서를 참조하십시오.
+// TransferConfig 초기화. 본 예시에서는 기본 설정을 사용합니다. 사용자 정의할 경우에는 SDK 인터페이스 문서를 참고하십시오.
 TransferConfig transferConfig = new TransferConfig.Builder().build();
 //TransferManager 초기화
 TransferManager transferManager = new TransferManager(cosXmlService,
         transferConfig);
 
-String bucket = "examplebucket-1250000000"; //버킷. 포맷: BucketName-APPID
+String bucket = "examplebucket-1250000000"; //버킷. 형식: BucketName-APPID
 String cosPath = "exampleobject"; //버킷 내 객체 위치 식별자. 즉, 객체 키
 //로컬 디렉터리 경로
 String savePathDir = context.getExternalCacheDir().toString();
@@ -403,7 +411,7 @@ cosxmlDownloadTask.setTransferStateListener(new TransferStateListener() {
 
 #### ktx 패키지로 객체 다운로드
 
-ktx를 사용하는 경우 아래 다운로드 예시 코드를 참조하십시오.
+ktx를 사용하는 경우 아래 다운로드 예시 코드를 참고하십시오.
 
 ```kotlin
 // 본 예시는 viewModel의 ktx 확장 사용
@@ -417,7 +425,7 @@ viewModelScope.launch {
         key = "exampleObject"
     }
 
-    try {
+    try{
         // download 방법: suspend function
         val result = `object`.download(
             context = appContext,
@@ -439,5 +447,6 @@ viewModelScope.launch {
 ```
 
 >?
->- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferDownloadObject.java)를 참조하십시오.
+>- 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/TransferDownloadObject.java)를 참고하십시오.
 >-고급 다운로드 인터페이스는 중단된 지점부터 이어 올리기를 지원합니다. 따라서 다운로드 전에 HEAD를 요청하여 파일 정보를 획득하시기 바랍니다. 임시 키 또는 서브 계정을 사용해 액세스하는 경우 권한 리스트에 HeadObject 권한이 포함되어 있는지 확인하십시오.
+>
