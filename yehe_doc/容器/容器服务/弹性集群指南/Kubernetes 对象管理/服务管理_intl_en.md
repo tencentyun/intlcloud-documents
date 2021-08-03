@@ -27,7 +27,7 @@ In order for Ingress resources to operate properly, you must run `Ingress-contro
 
 
 ## Directions
-For more information and instructions, see [Service Management](https://intl.cloud.tencent.com/document/product/457/30672) and [Ingress Management](https://intl.cloud.tencent.com/document/product/457/30673).
+For more information and instructions, see [Service Management](https://intl.cloud.tencent.com/document/product/457/30672) and [Ingress Management](https://intl.cloud.tencent.com/document/product/457/37013).
 
 ## Considerations
 - Creating ClusterIP Service in an elastic cluster uses IP addresses from the Service CIDR. Make sure there are enough IP addresses in the subnet.
