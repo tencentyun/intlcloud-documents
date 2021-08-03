@@ -11,5 +11,5 @@ After an instance is terminated, once its status has changed to **Isolated** or 
 ## Directions
 1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), locate the desired instance in the instance list, and select **More** > **Terminate** in the **Operation** column.
 2. In the pop-up window, confirm that everything is correct and click **Terminate**.
-3. After the termination, you will be redirected to the [instance recycle bin](https://console.cloud.tencent.com/redis/recycle), where you can **start** or **eliminate** the isolated instance.
+3. After the termination, you will be redirected to the [instance recycle bin](https://console.cloud.tencent.com/redis/recycle), where you can **Start** or **Eliminate** the isolated instance.
 
