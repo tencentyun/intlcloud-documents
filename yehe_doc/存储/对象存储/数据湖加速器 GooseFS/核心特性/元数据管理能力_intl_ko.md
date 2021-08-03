@@ -2,7 +2,7 @@
 
 GooseFS 메타데이터 관리 능력을 통해 구조화 데이터를 관리합니다. SparkSQL, Hive, Presto 등 상위 컴퓨팅 애플리케이션에게 데이터베이스 테이블 관리 능력을 제공하고, 현재 Hive MetaStore 연결을 기본 지원합니다. 메타데이터 관리 능력은 각종 SQL 엔진이 지정한 데이터 내용을 읽게 하여 효과적으로 빅 데이터 시나리오에서 로그 데이터의 액세스 효율을 높입니다. 
 
-![](https://main.qcloudimg.com/raw/e35a2c0320da700c3af72deefece71f5.png)          
+![](https://main.qcloudimg.com/raw/c3616ae043e36bc5ea462fa960e20fbb.png)          
 
 GooseFS 메타데이터 관리 능력은 아래 특성을 지원합니다. 
 
