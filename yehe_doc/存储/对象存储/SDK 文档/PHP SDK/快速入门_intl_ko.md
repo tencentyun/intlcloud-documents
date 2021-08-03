@@ -121,7 +121,7 @@ $cosClient = new Qcloud\Cos\Client(
             'token' => $tmpToken)));
 ```
 
-###버킷 생성하기
+### 버킷 생성하기
 
 [//]: # ".cssg-snippet-put-bucket"
 ```php
@@ -153,9 +153,9 @@ try{
 
 ### 객체 업로드
 >!
-* putObject 인터페이스를 사용하여 파일을 업로드(최대 5G)합니다.
-* Upload 인터페이스를 사용하여 파일을 멀티파트 업로드합니다. Upload 인터페이스는 복합 업로드 인터페이스로, 용량이 작은 파일은 간편 업로드를 진행하고, 용량이 큰 파일은 멀티파트 업로드를 진행합니다.
-* 매개변수 설명은 [객체 작업](https://intl.cloud.tencent.com/document/product/436/31542#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1) 문서를 참조하십시오.
+>* putObject 인터페이스를 사용하여 파일을 업로드(최대 5G)합니다.
+>* Upload 인터페이스를 사용하여 파일을 멀티파트 업로드합니다. Upload 인터페이스는 복합 업로드 인터페이스로, 용량이 작은 파일은 간편 업로드를 진행하고, 용량이 큰 파일은 멀티파트 업로드를 진행합니다.
+>* 매개변수 설명은 [객체 작업](https://intl.cloud.tencent.com/document/product/436/31542#.E7.AE.80.E5.8D.95.E4.B8.8A.E4.BC.A0.E5.AF.B9.E8.B1.A1) 문서를 참조하십시오.
 
 [//]: # ".cssg-snippet-put-object-comp"
 ```php
