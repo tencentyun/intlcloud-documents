@@ -22,8 +22,10 @@
 - 集群内容器与容器之间互通。
 - 集群内容器与节点直接互通。
 - 集群内容器与 云数据库 TencentDB、[云数据库 Redis](https://intl.cloud.tencent.com/document/product/239/3205)、云数据库 Memcached 等资源在同一 VPC 下内网互通。
+<dx-alert infotype="notice">
  - 集群内容器与同一 VPC 下其他资源连接时，请注意排查安全组是否已放通容器网段。
  - 容器服务 TKE 集群中的 ip-masq 组件使容器不能通过 SNAT 访问集群网络和 VPC 网络，而其他网段不受影响，因此容器访问同一 VPC 下其他资源（例如 Redis）时需要放通容器网段。
+</dx-alert>
 - 可 设置同地域集群间互通。
 - 可 设置跨地域集群间互通。
 - 可 设置容器集群与 IDC 互通。
