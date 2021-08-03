@@ -67,19 +67,19 @@ Each message in CKafka has two fields: key (message identifier) and value (messa
 
 For ease of tracking, please set a unique key for each message, which allows you to track a message and print its sending and consumption logs to learn about its production and consumption conditions.
 
-If you want to send a large number of messages, we recommend you use the sticky partitioning strategy instead of setting keys.
+If you want to send a large number of messages, we recommend you use the sticky partitioning policy instead of setting keys.
 
 ### Sticky partitioning
 
-Only messages sent to the same partition will be placed in the same batch, so one factor that determines how a batch will be formed is the partitioning strategy set by the Kafka producer. The Kafka producer allows you to choose a partition that suits your business by setting the partitioner implementation class. If a key is specified for a message, the default strategy of the Kafka producer is to hash the message key and then select a partition based on the result of hashing to ensure that messages with the same key are sent to the same partition.
+Only messages sent to the same partition will be placed in the same batch, so one factor that determines how a batch will be formed is the partitioning policy set by the Kafka producer. The Kafka producer allows you to choose a partition that suits your business by setting the partitioner implementation class. If a key is specified for a message, the default policy of the Kafka producer is to hash the message key and then select a partition based on the result of hashing to ensure that messages with the same key are sent to the same partition.
 
-If no key is specified for a message, the default strategy of Kafka below v2.4 is to use all partitions in the topic in loops and send the message to each partition in a round robin manner. However, this default strategy has a poor batch performance and may produce a large number of small batches, which increases actual delays. As it was inefficient in partitioning messages without a key, Kafka 2.4 introduced the sticky partitioning strategy.
+If no key is specified for a message, the default policy of Kafka below v2.4 is to use all partitions in the topic in loops and send the message to each partition in a round robin manner. However, this default policy has a poor batch performance and may produce a large number of small batches, which increases actual delays. As it was inefficient in partitioning messages without a key, Kafka 2.4 introduced the sticky partitioning policy.
 
-The sticky partitioning strategy mainly addresses the problem of small batches caused by the distribution of messages without a key into different partitions. The main practice is to randomly select another partition and use it as much as possible for subsequent messages after the batch is completed for a partition. With this strategy, messages will be sent to the same partition in the short run, but from the perspective of the entire execution, messages will be evenly sent to different partitions, which helps avoid skewed partitions while reducing delays and improving the overall service performance.
+The sticky partitioning policy mainly addresses the problem of small batches caused by the distribution of messages without a key into different partitions. The main practice is to randomly select another partition and use it as much as possible for subsequent messages after the batch is completed for a partition. With this policy, messages will be sent to the same partition in the short run, but from the perspective of the entire execution, messages will be evenly sent to different partitions, which helps avoid skewed partitions while reducing delays and improving the overall service performance.
 
-If you use a Kafka producer client on v2.4 or later, the default partitioning strategy is sticky partitioning. If you use an older producer client, you can implement a partitioning strategy on your own based on how the sticky partitioning strategy works and then make it take effect through the `partitioner.class` parameter.
+If you use a Kafka producer client on v2.4 or later, the default partitioning policy is sticky partitioning. If you use an older producer client, you can implement a partitioning policy on your own based on how the sticky partitioning policy works and then make it take effect through the `partitioner.class` parameter.
 
-For more information on how to implement the sticky partitioning strategy, please see the following implementation of Java code. The code is implemented by switching from one partition to another at certain time intervals.
+For more information on how to implement the sticky partitioning policy, please see the following implementation of Java code. The code is implemented by switching from one partition to another at certain time intervals.
 
 ```
 public class MyStickyPartitioner implements Partitioner {
