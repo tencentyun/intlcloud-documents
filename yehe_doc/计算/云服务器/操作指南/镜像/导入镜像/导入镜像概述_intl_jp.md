@@ -17,7 +17,7 @@
 <tr><td>リージョン制限</td><td>現在、上海ファイナンスと深センファイナンスは、他のリージョンのCOSサービスからのイメージのインポートをサポートしていません。</td></tr>
 </table>
 - **Windowsイメージの要件：**
-</table>
+<table>
 <tr><th style="width: 25%;">メトリック</th><th>説明</th></tr>
 <tr><td>OS</td><td><ul><li>Windows Server 2008 関連バージョン、Windows Server 2012 関連バージョン、Windows Server 2016 関連バージョン</li><li>32ビットと64ビットの両方のOSがサポートされています。</li></ul></td></tr>
 <tr><td>イメージ形式</td><td><ul><li> RAW、VHD、QCOW2、VMDK のイメージ形式をサポートします。</li><li><code>qemu-img info imageName | grep 'file format'</code>を利用して、イメージの形式を確認します。</li></ul></td></tr>
@@ -78,7 +78,7 @@ InvalidFormatSize エラーが発生し、エラーメッセージ：インポ�
 
 「イメージの形式またはサイズが条件を満たさない」というエラーメッセージを受信した場合、
 - [Linux イメージの作成 ](https://intl.cloud.tencent.com/document/product/213/17814)に記載しているイメージ形式の変換内容に基づいて、イメージファイルを適切なファイル形式に変換し、イメージ内容を簡素化して、サイズの要件を満たしてからイメージを再インポートします。
-- [オフラインでのインスタンス移行](https://console.cloud.tencent.com/csm/importOfflineCvm) 機能も利用でき、インスタンスを移行します。この機能は、最大500 GBのサイズのイメージファイルの移行をサポートします。
+- [オフラインでのインスタンス移行](https://intl.cloud.tencent.com/document/product/213/19233) 機能も利用でき、インスタンスを移行します。この機能は、最大500 GBのサイズのイメージファイルの移行をサポートします。
 
 #### VirtioNotInstall： Virtio ドライバーがインストールされていない
 
