@@ -9,7 +9,7 @@
 
 Hadoop의 MapReduce 작업이 GooseFS의 데이터를 읽고 쓰게 하기 위해 hadoop-env.sh에서 GooseFS Client의 종속 경로를 HADOOP_CLASSPATH에 추가해야 합니다. 해당 작업은 EMR의 콘솔에서 할 수 있습니다. 예시: 
 
-![](https://main.qcloudimg.com/raw/dd28fc42063509d5a43dc219ab4637b1.png)
+![](https://main.qcloudimg.com/raw/32b49a221b9a4106a96ab637c7a8a9ba.png)
 
 동시에 core-site.xml에서 GooseFS의 HCFS 구현을 설정해야 하며, 해당 작업도 EMR 콘솔에서 할 수 있습니다. 
 
@@ -18,14 +18,14 @@ fs.AbstractFileSystem.gfs.impl의 설정은 아래와 같습니다.
 com.qcloud.cos.goosefs.hadoop.GooseFileSystem
 ```
 
-![](https://main.qcloudimg.com/raw/4475c860359ad9a6b2305c2100b399a6.png)
+![](https://main.qcloudimg.com/raw/1bd4bb9b7871a89b44185dbd88c3a8bc.png)
 
 fs.gfs.impl의 설정은 아래와 같습니다. 
 ```
 com.qcloud.cos.goosefs.hadoop.FileSystem
 ```
 
-![](https://main.qcloudimg.com/raw/53adde8f2bbd97d17b10dc277b2395b4.png)
+![](https://main.qcloudimg.com/raw/281b9a9021337b5b6fc5a70eb7033c59.png)
 
 
 설정 전달 후 YARN 관련 컴포넌트를 재시작하면 바로 적용됩니다. 
@@ -46,7 +46,7 @@ spark.hadoop.fs.AbstractFileSystem.gfs.impl com.qcloud.cos.goosefs.hadoop.GooseF
 
 해당 작업도 EMR 콘솔의 Spark 컴포넌트에서 설정과 전달을 할 수 있습니다. 
 
-![](https://main.qcloudimg.com/raw/6bf4295b7bbddf2e11108e2cec52e4ee.png)
+![](https://main.qcloudimg.com/raw/0f62582177918a965dd1d231af323830.png)
 
 ## Flink 지원
 
