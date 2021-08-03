@@ -74,7 +74,7 @@ COS API를 사용하여 POST 요청 시 다음 메시지가 나타납니다.
 
 [서명 요청](https://intl.cloud.tencent.com/document/product/436/7778) 문서를 참조하여 POST 서명 문자열 생성 규칙이 올바른지 확인하십시오.
  - 해당 오류일 경우: [고객센터](https://intl.cloud.tencent.com/contact-sales)에 문의하십시오.
- - 해당 오류가 아닐 경우: [온라인 보조 툴: COS 서명 툴](https://cloud.tencent.com/document/product/436/30442)을 사용하여 POST 요청 서명을 다시 계산하십시오.
+ - 해당 오류가 아닐 경우: 온라인 보조 툴: COS 서명 툴을 사용하여 POST 요청 서명을 다시 계산하십시오.
 
 
 <span id="InvalidPolicyDocument_JSONFormat"></span>
