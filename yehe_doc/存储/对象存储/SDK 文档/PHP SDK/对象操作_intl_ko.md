@@ -1700,14 +1700,13 @@ public Qcloud\Cos\Client download(string $bucket, string $key, string $saveAs, a
 | options     | Array | 추가한 구성 항목            | 아니요       |
 
 
-
-| options 매개변수 | 유형   | 설명                               | 필수 입력 여부 |
+| options 매개변수    | 유형   | 설명    | 필수 입력 여부 |
 | -------- | ------ | ---------------------------------- | -------- |
 | Progress         | Function      | 프로그레스 바 콜백，매개변수는 총 크기($totolSize)，업로드된 크기($downloadedSize) | 아니요       |
 | PartSize         | Int      | 최소 멀티파트 파일 크기, 기본적으로 50M |아니요       |
 | Concurrency         | Int      | 동시 실행 정도，기본 설정값: 10 | 아니요       |
 | ResumableDownload         | Bool      | 중단 지점부터 이어서 전송 활성화 여부. 기본값: false                                       |
-| ResumableTaskFile         | Int      | 중단 지점 파일 경로. 기본 설정값:<saveAs.cosresumabletask> | 아니요       |
+| ResumableTaskFile         | Int      | 중단 지점 파일 경로.기본 설정값:<saveAs.cosresumabletask>   | 아니요       |
 
 
 #### 요청 예시
@@ -1753,7 +1752,7 @@ $isTruncated = true;
 while ( $isTruncated ) {
     try{
         $result = $cosClient->listObjects(
-            ['Bucket' => 'examplebucket-125000000', //格式：BucketName-APPID
+            ['Bucket' => 'examplebucket-125000000', //형식：BucketName-APPID
             'Delimiter' => '',
             'EncodingType' => 'url',
             'Marker' => $nextMarker,
