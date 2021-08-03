@@ -6,7 +6,7 @@ COS(Cloud Object Storage)는 객체 차원에 기반한 액세스 권한 설정�
 >- 액세스 정책 규칙에는 수량 제한이 있습니다. 세부 사항은 [규격 및 제한](https://intl.cloud.tencent.com/document/product/436/14518)을 참고하십시오.
 > 
 
-- 작업 순서
+## 작업 순서
 
 1. [COS 콘솔](https://console.cloud.tencent.com/cos5)에 로그인합니다.
 2. 왼쪽 메뉴에서 [버킷 리스트]를 클릭하여 버킷 리스트 페이지로 이동합니다.
