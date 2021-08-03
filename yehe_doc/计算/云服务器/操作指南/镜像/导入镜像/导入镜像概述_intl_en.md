@@ -78,7 +78,7 @@ The InvalidFormatSize error indicates that the format or size of an image to be 
 
 If you receive an error message that the image format or size is invalid:
 - Convert the image file into an appropriate format according to [Linux Image Creation](https://intl.cloud.tencent.com/document/product/213/17814), reduce the image content to meet the size requirements and then reimport it.
-- You can also use the [offline instance migration](https://console.cloud.tencent.com/csm/importOfflineCvm) feature to migrate the instance. This feature supports migration of image files up to 500GB.
+- You can also use the [offline instance migration](https://intl.cloud.tencent.com/document/product/213/19233) feature to migrate the instance. This feature supports migration of image files up to 500GB.
 
 #### VirtioNotInstall: Virtio driver not installed
 
