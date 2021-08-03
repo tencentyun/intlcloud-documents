@@ -71,7 +71,7 @@ TencentDB for Redis is available in various regions. It can be deployed wherever
 <td >Southwest China (Chongqing)<br>ap-chongqing</td>
 <td>Chongqing Zone 1<br>ap-chongqing-1</td><td>190001</td></tr>
 <tr>
-<td rowspan="3">Hong Kong, Macao and Taiwan, China (Hong Kong)<br>ap-hongkong</td>
+<td rowspan="3">Hong Kong/Macao/Taiwan (Hong Kong, China)<br>ap-hongkong</td>
 <td>Hong Kong Zone 1 (Hong Kong nodes cover services in the China regions of Hong Kong, Macao, and Taiwan)<br>ap-hongkong-1</td><td>300001</td></tr>
 <tr>
 <td>Hong Kong Zone 2 (Hong Kong nodes cover services in the China regions of Hong Kong, Macao, and Taiwan)<br>ap-hongkong-2</td><td>300002</td></tr>
@@ -108,7 +108,7 @@ TencentDB for Redis is available in various regions. It can be deployed wherever
 <td rowspan="2">Northeast Asia (Tokyo)<br>ap-tokyo</td>
 <td>Tokyo Zone 1 (Tokyo nodes cover services in Northeast Asia)<br>ap-tokyo-1</td><td>250001</td></tr>
 <tr>
-<td>Tokyo Zone 2 (Tokyo nodes cover services in Northeast Asia Pacific)<br>ap-tokyo-2</td><td>250002</td></tr>
+<td>Tokyo Zone 2 (Tokyo nodes cover services in Northeast Asia)<br>ap-tokyo-2</td><td>250002</td></tr>
 <tr>
 <td rowspan="2">West US (Silicon Valley)<br>na-siliconvalley</td>
 <td>Silicon Valley Zone 1 (Silicon Valley nodes cover services in Western US)<br>na-siliconvalley-1</td><td>150001</td></tr>
