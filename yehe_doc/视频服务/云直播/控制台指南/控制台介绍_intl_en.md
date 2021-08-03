@@ -31,7 +31,7 @@ Scenario-specific services are supporting services on CSS. In this module, you c
 <td><a href = "https://intl.cloud.tencent.com/zh/document/product/267/31074">Event Center</a></td>
 <td><ul style= "margin: 0"><li>You can configure paths for receiving trigger event callbacks</li><li>You can quickly view records of LVB stream push and interruption, as well as stream interruption causes.</li></ul></td>
 </tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/266/14056">Web Player Management</a></td>@
+<td><a href="https://intl.cloud.tencent.com/document/product/266/14056">Web Player Management</a></td>
 
 </tr><tr>
 
@@ -68,7 +68,7 @@ LVB Toolkit provides ancillary features.
 <td><a href = "https://intl.cloud.tencent.com/zh/document/product/267/35968">Web Push</a></td>
 <td>You can quickly generate push addresses and test live streaming broadcasts online.</td>
 </tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/39467">Self-Diagnosis</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267">Self-Diagnosis</a></td>
 <td>You can use self-diagnosis to troubleshoot common push and playback issues. This feature is in beta and the diagnosis results are for reference only.</td>
 </tr></tr>
 </table>
