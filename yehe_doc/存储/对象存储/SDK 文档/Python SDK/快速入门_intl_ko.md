@@ -147,7 +147,7 @@ client = CosS3Client(config)
 # 다음 설명 또는 Demo 프로그램을 참고하십시오. 자세한 내용은 https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/demo.py를 확인하십시오.
 ```
 
-###버킷 생성하기
+### 버킷 생성하기
 
 [//]: # ".cssg-snippet-put-bucket"
 ```python
