@@ -17,7 +17,7 @@ MongoDB 데이터 백업은 Tencent Cloud COS(Cloud Object Storage)가 [SCF(Serv
 >!
 > SCF 서비스가 활성화되지 않은 경우 [SCF 콘솔](https://console.cloud.tencent.com/scf)에서 SCF 서비스를 활성화하고 안내에 따라 서비스 라이선스를 완료하십시오.
 5. 팝업 창에서 다음과 같이 정보를 설정합니다.
-![](https://main.qcloudimg.com/raw/e6eaa0130a141a2d313e014ef0bd51d7.png)
+![](https://main.qcloudimg.com/raw/f4591a75200593b0ee91cc27ccb589f6.png)
  - **함수 이름**: 함수의 고유 식별자로, 생성 후에는 수정할 수 없습니다. [SCF 콘솔](https://console.cloud.tencent.com/scf/list?rid=1&ns=default)에서 해당 함수를 조회할 수 있습니다.
  - **연결 버킷**: MongoDB 백업 파일을 저장할 버킷입니다.
  - **트리거 주기**: MongoDB 데이터 백업 함수는 주기적인 트리거를 통해 백업 저장 작업을 트리거하며, 트리거 주기는 매일, 매주 및 사용자 정의 주기를 지원합니다.
@@ -26,7 +26,7 @@ MongoDB 데이터 백업은 Tencent Cloud COS(Cloud Object Storage)가 [SCF(Serv
  - **전송 경로**: 백업 파일의 전송 경로 접두사로, 입력하지 않은 경우 기본적으로 버킷의 루트 경로에 저장됩니다.
  - **SCF 라이선스**: MongoDB 데이터 백업은 MongoDB에서 백업에서 데이터베이스 인스턴스 및 백업 파일을 읽을 수 있는 권한을 SCF에 부여하여 백업 파일을 지정 버킷에 저장합니다. 따라서 해당 라이선스를 추가해야 합니다.
 6. 설정을 추가한 후 [확인]을 클릭하면 추가된 함수를 확인할 수 있습니다.
-![](https://main.qcloudimg.com/raw/a5b709e3d94050234745763e3a123b1e.png)
+![](https://main.qcloudimg.com/raw/74eab5ca9a722e20fac6e1ca040ed8d3.png)
 새로 생성한 함수에 다음과 같은 작업을 진행할 수 있습니다.
  - [로그 조회]를 클릭해 MongoDB 데이터 백업 기록을 조회합니다. 백업 시 오류가 보고된 경우 [로그 조회]를 클릭하고 SCF 콘솔에 리디렉션하여 로그 오류 상세 내용을 조회할 수 있습니다.
  - [편집]을 클릭하여 MongoDB 데이터 백업 규칙을 수정합니다.
