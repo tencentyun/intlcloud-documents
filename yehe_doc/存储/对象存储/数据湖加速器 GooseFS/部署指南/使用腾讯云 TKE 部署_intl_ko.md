@@ -1,6 +1,6 @@
 TKE를 이용한 GooseFS 배포는 [오픈소스 모듈 Fluid](https://github.com/fluid-cloudnative/fluid) 배포가 필요하며, TKE 애플리케이션은 이미 런칭되었습니다. 배포에는 다음 두 단계가 포함됩니다.
 
-1. [Fluid helm chart] (https://console.cloud.tencent.com/tke2/market/detail?chart=fluid&project=qcloud-stable&clusterType=tke)를 통한 controller 배포.
+1. [Fluid helm chart](https://console.cloud.tencent.com/tke2/market/detail?chart=fluid&project=qcloud-stable&clusterType=tke)를 통한 controller 배포.
 2. kubectl를 통한 Dataset와 GooseFS runtime 생성. 
 
 
@@ -10,12 +10,12 @@ TKE를 이용한 GooseFS 배포는 [오픈소스 모듈 Fluid](https://github.co
 
 ## 설치 방법
 
-1. [TKE 애플리케이션 마켓] (https://console.cloud.tencent.com/tke2/market)에서 fluid 애플리케이션을 찾습니다. 
-![](https://main.qcloudimg.com/raw/879a2413fee05c39cc3ff8d2fd41f80b.png)
+1. [TKE 애플리케이션 마켓](https://console.cloud.tencent.com/tke2/market)에서 fluid 애플리케이션을 찾습니다. 
+
 2. Fluid Controller를 설치합니다. 
-![](https://main.qcloudimg.com/raw/ffbc185e04789cb5a679b8e32ec92d59.jpg)
+
 3. controller 모듈을 검사합니다. 좌측 [클러스터]에서 해당하는 클러스터를 찾고 2개의 controller가 확인되었다면 fluid 모듈이 성공적으로 설치가 되었음을 의미합니다. 
-![](https://main.qcloudimg.com/raw/27f12c25ac4da44eace986eddf356691.png)
+
 
 
 ## 작업 예시
