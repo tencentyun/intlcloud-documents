@@ -38,14 +38,14 @@
 ### 授权用户拥有特定实例的操作权限策略
 如果您希望授权用户拥有特定 PostgreSQL 操作权限，可将以下策略关联到该用户。具体操作步骤如下：
 1. 根据 [策略](https://intl.cloud.tencent.com/document/product/598/10601)，创建一个自定义策略。
-   该示例策略允许用户拥有实例 ID 为 postgres-0xssvm8e 的 PostgreSQL 实例的所有操作权限，策略内容可参考以下策略语法进行设置：
+   该示例策略允许用户拥有实例 ID 为 postgres-0xxxx8e 的 PostgreSQL 实例的所有操作权限，策略内容可参考以下策略语法进行设置：
 ```
 {
     "version": "2.0",
     "statement": [
         {
             "action": "postgres:*",
-            "resource": "qcs::postgres:ap-shanghai:103xxx1481:DBinstanceId/postgres-0xssvm8e",
+            "resource": "qcs::postgres:ap-shanghai:103xxx1481:DBinstanceId/postgres-0xxxx8e",
             "effect": "allow"
         }
     ]
@@ -78,7 +78,7 @@
 ### 禁止用户拥有特定 PostgreSQL 部分实例的所有权限策略
 如果您希望禁止用户拥有特定 PostgreSQL 部分实例的操作权限，可将以下策略关联到该用户。具体操作步骤如下：
 1. 根据 [策略](https://intl.cloud.tencent.com/document/product/598/10601)，创建一个自定义策略。
-   该示例策略禁止用户拥有对实例（ID 为 postgres-c8d1caa4 和 postgres-d8d1cbb4）的操作权限，策略内容可参考以下策略语法进行设置：
+   该示例策略禁止用户拥有对实例（ID 为 postgres-c8xxxa4 和 postgres-d8xxxb4）的操作权限，策略内容可参考以下策略语法进行设置：
 ```
 {
     "version": "2.0",
@@ -86,8 +86,8 @@
         {
             "action": "postgres:*",
             "resource": [
-						"qcs::postgres::16xxx472:DBinstanceId/postgres-c8d1caa4",
-						"qcs::postgres::16xxx472:DBinstanceId/postgres-d8d1cbb4",
+						"qcs::postgres::16xxx472:DBinstanceId/postgres-c8xxxa4",
+						"qcs::postgres::16xxx472:DBinstanceId/postgres-d8xxxb4",
 						],
             "effect": "deny"
         }
