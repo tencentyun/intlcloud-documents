@@ -1,16 +1,16 @@
-# 1. **INTRODUCTION**
+## 1. **INTRODUCTION**
 
 This Module applies if you use Tencent Cloud Elastic Microservice (“**Feature**”). This Module is incorporated into the privacy policy located at https://intl.cloud.tencent.com/document/product/301/17345 (“**Privacy Policy**”). Terms used but not defined in this Module shall have the meaning given to them in the Privacy Policy. In the event of any conflict between the Privacy Policy and this Module, this Module shall apply to the extent of the inconsistency.
 
-# 2. **CONTROLLERSHIP**
+## 2. **CONTROLLERSHIP**
 
 The controller of the personal information described in this Module is as specified in the Privacy Policy.
 
-# 3. **AVAILABLITY**
+## 3. **AVAILABLITY**
 
 This Feature is available to users globally but primarily intended for users located in the same country/region as the selected service region for optimal performance.
 
-# 4. **HOW WE USE PERSONAL INFORMATION**
+## 4. **HOW WE USE PERSONAL INFORMATION**
 
 We will use the information in the following ways and in accordance with the following legal basis:
 
@@ -20,11 +20,11 @@ We will use the information in the following ways and in accordance with the fol
 
  
 
-# 5. **HOW WE SHARE AND STORE PERSONAL INFORMATION**
+## 5. **HOW WE SHARE AND STORE PERSONAL INFORMATION**
 
 As specified in the Privacy Policy.
 
-# 6. **DATA RETENTION**
+## 6. **DATA RETENTION**
 
 We will retain personal information in accordance with the following:
 
