@@ -3,7 +3,7 @@
 <span id="step0"></span>
 ## 준비 과정
 
-1. [Tencent Cloud 계정](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fproduct%2Flvb)을 생성하고 [실명 인증](https://intl.cloud.tencent.com/document/product/378/3629)을 완료하십시오.
+1. [Tencent Cloud 계정](https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2Fproduct%2Flvb)을 생성하고 [실명 인증](https://intl.cloud.tencent.com/document/product/378/3629)을 완료하십시오.실명인증을 하지 않은 사용자는 중국에서 클라우드 라이브 인스턴스를 구매할 수 없습니다.
 2. [Tencent Cloud CSS 라이브 방송 서비스 활성화 페이지](https://console.cloud.tencent.com/live?from=product-banner-use-lvb)에서 <Tencent Cloud 서비스 약관>에 체크하여 동의하고 [활성화 신청]을 클릭하면 CSS 서비스가 활성화됩니다.
 
 <span id="step1"></span>
@@ -36,7 +36,7 @@ CSS 서비스 이용 시 **푸시 스트리밍 도메인**과 **재생 도메인
 <span id="step2"></span>
 ## 2단계: 푸시 스트리밍 주소 가져오기
 
-1. 콘솔에서 [CSS Toolkit]>[[Address Generator]](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)를 선택해 푸시 스트리밍 주소를 생성하십시오.
+1. 콘솔에서 [CSS Toolkit]>[[Address Generator]](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator)를 선택.
 2. 주소 생성기 페이지에서 다음과 같이 설정하십시오.
    1. 생성 유형: **푸시 스트리밍 도메인**을 선택합니다.
    2. 도메인 관리에 추가된 푸시 스트리밍 도메인을 선택합니다.
