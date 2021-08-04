@@ -69,6 +69,7 @@ The following Modules shall apply and be incorporated by reference into this DPS
 9.[Tencent Cloud MediaPackage](https://intl.cloud.tencent.com/document/product/1063/38992).
 10.[Tencent Cloud Conference](https://intl.cloud.tencent.com/document/product/1023/40236).
 11.[Cloud Native Database TDSQL-C](https://intl.cloud.tencent.com/document/product/1098/41227).
+12.[Tencent Cloud Elastic Microservice](https://intl.cloud.tencent.com/document/product/1094/41576)
 
 ## Jurisdiction-specific Requirements
 
