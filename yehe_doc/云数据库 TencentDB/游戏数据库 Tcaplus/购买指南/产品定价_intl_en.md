@@ -64,14 +64,14 @@ The Self-deployed Cluster Edition adopts the pay-as-you-go billing mode. Daily f
 ### Pricing
 | Region| Access Layer (USD/layer/day) | One-Primary-One-Secondary T1 Standard Instance at Storage Layer (USD/instance/day) |
 |---------|---------|---------|
-| Chinese mainland| 0.5 |64.28571429 |
-|   Virginia (Eastern US)  |0.66| 81.07696089 |
-|   Silicon Valley (Western US)  |0.66| 88.18275585 |
-|Frankfurt (German)| 0.86285714 | 95.78907542 |
-|  Singapore | 0.75714286 | 94.16675515 |
-|   Hong Kong (China)  | 0.78571429 |89.03530518 |
-|   Japan  | 0.86285714 | 91.75491703 |
-|Seoul |0.86285714|86.76899551|
+| Chinese mainland| 0.51 | 65.22 |
+|   Virginia (Eastern US)  |1.52| 220.58 |
+|   Silicon Valley (Western US)  |1.57| 224.49 |
+|Frankfurt (German)| 1.57 | 224.49 |
+|  Singapore |1.89 | 224.49 |
+|   Hong Kong (China)  | 1.89 |226.38 |
+|   Japan  | 1.76 | 226.38 |
+|Seoul | 1.76 |222.03 |
 
 ### Billing sample
 Assume that you create a self-deployed cluster in the Shanghai region. The cluster has four access layers and two storage layers (i.e., two one-primary-one-secondary T1 standard instances).
