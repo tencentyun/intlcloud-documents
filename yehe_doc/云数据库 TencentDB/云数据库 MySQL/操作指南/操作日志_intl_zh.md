@@ -1,7 +1,7 @@
 ## 操作场景
 超过指定时间的 SQL 语句查询称为“慢查询”，对应语句称为“慢查询语句”，数据库管理员（DBA）对慢查询语句进行分析并找到慢查询出现原因的过程称为“慢查询分析”。
 
-您可以在控制台的操作日志页面查看实例的慢日志明细、错误日志明细、回档日志，及下载慢日志。也可以在命令行界面（CLI）或者使用云数据库 API 查看、下载数据库日志，请参见 [查询慢查询日志](https://intl.cloud.tencent.com/document/product/236/15845) 与 [查询二进制日志](https://intl.cloud.tencent.com/zh/document/product/236/15843)。
+您可以在控制台的操作日志页面查看实例的慢日志明细、错误日志明细、回档日志，及下载慢日志。也可以在命令行界面（CLI）或者使用云数据库 API 查看、下载数据库日志，请参见 [查询慢查询日志](https://intl.cloud.tencent.com/document/product/236/15845) 与 [查询二进制日志](https://intl.cloud.tencent.com/document/product/236/15843)。
 
 >?云数据库 MySQL（不含单节点 - 基础型）实例支持操作日志管理功能。
 >
@@ -13,7 +13,7 @@
 
 
 ## 操作步骤
-1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名或“操作”列的【管理】，进入实例管理页面。
+1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例 ID 或“操作”列的【管理】，进入实例管理页面。
 2. 在实例管理页面，选择【操作日志】页，可选择查看实例的慢日志明细、错误日志明细、回档日志，及下载慢日志。
 <table>
 <thead><tr><th>功能项</th><th>说明</th></tr></thead>
@@ -22,7 +22,7 @@
 <tr>
 <td>慢日志下载</td><td>提供慢日志的下载</td></tr>
 <tr>
-<td>错误日志明细</td><td>记录数据库运行出错的日志</td></tr>
+<td>错误日志明细</td><td>记录了每次启动和关闭的详细信息，以及运行过程中所有较为严重的警告和错误信息</td></tr>
 <tr>
 <td>回档日志</td><td>记录回档任务的运行状态和进展</td></tr>
 </tbody></table>

@@ -6,22 +6,23 @@ Binlog grows fast when a TencentDB for MySQL instance executes large transaction
 ![](https://main.qcloudimg.com/raw/bcf3d0d2ac291ccebbcfebea05fd11f1.png)
 
 ## Overview
-Before being uploaded to COS, binlog files are stored on the instance disk (i.e., locally). You can set the local binlog retention period, control the maximum percentage of disk space binlog can take up, or expand disk space in the console. We recommend that you clear data no longer used to keep the disk utilization below 80%.
-- MySQL’s data synchronization is based on binlog. To ensure database restorability, stability, and high availability, binlog cannot be disabled in TencentDB for MySQL.
-- The generated binlog files are automatically backed up to COS via the [automatic backup feature](https://intl.cloud.tencent.com/document/product/236/37796) provided by TencentDB for MySQL. The binlog files whose backups are already uploaded to COS will be cleared according the local binlog retention policy. To prevent exceptions, the binlog files in use cannot be cleared even upon expiration. Therefore, the local binlog clearing has a delay.
+Before being uploaded to COS, binlog files are stored on the instance disk (i.e., locally). You can set the local binlog retention period, control the maximum percentage of disk space binlog can take up, or expand disk space in the console. We recommend you clear data no longer used to keep the disk utilization below 80%.
+- MySQL's data sync is based on binlog. To ensure database restorability, stability, and high availability, binlog cannot be disabled in TencentDB for MySQL.
+- The generated binlog files are automatically backed up to COS through the [automatic backup feature](https://intl.cloud.tencent.com/document/product/236/37796) provided by TencentDB for MySQL. The binlog files whose backups are already uploaded to COS will be cleared according the local binlog retention policy. To prevent exceptions, the binlog files in use cannot be cleared even they expire. Therefore, the local binlog clearing has a delay.
+>?Rule for clearing expired binlog files:
+>The local binlog files are checked once every 60 seconds. If a binlog file's start time or space usage does not meet the set retention rule, it will be added to the queue of to-be-deleted files. The binlog files in the queue will be sorted by time and deleted starting from the oldest file one by one until the queue is cleared.
 
 ## Directions
-1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID/name in the instance list, and access the instance management page.
-2. On the **Backup and Restore** page, click **Configure Local Binlog**.
-3. In the pop-up dialog box, specify the retention period and space utilization threshold, and click **OK**.
-
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) and click an instance ID in the instance list to enter the instance management page.
+2. On the instance management page, select the **Backup and Restoration** tab and click **Configure Local Binlog**.
+3. In the pop-up window, specify the retention period and space utilization threshold and click **OK**.
 
 ## FAQs
 #### Will database restoration be affected if the local binlog retention period is too short?
-No. Because the generated binlog files will be uploaded to COS via the automatic backup feature as soon as possible and those not uploaded yet cannot be cleared. However, the speed of rollback will be affected if the retention period is too short.
+No, because the generated binlog files will be uploaded to COS through the automatic backup feature as soon as possible, and those not uploaded yet cannot be cleared. However, too short a retention period will affect the speed of rollback.
 
 #### What is the default retention policy for local binlog?
-By default, the local binlog retention period is 120 hours, the maximum binlog space utilization is 30%.
+By default, the local binlog retention period is 120 hours, and the maximum binlog space utilization is 30%.
 
 #### Will binlog files take up the instance disk space?
-Yes. The binlog files are stored on the instance disk before they are uploaded to COS and cleared according to the retention policy.
+Yes. Before the binlog files are uploaded to COS and cleared according to the retention policy, they will be stored on the instance disk.
