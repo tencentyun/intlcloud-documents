@@ -17,7 +17,7 @@ iOS and Android devices
 Log in to the instance from the mobile device you are using:
 
 <dx-tabs>
-::: iOS device
+::: iOS\sdevice
 1. Download the Termius-SSH client from the App Store, and register as instructed.
 2. Tap **New Host** on the home screen.
 3. Access the **New Host** page and configure the login information as follows:
@@ -32,7 +32,7 @@ Log in to the instance from the mobile device you are using:
 6. Login succeeds if you see the following.
 ![](https://main.qcloudimg.com/raw/54a7fde256f500b32a2b0753c0966b2d.jpg)
 :::
-::: Android device
+::: Android\sdevice
 #### Creating an identity[](id:newAuthentication)
 1. Download and install JuiceSSH.
 2. From the home screen, tap **Connections** to reach the **Identities** tab.
