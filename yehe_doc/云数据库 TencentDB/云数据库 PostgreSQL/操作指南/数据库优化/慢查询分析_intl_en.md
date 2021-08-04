@@ -8,7 +8,7 @@ You can log in to the [TencentDB for PostgreSQL console](https://console.cloud.t
 
 ### Default settings of slow log analysis
 - **Slow log feature**: enabled by default.
-- **log_min_duration_statement**: slow query statements that have been executed for more than `log_min_duration_statement` seconds will be logged. Default value: `1`. To modify this parameter, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) with the instance ID and the desired value.
+- **log_min_duration_statement**: slow query statements that have been executed for more than `log_min_duration_statement` seconds will be logged. Default value: `1`.
 - **Analyzed data output delay**: 1–5 minutes.
 - **Log retention period**: 7 days (up to the last 10,000 records).
 
