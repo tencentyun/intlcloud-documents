@@ -189,7 +189,7 @@ https://live.tencentcloudapi.com/?Action=CancelCommonMixStream
 
 
 ## 에러 코드
-클라우드 혼합 스트림 API 3.0 인터페이스에서 자주 발생하는 에러 코드 대부분은 이미 [API 3.0 에러 코드](https://intl.cloud.tencent.com/document/product/267/35997#6.-.E9.94.99.E8.AF.AF.E7.A0.81) 스타일에 마이그레이션되었습니다. 그러나 일부 커버되지 않는 에러 코드가 여전히 존재하며, 해당 에러 코드는 InvalidParameter 에러로 표시되어 Message에 `err_code [ $code ],msg [ $message ]` 형식으로 제공됩니다. 해당 code의 자세한 원인은 다음과 같습니다.
+클라우드 혼합 스트림 API 3.0 인터페이스에서 자주 발생하는 에러 코드 대부분은 이미 [API 3.0 에러 코드](https://intl.cloud.tencent.com/document/product/267/35997#6.-.E9.94.99.E8.AF.AF.E7.A0.81) 스타일에 마이그레이션 되었습니다. 그러나 일부 커버되지 않는 에러 코드가 여전히 존재하며, 해당 에러 코드는 InvalidParameter 에러로 표시되어 Message에 `err_code [ $code ],msg [ $message ]` 형식으로 제공됩니다. 해당 code의 자세한 원인은 다음과 같습니다.
 
 <table>
 <thead><tr><th>에러 코드</th><th>원인</th><th>권장 진단 방법</th></tr></thead>
