@@ -18,10 +18,10 @@ Suppose that:
 ![](https://main.qcloudimg.com/raw/445d5cf9dccc8c4c822faf71610f435b.png)
 5. Associate the `QcloudCDBFullAccess` policy with the sub-account `DevB` as instructed in steps 2 and 3.
 6. After the authorization is successful, the sub-account `DevA` has all the operation permissions of CVM instances, while the sub-account `DevB` has all the operation permissions of TencentDB for MySQL instances.
->?If you need to configure a CAM user as another role, you can follow the above process and search for and select the corresponding permissions policy name in steps 2 and 3. For specific permissions, please see [System Permissions](#System Permissions)
+>?If you need to configure a CAM user as another role, you can follow the above process and search for and select the corresponding permissions policy name in steps 2 and 3. For specific permissions, please see [System Permissions](#System-Permissions)
 
-[](id:System Permissions)
 
+<span id="System-Permissions"></span>
 ## System Permissions
 
 <table>
@@ -32,10 +32,7 @@ Suppose that:
 <td>Financial admin</td>
 <td>QCloudFinanceFullAccess</td><td>This policy allows you to manage related financial information under the account, such as payment and invoicing.</td>
 </tr><tr>
-<td rowspan="5">Database admin</td>
-<td>QCloudFinanceFullAccess</td><td>This policy allows you to manage related financial information under the account, such as payment and invoicing.</td>
-</tr>
-<tr>
+<td rowspan="4">Database admin</td>
 		<td>QcloudCynosDBFullAccess</td>
 		<td>Full access to TDSQL-C</td>
 	</tr>
@@ -69,18 +66,13 @@ Suppose that:
 		<td>Full access to Direct Connect
 </td>
 	</tr>
-<td rowspan="3">Monitoring admin</td>
+<td rowspan="2">Monitoring admin</td>
 <td>QcloudMonitorFullAccess</td><td>Full access to Cloud Monitor, including the permission to view user groups
 </td>
 </tr>
 <tr>
 		<td>QcloudCATFullAccess</td>
 		<td>Full access to CAT</td>
-	</tr>
-  <tr>
-		<td>QcloudTAPMFullAccess</td>
-		<td>Full access to TAPM
-</td>
 	</tr>
 </table>
 
