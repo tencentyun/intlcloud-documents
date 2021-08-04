@@ -1,32 +1,32 @@
-This document describes how to use Tencent Cloud Advisor on the console.
+This document describes how to quickly use Advisor in the console.
 
-### Step 1: Logging in to the console
+## Step 1 Log in to the console
 
-Log in to the [Tencent Cloud Advisor Console](https://console.qcloud.com/advisor).
->?If you do not have an account, please see [Account Signing Up](https://www.qcloud.com/document/product/378/8415).
+Log in to the [Advisor console](https://console.qcloud.com/advisor).
+>?If you don't have an account yet, please sign up as instructed in [Signing up for a Tencent Cloud Account](https://www.qcloud.com/document/product/378/8415).
 
-### Step 1: Authorization
+## Step 2 Authorize
 
-If this is your first time using Advisor, you need to grant permissions to Advisor so that it can access the Tencent Cloud service configurations. You can go to **Settings** > [Authorization](https://console.qcloud.com/advisor/auth) and enable authorization.
+If this is your first time using Advisor, you need to grant permissions to Advisor, so that it can access the Tencent Cloud service configurations. You can go to the [Service Authorization](https://console.qcloud.com/advisor/auth) page to enable service authorization.
 
-### Step 1: 
+## Step 3 Start assessment
 
-After the authorization, click [Start Assessing](https://console.qcloud.com/advisor) on the Advisor Console.
+After successful authorization, click [Resource Assessment](https://console.qcloud.com/advisor) in the Advisor console to start assessing cloud resources.
 
-### Step 1: 
+## Step 4 View the assessment results
 
-一次评估操作根据云资源规模大小和风险项的多少，预计需要花费数十秒至数十分钟不等的时间，页面会动态刷新评估结果，直到评估完成。
+One assessment operation may take dozens of seconds to minutes subject to the cloud resource size and number of risky items. The assessment result is dynamically refreshed on the page until the assessment is completed.
 
-Overview:__BLANK__ - **Overview**: assessment results of all assessment items
-- Security - **Security**: assessment results of items in the **Security** category.
-## Reliability - **Reliability**: assessment results of items in the **Reliability** category.
-- 服务限制： 按照「服务限制」分类统计并展现评估项目结果。
-- 成本： 按照「成本」分类统计并展现评估项目结果。
-during peak hours of business. 
+- Overview: Assessment results of all assessment items
+- Security: Assessment results of items in the **security** category.
+- Reliability: Assessment results of items in the **reliability** category.
+- Service restriction: Assessment results of items in the **service restriction** category.
+- Cost: Assessment results of items in the **cost** category.
+- Performance: Assessment results of items in the **performance** category.
 
-### Step 1: 
-在腾讯云顾问控制台页面中的 [报告订阅](https://console.cloud.tencent.com/advisor/subscribe) 页面开启订阅功能，系统会定期将最新的云顾问评估结果发送到指定邮箱中。
+## Step 5 Subscribe to reports (optional)
+You can enable subscription on the [Report Subscription](https://console.cloud.tencent.com/advisor/subscribe) page in the Advisor console, and the system will periodically send latest assessment results to the specified email address.
 
 
-### Step 1: 
-如果您需要腾讯云技术专家为您解读报告，可以在腾讯云顾问控制台页面中的 [服务授权](https://console.cloud.tencent.com/advisor/subscribe) 页面开启报告解读，授权腾讯云专家架构师读取评估报告内容，对报告内容进行专业的解读，并提供系统的优化建议。
+## Step 6 Analyze reports (optional)
+If you want Tencent Cloud technical experts to analyze reports for you, you can enable report analysis on the [Service Authorization](https://console.cloud.tencent.com/advisor/subscribe) page in the Advisor console, so that Tencent Cloud expert architects can read and analyze assessment reports and provide system optimization suggestions.

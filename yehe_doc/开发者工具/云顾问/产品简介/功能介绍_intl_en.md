@@ -1,406 +1,406 @@
-云顾问的巡检项包含五个维度： 安全、可靠、服务限制、成本、性能
+Advisor inspection items are divided into five dimensions: Security, reliability, service restriction, cost, and performance
 
-#### Security
+### Security
 
-通过建议您启用腾讯云安全功能以及检查权限，提高系统和业务的安全性。
+We recommend you enable the Tencent Cloud security features and inspection permissions to improve the system and business security.
 
 <table>
    <tr>
-      <td>产品</td>
-      <td>巡检项</td>
-      <td>巡检说明</td>
+      <td>Service</td>
+      <td>Inspection Item</td>
+      <td>Description</td>
    </tr>
    <tr>
-      <td rowspan="4">DDOS 防护（ANTIDDOS)</td>
-      <td>DDOS 防护（ANTIDDOS）被封堵的公网 IP 检查</td>
-      <td>检查是否有公网 IP（EIP）因 DDOS 攻击被封堵</td>
+      <td rowspan="4">Anti-DDoS</td>
+      <td>Blocked EIPs</td>
+      <td>Check whether there are any EIPs blocked due to DDoS attacks</td>
    </tr>
    <tr>
-      <td>DDOS 防护（ANTIDDOS）可用 IP 黑洞解封次数检查</td>
-      <td>检查黑洞解封次数使用占比是否过大</td>
+      <td>Available IP blackhole unblockings</td>
+      <td>Check whether the proportion of used blackhole unblockings is excessive</td>
    </tr>
    <tr>
-      <td>DDOS 防护（ANTIDDOS）CC 防护状态检查</td>
-      <td>检查类型为 CVM、CLB、NAT 的实例是否开启 CC 防护</td>
+      <td>CC protection status</td>
+      <td>Check whether CC protection is enabled for CVM, CLB, and NAT instances</td>
    </tr>
    <tr>
-      <td>DDOS 防护（ANTIDDOS）DDOS 防护状态检查</td>
-      <td>检查类型为 CVM、CLB、NAT 的实例是否开启 DDOS 防护</td>
+      <td>DDoS protection status</td>
+      <td>Check whether DDoS protection is enabled for CVM, CLB, and NAT instances</td>
    </tr>
    <tr>
-      <td  rowspan=2>COS</td>
-      <td>对象存储（COS）存储桶 CORS 配置</td>
-      <td>检查存储桶 CORS 配置， 若未配置 CORS Allow-Headers/Expose-Headers 头部，则告警</td>
+      <td rowspan="6">COS</td>
+      <td>CORS configuration of buckets</td>
+      <td>Check the CORS configuration of buckets. If the `CORS Allow-Headers/Expose-Headers` header is not configured, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>对象存储（COS）存储桶防盗链（Referer） 配置</td>
-      <td>检查 COS 存储桶 Referer 配置，若未配置或者配置了空 Referer 访问规则，则告警</td>
+      <td>Referer hotlink protection configuration of buckets</td>
+      <td>Check the referer configuration of COS buckets. If the referer is not configured or an empty referer access rule is configured, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>对象存储（COS）存储桶防盗链（Referer） 配置</td>
-      <td>检查 COS 存储桶 Referer 配置，若未配置或者配置了空 Referer 访问规则，则告警</td>
+      <td>Referer hotlink protection configuration of buckets</td>
+      <td>Check the referer configuration of COS buckets. If the referer is not configured or an empty referer access rule is configured, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>对象存储（COS）存储桶公有读写</td>
-      <td>检查 COS 存储桶公有读写权限，若设置了公有读写权限，则会告警</td>
+      <td>Public read/write permissions of buckets</td>
+      <td>Check the public read/write permissions of COS buckets. If the public read/write permissions are set, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>COS sub-account access permission not set</td>
-      <td>检查 COS 存储桶账号配置，若未设置子账号访问权限，则告警</td>
+      <td>Sub-account access permission not set</td>
+      <td>Check the account configuration of COS buckets. If the sub-account access permission is not set, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>COS sub-account access permission not restricted</td>
-      <td>检查 COS 存储桶子账号权限范围，若具有完全控制（COS_ACL_FULL），则会告警</td>
+      <td>Sub-account access permission not restricted</td>
+      <td>Check the sub-account permission scope of COS buckets. If a sub-account has full access (COS_ACL_FULL), an alarm will be triggered</td>
    </tr>
    <tr>
-      <td  rowspan=2>Elasticsearch Service</td>
-      <td>Elasticsearch public access not restricted</td>
-      <td>检查 ES 集群的 Elasticsearch 组件公网访问策略，若未配置任何限制，则告警</td>
+      <td rowspan="2">ES</td>
+      <td>Elasticsearch component's public network access policy of clusters</td>
+      <td>Check the Elasticsearch component's public network access policy of ES clusters. If no restrictions are configured, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>ES 集群的 Kibana 组件公网访问策略</td>
-      <td>检查 ES 集群的 Kibana 组件公网访问策略，若未配置任何限制，则告警</td>
+      <td>Kibana component's public network access policy of clusters</td>
+      <td>Check the Kibana component's public network access policy of ES clusters. If no restrictions are configured, an alarm will be triggered</td>
    </tr>
    <tr>
       <td>CDN</td>
-      <td>内容分发网络（内容分发网络（CDN)）IP 访问限频</td>
-      <td>检测 内容分发网络（CDN) IP 访问限频配置，若业务经常出现恶意用户盗刷，建议开启</td>
+      <td>IP access frequency limit</td>
+      <td>Check the IP access frequency limit configuration in CDN. If there are frequent hotlinkings by malicious users, we recommend you enable the limit</td>
    </tr>
    <tr>
-      <td>云防火墙（CFW）</td>
-      <td>云防火墙（CFW）资源防护检查</td>
-      <td>检查云防火墙防护策略，若资源类型为 CVM/NAT/VPN/CLB 的实例未开启，则告警</td>
+      <td>CFW</td>
+      <td>Resource protection</td>
+      <td>Check the CFW protection policy. If it is not enabled for CVM, NAT, VPN, or CLB instances, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td rowspan=3>CVM</td>
-      <td>CVM public login not restricted</td>
-      <td>检查 CVM 公网访问安全策略，若 CVM 配置了公网 IP，且放通了登录端口访问权限，则会告警</td>
+      <td rowspan="3">CVM</td>
+      <td>Public login not restricted</td>
+      <td>Check the CVM public network access policy. If a public IP is configured for CVM and access to the login port is opened, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>CVM public access not restricted</td>
-      <td>检查 CVM 公网访问安全策略，若 CVM 配置了公网 IP，且安全组放通了对所有 IP 和 Port 的访问权限，则会告警</td>
+      <td>Public access not restricted</td>
+      <td>Check the CVM public network access policy. If a public IP is configured for CVM and access from all IPs and ports are opened in the security group, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>CVM public network ports with high risks enabled</td>
-      <td>检查 CVM 公网访问安全策略，若 CVM 配置了公网 IP，且放通了高危端口访问权限，则会告警</td>
+      <td>Public network ports with high risks enabled</td>
+      <td>Check the CVM public network access policy. If a public IP is configured for CVM and access to a high-risk port is opened, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td  rowspan=2>TencentDB for MySQL</td>
-      <td>云数据库（MySQL）非 root 账号高危命令限制</td>
-      <td>检查 MySQL 非 root 账号权限范围，若拥有高危命令权限，则会告警</td>
+      <td rowspan="3">TencentDB for MySQL</td>
+      <td>Restriction of high-risk commands for non-root accounts</td>
+      <td>Check the permission scope of TencentDB for MySQL non-root accounts. If a non-root account has permission to run high-risk commands, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>云数据库（MySQL）公网安全策略检查</td>
-      <td>检查 MySQL 公网安全策略，若开放公网访问且没有配置安全组规则，则告警</td>
+      <td>Public network security policy</td>
+      <td>Check the public network security policy in TencentDB for MySQL. If public network access is enabled, but no security group rules are configured, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>Root account security of TencentDB for MySQL</td>
-      <td>检查 MySQL 账号配置，若只存在 root 账号，则会告警</td>
+      <td>Root account security</td>
+      <td>Check the account configuration of TencentDB for MySQL instances. If only the root account exists, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td  rowspan=2>TencentDB for Redis</td>
-      <td>High-risk commands of TencentDB for Redis not disabled</td>
-      <td>检查 Redis 实例禁用命令配置，若高危命令未禁用，则告警</td>
+      <td rowspan="2">TencentDB for Redis</td>
+      <td>High-Risk commands</td>
+      <td>Check the disabled command configuration of TencentDB for Redis instances. If a high-risk command is not disabled, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>Default account security of TencentDB for Redis</td>
-      <td>检查 Redis 账号配置，若只存在默认账号，则告警</td>
+      <td>Default account security</td>
+      <td>Check the account configuration of TencentDB for Redis instances. If only the default account exists, an alarm will be triggered</td>
    </tr>
 </table>
 
-## Reliability
+### Reliability
 
-通过多方位监控，维护实例的运行稳定性。
+Multidimensional monitoring is supported to keep instances running stably.
 
 <table>
    <tr>
-      <td>产品</td>
-      <td>巡检项</td>
-      <td>巡检说明</td>
+      <td>Service</td>
+      <td>Inspection Item</td>
+      <td>Description</td>
    </tr>
    <tr>
-      <td rowspan="2">Access Management</td>
-      <td>访问管理（CAM）账号是否绑定MFA设备</td>
-      <td>判断账号是否绑定MFA</td>
+      <td rowspan="2">CAM</td>
+      <td>Account-MFA device binding</td>
+      <td>Check whether an account is bound to an MFA device</td>
    </tr>
    <tr>
-      <td>访问管理（CAM）是否开启账号保护功能</td>
-      <td>判断登录操作保护、敏感操作保护、异地登录保护等功能是否开启</td>
+      <td>Account protection enablement</td>
+      <td>Check whether features such as login protection, sensitive operation protection, and remote login protection are enabled</td>
    </tr>
    <tr>
-      <td rowspan="2">云硬盘（CBS）</td>
-      <td>CBS storage capacity</td>
-      <td>检查云硬盘（CBS）的存储容量使用情况，若已使用容量占总容量比率过高，则发出警告</td>
+      <td rowspan="2">CBS</td>
+      <td>Storage capacity</td>
+      <td>Check the storage capacity usage of CBS cloud disks. If the capacity utilization is excessive, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>CBS storage capacity</td>
-      <td>检查云硬盘（CBS）的存储容量使用情况，若已使用容量占总容量比率过高，则发出警告</td>
+      <td>Storage capacity</td>
+      <td>Check the storage capacity usage of CBS cloud disks. If the capacity utilization is excessive, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td  rowspan=2>COS</td>
-      <td>COS bucket versioning</td>
-      <td>检查 COS 存储桶的版本控制配置，若未启用，则告警</td>
+      <td rowspan="2">COS</td>
+      <td>Bucket versioning</td>
+      <td>Check the versioning configuration of COS buckets. If it is not enabled, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>对象存储（COS）存储桶日志管理配置</td>
-      <td>检查 COS 存储桶日志管理功能，若未配置，则告警</td>
+      <td>Log management configuration of buckets</td>
+      <td>Check the log management feature of COS buckets. If it is not configured, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td rowspan=3>CVM</td>
-      <td>System disk snapshot of CVM</td>
-      <td>检查 CVM 系统盘快照，若未创建快照，则告警</td>
+      <td rowspan="4">CVM</td>
+      <td>System disk snapshot</td>
+      <td>Check CVM system disk snapshots. If no snapshots are created, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>云服务器（CVM）实例磁盘空间使用率过高</td>
-      <td>检查 CVM 实例磁盘使用情况，若使用率过高，则告警</td>
+      <td>Excessive instance disk space utilization</td>
+      <td>Check the disk utilization of CVM instances. If the utilization is excessive, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>云服务器（CVM）实例本地盘类型检查</td>
-      <td>检查 CVM 实例使用本地盘的情况，若实例为非 IO 或大数据类型，且使用了本地盘，则告警</td>
+      <td>Instance local disk type</td>
+      <td>Check the local disk usage of CVM instances. If an instance is not an I/O or Big Data model but uses a local disk, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>云服务器（CVM）带宽利用率过高</td>
-      <td>检查 CVM 实例带宽利用率情况，若带宽利用率过高，则告警</td>
+      <td>Excessive bandwidth utilization</td>
+      <td>Check the bandwidth utilization of CVM instances. If the utilization is excessive, an alarm will be triggered</td>
    </tr>
    <tr>
       <td>Anti-DDoS</td>
-      <td>DDOS 防护（ANTIDDOS）L7 转发规则健康检查</td>
-      <td>检查当前7层转发规则健康检查是否存在异常</td>
+      <td>Layer-7 forwarding rule health check</td>
+      <td>Check whether any exceptions exist in the health check of current layer-7 forwarding rules</td>
    </tr>
    <tr>
-      <td>Elasticseach Service</td>
-      <td>Automatic snapshot backup of ES cluster</td>
-      <td>检查 Elasticsearch Service 集群自动快照备份配置，若未配置，则告警</td>
+      <td>ES</td>
+      <td>Automatic snapshot backup of clusters</td>
+      <td>Check the automatic snapshot backup configuration of ES clusters. If backup is not configured, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>TencentDB for MongoDB instance expired</td>
-      <td>云数据库（MongoDB）oplog 保存时间</td>
-      <td>检查 MongoDB oplog 保存时间，若保存时间过短，则告警</td>
+      <td>TencentDB for MongoDB</td>
+      <td>Oplog retention duration</td>
+      <td>Check the oplog retention duration of TencentDB for MongoDB instances. If it is too short, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td  rowspan=2>TencentDB for MySQL</td>
-      <td>Automatic backup of TencentDB for MySQL</td>
-      <td>检查 MySQL 实例自动备份配置，若未开启，则告警</td>
+      <td rowspan="4">TencentDB for MySQL</td>
+      <td>Automatic backup</td>
+      <td>Check the automatic backup configuration of TencentDB for MySQL instances. If backup is not enabled, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>Cross-region disaster recovery of TencentDB for MySQL</td>
-      <td>检查 MySQL 灾备实例的配置，若未配置，则告警</td>
+      <td>Cross-Region disaster recovery</td>
+      <td>Check the disaster recovery instance configuration of TencentDB for MySQL instances. If no such instances are configured, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>Automatic backup of TencentDB for MySQL</td>
-      <td>检查 MySQL 主从延迟情况，若延迟过高，则告警</td>
+      <td>Source-Replica delay</td>
+      <td>Check the source-replica delay of TencentDB for MySQL instances. If the delay is excessive, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>云数据库（MySQL）跨可用区部署</td>
-      <td>检查 MySQL 是否跨可用区部署，如果实例没有跨可用区部署，则告警</td>
+      <td>Cross-AZ deployment</td>
+      <td>Check whether TencentDB for MySQL instances are deployed across AZs. If an instance is not deployed across AZs, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td  rowspan=2>TencentDB for Redis</td>
-      <td>Automatic backup of TencentDB for Redis</td>
-      <td>检查 Redis 实例自动备份配置，若未开启自动备份，则告警</td>
+      <td rowspan="2">TencentDB for Redis</td>
+      <td>Automatic backup</td>
+      <td>Check the automatic backup configuration of TencentDB for Redis instances. If automatic backup is not enabled, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>云数据库（Redis）跨可用区部署</td>
-      <td>检查 Redis 实例是否跨可用区部署，如果实例未跨可用区部署，则告警</td>
+      <td>Cross-AZ deployment</td>
+      <td>Check whether TencentDB for Redis instances are deployed across AZs. If an instance is not deployed across AZs, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td rowspan="3">消息队列（TDMQ）</td>
-      <td>消息队列（TDMQ）集群健康状态检查</td>
-      <td>检查 TDMQ 集群的健康状态</td>
+      <td rowspan="3">TDMQ</td>
+      <td>Cluster health check</td>
+      <td>Check the health status of TDMQ clusters</td>
    </tr>
    <tr>
-      <td>消息队列（TDMQ）备份消费者检查</td>
-      <td>检查 TDMQ 订阅是否有备份消费者</td>
+      <td>Backup consumer</td>
+      <td>Check whether TDMQ subscription has backup consumers</td>
    </tr>
    <tr>
-      <td>消息队列（TDMQ）死信队列检查</td>
-      <td>检查 TDMQ 命名空间下是否有死信队列</td>
+      <td>Dead letter queue</td>
+      <td>Check whether there are any dead letter queues under TDMQ namespaces</td>
    </tr>
    <tr>
-      <td  rowspan=2>TencentDB for MySQL</td>
-      <td>云数据库（TDSQL）主从延迟</td>
-      <td>检查 TDSQL 主从延迟情况，若主从延迟过高，则告警</td>
+      <td rowspan="2">TDSQL</td>
+      <td>Replica lag</td>
+      <td>Check the replica lag of TDSQL instances. If the lag is excessive, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>云数据库（TDSQL）主从延迟</td>
-      <td>检查 TDSQL 主从延迟情况，若主从延迟过高，则告警</td>
+      <td>Replica lag</td>
+      <td>Check the replica lag of TDSQL instances. If the lag is excessive, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td rowspan="3">容器服务（容器服务（TKE））</td>
-      <td>容器服务（容器服务（TKE））集群 Pod 分配率</td>
-      <td>检查 容器服务（TKE） 集群可创建最大 Pod 数量是否过低</td>
+      <td rowspan="3">TKE</td>
+      <td>Cluster pod assignment rate</td>
+      <td>Check whether the maximum number of pods that can be created in a TKE cluster is too small</td>
    </tr>
    <tr>
-      <td>容器服务（容器服务（TKE））集群节点跨可用区</td>
-      <td>检查 容器服务（TKE） 节点跨可用区情况</td>
+      <td>Cross-AZ cluster node deployment</td>
+      <td>Check whether TKE nodes are deployed across AZs</td>
    </tr>
    <tr>
-      <td>容器服务（容器服务（TKE））节点状态</td>
-      <td>检查 容器服务（TKE） 节点状态，若节点状态为 NotReady，则告警</td>
-   </tr>
-</table>
-
-
-Service limit
-
-通过监控可提供的服务资源的最大数量。 提醒您按照建议删除资源或请求增加配额。
-
-<table>
-   <tr>
-      <td>产品</td>
-      <td>巡检项</td>
-      <td>巡检说明</td>
-   </tr>
-   <tr>
-      <td>云防火墙（CFW）</td>
-      <td>云防火墙（CFW）规则配额检查</td>
-      <td>检查云防火墙规则列表配额，若配额不足，则告警</td>
-   </tr>
-   <tr>
-      <td  rowspan=2>TencentDB for MongoDB</td>
-      <td>TencentDB for MongoDB instance expired</td>
-      <td>检查 MongoDB 实例的到期情况，若类型为包年包月的实例即将到期，且未配置自动续费，则告警</td>
-   </tr>
-   <tr>
-      <td>Storage capacity of TencentDB for MongoDB</td>
-      <td>检查 MongoDB 存储容量的使用情况，若容量使用率较高，则告警</td>
-   </tr>
-   <tr>
-      <td  rowspan=2>TencentDB for MySQL</td>
-      <td>TencentDB for MySQL instance expired</td>
-      <td>检查 MySQL 实例的到期情况，若类型为包年包月的实例即将到期，且未配置自动续费，则告警</td>
-   </tr>
-   <tr>
-      <td>Automatic backup of TencentDB for MySQL</td>
-      <td>检查 MySQL 实例连接使用率情况，若连接使用率过高，则告警</td>
-   </tr>
-   <tr>
-      <td>Disk capacity of TencentDB for MySQL</td>
-      <td>检查 MySQL 实例磁盘使用率情况，若磁盘使用率过高，则告警</td>
-   </tr>
-   <tr>
-      <td>Automatic backup of TencentDB for Redis</td>
-      <td>TencentDB for Redis instance expired</td>
-      <td>检查 Redis 实例的到期情况，若类型为包年包月的实例即将到期，且未配置自动续费，则告警</td>
-   </tr>
-   <tr>
-      <td  rowspan=2>TencentDB for MySQL</td>
-      <td>云数据库（TDSQL）连接使用率</td>
-      <td>检查 TDSQL 连接使用情况，若使用率较高，则告警</td>
-   </tr>
-   <tr>
-      <td>云数据库（TDSQL）数据盘使用率</td>
-      <td>检查 TDSQL 数据盘使用情况，若使用率较高，则告警</td>
+      <td>Node status</td>
+      <td>Check the status of TKE nodes. If it is `NotReady`, an alarm will be triggered</td>
    </tr>
 </table>
 
 
-Low cost
+### Service restriction
 
-根据运行情况，给出性价比更高的配置建议，降低用户成本花费。
+Advisor can monitor the maximum number of available service resources to prompt you to delete resources or apply to increase the quota based on the suggestions.  
 
 <table>
    <tr>
-      <td>产品</td>
-      <td>巡检项</td>
-      <td>巡检说明</td>
+      <td>Service</td>
+      <td>Inspection Item</td>
+      <td>Description</td>
+   </tr>
+   <tr>
+      <td>CFW</td>
+      <td>Rule quota</td>
+      <td>Check the CFW rule list quota. If the quota is not sufficient, an alarm will be triggered</td>
+   </tr>
+   <tr>
+      <td rowspan="2">TencentDB for MongoDB</td>
+      <td>Instance expiration</td>
+      <td>Check whether TencentDB for MongoDB instances have expired. If a monthly subscribed instance is about to expire but auto-renewal is not configured, an alarm will be triggered</td>
+   </tr>
+   <tr>
+      <td>Storage capacity</td>
+      <td>Check the storage capacity utilization of TencentDB for MongoDB instances. If the utilization is excessive, an alarm will be triggered</td>
+   </tr>
+   <tr>
+      <td rowspan="3">TencentDB for MySQL</td>
+      <td>Instance expiration</td>
+      <td>Check whether TencentDB for MongoDB instances have expired. If a monthly subscribed instance is about to expire but auto-renewal is not configured, an alarm will be triggered</td>
+   </tr>
+   <tr>
+      <td>Connection utilization</td>
+      <td>Check the connection utilization of TencentDB for MySQL instances. If the utilization is excessive, an alarm will be triggered</td>
+   </tr>
+   <tr>
+      <td>Disk utilization</td>
+      <td>Check the disk utilization of TencentDB for MySQL instances. If the utilization is excessive, an alarm will be triggered</td>
+   </tr>
+   <tr>
+      <td>TencentDB for Redis</td>
+      <td>Instance expiration</td>
+      <td>Check whether TencentDB for Redis instances have expired. If a monthly subscribed instance is about to expire but auto-renewal is not configured, an alarm will be triggered</td>
+   </tr>
+   <tr>
+      <td rowspan="2">TDSQL</td>
+      <td>Connection utilization</td>
+      <td>Check the connection utilization of TDSQL instances. If the utilization is excessive, an alarm will be triggered</td>
+   </tr>
+   <tr>
+      <td>Data disk utilization</td>
+      <td>Check the data disk utilization of TDSQL instances. If the utilization is excessive, an alarm will be triggered</td>
+   </tr>
+</table>
+
+
+### Cost
+
+Advisor can provide suggestions for more cost-effective configurations based on the running status of resources to reduce the costs.
+
+<table>
+   <tr>
+      <td>Service</td>
+      <td>Inspection Item</td>
+      <td>Description</td>
    </tr>
    <tr>
       <td>CBS</td>
-      <td>云硬盘（CBS）未充分利用</td>
-      <td>检查云硬盘（CBS）的挂载状态及 IO 读写情况</td>
+      <td>Underutilization</td>
+      <td>Check the mounting and I/O status of CBS disks.</td>
    </tr>
    <tr>
-      <td  rowspan=2>COS</td>
-      <td>对象存储（COS）存储桶生命周期配置</td>
-      <td>检查 COS 存储桶生命周期规则，若未配置，则告警</td>
+      <td rowspan="2">COS</td>
+      <td>Bucket lifecycle configuration</td>
+      <td>Check the lifecycle rules of COS buckets. If no rules are configured, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>对象存储（COS）存储桶碎片检查</td>
-      <td>检查 COS 存储桶清理碎片规则，若未配置，则告警</td>
+      <td>Incomplete multipart uploads in buckets</td>
+      <td>Check the incomplete multipart upload clearing rules of COS buckets. If no rules are configured, an alarm will be triggered</td>
    </tr>
    <tr>
       <td>CVM</td>
-      <td>云服务器（CVM）计费模式检查</td>
-      <td>检查 CVM 实例是否长期（超过2个月）处于按量计费模式</td>
+      <td>Billing mode</td>
+      <td>Check whether CVM instances are in pay-as-you-go billing mode for a long period of time (more than 2 months)</td>
    </tr>
    <tr>
-      <td>弹性公网 IP（EIP）</td>
-      <td>弹性公网 IP（EIP）被闲置</td>
-      <td>检查 EIP 绑定情况，若 EIP 未绑定云资源（CVM 实例、NAT 网关、弹性网卡、高可用虚拟 IP 等），则告警</td>
+      <td>EIP</td>
+      <td>Idle EIPs</td>
+      <td>Check EIP binding information. If an EIP has not been bound to a cloud resource (CVM instance, NAT Gateway, EIP, or high-availability VIP), an alarm will be triggered</td>
    </tr>
 </table>
 
 ### Performance
 
-根据监控实例运行中的资源使用情况和最佳实践，为您提供改善性能的建议。
+Advisor provides performance improvement suggestions based on the resource usage monitored during instance operations and best practices.
 
 <table>
    <tr>
-      <td>产品</td>
-      <td>巡检项</td>
-      <td>巡检说明</td>
+      <td>Service</td>
+      <td>Inspection Item</td>
+      <td>Description</td>
    </tr>
    <tr>
-      <td rowspan="7">内容分发网络（CDN)</td>
-      <td>内容分发网络（内容分发网络（CDN)）单链接下行限速配置</td>
-      <td>检测内容分发网络（CDN) 单链接下行限速配置配置</td>
+      <td rowspan="7">CDN</td>
+      <td>Single-Link downstream speed limit configuration</td>
+      <td>Check the single-link downstream speed limit configuration in CDN</td>
    </tr>
    <tr>
-      <td>内容分发网络（内容分发网络（CDN)）源站特殊头部缓存配置</td>
-      <td>检测内容分发网络（CDN) 源站头部缓存配置</td>
+      <td>Special header caching configuration of origin servers</td>
+      <td>Check the header caching configuration of CDN origin servers</td>
    </tr>
    <tr>
-      <td>内容分发网络（内容分发网络（CDN)）带宽封顶配置</td>
-      <td>检查带宽封顶配置，若未关闭，则告警</td>
+      <td>Bandwidth cap configuration</td>
+      <td>Check the bandwidth cap configuration. If the cap is not disabled, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>内容分发网络（内容分发网络（CDN)）域名绑定证书到期</td>
-      <td>检查证书有效期，若小于一个月内，则告警</td>
+      <td>Expiration of certificate bound to domain names</td>
+      <td>Check the certificate validity period. If it will expire in one month, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>内容分发网络（内容分发网络（CDN)）缓存命中率</td>
-      <td>检查缓存命中率，若命中率过低，则告警</td>
+      <td>Cache hit rate</td>
+      <td>Check the cache hit rate. If it is too low, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>内容分发网络（内容分发网络（CDN)）错误状态码占比</td>
-      <td>检查错误状态码占比，若占比过高，则告警</td>
+      <td>Error code proportion</td>
+      <td>Check the error code proportion. If it is excessive, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>内容分发网络（内容分发网络（CDN)）备用源站</td>
-      <td>主源站不为 COS 的前提下，建议配置备用源站</td>
+      <td>Standby origin server</td>
+      <td>If the primary origin server does not use COS, we recommend you configure a standby origin server</td>
    </tr>
    <tr>
       <td>COS</td>
-      <td>对象存储（COS）5XX 错误率</td>
-      <td>检查 COS 状态码， 若 5XX 状态码出现次数过多、且出现频率占比过大，则告警</td>
+      <td>5xx error rate</td>
+      <td>Check COS status codes. If there are too many 5XX status codes with a high occurrence frequency, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td  rowspan=2>TencentDB for MongoDB</td>
-      <td>云数据库（MongoDB）Cache 脏数据</td>
-      <td>检查 MongoDB Cache 脏数据情况，若 Cache 脏数据百分比较高，则告警</td>
+      <td  rowspan="2">TencentDB for MongoDB</td>
+      <td>Dirty data in cache</td>
+      <td>Check the dirty data in TencentDB for MongoDB. If the cache dirty data has a high proportion, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>云数据库（MongoDB）CPU 使用率</td>
-      <td>检查 MongoDB CPU 使用率，若使用率较高，则告警</td>
+      <td>CPU utilization</td>
+      <td>Check the CPU utilization of TencentDB for MongoDB instances. If the utilization is excessive, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>Automatic backup of TencentDB for MySQL</td>
-      <td>云数据库（MySQL）CPU 使用率</td>
-      <td>检查 MySQL 实例 CPU 使用率情况，若使用率过高，则告警</td>
+      <td>TencentDB for MySQL</td>
+      <td>CPU utilization</td>
+      <td>Check the CPU utilization of TencentDB for MySQL instances. If the utilization is excessive, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td  rowspan=2>TencentDB for Redis</td>
-      <td>云数据库（Redis）Proxy 节点出流量限流触发情况</td>
-      <td>检查 Redis 实例 Proxy节点出流量限流触发次数，若限流次数过高，则告警</td>
+      <td rowspan="2">TencentDB for Redis</td>
+      <td>Outbound traffic throttling triggered on proxy nodes</td>
+      <td>Check the number of trigger times of outbound traffic throttling on TencentDB for Redis proxy nodes. If it is excessive, an alarm will be triggered</td>
    </tr>
    <tr>
-      <td>云数据库（Redis）节点CPU使用率</td>
-      <td>检查数据库（Redis）实例节点CPU使用率</td>
+      <td>Node CPU utilization</td>
+      <td>Check the CPU utilization of TencentDB for Redis nodes</td>
    </tr>
    <tr>
-      <td>云数据库（TDSQL）</td>
-      <td>云数据库（TDSQL）CPU 使用率</td>
-      <td>检查 TDSQL CPU 使用情况，若使用率较高，则告警</td>
+      <td>TDSQL</td>
+      <td>CPU utilization</td>
+      <td>Check the CPU utilization of TDSQL instances. If the utilization is excessive, an alarm will be triggered</td>
    </tr>
 </table>

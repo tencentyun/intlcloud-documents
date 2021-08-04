@@ -1,74 +1,74 @@
-云顾问（Tencent Cloud Advisor）是一款开箱即用的云资源风险评估产品。 基于 [CAM 服务角色授权](https://intl.cloud.tencent.com/document/product/598/19421) 机制，一键分析云资源、应用架构、业务性能及安全方面存在的风险，并根据业务实际使用情况，在线提供优化建议，助您提升系统安全性、业务稳定性以及服务可靠性。
+Tencent Cloud Advisor (Advisor) is an out-of-the-box cloud resource risk assessment service. Based on the [CAM service role authorization](https://intl.cloud.tencent.com/document/product/598/19421) mechanism, Advisor can quickly analyze risks in cloud resources, application architecture, business performance, and security and then offer optimization suggestions online according to the actual business usage to help you improve the system security, business stability, and service reliability.
 
-## Overview
+## Feature Overview
 
-Advisor improves business continuity by providing various assessment items, flexible assessment configurations, and systematic optimization advice.
+Advisor provides a wide variety of assessment items, flexible assessment configurations, and system optimization suggestions to help you improve business continuity.
 
-#### Various assessment items
+#### Diversified assessment items
 
-从安全性、可靠、成本、服务限制、性能这几个维度覆盖多个云产品，每维度均包含多个风险评估项目。 目前支持评估的云产品有：
+Advisor offers various risk assessment items in multiple dimensions, such as security, reliability, cost, service restriction, and performance for different Tencent Cloud services. Currently, the following Tencent Cloud services can be assessed:
 
 <table>
    <tr>
       <td>Anti-DDoS</td>
    </tr>
    <tr>
-      <td>弹性公网 IP（EIP) </td>
+      <td>Elastic IP (EIP)</td>
    </tr>
    <tr>
-      <td>Elasticseach Service</td>
+      <td>Elasticsearch Service (ES)</td>
    </tr>
    <tr>
-      <td>消息队列（TDMQ）</td>
+      <td>Tencent Distributed Message Queue (TDMQ)</td>
    </tr>
    <tr>
-      <td>消息队列（TDMQ）  </td>
+      <td>Tencent Distributed Message Queue (TDMQ)</td>
    </tr>
    <tr>
-      <td>COS</td>
+      <td>Cloud Object Storage (COS)</td>
    </tr>
    <tr>
-      <td>访问管理（CAM）  </td>
+      <td>Cloud Access Management (CAM)</td>
    </tr>
    <tr>
-      <td>CDN</td>
+      <td>Content Delivery Network (CDN)</td>
    </tr>
    <tr>
-      <th>TKE</th>
+      <td>Tencent Kubernetes Engine (TKE)</td>
    </tr>
    <tr>
-      <td>云防火墙（CFW）  </td>
+      <td>Tencent Cloud Firewall (CFW)</td>
    </tr>
    <tr>
-      <td>CVM</td>
+      <td>Cloud Virtual Machine (CVM)</td>
    </tr>
    <tr>
-      <td>TencentDB for MongoDB instance expired</td>
+      <td>TencentDB for MongoDB</td>
    </tr>
    <tr>
-      <td>Automatic backup of TencentDB for MySQL</td>
+      <td>TencentDB for MySQL</td>
    </tr>
    <tr>
-      <td>Automatic backup of TencentDB for Redis</td>
+      <td>TencentDB for Redis</td>
    </tr>
    <tr>
-      <td>云数据库（TDSQL）  </td>
+      <td>TDSQL</td>
    </tr>
    <tr>
-      <td>CBS</td>
+      <td>Cloud Block Storage (CBS)</td>
    </tr>
 </table>
 
-随着腾讯云产品的迭代，我们会逐步覆盖更多云产品，并提供更多的风险评估项目。
+As Tencent Cloud services are being iterated, more of them will be supported, and more risk assessment items will be available.
 
 
-#### Flexible assessment configurations
+#### Flexible assessment configuration
 
-- 支持自定义选择评估项目，您可以屏蔽不关注的评估项目，精简评估报告结果，聚焦核心指标；
-- You can ignore specific cloud resources to focus on assessing the execution status of key resources.
+- Advisor allows you to customize assessment items. You can block the items that you don't care about to simplify the assessment reports and focus on the core metrics.
+- Advisor allows you to specify ignorable cloud resources to reduce the impact of testing resources on the assessment results, so that you can focus on the running status of core resources.
 
-#### Systematic optimization advice
+#### Systemic optimization suggestions
 
-针对每项评估结果，结合腾讯云多年服务客户沉淀的最佳实践，在线提供有针对性且可操作的优化建议，您可以按照检查建议来优化服务和资源。
-您也可以授权我们的技术专家在线获取您的巡检报告，提供更加系统和专业的建议来助您防患于未然，提升业务连续性。
+Advisor provides targeted and practical optimization suggestions online for each assessment item based on the best practices accumulated over Tencent Cloud's many years of customer service. Then, you can optimize services and resources accordingly.
+You can also authorize our technical experts to access your inspection reports online and provide suggestions that are more systemic and professional, so as to help you prevent risks and improve business continuity.
 
