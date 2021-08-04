@@ -16,7 +16,7 @@ In the following password setting scenarios, you need to follow the password rul
 >- The password rules you set in this module apply only to sub-users who use passwords for login.
 >- After the login password expires, sub-users will not be able to log in via alternative login methods and must reset the password.
 >- For the security of your account, the password rules will not be prompted for sub-users when they reset the password. The root account, admins, and sub-users with the `cam:GetPasswordRules` API permission can download the current password rules on the **Password Rules** page and pass them to users who need them, as shown below:
->![](https://main.qcloudimg.com/raw/68aea25c124091ba0bb3878dd068c7e0.png)
+>![](https://main.qcloudimg.com/raw/68151130511d2cb3a36191943ee5cee7.png)
 
 
 
