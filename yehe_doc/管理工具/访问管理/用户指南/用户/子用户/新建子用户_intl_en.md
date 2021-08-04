@@ -21,17 +21,15 @@ This document describes how to use the admin account to create a sub-user in the
 
 <dx-tabs>
 ::: Quick\screation
-
 1. Log in to the Tencent Cloud console, go to [User List](https://console.cloud.tencent.com/cam), and click **Create User** to enter the user creation page.
 2. On the user creation page, click **Quick Creation** to enter the quick user creation page.
 3. On the quick user creation page, enter the username in **User Information** and adjust other options as needed.
->?You can click **Create User** to create up to 10 users at a time.
+<dx-alert infotype="explain">You can click **Create User** to create up to 10 users at a time.</dx-alert>
 4. For **Password resetting required**, select whether the sub-user needs to reset the password upon next login as needed.
 5. Click **Create User**. You will be redirected to the page prompting that the user is successfully created.
 6. On the page prompting that the user is successfully created, you can get the sub-user information in the following two methods:
 	- Click **Send**, enter the email address, and the system will send the complete sub-user information to the specified email address.
 	- Click **Copy** and paste the information to a local file for storage.
-
 
 :::
 ::: Custom\screation
