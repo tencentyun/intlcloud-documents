@@ -55,7 +55,7 @@ TPNS 目前提供了两大类标签功能，包括用户自定义标签和 TPNS 
 						 <td>20200521，20200522等</td>
         </tr>
 				   <tr><!--<td>3.1</td>-->
-            <td>TPNS SDK版本</td>
+            <td>TPNS SDK 版本</td>
 						<td>xg_auto_sdkversion</td>
 						 <td>1.1.5.4，1.1.5.4，1.1.6.1等</td>
         </tr>
@@ -122,10 +122,10 @@ iOS SDK 进行标签的设置，详情请参见文档 [自定义标签设置](ht
 Android SDK 进行标签的设置，详情请参见文档 [自定义标签设置](https://intl.cloud.tencent.com/document/product/1024/30715)。
 
 >?
->- 单个设备最多可绑定100个标签（超出可 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请提高额度）。
->- 单个 App 最多可绑定10000个标签（超出可 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请提高额度）。
->- 单个标签不能超过50个字节。
->- 批量绑定解绑标签时，单次请求标签数量不能超过500个。
+- 单个设备最多可绑定100个标签（超出可 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请提高额度）。
+- 单个 App 最多可绑定10000个标签（超出可 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请提高额度）。
+- 单个标签不能超过50个字节。
+- 批量绑定解绑标签时，单次请求标签数量不能超过500个。
 
 #### 自定义标签使用场景及关键字
 标签推送适用于标签绑定设备多（一般绑定设备数超过10个），且推送频次较少（一般该标签的日推送数不超过10次）的场景，针对绑定设备数较小且推送频次较多的标签推送场景，推荐使用账号推送，即通过账号绑定多个设备，用账号替代标签来进行推送。
@@ -147,7 +147,6 @@ TPNS 提供了单标签绑定/解绑单设备，单标签绑定/解绑多设备�
 ```json
 {
     "operator_type": 1,
-
     "tag_list": ["tag"],
     "token_list": ["token"]
 }
@@ -158,7 +157,6 @@ TPNS 提供了单标签绑定/解绑单设备，单标签绑定/解绑多设备�
 ```json
 {
     "operator_type": 2,
-
     "tag_list": ["tag"],
     "token_list": ["token"]
 }
@@ -177,7 +175,6 @@ TPNS 提供了单标签绑定/解绑单设备，单标签绑定/解绑多设备�
 ```json
 {
     "operator_type": 3,
-
     "tag_list": ["tag1","tag2"],
     "token_list": ["token"]
 }
@@ -188,7 +185,6 @@ TPNS 提供了单标签绑定/解绑单设备，单标签绑定/解绑多设备�
 ```json
 {
     "operator_type": 4,
-
     "tag_list": ["tag1","tag2"],
     "token_list": ["token"]
 }
@@ -207,7 +203,6 @@ TPNS 提供了单标签绑定/解绑单设备，单标签绑定/解绑多设备�
 ```json
 {
     "operator_type": 7,
-
     "tag_list": ["tag"],
     "token_list": ["token1","token2"]
 }
@@ -216,7 +211,6 @@ TPNS 提供了单标签绑定/解绑单设备，单标签绑定/解绑多设备�
 ```json
 {
     "operator_type": 8,
-
     "tag_list": ["tag"],
     "token_list": ["token1","token2"]
 }
@@ -235,7 +229,6 @@ TPNS 提供了单标签绑定/解绑单设备，单标签绑定/解绑多设备�
 ```json
 {
     "operator_type": 9,
-
     "tag_token_list": [{"tag":"tag1","token":"token1"},{"tag":"tag2","token":"token2"}]
 }
 ```
@@ -244,7 +237,6 @@ TPNS 提供了单标签绑定/解绑单设备，单标签绑定/解绑多设备�
 ```json
 {
     "operator_type": 10,
-
     "tag_token_list": [{"tag":"tag1","token":"token1"},{"tag":"tag2","token":"token2"}]
 }
 ```
@@ -267,7 +259,6 @@ TPNS 提供了两种标签覆盖方式，一是普通覆盖，二是按标签类
 ```json
 {
     "operator_type": 6,
-
     "tag_list": ["test", "level:1",, "level:2"], 
     "token_list": ["token"]
 }
@@ -287,7 +278,6 @@ TPNS 提供了两种标签覆盖方式，一是普通覆盖，二是按标签类
 ```json
 {
     "operator_type": 6,
-
     "tag_list": ["test:2", "level:3"], 
     "token_list": ["token"]
 }
@@ -314,7 +304,6 @@ TPNS 提供了两种标签覆盖方式，一是普通覆盖，二是按标签类
 ```json
 {
     "operator_type": 5,
-
     "token_list": ["token"]
 }
 ```
@@ -343,7 +332,7 @@ TPNS 提供了两种标签覆盖方式，一是普通覆盖，二是按标签类
 - 每个设备只会绑定最新的预设标签，并会进行自动互斥，如某设备的 App 版本当前为1.0.1，当这个设备的 App 版本升级到1.0.2时，则会自动将该设备和1.0.1版本标签进行解绑，并重新对该设备和1.0.2版本标签进行绑定。
 
 ### 设备绑定标签查询
- 可在腾讯云管理台的【工具箱-排查工具】页面，根据设备 token 查询具体的预设标签和自定义标签。
+ 可在腾讯云管理台的【App推送管理-排查工具】页面，根据设备 token 查询具体的预设标签和自定义标签。
  如图所示：
  ![](https://main.qcloudimg.com/raw/960e8eb3678ebe7457b5887966abed5f.png)
 
