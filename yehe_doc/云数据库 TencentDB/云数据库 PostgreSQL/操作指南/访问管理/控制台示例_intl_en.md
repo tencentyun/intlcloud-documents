@@ -38,14 +38,14 @@ Associate the default policy `PostgreSQL` with the user as instructed in [Author
 ### Policy for granting a user permissions to operate specific PostgreSQL instances
 To grant a user permissions to operate specific PostgreSQL instances, you can associate the following policy with the user. The detailed steps are as follows:
 1. Create a custom policy as instructed in [Policy](https://intl.cloud.tencent.com/document/product/598/10601).
-   The example policy syntax is as follows. This example policy grants a user permissions of all operations on the PostgreSQL instance whose ID is "postgres-0xssvm8e".
+   The example policy syntax is as follows. This example policy grants a user permissions of all operations on the PostgreSQL instance whose ID is "postgres-0xxxx8e".
 ```
 {
     "version": "2.0",
     "statement": [
         {
             "action": "postgres:*",
-            "resource": "qcs::postgres:ap-shanghai:103xxx1481:DBinstanceId/postgres-0xssvm8e",
+            "resource": "qcs::postgres:ap-shanghai:103xxx1481:DBinstanceId/postgres-0xxxx8e",
             "effect": "allow"
         }
     ]
@@ -78,7 +78,7 @@ To grant a user permissions to use all PostgreSQL resources, you can associate t
 ### Policy for denying a user permissions to operate specific PostgreSQL instances
 To deny a user permissions to operate specific PostgreSQL instances, you can associate the following policy with the user. The detailed steps are as follows:
 1. Create a custom policy as instructed in [Policy](https://intl.cloud.tencent.com/document/product/598/10601).
-   The example policy syntax is as follows. This example policy denies a user permissions to operate the PostgreSQL instances whose IDs are "postgres-c8d1caa4" and "postgres-d8d1cbb4" respectively.
+   The example policy syntax is as follows. This example policy denies a user permissions to operate the PostgreSQL instances whose IDs are "postgres-c8xxxa4" and "postgres-d8xxxb4" respectively.
 ```
 {
     "version": "2.0",
@@ -86,8 +86,8 @@ To deny a user permissions to operate specific PostgreSQL instances, you can ass
         {
             "action": "postgres:*",
             "resource": [
-						"qcs::postgres::16xxx472:DBinstanceId/postgres-c8d1caa4",
-						"qcs::postgres::16xxx472:DBinstanceId/postgres-d8d1cbb4",
+						"qcs::postgres::16xxx472:DBinstanceId/postgres-c8xxxa4",
+						"qcs::postgres::16xxx472:DBinstanceId/postgres-d8xxxb4",
 						],
             "effect": "deny"
         }
