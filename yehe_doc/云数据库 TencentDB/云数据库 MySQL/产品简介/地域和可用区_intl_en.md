@@ -11,7 +11,7 @@ Private network communication:
 - Tencent Cloud resources in the same VPC within the same region under the same account can communicate with each other over private network. They can also be accessed via [private IPs](https://intl.cloud.tencent.com/document/product/213/5225).
 - The networks of different regions are fully isolated from each other, and Tencent Cloud services in different regions cannot communicate using private networks by default.
 - Tencent Cloud services across regions can communicate with each other through [public IPs](https://intl.cloud.tencent.com/document/product/213/5224) over the Internet, while those in different VPCs can communicate with each other through [CCN](https://intl.cloud.tencent.com/document/product/1003) that is faster and steadier.
-- [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214) currently supports intra-region traffic forwarding by default. If [cross-region binding](https://intl.cloud.tencent.com/document/product/214/12014) is enabled, cross-region binding of CLB and CVM instances is supported.
+- [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214) currently supports intra-region traffic forwarding by default. If [cross-region binding](https://intl.cloud.tencent.com/document/product/214/38441) is enabled, cross-region binding of CLB and CVM instances is supported.
 
 ## Availability Zones
 Availability zones (AZs) refer to Tencent Cloud's physical data centers that are in the same region. Each AZ is independently powered and have its own network resources. They are designed to ensure that failures within one AZ can be isolated from other zones, thereby ensuring service availability and business stability, excepting the occurrences of large-scale disasters or major power failures. Users can protect their applications from being affected by failures that occur in a single location by selecting instances in independent AZs.
@@ -121,10 +121,10 @@ The supported regions and AZs are as follows
 <tr>
 <td>Silicon Valley Zone 2 (Silicon Valley nodes cover services in Western US)<br>na-siliconvalley-2</td></tr>
 <tr>
-<td rowspan="2">Eastern US (Ashburn) <br>na-ashburn</td>
-<td>Ashburn Zone 1 (Ashburn nodes cover services in Eastern US)<br>na-ashburn-1</td></tr>
+<td rowspan="2">Eastern US (Virginia) <br>na-ashburn</td>
+<td>Virginia Zone 1 (Virginia nodes cover services in Eastern US)<br>na-ashburn-1</td></tr>
 <tr>
-<td>Ashburn Zone 2 (Ashburn nodes cover services in Eastern US)<br>na-ashburn-2</td></tr>
+<td>Virginia Zone 2 (Virginia nodes cover services in Eastern US)<br>na-ashburn-2</td></tr>
 <tr>
 <td>North America (Toronto)<br>na-toronto</td>
 <td>Toronto Zone 1 (Toronto nodes cover services in North America)<br>na-toronto-1</td></tr>
