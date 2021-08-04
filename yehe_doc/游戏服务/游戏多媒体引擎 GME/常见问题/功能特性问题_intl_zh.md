@@ -24,7 +24,7 @@
 
 ### GME Android 和 iOS 平台之间是否可以连通？
 
-可以。使用同一个 SDKAppid 进入同一个房间即可。
+可以。使用同一个 SDKAppId 进入同一个房间即可。
 
 ### GME 是否支持手机的蓝牙切换？
 
@@ -36,6 +36,6 @@ GME 的高清音质可以满足 K 歌需求。麦序属于用户产品需求，�
 
 ### Windows 客户端需使用其他的播放器软件进行播放伴奏，例如 QQ 播放器，应如何解决？
 
-详情请参见 [Windows 平台播放器伴奏功能](https://intl.cloud.tencent.com/document/product/607/39153) 进行调用。第三方播放器伴奏功能属于高级接口，需要 [提交工单](https://console.cloud.tencent.com/workorder/category)，并提供 `tmg_adv_win.h` 头文件与专业的开发人员进行对接。
+详情请参见 Windows 平台播放器伴奏功能 进行调用。第三方播放器伴奏功能属于高级接口，需要 [提交工单](https://console.cloud.tencent.com/workorder/category)，并提供 `tmg_adv_win.h` 头文件与专业的开发人员进行对接。
 
 
