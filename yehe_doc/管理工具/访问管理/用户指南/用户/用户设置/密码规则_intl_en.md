@@ -1,33 +1,24 @@
 ## Overview
-This document describes how to set sub-user login password rules to regulate sub-users’ login password character types, length, and validity period.
+This document describes how to modify the password rules for sub-users in the CAM console, including password complexity, length, and validity period. If you don't modify the password rules, the default settings will be applied.
 
+In the following password setting scenarios, you need to follow the password rules that have been set:
+- If you select **Tencent Cloud console access** and **Customize password** when creating a sub-user.
+- If you select **Customize password** when resetting the login password for a sub-user.
 
->?After the login password expires, sub-users will not be able to log in via other login methods and must reset the password.
 
 ## Directions
 
+1. Log in to the CAM console and select **Users** > [User Settings](https://console.cloud.tencent.com/cam/security/subAccount) on the left sidebar.
+2. In the **Password Rules** module, modify specific rules such as the complexity, length, and validity period of the password.
+3. Click **Apply Now**, and the password rules will take effect. You need to follow such rules when you reset the password next time.
 
-1. Log in to the CAM console and select **Users** > [User Settings](https://console.cloud.tencent.com/cam/security/subAccount) in the left sidebar.
-2. Set the password rule.
->!
->- This password rule applies to the password of a sub-user created via a custom method. For example, if you set the rule to "Should contain at least 10 characters of digits and lowercase letters", the password of the sub-user you created should comply with this rule.
->- This rule does not apply to sub-users that log in via WeCom or collaborators.
-<table>
-<tr><th "width:20%;">Rules</th "width:40%;"><th>Options</th><th>Restrictions</th></tr>
-<tr><td>Character type</td><td>Select the characters that must be used in the password. You can choose numeric characters, uppercase letters, lowercase letters, special characters (except for spaces)</td><td> At least one item must be selected
-</td></tr>
-<tr><td>Length</td><td>Restrict the minimum password length</td><td>  
-  The length can be set between 8 - 32 characters
-</td></tr>
-<tr><td>Validity period</td><td> Restrict the password validity period. When the password expires, it must be reset</td><td>   
-The period can be set between 0 - 365 days</td></tr>
-<tr><td>Duplication restrictions</td><td>Restrict the usage of old passwords</td><td>    
-  Between 0 - 24 recent passwords can be restricted from being reused.</td></tr>
-<tr><td>Retry restrictions</td><td>Restricts the number of times that the wrong password can be entered. If the number of times the wrong password is entered exceeds the limit set, the login will be locked for 1 hour automatically.</td><td>  
-This can be set to 0-10 times/hour.</td></tr>
-</table>
+>?
+>- The password rules you set in this module apply only to sub-users who use passwords for login.
+>- After the login password expires, sub-users will not be able to log in via alternative login methods and must reset the password.
+>- For the security of your account, the password rules will not be prompted for sub-users when they reset the password. The root account, admins, and sub-users with the `cam:GetPasswordRules` API permission can download the current password rules on the **Password Rules** page and pass them to users who need them, as shown below:
+>![](https://main.qcloudimg.com/raw/68aea25c124091ba0bb3878dd068c7e0.png)
 
-3. Click **Apply Changes** to set the configured password rules. You can set the password of a sub-user according to the new rules. When sub-users reset passwords, they must do so according to the password rules you have set.
-> ?For the security of your account, sub-users will not be prompted by the rule when they are resetting the password. Sub-users with the cam:GetPasswordRules permission and the root account can go to **User Settings** in the console and click **Download current password rules** in **Note** to pass the current password rule to the user that needs it, as shown in the following figure:
-![](https://main.qcloudimg.com/raw/9bc543bd73df838891437bed5fc5ea2c.png)
+
+
+
 
