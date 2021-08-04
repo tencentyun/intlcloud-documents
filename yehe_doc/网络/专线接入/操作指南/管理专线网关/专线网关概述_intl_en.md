@@ -54,7 +54,8 @@ In a Direct Connect network architecture, if the direct connect gateways A and B
 
 - When both dedicated tunnels are static, the destination IP range of IDC routes to Tencent Cloud VPCs is the VPC CIDR block (172.21.0.0/16) configured in the local router. The direct connect gateways A and B have the same routes and receive local IDC traffic evenly.
 <img width="80%" src="https://main.qcloudimg.com/raw/b1802fe849f2ef09589fa9b9061c827d.png" style="zoom:67%;" />
+
 - When both dedicated tunnels are BGP, the destination IP range synced from the direct connect gateway A to local router based on the BGP protocol is the subnet CIDR blocks (172.21.0.0/20, 172.21.16.0/20), while that synced from the direct connect gateway B is the VPC CIDR block (172.21.0.0/16). The route with the longest mask will be matched and used for forwarding. Therefore, the local router will forward all traffic to the direct connect gateway A. The traffic will be forwarded to the direct connect gateway B only when the direct connect gateway A fails and loses routes.
->? You can submit a ticket to change the routing policy of the direct connect gateway B to VPC CIDR block or subnet CIDR block.
+>? For a direct connect gateway created before September 15, 2020, 00:00:00, you can submit a ticket to change its routing policy to VPC CIDR block or subnet CIDR block.
 >
 <img width="80%" src="https://main.qcloudimg.com/raw/cf9aff5217e067582a04f8c50551f56b.png" style="zoom:67%;" />
