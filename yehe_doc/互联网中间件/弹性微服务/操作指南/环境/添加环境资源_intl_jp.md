@@ -11,7 +11,7 @@
 	 ![](https://main.qcloudimg.com/raw/0a3dde7bc19e1612cdbabb9b634df6de.png)
    - ログ：既存のログリソースを選択します。適切なログセットがない場合は、戻って[ログセット](https://console.cloud.tencent.com/cls/topic?region=ap-shanghai)を新規作成することができます。
 		![](https://main.qcloudimg.com/raw/867760b8e870eeb9ae800d3e3fcf3854.png)
-   - 登録センター：既存の登録リソースを選択します。適切な登録センターのインスタンスがない場合は、[登録センターTSE](https://console.cloud.tencent.com/tse/registry?rid=4)に戻ってインスタンスを新規作成することができます。サービス間のプライベートネットワークアクセスを実現するために、同じVPC下の登録センターを選択することをお勧めします。
+   - 登録センター：既存の登録リソースを選択します。適切な登録センターのインスタンスがない場合は、[登録センターTSE](https://console.cloud.tencent.com/tse/zookeeper?rid=4)に戻ってインスタンスを新規作成することができます。サービス間のプライベートネットワークアクセスを実現するために、同じVPC下の登録センターを選択することをお勧めします。
 		![](https://main.qcloudimg.com/raw/1f6e91a7dc73b39c1aeb6a36ee05a855.png)
 
      
