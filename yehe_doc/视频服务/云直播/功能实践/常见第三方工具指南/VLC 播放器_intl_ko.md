@@ -3,7 +3,7 @@ VLC media player는 자유롭게 쓸 수 있는 오픈 소스 크로스 플랫�
 ## VLC 비디오 재생 순서
 1. [비디오 스트리밍 재생 주소](https://intl.cloud.tencent.com/document/product/267/31559)를 가져와 [Domain Management](https://console.cloud.tencent.com/live/domainmanage)에서 필요에 따라 ICP비안을 받은 재생 도메인을 선택하고 재생 설정 포맷에 따라 재생 주소를 연결합니다.
 ![](https://main.qcloudimg.com/raw/f597c01a9a9a4d8b777f4a3222bfbd4b.png)
-2. VLC의 기본 인터페이스에서 [File]>[OpenNetwork](중국어 버전은 [매체]>[네트워크 스트리밍 켜기])를 선택하십시오.
+2. VLC의 기본 인터페이스에서 [File]>[OpenNetwork]를 선택하십시오.
 ![](https://main.qcloudimg.com/raw/ff6842cf3ca5aff6055b4eb7fa598712.jpg)
 3. 팝업 대화 상자에 라이브 방송 스트리밍 재생 주소를 입력하십시오.
 ![](https://main.qcloudimg.com/raw/f5f277cff87c55eceb1a48c3a7d58a93.jpg)
