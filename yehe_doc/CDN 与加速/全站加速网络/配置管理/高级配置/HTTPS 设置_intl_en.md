@@ -2,8 +2,9 @@
 ## Configuration Description
 HTTPS refers to Hypertext Transfer Protocol Secure, which is a security protocol that encrypts and transfers data based on the HTTP protocol to ensure the security of data transfer. When configuring HTTPS, you need to provide a certificate for the domain name and deploy it on all ECDN nodes to implement encrypted data transfer across the network.
 
->!Your domain name should have been connected to ECDN, and the status should be **deploying** or **activated**.
-
+>!
+>- Your domain name should have been connected to ECDN, and the status should be **deploying** or **activated**.
+>- If your application has been migrated to the CDN console, you can go to the console for operation by referring to [Content Delivery Network](https://intl.cloud.tencent.com/document/product/228).
 ## Adding Configuration
 ### Selecting domain name
 1. Log in to the [ECDN Console](https://console.cloud.tencent.com/dsa) and click **Domain Management** on the left sidebar to enter the management page.
