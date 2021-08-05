@@ -1,5 +1,5 @@
 In the ECDN Console, you can enable, disable, and delete the acceleration service or modify the projects for acceleration domain names.
-
+>? If your application has been migrated to the CDN console, you can go to the console for operation by referring to [Content Delivery Network](https://intl.cloud.tencent.com/document/product/228).
 ## Enabling Acceleration Service
 You can **activate** a **deactivated** domain name in the following steps. It takes about 5 minutes to enable the acceleration service.
 Log in to the [ECDN Console](https://console.cloud.tencent.com/dsa) and click **Domain Management** on the left sidebar to enter the **Domain Management** page. In the "Operation" column of the target domain name, click **Activate**.
@@ -16,7 +16,7 @@ Log in to the [ECDN Console](https://console.cloud.tencent.com/dsa) and click **
 
 If you want to deactivate multiple acceleration domain names in batches, you can check them and select **Deactivate ECDN** in the **More Actions** drop-down list above.  
 
->
+>!
 >Before disabling the acceleration service, make sure that your domain names have been resolved to the origin server, as ECDN nodes will no longer provide acceleration service for them and will directly return the status code 404 for received user requests after acceleration is disabled. To avoid affecting your user access experience, you are recommended to perform the following steps when disabling the acceleration service:  
 >1. Change the acceleration domain name resolution
 Resolve the acceleration domain name to the origin server and make sure that it will not be resolved to the ECDN domain name through the CNAME record. Change of the domain name resolution generally takes 10–30 minutes to take effect in most regions.  
@@ -28,7 +28,7 @@ After the domain name resolution is switched to the origin server, user requests
 
 After confirming that all or most users no longer use ECDN for access, you can deactivate the domain name in the following steps:  
 
->
+>!
 >- Domain name deactivation will affect user access. Please do so with caution.  
 >- After the domain name resolution is switched to the origin server, user requests may still be forwarded to ECDN cache nodes, as local DNS servers of a minority of users do not follow the domain name TTL rule. In this case, those users need to change their local DNS server addresses or set `hosts` resolution.
 >- Generally, you are recommended to switch the domain name resolution to the origin server first and then disable the domain name acceleration service after 24 hours.
@@ -54,6 +54,6 @@ To facilitate management, you can modify the project of your domain name in the 
 If you want to modify the project of multiple acceleration domain names in batches, you can check the target domain names and select **Modify Project** in the **More Actions** drop-down list above.
 ![](https://main.qcloudimg.com/raw/2cc9d25b957da9334faba33751a23879.png)
 
->  
+>! 
 > - You can use the project feature to manage Tencent Cloud resources by project. Tencent Cloud Project Management can be applied to multiple products at the same time.  
 > - You can create and modify projects on the [Account Center - Project Management](https://console.cloud.tencent.com/project) page in the Tencent Cloud Console.
