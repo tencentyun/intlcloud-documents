@@ -1,5 +1,7 @@
 ## Feature Overview
 ECDN is capable of configuring basic cache. Cache expiration time can be configured according to rules such as specified business types, directories, and specific URLs to regularly purge resources cached on nodes, pull latest resources from the origin server and cache them again.
+>? If your application has been migrated to the CDN console, you can go to the console for operation by referring to [Content Delivery Network](https://intl.cloud.tencent.com/document/product/228).
+
 
 In addition, ECDN can purge cache for specified URLs or directories in batches:
 - Purge URL: Delete the cache of corresponding resources on all ECDN nodes.
