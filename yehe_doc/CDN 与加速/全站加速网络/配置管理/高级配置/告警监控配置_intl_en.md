@@ -1,3 +1,4 @@
+>? If your application has been migrated to the CDN console, you can go to the console for operation by referring to [Content Delivery Network](https://intl.cloud.tencent.com/document/product/228).
 ## Description of Connecting ECDN to Cloud Monitor
 
 ECDN has been connected to Tencent Cloud Monitor. The following alarming metrics are supported in the current version:
@@ -82,12 +83,12 @@ ECDN has been connected to Tencent Cloud Monitor. The following alarming metrics
 	</tbody>
 </table>
 
-> 
-- You can activate and use Cloud Monitor free of charge.
-- The system sends alarm messages through email, WeChat, and callback APIs free of charge, and you can enjoy a free tier of SMS alarm messages every month.
-- If the monthly free tier of SMS alarm messages is exceeded, you need to purchase a higher tier for receiving more alarm messages through SMS.
-- Alarm data is collected and reported in real time and may have certain deviation, as the data is delayed for about 5 minutes.
-- Alarm data monitoring can be used only to assist in operation and cannot be used as the basis for billing or SLA.
+>?  
+>- You can activate and use Cloud Monitor free of charge.
+>- The system sends alarm messages through email, WeChat, and callback APIs free of charge, and you can enjoy a free tier of SMS alarm messages every month.
+>- If the monthly free tier of SMS alarm messages is exceeded, you need to purchase a higher tier for receiving more alarm messages through SMS.
+>- Alarm data is collected and reported in real time and may have certain deviation, as the data is delayed for about 5 minutes.
+>- Alarm data monitoring can be used only to assist in operation and cannot be used as the basis for billing or SLA.
 
 
 
