@@ -12,7 +12,7 @@ You can select one that is appropriate for your business needs.
 >- The origin type can be set to origin IP or origin domain when you use any one of three origin-pull policies.
 >- The actual weight for weighted origin-pull may be slightly different from the set as your requests are being taken care of.
 >- In a primary/secondary origin-pull, the secondary will be automatically triggered by a status code of 400–599 (except for 416) from the primary.
-
+>-  If your application has been migrated to the CDN console, you can go to the console for operation by referring to [Content Delivery Network](https://intl.cloud.tencent.com/document/product/228).
 
 ## Adding Advanced Origin-Pull Policy[](id:new)
 
