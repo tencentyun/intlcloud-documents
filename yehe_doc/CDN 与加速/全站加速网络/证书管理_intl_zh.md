@@ -1,5 +1,6 @@
 您可以对已经接入 ECDN 的域名进行 HTTPS 证书配置。ECDN 支持配置您已有的证书，或腾讯云 [SSL 证书管理](https://console.cloud.tencent.com/ssl) 控制台中托管或颁发的证书。
 
+>? 若您的业务已迁移至 CDN 控制台，请参考 [CDN 产品文档](https://intl.cloud.tencent.com/document/product/228)，前往 CDN 控制台进行操作。
 ## 证书管理列表
 
 进入 [ECDN 控制台](https://console.cloud.tencent.com/dsa)，在左侧菜单栏中单击【证书管理】，进入列表页面，该页面功能包括：
@@ -22,7 +23,7 @@
 ### 选择域名
 在【域名】下拉菜单中选择您要配置证书的域名。
 
->配置证书的域名需要已接入腾讯云 ECDN，且域名状态为**已上线**。**已关闭**或**部署中**状态的域名无法部署证书。
+>!配置证书的域名需要已接入腾讯云 ECDN，且域名状态为**已上线**。**已关闭**或**部署中**状态的域名无法部署证书。
 
 ![](https://main.qcloudimg.com/raw/e19ba83c395fced7a47d2d72781368c6.png)
 
@@ -98,11 +99,13 @@
 		证书 PEM 格式：以“-----BEGIN CERTIFICATE-----”作为开头， “-----END CERTIFICATE-----” 作为结尾。中间的内容每行64字符，最后一行长度可以不足64字符。
 		![](https://main.qcloudimg.com/raw/b2d72fada4dce46d83e9f8abeff5f4f9.jpg)
 	- 如果是通过中级 CA 机构颁发的证书，您拿到的证书文件包含多份证书，需要人为的将服务器证书与中间证书拼接在一起上传。拼接规则为：服务器证书放第一份，中间证书放第二份，中间不要有空行。一般情况下，机构在颁发证书的时候会有对应说明，请注意查阅规则说明。
->
+> !
 >
 > - 证书之间不能有空行。
 > - 每一份证书均为 PEM 格式。
+
 	- 中级机构颁发的证书链格式如下。
+
 ```
 -----BEGIN CERTIFICATE-----
 -----END CERTIFICATE-----
@@ -111,6 +114,7 @@
 -----BEGIN CERTIFICATE-----
 -----END CERTIFICATE-----
 ```
+
 4. 私钥说明
 	- 私钥扩展名一般为“.pem”或“.key”，在文本编辑器中打开私钥文件，可以看到与下图格式相似的私钥内容。
 		私钥 PEM 格式：以“-----BEGIN RSA PRIVATE KEY-----”作为开头， “-----END RSA PRIVATE KEY-----” 作为结尾。中间的内容每行64字符，最后一行长度可以不足64字符。
