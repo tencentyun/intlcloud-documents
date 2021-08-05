@@ -1,14 +1,7 @@
 
 ## Read/Write Separation Overview
-#### Read/write separation
+
 TencentDB for MariaDB supports read/write separation by default. Each replica in the primary/replica architecture can be read-only. If multiple replicas are configured, read requests will be automatically assigned to low-load replicas by the gateway cluster (TProxy).
-
-#### Global automatic read/write separation
-TencentDB for MariaDB supports global automatic read/write separation, i.e., all `SELECT` requests will be sent to replicas with no modification of the business required. To use this feature, you need to [submit a ticket](https://console.cloud.tencent.com/workorder/category) for application and indicate "your account information, instance region, instance ID, request to enable automatic read/write separation, and consent to the global read/write separation risk statement".
-
-**Risk of global read/write separation**
-The replica naturally has data delay. In global automatic read/write separation, the system sends all `SELECT` requests to the replica by default with no policy provided (for more information, please see read/write separation based on read-only accounts). In this case, the business may read uncontrollable historical data, leading to data distortion. Therefore, this feature is only recommended for business systems that have no requirements of data consistency.
->!By submitting a ticket to enable this feature, you acknowledge that your business system can take this risk.
 
 
 ## Read/Write Separation Based on Read-only Accounts
