@@ -1,5 +1,5 @@
 ## 实例列表页面
-登录 [云数据库 SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在实例列表，可查看实例相关信息，以及管理实例。
+登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在实例列表，可查看实例相关信息，以及管理实例。
 ![](https://main.qcloudimg.com/raw/8a950f225e6b32a3a8b6b791ec3b97d6.png)
 
 | 功能      | 介绍                                                         |
@@ -9,13 +9,13 @@
 | 销毁/退货 | 在实例列表，选择【更多】>【销毁/退货】，可以对数据库实例进行销毁/退货，详细介绍请参见 [销毁实例](https://intl.cloud.tencent.com/document/product/238/35787)。 |
 
 ## 实例管理页面
-登录 [云数据库 SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在实例列表，单击实例 ID 或在“操作”列的【管理】，可以进入实例管理页面。您可以进行实例详情查看、实例监控、数据库管理等操作。
+登录 [SQL Server 控制台](https://console.cloud.tencent.com/sqlserver)，在实例列表，单击实例 ID 或在“操作”列的【管理】，可以进入实例管理页面。您可以查看实例详情、监控、管理数据库等。
 ![](https://main.qcloudimg.com/raw/8f608ec01e77e0a46ed1ac43c9340e44.png)
 
 | 功能       | 介绍                                                         |
 | ---------- | ------------------------------------------------------------ |
 | 实例详情   | 在实例详情页面，您可以查看和操作数据库的各种信息，包括设置维护信息以及在实例架构图中添加“只读实例”。 |
-| 系统监控   | 在实例监控页面，您可以查看当前数据库运行的众多核心指标的监控，详细介绍请参见 [监控功能](https://intl.cloud.tencent.com/document/product/238/7524) 和 [告警功能](https://intl.cloud.tencent.com/document/product/238/35791)。 |
+| 系统监控   | 在实例监控页面，您可以查看当前数据库运行的众多核心指标的监控，详细介绍请参见 [监控功能](https://intl.cloud.tencent.com/document/product/238/7524)。|
 | 发布订阅   | 在发布订阅页面，您可以创建、删除一个或多个发布订阅链路服务。 |
 | 安全组     | 在安全组页面，您可以对数据库进行安全组的配置操作，详细介绍请参见 [配置安全组](https://intl.cloud.tencent.com/document/product/238/35789)。 |
 | 帐号管理   | 在帐号管理页面，您可以对管理员帐号进行管理，如修改权限、重置密码等，也可以创建帐号、删除帐号，详细介绍请参见 [帐号管理](https://intl.cloud.tencent.com/document/product/238/7521)。 |
