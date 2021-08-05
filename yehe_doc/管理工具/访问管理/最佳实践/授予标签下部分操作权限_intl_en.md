@@ -17,7 +17,7 @@ Suppose that:
 4. On the **Edit Policy** page, fill out the following form:
 	- Policy Name: the default value is `policygen-current date`. We recommend you define a unique and meaningful policy name, such as `cvm-RebootInstances`.
 	- Description: write a description, which is optional. 
-	- Policy Content: copy and paste the following content. Here, `cvm:RebootInstances` is the name of the API that needs to be authorized, and `tes1t&test1` is the tag key-value pair that needs to be authorized.
+	- Policy Content: copy and paste the following content. Here, `cvm:RebootInstances` is the name of the API that needs to be authorized, and `test1&test1` is the tag key-value pair that needs to be authorized.
 <dx-codeblock>
 ::: plaintext
 {
@@ -32,7 +32,7 @@ Suppose that:
         "condition": {
             "for_any_value:string_equal": {
                 "qcs:tag": [
-                    "tes1t&test1"
+                    "test1&test1"
                 ]
             }
         }
