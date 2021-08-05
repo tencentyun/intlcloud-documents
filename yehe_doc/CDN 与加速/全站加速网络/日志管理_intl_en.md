@@ -1,10 +1,11 @@
 You can download the detailed logs of user access to your connected domain names for the last 40 days for analysis, which are recorded hourly.
+>? If your application has been migrated to the CDN console, you can go to the console for operation by referring to [Content Delivery Network](https://intl.cloud.tencent.com/document/product/228).
 
 ## Downloading Logs
 Log in to the [ECDN Console](https://console.cloud.tencent.com/dsa) and select **Log Management** on th left sidebar. Select the domain for which you want to check logs and the time period. Then, click **OK** to get the log download link.
 ![](https://main.qcloudimg.com/raw/3b735673ecd023a7d905d22b334d8a51.png)
 No access logs will be generated for the queried time period in which there is no request received, and you will see **No Data** on the page.
->
+>!
 > + By default, the ECDN logs requests on an hourly basis, that is, there can be 24 log files generated per day. No logs will be generated for the hour in which there is no request received.  
 > + ECDN logs can be delayed by approximately 30 minutes.
 
@@ -27,7 +28,7 @@ The corresponding fields (from left to right) and their descriptions in a log ar
 | 10   | Response time in milliseconds                                |
 | 11   | User-Agent information                                 |
 | 12   | Range parameter                                      |
-| 13   | HTTP method                                     |
+| 13   | HTTP Method                                     |
 | 14   | HTTP protocol identifier                                    |
 | 15   | Cache hit/miss (all resources are not cached in dynamic acceleration by default)         |
 
