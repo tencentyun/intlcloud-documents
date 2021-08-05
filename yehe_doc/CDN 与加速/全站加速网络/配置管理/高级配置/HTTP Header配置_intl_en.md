@@ -1,3 +1,6 @@
+
+>? If your application has been migrated to the CDN console, you can go to the console for operation by referring to [Content Delivery Network](https://intl.cloud.tencent.com/document/product/228).
+
 An HTTP message generally contains:
 + Request message sent from client to server.
 + Response message sent from server to client.
@@ -7,7 +10,7 @@ These messages all consist of a beginning line, one or multiple headers, a blank
 HTTP headers divide into common header, request header, response header, and entity header. Each header consists of a domain name, colon (":"), and domain value, such as `Connection:keep-alive`.
 If you use the HTTP header configuration feature provided by ECDN, when an end user requests a business resource, you can add a custom header in the returned **response message** to implement cross-origin access.
 
->
+>!
 > + As the HTTP header configuration is for a specified domain name, once the configuration takes effect, the configured header will be added to the response messages of user requests for any resource under this domain name.
 > + HTTP header configuration affects only response of the client (such as browser) rather than ECDN node's caching behaviors.
 
