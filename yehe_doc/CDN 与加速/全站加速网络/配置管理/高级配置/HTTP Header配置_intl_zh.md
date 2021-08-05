@@ -1,3 +1,4 @@
+>? 若您的业务已迁移至 CDN 控制台，请参考 [CDN 产品文档](https://intl.cloud.tencent.com/document/product/228)，前往 CDN 控制台进行操作。
 HTTP 的消息通常包括：
 + 客户端向服务端发送的请求消息。
 + 服务端向服务端发送的响应消息。
@@ -7,7 +8,7 @@ HTTP 的消息通常包括：
 其中 HTTP 头部分为：通用头、请求头、响应头、实体头。每一个头部由域名、冒号（:）、域值组成，如： `Connection:keep-alive`。
 使用腾讯云 ECDN 提供的 HTTP Header 配置功能，当您的用户请求业务资源时，会在返回的**响应消息**中添加您配置的头部，以实现跨域访问等目的。
 
->
+>!
 > + 由于 HTTP Header 配置是针对域名，因此一旦配置生效，用户对该域名下任意一个资源的响应消息中均会加入所配置头部。
 > + 配置 HTTP Header 仅影响客户端（如浏览器）的响应行为，不会影响到 ECDN 节点的缓存行为。
 
@@ -102,10 +103,10 @@ ECDN 支持用户添加自定义头部，您可以根据业务需要，添加自
 
 ### 配置流程
 1. 登录 [ECDN 控制台](https://console.cloud.tencent.com/dsa)，单击左侧菜单栏的【域名管理】，进入管理页面，在页面中，单击您要配置的域名右侧的【管理】，进入域名配置页面。
-2. 单击【高级配置】，在 **Http Header 配置** 模块中单击【添加 Http Header】。
+2. 单击【高级配置】，在 **HTTP Header 配置** 模块中单击【添加 HTTP Header】。
 ![](https://main.qcloudimg.com/raw/96abcdc42d7f33432c3c2abbace73251.png)
-3. 在弹出的窗口中选择要添加的 Http Header，填写对应的值，单击【新增参数】可以继续添加头部字段，最后单击【确定】提交。
+3. 在弹出的窗口中选择要添加的 HTTP Header，填写对应的值，单击【新增参数】可以继续添加头部字段，最后单击【确定】提交。
 ![](https://main.qcloudimg.com/raw/6124ce1d6a6bbeedd6146e16dbef6575.png)
-4. 配置生效时间约为5分钟，在下方表格中可以查看添加的 Http Header。单击 Header 右侧的【修改】或【删除】可以对该 Header 进行操作。
+4. 配置生效时间约为5分钟，在下方表格中可以查看添加的 HTTP Header。单击 Header 右侧的【修改】或【删除】可以对该 Header 进行操作。
 ![](https://main.qcloudimg.com/raw/15b6cf8531c72f39d8ac6d04a4ca769e.png)
-5. 您可以通过再次单击【添加 Http Header】继续添加 Http Header，每个 Http Header 只能添加一次。
+5. 您可以通过再次单击【添加 HTTP Header】继续添加 HTTP Header，每个 HTTP Header 只能添加一次。
