@@ -1,5 +1,5 @@
 You can configure HTTPS certificates for domain names connected to ECDN. ECDN supports configuration of existing certificates or certificates hosted or issued in the [SSL Certificates Service](https://console.cloud.tencent.com/ssl) Console.
-
+>? If your application has been migrated to the CDN console, you can go to the console for operation by referring to [Content Delivery Network](https://intl.cloud.tencent.com/document/product/228).
 ## Certificate Management List
 
 Log in to the [ECDN Console](https://console.cloud.tencent.com/dsa) and click **Certificate Management** on the left sidebar to enter the list page where you can:
@@ -22,7 +22,7 @@ On the domain management page, click **Configure Certificate** to enter the mana
 ### Selecting domain name
 In the **Domain Name** drop-down list, select the domain name for which to configure a certificate.
 
->The domain name should already have been connected to ECDN, and the domain name status should be **activated**. Certificates cannot be configured for **deactivated** or **deploying** domain names.
+>!The domain name should already have been connected to ECDN, and the domain name status should be **activated**. Certificates cannot be configured for **deactivated** or **deploying** domain names.
 
 ![](https://main.qcloudimg.com/raw/e19ba83c395fced7a47d2d72781368c6.png)
 
@@ -98,11 +98,12 @@ After the configuration is completed, click **submit** to submit it. You can go 
 		A .pem certificate begins with "-----BEGIN CERTIFICATE-----" and ends with "-----END CERTIFICATE-----". Every line in between contains 64 characters, while the last line may have less than 64 characters.
 		![](https://main.qcloudimg.com/raw/b2d72fada4dce46d83e9f8abeff5f4f9.jpg)
 	- If your certificate is issued by an intermediate CA, your certificate file will consist of multiple certificates. In this case, you need to splice the server certificates and intermediate certificates manually for upload by putting the server certificate content before the intermediate certificate content without any blank lines in between. Please refer to the rules or instructions that came with the certificate.
->
+>!
 >
 > - There should be no blank lines between the certificates.
 > - All certificates are in PEM format.
 	- A certificate chain from an intermediate CA comes in this format:
+
 ```
 -----BEGIN CERTIFICATE-----
 -----END CERTIFICATE-----
@@ -111,6 +112,7 @@ After the configuration is completed, click **submit** to submit it. You can go 
 -----BEGIN CERTIFICATE-----
 -----END CERTIFICATE-----
 ```
+
 4. Private key description
 	- Common private key extensions include ".pem" and ".key". Open a private key file in a text editor and you will see a certificate similar to the content as shown below.
 		- A .pem private key begins with "-----BEGIN RSA PRIVATE KEY-----" and ends with "-----END RSA PRIVATE KEY-----". Every line in between contains 64 characters, while the last line may have less than 64 characters.
