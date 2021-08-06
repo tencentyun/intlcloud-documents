@@ -30,19 +30,19 @@ ECDN can automatically detect static/dynamic content access requests based on th
 			<td style="text-align: center">File Type</td>
 			<td>Sets the caching time based on file extension</td>
 			<td>.jpg; .png; .jsp</td>
-			<td>1. The content is case-sensitive and must be a file extension starting with `.`.</br>2. Different file types should be separated with `;`.</td>
+			<td>1. The content is case-sensitive and must be a file extension starting with <code>.</code>.</br>2. Different file types should be separated with <code>;</code>.</td>
 		</tr>
 		<tr>
 			<td style="text-align: center">Folder</td>
 			<td>Sets the caching time based on folder</td>
 			<td>/access; /pic</td>
-			<td>1. The content is case-sensitive, and different paths should be separated with `;`.</br>2. It must be a folder starting with `/`.</br>3. It cannot end with `/`.</td>
+			<td>1. The content is case-sensitive, and different paths should be separated with <code>;</code>.</br>2. It must be a folder starting with <code>/</code>.</br>3. It cannot end with <code>/</code>.</td>
 		</tr>
 		<tr>
 			<td style="text-align: center">Full-path file</td>
 			<td>Sets the caching time for a specified file</td>
 			<td>/a.jpg; /b.png</td>
-			<td>1. The content is case-sensitive, and files at different paths should be separated with `;`.</br>2. `*` can be used to match a type of files by regex, such as `/test/abc/*.jpg`.</br>3. It must be a folder starting with `/`.</td>
+			<td>1. The content is case-sensitive, and files at different paths should be separated with <code>;</code>.</br>2. <code>*</code> can be used to match a type of files by regex, such as <code>/test/abc/*.jpg</code>.</br>3. It must be a folder starting with <code>/</code>.</td>
 		</tr>
 		<tr>
 			<td style="text-align: center">Homepage</td>
