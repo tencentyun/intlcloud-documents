@@ -6,5 +6,5 @@ You can set an alarm for your NAT Gateway to monitor its status.
 4. Click **Complete**. Then, you can view the alarm policy that you configured in the alarm list.
 >? To delete an alarm policy, you must first unbind all resources from it.
 >
-5. When the alarm condition is triggered, you will receive an alarm notification via SMS, email, or in Message Center according to the alarm channel you configured. You can also select **Alarm List** in the left sidebar to view alarms. For more information, see [Creating Alarm Policies](https://intl.cloud.tencent.com/document/product/248/38908).
+5. When the alarm condition is triggered, you will receive an alarm notification via SMS, email, or in Message Center according to the alarm channel you configured. You can also select **Alarm List** in the left sidebar to view alarms. For more information, see [Creating Alarm Policies](https://intl.cloud.tencent.com/document/product/248/38916).
 >? Packet loss caused by bandwidth glitches may not be reflected on the bandwidth view, because the minimum granularity for bandwidth statistics is 10 seconds (total traffic in 10 seconds/10 seconds).
