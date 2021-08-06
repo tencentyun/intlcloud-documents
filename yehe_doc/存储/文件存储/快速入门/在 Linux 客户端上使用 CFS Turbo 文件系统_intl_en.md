@@ -131,7 +131,7 @@ yum install
 8. Log in to the CFS console and go to the [File System](https://console.cloud.tencent.com/cfs/fs?rid=1) page.
 9. Click the ID/name of the target Turbo file system and then select the **Mount Target Info** tab.
 10. Click <img src="https://main.qcloudimg.com/raw/6603ab4f907562addb1c01596c6296cd.png" /> to copy the command.
-![](https://main.qcloudimg.com/raw/4133842c838460323fea754124bd8548.png)
+
 11. Switch to the CVM instance to run the mount command copied.
 In most cases, you are advised to use the first mount command. The mount commands are described as follows:
  - Copy and run the first command if you want extended attributes supported and all operations to be executed synchronously by default (data will not be lost due to instance reboots, but I/O performance will be compromised).
