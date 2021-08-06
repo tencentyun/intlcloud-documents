@@ -10,6 +10,18 @@
 </thead>
 <tbody>
 <tr>
+<td>新增 Yarn 作业查询</td>
+<td>提供 Yarn 作业的明细指标统计</td>
+<td>2021-06-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/41278" target="_blank">Yarn 作业查询</a></td>
+</tr>
+<tr>
+<td>新增 Impala 查询管理</td>
+<td>提供 Impala 的查询作业的明细指标统计</td>
+<td>2021-06-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/41279" target="_blank">Impala 查询管理</a></td>
+</tr>
+<tr>
 <td>自动伸缩支持竞价实例</td>
 <td>通过自动伸缩，弹性补充计算节点支持竞价实例计费类型</td>
 <td>2021-06-03</td>
@@ -40,6 +52,8 @@
 <td>-</td>
 </tr>
 </tbody></table>
+
+
 
 ## 2021年05月
 
