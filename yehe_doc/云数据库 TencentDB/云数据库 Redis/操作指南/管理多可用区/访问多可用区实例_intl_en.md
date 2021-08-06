@@ -2,9 +2,9 @@
 You can use one VIP to access a multi-AZ deployed TencentDB for Redis instance the same way you access a single-AZ deployed instance.
 
 ## Cross-AZ Access
-The VIP provided by a TencentDB for Redis instance is accessible throughout a region. If you access the same VIP in different AZs in the same region, you can access the same instance.
+The VIP provided by a TencentDB for Redis instance is accessible region wide. If you access the same VIP in different AZs in the same region, you can access the same instance.
 
-After the failover of Redis service nodes occurs, the service processes associated with the VIP will be automatically updated in the background, so you don't need to replace the VIP.
+After the failover of Redis service nodes occurs, the service processes associated with the VIP will be automatically updated in the background, so you don't need to change the VIP.
 
 ## Viewing Instance VIPs
 Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis) and view instance VIPs in the instance list.
