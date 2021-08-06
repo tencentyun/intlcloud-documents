@@ -10,6 +10,18 @@
 </thead>
 <tbody>
 <tr>
+<td>Added support for YARN job query.</td>
+<td>Added detailed metric statistics for YARN jobs.</td>
+<td>June 24, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/41278" target="_blank">YARN Job Query</a></td>
+</tr>
+<tr>
+<td>Added support for Impala query management.</td>
+<td>Added detailed metric statistics for Impala query jobs.</td>
+<td>June 24, 2021</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/41279" target="_blank">Impala Query Management</a></td>
+</tr>
+<tr>
 <td>Added support for automatic scaling for the spot instance mode.</td>
 <td>Added support for automatically adding compute nodes of the spot instance mode.</td>
 <td>June 03, 2021</td>
@@ -19,27 +31,29 @@
 <td>Added support for graceful scale-in.</td>
 <td>When a scale-in action is triggered, nodes that are executing tasks will not be released immediately. Instead, they will be released after completing the tasks.</td>
 <td>June 03, 2021</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/40694" target="_blank">Graceful Scale-In</a></td>
+<td><a href="https://cloud.tencent.com/document/product/589/56782" target="_blank">Graceful Scale-In</a></td>
 </tr>
 <tr>
 <td>Added support for integrating Knox with Tez.</td>
 <td>Added support for viewing Tez tasks via UI.</td>
 <td>June 03, 2021</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/40686" target="_blank">Integrating Knox with Tez</a></td>
+<td><a href="https://cloud.tencent.com/document/product/589/56820" target="_blank">Integrating Knox with Tez</a></td>
 </tr>
 <tr>
 <td>Added availability zones.</td>
 <td>Added support for Singapore Zone 3 and Tokyo Zone 2.</td>
 <td>June 03, 2021</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Added regions.</td>
 <td>Added support for regions such as Moscow, Frankfurt, Virginia, Bangkok, Mumbai, Tokyo, Toronto, and Seoul.</td>
 <td>June 03, 2021</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 </tbody></table>
+
+
 
 ## May 2021
 
@@ -115,7 +129,7 @@
 <td>Released the EMR service in new regions on Tencent Cloud Chinese.</td>
 <td>Added support for the Bangkok, Seoul, Tokyo, Virginia, and Toronto regions on Tencent Cloud Chinese.</td>
 <td>February 02, 2021</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 </tbody></table>
 
@@ -141,7 +155,7 @@
 <td>Added support for cross-model configuration change.</td>
 <td>You can select other models to change the node configuration when the current model is sold out.</td>
 <td>January 26, 2021</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/1026/31114" target="_blank">  Adjusting Configuration</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/31114" target="_blank">Adjusting Configuration</a></td>
 </tr>
 <tr>
 <td>Added the auto scaling feature.</td>
@@ -151,7 +165,7 @@
 </tr>
 <tr>
 <td>Added new monitoring metrics.</td>
-<td><ol style="margin:0"><li>Added new monitoring metrics for the HDFS, Yarn, HBase, Hive, and Druid services.</li><li>Added support for monitoring on the Kudu and Alluxio services.</li></ol></td>
+<td><ol style="margin:0"><li>Added new monitoring metrics for the HDFS, YARN, HBase, Hive, and Druid services.</li><li>Added support for monitoring on the Kudu and Alluxio services.</li></ol></td>
 <td>January 13, 2021</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/36879" target="_blank">Node Monitoring Metrics</a></td>
 </tr>
@@ -159,7 +173,7 @@
 <td>Released the EMR service in Singapore on the international version.</td>
 <td>Added support for Singapore Zone 1 and Singapore Zone 2 on the international version.</td>
 <td>January 13, 2021</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 </tbody></table>
 
@@ -225,11 +239,11 @@
 <td>Added support for Cloud Object Storage (COS) password-free access.</td>
 <td>Added support for authorizing access to COS through roles. Authorized users do not need to enter an authorization key and private key.</td>
 <td>October 26, 2020</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Added new service inspection items to the inspection system.</td>
-<td>Added the HDFS, Yarn, HBase, Hive, and ZooKeeper service inspection items, enhancing the health check of metrics.</td>
+<td>Added the HDFS, YARN, HBase, Hive, and ZooKeeper service inspection items, enhancing the health check of metrics.</td>
 <td>October 13, 2020</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/36890" target="_blank">Cluster Inspection</a></td>
 </tr>
@@ -304,7 +318,7 @@
 <td>Optimized configuration item editing.</td>
 <td>Added descriptions for configuration items and support for restoring them to defaults.</td>
 <td>July 29, 2020</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 </tbody></table>
 
@@ -333,12 +347,12 @@
 <tr>
 <td>Released ClickHouse v1.1.0 for ClickHouse clusters.</td>
 <td>Upgraded the ClickHouse component version to the LTS version, and added support for the Superset component.</td><td>June 15, 2020</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Added support for cluster events and cluster inspections.</td>
 <td>Added support for recording major change events and exception events in clusters in the console for improved efficiency of cluster troubleshooting. Added support for one-time inspections and periodical inspections, making it easier to keep track of the health of your clusters and to deal with exceptions and risks in time.
- </td><td>June 4, 2020</td>
+ </td><td>June 04, 2020</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/1026/36889" target="_blank">Cluster Event</a><br><a href="https://intl.cloud.tencent.com/document/product/1026/36890" target="_blank">Cluster Inspection</a></td>
 </tr>
 </tbody></table>
@@ -356,7 +370,7 @@
 <tbody><tr>
 <td>Optimized console interactions, UI, and operation paths.</td>
 <td>Improved operation path hierarchy for easier service management.</td><td>May 15, 2020</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Added support for service monitoring for ClickHouse clusters.</td>
@@ -367,7 +381,7 @@
 <td>Added support for monitoring status for role management.</td>
 <td>Made it easier to keep track of the real-time status of role processes.</td>
 <td>May 15, 2020</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 </tbody></table>
 
@@ -390,13 +404,13 @@
 <tr>
 <td>Optimized bootstrap actions.</td>
 <td>Added support for the running occasions of bootstrap actions before a cluster starts. Added support for adjusting bootstrap actions after a cluster is created, so you can change your bootstrap actions based on business changes.</td><td>April 15, 2020</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Optimized service restart policies.</td>
 <td>Added support for setting service restart policies, so you can select a proper restart method and a policy for handling restart exceptions.</td>
 <td>April 15, 2020</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 </tbody></table>
 
@@ -414,7 +428,7 @@
 <tbody><tr>
 <td>Optimized the cluster monitoring page.</td>
 <td>Optimized the cluster overview, service monitoring, and node monitoring pages for improved readability. Monitoring metrics now support customization and heat maps about nodes.</td><td>March 2020</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Added support for log search.</td>
@@ -447,12 +461,12 @@
 <tr>
 <td>Optimized cluster operation logs.</td>
 <td>Added display items for cluster operation logs to increase the readability of operation logs.</td><td>February 2020</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Released the international version.</td>
 <td>Released the international version in the Beijing, Shanghai, Guangzhou, and Mumbai regions.</td><td>February 2020</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 </tbody></table>
 
@@ -474,12 +488,12 @@
 <tr>
 <td>Added support for mounting cloud disks to a task node.</td>
 <td>Added support for mounting cloud disks to a task node when creating or scaling out a cluster.</td><td>January 2020</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Released EMR in the Nanjing region.</td>
 <td>Released EMR in the Nanjing region.</td><td>January 2020</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 </tbody></table>
 
@@ -496,12 +510,12 @@
 <tbody><tr>
 <td>Released the feature of delivering group configuration.</td>
 <td>Added support for delivering group configuration. If the configuration of a node is different from that of the configuration group to which the node belongs, the configuration of the configuration group can be delivered to the node.</td><td>December 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Released the feature of resource-level CAM authorization.</td>
 <td>Added support for CAM authorization at the resource level.</td><td>December 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Released the feature of associating CHDFS.</td>
@@ -521,12 +535,12 @@
 <tr>
 <td>Added support for selecting metric display granularity as needed on the service monitoring page.</td>
 <td>Optimized the service monitoring page, so you can select a metric display granularity as needed.</td><td>December 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Added support for node service deployment and load status views on the node monitoring page.</td>
 <td>Optimized the node monitoring page, which provides the views about node service deployment and load status.</td><td>December 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 </tbody></table>
 
@@ -548,7 +562,7 @@
 <tr>
 <td>Added support for the configuration of the ZooKeeper, Alluxio, and Flink components.</td>
 <td>Added support for the configuration of the ZooKeeper, Alluxio, and Flink components.</td><td>November 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Released the feature of tagging clusters and nodes.</td>
@@ -558,7 +572,7 @@
 <tr>
 <td>Released new models in the Beijing, Shanghai, and Guangzhou regions.</td>
 <td>Released the S5, M5, C3, and CN3 models in the Beijing, Shanghai, and Guangzhou regions.</td><td>November 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 </tbody></table>
 
@@ -593,17 +607,17 @@
 <tbody><tr>
 <td>Added full support for TencentCloud API 3.0.</td>
 <td>Added full support for TencentCloud API 3.0. Standardized the output/input parameters of certain existing v3.0 APIs. Added full support for v2.0 APIs in v3.0.</td><td>September 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Modified console configuration.</td>
 <td>Disused the escape feature for special characters.</td><td>September 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Added support for CM alarm policy configuration.</td>
 <td>Added support for configuring alarm policies in CM (in the Elastic MapReduce product category) for key metrics for node and service monitoring.</td><td>September 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 </tbody></table>
 
@@ -625,22 +639,22 @@
 <tr>
 <td>Added support for configuring the remote login port when you purchase a cluster.</td>
 <td>Added support for enabling or disabling the remote login port when you purchase a cluster.</td><td>August 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Added support for mounting multiple cloud disks to a new cluster.</td>
 <td>Added support for mounting multiple cloud disks to a new cluster.</td><td>August 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Released the feature of scaling specified components.</td>
 <td>Added support for scaling specified components.</td><td>August 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Added monitoring metrics.</td>
 <td>Added new monitoring metrics for the Spark, Hive, Presto, and ZooKeeper components.</td><td>August 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 </tbody></table>
 
@@ -662,22 +676,22 @@
 <tr>
 <td>Released EMR in new regions.</td>
 <td>Added support for the Singapore, Mumbai, and Chengdu regions.</td><td>July 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Released new models.</td>
 <td>Released the Standard S4 and Standard Network-Optimized SN3ne models in the Beijing, Shanghai, and Guangzhou regions.</td><td>July 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Optimized the interactions of monitoring pages and added new monitoring metrics.</td>
 <td>Optimized the interactions of monitoring pages and added new monitoring metrics.</td><td>July 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Optimized WebUI proxy address.</td>
 <td>Optimized WebUI proxy address.</td><td>July 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 </tbody></table>
 
@@ -695,7 +709,7 @@
 <td>Released the feature of accessing external clusters.</td>
 <td>Added support for accessing external clusters.</td>
 <td>June 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Released the feature of setting bootstrap actions.</td>
@@ -707,7 +721,7 @@
 <td>Released the feature of delivering component parameter configuration to nodes.</td>
 <td>Added support for delivering component parameter configuration to nodes.</td>
 <td>June 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Released the feature of rolling back parameter configuration.</td>
@@ -749,25 +763,25 @@
 <td>Optimized the style of console.</td>
 <td>Improved the style of console for a better interactive experience.</td>
 <td>May 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Optimized CVM and TencentDB naming.</td>
 <td>Optimized CVM and TencentDB naming with the EMR cluster serial number for easier locating of cluster information.</td>
 <td>May 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Changed the setting of public IPs of master nodes to optional.</td>
 <td>Changed the setting of public IPs of master nodes to optional.</td>
 <td>May 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Released the feature of adjusting the number of common nodes.</td>
 <td>Added support for adjusting the number of common nodes as needed.</td>
 <td>May 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 </tbody></table>
 
@@ -785,13 +799,13 @@
 <td>Released a new model.</td>
 <td>Released the I3 model in the Beijing, Shanghai, and Guangzhou regions. This model is a CVM allowlist model, and you can purchase it only if you are in the I3 allowlist.</td>
 <td>March 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Released EMR in a new region.</td>
 <td>Made the purchase of EMR clusters available in the Silicon Valley region.</td>
 <td>March 2019</td>
-<td>N/A</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Added support for router nodes.</td>
