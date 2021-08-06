@@ -1,7 +1,7 @@
 To reduce the access latency of a multi-AZ deployed instance, TencentDB for Redis allows you to read local nodes only. The principle is as follows:
 - Enable the "read-only replicas" feature. (Before you enable the feature, confirm that data delay of replicas is allowed.)
 - Enable the "read local nodes only" feature by setting a database parameter.
-- If there is an available proxy node in the same AZ as the load balancing cluster, the cluster can perceive it and access it only.
+- If there is an available proxy node in the same AZ as the load balancing cluster, the cluster can perceive and access it only.
 - The proxy node can access the AZ information stored in Redis nodes and route read requests to a Redis node in the same AZ.
 
 ## Enabling the "Read Local Nodes Only" Feature
