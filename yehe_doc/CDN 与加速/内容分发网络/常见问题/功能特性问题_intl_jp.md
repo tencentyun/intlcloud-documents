@@ -8,7 +8,7 @@ Tencent Cloud CDNは、現在、すでに中国本土以外でのアクセラレ
 
 [](id:q3)
 ### Tencent Cloud CDNはクロスドメインアクセスをサポートしていますか。
-Tencent Cloud CDNは、クロスドメインアクセスを処理する場合に、クロスドメイン制約をかけません。ユーザーのWebサイトがクロスドメインアクセスを必要とする場合は、自身のウェブサイトにAccess-Control-Allow-Originフィールドを設定すればOKです。またCDNのドメイン名にクロスドメインヘッダーを設定して、クロスドメインアクセスを実現することもできます。詳細については、[カスタマイズ応答ヘッダーの設定]（https://intl.cloud.tencent.com/document/product/228/35320）をご参照ください。
+Tencent Cloud CDNは、クロスドメインアクセスを処理する場合に、クロスドメイン制約をかけません。ユーザーのWebサイトがクロスドメインアクセスを必要とする場合は、自身のウェブサイトにAccess-Control-Allow-Originフィールドを設定すればOKです。またCDNのドメイン名にクロスドメインヘッダーを設定して、クロスドメインアクセスを実現することもできます。詳細については、[カスタマイズ応答ヘッダーの設定](https://intl.cloud.tencent.com/document/product/228/35320)をご参照ください。
 
 [](id:q4)
 ### CDNアクセスログはどこからダウンロードできますか。
@@ -16,7 +16,7 @@ CDNコンソールでCDNアクセスログをダウンロードできます。�
 
 [](id:q5)
 ### 自己診断ツールはどのように使用しますか。
-自己診断ツールでは、接続されているドメイン名のDNS解決、リンク品質、サイトのアクセシビリティ、データアクセスの一貫性など一連の診断項目を検出できます。具体的な操作手順については、[自己診断] （https://intl.cloud.tencent.com/document/product/228/6304）をご参照ください。 診断ツールはローカルネットワーク環境の設定に関連しており、ネットワーク全体のテスト結果を完全に反映することはできません。
+自己診断ツールでは、接続されているドメイン名のDNS解決、リンク品質、サイトのアクセシビリティ、データアクセスの一貫性など一連の診断項目を検出できます。具体的な操作手順については、[自己診断](https://intl.cloud.tencent.com/document/product/228/6304)をご参照ください。 診断ツールはローカルネットワーク環境の設定に関連しており、ネットワーク全体のテスト結果を完全に反映することはできません。
 
 [](id:q6)
 ### ローカルアクセス診断とユーザーアクセス診断にはどのような違いがありますか。
@@ -55,14 +55,14 @@ CDN中間ソースとは中間ソースサーバーのことであり、ビジ�
 
 [](id:q14)
 ### CDNのIPブラックリスト/ホワイトリストはどのようにして設定しますか。
-CDNはIPブラックリスト/ホワイトリストの設定機能を提供します。悪意あるIPの盗難や攻撃などの問題を解決するために、ビジネスニーズに応じて、ユーザーがリクエストするソースIPのフィルタリングポリシーを設定できます。詳細については、[IPブラックリスト/ホワイトリストの設定]（https://intl.cloud.tencent.com/document/product/228/6298）をご参照ください。
+CDNはIPブラックリスト/ホワイトリストの設定機能を提供します。悪意あるIPの盗難や攻撃などの問題を解決するために、ビジネスニーズに応じて、ユーザーがリクエストするソースIPのフィルタリングポリシーを設定できます。詳細については、[IPブラックリスト/ホワイトリストの設定](https://intl.cloud.tencent.com/document/product/228/6298)をご参照ください。
 
-その他設定の問題：[IPアクセス制限の設定]（https://intl.cloud.tencent.com/document/product/228/6420）、[ホットリンク防止の設定]（https://intl.cloud.tencent.com/document/product/228/6292）。
+その他設定の問題：[IPアクセス制限の設定](https://intl.cloud.tencent.com/document/product/228/6420)、[ホットリンク防止の設定](https://intl.cloud.tencent.com/document/product/228/6292)。
 
 [](id:q15)
 ### CDNのRangeのback-to-originはどのようにして設定しますか。
-[CDNコンソール]（https://console.cloud.tencent.com/cdn）にログインし、左側のメニューバーで【ドメイン名管理】を選択し、編集したいドメイン名の右側にある【管理】をクリックします。詳細については、[パートback-to-origin設定]（https://intl.cloud.tencent.com/document/product/228/7184）をご参照ください。 
-![画像の説明］(https://main.qcloudimg.com/raw/af642b65bed86a97fadaf229e26aceac.png)
+[CDNコンソール](https://console.cloud.tencent.com/cdn）にログインし、左側のメニューバーで【ドメイン名管理】を選択し、編集したいドメイン名の右側にある【管理】をクリックします。詳細については、[パートback-to-origin設定](https://intl.cloud.tencent.com/document/product/228/7184)をご参照ください。 
+![画像の説明](https://main.qcloudimg.com/raw/af642b65bed86a97fadaf229e26aceac.png)
 【back-to-origin設定】をクリックすると、Range back-to-origin設定モジュールを表示することができます。![画像の説明](https://main.qcloudimg.com/raw/79d08718f1399b735b9b2dc804bf383e.png)
 
 [](id:q16)
