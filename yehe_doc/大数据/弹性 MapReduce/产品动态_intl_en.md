@@ -31,13 +31,13 @@
 <td>Added support for graceful scale-in.</td>
 <td>When a scale-in action is triggered, nodes that are executing tasks will not be released immediately. Instead, they will be released after completing the tasks.</td>
 <td>June 03, 2021</td>
-<td><a href="https://cloud.tencent.com/document/product/589/56782" target="_blank">Graceful Scale-In</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/40694" target="_blank">Graceful Scale-In</a></td>
 </tr>
 <tr>
 <td>Added support for integrating Knox with Tez.</td>
 <td>Added support for viewing Tez tasks via UI.</td>
 <td>June 03, 2021</td>
-<td><a href="https://cloud.tencent.com/document/product/589/56820" target="_blank">Integrating Knox with Tez</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/1026/40686" target="_blank">Integrating Knox with Tez</a></td>
 </tr>
 <tr>
 <td>Added availability zones.</td>
