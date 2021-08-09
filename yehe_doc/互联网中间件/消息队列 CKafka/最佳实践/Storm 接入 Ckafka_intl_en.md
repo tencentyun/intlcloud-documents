@@ -1,18 +1,19 @@
-## Storm Overview
-
 Storm is a distributed real-time computing framework that can perform stream-based data processing and provide universal distributed RPC calling so as to reduce the delay of event processing down to sub-seconds. It is suitable for real-time data processing scenarios where low delay is required.
 
 ## How Storm Works
+
 There are two types of nodes in a Storm cluster: `master node` and `worker node`. The `Nimbus` process runs on the `master node` for resource allocation and status monitoring, and the `Supervisor` process runs on the `worker node` for listening on work tasks and starting the `executor`. The entire Storm cluster relies on `ZooKeeper` for common data storage, cluster status listening, task assignment, etc.
 
 A data processing program submitted to Storm is called a `topology`. The minimum message unit it processes is `tuple` (an array of arbitrary objects). A `topology` consists of `spout` and `bolt`, where `spout` is the source of `tuple`, while `bolt` can subscribe to any `tuple` issued by `spout` or `bolt` for processing.
 ![](https://mc.qcloudimg.com/static/img/93eb9e2621f5ad49fee536ab9d6e8799/image.png)
 
 ## Storm with CKafka
+
 Storm can use CKafka as a `spout` to consume data for processing or as a `bolt` to store the processed data for consumption by other components.
 
 ### Testing environment
-**Centos 6.8 OS**
+
+**CentOS 6.8**
 
 | Package | Version |
 | ------- | ------- |
@@ -21,18 +22,32 @@ Storm can use CKafka as a `spout` to consume data for processing or as a `bolt` 
 | SSH     | 5.3     |
 | Java    | 1.8     |
 
+## Prerequisites
 
-### Applying for and creating a CKafka instance
-Log in to the [CKafka Console](https://console.cloud.tencent.com/ckafka) and create a CKafka instance as instructed in [Creating Instances](https://intl.cloud.tencent.com/document/product/597/32543).
-![](https://mc.qcloudimg.com/static/img/7333604c2285f1db50499eab35fac2fb/12231-01.jpg)
+- Download and install JDK 8. For detailed directions, please see [Java SE Development Kit 8 Downloads](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html).
+- Download and install Storm. For more information, please see [Apache Storm downloads](http://storm.apache.org/downloads.html).
+- You have [created a CKafka instance](https://intl.cloud.tencent.com/document/product/597/39718).
 
-### Creating a topic
-Create a topic under the instance as instructed in [Creating Topics](https://intl.cloud.tencent.com/document/product/597/34003).
-![](https://mc.qcloudimg.com/static/img/61de4051b661fcb14076b9dde83a6c06/12231-02.jpg)
+## Directions
 
-### Maven dependency
-Configure the `pom.xml` as follows:
-```xml
+### Step 1. Get the CKafka instance access address
+
+1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
+2. Select **Instance List** on the left sidebar and click the **ID** of an instance to enter the instance basic information page.
+3. On the instance basic information page, get the instance access address in the **Access Mode** module.
+   ![](https://main.qcloudimg.com/raw/a28b5599889166095c168510ce1f5e89.png)
+
+### Step 2. Create a topic
+
+1. On the instance basic information page, select the **Topic Management** tab on the top.
+2. On the topic management page, click **Create** to create a topic.
+   ![](https://main.qcloudimg.com/raw/f3ea93d866767a3a26dd80b0a8d5ad8f.png)
+
+### Step 3. Add Maven dependencies
+
+Configure `pom.xml` as follows:
+<dx-codeblock>
+:::  xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>storm</groupId>
@@ -107,13 +122,18 @@ Configure the `pom.xml` as follows:
         </plugins>
     </build>
 </project>
-```
+:::
+</dx-codeblock>
 
 
-### Writing to CKafka 
+
+### Step 4. Produce a message
+
 #### Using spout/bolt
+
 Topology code:
-```java
+<dx-codeblock>
+:::  java
 //TopologyKafkaProducerSpout.java
 import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;
@@ -128,9 +148,9 @@ import java.util.Properties;
 
 public class TopologyKafkaProducerSpout {
     // `ip:port` of the CKafka instance applied for
-    private final static String BOOTSTRAP_SERVERS = "111.230.216.45:9092";
+    private final static String BOOTSTRAP_SERVERS = "xx.xx.xx.xx:xxxx";
     // Specify the topic to which to write messages
-    private final static String TOPIC = "storm-topology-test";
+    private final static String TOPIC = "storm_test";
     public static void main(String[] args) throws Exception {
         // Set producer attributes
         // For functions, please visit https://kafka.apache.org/0100/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html
@@ -172,11 +192,13 @@ public class TopologyKafkaProducerSpout {
 
     }
 }
-```
+:::
+</dx-codeblock>
+
 
 Create a spout class that generates messages in sequence:
-
-```java
+<dx-codeblock>
+:::  java
 import org.apache.storm.spout.SpoutOutputCollector;
 import org.apache.storm.task.TopologyContext;
 import org.apache.storm.topology.OutputFieldsDeclarer;
@@ -209,13 +231,13 @@ public class SerialSentenceSpout extends BaseRichSpout {
         outputFieldsDeclarer.declare(new Fields("sentence"));
     }
 }
-```
+:::
+</dx-codeblock>
 
 
-
-Add `key` and `message` fields to the `tuple`. If `key` is null, the produced messages will be evenly allocated to each partition. If a key is specified, the messages will be hashed to specific partitions based on the key value: 
-
-```java
+Add `key` and `message` fields to the `tuple`. If `key` is null, the produced messages will be evenly allocated to each partition. If a key is specified, the messages will be hashed to specific partitions based on the key value:
+<dx-codeblock>
+:::  java
 //AddMessageKeyBolt.java
 import org.apache.storm.topology.BasicOutputCollector;
 import org.apache.storm.topology.OutputFieldsDeclarer;
@@ -241,11 +263,15 @@ public class AddMessageKeyBolt extends BaseBasicBolt {
         outputFieldsDeclarer.declare(new Fields("key", "message"));
     }
 }
-```
+:::
+</dx-codeblock>
+
 
 #### Using trident
+
 Use the trident class to generate a topology
-```java
+<dx-codeblock>
+:::  java
 //TopologyKafkaProducerTrident.java
 import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;
@@ -266,9 +292,9 @@ import java.util.Properties;
 
 public class TopologyKafkaProducerTrident {
     // `ip:port` of the CKafka instance applied for
-    private final static String BOOTSTRAP_SERVERS = "111.230.216.45:9092";
+    private final static String BOOTSTRAP_SERVERS = "xx.xx.xx.xx:xxxx";
     // Specify the topic to which to write messages
-    private final static String TOPIC = "storm-trident-test";
+    private final static String TOPIC = "storm_test";
     public static void main(String[] args) throws Exception {
         // Set producer attributes
         // For functions, please visit https://kafka.apache.org/0100/javadoc/index.html?org/apache/kafka/clients/consumer/KafkaConsumer.html
@@ -319,11 +345,13 @@ public class TopologyKafkaProducerTrident {
         }
     }
 }
-```
+:::
+</dx-codeblock>
+
 
 Create a spout class that generates messages in batches:
-
-```java
+<dx-codeblock>
+:::  java
 //TridentSerialSentenceSpout.java
 import org.apache.storm.Config;
 import org.apache.storm.task.TopologyContext;
@@ -379,14 +407,16 @@ public class TridentSerialSentenceSpout implements IBatchSpout {
         return new Fields("sentence");
     }
 }
-```
+:::
+</dx-codeblock>
 
 
 
-### Consumption from CKafka
+### Step 5. Consume the message
 
 #### Using spout/bolt
-```java
+<dx-codeblock>
+:::  java
 //TopologyKafkaConsumerSpout.java
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.storm.Config;
@@ -410,9 +440,9 @@ import static org.apache.storm.kafka.spout.FirstPollOffsetStrategy.LATEST;
 
 public class TopologyKafkaConsumerSpout {
     // `ip:port` of the CKafka instance applied for
-    private final static String BOOTSTRAP_SERVERS = "111.230.216.45:9092";
+    private final static String BOOTSTRAP_SERVERS = "xx.xx.xx.xx:xxxx";
     // Specify the topic to which to write messages
-    private final static String TOPIC = "storm-topology-test";
+    private final static String TOPIC = "storm_test";
 
     public static void main(String[] args) throws Exception {
         // Set a retry policy
@@ -476,9 +506,13 @@ public class TopologyKafkaConsumerSpout {
         }
     }
 }
-```
+:::
+</dx-codeblock>
+
+
 #### Using trident
-```java
+<dx-codeblock>
+:::  java
 //TopologyKafkaConsumerTrident.java
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.storm.Config;
@@ -504,9 +538,9 @@ import static org.apache.storm.kafka.spout.FirstPollOffsetStrategy.LATEST;
 
 public class TopologyKafkaConsumerTrident {
     // `ip:port` of the CKafka instance applied for
-    private final static String BOOTSTRAP_SERVERS = "111.230.216.45:9092";
+    private final static String BOOTSTRAP_SERVERS = "xx.xx.xx.xx:xxxx";
     // Specify the topic to which to write messages
-    private final static String TOPIC = "storm-trident-test";
+    private final static String TOPIC = "storm_test";
 
     public static void main(String[] args) throws Exception {
         ByTopicRecordTranslator<String, String> trans = new ByTopicRecordTranslator<>(
@@ -553,10 +587,14 @@ public class TopologyKafkaConsumerTrident {
         }
     }
 }
-```
+:::
+</dx-codeblock>
 
-### Submitting Storm
+
+### Step 6. Submit Storm
+
 After being compiled with `mvn package`, Storm can be submitted to the local cluster for debugging or submitted to the production cluster for running.
+
 ```bash
 storm jar your_jar_name.jar topology_name
 ```
