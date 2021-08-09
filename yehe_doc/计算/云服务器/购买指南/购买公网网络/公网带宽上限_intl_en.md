@@ -39,7 +39,7 @@ The public network bandwidth cap refers to the upper limit of outbound bandwidth
 
 The public network inbound bandwidth refers to the bandwidth that flows into CVM instances.
 - If the bandwidth you purchased is greater than 10 Mbps, Tencent Cloud will assign a public network inbound bandwidth equals to the purchased bandwidth.
-- If the bandwidth you purchased is less than 10 Mbps, Tencent Cloud will assign 10-Mbps public network inbound bandwidth.
+- If the bandwidth you purchased is less than or equals to 10 Mbps, Tencent Cloud will assign 10-Mbps public network inbound bandwidth.
 
 ## Peak Bandwidth
 The peak bandwidth is applicable to both bill-by-traffic and bill-by-bandwidth, but it means differently in these two cases as follows:
@@ -52,12 +52,12 @@ The peak bandwidth is applicable to both bill-by-traffic and bill-by-bandwidth, 
        </tr>
 			 <tr>
 			 <td>Bill-by-traffic</td>
-			 <td>The peak bandwidth is only regarded as the <strong>maximum peak bandwidth</strong>, and not as the committed bandwidth. When bandwidth resources are contested, the peak bandwidth may be limited.</td> 
+			 <td>The peak bandwidth is only regarded as the <strong>maximum possible peak bandwidth</strong>, and not as the committed bandwidth. In case of resource contention, the peak bandwidth may not reach this value.</td> 
 			 <td>The sum of peak bandwidth of all the running bill-by-traffic instances (such as CVMs, EIPs, elastic IPv6 addresses) cannot exceed 5 Gbps in one region. If your application requires a guaranteed or higher bandwidth, choose bill-by-bandwidth.</td> 
 			 </tr>
        <tr>          
-            <td>Bill-by-bandwidth<br/>(including monthly bandwidth subscription and hourly bandwidth)</td>
-            <td>This peak bandwidth is the committed bandwidth, and is guaranteed in case of bandwidth competition.</td>
+            <td>Bill-by-bandwidth<br/> (including monthly bandwidth subscription and hourly bandwidth)</td>
+            <td>This peak bandwidth is the committed bandwidth, and is guaranteed in case of resource contention.</td>
 						<td>The sum of peak bandwidth of all the running instances such as CVMs and EIPs that are billed at a fixed bandwidth (including monthly-subscribed bandwidth and hourly bandwidth) cannot exceed 50 Gbps in one region. If you require a higher bandwidth, contact your sales rep.
 
 </td> 
@@ -65,5 +65,5 @@ The peak bandwidth is applicable to both bill-by-traffic and bill-by-bandwidth, 
 </tbody></table>
 
 
-## Documentation
-- [Adjusting Network Configuration](https://intl.cloud.tencent.com/document/product/213/15517)
+## Reference
+[Adjusting Network Bandwidth](https://intl.cloud.tencent.com/document/product/213/15517)
