@@ -136,6 +136,7 @@ pkg-config --modversion fuse  #fuse 버전 넘버 조회. “2.9.4”가 표시�
 ```
 - SUSE 시스템에서는 fuse 2.8.4 이상 버전을 직접 설치해야 하며 설치 명령어 예시는 다음과 같습니다.
 >!설치 시 `example/fusexmp.c` 파일의 222행 내용을 주석 처리해야 합니다. 주석 처리하지 않을 경우 make에 오류가 발생합니다. `/*content*/`로 주석 처리합니다.
+>
 ```shell
 zypper remove fuse libfuse2
 wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.9.4.tar.gz
@@ -193,7 +194,7 @@ chmod 640 /etc/passwd-cosfs
 키 파일에 설정한 버킷을 지정 디렉터리에 마운트하는 명령 라인은 다음과 같습니다.
 
 ```shell
-cosfs <BucketName-APPID> <MountPoint> -ourl=cos.<Region>.myqcloud.com -odbglevel=info -oallow_other
+cosfs <BucketName-APPID> <MountPoint> -ourl=http://cos.<Region>.myqcloud.com -odbglevel=info -oallow_other
 ```
 그 중
 - &lt;MountPoint&gt;는 로컬 마운트 디렉터리(예시: `/mnt`)입니다.
