@@ -17,9 +17,9 @@ You have [created a topic](https://intl.cloud.tencent.com/document/product/597/3
 3. On the instance basic information page, click **Add a routing policy** in the **Access Mode** module.
    - Route Type: public domain name access
    - Access Mode: only SASL_PLAINTEXT is supported currently
-  ![](https://main.qcloudimg.com/raw/65be6a54e2a2abcf1cd5c3b1507dca7d.png)
+  ![](https://main.qcloudimg.com/raw/5ba836623a99fa87e97eeae069d34c40.png)
 3. Click **Submit**, and you will see the routing policy below the access mode.
-   ![](https://main.qcloudimg.com/raw/642337483d8e59cbdc55cb96e81faf4b.png)
+  ![](https://main.qcloudimg.com/raw/8de85b778783fe2851d1cd4a854a834f.png)
 
 
 
@@ -28,9 +28,9 @@ You have [created a topic](https://intl.cloud.tencent.com/document/product/597/3
 
 1. On the instance basic information page, select the **User Management** tab on the top.
 2. On the user management page, click **Create** and enter the username and password to create a user.
-  ![](https://main.qcloudimg.com/raw/971325c47e11c07ee728f82b50d54a7b.png)
+  ![](https://main.qcloudimg.com/raw/4bc1ec0526e4c325b419908550ef891a.png)
 3. Click **Submit**, and you will see this new user in the user management list.
-   ![](https://main.qcloudimg.com/raw/c427790899d8ff8e0d4d8f88ddd126fe.png)
+  ![](https://main.qcloudimg.com/raw/d8460fe9713ebd6d4edc04c8740f82c1.png)
 
 ### Adding ACL policy
 
@@ -39,9 +39,9 @@ You can manage existing topics with ACLs (including read and write permissions) 
 1. On the instance details page, select the **ACL Policy Management** tab at the top.
 2. Click **Edit ACL Policy** in the **Operation** column of the target topic to enter the ACL policy page.
 3. Click **Create** and select/enter the target users and IPs. If you don't select any, the policy will take effect for all users/hosts by default.
-   ![](https://main.qcloudimg.com/raw/632c3903a52bb1c71860b1dbd40ed43a.png)
+   ![](https://main.qcloudimg.com/raw/b459c16a459238f4c194ec0896ca525a.png)
 4. Click **Submit**, and the policy appears in the policy list of the target topic.
-   ![](https://main.qcloudimg.com/raw/f97473b3031d97efa6ae4aeec16560d9.png)
+    ![](https://main.qcloudimg.com/raw/686f9f8157a3499a263bd04c89972bf7.png)
 
 >?For more information on SASL and ACL related to CKafka, please see [Configuring ACL Policy](https://intl.cloud.tencent.com/document/product/597/39084).
 
