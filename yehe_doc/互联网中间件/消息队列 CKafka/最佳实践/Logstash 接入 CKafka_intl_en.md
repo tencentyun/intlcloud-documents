@@ -36,20 +36,20 @@ In addition, Logstash supports encoding and decoding data, so you can specify da
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
 2. Select **Instance List** on the left sidebar and click the **ID** of an instance to enter the instance basic information page.
 3. On the instance basic information page, get the instance access address in the **Access Mode** module.
-   ![](https://main.qcloudimg.com/raw/a28b5599889166095c168510ce1f5e89.png)
+   ![](https://main.qcloudimg.com/raw/5905037c8e847781e495d2f202167d5c.png)
 
 ### Step 2. Create a topic
 
 1. On the instance basic information page, select the **Topic Management** tab on the top.
 2. On the topic management page, click **Create** to create a topic named `logstash_test`.
-   ![](https://main.qcloudimg.com/raw/76ca78b4058d40510ecd81c9cf40e5b5.png)
+   ![](https://main.qcloudimg.com/raw/580d8f5577ea5d462f26061f7a50095c.png)
 
 ### Step 3. Connect to CKafka
 
 >?You can click the following tabs to view the detailed directions for using CKafka as `inputs` or `outputs`.
 
 <dx-tabs>
-::: Connecting as \sinputs\s
+::: Connecting\sas\sinputs\s
 
 1. Run `bin/logstash-plugin list` to check whether `logstash-input-kafka` is included in the supported plugins.
    ![](https://mc.qcloudimg.com/static/img/c5c876ea5ae5ce75307a5e307357e622/input1.png)
@@ -81,7 +81,7 @@ In addition, Logstash supports encoding and decoding data, so you can specify da
 
 :::
 
-::: Connecting as \soutputs\s
+::: Connecting\sas\soutputs\s
 
 1. Run `bin/logstash-plugin list` to check whether `logstash-output-kafka` is included in the supported plugins.
    ![](https://mc.qcloudimg.com/static/img/c5c876ea5ae5ce75307a5e307357e622/77.png)
