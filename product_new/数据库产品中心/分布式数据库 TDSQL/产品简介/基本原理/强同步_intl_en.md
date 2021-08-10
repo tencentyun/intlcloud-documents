@@ -1,11 +1,11 @@
 ## Background
 Traditionally, there are three methods of data replication:
-- Async replication: An application initiates an update request. After completing the corresponding operation, the master node (master) responds to the application immediately and replicates data to the slave node (slave) asynchronously.
-- Strong sync replication: An application initiates an update request. After completing the operation, the master replicates data to the slave immediately. After receiving the data, the slave returns a success message to the master. Only after receiving the message from the slave will the master respond to the application. The data is replicated synchronously from the master to the slave.
+- Async replication: An application initiates an update request. After completing the corresponding operation, the source node (source) responds to the application immediately and replicates data to the replica node (replica) asynchronously.
+- Strong sync replication: An application initiates an update request. After completing the operation, the source replicates data to the replica immediately. After receiving the data, the replica returns a success message to the source. Only after receiving the message from the replica will the source respond to the application. The data is replicated synchronously from the source to the replica.
 - Semi-sync data replication: when an update request is initiated by an application, the primary node replicates data to the secondary node as soon as the update operation is executed on the primary node. After receiving the data and writing into the relay log (which is not necessary to execute), the secondary node returns a message to the primary node. Only after the message is successfully returned can the primary node respond to the application with a request success.
 
 ## Known Issues
-When the master or slave is unavailable, there is a chance of data inconsistency for the above three methods.
+When the source or replica is unavailable, there is a chance of data inconsistency for the above three methods.
 
 As the core of system data storage and service, a database should be highly available. In production systems, high availability solutions are often required to ensure uninterrupted system operations, and the data sync technology serves as the foundation of such solutions.
 
