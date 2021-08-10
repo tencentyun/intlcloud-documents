@@ -7,7 +7,7 @@ This document describes how to access CKafka to send/receive messages with the S
 - [Install JDK 1.8 or above](https://www.oracle.com/java/technologies/javase-downloads.html)
 - [Install Maven 2.5 or later](http://maven.apache.org/download.cgi#)
 - [Configure an ACL policy](https://intl.cloud.tencent.com/document/product/597/39084)
-- [Download the demo](https://github.com/TencentCloud/ckafka-sdk-demo/tree/main/javakafkademo/gongwang)
+- [Download the demo](https://github.com/TencentCloud/ckafka-sdk-demo/tree/main/javakafkademo/PUBLIC_SASL)
 
 ## Directions
 
