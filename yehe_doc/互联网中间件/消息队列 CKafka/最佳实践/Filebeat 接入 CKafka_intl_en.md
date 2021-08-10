@@ -15,13 +15,13 @@ Beats offers a wide variety of shippers, and you can download the one which best
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
 2. Select **Instance List** on the left sidebar and click the **ID** of an instance to enter the instance basic information page.
 3. On the instance basic information page, get the instance access address in the **Access Mode** module.
-   ![](https://main.qcloudimg.com/raw/a28b5599889166095c168510ce1f5e89.png)
+    ![](https://main.qcloudimg.com/raw/fea1f55c3cf311d1393347853cf183fc.png)
 
 ### Step 2. Create a topic
 
 1. On the instance basic information page, select the **Topic Management** tab on the top.
 2. On the topic management page, click **Create** to create a topic named `test`.
-	 ![](https://main.qcloudimg.com/raw/adc18f407be9ff1a1e195891b82031c5.png)
+    ![](https://main.qcloudimg.com/raw/bd8fb967eb2e46f14cee52c3a34014e2.png)
 
 ### Step 3. Prepare the configuration file
 
