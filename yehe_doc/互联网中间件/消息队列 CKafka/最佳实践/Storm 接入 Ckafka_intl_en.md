@@ -35,13 +35,13 @@ Storm can use CKafka as a `spout` to consume data for processing or as a `bolt` 
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
 2. Select **Instance List** on the left sidebar and click the **ID** of an instance to enter the instance basic information page.
 3. On the instance basic information page, get the instance access address in the **Access Mode** module.
-   ![](https://main.qcloudimg.com/raw/a28b5599889166095c168510ce1f5e89.png)
+   ![](https://main.qcloudimg.com/raw/7fcec9cfd92d8c0a4284fbd6b76aaaa5.png)
 
 ### Step 2. Create a topic
 
 1. On the instance basic information page, select the **Topic Management** tab on the top.
 2. On the topic management page, click **Create** to create a topic.
-   ![](https://main.qcloudimg.com/raw/f3ea93d866767a3a26dd80b0a8d5ad8f.png)
+   ![](https://main.qcloudimg.com/raw/d1fc3abed304203b83c0a8e94e7cc6a7.png)
 
 ### Step 3. Add Maven dependencies
 
