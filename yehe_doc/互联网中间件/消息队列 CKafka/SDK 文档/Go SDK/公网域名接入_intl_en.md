@@ -6,7 +6,7 @@ This document describes how to use the client for Go to access the SASL access p
 
 - [Install Go](https://golang.org/dl)
 - [Configure an ACL policy](https://intl.cloud.tencent.com/document/product/597/39084)
-- [Download the demo](https://github.com/TencentCloud/ckafka-sdk-demo/tree/main/gokafkademo/gongwang)
+- [Download the demo](https://github.com/TencentCloud/ckafka-sdk-demo/tree/main/gokafkademo/PUBLIC_SASL)
 
 ## Directions
 
