@@ -6,7 +6,7 @@
 
 - [安装 GCC](https://gcc.gnu.org/install/)
 - [配置 ACL 策略](https://intl.cloud.tencent.com/document/product/597/39084)
-- [下载 Demo](https://github.com/TencentCloud/ckafka-sdk-demo/tree/main/cppkafkademo/gongwang)
+- [下载 Demo](https://github.com/TencentCloud/ckafka-sdk-demo/tree/main/cppkafkademo/PUBLIC_SASL)
 
 ## 操作步骤
 
