@@ -224,16 +224,16 @@ We recommend you use the new version of SDK. If you need a legacy version, add t
 
 ## FAQs
 <dx-accordion>
-::: Failure to update the dependencies in the repository's \spom.xml\s file
+::: Failure\sto\supdate\sthe\sdependencies\sin\sthe repository's\spom.xml\sfile
 This may be because the local server has a proxy configured, but the proxy is not configured for the tool during the update. Please update the dependencies on the command line as detailed above. If the problem persists, you need to check whether the problem is caused by network or firewall issues.
 :::
-::: Failure to run the demo
+::: Failure\sto\srun\sthe\sdemo
 In `[TencentCloudSDKException]message:java.net.ConnectException-Connection timed out: connect requestId:`, you need to check whether the local server has a proxy configured but the proxy is not added in the code. For more information, please see [Proxy configuration](#p3) above.
 :::
-::: Version upgrade
+::: Version\supgrade
 Please note that upgrading from v3.0.x to 3.1.x causes compatibility issues. As `integer` fields have been modified to `long` type, the project needs to be recompiled.
 :::
-::: Dependency conflict
+::: Dependency\sconflict
 Currently, the SDK depends on OkHttp 2.5.0. If it is mixed with other packages that depend on OkHttp 3, an error may be reported, such as `Exception in thread "main" java.lang.NoSuchMethodError: okio.BufferedSource.rangeEquals(JLokio/ByteString;)Z`.
 
 The reason is that OkHttp 3 depends on Okio 1.12.0, while OkHttp 2.5.0 depends on Okio 1.6.0. When Maven parses dependencies, it gives top priority to the shortest path in sequence, so if the SDK is declared in the pom.xml dependency first, Okio 1.6.0 will be used, and an error will be reported.
