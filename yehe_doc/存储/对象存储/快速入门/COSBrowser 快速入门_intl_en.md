@@ -98,4 +98,4 @@ We are deeply sorry for any inconvenience you may have encountered when using th
 To learn more about iOS- or Android-powered COSBrowser, see the following documents:
 
 - [COSBrowser Overview](https://intl.cloud.tencent.com/document/product/436/11366)
-- [User Guide for Mobile Edition](https://intl.cloud.tencent.com/document/product/436/32566)
+- [User Guide for Mobile Edition](https://intl.cloud.tencent.com/document/product/436/41615)
