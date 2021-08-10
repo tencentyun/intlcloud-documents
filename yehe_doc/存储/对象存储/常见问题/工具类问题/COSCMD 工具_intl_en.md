@@ -20,13 +20,6 @@ COSCMD automatically converts uppercase letters to lowercase ones. A bucket name
 Yes. You need to use the `--ignore /folder/*` parameter.
 For example, if you want to exclude a folder during download, use `coscmd download --ignore /folder/*` to filter out the files in the folder. If you want to ignore files with a certain suffix in the folder, be sure to append `,` to the "*" character, or enclose it with `""`.
 
-
-### 当需要传输大量文件时，如何提高传输速度？
-可适当调整 MAX_THREAD 参数值，默认配置为5。线程数取决于机器性能，通常情况下设置为30，即可跑满带宽。例如将并发线程调整为30，执行命令行如下。
-```plaintext
-coscmd config -m 30
-```
-
 ### Does COSCMD support using \* to determine objects with a specified prefix to download?
 
 No. You need to use the following command format for download:
