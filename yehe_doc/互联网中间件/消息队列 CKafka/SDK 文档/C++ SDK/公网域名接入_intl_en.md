@@ -6,7 +6,7 @@ This document describes how to access CKafka to send/receive messages with the S
 
 - [Install GCC](https://gcc.gnu.org/install/)
 - [Configure an ACL policy](https://intl.cloud.tencent.com/document/product/597/39084)
-- [Download the demo](https://github.com/TencentCloud/ckafka-sdk-demo/tree/main/cppkafkademo/gongwang)
+- [Download the demo](https://github.com/TencentCloud/ckafka-sdk-demo/tree/main/cppkafkademo/PUBLIC_SASL)
 
 ## Directions
 
