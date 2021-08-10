@@ -7,7 +7,7 @@ This document describes how to access CKafka to send/receive messages with the S
 - [Install Python](https://www.python.org/downloads/)
 - [Install pip](https://pip-cn.readthedocs.io/en/latest/installing.html)
 - [Configure an ACL policy](https://intl.cloud.tencent.com/document/product/597/39084)
-- [Download the demo](https://github.com/TencentCloud/ckafka-sdk-demo/tree/main/pythonkafkademo/gongwang)
+- [Download the demo](https://github.com/TencentCloud/ckafka-sdk-demo/tree/main/pythonkafkademo/PUBLIC_SASL)
 
 ## Directions
 
