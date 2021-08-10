@@ -8,7 +8,7 @@ This document describes how to access CKafka to send/receive messages with the S
 - [Install PHP 5.6 or above](https://www.php.net/manual/en/install.php)
 - [Install PEAR](https://pear.php.net/manual/en/installation.getting.php)
 - [Configure an ACL policy](https://intl.cloud.tencent.com/document/product/597/39084)
-- [Download the demo](https://github.com/TencentCloud/ckafka-sdk-demo/tree/main/phpkafkademo/gongwang)
+- [Download the demo](https://github.com/TencentCloud/ckafka-sdk-demo/tree/main/phpkafkademo/PUBLIC_SASL)
 
 ## Directions
 
