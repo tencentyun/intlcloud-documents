@@ -98,4 +98,4 @@ COSBrowser는 위 기능 외에도 버킷 액세스 권한 수정, 파일 미리
 모바일 (iOS, Android)의 COSBrowser, 다음 문서를 참조하십시오.
 
 - [COSBrowser 소개](https://intl.cloud.tencent.com/document/product/436/11366)
-- [모바일 사용 설명](https://intl.cloud.tencent.com/document/product/436/32566)
+- [모바일 사용 설명](https://intl.cloud.tencent.com/document/product/436/41615)
