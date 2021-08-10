@@ -67,7 +67,7 @@ grafana-cli plugins --help
 1. Hover over the **gear** icon on the left sidebar and click `Plugins` to go to the plugin management page. If the `Tencent Cloud Monitor` App plugin is displayed in the plugin list, it indicates that the plugin has been installed successfully.
 ![](https://main.qcloudimg.com/raw/a658f09d212f374ccc54b8d394b5e635.png)
 2. Enter the app details page and click `Enable`. After the Tencent Cloud Monitor App plugin is enabled successfully, you can use it in Grafana.
-![](https://main.qcloudimg.com/raw/7b6a18c32cf4e31d528109be51547320.png)
+![](https://main.qcloudimg.com/raw/2cc428c778007aa30737b170b7cf7bbe.png)
 
 ## Step 3. Configure the Data Source
 
@@ -80,7 +80,7 @@ The Tencent Cloud Monitor App plugin gets the monitoring metric data of Tencent 
 4. Set `SecretId` and `SecretKey`: security certificate information required for CM API calls, which can be obtained on the [TencentCloud API Key](https://console.cloud.tencent.com/cam/capi) page in the Tencent Cloud console.
 5. Select Tencent Cloud services whose monitoring data you want to get.  
 6. Click **Save & Test** to test whether the data source is configured correctly, and if so, you can use it in the dashboard.
-![](https://main.qcloudimg.com/raw/a6bbd2367be4eb6b12497bb213a9ca27.png)
+![](https://main.qcloudimg.com/raw/85ed048d5a163c8028e9cfe19b4d35d1.png)
 
 ## Step 4. Create a Dashboard
 
@@ -98,12 +98,12 @@ Hover over the **grid** icon on the left sidebar and click **Manage** to go to t
 ### Template import
 
 Hover over the **gear** icon on the left sidebar and click **Plugins** to go to the plugin management page. Click **Tencent Cloud Monitor** to go to the application details page, switch to the `Dashboards` tab, and select a dashboard template to import.
-![](https://main.qcloudimg.com/raw/755b58febc19bd00e3a725379590e766.png)
+![](https://main.qcloudimg.com/raw/c2678540c0eeb27b2d6acca5712ba2c5.png)
 
 
 ## Step 5. Configure Panel Data
 
-![](https://main.qcloudimg.com/raw/84d7645107e1529ddeb84921f0218e62.png)
+![](https://main.qcloudimg.com/raw/8bcee2cb5f8b1f8b1e5c7683841d434a.png)
 
 After creating a dashboard, you can configure the panel information to get the monitoring data from Tencent Cloud Monitor. The following describes how to do so by taking Graph as an example.
 1. Click **Add Query** in **New Panel** to go to the panel configuration page. On the `Query` tab on the left, select the Tencent Cloud monitoring data source configured above.
