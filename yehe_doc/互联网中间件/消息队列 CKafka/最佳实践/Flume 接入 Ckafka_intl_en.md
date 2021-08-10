@@ -1,6 +1,6 @@
 Apache Flume is a distributed, reliable, and highly available log collection system that supports a wide variety of data sources such as HTTP, log file, JMS, and listening port. It can efficiently collect, aggregate, move, and store massive amounts of log data to a specified storage system like Kafka, distributed file system, and Solr search server.
 
-// The structure of Flume is as follows:
+The structure of Flume is as follows:
 ![](https://mc.qcloudimg.com/static/img/291cf61049ab4820c10c05c6f0900850/00.png)
 
 Flume uses agents as the smallest independent unit of operation. An agent is a JVM composed of three main components: source, sink, and channel.
@@ -16,8 +16,8 @@ Therefore, Flume and Kafka together can satisfy most requirements in production 
 
 ### Preparations
 
--	 Download [Apache Flume](http://flume.apache.org/download.html) (v1.6.0 or higher is compatible with Kafka).
--	 Download [Kafka](https://kafka.apache.org/downloads) (v0.9.x or higher is required as v0.8 is no longer supported).
+- Download [Apache Flume](http://flume.apache.org/download.html) (v1.6.0 or higher is compatible with Kafka).
+- Download [Kafka](https://kafka.apache.org/downloads) (v0.9.x or higher is required as v0.8 is no longer supported).
 - Confirm that Kafka's source and sink components are already in Flume.	
 
 ### Connection method
@@ -85,25 +85,25 @@ For more information, please visit [Apache Flume's official website](https://flu
 ## Flume Connection to CKafka
 
 <dx-tabs>
-::: Using \sCKafka\s as \sSink
+::: Using\sCKafka\sas\sSink
 
 #### Step 1. Get the CKafka instance access address
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
 2. Select **Instance List** on the left sidebar and click the **ID** of an instance to enter the instance basic information page.
 3. On the instance basic information page, get the instance access address in the **Access Mode** module.
-   ![](https://main.qcloudimg.com/raw/a28b5599889166095c168510ce1f5e89.png)
+   ![](https://main.qcloudimg.com/raw/c5a1ae2c28e54c91b468d2735274da90.png)
 
 
 #### Step 2. Create a topic
 1. On the instance basic information page, select the **Topic Management** tab on the top.
 2. On the topic management page, click **Create** to create a topic named `flume_test`.
-   ![](https://main.qcloudimg.com/raw/63f4119691d504bb759a11fbded9e4b0.png)
+   ![](https://main.qcloudimg.com/raw/78de94d6c25da38371ec1bbc2f537fc7.png)
 
 
 #### Step 3. Configure Flume 
 1. Download the [Apache Flume toolkit and decompress it](http://flume.apache.org/download.html).
 2. Write the configuration file `flume-kafka-sink.properties`. Below is a simple demo (configured in the `conf` folder in the extracted directory). If there is no special requirement, simply replace your own instance IP and topic in the configuration file. The source used in this example is `tail -F flume-test`, which represents the information newly added in the file.
-   ![](https://mc.qcloudimg.com/static/img/daf5063d3c2c74eddb93f729eb6feb5b/55.png)
+   ![](https://main.qcloudimg.com/raw/96eec061baca00659cc402346efe9344.png)
 3. Run the following command to start Flume:
    ```bash
    ./bin/flume-ng agent -n agentckafka -c conf -f conf/flume-kafka-sink.properties
@@ -123,28 +123,28 @@ For more information, please visit [Apache Flume's official website](https://flu
 
 :::
 
-::: Using \sCKafka\s as \sSource
+::: Using\sCKafka\sas\sSource
 
 #### Step 1. Get the CKafka instance access address
 
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
 2. Select **Instance List** on the left sidebar and click the **ID** of an instance to enter the instance basic information page.
 3. On the instance basic information page, get the instance access address in the **Access Mode** module.
-   ![](https://main.qcloudimg.com/raw/a28b5599889166095c168510ce1f5e89.png)
+   ![](https://main.qcloudimg.com/raw/c5a1ae2c28e54c91b468d2735274da90.png)
 
 
 #### Step 2. Create a topic
 
 1. On the instance basic information page, select the **Topic Management** tab on the top.
 2. On the topic management page, click **Create** to create a topic named `flume_test`.
-   ![](https://main.qcloudimg.com/raw/63f4119691d504bb759a11fbded9e4b0.png)
+   ![](https://main.qcloudimg.com/raw/78de94d6c25da38371ec1bbc2f537fc7.png)
 
 
 #### Step 3. Configure Flume
 
 1. Download the [Apache Flume toolkit and decompress it](http://flume.apache.org/download.html).
 2. Write the configuration file `flume-kafka-source.properties`. Below is a simple demo (configured in the `conf` folder in the extracted directory). If there is no special requirement, simply replace your own instance IP and topic in the configuration file. The sink used in this example is `logger`.
-   ![](https://mc.qcloudimg.com/static/img/18e5d3b3a533ef8e385e18301cc08961/88.png)
+   ![](https://main.qcloudimg.com/raw/62c36fc1e9aff966dcc30e93c7d4583e.png)
 3. Run the following command to start Flume:
    ```bash
    ./bin/flume-ng agent -n agentckafka -c conf -f conf/flume-kafka-source.properties
