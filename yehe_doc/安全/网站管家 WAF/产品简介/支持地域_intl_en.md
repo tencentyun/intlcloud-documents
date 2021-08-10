@@ -2,8 +2,8 @@ You can select a WAF type and region according to the deployment method and regi
 
 | WAF Type | Supported Regions |
 |---------|---------|
-| SaaS WAF | <ul><li>South China: Guangzhou</li><li>East China: Shanghai</li><li>North China: Beijing</li><li>Southwest China: Chengdu</li><li>Hong Kong (China)</li></ul> |
-|CLB WAF|<ul><li>South China: Guangzhou</li><li>East China: Shanghai, Nanjing</li><li>North China: Beijing</li><li>Southwest China: Chengdu, Chongqing</li><li>Hong Kong (China)</li><li>Southeast Asia: Singapore, Bangkok</li><li>South Asia: Mumbai</li><li>Northeast Asia: Seoul, Tokyo</li><li>Europe: Frankfurt, Moscow</li><li>North America: Silicon Valley</li></ul>|
+| SaaS WAF | <ul><li>South China: Guangzhou</li><li>East China: Shanghai</li><li>North China: Beijing</li><li>Hong Kong (China)</li><li>Southeast Asia: Singapore</li></ul> |
+|CLB WAF|<ul></li><li>South Asia: Mumbai</li></ul>|
 
 >?
 >- More supported regions are coming soon. For region updates, please see [WAF console](https://console.cloud.tencent.com/guanjia/waf/overview). We recommend selecting the WAF region in which your server is located for less delay.
