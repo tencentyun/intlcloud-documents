@@ -11,11 +11,11 @@
 ## 安装步骤
 
 1. 在 [TKE 应用市场](https://console.cloud.tencent.com/tke2/market) 找到 fluid 应用。
-![](https://main.qcloudimg.com/raw/879a2413fee05c39cc3ff8d2fd41f80b.png)
+
 2. 安装 Fluid Controller。
-![](https://main.qcloudimg.com/raw/ffbc185e04789cb5a679b8e32ec92d59.jpg)
+
 3. 检查 controller 组件。在左侧【集群】中找到对应集群，如果看到了两个 controller，则说明 fluid 组件安装成功。
-![](https://main.qcloudimg.com/raw/27f12c25ac4da44eace986eddf356691.png)
+
 
 
 ## 操作演示
@@ -26,14 +26,12 @@
 [root@master01 run]# export KUBECONFIG=xxx/cls-xxx-config (从tke控制台页面，下载集群凭证到某个目录）
 ```
 
->! 集群 API Server 开启外网访问权限。
+>! 集群 API Server 需要开启外网访问权限。
 >
 
 ### 2. 创建 UFS 数据集 Dataset（COS 为例）
 
-dataset.yaml 模板如下：
-
-先创建 secret.yaml 用于加密：
+先创建 secret.yaml 用于加密， 模版如下：
 
 ```yaml
 apiVersion: v1
@@ -45,7 +43,13 @@ stringData:
   fs.cosn.userinfo.secretId:xxx
 ```
 
+创建secret：
+```shell
+[root@master01 ~]# kubectl apply  -f secret.yaml
+secret/mysecret created
+```
 
+dataset.yaml 模版如下：
 ```yaml
 apiVersion: data.fluid.io/v1alpha1
 kind: Dataset
@@ -59,7 +63,7 @@ spec:
       fs.cosn.bucket.region: ap-beijing
       fs.cosn.impl: org.apache.hadoop.fs.CosFileSystem
       fs.AbstractFileSystem.cosn.impl: org.apache.hadoop.fs.CosN
-      fs.cos.app.id: "your appid"
+      fs.cos.app.id: "${your appid}"
     encryptOptions:
       - name: fs.cosn.userinfo.secretKey
         valueFrom:
@@ -69,10 +73,12 @@ spec:
       - name: fs.cosn.userinfo.secretId
         valueFrom:
           secretKeyRef:
+            name: mysecret
+            key: fs.cosn.userinfo.secretId
 ```
 
+创建 dataset
 ```shell
-创建Dataset
 [root@master01 run]# kubectl apply -f dataset.yaml 
 dataset.data.fluid.io/slice1 created
 ```
@@ -100,8 +106,8 @@ spec:
     replicas: 1
   goosefsVersion:
     imagePullPolicy: Always
-    image: {img_uri}
-    imageTag: {tag}
+    image: ${img_uri}
+    imageTag: ${tag}
   tieredstore:
     levels:
       - mediumtype: MEM
@@ -131,8 +137,8 @@ spec:
         cpu: 8
   fuse:
     imagePullPolicy: Always
-    image: {fuse_uri}
-    imageTag: {tag_num}
+    image: ${fuse_uri}
+    imageTag: ${tag_num}
     env:
       MAX_IDLE_THREADS: "32"
     jvmOptions:

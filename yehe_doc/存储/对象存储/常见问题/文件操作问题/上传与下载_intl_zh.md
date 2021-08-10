@@ -1,17 +1,24 @@
 ### COS 对上传和下载带宽是否有限制？
 
-中国大陆公有云地域默认带宽为15Gbit/s、其他地域为10Gbit/s。如果带宽达到该阈值，请求会触发流控。如果有更高带宽需求，请联系 [售后工程师](https://console.cloud.tencent.com/workorder/category)。
+中国大陆公有云单个存储桶地域默认带宽为15Gbit/s、其他地域为10Gbit/s。如果带宽达到该阈值，请求会触发流控。如果有更高带宽需求，请 [联系我们](https://intl.cloud.tencent.com/contact-sales)。
 
 ### 如何使文件直接在浏览器中预览，而不是下载？
 
 存储桶域名格式为`<BucketName-APPID>.cos.<Region>.myqcloud.com`即为 XML 版本域名。只要是浏览器支持直接预览的文件类型，访问该格式域名对应的对象链接，即可实现在浏览器中预览文件。
 
+存储桶域名格式为`<BucketName-APPID>.<region>.myqcloud.com`即为 JSON 版本域名。JSON 版本域名对应的对象链接域在浏览器中访问会弹出下载，想要在浏览器中预览文件，有两种方案：
+
+1. 升级 COS 控制台版本到 [新版控制台](https://console.cloud.tencent.com/cos5)，使用 XML 版本域名对应的对象链接访问（强烈推荐）。
+2. 绑定自定义域名并开启静态网站，使用自定义域名访问。文档请参见 [JSON 版本域名管理](https://intl.cloud.tencent.com/document/product/436/18424) 和 [JSON 版本静态网站设置](https://intl.cloud.tencent.com/document/product/436/14984)。
 
 #### 示例：
 
 以北京地域的 examplebucket-1250000000 存储桶根目录下 picture.jpg 文件为例说明：
 
-若对象地址为`https://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/picture.jpg`形式，您可以直接使用该地址在浏览器中预览 picture.jpg 文件。
+- 若对象地址为`https://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/picture.jpg`形式，您可以直接使用该地址在浏览器中预览 picture.jpg 文件。
+- 若对象地址为`https://examplebucket-1250000000.cosbj.myqcloud.com/picture.jpg`形式，想要直接在浏览器中预览对象，有两种方案：
+  1. 升级 COS 控制台版本到 [新版控制台](https://console.cloud.tencent.com/cos5)，使用 XML 版本域名对应的对象链接访问（强烈推荐）。
+  2. 绑定自定义域名并开启静态网站，使用自定义域名访问。文档请参见 [JSON 版本域名管理](https://intl.cloud.tencent.com/document/product/436/18424) 和 [JSON 版本静态网站设置](https://intl.cloud.tencent.com/document/product/436/14984)。
 
 ### 如何使文件直接在浏览器中下载，而不是预览？
 
@@ -24,6 +31,8 @@
 ### 如何判断您是否通过内网访问 COS？
 
 腾讯云对象存储 COS 的访问域名使用了智能 DNS 解析，通过互联网在不同的运营商环境下，我们会检测并指向最优链路供您访问 COS。如果您在腾讯云内部署了服务用于访问 COS，则同地域范围内访问将会自动被指向到内网地址，跨地域暂不支持内网访问，默认将会解析到外网地址。
+
+>! 公有云地域和金融云地域内网不互通。
 
 #### 内网访问判断方法
 
@@ -53,7 +62,7 @@ Address: 10.148.214.14
 
 腾讯云 CVM 内网 DNS 服务器地址，请参见 [云服务器内网服务](https://intl.cloud.tencent.com/document/product/213/5225)。
 
->!腾讯云黑石机器内网 IP 地址和 CVM 的 IP 地址存在差异，一般形如`9.*.*.*`或`10.*.*.*`，如您存在疑问可 [提交工单](https://console.cloud.tencent.com/workorder/category) 咨询。
+>!腾讯云黑石机器内网 IP 地址和 CVM 的 IP 地址存在差异，一般形如`9.*.*.*`或`10.*.*.*`，如您存在疑问可 [联系我们](https://intl.cloud.tencent.com/contact-sales)。
 
 ### 如何下载文件夹？
 
@@ -61,13 +70,7 @@ Address: 10.148.214.14
 
 ### 进行上传下载等操作时，报错“403 Forbidden”、权限拒绝等该如何处理？
 
-请按照以下步骤逐步排查问题：
-
-1. 请检查您的以下配置信息是否正确：
-   BucketName、APPID、Region、SecretId、SecretKey 等。
-2. 确保上述信息正确的前提下，请检查是否使用子账号操作，若使用子账号请检查主账号是否已对子账号授权。否则，请先登录主账号对子账号授权。授权操作请参见 [访问管理权限设置相关案例](https://intl.cloud.tencent.com/document/product/436/12514)。
-3. 若使用临时密钥进行操作，请检查当前操作是否在获取临时密钥时设置的 Policy 中。否则请修改相关 Policy 设置，详情请参见  [临时密钥指引](https://intl.cloud.tencent.com/document/product/436/14048)。
-4. 若以上步骤仍无法解决问题，请 [提交工单](https://console.cloud.tencent.com/workorder/category?level1_id=83&level2_id=84&source=0&data_title=%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%20COS&step=1) 联系我们。
+请参阅 [访问 COS 时返回403错误码](https://intl.cloud.tencent.com/document/product/436/40105) 文档进行故障处理。
 
 
 ### COS 如何实现批量上传或批量下载文件？
@@ -91,6 +94,15 @@ COS 现已支持版本控制功能，当存储桶未启用版本控制功能，�
 
 可以。
 
+### 如何对 COS 中的文件生成一个临时 URL？
+
+具体操作请参见 [预签名授权下载](https://intl.cloud.tencent.com/document/product/436/14116)。
+
+
+### 指定了签名有效时长，为什么签名过期后仍然可以下载文件？
+
+默认情况下，浏览器会缓存成功加载过的文件，因此在使用相同 URL 时，浏览器将返回缓存结果而不会重新请求服务器。建议用户在上传文件时，通过指定 Cache-Control: no-cache 头部来阻止浏览器缓存，可参阅 [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) 或 [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) 文档进一步了解；也可以在下载文件时，通过指定 response-cache-control=no-cache 请求参数来阻止浏览器缓存，可参阅 [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) 文档进一步了解。
+
 
 ### 在控制台上传文件，提示“上传失败，网络开了个小差”该怎么办？
 出现该错误是由于本地网络环境不稳定，建议更换网络环境后，再进行上传。
@@ -100,9 +112,12 @@ COS 现已支持版本控制功能，当存储桶未启用版本控制功能，�
 
 可以将存储桶设置为私有读写，详情请参见 [设置访问权限](https://intl.cloud.tencent.com/document/product/436/13315) 文档；也可以通过防盗链设置白名单限制限制名单外的域名访问存储桶的默认访问地址，详情请参见 [防盗链设置](https://intl.cloud.tencent.com/document/product/436/13319) 文档。
 
+### 文件的下载 URL 可以设置不区分英文大小写吗？
+
+COS 不支持该操作。COS 文件名区分英文大小写，通过 URL 访问文件同样需要区分英文大小写。若您的存储桶开启了 CDN 加速功能，可通过 CDN 控制台开启忽略大小写缓存配置，一定程度上提升命中率。详情请参见 [忽略大小写缓存配置](https://intl.cloud.tencent.com/document/product/228/35316)。
+
 
 ### 进行上传文件或创建存储桶等操作时，报错“your policy or acl has reached the limit (Status Code: 400; Error Code: PolicyFull)”该如何处理？
 
 COS 每个主账号下存储桶 ACL 的规则数量最多为1000条，当设置的存储桶 ACL 大于1000条时，会出现此报错，因此建议删除无用的存储桶 ACL 规则。
-
 >?我们不建议使用对象级别的 ACL 或 Policy。建议您在调用 API 或 SDK 时，若不需要对文件进行特别的 ACL 控制时， 请将 ACL 相关参数（如 x-cos-acl、ACL 等）置空，保持继承存储桶权限。

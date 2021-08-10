@@ -16,6 +16,7 @@
 | [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | 删除多个对象   | 在存储桶中批量删除指定对象 |
 | [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 恢复归档对象 | 将归档类型的对象取回访问                      |
 | [SELECT Object content](https://intl.cloud.tencent.com/document/product/436/32360) | 检索对象内容 | 从指定对象中检索内容                      |
+| [APPEND Object](https://intl.cloud.tencent.com/document/product/436/7741) | 追加上传对象 | 将对象以分块追加的方式上传至存储桶                      |
 
 
 **分块操作**
@@ -124,7 +125,7 @@ response = client.list_objects(
 | NextMarker|  当 IsTruncated 为 true 时，标记下一次返回对象的 list 的起点位置  | String  |
 | Name   | 存储桶名称，由 BucketName-APPID 构成  | String  |
 | IsTruncated   |  表示返回的对象是否被截断  | String|
-| EncodingType   | 默认不编码，规定返回值的编码方式，可选值：url  | String  |
+| EncodingType   | 默认不编码，规定返回值的编码方式，可选值：url  | String  | 否|
 |Contents |包含所有对象元数据的 list，包括 'ETag'，'StorageClass'，'Key'，'Owner'，'LastModified'，'Size' 等信息|List|
 |CommonPrefixes |所有以 Prefix 开头，以 Delimiter 结尾的对象被归到同一类|List|
 
@@ -237,7 +238,7 @@ response = client.list_objects_versions(
 | NextVersionIdMarker | 当 IsTruncated 为 true 时，标记下一次返回对象的 list 的 VersionId 的起点位置  | String  |
 | Name   | 存储桶名称，由 BucketName-APPID 构成  | String  |
 | IsTruncated   |  表示返回的对象是否被截断  | String|
-| EncodingType   | 默认不编码，规定返回值的编码方式，可选值：url  | String  | 
+| EncodingType   | 默认不编码，规定返回值的编码方式，可选值：url  | String  | 否|
 |Version |包含所有多个版本对象元数据的 list，包括 'ETag'，'StorageClass'，'Key'，'VersionId'，'IsLatest'，'Owner'，'LastModified'，'Size' 等信息|List|
 |DeleteMarker|包含所有delete marker 对象元数据的 list，包括 'Key'，'VersionId'，'IsLatest'，'Owner'，'LastModified' 等信息|List|
 |CommonPrefixes |所有以 Prefix 开头，以 Delimiter 结尾的对象被归到同一类|List|
@@ -1124,8 +1125,8 @@ response = client.select_object_content(
 |Key |对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`中，对象键为 doc/pic.jpg|String|是|
 |Expression| SQL 表达式，代表您需要发起的检索操作| String|是|
 |ExpressionType| 表达式类型，该项为扩展项，目前只支持 SQL 表达式，仅支持 SQL 参数| String|是|
-|InputSerialization| 描述待检索对象的格式，详情参见[请求示例](https://intl.cloud.tencent.com/document/product/436/32360#.E8.AF.B7.E6.B1.82)| Dict|是|
-|OutputSerialization| 描述检索结果的输出格式，详情参见[请求示例](https://intl.cloud.tencent.com/document/product/436/32360#.E8.AF.B7.E6.B1.82)| Dict|是|
+|InputSerialization| 描述待检索对象的格式，详情参见 [请求示例](https://intl.cloud.tencent.com/document/product/436/32360#.E8.AF.B7.E6.B1.82)| Dict|是|
+|OutputSerialization| 描述检索结果的输出格式，详情参见 [请求示例](https://intl.cloud.tencent.com/document/product/436/32360#.E8.AF.B7.E6.B1.82)| Dict|是|
 |RequestProgress| 是否需要返回查询进度 QueryProgress 信息，如果选中 COS Select 将周期性返回查询进度| Dict|否|
 
 #### 返回结果说明
@@ -1150,6 +1151,56 @@ response = client.select_object_content(
 }
 ```
 
+### 追加上传对象 
+
+#### 功能说明
+
+将对象以分块追加的方式上传至存储桶（APPEND Object）。
+
+#### 方法原型
+
+```
+append_object(Bucket, Key, Position, Data, **kwargs)
+```
+#### 请求示例
+
+[//]: # ".cssg-snippet-append-object"
+```python
+response = client.append_object(
+    Bucket='examplebucket-1250000000',
+    Key='exampleobject',
+    Position=0,
+    Data=b'b'*1024*1024
+)
+```
+#### 全部参数请求示例
+
+```python
+response = client.append_object(
+    Bucket='examplebucket-1250000000',
+    Key='exampleobject',
+    Position=0,
+    Data=b'bytes'|file
+)
+```
+#### 参数说明
+
+| 参数名称   | 参数描述   |类型 | 是否必填 |
+| -------------- | -------------- |---------- | ----------- |
+|Bucket|存储桶名称，由 BucketName-APPID 构成|String| 是|
+|Key |对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`中，对象键为 doc/pic.jpg|String|是|
+|Position|追加操作的起始点，单位为字节。首次追加则设置Position=0，后续追加则设置Position为当前Object的content-length| Int|是|
+|Data|上传分块的内容，可以为本地文件流或输入流| file/bytes|是|
+
+#### 返回结果说明
+追加后对象的属性，包括下次追加的位置，类型为 dict。
+```python
+{
+    'ETag': '"9a4802d5c99dafe1c04da0a8e7e166bf"',
+    'x-cos-next-append-position': '12',
+    'x-cos-request-id': 'NjEwN2Q0ZGZfMWNhZjU4NjRfMzM1M19hNzQzYjc2'
+}
+```
 
 ## 分块操作
 分块上传对象可包括的操作：
@@ -2167,7 +2218,7 @@ response = client.copy(
 |  Bucket  | 存储桶名称，由 BucketName-APPID 构成 | String  |  是 |
 |  Key  |  对象键（Key）是对象在存储桶中的唯一标识。例如，在对象的访问域名`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`中，对象键为 doc/pic.jpg | String  | 是 |
 |  CopySource  | 描述拷贝源对象的路径，包含 Bucket、Key、Region、VersionId |  Dict | 是 |
- |  CopyStatus  |拷贝状态，可选值 Copy、Replaced | String | 否  |
+ |  CopyStatus  |拷贝状态，可选值 Copy、Replaced | String | 否 ｜
  |  PartSize  | 分块下载的分块大小，默认为10MB |  Int |  否 |
  |  MAXThread  | 分块下载的并发数量，默认为5个线程下载分块 |  Int |  否 |
 

@@ -1,3 +1,88 @@
+## 2021年05月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自助诊断工具上线</td>
+<td>自助诊断工具是腾讯云对象存储为用户提供的 Web 工具，可用于错误请求的自助诊断排查。</td>
+<td> 2021-05-27</td>
+<td><a href="https://cloud.tencent.com/document/product/436/57576">自助诊断工具 </a>
+</tr>
+<tr>
+<td>CDN 日志备份上线</td>
+<td>CDN 日志备份是腾讯云对象存储 COS 基于 云函数 SCF 为用户提供的将 CDN 日志转存至 COS 的功能，可以协助用户将 CDN 日志进行转存以便于进行访问行为分析、服务质量监控等。</td>
+<td> 2021-05-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/40485">CDN 日志备份</a>
+</tr>
+<tr>
+<td>TDMQ 消息备份上线</td>
+<td>TDMQ 消息备份是腾讯云对象存储 COS 基于云函数 SCF 为用户提供的 TDMQ 消息转存至 COS 的功能，可以协助用户将 TDMQ 消息进行转存以便于对数据进行分析与下载等操作。</td>
+<td> 2021-05-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/40541">TDMQ 消息备份</a>
+</tr>
+</tbody></table>
+
+
+## 2021年04月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>日志清洗上线</td>
+<td>日志清洗是对象存储 COS 基于云函数 SCF 为用户提供的日志文件处理解决方案。当用户开启日志管理服务或自行上传日志文件时，将自动触发对象存储为您预配置的云函数，通过函数中您预先指定的 SQL 检索语句，自动将文件中的日志信息进行过滤清洗。</td>
+<td> 2021-04-02</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/39925">日志清洗</a>
+</tr>
+<tr>
+<td>Ckafka 消息备份上线</td>
+<td>Ckafka 消息备份是对象存储 COS 基于云函数 SCF 为用户提供的 Ckafka 消息转存至 COS 的功能，可以协助用户将 Ckafka 消息进行转存以便于对数据进行分析与下载等操作。</td>
+<td> 2021-04-02</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/39926">Ckafka 消息备份</a>
+</tr>
+</tbody></table>
+
+
+
+## 2021年02月
+
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+<th width="15%">发布时间</th>
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>云数据库备份上线</td>
+<td>云数据库备份是对象存储 COS 基于云函数 SCF 为用户提供的数据库备份功能，可以协助用户将腾讯云数据库上的备份文件转存至对象存储进行持久化的保存，以防止数据丢失或损坏。</td>
+<td>2021-02-02</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/41112">设置云数据库备份</a>
+</tr>
+</tbody></table>
+
+
+
+
 ## 2021年01月
 
 <table>

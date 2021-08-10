@@ -94,13 +94,16 @@ SDK 只支持续传沙盒中的文件，如需使用断点续传的功能，请�
 解决办法：请检查文件在上传的过程中是否发生改变。
 
 
-### SDK 能否使用 CDN 加速域名进行访问？
-
-支持，请根据您所使用的编程语言，并参见对应的 [SDK 文档](https://intl.cloud.tencent.com/document/product/494) 进行操作。
 
 ### SDK 如何设置请求的超时时间?
 
 解决：SDK 5.7.0 之后支持自定义请求的超时时间，可以通过以下方式设置：
 1. 初始化`QCloudServiceConfiguration *config = [QCloudServiceConfiguration new]`
 2. 设置 config 的`timeoutInterval`属性即可，例如`设置 config 的.timeoutInterval = 30;`
+
+
+### COS iOS SDK 出现 crash，该如何处理？
+
+请检查当前版本是否为最新版本，若是旧版本建议您升级到最新的 SDK 版本。最新版本 iOS SDK 请参见 [qcloud-sdk-ios](https://github.com/tencentyun/qcloud-sdk-ios) 。
+
 

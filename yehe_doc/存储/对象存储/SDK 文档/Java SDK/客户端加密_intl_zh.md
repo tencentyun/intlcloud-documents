@@ -3,7 +3,7 @@
 Java SDK 支持客户端加密，将文件加密后再进行上传，并在下载时进行解密，适用于存储敏感数据的客户。
 
 客户端加密支持以下两种方式：
-- KMS 服务托管密钥：用户只需提供 KMS 服务的用户主密钥 ID（即 CMK ID）给 SDK。使用这种方式需要用户开通 KMS 服务，更多 KMS 服务信息参见 [腾讯云密钥管理系统](https://intl.cloud.tencent.com/document/product/1030)。
+- KMS 服务托管密钥：用户只需提供 KMS 服务的用户主密钥 ID（即 CMK ID）给 SDK。使用这种方式需要用户开通 KMS 服务，更多 KMS 服务信息参见 [腾讯云密钥管理系统](https://cloud.tencent.com/document/product/573)。
 - 用户自主保管密钥：用户提供和保管加密密钥，支持对称 AES 和非对称 RSA 加密。
 >? 这里的对称和非对称只用于加密每次生成的随机密钥，对文件数据的加密始终使用 AES256 对称加密。
 >
@@ -37,12 +37,13 @@ Java SDK 支持客户端加密，将文件加密后再进行上传，并在下�
 #### 示例1
 使用腾讯云 KMS 服务加密，创建加密客户端示例，完整的示例代码请参见 [KMS 加密客户端加密完整示例](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/src/main/java/com/qcloud/cos/demo/KMSEncryptionClientDemo.java)。
 
-[//]: # ".cssg-snippet-put-object-cse-c-kms"
+[//]: # (.cssg-snippet-put-object-cse-c-kms)
 
 ```java
 // 初始化用户身份信息(secretId, secretKey)
-String secretId = "COS_SECRETID";
-String secretKey = "COS_SECRETKEY";
+// SECRETID和SECRETKEY请登录访问管理控制台进行查看和管理
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
 COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
 // 设置存储桶地域，COS 地域的简称请参照 https://www..com/document/product/436/6224
 ClientConfig clientConfig = new ClientConfig(new Region("COS_REGION"));
@@ -86,12 +87,13 @@ cosEncryptionClient.shutdown();
 #### 示例2
 使用对称 AES256 加密每次生成的随机密钥示例，完整的示例代码请参见 [客户端对称密钥加密完整示例](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/src/main/java/com/qcloud/cos/demo/SymmetricKeyEncryptionClientDemo.java)。
 
-[//]: # ".cssg-snippet-put-object-cse-c-aes"
+[//]: # (.cssg-snippet-put-object-cse-c-aes)
 
 ```java
 // 初始化用户身份信息(secretId, secretKey)
-String secretId = "COS_SECRETID";
-String secretKey = "COS_SECRETKEY";
+// SECRETID和SECRETKEY请登录访问管理控制台进行查看和管理
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
 COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
 // 设置存储桶地域，COS 地域的简称请参照 https://www..com/document/product/436/6224
 ClientConfig clientConfig = new ClientConfig(new Region("COS_REGION"));
@@ -126,11 +128,12 @@ cosEncryptionClient.shutdown();
 #### 示例3
 使用非对称 RSA 加密每次生成的随机密钥示例，完整的示例代码请参见 [客户端非对称密钥加密完整示例](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/src/main/java/com/qcloud/cos/demo/AsymmetricKeyEncryptionClientDemo.java)。
 
-[//]: # ".cssg-snippet-put-object-cse-c-rsa"
+[//]: # (.cssg-snippet-put-object-cse-c-rsa)
 ```java
 // 初始化用户身份信息(secretId, secretKey)
-String secretId = "COS_SECRETID";
-String secretKey = "COS_SECRETKEY";
+// SECRETID和SECRETKEY请登录访问管理控制台进行查看和管理
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
 COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
 // 设置存储桶地域，COS 地域的简称请参照 https://cloud.tencent.com/document/product/436/6224
 ClientConfig clientConfig = new ClientConfig(new Region("COS_REGION"));
