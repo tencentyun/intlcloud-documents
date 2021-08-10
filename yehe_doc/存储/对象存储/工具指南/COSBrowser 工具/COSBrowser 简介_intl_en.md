@@ -1,7 +1,7 @@
 COSBrowser is a visual interface tool launched by Tencent Cloud to make it easier and simpler for you to view, transfer, manage, and interact with COS resources. Currently, COSBrowser is available for desktop and mobile devices. For more information, see:
 
 - [User Guide for Desktop Version](https://intl.cloud.tencent.com/document/product/436/32565)
-- [User Guide for Mobile Edition](https://intl.cloud.tencent.com/document/product/436/32566)
+- [User Guide for Mobile Edition](https://intl.cloud.tencent.com/document/product/436/41615)
 
 ## Download URL
 
@@ -103,21 +103,21 @@ COSBrowser for mobile devices has the following features:
 
 | Operation | Description |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [Login with WeChat](https://intl.cloud.tencent.com/document/product/436/32566#dulu) | Logs in with WeChat |
-| [Data overview](https://intl.cloud.tencent.com/document/product/436/32566#dateview) | Views recent data usage |
-| [File batch operations](https://intl.cloud.tencent.com/document/product/436/32566#filebatch) |  Uploads, downloads, deletes, copies, or moves files in a bucket in batches |
-| [Sharing and uploading](https://intl.cloud.tencent.com/document/product/436/32566#shareupload) | Shares and uploads files from third-party apps to a bucket |
-| [Renaming files](https://intl.cloud.tencent.com/document/product/436/32566#rename) | Renames files in a bucket |
-| [Creating a folder](https://intl.cloud.tencent.com/document/product/436/32566#newfolder) |  Creates a folder in a bucket |
-| [Viewing file details](https://intl.cloud.tencent.com/document/product/436/32566#view) | Views the basic information of the files in a bucket |
-| [Previewing files](https://intl.cloud.tencent.com/document/product/436/32566#filepreview) | Previews media files (images, video, and audio) in a bucket |
-| [Generating a file link](https://intl.cloud.tencent.com/document/product/436/32566#generatelinks) | Generates a file access link with a certain validity period by requesting a temporary signature |
-| [Searching files](https://intl.cloud.tencent.com/document/product/436/32566#searchfile) | Searches files in a bucket through prefix search |
-| [Searching buckets](https://intl.cloud.tencent.com/document/product/436/32566#searchbuckete) | Searches existing buckets |
-| [Viewing bucket details](https://intl.cloud.tencent.com/document/product/436/32566#viewbucket) | Views the basic information and domain name of your bucket |
-| [Creating bucket](https://intl.cloud.tencent.com/document/product/436/32566#createbucket) | Creates new buckets |
-| [Adding an access path](https://intl.cloud.tencent.com/document/product/436/32566#addaccess) | Allows a sub-account that does not have permission to access the bucket list to enter bucket resource management by adding an access path |
-| [Viewing storage pack](https://intl.cloud.tencent.com/document/product/436/32566#package)          | Views the usage of your current resource pack                          |
+| Login with WeChat | Logs in with WeChat |
+| Data overview | Views recent data usage |
+| File batch operations |  Uploads, downloads, deletes, copies, or moves files in a bucket in batches |
+| Sharing and uploading | Shares and uploads files from third-party apps to a bucket |
+| Renaming files | Renames files in a bucket |
+| Creating a folder|  Creates a folder in a bucket |
+| Viewing file details | Views the basic information of the files in a bucket |
+| Previewing files | Previews media files (images, video, and audio) in a bucket |
+| Generating a file link | Generates a file access link with a certain validity period by requesting a temporary signature |
+| Searching files | Searches files in a bucket through prefix search |
+| Searching buckets | Searches existing buckets |
+| Viewing bucket details | Views the basic information and domain name of your bucket |
+| Creating bucket | Creates new buckets |
+| Adding an access path | Allows a sub-account that does not have permission to access the bucket list to enter bucket resource management by adding an access path |
+| Viewing storage pack        | Views the usage of your current resource pack                          |
 
 ## Changelog
 
