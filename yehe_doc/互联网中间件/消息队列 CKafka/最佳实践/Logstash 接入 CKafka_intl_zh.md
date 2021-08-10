@@ -36,13 +36,13 @@ Logstash 数据处理可以分为三个阶段：inputs → filters → outputs�
 1. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)。
 2. 在左侧导航栏选择【实例列表】，单击实例的“ID”，进入实例基本信息页面。
 3. 在实例的基本信息页面的【接入方式】模块，可获取实例的接入地址。
-   ![](https://main.qcloudimg.com/raw/a28b5599889166095c168510ce1f5e89.png)
+   ![](https://main.qcloudimg.com/raw/5905037c8e847781e495d2f202167d5c.png)
 
 ### 步骤2：创建 Topic
 
 1. 在实例基本信息页面，选择顶部【Topic管理】页签。
 2. 在 Topic 管理页面，单击【新建】，创建一个名为 logstash_test 的 Topic。
-   ![](https://main.qcloudimg.com/raw/76ca78b4058d40510ecd81c9cf40e5b5.png)
+   ![](https://main.qcloudimg.com/raw/580d8f5577ea5d462f26061f7a50095c.png)
 
 ### 步骤3：接入 CKafka
 
