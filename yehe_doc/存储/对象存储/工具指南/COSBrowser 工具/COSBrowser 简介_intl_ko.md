@@ -1,7 +1,7 @@
 COSBrowser는 Tencent Cloud COS가 출시한 시각화 인터페이스 툴로 COS 리소스 조회, 전송, 관리를 간편하고 인터랙티브하게 구현할 수 있습니다. 현재 COSBrowser는 데스크톱과 모바일 두 가지 버전이 있으며 자세한 내용은 다음을 참조하십시오.
 
 - [데스크톱 버전 사용 설명](https://intl.cloud.tencent.com/document/product/436/32565)
-- [모바일 버전 사용 설명](https://intl.cloud.tencent.com/document/product/436/32566)
+- [모바일 버전 사용 설명](https://intl.cloud.tencent.com/document/product/436/41615)
 
 ## 다운로드 주소
 
@@ -103,21 +103,21 @@ COSBrowser 모바일 버전은 다음과 같은 기능을 지원합니다.
 
 | 작업명                                                       | 작업 설명                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [빠른 로그인](https://intl.cloud.tencent.com/document/product/436/32566#dulu) | WeChat 빠른 로그인 지원                                             |
-| [데이터 개요](https://intl.cloud.tencent.com/document/product/436/32566#dateview) | 최근 데이터 사용 현황 표시 지원                                   |
-| [파일 일괄 작업](https://intl.cloud.tencent.com/document/product/436/32566#filebatch) | 버킷에 있는 파일 일괄 업로드, 다운로드, 삭제, 복사, 이동 지원           |
-| [업로드 공유](https://intl.cloud.tencent.com/document/product/436/32566#shareupload) | 3rd party 소프트웨어에 있는 파일을 버킷으로 업로드 공유 지원                       |
-| [파일 이름 변경](https://intl.cloud.tencent.com/document/product/436/32566#rename) | 버킷에 있는 파일 이름 변경 지원                                     |
-| [새 폴더 생성](https://intl.cloud.tencent.com/document/product/436/32566#newfolder) | 버킷에 새 폴더 생성 지원                                     |
-| [파일 상세 정보 조회](https://intl.cloud.tencent.com/document/product/436/32566#view) | 버킷에 있는 파일 기본 정보 조회 지원                               |
-| [파일 미리보기](https://intl.cloud.tencent.com/document/product/436/32566#filepreview) | 버킷에 있는 미디어 파일(이미지, 비디오, 오디오) 미리보기 지원               |
-| [파일 링크 생성](https://intl.cloud.tencent.com/document/product/436/32566#generatelinks) | 임시 서명 요청 방식을 통해 유효 시간이 있는 파일 액세스 링크 생성 지원       |
-| [파일 검색](https://intl.cloud.tencent.com/document/product/436/32566#searchfile) | 접두사 검색 방식으로 버킷에 있는 파일 검색 지원                 |
-| [버킷 검색](https://intl.cloud.tencent.com/document/product/436/32566#searchbuckete) | 생성한 버킷 검색 지원                                       |
-| [버킷 상세 정보 조회](https://intl.cloud.tencent.com/document/product/436/32566#viewbucket) | 버킷 기본 정보 및 도메인 정보 조회 지원                             |
-| [버킷 생성](https://intl.cloud.tencent.com/document/product/436/32566#createbucket) | 새 버킷 생성 지원                                           |
-| [액세스 경로 추가](https://intl.cloud.tencent.com/document/product/436/32566#addaccess) | 버킷 리스트에 대한 액세스 권한이 없는 서브 계정에 액세스 경로를 추가하는 방식으로 버킷에 접속해 리소스를 관리할 수 있도록 지원 |
-| [리소스 패키지 상세 정보 조회](https://intl.cloud.tencent.com/document/product/436/32566#package)          | 현재 리소스 패키지의 사용 현황 조회 지원                          |
+| 빠른 로그인 | WeChat 빠른 로그인 지원                                             |
+| 데이터 개요 | 최근 데이터 사용 현황 표시 지원                                   |
+| 파일 일괄 작업 | 버킷에 있는 파일 일괄 업로드, 다운로드, 삭제, 복사, 이동 지원           |
+| 업로드 공유 | 3rd party 소프트웨어에 있는 파일을 버킷으로 업로드 공유 지원                       |
+| 파일 이름 변경 | 버킷에 있는 파일 이름 변경 지원                                     |
+| 새 폴더 생성 | 버킷에 새 폴더 생성 지원                                     |
+| 파일 상세 정보 조회 | 버킷에 있는 파일 기본 정보 조회 지원                               |
+| 파일 미리보기  | 버킷에 있는 미디어 파일(이미지, 비디오, 오디오) 미리보기 지원               |
+| 파일 링크 생성    | 임시 서명 요청 방식을 통해 유효 시간이 있는 파일 액세스 링크 생성 지원       |
+| 파일 검색   | 접두사 검색 방식으로 버킷에 있는 파일 검색 지원                 |
+| 버킷 검색    | 생성한 버킷 검색 지원                                       |
+| 버킷 상세 정보 조회    | 버킷 기본 정보 및 도메인 정보 조회 지원                             |
+| 버킷 생성    | 새 버킷 생성 지원                                           |
+| 액세스 경로 추가   | 버킷 리스트에 대한 액세스 권한이 없는 서브 계정에 액세스 경로를 추가하는 방식으로 버킷에 접속해 리소스를 관리할 수 있도록 지원 |
+| 리소스 패키지 상세 정보 조회         | 현재 리소스 패키지의 사용 현황 조회 지원                          |
 
 ## 로그 업데이트
 
