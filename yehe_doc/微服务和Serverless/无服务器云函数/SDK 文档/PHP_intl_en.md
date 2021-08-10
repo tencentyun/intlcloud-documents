@@ -163,24 +163,24 @@ $client = new OcrClient($cred, 'ap-beijing', $this->clientProfile);
 
 ## FAQs
 <dx-accordion>
-::: Certificate issue
+::: Certificate\sissue
 If there is a problem with your PHP environment certificate, errors similar to `cURL error 60: See http://curl.haxx.se/libcurl/c/libcurl-errors.html` may occur, which can be solved as follows:
 
 1. Download the certificate file `cacert.pem` at https://curl.haxx.se/ca/cacert.pem and save it to the PHP installation path.
 2. Edit the `php.ini` file: delete the semicolon comment (;) before the `curl.cainfo` configuration item and set the value to the absolute path of the saved certificate file `cacert.pem`.
 3. Restart the services that depend on PHP.
 :::
-::: php_curl\s extension
+::: php_curl\sextension
 GuzzleHttp, which this SDK depends on, needs to have the php_curl extension enabled. Check whether the php.ini environment in your environment is enabled. For example, on Linux with PHP 7.1, for services hosted under Apache, you can open `/etc/php/7.1/apache2/php.ini` to see whether the `extension=php_curl.dll` configuration item has been commented. Please delete the comment before it and restart Apache.
 :::
-::: Web\s access exception
+::: Web\saccess\sexception
 The command is executed normally on the command line, but when it is executed on the web server, the following error is reported:
 
 `cURL error 0: The cURL request was retried 3 times and did not succeed. The most likely reason for the failure is that cURL was unable to rewind the body of the request and subsequent retries resulted in the same error. Turn on the debug option to see what went wrong. See https://bugs.php.net/bug.php?id=47204 for more information. (see http://curl.haxx.se/libcurl/c/libcurl-errors.html)`
 
 This error may occur in different cases. You can run `php -r "echo sys_get_temp_dir();"` to print the absolute path of the default system temporary directory and set `sys_temp_dir` in `php.ini` to this value, and then check whether this error is fixed.
 :::
-::: Problem with installation through source code
+::: Problem\swith\sinstallation\sthrough\ssource\scode
 In order to satisfy the need for installation through source code, we previously put the dependent package files in the `vendor` directory. However, considering that incompatibility with Composer should not be caused, we had to forbid importing the `vendor` directory on GitHub, which resulted in the problem where the `git clone` command had to be used to get the `vendor` directory. This practice caused confusion for some users not familiar with GitHub. Therefore, starting from v3.0.188, we have temporarily removed the method of installation through source code, and Composer must be used to install the SDK and dependent packages.
 :::
 </dx-accordion>
