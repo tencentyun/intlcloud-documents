@@ -29,13 +29,13 @@ In addition, Spark Streaming in EMR also supports direct connection to CKafka. F
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
 2. Select **Instance List** on the left sidebar and click the **ID** of an instance to enter the instance basic information page.
 3. On the instance basic information page, get the instance access address in the **Access Mode** module, which is the `bootstrap-server` required by production and consumption.
-   ![](https://main.qcloudimg.com/raw/a28b5599889166095c168510ce1f5e89.png)
+  ![](https://main.qcloudimg.com/raw/ba52c2bbce2f6eb15d43e451aab9cbc9.png)
 
 ### Step 2. Create a topic
 
 1. On the instance basic information page, select the **Topic Management** tab on the top.
 2. On the topic management page, click **Create** to create a topic named `test`. This topic is used as an example below to describe how to produce and consume messages.
-   ![](https://main.qcloudimg.com/raw/3576875138eb4447622571433312907f.png)
+   ![](https://main.qcloudimg.com/raw/80c5ed36c46bf709efc041cc21850632.png)
 
 
 
@@ -52,12 +52,12 @@ In addition, Spark Streaming in EMR also supports direct connection to CKafka. F
 | SSH | Installed on CentOS by default |
 |   Java   |  1.8  |
 
-For specific installation steps, please see [Configuring environment](#Configuring environment).
+For specific installation steps, please see [Configuring environment](#Configuring-environment).
 
 ### Step 4. Connect to CKafka
 
 <dx-tabs>
-::: Producing Messages to \sCKafka\s
+::: Producing\sMessages\sto\sCKafka\s
 
 The Kafka dependency of v0.10.2.1 is used here.
 
@@ -100,7 +100,7 @@ For more information on how to use `ProducerRecord`, please see [ProducerRecord]
 
 :::
 
-::: Consuming Messages from \sCKafka\s
+::: Consuming\sMessages\sfrom\sCKafka\s
 
 <span id="build.sbt"></span>
 
@@ -238,7 +238,7 @@ For more information on how to use `kafkaParams`, please see [kafkaParams](http:
 
 </dx-tabs>
 
-### Configuring environment[](id:Configuring environment)
+### Configuring environment[](id:Configuring-environment)
 
 #### Installing sbt
 
