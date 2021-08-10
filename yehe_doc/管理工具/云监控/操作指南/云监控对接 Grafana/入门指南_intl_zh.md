@@ -67,7 +67,7 @@ grafana-cli plugins --help
 1. 鼠标悬浮左侧导航栏的 **齿轮** 图标，单击 `Plugins` 选项，进入 Plugins 管理页面，如果插件列表中正常展示 `Tencent Cloud Monitor` App 插件，表示插件安装成功。
 ![](https://main.qcloudimg.com/raw/a658f09d212f374ccc54b8d394b5e635.png)
 2. 进入应用详情页面，单击 `Enable` 按钮，启用成功后，即可在 Grafana 中使用腾讯云监控应用插件。
-![](https://main.qcloudimg.com/raw/7b6a18c32cf4e31d528109be51547320.png)
+![](https://main.qcloudimg.com/raw/2cc428c778007aa30737b170b7cf7bbe.png)
 
 ## 步骤3：配置数据源
 
@@ -80,7 +80,7 @@ grafana-cli plugins --help
 4. `SecretId` 和 `SecretKey` 是调用云监控 API 必需的安全证书信息，二者可以通过腾讯云控制台 [云 API 密钥页面](https://console.cloud.tencent.com/cam/capi) 获取；
 5. 选择需要获取监控数据的云产品；  
 6. 单击【Save & Test】按钮，测试数据源的配置信息是否正确，配置成功后，即可以在 Dashboard 中使用该数据源。
-![](https://main.qcloudimg.com/raw/a6bbd2367be4eb6b12497bb213a9ca27.png)
+![](https://main.qcloudimg.com/raw/85ed048d5a163c8028e9cfe19b4d35d1.png)
 
 ## 步骤4：创建 Dashboard
 
@@ -98,12 +98,12 @@ grafana-cli plugins --help
 ### 导入模板
 
 鼠标悬浮左侧导航栏的 **齿轮** 图标，单击【Plugins】选项，进入 Plugins 管理页面。然后，单击【Tencent Cloud Monitor】应用，进入应用详情页面，切换至 `Dashboards` 选项卡，选择 Dashbboard 模板导入。
-![](https://main.qcloudimg.com/raw/755b58febc19bd00e3a725379590e766.png)
+![](https://main.qcloudimg.com/raw/c2678540c0eeb27b2d6acca5712ba2c5.png)
 
 
 ## 步骤5：配置 Panel 数据
 
-![](https://main.qcloudimg.com/raw/84d7645107e1529ddeb84921f0218e62.png)
+![](https://main.qcloudimg.com/raw/8bcee2cb5f8b1f8b1e5c7683841d434a.png)
 
 创建 Dashboard 之后，通过配置 Panel 信息，即可获取腾讯云监控的相应监控数据。现在以简单的 Graph 为例，展示如何配置 Panel 信息。
 1. 单击 **New Panel** 面板的 **Add Query** 选项，进入 Panel 配置页面。在左侧第一个 `Query` 选项卡，选择 上面配置的腾讯云监控数据源。
