@@ -42,16 +42,16 @@ After creating the web function, you can view its basic information on the **Fun
 ### Cloud test
 
 <dx-tabs>
-::: Method 1
+::: Method\s1
 You can open the access path URL in a browser, and if it can be accessed normally, the function is successfully created.
 :::
-::: Method 2
+::: Method\s2
 You can concatenate the specified HTTP request for testing on the function code page through the test capability and check whether the function is successfully deployed through the HTTP response.
 
->! The console invokes and tests the function by using the gateway API. If the test fails, the API will automatically execute the retry logic for up to 4 retries. Therefore, you will see multiple execution logs for one failed request.
-
+<dx-alert infotype="notice">The console invokes and tests the function by using the gateway API. If the test fails, the API will automatically execute the retry logic for up to 4 retries. Therefore, you will see multiple execution logs for one failed request.
+</dx-alert>
 :::
-::: Method 3
+::: Method\s3
 You can use other HTTP testing tools such as CURL and Postman to test the web function you have successfully created.
 :::
 </dx-tabs>
