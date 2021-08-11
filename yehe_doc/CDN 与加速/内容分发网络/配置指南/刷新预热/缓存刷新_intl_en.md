@@ -7,7 +7,7 @@ In addition, CDN can purge cache for specified URLs or directories in batches:
 - Purge URL: this deletes the cache of the corresponding resources on all CDN nodes.
 - Purge directory: if you select **Purge updated resources**, when an end user accesses a resource under the corresponding directory, the `Last-Modify` information of the resource will be pulled from the origin server. If it is the same as that of the cached resource, the cached resource will be directly returned; otherwise, the updated resource will be pulled from the origin server and cached again. If you select **Purge all resources**, when the user accesses a resource under the corresponding directory, the latest version of the resource will be directly pulled from the origin server and cached again.
 
-> ?After a purge is successfully executed, the corresponding resource on the node will not have a valid cache. When the user initiates an access request again, the node will pull the required resource from the origin server and cache it on the node. If you submit a large number of purge tasks, many caches will be cleared, resulting in a surge in origin-pull requests and high pressure on the origin server.
+>? After a purge is successfully executed, the corresponding resource on the node will not have a valid cache. When the user initiates an access request again, the node will pull the required resource from the origin server and cache it on the node. If you submit a large number of purge tasks, many caches will be cleared, resulting in a surge in origin-pull requests and high pressure on the origin server.
 
 ## Use Cases
 
@@ -32,15 +32,15 @@ Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), click **Purg
 In the **History** tab, you can query tasks by specified time period, keyword, and task type. Keyword queries only support querying with a domain name or a complete purged URL/directory:
 ![](https://main.qcloudimg.com/raw/86e00c9652a635cf0a0007172119be92.png)
 
-> ? The console can return up to 10,000 logs at a time, which can be exported to an Excel file. If you have more than 10,000 purge tasks, please query and export them in batches.
+>? The console can return up to 10,000 logs at a time, which can be exported to an Excel file. If you have more than 10,000 purge tasks, please query and export them in batches.
 
 ### Precautions
 
 **URL purge:**
 
 - Up to 10,000 URLs can be purged per day for each account with the acceleration service within or outside the Chinese mainland, and up to 1,000 URLs can be purged at a time. For each account using the global CDN service, the daily URL purge quota for acceleration service within and outside the Chinese mainland is 10,000 each.
-	
-	>- ? When you are running out of daily purge quota, you can increase it on your own in the Tencent Cloud CDN console.
+>?	
+>- When you are running out of daily purge quota, you can increase it on your own in the Tencent Cloud CDN console.
 >- The new quota will take effect immediately. The page will be refreshed automatically. You don’t need to click the refresh button frequently.
 >- The quota can only be increased once a day. 
 >- The quota increase in different regions is independent of each other.
