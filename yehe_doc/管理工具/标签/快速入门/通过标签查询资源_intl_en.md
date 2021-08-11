@@ -9,7 +9,7 @@ You have created a tag and bound resources to it. For detailed instructions, ple
 >?Click the tabs below to view different querying methods.
 
 <dx-tabs>
-::: Via Tag Console > Resource Tag[](id:resources)
+::: Via\sag\sConsole\s>\sResource\sTag[](id:resources)
 1. Log in to the [Tag console](https://console.cloud.tencent.com/tag).
 2. Click **Resource Tag** on the left sidebar.
 3. Set the filter criteria as follows.
@@ -20,7 +20,7 @@ You have created a tag and bound resources to it. For detailed instructions, ple
 4. Click **Query resource**, and the resources will be listed below.
 ![](https://main.qcloudimg.com/raw/9a7928e597874a861bc1d45d46d8f2ea.png)
 :::
-::: Via Tag Console > Tag List[](id:list)
+::: Via\sTag\sConsole\s>\sTag\sList[](id:list)
 1. Log in to the [Tag console](https://console.cloud.tencent.com/tag).
 2. Click **Tag List** on the left sidebar.
 3. In the tag list, find the target tag, and click the digit in the **Count of Resources** column to view the resources bound to the tag.
@@ -28,7 +28,7 @@ You have created a tag and bound resources to it. For detailed instructions, ple
 The resources will be displayed as below:
 ![](https://main.qcloudimg.com/raw/12c60f41799245ce45a0940221f9a6df.png)
 :::
-::: Via Console of Tencent Cloud Service[](id:product)
+::: Via\sConsole\sof\sTencent\sCloud\sService[](id:product)
 You can log in to the console of a Tencent Cloud service that supports tagging and query resources under the service by tag. The directions below use CVM as an example.
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm).
 2. On the left sidebar, click **Instances**.
