@@ -2,7 +2,6 @@
 
 ## Overview
 This document describes how to quickly create and use a web function in the SCF console.
->! Currently, web functions can be deployed in the Chengdu region only.
 
 
 ## Prerequisites
@@ -42,17 +41,17 @@ After creating the web function, you can view its basic information on the **Fun
 
 ### Cloud test
 
-
 <dx-tabs>
-::: Method\s1
+::: Method 1
 You can open the access path URL in a browser, and if it can be accessed normally, the function is successfully created.
 :::
-::: Method\s2
+::: Method 2
 You can concatenate the specified HTTP request for testing on the function code page through the test capability and check whether the function is successfully deployed through the HTTP response.
-<dx-alert infotype="notice"> The console invokes and tests the function by using the gateway API. If the test fails, the API will automatically execute the retry logic for up to 4 retries. Therefore, you will see multiple execution logs for one failed request.
-</dx-alert>
+
+>! The console invokes and tests the function by using the gateway API. If the test fails, the API will automatically execute the retry logic for up to 4 retries. Therefore, you will see multiple execution logs for one failed request.
+
 :::
-::: Method\s3
+::: Method 3
 You can use other HTTP testing tools such as CURL and Postman to test the web function you have successfully created.
 :::
 </dx-tabs>
@@ -61,6 +60,15 @@ You can use other HTTP testing tools such as CURL and Postman to test the web fu
 
 
 ### Viewing log
+For web functions, the returned body information of each request will not be automatically reported to the log. You can customize the reporting in the code through statements such as `console.log()` or `print()` in your programming language.
+
+For PHP, as all inputs are automatically used as the body, you need to run the following command to output the log to `stdout` and complete log reporting:
+```php
+<?php
+   $stdout = fopen("php://stderr","w"); 
+   fwrite($stdout,"123\n");
+?>
+```
 On the details page of a created function, select **Log Query** to view its detailed logs. For more information, please see [Viewing Execution Logs](https://intl.cloud.tencent.com/document/product/583/32740).
 
 ### View monitoring data
@@ -97,7 +105,20 @@ The table below describes the possible scenarios of request errors and function 
 |499|kRequestCanceled| The user manually interrupts the request. |
 
 
+
 ### 5xx status codes
 | Status Code | Return Message | Description |
 |--------|-------------|-----------------|
 |500|InternalError| An internal error occurs. Try again later. If the problem persists, [submit a ticket](https://console.cloud.tencent.com/workorder/category). |
+
+### Notes on local debugging
+When debugging in a local container, in order to ensure consistency with the standard container environment in the cloud, you need to pay attention to the limits of readable and writable files in the local environment. The local container startup command is as follows:
+```
+docker run -ti  --read-only -w /var/user \
+    -v /usr/local/cloudfunction/runtime:/var/runtime:ro \
+    -v ${PWD}:/var/user:ro \
+    -v /tmp:/tmp \
+    -v /usr/local/cloudfunction/runtime:/var/runtime:ro \
+    -v /usr/local/cloudfunction/lang:/var/lang:ro \
+    ccr.ccs.tencentyun.com/cloudfunc/qcloud-func bash
+```

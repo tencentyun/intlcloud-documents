@@ -2,7 +2,6 @@
 
 ## 操作场景
 本文介绍如何快速创建一个 Web 函数，您可通过本文了解 Web 函数创建过程及云函数控制台基本操作。
->! 目前仅支持成都地域部署。
 
 
 ## 前提条件
@@ -42,15 +41,15 @@
 
 ### 云端测试
 
-
 <dx-tabs>
 ::: 方式1
 您可以在浏览器里打开该访问路径 URL，如果可以正常访问，则说明函数创建成功。
 :::
 ::: 方式2
 您可以在函数代码页面，通过测试能力，拼装指定的 HTTP 请求进行测试，通过 HTTP 响应结果查看函数是否部署成功。
-<dx-alert  infotype="notice">控制台测试通过网关 API 接口进行测试调用，如果失败，API 侧会自动执行重试逻辑，最多重试4次，因此您的一次失败请求会看到多条执行日志。
-</dx-alert>
+
+>! 控制台测试通过网关 API 接口进行测试调用，如果失败，API 侧会自动执行重试逻辑，最多重试4次，因此您的一次失败请求会看到多条执行日志。
+
 :::
 ::: 方式3
 您可以使用其他 HTTP 测试工具，如 CURL、POSTMAN 等测试您已创建成功的 Web 函数。
@@ -61,6 +60,15 @@
 
 
 ### 查看日志
+Web 函数场景下，各个请求的返回 Body 信息不会自动上报到日志，您可以根据自己的开发语言，通过`console.log()` 或 `print()` 等语句，在代码里自定义上报。
+
+对于 PHP，由于所有的输入会自动作为返回体，您需要执行以下命令，将日志输出到 stdout 中，完成日志上报：
+```php
+<?php
+   $stdout = fopen("php://stderr","w"); 
+   fwrite($stdout,"123\n");
+?>
+```
 在已创建函数的详情页面，选择【日志查询】，即可查看函数详细日志。详情可参见 [查看运行日志](https://intl.cloud.tencent.com/document/product/583/32740)。
 
 ### 查看监控
@@ -97,7 +105,20 @@
 |499|kRequestCanceled|用户手动中断请求。|
 
 
+
 ### 5xx状态码
 | 状态码 | 返回信息 |      说明   |
 |--------|-------------|-----------------|
-|500|InternalError|内部错误，请稍后重试。若仍无法解决，请[提交工单](https://console.cloud.tencent.com/workorder/category)。|
+|500|InternalError|内部错误，请稍后重试。若仍无法解决，请 [提交工单](https://console.cloud.tencent.com/workorder/category)。|
+
+### 本地调试注意事项
+在本地容器调试时，为了保证和云上标准容器环境一致，需注意本地环境内的可读写文件限制。本地容器启动命令可参考如下命令：
+```
+docker run -ti  --read-only -w /var/user \
+    -v /usr/local/cloudfunction/runtime:/var/runtime:ro \
+    -v ${PWD}:/var/user:ro \
+    -v /tmp:/tmp \
+    -v /usr/local/cloudfunction/runtime:/var/runtime:ro \
+    -v /usr/local/cloudfunction/lang:/var/lang:ro \
+    ccr.ccs.tencentyun.com/cloudfunc/qcloud-func bash
+```

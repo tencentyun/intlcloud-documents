@@ -35,4 +35,9 @@ Run the following command to remove the deployed SCF resources:
 ```
 sls remove
 ```
->?For more information on how to use Serverless Framework CLI to manipulate SCF functions, please see [Serverless Framework CLI](https://intl.cloud.tencent.com/document/product/583/36267).
+
+## Relevant Features
+- For more information on how to use Serverless Framework CLI to manipulate SCF functions, please see [Serverless Framework CLI](https://intl.cloud.tencent.com/document/product/583/36267).
+- Serverless Web IDE is a browser-based integrated development environment. It delivers an on-cloud development experience comparable to native IDEs. For more information on its features for SCF, please see [Serverless Web IDE](https://intl.cloud.tencent.com/document/product/583/39962).
+- The SCF SDK integrates function business flow APIs, which simplifies the invocation of functions. For more information on its feature for functions, please see [SDK for Python](https://intl.cloud.tencent.com/document/product/583/32746) and [SDK for Node.js](https://intl.cloud.tencent.com/document/product/583/32747).
+

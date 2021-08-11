@@ -35,4 +35,9 @@ sls info
 ```
 sls remove
 ```
->?关于 Serverless Framework CLI 工具更多操作云函数的相关功能，请参见 [Serverless Framework CLI](https://intl.cloud.tencent.com/document/product/583/36267) 。
+
+## 相关功能
+- 关于 Serverless Framework CLI 工具更多操作云函数的相关功能，请参见 [Serverless Framework CLI](https://intl.cloud.tencent.com/document/product/583/36267) 。
+- Serverless Web IDE 工具是基于浏览器的集成式开发环境，提供接近原生 IDE 的云端开发体验。更多使用 Web IDE 操作云函数的相关功能，请参见 [Serverless Web IDE](https://intl.cloud.tencent.com/document/product/583/39962)。
+- Tencentserverless 云函数 SDK 集成了云函数业务流接口，简化了云函数的调用方法。更多使用云函数 SDK 操作云函数的相关功能，请参见 [Python SDK](https://intl.cloud.tencent.com/document/product/583/32746) 和 [Node.js SDK](https://intl.cloud.tencent.com/document/product/583/32747)。
+

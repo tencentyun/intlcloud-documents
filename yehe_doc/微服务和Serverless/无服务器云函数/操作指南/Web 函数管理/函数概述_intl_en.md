@@ -24,6 +24,7 @@ After being configured with the specified listening port `9000` and service boot
 - Currently, web functions can be bound to only API Gateway triggers.
 - A function can be bound to multiple API Gateway triggers, but all APIs must be under the same API service.
 - Prolonged execution, async invocation, and retry are not supported.
+- In the Tencent Cloud standard environment, only the `/tmp` directory is readable and writable. When outputting files, please select the `/tmp` path; otherwise, the service will exit exceptionally due to the lack of write permission.
 
 #### Request limits
 - Web functions can be invoked only through API Gateway but not function APIs.
