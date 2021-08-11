@@ -46,12 +46,6 @@
 <td><a href = "https://intl.cloud.tencent.com/document/product/267/31077">ストリームデータのクエリー</a></td>
 <td>単一のビデオストリームのプッシュおよび再生データの詳細をクエリーし、データをローカルにエクスポートできます</td>
 </tr><tr>
-<td><a href = "https://cloud.tencent.com/document/product/267/20382">SDK品質モニタリング</a></td>
-<td>MLVB SDKの直近3日間のプッシュデータ情報を確認できます</td>
-</tr><tr>
-<td><a href = "https://cloud.tencent.com/document/product/267/33996">ログ分析</a></td>
-<td><ul style = "margin-bottom: 0px;"><li>LVBのアクセスログをリアルタイムに採集し、その後データクリーニング、分析、検索を行うことで、アクセスの障害を迅速に特定することができます。</li><li>前日、最近1週間、最近1か月またはカスタマイズした時間間隔のログのデータパックをダウンロードできます。</li></ul></td>
-</tr>
 </table>
 
 ## LVBツールボックス
@@ -66,11 +60,7 @@ LVBツールボックスは、LVBプロセスに関する保証サービスの�
 <td><a href = "https://intl.cloud.tencent.com/document/product/267/35968">Webプッシュ</a></td>
 <td>プッシュアドレスを迅速に生成して、オンラインでライブストリーミング機能をテストできます。</td>
 </tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/39467">セルフチェック</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267">セルフチェック</a></td>
 <td>よくあるCSSプッシュ/再生の問題を迅速に診断します。現在この機能はオープンベータテスト段階にあり、診断結果は参考としてのみ提供されます。</td>
-</tr>
-<tr>
-<td><a href="https://cloud.tencent.com/document/product/267/55670">プルストリームのプッシュ転送</a></td>
-<td>コンテンツをプルしてからプッシュする機能を提供します。CSSプッシュを行う必要なく、迅速に既存のビデオ/ライブストリーミングをプルし、目標アドレスにプッシュすることが可能です。</td>
 </tr>
 </table>
