@@ -65,7 +65,7 @@ http://domain/live/test_900.m3u8?txTime=5c2acacc&txSecret=4beae959b16c77da6a65c7
 
 <span id="que7"></span>
 ### What are the format requirements for the master key in the playback authentication configuration? Is there any limit on its validity period?
-The master key in the authentication configuration can contain 256 bits of uppercase and lowercase letters and digits. A random mix of letters and digits is enough.
+The master key in the authentication configuration can contain 256 bits of uppercase and lowercase letters and digits. A random mix of letters and digits is enough. For more information, please see [Playback Authentication Settings](https://intl.cloud.tencent.com/document/product/267/31060).
 We recommend that you set its validity period to the duration of the live stream.
 
 
