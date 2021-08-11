@@ -7,7 +7,7 @@ Log in to the [TDSQL for MySQL console](https://console.cloud.tencent.com/dcdb),
 
 >?
 >- Currently, slow query analysis can only be performed and viewed in each shard separately.
->- To download slow logs, you need to copy the download address, [log in to a (Linux) CVM instance in the same VPC as the TencentDB instance](https://cloud.tencent.com/document/product/213/2936#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8), and run the `wget` command for download over the private network.
+>- To download slow logs, you need to copy the download address, [log in to a (Linux) CVM instance in the same VPC as the TencentDB instance](https://intl.cloud.tencent.com/zh/document/product/213/10517), and run the `wget` command for download over the private network.
 
 ## Main Parameters
 ### Main default settings
