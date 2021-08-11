@@ -133,7 +133,7 @@ When the receiver is an iOS or Android device and the app is working in the back
 | Second | Number | Voice duration, in seconds. |
 | Download_Flag | Number | Flag of the voice download method. Currently, the value of `Download_Flag` must be `2`, which means that the voice content can be downloaded from the URL specified by the `Url` field. |
 
->?2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send audio message elements in the following format:
+2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send audio message elements in the following format:
 ```
 {
     "MsgType": "TIMSoundElem",
@@ -144,7 +144,7 @@ When the receiver is an iOS or Android device and the app is working in the back
     }
 }
 ```
->
+
 
 ### Image message element
 
@@ -218,7 +218,7 @@ When the receiver is an iOS or Android device and the app is working in the back
 | fileName | String | File name. |
 | Download_Flag | Number | Flag of the file download method. Currently, the value of `Download_Flag` must be 2, which means that the file can be downloaded from the URL specified by the `Url` field. |
 
->?2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send file message elements in the following format:
+2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send file message elements in the following format:
 >```
 >{
 >"MsgType": "TIMFileElem",
@@ -228,7 +228,7 @@ When the receiver is an iOS or Android device and the app is working in the back
 >  "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //File name in String type.
 >}
 >}
->```
+
 ```
 
 ### Video message element
@@ -270,8 +270,8 @@ When the receiver is an iOS or Android device and the app is working in the back
 | ThumbDownloadFlag | Number | Flag of the video thumbnail download method. Currently, the value of `ThumbDownloadFlag` must be 2, which means that the video thumbnail can be downloaded from the URL specified by the `ThumbUrl` field. |
 
 
->?2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send video message elements in the following format:
->```
+2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send video message elements in the following format:
+```
 {
     "MsgType": "TIMVideoFileElem",
     "MsgContent": {
