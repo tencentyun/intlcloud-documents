@@ -7,9 +7,9 @@
 <tbody><tr>
 <td>Compatible Redis version</td><td>2.8</td><td>4.0 and 5.0</td><td>4.0 and 5.0</td></tr>
 <tr>
-<td>Memory</td><td>256 MB to 60 GB</td><td>1 GB to 60 GB</td><td>12 GB to 4 TB</td></tr>
+<td>Memory</td><td>256 MB to 60 GB</td><td>1 GB to 64 GB</td><td>4 GB to 20 TB</td></tr>
 <tr>
-<td>Shard quantity</td><td>N/A</td><td>N/A</td><td>3 to 128</td></tr>
+<td>Shard quantity</td><td>N/A</td><td>N/A</td><td>1 to 320</td></tr>
 <tr>
 <td>QPS</td><td>80,000 to 100,000</td><td>80,000 to 100,000</td><td>80,000 to 100,000 per shard</td></tr>
 <tr>
@@ -71,7 +71,7 @@
 
 ### Traffic and connections
 #### Memory edition
-| Specification (GB) | Max Connections | Max Throughput (MB/s) |
+| Specification (GB) | Max. Connections | Max. Throughput (MB/s) |
 |  :----------: |  :----------: |  :-------------------: |
 | 0.25          | 3,000       | 10                  |
 | 1          | 40,000       | 16                  |
@@ -88,7 +88,7 @@
 | 60         | 40,000       | 64                  | 
 
 #### CKV edition
-| Specification (GB) | Max Connections | Max Throughput (MB/s) | 
+| Specification (GB) | Max. Connections | Max. Throughput (MB/s) | 
 |  :----------: |  :----------: |  :-------------------: |
 | 4          | 10,000       | 24                  |
 | 8          | 10,000       | 24                  |
@@ -115,7 +115,7 @@ Cluster Edition throughput = Shard throughput * number of shards
 The time needed to execute Redis commands varies. Businesses use different database commands in their production environments; therefore, the corresponding performance values will also vary. The test results listed here are obtained with specified parameters and are for your reference only. Please conduct tests in your actual business environment for more accurate results.
 
 #### Single-node test performance
-| Redis Instance Specification | Connections | QPS |
+|  Redis Instance Specification | Connections | QPS |
 |:---------:|:---------:|:--------:|
 | Memory edition (standard architecture), 8 GB | 10,000 | 80,000-100,000 |
 | Memory edition (cluster architecture), 8 GB (per shard) | 10,000 | 80,000-100,000 |
