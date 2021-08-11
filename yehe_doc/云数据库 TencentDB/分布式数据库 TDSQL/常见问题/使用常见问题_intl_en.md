@@ -4,7 +4,7 @@
 - In stable development stage when sharding is based on actual business demands: 4 shards, and the specification for each equals current business peak x growth rate / 4.
 For more information on instance specifications, please see [Selecting TDSQL for MySQL Instance and Shard Configurations](https://intl.cloud.tencent.com/document/product/1042/33354).
 
-### Is TDSQL for MySQL's syntax compatible with MySQL's? Are there any limitations?
+### What are the differences between TDSQL for MySQL syntax and traditional MySQL syntax?
 Currently, you cannot configure user permissions with command lines. Instead, you need to log in to the [TDSQL for MySQL console](https://console.cloud.tencent.com/dcdb) to do so.
 Currently, TDSQL for MySQL does not support custom functions, views, triggers, foreign keys, etc.
 For more information on the compatibility with MySQL's syntax, please see [Use Limits](https://intl.cloud.tencent.com/document/product/1042/33356).
@@ -21,7 +21,7 @@ Group-shard solution can ensure that some of the associated data and complex bus
 
 Some typical cases of shardkey selection are as follows:
  - For user-based Internet applications, most (or core) database operations are based on users, so the field corresponding to user data can be used as a shardkey.
- - For e-commerce applications or O2O applications, most (or core) database operations are based on sellers and buyers, so the field corresponding to seller or buyer data can be used as a shardkey. Please note that in some cases super sellers account for the vast majority of transactions, resulting in significantly higher load and pressure on some of the shards.
+ - For e-commerce applications or O2O applications, most (or core) database operations are based on sellers and buyers, so the field corresponding to seller or buyer data can be used as a shardkey. In the case where super sellers account for the vast majority of transactions, the load and pressure on some shards will increase significantly.
  - For game applications, most (or core) database operations are based on players, so the field corresponding to player data can be used as a shardkey.
  - For Internet of Things (IoT) applications, most (or core) database operations are based on IoT information, so the field corresponding to the data of sensors, independent devices, or IMEIs of SIM cards can be used as a shardkey.
  - For taxation/industry and commerce/social insurance applications, most (or core) database operations of frontend businesses are based on the information of taxpayers, legal representatives, and residents, so the field corresponding to the data of taxpayers or legal representatives can be used as a shardkey.
@@ -30,5 +30,3 @@ In most other types of cases, the field of the data on which most (or core) data
 ### Can the shardkey be changed?
 Once selected, the shardkey cannot be changed. If you want to modify the shardkey of a table, you need to create a new table.
 To modify a shardkey value in a row of a sharded table, you need to INSERT a new value and DELETE the old one. You cannot UPDATE it.
-
-
