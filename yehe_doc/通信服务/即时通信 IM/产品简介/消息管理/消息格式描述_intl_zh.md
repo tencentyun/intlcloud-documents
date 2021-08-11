@@ -22,12 +22,12 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 |TIMLocationElem|地理位置消息。|
 |TIMFaceElem|表情消息。|
 |TIMCustomElem|自定义消息，当接收方为 iOS 系统且应用处在后台时，此消息类型可携带除文本以外的字段到 APNs。一条组合消息中只能包含一个 TIMCustomElem 自定义消息元素。|
-|TIMSoundElem|语音消息。（服务端集成 Rest API 不支持发送该类消息）|
-|TIMImageElem|图像消息。（服务端集成 Rest API 不支持发送该类消息）|
-|TIMFileElem|文件消息。（服务端集成 Rest API 不支持发送该类消息）|
-|TIMVideoFileElem|视频消息。（服务端集成 Rest API 不支持发送该类消息）|
+|TIMSoundElem|语音消息。|
+|TIMImageElem|图像消息。|
+|TIMFileElem|文件消息。|
+|TIMVideoFileElem|视频消息。|
 
->!通过服务端集成的 Rest API 接口，只能发送 TIMTextElem，TIMLocationElem，TIMFaceElem，TIMCustomElem 类型的消息，其它类型的消息（TIMSoundElem，TIMImageElem，TIMFileElem，TIMVideoFileElem）不能通过 Rest API 接口发送。
+>!上述类型的消息均能通过服务端集成的 Rest API 接口发送。
 
 ## 消息元素 TIMMsgElement
 
@@ -111,7 +111,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 
 ### 语音消息元素
 
->!不能通过服务端集成的 Rest API 接口发送语音消息，发送语音消息需要通过客户端集成相应的接口。
+>!通过服务端集成的 Rest API 接口发送语音消息时，需要填入语音的 URL ，且需保证通过该 URL 能下载到对应语音。Download_Flag 字段必须填2。
 
 4.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的语音消息元素的格式如下：
 ```
@@ -134,7 +134,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 | Download_Flag | Number | 语音下载方式标记。目前 Download_Flag 取值只能为2，表示可通过`Url`字段值的 URL 地址直接下载语音。 |
 
 >?2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的语音消息元素如下：
->```
+```
 {
     "MsgType": "TIMSoundElem",
     "MsgContent": {
@@ -143,11 +143,12 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
         "Second": 1         //语音时长，类型为 Number，单位：秒。
     }
 }
->```
+```
+>
 
 ### 图像消息元素
 
->!不能通过服务端集成的 Rest API 接口发送图像消息，发送图像消息需要通过客户端集成相应的接口。
+>!通过服务端集成的 Rest API 接口发送图像消息时，需要填入图像的 URL ，且需保证通过该 URL 能下载到对应图像。UUID 字段需填写全局唯一的 String 值，一般填入图片的 MD5 值。IM SDK 会将该值通过消息对象 V2TIMImageElem.V2TIMImage 传递给消息接收者，业务 App 可以用这个字段做图片的区分。
 
 ```
 {
@@ -195,7 +196,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 
 ### 文件消息元素
 
->!不能通过服务端集成的 Rest API 接口发送文件消息，发送文件消息需要通过客户端集成相应的接口。
+>!通过服务端集成的 Rest API 接口发送文件消息时，需要填入文件的 URL ，且需保证通过该 URL 能下载到对应文件。Download_Flag字段必须填2。
 
 4.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的文件消息元素的格式如下：
 ```
@@ -220,19 +221,19 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 >?2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的文件消息元素如下：
 >```
 >{
->    "MsgType": "TIMFileElem",
->    "MsgContent": {
->        "UUID": "305c02010", //文件序列号，类型为 String。后台用于索引文件的键值。无法通过该字段下载相应的文件。若需要获取该文件，请升级 IM SDK 版本至4.X。
->        "FileSize": 1773552, //文件数据大小，类型为 Number，单位：字节。
->        "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //文件名称，类型为 String。
->    }
+>"MsgType": "TIMFileElem",
+>"MsgContent": {
+>  "UUID": "305c02010", //文件序列号，类型为 String。后台用于索引文件的键值。无法通过该字段下载相应的文件。若需要获取该文件，请升级 IM SDK 版本至4.X。
+>  "FileSize": 1773552, //文件数据大小，类型为 Number，单位：字节。
+>  "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //文件名称，类型为 String。
+>}
 >}
 >```
-
+```
 
 ### 视频消息元素
 
->!不能通过服务端集成的 Rest API 接口发送视频消息，发送视频消息需要通过客户端集成相应的接口。
+>!通过服务端集成的 Rest API 接口发送视频消息时，需要填入视频的 URL ，且需保证通过该 URL 能下载到对应视频。VideoDownloadFlag 和 ThumbDownloadFlag 字段必须填2。
 
 4.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的视频消息元素的格式如下：
 ```
@@ -285,7 +286,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 		"ThumbFormat": "JPG"  //缩略图格式，类型为 String，例如 JPG、BMP 等。
     }
 }
->```
+```
 
 ## MsgBody 消息内容实例
 

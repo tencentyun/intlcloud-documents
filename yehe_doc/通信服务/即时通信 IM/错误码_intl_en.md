@@ -1,3 +1,4 @@
+
 ## 1. IM SDK Error Codes
 >?For web SDK error codes, see [Error Code Table](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html). 
 
@@ -9,7 +10,7 @@
 | 6017 | Invalid parameter. Check the error information to locate the invalid parameter. |
 | 6022 | Local I/O operation error. Check whether you have the read and write permissions or whether the disk is full. |
 | 6027 | Incorrect JSON format. Check the error information to locate the specific field. |
-| 6028 | Insufficient memory. A memory leak may occur. Analyze and identify the location with high memory usage by using the Instrument tool (for iOS) or the Profiler tool (for Android). |
+| 6028 | Insufficient memory. A memory leak may occur. Analyze and identify the location with high memory usage by using the Instrument tool on the iOS platform or the Profiler tool on the Android platform. |
 | 6001 | PB parsing failed. Internal error. |
 | 6002 | PB serialization failed. Internal error. |
 | 6013 | The IM SDK has not been initialized. Try again after the IM SDK is initialized and the response is returned through callback. |
@@ -31,8 +32,6 @@
 | 6026 | This user account was not logged in during auto login. Call the login API to log in to the user account again. |
 | 6206 | UserSig has expired. Get a new valid UserSig and log in again. For more information about how to get a UserSig, see [Generating a UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | 6208 | You have been logged out because your account is logged in on another device. Please log in again. |
-| 7501 | Login in process. For example, if another login or autoLogin operation is performed before the first login or autoLogin operation is called back, the system returns this error code. |
-| 7502 | Logout in process. For example, if another logout operation is performed before the first logout operation is called back, the system returns this error code. |
 | 7503 | Failed to initialize the TLS SDK. Internal error. |
 | 7504 | The TLS SDK has not been initialized. Internal error. |
 | 7505 | The TRANS packet format of the TLS SDK is incorrect. Internal error. |
@@ -60,14 +59,14 @@
 
 | Error Code | Description |
 | ------ | ------------------------------------------------------------ |
-| 8501 | Invalid group ID. A custom group ID must be printable ASCII characters (0x20-0x7e) containing up to 48 bytes in length. To avoid confusion with the default group IDs assigned by IM, a custom group ID cannot be prefixed with @TGS#. |
+| 8501 | Invalid Group ID. A custom group ID must be printable ASCII characters (0x20-0x7e) containing up to 48 bytes in length. To avoid confusion with the default group IDs assigned by IM, a custom group ID cannot be prefixed with @TGS#. |
 | 8502 | Invalid group name. A group name can be up to 30 bytes in length and must be encoded in UTF-8. If the group name contains a Chinese character, the Chinese character may be expressed in multiple bytes. Check the length of the string in bytes. |
 | 8503 | Invalid group introduction. A group introduction can be up to 240 bytes in length and must be encoded in UTF-8. If the group introduction contains a Chinese character, the Chinese character may be expressed in multiple bytes. Check the length of the string in bytes. |
 | 8504 | Invalid group notice. A group notice can be up to 300 bytes in length and must be encoded in UTF-8. If the group notice contains a Chinese character, the Chinese character may be expressed in multiple bytes. Check the length of the string in bytes. |
 | 8505 | Invalid URL of the group profile photo. The URL of a group profile photo can be up to 100 bytes in length. You can try to access the URL via a web browser. |
 | 8506 | Invalid group name card. A group name card can be up to 50 bytes in length and must be encoded in UTF-8. If the group name card contains a Chinese character, the Chinese character may be expressed in multiple bytes. Check the length of the string in bytes. |
-| 8507 | Exceeded the maximum number of group members allowed upon group creation and invitation. For the Pro Edition, a group can contain up to 200 members, which can be extended to 2,000. For the Flagship Edition, a group can contain up to 2,000 members, which can be extended to 6,000. Audio-video chat rooms and broadcasting chat rooms have no limit on the number of members in a group. |
-| 8508 | A private group cannot be joined via application. Any group member can invite non-members to join the group without the invitees' confirmation. |
+| 8507 | Exceeded the maximum number of group members allowed upon group creation and invitation. For the Pro Edition, a group can contain up to 200 members, which can be extended to 2,000. For the Ultimate Edition, a group can contain up to 2,000 members, which can be extended to 6,000. Audio-video chat rooms and broadcasting chat rooms have no limit on the number of members in a group. |
+| 8508 | A private group cannot be joined via app. Any group member can invite non-members to join the group without the invitees' confirmation. |
 | 8509 | You cannot invite a group member whose role is group owner. Ensure that the role field is entered correctly. |
 | 8510 | You cannot invite 0 members. Ensure that the member field is entered correctly. |
 
@@ -103,9 +102,13 @@
 | 9515 | Invalid socket. Internal error. |
 | 9516 | Failed to parse the IP address. Internal error. The local `imsdk_config` file may be corrupted and can cause the system to read an invalid IP address. |
 | 9517 | Invalid connection. The network is connected to an intermediate node or is reset by the server. This is an internal error. The SDK automatically initiates reconnection. Try again after the network is reconnected and the callback function `onConnSucc` on iOS or `onConnected` on Android is called successfully. |
-| 9518 | The request packet timed out when waiting to enter the sending queue. This error occurs when the network connection setup is slow or the network is frequently disconnected and reconnected. Check whether the network connection is normal. |
+| 9518 | The request packet timed out when waiting to enter the sending queue. This usually occurs when the network connection setup is slow or the network is frequently disconnected and reconnected. Check whether the network connection is normal. |
 | 9519 | The request packet entered the IM SDK sending queue but timed out while waiting to enter the network layer of the operating system. This usually occurs when the local network is restricted or disconnected or the local network and the IM SDK backend are not connected. We recommend that you run the IM SDK in different network environments to check whether this issue is caused by the current network environment. |
 | 9520 | The request packet entered the network layer of the operating system from the IM SDK sending queue but timed out while waiting for a response packet from the server. This usually occurs when the local network is restricted or disconnected or the local network and the IM SDK backend are not connected. We recommend that you run the IM SDK in different network environments to check whether this issue is caused by the current network environment. |
+| 9522   | The request packet length exceeds the maximum limit of 1 MB. |
+| 9523 | The request packet has entered the sending queue but timed out when waiting to enter the network buffer of the system. This usually occurs because too many packets are to be sent, the sending thread is too busy to handle the packets, or the network is disconnected when the error code is called back. |
+| 9524 | The request packet has entered the network buffer of the system but timed out when waiting for the server to return packets. This usually occurs because the request packet does not leave the client device, is discarded in an intermediate route, or is dropped accidentally by the server, the response packet is discarded by the network layer of the system, or the network is disconnected when the error code is called back. |
+| 9525   | The request packet has entered the sending queue, certain data has been sent, but the remaining data timed out when waiting to be sent. This usually occurs because the upstream bandwidth is insufficient or the network is disconnected when the error code is called back. Please check whether the network connection is normal. |
 
 ## 2. Server Error Codes
 
@@ -191,7 +194,7 @@
 | 70206 | Invalid batch quantity in the request. |
 | 70402 | Invalid parameter. Check whether the required fields are all set and whether the parameter settings meet the protocol requirements. |
 | 70403 | Request failed. You need the app admin permission to perform this action. |
-| 70398  | The number of accounts exceeds the limit. To create more than 100 accounts, please upgrade your application to the Pro Edition. |
+| 70398  | The number of accounts exceeds the limit. To create more than 100 accounts, please upgrade your app to the Pro Edition. |
 | 70500 | Internal server error. Try again later. |
 | 71000 | Failed to delete the account. Only trial accounts can be deleted. Your current app is of the Pro Edition and therefore cannot be deleted. |
 
@@ -336,7 +339,7 @@
 | 10019 | The requested UserID does not exist. |
 | 10021 | The group ID is already in use. Specify another group ID. |
 | 10023 | The message exceeds the frequency limit. Try again later. |
-| 10024 | This invitation or application request has already been processed. |
+| 10024 | This invitation or app request has already been processed. |
 | 10025 | The group ID is already in use. The operator is the group owner and therefore can use the group ID directly. |
 | 10026 | The command word in the SDKAppID request is forbidden. |
 | 10030 | The message to be recalled does not exist. |
@@ -344,14 +347,24 @@
 | 10032 | The message to be recalled cannot be recalled. |
 | 10033 | This type of group does not support message recalls. |
 | 10034 | This type of message cannot be deleted. |
-| 10035 | Audio-video chat rooms and broadcasting chat rooms do not support message deletion. |
-| 10036 | The number of audio-video chat rooms exceeds the limit. To purchase, please see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
-| 10037 | The number of groups that can be created and joined by a single user exceeds the limit. To purchase, please see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
-| 10038 | The number of group members exceeds the limit. To purchase, please see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
-| 10041 | The application (SDKAppID) is configured not to support group message recalls. |
+| 10035 | Audio-video chat rooms and broadcast chat rooms do not support message recalls. |
+| 10036 | The number of audio-video chat rooms exceeds the limit allowed. To purchase a prepaid package of “IM audio-video chat rooms”, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
+| 10037 | The number of groups that can be created and joined by a single user exceeds the limit allowed. To purchase or upgrade a prepaid package of “Expanding the number of groups that can be created and joined by a single user”, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
+| 10038 | The number of group members exceeds the limit allowed. To purchase or upgrade a prepaid package of “Increasing the limit of group members”, please see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
+| 10041 | The app (SDKAppID) is configured not to support group message recalls. |
+| 10045 | The size of the custom attribute key exceeds the limit of 32 bytes. |
+| 10046 | The size of a single value of the custom attribute exceeds the limit of 4,000 bytes. |
+| 10047 | The number of keys in the custom attribute exceeds the limit of 16. |
+| 10048 | The total size of the values of all keys of the custom attribute exceeds the upper limit of 16,000 bytes. |
+| 10049 | The write operation of the custom attribute triggers frequency control. |
+| 10050 | The deleted custom attribute does not exist. |
+| 10051 | Message deletion exceeds the maximum scope limit. |
+| 10052 | There is no message in the group during message deletion. |
+| 10053 | The number of group @ objects exceeds the upper limit of 30. |
 
 
-### Operation data error codes
+
+### Operations data error codes
 
 | Error Code | Description |
 | ------ | ------------------------------------------------------------ |

@@ -1,4 +1,4 @@
-## Description of MsgBody Message Content
+## MsgBody
 Message content is entered in the fields of MsgBody. Instant Messaging (IM) supports multiple message elements in one message, for example, a message can contain both text and emojis. Therefore, MsgBody is defined as an array that can include as many message elements as needed. The name for a message element is TIMMsgElement. For examples of the TIMMsgElements that constitute the MsgBody, see [MsgBody Message Content Examples](https://intl.cloud.tencent.com/document/product/1047/33527).
 
 The format of TIMMsgElement is defined as follows:
@@ -22,14 +22,14 @@ The following table lists the message types (MsgType) that are currently support
 | TIMLocationElem | Geographic location |
 | TIMFaceElem | Emoji |
 | TIMCustomElem | Custom. When the receiver is an iOS device and the app is working in the background, this type of message provides fields other than text to APNs. A combined message can contain only one TIMCustomElem custom message element. |
-| TIMSoundElem | Audio. Server-side integrated RESTful APIs cannot send this type of message. |
-| TIMImageElem | Image. Server-side integrated RESTful APIs cannot send this type of message. |
-| TIMFileElem | File. Server-side integrated RESTful APIs cannot send this type of message. |
-| TIMVideoFileElem | Video. Server-side integrated RESTful APIs cannot send this type of message. |
+| TIMSoundElem | Voice |
+| TIMImageElem | Image |
+| TIMFileElem | File |
+| TIMVideoFileElem | Video |
 
->Only TIMTextElem, TIMLocationElem, TIMFaceElem, and TIMCustomElem messages can be sent through RESTful APIs integrated with the server. Other types of messages including TIMSoundElem, TIMImageElem, TIMFileElem, and TIMVideoFileElem messages cannot be sent through RESTful APIs.
+>!Messages of the above types can be sent by server-side integrated RESTful APIs.
 
-## Message Element TIMMsgElement
+## TIMMsgElement
 
 ### Text message element
 
@@ -44,7 +44,7 @@ The following table lists the message types (MsgType) that are currently support
 
 | Field | Type | Description |
 |---------|---------|---------|
-| Text | String | The content of the message. When the receiver is an iOS or Android device and the app is working in the background, messages of this type are displayed as offline push text. |
+| Text | String | Content of the message. When the receiver is an iOS or Android device and the app is working in the background, messages of this type are displayed as offline push text. |
 
 When the receiver is an iOS or Android device and the app is working in the background, the `Text` field in the JSON request packet is displayed as offline push text.
 
@@ -67,7 +67,7 @@ When the receiver is an iOS or Android device and the app is working in the back
 | Latitude | Number | Latitude |
 | Longitude | Number | Longitude |
 
-When the receiver is an iOS or Android device and the app is working in the background, the offline push text is  **[Location]** for the English version.
+When the receiver is an iOS or Android device and the app is working in the background, the offline push text is **[Location]** for the English version.
 
 ### Emoji message element
 
@@ -103,17 +103,17 @@ When the receiver is an iOS or Android device and the app is working in the back
 | Field | Type | Description |
 |---------|---------|---------|
 | Data | String | Custom message data. This field is not delivered as a payload field by APNs, and therefore the data field cannot be obtained in payload. |
-| Desc | String | Custom message description. When the receiver is an iOS or Android client running in the background, this field is displayed as the offline push text. <br>If custom messages are sent with the [OfflinePushInfo.Desc](https://intl.cloud.tencent.com/document/product/1047/33527) field set, this field will be overwritten. Therefore, fill in the OfflinePushInfo.Desc field first.<br>If a message has only one TIMCustomElem element, and neither Desc nor OfflinePushInfo.Desc is filled in, the offline push notification for the message will not be received. To receive offline push notifications for the message, you must fill in the OfflinePushInfo.Desc field. |
-| Ext | String | The extended field. When the receiver is an iOS or Android device and the app is working in the background, this field is delivered as an Ext key value in APNs request packet payloads. The protocol format of Ext is defined by the business end, the APNs is only responsible for passthrough. |
+| Desc | String | Custom message description. When the receiver is an iOS or Android client running in the background, this field is displayed as the offline push text. <br>If custom messages are sent with the [OfflinePushInfo.Desc](https://intl.cloud.tencent.com/document/product/1047/33527) field set, this field will be overwritten. Therefore, fill in the `OfflinePushInfo.Desc` field first.<br>If a message has only one TIMCustomElem element, and neither `Desc` nor `OfflinePushInfo.Desc` is filled in, the offline push notification for the message will not be received. To receive offline push notifications for the message, you must fill in the `OfflinePushInfo.Desc` field. |
+| Ext | String | Extended field. When the receiver is an iOS or Android device and the app is working in the background, this field is delivered as an Ext key value in APNs request packet payloads. The protocol format of Ext is defined by the business end, the APNs is only responsible for passthrough. |
 | Sound | String | Custom APNs push ringtone |
 
 When the receiver is an iOS or Android device and the app is working in the background, the `Desc` field is delivered as push text, the `Ext` field is delivered as an `Ext` key value in APNs request packet payloads, and the `Data` field is not delivered as a payload field by APNs. Note that a combined message can contain only one TIMCustomElem custom message element.
 
-### Audio message element
+### Voice message element
 
->Audio messages cannot be sent through server-side integrated RESTful APIs. Instead, they can only be sent through client-side integrated APIs.
+>!To send voice messages through server-side integrated RESTful APIs, you need to fill in voice URLs through which the voices can be downloaded. The `Download_Flag` field must be set to `2`.
 
-4.X versions of IM SDK (for Android, iOS, Mac, and Windows) send audio message elements in the following format:
+4.X versions of IM SDK (for Android, iOS, Mac, and Windows) send voice message elements in the following format:
 ```
 {
     "MsgType": "TIMSoundElem",
@@ -128,19 +128,19 @@ When the receiver is an iOS or Android device and the app is working in the back
 
 | Field | Type | Description |
 |---------|---------|---------|
-| Url | String | The audio download URL, through which the audio content can be downloaded directly. |
-| Size | Number | The audio data size in bytes. |
-| Second | Number | The audio duration in seconds. |
-| Download_Flag | Number | The flag of the audio download method. Currently, the value of Download_Flag must be 2, which means that the audio content can be downloaded from the URL that is the value of the `Url` field. |
+| Url | String | Voice download URL, through which the voice content can be downloaded directly. |
+| Size | Number | Voice data size, in bytes. |
+| Second | Number | Voice duration, in seconds. |
+| Download_Flag | Number | Flag of the voice download method. Currently, the value of `Download_Flag` must be `2`, which means that the voice content can be downloaded from the URL specified by the `Url` field. |
 
->2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send audio message elements in the following format:
+>?2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send audio message elements in the following format:
 ```
 {
     "MsgType": "TIMSoundElem",
     "MsgContent": {
-        "UUID": "305c0201", //The serial number of the audio in String type. This is the key value the backend uses to index the audio. Audio cannot be downloaded through this field. To obtain the audio, upgrade the IM SDK to 4.X version.
-        "Size": 62351,//The audio data size in bytes, in Number type.
-        "Second": 1         //The audio duration in seconds, in Number type.
+        "UUID": "305c0201", //Serial number of the voice in String type. This is the key value the backend uses to index the voice. The voice cannot be downloaded through this field. To obtain the voice, upgrade the IM SDK to 4.X versions.
+        "Size": 62351,//Voice data size in bytes, in Number type.
+        "Second": 1         //Voice duration in seconds, in Number type.
     }
 }
 ```
@@ -148,7 +148,7 @@ When the receiver is an iOS or Android device and the app is working in the back
 
 ### Image message element
 
->Image messages cannot be sent through server-side integrated RESTful APIs. Instead, they can only be sent through client-side integrated APIs.
+>!To send image messages through server-side integrated RESTful APIs, you need to fill in image URLs through which the images can be downloaded. The `UUID` field must be set to a globally unique string value, usually the MD5 value of the image. IM SDK will deliver the value to the message receiver through the message object V2TIMImageElem.V2TIMImage, and service apps can use this field to distinguish images.
 
 ```
 {
@@ -185,20 +185,20 @@ When the receiver is an iOS or Android device and the app is working in the back
 
 | Field | Type | Description |
 |---------|---------|---------|
-| UUID | String | The serial number of the image, which is the key value the backend uses to index image. |
-| ImageFormat | Number | The image format. JPG = 1, GIF = 2, PNG = 3, BMP = 4, Others = 255. |
-| ImageInfoArray | Array | The download information of the original image, thumbnail, or large image. |
-| Type | Number | The image type. 1: original image, 2: large image, 3: thumbnail. |
-| Size | Number | The size of image data in bytes. |
-| Width | Number | The image width. |
-| Height | Number | The image height. |
-| URL | String | The download URL of the image. |
+| UUID | String | Serial number of the image, which is the key value the backend uses to index the image. |
+| ImageFormat | Number | Image format. JPG = 1, GIF = 2, PNG = 3, BMP = 4, Others = 255. |
+| ImageInfoArray | Array | Download information of the original image, thumbnail, or large image. |
+| Type | Number | Image type. 1: original image, 2: large image, 3: thumbnail. |
+| Size | Number | Size of image data in bytes. |
+| Width | Number | Image width. |
+| Height | Number | Image height. |
+| URL | String | Download URL of the image. |
 
 ### File message element
 
->File messages cannot be sent through server-side integrated RESTful APIs. Instead, they can only be sent through client-side integrated APIs.
+>!To send file messages through server-side integrated RESTful APIs, you need to fill in file URLs through which the files can be downloaded. The `Download_Flag` field must be set to `2`.
 
-4.X versions of IM SDK (for Android, iOS, Mac, and Windows) send file message element in the following format:
+4.X versions of IM SDK (for Android, iOS, Mac, and Windows) send file message elements in the following format:
 ```
 {
     "MsgType": "TIMFileElem",
@@ -213,29 +213,29 @@ When the receiver is an iOS or Android device and the app is working in the back
 
 | Field | Type | Description |
 |---------|---------|---------|
-| Url | String | The download URL of the file, through which the file can be downloaded directly. |
-| FileSize | Number | The size of file data in bytes. |
-| fileName | String | The file name. |
-| Download_Flag | Number | The flag of the file download method. Currently, the value of `Download_Flag` must be 2, which means that the file can be downloaded from the URL that is the value of the `Url` field. |
+| Url | String | Download URL of the file, through which the file can be downloaded directly. |
+| FileSize | Number | Size of file data in bytes. |
+| fileName | String | File name. |
+| Download_Flag | Number | Flag of the file download method. Currently, the value of `Download_Flag` must be 2, which means that the file can be downloaded from the URL specified by the `Url` field. |
 
->2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send file message elements in the following format:
+>?2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send file message elements in the following format:
 >```
 >{
->    "MsgType": "TIMFileElem",
->    "MsgContent": {
->        "UUID": "305c02010", //The serial number of the file in String type. This is the key value the backend uses to index the file. The file cannot be downloaded through this field. To obtain the file, upgrade the IM SDK to 4.X version.
->        "FileSize": 1773552, //The size of file data in bytes, in Number type.
->        "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //The file name in String type.
->    }
+>"MsgType": "TIMFileElem",
+>"MsgContent": {
+>  "UUID": "305c02010", //Serial number of the file in String type. This is the key value the backend uses to index the file. The file cannot be downloaded through this field. To obtain the file, upgrade the IM SDK to 4.X versions.
+>  "FileSize": 1773552, //Size of file data in bytes, in Number type.
+>  "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //File name in String type.
+>}
 >}
 >```
 ```
 
 ### Video message element
 
->Video messages cannot be sent through server-side integrated RESTful APIs. Instead, they can only be sent through client-side integrated APIs.
+>!To send video messages through server-side integrated RESTful APIs, you need to fill in file URLs through which the videos can be downloaded. The `VideoDownloadFlag` and `ThumbDownloadFlag` fields must be set to `2`.
 
-4.X versions of IM SDK (for Android, iOS, Mac, and Windows) send video message element in the following format:
+4.X versions of IM SDK (for Android, iOS, Mac, and Windows) send video message elements in the following format:
 ```
 {
     "MsgType": "TIMVideoFileElem",
@@ -257,40 +257,40 @@ When the receiver is an iOS or Android device and the app is working in the back
 
 | Field | Type | Description |
 |---------|---------|---------|
-| VideoUrl | String | The download URL of the video, through which the video can be downloaded directly. |
-| VideoSize | Number | The size of video data in bytes. |
-| VideoSecond | Number | The video duration in seconds. |
-| VideoFormat | String | The video format, such as mp4. |
-| VideoDownloadFlag | Number | The flag of the video download method. Currently, the value of `VideoDownloadFlag` must be 2, which means that the video can be downloaded from the URL that is the value of the `VideoUrl` field. |
-| ThumbUrl | String | The download URL of the video thumbnail, through which the video thumbnail can be downloaded directly. |
-| ThumbSize | Number | The size of thumbnail data in bytes. |
-| ThumbWidth | Number | The thumbnail width. |
-| ThumbHeight | Number | The thumbnail height. |
-| ThumbFormat | String | The video thumbnail format, such as JPG or BMP. |
-| ThumbDownloadFlag | Number | The flag of the video thumbnail download method. Currently, the value of `ThumbDownloadFlag` must be 2, which means that the video thumbnail can be downloaded from the URL that is the value of the `ThumbUrl` field. |
+| VideoUrl | String | Download URL of the video, through which the video can be downloaded directly. |
+| VideoSize | Number | Size of video data, in bytes. |
+| VideoSecond | Number | Video duration, in seconds. |
+| VideoFormat | String | Video format, for example, MP4. |
+| VideoDownloadFlag | Number | Flag of the video download method. Currently, the value of `VideoDownloadFlag` must be 2, which means that the video can be downloaded from the URL specified by the `VideoUrl` field. |
+| ThumbUrl | String | Download URL of the video thumbnail, through which the video thumbnail can be downloaded directly. |
+| ThumbSize | Number | Size of thumbnail data, in bytes. |
+| ThumbWidth | Number | Thumbnail width. |
+| ThumbHeight | Number | Thumbnail height. |
+| ThumbFormat | String | Video thumbnail format, such as JPG or BMP. |
+| ThumbDownloadFlag | Number | Flag of the video thumbnail download method. Currently, the value of `ThumbDownloadFlag` must be 2, which means that the video thumbnail can be downloaded from the URL specified by the `ThumbUrl` field. |
 
 
->2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send video message elements in the following format:
+>?2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send video message elements in the following format:
 >```
 {
     "MsgType": "TIMVideoFileElem",
     "MsgContent": {
-        "VideoUUID": "1400123456_dramon_34ca36be7dd214dc50a49238ef80a6b5",//The serial number of the video in String type. This is the key value the backend uses to index videos. The video cannot be downloaded through this field. To obtain the video, upgrade the IM SDK to 4.X version.
-        "VideoSize": 1194603, //The size of video data in bytes, in Number type.
-        "VideoSecond": 5,     //The video duration in seconds, in Number type.
-		"VideoFormat": "mp4", //The video format in String type, such as mp4.
-		"ThumbUUID": "1400123456_dramon_893f5a7a4872676ae142c08acd49c18a",//The serial number of the video thumbnail in String type. This is the key value the backend uses to index video thumbnails. The video thumbnail cannot be downloaded through this field. To obtain the video thumbnail, upgrade the IM SDK to 4.X version.
-		"ThumbSize": 13907,   //The size of thumbnail data in bytes, in Number type.
-		"ThumbWidth": 720,    //The thumbnail width in Number type.
-		"ThumbHeight": 1280,  //The thumbnail height in Number type.
-		"ThumbFormat": "JPG"  //The video thumbnail format in String type, such as JPG or BMP.
+        "VideoUUID": "1400123456_dramon_34ca36be7dd214dc50a49238ef80a6b5",//Serial number of the video in String type. This is the key value the backend uses to index the video. The video cannot be downloaded through this field. To obtain the video, upgrade the IM SDK to 4.X versions.
+        "VideoSize": 1194603, //Size of video data in bytes, in Number type.
+        "VideoSecond": 5,     //Video duration in seconds, in Number type.
+		"VideoFormat": "mp4", //Video format in String type, for example, MP4.
+		"ThumbUUID": "1400123456_dramon_893f5a7a4872676ae142c08acd49c18a",//Serial number of the video thumbnail in String type. This is the key value the backend uses to index the video thumbnail. The video thumbnail cannot be downloaded through this field. To obtain the video thumbnail, upgrade the IM SDK to 4.X versions.
+		"ThumbSize": 13907,   //Size of thumbnail data in bytes, in Number type.
+		"ThumbWidth": 720,    //Thumbnail width in Number type.
+		"ThumbHeight": 1280,  //Thumbnail height in Number type.
+		"ThumbFormat": "JPG"  //Video thumbnail format in String type, such as JPG or BMP.
     }
 }
 ```
 
-## MsgBody Message Content Examples
+## MsgBody Examples
 
-### Single text message element
+### Single text element message
 
 A single message contains only one text message element. The text content is **hello world**.
 
@@ -336,16 +336,16 @@ The following single message contains two text message elements and one emoji me
 }
 ```
 
->A combined message can contain only one TIMCustomElem custom message element, and an unlimited number of other message elements.
+>!A combined message can contain only one TIMCustomElem custom message element, and an unlimited number of other message elements.
 
-## Description of Apple Push Notification Service (APNs)
+## Message Formats for Apple Push Notification Service (APNs)
 ### Push notification display format on the client
-- **Account nickname is not set**
-If an account has not set a nickname, APNs only displays text content. For one-to-one chat messages, **push text** is displayed. For group messages, **(group name): push text** is displayed.
+- **Account without a nickname**
+For an account without a nickname, APNs displays only text content: **push text** for one-to-one chat messages, and **(group name): push text** for group messages.
 ![](https://main.qcloudimg.com/raw/7bdb0f41aaa943190ce949fea8d20095.png)
 
-- **Account nickname is set**
-If an account has set a nickname, for one-to-one chat messages, **nickname: push text** is displayed. For group messages, **nickname (group name): push text** is displayed.
+- **Account with a nickname**
+For an account with a nickname, APNs displays **nickname: push text** for one-to-one chat messages, and **nickname (group name): push text** for group messages.
 
 - **Display format of combined messages**
 For combined messages, the text displayed shows the push text of each message element in sequence. The following example shows a one-to-one chat message with an account nickname set, and the push text is **helloworld**. Note that the text contains no spaces. The backend connects message elements in sequence without adding any extra characters. If spaces or other characters need to be added between different message elements, the caller should take control.
@@ -376,16 +376,16 @@ The following table summarizes the push text of different message elements.
 
 | Value of MsgType | Type | Push Text of the Message Element |
 |---------|---------|---------|
-| TIMTextElem | Text | The `Text` field. |
-| TIMLocationElem | Location | The offline push text is **[Location]** for the English version. |
-| TIMFaceElem | Emoji | The offline push text is **[Face]** for the English version. |
-| TIMCustomElem | Custom | The `Desc` field. |
+| TIMTextElem | Text | `Text` field. |
+| TIMLocationElem | Location | Offline push text is **[Location]** for the English version. |
+| TIMFaceElem | Emoji | Offline push text is **[Face]** for the English version. |
+| TIMCustomElem | Custom | `Desc` field. |
 
-### RESTful APIs for the nickname and group name settings
+### RESTful APIs for nickname and group name settings
 RESTful API for setting the account nickname: [Setting the Profile](https://intl.cloud.tencent.com/document/product/1047/34916).
 RESTful API for setting the group name: [Modifying Basic Group Information](https://intl.cloud.tencent.com/document/product/1047/34962).
 
-### Advanced applications
+### Advanced apps
 #### Customizing push sounds and extended fields delivered by APNs
 Use TIMCustomElem to customize message elements. In the `Sound` field, enter the file name of the custom audio. In the `Ext` field, enter the delivered extended field, which can be obtained from the `Ext` field in the APNs payload.
 ```
@@ -417,21 +417,21 @@ The received APNs JSON payload is displayed as follows on the client:
 
 ```
 {
-    "aps":{
-        "alert": "Nickname:helloworld",   //The push text of each message element is connected in sequence.
+    "aps": {
+        "alert": "Nickname:helloworld",   //Push text of each message element is connected in sequence
         "badge": 5,                       
-        "sound": "dingdong.aiff"         //Corresponds to the `Sound` field in `TIMCustomElem`.
+        "sound": "dingdong.aiff"         //Corresponds to the `Sound` field in `TIMCustomElem`
     }, 
-    "ext": "www.qq.com"                //Corresponds to the `Ext` field in `TIMCustomElem`.
+    "ext": "www.qq.com"                //Corresponds to the `Ext` field in `TIMCustomElem`
 }
 
 ```
 
-## Description of Offline Push OfflinePushInfo
+## OfflinePushInfo
 
-`OfflinePushInfo` is a JSON object dedicated for configuring offline push. `OfflinePushInfo` allows you to configure whether to disable push, push text description content, and push passthrough strings for a message. With `OfflinePushInfo`, you can easily set offline push information, removing the need to encapsulate through `TIMCustomElem`.
+`OfflinePushInfo` is a JSON object dedicated for configuring offline push. It allows you to configure whether to disable push, push text description content, and push passthrough strings for a message. With `OfflinePushInfo`, you can easily set offline push information, eliminating the need to encapsulate through `TIMCustomElem`.
 
->If `OfflinePushInfo` has been filled in, the offline push settings in `TIMCustomElem` are ignored. Currently, `OfflinePushInfo` can work with APNs and the push services of various Android device brands, including Xiaomi, Huawei, MEIZU, OPPO, and Vivo.
+>!If `OfflinePushInfo` has been filled in, the offline push settings in `TIMCustomElem` are ignored. Currently, `OfflinePushInfo` can work with APNs and the push services of various Android device brands, including Mi, Huawei, Meizu, OPPO, and vivo.
 
 The following example shows the format of `OfflinePushInfo`:
 
@@ -464,23 +464,23 @@ The preceding fields are described as follows:
 | Field | Type | Property | Description |
 |---------|---------|---------|---------|
 | PushFlag | Integer | Optional | 0: enable push, 1: disable offline push. |
-| Title | String | Optional | The offline push title. This field is applicable to both iOS and Android. |
-| Desc | String | Optional | The offline push content. This field overwrites the offline push display text of the [TIMMsgElement] (https://intl.cloud.tencent.com/document/product/1047/33527) elements mentioned above.<br>If the message sent has only one [TIMCustomElem](https://intl.cloud.tencent.com/document/product/1047/33527) element, this Desc field will overwrite the Desc field in the TIMCustomElem. If neither of the Desc fields is filled in, the offline push notification for the message will not be received. |
-| Ext | String | Optional | The passthrough content of offline push. To make sure the offline push of all Andriod vendors are attainable, this field must be in JSON format.|
-| AndroidInfo.Sound | String | Optional | The file path for the offline push sound in Android. |
-| AndroidInfo.HuaWeiChannelID | String | Optional | This field is used for notification channel in Huawei mobile phones with EMUI 10.0 or later. |
-| AndroidInfo.XiaoMiChannelID | String | Optional | This field is used for notification channel in Xiaomi mobile phones with EMUI 10 or later. |
-| AndroidInfo.OPPOChannelID | String | Optional | This field is used for NotificationChannel notifications in OPPO mobile phones with Android 8.0 or later.  |
-| AndroidInfo.GoogleChannelID | String | Optional | This field is used for notification channel in Google mobile phones with Android 8.0 or later. This field is supported by the new Google API (certificate upload), but not the old API (server key). |
+| Title | String | Optional | Offline push title. This field is applicable to both iOS and Android. |
+| Desc | String | Optional | Offline push content. This field overwrites the offline push display text of the [TIMMsgElement](https://intl.cloud.tencent.com/document/product/1047/33527) elements mentioned above.<br>If the message sent has only one [TIMCustomElem](https://intl.cloud.tencent.com/document/product/1047/33527) element, this `Desc` field will overwrite the `Desc` field in the TIMCustomElem. If neither of the `Desc` fields is filled in, the offline push notification for the message will not be received. |
+| Ext | String | Optional | Passthrough content of offline push. To make sure the offline push of all Android vendors are attainable, this field must be in JSON format. |
+| AndroidInfo.Sound | String | Optional | Path to the offline push sound file in Android. |
+| AndroidInfo.HuaWeiChannelID | String | Optional | Notification channel field for Huawei mobile phones with EMUI 10.0 or later. |
+| AndroidInfo.XiaoMiChannelID | String | Optional | Notification channel field for Mi mobile phones with MIUI 10 or later. |
+| AndroidInfo.OPPOChannelID | String | Optional | Notification channel field for OPPO mobile phones with Android 8.0 or later. |
+| AndroidInfo.GoogleChannelID | String | Optional | Notification channel field for Google mobile phones with Android 8.0 or later. This field is supported by the new Google push API (uploading the certificate file) but not the old API (entering the server key). |
 | ApnsInfo.BadgeMode | Integer | Optional | The default value or 0 indicates that counting is required. 1 indicates that counting is not required for this message, in which case the number in the upper-right icon does not increase. |
-| ApnsInfo.Title | String | Optional | This field identifies the title of APNs push messages. The top-level title is replaced when this field is filled in. |
-| ApnsInfo.SubTitle | String | Optional | This field identifies the subtitle of APNs push messages. |
-| ApnsInfo.Image | String | Optional | This field identifies the image URL carried by APNs. When the client obtains this field, it displays the image in a pop-up window by downloading the image through the URL. |
+| ApnsInfo.Title | String | Optional | Title of an APNs push message. The top-level title is replaced when this field is filled in. |
+| ApnsInfo.SubTitle | String | Optional | Subtitle of an APNs push message. |
+| ApnsInfo.Image | String | Optional | Image URL carried by APNs. When the client obtains this field, it displays the image in a pop-up window by downloading the image through the URL. |
 
->The maximum data packet size supported by APNs is 4 KB. Therefore, we recommend that the total size of the `Desc` and `Ext` fields does not exceed 3 KB.
+>!The maximum data packet size supported by APNs is 4 KB. Therefore, we recommend that the total size of the `Desc` and `Ext` fields does not exceed 3 KB.
 
 ## References
 
-Apple Push Notification Service (APNs) [Apple Push Programming Documentation](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1).
-Configuration of iOS offline message push: [Offline Push (iOS)](https://intl.cloud.tencent.com/document/product/1047/34347).
+[APNs development documentation](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1)
+[Configuring iOS offline message push](https://intl.cloud.tencent.com/document/product/1047/34347).
 

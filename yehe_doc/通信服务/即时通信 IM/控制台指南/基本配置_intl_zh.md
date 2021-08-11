@@ -7,6 +7,7 @@
 ## 配置基础信息
 ![](https://main.qcloudimg.com/raw/867f34d67ddcca7de31ff17327dee744.png)
 在【基本信息】区域，您可以执行以下操作：
+
 - 编辑该应用的基本信息，包括应用名称、应用类型和应用简介。
 - 停用/删除该应用。
 - 获取该应用的密钥。
@@ -37,16 +38,17 @@
 
 
 ### 获取密钥
-**密钥信息为敏感信息，请妥善保密，谨防泄露。**2019年8月15日前创建的应用（SDKAppID）默认使用区分公钥和私钥的 [ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/1047/34385) 签名算法，您可以选择升级至 HMAC-SHA256 签名算法。
+**密钥信息为敏感信息，请妥善保密，谨防泄露。**2019年8月15日前创建的应用（SDKAppID）默认使用区分公钥和私钥的 [ECDSA-SHA256](https://intl.cloud.tencent.com/document/product/1047/34385) 签名算法，您可以选择升级至 HMAC-SHA256 签名算法，升级过程不会影响现网业务。
 
 1. 单击【密钥】右侧的【显示密钥】。
 2. 单击【复制】即可复制并储存密钥信息。
-   密钥可用于生成 UserSig，详细操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
+    密钥可用于生成 UserSig，详细操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
 
 ## 配置帐号管理员
 帐号管理员可用于调用 REST API 接口、解散群等功能，您可以直接使用系统默认的帐号管理员`administrator`，也可以手动添加新的帐号管理员。每个应用支持5个帐号管理员。
 ![](https://main.qcloudimg.com/raw/9cf8914c53cb998fd7ee619ef30836a9.jpg)
-<span id="AddAdmin"></span>
+[](id:AddAdmin)
+
 ###  添加管理员
 1. 单击【帐号管理员】右侧的【添加管理员】。
 2.  在弹出的添加管理员对话框中，输入管理员帐号名称。
@@ -80,7 +82,7 @@
 2. 在弹出的确认删除证书中，单击【确认】。
 
 ## 开通腾讯实时音视频服务
-如果您需要在当前 IM 应用中实现语音通话、视频通话、互动直播等功能，或需要同时集成 IM SDK 和 TRTC SDK 时，可通过【开通腾讯实时音视频服务】区域开通 [实时音视频服务](https://intl.cloud.tencent.com/document/product/647)，系统将为您在 [实时音视频控制台](https://console.cloud.tencent.com/trtc) 创建一个与当前 IM 应用相同 SDKAppID 的实时音视频应用，二者帐号与鉴权可复用。
+如果您需要在当前 IM 应用中实现语音通话、视频通话、互动直播等功能，或需要同时集成 IM SDK 和 TRTC SDK 时，可通过【开通腾讯实时音视频服务】区域开通 [实时音视频服务](https://cloud.tencent.com/document/product/647)，系统将为您在 [实时音视频控制台](https://console.cloud.tencent.com/trtc) 创建一个与当前 IM 应用相同 SDKAppID 的实时音视频应用，二者帐号与鉴权可复用。
 
 1. 单击【开通腾讯实时音视频服务】区域【立即开通】。
 2. 在弹出的开通实时音视频 TRTC 服务对话框中，单击【确认】。

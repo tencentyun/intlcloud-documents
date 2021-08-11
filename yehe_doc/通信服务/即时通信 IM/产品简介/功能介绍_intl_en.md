@@ -40,7 +40,7 @@ The following platforms can communicate with each other and provide services acr
 | Triple-device login | Single-device login across Android and iOS with one Windows device and one web device online simultaneously is allowed. |
 | Multi-device online | Multiple Windows, web, Android, and iOS devices can be online simultaneously. |
 
->? You can configure multi-device login by logging in to the [IM console](https://console.cloud.tencent.com/im) and clicking **App Configuration** for the target application to open the **Feature Configuration** page.
+>? You can configure multi-device login by logging in to the [IM console](https://console.cloud.tencent.com/im) and clicking **App Configuration** for the target app to open the **Feature Configuration** page.
 
 ### Message Types
 
@@ -53,7 +53,7 @@ The following platforms can communicate with each other and provide services acr
 | Location | The message content includes the caption, longitude, and latitude of the location. |
 | File | The message content includes the URL, size, and format of the file. There are no file format restrictions, and the maximum supported file size is 100 MB. |
 | Short video | The message content includes the URL, duration, size, and format of the video file. The maximum supported file size is 100 MB. |
-| Custom | Message types that are customized by developers, such as gift envelope and rock-paper-scissor. |
+| Custom | Message types that are customized by developers, such as red packet and rock-paper-scissor. |
 | System notification | This type of message includes built-in system notification messages and system notification messages customized by developers. |
 
 
@@ -72,7 +72,7 @@ The following platforms can communicate with each other and provide services acr
 | Forward messages | Users can forward messages to other users or groups. |
 | @ feature | There is no essential difference between an in-group @ message and an ordinary message, although the user specified by @ will see a special UI effect. |
 | Typing status indicator | This feature can be implemented in online messaging scenarios. |
-| Offline push | Apple APNs, Xiaomi push, Huawei push, Meizu push, OPPO push, Vivo push, and Google FCM push are supported. |
+| Offline push | Apple APNs, Xiaomi push, Huawei push, Meizu push, OPPO push, vivo push, and Google FCM push are supported. |
 | Delete messages | Use the remove method for messages to delete messages locally. |
 | Red packets | Red packet messages are similar to @ messages and can be implemented through TIMCustomElem. |
 
@@ -125,23 +125,23 @@ Based on common use cases, IM has set the following default group types:
 
 The following table compares the default features of each group type:
 
-| Feature Type | <div style="width:100px"> Work</div> | <div style="width:20%">Public</div> | <div style="width:20%">Meeting</div> | <div style="width:20%">AVChatRoom</div> | 
-| ---------- | --------------------- | --------------------- | --------------------- | -------------------------- | 
-| Maximum number of members | 6,000 | 6,000 | 6,000 | No upper limit |               
+| Feature Type | <div style="width:100px"> Work</div> | <div style="width:20%">Public</div> | <div style="width:20%">Meeting</div> | <div style="width:20%">AVChatRoom</div> |
+| ---------- | --------------------- | --------------------- | --------------------- | -------------------------- |
+| Maximum number of members | 6,000 | 6,000 | 6,000 | No upper limit |
 | Restrictions on obtaining member profiles | All available | All available | All available | Only the profiles of the first 300 members are displayed |
-| Setting admins | Not supported | Supported | Supported | Not supported |   
-| Group profile modification permissions |<li>Any group member can modify it.<li>Backend app admin | <li>Group owner<li>Group admins<li>Backend app admin | <li>Group owner<li>Group admins<li>Backend app admin | <li>Group owner <li>Backend app admin | 
+| Setting admins | Not supported | Supported | Supported | Not supported |
+| Group profile modification permissions |<li>Any group member can modify it.<li>Backend app admin | <li>Group owner<li>Group admins<li>Backend app admin | <li>Group owner<li>Group admins<li>Backend app admin | <li>Group owner <li>Backend app admin |
 | Group deletion permissions | Backend app admin | <li>Group owner<li>Backend app admin | <li>Group owner<li>Backend app admin | <li>Group owner<li>Backend app admin |
-| Group owner leaving the group | Supported | Not supported | Not supported | Not supported | 
+| Group owner leaving the group | Supported | Not supported | Not supported | Not supported |
 | Application to join the group | Not supported | Supported and approval by the group owner or group admin is required | Supported, but no approval is required | Supported, but no approval is required |
-| Group members can invite other users to join the group | Supported | Not supported | Not supported | Not supported | 
-| Removing members from the group | <li>Group owner<li>Backend app admin | <li>Group owner<li>Group admins<li>Backend app admin | <li>Group owner<li>Group admins<li>Backend app admin | Not supported, but the mute feature can be used to achieve a similar effect | 
-| Muting permissions | Not supported | <li>Group owner<li>Group admins (can only mute ordinary group members)<li>Backend app admin | <li>Group owner<li>Group admins (can only mute ordinary group members)<li>Backend app admin | <li>Group owner<li>Backend app admin |   
+| Group members can invite other users to join the group | Supported | Not supported | Not supported | Not supported |
+| Removing members from the group | <li>Group owner<li>Backend app admin | <li>Group owner<li>Group admins<li>Backend app admin | <li>Group owner<li>Group admins<li>Backend app admin | Not supported, but the mute feature can be used to achieve a similar effect |
+| Muting permissions | Not supported | <li>Group owner<li>Group admins (can only mute ordinary group members)<li>Backend app admin | <li>Group owner<li>Group admins (can only mute ordinary group members)<li>Backend app admin | <li>Group owner<li>Backend app admin |
 | Viewing historical messages from before joining the group | Not supported | Not supported | Supported | Not supported |
-| Member change notifications (joining/leaving the group, etc.) | All members | All members | None | All members | 
-| Group activation by sending a message after group creation | Required | Not required | Not required | Not required | 
-| Unread message count | Supported | Supported | Not supported | Not supported | 
-| Importing groups (group members/profiles, etc.) | Supported | Supported | Supported | Not supported | 
+| Member change notifications (joining/leaving the group, etc.) | All members | All members | None | All members |
+| Group activation by sending a message after group creation | Required | Not required | Not required | Not required |
+| Unread message count | Supported | Supported | Not supported | Not supported |
+| Importing groups (group members/profiles, etc.) | Supported | Supported | Supported | Not supported |
 
 
 
@@ -182,3 +182,7 @@ The [statistics and analytics](https://console.cloud.tencent.com/im) feature in 
 | New groups | Specify a time period and view the number of new groups |
 | Total groups | Specify a time period and view the total number of groups |
 | Export data | Specify a time period and export data |
+
+### Support for Private Deployment
+Private deployment allows an enterprise to deploy systems directly to its own servers and keep data locally. IM provides the private deployment feature to assist enterprises in the deployment, implementation, and operation and maintenance of the private version. If needed, please apply for the [IM private service](https://intl.cloud.tencent.com/apply/p/itvi76h023).
+>?To apply for the IM private service, you need to log in with your main account of Tencent Cloud.
