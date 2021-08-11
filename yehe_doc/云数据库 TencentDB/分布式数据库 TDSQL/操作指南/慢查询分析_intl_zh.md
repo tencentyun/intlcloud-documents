@@ -7,7 +7,7 @@
 
 >?
 >- 目前慢查询分析需要拆分到每个分片分别查看。
->- 下载慢日志，需复制下载地址，并 [登录到云数据库所在 VPC 下的 CVM（Linux 系统）](https://cloud.tencent.com/document/product/213/2936#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.99.BB.E5.BD.95.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8)中，运用 wget 命令进行内网下载。
+>- 下载慢日志，需复制下载地址，并 [登录到云数据库所在 VPC 下的 CVM（Linux 系统）](https://intl.cloud.tencent.com/zh/document/product/213/10517)中，运用 wget 命令进行内网下载。
 
 ## 主要参数说明
 ### 主要默认设置
