@@ -64,7 +64,7 @@ http://domain/live/test_900.m3u8?txTime=5c2acacc&txSecret=4beae959b16c77da6a65c7
 
 <span id="que7"></span>
 ### 播放鉴权配置中主 Key 的格式有什么要求？有效时间时长有没有限制？
-鉴权配置中主 Key 值仅支持大写字母，小写字母和数字，最大长度256位。字母数字随机组合搭配即可。更多详情，请参见 [播放鉴权配置](https://intl.cloud.tencent.com/document/product/267)。
+鉴权配置中主 Key 值仅支持大写字母，小写字母和数字，最大长度256位。字母数字随机组合搭配即可。更多详情，请参见 [播放鉴权配置](https://intl.cloud.tencent.com/document/product/267/31060)。
 有效时间时长建议设置为一场直播的时间长度。
 
 
