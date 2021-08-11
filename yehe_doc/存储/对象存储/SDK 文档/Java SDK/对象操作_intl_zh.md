@@ -1261,7 +1261,7 @@ Request 成员说明：
 | file         | 构造函数或 set 方法 | 本地文件                                                     | File           |
 | input        | 构造函数或 set 方法 | 输入流                                                       | InputStream    |
 | metadata     | 构造函数或 set 方法 | 文件的元数据                                                 | ObjectMetadata |
-|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|否|
+|trafficLimit | set 方法| 用于对上传对象进行流量控制，单位：bit/s，默认不进行流量控制 | Int|
 
 >?并发上传多个分块时，trafficLimit 限制的是每个分块的上传速度，此时需要调整线程池中的线程数，以控制文件的上传速度。
 
