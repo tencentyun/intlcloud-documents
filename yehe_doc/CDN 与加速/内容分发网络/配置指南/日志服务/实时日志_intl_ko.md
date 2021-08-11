@@ -93,7 +93,7 @@ CLS 시스템은 로그 토픽을 단위로 사용자의 다양한 로그 데이
 | method        | String       | text         | HTTP Method                                                  |
 | param         | String       | text         | URL에 포함된 매개변수                                               |
 | proto         | String       | text         | HTTP 프로토콜 식별자                                                |
-| prov          | String       | text         | 통신사의 성(省)                                                   |
+| prov          | String       | text         | 통신사의 성(지역)                                                   |
 | referer       | String       | text         | Referer 정보, HTTP  출처 주소                                 |
 | request_range | String       | text         | Range 매개변수. 요청 범위                                         |
 | request_time  | Integer      | long         | 응답 시간(ms), 노드가 요청을 받은 후부터 모든 리턴 패킷에 응답하고, 다시 클라이언트로 돌아오기까지 소모한 시간 |
