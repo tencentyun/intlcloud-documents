@@ -392,7 +392,7 @@ Request 멤버 설명:
 | file         | 구조 함수 또는 set 방법 | 로컬 파일                                                     | File           |아니요|
 | input        | 구조 함수 또는 set 방법 | 입력 스트림                                                       | InputStream    | 아니요|
 | metadata     | 구조 함수 또는 set 방법 | 객체의 메타데이터                                                 | ObjectMetadata | 아니요|
-|trafficLimit | set 방법| 객체 업로드의 트래픽 제어에 사용됩니다. 단위는 bit/s이며, 기본적으로 트래픽 제어가 비활성화되어 있습니다. | Int|아니요|
+|trafficLimit     | set 방법       | 객체 업로드의 트래픽 제어에 사용됩니다. 단위는 bit/s이며, 기본적으로 트래픽 제어가 비활성화되어 있습니다.     | Int      |     아니요|
 
 ObjectMetadata 유형은 객체의 메타데이터를 기록하는 데 사용됩니다. 주요 멤버 설명은 다음과 같습니다.
 
@@ -1261,8 +1261,7 @@ Request 멤버 설명:
 | file         | 구조 함수 또는 set 방법 | 로컬 파일                                                     | File           |
 | input        | 구조 함수 또는 set 방법 | 입력 스트림                                                       | InputStream    |
 | metadata     | 구조 함수 또는 set 방법 | 파일의 메타데이터                                                 | ObjectMetadata |
-|trafficLimit | set 방법| 객체 업로드의 트래픽 제어에 사용됩니다. 단위는 bit/s이며, 기본적으로 트래픽 제어가 비활성화되어 있습니다. | Int|아니요|
-
+|trafficLimit  | set 방법    | 객체 업로드의 트래픽 제어에 사용됩니다. 단위는 bit/s이며, 기본적으로 트래픽 제어가 비활성화되어 있습니다.      | Int    |  
 >?다수의 멀티파트를 동시 업로드할 경우 trafficLimit은 모든 멀티파트의 업로드 속도를 제한합니다. 이때 스레드 풀의 스레드 수를 조정하여 파일의 업로드 속도를 제어해야 합니다.
 
 #### 반환 값
