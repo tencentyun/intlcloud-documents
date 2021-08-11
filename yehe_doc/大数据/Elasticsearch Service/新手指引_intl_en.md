@@ -20,7 +20,7 @@ ES is pay-as-you-go. For more information, please see [Billing Overview](https:/
 **3.1. Evaluation of cluster specification and capacity configuration**
 Before purchasing a cluster, you need to evaluate your specific business according to the actual situation to ensure that the created cluster meets your actual needs. For more information, please see [Evaluation of Cluster Specification and Capacity Configuration](https://intl.cloud.tencent.com/document/product/845/19551).
 **3.2. ES cluster purchase**
-Before using ES, you need to sign up for a Tencent Cloud account first and then click **Buy Now** on the [purchase page](https://cloud.tencent.com/product/es) to create a cluster. For more information, please see [Creating Clusters](https://intl.cloud.tencent.com/document/product/845/19536).
+Before using ES, you need to sign up for a Tencent Cloud account first and then click **Buy Now** on the [purchase page](https://intl.cloud.tencent.com/product/es) to create a cluster. For more information, please see [Creating Clusters](https://intl.cloud.tencent.com/document/product/845/19536).
 **3.3. Cluster access**
 After successfully creating a cluster, you can start to access it through the [API](https://intl.cloud.tencent.com/document/product/845/19540), [client](https://intl.cloud.tencent.com/document/product/845/19538), or [Kibana](https://intl.cloud.tencent.com/document/product/845/19541). Enabling [ES cluster user authentication](https://intl.cloud.tencent.com/document/product/845/35275) can improve the security of cluster access.
 
