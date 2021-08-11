@@ -374,7 +374,7 @@
 <td>支持跨地域绑定</td>
 <td>允许用户选取后端云服务器的地域，跨 VPC、跨地域绑定后端云服务器。</td>
 <td>2017-09</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/12014">跨地域绑定负载均衡</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/38441">跨地域绑定负载均衡</a></td>
 </tr>
 </tbody></table>
 
