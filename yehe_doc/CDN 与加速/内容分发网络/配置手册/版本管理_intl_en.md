@@ -1,0 +1,97 @@
+
+## Features
+
+Tencent Cloud CDN supports version management for a single domain name. You can create one configuration for each domain name version, and deploy it to the production environment and staging environment.
+
+- Production environment: the live environment where acceleration services are put into operation.
+- Staging environment: a sandbox for testing domain name configurations only. This environment is built on a small scale and is only expected for domain name configuration tests in the console. It should not be use for actual business running or performance tests.
+
+>!
+>1. The acceleration region should be in the Chinese mainland. The domain name should not use external certificates, and the [Image Optimization](https://cloud.tencent.com/document/product/228/43121) feature  should not be enabled.
+>2. Only one version can be deployed at a time in each environment.
+>3. URL refresh is supported in both the production environment and staging environment, while directory refresh and URL prefetch are only allowed in the production environment. For more information, see [Purge and Prefetch](https://intl.cloud.tencent.com/document/product/228/6299).
+>4. Data and usage monitoring features, like [bandwidth cap configuration](https://intl.cloud.tencent.com/document/product/228/7541), are only available in the production environment.
+
+
+## Use Cases
+
+- Applicable to beta test for domain name configuration
+
+
+
+[](id:open)
+## Enabling Version Management
+
+Log in to the [CDN Console](https://console.cloud.tencent.com/cdn) and select **Domain Management** to view the domain name list. Click the target domain name to enter the configuration page, and check **Enable Version Management** in the top right corner.
+![](https://main.qcloudimg.com/raw/8c60d15a989ded86ad697f4cc8e588ea.png)
+
+After version management is enabled, Ver.1 will be created with the current domain name configuration and deployed to both the production environment and staging environment.
+
+## Managing Versions
+
+After enabling version management, you can view and manage versions on the **Version Management** page. Each version is identified by a version number Ver.n (n=1,2,3,...).
+To access the version management page, you can select **More** > **Version Management** under the operation column in the domain name list. You can also click a domain name to find **Version Management** in its configuration page.
+![](https://main.qcloudimg.com/raw/5646d1b1a5c812dc04af690b9efb457c.png)
+
+
+
+### Adding versions
+Click **Add Version**. A version will be created based on the current configuration of the production environment by default. You can modify the configuration as needed and then create the new version.
+![](https://main.qcloudimg.com/raw/f748948c5a279709b713b2da4dfa7fb9.png)
+
+>! If you’re prompted with an error message after submitting the new version, you don’t need to create a new one. Go back to the version management page and modify the version you submitted.
+
+### Editing versions
+
+The latest version is editable before it’s released to the staging environment. You can select **More** > **Edit** under the operation column.
+![](https://main.qcloudimg.com/raw/b874c1ce46736815efe6ade4147e7a5a.png)
+Historical versions (all versions before the latest version), no matter whether they have been released to the staging environment, can only be viewed but not edited.
+
+>!Before adding a new version, please make sure all the existing versions are released. Otherwise, the version not released will become a historical version that cannot be edited and released to the staging environment.
+
+
+### Releasing versions
+
+For domain names with version management enabled, release versions as follows:
+
+1. Locate the version that need to release to the staging environment, select **More** > **Release to the staging environment** under the operation column.
+![](https://main.qcloudimg.com/raw/06196f7c4bef077be3721ece2682f48b.png)
+2. CDN will assign an IPv4 IP to the domain name. To test the version deployed in the staging environment, modify the client HOSTS, and point the domain name to the IP.
+3. If you want to adjust the configuration and test again, you need to add and submit a new version, and then repeat step 1 and 2.
+4. After testing, click **Sync to Production Env.** next to the version number to sync it to the production environment and deploy the configuration to the live site. 
+![](https://main.qcloudimg.com/raw/a6eb38ef147e2347654c8c6b21cd1819.png)
+5. If you need to change the version in the production environment, repeat steps 1 through 4.
+
+>!
+>- You can only release the latest version (the one with the largest version number) to the staging environment. Historical versions can only be viewed.
+>- Special backend configuration or platform updates will be released to the production environment directly.
+>- In case of special backend configuration and platform upgrade, conflicts may occur while synchronizing the staging environment to the production environment, and you will receive a error message about “special backend configuration”. In this case, you should create another version to release.
+>- The IP of the staging environment is not suppose to be changed frequently. But to ensure accuracy, it is recommended to get a new IP by clicking the refresh button before testing each time.
+
+
+
+### Viewing versions
+
+If you want to view configuration details of a version, click **View** under the operation column.
+
+
+### Enable/Disable versions
+Click **Disable** in the production environment section. The version deployed in the production environment and staging environment will be disabled at the same time, indicating the domain name will be deactivated and the acceleration service will be closed.
+![](https://main.qcloudimg.com/raw/7a09e9b936cdeae90283315dcac900b7.png)
+To enable the version again, click **Enable** in the production environment section and the version will be enabled in both the production and staging environment.
+
+## Disabling Version Management
+
+Once you disable it, the version deployed in the production environment will be introduced as the live configuration. All other existing versions will be discarded and cannot be restored.
+
+You can click **Enable Version Management** to enable it again as needed.
+
+
+## Notes:
+
+For domain names with version management enabled:
+- Batch configuring features, like [copying configuration](https://intl.cloud.tencent.com/document/product/228/38936) and [batch changing configuration](https://intl.cloud.tencent.com/document/product/228/39911), are not supported.
+- You cannot configure a certificate for a domain name on the certificate management page in the console.
+- When you enable or disable acceleration for a domain name, the version deployed in the production environment and staging environment will be enabled or disabled accordingly.
+- The tag and project of the domain name are editable.
+- To change the acceleration region and service type, you should disable version management first. 
