@@ -22,7 +22,7 @@ A web function runs in the image environment built in it based on the standard p
 
 ### Creation Method
 <dx-tabs>
-::: Local package upload
+::: Local\spackage\supload
 You can write your `scf_bootstrap` file locally, make sure that the file permission meets the requirements, package it with the project code, and deploy them together on the web function.
 :::
 </dx-tabs>
