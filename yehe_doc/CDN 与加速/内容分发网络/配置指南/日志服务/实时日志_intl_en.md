@@ -3,9 +3,10 @@
 CDN can collect and publish access logs in real time, enabling fast retrieval and analysis of log data. You can quickly access comprehensive, stable, and reliable one-stop logging services such as log collection, log storage, and log search in the CDN console.
 
 >? 
->- Real-time Logs is now officially launched. You can log in to the console with a root account and activate it. Note that you need to complete authorization and activate the [Cloud Log Service](https://console.cloud.tencent.com/cls/search?region=ap-shanghai) before first.
+>- Real-time Logs is now officially launched. You can log in to the console with a root account and activate it. Note that you need to complete authorization and activate the [Cloud Log Service](https://console.cloud.tencent.com/cls/search?region=ap-shanghai) before first use.
 >- Real-time Logs currently does not support log shipping in regions outside the Chinese mainland.
->- Real-time Logs can only be activated with a root account.
+>- Real-time Logs can only be activated by a root account.
+>- CDN and ECDN domain names cannot be added to the same log topic.
 
 ## Overview
 This feature can be used to view and analyze user access in real time.
@@ -30,14 +31,14 @@ Log topic features include:
 - Ship logs to other platforms based on log topics.
 - Download and consume logs from log topics.
 
-## Operation Guide
+## Directions
 Log in to the [CDN console](https://console.cloud.tencent.com/cdn), click **Log Service** on the left sidebar, and open the **Real-time Log** tab to create real-time log shipping.
 ![](https://main.qcloudimg.com/raw/d6f22b7194f2e3433f9bbee4f4e4a1dc.png)
 
 ### Creating a log topic
 Click **Create** to create a log topic.
 >! Up to 10 log topics can be created under one logset.
-
+>
 ![](https://main.qcloudimg.com/raw/94136aa047219848f82948e19cd8dc06.png)
 
 ### Configuring a log topic
@@ -46,7 +47,7 @@ Enter the name of the new log topic and select the domain names to be bound to t
 >- The name of the new log topic cannot be the same as the name of any existing log topic.
 >- A domain name can be bound to only one log topic.
 >- After the configuration information is saved, it takes about 15 minutes for the configuration to take effect.
-
+>
 ![](https://main.qcloudimg.com/raw/6e820577732ecc679aae25386683c57e.png)
 
 ### Managing a log topic
@@ -56,10 +57,10 @@ After successfully configuring a log topic, you can perform log topic management
 #### Stopping/Starting log shipping
 You can manually stop/start shipping logs to a log topic.
 >!
->- After the shipping to a log topic is stopped, all logs of the domain names bound to the log topic will no longer be shipped to it. Logs that have already been shipped to it will be retained. This operation will take effect in about 5–15 minutes.
+>- After a log topic is stopped, all logs of the domain names bound to the log topic will no longer be shipped to it. Logs that have already been shipped to it will be retained. This operation will take effect in about 5–15 minutes.
 >- After a log topic is started, all logs of the domain names bound to the log topic will be shipped to it. This operation will take effect in about 5–15 minutes.
 
-#### Search
+#### Search string
 You can search for logs by log topic. Select a desired log topic and click **Search** to access the log search page.
 + Time Range: You can search for log data recorded today, during a 24-hour interval (one of the last 7 days), and during the last 7 days.
 + Sort: You can sort logs in descending or ascending order by log time.
@@ -80,7 +81,7 @@ You can delete log topics manually.
 
 ### Log data description
 
-| Log Field | Raw Log Type | Log Service Type | Description |
+| Log Field      | Raw Log Type | Log Service Type | Description                                                         |
 | ------------- | ------------ | ------------ | ------------------------------------------------------------ |
 | app_id        | Integer      | long         | Tencent Cloud account `APPID`                                             |
 | client_ip     | String       | text         | Client IP                                                    |
@@ -97,7 +98,7 @@ You can delete log topics manually.
 | request_range | String       | text         | Range parameter, i.e., request range                                         |
 | request_time  | Integer      | long         | Response time (in milliseconds), which refers to the time it takes for a node to respond to a client with all return packets after receiving a request |
 | rsp_size      | Integer      | long         | Number of returned bytes                                                   |
-| time          | Integer      | long         | Request timestamp in UNIX format                                        |
+| time          | Integer      | long         | Request timestamp in UNIX format (in seconds)                                        |
 | ua            | String       | text         | `User-Agent` information                                              |
 | url           | String       | text         | Request path                                                     |
 | uuid          | String       | text         | Unique request ID                                               |

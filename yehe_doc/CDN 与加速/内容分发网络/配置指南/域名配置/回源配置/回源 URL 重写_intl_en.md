@@ -2,13 +2,14 @@
 
 If you need to modify the origin-pull request URL to the URL that matches the origin server, you can use the origin URL rewrite configuration in Tencent Cloud CDN.
 
+>! This feature is not available for ECDN domain name.
 
 
-## Configuration Guide
+## Directions
 
-### Viewing configuration
+### Viewing the configuration
 
-Log in to the [CDN console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar, click **Manage** on the right of a domain name to enter its configuration page, and switch to the **Origin-pull Configuration** tab to find the **Origin URL Rewrite Configuration** section.
+Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), select **Domain Management** on the left sidebar, click **Manage** on the right of a domain name to enter its configuration page, and switch to the **Origin-pull Configuration** tab to find the **Origin URL Rewrite Configuration** section.
 ![](https://main.qcloudimg.com/raw/e6721b8c8d3ebcb9b5a27fb36e6c6782.png)
 
 
@@ -23,19 +24,19 @@ You can click **Add Rule** to add rewrite rules as needed.
 
 - Each domain name can have up to 100 rewrite rules.
 - You can adjust the priority for multiple rules. Rules at the bottom of the list have higher priority.
-- Current Origin URL: starting with `/`; prefix matching is used by default; supporting full-path matching (e.g., /test/a.jpg) and wildcard (*) matching (e.g., /test/*/*.jpg). If you want to specify a file directory, you cannot end the path with `/` (e.g., /test).
-- Target Origin Domain: the current domain name is used by default (excluding `http://` and `https://`). You can modify it as needed.
-- Target Origin Path: starting with `/` (e.g., /newtest/b.jpg); the wildcard `*` can be captured with `$n` (e.g., if n=1,2,3… then /newtest/$1/$2.jpg). If you want to specify a file directory, you cannot end the path with `/` (e.g., /test).
-- Up to 5 `*` and 10 `$n` are supported.
-- The target origin domain can contain up to 250 characters. Other content can contain up to 1,024 characters. Chinese characters are not supported.
+- Current Origin URL: starting with “/”; prefix matching is used by default; supporting full-path matching (e.g., /test/a.jpg) and wildcard (*) matching (e.g., /test/*/*.jpg). If you want to specify a file directory, you cannot end the path with “/” (e.g., /test).
+- Target Origin Domain: the current domain name is used by default (excluding “http://” and “https://”). You can modify it as needed.
+- Target Origin Path: starting with “/” (e.g., /newtest/b.jpg); the wildcard “*” can be captured with “$n” (e.g., if n=1,2,3… then /newtest/$1/$2.jpg). If you want to specify a file directory, you cannot end the path with “/” (e.g., /test).
+- Up to 5 “*” and 10 “$n” are supported.
+- The target origin domain can contain up to 250 characters. Other content can contain up to 1,024 characters. 
 
 
 
 ## Configuration Samples:
 
-Suppose the **Origin URL Rewrite Configuration** of the acceleration domain name `www.test.com` is as follows:
+Suppose the **Origin URL Rewrite Configuration** of the acceleration domain name www.test.com is as follows:
 ![](https://main.qcloudimg.com/raw/c255f4e4643a15e2e47a29a608a9fd01.png)
 
-The origin-pull URL will be re-written as follows:
-- In case `www.test.com/images/1.jpg` is requested, the request hits the first and third rule. As rules are executed from the bottom to top, the URL will be re-written to `www.test.com/index.html`.
-- In case `www.test.com/images` is requested, the request hits the first, second, and third rule. As rules are executed from the bottom to top, the URL will be re-written to `www.test.com/index.html`.
+The origin-pull will be rewritten as follows:
+- In case www.test.com/images/1.jpg is requested, the request hits the first and third rule. As rules are executed from the bottom to top, the URL will be re-written to www.test.com/index.html.
+- In case www.test.com/images is requested, the request hits the first, second, and third rule. As rules are executed from the bottom to top, the URL will be re-written to www.test.com/index.html.

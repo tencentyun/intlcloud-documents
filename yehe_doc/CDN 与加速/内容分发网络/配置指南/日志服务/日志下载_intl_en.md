@@ -1,9 +1,12 @@
 ## Feature Overview
+
 After a domain name is connected to CDN, all requests will be scheduled to a CDN node. If the requested resource is cached on the node, the resource will be returned directly; otherwise, the request will be passed to the origin server to pull the requested resource.
 
-As CDN nodes respond to most requests, to help you analyze user access, CDN packages access logs of the entire network at an hourly granularity and retains them for 30 days by default. These logs can also be downloaded.
+As CDN nodes respond to most user requests, to help you analyze user access, CDN packages access logs of the entire network at an hourly granularity and retains them for 30 days by default. These logs can also be downloaded.
 
->? Currently, origin-pull logs are not provided, only node access logs are provided.
+>? 
+>- Currently origin-pull logs are not provided. Only node access logs are provided.
+>- ECDN domain name offline logs cannot be queried by regions for now. For more information, see [Log Management](https://intl.cloud.tencent.com/document/product/570/15258).
 
 ## Overview
 ### Access behavior analysis
@@ -12,16 +15,16 @@ You can download access logs and analyze popular resources and active users.
 ### Service quality monitoring
 By downloading access logs, you can stay on top of the service status of all CDN nodes and calculate the average response time, average download speed, and other metrics.
 
-## Operation Guide
+## Directions
 ### How to use
-Log in to the [CDN console](https://console.cloud.tencent.com/cdn), click **Log Service** on the left sidebar, and select a domain name and time range to query access logs. You can select multiple log packages and download them in batches:
+Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), click **Log Service** on the left sidebar, and select a domain name and time range to query access logs. You can select multiple log packages and download them in batches:
 ![](https://mc.qcloudimg.com/static/img/043e70b6829ce67d6af125b51736b249/1.png)
 
 >!
 - The access logs are packaged by hour by default. If there is no request to the domain name for the hour, no log package will be generated for this hour.
-- A domain name's access logs of regions in and outside the Chinese mainland are packaged separately. Log packages are named in the format of "time-domain name-acceleration region".
+- For the same domain name, logs of accesses from within and outside the Chinese mainland are packaged separately. Log packages are named in the format of "[time]-[domain name]-[acceleration region]".
 - The access logs are collected from each CDN cache node, so the delay may vary. Generally, log packages can be queried and downloaded after about 30 minutes. Log packages will be added continuously and will stabilize after 2–3 hours.
-- The access log packages of a domain name are retained for 30 days. You can use an SCF function to transfer the log packages to COS as instructed in [Regularly Storing CDN Logs](https://intl.cloud.tencent.com/document/product/228/36014) for permanent storage.
+- The access log packages of a domain name are retained for 30 days. You can use an SCF function to transfer the log packages to COS as instructed in [Regularly Storing CDN Logs](https://intl.cloud.tencent.com/zh/document/product/228/36014) for permanent storage.
 
 ### Fields
 The fields (from left to right) in the logs are listed as below:
@@ -115,6 +118,7 @@ The fields (from left to right) in the logs are listed as below:
 
 ### Region/ISP mappings
 
+[](id:.E7.9C.81.E4.BB.BD.E6.98.A0.E5.B0.84)
 #### Chinese mainland provinces
 <table style="width:660px;">
 <thead>
@@ -470,7 +474,7 @@ The fields (from left to right) in the logs are listed as below:
 <td>1070</td>
 <td>Malta</td>
 <td>2588</td>
-<td>The Philippines</td>
+<td>Philippines</td>
 </tr>
 <tr>
 <td>386</td>
@@ -638,7 +642,7 @@ The fields (from left to right) in the logs are listed as below:
 <td>1501</td>
 <td>Bahrain</td>
 <td>4460</td>
-<td>Chinese mainland - North China</td>
+<td>Chinese mainland</td>
 </tr>
 <tr>
 <td>726</td>

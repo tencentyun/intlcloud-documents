@@ -1,6 +1,9 @@
+
 When you have specified both `Action` and `Resource` to create a custom policy, you can call APIs to perform operations for desired resources. This document describes the mappings between console features and `Action`.
 
->Tencent Cloud CDN can authorize resources by domain name. Authorization does not distinguish between service regions in Mainland China and outside Mainland China under the same domain name.
+>!
+> - Tencent Cloud CDN can authorize resources by domain name. Authorization does not distinguish between service regions in and outside the Chinese mainland under the same domain name.
+> - When you migrate ECDN services to the CDN console, the ECDN API permission policies will be automatically mapped to corresponding CDN API permission policies. However for resource-level permission policies, you need to set them again in CDN after the migration.
 
 ## Service Overview
 
@@ -35,11 +38,11 @@ Service overview can categorized as follows based on the displayed content:
 
 ## Statistical Analysis
 
-| Feature         | Authorized Action                                  | Notes                                                     |
+| Feature                                                     | Authorized Action        | Notes                         |
 | ------------------------------------------------------------ | ------------------ | -------------------------------- |
 | Querying detailed access data                                              | DescribeCdnData    | All access data metrics under a domain name can be queried after authorization |
 | Querying detailed origin-pull data                                              | DescribeOriginData | All origin-pull data metrics under a domain name can be queried after authorization |
-| Querying top traffic/requests<br/>Querying top domain names<br/>Querying rankings of domain name status codes<br/>Querying usage rankings by province in Mainland China<br/>Querying usage rankings by ISP in Mainland China<br/>Querying usage rankings outside Mainland China | ListTopData        | Rankings of different data metrics and dimensions can be queried after authorization  |
+| Querying top traffic/requests<br/>Querying top domain names<br/>Querying rankings of domain name status codes<br/>Querying usage rankings by province in the Chinese mainland<br/>Querying usage rankings by ISP in the Chinese mainland<br/>Querying usage rankings outside the Chinese mainland | ListTopData        | Rankings of different data metrics and dimensions can be queried after authorization  |
 | Querying number of unique IPs                                               | DescribeIpVisit    | -                                |
 
 ## Purge and Prefetch
@@ -64,24 +67,24 @@ The entire network status monitoring page in the console can be viewed by all su
 
 ## Operational Report
 
-| Feature         | Authorized Action                                  | Notes                                                     |
+| Features                                                     | Authorized Action        | Notes                         |
 | ------------------------------------------------------------ | ------------------ | -------------------------------- |
 | Querying detailed access data                                              | DescribeCdnData    | All access data metrics under a domain name can be queried after authorization |
 | Querying detailed origin-pull data                                              | DescribeOriginData | All origin-pull data metrics under a domain name can be queried after authorization |
-| Querying top traffic/requests<br/>Querying top domain names<br/>Querying rankings of domain name status codes<br/>Querying usage rankings by province in Mainland China<br/>Querying usage rankings by ISP in Mainland China<br/>Querying usage rankings outside Mainland China | ListTopData        | Rankings of different data metrics and dimensions can be queried after authorization  |
+| Querying top traffic/requests<br/>Querying top domain names<br/>Querying rankings of domain name status codes<br/>Querying usage rankings by province in the Chinese mainland<br/>Querying usage rankings by ISP in the Chinese mainland<br/>Querying usage rankings outside the Chinese mainland | ListTopData        | Rankings of different data metrics and dimensions can be queried after authorization  |
 | Querying number of unique IPs                                               | DescribeIpVisit    | -                                |
 
 ## Traffic Package Management
 
-| Feature         | Authorized Action                                  | Notes                                                     |
+| Feature       | Authorized Action             | Notes                                           |
 | -------------- | ----------------------- | -------------------------------------------------- |
 | Querying traffic package list | DescribeTrafficPackages | The content returned by the API is irrelevant to the `Resource`. The list can be queried with any authorized resource |
 
->Currently, the traffic package renewal and renewal cancellation logics cannot be authorized.
+> !Currently, the traffic package renewal and renewal cancellation logics cannot be authorized.
 
 ## IP Ownership Query
 
-| Feature         | Authorized Action                                  | Notes                                                     |
+| Feature                     | Authorized Action   | Notes                                           |
 | ---------------------------- | ------------- | -------------------------------------------------- |
 | Querying whether IP belongs to Tencent Cloud CDN | DescribeCdnIp | The content returned by the API is irrelevant to the `Resource`. The list can be queried with any authorized resource |
 
