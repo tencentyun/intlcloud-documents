@@ -46,12 +46,6 @@
 <td><a href = "https://intl.cloud.tencent.com/document/product/267/31077">스트림 데이터 조회</a></td>
 <td>단일 비디오 스트림에 대한 푸시 스트리밍 및 재생 데이터 상세 정보를 조회하고 로컬로 내보낼 수 있습니다.</td>
 </tr><tr>
-<td><a href = "https://cloud.tencent.com/document/product/267/20382">SDK 품질 모니터링</a></td>
-<td>MLVB SDK의 최근 3일 푸시 스트림 데이터 정보를 조회할 수 있습니다.</td>
-</tr><tr>
-<td><a href = "https://cloud.tencent.com/document/product/267/33996">로그 분석</a></td>
-<td><ul style = "margin-bottom: 0px;"><li>라이브 방송 방문 로그를 실시간으로 수집한 후 클리닝해 분석과 인덱스로 빠르게 장애 위치를 파악하고 액세스 할 수 있습니다.</li><li>전날, 최근 일주일, 최근 한달 혹은 사용자가 정의한 시간대의 로그 데이터 패킷을 다운로드 할 수 있습니다.</li></ul></td>
-</tr>
 </table>
 
 ## 라이브 방송 툴박스
@@ -66,11 +60,7 @@
 <td><a href = "https://intl.cloud.tencent.com/document/product/267/35968">Web 푸시</a></td>
 <td>신속하게 푸시 스트림 주소를 생성해 온라인 푸시 스트림으로 라이브 방송 기능을 테스트 할 수 있습니다.</td>
 </tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/267/39467">자가 진단</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/267">자가 진단</a></td>
 <td>자주 발생하는 라이브 방송 푸시 스트림/재생 문제를 신속하게 진단할 수 있습니다. 현재는 알파 테스트 단계이므로, 진단 결과는 참고용으로만 사용하시기 바랍니다.</td>
-</tr>
-<tr>
-<td><a href="https://cloud.tencent.com/document/product/267/55670">풀 스트림 전송</a></td>
-<td>콘텐츠 풀링 및 푸시 기능을 제공하며, 라이브 방송의 스트림을 푸시할 필요 없이 빠르게 기존의 비디오/라이브 방송을 풀링하여 타깃 주소로 푸시합니다.</td>
 </tr>
 </table>
