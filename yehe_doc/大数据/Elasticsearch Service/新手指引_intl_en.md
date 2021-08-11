@@ -3,10 +3,11 @@ This document describes how to get started with Elasticsearch Service (ES).
 ## 1. Basic knowledge of ES
 - [Why ES?](https://intl.cloud.tencent.com/document/product/845/16479)
 - [What features does ES have?](https://intl.cloud.tencent.com/document/product/845/16780)
-- [Performance of ES](https://intl.cloud.tencent.com/document/product/845/19535)
+- [Performance of ES](https://intl.cloud.tencent.com/document/product/845/40975)
 - [Use cases of ES](https://intl.cloud.tencent.com/document/product/845/16480)
 - [Elastic Stack (X-Pack)](https://intl.cloud.tencent.com/document/product/845/30943)
 - [Capabilities and restrictions of ES](https://intl.cloud.tencent.com/document/product/845/16481)
+
 
 -----
 ## 2. ES billing mode
@@ -19,7 +20,7 @@ ES is pay-as-you-go. For more information, please see [Billing Overview](https:/
 **3.1. Evaluation of cluster specification and capacity configuration**
 Before purchasing a cluster, you need to evaluate your specific business according to the actual situation to ensure that the created cluster meets your actual needs. For more information, please see [Evaluation of Cluster Specification and Capacity Configuration](https://intl.cloud.tencent.com/document/product/845/19551).
 **3.2. ES cluster purchase**
-Before using ES, you need to sign up for a Tencent Cloud account first and then click **Buy Now** on the [purchase page](https://intl.cloud.tencent.com/product/es) to create a cluster. For more information, please see [Creating Clusters](https://intl.cloud.tencent.com/document/product/845/19536).
+Before using ES, you need to sign up for a Tencent Cloud account first and then click **Buy Now** on the [purchase page](https://cloud.tencent.com/product/es) to create a cluster. For more information, please see [Creating Clusters](https://intl.cloud.tencent.com/document/product/845/19536).
 **3.3. Cluster access**
 After successfully creating a cluster, you can start to access it through the [API](https://intl.cloud.tencent.com/document/product/845/19540), [client](https://intl.cloud.tencent.com/document/product/845/19538), or [Kibana](https://intl.cloud.tencent.com/document/product/845/19541). Enabling [ES cluster user authentication](https://intl.cloud.tencent.com/document/product/845/35275) can improve the security of cluster access.
 
@@ -58,7 +59,7 @@ You can import your logs into ES and access Kibana from a browser to perform que
 **1. Default index template description and adjustment**
 You can describe and adjust the default template. For more information, please see [Default Index Template Description and Adjustment](https://intl.cloud.tencent.com/document/product/845/32607).
 **2. Index management with Curator**
-By managing indices with Curator, you can clear indices created 7 days ago, back up specified indices regularly every day, and migrate indices from a hot node to a warm node regularly. For more information, please see [Managing Indices with Curator](https://intl.cloud.tencent.com/document/product/845/32613).
+By managing indexes with Curator, you can clear indexes created 7 days ago, back up specified indexes regularly every day, and migrate indexes from a hot node to a warm node regularly. For more information, please see [Managing Indexes with Curator](https://intl.cloud.tencent.com/document/product/845/32613).
 **3. Hot/Warm architecture and index lifecycle management**
 You can specify the specifications of hot and warm nodes based on your business needs to quickly build an ES cluster in the hot/warm architecture. For more information, please see [Hot/Warm Architecture and Index Lifecycle Management](https://intl.cloud.tencent.com/document/product/845/34890).
 
@@ -72,11 +73,14 @@ ES supports SQL instead of DSL as the query language. For those engaged in produ
 - [I have an unpaid switch order. Will the order still be valid if I upgrade the cluster configuration?](https://intl.cloud.tencent.com/document/product/845/16599)
 - [Can I change the cloud disk type after a successful purchase?](https://intl.cloud.tencent.com/document/product/845/16599)
 
-### 6.2. Others
-- [How does ES' proprietary circuit breaker work?](https://intl.cloud.tencent.com/document/product/845/32611)
-- [What are the common methods to free up the memory?](https://intl.cloud.tencent.com/document/product/845/32611)
-- [How do I fix the error with write rejection (bulk reject)?](https://intl.cloud.tencent.com/document/product/845/32610)
-- [Why does the disk become read-only? How do I fix this?](https://intl.cloud.tencent.com/document/product/845/32589)
+### 6.2 Cluster exceptions 
+- [Exceptional Cluster Health Status (Red and Yellow)](https://intl.cloud.tencent.com/document/product/845/40983)
+- [Memory Cleanup Methods](https://intl.cloud.tencent.com/document/product/845/40982)
+- [Bulk Rejection/Search Rejection](https://intl.cloud.tencent.com/document/product/845/40981)
+- [High Cluster CPU Utilization](https://intl.cloud.tencent.com/document/product/845/40980)
+- [High Cluster Disk Utilization and read_only Status](https://intl.cloud.tencent.com/document/product/845/40979)
+- [Uneven Cluster Load](https://intl.cloud.tencent.com/document/product/845/40978)
+
 
 -----
 ## 7. Feedback and suggestions

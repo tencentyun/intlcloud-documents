@@ -3,10 +3,11 @@
 ## 1. 熟悉 ES 的基础知识
 - [为什么选择腾讯云 ES？](https://intl.cloud.tencent.com/document/product/845/16479)
 - [ES 有什么功能？](https://intl.cloud.tencent.com/document/product/845/16780)
-- [ES 的产品性能。](https://intl.cloud.tencent.com/document/product/845/19535)
+- [ES 的产品性能。](https://intl.cloud.tencent.com/document/product/845/40975)
 - [ES 的各个应用场景介绍。](https://intl.cloud.tencent.com/document/product/845/16480)
 - [ES 的高级特性（X-Pack）介绍。](https://intl.cloud.tencent.com/document/product/845/30943)
 - [ES 能力与限制说明。](https://intl.cloud.tencent.com/document/product/845/16481)
+
 
 -----
 ## 2. ES 的计费模式
@@ -19,7 +20,7 @@
 **3.1 集群规格和容量配置评估**
 在购买集群前，需要根据实际情况对具体的业务进行评估，以确保创建的集群是符合您实际需求的。详情请参见 [集群规格和容量配置评估](https://intl.cloud.tencent.com/document/product/845/19551)。
 **3.2 选购 ES 集群**
-在使用腾讯云 ES 前，您需要注册腾讯云账号，然后在 [购买页](https://intl.cloud.tencent.com/product/es) 单击【立即选购】创建集群，详情可参考 [创建集群](https://intl.cloud.tencent.com/document/product/845/19536)。
+在使用腾讯云 ES 前，您需要注册腾讯云账号，然后在 [购买页](https://cloud.tencent.com/product/es) 单击【立即选购】创建集群，详情可参考 [创建集群](https://intl.cloud.tencent.com/document/product/845/19536)。
 **3.3 访问集群**
 集群创建成功后，即可开始访问集群，启用 [ES 集群用户登录认证](https://intl.cloud.tencent.com/document/product/845/35275) 可以提升集群访问的安全性。访问集群有三种方式：[通过 API 访问集群](https://intl.cloud.tencent.com/document/product/845/19540)、[通过客户端访问集群](https://intl.cloud.tencent.com/document/product/845/19538)、[通过 Kibana 访问集群](https://intl.cloud.tencent.com/document/product/845/19541)。
 
@@ -72,14 +73,17 @@
 - [有未支付的转换订单，升级了集群的配置，转换订单还有效吗？](https://intl.cloud.tencent.com/document/product/845/16599)
 - [在成功购买后，是否支持更换云硬盘的类型？](https://intl.cloud.tencent.com/document/product/845/16599)
 
-### 6.2 其他问题
-- [腾讯云 ES 自研熔断器的熔断机制是什么？](https://intl.cloud.tencent.com/document/product/845/32611)
-- [常用清理内存的方法是什么？](https://intl.cloud.tencent.com/document/product/845/32611)
-- [出现写入拒绝（Bulk Reject）问题如何解决？](https://intl.cloud.tencent.com/document/product/845/32610)
-- [磁盘 readonly 的产生原因和解决办法是什么？](https://intl.cloud.tencent.com/document/product/845/32589)
+### 6.2 集群异常问题 
+- [集群健康状态异常（RED、YELLOW）如何解决？](https://intl.cloud.tencent.com/document/product/845/40983)
+- [常用清理内存的方法是什么？](https://intl.cloud.tencent.com/document/product/845/40982)
+- [写入拒绝或查询拒绝问题如何解决？](https://intl.cloud.tencent.com/document/product/845/40981)
+- [集群整体 CPU 使用率过高问题如何解决？](https://intl.cloud.tencent.com/document/product/845/40980)
+- [ 集群磁盘使用率高和 read_only 状态问题如何解决？](https://intl.cloud.tencent.com/document/product/845/40979)
+- [集群负载不均的问题如何解决？](https://intl.cloud.tencent.com/document/product/845/40978)
+
 
 -----
 ## 7. 反馈与建议
-使用腾讯云 EMR 产品和服务中有任何问题或建议，您可以通过以下渠道反馈，将有专人跟进解决您的问题：
+使用腾讯云 ES 产品和服务中有任何问题或建议，您可以通过以下渠道反馈，将有专人跟进解决您的问题：
 - 如果发现产品文档的问题，如链接、内容、API 错误等，您可以单击文档页右侧 【文档反馈】或选中存在问题的内容进行反馈。
-- 如果遇到产品相关问题，您可 [提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
+- 如果遇到产品相关问题，您可[提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
