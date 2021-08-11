@@ -18,13 +18,12 @@ By downloading access logs, you can stay on top of the service status of all CDN
 ## Directions
 ### How to use
 Log in to the [CDN Console](https://console.cloud.tencent.com/cdn), click **Log Service** on the left sidebar, and select a domain name and time range to query access logs. You can select multiple log packages and download them in batches:
-![](https://mc.qcloudimg.com/static/img/043e70b6829ce67d6af125b51736b249/1.png)
 
 >!
-- The access logs are packaged by hour by default. If there is no request to the domain name for the hour, no log package will be generated for this hour.
-- For the same domain name, logs of accesses from within and outside the Chinese mainland are packaged separately. Log packages are named in the format of "[time]-[domain name]-[acceleration region]".
-- The access logs are collected from each CDN cache node, so the delay may vary. Generally, log packages can be queried and downloaded after about 30 minutes. Log packages will be added continuously and will stabilize after 2–3 hours.
-- The access log packages of a domain name are retained for 30 days. You can use an SCF function to transfer the log packages to COS as instructed in [Regularly Storing CDN Logs](https://intl.cloud.tencent.com/zh/document/product/228/36014) for permanent storage.
+>- The access logs are packaged by hour by default. If there is no request to the domain name for the hour, no log package will be generated for this hour.
+>- For the same domain name, logs of accesses from within and outside the Chinese mainland are packaged separately. Log packages are named in the format of "[time]-[domain name]-[acceleration region]".
+>- The access logs are collected from each CDN cache node, so the delay may vary. Generally, log packages can be queried and downloaded after about 30 minutes. Log packages will be added continuously and will stabilize after 2–3 hours.
+>- The access log packages of a domain name are retained for 30 days. You can use an SCF function to transfer the log packages to COS as instructed in [Regularly Storing CDN Logs](https://intl.cloud.tencent.com/zh/document/product/228/36014) for permanent storage.
 
 ### Fields
 The fields (from left to right) in the logs are listed as below:
@@ -115,7 +114,7 @@ The fields (from left to right) in the logs are listed as below:
 <td>Cache hit/miss. A hit in a CDN edge server or parent node will be marked as hit.</td>
 </tr>
 <td>16</td>
-<td>Client port. Its value will be <code> -</code> if there is no client port. -</td>
+<td>Port that connects the client and CDN nodes. Its value will be <code> -</code> if there is no port. </td>
 </tr>
 </tbody></table>
 
