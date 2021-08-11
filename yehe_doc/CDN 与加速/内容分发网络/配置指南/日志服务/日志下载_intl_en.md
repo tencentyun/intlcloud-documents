@@ -114,6 +114,9 @@ The fields (from left to right) in the logs are listed as below:
 <td>15</td>
 <td>Cache hit/miss. A hit in a CDN edge server or parent node will be marked as hit.</td>
 </tr>
+<td>16</td>
+<td>Client port. Its value will be <code> -</code> if there is no client port. -</td>
+</tr>
 </tbody></table>
 
 ### Region/ISP mappings
