@@ -374,7 +374,7 @@
 <td>Supports cross-region binding</td>
 <td>You can select and bind real servers across VPCs and regions.</td>
 <td>September 2017</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/12014">CLB Instance Cross-Region Binding</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/214/38441">CLB Instance Cross-Region Binding</a></td>
 </tr>
 </tbody></table>
 
