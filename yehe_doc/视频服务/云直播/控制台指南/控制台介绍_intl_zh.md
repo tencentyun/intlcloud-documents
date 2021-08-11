@@ -31,9 +31,6 @@
 <td><a href = "https://cloud.tencent.com/document/product/267/20388">事件中心</a></td>
 <td><ul style= "margin: 0"><li>针对各触发事件设置接收相关回调信息的路径。</li><li>可以快速查看直播推流断流的记录与断流原因。</li></ul></td>
 </tr><tr>
-<td><a href = "https://cloud.tencent.com/document/product/267/">直播 SDK</a></td>
-<td><ul style= "margin: 0"><li>配合移动直播 SDK，可添加并管理正式版 License 并绑定相关资源包。</li><li>可添加和查看 IM 应用，生成开发中所需的 SDKAPPID 和 SecretKey。</li><li>可查询移动直播 SDK 中的连麦功能的使用时长和套餐包的使用情况。</li></ul></td>
-</tr><tr>
 
 ## 数据中心
 数据分析为用户提供了专业的数据分析服务，可查询时间粒度内流量/带宽、转码、水印、转推、截图和鉴黄的消耗情况，并且提供日志分析功能，方便用户进行资源监控，掌握有用数据。
