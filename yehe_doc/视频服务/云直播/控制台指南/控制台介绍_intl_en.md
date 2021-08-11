@@ -47,12 +47,6 @@ This module provides users with professional data analysis services. You can que
 <td><a href = "https://intl.cloud.tencent.com/document/product/267/31077">Stream Data Query</a></td>
 <td>You can query and export the details of push and playback of a single video stream to a local device.</td>
 </tr><tr>
-<td><a href="https://cloud.tencent.com/document/product/460/36544">Quality conversion</a></td>
-<li>You can query the push data of the MLVB SDK for the last 3 days.</li>
-</tr><tr>
-<td><a href="https://cloud.tencent.com/document/product/457/36771">Log Analysis</a></td>
-<td><ul style = "margin-bottom: 0px;"><li>You can collect LVB access logs in real time and cleanse, analyze, and search for them to quickly locate access failures.<li>You can do<li>You can download log packages generated for yesterday, last week, last month, or a custom time period.</li></ul></td>
-</tr>
 </table>
 
 
@@ -62,10 +56,10 @@ LVB Toolkit provides ancillary features.
 <table>
 <tr><th width="17%">Feature</th><th>Description</th>
 </tr><tr>
-<td ><a href = "https://intl.cloud.tencent.com/zh/document/product/267/31084">Address Generator</a></td>
+<td ><a href = "https://intl.cloud.tencent.com/document/product/267/31084">Address Generator</a></td>
 <td>You can fill in address information to quickly generate push/playback addresses.</td>
 </tr><tr>
-<td><a href = "https://intl.cloud.tencent.com/zh/document/product/267/35968">Web Push</a></td>
+<td><a href = "https://intl.cloud.tencent.com/document/product/267/35968">Web Push</a></td>
 <td>You can quickly generate push addresses and test live streaming broadcasts online.</td>
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/267">Self-Diagnosis</a></td>
