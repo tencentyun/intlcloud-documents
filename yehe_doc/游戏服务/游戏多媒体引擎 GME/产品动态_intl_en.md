@@ -1,3 +1,25 @@
+## June 2021
+<table >
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="50%">Description</th>
+ <th width=15%>Release Date</th>  
+<th width="15%">Related Documents</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SDK v2.8.2 is released</td>
+<td ><ul style="margin:0;"><li >The real-time speech recognition feature is now available in beta. The speech in the audio call can be recognized to text in real time. To try it out, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</li>
+<li >Optimizes the network module and increases the success rate of room entry on Windows platform.</li>
+<li >Updates the SDK of H5 platform and adds the adaptation for browsers.</li>
+<li >Optimizes the performance and increases the speed of room entry and the stability of SDK.</li>
+</ul ></td>
+<td>2021-06-11</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/607/15210">Voice Chat</tr>
+</tbody></table>
+
+
 ## January 2021
 <table >
 <thead>
@@ -10,9 +32,9 @@
 </thead>
 <tbody><tr>
 <td>SDK v2.8 is released</td>
-<td ><ul style="margin:0;"><li >The custom audio forwarding routing feature is available. Combined with range voice, it can realize the enhanced battle royale voice.</li>
-<li>Add the API SetSpeakerVolumeByOpenID, which is used to set the speaking volume of a member in the room heard by the local.</li>
-<li >Add the API to set the using region, which is suitable for the release outside the Chinese mainland (in beta). To try it out, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</li>
+<td ><ul style="margin:0;"><li >Releases the custom audio routing feature. Combined with range voice, it realizes the enhanced battle royale voice.</li>
+<li>Adds the API `SetSpeakerVolumeByOpenID`, which is used to set the speaking volume of a room member heard by the local.</li>
+<li >Adds the API of setting using regions, which is suitable for releasing features outside the Chinese mainland (in beta). To try it out, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a> for application.</li>
 <li >Performance optimization. Improve SDK stability.</li>
 <li >Improve the voice quality outside the Chinese mainland.</li>
 </ul ></td>
