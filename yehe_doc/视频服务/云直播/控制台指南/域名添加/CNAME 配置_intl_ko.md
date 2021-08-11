@@ -9,7 +9,8 @@ CNAME 설정은 완료 후 약 15분 후에 적용됩니다. 멀티레이어 CNA
 
 CNAME 설정 완료 후 오랜 시간이 지나도 성공 표시가 나타나지 않는 경우 CNAME 설정 문제를 참조하여 점검할 수 있습니다.
 
-## 도메인을 준비하십시오.  
+## 전제 조건
+도메인을 준비하십시오.  
 CSS 콘솔에 로그인하여 [도메인 관리](https://console.cloud.tencent.com/live/domainmanage)에서 도메인을 추가하시고, 도메인의 CNAME 주소 상태는 (CNAME 미설정)으로 합니다.
 
 
