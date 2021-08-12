@@ -5,7 +5,7 @@ ECDN can automatically identify static and dynamic content access requests based
 - For static content requests, the edge servers are preferentially used to cache the content for response, improving access efficiency and reducing origin-pull traffic usage.
 - For dynamic content requests, resources are directly pulled from the origin servers through high-quality origin-pull and intelligent routing, lowering the average response latency.
 
->? If your application has been migrated to the CDN console, you can go to the console for operation by referring to [Content Delivery Network](https://cloud.tencent.com/document/product/228).
+>? If your application has been migrated to the CDN console, you can go to the console for operation by referring to [Content Delivery Network](https://intl.cloud.tencent.com/document/product/228).
 ## Directions
 1. Log in to the [ECDN Console](https://console.cloud.tencent.com/dsa) and click **Domain Management** on the left sidebar to enter the management page.
 2. In the list, find the domain name to configure and click **Manage** under the "Operation" column on the right to enter the domain management page.   
