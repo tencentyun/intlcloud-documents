@@ -1,16 +1,18 @@
 Apache Thrift is a software framework used for scalable cross-language services development. It allows you to define data types and service interfaces in a Thrift File through interface definition language (IDL). The Thrift compiler generates your Thrift File into source code which is to be used to build different clients and servers that communicate seamlessly across programming languages.
-The Apache Thrift software framework, for scalable cross-language services development, combines a software stack with a code generation engine to build services that work efficiently and seamlessly between C++, Java, Python, PHP, Ruby, Erlang, Perl, Haskell, C#, Cocoa, JavaScript, Node.js, Smalltalk and OCaml and other languages.
+
+The Apache Thrift software framework, for scalable cross-language services development, combines a software stack with a code generation engine to build services that work efficiently and seamlessly between C++, Java, Go, Python, PHP, Ruby, Erlang, Perl, Haskell, C#, Cocoa, JavaScript, Node.js, Smalltalk, and OCaml languages.
 
 Thrift server is a Hive-compatible interface for HBase used to support multi-language APIs. The HBase Thrift interface allows other languages to access HBase over Thrift by connecting to a Thrift server that interfaces with the Java client. This section will describe how to connect HBase with Python and Thrift.
 
-## 1. Preparations for Development
+## 1. Prerequisites
 - Confirm that you have activated Tencent Cloud and created an EMR cluster. When creating the EMR cluster, select the HBase component on the software configuration page.
 
-## 2. Using HBase with the Python API
+## 2. Using HBase with Python API
 HBase on EMR is integrated with Thrift by default, and the Thrift server is started on the Master1 node (the node with a public IP).
-Log in to any node (preferably a master one) in the EMR cluster. For more information on how to log in to EMR, please see [Logging in to Linux Instances](https://intl.cloud.tencent.com/document/product/213/5436). Here, you can choose to log in with WebShell. Click "Log in" on the right of the desired CVM instance to enter the login page. The default username is `root`, and the password is the one you set when creating the EMR cluster. Once the correct credentials are entered, you can enter the command line interface.
 
-Run the following command on the EMR command-line interface to switch to the Hadoop user and go to the HBase folder:
+Log in to any node (preferably a master one) in the EMR cluster. For information on how to log in to EMR, please see [Logging in to Linux Instance Using Standard Login Method](https://intl.cloud.tencent.com/document/product/213/5436). Here, you can use WebShell to log in. Click **Login** on the right of the desired CVM instance to go to the login page. The default username is `root`, and the password is the one you set when creating the EMR cluster. Once your credentials are validated, you can enter the command line interface.
+
+Run the following commands to switch to the Hadoop user and go to the Hbase installation folder:
 ```
 [root@172 ~]# su hadoop
 [hadoop@172 root]$ cd /usr/local/service/hbase/
@@ -29,17 +31,21 @@ View the IP address and port number of Thrift in HBase's configuration file:
         <value>$port</value>
 </property>
 ```
-Here, $port is the port number of the Thrift server.
-By default, HBase is connected with Thrift for EMR clusters. So you don’t need to install and configure Thrift. Run the following command to check whether the Thrift server has been started:
+Here, `$port` is the port number of the Thrift server.
+
+By default, HBase is connected with Thrift for EMR clusters. So you don't need to install and configure Thrift. Run the following command to check whether the Thrift server has been started:
 ```
 [hadoop@172 hbase]$ jps
 
 4711 ThriftServer
 ```
-The message above indicates that the Thrift server is already running in the background. Now you can operate HBase directly with Python.
+The message above indicates that the Thrift server is already running in the background. At this time, you can operate HBase directly with Python.
+
+### Load balancing
+An HA cluster has two master nodes, and both nodes start Thrift server by default. If load balancing is required, the client code needs a custom policy to distribute requests to the two Thrift servers which are completely independent of each other with no communication.
 
 ### Preparing data
-Use HBase Shell to create a HBase table. If you have already created one through HBase on EMR, skip this step:
+Use HBase Shell to create an HBase table. If you have already created one through HBase on EMR, skip this step:
 ```
 [hadoop@172 hbase]$ hbase shell 
 
@@ -51,7 +57,7 @@ thrift_test
 hbase(main):001:0> quit
 ```
 
-### Viewing a table in HBase with Python
+### Viewing table in HBase with Python
 First, you need to install the Python dependencies. Switch to the root user with the password that is same as the one for EMR cluster, install the python-pip tool first and then dependencies:
 ```
 [hadoop@172 hbase]$ su
@@ -59,7 +65,7 @@ Password: ********
 [root@172 hbase]# yum install python-pip
 [root@172 hbase]# pip install hbase-thrift
 ```
-Then, switch back to the Hadoop user, create a Python file Hbase_client.py, and add the following code to it:
+Then, switch back to the Hadoop user, create a Python file `Hbase_client.py`, and add the following code to it:
 ```
 #! /usr/bin/env python
 #coding=utf-8
@@ -79,7 +85,7 @@ transport.open()
 
 print client.getTableNames()
 ```
->! Here, $thriftIP is the IP address of the master node on the private network, and $port is the port number of ThriftService.
+>!Here, `$thriftIP` is the IP address of the master node on the private network, and `$port` is the port number of ThriftService.
 
 Save and run the file, and the table in HBase will be shown in the console:
 ```
@@ -87,8 +93,8 @@ Save and run the file, and the table in HBase will be shown in the console:
 ['thrift_test']
 ```
 
-### Creating an HBase table with Python
-Create a Python file Create_table.py, and add the following code to it:
+### Creating HBase table with Python
+Create a Python file `Create_table.py` and add the following code to it:
 ```
 #! /usr/bin/env python
 #coding=utf-8
@@ -117,14 +123,14 @@ socket.close()
 
 print tables
 ```
-The program will add a new table thrift_test_1 in HBase and output all existing tables:
+The program will add a new table `thrift_test_1` in HBase and output all existing tables:
 ```
 [hadoop@172 hbase]$ python Create_table.py
 ['thrift_test', 'thrift_test_1']
 ```
 
-### Inserting data into an HBase table with Python
-Create a Python file Insert.py and add the following code to it:
+### Inserting data into HBase table with Python
+Create a Python file `Insert.py` and add the following code to it:
 ```
 #! /usr/bin/env python
 #coding=utf-8
@@ -159,7 +165,7 @@ client.mutateRow('thrift_test_1',"row2",mutation2)
 
 socket.close()
 ```
-The program will add two rows of data to the thrift_test_1 table in HBase, each with two data entries, which can be viewed in HBase Shell:
+The program will add two rows of data to the `thrift_test_1` table in HBase, each with two data entries, which can be viewed in HBase Shell:
 ```
 hbase(main):005:0> scan 'thrift_test_1'
 ROW       COLUMN+CELL                                                             
@@ -170,8 +176,8 @@ row2       column=cf:b, timestamp=1530704886975, value=value4
 2 row(s) in 0.0190 seconds
 ```
 
-### Viewing data in an HBase table with Python
-You can view the data by row or scan the entire dataset. Create a Python file Scan_table.py and add the following code to it:
+### Viewing data in HBase table with Python
+You can view the data by row or scan the entire dataset. Create a Python file `Scan_table.py` and add the following code to it:
 ```
 #! /usr/bin/env python
 #coding=utf-8
@@ -219,7 +225,7 @@ the second value is  value2
 As you can see, the data of the first row and the data of the entire table are outputted separately.
 
 ### Deleting data from HBase with Python
-Create a Python file Delete_row.py and add the following code to it:
+Create a Python file `Delete_row.py` and add the following code to it:
 ```
 #! /usr/bin/env python
 #coding=utf-8
@@ -254,5 +260,6 @@ ROW     COLUMN+CELL
  row1     column=cf:b, timestamp=1530697238587, value=value2                                     
 1 row(s) in 0.2050 seconds
 ```
-Now the table contains only the data in the first row
+At this time, the table contains only the data in the first row
+
 For more information on Thrift operations, please see [How to Use Thrift](http://blog.cloudera.com/blog/2013/09/how-to-use-the-hbase-thrift-interface-part-1/?spm=5176.doc53887.2.4.6Nfd1X).
