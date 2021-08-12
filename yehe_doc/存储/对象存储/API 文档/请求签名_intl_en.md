@@ -1,37 +1,85 @@
 > !
 > 1. This document is only for the COS XML version.
-> 2. It does not apply to `POST Object` requests over HTTP.
+> 2. It does not apply to POST Object requests over HTTP.
+
 
 ## Overview
 
-RESTful APIs support anonymous and signed HTTP requests, which help you use COS resources. For a signed request, the COS server will authenticate its initiator.
+You can use COS with RESTful APIs, which support anonymous and signed HTTP requests. The COS server will authenticate the requester of signed requests.
 
-- Anonymous request: an HTTP request that does not contain any authentication information and is sent by using RESTful API.
-- Signed request: a request that is signed with authentication information. The COS server authenticates the requester of the signed request and only executes the authenticated ones; otherwise, it returns an error message and denies the request.
+- Anonymous request: an HTTP request that does not carry any authentication information, and is sent using RESTful APIs.
+- Signed request: an HTTP request that carries a signature. The COS server will authenticate requesters and only execute requests initiated by authenticated ones. If the authentication fails, COS will return an error message and deny the request.
 
-The COS server performs HMAC (Hash Message Authentication Code) authentication schema.
+COS authenticates requesters using a custom solution based on Hash Message Authentication Code (HMAC).
 
-Besides, **pre-signed URLs** are provided in all language-specific [SDKs](https://intl.cloud.tencent.com/document/product/436/6474) so that you can easily access signed URLs and process requests. For more information, please see **Pre-signed URL** in applicable language-specific SDK documentation.
 
-## Signature Use Cases
+## Implementing Signature in SDK
 
-In use cases where COS objects need to be published to the public, public read/private write is usually configured. It means that every one can read, but only accounts you specify with ACL policies can write to your objects. In this case, you can use ACL policies together with API request signature to authenticate access and control operation permission and period.
+Signatures are already implemented in COS SDKs, which means when you initiate requests or obtain signatures using an SDK, you can ignore the signature issue. To implement a signature by yourself or learn about the implementation of signatures in different programming languages, see the programming language−specific signature implementation file from the table below:
 
->! The API request signature described in this document is already included in the SDK. **You need to follow the steps below only if you want to redevelop based on the initial APIs**.
+| SDK | Signature Implementation File |
+| --- | --- |
+| Android SDK | [COSXmlSigner.java](https://github.com/tencentyun/qcloud-sdk-android/blob/master/QCloudFoundation/foundation/src/main/java/com/tencent/qcloud/core/auth/COSXmlSigner.java) |
+| C SDK | [cos_auth.c](https://github.com/tencentyun/cos-c-sdk-v5/blob/master/cos_c_sdk/cos_auth.c) |
+| C++ SDK | [auth_tool.cpp](https://github.com/tencentyun/cos-cpp-sdk-v5/blob/master/src/util/auth_tool.cpp) |
+| .NET(C#) SDK | [IQCloudSigner.cs](https://github.com/tencentyun/qcloud-sdk-dotnet/blob/master/QCloudCSharpSDK/COSXML/Auth/IQCloudSigner.cs) (class CosXmlSigner) |
+| Go SDK | [auth.go](https://github.com/tencentyun/cos-go-sdk-v5/blob/master/auth.go) |
+| iOS SDK | [QCloudAuthentationV5Creator.m](https://github.com/tencentyun/qcloud-sdk-ios/blob/master/QCloudCore/Classes/Base/QCloudClientBase/Authentation/QCloudAuthentationV5Creator.m) |
+| Java SDK | [COSSigner.java](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/src/main/java/com/qcloud/cos/auth/COSSigner.java) |
+| JavaScript SDK | [util.js](https://github.com/tencentyun/cos-js-sdk-v5/blob/master/src/util.js) (getAuth) |
+| Node.js SDK | [util.js](https://github.com/tencentyun/cos-nodejs-sdk-v5/blob/master/sdk/util.js) (getAuth) |
+| PHP SDK | [Signature.php](https://github.com/tencentyun/cos-php-sdk-v5/blob/master/src/Qcloud/Cos/Signature.php) |
+| Python SDK | [cos_auth.py](https://github.com/tencentyun/cos-python-sdk-v5/blob/master/qcloud_cos/cos_auth.py) |
+| Mini Program SDK | [util.js](https://github.com/tencentyun/cos-wx-sdk-v5/blob/master/src/util.js) (getAuth) |
 
-In this case, multiple layers of security protection can be included for API requests:
 
-1. **Requester authentication**: verifies the identity of the requester by their unique ID and key.
-2. **Transferred data anti-tampering**: signs and verifies the data to ensure its integrity during transfer.
-3. **Signature anti-theft**: expires signatures to prevent them from being stolen for repeated use.
+
+## Generating a Signed URL
+
+Currently, all COS [SDKs](https://intl.cloud.tencent.com/document/product/436/6474) can generate URLs that carry a signature valid for a period of time. The signature supports PUT and GET requests. Therefore, you can use the generated signed URL to upload/download objects directly without having to generate a signature separately.
+
+- When generating a signed URL for uploads, you can also specify headers such as `Content-Type` and `Content-MD5` to limit the media type/content to upload. For the configurations of request headers related to uploads, please see [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749).
+- When generating a signed URL for downloads, you can also specify `response-xxx` so that you can temporarily modify response headers upon download. For the configurations of request parameters related to downloads, please see [GET Object](https://intl.cloud.tencent.com/document/product/436/7753).
+
+Find the pre-signed URL document corresponding to your SDK language from the table below:
+
+| SDK | Pre-Signed URL Document  |
+| -------------- | ------------------------------------------------------------ |
+| Android SDK    | [Generating a Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/37680) |
+| C SDK          | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/31520) |
+| C++ SDK        | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/31524) |
+| .NET(C#) SDK   | [Generating a Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/38068) |
+| Go SDK         | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/31528) |
+| iOS SDK       | [Generating a Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/37690) |
+| Java SDK       | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/31536) |
+| JavaScript SDK | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/31540) |
+| Node.js SDK    | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/32455) |
+| PHP SDK        | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/31544) |
+| Python SDK     | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/31548) |
+| Mini Program SDK     | [Pre-Signed URL](https://intl.cloud.tencent.com/document/product/436/31711) |
+
+
+
+## Use Cases
+
+If a COS object needs to be published to the public, you will usually need to set this object to public-read/private-write (everyone can read the object but only the ACL-specified account can write to it). After this, you can use the ACL policy together with the API request signature to authenticate requesters and control the permissions and validity period of operations.
+
+>! The API request signature described in this document is already included in the SDK. **Perform the steps below only if you want to redevelop based on the native APIs**.
+>
+
+You can secure your API request as follows for the use case above.
+
+1. **Authenticate requester**: verifies the identity of the requester by their unique ID and key.
+2. **Prevent data tempering during transfer**: signs and verifies data to ensure its integrity during transfer.
+3. **Prevent signature from being stolen**: sets validity period for the signature to prevent it from being stolen or used repeatedly.
 
 ## Preparations
 
-1. `APPID`, `SecretId`, and `SecretKey`. 
-They can be obtained on the [API Key Management](https://console.cloud.tencent.com/cam/capi) page in the CAM Console.
-2. Programming language:
-Supported programming languages include but are not limited to Java, PHP, .NET, C++, Node.js, and Python. You should determine the corresponding `HMAC-SHA1`, `SHA1`, and `UrlEncode` functions for the chosen language.
-The `HMAC-SHA1` and `SHA1` functions input UTF-8 encoded strings and output lowercase hexadecimal strings. The `UrlEncode` function works based on UTF-8 encoding. The following printable special characters in the ASCII range should also be encoded:
+1. Obtain APPID, SecretId, and SecretKey. 
+They can be obtained on the [Manage API Key](https://console.cloud.tencent.com/cam/capi) page in the CAM console.
+2. Determine the programming language.
+Supported languages include but are not limited to Java, PHP, .NET, C++, Node.js, and Python. You can determine the HMAC-SHA1, SHA1, and UrlEncode functions according to the programming language selected.
+The HMAC-SHA1 and SHA1 functions take UTF-8 encoded strings as input, and output lowercase hexadecimal strings, and UrlEncode is also based on UTF-8 encoding. Besides, the following printable special characters in the ASCII range should also be encoded:
 
 | Character | Decimal | Hex | Character | Decimal | Hex |
 | ------ | ------ | -------- | ---- | ------ | -------- |
@@ -51,44 +99,46 @@ The `HMAC-SHA1` and `SHA1` functions input UTF-8 encoded strings and output lowe
 | /      | 47     | 2F       | }    | 125    | 7D       |
 | :      | 58     | 3A       |      |        |          |
 
-## Generating Signature
+## Generating a Signature
 
 ### Step 1. Generate KeyTime
-1. Get the Unix timestamp `StartTimestamp` for the current time, which is the total number of seconds starting from January 1, 1970, 00:00:00 UTC (January 1, 1970, 08:00:00 Beijing time).
-2. Calculate the Unix timestamp `EndTimestamp` for the moment the signature will expire based on the timestamp above and the expected valid duration of the signature.
-3. Get the signature validity period (i.e., `KeyTime`) by splicing the two timestamps above in the format of `StartTimestamp;EndTimestamp`, such as `1557902800;1557910000`.
+1. Get the Unix `StartTimestamp` of the current time. It is the total number of seconds from January 1, 1970, 00:00:00 UTC (January 1, 1970, 08:00:00 Beijing time) till the current time.
+2. Calculate the Unix `EndTimestamp` for the signature to expire according to `StartTimestamp` and the expected validity period of the signature.
+3. Generate `KeyTime` by splicing the two timestamps above in `StartTimestamp;EndTimestamp` format (e.g., `1557902800;1557910000`).
 
 ### Step 2. Generate SignKey
-Calculate the message digest (hash value in hexadecimal lowercase) by using [HMAC-SHA1](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) with [SecretKey](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) as the key and [KeyTime](#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E7.94.9F.E6.88.90-keytime) as the message, which is `SignKey`, such as `eb2519b498b02ac213cb1f3d1a3d27a3b3c9bc5f`.
+Use [HMAC-SHA1](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) with [SecretKey](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) as the key and [KeyTime](#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E7.94.9F.E6.88.90-keytime) as the message to calculate the message digest (i.e., `SignKey`), which is a hash value in lowercase hexadecimal format, such as `eb2519b498b02ac213cb1f3d1a3d27a3b3c9bc5f`.
 
 
 ### Step 3. Generate UrlParamList and HttpParameters
-1. Traverse the HTTP request parameters to generate a key-to-value mapping `Map` and key list `KeyList`:
- - Encode keys by using [UrlEncode](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) and convert them to lowercase.
- - Encode values by using [UrlEncode](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C). In parameters without `value`, the `value` is considered to be an empty string. For example, the request path `/?acl` is considered as `/?acl=`.
+1. Traverse the HTTP request parameters to generate a key-to-value `Map` and a `KeyList`:
+ - Encode keys using [UrlEncode](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C), and convert them to lowercase.
+ - Encode values using [UrlEncode](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C). If a parameter does not take any value, its value is considered to be an empty string. For example, a request path `/?acl` is considered as `/?acl=`.
 >? The parameters in an HTTP request are what comes after `?` in the request path. For example, in the request path `/?versions&prefix=example-folder%2F&delimiter=%2F&max-keys=10`, the request parameters are `versions&prefix=example-folder%2F&delimiter=%2F&max-keys=10`.
+>
 2. Sort the `KeyList` in lexicographical order.
-3. Splice all key-value pairs in the `Map` in the order of the `KeyList` in the format of `key1=value1&key2=value2&key3=value3`, which is the `HttpParameters`.
-4. Splice all keys in the order of the `KeyList` in the format of `key1;key2;key3`, which is the `UrlParamList`.
+3. Splice all key-value pairs in the `Map` according to the order in `KeyList` in the format of `key1=value1&key2=value2&key3=value3`, which is the `HttpParameters`.
+4. Splice all keys in the order of the `KeyList`· in the format of `key1;key2;key3`, which is the `UrlParamList`.
 
-#### Samples
-- Sample 1:
+#### Examples
+- Example 1:
 Request path: `/?prefix=example-folder%2F&delimiter=%2F&max-keys=10`
 UrlParamList: `delimiter;max-keys;prefix`
 HttpParameters: `delimiter=%2F&max-keys=10&prefix=example-folder%2F`
->!The request parameters in the request path are URL-encoded too when the request is actually sent; therefore, be careful not to repeat the URL-encoding.
-- Sample 2:
+>! When the request is sent, the request parameters in the request path will also be URL-encoded. Therefore, do not repeat the URL encoding operation.
+>
+- Example 2:
 Request path: `/exampleobject?acl`
 UrlParamList: `acl`
 HttpParameters: `acl=`
 
 ### Step 4. Generate HeaderList and HttpHeaders
-1. Traverse the HTTP request parameters and generate the key-to-value mapping `Map` and the key list `KeyList`, where keys are [URL-encoded](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) and converted to lowercase and values are [URL-encoded](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C).
+1. Traverse the HTTP request parameters, and generate the key-to-value mapping `Map` and the key list `KeyList`, where keys are [URL-encoded](#.E5.87.86.E5.A4.87.E5.B7.A5 .E4.BD.9C) and converted to lowercase, and values are [URL-encoded](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C).
 2. Sort the `KeyList` in lexicographical order.
-3. Splice all key-value pairs in the `Map` in the order of the `KeyList` in the format of `key1=value1&key2=value2&key3=value3`, which is the `HttpHeaders`.
-4. Splice all keys in the order of the `KeyList` in the format of `key1;key2;key3`, which is the `HeaderList`.
+3. Splice all key-value pairs in the `Map` according to the order in `KeyList` in the format of `key1=value1&key2=value2&key3=value3`, which is the `HttpHeaders`.
+4. Splice all keys according to the order in `KeyList` in the format of `key1;key2;key3`, which is the `HeaderList`.
 
-#### Samples
+#### Examples
 Request headers:
 ```plaintext
 Host: examplebucket-1250000000.cos.ap-shanghai.myqcloud.com
@@ -96,30 +146,30 @@ Date: Thu, 16 May 2019 03:15:06 GMT
 x-cos-acl: private
 x-cos-grant-read: uin="100000000011"
 ```
-Calculate and get:
+Calculations:
 - HeaderList = `date;host;x-cos-acl;x-cos-grant-read`
 - HttpHeaders = `date=Thu%2C%2016%20May%202019%2003%3A15%3A06%20GMT&host=examplebucket-1250000000.cos.ap-shanghai.myqcloud.com&x-cos-acl=private&x-cos-grant-read=uin%3D%22100000000011%22`
 
 ### Step 5. Generate HttpString
-Use the HttpMethod, UriPathname, [HttpParameters](#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.94.9F.E6.88.90-urlparamlist-.E5.92.8C-httpparameters), and [HttpHeaders](#.E6.AD.A5.E9.AA.A44.EF.BC.9A.E7.94.9F.E6.88.90-headerlist-.E5.92.8C-httpheaders) to generate `HttpString` in the format of `HttpMethod\nUriPathname\nHttpParameters\nHttpHeaders\n`.
+Generate `HttpString` based on `HttpMethod`, `UriPathname`, [HttpParameters](#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.94.9F.E6.88.90-urlparamlist-.E5.92.8C-httpparameters), and [HttpHeaders](#.E6.AD.A5.E9.AA.A44.EF.BC.9A.E7.94.9F.E6.88.90-headerlist-.E5.92.8C-httpheaders) in the format of `HttpMethod\nUriPathname\nHttpParameters\nHttpHeaders\n`.
 
-Here:
+Where,
 - `HttpMethod` is converted to lowercase, such as `get` or `put`.
 - `UriPathname` is the request path, such as `/` or `/exampleobject`.
-- `\n` is a line break. The two line breaks (if any) bookending an empty string should be retained, such as in `get\n/exampleobject\n\n\n`.
+- `\n` is a line break. If there is an empty string, the line breaks before and after it should be retained, for example, `get\n/exampleobject\n\n\n`.
 
 
 ### Step 6. Generate StringToSign
-Generate the `StringToSign` based on the [KeyTime](#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E7.94.9F.E6.88.90-keytime) and [HttpString](#.E6.AD.A5.E9.AA.A45.EF.BC.9A.E7.94.9F.E6.88.90-httpstring) in the format of `sha1\nKeyTime\nSHA1(HttpString)\n`.
-Here:
+Generate `StringToSign` based on [KeyTime](#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E7.94.9F.E6.88.90-keytime) and [HttpString](#.E6.AD.A5.E9.AA.A45.EF.BC.9A.E7.94.9F.E6.88.90-httpstring) in the format of `sha1\nKeyTime\nSHA1(HttpString)\n`.
+Where,
 - `sha1` is a fixed string.
 - `\n` is a line break.
-- `SHA1(HttpString)` is the message digest generated by calculating the [HttpString](#.E6.AD.A5.E9.AA.A45.EF.BC.9A.E7.94.9F.E6.88.90-httpstring) with [SHA1](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C), which is in hexadecimal lowercase, such as `54ecfe22f59d3514fdc764b87a32d8133ea611e6`.
+- SHA1(HttpString) is the message digest (in lowercase hexadecimal format, such as `54ecfe22f59d3514fdc764b87a32d8133ea611e6`) calculated with [SHA1](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) and [HttpString](#.E6.AD.A5.E9.AA.A45.EF.BC.9A.E7.94.9F.E6.88.90-httpstring).
 
 ### Step 7. Generate Signature
-Calculate the message digest by using [HMAC-SHA1](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) with [SignKey](#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E7.94.9F.E6.88.90-signkey) (in string form instead of original binary form) as the key and [StringToSign](#.E6.AD.A5.E9.AA.A46.EF.BC.9A.E7.94.9F.E6.88.90-stringtosign) as the message, which is `Signature`, such as `01681b8c9d798a678e43b685a9f1bba0f6c0e012`.
+Use [HMAC-SHA1](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C) with [SignKey](#.E6.AD.A5.E9.AA.A42.EF.BC.9A.E7.94.9F.E6.88.90-signkey) (a string rather than the original binary) as the key and [StringToSign](#.E6.AD.A5.E9.AA.A46.EF.BC.9A.E7.94.9F.E6.88.90-stringtosign) as the message to calculate the message digest, which is `Signature`, for example, `01681b8c9d798a678e43b685a9f1bba0f6c0e012`.
 
-### Step 8. Generate an actual signature
+### Step 8: generate a signature
 Generate the actual signature based on [SecretId](#.E5.87.86.E5.A4.87.E5.B7.A5.E4.BD.9C), [KeyTime](#.E6.AD.A5.E9.AA.A41.EF.BC.9A.E7.94.9F.E6.88.90-keytime), [HeaderList](#.E6.AD.A5.E9.AA.A44.EF.BC.9A.E7.94.9F.E6.88.90-headerlist-.E5.92.8C-httpheaders), [UrlParamList](#.E6.AD.A5.E9.AA.A43.EF.BC.9A.E7.94.9F.E6.88.90-urlparamlist-.E5.92.8C-httpparameters), and [Signature](#.E6.AD.A5.E9.AA.A47.EF.BC.9A.E7.94.9F.E6.88.90-signature) in the following format:
 ```plaintext
 q-sign-algorithm=sha1
@@ -131,30 +181,33 @@ q-sign-algorithm=sha1
 &q-signature=Signature
 ```
 
->! Line breaks in the sample above are for easy understanding only and are not included in a real signature.
+>! Line breaks in the sample above are for readability only and are not included in the actual signature.
+>
 
-## Using Signature
-Signed HTTP requests initiated to COS through RESTful APIs can pass the signature in the following ways:
-1. Pass through a standard HTTP Authorization header, such as `Authorization: q-sign-algorithm=sha1&q-ak=...&q-sign-time=1557989753;1557996953&...&q-signature=...`
-2. Pass as an HTTP request parameter (be sure to URL-encode it), such as `/exampleobject?q-sign-algorithm=sha1&q-ak=...&q-sign-time=1557989753%3B1557996953&...&q-signature=...`
+## Using a Signature
+Signed HTTP requests sent to COS via RESTful APIs can pass the signature in the following ways:
+1. Pass through a standard HTTP `Authorization` header, such as `Authorization: q-sign-algorithm=sha1&q-ak=...&q-sign-time=1557989753;1557996953&...&q-signature=...`
+2. Pass as an HTTP request parameter (be sure to URL-encode), such as `/exampleobject?q-sign-algorithm=sha1&q-ak=...&q-sign-time=1557989753%3B1557996953&...&q-signature=...`
 
->?In the sample above, `...` is used to substitute the specific signing information.
+>? In the example above, `...` are the signatures.
+>
 
-## Using Temporary Security Credentials (Temporary Key)
-If temporary security credentials are used when the signature is calculated, then the security token field `x-cos-security-token` should also be passed in when the request is sent. The method to pass in this field varies by how the signature is used:
-1. If the signature is passed in through the standard HTTP Authorization header, the security token field should be passed in through the `x-cos-security-token` request header at the same time, such as:
+## Using a Temporary Credential (Key)
+If a temporary credential is used for signature calculation, the `x-cos-security-token` field should be specified when you send the request. The way to specify this field varies depending on how the signature is passed in.
+1. If the signature is passed in using the standard HTTP `Authorization` header, specify `x-cos-security-token` as a request header as follows:
 ```plaintext
 Authorization: q-sign-algorithm=sha1&q-ak=...&q-sign-time=1557989753;1557996953&...&q-signature=...
 x-cos-security-token: ...
 ```
-2. If the signature is passed in through HTTP request parameters, the security token field should be passed in through the `x-cos-security-token` request parameter at the same time, such as:
+2. If the signature is passed in as an HTTP request parameter, specify `x-cos-security-token` as a request parameter as follows:
 ```plaintext
 /exampleobject?q-sign-algorithm=sha1&q-ak=...&q-sign-time=1557989753%3B1557996953&...&q-signature=...&x-cos-security-token=...
 ```
 
->?In the example above, `...` is used to substitute the specific signature and security token content.
+>? In the samples above, `...` is the signature and access token.
+>
 
-## Sample Code
+## Sample Codes
 
 ### Pseudocode
 ```plaintext
@@ -165,7 +218,7 @@ StringToSign = sha1\nKeyTime\nSHA1(HttpString)\n
 Signature = HMAC-SHA1(SignKey, StringToSign)
 ```
 
-### Sample message digest calculation
+### Sample of the message digest algorithm
 
 The samples below illustrate how to call HMAC-SHA1 in different languages:
 
@@ -226,17 +279,17 @@ h.Write([]byte("ExampleKeyTime"))
 signKey := h.Sum(nil)
 ```
 
-## Use Cases
+## Examples
 
 ### Preparations
 
-Log in to the [API Key Management](https://console.cloud.tencent.com/cam/capi) page in the CAM Console to get your `APPID`, `SecretId`, and `SecretKey`. Below is an example:
+Log in to the CAM console and go to the [Manage API Key](https://console.cloud.tencent.com/cam/capi) page to obtain your `APPID`, `SecretId`, and `SecretKey`. Below is an example:
 
-| APPID | SecretId | SecretKey |
+| APPID      | SecretId                             | SecretKey                        |
 | ---------- | ------------------------------------ | -------------------------------- |
 | 1250000000 | AKIDQjz3ltompVjBni5LitkWHFlFpwkn9U5q | BQYIM75p8x0iWVFSIgqEKwFprpRSVHlz |
 
-### Uploading object
+### Uploading an object
 
 #### Original request
 
@@ -265,7 +318,7 @@ ObjectContent
 - **StringToSign** = `sha1\n1557989151;1557996351\n8b2751e77f43a0995d6e9eb9477f4b685cca4172\n`
 - **Signature** = `3b8851a11a569213c17ba8fa7dcf2abec6935172`
 
-Here, (empty string) represents an empty string with a length of 0 and `\n` a line break.
+Here, (empty string) is a zero-byte string and `\n` is a line break.
 
 #### Signed request
 
@@ -283,7 +336,7 @@ Authorization: q-sign-algorithm=sha1&q-ak=AKIDQjz3ltompVjBni5LitkWHFlFpwkn9U5q&q
 ObjectContent
 ```
 
-### Downloading object
+### Downloading an object
 
 #### Original request
 
@@ -305,7 +358,7 @@ Host: examplebucket-1250000000.cos.ap-beijing.myqcloud.com
 - **StringToSign** = `sha1\n1557989753;1557996953\n54ecfe22f59d3514fdc764b87a32d8133ea611e6\n`
 - **Signature** = `01681b8c9d798a678e43b685a9f1bba0f6c0e012`
 
-Here, `\n` represents a line break.
+Here, `\n` is a line break.
 
 #### Signed request
 
