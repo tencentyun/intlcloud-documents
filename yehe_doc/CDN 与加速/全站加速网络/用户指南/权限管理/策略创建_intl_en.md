@@ -11,4 +11,4 @@ To make it easier for you to configure domain name queries and manage permission
 ![4](https://main.qcloudimg.com/raw/243ebba2827f93c1aed48fc6a8a33ab6.png)
  >!Due to product upgrade and rename, the DSA custom policy you configured needs to be modified. Click **Edit** on the policy details page, change “dsa” to “ecdn” in the policy statement, and map the original DSA permission policy to the ECDN permission policy.
 ![11](https://main.qcloudimg.com/raw/1bacb50611098a10fed554d2b6111a0a.png)
-![22](https://main.qcloudimg.com/raw/0b76e5faf62df6d0274eb5a24e2327b0.png)
+![22](https://main.qcloudimg.com/raw/6874271450ae541923a4d93235c6f583.png)
