@@ -175,5 +175,5 @@ This document introduces the `tke-autoscaling-placeholder` tool for implementing
 
 ## References
 
-- [Pod Priority and Preemption](https://kubernetes.io/zh/docs/concepts/configuration/pod-priority-preemption/)
+- [Pod Priority and Preemption](https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/)
 - [Creating a Node Pool](https://intl.cloud.tencent.com/document/product/457/35901)
