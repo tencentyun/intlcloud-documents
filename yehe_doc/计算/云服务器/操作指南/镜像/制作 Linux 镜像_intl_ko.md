@@ -94,8 +94,7 @@ gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime
 
 ### 이미지 내보내기
 실제 수요에 따라 이미지 내보내기 방식을 선택합니다.
-- [툴을 사용해 내보내기](#Useplatform)
-- [명령어를 사용해 이미지 내보내기](#ExportImageForUsingCommand)
+
 
 <dx-tabs>
 <span id="Useplatform"></span>
