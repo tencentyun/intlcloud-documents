@@ -81,7 +81,7 @@ Most warning events will trigger the protection or recovery logic that involves 
 | 2009 | PLAY_EVT_CHANGE_RESOLUTION | Video resolution changes. |
 | 2010 | PLAY_EVT_GET_PLAYINFO_SUCC<br>PLAY_EVT_SNAPSHOT_RESULT | VOD file information obtained successfully (Android, iOS). <br>The error code of screencap snapshot (Windows). |
 | 2011 | PLAY_EVT_CHANGE_ROTATION | MP4 video rotation angle (Android, iOS). |
-| 2012 | PLAY_EVT_GET_MESSAGE | Used to receive messages inserted into the audio/video stream. For details, please see [iOS Message Reception](https://cloud.tencent.com/document/product/454/7880#Message) and [Android Message Reception](https://cloud.tencent.com/document/product/454/7886#Message). |
+| 2012 | PLAY_EVT_GET_MESSAGE | Used to receive messages inserted into the audio/video stream. |
 | 2013 | PLAY_EVT_PREPARED | Video loading is completed (Android, iOS). |
 | 2014 | PLAY_EVT_VOD_LOADING_END | Loading ends (Android, iOS). |
 | -2301 | PLAY_ERR_NET_DISCONNECT | The network is disconnected and fails to be reconnected after three attempts, so the publishing needs to be restarted. |
