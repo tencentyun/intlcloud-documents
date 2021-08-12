@@ -1705,7 +1705,7 @@ public Qcloud\Cos\Client download(string $bucket, string $key, string $saveAs, a
 | Progress         | Function      | 프로그레스 바 콜백，매개변수는 총 크기($totolSize)，업로드된 크기($downloadedSize) | 아니요       |
 | PartSize         | Int      | 최소 멀티파트 파일 크기, 기본적으로 50M |아니요       |
 | Concurrency         | Int      | 동시 실행 정도，기본 설정값: 10 | 아니요       |
-| ResumableDownload         | Bool      | 중단 지점부터 이어서 전송 활성화 여부. 기본값: false                                       |
+| ResumableDownload         | Bool      | 중단 지점부터 이어서 전송 활성화 여부. 기본값: false                                       |   아니요       |
 | ResumableTaskFile         | Int      | 중단 지점 파일 경로.기본 설정값:<saveAs.cosresumabletask>   | 아니요       |
 
 
