@@ -95,8 +95,7 @@ If `/boot` and `/home` are independent partitions in the current operating syste
 
 ### Exporting an image
 Choose the appropriate image export method as needed.
-- [Using a platform tool to export an image](#Useplatform)
-- [Using commands to export an image](#ExportImageForUsingCommand)
+
 
 <dx-tabs>
 
