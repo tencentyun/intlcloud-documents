@@ -23,16 +23,6 @@ Use the following message APIs if you only need to use text and signaling (a pie
 | [sendGroupTextMessage](https://testcomm.qq.com/im/apidoc/api/com.tencent.imsdk.unity.V2TIMMessageManager.html#com_tencent_imsdk_unity_V2TIMMessageManager_sendGroupTextMessage_System_String_System_String_com_tencent_imsdk_unity_MessagePriority_) | Sends a group text message. |
 | [sendGroupCustomMessage](https://testcomm.qq.com/im/apidoc/api/com.tencent.imsdk.unity.V2TIMMessageManager.html#com_tencent_imsdk_unity_V2TIMMessageManager_sendGroupCustomMessage_System_String_System_String_com_tencent_imsdk_unity_MessagePriority_) | Sends a group custom (signaling) message. |
 
-## Signaling APIs
-
-| API | Description |
-|---------|---------|
-| [addSignalingListener](https://testcomm.qq.com/im/apidoc/api/com.tencent.imsdk.unity.V2TIMSignallingManager.html#com_tencent_imsdk_unity_V2TIMSignallingManager_addInvitedSignaling_com_tencent_imsdk_unity_SignalingInfo_) | Adds a signaling listener. |
-| [invite](https://testcomm.qq.com/im/apidoc/api/com.tencent.imsdk.unity.V2TIMSignallingManager.html#com_tencent_imsdk_unity_V2TIMSignallingManager_invite_System_String_System_String_System_Boolean_System_Int32_com_tencent_imsdk_unity_OfflinePushInfo_) | Invites a user. |
-| [inviteInGroup](https://testcomm.qq.com/im/apidoc/api/com.tencent.imsdk.unity.V2TIMSignallingManager.html#com_tencent_imsdk_unity_V2TIMSignallingManager_inviteInGroup_System_String_System_String___System_String_System_Boolean_System_Int32_) | Invites certain users in the group. |
-| [cancel](https://testcomm.qq.com/im/apidoc/api/com.tencent.imsdk.unity.V2TIMSignallingManager.html#com_tencent_imsdk_unity_V2TIMSignallingManager_cancel_System_String_System_String_) | The inviter cancels the invitation. |
-| [accept](https://testcomm.qq.com/im/apidoc/api/com.tencent.imsdk.unity.V2TIMSignallingManager.html#com_tencent_imsdk_unity_V2TIMSignallingManager_accept_System_String_System_String_) | The invitee accepts the invitation. |
-| [reject](https://testcomm.qq.com/im/apidoc/api/com.tencent.imsdk.unity.V2TIMSignallingManager.html#com_tencent_imsdk_unity_V2TIMSignallingManager_reject_System_String_System_String_) | The invitee rejects the invitation. |
 
 ## Advanced Message APIs
 

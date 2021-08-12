@@ -25,10 +25,10 @@ For a service in native LoadBalancer mode, a Cloud Load Balancer (CLB) can be au
 ### Directions
 
 <dx-tabs>
-::: Console operation instructions
+::: Console
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
 2. Go to the "Create a Service" page and configure the service parameters as required by referring to the step of [creating a service in the console](https://intl.cloud.tencent.com/document/product/457/36833).
-    Configure some key parameters as follows:
+    Some key parameters need to be set as follows:
 ![](https://main.qcloudimg.com/raw/1f9ff7c6ebcffd2cfb35404f9d1f728e.png)
  - **Service Access**: select **LoadBalancer (public network)** or **LoadBalancer (private network)**.
  - **Network Mode**: **Enable CLB-to-Pod Direct Access**.
@@ -37,7 +37,7 @@ For a service in native LoadBalancer mode, a Cloud Load Balancer (CLB) can be au
 		
 
 :::
-::: YAML operation instructions
+::: YAML
 The YAML configuration for a service in CLB-to-Pod direct access mode is the same as that for a common service. In this example, the annotation indicates whether to enable the CLB-to-Pod direct access mode.
 
 ```
@@ -81,9 +81,26 @@ service.cloud.tencent.com/tke-service-config: [tke-service-configName]
 
 
 
+### Notes
+
+#### Ensuring the availability during rolling update
+
+ReadinessGate, provided by the official Kubernetes, is mainly used to control the status of Pod, and requires the cluster version to be later than 1.12. By default, a Pod has the following conditions: PodScheduled, Initialized, ContainersReady, when these statuses are all Ready, the Pod Ready passes the conditions. However, in the cloud native scenario, the status of Pods needs to be judged in combination with other factors. `ReadinessGate` provides a mechanism that allows you to add a fence for the Pod's status judgment, which is judged and controlled by a third party. In this way, the status of the Pod is associated with the third party.
 
 
+#### Changes in the rolling update of CLB-to-Pod direct access mode
 
+When users start the rolling update of an app, Kubernetes will perform the rolling update according to the update policy. However, the identification that it uses to judge whether a batch of Pods have started only includes the status of the Pods themselves, and does not consider whether the Pods are configured with health check in the CLB and have passed it. If such Pods cannot be scheduled in time when the access layer components are under high load, the Pods with successful rolling update may not be providing services to external users, thus resulting in service interruption.
+In order to associate the backend status of the CLB and rolling update, the TKE access layer components introduced a new feature: `ReadinessGate`, which was introduced in Kubernetes 1.12. Only when the TKE access layer components confirm that the backend binding is successful and the health check is passed, will it configure the state of `ReadinessGate`, so that Pods can reach the Ready state and the rolling update of the entire workload can be facilitated.
+
+#### Using ReadinessGate in a cluster 
+
+
+Kubernetes clusters provide a service registration mechanism. You only need to register your services to a cluster in the form of `MutatingWebhookConfigurations` resources. When a Pod is created, the cluster will deliver notifications according to the configured callback path. At this time, the pre-creation operation can be performed for the Pod, that is, `ReadinessGate` can be added to the Pod. This callback process must be based on HTTPS. That is, the CA that issues requests needs to be configured in `MutatingWebhookConfigurations`, and a certificate issued by the CA needs to be configured on the server.
+
+#### Disaster recovery of the ReadinessGate mechanism
+
+The service registration or certificates in user clusters may be deleted by users, although these system component resources should not be modified or destroyed by users. However, such problems will inevitably occur because of users’ exploration of clusters or misoperations. Therefore, the integrity of the above resources will be checked when the access layer component is started, and the resources will be rebuilt if the integrity is damaged to strengthen the robustness of the system.
 
 
 
@@ -112,23 +129,23 @@ service.cloud.tencent.com/tke-service-config: [tke-service-configName]
    2. Add the VPC where the cluster is located to the created CCN instance.
    3. Register the container network CIDR block of the relevant cluster to the CCN. In the cluster’s **Basic Information** page, enable the **CCN**.
 ![](https://main.qcloudimg.com/raw/0f65c1e444196f44bfcdd47a02d97240.png)
- - You can [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1%20TKE&step=1) to apply for this feature. **CCN will not verify the IP address in this method** (not recommended).
+ - **You can [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1%20TKE&step=1) to apply for it.** CCN will not verify the IP address in this method (not recommended).
 
 
 ### Directions
 
 <dx-tabs>
-::: Console operation instructions
+::: Console
 1. Log in to the [TKE console](https://console.cloud.tencent.com/tke2).
-2. Go to the "Create a Service" page and configure the service parameters as required by referring to the step of [creating a service in the console](https://intl.cloud.tencent.com/document/product/457/36833).
-    Configure some key parameters as follows:
+2. Refer to the step of [Creating a service in the console](https://intl.cloud.tencent.com/document/product/457/36833) to go to the "Create a Service" page and set the service parameters as required.
+    Some key parameters need to be set as follows:
 ![](https://main.qcloudimg.com/raw/1f9ff7c6ebcffd2cfb35404f9d1f728e.png)
  - **Service Access**: select **LoadBalancer (public network)** or **LoadBalancer (private network)**.
  - **Network Mode**: **Enable CLB-to-Pod Direct Access**.
  - **Workload Binding**: select **Reference Workload**. In the displayed window, select the backend workload of the VPC-CNI mode.
 3. Click **Create Service** to complete creation. 
 :::
-::: YAML operation instructions
+::: YAML
 The YAML configuration for a service in CLB-to-Pod direct access mode is the same as that for a common service. In this example, the annotation indicates whether to enable the CLB-to-Pod direct access mode.
 
 **Prerequisites**

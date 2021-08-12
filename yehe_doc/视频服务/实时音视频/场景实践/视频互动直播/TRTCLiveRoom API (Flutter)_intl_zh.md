@@ -21,7 +21,7 @@ TRTCLiveRoom 是一个开源的 Class，依赖腾讯云的两个闭源 SDK，具
 | [sharedInstance](#sharedinstance)               | 获取单例对象。           |
 | [destroySharedInstance](#destroysharedinstance) | 销毁单例对象。           |
 | [registerListener](#registerlistener)           | 设置事件回调。           |
-| [unRegisterListener](#unregisterlistener)       | 设置事件回调所在的线程。 |
+| [unRegisterListener](#unregisterlistener)       | 移除事件监听接口。 |
 | [login](#login)                                 | 登录。                   |
 | [logout](#logout)                               | 登出。                   |
 | [setSelfProfile](#setselfprofile)               | 修改个人信息。           |
@@ -856,7 +856,7 @@ void onAudienceEnter(TRTCLiveRoomDef.TRTCLiveUserInfo userInfo);
 
 ### onRoomPKRejected
 
-主播接受跨房 PK 请求。
+主播拒绝跨房 PK 请求。
 
 参数如下表所示：
 

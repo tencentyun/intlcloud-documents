@@ -133,7 +133,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 | Second | Number | 语音时长，单位：秒。 |
 | Download_Flag | Number | 语音下载方式标记。目前 Download_Flag 取值只能为2，表示可通过`Url`字段值的 URL 地址直接下载语音。 |
 
->?2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的语音消息元素如下：
+2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的语音消息元素如下：
 ```
 {
     "MsgType": "TIMSoundElem",
@@ -143,8 +143,8 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
         "Second": 1         //语音时长，类型为 Number，单位：秒。
     }
 }
-```
->
+  ```
+
 
 ### 图像消息元素
 
@@ -218,7 +218,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 | FileName | String | 文件名称。 |
 | Download_Flag | Number | 文件下载方式标记。目前 Download_Flag 取值只能为2，表示可通过`Url`字段值的 URL 地址直接下载文件。 |
 
->?2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的文件消息元素如下：
+2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的文件消息元素如下：
 >```
 >{
 >"MsgType": "TIMFileElem",
@@ -228,14 +228,15 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 >  "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //文件名称，类型为 String。
 >}
 >}
->```
 ```
+
 
 ### 视频消息元素
 
 >!通过服务端集成的 Rest API 接口发送视频消息时，需要填入视频的 URL ，且需保证通过该 URL 能下载到对应视频。VideoDownloadFlag 和 ThumbDownloadFlag 字段必须填2。
 
 4.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的视频消息元素的格式如下：
+
 ```
 {
     "MsgType": "TIMVideoFileElem",
@@ -270,8 +271,9 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 | ThumbDownloadFlag | Number | 视频缩略图下载方式标记。目前 ThumbDownloadFlag 取值只能为2，表示可通过`ThumbUrl`字段值的 URL 地址直接下载视频缩略图。 |
 
 
->?2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的视频消息元素如下：
->```
+2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的视频消息元素如下：
+
+```
 {
     "MsgType": "TIMVideoFileElem",
     "MsgContent": {
