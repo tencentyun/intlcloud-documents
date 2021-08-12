@@ -1,31 +1,28 @@
-## Sample CAM policies for TencentDB
-You can grant a user the permission to view and use specific resources in the TencentDB Console by using a CAM policy. The sample below shows how to allow a user to use certain policies in the console.
+## Sample CAM Policies for TencentDB
+You can grant a user the permission to view and use specific resources in the TencentDB console by using a CAM policy. The sample below shows how to allow a user to use certain policies in the console.
 
->?As TDSQL was formerly known as, its API keyword in CAM is "dcdb".
+>?As TDSQL for MySQL was formerly known as DCDB, its API keyword in CAM is `dcdb`.
 
-### Syntax for creating a custom policy
+### Syntax for creating custom policy
 1. Enter the [Policy Syntax](https://console.cloud.tencent.com/cam/policy) configuration page and click **Create Custom Policy**.
-![](https://main.qcloudimg.com/raw/fc7ff2e20322c74b2e8b5728a483255c.png)
-2. Click **Create by Policy Syntax** in the pop-up dialog box.
+2. Click **Create by Policy Syntax** in the pop-up window.
 ![](https://main.qcloudimg.com/raw/cda7a1b0ec6256b620bcbd9290fd60fd.png)
-2. Select "Blank Template" and click **Next**.
+3. Select **Blank Template** and click **Next**.
 ![](https://main.qcloudimg.com/raw/9c6bcdc90c02059a5abb67e73a74d739.png)
-3. Enter the corresponding policy syntax.
+4. Enter the corresponding policy syntax.
 ![](https://main.qcloudimg.com/raw/0938ab4115dc67b2e952aa1eaa1283cb.png)
 
-### Associating a sub-account/collaborator and verifying
+### Associating sub-account/collaborator and verifying
 After the policy is created, associate it with a user/group. After the association is completed, use another browser (or server) to verify whether the sub-account/collaborator can work normally. If the policy syntax is written correctly, you can observe the following:
 - You have normal access to the intended target products and resources and can use all the expected features.
-- You will be prompted with "You do not have permission to perform this operation" when accessing other unauthorized products or resources.
+- You will be prompted that "You do not have permission to perform this operation" when accessing other unauthorized products or resources.
 
-> To avoid mutual impact of multiple policies, it is recommended to associate only one policy with a sub-account at a time.
+>?To avoid mutual impact of multiple policies, we recommend you associate only one policy with a sub-account at a time.
 > The change to account access permission will take effect within 1 minute.
 
 ## Appendix. Commonly Used Policy Syntax
-
-### Policy for authorizing use of all features in all TencentDB instances
+### Policy for authorizing the use of all features in all TencentDB instances
 To grant a user permission to create and manage TencentDB instances, implement the policy named `QcloudDCDBFullAccess` for the user.
-
 The policy syntax is as follows:
 ```
 {
@@ -42,8 +39,7 @@ The policy syntax is as follows:
 }
 ```
 
-
-### Policy for authorizing query of all TencentDB instances
+### Policy for authorizing the query of all TencentDB instances
 To grant a user permission to view TencentDB instances but not create, delete, or modify them, implement the policy named `QcloudDCDBInnerReadOnlyAccess` for the user.
 
 The policy syntax is as follows:
@@ -63,9 +59,9 @@ The policy syntax is as follows:
 ```
 The above policy achieves its goal by allowing the user to separately authorize the use of all operations beginning with "Describe" in TencentDB with the CAM policy.
 
->? As not all functional APIs are covered in the beta test, you may see that a small number of operations are not included in CAM, which is normal.
+>?As not all functional APIs are covered currently, you may see that a small number of operations are not included in CAM, which is normal.
 
-### Policy for granting a user permission to manipulate TencentDB instances in a specific region
+### Policy for granting user permission to manipulate TencentDB instances in one specific region
 To grant a user the permission to manipulate TencentDB instances in a specific region, associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instances in Guangzhou.
 ```
 {
@@ -80,8 +76,8 @@ To grant a user the permission to manipulate TencentDB instances in a specific r
 }
 ```
 
-### Policy for granting a user permission to manipulate TencentDB instances in multiple specific regions
-To grant a user the permission to manipulate TencentDB instances in multiple specific region, associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instances in Guangzhou and Chengdu.
+### Policy for granting user permission to manipulate TencentDB instances in multiple specific regions
+To grant a user the permission to manipulate TencentDB instances in a specific region, associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instances in Guangzhou and Chengdu.
 ```
 {
     "version": "2.0",
@@ -95,9 +91,8 @@ To grant a user the permission to manipulate TencentDB instances in multiple spe
 }
 ```
 
-### Policy for granting a user permission to manipulate a specific TencentDB instance
+### Policy for granting user permission to manipulate one specific TencentDB instance
 To grant a user the permission to manipulate a specific database, associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instance "dcdb-xxx" in Guangzhou.
-
 ```
 {
     "version": "2.0",
@@ -106,15 +101,14 @@ To grant a user the permission to manipulate a specific database, associate the 
             "action": [
                 "dcdb:*"
             ],
-            "resource": "qcs::dcdb:ap-chengdu::instance/dcdb-fwr62n3i",
+            "resource": "qcs::dcdb:ap-guangzhou::instance/dcdb-xxx",
             "effect": "allow"
         }
     ]
 }
-
 ```
 
-### Policy for granting a user permission to manipulate multiple TencentDB instances
+### Policy for granting user permission to manipulate multiple TencentDB instances
 To grant a user the permission to manipulate TencentDB instances in batches, associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instances "dcdb-xxx" and "dcdb-yyy" in Guangzhou and "dcdb-zzz" in Beijing.
 ```
 {
@@ -129,8 +123,7 @@ To grant a user the permission to manipulate TencentDB instances in batches, ass
 }
 ```
 
-
-### Policy for granting a user different permissions to manipulate multiple TencentDB instances
+### Policy for granting user different permissions to manipulate multiple TencentDB instances
 To grant a user the permission to manipulate TencentDB instances in batches, associate the following policy with the user. For example, the policy below allows the user to manipulate the TencentDB instances "dcdb-xxx" and "dcdb-yyy" in Guangzhou and "dcdb-zzz" in Beijing.
 ```
 {
@@ -145,9 +138,7 @@ To grant a user the permission to manipulate TencentDB instances in batches, ass
 }
 ```
 
->?For all currently supported APIs, please see the list at the end of this document.
-
-### Denying a user permission to create TencentDB accounts
+### Denying user permission to create TencentDB accounts
 To deny a user permission to create TencentDB accounts, configure `"effect": "deny"`.
 ```
 {
@@ -162,10 +153,8 @@ To deny a user permission to create TencentDB accounts, configure `"effect": "de
 }
 ```
 
-
 ### Other custom policies
 If preset policies cannot meet your requirements, you can create custom policies as shown below:
-
 ```
 {
     "version": "2.0",
@@ -185,27 +174,3 @@ If preset policies cannot meet your requirements, you can create custom policies
 - Replace "Resource" with the resources that you want to authorize the user to manipulate.
 - Replace "Effect" with "Allow" or "Deny".
 
-
-### Supported APIs
-
-| Operation Name | API Name | Effective in Console After Configuration |
-| :-------- | :------------------------ |:------------------------ |
-| Querying the upgrade price of an instance     | DescribeDCDBUpgradePrice       | No                  |
-| Renewing an instance             | RenewDCDBInstance              | No                  |
-| Querying the renewal price of an instance     | DescribeDCDBRenewalPrice       | No                  |
-| Scaling an instance             | UpgradeDCDBInstance            | No                  |
-| Viewing the instance list         | DescribeDCDBInstances          | Yes                  |
-| Getting the log list         | DescribeDBLogFiles             | Yes                  |
-| Initializing instances           | InitDCDBInstances              | No                  |
-| Creating an account             | CreateAccount                  | Yes                  |
-| Querying the account list         | DescribeAccounts               | Yes                  |
-| Deleting an account             | DeleteAccount                  | Yes                  |
-| Setting account permission         | GrantAccountPrivileges         | Yes                  |
-| Querying account permission         | DescribeAccountPrivileges      | Yes                  |
-| Copying account permission         | CopyAccountPrivileges          | No                  |
-| Modifying database account remarks   | ModifyAccountDescription       | No                  |
-| Resetting account password         | ResetAccountPassword           | Yes                  |
-| Viewing database parameters       | DescribeDBParameters           | No                  |
-| Modifying database parameters       | ModifyDBParameters             | No                  |
-| Cloning an account             | CloneAccount                   | Yes                  |
-| Getting SQL logs          | DescribeSqlLogs                | No                  |
