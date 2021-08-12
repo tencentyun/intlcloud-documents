@@ -88,25 +88,29 @@ tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=817176k,mode=7
 gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime,user_id=1000,group_id=100)
 ```
 According to the result, the root partition resides in `/dev/sda1`. No independent partitions reside in `/boot` or `/home`. `sda1` contains the boot partition, and `mbr` is missing. Therefore, we only need to copy the entire `sda`.
->! The exported image should contain at least the root partition and mbr. If mbr is missing, the operating system cannot be started.
-> If `/boot` and `/home` are independent partitions in the current operating system, the exported image should also contain them.
-> 
+<dx-alert infotype="notice">
+The exported image should contain at least the root partition and mbr. If mbr is missing, the operating system cannot be started.
+If `/boot` and `/home` are independent partitions in the current operating system, the exported image should also contain them.
+</dx-alert>
 
 ### Exporting an image
 Choose the appropriate image export method as needed.
 - [Using a platform tool to export an image](#Useplatform)
 - [Using commands to export an image](#ExportImageForUsingCommand)
 
-<span id="Useplatform"></span>
-#### Using a platform tool to export an image
-For more information on how to use the image export tools of virtualization platforms, such as VMWare vCenter Convert and Citrix XenConvert, see the document for the respective platform.
->? Tencent Cloud’s service migration supports images in qcow2, vhd, raw, and vmdk formats.
->
+<dx-tabs>
 
+<span id="Useplatform"></span>
+::: Using\sa\splatform\stool\sto\sexport\san\simage
+For more information on how to use the image export tools of virtualization platforms, such as VMWare vCenter Convert and Citrix XenConvert, see the document for the respective platform.
+<dx-alert infotype="explain">
+Tencent Cloud’s service migration supports images in qcow2, vhd, raw, and vmdk formats.
+</dx-alert>
+:::
 <span id="ExportImageForUsingCommand"></span>
-#### Using commands to export an image
->! This method poses higher risks. For example, the file system's metadata may be corrupted when I/O is busy. We recommended that you [check the image](#CheckMirror) to make sure that the image is intact and correct after it is exported.
->
+::: Using\scommands\sto\sexport\san\simage
+<dx-alert infotype="notice">This method poses higher risks. For example, the file system's metadata may be corrupted when I/O is busy. We recommended that you [check the image](#CheckMirror) to make sure that the image is intact and correct after it is exported.
+</dx-alert>
 
 You can use either the [qemu-img](#qemuimg) or [dd](#dd) command to export an image.
 - **Use the `qemu-img` command**<span id="qemuimg"></span>
@@ -154,8 +158,11 @@ Disk identifier: 0x0008f290
 /dev/sda4        88066048  2919910139  1415922046   8e  Linux LVM
 ```
 According to the returned result of the `fdisk` command, the sda1 ends at 41945087 \* 512 bytes, so set `count` to 20481 MB.
->? The image exported by using the `dd` command is in raw format. We recommend that you [convert it to qcow2, vhd, or other image formats](#ImageFormatConversion).
->
+<dx-alert infotype="explain">
+The image exported by using the `dd` command is in raw format. We recommend that you [convert it to qcow2, vhd, or other image formats](#ImageFormatConversion).
+</dx-alert>
+:::
+</dx-tabs>
 
 <span id="ImageFormatConversion"></span>
 ### Converting the image format
