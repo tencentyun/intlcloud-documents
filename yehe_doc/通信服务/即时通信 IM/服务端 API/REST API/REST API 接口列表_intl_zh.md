@@ -1,4 +1,3 @@
-
 ## 帐号管理
 
 | 功能说明  | 接口 |
@@ -68,6 +67,7 @@
 
 | 功能说明               | 接口                                                         |
 | ---------------------- | ------------------------------------------------------------ |
+|获取 App 中的所有群组|[v4/group_open_http_svc/get_appid_group_list](https://intl.cloud.tencent.com/document/product/1047/34960)|
 | 创建群组               | [v4/group_open_http_svc/create_group](https://intl.cloud.tencent.com/document/product/1047/34895) |
 | 获取群详细资料       | [v4/group_open_http_svc/get_group_info](https://intl.cloud.tencent.com/document/product/1047/34961) |
 | 获取群成员详细资料     | [v4/group_open_http_svc/get_group_member_info](https://intl.cloud.tencent.com/document/product/1047/34948) |

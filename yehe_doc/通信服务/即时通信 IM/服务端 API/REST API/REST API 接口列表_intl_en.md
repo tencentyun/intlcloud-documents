@@ -1,4 +1,3 @@
-
 ## Account Management
 
 | Feature | API |
@@ -26,8 +25,8 @@
 | Feature | API |
 |---------|---------|
 | Pushes to all users. | [v4/all_member_push/im_push](https://intl.cloud.tencent.com/document/product/1047/37166) |
-| Sets application attribute names. | [v4/all_member_push/im_set_attr_name](https://intl.cloud.tencent.com/document/product/1047/37167) |
-| Gets application attribute names. | [v4/all_member_push/im_get_attr_name](https://intl.cloud.tencent.com/document/product/1047/37168) |
+| Sets app attribute names. | [v4/all_member_push/im_set_attr_name](https://intl.cloud.tencent.com/document/product/1047/37167) |
+| Gets app attribute names. | [v4/all_member_push/im_get_attr_name](https://intl.cloud.tencent.com/document/product/1047/37168) |
 | Gets user attributes. | [v4/all_member_push/im_get_attr](https://intl.cloud.tencent.com/document/product/1047/37169) |
 | Sets user attributes.     | [v4/all_member_push/im_set_attr](https://intl.cloud.tencent.com/document/product/1047/37170) |
 | Deletes user attributes.     | [v4/all_member_push/im_remove_attr](https://intl.cloud.tencent.com/document/product/1047/37171) |
@@ -58,16 +57,17 @@
 | Blocklists users. | [v4/sns/black_list_add](https://intl.cloud.tencent.com/document/product/1047/34911) |
 | Unblocklists users. | [v4/sns/black_list_delete](https://intl.cloud.tencent.com/document/product/1047/34912) |
 | Pulls a blocklist. | [v4/sns/black_list_get](https://intl.cloud.tencent.com/document/product/1047/34914) |
-| Verifies users on a blocklist. | [v4/sns/black_list_check](https://intl.cloud.tencent.com/document/product/1047/34913) |
+| Checks whether specified users are on a user’s blocklist and/or vice versa. | [v4/sns/black_list_check](https://intl.cloud.tencent.com/document/product/1047/34913) |
 | Adds lists. | [v4/sns/group_add](https://intl.cloud.tencent.com/document/product/1047/34950) |
 | Deletes lists. | [v4/sns/group_delete](https://intl.cloud.tencent.com/document/product/1047/34926) |
-| Pulls lists. | [v4/sns/group_get](https://intl.cloud.tencent.com/document/product/1047/40123) |
+|Pulls lists.|[v4/sns/group_get](https://intl.cloud.tencent.com/document/product/1047/40123)|
 
 
 ## Group Management
 
 | Feature | API |
 | ---------------------- | ------------------------------------------------------------ |
+|Gets all groups in an app.|[v4/group_open_http_svc/get_appid_group_list](https://intl.cloud.tencent.com/document/product/1047/34960)|
 | Creates a group. | [v4/group_open_http_svc/create_group](https://intl.cloud.tencent.com/document/product/1047/34895) |
 | Gets group profiles. | [v4/group_open_http_svc/get_group_info](https://intl.cloud.tencent.com/document/product/1047/34961) |
 | Gets group member profiles. | [v4/group_open_http_svc/get_group_member_info](https://intl.cloud.tencent.com/document/product/1047/34948) |
@@ -90,7 +90,7 @@
 | Sets the unread message count of a member. | [v4/group_open_http_svc/set_unread_msg_num](https://intl.cloud.tencent.com/document/product/1047/34909) |
 | Deletes messages sent by a specified user. | [v4/group_open_http_svc/delete_group_msg_by_sender](https://intl.cloud.tencent.com/document/product/1047/34970) |
 | Gets group message history. | [v4/group_open_http_svc/group_msg_get_simple](https://intl.cloud.tencent.com/document/product/1047/34971) |
-| Gets the number of online users in an audio-video group. | [v4/group_open_http_svc/get_online_member_num](https://intl.cloud.tencent.com/document/product/1047/40123)|
+| Gets the number of online users in an audio-video group. | [v4/group_open_http_svc/get_online_member_num](https://intl.cloud.tencent.com/document/product/1047/38521)|
 
 ## Global Mute Management
 | Feature | API |

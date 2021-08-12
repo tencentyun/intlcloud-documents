@@ -3,8 +3,7 @@
 - When the admin specifies an account to send a message to another account, the sender displayed to the recipient is not the admin, but the account specified by the admin.
 - This API does not check whether the sender and the recipient are friends or blocklisted by either party or whether the recipient is muted.
 
->!When calling this API to send a one-to-one message, you must specify whether to synchronize the message to the sender, which is the admin account or the account specified by the admin. Synchronization can be implemented via online terminals and roaming servers. This API provides the `SyncOtherMachine` parameter to determine whether to synchronize the message. For more information, see **Sample request packet** below.
-
+>!When calling this API to send a one-to-one message, you must specify whether to synchronize the message to the sender, which is the admin account or the account specified by the admin. Synchronization can be implemented via online terminals and roaming servers. This API provides the `SyncOtherMachine` parameter to determine whether to synchronize the message. For more information, see **Sample requests** below.
 
 ## API Calling Description
 ### Sample request URL
@@ -23,11 +22,11 @@ The following table only describes the modified parameters when this API is call
 | usersig | Signature generated in the app admin account. For details on how to generate the signature, please see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | random | A random 32-bit unsigned integer ranging from 0 to 4294967295 |
 
-### Maximum calling frequency
+### Maximum call frequency
 
 200 calls per second
 
-### Sample request packets
+### Sample requests
 Here, we use sending a text message as an example. To send messages of other types, set `MsgBody` to the corresponding message type. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527).
 
 #### The admin sends a message to another account.
@@ -108,7 +107,7 @@ Here, we use sending a text message as an example. To send messages of other typ
         },
         "ApnsInfo": {
             "Sound": "apns.mp3",
-            "BadgeMode": 1, // If this field is not specified or is set to `0`, the message is counted. If this field is set to `1`, the message is not counted, that is, the icon number in the upper-right corner does not increase.
+            "BadgeMode": 1, // If this field is left as default or is set to `0`, the message is counted. If this field is set to `1`, the message is not counted, that is, the badge counter in the upper-right corner does not increase.
             "Title":"apns title", // APNs title
             "SubTitle":"apns subtitle", // APNs subtitle
             "Image":"www.image.com" // Image URL
@@ -139,18 +138,18 @@ Here, we use sending a text message as an example. To send messages of other typ
 }
 ```
 
-### Request packet fields
+### Request fields
 
 | Field | Type | Required | Description |
 |---------|---------|----|---------|
-| SyncOtherMachine | Integer | No | `1`: synchronize the message to the `From_Account` online terminal and roaming server.<br/>`2`: do not synchronize the message to `From_Account`.<br/>If this field is not specified, the message will be synchronized to the `From_Account` roaming server by default. |
+| SyncOtherMachine | Integer | No | `1`: synchronize the message to the `From_Account` online terminal and roaming server.<br/>`2`: do not synchronize the message to `From_Account`.<br/>If this field is not specified, the message will be synchronized to the `From_Account` roaming server. |
 | From_Account | String | No | `UserID` of the sender (used to specify the message sender) |
 | To_Account | String | Yes | `UserID` of the recipient |
-| MsgLifeTime | Integer | No | Offline retention period (seconds) of the message; max. period: 7 days (604800 seconds). <li>If this field is set to `0`, the message will only be sent to the recipient online and not retained offline. </li><li>If this field is set to a period longer than 7 days (604800 seconds), the message will still be retained for only 7 days. </li><li>If this field is not set, the message will be retained for 7 days by default.</li> |
-| MsgRandom | Integer | Yes | Random number of the message. It is used by the backend for message deduplication within a second. Make sure the random number is entered. |
-| MsgTimeStamp | Integer | No | Message timestamp in UNIX format (unit: second) |
+| MsgLifeTime | Integer | No | The offline retention period of the message (unit: second); max. period: 7 days (604800 seconds). <li>If this field is set to `0`, the message will only be sent to the recipient online and not retained offline. </li><li>If this field is set to a period longer than 7 days (604800 seconds), the message will still be retained for only 7 days. </li><li>If this field is not set, the message will be retained for 7 days by default.</li> |
+| MsgRandom | Integer | Yes | Random number of the message. It is used by the backend for message deduplication within a second. Make sure a random number is entered. |
+| MsgTimeStamp | Integer | No | The message timestamp in UNIX format (unit: second) |
 | ForbidCallbackControl | Array | No | Message callback forbidding field, which is valid only for this message. `ForbidBeforeSendMsgCallback` forbids the callback before sending the message. `ForbidAfterSendMsgCallback` forbids the callback after sending the message. |
-| SendMsgControl | Array | No | Message sending control option. It is a string array and takes effect on the current message only. `NoUnread` means not to include this message in the unread count. Example: "SendMsgControl": ["NoUnread"]  |
+| SendMsgControl | Array | No | Message sending control option. It is a string array and is valid only for this message. `NoUnread` means not to include this message in the unread count, and "NoLastMsg" means not to refresh the conversation list. Example: "SendMsgControl": ["NoUnread","NoLastMsg"] |
 | MsgBody | Object | Yes | Message body. For details on formats, please see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). (Note: a message can contain multiple message elements, in which case `MsgBody` is an array.) |
 | MsgType | String | Yes | TIM message object type. Valid values: <ul style="margin:0;"><li >`TIMTextElem` (text message) <li >`TIMLocationElem` (location message) <li >`TIMFaceElem` (emoji message) <li >`TIMCustomElem` (custom message) <li >`TIMSoundElem` (voice message) <li >`TIMImageElem` (image message) <li >`TIMFileElem` (file message) <li >`TIMVideoFileElem` (video message) |
 | MsgContent | Object | Yes | Different message object types (`MsgType`) have different formats (`MsgContent`). For details, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
@@ -158,7 +157,7 @@ Here, we use sending a text message as an example. To send messages of other typ
 | OfflinePushInfo | Object | No | Information of offline push. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
 
 
-### Sample response packets
+### Sample responses
 - Response to a successful request
 ```
 {
@@ -179,7 +178,7 @@ Here, we use sending a text message as an example. To send messages of other typ
 }
 ```
 
-### Response packet fields
+### Response fields
 
 | Field | Type | Description |
 |---------|---------|---------|
@@ -197,24 +196,24 @@ The following table describes the error codes specific to this API:
 
 | Error Code | Description |
 | ------------- | ------------------------------------------------------------ |
-| 20001 | Invalid request packet. |
+| 20001 | Invalid request. |
 | 20002 | `UserSig` or `A2` has expired. |
 | 20003 | The `UserID` of the sender or recipient is invalid or does not exist. Make sure that the `UserID` has been imported into IM. |
 | 20004 | Network exception. Try again. |
 | 20005 | Internal server error. Try again. |
 | 20006 | The callback before sending a one-to-one message was triggered, and the app backend returned a response to forbid delivering the message. |
-| 90001 | Failed to parse the JSON request packet. Make sure the format is valid. |
-| 90002 | The `MsgBody` in the JSON request packet does not meet message format requirements or `MsgBody` is not an array. For more information, please see the **Message Element TIMMsgElement** section in [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement). |
-| 90003 | The JSON request packet does not contain the `To_Account` field or the `To_Account` field is not a string. |
-| 90005 | The JSON request packet does not contain the `MsgRandom` field or the `MsgRandom` field is not an integer. |
-| 90006 | The `MsgTimeStamp` field in the JSON request packet is not an integer. |
-| 90007 | The `MsgBody` field in the JSON request packet is not an array. Change it to an array. |
+| 90001 | Failed to parse the JSON request. Make sure the format is valid. |
+| 90002 | The `MsgBody` in the JSON request does not meet message format requirements or `MsgBody` is not an array. For more information, please see the **Message Element TIMMsgElement** section in [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement). |
+| 90003 | The JSON request does not contain the `To_Account` field or the `To_Account` field is not a string. |
+| 90005 | The JSON request does not contain the `MsgRandom` field or the `MsgRandom` field is not an integer. |
+| 90006 | The `MsgTimeStamp` field in the JSON request is not an integer. |
+| 90007 | The `MsgBody` field in the JSON request is not an array. Change it to an array. |
 | 90009 | The request requires app admin permissions. |
-| 90010 | The JSON request packet does not meet message format requirements. For more information, see the **Message Element TIMMsgElement** section in [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement). |
+| 90010 | The JSON request does not meet message format requirements. For more information, see the **Message Element TIMMsgElement** section in [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement). |
 | 90012 | The account specified in `To_Account` does not exist or has not been registered. Make sure the account has been imported to IM and is correctly spelled. |
 | 90026 | The offline retention time of the message is incorrect. Messages cannot be retained offline for more than 7 days. |
-| 90031 | The `SyncOtherMachine` field in the JSON request packet is not an integer. |
-| 90044 | The `MsgLifeTime` field in the JSON request packet is not an integer. |
+| 90031 | The `SyncOtherMachine` field in the JSON request is not an integer. |
+| 90044 | The `MsgLifeTime` field in the JSON request is not an integer. |
 | 91000 | Internal service error. Try again. |
 | 90992 | Internal service error. Try again. If this error code is returned for all requests and third-party callback is enabled, make sure the app server returns the callback results to the IM backend normally. |
 | 93000 | The JSON packet has exceeded the maximum size of 8 KB. |

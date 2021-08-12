@@ -6,13 +6,13 @@
 
 | Group Type ID | RESTful API Support |
 |-----------|------------|
-| Private | Yes. Same as work group (Work) in the new version. |
+| Private | Yes. Same as Work (work group) in the new version. |
 | Public | Yes |
-| ChatRoom | Yes. Same as meeting group (Meeting) in the new version. |
+| ChatRoom | Yes. Same as Meeting (temporary meeting group) in the new version. |
 | AVChatRoom | Yes |
 
 
-Above are the IM built-in groups. For more information, see [Group system](https://intl.cloud.tencent.com/document/product/1047/33529).
+These are the preset group types in IM. For more information, see [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
 ### Sample request URL
 ```
@@ -30,7 +30,7 @@ The following table only describes the modified parameters when this API is call
 | usersig | Signature generated in the app admin account. For details on how to generate the signature, please see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | random | A random 32-bit unsigned integer ranging from 0 to 4294967295 |
 
-### Maximum calling frequency
+### Maximum call frequency
 
 200 calls per second
 
@@ -57,6 +57,7 @@ The app admin sends ordinary group messages, and the sender is the app admin.
             }
         }
     ],
+    "CloudCustomData": "your cloud custom data",
     "OfflinePushInfo": {
         "PushFlag": 0, // Normal push
         "Desc": "Content to push offline",
@@ -101,7 +102,7 @@ After receiving the message, other members will see that the message is sent fro
 ```
 
 - **Specifying that messages do not trigger conversation update**
-If `SendMsgControl` is set to `NoLastMsg`, messages do not trigger conversation update (not available for AVChatRoom).
+If the value of `SendMsgControl` includes `NoLastMsg`, the message does not trigger conversation update; if it includes `NoUnread`, the message is not included in the unread count. The setting takes effect only for the current message. The parameter is not available for AVChatRoom.
 ```
 {
      "GroupId": "@TGS#2C5SZEAEF",
@@ -210,7 +211,7 @@ When the callback switch is turned on, users can specify `ForbidCallbackControl`
 
 
 - **Specifying messages for online delivery without offline or roaming retention**
-If **OnlineOnlyFlag** in the message body is set to a value greater than `0`, the message is for online delivery only, not for offline or roaming retention (not available for AVChatRoom and BChatRoom).
+If **OnlineOnlyFlag** in the message body is set to a value greater than `0`, the message is for online delivery only, not for offline or roaming retention (not available for AVChatRoom or BChatRoom).
 ```
     {
         "GroupId": "@TGS#2C5SZEAEF",
@@ -244,12 +245,13 @@ If **OnlineOnlyFlag** in the message body is set to a value greater than `0`, th
 | MsgPriority | String | No | Message priority |
 | MsgBody | Array | Yes | Message body. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
 | From_Account | String | No | Message source account. If this field is not specified, the message sender is the app admin account used to call the API. Alternatively, apps can specify the message sender in this field to implement some special features. Note that if this field is specified, you must ensure that the account in this field exists. |
-| OfflinePushInfo | Object | No | Information to push offline. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
+| OfflinePushInfo | Object | No | Information of offline push. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
 | ForbidCallbackControl | Array | No | Message callback forbidding option, valid only for a single message. `ForbidBeforeSendMsgCallback`: callback before sending the message is forbidden; `ForbidAfterSendMsgCallback`: callback after sending the message is forbidden. |
 | OnlineOnlyFlag | Integer | No | `1`: send to online members only; `0` (default value): send to all members. This field is not valid for audio-video groups (AVChatRoom). |
-| SendMsgControl | Array | No | Message sending permission, only valid for the current message. `NoLastMsg`: do not trigger conversation update. |
+| SendMsgControl | Array | No | Message sending permission, only valid for the current message. `NoLastMsg`: do not trigger conversation update; `NoUnread`: do not include the message in the unread count. |
+| CloudCustomData | String | No | Custom message data. It is saved in the cloud and will be sent to the peer end. Such data can be pulled after the app is uninstalled and reinstalled. |
 
-### Sample response
+### Sample responses
 ```
 {
     "ActionStatus": "OK",
@@ -264,8 +266,8 @@ If **OnlineOnlyFlag** in the message body is set to a value greater than `0`, th
 
 | Field | Type | Description |
 |---------|---------|---------|
-| ActionStatus | String | Request result. `OK`: successful; `FAIL`: failed |
-| ErrorCode | Integer | Error code. `0`: successful; other values: failed |
+| ActionStatus | String | Request result. `OK`: successful. `FAIL`: failed. |
+| ErrorCode | Integer | Error code. `0`: successful. Other values: failed. |
 | ErrorInfo | String | Error information |
 | MsgTime | Integer | Message sending timestamp, corresponding to the backend server time |
 | MsgSeq | Integer | Message sequence number, the unique identifier of a message |
@@ -273,25 +275,25 @@ If **OnlineOnlyFlag** in the message body is set to a value greater than `0`, th
 ## Error Codes
 The returned HTTP status code for this API is always 200 unless a network error (such as error 502) occurs. The specific error code and details can be found in the response fields `ErrorCode` and `ErrorInfo` respectively.
 For public error codes (60000 to 79999), please see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
-The following table describes the error codes specific to this API:
+The following table describes the error codes specific to this API.
 
 | Error Code | Description |
 |---------|---------|
-| 10002 | Internal server error. Try again. |
+| 10002 | Internal error of the server. Please retry. |
 | 10004 | Invalid parameter. Check the error description and troubleshoot the issue. |
-| 10007 | No operation permissions. For example, a common member in a public group tries to remove other users from the group, but only the app admin can do so. |
+| 10007 | No operation permissions. This error occurs when, for example, a member in a public group tries to remove other users from the group (only the app admin can perform this operation). |
 | 10010 | The group does not exist or has been deleted. |
-| 10015 | Invalid group ID. Use the correct group ID. |
+| 10015 | Invalid group ID. Use a correct group ID. |
 | 10016 | The app backend rejected this operation through a third-party callback. |
 | 10017 | The message cannot be sent due to muting. Check whether the sender is muted. |
-| 10023 | The message exceeds the frequency limit. Try again later. |
+| 10023 | The frequency limit for message sending is reached. Try again later. |
 | 80001 | Text security filtering. Check whether the message text contains restricted words. |
-| 80002 | The message is too large. Currently, the maximum message size supported is 8,000 bytes. Adjust the message size. |
+| 80002 | The message content is too long. Currently, the maximum message length supported is 8,000 bytes. Please adjust the message length. |
 
-## API Debugging Tool
+## Debugging Tool
 Use the [RESTful API online debugging tool](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/group_open_http_svc/send_group_msg) to debug this API.
 
-## References
+References
 
 - Sending System Messages in a Group ([v4/group_open_http_svc/send_group_system_notification](https://intl.cloud.tencent.com/document/product/1047/34958))
 - Sending One-to-One Messages to One User ([v4/openim/sendmsg](https://intl.cloud.tencent.com/document/product/1047/34919))
@@ -299,5 +301,5 @@ Use the [RESTful API online debugging tool](https://avc.cloud.tencent.com/im/API
 - [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527)
 
 
-## Possible Callback
+## Possible Callbacks
  [Callback After Sending a Group Message](https://intl.cloud.tencent.com/document/product/1047/34375)

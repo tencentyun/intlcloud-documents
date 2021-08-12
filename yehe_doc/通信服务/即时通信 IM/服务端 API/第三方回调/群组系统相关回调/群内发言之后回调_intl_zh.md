@@ -1,9 +1,6 @@
 ## 功能说明
 
-App 后台可以通过该回调实时监控用户的群发消息，包括：
--  对群消息进行实时记录（例如记录日志，或者同步到其他系统）。
--  拦截用户在群内发言的请求。
-- 修改用户发言内容（例如敏感词过滤，或者增加一些 App 自定义信息）。
+App 后台可以通过该回调实时监控用户的群发消息，包括：通知 App 后台有群组消息发送成功，App 可以据此进行必要的数据同步。
 
 ## 注意事项
 
@@ -19,7 +16,7 @@ App 后台可以通过该回调实时监控用户的群发消息，包括：
 
 ## 回调发生时机
 
-即时通信 IM 后台把群消息下发给群成员之前。
+群组消息发送成功之后。
 
 ## 接口说明
 
@@ -39,7 +36,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | https | 请求协议为 HTTPS，请求方式为 POST |
 | www.example.com | 回调 URL |
 | SdkAppid | 创建应用时在即时通信 IM 控制台分配的 SDKAppID |
-| CallbackCommand | 固定为 Group.CallbackBeforeSendMsg |
+| CallbackCommand | 固定为 Group.CallbackAfterSendMsg |
 | contenttype | 固定值为 JSON |
 | ClientIP | 客户端 IP，格式如：127.0.0.1 |
 | OptPlatform | 客户端平台，取值参见 [第三方回调简介：回调协议](https://intl.cloud.tencent.com/document/product/1047/34354) 中 OptPlatform 的参数含义 |
@@ -48,12 +45,14 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ```
 {
-    "CallbackCommand": "Group.CallbackBeforeSendMsg", // 回调命令
+    "CallbackCommand": "Group.CallbackAfterSendMsg", // 回调命令
     "GroupId": "@TGS#2J4SZEAEL", // 群组 ID
     "Type": "Public", // 群组类型
     "From_Account": "jared", // 发送者
     "Operator_Account":"admin", // 请求的发起者
     "Random": 123456, // 随机数
+    "MsgSeq": 123, // 消息的序列号
+    "MsgTime": 1490686222, // 消息的时间
     "OnlineOnlyFlag": 1, //在线消息，为1，否则为0；直播群忽略此属性，为默认值0。
     "MsgBody": [ // 消息体，参见 TIMMessage 消息对象
         {
@@ -71,76 +70,25 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | 字段 | 类型 | 说明 |
 | --- | --- | --- |
 | CallbackCommand | String | 回调命令 |
-| GroupId | String | 	产生群消息的群组 ID |
+| GroupId | String | 产生群消息的群组 ID |
 | Type | String | 产生群消息的 [群组类型介绍](https://intl.cloud.tencent.com/document/product/1047/33529)，例如 Public |
 | From_Account | String | 消息发送者 UserID |
-| Operator_Account | String | 请求发起者 UserID，可以用来识别是否为管理员请求的 |
-| Random | Integer | 发消息请求中的 32 位随机数 |
+| Operator_Account | String | 请求发起者 UserID，可以用来识别是否为管理员请求的|
+| Random | Integer | 发消息请求中的32位随机数 |
+| MsgSeq | Integer | 消息序列号，一条消息的唯一标示<br>群聊消息使用 MsgSeq 进行排序，MsgSeq 值越大消息越靠后 |
+| MsgTime | Integer | 消息发送的时间戳，对应后台 Server 时间 |
 |OnlineOnlyFlag|Integer|在线消息，为1，否则为0；直播群忽略此属性，为默认值0。|
 | MsgBody | Array | 消息体，具体参见 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527) |
 
 ### 应答包示例
 
-#### 允许发言
-
-允许用户发言，同时也不修改即将下发的消息的内容。
+App 后台同步数据后，发送回调应答包。
 
 ```
 {
     "ActionStatus": "OK",
     "ErrorInfo": "",
-    "ErrorCode": 0 // 0 为允许发言
-}
-```
-
-#### 禁止发言
-
-不允许用户发言，该消息将不会下发，同时给调用方返回错误码`10016`。
-
-```
-{
-    "ActionStatus": "OK",
-    "ErrorInfo": "",
-    "ErrorCode": 1 // 1 为拒绝发言
-}
-```
-
-#### 静默丢弃
-
-不允许用户发言，该消息将不会下发，但会给调用方返回成功，使调用方以为消息已经发出。
-
-```
-{
-    "ActionStatus": "OK",
-    "ErrorInfo": "",
-    "ErrorCode": 2 // 2 为静默丢弃
-}
-```
-
-#### 修改消息内容
-
-如下的应答示例为：对用户发送的群消息进行了修改（增加了自定义消息）。即时通信 IM 后台将会下发经过修改之后的消息。App 后台可以基于这一特性在用户发送的消息中增加一些特殊内容，例如用户等级、头衔等信息。
-
-```
-{
-    "ActionStatus": "OK",
-    "ErrorInfo": "",
-    "ErrorCode": 0, // 必须为 0，只有这样，修改之后的消息才能正常下发
-    "MsgBody": [ // App 修改之后的消息，如果没有，则默认使用用户发送的消息
-        {
-            "MsgType": "TIMTextElem", // 文本
-            "MsgContent": {
-                "Text": "red packet"
-            }
-        },
-        {
-            "MsgType": "TIMCustomElem", // 自定义消息
-            "MsgContent": {
-                "Desc": "CustomElement.MemberLevel", // 描述
-                "Data": "LV1" // 数据
-            }
-        }
-    ]
+    "ErrorCode": 0 //忽略回调结果
 }
 ```
 
@@ -149,9 +97,8 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | 字段 | 类型 | 属性 | 说明 |
 | --- | --- | --- | --- |
 | ActionStatus | String | 必填 | 请求处理的结果，OK 表示处理成功，FAIL 表示失败 |
-| ErrorCode | Integer | 必填 | 错误码，0为允许发言；1为拒绝发言；2为静默丢弃。若业务希望拒绝发言的同时，将错误码 ErrorCode 和 ErrorInfo 传递至客户端，请将错误码 ErrorCode 设置在 [10100, 10200] 区间内 |
+| ErrorCode | Integer | 必填 | 错误码，此处填0表示忽略应答结果 |
 | ErrorInfo | String | 必填	 | 错误信息 |
-| MsgBody | Array | 选填	 | 经过App修改之后的消息体，云通讯后台将把修改后的消息发送到群组中，具体格式参见 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527) |
 
 ## 参考
 
