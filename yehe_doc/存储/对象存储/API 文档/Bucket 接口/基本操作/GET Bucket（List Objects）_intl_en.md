@@ -1,8 +1,27 @@
-## API Description
+## Overview
 
-The `GET Bucket` API is equivalent to the `List Objects` API and can be used to list some or all objects in a bucket. To call this API, you need to have permission to read the bucket.
+This API is equivalent to the `List Objects` API and can be used to list some or all objects in a bucket. To call this API, you need to have permission to read the bucket.
 
 >? If you upload an object to the bucket and call the `GET Bucket` API immediately, due to the eventual consistency characteristic of this API, the response may not include the newly uploaded object.
+>
+
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer is recommended.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=GetBucket&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+            </div>
+        </div>
+    </div>
+</div>
+
 
 ## Request
 
@@ -99,7 +118,7 @@ The nodes are described as follows:
 | --- | --- | --- | --- |
 | ListBucketResult | None | Stores the result of the `GET Bucket` request. | Container |
 
-**Content of the Container node `ListBucketResult`:**
+**Content of `ListBucketResult`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
@@ -114,13 +133,13 @@ The nodes are described as follows:
 | CommonPrefixes | ListBucketResult | The identical paths between the prefix (or, if no prefix is specified, the beginning of the string) and the first delimiter are grouped and defined as a common prefix. This node will be returned only if the `delimiter` parameter is specified in the request | Container |
 | Contents | ListBucketResult | Object entries | Container |
 
-**Content of the Container node `CommonPrefixes`:**
+**Content of `CommonPrefixes`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
 | Prefix | ListBucketResult.CommonPrefixes | A single common prefix | string |
 
-**Content of the Container node `Contents`:**
+**Content of `Contents`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
@@ -132,7 +151,7 @@ The nodes are described as follows:
 | StorageClass | ListBucketResult.Contents | Object storage class, such as `STANDARD_IA` or `ARCHIVE`. For enumerated values, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925) | Enum |
 | StorageTier | ListBucketResult.Contents | Access tier (for INTELLIGENT TIERING) the object is currently stored in. Enumerated values: `FREQUENT`, `INFREQUENT`. This node is returned only when `StorageClass` is set to `INTELLIGENT_TIERING`. | Enum |
 
-**Content of the Container node `Contents.Owner`:**
+**Content of `Contents.Owner`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |

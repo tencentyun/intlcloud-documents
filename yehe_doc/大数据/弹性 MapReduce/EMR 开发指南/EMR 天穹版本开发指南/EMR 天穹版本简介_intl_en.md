@@ -6,10 +6,15 @@ In order to provide more and better big data solutions and services to meet dive
 
 The table below only lists the differences between the EMR TianQiong and EMR Open Source editions:
 
-| Edition | Key Feature |
-| -------------------- | ------------------------------------------------------------ |
-| EMR-TianQiong-V1.0.0 | <li>Based on Hadoop 2.8.5, EMR TianQiong Spark-3.0.1 supports Tencent's proprietary materialized views. It can precompute related summaries or materialized views to accelerate queries.<li>It supports Tencent's proprietary Kona JDK, providing stable support, security updates, enhanced performance, and advanced feature migration, and supporting tools such as JFR. |
-
- 
-
- 
+<table>
+<thead>
+<tr>
+<th>Edition</th>
+<th>Feature</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>EMR-TianQiong-V1.0.0</td>
+<td><li>Based on Hadoop 2.8.5, EMR TianQiong Spark-3.0.1 supports Tencent's proprietary materialized views. It can precompute related summaries or materialized views to accelerate queries.</li><li>It supports Tencent's proprietary Kona JDK, providing stable support, security updates, enhanced performance, and advanced feature migration, and supporting tools such as JFR.</li></td>
+</tr>
+</tbody></table>

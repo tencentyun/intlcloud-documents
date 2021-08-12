@@ -5,7 +5,7 @@
 - This API does not trigger callback requests.
 - This API does not check whether the sender and the recipients are friends or blocklisted by either party or whether the recipients are muted.
 
->!When calling this API to batch send a message, you must specify whether to synchronize the message to the sender, which is the admin account or the account specified by the admin. Synchronization can be implemented via online terminals and roaming servers. This API provides the `SyncOtherMachine` parameter to determine whether to synchronize the message. For more information, please see **Sample request packet** below.
+>!When calling this API to batch send a message, you must specify whether to synchronize the message to the sender, which is the admin account or the account specified by the admin. Synchronization can be implemented via online terminals and roaming servers. This API provides the `SyncOtherMachine` parameter to determine whether to synchronize the message. For more information, please see **Sample request** below.
 
 ## API Calling Description
 ### Sample request URL
@@ -28,7 +28,7 @@ The following table only describes the modified parameters when this API is call
 
 200 calls per second
 
-### Sample request packets
+### Sample requests
 Here, we use sending a text message as an example. To send messages of other types, set `MsgBody` to the corresponding message type. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527).
 
 #### The admin sends a message to multiple target accounts.
@@ -88,7 +88,7 @@ Here, we use sending a text message as an example. To send messages of other typ
         },
         "ApnsInfo": {
             "Sound": "apns.mp3",
-            "BadgeMode": 1, // If this field is not specified or is set to `0`, the message is counted. If this field is set to `1`, the message is not counted, that is, the icon number in the upper-right corner does not increase.
+            "BadgeMode": 1, // If this field is left as default or is set to `0`, the message is counted. If this field is set to `1`, the message is not counted, that is, the badge counter in the upper-right corner does not increase.
             "Title":"apns title", // APNs title
             "SubTitle":"apns subtitle", // APNs subtitle
             "Image":"www.image.com" // Image URL
@@ -97,7 +97,7 @@ Here, we use sending a text message as an example. To send messages of other typ
 }
 ```
 
-### Request packet fields
+### Request fields
 
 | Field | Type | Required | Description |
 |---------|---------|---------|---------|
@@ -109,12 +109,12 @@ Here, we use sending a text message as an example. To send messages of other typ
 | MsgType | String | Yes | TIM message object type. Valid values: <ul style="margin:0;"><li >`TIMTextElem` (text message) <li >`TIMLocationElem` (location message) <li >`TIMFaceElem` (emoji message) <li >`TIMCustomElem` (custom message) <li >`TIMSoundElem` (voice message) <li >`TIMImageElem` (image message) <li >`TIMFileElem` (file message) <li >`TIMVideoFileElem` (video message) |
 | MsgContent | Object | Yes | TIM message object. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
 | CloudCustomData | String | No | Custom message data. It is saved in the cloud and will be sent to the peer end. Such data can be pulled after the app is uninstalled and reinstalled. |
-| SendMsgControl | Array | No | Message sending control. This is a string array and takes effect on this request only. `NoUnread` means not to include this message in the unread count. Example: "SendMsgControl": ["NoUnread"]  |
+| SendMsgControl | Array | No | Message sending control option. It is a string array and is valid only for this request. `NoUnread` means not to include this message in the unread count, and "NoLastMsg" means not to refresh the conversation list. Example: "SendMsgControl": ["NoUnread","NoLastMsg"]  |
 | OfflinePushInfo | Object | No | Information of offline push. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
 
 
 
-### Sample response packets
+### Sample responses
 
 - Response when the message was sent to all the target accounts
 ```
@@ -151,7 +151,7 @@ Here, we use sending a text message as an example. To send messages of other typ
 }
 ```
 
-### Response packet fields
+### Response fields
 
 | Field | Type | Description |
 |---------|---------|---------|
@@ -173,12 +173,12 @@ The following table describes the error codes specific to this API:
 | ------------- | ------------------------------------------------------------ |
 | 70107 | The requested account does not exist. |
 | 70169 | Server timeout. Try again later. |
-| 90001 | Failed to parse the JSON request packet. Make sure the format is valid. |
-| 90002 | The `MsgBody` in the JSON request packet does not meet message format requirements or `MsgBody` is not an array. For more information, please see the **Message Element TIMMsgElement** section in [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement). |
-| 90007 | The `MsgBody` field in the JSON request packet is not an array. Change it to an array. |
-| 90008 | The JSON request packet does not contain the `From_Account` field or the account specified in `From_Account` does not exist. |
+| 90001 | Failed to parse the JSON request. Make sure the format is valid. |
+| 90002 | The `MsgBody` in the JSON request does not meet message format requirements or `MsgBody` is not an array. For more information, please see the **Message Element TIMMsgElement** section in [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement). |
+| 90007 | The `MsgBody` field in the JSON request is not an array. Change it to an array. |
+| 90008 | The JSON request does not contain the `From_Account` field or the account specified in `From_Account` does not exist. |
 | 90009 | The request requires app admin permissions. |
-| 90010 | The JSON request packet does not meet message format requirements. For more information, see the **Message Element TIMMsgElement** section in [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement). |
+| 90010 | The JSON request does not meet message format requirements. For more information, see the **Message Element TIMMsgElement** section in [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527#.E6.B6.88.E6.81.AF.E5.85.83.E7.B4.A0-timmsgelement). |
 | 90011 | The number of target accounts exceeds 500. Delete some `To_Account`. |
 | 90012 | The account specified in `To_Account` does not exist or has not been registered. Make sure the account has been imported to IM and is correctly spelled. |
 | 90026 | The offline retention time of the message is incorrect. Messages cannot be retained offline for more than 7 days. |

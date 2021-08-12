@@ -45,7 +45,7 @@ EMR offers five types of nodes for your choice based on the cluster type.
 - A core node is a compute and storage node. All your data in HDFS is stored in core nodes. Therefore, in order to ensure data security, once core nodes are scale out, they cannot be scaled in.
 - A task node is a pure compute node and does not store any data. The computed data comes from a core node or COS. Therefore, it is often used as an elastic node and can be scaled in or out at any time.
 - A common node provides data sharing and syncing and HA fault tolerance services for the master nodes in an HA cluster.
-- A router is used to share the load of a master node or as the task submitter of the cluster. It can be scaled in or out at any time.
+- A router node is used to share the load of a master node or as the task submitter of the cluster. It can be scaled in or out at any time.
 
 ## ClickHouse Cluster
 <table>
@@ -116,7 +116,7 @@ EMR offers five types of nodes for your choice based on the cluster type.
 - A core node is a compute and storage node. All your data in HDFS is stored in core nodes. Therefore, in order to ensure data security, once core nodes are scale out, they cannot be scaled in.
 - A task node is a pure compute node and does not store any data. The computed data comes from a core node or COS. Therefore, it is often used as an elastic node and can be scaled in or out at any time.
 - A common node provides data sharing and syncing and HA fault tolerance services for the master nodes in an HA cluster.
-- A router is used to share the load of a master node or as the task submitter of the cluster. It can be scaled in or out at any time.
+- A router node is used to share the load of a master node or as the task submitter of the cluster. It can be scaled in or out at any time.
 
 
 ## Kafka Cluster
@@ -167,15 +167,10 @@ EMR offers five types of nodes for your choice based on the cluster type.
    <tr>
       <td>Router</td>
       <td>Processes such as FE Observer and Broker are deployed here.</td>
-      <td colspan=2>The number of router nodes can be changed at any time. The minimum value is 0.</td>
+      <td colspan=2>The number of router nodes can be increased but not decreased.</td>
    </tr>
 </table>
 
 - A master node is a frontend module and provides the Web UI feature.
 - A core node is a backend module and provides the data storage feature.
 - A router node is a frontend module and helps achieve high read/write availability.
-
-
-
-
-

@@ -5,7 +5,6 @@
 
 >!使用服务端集成 REST API 发送单聊消息时，存在是否将消息同步至发送方（管理员帐号或者由管理员指定的某帐号）问题，同步方式包括在线终端和漫游，REST API 提供 SyncOtherMachine 参数用于说明是否进行同步，详细使用方式参见下文请求包示例。
 
-
 ## 接口调用说明
 ### 请求 URL 示例
 ```
@@ -150,7 +149,7 @@ https://console.tim.qq.com/v4/openim/sendmsg?sdkappid=88888888&identifier=admin&
 | MsgRandom | Integer |必填| 消息随机数，后台用于同一秒内的消息去重。请确保该字段填的是随机数
 | MsgTimeStamp | Integer |选填| 消息时间戳，UNIX 时间戳（单位：秒）  |
 | ForbidCallbackControl | Array |选填| 消息回调禁止开关，只对本条消息有效，ForbidBeforeSendMsgCallback 表示禁止发消息前回调，ForbidAfterSendMsgCallback 表示禁止发消息后回调  |
-| SendMsgControl | Array |选填| 消息发送控制选项，是一个 String 数组，只对本条消息有效。"NoUnread"表示该条消息不计入未读数。示例："SendMsgControl": ["NoUnread"]  |
+| SendMsgControl | Array |选填| 消息发送控制选项，是一个 String 数组，只对本条消息有效。"NoUnread"表示该条消息不计入未读数。"NoLastMsg"表示该条消息不更新会话列表。示例："SendMsgControl": ["NoUnread","NoLastMsg"]  |
 | MsgBody | Object |必填| 消息内容，具体格式请参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527)（注意，一条消息可包括多种消息元素，MsgBody 为 Array 类型）  |
 | MsgType | String |必填| TIM 消息对象类型，目前支持的消息对象包括：<ul style="margin:0;"><li >TIMTextElem（文本消息）<li >TIMLocationElem（位置消息）<li >TIMFaceElem（表情消息）<li >TIMCustomElem（自定义消息）<li >TIMSoundElem（语音消息）<li >TIMImageElem（图像消息）<li >TIMFileElem（文件消息）<li >TIMVideoFileElem（视频消息）|
 | MsgContent | Object |必填| 对于每种 MsgType 用不同的 MsgContent 格式，具体可参考 [消息格式描述](https://intl.cloud.tencent.com/document/product/1047/33527)   |

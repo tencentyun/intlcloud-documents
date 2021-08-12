@@ -11,4 +11,4 @@
 ![配图4](https://main.qcloudimg.com/raw/243ebba2827f93c1aed48fc6a8a33ab6.png)
  >!由于产品升级更名，若曾配置 DSA 自定义策略，须在策略详情页点击编辑按钮，将策略语法中的 “dsa” 更改为 “ecdn”，将原有 DSA 权限策略映射至 ECDN 权限策略。
 ![11](https://main.qcloudimg.com/raw/1bacb50611098a10fed554d2b6111a0a.png)
-![22](https://main.qcloudimg.com/raw/0b76e5faf62df6d0274eb5a24e2327b0.png)
+![22](https://main.qcloudimg.com/raw/6874271450ae541923a4d93235c6f583.png)
