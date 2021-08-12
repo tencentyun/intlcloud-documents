@@ -16,8 +16,7 @@ For more information on the restrictions and quotas of security groups, please s
 ### Components
 
 A security group rule consists of:
-
-- Source: IP address of the source data (inbound) or target data (outbound).
+- Source or destination: the source IP for an inbound rule, or the destination IP for an outbound rule. It can be an IP address, an IP range, or a security group. For more information, see [Adding a Security Group Rule](https://intl.cloud.tencent.com/document/product/215/35513).
 - Protocol type and protocol port: the protocol type, such as TCP, UDP, etc.
 - Policy: allow or reject the access request.
 
@@ -36,17 +35,14 @@ An instance can be bound to one or multiple security groups. When it is bound to
 When creating a security group, you can select one of the two security group templates provided by Tencent Cloud:
 
 - The template that opens all ports: all inbound and outbound traffic will be allowed to pass.
-- The template that opens major ports: port TCP 22 (for Linux SSH login), ports 80 and 443 (for Web service), port 3389 (for Windows remote login), the ICMP protocol (for Ping commands), and the private network will be open to the Internet.
+- The template that opens major ports: port TCP 22 (for Linux SSH login), ports 80 and 443 (for Web service), port 3389 (for Windows remote login), the ICMP protocol (for Ping commands), and the private network (for VPC IP range) will be open to the Internet.
 
 > ?
->
 > - If these templates cannot meet your actual needs, you can create custom security groups. For more information, see [Creating a Security Group](https://intl.cloud.tencent.com/document/product/215/35506) and [Application Cases of Security Groups](https://intl.cloud.tencent.com/document/product/215/35519).
 > - If you need to protect the application layer (HTTP/HTTPS), please activate [Tencent Cloud Web Application Firewall (WAF)](https://intl.cloud.tencent.com/product/waf), which provides web security at the application layer to defend against web vulnerabilities, malicious crawlers, and CC attacks, protecting your websites and web applications security.
 
 ## How to Use a Security Group
-
 The following figure shows you how to use a security group:
-
 ![](https://main.qcloudimg.com/raw/2fccad4c688f66f28cfb3d41dbbb7134.png)
 
 ## Security Group Best Practices
