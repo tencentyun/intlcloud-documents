@@ -1,5 +1,5 @@
 본 문서는 CPU 혹은 메모리의 이용률이 높아 Windows CVM에 로그인할 수 없을 때의 진단 방법 및 솔루션을 소개합니다.
-> 다음 작업 순서는 Windows server 2012 R2를 예로 들며, 운영 체제 버전에 따라 세부 작업 순서에 차이가 있습니다.
+>? 다음 작업 순서는 Windows server 2012 R2를 예로 들며, 운영 체제 버전에 따라 세부 작업 순서에 차이가 있습니다.
 
 ## 예상 원인
 
@@ -26,7 +26,7 @@ CPU 혹은 메모리의 사용률이 지나치게 높으면 서비스 응답 속
 ## 장애 처리
 
 ### VNC 방식을 사용하여 CVM에 로그인
->  CVM의 부하가 높으면 원격 연결을 구축하기 어려우므로, [VNC 방식을 사용하여 Windows 인스턴스에 로그인](https://intl.cloud.tencent.com/document/product/213/32496)하시길 권장합니다. 
+>?  CVM의 부하가 높으면 원격 연결을 구축하기 어려우므로, [VNC 방식을 사용하여 Windows 인스턴스에 로그인](https://intl.cloud.tencent.com/document/product/213/32496)하시길 권장합니다. 
 >
 1. [CVM 콘솔](https://console.cloud.tencent.com/cvm/index)에 로그인합니다.
 2. 아래 이미지와 같이, 인스턴스 관리 페이지에서 타깃 CVM 인스턴스를 찾아 [로그인]을 클릭합니다.
@@ -40,7 +40,7 @@ CPU 혹은 메모리의 사용률이 지나치게 높으면 서비스 응답 속
 1. 아래 이미지와 같이, CVM에서 '작업 표시줄'을 우클릭한 뒤 [작업 관리자]를 선택합니다.
 ![](https://main.qcloudimg.com/raw/a795f4948fae3eab8a44ec0a3a4ee352.png)
 2. 아래 이미지와 같이, '작업 관리자'에서 리소스 이용률을 바로 확인할 수 있습니다.
-> CPU 혹은 메모리를 클릭하여 오름차순/내림차순으로 프로세스를 정렬할 수 있습니다.
+>? CPU 혹은 메모리를 클릭하여 오름차순/내림차순으로 프로세스를 정렬할 수 있습니다.
 >
 ![](https://main.qcloudimg.com/raw/56a4be427be5046a15a05b02abbacf66.png)
 
