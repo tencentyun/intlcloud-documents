@@ -265,7 +265,7 @@ __介绍__
 - INC：增加，value 只能是整数，如“点赞人数”，“人气指数”等，都可以使用该操作接口。
 - DEC：减少，value 只能是整数，如“点赞人数”，“人气指数”等，都可以使用该操作接口。
 
->?op 为 MLVBCustomFieldOpSet 或者 MLVBCustomFieldOpDec 时，value 需要是一个数字。
+>?op 为 MLVBCustomFieldOpInc 或者 MLVBCustomFieldOpDec 时，value 需要是一个数字。
 
 ***
 
@@ -397,9 +397,9 @@ __介绍__
 
 __参数__
 
-| 参数   | 类型       | 含义            |
-| ------ | ---------- | --------------- |
-| userID | NSString * | 连麦小主播 ID。 |
+| 参数   | 类型       | 含义          |
+| ------ | ---------- | ------------- |
+| userID | NSString * | 连麦观众 ID。 |
 
 __介绍__
 
@@ -430,7 +430,7 @@ __介绍__
 
 主播和主播之间可以跨房间 PK，两个正在直播中的主播 A 和 B，他们之间的跨房 PK 流程如下：
 
-1. 主播 A 调用 requestRoomPK  向主播 B 发起连麦请求。
+1. 主播 A 调用 requestRoomPK  向主播 B 发起跨房 PK 请求。
 2. 主播 B 会收到 MLVBLiveRoomDelegate onRequestRoomPK 回调通知。
 3. 主播 B 调用 responseRoomPK  确定是否接受主播 A 的 PK 请求。
 4. 主播 B 如果接受了主播 A 的要求，可以直接调用 startRemoteView  来显示主播 A 的视频画面。
@@ -690,7 +690,7 @@ __参数__
 
 ### enableTorch
 
-打开闪关灯。
+打开闪光灯。
 
 ```
 - (BOOL)enableTorch:(BOOL)bEnable 
