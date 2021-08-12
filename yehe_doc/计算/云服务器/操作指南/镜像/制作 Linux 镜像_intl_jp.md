@@ -94,8 +94,7 @@ gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime
 
 ### イメージのエクスポート
 必要に応じてイメージのエクスポート方法を選択してください。
-- [プラットフォームツールを使用してイメージをエクスポートする](#Useplatform)
-- [コマンドを使用してイメージをエクスポートする](#ExportImageForUsingCommand)
+
 
 <dx-tabs>
 <span id="Useplatform"></span>
