@@ -94,8 +94,6 @@ gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime
 
 ### 导出镜像
 根据实际需求，选择不同的方式导出镜像。
-- [使用工具导出](#Useplatform)
-- [使用命令导出镜像](#ExportImageForUsingCommand)
 
 <dx-tabs>
 <span id="Useplatform"></span>
