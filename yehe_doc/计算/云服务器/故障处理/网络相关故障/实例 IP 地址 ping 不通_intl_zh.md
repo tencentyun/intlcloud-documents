@@ -16,7 +16,7 @@
 <span id="isConfigurePublicIP"></span>
 ### 检查实例是否配置公网 IP
 
-> 实例必须具备公网 IP 才能与 Internet 上的其他计算机相互访问。若实例没有公网 IP，内网 IP 外部则无法直接 ping 通实例。
+>? 实例必须具备公网 IP 才能与 Internet 上的其他计算机相互访问。若实例没有公网 IP，内网 IP 外部则无法直接 ping 通实例。
 >
 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/index)。
 2. 在“实例列表”页面中，选择需要 ping 通的实例 ID/实例名，进入该实例的详情页面。如下图所示：
@@ -47,7 +47,7 @@
 <span id="CheckLinux"></span>
 #### 检查 Linux 内核参数和防火墙设置
 
-> Linux 系统是否允许 ping 由内核和防火墙设置两个共同决定，任何一个禁止，都会造成 ping 包 “Request timeout”。
+>? Linux 系统是否允许 ping 由内核和防火墙设置两个共同决定，任何一个禁止，都会造成 ping 包 “Request timeout”。
 
 ##### 检查内核参数 icmp_echo_ignore_all
 

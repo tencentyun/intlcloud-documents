@@ -16,7 +16,7 @@ If the local network is normal (other websites can be pinged from the local netw
 <span id="isConfigurePublicIP"></span>
 ### Checking whether the instance is configured with a public IP address
 
-> An instance can access other computers on the Internet only if it has a public IP address. Otherwise, the instance cannot be pinged through outside the private IP address.
+>? An instance can access other computers on the Internet only if it has a public IP address. Otherwise, the instance cannot be pinged through outside the private IP address.
 >
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
 2. On the "Instances" page, select the ID/name of the instance to ping to enter the instance details page, as shown in the following figure:
@@ -47,7 +47,7 @@ Based on the operating system of the instance, select a method to check the conf
 <span id="CheckLinux"></span>
 #### Checking Linux kernel parameters and firewall configurations
 
-> Whether a ping test is allowed in Linux operating system depends on both kernel and firewall configurations. If either of them denies the ping test, "Request timeout" occurs.
+>? Whether a ping test is allowed in Linux operating system depends on both kernel and firewall configurations. If either of them denies the ping test, "Request timeout" occurs.
 
 ##### Checking the icmp_echo_ignore_all kernel parameter
 

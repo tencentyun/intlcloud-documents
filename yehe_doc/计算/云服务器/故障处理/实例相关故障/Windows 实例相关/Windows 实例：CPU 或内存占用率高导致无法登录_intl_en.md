@@ -1,5 +1,5 @@
 This document describes how to troubleshoot Windows CVM login failures due to high CPU or memory utilization.
-> The following uses Windows Server 2012 R2 as an example. The steps may vary by operating system (OS) versions.
+>? The following uses Windows Server 2012 R2 as an example. The steps may vary by operating system (OS) versions.
 
 ## Possible Causes
 
@@ -26,7 +26,7 @@ Hardware, system processes, service processes, trojans, and viruses may cause hi
 ## Troubleshooting Method
 
 ### Logging in to the CVM instance using VNC
-> If you cannot log in to your CVM instance due to high CPU or memory utilization, we recommend [logging into Windows instance via VNC](https://intl.cloud.tencent.com/document/product/213/32496). 
+>? If you cannot log in to your CVM instance due to high CPU or memory utilization, we recommend [logging into Windows instance via VNC](https://intl.cloud.tencent.com/document/product/213/32496). 
 >
 1. Log in to the [CVM console](https://console.cloud.tencent.com/cvm/index).
 2. On the instance management page, locate the CVM instance and click **Log In**, as shown in the following figure:
@@ -40,7 +40,7 @@ Hardware, system processes, service processes, trojans, and viruses may cause hi
 1. In the CVM, right-click the "taskbar" and choose **Task Manager**, as shown in the following figure:
 ![](https://main.qcloudimg.com/raw/a795f4948fae3eab8a44ec0a3a4ee352.png)
 2. View resource usage in the "Task Manager" window, as shown in the following figure:
-> You can click the CPU or memory column to sort the processes in ascending or descending order.
+>? You can click the CPU or memory column to sort the processes in ascending or descending order.
 >
 ![](https://main.qcloudimg.com/raw/56a4be427be5046a15a05b02abbacf66.png)
 

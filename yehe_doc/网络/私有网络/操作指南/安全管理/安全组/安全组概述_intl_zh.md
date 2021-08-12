@@ -16,8 +16,7 @@
 ### 组成部分
 
 安全组规则包括如下组成部分：
-
-- 来源：源数据（入站）或目标数据（出站）的 IP。
+- 来源或目标：流量的源（入站规则） 或目标（出站规则），可以是单个 IP 地址、IP 地址段，也可以是安全组，具体请参见 [安全组规则](https://intl.cloud.tencent.com/document/product/215/35513)。
 - 协议类型和协议端口：协议类型如 TCP、UDP 等。
 - 策略：允许或拒绝。
 
@@ -36,17 +35,14 @@
 新建安全组时，您可以选择腾讯云为您提供的两种安全组模版：
 
 - 放通全部端口模版：将会放通所有出入站流量。
-- 放通常用端口模板：将会放通 TCP 22端口（Linux SSH 登录），80、443端口（Web 服务），3389端口（Windows 远程登录）、 ICMP 协议（Ping）、放通内网。
+- 放通常用端口模板：将会放通 TCP 22端口（Linux SSH 登录），80、443端口（Web 服务），3389端口（Windows 远程登录）、 ICMP 协议（Ping）、放通内网（私有网络网段）。
 
 > ?
->
 > - 如果提供的安全组模版不满足您的实际使用，您也可以新建自定义安全组，详情请参见 [创建安全组](https://intl.cloud.tencent.com/document/product/215/35506)、[安全组应用案例](https://intl.cloud.tencent.com/document/product/215/35519)。
 > - 如果您对应用层（HTTP/HTTPS）有安全防护需求，可另行购买 [腾讯云 Web 应用防火墙（WAF）](https://intl.cloud.tencent.com/product/waf)，WAF 将为您提供应用层 Web 安全防护，抵御 Web 漏洞攻击、恶意爬虫和 CC 攻击等行为，保护网站和 Web 应用安全。
 
 ## 使用流程
-
 安全组的使用流程如下图所示：
-
 ![](https://main.qcloudimg.com/raw/2fccad4c688f66f28cfb3d41dbbb7134.png)
 
 ## 安全组实践建议
