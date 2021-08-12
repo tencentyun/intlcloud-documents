@@ -57,7 +57,7 @@ Formerly named **BGP mode**. To use it, please [submit a ticket](https://console
         Publishing IDC IP ranges may delay for one minute. If there are any updates on IDC IP range, please refresh the current page.
         </dx-alert>
         :::
-        ::: Switching methods
+        ::: Switching\smethods
         You can switch between the two methods for publishing the IDC IP ranges on the direct connect gateway to CCN.
 - Switching to auto-propagation
    [Submit a ticket](https://console.cloud.tencent.com/workorder/category) to enable the auto-propagation feature.
