@@ -16,7 +16,7 @@
 <span id="isConfigurePublicIP"></span>
 ### 인스턴스의 공인 IP 설정 여부 검사
 
-> 인스턴스는 공인 IP가 있어야 Internet에서 다른 컴퓨터와 서로 액세스할 수 있습니다. 공인 IP가 없을 경우, 개인 IP 외부에서는 인스턴스에 바로 연결할 수 없습니다.
+>? 인스턴스는 공인 IP가 있어야 Internet에서 다른 컴퓨터와 서로 액세스할 수 있습니다. 공인 IP가 없을 경우, 개인 IP 외부에서는 인스턴스에 바로 연결할 수 없습니다.
 >
 1. [CVM 콘솔](https://console.cloud.tencent.com/cvm/index)에 로그인합니다.
 2. 아래 이미지와 같이, '인스턴스 목록' 페이지에서 ping 연결이 필요한 인스턴스의 ID/이름을 선택하여 해당 인스턴스의 상세 페이지로 이동합니다.
@@ -47,7 +47,7 @@
 <span id="CheckLinux"></span>
 #### Linux 커널 매개변수 및 방화벽 설정 검사
 
-> Linux 시스템의 ping 허용 여부는 커널과 방화벽 설정에 의해 결정되며, 둘 중 한 항목이라도 금지되었을 경우 ping 패키지의 "Request timeout" 현상을 초래할 수 있습니다.
+>? Linux 시스템의 ping 허용 여부는 커널과 방화벽 설정에 의해 결정되며, 둘 중 한 항목이라도 금지되었을 경우 ping 패키지의 "Request timeout" 현상을 초래할 수 있습니다.
 
 ##### 커널 매개변수 icmp_echo_ignore_all 검사
 
