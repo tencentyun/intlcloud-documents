@@ -179,8 +179,8 @@
 ### 音频相关回调
 | API                                                          | 描述                         |
 | ------------------------------------------------------------ | ---------------------------- |
-| [onCaptureFirstAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#ad10ac31050e915d349a2a953915cbefe) | 首帧音频采集完成的回调通知。|
-| [onMicrophoneVolumeUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#a8a9798da9f593fb00878a823bc3fdbc7) | 麦克风采集音量值回调。       |
+| [onCaptureFirstAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#a8a9798da9f593fb00878a823bc3fdbc7) | 首帧音频采集完成的回调通知。|
+| [onMicrophoneVolumeUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__ios.html#a5813b9c6632a01b5d0e873c8a26873f5) | 麦克风采集音量值回调。       |
 
 ### 混流回调
 | API                                                          | 描述                           |

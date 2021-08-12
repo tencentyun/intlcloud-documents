@@ -130,7 +130,7 @@
 
 | API                                                          | 描述                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [getBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html) | 获取美颜管理对象 https://intl.cloud.tencent.com/document/product/1071/38567，美颜的设置通过 TXBeautyManager 来设置。 |
+| [getBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html) | 获取美颜管理对象[TXBeautyManager](https://intl.cloud.tencent.com/document/product/1071/41677)，美颜的设置通过 TXBeautyManager 来设置。 |
 
 
 ### 音频相关接口
