@@ -80,7 +80,7 @@ To allow all source IP addresses to access all ports of CVMs in a subnet associa
 <table>
 <thead>
 <tr>
-th width="12%">Item</th>
+<th width="12%">Item</th>
 <th width="45%">Security Group</th>
 <th width="43%">Network ACL</th>
 </tr>
