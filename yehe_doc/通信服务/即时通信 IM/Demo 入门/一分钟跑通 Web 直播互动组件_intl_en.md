@@ -207,7 +207,7 @@ The figure below demonstrates TWebLive's architecture.
 ![](https://main.qcloudimg.com/raw/ab2b13a441da8b0631cc664f95ad18db.png)
 Web-based stream pushing and low-latency playback use the WebRTC technology.
 
-- For mobile devices, the [Mini Program](https://cloud.tencent.com/document/product/647/32399) solution is recommended, which is supported by both WeChat and Mobile QQ. This solution is implemented through native technologies of corresponding platforms to deliver excellent audio/video performance and specifically adapted to major mobile phone brands.
+- For mobile devices, the Mini Programn solution is recommended, which is supported by both WeChat and Mobile QQ. This solution is implemented through native technologies of corresponding platforms to deliver excellent audio/video performance and specifically adapted to major mobile phone brands.
 - If your app scenario is mainly in the education sector, consider using [TRTC SDK for Electron](https://intl.cloud.tencent.com/document/product/647/35097), which supports two-channel big/small video images, with more flexible screen sharing schemes and better recovery capabilities on poor network connections.
 >?Proposed by Google, the WebRTC technology is well supported by Chrome (desktop), Edge (desktop), Firefox (desktop), and Safari (desktop and mobile), but poorly or not supported by other platforms such as browsers on Android.
 
@@ -235,7 +235,6 @@ Web-based stream pushing and low-latency playback use the WebRTC technology.
 ## Notes
 
 - TRTC and IM can share your account and authentication information only if you enter the same SDKAppID for your TRTC and IM apps.
-- You can use the [content filtering feature](https://intl.cloud.tencent.com/document/product/1047/38089) of the basic edition of IM to filter text messages. If you want to customize sensitive words, click **Upgrade** or go to the [**purchase page**](https://buy.cloud.tencent.com/avc?position=1400399435) to purchase **Content Filtering - Professional Edition**.
 - The local UserSig calculation method is used for local development and debugging only. Do not publish it to your online systems. Once your SECRETKEY is disclosed, attackers can use your Tencent Cloud traffic without authorization. The correct UserSig distribution method is to integrate the computing code of UserSig into your server and provide an app-oriented API. When UserSig is required, your app can send a request to the business server to obtain the dynamic UserSig. For more information, please see "Generating a UserSig on the Server" in [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).
 
 ## FAQs
@@ -282,5 +281,4 @@ References:
 - [TWebLive API Guide](https://web.sdk.qcloud.com/component/tweblive/doc/zh-cn/TWebLive.html)
 - [Demo experience](https://web.sdk.qcloud.com/component/tweblive/demo/latest/index.html)
 
-## Relevant Document
-[Promotion activities](https://cloud.tencent.com/document/product/269/46181)
+
