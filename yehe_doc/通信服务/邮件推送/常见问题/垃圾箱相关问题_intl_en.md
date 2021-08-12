@@ -16,4 +16,4 @@ You can use your email address to test, or log in to the console and check the e
 ### What should I do if my emails go to the spam folder during the testing phase?
 Spam folder is a comprehensive judgment policy of recipients. Please follow the instructions below:
 1. Make sure you haven’t use your domain to send spams before. If your domain reputation is low, your emails may automatically go to the spam folder.
-2. The recipient may consider your emails as spams due to inappropriate email subject and content. You can [use a tool](https://www.mail-tester.com/) to test the email content until you get a score higher than eight.
+2. The recipient may consider your emails as spams due to inappropriate email subject and content. You can [use mail-tester tool](https://www.mail-tester.com/) to test the email content until you get a score higher than eight.
