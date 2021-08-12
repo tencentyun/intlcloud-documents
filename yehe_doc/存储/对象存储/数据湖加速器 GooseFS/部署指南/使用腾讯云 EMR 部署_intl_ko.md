@@ -2,7 +2,7 @@
 
 아래 문장은 통합되지 않은 GooseFS의 Tencent Cloud EMR 기존 저장 클러스터에 대해 GooseFS의 EMR환경 설정을 배포하는 방법에 대해 소개합니다.
 
-우선, [클러스터 모드 배포 실행] (https://cloud.tencent.com/document/product/436/57224#.E9.9B.86.E7.BE.A4.E6.A8.A1.E5.BC.8F.E9.83.A8.E7.BD.B2.E8.BF.90.E8.A1.8C)챕터의 내용을 참고하여 프로덕션 환경에 적합한 배포 아키텍처를 선택하고 클러스터를 배포합니다. 
+우선, [클러스터 모드 배포 실행](https://cloud.tencent.com/document/product/436/57224#.E9.9B.86.E7.BE.A4.E6.A8.A1.E5.BC.8F.E9.83.A8.E7.BD.B2.E8.BF.90.E8.A1.8C)챕터의 내용을 참고하여 프로덕션 환경에 적합한 배포 아키텍처를 선택하고 클러스터를 배포합니다. 
 다음으로, EMR이 컴포넌트를 설정하는 것을 지원하므로 본문은 Hadoop MapReduce, Spark, Flink의 GooseFS에 대한 지원으로 설명합니다. 
 
 ## Hadoop MapReduce 지원
