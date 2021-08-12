@@ -94,19 +94,21 @@ gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime
 
 ### 이미지 내보내기
 실제 수요에 따라 이미지 내보내기 방식을 선택합니다.
-- [툴을 사용해 내보내기](#Useplatform)
-- [명령어를 사용해 이미지 내보내기](#ExportImageForUsingCommand)
 
+
+<dx-tabs>
 <span id="Useplatform"></span>
-#### 플랫폼 툴을 사용해 이미지 내보내기
+:::플랫폼\s툴을\s사용해\s이미지\s내보내기
 VMWare vCenter Convert 혹은 Citrix XenConvert 등과 같은 가상 플랫폼의 이미지 내보내기 툴을 사용합니다. 자세한 내용은 각 플랫폼의 내보내기 툴 문서를 참조 바랍니다.
->? 현재 Tencent Cloud의 서비스 마이그레이션에서 지원하는 이미지 형식은 qcow2, vhd, raw, vmdk입니다.
->
-
+<dx-alert infotype="explain">
+현재 Tencent Cloud의 서비스 마이그레이션에서 지원하는 이미지 형식은 qcow2, vhd, raw, vmdk입니다.
+</dx-alert> 
+:::
 <span id="ExportImageForUsingCommand"></span>
-#### 명령어를 사용해 이미지 내보내기
->! 명령어를 사용한 수동 이미지 내보내기 방식은 상대적으로 리스크가 높습니다(IO가 혼잡할 때 파일 시스템의 metadata 오류를 야기하는 등). 이미지를 내보낸 후 [이미지 검사](# CheckMirror)를 실행하여 오류를 확인하시길 권장합니다.
->
+:::명령어를\s사용해\s이미지\s내보내기
+<dx-alert infotype="notice">
+명령어를 사용한 수동 이미지 내보내기 방식은 상대적으로 리스크가 높습니다(IO가 혼잡할 때 파일 시스템의 metadata 오류를 야기하는 등). 이미지를 내보낸 후 [이미지 검사](# CheckMirror)를 실행하여 오류를 확인하시길 권장합니다.
+</dx-alert> 
 
 [qemu-img 명령어 사용](#qemuimg)이나 [dd 명령어 사용](#dd) 중에서 하나를 선택하여 이미지를 내보낼 수 있습니다.
 - **`qemu-img` 명령어 사용**<span id="qemuimg"></span>
@@ -154,8 +156,11 @@ Disk identifier: 0x0008f290
 /dev/sda4        88066048  2919910139  1415922046   8e  Linux LVM
 ```
 `fdisk` 명령어의 출력 결과에 따르면, sda1의 종료 위치는 41945087 \* 512 바이트이고 `count`는 20481M으로 설정됩니다.
->? `dd` 명령어를 통해 내보낸 이미지는 raw 형식이므로 [qcow2, vhd 혹은 기타 이미지 형식으로 전환](# ImageFormatConversion)하시길 권장합니다.
->
+<dx-alert infotype="explain">
+ `dd` 명령어를 통해 내보낸 이미지는 raw 형식이므로 [qcow2, vhd 혹은 기타 이미지 형식으로 전환](# ImageFormatConversion)하시길 권장합니다.
+</dx-alert>
+:::
+</dx-tabs>
 
 <span id="ImageFormatConversion"></span>
 ### 이미지 형식 전환

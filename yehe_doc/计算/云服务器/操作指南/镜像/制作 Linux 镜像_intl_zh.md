@@ -94,19 +94,20 @@ gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime
 
 ### 导出镜像
 根据实际需求，选择不同的方式导出镜像。
-- [使用工具导出](#Useplatform)
-- [使用命令导出镜像](#ExportImageForUsingCommand)
 
+<dx-tabs>
 <span id="Useplatform"></span>
-#### 使用平台工具导出镜像
+:::使用平台工具导出镜像
 使用 VMWare vCenter Convert 或 Citrix XenConvert 等虚拟化平台的导出镜像工具。详情请参见各平台的导出工具文档。
->? 目前腾讯云服务迁移支持的镜像格式有：qcow2，vhd，raw，vmdk。
->
-
+<dx-alert infotype="explain">
+目前腾讯云服务迁移支持的镜像格式有：qcow2，vhd，raw，vmdk。
+</dx-alert>
+:::
 <span id="ExportImageForUsingCommand"></span>
-#### 使用命令导出镜像
->! 由于使用命令手工导出镜像的风险比较大（如在 IO 繁忙时可能造成文件系统的 metadata 错乱等）。建议您在导出镜像后，[检查镜像](#CheckMirror) 完整无误。
->
+::: 使用命令导出镜像
+<dx-alert infotype="notice">
+由于使用命令手工导出镜像的风险比较大（如在 IO 繁忙时可能造成文件系统的 metadata 错乱等）。建议您在导出镜像后，[检查镜像](#CheckMirror) 完整无误。
+</dx-alert>
 
 您可选择 [使用 qemu-img 命令](#qemuimg) 或 [使用 dd 命令](#dd) 其中一种方式导出镜像：
 - **使用 `qemu-img` 命令**<span id="qemuimg"></span>
@@ -154,8 +155,11 @@ Disk identifier: 0x0008f290
 /dev/sda4        88066048  2919910139  1415922046   8e  Linux LVM
 ```
 由`fdisk` 命令的返回结果可得知，sda1 结束位置在41945087 \* 512字节处，`count`设置为20481M即可。
->? 通过 `dd` 命令导出的镜像为 raw 格式，建议 [转换为 qcow2，vhd 或者其他镜像格式](#ImageFormatConversion)。
->
+<dx-alert infotype="explain">
+通过 `dd` 命令导出的镜像为 raw 格式，建议 [转换为 qcow2，vhd 或者其他镜像格式](#ImageFormatConversion)。
+</dx-alert>
+:::
+</dx-tabs>
 
 <span id="ImageFormatConversion"></span>
 ### 镜像格式转换

@@ -94,22 +94,24 @@ gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime
 
 ### イメージのエクスポート
 必要に応じてイメージのエクスポート方法を選択してください。
-- [プラットフォームツールを使用してイメージをエクスポートする](#Useplatform)
-- [コマンドを使用してイメージをエクスポートする](#ExportImageForUsingCommand)
 
+
+<dx-tabs>
 <span id="Useplatform"></span>
-#### プラットフォームツールを使用してイメージをエクスポートする
+::: プラットフォームツールを使用してイメージをエクスポートする
 VMWare vCenter ConvertまたはCitrix XenConvertなどの仮想化プラトフォームのイメージエクスポートツールを利用します。詳細について、対象プラットフォームのエクスポートツールのドキュメントをご参照ください。
->? 現在、Tencent Cloudサービス移行でサポートされているイメージ形式には、qcow2、vhd、raw、vmdkがあります。
->
-
+<dx-alert infotype="explain">
+ 現在、Tencent Cloudサービス移行でサポートされているイメージ形式には、qcow2、vhd、raw、vmdkがあります。
+</dx-alert>
+:::
 <span id="ExportImageForUsingCommand"></span>
-#### コマンドを使用してイメージをエクスポートする
->! コマンドを使用して手動でイメージをエクスポートすると、（I/Oがビジーなときに、ファイルシステムのメタデータが破損する可能性があります）、リスクが高くなります。イメージをエクスポートした後は、[イメージをチェック](#CheckMirror)して完全性を確保することをお勧めします。
->
+:::コマンドを使用してイメージをエクスポートする
+<dx-alert infotype="notice">
+コマンドを使用して手動でイメージをエクスポートすると、（I/Oがビジーなときに、ファイルシステムのメタデータが破損する可能性があります）、リスクが高くなります。イメージをエクスポートした後は、[イメージをチェック](#CheckMirror)して完全性を確保することをお勧めします。
+</dx-alert>
 
 イメージをエクスポートするには、[qemu-imgコマンドを使用](#qemuimg)または[ddコマンドを使用](#dd)のいずれかの方法を選択します。
-- ** `qemu-img` コマンドを使用する**<span id="qemuimg"></span>
+- **`qemu-img` コマンドを使用する**<span id="qemuimg"></span>
  1. 次のコマンドを実行して、必要なパッケージをインストールします。このドキュメントではDebianを例にします。パッケージはリリースバージョンによって異なる可能性がありますので、実際の状況に合わせて調整してください。例えば、CentOSではパッケージ名は `qemu-img`です。
 ```
 apt-get install qemu-utils
@@ -128,7 +130,7 @@ sudo qemu-img convert -f raw -O qcow2 /dev/sda /mnt/sdb/test.qcow2
 	<tr><td>vmdk</td><td>vmdk形式</td></tr>
 	<tr><td>raw</td><td>形式なし</td></tr>
 </table>
-- ** `dd` コマンドを使用する**<span id="dd"></span>
+- **`dd` コマンドを使用する**<span id="dd"></span>
 例えば、次のコマンドを実行して、raw形式のイメージをエクスポートします。
 ```
 sudo dd if=/dev/sda of=/mnt/sdb/test.imag bs=1K count=$count
@@ -154,8 +156,11 @@ Disk identifier: 0x0008f290
 /dev/sda4        88066048  2919910139  1415922046   8e  Linux LVM
 ```
 `fdisk` コマンドから返された結果によると、sda1の終了位置は41945087 \*512バイトであり、`count`は20481Mに設定してください。
->?  `dd`コマンドでエクスポートされたイメージはraw形式であり、[qcow2、vhdまたはその他のイメージ形式に変換する](#ImageFormatConversion)ことをお勧めします。
->
+<dx-alert infotype="explain">
+ `dd`コマンドでエクスポートされたイメージはraw形式であり、[qcow2、vhdまたはその他のイメージ形式に変換する](#ImageFormatConversion)ことをお勧めします。
+</dx-alert>
+:::
+</dx-tabs>
 
 <span id="ImageFormatConversion"></span>
 ### イメージ形式の変換
