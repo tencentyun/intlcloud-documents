@@ -1,11 +1,11 @@
 ## Overview
 
-This document describes how to authenticate and manage your APIs through application-enabled authentication in PHP.
+This document describes how to manage access to your APIs through application authentication in PHP.
 
 ## Directions
 
-1. In the [API Gateway console](https://console.cloud.tencent.com/apigateway/index?rid=1), create an API and select the authentication type as "application-enabled authentication" (for more information, please see [API Creation Overview](https://intl.cloud.tencent.com/document/product/628/11795)).
-2. Publish the service where the API resides to the release environment (for more information, please see [Service Release and Deactivation](https://intl.cloud.tencent.com/document/product/628/11809)).
+1. In the [API Gateway console](https://console.cloud.tencent.com/apigateway/index?rid=1), create an API and select the authentication type as **App Authentication**. To learn more about the authentication types, please find the documentation for different types of backends in [Creating API - Overview](https://intl.cloud.tencent.com/document/product/628/11795).
+2. Publish the service where the API resides to an environment. See [Service Release and Deactivation](https://intl.cloud.tencent.com/document/product/628/11809).
 3. Create an application on the [Application](https://console.cloud.tencent.com/apigateway/app) page in the console.
 4. Select the created application in the application list, click **Bind API**, select the service and API, and click **Submit** to bind the application to the API.
 5. Generate signing information in PHP by referring to the [Sample Code](#Sample-Code).
@@ -16,8 +16,8 @@ This document describes how to authenticate and manage your APIs through applica
 
 ## Notes
 
-- For more information on operations such as application lifecycle management, API authorization for application, and application-API binding, please see [Application Management](https://intl.cloud.tencent.com/document/product/628/40306).
-- For the application signature generation process, please see [Application-Enabled Authentication](https://intl.cloud.tencent.com/document/product/628/40304).
+- For more information on operations such as application lifecycle management, authorizing an app to access the API, and binding an app with an API, please see [Application Management](https://intl.cloud.tencent.com/document/product/628/40306).
+- For the application signature generation process, please see [Application Authentication](https://intl.cloud.tencent.com/document/product/628/40304).
 
 ## Sample Code[](id:Sample-Code)
 
