@@ -1,12 +1,13 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to simple operations, multipart operations, and advanced APIs.
+This document provides an overview of APIs and SDK code samples related to simple operations, multipart upload operations, and advanced APIs.
 
 **Simple operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ----------------------------------------- |
 | [GET Bucket (List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | Querying an object list | Queries some or all objects in a bucket |
+| [GET Bucket Object versions](https://intl.cloud.tencent.com/document/product/436/31551) | Querying object versions | Queries some or all objects in a bucket and their historical versions |
 | [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Querying object metadata | Queries the metadata of an object |
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object | Uploads an object to a bucket |
 | [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system |
@@ -19,19 +20,19 @@ This document provides an overview of APIs and SDK code samples related to simpl
 
 | API          | Operation                   | Description                                       |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries in-progress multipart upload operations |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries the information about ongoing multipart uploads |
 | [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload operation | Initializes a multipart upload operation |
 | [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading a part | Uploads a part in a multipart upload |
-| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying a part | Uploads a part by copying data from an existing object as data source |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying a part | Copies an object as a part |
 | [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of an entire file |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload operation | Aborts a multipart upload and deletes the uploaded parts |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload task and deletes the uploaded parts |
 
 ## Simple Operations
 
 ### Querying an object list
 
-#### API description
+#### Feature description
 
 This API is used to query some or all objects in a bucket.
 
@@ -41,18 +42,18 @@ This API is used to query some or all objects in a bucket.
 public ObjectListing listObjects(ListObjectsRequest listObjectsRequest) throws CosClientException, CosServiceException;
 ```
 
-#### Sample request 
+#### Sample request
 
-[//]: # (.cssg-snippet-get-bucket)
+[//]: # ".cssg-snippet-get-bucket"
 ```java
-// Enter the bucket name in the format: BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`
 String bucketName = "examplebucket-1250000000";
 ListObjectsRequest listObjectsRequest = new ListObjectsRequest();
 // Set the bucket name.
 listObjectsRequest.setBucketName(bucketName);
 // The prefix indicates that the key of the object to be listed must start with this value
 listObjectsRequest.setPrefix("images/");
-// Set the delimiter to "/" to list objects in the current directory. To list all objects, leave it empty.
+// Set the delimiter to "/" to list objects in the current directory; and leave it empty to list all objects
 listObjectsRequest.setDelimiter("/");
 // Set the maximum number of traversed objects (up to 1,000 per listobject request).
 listObjectsRequest.setMaxKeys(1000);
@@ -95,25 +96,99 @@ do {
 | ------------------ | ---------------- | ------------------ |
 | listObjectsRequest | Request for obtaining a file list | ListObjectsRequest |
 
-Request members:
+The request parameters are described as follows:
 
-| Request Member | Setting Method  | Description                                                     | Type   |
+| Request Member | Setting Method &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------- |
-| bucketName | Constructor or set method | Bucket name in the format: BucketName-APPID. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 | prefix | Constructor or set method | Returns objects prefixed with this value. <br>Default value: `""` (left empty), meaning to return all objects in the bucket | String |
 | marker | Constructor or set method | Marks the starting object of the list. It can be left empty for the first request, but for subsequent requests, it should be set to the `nextMarker` value in the previous listObjects response | String |
 | delimiter | Constructor or set method | Indicates that paths that start with the specified "prefix" and end with the first occurrence of the delimiter will be returned | String |
-| maxKeys | Constructor or set method | The maximum number of returned members (up to 1,000). <br>Default value: `1000` | Integer |
+| maxKeys | Constructor or set method | Maximum number of returned members (up to 1,000). <br>Default value: `1000` | Integer |
 
 #### Response description
 
 - Success: returns `ObjectListing`, including all members and `nextMarker`.  
 - Failure: throws a "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
+### Querying an object version
+
+#### Feature description
+
+This API is used to query some or all objects in a bucket as well as their version history.
+
+#### Method prototype
+
+```java
+public VersionListing listVersions(ListVersionsRequest listVersionsRequest)
+            throws CosClientException, CosServiceException;
+```
+
+#### Sample request
+
+```java
+// Enter the bucket name in the format of `BucketName-APPID`
+String bucketName = "examplebucket-1250000000";
+
+ListVersionsRequest listVersionsRequest = new ListVersionsRequest();
+listVersionsRequest.setBucketName(bucketName);
+// The prefix indicates that the key of the object to be listed must start with this value
+listVersionsRequest.setPrefix("");
+// Set the maximum number of traversed objects (up to 1,000 per listobject request).
+listObjectsRequest.setMaxKeys(1000);
+
+VersionListing versionListing = null;
+
+do {
+    try {
+        versionListing = cosclient.listVersions(listVersionsRequest);
+    } catch (CosServiceException e) {
+        e.printStackTrace();
+        return;
+    } catch (CosClientException e) {
+        e.printStackTrace();
+        return;
+    }
+
+    List<COSVersionSummary> cosVersionSummaries = versionListing.getVersionSummaries();
+    for (COSVersionSummary cosVersionSummary : cosVersionSummaries) {
+        System.out.println(cosVersionSummary.getKey() + ":" + cosVersionSummary.getVersionId());
+    }
+
+    String keyMarker = versionListing.getNextKeyMarker();
+    String versionIdMarker = versionListing.getNextVersionIdMarker();
+
+    listVersionsRequest.setKeyMarker(keyMarker);
+    listVersionsRequest.setVersionIdMarker(versionIdMarker);
+
+} while (versionListing.isTruncated());
+```
+
+#### Parameter description
+
+| Parameter | Description | Type |
+| ------------------ | ---------------- | ------------------ |
+| listVersionsRequest | Request for obtaining object version information | ListVersionsRequest |
+
+The request parameters are described as follows:
+
+| Request Member | Setting Method | Description | Type |
+| ------------ | ------------------- | ------------------------------------------------------------ | ------- |
+| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| prefix | Constructor or set method | Returns objects prefixed with this value. <br>Default value: `""` (left empty), meaning to return all objects in the bucket | String |
+| keyMarker | Constructor or set method | Marks the starting object of the list. It can be left empty for the first request, but for subsequent requests, it should be set to the `nextKeyMarker` value in the previous listObjects response | String |
+| versionIdMarker | Constructor or set method | Marks the starting object of the list. It can be left empty for the first request, but for subsequent requests, it should be set to the `nextVersionIdMarker` value in the previous listObjects response | String |
+| delimiter | Constructor or set method | Indicates that paths that start with the specified "prefix" and end with the first occurrence of the delimiter will be returned | String |
+| maxResults | Constructor or set method | Maximum number of returned members (up to 1,000). Default value: `1000` | Integer |
+
+#### Response description
+
+- Success: returns `ObjectListing`, including all members and `nextKeyMarker` and `nextVersionIdMarker`.
+- Failure: throws a "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 ### Querying object metadata
 
-#### API description 
+#### Feature description
 
 This API is used to query whether a specified object exists in a certain bucket.
 
@@ -124,28 +199,38 @@ public ObjectMetadata getObjectMetadata(String bucketName, String key)
             throws CosClientException, CosServiceException;
 ```
 
-#### Sample request 
+#### Sample request
 
-[//]: # (.cssg-snippet-head-object)
+[//]: # ".cssg-snippet-head-object"
 ```java
-// Enter the bucket name in the format: BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 ObjectMetadata objectMetadata = cosClient.getObjectMetadata(bucketName, key);
-```
 
+// Get requestId of the current request
+System.out.println(objectMetadata1.getRequestId());
+// Get the CRC64 check value of the object
+System.out.println(objectMetadata.getCrc64Ecma());
+// Get the last upload time of the object
+System.out.println(objectMetadata1.getLastModified());
+// Get the object size
+System.out.println(objectMetadata.getContentLength());
+// Get the object storage type
+System.out.println(objectMetadata.getStorageClass());
+```
 
 #### Parameter description
 
 | Parameter  | Description | Type |
 | ---------- | ------------------------------------------------------------ | ------ |
-| bucketName | Bucket name in the format: BucketName-APPID. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String  |
-| key | Object key, the unique identifier of an object in a bucket. For example, in the object endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is doc/picture.jpg. For details, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) | String |
+| bucketName | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String  |
+| key | Object key, the unique identifier of an object in a bucket. For example, in the object endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is `doc/picture.jpg`. For details, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 
 #### Response description
 
 - Success: returns `ObjectMetadata`, including the user-defined headers and object metadata such as the ETag.
-- Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Response parameters
 
@@ -162,7 +247,7 @@ The `ObjectMetadata` class is used to record the metadata of an object. The main
 
 ### Uploading an object (creating a directory)
 
-#### API description 
+#### Feature description
 
 This API (PUT Object) is used to upload objects to the specified bucket. It can upload a local file or an input stream of a known length to COS. It is suitable for uploading small image files (below 20 MB), with a maximum of 5 GB (inclusive) supported. Please use [Multipart Upload](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [Advanced API](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) if the file is larger than 5 GB.
 
@@ -188,10 +273,10 @@ public PutObjectResult putObject(PutObjectRequest putObjectRequest)
 
 #### Sample 1. Uploading a file
 
-[//]: # (.cssg-snippet-put-object-flex)
+[//]: # ".cssg-snippet-put-object-flex"
 <dx-codeblock>
 :::  java
-// Enter the bucket name in the format: BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`
 String bucketName = "examplebucket-1250000000";
 
 File localFile = new File(localFilePath);
@@ -201,11 +286,11 @@ String etag = putObjectResult.getETag();  // Obtain the file ETag.
 :::
 </dx-codeblock>
 
-#### Sample 2. Uploading an object to a COS directory
+#### Sample 2: uploading an object to a COS directory
 
 <dx-codeblock>
 :::  java
-// Enter the bucket name in the format: BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`
 String bucketName = "examplebucket-1250000000";
 
 File localFile = new File(localFilePath);
@@ -219,22 +304,22 @@ String etag = putObjectResult.getETag();  // Obtain the file ETag.
 :::
 </dx-codeblock>
 
-#### Sample 3. Uploading using a stream (the stream length should be set. Otherwise, OOM error may occur)
+#### Sample 3. Uploading using a stream (the stream length should be set. Otherwise, an OOM error may occur)
 
 <dx-codeblock>
 :::  java
-// Enter the bucket name in the format: BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`
 String bucketName = "examplebucket-1250000000";
 
 FileInputStream fileInputStream = new FileInputStream(localFile);
 ObjectMetadata objectMetadata = new ObjectMetadata();
-// Set the length of the input stream to 500.
-objectMetadata.setContentLength(500);
+// Set the length of an input stream (replace `STREAMLENGTH` with the actual stream length)
+objectMetadata.setContentLength(STREAMLENGTH);
 // Set the content type. Default: application/octet-stream
 objectMetadata.setContentType("application/pdf");
 PutObjectResult putObjectResult = cosClient.putObject(bucketName, key, fileInputStream, objectMetadata);
 String etag = putObjectResult.getETag();
-// Close the input stream.
+// Close the input stream
 :::
 </dx-codeblock>
 
@@ -242,7 +327,7 @@ String etag = putObjectResult.getETag();
 
 <dx-codeblock>
 :::  java
-// Enter the bucket name in the format: BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`
 String bucketName = "examplebucket-1250000000";
 
 // Set the name of the directory, which must end with a slash (/).
@@ -253,7 +338,7 @@ ObjectMetadata metadata = new ObjectMetadata();
 metadata.setContentLength(0);
 PutObjectResult putObjectResult = cosClient.putObject(bucketName, key, emptyContent, objectMetadata);
 String etag = putObjectResult.getETag();
-// Close the input stream.
+// Close the input stream
 :::
 </dx-codeblock>
 
@@ -261,13 +346,13 @@ String etag = putObjectResult.getETag();
 
 <dx-codeblock>
 :::  java
-// Enter the bucket name in the format: BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`
 String bucketName = "examplebucket-1250000000";
 
 // 1 storage-class. Enumerated values are `Standard` (default), `Standard_IA`, and `Archive`. For more information, please see: https://intl.cloud.tencent.com/document/product/436/30925
 // 2. content-type. For local file upload, the files are mapped based on the suffix by default. For example, a JPG file is mapped as image/jpeg.
 // For input stream upload, the default is application/octet-stream.
-// 3 To disable MD5 upload verification globally, set the system environment variable. This will affect all upload verification. Verification is performed by default.
+// 3. To disable MD5 upload verification globally, set the system environment variable. This will affect all upload verification. Verification is performed by default.
 // Disable M5 verification: System.setProperty(SkipMd5CheckStrategy.DISABLE_PUT_OBJECT_MD5_VALIDATION_PROPERTY, "true");
 // Enable M5 verification: System.setProperty(SkipMd5CheckStrategy.DISABLE_PUT_OBJECT_MD5_VALIDATION_PROPERTY, null);
 File localFile = new File(localFilePath);
@@ -298,9 +383,9 @@ String crc64Ecma = putObjectResult.getCrc64Ecma();
 | ---------------- | ------------ | ---------------- |
 | putObjectRequest | File upload request | PutObjectRequest |
 
-Request members:
+The request members are described as follows:
 
-| Request Member | Set Method   | Description                                                     | Type   | Required |
+| Request Member | Setting Method &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Description                                                     | Type   | Required |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |---|
 | bucketName   | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String         | Yes |
 | key | Constructor or set method | Unique identifier of the object in the bucket.<br>For example, in the object's access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
@@ -309,7 +394,7 @@ Request members:
 | metadata | Constructor or set method | Metadata of an object | ObjectMetadata | No |
 | trafficLimit | Set method | Traffic limits (in bit/s) on the uploaded object. The default setting is no limit. | Int | No |
 
-The ObjectMetadata class is used to record the metadata of an object. The main members are described below:
+The `ObjectMetadata` class is used to record the metadata of an object. The main members are described as follows:
 
 | Member Name | Description | Type |
 | --------------- | --------------------------------------------------- | ------------------- |
@@ -323,7 +408,7 @@ The ObjectMetadata class is used to record the metadata of an object. The main m
 #### Response description
 
 - Success: returns `PutObjectResult`, including the file ETag.
-- Failure: an error (such as authentication failure) occurs, with a CosClientException or CosServiceException thrown. For details, see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Response parameters
 
@@ -335,12 +420,12 @@ The PutObjectResult class is used to return result information. Its main members
 | dateStr  | Current server time | String |
 | versionId | Returns the version ID of an object in a version-enabled bucket | String |
 | eTag | MD5 checksum of the object returned by PUT Object | String |
-|crc64Ecma| CRC64 value computed by the server based on the object content | String |
+| crc64Ecma | CRC64 value computed by the server based on the object content | String |
 
 
 ### Downloading an object
 
-#### API description 
+#### Feature description
 
 This API is used to download an object.
 
@@ -357,9 +442,9 @@ public ObjectMetadata getObject(GetObjectRequest getObjectRequest, File destinat
 
 #### Sample 1. Obtaining the input stream
 
-[//]: # (.cssg-snippet-get-object)
+[//]: # ".cssg-snippet-get-object"
 ```java
-// Enter the bucket name in the format: BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 
@@ -383,7 +468,7 @@ ObjectMetadata downObjectMeta = cosClient.getObject(getObjectRequest, downFile);
 #### Sample 2. Downloading the object
 
 ```java
-// Enter the bucket name in the format: BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 
@@ -400,12 +485,12 @@ ObjectMetadata downObjectMeta = cosClient.getObject(getObjectRequest, downFile);
 | getObjectRequest | File download request | GetObjectRequest |
 | destinationFile | The file saved locally | File |
 
-Request members:
+The request members are described as follows:
 
-| Request Member | Setting Method  | Description                                                     | Type   |
+| Request Member | Setting Method &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName | Constructor or set method | Bucket name in the format: BucketName-APPID. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| key | Constructor or set method | Object key, the unique identifier of an object in a bucket. For example, in the object endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is doc/picture.jpg. For details, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) | String |
+| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| key | Constructor or set method | Object key, the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | range | Set method | Download range | Long[] |
 | trafficLimit | Set method | Traffic limits (in bit/s) on the downloaded object. The default setting is no limit. | Int |
 
@@ -414,26 +499,26 @@ Request members:
 
 - **Method 1 (Get the input stream of the downloaded file)**
   - Success: returns the `COSObject` class, including the input stream and object attributes.
-  - Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+  - Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 - **Method 2 (Download the file locally)**
   - Success: returns `objectMetadata`, including the file's custom headers, content-type, and other attributes.
-  - Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+  - Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Response parameters
 
-The `COSObject` class is used to return request results. Its main members as described as follows:
+The `COSObject` class is used to return request results. Its main members are described as follows:
 
 | Member Name | Description | Type |
 | --------------- | --------------------------------------------------- | ------------------- |
-| bucketName |  Bucket name in the format: BucketName-APPID. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName |  Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 | key | Object key, the unique identifier of an object in a bucket. For example, in the object endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is doc/picture.jpg. For details, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | metadata | Object metadata  | ObjectMetadata |
 | objectContent | Data stream containing COS object content  | COSObjectInputStream |
 
 
-### Copying an object
+### Copying objects
 
-#### API description  
+#### Feature description 
 
 This API (Put Object Cop) is used to copy an object. You can copy an object up to 5 GB in size across regions, accounts, and buckets, provided that you have read permission for the source file and write permission for the destination file. To copy files larger than 5 GB, use the [advanced replication API](#.E5.A4.8D.E5.88.B6.E5.AF.B9.E8.B1.A1).
 
@@ -444,16 +529,16 @@ public CopyObjectResult copyObject(CopyObjectRequest copyObjectRequest)
             throws CosClientException, CosServiceException
 ```
 
-#### Sample request 
+#### Sample request
 
-[//]: # (.cssg-snippet-copy-object)
+[//]: # ".cssg-snippet-copy-object"
 ```java
 // Intra-region and intra-account replication
-// Enter the bucket name in the format: BucketName-APPID
+// Enter the source bucket name in the format of `BucketName-APPID`
 String srcBucketName = "sourcebucket-1250000000";
 // The source file to be copied
 String srcKey = "sourceObject";
-// Enter the destination bucket name in the format of BucketName-APPID.
+// Enter the destination bucket name in the format of `BucketName-APPID`.
 String destBucketName = "examplebucket-1250000000";
 // The destination file to be copied into
 String destKey = "exampleobject";
@@ -476,12 +561,12 @@ String crc64Ecma = copyObjectResult.getCrc64Ecma();
 | ----------------- | ------------ | ----------------- |
 | copyObjectRequest | File copy request | CopyObjectRequest |
 
-Request members:
+The request members are described as follows:
 
 | Parameter | Description | Type |
 | --------------------- | ------------------------------------------------------------ | ------ |
-| sourceBucketRegion | Region of the source bucket. Default: same as the “region” value in the current clientConfig, which represents intra-region replication | String |
-| sourceBucketName | Source bucket name in the format: BucketName-APPID. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| sourceBucketRegion | Region of the source bucket. Default: same as the `region` value in the current clientConfig, which represents intra-region replication | String |
+| sourceBucketName | Source bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 | sourceKey | Source object key. An object key is the unique identifier of an object in a bucket. For example, in the object endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is doc/picture.jpg. For details, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | sourceVersionId | Version ID of the source file (for source buckets with versioning enabled). Default: the latest version of the source file | String |
 | destinationBucketName | Destination bucket name in the format of `BucketName-APPID`. It should contain letters, numbers, and hyphens. | String |
@@ -491,12 +576,12 @@ Request members:
 #### Response description
 
 - Success: returns `CopyObjectResult`, including the ETag and other information on the new file.
-- Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 
 ### Deleting an object
 
-#### API description 
+#### Feature description
 
 This API is used to delete a specified object (file/object) from a bucket.
 
@@ -507,11 +592,11 @@ public void deleteObject(String bucketName, String key)
             throws CosClientException, CosServiceException;
 ```
 
-#### Sample request 
+#### Sample request
 
-[//]: # (.cssg-snippet-delete-object)
+[//]: # ".cssg-snippet-delete-object"
 ```java
-// Enter the bucket name in the format: BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 cosClient.deleteObject(bucketName, key);
@@ -522,18 +607,18 @@ cosClient.deleteObject(bucketName, key);
 
 | Parameter  | Description | Type |
 | ---------- | ------------------------------------------------------------ | ------ |
-| bucketName | Bucket name in the format: BucketName-APPID. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String  |
-| key | Object key, the unique identifier of an object in a bucket. For example, in the object endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is doc/picture.jpg. For details, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) | String |
+| bucketName | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String  |
+| key | Object key, the unique identifier of an object in a bucket. For example, in the object endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is `doc/picture.jpg`. For details, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 
 #### Response description
 
-- Success: No value is returned.
-- Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Success: no value is returned.
+- Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 
 ### Delete objects in batch
 
-#### API description 
+#### Feature description
 
 The API (DELETE Multiple Objects) is used to delete multiple objects.
 
@@ -544,11 +629,11 @@ public DeleteObjectsResult deleteObjects(DeleteObjectsRequest deleteObjectsReque
     throws MultiObjectDeleteException, CosClientException, CosServiceException;
 ```
 
-#### Sample request 
+#### Sample request
 
-[//]: # (.cssg-snippet-delete-multi-object)
+[//]: # ".cssg-snippet-delete-multi-object"
 ```java
-// Enter the bucket name in the format: BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`
 String bucketName = "examplebucket-1250000000";
 
 DeleteObjectsRequest deleteObjectsRequest = new DeleteObjectsRequest(bucketName);
@@ -583,12 +668,12 @@ try {
 | -------------------- | ---- | -------------------- |
 | deleteObjectsRequest | Request | DeleteObjectsRequest |
 
-Request members:
+The request members are described as follows:
 
 | Parameter | Description | Type |
 | ---------- | ------------------------------------------------------------ | ------------------ |
 | bucketName | Bucket naming format is BucketName-APPID. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
-| quiet | Indicates how to return the deletion result. Valid values: true and false (default). If set to `true`, only error messages due to failed deletions are returned. If set to `false`, messages indicating successful and failed deletion are returned |  boolean |
+| quiet | Indicates how to return the deletion result. Valid values: true and false (default). If set to `true`, only error messages due to failed deletions are returned. If set to `false`, messages indicating successful and failed deletion are returned | Boolean |
 | keys | List of object paths. The version ID of each object is optional. | List&lt;DeleteObjectsRequest.KeyVersion&gt; |
 
 `DeleteObjectsRequest.KeyVersion` members are described as follows:
@@ -606,7 +691,7 @@ Request members:
 
 ### Restoring an archived object 
 
-#### API description 
+#### Feature description
 
 This (POST Object restore) API is used to restore an archived object for access.
 
@@ -617,17 +702,17 @@ public void restoreObject(RestoreObjectRequest restoreObjectRequest)
     throws CosClientException, CosServiceException;
 ```
 
-#### Sample request 
+#### Sample request
 
-[//]: # (.cssg-snippet-restore-object)
+[//]: # ".cssg-snippet-restore-object"
 ```java
-// Enter the bucket name in the format of BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 
 // Sets the number of days before a restored temporary copy expires to 1
 RestoreObjectRequest restoreObjectRequest = new RestoreObjectRequest(bucketName, key, 1);
-// Set the restoration mode to “Standard”. You can set it to “Standard”, “Expedited”, or “Bulk” if the object’s storage class is ARCHIVE. For DEEP ARCHIVE, you can set it to “Standard” or “Bulk”. Each restoration mode offers different restoration speeds and costs differently.
+// Set the restoration mode to `Standard`. You can set it to `Standard`, `Expedited` or `Bulk` if the object's storage class is ARCHIVE. For DEEP ARCHIVE, you can set it to `Standard` or `Bulk`. Each restoration mode offers different restoration speeds and costs differently.
 CASJobParameters casJobParameters = new CASJobParameters();
 casJobParameters.setTier(Tier.Standard);
 restoreObjectRequest.setCASJobParameters(casJobParameters);
@@ -640,11 +725,11 @@ cosClient.restoreObject(restoreObjectRequest);
 | -------------------- | ------ | -------------------- |
 | restoreObjectRequest | Request class | RestoreObjectRequest |
 
-Request members:
+The request members are described as follows:
 
 | Parameter | Description | Type |
 | ---------------- | ------------------------------------------------------------ | ---------------- |
-| bucketName | Bucket naming format is BucketName-APPID. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 | key | Unique identifier of the object in the bucket. For example, in the object's access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is `doc/picture.jpg`. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
 | expirationInDays | Specifies the number of days before a restored temporary file expires | int |
 | casJobParameters | Specifies the restoration mode to call the `setTier` function. To restore objects from ARCHIVE, valid values are `Tier.Standard`, `Tier.Expedited`, and `Tier.Bulk`. To restore objects from DEEP ARCHIVE, valid values are `Tier.Standard` and `Tier.Bulk`. | CASJobParameters |
@@ -655,19 +740,19 @@ Request members:
 - Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 
-## Multipart Operations
+## Multipart Upload Operations
 
 Operations related to multipart uploads are as follows:
 
 - Multipart upload: initializing a multipart upload operation, uploading parts, and completing a multipart upload operation
 - Resuming a multipart upload operation: querying uploaded parts, uploading remaining parts, and completing a multipart upload operation
-- Deleting uploaded parts.
+- Deleting uploaded parts
 
-### Querying a multipart upload
+### Querying multipart uploads
 
-#### API description 
+#### Feature description
 
-This API is used to query in-progress multipart uploads in a specified bucket.
+This API (List Multipart Uploads) is used to query the ongoing multipart uploads in a bucket.
 
 #### Method prototype
 
@@ -677,11 +762,11 @@ public MultipartUploadListing listMultipartUploads(
             throws CosClientException, CosServiceException
 ```
 
-#### Sample request 
+#### Sample request
 
-[//]: # (.cssg-snippet-list-multi-upload)
+[//]: # ".cssg-snippet-list-multi-upload"
 ```java
-// Enter the bucket name in the format: BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`
 String bucketName = "examplebucket-1250000000";
 ListMultipartUploadsRequest listMultipartUploadsRequest = new ListMultipartUploadsRequest(bucketName);
 listMultipartUploadsRequest.setDelimiter("/");
@@ -698,7 +783,7 @@ MultipartUploadListing multipartUploadListing = cosClient.listMultipartUploads(l
 | --------------------------- | ---- | --------------------------- |
 | listMultipartUploadsRequest | Request | ListMultipartUploadsRequest |
 
-Request members:
+The request members are described as follows:
 
 | Parameter | Description | Type |
 | -------------- | ------------------------------------------------------------ | ------ |
@@ -713,13 +798,13 @@ Request members:
 #### Response description
 
 - Success: returns `MultipartUploadListing`, including the in-progress multipart uploads.
-- Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 
 
-###  Initializing a multipart upload
+### Initializing a multipart upload
 
-#### API description 
+#### Feature description
 
 This API (Initiate Multipart Upload) is used to initialize a multipart upload.
 
@@ -730,11 +815,11 @@ public InitiateMultipartUploadResult initiateMultipartUpload(
     InitiateMultipartUploadRequest request) throws CosClientException, CosServiceException;
 ```
 
-#### Sample request 
+#### Sample request
 
-[//]: # (.cssg-snippet-init-multi-upload)
+[//]: # ".cssg-snippet-init-multi-upload"
 ```java
-// Enter the bucket name in the format: BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 InitiateMultipartUploadRequest initRequest = new InitiateMultipartUploadRequest(bucketName, key);
@@ -749,17 +834,17 @@ uploadId = initResponse.getUploadId();
 | ------------------------------ | ---- | ------------------------------ |
 | initiateMultipartUploadRequest | Request | InitiateMultipartUploadRequest |
 
-Request member description:
+The request members are described as follows:
 
 | Parameter | Setting Method | Description | Type |
 | ---------- | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName | Constructor or set method | Bucket naming format is BucketName-APPID. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 | key | Constructor or set method | Specifies the path (i.e., [object key](https://intl.cloud.tencent.com/document/product/436/13324)) to upload the part to, for example, `folder/picture.jpg`. | String |
 
 #### Response description
 
 - Success: returns `InitiateMultipartUploadResult`, including the `uploadId` that identifies the multipart upload.
-- Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 
 ### Uploading a part
@@ -772,9 +857,9 @@ This API (Upload Part) is used to upload parts in a multipart upload.
 public UploadPartResult uploadPart(UploadPartRequest uploadPartRequest) throws CosClientException, CosServiceException;
 ```
 
-#### Sample request 
+#### Sample request
 
-[//]: # (.cssg-snippet-upload-part)
+[//]: # ".cssg-snippet-upload-part"
 ```java
 // Up to 10,000 parts can be uploaded, ranging from 1 MB to 5 GB in size.
 // Set the size of each part to 4 MB. If there are a total of n parts, the size of part 1 through part n-1 is the same, while the last part is less than or equal to it.
@@ -805,11 +890,11 @@ partETags.add(new PartETag(partNumber, eTag));  // partETags records the ETags o
 | ----------------- | ---- | ----------------- |
 | uploadPartRequest | Request | UploadPartRequest |
 
-Request member description:
+The request members are described as follows:
 
 | Parameter | Setting Method | Description | Type |
 | ----------- | -------- | ------------------------------------------------------------ | ----------- |
-| bucketName  | set method | Bucket name in the format: BucketName-APPID. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName  | Set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 | key | Set method | Specifies the path (i.e., [object key](https://intl.cloud.tencent.com/document/product/436/13324)) to upload the part to, for example, `folder/picture.jpg` | String |
 | uploadId | Set method | Identifies the `uploadId` of the specified multipart upload | String |
 | partNumber | Set method | Number (>= 1) that identifies the specified part | int |
@@ -820,7 +905,7 @@ Request member description:
 #### Response description
 
 - Success: returns `UploadPartResult`, including the ETags of the uploaded parts.
-- Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 
 #### Response parameters
@@ -836,7 +921,7 @@ The `UploadPartResult` class is used to return request results. Its main members
 
 ### Copying a part
 
-#### API description 
+#### Feature description
 
 This API (Upload Part - Copy) is used to copy an object as a part from a source path to a destination path.
 
@@ -846,11 +931,11 @@ This API (Upload Part - Copy) is used to copy an object as a part from a source 
 public CopyPartResult copyPart(CopyPartRequest copyPartRequest) throws CosClientException, CosServiceException
 ```
 
-#### Sample request 
+#### Sample request
 
-[//]: # (.cssg-snippet-upload-part-copy)
+[//]: # ".cssg-snippet-upload-part-copy"
 ```java
-// Bucket name in the format of BucketName-APPID
+// Bucket name in the format of `BucketName-APPID`
 // Set destination bucket name, object name, and multipart upload ID.
 String destinationBucketName = "examplebucket-1250000000";
 String destinationTargetKey = "exampleobject";
@@ -884,11 +969,11 @@ partETags.add(copyPartResult.getPartETag());
 | --------------- | ---- | --------------- |
 | copyPartRequest | Request | CopyPartRequest |
 
-Request member description:
+The request members are described as follows:
 
 | Parameter | Setting Method | Description | Type |
 | --------------------- | -------- | ------------------------------------------------------------ | ------ |
-| destinationBucketName | set method | Destination bucket name in the format: BucketName-APPID. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| destinationBucketName | Set method | Destination bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 | destinationKey | Set method | Name of the destination object (i.e., [object key](https://intl.cloud.tencent.com/document/product/436/13324)) to store the replicated part, for example, `folder/picture.jpg` | String |
 | uploadId | Set method | Identifies the `uploadId` of the specified multipart upload | String |
 | partNumber | Set method | Number (>= 1) that identifies the specified part | int |
@@ -901,12 +986,12 @@ Request member description:
 #### Response description
 
 - Success: returns `CopyPartResult`, including the ETag of the part.
-- Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 
-###  Querying uploaded parts
+### Querying uploaded parts
 
-#### API description 
+#### Feature description
 
 This API (List Parts) is used to query the uploaded parts of a multipart upload.
 
@@ -917,9 +1002,9 @@ public PartListing listParts(ListPartsRequest request)
             throws CosClientException, CosServiceException;
 ```
 
-#### Sample request 
+#### Sample request
 
-[//]: # (.cssg-snippet-list-parts)
+[//]: # ".cssg-snippet-list-parts"
 ```java
 // ListPart is used to list uploaded parts using the uploadId before a multipart upload is completed or aborted, and also to construct partEtags.
 List<PartETag> partETags = new ArrayList<PartETag>();
@@ -951,14 +1036,14 @@ do {
 #### Response description
 
 - Success: returns `PartListing`, including the ETag and number of each part as well as the starting marker of the next list.
-- Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 
-###  Completing a multipart upload 
+### Completing a multipart upload 
 
-#### API description 
+#### Feature description
 
-This API (Complete Multipart Upload) is used to complete the multipart upload of the entire file.
+This API (Complete Multipart Upload) is used to complete the multipart upload of an entire file.
 
 #### Method prototype
 
@@ -966,9 +1051,9 @@ This API (Complete Multipart Upload) is used to complete the multipart upload of
 public CompleteMultipartUploadResult completeMultipartUpload(CompleteMultipartUploadRequest request) throws CosClientException, CosServiceException;
 ```
 
-#### Sample request 
+#### Sample request
 
-[//]: # (.cssg-snippet-complete-multi-upload)
+[//]: # ".cssg-snippet-complete-multi-upload"
 ```java
 // Complete a multipart upload.
 String bucketName = "examplebucket-1250000000";
@@ -982,7 +1067,7 @@ CompleteMultipartUploadResult result = cosClient.completeMultipartUpload(compReq
 
 | Parameter | Setting Method | Description                                                     | Type   |
 | ---------- | ------------------- | ------------------------------------------------------------ | ----------------- |
-| bucketName | Constructor or set method | Bucket name in the format: BucketName-APPID. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 | key | Constructor or set method | Specifies the path (i.e., [object key](https://intl.cloud.tencent.com/document/product/436/13324)) to upload the part to, for example, `folder/picture.jpg`. | String            |
 | uploadId | Constructor or set method | Identifies a specified multipart upload. | String |
 | partETags  | Constructor or set method | Identifies the number and ETag returned for an uploaded part. | List&lt;PartETag&gt; |
@@ -990,14 +1075,14 @@ CompleteMultipartUploadResult result = cosClient.completeMultipartUpload(compReq
 #### Response description
 
 - Success: returns `CompleteMultipartUploadResult`, including the ETag of the completed object.
-- Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 
-###  Aborting a multipart upload
+### Aborting a multipart upload
 
-#### API description 
+#### Feature description
 
-This API is used to abort a multipart upload and delete the uploaded parts.
+This API (Abort Multipart Upload) is used to abort a multipart upload and delete the uploaded parts.
 
 #### Method prototype
 
@@ -1005,9 +1090,9 @@ This API is used to abort a multipart upload and delete the uploaded parts.
 public void abortMultipartUpload(AbortMultipartUploadRequest request)  throws CosClientException, CosServiceException;
 ```
 
-#### Sample request 
+#### Sample request
 
-[//]: # (.cssg-snippet-abort-multi-upload)
+[//]: # ".cssg-snippet-abort-multi-upload"
 ```java
 // abortMultipartUpload is used to abort an uncompleted multipart upload
 String bucketName = "examplebucket-1250000000";
@@ -1019,15 +1104,15 @@ cosClient.abortMultipartUpload(abortMultipartUploadRequest);
 
 #### Parameter description
 
-| Parameter | Set Method | Description | Type |
+| Parameter | Setting Method | Description | Type |
 | ---------- | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName | Constructor or set method | Bucket naming format is BucketName-APPID. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 | key | Constructor or set method | Specifies the path (i.e., [object key](https://intl.cloud.tencent.com/document/product/436/13324)) to upload the part to, for example, `folder/picture.jpg`. | String |
 | uploadId | Constructor or set method | Identifies a specified multipart upload | String |
 
 #### Response description
 
-- Success: No value is returned.
+- Success: no value is returned.
 - Failure: An error occurs (such as authentication failure), throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 
@@ -1036,7 +1121,7 @@ cosClient.abortMultipartUpload(abortMultipartUploadRequest);
 
 The advanced APIs encapsulate upload and download APIs using the TransferManger class. They have a thread pool to receive upload and download requests, so that you can choose to submit tasks asynchronously.
 
-[//]: # (.cssg-snippet-transfer-init)
+[//]: # ".cssg-snippet-transfer-init"
 <dx-codeblock>
 :::  java
 // We recommend setting the size of your thread pool to 16 or 32 to maximize network resource utilization, provided your client and COS networks are sufficient (for example, by using Tencent Cloud CVM and uploading to COS in the same region).
@@ -1053,10 +1138,10 @@ transferManager.setConfiguration(transferManagerConfiguration);
 </dx-codeblock>
 
 
-Close transferManager manually after use to prevent resource leakage.
+Close TransferManager manually after use to prevent resource leakage.
 
 ```java
-// Close TransferManger.
+// Close TransferManger and close cosClient inside it.
 transferManager.shutdownNow();
 ```
 
@@ -1064,22 +1149,23 @@ transferManager.shutdownNow();
 
 The `TransferManagerConfiguration` class is used to record the configuration of advanced APIs. Its main members are described as follows:
 
-| Member Name | Set Method | Description | Type |
+| Member Name | Setting Method | Description | Type |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |
-| minimumUploadPartSize | Set method | Part size of the multipart upload in bytes. Default: 5 MB| long |
+| minimumUploadPartSize | Set method | Part size of the multipart upload in bytes. Default: 5 MB | long |
 | multipartUploadThreshold | Set method | If a file is greater than or equal to this value, it will be uploaded in concurrent parts. Unit: byte; default: 5 MB | long |
 | multipartCopyThreshold | Set method | If a file is greater than or equal to this value, it will be replicated in concurrent parts. Unit: byte; default: 5 GB | long |
 | multipartCopyPartSize | Set method | Part size in bytes for multipart replication. Default: 100 MB | long |
 
 ### Uploading an object (querying the progress)
 
-#### API description 
+#### Feature description
 
-This advanced version of the PUT Object API automatically determines whether to use simple or multipart upload based on the length and data type of your file, as shown below:
-- Simple upload (for streams) will be used if the object size is below the multipart upload threshold or the `Content-Length` header is not carried.
-- Multipart upload (for streams) will be used if the object size is above the multipart upload threshold and the `Content-Length` header is not carried.
-- Determines multipart upload with concurrent threads for files with File as the data type.
+This advanced version of the PUT Object API automatically determines whether to use simple or multipart upload based on the length and data type of your file:
+- Use simple upload (for streams) if the object size is below the multipart upload threshold or the `Content-Length` header is not carried.
+- Use multipart upload (for streams) if the object size is above the multipart upload threshold and the `Content-Length` header is not carried.
+- Use multipart upload with concurrent threads for files with File as the data type.
 - Advanced APIs support calling the `getProgress()` method to obtain the multipart upload progress.
+- Use multipart upload for files whose sizes are equal to or greater than 5 MB. The file size threshold can be adjusted by using the method described in sample request 3.
 
 >? For more information about other attributes, storage classes, and MD5 checksum, please see [PUT Object API](https:///intl.cloud.tencent.com/document/product/436/7749).
 >
@@ -1094,22 +1180,22 @@ public Upload upload(final PutObjectRequest putObjectRequest)
 
 #### Sample 1. Uploading with advanced APIs
 
-[//]: # (.cssg-snippet-transfer-upload-file1)
+[//]: # ".cssg-snippet-transfer-upload-file1"
 ```java
-// Enter the bucket name in the format of BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 File localFile = new File(localFilePath);
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localFile);
 // Upload a local file.
 Upload upload = transferManager.upload(putObjectRequest);
-// Wait for the upload to finish (call waitForCompletion if you want to wait synchronously for the upload to complete).
+// Wait for the upload to finish.
 UploadResult uploadResult = upload.waitForUploadResult();
 ```
 
 #### Sample 2. Uploading with advanced APIs and querying the upload progress
 
-[//]: # (.cssg-snippet-transfer-upload-file2)
+[//]: # ".cssg-snippet-transfer-upload-file2"
 ```java
 // Write the callback function to print the upload progress.
 void showTransferProgress(Transfer transfer) {
@@ -1129,7 +1215,7 @@ void showTransferProgress(Transfer transfer) {
     System.out.println(transfer.getState());
 }
 
-// Enter the bucket name in the format: BucketName-APPID
+// Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 File localFile = new File(localFilePath);
@@ -1137,8 +1223,26 @@ PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localF
 // Upload a local file.
 Upload upload = transferManager.upload(putObjectRequest);
 // Print the upload progress synchronously.
+// You can call this function via a child thread, but be sure to start the child thread before `waitForUploadResult`, otherwise you will not see the progress because the upload is completed.
 showTransferProgress(upload);
-// Wait for the upload to finish (call waitForCompletion if you want to wait synchronously for the upload to complete).
+// Wait for the upload to finish.
+UploadResult uploadResult = upload.waitForUploadResult();
+```
+
+#### Sample 3. Uploading with advanced APIs and setting the multipart upload threshold
+```java
+// Enter the bucket name in the format of `BucketName-APPID`.
+String bucketName = "examplebucket-1250000000";
+String key = "exampleobject";
+File localFile = new File(localFilePath);
+PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, key, localFile);
+// Set the threshold to trigger multipart upload to 10 MB.
+TransferManagerConfiguration transferManagerConfiguration = new TransferManagerConfiguration();
+transferManagerConfiguration.setMultipartUploadThreshold(10*1024*1024);
+transferManager.setConfiguration(transferManagerConfiguration);
+// Upload a local file.
+Upload upload = transferManager.upload(putObjectRequest);
+// Wait for the upload to finish.
 UploadResult uploadResult = upload.waitForUploadResult();
 ```
 
@@ -1148,23 +1252,23 @@ UploadResult uploadResult = upload.waitForUploadResult();
 | ---------------- | ------------ | ---------------- |
 | putObjectRequest | File upload request | PutObjectRequest |
 
-Request members:
+The request members are described as follows:
 
-| Request Member | Set Method | Description                                                     | Type   |
+| Request Member | Setting Method &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
 | ------------ | ------------------- | ------------------------------------------------------------ | -------------- |
-| bucketName | Constructor or set method |Bucket name in the format: BucketName-APPID. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)  | String |
+| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)  | String |
 | key | Constructor or set method |The object key is the unique identifier of the object in the bucket.<br>For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is doc/picture.jpg, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | file | Constructor or set method | Local file | File |
 | input | Constructor or set method | Input stream | InputStream |
 | metadata | Constructor or set method | Metadata of a file | ObjectMetadata |
-| trafficLimit | Set method | Traffic limits (in bit/s) on the uploaded object. The default setting is no limit. | Int | 
+| trafficLimit | Set method | Traffic limits (in bit/s) on the uploaded object. The default setting is no limit. | Int | No |
 
 >?When a file is uploaded in concurrent parts, `trafficLimit` is the limit on the upload speed of each part. In this case, you need to adjust the number of threads in your thread pool to control the upload speed.
 
-#### Returned values
+#### Response description
 
-- Success: returns Upload. You can query whether the upload is complete, or wait until the upload is finished.
-- Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Success: returns `Upload`. You can query whether the upload is complete, or wait until the upload is finished.
+- Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 #### Response parameters
 
@@ -1172,7 +1276,7 @@ The UploadResult class records the object upload results requested by calling th
 
 | Member Name | Description | Type |
 | ---------- | ------------------------------------------------------------ | ------ |
-| bucketName | Bucket naming format is BucketName-APPID. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312) | String |
 | key |The object key is the unique identifier of the object in the bucket.<br/>For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is doc/picture.jpg, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | requestId  | Request ID                                                       | String |
 | dateStr    | Current server time                                             | String |
@@ -1193,7 +1297,7 @@ You can use the `getProgress()` method of the `Upload` class to obtain the `Tran
 
 ### Downloading an object (checkpoint restart)
 
-#### API description 
+#### Feature description
 
 This API is used to download a COS object.
 
@@ -1209,11 +1313,11 @@ public Download download(final GetObjectRequest getObjectRequest, final File fil
         int multiThreadThreshold, int partSize);
 ```
 
-#### Sample 1. Download an object with advanced APIs
+#### Sample 1. Downloading an object with advanced APIs
 
-[//]: # (.cssg-snippet-transfer-download-object)
+[//]: # ".cssg-snippet-transfer-download-object"
 ```java
-// Enter the bucket name in the format of BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 File localDownFile = new File(localFilePath);
@@ -1247,7 +1351,7 @@ void showTransferProgress(Transfer transfer) {
     System.out.println(transfer.getState());
 }
 
-// Enter the bucket name in the format of BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`.
 String bucketName = "examplebucket-1250000000";
 String key = "exampleobject";
 File localDownFile = new File(localFilePath);
@@ -1255,6 +1359,7 @@ File localDownFile = new File(localFilePath);
 GetObjectRequest getObj = new GetObjectRequest(bucketName, key);
 
 Download download = transferManager.download(getObj, localDownFile, true);
+// You can call this function via a child thread, but be sure to start the child thread before `waitForCompletion`, otherwise you will not see the progress because the download is completed.
 showTransferProgress(download);
 try {
     download.waitForCompletion();
@@ -1267,7 +1372,6 @@ try {
 }
 
 transferManager.shutdownNow();
-cosclient.shutdown();
 ```
 
 #### Parameter description
@@ -1281,31 +1385,31 @@ cosclient.shutdown();
 | multiThreadThreshold    | Minimum file size to use multi-thread download with checkpoint restart | int | 20 * 1024 * 1024              |
 | partSize | Part size for downloading with checkpoint restart | int  | 8 * 1024 * 1024  |
 
-Request members:
+The request members are described as follows:
 
-| Request Member | Set Method  | Description                                                     | Type   |
+| Request Member | Setting Method &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------ |
-| bucketName | Constructor or set method |Bucket name in the format: BucketName-APPID. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)  | String |
-| key | Constructor or set method |The object key is the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is doc/picture.jpg, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) | String |
+| bucketName | Constructor or set method | Bucket name in the format of `BucketName-APPID`. For details, see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)  | String |
+| key | Constructor or set method | Object key, the unique identifier of the object in the bucket. For example, in the object's access domain name `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/picture.jpg`, the object key is `doc/picture.jpg`. For more information, see [ObjectKey](https://intl.cloud.tencent.com/document/product/436/13324) | String |
 | range | Set method | Download range | Long[] |
 | trafficLimit | Set method | Traffic limits (in bit/s) on the downloaded object. The default setting is no limit. | int |
 
-#### Returned values
+#### Response description
 
 - Success: returns Download. You can query whether the download is complete, or wait until the download is finished.
-- Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 
-### Copying an object
+### Copying objects
 
-#### API description 
+#### Feature description
 
 This advanced replication API automatically determines whether to use simple replication or multipart replication based on the size of an object.
 
 #### Method prototype
 
 ```java
-// Upload an object
+// Upload an object.
 public Copy copy(final CopyObjectRequest copyObjectRequest);
 ```
 
@@ -1313,19 +1417,20 @@ public Copy copy(final CopyObjectRequest copyObjectRequest);
 
 >?Intra-region replication refers to replicating objects to a bucket that resides in the same region.
 
-[//]: # (.cssg-snippet-transfer-copy-object)
+[//]: # ".cssg-snippet-transfer-copy-object"
 ```java
-String secretId = "COS_SECRETID";
-String secretKey = "COS_SECRETKEY";
+// You can log in to the CAM console to view and manage SECRETID and SECRETKEY.
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
 // Region of the source bucket
 COSCredentials credentials = new BasicCOSCredentials(secretId, secretKey);
 Region bucketRegion = new Region("COS_REGION");
 
-// Enter the bucket name in the format of BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`.
 String srcBucketName = "sourcebucket-1250000000";
 // The source file to copy
 String srcKey = "sourceObject";
-// Enter the destination bucket name in the format of BucketName-APPID.
+// Enter the destination bucket name in the format of `BucketName-APPID`.
 
 String destBucketName = "examplebucket-1250000000";
 // Destination file
@@ -1358,12 +1463,14 @@ try {
 #### Sample 2. Cross-region replication
 
 >!
+>
 >- Cross-region replication refers to replicating objects to a bucket that resides in another region, such as copying objects from the Beijing region to the Guangzhou region.
->- Copying objects from Finance Cloud regions to Public Cloud regions (and vice versa) is not supported as they are not interconnected.
+
 
 ```java
-String secretId = "COS_SECRETID";
-String secretKey = "COS_SECRETKEY";
+// You can log in to the CAM console to view and manage SECRETID and SECRETKEY.
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
 
 COSCredentials credentials = new BasicCOSCredentials(secretId, secretKey);
 
@@ -1371,11 +1478,11 @@ COSCredentials credentials = new BasicCOSCredentials(secretId, secretKey);
 Region srcBucketRegion = new Region("COS_SRC_REGION");
 Region destBucketRegion = new Region("COS_DEST_REGION");
 
-// Enter the bucket name in the format of BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`.
 String srcBucketName = "sourcebucket-1250000000";
 // The source file to copy
 String srcKey = "sourceObject";
-// Enter the destination bucket name in the format of BucketName-APPID.
+// Enter the destination bucket name in the format of `BucketName-APPID`.
 
 String destBucketName = "examplebucket-1250000000";
 // Destination file
@@ -1405,6 +1512,60 @@ try {
 }
 ```
 
+#### Sample 3. Async replication
+```java
+// You can log in to the CAM console to view and manage SECRETID and SECRETKEY.
+String secretId = "SECRETID";
+String secretKey = "SECRETKEY";
+// Region of the source bucket
+COSCredentials credentials = new BasicCOSCredentials(secretId, secretKey);
+Region bucketRegion = new Region("COS_REGION");
+
+// Enter the bucket name in the format of `BucketName-APPID`.
+String srcBucketName = "sourcebucket-1250000000";
+// The source file to copy
+String srcKey = "sourceObject";
+// Enter the destination bucket name in the format of `BucketName-APPID`.
+
+String destBucketName = "examplebucket-1250000000";
+// Destination file
+String destKey = "exampleobject";
+
+COSClient cosClient = new COSClient(credentials, new ClientConfig(bucketRegion));
+
+ExecutorService threadPool = Executors.newFixedThreadPool(5);
+// Pass a threadpool. Otherwise, a single-thread pool will be generated in TransferManager by default.
+final TransferManager transferManager = new TransferManager(cosClient, threadPool);
+
+CopyObjectRequest copyObjectRequest = new CopyObjectRequest(bucketRegion, srcBucketName,
+        srcKey, destBucketName, destKey);
+
+try {
+    Copy copy = transferManager.copy(copyObjectRequest);
+    // Determine whether the async replication is completed in a child thread.
+    new Thread(){
+        @Override
+        public void run() {
+            while(!copy.isDone()) {
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("wait for copy done");
+            }
+            transferManager.shutdownNow();
+        };
+    }.start();
+    // Proceed with other logic
+} catch (CosServiceException e) {
+    e.printStackTrace();
+} catch (CosClientException e) {
+    e.printStackTrace();
+} catch (InterruptedException e) {
+    e.printStackTrace();
+}
+```
 
 #### Parameter description
 
@@ -1412,27 +1573,27 @@ try {
 | ----------------- | ------------ | ----------------- |
 | copyObjectRequest | Object copy request | CopyObjectRequest |
 
-Request members:
+The request members are described as follows:
 
 | Parameter | Description | Type |
 | --------------------- | ------------------------------------------------------------ | ------ |
 | sourceBucketRegion | Region of the source bucket. Default value: the value of "region" in `clientconfig`, meaning intra-region replication | String |
 | sourceBucketName  | Source bucket name in the format of `BucketName-APPID` | String |
 | sourceKey | Source object key. The object key is the unique identifier of the object in the bucket. For example, in the object’s access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is `doc/picture.jpg`. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
-| sourceVersionId | Version ID of the source file (for source buckets with versioning enabled). Default: The latest version of the source file. | String |
+| sourceVersionId | Version ID of the source file (for source buckets with versioning enabled). Default: the latest version of the source file | String |
 | destinationBucketName  | Destination bucket name in the format of `BucketName-APPID` | String |
 | destinationKey | Destination object key. The object key is the unique identifier of the object in the bucket. For example, in the object’s access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/do/picture.jpg`, the object key is `doc/picture.jpg`. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324). | String |
 | storageClass | Storage class for the destination file. For the enumerated values, such as `Standard` (default) and `Standard_IA`, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | String |
 
-#### Returned values
+#### Response description
 
 - Success: returns Copy. You can query whether the copy is completed, or wait until the copy finishes synchronously.
-- Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 
 ### Uploading multiple objects
 
-#### API description 
+#### Feature description
 
 This API is used to upload all files in a folder.
 
@@ -1443,8 +1604,8 @@ public MultipleFileUpload uploadDirectory(String bucketName, String virtualDirec
             File directory, boolean includeSubdirectories);
 ```
 
-#### Sample request 
-[//]: # (.cssg-snippet-transfer-upload-directory)
+#### Sample request
+[//]: # ".cssg-snippet-transfer-upload-directory"
 ```java
 // Write the callback function to print the upload progress.
 void showTransferProgress(Transfer transfer) {
@@ -1476,6 +1637,7 @@ try {
     MultipleFileUpload upload = transferManager.uploadDirectory(bucketName, cos_path, new File(dir_path), recursive);
 
     // You can view the upload progress.
+    // You can call this function via a child thread, but be sure to start the child thread before `waitForCompletion`, otherwise you will not see the progress because the upload is completed.
     showTransferProgress(upload);
 
     // You can also wait for the upload to complete.
@@ -1500,15 +1662,15 @@ try {
 | directory                 | Absolute path of the folder to upload | File             |
 | includeSubDirectory       | Whether to upload subdirectories recursively | Boolean          |
 
-#### Returned values
+#### Response description
 
 - Success: returns MultipleFileUpload. You can query whether the upload is complete, or wait until the upload is finished.
-- Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 
 ### Downloading multiple objects
 
-#### API description 
+#### Feature description
 
 This API is used to download objects that have a specified prefix.
 
@@ -1519,8 +1681,8 @@ public MultipleFileDownload downloadDirectory(String bucketName, String keyPrefi
         File destinationDirectory) {
 ```
 
-#### Sample request 
-[//]: # (.cssg-snippet-transfer-upload-directory)
+#### Sample request
+[//]: # ".cssg-snippet-transfer-upload-directory"
 ```java
 // Write the progress callback function.
 void showTransferProgress(Transfer transfer) {
@@ -1550,6 +1712,7 @@ try {
     MultipleFileDownload download = transferManager.downloadDirectory(bucketName, cos_path, new File(dir_path));
 
     // You can view the download progress.
+    // You can call this function via a child thread, but be sure to start the child thread before `waitForCompletion`, otherwise you will not see the progress because the download is completed.
     showTransferProgress(download);
 
     // You can also wait for the download to complete.
@@ -1565,7 +1728,6 @@ try {
 }
 
 transferManager.shutdownNow();
-cosclient.shutdown();
 ```
 
 #### Parameter description
@@ -1576,10 +1738,10 @@ cosclient.shutdown();
 | keyPrefix                 | Prefix of the objects in COS  | String           |
 | destinationDirectory      | Absolute path of the destination directory | File             |
 
-#### Returned values
+#### Response description
 
 - Success: returns MultipleFileUpload. You can query whether the download is complete, or wait until the download is finished.
-- Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+- Failure: an error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
 
 ### Deleting a folder and the files contained
@@ -1589,7 +1751,7 @@ COS does not have folders, but users can use slashes (/) as the delimiter to sti
 In COS, deleting a folder and the objects contained actually means deleting objects that have the same specified prefix. Currently, COS’s Java SDK does not provide a standalone API to perform this operation. However, you can still do so with a combination of basic operations (**query object list** and **batch delete objects**).
 
 
-#### Sample request 
+#### Sample request
 
 ```java
 // For batch delete
@@ -1613,14 +1775,14 @@ public void delete(ArrayList<DeleteObjectsRequest.KeyVersion> keyList) {
     }
 }
 
-// Enter the bucket name in the format: BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`
 String bucketName = "examplebucket-1250000000";
 ListObjectsRequest listObjectsRequest = new ListObjectsRequest();
 // Set the bucket name.
 listObjectsRequest.setBucketName(bucketName);
-// “prefix” indicates the directory to delete.
+// "prefix" indicates the directory to delete.
 listObjectsRequest.setPrefix("images/");
-// Set the delimiter to "/" to list objects in the current directory. To list all objects, leave it empty.
+// Set the delimiter to "/" to list objects in the current directory; and leave it empty to list all objects
 listObjectsRequest.setDelimiter("/");
 // Set the maximum number of traversed objects (up to 1,000 per listobject request).
 listObjectsRequest.setMaxKeys(1000);
@@ -1675,7 +1837,7 @@ For example, if you want to move the `picture.jpg` object to the “doc” path 
 Likewise, if you need to move `picture.jpg` in the `mybucket-1250000000` bucket to another bucket `myanothorbucket-1250000000`, you can copy the object to the `myanothorbucket-1250000000` bucket first and then delete the source object.
 
 
-#### Sample request 
+#### Sample request
 
 ```java
 // Intra-region replication. You can refer to the “copying an object” request sample.
@@ -1707,4 +1869,3 @@ copySameRegion(srcBcuket, srcKey, destBucket, destKey);
 // Information about the source object to delete after the replication
 cosClient.deleteObject(srcBucket, srcKey);
 ```
-

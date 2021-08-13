@@ -1,6 +1,4 @@
-
-
-## Overview 
+## Feature Overview 
 
 COSFS allows you to mount COS buckets locally and work with the objects in Tencent Cloud COS in the same way as you do with a local file system. COSFS supports the following features:
 - Most features of the POSIX file system, such as reading/writing files, operations on directories/links, permission management, and uid/gid management.
@@ -10,6 +8,7 @@ COSFS allows you to mount COS buckets locally and work with the objects in Tence
 
 ## Limitations
 **COSFS is built on S3FS. As the disk is required for COSFS′s read and write operations, COSFS is only suitable for simple management of the mounted files and does not support all features of a local file system. Besides, it cannot outperform Cloud Block Storage (CBS) or Cloud File Storage (CFS).** To use COSFS, note that:
+
 - Randomly writing data or appending data to a file may lead to the re-download/re-upload of the entire file. To avoid this, you can use a CVM in the same region as the bucket to accelerate the upload and download.
 - When a COS bucket is mounted to multiple clients, you need to coordinate the behaviors of these clients, for example, to prevent the clients from simultaneously writing data to the same file.
 - `Rename` operation on a file/folder is not atomic.
@@ -18,7 +17,7 @@ COSFS allows you to mount COS buckets locally and work with the objects in Tence
 - Mounting and unmounting files cannot be performed on the same mounting point at the same time. You can use the `cd` command to switch to another directory and then mount and unmount the files at the mounting point.
 
 ## Operating Environments
-Ubuntu, CentOS, SUSE, and macOS
+Mainstream Ubuntu, CentOS, SUSE, and macOS
 
 
 ## Installation
@@ -26,15 +25,23 @@ You can install COSFS with an installation package or by compiling the source co
 
 
 ### Method 1: Install with an installation package
->?This installation method supports only Ubuntu and CentOS.
+>? This installation method supports only mainstream Ubuntu and CentOS.
+>
 
 #### Ubuntu
 
-1. Download the COSFS installation package for your OS.
-```shell
+1. Download the appropriate installation package according to your system version. Currently, Ubuntu 14.04, 16.04, 18.04, and 20.04 are supported.
+```plaintext
+#Ubuntu14.04
+wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu14.04_amd64.deb
+#Ubuntu16.04
 wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu16.04_amd64.deb
+#Ubuntu18.04
+wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu18.04_amd64.deb
+#Ubuntu20.04
+wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu20.04_amd64.deb
 ```
-2. Install the package.
+2. Install the package. The following uses Ubuntu 16.04 as an example.
 ```shell
 sudo dpkg -i cosfs_1.0.19-ubuntu16.04_amd64.deb
 ```
@@ -42,41 +49,44 @@ sudo dpkg -i cosfs_1.0.19-ubuntu16.04_amd64.deb
 #### CentOS
 
 1. Install dependencies.
-```shell
-sudo yum install  libxml2-devel libcurl-devel -y
+```plaintext
+sudo yum install libxml2-devel libcurl-devel -y
 ```
-2. Download the COSFS installation package for your OS.
-```shell
+2. Download the appropriate installation package according to your system version. Currently, CentOS 6.5 and 7.0 are supported.
+```plaintext
+#CentOS6.5
+wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs-1.0.19-centos6.5.x86_64.rpm
+#CentOS7.0
 wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs-1.0.19-centos7.0.x86_64.rpm
 ```
-3. Install the package.
+3. Install the package. The following uses CentOS 7.0 as an example.
 ```shell
-rpm -ivh cosfs-1.0.19-centos7.0.x86_64.rpm
+sudo rpm -ivh cosfs-1.0.19-centos7.0.x86_64.rpm
 ```
-
+>? If the system reports the error `conflicts with file from package fuse-libs-*` during installation, add the `--force` parameter and install the package again.
+>
 
 ### Method 2: Install by compiling the source code
->?This installation method supports Ubuntu, CentOS, SUSE, and macOS.
+
+>? This installation method supports mainstream Ubuntu, CentOS, SUSE, and macOS.
+>
 
 
 #### 1. Install the dependency software 
-The compilation and installation of COSFS depend on the software packages such as automake, git, libcurl-devel, libxml2-devel, fuse-devel, make, and openssl-devel. The following describes how to install dependency software on Ubuntu, CentOS, SUSE, and macOS:
+The compilation and installation of COSFS depend on software packages such as `automake`, `git`, `libcurl-devel`, `libxml2-devel`, `fuse-devel`, `make`, and `openssl-devel`. The following describes how to install dependency software on Ubuntu, CentOS, SUSE, and macOS:
 
 - Install dependency software on the Ubuntu system:
 ```shell
 sudo apt-get install automake autotools-dev g++ git libcurl4-gnutls-dev libfuse-dev libssl-dev libxml2-dev make pkg-config fuse
 ```
-
 - Install dependency software on the CentOS system:
 ```shell
 sudo yum install automake gcc-c++ git libcurl-devel libxml2-devel fuse-devel make openssl-devel fuse
 ```
-
 - Install dependency software on the SUSE system:
 ```shell
 sudo zypper install gcc-c++ automake make libcurl-devel libxml2-devel openssl-devel pkg-config
 ```
-
 - Install dependency software on the macOS system:
 ```shell
 brew install automake git curl libxml2 make pkg-config openssl 
@@ -124,7 +134,6 @@ echo "/usr/local/lib" >> /etc/ld.so.conf
 ldconfig   #Update the dynamic link library
 pkg-config --modversion fuse  #View the fuse version number. If "2.9.4" is displayed, fuse 2.9.4 is installed successfully. 
 ```
-
 - Install FUSE 2.8.4 or later on the SUSE system manually, as shown below:
 >!During installation, you need to comment out the content of line 222 in `example/fusexmp.c` by using `/*content*/`. Otherwise, an error will be reported when you use Make.
 ```shell
@@ -141,7 +150,6 @@ echo "/usr/local/lib" >> /etc/ld.so.conf
 ldconfig   #Update the dynamic link library
 pkg-config --modversion fuse   #View the fuse version number. If "2.9.4" is displayed, fuse 2.9.4 is installed successfully. 
 ```
-
 - When the "configure" operation is performed on macOS, the following may be displayed:
 ```shell
 configure: error: Package requirements (fuse >= 2.7.3 libcurl >= 7.0 libxml-2.0 >2.6 libcrypto >= 0.9) were not met
@@ -159,7 +167,7 @@ export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig #You may need to mod
 ### 1. Configure the key file
 Write the bucket information in the `/etc/passwd-cosfs` file, including the bucket name (in `BucketName-APPID` format) &lt;SecretId&gt;, as well as &lt;SecretKey&gt;, and use colons (:) to separate them. To avoid compromising your key, you need to set permissions for the key file to 640. You can run the following command to configure the `/etc/passwd-cosfs` key file:
 ```shell
-sudo su  # Switch to the root account to modify the /etc/passwd-cosfs file. Skip this step if you already logged in with the root account
+sudo su  # Switch to the root account to modify the /etc/passwd-cosfs file. Skip this step if you have already logged in with the root account
 echo <BucketName-APPID>:<SecretId>:<SecretKey> > /etc/passwd-cosfs
 chmod 640 /etc/passwd-cosfs
 ```
@@ -168,6 +176,7 @@ chmod 640 /etc/passwd-cosfs
 >- &lt;BucketName-APPID&gt; indicates the name of the bucket. For more information, please see [Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312).
 >- &lt;SecretId&gt; and &lt;SecretKey&gt; are information about the key, which can be obtained and created at [Manage API Key](https://console.cloud.tencent.com/cam/capi) in the CAM console.
 >- You can configure the key in `$HOME/.passwd-cosfs`. Alternatively, you can run `-opasswd_file=[path]` to specify the directory of the key file and then set permissions of the key file to 600.
+> 
 
 **Sample:**
 
@@ -176,23 +185,21 @@ echo examplebucket-1250000000:AKIDHTVVaVR6e3****:PdkhT9e2rZCfy6**** > /etc/passw
 chmod 640 /etc/passwd-cosfs
 ```
 
->!If your COSFS version is v1.0.5 or earlier, the configuration file format is as follows:
->```shell
-<BucketName>:<SecretId>:<SecretKey>
-```
+>! If your COSFS version is v1.0.5 or earlier, the configuration file format is &lt;BucketName>:&lt;SecretId>:&lt;SecretKey>.
+>
+
 
 ### 2. Run the tool
 You can run the following command to mount the bucket configured in the key file to a specified directory:
 
 ```shell
-cosfs <BucketName-APPID> <MountPoint> -ourl=<CosDomainName> -odbglevel=info -oallow_other
+cosfs <BucketName-APPID> <MountPoint> -ourl=cos.<Region>.myqcloud.com -odbglevel=info -oallow_other
 ```
 Where,
 - &lt;MountPoint&gt; is the mount point, for example, `/mnt`.
-- &lt;CosDomainName&gt; is the bucket′s access endpoint formatted as `http://cos.<Region>.myqcloud.com` (applicable to XMLs API and should not carry the bucket name). Note that &lt;Region&gt; is the abbreviation for the region, such as `ap-guangzhou` and `eu-frankfurt`. For more information about the region abbreviations, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
-- `-odbglevel` specifies the log level.
+- &lt;Region&gt; is the abbreviation for the region, such as `ap-guangzhou` and `eu-frankfurt`. For more information about region abbreviations, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
+- `-odbglevel` specifies the log level. The default value is `crit`. Available options are `crit`, `error`, `warn`, `info`, and `debug`.
 - `-oallow_other` allows other users to access the mount point.
-
 
 **Sample:**
 
@@ -201,10 +208,8 @@ mkdir -p /mnt/cosfs
 cosfs examplebucket-1250000000 /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud.com -odbglevel=info -onoxattr -oallow_other
 ```
 
->!If your COSFS is v1.0.5 or earlier, use the following command for the mount:
->```shell
-cosfs <APPID>:<BucketName> <MountPoint> -ourl=<CosDomainName> -oallow_other
-```
+>! If your COSFS is v1.0.5 or earlier, use the following command for the mount: `cosfs &lt;APPID>:&lt;BucketName> &lt;MountPoint> -ourl=&lt;CosDomainName> -oallow_other`.
+>
 
 
 #### 3. Unmount a bucket
@@ -247,5 +252,5 @@ Allows the user whose id is [uid] to access all the files in the mounting destin
 You can obtain the uid of a user using the id command `id -u username`. For example, you can execute `id -u user_00` to obtain the uid of user_00.
 
 
-## FAQs
+## FAQ
 If you have any questions about COSFS, please see [COSFS FAQs](https://intl.cloud.tencent.com/document/product/436/30587).

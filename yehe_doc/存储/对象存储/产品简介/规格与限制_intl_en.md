@@ -10,15 +10,15 @@
     			<td>1. READ/WRITE requests: by default, each bucket enjoys up to 30,000 QPS in public cloud regions in the Chinese mainland, and up to 3,000 QPS in any other regions.
 <br>2. LIST requests: by default, each bucket enjoys up to 1,200 QPS in any region.
 <br>3. RETRIEVE requests: each bucket enjoys up to 100 QPS in any region.
-<br>To increase your QPS limit, please see <a href="https://intl.cloud.tencent.com/document/product/436/13653">Request Rate and Performance Optimization</a>.</td>
+<br>To increase your QPS limit, please see <a href="/document/product/436/13653">Request Rate and Performance Optimization</a>.</td>
     </tr>
 		    <tr>
         <td>Bandwidth</td>
     			<td>Limits</td>
-    			<td>By default, the bandwidth limit on each account is 15 Gbit/s in each public cloud region in the Chinese mainland, and 10 Gbit/s in any other regions. If this threshold is exceeded, traffic throttling will be triggered for requests. To increase this limit, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>
+					<td>By default, the bandwidth limit on each account is 15 Gbit/s in each public cloud region in the Chinese mainland, and 10 Gbit/s in any other regions. If this threshold is exceeded, traffic throttling will be triggered for requests. To increase this limit, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</td>	
     </tr>
     	 <tr>
-        <td rowspan="5">Storage Class</td>
+        <td rowspan="5">Storage class</td>
     			<td>STANDARD limits</td>
     			<td>Billing limits:<br>There is no limit on storage duration or object size.<br>For more information about the billing of STANDARD, please see <a href="https://buy.cloud.tencent.com/price/cos">Product Pricing</a>.</td>
     </tr>
@@ -41,7 +41,7 @@
      <tr>
         <td rowspan="4">Bucket</td>
     			<td>Limits</td>
-    			<td>1. Once a bucket is created, its name and region cannot be modified.<br>2. The name of each bucket under a given account is unique and cannot be changed.<br>3. A bucket name cannot start or end with a hyphen (-). It can only contain lowercase letters [a-z], digits [0-9], hyphens (-), or a combination thereof, and can be up to 50 characters.</td>
+    			<td>1. Once a bucket is created, its name and region cannot be modified.<br>2. The name of each bucket under a given account is unique and cannot be changed.<br>3. A bucket name cannot start or end with a hyphen (-). It can only contain lowercase letters [a-z], digits [0-9], hyphens (-), or a combination thereof, and can contain 1-50 characters.</td>
      </tr>
     	 <tr>
     			<td> Number of buckets</td>
@@ -58,7 +58,7 @@
     		<tr>
     			<td rowspan="5">Object</td>
     			<td>Limits</td>
-					<td >An object key should be between 1-850 bytes. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/13324">Object Overview</a>.</td>
+					<td >An object key should be between 1-850 bytes. For more information, please see <a href="https://cloud.tencent.com/document/product/436/13324">Object Overview</a>.</td>
     		</tr>
     			<tr>
     			<td>Upload</td>
@@ -66,7 +66,7 @@
     		</tr>
     		<tr>
     			<td >Replication</td>
-    			<td >1. You can perform intra-region or cross-region object replication with a Tencent Cloud account.<br>2. The intra-region object replication is free of charge while the cross-region object replication incurs traffic fees. For more information, please see traffic fees in <a href="https://buy.cloud.tencent.com/price/cos">Product Pricing</a>.<br>3. Replication API requirements:<br>&nbsp;&nbsp;(a) Simple replication: replicates a single object of up to 5 GB. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/14117">Simple Copy</a>.<br>&nbsp;&nbsp;(b) Multipart replication must be used for an object larger than 5 GB and up to 48.82 TB. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/14118">Multipart Copy</a>.<br>4. Currently, objects cannot be replicated from STANDARD, STANDARD_IA or INTELLIGENT TIERING to INTELLIGENT TIERING.</td>
+    			<td >1. You can perform intra-region or cross-region object replication with a Tencent Cloud account.<br>2. The intra-region object replication is free of charge while the cross-region object replication incurs traffic fees. For more information, please see traffic fees in <a href="https://buy.cloud.tencent.com/price/cos">Product Pricing</a>.<br>3. Replication API requirements:<br>&nbsp;&nbsp;(a) Simple replication: replicates a single object of up to 5 GB. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/14117">Simple Replication</a>.<br>&nbsp;&nbsp;(b) Multipart replication must be used for an object larger than 5 GB and up to 48.82 TB. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/436/14118">Multipart Replication</a>.<br>4. Currently, objects cannot be replicated from STANDARD, STANDARD_IA or INTELLIGENT TIERING to INTELLIGENT TIERING.</td>
     		</tr>
     		<tr>
     			<td>Deleting multiple objects</td>

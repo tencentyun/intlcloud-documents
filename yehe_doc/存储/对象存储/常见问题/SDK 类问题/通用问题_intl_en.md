@@ -16,18 +16,19 @@ Please follow the steps below for troubleshooting:
 
 ### How do I determine whether files are successfully uploaded?
 
-In COS, each object corresponds to an `ETag` value. After a file is successfully uploaded, an `ETag` value of the String type will be returned and the `ETag` value is not NULL. You can add a condition to determine whether files are successfully uploaded.
+In COS, each object corresponds to an `ETag` value. After a file is successfully uploaded, an `ETag` value of the String type will be returned and the `ETag` value is not NULL. You can add a determination condition to determine whether files are successfully uploaded.
 
 ### How do I request an object for which hotlink protection is configured?
 
-Include a Referer header in your request for an object.
+Add a Header with a specified referer to your request for an object.
 
+
+### Does generating a pre-signed URL generate network requests and incur fees? Will there be a delay?
+Generating a pre-signed URL is local logic and does not generate network requests, causing no additional network latency and no additional cost. You can call the SDK API to generate a pre-signed URL at any time when needed.
 
 ### How do I configure a custom domain name for a COS pre-signed URL?
 
 A pre-signed URL contains a fixed default domain name, which can be replaced via encoding.
-
-
 
 ### How do I create a directory in COS SDK?
 
@@ -35,5 +36,5 @@ A directory in COS is virtual and is actually an object ending with `/`. You can
 
 ### Why are different results returned when I use the same prefix rule and data structure to obtain `ObjectList` via COS SDK?
 
-To make it easier for you to get started, COS simulates the display mode of "folder" or "directory" in the **console and graphical tools such as COSBrowser**. This is realized by creating an empty object with a key value of `project/` and displaying it as a traditional folder. Therefore, the `ObjectList` obtained through the SDK will contain empty objects whose object names end with `/`.
+To make it easier for you to get started, COS simulates the display mode of "folder" or "directory" in the **console and graphical tools such as COS browser**. This is realized by creating an empty object with a key value of `project/` and displaying it as a traditional folder. Therefore, the `objectList` obtained through the SDK will contain empty objects whose object names end with `/`.
 

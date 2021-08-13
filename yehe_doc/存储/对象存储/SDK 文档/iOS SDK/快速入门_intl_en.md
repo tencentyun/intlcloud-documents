@@ -4,7 +4,11 @@
 - Access the demo [here](https://github.com/tencentyun/qcloud-sdk-ios-samples.git).
 - For the SDK APIs and their parameters, please see [SDK API Reference](https://cos-ios-sdk-doc-1253960454.file.myqcloud.com).
 - For the complete sample code, please see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/iOS).
-- For the SDK changelog, see [Changelog](https://github.com/tencentyun/qcloud-sdk-ios/blob/master/CHANGELOG.md).
+- For the SDK changelog, please see [Changelog](https://github.com/tencentyun/qcloud-sdk-ios/blob/master/CHANGELOG.md).
+- For SDK FAQs, please see [iOS SDK FAQs](https://intl.cloud.tencent.com/document/product/436/38957).
+
+>? If you encounter errors such as non-existent functions or methods when using the XML version of the SDK, please update the SDK to the latest version and try again. If you are still using the JSON version of the SDK, please upgrade it to the XML iOS SDK.
+>
 
 ## Preparations
 
@@ -23,18 +27,6 @@ Add the following content to the `Podfile` of your project:
 ```shell
 pod 'QCloudCOSXML'
 ```
-
-#### Disabling the Tencent beacon report feature (applicable to 5.8.3 or later)
-
-We have introduced the [Tencent Beacon](https://beacon.qq.com) into the SDK to track down and optimize the SDK quality for a better user experience.
->? Tencent Beacon monitors only the COS-side request performance, and will not report the business-side data.
-
-If you want to disable this feature, add the following content to the `Podfile` file of your project:
-
-```shell
-pod 'QCloudCOSXML/Slim'
-```
-
 #### Simplified SDK
 
 If you only need to perform upload and download operations and want a smaller sized SDK, you can use the simplified version.
@@ -72,6 +64,15 @@ Configure "Other Linker Flags" in "Build Settings" by adding this parameter:
 
 ![](https://main.qcloudimg.com/raw/125218fad3f4781cae8f992d9a152057.png)
 
+
+>? The SDK provides a packaging script that supports self-packaging according to business requirements. (The packaging script depends on CocoaPods. Please make sure CocoaPods is installed in your development environment first.) The packaging procedure is as follows:
+>1. Download the source code: `git clone https://github.com/tencentyun/qcloud-sdk-ios`.
+>2. Run the packaging script: `source package.sh`.
+>3. Drag and drop the packaging result to the project and perform manual integration as described above.
+>  - iOS: drag and drop the packaging result in the `ios` folder to the project.
+>  - macOS: drag and drop the packaging result in the `osx` folder to the project.
+![](https://main.qcloudimg.com/raw/631ae93aab3955149e5d0d8023eeac1b.png)
+
 ## Step 2. Begin Using the SDK
 
 ### 1. Import the header file
@@ -102,27 +103,157 @@ For the simplified SDK, import the following:
 import QCloudCOSXMLTransfer
 ```
 
-### 2. Create a COS instance
+### 2. Initialize the COS service and implement the signature protocol
 
 #### Method 1. Obtaining a temporary key pair to authenticate requests (recommended)
 
-We recommend using `AppDelegate` for the initialization process. You need to implement the following two protocols:
+The SDK needs to get a temporary key to calculate the signature before sending a request. Therefore, you need to implement the 'QCloudSignatureProvider' protocol to obtain the key and call back the key to the SDK through the 'continueBlock' parameter.
 
-- QCloudSignatureProvider
-- QCloudCredentailFenceQueueDelegate
+It is recommended to place the initialization process in 'AppDelegate' or **application singleton**.
 
-We provide a `QCloudCredentailFenceQueue` scaffolding tool for you to cache and reuse your temporary key.
-
-We recommend designing the COS instances `QCloudCOSXMLService` and `QCloudCOSTransferMangerService` as **application singletons**.
-
-Please see the following complete sample code:
+For the detailed procedure, see the following sample code:
 
 **Objective-c**
 
 ```objective-c
-//AppDelegate.m
-//AppDelegate needs to follow QCloudSignatureProvider and 
-//QCloudCredentailFenceQueueDelegate protocols
+// AppDelegate.m
+// `AppDelegate` must follow `QCloudSignatureProvider` 
+@interface AppDelegate()<QCloudSignatureProvider>
+@end
+
+@implementation AppDelegate
+
+- (BOOL)application:(UIApplication * )application 
+        didFinishLaunchingWithOptions:(NSDictionary * )launchOptions {
+
+    QCloudServiceConfiguration* configuration = [QCloudServiceConfiguration new];
+    QCloudCOSXMLEndPoint* endpoint = [[QCloudCOSXMLEndPoint alloc] init];
+    // Service region abbreviation; for example, `ap-guangzhou` is the abbreviation for the Guangzhou region
+    endpoint.regionName = @"COS_REGION";
+    // Use HTTPS
+    endpoint.useHTTPS = true;
+    configuration.endpoint = endpoint;
+    // You are the key provider
+    configuration.signatureProvider = self;
+    // Initialize the COS instances
+    [QCloudCOSXMLService registerDefaultCOSXMLWithConfiguration:configuration];
+    [QCloudCOSTransferMangerService registerDefaultCOSTransferMangerWithConfiguration:
+        configuration];
+    return YES;
+}
+
+
+// Getting the signature: Here you can see how to get the temporary key and calculate the signature
+// You can also customize the signature calculation process
+- (void) signatureWithFields:(QCloudSignatureFields*)fileds
+                     request:(QCloudBizHTTPRequest*)request
+                  urlRequest:(NSMutableURLRequest*)urlRequst
+                   compelete:(QCloudHTTPAuthentationContinueBlock)continueBlock
+{
+        // Here, get the temporary key from the background server synchronously. It is highly recommended that the logic for getting a temporary key be placed here to maximize the availability of the key
+    //...
+    QCloudCredential* credential = [QCloudCredential new];
+    // Temporary key SecretId
+    credential.secretID = @"SECRETID";
+    // Temporary key SecretKey
+    credential.secretKey = @"SECRETKEY";
+    // Temporary key Token
+    credential.token = @"TOKEN";
+    /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of `startTime` and `expiredTime` is second).
+    */
+    credential.startDate = [NSDate dateWithTimeIntervalSince1970:startTime]; // Unit: second
+    credential.experationDate = [NSDate dateWithTimeIntervalSince1970:expiredTime]];// Unit: second
+  
+    QCloudAuthentationV5Creator* creator = [[QCloudAuthentationV5Creator alloc]
+        initWithCredential:credential];
+    QCloudSignature *signature = [creator signatureForData:urlRequst];
+    continueBlock(signature, nil);
+}
+
+
+@end
+```
+
+**Swift**
+
+```swift
+// AppDelegate.swift
+// `AppDelegate` must follow `QCloudSignatureProvider` 
+
+class AppDelegate: UIResponder, UIApplicationDelegate,
+    QCloudSignatureProvider {
+
+    func application(_ application: UIApplication, 
+        didFinishLaunchingWithOptions launchOptions: 
+        [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let config = QCloudServiceConfiguration.init();
+
+        let endpoint = QCloudCOSXMLEndPoint.init();
+        // Service region abbreviation; for example, `ap-guangzhou` is the abbreviation for the Guangzhou region
+        endpoint.regionName = "COS_REGION";
+        // Use HTTPS
+        endpoint.useHTTPS = true;
+        config.endpoint = endpoint;
+        // You are the key provider
+        config.signatureProvider = self;
+
+        // Initialize the COS instances
+        QCloudCOSXMLService.registerDefaultCOSXML(with: config);
+        QCloudCOSTransferMangerService.registerDefaultCOSTransferManger(
+            with: config);
+        return true
+    }
+
+
+    // Getting the signature: Here you can see how to get the temporary key and calculate the signature
+    // You can also customize the signature calculation process
+    func signature(with fileds: QCloudSignatureFields!, 
+        request: QCloudBizHTTPRequest!, 
+        urlRequest urlRequst: NSMutableURLRequest!, 
+        compelete continueBlock: QCloudHTTPAuthentationContinueBlock!) {
+        
+                // Get the temporary key from the backend server synchronously
+        //...
+
+        let credential = QCloudCredential.init();
+        // Temporary key SecretId
+        credential.secretID = "SECRETID";
+        // Temporary key SecretKey
+        credential.secretKey = "SECRETKEY";
+        // Temporary key Token
+        credential.token = "TOKEN";
+        /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of `startTime` and `expiredTime` is second).
+        */
+        credential.startDate = Date.init(timeIntervalSince1970: TimeInterval(startTime)!) DateFormatter().date(from: "startTime");
+        credential.experationDate = Date.init(timeIntervalSince1970: TimeInterval(expiredTime)!) 
+
+        let creator = QCloudAuthentationV5Creator.init(credential: credential);
+        let signature = creator?.signature(forData: urlRequst);
+        continueBlock(signature,nil);
+        
+    }
+}
+```
+
+
+The SDK provides the `QCloudCredentailFenceQueue` scaffolding tool for you to cache and reuse your temporary key. After a key expires, the scaffolding tool will call the method in the protocol again to retrieve the new key until the key expiration time is later than the current device time.
+
+>! The scaffolding tool determines whether a key can be reused based only on whether the key expiration time is later than the current device time. If you set up a complex policy when requesting a key, the scaffolding tool is not recommended.
+
+It is recommended to place the initialization process in 'AppDelegate' or **application singleton**. You need to implement the following two protocols to use the scaffolding tool:
+
+- QCloudSignatureProvider
+- QCloudCredentailFenceQueueDelegate
+
+
+The following is the sample code:
+
+**Objective-c**
+
+```objective-c
+// AppDelegate.m
+// `AppDelegate` needs to follow the `QCloudSignatureProvider` and 
+// `QCloudCredentailFenceQueueDelegate` protocols
 
 @interface AppDelegate()<QCloudSignatureProvider, QCloudCredentailFenceQueueDelegate>
 
@@ -168,7 +299,7 @@ Please see the following complete sample code:
     credential.secretKey = @"SECRETKEY";
     // Temporary key Token
     credential.token = @"TOKEN";
-    /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of “startTime” and “expiredTime” is second).
+    /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of `startTime` and `expiredTime` is second).
     */
     credential.startDate = [NSDate dateWithTimeIntervalSince1970:startTime]; // Unit: second
     credential.experationDate = [NSDate dateWithTimeIntervalSince1970:expiredTime]];// Unit: second
@@ -203,9 +334,9 @@ Please see the following complete sample code:
 **Swift**
 
 ```swift
-//AppDelegate.swift
-// `AppDelegate` must follow the `QCloudSignatureProvider` and 
-// QCloudCredentailFenceQueueDelegate protocols
+// AppDelegate.swift
+// `AppDelegate` needs to follow the `QCloudSignatureProvider` and 
+// `QCloudCredentailFenceQueueDelegate` protocols
 
 class AppDelegate: UIResponder, UIApplicationDelegate,
     QCloudSignatureProvider, QCloudCredentailFenceQueueDelegate {
@@ -251,7 +382,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         credential.secretKey = "SECRETKEY";
         // Temporary key Token
         credential.token = "TOKEN";
-        /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of “startTime” and “expiredTime” is second).
+        /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of `startTime` and `expiredTime` is second).
         */
         credential.startDate = Date.init(timeIntervalSince1970: TimeInterval(startTime)!) DateFormatter().date(from: "startTime");
         credential.experationDate = Date.init(timeIntervalSince1970: TimeInterval(expiredTime)!) 
@@ -285,9 +416,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
 If your `QCloudServiceConfiguration` has changed, you can register a new instance by using the following method:
 
 ```objective-c
-+ (QCloudCOSTransferMangerService*) registerCOSTransferMangerWithConfiguration:(QCloudServiceConfiguration*)configuration withKey:(NSString*)key;
-```
++ (QCloudCOSTransferMangerService*) registerCOSTransferMangerWithConfiguration:(QCloudServiceConfig
 
+```
 #### Method 2. Using a permanent key for local debugging
 
 You can use your Tencent Cloud permanent key for local debugging during the development phase. **Since this method exposes the key to leakage risks, please be sure to switch to the temporary key method before launching your application.**
@@ -383,7 +514,7 @@ The SDK allows you to upload local files and binary data in NSData format. The f
 QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
 // Local file path
 NSURL* url = [NSURL fileURLWithPath:@"file URL"];
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of `BucketName-APPID`
 put.bucket = @"examplebucket-1250000000";
 // Object key, i.e., the full path of a COS object. If the object is in a directory, the format should be "video/xxx/movie.mp4"
 put.object = @"exampleobject";
@@ -415,11 +546,11 @@ put.body =  url;
 
 ```swift
 let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of `BucketName-APPID`
 put.bucket = "examplebucket-1250000000";
 // Object key, i.e., the full path of a COS object. If the object is in a directory, the format should be "video/xxx/movie.mp4"
 put.object = "exampleobject";
-// The object content to be uploaded. You can pass in variables in NSData *or NSURL* format
+// Content of the object to be uploaded. You can pass in variables in `NSData*` or `NSURL*` format
 put.body = NSURL.fileURL(withPath: "Local File Path") as AnyObject;
 
 // Monitor the upload result
@@ -461,7 +592,7 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 ```objective-c
 QCloudCOSXMLDownloadObjectRequest * request = [QCloudCOSXMLDownloadObjectRequest new];
     
-// Bucket name in the format: `BucketName-APPID`
+// Bucket name in the format of `BucketName-APPID`
 request.bucket = @"examplebucket-1250000000";
 // Object key, i.e., the full path of a COS object. If the object is in a directory, the format should be "video/xxx/movie.mp4"
 request.object = @"exampleobject";
@@ -523,4 +654,3 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().downloadObject(reques
 ```
 
 >?For the complete sample, please go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferDownloadObject.swift).
-

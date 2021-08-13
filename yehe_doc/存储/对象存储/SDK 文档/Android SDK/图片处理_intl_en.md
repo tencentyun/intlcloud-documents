@@ -1,6 +1,6 @@
 ## Overview
 
-COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/product/1045) (CI), a one-stop professional multimedia solution that offers the image processing features outlined below. For more information, see [Image Processing Overview](https://intl.cloud.tencent.com/document/product/436/35280).
+COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/product/1045) (CI), a one-stop professional multimedia solution that offers the image processing features outlined below. For more information, please see [Image Processing Overview](https://intl.cloud.tencent.com/document/product/436/35280).
 
 <table>
    <tr>
@@ -9,7 +9,7 @@ COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/prod
       <th>Description</td>
    </tr>
    <tr>
-      <td rowspan=12>Basic image processing service</td>
+      <td rowspan=11>Basic image processing service</td>
       <td><a href="https://intl.cloud.tencent.com/document/product/436/36366">Scaling</a></td>
       <td>Proportional scaling, scaling image to target width and height, and more</td>
    </tr>
@@ -30,7 +30,7 @@ COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/prod
       <td>Changes the quality of images in JPG and WEBP formats</td>
    </tr>
    <tr>
-      <td><a href="https://intl.cloud.tencent.com/document/product/436/36371">Gaussian blur</a></td>
+      <td><a href="https://intl.cloud.tencent.com/document/product/436/36371">Gaussian blurring</a></td>
       <td>Blurs images</td>
    </tr>
    <tr>
@@ -53,10 +53,6 @@ COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/prod
       <td><a href="https://intl.cloud.tencent.com/document/product/436/36379">Quick thumbnail template</a></td>
       <td>Performs quick format conversion, scaling, and cropping to generate thumbnails</td>
    </tr>
-   <tr>
-      <td><a href="https://intl.cloud.tencent.com/document/product/1045/33443">Setting style</a></td>
-      <td>Sets image styles to easily manage images for different purposes</td>
-   </tr>
 </table>
 
 
@@ -64,11 +60,11 @@ COS has integrated [Cloud Infinite](https://intl.cloud.tencent.com/document/prod
 
 For the parameters and method descriptions of all the APIs in the SDK, please see [SDK API Reference](https://cos-android-sdk-doc-1253960454.file.myqcloud.com/).
 
-## Using Image Processing when Uploading
+## Processing an Image upon the Upload
 
-The following example shows how COS automatically processes an image when you upload it.
+The following example shows how to automatically process an image when you upload it to COS.
 
-Upon successful upload, COS will save both the original and processed images. You can obtain the processing result using a common download request.
+When the image is uploaded successfully, COS will save both the input and output images. You can later obtain the processing results using a general download request.
 
 #### Sample code
 
@@ -83,9 +79,10 @@ PicOperations picOperations = new PicOperations(true, rules);
 PutObjectRequest putObjectRequest = new PutObjectRequest(bucket, cosPath, srcPath);
 putObjectRequest.setPicOperations(picOperations);
 
-// If the upload is successful, you will get both the original and the processed images
+// If the upload is successful, you will get 2 images: the original and the processed images
 COSXMLUploadTask cosxmlUploadTask = transferManager.upload(bucket, cosPath,
         srcPath, uploadId);
 ```
 
->?For the complete sample, go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/PictureOperation.java).
+>?For more samples, please visit [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/Android/app/src/androidTest/java/com/tencent/qcloud/cosxml/cssg/PictureOperation.java).
+

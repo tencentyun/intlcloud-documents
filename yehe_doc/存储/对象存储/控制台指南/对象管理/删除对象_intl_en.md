@@ -1,23 +1,29 @@
-## Introduction
-You can delete a single object or multiple objects in the COS Console.
+## Overview
 
->!Please note that an object cannot be recovered once deleted.
+You can delete a single object or multiple objects uploaded to a bucket via the COS console.
 
+>! Deleted data cannot be restored. Please proceed with caution.
+>
 
-## Deleting a Single Object
-1. Log in to the [COS Console](https://console.cloud.tencent.com/cos5) and click **Bucket List** in the left sidebar to enter the bucket list page.
-2. Click the name of the target bucket to enter its file list page.
-![](https://main.qcloudimg.com/raw/156823c7ad23708feb85f5d682c61d50.png)
-3. Select the object to delete, click **More Actions** > **Delete**, and the delete file dialog box will pop up.
+## Directions
+### Deleting a single object
+
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
+2. In the left sidebar, click **Bucket List** to go to the bucket list page.
+3. Locate the bucket where the object resides and click the bucket name to go to the bucket management page.
+4. In the left sidebar, choose **File List** to go to the file list page.
+5. Locate the object to delete, and click **Delete** from the **More Actions** drop-down list in the **Operation** column.
 ![](https://main.qcloudimg.com/raw/952657b354b3f554780c57b9ba1a23ad.png)
-4. Click **OK** to delete the object.
-![](https://main.qcloudimg.com/raw/3e579dc3f90f83c6ececbb76dae519f7.png)
+6. In the pop-up window, click **OK**.
 
 
-## Deleting Multiple Objects
-1. Select the objects you want to delete in the COS Console, click **Delete** in the **More Actions** drop-down list, and a Delete File dialog box will pop up. 
+### Deleting multiple objects
+
+1. Log in to the [COS console](https://console.cloud.tencent.com/cos5).
+2. In the left sidebar, click **Bucket List** to go to the bucket list page.
+3. Locate the bucket where the object resides and click the bucket name to go to the bucket management page.
+4. In the left sidebar, choose **File List** to go to the file list page.
+5. Select the objects to delete and click **Delete** from the **More Actions** drop-down list at the top.
 ![](https://main.qcloudimg.com/raw/0f780f2130fd234c3ae5268d6b9bf091.png)
-2. Click **OK** to delete the objects.
-![](https://main.qcloudimg.com/raw/66e599c3801dd5e51c9aab65f7274fcc.png)
-
+6. In the pop-up window, click **OK**.
 

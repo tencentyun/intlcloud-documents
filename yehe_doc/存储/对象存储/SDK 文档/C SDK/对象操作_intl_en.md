@@ -14,19 +14,19 @@ This document provides an overview of APIs and SDK code samples related to simpl
 | [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting a single object | Deletes a specified object from a bucket |
 | [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects in a single request |
 
-**Multipart Upload Operations**
+**Multipart upload operations**
 
-| API | Operation | Description |
+| API          | Operation                   | Description                                       |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying a multipart upload | Queries the information about an ongoing multipart upload |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries the information about ongoing multipart uploads |
 | [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload |
 | [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading a part | Uploads a part in a multipart upload |
-| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying a part | Uploads a part by copying data from an existing object as data source |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying a part | Copies an object as a part |
 | [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of an entire file |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload operation | Aborts a multipart upload operation and deletes the uploaded parts |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload task and deletes the uploaded parts |
 
-**Other operations**
+**Other Operations**
 
 | API | Operation | Description |
 | ------------------------------------------------------------ | ------------ | ---------------------------------- |
@@ -34,11 +34,11 @@ This document provides an overview of APIs and SDK code samples related to simpl
 | [PUT Object acl](https://intl.cloud.tencent.com/document/product/436/7748) | Setting object ACL | Sets the ACL of a specified object in a bucket |
 | [GET Object acl](https://intl.cloud.tencent.com/document/product/436/7744) | Querying object ACL | Queries the ACL of an object |
 
-## Simple operations
+## Simple Operations
 
 ### Querying an object list
 
-#### API description
+#### Feature description
 
 This API is used to query some or all objects in a bucket.
 
@@ -56,7 +56,7 @@ cos_status_t *cos_list_object(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | ------------------ | ------------------------------------------------------------ | ------- |
 | options | COS request options | Struct |
-| Bucket | Bucket name in the format: `BucketName-APPID` | String |
+| Bucket | Bucket name in the format of `BucketName-APPID` | String |
 | params | Parameters for the list operation | Struct |
 | encoding_type | Specifies the encoding type of the returned value | String |
 | prefix | Prefix to be matched, which is used to specify the prefix address of the files to be returned | String |
@@ -84,7 +84,7 @@ cos_status_t *cos_list_object(const cos_request_options_t *options,
 | error_msg | Error code description | String |
 | req_id | Request message ID | String |
 
-#### Sample
+#### Sample 1. Querying an object list
 
 ```cpp
 cos_pool_t *p = NULL;
@@ -126,9 +126,68 @@ if (cos_status_is_ok(s)) {
 cos_pool_destroy(p); 
 ```
 
+#### Sample 2. Listing the objects in a directory
+
+COS does not have the concept of folder, but you can use slashes (/) as the delimiter to stimulate folders.
+
+```c
+cos_pool_t *p = NULL;
+int is_cname = 0;
+cos_status_t *s = NULL;
+cos_request_options_t *options = NULL;
+cos_string_t bucket;
+cos_table_t *resp_headers;
+int is_truncated = 1;
+cos_string_t marker;
+  
+cos_pool_create(&p, NULL);
+options = cos_request_options_create(p);
+options->config = cos_config_create(options->pool);
+cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
+cos_str_set(&options->config->access_key_id, TEST_ACCESS_KEY_ID);
+cos_str_set(&options->config->access_key_secret, TEST_ACCESS_KEY_SECRET);
+cos_str_set(&options->config->appid, TEST_APPID);
+options->config->is_cname = is_cname;
+options->ctl = cos_http_controller_create(options->pool, 0);
+cos_str_set(&bucket, TEST_BUCKET_NAME);
+  
+//list object (get bucket)
+cos_list_object_params_t *list_params = NULL;
+list_params = cos_create_list_object_params(p);
+// The prefix indicates that the key of the object to be listed must start with this value
+cos_str_set(&list_params->prefix, "folder/");
+// Set the delimiter to "/" to list objects in the current directory; and leave it empty to list all objects
+cos_str_set(&list_params->delimiter, "/");
+// Set the maximum number of traversed objects (up to 1,000 per listobject request)
+list_params->max_ret = 1000;
+cos_str_set(&marker, "");
+while (is_truncated) {
+    list_params->marker = marker;
+    s = cos_list_object(options, &bucket, list_params, &resp_headers);
+    if (!cos_status_is_ok(s)) {
+        printf("list object failed, req_id:%s\n", s->req_id);
+        break;
+    }
+    // `list_params->object_list` returns the following objects
+    cos_list_object_content_t *content = NULL;
+    cos_list_for_each_entry(cos_list_object_content_t, content, &list_params->object_list, node) {
+        printf("object: %s\n", content->key.data);
+    }
+    // `list_params->common_prefix_list` indicates paths that end with the delimiter. If the delimiter is set to "/", the common prefix indicates the paths of all subdirectories.
+    cos_list_object_common_prefix_t *common_prefix = NULL;
+    cos_list_for_each_entry(cos_list_object_common_prefix_t, common_prefix, &list_params->common_prefix_list, node) {
+        printf("common prefix: %s\n", common_prefix->prefix.data);
+    }
+
+	is_truncated = list_params->truncated;
+	marker = list_params->next_marker;
+}    
+cos_pool_destroy(p);
+```
+
 ### Uploading an object using simple upload
 
-#### API description
+#### Feature description
 
 This API is used to upload an object of up to 5 GB in size to a specified bucket. To upload objects larger than 5 GB, please use [Multipart Upload](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [Advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89).
 
@@ -148,10 +207,10 @@ cos_status_t *cos_put_object_from_file(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format: `BucketName-APPID` | String |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
 | object | Object name | String |
-| filename | The local filename of the object before being uploaded to COS | String |
-| headers      | Headers attached to a COS request                                             | Struct |
+| filename | Filename of the local object before it is uploaded to COS | String |
+| headers      | Additional headers of a COS request | Struct |
 | resp_headers | Returns the HTTP response headers | Struct |
 
 #### Response description
@@ -190,7 +249,7 @@ options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
-// Upload the object
+// Upload an object
 cos_str_set(&file, TEST_DOWNLOAD_NAME);
 cos_str_set(&object, TEST_OBJECT_NAME);
 s = cos_put_object_from_file(options, &bucket, &object, &file, NULL, &resp_headers);
@@ -274,9 +333,9 @@ cos_pool_destroy(p);
 
 ### Querying object metadata
 
-#### API description
+#### Feature description
 
-This API (HEAD Object) is used to query the metatdata of an object.
+This API is used to query the metadata of an object.
 
 #### Method prototype
 
@@ -293,9 +352,9 @@ cos_status_t *cos_head_object(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format: `BucketName-APPID` | String |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
 | object | Object name | String |
-| headers | Headers attached to the COS request | Struct |
+| headers      | Additional headers of a COS request | Struct |
 | resp_headers | Returns the HTTP response headers | Struct |
 
 #### Response description
@@ -345,9 +404,9 @@ if (cos_status_is_ok(s)) {
 cos_pool_destroy(p); 
 ```
 
-### Downloading an Object
+### Downloading an object
 
-#### API description
+#### Feature description
 
 This API is used to download an object to the local file system. This operation requires that you have read permission for the object, or that the object has public read permission enabled.
 
@@ -368,11 +427,11 @@ cos_status_t *cos_get_object_to_file(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format: `BucketName-APPID` | String |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
 | object | Object name | String |
-| headers | Headers attached to the COS request | Struct |
+| headers      | Additional headers of a COS request | Struct |
 | params | Parameters for the COS request operation | Struct |
-| filename | The local filename of the object before being uploaded to COS | String |
+| filename | Filename of the local object before it is uploaded to COS | String |
 | resp_headers | Returns the HTTP response headers | Struct |
 
 #### Response description
@@ -426,7 +485,7 @@ cos_pool_destroy(p);
 
 ### Copying an object
 
-#### API description
+#### Feature description
 
 This API is used to copy a file to the destination path.
 
@@ -452,7 +511,7 @@ cos_status_t *cos_copy_object(const cos_request_options_t *options,
 | src_bucket        | Source bucket                       | String |
 | src_object        | Name of the source object                   | String |
 | src_endpoint      | Endpoint of the source object          | String |
-| dest_bucket | Name of the destination bucket name in the format: `BucketName-APPID` | String |
+| dest_bucket | Name of the destination bucket name in the format of `BucketName-APPID` | String |
 | dest_object | Name of the destination object | String |
 | headers | Headers attached to the COS request | Struct |
 | copy_object_param | Parameters of the `Put Object Copy` operation | Struct |
@@ -512,13 +571,13 @@ if (cos_status_is_ok(s)) {
     printf("put object copy failed\n");
 }
 
-//Destroy the memory pool
+// Destroy the memory pool
 cos_pool_destroy(p);  
 ```
 
 ### Deleting a single object
 
-#### API description
+#### Feature description
 
 This API deletes a specified object from a bucket.
 
@@ -536,7 +595,7 @@ cos_status_t *cos_delete_object(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format: `BucketName-APPID` | String |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
 | object | Object name | String |
 | resp_headers | Returns the HTTP response headers | Struct |
 
@@ -616,7 +675,7 @@ options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
-// Delete the directory object.
+// Delete the directory object
 cos_str_set(&object, "folder/");
 s = cos_delete_object(options, &bucket, &object, &resp_headers);
 if (cos_status_is_ok(s)) {
@@ -633,7 +692,7 @@ cos_pool_destroy(p);
 
 ### Deleting multiple objects
 
-#### API description
+#### Feature description
 
 This API is used to delete multiple objects from a bucket in a single request. It can delete up to 1,000 objects in a single request. This API supports two response modes: Verbose and Quiet. Verbose mode returns the information on the deletion of each object, whereas Quiet mode only returns the information on the objects for which deletion errors were reported.
 
@@ -653,7 +712,7 @@ cos_status_t *cos_delete_objects(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | ------------------- | ------------------------------------------------------------ | ------- |
 | options | COS request options | Struct  |
-| bucket | Bucket name in the format: `BucketName-APPID` | String |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
 | object_list | The list of objects to be deleted                                         | Struct  |
 | key | Name of the object to be deleted | String |
 | is_quiet | Indicates whether Quiet mode is enabled.<br>True(1): Quiet mode is enabled; False(0): Verbose mode is enabled. The default value is False(0). | Boolean |
@@ -729,7 +788,7 @@ cos_pool_destroy(p);
 
 #### Sample 2. Deleting a folder and the objects contained
 
-COS does not have folders, but users can use slashes (/) as the delimiter to stimulate folders.
+COS does not have the concept of folder, but you can use slashes (/) as the delimiter to stimulate folders.
 
 In COS, deleting a folder and the objects contained actually means deleting objects that have the same specified prefix. Currently, COS’s C SDK does not provide a standalone API to perform this operation. However, you can still do so with a combination of basic operations (**query object list** and **batch delete objects**).
 
@@ -782,11 +841,11 @@ cos_pool_destroy(p);
 
 
 
-## Multipart operations
+## Multipart Upload Operations
 
-### Querying multipart upload operations
+### Querying multipart uploads
 
-#### API description
+#### Feature description
 
 This API is used to query in-progress multipart uploads. Up to 1,000 in-progress multipart uploads can be queried in a single request
 
@@ -804,7 +863,7 @@ cos_status_t *cos_list_multipart_upload(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | --------------------- | ------------------------------------------------------------ | ------- |
 | options | COS request options | Struct  |
-| bucket | Bucket name in the format: `BucketName-APPID` | String |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
 | params | Parameters for the `List Multipart Uploads` operation | Struct |
 | encoding_type | Specifies the encoding type of the returned value | String |
 | prefix | Prefix to be matched, which is used to specify the prefix address of the files to be returned | String |
@@ -812,7 +871,7 @@ cos_status_t *cos_list_multipart_upload(const cos_request_options_t *options,
 | max_ret | The maximum number of returned entries per request; the default value is 1000 | String  |
 | key_marker | Used together with `upload-id-marker`.<br><li>If `upload-id-marker` is not specified, only the multipart uploads whose `ObjectName` is lexicographically greater than `key-marker` will be listed;<br><li>If `upload-id-marker` is specified, the multipart uploads whose `ObjectName` is lexicographically greater than the specified `key-marker` will be listed, and any multipart upload whose `ObjectName` lexicographically equals `key-marker` and whose `UploadID` is greater than `upload-id-marker` will also be listed. | String |
 | upload_id_marker | Used together with `key-marker`.<br><li>If `key-marker` is not specified, `upload-id-marker` will be ignored; <br><li>If `key-marker` is specified, the multipart uploads whose `ObjectName` is lexicographically greater than the specified `key-marker` will be listed, and any multipart upload whose `ObjectName` lexicographically equals `key-marker` and whose `UploadID` is greater than `upload-id-marker` will also be listed | String |
-| truncated  |  Indicates whether the returned entry is truncated. Valid value: `true` or `false` | Boolean|
+| truncated  |  Indicates whether the returned entry is truncated. Valid value: `true` or `false` | Boolean |
 | next_key_marker | If the returned list is truncated, the `NextKeyMarker` returned will be the starting point of the subsequent list. | String |
 | next_upload_id_marker | If the returned list is truncated, the `UploadId` returned will be the starting point of the subsequent list. | String |
 | upload_list | Lists all multipart uploads                                              | Struct  |
@@ -850,7 +909,7 @@ cos_request_options_t *options = NULL;
 cos_status_t *s = NULL;
 cos_list_multipart_upload_params_t *list_multipart_params = NULL;
 
-//Create a memory pool, and initialize request options
+// Create a memory pool and initialize request options
 cos_pool_create(&p, NULL);
 options = cos_request_options_create(p);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -871,9 +930,9 @@ cos_pool_destroy(p);
 
 ```
 
-### Initializing a multipart upload operation
+### Initializing a multipart upload
 
-#### API description
+#### Feature description
 
 This API is used to initialize a multipart upload. After the request is executed successfully, the `Upload ID` is returned for the subsequent `Upload Part` requests.
 
@@ -893,10 +952,10 @@ cos_status_t *cos_init_multipart_upload(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format: `BucketName-APPID` | String |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
 | object | Object name | String |
 | upload_id | Returns the ID of the multipart upload operation | String |
-| headers | Headers attached to the COS request | Struct |
+| headers      | Additional headers of a COS request | Struct |
 | resp_headers | Returns the HTTP response headers | Struct |
 
 #### Response description
@@ -934,7 +993,7 @@ options->config->is_cname = is_cname;
 options->ctl = cos_http_controller_create(options->pool, 0);
 cos_str_set(&bucket, TEST_BUCKET_NAME);
 
-//Initialize the multipart upload
+// Initialize the multipart upload
 cos_str_set(&object, TEST_OBJECT_NAME);
 s = cos_init_multipart_upload(options, &bucket, &object, 
                               &upload_id, headers, &resp_headers);
@@ -950,9 +1009,9 @@ cos_pool_destroy(p);
 
 
 
-### Uploading parts
+### Uploading a part
 
-#### API description
+#### Feature description
 
 This API is used to upload parts (possibly out of order) in an initiated multipart upload operation. This API supports the upload of between 1 to 10,000 parts, with each part ranging from 1 MB to 5 GB in size. The `Upload Part` request should include the `partNumber` and `uploadID`.
 
@@ -973,7 +1032,7 @@ cos_status_t *cos_upload_part_from_file(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format: `BucketName-APPID` | String |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
 | object | Object name | String |
 | upload_id | ID of the upload task | String |
 | part_num | Part number | Int |
@@ -1051,7 +1110,7 @@ cos_pool_destroy(p);
 
 ### Copying a part
 
-#### API description
+#### Feature description
 
 This API is used to copy an object as a part.
 
@@ -1071,7 +1130,7 @@ cos_status_t *cos_upload_part_copy(const cos_request_options_t *options,
 | options | COS request options | Struct |
 | params | Parameters for the `Upload Part - Copy` operation | Struct |
 | copy_source | Source file path | String |
-| dest_bucket | Name of the destination bucket in the format: `BucketName-APPID` | String |
+| dest_bucket | Name of the destination bucket in the format of `BucketName-APPID` | String |
 | dest_object | Name of the destination object                                            | String |
 | upload_id | ID of the upload task | String |
 | part_num | Part number | Int |
@@ -1080,7 +1139,7 @@ cos_status_t *cos_upload_part_copy(const cos_request_options_t *options,
 | rsp_content  | The response of the `Upload Part - Copy` operation | Struct |
 | etag | Returns the MD5 checksum of the file                                          | String |
 | last_modify | Returns the time the file was last modified in GMT format | String |
-| resp_headers | Returns the HTTP response headers | Struct  |
+| resp_headers | Returns the HTTP response headers | Struct |
 
 #### Response description
 
@@ -1203,7 +1262,7 @@ cos_list_for_each_entry(cos_list_part_content_t, part_content, &list_upload_part
     cos_list_add_tail(&complete_content->node, &complete_part_list);
 }
 
-//Complete the multipart upload
+// Complete the multipart upload
 headers = cos_table_make(p, 0);
 s = cos_complete_multipart_upload(options, &dest_bucket, &dest_object, 
                                   &upload_id, &complete_part_list, headers, &complete_resp_headers);
@@ -1225,9 +1284,9 @@ cos_pool_destroy(p);
 
 
 
-###  Querying uploaded parts
+### Querying uploaded parts
 
-#### API description
+#### Feature description
 
 This API is used to query the uploaded parts of a specified multipart upload operation.
 
@@ -1247,7 +1306,7 @@ cos_status_t *cos_list_upload_part(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | ----------------------- | ------------------------------------------------------------ | ------- |
 | options | COS request options | Struct  |
-| bucket | Bucket name in the format: `BucketName-APPID` | String |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
 | object | Object name | String |
 | upload_id | Upload task ID | String |
 | params | Parameters for the `List Parts` operation | Struct |
@@ -1345,9 +1404,9 @@ cos_pool_destroy(p);
 
 
 
-### Completing a multipart upload operation
+### Completing a multipart upload
 
-#### API description
+#### Feature description
 
 This API is used to complete the multipart upload of an entire file. You can use this API to complete the multipart upload when you have uploaded all the parts using the `Upload Parts` API. When using this API, you need to provide the `PartNumber` and `ETag` for every part in the body to verify the accuracy of the parts.
 
@@ -1368,13 +1427,13 @@ cos_status_t *cos_complete_multipart_upload(const cos_request_options_t *options
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format: `BucketName-APPID` | String |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
 | object | Object name | String |
-| upload_id | Upload task ID | String |
+| upload_id | ID of the upload task | String |
 | part_list | Parameters for the `Complete Multipart Upload` operation | Struct |
 | part_number | Part number | String |
 | etag | ETag of the part, which is the `sha1` checksum value. It must be enclosed in double quotes, such as: `"3a0f1fd698c235af9cf098cb74aa25bc"`. | String |
-| headers | Headers attached to the COS request | Struct |
+| headers      | Additional headers of a COS request | Struct |
 | resp_headers | Returns the HTTP response headers | Struct |
 
 #### Response description
@@ -1454,9 +1513,9 @@ if (cos_status_is_ok(s)) {
 cos_pool_destroy(p); 
 ```
 
-### Aborting a multipart upload operation
+### Aborting a multipart upload
 
-#### API description
+#### Feature description
 
 This API is used to abort a multipart upload operation and delete the uploaded parts. When this API is called, a failure is returned for any request using the `Upload Parts` API.
 
@@ -1475,9 +1534,9 @@ cos_status_t *cos_abort_multipart_upload(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format: `BucketName-APPID` | String |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
 | object | Object name | String |
-| upload_id | Upload task ID | String |
+| upload_id | ID of the upload task | String |
 | resp_headers | Returns the HTTP response headers | Struct |
 
 #### Response description
@@ -1502,7 +1561,7 @@ cos_request_options_t *options = NULL;
 cos_string_t upload_id;
 cos_status_t *s = NULL;
 
-// Create a memory pool and initialize the request options
+// Create a memory pool and initialize request options
 cos_pool_create(&p, NULL);
 options = cos_request_options_create(p);
 cos_str_set(&options->config->endpoint, TEST_COS_ENDPOINT);
@@ -1546,7 +1605,7 @@ cos_pool_destroy(p);
 
 ### Restoring an archived object
 
-#### API description
+#### Feature description
 
 This API is used to restore an archived object for access.
 
@@ -1567,7 +1626,7 @@ cos_status_t *cos_post_object_restore(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | -------------- | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format: `BucketName-APPID` | String |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
 | object | Object name | String |
 | restore_params | Parameters for the `Post Object Restore` operation | Struct |
 | days | The number of days before a temporary copy restored using `Post Object Restore` expires | Int |
@@ -1628,7 +1687,7 @@ cos_pool_destroy(p);
 
 ### Setting object ACL
 
-#### API description
+#### Feature description
 
 This API is used to set the ACL for a specified object in a bucket.
 
@@ -1650,7 +1709,7 @@ cos_status_t *cos_put_object_acl(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | --------------- | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format: `BucketName-APPID` | String |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
 | object | Object name | String |
 | cos_acl | Allowed user-defined permissions. Valid values: COS_ACL_PRIVATE(0), COS_ACL_PUBLIC_READ(1)<br>Default: COS_ACL_PRIVATE(0) | Enum   |
 | grant_read | Authorized user to which read permission is granted | String |
@@ -1709,7 +1768,7 @@ cos_pool_destroy(p);
 
 ### Querying an object ACL
 
-#### API description
+#### Feature description
 
 This API is used to query the ACL of an object.
 
@@ -1728,12 +1787,12 @@ cos_status_t *cos_get_object_acl(const cos_request_options_t *options,
 | Parameter | Description | Type |
 | ------------ | ------------------------------------------------------------ | ------ |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format: `BucketName-APPID` | String |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
 | object | Object name | String |
 | acl_param | Parameters for the request | Struct |
 | owner_id | ID of the bucket owner | String |
 | owner_id | Name of the bucket owner | String |
-| object_list  | Information on the authorized user and gratned permission | Struct |
+| object_list  | Information on the authorized user and granted permission | Struct |
 | type | Authorized user account type | String |
 | id | ID of the authorized user | String |
 | name | Name of the authorized user | String |
@@ -1793,13 +1852,13 @@ if (cos_status_is_ok(s)) {
 cos_pool_destroy(p); 
 ```
 
-## Advanced APIs (recommended)
+## Advanced APIs (Recommended)
 
 ### Uploading an object (checkpoint restart)
 
-#### API description
+#### Feature description
 
-This API automatically divides your data and lowers your usage threshold based on the size of your file when uploading, and is used to perform checkpoint restart for unfinished multipart uploads. 
+The upload API automatically divides your data into parts based on the size of your file. It's easier to use, eliminating the need to follow each step of the multipart upload process. The part size is 1,048,576 (1 MB) by default and can be adjusted via the `part_size` parameter. 
 
 #### Method prototype
 
@@ -1821,14 +1880,14 @@ cos_status_t *cos_resumable_upload_file(cos_request_options_t *options,
 | Parameter | Description | Type |
 | ----------------- | ------------------------------------------------------------ | -------- |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format: `BucketName-APPID` | String |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
 | object | Object name | String |
 | filepath | The local file name of the object                                          | String |
 | headers | Headers attached to the COS request | Struct |
 | params | Parameters for the COS request                                           | Struct |
 | clt_params | Control parameters for the upload operation | Struct |
-| part_size | Part size in bytes. If you specify the part size to be below 1048576 (1 MB),  the `C SDK` will divide your data automatically. | Int      |
-| thread_num | Number of the threads. Default: 1 | Int |
+| part_size | Part size in bytes. If you specify the part size to be below 1,048,576 (1 MB), the C SDK will divide your data based on the part size 1,048,576 (1 MB) by default. If the number of parts exceeds 10,000, the C SDK adjusts the part size according to the file size. | Int      |
+| thread_num | Number of threads, that is, size of the thread pool. Default: 1 | Int |
 | enable_checkpoint | Indicates whether to enable checkpoint restart | Int |
 | checkpoint_path | Indicates the file path for which the upload progress is saved when checkpoint restart is enabled. Default: `<filepath>.cp`, where `filepath` is the local file name of the object | String   |
 | progress_callback | Callback function for upload progress | Function |
@@ -1890,9 +1949,9 @@ cos_pool_destroy(p);
 
 ### Downloading an object (checkpoint restart)
 
-#### API description
+#### Feature description
 
-To implement concurrent download, the multipart download API automatically uses `Range` to download data according to the object size. 
+The multipart download API automatically downloads data concurrently with `Range` according to the object size. The part size is 1,048,576 (1 MB) by default and can be adjusted via the `part_size` parameter.
 
 #### Method prototype
 
@@ -1912,14 +1971,14 @@ cos_status_t *cos_resumable_download_file(cos_request_options_t *options,
 | Parameter | Description | Type |
 | ----------------- | ------------------------------------------------------------ | -------- |
 | options | COS request options | Struct |
-| bucket | Bucket name in the format: `BucketName-APPID` | String |
+| bucket | Bucket name in the format of `BucketName-APPID` | String |
 | object | Object name | String |
 | filepath | The local file name of the object                                          | String |
 | headers | Headers attached to the COS request | Struct |
 | params | Parameters for the COS request                                           | Struct |
 | clt_params | Control parameters for the download operation | Struct |
-| part_size | Part size in bytes. If you specify the part size to be below 1048576 (1 MB),  the `C SDK` will divide your data automatically. | Int      |
-| thread_num | Number of the threads. Default: 1 | Int |
+| part_size | Part size in bytes. If you specify the part size to be below 4,194,304 (4 MB), the system will divide your data based on the part size 4,194,304 (4 MB). | Int      |
+| thread_num | Number of threads, that is, size of the thread pool. Default: 1 | Int |
 | enable_checkpoint | Indicates whether to enable checkpoint restart | Int |
 | checkpoint_path | Indicates the file path for which the upload progress is saved when checkpoint restart is enabled. Default: `<filepath>.cp`, where `filepath` is the local file name of the object | String   |
 | progress_callback | Callback function for the download progress | Function |
@@ -1971,7 +2030,7 @@ cos_pool_destroy(p);
 
 ### Moving an object
 
-#### API description
+#### Feature description
 
 Object movement involves copying the source object to the target location and deleting the source object.
 

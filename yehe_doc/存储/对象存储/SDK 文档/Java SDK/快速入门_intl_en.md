@@ -6,15 +6,14 @@
 - Download the demo [here](https://github.com/tencentyun/cos-java-sdk-v5/tree/master/src/main/java/com/qcloud/cos/demo).
 - For the complete sample code, please see [SDK Sample Code](https://github.com/tencentyun/cos-snippets/tree/master/Java).
 - For the SDK changelog, please see [Changelog](https://github.com/tencentyun/cos-java-sdk-v5/blob/master/CHANGELOG.md).
-- For SDK FAQs, please see [Java SDK FAQs](https://intl.cloud.tencent.com/document/product/436/38956).
-
 
 >? If you encounter errors such as non-existent functions or methods when using the XML version of the SDK, please update the SDK to the latest version and try again.
+>
 
 
-#### Environment dependencies
-- The SDK supports JDK v1.7, v1.8 or higher.
-- For more information on JDK installation, see [Java Installation and Configuration](https://cloud.tencent.com/document/product/436/10865).
+#### Environmental dependencies
+- The SDK supports JDK v1.7, v1.8, or higher.
+- For the JDK installation, please see [Java Installation and Configuration](https://intl.cloud.tencent.com/document/product/436/10865).
 
 >?
 >- For the definitions of terms such as SecretId, SecretKey, and Bucket, see [COS Glossary](https://intl.cloud.tencent.com/document/product/436/7751).
@@ -26,7 +25,7 @@
  - The classes related to regions are in the com.qcloud.cos.region.\* sub-package.
  - The classes related to advanced APIs are in the com.qcloud.cos.transfer.\* sub-package.
 
-#### Installing SDKs
+#### Installing SDK
 You can install the Java SDK using Maven or source code:
 
 - Using Maven
@@ -65,7 +64,7 @@ If you use a permanent key to initialize the COSClient, you need to obtain your 
 [//]: # ".cssg-snippet-global-init"
 ```java
 // 1. Initialize the user credentials (secretId, secretKey).
-// Log in to the CAM console to check and manage the `SecretId` and `SecretKey` of your project.
+// You can log in to the CAM console to view and manage SECRETID and SECRETKEY.
 String secretId = "SECRETID";
 String secretKey = "SECRETKEY";
 COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
@@ -99,7 +98,7 @@ COSClient cosClient = new COSClient(cred, clientConfig);
 
 The ClientConfig class is a configuration class containing the following main members:
 
-| Member Name | Set Method | Description | Type |
+| Member Name | Setting Method | Description | Type |
 | ------------ | ------------------- | ------------------------------------------------------------ | ------- |
 | region | Constructor or set method | Bucket region. For the abbreviations for COS regions, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/zh/document/product/436/6224). | Region |
 | httpProtocol | Set method | The protocol used by the request. By default, HTTP is used to interact with COS. | HttpProtocol |
@@ -150,7 +149,7 @@ Upload a local file or input stream with a known length to COS. It is most suita
 
 - If most of your local files are over 20 MB, you are advised to upload them with an advanced upload API.
 - If an object with the same key already exists in COS, it will be overwritten by the newly-uploaded one.
-- To create a directory object, please see [How to create a directory in the SDK?](https://intl.cloud.tencent.com/document/product/436/38956#sdk-.E5.A6.82.E4.BD.95.E5.88.9B.E5.BB.BA.E7.9B.AE.E5.BD.95.EF.BC.9F).
+- If you want to create a directory project, see [How to create a directory in the SDK?](https://intl.cloud.tencent.com/document/product/436/38956).
 - An object key (Key) is the unique identifier of an object in a bucket. For example, in the object’s access endpoint `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/images/picture.jpg`, the object key is `images/picture.jpg`. For more information, please see [Object Key](https://intl.cloud.tencent.com/document/product/436/13324).
 
 
@@ -174,14 +173,14 @@ The sample below queries a list of objects in a bucket:
 
 [//]: # ".cssg-snippet-get-bucket"
 ```java
-// Enter the bucket name in the format: BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`
 String bucketName = "examplebucket-1250000000";
 ListObjectsRequest listObjectsRequest = new ListObjectsRequest();
 // Set the bucket name.
 listObjectsRequest.setBucketName(bucketName);
 // The prefix indicates that the key of the object to be listed must start with this value
 listObjectsRequest.setPrefix("images/");
-// Set the delimiter to "/" to list objects in the current directory. To list all objects, leave it empty.
+// Set the delimiter to "/" to list objects in the current directory; and leave it empty to list all objects
 listObjectsRequest.setDelimiter("/");
 // Set the maximum number of traversed objects (up to 1,000 per listobject request).
 listObjectsRequest.setMaxKeys(1000);
@@ -223,7 +222,7 @@ The sample below downloads a file to a specified local path:
 
 [//]: # ".cssg-snippet-get-object"
 ```java
-// Enter the bucket name in the format: BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`
 String bucketName = "examplebucket-1250000000";
 // Specify the COS path (i.e. the object key) of the file to download. For example, if the object key is "folder/picture.jpg", the file "picture.jpg" in the "folder" directory will be downloaded.
 String key = "exampleobject";
@@ -249,7 +248,7 @@ You can delete an object in a specified path in COS with the following code:
 
 [//]: # ".cssg-snippet-delete-object"
 ```java
-// Enter the bucket name in the format: BucketName-APPID.
+// Enter the bucket name in the format of `BucketName-APPID`
 String bucketName = "examplebucket-1250000000";
 // Specify the COS path (i.e. the object key) of the file to delete. For example, if the object key is "folder/picture.jpg", the "picture.jpg" file in the "folder" directory will be deleted.
 String key = "exampleobject";
@@ -305,7 +304,7 @@ clientConfig.setRetryPolicy(myRetryPolicy);
 
 Shut down the COSClient and release the server threads connected over HTTP with the following code:
 ```java
-// Close the client (release server threads).
+// Shut down the client (release server threads).
 cosClient.shutdown();
 ```
 
