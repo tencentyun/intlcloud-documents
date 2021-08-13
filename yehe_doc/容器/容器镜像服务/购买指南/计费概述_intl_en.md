@@ -18,12 +18,12 @@ td>Please refer to <a href="#price">Enterprise Edition Pricing</a>. </td>
 <tr>
 <td>Storage fees</td>
 <td>The cloud native artifacts of the Enterprise Edition managed instance, such as container images and Helm charts, are stored in your COS Bucket. Storage and access fees will apply based on actual usage with the selected COS billing method. Go to the <a href="https://console.cloud.tencent.com/expense/overview">Billing Center</a> to learn more.
-<td>Please refer to <a href="https://intl.cloud.tencent.com/pricing/cos">COS Pricing</a>.</td>
+<td>Please refer to <a href="https://intl.cloud.tencent.com/pricing/cos">COS Pricing</a></td>
 </tr>
 <tr>
 <td>Traffic fees</td>
 <td>Using the public network to upload and download the cloud native artifacts such as container images and Helm charts will generate public network traffic fees in COS. <br><b>Note: </b>using the instance synchronization feature for cross-regional synchronization of container images and Helm charts will not generate COS public network traffic fees.</td></td>
-<td>Please refer to <a href="https://intl.cloud.tencent.com/pricing/cos">COS Pricing</a>.</td>
+<td>Please refer to <a href="https://intl.cloud.tencent.com/pricing/cos">COS Pricing</a></td>
 </tr>
 </table>
 
@@ -60,7 +60,7 @@ Reference prices for monthly usage
 
 ## TCR Specifications
 The TCR specifications are as follows (**✓**: supported; **-**: not supported).
-
+>!When the instance has the features that are only supported by the standard or premium edition, it is not allowed to downgrade the instance specification to an edition that does not support these features. If you want to downgrade the specifications, please manually remove the related feature configurations first.
 <table>
 <tbody><tr>
 <th rowspan="2" style="
@@ -109,13 +109,13 @@ The TCR specifications are as follows (**✓**: supported; **-**: not supported)
 <td>Helm chart hosting</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
-<td>Namespace quota</td><td>10</td><td>50</td><td>100</td><td>500 (you can apply to increase the quota)</td>
+<td>Namespace quota</td><td>10</td><td>50</td><td>100</td><td>500<br> (you can apply to increase the quota)</td>
 </tr>
 <tr>
-<td>Image repository quota</td><td>500</td><td>1000</td><td>3000</td><td>5000 (you can apply to increase the quota)</td>
+<td>Image repository quota</td><td>500</td><td>1000</td><td>3000</td><td>5000<br> (you can apply to increase the quota)</td>
 </tr>
 <tr>
-<td>Helm repository quota</td><td>-</td><td>1000</td><td>3000</td><td>5000 (you can apply to increase the quota)</td>
+<td>Helm repository quota</td><td>-</td><td>1000</td><td>3000</td><td>5000<br> (you can apply to increase the quota)</td>
 </tr>
 <tr>
 <td rowspan="6">Data security</td>
@@ -155,10 +155,10 @@ The TCR specifications are as follows (**✓**: supported; **-**: not supported)
 <td>Webhook trigger</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
-<td>Container image compilation and construction</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td>
+<td>Container image compilation and construction</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
-<td>Cloud native delivery workflow</td><td>-</td><td>-</td><td>✓</td><td>✓</td>
+<td>Cloud native delivery workflow</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
 <td>P2P accelerated distribution of images</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td>
