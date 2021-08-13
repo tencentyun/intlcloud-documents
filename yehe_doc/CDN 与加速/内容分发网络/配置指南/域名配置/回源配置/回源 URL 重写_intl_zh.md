@@ -35,8 +35,8 @@
 ## 配置示例：
 
 若加速域名`www.test.com`的 **回源 URL 重写配置** 如下：
-![](https://main.qcloudimg.com/raw/c255f4e4643a15e2e47a29a608a9fd01.png)
+![](https://main.qcloudimg.com/raw/eb34fde06561eb2c2cfe7afc9afc4d77.png)
 
 如上配置，则实际回源情况如下：
-- 回源请求`www.test.com/images/1.jpg`，命中第1、3条规则，则底部优先级最大，实际回源请求为`www.test.com/index.html`。
-- 回源请求`www.test.com/images`，命中第1、2、3条规则，则底部优先级最大，实际回源请求为`www.test.com/index.html`。
+- 回源请求 `www.test.com/images/1.jpg`，命中第1、2、3条规则，则底部优先级最大，实际回源请求为 `www.test.com/index.html`。
+- 回源请求 `www.test.com/images`，命中第2条规则，则实际回源请求为 `www.test.com/goodboy.html`。
