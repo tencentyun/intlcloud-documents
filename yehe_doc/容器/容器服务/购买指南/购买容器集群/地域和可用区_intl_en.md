@@ -54,7 +54,7 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 	</tr>
 	<tr>
 		<td rowspan="5">East China (Shanghai)<br>ap-shanghai</td>
-		<td>Shanghai Zone 1<br>ap-shanghai-1</td>
+		<td>Shanghai Zone 1(sold out)<br>ap-shanghai-1</td>
 	</tr>
 	<tr>
 		<td>Shanghai Zone 2</br>ap-shanghai-2</td>
@@ -114,7 +114,7 @@ Tencent Cloud services in the same VPC are interconnected via the private networ
 	</tr>
 	<tr>
 			<td rowspan="3">Hong Kong, Macao and Taiwan, China (Hong Kong)<br>ap-hongkong</td>
-			<td>Hong Kong Zone 1 (Nodes in Hong Kong, China can cover services in Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-1</td>
+			<td>Hong Kong Zone 1 (Nodes in Hong Kong, China can cover services in Hong Kong/Macao/Taiwan regions)(sold out)<br>ap-hongkong-1</td>
 	</tr>
 	<tr>
 			<td>Hong Kong Zone 2 (Nodes in Hong Kong, China can cover services in Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-2</td>
