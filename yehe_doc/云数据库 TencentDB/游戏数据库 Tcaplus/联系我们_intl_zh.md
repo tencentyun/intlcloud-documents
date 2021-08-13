@@ -1,10 +1,10 @@
 ## 热线电话
-当您在使用腾讯云数据库遇到问题时，可以直接致电客服人员，寻求相应的帮助。
+当您在使用腾讯云数据库遇到问题时，可以直接[联系客服人员](https://intl.cloud.tencent.com/zh/contact-us)，寻求相应的帮助。
 
 | 地域 | 联系方式 |
 |---------|---------|
 |Hong Kong (China) | +852 800-964-163 (Toll Free) |
-|United States  | +1 888-652-2736 (Toll Free) |
+|United States  | +1 844 606 0804 (Toll Free) |
 |Others | +86 4009-100-100 |
 
 ## 工单系统
