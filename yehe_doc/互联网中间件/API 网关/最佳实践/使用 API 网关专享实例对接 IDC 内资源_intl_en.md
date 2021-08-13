@@ -6,7 +6,7 @@ An API Gateway dedicated instance runs in a VPC and supports forwarding client r
 
 ## Scheme Advantages
 
-![](https://main.qcloudimg.com/raw/fd994d665015f73bb701970106d765cf.png)
+![](https://main.qcloudimg.com/raw/2adf52e12df99cc9d0eecc998c8b6ecc.png)
 
 - The API Gateway dedicated instance can forward requests to the backend resources deployed in the VPC and local IDC and on the public network at the same time, seamlessly connecting the cloud and local systems and enabling smooth cloudification.
 - The rich features provided by API Gateway can also be used, such as IP access control, traffic throttling, and log monitoring.
@@ -14,23 +14,22 @@ An API Gateway dedicated instance runs in a VPC and supports forwarding client r
 
 ## Directions
 
-### Step 1. Create a CCN instance and associate it with a network instance[](id:步骤1)
+### Step 1. Create a CCN instance and associate it with a network instance[](id:Step-1)
 
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
 2. On the left sidebar, click **Cloud Connect Network** to enter the CCN management page.
 3. Click **+ New**.
 4. In the pop-up window, enter the name and description of the CCN instance and select the billing mode, service level, and bandwidth limit mode.
 5. Associate the IDC's Direct Connect gateway with the VPC.
-	 ![](https://main.qcloudimg.com/raw/ccaf43447028f575d13131ab5eee4d03.png)
+	 ![](https://main.qcloudimg.com/raw/7063ae428f1bb924e9eeb5a999a67eab.png)
 
 ### Step 2. Purchase an API Gateway dedicated instance
 
 1. Log in to the [API Gateway console](https://console.cloud.tencent.com/apigateway) and select **Instance** on the left sidebar.
 2. Click **Create** to enter the API Gateway dedicated instance purchase page.
 3. Select and enter the instance configuration information.
->!The VPC configuration of the dedicated instance should be the same as that of the VPC instance associated with the CCN instance created in [step 1](#步骤1).
+>!The VPC configuration of the dedicated instance should be the same as that of the VPC instance associated with the CCN instance created in [step 1](#Step-1).
 >
-	 ![](https://main.qcloudimg.com/raw/e9c6f89988b23af471f53f669e4b3b5e.png)
 4. Click **Buy Now** and make the payment.
 
 ### Step 3. Create a service and API under the instance
