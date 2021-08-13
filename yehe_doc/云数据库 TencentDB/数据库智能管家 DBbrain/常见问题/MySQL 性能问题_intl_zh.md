@@ -5,7 +5,7 @@
 
 ### 如何分析 MySQL 全量 SQL 执行轨迹？
 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain)，在左侧导航选择【诊断优化】，在上方选择对应数据库，然后选择【审计日志分析】页。
-1. 单击【创建分析任务】，选择时间段，单击【确定】。
+1. 单击视图右上角的【创建分析任务】，选择时间段，单击【确定】。
 2. 在任务列表单击【查看 SQL 分析】，进入 SQL 分析页。
 ![](https://main.qcloudimg.com/raw/ffa0424d522ca1598d5bf53e7a50eeea.png)
 3. 在 SQL 分析页，可选择 SQL Type、Host、User 等维度的视图，并可选择时间段拉伸视图来查看具体时间点的数据。
@@ -22,7 +22,7 @@
  ![](https://main.qcloudimg.com/raw/ab736f5a7a1fea7447f9bbcbfb0d2778.png)
 
 ### 如何定期获取 MySQL 健康报告？
-登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain)，在左侧导航选择【诊断优化】，在上方选择对应数据库，然后选择【健康报告】页，可查看选择时间段的健康得分趋势以及问题概要。  
+登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain)，在左侧导航选择对应数据库，然后选择【诊断优化】，在上方选择对应数据库，然后选择【健康报告】页，可查看选择时间段的健康得分趋势以及问题概要。  
 - 设置报告时间范围，然后单击【创建健康报告】，任务完成后可以查看或下载该时段的健康报告。  
 - 单击【定期生成设置】，可配置自动生成健康报告的时间周期。 
  ![](https://main.qcloudimg.com/raw/1f4e9ab09251fe984a83e2250415102a.png)
