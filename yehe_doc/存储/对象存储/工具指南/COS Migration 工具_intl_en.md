@@ -58,8 +58,8 @@ COS_Migrate_tool
 ```
 
 >?
- - The `db` directory mainly records the IDs of files successfully migrated by the tool. Each migration job will first compare the records in the `db` directory. If the ID of the current file has already been recorded, the current file will be skipped, otherwise it will be migrated.
- - The `log` directory keeps all the logs generated during tool migration. If an error occurs during migration, first check `error.log` in this directory.
+>- The `db` directory mainly records the IDs of files successfully migrated by the tool. Each migration job will first compare the records in the `db` directory. If the ID of the current file has already been recorded, the current file will be skipped, otherwise it will be migrated.
+>- The `log` directory keeps all the logs generated during tool migration. If an error occurs during migration, first check `error.log` in this directory.
 
 ### 3. Modify the config.ini file
 Before running the migration startup script, modify the config.ini file (path: `./conf/config.ini`) first. This file contains the following parts:
