@@ -7,8 +7,8 @@ Logstash is highly flexible and has powerful syntax analysis capabilities. With 
 The Logstash data processing pipeline can be divided into 3 stages: inputs → filters → outputs.
 
 1. Inputs: generate data. Inputs are data sources such as file, syslog, redis, and beats.
-2. Filters: modify and filter data. Filters are intermediate processing components in the Logstash data pipeline. They can modify events based on specific conditions. Some commonly-used filters are grok, mutate, drop, and clone.
-3. Outputs: transfer data to other locations. An event can be transferred to multiple outputs, and the event ends when the transfer is completed. Elasticsearch is the most commonly-used output.
+2. Filters: modify and filter data. Filters are intermediate processing components in the Logstash data pipeline. They can modify events based on specific conditions. Some commonly used filters are grok, mutate, drop, and clone.
+3. Outputs: transfer data to other locations. An event can be transferred to multiple outputs, and the event ends when the transfer is completed. Elasticsearch is the most commonly used output.
 
 In addition, Logstash supports encoding and decoding data, so you can specify data formats on the input and output ends.
 ![](https://mc.qcloudimg.com/static/img/17f1ac23a158b043091ebf48071f3a78/00.png)
