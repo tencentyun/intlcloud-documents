@@ -22,13 +22,13 @@
  ![](https://main.qcloudimg.com/raw/ab736f5a7a1fea7447f9bbcbfb0d2778.png)
 
 ### 如何定期获取 MySQL 健康报告？
-登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain)，在左侧导航选择对应数据库，然后选择【诊断优化】，在上方选择对应数据库，然后选择【健康报告】页，可查看选择时间段的健康得分趋势以及问题概要。  
+登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain)，在左侧导航选择【诊断优化】，在上方选择对应数据库，然后选择【健康报告】页，可查看选择时间段的健康得分趋势以及问题概要。  
 - 设置报告时间范围，然后单击【创建健康报告】，任务完成后可以查看或下载该时段的健康报告。  
 - 单击【定期生成设置】，可配置自动生成健康报告的时间周期。 
  ![](https://main.qcloudimg.com/raw/1f4e9ab09251fe984a83e2250415102a.png)
 
 ### 如何查看和优化 MySQL 慢日志？
-1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain)，在左侧导航选择【诊断优化】，在上方选择【慢 SQL 分析】页，“SQL 统计”栏展示实例的慢查询数和 CPU 使用率。
+1. 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain)，在左侧导航选择【诊断优化】，在上方选择对应数据库，然后选择【慢 SQL 分析】页，“SQL 统计”栏展示实例的慢查询数和 CPU 使用率。
 2. 单击或拉选 SQL 统计图表的慢查询，下方会显示聚合 SQL 模板以及执行信息，各列数据均支持正序或逆序排序。右侧的耗时分布中会展示所选时间段内的 SQL 总体耗时分布情况。
  ![](https://main.qcloudimg.com/raw/0bc32a19fcf6912e157bd5b626fce63e.png)
 3. 单击某条聚合的 SQL 模板行，右侧边会弹出 SQL 的优化建议和统计信息，可根据优化建议改写 SQL 或者增加适当索引，即可提升 SQL 执行效率，提高数据库性能。
