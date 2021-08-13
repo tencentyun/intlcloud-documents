@@ -7,21 +7,23 @@
 1．TRTCコンソールにログインし、【開発支援】>【[Demoクイックスタート](https://console.cloud.tencent.com/trtc/quickstart)】を選択します。
 2．`TestVideoCall`などアプリケーション名を入力して、【作成】をクリックします。
 
->!本機能はTencent Cloudの[Tencent Real-Time Communication TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/zh/document/product/1047)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期的にアクティブにすることができます。IMは付加価値サービスであり、課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。
+>!本機能はTencent Cloudの[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期的にアクティブにすることができます。IMは付加価値サービスであり、課金ルールの詳細については 、[Instant Messagingの価格説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。
+
 
 [](id:ui.step2)
-
 ### 手順2：SDKおよびDemoソースコードをダウンロード
-1. 実際のビジネスニーズに応じて、SDKと付属の[Demoソースコード](https://github.com/tencentyun/TRTCFlutterScenesDemo)をダウンロードします。
-2. ダウンロード完了後、【ダウンロードしました。次のステップ】をクリックします。
+1. 実際の業務ニーズに応じて、SDKと付属の[Demoソースコード](https://github.com/tencentyun/TRTCFlutterScenesDemo)をダウンロードします。
+2. ダウンロード完了後、【ダウンロードしました。次のステップ】をクリックします
+
+[](id:ui.step3)
 
 ### 手順3：Demoプロジェクトファイルの設定
 1. 設定変更ページに進み、ダウンロードしたソースコードパッケージに基づき、対応する開発環境を選択します。
-2. `/lib/debug/GenerateTestUserSig.dart`ファイルを見つけて開きます。
+2. `/example/lib/debug/GenerateTestUserSig.dart`ファイルを見つけて開きます。
 3.`GenerateTestUserSig.dart`ファイル内の関連パラメータを設定します。
-<ul style="margin:0"><li/>SDKAPPID：デフォルトは0。実際のSDKAppIDを設定してください。
-<li/>SECRETKEY：デフォルトは空文字列。実際のキー情報を設定してください。</ul>
-
+<ul><li></li>SDKAPPID：デフォルトはPLACEHOLDER。実際のSDKAppIDを設定してください。
+	<li/>SECRETKEY：デフォルトはPLACEHOLDER。実際のキー情報を設定してください。</ul>
+	<img src="https://main.qcloudimg.com/raw/96326351d696d6eb8600b5822dcc8992.png"/>
 4. 貼り付け完了後、【貼り付けました。次のステップ】をクリックすれば、作成が完了します。
 5. コンパイル完了後、【コンソール概要に戻る】をクリックすればOKです。
 >!
@@ -48,6 +50,7 @@
 </dx-tabs>
 
 [](id:ui.step5)
+
 ### 手順5：Demoソースコードの修正
 [ソースコード](https://github.com/tencentyun/TRTCFlutterScenesDemo)フォルダ`TRTCCallingDemo` には2つのサブフォルダuiとmodelが含まれ、そのうちuiフォルダにはインターフェースコードが含まれています。
 
@@ -57,10 +60,9 @@
 | TRTCCallingContact.dart | 連絡先を選択するためのインターフェースを表示するために使用され、このインターフェースを介して登録済みユーザーを検索し、通話を開始できます |
 
 [](id:model)
-
 ## カスタマイズUIの実装
 [ソースコード](https://github.com/tencentyun/TRTCFlutterScenesDemo)フォルダ`TRTCCallingDemo`には2つのサブフォルダuiとmodelが含まれ、そのうちmodelフォルダには当社が実装した再利用可能なオープンソースコンポーネントTRTCCallingが含まれています。このコンポーネントが提供するインターフェース関数は`TRTCCalling.dart`ファイルで確認できます。
-![](https://main.qcloudimg.com/raw/36220937e8689dac4499ce9f2f187889.png)
+![](https://main.qcloudimg.com/raw/78cc06cd53538243bc52abc381350c55.jpg)
 
 オープンソースコンポーネントTRTCCallingを使用すれば、自分のUIを実装することができます。すなわちmodelパーツを再利用するだけで、自分でUIパーツを実装できます。
 
@@ -76,7 +78,6 @@ dependencies:
 ```
 
 [](id:model.step2)
-
 ### 手順2：権限の設定および難読化ルール
 
 <dx-tabs>
@@ -86,19 +87,18 @@ dependencies:
 <key>NSMicrophoneUsageDescription</key>
 <string>通常の音声通話が行えるようにマイクの権限を承認します</string>
 ```
-
+:::
 ::: Android\s端末
-
 1. `/android/app/src/main/AndroidManifest.xml`ファイルを開きます。
 2. `xmlns:tools="http://schemas.android.com/tools"` をmanifestの中に追加します。
 3. `tools:replace="android:label"をapplicationの中に追加します。
 >? この手順を実行しないと、[Android Manifest merge failedコンパイルの失敗](https://intl.cloud.tencent.com/document/product/647/39242)という問題が発生します。
 
+![アイコン](https://main.qcloudimg.com/raw/7a37917112831488423c1744f370c883.png)
 :::
 </dx-tabs>
 
 [](id:model.step3)
-
 ### 手順3：TRTCCalling コンポーネントをインポート
 次のディレクトリ内のすべてのファイルをプロジェクトにコピーします。
 ```
@@ -106,7 +106,6 @@ dependencies:
 ```
 
 [](id:model.step4)
-
 ### 手順4：コンポーネントの初期化およびログイン
 1. `TRTCCalling.sharedInstance()`を呼び出して、コンポーネントインスタンスを取得します。
 2. `login(SDKAppID, userId, userSig, callback)`を呼び出し、コンポーネントのログインを完了します。このうちいくつかの重要パラメータの入力については、下表をご参照ください。
@@ -114,7 +113,7 @@ dependencies:
 <tr><th>パラメータ名</th><th>作用</th></tr>
 <tr>
 <td>SDKAppID</td>
-<td><a href="https://intl.cloud.tencent.com/login">TRTCコンソール</a>でSDKAppIDを確認できます。</td>
+<td><a href="https://console.cloud.tencent.com/trtc/app">TRTCコンソール</a> でSDKAppIDを表示できます。</td>
 </tr><tr>
 <td>userId</td>
 <td>現在のユーザーID。文字列タイプでは、英語のアルファベット（a-zとA-Z）、数字（0-9）、ハイフン（-）とアンダーライン（_）のみ使用できます。</td>

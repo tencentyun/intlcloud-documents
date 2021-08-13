@@ -1,265 +1,330 @@
+## Version 8.7 Released on May 25, 2021
+**New features**
+- All platforms: supported anomaly detection for peripheral audio devices. After registering `onStatistics`, you can detect in real time when there is no audio for a long time and when audio cracks or is interrupted via the `audioCaptureState` field in [TRTCLocalStatistics](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#structtrtc_1_1TRTCLocalStatistics).
+- Windows: supported RGBA video data for custom capturing.
+
+**Quality improvement**
+- All platforms: optimized background music management to release memory resources in a timely manner.
+- All platforms: ensured that audience receive the [onUserVideoAvailable(false)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudCallback__cplusplus.html#a091f1c94ff1e2bc39c36e9d34285e87a) notification in a timely manner after stream publishing is paused because the application is switched to the background.
+- macOS: reduced the CPU and memory usage of mouse cursor capturing during screen sharing.
+
+**Bug fixing**
+- Android: fixed the issue where `setRemoteViewFillMode` doesn’t work on some devices.
+- iOS & macOS: fixed the memory release issue of custom beauty filters after they are disabled.
+
+## Version 8.6 Released on May 8, 2021
+- All platforms: optimized the QoS control algorithm, enhancing audio/video transmission quality.
+- All platforms: improved audio playback smoothness when users switch between the anchor and audience roles.
+- iOS & macOS & Windows: optimized the audio processing module, improving audio quality in the speech and default modes.
+- iOS & macOS: improved the adaptability of custom audio capturing to situations of high CPU usage.
+- iOS & Android: supported publishing screen recording data via the substream, as in SDKs for desktop platforms.
+- macOS: added native support for Apple M1.
+- Windows: optimized the memory allocation logic to enhance stability.
+
+
+## Version 8.5 Released on March 24, 2021
+**New features**
+- macOS: optimized the screen sharing feature. You can now share other windows along with the target window. For details, see the API [addIncludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a2e101f0ff00c8752eea1fa9a1a432233).
+- All platforms: supported publishing VOD content. You can now bind [TXVodPlayer](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html#classcom_1_1tencent_1_1rtmp_1_1TXVodPlayer) with `TRTCCloud` and publish the content played by VOD via TRTC’s substream.</li>
+- All platforms: supported custom capturing of substream data. For details, see the API [sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#aeeff994b8a298fa4948a11225312f629).
+- All platforms: supported custom audio mixing. You can feed a local audio track into the SDK’s audio processing. The SDK will mix the two tracks before publishing. For details, see the API [mixExternalAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a6d04ce887009661a551e23c61d41571f).
+- All platforms: supported mixing only video streams, allowing for more flexible stream mixing control.
+
+**Quality improvement**
+- macOS: enabled the `startSystemAudioLoopback` API to support dual sound channels.
+- Windows: supported automatic switch to the slideshow window when a slideshow is selected for screen sharing.
+- All platforms: included end-to-end latency in the information returned via the status callback.
+
+**Bug fixing**
+- iOS: fixed occasional crash when images are rendered using OpenGL in the background.
+- iOS: fixed playback failure when shared images are static.
+
+
+## Version 8.4 Released on February 8, 2021
+**New features**
+- macOS: supported capturing system audio, i.e., the system loopback feature that is enabled on Windows. The feature allows the SDK to capture system audio so that anchors can stream local audio or video files to other users.
+- macOS: supported local preview for screen sharing. You can now display screen sharing preview in a small window.
+- Windows: supported setting the volume of the current process. You can now use [setApplicationPlayVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITXDeviceManager__cplusplus.html#af6722fa5e6e45738e007004c374948b1) to set the volume of the volume mixer.
+- All platforms: supported local recording. An anchor can now record local audio and video into an MP4 file during streaming. For details, see [startLocalRecording](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a5075d55a6fc31895eedd5b23a1b8826b).
+
+**Quality improvement**
+- All platforms: improved audio quality in the [music](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#ga865e618ff3a81236f9978723c00e86fb) mode, which makes it more suitable for Clubhouse-like audio streaming scenarios.
+- All platforms: improved the adaptability to poor network conditions. Smooth audio and video can be delivered even when the packet loss rate reaches 70%.
+- Windows: improved audio quality in some streaming scenarios by significantly reducing audio damage.
+- Windows: improved performance by 20%-30% in some scenarios.
+
+**Bug fixing**
+- Windows: fixed crash when the desktop is shared on Windows Server 2019 Datacenter x64.
+- Windows: fixed the issue where screen sharing sometimes ends unexpectedly when the target window is resized during screen sharing.
+- Windows: fixed image capturing failure with some cameras.
+- iOS: fixed the issue where `snapvideoshot` causes stuttering with CAAnimation.
+- iOS & macOS: fixed the black screen issue when the same view is used to display camera and screen sharing images in turn.
+- iOS: fixed the blurry screen issue on iPhone 6S when a third-party beauty filter component is used.
+- iOS: fixed the issue where, in cases where TRTC and VOD are used at the same time, the SDK occasionally crashes after VOD is stopped.
+- Android: fixed the issue where audio is played via the speaker after a user using Bluetooth earphone rejects an incoming call.
+
 ## Version 8.3 Released on January 15, 2021
 
 **New features**
 
-The business logic of custom capturing is optimized:
-- iOS & Android & Mac: optimized the audio module to ensure that when you use [enableCustomAudioCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ab8f8aaa19d70c6a2c9d62ecceb6e974d) to capture and deliver audio data to the SDK, the SDK can still maintain excellent acoustic echo cancellation (AEC) and active noise suppression (ANS) effect.
-- iOS & Android: if you need to continue to increase your own sound effects and sound processing logic based on the TRTC SDK, it will be easier if you use version 8.3. In version 8.3, you can use [setCapturedRawAudioFrameDelegateFormat](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a4b58b1ee04d0c692f383084d87111f86) and other APIs to set the audio data callback format, including the audio sample rate, the number of sound channels, and the number of sample points, so that you can process audio data in your preferred audio format.
-- All platforms: if you need to collect video data by yourself and use the audio module of the TRTC SDK at the same time, lip-sync errors may occur. This is because the SDK's internal timeline has its own control logic. Therefore, we provide the [generateCustomPTS](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ae5f2a974fa23954c5efd682dc464cdee) API. When a video image frame is captured, you can call this API and record the current PTS (timestamp). Then provide this timestamp when you call the [sendCustomVideoData](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a76e8101153afc009f374bc2b242c6831) API later on. In this way, lip sync is ensured.
-- Windows: added the support for SOCKS5 proxy addresses in domain name format.
+Optimized the business logic of custom capturing:
+- iOS & Android & macOS: optimized the audio module to ensure acoustic echo cancellation (AEC) and active noise suppression (ANS) effects when you use [enableCustomAudioCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ab8f8aaa19d70c6a2c9d62ecceb6e974d) to capture audio data and send it to the SDK for processing.
+- iOS & Android: if you need to add your own audio effects and audio processing logic in addition to those of the TRTC SDK, we recommend you use version 8.3, with which you can use [setCapturedRawAudioFrameDelegateFormat](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a4b58b1ee04d0c692f383084d87111f86) and other APIs to set what to include in the audio data callback, for example, the audio sample rate, the number of sound channels, and the number of samples, so that you can process audio data in your preferred format.
+- All platforms: if you collect video data by yourself and use the audio module of the TRTC SDK at the same time, lip-sync errors may occur. This is because the SDK has its own timeline control logic. To solve this problem, we have provided the [generateCustomPTS](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ae5f2a974fa23954c5efd682dc464cdee) API. When a video image frame is captured, call this API and record the PTS (timestamp), and provide the timestamp when you call [sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a76e8101153afc009f374bc2b242c6831).
+- Windows: supported SOCKS5 proxy addresses for domain names.
 
-**Issues fixed**
-- All platforms: fixed the issue where lip-sync errors of recorded content occasionally occur due to audio data timestamp exceptions.
-- Windows: improved the compatibility of window sharing in high-DPI environments.
-- Windows: added minimized windows to the shareable window list obtained by users. The thumbnails of minimized windows are their process icons.
-- Windows: fixed the issue of unnecessary DXGI occupation after the SDK is started.
-- iOS: fixed the ANR issue caused by manual focus setting.
-- iOS: fixed the issue of occasional failure to switch between the front and rear cameras.
-- iOS: fixed the issue of TXVodPlayer crashes caused by playback deceleration.
-- iOS: fixed the issue where playback occasionally switches to the receiver by default after members enter the room.
-- iOS & Android: optimized the AEC and ANS effect and made the reverb effect also available to in-ear monitoring.
-- Android: fixed the issue of green and blurred screens that occasionally occur during hardware decoding.
-- Mac: fixed the issue where, during window sharing with the highlighting feature enabled, the borders of a shared window are highlighted and flash if the window is near the edge of the screen.
-- Mac: fixed the issue of black screen when the rendering view is moved.
+**Bug fixing**
+- All platforms: fixed occasional lip-sync errors for recorded content due to timestamp exceptions in audio data.
+- Windows: improved the compatibility of window sharing with high DPI displays.
+- Windows: added minimized windows to the shareable window list. The thumbnails of minimized windows are their application icons.
+- Windows: fixed the issue of unnecessary CPU usage by DXGI after the SDK is started.
+- iOS: fixed the ANR error caused by manual focus setting.
+- iOS: fixed occasional failure to switch between the front and rear cameras.
+- iOS: fixed VODPlayer crash when video is played back in slow motion.
+- iOS: fixed the issue where audio is occasionally played via the speaker after room entry.
+- iOS & Android: optimized the AEC and ANS effects and supported reverb effects for in-ear monitoring.
+- Android: fixed occasional green or blurry screen during hardware decoding.
+- macOS: fixed the issue where, during screen sharing with the highlighting feature enabled, the highlighted borders of the shared window flash when the window is moved near the edge of the screen.
+- macOS: fixed black screen when the view rendered is moved.
 
 
 ## Version 8.2 Released on December 23, 2020
 
 **New features**
-- iOS & Android: added the support for callback of the mixture of all captured and played back audio data, which makes local audio recording easier.
-- Android: the video rendering component TXCloudVideoView allows the `addVideoView(new TextureView(getApplicationContext()))` API to use `TextureView` for local rendering.
-- Android: custom rendering callback supports RGBA video data.
-- Windows: the local camera can capture and play back remote video stream screenshots. For more information, please see [ITRTCCloud.snapshotVideo](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a3769ecbff6c0c4ee7cc5e4b40aaafe96).
-- Windows: enabled the `addExcludedShareWindow` and `addIncludedShareWindow` APIs to exclude and forcibly include user-specified windows respectively during screen sharing for higher flexibility.
-- Mac & iOS: enabled `TRTCCloud.snapshotVideo` to take screenshots of video stream images even in custom rendering mode.
+- iOS & Android: supported callback of a combination of locally captured audio and all played back audio, making local recording easier.
+- Android: the video rendering component TXCloudVideoView supported using `TextureView` for local rendering through the calling of the `addVideoView(new TextureView(getApplicationContext()))` API.
+- Android: supported RGBA video data for custom rendering.
+- Windows: supported taking screenshots of locally captured video and played back remote video. For details, see [ITRTCCloud.snapshotVideo](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a3769ecbff6c0c4ee7cc5e4b40aaafe96).
+- Windows: supported using `addExcludedShareWindow` and `addIncludedShareWindow` to exclude or include windows you specify, increasing the flexibility of screen sharing.
+- macOS & iOS: supported calling `TRTCCloud.snapshotVideo` to take screenshots of video in the custom rendering mode.
 
 **Quality improvement**
-- Android: improved the quality of the live streaming code for higher video image definition.
-- Windows: improved the AEC algorithm for better AEC effect.
+- Android: improved encoding quality for live streaming, enabling clearer video images.
+- Windows: improved the AEC algorithm.
 
-**Issues fixed**
-- iOS: fixed the issue of audio playback exceptions that occasionally occur when TXVodPlayer and TRTC are used at the same time.
-- Android: fixed the issue of black screen during local rendering caused by custom beauty filter.
-- Windows: fixed the issue of occasional failure to exit the current process.
+**Bug fixing**
+- iOS: fixed occasional audio playback errors when VODPlayer and TRTC are used at the same time.
+- Android: fixed black screen when custom beauty filters are used.
+- Windows: fixed occasional failure to exit the current process.
 
 
 ## Version 8.1 Released on December 3, 2020
 
 **New features**
-- All platforms: added statistical metrics related to remote video lag to `onStatistics`.
-- All platforms: enabled the volume adjustment API `setAudioPlayoutVolume (100-150)` to implement sound gain effect.
-- iOS & Android: added the `setLocalVideoProcessListener` API to better support third-party beauty filter SDK integration.
-- C#: upgraded to the latest API versions.
+- All platforms: added statistics on remote video stuttering to `onStatistics`.
+- All platforms: supported using the volume adjustment API `setAudioPlayoutVolume` (100-150) to enable audio gain.
+- iOS & Android: added the `setLocalVideoProcessListener` API to better support the integration of third-party beauty filters.
+- C#: upgraded to the latest APIs.
 
 **Quality improvement**
-- All platforms: optimized the algorithm for processing audio when users wear headphones to deliver better audio quality.
-- Android: optimized the audio pre-processing algorithm to reduce the impact of the AEC, ANS, and AGC algorithms on the audio quality.
+- All platforms: optimized the audio processing algorithm when earphones are used to deliver better audio quality.
+- Android: optimized the audio pre-processing algorithm to reduce the impact of AEC, ANS, and AGC on audio quality.
 
-**Issues fixed**
-- iOS: fixed certain occasional crashes caused by applications being forcibly killed.
-- Android: fixed the issue of beauty filter effect exceptions that occasionally occur when the video capturing frame rate is high.
-- Windows: fixed the issue of crashes that occasionally occur during screen sharing in high-DPI environments.
+**Bug fixing**
+- iOS: fixed occasional crash when the application is force killed.
+- Android: fixed the issue where beauty filters do not produce desired results when the frame rate of captured video is high.
+- Windows: fixed occasional crash during screen sharing when high DPI displays are used.
 
 
 ## Version 8.0 Released on November 13, 2020
 
 **New features**
-- All platforms: added unified C++ APIs. For more information, please see `cpp_interface`/[ITRTCCloud.h](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html).
-- All platforms: added the support for room IDs of the string type. For more information, please see `TRTCParams.strRoomId`.
+- All platforms: added cross-platform C++ APIs. For more information, see cpp_interface/[ITRTCCloud.h](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html).
+- All platforms: supported string-type room IDs. For more information, see `TRTCParams.strRoomId`.
 - All platforms: added the device management class `TXDeviceManager`.
-- All platforms: added the `TRTCCloud.switchRoom` API to allow direct room switching without stopping capturing.
+- All platforms: added the `TRTCCloud.switchRoom` API to allow room switching with capturing uninterrupted.
 - All platforms: added the `TRTCCloud.startRemoteView` API to start rendering remote video images.
 - All platforms: added the `TRTCCloud.stopRemoteView` API to stop rendering remote video images.
 - All platforms: added the `TRTCCloud.getDeviceManager` API to get the device management class.
-- All platforms: added the `TRTCCloud.startLocalAudio` API to enable local audio capturing and upstreaming.
+- All platforms: added the `TRTCCloud.startLocalAudio` API to enable local audio capturing and upstream data transfer.
 - All platforms: added the `TRTCCloud.setRemoteRenderParams` API to configure rendering for remote images.
 - All platforms: added the `TRTCCloud.setLocalRenderParams` API to configure rendering for local images.
 
-**Optimizations**
+**Optimization**
 - Android: optimized the logic for switching between software and hardware decoding.
-- Windows: optimized the audio quality and AEC effect of system loopback audio capturing.
-- Windows: optimized the audio device selection logic to reduce the unexpected mute rate.
-- Windows: optimized the switching effect in double-talk scenarios.
-- All platforms: optimized the instant streaming effect for role switching in manual subscription mode.
-- All platforms: optimized the audio receiving logic to improve the audio effect.
-- All platforms: optimized the reliability of `sendCustomCmdMsg`.
+- Windows: improved audio quality and AEC for system loopback.
+- Windows: optimized the audio device selection logic to reduce cases of no audio.
+- Windows: reduced audio loss in double-talk scenarios.
+- All platforms: optimized instant streaming for role switching in the manual subscription mode.
+- All platforms: optimized the audio receiving logic, improving audio quality.
+- All platforms: improved the reliability of `sendCustomCmdMsg`.
 
-**Issues fixed**
+**Bug fixing**
 - iOS: fixed the issue where the calling of `muteLocalVideo` suspends local video rendering.
-- iOS: fixed the issue of occasional crashes caused by system component calling during foreground/background switching.
-- iOS: fixed the issue where the audio of in-ear monitoring becomes intermittent when sound effects are enabled.
-- Android: fixed the issue where the playback of a sound effect does not stop when a call is connected.
-- Android: fixed the issue where starting audio capturing occasionally fails.
-- Windows: fixed the issue of occasional black screen during local video rendering.
-- Windows: fixed the issue where crashes may occur when processes exit.
-- Windows: improved the support for Bluetooth earphones and fixed the issue where Bluetooth earphones are muted.
-- Windows: fixed the issue where focus preemption occurs after screen sharing stops.
-- All platforms: fixed the exception that occurs when statistics on the packet loss rate are collected during status callback.
+- iOS: fixed the issue where the application occasionally freezes when a component is called during foreground-background switch.
+- iOS: fixed intermittent in-ear monitoring audio when audio effects are enabled.
+- Android: fixed the issue where audio effects played in the call volume mode do not stop when there is an incoming call.
+- Android: fixed occasional failure to enable audio capturing.
+- Windows: fixed occasional black screen during local video rendering.
+- Windows: fixed occasional crash when users exit the app.
+- Windows: improved support for Bluetooth earphones and fixed the no audio issue.
+- Windows: fixed the focus stealing problem that occurs when screen sharing stops.
+- All platforms: fixed failure to collect statistics on packet loss rate for status callback.
 
 
 
 ## Version 7.9 Released on October 27, 2020
 **New features**
-- Mac: added the support for users to filter specified windows during screen sharing for better privacy protection.
-- Windows: added the support for users to configure the stroke color and border width for the "Sharing" prompt border during screen sharing.
-- Windows: added the support for users to enable the high performance mode when sharing the entire desktop.
-- All platforms: added the custom encryption feature to allow users to perform secondary processing on encoded audio/video data through exposed C APIs.
-- All platforms: added the audio lag information callbacks `audioTotalBlockTime` and `audioBlockRate` to `TRTCRemoteStatistics`.
+- macOS: supported filtering out selected windows from screen sharing. Users can exclude windows they do not want to share, better ensuring privacy.
+- Windows: supported configuring the border color and width of the "Sharing" message box during screen sharing.
+- Windows: supported the high performance mode during desktop sharing.
+- All platforms: supported custom encryption, allowing users to process encoded audio/video data using an exposed C API.
+- All platforms: added audio stuttering information `audioTotalBlockTime` and `audioBlockRate` to `TRTCRemoteStatistics`.
 
-**Optimizations**
-- iOS: improved the startup speed of the audio module to enable the first audio frame to be captured and sent faster.
-- Windows: optimized the AEC algorithm for system audio loopback to deliver better AEC capability when `SystemLoopback` is enabled.
-- Windows: optimized the anti-covering capability of screen capturing during screen sharing to allow users to configure filter windows.
-- Android: optimized the in-ear monitoring effect for most Android models to reduce the in-ear monitoring delay to a more comfortable level.
-- Android: further optimized one-to-one delay in `Music` mode (specified in `startLocalAudio`).
-- All platforms: optimized the sound smoothness during the switching between the audience and anchor roles in manual subscription mode.
-- All platforms: improved the audio/video call performance in weak network environments to deliver better audio/video smoothness.
+**Optimization**
+- iOS: shortened the startup time of the audio module, allowing quicker capturing and sending of the first audio frame.
+- Windows: optimized the AEC algorithm for system audio loopback.
+- Windows: allowed users to filter out certain windows from screen sharing to prevent the target window from being covered.
+- Android: optimized the in-ear monitoring effect for most Android devices, reducing in-ear monitoring latency to a more acceptable level.
+- Android: reduced end-to-end delay in the music mode (specified in `startLocalAudio`).
+- All platforms: enhanced audio smoothness when a user switches between the anchor and audience role in the manual subscription mode.
+- All platforms: improved audio/video call performance and audio smoothness in poor network conditions.
 
-**Issues fixed**
-- iOS: fixed the occasional failure to render video images in certain scenarios.
-- iOS: fixed the issue where noise occasionally occurs when users wear earphones while the default sound quality is used.
-- iOS: fixed certain known memory leaks.
-- iOS: fixed the issue where crashes occasionally occur after ReplayKit screencap ends.
-- iOS: fixed the compilation issue in simulator environments.
-- Android: fixed the issue where lip-sync errors occasionally occur on certain phones after an app is switched to the background for a long time and then switched back to the foreground.
-- Android: fixed the issue where the microphone is not released after users switch to the background.
-- Android: fixed the issue where certain internal OpenGL resources of the SDK are not released in time.
-- Windows: fixed the occasional noise problem in a few scenarios.
-- All platforms: fixed certain occasional crashes to improve the SDK stability.
+**Bug fixing**
+- iOS: fixed occasional failure to render video images in certain scenarios.
+- iOS: fixed occasional noise when users use earphones in the default mode.
+- iOS: fixed known memory leak issues.
+- iOS: fixed occasional crash after ReplayKit screen recording ends.
+- iOS: fixed compilation problems on simulators.
+- Android: fixed occasional lip-sync errors on certain phones after the application remains in the background for a long time.
+- Android: fixed the issue where the mic is not released after the application is switched to the background.
+- Android: fixed the issue where certain OpenGL resources in the SDK are not released in time.
+- Windows: fixed occasional noise in some scenarios.
+- All platforms: fixed occasional crash, improving the SDK’s performance stability.
 
 ## Version 7.8 Released on September 29, 2020
 **New features**
-- Mac: added the callback of system volume changes. For more information, please see [TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#af24c0f0258e83ab644e242ee0d01277f).
-- Windows: added the feature for users to specify areas across screens for screen sharing.
-- Windows: added the support for users to filter specified windows for anti-covering during window sharing. For more information, please see [TRTCCloud.addExcludedShareWindow](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ae5141a9331c3675f17fbdc922f376b06) and [TRTCCloud.removeExcludedShareWindow](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a08504ce347b593c0191904611da5cfd2).
-- Windows: added the callback of system volume changes. For more information, please see [ITRTCCloudCallback.onAudioDevicePlayoutVolumeChanged](http://doc.qcloudtrtc.com/group__ITRTCCloudCallback__cplusplus.html#a39cf2644243dceaccd82933f11f4db12).
+- Mac: added the callback of system volume change. For details, please see [TRTCCloudDelegate.onAudioDevicePlayoutVolumeChanged](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#af24c0f0258e83ab644e242ee0d01277f).
+- Windows: supported specifying content for screen sharing across screens.
+- Windows: supported filtering out specified windows from screen sharing to prevent the target window from being covered. For more information, please see [TRTCCloud.addExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ae5141a9331c3675f17fbdc922f376b06) and [TRTCCloud.removeExcludedShareWindow](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a08504ce347b593c0191904611da5cfd2).
+- Windows: added the callback of system volume change. For details, please see [ITRTCCloudCallback.onAudioDevicePlayoutVolumeChanged](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a39cf2644243dceaccd82933f11f4db12).
 
-**Optimizations**
-- iOS: added support for using TXVodPlayer and TRTC together as well as AEC.
-- iOS & Mac: added support for the feature of pushing a video mute image. For more information, please see [TRTCCloud.setVideoMuteImage](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#ad730c168c066599b6c4c987fd7b7c3a2).
-- Android: added support for the feature of pushing a video mute image. For more information, please see [TRTCCloud.setVideoMuteImage](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a78195189ea5f3db9a05338f585bb925d).
-- Android: optimized the audio routing policy to allow audio to be played back only from earphones when users wear earphones.
-- Android: allows low-delay capturing and playback in certain systems to reduce call delay on Android.
-- Android: added support for using TXVodPlayer and TRTC together as well as AEC.
-- Windows: compatible with the virtual camera emulator e2eSoft VCam.
-- Windows: allows users to call `startLocalPreview` and `startCameraDeviceTest` at the same time.
-- Windows: allows users to call `startLocalPreview` to enable local preview while using the primary stream for screen sharing.
-- Windows: fixed the issue of long audio delay caused by SDK internal playback buffer.
-- Windows: optimized the audio enablement logic to avoid occupying the microphone in playback-only mode.
+**Optimization**
+- iOS: allowed using VODPlayer and TRTC at the same time with AEC enabled.
+- iOS & macOS: supported pushing a specified image when stream pushing pauses. For more information, please see [TRTCCloud.setVideoMuteImage](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#ad730c168c066599b6c4c987fd7b7c3a2).
+- Android: supported pushing a specified image when stream pushing pauses. For more information, please see [TRTCCloud.setVideoMuteImage](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a78195189ea5f3db9a05338f585bb925d).
+- Android: optimized the audio routing policy to make sure that audio is always played back via earphones when earphones are connected.
+- Android: allowed low-delay capturing and playback in certain systems, reducing call delay.
+- Android: supported using VODPlayer and TRTC at the same time with AEC enabled.
+- Windows: made the SDK compatible with the virtual webcam e2eSoft VCam.
+- Windows: allowed calling `startLocalPreview` and `startCameraDeviceTest` at the same time.
+- Windows: allowed publishing screen sharing images via the primary stream and at the same time calling `startLocalPreview` to enable local preview.
+- Windows: fixed long audio delay caused by the playback buffer of the SDK.
+- Windows: optimized the audio enablement logic to prevent mic occupation in the playback-only mode.
 
 
 
-**Issues fixed**
-- iOS: fixed the low playback volume issue of iPhone SE.
-- iOS: fixed the issue where crashes occur when `muteRemoteAudio` is called in `TRTCCloud.createSubCloud`.
-- iOS: fixed rendering crashes that occasionally occur.
+**Bug fixing**
+- iOS: fixed low playback volume on iPhone SE.
+- iOS: fixed crash when a sub-instance (`TRTCCloud.createSubCloud`) calls `muteRemoteAudio`.
+- iOS: fixed occasional crash during rendering.
 - iOS: fixed the issue where video rendering on certain iPad devices occasionally causes the main thread to crash during foreground/background switching.
-- iOS: fixed known memory leaks.
-- iOS: fixed the issue where iOS14 prompts "would like to find and connect to devices on your local network".
-- Mac: fixed the issue where `getCurrentCameraDevice` always returns `nil`.
-- Mac: fixed the issue where certain USB cameras cannot be enabled.
-- Mac: fixed the issue where crashes occur when the area size specified for screen sharing is `0`.
-- Android: fixed the issue where Android 5.0 devices crash when the `READ_PHONE_STATE` permission is not specified.
-- Android: fixed the issue where audio capturing and playback exceptions occur after Bluetooth earphones are disconnected and then connected again.
+- iOS: fixed known memory leak issues.
+- iOS: fixed the issue where iOS 14 prompts "the app would like to find and connect to devices on your local network".
+- macOS: fixed the issue where `getCurrentCameraDevice` returns `nil`.
+- macOS: fixed the issue where certain USB cameras cannot be turned on.
+- macOS: fixed crash when the area of shared content is set to `0`.
+- Android: fixed crash on Android 5.0 when the `READ_PHONE_STATE` permission is not granted.
+- Android: fixed audio capturing and playback exceptions after Bluetooth earphones are disconnected and connected again.
 - Android: fixed known crash issues.
-- Windows: fixed the issue where the 64-bit SDK crashes when screen sharing is repeatedly enabled and then disabled.
-- Windows: fixed the issue where crashes occur when certain systems use OpenGL.
+- Windows: fixed crash on 64-bit Windows when screen sharing is enabled and disabled multiple times.
+- Windows: fixed crash on certain systems when OpenGL is used.
 
 
 ## Version 7.7 Released on September 8, 2020
 
-**Optimizations**
+**Optimization**
 
-- All platforms: improved the instant streaming speed of the substream (screen sharing).
-- iOS: optimized the internal thread model to improve the operation stability in scenarios with concurrent playback using more than 30 channels.
+- All platforms: improved instant streaming performance of the substream (screen sharing images).
+- iOS: optimized the internal thread model to improve stability when 30 or more channels of audio/video are played back at the same time.
 - iOS & Android: improved the performance of the audio module and reduced the capturing delay of the first audio frame.
-- iOS & Android: improved the volume and sound effect performance when TXVodPlayer and TRTC are used at the same time.
-- iOS & Android: added the support for sound effect and the background music files in WAV audio format.
-- Windows: optimized the issue where the CPU utilization is too high on some low-end cameras.
-- Windows: optimized the compatibility with multiple USB cameras and microphones to make it easier to enable such devices.
-- Windows: optimized the selection policy of cameras and microphones to avoid exceptions in audio/video capturing caused by plugging in and unplugging cameras or microphones.
+- iOS & Android: improved volume and audio quality when VODPlayer and TRTC are used at the same time.
+- iOS & Android: supported files in WAV format for audio effects and background music.
+- Windows: fixed high CPU usage when low-end cameras are used.
+- Windows: optimized the compatibility with multiple USB cameras and mics to make it easier to turn on such devices.
+- Windows: optimized the selection policy of cameras and mics to avoid audio/video capturing exceptions caused by the connection/disconnection of cameras and mics.
 
-**Issues fixed**
+**Bug fixing**
 
-- All platforms: fixed the issue where playback exceptions occasionally occur when the `muteLocalVideo` and `muteLocalAudio` APIs are called in weak network environments.
-- iOS: fixed the issue where sound effect playback may fail on low-end iPhone or iPad devices.
-- iOS: fixed the issue where screen images shared by iPad Pro get distorted.
-- iOS: fixed the issue where, during in-app screen sharing, the screen capturing permission request continues to pop up for a few times after being rejected by users.
-- Windows: fixed the issue where onExitRoom fails to call back room exit event notifications after laptops or desktops stay in the sleep mode for a long time.
-- Windows: fixed the issue where, in `Music` mode, echo leaks occur after [stopSystemAudioLoopback](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#aab0258238e4414c386657151d01ffb23) is enabled.
-- Windows: fixed the issue where the player end is occasionally muted when `enterRoom` and `exitRoom` are frequently and quickly called to enter and exit rooms respectively.
-- Windows: fixed the issue of SDK compatibility with Visual Studio 2010 project compilation.
-- Windows: fixed the issue where the `onUserVideoAvailable` event callback is repeatedly received in manual subscription mode ([setDefaultStreamRecvMode(false,false)](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a7a0238314fc1e1f49803c0b22c1019d5)).
+- All platforms: fixed occasional playback exceptions when the `muteLocalVideo` and `muteLocalAudio` APIs are called in poor network conditions.
+- iOS: fixed occasional failure to play audio effects on earlier generations of iPhone or iPad devices.
+- iOS: fixed distorted screen sharing images on iPad Pro.
+- iOS: fixed the issue where the application keeps requesting screen recording permission after the user denies it.
+- Windows: fixed the issue where [onExitRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloudCallback__cplusplus.html#a0a45883a23a200b0e9ea38fdde1da4bd) fails after laptops or desktops remain in sleep mode for a long time.
+- Windows: fixed echo after system audio capturing is enabled via the calling of [startSystemAudioLoopback](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#aab0258238e4414c386657151d01ffb23) in the music mode.
+- Windows: fixed the issue where no audio is played sometimes when a user uses `enterRoom` and `exitRoom` to enter and leave the room in a short period of time.
+- Windows: fixed project compilation problems with Visual Studio 2010.
+- Windows: fixed the issue where the `onUserVideoAvailable` event callback is returned multiple times in the manual subscription mode ([setDefaultStreamRecvMode(false，false)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a7a0238314fc1e1f49803c0b22c1019d5)).
 
 
 ## Version 7.6 Released on August 21, 2020
 **New features**
 
-- Windows: added the [updateLocalView](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ae5211a2739df8d8ec6017559b3aa0299) and [updateRemoteView](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a8c8247cbc679ea144ffb393b6b940c9e) APIs to improve user experience in adjusting HWND rendering windows in real time.
-- Windows: added the [getCurrentMicDeviceMute](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a8a8badf62eee1021f9315f11df0f597f) API to get whether the current Windows PC is muted.
-- Windows: added the [setCurrentMicDeviceMute](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#a8a8badf62eee1021f9315f11df0f597f) API to set global mute for the current Windows PC.
-- Mac: added the [updateLocalView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#abf20f249b4b43fff64f944b4aefe54cb) and [updateRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa27f954e6301fb57a143b27429b63d87) APIs to optimize user experience in adjusting the view rendering area in real time.
-- Mac: added the [getCurrentMicDeviceMute](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a6ba78519e9c98c1eecd365154882d53f) API to get whether the current Mac computer is muted.
-- Mac: added the [setCurrentMicDeviceMute](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a88569e62fe75b7ea98cc012169f22bfe) API to set global mute for the current Mac computer.
-- iOS: added the [updateLocalView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#abf20f249b4b43fff64f944b4aefe54cb) and [updateRemoteView](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa27f954e6301fb57a143b27429b63d87) APIs to optimize user experience in adjusting the view rendering area in real time.
-- iOS: for `TRTCCloudDelegate`, added the [onCapturedRawAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#aeaeaf9e7091c75e1a072d576a57d7f5c) callback function and changed the names of a few other callback functions to [onLocalProcessedAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a73a3e7de3c5c340957f119bb0f8744b0), [onRemoteUserAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#aa392c17c27bae1505f148bf541b7746a), and [onMixedPlayAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudDelegate__ios.html#a5a8a0bf6f8d02c33b2fe01c6175dfd4e).
-- Android: for `TRTCCloudListener`, added the [onCapturedRawAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#abffd560f5b2b2322ea3980bc5a91d22e) callback function and changed the names of a few other callback functions to [onLocalProcessedAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a62c526c6c30a66671260bdf0c5c64e46), [onRemoteUserAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a4af98a7d668c150ea8e99e3085505902), and [onMixedPlayAudioFrame](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#a580e94224357c38adf6ed883ab3321f7).
+- Windows: added the [updateLocalView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#ae5211a2739df8d8ec6017559b3aa0299) and [updateRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a8c8247cbc679ea144ffb393b6b940c9e) APIs to improve user experience in adjusting HWND rendering windows in real time.
+- Windows: added the [getCurrentMicDeviceMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a8a8badf62eee1021f9315f11df0f597f) API to get whether the PC is muted.
+- Windows: added the [setCurrentMicDeviceMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__ITRTCCloud__cplusplus.html#a8a8badf62eee1021f9315f11df0f597f) API to turn on global mute for the PC.
+- macOS: added the [updateLocalView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#abf20f249b4b43fff64f944b4aefe54cb) and [updateRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aa27f954e6301fb57a143b27429b63d87) APIs to optimize user experience in adjusting the view rendering area in real time.
+- macOS: added the [getCurrentMicDeviceMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a6ba78519e9c98c1eecd365154882d53f) API to get whether the PC is muted.
+- macOS: added the [setCurrentMicDeviceMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a88569e62fe75b7ea98cc012169f22bfe) API to turn on global mute for the PC.
+- iOS: added the [updateLocalView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#abf20f249b4b43fff64f944b4aefe54cb) and [updateRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aa27f954e6301fb57a143b27429b63d87) APIs to optimize user experience in adjusting the view rendering area in real time.
+- iOS: added the [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#aeaeaf9e7091c75e1a072d576a57d7f5c) callback to `TRTCCloudDelegate`, and changed the names of a number of other callback functions. The names used now are [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a73a3e7de3c5c340957f119bb0f8744b0), [onRemoteUserAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#aa392c17c27bae1505f148bf541b7746a), and [onMixedPlayAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDelegate__ios.html#a5a8a0bf6f8d02c33b2fe01c6175dfd4e).
+- Android: added the [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#abffd560f5b2b2322ea3980bc5a91d22e) callback to `TRTCCloudListener`, and changed the names of a number of other callback functions. The names used now are [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a62c526c6c30a66671260bdf0c5c64e46), [onRemoteUserAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a4af98a7d668c150ea8e99e3085505902), and [onMixedPlayAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a580e94224357c38adf6ed883ab3321f7).
 
-**Optimizations**
+**Optimization**
 
-- All platforms: optimized the protocol policy of `EnterRoom` to improve the speed and success rate of room entry.
-- All platforms: optimized the overall performance consumption and lag issues when a large number of audio channels are subscribed at the same time.
-- Mac: added the support for users to specify areas for screen sharing.
+- All platforms: optimized the protocol policy of `enterRoom` to improve the speed and success rate of room entry.
+- All platforms: fixed reduced performance and stuttering when a large number of audio channels are subscribed at the same time.
+- macOS: supported sharing specified area of a specified window.
 
-**Issues fixed**
+**Bug fixing**
 
-- All platforms: fixed the issue where the SDK does not trigger `onEnterRoom` callback when users enter the same room without exiting.
-- All platforms: fixed a few internal bugs that may occasionally cause a black screen.
-- All platforms: fixed the issue where the screen sharing image cannot be displayed properly when `startRemoteSubStreamView` is called early.
-- Windows: fixed a few known handle and GDI leaks.
-- Windows: fixed multiple known crash issues.
-- Windows: fixed the issue where devices are not automatically started after cameras and microphones are disconnected and then reconnected.
-- iOS: fixed the issue where iOS 10 crashes when the background music API passes in file paths of particular rules.
-- Android: fixed the issue where the player end is occasionally muted when `enterRoom` and `exitRoom` are frequently and quickly called to enter and exit rooms respectively.
-- Android: fixed the issue where black screens occasionally occur during screencap pushes.
+- All platforms: fixed the issue where the SDK does not trigger the `onEnterRoom` callback when users enter the same room without exiting.
+- All platforms: fixed a few internal bugs that may cause a black screen.
+- All platforms: fixed failure to display screen sharing images when `startRemoteSubStreamView` is called early.
+- Windows: fixed known handle and GDI leaks.
+- Windows: fixed known crash issues.
+- Windows: fixed the issue where cameras and mics are not started automatically after being disconnected and connected again.
+- iOS: fixed crash on iOS 10 when certain file paths are passed in the background music API.
+- Android: fixed the occasional no audio issue when `enterRoom` and `exitRoom` are called multiple times in a short period of time.
+- Android: fixed occasional black screen during the streaming of screen recording.
 
 
 ## Version 7.5 Released on July 31, 2020
 
 **New features**
 
-- Added the support for dual-stack IPv6 and IPv6-only.
-- Added the capability to pull when users enter multiple rooms, supporting super small classes.
-- Added the feature of setting the background image (for regulatory purposes, images must first be uploaded through the TRTC console) to MCU On-Cloud MixTranscoding.
-- Added the `A+B=>C` and `A+B=>A` modes to MCU On-Cloud MixTranscoding.
-- Added the playback buffer time field `jitterBufferDelay` to the real-time status callback function `onStatistics`.
+- Supported dual-stack IPv6 and IPv6-only.
+- Allowed playing back streams in multiple rooms. This feature can be used for ultra-small classes.
+- Allowed setting a background image for MCU On-Cloud MixTranscoding (for regulatory purposes, the image must be uploaded to the TRTC console first).
+- Added two new modes for MCU On-Cloud MixTranscoding: `A+B=>C` and `A+B=>A`.
+- Added the `jitterBufferDelay` field, which indicates the playback buffer time, to the real-time status callback API `onStatistics`.
 
-**Optimizations**
+**Optimization**
 
-- Reduced the delay of end-to-end co-anchoring calls by 40%, compared with that in version 7.4.
-- Reduced the in-ear monitoring delay of phones and added the feature for setting sound effects such as voice changing and reverb effects for in-ear monitoring.
-- Optimized the player-end network jitter evaluation algorithm to reduce the playback delay.
-- Reduced the delay of end-to-end co-anchoring calls for the Android SDK.
-- Further reduced the in-ear monitoring delay.
+- Reduced end-to-end delay for co-anchoring by 40% from that in version 7.4.
+- Reduced in-ear monitoring delay on phones and allowed setting voice change and reverb effects for in-ear monitoring.
+- Optimized the algorithm for evaluating network jitter at the player end to reduce playback delay.
+- Reduced end-to-end delay for co-anchoring in TRTC SDK for Android.
+- Reduced in-ear monitoring delay.
 - Optimized the issue where playback view switching causes a black screen.
 
-**Issues fixed**
+**Bug fixing**
 
-- Fixed the issue where playback does not take effect after `playBGM` and `pauseBGM` are consecutively called in a function.
-- Fixed the issue where `onEnterRoom` callback can still be received occasionally after room exit.
-- Fixed the issue where certain models cannot recover after ultra-low resolution encoding fails. 
+- Fixed the issue where playback fails after `playBGM` and pauseBGM` are called successively in a function.
+- Fixed the occasional issue where users continue to receive the `onEnterRoom` callback after exiting the room.
+- Fixed the issue on certain devices where ultra-low-resolution encoding fails and cannot be recovered. 
 
 ## Version 7.4 Released on June 24, 2020 
 
-**Optimizations**
+**Optimization**
 
-Added support for setting the volume of in-ear monitoring.
+Allowed setting volume for in-ear monitoring.
 
-**Issues fixed**
+**Bug fixing**
 
-- Fixed the issue where the local video image blinks once during landscape/portrait mode switching on Android.
-- Fixed the issue where custom videos cannot be properly encoded when sent on certain Android phones.
-- Fixed the occasional crash of audio packet processing.
+- Fixed the issue where the local image flickers during landscape/portrait mode switch on Android.
+- Fixed encoding failure when custom videos are published from certain Android phones.
+- Fixed occasional crash during audio packet processing.
 
 
 
@@ -267,31 +332,31 @@ Added support for setting the volume of in-ear monitoring.
 
 **New features**
 
-- Added the new sound effect management API `TXAudioEffectManager` to support more flexible and diverse sound effect capabilities while retaining the compatibility with legacy APIs.
-- Added the `minVideoBitrate` option to the video encoding parameter `setVideoEncoderParam`. This option is recommended for live streaming users who have a high requirement for image quality.
+- Added a new audio effect management API `TXAudioEffectManager` to offer more diverse audio effects while continuing to support the legacy API.
+- Added the `minVideoBitrate` option to `setVideoEncoderParam`, the API used to set video encoding parameters. The option is recommended for scenarios with high requirements on video quality.
 
-**Optimizations**
+**Optimization**
 
-- Added transient noise reduction for audio, which can be enabled through `setAudioQuality(TRTCAudioQualitySpeech)`.
-- Added the support for sound effect files consisting of packaged assets.
-- Improved the local video definition.
-- Added the support for the texture mode for custom rendering on the player end to reduce performance overhead.
-- Optimized the selection logic of camera capturing resolution to improve the visual effect.
-- Optimized the echo processing effect.
-- Added the support for the full-linkage 128 Kbps high-quality stereo sound, which can be set through the `setAudioQuality(TRTCAudioQualityMusic)` API.
-- Added the support for the `SPEECH` audio mode, which provides a better ANS capability for audio conferencing calls. This audio mode can be set through the `setAudioQuality(TRTCAudioQualitySpeech)` API.
-- Added the support for concurrent playback of multiple background music streams to support karaoke scenarios where the vocal and accompaniment are separated. Loop playback of the background music is also supported now.
-- You can now call `muteLocalVideo` before `startLocalPreview` to implement the effect of "only preview but no push". You can also call `startLocalPreview` before `enterRoom` to implement this effect.
+- Supported transient noise reduction, which can be enabled using `setAudioQuality(TRTCAudioQualitySpeech)`.
+- Supported asset packages for audio effect files.
+- Improved local video clarity.
+- Supported custom rendering by texture for the player end, reducing resource consumption.
+- Optimized the resolution selection logic for video captured by the camera, enhancing visual experience.
+- Optimized echo cancellation.
+- Supported 128 Kbps high-quality stereo sound from sender to recipient, which can be set using the `setAudioQuality(TRTCAudioQualityMusic)` API.
+- Supported the `SPEECH` audio mode, which provides better ANS capabilities for audio conferencing calls. This mode can be set using the `setAudioQuality(TRTCAudioQualitySpeech)` API.
+- Supported playing back multiple tracks of background music at the same time. This feature can be used in karaoke scenarios, where vocals and instrumentals are separate tracks. Loop playback of background music is also supported now.
+- Supported calling `muteLocalVideo` before `startLocalPreview` to preview without pushing streams. This can be achieved by calling `startLocalPreview` before `enterRoom` as well.
 
-**Issues fixed**
+**Bug fixing**
 
-- Fixed the occasional crash of OpenGL context inside the SDK during custom video capture.
-- Fixed the issue where the callback for `setLocalVideoRenderListener` custom rendering is not triggered before room entry.
-- Fixed the issue where the video image in the player gets upside down during front/rear camera switch in landscape mode.
-- Fixed the low-probability issue where the player screen gets corrupted after room entry if `startLocalPreview` is called first.
-- Fixed the occasional crash of hardware encoder.
-- Fixed the occasional issue with intermittent local audio recording.
-- Fixed the issue where the player cannot automatically play back audio/video if a kill or crash occurs when the push is paused (`muteLocalVideo` or `muteLocalAudio`).
+- Fixed occasional crash due to OpenGL context error during custom video capturing.
+- Fixed the issue where the custom rendering callback is not triggered after `setLocalVideoRenderListener` is called before room entry.
+- Fixed the issue where, when a user switches to the front/rear camera in the landscape mode, other users see upside down video of the user.
+- Fixed the occasional issue where, if a user calls `startLocalPreview` before room entry, other users see corrupted image of the user.
+- Fixed occasional crash of the hardware encoder.
+- Fixed occasional intermittent audio for local recording.
+- Fixed the issue where, when the user publishing streams enters the room again after the pausing of stream pushing (`muteLocalVideo`, `muteLocalAudio`) causes crash or forces the application to close, streams are not played back automatically at the player end.
 
 
 
@@ -299,34 +364,34 @@ Added support for setting the volume of in-ear monitoring.
 
 **New features**
 
-Added the support for mobile screen sharing on Android, which is suitable for screencap live streaming on the mobile client.
+Supported screen recording on Android, allowing users to stream screen recording on phones.
 
-**Optimizations**
+**Optimization**
 
-- Optimized the performance in call scenarios on low and mid-end Android phones to improve the audio experience.
-- Optimized visual effect APIs such as filter and green screen and aggregated them into the `TXCBeautyManager` class for a unified call method.
+- Optimized call performance on low-end and mid-range Android phones, improving audio experience.
+- Optimized visual effect APIs such as filters and green screen and aggregated them into the `TXCBeautyManager` class so that they share a calling method.
 
-**Issues fixed**
+**Bug fixing**
 
-Fixed the issue where the custom stream ID occasionally does not take effect in time during role switching.
+Fixed the occasional issue where the custom stream ID fails to take effect in time during role switching.
 
 
 
 ## Version 7.1 Released on March 27, 2020 
 
-**Optimizations**
+**Optimization**
 
-- The C++ STL basic library is compiled in a fully static manner.
-- ANS and AGC are enabled by default for the call volume to improve the audio quality in call mode.
-- Fixed the usability of the preset stream mixing template.
-- Optimized stream mixing for a higher success rate.
+- Supported static build of projects using the C++ STL library.
+- Enabled ANS and AGC by default in the call volume mode to improve audio quality.
+- Improved the usability of the preset stream mixing template.
+- Enhanced the success rate of stream mixing.
 
-**Issues fixed**
+**Bug fixing**
 
 - Fixed the issue where all audio processing values become zero when AGC is enabled/disabled frequently during room entry.
-- Fixed the issue where the speed test slows down response to calls of other APIs.
-- Fixed the issue where the upstream volume doubles with noise when the process is interrupted by a phone call.
-- Fixed the issue of auto-relayed push upon room entry.
+- Fixed the issue where speed testing slows down the calling of other APIs.
+- Fixed the issue where the volume of upstream data doubles and noise is heard after real-time communication is interrupted by an incoming call.
+- Fixed the issue where streams are relayed automatically after room entry.
 
 
 
@@ -334,8 +399,8 @@ Fixed the issue where the custom stream ID occasionally does not take effect in 
 
 - Optimized the 3A enabling policy.
 - Improved the usability of MCU On-Cloud MixTranscoding.
-- Improved the audio smoothness in weak network environments.
-- Fixed the issue of OOM caused by repeated consecutive room entry/exit.
+- Enhanced audio smoothness in poor network conditions.
+- Fixed memory leaks caused by frequent room entry and exit.
 
 
 
@@ -343,29 +408,29 @@ Fixed the issue where the custom stream ID occasionally does not take effect in 
 
 **New features**
 
-- Added the support for Android 10.0.
-- Added the `snapshotVideo()` API to screencap local and remote video images.
-- Added the `pauseAudioEffect` and `resumeAudioEffect` APIs to pause and resume a sound effect respectively.
-- Added the `setBGMPlayoutVolume` and `setBGMPublishVolume` APIs to set the local playback volume and push/audio mix volume respectively.
-- Added the `setRemoteSubStreamViewRotation` API to adjust the rendering rotation angle of substream video playback.
-- Added the global volume type mode `setSystemVolumeType(TRTCSystemVolumeTypeVOIP)`, i.e., the call volume is always used, which is mainly used to solve the issue of capturing switching between the Bluetooth earphone and built-in mic.
-- Added the `streamId` attribute to the `TRTCParams` parameter for `enterRoom` to set the live stream ID in CDN, which makes it easier for you to bind the live stream to CDN.
-- Added the `cloudRecordFileName` attribute to the `TRTCParams` parameter for `enterRoom` to set the on-cloud recording filename for live streaming.
-- Added the `TRTCAppSceneAudioCall` scenario, which can be set during `enterRoom`. In this scenario, the TRTC SDK is comprehensively optimized for audio calls.
-- Added the `TRTCAppSceneVoiceChatRoom` scenario, which can be set during `enterRoom` to enable the optimizations made by the TRTC SDK for interactive voice chat room scenarios.
+- Supported Android 10.0.
+- Added the `snapshotVideo()` API for taking screenshots of local or remote video.
+- Added the `pauseAudioEffect` and `resumeAudioEffect` APIs for pausing and resuming an audio effect.
+- Added the `setBGMPlayoutVolume` and `setBGMPublishVolume` APIs for setting the local playback volume and publishing volume of background music respectively.
+- Added the `setRemoteSubStreamViewRotation` API for adjusting the rotation of played back substream video.
+- Added a global volume mode setting API `setSystemVolumeType(TRTCSystemVolumeTypeVOIP)`, which can ensure that call volume is used all the time. This is mainly to prevent the switch from Bluetooth earphones to the built-in mic during audio capturing.
+- Added the `streamId` attribute to the `TRTCParams` parameter of `enterRoom`, which can be used to set the user’s CDN stream ID, making it easier to bind to live streaming CDNs.
+- Added the `cloudRecordFileName` attribute to the `TRTCParams` parameter of `enterRoom`, which can be used to set the on-cloud recording filename for a live stream.
+- Added the `TRTCAppSceneAudioCall` scenario, which is optimized for audio calls and can be set during the calling of `enterRoom`.
+- Added the `TRTCAppSceneVoiceChatRoom` scenario, which is optimized for audio chat rooms and can be set during the calling of `enterRoom`.
 
-**Optimizations**
+**Optimization**
 
-- Improved the capability of avoiding an interrupted video stream's impact on the recording service, making remote recording files more complete.
-- Alleviated the lip-sync error during hardware decoding on certain models.
-- Enabled video images to be captured at a 1080p high resolution, delivering a higher definition during watch of mobile live streams on PCs.
+- Improved the recording feature’s tolerance of video interruption, enabling remote recording of more complete video.
+- Fixed lip-sync errors during hardware decoding on certain devices.
+- Supported capturing 1080p video, allowing PC audience to watch clearer video published from phones.
 - Simplified the error codes for room entry.
-- Fixed the occasional issue of slow instant streaming.
+- Fixed occasional slow streaming.
 
-**Issues fixed**
+**Bug fixing**
 
-- Fixed the occasional crash of the HTTP component.
-- Fixed the occasional issue where there is no callback for sound effect playback completion.
+- Fixed occasional crash of the HTTP component.
+- Fixed the occasional issue where no callback is returned for the completion of audio effect playback.
 - Fixed the occasional issue where the system cannot be recovered from room entry failures.
 
 
@@ -375,18 +440,18 @@ Fixed the issue where the custom stream ID occasionally does not take effect in 
 **New features**
 
 - Added the in-ear monitoring capability.
-- Enabled users to specify not to automatically pull during room entry.
-- Added the `getBeautyManager` API to aggregate beauty filter, image retouching, and animated effect APIs.
-- Added image retouching features, such as skin beautifying, eye brightening, teeth whitening, wrinkle removal, and eye bag removal, to the Enterprise Edition.
-- Added the `onRemoteUserEnterRoom` and `onRemoteUserLeaveRoom` callbacks to send the room entry and exit notifications of mic-off anchors respectively.
+- Allowed users to disable automatic stream pulling upon room entry.
+- Added the `getBeautyManager` API, which aggregates beauty filter, retouching, and animated effect APIs.
+- Added retouching features including skin polishing, eye brightening, teeth whitening, wrinkle removal, and eye bag removal to the Enterprise Edition.
+- Added the `onRemoteUserEnterRoom` and `onRemoteUserLeaveRoom` callbacks for the entry and exit of a user.
 
-**Optimizations**
+**Optimization**
 
 - Optimized the PTS generation mechanism.
-- Enabled the optimal access point to be automatically selected after network switching.
-- Enabled the advance call of `startRemoteView`.
+- Enabled automatic selection of the best access point after network change.
+- Supported calling `startRemoteView` in advance.
 
-**Issues fixed**
+**Bug fixing**
 
 Fixed known crashes.
 
@@ -396,39 +461,39 @@ Fixed known crashes.
 
 **New features**
 
-- Added permission acquisition configuration for AAR packaging.
-- Added CPU usage evaluation on Android 8.0 and above.
+- Added permission requesting configuration for AAR packaging.
+- Supported CPU usage evaluation on Android 8.0 and above.
 
-**Optimizations**
+**Optimization**
 
-- Relayed push is faster now.
-- Users can now adjust their own playback volume separately.
+- Sped up relayed push.
+- Supported adjusting the playback volume of a specific user.
 
 ## Version 6.6 Released on August 2, 2019 
 
 **New features**
 
-- Added the local audio recording feature.
-- Added callback APIs for sending the first audio or video frame.
+- Supported local audio recording.
+- Added callback APIs for sending the first audio and video frame.
 - Added the system volume type setting API.
-- Added sound effect APIs, which can be used to play back short sound effects.
-- Added the feature of modifying the data output by the custom audio callback API.
+- Added the audio effect API for playing short audio effects.
+- Made the data returned via the custom audio callback modifiable.
 
-**Optimizations**
+**Optimization**
 
-- Optimized the room entry feature for faster speed and higher success rate.
-- Added the support for the remote video muting API.
-- Unified the room entry error codes, which are called back through `onEnterRoom`. If the value of `result` is smaller than 0, it indicates a room entry error.
+- Sped up room entry and improved its success rate.
+- Added an API to mute remote video.
+- Unified room entry error codes, which are returned via `onEnterRoom`. If `result` is smaller than 0, it indicates failure to enter the room.
 - Optimized the demo to support low-latency big rooms.
-- Added the volume setting and volume callback APIs for the player.
-- Added the support for local rendering for custom video sending.
-- Added the support for 1080p for custom video capturing and sending.
-- Added the support for the `SurfaceView` method for local and remote rendering.
+- Added a volume setting API and a volume callback API for the player.
+- Supported local rendering for custom video publishing.
+- Supported custom capturing and publishing of 1080p video.
+- Supported the `SurfaceView` method for local and remote rendering.
 
-**Issues fixed**
+**Bug fixing**
 
-- Fixed the issue of relayed push stream mixing.
-- Fixed the issue of incorrect local preview angle.
+- Fixed the problems with relayed push and stream mixing.
+- Fixed incorrect rotation for local preview.
 
 
 
@@ -436,31 +501,31 @@ Fixed known crashes.
 
 **New features**
 
-Added the "low-latency big room" feature to the live streaming mode (TRTCAppSceneLIVE):
+Added the "low-latency big room" feature for the live streaming mode (`TRTCAppSceneLIVE`):
 
-- A UDP protocol specially optimized for audio/video is used to deliver an excellent performance even in weak network environments.
-- The average watch latency is about 1 second, which can improve the activeness in anchor-viewer interaction.
-- Up to 100,000 users can now enter the same room.
+- Adopted a UDP protocol optimized for audio/video, allowing the SDK to better adapt to poor network conditions.
+- Reduced the average watch latency to around 1 second, enhancing anchor-audience interaction experience.
+- Supported rooms with up to 100,000 users.
 
-**Optimizations**
+**Optimization**
 
-- Fixed the issue of lip-sync error in weak network environments.
-- Optimized the `onStatistics` status callback to call back only existing streams.
-- Optimized the playback buffer logic for live streaming `TXLivePlayer` to reduce lagging.
-- Increased the recovery speed when `muteLocalVideo` is called first and then the video image on the playback client is canceled.
-- Optimized the QoE algorithm in high-latency network environments with a high packet loss rate to improve the performance in weak network environments.
-- Optimized the decoder performance and fixed the increasing delay on extremely-low-end Android phones.
-- Optimized the volume evaluation algorithm (enableAudioVolumeEvaluation) to make the evaluation result more accurate.
-- Optimized the QoE algorithm in video call mode (TRTCAppSceneVideoCall) to further improve the smoothness of one-to-one calls in weak network environments.
+- Fixed lip-sync errors in poor network conditions.
+- Optimized the `onStatistics` status callback. Callbacks are returned for only existing streams now.
+- Optimized the playback buffer logic of `TXLivePlayer`, reducing stuttering.
+- Sped up playback at the player end after local video is muted via `muteLocalVideo` and unmuted again.
+- Optimized the QoE algorithm for high-latency and high-packet-loss network environments.
+- Improved decoder performance and fixed increasing delay on earlier generations of Android phones.
+- Optimized the volume evaluation algorithm (`enableAudioVolumeEvaluation`), improving accuracy.
+- Optimized the QoE algorithm in the video call mode (`TRTCAppSceneVideoCall`), further enhancing the smoothness of one-to-one calls in poor network conditions.
 
   
 
-**Issues fixed**
+**Bug fixing**
 
-- Fixed the occasional issue of no callback for `enterRoom`.
-- Fixed the issue where no sound is played when audio capturing is disabled.
-- Fixed the issue where the screen turns green after the local rendering view is removed and added again.
-- Fixed the issue where the remote video image is called back for only 10 times when the resolution is 540p or above during custom rendering callback (`setRemoteVideoRenderDelegate`).
+- Fixed the occasional issue where no callback is returned for `enterRoom`.
+- Fixed the issue where a user cannot play audio after disabling audio capturing.
+- Fixed green screen after the local rendering view is removed and added again.
+- Fixed the issue where the custom rendering callback (`setRemoteVideoRenderDelegate`) is returned only 10 times at most when the resolution of the remote video is 540p or above.
 
 
 
@@ -468,26 +533,26 @@ Added the "low-latency big room" feature to the live streaming mode (TRTCAppScen
 
 **New features**
 
-- Added APIs for mirroring local display and mirroring encoder output.
-- Added the setting callback function for the `setMixTranscodingConfig` API.
+- Added APIs for mirroring local video and encoded video.
+- Added a callback for the `setMixTranscodingConfig` API.
 - Added the eye enlarging, face slimming, chin slimming, and animated widget features to the Enterprise Edition.
 
-**Optimizations**
+**Optimization**
 
-- Improved the smoothness in weak network environments.
-- Optimized the volume callback algorithm to make the volume callback value more reasonable.
-- Added the support for specifying data frame timestamps externally for sending custom audio and video data.
-- Enhanced the `setMixTranscodingConfig` API to support the `roomID` parameter for cross-room co-anchoring stream mixing.
-- Enhanced the `setMixTranscodingConfig` API to support the `pureAudio` parameter for audio stream mixing and recording in pure audio call scenarios.
+- Improved smoothness in poor network conditions.
+- Optimized the volume callback algorithm, improving the accuracy of the values returned.
+- Supported specifying data frame timestamps externally for the publishing of custom audio and video.
+- Optimized the `setMixTranscodingConfig` API by adding the `roomID` parameter for stream mixing during cross-room co-anchoring.
+- Optimized the `setMixTranscodingConfig` API by adding the `pureAudio` parameter for audio mixing and recording in audio-only call scenarios.
 - Improved the 720p video decoding performance on low-end Android devices.
 
-**Issues fixed**
-- Fixed the issue where hands-free mode switching does not work.
-- Fixed the issue where the live streaming (TXLivePlayer) latency might irreversibly become higher.
-- Fixed the issue where `setVideoEncoderRotation` does not work in live streaming scenarios.
-- Fixed the issue where there is no callback for errors after the mic permission is denied on Android.
-- Fixed the issue of pop-up after the demo is opened on Android 9.0.
-- Fixed the issue where the volume adjustment buttons cannot adjust the viewer volume.
+**Bug fixing**
+- Fixed failure to switch to the hands-free mode.
+- Fixed the occasional issue where live streaming (TXLivePlayer) latency increases and does not fall back.
+- Fixed failure to use `setVideoEncoderRotation` in live streaming scenarios.
+- Fixed the issue where no error callback is returned after the mic permission is denied on Android.
+- Fixed the issue where a window pops up after the demo is opened on Android 9.0.
+- Fixed failure by audience to adjust the volume using the volume buttons.
 
 
 
@@ -495,14 +560,14 @@ Added the "low-latency big room" feature to the live streaming mode (TRTCAppScen
 
 **New features**
 
-- Android 64-bit is supported now.
+- Supported 64-bit Android.
 - Added a custom video capturing API: TRTCCloud > sendCustomVideoData.
 - Added a custom audio capturing API: TRTCCloud > sendCustomAudioData.
 - Added custom video rendering APIs: TRTCCloud > setLocalVideoRenderDelegate + setRemoteVideoRenderDelegate.
-- Added a custom audio data callback API: TRTCCloud > setAudioFrameDelegate, which supports the following:
-  - Return the mic capturing data: TRTCAudioFrameDelegate > onCapturedAudioFrame.
+- Added a custom audio data callback API: TRTCCloud > setAudioFrameDelegate, which you can use to do the following:
+  - Return the data captured by the mic: TRTCAudioFrameDelegate > onCapturedAudioFrame.
   - Return the audio data of each remote user: TRTCAudioFrameDelegate > onPlayAudioFrame.
-  - Return the mixed audio data played back through the speaker: TRTCAudioFrameDelegate > onMixedPlayAudioFrame.
+  - Return the mixed audio data sent to the speaker for playback: TRTCAudioFrameDelegate > onMixedPlayAudioFrame.
 
 
 
@@ -512,64 +577,43 @@ Added the "low-latency big room" feature to the live streaming mode (TRTCAppScen
 
 **New features**
 
-- Added the filter level setting API `setFilterConcentration()`.
-- Added the `sendSEIMsg()` API to send custom messages through the SEI header information in video frames, which is generally used to insert timestamp information into video streams.
-- Added the cross-room call feature `connectOtherRoom`, that is, two existing TRTC rooms can communicate with each other, which can be used in anchor competition across rooms.
+- Added the filter strength setting API `setFilterConcentration()`.
+- Added the `sendSEIMsg()` API for sending custom messages through SEI headers in video frames. The feature is mainly used to insert timestamp information into video streams.
+- Added the cross-room call feature `connectOtherRoom`, which allows two existing TRTC rooms to communicate with each other. This feature can be used to enable anchor competition across rooms.
 
 
 
-**Optimizations**
+**Optimization**
 
-- Improved the CPU utilization and stability.
-- Improved the video image definition in weak network environments.
-- Canceled the multi-instance capability of `TRTCCloud` and changed the creation mode to singleton mode, which help avoid compromised user experience due to network resource preemption among multiple `TRTCCloud` instances.
+- Improved CPU utilization and stability.
+- Enhanced video clarity in poor network conditions.
+- Disabled the creation of multiple `TRTCCloud` instances and restricted instance creation to singletons. This can avoid cases where different instances of `TRTCCloud` compete for network resources, which compromise user experience.
 
-**Issues fixed**
+**Bug fixing**
 
-Relayed push in pure audio call scenarios (such as werewolf) is fixed, which needs to be used together with the `bussInfo` field in `TRTCParam`.
+Fixed the problems with relayed push in audio-only call scenarios (such as Werewolf playing). You must specify the `bussInfo` field in `TRTCParam` to use the feature.
 
 
 
 ## Version 6.1 Released on January 31, 2019 
 
-**Optimizations**
+**Optimization**
 
-- Screen sharing streams can now be watched.
-- Custom video data can now be sent.
-- The implementation of CDN relayed push and stream mix is optimized.
-- Live streaming and video calls are distinguished between upon room entry.
-- The stability is improved, and some occasional crashes are fixed.
-- Traffic throttling is optimized to improve the performance in weak network environments.
+- Supported watching screen sharing streams.
+- Supported publishing custom video.
+- Optimized CDN live streaming and stream mixing.
+- Introduced two types of scenarios: live streaming and video calls, which are specified during room entry.
+- Enhanced stability and fixed occasional crash.
+- Optimized QoS control and improved performance in poor network conditions.
 
 
 
 ## Version 6.0 Released on January 18, 2019 
 
-**Optimizations**
+**Optimization**
 
 - Updated the architecture to the LiteAV kernel.
-- Adopted a new QoS algorithm to reduce lagging and improve smoothness.
-- Adopted a new audio module to deeply optimize the audio quality in various network conditions.
-- Added the support for primary stream/substream encoding (we recommend you enable it only on Windows and macOS devices).
-- Added the support for CDN relayed push and stream mixing.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- Adopted a new QoS algorithm, reducing stuttering and improving smoothness.
+- Introduced a new audio module, enhancing audio quality in various network conditions.
+- Supported dual-channel (primary stream and substream) encoding. We recommend you use this feature on Windows and macOS only.
+- Supported CDN live streaming and stream mixing.
