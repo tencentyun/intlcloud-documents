@@ -90,7 +90,7 @@ For more information on logs, please see [Viewing Execution Logs](https://intl.c
 
 :::
 ::: View\smonitoring\sdata
-On the **Function Management** page, select **Monitoring information** of the created function to view metrics such as function invocations and execution duration as shown below:
+On the **Function Management** page, select **Monitoring information** of the created function to view metrics such as function invocations and execution duration.
 
 <dx-alert infotype="notice" title="">
 The minimal granularity of monitoring statistics collection is 1 minute. You need to wait for 1 minute before you can view the current monitoring record.
