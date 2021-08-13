@@ -120,9 +120,9 @@ TCP 是面向连接的协议，在正式收发数据前，必须和对方建立�
 
 
 ### 负载均衡是否可以直接获取 Client 端 IP？[](id:10)
-公网七层负载均衡提供 X-Forwarded-For 的方式获取访问者真实 IP，负载均衡侧默认开启，需要后端服务做相应配置来获取 Client IP。详情请见 [如何获取客户端真实 IP](https://intl.cloud.tencent.com/document/product/214/3728)。
-
-公网四层负载均衡（TCP 协议）服务可以直接在后端 CVM 上获取来访者真实 IP 地址，无需进行额外的配置；内网四层负载均衡自从2016年10月24日起，新购的实例不再进行 SNAT 处理，支持直接从 server 端获取真实的 client IP，无需额外配置。
+- IPv6 NAT64 负载均衡不支持获取 Client IP。
+- 公网七层 IPv4 和 IPv6 负载均衡提供 X-Forwarded-For 的方式获取访问者真实 IP，负载均衡侧默认开启，需要后端服务做相应配置来获取 Client IP。详情请见 [如何获取客户端真实 IP](https://intl.cloud.tencent.com/document/product/214/3728)。
+- 公网四层 IPv4 和 IPv6 负载均衡（TCP 协议）服务可以直接在后端 CVM 上获取来访者真实 IP 地址，无需进行额外的配置；内网四层负载均衡自从2016年10月24日起，新购的实例不再进行 SNAT 处理，支持直接从 server 端获取真实的 client IP，无需额外配置。
 
 [[回到顶部]](#23)
 
@@ -152,6 +152,7 @@ TCP 是面向连接的协议，在正式收发数据前，必须和对方建立�
 - 后端（server 端），在云服务器端，由于腾讯云内部全网支持 HTTP/1.1 协议，因此用户也无需配置，使用 Nginx 默认配置（HTTP/1.1）即可兼容。
 
 > ! HTTP/2 只在 HTTPS 中支持，但 Gzip 可以用在腾讯云所支持的任意 HTTP 版本中。
+>
 
 [[回到顶部]](#23)
 
@@ -176,6 +177,8 @@ clientB ip+port drop
 0.0.0.0/0+port accept
 ```
 
+关于安全组的更多说明，请参见 [后端云服务器安全组配置说明](https://intl.cloud.tencent.com/document/product/214/6157)。
+
 [[回到顶部]](#23)
 
 
@@ -186,7 +189,9 @@ clientB ip+port drop
 
 
 ### 关于 Ping 负载均衡的 VIP 说明[](id:16)
-公网负载均衡的 VIP 支持 Ping，Ping 负载均衡的 VIP 是由负载均衡集群响应，不会转发到后端的服务器。内网负载均衡的 VIP 不支持 Ping，建议您使用 telnet 来探测内网负载均衡。
+Ping 负载均衡的 VIP ：由负载均衡集群响应，不会转发到后端的服务器。
+- 公网负载均衡的 VIP 支持 Ping。
+- 内网负载均衡的 VIP 仅支持来自本 VPC 的客户端 Ping，不支持其他 VPC、本地 IDC 的客户端 Ping（如使用云联网、对等连接等打通 VPC 的场景，建议您使用 telnet 来探测）。
 
 [[回到顶部]](#23)
 

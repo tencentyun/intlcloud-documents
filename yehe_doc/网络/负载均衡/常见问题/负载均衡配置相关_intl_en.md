@@ -6,7 +6,7 @@
 
 **Health Check**
 - [What can I do if a CVM instance exception occurs during health check?](#5)
-- [The frequency of health check is higher then my configuration in the console.](#6)
+- [The frequency of health check is higher than my configuration in the console.](#6)
 
 **Access**
 - [HTTP redirection issues in load forwarding](#7)
@@ -68,7 +68,7 @@ If you have also enabled session persistence, the same access request may be for
 Please troubleshoot by following the steps:
 - Make sure that you access your application service directly via the CVM instance.
 - Make sure that the relevant port is open on the real server.
-- Check whether the CLB is blocked by security software like firewall in the real server. 
+- Check whether the CLB is blocked by security software like firewall in the real server.
 - Check whether the health check parameters of the CLB instance are configured correctly.
 - We recommend using static pages for health checks.
 - Check whether there is high load on the CVM instance that leads to slow response.
@@ -77,8 +77,8 @@ Please troubleshoot by following the steps:
 [[Back to Top]](#23)
 
 
-### The frequency of health check is higher then my configuration in the console.[](id:6)
-Suppose that you configured to send a health check packet every 5 seconds in the console, However the real server receives one or even more health check requests in 1 second. 
+### The frequency of health check is higher than my configuration in the console.[](id:6)
+Suppose that you configured to send a health check packet every 5 seconds in the console. However, the real server receives one or even more health check requests in 1 second.
 
 It is caused by the implementation mechanism of CLB health check. Suppose that there are 1 million clients requests. These requests will be distributed to 4 CLB servers, and then sent to the real servers. The health check is performed on the CLB servers separately. If the CLB instance is configured to send a health check request every 5 seconds, it means that each backend CLB servers will send a health check request every 5 seconds. In this case, the real server will receives many health check requests. For example, if there are 8 servers in the cluster of the CLB and each server sends a request every 5 seconds, then the real server may receive 8 health check requests in 5 seconds.
 
@@ -120,9 +120,9 @@ The normal result returned by port 843 is as shown below:
 
 
 ### Can CLB instances directly obtain client IPs?[](id:10)
-Public network layer-7 CLB instances use the X-Forwarded-For (XFF) method to get real client IPs. Acquisition of client IPs is enabled on CLB instances by default but needs to be configured on real servers. For more information, please see [Getting Real Client IPs](https://intl.cloud.tencent.com/document/product/214/3728).
-
-Public network layer-4 CLB instances (over TCP) can directly get real client IPs on backend CVM instances, and no additional configuration is required. For the private network layer-4 CLB instances purchased after October 24, 2016, the Source Network Address Translation (SNAT) is not conducted. They can directly get real client IPs from servers with no additional configuration.
+- IPv6 NAT64 CLB instances do not support obtaining client IPs.
+- Public network layer-7 CLB instances use the X-Forwarded-For (XFF) method to get real client IPs. Acquisition of client IPs is enabled on CLB instances by default but needs to be configured on real servers. For more information, please see [Getting Real Client IPs](https://intl.cloud.tencent.com/document/product/214/3728).
+- Public network layer-4 CLB instances (over TCP) can directly get real client IPs on backend CVM instances, and no additional configuration is required. For the private network layer-4 CLB instances purchased after October 24, 2016, the Source Network Address Translation (SNAT) is not conducted. They can directly get real client IPs from servers with no additional configuration.
 
 [[Back to Top]](#23)
 
@@ -149,9 +149,10 @@ No. To access port a on server A (10.66.\*.101), the request can be forwarded to
 
 #### Gzip compatibility
 - On the frontend (client), Gzip is supported by HTTP/1.0, HTTP/1.1 and lower versions. Additional configuration is not needed because mainstream browsers all support Gzip.
-- On the backend (server), because HTTP/1.1 protocol is supported on the CVM instance over Tencent Cloud private network, you don not need to make any configuration, and can directly use HTTP/1.1 configured in Nginx by default to achieve compatibility.
+- On the backend (server), because HTTP/1.1 is supported on the CVM instance over Tencent Cloud private network, you don not need to make any configuration, and can directly use HTTP/1.1 configured in Nginx by default to achieve compatibility.
 
 > ! HTTP/2 is only supported in HTTPS, but Gzip can be used in any HTTP version supported by Tencent Cloud.
+>
 
 [[Back to Top]](#23)
 
@@ -176,6 +177,8 @@ clientB ip+port drop
 0.0.0.0/0+port accept
 ```
 
+For more information on the security group, please see [Security Group Configuration of the Real Server](https://intl.cloud.tencent.com/document/product/214/6157).
+
 [[Back to Top]](#23)
 
 
@@ -186,7 +189,9 @@ A CLB instance always communicate with real servers over the private network, ev
 
 
 ### Pinging CLB VIP[](id:16)
-Public network CLB VIP can be pinged. The requests of pinging the CLB VIP are responded by the CLB cluster and will not be forwarded to real servers. Private network CLB VIP cannot be pinged, for which we recommend running `Telnet` to test private network CLB instances.
+The requests of pinging the CLB VIP are responded to by the CLB cluster and will not be forwarded to real servers.
+- Public network CLB VIP can be pinged.
+- Pinging a private network CLB VIP to a local client VPC, rather than any other VPC or a local client IDC, is allowed. If VPCs are accessible over the CCN and peering connection, we recommend running `Telnet` to test private network CLB instances.
 
 [[Back to Top]](#23)
 
