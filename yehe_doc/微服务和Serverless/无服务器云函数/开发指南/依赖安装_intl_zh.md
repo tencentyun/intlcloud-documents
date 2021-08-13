@@ -2,7 +2,7 @@
 云函数 SCF 各个运行时已内置部分常用依赖库，您可前往各运行时代码开发中查询：
 - [Node.js](https://intl.cloud.tencent.com/document/product/583/11060)
 - [Python](https://intl.cloud.tencent.com/document/product/583/11061) 
-- [PHP](https://intl.cloud.tencent.com/document/product/583/40704)
+- [PHP](https://intl.cloud.tencent.com/document/product/583/17531)
 - [Golang](https://intl.cloud.tencent.com/document/product/583/18032)
 
 ## 安装依赖库
@@ -41,8 +41,9 @@ exports.main_handler = async (event, context) => {
 4. 将函数代码及依赖库一同压缩为 zip 包，在 [云函数控制台](https://console.cloud.tencent.com/scf) 中上传打包的 zip 包并创建一个新函数。操作步骤如下：
 	1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的【函数服务】。
 	2. 在主界面上方选择期望创建函数的地域，并单击【新建】，进入函数创建流程。
-	3. 在“新建函数”页面，填写函数基本信息。
-	- **创建方式**：选择使用【自定义创建】来新建函数。
+	3. 在“新建函数”页面，填写函数基本信息。如下图所示：
+	![](https://main.qcloudimg.com/raw/e3b4a740329a13d7058a2d5e6a1665f4.png)
+		- **创建方式**：选择使用【自定义创建】来新建函数。
 		- **运行环境**：选择【Node.js12.16】。
 		- **提交方法**：选择【本地上传zip包】。
 	4. 单击【完成】即可创建函数。
@@ -106,12 +107,13 @@ def main_handler(event, context):
 4. 将函数代码及依赖库一同压缩为 zip 包，在 [云函数控制台](https://console.cloud.tencent.com/scf) 中上传打包的 zip 包并创建一个新函数。操作步骤如下：
 	1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的【函数服务】。
 	2. 在主界面上方选择期望创建函数的地域，并单击【新建】，进入函数创建流程。
-	3. 在“新建函数”页面，填写函数基本信息。
-	- **创建方式**：选择使用【自定义创建】来新建函数。
+	3. 在“新建函数”页面，填写函数基本信息。如下图所示：
+	![](https://main.qcloudimg.com/raw/e3b4a740329a13d7058a2d5e6a1665f4.png)
+		- **创建方式**：选择使用【自定义创建】来新建函数。
 		- **运行环境**：选择【Python 3.6】。
 		- **提交方法**：选择【本地上传zip包】。
 	4. 单击【完成】即可创建函数。
-	:::
+:::
 ::: 使用依赖管理工具
 云函数在线编辑器 [Serverless Web IDE](https://intl.cloud.tencent.com/document/product/583/39962) 提供了终端功能，并在终端中内置了包管理工具 `pip`。本文以在终端中安装 `numpy` 库为例：
 1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf/index?rid=1)，在左侧选择【函数服务】。
@@ -133,7 +135,104 @@ pip install numpy -t .
 </dx-tabs>
 
 
+### PHP 运行时
 
+
+
+
+
+
+<dx-tabs>
+::: 安装自定义库
+通过依赖管理工具，例如 composer，在本地安装依赖后同函数代码一同打包上传。
+<dx-alert infotype="notice" title="">
+打包时函数入口文件需要在 `zip` 包的根目录下。如果打包整个文件夹并上传 `zip` 包，则会因解压后无法在根目录找到入口文件而导致函数创建失败。
+</dx-alert>
+本文以 PHP7 安装 `requests` 库为例：
+1. 在本地终端中执行 `mkdir test-package` 命令，创建一个目录用于存放函数代码和依赖库。
+2. 在 `test-package`下创建`conposer.json`并指定需要安装的依赖库及版本。
+```json
+{
+"require": {
+ "requests": ">=1.0"
+	}
+}
+```
+3. 执行以下命令，在该目录下安装 `requests` 依赖库。
+```bash
+cd test-package
+composer install
+```
+4. 在该目录下创建函数入口文件 `index.php` 并在代码中引用 `requests` 库。
+```php
+<?php
+require 'vendor/autoload.php';
+function main_handler($event, $context) {
+    return "hello world";
+}
+?> 
+```
+5. 将函数代码及依赖库一同压缩为 zip 包，在 [云函数控制台](https://console.cloud.tencent.com/scf) 中上传打包的 zip 包并创建一个新函数。操作步骤如下：
+   1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的【函数服务】。
+   2. 在主界面上方选择期望创建函数的地域，并单击【新建】，进入函数创建流程。
+   3. 在“新建函数”页面，填写函数基本信息。如下图所示：
+      ![](https://main.qcloudimg.com/raw/5112f6d762b1e90a3b62ad7446da0a79.png)
+    - **创建方式**：选择使用【自定义创建】来新建函数。
+    - **运行环境**：选择【Php7】。
+    - **提交方法**：选择【本地上传zip包】。
+6. 单击【完成】即可创建函数。
+:::
+::: 安装自定义扩展
+在函数入口文件的同级目录下创建扩展文件夹 `php_extension` 并添加自定义扩展文件 `.so` 和配置文件 `php.ini`，同函数代码一起打包上传。
+
+本文以 `PHP7` 安装自定义扩展 `swoole.so` 为例。
+
+1. 在本地终端中执行 `mkdir test-package` 命令，创建一个目录用于存放函数代码和依赖库。
+2. 执行以下命令在 `test-package` 创建文件夹 `php_extension`，并将扩展对应的配置文件 `php.ini` 和扩展文件 `.so` 放在该目录下，目录结构如下：
+<dx-alert infotype="explain" title="">
+- 扩展文件夹 `php_extension` 和配置文件 `php.ini` 为固定命名，如使用其他命名可能导致扩展加载失败。
+- 扩展文件夹 `php_extension` 和配置文件 `php.ini` 以及自定义扩展 `.so` 文件需要具备可执行权限。
+</dx-alert>
+```plaintext
+|____php_extension
+| |____php.ini
+| |____swoole.so
+|____index.php  
+```
+3. 自定义扩展支持从代码中或层中加载，如果扩展以层的形式上传，请确保上传到层的 zip 解压后的目录格式如下：
+```plaintext
+|____php_extension
+| |____swoole.so
+```
+4. php.ini 写法：
+ - 扩展在代码目录下：
+  ```ini
+  extension=/var/user/php_extension/swoole.so
+  ```
+ - 扩展在层目录下：
+  ```ini
+  extension=/opt/php_extension/swoole.so
+  ```
+5. 在该目录下创建函数入口文件 `index.php`，可通过`extension_loaded( )`函数检查扩展是否加载成功，加载成功返回`true`，否则返回`false`。
+```php
+<?php
+function main_handler($event, $context) {
+  	var_dump(extension_loaded('swoole'));
+    return "hello world";
+}
+?> 
+```
+6. 将函数代码及依赖库一同压缩为 zip 包，在 [云函数控制台](https://console.cloud.tencent.com/scf) 中上传打包的 zip 包并创建一个新函数。操作步骤如下：
+   1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的【函数服务】。
+   2. 在主界面上方选择期望创建函数的地域，并单击【新建】，进入函数创建流程。
+   3. 在“新建函数”页面，填写函数基本信息。如下图所示：
+      ![](https://main.qcloudimg.com/raw/5112f6d762b1e90a3b62ad7446da0a79.png)
+    - **创建方式**：选择使用【自定义创建】来新建函数。
+    - **运行环境**：选择【Php7】。
+    - **提交方法**：选择【本地上传zip包】。
+7. 单击【完成】即可创建函数。
+:::
+</dx-tabs>
 
 
 
@@ -159,14 +258,16 @@ pip install numpy -t .
 [INFO] Final Memory: 17M/214M
 [INFO] ------------------------------------------------------------------------
 ```
+
 4. 将函数代码及依赖库一同压缩为 jar 包，在 [云函数控制台](https://console.cloud.tencent.com/scf) 中上传打包的 jar 包并创建一个新函数。操作步骤如下：
 	1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的【函数服务】。
 	2. 在主界面上方选择期望创建函数的地域，并单击【新建】，进入函数创建流程。
-	3. 在“新建函数”页面，填写函数基本信息。
-	- **创建方式**：选择使用【自定义创建】来新建函数。
+	3. 在“新建函数”页面，填写函数基本信息。如下图所示：
+	![](https://main.qcloudimg.com/raw/e3b4a740329a13d7058a2d5e6a1665f4.png)
+		- **创建方式**：选择使用【自定义创建】来新建函数。
 		- **运行环境**：选择【Java8】。
 		- **提交方法**：选择【本地上传zip包】。
-	4. 单击【完成】即可创建函数。
+5. 单击【完成】即可创建函数。
 
 
 
@@ -185,8 +286,9 @@ pip install numpy -t .
 Go 运行时的依赖库同代码一起编译后得到二进制文件，在 [云函数控制台](https://console.cloud.tencent.com/scf) 中上传打包的二进制文件并创建一个新函数。操作步骤如下：
 1. 登录 [云函数控制台](https://console.cloud.tencent.com/scf)，单击左侧导航栏的【函数服务】。
 2. 在主界面上方选择期望创建函数的地域，并单击【新建】，进入函数创建流程。
-3. 在“新建函数”页面，填写函数基本信息。
-- **创建方式**：选择使用【自定义创建】来新建函数。
+3. 在“新建函数”页面，填写函数基本信息。如下图所示：
+![](https://main.qcloudimg.com/raw/e3b4a740329a13d7058a2d5e6a1665f4.png)
+	- **创建方式**：选择使用【自定义创建】来新建函数。
 	- **运行环境**：选择【Go1】。
 	- **提交方法**：选择【本地上传zip包】。
 4. 单击【完成】即可创建函数。
