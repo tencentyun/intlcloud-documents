@@ -12,7 +12,6 @@ The player of the MLVB SDK supports three latency control modes: Speedy, Smooth,
 
 **Speedy:** this mode keeps latency at 2-3 seconds or lower in most application scenarios and is suitable for live showroom.
 **Smooth:** this mode keeps latency at 5 seconds or lower in most application scenarios and is suitable for application scenarios that require smooth playback but are not sensitive to latency, such as game streaming.
-![](https://main.qcloudimg.com/raw/7a9ad994dc750d4a31d04a6b56ab2355.png)
 
 ### Step 3. Watermark videos on the client side
 Tencent Cloud allows you to watermark videos in the cloud, but this will increase latency by 1-2 seconds. Therefore, if you use the MLVB SDK, we recommend you watermark videos at the host end instead of in the cloud to reduce latency.
@@ -24,5 +23,4 @@ We guarantee superior streaming experience via our integrated solution, but if y
 If you use OBS to push streams and experience high latency, check your configuration against [Push via OBS](https://intl.cloud.tencent.com/document/product/267/31569). Make sure you set the keyframe interval to 1 or 2 seconds.
 
 ### Step 6. Use LEB
-If none of the above solves your problem, you can try using Tencent Cloud’s LEB service, which features lower latency than LVB and offers streaming with millisecond latency. For details, please see [LEB](https://intl.cloud.tencent.com/document/product/267).
-
+If none of the above solves your problem, you can try using Tencent Cloud’s LEB service, which features lower latency than LVB and offers streaming with millisecond latency. For details, please see [LEB](https://intl.cloud.tencent.com/document/product/267/41030).
