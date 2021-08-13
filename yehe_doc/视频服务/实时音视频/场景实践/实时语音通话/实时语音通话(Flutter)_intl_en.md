@@ -5,9 +5,10 @@ To quickly implement the audio call feature, you can use the demo we provide and
 ### Step 1. Create an application
 
 1. Log in to the TRTC console and select **Development Assistance** > **[Demo Quick Run](https://console.cloud.tencent.com/trtc/quickstart)**.
-2. Enter an application name, e.g., `TestAudioCall`, and click **Create**.
+2. Enter an application name such as `TestAudioCall` and click **Create**.
 
 >!This feature uses two basic PaaS services of Tencent Cloud, namely [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and [IM](https://intl.cloud.tencent.com/document/product/1047). When you activate TRTC, IM will be activated automatically. IM is a value-added service. See [Value-added Service Pricing](https://intl.cloud.tencent.com/document/product/1047/34350) for its billing details.
+
 
 [](id:ui.step2)
 
@@ -15,20 +16,20 @@ To quickly implement the audio call feature, you can use the demo we provide and
 
 1. Download the SDK and [demo source code](https://github.com/tencentyun/TRTCFlutterScenesDemo) for your platform.
 2. Click **Next**.
-   
 
-[](id:ui.step3)
+
+
 
 ### Step 3. Configure demo project files
-
 1. In the **Modify Configuration** step, select the development platform in line with the source package downloaded.
-2. Find and open `/lib/debug/GenerateTestUserSig.dart`.
+2. Find and open `/example/lib/debug/GenerateTestUserSig.dart`.
 3. Set parameters in `GenerateTestUserSig.dart` as follows.
-<ul style="margin:0"><li/>SDKAPPID: 0 by default. Set it to the actual `SDKAppID`.
-<li/>SECRETKEY: left empty by default. Set it to the actual key.</ul>
-
+<ul><li/>SDKAPPID: a placeholder by default. Set it to the actual `SDKAppID`.
+	<li/>SECRETKEY: a placeholder by default. Set it to the actual key.</ul>
+	<img src="https://main.qcloudimg.com/raw/96326351d696d6eb8600b5822dcc8992.png"/>
 4. Click **Next** to complete the creation.
 5. After compilation, click **Return to Overview Page**.
+
 >!
 >- The method for generating `UserSig` described in this document involves configuring `SECRETKEY` in client code. In this method, `SECRETKEY` may be easily decompiled and reversed, and if your key is leaked, attackers can steal your Tencent Cloud traffic. Therefore, **this method is only suitable for the local execution and debugging of the demo**.
 >- The correct `UserSig` distribution method is to integrate the calculation code of `UserSig` into your server and provide an application-oriented API. When `UserSig` is needed, your application can send a request to the business server for a dynamic `UserSig`. For more information, see [How do I calculate UserSig on the server?](https://intl.cloud.tencent.com/document/product/647/35166).
@@ -59,19 +60,19 @@ The `TRTCCallingDemo` folder in the [source code](https://github.com/tencentyun/
 
 | File or Folder | Description |
 | ----------------------- | ------------------------------------------------------------ |
-| TRTCCallingVideo.dart   | The main view for audio/video calls, where calls are answered/declined |
+| TRTCCallingVideo.dart   | The main view for video/audio calls, where calls are answered/rejected |
 | TRTCCallingContact.dart | The view for contacts, where one can search for registered users to call |
 
 [](id:model)
 ## Customizing UI
 The `TRTCCallingDemo` folder in the [source code](https://github.com/tencentyun/TRTCFlutterScenesDemo) contains two subfolders: `ui` and `model`. The `model` subfolder contains the reusable open-source component `TRTCCalling`. You can find the component's APIs in `TRTCCalling.dart`.
-![](https://main.qcloudimg.com/raw/36220937e8689dac4499ce9f2f187889.png)
+![](https://main.qcloudimg.com/raw/78cc06cd53538243bc52abc381350c55.jpg)
 
 You can use the open-source component `TRTCCalling` to customize your own UI. This means you will use the model of the demo but design the UI by yourself.
 
 [](id:model.step1)
 ### Step 1. Integrate the SDKs
-The audio/video call component `TRTCCalling` depends on the [TRTC SDK](https://pub.dev/packages/tencent_trtc_cloud) and [IM SDK](https://intl.cloud.tencent.com/zh/document/product/1047). You can configure `pubspec.yaml` to download their updates automatically.
+The audio/video call component `TRTCCalling` depends on the [TRTC SDK](https://pub.dev/packages/tencent_trtc_cloud) and [IM SDK](https://pub.dev/packages/tencent_im_sdk_plugin). You can configure `pubspec.yaml` to download their updates automatically.
 
 Add the following dependencies to `pubspec.yaml` of your project.
 ```
@@ -102,14 +103,14 @@ Add request for mic permission in `Info.plist`:
 
 
 [](id:model.step3)
-### Step 3. Import the `TRTCCalling` component
+### Step 3: Import the `TRTCCalling` component
 Copy all the files in the directory below to your project:
 ```
 /lib/TRTCCallingDemo/model
 ```
 
 [](id:model.step4)
-### Step 4. Initialize and log in to the component
+### Step 4: Initialize and log in to the component
 
 1. Call `TRTCCalling.sharedInstance()` to get an instance of the component.
 2. Call `login(SDKAppID, userId, userSig)` to log in to the component. For the key parameters passed in, see the table below.
@@ -139,8 +140,8 @@ sCall.login(1400000123, "userA", "xxxx");
 
 1. The caller calls `call()` of `TRTCCalling`, passing in the user ID of the callee (`userid`) and call type (`type`). For an audio call, the call type should be `TRTCCalling.typeAudioCall`.
 2. The callee, if logged in, will receive the `onInvited()` callback and can start the corresponding view based on the call type set by the inviter, which is represented by `callType` in the callback.
-3. The callee can call `accept()` to answer the call and `openCamera()` to turn on the local camera. The callee can also call `reject()` to reject the call.
-4. After communication is established between the caller and callee, they will both receive the `onUserAudioAvailable()` event notification, which indicates that they have received each other's audio. The audio will be played back automatically by default.
+3. The callee can call `accept()` to answer the call and `openCamera()` to turn the local camera on. He or she can also call `reject()` to reject the call.
+4. After communication is established between the caller and callee, they will both receive the `onUserAudioAvailable()` event notification, which indicates that they have received each other’s audio. Remote audio will be played back automatically by default.
 
 [](id:model.offline)
 
@@ -157,11 +158,11 @@ The table below lists the APIs of the `TRTCCalling` component.
 | registerListener   | Registers a `TRTCCalling` listener, through which users can receive status notifications. |
 | unRegisterListener | Unregisters a listener.                                                 |
 | destroy | Destroys an instance. |
-| login | Logs in to IM. All features can be used only after login |
-| logout | Logs out of IM. Calls cannot be made after logout |
+| login | Logs in to IM. All features can be used only after login. |
+| logout | Logs out of IM. Calls cannot be made after logout. |
 | call | Makes a C2C call. The invitee will receive the `onInvited` event notification. |
 | accept | Answers a call. |
-| reject | Declines a call. |
+| reject | Rejects a call. |
 | hangup | Ends a call. |
 | setMicMute | Mutes/Unmutes the mic. |
 | setHandsFree | Enables/Disables the hands-free mode. |

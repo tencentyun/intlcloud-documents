@@ -1,4 +1,4 @@
-​       音声通話機能をすばやく実装する必要がある場合、当社が提供するDemoをもとに直接適応に変更を加えることも、当社が提供するTRTCCallingコンポーネントでカスタマイズしたUIを実装することもできます。
+音声通話機能をすばやく実装する必要がある場合、当社が提供するDemoをもとに直接適応に変更を加えることも、当社が提供するTRTCCallingコンポーネントでカスタマイズしたUIを実装することもできます。
 
 ## DemoのUIの再利用
 
@@ -7,7 +7,8 @@
 1．TRTCコンソールにログインし、【開発支援】>【[Demoクイックスタート](https://console.cloud.tencent.com/trtc/quickstart)】を選択します。
 2．`TestAudioCall`などアプリケーション名を入力して、【作成】をクリックします。
 
->!本機能はTencent Cloudの[Tencent Real-Time Communication TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/zh/document/product/1047)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期的にアクティブにすることができます。IMは付加価値サービスであり、課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。
+>!本機能はTencent Cloudの[TRTC](https://intl.cloud.tencent.com/document/product/647/35078)と[IM](https://intl.cloud.tencent.com/document/product/1047)という2つの基本的なPaaSサービスを同時に使用し、TRTCをアクティブにした後、IMサービスを同期的にアクティブにすることができます。IMは付加価値サービスであり、課金ルールの詳細については、[Instant Messagingの料金説明](https://intl.cloud.tencent.com/document/product/1047/34350)をご参照ください。
+
 
 [](id:ui.step2)
 
@@ -15,20 +16,20 @@
 
 1. 実際のビジネスニーズに応じて、SDKと付属の[Demoソースコード](https://github.com/tencentyun/TRTCFlutterScenesDemo)をダウンロードします。
 2. ダウンロード完了後、【ダウンロードしました。次のステップ】をクリックします。
-   
 
-[](id:ui.step3)
+
+
 
 ### 手順3：Demoプロジェクトファイルの設定
-
 1. 設定変更ページに進み、ダウンロードしたソースコードパッケージに基づき、対応する開発環境を選択します。
-2. `/lib/debug/GenerateTestUserSig.dart`ファイルを見つけて開きます。
+2. `/example/lib/debug/GenerateTestUserSig.dart`ファイルを見つけて開きます。
 3.`GenerateTestUserSig.dart`ファイル内の関連パラメータを設定します。
-<ul style="margin:0"><li/>SDKAPPID：デフォルトは0。実際のSDKAppIDを設定してください。
-<li/>SECRETKEY：デフォルトは空文字列。実際のキー情報を設定してください。</ul>
-
+<ul><li></li>SDKAPPID：デフォルトはPLACEHOLDER。実際のSDKAppIDを設定してください。
+	<li/>SECRETKEY：デフォルトはPLACEHOLDER。実際のキー情報を設定してください。</ul>
+	<img src="https://main.qcloudimg.com/raw/96326351d696d6eb8600b5822dcc8992.png"/>
 4. 貼り付け完了後、【貼り付けました。次のステップ】をクリックすれば、作成が完了します。
 5. コンパイル完了後、【コンソール概要に戻る】をクリックすればOKです。
+
 >!
 >- ここで言及したUserSigの新規作成ソリューションでは、クライアントコードでSECRETKEYを設定します。この手法のうちSECRETKEYは逆コンパイルによって逆向きにクラッキングされやすく、キーがいったん漏洩すると、攻撃者はTencent Cloudトラフィックを盗用できるよようになります。そのため**のこの手法は、ローカルのDemoクイックスタートおよび機能デバッグにのみ適合します**。
 >- UserSigの正しい発行方法は、UserSigの計算コードをサーバーに統合し、Appのインターフェース向けに提供します。 UserSigが必要なときは、Appから業務サーバーにリクエストを発出し動的にUserSigを取得します。詳細は[サーバーでのUserSig新規作成](https://intl.cloud.tencent.com/document/product/647/35166)をご参照ください。
@@ -65,13 +66,13 @@
 [](id:model)
 ## カスタマイズUIの実装
 [ソースコード](https://github.com/tencentyun/TRTCFlutterScenesDemo)フォルダ`TRTCCallingDemo`には2つのサブフォルダuiとmodelが含まれ、そのうちmodelフォルダには当社が実装した再利用可能なオープンソースコンポーネントTRTCCallingが含まれています。このコンポーネントが提供するインターフェース関数は`TRTCCalling.dart`ファイルで確認できます。
-![](https://main.qcloudimg.com/raw/36220937e8689dac4499ce9f2f187889.png)
+![](https://main.qcloudimg.com/raw/78cc06cd53538243bc52abc381350c55.jpg)
 
 オープンソースコンポーネントTRTCCallingを使用すれば、自分のUIを実装することができます。すなわちmodelパーツを再利用するだけで、自分でUIパーツを実装できます。
 
 [](id:model.step1)
 ### 手順1：SDKへの統合
-オーディオビデオ通話コンポーネントTRTCCallingは、 [TRTC SDK](https://pub.dev/packages/tencent_trtc_cloud)と[IM SDK](https://intl.cloud.tencent.com/zh/document/product/1047)に依存しています。`pubspec.yaml`を設定することで、更新を自動的にダウンロードできます。
+オーディオビデオ通話コンポーネントTRTCCallingは、[TRTC SDK](https://pub.dev/packages/tencent_trtc_cloud)と[IM SDK](https://pub.dev/packages/tencent_im_sdk_plugin)に依存しています。`pubspec.yaml`を設定することで、更新を自動的にダウンロードできます。
 
 プロジェクトの`pubspec.yaml`に次の依存関係を記述します。
 ```
