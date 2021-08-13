@@ -47,7 +47,7 @@ If a client initiates a request, the CLB instance will forward the request accor
 For more information on CLB listeners, please see [CLB Listener Overview](https://intl.cloud.tencent.com/document/product/214/6151).
 >?
 >- Forwarding rules: each listener can be configured with multiple domain names, and each domain name can be configured with multiple URLs. You can select a listener or domain name, and then click the **+** icon to create new rules.
-- Session persistence: if session persistence is disabled and a round-robin method is selected, requests from the same client will be assigned to different real servers in sequence; if session persistence is enabled, or it is disabled but `ip_hash` balance method is used, requests from the same client will always be assigned to the same real server.
+>- Session persistence: if session persistence is disabled and a round-robin method is selected, requests from the same client will be assigned to different real servers in sequence; if session persistence is enabled, or it is disabled but `ip_hash` balance method is used, requests from the same client will always be assigned to the same real server.
 
 ### Bind real servers to the listener
 If a client initiates a request, the CLB instance will forward the request to the CVM instance that is bound to its listener for processing.
