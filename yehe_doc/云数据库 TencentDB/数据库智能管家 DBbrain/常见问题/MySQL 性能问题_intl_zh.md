@@ -1,14 +1,14 @@
 ### 如何查看 MySQL 实例存储空间使用情况？
-登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain)，在左侧导航选择【诊断优化】，在上方选择对应数据库，然后选择【空间分析】页。  
+登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain)，在左侧导航选择【诊断优化】，在上方选择对应数据库，然后选择【空间分析】页。
 在空间分析页可查看近一周的日均增长量对比、剩余磁盘空间、预计可用天数，以及近一周的磁盘空间趋势表。 同时也可以查看实例中数据库下各表的占用空间详情和碎片情况。
  ![](https://main.qcloudimg.com/raw/f9645d9ccd5b9a3fa48ac6bfbaca2fca.png)
 
 ### 如何分析 MySQL 全量 SQL 执行轨迹？
 登录 [DBbrain 控制台](https://console.cloud.tencent.com/dbbrain)，在左侧导航选择【诊断优化】，在上方选择对应数据库，然后选择【审计日志分析】页。
-1. 单击视图右上角的【创建分析任务】，选择时间段，单击【确定】。
-2. 在任务列表单击【查看SQL分析】，进入 SQL 分析页。
+1. 单击【创建分析任务】，选择时间段，单击【确定】。
+2. 在任务列表单击【查看 SQL 分析】，进入 SQL 分析页。
 ![](https://main.qcloudimg.com/raw/ffa0424d522ca1598d5bf53e7a50eeea.png)
-3. 在 SQL 分析页，可选择 SQL Type、Host、User 或 SQL Code 维度的视图，并可选择时间段拉伸视图来查看具体时间点的数据。
+3. 在 SQL 分析页，可选择 SQL Type、Host、User 等维度的视图，并可选择时间段拉伸视图来查看具体时间点的数据。
  ![](https://main.qcloudimg.com/raw/0cf2f3009ba3e6a69ae8144abaacbadb.png)
 4. 单击某行 SQL 模板，在右侧会弹出 SQL 语句的详情。
  - 在分析页，可查看和复制具体 SQL 语句，根据给出的优化建议或说明来优化 SQL 语句。
