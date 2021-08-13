@@ -13,17 +13,17 @@
 <tr>
 <td>实例购买</td>
 <td>企业版实例支持按量计费的计费方式，按照所在地域及实例规格收取相应服务托管费用。</td>
-<td>请参考 <a href="#price">企业版定价</a> </td>
+<td>请参见 <a href="#price">企业版定价</a> </td>
 </tr>
 <tr>
 <td>存储费用</td>
 <td>企业版实例托管的云原生应用制品（例如容器镜像、Helm Chart）直接存储在您的 COS Bucket 中，根据实际使用情况将产生存储和访问费用。按照 COS 计费方式进行计费，也可前往 <a href="https://console.cloud.tencent.com/expense/overview">费用中心</a> 进行查询。
-<td>请参见 <a href="https://intl.cloud.tencent.com/pricing/cos">COS 定价</a>。</td>
+<td>请参见 <a href="https://intl.cloud.tencent.com/pricing/cos">COS 定价</a></td>
 </tr>
 <tr>
 <td>流量费用</td>
 <td>通过公网进行容器镜像及 Helm Chart 等云原生应用制品上传、下载，将在 COS 侧产生公网流量费用。<br><b>注意：</b>使用实例同步功能进行跨地域同步容器镜像及 Helm Chart，不会产生 COS 公网流量费用。</td></td>
-<td>请参见 <a href="https://intl.cloud.tencent.com/pricing/cos">COS 定价</a>。</td>
+<td>请参见 <a href="https://intl.cloud.tencent.com/pricing/cos">COS 定价</a></td>
 </tr>
 </table>
 
@@ -60,7 +60,7 @@
 
 ## 容器镜像服务规格
 容器镜像服务规格如下，其中 **✓** 代表支持，**-** 代表不支持。
-
+>! 当实例正在使用标准版或高级版功能时，不允许降低实例规格至不支持该功能的版本。若想降低规格，请先手动删除相关的功能配置。
 <table>
 <tbody><tr>
 <th rowspan="2" style="
@@ -109,13 +109,13 @@
 <td>Helm Chart 托管</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
-<td>命名空间配额</td><td>10</td><td>50</td><td>100</td><td>500（可申请提高配额）</td>
+<td>命名空间配额</td><td>10</td><td>50</td><td>100</td><td>500<br>（可申请提高配额）</td>
 </tr>
 <tr>
-<td>镜像仓库配额</td><td>500</td><td>1000</td><td>3000</td><td>5000 （可申请提高配额）</td>
+<td>镜像仓库配额</td><td>500</td><td>1000</td><td>3000</td><td>5000<br> （可申请提高配额）</td>
 </tr>
 <tr>
-<td>Helm 仓库配额</td><td>-</td><td>1000</td><td>3000</td><td>5000 （可申请提高配额）</td>
+<td>Helm 仓库配额</td><td>-</td><td>1000</td><td>3000</td><td>5000<br> （可申请提高配额）</td>
 </tr>
 <tr>
 <td rowspan="6">数据安全</td>
@@ -155,10 +155,10 @@
 <td>Webhook 触发器</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
-<td>容器镜像编译构建</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td>
+<td>容器镜像编译构建</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
-<td>云原生交付工作流</td><td>-</td><td>-</td><td>✓</td><td>✓</td>
+<td>云原生交付工作流</td><td>-</td><td>✓</td><td>✓</td><td>✓</td>
 </tr>
 <tr>
 <td>P2P 镜像加速分发</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td>
