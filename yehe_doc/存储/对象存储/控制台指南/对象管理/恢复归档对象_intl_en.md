@@ -14,7 +14,7 @@ You can restore an object from the ARCHIVE or DEEP ARCHIVE storage class through
 5. Locate the object to restore and click **Restore** in the **Operation** column.
 ![](https://main.qcloudimg.com/raw/2d34eaee99c4bcb469025f857ed983f1.png)
 To restore multiple archived objects at a time, select them all in the object list, and click **Restore** from the **More Actions** drop-down list at the top.
-![](https://main.qcloudimg.com/raw/eaa698982cd42fe1918aace11854b693.png)
+
 4. In the pop-up window, configure the restoration mode and the validity period (in days) of the copy.
 ![](https://main.qcloudimg.com/raw/3d3163c09213423aa959b179237ab137.png)
 The parameters are described as follows:
