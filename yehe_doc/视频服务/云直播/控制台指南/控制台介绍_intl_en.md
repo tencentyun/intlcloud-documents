@@ -60,7 +60,7 @@ CSS Toolkit provides ancillary features.
 <td><a href = "https://intl.cloud.tencent.com/document/product/267/35968">Web Push</a></td>
 <td>You can quickly generate push URLs and test live streaming online.</td>
 </tr><tr>
-<td ><a href = "https://intl.cloud.tencent.com/document/product/267">Self-Diagnosis</a></td>
+<td ><a href = "https://intl.cloud.tencent.com/document/product/267/39467">Self-Diagnosis</a></td>
 <td>You can use self-diagnosis to troubleshoot common push and playback issues. This feature is in beta and the diagnosis results are for reference only.</td>
 </tr>
 </table>
