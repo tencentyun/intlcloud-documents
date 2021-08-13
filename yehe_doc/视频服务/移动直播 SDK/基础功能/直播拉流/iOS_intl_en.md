@@ -1,247 +1,204 @@
 ## Basics
+This document introduces the live playback feature of the Video Cloud SDK.
 
-This document introduces the livestream playback function of Video Cloud SDK.
+### Live streaming and video on demand 
+- In **live streaming**, the video streams published by hosts in real time are the source of streaming. When hosts stop publishing streams, the video at the playback end stops. Since video is streamed in real time, players do not have progress bars when they play live streaming URLs.
+- In **video on demand (VOD)**, video files in the cloud are the source of streaming. Videos can be played at any time as long as they are not deleted from the cloud, and the playback progress can be adjusted using the progress bar. Video streaming websites such as Tencent Video and Youku Tudou are typical applications of VOD.
 
-#### Livestreaming
+### Supported protocols
+The table below lists the common protocols used for live streaming. We recommend FLV URLs (which start with `http` and end with `flv`) for LVB and WebRTC for LEB. For more information, please see [Playback (LEB)](https://intl.cloud.tencent.com/zh/document/product/1071).
 
-- The **livestreaming** video source is pushed by the host in real time. When the host stops pushing, the video view on the player stops. In addition, the video is broadcast in real time, and no progress bar is displayed when the player is playing the livestreaming URL.
-
-#### Supported protocols
-
-Common livestreaming protocols are listed below. We recommend that you use an FLV-based livestreaming URL that starts with "http" and ends with ".flv" on apps.
-
-| Livestreaming Protocol | Advantage | Disadvantage | Playback Delay |
-| ----------- | ---------------------- | -------------------- | --------- |
-| FLV | High maturity, high concurrency, and no pressure | The video can be played only after the SDK is integrated. | 2s - 3s |
-| RTMP | Lowest theoretical delay when using high-quality lines | The performance is poor in the case of high concurrency. | 1s - 3s |
+|Protocol |Pro |Con |Playback Latency |
+|---------|---------|---------|---------|
+| FLV | Mature, well adapted to high-concurrency scenarios | SDK integration is required. | 2-3s |
+|RTMP |Relatively low latency |Poor performance in high-concurrency scenarios |1-3s |
+| HLS (M3U8) | Well supported on mobile browsers | High latency |10-30s|
+|WebRTC |Lowest latency |SDK integration is required. |< 1s |
 
 ## Notes
+The Video Cloud SDK **does not impose any limit on the sources of playback URLs**, which means you can use it to play both Tencent Cloud and non-Tencent Cloud URLs. However, the player in the SDK supports only live streaming URLs in FLV, RTMP, HLS (M3U8), and WebRTC formats and VOD URLs in MP4, HLS (M3U8), and FLV formats.
 
-- **Are there any restrictions?**
-  The Tencent Video Cloud SDK **does not** impose any limits on the source of the playback URL, which means it is available for both Tencent Cloud and non-Tencent Cloud playback URLs. However, the player in the Tencent Video Cloud SDK only supports livestreaming URLs in FLV and RTMP formats.
-
-## Interfacing
-
-#### Step 1: create a player
-
-The V2TXLivePlayer module in the Tencent Video Cloud SDK implements the livestream playback feature.
-
-```objective-c
-V2TXLivePlayer *txLivePlayer = [[V2TXLivePlayer alloc] init];
+## Integration
+[](id:step1)
+### Step 1. Create a player object
+The `V2TXLivePlayer` module in the Video Cloud SDK offers live playback capabilities.
+```objectivec
+V2TXLivePlayer *_txLivePlayer = [[V2TXLivePlayer alloc] init];
 ```
 
-#### Step 2: render a view
+[](id:step2)
+### Step 2. Create a rendering view
+In iOS, a view is used as a basic rendering unit. Therefore, you need to configure a rendering view, whose size and position you can adjust, for the player to display video images in.
 
-Find a place to display the video images in the player. In the iOS system, a view is used as the basic rendering unit. Therefore, you simply need to prepare a view and configure the layout.
-
-```objective-c
-[txLivePlayer setRenderView:_myView];
+```objectivec
+// Use setRenderView to bind a rendering view to the player
+[_txLivePlayer setRenderView:_myView];
 ```
 
-Technically, the player does not directly render the video image to the view (_myView in the sample code) you provide. Instead, it creates a subView used for OpenGL rendering on top of the view.
+Technically, the player does not render video images directly in the view (`_myView` in the sample code) you provide. Instead, it creates a subview for OpenGL rendering over the view.
 
-You can adjust the size of the rendered image simply by adjusting the size and position of the view. The SDK will automatically adapt the video images to the size and position of the view.
+You can adjust the size of video images by changing the size and position of the view. The SDK will make changes to the video images accordingly.
+ ![](https://main.qcloudimg.com/raw/39a02a8525a20fd861c69c42d2b3ab14.png)
 
 **How can I make animations?**
-You can add animation effects for a view as desired. But note that you must modify the `transform` attribute of the view, instead of the `frame` attribute.
-
-```objective-c
+You are allowed great flexibility in view animation, but note that you need to modify the `transform` rather than `frame` attribute of the view.
+```objectivec
 [UIView animateWithDuration:0.5 animations:^{
-    _myView.transform = CGAffineTransformMakeScale(0.3, 0.3); // Shrink by 1/3
+		_myView.transform = CGAffineTransformMakeScale(0.3, 0.3); // Shrink by 1/3
 }];
 ```
 
-#### Step 3: start livestream playback
-
-```objective-c
-NSString* flvUrl = @"http://2157.liveplay.myqcloud.com/live/2157_xxxx.flv";
-[txLivePlayer startPlay:flvUrl];
-```
-#### Step 4: adjust the view
-
-* **view: size and position**
-  You can modify the size and position of the view by adjusting the size and position of the parameter `view` of setupVideoWidget. The SDK will automatically adjust the size and position of the view based on your configuration.
-
-* **setRenderFillMode: Fill or Fit**
-
-
-| Option                | Description                                                  |
-| -------------------   | ------------------------------------------------------------ |
-| V2TXLiveFillMode_Fill | Fill the image on the screen without leaving any black edges. If the aspect ratio of the view is different from that of the screen, part of the view content will be cropped. |
-| V2TXLiveFillMode_Fit  | Make the view fit the screen without cropping. If the aspect ratio of the view is different from that of the screen, black edges will appear. |
-
-* **setRenderRotation: view rotation**
-
-
-| Option | Description |
-| ------------------ | --------------- |
-| V2TXLiveRotation_0 | Do not rotate the view. |
-| V2TXLiveRotation_90 | Rotate 90 degrees clockwise. |
-| V2TXLiveRotation_180 | Rotate 180 degrees clockwise. |
-| V2TXLiveRotation_270 | Rotate 270 degrees clockwise. |
-
-#### Step 5: pause playback
-
-Strictly speaking, you cannot pause livestream playback. Here, pausing livestream playback actually means **freezing the image** and **turning off the sound**, but the video source keeps updating on the cloud. When you resume the playback, the video is resumed from the latest time. This is the biggest difference between livestreaming and VOD. In the VOD service, the video is paused and resumed in the same way as a local video file.
-
-```objective-c
-// Pause the audio.
-[txLivePlayer pauseAudio];
-// Resume the audio.
-[txLivePlayer resumeAudio];
-
-// Pause the video.
-[txLivePlayer pauseVideo];
-// Resume the video.
-[txLivePlayer resumeVideo];
+[](id:step3)
+### Step 3. Start playback
+```objectivec
+NSString* url = @"http://2157.liveplay.myqcloud.com/live/2157_xxxx.flv";
+[_txLivePlayer startPlay:url];
 ```
 
-#### Step 6: stop livestream playback
+[](id:step4)
+### Step 4. Change the content mode
 
-Call **stopPlay** to stop livestream playback.
+- **setRenderFillMode: aspect fill or aspect fit**
+<table>
+<tr><th>Value</th><th>Description</th></tr>
+</tr><tr>
+<td>V2TXLiveFillModeFill</td>
+<td>Images are scaled to fill the entire screen, and the parts that don’t fit are cropped. There are no black bars in this mode, but images may not be displayed in whole.</td>
+</tr><tr>
+<td>V2TXLiveFillModeFit</td>
+<td>Images are scaled as large as the longer dimension can go. Neither dimension exceeds the screen after scaling. The images are centered, and there may be black bars.</td>
+</tr></table>
+- **setRenderRotation: clockwise rotation of video**
+<table>
+<tr><th>Value</th><th>Description</th></tr>
+</tr><tr>
+<td>V2TXLiveRotation0</td>
+<td>Original</td>
+</tr><tr>
+<td>V2TXLiveRotation90</td>
+<td>Rotate 90 degrees clockwise</td>
+</tr><tr>
+<td>V2TXLiveRotation180</td>
+<td>Rotate 180 degrees clockwise</td>
+</tr><tr>
+<td>V2TXLiveRotation270</td>
+<td>Rotate 270 degrees clockwise</td>
+</tr></table>
 
-```objective-c
-// Stop playback.
-[txLivePlayer stopPlay];
+![](https://main.qcloudimg.com/raw/f3c65504a98c38857ff3e78bcb6c9ae9.jpg)
+
+[](id:step5)
+### Step 5. Pause playback
+Technically speaking, you cannot pause a live playback. In this document, by pausing playback, we mean **freezing video** and **disabling audio**. In the meantime, new video streams continue to be sent to the cloud. When you resume playback, the playback starts from the time of resumption. This is in contrast to VOD. With VOD, when you pause and resume playback, the player behaves the same way as it does when you pause and resume a local video file.
+
+```objectivec
+// Pause playback
+[_txLivePlayer pauseAudio];
+[_txLivePlayer pauseVideo];
+// Resume playback
+[_txLivePlayer resumeAudio];
+[_txLivePlayer resumeVideo];
 ```
 
-#### Step 7: take snapshots
+[](id:step6)
+### Step 6. Stop playback
 
-You can capture the current image as a frame by calling **snapshot**. This feature can only capture frames from the current livestreaming video. To capture the entire UI, you must call the API of the iOS system.
-
-```objective-c
-// Callback notification of the Tencent Cloud video call feature
-- (V2TXLiveCode)snapshot:(id<V2TXLiveSnapshotObserver>)observer;
-
-// Snapshot callback
-@protocol V2TXLiveSnapshotObserver <NSObject>
-@optional
-- (void)onSnapshotComplete:(TXImage *)image;
-@end
+```objectivec
+// Stop playback
+[_txLivePlayer stopPlay];
 ```
 
-## Delay Adjustment
+[](id:step7)
+### Step 7. Take a screenshot
+Call **snapshot** to take a screenshot of the live video streamed. You can get the screenshot taken in the [onSnapshotComplete](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html#a5754eb816b91fd0d0ac1559dd7884dad) callback of `V2TXLivePlayerObserver`. This method captures a frame of the streamed video. To capture the UI, use the iOS system API.
+![](https://main.qcloudimg.com/raw/d86e665e3fc709c07d170e2ab3e2a7ef.jpg)
 
-The LVB feature of the Tencent Cloud SDK, equipped with the self-developed playback engine, is not developed based on ffmpeg. Compared with open-source players, LVB delivers better performance in delay control. We provide three delay adjustment modes for live show, game, and hybrid scenarios, respectively.
+```
+...
+[_txLivePlayer setObserver:self];
+[_txLivePlayer snapshot];
+...
 
-* **Performance comparison among the three modes**
-
-
-| Control Mode | Lag Rate | Average Delay | Applicable Scenario | Principle |
-| :------- | :--------- | :------- | :------------------- | :--------------------------------------------------------- |
-| Speedy mode | High (relatively smooth) | 2s - 3s | Live show (online quiz) | It has an advantage in delay control and is suitable for delay-sensitive scenarios. |
-| Smooth mode | Lowest | >= 5s | Livestreaming game (Penguin e-Sports) | It is suitable for ultra-high-bitrate livestreaming games, such as PlayerUnknown's Battlegrounds. |
-| Auto mode | Network adaption | 2s - 8s | Hybrid scenario | The better the audience's network condition, the shorter the delay, and vice versa. |
-
-* **Interfacing codes of the three modes**
-
-  ```objective-c
-  #define CACHE_TIME_FAST             1.0f
-  #define CACHE_TIME_SMOOTH           5.0f
-  
-  // Speedy mode
-  [_player setCacheParams:CACHE_TIME_FAST maxTime:CACHE_TIME_FAST];
-  
-  // Smooth mode
-  [_player setCacheParams:CACHE_TIME_SMOOTH maxTime:CACHE_TIME_SMOOTH];
-  
-  // Auto mode
-  [_player setCacheParams:CACHE_TIME_FAST maxTime:CACHE_TIME_SMOOTH];
-  ```
-
-## Listening to SDK Events
-
-You can bind a **V2TXLivePlayerObserver** to the V2TXLivePlayer object. After that, you will be notified of SDK internal status information through **onPlayBegin**, **onLoading**, **onConnectionBroken** and **onStatisticsUpdate**.
-
-#### Connection status update callback
-
-```objective-c
-/**
- * @brief Callback notification for the start of playback by the live player.
- */
-- (void)onPlayBegin:(id<V2TXLivePlayer>)player;
-
-/**
- * @brief Callback notification for the loading of the live player.
- */
-- (void)onLoading:(id<V2TXLivePlayer>)player;
-
-/**
- * @brief Callback notification for the disconnected live player.
- *
- * @param player Player object that calls back this notification
- * @param reason Disconnection reason. 0: normal disconnection
- */
-- (void)onConnectionBroken:(id<V2TXLivePlayer>)player
-                    reason:(NSInteger)reason;
+- (void)onSnapshotComplete:(id<V2TXLivePlayer>)player image:(TXImage *)image {
+    if (image != nil) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self handle:image];
+        });
+    }
+}
 ```
 
-#### Warning event callback
+## Latency Control
+The live playback feature of the SDK is not based on FFmpeg, but Tencent Cloud’s proprietary playback engine, which is why the SDK offers better latency control than open-source players do. We provide three latency control modes, which can be used for show rooms, game streaming, and hybrid scenarios.
 
-```objective-c
-- (void)onWarning:(id<V2TXLivePlayer>)player
-             code:(V2TXLiveCode)code
-          message:(NSString *)msg
-        extraInfo:(NSDictionary *)extraInfo;
+- **Comparison of the three modes**
+<table>
+<tr><th>Mode</th><th>Stutter</th><th>Average Latency</th><th>Scenario</th><th>Remarks</th>
+</tr><tr>
+<td>Speedy</td>
+<td>More likely than the speedy mode</td>
+<td>2-3s</td>
+<td>Live showroom (Chongding Dahui)</td>
+<td>The mode delivers low latency and is suitable for latency-sensitive scenarios.</td>
+</tr><tr>
+<td>Smooth</td>
+<td>Least likely of the three</td>
+<td>&gt;= 5s</td>
+<td>Game streaming (Penguin Esports)</td>
+<td>Playback is least likely to stutter in this mode, which makes it suitable for ultra-high-bitrate streaming of games such as PUBG.</td>
+</tr><tr>
+<td>Auto</td>
+<td>Self-adaptive to network conditions</td>
+<td>2-8s</td>
+<td>Hybrid</td>
+<td>The better network conditions at the audience end, the lower the latency.</td>
+</tr></table>
+- **Code to integrate the three modes**
+```objectivec
+// Auto mode
+[_txLivePlayer setCacheParams:1 maxTime:5];
+// Speedy mode
+[_txLivePlayer setCacheParams:1 maxTime:1];
+// Smooth mode
+[_txLivePlayer setCacheParams:5 maxTime:5];
+
+// Start playback after configuration
 ```
 
-#### Warning codes
+>? For more information on stuttering and latency control, see [Video Stutter](https://intl.cloud.tencent.com/document/product/1071/39362).
 
-| Warning Code ID | Value | Description |
-| ----------------------------------------- | -------| -------------------------------- |
-| V2TXLIVE_WARNING_NETWORK_BUSY             | 1101   | Data upload was jammed because the upstream bandwidth was too low. |
-| V2TXLIVE_WARNING_VIDEO_BLOCK              | 2105   | Lagging occurred during video playback.                 |
+[](id:sdklisten)
 
-#### Error event callback
+## Listening for SDK Events
+You can bind a [V2TXLivePlayerObserver](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html) to your `V2TXLivePlayer` object to receive callback notifications about the player status, playback volume, first audio/video frame, statistics, warnings, errors, etc.
 
-```objective-c
-- (void)onError:(id<V2TXLivePlayer>)player
-           code:(V2TXLiveCode)code
-        message:(NSString *)msg
-      extraInfo:(NSDictionary *)extraInfo;
-```
+### Periodically Triggered Notifications
+- The [onStatisticsUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__ios.html#ae93683da9240a752e7b6d70d8e940cbc) callback notification is triggered every 2 seconds to update you on the player’s status in real time. Like a car’s dashboard, the callback gives you information about network conditions, video parameters, etc.
+<table>
+<tr><th>Parameter</th><th>Description</th>
+</tr><tr>
+<td>appCpu</td>
+<td>CPU usage (%) of the app</td>
+</tr><tr>
+<td>systemCpu</td>
+<td>CPU usage (%) of the system</td>
+</tr><tr>
+<td>width</td>
+<td>Video width</td>
+</tr><tr>
+<td>height</td>
+<td>Video height</td>
+</tr><tr>
+<td>fps</td>
+<td>Frame rate (FPS)</td>
+</tr><tr>
+<td>audioBitrate</td>
+<td>Video bitrate (Kbps)</td>
+</tr><tr>
+<td>videoBitrate</td>
+<td>Audio bitrate (Kbps)</td>
+</tr></table>
+- The [onPlayoutVolumeUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html#a5439ba0397be3943c6ebfb6083c27664) callback, which notifies you of the player’s volume, works only after you call [enableVolumeEvaluation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__ios.html#aeed74080dd72e52b15475a54ca5fd86b) to enable the volume reminder. You can set the interval of the callback by specifying the `intervalMs` parameter when calling `enableVolumeEvaluation`.
 
-#### Error codes
-
-| Error Code ID | Value | Description |
-| ------------------------------   | ---- | -------- |
-| V2TXLIVE_ERROR_FAILED            | -1   | Unclassified error.|
-| V2TXLIVE_ERROR_INVALID_PARAMETER | -2   | An invalid parameter was input during the API call.|
-| V2TXLIVE_ERROR_REFUSED           | -3   | The API call was rejected.       |
-| V2TXLIVE_ERROR_NOT_SUPPORTED     | -4   | The current API cannot be called.|
-| V2TXLIVE_ERROR_INVALID_LICENSE   | -5   | Failed to call the API because the license was invalid.|
-
-## Obtaining the video resolution
-
-Through the onVideoResolutionChanged callback, you can obtain the aspect ratio of the current video. This is the quickest way to obtain the video resolution, which takes about 100 ms to 200 ms after playback starts.
-
-```objective-c
-- (void)onVideoResolutionChanged:(id<V2TXLivePlayer>)player
-                           width:(NSInteger)width
-                          height:(NSInteger)height;
-```
-
-| Parameter  | Description | Value |
-| :----- | :------- | :----------------- |
-| width  | Video width | Resolution value, such as 1920 |
-| height | Video height | Resolution value, such as 1080 |
-
-## Periodically Triggered Status Notification
-
-The **onStatisticsUpdate** notification is triggered every second to provide real-time feedback on the current status of the pusher. Like a car dashboard, it can inform you of what is happening inside the SDK so that you can see the current network conditions and video information.
-
-```objective-c
-- (void)onStatisticsUpdate:(id<V2TXLivePlayer>)player
-                statistics:(V2TXLivePlayerStatistics *)statistics;
-```
-
-| Evaluation Parameter | Description |
-| ------------ | ---------------------------- |
-| appCpu | CPU utilization of the current app as a percentage (%) |
-| systemCpu | int | CPU utilization of the current system as a percentage (%) |
-| width | Video width |
-| height | Video height |
-| fps | Frame rate in fps |
-| videoBitrate | Video bitrate in Kbps |
-| audioBitrate | Audio bitrate in Kbps |
-
+### Event-Triggered Notifications
+Other callbacks are triggered when specific events occur.

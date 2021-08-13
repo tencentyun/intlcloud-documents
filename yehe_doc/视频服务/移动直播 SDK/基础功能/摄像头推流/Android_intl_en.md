@@ -1,223 +1,263 @@
-## Feature
-Camera push refers to the process of collecting images from the camera of the mobile phone and voice from the microphone, encoding the video and audio data, and pushing the data to the livestreaming cloud platform. Tencent Cloud LiteAVSDK calls the `V2TXLivePusher` API to provide the camera push capability. The figure below shows the interfaces for camera push operations demonstrated in the LiteAVSDK demo.
-![](https://main.qcloudimg.com/raw/f4df6e007076f4629629f5d75f14d86d.png)
+## Overview
+
+Camera publishing refers to the process of collecting video and audio data from the mobile phone’s camera and mic, encoding the data, and publishing it to cloud-based live streaming platforms. Tencent Cloud’s LiteAVSDK provides the camera publishing capability via `V2TXLivePusher`. The figure below shows the UI for camera publishing operations in the Video Cloud Toolkit app.
+![#800px](https://main.qcloudimg.com/raw/52ee09ae4039d24f39e3cf8110e632c7.jpg)
+
+## Notes
+**Testing on real devices:** the SDK uses a lot of audio and video APIs of the Android system, most of which cannot be used on emulators. Therefore, we recommend that you test your project on a real device.
+
+## Sample Code
+| Platform |                         GitHub Address                          |           Key Class            |
+| :------: | :----------------------------------------------------------: | :-------------------------: |
+|   iOS    | [GitHub](https://github.com/tencentyun/LiteAVProfessional_iOS/blob/master/Demo/TXLiteAVDemo/LivePusherDemo/CameraPushDemo/CameraPushViewController.m) | CameraPushViewController.m  |
+| Android  | [GitHub](https://github.com/tencentyun/LiteAVProfessional_Android/blob/master/Demo/livepusherdemo/src/main/java/com/tencent/liteav/demo/livepusher/camerapush/ui/CameraPushMainActivity.java) | CameraPushMainActivity.java |
 
 
-## Feature Interfacing
+## Feature Integration
 
+[](id:step1)
 ### 1. Download the SDK
 
-[Download](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_International_Android_lastest.zip) the SDK and follow the instructions in the [SDK integration guide](https://intl.cloud.tencent.com/document/product/1071/38156) to embed the SDK in your application project.
+[Download](https://intl.cloud.tencent.com/document/product/1071/38150) the SDK and follow the instructions in [SDK Integration](https://intl.cloud.tencent.com/document/product/1071/38156) to integrate the SDK into your application.
 
-<span id="step2"></span>
-
+[](id:step2)
 ### 2. Configure a license for the SDK
-
-Click [Apply for a License](https://console.cloud.tencent.com/live/license) to obtain the license for testing. You will receive two strings. One is the license URL, and the other is the decryption key.
-
-Before you call the LiteAVSDK features in your app, we recommend that you complete the following configurations in `Application`:
-
-```
+Click [Get License](https://console.cloud.tencent.com/live/license) to obtain a trial license. You will get two strings: a license URL and a decryption key.
+Before you use the features of the Enterprise Edition SDK in your application, complete the following configurations (preferably in the application class):
+```java
 public class MApplication extends Application {
 
     @Override
     public void onCreate() {
         super.onCreate();
-        String licenceURL = ""; // Obtained licence URL
-        String licenceKey = ""; // Obtained licence key
+        String licenceURL = ""; // The license URL obtained
+        String licenceKey = ""; // The license key obtained
         TXLiveBase.getInstance().setLicence(this, licenceURL, licenceKey);
     }
 }
 ```
 
-### 3. Initialize the V2TXLivePusher component
-First, create a `V2TXLivePusher ` instance. Later, this instance can be used to implement all the following push-related capabilities, including starting or stopping stream push, starting or stopping data collection from the camera, starting or stopping data collection from the microphone, starting or stopping headphone monitoring, setting the voice quality, and setting the image quality.
+[](id:step3)
 
+### 3. Initialize the `V2TXLivePusher` component
+
+Create a `V2TXLivePusher` object, which will be responsible for most of the publishing operations.
+
+```java   
+V2TXLivePusher mLivePusher = new V2TXLivePusherImpl(this, V2TXLiveDef.V2TXLiveMode.TXLiveMode_RTMP); // Set the live streaming protocol to RTMP
 ```
-V2TXLivePusher txLivePusher = new V2TXLivePusherImpl(mContext);
-```
 
-### 4. Enable camera preview
+[](id:step4)
+### 4. Enable camera preview  
 
-You can call the `setRenderView` API in `V2TXLivePusher` to enable the camera preview for the mobile phone. You must provide a view object for previewing images for the `setRenderView` API.
-
-```
+Before enabling camera preview, you must first provide the SDK with a `TXCloudVideoView` object to display video images. Given that `TXCloudVideoView` is inherited from `FrameLayout` in Android, you can:
+1. Add a video rendering control in the XML file:    
+```xml  
 <com.tencent.rtmp.ui.TXCloudVideoView   
-    android:id="@+id/video_view"  
-    android:layout_width="match_parent" 
-    android:layout_height="match_parent" /> 
+              android:id="@+id/pusher_tx_cloud_view"  
+              android:layout_width="match_parent" 
+              android:layout_height="match_parent" /> 
 ```
-Set render view:
-
-```
-TXCloudVideoView videoView = (TXCloudVideoView) findViewById(R.id.video_view);
-txLivePusher.setRenderView(videoView);
-```
-
-### 5. Start and stop stream push
-If you have called the `setRenderView` API to enable camera preview, you can call the `startPush` API of `V2TXLivePusher` to start pushing streams.
-
-```
-// Enter your RTMP URL for stream push.
-String rtmpURL = "rtmp://test.com/live/xxxxxx"; 
-// Start collecting data from the camera.
-txLivePusher.startCamera();
-// Start collecting data from the microphone.
-txLivePusher.startMicrophone();
-// Start push streams.
-txLivePusher.startPush(rtmpURL);
+2. Call `startCamera` in `V2TXLivePusher` to enable camera preview for your mobile phone. 
+```java     
+// Enable preview for the local camera    
+TXCloudVideoView mPusherView = (TXCloudVideoView) findViewById(R.id.pusher_tx_cloud_view); 
+mLivePusher.setRenderView(mPusherView);
+mLivePusher.startCamera(true);
 ```
 
-After you complete stream push, you can call the `stopPush` API of `V2TXLivePusher` to stop stream push.
+[](id:step5)
+### 5. Start and stop publishing streams  
 
+After enabling camera preview, you can call [startPush](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#ab4f8adaa0616d54d6ed920e49377a08a) in `V2TXLivePusher` to start stream publishing.  
+<dx-codeblock>
+::: java java
+// Start publishing streams
+String rtmpURL = "rtmp://test.com/live/xxxxxx"; // Enter your RTMP URL for stream publishing  
+int ret = mLivePusher.startPush(rtmpURL.trim());  
+if (ret == V2TXLIVE_ERROR_INVALID_LICENSE) {    
+    Log.i(TAG, "startRTMPPush: license verification failed");  
+}       
+:::
+</dx-codeblock>
+
+Call [stopPush](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#af07c1dcff91b43a2309665b8663ed530) in `V2TXLivePusher` to stop publishing streams.
+```java 
+// Stop publishing streams
+mLivePusher.stopPush();
 ```
-// Stop pushing streams
-txLivePusher.stopPush();
-```
+>!If you have enabled camera preview, please disable it when you stop publishing streams.  
 
--  **How can I obtain a valid push URL？**
+- **How can I obtain a valid push URL?** 
+To generate a publishing URL, activate CSS, and go to the [**CSS console** > **CSS Toolkit** > **Address Generator**](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator). For more information, see [Push/Pull URL](https://intl.cloud.tencent.com/document/product/1071/39359). 
+![](https://main.qcloudimg.com/raw/7110d39cdb464b789bd68301f4de7ebe.png)   
+- **Why is `V2TXLIVE_ERROR_INVALID_LICENSE` returned?**    
+If the `startPush` API returns `V2TXLIVE_ERROR_INVALID_LICENSE`, it means your license verification failed. Please check your configuration against [Step 2. Configure a license for the SDK](#step2).   
 
-After you activate the LVB service, you can choose LVB console > Auxiliary tools > [URL generator](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) to generate a push URL. For more information, see [Push/Pull URL](https://intl.cloud.tencent.com/document/product/267/31059).
-![](https://main.qcloudimg.com/raw/cf62d6a6e117bdb9a8d3ca68bf20a5c4.png)
+[](id:step6)
 
-- **Why is “-5” returned?**
-If the `startPush` API returns “-5”, license verification has failed. In this case, check whether any problem occurred in [Step 2. Configure a license for the SDK](#step2).
+### 6. Publish audio-only streams    
+If your live streaming scenarios involve audio only, you can skip [Step 4](#step4), or call `stopCamera` before `startPush`.
 
-
-### 6. Push pure audio streams
-If you only need to push pure audio streams, perform the following operations:
-
-```
-String rtmpURL = "rtmp://test.com/live/xxxxxx"; // Enter your RTMP URL for stream push.
-// Start collecting data from the microphone.
-txLivePusher.startMicrophone();
-// Start push streams.
-txLivePusher.startPush(rtmpURL);
-```
-
-### 7. Set the video resolution
-You can call the `setVideoQuality` API of `TXLivePusherV2` to set the video resolution, aspect ratio, and portrait or landscape mode for the audience.
-
-```
-// Select the portrait mode and set the aspect ratio to 1280x720. The first parameter is the video resolution, and the second parameter is the portrait or landscape mode.
-txLivePusher.setVideoQuality(V2TXLiveVideoResolution_1280x720, V2TXLiveVideoResolutionMode_Portrait];
-```
-
-### 8. Set the beauty filter, whitening, and rosy skin effects.
-
-```
-/* 
-* With the beauty manager, you can use the following features:
-* - Set the following cosmetic effects: beauty style, whitening, ruddy, big eyes, slim face, V-shape face, chin, short face, small nose, bright eyes, white teeth, remove eye bags, remove wrinkles, remove laugh lines.
-* - Adjust the hairline, eye spacing, eye corners, mouth shape, nose wings, nose position, lip thickness, and face shape.
-* - Set animated effects such as face widgets (materials).
-* - Add makeup effects.
-* - Recognize gestures.
-*/
-TXBeautyManager beautyManager = txLivePusher.getBeautyManager();
-beautyManager.setBeautyLevel(6);
+```java     
+V2TXLivePusher mLivePusher = new V2TXLivePusherImpl(this, V2TXLiveDef.V2TXLiveMode.TXLiveMode_RTMP); // Set the live streaming protocol to RTMP
+mLivePusher.startMicrophone();
+String rtmpURL = "rtmp://test.com/live/xxxxxx"; // Enter your RTMP URL for stream publishing  
+int ret = mLivePusher.startPush(rtmpURL.trim());  
 ```
 
-### 9. Control camera behaviors
+>? If you publish audio-only streams but no streams can be pulled from an RTMP, FLV, or HLS playback URL, there is a problem with your line configuration, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for help.  
 
-`TXLivePusherV2` provides an API to obtain the video device manager, `TXVideoDeviceManager`, which is used to control camera behaviors.
+[](id:step7)
+### 7. Set video quality  
+Call [setVideoQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a2695806cb6c74ccce4b378d306ef0a02) in `V2TXLivePusher` to set the quality of videos watched by audience. The encoding parameters set determine the quality of videos presented to audience. The local video seen by the host is the original version that has not been encoded or compressed, and is therefore not affected by the settings. For details, please see [Set Video Quality](https://intl.cloud.tencent.com/zh/document/product/1071).
 
-| API Function | Description | Remarks |
-|---------|---------|---------|
-| switchCamera | Switch between the front and rear cameras. |  |
-| enableCameraFlash | Enable or disable the flash. | This function is valid only when the current camera is a rear camera.|
-| getCameraZoomMaxRatio | Get max zoom ratio. |  |
-| setCameraZoomRatio | Adjust the zoom ratio. | The valid range of the zoom ratio is 1 - `getCameraZoomMaxRatio`. Default: 1. |
-| setCameraFocusPosition | Set the focus position. | To use this setting, `enableCameraAutoFocus` must be used to disable auto focus.|
+[](id:step8)
 
-### 10. Set the mirror effect on the audience side
-You can call the `setEncoderMirror` API of `V2TXLivePusher` to set the mirror effect on the audience side. This mirror effect is different from that on the host side. When the host uses the front camera for livestreaming, the view seen by the host is inverted by the SDK by default. Therefore, the host’s display is like looking in a mirror. `setEncoderMirror` only affects the mirror effect on the audience side.
+### 8. Set the beauty filter style and skin brightening and rosy skin filters    
+![](https://main.qcloudimg.com/raw/21f45fcbf3334cd1abb45df43f476b2f.png)
+Call [getBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a3fdfeb3204581c27bbf1c8b5598714fb) in `V2TXLivePusher` to get a `TXBeautyManager` instance to set beauty filters.
 
+#### Beauty filter style
+The SDK has three built-in beauty filter algorithms, each corresponding to a beauty filter style. Choose one that best fits your product positioning. For the definitions of the styles, see `TXLiveConstants.java`.
+<table><tr>
+<th>Beauty Filter Style</th><th>Description</th>
+</tr><tr>
+<td>BEAUTY_STYLE_SMOOTH</td>
+<td>The smooth style, which features more obvious skin smoothing effects and is suitable for live shows</td>
+</tr><tr>
+<td>BEAUTY_STYLE_NATURE</td>
+<td>The natural style, which retains more facial details and is more natural</td>
+</tr><tr>
+<td>BEAUTY_STYLE_PITU</td>
+<td>The Pitu style, which uses the beauty filter algorithm developed by YouTu Lab. Its effect is between the smooth style and the natural style: it retains more skin details than the smooth style and delivers more obvious skin smoothing effects than the natural style.</td>
+</tr></table>
 
-### 11. Set the audio quality
+You can call the `setBeautyStyle` API of `TXBeautyManager` to set the beauty filter style.
+<table>
+<tr><th>Item</th><th width=51%>Configuration</th><th>Description</th></tr>
+</tr><tr>
+<td>Beauty filter strength</td>
+<td>Via the <code>setBeautyLevel</code> API in `TXBeautyManager`</td>
+<td>Value range: 0-9. `0` means the filter is disabled. The greater the value, the stronger the filter.</td>
+</tr><tr>
+<td>Skin brightening filter strength</td>
+<td>Via the <code>setWhitenessLevel</code> API in `TXBeautyManager`</td>
+<td>Value range: 0-9. `0` means the filter is disabled. The greater the value, the stronger the filter.</td>
+</tr><tr>
+<td>Rosy skin filter strength</td>
+<td>Via the <code>setRuddyLevel</code> API in `TXBeautyManager`</td>
+<td>Value range: 0-9. `0` means the filter is disabled. The greater the value, the stronger the filter.</td>
+</tr></table>
+
+[](id:step9)
+### 9. Set color filters   
+![](https://main.qcloudimg.com/raw/0aaf20c77878ef137f2edb693ff79451.png)
+- Call [getBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a3fdfeb3204581c27bbf1c8b5598714fb) in `V2TXLivePusher` to get a [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html) instance to set color filters.
+- Call the `setFilter` API in `TXBeautyManager` to set color filters. Color filters are a technology that adjusts the color tone of sections of an image. For example, it may lighten the yellow sections of an image to achieve the effect of skin brightening, or add warm tones to a video to give it a refreshing and soft boost.   
+- Call the `setFilterStrength` API in `TXBeautyManager` to set the strength of a color filter. The higher the strength, the more obvious the effect. 
+
+Based on our experience of operating Now Live, it’s not enough to use the `setBeautyStyle` API in `TXBeautyManager` to set the beauty filter style alone. The `setBeautyStyle` API must be used together with `setFilter` in order to produce richer effects. Given this, our designers have developed 17 built-in color filters and integrated them into the [demo](https://github.com/tencentyun/MLVBSDK/tree/master/Android/Demo). 
+
+```java 
+// Select a color filter file to use   
+Bitmap filterBmp = decodeResource(getResources(), R.drawable.filter_biaozhun);  
+mLivePusher.getBeautyManager().setFilter(filterBmp);   
+mLivePusher.getBeautyManager().setFilterStrength(0.5f);  
 ```
-// Pay attention to the calling sequence：
-// You must set the audio quality before pushing streams. Otherwise, the audio quality setting does not take effect.
-txLivePusher.setAudioQuality(V2TXLiveDef.V2TXLiveAudioQuality.V2TXLiveAudiOQuality_Music);
-txLivePusher.startPush();
+
+[](id:step10)
+### 10. Manage devices
+
+`V2TXLivePusher` provides a series of APIs for the control of devices. You can call `getDeviceManager` to get a `TXDeviceManager` instance for device management. For detailed instructions, please see [TXDeviceManager API](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__android.html).
+![](https://main.qcloudimg.com/raw/ffebf9941de52db8ee1f9e52c073fe38.png)
+
+[](id:step11)
+### 11. Set the mirror effect for audience    
+
+Call [setRenderMirror](http://doc.qcloudtrtc.com/group__V2TXLivePusher__android.html#afd909d85fd0dda0db4078692b319681f) in `V2TXLivePusher` to set the mirror mode of the camera, which affects the way video images are presented to audience. By default, the local image seen by the host is flipped when the front camera is used, which creates the same effect as a mirror does. If you call the API to enable the mirror mode for audience, the image seen by audience will be the same as that seen by the host.
+![](https://main.qcloudimg.com/raw/e9841250668a9057d638ee67d0b0afee.png)   
+
+[](id:step12)
+### 12. Publish streams in landscape mode    
+
+In most cases, hosts stream while holding their phones vertically, and audience watch videos in portrait resolutions (e.g., 540 x 960). However, hosts also hold phones horizontally sometimes, and ideally, audience should be able to watch videos in landscape resolutions (960 x 540), as shown below: 
+![](https://main.qcloudimg.com/raw/b1e58275542aac52fb861745d95246cc.png)    
+By default, `V2TXLivePusher` outputs videos in portrait resolutions. You can have it output landscape-mode videos to audience by modifying the parameters of `setVideoQuality`.
+
+```java 
+mLivePusher.setVideoQuality(mVideoResolution, isLandscape ? V2TXLiveVideoResolutionModeLandscape : V2TXLiveVideoResolutionModePortrait);   
 ```
 
-### 12. Set the background music (BGM), voice changing effect, and reverb effect.
+### 13. Set audio effects
+
+Call `getAudioEffectManager` in `V2TXLivePusher` to get a `TXAudioEffectManager` instance, which can be used to mix background music and set in-ear monitoring, reverb, and other audio effects. Background music mixing means mixing into the published stream the music played by the host’s phone so that audience can also hear the music.
+![](https://main.qcloudimg.com/raw/95d4dd681affd0ea54cffdb854f6a3ab.png)
+
+- Call the `enableVoiceEarMonitor` API in [TXAudioEffectM1anager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXAudioEffectManager__android.html) to enable in-ear monitoring, which allows hosts to hear their vocals in earphones when they sing.
+- Call the `setVoiceReverbType` API in `TXAudioEffectManager` to add reverb effects such as karaoke, hall, husky, and metal. The effects are applied to the videos watched by audience.
+- Call the `setVoiceChangerType` API in `TXAudioEffectManager` to add voice changing effects such as little girl and middle-aged man to enrich host-audience interaction. The effects are applied to the videos watched by audience.
+
+![](https://main.qcloudimg.com/raw/a90a110e2950568b9d7cd6bef8e0893b.png)
+>? For detailed instructions, please see [TXAudioEffectManager API](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__android.html).
+
+### 14. Set watermarks  
+
+Call [setWatermark](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a4f56a5a937d87e5b1ae6f77c5bab2335) in `V2TXLivePusher` to add a watermark to videos output by the SDK. The position of the watermark is determined by the `(x, y, scale)` parameter passed in.
+
+- The watermark image must be in PNG rather than JPG format. The former carries opacity information, which allows the SDK to better address the image aliasing issue (changing the extension of a JPG image to PNG won’t work).
+- The `(x, y, scale)` parameter specifies the normalized coordinates of the watermark relative to the resolution of the published video. For example, if the resolution of the published video is 540 x 960, and `(x, y, scale)` is set to `（0.1, 0.1, 0.1）`, the actual pixel coordinates of the watermark will be (540 x 0.1, 960 x 0.1). The width of the watermark will be the image width x 0.1, and the height will be scaled automatically.
+
+```java 
+// Set a video watermark
+mLivePusher.setWatermark(BitmapFactory.decodeResource(getResources(),R.drawable.watermark), 0.03f, 0.015f, 1f);
 ```
-/**    
-* With the audio effect manager, you can use the following features:
-* - Adjust the volume of human voice collected by the microphone.
-* - Set the reverb and voice changing effects.
-* - Start the headphone monitor, and set the volume of the headphone monitor.
-* - Add the BGM, and adjust the playback effect of BGM.
-*/
-TXAudioEffectManager manager = txLivePusher.getAudioEffectManager();
-```
 
-### 13. Set the logo watermark
-
-You can call the `setWatermark ` API of `V2TXLivePusher ` to allow the SDK to add a watermark to the pushed video stream. 
-
-- The SDK requires that the watermark image be in png format, instead of jpg, because the png format provides the transparency information and allows the SDK to better address the image aliasing issue. If a jpg image is modified in the Windows system, its extension does not take effect.
-- `x,y` is the normalized coordinates of the watermark image relative to the resolution of the pushed video. If the resolution of the pushed video is 540 × 960, and  set to (0.1, 0.1, 0.1, 0.0), the actual pixel coordinates of the watermark are: 540 × 0.1, 960 × 0.1, Watermark width × 0.1, Automatically calculated watermark height.
-
-```java
-Bitmap bitmap = decodeResource(getResources(), R.drawable.filter_water);
-txLivePusher.setWatermark(bitmap, 0.1f, 0.1f, 0.1f);
-```
+### 15. Inform hosts of poor network conditions 
+Hosts should be informed when their network conditions are bad and be prompted to check their network.    
+You can capture the **V2TXLIVE_WARNING_NETWORK_BUSY** event using [onWarning](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__android.html#abd54414cbd5d52c096f9cc090cfe1fec) in `V2TXLivePusherObserver`. The event indicates poor network conditions for hosts, which result in stuttering for audience. When the event occurs, you can send a UI message about poor network conditions to hosts.
+<dx-codeblock>
+:::java java 
+@Override
+public void onWarning(int code, String msg, Bundle extraInfo) {
+    if (code == V2TXLiveCode.V2TXLIVE_WARNING_NETWORK_BUSY) {
+        showNetBusyTips(); // Show a “network busy” message
+    }
+} 
+:::
+</dx-codeblock>
 
 ## Event Handling
 
-### 1. Event listening
+### Listening for events
+The SDK listens for publishing events and errors via the [V2TXLivePusherObserver](http://doc.qcloudtrtc.com/group__V2TXLivePusherObserver__android.html) delegate. See [V2TXLiveCode](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLiveCode__android.html) for a detailed list of events and error codes.
 
-The SDK uses the `V2TXLivePusherObserver`proxy to set the pusher callback. By setting the callback, you can monitor some callback events of `V2TXLivePusher `, including the player status, volume callback, statistics, warnings, and error messages. 
+### Error events
+The SDK detected some serious issues, which make it impossible for stream publishing to continue.
 
-```
-txLivePusher.setObserver(new V2TXLivePusherObserver());
-```
+| Event ID | Code | Description |
+| :------------------------------------ | :---- | :------------------------------- |
+|V2TXLIVE_ERROR_FAILED                  | -1 | A common error not yet classified |
+|V2TXLIVE_ERROR_INVALID_PARAMETER       | -2 | An invalid parameter was passed in during API calling. |
+|V2TXLIVE_ERROR_REFUSED                 | -3 | The API call was rejected.  |
+|V2TXLIVE_ERROR_NOT_SUPPORTED           | -4 | The API cannot be called.  |
+|V2TXLIVE_ERROR_INVALID_LICENSE         | -5 | Failed to call the API due to invalid license.  |
+|V2TXLIVE_ERROR_REQUEST_TIMEOUT         | -6 | The server request timed out.  |
+|V2TXLIVE_ERROR_SERVER_PROCESS_FAILED   | -7 | The server could not handle your request.  |
 
-### 2. Normal events
-The table below lists the events you will be notified of upon each successful push. If “0” is received, the related event is called successfully.
+### Warning events
+The SDK detected some warning events. Warning events trigger tentative protection or recovery logic and can often be resolved.
 
-| Event ID                 |    Value  |  Description                    |
-| :-------------------  |:-------- |  :------------------------ |
-|V2TXLIVE_OK            | 0 | Successfully called the push event. |
-
-### 3. Error events 
-The push cannot continue because the SDK detected a critical problem. For example, when the user revokes the camera permission for the app, the camera cannot be started.
-
-| Error ID                      | Value | Description       |
-| ------------------------------ | ---- | ----------- |
-| V2TXLIVE_ERROR_FAILED            | -1   | Failed.   |
-| V2TXLIVE_ERROR_INVALID_PARAMETER | -2   | Invalid parameter.|
-| V2TXLIVE_ERROR_REFUSED           | -3   | Refused.   |
-| V2TXLIVE_ERROR_NOT_SUPPORTED     | -4   | Not supported.|
-| V2TXLIVE_ERROR_INVALID_LICENSE   | -5   | Invalid license.|
-
-```
-@Override
-public void onError(int code, String msg, Bundle extraInfo) {
-    // doSomething
-}
-```
-
-### 4.  Warning events 
-The SDK detects some warning events. These events can trigger tentative protection logic or restoration logic. Warnings can often be recovered from.
-
-| Warning ID                 |    Value  |  Description                    |
-| :-------------------  |:-------- |  :------------------------ |
-|V2TXLIVE_WARNING_NETWORK_BUSY            |  1101| Poor network connection. Data upload is blocked because the upstream bandwidth is too low.|
-|V2TXLIVE_WARNING_VIDEO_BLOCK           | 2105 | Video lag occurs. |
-| V2TXLIVE_WARNING_CAMERA_START_FAILED  | -1301 | Failed to start the camera.  |
-| V2TXLIVE_WARNING_CAMERA_OCCUPIED      | -1316 | Camera occupied.          |
-| V2TXLIVE_WARNING_CAMERA_NO_PERMISSION | -1314 | No permission to access the camera. This error often occurs on a mobile device when the permission is revoked by the user. |
-| V2TXLIVE_WARNING_MICROPHONE_START_FAILED  | -1302 | Failed to start the microphone. |
-| V2TXLIVE_WARNING_MICROPHONE_OCCUPIED      | -1319 | Microphone occupied. For example, if a mobile device has an ongoing call, the attempt to start the microphone will fail. |
-| V2TXLIVE_WARNING_MICROPHONE_NO_PERMISSION | -1317 | No permission to access the microphone. This error often occurs on a mobile device when the permission is revoked by the user.|
-
-```
-@Override
-public void onWarning(int code, String msg, Bundle extraInfo) {
-    // doSomething
-}
-```
+| Event ID                                       | Code  | Description                                                     |
+| :-------------------------------------------- | :---- | :----------------------------------------------------------- |
+|V2TXLIVE_WARNING_NETWORK_BUSY                  |  1101|  Bad network connection: data upload blocked due to limited upstream bandwidth. |
+|V2TXLIVE_WARNING_VIDEO_BLOCK                   |  2105|  Latency during video playback.  |
+|V2TXLIVE_WARNING_CAMERA_START_FAILED           | -1301|  Failed to turn the camera on.  |
+|V2TXLIVE_WARNING_CAMERA_OCCUPIED               | -1316| The camera is occupied. Try using another camera. |
+|V2TXLIVE_WARNING_CAMERA_NO_PERMISSION          | -1314| No permission to access the camera. This usually occurs on mobile devices and may be because the user denied the permission. |
+|V2TXLIVE_WARNING_MICROPHONE_START_FAILED       | -1302| Failed to turn the mic on. |
+|V2TXLIVE_WARNING_MICROPHONE_OCCUPIED           | -1319| The mic is occupied. This occurs when, for example, the user is having a call on the mobile device. |
+|V2TXLIVE_WARNING_MICROPHONE_NO_PERMISSION      | -1317| No permission to access the mic. This usually occurs on mobile devices and may be because the user denied the permission. |
+|V2TXLIVE_WARNING_SCREEN_CAPTURE_NOT_SUPPORTED  | -1309|  The system does not support screen sharing.  |
+|V2TXLIVE_WARNING_SCREEN_CAPTURE_START_FAILED   | -1308|  Failed to start screen recording. If this occurs on a mobile device, it may be because the user denied the permission.  |
+|V2TXLIVE_WARNING_SCREEN_CAPTURE_INTERRUPTED    | -7001|  Screen recording was stopped by the system.  |

@@ -1,212 +1,204 @@
 ## Basics
+This document introduces the live playback feature of the Video Cloud SDK.
 
-This document introduces the livestream playback function of Video Cloud SDK.
+### Live streaming and video on demand
+- In **live streaming**, the video streams published by hosts in real time are the source of streaming. When hosts stop publishing streams, the video at the playback end stops. Since video is streamed in real time, players do not have progress bars when they play live streaming URLs.
+- In **video on demand (VOD)**, video files in the cloud are the source of streaming. Videos can be played at any time as long as they are not deleted from the cloud, and the playback progress can be adjusted using the progress bar. Video streaming websites such as Tencent Video and Youku Tudou are typical applications of VOD.
 
-#### Livestreaming
+### Supported protocols
+The table below lists the common protocols used for live streaming. We recommend FLV URLs (which start with `http` and end with `flv`) for LVB and WebRTC for LEB. For more information, please see [Playback (LEB)](https://intl.cloud.tencent.com/document/product/1071/39888).
 
-- The **livestreaming** video source is pushed by the host in real time. When the host stops pushing, the video view on the player stops. In addition, the video is broadcast in real time, and no progress bar is displayed when the player is playing the livestreaming URL.
+|Protocol |Pro |Con |Playback Latency |
+|---------|---------|---------|---------|
+| FLV | Mature, well adapted to high-concurrency scenarios | SDK integration is required. | 2-3s |
+|RTMP |Relatively low latency |Poor performance in high-concurrency scenarios |1-3s |
+| HLS (M3U8) | Well supported on mobile browsers | High latency |10-30s|
+|WebRTC |Lowest latency |SDK integration is required. |< 1s |
 
-#### Supported protocols
 
-Common livestreaming protocols are listed below. We recommend that you use an FLV-based livestreaming URL that starts with "http" and ends with ".flv" on apps.
 
-| Livestreaming Protocol | Advantage | Disadvantage | Playback Delay |
-| ----------- | ---------------------- | -------------------- | --------- |
-| FLV | High maturity, high concurrency, and no pressure | The video can be played only after the SDK is integrated. | 2s - 3s |
-| RTMP | Lowest theoretical delay when using high-quality lines | The performance is poor in the case of high concurrency. | 1s - 3s |
-| HLS (m3u8) | Good support by mobile browsers | There is a long delay. | 10s - 30s |
 
 ## Notes
+The Video Cloud SDK **does not impose any limit on the sources of playback URLs**, which means you can use it to play both Tencent Cloud and non-Tencent Cloud URLs. However, the player in the SDK supports only live streaming URLs in FLV, RTMP, HLS (M3U8), and WebRTC formats and VOD URLs in MP4, HLS (M3U8), and FLV formats.
 
-- **Are there any restrictions?**
-  The Tencent Video Cloud SDK **does not** impose any limits on the source of the playback URL, which means it is available for both Tencent Cloud and non-Tencent Cloud playback URLs. However, the player in the Tencent Video Cloud SDK only supports livestreaming URLs in FLV and RTMP formats.
-
-## Interfacing
-
-#### step1: setup a view
-```
+## Integration
+[](id:step1)
+### Step 1. Create a rendering view
+For the player to display video images, you need to add a rendering view in the layout XML file:
+```xml
 <com.tencent.rtmp.ui.TXCloudVideoView
-	android:id="@+id/video_video"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent" />
+            android:id="@+id/video_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:visibility="visible"/>
 ```
 
-#### step2: create a player
-
-The `V2TXLivePlayer` module in the Tencent Video Cloud SDK implements the livestream playback feature, and using `setRenderView` to bind view.
-
+[](id:step2)
+### Step 2. Create a player object
+The **V2TXLivePlayer** module in the Video Cloud SDK offers live playback capabilities. Use **setPlayerView** to associate the module with the **video_view** control added to the UI in Step 1.
+```java
+// mPlayerView is the view added in step 1
+TXCloudVideoView mView = (TXCloudVideoView) view.findViewById(R.id.video_view);
+// Create a player object
+V2TXLivePlayer mLivePlayer = new V2TXLivePlayerImpl(mContext);
+// Associate the player object with the view
+mLivePlayer.setRenderView(mView);
 ```
-TXCloudVideoView videoView = (TXCloudVideoView) view.findViewById(R.id.video_view);
-V2TXLivePlayer txLivePlayer = new V2TXLivePlayerImpl(mContext);
-txLivePlayer.setRenderView(videoView);
-```
 
-#### step3: start livestream playback
-
-```
+[](id:step3)
+### Step 3. Start playback
+```java
 String flvUrl = "http://2157.liveplay.myqcloud.com/live/2157_xxxx.flv";
-txLivePlayer.startPlay(flvUrl); 
+mLivePlayer.startPlay(flvUrl); 
 ```
 
-#### step4: adjust the view
+[](id:step4)
+### Step 4. Change the content mode
+- **view: size and position**
+You can modify the size and position of video images by adjusting the size and position of the `video_view` control added in [Step1](#step1).
+- **setRenderFillMode: aspect fill or aspect fit**
+<table><tr><th>Value</th><th>Description</th>
+</tr><tr>
+<td>V2TXLiveFillModeFill</td>
+<td>Images are scaled to fill the entire screen, and the parts that don’t fit are cropped. There are no black bars in this mode, but images may not be displayed in whole.</td>
+</tr><tr>
+<td>V2TXLiveFillModeFit</td>
+<td>Images are scaled as large as the longer dimension can go. Neither dimension exceeds the screen after scaling. The images are centered, and there may be black bars.</td>
+</tr></table>
+- **setRenderRotation: clockwise rotation of video**
+<table>
+<tr><th>Value</th><th>Description</th></tr>
+<td>V2TXLiveRotation0</td><td>Original</td>
+</tr><tr>
+<td>V2TXLiveRotation90</td><td>Rotate 90 degrees clockwise</td>
+</tr><tr>
+<td>V2TXLiveRotation180</td><td>Rotate 180 degrees clockwise</td>
+</tr><tr>
+<td>V2TXLiveRotation270</td><td>Rotate 270 degrees clockwise</td>
+</tr></table>
 
-* **setRenderFillMode: Fill or Fit**
+<dx-codeblock>
+::: Java Java
+// Set the content mode
+mLivePlayer.setRenderFillMode(V2TXLiveFillModeFit);
+// Set the orientation of video
+mLivePlayer.setRenderRotation(V2TXLiveRotation0);
+:::
+</dx-codeblock>
 
-| Option              | Description                                                         |
-|  ----------------  | -----------------------------------------------------------  |
-| V2TXLiveFillMode_Fill | Fill the image on the screen without leaving any black edges. If the aspect ratio of the view is different from that of the screen, part of the view content will be cropped. |
-| V2TXLiveFillMode_Fit  | Make the view fit the screen without cropping. If the aspect ratio of the view is different from that of the screen, black edges will appear. |
+![](https://main.qcloudimg.com/raw/89e7b5b2b6b944fe8377cf9f2bcff573.jpg)
 
-* **setRenderRotation: view rotation**
+[](id:step5)
+### Step 5. Pause playback
+Technically speaking, you cannot pause a live playback. In this document, by pausing playback, we mean **freezing video** and **disabling audio**. In the meantime, new video streams continue to be sent to the cloud. When you resume playback, the playback starts from the time of resumption. This is in contrast to VOD. With VOD, when you pause and resume playback, the player behaves the same way as it does when you pause and resume a local video file.
 
-| Option              | Description           |
-| ------------------ | ------------- |
-| V2TXLiveRotation_0   | Do not rotate the view.        |
-| V2TXLiveRotation_90  | Rotate 90 degrees clockwise.  |
-| V2TXLiveRotation_180 | Rotate 180 degrees clockwise. |
-| V2TXLiveRotation_270 | Rotate 270 degrees clockwise. |
-
-```
-txLivePlayer.setRenderRotation(V2TXLiveDef.V2TXLiveRotation.V2TXLiveRotation_0);
-txLivePlayer.setRenderFillMode(V2TXLiveDef.V2TXLiveFillMode.V2TXLiveFillMode_Fit);
-```
-
- ![](https://main.qcloudimg.com/raw/d9ed5ecf515424bbbb53754a56a7c98f.png)
-
-#### step5: pause playback
-
-Strictly speaking, you cannot pause livestream playback. Here, pausing livestream playback actually means **freezing the image** and **turning off the sound**, but the video source keeps updating on the cloud. When you resume the playback, the video is resumed from the latest time. This is the biggest difference between livestreaming and VOD. In the VOD service, the video is paused and resumed in the same way as a local video file.
-
-```
-// Pause the audio.
-txLivePlayer.pauseAudio();
-// Resume the audio.
-txLivePlayer.resumeAudio();
-
-// Pause the video.
-txLivePlayer.pauseVideo();
-// Resume the video.
-txLivePlayer.resumeVideo();
-```
-
-#### step6: stop livestream playback
-
-Call **stopPlay** to stop livestream playback.
-
-```
-// Stop playback.
-txLivePlayer.stopPlay();
-```
-
-#### step7: take snapshots
-
-You can capture the current image as a frame by calling **snapshot**. This feature can only capture frames from the current livestreaming video. To capture the entire UI, you must call the API of the Android system.
-
-```
-txLivePlayer.snapshot(new V2TXLiveSnapshotObserver() {
-	@Override
-	public void onSnapshotComplete(Bitmap bitmap) {
-		if (null != bitmap) {
-			//doSomething
-		}
-	}
-});
+```java
+// Pause playback
+mLivePlayer.pauseAudio();
+mLivePlayer.pauseVideo();
+// Resume playback
+mLivePlayer.resumeAudio();
+mLivePlayer.resumeVideo();
 ```
 
-## Delay Adjustment
-
-The LVB feature of the Tencent Cloud SDK, equipped with the self-developed playback engine, is not developed based on ffmpeg. Compared with open-source players, LVB delivers better performance in delay control. We provide three delay adjustment modes for live show, game, and hybrid scenarios, respectively.
-
-* **Performance comparison among the three modes**
-
-
-| Control Mode | Lag Rate | Average Delay | Applicable Scenario | Principle |
-| :------- | :--------- | :------- | :------------------- | :--------------------------------------------------------- |
-| Speedy mode | High (relatively smooth) | 2s - 3s | Live show (online quiz) | It has an advantage in delay control and is suitable for delay-sensitive scenarios. |
-| Smooth mode | Lowest | >= 5s | Livestreaming game (Penguin e-Sports) | It is suitable for ultra-high-bitrate livestreaming games, such as PlayerUnknown's Battlegrounds. |
-| Auto mode | Network adaption | 2s - 8s | Hybrid scenario | The better the audience's network condition, the shorter the delay, and vice versa. |
-
-* **Interfacing codes of the three modes**
-
+[](id:step6)
+### Step 6. Stop playback
+Call `stopPlay` to stop playback.
+```java
+mLivePlayer.stopPlay();  
 ```
-private float CACHE_TIME_FAST = 1.0f;
-private float CACHE_TIME_SMOOTH = 5.0f;
-  
-// Speedy mode
-txLivePlayer.setCacheParams(CACHE_TIME_FAST, CACHE_TIME_FAST);
-// Smooth mode
-txLivePlayer.setCacheParams(CACHE_TIME_SMOOTH, CACHE_TIME_SMOOTH);
+
+[](id:step7)
+### Step 7. Take a screenshot
+Call **snapshot** to take a screenshot of the live video streamed. This method captures a frame of the streamed video. To capture the UI, use the Android system API.
+![](https://main.qcloudimg.com/raw/1439eff8e2b9629abf92960e1b784f56.jpg)
+
+```java
+mLivePlayer.setObserver(new MyPlayerObserver());
+mLivePlayer.snapshot();
+// Get the screenshot taken in the onSnapshotComplete callback of MyPlayerObserver
+private class MyPlayerObserver extends V2TXLivePlayerObserver  {
+    ...
+    @Override
+    public void onSnapshotComplete(V2TXLivePlayer v2TXLivePlayer, Bitmap bitmap) {
+    }
+    ...
+}
+```
+
+[](id:Delay)
+## Latency Control
+The live playback feature of the SDK is not based on FFmpeg, but Tencent Cloud’s proprietary playback engine, which is why the SDK offers better latency control than open-source players do. We provide three latency control modes, which can be used for show rooms, game streaming, and hybrid scenarios.
+
+- **Comparison of the three modes**
+<table>
+<tr><th>Mode</th><th>Stutter</th><th>Average Latency</th><th>Scenario</th><th>Remarks</th>
+<tr>
+<td>Speedy</td>
+<td>More likely than the speedy mode</td>
+<td>2-3s</td>
+<td>Live showroom (Chongding Dahui)</td>
+<td>The mode delivers low latency and is suitable for latency-sensitive scenarios.</td>
+</tr><tr>
+<td>Smooth</td>
+<td>Least likely of the three</td>
+<td>&gt;= 5s</td>
+<td>Game streaming (Penguin Esports)</td>
+<td>Playback is least likely to stutter in this mode, which makes it suitable for ultra-high-bitrate streaming of games such as PUBG.</td>
+</tr><tr>
+<td>Auto</td>
+<td>Self-adaptive to network conditions</td>
+<td>2-8s</td>
+<td>Hybrid</td>
+<td>The better network conditions at the audience end, the lower the latency.</td>
+</tr></table>
+- **Code to integrate the three modes**
+```java
 // Auto mode
-txLivePlayer.setCacheParams(CACHE_TIME_FAST, CACHE_TIME_SMOOTH);
+mLivePlayer.setCacheParams(1.0f, 5.0f);
+// Speedy mode
+mLivePlayer.setCacheParams(1.0f, 1.0f);
+// Smooth mode
+mLivePlayer.setCacheParams(5.0f, 5.0f);
+// Start playback after configuration
 ```
+
+>? For more information on stuttering and latency control, see [Video Stutter](https://intl.cloud.tencent.com/document/product/1071/39362).
+
+[](id:sdklisten)
 
 ## Listening to SDK Events
+You can bind a [V2TXLivePlayerObserver](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html) to your `V2TXLivePlayer` object to receive callback notifications about the player status, playback volume, first audio/video frame, statistics, warnings, errors, etc.
 
-You can bind a `V2TXLivePlayerObserver` to the `V2TXLivePlayer` object. After that, you will be notified of SDK internal status information through `onConnectionStateUpdate` and `onStatisticsUpdate`.
+### Periodically Triggered Notification
 
-#### Warning codes
-| Warning Code ID  | Value | Description |
-| :--------- | :---- | :-------- |
-| V2TXLIVE_OK | 0    | Playback successful |
-| V2TXLIVE_WARNING_NETWORK_BUSY | 1101 | Network busy |
-| V2TXLIVE_WARNING_VIDEO_BLOCK | 2105 | Failed to obtain the video |
+- The [onStatisticsUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#ab10e1f4e22e9bb73e3cea4ae15c36465) callback notification is triggered every 2 seconds to update you on the player’s status in real time. Like a car’s dashboard, the callback gives you information about network conditions, video parameters, etc.
+<table>
+<tr><th>Parameter</th><th>Description</th></tr>
+<tr>
+<td>appCpu</td>
+<td>CPU usage (%) of the app</td>
+</tr><tr>
+<td>systemCpu</td>
+<td>CPU usage (%) of the system</td>
+</tr><tr>
+<td>width</td>
+<td>Video width</td>
+</tr><tr>
+<td>height</td>
+<td>Video height</td>
+</tr><tr>
+<td>fps</td>
+<td>Frame rate (FPS)</td>
+</tr><tr>
+<td>audioBitrate</td>
+<td>Video bitrate (Kbps)</td>
+</tr><tr>
+<td>videoBitrate</td>
+<td>Audio bitrate (Kbps)</td>
+</tr></table>
+- The [onPlayoutVolumeUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__android.html#a57fc000bf5e935f7253fa94e1750359e) callback, which notifies you of the player’s volume, works only after you call [enableVolumeEvaluation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__android.html#aaa893a96eff34a7ba660441f7597d6d8) to enable the volume reminder. You can set the interval of the callback by specifying the `intervalMs` parameter when calling `enableVolumeEvaluation`.
 
-
-```
-@Override
-public void onWarning(V2TXLivePlayer player, int code, String msg, Bundle extraInfo) {
-	// doSomething
-}
-```
-#### Error codes
-| Error Code ID                       | Value | Description       |
-| :----------------------------- | :--- | :----------- |
-| V2TXLIVE_ERROR_FAILED            | -1   | Unclassified error     |
-| V2TXLIVE_ERROR_INVALID_PARAMETER | -2   | Invalid parameter |
-| V2TXLIVE_ERROR_REFUSED           | -3   | Refused     |
-| V2TXLIVE_ERROR_NOT_SUPPORTED     | -4   | Not supported |
-| V2TXLIVE_ERROR_INVALID_LICENSE   | -5   | Invalid license |
-
-```
-@Override
-public void onError(V2TXLivePlayer player, int code, String msg, Bundle extraInfo) {
-	// doSomething
-}
-```
-#### Obtaining the video resolution
-
-Through the `onVideoResolutionChanged` callback, you can obtain the aspect ratio of the current video. This is the quickest way to obtain the video resolution, which takes about 100 ms to 200 ms after playback starts.
-
-```
-@Override
-public void onVideoResolutionChanged(V2TXLivePlayer player, int width, int height) {
-	// doSomething
-}
-```
-
-| Parameter   | Description     | Value               |
-| :----- | :------- | :----------------- |
-| width  | Video width | Resolution value, such as 1920 |
-| height | Video height | Resolution value, such as 1080 |
-
-#### Periodically Triggered Status Notification
-
-The `onStatisticsUpdate` notification is triggered every second to provide real-time feedback on the current status of the pusher. Like a car dashboard, it can inform you of what is happening inside the SDK so that you can see the current network conditions and video information.
-
-```
-@Override
-public void onStatisticsUpdate(V2TXLivePlayer player, V2TXLiveDef.V2TXLivePlayerStatistics statistics) {
-	// doSomething
-}
-```
-
-| Parameter       | Description                      |
-| ------------ | ---------------------------- |
-| appCpu       | CPU utilization of the current app as a percentage (%)     |
-| systemCpu    | CPU utilization of the current system as a percentage (%)  |
-| width        | Video width                       |
-| height       | Video height                      |
-| fps          | Frame rate in fps                 |
-| videoBitrate | Video bitrate in Kbps             |
-| audioBitrate | Audio bitrate in Kbps             |
-
+### Event-Triggered Notifications
+Other callbacks are triggered when specific events occur.

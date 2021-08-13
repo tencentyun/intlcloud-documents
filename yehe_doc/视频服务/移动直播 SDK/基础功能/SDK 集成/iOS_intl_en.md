@@ -1,121 +1,208 @@
-This document describes how to quickly integrate the LiteAVSDK (iOS) into your project.
+## Basics
+This document introduces the live playback feature of the Video Cloud SDK.
 
-## Development Environment Requirements
-- Xcode 9.0+.
-- iPhone or iPad on iOS 9.0 or above.
-- Your project has a valid developer signature.
+### Live streaming and video on demand 
+- In **live streaming**, the video streams published by hosts in real time are the source of streaming. When hosts stop publishing streams, the video at the playback end stops. Since video is streamed in real time, players do not have progress bars when they play live streaming URLs.
+- In **video on demand (VOD)**, video files in the cloud are the source of streaming. Videos can be played at any time as long as they are not deleted from the cloud, and the playback progress can be adjusted using the progress bar. Video streaming websites such as Tencent Video and Youku Tudou are typical applications of VOD.
 
-## Integrating the LiteAVSDK
-You can choose to use CocoaPods for automatic loading, or download the SDK first and then import it into your current project.
+### Supported protocols
+The table below lists the common protocols used for live streaming. We recommend FLV URLs (which start with `http` and end with `flv`) for LVB and WebRTC for LEB. For more information, please see [Playback (LEB)](https://intl.cloud.tencent.com/zh/document/product/1071/39888).
 
-### CocoaPods
-#### 1. Install CocoaPods
-Enter the following command in the console terminal (you need to install the Ruby environment on your macOS in advance):
-```
-sudo gem install cocoapods
-```
+|Protocol |Pro |Con |Playback Latency |
+|---------|---------|---------|---------|
+| FLV | Mature, well adapted to high-concurrency scenarios | SDK integration is required. | 2-3s |
+|RTMP |Relatively low latency |Poor performance in high-concurrency scenarios |1-3s |
+| HLS (M3U8) | Well supported on mobile browsers | High latency |10-30s|
+|WebRTC |Lowest latency |SDK integration is required. |< 1s |
 
-#### 2. Create a Podfile
-Go to the path to the project, enter the following command, and a Podfile will appear in the project path.
-```
-pod init
-```
 
-#### 3. Edit the Podfile
-There are two ways to edit the Podfile:
-- Method 1: use the `podspec` file path of the Tencent Cloud LiteAV SDK.
-```
-  platform :ios, '8.0'
-  
-  target 'App' do
-  pod 'TXLiteAVSDK_International', :podspec => 'https://pod-1252463788.cos.ap-guangzhou.myqcloud.com/liteavsdkspec/TXLiteAVSDK_International.podspec'
-  end
+>? LVB and LEB are priced differently. For details, please see [LVB Billing Overview](https://intl.cloud.tencent.com/document/product/267/2818) and [LEB Billing Overview](https://intl.cloud.tencent.com/document/product/267/39969).
+
+
+## Notes
+The Video Cloud SDK **does not impose any limit on the sources of playback URLs**, which means you can use it to play both Tencent Cloud and non-Tencent Cloud URLs. However, the player of the SDK supports only live streaming URLs in FLV, RTMP, HLS (M3U8), and WebRTC formats and VOD URLs in MP4, HLS (M3U8), and FLV formats.
+
+## Integration
+[](id:step1)
+### Step 1. Create a player object
+The `V2TXLivePlayer` module in the Video Cloud SDK offers live playback capabilities.
+```objectivec
+V2TXLivePlayer *_txLivePlayer = [[V2TXLivePlayer alloc] init];
 ```
 
-- Method 2: use the official source of CocoaPod, which allows you to choose the version number.
+[](id:step2)
+### Step 2. Create a rendering view
+In iOS, a view is used as a basic rendering unit. Therefore, you need to configure a view, whose size and position you can adjust, for the player to display video images on.
 
-```
-   platform :ios, '8.0'
-   source 'https://github.com/CocoaPods/Specs.git'
-   
-   target 'App' do
-   pod 'TXLiteAVSDK_International'
-   end
+```objectivec
+// Use setRenderView to bind a rendering view to the player
+[_txLivePlayer setRenderView:_myView];
 ```
 
-#### 4. Install or Upgrade the SDK
-Enter the following command in the console terminal to update the local repository file and install the LiteAVSDK:
-```
-pod install
-```
-Or, run the following command to upgrade TXLiteAVSDK:
-```
-pod update
-```
+Technically, the player does not render video images directly on the view (`_myView` in the sample code) you provide. Instead, it creates a subview for OpenGL rendering over the view.
 
-After the pod command is executed, an `.xcworkspace` project file integrated with the SDK will be generated. Double-click this file to open it.
+You can adjust the size of video images by changing the size and position of the view. The SDK will make changes to the video images accordingly.
+ ![](https://main.qcloudimg.com/raw/39a02a8525a20fd861c69c42d2b3ab14.png)
 
-
-### Manual integration
-1. Download the [LiveAVSDK](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_International_iOS_lastest.zip), and then decompress it.
-
-2. Open your Xcode project, select the target you want to run, and select **Build Phases**.
-![](https://main.qcloudimg.com/raw/81404ea4ae84f577941c0ede791eb205.png)
-
-3. Click **Link Binary with Libraries** to expand it and then click the "+" icon at the bottom to add the dependent library.
-![](https://main.qcloudimg.com/raw/940265f2e206619d249077db5f29800b.png)
-
-4. Add the downloaded `TXLiteAVDemo_International.framework` and its dependent library.
-```
-libz.tbd
-libc++.tbd
-libresolv.tbd
-libsqlite3.tbd
-Accelerate.framework
-OpenAL.framework
-```
-![](https://main.qcloudimg.com/raw/899f02c77d58f6e3b9a5d94995c767f8.png)
-
-## Granting Camera and Microphone Permissions
-To use the audio/video features of the SDK, you need to grant the microphone and camera permissions. Add the following two items to the `Info.plist` file of the application. The two items correspond to the microphone and camera prompt messages when the authorization dialog box pops up.
-- **Privacy - Microphone Usage Description**. Enter the prompt that indicates the purpose of using the microphone.
-- **Privacy - Camera Usage Description**. Enter the prompt that indicates the purpose of using the camera.
-
-## Introducing the SDK to the Project
-There are two ways to use the SDK in your project code:
-- Method 1: add an import module to the project's files that need to use the SDK APIs.
-```
-@import TXLiteAVSDK_International;
+**How can I make animations?**
+You are allowed great flexibility in view animation, but note that you need to modify the `transform` rather than `frame` attribute of the view.
+```objectivec
+[UIView animateWithDuration:0.5 animations:^{
+		_myView.transform = CGAffineTransformMakeScale(0.3, 0.3); // Shrink by 1/3
+}];
 ```
 
-- Method 2: import specific header files into the project's files that need to use the SDK APIs.
+[](id:step3)
+### Step 3. Start playback
+```objectivec
+NSString* url = @"http://2157.liveplay.myqcloud.com/live/2157_xxxx.flv";
+[_txLivePlayer startPlay:url];
 ```
-#import <TXLiteAVSDK.h>
+
+[](id:step4)
+
+### Step 4. Change the fill mode
+
+- **setRenderFillMode: aspect fill or aspect fit**
+<table>
+<tr><th>Value</th><th>Description</th></tr>
+</tr><tr>
+<td>V2TXLiveFillModeFill</td>
+<td>Images are scaled to fill the entire screen, and the parts that don’t fit are cropped. There are no black bars in this mode, but images may not be displayed in whole.</td>
+</tr><tr>
+<td>V2TXLiveFillModeFit</td>
+<td>Images are scaled as large as the longer dimension can go. Neither dimension exceeds the screen after scaling. The images are centered, and there may be black bars.</td>
+</tr></table>
+- **setRenderRotation: clockwise rotation of video**
+<table>
+<tr><th>Value</th><th>Description</th></tr>
+</tr><tr>
+<td>V2TXLiveRotation0</td>
+<td>Original</td>
+</tr><tr>
+<td>V2TXLiveRotation90</td>
+<td>Rotate 90 degrees clockwise</td>
+</tr><tr>
+<td>V2TXLiveRotation180</td>
+<td>Rotate 180 degrees clockwise</td>
+</tr><tr>
+<td>V2TXLiveRotation270</td>
+<td>Rotate 270 degrees clockwise</td>
+</tr></table>
+
+![](https://main.qcloudimg.com/raw/f3c65504a98c38857ff3e78bcb6c9ae9.jpg)
+
+[](id:step5)
+### Step 5. Pause playback
+Technically speaking, you cannot pause a live playback. In this document, by pausing playback, we mean **freezing video** and **disabling audio**. In the meantime, new video streams continue to be sent to the cloud. When you resume playback, the playback starts from the time of resumption. This is in contrast to VOD. With VOD, when you pause and resume playback, the player behaves the same way as it does when you pause and resume a local video file.
+
+```objectivec
+// Pause playback
+[_txLivePlayer pauseAudio];
+[_txLivePlayer pauseVideo];
+// Resume playback
+[_txLivePlayer resumeAudio];
+[_txLivePlayer resumeVideo];
 ```
 
-## Configuring a License for the SDK
+[](id:step6)
+### Step 6. Stop playback
 
-Click [Apply for a License](https://console.cloud.tencent.com/live/license) to obtain the license for testing. You will receive two strings. One is the license URL, and the other is the decryption key.
+```objectivec
+// Stop playback
+[_txLivePlayer stopPlay];
+```
 
-Before you call the LiteAVSDK features in your app, we recommend that you complete the following configurations in `- [AppDelegate application:didFinishLaunchingWithOptions:]`:
+[](id:step7)
+### Step 7. Take a screenshot
+Call **snapshot** to take a screenshot of the live video streamed. You can get the screenshot taken in the [onSnapshotComplete](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html#a5754eb816b91fd0d0ac1559dd7884dad) callback of `V2TXLivePlayerObserver`. This method captures a frame of the streamed video. To capture the UI, use the iOS system API.
+![](https://main.qcloudimg.com/raw/d86e665e3fc709c07d170e2ab3e2a7ef.jpg)
+```
+...
+[_txLivePlayer setObserver:self];
+[_txLivePlayer snapshot];
+...
 
-```objc
-@import TXLiteAVSDK_Professional;
-@implementation AppDelegate
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    NSString * const licenceURL = @"<Obtained license URL>";
-    NSString * const licenceKey = @"<Obtained key>";
-		
-    //TXLiveBase is located in the "TXLiveBase.h" header file.
-    [TXLiveBase setLicenceURL:licenceURL key:licenceKey]; 
-    NSLog(@"SDK Version = %@", [TXLiveBase getSDKVersionStr]);
+- (void)onSnapshotComplete:(id<V2TXLivePlayer>)player image:(TXImage *)image {
+    if (image != nil) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self handle:image];
+        });
+    }
 }
-@end
 ```
 
-## FAQs
-### Can I run the LiteAVSDK in the background?
-Yes. If you want the SDK to run relevant features in the background, you can select the current project, set **Background Modes** under **Capabilities** to **ON**, and check **Audio, AirPlay and Picture in Picture** as shown below:
-![](https://main.qcloudimg.com/raw/9c8698d4fc563b7d0d70f415b7471572.png)
+## Latency Control
+The live playback feature of the SDK is not based on FFmpeg, but Tencent Cloud’s proprietary playback engine, which is why the SDK offers better latency control than open-source players do. We provide three latency control modes, which can be used for showrooms, game streaming, and hybrid scenarios.
 
+- **Comparison of the three modes**
+<table>
+<tr><th>Mode</th><th>Stutter</th><th>Average Latency</th><th>Scenario</th><th>Remarks</th>
+</tr><tr>
+<td>Speedy</td>
+<td>More likely than the speedy mode</td>
+<td>2-3s</td>
+<td>Live showroom (Chongding Dahui)</td>
+<td>The mode delivers low latency and is suitable for latency-sensitive scenarios.</td>
+</tr><tr>
+<td>Smooth</td>
+<td>Least likely of the three</td>
+<td>&gt;= 5s</td>
+<td>Game streaming (Penguin Esports)</td>
+<td>Playback is least likely to stutter in this mode, which makes it suitable for ultra-high-bitrate streaming of games such as PUBG.</td>
+</tr><tr>
+<td>Auto</td>
+<td>Self-adaptive to network conditions</td>
+<td>2-8s</td>
+<td>Hybrid</td>
+<td>The better network conditions at the audience end, the lower the latency.</td>
+</tr></table>
+- **Code to integrate the three modes**
+```objectivec
+// Auto mode
+[_txLivePlayer setCacheParams:1 maxTime:5];
+// Speedy mode
+[_txLivePlayer setCacheParams:1 maxTime:1];
+// Smooth mode
+[_txLivePlayer setCacheParams:5 maxTime:5];
 
+// Start playback after configuration
+```
+
+>? For more information on stuttering and latency control, please see [Video Stutter](https://cloud.tencent.com/document/product/454/56613).
+
+[](id:sdklisten)
+
+## Listening for SDK Events
+You can bind a [V2TXLivePlayerObserver](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html) to your `V2TXLivePlayer` object to receive callback notifications about the player status, playback volume, first audio/video frame, statistics, warning and error messages, etc.
+
+### Periodically triggered notifications
+- The [onStatisticsUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusherObserver__ios.html#ae93683da9240a752e7b6d70d8e940cbc) callback notification is triggered every 2 seconds to update you on the player’s status in real time. Like a car’s dashboard, the callback gives you information about network conditions, video parameters, etc.
+<table>
+<tr><th>Parameter</th><th>Description</th>
+</tr><tr>
+<td>appCpu</td>
+<td>CPU usage (%) of the app</td>
+</tr><tr>
+<td>systemCpu</td>
+<td>CPU usage (%) of the system</td>
+</tr><tr>
+<td>width</td>
+<td>Video width</td>
+</tr><tr>
+<td>height</td>
+<td>Video height</td>
+</tr><tr>
+<td>fps</td>
+<td>Frame rate (FPS)</td>
+</tr><tr>
+<td>audioBitrate</td>
+<td>Audio bitrate (Kbps)</td>
+</tr><tr>
+<td>videoBitrate</td>
+<td>Video bitrate (Kbps)</td>
+</tr></table>
+- The [onPlayoutVolumeUpdate](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html#a5439ba0397be3943c6ebfb6083c27664) callback, which notifies you of the player’s volume, works only after you call [enableVolumeEvaluation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayer__ios.html#aeed74080dd72e52b15475a54ca5fd86b) to enable the volume reminder. You can set the interval of the callback by specifying the `intervalMs` parameter when calling `enableVolumeEvaluation`.
+
+### Event-triggered notifications
+Other callbacks are triggered when specific events occur.
