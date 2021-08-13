@@ -6,7 +6,7 @@
 
 ## 方案优势
 
-![](https://main.qcloudimg.com/raw/fd994d665015f73bb701970106d765cf.png)
+![](https://main.qcloudimg.com/raw/2adf52e12df99cc9d0eecc998c8b6ecc.png)
 
 - API 网关专享实例可将请求同时转发至部署在云上 VPC 内、云下 IDC 机房内、公网内的后端资源，无缝连接云上云下，助力企业平滑上云。
 - 可同时使用腾讯云 API 网关提供的丰富功能，如 IP 访问控制、流量控制、日志监控等。
@@ -21,7 +21,7 @@
 3. 单击【+新建】。
 4. 在弹出框中填写云联网实例名称、描述，选择计费模式、服务质量、限速方式。
 5. 将 IDC 的专线网关和云上 VPC 环境关联起来。
-	 ![](https://main.qcloudimg.com/raw/ccaf43447028f575d13131ab5eee4d03.png)
+	![](https://main.qcloudimg.com/raw/7063ae428f1bb924e9eeb5a999a67eab.png)
 
 ### 步骤2：购买 API 网关专享实例
 
@@ -30,7 +30,6 @@
 3. 选择和填写实例配置。
 >!享实例的 VPC 配置需要和 [步骤1](#步骤1) 中云联网实例所关联的腾讯云 VPC 实例保持一致。
 >
-	 ![](https://main.qcloudimg.com/raw/e9c6f89988b23af471f53f669e4b3b5e.png)
 4. 单击【立即购买】提交购买申请，支付后即可完成专享实例的购买。
 
 ### 步骤3：在实例下创建服务和 API

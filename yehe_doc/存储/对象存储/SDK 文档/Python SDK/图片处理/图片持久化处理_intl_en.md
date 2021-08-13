@@ -237,7 +237,7 @@ response, data = client.ci_image_process(
 | -------- | ------------------------------------------------------------ | ------ | -------- |
 | bucket   | Name of the destination bucket that stores the results, formatted as `BucketName-APPID`. If this parameter is not specified, the results will be stored in the current bucket. | String | No       |
 | fileid   | Path of the processing results. If the value of this parameter starts with a slash (/), the results will be stored in a specified folder. Otherwise, the results will be stored in the directory of the input image. | String | Yes       |
-| rule | String | Yes | Processing parameters. For more information, please see the image processing API. To process an image using a specified style, the value must start with `style/` with the style name followed. For example, if the style name is `test`, the value of `rule` should be `style/test`. |
+| rule | Processing parameters. For more information, please see the image processing API. To process an image using a specified style, the value must start with `style/` with the style name followed. For example, if the style name is `test`, the value of `rule` should be `style/test`. |String | Yes | 
 
 #### Response description
 
