@@ -4,7 +4,6 @@
 路由表有默认路由表和自定义路由表两种类型： 
 - **默认路由表**：用户创建私有网络时，系统会自动为其生成一个默认路由表。在之后的子网创建过程中，如果用户没有选择自定义路由表，子网会自动关联该默认路由表。您可以在默认路由表中添加、删除和修改路由策略，但无法删除该默认路由表。
 - **自定义路由表**：您可以在私有网络中创建自定义路由表，自定义路由表可以被删除。您可以为具有相同路由策略的子网建立一个自定义路由表，并将路由表与需要遵循其路由策略的所有子网关联。
-![](https://main.qcloudimg.com/raw/a86260ffb40bec52c9f64a307d956691.png)  
 >?您可以在 [创建子网](https://intl.cloud.tencent.com/document/product/215/31806) 时关联路由表，或在子网创建后，[更换子网关联路由表](https://intl.cloud.tencent.com/document/product/215/40090)。
 
 ## 路由策略
@@ -73,7 +72,7 @@ VPC 不同类型路由支持主备情况如下：
 主备路由通常用于，当某一网关链路故障时，可通过主备路由实现流量的平滑切换。例如：
 + VPC 型专线网关（主）& VPC 型 VPN 网关（备）
   **场景描述**：用户通过 VPC 型专线网关打通云上 VPC 和自建 IDC 的通信，同时通过 VPN 网关创建 VPN 备用通道来实现 IDC 与 VPC 通信链路的备份。
-  ![](https://main.qcloudimg.com/raw/6371959ca33fe42ac9dfc3c62529bb87.png)
+  ![](https://main.qcloudimg.com/raw/683779ec1aef376985b027df945fe54c.png)
 + 云联网型专线网关（主）& VPC 型 VPN 网关（备）
   **场景描述**：用户通过云联网型专线网关打通云上 VPC 和自建 IDC 的通信，同时通过 VPN 网关创建 VPN 备用通道来实现 IDC 与 VPC 通信链路的备份。
-	![](https://main.qcloudimg.com/raw/92f84ee71e0a12212b95641bf76b5bee.png)
+	![](https://main.qcloudimg.com/raw/7e21527a285edb29c7e57df566723acb.png)
