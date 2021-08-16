@@ -6,8 +6,7 @@
 1. 登录 [CKafka控制台](https://console.cloud.tencent.com/ckafka)。
 2. 在左侧导航栏选择【迁移上云】，选择您要迁移的地域后单击【规格计算器】。
 3. 在规格计算器页面输入您的自建Kafka集群规格。
-	 ![](https://main.qcloudimg.com/raw/5bdcd2570f30c12f5bf3c47f628f27bd.png)
-
+ ![](https://main.qcloudimg.com/raw/15b721ef605d238f01f888b6a54a334e.png)
 
    | 参数         | 说明                                                         |
    | ------------ | ------------------------------------------------------------ |
@@ -21,5 +20,4 @@
 4. 单击【下一步】获取为您推荐的 CKafka 实例规格。
 5. 单击【购买此配置】，跳转至实例购买页面。
 6. 确认购买信息后，单击【立即购买】，等待5-10分钟后，在实例列表页可以看到实例创建完成。
-	 ![](https://main.qcloudimg.com/raw/693bfe8e26d0bf9ad9ce72537a16cb5d.png)
-
+![](https://main.qcloudimg.com/raw/30fd507fc0be892eb5467c8ff83723a1.png)
