@@ -1,7 +1,7 @@
 >!
 >- 腾讯云日志服务（Cloud Log Service）已于2020年08月03日00:00:00正式商业化。CLS 商业化后将在每个地域提供一定量的**免费额度**，详情可见 [免费额度](https://intl.cloud.tencent.com/document/product/614/37889)。
 >- 具体计费规则和收费标准请查看下文 [计费方式](https://intl.cloud.tencent.com/document/product/614/37509#.E8.AE.A1.E8.B4.B9.E6.96.B9.E5.BC.8F) 等章节详细说明，当前资源使用情况可前往 [日志服务控制台](https://console.cloud.tencent.com/cls/overview?region=ap-guangzhou) 查看。  
-> - 若已知资源使用情况需了解价格预算，可前往 [价格计算器](https://buy.cloud.tencent.com/price/cls/calculator) 导出价格预算清单。
+>- 若已知资源使用情况需了解价格预算，可前往 [价格计算器](https://buy.cloud.tencent.com/price/cls/calculator) 导出价格预算清单。
 
 
 <span id="cls"></span>
@@ -43,7 +43,7 @@
  #### 限制说明
 
 1. 无论通过内网还是外网上传日志，均会收取写流量费用。
-2. 日志服务中如\_\_FILENAME\_\_、\_\_SOURCE__等元信息会构建索引，也会计算索引流量，因此索引流量会比原始日志量有一定程度膨胀。
+2. 日志服务中如\_\_FILENAME\_\_、\_\_SOURCE\_\_等元信息会构建索引，但不会计算索引流量。
 3. 若同时开启全文索引和键值索引，不会重复计算索引流量。
 
   
@@ -93,12 +93,13 @@
 甲公司的网站每天有一亿次请求，平均一次请求会产生一条100字节的日志，一天共一亿条日志，日志量共约9.31GB。甲公司决定将 Nginx 访问日志上传到日志服务 CLS 的北京地域保存，并保存15天，进行查询及统计分析。
 
 <table>
-   <tr>
+   <tbody><tr>
       <th colspan="2"><center>计费项</center></th>
       <th><center>计量说明</center></th>
-      <th><center>计量</center></th>
-      <th nowrap="nowrap"><center>单价（北京）</center></th>
+      <th width="13%">计量</th>
+      <th width="20%">单价（北京）</th>
       <th nowrap="nowrap"><center>费用</center></th>
+
    </tr>
    <tr>
       <td rowspan="4">流量费用</td>
@@ -166,4 +167,4 @@
       <td>-</td>
       <td>1.3095USD/日</td>
    </tr>
-</table>
+</tbody></table>
