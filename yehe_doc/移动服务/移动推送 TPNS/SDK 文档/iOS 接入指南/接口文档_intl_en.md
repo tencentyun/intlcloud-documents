@@ -18,9 +18,9 @@ This API is used to launch the TPNS service by using the information of the appl
 
 #### Parameter description
 
-- `accessID`: `AccessID` applied through the frontend.
-- `accessKey`: `AccessKey` applied through the frontend.
-- `Delegate`: callback object. 
+- `accessID`: `AccessID` applied through the frontend
+- `accessKey`: `AccessKey` applied through the frontend
+- `Delegate`: callback object 
 
 > ! The parameters required by the API must be entered correctly; otherwise, TPNS will not be able to push messages correctly for the application.
 
@@ -95,7 +95,7 @@ This callback is new in SDK v1.2.7.2 and used for TPNS registration failures.
 - (void)xgPushDidFailToRegisterDeviceTokenWithError:(nullable NSError *)error
 ```
 
-### Callback for notification authorization pop-up window
+### Notification pop-up window authorization callback
 
 #### API description
 
@@ -132,14 +132,14 @@ If there is no account of this type, this API will add a new one; otherwise, it 
 
 #### Parameter description 
 
-`accountsDict`: account dictionary.
+`accountsDict`: account dictionary
 
 > ?
->
 > - The account type and account name together serve as the composite primary key.
 > - You need to use the dictionary type, where `key` is the account type and `value` is the account, for example, @{@(accountType):@"account"}.
 > - Syntax for Objective-C: @{@(0):@"account0",@(1):@"account1"}; syntax for Swift:[NSNumber(0):@"account0",NSNumber(1):@"account1"]
-> - For more `accountType` values, see the `XGPushTokenAccountType` enumerated values or account type value table in the SDK demo package.
+> - For more `accountType` values, see the `XGPushTokenAccountType` enumeration in the SDK demo package or [Account Type Value Table](https://intl.cloud.tencent.com/document/product/1024/40598).
+> - The TPNS console supports push to account IDs of the `0` account type. For other types, call the [Push API](https://intl.cloud.tencent.com/document/product/1024/33764) to push.
 
 #### Sample code
 
@@ -162,12 +162,12 @@ This API is used to add or update a mobile number. It is equivalent to calling `
 
 #### Parameter description
 
-- phoneNumber: an E.164 mobile number in the format of `[+][country code or area code][mobile number]`, for example, +8613711112222. The SDK will encrypt the mobile number for transmission.
+- `phoneNumber`: an E.164 mobile number in the format of `[+][country code or area code][mobile number]`, for example, +8613711112222. The SDK will encrypt the mobile number for transmission.
 
 #### Sample code
 
 ```Objective-C
-[[XGPushTokenManager defaultTokenManager] upsertPhoneNumber:@+8613712345678"];;
+[[XGPushTokenManager defaultTokenManager] upsertPhoneNumber:@"+8613712345678"];;
 
 ```
 
@@ -189,7 +189,7 @@ This API is used to delete all accounts of a specified account type. (Newly adde
 
 #### Parameter description 
 
-- `accountsKeys`: set of account types.
+- `accountsKeys`: set of account types
 
 > ?
 >
@@ -251,7 +251,7 @@ This API is used to bind tags to different users so that push can be performed b
 
 #### Parameter description
 
-`tags`: tag array.
+`tags`: tag array
 
 > ? For tag operations, `tags` is a tag string array, which cannot contain spaces or tab characters.
 
@@ -286,7 +286,7 @@ This API is used to clear all the existing tags and then add tags in batches.
 
 #### Parameter description 
 
-`tags`: tag array.
+`tags`: tag array
 
 > ? For tag operations, `tags` is a tag string array, which cannot contain spaces or tab characters.
 
@@ -344,11 +344,11 @@ This API is new in SDK v1.3.1.0 and used to query the tags bound to the device.
 
 ```
 
-### Callback for tag query results
+### Tag query callback
 
 #### API description
 
-This API is new in SDK v1.3.1.0 and used call back the result of tag query.
+This API is new in SDK v1.3.1.0 and used to call back the result of tag query.
 
 ```objective-c
 - (void)xgPushDidQueryTags:(nullable NSArray<NSString *> *)tags totalCount:(NSUInteger)totalCount error:(nullable NSError *)error;
@@ -358,7 +358,7 @@ This API is new in SDK v1.3.1.0 and used call back the result of tag query.
 #### Response parameters
 
 - `tags`: tags returned for the query
-- `totalCount`: total number of the tags bound to the device.
+- `totalCount`: total number of the tags bound to the device
 - `error`: error message. If `error` is `nil`, the query is successful.
 
 ## User Attribute Feature
@@ -380,7 +380,7 @@ This API is used to add or update user attributes in the `key-value` structure (
 
 #### Parameter description 
 
-`attributes`: dictionary of user attribute strings, which cannot contain spaces or tabs.
+`attributes`: dictionary of user attribute strings, which cannot contain spaces or tabs
 
 > ? 
 >
@@ -506,7 +506,7 @@ This API is used to sync the modified local badge value of an application to the
 
 
 
-## Querying device notification permission
+## Querying Device Notification Permission
 
 #### API description
 
@@ -519,7 +519,7 @@ This API is used to query whether the user allows device notifications.
 
 #### Parameter description
 
-`handler`: the result return method.
+`handler`: result return method
 
 #### Sample code
 
@@ -580,7 +580,7 @@ This method is used to get TPNS logs, which is irrelevant to `XGPush > enableDeb
 
 #### Parameter description
 
-`logInfo`: log information.
+`logInfo`: log information
 
 #### Sample code
 
@@ -589,7 +589,7 @@ This method is used to get TPNS logs, which is irrelevant to `XGPush > enableDeb
 
 ```
 
-## Customizing Notification Bar Message Action
+## Customizing Notification Bar Message Actions
 
 ### Creating a message action
 
@@ -640,7 +640,7 @@ This API is used to create a category object to manage the action object of the 
 #### Sample code
 
 ```Objective-C
-XGNotificationCategory *category = [XGNotificationCategory categoryWithIdentifier:@"xgCategory" actions:@[action1, action2] intentIdentifiers:@[] options:XGNotificatio nCategoryOptionNone];
+XGNotificationCategory *category = [XGNotificationCategory categoryWithIdentifier:@"xgCategory" actions:@[action1, action2] intentIdentifiers:@[] options:XGNotificationCategoryOptionNone];
 ```
 
 ### Creating a configuration class

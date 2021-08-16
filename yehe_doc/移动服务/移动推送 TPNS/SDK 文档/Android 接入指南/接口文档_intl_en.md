@@ -1,5 +1,5 @@
 ## Description
-The account feature and tag deletion feature in this document are available for SDK v1.2.3.0 or later.
+The account feature and tag deletion feature in this document are available for SDK v1.2.3.0 and later. For versions earlier than v1.2.3.0, see [Accounts and Tags](https://intl.cloud.tencent.com/document/product/1024/40596).
 
 The package name path prefix of all APIs is `com.tencent.android.tpush`. The following table lists important classes that provide APIs for external use.
 
@@ -514,7 +514,8 @@ XGPushManager.upsertAccounts(context, accountInfoList, xgiOperateCallback);
 
 >?
 > - Each account can be bound to up to 100 tokens.
-> - The account can be email address, QQ number, mobile number, username, etc. For account type values, see [Account Type Value Table](https://intl.cloud.tencent.com/document/product/1024/40598).
+> - The account can be email, QQ account number, mobile number, username, etc. For valid values, please see [Account Type Value Table](https://intl.cloud.tencent.com/document/product/1024/40598).
+> - The TPNS console supports push to account IDs of the `0` account type. For other types, call the [Push API](https://intl.cloud.tencent.com/document/product/1024/33764) to push.
 > - If multiple devices are bound to the same account, the backend will push the message to the last bound device by default. If you want to push to all the bound devices, you can view the `account_push_type` parameter settings in [Push API](https://intl.cloud.tencent.com/document/product/1024/33764).
 > 
 
@@ -654,7 +655,7 @@ XGPushManager.clearAccounts(getApplicationContext());
 
 ```
 
-## Tag management
+## Tag Management
 
 The following are tag management API methods. For more information on the timing and principle of calls, please see [Tag flow](https://intl.cloud.tencent.com/document/product/1024/32609#tag-flow).
 
@@ -678,7 +679,7 @@ public static void clearAndAppendTags(Context context, String operateName, Set<S
 
 - `context`: `Context` object
 - `operateName`: user-defined operation name. The callback result will return it as-is, which is used to identify the operation to which the callback belongs.
-- `tags`: a collection of tag names, and each tag is a string. Restrictions: each tag cannot exceed 40 bytes (otherwise, the tag will be discarded) nor contain spaces (all spaces will be deleted). Up to 100 tags can be set, and excessive ones will be discarded.
+- tags: a collection of tag names, and each tag is a string. Restrictions: each tag cannot exceed 50 bytes (otherwise, the tag will be discarded) nor contain spaces (all spaces will be deleted). Up to 100 tags can be set, and excessive ones will be discarded.
 
 
 
@@ -716,7 +717,7 @@ public static void appendTags(Context context, String operateName, Set<String> t
 
 - `context`: `Context` object
 - `operateName`: user-defined operation name. The callback result will return it as-is, which is used to identify the operation to which the callback belongs.
-- `tags`: a collection of tag names, and each tag is a string. Restrictions: each tag cannot exceed 40 bytes (otherwise, the tag will be discarded) nor contain spaces (all spaces will be deleted). Up to 100 tags can be set, and excessive ones will be discarded.
+- tags: a collection of tag names, and each tag is a string. Restrictions: each tag cannot exceed 50 bytes (otherwise, the tag will be discarded) nor contain spaces (all spaces will be deleted). Up to 100 tags can be set, and excessive ones will be discarded.
 
 #### Processing result
 
@@ -730,9 +731,6 @@ Set<String> tagsSet = new HashSet<>(Arrays.asList(tags));
 XGPushManager.appendTags(getApplicationContext(), "appendTags:" + System.currentTimeMillis(), tagsSet);
 
 ```
-
-
-
 
 
 ### Deleting multiple tags
@@ -753,7 +751,7 @@ public static void delTags(Context context, String operateName, Set<String> tags
 
 - `context`: `Context` object
 - `operateName`: user-defined operation name. The callback result will return it as-is, which is used to identify the operation to which the callback belongs.
-- `tags`: a collection of tag names, and each tag is a string. Restrictions: each tag cannot exceed 40 bytes (otherwise, the tag will be discarded) nor contain spaces (all spaces will be deleted). Up to 100 tags can be set, and excessive ones will be discarded.
+- tags: a collection of tag names, and each tag is a string. Restrictions: each tag cannot exceed 50 bytes (otherwise, the tag will be discarded) nor contain spaces (all spaces will be deleted). Up to 100 tags can be set, and excessive ones will be discarded.
 - `callback`: callback of tag deletion operation
 
 #### Processing result
@@ -1240,7 +1238,7 @@ XGPushConfig.setAccessKey(context, accessKey);
 - false: failure.
 
 >? The access key set through this API will also be stored in the `AndroidManifest.xml` file.
->
+
 
 
 
@@ -1275,5 +1273,4 @@ XGPushManager.uploadLogFile(context, new HttpRequestCallback() {
 });
 ```
 
->? You need to enable `XGPushConfig.enableDebug(this, true);` first.
->
+>?You need to enable `XGPushConfig.enableDebug(this, true);` first.

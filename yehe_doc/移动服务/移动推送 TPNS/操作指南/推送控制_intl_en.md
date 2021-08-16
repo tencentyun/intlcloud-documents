@@ -6,7 +6,7 @@ TPNS provides the following capabilities for you to implement proper push in a s
 - Message deduplication: blocks identical pushes caused by misoperation at the system level
 - Specified time range: sets a time range that allows pushes to avoid disturbing users late at night.
 
-## Directions
+## Use Instructions
 
 ### Frequency Capping
 
@@ -16,7 +16,7 @@ Ecommerce applications often need to push promotion and marketing messages to ta
 
  #### Directions
 1. Log in to the [TPNS console](https://console.cloud.tencent.com/tpns).
-2. Select **Configuration Management** > **Push Settings** on the left sidebar.
+2. Select **Message Management** > **Push Settings** on the left sidebar.
 3. Click **Enable** in the **Frequency Capping** section.
 
 4. Enter an integer within 1-100 or keep the default value 3 in the text box of **Max Pushes to a Device per Day**. Select a [push plan](https://intl.cloud.tencent.com/document/product/1024/37452) to which the setting applies, and click **Save** to complete the configuration.
@@ -28,7 +28,7 @@ Ecommerce applications often need to push promotion and marketing messages to ta
 News and video applications usually need to preemptively reach out to users with breaking news or hot issues for users to quickly get the latest and most concerned information. However, receiving repeated pushes in a short period may irritate users. This feature avoids duplicate pushes to users.
 #### Directions
 1. Log in to the [TPNS console](https://console.cloud.tencent.com/tpns).
-2. Select **Configuration Management** > **Push Settings** on the left sidebar.
+2. Select **Message Management** > **Push Settings** on the left sidebar.
 3. Click **Enable** in the **Message Deduplication** section.
 
 
@@ -44,7 +44,7 @@ Tools or applications with system notification requirements usually need to noti
 
 #### Directions
 1. Log in to the [TPNS console](https://console.cloud.tencent.com/tpns).
-2. Select **Configuration Management** > **Push Settings** on the left sidebar.
+2. Select **Message Management** > **Push Settings** on the left sidebar.
 3. Click **Enable** in the **Specified Time Range** section to set a time range that allows pushes, and click **Save**. The pushes outside the specified time range will not be delivered.
 >? The **Specified Time Range** is a period that allows pushes to deliver rather than to reach devices. For example, if the time range is set to 15:00-16:00, only push tasks created within this period will be delivered, and other push tasks will be blocked.
 >

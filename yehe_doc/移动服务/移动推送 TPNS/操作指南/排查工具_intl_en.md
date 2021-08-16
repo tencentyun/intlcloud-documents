@@ -12,12 +12,12 @@ TPNS provides you with a troubleshooting tool for message push exceptions such a
 
 
 
-## Operation Directions
+## Directions
 
 ### Querying via an account
 
 1. Log in to the [TPNS console](https://console.cloud.tencent.com/tpns).
-2. Select **Toolbox** -> **Troubleshooting Tools** on the left sidebar.
+2. Select **Message Management** > **Troubleshooting Tools** on the left sidebar.
 3. Select the product and device from the drop-down list to be searched, and select **Query by account** for the **Query Method**.
    ![](https://main.qcloudimg.com/raw/ab3ee41ac3fcab0fe15b83b455a55d24.png)
 4. Enter the user account and click **Query**.
@@ -44,7 +44,7 @@ TPNS provides you with a troubleshooting tool for message push exceptions such a
 > 2. Obtain it from the response parameter of the push API.
 3. If the query result does not match the actual situation, or the problem persists, you can view the [FAQs about push](#.E6.8E.A8.E9.80.81.E5.B8.B8.E8.A7.81.E9.97.AE.E9.A2.98) or [submit a ticket](https://console.cloud.tencent.com/workorder/category) with the `pushID` and token for assistance.
 
-## FAQ
+## FAQs
 
 ### Device query
 
@@ -57,10 +57,10 @@ After the notification bar is enabled, please send the registration request from
 ### Push
 
 1. The account or tag push fails but the token push succeeds. Why does this happen?
-On the **Query device detail** page, verify that the token has been associated with the target account or tag to implement the account or tag push.
+On the **Query device detail** page, verify that the token is associated with the target account or tag to implement the account or tag push.
 2. The push message is in the completed status and the device is normal. Why can’t I receive the message on my mobile phone?
  - Check that you selected the same environment for iOS and the token. For more information, see [Push Environment Selection Description](https://intl.cloud.tencent.com/document/product/1024/34214).
- - Check whether you entered the same app package name as in the **[TPNS console](https://console.cloud.tencent.com/tpns)** > **Configuration Management** > **Basic Configuration**. If different, check whether the [multi-package name push feature](https://intl.cloud.tencent.com/document/product/1024/35393) is enabled.
+ - Check whether you entered the same app package name as in the **[TPNS console](https://console.cloud.tencent.com/tpns)** > **Message Management** > **Basic Config**. If different, check whether the [Multi-Package Name Push](https://intl.cloud.tencent.com/document/product/1024/35393) feature is enabled.
  - If you’re using Android version P or later, add and use the Apache HTTP client library. To do this, add the following configuration to the AndroidManifest application node.
 ```
  <uses-library android:name="org.apache.http.legacy" android:required="false"/>

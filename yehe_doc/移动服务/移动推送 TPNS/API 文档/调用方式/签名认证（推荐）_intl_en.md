@@ -40,14 +40,14 @@ Content-Type: application/json
 AccessId: 1500001048
 TimeStamp: 1565314789
 Sign: Y2QyMDc3NDY4MmJmNzhiZmRiNDNlMTdkMWQ1ZDU2YjNlNWI3ODlhMTY3MGZjMTUyN2VmNTRjNjVkMmQ3Yjc2ZA==
-{"audience_type": "account","platform": "android","message": {"title": "test title","content": "test content","android": { "action": {"action_type": 3,"intent": "xgscheme://com.xg.push/notify_detail?param1=xg"}}},"message_type": "notify","account_list": ["5822f0eee44c3625ef0000bb"] }
+{"audience_type": "account","message": {"title": "test title","content": "test content","android": { "action": {"action_type": 3,"intent": "xgscheme://com.xg.push/notify_detail?param1=xg"}}},"message_type": "notify","account_list": ["5822f0eee44c3625ef0000bb"] }
 ```
 
 ## Signature Generation Sample
 
 1. Generate the string to sign as follows:
 ```
-String to be encrypted = 15653147891500001048{"audience_type": "account","platform": "android","message": {"title": "test title","content": "test content","android": { "action": {"action_type": 3,"intent": "xgscheme://com.xg.push/notify_detail?param1=xg"}}},"message_type": "notify","account_list": ["5822f0eee44c3625ef0000bb"] }
+String to encrypt = 15653147891500001048{"audience_type": "account","message": {"title": "test title","content": "test content","android": { "action": {"action_type": 3,"intent": "xgscheme://com.xg.push/notify_detail?param1=xg"}}},"message_type": "notify","account_list": ["5822f0eee44c3625ef0000bb"] }
 ```
 >? The `${request body}` in the string to sign must be exactly the same as the data in the message body, including spaces and encoding.
 >
@@ -74,7 +74,7 @@ import hmac
 import base64
 from hashlib import sha256
 
-s = '15653147891500001048{"audience_type": "account","platform": "android","message": {"title": "test title","content": "test content","android": { "action": {"action_type": 3,"intent": "xgscheme://com.xg.push/notify_detail?param1=xg"}}},"message_type": "notify","account_list": ["5822f0eee44c3625ef0000bb"] }'
+s = '15653147891500001048{"audience_type": "account","message": {"title": "test title","content": "test content","android": { "action": {"action_type": 3,"intent": "xgscheme://com.xg.push/notify_detail?param1=xg"}}},"message_type": "notify","account_list": ["5822f0eee44c3625ef0000bb"] }'
 key = '1452fcebae9f3115ba794fb0fff2fd73'
 hashcode = hmac.new(key, s, digestmod=sha256).hexdigest()
 print base64.b64encode(hashcode)
@@ -84,7 +84,7 @@ import hmac
 import base64
 from hashlib import sha256
 
-s = '15653147891500001048{"audience_type": "account","platform": "android","message": {"title": "test title","content": "test content","android": { "action": {"action_type": 3,"intent": "xgscheme://com.xg.push/notify_detail?param1=xg"}}},"message_type": "notify","account_list": ["5822f0eee44c3625ef0000bb"] }'
+s = '15653147891500001048{"audience_type": "account","message": {"title": "test title","content": "test content","android": { "action": {"action_type": 3,"intent": "xgscheme://com.xg.push/notify_detail?param1=xg"}}},"message_type": "notify","account_list": ["5822f0eee44c3625ef0000bb"] }'
 key = '1452fcebae9f3115ba794fb0fff2fd73'
 hashcode = hmac.new(bytes(key, "utf-8"), bytes(s, "utf-8"),
                         digestmod=sha256).hexdigest()
@@ -132,7 +132,7 @@ import (
 )
 
 func TestSign(t *testing.T) {
-   requestBody := "15653147891500001048{\"audience_type\": \"account\",\"platform\": \"android\",\"message\": {\"title\": \"test title\",\"content\": \"test content\",\"android\": { \"action\": {\"action_type\": 3,\"intent\": \"xgscheme://com.xg.push/notify_detail?param1=xg\"}}},\"message_type\": \"notify\",\"account_list\": [\"5822f0eee44c3625ef0000bb\"] }"
+   requestBody := "15653147891500001048{\"audience_type\": \"account\",\"message\": {\"title\": \"test title\",\"content\": \"test content\",\"android\": { \"action\": {\"action_type\": 3,\"intent\": \"xgscheme://com.xg.push/notify_detail?param1=xg\"}}},\"message_type\": \"notify\",\"account_list\": [\"5822f0eee44c3625ef0000bb\"] }"
    secretKey := "1452fcebae9f3115ba794fb0fff2fd73"
 
    h := hmac.New(sha256.New, []byte(secretKey))
@@ -154,7 +154,7 @@ namespace tpns_server_sdk_cs
         static public void Main(String[] args)
         {
             string reqBody =
-                "{\"audience_type\": \"account\",\"platform\": \"android\",\"message\": {\"title\": \"test title\",\"content\": \"test content\",\"android\": { \"action\": {\"action_type\": 3,\"intent\": \"xgscheme://com.xg.push/notify_detail?param1=xg\"}}},\"message_type\": \"notify\",\"account_list\": [\"234\"] }";
+                "{\"audience_type\": \"account\",\"message\": {\"title\": \"test title\",\"content\": \"test content\",\"android\": { \"action\": {\"action_type\": 3,\"intent\": \"xgscheme://com.xg.push/notify_detail?param1=xg\"}}},\"message_type\": \"notify\",\"account_list\": [\"234\"] }";
             string genSign = GenSign.genSign("1621307510", "1500004469", reqBody, "2b1163d904bd5f82dcf82dcf82dc4407");
             Console.WriteLine(genSign);
         } 
@@ -203,7 +203,7 @@ namespace tpns_server_sdk_cs
 $accessId = "1500001048";
 $secretKey = "1452fcebae9f3115ba794fb0fff2fd73";
 $timeStamp = "1565314789";
-$requestBody = "{\"audience_type\": \"account\",\"platform\": \"android\",\"message\": {\"title\": \"test title\",\"content\": \"test content\",\"android\": { \"action\": {\"action_type\": 3,\"intent\": \"xgscheme://com.xg.push/notify_detail?param1=xg\"}}},\"message_type\": \"notify\",\"account_list\": [\"5822f0eee44c3625ef0000bb\"] }";
+$requestBody = "{\"audience_type\": \"account\",\"message\": {\"title\": \"test title\",\"content\": \"test content\",\"android\": { \"action\": {\"action_type\": 3,\"intent\": \"xgscheme://com.xg.push/notify_detail?param1=xg\"}}},\"message_type\": \"notify\",\"account_list\": [\"5822f0eee44c3625ef0000bb\"] }";
 $hashData = "{$timeStamp}{$accessId}{$requestBody}";
 echo "reqBody: " . $hashData . "\n";
 //Get the SHA256 and hex results
