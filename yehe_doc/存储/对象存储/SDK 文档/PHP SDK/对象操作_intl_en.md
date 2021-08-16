@@ -1,40 +1,40 @@
 ## Overview
 
-This document provides an overview of APIs and SDK code samples related to simple operations, multipart operations, and advanced APIs.
+This document provides an overview of advanced APIs and APIs for simple object operations and multipart upload operations, as well as their SDK code samples.
 
 **Simple operations**
 
 | API                                                          | Operation                   | Description                                       |
 | ------------------------------------------------------------ | ------------------------ | ---------------------------------------------- |
-| [GET Bucket (List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | Querying an object list | Queries some or all objects in a bucket |
-| [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551?) | Querying a list objects and their version history | Queries some or all objects in a bucket and their version history |
-| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploads an object using simple upload | Uploads an object to a bucket |
-| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Querying object metadata | Queries the metadata of an object |
-| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system |
-| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object | Copies a file to a destination path |
-| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting a single object | Deletes a specified object from a bucket |
-| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects from a bucket in a single request |
-| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores an archived object for access |
+| [GET Bucket (List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | Querying objects | Queries some or all the objects in a bucket. |
+| [GET Bucket Object Versions](https://intl.cloud.tencent.com/document/product/436/31551) | Querying objects and their version history | Queries some or all the objects in a bucket and their version history. |
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | Uploading an object in whole | Uploads an object in whole to a bucket. |
+| [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | Querying object metadata | Queries the metadata of an object. |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | Downloading an object | Downloads an object to the local file system. |
+| [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | Copying an object | Copies a file to the destination path. |
+| [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | Deleting an object | Deletes a specified object from a bucket. |
+| [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | Deleting multiple objects | Deletes multiple objects from a bucket. |
+| [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | Restoring an archived object | Restores an archived object for access. |
 
-**Multipart upload operations**
+**Multipart operations**
 
-| API          | Operation                   | Description                                       |
+| API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
-| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying a multipart upload | Queries the information about an ongoing multipart upload |
-| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload task |
-| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading a part | Uploads a part in a multipart upload |
-| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying a part | Copies an object as part |
-| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a specified multipart upload operation |
-| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of the entire object |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload and deletes the uploaded parts |
+| [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | Querying multipart uploads | Queries in-progress multipart uploads. |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | Initializing a multipart upload | Initializes a multipart upload task. |
+| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | Uploading an object in parts | Uploads an object in parts. |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | Copying an object part | Copies a part of an object. |
+| [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | Querying uploaded parts | Queries the uploaded parts of a multipart upload task. |
+| [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | Completing a multipart upload | Completes the multipart upload of an object. |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | Aborting a multipart upload | Aborts a multipart upload task and deletes the uploaded parts. |
 
 ## Simple Operations
 
-### Querying object list
+### Querying objects
 
 #### API description
 
-This API is used to query all the objects in a specified bucket.
+This API (`List Objects`) is used to query all the objects in a specified bucket.
 
 #### Method prototype
 
@@ -44,7 +44,7 @@ public Guzzle\Service\Resource\Model listObjects(array $args = array());
 
 #### Sample request
 
-##### Sample 1. Querying a list of objects with the specified prefix and starting object
+#### Sample 1. Querying a list of objects with the specified prefix starting from a specified object
 
 [//]: # ".cssg-snippet-get-bucket-comp"
 
@@ -70,14 +70,14 @@ try {
 
 | Parameter Name | Type | Description | Required |
 | ------------ | ------ | ------------------------------------------------------------ | -------- |
-| Bucket | String | Bucket name in the format: `BucketName-APPID` | Yes |
-| Delimiter | String | A separator that is left empty by default. For example, you can set it to `/` to indicate folders. | No |
-| EncodingType | String | Indicates the encoding method of the returned value. The value is not encoded by default. Valid value: `url`  | No |
-| Marker | String | Marks the starting point of the returned object list. Entries are listed using UTF-8 binary order by default.  | No |
-| Prefix | String | Filters the object keys prefixed with the value of this parameter. It is left empty by default. | No |
-| MaxKeys | Int | The maximum number of returned objects. Defaults to `1000`. | No |
+| Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
+| Delimiter | String | Separator, left empty by default. For example, you can set it to `/` to indicate folders. | No |
+| EncodingType | String | Encoding method of the returned value. The value is not encoded by default. Valid value: `url`  | No |
+| Marker | String | The object after which the returned list begins. Objects are listed in UTF-8 binary order by default.  | No |
+| Prefix | String | Key prefix to query objects by, left empty by default | No |
+| MaxKeys | Int | The maximum number of returned objects, which is `1000` (the maximum value allowed) by default | No |
 
-#### Response sample
+#### Sample response
 
 ```php
 Guzzle\Service\Resource\Model Object
@@ -131,17 +131,17 @@ Guzzle\Service\Resource\Model Object
 
 #### Response description
 
-| Parameter Name | Type | Description | Parent Node | 
+| Parameter | Type | Description | Parent Node | 
 | ------------ | ------ | ------------------------------------------------------------ | -------- |
-| Name | String | Bucket name in the format: `BucketName-APPID`                         | None |
-| Delimiter | String | A separator that is left empty by default. For example, you can set it to `/` to indicate folders. | None |
-| EncodingType | String | Specifies the encoding type of the returned value | None |
-| Marker | String | Marks the starting point of the returned object list. Entries are listed using UTF-8 binary order by default.  | None |
-| Prefix | String | Filters the object keys prefixed with the value of this parameter.       | None |
-| MaxKeys | Int | The maximum number of returned objects. Defaults to `1000`. | None |
-| IsTruncated | Int    | Indicates whether the returned objects are truncated | None |
+| Name | String | Bucket name in the format of `BucketName-APPID`                         | None |
+| Delimiter | String | Separator, left empty by default. For example, you can set it to `/` to indicate folders. | None |
+| EncodingType | String | | Encoding method of the returned value | None |
+| Marker | String | The object after which the returned list begins. Objects are listed in UTF-8 binary order by default.  | None |
+| Prefix | String | Key prefix by which objects are queried       | None |
+| MaxKeys | Int | The maximum number of returned objects, which is `1000` (the maximum value allowed) by default | None |
+| IsTruncated | Int    | Whether the returned objects are truncated | None |
 | Contents     | Array  | Returned object list                                              | None       |
-| Content | Array | Returned object attributes, contains a list of the metadata of all objects, including 'ETag', 'StorageClass', 'Key', 'Owner', 'LastModified', and 'Size' | Contents |
+| Content | Array | List of the metadata (attributes) of all returned objects, including 'ETag', 'StorageClass', 'Key', 'Owner', 'LastModified', and 'Size' | Contents |
 
 ### Querying objects and their version history 
 
@@ -157,7 +157,7 @@ public Guzzle\Service\Resource\Model listObjectVersions(array $args = array());
 
 #### Sample request
 
-#### Sample 1. Querying a list of past object versions
+#### Sample 1. Querying objects and their version history
 
 [//]: # ".cssg-snippet-list-object-versioning"
 
@@ -182,15 +182,15 @@ try {
 
 | Parameter Name | Type | Description | Required |
 | --------------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket   | String | Bucket name in the format: `BucketName-APPID`     | Yes |
-| Prefix | String  | Filters the object keys prefixed with the value of this parameter. It is left empty by default. | No |
-| Delimiter | String | A separator that is left empty by default. For example, you can set it to `/` to indicate folders. | No |
-| KeyMarker | String      | Marks the starting key of the returned object list. Entries are listed in UTF-8 binary order by default. | No   |
-| VersionIdMarker | String  | Marks the starting VersionId of the returned object list. Entries are listed in UTF-8 binary order by default. | No |
-| MaxKeys | Int  | The maximum number of returned objects. Defaults to `1000`. | No |
-| EncodingType | String | Indicates the encoding method of the returned value. The value is not encoded by default. Valid value: `url`  | No |
+| Bucket   | String | Bucket name in the format of `BucketName-APPID`     | Yes |
+| Prefix | String  | Key prefix to query objects by, which is left empty by default | No |
+| Delimiter | String | Separator, left empty by default. For example, you can set it to `/` to indicate folders. | No |
+| KeyMarker | String      | The key of the object after which the returned object list begins. Entries are listed in UTF-8 binary order by default. | No   |
+| VersionIdMarker | String  | The version ID of the object after which the returned object list begins. Entries are listed in UTF-8 binary order by default. | No |
+| MaxKeys | Int  | The maximum number of returned objects, which is `1000` (the maximum value allowed) by default | No |
+| EncodingType | String | Encoding method of the returned value. The value is not encoded by default. Valid value: `url`  | No |
 
-#### Response sample
+#### Sample response
 
 ```php
 Guzzle\Service\Resource\Model Object
@@ -219,7 +219,7 @@ Guzzle\Service\Resource\Model Object
                             [StorageClass] => STANDARD
                             [Owner] => Array
                                 (
-                                    [UID] => 1251668577
+                                    [UID] => 1250000000
                                 )
                         )
 
@@ -234,7 +234,7 @@ Guzzle\Service\Resource\Model Object
                             [StorageClass] => STANDARD
                             [Owner] => Array
                                 (
-                                    [UID] => 1251668577
+                                    [UID] => 1250000000
                                 )
                         )
                     )
@@ -248,27 +248,27 @@ Guzzle\Service\Resource\Model Object
 
 | Parameter Name | Type | Description | Parent Node | 
 | ------------------- | ------ | ------------------------------------------------------------ | -------- |
-| Name | String | Bucket name in the format: `BucketName-APPID`                         | None |
-| Delimiter | String | A separator that is left empty by default. For example, you can set it to `/` to indicate folders. | None |
-| EncodingType | String|  Specifies the encoding type of the returned value | None |
-| KeyMarker | String  | Marks the starting key of the returned object list. Entries are listed using UTF-8 binary order by default.  | None |
-| VersionIdMarker | String |  Marks the starting VersionId of the returned object list. Entries are listed using UTF-8 binary order by default.   |  None |
-| NextKeyMarker | String | Marks the starting key of the next list of returned objects if IsTruncated is true. | None |
-| NextVersionIdMarker | String | Marks the starting VersionId of the next list of returned objects if `IsTruncated` is set to `true`. | None |
-| Prefix | String | Filters the object keys prefixed with the value of this parameter.       | None |
-| MaxKeys | Int | The maximum number of returned objects. Defaults to `1000`. | None |
-| IsTruncated | Int    | Indicates whether the returned objects are truncated | None |
-| Versions            | Array  | An array of metadata on all the versions of each object                            | None       |
-| Version | Array | List of the metadata of objects with multiple versions, including 'ETag'，'StorageClass'，'Key'，'VersionId'，'IsLatest'，'Owner'，'LastModified'，and 'Size' | Versions |
-| CommonPrefixes | Array  | All objects starting with a particular prefix and ending with the delimiter are grouped as a common prefix | None |
+| Name | String | Bucket name in the format of `BucketName-APPID`                         | None |
+| Delimiter | String | Separator, left empty by default. For example, you can set it to `/` to indicate folders. | None |
+| EncodingType | Encoding method of the returned value | None |
+| KeyMarker | String  | The key of the object after which the returned object list begins. Entries are listed in UTF-8 binary order by default.  | None |
+| VersionIdMarker | String |  The version ID of the object after which the returned object list begins. Entries are listed in UTF-8 binary order by default.   |  None |
+| NextKeyMarker | String | The key of the object after which the next returned list begins if `IsTruncated` is `true` | None |
+| NextVersionIdMarker | String | The version ID of the object after which the next returned list begins if `IsTruncated` is `true` | None |
+| Prefix | String | Key prefix by which objects are queried       | None |
+| MaxKeys | Int | The maximum number of returned objects, which is `1000` (the maximum value allowed) by default | None |
+| IsTruncated | Int    | Whether the returned objects are truncated | None |
+| Versions            | Array  | List of the metadata of all objects with multiple versions                            | None       |
+| Version | Array | List of the metadata of all objects with multiple versions, including `ETag`, `StorageClass`, `Key`, `VersionId`, `IsLatest`, `Owner`, `LastModified`, and `Size` | Versions |
+| CommonPrefixes | Array  | All objects starting with the specified prefix and ending with the specified delimiter | None |
 
 
 
-### Uploading an object using simple upload
+### Uploading an object in whole
 
 #### API description
 
-This API (PUT Object) is used to upload an object to a specified bucket. You can upload objects up to 5 GB in size. Please use [Multipart Upload](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [Advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) to upload objects greater than 5 GB.
+This API (`PUT Object`) is used to upload an object of up to 5 GB to a specified bucket. To upload objects larger than 5 GB, please use [multipart upload APIs] (#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) or [advanced APIs](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89).
 
 #### Method prototype
 
@@ -297,7 +297,7 @@ try {
 }
 ```
 
-#### Sample 2. Upload a file to ARCHIVE
+#### Sample 2. Uploading a file to ARCHIVE
 
 [//]: # ".cssg-snippet-put-object-archive"
 
@@ -337,24 +337,62 @@ try {
 }
 ```
 
+#### Sample 4. Creating an empty virtual directory
+
+[//]: # ".cssg-snippet-put-object-with-new-foler"
+
+```php
+try {
+    $result = $cosClient->putObject(array(
+        'Bucket' => 'examplebucket-125000000', //Format：BucketName-APPID
+        'Key' => 'folder/',
+        'Body' => "",
+    ));
+    // Request successful
+    print_r($result);
+} catch (\Exception $e) {
+    // Request failed
+    echo($e);
+}
+
+```
+
+#### Sample 5. Uploading a ContentMD5-verified local file
+
+```php
+try { 
+    $result = $cosClient->putObject(array( 
+        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID 
+        'Key' => 'exampleobject', 
+        'Body' => fopen('path/to/localFile', 'rb'), 
+        'ContentMD5' => true, 
+    )); 
+    // Request successful 
+    print_r($result);
+} catch (\Exception $e) { 
+    // Request failed 
+    echo($e); 
+}
+```
+
 #### Parameter description
 
-| Parameter Name | Type | Description | Required |
+| Parameter | Type | Description | Required |
 | -------------------- | ----------- | ------------------------------------------------------------ | -------- |
-| Bucket | String | Bucket name in the format: `BucketName-APPID` | Yes |
-| Key | String | Uniquely identifies an object in a bucket. For example, if the object access endpoint is is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg`.  | No |
+| Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
+| Key | String | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`.  | No |
 | ACL | String | ACL of the object, such as private or public-read | No |
-| Body | File/String | Uploaded content                                                   | Yes |
-| CacheControl | String | Cache policy. Sets `Cache-Control`. | No |
-| ContentDisposition | String | File name. Sets `Content-Disposition`. | No |
-| ContentEncoding | String | Encoding format. Sets `Content-Encoding` | No |
-| ContentLanguage | String | Language type. Sets `Content-Language` | No |
-| ContentLength | Int | Sets the length of the request content | No |
-| ContentType | String | Content type. Sets `Content-Type`. | No |
-| Expires | String | Sets `Content-Expires`. | No |
+| Body                 | Stream/String | Uploaded content                                                   | Yes       |
+| CacheControl | String | Cache policy | No |
+| ContentDisposition | String | File name | No |
+| ContentEncoding | String | Encoding format | No |
+| ContentLanguage | String | Language type | No |
+| ContentLength | Int | Length of the uploaded content | No |
+| ContentType | String | Content type | No |
+| Expires | String | Content-Expires | No |
 | Metadata             | Array       | User-defined file metadata                                       | No       |
-| StorageClass | String | Storage class of the object, such as STANDARD (default), STANDARD_IA, and ARCHIVE. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | No |
-| ContentMD5 | String | Sets the MD5 checksum of the uploaded file | No |
+| StorageClass | String | Storage class of the object, such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | No |
+| ContentMD5           | Boolean      | Whether to upload the MD5 checksum of the file for verification                                  | No       |
 | ServerSideEncryption | String | Server-side encryption method | No |
 
 #### Sample response
@@ -368,7 +406,7 @@ Guzzle\Service\Resource\Model Object
             [ETag] => "698d51a19d8a121ce581499d7b701668"
             [VersionId] => MTg0NDUxODMyMTE2ODY0OTExOTk
             [RequestId] => NWQwOGRkNDdfMjJiMjU4NjRfNzVjXzEwNmVjY2M=
-            [ObjectURL] => http://lewzylucd2-1251668577.cos.ap-chengdu.myqcloud.com/123
+            [ObjectURL] => http://examplebucket-1250000000.cos.ap-chengdu.myqcloud.com/123
         )
 
 )
@@ -401,7 +439,7 @@ public Guzzle\Service\Resource\Model headObject(array $args = array());
 ```php
 try {
     $result = $cosClient->headObject(array(
-        'Bucket' => 'examplebucket-1250000000', //Format: BucketName-APPID
+        'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
         'Key' => 'exampleobject',
     )); 
     // Request successful
@@ -414,13 +452,13 @@ try {
 
 #### Parameter description
 
-| Parameter Name | Type | Description | Required |
+| Parameter | Type | Description | Required |
 | --------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket | String | Bucket name in the format: `BucketName-APPID` | Yes |
-| Key | String | Uniquely identifies an object in a bucket. For example, if the object access endpoint is <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg`. | Yes |
-| VersionId | String | Version ID of the specified file if versioning is enabled. | No  |
+| Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
+| Key | String | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | Yes |
+| VersionId | String | Version ID of the specified file if versioning is enabled | No  |
 
-#### Response sample
+#### Sample response
 
 ```php
 Guzzle\Service\Resource\Model Object
@@ -464,14 +502,14 @@ Guzzle\Service\Resource\Model Object
 
 | Parameter Name | Type | Description | Parent Node | 
 | -------------------- | ------ | -------------------------------------------------- | ------ |
-| CacheControl | String | Cache policy. Sets `Cache-Control`. | None |
-| ContentDisposition | String | File name. Sets `Content-Disposition` | None |
-| ContentEncoding | String | Encoding format. Sets `Content-Encoding` | None |
-| ContentLanguage | String | Language type. Sets `Content-Language` | None |
-| ContentLength | Int | Sets the length of the request content | None |
-| ContentType | String | Content type. Sets `Content-Type`. | None |
+| CacheControl | String | Cache policy | None |
+| ContentDisposition | String | File name | None |
+| ContentEncoding | String | Encoding format | None |
+| ContentLanguage | String | Language type | None |
+| ContentLength | Int | Length of the uploaded content | None |
+| ContentType | String | Content type | None |
 | Metadata | Array | User-defined file metadata | None | 
-| StorageClass | String | Storage class of the object, such as STANDARD, STANDARD_IA, and ARCHIVE. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | No |
+| StorageClass | String | Storage class of the object, such as `STANDARD`, `STANDARD_IA`, and `ARCHIVE`. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | None |
 | ServerSideEncryption | String | Server-side encryption method | None |
 | ETag | String | MD5 checksum of the file | None |
 | Restore | String | Restoration information of the archived file | None |
@@ -480,7 +518,7 @@ Guzzle\Service\Resource\Model Object
 
 #### API description
 
-This API is used to download an object.
+This API (`GET Object`) is used to download an object.
 
 #### Method prototype
 
@@ -490,7 +528,7 @@ public Guzzle\Service\Resource\Model getObject(array $args = array());
 
 #### Sample request
 
-#### Sample 1. Download a file
+#### Sample 1. Downloading a file
 
 [//]: # ".cssg-snippet-get-object"
 
@@ -527,7 +565,7 @@ try {
 }
 ```
 
-#### Sample 3. Downloading a file with a specified version ID
+#### Sample 3. Downloading a specified version of a file
 
 [//]: # ".cssg-snippet-get-object-with-versionId"
 
@@ -550,19 +588,19 @@ try {
 
 | Parameter Name | Type | Description | Required |
 | -------------------------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket | String | Bucket name in the format: `BucketName-APPID` | Yes |
-| Key | String | Uniquely identifies an object in a bucket. For example, if the object access endpoint is <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg`. | Yes |
-| SaveAs                     | String | Local path for saving the file                                     | No       |
+| Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
+| Key | String | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | Yes |
+| SaveAs                     | String | Local path to save the file                                     | No       |
 | VersionId                  | String | Version ID of the specified file if versioning is enabled                             | No       |
-| Range | String | Sets the byte range of the file to be downloaded in the format: `bytes=first-last` | No |
-| ResponseCacheControl | String  | Sets the `Cache-Control` in the response header | No |
-| ResponseContentDisposition | String | Sets the `Content-Disposition` in the response header | No |
-| ResponseContentEncoding | String | Sets the `Content-Encoding` in the response header | No |
-| ResponseContentLanguage  | String | Sets the `Content-Language` in the response header | No |
-| ResponseContentType  | String | Sets the `Content-Type` in the response header | No |
-| ResponseExpires  | String | Sets the `Content-Expires` in the response header | No |
+| Range | String | Byte range of the file to download. Format: `bytes=first-last` | No |
+| ResponseCacheControl | String  | `Cache-Control` of the response header | No |
+| ResponseContentDisposition | String | `Content-Disposition` of the response header | No |
+| ResponseContentEncoding | String | `Content-Encoding` of the response header | No |
+| ResponseContentLanguage  | String | `Content-Language` of the response header | No |
+| ResponseContentType  | String | `Content-Type` of the response header | No |
+| ResponseExpires  | String | `Content-Expires` of the response header | No |
 
-#### Response sample
+#### Sample response
 
 ```php
 Guzzle\Service\Resource\Model Object
@@ -614,21 +652,21 @@ Guzzle\Service\Resource\Model Object
 | ETag | String | MD5 checksum of the file | None |
 | Expires | String | Content-Expires | None |
 | Metadata | Array | User-defined file metadata | None |
-| StorageClass | String | Storage class of the object, such as STANDARD (default), STANDARD_IA, and ARCHIVE. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | No |
-| ContentMD5 | String | Sets the MD5 checksum of the uploaded file | None |
+| StorageClass | String | Storage class of the object, such as `STANDARD (default)`, `STANDARD_IA`, and `ARCHIVE`. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | None |
+| ContentMD5 | String | MD5 checksum of the file | None |
 | ServerSideEncryption | String | Server-side encryption method | None |
-| CacheControl | String | Cache policy. Sets `Cache-Control`. | None |
-| ContentDisposition | String | File name. Sets `Content-Disposition` | None |
-| ContentEncoding | String | Encoding format. Sets `Content-Encoding` | None |
-| ContentLanguage | String | Language type. Sets `Content-Language`                              | None |
-| ContentLength | Int | Sets the length of the request content | None |
-| ContentType | String | Content type. Sets `Content-Type`. | None |
-| Metadata | Array | User-defined file metadata | None |
+| CacheControl | String | Cache policy | None |
+| ContentDisposition | String | File name | None |
+| ContentEncoding | String | Encoding format | None |
+| ContentLanguage | String | Language type                              | None |
+| ContentLength | Int | Length of the content | None |
+| ContentType | String | Content type | None |
+| Metadata             | Array       | User-defined file metadata                                       | None       |
 | Restore | String | Restoration information of the archived file | None |
 
 ### Copying an object
 
-This API is used to copy an object to the destination path.
+This API (`PUT Object - Copy`) is used to copy an object to the destination path.
 
 #### Method prototype
 
@@ -657,7 +695,7 @@ try {
 }
 ```
 
-#### Sample 2. Copying an object with specified version ID
+#### Sample 2. Copying a specified version of an object
 
 [//]: # ".cssg-snippet-copy-object-with-versionId"
 
@@ -724,16 +762,16 @@ try {
 
 | Parameter Name | Type | Description | Required |
 | ----------------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket | String | Bucket name in the format: `BucketName-APPID` | Yes |
-| Key | String | Uniquely identifies an object in a bucket. For example, if the object access endpoint is <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg`. | Yes |
-| CopySource | String | Describes the path to the source object, including `APPID`, `Bucket`, `Key`, and `Region`, <br>for example, `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` | Yes |
-| MetadataDirective | String | Valid values: 'Copy': ignore the configured metadata and copy the file directly; 'Replaced': modify the metadata according to the configured metadata. If the destination path is identical to the source path, this parameter must be set to ‘Replaced’. | No |
+| Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
+| Key | String | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | Yes |
+| CopySource | String | Path of the source object, which contains `APPID`, `Bucket`, `Key`, and `Region`, <br>for example, `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` | Yes |
+| MetadataDirective | String | Valid values: `Copy`: ignores the configured metadata and copies the file directly; `Replaced`: modifies the metadata according to the configured metadata. If the destination path is identical to the source path, this parameter must be set to `Replaced`. | No |
 
-### Deleting a single object
+### Deleting an object
 
 #### API description
 
-This API is used to delete a specified object (file/object) from a bucket.
+This API is used to delete a specified object (file) from a bucket.
 
 #### Method prototype
 
@@ -762,17 +800,17 @@ try {
 
 #### Parameter description
 
-| Parameter Name | Type | Description | Required |
+| Parameter | Type | Description | Required |
 | --------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket | String | Bucket name in the format: `BucketName-APPID` | Yes |
-| Key | String | Uniquely identifies an object in a bucket. For example, if the object access endpoint is <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg`. | Yes |
-| VersionId | String | Version ID of the deleted file                                             | No       |
+| Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
+| Key | String | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | Yes |
+| VersionId | String | Version ID of the file to delete                                             | No       |
 
 ### Deleting multiple objects
 
 #### API description
 
-This API is used delete multiple objects from a specified bucket in a single request.
+This API is used to delete multiple objects (files) from a specified bucket.
 
 #### Method prototype
 
@@ -781,6 +819,9 @@ public Guzzle\Service\Resource\Model deleteObjects(array $args = array());
 ```
 
 #### Sample request
+
+#### Sample 1. Deleting multiple specified objects
+
 
 [//]: # ".cssg-snippet-delete-multi-object"
 
@@ -804,17 +845,59 @@ try {
 }
 ```
 
+
+#### Sample 2. Deleting objects with a specified prefix
+
+[//]: # ".cssg-snippet-delete-prefix"
+
+```php
+$cos_prefix = "cos/folder";
+$nextMarker = '';
+$isTruncated = true;
+while ( $isTruncated ) {
+    try {
+        $result = $cosClient->listObjects(
+            ['Bucket' => 'examplebucket-125000000', //Format: BucketName-APPID
+            'Delimiter' => '',
+            'EncodingType' => 'url',
+            'Marker' => $nextMarker,
+            'Prefix' => $cos_prefix,
+            'MaxKeys' => 1000]
+        );    
+        $isTruncated = $result['IsTruncated'];
+        $nextMarker = $result['NextMarker'];
+        foreach ( $result['Contents'] as $content ) {
+            $cos_file_path = $content['Key'];
+            $local_file_path = $content['Key'];
+            // Splice the download path as needed
+            try {
+                $cosClient->deleteObject(array(
+                    'Bucket' => 'examplebucket-125000000', //Format：BucketName-APPID
+                    'Key' => $cos_file_path,
+                ));
+                echo ( $cos_file_path . "\n" );
+            } catch ( \Exception $e ) {
+                echo( $e );
+            }
+        }
+    } catch ( \Exception $e ) {
+        echo( $e );
+    }
+}
+```
+
+
 #### Parameter description
 
-| Parameter Name | Type | Description | Required |
+| Parameter | Type | Description | Required |
 | --------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket | String | Bucket name in the format: `BucketName-APPID` | Yes |
-| Objects   | Array  | List of deleted objects                                                 | Yes       |
-| Object   | Array  | Deleted object                                                 | Yes       |
-| Key | String | Uniquely identifies an object in a bucket. For example, if the object access endpoint is <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg`. | Yes |
-| VersionId | String | Version ID of the deleted file                                             | No       |
+| Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
+| Objects   | Array  | List of objects to delete                                                 | Yes       |
+| Object   | Array  | Objects to delete                                                 | Yes       |
+| Key | String | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | Yes |
+| VersionId | String | Version ID of the file to delete                                             | No       |
 
-#### Response sample
+#### Sample response
 
 ```php
 Guzzle\Service\Resource\Model Object
@@ -853,11 +936,13 @@ Guzzle\Service\Resource\Model Object
 | Code     | String | Error code for failed operations | Errors |
 | Message  | String | Error message for failed operations | Errors |
 
+
+
 ### Restoring an archived object 
 
 #### API description
 
-This (POST Object restore) API is used to restore an archived object for access.
+This API (`POST Object restore`) is used to restore an archived object for access.
 
 #### Method prototype
 
@@ -891,25 +976,25 @@ try {
 
 | Parameter Name | Type | Description | Required |
 | ---------------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket | String | Bucket name in the format: `BucketName-APPID` | Yes |
+| Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
 | Key | String | Object key | Yes |
-| Days | String | Sets the number of days before the temporary copy expires | Yes |
+| Days | String | Number of days before the temporary copy expires | Yes |
 | CASJobParameters | Array  | Restoration information | Yes |
-| Tier | String | Specifies the restoration mode for archived data. For data in the ARCHIVE storage class, `Tier` can be set to `Expedited`, `Standard`, or `Bulk`. For data in DEEP ARCHIVE, `Tier` can be set to `Standard` or `Bulk`. | Yes |
+| Tier | String | Restoration mode. For data in the ARCHIVE storage class, `Tier` can be set to `Expedited`, `Standard`, or `Bulk`. For data in DEEP ARCHIVE, `Tier` can be set to `Standard` or `Bulk`. | Yes |
 
 ## Multipart Operations
 
-Operations related to multipart uploads are as follows:
+Multipart operations include:
 
-- Uploading objects with multipart upload: initializing a multipart upload, uploading parts, and completing a multipart upload.
-- Resuming a multipart upload: querying uploaded parts, uploading remaining parts, and completing a multipart upload.
+- Uploading an object in parts: initializing a multipart upload, uploading parts, and completing a multipart upload
+- Resuming a multipart upload: querying uploaded parts, uploading remaining parts, and completing a multipart upload
 - Deleting uploaded parts
 
-### Querying a multipart upload
+### Querying multipart uploads
 
 #### API description
 
-This API is used to query in-progress multipart uploads in a specified bucket.
+This API (`List Multipart Uploads`) is used to query in-progress multipart uploads in a specified bucket.
 
 #### Method prototype
 
@@ -944,15 +1029,15 @@ try {
 
 | Parameter Name | Type | Description | Required |
 | -------------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket | String | Bucket name in the format: `BucketName-APPID` | Yes |
-| Delimiter | String | A separator that is left empty by default. For example, you can set it to `/` to indicate folders. | No |
-| EncodingType | String | Indicates the encoding method of the returned value. The value is not encoded by default. Valid value: `url`  | No |
-| KeyMarker | String | Marks the starting key of the list of returned parts | No |
-| UploadIdMarker | String | Marks the starting upload ID of the list of returned parts                            | No |
-| Prefix | String | Filters the object keys prefixed with the value of this parameter. It is left empty by default.  | No |
-| MaxUploads  | Int | The maximum number of returned parts. Defaults to `1000`. | No |
+| Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
+| Delimiter | String | Separator, left empty by default. For example, you can set it to `/` to indicate folders. | No |
+| EncodingType | String | Encoding method of the returned value. The value is not encoded by default. Valid value: `url`  | No |
+| KeyMarker | String | The key of the object after which the returned part list begins | No |
+| UploadIdMarker | String | The upload ID of the object after which the returned part list begins                            | No |
+| Prefix | String | Key prefix to query parts by, left empty by default   | No |
+| MaxUploads  | Int | Maximum number of returned parts, which is `1000` (the maximum value allowed) by default | No |
 
-#### Response sample
+#### Sample response
 
 ```php
 Guzzle\Service\Resource\Model Object
@@ -1021,23 +1106,24 @@ Guzzle\Service\Resource\Model Object
 
 | Parameter Name | Type | Description | Parent Node | 
 | ------------ | ------ | ---------------------------------- | ------- |
-| Bucket | String | Bucket name in the format: `BucketName-APPID` | None |
-| IsTruncated | Int    | Indicates whether the returned objects are truncated | None |
+| Bucket | String | Bucket name in the format of `BucketName-APPID` | None |
+| IsTruncated | Int    | Whether the returned objects are truncated | None |
 | Uploads | Array  | List of returned parts                     | None |
 | Upload | Array  | Attributes of the returned parts | Uploads |
 | Key | String | Object key | Upload  |
 | UploadId | String | ID of the multipart upload                 | Upload  |
 | Initiator    | String | Initiator of the multipart upload | Upload  |
-| Owner        | String | Owner of the multipart upload | Upload  |
-| StorageClass | String | Storage class of the multipart upload | Upload  |
-| Initiated    | String | Time the multipart upload was initiated | Upload  |
+| Owner        | String | Owner of the parts | Upload  |
+| StorageClass | String | Storage class of the parts | Upload  |
+| Initiated    | String | Initiation time of the multipart upload | Upload  |
+
 
 
 ### Initializing a multipart upload
 
 #### API description
 
-This API is used to initialize a multipart upload.
+This API (`Initiate Multipart Upload`) is used to initialize a multipart upload.
 
 #### Method prototype
 
@@ -1067,18 +1153,18 @@ try {
 
 | Parameter Name | Type | Description | Required |
 | -------------------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket | String | Bucket name in the format: `BucketName-APPID` | Yes |
-| Key | String | Uniquely identifies an object in a bucket. For example, if the object access endpoint is <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg`. | Yes |
-| CacheControl | String | Cache policy. Sets `Cache-Control`. | No |
-| ContentDisposition | String | File name. Sets `Content-Disposition`. | No |
-| ContentEncoding | String | Encoding format. Sets `Content-Encoding` | No |
-| ContentLanguage | String | Language type. Sets `Content-Language` | No |
-| ContentLength | Int | Sets the length of the request content | No |
-| ContentType | String | Content type. Sets `Content-Type`. | No |
-| Expires | String | Sets `Content-Expires`. | No |
+| Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
+| Key | String | Object key, which uniquely identifies an object in a bucket. For example, if an object’s access endpoint is <br>`examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its key is `doc/pic.jpg`. | Yes |
+| CacheControl | String | Cache policy | No |
+| ContentDisposition | String | File name | No |
+| ContentEncoding | String | Encoding format | No |
+| ContentLanguage | String | Language type | No |
+| ContentLength | Int | Length of the content | No |
+| ContentType | String | Content type | No |
+| Expires | String | `Content-Expires` | No |
 | Metadata | Array | User-defined file metadata | No |
-| StorageClass | String | Storage class of the object, such as STANDARD (default), STANDARD_IA, and ARCHIVE. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | No |
-| ContentMD5 | String | Sets the MD5 checksum of the uploaded file | No |
+| StorageClass | String | Storage class of the object, such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | No |
+| ContentMD5           | Boolean | Whether to upload the MD5 checksum of the file for verification                           | No       |
 | ServerSideEncryption | String | Server-side encryption method | No |
 
 #### Sample response
@@ -1102,15 +1188,16 @@ Guzzle\Service\Resource\Model Object
 
 | Parameter Name | Type | Description | Parent Node | 
 | -------- | ------ | ---------------------------------- | ------ |
-| Bucket | String | Bucket name in the format: `BucketName-APPID` | None |
+| Bucket | String | Bucket name in the format of `BucketName-APPID` | None |
 | Key  | String | Object key | None |
 | UploadId  | String | ID of the multipart upload | None |
 
 
 
-### Uploading a part
 
-This API is used to upload parts.
+### Uploading an object in parts
+
+This API (`Upload Part`) is used to upload an object in parts.
 
 #### Method prototype
 
@@ -1128,8 +1215,8 @@ try {
         'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
         'Key' => 'exampleobject', 
         'Body' => 'string',
-        'UploadId' => 'exampleUploadId', // UploadId is the ID of the multipart upload, which you can get in the response of the initialization of the multipart upload 
-        'PartNumber' => 1, // Part number; COS will merge parts based on part number
+        'UploadId' => 'exampleUploadId', // UploadId is the ID of the multipart upload, which you can get in the response returned after multipart upload initialization 
+        'PartNumber' => 1, // PartNumber is the sequential number of a part, which COS uses to reassemble parts
     )); 
     // Request successful
     print_r($result);
@@ -1143,15 +1230,15 @@ try {
 
 | Parameter Name | Type | Description | Required |
 | ------------- | ----------- | ------------------------------------------------------------ | -------- |
-| Bucket | String | Bucket name in the format: `BucketName-APPID` | Yes |
+| Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
 | Key | String | Object key | Yes |
-| UploadId | String | ID of the multipart upload. This value is returned in the response of the initialization of the multipart Upload | Yes |
+| UploadId | String | ID of the multipart upload, which can be found in the response returned after the initialization of the multipart upload | Yes |
 | Body | File/String | Uploaded content | Yes |
-| PartNumber | Int | Part number; COS will merge parts based on part number | Yes |
-| ContentLength | Int | Sets the length of the request content | No |
-| ContentMD5 | String | Sets the MD5 checksum of the uploaded file | No |
+| PartNumber | Int | Sequential number of a part, which COS uses to reassemble parts | Yes |
+| ContentLength | Int | Length of the content | No |
+| ContentMD5           | Boolean      | Whether to upload the MD5 checksum of the file for verification                                  | No       |
 
-#### Response sample
+#### Sample response
 
 ```php
 Guzzle\Service\Resource\Model Object
@@ -1175,11 +1262,11 @@ Guzzle\Service\Resource\Model Object
 
 
 
-### Copying parts
+### Copying a part of an object
 
 #### API description
 
-This API is used to copy an object as a part.
+This API (`Upload Part - Copy`) is used to copy a part of an object.
 
 #### Method prototype
 
@@ -1197,9 +1284,9 @@ try {
         'Bucket' => 'examplebucket-1250000000', // Format: BucketName-APPID
         'Key' => 'exampleobject', 
         'CopySource' => 'sourcebucket-1250000000.cos.ap-guangzhou.myqcloud.com/sourceObject',
-        'CopySourceRange' => 'bytes=0-1', // For example, copy only the first 2 bytes.
-        'UploadId' => 'exampleUploadId', // UploadId is the ID of the multipart upload, which you can get in the response of the initialization of the multipart upload 
-        'PartNumber' => 1, // Part number; COS will merge parts based on part number
+        'CopySourceRange' => 'bytes=0-1', // Copy only the first 2 bytes.
+        'UploadId' => 'exampleUploadId', // UploadId is the ID of the multipart upload, which you can get in the response returned after multipart upload initialization 
+        'PartNumber' => 1, // PartNumber is the sequential number of a part, which COS uses to reassemble parts
     )); 
     // Request successful
     print_r($result);
@@ -1213,16 +1300,16 @@ try {
 
 | Parameter Name | Type | Description | Required |
 | ------------- | ------ | ------------------------------------------------------------ | -------- |
-| Bucket | String | Bucket name in the format: `BucketName-APPID` | Yes |
+| Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
 | Key | String | Object key | Yes |
-| UploadId | String | ID of the multipart upload. This value is returned in the response of the initialization of the multipart Upload | Yes |
-| CopySource | String | Describes the path to the source object, including `APPID`, `Bucket`, `Key`, and `Region`, <br>for example, `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` | Yes |
-| CopySourceRange | String | Describes the byte range of the source object to copy in the format: `bytes=first-last`. If no range is specified, the entire source object will be copied. | No |
-| PartNumber | Int | Part number; COS will merge parts based on part number | Yes |
-| ContentLength | Int | Sets the length of the request content | No |
-| ContentMD5 | String | Sets the MD5 checksum of the uploaded file | No |
+| UploadId | String | ID of the multipart upload, which can be found in the response returned after the initialization of the multipart upload | Yes |
+| CopySource | String | Path to the source object, which contains `APPID`, `Bucket`, `Key`, and `Region`, <br>for example, `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg` | Yes |
+| CopySourceRange | String | Byte range of the source object to copy in the format of `bytes=first-last`. If no range is specified, the entire source object will be copied. | No |
+| PartNumber | Int | Sequential number of a part, which COS uses to reassemble parts | Yes |
+| ContentLength | Int | Length of the content | No |
+| ContentMD5           | Boolean | Whether to upload the MD5 checksum of the file for verification                           | No       |
 
-#### Response sample
+#### Sample response
 
 ```php
 Guzzle\Service\Resource\Model Object
@@ -1243,14 +1330,14 @@ Guzzle\Service\Resource\Model Object
 | Parameter Name | Type | Description | Parent Node | 
 | ------------ | ------ | ------------------------------ | ------ |
 | ETag | String | MD5 checksum of the part | None |
-| LastModified | String | Returns the date/time the object was last modified in GMT format | None |
+| LastModified | String | Time when the object was last modified, in GMT format | None |
 
 
 ### Querying uploaded parts
 
 #### API description
 
-This API (List Parts) is used to query the uploaded parts of a multipart upload.
+This API (`List Parts`) is used to query the uploaded parts of a multipart upload.
 
 #### Method prototype
 
@@ -1283,13 +1370,13 @@ try {
 
 | Parameter Name | Type | Description | Required |
 | ---------------- | ------ | --------------------------------------- | -------- |
-| Bucket | String | Bucket name in the format: `BucketName-APPID` | Yes |
+| Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
 | Key | String | Object key | Yes |
 | UploadId  | String | ID of the multipart upload | Yes |
-| PartNumberMarker | Int | Marks the starting part of the list of returned parts | No |
-| MaxParts | Int | The maximum number of returned parts; the default value is 1,000. | No |
+| PartNumberMarker | Int | The number of the part after which the returned list begins | No |
+| MaxParts | Int | Maximum number of returned parts, which is `1000` (the maximum value allowed) by default | No |
 
-#### Response sample
+#### Sample response
 
 ```php
 Guzzle\Service\Resource\Model Object
@@ -1341,17 +1428,17 @@ Guzzle\Service\Resource\Model Object
 
 | Parameter Name | Type | Description | Parent Node | 
 | ---------------- | ------ | --------------------------------------- | ------ |
-| Bucket | String | Bucket name in the format: `BucketName-APPID` | None |
+| Bucket | String | Bucket name in the format of `BucketName-APPID` | None |
 | Key | String | Object key | None |
 | UploadId  | String | ID of the multipart upload | None |
-| IsTruncated | Int    | Indicates whether the returned objects are truncated | None |
-| PartNumberMarker | Int | Marks the starting part of the list of returned parts | None |
-| MaxParts | Int | The maximum number of returned parts; the default value is 1,000. | None |
+| IsTruncated | Int    | Whether the returned objects are truncated | None |
+| PartNumberMarker | Int | The number of the part after which the returned list begins | None |
+| MaxParts | Int | Maximum number of returned parts, which is `1000` (the maximum value allowed) by default | None |
 | Initiator | String | Initiator of the multipart upload | None  |
 | Parts | Array  | List of returned parts | None |
 | Part | Array  | Attributes of the returned parts                          | Parts |
-| PartNumber | Int | Part number which serves to identify the part  | Part |
-| LastModified | String | Date/time the part was last modified/time | Part |
+| PartNumber | Int | Part number  | Part |
+| LastModified | String | Time when the part was last modified | Part |
 | ETag | String | MD5 checksum of the part | Part |
 | Size | String | Size of the part | Part |
 
@@ -1361,7 +1448,7 @@ Guzzle\Service\Resource\Model Object
 
 #### API description
 
-This API (Complete Multipart Upload) is used to complete the multipart upload of the entire file.
+This API (`Complete Multipart Upload`) is used to complete the multipart upload of a file.
 
 #### Method prototype
 
@@ -1399,19 +1486,19 @@ try {
 
 | Parameter Name | Type | Description | Required |
 | ---------- | ------ | ---------------------------------- | -------- |
-| Bucket | String | Bucket name in the format: `BucketName-APPID` | Yes |
+| Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
 | Key | String | Object key | Yes |
 | UploadId  | String | ID of the multipart upload | Yes |
 | Parts | Array  | List of parts | Yes |
-| Part | Array | Information on the uploaded parts | Yes |
+| Part | Array | Information of the uploaded parts | Yes |
 | ETag | String | MD5 checksum of the part | Yes |
-| PartNumber | Int | Part number which serves to identify the part | Yes |
+| PartNumber | Int | Part number | Yes |
 
 ### Aborting a multipart upload
 
 #### API description
 
-This API is used to abort a multipart upload and delete the uploaded parts.
+This API (`Abort Multipart Upload`) is used to abort a multipart upload and delete the uploaded parts.
 
 #### Method prototype
 
@@ -1440,9 +1527,9 @@ try {
 
 #### Parameter description
 
-| Parameter Name | Type | Description | Required |
+| Parameter | Type | Description | Required |
 | -------- | ------ | ---------------------------------- | -------- |
-| Bucket | String | Bucket name in the format: `BucketName-APPID` | Yes |
+| Bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
 | Key      | String | Object key                             | Yes       |
 | UploadId  | String | ID of the multipart upload | Yes |
 
@@ -1450,25 +1537,59 @@ try {
 
 ## Advanced APIs (recommended)
 
-This section encapsulates advanced APIs for uploading and copying. You only need to set the corresponding parameters. The APIs will decide internally whether to perform simple upload/copy or multipart upload/copy based on the file size. Before using the APIs, make sure you have completed the initialization as instructed in [Getting Started](https://intl.cloud.tencent.com/document/product/436/12266).
+This section is about the advanced upload and copy APIs COS provides. Pass in the parameters required, and the APIs will determine whether to upload (copy) an object in whole or in parts based on the file size. Before using the APIs, make sure you have completed the initialization step in [Getting Started](https://intl.cloud.tencent.com/document/product/436/12266).
 
-### Uploading an object
+### Composite upload
 
+#### Method prototype
+
+```php
+public Qcloud\Cos\Client upload(string $bucket, string $key, $body, array $options = array());
+```
 #### API description
 
-This API is used to call the simple upload API for small files, and the multipart upload API for large files. For the API parameters, please see those of the `PUT Object` and `Upload Part` APIs.
+This API is used to upload an object. It calls the `PUT Object` API for small files, and the `Upload Part` API for large files. For the parameters required, please see those of the `PUT Object` and `Upload Part` APIs.
+
+#### Parameter description
+
+| Parameter | Type | Description | Required |
+| -------- | ------ | ---------------------------------- | -------- |
+| bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
+| key      | String | Object key                             | Yes       |
+| body                 | Stream/String | Content to upload                                                   | Yes       |
+| options     | Array | Additional configuration items            | No       |
+
+
+
+| options Parameter | Type   | Description | Required |
+| -------- | ------ | ---------------------------------- | -------- |
+| Progress         | Function      | Progress callback. `$totolSize` indicates the total size, and `$uploadedSize` indicates the uploaded size. | No       |
+| PartSize         | Int      | Minimum part size. Default value: 50 MB | No       |
+| Concurrency         | Int      | Concurrency. Default value: 10 | No       |
+| ACL | String | ACL of the object, such as private or public-read | No |
+| CacheControl | String | Cache policy | No |
+| ContentDisposition | String | File name | No |
+| ContentEncoding | String | Encoding format | No |
+| ContentLanguage | String | Language type | No |
+| ContentLength | Int | Length of the content | No |
+| ContentType | String | Content type | No |
+| Expires | String | `Content-Expires` | No |
+| Metadata             | Array       | User-defined file metadata                                       | No       |
+| StorageClass | String | Storage class of the object, such as `STANDARD` (default), `STANDARD_IA`, and `ARCHIVE`. For more information, please see [Storage Class Overview](https://intl.cloud.tencent.com/document/product/436/30925). | No |
+| ContentMD5           | Boolean      | Whether to upload the MD5 checksum of the file for verification                                  | No       |
+| ServerSideEncryption | String | Server-side encryption method | No |
 
 #### Sample request
 
-#### Sample 1. Uploading an object
+#### Sample 1. Uploading a local object
 
 [//]: # ".cssg-snippet-transfer-upload-file"
 
 ```php
 try {
-    $result = $cosClient->Upload(
+    $result = $cosClient->upload(
         $bucket = 'examplebucket-1250000000', // Format: BucketName-APPID
-        $key = 'exampleobject', // The object key
+        $key = 'exampleobject', // Object key
         $body = fopen('path/to/localFile', 'rb')
     );
     // Request successful
@@ -1479,15 +1600,15 @@ try {
 }
 ```
 
-#### Sample 2. Uploading an archived object
+#### Sample 2. Uploading an object to ARCHIVE
 
 [//]: # ".cssg-snippet-transfer-upload-file-archive"
 
 ```php
 try {
-    $result = $cosClient->Upload(
+    $result = $cosClient->upload(
         $bucket = 'examplebucket-1250000000', // Format: BucketName-APPID
-        $key = 'exampleobject', // The object key
+        $key = 'exampleobject', // Object key
         $body = fopen('path/to/localFile', 'rb'),
         $options = array(
             'StorageClass' => 'Archive'
@@ -1501,15 +1622,15 @@ try {
 }
 ```
 
-#### Sample 3. Uploading an object with metadata by specifying the size of a single part
+#### Sample 3. Uploading an object with specified part size and metadata
 
 [//]: # ".cssg-snippet-transfer-upload-file-with-meta"
 
 ```php
 try {
-    $result = $cosClient->Upload(
+    $result = $cosClient->upload(
         $bucket = 'examplebucket-1250000000', // Format: BucketName-APPID
-        $key = 'exampleobject', // The object key
+        $key = 'exampleobject', // Object key
         $body = fopen('path/to/localFile', 'rb'),
         $options = array(
             'Metadata' => array(
@@ -1526,11 +1647,165 @@ try {
 }
 ```
 
-### Object replication
+#### Sample 4. Uploading a folder (batch upload)
+
+[//]: # ".cssg-snippet-transfer-upload-folder"
+
+```php
+<?php
+
+require dirname( __FILE__ ) . '/../vendor/autoload.php';
+
+$secretId = 'COS_SECRETID';
+// Cloud API key SecretId
+$secretKey = 'COS_SECRETKEY';
+// Cloud API key SecretKey
+$region = 'ap-beijing';
+// Set a default bucket region
+$cosClient = new Qcloud\Cos\Client(
+    array(
+        'region' => $region,
+        'schema' => 'https', // Protocol, http by default
+        'credentials'=> array(
+            'secretId'  => $secretId ,
+            'secretKey' => $secretKey
+        )
+    )
+);
+
+function uploadfiles( $path, $cosClient ) {
+    foreach ( scandir( $path ) as $afile ) {
+        if ( $afile == '.' || $afile == '..' ) continue;
+        if ( is_dir( $path.'/'.$afile ) ) {
+            uploadfiles( $path.'/'.$afile, $cosClient );
+        } else {
+            $local_file_path = $path.'/'.$afile;
+            $cos_file_path = $local_file_path;
+            // Splice an upload path as needed
+            try {
+                $cosClient->upload(
+                    $bucket = 'examplebucket-125000000', //Format: BucketName-APPID
+                    $key = $cos_file_path,
+                    $body = fopen( $cos_file_path, 'rb' )
+                );
+            } catch ( \Exception $e ) {
+                echo( $e );
+            }
+        }
+    }
+}
+
+$local_path = '/data/home/folder';
+uploadfiles( $local_path, $cosClient );
+```
+### Composite download
 
 #### API description
 
-This API is used to call the copy object API for small files, and the multipart copy API for large files. For the API parameters, please see those of the `PUT Object - Copy` and `Upload Part - Copy` APIs.
+This API is used to download an object. It calls the `GET Object` API to download a small file in whole and a large file by byte range. For the parameters required, please see those of the `GET Object` API.
+
+#### Method prototype
+
+```php
+public Qcloud\Cos\Client download(string $bucket, string $key, string $saveAs, array $options = array());
+```
+
+| Parameter | Type | Description | Required |
+| -------- | ------ | ---------------------------------- | -------- |
+| bucket | String | Bucket name in the format of `BucketName-APPID` | Yes |
+| key      | String | Object key                             | Yes       |
+| saveAs     | String | Local path to save the file   | Yes       |
+| options     | Array | Additional configuration items            | No       |
+
+
+
+| options Parameter | Type   | Description | Required |
+| -------- | ------ | ---------------------------------- | -------- |
+| Progress         | Function      | Progress callback. `$totolSize` indicates the total size, and `$downloadedSize` indicates the downloaded size. | No       |
+| PartSize         | Int      | Minimum part size. Default value: 50 MB | No       |
+| Concurrency         | Int      | Concurrency. Default value: 10 | No       |
+| ResumableDownload         | Bool      | Whether to enable checkpoint restart. It’s disabled by default. | No       |
+| ResumableTaskFile         | Int      | Checkpoint file path. Default value: `<saveAs.cosresumabletask>` | No       |
+
+
+#### Sample request
+
+#### Sample 1. Downloading an object
+
+[//]: # ".cssg-snippet-download-object"
+
+```php
+$printbar = function($totolSize, $downloadedSize) {
+    printf("downloaded [%d/%d]\n", $downloadedSize, $totolSize);
+};
+
+try {
+    $result = $cosClient->download(
+        $bucket = 'examplebucket-125000000', //Format: BucketName-APPID
+        $key = 'exampleobject',
+        $saveAs = $local_path,
+        $options=['Progress' => $printbar, //Specify the progress
+                  'PartSize' => 10 * 1024 * 1024, //Part size
+                  'Concurrency' => 5, //Number of concurrent parts
+                  'ResumableDownload' => true, //Whether to enable checkpoint restart. It’s disabled by default.
+                  'ResumableTaskFile' => 'tmp.cosresumabletask' //Breakpoint file path. Default value: <localpath>.cosresumabletask
+                ]
+    );
+    // Request successful
+    print_r($result);
+} catch (\Exception $e) {
+    // Request failed
+    echo($e);
+}
+```
+
+#### Sample 2. Downloading a folder
+
+[//]: # ".cssg-snippet-download-folder"
+
+```php
+$cos_path = 'cos/folder';
+$nextMarker = '';
+$isTruncated = true;
+
+while ( $isTruncated ) {
+    try {
+        $result = $cosClient->listObjects(
+            ['Bucket' => 'examplebucket-125000000', //Format: BucketName-APPID
+            'Delimiter' => '',
+            'EncodingType' => 'url',
+            'Marker' => $nextMarker,
+            'Prefix' => $cos_path,
+            'MaxKeys' => 1000]
+        );
+    } catch ( \Exception $e ) {
+        echo( $e );
+    }
+    $isTruncated = $result['IsTruncated'];
+    $nextMarker = $result['NextMarker'];
+    foreach ( $result['Contents'] as $content ) {
+        $cos_file_path = $content['Key'];
+        $local_file_path = $content['Key'];
+        // Splice a download path as needed
+        try {
+            $result = $cosClient->download(
+                $bucket = 'examplebucket-125000000', //Format: BucketName-APPID
+                $key = $cos_file_path,
+                $saveAs = $local_file_path
+            );
+            echo ( $cos_file_path . "\n" );
+        } catch ( \Exception $e ) {
+            echo( $e );
+        }
+    }
+}
+```
+
+### Composite replication
+
+#### API description
+
+This API is used to copy an object. It calls the `PUT Object - Copy` API for small files, and the `Upload Part - Copy` API for large files. For the parameters required, please see those of the `PUT Object - Copy` and `Upload Part - Copy` APIs.
 
 #### Sample request
 
@@ -1542,7 +1817,7 @@ This API is used to call the copy object API for small files, and the multipart 
 try {
     $result = $cosClient->Copy(
         $bucket = 'examplebucket-1250000000', // Format: BucketName-APPID
-        $key = 'exampleobject', // The object key
+        $key = 'exampleobject', // Object key
         $copySorce = array(
             'Region' => 'COS_REGION', 
             'Bucket' => 'sourcebucket-1250000000', 
@@ -1559,13 +1834,13 @@ try {
 
 [//]: # ".cssg-snippet-transfer-copy-object-update-storage-class"
 
-#### Sample 2. Transitioning an object between COS storage classes
+#### Sample 2. Changing the object storage class
 
 ```php
 try {
     $result = $cosClient->Copy(
         $bucket = 'examplebucket-1250000000', // Format: BucketName-APPID
-        $key = 'exampleobject', // The object key
+        $key = 'exampleobject', // Object key
         $copySorce = array(
             'Region' => 'COS_REGION', 
             'Bucket' => 'examplebucket-1250000000', 
@@ -1585,13 +1860,13 @@ try {
 
 [//]: # ".cssg-snippet-transfer-copy-object-update-metadata"
 
-##### Sample 3. Modify object storage attributes
+#### Sample 3. Modifying object storage attributes
 
 ```php
 try {
     $result = $cosClient->Copy(
         $bucket = 'examplebucket-1250000000', // Format: BucketName-APPID
-        $key = 'exampleobject', // The object key
+        $key = 'exampleobject', // Object key
         $copySorce = array(
             'Region' => 'COS_REGION', 
             'Bucket' => 'sourcebucket-1250000000', 

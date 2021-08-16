@@ -4,16 +4,16 @@ This document provides an overview of APIs and SDK code samples related to objec
 
 | API | Operation | Description |
 | :----------------------------------------------------------- | :----------- | :--------------------------- |
-| [PUT   Object tagging](https://intl.cloud.tencent.com/document/product/436/35709) | Setting object tags | Sets tags for an uploaded object |
-| [GET   Object tagging](https://intl.cloud.tencent.com/document/product/436/35710) | Querying object tags | Queries all tags of an object |
-| [DELETE   Object tagging](https://intl.cloud.tencent.com/document/product/436/35711) | Deleting object tags | Deletes all tags of an object |
+| [PUT Object tagging](https://intl.cloud.tencent.com/document/product/436/35709) | Tagging an object | Tags an uploaded object. |
+| [GET Object tagging](https://intl.cloud.tencent.com/document/product/436/35710) | Querying object tags | Queries all tags of an object. |
+| [DELETE Object tagging](https://intl.cloud.tencent.com/document/product/436/35711) | Deleting object tags | Deletes all tags of an object. |
 
 
-## Setting Object Tags
+## Tagging an Object
 
-#### API description
+#### Description
 
-This API (PUT Object tagging) is used to set tags on an existing object. It can help you group and manage existing object resources by adding key-value pairs as object tags. For more information, please see [Object Tagging Overview](https://intl.cloud.tencent.com/document/product/436/35665).
+This API (PUT Object tagging) is used to tag an existing object by adding tag key-value pairs. This can help you group and manage your existing objects. For more information, please see [Object Tagging Overview](https://intl.cloud.tencent.com/document/product/436/35665).
 
 #### Method prototype
 
@@ -25,7 +25,7 @@ func (s *ObjectService) PutTagging(ctx context.Context, name string, opt *Object
 
 [//]: # (.cssg-snippet-put-object-tagging)
 ```go
-// Sample 1. Use PutTagging to set tags for in-cloud objects.
+// Sample 1. Use PutTagging to tag in-cloud objects
 opt := &cos.ObjectPutTaggingOptions{
     TagSet: []cos.ObjectTaggingTag{
         {
@@ -44,7 +44,7 @@ if err != nil {
     //ERROR
 }
 
-// Sample 2. Set object tags upon the upload.
+// Sample 2. Tag an object when it is uploaded
 name = "test/example"
 f := strings.NewReader("test")
 popt := &cos.ObjectPutOptions{
@@ -69,16 +69,16 @@ type BucketTaggingTag struct {
 ```
 | Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | ---- |
-| key  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
+| name  | Object key, the unique identifier of an object in a bucket. For example, if the object endpoint is `examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/doc/pic.jpg`, its object key is `doc/pic.jpg` | String | Yes |
 | TagSet   | A set of up to 10 tags | Array  | Yes |
-| Key | Tag key, which can contain up to 128 characters. A tag key can contain English letters, numbers, spaces, plus signs, minus signs, underscores, equals signs, dots, colons, and slashes | String | Yes |
-| Value | Tag value, which can contain up to 256 characters. A tag value can contain English letters, numbers, spaces, plus signs, minus signs, underscores, equals signs, dots, colons, and slashes | String | Yes |
+| Key | Tag key. A tag key must not exceed 128 characters and can contain English letters, numbers, spaces, plus signs, minus signs, underscores, equals signs, dots, colons, and slashes. | String | Yes |
+| Value | Tag value. A tag value must not exceed 256 characters and can contain English letters, numbers, spaces, plus signs, minus signs, underscores, equals signs, dots, colons, and slashes. | String | Yes |
 
 ## Querying Object Tags
 
-#### API description
+#### Description
 
-This API (GET Object tagging) is used to query existing tags set on an object.
+This API (GET Object tagging) is used to query the existing tags of an object.
 
 #### Method prototype
 
@@ -97,7 +97,7 @@ if err != nil {
 }
 ```
 
-#### Result description
+#### Response
 ```go
 type ObjectGetTaggingResult struct {
     TagSet  []ObjectTaggingTag
@@ -111,14 +111,14 @@ type BucketTaggingTag struct {
 | Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | ------ |
 | TagSet   | A set of up to 10 tags    | Array  |
-| Key | Tag key, which can contain up to 128 characters. A tag key can contain English letters, numbers, spaces, plus signs, minus signs, underscores, equals signs, dots, colons, and slashes | String |
-| Value | Tag value, which can contain up to 256 characters. A tag value can contain English letters, numbers, spaces, plus signs, minus signs, underscores, equals signs, dots, colons, and slashes | String |
+| Key | Tag key. A tag key must not exceed 128 characters and can contain English letters, numbers, spaces, plus signs, minus signs, underscores, equals signs, dots, colons, and slashes. | String |
+| Value | Tag value. A tag value must not exceed 256 characters and can contain English letters, numbers, spaces, plus signs, minus signs, underscores, equals signs, dots, colons, and slashes. | String |
 
 ## Deleting Object Tags
 
-#### API description
+#### Description
 
-This API (GET Object tagging) is used to query existing tags set on an object.
+This API (DELETE Object tagging) is used to delete the existing tags of an object.
 
 #### Method prototype
 
