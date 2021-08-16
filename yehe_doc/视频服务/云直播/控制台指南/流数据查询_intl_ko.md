@@ -1,4 +1,4 @@
-CSS 콘솔로 이동하여 [[스트림 데이터 조회]](https://console.cloud.tencent.com/live/analysis/stream)를 선택하고 스트림 ID를 입력하면 .스트림 푸시 데이터 및 기록 정보를 조회할 수 있습니다.다음 이미지를 참조하십시오.
+CSS 콘솔로 이동하여 [[스트림 데이터 조회]](https://console.cloud.tencent.com/live/analysis/stream)를 선택하고 스트림 ID를 입력하면.스트림 푸시 데이터 및 기록 정보를 조회할 수 있습니다.다음 이미지를 참조하십시오.
 
 ![](https://main.qcloudimg.com/raw/a279799c69bbf8237f309c24d9bbc6f0.png)
 
