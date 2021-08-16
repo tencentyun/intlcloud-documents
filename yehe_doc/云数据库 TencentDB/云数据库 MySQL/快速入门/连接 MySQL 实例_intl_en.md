@@ -8,7 +8,7 @@ This document describes how to connect to an initialized TencentDB for MySQL ins
 ## Connection Methods
 TencentDB for MySQL can be connected in the following methods:
 - **Private network connection**: a CVM instance can be used to connect to the private network address of a TencentDB instance. This method relies on the high-speed private network of Tencent Cloud and features low delay.
- - The two instances must be in the same [VPC](https://intl.cloud.tencent.com/document/product/215/535) in the same region, or both in the classic network.
+ - The two instances must be under the same account and in the same [VPC](https://intl.cloud.tencent.com/document/product/215/535) in the same region, or both in the classic network.
  - The private network address is provided by TencentDB by default and can be viewed in the instance list or on the instance details page in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb).
 >?CVM and TencentDB instances in different VPCs (under the same or different accounts in the same or different regions) can be interconnected over private network through [Cloud Connect Network](https://intl.cloud.tencent.com/zh/document/product/1003).
 >
@@ -20,7 +20,7 @@ TencentDB for MySQL can be connected in the following methods:
 
 The following describes how to connect to a TencentDB for MySQL instance from Windows and Linux CVM instances over the private and public networks.
 ## Connecting from a Windows CVM Instance
-1. Log in to a Windows CVM instance. For more information, please see <a href="https://intl.cloud.tencent.com/zh/document/product/213/10516" target="_blank">Customizing Windows CVM Configurations</a>.
+1. Log in to a Windows CVM instance. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/213/10516" target="_blank">Customizing Windows CVM Configurations</a>.
 2. Download a standard SQL client.
 >?We recommend that you download MySQL Workbench. Click [here](https://dev.mysql.com/downloads/workbench/) and download an installer based on your operating system.
 >
@@ -33,7 +33,7 @@ The following describes how to connect to a TencentDB for MySQL instance from Wi
 >- You can click **Download Prerequisites** in the MySQL Workbench installation wizard to enter the corresponding page to download and install them. Then, install MySQL Workbench.
 >
 ![](https://main.qcloudimg.com/raw/1af292f989f03f3e02e1200b77cb70c1.png)
-5. Open MySQL Workbench, select **Database** > **Connect to Database**, enter the private (or public) network address, username, and password of your TencentDB for MySQL instance and click **OK** to log in.
+5. Open MySQL Workbench, select **Database** > **Connect to Database**, enter your TencentDB for MySQL instance's private (or public) network address, username, and password and click **OK** to log in.
  - **Hostname**: enter the private (or public) network address, which can be viewed with the port on the instance details page in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). For public network address, check whether it has been enabled as instructed in [Enabling Public Network Address](#waiwang).
  - **Port**: private (or public) network port
  - **Username**: the username is **root** by default. For public network connection, we recommend that you [create a separate account](https://intl.cloud.tencent.com/document/product/236/31900) for easier connection control.
@@ -43,7 +43,7 @@ The following describes how to connect to a TencentDB for MySQL instance from Wi
 ![](https://main.qcloudimg.com/raw/33f081e99c384258bbc5ed3683ed4d7d.png)
 
 ## Connecting from a Linux CVM Instance
-1. Log in to a Linux CVM instance. For more information, please see <a href="https://cloud.tencent.com/document/product/213/2936" target="_blank">Customizing Linux CVM Configurations</a>.
+1. Log in to a Linux CVM instance. For more information, please see <a href="https://intl.cloud.tencent.com/document/product/213/10517" target="_blank">Customizing Linux CVM Configurations</a>.
 2. Taking a CVM instance on CentOS 7.2 (64-bit) as an example, run the following command to install the MySQL client.
 ```
 yum install mysql
@@ -77,8 +77,15 @@ mysql -h hostname -P port -u username -p
 Below takes `show databases;` as an example:
 ![](https://main.qcloudimg.com/raw/2873c8675d0ce123771a63dbf05df8b9.png)
 
+## Appendix 1. Troubleshooting Connection Errors
+If you encounter connection errors, we recommend you use [One-Click Connectivity Checker](https://intl.cloud.tencent.com/document/product/236/31927) to troubleshoot the problem first and then find the corresponding solution in [Instance Connection Failure](https://intl.cloud.tencent.com/document/product/236/40333) according to the check report.
 
-## [Appendix 1. Enabling Public Network Address](id:waiwang)
+## Appendix 2. Network Connectivity Verification Method
+We recommend you troubleshoot and locate network connectivity problems quickly with the `telnet` command. For more information, please see [Prohibition of Ping Command](https://intl.cloud.tencent.com/document/product/236/31929).
+
+If the verification with `telnet` found that the network access of the TencentDB instance was good, but an error was reported when you tried to log in to it via the command line in the CVM instance, please see [FAQs > Connection and Login > Connection](https://intl.cloud.tencent.com/document/product/236/37783).
+
+## [Appendix 3. Enabling Public Network Address](id:waiwang)
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb/). In the instance list, click an instance name or **Manage** in the **Operation** column to enter the instance details page.
 2. In the **Basic Info** section, click **Enable** next to **Public Network Address**.
 >?If the **Basic Info** section displays the public IP and port, the public network address has been enabled.
@@ -88,12 +95,3 @@ Below takes `show databases;` as an example:
 >?
 >- After the public network address is enabled successfully, it can be viewed in basic information.
 >- The public network access can be disabled using the switch. When it is enabled again, the public network address corresponding to the domain name remains the same.
-
-## Appendix 2. Network Connectivity Verification Method
-We recommend you troubleshoot and locate network connectivity problems quickly with the `telnet` command. For more information, please see [Prohibition of Ping Command](https://intl.cloud.tencent.com/document/product/236/31929).
-
-If the verification with `telnet` found that the network access of the TencentDB instance was good, but an error was reported when you tried to log in to it via the command line in the CVM instance, please see [FAQs > Connection and Login > Connection](https://intl.cloud.tencent.com/document/product/236/37783).
-
-## Appendix 3. Troubleshooting Connection Errors
-If you encounter connection errors, we recommend you use [One-Click Connectivity Checker](https://intl.cloud.tencent.com/document/product/236/31927) to troubleshoot the problem first and then find the corresponding solution in [Troubleshooting Connection Errors](https://intl.cloud.tencent.com/document/product/236/37864) according to the check report.
-

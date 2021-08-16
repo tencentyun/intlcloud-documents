@@ -8,10 +8,11 @@
 ## 地域
 腾讯云不同地域之间完全隔离，保证不同地域间最大程度的稳定性和容错性。建议您选择最靠近您用户的地域，可降低访问时延、提高下载速度。用户启动实例、查看实例等操作都是区分地域属性的。
 云产品内网通信的注意事项如下：
+
 - 同地域下（保障同一账号，且同一个 VPC 内）的云资源之间可通过内网互通，可以直接使用 [内网 IP](https://intl.cloud.tencent.com/document/product/213/5225) 访问。
 - 不同地域之间网络完全隔离，不同地域之间的云产品默认不能通过内网互通。
 - 不同地域之间的云产品，可以通过 [公网 IP](https://intl.cloud.tencent.com/document/product/213/5224) 访问 Internet 的方式进行通信。处于不同私有网络的云产品，可以通过 [云联网](https://intl.cloud.tencent.com/document/product/1003) 进行通信，此通信方式更较为高速、稳定。
-- [负载均衡](https://intl.cloud.tencent.com/document/product/214) 当前默认支持同地域流量转发，绑定本地域的云服务器。如果开通 [跨地域绑定](https://intl.cloud.tencent.com/document/product/214/38441) 功能，则可支持负载均衡跨地域绑定云服务器。
+- [负载均衡](https://intl.cloud.tencent.com/document/product/214) 当前默认支持同地域流量转发，绑定本地域的云服务器。如果开通 [跨地域绑定](https://intl.cloud.tencent.com/document/product/214/12014) 功能，则可支持负载均衡跨地域绑定云服务器。
 
 ## 可用区
 可用区（Zone）是指腾讯云在同一地域内电力和网络互相独立的物理数据中心。目标是能够保证可用区间故障相互隔离（大型灾害或者大型电力故障除外），不出现故障扩散，使得用户的业务持续在线服务。通过启动独立可用区内的实例，用户可以保护应用程序不受单一位置故障的影响。
@@ -27,7 +28,7 @@
 <tbody>
 <tr><th>地域</th><th>可用区</th></tr>
 <tr>
-<td rowspan="5">华南地区（广州）<br> ap-guangzhou</td>
+<td rowspan="6">华南地区（广州）<br> ap-guangzhou</td>
 <td>广州一区（已售罄）<br> ap-guangzhou-1</td></tr>	
 <tr>
 <td>广州二区<br> ap-guangzhou-2</td></tr>
@@ -37,6 +38,8 @@
 <td>广州四区<br> ap-guangzhou-4</td></tr>
 <tr>
 <td>广州六区<br> ap-guangzhou-6</td></tr>
+<tr>
+<td>广州七区<br> ap-guangzhou-7</td></tr>
 <tr>
 <td rowspan="5">华东地区（上海）<br>ap-shanghai</td>
 <td>上海一区<br>ap-shanghai-1</td></tr>
@@ -78,10 +81,12 @@
 <td >西南地区（重庆）<br>ap-chongqing</td>
 <td>重庆一区<br>ap-chongqing-1</td></tr>
 <tr>
-<td rowspan="2">港澳台地区（中国香港）<br>ap-hongkong</td>
+<td rowspan="3">港澳台地区（中国香港）<br>ap-hongkong</td>
 <td>香港一区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-1</td></tr>
 <tr>
 <td>香港二区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-2</td></tr>
+<tr>
+<td>香港三区（中国香港节点可用于覆盖港澳台地区）<br>ap-hongkong-3</td></tr>
 </tbody></table>	
 
 
@@ -100,8 +105,10 @@
 <td>亚太东南（雅加达）<br>ap-jakarta</td>
 <td>雅加达一区（雅加达节点可用于覆盖亚太东南地区）<br>ap-jakarta-1</td></tr>
 <tr>
-<td >亚太东南（曼谷）<br>ap-bangkok </td>
-<td >曼谷一区  （曼谷节点可用于覆盖亚太东南地区）<br>ap-bangkok-1</td>
+<td rowspan="2">亚太东南（曼谷）<br>ap-bangkok </td>
+<td >曼谷一区（曼谷节点可用于覆盖亚太东南地区）<br>ap-bangkok-1</td>
+<tr>
+<td >曼谷二区（曼谷节点可用于覆盖亚太东南地区）<br>ap-bangkok-2</td>
 <tr>
 <td  rowspan="2">亚太南部（孟买）<br>ap-mumbai</td>
 <td>孟买一区（孟买节点可用于覆盖亚太南部地区）<br>ap-mumbai-1</td></tr>
@@ -113,8 +120,10 @@
 <tr>
 <td>首尔二区（首尔节点可用于覆盖亚太东北地区）<br>ap-seoul-2</td></tr>
 <tr>
-<td >亚太东北（东京）<br>ap-tokyo</td>
+<td rowspan="2">亚太东北（东京）<br>ap-tokyo</td>
 <td>东京一区（东京节点可用于覆盖亚太东北地区）<br>ap-tokyo-1</td></tr>
+<tr>
+<td>东京二区（东京节点可用于覆盖亚太东北地区）<br>ap-tokyo-2</td></tr>
 <tr>
 <td rowspan="2">美国西部（硅谷）<br>na-siliconvalley</td>
 <td>硅谷一区（硅谷节点可用于覆盖美国西部地区）<br>na-siliconvalley-1</td></tr>
@@ -129,8 +138,10 @@
 <td>北美地区（多伦多）<br>na-toronto</td>
 <td>多伦多一区（多伦多节点可用于覆盖北美地区）<br>na-toronto-1</td></tr>
 <tr>
-<td>欧洲地区（法兰克福）<br>eu-frankfurt</td>
+<td rowspan="2">欧洲地区（法兰克福）<br>eu-frankfurt</td>
 <td>法兰克福一区（法兰克福节点可用于覆盖欧洲地区）<br>eu-frankfurt-1</td></tr>
+<tr>
+<td>法兰克福二区（法兰克福节点可用于覆盖欧洲地区）<br>eu-frankfurt-2</td></tr>
 <tr>
 <td >欧洲地区（莫斯科）<br>eu-moscow</td>
 <td>莫斯科一区（莫斯科节点可用于覆盖欧洲地区）<br>eu-moscow-1</td></tr>

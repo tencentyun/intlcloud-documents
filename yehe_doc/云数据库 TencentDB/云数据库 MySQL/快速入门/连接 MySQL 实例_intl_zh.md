@@ -8,7 +8,7 @@
 ## 连接方式
 连接云数据库 MySQL 的方式如下：
 - **内网地址连接**：通过内网地址连接云数据库 MySQL，使用云服务器 CVM 直接连接云数据库的内网地址，这种连接方式使用内网高速网络，延迟低。
- - 云服务器和数据库须是同一个[ VPC](https://intl.cloud.tencent.com/document/product/215/535) 内（保障同一个地域），或同在基础网络内。
+ - 云服务器和数据库须是同一账号，且同一个[ VPC](https://intl.cloud.tencent.com/document/product/215/535) 内（保障同一个地域），或同在基础网络内。
  - 内网地址系统默认提供，可在 [MySQL 控制台](https://console.cloud.tencent.com/cdb) 的实例列表或实例详情页查看。
 >?对于不同的 VPC 下（包括同账号/不同账号，同地域/不同地域）的云服务器和数据库，内网连接方式请参见 [云联网](https://intl.cloud.tencent.com/zh/document/product/1003)。
 >
@@ -20,7 +20,7 @@
 
 下面示例分别介绍如何从 Windows 云服务器或 Linux 云服务器登录，以内外网两种不同的方式连接云数据库 MySQL。
 ## 从 Windows 云服务器连接
-1. 登录到 Windows 云服务器，请参见 <a href="https://intl.cloud.tencent.com/zh/document/product/213/10516" target="_blank">快速配置 Windows 云服务器</a>。
+1. 登录到 Windows 云服务器，请参见 <a href="https://intl.cloud.tencent.com/document/product/213/10516" target="_blank">快速配置 Windows 云服务器</a>。
 2. 下载一个标准的 SQL 客户端。
 >?推荐您下载 MySQL Workbench，并根据您的系统来下载适配版本的安装程序，下载地址请参见 https://dev.mysql.com/downloads/workbench/。
 >
@@ -43,7 +43,7 @@
 ![](https://main.qcloudimg.com/raw/33f081e99c384258bbc5ed3683ed4d7d.png)
 
 ## 从 Linux 云服务器连接
-1. 登录到 Linux 云服务器，请参见 <a href="https://cloud.tencent.com/document/product/213/2936" target="_blank">快速配置 Linux 云服务器</a>。
+1. 登录到 Linux 云服务器，请参见 <a href="https://intl.cloud.tencent.com/document/product/213/10517" target="_blank">快速配置 Linux 云服务器</a>。
 2. 以 CentOS 7.2 64 位系统的云服务器为例，执行如下命令安装 MySQL 客户端：
 ```
 yum install mysql
@@ -77,8 +77,15 @@ mysql -h hostname -P port -u username -p
 下图中以`show databases;`为例：
 ![](https://main.qcloudimg.com/raw/2873c8675d0ce123771a63dbf05df8b9.png)
 
+## 附录1：无法连接实例问题
+若遇到无法连接实例相关问题，建议您使用 [一键连接检查工具](https://intl.cloud.tencent.com/document/product/236/31927) 进行排查，根据检查报告提示，在 [无法连接实例](https://intl.cloud.tencent.com/document/product/236/40333) 查找相应解决方案。
 
-## [附录1：开启外网连接地址](id:waiwang)
+## 附录2：网络连通性验证方法
+建议您使用 telnet 命令来快速排查和定位网络连通性问题，请参见 [telnet 命令](https://intl.cloud.tencent.com/document/product/236/31929)。
+
+若 telnet 验证云数据库网络访问正常后，如在云服务器上通过命令行登录云数据库报错，请参见 [连接实例相关问题](https://intl.cloud.tencent.com/document/product/236/37783)。
+
+## [附录3：开启外网连接地址](id:waiwang)
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb/ )，在实例列表中，单击实例名或“操作”列的【管理】，进入实例详情页面。
 2. 在实例详情页下的“外网地址”处，单击【开启】。
 >?若有外网地址和外网端口信息，说明已开启外网地址。
@@ -88,12 +95,3 @@ mysql -h hostname -P port -u username -p
 >?
 >- 开启成功后，即可在基本信息中查看到外网地址。
 >- 通过开关可以关闭外网连接权限，重新开启外网，域名对应的外网地址不变。
-
-## 附录2：网络连通性验证方法
-建议您使用 telnet 命令来快速排查和定位网络连通性问题，请参见 [telnet 命令](https://intl.cloud.tencent.com/document/product/236/31929)。
-
-若 telnet 验证云数据库网络访问正常后，如在云服务器上通过命令行登录云数据库报错，请参见 [连接实例相关问题](https://intl.cloud.tencent.com/document/product/236/37783)。
-
-## 附录3：无法连接实例问题
-若遇到无法连接实例相关问题，建议您使用 [一键连接检查工具](https://intl.cloud.tencent.com/document/product/236/31927) 进行排查，根据检查报告提示，在 [解决无法连接实例问题](https://intl.cloud.tencent.com/document/product/236/37864) 查找相应解决方案。
-

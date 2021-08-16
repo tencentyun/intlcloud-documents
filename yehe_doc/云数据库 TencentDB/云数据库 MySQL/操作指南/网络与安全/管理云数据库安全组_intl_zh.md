@@ -1,5 +1,5 @@
 ## 操作场景
-[安全组](https://intl.cloud.tencent.com/zh/document/product/213/12452) 是一种有状态的包含过滤功能的虚拟防火墙，用于设置单台或多台云数据库的网络访问控制，是腾讯云提供的重要的网络安全隔离手段。安全组是一个逻辑上的分组，您可以将同一地域内具有相同网络安全隔离需求的云数据库实例加到同一个安全组内。云数据库与云服务器等共享安全组列表，安全组内基于规则匹配，具体规则与限制请参见 [安全组详细说明](https://intl.cloud.tencent.com/document/product/215/38750)。
+[安全组](https://intl.cloud.tencent.com/document/product/213/12452) 是一种有状态的包含过滤功能的虚拟防火墙，用于设置单台或多台云数据库的网络访问控制，是腾讯云提供的重要的网络安全隔离手段。安全组是一个逻辑上的分组，您可以将同一地域内具有相同网络安全隔离需求的云数据库实例加到同一个安全组内。云数据库与云服务器等共享安全组列表，安全组内基于规则匹配，具体规则与限制请参见 [安全组详细说明](https://intl.cloud.tencent.com/document/product/215/38750)。
 
 >?
 >- 云数据库 MySQL 安全组目前仅支持私有网络 VPC 内网访问和外网访问的网络控制，暂不支持对基础网络的网络控制。
@@ -42,7 +42,10 @@
 	<tr><td>引用 <a href="https://intl.cloud.tencent.com/document/product/215/31867">参数模板</a> 中的 IP 地址对象或 IP 地址组对象</td><td>-</td></tr>
 </table>
  - 协议端口：填写协议类型和端口范围，您也可以引用 [参数模板](https://intl.cloud.tencent.com/document/product/215/31867) 中的协议端口或协议端口组。
-  >?连接云数据库 MySQL 须开通3306协议端口。
+  >!连接云数据库 MySQL，须放通 MySQL 实例端口。
+  >- MySQL 内网默认端口为3306，同时支持自定义端口，若修改过默认端口号，安全组中需放通 MySQL 新端口信息。
+  >- MySQL 外网默认端口为60719。您可登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb) 单击实例 ID 进入详情页查看端口。
+  >![](https://main.qcloudimg.com/raw/9f471c644eb9a5aa86bd092fdebd0255.png))
  - 策略：默认选择“允许”。
     - 允许：放行该端口相应的访问请求。
     - 拒绝：直接丢弃数据包，不返回任何回应信息。
@@ -64,7 +67,7 @@
 
 >!目前云数据库 MySQL 安全组仅支持**私有网络云数据库**配置。
 
-1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例名，进入实例管理页面。
+1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，单击实例 ID，进入实例管理页面。
 2. 在实例管理页面，选择【安全组】页，单击【配置安全组】。
 3. 在弹出的对话框，选择需要绑定的安全组，单击【确认】，即可完成安全组绑定云数据库的操作。 
 
