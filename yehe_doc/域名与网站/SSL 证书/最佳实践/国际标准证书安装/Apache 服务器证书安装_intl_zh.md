@@ -96,7 +96,7 @@ RewriteCond %{SERVER_PORT} !^443$
 RewriteRule ^(.*)?$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
 </Directory>
 ```
-4. 重新启动 Apache 服务器，即可使用 `http://cloud.tencent.com` 进行访问。
+5. 重新启动 Apache 服务器，即可使用 `http://cloud.tencent.com` 进行访问。
 
 >!操作过程如果出现问题，请您 [联系我们](https://intl.cloud.tencent.com/document/product/1007/30951)。
 
