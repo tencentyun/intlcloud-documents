@@ -1,32 +1,3 @@
-CLS supports a datetime function that you can use to convert format, group and aggregate the log time for statistical analysis. Each CLS log comes with a long timestamp collection time in milliseconds, such as `__TIMESTAMP__` (1597807109000).
-
-## Datetime Conversion Function cast
-
-| Function Name                          | Description                                                        | Sample                                                         |
-| :------------------------------- | :----------------------------------------------------------- | ------------------------------------------------------------ |
-| `cast(date_string as timestamp)` | Converts a long or text timestamp into `TIMESTAMP`, which can be used in [time grouping function histogram](https://intl.cloud.tencent.com/document/product/614/36746) and time display  | cast(1597807109000 as timestamp)<br/>Result: 2020-08-19T03:18:29.000Z |
-
-#### Parameter limits
-
-1. Only the long timestamp in milliseconds (such as 1597807109000) can be converted. The long timestamp in seconds or microseconds needs to first undergo a base conversion.
-2. Only the text timestamp in the ISO 8601 datetime format (such as 2019-12-25T16:17:01+08:00) can be converted.
-
-## Scenarios
-
-1. Convert the CLS log collection time `__TIMESTAMP__` to `TIMESTAMP`.
-
-```plaintext
-* | select cast(__TIMESTAMP__ as timestamp)
-```
-
-2. Covert the log’s long timestamp in seconds (such as `time:1597807109`) to `TIMESTAMP`.
-
-```
-* | select cast(time*1000 as timestamp)
-```
-
-
-
 ## Time Grouping Function histogram
 
 CLS supports a histogram function that you can use to group and aggregate the log data at a given interval. For example, you can use it to count page views (PV) every five minutes.
