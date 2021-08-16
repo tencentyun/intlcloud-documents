@@ -9,15 +9,15 @@ Servers on the internet communicate with each other through IP addresses. Howeve
 The following are common domain name resolution types:
 
 - A record resolution: it specifies the IPv4 address of the domain name.
-- Select "A" as the record type.
-- Enter the server IP address provided by Tencent Cloud as the record value.
-- MX priority does not need to be configured.
-- Set TTL to 600 by default.
+  - Select "A" as the record type.
+  - Enter the server IP address provided by Tencent Cloud as the record value.
+  - MX priority does not need to be configured.
+  - Set TTL to 600 by default.
 - CNAME record resolution: it is used to point a domain name to another one which will be used to provide the IP address.
-- Select "CNAME" as the record type.
-- Enter the CNAME record generated after the protected domain name is added to WAF as the record value.
-- MX priority does not need to be configured.
-- Set TTL to 600 by default.
+  - Select "CNAME" as the record type.
+  - Enter the CNAME record generated after the protected domain name is added to WAF as the record value.
+  - MX priority does not need to be configured.
+  - Set TTL to 600 by default.
 
 ## Security Group
 
