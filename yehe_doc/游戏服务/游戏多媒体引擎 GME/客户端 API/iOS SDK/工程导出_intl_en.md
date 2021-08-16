@@ -17,6 +17,5 @@ This document mainly describes the notes on exporting the iOS project so that th
 4. The GME SDK for iOS requires the following permissions:
  - Required background modes: allows running in the background (optional).
  - Microphone Usage Description: allows microphone permission.
-5. Grant the `Allow Arbitrary Loads` permission as shown below:
-   ![](https://main.qcloudimg.com/raw/1aebf9111fd95e3e6b6fb4eb08193a26.png)
+
 
