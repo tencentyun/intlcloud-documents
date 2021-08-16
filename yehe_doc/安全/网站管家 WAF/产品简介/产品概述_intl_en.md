@@ -31,7 +31,7 @@ In the following scenarios, the WAF service can provide effective defense and pr
 
 - **Data leakage (leakage of core information assets)**
   For many enterprises, websites are typically used as the entries to information assets. Hackers can steal enterprise information assets by means of web intrusion, resulting in incalculable losses to enterprises.
-- **Malicious access and data crawling (data manipulation by opponents causes service unavailable)**
+- **Malicious access and data crawling (data manipulation by business opponents causes service unavailable)**
   Hackers use zombie computers to launch CC attacks on the web server. As a result, the resources available are exhausted and the server fails to respond normally. Malicious users capture the core content of websites (literature blogs, recruitment sites, forum sites, and e-commerce site comments) through web crawling. Product details on e-commerce websites are scraped deliberately by competitors for research. Speculators seek for arbitrage by searching for low-price product information or obtaining marketing intelligence in advance.
 - **Website malicious code and tampering (affecting the credibility and image)**
   After obtaining permissions of websites or servers, attackers inject malicious code to make users execute malicious programs, to earn traffic, to steal accounts, or to show off. They insert links of illicit content, and tamper with web page images and texts. These behaviors severely influence the operation of websites and impair the image and credibility of website operators.
