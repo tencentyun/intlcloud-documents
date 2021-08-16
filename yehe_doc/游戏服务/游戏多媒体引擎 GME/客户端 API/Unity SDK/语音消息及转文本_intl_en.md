@@ -301,7 +301,7 @@ This API is used to start streaming speech recognition. Text obtained from speec
 
 ```
 ITMGPTT int StartRecordingWithStreamingRecognition(string filePath)
-ITMGPTT int StartRecordingWithStreamingRecognition(string filePath, string translateLanguage,string translateLanguage) 
+ITMGPTT int StartRecordingWithStreamingRecognition(string filePath, string speechLanguage,string translateLanguage)
 
 ```
 
@@ -945,7 +945,7 @@ This API can specify a language for recognition or translate the information rec
 #### Function prototype  
 
 ```
-ITMGPTT int SpeechToText(String fileID,String language)
+ITMGPTT int SpeechToText(String fileID,String speechLanguage)
 
 ```
 
