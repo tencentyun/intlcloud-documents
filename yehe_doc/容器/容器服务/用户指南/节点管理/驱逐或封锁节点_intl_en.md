@@ -63,6 +63,7 @@ The `kubectl uncordon` command indicates uncordoning the node.
 6. In the pop-up dialog box, click **OK** to complete the uncordoning.
 :::
 </dx-tabs>
+
 ### Draining a Node
 
 #### Overview
