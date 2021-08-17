@@ -1,28 +1,28 @@
-# 개요
+## 개요
 
 Tencent Cloud StreamLive는 Tencent Cloud가 새롭게 선보이는 고품질의 스트림 처리 플랫폼입니다. 방송 수준의 실시간 온라인 스트림 미디어 처리 서비스 제공이 가능합니다. Tencent Cloud의 독자적인 고성능 비디오 인코딩 및 압축 알고리즘을 채택하여, 더욱 개선된 시청 경험을 보장하면서도 전송 트래픽은 절약하는 데 주력하고 있습니다.
 
 StreamLive 콘솔은 Channel 차원의 관리를 통해 사용자가 고품질의 비디오 스트림을 생성하여 여러 유형의 디바이스에 배포할 수 있도록 합니다.
 
-# 콘솔 개요
+## 콘솔 개요
 
 StreamLive 콘솔은 Channel 차원에서 관리합니다. 크게 보안 그룹(Security Groups), 채널 입력(Input), 채널 관리(Channel) 세 가지 모듈로 구성되어 있습니다. 보안 그룹은 입력 소스에 대한 보안 검증을 관리하고, 채널 입력은 채널 입력 소스의 프로토콜 및 입력 방식에 대한 설정을 담당합니다. 채널은 StreamLive 핵심 모듈로써 기존 설정에 따라 입력 스트림에 대해 트랜스 코딩, 리먹싱 등의 비디오 처리 작업을 수행한 뒤 이를 지정된 타깃 리전 또는 CAS로 출력합니다.
 
 ![](https://main.qcloudimg.com/raw/e76d930fd73f010632e9e4571a8351d9.png)
 
-# 전제 조건
+## 전제 조건
 
 [Tencent Cloud StreamLive 콘솔](https://console.cloud.tencent.com/mdl/security)에 로그인합니다.
 
-# 작업 순서
+## 작업 순서
 
-## 1.   리전 선택
+### 1.   리전 선택
 
 Tencent Cloud StreamLive는 현재 인도 뭄바이, 태국 방콕, 한국 서울 세 개의 가용존을 제공하고 있으며 이 중에서 사용자의 소재 리전을 선택할 수 있습니다. 일본 도쿄 등의 리전은 현재 배포 및 런칭 준비 중입니다. 기타 다른 가용존에 대한 배포를 요청하려면 [고객센터](https://intl.cloud.tencent.com/contact-sales)로 문의하시기 바랍니다.
 
 ![](https://main.qcloudimg.com/raw/c9da8ddd469f557487c5b6d943ef69af.png)
 
-## 2.   보안 그룹 생성
+### 2.   보안 그룹 생성
 
 보안 그룹은 입력 소스 IPV4 주소의 유효성을 확인하는 용도로 사용되며, 보안 그룹 설정을 통해 StreamLive 채널을 보다 안전하게 입력할 수 있습니다.
 
@@ -31,12 +31,12 @@ Tencent Cloud StreamLive는 현재 인도 뭄바이, 태국 방콕, 한국 서�
 ![](https://main.qcloudimg.com/raw/e5c7365ba3724802b2013b3c25cdc07b.png)
 
 >?
-> - 보안 그룹의 상태에는 idle과 occupied가 있습니다. 
-> - idle은 현재 보안 그룹이 연결되어 있지 않으며 편집이나 삭제가 가능한 상태임을 나타냅니다.
-> - occupied는 현재 보안 그룹이 channel-input과 연결되어 있음을 나타내며, 이 경우 보안 그룹을 편집할 수는 있으나 삭제할 수는 없습니다.
-> - 콘솔은 기본적으로 최대 5개의 보안 그룹을 생성할 수 있도록 설정되어 있습니다. 더 많은 보안 그룹을 생성해야 하는 경우, [티켓 제출](https://console.cloud.tencent.com/workorder)을 통해 Tencent Cloud 고객 지원팀에 문의하시기 바랍니다.
+>- 보안 그룹의 상태에는 idle과 occupied가 있습니다. 
+>- idle은 현재 보안 그룹이 연결되어 있지 않으며 편집이나 삭제가 가능한 상태임을 나타냅니다.
+>- occupied는 현재 보안 그룹이 channel-input과 연결되어 있음을 나타내며, 이 경우 보안 그룹을 편집할 수는 있으나 삭제할 수는 없습니다.
+>- 콘솔은 기본적으로 최대 5개의 보안 그룹을 생성할 수 있도록 설정되어 있습니다. 더 많은 보안 그룹을 생성해야 하는 경우, [티켓 제출](https://console.cloud.tencent.com/workorder)을 통해 Tencent Cloud 고객 지원팀에 문의하시기 바랍니다.
 
-## 3.   입력 생성
+### 3.   입력 생성
 
 [Input Management] 메뉴를 선택하고 [Create Input]를 클릭하여 채널 입력을 생성합니다.
 
@@ -47,11 +47,11 @@ Tencent Cloud StreamLive는 현재 인도 뭄바이, 태국 방콕, 한국 서�
 ![](https://main.qcloudimg.com/raw/eed9a73cc25fc646b1f601ac545ccc0e.png)
 
 >?
-> - 콘솔은 기본적으로 최대 5개의 input을 지원합니다.
-> - 입력된 미디어 소스는 현재 최소 1개의 비디오 데이터 채널을 포함해야 합니다.
-> - MPEG-TS 멀티 터널을 사용하면 최대 8개 터널의 동시 전송이 가능합니다.
+>- 콘솔은 기본적으로 최대 5개의 input을 지원합니다.
+>- 입력된 미디어 소스는 현재 최소 1개의 비디오 데이터 채널을 포함해야 합니다.
+>- MPEG-TS 멀티 터널을 사용하면 최대 8개 터널의 동시 전송이 가능합니다.
 
-## 4.   StreamLive 채널 생성
+### 4.   StreamLive 채널 생성
 
 1. [Channel Management] 메뉴를 선택하고 [Create Channel]을 클릭하여 채널 입력을 생성합니다.
 
@@ -70,9 +70,9 @@ a.    [오디오 셀렉터] 사용자의 RTP_PUSH / RTP-FEC_PUSH / UDP_PUSH 입�
 ![](https://main.qcloudimg.com/raw/8ea9e3a78e57242e446f4ab2f4cd6850.png)
 
 >!
-> - 여기에서 PID는 반드시 입력 오디오 스트림의 PID와 동일해야 하며, 상이할 경우 트랜스 코딩 작업이 실패할 수 있습니다.
-> - 처음 입력(첫 행의 입력)만이 오디오 셀렉터 설정을 진행할 수 있으며, 다른 상황에서 해당 설정은 유효하지 않습니다. Plan의 입력 전환으로 인해 해당 입력 소스가 사용된 경우, 시스템은 기본적으로 같은 종류의 오디오 트랙을 선택하여 트랜스 코딩을 진행합니다.
-> - 입력 소스가 액티브/스탠바이 재해 복구를 설정한 경우, 스탠바이 스트림은 자동으로 액티브 스트림과 일치하는 오디오 셀렉터를 유지하여 액티브/스탠바이 전환 시 오디오 트랜스 코딩 가용성을 보장합니다.
+>- 여기에서 PID는 반드시 입력 오디오 스트림의 PID와 동일해야 하며, 상이할 경우 트랜스 코딩 작업이 실패할 수 있습니다.
+>- 처음 입력(첫 행의 입력)만이 오디오 셀렉터 설정을 진행할 수 있으며, 다른 상황에서 해당 설정은 유효하지 않습니다. Plan의 입력 전환으로 인해 해당 입력 소스가 사용된 경우, 시스템은 기본적으로 같은 종류의 오디오 트랙을 선택하여 트랜스 코딩을 진행합니다.
+>- 입력 소스가 액티브/스탠바이 재해 복구를 설정한 경우, 스탠바이 스트림은 자동으로 액티브 스트림과 일치하는 오디오 셀렉터를 유지하여 액티브/스탠바이 전환 시 오디오 트랜스 코딩 가용성을 보장합니다.
 
 b.    [풀 스트림 설정] 사용자는 MP4_PULL / HLS_PULL 입력 소스에 풀 스트림 푸시의 소스 동작을 설정할 수 있습니다. 두 가지 모드가 있으며 LOOP는 순환하여 풀 스트림하고, ONCE는 풀 스트림이 한 번 종료된 후 자동으로 입력 스트림이 끊어집니다.
 
@@ -85,10 +85,10 @@ c.    [액티브/스탠바이 재해 복구 설정] 사용자는 RTMP_PUSH / RTP
 ![](https://main.qcloudimg.com/raw/ebc0d3305a94534edaf97d09ecf18f9c.png)
 
 >?
-> - 최대 한 쌍의 액티브/스탠바이 스트림을 설정할 수 있으며, 액티브 스트림과 스탠바이 스트림의 입력 소스 유형과 터널 수는 같아야 합니다.
-> - 액티브/스탠바이 관계 확인 후, 스탠바이 스트림의 액티브/스탠바이 재해 복구 ON/OFF가 OFF로 자동 잠금됩니다. 즉, 스탠바이 스트림을 추가할 수 없습니다. 액티브/스탠바이 관계 조정이 필요한 경우(예를 들어, 액티브/스탠바이 교환) 현재의 액티브/스탠바이 관계를 해제/변경 후 다시 설정해야 합니다.
-> - 액티브/스탠바이 재해 복구 설정 후, 액티브 스트림과 스탠바이 스트림 입력명 옆에 'Primary'와 'Backup'을 표시하는 필드가 나타납니다.
-> - 스탠바이 스트림은 자동으로 액티브 스트림 아래로 순서가 조정됩니다.
+>- 최대 한 쌍의 액티브/스탠바이 스트림을 설정할 수 있으며, 액티브 스트림과 스탠바이 스트림의 입력 소스 유형과 터널 수는 같아야 합니다.
+>- 액티브/스탠바이 관계 확인 후, 스탠바이 스트림의 액티브/스탠바이 재해 복구 ON/OFF가 OFF로 자동 잠금됩니다. 즉, 스탠바이 스트림을 추가할 수 없습니다. 액티브/스탠바이 관계 조정이 필요한 경우(예를 들어, 액티브/스탠바이 교환) 현재의 액티브/스탠바이 관계를 해제/변경 후 다시 설정해야 합니다.
+>- 액티브/스탠바이 재해 복구 설정 후, 액티브 스트림과 스탠바이 스트림 입력명 옆에 'Primary'와 'Backup'을 표시하는 필드가 나타납니다.
+>- 스탠바이 스트림은 자동으로 액티브 스트림 아래로 순서가 조정됩니다.
 
  
 
@@ -110,8 +110,8 @@ a.     여러 출력 그룹 설정. StreamLive는 단일 채널의 여러 Output
 b.     출력 그룹의 이름 및 유형. 현재 Output Group의 이름과 유형을 설정합니다. 현재 StreamLive는 HLS/DASH 포맷의 출력을 지원하며, HLS 파일을 출력해 Tencent Cloud COS로의 보관(자세한 작업 방식은 제6절 참조)을 지원합니다. 또한 Tencent Cloud StreamPackage와 함께 사용하여 HLS/DASH 포맷의 라이브 방송 스트림을 그대로 동일 계정의 StreamPackage에서 출력할 수 있도록 지원(자세한 작업 방식은 제7절 참조)함으로써, 사용자가 자체 원본 서버를 구축하여 대규모 라이브 방송을 안정적으로 배포할 수 있도록 해줍니다.
 
 >?
-> - Tencent Cloud COS에 관한 자세한 내용은 다음을 참조하십시오.[https://intl.cloud.tencent.com/document/product/436/6222](https://intl.cloud.tencent.com/document/product/436/6222；)
-> - Tencent Cloud StreamPackage에 대한 자세한 내용은 다음을 참조하십시오.https://intl.cloud.tencent.com/document/product/1063/37495
+>- Tencent Cloud COS에 관한 자세한 내용은 다음을 참조하십시오.[COS 세부정보](https://intl.cloud.tencent.com/document/product/436/6222)
+>- Tencent Cloud StreamPackage에 대한 자세한 내용은 다음을 참조하십시오.[StreamPackage 세부정보](https://intl.cloud.tencent.com/document/product/1063/37495)
 
 ![](https://main.qcloudimg.com/raw/6b87cbe42011cc98c045af99369348a3.png)
 
@@ -127,22 +127,14 @@ e.     DRM 설정. Tencent Cloud StreamLive는 사용자 정의 DRM을 지원하
 
 ![](https://main.qcloudimg.com/raw/fbb528cc453be167497d4d7eca823d43.png)
 
->?
-> Output Group Setting의 Output Group Type에서 HLS/HLS_ARCHIVE/HLS_StreamPackage를 선택하고 DRM을 활성화하면 기본적으로 Fairplay 암호화가 사용됩니다. Output Group Setting의 Output Group Type에서 DASH/DASH_StreamPackage를 선택하고 DRM을 활성화하면 기본적으로 Widevine 암호화가 사용됩니다.
->
-> **I、** Fairplay 키 설정. 출력 유형을 HLS/HLS_ARCHIVE/HLS_StreamPackage로 선택한 경우에는 Fairplay 암호화 방식이 적용되며, Fairplay의 ContentId(KeyId), Key, Iv를 입력해야 합니다. 그중 Key와 Iv는 32비트의 16진수 문자열입니다.
->
-> ![](https://main.qcloudimg.com/raw/e172623be22b4397d9f4964d90e8eb03.png)
->
-> **II、** Widevine 키 설정. 출력 유형을 DASH/DASH_StreamPackage로 선택한 경우에는 Widevine 암호화 방식이 적용되며, Widevine의 ContentId 및 Track을 설정해야 합니다. 그중 Track 유형은 SD/HD/UHD1/UHD2/AUDIO로 나뉩니다.
->
-> i、 All Track을 선택하면 5가지 Track 유형의 KeyId와 Key가 동일하게 설정됩니다.
->
-> ![](https://main.qcloudimg.com/raw/06b22ae97702570f7bdfac4161219ece.png)
->
-> ii、 Select Track를 선택하는 경우 각 Track 유형의 KeyId와 Key를 사용자 정의 설정할 수 있습니다.
->
-> ![](https://main.qcloudimg.com/raw/9c9e6b56980d6c87aea64c2b3b426ad5.png)
+>? Output Group Setting의 Output Group Type에서 HLS/HLS_ARCHIVE/HLS_StreamPackage를 선택하고 DRM을 활성화하면 기본적으로 Fairplay 암호화가 사용됩니다. Output Group Setting의 Output Group Type에서 DASH/DASH_StreamPackage를 선택하고 DRM을 활성화하면 기본적으로 Widevine 암호화가 사용됩니다.
+>- Fairplay 키 설정. 출력 유형을 HLS/HLS_ARCHIVE/HLS_StreamPackage로 선택한 경우에는 Fairplay 암호화 방식이 적용되며, Fairplay의 ContentId(KeyId), Key, Iv를 입력해야 합니다. 그중 Key와 Iv는 32비트의 16진수 문자열입니다.
+![](https://main.qcloudimg.com/raw/e172623be22b4397d9f4964d90e8eb03.png)
+>- Widevine 키 설정. 출력 유형을 DASH/DASH_StreamPackage로 선택한 경우에는 Widevine 암호화 방식이 적용되며, Widevine의 ContentId 및 Track을 설정해야 합니다. 그중 Track 유형은 SD/HD/UHD1/UHD2/AUDIO로 나뉩니다.
+>- All Track을 선택하면 5가지 Track 유형의 KeyId와 Key가 동일하게 설정됩니다.
+![](https://main.qcloudimg.com/raw/06b22ae97702570f7bdfac4161219ece.png)
+>-  Select Track를 선택하는 경우 각 Track 유형의 KeyId와 Key를 사용자 정의 설정할 수 있습니다.
+![](https://main.qcloudimg.com/raw/9c9e6b56980d6c87aea64c2b3b426ad5.png)
 
 f.     오디오 설정. StreamLive는 단일 출력 유닛의 여러 오디오 트랜스 코딩 설정을 지원합니다. 여기에서 오디오 이름, 오디오 트랜스 코딩 포맷, 오디오 비트 레이트, 해당 오디오 언어를 포함한 오디오 템플릿을 구성할 수 있으며, 오디오 셀렉터와 연결되지 않은 경우, Input 입력 스트림에서 기본 스트림을 선택해 트랜스 코딩하여 출력할 수 있습니다. 현재 지원되는 오디오 트랜스 코딩 비트 레이트 범위는 6000-1024000Bit입니다. 언어 코드는 ISO639 표준을 따르며 3자리 언어 코드를 입력해야 합니다.
 
@@ -152,8 +144,7 @@ g.     비디오 설정. StreamLive는 비디오 템플릿 이름, 인코더 유
 
 ![](https://main.qcloudimg.com/raw/92242c0a054e342a1071794db28600de.png)
 
->?
-> 더욱 우수한 성능의 스마트 비디오 압축 알고리즘이 탑재된 코덱이 필요한 경우, ‘초고속 고화질’ 트랜스 코딩을 선택할 수 있습니다. 해당 기능을 활성화하면 AI 알고리즘이 비즈니스 시나리오에 따라 실시간으로 최적의 동적 인코딩 매개변수를 컴퓨팅하여 낮은 비트 레이트의 고품질 트랜스 코딩 서비스를 구현합니다.
+>? 더욱 우수한 성능의 스마트 비디오 압축 알고리즘이 탑재된 코덱이 필요한 경우, ‘초고속 고화질’ 트랜스 코딩을 선택할 수 있습니다. 해당 기능을 활성화하면 AI 알고리즘이 비즈니스 시나리오에 따라 실시간으로 최적의 동적 인코딩 매개변수를 컴퓨팅하여 낮은 비트 레이트의 고품질 트랜스 코딩 서비스를 구현합니다.
 
 h.     출력 조합. Outputs를 설정하여 생성된 오디오 트랜스 코딩 템플릿과 비디오 트랜스 코딩 템플릿을 조합 및 연결합니다. 또한 HLS 또는 DASH의 파일 태그에서 Scte35 관련 정보의 전송을 지원합니다.
 
@@ -209,8 +200,7 @@ StreamPackage로 출력하기 전에 먼저 [StreamPackage 서비스 활성화 ]
 
 좌측 상단의 [Create Channel]을 클릭하여 채널을 생성하고 채널 이름과 StreamLive 출력 유형과 동일한 프로토콜을 입력합니다. 예시: StreamLive의 출력 유형을 HLS_StreamPackage로 선택한 경우, 여기에서도 HLS를 선택합니다.
 
->!
-> StreamLive과 StreamPackage은 같은 Region에 있어야 합니다.
+>! StreamLive과 StreamPackage은 같은 Region에 있어야 합니다.
 
 ![](https://main.qcloudimg.com/raw/ca0ae9e483499e4489a8db47b7bb290b.png)
 
@@ -226,8 +216,7 @@ Channel이 생성되면 Channel의 상세 내용 페이지로 들어가 Endpoint
 
 ![](https://main.qcloudimg.com/raw/30594049a37593a5d8827990bd9a13a1.png)
 
->?
-> Channel ID는 StreamLive 출력을 입력하는 데 사용됩니다.
+>?  Channel ID는 StreamLive 출력을 입력하는 데 사용됩니다.
 > ![](https://main.qcloudimg.com/raw/c66b1bb5f1c9f570225310e66f8e0a66.png)
 
 5. 출력 유형을 HLS_STREAMPACKAGE 또는 DASH_STREAMPACKAGE로 선택합니다.
@@ -259,8 +248,8 @@ json 파일을 제출하면 채널 편집 상태로 전환되며, 기존의 구�
 ![](https://main.qcloudimg.com/raw/1fe8fdf4c50c5be5a6fe1dc820f5469f.png)
 
 >?
-> - 채널 가져오기는 실제로는 매우 빠르게 진행되는 입력 프로세스로, 사용자가 가져온 json 파일을 기반으로 [Basic Information], [Output Group Setting] 두 부분의 내용을 빠르게 자동으로 입력해주며, [Input Setting] 부분은 무시하기 때문에 Input을 다시 선택해야 합니다. 따라서 이와 같은 방법으로 빠르게 Channel을 생성해야 하는 경우, 사전에 새로운 input을 생성해 놓을 수 있습니다.
-> - 채널 편집 시 새로운 구성 파일을 가져오는 경우, 기존 채널 구성 정보는 덮어씁니다.
+>- 채널 가져오기는 실제로는 매우 빠르게 진행되는 입력 프로세스로, 사용자가 가져온 json 파일을 기반으로 [Basic Information], [Output Group Setting] 두 부분의 내용을 빠르게 자동으로 입력해주며, [Input Setting] 부분은 무시하기 때문에 Input을 다시 선택해야 합니다. 따라서 이와 같은 방법으로 빠르게 Channel을 생성해야 하는 경우, 사전에 새로운 input을 생성해 놓을 수 있습니다.
+>- 채널 편집 시 새로운 구성 파일을 가져오는 경우, 기존 채널 구성 정보는 덮어씁니다.
 
 3. 채널 복제
 
@@ -317,14 +306,13 @@ StreamLive 채널 시간 계획을 설정하여, 푸시 스트리밍 과정에�
 ![](https://main.qcloudimg.com/raw/cb4c8a9d4f289072476364297346fb4d.png)
 
 >!
-> - 작성하는 시간은 사용자 소재지의 시간이며 과거의 시간으로 작성할 수 없습니다.
-> - 전환된 MP4_PULL (또는 HLS_PULL) 입력 소스의 스트림 설정이 ONCE인 경우, 풀 스트림 한 번 이후 입력 스트림이 자동으로 끊기며 이어지는 이벤트는 트리거되지 않습니다.
+>- 작성하는 시간은 사용자 소재지의 시간이며 과거의 시간으로 작성할 수 없습니다.
+>- 전환된 MP4_PULL (또는 HLS_PULL) 입력 소스의 스트림 설정이 ONCE인 경우, 풀 스트림 한 번 이후 입력 스트림이 자동으로 끊기며 이어지는 이벤트는 트리거되지 않습니다.
 
  
 
 생성한 모든 이벤트는 '트리거 시간' 순서에 따라 차례대로 정렬됩니다. 이벤트는 조회, 삭제 및 추가할 수 있습니다.
 
->!
-> 생성된 이벤트는 편집 작업을 지원하지 않습니다.
+>! 생성된 이벤트는 편집 작업을 지원하지 않습니다.
 
  

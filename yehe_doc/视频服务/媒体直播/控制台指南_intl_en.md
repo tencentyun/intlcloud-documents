@@ -27,10 +27,10 @@ Select "Security Group Management" and click "Create Security Group". Enter a na
 ![](https://main.qcloudimg.com/raw/e5c7365ba3724802b2013b3c25cdc07b.png)
 
 >?
-> - The status of a security group can be either "idle" or "occupied".
-> - "Idle" indicates that a security group is currently not associated with an input and can be edited and deleted.
-> - "Occupied" indicates that a security group is currently associated with an input and can only be edited, not deleted.
-> - You can create up to 5 security groups in the console by default. If you need more security groups, please [submit a ticket](https://console.cloud.tencent.com/workorder).
+>- The status of a security group can be either "idle" or "occupied".
+>- "Idle" indicates that a security group is currently not associated with an input and can be edited and deleted.
+>- "Occupied" indicates that a security group is currently associated with an input and can only be edited, not deleted.
+>- You can create up to 5 security groups in the console by default. If you need more security groups, please [submit a ticket](https://console.cloud.tencent.com/workorder).
 
 ### 3.   Create an input
 
@@ -43,9 +43,9 @@ Each input can be associated with 1 security group and 1 channel. An input assoc
 ![](https://main.qcloudimg.com/raw/eed9a73cc25fc646b1f601ac545ccc0e.png)
 
 >?
-> - The console supports up to 5 inputs by default.
-> - An input source must contain at least 1 video data channel.
-> - When MPEG-TS multiplexing is used, a maximum of 8 channels can be transferred simultaneously.
+>- The console supports up to 5 inputs by default.
+>- An input source must contain at least 1 video data channel.
+>- When MPEG-TS multiplexing is used, a maximum of 8 channels can be transferred simultaneously.
 
 ### 4.   Create a StreamLive channel
 
@@ -66,9 +66,9 @@ a. "Audio Selector": If there are multiple audio streams in your RTP_PUSH/RTP-FE
 ![](https://main.qcloudimg.com/raw/8ea9e3a78e57242e446f4ab2f4cd6850.png)
 
 >!
-> - The PID must be the same as that of the input audio stream; otherwise, the transcoding task may fail.
-> - You can configure audio selectors only for the first input attached. If a plan is configured and another input is used instead of the first one, StreamLive will randomly select an audio stream to transcode.
-> - If input source failover is enabled, the audio selectors configured for the primary input will be automatically applied to the backup input to ensure the availability of the audio encoding feature in case of failover.
+>- The PID must be the same as that of the input audio stream; otherwise, the transcoding task may fail.
+>- You can configure audio selectors only for the first input attached. If a plan is configured and another input is used instead of the first one, StreamLive will randomly select an audio stream to transcode.
+>- If input source failover is enabled, the audio selectors configured for the primary input will be automatically applied to the backup input to ensure the availability of the audio encoding feature in case of failover.
 
  
 
@@ -83,10 +83,10 @@ c. "Failover Configuration": You can enable failover for RTMP_PUSH/RTP_PUSH inpu
 ![](https://main.qcloudimg.com/raw/ebc0d3305a94534edaf97d09ecf18f9c.png)
 
 >?
-> - You can configure only 1 backup for an input. The primary and backup inputs must be of the same type and have the same number of pipelines.
-> - Once an input is used as a backup, the failover feature will be disabled for the input automatically, which means that you cannot configure a backup for this input. To make modifications (for example, if you want to switch the role of the two inputs), you must remove the primary/backup relationship between the inputs first.
-> - After successful configuration, "Primary" and "Backup" will appear next to the names of the primary and backup inputs.
-> - The backup input will appear below the primary input.
+>- You can configure only 1 backup for an input. The primary and backup inputs must be of the same type and have the same number of pipelines.
+>- Once an input is used as a backup, the failover feature will be disabled for the input automatically, which means that you cannot configure a backup for this input. To make modifications (for example, if you want to switch the role of the two inputs), you must remove the primary/backup relationship between the inputs first.
+>- After successful configuration, "Primary" and "Backup" will appear next to the names of the primary and backup inputs.
+>- The backup input will appear below the primary input.
 
 In addition to the above, you can also do the following to an input:
 
@@ -106,8 +106,8 @@ a. Configure multiple output groups. You can click the "+" icon to configure mul
 b. Set the name and type of an output group. Currently, StreamLive supports outputs in HLS and DASH formats. You can output HLS files to COS for archiving (for detailed directions, please see section 5), or output HLS/DASH streams to Tencent Cloud’s StreamPackage under the same account (for detailed directions, please see section 6). This allows you to build your own origin server for stable and large-scale distribution of live streams.
 
 >?
-> - For more information on COS, please visit: [COS details](https://intl.cloud.tencent.com/document/product/436/6222)
-> - For more information on StreamPackage, please visit:[StreamPackage details](https://intl.cloud.tencent.com/document/product/1063/37495)
+>- For more information on COS, please visit: [COS details](https://intl.cloud.tencent.com/document/product/436/6222)
+>- For more information on StreamPackage, please visit:[StreamPackage details](https://intl.cloud.tencent.com/document/product/1063/37495)
 
 ![](https://main.qcloudimg.com/raw/6b87cbe42011cc98c045af99369348a3.png)
 
@@ -125,12 +125,12 @@ e. Configure DRM. You can use third-party DRM services in StreamLive.
 
 >? If you select HLS/HLS_ARCHIVE/HLS_StreamPackage for "Output Group Type" and enable DRM, FairPlay encryption will be used. If you select DASH/DASH_StreamPackage and enable DRM, Widevine encryption will be used.
 >- FairPlay encryption settings: If you select HLS/HLS_ARCHIVE/HLS_StreamPackage as the output type, FairPlay will be used as the encryption method. You need to enter the FairPlay Content ID (key ID), key, and IV (both key and IV are 32-character hexadecimal strings).
->![](https://main.qcloudimg.com/raw/e172623be22b4397d9f4964d90e8eb03.png)
+![](https://main.qcloudimg.com/raw/e172623be22b4397d9f4964d90e8eb03.png)
 >- Widevine encryption settings: If you select DASH/DASH_StreamPackage as the output type, Widevine will be used as the encryption method. You need to enter the Widevine content ID and set the tracks. Track types include SD, HD, UHD1, UHD2, and AUDIO.
 >-  If you select "All Track", you can set the same key ID and key for all five track types.
 ![](https://main.qcloudimg.com/raw/06b22ae97702570f7bdfac4161219ece.png) 
 >- You can also click "Select Track" to set a key ID and key for each track type.
->![](https://main.qcloudimg.com/raw/9c9e6b56980d6c87aea64c2b3b426ad5.png)
+![](https://main.qcloudimg.com/raw/9c9e6b56980d6c87aea64c2b3b426ad5.png)
 
 f. Set audio transcoding. You are allowed to configure multiple audio transcoding schemes with one output unit. Create an audio template, specifying the name, transcoding format, bitrate, and audio language. If no audio selector is associated, the default stream in the input will be transcoded. Currently, the bitrate range supported for audio transcoding is 6000-1024000 bps. Language code is a 3-character code for the audio language to use, whose naming follows the ISO 639 standard.
 

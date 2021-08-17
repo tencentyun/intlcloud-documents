@@ -1,24 +1,24 @@
-# 概览
+## 概览
 腾讯云StreamLive是腾讯云新发布的的高质量流处理平台。它可以提供广播级实时在线流媒体处理服务。使用腾讯云独特的高性能视频编码和压缩算法，并在确保更好的观看体验的前提下，设法节省您的传输流量。
 
 StreamLive控制台基于Channel维度进行管理，您可以创建高质量的视频流，从而分发到各种类型的设备。
 
-# 控制台概览
+## 控制台概览
 StreamLive控制台基于Channel维度进行管理。主要分为安全组（Security Groups）、频道输入（Input）、频道管理（Channel）三个模块。安全组主要对输入源的安全校验进行管理；频道输入可对频道输入源的协议及输入方式进行配置；频道是StreamLive的主要模块，可对输入流按照既定配置进行转码、转封装等一系列视频处理操作后输出至指定目的地或者归档存储。
 ![](https://main.qcloudimg.com/raw/e76d930fd73f010632e9e4571a8351d9.png) 
 
-# 前提条件
+## 前提条件
 登录[腾讯云StreamLive控制台](https://console.cloud.tencent.com/mdl/security)。
 
-# 操作步骤
+## 操作步骤
 
-##  一、选择区域
+###  一、选择区域
 目前腾讯云StreamLive已提供印度孟买、泰国曼谷、韩国首尔三个可用区，您可在此选择您所在的地域。日本东京等地域正在加速部署上线中，如果您有其余可用区的加速部署诉求请[联系我们](https://intl.cloud.tencent.com/contact-sales)。
 ![](https://main.qcloudimg.com/raw/c9da8ddd469f557487c5b6d943ef69af.png)
 
 
 
-## 二、创建安全组
+### 二、创建安全组
 
 安全组是用于对输入源IPV4地址进行合法性校验的手段，通过输入安全组配置，可以使StreamLive频道的输入更加安全。
 
@@ -33,7 +33,7 @@ StreamLive控制台基于Channel维度进行管理。主要分为安全组（Sec
 
 
 
-## 三、创建输入
+### 三、创建输入
 
 选择【Input Management】菜单，点击【Create Input】创建频道输入。
 
@@ -49,7 +49,7 @@ StreamLive控制台基于Channel维度进行管理。主要分为安全组（Sec
 
 
 
-## 四、StreamLive频道创建
+### 四、StreamLive频道创建
 
 1. 选择【Channel Management】菜单，点击【Create Channel】创建频道输入。
 
@@ -68,7 +68,7 @@ a.  【音频选择器】如果您的 RTP_PUSH / RTP-FEC_PUSH / UDP_PUSH 输入�
 >!
 >- 此处的PID必须与输入音频流的PID相同，否则转码任务可能会失败。
 >- 只有首位输入（第一行的输入）才能进行音频选择器的配置，其他情况下该配置失效。若Plan的输入切换导致该输入源被使用，系统会默认挑选一路音轨对其进行转码。
-> - 若输入源配置了主备容灾，则备流自动保持和主流一致的音频选择器配置，以便在主备切换时保证音频转码的可用性。
+>- 若输入源配置了主备容灾，则备流自动保持和主流一致的音频选择器配置，以便在主备切换时保证音频转码的可用性。
 
 b.    【拉流设置】您可以为 MP4_PULL / HLS_PULL 输入源设置拉流转推的源端行为。两种模式：LOOP会循环拉流；ONCE会拉流一次结束后自动断掉输入流。
 ![](https://main.qcloudimg.com/raw/a721d60a7263dddeab3927b3331cfaa2.png)
@@ -118,13 +118,13 @@ e. DRM设置。腾讯云StreamLive支持用户自定义DRM，您可基于您的�
 ![](https://main.qcloudimg.com/raw/fbb528cc453be167497d4d7eca823d43.png)
 
 >? 如果在Output Group Setting中的Output Group Type选择HLS/HLS_ARCHIVE/HLS_StreamPackage，开启DRM则会默认使用Fairplay加密；如果在Output Group Setting中的Output Group Type选择DSAH/DASH_StreamPackage，开启DRM会默认使用Widevine加密。
--  Fairplay密钥配置。当您选择输出类型选择HLS/HLS_ARCHIVE/HLS_StreamPackage时，您此时的加密方式为Fairplay加密，您需要填写Fairplay的ContentId（KeyId）、Key、Iv，其中Key、Iv为32位的16进制字符串。
->![](https://main.qcloudimg.com/raw/e172623be22b4397d9f4964d90e8eb03.png)
--  Widevine密钥配置。当您选择输出类型选择DSAH/DASH_StreamPackage时，您此时的加密方式为Widevine加密，Widevine的ContentId及其Track Setting，其中Track类型分SD/HD/UHD1/UHD2/AUDIO。
+>-  Fairplay密钥配置。当您选择输出类型选择HLS/HLS_ARCHIVE/HLS_StreamPackage时，您此时的加密方式为Fairplay加密，您需要填写Fairplay的ContentId（KeyId）、Key、Iv，其中Key、Iv为32位的16进制字符串。
+![](https://main.qcloudimg.com/raw/e172623be22b4397d9f4964d90e8eb03.png)
+>-  Widevine密钥配置。当您选择输出类型选择DSAH/DASH_StreamPackage时，您此时的加密方式为Widevine加密，Widevine的ContentId及其Track Setting，其中Track类型分SD/HD/UHD1/UHD2/AUDIO。
 >- 选择All Track代表指定这五种Track类型的有相同KeyId、Key。
->![](https://main.qcloudimg.com/raw/06b22ae97702570f7bdfac4161219ece.png)
-- 选择Select Track则可自定义每个Track类型的KeyId和Key。
->![](https://main.qcloudimg.com/raw/9c9e6b56980d6c87aea64c2b3b426ad5.png)
+![](https://main.qcloudimg.com/raw/06b22ae97702570f7bdfac4161219ece.png)
+>- 选择Select Track则可自定义每个Track类型的KeyId和Key。
+![](https://main.qcloudimg.com/raw/9c9e6b56980d6c87aea64c2b3b426ad5.png)
 
 f. 音频设置。StreamLive支持一个输出单元来配置多个音频转码。您可在此配置音频模板，包括音频名称、音频转码格式、音频码率以及对应的音频语言，其中如果不关联音频选择器，那么会从Input输入流中选择一路默认流进行转码输出。目前支持的音频转码码率范围在6000-1024000Bit范围内。语言代码遵循ISO639标准，需要填写3个字符的语言代码。
 
