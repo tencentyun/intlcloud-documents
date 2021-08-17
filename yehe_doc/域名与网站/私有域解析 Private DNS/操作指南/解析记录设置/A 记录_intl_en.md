@@ -11,9 +11,9 @@ You have created the corresponding private domain.
 3. On the **Records** tab, click **Add Record** and enter the following record value information as shown below:
 >?You can add up to 10 round-robin DNS records of the same record type for the same host.
 >
->![](https://main.qcloudimg.com/raw/6c2ad43f95b24bac16edbf5fd08a4ef5.png)
->
-> - **Host**: select a subdomain. For example, when adding a record for `www.dnspod.cn`, you can simply select **www** in the **Host** field. If you want to add a record for `dnspod.cn`, select **@** in the **Host** field.	
+![](https://main.qcloudimg.com/raw/6c2ad43f95b24bac16edbf5fd08a4ef5.png)
+
+ - **Host**: select a subdomain. For example, when adding a record for `www.dnspod.cn`, you can simply select **www** in the **Host** field. If you want to add a record for `dnspod.cn`, select **@** in the **Host** field.	
  - **Record Type**: select **A**.
  - **Record Value**: you can only enter an IPv4 address. For example, if the IPv4 address you want to access is `8.8.8.8`, then enter `8.8.8.8`.
  - **Weight**: it refers to configuring multiple record values for the same host on the DNS server. In this way, when the server responds to DNS queries, all record values will return different DNS results according to the preset weights and distribute the resolved traffic to different servers, so as to implement load balancing. The weight value can be an integer between 1 and 100.
