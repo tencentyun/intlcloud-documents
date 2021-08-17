@@ -181,7 +181,7 @@ I/TPush: [OtherPushClient] handleUpdateToken other push token is : IQAAAACy0PsqA
 ### Arrival receipt configuration for Huawei channel
 
 The arrival receipt for the Huawei channel should be configured by yourself. After configuring this feature as instructed in [Acquisition of Vendor Channel Arrival Receipt](https://intl.cloud.tencent.com/document/product/1024/35246), you can view the arrival data for the Huawei push channel in the push records.
-![](https://main.qcloudimg.com/raw/c5247214fb095b300091bb62629dd57a.png)
+
 
 ### Badge adaptation for Huawei devices
 
