@@ -5,9 +5,9 @@
 ## 操作步骤
 1. 登录私有域解析 [Private DNS 控制台](https://console.cloud.tencent.com/privatedns/domains)，并单击左侧导航栏的【私有域列表】，即可进入私有域列表。
 2. 在 “私有域列表” 中，单击【新建私有域】。如下图所示：
-![](https://main.qcloudimg.com/raw/fda429c0062f6ce58b90cb5297604551.png)
+![](https://main.qcloudimg.com/raw/568e131b241a9e11182cf6a41cebeee5.png)
 3. 在 “新建私有域” 页面中，填写私有域相关信息。如下图所示：
-![](https://main.qcloudimg.com/raw/402b8e8dc02c1a937086654393d6bab4.png)
+![](https://main.qcloudimg.com/raw/4172035b4d45210101666d9b7a0c5e3a.png)
  - **域名**：请自定义输入想要创建的私有域名，即您想要在 VPC 环境关联并使用的私有域名。
 >?
 >- 仅支持创建符合 IANA 规范的标准 TLD 域名。

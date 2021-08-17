@@ -4,7 +4,7 @@
 ## 操作步骤
 1. 登录私有域解析 [Private DNS 控制台](https://console.cloud.tencent.com/privatedns)，并单击左侧导航栏的【请求量统计】。
 2. 在 “请求量统计” 管理页面，可查看域名请求量的相关信息。如下图所示：
-![](https://main.qcloudimg.com/raw/ae81cc914d99e3930c41862353e3b374.png)
+![](https://main.qcloudimg.com/raw/1df5a7a3998719e514f39fb093b3f523.png)
 3. 在 “请求量统计” 管理页面，您可以进行以下操作：
     - **根据地域筛选**：您可以根据私有域关联 VPC 的地域来进行筛选展示数据。
     >?暂不支持按全部地域查看请求量。

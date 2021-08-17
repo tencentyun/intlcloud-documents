@@ -7,11 +7,11 @@ You have created the corresponding private domain.
 ## Directions
 1. Log in to the [Private DNS console](https://console.cloud.tencent.com/privatedns) and click **Private Domain List** on the left sidebar to enter the private domain list.
 2. In the **Private Domain List**, click the name of the private domain for which you need to create an AAAA record or **Records** as shown below:
-![](https://main.qcloudimg.com/raw/965b35507b9de90112d57608a95d6405.png)
+![](https://main.qcloudimg.com/raw/c8cd616111485c18ac44ba90c1125704.png)
 3. On the **Records** tab, click **Add Record** and enter the following record value information as shown below:
 >?You can add up to 10 round-robin DNS records of the same record type for the same host.
 >
-![](https://main.qcloudimg.com/raw/76fc4a8097e5b64857feaa3fa81533a8.png)
+![](https://main.qcloudimg.com/raw/7e3bcee4e58b180a6370c5b406a0e0b4.png)
  - **Host**: enter a subdomain. For example, when adding a record for `www.dnspod.cn`, you can simply select **www** in the **Host** field. If you want to add a record for `dnspod.cn`, select **@** in the **Host** field.
  - **Record Type**: select **AAAA**.
  - **Record Value**: you can only enter an IPv6 address, such as `ff06:0:0:0:0:0:0:c3`.
@@ -20,7 +20,7 @@ You have created the corresponding private domain.
  - **TTL**: it is the cache time and 300s by default. The smaller the value, the faster the change to the record will take effect. You can enter an integer between 1 and 86400.
 4. Click **Save**.
 
->?If anything goes wrong during this process, please [contact us](https://cloud.tencent.com/act/event/connect-service).
+>?If anything goes wrong during this process, please [contact us](https://intl.cloud.tencent.com/contact-sales).
 
 
 
