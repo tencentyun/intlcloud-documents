@@ -203,8 +203,8 @@ if (atMe && atAll) {
 }
 ```
 
-## 收发合并转发消息（仅精简版 5.2.210 以上版本支持）
-要实现类似于微信的合并转发功能，首先需要根据原始消息列表创建一条合并消息，然后把合并消息发送到对端，对端收到合并消息后再解析出原始消息列表，合并消息的展示还需要标题和摘要信息，如下图所示：
+## 收发合并转发消息（仅精简版 5.2.210 及以上版本支持）
+要实现类似于微信的合并转发功能，首先需要根据原始消息列表创建一条合并消息，然后把合并消息发送到对端，对端收到合并消息后再解析出原始消息列表，合并消息的展示还需要标题和摘要信息。
 
 - **发送合并转发消息：**
 通常我们在收到一条合并消息的时候，会在聊天界面这样显示：
@@ -276,7 +276,7 @@ abstractList:abstactList compatibleText:compatibleText];
 }
 ```
 
-## 发送不计入未读数的消息（仅精简本 5.3.425 以上版本支持）
+## 发送不计入未读数的消息（仅精简版 5.3.425 及以上版本支持）
 正常情况下，无论是发送 C2C 单聊消息还是发送 Group 群消息，都会计入未读消息数（通过会话对象 [V2TIMConversation](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMConversation.html) 的 [unreadCount](https://im.sdk.qcloud.com/doc/zh-cn/interfaceV2TIMConversation.html#a816b83eb32d84ea5345f14ced92bb7f6) 接口，可以拿到一个会话的未读消息数）。当您希望发送一些不计入未读计数的消息时，比如提示类或者控制类的消息，可以按照下面的方式来发送：
 
 ```
@@ -294,6 +294,24 @@ priority:V2TIM_PRIORITY_DEFAULT onlineUserOnly:YES offlinePushInfo:nil progress:
 } fail:^(int code, NSString *msg) {
     // 消息发送失败
 }];
+```
+
+## 发送不计入会话 lastMsg 的消息（仅增强版 5.4.666 及以上版本支持）
+某些场景下，不希望一些提示类型的消息显示在会话的 lasgMsg 中，可以按照下面的方式来发送：
+
+```
+  // 创建消息对象
+  V2TIMMessage *message = [V2TIMManager.sharedInstance createTextMessage:content];
+  // 设置不计入会话 lastMsg 的标记
+  message.isExcludedFromLastMessage = YES;
+  // 发送消息
+  [V2TIMManager.sharedInstance sendMessage:message receiver:@"userA" groupID:nil priority:V2TIM_PRIORITY_NORMAL onlineUserOnly:NO offlinePushInfo:nil progress:^(uint32_t progress) {
+      // 发送进度
+  } succ:^{
+      // 消息发送成功
+  } fail:^(int code, NSString *desc) {
+      // 消息发送失败
+  }];
 ```
 
 ## 设置 APNS 离线推送（offlinePushInfo）
@@ -373,7 +391,7 @@ priority:V2TIM_PRIORITY_DEFAULT onlineUserOnly:YES offlinePushInfo:nil progress:
 
 ```
 
-## 设置接收消息免打扰（仅精简本 5.3.425 以上版本支持）
+## 设置接收消息免打扰（仅精简版 5.3.425 及以上版本支持）
 SDK 支持三种类型的消息接收选项：
 - V2TIM_RECEIVE_MESSAGE：在线时正常接收消息，离线时接收离线推送通知
 - V2TIM_NOT_RECEIVE_MESSAGE：在线和离线都不接收消息
@@ -496,7 +514,7 @@ SDK 默认不限制非好友之间收发消息。如果您希望仅允许好友�
 
 ## 敏感词过滤
 SDK 发送的文本消息默认会经过即时通信 IM 的敏感词过滤，如果发送者在发送的文本消息中包含敏感词，SDK 会报 80001 错误码。
-![](https://main.qcloudimg.com/raw/30cafa8466a76f1d020ddbab19e9fd35.png)
+![](![](https://main.qcloudimg.com/raw/30cafa8466a76f1d020ddbab19e9fd35.png)
 
 ## 常见问题
 ### 1. 为什么会收到重复的消息？

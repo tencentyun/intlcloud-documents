@@ -24,7 +24,7 @@ IM messages can also be classified by content into text messages, custom (signal
 [V2TIMManager](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html) provides a set of simple APIs for sending and receiving messages. Although these APIs can be used to send or receive text messages and custom (signaling) messages, they are easy to use and only a few minutes are needed to complete interfacing.
 
 ### Sending text and signaling messages (simplified APIs)
-To send text messages, call [sendC2CTextMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a59a8ba6e4a973b4c40a09ae7dfdc6981) or [sendGroupTextMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a56359fd1ce0a96f289dcd4bef522fb52). Text messages will be filtered by IM for sensitive words. If a message containing sensitive words is sent, the 80001 error code is returned. To send custom one-to-one (signaling) messages, call [sendC2CCustomMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#af3e08b936df77210c6cdd0ce5c7fa87f) or [sendGroupCustomMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#afbce8ff97be0a3a42c7dc826d316f2c2). A custom message is essentially a section of the binary buffer, and is often used to transfer custom signaling in your application. Its content is not filtered for sensitive words.
+To send text messages, call [sendC2CTextMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a59a8ba6e4a973b4c40a09ae7dfdc6981) or [sendGroupTextMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a56359fd1ce0a96f289dcd4bef522fb52). Text messages will be filtered by IM for sensitive words. If a message containing sensitive words is sent, the 80001 error code is returned. To send one-to-one custom (signaling) messages, call [sendC2CCustomMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#af3e08b936df77210c6cdd0ce5c7fa87f) or [sendGroupCustomMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#afbce8ff97be0a3a42c7dc826d316f2c2). A custom message is essentially a section of the binary buffer, and is often used to transfer custom signaling in your application. Its content is not filtered for sensitive words.
 
 ### Receiving text and signaling messages (simplified APIs)
 To listen to simple text and signaling messages, call [addSimpleMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#afd96fd1591e41f031421c0655d8e5d6b). To listen to image, video, and voice messages, call [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#aaccdec10b9fbee5e43eaf908e359c823) defined in [V2TIMMessageManager](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html).
@@ -34,9 +34,9 @@ To listen to simple text and signaling messages, call [addSimpleMsgListener](htt
 ### Typical example: sending and receiving on-screen comments in an audio-video group
 In the live streaming scenario, it is a common way of communication to send or receive on-screen comments in an audio-video group. This can be easily implemented through the simple message APIs.
 
-1. The anchor can call [createGroup](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#af836e4912f668dddf6cc679233cfb0bb) to create a livestreaming group (AVChatRoom) and record the group ID in the list of rooms in "Broadcasting" state.
+1. The anchor can call [createGroup](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#af836e4912f668dddf6cc679233cfb0bb) to create an audio-video group (AVChatRoom) and record the group ID in the list of rooms in "Broadcasting" state.
 2. A viewer can select an anchor that he/she likes, and call [joinGroup](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#ad64a09bea508672d6d5a402b3455b564) to join the AVChatRoom created by this anchor.
-3. The message sender can call [sendGroupTextMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a56359fd1ce0a96f289dcd4bef522fb52) to send a group text message as the on-screen comment.
+3. The message sender can call [sendGroupTextMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a56359fd1ce0a96f289dcd4bef522fb52) to send a group text message as an on-screen comment.
 4. The message recipient can call [addSimpleMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#afd96fd1591e41f031421c0655d8e5d6b) to register a simple message listener, and use the listener callback function [onRecvGroupTextMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMSimpleMsgListener.html#a1f9eaa4fdc323a8ec375b7068df7b7d4) to obtain text messages.
 
 "FlyHeart" is an instruction. To configure the "FlyHeart" feature for a live room, perform the steps below:
@@ -87,7 +87,7 @@ public void onRecvNewMessage(V2TIMMessage msg) {
 	int elemType = msg.getElemType();
 	if (elemType == V2TIMMessage.V2TIM_ELEM_TYPE_IMAGE) {
 		V2TIMImageElem v2TIMImageElem = msg.getImageElem();
-		// An image message contains an image in three different sizes: original image, large image, and thumbnail. (The SDK automatically generates the large image and thumbnail.)
+		// An image message contains an image in three different sizes: original image, large image, and thumbnail. (The SDK automatically generates a large image and a thumbnail.)
 		// A large image is an image obtained after the original image is proportionally compressed. After the compression, the smaller one of the height and width is equal to 720 pixels.
 		// A thumbnail is an image obtained after the original image is proportionally compressed. After the compression, the smaller one of the height and width is equal to 198 pixels.
 		List<V2TIMImageElem.V2TIMImage> imageList = v2TIMImageElem.getImageList();
@@ -126,19 +126,19 @@ public void onRecvNewMessage(V2TIMMessage msg) {
 >? For more information on the message parsing sample code, see [FAQs > 5. How can I parse different types of messages](#msgAnalyze).
 
 ## Sending and Receiving Group @ Messages
-For a group @ message, the sender can listen to the input of the @ character in the input box and call the group member selection interface. After selection is completed, the input box displays the content in the format of `”@A @B @C......”`, and then the sender can continue to edit the message content and send the message. On the group chat list of the recipient’s conversation interface, the identifier `"someone@me"` or `"@all members"` will be displayed to remind the user that the user was mentioned by someone in the group.
+For a group @ message, the sender can listen to the input of the @ character in the input box and call the group member selection interface. After selection is completed, the input box displays the content in the format of `"@A @B @C......"`,and then the sender can continue to edit the message content and send the message. On the group chat list of the recipient's conversation interface, the identifier `"someone@me"` or `"@all members"` will be displayed to remind the user that the user was mentioned by someone in the group.
 >? Currently, only text @ messages are supported.
 
 ### Sending group @ messages
 1. The sender listens to the text input box on the chat interface and launches the group member selection interface. After selection is completed, the ID and nickname of the selected member are returned. The ID is used to construct the message object [V2TIMMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html), and the nickname is displayed in the text box.
 2. The sender calls [createTextAtMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#ad255ff81ed0b9ee71273a1b20cf6d753) of [V2TIMMessageManager](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html) to create an @ text message and obtain the message object [V2TIMMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html).
-3. The sender calls the [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe) API to send the created @ message object.
+3. The sender calls [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe) to send the created @ message object.
 
 ### Receiving group @ messages
 1. During conversation loading and update, call the [getGroupAtInfoList](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#a54790b0fd99c2504a73b42b884fba8a9) API of [V2TIMConversation](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html) to obtain the @ data list of the conversation < [V2TIMGroupAtInfo](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupAtInfo.html) >.
 2. Obtain and update the @ data type to the @ information of the current conversation through the [getAtType](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupAtInfo.html#aebb86a00883eb70fdab2c5f4728aae5d) API of the [V2TIMGroupAtInfo](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMGroupAtInfo.html) object on the list.
 
-### Typical examples: sending and receiving group @ messages
+### Typical example: sending and receiving group @ messages
 - **Sending a group @ message**:
 The sender creates and sends a group @ message:
 ```
@@ -213,7 +213,7 @@ switch (atInfoType){
 ```
 
 ## Sending and Receiving Combined Messages (Only Available in Lite Edition v5.2.210 and Above)
-To implement the combined forward feature similar to that in WeChat, it is necessary to create a combined message according to the original message list, and then send the combined message to the opposite end. After the opposite end receives the combined message, it will parse out the original message list. The display of the combined message also requires the title and abstract information. See the figures below.
+To implement the combined forward feature similar to that in WeChat, it is necessary to create a combined message according to the original message list, and then send the combined message to the opposite end. After the opposite end receives the combined message, it will parse out the original message list. The display of the combined message also requires the title and abstract information.
 
 - **Sending combined messages**
 Usually when we receive a combined message, the chat screen will look like this:
@@ -222,16 +222,16 @@ Usually when we receive a combined message, the chat screen will look like this:
 |---------|---------|
 | Vinson: When is the new version of SDK scheduled to go online? | abstract1 |
 | Lynx: Next Monday. The specific time depends on the system test result in these two days. | abstract2 |
-| Vinson: OK | abstract3 |
+| Vinson: OK | abstract3  |
 
-The chat UI will display only the title and abstract information of the combined message, and the combined message list will be displayed only when the user clicks the combined message. When we create a combined message, we need to set not only the combined message list, but also the title and abstract information. The implementation process is as follows:
+The chat interface will display only the title and abstract information of the combined message, and the combined message list will be displayed only when the user clicks the combined message. When we create a combined message, we need to set not only the combined message list, but also the title and abstract information. The implementation process is as follows:
 1. Call the [createMergerMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#acebe275789ab49cc8abe6af5e07aa3b0) API to create a combined message.
 2. Call the [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a28e01403acd422e53e999f21ec064795) API to send the combined message.
 
 - **Receiving combined messages**
 When receiving a combined message [V2TIMMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessage.html), use [V2TIMMergerElem](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMergerElem.html) to get [title](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMergerElem.html#a864916a91d453e2124c12e0ccbb66550) and [abstractList](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMergerElem.html#a8d9dd51a05a5c1ee63dfb4e710c85aff) for UI display. When a user clicks the combined message, call the [downloadMergerMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMergerElem.html#af34d8228a9842875652a726f24ac3d30) API to download the combine message list for UI display.
 
-### Typical examples: sending and receiving combined messages
+### Typical example: sending and receiving combined messages
 - **Sending combined messages**
 The sender creates a combined message and sends it.
 
@@ -303,7 +303,7 @@ public void onRecvNewMessage(V2TIMMessage msg) {
 }
 ```
 
-## Sending Messages that Are Excluded from the Unread Count (Only Available in Lite Edition v5.3.425 and Above)
+## Sending Messages That Are Excluded from the Unread Count (Only Available in Lite Edition v5.3.425 and Above)
 Normally, when you send one-to-one chat messages and group messages, the messages are included in the unread count (you can get the unread message count of a conversation via the [getUnreadCount](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html#ab6a7667ac8a9f7a17a38ee8e7caec98e) API of the [V2TIMConversation](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMConversation.html) conversation object). If you need to send messages that are excluded from the unread count, such as tips and control messages, send them as follows:
 
 ```
@@ -311,6 +311,30 @@ Normally, when you send one-to-one chat messages and group messages, the message
 V2TIMMessage v2TIMMessage = V2TIMManager.getMessageManager().createTextMessage(content);
 // Set the identifier for excluding from the unread message count
 v2TIMMessage.setExcludedFromUnreadCount(true);
+// Send the message
+V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, "userA", null, V2TIMMessage.V2TIM_PRIORITY_DEFAULT, false, null, new V2TIMSendCallback<V2TIMMessage>() {
+@Override
+public void onError(int code, String desc) {
+// The message fails to be sent
+}
+@Override
+public void onSuccess(V2TIMMessage v2TIMMessage) {
+// The message is sent successfully
+}
+@Override
+public void onProgress(int progress) {
+}
+});
+```
+
+## Sending Messages That Are Excluded from the Conversation lastMsg (Only Available in Enhanced Edition v5.4.666 and Above)
+In certain scenarios, if you need to send messages that are excluded from the conversation `lastMsg`, send them as follows:
+
+```
+// Create the message object
+V2TIMMessage v2TIMMessage = V2TIMManager.getMessageManager().createTextMessage(content);
+// Set the identifier for excluding from the conversation lastMsg
+v2TIMMessage.setExcludedFromLastMessage(true);
 // Send the message
 V2TIMManager.getMessageManager().sendMessage(v2TIMMessage, "userA", null, V2TIMMessage.V2TIM_PRIORITY_DEFAULT, false, null, new V2TIMSendCallback<V2TIMMessage>() {
 @Override
@@ -409,7 +433,7 @@ In some scenarios, you may wish that sent messages can only be received by onlin
 - Messages cannot be stored locally. That is, these messages cannot be retrieved from the local historical messages in the cloud.
 
 
-**Typical example: displaying "The other party is typing..."**
+**Typical example: displaying "The other party is typing..."
 In the one-to-one chat scenario, you can call [sendMessage](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a318c40c8547cb9e8a0de7b0e871fdbfe) to send the "I am typing..." message. When the recipient receives this message, "The other party is typing..." is displayed on the UI. The sample code is as follows:
 ```
 // Send the "I am typing..." message to userA
@@ -467,7 +491,7 @@ V2TIMManager.getMessageManager().revokeMessage(v2TIMMessage, new V2TIMCallback()
 ```
 @Override
 public void onRecvMessageRevoked(String msgID) {
-	// `msgList` is the message list on the current chat window
+	// `msgList` is the message list on the current chat interface
 	for (V2TIMMessage msg : msgList) {
 		if (msg.getMsgID().equals(msgID)) {
 				// `msg` is the recalled message. You need to change the corresponding message bubble state on the UI
@@ -526,7 +550,7 @@ The following example assumes that historical messages of `groupA` are pulled by
 V2TIMManager.getMessageManager().getGroupHistoryMessageList("groupA", 20, null, new V2TIMValueCallback<List<V2TIMMessage>>() {
 	@Override
 	public void onError(int code, String desc) {
-		// Messages fail to be pulled
+		// Message pulling failed
 	}
 	@Override
 	public void onSuccess(List<V2TIMMessage> v2TIMMessages) {
@@ -554,9 +578,9 @@ V2TIMManager.getMessageManager().getGroupHistoryMessageList("groupA", 20, null, 
 In actual scenarios, pulling by page is often triggered by your swipe operation. Each time when you swipe on the message list, pulling by page is triggered once. However, the principle is similar to the preceding sample code. In either case, `lastMsg` specifies the start message for pulling, and `count` specifies the number of messages pulled each time.
 
 ### Precautions
-- The storage period of historical messages is as follows:<ul style="margin:0;"><li>Trial edition: free storage for 7 days, no extension supported. </li><li>Pro edition: free storage for 7 days, extension supported. </li><li>Flagship edition: free storage for 30 days, extension supported.</li></ul>It is a value-added service to extend the storage period of historical messages. You can log in to the <a href="https://console.cloud.tencent.com/im">IM console</a> to modify the relevant configuration. For information about billing, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Value-added Service Pricing</a>.
+- The storage period of historical messages is as follows: <ul style="margin:0;"><li>Trial edition: free storage for 7 days, no extension supported.</li><li>Pro edition: free storage for 7 days, extension supported.</li><li>Flagship edition: free storage for 30 days, extension supported.</li></ul>It is a value-added service to extend the storage period of historical messages. You can log in to the <a href="https://console.cloud.tencent.com/im">IM console</a> to modify the relevant configuration. For information about billing, see <a href="https://intl.cloud.tencent.com/document/product/1047/34350">Value-added Service Pricing</a>.
 - Only the meeting group (corresponding to the ChatRoom of the earlier version) supports pulling historical messages of members **before they join the group**.
-- Messages in the AVChatRoom do not support local storage and multi-device roaming. Therefore, the [getGroupHistoryMessageList](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a671e8737fcea0c05dc661c753e5b3597) API does not take effect on an AVChatRoom.
+- Messages in an audio-video group (AVChatRoom) do not support local storage and multi-device roaming. Therefore, the [getGroupHistoryMessageList](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a671e8737fcea0c05dc661c753e5b3597) API does not take effect on an audio-video group.
 
 ## Deleting Messages
 You can call the [deleteMessages](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#adb346fede13d493e415f6574df911e9a) API to delete historical messages. After deletion, historical messages cannot be recovered.
@@ -584,13 +608,13 @@ Text messages sent by the IM SDK are filtered by IM for sensitive words. If a se
 ## FAQs
 ### 1. Why am I receiving duplicate messages?
 Check the service logic as follows:
-- Check whether [addSimpleMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#afd96fd1591e41f031421c0655d8e5d6b) is used together with [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#aaccdec10b9fbee5e43eaf908e359c823). If yes, when text or custom messages are received, both listeners trigger callback, and consequently duplicate messages are received.
+- Check whether [addSimpleMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#afd96fd1591e41f031421c0655d8e5d6b) is used together with [addAdvancedMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#aaccdec10b9fbee5e43eaf908e359c823). If yes, when text or custom messages are received, both listeners trigger a callback, and consequently duplicate messages are received.
 - Check whether the same listener object is added repeatedly. If a listener object is no longer needed, call the corresponding [removeSimpleMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMManager.html#a86ac462d87f652960d2600a52009849a) or [removeAdvancedMsgListener](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a44e1e9126bf5b30234330fe19259cd93) API to remove this listener.
 
 ### 2. Why do the read receipts become invalid after the app is uninstalled and then reinstalled?
 In the one-to-one chat scenario, if the recipient calls [markC2CMessageAsRead](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMMessageManager.html#a7c09d0ba4a8018f5f9eec4760c4c7b9b) to mark a message as read, the read receipt received by the sender contains `timestamp`. Based on `timestamp`, the SDK determines whether the other party reads the message. Currently, `timestamp` is stored locally, and will be lost when the app is reinstalled.
 
-### 3. How can I send a message containing multiple `Elem`?
+### 3. How can I send a message containing multiple `Elem` objects?
 You can call [appendElem](https://im.sdk.qcloud.com/doc/zh-cn/classcom_1_1tencent_1_1imsdk_1_1v2_1_1V2TIMElem.html#a5f5d86bb659d7a3775829eaa2e102866) after creating a `Message` object via the `Elem` member of the `Message` object to add the next `Elem` member.
 Below is an example of text message + custom message:
 
@@ -623,7 +647,7 @@ public void onRecvNewMessage(V2TIMMessage msg) {
 				V2TIMCustomElem customElem = (V2TIMCustomElem) elem;
 				byte[] data = customElem.getData();
 			}
-			// Continue to check whether current `Elem` is followed by more `Elem` objects
+			// Continue to check whether the current `Elem` is followed by more `Elem` objects
 			elem = elem.getNextElem();
 		}
 		// If `elem` is `null`, all `Elem` objects have been parsed

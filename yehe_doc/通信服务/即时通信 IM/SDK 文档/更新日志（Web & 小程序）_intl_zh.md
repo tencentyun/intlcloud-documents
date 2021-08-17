@@ -1,3 +1,33 @@
+### 2.12.1 @2021.7.20
+
+**新增**
+
+- 支持 Meeting 群未读计数。
+- [TIM.EVENT.MESSAGE_MODIFIED](https://web.sdk.qcloud.com/im/doc/zh-cn/module-EVENT.html#.MESSAGE_MODIFIED) 事件，第三方回调修改了的消息，SDK 通过此事件通知给消息发送方。
+
+**修复**
+
+- 拉群漫游消息偶发丢消息问题。
+- uni-app 集成时可能遇到的`xx.toFixed is not a function`。
+
+### 2.12.0 @2021.7.5
+
+**新增**
+
+- [deleteMessage](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#deleteMessage)，支持删除消息。
+- 同步会话列表时支持 `lastMessage` 为被撤回消息的情况。
+- [getGroupMemberList](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#getGroupMemberList) 支持拉取 `joinTime`（入群时间）。
+
+**修复**
+被设置 admin 和取消 admin 后群提示消息的 `nick` 错误。
+
+
+### 2.11.2 @2021.6.16
+
+**新增**
+
+- 支持 WebSocket，[升级指引](https://web.sdk.qcloud.com/im/doc/zh-cn/tutorial-02-upgradeguideline.html)。
+- 支持 uni-app 发送图片、视频等文件类消息。
 
 
 ### 2.10.2 @2021.4.27
@@ -295,7 +325,6 @@ Taro 3.x 集成 WebIM 时的兼容性问题。
 - [群提示消息](https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html#.GroupTipPayload) 的 `msgMemberInfo` 和 `shutupTime` 即将废弃，请使用 `memberList` 和 `muteTime` 代替。
 
 **修复**
-
 - 调用 [off](https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html#off) 接口无法取消监听事件。
 - [Message](https://web.sdk.qcloud.com/im/doc/zh-cn/Message.html) 的 `isRead` 属性值和类型不准确。
 - 发送视频消息，视频文件超过最大限制后的错误码和错误信息有误。

@@ -1,4 +1,49 @@
-## Latest Lite Edition 5.3.435 @2021.05.20
+## Latest Enhanced Version 5.5.892 @2021.07.14
+
+### SDK
+
+- Added support for message search by multiple keywords combined with AND or OR.
+- Added support for message search by a specified message sender account.
+- Added support for historical message pulling by a specified time range.
+- Added support for historical group message pulling by a specified sequence.
+- Added notifications for message modifications by a third-party callback.
+- Added the API for getting the maximum number of group members that can be added to a group.
+- Added the `orderKey` field for sorting conversation objects to facilitate sorting conversations without the last message at the app layer.
+- Optimized the audio-video group message receiving latency by making the backend complete account conversation in advance.
+- Upgraded the network connection scheduling protocol to reduce the network connection time outside the Chinese mainland.
+- Optimized the conversation list pulling logic.
+- Optimized the group member pulling logic and enabled local cache.
+- Fixed the issue where log callback was not triggered when the log level was lower than Debug.
+- Fixed the issue where group member profiles obtained did not include friend remarks.
+- Fixed the issue where the obtained list of groups the user has joined contained groups to be approved by the group owner.
+- Fixed the stability issue reported online.
+
+## Latest Basic Version 5.1.62 @2021.05.20
+
+### SDK
+
+- Fixed known issues.
+
+## 5.4.666 @2021.06.03 - Enhanced Version
+
+### SDK
+
+- Changed the name of Lite Edition SDK to Enhanced Edition SDK.
+- Added support for message, group, and friend search.
+- Added a parameter to specify whether to update the last message of the conversation during message sending.
+- Added support for clearing the roaming messages of a conversation while retaining the conversation.
+- Added support for concurrent multi-device login on the same platform.
+- Reduced the time for network connection and login.
+- Optimized the data reporting feature.
+- Optimized the offline push logic to support disabling offline push globally.
+- Optimized the offline push logic to allow setting the message classification field `classification` for vivo phone offline push.
+- Fixed the occasional incorrectness of the unread message count of one-to-one conversations.
+- Optimized the historical message pulling speed.
+- Added support for adding emojis and locations to multi-element messages.
+- Fixed the issue where, if an offline user changed the user's nickname in a group, the user's nickname in the corresponding conversation was not updated in a timely manner when the user logged in the next time.
+- Fixed the issue where the 20005 error code was occasionally reported when read messages of one-to-one conversations were reported.
+
+## 5.3.435 @2021.05.20 - Lite Edition
 
 ### SDK
 
@@ -6,17 +51,9 @@
 - Fixed the issue where some Android phones could not receive network status change notifications over persistent connections.
 - Optimized the logic for pulling user profiles to avoid requesting the backend every time when strangers request for user profiles.
 - Fixed the issue where group profiles and historical messages could not be obtained when the groups were deleted but conversations were retained.
-- Fixed the issue where conversations were out of order when you got them via the API for getting conversation list.
+- Fixed the issue where conversations were out of order when you got them via the API for getting a conversation list.
 - Fixed the issue where group conversations in Mute Notifications mode were filtered out when getting the total message unread count.
 - Fixed the occasional crashes caused by iOS HTTP requests.
-
-
-## Latest Standard Edition 5.1.62 @2021.05.20
-
-### SDK
-
-- Fixed known issues.
-
 
 ## 5.3.425 @2021.04.19 - Lite Edition
 
@@ -396,7 +433,7 @@
 
 ### SDK
 
-**iOS and Android**
+**iOS/Android**
 
 - Added an API to obtain the number of online users in an audio-video group (AVChatRoom).
 - Added an API to query messages based on the unique ID.
@@ -433,7 +470,7 @@
 
 ### SDK
 
-**iOS and Android**
+**iOS/Android**
 
 - Optimized signaling APIs to support the setting of `onlineUserOnly` for online messages and `offlinePushInfo` for offline push messages.
 - Optimized the async callback for the API for obtaining a single conversation.
@@ -612,7 +649,7 @@ Fixed group member role issues during group creation.
 - Audio-video groups (AVChatRoom) support dynamic updates of the group member list.
 - Fixed xlog crashes.
 
-**iOS and Mac platforms**
+**iOS and Mac**
 
 - Fixed the failure of iOS to send big files.
 - Fixed the exceptions that occurred when `getFriendRemark` was triggered to fetch the sender’s friend remark in a V2TIMMessage message.
@@ -658,7 +695,7 @@ Fixed a data error.
 - Optimized the login time.
 - Fixed the multi-terminal unread count synchronization issue.
 - Added the `getFriendList` API.
-- The iOS and Android SDKs enable you to set the message title and content to display on the offline push notifications bar of iOS and Android devices, respectively.</li>
+- The iOS and Android SDKs enable you to set the message title and content to display on the offline push notifications bar of iOS and Android devices, respectively.
 
 ## 4.6.102 @2020.02.28
 
@@ -699,7 +736,7 @@ Fixed a data error.
 - Improved network connection quality to quickly detect network quality changes.
 - Optimized audio-video group message handling.
 
-**iOS and Mac platforms**
+**iOS and Mac**
 
 - Changed all IMSDK listeners from strong references to weak references of external objects.
 - Added the `getSenderNickname` API for messages.
@@ -739,7 +776,7 @@ Fixed a data error.
 - Fixed the issue where `getUsersProfile` failed to get user information after caching was disabled.
 - Fixed the issue where voice message files without a suffix could not be downloaded after they were received.
 
-**iOS and Mac platforms**
+**iOS and Mac**
 
 - Added OPPOChannelID settings to fix the issue where OPPO mobile phones running Android 8.0 or later failed to receive iOS push messages.
 - Optimized annotations to `getGrouplist` return objects.
@@ -790,7 +827,7 @@ Fixed a data error.
 - Fixed the issue with incorrect `getMessage` callback error codes.
 - Fixed incorrect one-to-one chat unread count after an app is killed and restarted.
 
-**iOS and Mac platforms**
+**iOS and Mac**
 
   Fixed occasional login failures for sleeping Mac devices.
 
@@ -840,7 +877,7 @@ Fixed a data error.
 
 Optimized HTTP request restrictions on Android 9.0 or later.
 
-**iOS and Mac platforms**
+**iOS and Mac**
 
 Optimized pod integration.
 
@@ -887,7 +924,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 - Improved the speed of sending file messages for users outside the Chinese mainland.
 - Fixed the issue where the message status fetched by `getLastMessage` was incorrect after a message was recalled. Fixed the issue where the callback is called multiple times after message listening was recalled.
 - Fixed the issue where the backend failed to obtain the muting time after a member is muted, left the group, and joined the group again.
-- Fixed the issue where the msg time was ineffective at savemsg after the msg time was proactively modified.
+- Fixed the issue where the message time was ineffective during `savemsg` after the message time was proactively modified.
 - Fixed the issue where no callback occurred occasionally upon login.
 - Fixed the issue where `rand` and `timestamp` of a recalled group message were empty.
 - Fixed the issue where UserSig in a callback expired when the user was logged out. Fixed the issue where reconnection continued when the user was logged out.
@@ -938,7 +975,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
  - Added the frequency limit logic to `onRefresh/onRefreshConversations`.
  - Optimized exceptional `saveMessage` ordering.
 
-**iOS and Mac platforms**
+**iOS and Mac**
 
   - Changed the `getGroupInfo` callback parameter to `TIMGroupInfoResult` to fetch the error codes corresponding to each group.
   - Optimized the display style of push notifications for 4.x versions to keep consistency with 2.x and 3.x versions.
@@ -994,7 +1031,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 ## 4.4.716 @2019.07.16
 
 
-**iOS and Mac platforms**
+**iOS and Mac**
 
 - Organized and merged APIs.
 - Added APIs to get the download URLs of file, video, and voice messages.
@@ -1007,7 +1044,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 - Optimized the login module (repeated login/frequent login/frequent account switching/automatic connection/offline user being kicked off).
 - Fixed the issue where the unread count could not be cleared after a member left a group or a group was deleted.
 - Fixed the issue where group deletion notifications could not be received occasionally.
-- Fixed the issue where longer time was required to deliver messages when the app went to foreground after staying in the background for a long time.
+- Fixed the issue where longer time was required to deliver messages when the app went to the foreground after staying in the background for a long time.
 - Optimized the one-to-one chat unread count.
 - Changed the input parameter `TIMLoginParam` of `autoLogin` to `userID`.
 - Changed the input parameter `TIMLoginParam` of `initStorage` to `userID`.
@@ -1040,7 +1077,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 - Optimized the login module (repeated login/frequent login/frequent account switching/automatic connection/offline user being kicked off).
 - Fixed the issue where the unread count could not be cleared after a member left a group or a group was deleted.
 - Fixed the issue where group deletion notifications could not be received occasionally.
-- Fixed the issue where longer time was required to deliver messages when the app went to foreground after staying in the background for a long time.
+- Fixed the issue where longer time was required to deliver messages when the app went to the foreground after staying in the background for a long time.
 - Optimized the one-to-one chat unread count.
 - TUIKit
   - Short video messages in chats can be played in landscape or portrait orientation.
@@ -1063,7 +1100,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 - Optimized the login module (repeated login/frequent login/frequent account switching/automatic connection/offline user being kicked off).
 - Fixed the issue where the unread count could not be cleared after a member left a group or a group was deleted.
 - Fixed the issue where group deletion notifications could not be received occasionally.
-- Fixed the issue where longer time was required to deliver messages when the app went to foreground after staying in the background for a long time.
+- Fixed the issue where longer time was required to deliver messages when the app went to the foreground after staying in the background for a long time.
 
 
 
@@ -1076,7 +1113,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 
 ## 4.4.627 @2019.06.27
 
-**iOS and Mac platforms**
+**iOS and Mac**
 
 - Fixed the message sending timeout issue when no network connection was available.
 - Fixed the issue where the message ID value was changed after the message was sent.
@@ -1120,7 +1157,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 - Fixed the issue where sent online messages could be obtained through `getLastMessage` of the conversation.
 - Fixed the issue where the obtained original image size of an image message was 0.
 - Fixed the issue where the V4 version could not get the width and height of thumbnails sent by the V2 version.
-- Fixed the issue where `getLoginUser()` could still get logged in users after force offline.
+- Fixed the issue where `getLoginUser()` could still get login users after they were forced offline.
 - Fixed the issue where `getSenderProfile` returned blank information.
 - Fixed the issue where `getOpUser` of `TIMGroupSystemElem` was empty.
 - Fixed the issue where `getMessage` failed to get the `MemberChangeList` content of group tips.
@@ -1168,7 +1205,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 - Fixed the issue where voice messages failed to play.
 - Fixed crashes caused by recalling group messages.
 - Fixed the 6002 error when getting friend lists and creating groups.
-- Fixed Android devices crashes caused by creating groups with too many members.
+- Fixed Android device crashes caused by creating groups with too many members.
 - Improved the message sending efficiency.
 - Optimized the cache to mitigate UI lag.
 - TUIKit
@@ -1222,7 +1259,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 - Fixed the issue where local messages could not be obtained before login.
 - Fixed the pulling quantity and sorting issues of recent contacts.
 - Fixed group message synchronization after network reconnection.
-- Fixed the issue where identifying duplicates failed when a large number of messages was received in a short time.
+- Fixed the issue where identifying duplicates failed when a large number of messages were received in a short time.
 - Fixed the issue where the same message might be received again after the app restarted.
 - Fixed occasional errors in initialization and message synchronization.
 - Fixed occasional errors caused when `lastMsg` of a conversation was deleted.
@@ -1246,7 +1283,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 - Fixed the issue where local messages could not be obtained before login.
 - Fixed the pulling quantity and sorting issues of recent contacts.
 - Fixed group message synchronization after network reconnection.
-- Fixed the issue where identifying duplicates failed when a large number of messages was received in a short time.
+- Fixed the issue where identifying duplicates failed when a large number of messages were received in a short time.
 - Fixed the issue where the same message might be received again after the app restarted.
 - Fixed occasional errors in initialization and message synchronization.
 - Fixed occasional errors caused when `lastMsg` of a conversation was deleted.
@@ -1267,7 +1304,7 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 - Fixed the issue where deleted messages could be seen in the message list.
 - Fixed the pulling quantity and sorting issues of recent contacts.
 - Fixed group message synchronization after network reconnection.
-- Fixed the issue where identifying duplicates failed when a large number of messages was received in a short time.
+- Fixed the issue where identifying duplicates failed when a large number of messages were received in a short time.
 - Fixed the issue where the same message might be received again after the app restarted.
 - Fixed occasional errors caused when `lastMsg` of a conversation was deleted.
 - Fixed occasional errors in initialization and message synchronization.
@@ -1304,8 +1341,8 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
 - Added the Blocklist interface for TUIKit.
 - Added the Search Friend interface for TUIKit.
 - Added the New Friends interface for TUIKit.
-- Added the Remarks, Blocklist, and Delete Friend features to the friend's profile page for TUIKit.
-- Added support for modification of nicknames, personal signature, date of birth, gender, and location on the user profile page for TUIKit.
+- Optimized the friend's profile page for TUIKit: added the Remarks, Blocklist, and Delete Friend features.
+- Optimized the user profile page for TUIKit: added support for modification of nicknames, personal signature, date of birth, gender, and location.
 - Improve the group pinning feature for TUIKit.
 
 **Android**
@@ -1483,19 +1520,19 @@ Deprecated the `setOfflinePushListener` API and `TIMOfflinePushNotification` cla
   - Mitigated the timeout issue.
   - Optimized the auto login logic.
   - Fixed crashes.
-  - Fixed occasional exceptional network connection.
+  - Fixed occasional network connection exceptions.
 
 **Android**
 - Mitigated the timeout issue.
 - Optimized the auto login logic.
 - Mitigated the JNI leak issue.
 - Fixed crashes.
-- Fixed occasional exceptional network connection.
+- Fixed occasional network connection exceptions.
 
 **Windows**
 - Mitigated the timeout issue.
 - Fixed crashes.
-- Fixed occasional exceptional network connection.
+- Fixed occasional network connection exceptions.
 
 ## 4.2.9 @2019.03.27
 
@@ -1514,7 +1551,7 @@ Fixed the issue where setting profiles to int failed.
 
 **Android**
 - Fixed incorrect group pending and processed requests returned.
-- Fixed client crashes when it went to the backend.
+- Fixed client crashes when the client went to the backend.
 - Fixed the issue where no messages were received after network reconnection.
 - Fixed occasional message sorting errors.
 - Fixed the issue where messages occasionally failed to be sent.
@@ -1692,7 +1729,7 @@ Fixed the issue where some .so libraries were incompatible with devices running 
 
 ## IM SDKV3 3.0 2017-5-8
 - Regrouped IM SDK and IMCore into IM SDK, IMMessageExt, IMGroupExt, and IMFriendExt.
-- Optimized the IM SDK initialization method to initSdk: and setUserConfig.
+- Optimized the IM SDK initialization method to initSdk and setUserConfig.
 - Names of IM SDK APIs and protocol callback methods start with lowercase letters.
 - IM SDK features: basic login, receiving and sending messages, profile, and group features
 - IMMessageExt features: full message features, including message pulling, local storage, and unread count
@@ -1707,7 +1744,7 @@ Fixed the issue where some .so libraries were incompatible with devices running 
 - `sendOnlineMessage` supports group messages, which will not be saved to local storage, stored offline, or included in the unread count.
 - Added the `findMessages` method to get local messages by message ID.
 - `TIMIOSOfflinePushConfig` provides the option for setting APNs push muting.
-- Fixed the issue with excessive memory consumption when messages were received at high frequency.
+- Fixed the issue of excessive memory consumption when messages were received at high frequency.
 
 **Android**
 - Added the API for searching for messages. (For more information, see `findMessages` under `TIMConversation`.)
@@ -1727,7 +1764,7 @@ For more information, see [Offline Push](https://intl.cloud.tencent.com/document
 
 ## IM SDK 2.5.1 2017-2-16
 - Limited the maximum size of log files to 50 MB.
-- Fixed the bug where online state was returned after a user logged out and the app went to the backend.
+- Fixed the bug where the online state was returned after a user logged out and the app went to the backend.
 - iOS: updated the audio and file downloading strategy and supported HTTP and HTTPS download.
 - Fixed the status mismatch bug after messages failed to be sent when the user was not logged in.
 
@@ -1753,7 +1790,7 @@ For more information, see [Offline Push](https://intl.cloud.tencent.com/document
 
 ## IM SDK 2.4 2016-11-09
 - Full compatible with the ATS mode.
-- Message forwarding feature: the `copyFrom` API forwards image and file messages by copying images and files without downloading them.
+- Message forwarding feature: The `copyFrom` API forwards image and file messages by copying images and files without downloading them.
 - The number of members in an audio-video group is dynamically updated. `TIMGroupEventListener` returns the current number of group members.
 - Message filtering can be customized for audio-video groups.
 - `TIMOfflinePushInfo` attributes support push notification settings of Mi and Huawei mobile phones.
@@ -1821,7 +1858,7 @@ For more information, see [Offline Push](https://intl.cloud.tencent.com/document
 ## IM SDK 1.9 2016-5-4
 - Added support for groups with more than 10,000 members (no limit on the number of members, which is suitable for broadcasting scenarios).
 - Reconstructed the IM demo for better experience and ease-of-use.
-- Messages can be sent based on the priority.
+- Messages can be sent based on their priorities.
 - Added storage and cache for group profiles and relationship chains.
 - Added APIs to synchronize group profiles and relationship chains and change callbacks.
 - Added support for getting friend profiles, including remarks and lists.
@@ -1909,8 +1946,8 @@ For more information, see [Offline Push](https://intl.cloud.tencent.com/document
 - Windows C++ platform is supported.
 - Public groups and chat rooms are supported.
 - Added support for adding group introductions and announcements and added muting, message block, and group role setting.
-- Added APIs for user profile and relationship chain operations, such as nicknames, adding friends, and blocklist settings.
-- File messages are supported.
+- Added APIs for user profile and relationship chain operations, such as setting nicknames, adding friends, and setting a blocklist.
+- Added support for file messages.
 - Optimized image messages: image quality includes the original image, thumbnail, and large image. Changed upload and download APIs. Image URLs can be passed.
 - Added log levels to the log callback API.
 - Added the logic to execute forced logout on one device in the event of repeated logins.

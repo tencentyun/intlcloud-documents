@@ -1,29 +1,25 @@
-TUIKit 4.8.50 and later versions provide video and voice call features for one-to-one and group chats based on [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) and support interconnection between iOS and Android platforms. To quickly integrate TUIKit video and voice call features, follow the steps described in this document.
+TUIKit 4.8.50 and later versions provide audio/video call features and support interconnection between iOS and Android platforms. It should be noted that the integration method varies depending on the version:
+TUIKit versions **4.8.50 to 5.1.60** are integrated with the TRTC UI components and [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) audio/video library by default. And therefore they support audio/video call related features by default.
+TUIKit versions **5.4.666** and later are not integrated with the TRTC UI components and [TRTC](https://intl.cloud.tencent.com/document/product/647/35078) audio/video library by default. The related audio/video logic is moved to the TUIKitLive component. If you need to use the audio/video call feature, integrate TUIKitLive by referring to [Step 2](#step2).
 
 
+[](id:step1)
+## Step 1: Activate the TRTC Service
+1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target app card to go to the basic configuration page of the app.
+2. Click **Activate** under **Activate Tencent Real-Time Communication (TRTC)**.
+3. Click **Confirm** in the pop-up dialog box.
+ A TRTC app with the same SDKAppID as the IM app will be created in the [TRTC console](https://console.cloud.tencent.com/trtc). You can use the same account and authentication information for IM and TRTC.
 
-
->!
->- In TUIKit 4.8.50 and later versions, the voice and video call features are integrated in the TUIKit component and designed based on the new signaling solution.
->- In versions earlier than TUIKit 4.8.50, the voice and video call features are integrated in the TUIKitDemo sample on the iOS client. **If you use the voice and video call features of an earlier version, we do not recommend that you upgrade the version to avoid compatibility issues.**
-
-<span id="Step1"></span>
-## Step 1: Enable the TRTC Service
-1. Log in to the [IM console](https://console.cloud.tencent.com/im) and click the target application card to go to the basic configuration page of the application.
-2. Click **Activate** in the **Tencent Real-Time Communication (TRTC)** area.
-3. In the dialog box that appears, click **OK**.
- The system will create a TRTC application with the same SDKAppID as the current IM application in the [TRTC console](https://console.cloud.tencent.com/trtc). You can use the same account and authentication information for the two applications.
-
-<span id="Step2"></span>
-## Step 2: Configure the Engineering File
+[](id:step2)
+## Step 2: Integrate TUIKitLive
 
 1. Add the following content to the podfile file.
  ```
-// Only TUIKit 4.8.50 and later versions support the voice and video call features.
-pod 'TXIMSDK_TUIKit_iOS'                 // By default, the audio and video library of the TXLiteAVSDK_TRTC version is integrated.
-// pod 'TXIMSDK_TUIKit_iOS_Professional' // By default, the audio and video library of the TXLiteAVSDK_Professional version is integrated.
+// You need to integrate TUIKit_live separately only for TUIKit 5.4.666 or later versions.
+pod 'TXIMSDK_TUIKit_live_iOS'                // By default, the audio and video library of the TXLiteAVSDK_TRTC version is integrated.
+// pod 'TXIMSDK_TUIKit_live_iOS_Professional' // By default, the audio and video library of the TXLiteAVSDK_Professional version is integrated.
  ```
-You cannot integrate different Tencent Cloud [audio and video libraries](https://intl.cloud.tencent.com/document/product/647/34615) at the same time as this will cause symbol conflicts. If you use a library not of the [TRTC](https://intl.cloud.tencent.com/document/product/647/34615#TRTC) version, we recommend that you remove it and integrate the `TXIMSDK_TUIKit_iOS_Professional` version. The audio and video library of the [LiteAV_Professional](https://intl.cloud.tencent.com/document/product/647/34615#.E4.B8.93.E4.B8.9A.E7.89.88.EF.BC.88professional.EF.BC.89) version contains all basic audio and video capabilities.
+Do not integrate different Tencent Cloud [audio and video libraries](https://intl.cloud.tencent.com/document/product/647/34615) at the same time to avoid symbol conflicts. If you use a library not of the [TRTC](https://intl.cloud.tencent.com/document/product/647/34615#TRTC) version, we recommend that you remove it and integrate the `TXIMSDK_TUIKit_iOS_Professional` version. The audio and video library of the [LiteAV_Professional](https://intl.cloud.tencent.com/document/product/647/34615#.E4.B8.93.E4.B8.9A.E7.89.88.EF.BC.88professional.EF.BC.89) version contains all basic audio and video capabilities.
 
 2. Run the following command to download the third-party library to the current project:
 ```
@@ -35,40 +31,51 @@ pod install
 ```
 
 
-<span id="Step3"></span>
+[](id:step3)
 ## Step 3: Initialize TUIKit 
 To initialize TUIKit, enter the SDKAppID generated in [Step 1](#Step1).
 ```
 [[TUIKit sharedInstance] setupWithAppId:SDKAppID];
 ```
 
-<span id="Step4"></span>
+[](id:Step4)
 ## Step 4: Log In to TUIKit
 Call the `login` API provided by TUIKit to log in to IM. For more information on how to generate UserSig, see [How to Generate Usersig](https://intl.cloud.tencent.com/document/product/647/35166).
 ```
 [[TUIKit sharedInstance] login:@"userID" userSig:@"userSig" succ:^{
-     NSLog(@"-----> Login successful");
+     NSLog(@"-----> login succeeds");
 } fail:^(int code, NSString *msg) {
-     NSLog(@"-----> Login failed");
+     NSLog(@"-----> login fails");
 }];
 ```
 
-<span id="Step5"></span>
-## Step 5: Initiate a Video or Voice Call 
+[](id:step5)
+## Step 5: Enable/Disable Audio/Video Call
+In TUIKitLive, audio/video call is enabled by default. If you do not need audio/video call, use the ``enableVideoCall`` and ``enableAudioCall`` attributes in ``TUIKitLive.h`` to disable it. The code is as follows:
 
-When you tap **Video** or **Voice** on the chat UI, TUIKit displays the call invitation UI and sends a call request to the peer.
+```
+// Values of `enableVideoCall`: YES (enable); NO (disabled). Default value: Yes
+[TUIKitLive shareInstance].enableVideoCall = YES;
+// Values of `enableAudioCall`: YES (enable); NO (disabled). Default value: Yes
+[TUIKitLive shareInstance].enableAudioCall = YES;
+```
 
-## Step 6: Answer a Video or Voice Call
+[](id:Step6)
+## Step 6: Initiate an Audio/Video call
+
+When you tap **Video** or **Voice** on the chat UI, TUIKit automatically displays the call invitation UI and sends a call request to the peer.
+
+[](id:Step7)
+## Step 7: Answer an Audio/Video call
 
 
+- When an **online** user receives a call invitation, TUIKit automatically displays the call receiving UI, where the user can answer or reject the call.
+- When an **offline** user receives a call invitation, offline push is required if the app call UI needs to be woken up. For more information about offline push, see [Step 8](#Step8).
 
-
-- When an **online** user receives a call invitation, TUIKit displays the call accept UI. The user can answer or reject the call.
-- When an **offline** user receives a call invitation, offline push is required to wake up the app call UI. For more information about offline push, see [Step 7](#Step7).
-
-## Step 7: Offline Push
-To implement offline push for voice and video calls, follow these steps:
-1. Configure offline push for the app. For more information, see [Offline Push Configuration](https://intl.cloud.tencent.com/document/product/1047/34347).
+[](id:Step8)
+## Step 8: Offline Push
+To implement offline push for audio/video calls, follow these steps:
+1. Configure offline push for the app. For more information, see [Offline Push Configuration](https://intl.cloud.tencent.com/document/product/1047/39157).
 2. Upgrade TUIKit to 4.9.1 or later.
 3. Use TUIKit to initiate a call invitation. An offline push message will be generated by default. For more information about the message generation logic, see the `sendAPNsForCall` function in the `TUICall+Signal.m` class.
 4. After the peer receives the offline push message, the peer can call the `didReceiveRemoteNotification` callback in the [AppDelegate](https://github.com/tencentyun/TIMSDK/blob/master/iOS/TUIKitDemo/TUIKitDemo/AppDelegate.m) source code to wake up the call UI.
@@ -77,28 +84,29 @@ To implement offline push for voice and video calls, follow these steps:
 ## FAQs
 ### 1. What should I be aware of if I have created the TRTC and IM SDKAppIDs and want to integrate the IM SDK and TRTC SDK at the same time?
 
-If you have created the TRTC and IM SDKAppIDs, you cannot use the same account or authentication information for these two applications. You need to generate a UserSig corresponding to the TRTC SDKAppID to perform authentication. For more information on how to generate UserSig, see [How to Generate Usersig](https://intl.cloud.tencent.com/document/product/647/35166).
+If you have created the TRTC and IM SDKAppIDs, you cannot use the same account or authentication information for these two apps. You need to generate a UserSig corresponding to the TRTC SDKAppID to perform authentication. For more information on how to generate UserSig, see [How to Generate Usersig](https://intl.cloud.tencent.com/document/product/647/35166).
 
-After obtaining the TRTC SDKAppID and UserSig, modify the following code in the `TRTCCall+Room.swift` source code:
+After obtaining the TRTC SDKAppID and UserSig, modify the following code in the `TUICall+TRTC.m` source code:
 ```
- func enterRoom() {
-	 let param = TRTCParams()
+ - (void)enterRoom {
+	 TRTCParams *param = [[TRTCParams alloc] init];
 	 // TRTC SDKAppID
 	 param.sdkAppId = 1000000000 
 	 // UserSig generated based on the TRTC SDKAppID
 	 param.userSig = "userSig"
-  }
+}
 ```
 
 
-### 2. How long is the default call invitation timeout time? How can I modify the default timeout time?
-The default call invitation timeout time is 30s. You can modify the `timeOut` field in `TRTCCall.swift` to customize the timeout time.
+### 2. How long is the default call invitation timeout duration? How can I modify the default timeout duration?
+The default call invitation timeout duration is 30s. You can modify the `SIGNALING_EXTRA_KEY_TIME_OUT` field in `TUICallModel.m` to customize the timeout duration.
 
-### 3. Will an invitee receive a call invitation if the invitee goes offline and then online within the call invitation timeout time?
+### 3. Will an invitee receive a call invitation if the invitee goes offline and then online within the call invitation timeout duration?
 - If the call invitation is initiated in a one-to-one chat, the invitee can receive the call invitation.
 - If the call invitation is initiated in a group chat, the invitee cannot receive the call invitation.
 
-### 4. What can I do if TUIkit conflicts with the integrated audio and video library?
-You cannot integrate different Tencent Cloud [audio and video libraries](https://intl.cloud.tencent.com/document/product/647/34615) at the same time as this will cause symbol conflicts. If you use a library not of the [TRTC](https://intl.cloud.tencent.com/document/product/647/34615#TRTC) version, we recommend that you remove it and integrate the `TXIMSDK_TUIKit_iOS_Professional` version. The audio and video library of the [LiteAV_Professional](https://intl.cloud.tencent.com/document/product/647/34615#.E4.B8.93.E4.B8.9A.E7.89.88.EF.BC.88professional.EF.BC.89) version contains all basic audio and video capabilities.
-**If you use a [LiteAV_Enterprise](https://intl.cloud.tencent.com/document/product/647/34615#Enterprise) audio and video library, it cannot coexist with TUIKit.**
+### 4. What can I do if TUIkitLive conflicts with the integrated audio and video library?
+Do not integrate different Tencent Cloud [audio and video libraries](https://intl.cloud.tencent.com/document/product/647/34615) at the same time to avoid symbol conflicts. If you use a library not of the [TRTC](https://intl.cloud.tencent.com/document/product/647/34615#TRTC) version, we recommend that you remove it and integrate the `TXIMSDK_TUIKit_iOS_Professional` version. The audio and video library of the [LiteAV_Professional](https://intl.cloud.tencent.com/document/product/647/34615#.E4.B8.93.E4.B8.9A.E7.89.88.EF.BC.88professional.EF.BC.89) version contains all basic audio and video capabilities.
+**The audio and video library of the [LiteAV_Enterprise](https://intl.cloud.tencent.com/document/product/647/34615#Enterprise) version cannot coexist with TUIkitLive.**
+
 

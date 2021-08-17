@@ -1,4 +1,3 @@
-
 ## 1. IM SDK Error Codes
 >?For web SDK error codes, see [Error Code Table](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html). 
 
@@ -8,7 +7,7 @@
 | ------ | ------------------------------------------------------------ |
 | 0 | No error. |
 | 6017 | Invalid parameter. Check the error information to locate the invalid parameter. |
-| 6022 | Local I/O operation error. Check whether you have the read and write permissions or whether the disk is full. |
+| 6022 | Local I/O operation error. Check whether you have the read/write permission or whether the disk is full. |
 | 6027 | Incorrect JSON format. Check the error information to locate the specific field. |
 | 6028 | Insufficient memory. A memory leak may occur. Analyze and identify the location with high memory usage by using the Instrument tool on the iOS platform or the Profiler tool on the Android platform. |
 | 6001 | PB parsing failed. Internal error. |
@@ -23,12 +22,13 @@
 | 7005 | The file size exceeds the limit. The maximum permitted size of an uploaded file is 100 MB. |
 | 7006 | The file is empty. The file cannot be 0 bytes. When uploading an image, audio, video, or document, ensure that the file is generated correctly. |
 | 7007 | Failed to open the file. Check whether the file exists or has been opened exclusively, which causes the SDK to fail to open it. |
+| 7013   | The current package does not support this API. Please upgrade to the Flagship Edition package. |
 
 ### Account error codes
 
 | Error Code | Description |
 | ------ | ------------------------------------------------------------ |
-| 6014 | You have not logged in to the IM SDK or have been forcibly logged out. Log in to the IM SDK first and try again after successful callback. To check whether you are online, use TIMManager getLoginUser. |
+| 6014 | You have not logged in to the IM SDK or have been forcibly logged out. Log in to the IM SDK first and try again after a successful callback. To check whether you are online, use TIMManager getLoginUser. |
 | 6026 | This user account was not logged in during auto login. Call the login API to log in to the user account again. |
 | 6206 | UserSig has expired. Get a new valid UserSig and log in again. For more information about how to get a UserSig, see [Generating a UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | 6208 | You have been logged out because your account is logged in on another device. Please log in again. |
@@ -47,7 +47,7 @@
 | 6006 | File transfer authentication failed. We recommend that you check whether the file format is correct. |
 | 6007 | Failed to get the server list via FTP. |
 | 6008 | Failed to upload the file via FTP. Check your network connection. If you want to upload an image, ensure that the image can be opened. |
-| 6009 | Failed to download the file via FTP. Check whether your network is connected or the file or audio has expired. Currently, resource files are stored for up to 7 days. |
+| 6009 | Failed to download the file via FTP. Check whether your network is connected or whether the file or audio has expired. Currently, resource files are stored for up to 7 days. |
 | 6010 | HTTP request failed. Check whether the URL is valid. You can try to visit the URL via a web browser. |
 | 6016 | Invalid message elem of the IM SDK. For more information, you can check the error information to locate the specific field. |
 | 6021 | Invalid object. The TIMImage object is user-generated or an incorrect value is assigned to the object. |
@@ -65,7 +65,7 @@
 | 8504 | Invalid group notice. A group notice can be up to 300 bytes in length and must be encoded in UTF-8. If the group notice contains a Chinese character, the Chinese character may be expressed in multiple bytes. Check the length of the string in bytes. |
 | 8505 | Invalid URL of the group profile photo. The URL of a group profile photo can be up to 100 bytes in length. You can try to access the URL via a web browser. |
 | 8506 | Invalid group name card. A group name card can be up to 50 bytes in length and must be encoded in UTF-8. If the group name card contains a Chinese character, the Chinese character may be expressed in multiple bytes. Check the length of the string in bytes. |
-| 8507 | Exceeded the maximum number of group members allowed upon group creation and invitation. For the Pro Edition, a group can contain up to 200 members, which can be extended to 2,000. For the Ultimate Edition, a group can contain up to 2,000 members, which can be extended to 6,000. Audio-video chat rooms and broadcasting chat rooms have no limit on the number of members in a group. |
+| 8507   | Exceeded the maximum number of group members allowed upon group creation and invitation. For the Pro Edition, a group can contain up to 200 members, which can be extended to 2,000. For the Flagship Edition, a group can contain up to 2,000 members, which can be extended to 6,000. Audio-video chat rooms and broadcasting chat rooms have no limit on the number of members in a group. |
 | 8508 | A private group cannot be joined via app. Any group member can invite non-members to join the group without the invitees' confirmation. |
 | 8509 | You cannot invite a group member whose role is group owner. Ensure that the role field is entered correctly. |
 | 8510 | You cannot invite 0 members. Ensure that the member field is entered correctly. |
@@ -79,7 +79,7 @@
 | 9002 | Invalid remarks. The remarks field can be up to 96 bytes in length and must be encoded in UTF-8. If the remarks field contains a Chinese character, the Chinese character may be expressed in multiple bytes. Check the length of the string in bytes. |
 | 9003 | Invalid friend request. The friend request field can be up to 120 bytes in length and must be encoded in UTF-8. If the friend request field contains a Chinese character, the Chinese character may be expressed in multiple bytes. Check the length of the string in bytes. |
 | 9004 | The source field of the friend request is invalid. The source field must be prefixed with “AddSource_Type\_”. |
-| 9005 | Invalid friend group name field. A friend group name cannot be empty, can be up to 30 bytes in length, and must be encoded in UTF-8. If the friend group name contains a Chinese character, the Chinese character may be expressed in multiple bytes. Check the length of the string in bytes. |
+| 9005 | Invalid friend list name. A friend list name cannot be empty, can be up to 30 bytes in length, and must be encoded in UTF-8. If the friend list name contains a Chinese character, the Chinese character may be expressed in multiple bytes. Check the length of the string in bytes. |
 
 ### Network error codes
 
@@ -87,11 +87,11 @@
 | ------ | ------------------------------------------------------------ |
 | 9501 | SSO encryption failed. Internal error. |
 | 9502 | SSO decryption failed. Internal error. |
-| 9503 | SSO has not been authenticated. The login process may have not been completed. Complete the login process and then try again. |
+| 9503 | SSO has not been authenticated. The login process may not be completed. Complete the login process and then try again. |
 | 9504 | Failed to compress the data packet. Internal error. |
 | 9505 | Failed to decompress the data packet. Internal error. |
 | 9506 | The call frequency exceeds the frequency limit. You can initiate up to 5 requests per second. |
-| 9507 | The network request queue exceeds the maximum number (1,000) of concurrent requests allowed. For example, when users keep sending messages when the network is abnormal, the network request queue will keep adding new requests without consumption and quickly reach the maximum number of requests. |
+| 9507   | The network request queue exceeds the maximum number (1,000) of concurrent requests allowed. For example, when users keep sending messages when the network is abnormal, the network request queue will keep adding new requests without consumption and quickly reach the maximum number of requests. |
 | 9508 | The network is disconnected, no connection has been set up, or no network is detected when setting up a socket connection. |
 | 9509 | A network connection has been established, but is created repeatedly. Internal error. |
 | 9510 | Network connection setup timed out. Try again after the network recovers. |
@@ -103,8 +103,8 @@
 | 9516 | Failed to parse the IP address. Internal error. The local `imsdk_config` file may be corrupted and can cause the system to read an invalid IP address. |
 | 9517 | Invalid connection. The network is connected to an intermediate node or is reset by the server. This is an internal error. The SDK automatically initiates reconnection. Try again after the network is reconnected and the callback function `onConnSucc` on iOS or `onConnected` on Android is called successfully. |
 | 9518 | The request packet timed out when waiting to enter the sending queue. This usually occurs when the network connection setup is slow or the network is frequently disconnected and reconnected. Check whether the network connection is normal. |
-| 9519 | The request packet entered the IM SDK sending queue but timed out while waiting to enter the network layer of the operating system. This usually occurs when the local network is restricted or disconnected or the local network and the IM SDK backend are not connected. We recommend that you run the IM SDK in different network environments to check whether this issue is caused by the current network environment. |
-| 9520 | The request packet entered the network layer of the operating system from the IM SDK sending queue but timed out while waiting for a response packet from the server. This usually occurs when the local network is restricted or disconnected or the local network and the IM SDK backend are not connected. We recommend that you run the IM SDK in different network environments to check whether this issue is caused by the current network environment. |
+| 9519   | The request packet entered the IM SDK sending queue but timed out while waiting to enter the network layer of the operating system. This usually occurs when the local network is restricted or disconnected or the local network and the IM SDK backend are not connected. We recommend that you run the IM SDK in different network environments to check whether this issue is caused by the current network environment. |
+| 9520   | The request packet entered the network layer of the operating system from the IM SDK sending queue but timed out while waiting for a response packet from the server. This usually occurs when the local network is restricted or disconnected or the local network and the IM SDK backend are not connected. We recommend that you run the IM SDK in different network environments to check whether this issue is caused by the current network environment. |
 | 9522   | The request packet length exceeds the maximum limit of 1 MB. |
 | 9523 | The request packet has entered the sending queue but timed out when waiting to enter the network buffer of the system. This usually occurs because too many packets are to be sent, the sending thread is too busy to handle the packets, or the network is disconnected when the error code is called back. |
 | 9524 | The request packet has entered the network buffer of the system but timed out when waiting for the server to return packets. This usually occurs because the request packet does not leave the client device, is discarded in an intermediate route, or is dropped accidentally by the server, the response packet is discarded by the network layer of the system, or the network is disconnected when the error code is called back. |
@@ -117,14 +117,15 @@
 | Error Code | Description |
 | ------ | ------------------------------------------------------------ |
 | -302 | The number of SSO connections exceeds the limit allowed. The server refused to provide services. |
-| -10001 | D2 expired. D2 is an internal credential generated based on the UserSig. The validity period of D2 is less than or equal to that of the UserSig.<br>Call the TIMManager.getInstance().login API again to generate a new D2. |
-| -10003 | A2 expired. A2 is an internal credential generated based on the UserSig. The validity period of A2 is less than or equal to that of the UserSig.<br>Call the `TIMManager.getInstance().login` API again to generate a new A2. |
-| -10004 | A2 failed to pass authentication or was filtered by a security policy when handling downstream packets.<br>Call the `TIMManager.getInstance().login` API again to generate a new A2. |
+| -10001 | D2 expired. D2 is an internal credential generated based on the UserSig. The validity period of D2 is less than or equal to that of the UserSig. <br>Call the `TIMManager.getInstance().login` API again to generate a new D2. |
+| -10003 | A2 expired. A2 is an internal credential generated based on the UserSig. The validity period of A2 is less than or equal to that of the UserSig. <br>Call the `TIMManager.getInstance().login` API again to generate a new A2. |
+| -10004 | A2 failed to pass authentication or was filtered by a security policy when handling downstream packets. <br>Call the `TIMManager.getInstance().login` API again to generate a new A2. |
 | -10005 | The D2Key used for encryption cannot be empty. |
 | -10006 | The uin in D2 does not match the uin in the SSO packet header. |
 | -10007 | Verification code delivery timed out. |
 | -10008 | IMEI and A2 must be contained. |
 | -10106 | SSO decryption with D2key failed too many times. Instruct the device to reset and refresh D2. |
+| -10108 | Overdue prepayment. |
 | -10109 | The format of the request packet is incorrect. |
 | -10110 | The SDKAppID is blocklisted. |
 | -10111 | The SDKAppID is on the service CMD blocklist. |
@@ -176,7 +177,7 @@
 
 | Error Code | Description |
 | ------ | ------------------------------------------------------------ |
-| 70001 | UserSig expired. Please generate a new one. It is recommended that the UserSig validity period be set to not less than 24 hours. |
+| 70001 | UserSig expired. Please generate a new one. It is recommended that the UserSig validity period be set to no less than 24 hours. |
 | 70002 | The value of UserSig is 0 bytes. Check whether the passed-in UserSig is correct. |
 | 70003 | Invalid UserSig. Call the API provided on the official website to [generate a UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | 70005 | Invalid UserSig. Call the API provided on the official website to [generate a UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
@@ -189,14 +190,14 @@
 | 70051 | The account is blocklisted. |
 | 70107 | The requested UserID does not exist. |
 | 70114 | Login is restricted for security reasons. Please reduce the login frequency. |
-| 70169 | Server timeout. Please try again later. |
-| 70202 | Server timeout. Please try again later. |
+| 70169  | Server timeout. Try again later. |
+| 70202  | Server timeout. Try again later. |
 | 70206 | Invalid batch quantity in the request. |
 | 70402 | Invalid parameter. Check whether the required fields are all set and whether the parameter settings meet the protocol requirements. |
-| 70403 | Request failed. You need the app admin permission to perform this action. |
-| 70398  | The number of accounts exceeds the limit. To create more than 100 accounts, please upgrade your app to the Pro Edition. |
+| 70403 | Request failed. App admin permissions are required to perform this operation. |
+| 70398  | The number of accounts exceeds the limit. To create more than 100 accounts, upgrade your app to the Pro Edition. For operation details, see [Operation Guide](https://intl.cloud.tencent.com/document/product/1047/36021). |
 | 70500 | Internal server error. Try again later. |
-| 71000 | Failed to delete the account. Only trial accounts can be deleted. Your current app is of the Pro Edition and therefore cannot be deleted. |
+| 71000  | Failed to delete accounts. Only accounts of apps using the IM Trial plan can be deleted. Your current app is using the Pro plan and therefore does not support deleting accounts. |
 
 ### Profile error codes
 
@@ -264,7 +265,7 @@
 | 20005 | Internal server error. Please try again. |
 | 20006 | The callback prior to sending a one-to-one chat message was triggered, and the App backend returned a response to forbid the message. |
 | 20007 | The one-to-one chat message cannot be sent to the other party because the sender is in the blocklist of the other party.<br>The message delivery status is displayed as failed by default. You can log in to the IM console to change the message delivery status displayed in this scenario. For specific steps, see [Blocklist check](https://intl.cloud.tencent.com/document/product/1047/34419). |
-| 20008 | The SDKAppID of the sender does not match the SDKAppID of the recipient, because the SDKAppID is switched on the client but the data is not cleared in the database. To rectify this problem, clear the original database after switching the SDKAppID. |
+| 20008           | The SDKAppID of the sender does not match the SDKAppID of the recipient, because the SDKAppID is switched on the client but the data is not cleared in the database. To rectify this problem, clear the original database after switching the SDKAppID. |
 | 20009 | The message cannot be sent because the sender and the intended recipient are not friends. This problem occurs only when friend verification is configured for one-to-one chats. |
 | 20010 | The one-to-one chat message cannot be sent, because the sender is not a friend of the intended recipient (one-way relationship). |
 | 20011 | The one-to-one chat message cannot be sent, because the intended recipient is not a friend of the sender (one-way relationship). |
@@ -347,9 +348,9 @@
 | 10032 | The message to be recalled cannot be recalled. |
 | 10033 | This type of group does not support message recalls. |
 | 10034 | This type of message cannot be deleted. |
-| 10035 | Audio-video chat rooms and broadcast chat rooms do not support message recalls. |
-| 10036 | The number of audio-video chat rooms exceeds the limit allowed. To purchase a prepaid package of “IM audio-video chat rooms”, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
-| 10037 | The number of groups that can be created and joined by a single user exceeds the limit allowed. To purchase or upgrade a prepaid package of “Expanding the number of groups that can be created and joined by a single user”, see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
+| 10035 | Audio-video chat rooms and broadcasting chat rooms do not support message deletion. |
+| 10036 | The number of audio-video chat rooms exceeds the limit. To purchase, please see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
+| 10037 | The number of groups that can be created and joined by a single user exceeds the limit allowed. To purchase or upgrade a prepaid package of "Expanding the number of groups that can be created and joined by a single user", see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
 | 10038 | The number of group members exceeds the limit allowed. To purchase or upgrade a prepaid package of “Increasing the limit of group members”, please see [Pricing](https://intl.cloud.tencent.com/document/product/1047/34350). |
 | 10041 | The app (SDKAppID) is configured not to support group message recalls. |
 | 10045 | The size of the custom attribute key exceeds the limit of 32 bytes. |
