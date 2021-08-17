@@ -134,7 +134,7 @@
 	  "force_collapse":false,
     "message_type": "notify",
     "message": {
-        "title": "覆盖00001条消息",
+        "title": "覆盖0001条消息",
         "content":"今天天气不错哦"		
     },
     "platform": "android"
