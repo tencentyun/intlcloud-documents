@@ -26,12 +26,16 @@ Below is a sample of modification of the components.yaml file:
 ```yaml
 containers:
 - args:
-	- --cert-dir=/tmp
-	- --secure-port=4443
-	- --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
-	- --kubelet-use-node-status-port
-	- --kubelet-insecure-tls # Add this launch parameter.
-	image: ccr.ccs.tencentyun.com/mirrors/metrics-server:v0.4.0 # This cluster address is in China. Please replace it with the image address.
+  - --cert-dir=/tmp
+  - --secure-port=4443 # Please replace with 4443
+  - --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname
+  - --kubelet-use-node-status-port
+  - --kubelet-insecure-tls # Add this launch parameter
+  image: ccr.ccs.tencentyun.com/mirrors/metrics-server:v0.4.0 # For cluster in the Chinese mainland, please replace with this image address
+  ports:
+  - containerPort: 4443  # Please replace with 4443
+    name: https
+    protocol: TCP
 ```
 
 ### Deploying the metrics-server

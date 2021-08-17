@@ -4,7 +4,7 @@ Cross-Origin Resource Sharing (CORS) is a W3C standard. It allows web applicatio
 
 If the default CORS configuration of API Gateway cannot meet your needs, you can configure custom complex CORS rules through the CORS plugin and bind them to APIs for taking effect.
 
-## Directions
+## Directions[](id:steps)
 
 ### Step 1. Create a plugin
 
@@ -35,6 +35,6 @@ If the default CORS configuration of API Gateway cannot meet your needs, you can
 Currently, there are two places in API Gateway where you can set CORS rules:
 
 - Create API > frontend configuration > CORS is supported: enable the **CORS is supported** configuration item when creating an API, and API Gateway will add `Access-Control-Allow-Origin : *` in the response header by default.
-- The CORS plugin as described in this document.
+- The CORS plugin as described in this document. For more information, see [Directions](#steps).
 
 The CORS plugin has a higher priority than the **CORS is supported** configuration item. When the former is bound to an API, the latter of the API will not take effect.
