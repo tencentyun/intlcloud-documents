@@ -16,7 +16,7 @@
 
 Therefore, compared with traditional open-source message queue applications, Tencent Cloud CMQ has the following advantages:
 
-| | Tencent Cloud CMQ | Open-Source Messaging Middleware | 
+| Comparison Items | Tencent Cloud CMQ | Open-Source Messaging Middleware | 
 |---------|---------|---------|
 | High performance | High performance and reliability can be guaranteed at the same time, and the QPS of a single CMQ instance reaches 5,000 | High performance and reliability cannot be guaranteed at the same time |
 | High scalability | <li>The number of queues and queue storage capacity are highly scalable</li><li>The underlying system can be automatically scaled based on the business volume, which is imperceptible to upper-layer businesses</li><li>Hundreds of millions of messages can be received, sent, pushed, and retained efficiently with an unlimited capacity</li><li>The message service is provided in multiple regions: Beijing, Shanghai, and Guangzhou</li> | <li>The numbers of queues and retained messages are limited</li><li>Each IDC needs to have devices purchased and deployed, which is complicated</li> |
