@@ -1,6 +1,6 @@
 ## Scenarios
 This document describes how to install an SSL certificate on a JBoss server.
->
+>?
 >- The certificate name `cloud.tencent.com` is used as an example in this document.
 >- JBoss 7.1.1 is used as an example.
 >- The current server OS is CentOS 7. Detailed steps vary slightly with the OS version.
@@ -31,7 +31,7 @@ This document describes how to install an SSL certificate on a JBoss server.
 </tr>
 </table>
 
->
+>!
 >- For a CVM instance purchased on the Tencent Cloud official website, log in to the [CVM Console](https://console.cloud.tencent.com/cvm) to obtain the server IP address, username, and password.
 >- If you selected the **Paste CSR** method when applying for the SSL certificate, or purchased the Wotrus certificate, the option to download the Tomcat certificate file is not provided. Instead, you manually convert the format to generate a keystore by following the procedure below:
     - Access the [conversion tool](https://myssl.com/cert_convert.html).
@@ -47,7 +47,7 @@ After decompression, you can obtain the relevant certificate files, including th
     - `cloud.tencent.com.jks`: keystore file
     - `keystorePass.txt`: password file (if you have set a private key password, this file will not be generated)
   - **CSR file**: `cloud.tencent.com.csr`
-  >The CSR file is uploaded by you or generated online by the system when you apply for the certificate and is provided to the CA. It is irrelevant to the installation.
+>?The CSR file is uploaded by you or generated online by the system when you apply for the certificate and is provided to the CA. It is irrelevant to the installation.
 2. Remotely log in to the JBoss server. For example, you can use [PuTTY](https://intl.cloud.tencent.com/document/product/213/32502) for remote login.
 3. In the `/usr/local/jboss-7.1.1/standalone/configuration` directory, run the `mkdir cert` command to create the `cert` folder.
 4. Use WinSCP (a tool for copying files between a local computer and a remote computer) to log in to the JBoss server and copy the keystore file `cloud.tencent.com.jks` from the local directory to the `cert` folder.
@@ -105,5 +105,5 @@ Changes required are as follows:
 ![](https://main.qcloudimg.com/raw/0dc9c0ee84b92f7978a7a133d35bcf27.png)
 7. After the JBoss server is started, access it through `https://cloud.tencent.com`.
 
->If any problems occur during this process, please [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
+>!If any problems occur during this process, please [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
 

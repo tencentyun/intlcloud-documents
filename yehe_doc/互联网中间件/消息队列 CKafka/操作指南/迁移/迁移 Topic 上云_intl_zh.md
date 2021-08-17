@@ -3,7 +3,7 @@
 
 ## 前提条件
 
-- 已 [购买云上实例](https://cloud.tencent.com/document/product/597/57775)
+- 已 [购买云上实例](https://intl.cloud.tencent.com/document/product/597/41379)
 - [下载 Python2](https://www.python.org/downloads/)
 
 
@@ -67,10 +67,10 @@
 | ---------------- | ------------------------------------------------------------ |
 | bootstrapServers | 自建实例的broker列表，["ip1:port1","ip2:port2"]。            |
 | sourceZk         | 自建实例的zookeeper列表， ["zk1:port1","zk2:port2"]。        |
-| instanceId       | 您在 [购买云上实例](https://cloud.tencent.com/document/product/597/57775) 中购买的 CKafka 实例的 ID，在控制台的【实例列表】页面复制。 |
+| instanceId       | 您在 [购买云上实例](https://intl.cloud.tencent.com/document/product/597/41379) 中购买的 CKafka 实例的 ID，在控制台的【实例列表】页面复制。 |
 | secretId         | 账号的密钥对-ID。                                            |
 | secretKey        | 账号的密钥对-密码。                                          |
-| region           | 您在 [购买云上实例](https://cloud.tencent.com/document/product/597/57775) 中选择的部署地域，脚本内注释附带各地域码。   |
+| region           | 您在 [购买云上实例](https://intl.cloud.tencent.com/document/product/597/41379) 中选择的部署地域，脚本内注释附带各地域码。   |
 | checkFlag        | 检查标记，设置为0时只显示将要迁移的 Topic 列表并不开始迁移，设置为非0时开始迁移 Topic。 |
 | topicRegex       | Topic 名称正则表达式，设置为空时迁移所有的 Topic，非空时则只迁移匹配到的 Topic。 |
 | force            | 是否强制迁移，如果为0转换本地 Topic 到云上 Topic 时，属性不一致不会迁移上云。如果为1，会强制转换 Topic 属性和云上规定最接近的值。 |
@@ -85,7 +85,7 @@
 
 5. 登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)，在【迁移上云】页面查看任务列表，等待 Topic 迁移完毕。
 	任务列表如下：
-	<img src="https://main.qcloudimg.com/raw/d064a541d46505746b3a9e81c4cb5e99.png" width="600px">
+	<img src="https://main.qcloudimg.com/raw/1c9a76e32926abf8cb296f9622b67a23.png" width="600px">
 	
 	迁移成功界面如下：
 	<img src="https://main.qcloudimg.com/raw/574f0dd1ead9397a7da91f26f82c9bc8.png" width="600px">

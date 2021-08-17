@@ -1,14 +1,10 @@
-
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)。
 2. 单击左侧目录中的 【云联网】，进入云联网管理页面。
 3. 您可通过如下方式进行关联：
  1. 详情页关联
       1. 单击需要添加关联的云联网 ID，进入“关联实例”页面，单击【新增实例】。 
 	  2. 在弹出框中，选择需要关联的网络实例类型（私有网络 / 专线网关 / 黑石私有网络 / VPN 网关）、所属地域和具体实例。
- >?
- >- 目前云联网关联 VPN 网关灰度中，如需使用，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category)。
- >- 云联网自动添加 VPN 网关路由的前提为：云联网关联的 VPN 网关已建立 VPN 通道且完成 SPD 策略的配置，详情请参见 [IDC 通过 VPN 网关接入云联网](https://intl.cloud.tencent.com/document/product/1037/36018)。
- >
+ >?云联网自动添加 VPN 网关路由的前提为：云联网关联的 VPN 网关已建立 VPN 通道且完成 SPD 策略的配置，详情请参见 [IDC 通过 VPN 网关接入云联网](https://intl.cloud.tencent.com/document/product/1037/36018)。
 	 3. （可选）如需再关联其他网络实例，可单击【添加】进行关联。
 	 4. 单击【确定】即可。 
   ![](https://main.qcloudimg.com/raw/25969bdf63f77d815c4fa5562bc2ba5d.png)

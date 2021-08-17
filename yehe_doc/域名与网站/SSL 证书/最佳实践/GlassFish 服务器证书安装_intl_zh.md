@@ -1,6 +1,6 @@
 ## 操作场景
 本文档指导您如何在 GlassFish 服务器中安装 SSL 证书。
->
+>?
 >- 本文档以证书名称 `cloud.tencent.com` 为例。
 >- GlassFish 版本以 `glassfish-4.0` 为例。
 >- 当前服务器的操作系统为 CentOS 7，由于操作系统的版本不同，详细操作步骤略有区别。
@@ -31,11 +31,11 @@
 </tr>
 </table>
 
->
+>!
 >- 在腾讯云官网购买的云服务器，您可以登录 [云服务器控制台](https://console.cloud.tencent.com/cvm)  获取服务器 IP 地址、用户名及密码。
 >- 当您申请 SSL 证书时选择 “粘贴 CSR” 方式，或购买的品牌证书为 Wotrus，则不提供 Tomcat 证书文件的下载，需要您通过手动转换格式的方式生成密钥库。其操作方法如下： 
- - 访问 [转换工具](https://myssl.com/cert_convert.html)。
- - 将 Nginx 文件夹中的证书文件和私钥文件上传至转换工具中，并填写密钥库密码，单击【提交】，转换为 jks 格式证书。
+    - 访问 [转换工具](https://myssl.com/cert_convert.html)。
+    - 将 Nginx 文件夹中的证书文件和私钥文件上传至转换工具中，并填写密钥库密码，单击【提交】，转换为 jks 格式证书。
 >- 当前 GlassFish 服务安装在 `/usr/share` 目录下。
 
 
@@ -46,10 +46,10 @@
     - `2_cloud.tencent.com.crt` 证书文件
     - `3_cloud.tencent.com.key` 私钥文件
   - **CSR 文件内容**：	`cloud.tencent.com.csr` 文件
-  >CSR 文件是申请证书时由您上传或系统在线生成的，提供给 CA 机构。安装时可忽略该文件。
+>?CSR 文件是申请证书时由您上传或系统在线生成的，提供给 CA 机构。安装时可忽略该文件。
 2. 远程登录 GlassFish 服务器。例如，使用 [“PuTTY” 工具](https://intl.cloud.tencent.com/document/product/213/32502) 登录。
 3. 进入 `/usr/share/glassfish4/glassfish/bin` 目录下执行命令 `./asadmin` 后，需更换 domain 的管理密码，请执行命令 `change-master-password --savemasterpassword=true domain1`。如下图所示：
->
+>!
 >- domain1 安装默认路径为 `/usr/share/glassfish4/glassfish/domains`，domain 名称请根据实际情况填写。
 >- 默认密码为 changeit，请输入回车后再输入新密码，新密码请填写申请证书时设置的**私钥密码**。
 >- 若申请证书时未设置私钥密码，则填写 Tomcat 文件夹中 `keystorePass.txt` 文件的密码。
@@ -83,5 +83,5 @@ keytool -importcert -trustcacerts -destkeystore cacerts.jks -file 2_cloud.tencen
 12. 启动 GlassFish 服务器，即可使用 `https://cloud.tencent.com` 进行访问。如下图所示：
 ![](https://main.qcloudimg.com/raw/fcdf919a22f0c9b07bc837e4d9a5e269.png)
 
->操作过程如果出现问题，请您 [联系我们](https://intl.cloud.tencent.com/document/product/1007/30951)。
+>!操作过程如果出现问题，请您 [联系我们](https://intl.cloud.tencent.com/document/product/1007/30951)。
 

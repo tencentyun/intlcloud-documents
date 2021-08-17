@@ -80,7 +80,7 @@ Create a group and specify the initial group member list. The group member list 
 {
     "Name": "TestGroup", // Group name (required)
     "Type": "Public", // Group type: Private, Public, ChatRoom (AVChatRoom is not supported) (required)
-    "MemberList": [ // Initial group member list, which contains a maximum of 500 members (optional)
+    "MemberList": [ // Initial group member list, which contains a maximum of 100 members (optional)
          {
             "Member_Account": "bob", // Member (required)
             "Role": "Admin" // Role assigned to the member (optional). Currently, only the Admin option is available.
@@ -182,7 +182,7 @@ Create a group and specify group member custom fields. `AppMemberDefinedData` is
             "Value": "abc\u0000\u0001" // The custom field supports binary data.
         }
     ],
-    "MemberList": [ // Initial group member list, which contains a maximum of 500 members (optional)
+    "MemberList": [ // Initial group member list, which contains a maximum of 100 members (optional)
         {
             "Member_Account": "bob", // Member (required)
             "Role": "Admin", // Role assigned to the member. Currently, only the Admin option is available. (optional)

@@ -14,7 +14,7 @@
 
 These are the 4 built-in group types in IM. For detailed information, see the [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
 
->- AVChatRooms (livestreaming groups) do not support deleting group members. If you attempt to delete members of an AVChatRoom group, error 10004 will be returned. To achieve the effect of deleting members, admins can [batch mute and unmute](https://intl.cloud.tencent.com/document/product/1047/34951) group members.
+>? AVChatRooms (livestreaming groups) do not support deleting group members. If you attempt to delete members of an AVChatRoom group, error 10004 will be returned. To achieve the effect of deleting members, admins can [batch mute and unmute](https://intl.cloud.tencent.com/document/product/1047/34951) group members.
 
 ### Sample request URL
 ```
@@ -39,12 +39,12 @@ The maximum calling frequency is 200 calls per second.
 ### Sample request packet
 
 - **Basic form**
-Delete up to 500 group members in one request. The backend sends system deletion notifications to all group members by default, except for Private (work group for friends, same as Work in the new version) groups.
+Delete up to 100 group members in one request. The backend sends system deletion notifications to all group members by default, except for Private (work group for friends, same as Work in the new version) groups.
 Even if the user to be deleted is not in the group, the API will still return success.
 ```
 {
     "GroupId": "@TGS#2J4SZEAEL", // Target group (required)
-    "MemberToDel_Account": [ // List of group members to be deleted. A maximum of 500 members can be deleted.
+    "MemberToDel_Account": [ // List of group members to be deleted. A maximum of 100 members can be deleted.
         "tommy",
         "jared"
     ]
@@ -56,7 +56,7 @@ When **Silence** is set to 1, the system will not notify anyone after successful
 {
     "GroupId": "@TGS#2J4SZEAEL", // Target group (required)
     "Silence": 1, // Whether to delete silently (optional)
-    "MemberToDel_Account": [ // List of group members to be deleted. A maximum of 500 members can be deleted.
+    "MemberToDel_Account": [ // List of group members to be deleted. A maximum of 100 members can be deleted.
         "tommy",
         "jared"
     ]
@@ -68,7 +68,7 @@ Specify the reason for removing a user from a group, which will be reflected in 
 {
     "GroupId": "@TGS#2J4SZEAEL", // Target group (required)
     "Reason": "kick reason", // Reason for removing the member from the group (optional)
-    "MemberToDel_Account": [ // List of group members to be deleted. A maximum of 500 members can be deleted.
+    "MemberToDel_Account": [ // List of group members to be deleted. A maximum of 100 members can be deleted.
         "tommy",
         "jared"
     ]

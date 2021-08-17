@@ -1,4 +1,4 @@
-TencentDB for Redis Memory Edition (cluster architecture) is a new edition of Redis built by Tencent Cloud based on Community Edition of Redis Cluster, which is compatible with Redis 4.0 and 5.0 commands. It uses a distributed architecture to enable elastic scaling and features high flexibility, availability, and performance of tens of millions of QPS. Specifically, it supports horizontal scaling of 3–128 shards and replica scaling of 1–5 replica sets, where the scaling and migration are virtually imperceptible to the business, maximizing the system availability.
+TencentDB for Redis Memory Edition (cluster architecture) is a new edition of Redis built by Tencent Cloud based on Community Edition of Redis Cluster, which is compatible with Redis 4.0 and 5.0 commands. It uses a distributed architecture to enable elastic scaling and features high flexibility, availability, and performance of tens of millions of QPS. Specifically, it supports horizontal scaling of 1–320 shards and replica scaling of 1–5 replica sets, where the scaling and migration are virtually imperceptible to the business, maximizing the system availability.
 ![](https://main.qcloudimg.com/raw/d023aa7ddecec8b0b42a899b7ea307b0.png)
 
 ## Use Cases
@@ -10,14 +10,13 @@ When the number of replica nodes is greater than 1, automatic read/write separat
 The Memory Edition (cluster architecture) automatically enables auto-sharding and achieves horizontal scaling of system performance by assigning different keys to multiple nodes.
 
 ## Cluster Specifications
-- Shard size (GB): 2, 4, 8, 12, 16, 20, 24, 28, 32
-- Number of shards: 3, 5, 8, 12, 16, 24, 32, 64, 96, 128 
+- Shard size (GB): 2, 4, 8, 12, 16, 20, 24, 28, 32, 40, 48, 64
+- Number of shards: 1, 3, 5, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96, 128, 192, 256, 320
 - Number of replicas: 1, 2, 3, 4, 5 
->?With the shard specification of 2 GB, up to 8 shards can be supported.
 
 ## Cluster Mode
 - In cluster mode, data is automatically sharded. The system provides data load balancing and migration capabilities.
-- The cluster mode supports shards of 2-32 GB.
+- The cluster mode supports shards of 2-64 GB.
 - The cluster mode is compatible with certain commands of the non-cluster mode, mainly reflected in cross-slot data access. For more information, please see [Notes on Command Compatibility](#xianzhi).
 
 ## Replica Description
@@ -26,7 +25,7 @@ The Memory Edition (cluster architecture) automatically enables auto-sharding an
 
 ## Features
 **Flexibility** 
-The Memory Edition (cluster architecture) supports horizontal scaling of 3-128 nodes and scaling of 1-5 replica sets, making it ideal for various scenarios through instance specification adjustment.
+The Memory Edition (cluster architecture) supports horizontal scaling of 1-320 nodes and scaling of 1-5 replica sets, making it ideal for various scenarios through instance specification adjustment.
 **Availability** 
 In Memory Edition (cluster architecture), scaling of shard quantity and replica quantity are virtually imperceptible to the business, maximizing the system availability.
  **Compatibility**
@@ -84,7 +83,6 @@ List of custom commands:
 - FLUSHDB
 - PING
 - KEYS (hashtag is supported and has matching priority)
-- SCAN (hashtag is supported and has matching priority)
 - MONITOR
 
 #### Transactional support

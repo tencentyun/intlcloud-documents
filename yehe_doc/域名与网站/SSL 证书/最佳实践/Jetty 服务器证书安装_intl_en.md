@@ -1,6 +1,6 @@
 ## Scenarios
 This document describes how to install an SSL certificate on a Jetty server.
->
+>?
 >- The certificate name `cloud.tencent.com` is used as an example in this document.
 >- Jetty 9.4.28.v20200408 is used as an example.
 >- The current server OS is CentOS 7. Detailed steps vary slightly with the OS version.
@@ -31,7 +31,7 @@ This document describes how to install an SSL certificate on a Jetty server.
 </tr>
 </table>
 
->
+>!
 >- For a CVM instance purchased on the Tencent Cloud official website, log in to the [CVM Console](https://console.cloud.tencent.com/cvm) to obtain the server IP address, username, and password.
 >-  If you selected the **Paste CSR** method when applying for the SSL certificate, or purchased the Wotrus certificate, the option to download the Tomcat certificate file is not provided. Instead, you manually convert the format to generate a keystore by following the procedure below:
      - Access the [conversion tool](https://myssl.com/cert_convert.html).
@@ -47,17 +47,18 @@ After decompression, you can obtain the relevant certificate files, including th
     - `cloud.tencent.com.jks`: keystore file
     - `keystorePass.txt`: password file (if you have set a private key password, this file will not be generated)
   - **CSR file**: `cloud.tencent.com.csr`
-  >The CSR file is uploaded by you or generated online by the system when you apply for the certificate and is provided to the CA. It is irrelevant to the installation.
+>?The CSR file is uploaded by you or generated online by the system when you apply for the certificate and is provided to the CA. It is irrelevant to the installation.
 2. Remotely log in to the Jetty server. For example, you can use [PuTTY](https://intl.cloud.tencent.com/document/product/213/32502) for remote login.
 3. In the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/etc` directory, run the `mkdir cert` command to create the `cert` folder.
 4. Use WinSCP (a tool for copying files between a local computer and a remote computer) to log in to the Jetty server and copy the keystore file `cloud.tencent.com.jks` from the local directory to the `cert` folder.
 5. In the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/etc` directory, modify the configuration in the `jetty-ssl-context.xml` file.
->
+>?
 >- **KeyStorePath**: set the default value to the path of the certificate file.
 >- **KeyStorePassword**: set the default value to the keystore password. If you have set a private key password when applying for the certificate, enter the private key password; otherwise, enter the password in the `keystorePass.txt` file in the `Tomcat` folder.
 >- **KeyManagerPassword**: set the value to the password in the `keystorePass.txt` file in the `Tomcat` folder.
 >- **TrustStorePath**: set the default value to the certificate file path.
 >
+
 ```
 <?xml version="1.0"?><!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure_9_3.dtd">
 <!-- ============================================================= --><!-- SSL ContextFactory configuration                              --><!-- ============================================================= -->
@@ -148,5 +149,5 @@ After the certificate is deployed, the following error message may be displayed 
 ![](https://main.qcloudimg.com/raw/2ad181d6ed021958c214b04df9fa67a6.png)
 If the error message is displayed, copy the `ROOT` file from the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/demo-base/webapps` directory to the `/usr/local/jetty/jetty-distribution-9.4.28.v20200408/webapps` directory, and then restart the Jetty server.
 
->If any problems occur during this process, please [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
+>!If any problems occur during this process, please [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
 

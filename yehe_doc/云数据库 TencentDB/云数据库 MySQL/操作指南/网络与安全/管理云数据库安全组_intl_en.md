@@ -1,5 +1,5 @@
 ## Overview
-A [security group](https://intl.cloud.tencent.com/zh/document/product/213/12452) is a stateful virtual firewall capable of filtering. As an important means for network security isolation provided by Tencent Cloud, it can be used to set network access controls for one or more TencentDB instances. Instances with the same network security isolation demands in one region can be put into the same security group, which is a logical group. TencentDB and CVM share the security group list and are matched with each other within the security group based on rules. For specific rules and limitations, please see [Security Group Overview](https://intl.cloud.tencent.com/document/product/215/38750).
+A [security group](https://intl.cloud.tencent.com/document/product/213/12452) is a stateful virtual firewall capable of filtering. As an important means for network security isolation provided by Tencent Cloud, it can be used to set network access controls for one or more TencentDB instances. Instances with the same network security isolation demands in one region can be put into the same security group, which is a logical group. TencentDB and CVM share the security group list and are matched with each other within the security group based on rules. For specific rules and limitations, please see [Security Group Overview](https://intl.cloud.tencent.com/document/product/215/38750).
 
 >?
 >- TencentDB for MySQL security groups currently only support network access control for VPCs and public networks but not the classic network.
@@ -42,7 +42,10 @@ A [security group](https://intl.cloud.tencent.com/zh/document/product/213/12452)
 	<tr><td>Reference an IP address object or IP address group object in a <a href="https://intl.cloud.tencent.com/document/product/215/31867">parameter template</a>.</td><td>-</td></tr>
 </table>
  - **Protocol Port**: enter the protocol type and port range or reference a protocol/port or protocol/port group in a [parameter template](https://intl.cloud.tencent.com/document/product/215/31867).
-  >?To connect to TencentDB for MySQL, port 3306 must be opened.
+  >!To connect to a TencentDB for MySQL instance, you must open its port.
+  >- TencentDB for MySQL uses private network port 3306 by default and supports customizing the port. If the default port is changed, the new port should be opened in the security group.
+  >- TencentDB for MySQL uses public network port 60719 by default. You can log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID in the instance list, and view its port number on the instance details page.
+  >![](https://main.qcloudimg.com/raw/9f471c644eb9a5aa86bd092fdebd0255.png)
  - **Policy**: **Allow** or **Reject**. **Allow** is selected by default.
     - **Allow**: traffic to this port is allowed.
     - **Reject**: data packets will be discarded without any response.
@@ -54,7 +57,7 @@ A [security group](https://intl.cloud.tencent.com/zh/document/product/213/12452)
 **Solution:** when adding security group rules, select MySQL(3306) in **Type** to open port 3306.
 You can also set **Source** to all or specific IPs (IP ranges) as needed to allow them to access TencentDB for MySQL from a CVM instance.
 
-| Inbound or Outbound   | Type   | Source                                                    | Protocol and Port | Policy |
+| Direction | Type | Source | Port | Policy |
 |---------|---------|---------|---------|---------|
 | Inbound | MySQL(3306) | All IPs: 0.0.0.0/0 <br>Specific IPs: specify IPs or IP ranges | TCP:3306 | Allow |
 
@@ -64,7 +67,7 @@ A security group is an instance-level firewall provided by Tencent Cloud for con
 
 >!Currently, security groups can be configured only for **TencentDB for MySQL instances in VPC**.
 
-1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, click an instance ID or **Manage** in the **Operation** column to access the instance management page.
+1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb), click an instance ID in the instance list, and enter the instance management page.
 2. On the **Security Group** tab, click **Configure Security Group**.
 3. In the pop-up dialog box, select the security group to be bound and click **OK**. 
 

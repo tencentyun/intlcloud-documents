@@ -7,7 +7,7 @@
 <tbody><tr>
 <td>Compatible Redis version</td><td>2.8</td><td>4.0 and 5.0</td><td>4.0 and 5.0</td></tr>
 <tr>
-<td>Memory</td><td>256 MB to 60 GB</td><td>1 GB to 64 GB</td><td>4 GB to 20 TB</td></tr>
+<td>Memory</td><td>256 MB to 64 GB</td><td>1 GB to 64 GB</td><td>4 GB to 20 TB</td></tr>
 <tr>
 <td>Shard quantity</td><td>N/A</td><td>N/A</td><td>1 to 320</td></tr>
 <tr>

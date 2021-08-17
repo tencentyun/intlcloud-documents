@@ -80,7 +80,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
 {
     "Name": "TestGroup", // 群名称（必填）
     "Type": "Public", // 群组类型：Private/Public/ChatRoom(不支持AVChatRoom)（必填）
-    "MemberList": [ // 初始群成员列表，最多500个（选填）
+    "MemberList": [ // 初始群成员列表，最多100个（选填）
          {
             "Member_Account": "bob", // 成员（必填）
             "Role": "Admin" // 赋予该成员的身份，目前备选项只有 Admin（选填）
@@ -182,7 +182,7 @@ https://console.tim.qq.com/v4/group_open_http_svc/create_group?sdkappid=88888888
             "Value": "abc\u0000\u0001" // 自定义字段支持二进制数据
         }
     ],
-    "MemberList": [ // 初始群成员列表，最多500个（选填）
+    "MemberList": [ // 初始群成员列表，最多100个（选填）
         {
             "Member_Account": "bob", // 成员（必填）
             "Role": "Admin", // 赋予该成员的身份，目前备选项只有 Admin（选填）

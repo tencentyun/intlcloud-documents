@@ -3,7 +3,7 @@ This document describes how to use the migration tool provided by CKafka to migr
 
 ## Prerequisites
 
-- You have already [purchased a CKafka instance](https://cloud.tencent.com/document/product/597/57775).
+- You have already [purchased a CKafka instance](https://intl.cloud.tencent.com/document/product/597/41379).
 - You have [downloaded Python 2](https://www.python.org/downloads/).
 
 
@@ -30,7 +30,7 @@ This document describes how to use the migration tool provided by CKafka to migr
    instanceId = "$yourinstanceId"
    
    # topic regex,just migrate match topics
-   # Regular expression of topic name. If it is not empty, only matched topics will be migrated
+   # Regex of topic name. If it is not empty, only matched topics will be migrated
    topicRegex = ""
    
    # your secretId and secretKey
@@ -67,12 +67,12 @@ This document describes how to use the migration tool provided by CKafka to migr
 | ---------------- | ------------------------------------------------------------ |
 | bootstrapServers | List of brokers of the self-built instance, such as `["ip1:port1","ip2:port2"]`.            |
 | sourceZk         | List of ZooKeepers of the self-built instance, such as `["zk1:port1","zk2:port2"]`.        |
-| instanceId       | ID of the [purchased CKafka instance](https://cloud.tencent.com/document/product/597/57775), which can be copied on the **Instance List** page in the console. |
+| instanceId       | ID of the [purchased CKafka instance](https://intl.cloud.tencent.com/document/product/597/41379), which can be copied on the **Instance List** page in the console. |
 | secretId         | ID in the account key pair.                                            |
 | secretKey        | Password in the account key pair.                                          |
-| region           | Deployment region selected during [CKafka instance purchase](https://cloud.tencent.com/document/product/597/57775). All region codes are as listed in the script comment.   |
+| region           | Deployment region selected during [CKafka instance purchase](https://intl.cloud.tencent.com/document/product/597/41379). All region codes are as listed in the script comment.   |
 | checkFlag        | Check flag. If it is 0, the list of topics to be migrated will be displayed only and migration will not start. If it is not 0, the topics will start to be migrated. |
-| topicRegex       | Regular expression of topic name. If it is empty, all topics will be migrated. If it is not empty, only matched topics will be migrated. |
+| topicRegex       | Regex of topic name. If it is empty, all topics will be migrated. If it is not empty, only matched topics will be migrated. |
 | force            | Specifies whether to forcibly migrate. If the value is 0, a local topic will not be migrated to CKafka if its attributes do not match those of CKafka. If the value is 1, the topic attribute values out of the value range of CKafka will be forcibly converted to the closest values within the value range. |
 
 3. Set the `checkFlag` parameter in `ckafka-migrate.py` to 0, run `python ckafka-migrate.py` to execute the script, and check the list of topics that need to be migrated based on the output result.
@@ -85,8 +85,8 @@ This document describes how to use the migration tool provided by CKafka to migr
 
 5. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka), view the task list on the **Cloud Migration** page, and wait for the topics to be completely migrated.
 	The topic list is as shown below:
-	<img src="https://main.qcloudimg.com/raw/d064a541d46505746b3a9e81c4cb5e99.png" width="600px">
-	
+	<img src="https://main.qcloudimg.com/raw/1c9a76e32926abf8cb296f9622b67a23.png" width="600px">
+
 	The result of successful migration is as shown below:
 	<img src="https://main.qcloudimg.com/raw/574f0dd1ead9397a7da91f26f82c9bc8.png" width="600px">
 

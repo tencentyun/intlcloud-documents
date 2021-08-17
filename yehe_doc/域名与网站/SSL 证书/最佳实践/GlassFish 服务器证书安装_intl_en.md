@@ -1,6 +1,6 @@
 ## Scenarios
 This document describes how to install an SSL certificate on a GlassFish server.
->
+>?
 >- The certificate name `cloud.tencent.com` is used as an example in this document.
 >- GlassFish 4.0 is used as an example.
 >- The current server OS is CentOS 7. Detailed steps vary slightly with the OS version.
@@ -31,11 +31,11 @@ This document describes how to install an SSL certificate on a GlassFish server.
 </tr>
 </table>
 
->
+>!
 >- For a CVM instance purchased on the Tencent Cloud official website, log in to the [CVM Console](https://console.cloud.tencent.com/cvm) to obtain the server IP address, username, and password.
 >- If you selected the **Paste CSR** method when applying for the SSL certificate, or purchased the Wotrus certificate, the option to download the Tomcat certificate file is not provided. Instead, you manually convert the format to generate a keystore by following the procedure below:
-   - Access the [conversion tool](https://myssl.com/cert_convert.html).
-   - Upload the certificate and private key files in the Nginx folder to the conversion tool, enter the keystore password, click **Submit**, and convert the certificate to a .jks certificate.
+     - Access the [conversion tool](https://myssl.com/cert_convert.html).
+     - Upload the certificate and private key files in the Nginx folder to the conversion tool, enter the keystore password, click **Submit**, and convert the certificate to a .jks certificate.
 >- The current GlassFish service is installed in the `/usr/share` directory.
 
 
@@ -46,10 +46,10 @@ After decompression, you can obtain the relevant certificate files, including th
     - `2_cloud.tencent.com.crt`: certificate file
     - `3_cloud.tencent.com.key`: private key file
   - **CSR file**: `cloud.tencent.com.csr`
-  >The CSR file is uploaded by you or generated online by the system when you apply for the certificate and is provided to the CA. It is irrelevant to the installation.
+>?The CSR file is uploaded by you or generated online by the system when you apply for the certificate and is provided to the CA. It is irrelevant to the installation.
 2. Remotely log in to the GlassFish server. For example, you can use [PuTTY](https://intl.cloud.tencent.com/document/product/213/32502) for remote login.
 3. Go to the `/usr/share/glassfish4/glassfish/bin` directory, run the `./asadmin` command, and then run the `change-master-password --savemasterpassword=true domain1` command to change the domain administrator password.
->
+>!
 >- The default installation directory of the domain1 service is `/usr/share/glassfish4/glassfish/domains`. Change the domain name after you execute the `change-master-password --savemasterpassword=true domain1` command.
 >- The default password is **changeit**. Press **Enter** and enter the new password, which should be the **private key password** you set when applying for the certificate.
 >- If you did not set a private key password when applying for the certificate, enter the password in the `keystorePass.txt` file in the `Tomcat` folder.
@@ -83,5 +83,5 @@ If the system asks whether to trust the certificate, enter **yes** as shown in t
 12. Start the GlassFish server. After the server is started, access it through `https://cloud.tencent.com`.
 ![](https://main.qcloudimg.com/raw/fcdf919a22f0c9b07bc837e4d9a5e269.png)
 
->If any problems occur during this process, please [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
+>!If any problems occur during this process, please [contact us](https://intl.cloud.tencent.com/document/product/1007/30951).
 

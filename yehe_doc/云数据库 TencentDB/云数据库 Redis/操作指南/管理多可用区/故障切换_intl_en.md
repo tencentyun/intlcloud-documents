@@ -9,7 +9,7 @@ Proxy nodes are used in both standard and cluster architectures of TencentDB for
 - If a proxy node fails, the testing system will detect the failed node and automatically add new one.
 
 ### Redis server failover
-TencentDB for Redis in the standard or cluster architecture uses the native cluster management mechanism of Redis Cluster: the Gossip protocol is used to figure out the status of cluster nodes, and the `cluster-node-timeout` parameter defines the maximum amount of time a node can be unavailable, without it being considered as failing. The default value of the parameter is 15 ms, which should not be modified.
+TencentDB for Redis in the standard or cluster architecture uses the native cluster management mechanism of Redis Cluster: the Gossip protocol is used to figure out the status of cluster nodes, and the `cluster-node-timeout` parameter defines the maximum amount of time a node can be unavailable, without it being considered as failing. The default value of the parameter is 15000 ms, which should not be modified.
 For more information about how to identify a failed node, please see [Redis cluster tutorial](https://redis.io/topics/cluster-tutorial).
 
 ## Failure Simulation

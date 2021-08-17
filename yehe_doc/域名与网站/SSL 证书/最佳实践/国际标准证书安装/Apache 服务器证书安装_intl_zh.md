@@ -44,18 +44,17 @@
     - `2_cloud.tencent.com.crt` 证书文件
     - `3_cloud.tencent.com.key` 私钥文件
   - **CSR 文件内容**：	`cloud.tencent.com.csr` 文件
-  >?CSR 文件是申请证书时由您上传或系统在线生成的，提供给 CA 机构。安装时可忽略该文件。
+>?CSR 文件是申请证书时由您上传或系统在线生成的，提供给 CA 机构。安装时可忽略该文件。
 2. 使用 “WinSCP”（即本地与远程计算机间的复制文件工具）登录 Apache 服务器。
 3. 将已获取到的 `1_root_bundle.crt` 证书文件、`2_cloud.tencent.com.crt` 证书文件以及 `3_cloud.tencent.com.key` 私钥文件从本地目录拷贝到 Apache 服务器的 `/etc/httpd/ssl` 目录下。
->? 
->- 若无 `/etc/httpd/ssl` 目录，可通过 `mkdir /etc/httpd/ssl` 命令行创建。
-5. 远程登录 Apache 服务器。例如，使用 [“PuTTY” 工具](https://intl.cloud.tencent.com/document/product/213/32502) 登录。
+>? 若无 `/etc/httpd/ssl` 目录，可通过 `mkdir /etc/httpd/ssl` 命令行创建。
+4. 远程登录 Apache 服务器。例如，使用 [“PuTTY” 工具](https://intl.cloud.tencent.com/document/product/213/32502) 登录。
 >?首次安装的 Apache 服务器，`conf.d`、`conf`、`conf.modules.d` 等目录默认在 `/etc/httpd` 目录下。
-6. 在 `/etc/httpd/conf` 目录下的 httpd.conf 配置文件找到 `Include conf.modules.d/*.conf`（用于加载配置 SSL 的配置目录）配置语句，并确认该配置语句未被注释。若已注释，请去掉首行的注释符号（`#`），保存配置文件。
-7. 在 `/etc/httpd/conf.modules.d` 目录下的 00-ssl.conf 配置文件找到 `LoadModule ssl_module modules/mod_ssl.so`（用于加载 SSL 模块）配置语句，并确认该配置语句未被注释，若已注释，请去掉首行的注释符号（`#`），保存配置文件。
- >! 由于操作系统的版本不同，目录结构也不同，请根据实际操作系统版本进行查找。
+5. 在 `/etc/httpd/conf` 目录下的 httpd.conf 配置文件找到 `Include conf.modules.d/*.conf`（用于加载配置 SSL 的配置目录）配置语句，并确认该配置语句未被注释。若已注释，请去掉首行的注释符号（`#`），保存配置文件。
+6. 在 `/etc/httpd/conf.modules.d` 目录下的 00-ssl.conf 配置文件找到 `LoadModule ssl_module modules/mod_ssl.so`（用于加载 SSL 模块）配置语句，并确认该配置语句未被注释，若已注释，请去掉首行的注释符号（`#`），保存配置文件。
+>! 由于操作系统的版本不同，目录结构也不同，请根据实际操作系统版本进行查找。
 > 若以上配置文件中均未找到 `LoadModule ssl_module modules/mod_ssl.so` 和 `Include conf.modules.d/*.conf` 配置语句，请确认是否已经安装 mod_ssl.so 模块。若未安装 mod_ssl.so 模块，您可通过执行`yum install mod_ssl` 命令进行安装。
-8. 编辑 `/etc/httpd/conf.d` 目录下的 ssl.conf 配置文件。修改如下内容：
+7. 编辑 `/etc/httpd/conf.d` 目录下的 ssl.conf 配置文件。修改如下内容：
 ```
 <VirtualHost 0.0.0.0:443>
 		DocumentRoot "/var/www/html" 
@@ -71,7 +70,7 @@
 		SSLCertificateChainFile /etc/httpd/ssl/1_root_bundle.crt 
 </VirtualHost>
 ```
-9. 重新启动 Apache 服务器，即可使用 `https://cloud.tencent.com` 进行访问。
+8. 重新启动 Apache 服务器，即可使用 `https://cloud.tencent.com` 进行访问。
 
 ### HTTP 自动跳转 HTTPS 的安全配置（可选）
 如果您需要将 HTTP 请求自动重定向到 HTTPS。您可以通过以下操作设置：
@@ -82,12 +81,12 @@
 2. 请确认该配置文件是否存在`LoadModule rewrite_module modules/mod_rewrite.so`。
  - 若存在，请去掉`LoadModule rewrite_module modules/mod_rewrite.so`前面的注释符号（`#`）号。并执行 [步骤4](#step4)。
  - 若不存在，请执行 [步骤3](#step3)。
- <span id="step3"></span>
+[](id:step3)
 3. 请您在`/etc/httpd/conf.modules.d`中新建一个 \*.conf 文件，例如 00-rewrite.conf。在新建文件中添加以下内容：
  ```
  LoadModule rewrite_module modules/mod_rewrite.so
 ```
-<span id="step4"></span>
+[](id:step4)
 4. 在 httpd.conf 配置文件中添加如下内容：
 ```
 <Directory "/var/www/html"> 
@@ -97,8 +96,7 @@ RewriteCond %{SERVER_PORT} !^443$
 RewriteRule ^(.*)?$ https://%{SERVER_NAME}%{REQUEST_URI} [L,R]
 </Directory>
 ```
-4. 重新启动 Apache 服务器，即可使用 `http://cloud.tencent.com` 进行访问。
+5. 重新启动 Apache 服务器，即可使用 `http://cloud.tencent.com` 进行访问。
 
 >!操作过程如果出现问题，请您 [联系我们](https://intl.cloud.tencent.com/document/product/1007/30951)。
-
 

@@ -546,4 +546,5 @@ The following Modules shall apply and form part of this privacy policy if you us
 8.[Tencent Cloud MediaPackage](https://intl.cloud.tencent.com/document/product/1063/38993).
 9.[Tencent Cloud Conference](https://intl.cloud.tencent.com/document/product/1023/40237).
 10.[Cloud Native Database TDSQL-C](https://intl.cloud.tencent.com/document/product/1098/41228).
-11.[Tencent Cloud Elastic Microservice](https://intl.cloud.tencent.com/document/product/1094/41578)
+11.[Tencent Cloud Elastic Microservice](https://intl.cloud.tencent.com/document/product/1094/41578).
+12.[TencentDB for CTSDB](https://intl.cloud.tencent.com/document/product/1100/41705).

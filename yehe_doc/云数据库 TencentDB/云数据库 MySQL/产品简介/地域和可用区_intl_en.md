@@ -8,17 +8,18 @@ Region name and AZ name can most directly embody the coverage of a data center. 
 ## Regions
 Tencent Cloud regions are completely isolated. This guarantees the maximum cross-region stability and fault tolerance. When purchasing Tencent Cloud services, we recommend selecting the region closest to your end users to minimize access latency and improve download speed. Operations such as launching or viewing instances are performed at the region level.
 Private network communication:
+
 - Tencent Cloud resources in the same VPC within the same region under the same account can communicate with each other over private network. They can also be accessed via [private IPs](https://intl.cloud.tencent.com/document/product/213/5225).
 - The networks of different regions are fully isolated from each other, and Tencent Cloud services in different regions cannot communicate using private networks by default.
 - Tencent Cloud services across regions can communicate with each other through [public IPs](https://intl.cloud.tencent.com/document/product/213/5224) over the Internet, while those in different VPCs can communicate with each other through [CCN](https://intl.cloud.tencent.com/document/product/1003) that is faster and steadier.
-- [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214) currently supports intra-region traffic forwarding by default. If [cross-region binding](https://intl.cloud.tencent.com/document/product/214/38441) is enabled, cross-region binding of CLB and CVM instances is supported.
+- [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214) currently supports intra-region traffic forwarding by default. If you enable the [cross-region binding](https://intl.cloud.tencent.com/document/product/214/12014) feature, a CLB instance can be bound to CVM instances in another region.
 
 ## Availability Zones
-Availability zones (AZs) refer to Tencent Cloud's physical data centers that are in the same region. Each AZ is independently powered and have its own network resources. They are designed to ensure that failures within one AZ can be isolated from other zones, thereby ensuring service availability and business stability, excepting the occurrences of large-scale disasters or major power failures. Users can protect their applications from being affected by failures that occur in a single location by selecting instances in independent AZs.
+An availability zone (AZ) is a physical IDC of Tencent Cloud with independent power supply and network in the same region. It can ensure business stability, as failures (except for major disasters or power failures) in one AZ are isolated without affecting other AZs in the same region. By starting an instance in an independent availability zone, users can protect their applications from being affected by a single point of failure.
 When launching an instance, you can select any AZ in the specified region. For high reliability, you can adopt a cross-AZ deployment solution to ensure that the service remains available when an instance in a single location fails. Examples of such solutions include [CLB](https://intl.cloud.tencent.com/document/product/214) and [EIP](https://intl.cloud.tencent.com/document/product/213/5733).
 
-## List of Regions and AZs
-The supported regions and AZs are as follows
+## Region and AZ Details
+The supported regions and AZs are as follows:
 >?Currently, public network access is supported only in the following regions:
 >Guangzhou, Shanghai, Nanjing, Beijing, Chengdu, Chongqing, Hong Kong (China), Singapore, Seoul, Tokyo, Silicon Valley, and Frankfurt
 
@@ -27,7 +28,7 @@ The supported regions and AZs are as follows
 <tbody>
 <tr><th>Region</th><th>Availability Zone</th></tr>
 <tr>
-<td rowspan="5">South China (Guangzhou)<br>ap-guangzhou</td>
+<td rowspan="6">South China (Guangzhou)<br>ap-guangzhou</td>
 <td>Guangzhou Zone 1 (sold out)<br> ap-guangzhou-1</td></tr>	
 <tr>
 <td>Guangzhou Zone 2<br> ap-guangzhou-2</td></tr>
@@ -38,7 +39,9 @@ The supported regions and AZs are as follows
 <tr>
 <td>Guangzhou Zone 6<br> ap-guangzhou-6</td></tr>
 <tr>
-<td rowspan="5">East China (Shanghai) <br>ap-shanghai</td>
+<td>Guangzhou Zone 7<br> ap-guangzhou-7</td></tr>
+<tr>
+<td rowspan="5">East China (Shanghai)<br>ap-shanghai</td>
 <td>Shanghai Zone 1<br>ap-shanghai-1</td></tr>
 <tr>
 <td>Shanghai Zone 2<br>ap-shanghai-2</td></tr>
@@ -78,10 +81,12 @@ The supported regions and AZs are as follows
 <td>Southwest China (Chongqing)<br>ap-chongqing</td>
 <td>Chongqing Zone 1<br>ap-chongqing-1</td></tr>
 <tr>
-<td rowspan="2">Hong Kong, Macao and Taiwan, China (Hong Kong)<br>ap-hongkong</td>
-<td>Hong Kong Zone 1 (Hong Kong nodes cover services in the China regions of Hong Kong, Macao, and Taiwan)<br>ap-hongkong-1</td></tr>
+<td rowspan="3">Hong Kong/Macao/Taiwan (Hong Kong, China)<br>ap-hongkong</td>
+<td>Hong Kong Zone 1 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-1</td></tr>
 <tr>
-<td>Hong Kong Zone 2 (Hong Kong nodes cover services in the China regions of Hong Kong, Macao, and Taiwan)<br>ap-hongkong-2</td></tr>
+<td>Hong Kong Zone 2 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-2</td></tr>
+<tr>
+<td>Hong Kong Zone 3 (Nodes in Hong Kong, China can cover Hong Kong/Macao/Taiwan regions)<br>ap-hongkong-3</td></tr>
 </tbody></table>	
 
 
@@ -100,23 +105,27 @@ The supported regions and AZs are as follows
 <td>Southeast Asia (Jakarta)<br>ap-jakarta</td>
 <td>Jakarta Zone 1 (Jakarta nodes cover services in Southeast Asia)<br>ap-jakarta-1</td></tr>
 <tr>
-<td >Southeast Asia (Bangkok)<br>ap-bangkok </td>
-<td >Bangkok Zone 1 (Bangkok nodes cover services in Southeast Asia<br>ap-bangkok-1</td>
+<td rowspan="2">Southeast Asia (Bangkok)<br>ap-bangkok</td>
+<td>Bangkok Zone 1 (Nodes in Bangkok can cover Southeast Asia)<br>ap-bangkok-1</td>
+<tr>
+<td>Bangkok Zone 2 (Nodes in Bangkok can cover Southeast Asia)<br>ap-bangkok-2</td>
 <tr>
 <td  rowspan="2">South Asia (Mumbai)<br>ap-mumbai</td>
 <td>Mumbai Zone 1 (Mumbai nodes cover services in South Asia)<br>ap-mumbai-1</td></tr>
 <tr>
 <td>Mumbai Zone 2 (Mumbai nodes cover services in South Asia)<br>ap-mumbai-2</td></tr>		
 <tr>
-<td rowspan="2">Northeast Asia (Seoul)<br>ap-seoul</td>
+<td  rowspan="2">Northeast Asia (Seoul)<br>ap-seoul</td>
 <td>Seoul Zone 1 (Seoul nodes cover services in Northeast Asia)<br>ap-seoul-1</td></tr>
 <tr>
 <td>Seoul Zone 2 (Seoul nodes cover services in Northeast Asia)<br>ap-seoul-2</td></tr>
 <tr>
-<td >Northeast Asia (Tokyo)<br>ap-tokyo</td>
+<td rowspan="2">Northeast Asia (Tokyo)<br>ap-tokyo</td>
 <td>Tokyo Zone 1 (Tokyo nodes cover services in Northeast Asia)<br>ap-tokyo-1</td></tr>
 <tr>
-<td rowspan="2">Western US (Silicon Valley)<br>na-siliconvalley</td>
+<td>Tokyo Zone 2 (Tokyo nodes cover services in Northeast Asia)<br>ap-tokyo-2</td></tr>
+<tr>
+<td rowspan="2">US West (Silicon Valley)<br>na-siliconvalley</td>
 <td>Silicon Valley Zone 1 (Silicon Valley nodes cover services in Western US)<br>na-siliconvalley-1</td></tr>
 <tr>
 <td>Silicon Valley Zone 2 (Silicon Valley nodes cover services in Western US)<br>na-siliconvalley-2</td></tr>
@@ -129,8 +138,10 @@ The supported regions and AZs are as follows
 <td>North America (Toronto)<br>na-toronto</td>
 <td>Toronto Zone 1 (Toronto nodes cover services in North America)<br>na-toronto-1</td></tr>
 <tr>
-<td>Europe (Frankfurt) <br>eu-frankfurt</td>
+<td rowspan="2">Europe (Frankfurt)<br>eu-frankfurt</td>
 <td>Frankfurt Zone 1 (Frankfurt nodes cover services in Europe)<br>eu-frankfurt-1</td></tr>
+<tr>
+<td>Frankfurt Zone 2 (Frankfurt nodes cover services in Europe)<br>eu-frankfurt-2</td></tr>
 <tr>
 <td >Europe (Moscow)<br>eu-moscow</td>
 <td>Moscow Zone 1 (Moscow nodes cover services in Europe)<br>eu-moscow-1</td></tr>
