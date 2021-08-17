@@ -17,17 +17,17 @@
 
 1. 登录 [私有域名解析管理控制台](https://console.cloud.tencent.com/privatedns/domains)。
 2. 在 “私有域列表” 管理页面中，单击【新建私有域】。如下图所示：
-![](https://main.qcloudimg.com/raw/9e72be858bcb432aacf34e1a896b1b3c.png)
+![](https://main.qcloudimg.com/raw/e453ae30a0ae9aa0618be2e01404aeca.png)
 3. 在 “新建私有域” 管理页面中，输入反向解析域名并选择 VPC。
 例如，填写 `0.168.192.in-addr.arpa`。如下图所示：
-![](https://main.qcloudimg.com/raw/d7acaf9ac7f61ad57319d8b1815ece2d.png)
+![](https://main.qcloudimg.com/raw/3c8b0405e91b4ca8aafd0150c7da0adb.png)
 >?
 >- 为更好的体验，推荐您创建私有域名并设置解析记录后再关联 VPC。
 >- 若当前可选地域中未显示 VPC，请您前往 [VPC 控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1/) 进行添加。
 >- 若现有的 VPC 不符合您的要求，请您前往 [VPC 控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1/) 进行修改。
 >- 当前支持关联的 VPC 区域有北京、上海、成都、重庆、广州、硅谷。
 4. 单击【确定】，即可完成添加反向私有域操作，您可直接进入该域名的解析记录页添加 PTR 记录。如下图所示：
-![](https://main.qcloudimg.com/raw/ab7cd35f1db5b8e6f393c01449ca384c.png)
+![](https://main.qcloudimg.com/raw/9a211374713ea4b8188da47ae50dad86.png)
 
 
 ### 私有网段

@@ -5,9 +5,9 @@ This document describes how to create a private domain in the Private DNS consol
 ## Directions
 1. Log in to the [Private DNS console](https://console.cloud.tencent.com/privatedns/domains) and click **Private Domain List** on the left sidebar to enter the private domain list.
 2. In the **Private Domain List**, click **Create Private Domain** as shown below:
-![](https://main.qcloudimg.com/raw/fda429c0062f6ce58b90cb5297604551.png)
+![](https://main.qcloudimg.com/raw/568e131b241a9e11182cf6a41cebeee5.png)
 3. On the **Create Private Domain** page, enter the private domain information as shown below:
-![](https://main.qcloudimg.com/raw/402b8e8dc02c1a937086654393d6bab4.png)
+![](https://main.qcloudimg.com/raw/4172035b4d45210101666d9b7a0c5e3a.png)
  - **Domain Name**: enter the custom private domain name you want to create, i.e., the private domain name you want to associate with and use in a VPC.
 >?
 >- You can only create standard TLD domain names that comply with the IANA specifications.

@@ -17,17 +17,17 @@ The following steps take the reverse private domain `0.168.192.in-addr.arpa` as 
 
 1. Log in to the [Private DNS console](https://console.cloud.tencent.com/privatedns/domains).
 2. In the **Private Domain List**, click **Create Private Domain** as shown below:
-![](https://main.qcloudimg.com/raw/9e72be858bcb432aacf34e1a896b1b3c.png)
+![](https://main.qcloudimg.com/raw/e453ae30a0ae9aa0618be2e01404aeca.png)
 3. On the **Create Private Domain** page, enter the reverse DNS domain name and select a VPC.
 For example, enter `0.168.192.in-addr.arpa` as shown below:
-![](https://main.qcloudimg.com/raw/d7acaf9ac7f61ad57319d8b1815ece2d.png)
+![](https://main.qcloudimg.com/raw/3c8b0405e91b4ca8aafd0150c7da0adb.png)
 >?
 >- For a better experience, we recommend you create a private domain name and set a DNS record for it first before associating a VPC.
 >- If no VPCs are displayed in the currently selected region, please create one in the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1/).
 >- If existing VPCs cannot meet your needs, you can modify them in the [VPC console](https://console.cloud.tencent.com/vpc/vpc?rid=1/).
 >- VPC regions currently supported for association include Beijing, Shanghai, Chengdu, Chongqing, Guangzhou, and Silicon Valley.
 4. Click **OK** to add the reverse private domain. You can directly enter the DNS records page of the domain to add a PTR record as shown below:
-![](https://main.qcloudimg.com/raw/ab7cd35f1db5b8e6f393c01449ca384c.png)
+![](https://main.qcloudimg.com/raw/9a211374713ea4b8188da47ae50dad86.png)
 
 
 ### Private IP Range

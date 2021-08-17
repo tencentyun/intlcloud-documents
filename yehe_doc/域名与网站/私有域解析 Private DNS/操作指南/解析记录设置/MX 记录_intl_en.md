@@ -7,9 +7,9 @@ You have created the corresponding private domain.
 ## Directions
 1. Log in to the [Private DNS console](https://console.cloud.tencent.com/privatedns/) and click **Private Domain List** on the left sidebar to enter the private domain list.
 2. In the **Private Domain List**, click the name of the private domain for which you need to create an MX record or **Records** as shown below:
-![](https://main.qcloudimg.com/raw/965b35507b9de90112d57608a95d6405.png)
+![](https://main.qcloudimg.com/raw/0e4203f75677414eb5416bfad61347ca.png)
 3. On the **Records** tab, click **Add Record** and enter the following record value information as shown below:
-![](https://main.qcloudimg.com/raw/330ee2fb71aaaa0b6cfef3be9a65c990.png)
+![](https://main.qcloudimg.com/raw/04ee4d6e590dfb200f654caec1f59669.png)
  - **Host**: enter a subdomain, which is usually "@" or "mail". For example, if **Host** is "@", then the email address will be `xxx@qq.com`; if **Host** is "mail", then the email address will be `xxx@mail.qq.com`.
  - **Record Type**: select **MX**.
  - **Record Value**: it can be either a domain name or an IP address.
@@ -22,7 +22,7 @@ You have created the corresponding private domain.
  - **TTL**: it is the cache time and 300s by default. The smaller the value, the faster the change to the record will take effect. You can enter an integer between 1 and 86400.
 4. Click **Save**.
 
->?If anything goes wrong during this process, please [contact us](https://cloud.tencent.com/act/event/connect-service).
+>?If anything goes wrong during this process, please [contact us](https://intl.cloud.tencent.com/contact-sales).
 
 
 

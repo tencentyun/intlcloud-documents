@@ -7,11 +7,11 @@
 ## 操作步骤
 1. 登录私有域解析 [Private DNS 管理控制台](https://console.cloud.tencent.com/privatedns)，并单击左侧导航栏的【私有域列表】，即可进入私有域列表。
 2. 在 “私有域列表” 中，单击您需要创建 CNAME 记录的私有域名称或【解析】。如下图所示：
-![](https://main.qcloudimg.com/raw/965b35507b9de90112d57608a95d6405.png)
+![](https://main.qcloudimg.com/raw/15f40222f909c16f439e0416ef4d5310.png)
 3. 在【解析记录】页签中，单击【添加记录】并填写相关记录值信息。如下图所示：
 >?相同主机记录、相同记录类型的负载均衡条数限制为3条，单个域名下的负载均衡总条数限制为5条。
 >
-![](https://main.qcloudimg.com/raw/c784538e59143492673b8b20ce26e684.png)
+![](https://main.qcloudimg.com/raw/7f5a5a54ccda1fbf7e496f1436aa1936.png)
  - **主机记录**：填写子域名。例如，添加 `www.dnspod.cn` 的解析，您在 “主机记录” 处选择 “www” 即可。如果只是想添加 `dnspod.cn` 的解析，您在 “主机记录” 处选择 “@” 即可。
  - **记录类型**：选择 “CNAME”。
  - **记录值**：CNAME 指向的域名，只可以填写域名。例如 `https://cloud.tencent.com`。
@@ -21,7 +21,7 @@
 4. 单击【保存】，完成添加。
 >?
 >- 相同主机记录的 CNAME 记录类型只能添加一条，且不能与其他任何记录共存。
->- 操作过程中如果出现问题，请您 [联系我们](https://cloud.tencent.com/act/event/connect-service)。
+>- 操作过程中如果出现问题，请您 [联系我们](https://intl.cloud.tencent.com/contact-sales)。
 
 
 

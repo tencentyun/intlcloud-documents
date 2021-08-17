@@ -7,11 +7,11 @@
 ## 操作步骤
 1. 登录私有域解析 [Private DNS 控制台](https://console.cloud.tencent.com/privatedns)，并单击左侧导航栏的【私有域列表】，即可进入私有域列表。
 2. 在 “私有域列表” 中，单击您需要创建 A 记录的私有域名称或【解析】。如下图所示：
-![](https://main.qcloudimg.com/raw/965b35507b9de90112d57608a95d6405.png)
+![](https://main.qcloudimg.com/raw/42b82183750f467096a2a250d168b6a6.png)
 3. 在【解析记录】页签中，单击【添加记录】并填写相关记录值信息。如下图所示：
 >?相同主机记录、相同记录类型的负载均衡条数限制为5条、单个域名下的负载均衡总条数限制为10条。
 >
->![](https://main.qcloudimg.com/raw/ce5100ab358d6dcae13e6d0534e0405c.png)
+>![](https://main.qcloudimg.com/raw/6c2ad43f95b24bac16edbf5fd08a4ef5.png)
 >
 > - **主机记录**：选择子域名。例如添加 `www.dnspod.cn` 的解析时，您在 “主机记录” 处选择 “www” 即可。若是想添加 `dnspod.cn` 的解析，您在 “主机记录” 处选择 “@” 即可。	
  - **记录类型**：选择 “A”。
@@ -21,4 +21,4 @@
  - **TTL**：为缓存时间，数值越小，修改记录生效时间越快，默认设置为300，支持自定义1 - 86400区间的整数。
 4. 单击【保存】，完成添加。	
 
->?操作过程中如果出现问题，请您 [联系我们](https://cloud.tencent.com/act/event/connect-service)。	
+>?操作过程中如果出现问题，请您 [联系我们](https://intl.cloud.tencent.com/contact-sales)。	

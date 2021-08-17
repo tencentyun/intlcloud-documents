@@ -1,5 +1,5 @@
 ## Overview
-Download [redis-port (Linux 64-bit)](https://main.qcloudimg.com/raw/47154504189a8941250f57b60f1e2fcb/redis-port.tgz).
+Download [redis-port (Linux 64-bit)](https://redis-doc-2020-1254408587.cos.ap-guangzhou.myqcloud.com/redis-port.tgz).
 
 redis-port is a collection of open-source tools mainly used for database sync, data import, and data export between Redis nodes and supports cross-edition Redis data migration. The toolkit contains the following tools:
 - redis-sync: it is used for data migration between Redis instances.
@@ -22,7 +22,7 @@ redis-port is a collection of open-source tools mainly used for database sync, d
 - -m: source instance address in the format of `"password"@ip:port` or `ip:port` (in password-free mode).
 - -t: target instance address in the format of `"password"@ip:port` or `ip:port` (in password-free mode).
 - --tmpfile=FILE: temporary filename.
-- --tmpfile-size=SIZW: maximum size of the temporary file.
+- --tmpfile-size=SIZE: maximum size of the temporary file.
 - --help: help command.
 
 **Sample:**

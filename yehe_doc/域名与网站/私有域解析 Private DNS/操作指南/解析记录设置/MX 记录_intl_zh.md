@@ -7,9 +7,9 @@
 ## 操作步骤
 1. 登录私有域解析 [Private DNS 管理控制台](https://console.cloud.tencent.com/privatedns/)，并单击左侧导航栏的【私有域列表】，即可进入私有域列表。
 2. 在 “私有域列表” 中，单击您需要添加 MX 记录的私有域名称或【解析】。如下图所示：
-![](https://main.qcloudimg.com/raw/965b35507b9de90112d57608a95d6405.png)
+![](https://main.qcloudimg.com/raw/0e4203f75677414eb5416bfad61347ca.png)
 3. 在【解析记录】页签中，单击【添加记录】并填写相关记录值信息。如下图所示：
-![](https://main.qcloudimg.com/raw/330ee2fb71aaaa0b6cfef3be9a65c990.png)
+![](https://main.qcloudimg.com/raw/04ee4d6e590dfb200f654caec1f59669.png)
  - **主机记录**：填写子域名，通常选择 “@” 或 “mail”。例如，若 “主机记录” 选择 “@”，则邮箱地址是 xxx@qq.com。若 “主机记录” 选择 “mail”，则邮箱地址变为 xxx@mail.qq.com。
  - **记录类型**：选择 “MX”。
  - **记录值**：可以是域名，也可以是一个 IP 地址。
@@ -22,7 +22,7 @@
  - **TTL**：为缓存时间，数值越小，修改记录生效时间越快，默认设置为300，支持自定义1 - 86400区间的整数。
 4. 单击【保存】，完成添加。
 
->?操作过程中如果出现问题，请您 [联系我们](https://cloud.tencent.com/act/event/connect-service)。
+>?操作过程中如果出现问题，请您 [联系我们](https://intl.cloud.tencent.com/contact-sales)。
 
 
 

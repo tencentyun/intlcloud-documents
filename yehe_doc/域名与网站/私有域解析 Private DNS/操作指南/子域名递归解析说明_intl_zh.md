@@ -19,15 +19,15 @@ Private DNS 支持子域名递归解析功能。开启该功能后，当客户�
 ### 开启子域名递归解析
 #### 方式一
 您可以在首次添加私有域时，选择开启子域名递归解析。具体操作可参考 [创建私有域](https://cloud.tencent.com/document/product/1338/50532)。如下图所示：
-![](https://main.qcloudimg.com/raw/74cf53137149f2e07e5f1c4eaaada9b8.png)
+![](https://main.qcloudimg.com/raw/d9fe658c4ff96b214e206e91ac147f1b.png)
 #### 方式二
 1. 登录 [Private DNS 管理控制台](https://console.cloud.tencent.com/privatedns)，并单击左侧导航栏的【私有域解析】，即可进入私有域列表。
 2. 在 “私有域列表” 中，选择您需要开启子域名递归解析的私有域，单击【解析】，即可进入【解析记录】管理页面。
 3. 选择【私有域设置】页签，单击<span ><img src="https://main.qcloudimg.com/raw/3e46d1b5a3578be94c9b5803006ffb7a.png" style="margin-bottom:-5px;"/></span>，即可开启此功能。如下图所示：
-![](https://main.qcloudimg.com/raw/b9b4de97b1b6e9ddd9663209fd58b28a.png)
+![](https://main.qcloudimg.com/raw/703574efe2d8d995c046249dd560ad97.png)
 
 ### 关闭子域名递归解析
 1. 登录 [Private DNS 管理控制台](https://console.cloud.tencent.com/privatedns)，并单击左侧导航栏的【私有域解析】，即可进入私有域列表。
 2. 在 “私有域列表” 中，选择您需要开启子域名递归解析的私有域，单击【解析】，即可进入【解析记录】管理页面。
 3. 选择【私有域设置】页签，单击<span ><img src="https://main.qcloudimg.com/raw/1daf42f43153a8e60e5b741ac6422844.png" style="margin-bottom:-5px;"/></span>，即可关闭此功能。如下图所示：
-![](https://main.qcloudimg.com/raw/3a8e665d3da2876647f291c5aea44899.png)
+![](https://main.qcloudimg.com/raw/3d13bd919cd61a01bd7f1442b54a9e7c.png)
