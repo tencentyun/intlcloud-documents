@@ -16,4 +16,3 @@ For more information on quick integration with WAF, please see [Getting Started 
   - Resource Instance: you can select multiple instances (no more than the number of "bindable IPs").
 ![](https://main.qcloudimg.com/raw/0b4c5efbe5fdfac0414cf6ca561a5ec6.png)
 4. After completing the configuration, click **OK**.
->If the WAF instance is in CLB type, then on the resource binding page, set "Resource Type" as "CLB", and select the public IP of the corresponding CLB instance in the "Resources to Associate" section.
