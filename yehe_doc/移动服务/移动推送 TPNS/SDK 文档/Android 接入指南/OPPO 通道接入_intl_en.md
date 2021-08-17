@@ -109,7 +109,7 @@ class R {
 Call the following code before calling TPNS' `XGPushManager.registerPush`:
 ```java
 // Note that OPPO's `AppKey` is entered here rather than the `AppId`
-XGPushConfig.setOppoPushAppId(getApplicationContext(), "Oppo的AppKey");
+XGPushConfig.setOppoPushAppId(getApplicationContext(), "Oppo AppKey");
 // Note that OPPO's `AppSecret` is entered here rather than the `AppKey`
 XGPushConfig.setOppoPushAppKey(getApplicationContext(), "OPPO AppSecret");
 // Enable third-party push
