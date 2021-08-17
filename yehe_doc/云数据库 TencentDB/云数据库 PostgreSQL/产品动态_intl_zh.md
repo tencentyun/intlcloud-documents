@@ -1,3 +1,18 @@
+
+## 2021年07月
+<table>
+<tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=10%>发布时间</th><th width=20%>相关文档</th></tr>
+<tbody>
+<tr>
+<td>指定时间变配</td>
+<td>对实例升级变配时，可指定最后实例的切换时间，避免实例完成变配后的切换时间不可控。</td>
+<td>2021-07</td><td><a href="https://intl.cloud.tencent.com/document/product/409/41596" target="_blank">修改实例配置</a></td></tr>
+<tr>
+<td>旧版本下线	</td>
+<td><li>不再支持9.3.5，9.5.4版本售卖。<li>后续不再支持这两个版本的实例创建，但存量的实例依然正常维护。</td>
+<td>2021-07</td><td>-</td></tr>
+</tbody></table>
+
 ## 2021年05月
 <table>
 <tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=10%>发布时间</th><th width=20%>相关文档</th></tr>
@@ -25,11 +40,14 @@
 <td><li>所有实例支持安全组功能，可通过安全组设置实例访问策略。<li>北京、广州、上海、成都 四地域支持外网安全组。其他地域仅支持内网安全组。<li>支持只读实例与只读实例组设置不同的安全组。</td>
 <td>2021-04</td><td><a href="https://intl.cloud.tencent.com/document/product/409/40112" target="_blank">管理安全组</a></td></tr>
 <tr>
+<td>实例管理</td>
+<td><li>支持购买包年包月的只读实例，仅限定于主实例为包年包月。<li>支持包年包月实例退货退费。</td>
+<td>2021-04</td><td><a href="https://intl.cloud.tencent.com/document/product/409/40008" target="_blank">实例管理</a></td></tr>
+<tr>
 <td>实例回收站</td>
 <td><li>支持销毁后的实例放入回收站，避免因为误删导致实例无法恢复。<li>支持回收站中实例重新启用。<li>支持回收站中实例立即下线。</td>
 <td>2021-04</td><td><a href="https://intl.cloud.tencent.com/document/product/409/40114" target="_blank">实例管理</a></td</tr>
 </tbody></table>
-
 
 ## 2021年01月
 <table>
@@ -58,7 +76,7 @@
 <td>支持 PostgreSQL 11.8</td>
 <td>云数据库 PostgreSQL 11.8  结合完备的管控服务和内核优化内容，提供更快、更稳的企业级服务，丰富行业场景，助力客户产业升级。</td>
 <td>2020-09</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/409/7550" target="_blank">购买实例</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/409/40953" target="_blank">购买实例</a></td></tr>
 <tr>
 <td>监控指标优化升级</td>
 <td>优化升级10个以上的监控指标，更全面定位数据库问题，以及支持查看数据库运行历史状态；并支持5秒级别的历史记录查看。</td>
@@ -79,7 +97,11 @@
 <td>云数据库 PostgreSQL 支持针对实例编辑标签，并且支持针对标签进行资源鉴权。</td>
 <td>2020-08</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/409/38839" target="_blank">标签概述</a></td></tr>
-</tr>
+<tr>
+<td>支持控制台查看 Serverless 实例</td>
+<td>支持在 PostgreSQL 控制台上进行 Serverless 实例的管理和查看。</td>
+<td>2020-08</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/409/41579" target="_blank">产品概述</a></td></tr>
 </tbody></table>
 
 ## 2020年07月
@@ -102,4 +124,12 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/409/4993" target="_blank">产品定价</a></td></tr>
 </tbody></table>
 
-
+## 2020年03月
+<table>
+<thead><tr><th width=20%>动态名称</th><th width=50%>动态描述</th><th width=10%>发布时间</th><th width=20%>相关文档</th></tr></thead>
+<tbody><tr>
+<td>支持 Serverless 实例</td>
+<td>PostgreSQL for Serverless（ServerlessDB）是一款基于 PostgreSQL 数据库实现的按需分配资源的数据库产品，其数据库将根据您的实际请求数来自动分配资源。</td>
+<td>2020-03</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/409/41579" target="_blank">Serverless相关</a></td></tr>
+</tbody></table>
