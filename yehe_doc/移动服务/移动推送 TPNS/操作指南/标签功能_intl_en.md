@@ -122,16 +122,16 @@ For the iOS SDK, see [here](https://intl.cloud.tencent.com/document/product/1024
 For the Android SDK, see [Setting custom tag](https://intl.cloud.tencent.com/document/product/1024/30715#setting-custom-tag).
 
 >?
->- One device can be bound to up to 100 tags (to increase the quota, [submit a ticket](https://console.cloud.tencent.com/workorder/category)).
->- One application can be bound to up to 10,000 tags (to increase the quota, [submit a ticket](https://console.cloud.tencent.com/workorder/category)).
->- One tag can contain up to 50 bytes.
->- Up to 500 tags can be bound or unbound in one request.
+- One device can be bound to up to 100 tags (to increase the quota, [submit a ticket](https://console.cloud.tencent.com/workorder/category)).
+- One application can be bound to up to 10,000 tags (to increase the quota, [submit a ticket](https://console.cloud.tencent.com/workorder/category)).
+- One tag can contain up to 50 bytes.
+- Up to 500 tags can be bound or unbound in one request.
 
 #### Custom tag use cases and keywords
 Tag push is suitable for scenarios where more than 10 devices are bound to a tag and less than 10 pushes are required per day. For other scenarios, account push (binding an account instead of a tag to multiple devices for push) is recommended.
 
 **Keyword**
-A colon (:) is the keyword for separating the key and value in a key-value pair for user tag binding. For example, if you assign the tag `level:3` to a device token, the TPNS backend will take `level` as the tag key and `3` as the tag value, while the original tag `level:3` is pushed. Storage based on key-value is mainly to facilitate subsequent overriding of tags of the same type.
+A colon (:) is the keyword for separating the key and value in a key-value pair for user tag binding. For example, if you assign the tag `level:3` to a device token, the TPNS backend will take `level` as the tag key and `3` as the tag value, while the original tag `level:3` is pushed. Storage based on key-value is mainly to facilitate subsequent overwriting of tags of the same type.
 
 #### Binding/Unbinding tags
 
@@ -147,7 +147,6 @@ TPNS provides APIs for binding/unbinding a single tag to/from a single device, a
 ```json
 {
     "operator_type": 1,
-
     "tag_list": ["tag"],
     "token_list": ["token"]
 }
@@ -158,7 +157,6 @@ TPNS provides APIs for binding/unbinding a single tag to/from a single device, a
 ```json
 {
     "operator_type": 2,
-
     "tag_list": ["tag"],
     "token_list": ["token"]
 }
@@ -177,7 +175,6 @@ TPNS provides APIs for binding/unbinding a single tag to/from a single device, a
 ```json
 {
     "operator_type": 3,
-
     "tag_list": ["tag1","tag2"],
     "token_list": ["token"]
 }
@@ -188,7 +185,6 @@ TPNS provides APIs for binding/unbinding a single tag to/from a single device, a
 ```json
 {
     "operator_type": 4,
-
     "tag_list": ["tag1","tag2"],
     "token_list": ["token"]
 }
@@ -207,7 +203,6 @@ Call the RESTful API, for example, to bind/unbind the `football` tag to/from all
 ```json
 {
     "operator_type": 7,
-
     "tag_list": ["tag"],
     "token_list": ["token1","token2"]
 }
@@ -216,7 +211,6 @@ Call the RESTful API, for example, to bind/unbind the `football` tag to/from all
 ```json
 {
     "operator_type": 8,
-
     "tag_list": ["tag"],
     "token_list": ["token1","token2"]
 }
@@ -235,7 +229,6 @@ Call the RESTful API, for example, to bind/unbind the `football` and `basketball
 ```json
 {
     "operator_type": 9,
-
     "tag_token_list": [{"tag":"tag1","token":"token1"},{"tag":"tag2","token":"token2"}]
 }
 ```
@@ -244,7 +237,6 @@ Call the RESTful API, for example, to bind/unbind the `football` and `basketball
 ```json
 {
     "operator_type": 10,
-
     "tag_token_list": [{"tag":"tag1","token":"token1"},{"tag":"tag2","token":"token2"}]
 }
 ```
@@ -260,14 +252,13 @@ TPNS provides two tag overriding methods: general overriding and overriding by t
 
 ##### General overriding
 **Recommended scenarios**
-1. Call the device SDK API. For example, if all channel information subscribed by a device has expired, you need to unbind all the channel tags from the device. However, traversing all tags to unbind them one by one is inconvenient. In this case, you can call this API to override the tags.
-2. Call the RESTful API. For example, to set new tags for a device so that it will not be affected by legacy tags, this API can be called to override them.
+1. Call the device SDK API. For example, if all channel information subscribed by a device has expired, you need to unbind all the channel tags from the device. However, traversing all tags to unbind them one by one is inconvenient. In this case, you can call this API to overwrite the tags.
+2. Call the RESTful API. For example, to set new tags for a device so that it will not be affected by legacy tags, this API can be called to overwrite them.
 
 **Tag overriding method**
 ```json
 {
     "operator_type": 6,
-
     "tag_list": ["test", "level:1",, "level:2"], 
     "token_list": ["token"]
 }
@@ -281,13 +272,12 @@ TPNS provides two tag overriding methods: general overriding and overriding by t
 1. Call the device SDK API.
 2. Call the RESTful API.
 
-**Instructions:** a colon (:) is used for separating the key and value in a key-value pair. For example, `level:2` indicates that the device level is 2. Assume that the device level is upgraded to 3, then you need to delete the tag `level:2` before adding the tag `level:3`. If you know that the device has only the tag `level:2`, you can call the general overriding API to override it. However, a device usually has multiple tags. If the device has another tag `test` and you want to delete only the tag `level:2`, you need to manipulate all tags of the device or call the relevant TPNS API to find the corresponding legacy tag and delete it, which is inconvenient. In this case, you can call this API to override only tags with the key `level`.
+**Instructions:** a colon (:) is used for separating the key and value in a key-value pair. For example, `level:2` indicates that the device level is 2. Assume that the device level is upgraded to 3, then you need to delete the tag `level:2` before adding the tag `level:3`. If you know that the device has only the tag `level:2`, you can call the general overriding API to overwrite it. However, a device usually has multiple tags. If the device has another tag `test` and you want to delete only the tag `level:2`, you need to manipulate all tags of the device or call the relevant TPNS API to find the corresponding legacy tag and delete it, which is inconvenient. In this case, you can call this API to overwrite only tags with the key `level`.
 
 **Tag overriding method**
 ```json
 {
     "operator_type": 6,
-
     "tag_list": ["test:2", "level:3"], 
     "token_list": ["token"]
 }
@@ -314,7 +304,6 @@ TPNS provides two tag overriding methods: general overriding and overriding by t
 ```json
 {
     "operator_type": 5,
-
     "token_list": ["token"]
 }
 ```
@@ -343,7 +332,7 @@ Call the RESTful API.
 - All devices are bound to the latest preset tags, which will automatically replace the corresponding legacy ones. For example, if the current application version of a device is 1.0.1, when the application is upgraded to 1.0.2, the device will be automatically unbound from the `v1.0.1` tag and then bound to the `v1.0.2` tag.
 
 ### Querying tags bound to devices
- To query specific preset and custom tags by device token, go to the Tencent Cloud console and choose **Toolbox** > **Troubleshooting Tools**.
+ To query specific preset and custom tags by device token, go to the TPNS console and select **Message Management** > **Troubleshooting Tools**.
  See the figure below:
  ![](https://main.qcloudimg.com/raw/960e8eb3678ebe7457b5887966abed5f.png)
 

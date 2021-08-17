@@ -1,3 +1,26 @@
+## July 2021
+
+<table>
+ <tr>
+ <th width=20%>Update</th>
+ <th width=44%>Description</th>
+ <th width=16%>Release Date</th>
+ <th width=20%>Documentation</th>
+ </tr>
+ <td>SDK v1.3.3.0 release</td>
+ <td>  
+<li> Fixes the issue where cluster switching does not take effect in real time.
+<li> Fixes the issue of inaccurate binding when tag APIs are called frequently.
+<li> Upgraded the SDK deployment target to version 9.0.
+<li> Improved the performance of account binding and registration callback.
+<li> Supports the `show_type` field of RESTful APIs. The field can be used to configure not to display notifications at the app foreground.
+<li> Supports SSL in persistent connections.
+<li> Supports the feature of identifying whether an app start is triggered by notification clicking.
+ <td>2021-07-06</td>
+ <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
+ </tr>
+ </table>
+ 
 ## June 2021
 
 <table>
@@ -18,7 +41,7 @@
 <li>Supports log prompt when a hook conflict between the third-party SDK and `AppDelegate` occurs.
 <li>Deletes unnecessary log prompts in production environments.</td>
  <td>June 1, 2021</td>
- <td><ul  style="margin: 0;"><li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li><li><a href="https://intl.cloud.tencent.com/document/product/1024/40597">Upgrade Guide</a></li></ul></td>
+ <td><a href="https://intl.cloud.tencent.com/document/product/1024/40597">Upgrade Guide</a></td>
  </tr>
  </table>
 
@@ -107,7 +130,7 @@
  <li>Supports IPv6.
  <li>Deletes the compatible code of the free version. </td>
  <td>November 25, 2020</td>
- <td>- </td>
+ <td> - </td>
  </tr>
  </table>
 
@@ -123,7 +146,7 @@
  </tr>
  <tr>
  <td>SDK v1.2.8.1 release</td>
- <td>Fixes known issues. </td>
+ <td>Fixed known issues. </td>
  <td>October 29, 2020</td>
  <td>- </td>
  </tr>
@@ -160,7 +183,7 @@
 </tr>
     <tr>
         <td>SDK v1.2.7.2 release</td>
-        <td><li>Adds the custom event report feature.</li><li>Improves the success rate of report on the number of arrivals.</li><li>Fixes known issues.</li></td>
+        <td><li>Adds the custom event report feature.</li><li>Improves the success rate of reporting the number of arrivals.</li><li>Fixes known issues.</li></td>
         <td>July 23, 2020</td>
         <td>-</a></li></td>
     </tr>        
@@ -217,7 +240,7 @@
         <td>SDK v1.2.5.3 release</td>
         <td><li>Supports unregistering free TPNS clusters to avoid repeated pushes.</li><li>Supports replacing repeated messages in the notification extension.</li></td>
         <td>March 19, 2020</td>
-        <td>Unregistering XG Platform Service</a></td>
+        <td><a href="https://cloud.tencent.com/document/product/548/36668#.E6.B3.A8.E9.94.80.E4.BF.A1.E9.B8.BD.E5.B9.B3.E5.8F.B0.E6.8E.A8.E9.80.81.E6.9C.8D.E5.8A.A1">Unregistering XG Platform Service</a></td>
     </tr>
     <tr>
         <td>SDK v1.2.5.2 release</td>
@@ -288,7 +311,7 @@
     <tr>
         <td>SDK v1.2.4.6 release</td>
         <td><li>Optimizes the SDK registration process and improves the registration success rate.</li><li>Optimizes rich media push. Supports non-suffixed resources.</li><li>Fixes known issues.</li></td>
-        <td>2019-12-16</td>
+        <td>December 16, 2019</td>
         <td>N/A</td>
     </tr>
     <tr>
@@ -396,12 +419,12 @@
     <tr>
         <td>SDK v1.2.1.2 release</td>
         <td><li>Fixes the statistic clicking issue.</li><li>Fixes the tag binding API issue that occurs when the network condition changes.</li></td>
-        <td>2019-08-19</td>
+        <td>August 19, 2019</td>
         <td>N/A</td>
     </tr>
     <tr>
         <td>SDK v1.2.1.0 release</td>
-        <td><li>Adds APIs to query the TPNS-generated tokens.</li><li>Fixes the single-account binding issue.</li></td>
+        <td><li>Adds APIs to query TPNS-generated tokens.</li><li>Fixes the single-account binding issue.</li></td>
         <td>August 08, 2019</td>
         <td>N/A</td>
     </tr>

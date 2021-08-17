@@ -1,3 +1,28 @@
+
+## July 2021
+
+<table>
+	<tr>
+		<th width=20%>Update</th>
+    <th width=44%>Description</th>
+    <th width=16%>Release Date</th>
+    <th width=20%>Documentation</th>
+	</tr>
+	<tr>
+        <td>SDK 1.2.6.0 release</td><td><li> Added the feature of limiting API call frequency.
+<li>  Added support for configuring notification channels for FCM frontend notifications and TPNS local notifications.
+<li>  Optimized persistent connection retry policies.
+<li>  Optimized the logic for reporting the number of daily active users and SDK startup events.
+<li>  Optimized: SDK logs are placed in a hidden directory.
+<li>  Optimized: the session keep-alive feature is disabled by default. If you need to enable it, see the Android FAQs document.
+		<li>  Fixed IPv6 request failures.</td>
+        <td>July 6, 2021</td><td><li>
+<a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li>
+<li><a href="https://intl.cloud.tencent.com/document/product/1024/32624">Android FAQs</a></li></td>
+    </tr>
+<tr>
+</table>
+
 ## May 2021
 
 <table>
@@ -15,7 +40,7 @@
 <li>Added support for clearing notifications pushed through the Mi channel (devices of MIUI 11 and below) via the API for clearing all notifications.
 <li>Added support for badge display on HONOR mobile phones.</td>
         <td>May 26, 2021</td><td><li>Because JCenter has been deprecated, you may encounter issues when pulling SDK dependencies. Please see <a href="https://intl.cloud.tencent.com/document/product/1024/40595">Android SDK Upgrade Guide</a> to configure the dependency repository mirror source.</li>
-<li>When using the newly added tag query API, you need to add the implementation method <code>onQueryTagsResult</code> in the implementation class that inherits <code>XGPushBaseReceiver</code>.</li><li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</li></li></td>
+<li> When using the new API for tag query, you need to add the implementation method <code>onQueryTagsResult</code> in the implementation class that inherits <code>XGPushBaseReceiver</code>. </li></td>
     </tr>
 <tr>
 </table>

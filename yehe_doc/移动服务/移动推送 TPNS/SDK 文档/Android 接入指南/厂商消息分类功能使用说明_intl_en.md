@@ -12,7 +12,7 @@ The message type can be specified when you call the push API.
 1. If you need to use vendor notification messages, apply for or create a channel ID as instructed in the following sections:
 	- [OPPO](#oppozhinan)
 	- [Mi](#xiaomizhinan)
-	- [Vivo](#vivozhinan)
+	- [vivo](#vivozhinan)
 	- [Huawei](#huaweizhinan)
 	
 
@@ -46,15 +46,13 @@ The message type can be specified when you call the push API.
 <td>No instructions on channels are provided.</td>
 </tr>
 <tr>
-<td>Vivo</td>
+<td>vivo</td>
 <td><ul><li>Call the server API to create the channel ID.</li><li>Specify the corresponding channel ID when calling the TPNS <a href="https://intl.cloud.tencent.com/document/product/1024/33764">server API</a>.</li></ul></td>
 </tr>
 </tbody></table>
 3. If you do not need vendor notification messages nor a custom channel ID, you do not need to perform relevant operations, and TPNS will specify a default channel ID for all messages of your application and group them into the default type.
 
-
-[](id:oppozhinan)
-## OPPO Notification Channel Application Guide
+## OPPO Notification Channel Application Guide[](id:oppozhinan)
 
 ### OPPO notification channel overview
 
@@ -67,14 +65,14 @@ The default channel on the OPPO PUSH platform is the public message channel. Now
 | Maximum number of pushes | All public message channels share a total number of pushes; if the daily limit is reached, they will stop pushing messages on the day. The current maximum number of daily pushes is twice the total number of all registered users | Unlimited |
 | Configuration method | Default | You need to register the channel with the OPPO PUSH platform and set the corresponding channel attribute to **Private Message** |
 
-> !Official reminder from OPPO: you must not use the private message channel to push universal messages (such as trending news and new product promotions). The backend will monitor the push content, and if you violate the operational rules, Opush has the right to disable your private channel access, and all consequences arising therefrom, such as exceptional API calls and delivery failures of messages sent through the private message channel, shall be borne by you.
+>! Official reminder from OPPO: you must not use the private message channel to push universal messages (such as trending news and new product promotions). The backend will monitor the push content, and if you violate the operational rules, Opush has the right to disable your private channel access, and all consequences arising therefrom, such as exceptional API calls and delivery failures of messages sent through the private message channel, shall be borne by you.
+>
 
 ### Applying for the OPPO private message channel
 
 1. Log in to the [OPPO PUSH platform](https://push.oppo.com) and choose **App Configuration** > **Create Channel** to create a channel. The channel ID and name are required and must be the same as those on the application client. Other configuration items are optional.
-<dx-alert infotype="notice" title="">
-Once the channel ID is set, it cannot be randomly changed or deleted.
-</dx-alert>
+>! Once the channel ID is set, it cannot be randomly changed or deleted.
+>
 
 2. Currently, the OPPO private message channel can take effect only after you apply for it through email. Please send an application email to the OPPO PUSH platform according to the following requirements. For more information, see [OPPO PUSH Channel Upgrade Beta Invitation](https://open.oppomobile.com/wiki/doc#id=10614).
 ```plaintext
@@ -95,10 +93,9 @@ I apply for connection to the OPPO PUSH beta public/private message service for 
 	(1) Use the corresponding Android API to create a notification channel. For more information, see [Create and Manage Notification Channels](https://developer.android.google.cn/training/notify-user/channels).
 	(2) Use the TPNS SDK (v1.1.5.4 or above) to create a notification channel. For more information, see [Creating Notification Channel](https://intl.cloud.tencent.com/document/product/1024/30715).
 2. Configure RESTful API push.
-   Set the `oppo_ch_id` parameter in the Android structure of the RESTful API request parameters to implement delivery based on the notification channel. For more information, see [push API parameter description](https://intl.cloud.tencent.com/document/product/1024/33764).
-<dx-alert infotype="notice" title="">
-Currently, notifications pushed through the OPPO private message channel can be delivered only through RESTful APIs but not the console.
-</dx-alert>
+Set the `oppo_ch_id` parameter in the Android structure of the RESTful API request parameters to implement delivery based on the notification channel. For more information, see [push API parameter description](https://intl.cloud.tencent.com/document/product/1024/33764).
+>! Currently, notifications pushed through the OPPO private message channel can be delivered only through RESTful APIs but not the console.
+>
 Below is a sample push:
 <dx-codeblock>
 :::  json
@@ -111,17 +108,12 @@ Below is a sample push:
     "content": "Test content",
     "android": {
         "oppo_ch_id": "Private message channel ID"}
-    }
+  }
 }
 :::
 </dx-codeblock>
 
-
-
-
-
-[](id:xiaomizhinan)
-## Mi Notification Channel Application Guide
+## Mi Notification Channel Application Guide[](id:xiaomizhinan)
 
 ### Mi notification channel overview
 
@@ -154,21 +146,21 @@ Below is a sample push:
     "token_list": ["005c28bf60e29f9a***2052ce96f43019a0b7"],
     "message_type": "notify",
     "message": {
-    "title": "Mi notification message",
-    "content": "Test content",
-    "android": {
+     "title": "Mi notification message",
+     "content": "Test content",
+     "android": {
         "xm_ch_id": "channel_id of the Mi notification message"
-  }
+     }
+	   }
 }
 ```
 
 <span id="vivozhinan"> </span>
+## vivo System Message Channel Application Guide
 
-## Vivo System Message Channel Application Guide
+### vivo message classification overview
 
-### Vivo message classification overview
-
-Vivo classifies push messages into operation messages and system messages.
+vivo classifies push messages into operation messages and system messages.
 
 | Message Category | Quota         | Notification Bar Message Display                   | Frequency Control Rule After June 1, 2020            |
 | -------- | ------------ | -------------------------------- | --------------------------------- |
@@ -180,13 +172,13 @@ Vivo classifies push messages into operation messages and system messages.
 >2. Funtouch OS 10 or above does not provide a message box, and messages are displayed on the narrow bar when the application is not active.
 >3. Both the system message quota and operation message quota will automatically change with the number of SDK subscriptions. If special circumstances require an increase in the system message quota, please submit an application as instructed in the next session.
 >4. If a vivo user receives more than 5 operational messages a day, the extra messages beyond the limit (5 messages) are delivered through the TPNS channel, instead of the vivo channel.
->5. If you have applied to vivo to increase the operating message limit, please contact us configure it on the backend; otherwise, the new limit will not take effect.
+>5. If you have applied to vivo to increase the operating message limit, please contact us so that we can configure it on the backend; otherwise, the new limit will not take effect.
 >
 
 
-### Applying for Vivo system messages
+### Applying for vivo system messages
 
-1. System messages can be created only through Vivo server APIs but not on the Vivo web operation platform. The API has a new request field `classification`, where **0** indicates operation message and **1** indicates system message. If the field is left empty, **0** will be used by default. For more information, see the [Vivo server API documentation](https://dev.vivo.com.cn/documentCenter/doc/362).
+1. System messages can be created only through vivo server APIs but not on the vivo web operation platform. The API has a new request field `classification`, where **0** indicates operation message and **1** indicates system message. If the field is left empty, **0** will be used by default. For more information, see the [vivo server API documentation](https://dev.vivo.com.cn/documentCenter/doc/362).
 2. The system message quota is twice the number of SDK subscriptions by default. To increase the quota, send an application email based on the template below to push@vivo.com:
 ```plaintext
 Subject: Application for Increasing the Quota of IM/System Messages for App XXX
@@ -198,10 +190,10 @@ IM/System message quota required (unit: 10,000): ...
 Description of the specific push scenario: for example, personal user chat and merchant chat
 ```
 
-### Using Vivo system messages
+### Using vivo system messages
 
-Currently, Vivo notification messages can be delivered only through RESTful APIs but not the console.
-Set the `vivo_ch_id` parameter in the Android structure of the RESTful API request parameters to **1** to implement delivery of Vivo system messages. For more information, see [push API parameter description](https://intl.cloud.tencent.com/document/product/1024/33764).
+Currently, vivo notification messages can be delivered only through RESTful APIs but not the console.
+Set the `vivo_ch_id` parameter in the Android structure of the RESTful API request parameters to **1** to implement delivery of vivo system messages. For more information, see [push API parameter description](https://intl.cloud.tencent.com/document/product/1024/33764).
 Below is a sample push:
 
 ```json
@@ -210,40 +202,67 @@ Below is a sample push:
     "token_list": ["005c28bf60e29f9a***2052ce96f43019a0b7"],
     "message_type": "notify",
     "message": {
-    "title": "Vivo system notification",
-    "content": "Test content",
-    "android": {
+     "title": "vivo system notification",
+     "content": "Test content",
+     "android": {
         "vivo_ch_id": "1"
-    }
+     }
+   }
 }
 ```
 
 <span id="huaweizhinan"> </span>
 
-## Huawei Notification Channel User Guide
+## Huawei Message Classification User Guide
 
-### Huawei notification channel overview
+### Huawei message classification overview
 
-Starting from EMUI 10.0, Huawei's push service intelligently classifies notification messages into two levels: **common and important**. Before EMUI 10.0, there is only one level and all messages are displayed through the **default notification** channel, equivalent to important messages in EMUI 10.0.
+Starting from EMUI 10.0, Huawei's push service intelligently classifies notification messages into two levels: **service and communication** and **information and marketing**. Before EMUI 10.0, there is only one level and all messages are displayed through the **default notification** channel, equivalent to service and communication messages in EMUI 10.0.
 
 The table below compares the display style of messages at different levels.
 
 | Message Level | Displayed in the Notification Center | Displayed in the Status Bar | Notification for Screen Lock | Ringtone | Vibration |
 | -------- | ---------------- | -------------- | -------- | ---- | ---- |
-| Important     | Normal         | Supported           | Supported    | Supported | Supported |
-| Common     | Normal         | Not supported             | Not supported       | Not supported   | Not supported   |
+| Service and communication     | Normal         | Supported           | Supported     | Supported | Supported |
+| Information and marketing     | Normal         | Not supported             | Not supported       | Not supported   | Not supported   |
 
 Classification rules:
 
-- Obtain message types based on the title and content of notification messages sent by developers.
-  Message types include marketing, feature, life, social networking, transaction, work, alarm, and others.
+- Intelligent message classification
+Intelligent classification algorithms will automatically categorize your messages according to classification criteria based on multiple dimensional factors such as the content you send.
+- Self-help message classification
+Starting from July 1, 2021, the Huawei Push service will begin to receive developers' applications for self-help message classification. After their applications are approved, developers can classify messages by themselves according to Huawei Push's classification specifications.
 
-- Obtain message levels through mapping the types of received messages.
-  Messages are generally divided into two levels: common and important.
+### Applying for self-help message classification permission
+Currently, the self-help classification permission for Huawei notification messages can take effect only after you apply for it through email. For more information, please see [Message Classification Management Solution](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides-V5/message-classification-management-solution-0000001149358835-V5#ZH-CN_TOPIC_0000001149358835__section893184112272).
 
-  For example, content recommendations sent by applications (such as information from audio and video, reading, and video applications) and surveys (such as questionnaires) will be intelligently classified as common notifications; logistics status, such as dispatched, signed, delivering, and pickup information will be intelligently classified as important notifications.
+>!
+> - If the application does not provide the self-help message classification feature, its push messages will be automatically classified by intelligent classification.
+> - If the application provides the self-help message classification feature, the classification information provided by developers is trusted, and intelligent classification is not implemented for messages.
+> 
 
->! Intelligent notification classification is available only to terminal devices in Chinese mainland.
+### Using self-classified messages
+
+Self-classified messages can be delivered only through APIs but not the console. After successfully obtaining the permission for self-help message classification, you can use the feature as follows:
+
+Configure the `hw_importance` field in the `Android` request structure of the RESTful API to deliver self-classified messages. For more information, see the parameter description in [Push API](https://intl.cloud.tencent.com/document/product/1024/33764).
+
+Below is a sample push:
+
+```json
+{
+    "audience_type": "token",
+    "token_list": ["005c28bf60e29f9a***2052ce96f43019a0b7"],
+    "message_type": "notify",
+    "message": {
+        "title": "Account logged out:",
+        "content": "Your account has been logged out due to login from an unusual login location.",
+        "android": {
+            "hw_importance":2
+        }
+    }
+}
+```
 
 ### Creating a Huawei notification channel
 
@@ -258,7 +277,8 @@ Currently, notifications pushed through Huawe's custom channel can be delivered 
 
 Configure the `hw_ch_id` field in the Android request structure of the RESTful API to push messages through the Huawei notification channel. For more information, see the parameter description in [Push API](https://intl.cloud.tencent.com/document/product/1024/33764).
 
-> ! If you configure the `hw_ch_id` field, TPNS automatically configures the level of messages pushed through the Huawei channel as important. However, according to Huawei's push rules, the ultimate display effect of pushed messages is determined by both the levels specified by TPNS and Huawei's intelligent classification, whichever is lower. For example, if TPNS and Huawei's intelligent classification classify messages as important and common respectively, the message level "common" shall prevail. For more information, see [Intelligent Message Classification](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/android-intelligent-classification-0000001050040120).
+>! A custom notification channel is applicable only for service and communication messages. Information and marketing messages are still displayed through the Huawei marketing notification channel.
+>
 
 Below is a sample push:
 
