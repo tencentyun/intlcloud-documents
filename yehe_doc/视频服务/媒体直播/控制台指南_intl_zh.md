@@ -150,7 +150,7 @@ j. 至此，整个频道已经配置完毕。点击【Start】即可运行。
 
 
 
-## 五、通过StreamLive输出至腾讯云COS归档
+### 五、通过StreamLive输出至腾讯云COS归档
 
 StreamLive支持输出HLS文件至腾讯云COS进行归档，需要您先在COS中完成存储桶的创建并授权StreamLive访问您的存储桶。
 
@@ -178,7 +178,7 @@ StreamLive支持输出HLS文件至腾讯云COS进行归档，需要您先在COS�
 
 
 
-## 六、通过StreamLive输出至腾讯云StreamPackage
+### 六、通过StreamLive输出至腾讯云StreamPackage
 
 StreamLive支持直接联合腾讯云StreamPackage一起使用，将HLS/DASH格式直播流直接输出至同账号下的StreamPackage中，以便于用户形成自己的源站，从而进行下一步的视频分发与播放。
 
@@ -220,7 +220,7 @@ StreamLive支持直接联合腾讯云StreamPackage一起使用，将HLS/DASH格�
 
 
 
-## 七、频道导入导出、克隆与编辑删除
+### 七、频道导入导出、克隆与编辑删除
 
 StreamLive 支持通过导出/导入频道配置文件及频道克隆功能来快速完成频道创建工作。
 
@@ -260,7 +260,7 @@ StreamLive的【Channel Management】界面会显示您所有创建的频道及�
 
 
 
-## 八、频道质量监控
+### 八、频道质量监控
 
 打开【Channel Management】界面点击频道名称即可进入频道详情页面。频道详情页面会显示该频道的信息、输入、输出、Alerts、Health等详细信息。
 
@@ -283,7 +283,7 @@ Heath向用户提供频道输入（带宽、输入视频帧速率和输入音频
 
 
 
-## 九、设置时间计划
+### 九、设置时间计划
 
 您可以为StreamLive频道设置时间计划，实现在推流过程中定时触发特定事件的设置（如：15:00:00 切换输入源为 input2）。
 
