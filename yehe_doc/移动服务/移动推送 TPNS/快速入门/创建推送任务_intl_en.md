@@ -21,10 +21,10 @@ You have purchased the TPNS service. For more information, please see [Purchase 
  - **Advanced Settings**: TPNS also supports the following advanced settings:
 
     - **Grouping and Collapsing**: you can control whether and how to collapse notifications in the device notification center.
-	  - **Badge Number**: this refers to the number of messages that have arrived but not been clicked. Only the TPNS, Huawei, and Mi channels support automatically increasing the number by 1.
-	  - **Extra Parameter(s)**: you can select extra parameters in the data format of key:value for more diverse push content.
+    - **Badge Number**: this refers to the number of messages that have arrived but not been clicked. Only the TPNS, Huawei, and Mi channels support automatically increasing the number by 1.
+    - **Extra Parameter(s)**: you can select extra parameters in the data format of key:value for more diverse push content.
     - **Notification Image**: after you enter the image URL, notifications delivered through certain channels will display the image.
-	  - **Notification Audio**: after you enter the audio URL, notifications delivered through the TPNS channel will contain the audio.
+    - **Notification Audio**: after you enter the audio URL, notifications delivered through the TPNS channel will contain the audio.
     - **Offline Storage**: set the offline retention time between 0 and 72 hours. The default value is 24 hours. Up to three latest pushes can be retained.
     - **Open Location**: set the click action for the push, supporting application, custom intent, URL, and in-app activity.
     - **Reminder**: set the reminder method, custom ringtone, etc.
