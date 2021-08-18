@@ -161,7 +161,7 @@ listFolder();
 | ------------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
-| Prefix | Matching prefix for object keys. This parameter specifies that the response can contain only object keys with the specified prefix. | String |
+| Prefix | Matching prefix for object keys. This parameter specifies that the response can contain only object keys with the specified prefix. | String |  No |
 | Delimiter | A separating symbol (usually `\`) used to group object keys. The identical paths between a prefix or, if no prefix is specified, the beginning and the first `delimiter` are grouped and defined as a common prefix. All common prefixes will be listed. | String | No |
 | Marker | Marks the starting object key. Object key entries will be returned in UTF-8 lexicographical order starting from the first object key after the marker | String | No |
 | MaxKeys | Maximum number of entries returned in a single response. Defaults to `1000`. | String | No |
@@ -370,7 +370,7 @@ function(err, data) { ... }
 | data | Object returned when the request is successful. If the request fails, this parameter is left empty. | Object |
 | - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
 | - headers | Returns headers | Object |
-| - ETag | Returns the MD5 checksum of the object. The value of `ETag` can be used to check whether the object was corrupted during upload. <br>For example, `"09cba091df696af91549de27b8e7d0f6"`. **Note: double quotation marks are required at the beginning and the end of the `ETag` value string** |
+| - ETag | Returns the MD5 checksum of the object. The value of `ETag` can be used to check whether the object was corrupted during upload. <br>For example, `"09cba091df696af91549de27b8e7d0f6"`. **Note: double quotation marks are required at the beginning and the end of the `ETag` value ** |       string |
 | - Location | Creates an object's access domain name for external networks | String |
 | - VersionId | The version ID of the returned object in a versioning-enabled bucket | String |
 
@@ -1181,9 +1181,9 @@ function(err, data) { ... }
 | - headers | Returns headers | Object |
 | data | Object returned when the request is successful. If the request fails, this parameter is left empty. | Object |
 | - statusCode | Returns an HTTP status code, such as 200, 403, and 404 | Number |
-| - headers    | Returns headers  
+| - headers    | Returns headers   |  Object |
 
-##Other Operations
+## Other Operations
 
 ### Restoring an archived object
 
@@ -1212,7 +1212,7 @@ cos.restoreObject({
 
 #### Parameter description
 
-| Parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   | Description  | Type | Required |
+| Parameter     | Description  | Type | Required |
 | ------------------ | ------------------------------------------------------------ | ------ | ---- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
@@ -1429,7 +1429,7 @@ wx.chooseMessageFile({
 
 #### Parameter description
 
-| Parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type      | Required |
+| Parameter    | Description                                                     | Type      | Required |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | --------- | ---- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
