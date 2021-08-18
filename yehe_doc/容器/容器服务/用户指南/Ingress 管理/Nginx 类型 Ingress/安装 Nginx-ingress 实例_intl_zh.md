@@ -11,14 +11,14 @@
 
 ## 安装方式
 您可以根据不同的业务场景需求，使用以下几种安装方案在容器服务 TKE 中安装 Nginx-ingress。
-- [通过 DaementSet 形式在指定节点池部署](#DaementSet)
+- [通过 DaemonSet 形式在指定节点池部署](#DaemonSet)
 - [通过 Deployment + HPA 形式并指定调度规则部署](#Deployment+HPA)
 - [Nginx 前端接入 LB 部署方式](#LB)
 
 
 
 <span id="DaementSet"></span>
-### 通过 DaementSet 形式在指定节点池部署（推荐）
+### 通过 DaemonSet 形式在指定节点池部署（推荐）
 
 Nginx 作为关键的流量接入网关，不建议您将 Nginx 与其他业务部署在相同的节点内。推荐您使用指定的节点池来部署 Nginx-ingress。部署架构如下图所示：
 ![](https://main.qcloudimg.com/raw/70b726a482703a3c1b959844da65ff89.png)
@@ -29,7 +29,7 @@ Nginx 作为关键的流量接入网关，不建议您将 Nginx 与其他业务�
 1. 准备用于部署 Nginx-ingress 的节点池，同时设置污点 taint（防止其他 Pod 调度到该节点池）。部署节点池详情可参见 [节点池相关说明](https://intl.cloud.tencent.com/document/product/457/35900)。
 2. 在集群中 [安装 NginxIngress 组件](#Nginx-ingress)。
 3. 在新建的 Nginx Ingress 组件详情页，单击【新增Nginx Ingress实例】（一个集群内可以同时存在多个 Nginx）。
-4. 在弹出的窗口中，选择部署选项中的【指定DaementSet节点池部署】，并按需设置其他参数。
+4. 在弹出的窗口中，选择部署选项中的【指定DaemonSet节点池部署】，并按需设置其他参数。如下图所示：
 ![](https://main.qcloudimg.com/raw/fa11343e51e9643bc1fe90d4e2fbb100.png)
  - 节点池：配置节点池。
  - Nginx 配置：Requst 需设置比节点池的机型配置小（节点本身有资源预留）。Limit 可不设置。
