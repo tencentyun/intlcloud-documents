@@ -108,7 +108,7 @@ b. 出力グループ名とタイプです。現在のOutput Groupの名称と�
 
 >?
 >- Tencent CloudのCOSの詳細は、下記をご覧ください。[COSの詳細](https://intl.cloud.tencent.com/document/product/436/6222)
->- Tencent Cloud StreamPackageの詳細は、下記をご覧ください。[StreamPackageの詳細](https://intl.cloud.tencent.com/document/product/1063/37495)
+>- Tencent Cloud StreamPackageの詳細は、下記をご覧ください。[StreamPackageの詳細](https://intl.cloud.tencent.com/document/product/1063/41786)
 
 ![](https://main.qcloudimg.com/raw/6b87cbe42011cc98c045af99369348a3.png)
 
