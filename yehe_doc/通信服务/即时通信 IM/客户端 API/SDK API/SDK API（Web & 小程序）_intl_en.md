@@ -1,5 +1,3 @@
->?[**Answer Questionnaire and Win Prizes** before July 31. Click to join the requirement survey on IM Web & Mini Program TUIKit >>](https://wj.qq.com/s2/8750536/987c)
-
 ## TIM
 
 TIM is the namespace of the IM Web SDK and provides the static method [create()](https://web.sdk.qcloud.com/im/doc/zh-cn//TIM.html#.create) for creating SDK instances, the event constant [EVENT](https://web.sdk.qcloud.com/im/doc/zh-cn//module-EVENT.html), and the type constant [TYPES](https://web.sdk.qcloud.com/im/doc/zh-cn//module-TYPES.html).
