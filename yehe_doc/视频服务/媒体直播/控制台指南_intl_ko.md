@@ -111,7 +111,7 @@ b.     출력 그룹의 이름 및 유형. 현재 Output Group의 이름과 유�
 
 >?
 >- Tencent Cloud COS에 관한 자세한 내용은 다음을 참조하십시오.[COS 세부정보](https://intl.cloud.tencent.com/document/product/436/6222)
->- Tencent Cloud StreamPackage에 대한 자세한 내용은 다음을 참조하십시오.[StreamPackage 세부정보](https://intl.cloud.tencent.com/document/product/1063/37495)
+>- Tencent Cloud StreamPackage에 대한 자세한 내용은 다음을 참조하십시오.[StreamPackage 세부정보](https://intl.cloud.tencent.com/document/product/1063/41786)
 
 ![](https://main.qcloudimg.com/raw/6b87cbe42011cc98c045af99369348a3.png)
 
