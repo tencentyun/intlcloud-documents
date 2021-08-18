@@ -101,7 +101,7 @@ b. 输出组名称和类型。设置当前Output Group的名称和类型。目�
 
 >?
 >- 腾讯云对象存储COS介绍详见：[腾讯云对象存储COS详情](https://intl.cloud.tencent.com/document/product/436/6222)
->- 腾讯云StreamPackage介绍详见：[腾讯云StreamPackage详情](https://intl.cloud.tencent.com/document/product/1063/37495)
+>- 腾讯云StreamPackage介绍详见：[腾讯云StreamPackage详情](https://intl.cloud.tencent.com/document/product/1063/41786)
 
 ![](https://main.qcloudimg.com/raw/6b87cbe42011cc98c045af99369348a3.png)
 
