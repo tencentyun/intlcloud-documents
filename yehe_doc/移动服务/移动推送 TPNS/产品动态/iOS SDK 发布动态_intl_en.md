@@ -240,7 +240,7 @@
         <td>SDK v1.2.5.3 release</td>
         <td><li>Supports unregistering free TPNS clusters to avoid repeated pushes.</li><li>Supports replacing repeated messages in the notification extension.</li></td>
         <td>March 19, 2020</td>
-        <td><a href="https://cloud.tencent.com/document/product/548/36668#.E6.B3.A8.E9.94.80.E4.BF.A1.E9.B8.BD.E5.B9.B3.E5.8F.B0.E6.8E.A8.E9.80.81.E6.9C.8D.E5.8A.A1">Unregistering XG Platform Service</a></td>
+        <td>Unregistering XG Platform Service</a></td>
     </tr>
     <tr>
         <td>SDK v1.2.5.2 release</td>
