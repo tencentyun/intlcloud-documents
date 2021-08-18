@@ -17,7 +17,7 @@ For any problems encountered when using the downloaded SDK or Demo, please see [
 
 ## Version Updates
 
-The v2.8.2 is updated as follows:
+The v2.8.3 is updated as follows:
 
 <table >
 <thead>
@@ -29,13 +29,13 @@ The v2.8.2 is updated as follows:
 </tr>
 </thead>
 <tbody><tr>
-<td>SDK v2.8.2 is released</td>
+<td>SDK v2.8.3 is released</td>
 <td ><ul style="margin:0;"><li >The real-time speech recognition feature is now available in beta. The speech in the audio call can be recognized to text in real time. To try it out, please <a href="https://console.cloud.tencent.com/workorder/category">submit a ticket</a>.</li>
 <li >Optimizes the network module and increases the success rate of room entry on Windows platform.</li>
 <li >Updates the SDK of H5 platform and adds the adaptation for browsers.</li>
 <li >Optimizes the performance and increases the speed of room entry and the stability of SDK.</li>
 </ul ></td>
-<td>2021-06-11</td> 
+<td>2021-07-09</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/607/15210">Voice Chat</tr>
 </tbody></table>
 
@@ -47,13 +47,13 @@ The v2.8.2 is updated as follows:
 
 | OS/Engine | Update Time | SDK Download | Demo Download | Documents |
 | ------------- | ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Unity | June 11, 2021 | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.2/Other/GME_Unity_Audio_SDK_2.8.2.1a4daad0.zip) | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.2/Other/GME_Unity_Audio_Demo_2.8.2.1a4daad0.zip) | [Getting Started](https://intl.cloud.tencent.com/document/product/607/18248) [API Documentation](https://intl.cloud.tencent.com/document/product/607/15228) |
-| Unreal Engine | June 11, 2021 | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.2/Other/GME_Unreal_Audio_SDK_2.8.2.1a4daad0.zip) | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.2/Other/GME_Unreal_Audio_Demo_2.8.2.1a4daad0.zip) | [Getting Started](https://intl.cloud.tencent.com/document/product/607/18267) [API Documentation](https://intl.cloud.tencent.com/document/product/607/15231) |
-| Cocos2D | June 11, 2021 | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.2/Other/GME_Cocos_Audio_SDK_2.8.2.1a4daad0.zip) | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.2/Other/GME_Cocos_Audio_Demo_2.8.2.1a4daad0.zip) | [Getting Started](https://intl.cloud.tencent.com/document/product/607/18292) [API Documentation](https://intl.cloud.tencent.com/document/product/607/15218) |
-| Windows | June 11, 2021 | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.2/Windows/GME_Windows_audio_sdk_2.8.2.207fee67.zip) | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.2/Windows/GME_Windows_audio_example_project_2.8.2.207fee67.zip) | [Getting Started](https://intl.cloud.tencent.com/document/product/607/40858) [API Documentation](https://intl.cloud.tencent.com/document/product/607/15232) |
-| iOS | June 11, 2021 | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.2/iOS/GME_ios_audio_sdk_2.8.2.207fee67.zip) | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.2/iOS/GME_ios_audio_example_2.8.2.207fee67.zip) | [Getting Started](https://intl.cloud.tencent.com/document/product/607/40858) [API Documentation](https://intl.cloud.tencent.com/document/product/607/15221) |
-| Android | June 11, 2021 | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.2/Android/GME_android_audio_sdk_2.8.2.207fee67.zip) | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.2/Android/GME_android_audio_example_2.8.2.207fee67.zip) | [Getting Started](https://intl.cloud.tencent.com/document/product/607/40858) [API Documentation](https://intl.cloud.tencent.com/document/product/607/15210) |
-| macOS | June 11, 2021 | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.2/Mac/GME_mac_audio_sdk_2.8.2.207fee67.zip) | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.2/Mac/GME_mac_audio_demo_2.8.2.207fee67.zip) | [Getting Started](https://intl.cloud.tencent.com/document/product/607/40858) [API Documentation](https://intl.cloud.tencent.com/document/product/607/18739) |
+| Unity | July 9, 2021 | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Other/GME_Unity_Audio_SDK_2.8.3.656e5581.zip) | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Other/GME_Unity_Audio_Demo_2.8.3.656e5581.zip) | [Getting Started](https://intl.cloud.tencent.com/document/product/607/18248) [API Documentation](https://intl.cloud.tencent.com/document/product/607/15228) |
+| Unreal Engine | July 9, 2021 | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Other/GME_Unreal_Audio_SDK_2.8.3.656e5581.zip) | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Other/GME_Unreal_Audio_Demo_2.8.3.656e5581.zip) | [Getting Started](https://intl.cloud.tencent.com/document/product/607/18267) [API Documentation](https://intl.cloud.tencent.com/document/product/607/15231) |
+| Cocos2D | July 9, 2021 | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Other/GME_Cocos_Audio_SDK_2.8.3.656e5581.zip) | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Other/GME_Cocos_Audio_Demo_2.8.3.656e5581.zip) | [Getting Started](https://intl.cloud.tencent.com/document/product/607/18292) [API Documentation](https://intl.cloud.tencent.com/document/product/607/15218) |
+| Windows | July 9, 2021 | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Windows/GME_Windows_audio_sdk_2.8.3.f841ee08.zip) | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Windows/GME_Windows_audio_example_project_2.8.3.f841ee08.zip) | [Getting Started](https://intl.cloud.tencent.com/document/product/607/40858) [API Documentation](https://intl.cloud.tencent.com/document/product/607/15232) |
+| iOS | July 9, 2021 | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/iOS/GME_ios_audio_sdk_2.8.3.f841ee08.zip) | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/iOS/GME_ios_audio_example_2.8.3.f841ee08.zip) | [Getting Started](https://intl.cloud.tencent.com/document/product/607/40858) [API Documentation](https://intl.cloud.tencent.com/document/product/607/15221) |
+| Android | July 9, 2021 | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Android/GME_android_audio_sdk_2.8.3.f841ee08.zip) | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Android/GME_android_audio_example_2.8.3.f841ee08.zip) | [Getting Started](https://intl.cloud.tencent.com/document/product/607/40858) [API Documentation](https://intl.cloud.tencent.com/document/product/607/15210) |
+| macOS | July 9, 2021 | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Mac/GME_mac_audio_sdk_2.8.3.f841ee08.zip) | [Download](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Mac/GME_mac_audio_demo_2.8.3.f841ee08.zip) | [Getting Started](https://intl.cloud.tencent.com/document/product/607/40858) [API Documentation](https://intl.cloud.tencent.com/document/product/607/18739) |
 
 ## Web SDK Download
 
