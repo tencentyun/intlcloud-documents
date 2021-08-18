@@ -51,7 +51,7 @@ If network isolation occurs between two AZs (i.e., they cannot communicate), a c
 
 Suppose network isolation occurs between the cluster controller node and a ZK node in the ZooKeeper cluster and other nodes, other nodes will run for a new controller (which can be successfully elected since most nodes in the ZooKeeper cluster communicate normally over the network), but the isolated controller still regards itself as the controller node. In this case, a "split-brain" event occurs in the cluster.
 
-At this time, the client writes need to be considered on a case by case basis. For example, when the client's Ack policy is equal to 2, the number of replicas is 2, and if the cluster contains 3 nodes, they will be distributed in a 2:1 ratio after the split-brain event occurs. In this case, an error will be reported when the original leader writes to the partitions in the AZ with one node, while writes in the other AZ will succeed. However, if the number of replicas is 3 and Ack = -1 or all is configured, writes on neither AZ will succeed. Therefore, you need to take further actions based on the specific parameter configuration.
+At this time, the client writes need to be considered on a case-by-case basis. For example, when the client's Ack policy is equal to 2, the number of replicas is 2, and if the cluster contains 3 nodes, they will be distributed in a 2:1 ratio after the split-brain event occurs. In this case, an error will be reported when the original leader writes to the partitions in the AZ with one node, while writes in the other AZ will succeed. However, if the number of replicas is 3 and Ack = -1 or all is configured, writes on neither AZ will succeed. Therefore, you need to take further actions based on the specific parameter configuration.
 
 After the cluster network is back to normal, the client can resume production and consumption without performing any operations. As the server will normalize the data again, the data on one of the split nodes will be truncated directly, which, however, will not result in data loss in case of multi-replica multi-AZ data storage.
 
@@ -62,16 +62,18 @@ After the cluster network is back to normal, the client can resume production an
 1. Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka).
 2. Click **Instance List** on the left sidebar and click **Create** to enter the instance purchase page.
 3. On the instance purchase page, set the configuration information for purchase based on your actual needs.
-  - Billing Mode: monthly subscription
-  - Specs Type: Pro Edition
-  - Region: select a region close to the resources for client deployment
-  - AZ: if multi-AZ deployment is supported in the current region, you can select up to two AZs for deployment
-  - Product Specs: select an appropriate model based on the peak bandwidth and disk capacity
-  - Message Retention: select a value between 24 and 2160 hours
-    When the disk capacity is insufficient (i.e., the disk utilization reaches 90%), old messages will be deleted in advance to ensure the service availability.
-  - VPC: if you need to access other VPCs, you can modify routing access rules as instructed in [Adding a Routing Policy](https://intl.cloud.tencent.com/document/product/597/32555)
-  - Purchase Period: you can set auto-renewal by month upon expiration
-
+   - Billing Mode: monthly subscription
+   - Specs Type: select the Standard or Pro Edition based on your business needs.
+   - Kafka Version: select a Kafka version based on your business needs. For more information, please see [Suggestions for CKafka Edition Selection](https://intl.cloud.tencent.com/document/product/597/40964).
+   - Region: select a region close to the resource for client deployment.
+   - AZ: select an AZ according to your actual needs.
+     - Standard Edition: it does not support multi-AZ deployment.
+     - Pro Edition: if the current region supports multi-AZ deployment, you can select up to 2 AZs for deployment. For more information on how multi-AZ deployment works, please see [Multi-AZ Deployment](https://intl.cloud.tencent.com/document/product/597/40243).
+   - Product Specs: select an appropriate model based on the peak bandwidth and disk capacity.
+   - Message Retention: select a value between 24 and 2,160 hours.
+     When the disk capacity is insufficient (i.e., the disk utilization reaches 90%), old messages will be deleted in advance to ensure the service availability.
+   - VPC: if you need to access other VPCs, you can modify routing access rules as instructed in [Adding a Routing Policy](https://intl.cloud.tencent.com/document/product/597/32555)
+   - Tag: it is optional. For specific usage, please see [Tag Overview](https://cloud.tencent.com/document/product/597/33355).
+   - Instance Name: when purchasing multiple instances, you can use the features of automatically incrementing the instance suffix number and specifying a pattern string. For detailed directions, please see [Consecutive Batch Naming or Naming with Pattern String](https://cloud.tencent.com/document/product/597/59246)
 4. Click **Buy Now** to complete the instance creation process.
-   ![](https://main.qcloudimg.com/raw/d06043a79f7664a81ed6304ffaaf63f8.png)
 
