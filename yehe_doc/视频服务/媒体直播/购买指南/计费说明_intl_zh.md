@@ -1,4 +1,4 @@
-﻿## 计费总览
+## 计费总览
 
 <table>
 <thead>
@@ -60,6 +60,7 @@ StreamLive 提供**标准转码**、**极速高清转码**和**音频转码服�
 <td colspan=2 style="text-align:center">音频转码费用</td>
 </tr>
 </tbody></table>
+
 ### 注意事项
 
 - 计费方式：后付费计费。
@@ -423,6 +424,7 @@ StreamLive 提供音频转码服务。音频转码提供优质音频转码功能
 <td>0.1117</td>
 </tr>
 </tbody></table>
+
 ### 计费说明
 
 - 计费项：直播转推至第三方的费用。
