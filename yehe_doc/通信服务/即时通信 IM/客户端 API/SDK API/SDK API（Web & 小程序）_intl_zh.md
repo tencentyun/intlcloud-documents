@@ -1,5 +1,3 @@
->?[【有奖问卷】7月31日截至！即时通信 IM Web & 小程序端 TUIKit 需求调研，单击立即参与 >>](https://wj.qq.com/s2/8750536/987c)
-
 ## TIM
 
 TIM 是 IM Web SDK 的命名空间，提供了创建 SDK 实例的静态方法 [create()](https://web.sdk.qcloud.com/im/doc/zh-cn//TIM.html#.create) ，以及事件常量 [EVENT](https://web.sdk.qcloud.com/im/doc/zh-cn//module-EVENT.html)，类型常量 [TYPES](https://web.sdk.qcloud.com/im/doc/zh-cn//module-TYPES.html)。
