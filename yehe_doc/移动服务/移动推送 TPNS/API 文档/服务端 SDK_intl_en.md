@@ -2,9 +2,9 @@ In addition to RESTful APIs, TPNS also provides mainstream server API SDKs.
 
 ## Officially Maintained Versions
 
-The officially maintained versions are released in **TGit - TPNS** as open-source tools. To download the package versions, please click **Download** on the corresponding project page to download the needed SDK.
+The officially maintained versions are released in **TGit - TPNS** as open-source tools.
 
-The official plugin URLs include source code and sample code for push for your reference.
+The source code and sample code for push are provided at the official URLs for your reference.
 
 
 | Project | URL |

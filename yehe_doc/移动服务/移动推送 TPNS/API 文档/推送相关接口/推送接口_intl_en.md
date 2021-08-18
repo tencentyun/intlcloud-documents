@@ -6,7 +6,7 @@
 Service URL/v3/push/app
 ```
 
-API service URLs correspond to service access points one by one. Please select the [service URL](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
+API service URLs correspond to service access points one to one. Please select the [service URL](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
 
 **Feature**: Push API is the general term for all push APIs. Push API supports different push targets, as described below.
 All request parameters are JSON encapsulated and uploaded to the backend, which differentiates push targets based on the request parameters. If an error code is returned, see [Server-Side Error Codes](https://intl.cloud.tencent.com/document/product/1024/33763).
@@ -147,7 +147,7 @@ Push API handles messages on iOS and Android differently, so you need to impleme
 
 ### General message on Android
 
-The specific fields for the Android platform are as follows:
+The table below specifies parameters for the Android platform:
 
 | Parameter | Type | Parent Project | Default Value | Required | Description |
 | ------------------------ | ------ | ------- | ------ | ---- | ------------------------------------------------------------ |
@@ -180,9 +180,9 @@ The specific fields for the Android platform are as follows:
 | badge_type     | Integer | android | -1     | No   | Notification badge: <li>-2: automatically increased by 1, valid only for Huawei devices</li><li>-1: unchanged, valid only for Huawei and vivo devices</li><li>[0, 100): direct configuration, valid only for Huawei and vivo devices</li>**Note**: the badge adaptation capabilities vary depending on the vendor device. For details about the implementation effect of each parameter value, see <a href="https://intl.cloud.tencent.com/document/product/1024/35828">Badge Adaptation Guide<a>. |
 | ring           | Integer | android | 1      | No   | Whether there is a ringtone. Valid values:<li>`0`: no</li><li>`1`: yes</li>           |
 | ring_raw       | String  | android | Empty     | No   | Name of the ringtone file in the `raw` directory of the Android project; no extension is needed.<br>**Note:** custom ringtones are supported only for the Huawei, Mi, FCM, and TPNS channels.    |
-| vibrate        | Integer | android | 1      | No   | Whether the device vibrates. Valid values:<li>`0`: no</li><li>`1`: yes</li>           |
+| vibrate        | Integer | android | 1      | No   | Whether to enable vibration. Valid values:<li>`0`: no</li><li>`1`: yes</li>           |
 | lights         | Integer | android | 1      | No    | Whether to use the breathing light. Valid values:<li>`0`: no</li><li>`1`: yes</li> |
-| clearable      | Integer | android | 1      | No   | Whether the notification bar can be cleared. Valid values:<li>`0`: no</li><li>`1`: yes</li> |
+| clearable      | Integer | android | 1      | No   | Whether messages can be cleared from the notification bar. Valid values:<li>`0`: no</li><li>`1`: yes</li> |
 | icon_type      | Integer | android | 0      | No   | Whether the notification bar thumbnail is an in-app icon or an uploaded icon. Valid values:<li>`0`: in-app icon</li><li>`1`: uploaded icon</li>This parameter is supported only for the TPNS, FCM, and Huawei channels. |
 | icon_res       | String  | android | Empty     | No   | URL of the uploaded notification thumbnail. This parameter is supported only for the TPNS, FCM, and Huawei channels. For more information about the thumbnail formats, see [Rich Media Notification](https://intl.cloud.tencent.com/document/product/1024/37858). |
 | style_id       | Integer | android | 1      | No   | Whether the notification style with the specified number will be overwritten |
@@ -281,6 +281,7 @@ The table below specifies parameters for the iOS platform.
 | content                  | String | message | Empty     | Yes   | Message content, which will override the content in `body` under `alert`.
 | thread_id                | String | message | Empty     | No   | Thread ID for collapsed notification in threaded display                                     |
 | ios    | Object       | message  | Empty    | Yes    | iOS message structure. See [iOS parameter description](#iOS) for more information. |
+| show_type      | Integer | message | 2      | No  | Whether to display the notification when the application is running in the foreground. Valid values:<li>`1`: no</li><li>`2`: yes</br>Note: if the value is `1` and the application is running in the foreground, this push is imperceptible to end users, but arrival data will be reported.</li> |
 | xg_media_resources    | String     | message | Empty    | No    | URL of rich media elements such as image, audio, and video                          |
 
 
@@ -311,6 +312,7 @@ Below is a sample of a complete message:
     "content": "xxxxxxxxx",
     "thread_id":"Activity_id",
     "xg_media_resources":"https://www.xx.com/img/bd_logo1.png",
+    "show_type":1,
     "ios":{
         "aps": {
             "alert": {
@@ -538,11 +540,11 @@ Optional push API parameters refer to advanced parameters that can be carried in
         }
     ],
     "message_type": "notify",
-    "message":{
+    "message": {
     "title": "Test title",
     "content": "Test content",
     "xg_media_resources": "xxx1" , // Enter the URL of rich media elements, such as `https://www.xx.com/img/bd_logo1.png?qua=high`
-    "xg_media_audio_resources":"xxx", //Enter the audio rich media element address, such as http://sc1.111ttt.cn/2018/1/03/13/396131227447.mp3 
+    "xg_media_audio_resources":"xxx", // Enter the URL of audio rich media elements, such as `http://sc1.111ttt.cn/2018/1/03/13/396131227447.mp3` 
     "accept_time": [
         {
             "start": {// Period start time
