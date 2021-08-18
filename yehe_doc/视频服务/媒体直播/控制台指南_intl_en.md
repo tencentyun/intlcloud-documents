@@ -107,7 +107,7 @@ b. Set the name and type of an output group. Currently, StreamLive supports outp
 
 >?
 >- For more information on COS, please visit: [COS details](https://intl.cloud.tencent.com/document/product/436/6222)
->- For more information on StreamPackage, please visit:[StreamPackage details](https://intl.cloud.tencent.com/document/product/1063/37495)
+>- For more information on StreamPackage, please visit:[StreamPackage details](https://intl.cloud.tencent.com/document/product/1063/41786)
 
 ![](https://main.qcloudimg.com/raw/6b87cbe42011cc98c045af99369348a3.png)
 
