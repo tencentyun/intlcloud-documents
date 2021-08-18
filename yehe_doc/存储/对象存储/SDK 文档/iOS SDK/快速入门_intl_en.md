@@ -7,8 +7,7 @@
 - For the SDK changelog, please see [Changelog](https://github.com/tencentyun/qcloud-sdk-ios/blob/master/CHANGELOG.md).
 - For SDK FAQs, please see [iOS SDK FAQs](https://intl.cloud.tencent.com/document/product/436/38957).
 
->? If you encounter errors such as non-existent functions or methods when using the XML version of the SDK, please update the SDK to the latest version and try again. If you are still using the JSON version of the SDK, please upgrade it to the XML iOS SDK.
->
+>? If you encounter errors such as non-existent functions or methods when using the XML version of the SDK, please update the SDK to the latest version and try again.
 
 ## Preparations
 
@@ -66,12 +65,13 @@ Configure "Other Linker Flags" in "Build Settings" by adding this parameter:
 
 
 >? The SDK provides a packaging script that supports self-packaging according to business requirements. (The packaging script depends on CocoaPods. Please make sure CocoaPods is installed in your development environment first.) The packaging procedure is as follows:
->1. Download the source code: `git clone https://github.com/tencentyun/qcloud-sdk-ios`.
->2. Run the packaging script: `source package.sh`.
->3. Drag and drop the packaging result to the project and perform manual integration as described above.
+> 1. Download the source code: `git clone https://github.com/tencentyun/qcloud-sdk-ios`.
+> 2. Run the packaging script: `source package.sh`.
+> 3. Drag and drop the packaging result to the project and perform manual integration as described above.
 >  - iOS: drag and drop the packaging result in the `ios` folder to the project.
 >  - macOS: drag and drop the packaging result in the `osx` folder to the project.
 ![](https://main.qcloudimg.com/raw/631ae93aab3955149e5d0d8023eeac1b.png)
+
 
 ## Step 2. Begin Using the SDK
 
@@ -157,12 +157,12 @@ For the detailed procedure, see the following sample code:
     credential.secretID = @"SECRETID";
     // Temporary key SecretKey
     credential.secretKey = @"SECRETKEY";
-    // Temporary key Token
+    // Temporary key token
     credential.token = @"TOKEN";
-    /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of `startTime` and `expiredTime` is second).
+    /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of “startTime” and “expiredTime” is second).
     */
     credential.startDate = [NSDate dateWithTimeIntervalSince1970:startTime]; // Unit: second
-    credential.experationDate = [NSDate dateWithTimeIntervalSince1970:expiredTime]];// Unit: second
+    credential.expirationDate = [NSDate dateWithTimeIntervalSince1970:expiredTime]]; // Unit: second
   
     QCloudAuthentationV5Creator* creator = [[QCloudAuthentationV5Creator alloc]
         initWithCredential:credential];
@@ -177,7 +177,7 @@ For the detailed procedure, see the following sample code:
 **Swift**
 
 ```swift
-// AppDelegate.swift
+//AppDelegate.swift
 // `AppDelegate` must follow `QCloudSignatureProvider` 
 
 class AppDelegate: UIResponder, UIApplicationDelegate,
@@ -220,12 +220,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         credential.secretID = "SECRETID";
         // Temporary key SecretKey
         credential.secretKey = "SECRETKEY";
-        // Temporary key Token
+        // Temporary key token
         credential.token = "TOKEN";
-        /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of `startTime` and `expiredTime` is second).
+        /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of “startTime” and “expiredTime” is second).
         */
         credential.startDate = Date.init(timeIntervalSince1970: TimeInterval(startTime)!) DateFormatter().date(from: "startTime");
-        credential.experationDate = Date.init(timeIntervalSince1970: TimeInterval(expiredTime)!) 
+        credential.expirationDate = Date.init(timeIntervalSince1970: TimeInterval(expiredTime)!) 
 
         let creator = QCloudAuthentationV5Creator.init(credential: credential);
         let signature = creator?.signature(forData: urlRequst);
@@ -236,7 +236,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
 ```
 
 
-The SDK provides the `QCloudCredentailFenceQueue` scaffolding tool for you to cache and reuse your temporary key. After a key expires, the scaffolding tool will call the method in the protocol again to retrieve the new key until the key expiration time is later than the current device time.
+The SDK provides the `QCloudCredentailFenceQueue` scaffolding tool for you to cache and reuse your temporary key. After a key expires, the scaffolding tool will call the protocol again to retrieve the new key until the key expiration time is later than the current device time.
 
 >! The scaffolding tool determines whether a key can be reused based only on whether the key expiration time is later than the current device time. If you set up a complex policy when requesting a key, the scaffolding tool is not recommended.
 
@@ -297,12 +297,12 @@ The following is the sample code:
     credential.secretID = @"SECRETID";
     // Temporary key SecretKey
     credential.secretKey = @"SECRETKEY";
-    // Temporary key Token
+    // Temporary key token
     credential.token = @"TOKEN";
-    /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of `startTime` and `expiredTime` is second).
+    /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of “startTime” and “expiredTime” is second).
     */
     credential.startDate = [NSDate dateWithTimeIntervalSince1970:startTime]; // Unit: second
-    credential.experationDate = [NSDate dateWithTimeIntervalSince1970:expiredTime]];// Unit: second
+    credential.expirationDate = [NSDate dateWithTimeIntervalSince1970:expiredTime]]; // Unit: second
 
     QCloudAuthentationV5Creator* creator = [[QCloudAuthentationV5Creator alloc]
         initWithCredential:credential];
@@ -334,7 +334,7 @@ The following is the sample code:
 **Swift**
 
 ```swift
-// AppDelegate.swift
+//AppDelegate.swift
 // `AppDelegate` needs to follow the `QCloudSignatureProvider` and 
 // `QCloudCredentailFenceQueueDelegate` protocols
 
@@ -380,12 +380,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
         credential.secretID = "SECRETID";
         // Temporary key SecretKey
         credential.secretKey = "SECRETKEY";
-        // Temporary key Token
+        // Temporary key token
         credential.token = "TOKEN";
-        /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of `startTime` and `expiredTime` is second).
+        /** You are advised to use the returned server time as the start time of the signature, to avoid signature errors caused by the large deviation between your phone’s local time and the system time (the unit of “startTime” and “expiredTime” is second).
         */
         credential.startDate = Date.init(timeIntervalSince1970: TimeInterval(startTime)!) DateFormatter().date(from: "startTime");
-        credential.experationDate = Date.init(timeIntervalSince1970: TimeInterval(expiredTime)!) 
+        credential.expirationDate = Date.init(timeIntervalSince1970: TimeInterval(expiredTime)!) 
 
         let auth = QCloudAuthentationV5Creator.init(credential: credential);
         continueBlock(auth,nil);
@@ -410,8 +410,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,
 ```
 
 >!
->- For the COS region abbreviations, see [Regions and Access Domain Names](https://intl.cloud.tencent.com/document/product/436/6224).
->- We recommend requesting data over HTTPS. However, if you want to use HTTP protocol, you need to enable HTTP transfer for your application so that it can run on iOS 9.0 or above. For detailed directions, please see Apple's official documentation [Preventing Insecure Network Connections](https://developer.apple.com/documentation/security/preventing_insecure_network_connections).
+> - For more information on the abbreviations of the COS bucket regions, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224).
+> - We recommend requesting data over HTTPS. However, if you want to use HTTP protocol, you need to enable HTTP transfer for your application so that it can run on iOS 9.0 or above. For detailed directions, please see Apple's official documentation [Preventing Insecure Network Connections](https://developer.apple.com/documentation/security/preventing_insecure_network_connections).
+> 
 
 If your `QCloudServiceConfiguration` has changed, you can register a new instance by using the following method:
 
@@ -468,7 +469,7 @@ func signature(with fileds: QCloudSignatureFields!,
 
 #### Method 3. Using a backend-calculated signature to authenticate requests
 
-When the signature is generated on the backend, you can choose not to implement `QCloudCredentailFenceQueueDelegate` protocol
+When the signature is generated on the backend, you can choose not to implement the `QCloudCredentailFenceQueueDelegate` protocol
 
 **Objective-C**
 
@@ -504,7 +505,7 @@ func signature(with fileds: QCloudSignatureFields!,
 
 ## Step 3. Access COS
 
-### Uploading an object
+### Uploading an Object
 
 The SDK allows you to upload local files and binary data in NSData format. The following uses local file upload as an example:
 
@@ -531,7 +532,7 @@ put.body =  url;
 
 // Monitor the upload result
 [put setFinishBlock:^(id outputObject, NSError *error) {
-    // outputObject returns information such as the Etag or custom headers
+    // outputObject contains information such as the ETag or custom headers in the response.
     NSDictionary * result = (NSDictionary *)outputObject;
 }];
 
