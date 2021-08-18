@@ -72,9 +72,7 @@ Signature calculation error.
 
 #### Solution
 
-Check whether the POST signature string generation rule is correct by referring to [Request Signature](https://cloud.tencent.com/document/product/436/7778):
- - Yes: [contact us](https://intl.cloud.tencent.com/contact-sales).
- - No: use the [COS Signature Tool](https://cloud.tencent.com/document/product/436/30442) to calculate the POST request signature again.
+Check whether the POST signature string generation rule is correct by referring to [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) :
 
 
 <span id="InvalidPolicyDocument_JSONFormat"></span>
