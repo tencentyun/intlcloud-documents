@@ -7,7 +7,7 @@ The conversation list layout consists of TitleBarLayout and ConversationListLayo
 ### Modifying the TitleBarLayout style
 
 The title bar itself has all the features of a view. In addition, it is divided into three parts: left group, middle group, and right group.
-![TitleBarLayout](https://main.qcloudimg.com/raw/832fd209cbc6061b47ff5434740b210c.png)
+![TitleBarLayout](https://main.qcloudimg.com/raw/b95c53bd3961372e1ee75bb65dcafbe6.png)
 
 To make custom modifications, see [ITitleBarLayout](https://github.com/tencentyun/TIMSDK/blob/master/Android/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/base/ITitleBarLayout.java).
 For example, the following code hides LeftGroup, sets the title in the middle, and hides the text and image buttons on the right in ConversationLayout:
@@ -24,7 +24,7 @@ titleBarLayout.setRightIcon(R.drawable.conversation_more);
 ```
 
 The effect is shown below:
-![Title bar effect](https://main.qcloudimg.com/raw/b4d5c63dac1fa602830574ea4096c89f.png)
+![Title bar effect](https://main.qcloudimg.com/raw/416ad8b8050f11fad6d7c7ee869d554f.png)
 
 You can also customize click events:
 
@@ -290,7 +290,7 @@ messageLayout.setTipsMessageFontColor(0x7CFC0000);
 
 ### Setting InputLayout
 InputLayout contains audio, text, emoji, and more (+) input options.
-![InputLayout](https://main.qcloudimg.com/raw/262f09005c939b5004e437df58112056.png)
+![InputLayout](https://main.qcloudimg.com/raw/d5dcf6b35f70714182196ea00a1c28a4.png)
 
 #### Hiding undesired features
 
