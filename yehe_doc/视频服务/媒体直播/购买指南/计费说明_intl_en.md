@@ -1,4 +1,4 @@
-﻿## Billing Overview
+## Billing Overview
 
 <table>
 <thead>
@@ -60,6 +60,7 @@ The transcoding fees incurred vary depending on the transcoding method, as detai
 <td colspan=2 style="text-align:center">Audio transcoding fee</td>
 </tr>
 </tbody></table>
+
 ### Notes
 
 - Billing mode: pay-as-you-go
@@ -423,6 +424,7 @@ StreamLive’s relaying feature allows you to relay live streams to third-party 
 <td>0.1117</td>
 </tr>
 </tbody></table>
+
 ### Billing
 
 - Billable item: amount of traffic relayed to third parties
