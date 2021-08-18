@@ -111,11 +111,11 @@ This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns 
 - identifiers: account ID.
 - type: operation type, which is `XGPushTokenBindTypeAccount` for account operations.
 
-> ?
-- For account operations, a dictionary array is required, and the key is fixed.
-- Syntax for Objective-C: @[@{@"account":identifier, @"accountType":@(0)}].
-- Syntax for Swift: [["account":identifier, "accountType":NSNumber(0)]].
-- For more `accountType` values, please see the enumerated values of `XGPushTokenAccountType`.
+>?
+>- For account operations, a dictionary array is required, and the key is fixed.
+>- Syntax for Objective-C: @[@{@"account":identifier, @"accountType":@(0)}].
+>- Syntax for Swift: [["account":identifier, "accountType":NSNumber(0)]].
+>- For more `accountType` values, please see the enumerated values of `XGPushTokenAccountType`.
 
 #### Sample code
 
@@ -131,7 +131,7 @@ bindType:XGPushTokenBindTypeAccount];
 
 This API is used to clear all set accounts.
 
-> ?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
+>?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
 
 ```Objective-C
 - (void)clearAllIdentifiers:(XGPushTokenBindType)type;
@@ -154,10 +154,10 @@ type: operation type, which is `XGPushTokenBindTypeAccount` for account operatio
 
 This API is used to bind tags to different users so that push can be performed based on specific tags.
 
-> ?
-- This API works in an appending manner.
-- This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
-- One application can have up to 10,000 custom tags. One device token can be bound to up to 100 custom tags (if you want to increase this limit, please contact [customer service](https://intl.cloud.tencent.com/support)). One custom tag can be bound to an unlimited number of device tokens.
+>?
+>- This API works in an appending manner.
+>- This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
+>- One application can have up to 10,000 custom tags. One device token can be bound to up to 100 custom tags (if you want to increase this limit, please contact [customer service](https://intl.cloud.tencent.com/support)). One custom tag can be bound to an unlimited number of device tokens.
 
 #### Operation APIs 
 
@@ -191,7 +191,7 @@ This API is used to bind tags to different users so that push can be performed b
 
 This API is used to override the original tag. If no tag was previously bound, this API will add a tag.
 
-> ?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
+>?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
 
 ```Objective-C
 - (void)updateBindedIdentifiers:(nonnull NSArray *)identifiers bindType:(XGPushTokenBindType)type;
@@ -202,7 +202,7 @@ This API is used to override the original tag. If no tag was previously bound, t
 - `identifiers`: tag identifier string array. The tag string cannot contain spaces or tab characters.
 - `type`: operation type, which is `XGPushTokenBindTypeTag` for tag operations.
 
-> ?`identifiers` is a tag identifier string array. The tag string cannot contain spaces or tab characters.
+>?`identifiers` is a tag identifier string array. The tag string cannot contain spaces or tab characters.
 
 - This API will replace all the old tags corresponding to the current token with the current tag.
 
@@ -212,7 +212,7 @@ This API is used to override the original tag. If no tag was previously bound, t
 
 This API is used to delete all set tags.
 
-> ?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
+>?This API should be called after `xgPushDidRegisteredDeviceToken:error:` returns a success.
 
 ```Objective-C
 - (void)clearAllIdentifiers:(XGPushTokenBindType)type;
@@ -409,7 +409,7 @@ This API is used to create a category object to manage the action object of the 
 - `intentIdentifiers`: identifiers that can be recognized by Siri.
 - options: category characteristics.
 
-> !The notification bar has the event click feature, which is only supported in versions later than iOS 8.0. For iOS 8.0 or earlier versions, this method will return null.
+>!The notification bar has the event click feature, which is only supported in versions later than iOS 8.0. For iOS 8.0 or earlier versions, this method will return null.
 
 #### Sample code
 
