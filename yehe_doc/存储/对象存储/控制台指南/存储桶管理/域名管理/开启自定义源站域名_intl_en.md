@@ -17,9 +17,9 @@ This document describes how to bind the custom domain name to the bucket. You ca
   a. Log in to the [DNS console](https://console.cloud.tencent.com/cns/domains), click **Domain Name Resolution List** in the left sidebar to go to the **All Domains** page. Click **Add Resolution** to go to the **Add Resolution** dialog box.
   b. Enter the domain name, select the default project from **Project Options**, and click **OK** to save. **Select the default project from Project Options if there is no special requirement.**
 
-    ![](https://main.qcloudimg.com/raw/e56eb87f45433d0b0cab1b51bccdcbc6.jpg)
+
   c. After the domain name is added successfully, click the domain name to enter the resolution record management page. Click **Add Record** to go to the **Add Record** dialog box.
   d. Enter the host record as prompted, select **CNAME** for **Record Type** and **Default** for **Line Type**, enter your bucket domain name in **Record Value**, leave **TTL** as is, and click **Save**.
 
-    ![](https://main.qcloudimg.com/raw/0d1bc007db4643f4b52852594f62e34c.jpg)
+
   e. After the resolution is added, it takes about 10 minutes to take effect. Then you can complete relevant configurations as described in Step 3.
