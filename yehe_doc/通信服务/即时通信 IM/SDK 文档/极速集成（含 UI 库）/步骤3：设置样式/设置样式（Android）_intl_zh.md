@@ -7,7 +7,7 @@
 ### 修改标题区 TitleBarLayout 样式
 
 标题区除了本身作为 View 所具有的属性功能之外，还包含左、中、右三块区域，如下图所示：
-![标题区结构](https://main.qcloudimg.com/raw/832fd209cbc6061b47ff5434740b210c.png)
+![标题区结构](https://main.qcloudimg.com/raw/b95c53bd3961372e1ee75bb65dcafbe6.png)
 
 您可参见 [ITitleBarLayout](https://github.com/tencentyun/TIMSDK/blob/master/Android/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/base/ITitleBarLayout.java) 进行自定义修改。
 例如，在 ConversationLayout 中，隐藏左边的 LeftGroup，设置中间的标题，隐藏右边的文本和图片按钮，代码如下：
@@ -24,7 +24,7 @@ titleBarLayout.setRightIcon(R.drawable.conversation_more);
 ```
 
 效果如下图所示：
-![标题区效果](https://main.qcloudimg.com/raw/b4d5c63dac1fa602830574ea4096c89f.png)
+![标题区效果](https://main.qcloudimg.com/raw/416ad8b8050f11fad6d7c7ee869d554f.png)
 
 另外，您也可以定制点击事件：
 
@@ -290,7 +290,7 @@ messageLayout.setTipsMessageFontColor(0x7CFC0000);
 
 ### 设置输入区域 InputLayout
 输入区域 InputLayout，包含语音输入、文字输入、表情输入以及更多的“+”输入。
-![输入区域](https://main.qcloudimg.com/raw/262f09005c939b5004e437df58112056.png)
+![输入区域](https://main.qcloudimg.com/raw/d5dcf6b35f70714182196ea00a1c28a4.png)
 
 #### 隐藏不要的功能
 
