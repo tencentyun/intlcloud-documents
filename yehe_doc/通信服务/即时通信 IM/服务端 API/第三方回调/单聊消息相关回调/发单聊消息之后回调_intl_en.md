@@ -24,12 +24,12 @@ The callback is triggered after the IM backend receives a one-to-one message sen
 
 >!If the IM backend fails to send the message, for example, due to filtering of restricted words, the callback is still triggered.
 
-## API Description
+## API Calling Description
 
 ### Sample request URL
 
 In the following sample, the callback URL configured in the app is `https://www.example.com`.
-**Sample:**
+**Example:**
 
 ```
 https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&contenttype=json&ClientIP=$ClientIP&OptPlatform=$OptPlatform
@@ -47,7 +47,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | ClientIP | IP address of the client, such as `127.0.0.1` |
 | OptPlatform | Platform of the client. For more information about valid values, see the description of `OptPlatform` in the **Callback Protocols** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
 
-### Sample request
+### Sample requests
 
 ```
 {
@@ -58,6 +58,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
     "MsgRandom": 2837546, // Random number of the message
     "MsgTime": 1557481126, // Timestamp in seconds indicating when the message is sent 
     "MsgKey": "48374_2837546_1557481126", // Unique identifier of the message. It can be used to recall the message via a RESTful API call.
+    "OnlineOnlyFlag":1, // The value is `1` if it is an online message and `0` if it's not
     "SendMsgResult": 0, // Message sending result
     "ErrorInfo": "send msg succeed", // Error information related to the failure to send the message. If the message is sent successfully, the value of this field is `send msg succeed`.
     "UnreadMsgNum": 7, // Total number of unread one-to-one messages of `To_Account`
@@ -84,6 +85,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | MsgRandom | Integer | Random number of the message. It is used to identify the message and the value is a random 32-bit unsigned integer. |
 | MsgTime | Integer | Timestamp in seconds indicating when the message is sent. <br>One-to-one messages are preferentially sorted by `MsgTime`. Messages sent in the same second are sorted by `MsgSeq`. Messages with larger values of `MsgSeq` are after those with smaller values of `MsgSeq`. |
 | MsgKey | String | Unique identifier of the message. It can be used to [recall the message](https://intl.cloud.tencent.com/document/product/1047/35015) via a RESTful API call. |
+| OnlineOnlyFlag | Integer | The value is `1` if it is an online message and `0` if it's not. |
 | SendMsgResult | Integer | Message sending result. `0`: successful; other values: failed. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348). |
 | ErrorInfo | String | Error information related to the failure to send the message. If the message is sent successfully, the value of this field is `send msg succeed`. |
 | UnreadMsgNum | Integer | Total number of unread one-to-one messages of `To_Account` (including all one-to-one conversations). If the message fails to be sent, for example, due to filtering of restricted words, the value of this field is `-1`.|
@@ -94,7 +96,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 
 ```
 {
-    "ActionStatus": "OK",
+    "ActionStatus":"OK",
     "ErrorInfo": "",
     "ErrorCode": 0 // `0`: callback succeeds; `1`: an error occurs during callback.
 }
@@ -108,7 +110,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | ErrorCode | Integer | Yes | Error code. `0`: callback succeeds; `1`: an error occurs during callback. |
 | ErrorInfo | String | Yes | Error information |
 
-## References
+References
 
 - [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354)
 - [Callback Before Sending a One-to-One Message](https://intl.cloud.tencent.com/document/product/1047/34364)
