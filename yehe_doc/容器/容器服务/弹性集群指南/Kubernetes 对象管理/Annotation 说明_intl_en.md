@@ -3,7 +3,7 @@ You can define `template annotation` in a YAML file to implement capabilities su
 
 >!
 >- If no security group is specified, a Pod is bound with the `default` security group in the same region by default. Ensure that the network policy of the `default` security group does not affect the Pod.
->- To allocate GPU resources, you must specify `eks.tke.cloud.tencent.com/gpu-type`.
+>- To allocate GPU resources, you must enter `eks.tke.cloud.tencent.com/gpu-type`.
 >- Except `eks.tke.cloud.tencent.com/gpu-type`, the other four annotations related to resource allocation in the following table are optional. If you specify them, ensure that they are correct.
 > - To allocate CPU resources, you must specify both `cpu` and `mem` annotations and make sure that their values meet the CPU specifications in [Resource Specifications](https://intl.cloud.tencent.com/document/product/457/34057). In addition, you can select Intel or AMD CPUs to allocate by specifying `cpu-type`. AMD CPUs are more cost-effective. For more information, see [Product Pricing](https://intl.cloud.tencent.com/document/product/457/34055). 
 >- To allocate GPU resources, you must specify the `cpu`, `mem`, `gpu-type`, and `gpu-count` annotations and ensure that their values meet the GPU specifications in [Resource Specifications](https://intl.cloud.tencent.com/document/product/457/34057).
@@ -24,10 +24,10 @@ You can define `template annotation` in a YAML file to implement capabilities su
 	<ul class="params">
 	<li>Multiple security group IDs can be specified and separated by a comma (<code>,</code>), such as <code>sg-id1,sg-id2</code>.</li>
 	<li>Network policies take effect based on the sequence of security groups.</li>
-	<li>Please note that a single security group can be associated with only 2,000 computing instances, such as CVM instances and Elastic Kubernetes Service (EKS) Pods. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/15379" target="_blank">Security Group Limits</a>.</li>
+	<li>Please note that a single security group can be associated with only 2,000 computing instances, such as CVM instances and Elastic Kubernetes Service (EKS) Pods. For more information, see <a href="https://intl.cloud.tencent.com/document/product/213/15379" target="_blank">Security Group Restrictions</a>.</li>
 	</ul>
 </td>
-<td> No. If you do not specify it, the <code>default</code> security group in the same region bound to the workload is associated by default.<br>If you specify it, ensure that the security group ID already exists in the region where the workload resides.</td></tr>
+<td> No. If you do not specify it, the <code>default</code> security group in the same region bound with the workload is associated by default.<br>If you specify it, ensure that the security group ID already exists in the region where the workload resides.</td></tr>
 <tr>
 <td>eks.tke.cloud.tencent.com/cpu</td>
 <td>Number of CPU cores required by a Pod. For more information, see <a href="https://intl.cloud.tencent.com/document/product/457/34057" target="_blank">Resource Specifications</a>. The unit is core by default.</td>
@@ -92,6 +92,20 @@ For specific configurations supported by each model, please see <a href="https:/
 <td>Sets a custom monitoring metric pull address for a Pod. The monitoring data opened at this address will be automatically read and reported by the monitoring component.</td>
 <td>No. If you specify it, please ensure that the opened data protocol can be recognized by the monitoring system, such as the Prometheus protocol and cloud monitoring data protocol.</td>
 </tr>
+<tr>
+<td>eks.tke.cloud.tencent.com/eip-attributes</td>
+<td>Indicates that the Pod of the Workload needs to be associated with EIP. When the value is "", it indicates that the default EIP configuration is used. You can enter the API parameter json of the EIP in "" to realize custom configuration. For example, if the value of annotation is '{"InternetMaxBandwidthOut":2}', it means the bandwidth is 2M.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>eks.tke.cloud.tencent.com/eip-claim-delete-policy</td>
+<td>After the Pod is deleted, whether the EIP is automatically reclaimed (It is reclaimed by default). “Never” means the EIP is not reclaimed.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>eks.tke.cloud.tencent.com/eip-injection</td>
+<td>When the value is "true", it indicates that the IP information of EIP will be exposed in the Pod. Run the `ip addr` command in the Pod to view the EIP address.</td>
+<td>No</td>
 </tr>
 </tbody></table>
 
@@ -123,9 +137,9 @@ spec:
    template:
      metadata:
        annotations:
-         eks.tke.cloud.tencent.com/cpu: "2"
+         eks.tke.cloud.tencent.com/cpu: "4"
          eks.tke.cloud.tencent.com/gpu-count: "1"
-         eks.tke.cloud.tencent.com/gpu-type: 1/4*V100
+         eks.tke.cloud.tencent.com/gpu-type: 1/4*T4
          eks.tke.cloud.tencent.com/mem: 10Gi
          eks.tke.cloud.tencent.com/security-group-id: "sg-dxxxxxx5,sg-zxxxxxxu"
          eks.tke.cloud.tencent.com/role-name: "cam-role-name"
@@ -203,7 +217,7 @@ metadata:
 
 ## Service Annotation Description
 
-EKS allows you to use existing CLBs to create services accessed through the public or private network. If you want to provide idle CLBs to created services or use the same CLB in a cluster, you can add annotations.
+EKS allows you to use existing CLBs to create Services accessed via the public or private network. If you want to provide your idle CLBs for Services to be created or need to use the same CLB in a cluster, you can add annotations.
 
 <table>
 <thead>
