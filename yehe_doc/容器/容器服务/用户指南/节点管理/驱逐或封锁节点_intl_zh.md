@@ -11,7 +11,7 @@
 <dx-tabs>
 :::方法一
 
-[新增节点](https://cloud.tencent.com/document/product/457/32203) 时，在 “云主机配置” 页面，单击【高级设置】，勾选 “开启封锁”。
+[新增节点](https://cloud.tencent.com/document/product/457/32203) 时，在 “云服务器配置” 页面，单击【高级设置】，勾选 “开启封锁”。
 ![](https://main.qcloudimg.com/raw/037232a406de9c6aba88662896edb9d5.png)
 :::
 :::方法二
@@ -42,7 +42,7 @@ echo "hello world!"
 # If you set unschedulable when you create a node, 
 # after executing your initialization script, 
 # use the following command to make the node schedulable.
-node=`ifconfig eth0 | grep inet | awk '{print $2}' | tr -d "addr:"`
+node=`ps-ef|grep kubelet|grep-oE 'hostname-override=\S+'|cut -d"=" -f2`
 #echo ${node}
 kubectl uncordon ${node} --kubeconfig=/root/.kube/config
 ```
@@ -73,7 +73,7 @@ kubectl uncordon ${node} --kubeconfig=/root/.kube/config
 
 1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)。
 2. 在左侧导航栏中，单击【[集群](https://console.cloud.tencent.com/tke2/cluster?rid=1)】，进入集群管理页面。
-3. 单击需要取消封锁节点的集群 ID/名称，进入该集群的管理页面。如下图所示：
+3. 单击需要驱逐节点的集群 ID/名称，进入该集群的管理页面。如下图所示：
 ![](https://main.qcloudimg.com/raw/549dd5be2af3ebf26a31a313e832bbf0.png)
 4. 在左侧导航栏中，选择 “节点管理” > “节点”，进入“节点列表” 页面。
 5. 在需要驱逐节点的节点行中，单击【更多】>【驱逐】。如下图所示：

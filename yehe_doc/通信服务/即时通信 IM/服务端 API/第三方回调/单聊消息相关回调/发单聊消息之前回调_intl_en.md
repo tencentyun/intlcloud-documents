@@ -1,7 +1,7 @@
 ## API Description
 
 This API is used by the app backend to monitor users' one-to-one messages in real time, including:
-- Records one-to-one messages sending in real time, for example, by recording a log or synchronizing the messages to other systems.
+- Records one-to-one messages sent in real time, for example, by recording a log or synchronizing the messages to other systems.
 - Blocks users' requests to send one-to-one messages of any type, such as text, image, and custom messages.
 - Modifies users' message content, for example, by filtering out restricted words or adding custom information defined by the app. Currently, this API cannot modify the content of rich media messages such as audio, image, file, and video, but can change these rich media messages to text or custom messages.
 
@@ -23,12 +23,12 @@ This API is used by the app backend to monitor users' one-to-one messages in rea
 
 The IM backend has received a one-to-one message sent by a user but has not delivered the message to the target user.
 
-## API Description
+## API Calling Description
 
 ### Sample request URL
 
 In the following sample, the callback URL configured in the app is `https://www.example.com`.
-**Sample:**
+**Example:**
 ```
 https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&contenttype=json&ClientIP=$ClientIP&OptPlatform=$OptPlatform
 ```
@@ -45,7 +45,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | ClientIP | IP address of the client, such as `127.0.0.1` |
 | OptPlatform | Platform of the client. For more information about valid values, see the description of `OptPlatform` in the **Callback Protocols** section of [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354). |
 
-### Sample request
+### Sample requests
 
 ```
 {
@@ -56,6 +56,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
     "MsgRandom": 2837546, // Random number of the message
     "MsgTime": 1557481126, // Timestamp in seconds indicating when the message is sent 
     "MsgKey": "48374_2837546_1557481126", // Unique identifier of the message. It can be used to recall the message via a RESTful API call.
+    "OnlineOnlyFlag":1, // The value is `1` if it is an online message and `0` if it's not
     "MsgBody": [ // Message body. For more information, see the `TIMMessage` message object.
         {
             "MsgType": "TIMTextElem", // Text
@@ -79,6 +80,7 @@ https://www.example.com?SdkAppid=$SDKAppID&CallbackCommand=$CallbackCommand&cont
 | MsgRandom | Integer | Random number of the message. It is used to identify the message and the value is a random 32-bit unsigned integer. |
 | MsgTime | Integer | Timestamp in seconds indicating when the message is sent. <br>One-to-one messages are preferentially sorted by `MsgTime`. Messages sent in the same second are sorted by `MsgSeq`. Messages with larger values of `MsgSeq` are after those with smaller values. |
 | MsgKey | String | Unique identifier of the message. It can be used to [recall the message](https://intl.cloud.tencent.com/document/product/1047/35015) via a RESTful API call. |
+| OnlineOnlyFlag | Integer | The value is `1` if it is an online message and `0` if it's not. |
 | MsgBody | Array | Message body. For more information, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
 | CloudCustomData | String | Custom message data. It is saved in the cloud and will be sent to the peer end. Such data can be pulled after the app is uninstalled and reinstalled. |
 
@@ -88,7 +90,7 @@ The user is allowed to send messages, and the message content is not modified.
 
 ```
 {
-    "ActionStatus": "OK",
+    "ActionStatus":"OK",
     "ErrorInfo": "",
     "ErrorCode": 0 // `0` indicates the user is allowed to send messages.
 }
@@ -100,7 +102,7 @@ The user is not allowed to send group messages. In this case, the message is not
 
 ```
 {
-    "ActionStatus": "OK",
+    "ActionStatus":"OK",
     "ErrorInfo": "",
     "ErrorCode": 1 // `1` indicates that the user is not allowed to send messages.
 }
@@ -109,11 +111,11 @@ The user is not allowed to send group messages. In this case, the message is not
 ### Sample response when the message content is modified
 
 In the following sample, the message sent by the user is modified (a custom message or custom message data is added), and the IM backend will send the modified message. With this feature, the app backend can add special content, such as the user level and title, to the message sent by the user.
-**Sample:**
+**Example:**
 
 ```
 {
-    "ActionStatus": "OK",
+    "ActionStatus":"OK",
     "ErrorInfo": "",
     "ErrorCode": 0, // This field must be set to `0` so that the modified message can be sent normally.
     "MsgBody": [ // Message modified by the app backend. If the app backend does not modify the message, the message sent by the user is delivered.
@@ -145,7 +147,7 @@ In the following sample, the message sent by the user is modified (a custom mess
 | MsgBody | Array | No | Message body modified by the app backend. The IM backend sends the modified message to the recipient. For more information on the format, see [Message Formats](https://intl.cloud.tencent.com/document/product/1047/33527). |
 | CloudCustomData | String | No | Custom message data modified by the app backend. It is saved in the cloud and will be sent to the peer end. Such data can be pulled after the app is uninstalled and reinstalled. The IM backend sends the modified message to the recipient. |
 
-## References
+References
 
 - [Third-Party Callback Overview](https://intl.cloud.tencent.com/document/product/1047/34354)
 - [Callback After Sending a One-to-One Message](https://intl.cloud.tencent.com/document/product/1047/34365)

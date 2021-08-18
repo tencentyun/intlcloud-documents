@@ -8,7 +8,7 @@ Request address:
 Service address/v3/push/plan/add_plan_push
 ```
 
-The API service address corresponds to the service access point one by one; therefore, please select the service address corresponding to your application [service access point](https://intl.cloud.tencent.com/document/product/1024/38517).
+API service URLs correspond to service access points one to one. Please select the [service URL](https://intl.cloud.tencent.com/document/product/1024/38517) corresponding to the service access point of your application.
 
 >?Call rate limit: 200 calls/day.
 
@@ -16,7 +16,7 @@ The API service address corresponds to the service access point one by one; ther
 
 | Parameter | Type | Required | Description |
 | ------------ | ------ | -------- | ----------------------------- |
-| planName | string | Yes | Push plan name, which can contain up to 23 letters |
+| planName | string | Yes | Push plan name, which can contain up to 60 letters |
 | planDescribe | string | Yes | Push plan description, which can contain up to 300 characters |
 
 ## Response Parameters
@@ -24,7 +24,7 @@ The API service address corresponds to the service access point one by one; ther
 | Parameter | Type | Required | Description |
 | ------- | ------ | -------- | ---------------------------- |
 | retCode | string | Yes | Return status code |
-| errMsg | string | Yes | Error message |
+| errMsg  | string | Yes | Error message                      |
 | result | object | Yes | Please see the description of `PlanRecordData` in the table below |
 
 #### PlanRecordData
@@ -39,7 +39,7 @@ The API service address corresponds to the service access point one by one; ther
 | updateAt | uint32 | Yes | Update time in timestamp format |
 
 
-## Samples
+## Examples
 
 #### Sample request
 

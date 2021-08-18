@@ -1,20 +1,15 @@
-
-## Development Environment Requirements
+## Environment Requirements
 
 - Xcode 10 or later
 - iOS 8.0 or later
-
-
 ## Integration Description
-
-
 ### CocoaPods integration (recommended)
 
 TUIKit supports CocoaPods integration and manual integration. We recommend that you use CocoaPods integration to ensure that you can update to the latest version at any time.
 
 <ol><li>Add the following content in the Podfile.
 
-```ruby
+```
 
 // TUIKit uses a third-party static library. This setting needs to be blocked.
 #use_frameworks!
@@ -22,29 +17,26 @@ TUIKit supports CocoaPods integration and manual integration. We recommend that 
 // TXIMSDK_TUIKit_live_iOS uses the *.xcassets resource file. You need to add this statement to prevent it from conflicting with other resource files in the project.
 install! 'cocoapods', :disable_input_output_paths => true  
 
-// Integrate the chat, relationship chain, and group features, using the TXLiteAVSDK_TRTC library as the default dependency.
+// Integrate the chat, relationship chain, and group features.
  pod 'TXIMSDK_TUIKit_iOS'  
-	 
-// Integrate the chat, relationship chain, and group features, using the TXLiteAVSDK_Professional TRTC library as the default dependency.
-// pod 'TXIMSDK_TUIKit_iOS_Professional' 
-
-// Integrate group livestreaming and livestreaming plazas, using the TXLiteAVSDK_TRTC library as the default dependency.
+ 
+// Integratevoice and video calls, group livestreaming and livestreaming plazas, using the TXLiteAVSDK_TRTC library as the default dependency.
 pod 'TXIMSDK_TUIKit_live_iOS'	
 
-// Integrate group livestreaming and livestreaming plazas, using the TXLiteAVSDK_Professional TRTC library as the default dependency.
+// Integrate voice and video calls, group livestreaming, and livestreaming plazas, using the TXLiteAVSDK_Professional TRTC library as the default dependency.
 // pod 'TXIMSDK_TUIKit_live_iOS_Professional' 
 
 ```
+>! 1. `TXIMSDK_TUIKit_live_iOS` and `TXIMSDK_TUIKit_iOS` must have consistent versions. Otherwise, logic exceptions may occur.
+2. Do not integrate different Tencent Cloud [audio and video libraries](https://intl.cloud.tencent.com/document/product/647/34615) at the same time to avoid symbol conflicts. If you use a library not of the [TRTC](https://intl.cloud.tencent.com/document/product/647/34615#TRTC) version, we recommend that you remove it and integrate the `TXIMSDK_TUIKit_iOS_Professional` version. The audio and video library of the [LiteAV_Professional](https://intl.cloud.tencent.com/document/product/647/34615#.E4.B8.93.E4.B8.9A.E7.89.88.EF.BC.88professional.EF.BC.89) version contains all basic audio and video capabilities.
 
-Do not integrate different Tencent Cloud [audio and video libraries](https://intl.cloud.tencent.com/document/product/647/34615) at the same time to avoid symbol conflicts. If you use a library not of the [TRTC](https://intl.cloud.tencent.com/document/product/647/34615#TRTC) version, we recommend that you remove it and integrate the `TXIMSDK_TUIKit_iOS_Professional` version. The audio and video library of the [LiteAV_Professional](https://intl.cloud.tencent.com/document/product/647/34615#.E4.B8.93.E4.B8.9A.E7.89.88.EF.BC.88professional.EF.BC.89) version contains all basic audio and video capabilities.
-
-<li> Run the following command to install the TUIKit.<br>
+<li> Run the following command to install TUIKit. <br>
 
 ```bash
 pod install
 ```
- If the latest SDK version cannot be installed, run the following command to update the local CocoaPods repository list.<br>
- 
+ If the latest SDK version cannot be installed, run the following command to update the local CocoaPods repository list. <br>
+
 ```bash
  pod repo update
 ```
@@ -72,11 +64,11 @@ pod install
 }
 ```
 </li>
-<li>Compile and save the file.<br>
+<li>Compile and save the file. <br>
   If compilation is successful, integration has been completed. If compilation fails, check the cause of the error or perform integration again based on this document.
 </li></ol>
 
-## FAQ
+## FAQs
 
 ### 1 ** target has transitive dependencies that include statically linked binaries
 

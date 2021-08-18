@@ -158,7 +158,7 @@ j.      채널 설정이 모두 완료되었습니다. [Start]를 클릭하여 �
 
 ![](https://main.qcloudimg.com/raw/ec0fe249551d5db6d80697a1c5d47d36.png)
 
-## 5.   StreamLive를 통해 Tencent Cloud COS로 보관
+### 5.   StreamLive를 통해 Tencent Cloud COS로 보관
 
 StreamLive는 HLS 파일을 Tencent Cloud COS로 출력하여 보관하도록 지원합니다. 이를 위해 우선 COS에 버킷을 생성하고 StreamLive에 버킷 액세스 권한을 부여해야 합니다.
 
@@ -188,7 +188,7 @@ COS로 출력하여 보관하는 작업을 시작하기 전에 먼저 [Tencent C
 
 5. 설정을 저장하고 제출합니다. 이어서 [4-4]절의 나머지 channel 설정을 완료하고 저장합니다.
 
-## 6.   StreamLive를 통해 Tencent Cloud StreamPackage로 출력
+### 6.   StreamLive를 통해 Tencent Cloud StreamPackage로 출력
 
 StreamLive는 Tencent Cloud StreamPackage와 함께 사용하여 HLS/DASH 포맷의 라이브 방송 스트림을 그대로 동일 계정의 StreamPackage에서 출력할 수 있도록 지원함으로써, 사용자가 손쉽게 자체 원본 서버를 구축하고 비디오 배포 및 재생할 수 있도록 해줍니다.
 
@@ -227,7 +227,7 @@ StreamLive 콘솔로 돌아가 출력 설정 시, 출력 유형을 HLS_STREAMPAC
 
 6. 설정을 저장하고 제출합니다. 이어서 [4-4]절의 나머지 Channel 설정을 완료하고 저장합니다.
 
-## 7.   채널 가져오기/내보내기, 복제, 편집 및 삭제
+### 7.   채널 가져오기/내보내기, 복제, 편집 및 삭제
 
 StreamLive는 채널 구성 파일 가져오기/내보내기 및 채널 복제 기능을 통해 신속한 채널 생성을 지원합니다.
 
@@ -265,7 +265,7 @@ json 파일을 제출하면 채널 편집 상태로 전환되며, 기존의 구�
 
 ![](https://main.qcloudimg.com/raw/57923bc62f83d99ee10df572bebbb6e3.png)
 
-## 8.   채널 품질 모니터링
+### 8.   채널 품질 모니터링
 
 [Channel Management] 인터페이스에서 채널 이름을 클릭해 채널 상세 내용 페이지로 들어갑니다. 채널 상세 정보 페이지에는 해당 채널의 정보, 입력, 출력, Alerts, Health 등 상세 정보가 표시됩니다.
 
@@ -289,7 +289,7 @@ Heath는 사용자가 현재 채널이 정상적으로 운영되고 있는지 �
 
  
 
-## 9.   시간 계획 설정
+### 9.   시간 계획 설정
 
 StreamLive 채널 시간 계획을 설정하여, 푸시 스트리밍 과정에서 정해진 시간에 특정 이벤트 설정을 트리거할 수 있습니다(예: 15:00:00 입력 소스를 input2로 전환).
 

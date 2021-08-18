@@ -8,7 +8,7 @@
 - It takes time to push messages to all users. The required time depends on the number of accounts. Typically, it is within 1 minute.
 
 ## API Calling Description
-**Only users with Flagship Edition accounts can apply for this feature. You can [submit a ticket](https://intl.cloud.tencent.com/document/product/1047/37275) to apply for this feature. If we determine that this feature suits your needs, we will approve your application.**
+**Only users with Flagship Edition accounts can apply for this feature. You can submit a ticket to apply for this feature. If we determine that this feature suits your needs, we will approve your application. After your application is approved, the feature will be enabled 48 hours later.**
 
 ### Sample request URL
 ```
@@ -252,7 +252,7 @@ The admin pushes messages to Shenzhen Platinum Premier users and retains the mes
 
 ```
 {
-    "ActionStatus": "OK",
+    "ActionStatus":"OK",
     "ErrorInfo": "",
     "ErrorCode": 0,
     "TaskId": "1400123456_144115212910570789_4155518400_15723514"
@@ -269,7 +269,7 @@ The admin pushes messages to Shenzhen Platinum Premier users and retains the mes
 | TaskId | String | Push task ID |
 
 ## Error Codes
-Unless a network error (such as error 502) occurs, the HTTP return code for this API is always 200. **`ErrorCode` and `ErrorInfo` in the response represent the actual error code and error information.** For public error codes (60000 to 79999), see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
+Unless a network error (such as error 502) occurs, the HTTP return code for this API is always 200. **`ErrorCode` and `ErrorInfo` in the response represent the actual error code and error information.** For public error codes (60000 to 79999), please see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
 The following table describes the error codes specific to this API:
 
 | Error Code | Description |
@@ -292,10 +292,10 @@ The following table describes the error codes specific to this API:
 | 90047 | The number of pushes exceeds the daily quota (default quota: 100). |
 | 91000 | Internal service error. Try again. |
 
-## API Debugging Tool
+## Debugging Tool
 Use the [RESTful API online debugging tool](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/all_member_push/im_push) to debug this API.
 
-## References
+References
 - [API for Pushing to All Users](https://intl.cloud.tencent.com/document/product/1047/37165) 
 - [Setting Application Attribute Names](https://intl.cloud.tencent.com/document/product/1047/37167) 
 - [Getting Application Attribute Names](https://intl.cloud.tencent.com/document/product/1047/37168) 

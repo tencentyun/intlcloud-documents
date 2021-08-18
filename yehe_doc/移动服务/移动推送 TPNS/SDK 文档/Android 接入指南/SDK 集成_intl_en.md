@@ -2,6 +2,7 @@
 
 The SDK for Android is a set of APIs provided by TPNS Service for clients to implement message push. This document provides two integration methods, Android Studio Gradle, which is automatic, and Android Studio, which is manual.
 
+
 ## SDK Integration (Two Methods)
 
 ### Using Android Studio Gradle for automatic integration
@@ -42,8 +43,7 @@ android {
 
 dependencies {
     ......
-    // Add the following dependencies:
-    implementation 'com.tencent.jg:jg:1.1'                  
+    // Add the following dependencies:             
     implementation 'com.tencent.tpns:tpns:[VERSION]-release' 
 		  // TPNS push [VERSION] is the latest SDK version number, i.e., the version number obtained in step 2 above
 }
@@ -60,7 +60,7 @@ dependencies {
 android:name="XG_SERVER_SUFFIX"
 android:value="Domain names of other service access points" />
 </application>
-```
+>```
 >The domain names of other service access points are as follows:
 >   - Shanghai: `tpns.sh.tencent.com`
 >   - Singapore: `tpns.sgp.tencent.com`
@@ -71,7 +71,7 @@ android:value="Domain names of other service access points" />
 
  - If the following notification pops up in Android Studio after you add the above-mentioned `abiFilter` configuration:
    "NDK integration is deprecated in the current plugin. Consider trying the new experimental plugin", then you need to add `android.useDeprecatedNdk=true` to the `gradle.properties` file in the project root directory.
- - If you need to listen for messages, please see the `XGPushBaseReceiver` API or the `MessageReceiver` class in the demo (in the SDK compression package, which can be obtained from the [SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload) page). You can inherit `XGPushBaseReceiver` and configure the following content in the configuration file (do not process time-consuming operations in the receiver):
+ - If you need to listen on messages, please see the `XGPushBaseReceiver` API or the `MessageReceiver` class in the demo (in the SDK compression package, which can be obtained from the [SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload) page). You can inherit `XGPushBaseReceiver` and configure the following content in the configuration file (do not process time-consuming operations in the receiver):
 
 ​```xml
 <receiver android:name="com.tencent.android.xg.cloud.demo.MessageReceiver">
@@ -85,7 +85,6 @@ android:value="Domain names of other service access points" />
 ```
 
  - For compatibility with Android P, you must add and use the Apache HTTP client library. To do this, add the following configuration to the AndroidManifest application node.
-
 ```
 <uses-library android:name="org.apache.http.legacy" android:required="false"/>
 ```
@@ -96,7 +95,7 @@ android:value="Domain names of other service access points" />
 Go to the [SDK Download](https://console.cloud.tencent.com/tpns/sdkdownload) page to get the latest SDK version and import it into your Android project by following the steps below.
 
 
-#### Configuring the project
+#### Project configuration
 
 Import the SDK into the project as follows:
 
@@ -106,7 +105,7 @@ Import the SDK into the project as follows:
 4. Open `Androidmanifest.xml` and add the permission, component, and application configurations provided in the following sections to it. (We recommend you modify the configurations according to **Merged Manifest** in the demo in the download package). Make sure the configurations are completed as required. Otherwise, the service may not work properly.
 
 
-#### Configuring permissions
+#### Permission configuration
 
 You need to configure the permissions required by the TPNS SDK to operate properly. The following is the sample code for permission configuration:
 
@@ -132,16 +131,16 @@ You need to configure the permissions required by the TPNS SDK to operate proper
 
 | Permission                                      | Required | Description                                                  |
 | ----------------------------------------- | -------- | ----------------------------------------------------- |
-| android.permission.INTERNET              | Yes   | Allows the application to access the internet, which may incur GPRS traffic        |
-| android.permission.ACCESS_WIFI_STATE     | Yes   | Allows the application to get the current Wi-Fi connection status and WLAN hotspot information |
-| android.permission.ACCESS_NETWORK_STATE  | Yes   | Allows the application to get the network information status                 |
-| android.permission.WAKE_LOCK             | No  | Allows the application to run in the background after the screen is off       |
-| android.permission.VIBRATE                | No     | Allows the application to access the vibrator                                          |
+| android.permission.INTERNET              | Yes   | Allows the program to access the internet, which may incur GPRS traffic        |
+| android.permission.ACCESS_WIFI_STATE     | Yes   | Allows the program to get the current Wi-Fi access status and WLAN hotspot information |
+| android.permission.ACCESS_NETWORK_STATE  | Yes   | Allows the program to get the network information status                 |
+| android.permission.WAKE_LOCK             | No  | Allows the program to run in the background after the screen is off       |
+| android.permission.VIBRATE                | No     | Allows the application to vibrate                                          |
 | android.permission.READ_PHONE_STATE      | No   | Allows the application to access the phone status                   |
 | android.permission.RECEIVE_USER_PRESENT  | No   | Allows the application to receive screen-on or unlock broadcast          |
-| android.permission.WRITE_EXTERNAL_STORAGE | No   | Allows the application to write to external storage                   |
-| android.permission.RESTART_PACKAGES      | No   | Allows the application to end a task                     |
-| android.permission.GET_TASKS             | No    | Allows the application to get task information                   |
+| android.permission.WRITE_EXTERNAL_STORAGE | No   | Allows the program to write to external storage                   |
+| android.permission.RESTART_PACKAGES      | No   | Allows the program to end a task                     |
+| android.permission.GET_TASKS             | No    | Allows the program to get task information                   |
 
 
 
@@ -195,7 +194,7 @@ You need to configure the permissions required by the TPNS SDK to operate proper
         <service android:name="com.tencent.android.tpush.rpc.XGRemoteService"
             android:exported="false">
             <intent-filter>
-                <!-- **Required** Change to the current application package name.XGVIP_PUSH_ACTION -->
+                <!-- **Required** Modify to the current application package name.XGVIP_PUSH_ACTION -->
                 <action android:name="application package name.XGVIP_PUSH_ACTION" />
             </intent-filter>
         </service>
@@ -216,7 +215,7 @@ You need to configure the permissions required by the TPNS SDK to operate proper
         android:authorities="application package name.AUTH_XGPUSH_KEEPALIVE"
         android:exported="true" />
 
-    <!-- **Optional** Receiver implemented by the application, which is used to receive in-app messages and call back operation results. Add as needed -->
+    <!-- **(Optional)** Receiver implemented by the application, which is used to receive in-app messages and call back operation results. Add as needed -->
     <!-- YOUR_PACKAGE_PATH.CustomPushReceiver should be changed to your own receiver： -->
     <receiver android:name="application package name.MessageReceiver">
         <intent-filter>
@@ -280,7 +279,7 @@ You need to configure the permissions required by the TPNS SDK to operate proper
 android:name="XG_SERVER_SUFFIX"
 android:value="Domain names of other service access points" />
 </application>
-```
+>```
 >The domain names of other service access points are as follows:
 >   - Shanghai: `tpns.sh.tencent.com`
 >   - Singapore: `tpns.sgp.tencent.com`
@@ -300,6 +299,7 @@ XGPushConfig.enableDebug(this,true);
 
 
 ### Registering token
+
 
 ```java
 XGPushManager.registerPush(this, new XGIOperateCallback() {
@@ -321,7 +321,13 @@ The log of a successful registration filtered by "TPush" is as follows:
 ```xml
 TPNS register push success with token : 6ed8af8d7b18049d9fed116a9db9c71ab44d5565
 ```
+### Disabling log printing
+If you call `XGPushConfig.enableDebug(context, false)` to disable SDK debugging logs, the SDK still prints certain daily run logs (including TPNS token) by default.
 
+You can call the following method in `Application.onCreate` to stop printing such daily run logs in the console：
+```java
+new XGPushConfig.Build(context).setLogLevel(Log.ERROR);
+```
 
 ## Code Obfuscation
 
@@ -419,7 +425,6 @@ XGPushManager.uploadLogFile(context, new HttpRequestCallback() {
     }
 });
 ```
-
 
 
 

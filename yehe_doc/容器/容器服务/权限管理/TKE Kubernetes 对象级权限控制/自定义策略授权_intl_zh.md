@@ -8,13 +8,13 @@
 您可自行编写策略语法，或通过访问管理 CAM 策略生成器创建自定义策略。YAML 示例如下：
 
 ### Role：命名空间维度 
-
-```yaml
+<dx-codeblock>
+::: yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: testRole
-  namespaces: default
+  namespace: default
 rules:
 - apiGroups:
   - ""
@@ -29,10 +29,13 @@ rules:
   - patch
   - update
   - watch
-```
+:::
+</dx-codeblock>
 <span id="ClusterRole"></span>
+
 ### ClusterRole：集群维度 
-```yaml
+<dx-codeblock>
+::: yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -51,7 +54,8 @@ rules:
   - patch
   - update
   - watch 
-```
+:::
+</dx-codeblock>
 
 ## 操作步骤
 >?该步骤以为子账号绑定自定义 ClusterRole 为例，与绑定 Role 的步骤基本一致，您可结合实际需求进行操作。

@@ -2,224 +2,161 @@
 腾讯云容器服务新建集群时提供 [使用模板新建集群](#TemplateCreation) 及 [自定义新建集群](#CustomClusterCreation) 两种创建方式，本文介绍如何使用上述两种方式进行集群创建，以及如何创建集群所需的私有网络、子网、安全组等资源。
 
 ## 前提条件
-容器服务中使用了云服务器、负载均衡、云硬盘等多种云资源，首次使用之前需进行服务授权以获取相关云资源使用权限。此外，集群创建过程中也将使用私有网络、子网、安全组等多种资源。资源所在地域具备一定的配额限制，详情请参见[ 购买集群配额限制](https://intl.cloud.tencent.com/document/product/457/9087)。
 
->?非首次使用容器服务进行集群创建，请跳过以下步骤，直接前往 [操作系统说明](#OS) 了解说明事项。
->
-如果首次使用容器服务进行集群创建，请前往[ 相关操作 ](#RelatedOperations)提前准备相关资源。具体内容如下：
-- [实名认证](#Verified)
-- [服务授权](#ServiceAuthorization)
-- [新建私有网络](#PVC)
-- [新建子网](#Subnet)
-- [创建安全组](#NewSecurityGroup)
-- [创建 SSH 密钥](#SSH)
+在创建集群前，您需要完成以下工作：
+- [注册腾讯云账号](https://intl.cloud.tencent.com/document/product/378/17985)，并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
+- 当您首次登录 [容器服务控制台](https://console.cloud.tencent.com/tke2) 时，需对当前账号授予腾讯云容器服务操作云服务器 CVM、负载均衡 CLB、云硬盘 CBS 等云资源的权限。详情请参见 [服务授权](https://intl.cloud.tencent.com/document/product/457/37808)。
+- 如果要创建网络类型为私有网络的容器集群，需要在目标地域 [创建一个私有网络](https://intl.cloud.tencent.com/document/product/215/31805)，并且在私有网络下的目标可用区 [创建一个子网](https://intl.cloud.tencent.com/document/product/215/31806)。
+- 如果不使用系统自动创建的默认安全组，需要在目标地域 [创建一个安全组](https://intl.cloud.tencent.com/document/product/213/34271) 并添加能满足您业务需求的安全组规则。
+- 如果创建 Linux 实例时需要绑定 SSH 密钥对，需要在目标项目下 [创建一个 SSH 密钥](https://intl.cloud.tencent.com/document/product/213/16691)。
+- 集群创建过程中将使用私有网络、子网、安全组等多种资源。资源所在地域具备一定的配额限制，详情请参见[ 购买集群配额限制](https://intl.cloud.tencent.com/document/product/457/9087)。
 
-<span id="OS"></span>
-## 操作系统说明
 
-- 修改操作系统只影响后续新增的节点或重装的节点，对存量节点的操作系统无影响。
-- 同一集群下节点使用不同版本操作系统，不会对集群功能产生影响。
-- 同一脚本不一定适用于所有操作系统，建议您对节点进行脚本配置之后，验证该节点操作系统是否与此脚本相适配。
-- 集群更改操作系统步骤请参见 [相关操作](#RelatedOperations)。
-- 如需使用自定义镜像功能，请 [提交工单](https://console.qcloud.com/workorder/category?level1_id=6&level2_id=350&source=0&data_title=%E5%AE%B9%E5%99%A8%E6%9C%8D%E5%8A%A1TKE&level3_id=718&radio_title=%E5%AE%B9%E5%99%A8%E9%9B%86%E7%BE%A4%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98&queue=97&scene_code=16798&step=2) 申请。
->!
->- 如果您需要使用自定义镜像功能，请使用容器服务提供的基础镜像来制作自定义镜像。
->- 目前仅支持同类型的操作系统修改，例如：使用 CentOS 基础镜像制作 CentOS 类的自定义镜像。
->
+
 
 
 ## 操作步骤
-<span id="TemplateCreation"></span>
 
-### 使用模板新建集群
+### 使用模板新建集群[](id:TemplateCreation)
 
-1. 登录 [腾讯云容器服务控制台](https://console.cloud.tencent.com/tke2)，单击左侧导航栏中【集群】。
+1. 登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，单击左侧导航栏中【集群】。
 2. 在“集群管理”页面中，单击集群列表上方的【使用模板新建】。如下图所示：
 ![](https://main.qcloudimg.com/raw/22e1a2aa51008198b65c81dd08675019.png)
-3. 使用模板新建功能为您提供托管集群、独立集群、弹性集群的多种创建模板，请根据实际需求进行选择：
+3. 使用模板新建功能为您提供托管集群、独立集群、弹性集群等多种创建模板，请根据实际需求进行选择：
  - **托管集群**：创建一个 Kubernetes 托管集群，无需购买并管理集群的管理节点，只需购买其中工作节点资源即可部署业务应用。
  - **独立集群**：创建一个 Kubernetes 独立集群，同时购买并管理集群的管理及工作节点，拥有集群的所有管理和操作权限。
  - **弹性集群**：创建一个 Serverless Kubernetes 集群，无需管理集群的任何节点资源，即可快速部署业务应用。
-4. 本文以使用托管集群下的“标准集群”模板为例，选择【标准集群】即可前往“创建集群”页面。
+4. 本文以使用托管集群下的“入门集群”模板为例，选择【入门集群】即可前往“创建入门集群”页面。
 >?使用集群模板创建集群过程中，各配置项已采用默认值，可以直接单击【下一步】，也可参照 [自定义新建集群](#CustomClusterCreation) 步骤进行自定义配置。
 >
 5. 单击【完成】即可创建成功。
 
 
-<span id="CustomClusterCreation"></span>
-### 自定义新建集群
+
+### 自定义新建集群[](id:CustomClusterCreation)
 
 #### 填写集群信息
 
-1. <span id="step1">登录 [腾讯云容器服务控制台](https://console.cloud.tencent.com/tke2)，单击左侧导航栏中的【集群】。</span>
+1. [](id:step1)登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，单击左侧导航栏中的【集群】。
 2. 在“集群管理”页面，单击集群列表上方的【新建】。
 3. 在“创建集群”页面，设置集群的基本信息。如下图所示：
-![](https://main.qcloudimg.com/raw/6467323de4e42c4cc74c7a235cac2265.png)
+![](https://main.qcloudimg.com/raw/31e3fa0551850812cacef99fd6d75cf9.png)
  - **集群名称**：输入要创建的集群名称，不超过60个字符。
  - **新增资源所属项目**：根据实际需求进行选择，新增的资源将会自动分配到该项目下。
  - **Kubernetes版本**：提供多个 Kubernetes 版本选择，可前往 [Supported Versions of the Kubernetes Documentation](https://kubernetes.io/docs/home/supported-doc-versions/) 查看各版本特性对比。
  - **运行时组件**：提供【docker】和【containerd】两种选择。详情请参见 [如何选择 Containerd 和 Docker](https://intl.cloud.tencent.com/document/product/457/31088)。
  - **所在地域**：建议您根据所在地理位置选择靠近的地域，可降低访问延迟，提高下载速度。
- - **集群网络**：为集群内主机分配在节点网络地址范围内的 IP 地址。
- - **容器网络**：为集群内容器分配在容器网络地址范围内的 IP 地址。
+ - **集群网络**：为集群内主机分配在节点网络地址范围内的 IP 地址。详情请参见 [容器及节点网络设置](https://intl.cloud.tencent.com/document/product/457/9083)。
+ - **容器网络插件**：提供【GlobalRouter】和【VPC-CNI】两种网络模式。详情请参见 [如何选择容器网络模式](https://intl.cloud.tencent.com/document/product/457/38966)。
+ - **容器网络**：为集群内容器分配在容器网络地址范围内的 IP 地址。详情请参见 [容器及节点网络设置](https://intl.cloud.tencent.com/document/product/457/9083)。
  - **操作系统**：根据实际需求进行选择。
  - **集群描述**：填写集群的相关信息，该信息将显示在**集群信息**页面。
- - **高级设置**：可设置 ipvs。
- ipvs 适用于将在集群中运行大规模服务的场景，开启后不能关闭。详情请参见 [集群启用 IPVS](https://intl.cloud.tencent.com/document/product/457/30641)。
+ - **高级设置**（可选）：
+    - **腾讯云标签**：为集群绑定标签后可实现资源的分类管理。详情请参见 [通过标签查询资源](https://intl.cloud.tencent.com/document/product/651/32582)。   
+    - **删除保护**：开启后可阻止通过控制台或云API误删除本集群。
+    - **Kube-proxy 代理模式**：可选择 iptables 或 ipvs。ipvs 适用于将在集群中运行大规模服务的场景，开启后不能关闭。详情请参见 [集群启用 IPVS](https://intl.cloud.tencent.com/document/product/457/30641)。
+    - **自定义参数**：指定自定义参数来配置集群。
+    - **运行时版本**：选择容器运行时组件的版本。
 4. 单击【下一步】。
 
 #### 选择机型
-在“选择机型”步骤的“节点来源”中，我们提供【已有节点】和【新增节点】两种选择。请对应您的实际选择，执行对应的操作步骤： 
- - 【已有节点】：执行 [使用已有云服务器创建集群](#UseExistingCVMCreateCluster)。
- - 【新增节点】：执行 [新增云服务器创建集群](#NotUseExistingCVMCreateCluster)。
+1. 在“选择机型”步骤中，确认计费模式、选择可用区及对应的子网、确认节点的机型。如下图所示：
+![](https://main.qcloudimg.com/raw/3e005a89586fd9113755aa82975bf55f.png)
+  - **节点来源**：提供【新增节点】和【已有节点】两个选项。
 
-<span id="UseExistingCVMCreateCluster"></span>
-**使用已有云服务器创建集群**
->!
-> - 所选的云服务器需重装系统，重装后云服务器系统盘的所有数据将被清除。
-> - 所选的云服务器将迁移至集群所属项目，且云服务器迁移项目会导致安全组解绑，需要重新绑定安全组。
->
-1. 在“选择机型”步骤中，参考以下信息选择部署模式和机型。如下图所示：
-![](https://main.qcloudimg.com/raw/883f0d559eba35b034c36423ec45f2f9.png)
- 主要参数信息如下：
-   - **Master 节点**：Master 的部署方法决定了您集群的管理模式，我们提供【平台托管】和【独立部署】两种集群托管模式选择，详情请参见 [集群概述](https://intl.cloud.tencent.com/document/product/457/30635)。本文以选择【平台托管】模式为例。
-   - **Worker 配置**：根据实际需求勾选已有云服务器即可。
-2. 单击【下一步】，开始 [配置云服务器](#ConfigureCVM)。
+<dx-tabs>
+::: 新增节点
+通过新增节点即新增云服务器创建集群，详情如下：
 
-<span id="NotUseExistingCVMCreateCluster"></span>
-**新增云服务器创建集群**
-1. 在“选择机型”步骤中，参考以下信息选择部署模式和机型。如下图所示：
-![](https://main.qcloudimg.com/raw/ffe511e82ff82111ce565be20ee1af85.png)
+在“选择机型”步骤中，参考以下信息选择部署模式和机型。如下图所示：
+![](https://main.qcloudimg.com/raw/027ff16d127413aea2b32dde9ba28e7b.png)
  主要参数信息如下：
+
    - **Master 节点**：Master 的部署方法决定了您集群的管理模式，我们提供【平台托管】和【独立部署】两种集群托管模式选择，详情请参见 [集群概述](https://intl.cloud.tencent.com/document/product/457/30635)。本文以选择【平台托管】模式为例。
-  - **计费模式**：提供【按量计费】的计费模式。详情请参见 [计费模式](https://intl.cloud.tencent.com/document/product/213/2180)。
+  - **计费模式**：提供【按量计费】计费模式。详情请参见 [计费模式](https://intl.cloud.tencent.com/document/product/213/2180)。
    - **Worker 配置**：“**节点来源**”选择为【新增节点】时，该模块下所有设置项默认如上图所示，您可根据实际需求进行更改。
       - **可用区**：可以同时选择多个可用区部署您的 Master 或 Etcd，保证集群更高的可用性。
       - **节点网络**：可以同时选择多个子网的资源部署您的 Master 或 Etcd，保证集群更高的可用性。
-      - **机型**：选择大于 CPU 4核的机型，具体选择方案请参看 [实例规格](https://intl.cloud.tencent.com/document/product/213/11518) 。
+      - **机型**：选择大于 CPU 4核的机型，具体选择方案请参看 [实例规格](https://intl.cloud.tencent.com/document/product/213/11518)。
       - **系统盘**：默认为“普通云硬盘 50G”，您可以根据机型选择本地硬盘、云硬盘、SSD 云硬盘及高性能云硬盘。详情请参见 [存储概述](https://intl.cloud.tencent.com/document/product/213/4952)。
       - **数据盘**：Master 和 Etcd 不建议部署其他应用，默认不配置数据盘，您可以购置后再添加。
       - **公网宽带**：勾选【分配免费公网IP】，系统将免费分配公网 IP。提供两种计费模式，详情请参见 [公网计费模式](https://intl.cloud.tencent.com/document/product/213/10578)。
-      -  **数量**：根据实际需求进行设置。
->?独立部署模式下，Masters 机型配置项设置亦可参考 Worker 配置 ，其数量最少部署3台，可跨可用区部署。
->
-2. <span id="step7">单击【下一步】，开始 [配置云服务器](#ConfigureCVM)。</span>
+      - **主机名**：操作系统内部的计算机名（`kubectl get nodes` 命令展示的 node name）, 该属性为集群属性。主机名有如下两种命名模式：
+        - **自动命名**：节点 hostname 默认为节点内网 IP 地址。
+        - **手动命名**：支持批量连续命名或指定模式串命名。长度限制2 - 60个字符，仅支持小写字母、数字、连字符 "-" 、点号 "." ，符号不能用于开头或结尾且不能连续使用，更多命名规则指引请查看 [批量连续命名或指定模式串命名](https://intl.cloud.tencent.com/document/product/213/32020)。
+<dx-alert infotype="notice">由于 kubernetes node 命名限制，手动命名主机名时仅支持小写字母，例如 `cvm{R:13}-big{R:2}-test`。
+  </dx-alert>
+        - **实例名称**：控制台显示的 CVM 实例名称，该属性受主机名命名模式限制。
+         - 主机名为自动命名模式：支持批量连续命名或指定模式串命名，最多输入60个字符。默认自动生成实例名，格式为 `tke_集群id_worker`。
+         - 主机名为手动命名模式：实例名称与主机名相同，无需重新配置。
+      -  **数量**：实例数量，根据实际需求进行设置。
+<dx-alert infotype="explain">独立部署模式下，Masters 机型配置项设置亦可参考 Worker 配置 ，其数量最少部署3台，可跨可用区部署。
+</dx-alert>
 
-<span id="ConfigureCVM"></span>
-#### 配置云服务器
+:::
+::: 已有节点 [](id:UseExistingCVMCreateCluster)
+通过已有节点即使用已有云服务器创建集群，详情如下：
+
+<dx-alert infotype="notice">
+<li>所选的云服务器需重装系统，重装后云服务器系统盘的所有数据将被清除。</li>
+<li>所选的云服务器将迁移至集群所属项目，且云服务器迁移项目会导致安全组解绑，需要重新绑定安全组。</li>
+<li>如果您在配置云服务器时填写了数据盘挂载参数，该参数会对 **Master 和 Woker 节点全部生效**。更多相关注意事项请参考 [添加已有节点](https://intl.cloud.tencent.com/document/product/457/30652) 中的**数据盘挂载**参数说明。</li>
+</dx-alert>
+
+ 在“选择机型”步骤中，参考以下信息选择部署模式和机型。如下图所示：
+![](https://main.qcloudimg.com/raw/883f0d559eba35b034c36423ec45f2f9.png)
+ 主要参数信息如下：
+
+   - **Master 节点**：Master 的部署方法决定了您集群的管理模式，我们提供【平台托管】和【独立部署】两种集群托管模式选择，详情请参见 [集群概述](https://intl.cloud.tencent.com/document/product/457/30635)。本文以选择【平台托管】模式为例。
+   - **Worker 配置**：根据实际需求勾选已有云服务器即可。
+
+:::
+</dx-tabs>
+2. 单击【下一步】，开始 [配置云服务器](#ConfigureCVM)。
+
+[](id:ConfigureCVM)
+#### 云服务器配置
 1. 在“云服务器配置”步骤中，参考以下信息进行云服务器配置。如下图所示：
-![](https://main.qcloudimg.com/raw/e778a2a91d274c3ae9f0b186e5a9dbd3.png)
- - **容器目录**：默认不勾选。勾选即可设置容器和镜像存储目录，建议存储到数据盘。
+![](https://main.qcloudimg.com/raw/24a166447e301672141a4f2257d7a206.png)
+ - **容器目录**：勾选即可设置容器和镜像存储目录，建议存储到数据盘。例如 `/var/lib/docker`。
  - **安全组**：安全组具有防火墙的功能，用于设置云服务器的网络访问控制。支持以下设置：
     - 新建并绑定默认安全组，可预览默认安全组规则。
-    - 根据业务需要，可单击【添加安全组】自定义配置安全组规则。
-    更多详情请参见  [容器服务安全组设置](https://intl.cloud.tencent.com/document/product/457/9084)。
+    - 添加安全组，可根据业务需要自定义配置安全组规则。
+    更多信息请参见  [容器服务安全组设置](https://intl.cloud.tencent.com/document/product/457/9084)。
  - **登录方式**：提供三种登录方式：
     - **立即关联密钥**：密钥对是通过算法生成的一对参数，是一种比常规密码更安全的登录云服务器的方式。详情请参见 [SSH 密钥](https://intl.cloud.tencent.com/document/product/213/6092)。
     - **自动生成密码**：自动生成的密码将通过 [站内信](https://console.cloud.tencent.com/message) 发送给您。 
     - **设置密码**：请根据提示设置对应密码。
+  - **安全加固**：默认免费开通 DDoS 防护、WAF 和云镜主机防护，详情请参见[ T-Sec 主机安全官网页](https://intl.cloud.tencent.com/product/cwp)。
+  - **云监控**：默认免费开通云产品监控、分析和实施告警，安装组件获取主机监控指标，详情请参见 [云监控 CM 官网主页](https://intl.cloud.tencent.com/product/cm)。
+2. （可选）单击【高级设置】，查看或配置更多信息。如下图所示：
+![](https://main.qcloudimg.com/raw/f6bd03236aac6a6c56557dced60fda02.png)
+ - **CAM角色**：可为本批次创建的所有节点绑定相同的 CAM 角色，从而赋予节点该角色绑定的授权策略。详情请参见[ 管理实例角色](https://intl.cloud.tencent.com/document/product/213/38290)。
+ - **节点启动配置**：指定自定义数据来配置节点，即当节点启动后运行配置的脚本。需确保脚本的可重入及重试逻辑，脚本及其生成的日志文件可在节点的 `/usr/local/qcloud/tke/userscript` 路径查看。
+ - **封锁**：勾选“开启封锁”后，将不接受新的 Pod 调度到该节点，需要手动取消封锁的节点，或在自定义数据中执行 [取消封锁命令](https://intl.cloud.tencent.com/document/product/457/30654)，请按需设置。
+  - **Label**：单击【新增】，即可进行 Label 自定义设置。集群初始化创建的节点均将自动增加此处设置的 Label，可用于后续根据 Label 筛选、管理节点。
+3. 单击【下一步】，开始配置组件。
+
+
+
+
+#### 组件配置
+1. 在“组件配置”步骤中，参考以下信息进行组件配置。如下图所示：
+![](https://main.qcloudimg.com/raw/5d7dc6f9da2bcc56961eda8d3cfc4a68.png)
+ - **组件**：组件包含存储、监控、镜像等，您可按需选择。详情请参见 [扩展组件概述](https://intl.cloud.tencent.com/document/product/457/33988)。
+ - **日志服务**：默认开通集群审计服务。详情请参见 [集群审计](https://intl.cloud.tencent.com/document/product/457/38338)。
 2. 单击【下一步】，检查并确认配置信息。
-3. 单击【完成】，即可完成创建。
-<span id="RelatedOperations"></span>
-## 相关操作
-<span id="Verified"></span>
-### 实名认证
-
-#### 认证入口
-登录 [腾讯云控制台](https://console.cloud.tencent.com/)，在总览界面中单击【前往认证】即可进入实名认证界面。如下图所示：
-![](https://main.qcloudimg.com/raw/efc81878de5040a7ed50b2e5f9ab28e6.png)
-
-#### 认证步骤
-1. 在“选择认证类型”页面中，按需选择【开始个人认证】或【开始企业认证】，并参考以下信息完成认证。
-- **个人认证**：账号个人实名认证完成后，该腾讯云账号及云资源归属于您个人名下，可参加腾讯云官网个人类运营活动，不可以参与企业类运营活动，且无法申请增值税专用发票。
-- **企业认证**：账号企业实名认证完成后，该腾讯云账号及云资源归属于该企业名下，可参加腾讯云官网企业类运营活动，不可以参加腾讯云官网个人类运营活动，且可以申请增值税专用发票。
-2. 认证完成即可正常使用该腾讯云账号进行集群创建等操作，未进行实名认证的用户无法购买中国境内的容器服务实例。
-<span id="ServiceAuthorization"></span>
-
-### 服务授权
-
-1. 首次登录 [容器服务控制台](https://console.cloud.tencent.com/tke2)，单击左侧栏【集群】，弹出【服务授权】窗口。
-2. 单击【前往访问管理】，进入“角色管理”页面。如下所示：
-![](https://main.qcloudimg.com/raw/c1eac9f12a89e099badda5f799e11c52.png)
-3. 单击【同意授权】，并完成身份验证即可。
-
-<span id="PVC"></span>
-
-### 新建私有网络
-
-1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)，在“私有网络”列表页上方选择所属地域，并单击【+新建】，如下图所示：
-![](https://main.qcloudimg.com/raw/2075937aca988b69f9ff1c15c5b31b20.png)
-2. 在“新建VPC” 页面，设置其基本信息。如下图所示：
-![](https://main.qcloudimg.com/raw/a5a841b9504a7bd842a005503749f670.png)
- - **私有网络信息**    
-	- **所属地域**：显示为当前私有网络所属地域。
-	- **名称**：私有网络名称，自定义。
-	- **IPv4 CIDR**：私有网络 CIDR ，支持使用如下网段中的任意一个。**创建后不可修改**，**且当您有不同私有网络之间内网通信的需求时，请确保两端 CIDR 的配置不重叠**。
-		- 10.0.0.0 - 10.255.255.255（掩码范围需在16 - 28之间）
-		- 172.16.0.0 - 172.31.255.255（掩码范围需在16 - 28之间）
-		- 192.168.0.0 - 192.168.255.255 （掩码范围需在16 - 28之间）
- - **初始子网信息**
-	- **子网名称**：自定义。
-	- **IPv4 CIDR**：子网 CIDR，**创建后不可修改**，**且必须在私有网络 CIDR 内或相同**。例如，私有网络的网段是`192.168.0.0/16`，那么该私有网络内的子网的网段可以是`192.168.0.0/16`、`192.168.0.0/17`等。
-	- **可用区**：根据实际需求进行选择。
-	- **关联路由表**：控制台保持默认子网必须关联一个路由表，以进行流量转发控制。
-3. 单击【确定】，即可新建成功。
-<span id="Subnet"></span>
-### 新建子网
-
-1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)，单击左侧导航栏中的【子网】。
-2. 在“子网”列表页面单击【+新建】，在弹出的“创建子网”窗口中设置子网名称、VPC 网段、CIDR、可用区和关联路由表等基本信息。如下图所示：
-![](https://main.qcloudimg.com/raw/f50bb23310ef463253dcbf8c2e503adb.png)
-3. （可选）单击【+新增一行】，可以同时创建多个子网。
-4. 单击【创建】即可。
-<span id="NewSecurityGroup"></span>
-### 创建安全组
-创建集群时，支持新建并绑定安全组，也支持根据实际业务需求自定义配置并绑定安全组。您可根据以下步骤创建自定义安全组：
-1. 登录[ 云服务器控制台 ](https://console.cloud.tencent.com/cvm/index)，单击左侧栏【安全组】，进入“安全组”列表页面。
-2. 在页面上方选择地域，并单击【+新建】，在弹出的“新建安全组”窗口中，完成以下配置。如下图所示：
-![](https://main.qcloudimg.com/raw/ad4cf4b6c5344bb162fb1acb23370afb.png)
- - **模板**：根据安全组中的云服务器实例需要部署的服务，选择合适的模板，简化安全组规则配置。如下表所示：
-<table>
-	<tr><th>模板</th><th>说明</th><th>场景</th></tr>
-	<tr><td>放通全部端口</td><td>默认放通全部端口到公网和内网，具有一定安全风险。</td><td>-</td></tr>
-	<tr><td>放通22，80，443，3389端口和ICMP协议</td><td>默认放通22，80，443，3389端口和 ICMP 协议，内网全放通。</td><td>安全组中的实例需要部署 Web 服务。</td></tr>
-	<tr><td>自定义</td><td>安全组创建成功后，按需自行添加安全组规则。具体操作请参见 <a href="https://intl.cloud.tencent.com/document/product/213/34272">添加安全组规则</a>。</td><td>-</rd></tr>
-</table>
- - **名称**：自定义设置安全组名称。
- - **所属项目**：默认选择“默认项目”，可指定为其他项目，便于后期管理。
- - **备注**：自定义，简短地描述安全组，便于后期管理。
- - **显示模板规则**：单击可查看当前安全组入站、出站规则。
-3. 单击【确定】，完成安全组的创建。
-如果新建安全组时选择了“自定义”模板，创建完成后可单击【立即设置规则 】，进行 [添加安全组规则](https://intl.cloud.tencent.com/document/product/213/34272)。
-
-<span id="SSH"></span>
-### 创建 SSH 密钥
-
- 1. 登录 [云服务器控制台](https://console.cloud.tencent.com/cvm/)，在左侧导航栏中单击【[SSH 密钥](https://console.cloud.tencent.com/cvm/sshkey)】。
- 2. 在 SSH 密钥管理页面，单击【创建密钥】。
- 3. 在弹出的“创建 SSH 密钥”窗口中，进行密钥信息设置，如下图所示：
-![](https://main.qcloudimg.com/raw/55c8e18cc210802077c138b905e24971.png)
-  - **创建方式**：提供 “创建新密钥对”和“使用已有公钥”两种方式，请根据实际情况进行选择。
-    - 若创建方式选择为【创建新密钥对】时，请输入密钥名称。
-    - 若创建方式选择为【使用已有公钥】时，请输入密钥名称和原有的公钥信息。
-
->!公钥内容格式及示例如下：
->```
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCdv1zOdTqtt70iqgCBT6mYbwCP3ASSl6Qidr/LmBkMCbWvSB1PDcZhcVmnkM1Fcltz25UroRmusF6s45HOgU2qZtC4J1jPV1SG6ashUJgJw9TSmnHPvy76BcRFe4xwA75CVfozSqeJejLnHP1oF8Dj+cM7/DLmxbOpJO1kaIx2bVuqYrwQGah6L3nozKSTY9qZ6pBar8TJFmgp4YDaxso78oqBtt0Q82c9MWTMszt3VvfNscS2WY6PFF3OHOlwkUesfPez5OnUeeCFpD3T5UCfTY0yrjbcYqx4WHElZ92RtSNDTbonAxUPHVYi8r6tkVNznBJJ2E+6TphvGIR2wzPl skey-qswnaltn
->```
-
- 4. 单击【确定】，并单击弹出的“SSH密钥对已创建”提示框中【下载】按钮获取私钥。
->! 腾讯云不会保管您的私钥信息，请在10分钟内下载和获取私钥。
 
 
-### 更改集群默认操作系统
->
->? 进行集群默认操作系统更改操作之前，请仔细阅读[ 操作系统说明 ](#OS)以知悉相关风险。
+#### 信息确认
+在“信息确认”页面，确认集群的已选配置信息和费用，单击【完成】即可创建一个集群。
 
-1. 登录 [腾讯云容器服务控制台](https://console.cloud.tencent.com/tke2) ，单击左侧导航栏中的【集群】。
-2. 在“集群管理”页面，选择目标集群所在行右侧的【更多】>【查看集群凭证】，进入集群基本信息页。
-3. 在“节点和网络信息”中，单击【默认操作系统】最右侧的<img src="https://main.qcloudimg.com/raw/12834a28b9839ffe9a3723ca23ba19ce.png" style="margin:-3px 0px">。如下图所示：
-![](https://main.qcloudimg.com/raw/60ada0dd3689faf95ff37bd7c8f8530e.png)
-4. 在弹出的“设置集群操作系统”窗口中，进行操作系统更改，并单击【提交】即可。如下图所示：
-![](https://main.qcloudimg.com/raw/da9b11bedb636736016c2fa90b2ec90e.png)
 
+### 查看集群
+创建完成的集群将出现在 [集群列表](https://console.cloud.tencent.com/tke2/cluster?rid=1) 中。您可单击集群 ID 进入集群详情页面。在集群的“基本信息”页面中，您可查看集群信息、节点和网络信息等。如下图所示：
+![](https://main.qcloudimg.com/raw/1e2b43c46dcb77dacbe7fa9cd158dedf.png)
+
+
+
+## 相关文档
+您还可以使用 CreateCluster 接口创建集群。详细信息请参见 [创建集群 API 文档](https://intl.cloud.tencent.com/document/product/457/32027)。

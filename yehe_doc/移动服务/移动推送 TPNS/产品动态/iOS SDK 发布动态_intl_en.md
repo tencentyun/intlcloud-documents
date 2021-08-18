@@ -1,3 +1,26 @@
+## July 2021
+
+<table>
+ <tr>
+ <th width=20%>Update</th>
+ <th width=44%>Description</th>
+ <th width=16%>Release Date</th>
+ <th width=20%>Documentation</th>
+ </tr>
+ <td>SDK v1.3.3.0 release</td>
+ <td>  
+<li> Fixes the issue where cluster switching does not take effect in real time.
+<li> Fixes the issue of inaccurate binding when tag APIs are called frequently.
+<li> Upgraded the SDK deployment target to version 9.0.
+<li> Improved the performance of account binding and registration callback.
+<li> Supports the `show_type` field of RESTful APIs. The field can be used to configure not to display notifications at the app foreground.
+<li> Supports SSL in persistent connections.
+<li> Supports the feature of identifying whether an app start is triggered by notification clicking.
+ <td>2021-07-06</td>
+ <td><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></td>
+ </tr>
+ </table>
+ 
 ## June 2021
 
 <table>
@@ -18,7 +41,7 @@
 <li>Supports log prompt when a hook conflict between the third-party SDK and `AppDelegate` occurs.
 <li>Deletes unnecessary log prompts in production environments.</td>
  <td>June 1, 2021</td>
- <td><ul  style="margin: 0;"><li><a href="https://console.cloud.tencent.com/tpns/sdkdownload">SDK Download</a></li><li><a href="https://intl.cloud.tencent.com/document/product/1024/40597">Upgrade Guide</a></li></ul></td>
+ <td><a href="https://intl.cloud.tencent.com/document/product/1024/40597">Upgrade Guide</a></td>
  </tr>
  </table>
 
@@ -54,7 +77,7 @@
 <li>Demo adds sample code for global cluster switching.
 <li>Supports callbacks for successful TPNS network connection and disconnection.</td>
  <td>April 12, 2021</td>
- <td>N/A</td>
+ <td>-</td>
  </tr>
  </table>
 
@@ -107,7 +130,7 @@
  <li>Supports IPv6.
  <li>Deletes the compatible code of the free version. </td>
  <td>November 25, 2020</td>
- <td>- </td>
+ <td> - </td>
  </tr>
  </table>
 
@@ -123,7 +146,7 @@
  </tr>
  <tr>
  <td>SDK v1.2.8.1 release</td>
- <td>Fixes known issues. </td>
+ <td>Fixed known issues. </td>
  <td>October 29, 2020</td>
  <td>- </td>
  </tr>
@@ -160,7 +183,7 @@
 </tr>
     <tr>
         <td>SDK v1.2.7.2 release</td>
-        <td><li>Adds the custom event report feature.</li><li>Improves the success rate of report on the number of arrivals.</li><li>Fixes known issues.</li></td>
+        <td><li>Adds the custom event report feature.</li><li>Improves the success rate of reporting the number of arrivals.</li><li>Fixes known issues.</li></td>
         <td>July 23, 2020</td>
         <td>-</a></li></td>
     </tr>        
@@ -199,7 +222,7 @@
         <td>SDK v1.2.5.4 release</td>
         <td>Improves stability and fixes known issues.</li></td>
         <td>April 22, 2020</td>
-        <td>N/A</td>
+        <td>-</td>
     </tr>
 </table>
 
@@ -217,13 +240,13 @@
         <td>SDK v1.2.5.3 release</td>
         <td><li>Supports unregistering free TPNS clusters to avoid repeated pushes.</li><li>Supports replacing repeated messages in the notification extension.</li></td>
         <td>March 19, 2020</td>
-        <td>Unregistering XG Platform Service</a></td>
+        <td><a href="https://cloud.tencent.com/document/product/548/36668#.E6.B3.A8.E9.94.80.E4.BF.A1.E9.B8.BD.E5.B9.B3.E5.8F.B0.E6.8E.A8.E9.80.81.E6.9C.8D.E5.8A.A1">Unregistering XG Platform Service</a></td>
     </tr>
     <tr>
         <td>SDK v1.2.5.2 release</td>
         <td><li>Improves push precision and adds account type enumeration.</li><li>Improves stability, optimizes log I/O, and fixes message receiving callback issue for iOS 10.</li></td>
         <td>March 06, 2020</td>
-        <td>N/A</td>
+        <td>-</td>
     </tr>
 </table>
 
@@ -241,7 +264,7 @@
         <td>SDK v1.2.5.1 release</td>
         <td><li>Simplifies the integration. Deletes report APIs and uses SDK auto-processing.</li><li>Improves stability and fixes crashes caused by the caching module.</li></td>
         <td>February 20, 2020</td>
-        <td>N/A</td>
+        <td>-</td>
     </tr>
 </table>
 
@@ -259,7 +282,7 @@
         <td>SDK v1.2.4.9 release</td>
         <td><li>Improves stability. Fixes crashes triggered by message statistics and a memory leak issue.</li> <li>Improves SDK compatibility.</li></td>
         <td>January 06, 2020</td>
-        <td>N/A</td>
+        <td>-</td>
     </tr>
 </table>
 
@@ -277,25 +300,25 @@
         <td>SDK v1.2.4.8 release</td>
         <td>Improves stability and fixes crashes triggered by message statistics.</li></td>
         <td>December 24, 2019</td>
-        <td>N/A</td>
+        <td>-</td>
     </tr>
     <tr>
         <td>SDK v1.2.4.7 release</td>
         <td> Improves stability and fixes crashes triggered by message statistics and log record.</li></td>
         <td>December 19, 2019</td>
-        <td>N/A</td>
+        <td>-</td>
     </tr>
     <tr>
         <td>SDK v1.2.4.6 release</td>
         <td><li>Optimizes the SDK registration process and improves the registration success rate.</li><li>Optimizes rich media push. Supports non-suffixed resources.</li><li>Fixes known issues.</li></td>
-        <td>2019-12-16</td>
-        <td>N/A</td>
+        <td>December 16, 2019</td>
+        <td>-</td>
     </tr>
     <tr>
         <td>SDK v1.2.4.5 release</td>
         <td><li>Adds crash monitoring.</li> <li>Optimizes arrival data statistics.</li><li>Optimizes the statistics of accumulated number of devices.</li><li>Optimizes SDK I/O performance.</li><li>Optimizes SDK stability.</li></td>
         <td>December 12, 2019</td>
-        <td>N/A</td>
+        <td>-</td>
     </tr>
 </table>
 
@@ -313,31 +336,31 @@
         <td>SDK v1.2.4.4 release</td>
         <td>Optimizes SDK registration process. Improves message delivery.</li></td>
         <td>November 28, 2019</td>
-        <td>N/A</td>
+        <td>-</td>
     </tr>
     <tr>
         <td>SDK v1.2.4.3 release</td>
         <td>Optimizes SDK compatibility.</li></td>
         <td>November 26, 2019</td>
-        <td>N/A</td>
+        <td>-</td>
     </tr>
     <tr>
         <td>SDK v1.2.4.2 release</td>
         <td>Fixes the TPNS token obtaining issue via the SDK.</li></td>
         <td>November 22, 2019</td>
-        <td>N/A</td>
+        <td>-</td>
     </tr>
     <tr>
         <td>SDK v1.2.4.1 release</td>
         <td><li>Adds log upload APIs.</li><li>Optimizes SDK stability.</li><li>Optimizes SDK compatibility.</li></td>
         <td>November 13, 2019</td>
-        <td>N/A</td>
+        <td>-</td>
     </tr>
     <tr>
         <td>SDK v1.2.4.0 release</td>
         <td><li>Fixes the single-account binding callback issue.</li><li> Improves the compatibility between SDK and third parties.</li><li> Separates device push environments to optimize statistics.</li><li>Optimizes the caching logic for replacing app information.</li><li>Improves the SDK registration success rate.</li></td>
         <td>November 12, 2019</td>
-        <td>N/A</td>
+        <td>-</td>
     </tr>
 </table>
 
@@ -355,7 +378,7 @@
         <td>SDK v1.2.3.0 release</td>
         <td>Fixes the issue that occurs when the device token changes.</li></td>
         <td>October 21, 2019</td>
-        <td>N/A</td>
+        <td>-</td>
     </tr>
 </table>
 
@@ -373,7 +396,7 @@
         <td>SDK v1.2.2.1 release</td>
         <td>Fixes the network connection issue that occurs when an API is called during the SDK launch.</li></td>
         <td>September 29, 2019</td>
-        <td>N/A</td>
+        <td>-</td>
     </tr>
 </table>
 
@@ -391,19 +414,19 @@
         <td>SDK v1.2.2.0 release</td>
         <td><li>Fixes the registration issue for iOS 13.</li><li>Fixes the network connection issue that occurs when the app status changes.</li></td>
         <td>August 28, 2019</td>
-        <td>N/A</td>
+        <td>-</td>
     </tr>
     <tr>
         <td>SDK v1.2.1.2 release</td>
         <td><li>Fixes the statistic clicking issue.</li><li>Fixes the tag binding API issue that occurs when the network condition changes.</li></td>
-        <td>2019-08-19</td>
-        <td>N/A</td>
+        <td>August 19, 2019</td>
+        <td>-</td>
     </tr>
     <tr>
         <td>SDK v1.2.1.0 release</td>
-        <td><li>Adds APIs to query the TPNS-generated tokens.</li><li>Fixes the single-account binding issue.</li></td>
+        <td><li>Adds APIs to query TPNS-generated tokens.</li><li>Fixes the single-account binding issue.</li></td>
         <td>August 08, 2019</td>
-        <td>N/A</td>
+        <td>-</td>
     </tr>
 </table>
 
@@ -421,31 +444,31 @@
         <td>SDK v1.2.0.0 release</td>
         <td><li>Adds the independent statistic report SDK.</li><li>Optimizes the client register service.</li><li>Updates the parsing logic of `DeviceToken`.</li></td>
         <td>July 30, 2019</td>
-        <td>N/A</td>
+        <td>-</td>
     </tr>
     <tr>
         <td>SDK v1.1.0.1 release</td>
         <td><li>Fixes the verification logic of username and password.</li><li>Fixes the SDK dynamic loading issue.</li></td>
         <td>July 25, 2019</td>
-        <td>N/A</td>
+        <td>-</td>
     </tr>
     <tr>
         <td>SDK v1.1.0.0 release</td>
         <td><li>Adds the PushKit plugin.</li><li>Optimizes the SDK launch time.</li></td>
         <td>July 18, 2019</td>
-        <td>N/A</td>
+        <td>-</td>
     </tr>
     <tr>
         <td>SDK v1.0.1.0 release</td>
         <td><li>Adds persistent connection push.</li><li>Improves the support for the PushKit plugin. Currently, registration, unregistration, and report are supported.</li></td>
         <td>July 11, 2019</td>
-        <td>N/A</td>
+        <td>-</td>
     </tr>
     <tr>
         <td>SDK v1.0.0.0 release</td>
         <td>Initial version</li></td>
         <td>July 05, 2019</td>
-        <td>N/A</td>
+        <td>-</td>
     </tr>
 </table>
 

@@ -8,13 +8,13 @@ This document describes how to grant specified permissions to a sub-account by c
 You can write your own policy syntax or use the Cloud Access Management (CAM) policy generator to create custom policies. An example YAML is shown below:
 
 ### Role: for a namespace 
-
-```yaml
+<dx-codeblock>
+::: yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: testRole
-  namespaces: default
+  namespace: default
 rules:
 - apiGroups:
   - ""
@@ -29,10 +29,13 @@ rules:
   - patch
   - update
   - watch
-```
+:::
+</dx-codeblock>
 <span id="ClusterRole"></span>
+
 ### ClusterRole: for a cluster 
-```yaml
+<dx-codeblock>
+::: yaml
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
@@ -51,7 +54,8 @@ rules:
   - patch
   - update
   - watch 
-```
+:::
+</dx-codeblock>
 
 ## Directions
 >? This section describes how to bind a custom ClusterRole policy to a sub-account. This operation is basically the same as that for binding a Role policy. Following the directions below, you can bind policies to fit your specific business requirements.
