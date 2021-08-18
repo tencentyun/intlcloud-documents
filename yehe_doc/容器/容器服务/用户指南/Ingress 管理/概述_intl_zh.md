@@ -49,10 +49,9 @@ Ingress 对外服务的能力依赖于负载均衡所提供的资源，因此服
 ## Ingress 相关操作
 Ingress 相关操作及功能如下，您可参考以下文档进一步了解：
 - [Ingress 基本功能](https://intl.cloud.tencent.com/document/product/457/30673)
-- Ingress 使用已有 CLB 直连 Pod
-- Ingress 使用 TKEServiceConfig 配置 CLB
-<!-- - Ingress 混合使用 HTTP 及 HTTPS 协议 -->
-- Ingress 证书配置
+- [Ingress 使用已有 CLB](https://intl.cloud.tencent.com/document/product/457/37014)
+- [Ingress 使用 TKEServiceConfig 配置 CLB](https://intl.cloud.tencent.com/document/product/457/37015)
+- [Ingress 证书配置](https://intl.cloud.tencent.com/document/product/457/37016)
 
 <style>
 .params{margin:0px !important}
