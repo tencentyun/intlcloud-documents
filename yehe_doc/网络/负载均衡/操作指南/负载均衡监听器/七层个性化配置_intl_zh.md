@@ -1,5 +1,4 @@
 CLB 支持个性化配置功能，允许用户设置单 CLB 实例的配置参数，如 client_max_body_size，ssl_protocols 等，满足您的个性化配置需求。
-
 >?
 >- 个性化配置的个数限制为每个地域200条。
 >- 当前一个实例仅允许绑定一个个性化配置。
@@ -16,7 +15,7 @@ CLB 支持个性化配置功能，允许用户设置单 CLB 实例的配置参�
 |  client_header_buffer_size | 4k |[1-256]k | 存放 Client 请求头部的默认 Buffer 大小。 |
 |  client_body_timeout | 60s |  [30-120]s | 获取 Client 请求 Body 的超时时间，不是获取整个 Body 的持续时间，而是指空闲一段时间没有传输数据的超时时间，超时返回408。 |
 |  client_max_body_size | 60M |[1-10240]M| <ul><li>默认配置范围为1M-256M，直接配置即可。</li><li>最大支持2048M，当 client_max_body_size 的配置范围大于256M时， 必须设置 <a href="#buffer">proxy_request_buffering</a> 的值为 off。</li></ul> |
-|  keepalive_timeout | 75s | [0-3600]s| Client-Server 长连接保持时间，设置为0则禁用长连接。 |
+|  keepalive_timeout | 75s | [0-900]s| Client-Server 长连接保持时间，设置为0则禁用长连接。如需设置超过900s，请提交 [工单申请](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20LB&step=1)，最大可设置到3600s。 |
 |  add_header |用户自定义添加|- | 向客户端返回特定的头部字段，格式为 add_header xxx yyy。 |
 |  more_set_headers |用户自定义添加|- | 向客户端返回特定的头部字段，格式为 more_set_headers "A:B"。 |
 |  proxy_connect_timeout | 4s | [4-120]s |upstream 后端连接超时时间。|
@@ -27,13 +26,11 @@ CLB 支持个性化配置功能，允许用户设置单 CLB 实例的配置参�
 |  proxy_buffer_size | 4k |[1-64]k| Server 响应头的大小，默认为 proxy_buffer 中设置的单个缓冲区大小，使用 proxy_buffer_size 时，必须同时设置 proxy_buffers。|
 |  proxy_buffers | 8 4k |[3-8] [4-8]k|缓冲区数量和缓冲区大小。|
 |  <span id="buffer">proxy_request_buffering</span> | on |on，off|<ul><li>on 表示缓存客户端请求体：CLB 会缓存请求，全部接收完成后再分块转发给后端 CVM。</li><li>off 表示不缓存客户端请求体：CLB 收到请求后，立即转发给后端 CVM，此时会导致后端 CVM 有一定性能压力。</li></ul>|
-|  proxy_set_header   |X-Real-Port $remote_port|<ul><li>X-Real-Port $remote_port</li><li>X-clb-stgw-vip $server_addr</li><li>Stgw-request-id $stgw_request_id</li></ul>|<ul><li>X-Real-Port $remote_port 表示客户端端口。</li><li>X-clb-stgw-vip $server_addr 表示 CLB 的 VIP。</li><li>Stgw-request-id $stgw_request_id 表示请求 ID（CLB 内部使用）。</li></ul> |
+|  proxy_set_header   |X-Real-Port $remote_port|<ul><li>X-Real-Port $remote_port</li><li>X-clb-stgw-vip $server_addr</li><li>Stgw-request-id $stgw_request_id</li><li>X-Forwarded-Proto</li></ul>|<ul><li>X-Real-Port $remote_port 表示客户端端口。</li><li>X-clb-stgw-vip $server_addr 表示 CLB 的 VIP。</li><li>Stgw-request-id $stgw_request_id 表示请求 ID（CLB 内部使用）。</li><li>X-Forwarded-Proto 表示 CLB 监听器的端口（默认已支持，无需单独配置）。</li></ul> |
 |  send_timeout | 60s |[1-3600]s|服务端向客户端传输数据的超时时间，是连续两次发送数据的间隔时间，非整个请求传输时间。|
 |  ssl_verify_depth |  1 |[1，10]|设置客户端证书链中的验证深度。|
 
 >?其中，proxy_buffer_size 和 proxy_buffers 配置的值需要满足约束条件：2 * max（proxy_buffer_size, proxy_buffers.size) ≤（proxy_buffers.num - 1）\* proxy_buffers.size。例如，配置 proxy_buffer_size 为 24k，proxy_buffers 为 8 8k，则2 * 24k = 48k，（8 - 1）\* 8k = 56k，此时 48k ≤ 56k，因此配置不会报错，否则报错。
->
-
 ## ssl_ciphers 配置说明
 配置 ssl_ciphers 加密套件时，格式需同 OpenSSL 使用的格式保持一致。算法列表是一个或多个`<cipher strings>`，多个算法间使用“:”隔开，ALL 表示全部算法，“!”表示不启用该算法，“+”表示将该算法排到最后一位 。
 默认强制禁用的加密算法为：`!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!DHE`。
@@ -58,7 +55,6 @@ ECDH-ECDSA-AES128-SHA256:ECDH-RSA-AES256-SHA:ECDH-ECDSA-AES256-SHA:SRP-DSS-AES-2
 ![](https://main.qcloudimg.com/raw/ad8fb7874b9ce1fe7bf5c9366c7e64e7.png)
 6. 绑定实例后，可以在实例的列表页中找到对应的个性化配置信息。
 ![](https://main.qcloudimg.com/raw/d07bdbc134480fa89f732c93c3861243.png)
-
 默认配置代码示例：
 ```plaintext
 ssl_protocols   TLSv1 TLSv1.1 TLSv1.2;

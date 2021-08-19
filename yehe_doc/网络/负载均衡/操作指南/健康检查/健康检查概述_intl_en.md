@@ -19,10 +19,10 @@ The health check status description of backend CVM instances is as the following
 For layer-4 TCP listeners, you can configure TCP health check to obtain the status of backend CVM instances through SYN packets, i.e., TCP three-way handshake. Also, to this end, you can customize the request and return content of the protocol.
 ![](https://main.qcloudimg.com/raw/5f30ebbb5e061affeff6eb031facaf28.png)
 TCP health check mechanism is as follows:
-1. A CLB instance sends a SYN connection request packet to (the private IP and health check port of) a backend CVM instance.
-2. After receiving the SYN request packet, the backend CVM instance will return a SYN-ACK response packet if the port is listening normally.
-3. If the CLB instance receives the returned a SYN-ACK response packet within the response timeout, it indicates that the real server is normal and the health check result is successful. Then the CLB instance will send the backend CVM instance a TCP Reset (RST) packet to cut the TCP connection.
-4. If the CLB instance does not receive the returned a SYN-ACK response packet within the response timeout, it indicates that the real server is abnormal and the health check result is failed. Then the CLB instance will send the backend CVM instance a TCP Reset (RST) packet to cut the TCP connection.
+1. A CLB instance sends an SYN connection request packet to (the private IP and health check port of) a backend CVM instance.
+2. After receiving the SYN request packet, the backend CVM instance will return an SYN-ACK response packet if the port is listening normally.
+3. If the CLB instance receives the returned SYN-ACK response packet within the response timeout, it indicates that the real server is normal and the health check result is successful. Then the CLB instance will send the backend CVM instance a TCP Reset (RST) packet to cut the TCP connection.
+4. If the CLB instance does not receive the returned SYN-ACK response packet within the response timeout, it indicates that the real server is abnormal and the health check result is failed. Then the CLB instance will send the backend CVM instance a TCP Reset (RST) packet to cut the TCP connection.
 
 ## UDP Health Check
 For layer-4 UDP listeners, you can configure UDP health check to obtain the status of backend CVM instances by running the Ping command and sending UDP detection packets to the health check port. Also, to this end, you can customize the request and return content of the protocol.
@@ -34,12 +34,11 @@ UDP health check mechanism is as follows:
 4. If the Ping command fails or the backend CVM instance returns the error `port XX unreachable` within the response timeout, it indicates that the real server is abnormal and the health check result is failed.
 
 >!
->1. UDP health checks are based on ICMP, therefore, backend CVM instances need to be allowed to reply ICMP packets (i.e., Ping command is supported) and ICMP "port unreachable" packets (i.e., the port can be detected).
->2. If a Linux server is used as the backend CVM instance, the speed of the server to send ICMP packets will be limited during high concurrency as the Linux server has a mechanism of defending itself from ICMP attacks. In this case, although the real server is abnormal, it cannot return the error `port XX unreachable` to the CLB instance. Then the CLB instance will determine that the health check result is successful, so the actual status of the real server cannot be returned.
+1. UDP health checks are based on ICMP, therefore, backend CVM instances need to be allowed to reply ICMP packets (i.e., Ping command is supported) and ICMP "port unreachable" packets (i.e., the port can be detected).
+2. If a Linux server is used as the backend CVM instance, the speed of the server to send ICMP packets will be limited during high concurrency as the Linux server has a mechanism of defending itself from ICMP attacks. In this case, although the real server is abnormal, it cannot return the error `port XX unreachable` to the CLB instance. Then the CLB instance will determine that the health check result is successful, so the actual status of the real server cannot be returned.
 Solution: You can configure the UDP health check with custom input and output strings. So in a health check, the custom input string will be sent to the real server, and the result will be determined as successful only after the CLB instance receives the custom response string. This method is based on the real server, which needs to process the health check input string and return the custom output string.
 
-<span id="http"></span>
-## HTTP Health Check
+## <span id="http"></span>HTTP Health Check
 For layer-4 TCP listeners and layer-7 HTTP/HTTPS listeners, you can configure HTTP health check to obtain the status of backend CVM instances by sending HTTP requests.
 ![](https://main.qcloudimg.com/raw/94d491d305eca2c6b891912fc1a62ffe.png)
 HTTP health check mechanism is as follows:
@@ -50,13 +49,12 @@ HTTP health check mechanism is as follows:
 
 >? For layer-7 HTTPS listeners, if HTTP is selected as the backend protocol of the HTTPS listener's forwarding rules, HTTP health check will be conducted; if HTTPS is selected, HTTPS health check will be conducted.
 HTTPS health checks are basically the same as <a href="#http">HTTP health checks</a>. The difference is that in HTTPS health checks, HTTPS requests are sent and the backend CVM instance status is determined by the returned HTTPS status code.
->
 ## Health Check Time Window
 CLB health check mechanism improves business availability, but frequent health check failures can cause unnecessary server switches, compromising system availability. Therefore, health check status can be switched between healthy and abnormal only if the results are being the same in a health check time window for several times. The health check time window is based on the factors below:
 <table>
 <tr>
 <th>Health Check Configuration</th>
-<th>Description</th>
+<th>Notes</th>
 <th>Default Value</th>
 </tr>
 <tr>
@@ -71,19 +69,18 @@ CLB health check mechanism improves business availability, but frequent health c
 </tr>
 <tr>
 <td>Unhealthy threshold</td>
-<td><ul><li>If the health check result is failed for n (a customizable value) times, it is considered that the backend CVM instance is unhealthy, and the status displayed in the console is <b>Abnormal</b>.</li><li>Value range: 2-10 times.</li></ul></td>
+<td><ul><li>If the health check result is failed for n (a customizable value) times, it is considered that the backend CVM instance is unhealthy, and the status displayed in the console is **Abnormal**.</li><li>Value range: 2-10 times.</li></ul></td>
 <td>3 times</td>
 </tr>
 <tr>
 <td>Healthy threshold</td>
-<td><ul><li>If the health check result is successful for n (a customizable value) times, it is considered that the backend CVM instance is healthy, and the status displayed in the console is <b>Healthy</b>.</li><li>Value range: 2-10 times.</li></ul></td>
+<td><ul><li>If the health check result is successful for n (a customizable value) times, it is considered that the backend CVM instance is healthy, and the status displayed in the console is **Healthy**.</li><li>Value range: 2-10 times.</li></ul></td>
 <td>3 times</td>
 </tr>
 </table>
 
 The calculations of **layer-4 health check time window** are as follows:
 >?Layer-4 health check, namely the TCP health check or UDP health check, the time interval between two checks is the set value, no matter the result is successful or whether the response times out.
->
 - Time window of a health check with a failed result = Check interval × (Unhealthy threshold - 1)
 In the example below, the health check response timeout is 2 seconds, check interval is 5 seconds, and the unhealthy threshold is 3 times, so the time window of a health check with a failed result = 5 x (3-1) = 10 seconds.
 ![](https://main.qcloudimg.com/raw/63ee9657f3bb44c31c8e271484a67729.png)
@@ -98,3 +95,17 @@ In the example below, the health check response timeout is 2 seconds, check inte
 - Time window of a health check with a successful result = Period of a successful health check response × Healthy threshold + Check interval × (Healthy threshold -1)
 In the example below, the period of a successful health check response is 1 second, check interval is 5 seconds, and the healthy threshold is 3 times, so the time window of a health check with a successful result = 1 x 3 + 5 x (3-1) = 13 seconds.
 ![](https://main.qcloudimg.com/raw/a6afea17bf2767081c2fcd66913233d0.png)
+
+
+## Health Check Identifiers
+After CLB health checks start, the real server will receive health check requests in addition to normal business requests. A health check request may have the following properties:
+- The health check source IP is the CLB VIP.
+- A health check request from layer-4 listeners (TCP, UDP, and TCP SSL) will be marked with "HEALTH CHECK".
+- For a health check request from layer-7 listeners (HTTP and HTTPS), the `user-agent` in its header is `clb-healthcheck`.
+>?
+>- For a health check request from private network classic CLB instances, the health check source IP is `169.254.128.0/17`.
+>- For a health check request from classic network CLB instances, the health check source IP is the physical IP.
+
+## Reference
+- [Configuring Health Check](https://intl.cloud.tencent.com/document/product/214/39251)
+- [Configuring Health Check Logs](https://cloud.tencent.com/document/product/214/55139)
