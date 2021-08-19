@@ -1,0 +1,25 @@
+
+This document describes how to manage subdevices.
+
+## Prerequisites
+You have created a [gateway product](https://intl.cloud.tencent.com/document/product/1105/41476) and a [device](https://intl.cloud.tencent.com/document/product/1105/41476).
+
+
+## Directions
+
+### Binding subdevice
+>!A subdevice is a device that can connect to IoT Hub only through a gateway device.
+
+1. Log in to the [IoT Hub console](https://console.cloud.tencent.com/iotcloud) and click **Products** on the left sidebar to enter the product list page.
+2. Click the selected **product name** to enter the product details page. Click **Devices** and select **Subdevice** to enter the subdevice page.
+![](https://main.qcloudimg.com/raw/6a3a98c42c4e44980e26cc71efba02bf.jpg)
+3. Click **Add Subdevice**, select a product, select the subdevice to be bound to it, and click **Add**.
+![](https://main.qcloudimg.com/raw/edcadfd096df48fa01ab0819cac1e597.jpg)
+
+### Unbinding subdevice
+
+Select the corresponding product on the subdevice page, select the subdevice bound to it, and click **Unbind**.
+![](https://main.qcloudimg.com/raw/ee5dbd786d735e505443cd9ee9a44959.jpg)
+
+
+
