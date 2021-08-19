@@ -204,7 +204,7 @@ This document lists services and resources that support tagging. You can click a
 <table>
 <tr><th width="50%">Service</th><th width="50%">Resource</th>
 </tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/607">Game Multimedia Engine (GME)</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/607">Game Multimedia Engine</a></td>
 <td>Application</td>
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1055">Game Server Elastic-scaling</a></td>
