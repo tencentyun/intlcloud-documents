@@ -46,9 +46,9 @@
  - **Kubernetes版本**：提供多个 Kubernetes 版本选择，可前往 [Supported Versions of the Kubernetes Documentation](https://kubernetes.io/docs/home/supported-doc-versions/) 查看各版本特性对比。
  - **运行时组件**：提供【docker】和【containerd】两种选择。详情请参见 [如何选择 Containerd 和 Docker](https://intl.cloud.tencent.com/document/product/457/31088)。
  - **所在地域**：建议您根据所在地理位置选择靠近的地域，可降低访问延迟，提高下载速度。
- - **集群网络**：为集群内主机分配在节点网络地址范围内的 IP 地址。详情请参见 [容器及节点网络设置](https://intl.cloud.tencent.com/document/product/457/9083)。
+ - **集群网络**：为集群内主机分配在节点网络地址范围内的 IP 地址。详情请参见 [容器及节点网络设置](https://intl.cloud.tencent.com/document/product/457/38966)。
  - **容器网络插件**：提供【GlobalRouter】和【VPC-CNI】两种网络模式。详情请参见 [如何选择容器网络模式](https://intl.cloud.tencent.com/document/product/457/38966)。
- - **容器网络**：为集群内容器分配在容器网络地址范围内的 IP 地址。详情请参见 [容器及节点网络设置](https://intl.cloud.tencent.com/document/product/457/9083)。
+ - **容器网络**：为集群内容器分配在容器网络地址范围内的 IP 地址。详情请参见 [容器及节点网络设置](https://intl.cloud.tencent.com/document/product/457/38966)。
  - **操作系统**：根据实际需求进行选择。
  - **集群描述**：填写集群的相关信息，该信息将显示在**集群信息**页面。
  - **高级设置**（可选）：
