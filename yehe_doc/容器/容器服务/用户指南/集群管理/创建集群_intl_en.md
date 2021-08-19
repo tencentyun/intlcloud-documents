@@ -46,9 +46,9 @@ Before creating a cluster, you need to complete the following preparations:
  - **Kubernetes Version**: multiple Kubernetes versions are available. For feature comparison between different versions, see [Supported Versions of the Kubernetes Documentation](https://kubernetes.io/docs/home/supported-doc-versions/).
  - **Runtime Component**: choose **docker** or **containerd**. For details, see [How to Choose Containerd and Docker](https://intl.cloud.tencent.com/document/product/457/31088).
  - **Region**: the region where the cluster will be created. We recommend that you select a region close to your customers to minimize the access latency and improve the download speed.
- - **Cluster Network**: assigns IP addresses that are within the node IP range to CVMs in the cluster. For details, see [Network Settings for Containers and Nodes](https://intl.cloud.tencent.com/document/product/457/9083).
+ - **Cluster Network**: assigns IP addresses that are within the node IP range to CVMs in the cluster. For details, see [Network Settings for Containers and Nodes](https://intl.cloud.tencent.com/document/product/457/38966).
  - **Container Network Add-on**: **Global Router** and **VPC-CNI** network modes are provided. For more information, see [How to Choose TKE Network Mode](https://intl.cloud.tencent.com/document/product/457/38966).
- - **Container Network**: assigns IP addresses that are within the container network address range to containers in the cluster. For details, see [Network Settings for Containers and Nodes](https://intl.cloud.tencent.com/document/product/457/9083).
+ - **Container Network**: assigns IP addresses that are within the container network address range to containers in the cluster. For details, see [Network Settings for Containers and Nodes](https://intl.cloud.tencent.com/document/product/457/38966).
  - **Operating System**: select an operating system based on your actual requirements.
  - **Cluster Description**: enter information about the cluster, which will be displayed on the **Cluster information** page.
  - **Advanced Settings** (optional):
