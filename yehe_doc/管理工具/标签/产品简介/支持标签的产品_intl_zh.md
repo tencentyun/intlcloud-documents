@@ -204,7 +204,7 @@
 <table>
 <tr><th width="50%">产品名称</th><th width="50%">资源</th>
 </tr><tr>
-<td><a href="https://intl.cloud.tencent.com/document/product/607"> 游戏多媒体引擎 GME</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/607"> 游戏多媒体引擎</a></td>
 <td>应用</td>
 </tr><tr>
 <td><a href="https://intl.cloud.tencent.com/document/product/1055"> 游戏服务器伸缩</a></td>
