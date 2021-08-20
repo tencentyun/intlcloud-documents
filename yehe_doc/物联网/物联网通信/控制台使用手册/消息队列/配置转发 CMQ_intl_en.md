@@ -10,7 +10,7 @@ The IoT Hub account must never have used CMQ.
 ### Authorizing access
 1. Log in to the [IoT Hub console](https://console.cloud.tencent.com/iothub), select **Products** > **Message Queue**, and click **Authorize Access to CMQ**.
 2. After successful authorization, you will be redirected to the message queue configuration page.
-![](https://main.qcloudimg.com/raw/c27554c0ba6f9a65f88c63a9804c6786.png)
+
 
 ### Configuring message queue
 1. On the message queue configuration page, select the message type as needed. CMQ has the following two message types.
@@ -21,9 +21,9 @@ The IoT Hub account must never have used CMQ.
 
 
 >!
-- The message type cannot be empty.
-- The modified message type cannot be the same as the last configured one.
-- After successful creation, the message queue page will display the details of the subscription. You can also modify the subscribed message type on this page.
+>- The message type cannot be empty.
+>- The modified message type cannot be the same as the last configured one.
+>- After successful creation, the message queue page will display the details of the subscription. You can also modify the subscribed message type on this page.
 
 ### Deleting message queue
 To delete the current message queue configuration, click **Delete**.
