@@ -2,7 +2,7 @@
 
 ####  只打包 arm64 架构（荐） 
 
-苹果 iPhone 5s 及以后的手机都可以支持只打包 x64 架构，在 XCode 中的 Build Setting 里将 Build Active Architecture Only 设置为 YES，同时将 Valid Architectures 里只写 arm64 即可，TRTC SDK 的单架构 ipa 增量只有1.9M。
+苹果 iPhone 5s 及以后的手机都可以支持只打包 x64 架构，在 XCode 中的 Build Setting 里将 Build Active Architecture Only 设置为 YES，同时将 Valid Architectures 里只写 arm64 即可，只打包单架构可减少一半的增量。
 ![](https://main.qcloudimg.com/raw/e8f7a3d2f5ee4c11df8b3fae4cc1ed31.png)
 
 ### Android 平台如何缩减安装包体积？
