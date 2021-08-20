@@ -43,10 +43,10 @@ After creating a product, you can add one device or batch add devices under it:
     ![](https://main.qcloudimg.com/raw/1151b705097d110bb4fbee298c5f8473.png)
 
 >!
-- The device name cannot be modified once confirmed.
-- The device name must be unique under the same product.
-- The key option appears only when the authentication method is key authentication. A custom key must be a Base64-encoded string. You can enter an ordinary string in the input box and then click **Convert to Base64** to Base64-encode it.
-- Specific parameters that need to be entered during device creation vary by product type.
+>- The device name cannot be modified once confirmed.
+>- The device name must be unique under the same product.
+>- The key option appears only when the authentication method is key authentication. A custom key must be a Base64-encoded string. You can enter an ordinary string in the input box and then click **Convert to Base64** to Base64-encode it.
+>- Specific parameters that need to be entered during device creation vary by product type.
 
 If the selected authentication method is certificate authentication, after the device is created, the device private key will be the unique identifier used by it to connect to the IoT Hub backend, which does not store the device private key. Therefore, please keep it secure and confidential.
 ![](https://main.qcloudimg.com/raw/00cad6ffb082b257a84d174a7a820e5f.png)
@@ -66,8 +66,8 @@ If the selected authentication method is IoT TID authentication, you can configu
 3. After the devices are added successfully, you can view the execution status on the **Result** page and download the device certificate/key file. You can also view and download the corresponding information and file in **Batch Management**.
 
 >?
-- If the selected authentication method is key authentication, the file available on the **Result** and **Batch Management** pages for download is a CSV file, which contains the device names, device keys, error codes, and error messages.
-- If the selected authentication method is certificate authentication, the file available on the **Result** and **Batch Management** pages for download is a ZIP package file, which contains folders of the same number as that of devices as well as a CSV file. The name of each folder is the corresponding device name, and the content of the folder is the certificate and private key files. The CSV file contains the device names, error codes, error messages, and the relative paths of the device certificate and private key files.
+>- If the selected authentication method is key authentication, the file available on the **Result** and **Batch Management** pages for download is a CSV file, which contains the device names, device keys, error codes, and error messages.
+>- If the selected authentication method is certificate authentication, the file available on the **Result** and **Batch Management** pages for download is a ZIP package file, which contains folders of the same number as that of devices as well as a CSV file. The name of each folder is the corresponding device name, and the content of the folder is the certificate and private key files. The CSV file contains the device names, error codes, error messages, and the relative paths of the device certificate and private key files.
 
 
 
