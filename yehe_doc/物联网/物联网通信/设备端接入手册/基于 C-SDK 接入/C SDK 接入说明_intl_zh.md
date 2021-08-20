@@ -7,7 +7,7 @@
  - 密钥设备要通过平台的安全认证，必须具备三元组信息：产品 ID（ProductId）、设备名（DeviceName）、设备密钥（DeviceSecret），其中设备密钥由平台生成。
 
 设备密钥是创建产品时，通过设置认证方式来确定，如下图所示：
-![](https://main.qcloudimg.com/raw/72784b62fe9a415cedd9b916cbf38a6f.png)
+![](https://main.qcloudimg.com/raw/ab4eb851c64184713861b4c1c9cea507.png)
 
 ## 设备身份信息烧录
 设备信息烧录分为预置烧录和动态烧录，两者在应用的便捷性和安全性上有区别。

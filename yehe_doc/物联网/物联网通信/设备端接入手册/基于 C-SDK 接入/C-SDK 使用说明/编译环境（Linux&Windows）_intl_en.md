@@ -47,14 +47,14 @@ The demo output is in the `output/release/bin` folder. For example, to run the `
 #### Getting and installing Visual Studio 2019
 
 1. Download [Visual Studio 2019](https://visualstudio.microsoft.com/zh-hans/downloads/) and install it. In this document, the downloaded and installed version is v16.2 Community.
-![](https://main.qcloudimg.com/raw/2fd5a35c66683b62f09a93575ad29036.png)
+![](https://main.qcloudimg.com/raw/394078661873f4464e7c2bf2836aa6a2.png)
 2. Select **Desktop development with C++** and **C++ CMake tools for Windows**.
-![](https://main.qcloudimg.com/raw/45914188fe5b51fc8b89cca7d9d03f02.png)
+![](https://main.qcloudimg.com/raw/2c5ea21e32ed3a6375d41370c6b521d9.png)
 
 #### Compilation and running
 
 1. Run Visual Studio, select **Open a local folder**, and select the downloaded SDK for C directory.
-![](https://main.qcloudimg.com/raw/b245adf8ccfe14f78c862d62516ec3c8.png)
+![](https://main.qcloudimg.com/raw/94a3bbcf421836a46198a0413003ff2c.png)
 2. Enter the information of the device created in the IoT Hub console (with a key-authenticated device as example) in `device_info.json`. Below is the sample code:
 ```
 "auth_mode":"KEY",	
@@ -73,11 +73,11 @@ The demo output is in the `output/release/bin` folder. For example, to run the `
     
    set(COMPILE_TOOLS "MSVC") 
    set(PLATFORM 	  "windows")
-```	 
+```
 4. Visual Studio will automatically build the CMake cache. Just wait for the build to complete.
-![](https://main.qcloudimg.com/raw/52f0f35974ad0503b6f45a09f69420ac.jpg)
+
 5. After the cache is generated, select **Build** > **Build All**.
-![](https://main.qcloudimg.com/raw/dc985f71fdb4b882ce2d12d01c5b7e73.png)
+
 6. Select the corresponding demo for running, which should correspond to the user information.
-![](https://main.qcloudimg.com/raw/5c3f0fe31182b8dc7b805ce7578ae0ad.jpg)
+
 

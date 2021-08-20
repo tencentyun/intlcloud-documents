@@ -7,13 +7,13 @@ This document describes how to create devices and permissions in the IoT Hub con
 2. On the product list page, click **Create Product**.
 3. On the pop-up product adding page, select the node type and product type, enter the product name, select the authentication method and data format, and enter the product description.
 Then, click **Confirm** (select as shown below for directly connected general devices).
-![](https://main.qcloudimg.com/raw/1c76747cd324aa3b25810f055cd1bf1a.jpg)
+![](https://main.qcloudimg.com/raw/b2abfe783c972b73e21fd9043a3daf1d.png)
 4. After the product is created, click **Devices** at the bottom of the generated product page.
 5. On the device list page, click **Add Device**.
  - If the authentication method is certificate authentication, after the device name is entered, be sure to click **Download** in the pop-up window. The device key and device certificate in the downloaded package are used for authenticating the device during connection to IoT Hub.
-![](https://main.qcloudimg.com/raw/d49979433cab6852b2919f049e818a5c.png)
+![](https://main.qcloudimg.com/raw/3a6743828e313153a6bbc4e44127d7f9.png)
  - If the authentication method is key authentication, after the device name is entered, the key of the added device will be displayed in the pop-up window.
-![](https://main.qcloudimg.com/raw/b544ebdd175993147a71a4dfe2af2b80.jpg)
+![](https://main.qcloudimg.com/raw/29bd0963680516867b4216c64a9429ac.png)
 
 
 
@@ -23,7 +23,7 @@ Then, click **Confirm** (select as shown below for directly connected general de
 1. On the generated product page, click **Permissions**.
 2. On the permission list page, click **Add Topic Permission**.
 3. In the topic permission pop-up window, enter `data`, set the operation permission to **Subscribe and Publish**, and click **Confirm**.
-![](https://main.qcloudimg.com/raw/1a7fdffc12b9154e6455e7c2cbdecc22.jpg)
+![](https://main.qcloudimg.com/raw/f2a88b715f6546b31c028a7a01e6e3a5.png)
 4. Then, the `productID/\${deviceName}/data` topic will be created, and you can view all permissions of the product in the permission list on the product page.
 
 
@@ -99,7 +99,7 @@ INF|2019-09-12 21:28:21|mqtt_sample.c|on_message_callback(195): Receive Message 
 
 #### 6. Observe logs in the console
 Log in to the [IoT Hub console](https://console.cloud.tencent.com/iotcloud), click the product name, and click **Cloud Log** on the top to view the message just reported.
-![](https://main.qcloudimg.com/raw/c6f7b9b71a96a1efc7611f38871c0ea0.jpg)
+![](https://main.qcloudimg.com/raw/3fec708973cacd0acce9897be67a13c6.png)
 
 
 

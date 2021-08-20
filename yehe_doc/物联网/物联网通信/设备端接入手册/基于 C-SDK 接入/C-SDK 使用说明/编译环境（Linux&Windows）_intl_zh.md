@@ -47,14 +47,14 @@ set(FEATURE_DEBUG_DEV_INFO_USED  OFF)
 #### 获取和安装 Visio Studio 2019开发环境
 
 1. 请访问 [Visual Studio 下载网站](https://visualstudio.microsoft.com/zh-hans/downloads/)，下载并安装 Visio Studio 2019，本文档下载安装的是16.2版本 Community。
-![](https://main.qcloudimg.com/raw/2fd5a35c66683b62f09a93575ad29036.png)
+![](https://main.qcloudimg.com/raw/394078661873f4464e7c2bf2836aa6a2.png)
 2. 选择【使用 C++ 的桌面开发】，并确保勾选【用于 Windows 的 C++ CMAKE 工具】。
-![](https://main.qcloudimg.com/raw/45914188fe5b51fc8b89cca7d9d03f02.png)
+![](https://main.qcloudimg.com/raw/2c5ea21e32ed3a6375d41370c6b521d9.png)
 
 #### 编译并运行
 
 1. 运行 Visual Studio，选择【打开本地文件夹】，并选择下载的 C SDK 目录。
-![](https://main.qcloudimg.com/raw/b245adf8ccfe14f78c862d62516ec3c8.png)
+![](https://main.qcloudimg.com/raw/94a3bbcf421836a46198a0413003ff2c.png)
 2. 将在腾讯云物联网通信控制台创建的设备的设备信息（以密钥认证设备为例），填写到 device_info.json 中，示例代码如下：
 ```
 "auth_mode":"KEY",	
@@ -73,11 +73,11 @@ set(FEATURE_DEBUG_DEV_INFO_USED  OFF)
     
    set(COMPILE_TOOLS "MSVC") 
    set(PLATFORM 	  "windows")
-```	 
+```
 4. Visual Studio 会自动生成 cmake 缓存，请等待 cmake 缓存生成完毕。
-![](https://main.qcloudimg.com/raw/52f0f35974ad0503b6f45a09f69420ac.jpg)
+
 5. 缓存生成完毕后，选择【生成】>【全部生成】。
-![](https://main.qcloudimg.com/raw/dc985f71fdb4b882ce2d12d01c5b7e73.png)
+
 6. 选择相应的示例运行，示例应与用户信息相对应。
-![](https://main.qcloudimg.com/raw/5c3f0fe31182b8dc7b805ce7578ae0ad.jpg)
+
 
