@@ -19,6 +19,9 @@ The following table compares the features of the different editions:
 | Free retention period of historical messages | 7 days | 7 days | 30 days |
 | Quota of free daily active users (DAU) | 100/month | 10,000/month | 10,000/month |
 | Free peak group count | 100,000/month | 100,000/month | 100,000/month |
+| Push to all users | Not supported | Not supported |Supported |
+| Concurrently online on multiple devices on the same platform | Not supported | Not supported |Supported |
+| Local message search (Android, iOS) | Not supported | Not supported |Supported |
 
 - **Maximum number of audio-video chat rooms that can be created**: indicates the total number of audio-video chat rooms that can be created by all users in a single SDKAppID. Audio-video chat rooms support only text, image, short audio, and custom messages. Services such as [Live Video Broadcasting](https://intl.cloud.tencent.com/document/product/267) and [Tencent Real-Time Communication](https://intl.cloud.tencent.com/document/product/647) need to be activated separately.
 - **Maximum net increase in group quantity per day**: indicates the net total number of groups (of all types) that can be created by all users in a single SDKAppID in a calendar day. The maximum net increase in group quantity per day is 10,000, in which up to 5 online broadcasting chat rooms can be created. If you have reached the group creation threshold of the day but need to create more groups, you can delete the groups that are no longer needed and create new groups. For more information, see the [Group System](https://intl.cloud.tencent.com/document/product/1047/33529).
