@@ -59,7 +59,6 @@ We provide three editions of the MLVB SDK, namely **LiteAV_Smart**, **Profession
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | [LiteAV_Smart](https://intl.cloud.tencent.com/document/product/1071/38150) | With a basic edition license, you can use features including publishing, playback, and basic beauty filters (skin brightening and smoothing). |
 | [Professional](https://intl.cloud.tencent.com/document/product/1071/38150) | The professional edition integrates multiple audio/video services of Tencent Cloud. Other than the support for LEB, it offers the same MLVB features as LiteAV_Smart, but it is free of the duplicate symbol issue that may arise if you integrate multiple audio/video SDKs. You can use the MLVB features of the professional edition with a basic edition license, but to use the features of other Tencent Cloud services, you need to activate the services first. |
-| [Enterprise](https://intl.cloud.tencent.com/document/product/1071/38150) | In addition to the features of the professional edition, the enterprise edition offers advanced beauty filters and special effects. To use them, you need to purchase an enterprise edition license. |
 
 > ? For details on the features supported by different SDK editions, please see [Features](https://intl.cloud.tencent.com/document/product/1071/38149).
 
