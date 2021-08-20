@@ -26,9 +26,6 @@ UserSig（用户签名）是腾讯云设计的一种安全保护签名，用于�
 
 录制回看功能依托于腾讯云的**云点播服务**支撑，需要先在腾讯云的管理控制台 [开通云点播服务](https://console.cloud.tencent.com/vod)，并在云直播控制台中完成域名 [录制配置](https://intl.cloud.tencent.com/document/product/267/31074)，直播推流完成后录制生成的文件可前往云点播控制台的【媒资管理】[查看视频](https://intl.cloud.tencent.com/document/product/266/33895)。
 
-### 小直播
-
-小直播 App 是一套开源的完整的在线直播解决方案，它基于云直播服务、即时通信（IM）和对象存储服务（COS）构建，并使用云服务器（CVM）提供简单的后台服务，可以实现登录、注册、开播、房间列表、连麦互动、文字互动和弹幕消息等功能。 
 
 ### SDKAppID 
 
