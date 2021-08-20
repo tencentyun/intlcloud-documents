@@ -47,7 +47,7 @@ IoT Hub supports two types of message queue: CMQ and CKafka.
 
 1. Log in to the [IoT Hub console](https://console.cloud.tencent.com/iotcloud) and click **Products** on the left sidebar.
 2. Go to the product details page and click **Message Queue** to configure the message queue type as needed.
-![](https://main.qcloudimg.com/raw/b416715dccd7a4fb140d0ab784861d79.png)
+
 
 
 

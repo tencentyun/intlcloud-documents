@@ -47,7 +47,7 @@
 
 1. 登录 [物联网通信控制台](https://console.cloud.tencent.com/iotcloud)，单击左侧菜单栏【产品列表】。
 2. 进入产品详情页，单击【消息队列】，可按需选择消息队列类型进行配置。
-![](https://main.qcloudimg.com/raw/b416715dccd7a4fb140d0ab784861d79.png)
+
 
 
 

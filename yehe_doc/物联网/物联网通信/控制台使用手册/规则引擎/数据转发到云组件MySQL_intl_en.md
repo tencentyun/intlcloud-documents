@@ -25,8 +25,8 @@ The configuration is divided into the following steps:
  5. Select the table to be written to. If no table has been created under the created database, go to the TencentDB for MySQL console to create one.
  6. Configure the fields to be written. There are two columns here: "field name" and "value". "Field name" corresponds to the field in the database table, indicating the field to be written. "Value" indicates the value of the field to be written. The value source can be a message body (which must be in JSON format to support value extraction) or a constant entered here.
     >!
-    - If the source is a message body, use "${}" to import the fields in the message body. If you want to specify a constant, just enter the corresponding value, such as 5 (number) or hello (string).
-    - You must create the database, table, and fields in TencentDB for MySQL first before you can write data to the database.
+     >- If the source is a message body, use "${}" to import the fields in the message body. If you want to specify a constant, just enter the corresponding value, such as 5 (number) or hello (string).
+     >- You must create the database, table, and fields in TencentDB for MySQL first before you can write data to the database.
 
 
 For more information, please see [DMC Overview](https://intl.cloud.tencent.com/document/product/236/39221).
