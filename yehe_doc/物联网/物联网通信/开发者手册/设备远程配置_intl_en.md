@@ -10,8 +10,8 @@ Remote device configuration supports two configuration update methods: active di
 - Remote configuration subscription topic: `$config/operation/result/${productid}/${devicename}`
 
 >?   
-- `${productID}`: product ID
-- `${deviceName}`: device name
+>- `${productID}`: product ID
+>- `${deviceName}`: device name
 
 ### Active distribution by IoT Hub
 
