@@ -11,7 +11,7 @@ The multi-AZ deployment feature of CKafka involves three layers: network, data, 
 
 CKafka exposes a VIP to the client. After the client is connected to the VIP, it will get the metadata information of the topic partitions (which is generally addresses mapped one to one at different ports on the same VIP).
 
- This VIP can failover to another AZ at any time. When an AZ becomes unavailable, the VIP will automatically float to another AZ in the same region, thus achieving multi-AZ disaster recovery.
+This VIP can failover to another AZ at any time. When an AZ becomes unavailable, the VIP will automatically shift to another AZ in the same region, thus achieving multi-AZ disaster recovery.
 
 #### Data layer
 
@@ -73,7 +73,7 @@ After the cluster network is back to normal, the client can resume production an
    - Message Retention: select a value between 24 and 2,160 hours.
      When the disk capacity is insufficient (i.e., the disk utilization reaches 90%), old messages will be deleted in advance to ensure the service availability.
    - VPC: if you need to access other VPCs, you can modify routing access rules as instructed in [Adding a Routing Policy](https://intl.cloud.tencent.com/document/product/597/32555)
-   - Tag: it is optional. For specific usage, please see [Tag Overview](https://cloud.tencent.com/document/product/597/33355).
-   - Instance Name: when purchasing multiple instances, you can use the features of automatically incrementing the instance suffix number and specifying a pattern string. For detailed directions, please see [Consecutive Batch Naming or Naming with Pattern String](https://cloud.tencent.com/document/product/597/59246)
+   - Tag: it is optional. For specific usage, please see [Tag Overview](https://intl.cloud.tencent.com/document/product/597/41600).
+   - Instance Name: when purchasing multiple instances, you can use the features of automatically incrementing the instance suffix number and specifying a pattern string. For detailed directions, please see [Naming with Consecutive Numeric Suffixes or with Designated Pattern String](https://intl.cloud.tencent.com/document/product/597/41581)
 4. Click **Buy Now** to complete the instance creation process.
 
