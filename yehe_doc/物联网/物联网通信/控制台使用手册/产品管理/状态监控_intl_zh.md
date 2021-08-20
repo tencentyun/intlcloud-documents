@@ -7,11 +7,11 @@
 
 #### 设备在线统计
 设备在线统计用于监控设备的在线情况。
-![](https://main.qcloudimg.com/raw/30e002e9d58c687484e29d0f11f400f9.png)
+![](https://main.qcloudimg.com/raw/9c06aab448d9a4006351089411a21675.png)
 
 #### 设备消息统计
 设备消息统计包括消息上下行的消息数，以及分别的失败数和计费数。
-![](https://main.qcloudimg.com/raw/267302cdb6955400b387d1591557651b.png)
+![](https://main.qcloudimg.com/raw/91a4d255ac5fa9793d6c8654427273c4.png)
 
 - 消息上行计数：设备发布或者应用程序通过云 API 发布的消息次数。
 - 消息下行计数：物联网通信平台往设备传输的消息（设备订阅的消息）次数。
@@ -22,37 +22,37 @@
 
 #### 设备影子更新统计
 设备影子更新统计包括设备主动更新影子的次数和更新失败的次数。
-![](https://main.qcloudimg.com/raw/321b82e2feb85e6841a805cea6b82122.png)
+![](https://main.qcloudimg.com/raw/4253b6ce8f6e897952e2c0a259a41159.png)
 
 #### 规则引擎统计
 规则引擎统计包括消息命中规则引擎的次数以及转发到其他服务的次数。
-![](https://main.qcloudimg.com/raw/62a28d7b7d90579a2b828e7326f03945.png)
+![](https://main.qcloudimg.com/raw/adebbf431e816a72620f221e8ed40cb8.png)
 
 #### 固件统计
 固件统计包括设备的版本分布以及固件版本的容量统计。
-![](https://main.qcloudimg.com/raw/1592e5d694e8f9725ff58fc15712e344.png)
+![](https://main.qcloudimg.com/raw/37f7023943bd4f5d0c9b67176aab5aa9.png)
 
 
 ## 产品级监控
 状态监控不仅支持全局监控，也支持产品级监控，您可以搜索产品名找到您想要查看的产品数据。
-![](https://main.qcloudimg.com/raw/585dbe33bbf9d2b08c2d3c31bff1ba73.png)
+![](https://main.qcloudimg.com/raw/e2e66b91e6253e8bfa56050597f98ae1.png)
 >!指定产品后才可查看固件统计信息。
 
 ## 按时间检索
 状态监控支持选择时间范围，包括近1天，近7天，近15天，近30天及自定义时间。
-![](https://main.qcloudimg.com/raw/3804a7e2d2373f7e2dbea04f8a88b6be.png)
+![](https://main.qcloudimg.com/raw/710650213ce16897dea515287497b894.png)
 
 ## 按时间粒度统计数据点
 
 状态监控中每个单点的显示按照所选时间粒度进行统计。其中，设备的在线数，单点显示值为所选择时间粒度的峰值。其它类型单点数据为所选择时间粒度统计求和的值。
-![](https://main.qcloudimg.com/raw/737225807bc714eef478833d255acbda.png)
+![](https://main.qcloudimg.com/raw/800f659513c0d026523541240c96b91a.png)
 
 ## 缩放与合计
 
 监控时序图还支持缩放与合计功能。您可以在时序图上选择一个起始时间，按住并拖动鼠标至结束时间的位置，即可查看这一时间段内的监控数据。
-![](https://main.qcloudimg.com/raw/590edc9f8660b19250ddb1a74bff5f89.png)
+![](https://main.qcloudimg.com/raw/79259c58de8b828d7816234c0d99e028.png)
 合计功能会默认合计所展示时间轴的数据类型总数，并展示在各个统计界面的右上方。
-![](https://main.qcloudimg.com/raw/7bbef3afaea23f0e5949b7d172c6c648.png)
+![](https://main.qcloudimg.com/raw/aaf7b317bcf55926bffd8d19733b02bc.png)
 单击【重置】按钮即可将界面的缩放进行重置。
 
 ## 监控告警
@@ -74,9 +74,9 @@
 #### 操作步骤
 
 1. 登录物联网通信控制台，进入 [状态监控](https://console.cloud.tencent.com/iothub/monitor) 页面，单击页面右上方【告警设置】，进入告警设置页面。
-![](https://main.qcloudimg.com/raw/dfa92f9c06d217e84d265d4cf8c7aa9b.png)
+![](https://main.qcloudimg.com/raw/1e9b44529830acccf558c3bf5b115f12.png)
 2. 在告警策略页面单击【新建】，进入新建策略页面，设置告警策略参数。
-![](https://main.qcloudimg.com/raw/e2d82eda21d3f704650469db2e51512a.png)
+![](https://main.qcloudimg.com/raw/8d97e84c3f0d3453dd35fbf19a8a6f25.png)
  - 策略名称：支持中英文字符或下划线。
  - 备注：描述告警策略的信息，支持中英文字符或下划线。
  - 策略类型：策略类型为产品所对应的告警策略类型，此处选择【物联网通信】>【状态监控】。 

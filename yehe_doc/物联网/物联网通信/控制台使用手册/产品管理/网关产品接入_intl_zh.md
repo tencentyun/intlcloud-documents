@@ -12,14 +12,14 @@
 
 1. 登录 [物联网通信控制台](https://console.cloud.tencent.com/iotcloud)，单击左侧导航栏的【产品列表】进入产品列表页面。
 2.  单击选择的【产品名称】进入产品详情页，单击【设备列表】>【子设备】进入子设备页面。
-![](https://main.qcloudimg.com/raw/6a3a98c42c4e44980e26cc71efba02bf.jpg)
+![](https://main.qcloudimg.com/raw/d0df8f3b0e14f35182026b3933eaf328.png)
 3. 单击【添加子设备】>【选择产品】并勾选该产品下需要绑定的子设备，单击【添加】，完成绑定。
-![](https://main.qcloudimg.com/raw/edcadfd096df48fa01ab0819cac1e597.jpg)
+![](https://main.qcloudimg.com/raw/47197d4608a598ea4425dd331fcbeec6.png)
 
 ### 解绑子设备
 
 在子设备页面选择对应的产品，勾选该产品已绑定的子设备，单击【解绑】进行解绑操作。
-![](https://main.qcloudimg.com/raw/ee5dbd786d735e505443cd9ee9a44959.jpg)
+![](https://main.qcloudimg.com/raw/f800ed75782d15c088bbee0b152393e2.png)
 
 
 

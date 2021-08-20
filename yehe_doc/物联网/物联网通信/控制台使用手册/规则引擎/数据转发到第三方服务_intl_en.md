@@ -17,7 +17,7 @@ For more information on the content and format of the data to be forwarded, plea
  - Select "forward" as the action type.
  - Enter your HTTP or HTTPS service address. IoT Hub will forward data reported by devices to this address.
  - Please select **Authentication Token** and enter the corresponding token of your service. You can enter any token for signature generation (this token will be compared with the token contained in the URL of the API for authentication).
-   ![](https://main.qcloudimg.com/raw/5a1bfa2f0491b073d4b7218bc96db16c.jpg)
+   ![](https://main.qcloudimg.com/raw/c052c2aa73d7d31c61e6de3f1d4fc145.png)
 
 
 ## Verifying Message Source as IoT Hub

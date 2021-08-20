@@ -10,11 +10,11 @@ The figure below shows the entire process of forwarding data to TencentDB for My
 2. Go to the rule engine page and click the rule to be configured.
 3. On the rule details page, click **Add Action**.
 >?You will be prompted to authorize access to TencentDB for MySQL upon the first use. You need to click **Authorize Now** before you can proceed.
-![](https://main.qcloudimg.com/raw/610ffda13c4d723d1da5e89fd96593ab.png)
+![](https://main.qcloudimg.com/raw/801f85ef547eb49e222c69c9be971a5c.png)
 4. In the **Add Action** pop-up window, select **Forward data to TencentDB for MySQL**. After successful authorization, you need to configure the information of the TencentDB for MySQL instance and written fields as shown below. The configuration is divided into the following steps:
-![](https://main.qcloudimg.com/raw/06f8ee3fc006896d15e443f828874bf3.png)
+![](https://main.qcloudimg.com/raw/4cc5fa04e89821138a0e6362280bb6cb.png)
 After successful forwarding, the information displayed in TencentDB for MySQL is as shown below:
-![](https://main.qcloudimg.com/raw/85fe76843afc299408448a10e6a78930.png)
+![](https://main.qcloudimg.com/raw/d2de60c73ee63f5c3d21080e9fce535b.png)
 
 ## Configuration Description
 The configuration is divided into the following steps:

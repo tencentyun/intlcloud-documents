@@ -10,11 +10,11 @@
 2. 进入规则引擎页面，单击需要配置的规则。
 3. 在规则详情页面，单击【添加行为操作】。
 >?第一次使用时会提示用户授权访问 MySQL，您需单击【立即授权】才能继续创建。
-![](https://main.qcloudimg.com/raw/610ffda13c4d723d1da5e89fd96593ab.png)
+![](https://main.qcloudimg.com/raw/801f85ef547eb49e222c69c9be971a5c.png)
 4. 在弹出的“添加规则”窗口，选择“数据转发到云数据库（MySQL）选项”，授权成功后，需要配置 MySQL 实例信息和写入的字段信息，如下图所示。配置完成后单击【保存】即可。
-![](https://main.qcloudimg.com/raw/06f8ee3fc006896d15e443f828874bf3.png)
+![](https://main.qcloudimg.com/raw/4cc5fa04e89821138a0e6362280bb6cb.png)
 转发成功后,MySQL 中显示的信息如下图所示:
-![](https://main.qcloudimg.com/raw/85fe76843afc299408448a10e6a78930.png)
+![](https://main.qcloudimg.com/raw/d2de60c73ee63f5c3d21080e9fce535b.png)
 
 ## 配置说明
 配置分为如下几个步骤：

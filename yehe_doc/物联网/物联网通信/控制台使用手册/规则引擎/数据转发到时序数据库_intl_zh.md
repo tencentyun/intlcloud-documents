@@ -9,9 +9,9 @@
 1. 登录 [物联网通信控制台](https://console.cloud.tencent.com/iotcloud)，选择左侧菜单【规则引擎】。
 2. 进入规则详情页面，单击【添加行为操作】。
 >?第一次使用时会提示用户授权访问 CTSDB，用户需单击【授权访问 CTSDB 】才能继续创建。
-![avatar](https://main.qcloudimg.com/raw/fa05765a6ca562907abf57e6718962c8.png) 
+![avatar](https://main.qcloudimg.com/raw/ba935a001132582dfa25d3df4978bfd8.png) 
 3. 在弹出的“添加规则”窗口，选择行为【数据转发到时序数据库（CTSDB）】，依次选择 CTSDB 地域和实例，并填写基本信息和需要配置的转发字段，单击【保存】即可。
-![avatar](https://main.qcloudimg.com/raw/0cdece2231af0f694ea15ca4e672e4e7.png) 
+![avatar](https://main.qcloudimg.com/raw/d35bc6bb1141c4ad735e96199f352f2f.png) 
 
 
 完成以上配置后，物联网通信平台会将符合规则条件的设备上报数据，转发至用户配置的 CTSDB 实例。用户可参考 [CTSDB 开发指南](https://intl.cloud.tencent.com/document/product/1100/40910) 在自己的应用服务器上读取数据进行处理，或者在 [CTSDB 控制台](https://console.cloud.tencent.com/ctsdb) 对数据进行聚合检索查询。
@@ -31,7 +31,7 @@
 
 ## 高级配置说明
 高级配置项，适用于设备上报数据字段是动态扩展的，无法预先配置的情况。例如，设备底下有若干传感器需要传输数据，但是不同的设备规格、配置不一样，传感器的数目也不固定，但需要使用规则引擎配置，将设备底下所有传感器的数据都存入 CTSDB，以下为您提供高级配置的方案存储：
-![](https://main.qcloudimg.com/raw/1d4fe9055b95511e31314bda6a86da52.png)
+![](https://main.qcloudimg.com/raw/cad85dd0aa614631f710f4b55a565370.png)
 
 >?
 - 默认存储类型：动态扩展存储的字段，在 CTSDB 中的存储类型，默认是 tag 类型

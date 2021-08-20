@@ -11,9 +11,9 @@ The figure below shows the entire process of forwarding data to a CMQ topic by t
 2. Go to the rule engine page and click the rule to be configured.
 3. On the rule details page, click **Add Action**.
 >?You will be prompted to authorize access to the CMQ topic upon the first use. You need to click **Authorize Now** before you can proceed.
-![image](https://main.qcloudimg.com/raw/ba7c122334eb5be38425ed166a515387.png)
+
 4. In the **Add Action** pop-up window, select **Forward data to CMQ topic**, region, and topic and click **Save**.
-![](https://main.qcloudimg.com/raw/bc96f06c7ada505504efed8beb9c2666.png)
+
 
 ## Resending Mechanism
 

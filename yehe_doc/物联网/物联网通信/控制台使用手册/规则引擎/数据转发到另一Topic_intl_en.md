@@ -26,7 +26,7 @@ The entire forwarding process is as shown below:
 3. In the pop-up **Add Action** window, enter relevant information and click **Save**.
  - Select "republish" as the action type.
  - Enter the name of the topic to forward to.
-![](https://main.qcloudimg.com/raw/ecec657128df4e50498213fda2aaa23f.jpg)
+![](https://main.qcloudimg.com/raw/7703da2b662074036e7b91a18e6d9d8f.png)
 
 IoT Hub will forward the reported data to this topic.
 

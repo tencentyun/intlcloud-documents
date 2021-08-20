@@ -16,7 +16,7 @@ This document describes how to group devices in the console.
  - Group Level: there is no limit on the number of group levels. One group can have up to 100 subgroups. 
  - Group Name: it can contain 4–30 letters, digits, and underscores. 
  - Group Description: it can contain up to 255 characters.
-![](https://main.qcloudimg.com/raw/4a77727e6d993a285557e03bfd140a3d.png)
+![](https://main.qcloudimg.com/raw/822eff73b1d905374a22d5fc4777f071.png)
 4. Click **Save**.
 
 
@@ -38,7 +38,7 @@ This document describes how to group devices in the console.
 1. Log in to the [IoT Hub console](https://console.cloud.tencent.com/iotcloud).
 2. Click the group name to enter the group management page, where you can manage the device list.
 3. To add one or more devices to the group, click **Add Device** under the device list. You can search for devices by product name or device name and select different devices for batch adding.
-![](https://main.qcloudimg.com/raw/f6d0131aa80e47e86478981c73469bdf.png)
+![](https://main.qcloudimg.com/raw/40dc34c9452ab5565dc83c66a45b7f39.png)
 4. The device list displays the information of the devices in the group (e.g., floor1), including device name, status, product, and last connection time and operation.
  - Device Name: `devicename`.
  - Status: online/offline status of the device.
@@ -49,4 +49,4 @@ This document describes how to group devices in the console.
 5. You can add subgroups to or remove subgroups from any group. Click the group name to enter the group management page, where you can manage the subgroup list.
  - Just like under parent groups, you can create subgroups under subgroups and add devices to them.
  - As regards the group level, if the group is a level-1 group, only the name of the level-1 group is displayed; if it is a level-n group, the names of the n levels of groups are displayed, such as `group1` and `group1/group2.../groupn`.
-![](https://main.qcloudimg.com/raw/4f3a02d880a443e0a7e40568911e0765.png)
+![](https://main.qcloudimg.com/raw/1bea0d0fb73de0ffecc7a5b9bede8471.png)

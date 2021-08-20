@@ -33,6 +33,6 @@
 ```
 
 温湿度产品下有 dev00，dev01，dev02 三个设备分别监测了 room1，room2，room3...room6 六个房间的温湿度，只有当 room1 房间的温度高于30摄氏度时需要对数据转入 MySQL 数据库进行处理。依照此案例规则引擎的设置如下：
-![](https://main.qcloudimg.com/raw/78e7fe0bdc8a17c91a93dfa5d85c100f.png)
-![](https://main.qcloudimg.com/raw/c56994ea333f1d0a0bb3a79107c33aba.png)
+![](https://main.qcloudimg.com/raw/30d0ab7953e12e009e61aa1ac4ea45b5.png)
+![](https://main.qcloudimg.com/raw/d4cf283ec1413a81cdf2b9ee507aeba4.png)
 

@@ -9,9 +9,9 @@ The figure below shows the entire process of forwarding data to CTSDB by the rul
 1. Log in to the [IoT Hub console](https://console.cloud.tencent.com/iotcloud) and select **Rule Engine** on the left sidebar.
 2. On the rule details page, click **Add Action**.
 >?You will be prompted to authorize access to CTSDB upon the first use. You need to click **Authorize Access to CTSDB** before you can proceed.
-![avatar](https://main.qcloudimg.com/raw/fa05765a6ca562907abf57e6718962c8.png) 
+![avatar](https://main.qcloudimg.com/raw/ba935a001132582dfa25d3df4978bfd8.png) 
 3. In the pop-up **Add Action** window, select **Forward data to CTSDB**, select the CTSDB region and instance, enter the basic information and the fields to be forwarded, and click **Save**.
-![avatar](https://main.qcloudimg.com/raw/0cdece2231af0f694ea15ca4e672e4e7.png) 
+![avatar](https://main.qcloudimg.com/raw/d35bc6bb1141c4ad735e96199f352f2f.png) 
 
 
 After the above configuration is completed, IoT Hub will forward eligible data reported by devices to the configured CTSDB instance. You can refer to [Overview](https://intl.cloud.tencent.com/document/product/1100/40910) to read the data on your own application server for processing or aggregate, search for, and query the data in the [CTSDB console](https://console.cloud.tencent.com/ctsdb).
@@ -31,7 +31,7 @@ After the above configuration is completed, IoT Hub will forward eligible data r
 
 ## Advanced Configuration Description
 The advanced configuration items are suitable for scenarios where the device-reported data fields are dynamically expanding and cannot be preconfigured. For example, if there are many sensors on the devices that need to transfer data, but different devices have different specifications and configurations, and the number of sensors is variable, then you can use the following advanced configuration to store the data from all device sensors to CTSDB through the rule engine:
-![](https://main.qcloudimg.com/raw/1d4fe9055b95511e31314bda6a86da52.png)
+![](https://main.qcloudimg.com/raw/cad85dd0aa614631f710f4b55a565370.png)
 
 >?
 - Default Storage Type: the default storage type of dynamically expanding storage fields in CTSDB is tag.

@@ -17,15 +17,15 @@
 
 ### 行为日志
 提供设备跟云端所有通信行为的日志检索，包括设备连接、断连、发布、订阅等。
-![](https://main.qcloudimg.com/raw/68af0d73a4ef35455c6a57e011741e7c.jpg)
+![](https://main.qcloudimg.com/raw/b3b6fd1ae47e0ac174defb9317a77a9d.png)
 
 ### 内容日志
 提供设备与云端通信内容的详细日志检索。
-![](https://main.qcloudimg.com/raw/a2f0053f81498808793e1740b136f656.jpg)
+![](https://main.qcloudimg.com/raw/aa083f6fd7798bc8cc531539311a9557.png)
 
 ### 设备日志
 提供设备端错误、告警、信息、调试四个等级的异常日常展示，用户可在设备详情页开启/配置设备日志采集功能。
-![](https://main.qcloudimg.com/raw/4a9973242b94b13743bd41cf108d1f72.jpg)
+![](https://main.qcloudimg.com/raw/56070913c36a631da3a37550ddf60fba.png)
 
 
 
@@ -39,4 +39,4 @@
 >!使用以下服务需要授权，为腾讯云相关的产品，当授权使用以下产品时，可能产生收费
 >
 首次配置时单击【开始配置】>【同意授权】进入访问管理-角色页面，单击【同意授权】即可进行配置。
-![](https://main.qcloudimg.com/raw/0763a4d32c31a8b0d8487d1d19f06619.jpg)
+![](https://main.qcloudimg.com/raw/ff3c65ee65376fced87fc4435d4e1a7f.png)

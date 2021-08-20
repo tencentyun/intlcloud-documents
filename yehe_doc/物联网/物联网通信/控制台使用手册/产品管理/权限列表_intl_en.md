@@ -10,11 +10,11 @@ After a product is created, you can configure topics that devices can publish or
  - Operation Name: the name can contain 1–64 letters, digits, and underscores, where different levels are separated by `/`, and `+` indicates a level. The name should be in the format of `/+/name` rather than `/+aaa/`.
  - Permission: you can select **Subscribe**, **Publish**, or **Subscribe and Publish**, and the selected permission can be changed subsequently.
 
-![](https://main.qcloudimg.com/raw/cb2242ea67dfa6477260632caed4d08b.png)
+![](https://main.qcloudimg.com/raw/c9e278edaee979ca86edb6a76a1cb0ba.png)
 
 ### Editing topic permission
 Click **Edit** in the topic permission list to change the name of the corresponding topic permission and the permission itself.
-![](https://main.qcloudimg.com/raw/f9e7953c8b2fb87e53f1c06365a6acea.png)
+![](https://main.qcloudimg.com/raw/8664a41d62adc40f8afeb3c701ae99ac.png)
 
 ### Deleting topic permission
 Click **Delete** in the topic permission list to delete the corresponding topic permission.
