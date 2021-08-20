@@ -27,10 +27,5 @@ UserSig（用户签名）是腾讯云设计的一种安全保护签名，用于�
 录制回看功能依托于腾讯云的**云点播服务**支撑，需要先在腾讯云的管理控制台 [开通云点播服务](https://console.cloud.tencent.com/vod)，并在云直播控制台中完成域名 [录制配置](https://intl.cloud.tencent.com/document/product/267/31074)，直播推流完成后录制生成的文件可前往云点播控制台的【媒资管理】[查看视频](https://intl.cloud.tencent.com/document/product/266/33895)。
 
 
-### SDKAppID 
-
-SDKAppID 是用户在实现小直播 App 中需要填写的信息，主要是在实现聊天室功能时创建 IM 应用产生的， 是腾讯云后台用来区分不同 IM 应用的唯一标识，在 【云直播控制台】>【直播 SDK】>【[应用管理](https://console.cloud.tencent.com/live/license/appmanage)】创建应用时自动生成。不同 SDKAppID 之间的数据不互通。 
-
-
 ### 快直播
 快直播（Live Event Broadcasting，LEB）是标准直播在超低延迟播放场景下的延伸，比传统直播协议延迟更低，为观众提供毫秒级的极致直播观看体验。 能够满足一些对延迟性能要求更高的特定场景需求，例如在线教育、体育赛事直播、在线答题等。
