@@ -12,9 +12,9 @@
 * 应答消息 Topic：`$rrpc/txd/${productID}/${deviceName}/${processID}`用于发布（上行）RRPC 应答消息。
 
 >? 
-- `${productID}`：产品 ID。
-- `${deviceName}`：设备名称。
-- `${processID}`： 服务器生成的唯一的消息 ID，用来标识不同 RRPC 消息。可以通过 RRPC 应答消息中携带的 processID 找到对应的 RRPC 请求消息。
+>- `${productID}`：产品 ID。
+>- `${deviceName}`：设备名称。
+>- `${processID}`： 服务器生成的唯一的消息 ID，用来标识不同 RRPC 消息。可以通过 RRPC 应答消息中携带的 processID 找到对应的 RRPC 请求消息。
 
 
 ### 通信流程
@@ -100,7 +100,7 @@ DBG|2020-08-03 23:57:56|rrpc_client.c|_rrpc_event_callback(104): rrpc topic subs
 #### 4. 调用云 API `PublishRRPCMessage` 发送 RRPC 请求消息
 
 打开腾讯云 [API控制台](https://console.cloud.tencent.com/api/explorer?Product=iotcloud&Version=2018-06-14&Action=PublishRRPCMessage&SignVersion=)，填写个人密钥和设备参数信息，选择在线调用并发送请求。
-![](https://main.qcloudimg.com/raw/6b0b68f49c04f3dc35c253bbeb373132.png)
+
 
 #### 5. 观察 RRPC 请求消息
 
@@ -124,7 +124,7 @@ DBG|2020-08-04 00:07:36|mqtt_client_publish.c|qcloud_iot_mqtt_publish(340): publ
 #### 7. 观察服务器响应结果
 
 观察服务器的响应结果，可以看到已经收到了 RRPC 应答消息。`MessageId`为\*\*\*，`Payload`经过`base64`编码后为****，其与客户端实际应答消息经过`base64`编码后一致。可以确认收到了应答消息。
-![](https://main.qcloudimg.com/raw/4ace5de4a2c348054665c8aed16135e2.png)
+
 
 
 
