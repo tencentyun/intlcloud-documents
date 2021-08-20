@@ -11,9 +11,9 @@
 2. 进入规则引擎页面，单击需要配置的规则。
 3. 在规则详情页面，单击【添加行为操作】。
 >?第一次使用时会提示用户授权访问 CMQ Topic，您需单击【立即授权】才能继续创建。
-![image](https://main.qcloudimg.com/raw/ba7c122334eb5be38425ed166a515387.png)
+
 4. 在弹出的“添加规则”窗口，选择“数据转发到消息队列（CMQ-Topic）选项”、地域和 Topic，单击【保存】即可。
-![](https://main.qcloudimg.com/raw/bc96f06c7ada505504efed8beb9c2666.png)
+
 
 ## 重发机制
 

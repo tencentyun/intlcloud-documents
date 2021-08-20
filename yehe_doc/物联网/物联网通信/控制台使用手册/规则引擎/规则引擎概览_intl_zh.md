@@ -15,9 +15,9 @@
 2. 进入规则引擎页面，单击【创建规则】，填入规则名称后，单击【确定】。
  - 规则名称：支持英文、数字、下划线的组合，最多不超过32个字符。（名称新建后无法修改，请谨慎填写。）
  - 规则描述：0 - 256个字的描述，可修改。
-![](https://main.qcloudimg.com/raw/1884acbc8e2042b8aead2f85adc1d416.png)
+![](https://main.qcloudimg.com/raw/fd9387900f2823fe34924981fd20a957.png)
 3. 创建成功后，即可自动进入规则详情页面。
-![](https://main.qcloudimg.com/raw/66375d8ce7f5c30a58c918ef529f50c5.png)
+![](https://main.qcloudimg.com/raw/7d99d770dc7299475bfb0c823fa813a1.png)
 
 至此您可以编写不同的转发规则。
 

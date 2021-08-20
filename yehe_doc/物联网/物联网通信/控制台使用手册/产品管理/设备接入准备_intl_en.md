@@ -20,10 +20,10 @@ Before connecting a device to IoT Hub, you need to create a virtual product and 
     - JSON: you can match the rules and extract the content based on the data.
     - Custom: no data parsing is performed.
  - **Product Description**: it can contain up to 500 characters.
-![](https://main.qcloudimg.com/raw/06c2bc0f6117ef5625c5185d27b9e2a4.jpg)
+![](https://main.qcloudimg.com/raw/b23a8a20f8527a2d9c30cdcf564e5aa7.png)
 3. Click **Confirm** (a product is a collection of devices of a certain type. You can manage all devices through the product).
 4. After the product is created, you can enable dynamic registration to generate a product key (ProductSecret).
-![](https://main.qcloudimg.com/raw/e2d0363f8c83ddcd97dfc2a9952a8aea.png)
+![](https://main.qcloudimg.com/raw/5c6ec00d93a4903fbd8106b8276013f5.png)
 >?Unified product information can be burned for all devices under it in the production process, i.e., product ID (ProductId) and product key (ProductSecret). After the devices are shipped, the device identity information can be obtained through dynamic registration and then saved, and then obtained three or four pieces of information can be used for device authentication. If you enable dynamic registration and select automatic device creation, device names can be generated automatically, which are generally IMEIs or MAC addresses but must be unique under the same product ID (ProductId). For more information on the dynamic registration feature, please see [SDK for C Connection Description](https://intl.cloud.tencent.com/document/product/1105/41842).
 
 
@@ -40,7 +40,7 @@ After creating a product, you can add one device or batch add devices under it:
 2. Click **Add Device** and enter the relevant device information.
   - Device Name: it can contain up to 48 letters, digits, underscores, and hyphens.
   - Remarks: it can contain up to 16 letters, digits, underscores, and hyphens.
-    ![](https://main.qcloudimg.com/raw/00afe7641c7d693cf3bf8025124f546e.png)
+    ![](https://main.qcloudimg.com/raw/1151b705097d110bb4fbee298c5f8473.png)
 
 >!
 - The device name cannot be modified once confirmed.
@@ -49,10 +49,10 @@ After creating a product, you can add one device or batch add devices under it:
 - Specific parameters that need to be entered during device creation vary by product type.
 
 If the selected authentication method is certificate authentication, after the device is created, the device private key will be the unique identifier used by it to connect to the IoT Hub backend, which does not store the device private key. Therefore, please keep it secure and confidential.
-![](https://main.qcloudimg.com/raw/bd17f818ebf4c3910324d3594eb9438d.png)
+![](https://main.qcloudimg.com/raw/00cad6ffb082b257a84d174a7a820e5f.png)
 
 If the selected authentication method is IoT TID authentication, you can configure an allowlist to specify whether to support device precreation.
-![](https://main.qcloudimg.com/raw/fd1915050abb1d7c6ac7c7c05e24f8a0.png)
+
 >?After allowlist authentication is enabled, the device must carry the `DeviceName` in the precreation allowlist for IoT TID authentication; otherwise, the authentication will fail. If the allowlist is not enabled, the platform will automatically create a device according to the `DeviceName` carried for device authentication but will not create the device again if it has already been created. Allowlist authentication is disabled by default.
 
 
@@ -60,9 +60,9 @@ If the selected authentication method is IoT TID authentication, you can configu
 1. Click **Batch Add** on the **Devices** tab.
 2. There are two batch adding methods: **Auto-generate** and **Upload**.
     - Auto-generate: set the desired number of devices, and the console will generate the same number of devices. In this case, a device name is a combination of 18 uppercase and lowercase letters and digits.
-![](https://main.qcloudimg.com/raw/b136ebbbca0b080b831cd32c6b827b2d.png)
+![](https://main.qcloudimg.com/raw/b7fc9b3eae7e125f59172e955775b90f.png)
     - Upload: upload a CSV file of device names, and IoT Hub will create devices according to the device names in the CSV file.
-![](https://main.qcloudimg.com/raw/347ee929ec450821f250d29db5c055a8.png)
+![](https://main.qcloudimg.com/raw/86bbdf369bb119f45f6b9aedd3c6cf6a.png)
 3. After the devices are added successfully, you can view the execution status on the **Result** page and download the device certificate/key file. You can also view and download the corresponding information and file in **Batch Management**.
 
 >?

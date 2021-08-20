@@ -7,11 +7,11 @@ Currently, IoT Hub provides the following five types of monitoring statistics.
 
 #### Device connection statistics
 Device connection statistics are used to monitor device connection.
-![](https://main.qcloudimg.com/raw/30e002e9d58c687484e29d0f11f400f9.png)
+![](https://main.qcloudimg.com/raw/9c06aab448d9a4006351089411a21675.png)
 
 #### Device message statistics
 Device message statistics include the numbers of sent and received messages, failed messages, and billable messages.
-![](https://main.qcloudimg.com/raw/267302cdb6955400b387d1591557651b.png)
+![](https://main.qcloudimg.com/raw/91a4d255ac5fa9793d6c8654427273c4.png)
 
 - Upstream Messages: number of messages published by the device or by the application through TencentCloud API.
 - Downstream Messages: number of messages transferred to the device by IoT Hub (messages subscribed to by the device).
@@ -22,37 +22,37 @@ Device message statistics include the numbers of sent and received messages, fai
 
 #### Device shadow update statistics
 Device shadow update statistics include the numbers of active device shadow updates and failed updates.
-![](https://main.qcloudimg.com/raw/321b82e2feb85e6841a805cea6b82122.png)
+![](https://main.qcloudimg.com/raw/4253b6ce8f6e897952e2c0a259a41159.png)
 
 #### Rule engine statistics
 Rule engine statistics include the numbers of times messages hit the rule engine and messages are forwarded to other services.
-![](https://main.qcloudimg.com/raw/62a28d7b7d90579a2b828e7326f03945.png)
+![](https://main.qcloudimg.com/raw/adebbf431e816a72620f221e8ed40cb8.png)
 
 #### Firmware statistics
 Firmware statistics include device version distribution and firmware version capacity statistics.
-![](https://main.qcloudimg.com/raw/1592e5d694e8f9725ff58fc15712e344.png)
+![](https://main.qcloudimg.com/raw/37f7023943bd4f5d0c9b67176aab5aa9.png)
 
 
 ## Product-Level Monitoring
 Status monitoring supports not only global monitoring but also product-level monitoring. You can search for desired product data by product name.
-![](https://main.qcloudimg.com/raw/585dbe33bbf9d2b08c2d3c31bff1ba73.png)
+![](https://main.qcloudimg.com/raw/e2e66b91e6253e8bfa56050597f98ae1.png)
 >!You can view the firmware statistics only after specifying a product.
 
 ## Search by Time
 For status monitoring, you can select a time range to view data, including the last day, last 7 days, last 15 days, last 30 days, and custom time range.
-![](https://main.qcloudimg.com/raw/3804a7e2d2373f7e2dbea04f8a88b6be.png)
+![](https://main.qcloudimg.com/raw/710650213ce16897dea515287497b894.png)
 
 ## Data Point at Selected Time Granularity
 
 In status monitoring, each displayed point is counted based on the selected time granularity. For the number of connected devices, the value displayed by a single point is the peak value over the selected time granularity. For other types, the value displayed by a single point is the sum calculated for the selected time granularity.
-![](https://main.qcloudimg.com/raw/737225807bc714eef478833d255acbda.png)
+![](https://main.qcloudimg.com/raw/800f659513c0d026523541240c96b91a.png)
 
 ## Zoom and Aggregation
 
 The monitoring sequence diagram also supports zoom and aggregation. You can select a start time on it, hold down the mouse button, and drag the cursor to the position of the desired end time to view the monitoring data in the time period.
-![](https://main.qcloudimg.com/raw/590edc9f8660b19250ddb1a74bff5f89.png)
+![](https://main.qcloudimg.com/raw/79259c58de8b828d7816234c0d99e028.png)
 The aggregation feature sums the total number in the corresponding data type on the displayed timeline by default and displays it in the top-right corner of the statistics page.
-![](https://main.qcloudimg.com/raw/7bbef3afaea23f0e5949b7d172c6c648.png)
+![](https://main.qcloudimg.com/raw/aaf7b317bcf55926bffd8d19733b02bc.png)
 You can click **Reset** to reset the page zoom.
 
 ## Monitoring and Alarming
@@ -74,9 +74,9 @@ IoT Hub supports setting alarms for the following metrics:
 #### Directions
 
 1. Log in to the IoT Hub console, enter the [Status Monitoring](https://console.cloud.tencent.com/iothub/monitor) page, and click **Alarm Settings** in the top-right corner of the page to enter the alarm settings page.
-![](https://main.qcloudimg.com/raw/dfa92f9c06d217e84d265d4cf8c7aa9b.png)
+![](https://main.qcloudimg.com/raw/1e9b44529830acccf558c3bf5b115f12.png)
 2. On the alarm policy page, click **Create** to enter the policy creation page and set the alarm policy parameters.
-![](https://main.qcloudimg.com/raw/e2d82eda21d3f704650469db2e51512a.png)
+![](https://main.qcloudimg.com/raw/8d97e84c3f0d3453dd35fbf19a8a6f25.png)
  - Policy Name: it can contain letters and underscores.
  - Remarks: it describes the alarm policy and can contain letters and underscores.
  - Policy Type: it is the corresponding alarm policy type of the product. **IoT Hub** > **Status Monitoring** is selected here. 

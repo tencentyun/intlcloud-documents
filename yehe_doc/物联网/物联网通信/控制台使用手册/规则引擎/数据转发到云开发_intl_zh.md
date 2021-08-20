@@ -9,9 +9,9 @@
 2. 进入规则引擎页面，单击需要配置的规则。
 3. 在规则详情页面，单击【添加行为操作】。
 >?第一次使用时会提示用户授权访问云开发，您需单击【立即授权】才能继续创建。
-![](https://main.qcloudimg.com/raw/f088d74df35ed8e4158ad10d7c9d88e7.png)
+![](https://main.qcloudimg.com/raw/f5c5f9efe32682543843e1242eb42b7e.png)
 4. 在弹出的“添加规则”窗口，选择“数据转发到云开发（CloudBase）选项”，选择建立好的环境与函数后，单击【保存】即可。
-![](https://main.qcloudimg.com/raw/04effea4217c3b4c2fdb70aec1fe86da.png)
+
 
 >!目前仅支持数据往云开发中云函数的转发，需先在云开发中建立好开发的环境与云函数，才可对环境与云函数进行选择。
 

@@ -10,6 +10,7 @@ The IoT Hub account must never have used CKafka.
 1. Log in to the [IoT Hub console](https://console.cloud.tencent.com/iotcloud), select **Products** > **Message Queue**, and click **Authorize Access to CKafka**.
 2. After successful authorization, you will be redirected to the message queue configuration page.
 
+
 ### Configuring message queue
 #### Configuring push type
 1. On the message queue configuration page, select the message type as needed. CKafka has the following two message types.
@@ -19,8 +20,8 @@ The IoT Hub account must never have used CKafka.
 3. A confirmation window will pop up. After you click **Confirm**, IoT Hub will immediately push the selected type of messages to the selected topic.
 
 >! 
->- The message type cannot be empty.
->- The modified message type cannot be the same as the last configured one.
+- The message type cannot be empty.
+- The modified message type cannot be the same as the last configured one.
 
  
 

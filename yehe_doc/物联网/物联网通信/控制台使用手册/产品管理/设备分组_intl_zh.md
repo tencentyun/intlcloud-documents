@@ -16,7 +16,7 @@
  - 所属分组： 分组层级无限制 ，1个分组下最多不超过100个子分组。 
  - 分组名称：支持中文、英文字符，数字和下划线，长度4 - 30。 
  - 分组描述：不超过255个字符。
-![](https://main.qcloudimg.com/raw/4a77727e6d993a285557e03bfd140a3d.png)
+![](https://main.qcloudimg.com/raw/822eff73b1d905374a22d5fc4777f071.png)
 4. 单击【确定】，即可创建设备分组。
 
 
@@ -38,7 +38,7 @@
 1. 登录 [物联网通信控制台](https://console.cloud.tencent.com/iotcloud)。
 2. 单击分组名称，进入分组管理页面，即可对设备列表进行管理。
 3. 添加设备到分组，单击设备列表下的【添加设备到分组】，您可根据产品、设备名称搜索设备，选定不同的设备添加到分组中。
-![](https://main.qcloudimg.com/raw/f6d0131aa80e47e86478981c73469bdf.png)
+![](https://main.qcloudimg.com/raw/40dc34c9452ab5565dc83c66a45b7f39.png)
 4. 设备列表展示该分组（floor1）下的设备信息，包括：设备名称、状态、所属产品、最后上线时间和操作。
  - 设备名称：devicename。
  - 状态：设备的在线/离线状态。
@@ -49,4 +49,4 @@
 5. 子分组列表管理，您可以在任意分组下添加、删除子分组。单击分组名称，进入分组管理页面，可以进行子分组列表的管理。
  - 在子分组下，可以和父级分组一样创建子分组，添加设备。
  - 关于分组层级，若该分组为1级分组，只展示1级分组名称，若为 n 级分组，则展示 n 级分组的名称，例如：group1，group1/group2.../groupn。
-![](https://main.qcloudimg.com/raw/4f3a02d880a443e0a7e40568911e0765.png)
+![](https://main.qcloudimg.com/raw/1bea0d0fb73de0ffecc7a5b9bede8471.png)

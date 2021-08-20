@@ -17,7 +17,7 @@
  - 选择行为类型为“forward”。
  - 填写您的 HTTP 或 HTTPS 服务地址。物联网通信平台会将设备上报的数据转发至 HTTP 或 HTTPS 服务地址。
  - 请勾选 “增加鉴权 Token”，且填写您的服务对应的 Token；您可以任意填写 Token，用作生成签名（该 Token 会和接口 URL 中包含的 Token 进行比对，从而验证安全性）。
-   ![](https://main.qcloudimg.com/raw/5a1bfa2f0491b073d4b7218bc96db16c.jpg)
+   ![](https://main.qcloudimg.com/raw/c052c2aa73d7d31c61e6de3f1d4fc145.png)
 
 
 ## 验证消息来自物联网通信平台

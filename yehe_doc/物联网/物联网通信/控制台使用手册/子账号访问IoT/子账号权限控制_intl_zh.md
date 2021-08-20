@@ -9,10 +9,10 @@
 1. 登录腾讯云 [访问管理控制台](https://console.cloud.tencent.com/cam)，单击左侧菜单栏【策略】。
 2. 进入策略管理页面，单击【新建自定义策略】。
 3. 在弹出选择创建策略方式页面，选择【按策略语法创建】。
-![](https://main.qcloudimg.com/raw/889c0de667919555cdcfd732f2f4ddc3.jpg)
+![](https://main.qcloudimg.com/raw/417747f9bf3cc6fb17e54a8491554a23.png)
 4. 选择“空白模版”，单击【下一步】。
 5. 填写自定义策略名称，并按照策略模版编辑策略内容。示例代码如下：
-![](https://main.qcloudimg.com/raw/7986d9af51b99b673b0ec282073f97e5.png)
+![](https://main.qcloudimg.com/raw/3377d8e25ceb8d83260d35e5daad7e0d.png)
 ```
 {
         "version": "2.0",
@@ -88,26 +88,26 @@
 ### 创建设备标签
 
 1. 进入[物联网通信控制台](https://console.cloud.tencent.com/iothub)，进入产品信息界面。若未添加产品与设备，需先进行添加操作，操作步骤详情请参见 [设备接入准备](https://intl.cloud.tencent.com/document/product/1105/41476)。
-![](https://main.qcloudimg.com/raw/2da80b624d44411791cdefebeed886b7.png)
+![](https://main.qcloudimg.com/raw/1aa518ea3871fe13db16a69494041dc7.png)
 2. 单击“设备信息”页面的“标签信息”，单击【点击添加】按钮，填写 key 和 value 等信息进行设备标签添加。
-![](https://main.qcloudimg.com/raw/b93814f7451a9104cf51930bbb0aa1e8.jpg)
+![](https://main.qcloudimg.com/raw/55e9cfae204600c3e4b8dda4029ef701.png)
  - 标签 key：支持英文、数字、下划线的组合，最多不超过16个字符。
  - 标签 value：支持英文、数字、下划线的组合，最多不超过16个字符。
 3. 编辑完成后单击【确认】，即完成对“标签信息”的添加，设备信息中讲会展示相应的标签内容。
-![](https://main.qcloudimg.com/raw/b25a22eb62fea38ee16c0093c1d0301d.png)
+![](https://main.qcloudimg.com/raw/39a2ec149daadab1711703c03ffc6941.png)
 
 ### 创建策略与关联策略
 
 1. 登录腾讯云 [访问管理控制台](https://console.cloud.tencent.com/cam)，单击左侧菜单栏【策略】。
 2. 进入策略管理页面，单击【新建自定义策略】。
 3. 在弹出选择创建策略方式页面，选择【按标签授权】。
-![](https://main.qcloudimg.com/raw/781562232406149f00268c290781b542.jpg)
+![](https://main.qcloudimg.com/raw/1ddc2c5f8776da4f76262fc6fc18fc57.png)
 4. 选择用户或用户组以及标签键与标签值。
 >说明：单个设备可支持输入多个标签，且设备与设备之间标签键与标签值不唯一。选择资源时可选中多个标签键和标签值，也可选择其中一组标签键和标签值去分配资源。一组标签键与标签值可以分配一个或多个设备资源给到子用户。
 >
-![](https://main.qcloudimg.com/raw/cf08b065550ba872162371c411e8565e.png)
+![](https://main.qcloudimg.com/raw/6ffc27237ae6453035b69a8277fd99a3.png)
 5. 选中之后单击【下一步】进入检查页面。
-![](https://main.qcloudimg.com/raw/874209a783e39f3fce389e4408d79062.png)
+![](https://main.qcloudimg.com/raw/4d4f5321e1c0e962c5c9d61513046b8a.png)
 
 其中策略名称与策略信息内容可更改，确认无误后，单击【完成】即可完成策略的创建和策略的关联。
 6. 由于物联网通信控制台的限制，设备资源被分配给子用户之后，子用户需获取到产品列表和设备列表信息才可进入设备信息界面，对授权的设备资源进行查看。因此，需要对产品列表和设备列表进行授权，可按照创建策略语法方式完成产品列表和设备列表信息的授权，授权代码如下：
@@ -127,9 +127,9 @@
 }
 ```
 7. 操作完成之后，被授权的子用户即可在控制台对相应的设备资源进行管理操作。
-![](https://main.qcloudimg.com/raw/e43816c166662523a75ca04eddec7420.png)
+![](https://main.qcloudimg.com/raw/f8bb1dd19ae56ac5394c345a8bab3e44.png)
 而未被授予的设备资源将无法查看。
-![](https://main.qcloudimg.com/raw/75dfa12764c33353bb2195d2f544653d.png)
+![](https://main.qcloudimg.com/raw/3d0b9a54b247a0a48442f810a2d1f521.jpg)
 
 
 

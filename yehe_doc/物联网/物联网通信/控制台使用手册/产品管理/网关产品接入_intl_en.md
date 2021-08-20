@@ -12,14 +12,14 @@ You have created a [gateway product](https://intl.cloud.tencent.com/document/pro
 
 1. Log in to the [IoT Hub console](https://console.cloud.tencent.com/iotcloud) and click **Products** on the left sidebar to enter the product list page.
 2. Click the selected **product name** to enter the product details page. Click **Devices** and select **Subdevice** to enter the subdevice page.
-![](https://main.qcloudimg.com/raw/6a3a98c42c4e44980e26cc71efba02bf.jpg)
+![](https://main.qcloudimg.com/raw/5cc131c103bbc886214411ee5a166a86.png)
 3. Click **Add Subdevice**, select a product, select the subdevice to be bound to it, and click **Add**.
-![](https://main.qcloudimg.com/raw/edcadfd096df48fa01ab0819cac1e597.jpg)
+![](https://main.qcloudimg.com/raw/879f2e939804111b2ba8f05e3fdd3412.png)
 
 ### Unbinding subdevice
 
 Select the corresponding product on the subdevice page, select the subdevice bound to it, and click **Unbind**.
-![](https://main.qcloudimg.com/raw/ee5dbd786d735e505443cd9ee9a44959.jpg)
+![](https://main.qcloudimg.com/raw/f5a6f9033db5dba6825716f781ec9d48.png)
 
 
 

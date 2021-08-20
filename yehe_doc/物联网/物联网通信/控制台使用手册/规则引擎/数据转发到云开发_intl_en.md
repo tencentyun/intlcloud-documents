@@ -9,9 +9,9 @@ The figure below shows the entire process of forwarding data to TCB by the rule 
 2. Go to the rule engine page and click the rule to be configured.
 3. On the rule details page, click **Add Action**.
 >?You will be prompted to authorize access to TCB upon the first use. You need to click **Authorize Now** before you can proceed.
-![](https://main.qcloudimg.com/raw/f088d74df35ed8e4158ad10d7c9d88e7.png)
+![](https://main.qcloudimg.com/raw/f5c5f9efe32682543843e1242eb42b7e.png)
 4. In the **Add Action** pop-up window, select **Forward data to Tencent CloudBase**, environment, and function and click **Save**.
-![](https://main.qcloudimg.com/raw/04effea4217c3b4c2fdb70aec1fe86da.png)
+
 
 >!Currently, data can be forwarded only to functions in TCB. You need to create a development environment and function in TCB before you can select them here.
 

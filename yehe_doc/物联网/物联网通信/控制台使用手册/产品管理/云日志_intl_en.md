@@ -17,15 +17,15 @@ In the log search box, you can filter the logs to be queried. When you need to f
 
 ### Behavior logs
 You can search for logs of all communication behaviors between a device and the cloud, including device connection, disconnection, publishing, and subscribing.
-![](https://main.qcloudimg.com/raw/68af0d73a4ef35455c6a57e011741e7c.jpg)
+![](https://main.qcloudimg.com/raw/b3b6fd1ae47e0ac174defb9317a77a9d.png)
 
 ### Content logs
 You can search for detailed logs of communication content between a device and the cloud.
-![](https://main.qcloudimg.com/raw/a2f0053f81498808793e1740b136f656.jpg)
+![](https://main.qcloudimg.com/raw/aa083f6fd7798bc8cc531539311a9557.png)
 
 ### Device logs
 Device logs display device information at four levels: ERROR, WARN, INFO, and DEBUG. You can enable/configure device log collection on the device details page.
-![](https://main.qcloudimg.com/raw/4a9973242b94b13743bd41cf108d1f72.jpg)
+![](https://main.qcloudimg.com/raw/56070913c36a631da3a37550ddf60fba.png)
 
 
 
@@ -39,4 +39,4 @@ By configuring CLS, you can dump cloud log data to CLS for permanent storage and
 >!Access to the following services requires authorization and may incur fees.
 >
 During the initial configuration, click **Configure** > **Authorize** to enter the role page in CAM and click **Authorize**.
-![](https://main.qcloudimg.com/raw/0763a4d32c31a8b0d8487d1d19f06619.jpg)
+![](https://main.qcloudimg.com/raw/ff3c65ee65376fced87fc4435d4e1a7f.png)

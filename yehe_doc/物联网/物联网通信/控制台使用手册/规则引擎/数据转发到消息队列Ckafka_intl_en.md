@@ -9,9 +9,9 @@ The figure below shows the entire process of forwarding data to CKafka by the ru
 2. Go to the rule engine page and click the rule to be configured.
 3. On the rule details page, click **Add Action**.
 >?You will be prompted to authorize access to CKafka upon the first use. You need to click **Authorize Access to CKafka** before you can proceed.
-![](https://main.qcloudimg.com/raw/d4a20c9118f9989dba7064d13a4e836e.png)
+![](https://main.qcloudimg.com/raw/423cb89cf4d936e381146737690df679.png)
 4. In the pop-up **Add Action** window, select **Forward data to CKafka**, CKafka instance, and topic and click **Save**.
-![avatar](https://main.qcloudimg.com/raw/b2f2b7e9da1d69b98762e28718afbd14.png) 
+![avatar](https://main.qcloudimg.com/raw/cc5ae9772bda65cfdcb3d23a6caed984.png) 
 5. After the above configuration is completed, IoT Hub will forward eligible data reported by devices to the configured CKafka instance. You can refer to [Process Overview](https://intl.cloud.tencent.com/document/product/597/40039) to read and process the data on your own application server.
 
 

@@ -3,7 +3,7 @@
 
 
 将 Topic 为`E23VBC3GE8/device_02/event`中的 JSON 消息的`action targetDevice count`三个字段提取出来，再通过`count <=3`对数据进行过滤，得到最终处理过的数据，用于下一步数据转发。下图中示例表达的规则：
-![](https://main.qcloudimg.com/raw/ad88244868f27cb44d47d65c49227e36.png)
+![](https://main.qcloudimg.com/raw/b410d3b12e18d8b468ee4382a4993a31.png)
 
 ## 行为 Action
 当从 Topic 提取到了感兴趣的字段后，就要考虑对其进行一些操作，例如，转发或者存储等。目前支持的操作有：

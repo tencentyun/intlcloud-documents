@@ -9,16 +9,16 @@
 2. 进入规则引擎页面，通过单击“规则名称”选择需要配置的规则。
 3. 在规则详情页面，单击【添加行为操作】。
 >?第一次使用时会提示用户授权访问 MongoDB，您需单击【立即授权】才能继续创建。
-![](https://main.qcloudimg.com/raw/e8a768ff185aafebf79b63db710bccc9.jpg)
+![](https://main.qcloudimg.com/raw/0cd34cdaa86912986c08f9a04bd71603.png)
 4. 进入新增行为页面，选择“数据转发到云数据库（MongoDB）选项”。
-![](https://main.qcloudimg.com/raw/c4be9f3dfa1ec60dad5a9246db29f40d.jpg)
+![](https://main.qcloudimg.com/raw/51475f6b6240022cc2102bcd4995821a.png)
 5. 授权成功之后，需要配置 MongoDB 实例信息，如下图所示，配置分为如下几个步骤：
     1. 选择地区和 MongoDB 实例。如果账号下还没有实例，单击【创建实例】跳转到 MongoDB 控制台创建一个。
     2. 输入 MongoDB 实例的用户名，MongoDB 官网默认 mongouser。     
     3. 输入 MongoDB 实例的登录密码。
     4. 输入要写入的数据库名。
     5. 输入要写入的集合名。
-![](https://main.qcloudimg.com/raw/5afe47d64dac569a759a69dc9c02fbd5.jpg)
+![](https://main.qcloudimg.com/raw/f3d6b1d1fe23452af3a4a8914d10564d.png)
 
 ## 重发机制
 

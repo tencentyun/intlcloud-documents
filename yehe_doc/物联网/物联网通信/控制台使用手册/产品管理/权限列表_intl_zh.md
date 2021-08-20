@@ -10,11 +10,11 @@
  - 操作名称：名称命名支持字母、数字、下划线组合；不同层级之间用/分层+表示一级，使用/+/命名，不能/+aaa/；长度限制为1 - 64位。
  - 操作权限：可选择“订阅”、“发布”或“订阅和发布”，可修改。
 
-![](https://main.qcloudimg.com/raw/cb2242ea67dfa6477260632caed4d08b.png)
+![](https://main.qcloudimg.com/raw/c9e278edaee979ca86edb6a76a1cb0ba.png)
 
 ### 编辑 Topic 权限
 通过单击 Topic 权限列表的【编辑】，即可修改相应 Topic 权限的名称和权限。
-![](https://main.qcloudimg.com/raw/f9e7953c8b2fb87e53f1c06365a6acea.png)
+![](https://main.qcloudimg.com/raw/8664a41d62adc40f8afeb3c701ae99ac.png)
 
 ### 删除 Topic 权限
 通过单击 Topic 权限列表的【删除】，即可删除相应的 Topic 权限。
