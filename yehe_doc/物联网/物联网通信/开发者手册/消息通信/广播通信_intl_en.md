@@ -120,7 +120,7 @@ DBG|2020-08-03 22:51:25|broadcast.c|_broadcast_event_callback(37): broadcast top
 #### 4. Call TencentCloud API `PublishBroadcastMessage` to send a broadcast message
 
 Go to [API Explorer](https://console.cloud.tencent.com/api/explorer?Product=iotcloud&Version=2018-06-14&Action=PublishBroadcastMessage&SignVersion=), enter the personal key and device parameter information, select **Online Call**, and send the request.
-![](https://main.qcloudimg.com/raw/aa3a24d1d97f8533f6d76ecc06b96288.png)
+
 
 #### 5. Observe the message reception of the air conditioners
 
