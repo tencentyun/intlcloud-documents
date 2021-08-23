@@ -127,13 +127,6 @@
 <td>用于解锁移动直播基础版 SDK 在 iOS 和 Android 上的使用权限，联系商务购买移动直播 SDK License 使用授权。</td>
 <td><a href="https://intl.cloud.tencent.com/contact-us">联系商务</a></td>
 </tr><tr>
-<td colspan=2>移动直播连麦</td>
-<td><li>移动直播连麦需先购买<b>正式版连麦</b>开通连麦互动服务。</li><li>直播连麦产生的服务费用<b>按连麦时长计费</b>。</li></td>
-<td>
-<li>后付费-日结</li>
-<li/>后付费-月结
-</td>
-</tr>
 <tr><td colspan=2>拉流转推</td>
 <td>拉流转推任务按任务时长计费。</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/267/41059">后付费-日结</a>
