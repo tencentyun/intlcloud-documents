@@ -1,11 +1,11 @@
 ## 1. 마이그레이션 툴 다운로드  
  - 마이그레이션 툴 압축 패키지 [클릭하여 가져오기](https://go2tencentcloud-1251783334.cos.ap-guangzhou.myqcloud.com/latest/go2tencentcloud.zip)
 
-##2. 인터넷 환경에 따라 마이그레이션 시나리오 확정
+## 2. 인터넷 환경에 따라 마이그레이션 시나리오 확정
 소스 서버와 타깃 CVM의 네트워크 환경에 따라 적합한 이전 모델을 결정하십시오.
 현재 마이그레이션 툴은 기본 모드와 내부 네트워크 마이그레이션 모드를 지원합니다. 내부 마이그레이션 모드는 3가지 시나리오로 나뉘며, 마이그레이션 모드/시나리오에 따라 소스 서버와 타깃 CMV에 대한 네트워크 요구 조건이 다릅니다. 소스 서버와 타깃 CVM이 모두 공용 네트워크로 액세스할 수 있는 경우 직접 기본 모드를 사용해 마이그레이션할 수 있으며, 소스 서버와 타깃 CVM 중 하나라도 공용 네트워크로 직접 액세스할 수 없는 경우 먼저 [VPC 피어링 연결](https://intl.cloud.tencent.com/document/product/553), [VPN 연결](https://intl.cloud.tencent.com/document/product/1037), [Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003) 또는 [Direct Connect](https://intl.cloud.tencent.com/document/product/216) 등의 방법으로 연결 터널을 구축한 후 내부 네트워크 모드로 마이그레이션합니다.
 
-##3. 데이터 백업
+## 3. 데이터 백업
 - 소스 서버: 클론 또는 기타 방법으로 가상 머신 데이터를 백업할 수 있습니다.
 - 타깃 CVM：[스냅샷 생성](https://intl.cloud.tencent.com/document/product/362/5755) 등의 방식을 선택해 데이터를 백업할 수 있습니다.
 
