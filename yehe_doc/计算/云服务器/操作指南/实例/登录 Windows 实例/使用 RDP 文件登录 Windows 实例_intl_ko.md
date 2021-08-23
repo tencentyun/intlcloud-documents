@@ -19,16 +19,16 @@ Windows, Linux 및 Mac OS 모두 RDP 방식을 사용하여 CVM에 로그인할 
 2. 아래 이미지를 참고하여 인스턴스의 관리 페이지에서 로그인이 필요한 Windows CVM을 선택하고 [로그인]을 클릭합니다.
 ![](https://main.qcloudimg.com/raw/e7b1192332a116edca67425a301236be.png)
 3. [Windows 인스턴스 로그인] 팝업 창에서 [RDP를 사용하여 파일 로그인]을 선택하고 [RDP 파일 다운로드]를 클릭하여 RDP 파일을 로컬 컴퓨터에 다운로드합니다.
->? 원격 로그인 포트를 수정했다면 RDP 파일을 수정하고 IP 주소 뒤에 `:port`를 추가해야 합니다.
->
+<dx-alert infotype="explain"> 원격 로그인 포트를 수정했다면 RDP 파일을 수정하고 IP 주소 뒤에 `:port`를 추가해야 합니다.
+</dx-alert>
 ![](https://main.qcloudimg.com/raw/0b0076390b95da3885c8967093683975.png)
 4. 로컬에 다운로드받은 RDP 파일을 더블 클릭하여 비밀번호를 입력하고 [확인]을 클릭하면 바로 Windows CVM과 원격으로 연결됩니다.
  - 시스템 기본 설정 비밀번호로 인스턴스에 로그인할 경우, [내부 메시지](https://console.cloud.tencent.com/message)로 접속하여 획득 바랍니다.
  - 비밀번호를 잊으신 경우, [인스턴스 비밀번호 재설정](https://intl.cloud.tencent.com/document/product/213/16566)하시기 바랍니다.
 :::
 ::: Linux\s 시스템은 \sRDP\s를 사용하여 로그인[](id:LinuxRDP)
->?해당 원격 데스크탑을 설치하여 프로그램에 연결해야 하며, rdesktop 사용을 권장합니다. 자세한 내용은 [rdesktop 공식 안내](http://www.rdesktop.org/)를 참고 바랍니다.
->
+<dx-alert infotype="explain"> 해당 원격 데스크탑을 설치하여 프로그램에 연결해야 하며, rdesktop 사용을 권장합니다. 자세한 내용은 [rdesktop 공식 안내](http://www.rdesktop.org/)를 참고 바랍니다.
+</dx-alert>
 1. 다음 명령어를 실행하여 시스템에 rdesktop이 설치되어 있는지 확인합니다.
 ```
 rdesktop
@@ -49,8 +49,8 @@ make
 make install
 ```
 4. [](id:step04)다음 명령어를 실행하여 원격 Windows 인스턴스에 연결합니다.</span>
->? 예시의 매개변수를 사용자 본인의 매개변수로 수정하십시오.
->
+<dx-alert infotype="explain">예시의 매개변수를 사용자 본인의 매개변수로 수정하십시오.
+</dx-alert>
 ```
 rdesktop -u Administrator -p <your-password> <hostname or IP address>
 ```
@@ -60,10 +60,10 @@ rdesktop -u Administrator -p <your-password> <hostname or IP address>
  - `&lt;hostname or IP address&gt;`는 Windows 인스턴스의 공용 IP 또는 사용자 정의 도메인입니다. 인스턴스 공용 IP 주소 가져오기는 [공용망IP주소 읽어오기](https://intl.cloud.tencent.com/document/product/213/17940)를 참고하십시오.
 :::
 ::: MacOS\s 시스템은 \sRDP\s를 사용하여 로그인[](id:MacRDP)
->?
->- 이하 작업은 Microsoft Remote Desktop for Mac 기준 예시입니다. Microsoft는 2017년에 Remote Desktop 클라이언트의 다운로드 링크 제공을 중단하였고, 자회사인 HockeyApp에서 Beta 버전을 배포하고 있습니다. [Microsoft Remote Desktop Beta](https://install.appcenter.ms/orgs/rdmacios-k2vy/apps/microsoft-remote-desktop-for-mac/distribution_groups/all-users-of-microsoft-remote-desktop-for-mac)에서 Beta 버전을 다운로드 받으실 수 있습니다.
->- 다음의 작업은 Windows Server 2012 R2 운영 체제의 CVM을 예시로 사용합니다.
->
+<dx-alert infotype="explain">
+<li>이하 작업은 Microsoft Remote Desktop for Mac 기준 예시입니다. Microsoft는 2017년에 Remote Desktop 클라이언트의 다운로드 링크 제공을 중단하였고, 자회사인 HockeyApp에서 Beta 버전을 배포하고 있습니다. [Microsoft Remote Desktop Beta](https://install.appcenter.ms/orgs/rdmacios-k2vy/apps/microsoft-remote-desktop-for-mac/distribution_groups/all-users-of-microsoft-remote-desktop-for-mac)에서 Beta 버전을 다운로드 받으실 수 있습니다.</li>
+<li>다음의 작업은 Windows Server 2012 R2 운영 체제의 CVM을 예시로 사용합니다.</li>
+</dx-alert>
 1. Microsoft Remote Desktop for Mac을 다운로드하여 로컬에 설치합니다.
 2. 아래 이미지와 같이 MRD를 실행하고 [Add Desktop]을 클릭합니다.
 ![](https://main.qcloudimg.com/raw/e69528d10e9a17dfa26119a090766c49.png)
