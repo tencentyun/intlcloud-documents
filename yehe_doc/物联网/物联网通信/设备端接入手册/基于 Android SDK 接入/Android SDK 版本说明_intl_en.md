@@ -4,7 +4,6 @@
 ### Code Hosting
 
 The code of the device SDK for Android has been hosted on [GitHub](https://github.com/tencentyun/iot-device-java/tree/master/hub/hub-device-android) since v1.0.0.
-) 托管。
 
 
 ### Version Information

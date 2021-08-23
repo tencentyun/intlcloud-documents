@@ -33,9 +33,9 @@ cmake ..
      └── internal_inc
 ```
 >?
- - `include` directory: contains the SDK APIs and variable parameters, where `config.h` is the compilation macros generated according to the compilation options. For more information, please see [API and Variable Parameter Description](https://intl.cloud.tencent.com/document/product/1105/41853).
- - `platform` directory: contains platform-related code, which can be modified and adapted according to the specific conditions of the device. For more information on functions, please see [Overview](https://intl.cloud.tencent.com/document/product/1105/41844).
- - `sdk_src` directory: contains the SDK core logic and protocol-related code, which generally don't need to be modified, where `internal_inc` is the header file used internally by the SDK.
+> - `include` directory: contains the SDK APIs and variable parameters, where `config.h` is the compilation macros generated according to the compilation options. For more information, please see [API and Variable Parameter Description](https://intl.cloud.tencent.com/document/product/1105/41853).
+> - `platform` directory: contains platform-related code, which can be modified and adapted according to the specific conditions of the device. For more information on functions, please see [Overview](https://intl.cloud.tencent.com/document/product/1105/41844).
+> - `sdk_src` directory: contains the SDK core logic and protocol-related code, which generally don't need to be modified, where `internal_inc` is the header file used internally by the SDK.
 4. You can copy `qcloud_iot_c_sdk` to the compilation and development environment of your target platform and then modify the compilation options as needed.
 
 

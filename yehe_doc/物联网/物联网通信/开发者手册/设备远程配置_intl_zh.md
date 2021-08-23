@@ -10,8 +10,8 @@
 - 远程配置订阅 Topic：`$config/operation/result/${productid}/${devicename}`
 
 >?   
-- `${productID}`：产品 ID。
--  `${deviceName}`：设备名称。
+>- `${productID}`：产品 ID。
+>-  `${deviceName}`：设备名称。
 
 ### 物联网平台主动下发
 

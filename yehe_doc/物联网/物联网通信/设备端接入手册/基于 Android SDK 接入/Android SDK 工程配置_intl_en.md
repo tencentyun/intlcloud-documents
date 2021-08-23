@@ -16,8 +16,8 @@ dependencies {
 >?
 >
 >- You can set the above x.x.x to the latest version according to [SDK for Android Release Notes](https://intl.cloud.tencent.com/document/product/1105/41855).
-- If you don't need to run the IoT Hub SDK in the service component, only dependency on `iot_core` is required.
-- If you need to run the IoT Hub SDK in the service component, only dependency on `iot_service` is required.
+>- If you don't need to run the IoT Hub SDK in the service component, only dependency on `iot_core` is required.
+>- If you need to run the IoT Hub SDK in the service component, only dependency on `iot_service` is required.
 >
 
  - Depend on the local SDK source code for build:

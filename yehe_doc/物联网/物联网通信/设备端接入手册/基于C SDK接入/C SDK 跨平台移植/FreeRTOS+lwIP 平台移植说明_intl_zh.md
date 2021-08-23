@@ -33,9 +33,9 @@ cmake ..
      └── internal_inc
 ```
 >?
- - include 目录：SDK 供用户使用的 API 及可变参数，其中 config.h 为根据编译选项生成的编译宏。API 具体介绍请参考 [接口及可变参数说明](https://intl.cloud.tencent.com/document/product/1105/41853)。
- - platform目录：平台相关的代码，可根据设备的具体情况进行修改适配。具体的函数说明请参考[ C-SDK_Porting跨平台移植概述](https://intl.cloud.tencent.com/document/product/1105/41844)。
- - sdk_src：SDK 的核心逻辑及协议相关代码，一般不需要修改，其中 internal_inc 为 SDK 内部使用的头文件。
+> - include 目录：SDK 供用户使用的 API 及可变参数，其中 config.h 为根据编译选项生成的编译宏。API 具体介绍请参考 [接口及可变参数说明](https://intl.cloud.tencent.com/document/product/1105/41853)。
+> - platform目录：平台相关的代码，可根据设备的具体情况进行修改适配。具体的函数说明请参考[ C-SDK_Porting跨平台移植概述](https://intl.cloud.tencent.com/document/product/1105/41844)。
+> - sdk_src：SDK 的核心逻辑及协议相关代码，一般不需要修改，其中 internal_inc 为 SDK 内部使用的头文件。
 4. 用户可将 qcloud_iot_c_sdk 拷贝到其目标平台的编译开发环境，并根据具体情况修改编译选项。
 
 
