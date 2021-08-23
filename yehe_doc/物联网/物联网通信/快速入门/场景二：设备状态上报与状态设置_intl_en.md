@@ -80,7 +80,7 @@ private static final String DEVICE_KEY_NAME = "YOUR_DEVICE_NAME_private.key";
 4. For more information on the operations of the RESTful APIs, please see [Publishing target temperature configuration](https://intl.cloud.tencent.com/document/product/1105/41468) or [Querying and getting device information](https://intl.cloud.tencent.com/document/product/1105/41468).
 
 ### Publishing target temperature configuration
-Call the RESTful API [UpdateDeviceShadow](https://cloud.tencent.com/document/product/634/12055) to simulate the home appliance management backend and publish the target temperature configuration.
+Call the RESTful API UpdateDeviceShadow to simulate the home appliance management backend and publish the target temperature configuration.
 The RESTful API request parameter is: `deviceName=airConditioner1, state={"desired" : {"temperatureDesire": 10}}, productName=AirConditioner`, which adjusts the control temperature to 10°C.
 
 
