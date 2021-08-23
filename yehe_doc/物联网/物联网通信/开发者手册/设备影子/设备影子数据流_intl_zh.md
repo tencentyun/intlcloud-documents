@@ -1,4 +1,3 @@
-
 ## 设备影子 Topic
 
 设备影子充当中介，支持设备和用户应用程序查看和更新设备状态。设备、用户应用程序、设备影子三者之间通过两个特殊的 Topic 来实现通信：
@@ -14,7 +13,7 @@
 
 ## 设备获取影子状态
 
-如果设备想要获取设备影子最近的状态时，需要向 ```$shadow/operation/${productId}/${deviceName}``` 主题发布 get 消息。SDK 会提供 API 发送 get 消息，get 消息使用特定的 JSON 字符串格式：
+如果设备想要获取设备影子最近的状态时，需要向 `$shadow/operation/${productId}/${deviceName}` 主题发布 get 消息。SDK 会提供 API 发送 get 消息，get 消息使用特定的 JSON 字符串格式：
 
 ```
 {
@@ -25,12 +24,11 @@
 
 >?clientToken 是用于唯一标识会话业务的 TOKEN ，由请求端生成，应答端原样传回。
 
-例如：空调设备，可以通过 SDK 提供的 API 向 ```$shadow/operation/ABC1234567/AirConditioner``` 发送 get 消息，获取最新的设备参数。
+例如：空调设备，可以通过 SDK 提供的 API 向 `$shadow/operation/ABC1234567/AirConditioner` 发送 get 消息，获取最新的设备参数。
 
-设备影子服务端通过向 ```$shadow/operation/result/${productId}/${deviceName}``` 主题发布消息进行响应，通过 JSON 数据返回设备影子所有数据内容，SDK 会通过相应的回调函数通知业务层。
+设备影子服务端通过向 `$shadow/operation/result/${productId}/${deviceName}` 主题发布消息进行响应，通过 JSON 数据返回设备影子所有数据内容，SDK 会通过相应的回调函数通知业务层。
 
-影子服务端通过向 ```$shadow/operation/result/ABC1234567/AirConditioner``` 发送下列数据来响应空调设备的 get 请求。示例代码如下：
-
+影子服务端通过向 `$shadow/operation/result/ABC1234567/AirConditioner` 发送下列数据来响应空调设备的 get 请求。示例代码如下：
 ```
 {
  "type": "get",
@@ -79,9 +77,9 @@
 
 ## 设备更新影子
 
-设备通过向 ```$shadow/operation/${productId}/${deviceName}``` 主题发送 update 消息，告知设备影子服务端其当前状态。SDK 提供相应的 API 发送 update 消息，业务层只需指定 reported 字段的内容。消息内容使用特定的 JSON 字符串格式。
+设备通过向 `$shadow/operation/${productId}/${deviceName}` 主题发送 update 消息，告知设备影子服务端其当前状态。SDK 提供相应的 API 发送 update 消息，业务层只需指定 reported 字段的内容。消息内容使用特定的 JSON 字符串格式。
 
-空调设备向 ```$shadow/operation/ABC1234567/AirConditioner``` 发送 update 消息以报告设备当前的设备状态。示例代码如下：
+空调设备向 `$shadow/operation/ABC1234567/AirConditioner` 发送 update 消息以报告设备当前的设备状态。示例代码如下：
 
 ```
 {
@@ -124,7 +122,7 @@
 
 ```
 
-如果消息中的 version 与设备影子服务端的 version 不一致，则设备影子服务向 ```$shadow/operation/result/ABC1234567/AirConditioner``` 发送以下消息进行回应。
+如果消息中的 version 与设备影子服务端的 version 不一致，则设备影子服务向 `$shadow/operation/result/ABC1234567/AirConditioner` 发送以下消息进行回应。
 
 ```
 {
@@ -202,7 +200,7 @@
 
 ```
 
-另外，影子服务端通过向 ```$shadow/operation/result/ABC1234567/AirConditioner``` 发送 delta 消息。
+另外，影子服务端通过向 `$shadow/operation/result/ABC1234567/AirConditioner` 发送 delta 消息。
 
 ```
 {
@@ -230,9 +228,9 @@ SDK 通过相应的回调函数通知业务层消息已收到。
 
 ## 设备应答 delta 消息
 
-当设备收到 delta 消息后，业务层可以将 desired 字段内容置空并发送给设备影子服务端，表示设备已经 **响应** 本次 delta 消息，方式是通过向 ```$shadow/operation/${productId}/${deviceName}``` 主题发送消息。
+当设备收到 delta 消息后，业务层可以将 desired 字段内容置空并发送给设备影子服务端，表示设备已经 **响应** 本次 delta 消息，方式是通过向 `$shadow/operation/${productId}/${deviceName}` 主题发送消息。
 
-例如：空调调整温度后，向 ```$shadow/operation/ABC1234567/AirConditioner``` 发送消息：
+例如：空调调整温度后，向 `$shadow/operation/ABC1234567/AirConditioner` 发送消息：
 
 ```
 {
@@ -246,9 +244,9 @@ SDK 通过相应的回调函数通知业务层消息已收到。
 ```
 SDK 提供相应的 API 发送上述消息。当设备影子服务端收到该消息后，会将 desired 字段内容清除，防止由于 reported 与 desired 中属性值不同引起的重复下发。
 
-影子服务端收到消息后，通过向: ```$shadow/operation/result/${productId}/${deviceName}``` 发送应答消息。
+影子服务端收到消息后，通过向: `$shadow/operation/result/${productId}/${deviceName}` 发送应答消息。
 
-例如：影子服务端收到空调的 ```"desired":null``` 消息后，通过向 ```$shadow/operation/result/ABC1234567/AirConditioner``` 发送更新设备影子文档成功的消息。
+例如：影子服务端收到空调的 `"desired":null` 消息后，通过向 `$shadow/operation/result/ABC1234567/AirConditioner` 发送更新设备影子文档成功的消息。
 
 ```
 {
@@ -284,7 +282,3 @@ SDK 提供相应的 API 发送上述消息。当设备影子服务端收到该�
 如果设备 reported 某些属性字段为 null，则代表要将设备影子中相应的字段删除。update 成功时，返回的 payload 内容中，字段仅包含对此次更新字段的相关内容。
 
 如果设备 update 时携带上的 version 值小于服务端上保存的 version 值，则代表设备上的数据是旧的。此时服务端将发送失败消息，其中的返回码（ result 字段）会明确告知 SDK 本次 update 失败，原因是 version 版本过低，同时在 payload 中携带最新的内容一同下发给设备端。
-
-
-
-
