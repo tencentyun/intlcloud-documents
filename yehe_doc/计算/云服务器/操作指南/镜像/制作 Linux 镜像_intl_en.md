@@ -101,7 +101,7 @@ Choose the appropriate image export method as needed.
 
 <span id="Useplatform"></span>
 ::: Using\sa\splatform\stool\sto\sexport\san\simage
-For more information on how to use the image export tools of virtualization platforms, such as VMWare vCenter Convert and Citrix XenConvert, see the document for the respective platform.
+For more information on how to use the image export tools of virtualization platforms, such as VMWare vCenter Converter and Citrix XenConvert, see the document for the respective platform.
 <dx-alert infotype="explain">
 Tencent Cloud’s service migration supports images in qcow2, vhd, raw, and vmdk formats.
 </dx-alert>
