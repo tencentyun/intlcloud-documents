@@ -18,7 +18,7 @@ In addition to connection through the device SDK, IoT Hub also supports HTTP con
 
 
 ### 3. Device Management
-![img](https://mc.qcloudimg.com/static/img/a853b52c3dd9f2bbedef3023e81f3fa2/3-2.png)
+![img](https://main.qcloudimg.com/raw/28c720726f112be7abe6ed415f0a09c8.png)
 
 - Up to 2,000 products can be created under one Tencent Cloud account, and up to 1 million devices can be created for one product. A device can only belong to one product. Product names and device names must be unique under the same Tencent Cloud account.
 - Devices can be enabled/disabled. After a device is disabled, it cannot be connected to the IoT Hub platform, and device-related operations cannot be performed, but the information associated with it will be retained, so device information can still be queried.
@@ -52,7 +52,7 @@ The system topics defined by IoT Hub (`$shadow`, `$ota`, and `$sys`) don't suppo
 
 ### 5. Message Management
 
-![img](https://mc.qcloudimg.com/static/img/24e01a9e0f2c534dcacec016c4bf2b13/3-3.png)
+![img](https://main.qcloudimg.com/raw/5bf4fbb13814c391e3b2572a043fdc18.png)
 
 For MQTT data transfer, IoT Hub supports QoS 0 or 1 but not QoS 2. Device messages can be stored offline.
 
@@ -84,7 +84,8 @@ As an intermediary, device shadow can effectively implement two-way data sync be
 
 The figure below is a sample use case of the device shadow in "Getting Started":
 
-![img](https://mc.qcloudimg.com/static/img/7bf7a659ce098b28a700037ff09e123d/3-4.png)![img](https://mc.qcloudimg.com/static/img/d895eaad6f25bf78c8ac2bb2ae8d81d7/3-5.png)
+![img](https://main.qcloudimg.com/raw/c8854dbdb2daf3e9b2177b285c2fb6a0.png)
+![img](https://main.qcloudimg.com/raw/4eb9cf83f9c48cb8fe76049e662ed8c6.png)
 
 
 >!Device shadow and device message have different applicable scenarios. In terms of implementation mechanism, the server-side device shadow always saves the last copy of data, and multiple messages that successively arrive do not overwrite one another.

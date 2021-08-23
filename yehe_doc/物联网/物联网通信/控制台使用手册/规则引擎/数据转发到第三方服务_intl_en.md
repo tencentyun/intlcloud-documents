@@ -5,7 +5,7 @@ When forwarding a message field extracted through a rule to a third-party servic
 >!The third-party service must be HTTP- or HTTPS-based. To configure forwarding to a third-party service, you need to provide a URL and port number supporting HTTP or HTTPS. After successful forwarding by the rule engine, the third-party service will receive packets from `42.193.134.62`.
 
 The figure below shows the entire process of forwarding data to a third-party service:
-![](https://main.qcloudimg.com/raw/84c8e182e252b3a5570bcc0d7c738104.png)
+![](https://main.qcloudimg.com/raw/66880632e6d2e6fd0c43d1643546171e.png)
 
 For more information on the content and format of the data to be forwarded, please see [Data Processing](https://intl.cloud.tencent.com/document/product/1105/41485).
 

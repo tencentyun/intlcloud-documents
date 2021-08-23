@@ -27,7 +27,7 @@
 >! **RRPC 请求4s超时**，即4s内设备端没有应答就认为请求超时。
 
 流程示意图如下：
-![image.png](https://main.qcloudimg.com/raw/1e83a60cb7b6438ebb5927b7237b77ba.png)
+![image.png](https://main.qcloudimg.com/raw/3e8e25d9e43db56d8fc15974b6ae27e9.png)
 
 ## RRPC 通信示例
 

@@ -3,7 +3,7 @@
 ## 功能概述
 
 物联网通信平台提供了广播通信 Topic，服务器通过调用广播通信 API 发布广播消息，同一产品下订阅了广播 Topic 的在线设备便可收到服务器通过广播 Topic 发布的广播消息。
-![](https://main.qcloudimg.com/raw/cb3fedb3480d27d47d489681d84e8a31.png)
+![](https://main.qcloudimg.com/raw/9555398a506ede980f72e550512082bb.png)
 
 
 ## 广播 Topic
@@ -120,7 +120,7 @@ DBG|2020-08-03 22:51:25|broadcast.c|_broadcast_event_callback(37): broadcast top
 #### 4. 调用云API `PublishBroadcastMessage` 发送广播消息
 
 打开腾讯云 [API 控制台](https://console.cloud.tencent.com/api/explorer?Product=iotcloud&Version=2018-06-14&Action=PublishBroadcastMessage&SignVersion=)，填写个人密钥和设备参数信息，选择在线调用并发送请求。
-![](https://main.qcloudimg.com/raw/aa3a24d1d97f8533f6d76ecc06b96288.png)
+
 
 #### 5. 观察空调设备的消息接收
 

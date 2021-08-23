@@ -4,7 +4,7 @@ The IoT Hub platform supports product-level key authentication. In this mode, yo
 ## Flowchart
 >!If you want to use the dynamic registration feature, you need to manually enable dynamic registration for the product on the product details page in the console.
 
-![](https://main.qcloudimg.com/raw/4ded886d8d6bf7da39fe28441eca8c99.png)
+![](https://main.qcloudimg.com/raw/f424d116ad7e06b589da150fe8802fa8.png)
 
 ## Directions  
 1. Log in to the [IoT Hub console](https://console.cloud.tencent.com/iotcloud) and create a product as instructed in [Device Connection Preparations](https://intl.cloud.tencent.com/document/product/1105/41476).

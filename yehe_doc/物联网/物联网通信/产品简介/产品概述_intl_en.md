@@ -5,7 +5,7 @@ Tencent Cloud Internet of Things Hub (IoT Hub) provides a secure, stable, and ef
 
 ## Service Architecture
 
-![](https://main.qcloudimg.com/raw/98032ab77586fb80fc9b6b6eac8a3626.png)
+![](https://main.qcloudimg.com/raw/ec5e7b98329ff3c8df32587daa3ac9cb.png)
 
 
 

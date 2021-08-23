@@ -27,7 +27,7 @@ Because of the async communication mode of the MQTT protocol based on the publis
 >! **RRPC requests time out in 4s**, that is, if the device doesn't respond within 4s, the request will be considered to have timed out.
 
 The flowchart is as follows:
-![image.png](https://main.qcloudimg.com/raw/1e83a60cb7b6438ebb5927b7237b77ba.png)
+![image.png](https://main.qcloudimg.com/raw/3e8e25d9e43db56d8fc15974b6ae27e9.png)
 
 ## RRPC communication sample
 

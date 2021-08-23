@@ -5,7 +5,7 @@
 >!第三方服务必须以 HTTP 或 HTTPS 的方式提供服务。配置转发第三方服务，需要提供支持 HTTP 或 HTTPS 的网站 URL 和端口。规则引擎转发成功后，第三方服务将收到来至 `42.193.134.62` 的数据包。
 
 下图展示了将数据转发给第三方服务的整个过程：
-![](https://main.qcloudimg.com/raw/84c8e182e252b3a5570bcc0d7c738104.png)
+![](https://main.qcloudimg.com/raw/66880632e6d2e6fd0c43d1643546171e.png)
 
 转发的数据内容和格式，请参见 [数据处理](https://intl.cloud.tencent.com/document/product/1105/41485) 文档。
 

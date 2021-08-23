@@ -45,7 +45,7 @@ Domain name ownership can be verified by using the following methods:
   - If your domain (for example, `www.tencent.com`) is hosted with Tencent Cloud DNSPod DNS:
      1. Go to the **[Certificate Details](#details)** page to obtain the host record and record value.
      
-    2. Log in to the [DNSPod Console](https://console.cloud.tencent.com/cns) to view the domain name for which a certificate has been applied, and then click **DNS** on the **Operation** column to go to the **Record Management** page.
+    2. Log in to the [DNSPod Console](https://console.dnspod.com/dns/list) to view the domain name for which a certificate has been applied, and then click **DNS** on the **Operation** column to go to the **Record Management** page.
     
     3. Click **Add Record** and set a record type.
     

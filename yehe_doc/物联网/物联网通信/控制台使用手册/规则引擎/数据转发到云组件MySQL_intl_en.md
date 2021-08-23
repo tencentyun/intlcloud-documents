@@ -3,7 +3,7 @@
 The rule engine allows you to configure forwarding rules to forward eligible data reported by devices to TencentDB for MySQL. After you create an instance and table in the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb) or through TencentCloud API, specified fields in device messages can be written to the corresponding TencentDB for MySQL table.
 
 The figure below shows the entire process of forwarding data to TencentDB for MySQL by the rule engine:
-![](https://main.qcloudimg.com/raw/9012b5275680b170ec6cc8b69358664f.png)
+![](https://main.qcloudimg.com/raw/6f2cde09ad13c792d4394d93d71e0df2.png)
 
 ## Configuration
 1. Log in to the [IoT Hub console](https://console.cloud.tencent.com/iotcloud) and click **Rule Engine** on the left sidebar.
@@ -25,8 +25,8 @@ The configuration is divided into the following steps:
  5. Select the table to be written to. If no table has been created under the created database, go to the TencentDB for MySQL console to create one.
  6. Configure the fields to be written. There are two columns here: "field name" and "value". "Field name" corresponds to the field in the database table, indicating the field to be written. "Value" indicates the value of the field to be written. The value source can be a message body (which must be in JSON format to support value extraction) or a constant entered here.
     >!
-     >- If the source is a message body, use "${}" to import the fields in the message body. If you want to specify a constant, just enter the corresponding value, such as 5 (number) or hello (string).
-     >- You must create the database, table, and fields in TencentDB for MySQL first before you can write data to the database.
+    >- If the source is a message body, use "${}" to import the fields in the message body. If you want to specify a constant, just enter the corresponding value, such as 5 (number) or hello (string).
+    >- You must create the database, table, and fields in TencentDB for MySQL first before you can write data to the database.
 
 
 For more information, please see [DMC Overview](https://intl.cloud.tencent.com/document/product/236/39221).

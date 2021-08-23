@@ -5,7 +5,7 @@
 
 ## 流程图
 设备级密钥需要为每个设备烧录不同的固件，在产线应用中有一定实现成本，但安全性更高，推荐使用。
-![](https://main.qcloudimg.com/raw/20bbcc26439b20cd41fc64d72a2f3af2.png)
+![](https://main.qcloudimg.com/raw/77ea9e69ff61073737c6b286576503d0.png)
 
 
 ## 操作步骤

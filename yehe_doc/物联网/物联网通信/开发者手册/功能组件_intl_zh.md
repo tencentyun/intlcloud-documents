@@ -18,7 +18,7 @@
 
 
 ### 3. 设备管理
-![img](https://mc.qcloudimg.com/static/img/a853b52c3dd9f2bbedef3023e81f3fa2/3-2.png)
+![img](https://main.qcloudimg.com/raw/28c720726f112be7abe6ed415f0a09c8.png)
 
 - 一个腾讯云账号下，最多可以创建2000个产品，每个产品下最多创建100万台设备。一个设备只能隶属于一个产品。产品名和设备名在同一云账号下唯一。
 - 提供设备的启用/禁用功能。设备被禁用后将不能接入物联网通信平台，将无法执行与设备有关的操作，但与设备相关联的信息依然保留，仍可查询设备相关信息。
@@ -52,7 +52,7 @@
 
 ### 5. 消息管理
 
-![img](https://mc.qcloudimg.com/static/img/24e01a9e0f2c534dcacec016c4bf2b13/3-3.png)
+![img](https://main.qcloudimg.com/raw/5bf4fbb13814c391e3b2572a043fdc18.png)
 
 对于 MQTT 的数据传输，腾讯物联网通信支持 QoS=0 或 1，但不支持 QoS=2。基于 MQTT 协议。设备消息支持离线存储。
 
@@ -84,7 +84,8 @@
 
 下图是“快速开始”里设备影子的应用示例：
 
-![img](https://mc.qcloudimg.com/static/img/7bf7a659ce098b28a700037ff09e123d/3-4.png)![img](https://mc.qcloudimg.com/static/img/d895eaad6f25bf78c8ac2bb2ae8d81d7/3-5.png)
+![img](https://main.qcloudimg.com/raw/c8854dbdb2daf3e9b2177b285c2fb6a0.png)
+![img](https://main.qcloudimg.com/raw/c8854dbdb2daf3e9b2177b285c2fb6a0.png)
 
 
 >!设备影子和设备消息的适用场景并不一样。从实现机制上来说，服务器端设备影子总是保存最后一份数据，而先后达到的多条消息并不会相互覆盖。

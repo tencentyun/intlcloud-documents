@@ -44,7 +44,7 @@
   - 若您的域名（例如 `www.tencent.com`）对应的**域名解析商**在腾讯云 DNSPod DNS 解析。
      1. 请您先找到 [证书详情](#details) 页面，获取主机记录以及记录值。
      
-    2. 登录 [DNS 解析控制台](https://console.cloud.tencent.com/cns) ，查看已申请证书的域名，并单击操作栏的【解析】，进入【记录管理】页面。
+    2. 登录 [DNS 解析控制台](https://console.dnspod.com/dns/list) ，查看已申请证书的域名，并单击操作栏的【解析】，进入【记录管理】页面。
     
     3. 单击【添加记录】，添加记录类型。
     

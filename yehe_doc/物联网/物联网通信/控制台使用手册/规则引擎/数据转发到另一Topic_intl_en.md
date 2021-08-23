@@ -18,7 +18,7 @@ This rule extracts the values of the `t` and `house` fields from the message. As
 If you define forwarding to the `house_monitor/${house}/app` topic, the rule engine will replace the `${house}` variable in this topic with `tencent` and send the values of the `t` and `house` fields to the `house_monitor/tencent/app` topic.
 
 The entire forwarding process is as shown below:
-![image](https://main.qcloudimg.com/raw/d4914e4b87c30f9240bbfcd62411be8a.png)
+![image](https://main.qcloudimg.com/raw/aa1c0e1f5795083fd94c4f17f81a42c8.png)
 
 ## Configuration
 1. Log in to the [IoT Hub console](https://console.cloud.tencent.com/iotcloud), select **Rule Engine** on the left sidebar, and click the rule to be configured.

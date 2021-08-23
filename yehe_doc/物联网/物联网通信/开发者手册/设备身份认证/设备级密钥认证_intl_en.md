@@ -5,7 +5,7 @@ The IoT Hub platform supports device-level key authentication. In this mode, you
 
 ## Flowchart
 Device-level key authentication requires you to burn different firmware for each device. It incurs certain implementation costs in production applications, but it has higher security and is thus recommended.
-![](https://main.qcloudimg.com/raw/20bbcc26439b20cd41fc64d72a2f3af2.png)
+![](https://main.qcloudimg.com/raw/77ea9e69ff61073737c6b286576503d0.png)
 
 
 ## Directions

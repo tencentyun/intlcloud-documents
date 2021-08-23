@@ -1,6 +1,6 @@
 ## Feature Description 
 
-- Only accounts of apps using the IM Trial plan can be deleted. Apps using other trial types such as TRTC and Whiteboard do not support deleting accounts.
+- Only accounts of apps using the IM Trial plan can be deleted. Apps using other trial types such as TRTC, Whiteboard,Pro Edition and Flagship Edition do not support deleting accounts.
   >?You can log to the [console](https://console.cloud.tencent.com/im) and click an app to view its standard billing plan in **Basic Configuration** > **Standard Billing Plan** > **Plan**.
 - When an account is deleted, the account’s data such as relationship chain and profile will also be deleted.
 - After an account is deleted, **the account’s data cannot be recovered**. Therefore, exercise caution when using this API.

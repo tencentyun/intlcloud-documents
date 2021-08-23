@@ -3,7 +3,7 @@
 规则引擎支持用户配置规则将符合条件的设备上报数据转发到 [时序数据库 CTSDB](https://intl.cloud.tencent.com/product/ctsdb) （以下简称 CTSDB ），用户的应用服务器，再从 CTSDB 中读取数据内容进行处理。以此利用 CTSDB 海量数据高存储压缩率、数据聚合展示能力，能有效满足日常设备数据存储、分析、可视化展示的需求。  
 
 规则引擎将数据转发给 CTSDB 的整个过程，如下图所示：
-![](https://main.qcloudimg.com/raw/d2fae7f6ac3e4d3cfe94d8c51c2725c9.png)
+![](https://main.qcloudimg.com/raw/92cc367db0e8109fbf380e708517fa02.png)
 
 ## 配置步骤
 1. 登录 [物联网通信控制台](https://console.cloud.tencent.com/iotcloud)，选择左侧菜单【规则引擎】。
@@ -34,10 +34,10 @@
 ![](https://main.qcloudimg.com/raw/cad85dd0aa614631f710f4b55a565370.png)
 
 >?
-- 默认存储类型：动态扩展存储的字段，在 CTSDB 中的存储类型，默认是 tag 类型
-- key：需要遍历扩展存储的 json 键，物联通信平台会遍历此 key 下的 json 键值嵌套，以'_'为连接符，最后存储到时序数据库，通过规则引擎配置 SQL SELECT 检索得到的 json 结果与配置（支持配置子 key，支持配置多个），到实际存储进 CTSDB 的数据，如下样例所示：
+>- 默认存储类型：动态扩展存储的字段，在 CTSDB 中的存储类型，默认是 tag 类型
+>- key：需要遍历扩展存储的 json 键，物联通信平台会遍历此 key 下的 json 键值嵌套，以'_'为连接符，最后存储到时序数据库，通过规则引擎配置 SQL SELECT 检索得到的 json 结果与配置（支持配置子 key，支持配置多个），到实际存储进 CTSDB 的数据，如下样例所示：
 
-![](https://main.qcloudimg.com/raw/c3bfb94a9d82abdebdf36d392a1a4151.png)
+![](https://main.qcloudimg.com/raw/0595c1a37188139ae5751223ac5d18d4.png)
 
 ## 重发机制
 

@@ -119,7 +119,7 @@ width: 18%;
  | 服务                                                       | 授权粒度 | 控制台  | 根据标签进行授权 |  服务角色 |	参考文档 |
 | ------------------------------------------------------------| ------ | -------- | -------- |  ---- |	 ---- |
 | [消息队列 CMQ](https://intl.cloud.tencent.com/document/product/406) | 资源级   | &#10003;  | &#10003; |  - |	[访问管理指南](https://intl.cloud.tencent.com/document/product/406/34257) |
-| [消息队列 CKafka](https://intl.cloud.tencent.com/document/product/597) | 资源级 | &#10003; |  &#10003;  | &#10003;   | - |
+| [消息队列 CKafka](https://intl.cloud.tencent.com/document/product/597) | 资源级 | &#10003; | - | &#10003;   | - |
 | [API 网关](https://intl.cloud.tencent.com/document/product/628)     | 资源级  | &#10003;  | &#10003;  | &#10003; |[访问管理指南](https://intl.cloud.tencent.com/document/product/628/34064)|
 
 ## 数据处理	

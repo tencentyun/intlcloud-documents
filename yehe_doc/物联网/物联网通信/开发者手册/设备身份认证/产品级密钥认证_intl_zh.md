@@ -4,7 +4,7 @@
 ## 流程图
 >!若需要使用动态注册功能，需要先在控制台产品详情页，手动开启该产品的动态注册功能。
 
-![](https://main.qcloudimg.com/raw/4ded886d8d6bf7da39fe28441eca8c99.png)
+![](https://main.qcloudimg.com/raw/f424d116ad7e06b589da150fe8802fa8.png)
 
 ## 操作步骤  
 1. 登录 [物联网通信控制台](https://console.cloud.tencent.com/iotcloud)，创建产品，具体操作请参考 [设备接入准备](https://intl.cloud.tencent.com/document/product/1105/41476)。

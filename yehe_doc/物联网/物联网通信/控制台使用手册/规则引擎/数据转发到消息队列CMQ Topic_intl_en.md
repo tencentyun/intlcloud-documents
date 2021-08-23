@@ -3,7 +3,7 @@
 The rule engine allows you to configure rules to forward eligible data reported by devices to a CMQ topic. After you subscribe to the topic through TencentCloud API, you can receive messages pushed from the topic. The message push mechanism of the CMQ topic provides the capability to receive messages asynchronously with high reliability.
 
 The figure below shows the entire process of forwarding data to a CMQ topic by the rule engine:
-![](https://main.qcloudimg.com/raw/17177d50749d2f18c4b2f740f9f92229.png)
+![](https://main.qcloudimg.com/raw/aa50c59bc5bdedec3eaba3fa1335f373.png)
 
 
 ## Configuration

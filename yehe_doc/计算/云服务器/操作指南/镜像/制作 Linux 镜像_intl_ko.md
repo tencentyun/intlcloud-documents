@@ -99,7 +99,7 @@ gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime
 <dx-tabs>
 <span id="Useplatform"></span>
 :::플랫폼\s툴을\s사용해\s이미지\s내보내기
-VMWare vCenter Convert 혹은 Citrix XenConvert 등과 같은 가상 플랫폼의 이미지 내보내기 툴을 사용합니다. 자세한 내용은 각 플랫폼의 내보내기 툴 문서를 참조 바랍니다.
+VMWare vCenter Converter 혹은 Citrix XenConvert 등과 같은 가상 플랫폼의 이미지 내보내기 툴을 사용합니다. 자세한 내용은 각 플랫폼의 내보내기 툴 문서를 참조 바랍니다.
 <dx-alert infotype="explain">
 현재 Tencent Cloud의 서비스 마이그레이션에서 지원하는 이미지 형식은 qcow2, vhd, raw, vmdk입니다.
 </dx-alert> 
