@@ -2,7 +2,7 @@
 The rule engine allows you to configure rules to forward eligible data reported by devices to [CKafka](https://intl.cloud.tencent.com/product/CKafka), and then your application server can read the data from CKafka for processing. This takes advantage of CKafka's high throughput to create a highly available message linkage.  
 
 The figure below shows the entire process of forwarding data to CKafka by the rule engine:
-![](https://main.qcloudimg.com/raw/dead88cb3fe3a5c986b6522565967193.png)
+![](https://main.qcloudimg.com/raw/98e3c23e861487b25ac2536283fdc6da.png)
 
 ## Configuration
 1. Log in to the [IoT Hub console](https://console.cloud.tencent.com/iotcloud) and click **Rule Engine** on the left sidebar.

@@ -1,11 +1,11 @@
 ## Overview
 If you need to set a device target temperature and report device status information in a smart home scenario (this is not a real product but only used to demonstrate IoT Hub's capabilities), you can follow the steps in this document.
 
-![shadow_get_update](https://mc.qcloudimg.com/static/img/6ba8645ccd5d07eb8cc1a1fcede5ce6b/2-1.png)
+![shadow_get_update](https://main.qcloudimg.com/raw/74ee56cdeb3836ce4c7dc5a21d9540fd.png)
 
 ## Setting Device Target Temperature
 ### Solution
-![update_shadow](https://mc.qcloudimg.com/static/img/62cd3183a1932dacee4f4ff81487758b/2-2.png)
+![update_shadow](https://main.qcloudimg.com/raw/a97e717caf9519bbbcdf5eade4ce0302.png)
 The management backend updates the configuration and registration parameters of the device shadow and associates the corresponding callback functions through the TencentCloud APIs provided by IoT Hub to update the configuration locally.
 For the implementation of relevant TencentCloud APIs for device shadow, please download [iotcloud_RestAPI_python.zip](https://mc.qcloudimg.com/static/archive/c6b492abe009de1c47b91b8bfd93c7d2/iotcloud_RestAPI_python.zip). You need to configure your profile according to the RESTful API description. You can customize the features by modifying the parameters in `airConditionerCtrl.py` in the `RestAPI` folder.
 
@@ -85,7 +85,7 @@ The RESTful API request parameter is: `deviceName=airConditioner1, state={"desir
 
 
 ### Solution
-![get_device_shadow](https://mc.qcloudimg.com/static/img/d2344da99a6a1eddf04551c6651ad7e1/iot_get_device_v2.png)
+![get_device_shadow](https://main.qcloudimg.com/raw/41111ad8d4d9a9414d6eb1cd1e45215b.png)
 The device reports its own status data to the device shadow, and the home appliance management backend directly gets data from the device shadow through the RESTful API.
 
 ### Directions for SDK for C

@@ -3,7 +3,7 @@
 The rule engine allows you to configure rules to forward eligible data reported by devices to [CTSDB](https://intl.cloud.tencent.com/product/ctsdb), and then your application server can read the data from CTSDB for processing. This takes advantage of CTSDB's high storage compression rate and aggregate display for massive amounts of data, effectively meeting the daily needs of devices for data storage, analysis, and visual display.  
 
 The figure below shows the entire process of forwarding data to CTSDB by the rule engine:
-![](https://main.qcloudimg.com/raw/d2fae7f6ac3e4d3cfe94d8c51c2725c9.png)
+![](https://main.qcloudimg.com/raw/92cc367db0e8109fbf380e708517fa02.png)
 
 ## Configuration Steps
 1. Log in to the [IoT Hub console](https://console.cloud.tencent.com/iotcloud) and select **Rule Engine** on the left sidebar.
@@ -34,10 +34,10 @@ The advanced configuration items are suitable for scenarios where the device-rep
 ![](https://main.qcloudimg.com/raw/cad85dd0aa614631f710f4b55a565370.png)
 
 >?
-- Default Storage Type: the default storage type of dynamically expanding storage fields in CTSDB is tag.
-- Key: this is the JSON key that needs to traverse the expanding storage. IoT Hub will traverse the JSON key value nesting under this key with `_` as the connector and finally store the data in CTSDB. The following example shows the JSON results and configuration retrieved by SQL SELECT in the rule engine (multiple subkeys can be configured) as well as the data actually stored in CTSDB:
+>- Default Storage Type: the default storage type of dynamically expanding storage fields in CTSDB is tag.
+>- Key: this is the JSON key that needs to traverse the expanding storage. IoT Hub will traverse the JSON key value nesting under this key with `_` as the connector and finally store the data in CTSDB. The following example shows the JSON results and configuration retrieved by SQL SELECT in the rule engine (multiple subkeys can be configured) as well as the data actually stored in CTSDB:
 
-![](https://main.qcloudimg.com/raw/c3bfb94a9d82abdebdf36d392a1a4151.png)
+![](https://main.qcloudimg.com/raw/0595c1a37188139ae5751223ac5d18d4.png)
 
 ## Resending Mechanism
 

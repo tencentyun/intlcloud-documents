@@ -8,7 +8,7 @@
 
 >?以上主题均为设备创建时由系统默认创建，设备 SDK 内部会自动订阅上述主题。
 
-![](https://main.qcloudimg.com/raw/c8c32d53d371a14df95e37f1082681f3.png)
+![](https://main.qcloudimg.com/raw/1865c67d955af89b9c7a1abdf636a05b.png)
 
 
 

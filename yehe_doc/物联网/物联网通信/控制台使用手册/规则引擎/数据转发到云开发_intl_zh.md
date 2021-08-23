@@ -2,7 +2,7 @@
 规则引擎支持用户配置转发规则，将符合条件的设备上报数据转发到云开发组件 ，您可以在 [云开发 CloudBase 控制台](https://console.cloud.tencent.com/tcb/env/index) 完成云开发环境的开通，具体操作请参见开通环境。
 
 下图展示了规则引擎将数据转发给云开发的整个过程：
-![](https://main.qcloudimg.com/raw/7d05d865800b63e369f8f34c193ca100.png)
+![](https://main.qcloudimg.com/raw/9d5dbcde287f620b1e3121dc0bdc26a7.png)
 
 ## 配置
 1. 登录 [物联网通信控制台](https://console.cloud.tencent.com/iotcloud)，单击左侧菜单【规则引擎】。

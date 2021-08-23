@@ -4,7 +4,7 @@ Device firmware update is an important part of the IoT Hub service. When a devic
 
 ## How It Works
 During the firmware update process, the device needs to subscribe to the following two topics to communicate with the cloud:
-![OTA topic](https://main.qcloudimg.com/raw/0046e2a294c541e109fc0b6829d180cc.jpg)
+![OTA topic](https://main.qcloudimg.com/raw/f7f74add32341fc505b465298656f9d8.png)
 
 Below is a sample:
 ```php
@@ -17,7 +17,7 @@ This topic is used to subscribe to (downstream) messages, through which the devi
 
 ## Process
 Taking MQTT as an example, the update process of the device is as follows:
-![](https://main.qcloudimg.com/raw/a2f10ab90959a23b1675201b1e2311e0.jpg)
+![](https://main.qcloudimg.com/raw/7744ccf0122f9df67c50fe46645d3faf.png)
 1. The device reports its current version number. It publishes a message in JSON format with the following content to the `$ota/report/${productID/${deviceName}` topic over the MQTT protocol to report its version number:
 ```json
 {
@@ -127,4 +127,4 @@ The checkpoint restart process for OTA update is as follows:
 >- After step 3 is performed, the device will receive the message that step 4 needs to be performed.
 >
 
-![](https://main.qcloudimg.com/raw/5d17e84352b59ea448fb95824ea53e6d.jpg)
+![](https://main.qcloudimg.com/raw/e540670b01afc660085051cf74c8f1af.png)

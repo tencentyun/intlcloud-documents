@@ -3,7 +3,7 @@
 ## C-SDK 架构
 
 #### 架构图
-<img src="https://main.qcloudimg.com/raw/ebcd38eda169523c4b1751dac1c630a0.png"  width="80%">
+<img src="https://main.qcloudimg.com/raw/8742d8e4baf10857509cf52e8c95ff55.png"  width="80%">
 
 
 #### 架构说明

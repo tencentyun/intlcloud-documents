@@ -1,11 +1,11 @@
 ## 操作场景
 假设一个智能家居的场景（非实际产品，仅用于阐述物联网通信功能），如果需实现设置设备及上报设备情况，本文档指导您如何设置设备目标温度和设备上报状态信息。
 
-![shadow_get_update](https://mc.qcloudimg.com/static/img/6ba8645ccd5d07eb8cc1a1fcede5ce6b/2-1.png)
+![shadow_get_update](https://main.qcloudimg.com/raw/74ee56cdeb3836ce4c7dc5a21d9540fd.png)
 
 ## 设置设备目标温度
 ### 解决方案
-![update_shadow](https://mc.qcloudimg.com/static/img/62cd3183a1932dacee4f4ff81487758b/2-2.png)
+![update_shadow](https://main.qcloudimg.com/raw/a97e717caf9519bbbcdf5eade4ce0302.png)
 管理后台通过物联网通信提供的云 API 接口，更新设备影子的配置属性，设备注册相关属性和关联对应的回调函数执行本地配置更新处理。
 通过云 API 操作设备影子的相关接口案例实现，请下载 [iotcloud_RestAPI_python.zip](https://mc.qcloudimg.com/static/archive/c6b492abe009de1c47b91b8bfd93c7d2/iotcloud_RestAPI_python.zip)，用户需根据《 RestAPI 操作说明》配置个人信息。通过修改 RestAPI 文件夹下 airConditionerCtrl.py 参数实现自定义功能。
 
@@ -85,7 +85,7 @@ restAPI 请求参数：`deviceName=airConditioner1, state={"desired" : {"tempera
 
 
 ### 解决方案
-![get_device_shadow](https://mc.qcloudimg.com/static/img/d2344da99a6a1eddf04551c6651ad7e1/iot_get_device_v2.png)
+![get_device_shadow](https://main.qcloudimg.com/raw/41111ad8d4d9a9414d6eb1cd1e45215b.png)
 设备通过上报自身状态数据到设备影子，家电管理后台通过 restAPI 接口直接从设备影子获取数据。
 
 ###  C SDK 操作步骤

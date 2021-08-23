@@ -3,7 +3,7 @@ This document describes how to port the device C-SDK to the target hardware plat
 ## C-SDK Architecture
 
 #### Architecture diagram
-<img src="https://main.qcloudimg.com/raw/ebcd38eda169523c4b1751dac1c630a0.png"  width="80%">
+<img src="https://main.qcloudimg.com/raw/8742d8e4baf10857509cf52e8c95ff55.png"  width="80%">
 
 
 #### Architecture description

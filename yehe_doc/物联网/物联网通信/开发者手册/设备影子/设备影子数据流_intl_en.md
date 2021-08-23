@@ -8,7 +8,7 @@ A device shadow acts as an intermediary, allowing the device and your applicatio
 
 >?The above topics are created by the system by default when the device is created and will be automatically subscribed to within the device SDK.
 
-![](https://main.qcloudimg.com/raw/c8c32d53d371a14df95e37f1082681f3.png)
+![](https://main.qcloudimg.com/raw/1865c67d955af89b9c7a1abdf636a05b.png)
 
 
 

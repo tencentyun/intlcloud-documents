@@ -2,7 +2,7 @@
 The rule engine allows you to configure forwarding rules to forward eligible data reported by devices to TCB. You can create an environment in the [TCB console](https://console.cloud.tencent.com/tcb/env/index). For detailed directions, please see Creating Environment.
 
 The figure below shows the entire process of forwarding data to TCB by the rule engine:
-![](https://main.qcloudimg.com/raw/7d05d865800b63e369f8f34c193ca100.png)
+![](https://main.qcloudimg.com/raw/9d5dbcde287f620b1e3121dc0bdc26a7.png)
 
 ## Configuration
 1. Log in to the [IoT Hub console](https://console.cloud.tencent.com/iotcloud) and click **Rule Engine** on the left sidebar.

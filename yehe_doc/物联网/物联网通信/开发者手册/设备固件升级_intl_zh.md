@@ -4,7 +4,7 @@
 
 ## 实现原理
 固件升级的过程中，需要设备订阅下面两个 Topic 来实现与云端的通信，如下图所示：
-![OTA topic](https://main.qcloudimg.com/raw/0046e2a294c541e109fc0b6829d180cc.jpg)
+![OTA topic](https://main.qcloudimg.com/raw/f7f74add32341fc505b465298656f9d8.png)
 
 示例如下：
 ```php
@@ -17,7 +17,7 @@ $ota/update/${productID}/${deviceName}
 
 ## 操作流程
 以 MQTT 为例，设备的升级流程如下所示：
-![OTA 时序图](https://main.qcloudimg.com/raw/a2f10ab90959a23b1675201b1e2311e0.jpg)
+![OTA 时序图](https://main.qcloudimg.com/raw/7744ccf0122f9df67c50fe46645d3faf.png)
 1. 设备上报当前版本号。设备端通过 MQTT 协议发布一条消息到 Topic `$ota/report/${productID/${deviceName}`，进行版本号的上报，消息为 json 格式，内容如下：
 ```json
 {
@@ -127,4 +127,4 @@ $ota/update/${productID}/${deviceName}
 >- 执行步骤3后，设备端都会收到需要执行步骤4的消息。
 >
 
-![OTA 断点续传时序图](https://main.qcloudimg.com/raw/5d17e84352b59ea448fb95824ea53e6d.jpg)
+![OTA 断点续传时序图](https://main.qcloudimg.com/raw/e540670b01afc660085051cf74c8f1af.png)

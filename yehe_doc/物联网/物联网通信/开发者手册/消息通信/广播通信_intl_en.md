@@ -3,7 +3,7 @@
 ## Feature Overview
 
 The IoT Hub platform provides a broadcast communication topic. The server can publish a broadcast message by calling the broadcast communication API, which can be received by online devices that have subscribed to the broadcast topic under the same product.
-![](https://main.qcloudimg.com/raw/cb3fedb3480d27d47d489681d84e8a31.png)
+![](https://main.qcloudimg.com/raw/9555398a506ede980f72e550512082bb.png)
 
 
 ## Broadcast Topic

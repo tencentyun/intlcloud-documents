@@ -6,7 +6,7 @@ When a subdevice under a gateway has new features available or vulnerabilities t
 ## How It Works
 
 During the firmware update process, the gateway needs to use the following two topics to communicate with the cloud on behalf of the subdevice:
-![OTA topic](https://main.qcloudimg.com/raw/04b41acfb677914a49f5c2ee890dc6a7.png)
+![OTA topic](https://main.qcloudimg.com/raw/88d82dafcafc9e2ccf162e8828e9474e.png)
 
 Below is the sample code:
 ```php
@@ -22,7 +22,7 @@ This topic is used to subscribe to (downstream) messages, through which the devi
 Taking MQTT as an example, the update process of the subdevice is as follows:
 >?For the specific directions of firmware update, please see [Device Firmware Update](https://intl.cloud.tencent.com/document/product/1105/41507).
 >
-![](https://main.qcloudimg.com/raw/4201f843615d0b54a9a4274e8c2d4b4d.png)
+![](https://main.qcloudimg.com/raw/08f08cfb2fe06fba6d9ced1a2bc76e16.png)
 
 
 

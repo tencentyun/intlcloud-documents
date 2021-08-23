@@ -2,7 +2,7 @@
 The rule engine allows you to configure forwarding rules to forward eligible data reported by devices to TencentDB for MongoDB. After you create an instance in the [TencentDB for MongoDB console](https://console.cloud.tencent.com/mongodb) or through TencentCloud API, device messages can be written to the corresponding TencentDB for MongoDB set.
 
 The figure below shows the entire process of forwarding data to TencentDB for MongoDB by the rule engine:
-![](https://main.qcloudimg.com/raw/ce65ecf23f563cf2226c17e690cdcf1d.png)
+![](https://main.qcloudimg.com/raw/853a3bec458ab61fce260c7cc1509a9b.png)
 
 ## Configuration
 1. Log in to the [IoT Hub console](https://console.cloud.tencent.com/iotcloud) and click **Rule Engine** on the left sidebar.
