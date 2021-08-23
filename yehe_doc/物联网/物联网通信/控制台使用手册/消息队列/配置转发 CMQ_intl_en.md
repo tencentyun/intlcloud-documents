@@ -21,9 +21,9 @@ The IoT Hub account must never have used CMQ.
 
 
 >!
-- The message type cannot be empty.
-- The modified message type cannot be the same as the last configured one.
-- After successful creation, the message queue page will display the details of the subscription. You can also modify the subscribed message type on this page.
+>- The message type cannot be empty.
+>- The modified message type cannot be the same as the last configured one.
+>- After successful creation, the message queue page will display the details of the subscription. You can also modify the subscribed message type on this page.
 
 ### Deleting message queue
 To delete the current message queue configuration, click **Delete**.

@@ -19,13 +19,13 @@ This feature allows you to name batch purchased instances with the same prefix a
 >- The following example assumes that you want to purchase 3 CKafka instances and name them in the format of "ckafka+serial number" (i.e., ckafka1, ckafka2, and ckafka3).
 
 <dx-tabs>
-::: Operations on the purchase page
+::: Operations\son\sthe\spurchase\spage
 1. Purchase 3 instances as instructed in [Creating Instance](https://intl.cloud.tencent.com/document/product/597/39718). Enter the instance name in the format of **prefix+serial number**. In this case, enter `ckafka` as the instance name as shown below:
-![](https://main.qcloudimg.com/raw/1f34f6d666316e3e7f656e95a51f19a7.png)
+![](https://main.qcloudimg.com/raw/ddf73ac8cf503c93cd4ede057ded701e.png)
 2. Follow the prompts on the page and make the payment.
 :::
 
-::: Operations through API
+::: Operations\sthrough\sAPI
 In the [ModifyInstanceAttributes](https://intl.cloud.tencent.com/document/api/597/35354) API, set the relevant fields:
 
 Instance name: set `InstanceName` to `ckafka`.
@@ -45,13 +45,13 @@ The instance name with a specified pattern string is in the format of **{R:x}**,
 The following example assumes that you want to create 3 instances and name them with incrementing numbers starting from 3.
 
 <dx-tabs>
-::: Operations on the purchase page
+::: Operations\son\sthe\spurchase\spage
 1. Purchase instances as instructed in [Creating Instance](https://intl.cloud.tencent.com/document/product/597/39718). Enter the instance name in the format of **prefix+specified pattern string {R:x}**. In this case, enter `ckafka{R:3}` as the instance name as shown below:
-![](https://main.qcloudimg.com/raw/2c96767ee9e109e7540fda50a6c3718e.png)
+![](https://main.qcloudimg.com/raw/8fee4eadfcd092b41135de7d52a1595c.png)
 2. Follow the prompts on the page and make the payment.
 :::
 
-::: Operations through API
+::: Operations\sthrough\sAPI
 In the [ModifyInstanceAttributes](https://intl.cloud.tencent.com/document/api/597/35354) API, set the relevant fields:
 
 Instance name: set `InstanceName` to `ckafka{R:3}`.
@@ -64,13 +64,13 @@ Instance name: set `InstanceName` to `ckafka{R:3}`.
 The following example assumes that you want to create 3 instances and name them with the prefixes of `ckafka`, `big`, and `test` and serial numbers after `ckafka` and `big` incrementing from 13 and 2 respectively (i.e., ckafka13-big2-test, ckafka14-big3-test, and ckafka15-big4-test).
 
 <dx-tabs>
-::: Operations on the purchase page
+::: Operations\son\sthe\spurchase\spage
 1. Purchase 3 instances as instructed in [Creating Instance](https://intl.cloud.tencent.com/document/product/597/39718). Enter the instance name in the format of **"prefix+specified pattern string {R:x}-prefix+specified pattern string {R:x}-prefix"**. In this case, enter `ckafka{R:13}-big{R:2}-test` as the instance name as shown below:
-![](https://main.qcloudimg.com/raw/644235e778441addd11f6120a94a6c8a.png)
+![](https://main.qcloudimg.com/raw/7d064d5c4d374bbcb7284bf9100f3ab1.png)
 2. Follow the prompts on the page and make the payment.
 :::
 
-::: Operations through API
+::: Operations\sthrough\sAPI
 In the [ModifyInstanceAttributes](https://intl.cloud.tencent.com/document/api/597/35354) API, set the relevant fields:
 
 Instance name: set `InstanceName` to `ckafka{R:13}-big{R:2}-test`.
@@ -82,6 +82,5 @@ Instance name: set `InstanceName` to `ckafka{R:13}-big{R:2}-test`.
 
 After you batch create instances through [automatically incrementing suffixed numbers](#AutoAscending) or [specifying pattern string](#SpecifyStrings), you can verify the set instance names as follows:
 
-Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka) and view the newly created instances. You can see that the batch purchased instances are named according to the rule you set as shown below:
-![](https://main.qcloudimg.com/raw/10466cf48cc2f00b458987c48132f837.png)
+Log in to the [CKafka console](https://console.cloud.tencent.com/ckafka) and view the newly created instances. You can see that the batch purchased instances are named according to the rule you set.
 

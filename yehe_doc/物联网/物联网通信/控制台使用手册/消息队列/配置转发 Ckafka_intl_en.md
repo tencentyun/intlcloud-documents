@@ -20,8 +20,8 @@ The IoT Hub account must never have used CKafka.
 3. A confirmation window will pop up. After you click **Confirm**, IoT Hub will immediately push the selected type of messages to the selected topic.
 
 >! 
-- The message type cannot be empty.
-- The modified message type cannot be the same as the last configured one.
+>- The message type cannot be empty.
+>- The modified message type cannot be the same as the last configured one.
 
  
 
