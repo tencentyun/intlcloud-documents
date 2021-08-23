@@ -80,7 +80,7 @@ private static final String DEVICE_KEY_NAME = "YOUR_DEVICE_NAME_private.key";
 4. restAPI 接口操作说明，若为发布目标温度配置详见 [发布目标温度配置](https://intl.cloud.tencent.com/document/product/1105/41468)；若为查询获取设备信息详见 [查询获取设备信息](https://intl.cloud.tencent.com/document/product/1105/41468)。
 
 ### 发布目标温度配置
-调用 restAPI 接口 [UpdateDeviceShadow](https://cloud.tencent.com/document/product/634/12055) 模拟家电管理后台发布目标温度配置，
+调用 restAPI 接口 UpdateDeviceShadow 模拟家电管理后台发布目标温度配置，
 restAPI 请求参数：`deviceName=airConditioner1, state={"desired" : {"temperatureDesire": 10}}, productName=AirConditioner`, 期望调整控制温度为 10°。
 
 
