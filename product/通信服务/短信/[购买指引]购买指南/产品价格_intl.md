@@ -3,7 +3,7 @@
 ## Pricing for Global SMS
 Global SMS is daily [pay-as-you-go](https://intl.cloud.tencent.com/document/product/382/18052). The prices in the table are in US dollars.
 
-> !As carriers in Indonesia, Egypt, Russia, Nigeria and Vietnam have adjusted their fees，Tencent Cloud Global SMS has adjusted the prices in these five countries accordingly from April 15, 2020 onwards. We will continue to provide you with stable, high-quality text messaging services worldwide. For more details, please refer to [Tencent Cloud Global SMS Price Adjustment Notification](https://intl.cloud.tencent.com/document/product/382/35602).
+> !As carriers in 8 countries including Israel , Argentina, and etc, have adjusted their fees，Tencent Cloud Global SMS has changed the prices in these nineteen countries accordingly from September 15, 2021 onwards. We will continue to provide you with stable, high-quality text messaging services worldwide. For more details, please refer to [Tencent Cloud Global SMS Price Adjustment Notification](https://intl.cloud.tencent.com/document/product/382/35602).
 
 Download the Global SMS Price List [here](https://main.qcloudimg.com/raw/e96c3cdef2baab3b37a6b5f23ae78d5e.pdf).
 
@@ -19,7 +19,7 @@ Download the Global SMS Price List [here](https://main.qcloudimg.com/raw/e96c3cd
 | Armenia|	AM|	374|	0.0813 |
 | Netherlands Antilles      | AN   | 599                 | 0.0590           |
 | Angola|AO	|244|	0.0633 |
-| Argentina	|AR|	54	|0.0301|
+| Argentina	|AR|	54	|0.062 |
 | American Samoa|	AS|	1684	|0.1100 |
 | Austria|	AT|	43	|0.1287 |
 | Australia	|	AU|	61	|0.0804 |
@@ -42,9 +42,9 @@ Download the Global SMS Price List [here](https://main.qcloudimg.com/raw/e96c3cd
 | Bahamas|	BS|	1242	|0.0390 |
 | Bhutan	|	BT|	975	|0.0396 |
 | Botswana|	BW|	267	|0.0427 |
-| Belarus	|BY|	375|	0.0638 |
+| Belarus	|BY|	375|	0.085 |
 | Belize	|	BZ	|501	|0.0330|
-| Canada|	CA|	1	|0.0080 |
+| Canada|	CA|	1	|0.015 |
 | Democratic Republic of the Congo |	CD|	243|	0.0513|
 |Central African Republic	|	CF	|236|	0.0633 |
 | Republic of the Congo | CG |	242| 	0.0664|
@@ -100,10 +100,10 @@ Download the Global SMS Price List [here](https://main.qcloudimg.com/raw/e96c3cd
 |Croatia|	HR	|385	|0.0801|
 |Haiti	|	HT|	509|	0.0848 |
 |Hungary	|HU	|36|	0.1197 |
-|Indonesia	|ID|	62	|0.0850 |
+|Indonesia	|ID|	62	|0.12 |
 |Ireland	|	IE	|353|	0.0824 |
-|Israel|IL	|972	|0.0393 |
-|India	|	IN	|91|	0.0140 |
+|Israel|IL	|972	|0.078 |
+|India	|	IN	|91|	0.03 |
 |Iraq	|	IQ|	964|	0.0805|
 |Iceland	|IS|	354|	0.0333 |
 |Italy	|IT	|39|	0.0823|
@@ -124,7 +124,7 @@ Download the Global SMS Price List [here](https://main.qcloudimg.com/raw/e96c3cd
 |Lebanon	|LB|	961|	0.0464 |
 |Saint Lucia	|LC	|1758	|0.0414 |
 |Liechtenstein	|LI	|423|	0.0297 |
-|Sri Lanka	|LK	|94|	0.0690 |
+|Sri Lanka	|LK	|94|	0.089 |
 |Liberia|	LR	|231	|0.0709 |
 |Lesotho	|LS|	266|	0.0589 |
 |Lithuania	|LT	|370	|0.0419 |
@@ -169,7 +169,7 @@ Download the Global SMS Price List [here](https://main.qcloudimg.com/raw/e96c3cd
 |French Polynesia|PF	|689	|0.1246|
 |Papua New Guinea	|PG	|675	|0.0692 |
 |Philippines	|PH|	63	|0.0355|
-|Pakistan	|PK	|92	|0.0590  |
+|Pakistan	|PK	|92	|0.079  |
 |Poland|PL	|48|	0.0411|
 | Saint Pierre and Miquelon |	PM|	508|	0.0580 |
 |Puerto Rico|	PR	|1787	|0.0564 |
