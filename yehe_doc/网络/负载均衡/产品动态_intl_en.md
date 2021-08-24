@@ -166,7 +166,7 @@
 <td>Deactivates the feature for storing CLB access logs in COS</td>
 <td>You can no longer store new access logs in COS after May 15, 2020 00:00:00, (or after April 26, 2020 00:00:00 in the Guangzhou region). The feature has been officially deactivated in all regions since June 30, 2020 00:00:00. To use the updated feature, please see <a href="https://intl.cloud.tencent.com/document/product/214/35063">Storing Access Logs in CLS</a>.</td>
 <td>April 21, 2020</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/214/35906">Announcement on the Deactivation of the Feature of Storing CLB Access Logs in COS</a></td>
+<td>-</td>
 </tr>
 </tbody></table>
 
