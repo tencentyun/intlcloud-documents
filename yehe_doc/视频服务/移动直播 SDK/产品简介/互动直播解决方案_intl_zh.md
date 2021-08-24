@@ -45,4 +45,3 @@
 
 ![](https://main.qcloudimg.com/raw/762ecb03ba9cafad61de75f4a5b2647d.png)
 
->!直播连麦功能依赖于移动直播 SDK License、移动直播 SDK 的连麦分钟套餐 和 IM 房间管理能力，您可 [立即购买]( https://buy.cloud.tencent.com/mobilelive?urlctr=yes&basepack=10tb) 开始使用。
