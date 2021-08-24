@@ -1,10 +1,10 @@
-> 短信系列产品均不支持使用通用代金券。
+> !短信系列产品均不支持使用通用代金券。
 
 
 ## 国际短信价格详情
 国际短信采用[日结后付费](https://intl.cloud.tencent.com/document/product/382/18052#billing-methods)的方式。表中的价格单位为美元。
 
->因印度尼西亚、埃及、俄罗斯、尼日利亚以及越南的运营商调整资费，腾讯云国际/港澳台短信服务已从**2020年4月15日零时**起调整上述五个国家的短信价格，更多详情请参见 [关于国际/港澳台短信部分国家（或地区）价格调整的公告](https://intl.cloud.tencent.com/document/product/382/35602)。
+>!因以色列、阿根廷、白俄罗斯、斯里兰卡、加拿大、巴基斯坦、印度尼西亚、印度8个国家/地区的运营商调整资费，腾讯云国际/港澳台短信服务将从2021年9月15日零时起调整上述8个国家的短信价格，更多详情请参见 [关于国际/港澳台短信部分国家（或地区）价格调整的公告](https://intl.cloud.tencent.com/document/product/382/35602)。
 
 单击下载 [国际短信价格表](https://main.qcloudimg.com/raw/11234db3d9e4a9a2ce3ac5d386973cc3.pdf "腾讯云短信海外价格表")。
 
@@ -20,7 +20,7 @@
 | Armenia|	亚美尼亚|	AM|	374|	0.0813 |
 | Netherlands Antilles      | 荷属安的列斯   | AN   | 599              | 0.0590          |
 | Angola|	安哥拉	|AO	|244|	0.0633 |
-| Argentina	|阿根廷	|AR|	54	|0.0301| 
+| Argentina	|阿根廷	|AR|	54	|0.062| 
 | American Samoa|	美属萨摩亚|	AS|	1684	|0.1100 |
 | Austria|	奥地利|	AT|	43	|0.1287 |
 | Australia	|澳大利亚|	AU|	61	|0.0804 |
@@ -43,9 +43,9 @@
 | Bahamas|	巴哈马|	BS|	1242	|0.0390 |
 | Bhutan	|不丹|	BT|	975	|0.0396 |
 | Botswana|	博茨瓦纳|	BW|	267	|0.0427 |
-| Belarus	|白俄罗斯	|BY|	375|	0.0638 |
+| Belarus	|白俄罗斯	|BY|	375|	0.085 |
 | Belize	|伯利兹|	BZ	|501	|0.0330| 
-| Canada|	加拿大|	CA|	1	|0.0080 |
+| Canada|	加拿大|	CA|	1	|0.015 |
 | Democratic Republic of theCongo|	刚果民主共和国|	CD|	243|	0.0513| 
 |Central African Republic	|中非共和国|	CF	|236|	0.0633 |
 |Republic Of The Congo	| 刚果共和国	| CG |	242| 	0.0664| 
@@ -100,10 +100,10 @@
 |Croatia|	克罗地亚|	HR	|385	|0.0801| 
 |Haiti	|海地|	HT|	509|	0.0848 |
 |Hungary	|匈牙利	|HU	|36|	0.1197 |
-|Indonesia	|印度尼西亚	|ID|	62	|0.0850 |
+|Indonesia	|印度尼西亚	|ID|	62	|0.12 |
 |Ireland	|爱尔兰|	IE	|353|	0.0824 |
-|Israel|	以色列	|IL	|972	|0.0393 |
-|India	|印度|	IN	|91|	0.0140 |
+|Israel|	以色列	|IL	|972	| 0.078 |
+|India	|印度|	IN	|91|	0.03 |
 |Iraq	|伊拉克|	IQ|	964|	0.0805| 
 |Iceland	|冰岛	|IS|	354|	0.0333 |
 |Italy	|意大利	|IT	|39|	0.0823| 
@@ -124,7 +124,7 @@
 |Lebanon	|黎巴嫩	|LB|	961|	0.0464 |
 |Saint Lucia	|圣露西亚	|LC	|1758	|0.0414 |
 |Liechtenstein	|列支敦士登	|LI	|423|	0.0297 |
-|Sri Lanka	|斯里兰卡	|LK	|94|	0.0690 |
+|Sri Lanka	|斯里兰卡	|LK	|94|	0.089 |
 |Liberia|	利比里亚|	LR	|231	|0.0709 |
 |Lesotho	|莱索托	|LS|	266|	0.0589 |
 |Lithuania	|立陶宛	|LT	|370	|0.0419 |
@@ -169,7 +169,7 @@
 |French Polynesia|	法属波利尼西亚	|PF	|689	|0.1246| 
 |Papua New Guinea	|巴布亚新几内亚	|PG	|675	|0.0692 |
 |Philippines	|菲律宾	|PH|	63	|0.0355| 
-|Pakistan	|巴基斯坦	|PK	|92	|0.0590 |
+|Pakistan	|巴基斯坦	|PK	|92	|0.079 |
 |Poland|	波兰	|PL	|48|	0.0411| 
 |Saint Pierreand Miquelon|	圣彼埃尔和密克隆岛|	PM|	508|	0.0580 |
 |Puerto Rico|	波多黎各|	PR	|1787	|0.0564 |
