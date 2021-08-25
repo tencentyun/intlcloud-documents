@@ -29,7 +29,7 @@ This document describes how to group devices in the console.
  - Group ID (groupID): it is randomly assigned by the backend and is the unique group identifier.
  - Group Description: it is customizable and describes the group.
  - Devices: it indicates the total number of devices in the group.
- - Included Subgroups: it indicates the total number of subgroups in the group.
+ - Subgroups: it indicates the total number of subgroups in the group.
  - Creation Time: it indicates the time the group was created in the console or through APIs, accurate to the second.
 
 
