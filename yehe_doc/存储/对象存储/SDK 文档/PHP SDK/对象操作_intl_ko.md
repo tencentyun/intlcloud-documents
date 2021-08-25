@@ -1307,7 +1307,7 @@ try {
 | CopySourceRange    | String | 소스 객체 복사의 범위 설명(형식: bytes=first-last). 범위를 지정하지 않으면 전체 소스 객체 복사 | 아니오       |
 | PartNumber    | Int    | PartNumber는 멀티파트의 일련 번호. COS는 일련 번호에 따라 멀티파트 병합      | 예       |
 | ContentLength | Int    | 전송 길이 설정                                                 | 아니오       |
-| ContentMD5    | Boolean | 업로드된 파일의 MD5 값을 검증용으로 자동 생성할지 여부                             | 否       |
+| ContentMD5    | Boolean | 업로드된 파일의 MD5 값을 검증용으로 자동 생성할지 여부                             | 아니오       |
 
 #### 반환 결과 예시
 
@@ -1725,7 +1725,7 @@ public Qcloud\Cos\Client download(string $bucket, string $key, string $saveAs, a
 | PartSize         | Int      | 최소 멀티파트 파일 크기, 기본적으로 50M |아니요       |
 | Concurrency         | Int      | 동시 실행 정도，기본 설정값: 10 | 아니요       |
 | ResumableDownload         | Bool      | 중단 지점부터 이어서 전송 활성화 여부. 기본값: false | 아니오      |
-| ResumableTaskFile         | Int      | 중단 지점 파일 경로. 기본 설정값:<saveAs.cosresumabletask> | 아니요       |
+| ResumableTaskFile         | Int      | 중단 지점 파일 경로. 기본 설정값: <saveAs.cosresumabletask> | 아니요       |
 
 
 #### 요청 예시
