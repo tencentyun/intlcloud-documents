@@ -412,7 +412,7 @@ response = client.put_object(
 |  ContentLength  | 전송 길이 설정 | String |   아니요 |
 |  ContentMD5  | 검증에 사용할 업로드 객체의 MD5 값 설정 | String |   아니요 |
 |  Metadata | 사용자 정의 객체 메타데이터. 반드시 x-cos-meta로 시작해야 하며, 그렇지 않을 경우 무시됨 | Dict |  아니요 |
-|  TrafficLimit | 단일 링크의 제한 속도. 단위는 bit/s이며 설정 범위는 819200~838860800, 즉 100KB/s~100MB/s로 설정| String |  아니요 |
+|  TrafficLimit | 단일 링크의 제한 속도. 단위는 bit/s이며 설정 범위는 819200 ~ 838860800, 즉 100KB/s~100MB/s로 설정| String |  아니요 |
 
 #### 반환 결과 설명
 업로드한 객체의 속성(dict 유형):
@@ -568,7 +568,7 @@ response = client.get_object(
 |  ResponseContentType  |   응답 헤더의 Content-Type 설정 | String  | 아니요 |
 |  ResponseExpires  |응답 헤더의 Expires 설정 |   String  | 아니요 |
 |  VersionId  | 다운로드할 객체 버전 지정 |  String  | 아니요 |
-|  TrafficLimit | 단일 링크 제한 속도. 단위는 bit/s이며 설정 범위는 819200~838860800, 즉 100KB/s~100MB/s. 고급 인터페이스는 단일 스레드의 속도를 제한함| String |  아니요 |
+|  TrafficLimit | 단일 링크 제한 속도. 단위는 bit/s이며 설정 범위는 819200 ~ 838860800, 즉 100KB/s~100MB/s. 고급 인터페이스는 단일 스레드의 속도를 제한함| String |  아니요 |
 
 #### 반환 결과 설명
 
@@ -1442,7 +1442,7 @@ response = client.upload_part(
 | EnableMD5 | SDK의 Content-MD5 계산 여부. 기본적으로 비활성화 상태이며, 활성화 시 업로드 시간 증가|Bool | 아니요|
 | ContentLength  |전송 길이 설정 |  String |  아니요|
 | ContentMD5  | 검증에 사용할 업로드 객체의 MD5 값 설정 | String |  아니요|
-|  TrafficLimit | 단일 링크의 제한 속도. 단위는 bit/s이며 설정 범위는 819200~838860800, 즉 100KB/s~100MB/s로 설정| String |  아니요 |
+|  TrafficLimit | 단일 링크의 제한 속도. 단위는 bit/s이며 설정 범위는 819200 ~ 838860800, 즉 100KB/s~100MB/s로 설정| String |  아니요 |
 
 #### 반환 결과 설명
 
@@ -1827,7 +1827,7 @@ response = client.upload_file(
 |  ContentLength  | 전송 길이 설정 | String |   아니요 |
 |  ContentMD5  | 검증에 사용할 업로드 객체의 MD5 값 설정 | String |   아니요 |
 |  Metadata | 사용자 정의 객체 메타데이터 | Dict |   아니요 |
-|  TrafficLimit | 단일 링크 제한 속도. 단위는 bit/s이며 설정 범위는 819200~838860800, 즉 100KB/s~100MB/s. 고급 인터페이스는 단일 스레드의 속도를 제한| String |  아니요 |
+|  TrafficLimit | 단일 링크 제한 속도. 단위는 bit/s이며 설정 범위는 819200 ~ 838860800, 즉 100KB/s~100MB/s. 고급 인터페이스는 단일 스레드의 속도를 제한| String |  아니요 |
 
 #### 반환 결과 설명
 업로드한 객체의 속성(dict 유형):
@@ -1898,7 +1898,7 @@ response = client.download_file(
 |  PartSize  | 멀티파트 다운로드의 파트 크기. 기본값: 20MB |  Int |  아니요 |
 |  MAXThread  | 멀티파트 다운로드의 동시 다운로드 수량. 기본적으로 5개 스레드로 파트 다운로드 |  Int |  아니요 |
 |  EnableCRC  | 로컬 파일과 원격 파일의 crc 검증 활성화 여부. 기본값: False |  Bool |  아니요 |
-|  TrafficLimit | 단일 링크 제한 속도. 단위는 bit/s이며 설정 범위는 819200~838860800, 즉 100KB/s~100MB/s. 고급 인터페이스는 단일 스레드의 속도를 제한함| String |  아니요 |
+|  TrafficLimit | 단일 링크 제한 속도. 단위는 bit/s이며 설정 범위는 819200 ~ 838860800, 즉 100KB/s~100MB/s. 고급 인터페이스는 단일 스레드의 속도를 제한함| String |  아니요 |
 |  IfMatch  |  ETag가 지정된 콘텐츠와 일치해야 반환 |String  | 아니요 |
 |  IfModifiedSince  |   지정 시간 이후 수정될 경우에만 반환. 시간 형식: GMT | String  | 아니요 |
 |  IfNoneMatch  |  ETag가 지정 콘텐츠와 불일치해야 반환 | String  | 아니요 |
