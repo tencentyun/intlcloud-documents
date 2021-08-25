@@ -6,26 +6,27 @@
 
 | API                                                          | 작업명         | 작업 설명                       |
 | ------------------------------------------------------------ | -------------- | ------------------------------ |
-| [GET Bucket(List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | 객체 리스트 조회   | 버킷의 일부 또는 모든 객체 조회 |
-| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 간편한 객체 업로드   | 버킷에 객체 업로드           |
+| [GET Bucket(List Objects)](https://intl.cloud.tencent.com/document/product/436/30614) | 객체 리스트 조회   | 버킷의 일부 또는 모든 객체 조회           |
+| [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 간편 객체 업로드   | 버킷에 단일 객체 업로드           |
 | [HEAD Object](https://intl.cloud.tencent.com/document/product/436/7745) | 객체 메타데이터 조회 | 객체 메타데이터 정보 조회             |
 | [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 객체 다운로드       | 로컬에 객체 다운로드             |
 | [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | 객체 복사 설정   | 타깃 경로에 파일 복사             |
 | [DELETE Object](https://intl.cloud.tencent.com/document/product/436/7743) | 단일 객체 삭제   | 버킷에서 지정 객체 삭제         |
 | [DELETE Multiple Objects](https://intl.cloud.tencent.com/document/product/436/8289) | 다수의 객체 삭제   | 버킷에서 객체 일괄 삭제         |
 | [POST Object restore](https://intl.cloud.tencent.com/document/product/436/12633) | 보관된 객체 복구 | 아카이브 유형의 객체 검색 및 액세스           |
+| GET Object URL | 객체 URL 가져오기 | 객체의 서명없는 URL 가져오기 |
 
 ### 멀티파트 작업
 
 | API                                                          | 작업명         | 작업 설명                             |
 | ------------------------------------------------------------ | -------------- | ------------------------------------ |
 | [List Multipart Uploads](https://intl.cloud.tencent.com/document/product/436/7736) | 멀티파트 업로드 조회   | 현재 진행 중인 멀티파트 업로드 정보 조회         |
-| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | 멀티파트 업로드 초기화 | 멀티파트 업로드 작업 초기화                   |
-| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | 멀티파트 업로드       | 파일 멀티파트 업로드                         |
-| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | 멀티파트 복사       | 다른 객체를 멀티파트로 복사             |
+| [Initiate Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7746) | 멀티파트 업로드 초기화 | 	멀티파트 업로드 작업 초기화     |
+| [Upload Part](https://intl.cloud.tencent.com/document/product/436/7750) | 파트 업로드       | 파일 멀티파트 업로드                         |
+| [Upload Part - Copy](https://intl.cloud.tencent.com/document/product/436/8287) | 멀티파트 복사       | 다른 객체를 한 파트로 복사             |
 | [List Parts](https://intl.cloud.tencent.com/document/product/436/7747) | 업로드된 파트 조회   | 특정 멀티파트 업로드 작업에서 업로드된 파트 조회   |
 | [Complete Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7742) | 멀티파트 업로드 완료   | 전체 파일의 멀티파트 업로드 완료               |
-| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 멀티파트 업로드 중지   | 멀티파트 업로드 작업 중지 및 업로드된 파트 제거 |
+| [Abort Multipart Upload](https://intl.cloud.tencent.com/document/product/436/7740) | 멀티파트 업로드 중지   | 멀티파트 업로드 작업 중지 및 업로드된 파트 삭제 |
 
 ## 간단한 작업
 
@@ -35,7 +36,7 @@
 
 버킷의 일부 또는 모든 객체를 조회합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```cpp
 CosResult GetBucket(const GetBucketReq& req, GetBucketResp* resp)
@@ -49,12 +50,12 @@ qcloud_cos::CosAPI cos(config);
 
 std::string bucket_name = "examplebucket-1250000000";
 
-// GetBucketReq의 구조 함수에 bucket_name 입력 필요
+// GetBucketReq의 생성자에 bucket_name 전달 필요
 qcloud_cos::GetBucketReq req(bucket_name);
 qcloud_cos::GetBucketResp resp;
 qcloud_cos::CosResult result = cos.GetBucket(req, &resp);
 
-// 호출 성공 시 resp의 멤버 함수를 호출하여 반환 내용 획득
+// 호출 성공. resp의 멤버 함수를 호출하여 반환 내용 획득
 if (result.IsSucc()) {
     std::cout << "Name=" << resp.GetName() << std::endl;
     std::cout << "Prefix=" << resp.GetPrefix() << std::endl;
@@ -75,11 +76,11 @@ if (result.IsSucc()) {
 
 | 매개변수 | 매개변수 설명            |  유형         | 필수 입력 여부  |
 | ---- | --------------------| --------------| ------|
-| req  | GetBucket 작업 요청 | GetBucketReq  | 예    |
-| resp | GetBucket 작업 응답 | GetBucketResp | 예    |
+| req  | GetBucket 작업의 요청 | GetBucketReq  | 예    |
+| resp | GetBucket 작업의 응답 | GetBucketResp | 예    |
 
 
-GetBucketResp는 다음의 멤버 함수를 제공하며, Get Bucket이 반환하는 XML 포맷 상의 상세 내용을 획득하는 데 사용합니다. 
+GetBucketResp는 다음의 멤버 함수를 제공하며, Get Bucket이 반환하는 XML 형식의 상세 내용을 획득하는 데 사용합니다. 
 
 ```cpp
 std::vector<Content> GetContents();
@@ -110,7 +111,7 @@ struct Content {
 
 지정한 버킷에 객체를 업로드합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```cpp
 /// Stream으로 업로드
@@ -132,11 +133,11 @@ std::string object_name = "object_name";
 // 간편 업로드(스트림)
 {
     std::istringstream iss("put object");
-    // request의 구조 함수에 istream 입력 필요
+    // request의 생성자에 istream 입력 필요
     qcloud_cos::PutObjectByStreamReq req(bucket_name, object_name, iss);
-    // Set 방법을 호출하여 메타데이터 또는 ACL 등 설정
+    // Set 메소드를 호출하여 메타데이터 또는 ACL 등 설정
     req.SetXCosStorageClass("STANDARD_IA");
-    // MD5 검증을 비활성화하고 req.TurnOnComputeConentMd5() 사용 활성화. 기본적으로 활성화되어 있음
+    // MD5 검증을 비활성화. req.TurnOnComputeConentMd5() 사용 활성화. 기본적으로 활성화되어 있음
     req.TurnOffComputeConentMd5();
     qcloud_cos::PutObjectByStreamResp resp;
     qcloud_cos::CosResult result = cos.PutObject(req, &resp);
@@ -158,9 +159,9 @@ std::string object_name = "object_name";
 
 // 간편 업로드(파일)
 {
-    // request의 구조 함수에 로컬 파일 경로 입력 필요
+    // request의 생성자에 로컬 파일 경로 전달 필요
     qcloud_cos::PutObjectByFileReq req(bucket_name, object_name, "/path/to/local/file");
-    // Set 방법을 호출하여 메타데이터 또는 ACL 등 설정
+    // Set 메소드를 호출하여 메타데이터 또는 ACL 등 설정
     req.SetXCosStorageClass("STANDARD_IA");
     // MD5 검증을 비활성화하고 req.TurnOnComputeConentMd5() 사용 활성화. 기본적으로 활성화되어 있음
     req.TurnOffComputeConentMd5();
@@ -186,8 +187,8 @@ std::string object_name = "object_name";
 
 | 매개변수 | 매개변수 설명            |  유형                                    | 필수 입력 여부  |
 | ---- | --------------------| -----------------------------------------| ------|
-| req  | PutObject 작업 요청 | PutObjectByStreamReq/PutObjectByFileReq  | 예    |
-| resp | PutObject 작업 응답 | PutObjectByStreamResp/PutObjectByFileResp| 예    |
+| req  | PutObject 작업의 요청 | PutObjectByStreamReq/PutObjectByFileReq  | 예    |
+| resp | PutObject 작업의 응답 | PutObjectByStreamResp/PutObjectByFileResp| 예    |
 
 
 매개변수 Req에는 다음의 멤버 함수가 포함되어 있습니다.
@@ -199,7 +200,7 @@ void SetCacheControl(const std::string& str);
 // Content-Disposition RFC 2616에서 정의한 파일 이름. Object의 메타데이터로 저장
 void SetContentDisposition(const std::string& str);
 
-// Content-Encoding    RFC 2616에서 정의한 인코딩 포맷. Object의 메타데이터로 저장-
+// Content-Encoding    RFC 2616에서 정의한 인코딩 형식. Object의 메타데이터로 저장-
 void SetContentEncoding(const std::string& str);
 
 // Content-Type    RFC 2616에서 정의한 콘텐츠 유형(MIME). Object의 메타데이터로 저장
@@ -222,12 +223,12 @@ void SetXCosStorageClass(const std::string& storage_class);
 // 기본값: private
 void SetXcosAcl(const std::string& str);
 
-// 권한이 부여된 사용자에게 읽기 권한 부여. 포맷: x-cos-grant-read: id=" ",id=" ".
+// 권한이 부여된 사용자에게 읽기 권한 부여. 형식: x-cos-grant-read: id=" ",id=" ".
 // 서브 계정에 권한을 부여할 경우, id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"
 // 루트 계정에 권한을 부여할 경우, id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"
 void SetXcosGrantRead(const std::string& str);
 
-// 권한이 부여된 사용자에게 읽기/쓰기 권한 부여. 포맷: x-cos-grant-full-control: id=" ",id=" ".
+// 권한이 부여된 사용자에게 읽기/쓰기 권한 부여. 형식: x-cos-grant-full-control: id=" ",id=" ".
 // 서브 계정에 권한을 부여할 경우, id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>",
 // 루트 계정에 권한을 부여할 경우, id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"
 void SetXcosGrantFullControl(const std::string& str);
@@ -252,7 +253,7 @@ std::string GetXCosServerSideEncryption();
 
 객체 메타데이터 정보를 조회합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```cpp
 CosResult HeadObject(const HeadObjectReq& req, HeadObjectResp* resp)
@@ -281,8 +282,8 @@ if (result.IsSucc()) {
 
 | 매개변수 | 매개변수 설명             |  유형         | 필수 입력 여부  |
 | ---- | ---------------------| --------------| ------|
-| req  | HeadObject 작업 요청 | HeadObjectReq | 예    |
-| resp | HeadObject 작업 응답 | HeadObjectResp| 예    |
+| req  | HeadObject 작업의 요청 | HeadObjectReq | 예    |
+| resp | HeadObject 작업의 응답 | HeadObjectResp| 예    |
 
 
 HeadObjectResp는 공용 헤더의 멤버 함수를 읽어오는 것 외에도, 다음의 멤버 함수를 제공합니다.
@@ -308,7 +309,7 @@ std::string GetXCosServerSideEncryption();
 
 객체를 로컬에 다운로드합니다(Get Object).
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```cpp
 // Object를 로컬 파일에 다운로드
@@ -376,8 +377,8 @@ std::string local_path = "/tmp/object_name";
 
 | 매개변수 | 매개변수 설명            |  유형                                                        | 필수 입력 여부  |
 | ---- | --------------------| -------------------------------------------------------------| ------|
-| req  | GetObject 작업 요청 | GetObjectByFileReq/GetObjectByStreamReq/MultiGetObjectReq    | 예    |
-| resp | GetObject 작업 응답 | GetObjectByFileResp/GetObjectByStreamResp/MultiGetObjectResp | 예    |
+| req  | GetObject 작업의 요청 | GetObjectByFileReq/GetObjectByStreamReq/MultiGetObjectReq    | 예    |
+| resp | GetObject 작업의 응답 | GetObjectByFileResp/GetObjectByStreamResp/MultiGetObjectResp | 예    |
 
 
 
@@ -407,7 +408,7 @@ void SetResponseContentEncoding(const std::string& str);
 GetObjectResp는 공용 헤더의 멤버 함수를 읽어오는 것 외에도, 다음의 멤버 함수를 제공합니다.
 
 ```cpp
-// Object의 최종 수정 시간 획득. 문자열 포맷은 Date이며, "Wed, 28 Oct 2014 20:30:00 GMT"와 유사
+// Object의 마지막 수정 시간 획득. 문자열 형식은 Date이며, "Wed, 28 Oct 2014 20:30:00 GMT"와 유사
 std::string GetLastModified();
 
 // Object type 획득. Object의 추가 업로드 가능 여부를 표시합니다. 열거 값: normal 또는 appendable
@@ -430,7 +431,7 @@ std::string GetXCosServerSideEncryption();
 
 타깃 경로에 파일을 복사합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```cpp
 CosResult PutObjectCopy(const PutObjectCopyReq& req, PutObjectCopyResp* resp)
@@ -455,8 +456,8 @@ qcloud_cos::CosResult result = cos.PutObjectCopy(req, &resp);
 
 | 매개변수 | 매개변수 설명                |  유형             | 필수 입력 여부  |
 | ---- | ------------------------| ------------------| ------|
-| req  | PutObjectCopy 작업 요청 | PutObjectCopyReq  | 예    |
-| resp | PutObjectCopy 작업 응답 | PutObjectCopyResp | 예    |
+| req  | PutObjectCopy 작업의 요청 | PutObjectCopyReq  | 예    |
+| resp | PutObjectCopy 작업의 응답 | PutObjectCopyResp | 예    |
 
 
 PutObjectCopyReq에는 다음의 멤버 함수가 포함되어 있습니다.
@@ -495,10 +496,10 @@ void SetXCosStorageClass(const std::string& storage_class);
 // 기본값: private
 void SetXCosAcl(const std::string& str);
 
-// 권한이 부여된 사용자에게 읽기 권한 부여. 포맷: id="[OwnerUin]"  
+// 권한이 부여된 사용자에게 읽기 권한 부여. 형식: id="[OwnerUin]"  
 void SetXCosGrantRead(const std::string& str);
 
-// 권한이 부여된 사용자에게 모든 권한 부여. 포맷: id="[OwnerUin]"
+// 권한이 부여된 사용자에게 모든 권한 부여. 형식: id="[OwnerUin]"
 void SetXCosGrantFullControl(const std::string& str);
 
 // 사용자 정의한 헤더 정보 허용. Object의 메타데이터로 반환. 용량 제한: 2KB
@@ -515,7 +516,7 @@ PutObjectCopyResp에는 다음의 멤버 함수가 포함되어 있습니다.
 // 파일의 MD5 알고리즘 검증 값 반환. ETag 값으로 Object 내용에 변경 발생 여부 검사 가능
 std::string GetEtag();
 
-// 반환된 파일의 최종 수정 시간. 포맷: GMT
+// 반환된 파일의 최종 수정 시간. 형식: GMT
 std::string GetLastModified();
 
 // 버전 넘버 반환
@@ -532,7 +533,7 @@ std::string GetXCosServerSideEncryption();
 
 버킷에서 지정 객체를 삭제합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```cpp
 CosResult DeleteObject(const DeleteObjectReq& req, DeleteObjectResp* resp)
@@ -563,8 +564,8 @@ if (result.IsSucc()) {
 
 | 매개변수 | 매개변수 설명               |  유형             | 필수 입력 여부  |
 | ---- | -------------------- --| ------------------| ------|
-| req  | DeleteObject 작업 요청 | DeleteObjectReq   | 예    |
-| resp | DeleteObject 작업 응답 | DeletObjectResp   | 예    |
+| req  | DeleteObject 작업의 요청 | DeleteObjectReq   | 예    |
+| resp | DeleteObject 작업의 응답 | DeletObjectResp   | 예    |
 
 
 ### 다수의 객체 삭제
@@ -573,7 +574,7 @@ if (result.IsSucc()) {
 
 버킷에서 다수의 객체를 일괄 삭제합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```cpp
 CosResult DeleteObjects(const DeleteObjectsReq& req, DeleteObjectsResp* resp)
@@ -614,8 +615,8 @@ if (result.IsSucc()) {
 
 | 매개변수 | 매개변수 설명                |  유형             | 필수 입력 여부  |
 | ---- | ------------------------| ------------------| ------|
-| req  | DeleteObjects 작업 요청 | DeleteObjectsReq  | 예    |
-| resp | DeleteObjects 작업 응답 | DeletObjectsResp  | 예    |
+| req  | DeleteObjects 작업의 요청 | DeleteObjectsReq  | 예    |
+| resp | DeleteObjects 작업의 응답 | DeletObjectsResp  | 예    |
 
 
 DeleteObjectsReq에는 다음의 멤버 함수가 포함되어 있습니다.
@@ -654,9 +655,9 @@ struct ErrorInfo{
 
 #### 기능 설명
 
-아카이브 유형의 객체를 검색하여 액세스합니다.
+아카이브 유형의 객체를 검색 및 액세스합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```cpp
 CosResult PostObjectRestore(const PostObjectRestoreReq& req, PostObjectRestoreResp* resp)
@@ -690,8 +691,8 @@ std::string object_name = "sevenyou";
 
 | 매개변수 | 매개변수 설명                    |  유형                | 필수 입력 여부  |
 | ---- | ----------------------------| ---------------------| ------|
-| req  | PostObjectRestore 작업 요청 | PostObjectRestoreReq | 예    |
-| resp | PostObjectRestore 작업 응답 | PostObjectRestoreResp| 예    |
+| req  | PostObjectRestore 작업의 요청 | PostObjectRestoreReq | 예    |
+| resp | PostObjectRestore 작업의 응답 | PostObjectRestoreResp| 예    |
 
 
 PostObjectRestoreReq에는 다음의 멤버 함수가 포함되어 있습니다.
@@ -704,12 +705,50 @@ void SetExiryDays(uint64_t days);
 void SetTier(const std::string& tier);
 ```
 
+### 객체 URL 획득
+
+#### 기능 설명
+
+객체의 서명이 포함되지 않은 URL을 획득합니다.
+
+#### 메소드 프로토타입
+
+```cpp
+std::string GetObjectUrl(const std::string& bucket, const std::string& object, bool https = true, const std::string& region = "");
+```
+
+#### 요청 예시
+
+```cpp
+qcloud_cos::CosConfig config("./config.json");
+qcloud_cos::CosAPI cos(config);
+
+std::string bucket_name = "examplebucket-1250000000";
+std::string object_name = "sevenyou";
+//객체 https url을 획득합니다. region은 config.json에 설정된 리전입니다.
+cos.GetObjectUrl(bucket_name, object_name);
+//객체 http url을 획득합니다. region은 config.json에 설정된 리전입니다.
+cos.GetObjectUrl(bucket_name, object_name, false);
+//객체 https url을 획득합니다. region은 ap-shanghai입니다.
+cos.GetObjectUrl(bucket_name, object_name, true, "ap-shanghai");  
+```
+
+#### 매개변수 설명
+
+| 매개변수 | 매개변수 설명                 |  유형              | 필수 입력 여부  |
+| ------ | ------------- | ------ | -------- |
+| bucket | 버킷 이름      | string | 예       |
+| object | 객체 이름        | string | 예       |
+| https  | https 사용 여부 | bool   | 아니오       |
+| region | 리전 이름        | string | 아니오       |
+
+
 
 ## 멀티파트 작업
 
-객체 멀티파트 업로드에는 다음 작업이 포함됩니다.
+다음은 객체의 멀티파트 업로드 작업 내용입니다.
 
-- 객체 멀티파트 업로드: 멀티파트 업로드를 초기화하고 각 파트별로 객체를 업로드하면 모든 파트의 업로드가 완료됩니다.
+- 객체 멀티파트 업로드: 멀티파트 업로드를 초기화하고 파트를 업로드하면 완료됩니다.
 - 업로드된 멀티파트를 삭제합니다.
 
 
@@ -719,7 +758,7 @@ void SetTier(const std::string& tier);
 
 지정 버킷에서 진행 중인 멀티파트 업로드를 조회합니다(List Multipart Uploads).
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```cpp
 CosResult CosAPI::ListMultipartUpload(const ListMultipartUploadReq& request, ListMultipartUploadResp* response)
@@ -755,8 +794,8 @@ if (result.IsSucc()) {
 
 | 매개변수 | 매개변수 설명                      |  유형                  | 필수 입력 여부  |
 | ---- | ------------------------------| -----------------------| ------|
-| req  | ListMultipartUpload 작업 요청 | ListMultipartUploadReq | 예    |
-| resp | ListMultipartUpload 작업 응답 | ListMultipartUploadResp| 예    |
+| req  | ListMultipartUpload 작업의 요청 | ListMultipartUploadReq | 예    |
+| resp | ListMultipartUpload 작업의 응답 | ListMultipartUploadResp| 예    |
 
 
 ListMultipartUploadReq 멤버 함수:
@@ -768,7 +807,7 @@ void SetPrefix(const std::string& prefix);
 // 구분 문자는 하나의 부호로, Object 이름에 지정한 접두사가 포함되어 있으며 첫 번째로 출현한 delimiter 문자 사이의 Object가 하나의 그룹 요소인 common prefix가 됩니다. prefix가 없는 경우 경로의 시작점부터 시작됩니다.
 void SetDelimiter(const std::string& delimiter);
 
-// 규정된 반환 값의 인코딩 포맷. 합법적 값: url
+// 규정된 반환 값의 인코딩 형식. 유효 값: url
 void SetEncodingType(const std::string& encoding_type);
 
 // upload-id-marker와 함께 사용합니다. upload-id-marker가 지정되지 않은 경우 ObjectName은 알파벳 순서가 key-marker보다 큰 항목이 열거되며, upload-id-marker가 지정된 경우 ObjectName은 알파벳 순서가 key-marker보다 큰 항목이 열거됩니다. ObjectName은 알파벳 순서가 key-marker와 동일하고 UploadID는 upload-id-marker보다 큰 항목이 열거됩니다.
@@ -788,7 +827,7 @@ ListMultipartUploadResp 멤버 함수:
 std::vector<Upload> GetUpload()；
 // Bucket 이름
 std::string GetName()；
-// 인코딩 포맷
+// 인코딩 형식
 std::string GetEncodingType() const；
 // 기본적으로 UTF-8 이진법 순서로 열거되며, marker부터 시작해 모든 항목을 나열
 std::string GetMarker() const；
@@ -818,7 +857,7 @@ std::vector<std::string> GetCommonPrefixes() const
 
 멀티파트 업로드를 초기화하고 해당하는 uploadId를 가져옵니다(Initiate Multipart Upload).
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```cpp
 CosResult InitMultiUpload(const InitMultiUploadReq& req, InitMultiUploadResp* resp)
@@ -847,8 +886,8 @@ if (result.IsSucc()) {
 
 | 매개변수 | 매개변수 설명                  |  유형              | 필수 입력 여부  |
 | ---- | --------------------------| -------------------| ------|
-| req  | InitMultiUpload 작업 요청 | InitMultiUploadReq | 예    |
-| resp | InitMultiUpload 작업 응답 | InitMultiUploadResp | 예    |
+| req  | InitMultiUpload 작업의 요청 | InitMultiUploadReq | 예    |
+| resp | InitMultiUpload 작업의 응답 | InitMultiUploadResp | 예    |
 
 
 InitMultiUploadReq의 멤버 함수는 다음과 같습니다.
@@ -860,7 +899,7 @@ void SetCacheControl(const std::string& str);
 // Content-Disposition RFC 2616에서 정의한 파일 이름. Object의 메타데이터로 저장
 void SetContentDisposition(const std::string& str);
 
-// Content-Encoding    RFC 2616에서 정의한 인코딩 포맷. Object의 메타데이터로 저장-
+// Content-Encoding    RFC 2616에서 정의한 인코딩 형식. Object의 메타데이터로 저장-
 void SetContentEncoding(const std::string& str);
 
 // Content-Type    RFC 2616에서 정의한 콘텐츠 유형(MIME). Object의 메타데이터로 저장
@@ -880,12 +919,12 @@ void SetXCosStorageClass(const std::string& storage_class);
 // 기본값: private
 void SetXcosAcl(const std::string& str);
 
-// 권한이 부여된 사용자에게 읽기 권한 부여. 포맷: x-cos-grant-read: id=" ",id=" ".
+// 권한이 부여된 사용자에게 읽기 권한 부여. 형식: x-cos-grant-read: id=" ",id=" ".
 // 서브 계정에 권한을 부여할 경우, id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>"
 // 루트 계정에 권한을 부여할 경우, id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"
 void SetXcosGrantRead(const std::string& str);
 
-// 권한이 부여된 사용자에게 읽기/쓰기 권한 부여. 포맷: x-cos-grant-full-control: id=" ",id=" ".
+// 권한이 부여된 사용자에게 읽기/쓰기 권한 부여. 형식: x-cos-grant-full-control: id=" ",id=" ".
 // 서브 계정에 권한을 부여할 경우, id="qcs::cam::uin/<OwnerUin>:uin/<SubUin>",
 // 루트 계정에 권한을 부여할 경우, id="qcs::cam::uin/<OwnerUin>:uin/<OwnerUin>"
 void SetXcosGrantFullControl(const std::string& str);
@@ -908,11 +947,12 @@ std::string GetUploadId();
 std::string GetXCosServerSideEncryption();
 ```
 
-### <span id = "MULIT_UPLOAD_PART"> 멀티파트 업로드 </span>
+<span id ="MULIT_UPLOAD_PART"></span>
+###  멀티파트 업로드 
 
 멀티파트 업로드합니다(Upload Part).
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```cpp
 CosResult UploadPartData(const UploadPartDataReq& request, UploadPartDataResp* response)
@@ -967,8 +1007,8 @@ std::string object_name = "test_object";
 
 | 매개변수 | 매개변수 설명                 |  유형             | 필수 입력 여부  |
 | ---- | -------------------------| ------------------| ------|
-| req  | UploadPartData 작업 요청 | UploadPartDataReq | 예    |
-| resp | UploadPartData 작업 응답 | UploadPartDataResp| 예    |
+| req  | UploadPartData 작업의 요청 | UploadPartDataReq | 예    |
+| resp | UploadPartData 작업의 응답 | UploadPartDataResp| 예    |
 
 
 UploadPartDataReq 구성 시, 요청의 APPID, Bucket, Object, 초기화 완료 후 획득하는 UploadId, 업로드 데이터 스트림을 지정해야 하며, 호출이 완료되면 스트림은 호출한 쪽에서 자체적으로 비활성화합니다.
@@ -999,7 +1039,7 @@ std::string GetXCosServerSideEncryption();
 
 다른 객체를 한 파트로 복사합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```cpp
 CosResult UploadPartCopyData(const UploadPartCopyDataReq& request,UploadPartCopyDataResp* response)
@@ -1051,8 +1091,8 @@ CompleteMultiUpload(cos, bucket_name, object_name, upload_id, etags, numbers);
 
 | 매개변수 | 매개변수 설명                     |  유형                 | 필수 입력 여부  |
 | ---- | -----------------------------| ----------------------| ------|
-| req  | UploadPartCopyData 작업 요청 | UploadPartCopyDataReq | 예    |
-| resp | UploadPartCopyData 작업 응답 | UploadPartCopyDataResp| 예    |
+| req  | UploadPartCopyData 작업의 요청 | UploadPartCopyDataReq | 예    |
+| resp | UploadPartCopyData 작업의 응답 | UploadPartCopyDataResp| 예    |
 
 
 ```cpp
@@ -1062,7 +1102,7 @@ void SetUploadId(const std::string& upload_id)
 void SetPartNumber(uint64_t part_number)
 /// 이번 멀티파트 복사의 원본 파일 URL 경로 설정. versionid 하위 리소스로 이전 버전 지정 가능
 void SetXCosCopySource(const std::string& src)
-/// 원본 파일의 바이트 범위 설정. 범위 값은 반드시 bytes=first-last 포맷 사용
+/// 원본 파일의 바이트 범위 설정. 범위 값은 반드시 bytes=first-last 형식 사용
 void SetXCosCopySourceRange(const std::string& range)
  /// Object가 지정된 시간 이후에 수정될 경우 작업을 수행하고, 그렇지 않을 경우 412 반환
 void SetXCosCopySourceIfModifiedSince(const std::string& date)
@@ -1077,7 +1117,7 @@ void SetXCosCopySourceIfNoneMatch(const std::string& etag)
 ```
 /// 반환되는 파일의 MD5 알고리즘 검증 값 획득
 std::string GetEtag() const
-/// 반환된 파일의 최종 수정 시간. 포맷: GMT
+/// 반환된 파일의 최종 수정 시간. 형식: GMT
 std::string GetLastModified() const
 /// Server 측 암호화 시 사용하는 알고리즘
 std::string GetXCosServerSideEncryption() const
@@ -1089,7 +1129,7 @@ std::string GetXCosServerSideEncryption() const
 
 특정 멀티파트 업로드 작업에서 업로드된 파트를 조회합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```cpp
 CosResult ListParts(const ListPartsReq& req, ListPartsResp* resp)
@@ -1123,15 +1163,15 @@ if (result.IsSucc()) {
 
 | 매개변수 | 매개변수 설명            |  유형        | 필수 입력 여부  |
 | ---- | --------------------| -------------| ------|
-| req  | ListParts 작업 요청 | ListPartsReq | 예    |
-| resp | ListParts 작업 응답 | ListPartsResp| 예    |
+| req  | ListParts 작업의 요청 | ListPartsReq | 예    |
+| resp | ListParts 작업의 응답 | ListPartsResp| 예    |
 
 
 
 ListPartsReq에는 다음의 멤버 함수가 포함되어 있습니다.
 
 ```
-// 구조 함수, Bucket 이름, Object 이름, 멀티파트 업로드 ID
+// 생성자, Bucket 이름, Object 이름, 멀티파트 업로드 ID
 ListPartsReq(const std::string& bucket_name,                                                                                                                                      
              const std::string& object_name,
              const std::string& upload_id); 
@@ -1165,7 +1205,7 @@ std::string GetUploadId();
 // 이번 업로드 담당자의 정보 표시
 Initiator GetInitiator();
 
-// 해당 멀티파트 소유자의 정보 표시
+// 해당 파트 소유자의 정보 표시
 Owner GetOwner();
 
 // 기본적으로 UTF-8 이진법 순서로 열거되며, marker부터 시작해 모든 항목을 나열
@@ -1216,7 +1256,7 @@ struct Part {
 
 전체 파일의 멀티파트 업로드를 완료합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```cpp
 CosResult CompleteMultiUpload(const CompleteMultiUploadReq& request, CompleteMultiUploadResp* response)
@@ -1237,8 +1277,8 @@ qcloud_cos::CosResult result = cos.CompleteMultiUpload(req, &resp);
 
 | 매개변수 | 매개변수 설명                     |  유형                  | 필수 입력 여부  |
 | ---- | -----------------------------|------------------------| ------|
-| req  | CompleteMultiUpload 작업 요청 | CompleteMultiUploadReq | 예    |
-| resp | CompleteMultiUpload 작업 응답 | CompleteMultiUploadResp| 예    |
+| req  | CompleteMultiUpload 작업의 요청 | CompleteMultiUploadReq | 예    |
+| resp | CompleteMultiUpload 작업의 응답 | CompleteMultiUploadResp| 예    |
 
 
 CompleteMultiUploadReq 구성 시, 요청의 APPID, Bucket, Object, 초기화 완료 후 획득하는 UploadId를 지정해야 합니다.
@@ -1252,7 +1292,7 @@ CompleteMultiUploadReq(const std::string& bucket_name,
 또한, request에는 업로드하는 모든 파트의 번호와 ETag를 설정해야 합니다.
 
 ```
-// 다음 방법을 호출할 때에는 번호와 ETag의 순서가 일일이 대응되어야 함
+// 다음 방법을 호출할 때에는 번호와 ETag의 순서가 일대일로 대응되어야 함
 void SetPartNumbers(const std::vector<uint64_t>& part_numbers);
 void SetEtags(const std::vector<std::string>& etags) ;
 
@@ -1282,7 +1322,7 @@ std::string GetXCosServerSideEncryption();
 
 멀티파트 업로드 작업을 중지하고 업로드된 파트를 삭제합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```cpp
 CosResult AbortMultiUpload(const AbortMultiUploadReq& request, AbortMultiUploadResp* response)
@@ -1300,8 +1340,8 @@ qcloud_cos::CosResult result = cos.AbortMultiUpload(req, &resp);
 
 | 매개변수 | 매개변수 설명                   |  유형                | 필수 입력 여부  |
 | ---- | ---------------------------|----------------------| ------|
-| req  | AbortMultiUpload 작업 요청 | AbortMultiUploadReq  | 예    |
-| resp | AbortMultiUpload 작업 응답 | AbortMultiUploadResp | 예    |
+| req  | AbortMultiUpload 작업의 요청 | AbortMultiUploadReq  | 예    |
+| resp | AbortMultiUpload 작업의 응답 | AbortMultiUploadResp | 예    |
 
 
 AbortMultiUploadReq는 구성 시 Bucket, Object, Upload_id를 지정해야 합니다.
@@ -1323,7 +1363,7 @@ AbortMultiUploadReq(const std::string& bucket_name,
 
 멀티파트 업로드의 각 인터페이스를 캡슐화해 동시에 업로드합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```cpp
 CosResult MultiUploadObject(const MultiUploadObjectReq& request, MultiUploadObjectResp* response)
@@ -1357,8 +1397,8 @@ if (result.IsSucc()) {
 
 | 매개변수 | 매개변수 설명                    |  유형                 | 필수 입력 여부  |
 | ---- | ----------------------------|-----------------------| ------|
-| req  | MultiUploadObject 작업 요청 | MultiUploadObjectReq  | 예    |
-| resp | MultiUploadObject 작업 응답 | MultiUploadObjectResp | 예    |
+| req  | MultiUploadObject 작업의 요청 | MultiUploadObjectReq  | 예    |
+| resp | MultiUploadObject 작업의 응답 | MultiUploadObjectResp | 예    |
 
 
 MultiUploadObjectReq에는 다음의 멤버 함수가 포함되어 있습니다.
@@ -1388,7 +1428,7 @@ std::string GetXCosServerSideEncryption() const
 
 동시에 Range로 다운로드합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```cpp
 CosResult GetObject(const MultiGetObjectReq& request, 
@@ -1421,8 +1461,8 @@ if (result.IsSucc()) {
 
 | 매개변수 | 매개변수 설명                 |  유형              | 필수 입력 여부  |
 | ---- | -------------------------|--------------------| ------|
-| req  | MultiGetObject 작업 요청 | MultiGetObjectReq  | 예    |
-| resp | MultiGetObject 작업 응답 | MultiGetObjectResp | 예    |
+| req  | MultiGetObject 작업의 요청 | MultiGetObjectReq  | 예    |
+| resp | MultiGetObject 작업의 응답 | MultiGetObjectResp | 예    |
 
 
 MultiGetObjectReq에는 다음의 멤버 함수가 포함되어 있습니다.
