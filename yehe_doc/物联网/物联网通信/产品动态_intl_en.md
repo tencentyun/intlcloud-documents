@@ -27,7 +27,7 @@
 <table>
 <thead>
 <tr><th>Update</th><th>Description</th><th>Release Date</th><th>Document</th></tr></thead>
-<tbody><tr><td>Supported RRPC communication</td><td>IoT Hub supports the Revert RPC (RRPC) technology to implement a sync communication mechanism.</td><td>2020-7-31</td><td><a href='https://intl.cloud.tencent.com/document/product/1105/41833'>RRPC Communication</a></td></tr><tr><td>Supported broadcast communication</td><td>>IoT Hub supports broadcast communication.</td><td>2020-7-31</td><td><a href='https://intl.cloud.tencent.com/document/product/1105/41832'>Broadcast Communication</a></td></tr><tr><td>Supported rule functions in the rule engine</td><td>>Rule functions are added in the rule engine for diverse data processing.</td><td>2020-7-23</td><td><a href='https://intl.cloud.tencent.com/document/product/1105/41486'>Rule Function</a></td></tr></tbody>
+<tbody><tr><td>Supported RRPC communication</td><td>IoT Hub supports the Revert RPC (RRPC) technology to implement a sync communication mechanism.</td><td>2020-7-31</td><td><a href='https://intl.cloud.tencent.com/document/product/1105/41833'>RRPC Communication</a></td></tr><tr><td>Supported broadcast communication</td><td>IoT Hub supports broadcast communication.</td><td>2020-7-31</td><td><a href='https://intl.cloud.tencent.com/document/product/1105/41832'>Broadcast Communication</a></td></tr><tr><td>Supported rule functions in the rule engine</td><td>Rule functions are added in the rule engine for diverse data processing.</td><td>2020-7-23</td><td><a href='https://intl.cloud.tencent.com/document/product/1105/41486'>Rule Function</a></td></tr></tbody>
 </table>
 
 
