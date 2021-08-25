@@ -22,7 +22,7 @@ Solution: you can modify parameters on the **Database Management** > **Parameter
 - Enclose the URL with quotation marks when downloading cold backup files to a CVM instance over the private network in the console; otherwise, a 404 error will occur.
 
 ### Suggestions
-- Avoid performing online DDL operations during peak hours. You can use tools such as `pt-online-sche-machange`.
+- Avoid performing online DDL operations during peak hours. You can use tools such as `pt-online-schema-change`.
 - Avoid performing batch operations during peak hours.
 - Avoid running an instance for multiple businesses so as to minimize the risk of mutual interference between businesses due to high coupling.
 - Disable automatic transaction committing and develop a habit of using `begin;` for online operations, which can help minimize the risk of data loss caused by faulty operations. In case of a faulty operation, you can use the rollback feature of TencentDB for MySQL for data restoration (rollback to any point in time in the last 5 days is supported). For tables without cross-database and cross-table logic, you can use quick or instant rollback for even faster data restoration. The new table after rollback is named `original table name_bak`.
