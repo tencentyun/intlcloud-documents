@@ -1,0 +1,22 @@
+## Hotline
+If you have any questions, please [contact us](https://intl.cloud.tencent.com/contact-us) for assistance.
+
+| Region | Contact |
+|---------|---------|
+| Hong Kong (China) | +852 800 906 020 (toll-free) |
+| US | +1 844 606 0804 (toll-free) |
+| Other regions | +86 4009100100 |
+
+## Ticket System
+If you encounter any OPS or technical problems when using our products, you can log in to the Tencent Cloud console and follow the on-screen prompts to submit a ticket. We will get back to you as soon as possible.
+Ticket links:
+- Ticket submission: [submit a ticket](https://console.cloud.tencent.com/workorder/category)
+- Ticket status query: [Ticket list](https://console.cloud.tencent.com/workorder)
+
+A ticket can have the following status:
+- Pending processing: the ticket is just submitted or has been received but not reviewed by the technical support team. You can submit more information or close the ticket at this stage.
+- Processing: the technical support team has received and reviewed the ticket and is taking an action. You can submit more information or close the ticket at this stage.
+- More information required: the technical support team has received and reviewed the ticket, but more information is required. You can close the ticket at this stage.
+ >? The ticket will revert to the "pending processing" status after you re-submit the ticket with more information.
+ >
+- Closed: the ticket has been resolved, or you have closed the ticket before it was processed.
