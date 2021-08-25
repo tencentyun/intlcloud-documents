@@ -2,7 +2,7 @@
 
 This document describes how to quickly deploy a local Egg project to the cloud through a web function.
 
->?This document mainly describes how to deploy in the console. You can also complete the deployment on the command line. For more information, please see [Deploying Framework on Command Line](https://intl.cloud.tencent.com/document/product/583/41586).
+>?This document mainly describes how to deploy in the console. You can also complete the deployment on the command line. For more information, please see [Deploying Framework on Command Line](https://intl.cloud.tencent.com/document/product/1040/41597).
 
 
 

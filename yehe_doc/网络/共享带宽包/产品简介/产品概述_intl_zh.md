@@ -24,7 +24,7 @@
 </tr>
 </table>
 
-一个账户仅支持以上一种类型的带宽包，如需确认您的账户类型，请参见 [判断账户类型](https://intl.cloud.tencent.com/document/product/684/15246)。
+如需确认您的账户类型，请参见 [判断账户类型](https://intl.cloud.tencent.com/document/product/684/15246)。
 >?传统账户类型可以提交 [工单申请](https://console.cloud.tencent.com/workorder/category)，升级为标准账户类型；但标准账户类型无法降级为传统账户类型。
 >
 

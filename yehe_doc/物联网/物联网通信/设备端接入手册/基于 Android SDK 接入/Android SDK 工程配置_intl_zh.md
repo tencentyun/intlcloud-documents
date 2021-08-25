@@ -31,7 +31,7 @@ dependencies {
 
 ## 认证连接
 
-编辑 [app-config.json](https://github.com/tencentyun/iot-device-java/blob/master/hub/hub-android-demo/app-config.json) 文件中的配置信息，可在 [IoTMqttFragment.java](https://github.com/tencentyun/iot-device-java/blob/master/hub/hub-android-demo/src/main/java/com/tencent/iot/hub/device/android/app/IoTMqttFragment.java) 读取对应以下数据：
+编辑 app-config.json 文件中的配置信息，可在 [IoTMqttFragment.java](https://github.com/tencentyun/iot-device-java/blob/master/hub/hub-android-demo/src/main/java/com/tencent/iot/hub/device/android/app/IoTMqttFragment.java) 读取对应以下数据：
 
 ``` gr
 {
@@ -48,8 +48,8 @@ dependencies {
 ```
 
 SDK 提供证书认证与密钥认证两种认证方式，需按照已创建的产品认证类型进行选择设置。
-- 密钥认证须在 [app-config.json](https://github.com/tencentyun/iot-device-java/blob/master/hub/hub-android-demo/app-config.json) 配置信息中填入 PRODUCT_ID、DEVICE_NAME、DEVICE_PSK 所对应的参数。SDK 会根据设备配置信息自动生成签名，作为接入物联网通信的凭证。
-- 证书认证须在 [app-config.json](https://github.com/tencentyun/iot-device-java/blob/master/hub/hub-android-demo/app-config.json) 配置信息中填入 PRODUCT_ID、DEVICE_NAME 等内容并读取设备证书、设备私钥文件的内容。读取方式分为两种：
+- 密钥认证须在 app-config.json 配置信息中填入 PRODUCT_ID、DEVICE_NAME、DEVICE_PSK 所对应的参数。SDK 会根据设备配置信息自动生成签名，作为接入物联网通信的凭证。
+- 证书认证须在 app-config.json 配置信息中填入 PRODUCT_ID、DEVICE_NAME 等内容并读取设备证书、设备私钥文件的内容。读取方式分为两种：
  - 通过 AssetManager 进行读取，此时需在工程 `hub/hub-android-demo/src/main` 路径下创建 assets 目录并将设备证书、私钥放置在该目录中。
  - 通过 InputStream 进行读取，此时需传入设备证书、私钥的全路径信息。
    1. 成功读取证书文件与私钥文件之后，需在 [IoTMqttFragment.java](https://github.com/tencentyun/iot-device-java/blob/master/hub/hub-android-demo/src/main/java/com/tencent/iot/hub/device/android/app/IoTMqttFragment.java) 中设置 mDevCertName 证书名称与 mDevKeyName 私钥名称。

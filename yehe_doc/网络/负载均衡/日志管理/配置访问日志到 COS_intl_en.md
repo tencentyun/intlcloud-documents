@@ -1,4 +1,4 @@
->!The feature of storing access logs in COS will stop accepting new enablement requests after 00:00:00, May 15, 2020 (00:00:00, April 26, 2020 for the Guangzhou region) and will be officially disused after 00:00:00, June 30, 2020. For more information, please see [Announcement on the Deactivation of the Feature of Storing CLB Access Logs in COS](https://intl.cloud.tencent.com/document/product/214/35906). Please use the upgraded feature of [storing access logs in CLS](https://intl.cloud.tencent.com/document/product/214/35063).
+>!The feature of storing access logs in COS will stop accepting new enablement requests after 00:00:00, May 15, 2020 (00:00:00, April 26, 2020 for the Guangzhou region) and will be officially disused after 00:00:00, June 30, 2020. Please use the upgraded feature of [storing access logs in CLS](https://intl.cloud.tencent.com/document/product/214/35063).
 
 CLB supports configuring layer-7 (HTTP/HTTPS) access logs that can help you better understand client requests, troubleshoot issues, and analyze access data. Currently, access logs can be stored in COS for download and analysis, and supported regions include Guangzhou, Shanghai, Beijing, Hong Kong (China), Shanghai Finance, and Shanghai Finance.
 
@@ -7,17 +7,16 @@ Access logs of CLB are mainly used to quickly locate and troubleshoot issues. Th
 - Log storage and search provide SLA based on the storage service currently in use.
 
 >?
-- Currently, log aggregation granularity is 1 hour, and log data transfer may have a delay.
-- Currently, CLB supports storing and downloading access logs of public network layer-7 (HTTP/HTTPS) CLB instances but not layer-4 (TCP/UDP) or private network layer-7 CLB instances.
-- The log service for CLB is free of charge. A free COS storage capacity of 50 GB is provided for individual users as specified in [Free Tier](https://intl.cloud.tencent.com/document/product/436/6240). If you have a high number of logs, please clean them up in a timely manner.
-- In the regions that support storing access logs in COS, if the access logging feature is not enabled, Tencent Cloud will retain the logs for three days by default; otherwise, the retention period will be subject to the COS configuration. Access log cannot be configured in other regions.
+>- Currently, log aggregation granularity is 1 hour, and log data transfer may have a delay.
+>- Currently, CLB supports storing and downloading access logs of public network layer-7 (HTTP/HTTPS) CLB instances but not layer-4 (TCP/UDP) or private network layer-7 CLB instances.
+>- The log service for CLB is free of charge. A free COS storage capacity of 50 GB is provided for individual users as specified in [Free Tier](https://intl.cloud.tencent.com/document/product/436/6240). If you have a high number of logs, please clean them up in a timely manner.
+>- In the regions that support storing access logs in COS, if the access logging feature is not enabled, Tencent Cloud will retain the logs for three days by default; otherwise, the retention period will be subject to the COS configuration. Access log cannot be configured in other regions.
 
 
 ## Enabling Access Log Storage in COS
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3).
 2. On the "CLB Instance" list page, click the ID of the CLB instance to be configured to enter the "Basic Information" page.
 3. In the "Access Log" module, edit "Store Logs in COS".
-![](https://main.qcloudimg.com/raw/948ca531935af6a102885d3a941852e0.png)
 4. Enable access logging in the pop-up window and select a destination COS bucket. If you have not created any COS bucket yet, you can [create a bucket](https://console.cloud.tencent.com/cos4/bucket) and select it for log storage.
 ![](https://main.qcloudimg.com/raw/1eb954e4a6d33090fc5901a87b930f6a.png)
 5. Click **Submit** and a folder named `lb-id` will be automatically created in the bucket for request logs.
@@ -27,11 +26,8 @@ Access logs of CLB are mainly used to quickly locate and troubleshoot issues. Th
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3).
 2. On the "CLB Instance" list page, click the ID of the CLB instance to be configured to enter the "Basic Information" page.
 3. In the "Access Log" module, edit "Store Logs in COS".
-![](https://main.qcloudimg.com/raw/948ca531935af6a102885d3a941852e0.png)
 4. In the pop-up box, disable access log and click **Submit**.
-![](https://main.qcloudimg.com/raw/86dbea54d3b697a03ed449b398679461.png)   
- The configuration result is as follows. Log storage in COS cannot be enabled again after it is disabled. For more information, please see [Notice on the Deactivation of the Feature of Storing CLB Access Logs in COS](https://intl.cloud.tencent.com/document/product/214/35906).
-![](https://main.qcloudimg.com/raw/43a489e82953e4b27acca5a541912704.png)
+ The configuration result is as follows. Log storage in COS cannot be enabled again after it is disabled. 
 
 ## Log Format and Variable Description
 ### Log format

@@ -173,9 +173,9 @@ echo <BucketName-APPID>:<SecretId>:<SecretKey> > /etc/passwd-cosfs
 chmod 640 /etc/passwd-cosfs
 ```
 
->? 您需要将 &lt;&gt; 的参数替换为您的信息。
-> - &lt;BucketName-APPID&gt;为存储桶名称格式，关于存储桶命名规范，请参见 [存储桶命名规范](https://intl.cloud.tencent.com/document/product/436/13312)。
-> - &lt;SecretId&gt; 和 &lt;SecretKey&gt;为密钥信息，您可前往访问管理控制台的 [云 API 密钥管理](https://console.cloud.tencent.com/cam/capi) 中查看和创建。
+>? 您需要将 <> 的参数替换为您的信息。
+> - <BucketName-APPID>为存储桶名称格式，关于存储桶命名规范，请参见 [存储桶命名规范](https://intl.cloud.tencent.com/document/product/436/13312)。
+> - <SecretId> 和 <SecretKey>为密钥信息，您可前往访问管理控制台的 [云 API 密钥管理](https://console.cloud.tencent.com/cam/capi) 中查看和创建。
 > - 您也可以将密钥配置在文件 $HOME/.passwd-cosfs 中，或通过 -opasswd_file=[path] 指定密钥文件路径，同时您需要将密钥文件的权限值设置为600。
 > 
 
@@ -197,8 +197,8 @@ chmod 640 /etc/passwd-cosfs
 cosfs <BucketName-APPID> <MountPoint> -ourl=http://cos.<Region>.myqcloud.com -odbglevel=info -oallow_other
 ```
 其中：
-- &lt;MountPoint&gt; 为本地挂载目录（例如`/mnt`）。
-- &lt;Region&gt; 为地域简称， 例如 ap-guangzhou 、 eu-frankfurt 等。更多地域简称信息，请参见 [可用地域](https://intl.cloud.tencent.com/document/product/436/6224)。
+- < MountPoint >为本地挂载目录（例如`/mnt`）。
+- < Region > 为地域简称， 例如 ap-guangzhou 、 eu-frankfurt 等。更多地域简称信息，请参见 [可用地域](https://intl.cloud.tencent.com/document/product/436/6224)。
 - -odbglevel 指定日志级别，默认为crit，可选值为crit、error、warn、info、debug。
 - -oallow_other 允许非挂载用户访问挂载文件夹。
 

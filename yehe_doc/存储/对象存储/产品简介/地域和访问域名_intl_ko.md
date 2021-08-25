@@ -1,14 +1,11 @@
+## 개요
 
-## 소개
+**리전(Region)**은 Tencent Cloud 호스팅 데이터 센터의 분포 지역을 의미하며, 객체 스토리지 COS의 데이터를 해당 리전의 버킷에 저장합니다. 사용자는 COS를 통해 데이터를 여러 리전에 저장할 수 있으며, 일반적으로 저지연, 저비용, 컴플라이언스 요건을 충족할 수 있도록 사용자의 비즈니스 지역과 가장 근접한 리전에 버킷을 생성하는 것을 권장합니다.
 
-**리전(Region)**은 Tencent Cloud 호스팅 데이터 센터의 분포 지역을 의미하며, 객체 스토리지 COS의 데이터를 해당 리전의 버킷에 저장합니다. 사용자는 COS를 통해 데이터를 여러 리전에 저장할 수 있으며, 일반적으로 딜레이와 비용을 절감하고 컴플라이언스 요건을 충족할 수 있도록 사용자의 비즈니스 지역과 가장 근접한 리전에 버킷을 생성하는 것을 권장합니다.
+예를 들어, 비즈니스가 화남지역에 분포되어 있는 경우 광저우 리전을 선택해 버킷을 생성하면 객체의 업로드 및 다운로드 속도를 더욱 향상시킬 수 있습니다.
 
-예를 들어, 비즈니스가 화난지역에 분포되어 있는 경우 광저우 리전을 선택해 버킷을 생성하면 객체의 업로드 및 다운로드 속도를 더욱 향상시킬 수 있습니다.
+**기본 설정 도메인**은 COS의 기본 버킷 도메인을 말하며, 사용자가 버킷을 생성하면 시스템에서 버킷 이름과 리전에 따라 자동으로 생성합니다. 다른 리전의 버킷은 각각 다른 기본 도메인이 있습니다. [COS 콘솔](https://console.cloud.tencent.com/cos5)로 이동하여 버킷의 [개요]>[도메인 정보]에서 확인하실 수 있습니다.
 
-**기본 도메인**이란 COS의 기본 버킷 도메인을 의미하며, 사용자가 버킷 생성 시 시스템이 버킷 이름과 리전에 따라 자동으로 생성합니다. 각 리전의 버킷에는 서로 다른 기본 도메인이 있습니다.
-
-
-> ?버킷 생성 후에는 해당하는 기본 도메인이 생성되며, [COS 콘솔](https://console.cloud.tencent.com/cos5)로 이동해 버킷의 [기본 설정]에서 확인할 수 있습니다.
 
 
 
@@ -21,8 +18,8 @@
       <th>기본 도메인(업로드/다운로드/관리)</th>
    </tr>
    <tr>
-      <td rowspan=7>중국대륙</td>
-      <td rowspan=7 nowrap="nowrap">퍼블릭 클라우드 리전</td>
+      <td rowspan=10>중국대륙</td>
+      <td rowspan=7 nowrap="nowrap">공유 클라우드 리전</td>
       <td nowrap="nowrap">베이징 1존(품절)</td>
       <td>ap-beijing-1</td>
       <td>&lt;BucketName-APPID&gt;.cos.ap-beijing-1.myqcloud.com</td>
@@ -62,6 +59,7 @@
 
 
 
+
 ### 중국홍콩 및 해외 리전
 
 <table>
@@ -88,7 +86,7 @@
       <td>&lt;BucketName-APPID&gt;.cos.ap-mumbai.myqcloud.com</td>
    </tr>
    <tr>
-      <td  nowrap="nowrap">자카르타(A/B테스트 중)</td>
+      <td  nowrap="nowrap">자카르타(카나리 배포 중)</td>
       <td>ap-jakarta</td>
       <td>&lt;BucketName-APPID&gt;.cos.ap-jakarta.myqcloud.com</td>
    </tr>
@@ -136,12 +134,12 @@
    </tr>
 </table>
 
->?자카르타 리전은 현재 A/B테스트 중으로, 일부 클라이언트 콘솔은 현재 지원되지 않습니다.
+>?자카르타 리전은 현재 카나리 배포 중으로, 일부 고객의 콘솔은 현재 지원되지 않습니다.
 
 
 ### 글로벌 가속 도메인
 
-글로벌 가속 도메인 포맷은 &lt;BucketName-APPID&gt;.cos.accelerate.myqcloud.com입니다. 글로벌 가속 도메인에 대한 소개 및 사용 예시는 [글로벌 가속 개요](https://intl.cloud.tencent.com/document/product/436/33409)를 참조하십시오.
+글로벌 가속 도메인 포맷은 &lt;BucketName-APPID&gt;.cos.accelerate.myqcloud.com입니다. 글로벌 가속 도메인에 대한 소개 및 사용 예시는 [글로벌 가속 개요](https://intl.cloud.tencent.com/document/product/436/33409)를 참고하십시오.
 
 
 ### 예시
@@ -171,10 +169,11 @@ examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/picture.jpg
 
 ## 내부 네트워크 및 공인 네트워크 액세스
 
-Tencent Cloud COS의 액세스 도메인은 스마트 DNS 리졸브를 사용하여 인터넷을 통해 각 ISP 환경에서의 COS 액세스를 검증하고 최적의 링크를 제공합니다.
+같은 리전의 CVM에서는, COS 기본 도메인을 통해 파일에 액세스할 때 기본적으로 내부 네트워크 링크를 사용하는데 이때 파일 업로드 및 다운로드는 내부 네트워크 트래픽을 발생시키며 트래픽 요금은 발생하지 않으나, 요청 수에 대한 요금은 부과됩니다.
 
-Tencent Cloud 내부에 서비스를 배포하여 COS 액세스에 사용하는 경우 리전 내 액세스가 자동으로 내부 네트워크 주소로 안내됩니다. 현재 리전 간에는 내부 네트워크 액세스를 지원하지 않으며, 기본적으로 공인 네트워크 주소로 리졸브됩니다.
+Tencent Cloud COS의 액세스 도메인은 스마트 DNS 리졸브를 사용하여 각 통신사 환경의 인터넷에서 COS 액세스를 검증하고 최적의 링크를 제공합니다.
 
-내부 네트워크 및 공인 네트워크 액세스에 대한 자세한 내용은 [요청 생성 개요](https://intl.cloud.tencent.com/document/product/436/30613) 문서를 참조하십시오.
+Tencent Cloud 내부에 서비스를 배포하여 COS 액세스에 사용하는 경우 동일 리전 내 액세스가 자동으로 내부 네트워크 주소를 가리킵니다. 현재 리전 간에는 내부 네트워크 액세스를 지원하지 않으며, 기본적으로 공인 네트워크 주소로 리졸브됩니다.
 
+내부 네트워크 및 공인 네트워크 액세스에 대한 자세한 내용은 [요청 생성 개요](https://intl.cloud.tencent.com/document/product/436/30613) 문서를 참고하십시오.
 
