@@ -1,6 +1,6 @@
 ## 기능 설명 
 
-COSFS 툴은 COS 버킷을 로컬로 마운트하는 기능을 제공하여 로컬 파일 시스템을 사용하듯이 직접 Tencent Cloud COS에 있는 객체를 조작할 수 있습니다. COSFS는 다음과 같은 주요 기능을 제공합니다.
+COSFS 툴은 Cloud Object Storage(COS) 버킷을 로컬로 마운트하는 기능을 제공하여 로컬 파일 시스템을 사용하듯이 직접 Tencent Cloud COS에 있는 객체를 조작할 수 있습니다. COSFS는 다음과 같은 주요 기능을 제공합니다.
 - POSIX 파일 시스템의 대부분 기능 지원. 예: 파일 읽기/쓰기, 디렉터리 작업, 링크 작업, 권한 관리, uid/gid 관리 등의 기능
 - 대용량 파일 멀티파트 전송 기능
 - MD5 데이터 검증 기능
@@ -24,7 +24,7 @@ Ubuntu, CentOS, SUSE, macOS 주요 시스템을 지원합니다.
 COSFS는 패키지 방식과 컴파일 소스 코드 방식의 두 가지 설치 방법을 제공합니다.
 
 
-### 방법1: 설치 패키지로 설치하기
+### 방법1: 패키지로 설치하기
 >?해당 방법은 Ubuntu, CentOS 주요 시스템을 지원합니다.
 >
 
@@ -41,7 +41,7 @@ wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-
 #Ubuntu20.04
 wget https://github.com/tencentyun/cosfs/releases/download/v1.0.19/cosfs_1.0.19-ubuntu20.04_amd64.deb
 ```
-2. 설치(예시: Ubuntu16.04)
+2. 설치(예시: Ubuntu16.04).
 ```shell
 sudo dpkg -i cosfs_1.0.19-ubuntu16.04_amd64.deb
 ```
@@ -50,7 +50,7 @@ sudo dpkg -i cosfs_1.0.19-ubuntu16.04_amd64.deb
 
 1. 종속 설치
 ```plaintext
-sudo yum install libxml2-devel libcurl-devel -y
+sudo yum install  libxml2-devel libcurl-devel -y
 ```
 2. 시스템 버전에 따라 해당하는 설치 패키지를 선택합니다. 현재 지원하는 CentOS 릴리스 버전은 CentOS6.5, CentOS7.0을 포함합니다.
 ```plaintext
@@ -135,7 +135,7 @@ ldconfig   #동적 링크 라이브러리 업데이트
 pkg-config --modversion fuse  #fuse 버전 넘버 조회. “2.9.4”가 표시되는 경우 fuse 2.9.4 설치가 완료되었다는 의미입니다. 
 ```
 - SUSE 시스템에서는 fuse 2.8.4 이상 버전을 직접 설치해야 하며 설치 명령어 예시는 다음과 같습니다.
->!설치 시 `example/fusexmp.c` 파일의 222행 내용을 주석 처리해야 합니다. 주석 처리하지 않을 경우 make에 오류가 발생합니다. `/*content*/`로 주석 처리합니다.
+>!설치 시 `example/fusexmp.c` 파일의 제 222행 내용을 주석 처리해야 합니다. 주석 처리하지 않을 경우 make에 오류가 발생합니다. 주석 방법: `/*content*/`.
 >
 ```shell
 zypper remove fuse libfuse2
@@ -174,12 +174,12 @@ chmod 640 /etc/passwd-cosfs
 ```
 
 >? &lt;&gt;의 매개변수를 사용자 정보로 변경해야 합니다.
->- &lt;BucketName-APPID&gt;는 버킷 이름 포맷입니다. 버킷 이름 생성 규칙에 대한 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참조하십시오.
+>- &lt;BucketName-APPID&gt;는 버킷 이름 포맷입니다. 버킷 이름 생성 규칙에 대한 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오.
 >- &lt;SecretId&gt;와 &lt;SecretKey&gt;는 키 정보입니다. CAM 콘솔의 [Tencent Cloud API 키 관리](https://console.cloud.tencent.com/cam/capi)에서 조회 및 생성할 수 있습니다.
 >- 키는 $HOME/.passwd-cosfs 파일에서 설정하거나 -opasswd_file=[path]로 키 파일 경로를 지정할 수 있으며, 키 파일의 권한 값은 600으로 설정해야 합니다.
 > 
 
-<b>예시: </b>
+**예시: **
 
 ```shell
 echo examplebucket-1250000000:AKIDHTVVaVR6e3****:PdkhT9e2rZCfy6**** > /etc/passwd-cosfs
@@ -196,13 +196,13 @@ chmod 640 /etc/passwd-cosfs
 ```shell
 cosfs <BucketName-APPID> <MountPoint> -ourl=http://cos.<Region>.myqcloud.com -odbglevel=info -oallow_other
 ```
-그 중
-- &lt;MountPoint&gt;는 로컬 마운트 디렉터리(예시: `/mnt`)입니다.
-- &lt;Region&gt;는 리전 약칭입니다(예시: ap-guangzhou, eu-frankfurt 등). 리전 약칭에 대한 자세한 정보는 [가용 리전](https://intl.cloud.tencent.com/document/product/436/6224)을 참조하십시오.
+그중에서,
+- &lt;MountPoint&gt;:는 로컬 마운트 디렉터리(예: `/mnt`)입니다.
+- &lt;Region&gt;는 리전 약칭입니다(예시: ap-guangzhou, eu-frankfurt 등). 리전 약칭에 대한 자세한 정보는 [가용 리전](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오.
 - -odbglevel은 로그 레벨을 지정합니다. 기본 값은 crit이며, 옵션값은 crit, error, warn, info, debug입니다.
-- -oallow_other는 마운트되지 않은 사용자의 마운트 폴더 액세스를 허용합니다.
+- -oallow_other: 마운트되지 않은 사용자의 마운트 폴더 액세스를 허용합니다.
 
-<b>예시: </b>
+**예시: **
 
 ```shell
 mkdir -p /mnt/cosfs
@@ -219,8 +219,8 @@ cosfs examplebucket-1250000000 /mnt/cosfs -ourl=http://cos.ap-guangzhou.myqcloud
 
 ```shell
 방법1: fusermount -u /mnt, fusermount는 FUSE 파일 시스템 언마운트 전용 명령어입니다. 
-방법2: umount -l /mnt, 프로그램 참조 파일 시스템에 파일이 있는 경우 언마운트 시 오류가 발생하지 않으며 프로그램 참조가 없을 때 언마운트가 완료됩니다.
-방법3: umount /mnt, 프로그램 참조 파일 시스템에 파일이 있는 경우 언마운트 시 오류가 발생합니다.
+방법2: umount -l /mnt, 프로그램 참고 파일 시스템에 파일이 있는 경우 언마운트 시 오류가 발생하지 않으며 프로그램 참고가 없을 때 언마운트가 완료됩니다.
+방법3: umount /mnt, 프로그램 참고 파일 시스템에 파일이 있는 경우 언마운트 시 오류가 발생합니다.
 ```
 
 ## 주요 마운트 옵션
@@ -254,4 +254,4 @@ COSFS 로그 기록 레벨을 설정합니다. info, dbg, warn, err, crit 중에
 
 
 ## FAQ
-COSFS 툴 사용 중 문의 사항이 있는 경우 [COSFS 툴 관련 FAQ](https://intl.cloud.tencent.com/document/product/436/30587)를 참조하십시오.
+COSFS 툴 사용 중 문의 사항이 있는 경우 [COSFS 툴 관련 FAQ](https://intl.cloud.tencent.com/document/product/436/30587)를 참고하십시오.
