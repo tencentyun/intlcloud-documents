@@ -129,7 +129,7 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 **Objective-C**
 
 [//]: # ".cssg-snippet-transfer-upload-bytes"
-'''objective-c
+``` objective-c
 QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
 
 // BucketName-APPID 형식의 버킷 이름
@@ -165,7 +165,7 @@ put.body = [@"My Example Content" dataUsingEncoding:NSUTF8StringEncoding];
 **Swift**
 
 [//]: # ".cssg-snippet-transfer-upload-bytes"
-'''swift
+```swift
 let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
 
 // BucketName-APPID 형식의 버킷 이름
@@ -211,7 +211,7 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 업로드 작업은 다음 방법으로 일시 정지할 수 있습니다.
 
 [//]: # ".cssg-snippet-transfer-upload-pause"
-'''objective-c
+``` objective-c
 NSError *error;
 NSData *resmeData = [put cancelByProductingResumeData:&error];
 ```
@@ -219,7 +219,7 @@ NSData *resmeData = [put cancelByProductingResumeData:&error];
 일시 정지 후 다음 방법으로 업로드를 재개할 수 있습니다.
 
 [//]: # ".cssg-snippet-transfer-upload-resume"
-'''objective-c
+``` objective-c
 QCloudCOSXMLUploadObjectRequest *resumeRequest = [QCloudCOSXMLUploadObjectRequest requestWithRequestData:resmeData];
 [[QCloudCOSTransferMangerService defaultCOSTransferManager] UploadObject:resumeRequest];
 ```
@@ -228,7 +228,7 @@ QCloudCOSXMLUploadObjectRequest *resumeRequest = [QCloudCOSXMLUploadObjectReques
 다음 방법으로 업로드를 취소할 수 있습니다.
 
 [//]: # ".cssg-snippet-transfer-upload-cancel"
-'''objective-c
+``` objective-c
 //해당 업로드 삭제
 [put abort:^(id outputObject, NSError *error) {
     
@@ -242,7 +242,7 @@ QCloudCOSXMLUploadObjectRequest *resumeRequest = [QCloudCOSXMLUploadObjectReques
 업로드 작업은 다음과 같은 방법으로 일시 정지할 수 있습니다.
 
 [//]: # ".cssg-snippet-transfer-upload-pause"
-'''swift
+``` swift
 var error : NSError?;
 var uploadResumeData:Data = put.cancel(byProductingResumeData:&error) as Data;
 ```
@@ -250,7 +250,7 @@ var uploadResumeData:Data = put.cancel(byProductingResumeData:&error) as Data;
 일시 정지 후 다음과 같은 방식으로 업로드를 재개할 수 있습니다.
 
 [//]: # ".cssg-snippet-transfer-upload-resume"
-'''swift
+``` swift
 var resumeRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>.init(request: uploadResumeData);
 QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(resumeRequest);
 ```
@@ -259,7 +259,7 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(resumeRe
 다음과 같은 방식으로 업로드를 취소할 수 있습니다.
 
 [//]: # ".cssg-snippet-transfer-upload-cancel"
-'''swift
+``` swift
 //해당 업로드 삭제
 put.abort { (outputObject, error) in
     
@@ -272,7 +272,7 @@ put.abort { (outputObject, error) in
 **Objective-C**
 
 [//]: # ".cssg-snippet-transfer-batch-upload-objects"
-'''objective-c
+``` objective-c
 for (int i = 0; i<20; i++) {
     QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
     
@@ -306,7 +306,7 @@ for (int i = 0; i<20; i++) {
 **Swift**
 
 [//]: # ".cssg-snippet-transfer-batch-upload-objects"
-'''swift
+``` swift
 for i in 1...10 {
     let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
     
@@ -348,7 +348,7 @@ for i in 1...10 {
 **Objective-C**
 
 [//]: # ".cssg-snippet-transfer-batch-upload-objects"
-'''objective-c
+``` objective-c
 for (int i = 0; i<20; i++) {
     QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
     
@@ -383,7 +383,7 @@ for (int i = 0; i<20; i++) {
 **Swift**
 
 [//]: # ".cssg-snippet-transfer-batch-upload-objects"
-'''swift
+``` swift
 for i in 1...10 {
     let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
     
@@ -427,7 +427,7 @@ for i in 1...10 {
 **Objective-C**
 
 [//]: # ".cssg-snippet-transfer-batch-upload-objects"
-'''objective-c
+``` objective-c
 for (int i = 0; i<20; i++) {
     QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
     
@@ -462,7 +462,7 @@ for (int i = 0; i<20; i++) {
 **Swift**
 
 [//]: # ".cssg-snippet-transfer-batch-upload-objects"
-'''swift
+``` swift
 for i in 1...10 {
     let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
     
@@ -503,7 +503,7 @@ for i in 1...10 {
 **Objective-C**
 
 [//]: # ".cssg-snippet-transfer-upload-object-dir"
-'''objective-c
+``` objective-c
 QCloudCOSXMLUploadObjectRequest* put = [QCloudCOSXMLUploadObjectRequest new];
 // BucketName-APPID 형식의 버킷 이름
 put.bucket = @"examplebucket-1250000000";
@@ -528,7 +528,7 @@ put.body  = [@"" dataUsingEncoding:NSUTF8StringEncoding];
 **Swift**
 
 [//]: # ".cssg-snippet-create-directory"
-'''swift
+``` swift
 let put:QCloudCOSXMLUploadObjectRequest = QCloudCOSXMLUploadObjectRequest<AnyObject>();
         
 // BucketName-APPID 형식의 버킷 이름
@@ -564,7 +564,7 @@ QCloudCOSTransferMangerService.defaultCOSTransferManager().uploadObject(put);
 **Objective-C**
 
 [//]: # ".cssg-snippet-transfer-copy-object"
-'''objective-c
+``` objective-c
 QCloudCOSXMLCopyObjectRequest* request = [[QCloudCOSXMLCopyObjectRequest alloc] init];
 
 // BucketName-APPID 형식의 버킷 이름
@@ -602,7 +602,7 @@ request.sourceRegion= @"COS_REGION";
 **Swift**
 
 [//]: # ".cssg-snippet-transfer-copy-object"
-'''swift
+``` swift
 let copyRequest = QCloudCOSXMLCopyObjectRequest.init();
 
 // BucketName-APPID 형식의 버킷 이름
@@ -657,7 +657,7 @@ PUT Object 인터페이스는 한 객체를 지정 버킷으로 업로드할 수
 **Objective-C**
 
 [//]: # ".cssg-snippet-put-object"
-'''objective-c
+``` objective-c
 QCloudPutObjectRequest* put = [QCloudPutObjectRequest new];
 
 // BucketName-APPID 형식의 버킷 이름
@@ -684,7 +684,7 @@ put.body =  [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
 **Swift**
 
 [//]: # ".cssg-snippet-put-object"
-'''swift
+``` swift
 let putObject = QCloudPutObjectRequest<AnyObject>.init();
 
 // BucketName-APPID 형식의 버킷 이름
@@ -718,7 +718,7 @@ QCloudCOSXMLService.defaultCOSXML().putObject(putObject);
 
 [//]: # ".cssg-snippet-copy-object"
 
-'''objective-c
+``` objective-c
 QCloudPutObjectCopyRequest* request = [[QCloudPutObjectCopyRequest alloc] init];
 // BucketName-APPID 형식의 버킷 이름
 request.bucket = @"examplebucket-1250000000";
@@ -751,7 +751,7 @@ request.versionID = @"objectVersion1";
 **Swift**
 
 [//]: # ".cssg-snippet-copy-object"
-'''swift
+``` swift
 let putObjectCopy = QCloudPutObjectCopyRequest.init();
 // BucketName-APPID 형식의 버킷 이름
 putObjectCopy.bucket = "examplebucket-1250000000";
@@ -787,7 +787,7 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(putObjectCopy);
 **Objective-C**
 
 [//]: # ".cssg-snippet-copy-object-replaced"
-'''objective-c
+``` objective-c
 QCloudPutObjectCopyRequest* request = [[QCloudPutObjectCopyRequest alloc] init];
 // BucketName-APPID 형식의 버킷 이름
 request.bucket = @"examplebucket-1250000000";
@@ -831,7 +831,7 @@ request.versionID = @"objectVersion1";
 [//]: # ".cssg-snippet-copy-object-replaced"
 
 
-'''swift
+``` swift
 let request : QCloudPutObjectCopyRequest  = QCloudPutObjectCopyRequest();
 // BucketName-APPID 형식의 버킷 이름
 request.bucket = "examplebucket-1250000000";
@@ -875,7 +875,7 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 
 [//]: # ".cssg-snippet-modify-object-metadata"
 
-'''objective-c
+``` objective-c
 QCloudPutObjectCopyRequest* request = [[QCloudPutObjectCopyRequest alloc] init];
 // BucketName-APPID 형식의 버킷 이름
 request.bucket = @"examplebucket-1250000000";
@@ -910,7 +910,7 @@ request.objectCopySource =
 **Swift**
 
 [//]: # ".cssg-snippet-modify-object-metadata"
-'''swift
+``` swift
 let request : QCloudPutObjectCopyRequest  = QCloudPutObjectCopyRequest();
 
 // BucketName-APPID 형식의 버킷 이름
@@ -956,7 +956,7 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 **Objective-C**
 
 [//]: # ".cssg-snippet-modify-object-storage-class"
-'''objective-c
+``` objective-c
 QCloudPutObjectCopyRequest* request = [[QCloudPutObjectCopyRequest alloc] init];
 
 // BucketName-APPID 형식의 버킷 이름
@@ -989,7 +989,7 @@ request.versionID = @"";
 **Swift**
 
 [//]: # ".cssg-snippet-modify-object-storage-class"
-'''swift
+``` swift
 let request : QCloudPutObjectCopyRequest  = QCloudPutObjectCopyRequest();
 
 // BucketName-APPID 형식의 버킷 이름
@@ -1051,7 +1051,7 @@ QCloudCOSXMLService.defaultCOSXML().putObjectCopy(request);
 **Objective-C**
 
 [//]: # ".cssg-snippet-list-multi-upload"
-'''objective-c
+``` objective-c
 QCloudListBucketMultipartUploadsRequest* uploads = [QCloudListBucketMultipartUploadsRequest new];
 // BucketName-APPID 형식의 버킷 이름
 uploads.bucket = @"examplebucket-1250000000";
@@ -1072,7 +1072,7 @@ uploads.maxUploads = 100;
 **Swift**
 
 [//]: # ".cssg-snippet-list-multi-upload"
-'''swift
+``` swift
 let listParts = QCloudListBucketMultipartUploadsRequest.init();
 
 // BucketName-APPID 형식의 버킷 이름
@@ -1104,7 +1104,7 @@ Multipart Upload 업로드 작업을 초기화하고 해당하는 uploadId를 �
 **Objective-C**
 
 [//]: # ".cssg-snippet-init-multi-upload"
-''' objective-c
+``` objective-c
 QCloudInitiateMultipartUploadRequest* initRequest = [QCloudInitiateMultipartUploadRequest new];
 // BucketName-APPID 형식의 버킷 이름
 initRequest.bucket = @"examplebucket-1250000000";
@@ -1136,7 +1136,7 @@ initRequest.grantFullControl = @"grantFullControl";
 **Swift**
 
 [//]: # ".cssg-snippet-init-multi-upload"
-'''swift
+``` swift
 let initRequest = QCloudInitiateMultipartUploadRequest.init();
 
 // BucketName-APPID 형식의 버킷 이름
@@ -1167,7 +1167,7 @@ QCloudCOSXMLService.defaultCOSXML().initiateMultipartUpload(initRequest);
 
 [//]: # ".cssg-snippet-upload-part"
 
-''' objective-c
+``` objective-c
 QCloudUploadPartRequest* request = [QCloudUploadPartRequest new];
 // BucketName-APPID 형식의 버킷 이름
 request.bucket = @"examplebucket-1250000000";
@@ -1206,7 +1206,7 @@ request.body = [@"testFileContent" dataUsingEncoding:NSUTF8StringEncoding];
 **Swift**
 
 [//]: # ".cssg-snippet-upload-part"
-'''swift
+``` swift
 let uploadPart = QCloudUploadPartRequest<AnyObject>.init();
 
 // BucketName-APPID 형식의 버킷 이름
@@ -1261,7 +1261,7 @@ QCloudCOSXMLService.defaultCOSXML().uploadPart(uploadPart);
 **Objective-C**
 
 [//]: # ".cssg-snippet-upload-part-copy"
-'''objective-c
+``` objective-c
 QCloudUploadPartCopyRequest* request = [[QCloudUploadPartCopyRequest alloc] init];
 
 // BucketName-APPID 형식의 버킷 이름
@@ -1298,7 +1298,7 @@ request.partNumber = 1;
 **Swift**
 
 [//]: # ".cssg-snippet-upload-part-copy"
-'''swift
+``` swift
 let req = QCloudUploadPartCopyRequest.init();
 
 // BucketName-APPID 형식의 버킷 이름
@@ -1343,7 +1343,7 @@ QCloudCOSXMLService.defaultCOSXML().uploadPartCopy(req);
 **Objective-C**
 
 [//]: # ".cssg-snippet-list-parts"
-'''objective-c
+``` objective-c
 QCloudListMultipartRequest* request = [QCloudListMultipartRequest new];
 
 // 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
@@ -1371,7 +1371,7 @@ request.uploadId = uploadId;
 **Swift**
 
 [//]: # ".cssg-snippet-list-parts"
-'''swift
+``` swift
 let req = QCloudListMultipartRequest.init();
 
 // 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
@@ -1409,7 +1409,7 @@ QCloudCOSXMLService.defaultCOSXML().listMultipart(req);
 
 [//]: # ".cssg-snippet-complete-multi-upload"
 
-'''objective-c
+``` objective-c
 QCloudCompleteMultipartUploadRequest *completeRequst = [QCloudCompleteMultipartUploadRequest new];
 // 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 completeRequst.object = @"exampleobject";
@@ -1449,7 +1449,7 @@ completeRequst.parts = partInfo;
 **Swift**
 
 [//]: # ".cssg-snippet-complete-multi-upload"
-'''swift
+``` swift
 let  complete = QCloudCompleteMultipartUploadRequest.init();
 
 // BucketName-APPID 형식의 버킷 이름
@@ -1501,7 +1501,7 @@ QCloudCOSXMLService.defaultCOSXML().completeMultipartUpload(complete);
 **Objective-C**
 
 [//]: # ".cssg-snippet-abort-multi-upload"
-'''objective-c
+``` objective-c
 QCloudAbortMultipfartUploadRequest *abortRequest = [QCloudAbortMultipfartUploadRequest new];
 // 객체 키. 객체의 COS 상의 전체 경로로, 디렉터리가 있을 경우 형식은 'video/xxx/movie.mp4'입니다.
 abortRequest.object = @"exampleobject";
@@ -1523,7 +1523,7 @@ abortRequest.uploadId = @"exampleUploadId";
 **Swift**
 
 [//]: # ".cssg-snippet-abort-multi-upload"
-'''swift
+``` swift
 let abort = QCloudAbortMultipfartUploadRequest.init();
 
 // BucketName-APPID 형식의 버킷 이름
