@@ -3,7 +3,7 @@
 Java SDK는 클라이언트 암호화를 지원합니다. 파일을 암호화한 후 업로드하고, 다운로드 시 복호화하여 중요 데이터를 저장하는 클라이언트에 적합합니다.
 
 클라이언트 암호화는 다음 두 가지 방식을 지원합니다.
-- KMS 서비스 호스팅 키: KMS 서비스의 사용자 마스터 키 ID(CMK ID)를 SDK에 제공하기만 하면 됩니다. 이 방식을 사용하려면 KMS 서비스를 활성화해야 합니다. KMS 서비스 정보에 대한 자세한 내용은 [Tencent Cloud Key Management Service](https://cloud.tencent.com/document/product/573)를 참고하십시오.
+- KMS 서비스 호스팅 키: KMS 서비스의 사용자 마스터 키 ID(CMK ID)를 SDK에 제공하기만 하면 됩니다. 이 방식을 사용하려면 KMS 서비스를 활성화해야 합니다. KMS 서비스 정보에 대한 자세한 내용은 [Tencent Cloud Key Management Service](https://intl.cloud.tencent.com/document/product/1030)를 참고하십시오.
 - 사용자 보관 키: 사용자가 암호화 키를 제공하고 보관합니다. 대칭 AES 및 비대칭 RSA 암호화를 지원합니다.
 >? 대칭과 비대칭은 매번 생성되는 임의 키를 암호화할 때만 사용하며, 파일 데이터 암호화에는 항상 AES256 대칭 암호화를 사용합니다.
 >
