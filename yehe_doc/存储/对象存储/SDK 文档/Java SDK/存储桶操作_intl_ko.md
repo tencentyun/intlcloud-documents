@@ -43,7 +43,7 @@ for (Bucket bucketElement : buckets) {
 
 #### 반환 결과 설명
 
--성공: 모든 Bucket류의 목록을 반환합니다. Bucket류에는 bucket 멤버, location 등 정보가 포함됩니다.
+- 성공: 모든 Bucket류의 목록을 반환합니다. Bucket류에는 bucket 멤버, location 등 정보가 포함됩니다.
 - 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
 
@@ -79,7 +79,7 @@ Bucket bucketResult = cosClient.createBucket(createBucketRequest);
 
 #### 반환 결과 설명
 
--성공: 버킷에 대한 설명(버킷 이름, 소유자 및 생성 날짜)을 포함한 버킷류.
+- 성공: 버킷에 대한 설명(버킷 이름, 소유자 및 생성 날짜)을 포함한 버킷류.
 - 실패: 오류 발생(예: 실명 인증 실패). CosClientException 또는 CosServiceException 오류 발생. 자세한 내용은 [오류 처리](https://intl.cloud.tencent.com/document/product/436/31537)를 참고하십시오.
 
 
