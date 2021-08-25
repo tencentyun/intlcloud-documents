@@ -1,10 +1,24 @@
-This document describes the features that the Tencent Cloud Tag service provides.
-## Managing Resources
-The Tag service allows you to tag your resources on Tencent Cloud. You can define tag keys and tag values for resources based on your business needs to implement the classification management of resources. You can query resources based on their regions, types, instances, tag keys, and tag values. The queried resources are displayed in a list. In addition, you can add tags to or delete tags from resources based on your business needs.
-## Granting operation permissions on resources by tag
-You can customize a tag policy to grant operation permissions on your resources to sub-users or user groups by tag. Based on the tag policy, sub-users or user groups are authorized to perform specified operations on the resources under the specified tags.
-## Generating bills by tag
-You can generate bills for the costs of your resource usage based on specified tags. These tags are called cost allocation tags. Tags consist of tag keys and tag values. A tag key can have one or more tag values.
-● Each tag key that is specified as a cost allocation tag is displayed as an additional column in your bill. The value of a tag key column in each row of a bill is the same as the tag value that you set for the corresponding resource under the tag key. You can also use cost allocation tags to filter and break down bills.
-● Tag keys that are not specified as cost allocation tags are not displayed your bill.
-For more information, please see [Cost Allocation Tags](https://intl.cloud.tencent.com/document/product/555/32276).
+You can manage tags and resources in the Tag console or using tag APIs.
+
+
+## Tag Console - Resource Tag
+On the [Resource Tag](https://console.cloud.tencent.com/tag) page, you can view the tags bound to a resource as well as bind tags to and unbind tags from resources. Specifically, you can:
+- Query resources by region, resource type, tag, and project
+- Perform fuzzy searches by tag key or value
+- View the total number of tags bound to a resource
+- Edit resources in batches
+- Export resource data as needed
+
+
+## Tag Console - Tag List
+On the [Tag List](https://console.cloud.tencent.com/tag/taglist) page, you can view the resources a tag is bound to as well as bind tags to and unbind tags from resources. Specifically, you can:
+- Create and delete tags in batches
+- View the number of resources a tag is bound to
+- View the resources a tag is bound to
+- Bind tags to and unbind tags from resources
+
+
+## Tag APIs
+In addition to the visible console, you can also use [tag APIs](https://intl.cloud.tencent.com/document/product/651/33003) to perform CRUD operations on tags as well as bind tags to and unbind tags from resources.
+- You can search for tag APIs in [API Category](https://intl.cloud.tencent.com/document/product/651/33003) and use them in your application.
+- You can also use API Explorer to call tag APIs online and generate SDKs in multiple languages.

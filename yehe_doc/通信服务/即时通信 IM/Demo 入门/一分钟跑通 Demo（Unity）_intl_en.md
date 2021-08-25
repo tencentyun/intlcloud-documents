@@ -4,7 +4,7 @@ This document introduces how to quickly run through the IM demo (Unity).
 
 | Platform | Version |
 |---------|---------|
-| Unity | 2020.2.7f1c1 or later |
+| Unity |  2019.4.15f1 or later |
 | Android | Android Studio 3.5 or later; devices with Android 4.1 or later for apps |
 | iOS | Xcode 11.0 or later. Ensure that your project has a valid developer signature. |
 

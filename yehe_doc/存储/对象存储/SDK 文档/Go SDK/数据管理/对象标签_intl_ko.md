@@ -2,7 +2,7 @@
 
 본 문서는 객체 태그에 대한 API 개요 및 SDK 예시 코드를 제공합니다.
 
-| API                                                          | 작업명       | 작업 설명                     |
+| API                                                          | 작업 이름       | 작업 설명                     |
 | :----------------------------------------------------------- | :----------- | :--------------------------- |
 | [PUT Object tagging](https://intl.cloud.tencent.com/document/product/436/35709) | 객체 태그 설정 | 업로드한 객체의 태그 설정       |
 | [GET Object tagging](https://intl.cloud.tencent.com/document/product/436/35710) | 객체 태그 조회 | 지정한 객체의 기존 태그 조회 |
@@ -13,9 +13,9 @@
 
 #### 기능 설명
 
-COS는 기존 객체의 태그 설정을 지원합니다. PUT Object tagging 인터페이스에 객체 태그로 키 값 쌍을 추가하면 기존 객체 리소스를 그룹화하고 관리하는 데 도움이 됩니다. 자세한 내용은 [객체 태그 개요](https://intl.cloud.tencent.com/document/product/436/35665)를 참조하십시오.
+COS는 기존 객체의 태그 설정을 지원합니다. PUT Object tagging 인터페이스에 객체 태그로 키 값 쌍을 추가하면 기존 객체 리소스를 그룹화하고 관리하는 데 도움이 됩니다. 자세한 내용은 [객체 태그 개요](https://intl.cloud.tencent.com/document/product/436/35665)를 참고하십시오.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```go
 func (s *ObjectService) PutTagging(ctx context.Context, name string, opt *ObjectPutTaggingOptions, id ...string) (*Response, error)
@@ -25,7 +25,7 @@ func (s *ObjectService) PutTagging(ctx context.Context, name string, opt *Object
 
 [//]: # (.cssg-snippet-put-object-tagging)
 ```go
-// Case1 PutTagging을 통한 클라우드 객체 태그 설정
+// Case1, PutTagging을 통한 클라우드 객체 태그 설정
 opt := &cos.ObjectPutTaggingOptions{
     TagSet: []cos.ObjectTaggingTag{
         {
@@ -80,7 +80,7 @@ type BucketTaggingTag struct {
 
 GET Object tagging 인터페이스는 지정한 객체의 기존 태그를 조회하는 데 사용합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```go
 func (s *ObjectService) GetTagging(ctx context.Context, name string, id ...string) (*ObjectGetTaggingResult, *Response, error)
@@ -118,9 +118,9 @@ type BucketTaggingTag struct {
 
 #### 기능 설명
 
-GET Object tagging 인터페이스는 지정한 객체의 기존 태그를 조회하는 데 사용합니다.
+DELETE Object tagging 인터페이스는 지정 객체의 기존 태그를 삭제하는 데 사용합니다.
 
-#### 방법 모델
+#### 메소드 프로토타입
 
 ```go
 func (s *ObjectService) DeleteTagging(ctx context.Context, name string, id ...string) (*Response, error)

@@ -140,3 +140,7 @@ Run the following command to remove your deployed cloud resources.
 ```sh
 sls remove
 ```
+
+### Web framework migration
+Serverless Framework CLI provides an HTTP component specifically for web framework deployment, which can quickly implement features such as web framework deployment, layer creation, static/dynamic resource separation, and CDN acceleration. For usage, please see [Deploying Framework on Command Line](https://intl.cloud.tencent.com/document/product/1040/41597).
+

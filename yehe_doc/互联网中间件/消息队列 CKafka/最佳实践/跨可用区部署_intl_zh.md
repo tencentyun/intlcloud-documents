@@ -73,7 +73,7 @@ CKafka 的控制层和原生 Kafka 采用相同的技术方案，依赖 zookeepe
    - 消息保留：范围在 24 - 2160 小时。
      在磁盘容量不足（即磁盘水位达到90%）时，将会提前删除旧的消息，以确保服务可用性。
    - 私有网络：若用户需要接入其他私有网络可参考 [添加路由策略](https://intl.cloud.tencent.com/document/product/597/32555) 修改路由接入规则。
-   - 标签：选填，具体使用方法可参考 [标签管理](https://cloud.tencent.com/document/product/597/33355)。
-   - 实例名称：购买多个实例时，支持创建实例后缀数字自动升序以及指定模式串功能。具体操作参考 [批量连续命名或指定模式串命名](https://cloud.tencent.com/document/product/597/59246)。
+   - 标签：选填，具体使用方法可参考 [标签管理](https://intl.cloud.tencent.com/document/product/597/41600)。
+   - 实例名称：购买多个实例时，支持创建实例后缀数字自动升序以及指定模式串功能。具体操作参考 [批量连续命名或指定模式串命名](https://intl.cloud.tencent.com/document/product/597/41581)。
 4. 单击【立即购买】，完成实例创建。
 

@@ -6,11 +6,11 @@
 
 ## 方案一、全局授权操作步骤
 ### 步骤1：进入授权
-使用主账号，进入控制台【[访问管理](https://console.cloud.tencent.com/cam)】>【用户列表】，单击子用户左侧的【授权】按钮，将弹出“关联策略”选择框。
+使用主账号，进入控制台**[访问管理](https://console.cloud.tencent.com/cam)**>**用户列表**，单击子用户左侧的**授权**按钮，将弹出“关联策略”选择框。
 ![](https://main.qcloudimg.com/raw/9a87638c3298b3e50307e82186eb17ea.png) 
 
 ### 步骤2：选择策略
-在策略筛选框，搜索“即时通信”，勾选需要授权的选项，单击【确定】即完成授权。
+在策略筛选框，搜索“即时通信”，勾选需要授权的选项，单击**确定**即完成授权。
 ![](https://main.qcloudimg.com/raw/9a4b20af40d5800db94c058f6a492175.png)
 
 >?
@@ -27,7 +27,7 @@
 
 
 ### 步骤1：进入授权
-使用主账号，进入控制台【[访问管理](https://console.cloud.tencent.com/cam)】>【策略】，单击顶部【新建自定义】，将弹出“选择创建策略方式”弹框。
+使用主账号，进入控制台**[访问管理](https://console.cloud.tencent.com/cam)**>**策略**，单击顶部**新建自定义**，将弹出“选择创建策略方式”弹框。
 ![](https://main.qcloudimg.com/raw/289a2def35370b7511625b37f3e798b3.png)
 
 ### 步骤2：选择标签
@@ -35,12 +35,12 @@
 ![](https://main.qcloudimg.com/raw/02098a1da180deae9c810b97cb0c453c.png)
 
 ### 步骤3：生成策略
-在“标签策略生成器”填入需要授权的子账号、标签等信息，单击【下一步】进入检查页面。
+在“标签策略生成器”填入需要授权的子账号、标签等信息，单击**下一步**进入检查页面。
 ![](https://main.qcloudimg.com/raw/e590a9843e852bf9eca22bfc95ffbc13.png)
 
 >?如标签选择列表为空，则需要主账号先去 [标签控制台](https://console.cloud.tencent.com/tag/taglist) 新建标签。
 >![](https://main.qcloudimg.com/raw/e6d0aeb3a04b9281627805f0cde3d052.png)
 
 ### 步骤4：完成授权
-检查无误，单击【完成】，结束标签授权流程。
+检查无误，单击**完成**，结束标签授权流程。
 ![](https://main.qcloudimg.com/raw/3c9e2624f334f9c9820402f579381ae6.png)

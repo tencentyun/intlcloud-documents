@@ -27,7 +27,7 @@
 <td>事件通知安全签名 sign = MD5（key + t）。<br>说明：腾讯云把加密 <a href="#key">key</a> 和 t 进行字符串拼接后通过 MD5 计算得出 sign 值，并将其放在通知消息里，您的后台服务器在收到通知消息后可以根据同样的算法确认 sign 是否正确，进而确认消息是否确实来自腾讯云后台。</td>
 </tr></table>
 
->? <span id="key"></span>key 为【事件中心】>[【直播回调】](https://console.cloud.tencent.com/live/config/callback)中的回调密钥，主要用于鉴权。为了保护您的数据信息安全，建议您填写。
+>? [](id:key)key 为【事件中心】>[【直播回调】](https://console.cloud.tencent.com/live/config/callback)中的回调密钥，主要用于鉴权。为了保护您的数据信息安全，建议您填写。
 >![](https://main.qcloudimg.com/raw/48f919f649f84fd6d6d6dd1d8add4b46.png)
 
 ### 回调消息参数
@@ -47,45 +47,50 @@
 | push_duration | string | 断流事件通知推流时长，单位毫秒                               |
 | errcode       | int    | 推断流错误码                                                 |
 | errmsg        | string | 推断流错误描述                                               |
-| set_id          | int  | 是否为国内外推流   |
+| set_id          | int  | 判断是否为国内外推流。1-6为国内，7-200为国外   |
+|width       |  int   |视频宽度，最开始推流回调的时候若视频头部信息缺失，可能为0   |
+|height      |   int  |视频高度，最开始推流回调的时候若视频头部信息缺失，可能为0   |
 
 ### 推断流错误码
 推断流错误码及对应的错误原因，详情请参见 [断流错误码](https://intl.cloud.tencent.com/document/product/267/31083)。
 
 ### 回调消息示例
-
-```
+```JSON
 {
-"app":"test.domain.com",
-
-"appid":12345678,
-
-"appname":"live",
-
-"channel_id":"test_stream",
-
-"errcode":0,
-
-"errmsg":"ok",
-
-"event_time":1545115790,
-
-"event_type":1,
-
-"set_id":2,
-
-"node":"100.121.160.92",
-
-"sequence":"6674468118806626493",
-
-"stream_id":"test_stream",
-
-"stream_param":"stream_param=test",
-
-"user_ip":"119.29.94.245",
-
-"sign":"ca3e25e5dc17a6f9909a9ae7281e300d",
-
-"t":1545030873
+	"app":"test.domain.com",
+	
+	"appid":12345678,
+	
+	"appname":"live",
+	
+	"channel_id":"test_stream",
+	
+	"errcode":0,
+	
+	"errmsg":"ok",
+	
+	"event_time":1545115790,
+	
+	"event_type":1,
+	
+	"set_id":2,
+	
+	"node":"100.121.160.92",
+	
+	"sequence":"6674468118806626493",
+	
+	"stream_id":"test_stream",
+	
+	"stream_param":"stream_param=test",
+	
+	"user_ip":"119.29.94.245",
+	
+	"width": 0,
+	
+	"height": 0,
+	
+	"sign":"ca3e25e5dc17a6f9909a9ae7281e300d",
+	
+	"t":1545030873
 }
 ```

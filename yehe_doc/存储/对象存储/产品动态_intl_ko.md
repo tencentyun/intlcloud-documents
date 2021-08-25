@@ -1,3 +1,88 @@
+## 2021년 05월
+
+<table>
+<thead>
+<tr>
+<th width="20%">업데이트 명칭</th>
+<th width="50%">업데이트 설명</th>
+<th width="15%">배포일</th>
+<th width="15%">관련 문서</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>자가 진단 툴 런칭</td>
+<td>자가 진단 툴은 Tencent Cloud COS가 사용자에게 제공하는 Web 툴로서, 잘못된 요청에 대한 자가 진단에 사용할 수 있습니다.</td>
+<td> 2021-05-27</td>
+<td><a href="https://cloud.tencent.com/document/product/436/57576">자가 진단 툴 </a>
+</tr>
+<tr>
+<td>CDN 로그 백업 런칭</td>
+<td>CDN 로그 백업은 Tencent Cloud COS가 Serverless Cloud Function(SCF)을 기반으로 사용자에게 제공하는 CDN 로그 COS 저장 기능으로서, 사용자가 CDN 로그를 전환 및 저장하여 액세스 행동 분석, 서비스 품질 모니터링 등을 진행할 수 있도록 합니다. </td>
+<td> 2021-05-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/40485">CDN 로그 백업</a>
+</tr>
+<tr>
+<td>TDMQ 메시지 백업 런칭</td>
+<td>TDMQ 메시지 백업은 Tencent Cloud COS가 Serverless Cloud Function(SCF)을 기반으로 사용자에게 제공하는 TDMQ 메시지를 COS 저장 기능으로서, 사용자가 TDMQ 메시지를 전환 및 저장하여 데이터 분석 및 다운로드 등 작업을 진행할 수 있도록 합니다. </td>
+<td> 2021-05-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/40541">TDMQ 메시지 백업</a>
+</tr>
+</tbody></table>
+
+
+## 2021년 04월
+
+<table>
+<thead>
+<tr>
+<th width="20%">업데이트 명칭</th>
+<th width="50%">업데이트 설명</th>
+<th width="15%">배포일</th>
+<th width="15%">관련 문서</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>로그 정제 런칭</td>
+<td>로그 정제는 COS가 Serverless Cloud Function(SCF)을 기반으로 사용자에게 제공하는 로그 파일 처리 솔루션입니다. 사용자가 로그 관리 서비스를 활성화하거나 자체적으로 로그 파일을 업로드하면, COS가 사용자를 위해 사전 구성한 SCF가 자동으로 트리거되어, 사용자가 함수에 사전 지정한 SQL 인덱스 명령어를 통해 파일 중의 로그 정보를 자동으로 필터링 및 정제합니다.</td>
+<td> 2021-04-02</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/39925">로그 정제</a>
+</tr>
+<tr>
+<td>Ckafka 메시지 백업 런칭</td>
+<td>Ckafka 메시지 백업은 Tencent Cloud COS가 Serverless Cloud Function(SCF)을 기반으로 사용자에게 제공하는 Ckafka 메시지 COS 저장 기능으로서, 사용자가 Ckafka 메시지를 전환 및 저장하여 데이터 분석 및 다운로드 등 작업을 진행할 수 있도록 합니다.</td>
+<td> 2021-04-02</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/39926">Ckafka 메시지 백업</a>
+</tr>
+</tbody></table>
+
+
+
+## 2021년 02월
+
+
+<table>
+<thead>
+<tr>
+<th width="20%">업데이트 명칭</th>
+<th width="50%">업데이트 설명</th>
+<th width="15%">배포일</th>
+<th width="15%">관련 문서</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CDB 백업 런칭</td>
+<td>CDB 백업은 Tencent Cloud COS가 Serverless Cloud Function(SCF)을 기반으로 사용자에게 제공하는 데이터베이스 백업 기능으로서, 사용자가 Tencent Cloud CDB 상의 백업 파일을 COS로 전환 및 전송하여 영속화 저장을 통해 데이터 손실 또는 손상을 방지할 수 있도록 하는 기능입니다. </td>
+<td>2021-02-02</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/41112">CDB 백업 설정</a>
+</tr>
+</tbody></table>
+
+
+
+
 ## 2021년 01월
 
 <table>
@@ -22,7 +107,6 @@
 </tbody></table>
 
 ## 2020년 12월
-
 <table>
 <thead>
 <tr>
@@ -34,7 +118,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Origin-pull 재해 복구 기능 런칭</td>
+<td>온라인 Origin-pull 재해 복구 기능</td>
 <td>COS Origin-pull 원본 서버 설정 시 백업 원본 서버 설정을 지원합니다. Origin-pull 주소가 무효가 되어 Origin-pull에 실패하는 경우 빠르게 백업 Origin-pull 주소로 전환하여 끊김 없는 서비스 연속성을 보장합니다.</td>
 <td> 2020-12-28</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31508">Origin-pull 설정</a>
@@ -46,10 +130,10 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31508">Origin-pull 설정</a>
 </tr>
 <tr>
-<td>COS 일괄 프로세스 기능 최적화 업데이트</td>
-<td>1. 일괄 복사 시 객체의 태그 및 메타데이터를 사용자 정의 복사, 추가, 수정할 수 있습니다.<br>2. 백그라운드 프로세스 로직을 최적화하여 파일 양에 따라 리소스를 동적으로 할당해 처리 효율이 50% 향상됩니다.</td>
+<td>COS 일괄 처리 기능 최적화 업데이트</td>
+<td>1. 일괄 복사 시 객체의 태그 및 메타데이터를 사용자 정의 복사, 추가, 수정할 수 있습니다.<br>2. 백그라운드 처리 로직을 최적화하여 파일 양에 따라 리소스를 동적으로 할당해 처리 효율이 50% 향상되었습니다.</td>
 <td> 2020-12-09</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/32958">일괄 프로세스 개요</a>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/32958">일괄 처리 개요</a>
 </tr>
 </tbody></table>
 
@@ -73,7 +157,7 @@
 </tr>
 <tr>
 <td>Cloud Storage Gateway(CSG) 기능 런칭</td>
-<td>CSG는 Tencent Cloud가 제공하는 하이브리드 클라우드 서비스입니다. 버킷을 CSG로 설정하면 COS의 버킷이 네트워크 폴더 형식으로 사용자의 모든 CVM 서버에 마운트되어 스토리지 디바이스로 사용할 수 있습니다.</td>
+<td>CSG는 Tencent Cloud가 제공하는 하이브리드 클라우드 서비스입니다. 버킷에 CSG를 설정하면 COS의 버킷이 네트워크 폴더 형식으로 사용자의 모든 CVM 서버에 마운트되어 스토리지 디바이스로 사용할 수 있습니다.</td>
 <td> 2020-11-21</td>
 <td>-
 </tr>
@@ -99,14 +183,14 @@
 <tbody>
 <tr>
 <td>라이프사이클 기능 반복 및 버킷 개요 페이지 런칭</td>
-<td>1. 라이프사이클 기능에서 이전 버전 파일을 다른 스토리지 유형으로 전환할 수 있습니다.<br>2. COS 콘솔에서 단일 버킷에 대해 전체 개요를 볼 수 있으며 용량, 버킷 기본 정보, 기능, 알람 설정 현황 등을 확인할 수 있습니다.</td>
+<td>1. 라이프사이클 기능을 통해 이전 버전 파일을 다른 스토리지 유형으로 전환할 수 있습니다.<br>2. COS 콘솔에서 단일 버킷의 용량, 버킷 기본 정보, 기능, 알람 설정 현황 등을 포함한 전체 개요 확인할 수 있습니다.</td>
 <td> 2020-09-28</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/14605">라이프사이클 설정</a>
 <br><a href="https://intl.cloud.tencent.com/document/product/436/38493">버킷 개요</a></td>
 </tr>
 <tr>
 <td>DEEP ARCHIVE 런칭</td>
-<td>DEEP ARCHIVE는 객체 스토리지 COS에서 제공하는 대량의 데이터를 장기 보관하는 스토리지 서비스입니다. DEEP ARCHIVE는 자기 테이프 스토리지 수준의 스토리지 단가를 제공하여 낮은 비용으로 데이터를 장기 보관할 수 있습니다.</td>
+<td>DEEP ARCHIVE는 객체 스토리지 COS에서 제공하는 대량의 데이터를 장기 보관하는 스토리지 서비스입니다. DEEP ARCHIVE는 자기 테이프 스토리지 수준의 스토리지 단가로 소비자에게 데이터 장기 보관 저비용 솔루션을 제공합니다.</td>
 <td> 2020-09-16</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/38304">DEEP ARCHIVE 소개</a></td>
 </tr>
@@ -149,7 +233,7 @@
 <tbody>
 <tr>
 <td>CDN 캐시 퍼지 기능 런칭</td>
-<td>CDN 캐시 퍼지는 Tencent Cloud COS가 SCF를 기반으로 사용자에게 제공하는 데이터 퍼지 기능입니다. 자동으로 CDN 엣지 노드 상의 캐시 데이터를 퍼지합니다.</td>
+<td>CDN 캐시 퍼지는 Tencent Cloud COS가 Serverless Cloud Function(SCF)을 기반으로 사용자에게 제공하는 데이터 퍼지 기능입니다. CDN 엣지 노드 상의 캐시 데이터를 자동으로 퍼지합니다.</td>
 <td> 2020-07-01</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/37273">CDN 캐시 퍼지 설정</a>
 </tr>
@@ -168,8 +252,8 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>객체 태그, 파일 압축 해제 기능 런칭 및<br>콘솔 최적화 개편</td>
-<td>1. 클라우드 모니터링 알람 설정 연동, 제품 업데이트 배포 제공, 제품 소개 연결 등 콘솔 개요 페이지 전면 개편
+<td>객체 태그, 파일 압축 해제 기능 런칭 및<br>콘솔 개편 및 최적화</td>
+<td>1. 클라우드 모니터링 알람 설정 연동, 제품 배포 소식 제공, 제품 전시 위치 연결 등 콘솔 개요 페이지 전면 개편
 <br>2. 파일 압축 해제 기능 제공
 <br>3. 객체 태그 기능 제공, 태그를 통해 COS에 저장되어 있는 객체 구분하여 관리 가능
 <br>4. 버킷 리스트에 정렬, 리전 필터링, 리스트 내보내기 지원</td>
@@ -181,7 +265,7 @@
 </tr>
 <tr>
 <td>이미지 처리 기능 런칭</td>
-<td>Tencent Cloud COS는 Cloud Infinite(CI)를 통합하는 전문적인 미디어 통합 솔루션을 제공하며, 이미지 처리 및 심사, 식별 등의 기능이 포함되어 있습니다. COS의 업로드 및 처리 인터페이스를 통해 미디어 데이터를 처리할 수 있습니다.</td>
+<td>Tencent Cloud COS는 Cloud Infinite(CI)를 통합하는 전문적인 미디어 통합 솔루션을 제공하며, 이미지 처리, 심사, 식별 등의 기능이 포함되어 있습니다. COS의 업로드 및 처리 인터페이스를 통해 미디어 데이터를 처리할 수 있습니다.</td>
 <td >2020-03-13</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/35280">이미지 처리 개요</a></td>
 </tr>
@@ -235,10 +319,10 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>일괄 프로세스 기능 런칭</td>
-<td>일괄 프로세스 기능으로 버킷 내 특정 객체 리스트에 특정 작업을 진행할 수 있습니다.</td>
+<td>일괄 처리 기능 런칭</td>
+<td>일괄 처리 기능으로 버킷 내 지정 객체 리스트에 지정 작업을 진행할 수 있습니다.</td>
 <td nowrap="nowrap">2019-10-22</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/32958">일괄 프로세스 개요</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/32958">일괄 처리 개요</a></td>
 </tr>
 <tr>
 <td>인덱스 기능 런칭</td>
@@ -262,7 +346,7 @@
 </thead>
 <tbody><tr>
 <td>로그 관리 기능 런칭</td>
-<td>로그 관리 기능은 버킷을 더 편리하게 관리할 수 있도록 지정한 원본 버킷의 액세스 상세 액세스 정보를 기록하고 해당 정보를 로그 파일 포맷으로 지정 버킷에 저장할 수 있습니다. </td>
+<td>로그 관리 기능은, 버킷을 더 편리하게 관리할 수 있도록, 지정한 원본 버킷의 액세스 상세 액세스 정보를 기록하고 해당 정보를 로그 파일 포맷으로 지정 버킷에 저장합니다. </td>
 <td nowrap="nowrap">2019-08-29</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/16920">로그 관리 개요</a></td>
 </tbody></table>
@@ -292,7 +376,7 @@
 </tr>
 <tr>
 <td>사용자 정의 원본 서버 도메인 지원</td>
-<td>ICP비안을 통과한 사용자 정의 도메인을 현재 버킷에 바인딩할 수 있으며, 사용자 정의 도메인을 통해 버킷에 있는 객체에 액세스합니다.</td>
+<td>ICP비안이 완료된 사용자 정의 도메인을 현재 버킷에 바인딩할 수 있으며, 사용자 정의 도메인을 통해 버킷에 있는 객체에 액세스합니다.</td>
 <td nowrap="nowrap">2019-06-10</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/18424">도메인 관리 개요</a></td>
 </tr>
@@ -366,7 +450,7 @@
 </thead>
 <tbody><tr>
 <td>요청 속도 최적화 기능</td>
-<td>COS에서 매우 높은 빈도수로 발생하는 액세스 요청을 전면적으로 지원하여 빅 데이터 연산 등 고빈도 액세스가 필요한 시나리오에 적합합니다.</td>
+<td>COS에서 매우 높은 빈도수로 발생하는 액세스 요청을 전면적으로 지원하여 빅 데이터 연산 등 고빈도 액세스가 필요한 시나리오를 충족시킵니다.</td>
 <td nowrap="nowrap">2018-11</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/13653">요청 속도 및 성능 최적화</a></td>
 </tr>
@@ -409,12 +493,12 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/436/6224">리전 및 액세스 도메인</a></td>
 </tr>
 <tr>
-<td>신규 버전 콘솔 A/B테스트 런칭</td>
+<td>신규 버전 콘솔 카나리 배포</td>
 <td>
 더 많은 리전 지원
 신규 버전 콘솔은 새로운 인터페이스를 사용하여 더 많은 리전을 지원합니다.
 신규 기능 추가
-신규 버전 콘솔은 라이프 사이클과 같은 기능을 지원합니다.
+신규 버전 콘솔은 라이프 사이클 등의 기능을 지원합니다.
 <br>주의사항:
 <br>1. 공식 홈페이지의 기능, 사례 등의 문서는 신규 버전 콘솔 인터페이스에 따라 함께 업데이트됩니다.
 <br>2. 이후 출시되는 신규 기능은 신규 버전 콘솔에만 배포되며, 이전 버전 콘솔에는 더 이상 신규 기능이 배포되지 않습니다.</td>
@@ -435,7 +519,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>Hadoop COS 플러그 인 배포로 빅 데이터 시나리오 지원</td>
+<td>Hadoop COS 플러그 인 배포, 빅 데이터 시나리오 지원</td>
 <td>Hadoop COS 플러그 인 패키지를 정식으로 배포하여 직접 Hadoop 환경에 가져올 수 있으며, 구성 파일 core-site.xml 수정을 통해 cosn:// 프로토콜을 사용해 직접 COS 데이터에 액세스할 수 있습니다.</td>
 <td nowrap="nowrap">2018-06</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/6884">Hadoop 툴</a></td>

@@ -4,7 +4,7 @@
 
 | 平台 | 版本 |
 |---------|---------|
-| Unity | 2020.2.7f1c1 及以上版本。 |
+| Unity | 2019.4.15f1 及以上版本。 |
 |Android|Android Studio 3.5及以上版本，App 要求 Android 4.1及以上版本设备。|
 |iOS|Xcode 11.0及以上版本，请确保您的项目已设置有效的开发者签名。|
 
@@ -20,11 +20,11 @@
  >?如果您已有应用，请记录其 SDKAppID 并 [获取密钥信息](#step2)。
  >同一个腾讯云账号，最多可创建100个即时通信 IM 应用。若已有100个应用，您可以先 [停用并删除](https://intl.cloud.tencent.com/document/product/1047/34540) 无需使用的应用后再创建新的应用。**应用删除后，该 SDKAppID 对应的所有数据和服务不可恢复，请谨慎操作。**
  >
-2. 单击【创建新应用】，在【创建应用】对话框中输入您的应用名称，单击【确定】。
+2. 单击**创建新应用**，在**创建应用**对话框中输入您的应用名称，单击**确定**。
 ![](https://main.qcloudimg.com/raw/15e61a874a0640d517eeb67e922a14bc.png)
 3. 请保存 SDKAppID 信息。可在控制台总览页查看新建应用的状态、业务版本、SDKAppID、创建时间以及到期时间。
     ![](https://main.qcloudimg.com/raw/7954cc2882d050f68cd5d1df2ee776a6.png)
-4. 单击创建后的应用，左侧导航栏单击【辅助工具】>【UserSig 生成&校验】，创建一个 UserID 及其对应的 UserSig，复制签名信息，后续登录使用。
+4. 单击创建后的应用，左侧导航栏单击**辅助工具**>**UserSig 生成&校验**，创建一个 UserID 及其对应的 UserSig，复制签名信息，后续登录使用。
 ![](https://main.qcloudimg.com/raw/2286644d987d24caf565142ae30c4392.png)
 
 [](id:step2)
@@ -38,9 +38,9 @@
 ![](https://main.qcloudimg.com/raw/7a8ac734ac60a73caf6139fc0d1d250f.png)
 ## 步骤3：打包运行
 ### Android 平台
-1. 配置 Unity Editor，单击【File】>【Build Setting】，切换至 Android。
+1. 配置 Unity Editor，单击**File**>**Build Setting**，切换至 Android。
 ![](https://main.qcloudimg.com/raw/d913d32e36aa01ff93acf0316d4f103f.png)
-2. 启动一个 Android 的模拟器，单击【 Build And Run】，Demo 就能跑起来。
+2. 启动一个 Android 的模拟器，单击** Build And Run**，Demo 就能跑起来。
 >? 
 >- Demo 里面包含了已上线的所有 API，可以测试和作为调用参考，API 文档参见 [SDK API（Flutter）](https://intl.cloud.tencent.com/document/product/1047/40124)。
 > - UI 可能会有部分调整更新，请以最新版为准。
@@ -49,9 +49,9 @@
 3. 接口测试，需要先在第一行第二个输入框里添加 UserID，然后调用 initSDK 和 login，数据展示窗口显示调用成功，然后基本上接口都可以尝试调用。
 
 ### iOS 平台
-1. 配置 Unity Editor，单击【File】>【Build Setting】，切换至 iOS。
+1. 配置 Unity Editor，单击**File**>**Build Setting**，切换至 iOS。
 ![](https://main.qcloudimg.com/raw/3982b96c4f9e76107bb4aadac33a5de5.png)
-2. 连接 iPhone 真机，单击【Build And Run】，需要选择一个新的目录存放编译出来的 iOS 工程，等待编译完成，会有新窗口弹出 Xcode 工程。
+2. 连接 iPhone 真机，单击**Build And Run**，需要选择一个新的目录存放编译出来的 iOS 工程，等待编译完成，会有新窗口弹出 Xcode 工程。
 3. 然后在 Xcode 里面按以下步骤对项目调整配置：
 	1. 在 UnityFramework/UnityFramework.h 里引入 UnityInterface.h。
 ![](https://main.qcloudimg.com/raw/0a69e67c63479810309080efa3721d6a.png)
@@ -70,6 +70,6 @@
 确保设备没被其他资源占用，或单击 Build 生成 apk 包，再拖动进模拟器里运行。
 
 ### iOS 第一次运行报错？
-按照上面的 Demo 运行配置后，如果报错，可以单击【Product】>【Clean】，清除产物后重新 Build，或者关闭 Xcode 重新打开再次 Build。
+按照上面的 Demo 运行配置后，如果报错，可以单击**Product**>**Clean**，清除产物后重新 Build，或者关闭 Xcode 重新打开再次 Build。
 
 

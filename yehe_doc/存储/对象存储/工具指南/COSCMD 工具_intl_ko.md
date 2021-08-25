@@ -15,8 +15,8 @@ Windows, Linux, macOS 시스템을 지원합니다.
 
 #### 소프트웨어 종속
 
-- Python 2.7/3.5/3.6/3.9
-- pip 최신 버전
+- Python 2.7/3.5/3.6/3.9.
+- pip 최신 버전.
 >?pip의 최신 Python 버전(예: 3.9.0 버전)을 직접 설치 및 통합하는 것을 권장합니다.
 
 #### 설치 및 설정
@@ -36,7 +36,7 @@ Windows, Linux, macOS 시스템을 지원합니다.
 pip install coscmd
 ```
 설치 완료 후 `-v` 또는 `--version` 명령어를 통해 현재 버전 정보를 확인할 수 있습니다.
->! Windows를 통해 설치한 후에는 `C:\python_install_dir,  C:\python_install_dir\Scripts` 두 개의 경로를 환경 변수에 추가해야 합니다. 
+>! Windows를 통해 설치한 후에는 `C:\python_install_dir;` 및 `C:\python_install_dir\Scripts` 두 개의 경로를 환경 변수에 추가해야 합니다. 
 >
 
 #### 1.2 pip 업데이트
@@ -317,7 +317,8 @@ coscmd -b examplebucket-1250000000 -r ap-beijing deletebucket
 ```plaintext
 coscmd -b examplebucket-1250000000 -r ap-beijing deletebucket -f
 ```
- >!`-f` 매개변수를 사용하여 해당 버킷을 강제로 삭제할 수 있습니다. 여기에는 모든 파일, 버전 제어를 활성화한 이전 폴더, 업로드로 생성된 조각이 포함됩니다. 작업에 유의하시기 바랍니다.
+>! `-f` 매개변수를 사용하여 해당 버킷을 강제로 삭제할 수 있습니다. 여기에는 모든 파일, 버전 제어를 활성화한 이전 폴더, 업로드로 생성된 조각이 포함됩니다. 작업에 유의하시기 바랍니다.
+>
 
 
 ## 자주 쓰는 객체 명령어
@@ -328,8 +329,8 @@ coscmd -b examplebucket-1250000000 -r ap-beijing deletebucket -f
 ```plaintext
 coscmd upload <localpath> <cospath>
 ```
- >! '<>'의 매개변수를 업로드할 로컬 파일 경로(localpath) 및 COS 저장 경로(cospath)로 대체하세요.
- >
+>! '<>'의 매개변수를 업로드할 로컬 파일 경로(localpath) 및 COS 저장 경로(cospath)로 대체하세요.
+>
 - 작업 예시 - D 드라이브의 picture.jpg 파일을 COS의 doc 디렉터리로 업로드
 ```plaintext
 coscmd upload D:/picture.jpg doc/
@@ -342,8 +343,8 @@ coscmd upload D:/doc/picture.jpg doc/
 ```plaintext
 coscmd upload D:/picture.jpg doc/ -H "{'x-cos-storage-class':'Archive'}"
 ```
- >! -H 매개변수를 사용하여 HTTP header 설정 시, JSON 형식을 유지해야 합니다. 예시: `coscmd upload -H "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`. 헤더에 대한 자세한 내용은 [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) 문서를 참고하십시오.
- >
+>! -H 매개변수를 사용하여 HTTP header 설정 시, JSON 형식을 유지해야 합니다. 예시: `coscmd upload -H "{'x-cos-storage-class':'Archive','Content-Language':'zh-CN'}" <localpath> <cospath>`. 헤더에 대한 자세한 내용은 [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) 문서를 참고하십시오.
+>
 - 작업 예시 - meta 메타데이터를 설정하여 파일을 COS의 doc 디렉터리에 업로드
 ```plaintext
 coscmd upload D:/picture.jpg doc/ -H "{'x-cos-meta-example':'example'}"
@@ -370,14 +371,14 @@ coscmd upload -r D:/doc doc
 ```plaintext
 coscmd upload -rs D:/doc doc
 ```
- >!-s 매개변수를 사용하여 동기화 업로드를 진행할 수 있으며, md5가 동일한 파일(COS 상의 원본 파일은 반드시 1.8.3.2 버전 이상의 COSCMD로 업로드해야 하며, 기본적으로 x-cos-meta-md5의 header가 존재)은 건너뜁니다.
- >
+>!-s 매개변수를 사용하여 동기화 업로드를 진행할 수 있으며, md5가 동일한 파일(COS 상의 원본 파일은 반드시 1.8.3.2 버전 이상의 COSCMD로 업로드해야 하며, 기본적으로 x-cos-meta-md5의 header가 존재)은 건너뜁니다.
+>
 - 작업 예시 - 동기화 업로드하고, 파일 크기 및 이름이 동일한 파일은 건너뛰기
 ```plaintext
 coscmd upload -rs --skipmd5 D:/doc doc
 ```
- >! -s 매개변수를 사용하여 동기화 업로드를 진행할 수 있습니다. --skipm5 매개변수를 수반하면 동일한 이름의 파일 크기만 대조하고, 크기가 동일한 경우 업로드를 건너뜁니다.
- >
+>! -s 매개변수를 사용하여 동기화 업로드를 진행할 수 있습니다. --skipmd5 매개변수를 수반하면 동일한 이름의 파일 크기만 대조하고, 크기가 동일한 경우 업로드를 건너뜁니다.
+>
 - 작업 예시 - 동기화 업로드하고 'D 드라이브 doc 폴더에서 이미 삭제한 파일' 삭제
 ```plaintext
 coscmd upload -rs --delete D:/doc /
@@ -386,8 +387,8 @@ coscmd upload -rs --delete D:/doc /
 ```plaintext
 coscmd upload -rs D:/doc / --ignore *.txt,*.doc
 ```
- >!폴더 업로드 시 `--ignore` 매개변수를 사용하면 특정 파일을 생략할 수 있으며 `--include` 매개변수를 사용하면 특정 파일을 필터링할 수 있고, shell 와일드카드 규칙을 지원합니다. 여러 개의 규칙을 지원하며, 쉼표 `,`로 구분합니다. 특정 확장명을 생략하는 경우 마지막에 `,`를 입력하거나 `""`를 추가해야 합니다.
- >
+>! 폴더 업로드 시 `--ignore` 매개변수를 사용하면 특정 파일을 생략할 수 있으며 `--include` 매개변수를 사용하면 특정 파일을 필터링할 수 있고, shell 와일드카드 규칙을 지원합니다. 여러 개의 규칙을 지원하며, 쉼표 `,`로 구분합니다. 특정 확장명을 생략하는 경우 마지막에 `,`를 입력하거나 `""`를 추가해야 합니다.
+>
 - 작업 예시 - D 드라이브 doc 폴더의 .txt 및 .doc 확장명을 가진 파일 업로드
 ```plaintext
 coscmd upload -rs D:/doc / --include *.txt,*.doc
@@ -488,14 +489,14 @@ coscmd download -r / D:/ --ignore doc/*
 ```plaintext
 coscmd download -rf / D:/examplefolder/
 ```
- >! 로컬에 동일한 이름의 파일이 존재하는 경우 다운로드에 실패합니다. `-f` 매개변수를 사용하여 로컬 파일을 덮어쓰십시오.
- >
+>! 로컬에 동일한 이름의 파일이 존재하는 경우 다운로드에 실패합니다. `-f` 매개변수를 사용하여 로컬 파일을 덮어쓰십시오.
+>
 - 작업 예시 -현재 bucket의 루트 디렉터리에 있는 모든 파일 동기화 다운로드, md5 검증이 동일한 동명의 파일은 제외
 ```plaintext
 coscmd download -rs / D:/examplefolder
 ```
- >! `-s` 또는 `--sync` 매개변수를 사용하여 폴더 다운로드 시 로컬에 존재하는 동일한 파일(다운로드하는 파일이 COSCMD의 upload 인터페이스를 통해 업로드되었고, 파일이 `x-cos-meta-md5` 헤더를 가지고 있어야 함)을 건너뜁니다.
- >
+>! `-s` 또는 `--sync` 매개변수를 사용하여 폴더 다운로드 시 로컬에 존재하는 동일한 파일(다운로드하는 파일이 COSCMD의 upload 인터페이스를 통해 업로드되었고, 파일이 `x-cos-meta-md5` 헤더를 가지고 있어야 함)을 건너뜁니다.
+>
 - 작업 예시 - 현재 bucket의 루트 디렉터리에 있는 모든 파일 동기화 다운로드, 파일 크기가 동일한 동명의 파일은 제외
 ```plaintext
 coscmd download -rs --skipmd5 / D:/examplefolder
@@ -508,8 +509,8 @@ coscmd download -rs --delete / D:/examplefolder
 ```plaintext
 coscmd download -rs / D:/examplefolder --ignore *.txt,*.doc
 ```
- >! 폴더 다운로드 시 `--ignore` 매개변수를 사용하면 특정 유형의 파일을 생략할 수 있으며 `--invlude` 매개변수를 사용하면 특정 유형의 파일을 필터링할 수 있고, shell 와일드카드 규칙을 지원합니다. 여러 개의 규칙을 지원하며, 쉼표 `,`로 구분합니다. 특정 확장명을 생략하는 경우 마지막에 `,`를 입력하거나 큰따옴표 `""`를 추가해야 합니다.
- >
+>! 폴더 다운로드 시 `--ignore` 매개변수를 사용하면 특정 유형의 파일을 생략할 수 있으며 `--invlude` 매개변수를 사용하면 특정 유형의 파일을 필터링할 수 있고, shell 와일드카드 규칙을 지원합니다. 여러 개의 규칙을 지원하며, 쉼표 `,`로 구분합니다. 특정 확장명을 생략하는 경우 마지막에 `,`를 입력하거나 큰따옴표 `""`를 추가해야 합니다.
+>
 - 작업 예시 - .txt 및 .doc 확장명 파일 필터링
 ```plaintext
 coscmd download -rs / D:/examplefolder --include *.txt,*.doc

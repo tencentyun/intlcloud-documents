@@ -34,10 +34,8 @@ For example, if you enter `URL ~*.(gif|jpg|bmp)$`, it will match all .gif, .jpg 
 #### Default domain name policy[](id:default)
 When the requested domain name does not match any rule, CLB will forward the request to the default domain name (Default Server). One listener can have only one default domain name.
 For example, the `HTTP:80` listener of CLB instance 1 is configured with two domain names: `www.test1.com` and `www.test2.com`, where `www.test1.com` is the default domain name. When a user visits `www.example.com`, since no domain name is matched, CLB will forward the request to the default domain name `www.test1.com`.
-![](https://main.qcloudimg.com/raw/925984cd1e0e473987dcb1fd9834d85e.png)
 
 >?
->- 2020年05月18日之前，七层监听器是否配置默认域名为可选项，您可以选择配置默认域名或者不配置。
 >  - If your layer-7 listener has a default domain name configured, client requests that do not match other rules will be forwarded to it.
 >  - If your layer-7 listener has no default domain name configured, client requests that do not match other rules will be forwarded to the first domain name loaded by CLB (its loading order may be different from that configured in the console; therefore, it may not be the first one configured in the console). 
 >- Starting from May 18, 2020:
@@ -49,20 +47,15 @@ For example, the `HTTP:80` listener of CLB instance 1 is configured with two dom
 
 The following four operations can be performed on the default domain name:
 - **Operation 1**: when configuring the first forwarding rule for the layer-7 listener, the default domain name must be in "enabled" status.
-![](https://main.qcloudimg.com/raw/8e00d87be88a9ed24e6f4abd46f583d7.png)
 - **Operation 2**: disable the current default domain name.
  - If there are multiple domain names under a listener, when disabling the current default domain name, you need to specify a new default domain name.
-![](https://main.qcloudimg.com/raw/0321f81141942652c482a96c76b90a07.png)
  - If a listener has only one domain name and the domain name is the default domain name, it cannot be disabled.
-![](https://main.qcloudimg.com/raw/ee5377244e6fca078b63e562bf686f3f.png)
 - **Operation 3**: delete the default domain name.
  - If there are multiple domain names under a listener, when you delete a rule under the default domain name:
    - If the rule is not the last rule of the default domain name, you can delete it directly.
    - If the rule is the last rule of the default domain name, you need to set a new default domain name.
-   ![](https://main.qcloudimg.com/raw/d5f80f78c337b16313ea2fb6acedf45c.png)
  - If there is only one domain name under a listener, you can directly delete all rules without setting a new default domain name.
 - <span id = "step4"></span>**Operation 4**: you can quickly modify the default domain name in the listener list.
-![](https://main.qcloudimg.com/raw/b37a8fd9c04c2e14218b6f671b2693e3.png)
 
 ### Forwarded URL path configuration rules
 Layer-7 CLB can forward requests from different URLs to different servers for processing, and multiple forwarded URL paths can be configured for a single domain name.

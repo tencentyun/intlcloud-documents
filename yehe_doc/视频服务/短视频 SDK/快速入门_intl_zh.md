@@ -10,7 +10,7 @@
 
 如果您需要在您的 App 中集成短视频的部分功能，请参考以下步骤：
 
-- [步骤1：申请测试 License](https://intl.cloud.tencent.com/document/product/1069/38041)
+- 步骤1：申请测试 License
 - [步骤2：下载短视频 SDK](https://intl.cloud.tencent.com/document/product/1069/37914)
 - 步骤3：快速完成 SDK 集成
   + [XCode 集成](https://intl.cloud.tencent.com/document/product/1069/38012)

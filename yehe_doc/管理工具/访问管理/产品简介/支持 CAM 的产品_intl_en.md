@@ -119,7 +119,7 @@ Definitions:
  | Service | Authorization Granularity | Console | Authorization by Tag | Service Role |	Reference Document |
 | ------------------------------------------------------------| ------ | -------- | -------- |  ---- |	 ---- |
 | [Cloud Message Queue (CMQ)](https://intl.cloud.tencent.com/document/product/406) | Resource level   | &#10003;  | &#10003; |  - |	[CAM Guide](https://intl.cloud.tencent.com/document/product/406/34257) |
-| [Cloud Kafka (CKafka)](https://intl.cloud.tencent.com/document/product/597) | Resource level | &#10003; | &#10003; | &#10003;   | - |
+| [Cloud Kafka (CKafka)](https://intl.cloud.tencent.com/document/product/597) | Resource level | &#10003; | - | &#10003;   | - |
 | [API Gateway](https://intl.cloud.tencent.com/document/product/628)     | Resource level | &#10003;  | &#10003;  | &#10003; |[CAM Guide](https://intl.cloud.tencent.com/document/product/628/34064)|
 
 ## Data Processing	

@@ -39,7 +39,7 @@ IMのフレンドリストには、最大3,000人のフレンドを追加でき�
 ### カスタムフレンドフィールド
 
 カスタムフレンドフィールドは、各Appによって各自の業務ニーズに応じて設定されたフレンドデータです。フレンドフィールドをカスタマイズすることで、各Appはフレンドにデータを追加することができ、また、既存インターフェースを介して、読み取りおよび書き込み操作を行うことができます。
-App管理者は、IM[コンソール](https://console.cloud.tencent.com/im) >【アプリケーションの設定】>【機能設定】から、カスタムフレンドフィールドを申請することができます。申請すると、カスタムフレンドフィールドは5分以内に有効になります。
+App管理者は、IM[コンソール](https://console.cloud.tencent.com/im) >**アプリケーションの設定**>**機能設定**から、カスタムフレンドフィールドを申請することができます。申請すると、カスタムフレンドフィールドは5分以内に有効になります。
 
 カスタムフレンドフィールドの命名規則は次のとおりです。
 - カスタムフレンドフィールドの名称は、プレフィックスとキーワードという2つの部分に分かれます。
@@ -152,8 +152,8 @@ IMは、一方向のブラックリストリレーションシップチェック
 ## 関連ドキュメント
 
 - [ユーザープロファイルとリレーションシップチェーン（Android）](https://intl.cloud.tencent.com/document/product/1047/34332)
-- [ユーザープロファイルとリレーションシップチェーン（iOS）](https://intl.cloud.tencent.com/document/product/1047/36284)
+- [ユーザープロファイルとリレーションシップチェーン（iOS）](https://intl.cloud.tencent.com/document/product/1047/34333)
 - [基本機能(Windows)](https://intl.cloud.tencent.com/document/product/1047/34304)
-- [リレーションシップチェーン(Web SDK)](https://intl.cloud.tencent.com/document/product/1047/34334)
-- [フレンドシステムメッセージ(Web SDK)](https://intl.cloud.tencent.com/document/product/1047/34334)
+- [ユーザ情報（Web&ウィジェット）](https://intl.cloud.tencent.com/document/product/1047/34334)
+
 

@@ -14,7 +14,7 @@ TKE를 이용한 GooseFS 배포는 [오픈소스 모듈 Fluid](https://github.co
 
 2. Fluid Controller를 설치합니다. 
 
-3. controller 모듈을 검사합니다. 좌측 [클러스터]에서 해당하는 클러스터를 찾고 2개의 controller가 확인되었다면 fluid 모듈이 성공적으로 설치가 되었음을 의미합니다. 
+3. controller 모듈을 검사합니다. 좌측 [클러스터]에서 해당 클러스터를 찾고 2개의 controller가 확인되었다면 fluid 모듈이 성공적으로 설치가 되었음을 의미합니다. 
 
 
 
@@ -26,14 +26,12 @@ TKE를 이용한 GooseFS 배포는 [오픈소스 모듈 Fluid](https://github.co
 [root@master01 run]# export KUBECONFIG=xxx/cls-xxx-config (tke 콘솔 페이지에서 클러스터 증명을 특정 디렉터리에 다운로드합니다.）
 ```
 
->! 클러스터 API Server의 외부 네트워크 액세스 권한을 활성화. 
+>! 클러스터 API Server의 외부 네트워크 액세스 권한을 활성화해야 합니다. 
 >
 
 ### 2. UFS 데이터 세트 Dataset 생성 (예시: COS)
 
-dataset.yaml 탬플릿은 아래와 같습니다. 
-
-암호화를 위한 secret.yaml을 생성합니다. 
+암호화를 위한 secret.yaml을 생성합니다. 템플릿은 다음과 같습니다.
 
 ```yaml
 apiVersion: v1
@@ -45,7 +43,13 @@ stringData:
   fs.cosn.userinfo.secretId:xxx
 ```
 
+secret 생성:
+```shell
+[root@master01 ~]# kubectl apply  -f secret.yaml
+secret/mysecret created
+```
 
+dataset.yaml 템플릿은 아래와 같습니다. 
 ```yaml
 apiVersion: data.fluid.io/v1alpha1
 kind: Dataset
@@ -59,7 +63,7 @@ spec:
       fs.cosn.bucket.region: ap-beijing
       fs.cosn.impl: org.apache.hadoop.fs.CosFileSystem
       fs.AbstractFileSystem.cosn.impl: org.apache.hadoop.fs.CosN
-      fs.cos.app.id: "your appid"
+      fs.cos.app.id: "${your appid}"
     encryptOptions:
       - name: fs.cosn.userinfo.secretKey
         valueFrom:
@@ -69,15 +73,17 @@ spec:
       - name: fs.cosn.userinfo.secretId
         valueFrom:
           secretKeyRef:
+            name: mysecret
+            key: fs.cosn.userinfo.secretId
 ```
 
+dataset 생성
 ```shell
-Dataset 생성
 [root@master01 run]# kubectl apply -f dataset.yaml 
 dataset.data.fluid.io/slice1 created
 ```
 
-Dataset 상태 조회, NotBond 상태이다.
+Dataset 상태 조회, NotBond 상태.
 ```shell
 [root@master01 run]# kubectl get dataset
 NAME     UFS TOTAL SIZE   CACHED   CACHE CAPACITY   CACHED PERCENTAGE   PHASE      AGE
@@ -100,8 +106,8 @@ spec:
     replicas: 1
   goosefsVersion:
     imagePullPolicy: Always
-    image: {img_uri}
-    imageTag: {tag}
+    image: ${img_uri}
+    imageTag: ${tag}
   tieredstore:
     levels:
       - mediumtype: MEM
@@ -131,8 +137,8 @@ spec:
         cpu: 8
   fuse:
     imagePullPolicy: Always
-    image: {fuse_uri}
-    imageTag: {tag_num}
+    image: ${fuse_uri}
+    imageTag: ${tag_num}
     env:
       MAX_IDLE_THREADS: "32"
     jvmOptions:

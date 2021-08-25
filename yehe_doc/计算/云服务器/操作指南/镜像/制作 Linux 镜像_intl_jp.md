@@ -99,7 +99,7 @@ gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime
 <dx-tabs>
 <span id="Useplatform"></span>
 ::: プラットフォームツールを使用してイメージをエクスポートする
-VMWare vCenter ConvertまたはCitrix XenConvertなどの仮想化プラトフォームのイメージエクスポートツールを利用します。詳細について、対象プラットフォームのエクスポートツールのドキュメントをご参照ください。
+VMWare vCenter ConverterまたはCitrix XenConvertなどの仮想化プラトフォームのイメージエクスポートツールを利用します。詳細について、対象プラットフォームのエクスポートツールのドキュメントをご参照ください。
 <dx-alert infotype="explain">
  現在、Tencent Cloudサービス移行でサポートされているイメージ形式には、qcow2、vhd、raw、vmdkがあります。
 </dx-alert>

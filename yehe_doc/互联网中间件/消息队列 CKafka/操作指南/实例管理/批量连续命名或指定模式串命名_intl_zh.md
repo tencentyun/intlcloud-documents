@@ -21,7 +21,7 @@
 <dx-tabs>
 ::: 购买页操作
 1. 参考 [创建实例](https://intl.cloud.tencent.com/document/product/597/39718) 购买3个实例，并在购买页以**“前缀+序号”**的命名规则填写实例名称，即将实例名称填写为 `ckafka`。如下图所示：
-![](https://main.qcloudimg.com/raw/1f34f6d666316e3e7f656e95a51f19a7.png)
+![](https://main.qcloudimg.com/raw/ddf73ac8cf503c93cd4ede057ded701e.png)
 2. 根据页面提示逐步操作，并完成支付。
 :::
 
@@ -47,7 +47,7 @@
 <dx-tabs>
 ::: 购买页操作
 1. 参考 [创建实例](https://intl.cloud.tencent.com/document/product/597/39718) 购买实例，并在购买页以**“前缀+指定模式串{R:x}”**的命名规则填写实例名称，即将实例名称填写为 `ckafka{R:3}`。如下图所示：
-![](https://main.qcloudimg.com/raw/2c96767ee9e109e7540fda50a6c3718e.png)
+![](https://main.qcloudimg.com/raw/8fee4eadfcd092b41135de7d52a1595c.png)
 2. 根据页面提示逐步操作，并完成支付。
 :::
 
@@ -66,7 +66,7 @@
 <dx-tabs>
 ::: 购买页操作
 1. 参考 [创建实例](https://intl.cloud.tencent.com/document/product/597/39718) 购买3台实例，并购买页以**“前缀+指定模式串{R:x}-前缀+指定模式串{R:x}-前缀”**的命名规则填写实例名称，即将实例名称填写为 `ckafka{R:13}-big{R:2}-test` 。如下图所示：
-![](https://main.qcloudimg.com/raw/644235e778441addd11f6120a94a6c8a.png)
+![](https://main.qcloudimg.com/raw/7d064d5c4d374bbcb7284bf9100f3ab1.png)
 2. 根据页面提示逐步操作，并完成支付。
 :::
 
@@ -82,6 +82,5 @@
 
 当您通过 [后缀数字自动升序](#AutoAscending) 或 [指定模式串](#SpecifyStrings) 实现批量创建实例后，可通过以下操作验证设置实例名称。
 
-登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)  查看新创建的实例，即可发现批量购买的实例会根据您设置的规则进行命名。如下图所示：
-![](https://main.qcloudimg.com/raw/10466cf48cc2f00b458987c48132f837.png)
+登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)  查看新创建的实例，即可发现批量购买的实例会根据您设置的规则进行命名。
 
