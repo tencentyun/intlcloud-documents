@@ -60,7 +60,7 @@
 <table>
 <thead>
 <tr><th>Update</th><th>Description</th><th>Release Date</th><th>Document</th></tr></thead>
-<tbody><tr><td>Supported batch device creation in the console</td><td>The IoT Hub console allows you to batch add devices through automatic generation or file upload and view historical device creation tasks and processes in batch management.</td><td>2020-12-29</td><td><a href='https://intl.cloud.tencent.com/document/product/1105/41476'>Device Connection Preparations</a></td></tr><tr><td>Supported the device disablement feature</td><td>IoT Hub supports the device disablement feature. Once disabled, a device cannot perform operations such as establishing connections and sending/receiving messages as normal devices.</td><td>2020-12-29</td><td><a href='https://intl.cloud.tencent.com/document/product/1105/41500'>Feature Components</a></td></tr><tr><td>Deleted the NB-IoT product type</td><td>During product creation, the NB-IoT type is no longer available as an independent product type. You can use general products with connection over the MQTT protocol.</td><td>2020-12-29</td><td>-</td></tr></tbody>
+<tbody><tr><td>Supported batch device creation in the console</td><td>The IoT Hub console allows you to batch add devices through automatic generation or file upload and view historical device creation tasks and processes in batch management.</td><td>2019-12-29</td><td><a href='https://intl.cloud.tencent.com/document/product/1105/41476'>Device Connection Preparations</a></td></tr><tr><td>Supported the device disablement feature</td><td>IoT Hub supports the device disablement feature. Once disabled, a device cannot perform operations such as establishing connections and sending/receiving messages as normal devices.</td><td>2019-12-29</td><td><a href='https://intl.cloud.tencent.com/document/product/1105/41500'>Feature Components</a></td></tr><tr><td>Deleted the NB-IoT product type</td><td>During product creation, the NB-IoT type is no longer available as an independent product type. You can use general products with connection over the MQTT protocol.</td><td>2019-12-29</td><td>-</td></tr></tbody>
 </table>
 
 ## September 2019
@@ -68,7 +68,7 @@
 <table>
 <thead>
 <tr><th>Update</th><th>Description</th><th>Release Date</th><th>Document</th></tr></thead>
-<tbody><tr><td>Supported CA certificate download in the console</td><td>When you create a certificate-authenticated device, the console allows you to download the CA certificate required for connection authentication in a visual way.</td><td>2020-8-23</td><td>-</td></tr><tr><td>Supported MQTT signature calculation in the console</td><td>To reduce your workload in development and testing, for key-authenticated devices, IoT Hub allows you to quickly generate a valid MQTT password in the console for connection debugging.</td><td>2020-8-23</td><td>-</td></tr></tbody>
+<tbody><tr><td>Supported CA certificate download in the console</td><td>When you create a certificate-authenticated device, the console allows you to download the CA certificate required for connection authentication in a visual way.</td><td>2019-08-23</td><td>-</td></tr><tr><td>Supported MQTT signature calculation in the console</td><td>To reduce your workload in development and testing, for key-authenticated devices, IoT Hub allows you to quickly generate a valid MQTT password in the console for connection debugging.</td><td>2019-08-23</td><td>-</td></tr></tbody>
 </table>
 
 
@@ -77,7 +77,7 @@
 <table>
 <thead>
 <tr><th>Update</th><th>Description</th><th>Release Date</th><th>Document</th></tr></thead>
-<tbody><tr><td>Added the device tag feature</td><td>The console allows you to add tags to devices and search for devices by tag name.</td><td>2020-7-12</td><td>-</td></tr><tr><td>Added the online debugging feature</td><td>The console supports the online debugging feature. You can specify the `Topic`, `QOS`, and `Payload` to deliver messages to specified devices for debugging.</td><td>2020-07-12</td><td>-</td></tr></tbody>
+<tbody><tr><td>Added the device tag feature</td><td>The console allows you to add tags to devices and search for devices by tag name.</td><td>2019-07-12</td><td>-</td></tr><tr><td>Added the online debugging feature</td><td>The console supports the online debugging feature. You can specify the `Topic`, `QOS`, and `Payload` to deliver messages to specified devices for debugging.</td><td>2019-07-12</td><td>-</td></tr></tbody>
 </table>
 
 ## May 2019
