@@ -17,7 +17,7 @@ This document describes how to group devices in the console.
  - Group Name: it can contain 4–30 letters, digits, and underscores. 
  - Group Description: it can contain up to 255 characters.
 ![](https://main.qcloudimg.com/raw/822eff73b1d905374a22d5fc4777f071.png)
-4. Click **Save**.
+4. Click **Confirm**.
 
 
 
