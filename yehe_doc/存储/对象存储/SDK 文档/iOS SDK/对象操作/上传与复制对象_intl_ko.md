@@ -1548,4 +1548,3 @@ QCloudCOSXMLService.defaultCOSXML().abortMultipfartUpload(abort);
 
 >? 전체 예시는 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/AbortMultiPartsUpload.swift)을 참고하십시오.
 
-```
