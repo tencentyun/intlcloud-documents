@@ -173,13 +173,13 @@ echo <BucketName-APPID>:<SecretId>:<SecretKey> > /etc/passwd-cosfs
 chmod 640 /etc/passwd-cosfs
 ```
 
->? &lt;&gt;의 매개변수를 사용자 정보로 변경해야 합니다.
->- &lt;BucketName-APPID&gt;는 버킷 이름 포맷입니다. 버킷 이름 생성 규칙에 대한 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오.
->- &lt;SecretId&gt;와 &lt;SecretKey&gt;는 키 정보입니다. CAM 콘솔의 [Tencent Cloud API 키 관리](https://console.cloud.tencent.com/cam/capi)에서 조회 및 생성할 수 있습니다.
+>? <>의 매개변수를 사용자 정보로 변경해야 합니다.
+>- <BucketName-APPID>는 버킷 이름 포맷입니다. 버킷 이름 생성 규칙에 대한 자세한 내용은 [버킷 이름 생성 규칙](https://intl.cloud.tencent.com/document/product/436/13312)을 참고하십시오.
+>- <SecretId>와 <SecretKey>는 키 정보입니다. CAM 콘솔의 [Tencent Cloud API 키 관리](https://console.cloud.tencent.com/cam/capi)에서 조회 및 생성할 수 있습니다.
 >- 키는 $HOME/.passwd-cosfs 파일에서 설정하거나 -opasswd_file=[path]로 키 파일 경로를 지정할 수 있으며, 키 파일의 권한 값은 600으로 설정해야 합니다.
 > 
 
-**예시: **
+**예시:**
 
 ```shell
 echo examplebucket-1250000000:AKIDHTVVaVR6e3****:PdkhT9e2rZCfy6**** > /etc/passwd-cosfs
@@ -197,12 +197,12 @@ chmod 640 /etc/passwd-cosfs
 cosfs <BucketName-APPID> <MountPoint> -ourl=http://cos.<Region>.myqcloud.com -odbglevel=info -oallow_other
 ```
 그중에서,
-- &lt;MountPoint&gt;:는 로컬 마운트 디렉터리(예: `/mnt`)입니다.
-- &lt;Region&gt;는 리전 약칭입니다(예시: ap-guangzhou, eu-frankfurt 등). 리전 약칭에 대한 자세한 정보는 [가용 리전](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오.
+- < MountPoint >는 로컬 마운트 디렉터리(예: `/mnt`)입니다.
+- < Region >는 리전 약칭입니다(예시: ap-guangzhou, eu-frankfurt 등). 리전 약칭에 대한 자세한 정보는 [가용 리전](https://intl.cloud.tencent.com/document/product/436/6224)을 참고하십시오.
 - -odbglevel은 로그 레벨을 지정합니다. 기본 값은 crit이며, 옵션값은 crit, error, warn, info, debug입니다.
 - -oallow_other: 마운트되지 않은 사용자의 마운트 폴더 액세스를 허용합니다.
 
-**예시: **
+**예시:**
 
 ```shell
 mkdir -p /mnt/cosfs
