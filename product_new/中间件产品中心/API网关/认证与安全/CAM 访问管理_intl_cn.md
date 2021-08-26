@@ -1,7 +1,5 @@
 ## CAM 简介
 
-**注意：API网关将于9月20日晚-21日对接CAM，未避免影响现有客户所有账户的使用，我们会默认对20日前的API网关用户的账户子账户均授予QcloudAPIGWFullAccess权限，这意味着您的子账户跨账户等均拥有对API网关现有服务及API的完全管理权限，此授权不影响其他产品的权限，若您希望更精确管理账户的权限策略，则可参考下面的示例进行更改**
-
 ### 基本概念
 根账户通过给子账户绑定策略实现授权，策略设置可精确到 **[API，资源，用户/用户组，允许/拒绝，条件]** 维度。
 
@@ -21,7 +19,7 @@
 | ------------------------ | ------------------------------------------------------------ |
 | 了解策略和用户之间关系   | [策略管理](https://intl.cloud.tencent.com/document/product/598/10601) |
 | 了解策略的基本结构       | [策略语法](https://intl.cloud.tencent.com/document/product/598/10603) |
-| 了解还有哪些产品支持 CAM | [支持 CAM 的云服务](https://intl.cloud.tencent.com/document/product/598/10588) |
+| 了解还有哪些产品支持 CAM | [支持 CAM 的产品](https://intl.cloud.tencent.com/document/product/598/10588) |
 
 [单击查看更多 CAM 文档 >>](https://intl.cloud.tencent.com/document/product/598)
 
@@ -56,7 +54,7 @@
 ```
 
 也可以通过设置系统的 [全读写策略](https://console.cloud.tencent.com/cam/policy/createV2) 支持。
-![](https://main.qcloudimg.com/raw/0d537a59ff25d11c33990dfff506d1ab.png)
+![](https://main.qcloudimg.com/raw/e008d17424a460d631754dffe36903f7.png)
 
 ### API 网关单个服务完全管理策略
 授权一个子用户某个特定 API 服务的完全管理权限（创建、管理等全部操作）：
