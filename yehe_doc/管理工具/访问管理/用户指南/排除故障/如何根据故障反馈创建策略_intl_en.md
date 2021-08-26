@@ -7,12 +7,11 @@ When a sub-account associated with the `QcloudCVMReadOnlyAccess ` policy attempt
 If you want to authorize the sub-account to proceed with this operation, you can create and associate a custom policy according to this error message.
 
 ## Directions
-1. Log in to the CAM console, enter the [Policy](https://console.cloud.tencent.com/cam/policy) page, and click **Create Custom Policy**.
+1. Log in to the CAM console, enter the [Policies](https://console.cloud.tencent.com/cam/policy) page, and click **Create Custom Policy**.
 2. In the selection window that pops up, click **Create by Policy Generator** to enter the **Edit Policy** page.
 3. On the **Edit Policy** page, set the following information:[](id:3)
-
- > - Effect (required): select whether the operation is allowed. In this example, select "Allow".
- > - Service (required): select the product based on the abbreviation to authorize. In this example, it is **CVM** corresponding to `cvm` in the `operation` field of the error message.
+> - Effect (required): select whether the operation is allowed. In this example, select "Allow".
+> - Service (required): select the product based on the abbreviation to authorize. In this example, it is **CVM** corresponding to `cvm` in the `operation` field of the error message.
 > - Action (required): select the operation to authorize. In this example, select **ResetInstance** corresponding to the `operation` field of the error message.
 >- Resource (required): for products that don't support resource-level authorization, you can only select all resources as the authorization granularity. For products that support resource-level authorization, you can select a specific resource. To do so, click **Add a 6-segment resource description** and enter the resource prefix and resource. In this example, the error message is for a specific resource, so you need to authorize it: select the specific resource, click **Add a 6-segment resource description**, and then you can directly copy the prefix and resource in `qcs:id/1158313:cvm:ap-guangzhou:uin/2159973417:instance/instance/ins-esuithv2` and paste them.
 > - Condition (optional): set the conditions that must be met for the permission to take effect, such as a specified access IP. In this example, leave it empty.
