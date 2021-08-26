@@ -1,7 +1,5 @@
 ## CAM Introduction
 
-**Notes: API Gateway will be integrated with CAM on the evening of September 20th-21st. To avoid affecting existing customers, we will grant all API Gateway users’ accounts and sub-accounts QcloudAPIGWFullAccess permission before September 20th. This means that your sub-accounts and cross-accounts will have full management permissions to the existing services and APIs of API Gateway. This authorization does not affect other products. For granular management of the account's permission policy, you can refer to the following samples and modify them for your use.**
-
 ### Basic concepts
 The root account authorizes sub-accounts by binding policies. The policy setting can be accurate to **"API, Resource, User/User Group, Allow/Deny, Condition"**.
 
@@ -21,7 +19,7 @@ The root account authorizes sub-accounts by binding policies. The policy setting
 | ------------------------ | ------------------------------------------------------------ |
 | Relationship between policy and user | [Policy Management](https://intl.cloud.tencent.com/document/product/598/10603)
 | Basic structure of policy | [Policy Syntax](https://intl.cloud.tencent.com/document/product/598/10603) |
-| More products that support CAM | [CAM-enabled Cloud Services](https://intl.cloud.tencent.com/document/product/598/10588) |
+| More products that support CAM | [CAM-Enabled Products](https://intl.cloud.tencent.com/document/product/598/10588) |
 
 [Click to learn more about CAM](https://intl.cloud.tencent.com/document/product/598)
 
