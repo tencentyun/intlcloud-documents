@@ -1,4 +1,4 @@
-### Feature Overview
+### Feature overview
 
 A gateway device can bind and unbind subdevices under it through data communication with the cloud. To implement this feature, the following two topics will be used:
 - Data upstream topic (for publishing): `$gateway/operation/${productid}/${devicename}`
