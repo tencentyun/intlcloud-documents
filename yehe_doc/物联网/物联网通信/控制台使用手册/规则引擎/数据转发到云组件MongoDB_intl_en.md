@@ -10,7 +10,7 @@ The figure below shows the entire process of forwarding data to TencentDB for Mo
 3. On the rule details page, click **Add Action**.
 >?You will be prompted to authorize access to TencentDB for MongoDB upon the first use. You need to click **Authorize Now** before you can proceed.
 ![](https://main.qcloudimg.com/raw/0cd34cdaa86912986c08f9a04bd71603.png)
-4. On the action adding page, select **Forward data to TencentDB for MongoDB**.
+4. In the **Add Action** pop-up window, select **Forward data to TencentDB for MongoDB**.
 ![](https://main.qcloudimg.com/raw/51475f6b6240022cc2102bcd4995821a.png)
 5. After successful authorization, you need to configure the TencentDB for MongoDB instance information as shown below. The configuration is divided into the following steps:
     1. Select the region and TencentDB for MongoDB instance. If there is no instance under the account, click **Create Instance** to redirect to the TencentDB for MongoDB console and create one.
