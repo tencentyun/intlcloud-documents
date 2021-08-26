@@ -6,8 +6,16 @@
 ## 接口调用说明
 ### 请求 URL 示例
 ```
-https://console.tim.qq.com/v4/im_open_login_svc/account_import?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/im_open_login_svc/account_import?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
+
+其中 xxxxxx 是各国家/地区的专属域名，请填写您的 SDKAppID 所在国家/地区对应的专属域名：  
+
+| 国家/地区   | 专属域名|
+| ----- | ----- |
+| 新加坡 | adminapisgp.im.qcloud.com               |
+
+
 ### 请求参数说明
 
  下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
@@ -78,6 +86,8 @@ https://console.tim.qq.com/v4/im_open_login_svc/account_import?sdkappid=88888888
 
 ## 接口调试工具
 通过 [REST API 在线调试](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/im_open_login_svc/account_import) 工具调试本接口。
+
+
 
 ## 参考
 
