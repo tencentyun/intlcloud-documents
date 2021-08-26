@@ -6,7 +6,7 @@ This document describes how to grant sub-accounts the product-/device-level acce
 
 ## Authorization by Creating Policy by Policy Syntax
 ### Creating policy
-1. Log in to the [CAM console](https://console.cloud.tencent.com/cam) and click **Policy** on the left sidebar.
+1. Log in to the [CAM console](https://console.cloud.tencent.com/cam) and click **Policies** on the left sidebar.
 2. Go to the policy management page and click **Create Custom Policy**.
 3. On the **Select Policy Creation Method** page that pops up, select **Create by Policy Syntax**.
 ![](https://main.qcloudimg.com/raw/417747f9bf3cc6fb17e54a8491554a23.png)
@@ -89,11 +89,11 @@ At this point, you can get the basic product information in the IoT Hub console.
 
 1. Log in to the [IoT Hub console](https://console.cloud.tencent.com/iothub) and go to the product information page. If no products and devices are added, you need to add a product and device first. For detailed directions, please see [Device Connection Preparations](https://intl.cloud.tencent.com/document/product/1105/41476).
 ![](https://main.qcloudimg.com/raw/1aa518ea3871fe13db16a69494041dc7.png)
-2. Click **Tag Info** on the **Device Info** page, click **Add**, and enter information such as key and value to add a device tag.
+2. Click **Tag** on the **Device Information** page, click **Add**, and enter information such as key and value to add a device tag.
 ![](https://main.qcloudimg.com/raw/55e9cfae204600c3e4b8dda4029ef701.png)
  - Tag key: it can contain up to 16 letters, digits, and underscores.
  - Tag value: it can contain up to 16 letters, digits, and underscores.
-3. After editing, click **OK** to add the tag information, and the corresponding tag content will be displayed in the device information.
+3. After editing, click **Confirm** to add the tag information, and the corresponding tag content will be displayed in the device information.
 ![](https://main.qcloudimg.com/raw/39a2ec149daadab1711703c03ffc6941.png)
 
 ### Creating and associating policy

@@ -52,7 +52,7 @@ Select the target firmware version for update and click **Firmware Update** on t
    ![](https://main.qcloudimg.com/raw/8951fd3032a32fdfed555c96012fca70.png)
 2. On the firmware details page, you can view the firmware details, statistics of devices updated to the firmware version, and update task management list.
 ![](https://main.qcloudimg.com/raw/bcd7fee56d5a956ed18bfd830c2a9466.png)
- - Firmware Information: it includes the firmware name, product, version number, signature, signature algorithm, adding time, and description. You can click **Modify** in the top-right corner to modify the firmware name and description.
+ - Firmware Information: it includes the firmware name, product, version number, signature, signature algorithm, adding time, and description. You can click **Edit** in the top-right corner to modify the firmware name and description.
  - Firmware Update Statistics: it includes the total number of devices in all batch update tasks of the firmware and the numbers of corresponding devices in firmware update tasks in different update status.
  - Task management list:
     - Click **Tasks** to view all update tasks of this firmware. There are four update task status: not started, creating, created, and creation failed.
