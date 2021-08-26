@@ -14,9 +14,9 @@ To facilitate the connection of your devices and ensure the security of connecti
 ### Device connection based on SDK
 
 IoT Hub provides SDKs for [C](hhttps://intl.cloud.tencent.com/document/product/1105/41849), [Android](https://intl.cloud.tencent.com/document/product/1105/41857), and [Java](https://intl.cloud.tencent.com/document/product/1105/41860) for device connection. They are integrated with the features included in the device connection service, so you only need to set the device information (for key-authenticated devices: `ProductID`, `DeviceName`, and device key; for certificate-authenticated devices: `ProductID`, `DeviceName`, certificate file, key file, and CA Certificate) in them and integrate their corresponding features into your devices to complete device connection. In addition to the connection service features, the SDKs also include functional APIs for device shadow, OTA, and RRPC. For more information on the APIs, please see:
-- [SDK for C Use Instructions](https://intl.cloud.tencent.com/document/product/1105/41849).
-- [SDK for Android Use Instructions](https://intl.cloud.tencent.com/document/product/1105/41857).
-- [SDK for Java Use Instructions](https://intl.cloud.tencent.com/document/product/1105/41860).
+- [SDK for C Use Instructions](https://intl.cloud.tencent.com/document/product/1105/41849)
+- [SDK for Android Use Instructions](https://intl.cloud.tencent.com/document/product/1105/41857)
+- [SDK for Java Use Instructions](https://intl.cloud.tencent.com/document/product/1105/41860)
 
 >?IoT Hub supports custom connection. You can connect devices to it in a custom way simply by following the protocols and authentication processes it provides.
 

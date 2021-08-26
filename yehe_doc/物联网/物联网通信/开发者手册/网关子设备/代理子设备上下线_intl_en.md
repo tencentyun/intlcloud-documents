@@ -1,4 +1,4 @@
-### Feature Overview
+### Feature overview
 
 A gateway device can connect and disconnect subdevices under it through the data communication with the cloud. This feature uses the same topics as those used in gateway subdevice topology management:
 - Data upstream topic (for publishing): `$gateway/operation/${productid}/${devicename}`
