@@ -13,11 +13,11 @@ This document describes how to group devices in the console.
 1. Log in to the [IoT Hub console](https://console.cloud.tencent.com/iotcloud) and click **[Groups](https://console.cloud.tencent.com/iothub/groups)** on the left sidebar.
 2. On the group management page, click **Create Group**.
 3. In the group adding pop-up window, enter relevant information. When creating a group, you need to select the group to which it belongs. A level-1 group always belongs to the default project, a level-2 group can belong to a level-1 group, a level-3 group can belong to a level-2 group, and so on. You can customize the group name and description.
- - Group Level: there is no limit on the number of group levels. One group can have up to 100 subgroups. 
+ - Parent Group: there is no limit on the number of group levels. One group can have up to 100 subgroups. 
  - Group Name: it can contain 4–30 letters, digits, and underscores. 
  - Group Description: it can contain up to 255 characters.
 ![](https://main.qcloudimg.com/raw/822eff73b1d905374a22d5fc4777f071.png)
-4. Click **Save**.
+4. Click **Confirm**.
 
 
 
@@ -29,7 +29,7 @@ This document describes how to group devices in the console.
  - Group ID (groupID): it is randomly assigned by the backend and is the unique group identifier.
  - Group Description: it is customizable and describes the group.
  - Devices: it indicates the total number of devices in the group.
- - Included Subgroups: it indicates the total number of subgroups in the group.
+ - Subgroups: it indicates the total number of subgroups in the group.
  - Creation Time: it indicates the time the group was created in the console or through APIs, accurate to the second.
 
 

@@ -1,5 +1,5 @@
 ### TRTC V1（iLiveSDK） 和 V2（LiteAVSDK）版本有什么区别？
-![](https://main.qcloudimg.com/raw/798eb3618bc87eea647e77a97ae48ca7.png)
+![](https://main.qcloudimg.com/raw/facf5509f5330265916769dfc90193aa.png)
 
 | 差异项 | 旧版本 V1 |  新版本 V2 |
 |:-------:|:-------:|:-------:|

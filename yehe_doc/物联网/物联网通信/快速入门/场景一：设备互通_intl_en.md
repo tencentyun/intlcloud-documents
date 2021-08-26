@@ -16,7 +16,7 @@ Two types of smart devices (door and air conditioner) can be created in the IoT 
 ### Creating door product and device
 1. Log in to the [IoT Hub console](https://console.cloud.tencent.com/iotcloud) and click **Products** on the left sidebar.
 2. On the product list page, click **Create Product**.
-3. Create a door product (Door), select the authentication method, enter the product description, and click **OK**.
+3. Create a door product (Door), select the authentication method, enter the product description, and click **Confirm**.
 ![](https://main.qcloudimg.com/raw/09278773f9519493fe9a4568a3fdf72a.png)
 4. After successful creation, you can view the basic information of the product.
 5. Click to enter the **Door** product, select the **Devices** tab, and create a device (door1).
@@ -31,7 +31,7 @@ Two types of smart devices (door and air conditioner) can be created in the IoT 
 ### Creating air conditioner product and device
 1. Log in to the [IoT Hub console](https://console.cloud.tencent.com/iotcloud) and click **Products** on the left sidebar.
 2. On the product list page, click **Create Product**.
-3. Create an air conditioner product (AirConditioner), select the authentication method, enter the product description, and click **OK**.
+3. Create an air conditioner product (AirConditioner), select the authentication method, enter the product description, and click **Confirm**.
 ![](https://main.qcloudimg.com/raw/a5cd89c2416d52d5644184102e13fc8c.png)
 4. After successful creation, you can view the basic information of the product.
 5. Create a device (airConditioner1) on the **Devices** tab page.

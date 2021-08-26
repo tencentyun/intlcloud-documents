@@ -9,11 +9,11 @@ When using CAM, you can associate a policy with a user or user group to allow or
 
 ## Authorizing Sub-account
 1. Log in to the [CAM console](https://console.cloud.tencent.com/cam) as a root account, select the target sub-user in the user list, and click **Authorize**.
-![](https://main.qcloudimg.com/raw/8c15b3841ea1c3efdc123028d284c330.png)
+![](https://main.qcloudimg.com/raw/a406ba643c22f2733699cf881ab336fb.png)
 2. In the pop-up window, select the **QcloudCDBFullAccess** or **QcloudCDBInnerReadOnlyAccess** preset policy and click **OK** to complete the authorization.
 >?MySQL Database Audit is a module in TencentDB for MySQL, so the above two preset policies of TencentDB for MySQL already cover the permission policies required by it. If the sub-user only needs the permission to use this module, please see [Custom MySQL Database Audit Policy](#zdymsjksjcl).
 >
-![](https://main.qcloudimg.com/raw/956b89a61a29dbee1acfdef00e1b61bc.png)
+![](https://main.qcloudimg.com/raw/8500ea99c00fd496139e8535f45dadd2.png)
 
 
 ## [Policy Syntax](id:clyf)
@@ -56,7 +56,7 @@ Resource paths are generally in the following format:
 ```
 qcs::service_type::account:resource
 ```
- 
+
 - service_type: describes the product abbreviation, such as `cdb` here.
 - account: describes the root account of the resource owner, such as `uin/326xxx46`.
 - resource: describes the detailed resource information of the specific service. Each TencentDB for MySQL instance (instanceId) is a resource.
@@ -108,15 +108,15 @@ The following example only shows the usage of CAM. For the complete list of MySQ
 
 ## [Custom MySQL Database Audit Policy](id:zdymsjksjcl)
 1. Log in to the [CAM console](https://console.cloud.tencent.com/cam/policy) as the root account and click **Create Custom Policy** in the policy list.
-![](https://main.qcloudimg.com/raw/495d428685ad6a166a19fa6f87478509.png)
+![](https://main.qcloudimg.com/raw/772bd2ef82786ef54086307849606b9d.png)
 2. In the pop-up window, select **Create by Policy Generator**.
 3. On the **Select Service and Action** page, select configuration items, click **Add Statement**, and click **Next**.
  - Service: select **TencentDB for MySQL**.
  - Action: select all APIs of MySQL Database Audit. For more information, please see the [API documentation](https://cloud.tencent.com/document/product/236/45449).
   - Resource: for more information, please see [Resource Description Method](https://intl.cloud.tencent.com/document/product/598/10606). You can enter `*` to indicate that the audit logs of all TencentDB for MySQL instances can be manipulated.
-![](https://main.qcloudimg.com/raw/012b76bbc5ded4642a102a90dd92b2e6.png)
+![](https://main.qcloudimg.com/raw/ebd4dd9cc00e6caaac6c59ba397fb842.png)
 4. On the **Edit Policy** page, enter the **Policy Name** (such as `SQLAuditFullAccess`) as required and **Description** and click **Done**.
-![](https://main.qcloudimg.com/raw/027b02fdccb2a76100de7eea28d31097.png)
+![](https://main.qcloudimg.com/raw/cb5d0db2683cd54114c5d29685cd1da4.png)
 5. Return to the policy list and you can view the custom policy just created.
-![](https://main.qcloudimg.com/raw/a77b150c3769e696335cd9b691846c4f.png)
+![](https://main.qcloudimg.com/raw/050e310f11386c1b795410150af73b52.png)
 

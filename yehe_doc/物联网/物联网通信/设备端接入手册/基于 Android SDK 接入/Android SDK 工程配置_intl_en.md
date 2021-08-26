@@ -5,7 +5,7 @@ Products and devices have been created as instructed in [Device Connection Prepa
 
 ## How to Import
 #### SDK integration
-If you don't need to run the IoT Hub SDK in the service component, only dependency on [iot_core](https://github.com/tencentyun/iot-device-java/tree/master/hub/hub-device-android/iot_core) is required.
+If you don't need to run the IoT Hub SDK in the service component, only dependency on iot_core is required.
  - Depend on Maven for remote build. Below is the sample code:
 ```gr
 dependencies {
@@ -21,7 +21,7 @@ dependencies {
 >
 
  - Depend on the local SDK source code for build:
-   Modify the [build.gradle](https://github.com/tencentyun/iot-device-java/blob/master/hub/hub-android-demo/build.gradle) of the application module to make it dependent on the [iot_core](https://github.com/tencentyun/iot-device-java/tree/master/hub/hub-device-android/iot_service) and [iot_service](https://github.com/tencentyun/iot-device-java/tree/master/hub/hub-device-android/iot_service) source code. Below is the sample code:
+   Modify the [build.gradle](https://github.com/tencentyun/iot-device-java/blob/master/hub/hub-android-demo/build.gradle) of the application module to make it dependent on the iot_core and iot_service source code. Below is the sample code:
 ```gr
 dependencies {
 			implementation project(':hub:hub-device-android:iot_core')
