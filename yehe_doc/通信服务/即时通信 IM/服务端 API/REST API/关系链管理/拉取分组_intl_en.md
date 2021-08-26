@@ -10,9 +10,14 @@ This API is used to pull friend lists. You can specify the lists to pull and pul
 
 ```
 
-https://console.tim.qq.com/v4/sns/group_get?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/sns/group_get?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 
 ```
+Where, `xxxxxx` is the country/region-specific domain. Please enter the domain corresponding to the country/region where your SDKAppID is located.
+
+|Country/Region| Domain |
+|----|----|
+|Singapore| adminapisgp.im.qcloud.com |
 
 ### Request parameters
 
