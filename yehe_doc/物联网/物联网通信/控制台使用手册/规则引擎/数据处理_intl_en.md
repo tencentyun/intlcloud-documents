@@ -2,7 +2,7 @@
 Once a rule is created, you can write SQL statements to process the data in a certain type of topics. The IoT Hub console provides a simplified way to enter SQL statements.
 
 
-For example, if you want to extract three fields `action`, `targetDevice`, and `count` from the JSON message in the `E23VBC3GE8/device_02/event` topic and then filter them by `count <=3` to get the final processed data for further forwarding, use the following rule:
+For example, if you want to extract three fields `action`, `targetDevice`, and `count` from the JSON message in the `E23VBC3GE8/device_02/event` topic and then filter them by `count<=3` to get the final processed data for further forwarding, use the following rule:
 ![](https://main.qcloudimg.com/raw/b410d3b12e18d8b468ee4382a4993a31.png)
 
 ## Action
