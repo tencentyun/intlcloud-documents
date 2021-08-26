@@ -55,7 +55,7 @@ When triggering a forwarding action, the rule engine will encapsulate the payloa
 ```
  The descriptions of each field are as follows:
  - devicename: device name defined on the IoT Hub platform.
- - Payload: payload of the original message. If it is in JSON format, it will be passed through for forwarding; if it is in binary format, it will be Base64-encoded.
+ - payload: payload of the original message. If it is in JSON format, it will be passed through for forwarding; if it is in binary format, it will be Base64-encoded.
  - seq: internal auto-incrementing unique message identifier in `int` type.
  - timestamp: the Unix timestamp when the forwarding action is triggered.
 
