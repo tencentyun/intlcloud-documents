@@ -1,3 +1,25 @@
+## 2021年07月
+
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="40%">动态描述</th>
+<th width="20%">发布时间</th>
+<th width="20%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>云函数支持部署多种 Web 框架</td>
+<td>云函数支持通过 Web Function，将您的本地的项目快速部署到云端。</td>
+<td>2021-07-29</td>
+<td>
+<a href="https://cloud.tencent.com/document/product/583/56113">Web 框架部署</a>
+</td>
+</tr>
+</tbody></table>
+
 ## 2021年06月
 <table>
 <thead>
@@ -14,8 +36,8 @@
 <td>云函数支持容器镜像交付，支持更丰富的镜像仓库类型、无侵入的日志采集聚合、基于镜像 Digest 的镜像拉取，支持自定义镜像，无需改造代码或重新编译二进制依赖，加速应用 Serverless 化。</td>
 <td>2021-06-08</td>
 <td>
-<li><a href="https://cloud.tencent.com/document/product/583/56051">使用镜像部署函数功能说明</a></li>
-<li><a href="https://cloud.tencent.com/document/product/583/56052">使用镜像部署函数使用方法</a></li>
+<li><a href="https://intl.cloud.tencent.com/document/product/583/41076">使用镜像部署函数功能说明</a></li>
+<li><a href="https://intl.cloud.tencent.com/document/product/583/41077">使用镜像部署函数使用方法</a></li>
 </td>
 </tr>
 </tr>
@@ -27,7 +49,7 @@
 </td>
 <td>2021-06-08</td>
 <td>
-<a href="https://cloud.tencent.com/document/product/583/56124">Web 函数概述</a>
+<a href="https://intl.cloud.tencent.com/document/product/583/40688">Web 函数概述</a>
 </td>
 </tr>
 </tbody></table>
