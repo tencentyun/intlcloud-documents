@@ -33,7 +33,7 @@
 |cdb-abcdef10	|문화 엔터테인먼트	|후반 작업	|왕 씨|
 
 ### 태그 사용
-태그 생성과 삭제 방법은 [태그 시작하기](https://intl.cloud.tencent.com/document/product/651/32582)를 참조 바랍니다.
+태그 생성과 삭제 방법은 [운영 가이드](https://intl.cloud.tencent.com/document/product/651/41684)를 참조 바랍니다.
 
 TencentDB for MySQL 태그 편집 방법은 [태그 편집](https://intl.cloud.tencent.com/document/product/236/31918)을 참조 바랍니다.
 
