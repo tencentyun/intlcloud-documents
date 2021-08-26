@@ -23,7 +23,7 @@ According to the types of devices actually connected to the IoT Hub platform, no
 
 
 
-### Devices
+### Device
 A device belongs to a product. The device name must be unique under the same product. The platform assigns a key or private key + certificate to each device according to the authentication method of the product to which it belongs.
 
 
