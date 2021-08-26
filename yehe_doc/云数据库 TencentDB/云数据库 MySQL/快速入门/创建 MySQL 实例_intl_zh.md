@@ -9,7 +9,7 @@
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">点此完成实名认证</a></div>
 
 ## 操作步骤
-1. 登录 [MySQL 购买页](https://buy.cloud.tencent.com/cdb)，根据实际需求选择各项配置信息，确认无误后，单击【立即购买】。
+1. 登录 [MySQL 购买页](https://buy.cloud.tencent.com/cdb)，根据实际需求选择各项配置信息，确认无误后，单击**立即购买**。
  - **计费模式**：支持按量计费。
     - 若业务量有瞬间大幅波动场景，建议选择按量计费。
  - **地域**：选择您业务需要部署 MySQL 的地域。建议您选择与云服务器同一个地域，不同地域的云产品内网不通，购买后不能更换。
@@ -29,7 +29,7 @@
  - **告警策略**：创建告警用于在云产品状态改变时触发警报并发送相关消息，请参见 [告警策略](https://intl.cloud.tencent.com/document/product/236/8457)。
  - **指定项目**：选择数据库实例所属的项目，缺省设置为默认项目。
  - **购买数量**：每个用户在每个可用区可购买按量计费实例的总数量为10个。
-2. 支付完成后，返回实例列表，会看到实例显示“发货中”（大概需要3min - 5min中，请耐心等待），待实例状态变为“未初始化”，即可进行初始化操作。
+2. 支付完成后，返回实例列表，会看到实例显示**发货中**（大概需要3min - 5min中，请耐心等待），待实例状态变为**未初始化**，即可进行初始化操作。
 
 ## 后续操作
 通过控制台初始化 MySQL 实例，请参见 [初始化 MySQL 实例](https://intl.cloud.tencent.com/document/product/236/3128)。
