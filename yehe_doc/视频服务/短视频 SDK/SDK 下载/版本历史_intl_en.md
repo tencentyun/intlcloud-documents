@@ -1,3 +1,36 @@
+### Version 9.0 Released on August 6, 2021
+- Android: fixed slow loading of the duet feature.
+- Android: improved the performance of the UGC SDK.
+- Android: improved stability.
+- Android: fixed occasional video clipping inaccuracy.
+- iOS: fixed the compression error during video upload after the application is switched to the background.
+
+### Version 8.9 Released on July 15, 2021
+- iOS: fixed the issue where, after users add a sticker, switch to static stickers, and return, dynamic stickers are displayed instead of static ones.
+- iOS: fixed the issue where, after users change the order of selected videos/images and click to deselect a video/image, the video/image in the original position of the clicked video/image is deselected.
+- Android: fixed the issue where images are rotated when the slideshow feature is used on Xiaomi phones.
+
+### Version 8.8 Released on June 18, 2021
+- iOS: fixed memory leaks caused by frequent starting and stopping of the VOD player.
+- iOS & Android: fixed the issue where videos load slowly after users pause VOD playback and adjust the playback progress.
+
+### Version 8.7 Released on May 24, 2021
+iOS: fixed the electrical noise of the shooting module.
+
+### Version 8.6 Released on May 6, 2021
+- iOS: fixed occasional surge in memory usage by the VOD player.
+- iOS: fixed Swift compilation warnings.
+- iOS & Android: fixed several stability issues of the UGC SDK.
+- iOS & Android: optimized the upload path selection logic to reduce upload failure.
+
+### Version 8.5 Released on March 18, 2021
+- iOS & Android: improved the effects of advanced beauty filters including face slimming, eye enlarging, chin slimming, etc.
+- iOS & Android: added an API for the advanced beauty filter of face narrowing.
+- iOS & Android: enhanced the capability to detect facial features to improve the effects of advanced beauty filters.
+- iOS & Android: added an API for the advanced beauty filter of face narrowing.
+- iOS & Android: fixed the issue of slow seek operations of the superplayer for some network streams.
+- Android: fixed the error that occurs when the superplayer plays videos by file ID.
+
 ### Version 8.4 Released on February 7, 2021
 - iOS & Android: fixed the verification safety issue.
 - Android: supported preview with multiple audio tracks.
@@ -68,7 +101,7 @@ iOS: fixed the problem of watermarks flashing towards the end of UGSV playback.
 - Android: optimized the quality of edited UGSV and fixed the lack of image clarity on some devices.
 
 ### Version 7.2 Released on April 17, 2020
-- iOS & Android: optimized visual effect APIs such as filters and green screen keying, and integrated them into the `TXCBeautyManager` class to facilitate calling.
+iOS & Android: optimized visual effect APIs such as filters and green screen keying, and integrated them into the `TXCBeautyManager` class to facilitate calling.
 
 ### Version 7.1 Released on March 30, 2020
 - Android: supported audio files in the HE-AAC format in video editing, providing better compatibility with third-party videos.
@@ -114,7 +147,7 @@ iOS: fixed the problem of watermarks flashing towards the end of UGSV playback.
 
 ### Version 6.5.7272 Released on June 12, 2019
 - iOS & Android: supported uploading images.
-- Android: fixed the problem of occasional openGL errors during the generation of UGSV.
+- Android: fixed the problem of occasional OpenGL errors during the generation of UGSV.
 - Android: fixed the problem of image updating failure when users pause and rotate a video during editing.
 
 ### Version 6.4.7328 Released on May 15, 2019
@@ -228,7 +261,7 @@ iOS & Android: improved the performance of the Enterprise SDK: enabled image ret
 - iOS & Android: fixed a number of bugs.
 - Android: optimized the UGSV uploading process by integrating COS into UGCPublish.
 
-### v3.4
+### Version 3.4
 - iOS & Android: added actions such as deleting existing video segments, changing aspect ratio, and adjusting focal length in UGSV shooting.
 - iOS & Android: supported adding watermarks at the end of videos.
 - iOS: fixed the compatibility issue with iOS 11.
