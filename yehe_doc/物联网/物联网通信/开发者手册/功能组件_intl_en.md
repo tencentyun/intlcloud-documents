@@ -65,7 +65,7 @@ Other parameters are as follows:
 
 | Parameter | Description |
 | ------------------------- | --------- |
-| topic name length | Up to 64 bytes |
+| Topic name length | Up to 64 bytes |
 | MQTT protocol packet size | Up to 16 KB |
 | QoS 1 message storage period (if the recipient is offline or online sending fails) | 24 hours |
 | Number of QoS 1 messages not confirmed by the device | Up to 150 |
