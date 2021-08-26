@@ -1,7 +1,7 @@
 COSBrowser는 Tencent Cloud COS가 출시한 시각화 인터페이스 툴로 COS 리소스 조회, 전송, 관리를 간편하고 인터랙티브하게 구현할 수 있습니다. 현재 COSBrowser는 데스크톱과 모바일 두 가지 버전이 있으며 자세한 내용은 다음을 참조하십시오.
 
 - [데스크톱 사용 설명](https://intl.cloud.tencent.com/document/product/436/32565)
-- [모바일 사용 설명](https://intl.cloud.tencent.com/document/product/436/32566)
+- [모바일 사용 설명](https://intl.cloud.tencent.com/document/product/436/41615)
 
 ## 다운로드 주소
 
@@ -26,7 +26,7 @@ COSBrowser는 Tencent Cloud COS가 출시한 시각화 인터페이스 툴로 CO
    <tr>
       <td>Linux</td>
       <td>그래픽 인터페이스가 있고 <a href="https://appimage.org">AppImage</a> 포맷을 지원해야 함<br>
-          주의사항: CentOS에서 클라이언트 실행 시 단말에서 <code>./cosbrowser.AppImage --no-sandbox</code></td>를 실행해야 함
+          주의사항: CentOS에서 클라이언트 실행 시 단말에서 <code>./cosbrowser.AppImage --no-sandbox</code>를 실행해야 함</td>
       <td><a href="https://cos5.cloud.tencent.com/cosbrowser/cosbrowser-latest-linux.zip">Linux</a></td>
    </tr>
    <tr>
