@@ -5,8 +5,14 @@ We recommend that you pull no more than 100 friends at a time to avoid response 
 ## API Invocation Description
 ### Request URL
 ```
-https://console.tim.qq.com/v4/sns/friend_get_list?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/sns/friend_get_list?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
+Where, `xxxxxx` is the country/region-specific domain. Please enter the domain corresponding to the country/region where your SDKAppID is located.
+
+|Country/Region| Domain |
+|----|----|
+|Singapore| adminapisgp.im.qcloud.com |
+
 ### Request parameters
 
 The following table lists and describes only the parameters to be modified when this API is invoked. For details on other parameters, see [RESTful API Overview](https://intl.cloud.tencent.com/document/product/1047/34620).
