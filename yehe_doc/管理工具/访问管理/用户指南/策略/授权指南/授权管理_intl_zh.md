@@ -13,7 +13,7 @@
 <dx-tabs>
 ::: 通过策略关联用户
 1. 在访问管理控制台的【[策略](https://console.cloud.tencent.com/cam/policy)】页面，选择策略类型。
->?本示例以【预设策略】为例，您也可以选择【自定义策略】。
+<dx-alert infotype="explain">本示例以【预设策略】为例，您也可以选择【自定义策略】。</dx-alert>
 2. 通过搜索筛选需要授权的预设策略，单击操作列的【关联用户/组】。
 ![](https://main.qcloudimg.com/raw/c3c39a4e97345a3b31728f0e1b0ed379.png)
 3. 在弹出的关联用户/用户组窗口，勾选要关联的用户，单击【确定】，完成通过策略关联用户操作。
@@ -21,7 +21,7 @@
 :::
 ::: 通过策略关联用户组
 1. 在访问管理控制台的【[策略](https://console.cloud.tencent.com/cam/policy)】页面，选择策略类型。
->?本示例以【预设策略】为例，您也可以选择【自定义策略】。
+<dx-alert infotype="explain">本示例以【预设策略】为例，您也可以选择【自定义策略】。</dx-alert>
 2. 通过搜索筛选需要授权的预设策略，单击操作列的【关联用户/组】。
 ![](https://main.qcloudimg.com/raw/c3c39a4e97345a3b31728f0e1b0ed379.png)
 3. 在弹出的关联用户/用户组窗口，单击【切换用户组】。
@@ -38,7 +38,7 @@
 1. 在访问管理控制台的【用户】>【[用户列表](https://console.cloud.tencent.com/cam)】页面，找到需要授权的用户，单击操作列的【授权】，进入关联策略页面。
 ![](https://main.qcloudimg.com/raw/a29dc8dd4c1a7e587140b9dfeb101b58.png)
 2. 在关联策略页面，选择策略类型。
->?默认展示全部策略，您可以筛选自定义策略或预设策略，方便查找具体的策略信息。
+<dx-alert infotype="explain">默认展示全部策略，您可以筛选自定义策略或预设策略，方便查找具体的策略信息。</dx-alert>
 3. 勾选需要授权的策略，单击【确定】，完成通过用户关联预设策略操作。
 ![](https://main.qcloudimg.com/raw/a743ce549be775bd50b42296c03af43b.png)
 :::
@@ -47,7 +47,7 @@
 2. 在用户组详情页，单击【关联策略】，进入关联策略页面。
 ![](https://main.qcloudimg.com/raw/78e647a8af6f34e96c384e5f02fd15d0.png)
 3. 在关联策略页面，选择策略类型。
->?默认展示全部策略，您可以筛选自定义策略或预设策略，方便查找具体的策略信息。
+<dx-alert infotype="explain">默认展示全部策略，您可以筛选自定义策略或预设策略，方便查找具体的策略信息。</dx-alert>
 4. 勾选需要授权的策略，单击【确定】，完成通过用户关联预设策略操作。
 ![](https://main.qcloudimg.com/raw/a743ce549be775bd50b42296c03af43b.png)
 :::
