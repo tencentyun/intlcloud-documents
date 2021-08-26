@@ -29,12 +29,12 @@ Select the resource to be delivered and click **Deliver Resource** on the right 
 ![](https://main.qcloudimg.com/raw/98c2bbecc1b85cf9f9a9429fc69a16d9.png)
 Resources can be delivered to a single device or batch delivered to multiple devices as detailed below:
 <dx-tabs>
-::: Delivery to one device
+::: Delivery to One Device
 1. Go to the resource delivery page, select **Single Device**, and select the target device for delivery in the drop-down list.
 
 2. Click **Save**, and the system will perform the delivery task by delivering the selected resource to the selected target device.
 :::
-::: Batch delivery to multiple devices
+::: Batch Delivery to Multiple Devices
 1. Go to the resource delivery page, select **Multiple Devices**, and upload the list of target devices.
 
 2. Click **Download Template** to get the template file, enter the correct `DeviceName` values in the template, and click **Browse** to upload it. Up to 10,000 devices can be uploaded at a time, and only CSV files are supported.
@@ -54,7 +54,7 @@ Resources can be delivered to a single device or batch delivered to multiple dev
  - Task management list:
     - Click **Tasks** to view all delivery tasks of this resource. There are four delivery task status: not started, creating, created, and creation failed.
      ![](https://main.qcloudimg.com/raw/44f4178eda0bb682bcee5e21286dd935.png)
-    - Click **Devices** to view the detailed records of devices in all delivery tasks of this resource. There are five device delivery status: to be pushed, pushed, delivering, delivered, and delivery failed.
+    - Click **Devices** to view the detailed records of devices in all delivery tasks of this resource. There are five device delivery status: to push, pushed, delivering, delivered, and delivery failed.
      ![](https://main.qcloudimg.com/raw/e6fb2a5298bae7fe1a7a54bec8de7bf1.png)
 3. In **Tasks** or **Devices** in task management, click **View Details** on the right of a task to enter the task details page, where you can view the list of target devices, delivery status, and numbers of devices in different delivery status in this task. 
    ![](https://main.qcloudimg.com/raw/f14feb0dfb2b7c32debedb467fe8f48f.png)
@@ -66,7 +66,7 @@ In the device details list, you can view the current delivery status and status 
 
 In addition, you can cancel or retry resource delivery on the right of the device details list based on the delivery progress. Devices to which delivery is canceled will be marked as **Delivery failed**. For such devices, you can click **Retry** to deliver the resource again.
 
-## Device Resource
+## Device Resources
 
 The device resource feature allows you to directly download and view resources uploaded by devices to the platform in the console.
 
