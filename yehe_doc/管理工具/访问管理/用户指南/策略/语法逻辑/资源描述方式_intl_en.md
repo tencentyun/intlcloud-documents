@@ -15,28 +15,30 @@ qcs:project_id:service_type:region:account:resource
  - `uin` is the account ID of the root account, which is expressed in the format of `uin/${uin}`, such as `uin/12345678`.
  - `uid` is the `APPID` of the root account, which is expressed in the format of `uid/${appid}`, such as `uid/10001234`.
  - If this value is empty, the account will be the root account of the user who created the policy.
-
 >?Currently, COS and CAS resource owners can only be described by `uid`, while resource owners of other services can only be described by `uin`.
 - **resource** describes the detailed resource information of the specific service.
-    - This field is required. The resource can be described as follows:
-        - It can indicate the ID of a resource in a resource subcategory, such as `instance/ins-abcdefg` for CVM.
+>?`resource_type` (resource prefix) is the part before the first `/` in the last segment of the 6-segment resource description; for example, in the CVM resource description `qcs::cvm:$region::instance/*`, the resource prefix is `instance`.
+
+  - This field is required. The resource can be described as follows:
+     - It can indicate the ID of a resource in a resource subcategory, such as `instance/ins-abcdefg` for CVM.
 ```
 	<resource_type>/<resource_id> 
 ```
-        - It can indicate the ID of a resource with a path in a resource subcategory, such as `prefix//10001234/bucket1/object2` for COS. Prefix match at the directory level is supported for this type of description. For example, `prefix//10001234/bucket1/*` indicates all the objects in `bucket1`.
+
+	 - It can indicate the ID of a resource with a path in a resource subcategory, such as `prefix//10001234/bucket1/object2` for COS. Prefix match at the directory level is supported for this type of description. For example, `prefix//10001234/bucket1/*` indicates all the objects in `bucket1`.
 ```
 	<resource_type>/<resource_path>
 ```
-        - It can indicate all the resources in a resource subcategory, such as `instance/*`.
+	 - It can indicate all the resources in a resource subcategory, such as `instance/*`.
 ```
 	<resource_type>/*
 ```
-        - It can indicate all the resources of a service.
+	 -  It can indicate all the resources of a service.
 ```
 	*
 ```
 
- - In certain scenarios, the `resource` element can be described by `*`, and the definitions are as follows. For more information, please see the corresponding service documentation.
+ -  In certain scenarios, the `resource` element can be described by `*`, and the definitions are as follows. For more information, please see the corresponding service documentation.
  -   If the `action` is an operation that needs to be associated with a resource, the resource can be defined as `*`, indicating that all resources are associated.
  -   If the `action` is an operation that does not need to be associated with a resource, the resource needs to be defined as `*`.
 

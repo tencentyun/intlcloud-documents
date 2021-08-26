@@ -1,88 +1,61 @@
-## Introduction
-This document describes how to associate a policy with a user/user group and how to associate a user/user group with a policy. After the association, the user/user group will be granted with the permissions in the policy.
+## Overview
+When a user or user group is created, they have no permissions by default. You can associate a policy with them to grant them the corresponding operation permissions.
+
+
 ## Prerequisites
-Log in to the [CAM Console](https://console.cloud.tencent.com/cam/overview).
+- You have [created a sub-user](https://intl.cloud.tencent.com/document/product/598/13674) or [user group](https://intl.cloud.tencent.com/document/product/598/33380).
+- If you need to associate a custom policy, please [create one](https://intl.cloud.tencent.com/document/product/598/35596) first.
+
 ## Directions
-### Associating a policy with user/user group 
+You can associate policies with users/user groups and vice versa. These two methods have different operation entries, but they implement the same feature.
 
-#### Associating a preset policy with a user
+### Associating policy with user/user group
+<dx-tabs>
+::: Associating\spolicy\swith\suser
 
-1. In the CAM Console, click **Policies** on the left sidebar to enter the [policy](https://console.cloud.tencent.com/cam/policy) management page.
-2. On the policy management page, click **All Policies** > **Preset Policies** in the top-left corner to filter the preset policies as shown below:
-![](https://main.qcloudimg.com/raw/513948d3bc6f1f932f9e623b462ce726.png)
-3. Find the preset policy you want to associate and click **Associate** in the "Operation" column on the right as shown below:
-![](https://main.qcloudimg.com/raw/c0cbd229f3465eb261c240aa3f0c8a33.png)
-4. In the pop-up window, click **Switch to User Group** > **User** as shown below:
-![](https://main.qcloudimg.com/raw/4b91f0ad445e940c7568b5672ffab275.png)
-5. Check the user you want to associate and click **OK** to complete the association.
+1. On the **[Policies](https://console.cloud.tencent.com/cam/policy)** page in the CAM console, select a policy type.
+<dx-alert infotype="explain">This document takes a **preset policy** as an example. You can also select a **custom policy**.</dx-alert>
+2. Search for the preset policy you want to associate and click **Associated Users/Groups** in the **Operation** column.
+![](https://main.qcloudimg.com/raw/c3c39a4e97345a3b31728f0e1b0ed379.png)
+3. In the **Associate Users/User Groups** pop-up window, select the user you want to associate and click **OK** to complete the association.
+![](https://main.qcloudimg.com/raw/59476a8d463f448046cca3362deaae7c.png)
+:::
+::: Associating\spolicy\swith\suser\sgroup
+1. On the **[Policies](https://console.cloud.tencent.com/cam/policy)** page in the CAM console, select a policy type.
+<dx-alert infotype="explain">This document takes a **preset policy** as an example. You can also select a **custom policy**.</dx-alert>
+2. Search for the preset policy you want to associate and click **Associated Users/Groups** in the **Operation** column.
+![](https://main.qcloudimg.com/raw/c3c39a4e97345a3b31728f0e1b0ed379.png)
+3. In the **Associate Users/User Groups** pop-up window, click **Switch to User Group**.
+4. Select the user group you want to associate and click **OK** to complete the association.
+![](https://main.qcloudimg.com/raw/65c0a435424d34db5e6b529e07ca1e99.png)
+:::
+</dx-tabs>
 
-#### Associating a preset policy with a user group
 
-1. In the CAM Console, click **Policies** on the left sidebar to enter the [policy](https://console.cloud.tencent.com/cam/policy) management page.
-2. On the policy management page, click **All Policies** > **Preset Policies** in the top-left corner to filter the preset policies as shown below:
-![](https://main.qcloudimg.com/raw/e2f1d77bf70be0397b46ab8f4dabe0a6.png)
-3. Find the preset policy you want to associate and click **Associate** in the "Operation" column on the right as shown below:
-![](https://main.qcloudimg.com/raw/76a62debbb568f2c58da009cfa651c94.png)
-4. In the pop-up window, click **Switch to User Group** > **User Group** as shown below:
-![](https://main.qcloudimg.com/raw/36318400320dac1fad4f340fa211b6a6.png)
-5. Check the user group you want to associate and click **OK** to complete the association.
+### Associating user/user group with policy
 
-#### Associating a custom policy with a user
+<dx-tabs>
+::: Associating\suser\swith\spolicy
 
-1. In the CAM Console, click **Policies** on the left sidebar to enter the [policy](https://console.cloud.tencent.com/cam/policy) management page.
-2. On the policy page, click **All Policies** > **Custom Policies** in the top-left corner to filter custom policies as shown below:
-![](https://main.qcloudimg.com/raw/dff7953447845773c42e7536a0e69117.png)
-3. Find the custom policy you want to associate and click **Associate** in the "Operation" column on the right as shown below:
-![](https://main.qcloudimg.com/raw/161b8dbd98a6af52213eae203a149790.png)
-4. In the pop-up window, click **Switch to User Group** > **User** as shown below:
-![](https://main.qcloudimg.com/raw/09443c6da88994041f4db93317b10068.png)
-5. Check the user you want to associate and click **OK** to complete the association.
+1. On the **Users** > **[User List](https://console.cloud.tencent.com/cam)** page in the CAM console, find the user to be authorized and click **Authorization** in the **Operation** column to enter the **Associate Policy** page.
+![](https://main.qcloudimg.com/raw/a29dc8dd4c1a7e587140b9dfeb101b58.png)
+2. On the **Associate Policy** page, select a policy type.
+<dx-alert infotype="explain">All policies are displayed by default. You can filter custom or preset policies to find specific policy information.</dx-alert>
+3. Select the policy you want to associate and click **OK** to complete the association.
+![](https://main.qcloudimg.com/raw/a743ce549be775bd50b42296c03af43b.png)
+:::
+::: Associating\suser\sgroup\swith\spolicy
+1. On the **[User Groups](https://console.cloud.tencent.com/cam/groups)** page in the CAM console, click the name of the target user group to enter the user group details page.
+2. On the user group details page, click **Associate Policy** to enter the **Associate Policy** page.
+![](https://main.qcloudimg.com/raw/78e647a8af6f34e96c384e5f02fd15d0.png)
+3. On the **Associate Policy** page, select a policy type.
+<dx-alert infotype="explain">All policies are displayed by default. You can filter custom or preset policies to find specific policy information.</dx-alert>
+4. Select the policy you want to associate and click **OK** to complete the association.
+![](https://main.qcloudimg.com/raw/a743ce549be775bd50b42296c03af43b.png)
+:::
+</dx-tabs>
 
-#### Associating a custom policy with a user group
+## Relevant Documents
 
-1. In the CAM Console, click **Policies** on the left sidebar to enter the [policy](https://console.cloud.tencent.com/cam/policy) management page.
-2. On the policy page, click **All Policies** > **Custom Policies** in the top-left corner to filter custom policies as shown below:
-![](https://main.qcloudimg.com/raw/b689c8883207c9680513368ff3ec7f44.png)
-3. Find the custom policy you want to associate and click **Associate** in the "Operation" column on the right as shown below:
-![](https://main.qcloudimg.com/raw/432e5a01467effe20511e149ffc15ed4.png)
-4. In the pop-up window, click **Switch to User Group** > **User Group** as shown below:
-![](https://main.qcloudimg.com/raw/8d13346fa4b7cb5c8891419f721dcbcb.png)
-5. Check the user group you want to associate and click **OK** to complete the association.
+ For more information on the concept of policy, please see [Policy](https://intl.cloud.tencent.com/document/product/598/10601). 
 
-### Associating a user/user group with a policy
-
-#### Associating a user with a preset policy
-1. In the CAM Console, click **User** > **User List** on the left sidebar to enter the [User List](https://console.cloud.tencent.com/cam) page.
-2. On the user list page, find the user you want to authorize and click **Authorize** in the "Operation" column on the right as shown below:
-![](https://main.qcloudimg.com/raw/eba7356c633d3b35496dfcb453db6a90.png)
-3. In the pop-up window, click **Policy Type** > **Preset Policy** to filter preset policies as shown below:
-![](https://main.qcloudimg.com/raw/3dfe413fe94dcf46752262bd33214eda.png)
-4. Check the preset policy you want to associate and click **OK** to complete the association.
-
-#### Associating a user with a custom policy
-1. In the CAM Console, click **User** > **User List** on the left sidebar to enter the [User List](https://console.cloud.tencent.com/cam) page.
-2. On the user list page, find the user you want to authorize and click **Authorize** in the "Operation" column on the right as shown below:
-![](https://main.qcloudimg.com/raw/54bd4969d1f87498cbd09517c3ac974a.png)
-3. In the pop-up window, click **Policy Type** > **Custom Policy** to filter custom policies as shown below:
-![](https://main.qcloudimg.com/raw/647ae7d948e14c793ecc58b173c7aa61.png)
-4. Check the custom policy you want to associate and click **OK** to complete the association.
-
-#### Associating a user group with a preset policy
-
-1. In the CAM Console, click **User Group** on the left sidebar to enter the [user group](https://console.cloud.tencent.com/cam/groups) management page.
-2. Find the user group you want to authorize and click the user group name to enter the user group details page.
-3. On the user group details page, click the **Permissions** tab.
-4. Click **Associate Policies**
-5. In the pop-up window, click **Policy Type** > **Preset Policy** to filter preset policies as shown below:
-![](https://main.qcloudimg.com/raw/3dfe413fe94dcf46752262bd33214eda.png)
-4. Check the preset policy you want to associate and click **OK** to complete the association.
-
-#### Associating a user group with a custom policy
-
-1. In the CAM Console, click **User Group** on the left sidebar to enter the [user group](https://console.cloud.tencent.com/cam/groups) management page.
-2. Find the user group you want to authorize and click the user group name to enter the user group details page.
-3. On the user group details page, click the **Permissions** tab.
-4. Click **Associate Policies**
-5. In the pop-up window, click **Policy Type** > **Custom Policy** to filter custom policies as shown below:
-![](https://main.qcloudimg.com/raw/647ae7d948e14c793ecc58b173c7aa61.png)
-4. Check the custom policy you want to associate and click **OK** to complete the association.

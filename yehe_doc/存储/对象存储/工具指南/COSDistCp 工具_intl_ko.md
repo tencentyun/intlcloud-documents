@@ -24,8 +24,8 @@ Hadoop-2.6.0 버전 이상, Hadoop-COS 플러그 인 5.9.3 버전 이상
 
 #### COSDistCp jar 패키지 획득
 
-- Hadoop 2.x 사용자는 [cos-distcp-1.6-2.8.5.jar 패키지](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.6-2.8.5.jar)를 다운로드하여 jar 패키지의 [MD5 검증 값](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.6-2.8.5-md5.tx)t에 따라 다운로드한 jar 패키지가 완벽한지 확인합니다.
-- Hadoop 3.x 사용자는 [cos-distcp-1.6-3.1.0.jar 패키지](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.6-3.1.0.jar)를 다운로드하여 jar 패키지의 [MD5 검증 값](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.6-3.1.0-md5.txt)에 따라 다운로드한 jar 패키지가 완벽한지 확인합니다.
+- Hadoop 2.x 사용자는 [cos-distcp-1.6-2.8.5.jar 패키지](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.6-2.8.5.jar)를 다운로드하여 jar 패키지의 MD5 검증 값 t에 따라 다운로드한 jar 패키지가 완벽한지 확인합니다.
+- Hadoop 3.x 사용자는 [cos-distcp-1.6-3.1.0.jar 패키지](https://cos-sdk-archive-1253960454.file.myqcloud.com/cos-distcp/cos-distcp-1.6-3.1.0.jar)를 다운로드하여 jar 패키지의 MD5 검증 값 에 따라 다운로드한 jar 패키지가 완벽한지 확인합니다.
 
 #### 설치 설명
 

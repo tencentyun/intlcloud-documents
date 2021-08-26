@@ -1,8 +1,15 @@
 ## 操作场景
 
-
 本文将为您指导如何通过 Web Function，将您的本地 Express 项目快速部署到云端。
 
+
+>?本文档主要介绍控制台部署方案，您也可以通过命令行完成部署，详情请参见 [通过命令行完成框架部署](https://intl.cloud.tencent.com/document/product/583/41586)。
+
+
+
+## 前提条件
+
+在使用腾讯云云函数服务之前，您需要 [注册腾讯云账号](https://intl.cloud.tencent.com/register) 并完成 [实名认证](https://intl.cloud.tencent.com/document/product/378/3629)。
 
 ## 操作步骤
 
@@ -13,11 +20,11 @@
 1. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf/index?rid=1)，单击左侧导航栏的【函数服务】。
 2. 在主界面上方选择期望创建函数的地域，并单击【新建】，进入函数创建流程。
 3. 选择使用【模版创建】来新建函数，在搜索框里输入 `WebFunc` 筛选所有 Web 函数模版，选择【Express 框架模版】并单击【下一步】。如下图所示：
-![](https://main.qcloudimg.com/raw/edc97140ba0cccaa022454c1539527bf.png)
+![](https://main.qcloudimg.com/raw/e0a04cd3cb345c6c9c8c2f229528a013.png)
 4. 在“配置”页面，您可以查看模版项目的具体配置信息并进行修改。
 5. 单击【完成】即可创建函数。函数创建完成后，您可在“函数管理”页面，查看 Web 函数的基本信息。
 6. 您可以通过 API 网关生成的访问路径 URL，访问您部署的 Express 项目。单击左侧菜单栏中的【触发管理】，查看访问路径。如下图所示：
-![](https://main.qcloudimg.com/raw/80ddcffc3f53bc25c4feca6482c7c8a6.png)
+![](https://main.qcloudimg.com/raw/e3b1e5cd072c81b14e2555468f4c9499.png)
 7. 单击访问路径 URL，即可访问服务 Express 项目。
 
 
@@ -84,7 +91,7 @@ chmod 777 scf_bootstrap
 5. 登录 [Serverless 控制台](https://console.cloud.tencent.com/scf/index?rid=1)，单击左侧导航栏的【函数服务】。
 6. 在主界面上方选择期望创建函数的地域，并单击【新建】，进入函数创建流程。
 7. 选择【自定义创建】新建函数，根据页面提示配置相关选项。如下图所示：
-![](https://main.qcloudimg.com/raw/7f06532d05b6c75de71f508cbb76d008.png)
+![](https://main.qcloudimg.com/raw/563fa4d0a8a3e8d098d1d2505f785e1a.png)
 	- **函数类型**：选择 “Web 函数”。
 	- **函数名称**：填写您自己的函数名称。
 	- **地域**：填写您的函数部署地域，默认为广州。
