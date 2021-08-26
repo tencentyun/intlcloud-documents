@@ -10,7 +10,7 @@ The figure below shows the entire process of forwarding data to CTSDB by the rul
 2. On the rule details page, click **Add Action**.
 >?You will be prompted to authorize access to CTSDB upon the first use. You need to click **Authorize Now** before you can proceed.
 ![avatar](https://main.qcloudimg.com/raw/ba935a001132582dfa25d3df4978bfd8.png) 
-3. In the pop-up **Add Action** window, select **Forward data to CTSDB**, select the CTSDB region and instance, enter the basic information and the fields to be forwarded, and click **Save**.
+3. In the pop-up **Add Action** window, select **Forward data to TencentDB for CTSDB**, select the CTSDB region and instance, enter the basic information and the fields to be forwarded, and click **Save**.
 ![avatar](https://main.qcloudimg.com/raw/d35bc6bb1141c4ad735e96199f352f2f.png) 
 
 
@@ -26,7 +26,7 @@ After the above configuration is completed, IoT Hub will forward eligible data r
  - timestamp(): the current system time of the message hitting the rule engine.
  - Constant: it needs to be a Unix timestamp in seconds; if it is left empty, the current time of the message hitting the rule engine will be used by default.
 >!If you change the unit of the timestamp of the CTSDB metric to a unit other than second (such as millisecond) after the rule is created, subsequent data writes may fail.
-- **Data Field**: for the type, you can select tag or field type in CTSDB; for the restriction on field name, please see [Overview](https://intl.cloud.tencent.com/document/product/1100/40910); the value has 3 configuration methods: field value of the original message imported through `${}`, constant, or fixed value.
+- **Data Fields**: for the type, you can select tag or field type in CTSDB; for the restriction on field name, please see [Overview](https://intl.cloud.tencent.com/document/product/1100/40910); the value has 3 configuration methods: field value of the original message imported through `${}`, constant, or fixed value.
 
 
 ## Advanced Configuration Description
