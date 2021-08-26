@@ -2,14 +2,20 @@
 This API is used to batch import app-owned accounts to IM and create an internal ID for these accounts to ensure that these accounts can use the IM service.
 
 >?
-- This API can import up to 100 accounts to IM at a time. If an account is imported repeatedly, only one internal ID will be created for it.
-- This API is unable to import account nickname and portrait. To set the nickname and portrait, call the [Configuring Profiles](https://intl.cloud.tencent.com/document/product/1047/34916)
+>- This API can import up to 100 accounts to IM at a time. If an account is imported repeatedly, only one internal ID will be created for it.
+>- This API is unable to import account nickname and portrait. To set the nickname and portrait, call the [Configuring Profiles](https://intl.cloud.tencent.com/document/product/1047/34916)
 
 ## Call Description
 ### Example request URL
 ```
-https://console.tim.qq.com/v4/im_open_login_svc/multiaccount_import?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/im_open_login_svc/account_import?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
+Where, `xxxxxx` is the country/region-specific domain. Please enter the domain corresponding to the country/region where your SDKAppID is located.
+
+|Country/Region| Domain |
+|----|----|
+|Singapore| adminapisgp.im.qcloud.com |
+
 
 ### Request parameters
 
