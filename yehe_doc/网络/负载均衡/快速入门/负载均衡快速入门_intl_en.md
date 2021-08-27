@@ -24,7 +24,7 @@ When a client initiates a request, the CLB instance will receive the request acc
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3).
 2. On the **Instance Management** page, click **Configure Listener** under the **Operation** column of the target CLB instance.
 3. On the **Listener Management** tab, click **Create** under **HTTP/HTTPS Listener**.
-![](https://main.qcloudimg.com/raw/2e1fcb0c301893859413d33bdc280e93.png)
+![](https://main.qcloudimg.com/raw/782c60eeb4bf9aa334e4243cf4e068d5.png)
 4. In the **Create Listener** window, please configure the following items and click **Submit**.
   - Listener name.
   - Listen protocol port (e.g., **HTTP:80**).
