@@ -1,7 +1,7 @@
 
 ## Error Description
 The system prompted that my domain name had no ICP filing when I tried to connect it to Anti-DDoS Advanced.
-![](https://main.qcloudimg.com/raw/422dc6e67bbd93db1f5d9d0ba0215185.png)
+![](https://main.qcloudimg.com/raw/4cd4d7c84a2c888dc1d1b1ac445b2d36.png)
 
 ## Possible Causes
 #### The domain name does not have an ICP filing from the MIIT
@@ -15,7 +15,7 @@ If your domain name has been successfully filed with the MIIT, but the system pr
 
 ## Troubleshooting Procedure
 #### The domain name does not have an ICP filing from the MIIT
-You can use the Tencent Cloud website ICP filing service for application. After the application is successful and the ICP filing number is obtained from the competent communications administration, your domain name can be connected to Anti-DDoS Advanced. For more information, please see [ICP Filing Overview].
+You can use the Tencent Cloud website ICP filing service for application. After the application is successful and the ICP filing number is obtained from the competent communications administration, your domain name can be connected to Anti-DDoS Advanced. 
 
 >?If you have already applied for an ICP filing at another access provider, please consult the provider accordingly.
 
