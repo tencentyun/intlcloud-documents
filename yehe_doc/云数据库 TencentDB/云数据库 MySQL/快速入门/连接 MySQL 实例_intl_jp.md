@@ -25,15 +25,15 @@ TencentDB for MySQLを接続する方法は次のとおりです。
 >?MySQL Workbenchをダウンロードし、システムに応じて適合するバージョンのインストールプログラムをダウンロードすることをお勧めします。ダウンロードアドレスについては、https://dev.mysql.com/downloads/workbench/をご参照ください。
 >
 ![](https://main.qcloudimg.com/raw/851ab46468c554097a0cf742017157b7.png)
-3. インターフェースに【Login】、【Sign Up】および【No, thanks, just start my download.】が表示されますので、【No thanks, just start my download.】を選択し、クイックダウンロードします。
+3. インターフェースに**Login**、**Sign Up**および**No, thanks, just start my download.**が表示されますので、**No thanks, just start my download.**を選択し、クイックダウンロードします。
 ![](https://main.qcloudimg.com/raw/47b195fb37ff584f21038ee54342d362.png)
 4. このCVMにMySQL Workbenchをインストールします。
 >?
 >- このコンピューターには、Microsoft .NET Framework 4.5およびVisual C++ Redistributable for Visual Studio 2015をインストールする必要があります。
->- MySQL Workbenchインストールウィザードの【Download Prerequisites】をクリックし、該当するページにジャンプしてこの2つのソフトウェアをダウンロードしてインストールしてから、MySQL Workbenchをインストールします。
+>- MySQL Workbenchインストールウィザードの**Download Prerequisites**をクリックし、該当するページにジャンプしてこの2つのソフトウェアをダウンロードしてインストールしてから、MySQL Workbenchをインストールします。
 >
 ![](https://main.qcloudimg.com/raw/1af292f989f03f3e02e1200b77cb70c1.png)
-5. MySQL Workbenchを開き、【Database】>【Connect to Database】を選択し、MySQLデータベースインスタンスのプライベートネットワーク（またはパブリックネットワーク）アドレス、ユーザー名、パスワードを入力し、【OK】をクリックしてログインします。
+5. MySQL Workbenchを開き、**Database**>**Connect to Database**を選択し、MySQLデータベースインスタンスのプライベートネットワーク（またはパブリックネットワーク）アドレス、ユーザー名、パスワードを入力し、**OK**をクリックしてログインします。
  - Hostname:プライベートネットワーク（またはパブリックネットワーク）アドレスを入力します。[MySQLコンソール](https://console.cloud.tencent.com/cdb) のインスタンス詳細ページでプライベートネットワーク（またはパブリックネットワーク）アドレスとポート番号を確認することができます。パブリックネットワークアドレスの場合は、有効化されているかどうかを確認してください。[パブリックネットワークアドレスの有効化](#waiwang)をご参照ください。
  - Port:プライベートネットワーク（またはパブリックネットワーク）対応ポート。
  - Username:デフォルトはrootです。接続の制御と管理を容易にするため、パブリックネットワーク接続時に個別に[アカウントの作成](https://intl.cloud.tencent.com/document/product/236/31900) を行うことをお勧めします。
@@ -86,12 +86,12 @@ mysql -h hostname -P port -u username -p
 telnetでクラウドデータベースのネットワークアクセスが正常であることを検証した後、CVMのコマンドラインからクラウドデータベースにログインする際にエラーが報告された場合は[インスタンスの接続に関する問題](https://intl.cloud.tencent.com/document/product/236/37783)をご参照ください。
 
 ## 付録3パブリックネットワーク接続アドレスの有効化](id:waiwang)
-1. [MySQLコンソール](https://console.cloud.tencent.com/cdb/ )にログインし、インスタンスリストのインスタンス名または「操作」の列の【管理】をクリックし、インスタンス詳細ページに進みます。
-2. インスタンス詳細ページの「パブリックネットワークアドレス」で、【有効化】をクリックします。
+1. [MySQLコンソール](https://console.cloud.tencent.com/cdb/ )にログインし、インスタンスリストのインスタンス名または「操作」の列の**管理**をクリックし、インスタンス詳細ページに進みます。
+2. インスタンス詳細ページの「パブリックネットワークアドレス」で、**有効化**をクリックします。
 >?パブリックネットワークアドレスとパブリックネットワークポート情報があれば、パブリックネットワークアドレスが有効化されたことを意味します。
 >
 ![](https://main.qcloudimg.com/raw/f3300b56af8e152aa457534ffd873002.png)
-3. ポップアップしたダイアログボックスで、【OK】をクリックします。
+3. ポップアップしたダイアログボックスで、**OK**をクリックします。
 >?
 >- 有効化に成功したら、基本情報でパブリックネットワークアドレスを確認することができます。
 >- 切り替えによりパブリックネットワーク接続権限をオフにした後、パブリックネットワーク接続を再開することができます。この時、ドメイン名に対応するパブリックネットワークアドレスは変更されません。

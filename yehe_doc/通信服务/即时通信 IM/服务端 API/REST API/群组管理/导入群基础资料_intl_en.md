@@ -19,8 +19,15 @@ IM provides the preceding five built-in group types. For details, see [Group Sys
 
 ### Request URL example
 ```
-https://console.tim.qq.com/v4/group_open_http_svc/import_group?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/group_open_http_svc/import_group?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
+Where, `xxxxxx` is the country/region-specific domain. Please enter the domain corresponding to the country/region where your SDKAppID is located.
+
+|Country/Region| Domain |
+|----|----|
+|Singapore| adminapisgp.im.qcloud.com |
+
+
 ### Request parameters
 The following table lists and describes only the parameters to be modified when this API is called. For details on other parameters, see [RESTful API Overview](https://intl.cloud.tencent.com/document/product/1047/34620).
 

@@ -6,8 +6,14 @@ App 后台可以通过该接口查询特定账号的单聊总未读数（包含�
 ### 请求 URL 示例
 
 ```
-https://console.tim.qq.com/v4/openim/get_c2c_unread_msg_num?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/openim/get_c2c_unread_msg_num?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
+其中 `xxxxxx` 是各国家/地区的专属域名，请填写您的 SDKAppID 所在国家/地区对应的专属域名：  
+
+| 国家/地区   | 专属域名|
+| ----- | ----- |
+| 新加坡 | adminapisgp.im.qcloud.com      |
+
 ### 请求参数说明
 
 下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
@@ -88,7 +94,7 @@ https://console.tim.qq.com/v4/openim/get_c2c_unread_msg_num?sdkappid=88888888&id
 | 字段 | 类型 |属性 |说明 |
 |---------|---------|---------|---------|
 | To_Account | String |必填 | 待查询的用户 UserId |
-| Peer_Account | Array |选填 | 待查询的单聊会话对端的用户 UserId。<li>若要查询单个会话的未读数，该字段必填</li><li>该数组最大大小为10</li>|
+| Peer_Account | Array |选填 | 待查询的单聊会话对端的用户 UserId。<li>若要查询单个会话的未读数，该字段必填</li><li>该数组最大小为10</li>|
 
 ### 应答包字段说明
 
