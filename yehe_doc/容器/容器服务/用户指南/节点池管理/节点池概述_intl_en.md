@@ -1,6 +1,6 @@
 ## Overview
 
->?Node pool feature is fully launched. You can continue to use the existing scaling groups in the cluster. However, TKE will stop upgrading of the legacy scaling group feature. You can convert the scaling groups to node pools via the [CreateClusterNodePoolFromExistingAsg API](https://intl.cloud.tencent.com/document/product/457/38780) or [TKE console](https://intl.cloud.tencent.com/document/product/457/35901).
+>?Node pool feature is fully launched. You can continue to use the existing scaling groups in the cluster. However, TKE will stop upgrading of the legacy scaling group feature. You can convert the scaling groups to node pools via the [CreateClusterNodePoolFromExistingAsg API](https://intl.cloud.tencent.com/document/product/457/38780) or [TKE console](https://console.cloud.tencent.com/tke2).
 For any operations except the management of the existing scaling groups, please use the Node Pool feature.
 >
 
