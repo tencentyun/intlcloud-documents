@@ -4,8 +4,14 @@ This API is used to query the current login status of a user.
 ## API Call Description
 ### Sample request URL
 ```
-https://console.tim.qq.com/v4/openim/querystate?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/openim/querystate?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
+Where, `xxxxxx` is the country/region-specific domain. Please enter the domain corresponding to the country/region where your SDKAppID is located.
+
+|Country/Region| Domain |
+|----|----|
+|Singapore| adminapisgp.im.qcloud.com |
+
 ### Request parameters
 
 The following table lists and describes only the parameters to be modified when this API is called. For more parameters, see [REST API Overview](https://cloud.tencent.com/document/product/269/1519).

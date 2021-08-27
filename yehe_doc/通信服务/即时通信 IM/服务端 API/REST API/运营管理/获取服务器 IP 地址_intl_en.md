@@ -5,8 +5,14 @@ Sometimes, you may need to obtain the list of server IP addresses for security p
 ## API Calling Description
 ### Sample request URL
 ```
-https://console.tim.qq.com/v4/ConfigSvc/GetIPList?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/ConfigSvc/GetIPList?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
+Where, `xxxxxx` is the country/region-specific domain. Please enter the domain corresponding to the country/region where your SDKAppID is located.
+
+|Country/Region| Domain |
+|----|----|
+|Singapore| adminapisgp.im.qcloud.com |
+
  
 ### Request parameters
  

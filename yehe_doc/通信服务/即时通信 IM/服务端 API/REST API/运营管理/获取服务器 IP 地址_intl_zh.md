@@ -5,8 +5,13 @@
 ## 接口调用说明
 ### 请求 URL 示例
 ```
-https://console.tim.qq.com/v4/ConfigSvc/GetIPList?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/ConfigSvc/GetIPList?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
+其中 `xxxxxx` 是各国家/地区的专属域名，请填写您的 SDKAppID 所在国家/地区对应的专属域名：  
+
+| 国家/地区   | 专属域名|
+| ----- | ----- |
+| 新加坡 | adminapisgp.im.qcloud.com      |
  
 ### 请求参数说明
  

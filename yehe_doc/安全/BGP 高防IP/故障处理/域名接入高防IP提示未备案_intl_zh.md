@@ -1,7 +1,7 @@
 
 ## 现象描述
 域名接入高防 IP，提示未备案。
-![](https://main.qcloudimg.com/raw/422dc6e67bbd93db1f5d9d0ba0215185.png)
+![](https://main.qcloudimg.com/raw/1fab5be17e3057fca90054d8ed918748.png)
 
 ## 可能原因
 #### 域名未在工信部备案

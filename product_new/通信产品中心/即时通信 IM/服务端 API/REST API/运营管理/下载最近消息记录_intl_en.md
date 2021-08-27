@@ -1,7 +1,7 @@
 ## Feature Description
 The app admin can use this API to obtain the download addresses for all one-to-one or group message records in the app that occur at a specified point in time for the last 7 days.
 
->
+>!
 >- Downloads images, audio, files, and videos from message records. This feature is only applicable to IM SDK 4.X. The download can be performed based on the URL fields in chat records. If you are using IM SDK 2.X or 3.X, you cannot obtain the preceding information in this method. If you need this feature, upgrade your IM SDK to version 4.X.
 >- Stores message records as logs and compresses them by using GZip. After obtaining the download addresses through the API, you can download and process the message records yourself. Message record files are generated every hour. For example, the data generated at midnight (00:00-00:59) will be processed from 01:00. Typically, the data can be processed within one hour. However, if the message quantity is large, it will take longer to process them. The message record files are valid for only seven days and will be deleted after seven days regardless of the download status. The deleted record cannot be exported again.
 >- This API is used only to download historical chat records for the last 7 days, for backup, statistics, or other purposes. We do not recommend that you use it for real-time online businesses.
@@ -10,8 +10,15 @@ The app admin can use this API to obtain the download addresses for all one-to-o
 ## API Invocation Description
 ### Request URL example
 ```
-https://console.tim.qq.com/v4/open_msg_svc/get_history?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/open_msg_svc/get_history?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
  ```
+Where, `xxxxxx` is the country/region-specific domain. Please enter the domain corresponding to the country/region where your SDKAppID is located.
+
+|Country/Region| Domain |
+|----|----|
+|Singapore| adminapisgp.im.qcloud.com |
+
+
 ### Request parameters
 
 The following table only describes parameters that are modified when this API is invoked. For details on other parameters, see [RESTful API Overview](https://intl.cloud.tencent.com/document/product/1047/34620).
