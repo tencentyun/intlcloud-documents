@@ -1,7 +1,8 @@
 TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使用了相同的基础模块，如果您的项目中同时集成了两款以上的 LiteAV 体系的 SDK，就会出现符号冲突（symbol duplicate）的问题。因此我们为您提供集成了不同产品能力的**精简版（TRTC）**、**专业版（Professional）**和**企业版（Enterprise）**，您可以根据实际业务需要选择不同的版本。
 
 
-<h2 id="TRTC">精简版（TRTC）</h2> 
+
+<h2 id="TRTC">精简版（TRTC）</h2>  
 精简版仅包含 TRTC 和直播播放（TXLivePlayer）两项功能，对 App 的安装包体积增量最小，适合仅使用 TRTC 相关功能的客户。
 
 <table>
@@ -16,25 +17,25 @@ TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使
    </tr>
    <tr>
       <td style="text-align:center">iOS</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_ios_trtc") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_iOS_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_ios_trtc") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_iOS_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
-      <td style="text-align:center">2.9M（arm64）</td>
+      <td style="text-align:center">3M（arm64）</td>
    </tr>
      <tr>
       <td style="text-align:center">Android</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_android_trtc") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_android_trtc") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35084">DOC</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35093">DOC</a></td>
-      <td style="text-align:center">jar：820K<br> so(armv7)：4.8M<br>so(arm64)：5.7M</td>
+      <td style="text-align:center">jar：546K<br> so（armeabi）：4.5M<br> so（armv7）：4.5M<br>so（arm64）：5.3M</td>
    </tr>
      <tr>
       <td style="text-align:center">Windows(C++)  </td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_cplusplus_trtc") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Win_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_cplusplus_trtc") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35085">DOC</a></td>
@@ -43,7 +44,7 @@ TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使
    </tr>
      <tr>
       <td style="text-align:center">Windows(C#) </td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_csharp_trtc") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Win_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_csharp_trtc") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Win_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35085">DOC</a></td>
@@ -52,7 +53,7 @@ TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使
    </tr>
      <tr>
       <td style="text-align:center">Mac</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_mac_trtc") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_mac_trtc") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Mac_latest.tar.bz2">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
@@ -60,17 +61,17 @@ TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使
       <td style="text-align:center">2.05M（arm64）</td>
    </tr>
      <tr>
-      <td style="text-align:center">桌面浏览器</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_web_trtc") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/H5_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center">Web</td>
+      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_web_trtc") href="https://web.sdk.qcloud.com/trtc/webrtc/download/webrtc_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35607">DOC</a></td>
-      <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35096">DOC</a></td>
+      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/32398">DOC</a></td>
+      <td style="text-align:center"><a href="https://cloud.tencent.com/document/product/647/16863">DOC</a></td>
       <td style="text-align:center">N/A</td>
    </tr>
    <tr>
       <td style="text-align:center">Electron  </td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_wxmini_trtc") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Electron_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_electron_trtc") href="https://web.sdk.qcloud.com/trtc/electron/download/TXLiteAVSDK_TRTC_Electron_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/TRTCSDK">Github</a></td>
       <td style="text-align:center"><a href="https://gitee.com/cloudtencent/TRTCSDK">Gitee</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35089">DOC</a></td>
@@ -89,14 +90,14 @@ TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使
 </table>
 
 >? 
-> - 如需减少 SDK 带来的安装包体积增量请参考 [如何缩减安装包体积](https://intl.cloud.tencent.com/document/product/647/35165)。
-> - 扫码关注公众号，了解 SDK 的版本更新以及最新的技术动态。
+>- 如需减少 SDK 带来的安装包体积增量请参考 [如何缩减安装包体积](https://intl.cloud.tencent.com/document/product/647/35165)。
+>- 扫码关注公众号，了解 SDK 的版本更新以及最新的技术动态。
 > ![](https://main.qcloudimg.com/raw/d8a8c8c130ef7799feff6efbc0260ea2.jpg)
 
 
 <h2 id="Professional">专业版（Professional）</h2>
 
-专业版集合了包含 TRTC 在内的多个音视频相关的核心功能，包括 [移动直播（MLVB）](https://intl.cloud.tencent.com/product/mlvb) 和 [短视频（UGSV）](https://intl.cloud.tencent.com/product/ugsv) 等，由于底层模块的高度复用，集成专业版的体积增量要小于同时集成两个独立的 SDK，并且可以避免符号冲突（symbol duplicate）的困恼。
+专业版集合了包含 TRTC 在内的多个音视频相关的核心功能，包括 [超级播放器（Player+）](https://intl.cloud.tencent.com/document/product/266/7836)、[移动直播（MLVB）](https://intl.cloud.tencent.com/product/mlvb) 和 [短视频（UGSV）](https://intl.cloud.tencent.com/product/ugsv) 等，由于底层模块的高度复用，集成专业版的体积增量要小于同时集成两个独立的 SDK，并且可以避免符号冲突（symbol duplicate）的困恼。
 
 <table>
    <tr>
@@ -110,21 +111,21 @@ TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使
    </tr>
    <tr>
       <td style="text-align:center">iOS</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_ios_professional") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Professional_iOS_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_ios_professional") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_iOS_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/LiteAVProfessional_iOS">Github</a></td>
       <td style="text-align:center">支持</td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
-      <td style="text-align:center">4.08M（arm64）</td>
+      <td style="text-align:center">3.2M（arm64）</td>
    </tr>
    <tr>
       <td style="text-align:center">Android</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_android_professional") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Professional_Android_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_android_professional") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Professional_Android_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center"><a href="https://github.com/tencentyun/LiteAVProfessional_Android">Github</a></td>
       <td style="text-align:center">支持</td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35084">DOC</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35093">DOC</a></td>
-      <td style="text-align:center">jar：1.5M<br> so(armeabi)：6.5M<br> so(armv7)：6.1M<br>so(arm64)：7.3M</td>
+      <td style="text-align:center">jar：1M<br> so（armeabi）：5.7M<br> so（armv7）：5.7M<br>so（arm64）：6.8M</td>
    </tr>
 </table>
 
@@ -136,7 +137,7 @@ TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使
 
 <h2 id="Enterprise">企业版（Enterprise）</h2>
 
-企业版除包含专业版的所有功能以外，还集成了一套 AI 特效组件，支持大眼、瘦脸、美容和动效贴纸挂件等能力，下载后需要解压密码和授权 license 才能运行，解码密码和授权 license 请联系腾讯云商务获取。
+企业版除包含专业版的所有功能以外，还集成了 AI 美颜特效组件，支持大眼、瘦脸、美容和动效贴纸、挂件等 AI 美颜特效能力。AI 美颜特效属于增值服务，计费请 [联系我们](https://intl.cloud.tencent.com/contact-us)。企业版下载后需要美颜特效 SDK 的解压密码和授权 License 才能运行，解码密码和授权 License 请 [联系我们](https://intl.cloud.tencent.com/contact-us) 获取。
 
 <table>
    <tr>
@@ -149,19 +150,19 @@ TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使
    </tr>
    <tr>
       <td style="text-align:center">iOS</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_ios_enterprise") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Enterprise_iOS_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_ios_enterprise") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Enterprise_iOS_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center">支持</td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35086">DOC</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35092">DOC</a></td>
-      <td style="text-align:center"> 6.15M（arm64）</td>
+      <td style="text-align:center"> 5.5M（arm64）</td>
    </tr>
    <tr>
       <td style="text-align:center">Android</td>
-      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_android_enterprise") href="https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_Enterprise_Android_latest.zip">DOWNLOAD</a></td>
+      <td style="text-align:center"><a onclick=MtaH5.clickStat("trtc_sdk_download_android_enterprise") href="https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_Enterprise_Android_latest.zip">DOWNLOAD</a></td>
       <td style="text-align:center">支持</td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35084">DOC</a></td>
       <td style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/35093">DOC</a></td>
-      <td style="text-align:center"> jar：2.3M<br>so(armeabi)：20.4M</td>
+      <td style="text-align:center"> jar：2.2M<br>so(armeabi)：9.3M</td>
    </tr>
 </table>
 
@@ -172,13 +173,13 @@ TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使
 
 ## 各版本差异对照表
 
-![](https://main.qcloudimg.com/raw/76d9d6f854ba4cc8cf3b3c18ed230a35.png)
+![](https://main.qcloudimg.com/raw/d3c876e8d751709e1df52faf4c0bf012.jpg)
 
 <table>
   <tr>
     <th width="100px" style="text-align:center">功能模块</th>
     <th width="100px" style="text-align:center">功能项</th>
-    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1071/38150">直播精简版</a><br>LiteAV_Smart</th>
+    <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1071/38150">直播基础版</a><br>LiteAV_Smart</th>
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/1069/37914">短视频版</a><br>LiteAV_UGC</th>
     <th width="100px" style="text-align:center"><a href="https://intl.cloud.tencent.com/document/product/647/34615">TRTC版</a><br>LiteAV_TRTC</th>
     <th width="100px" style="text-align:center"><a href="https://cloud.tencent.com/document/product/881/20205">播放器版</a><br>LiteAV_Player</th>
@@ -406,5 +407,4 @@ TRTC 是腾讯云 LiteAV 系列产品之一，由于 LiteAV 体系的 SDK 都使
     s.parentNode.insertBefore(mta, s);
   })();
 </script>
-
 

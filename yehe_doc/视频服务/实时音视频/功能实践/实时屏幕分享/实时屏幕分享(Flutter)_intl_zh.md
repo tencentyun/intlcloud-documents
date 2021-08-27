@@ -2,7 +2,8 @@
 腾讯云 TRTC 在 Android 系统上支持屏幕分享，即将当前系统的屏幕内容通过 TRTC SDK 分享给房间里的其他用户。关于此功能，有两点需要注意：
 
 - TRTC Android 版本的屏幕分享并不像桌面端版本一样支持“辅路分享”，因此在启动屏幕分享时，摄像头的采集需要先被停止，否则会相互冲突。
-- 当一个 Android 系统上的后台 App 在持续使用 CPU 时，很容易会被系统强行杀掉，而且屏幕分享本身又必然会消耗 CPU。要解决这个看似矛盾的冲突，我们需要在 App 启动屏幕分享的同时，在 Android 系统上弹出悬浮窗。由于 Android 不会强杀包含前台 UI 的 App 进程，因此该种方案可以让您的 App 可以持续进行屏幕分享而不被系统自动回收。
+- 当一个 Android 系统上的后台 App 在持续使用 CPU 时，很容易会被系统强行杀掉，而且屏幕分享本身又必然会消耗 CPU。要解决这个看似矛盾的冲突，我们需要在 App 启动屏幕分享的同时，在 Android 系统上弹出悬浮窗。由于 Android 不会强杀包含前台 UI 的 App 进程，因此该种方案可以让您的 App 可以持续进行屏幕分享而不被系统自动回收。如下图所示：
+![](https://main.qcloudimg.com/raw/e7dad1db0a99add95ac372634bddc2bf.png)
 
 ### 启动屏幕分享
 要开启 Android 端的屏幕分享，只需调用 `TRTCCloud` 中的  [startScreenCapture()](https://pub.dev/documentation/tencent_trtc_cloud/latest/trtc_cloud/TRTCCloud/startScreenCapture.html) 接口即可。但如果要达到稳定和清晰的分享效果，您需要关注如下三个问题：
@@ -25,9 +26,9 @@
 | 最高码率 | videoBitrate| 1600 kbps | 2000 kbps |
 | 分辨率自适应 | enableAdjustRes | NO | NO |
 >?
->- 由于屏幕分享的内容一般不会剧烈变动，所以设置较高的 FPS 并不经济，推荐10 FPS即可。
->- 如果您要分享的屏幕内容包含大量文字，可以适当提高分辨率和码率设置。
->- 最高码率（videoBitrate）是指画面在剧烈变化时的最高输出码率，如果屏幕内容变化较少，实际编码码率会比较低。
+ - 由于屏幕分享的内容一般不会剧烈变动，所以设置较高的 FPS 并不经济，推荐10 FPS即可。
+ - 如果您要分享的屏幕内容包含大量文字，可以适当提高分辨率和码率设置。
+ - 最高码率（videoBitrate）是指画面在剧烈变化时的最高输出码率，如果屏幕内容变化较少，实际编码码率会比较低。
 
 #### 弹出悬浮窗以避免被强杀
 从 Android 7.0 系统开始，切入到后台运行的普通 App 进程，但凡有 CPU 活动，都很容易会被系统强杀掉。 所以当 App 在切入到后台默默进行屏幕分享时，通过弹出悬浮窗的方案，可以避免被系统强杀掉。 同时，在手机屏幕上显示悬浮窗也有利于告知用户当前正在做屏幕分享，避免用户泄漏个人隐私。
@@ -67,23 +68,23 @@
 
 我们推荐的用于 iOS 屏幕分享的编码参数是：
 
-| 参数项 | 参数名称 | 常规推荐值 |  文字教学场景 |
+| 参数项 | 参数名称 | 常规推荐值 |  文字教学场景 | 
 |---------|---------|---------|-----|
-| 分辨率 | videoResolution | 1280 × 720 | 1920 × 1080 |
+| 分辨率 | videoResolution | 1280 × 720 | 1920 × 1080 | 
 | 帧率 | videoFps | 10 FPS | 8 FPS |
 | 最高码率 | videoBitrate| 1600 kbps | 2000 kbps |
 | 分辨率自适应 | enableAdjustRes | NO | NO |
 
 >?
->- 由于屏幕分享的内容一般不会剧烈变动，所以设置较高的 FPS 并不经济，推荐10 FPS即可。
->- 如果您要分享的屏幕内容包含大量文字，可以适当提高分辨率和码率设置。
->- 最高码率（videoBitrate）是指画面在剧烈变化时的最高输出码率，如果屏幕内容变化较少，实际编码码率会比较低。
+- 由于屏幕分享的内容一般不会剧烈变动，所以设置较高的 FPS 并不经济，推荐10 FPS即可。
+- 如果您要分享的屏幕内容包含大量文字，可以适当提高分辨率和码率设置。
+- 最高码率（videoBitrate）是指画面在剧烈变化时的最高输出码率，如果屏幕内容变化较少，实际编码码率会比较低。
 
 [](id:Cross)
 ### 方案2：iOS 平台跨应用分享
 
 #### 示例代码
-我们在 [Github](https://github.com/c1avie/trtc_demo) 中的 ** trtc_demo/ios ** 目录下放置了一份跨应用分享的示例代码，其包含如下一些文件：
+我们在 [Github](https://github.com/c1avie/trtc_demo) 中的 **trtc_demo/ios** 目录下放置了一份跨应用分享的示例代码，其包含如下一些文件：
 
 ```
 ├── Broadcast.Upload        //录屏进程 Broadcast Upload Extension 代码详见步骤2
@@ -114,10 +115,9 @@ dependencies:
 
 >! 如果跳过 [步骤1](#Step1)，也就是不配置 App Group（接口传 null），屏幕分享依然可以运行，但稳定性要打折扣，故虽然步骤较多，但请尽量配置正确的 App Group 以保障屏幕分享功能的稳定性。
 
-[](id:createGroup)
-[](id:Step1)
-##### 步骤1：创建 App Group
-使用您的帐号登录 [**https://developer.apple.com/**](https://developer.apple.com/) ，进行以下操作，**注意完成后需要重新下载对应的 Provisioning Profile**。
+[](id:createGroup)[](id:Step1)
+#### 步骤1：创建 App Group
+使用您的帐号登录 [**https://developer.apple.com/**](https://developer.apple.com/)，进行以下操作，**注意完成后需要重新下载对应的 Provisioning Profile**。
 
 1. 单击【Certificates, IDs & Profiles】。
 2. 在右侧的界面中单击加号。
@@ -131,7 +131,7 @@ dependencies:
 8. 重新下载 Provisioning Profile 并配置到 XCode 中。
 
 [](id:createExtension)
-##### 步骤2：创建 Broadcast Upload Extension
+#### 步骤2：创建 Broadcast Upload Extension
 1. 在 Xcode 菜单依次单击【File】>【New】 >【Target...】，选择【Broadcast Upload Extension】。
 2. 在弹出的对话框中填写相关信息，**不用**勾选"【Include UI Extension】，单击【Finish】完成创建。
 3. 将下载到的 SDK 压缩包中的 TXLiteAVSDK_ReplayKitExt.framework 拖动到工程中，勾选刚创建的 Target。
@@ -141,8 +141,9 @@ dependencies:
  ![AddGroup](https://main.qcloudimg.com/raw/b4904a8b425cf55e58497b35c0700966.png)
 5. 选中主 App 的 Target ，**并按照上述步骤对主 App 的 Target 做同样的处理。**
 6. 在新创建的 Target 中，Xcode 会自动创建一个名为 "SampleHandler.swift" 的文件，用如下代码进行替换。**需将代码中的 APPGROUP 改为上文中的创建的 App Group Identifier**。
- 
-```
+<dx-codeblock>
+::: iOS swift
+
 import ReplayKit
 import TXLiteAVSDK_ReplayKitExt
 
@@ -209,17 +210,19 @@ class SampleHandler: RPBroadcastSampleHandler, TXReplayKitExtDelegate {
         }
     }
 }
-```
+:::
+</dx-codeblock>
 
 [](id:receive)
-##### 步骤3：对接主 App 端的接收逻辑
+#### 步骤3：对接主 App 端的接收逻辑
 按照如下步骤，对接主 App 端的接收逻辑。也就是在用户触发屏幕分享之前，要让主 App 处于“等待”状态，以便随时接收来自 Broadcast Upload Extension 进程的录屏数据。
 1. 确保 TRTCCloud 已经关闭了摄像头采集，如果尚未关闭，请调用 [stopLocalPreview](https://pub.flutter-io.cn/documentation/tencent_trtc_cloud/latest/trtc_cloud/TRTCCloud/stopLocalPreview.html) 关闭摄像头采集。
 2. 调用 [startScreenCapture](https://pub.flutter-io.cn/documentation/tencent_trtc_cloud/latest/trtc_cloud/TRTCCloud/startScreenCapture.html) 方法，并传入 [步骤1](#createGroup) 中设置的 AppGroup，让 SDK 进入“等待”状态。
-3. 等待用户触发屏幕分享。如果不实现 [步骤4](#launch) 中的“触发按钮”，屏幕分享就需要用户在 iOS 系统的控制中心，通过长按录屏按钮来触发。
-4. 通过调用 [stopScreenCapture](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) 接口可以随时中止屏幕分享。
-
-```
+3. 等待用户触发屏幕分享。如果不实现 [步骤4](#launch) 中的“触发按钮”，屏幕分享就需要用户在 iOS 系统的控制中心，通过长按录屏按钮来触发，这一操作步骤如下图所示：
+![](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/trtcdemo/01.png)
+4. 通过调用 [stopScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#aa8ea0235691fc9cde0a64833249230bb) 接口可以随时中止屏幕分享。
+<dx-codeblock>
+::: dart 
 // 开始屏幕分享，需要将 APPGROUP 替换为上述步骤中创建的 App Group 
 trtcCloud.startScreenCapture(
     TRTCVideoEncParam(
@@ -241,11 +244,13 @@ onRtcListener(type, param){
       //屏幕分享开始
     }
 }
-```
+:::
+</dx-codeblock>
 
 [](id:launch)
-##### 步骤4：增加屏幕分享的触发按钮（可选）
+#### 步骤4：增加屏幕分享的触发按钮（可选）
 截止到 [步骤3](#receive)，我们的屏幕分享还必须要用户从控制中心中长按录屏按钮来手动启动。您可通过下述方法实现类似 TRTC Demo Screen 的单击按钮即可触发的效果：
+![](https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/trtcdemo/2.png)
 
 1. 将 `replay_kit_launcher` 插件加入到您的工程中。
 2. 在您的界面上放置一个按钮，并在按钮的响应函数中调用 `ReplayKitLauncher.launchReplayKitBroadcast(iosExtensionName);` 函数，就可以唤起屏幕分享功能了。

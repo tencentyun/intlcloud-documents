@@ -8,7 +8,7 @@
 |---------|---------|
 | Windows（MFC） | [TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/MFCDemo/TRTCMainViewController.cpp) |
 | Windows（Duilib） | [TRTCMainViewController.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/DuilibDemo/TRTCMainViewController.cpp) |
-| Windows（C#） | [TRTCMainForm.cpp](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/CSharpDemo/TRTCMainForm.cs) |
+| Windows（C#） | [TRTCMainForm.cs](https://github.com/tencentyun/TRTCSDK/blob/master/Windows/CSharpDemo/TRTCMainForm.cs) |
 
 ## 视频通话
 ### 1. 初始化 SDK
@@ -131,6 +131,7 @@ TRTCParams 是 SDK 最关键的一个参数，它包含如下四个必填的字�
 
 - **SDKAppID**
   进入腾讯云实时音视频 [控制台](https://console.cloud.tencent.com/rav)，如果您还没有应用，请创建一个，即可看到 SDKAppID。
+  ![](https://main.qcloudimg.com/raw/e42c76fd9d4fd3e3e5d80e8fb2763134.png)
 
 - **userId**
   您可以随意指定，由于是字符串类型，可以直接跟您现有的账号体系保持一致，但请注意，**同一个音视频房间里不应该有两个同名的 userId**。
@@ -148,7 +149,7 @@ TRTCParams 是 SDK 最关键的一个参数，它包含如下四个必填的字�
 				
 - 如进房成功，SDK 会回调 `onEnterRoom` 接口，参数：当 `result` 大于0时，进房成功，数值表示加入房间所消耗的时间，单位为毫秒（ms）；当 `result` 小于0时，进房失败，数值表示进房失败的错误码。
 - 如进房失败，SDK 同时会回调 `onError` 接口，参数：`errCode`（错误码 `ERR_ROOM_ENTER_FAIL`，错误码可参考 `TXLiteAVCode.h`）、`errMsg`（错误原因）、`extraInfo`（保留参数）。
-- 如果已在房间中，则必须调用 `exitRoom` 方法退出当前房间，才能进入下一个房间。 
+- 如果已在房间中，则必须调用 `exitRoom` 方法退出当前房间，才能进入下一个房间。 
 
 <dx-codeblock>
 ::: C++ C++
@@ -239,7 +240,9 @@ public void onEnterRoom(int result)
 </dx-codeblock>
 
 
->!请根据应用场景选择合适的 scene 参数，使用错误可能会导致卡顿率或画面清晰度不达预期。
+>!
+>- 请根据应用场景选择合适的 scene 参数，使用错误可能会导致卡顿率或画面清晰度不达预期。
+>- 每个端在应用场景 appScene 上必须要进行统一，否则会出现一些不可预料的问题。
 
 ### 4. 收听远端音频流
 TRTC SDK 会默认接收远端的音频流，您无需为此编写额外的代码。如果您不希望收听某一个 userid 的音频流，可以使用 `muteRemoteAudio` 将其静音。
@@ -369,7 +372,7 @@ public void onEnterRoom(int result)
 ### 9. 退出房间
 
 调用 `exitRoom` 方法退出房间。不论当前是否还在通话中，调用该方法会把视频通话相关的所有资源释放掉。
->?在您调用 `exitRoom` 之后，SDK 会进入一个复杂的退房握手流程，当 SDK 回调 `onExitRoom` 方法时才算真正完成资源的释放。
+>?在您调用 `exitRoom` 之后，SDK 会进入一个复杂的退房握手流程，当 SDK 回调 `onExitRoom` 方法时才算真正完成资源的释放。
 <dx-codeblock>
 ::: C++ C++
 // TRTCMainViewController.cpp
@@ -407,3 +410,4 @@ public void onExitRoom(int reason)
 }
 :::
 </dx-codeblock>
+

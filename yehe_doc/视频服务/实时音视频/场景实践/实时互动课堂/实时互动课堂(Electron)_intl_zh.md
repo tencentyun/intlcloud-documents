@@ -1,7 +1,17 @@
 ## Demo 体验
 <input type="button" value="Windows 版" style="height: 30px;width: 150px;min-width: 24px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;white-space: nowrap;margin-right:10px;"  onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/solution/education/TRTC_Education_Demo%20Setup%201.1.0.exe')" />
 
-<input type="button" value="MacOS 版" style="height: 30px;width: 150px;margin-top: 5px;min-width: 24px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;white-space: nowrap;" onclick="window.open('https://tccweb-1258344699.cos.ap-nanjing.myqcloud.com/sdk/trtc/TRTC-EDUCATION-DEMO-1.2.0.dmg')" />
+<input type="button" value="MacOS 版" style="height: 30px;width: 150px;margin-top: 5px;min-width: 24px;background-color: #00a4ff;color: #fff;border: 1px solid #00a4ff;line-height: 30px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;box-sizing: border-box;text-decoration: none;font-size: 12px;white-space: nowrap;" onclick="window.open('https://web.sdk.qcloud.com/trtc/electron/download/solution/education/TRTC_Education_Demo-1.1.0.dmg')" />
+
+## 效果展示
+您可以下载安装我们的 Demo 体验实时互动课堂的能力效果，包括语音、视频、屏幕分享等上课方式，还封装了老师开始问答、学生举手、老师邀请学生上台回答、结束回答等相关能力。
+
+<table>
+<tr><th>教师端</th><th>学生端</th><tr>
+<tr><td><img src="https://main.qcloudimg.com/raw/35d33cb6003bd3575ee6bbfb0cbe6450.png"/></td><td><img src="https://main.qcloudimg.com/raw/30e62d5c96c1ba31fc24c113ecfdb395.png"/></td><tr>
+</table>
+
+如需快速实现实时互动课堂功能，可以直接基于我们提供的 Demo 进行修改适配，也可以使用我们提供的 [trtc-electron-education](https://intl.cloud.tencent.com/document/product/647/37279) 组件并实现自定义 UI 界面。
 
 ## 复用 Demo 的 UI 界面
 [](id:ui.step1)
@@ -9,28 +19,30 @@
 1. 登录实时音视频控制台，选择【开发辅助】>【[快速跑通Demo](https://console.cloud.tencent.com/trtc/quickstart)】。
 2. 输入应用名称，例如  `TestEduDemo`，单击【创建】。
 
->?本功能同时使用了腾讯云 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](http://intl.cloud.tencent.com/zh/document/product/1047) 两个基础 PAAS 服务，开通实时音视频后会同步开通即时通信 IM 服务。 即时通信 IM 属于增值服务，详细计费规则请参见 [即时通信 IM 价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
+>?本功能同时使用了腾讯云 [实时音视频 TRTC](https://intl.cloud.tencent.com/document/product/647/35078) 和 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047) 两个基础 PAAS 服务，开通实时音视频后会同步开通即时通信 IM 服务。 即时通信 IM 属于增值服务，详细计费规则请参见 [即时通信 IM 价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
+
 
 [](id:ui.step2)
-
 ### 步骤2：下载 SDK 和 Demo 源码
 1. 根据实际业务需求下载 SDK 及配套的 Demo 源码。
 2. 下载完成后，单击【已下载，下一步】。
-![](https://main.qcloudimg.com/raw/3b115019ddfd0866108ed1add30810d8.png)
+![](https://main.qcloudimg.com/raw/a4f5a2ac1f49d67b4c6968d8b22cdeb0.png)
 
 [](id:ui.step3)
 ### 步骤3：配置 Demo 工程文件
 1. 进入修改配置页，根据您下载的源码包，选择相应的开发环境。
-2. 找到并打开 `TRTCEducation/app/debug/GenerateTestUserSig.js` 文件。
+2. 找到并打开 `Electron/js/GenerateTestUserSig.js` 文件。
 3. 设置 `GenerateTestUserSig.js` 文件中的相关参数：
-<ul style="margin:0"><li/>SDKAPPID：默认为0，请设置为实际的 SDKAppID。
-<li/>SECRETKEY：默认为空字符串，请设置为实际的密钥信息。</ul>
-<img src="https://main.qcloudimg.com/raw/7fc770b48b3ee033534965d1d27c2391.png">
+<ul>
+ <li/>SDKAPPID：默认为0 ，请设置为实际的 SDKAppID。
+ <li/>SECRETKEY：默认为空字符串 ，请设置为实际的密钥信息。</ul>
+ <img src="https://main.qcloudimg.com/raw/c8ed13a3bc40c8b5d676e933adc402f9.png"/>
 4. 粘贴完成后，单击【已复制粘贴，下一步】即创建成功。
 5. 编译完成后，单击【回到控制台概览】即可。
 
->!本文提到的生成 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通 Demo 和功能调试**。
->正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。
+>!
+>- 本文提到的生成 UserSig 的方案是在客户端代码中配置 SECRETKEY，该方法中 SECRETKEY 很容易被反编译逆向破解，一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量，因此**该方法仅适合本地跑通 Demo 和功能调试**。
+>- 正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/647/35166)。
 
 ### 步骤4：运行 Demo
 
@@ -45,8 +57,7 @@ yarn dev
 yarn package
 ```
 
->!
-- 只能使用 Mac 打包 Mac 包，使用 Windows 电脑打包 Windows 包。
+>!  只能使用 Mac 打包 Mac 包，使用 Windows 电脑打包 Windows 包。
 
 
 ### 步骤5：修改 Demo 源代码
@@ -170,4 +181,3 @@ const params = {
 }
 rtcClient.sendTextMessage(params) // 发送聊天室消息
 ```
-

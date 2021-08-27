@@ -29,7 +29,7 @@ UserID 即用户ID，用于在一个实时音视频应用中唯一标识一个�
 
 [](id:que7)
 ### 怎么理解 TRTC 的角色 Role？ 
-只有在直播场景下，可以设置主播和观众角色。主播角色 TRTCRoleAnchor 具有上行和下行音视频的权限，最高并发支持30人，观众 TRTCRoleAudience 只具有下行音视频的权限，最高并发支持10万人。
+只有在直播场景下，可以设置主播和观众角色。主播角色 TRTCRoleAnchor 具有上行和下行音视频的权限，最高并发支持50人，观众 TRTCRoleAudience 只具有下行音视频的权限，最高并发支持10万人。
 
 
 [](id:que8)
@@ -43,9 +43,10 @@ UserID 即用户ID，用于在一个实时音视频应用中唯一标识一个�
 
 [](id:que9)
 ### TRTC 支持哪些平台？
-支持的平台包括 iOS、Android、Windows(C++)、Windows(C#)、Mac、桌面浏览器、Electron，更多详情请参见 [平台支持](https://intl.cloud.tencent.com/document/product/647/35078)。
+支持的平台包括 iOS、Android、Windows(C++)、Windows(C#)、Mac、Web、Electron，更多详情请参见 [平台支持](https://intl.cloud.tencent.com/document/product/647/35078)。
 
 [](id:que10)
+
 ### TRTC 精简版、专业版、企业版各个版本区别？ 
 详情请参见 [各版本差异对照表](https://intl.cloud.tencent.com/document/product/647/34615)。
 
@@ -53,10 +54,11 @@ UserID 即用户ID，用于在一个实时音视频应用中唯一标识一个�
 [](id:que11)
 ### 实时音视频支持直播连麦吗?
 支持，具体操作指南请参考：
-- [在线直播(iOS&Mac)](https://intl.cloud.tencent.com/document/product/647/35107)
-- [在线直播(Android)](https://intl.cloud.tencent.com/document/product/647/35108)
-- [在线直播(Windows)](https://intl.cloud.tencent.com/document/product/647/35109)
-- [在线直播(桌面浏览器)](https://intl.cloud.tencent.com/document/product/647/35110)
+- [跑通直播模式(iOS&Mac)](https://intl.cloud.tencent.com/document/product/647/35107)
+- [跑通直播模式(Android)](https://intl.cloud.tencent.com/document/product/647/35108)
+- [跑通直播模式(Windows)](https://intl.cloud.tencent.com/document/product/647/35109)
+- [跑通直播模式(Electron)](https://intl.cloud.tencent.com/document/product/647/36070)
+- [跑通直播模式(Web)](https://intl.cloud.tencent.com/document/product/647/35110)
 
 
 [](id:que12)
@@ -66,12 +68,12 @@ UserID 即用户ID，用于在一个实时音视频应用中唯一标识一个�
 [](id:que13)
 ### 如何创建房间？
 房间是由腾讯云后台在客户端进房时自动创建的，您无需手动创建房间，只需调用客户端的相关接口“进入房间”即可：
-- [iOS & Mac > enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d)
-- [Android > enterRoom](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c)
-- [Windows（C++） > enterRoom](http://doc.qcloudtrtc.com/group__ITRTCCloud__cplusplus.html#ac73c4ad51eda05cd2bcec820c847e84f)
-- [Windows（C#） > enterRoom](http://doc.qcloudtrtc.com/group__ITRTCCloud__csharp.html#a28b2d3ec27af8c9bfd5cf687dd8e002b)
-- [Electron > enterRoom](https://trtc-1252463788.file.myqcloud.com/electron_sdk/docs/TRTCCloud.html?_ga=1.212321108.1562552652.1542703643#enterRoom)
-- [桌面浏览器 > join](https://trtc-1252463788.file.myqcloud.com/web/docs/Client.html?_ga=1.256770123.1562552652.1542703643#join)
+- [iOS & Mac > enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a96152963bf6ac4bc10f1b67155e04f8d)
+- [Android > enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c)
+- [Windows（C++） > enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__cplusplus.html#a0fab3ea6c23c6267112bd1c0b64aa50b)
+- [Windows（C#） > enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn//group__ITRTCCloud__csharp.html#afbb3a1e6f73f339d47368a7d620a995f)
+- [Electron > enterRoom](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#enterRoom)
+- [Web > join](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/Client.html#join)
 
 [](id:que14)
 ### 实时音视频的视频服务端最大支持带宽是多少？
@@ -81,6 +83,10 @@ UserID 即用户ID，用于在一个实时音视频应用中唯一标识一个�
 [](id:que15)
 ### 实时音视频是否支持私有化部署？
 目前不支持。
+
+[](id:que16)
+### 实时音视频开通旁路直播，域名是否需要进行备案使用？
+如需开通旁路直播，依据国家相关部门要求，播放域名需要备案才能使用，更多详情请参见 [CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242)。
 
 [](id:que17)
 ### 实时音视频延时大约多少？
@@ -104,7 +110,7 @@ UserID 即用户ID，用于在一个实时音视频应用中唯一标识一个�
 支持，您可以参考如下文档：
 - [屏幕分享（Windows）](https://intl.cloud.tencent.com/document/product/647/37335)
 - [屏幕分享（Mac）](https://intl.cloud.tencent.com/document/product/647/37336)
-- [屏幕分享（桌面浏览器）](https://intl.cloud.tencent.com/document/product/647/35163)
+- [屏幕分享（Web）](https://intl.cloud.tencent.com/document/product/647/35163)
 
 屏幕分享接口详情请参见 [Windows（C++）API](https://intl.cloud.tencent.com/document/product/647/35131) 或 [Windows（C#）API](https://intl.cloud.tencent.com/document/product/647/35136)。另外，您也可以使用 [Electron 接口](https://intl.cloud.tencent.com/document/product/647/35141)。
 
@@ -154,7 +160,7 @@ TRTC 与移动直播后台方案架构不同，所以不支持直接相互通信
 [](id:que32)
 ### TRTC 进房模式 AppScene 有什么区别？
 TRTC 支持四种不同的进房模式，其中视频通话（VideoCall）和语音通话（VoiceCall）统称为通话模式，视频互动直播（Live）和语音互动直播（VoiceChatRoom）统称为 直播模式。
-- 通话模式下的 TRTC，支持单个房间最多300人同时在线，支持最多30人同时发言。适合1对1视频通话、300人视频会议、在线问诊、远程面试、视频客服、在线狼人杀等应用场景。
+- 通话模式下的 TRTC，支持单个房间最多300人同时在线，支持最多50人同时发言。适合1对1视频通话、300人视频会议、在线问诊、远程面试、视频客服、在线狼人杀等应用场景。
 - 直播模式下的 TRTC，支持单个房间最多10万人同时在线，具备小于300ms的连麦延迟和小于1000ms的观看延迟，以及平滑上下麦切换技术。适用低延时互动直播、十万人互动课堂、视频相亲、在线教育、远程培训、超大型会议等应用场景。
 
 
@@ -180,6 +186,7 @@ TRTC 支持四种不同的进房模式，其中视频通话（VideoCall）和语
 您也可以使用 [实现云端录制与回放](https://intl.cloud.tencent.com/document/product/647/35426) 录制视频。
 
 [](id:que38)
+
 ### TRTC 是否支持类似微信视频通话的悬浮窗、大小画面切换等功能？
 此类功能属于 UI 布局逻辑，SDK 并不限制 UI 上的展示处理。在官方 Demo 中提供了画面前后堆叠和九宫格布局模式的示例代码，并且支持悬浮窗、大小画面切换和画面拖动，更多详情请参考 [官方 Demo](https://github.com/tencentyun/TRTCSDK)。
 
@@ -204,8 +211,8 @@ TRTC 没有音频和视频通道的区分，只调用 startLocalAudio 不调用 
 
 [](id:que43)
 ### 实时音视频最多可以支持多少个人同时通话？
-- 通话模式下，单个房间最多支持300人同时在线，最多支持30人同时开启摄像头或麦克风。
-- 直播模式下，单个房间支持10万人以观众身份在线观看，最多支持30人以主播身份开启摄像头或麦克风。
+- 通话模式下，单个房间最多支持300人同时在线，最多支持50人同时开启摄像头或麦克风。
+- 直播模式下，单个房间支持10万人以观众身份在线观看，最多支持50人以主播身份开启摄像头或麦克风。
 
 
 [](id:que44)
@@ -283,7 +290,7 @@ TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决�
 
 [](id:que60)
 ### 怎样实现横屏视频通话？ 
-详情请参见 [视频画面旋转和缩放](https://intl.cloud.tencent.com/document/product/647/35154)。
+详情请参见 [实现横屏视频通话](https://cloud.tencent.com/developer/article/1492095) 和 [视频画面旋转和缩放](https://intl.cloud.tencent.com/document/product/647/35154)。
 
 [](id:que61)
 ### TRTC 本地和远端画面方向不一致怎么调整？  
@@ -322,7 +329,6 @@ TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决�
 [](id:que69)
 ### 实时音视频如何快速入门？
 实时音视频为您提供了各个平台的 Demo 源码，您只需花费极少的时间即可快速搭建属于您自己的小应用，具体请参见 [新手入门](https://intl.cloud.tencent.com/document/product/647/39386)。
-
 
 [](id:que70)
 ### 实时音视频如何实现云端录制与回放？

@@ -14,7 +14,7 @@ TRTC 云服务由两种不同类型的服务器节点组成，分别是“接口
 
 在通话模式下，TRTC 房间中的所有用户都会被分配到接口机上，相当于每个用户都是“主播”，每个用户随时都可以发言（最高的上行并发限制为50路），因此适合在线会议等场景，但单个房间的人数限制为300人。
 
-![](https://main.qcloudimg.com/raw/b88a624c0bd67d5d58db331b3d64c51c.gif)
+![](https://main.qcloudimg.com/raw/e6a7492c3d0151252f7853373f6bcbbc.png)
 
 ## 示例代码
 
@@ -27,10 +27,9 @@ TRTC 云服务由两种不同类型的服务器节点组成，分别是“接口
 
 建议您先阅读文档 [跑通 SimpleDemo(Electron)](https://intl.cloud.tencent.com/document/product/647/35089)，并按照文档的指引，跑通我们为您提供的官方 SimpleDemo。
 - 如果 SimpleDemo 能顺利运行，说明您已经掌握了在项目中安装 Electron 的方法。
-- 反之，如果运行 SimpleDemo 遇到问题，您大概率遭遇了 Electron 的下载、安装问题，参考 Electron 官方的 [安装指引](https://www.electronjs.org/docs/tutorial/installation) 。
+- 反之，如果运行 SimpleDemo 遇到问题，您大概率遭遇了 Electron 的下载、安装问题，此时您可以参考 Electron 官方的 [安装指引](https://www.electronjs.org/docs/tutorial/installation) 。
 
 [](id:step2)
-
 ### 步骤2：为您的项目集成 trtc-electron-sdk
 
 如果 [步骤1](#step1) 正常执行并且效果符合预期，说明您已经掌握了 Electron 环境的安装方法。
@@ -73,7 +72,8 @@ trtcCloud.on('onError',onError);
 | userSig  | 字符串 | 基于 userId 可以计算出 userSig，计算方法请参见 [如何计算 UserSig](https://intl.cloud.tencent.com/document/product/647/35166) 。 | eJyrVareCeYrSy1SslI... |
 | roomId   | 数字   | 默认不支持字符串类型的房间号，字符串类型的房间号会影响进房速度。如果您确实需要支持字符串类型的房间号，可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。 | 29834  |
 
-```
+<dx-codeblock>
+::: javascript javascript
 import {
   TRTCParams,
   TRTCRoleType 
@@ -85,7 +85,8 @@ param.roomId = 29834;
 param.userId = 'test_user_001';
 param.userSig = 'eJyrVareCeYrSy1SslI...';
 param.role = TRTCRoleType.TRTCRoleAnchor; // 设置角色为"主播"
-```
+:::
+</dx-codeblock>
 
 >! 
 >- TRTC 同一时间不支持两个相同的 userId 进入房间，否则会相互干扰。
@@ -101,12 +102,13 @@ param.role = TRTCRoleType.TRTCRoleAnchor; // 设置角色为"主播"
 4.  主播端调用 [startLocalAudio()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startLocalAudio) 开启麦克风，SDK 会向系统请求麦克风使用权限。
 
 
-```
+<dx-codeblock>
+::: javascript javascript
 //示例代码：发布本地的音视频流
 trtcCloud.startLocalPreview(view);
 trtcCloud.startLocalAudio();
 trtcCloud.setLocalViewFillMode(TRTCVideoFillMode.TRTCVideoFillMode_Fill);
- 
+
 //设置本地视频编码参数
 let encParam = new TRTCVideoEncParam();
 encParam.videoResolution = TRTCVideoResolution.TRTCVideoResolution_640_360;
@@ -115,7 +117,8 @@ encParam.videoFps = 25;
 encParam.videoBitrate = 600;
 encParam.enableAdjustRes = true;
 trtcCloud.setVideoEncoderParam(encParam);
-```
+:::
+</dx-codeblock>
 
 [](id:step6)
 ### 步骤6：主播端设置美颜效果
@@ -125,9 +128,9 @@ trtcCloud.setVideoEncoderParam(encParam);
     -   style： 美颜风格，光滑或者自然，光滑风格磨皮更加明显，适合娱乐场景。
         -   `TRTCBeautyStyle.TRTCBeautyStyleSmooth`: 光滑，适用于美女秀场，效果比较明显。
         -   `TRTCBeautyStyle.TRTCBeautyStyleNature`: 自然，磨皮算法更多地保留了面部细节，主观感受上会更加自然。
-    -   beauty：美颜级别，取值范围0 - 9，0表示关闭，1 - 9值越大，效果越明显
-    -   white：美白级别，取值范围0 - 9，0表示关闭，1 - 9值越大，效果越明显
-    -   ruddiness：红润级别，取值范围0 - 9，0表示关闭，1 - 9值越大，效果越明显，该参数 Windows 平台暂未生效
+    -   beauty：美颜级别，取值范围0 - 9，0表示关闭，1 - 9值越大，效果越明显。
+    -   white：美白级别，取值范围0 - 9，0表示关闭，1 - 9值越大，效果越明显。
+    -   ruddiness：红润级别，取值范围0 - 9，0表示关闭，1 - 9值越大，效果越明显，该参数 Windows 平台暂未生效。
 
 ```javascript
 // 开启美颜 
@@ -145,7 +148,8 @@ trtcCloud.setBeautyStyle(TRTCBeautyStyle.TRTCBeautyStyleNature, 5, 5, 5);
     -   关于 `TRTCAppScene` 的详细介绍，请参见 [TRTCAppScene ](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/global.html#TRTCAppScene)。
 3.  房间创建成功后，主播端开始音视频数据的编码和传输流程。同时，SDK 会回调 [onEnterRoom(result)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onEnterRoom) 事件，参数 `result` 大于0时表示进房成功，具体数值为加入房间所消耗的时间，单位为毫秒（ms）；当 `result` 小于0时表示进房失败，具体数值为进房失败的错误码。
 
-```
+<dx-codeblock>
+::: javascript javascript
 let onEnterRoom = function (result) {
   if (result > 0) {
     console.log(`onEnterRoom，进房成功，使用了 ${result} 秒`);
@@ -153,9 +157,9 @@ let onEnterRoom = function (result) {
     console.warn(`onEnterRoom: 进房失败 ${result}`);
   }
 };
- 
+
 trtcCloud.on('onEnterRoom', onEnterRoom);
- 
+
 let param = new TRTCParams();
 param.sdkAppId = 1400000123;
 param.roomId = 29834;
@@ -163,7 +167,8 @@ param.userId = 'test_user_001';
 param.userSig = 'eJyrVareCeYrSy1SslI...';
 param.role = TRTCRoleType.TRTCRoleAnchor;
 trtcCloud.enterRoom(param, TRTCAppScene.TRTCAppSceneLIVE);
-```
+:::
+</dx-codeblock>
 
 [](id:step8)
 ### 步骤8：观众端进入房间观看直播
@@ -176,7 +181,8 @@ trtcCloud.enterRoom(param, TRTCAppScene.TRTCAppSceneLIVE);
     -  如果观众端事先知道主播的 `userId`，直接在进房成功后使用主播 `userId` 调用 [startRemoteView(userId, view)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startRemoteView) 即可显示主播的画面。
     -  如果观众端不知道主播的 `userId`，观众端在进房成功后会收到 [onUserVideoAvailable()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onUserVideoAvailable) 事件通知，使用回调中获取的主播 `userId` 调用 [startRemoteView(userId, view)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startRemoteView) 便可显示主播的画面。
 
-```
+<dx-codeblock>
+::: html html
 <div id="video-container"></div>
 <script>
   const videoContainer = document.querySelector('#video-container');
@@ -209,7 +215,7 @@ trtcCloud.enterRoom(param, TRTCAppScene.TRTCAppSceneLIVE);
         }
     }
   };
- 
+
   trtcCloud.on('onEnterRoom', onEnterRoom);
   trtcCloud.on('onUserVideoAvailable', onUserVideoAvailable);
 
@@ -221,7 +227,8 @@ trtcCloud.enterRoom(param, TRTCAppScene.TRTCAppSceneLIVE);
   param.role = TRTCRoleType.TRTCRoleAudience; // 设置角色为“观众”
   trtcCloud.enterRoom(param, TRTCAppScene.TRTCAppSceneLIVE);
 </script>
-```
+:::
+</dx-codeblock>
 
 [](id:step9)
 ### 步骤9：观众跟主播连麦
@@ -230,17 +237,19 @@ trtcCloud.enterRoom(param, TRTCAppScene.TRTCAppSceneLIVE);
 2.  观众端调用 [startLocalPreview()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startLocalPreview) 可以开启本地的画面。
 3.  观众端调用 [startLocalAudio()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startLocalAudio) 开启麦克风采音。
 
-```
+<dx-codeblock>
+::: javascript javascript
 //示例代码：观众上麦
 trtcCloud.switchRole(TRTCRoleType.TRTCRoleAnchor);
 trtcCloud.startLocalAudio();
 trtcCloud.startLocalPreview(frontCamera, view);
- 
+
 //示例代码：观众下麦
 trtcCloud.switchRole(TRTCRoleType.TRTCRoleAudience);
 trtcCloud.stopLocalAudio();
 trtcCloud.stopLocalPreview();
-```
+:::
+</dx-codeblock>
 
 
 [](id:step10)
@@ -253,9 +262,10 @@ TRTC 中两个不同音视频房间中的主播，可以在不退出原来的直
     例如，当房间“001”中的主播 A 通过`connectOtherRoom()`与房间“002”中的主播 B 拉通跨房通话后， 房间“001”中的用户会收到主播 B 的`onUserVideoAvailable(B, true)`回调和`onUserAudioAvailable(B, true)`回调。 房间“002”中的用户会收到主播 A 的`onUserVideoAvailable(A,  true)` 回调和`onUserAudioAvailable(A, true)`回调。
 3.  两个房间里的用户通过调用 [startRemoteView(userId, view)](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#startRemoteView) 即可显示另一房间里主播的画面，声音会自动播放。
 
-![主播连麦时序图](http://main.qcloudimg.com/raw/ac5b230340ebdab69998f95844fa61c1/%E4%B8%BB%E6%92%AD%E8%BF%9E%E9%BA%A6%E6%97%B6%E5%BA%8F%E5%9B%BE.png)
+![主播连麦时序图](https://main.qcloudimg.com/raw/bffa420102bb31dee6f76d7f08a16e4f.png)
 
-```
+<dx-codeblock>
+::: javascript javascript
 //示例代码：跨房连麦 PK
 let onConnectOtherRoom = function(userId, errCode, errMsg) {
   if(errCode === 0) {
@@ -264,24 +274,27 @@ let onConnectOtherRoom = function(userId, errCode, errMsg) {
     console.warn(`连接其他主播房间失败：${errMsg}`);
   }
 };
- 
+
 const paramJson = '{"roomId": "978","userId": "userB"}';
 trtcCloud.connectOtherRoom(paramJson);
 trtcCloud.on('onConnectOtherRoom', onConnectOtherRoom); 
-```
+:::
+</dx-codeblock>
 
 [](id:step11)
 ### 步骤11：退出当前房间  
 
 调用 [exitRoom()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCloud.html#exitRoom) 方法退出房间，SDK 在退房时需要关闭和释放摄像头、麦克风等硬件设备，因此退房动作并非瞬间完成的，需收到 [onExitRoom()](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCCallback.html#event:onExitRoom) 回调后才算真正完成退房操作。
 
-```
+<dx-codeblock>
+::: javascript javascript
 // 调用退房后请等待 onExitRoom 事件回调
 let onExitRoom = function (reason) {
   console.log(`onExitRoom, reason: ${reason}`);
 };
 trtcCloud.exitRoom();
 trtcCloud.on('onExitRoom', onExitRoom);
-```
+:::
+</dx-codeblock>
 
 >! 如果您的 Electron 程序中同时集成了多个音视频 SDK，请在收到`onExitRoom`回调后再启动其它音视频 SDK，否则可能会遇到硬件占用问题。

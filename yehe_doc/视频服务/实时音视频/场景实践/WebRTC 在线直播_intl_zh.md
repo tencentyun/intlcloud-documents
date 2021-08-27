@@ -5,7 +5,6 @@ TWebLive 即腾讯云 Web 直播互动组件，是腾讯云终端研发团队推
 
 
 
-
 ## TWebLive 优势
 
 开发者接入此 [TWebLive SDK](https://www.npmjs.com/package/tweblive)，可彻底替代 Flash 推流方案，极大地降低 Web 推流、Web 低延时观看、CDN 观看以及实时聊天互动（或弹幕）的实现复杂度和时间成本，下面我们通过举例来进行说明。
@@ -20,6 +19,7 @@ TWebLive 即腾讯云 Web 直播互动组件，是腾讯云终端研发团队推
 <script>
 // 1、创建 Pusher（推流）对象
 let pusher = TWebLive.createPusher({ userID: 'your userID' });
+
 // 2、设置渲染界面，且从麦克风采集音频，从摄像头采集视频（默认720p）
 pusher.setRenderView({
   elementID: 'pusherView',
@@ -43,7 +43,6 @@ pusher.setRenderView({
 当需要拉流播放时，创建 Player（播放器）对象，最简单的拉流仅需3步：
 <dx-codeblock>
 ::: html html
-
 <div id="playerView" style="width:100%; height:auto;"></div>
 <script>
 // 1、创建 Player（播放器）对象
@@ -66,7 +65,8 @@ player.startPlay(url).then(() => {
 });
 </script>
 :::
-</dx-codeblock>:::
+</dx-codeblock>
+:::
 ::: 直播互动
 当主播和观众需要聊天互动时，创建即时通信 IM 对象，最简单的消息收发仅需3步：
 <dx-codeblock>
@@ -115,7 +115,8 @@ im.enterRoom('your roomID').then((imResponse) => {
 });
 </script>
 :::
-</dx-codeblock>:::
+</dx-codeblock>
+:::
 </dx-tabs>
 
 为了进一步降低开发者的开发和人力成本，我们在 TWebLive SDK 的基础上，提供了同时适配 PC 和移动端浏览器的 [Demo](https://github.com/tencentyun/TWebLive)，并开源到了 Github。开发者 fork&clone 项目到本地，稍作修改即可把 Demo 运行起来，也可集成到自己的项目部署上线。
@@ -125,7 +126,6 @@ im.enterRoom('your roomID').then((imResponse) => {
 ## TWebLive 使用
 ### 注意事项
 - 实时音视频应用与 IM 应用的 SDKAppID 一致，才能复用账号与鉴权。
-- IM 应用针对文本消息，提供基础版本的 [安全打击](https://intl.cloud.tencent.com/document/product/1047/38089) 能力，如果希望使用自定义不雅词功能，可以单击【升级】或在 [购买页](https://intl.cloud.tencent.com/) 购买【安全打击 - 高级版】服务。
 - 本地计算 UserSig 的方式仅用于本地开发调试，请勿直接发布到线上，一旦 SECRETKEY 泄露，攻击者就可以盗用您的腾讯云流量。正确的 UserSig 签发方式是将 UserSig 的计算代码集成到您的服务端，并提供面向 App 的接口，在需要 UserSig 时由您的 App 向业务服务器发起请求获取动态 UserSig。更多详情请参见 [服务端生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
 
 
@@ -146,7 +146,7 @@ im.enterRoom('your roomID').then((imResponse) => {
 ![](https://main.qcloudimg.com/raw/5af34ef530c7242d1dd098054931fea0.png)
 >?如果不需要 CDN 直播观看，可略过开启旁路推流的步骤。
 3. 单击【快速上手】，可查看密钥信息，请保存密钥。[](id:step2)
-![](https://main.qcloudimg.com/raw/fb699d54006563b8e63a13d54804b19d.png)
+![](https://main.qcloudimg.com/raw/99f03c367c43416bd7c7e8c6d6ff5002.png)
 4. 在 [腾讯云直播控制台](https://console.cloud.tencent.com/live/) 配置播放域名并完成 CNAME 配置，详细操作指引请参见 [实现 CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 文档。
 
 >?如果不需要 CDN 直播观看，可略过配置播放域名步骤。
@@ -298,7 +298,7 @@ Web 推流和 Web 低延时观看用到了 WebRTC 技术。
   - 域名：qcloud.rtc.qq.com
 :::
 ::: 出现\s10006\serror\s该如何处理？
-如果出现 `"Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it"`。请登录 [实时音视频控制台](https://console.cloud.tencent.com/rav)，单击您创建的应用，单击【帐号信息】，在帐号信息面板请确认您的实时音视频应用的服务状态是否为可用状态。<img src="https://main.qcloudimg.com/raw/13c9b520ea333804cffb4e2c4273fced.png">
+如果出现 `"Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it"`。请登录 [实时音视频控制台](https://console.cloud.tencent.com/rav)，单击您创建的应用，单击【帐号信息】，在帐号信息面板请确认您的实时音视频应用的服务状态是否为可用状态。<img src="https://main.qcloudimg.com/raw/33bd04fe44f1a9b4163709f3c513643c.png">
 :::
 ::: WebRTC\s低延时播放，iOS\s无法拉流播放？
 1. 将 TWebLive SDK 升级到 1.2.0。
@@ -313,14 +313,13 @@ iOS 自动播放受限，请参见 [自动播放受限处理建议](https://web.
 ## 结语
 本文为您介绍了腾讯云新的 Web 直播互动组件：TWebLive，通过接入此 SDK，开发者可以快速轻便地实现 Web 推流、Web 低延时观看、CDN 观看以及实时聊天互动（或弹幕）等功能，能够很好替换传统的 Flash 推流方案。
 
+同时，提供详细的接入方案和 [在线 Demo](https://web.sdk.qcloud.com/component/tweblive/demo/latest/index.html) 供您体验。目前 TWebLive 在主流的 Web 上也有较好的支持。
+
 后续，我们会提供更全方位的直播功能服务，例如：推流端支持屏幕分享、图片消息互动、观众端多线路观看（WebRTC 低延时线路和 CDN 线路）、主播观众连麦互动等功能。
 
 参考资料：
 
-- [TWebLive 接口手册](https://web.sdk.qcloud.com/component/tweblive/doc/zh-cn/TWebLive.html)
+- <a href="https://web.sdk.qcloud.com/component/tweblive/doc/zh-cn/TWebLive.html">TWebLive 接口手册</a>
 - [在线 Demo](https://web.sdk.qcloud.com/component/tweblive/demo/latest/index.html)
-
-## 相关文档
-
 
 

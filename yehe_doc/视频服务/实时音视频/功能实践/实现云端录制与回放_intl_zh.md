@@ -8,14 +8,14 @@ TRTC 的云端录制，可以将房间中的每一个用户的音视频流都录
 ![](https://main.qcloudimg.com/raw/2f92f978c2ca76d001891e645905e8f9.png)
 
 ## 控制台指引
-<span id="open"></span>
+[ ](id:open)
 ### 开通录制服务
 1. 登录实时音视频控制台，在左侧导航栏选择【[应用管理](https://console.cloud.tencent.com/trtc/app)】。
 2. 单击目标应用所在行的【功能配置】，进入功能配置页卡。如果您还没有创建过应用，可以单击【创建应用】，填写应用名称，单击【确定】创建一个新的应用。
 3. 单击【启用云端录制】右侧的 <img src="https://main.qcloudimg.com/raw/3fc81b259baa4edf112af2f570e6d97f.png"> ，会弹出云端录制的设置页面。
 
 
-<span id="recordType"></span>
+[ ](id:recordType)
 
 ### 选择录制形式
 
@@ -29,7 +29,7 @@ TRTC 的云端录制服务提供了两种不同的录制形式：“全局自动
   您可以指定只录制一部分用户的音视频流，这需要您通过客户端的 SDK API 或者服务端的 REST API 进行控制，需要额外的开发工作量。具体的使用方法请阅读 [方案二：指定用户录制（SDK API）](#recordSDKAPI) 和 [方案三：指定用户录制（REST API）](#recordRESTAPI)。
 
 
-<span id="fileFormat"></span>
+[ ](id:fileFormat)
 
 ###  选择文件格式
 
@@ -47,7 +47,7 @@ TRTC 的云端录制服务提供了两种不同的录制形式：“全局自动
 </tr>
 <tr>
 <td>文件保存时长（天）</td>
-<td>根据实际业务需求设置视频文件存储在云点播平台的天数。单位为天，取值范围0 -  1500，到期后文件将被点播平台自动删除且无法找回， 0表示永久存储。</td>
+<td>根据实际业务需求设置视频文件存储在云点播平台的天数。单位为天，取值范围0 - 1500，到期后文件将被点播平台自动删除且无法找回， 0表示永久存储。</td>
 </tr>
 <tr>
 <td>续录超时时长（秒）</td>
@@ -58,7 +58,7 @@ TRTC 的云端录制服务提供了两种不同的录制形式：“全局自动
 
 >? HLS 支持最长三十分钟的续录，可以做到“一堂课只产生一个回放链接”，且支持绝大多数浏览器的在线观看，非常适合在线教育场景中的视频回放场景。
 
-<span id="storageLocation"></span>
+[ ](id:storageLocation)
 
 ###  选择存储位置
 
@@ -70,17 +70,22 @@ TRTC 云端录制文件会默认存储于腾讯云点播服务上，如果您的
 - **如何开启点播服务的子应用？**
   您可以根据文档 [“如何开启点播子应用”](https://intl.cloud.tencent.com/document/product/266/33987) 添加新的子应用，这一步需要您跳转到点播[控制台](https://console.cloud.tencent.com/vod)中进行操作。
 
-<span id="recordCallback"></span>
+[ ](id:recordCallback)
 
 ###  设置录制回调
-
-如果您需要实时接收到新文件的 [落地通知](#callback)，可在此处填写您的服务器上用于接收录制文件的回调地址，该地址需符合 HTTP（或 HTTPS）协议。当新的录制文件生成后，腾讯云会通过该地址向您的服务器发送通知。
-
+- **录制回调地址：**
+  如果您需要实时接收到新文件的 [落地通知](#callback)，可在此处填写您的服务器上用于接收录制文件的回调地址，该地址需符合 HTTP（或 HTTPS）协议。当新的录制文件生成后，腾讯云会通过该地址向您的服务器发送通知。
 ![](https://main.qcloudimg.com/raw/9b9beab813d929a7a364eb2d8ab045ba.png)
+	
+- **录制回调密钥：**
+回调密钥用于在接收回调事件时生成签名鉴权，该密钥需由大小写字母及数字组成，且不得超过32个字符。相关使用请参见 [录制事件参数说明](https://intl.cloud.tencent.com/document/product/267/38082)。
+![](https://main.qcloudimg.com/raw/9fa611019c25e3c073683bc4e3ec38ae.png)
 
-详细的录制回调接收和解读方案请参考文档后半部分的：[接收录制文件](#callback)。
+>? 详细的录制回调接收和解读方案请参考文档后半部分的：[接收录制文件](https://intl.cloud.tencent.com/document/product/647/35426)。
 
-<span id="startAndStop"></span>
+
+
+[ ](id:startAndStop)
 
 ## 录制控制方案
 
@@ -94,7 +99,7 @@ TRTC 提供了三种云端录制的控制方案，分别是 [全局自动录制]
 - 支持该种方案的平台有哪些？
 
 
-<span id="autoRecord"></span>
+[](id:autoRecord)
 
 ### 方案一：全局自动录制
 
@@ -110,26 +115,26 @@ TRTC 提供了三种云端录制的控制方案，分别是 [全局自动录制]
 - **多路画面的混合**
   全局自动录制模式下的云端混流有两种方案，即“服务端 REST API 方案” 和 “客户端 SDK API 方案”，两套方案请勿混合使用：
   - [服务端 REST API 混流方案](#recordRESTAPI)：需要由您的服务器发起 API 调用，不受客户端平台版本的限制。
-  - [客户端 SDK API 混流方案](#recordSDKAPI)：可以直接在客户端发起混流，目前支持 iOS、Android、Windows、Mac 和 Electron 等平台，暂不支持Web 浏览器。
+  - [客户端 SDK API 混流方案](#recordSDKAPI)：可以直接在客户端发起混流，目前支持 iOS、Android、Windows、Mac 和 Electron 等平台，暂不支持微信小程序和 Web 浏览器。
 
 - **录制文件的命名**
-  - 如果主播在进房时指定了 [userDefineRecordId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) 参数，则录制文件会以 `userDefineRecordId_streamType_开始时间_结束时间` 来命名（streamType 有 main 和 aux 两个取值，main 代表主路，aux 代表辅路，辅路通常被用作屏幕分享）；
-  - 如果主播在进房时没有指定 [userDefineRecordId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) 参数，但指定了 [streamId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167) 参数，则录制文件会以 `streamId_开始时间_结束时间` 来命名；
-  - 如果主播在进房时既没有指定 [userDefineRecordId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) 参数，也没有指定 [streamId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167) 参数，则录制文件会以 `sdkappid_roomid_userid_streamType_开始时间_结束时间` 来命名（streamType 有 main 和 aux 两个取值，main 代表主路，aux 代表辅路，辅路通常被用作屏幕分享）。
+  - 如果主播在进房时指定了 [userDefineRecordId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) 参数，则录制文件会以 `userDefineRecordId_streamType_开始时间_结束时间` 来命名（streamType 有 main 和 aux 两个取值，main 代表主路，aux 代表辅路，辅路通常被用作屏幕分享）；
+  - 如果主播在进房时没有指定 [userDefineRecordId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) 参数，但指定了 [streamId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167) 参数，则录制文件会以 `streamId_开始时间_结束时间` 来命名；
+  - 如果主播在进房时既没有指定 [userDefineRecordId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) 参数，也没有指定 [streamId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167) 参数，则录制文件会以 `sdkappid_roomid_userid_streamType_开始时间_结束时间` 来命名（streamType 有 main 和 aux 两个取值，main 代表主路，aux 代表辅路，辅路通常被用作屏幕分享）。
 
 - **已经支持的平台**
   由您的服务端控制，不受客户端平台限制。
 
-<span id="recordSDKAPI"></span>
+[](id:recordSDKAPI)
 
 ### 方案二：指定用户录制（SDK API）
 
 通过调用 TRTC SDK 提供的一些 API 接口和参数，即可实现云端混流、云端录制和旁路直播三个功能：
 
-| 云端能力 | 如何开始？                                                   | 如何停止？                                                   |
-| :------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| 云端录制 | 进房时指定参数 `TRTCParams` 中的 `userDefineRecordId` 字段   | 主播退房时自动停止                                           |
-| 云端混流 | 调用 SDK API  [setMixTranscodingConfig()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 启动云端混流 | 发起混流的主播退房后，混流会自动停止，或中途调用 [setMixTranscodingConfig()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 并将参数设置为 `null/nil` 手动停止 |
+| 云端能力 | 如何开始？ | 如何停止？ |
+| :------- | :------- | :------- |
+| 云端录制 | 进房时指定参数 `TRTCParams` 中的 `userDefineRecordId` 字段   | 主播退房时自动停止 |
+| 云端混流 | 调用 SDK API  [setMixTranscodingConfig()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 启动云端混流 | 发起混流的主播退房后，混流会自动停止，或中途调用 [setMixTranscodingConfig()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 并将参数设置为 `null/nil` 手动停止 |
 | 旁路直播 | 进房时指定参数 `TRTCParams` 中的 `streamId` 字段             | 主播退房时自动停止                                           |
 
 ![](https://main.qcloudimg.com/raw/7daf8430ca74adeec019c10fc384a48e.gif)
@@ -138,8 +143,9 @@ TRTC 提供了三种云端录制的控制方案，分别是 [全局自动录制]
   要使用该种录制方案，请在控制台中 [选择录制形式](#recordType) 时，设定为“指定用户录制”。
 
 - **录制任务的开始**
-  主播在进房时指定进房参数 [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCParams) 中的 [userDefineRecordId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) 字段，之后该主播的上行音视频数据即会被云端录制下来，不指定该参数的主播不会触发录制任务。
-```
+  主播在进房时指定进房参数 [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#interfaceTRTCParams) 中的 [userDefineRecordId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) 字段，之后该主播的上行音视频数据即会被云端录制下来，不指定该参数的主播不会触发录制任务。
+<dx-codeblock>
+::: Objective-C Objective-C
 // 示例代码：指定录制用户 rexchang 的音视频流，文件 id 为 1001_rexchang
 TRTCCloud *trtcCloud = [TRTCCloud sharedInstance];
 TRTCParams *param = [[TRTCParams alloc] init];
@@ -150,22 +156,23 @@ param.userSig  = @"xxxxxxxx";    // 登录签名
 param.role     = TRTCRoleAnchor; // 角色：主播
 param.userDefineRecordId = @"1001_rexchang";  // 录制 ID，即指定开启该用户的录制。
 [trtcCloud enterRoom:params appScene:TRTCAppSceneLIVE]; // 请使用 LIVE 模式
-```
+:::
+</dx-codeblock>
 
 - **录制任务的结束**
-  自动停止，当进房时指定 [userDefineRecordId](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) 参数的主播在停止音视频上行后，云端录制会自行停止。如果您在[选择文件格式](#fileFormat)时设置了“续录时间”，则需要等待续录时间超时后才能收到录制文件。
+  自动停止，当进房时指定 [userDefineRecordId](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce) 参数的主播在停止音视频上行后，云端录制会自行停止。如果您在[选择文件格式](#fileFormat)时设置了“续录时间”，则需要等待续录时间超时后才能收到录制文件。
 
 - **多路画面的混合**
-  您可以通过调用 SDK API  [setMixTranscodingConfig()](http://doc.qcloudtrtc.com/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 将房间中其它用户的画面和声音混合到当前用户的这一路音视频流上。关于这一部分详细介绍，可以阅读文档：[云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618#.E6.96.B9.E6.A1.88.E4.B8.80.EF.BC.9A.E6.9C.8D.E5.8A.A1.E7.AB.AF-rest-api-.E6.B7.B7.E6.B5.81.E6.96.B9.E6.A1.88)。
+  您可以通过调用 SDK API  [setMixTranscodingConfig()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a8d589d96e548a26c7afb5d1f2361ec93) 将房间中其它用户的画面和声音混合到当前用户的这一路音视频流上。关于这一部分详细介绍，可以阅读文档：[云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618#.E6.96.B9.E6.A1.88.E4.B8.80.EF.BC.9A.E6.9C.8D.E5.8A.A1.E7.AB.AF-rest-api-.E6.B7.B7.E6.B5.81.E6.96.B9.E6.A1.88)。
 >! 在一个 TRTC 房间中，只由一个主播（推荐是开播的主播）来调用 `setMixTranscodingConfig` 即可，多个主播调用可能会出现状态混乱的错误。
 
 - **录制文件的命名**
   录制文件会以 `userDefineRecordId_开始时间_结束时间` 的格式来命名。
 
 - **已经支持的平台**
-  支持 [iOS](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Android](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a154fa0570c3bb6a9f99fb108bda02520)、[Windows](http://doc.qcloudtrtc.com/group__TRTCTypeDef__cplusplus.html#a3a7a5e6144aa337752d22269d25f7cfc)、[Mac](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Electron](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCParams.html) 等终端发起录制控制，暂不支持由 Web 浏览器发起控制。
+  支持 [iOS](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Android](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#a154fa0570c3bb6a9f99fb108bda02520)、[Windows](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCTypeDef__cplusplus.html#a3a7a5e6144aa337752d22269d25f7cfc)、[Mac](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce)、[Electron](https://web.sdk.qcloud.com/trtc/electron/doc/zh-cn/trtc_electron_sdk/TRTCParams.html) 等终端发起录制控制，暂不支持由 Web 浏览器和微信小程序端发起控制。
 
-<span id="recordRESTAPI"></span>
+[](id:recordRESTAPI)
 
 ### 方案三：指定用户录制（REST  API）
 
@@ -224,7 +231,7 @@ https://trtc.tencentcloudapi.com/?Action=StartMCUMixTranscode
 - **已经支持的平台**
   由您的服务端控制，不受客户端平台的限制。
 
-<span id="search"></span>
+[](id:search)
 ## 查找录制文件
 
 在开启录制功能以后，TRTC 系统中录制下来的文件就能在腾讯云点播服务中找到。您可以直接在云点播控制台手动查找，也可以由您的后台服务器使用 REST API 进行定时筛选：
@@ -245,7 +252,7 @@ https://vod.tencentcloudapi.com/?Action=SearchMedia
 &<公共请求参数>
 ```
 
-<span id="callback"></span>
+[](id:callback)
 
 ## 接收录制文件
 
@@ -266,7 +273,7 @@ https://vod.tencentcloudapi.com/?Action=SearchMedia
 </tr><tr>
 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/2a495b157f03a8905e372a2516ea3a8f.png"  style="box-shadow: 0 0 0px #ccc;"></td>
 <td>stream_id</td>
-<td>即直播 CDN 的 streamId，您可以在进房时通过设置 TRTCParams 中的 <a href="http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167">streamId</a> 字段指定（推荐），也可以在调用 TRTCCloud 的 startPublishing 接口时通过参数 streamId 来指定。</td>
+<td>即直播 CDN 的 streamId，您可以在进房时通过设置 TRTCParams 中的 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#a207ce719c22c89014a61d34af3e1e167">streamId</a> 字段指定（推荐），也可以在调用 TRTCCloud 的 startPublishing 接口时通过参数 streamId 来指定。</td>
 </tr><tr>
 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/1cf7ec54371a5e95e2ea00bdda4d1a64.png"  style="box-shadow: 0 0 0px #ccc;"></td>
 <td>stream_param.userid</td>
@@ -274,7 +281,7 @@ https://vod.tencentcloudapi.com/?Action=SearchMedia
 </tr><tr>
 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/66d50d985be81cae9698fae3ffa40f40.png" style="box-shadow: 0 0 0px #ccc;"></td>
 <td>stream_param.userdefinerecordid</td>
-<td>自定义字段，您可以通过设置 TRTCParams 中的 <a href="http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce">userDefineRecordId</a> 字段指定。</td>
+<td>自定义字段，您可以通过设置 TRTCParams 中的 <a href="https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__ios.html#adacd59ca3b1e9e5e6205a0a131a808ce">userDefineRecordId</a> 字段指定。</td>
 </tr>
 <tr>
 <td style="text-align:center"><img src="https://main.qcloudimg.com/raw/d1cb894a93a1d69cd4215c54064eca5d.png"  style="box-shadow: 0 0 0px #ccc;"></td>
@@ -284,7 +291,7 @@ https://vod.tencentcloudapi.com/?Action=SearchMedia
 
 
 
-<span id="delete"></span>
+[](id:delete)
 ## 删除录制文件
 
 腾讯云点播系统提供了一系列 REST API 来管理其上的音视频文件，您可以通过 [删除媒体 API](https://intl.cloud.tencent.com/document/product/266/37571) 删除某个指定的文件。
@@ -295,32 +302,32 @@ https://vod.tencentcloudapi.com/?Action=DeleteMedia
 &<公共请求参数>
 ```
 
-<span id="play"></span>
+[](id:play)
 ## 回放录制文件
 
 在线教育等场景中，通常需要在直播结束后多次回放录制文件，以便充分利用教学资源。
 
 #### 选择文件格式（HLS）
 在 [设置录制格式](#fileFormat) 中选择文件格式为 HLS。
-HLS 支持最长30分钟的断点续录，可以做到“一场直播（或一堂课）只产生一个回放链接”，且 HLS 文件支持绝大多数浏览器在线播放，非常适合视频回放场景。
+HLS 支持最长三十分钟的断点续录，可以做到“一场直播（或一堂课）只产生一个回放链接”，且 HLS 文件支持绝大多数浏览器在线播放，非常适合视频回放场景。
 
 #### 获取点播地址（video_url）
 在 [接收录制文件](#callback) 时，可以获取回调消息中 **video_url** 字段，该字段为当前录制文件在腾讯云的点播地址。
 
 #### 对接点播播放器
 根据使用平台对接点播播放器，具体操作参考如下：
-- [iOS 平台](http://doc.qcloudtrtc.com/group__TXVodPlayer__ios.html)
-- [Android 平台](http://doc.qcloudtrtc.com/group__TXVodPlayer__android.html)
+- [iOS 平台](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__ios.html)
+- [Android 平台](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVodPlayer__android.html)
 - [Web 浏览器](https://intl.cloud.tencent.com/document/product/266/33977)
 
->! 建议使用 [专业版](https://intl.cloud.tencent.com/document/product/647/34615) TRTC SDK，专业版集合了 [移动直播（MLVB）](https://intl.cloud.tencent.com/product/mlvb) 等功能，由于底层模块的高度复用，集成专业版的体积增量要小于同时集成两个独立的 SDK，并且可以避免符号冲突（symbol duplicate）的困扰。
+>! 建议使用 [专业版](https://intl.cloud.tencent.com/document/product/647/34615) TRTC SDK，专业版集合了 [超级播放器（Player+）](https://intl.cloud.tencent.com/document/product/266/7836)、[移动直播（MLVB）](https://intl.cloud.tencent.com/product/mlvb) 等功能，由于底层模块的高度复用，集成专业版的体积增量要小于同时集成两个独立的 SDK，并且可以避免符号冲突（symbol duplicate）的困扰。
 
 
 ## 相关费用
 
 云端录制与回放的相关费用包含以下几项，其中录制费用是基础费用，其他费用则会根据您的使用情况而按需收取。
 
->?本文中的价格为示例，仅供参考。若价格与实际不符，请以 [云端录制计费说明](https://intl.cloud.tencent.com/document/product/647/38385)、[云直播](https://buy.cloud.tencent.com/price/lvb) 和 [云点播](https://buy.cloud.tencent.com/price/vod) 的定价为准。
+>?本文中的价格为示例，仅供参考。若价格与实际不符，请以 [云端录制计费说明](https://intl.cloud.tencent.com/document/product/647/38385)、[云直播](https://buy.intl.cloud.tencent.com/pricing/css) 和 [云点播](https://buy.intl.cloud.tencent.com/pricing/vod) 的定价为准。
 
 #### 录制费用：转码或转封装产生的计算费用
 
@@ -338,17 +345,17 @@ HLS 支持最长30分钟的断点续录，可以做到“一场直播（或一�
 **存储费用：如将文件存储于腾讯云则会产生该费用**
 如果录制出的文件要存放于腾讯云，由于存储本身会产生磁盘资源的消耗，因此需要按照存储的资源占用进行收费。存储的时间越久费用也就越高，因此如无特殊需要，您可以将文件的存储时间设置的短一些来节省费用，或者将文件存放在自己的服务器上。存储费用可以选择 [视频存储（日结）价格 ](https://intl.cloud.tencent.com/document/product/266/14666) 进行日结计算。
 
->例如，您通过 [setVideoEncodrParam()](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCVideoEncParam) 设置主播的码率（videoBitrate）为1000kbps，录制该主播的直播视频（选择一种文件格式），录制一小时大约会产生一个 `(1000 / 8)KBps × 3600秒 = 450000KB = 0.45GB` 大小的视频文件，该文件每天产生的存储费用约为 `0.45GB × 0.0009 美元/GB/日 = 0.000405美‬元`。
+>例如，您通过 [setVideoEncoderParam()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e) 设置主播的码率（videoBitrate）为1000kbps，录制该主播的直播视频（选择一种文件格式），录制一小时大约会产生一个 `(1000 / 8)KBps × 3600秒 = 450000KB = 0.45GB` 大小的视频文件，该文件每天产生的存储费用约为  `0.45GB × 0.0009 美元/GB/日 = 0.000405美‬元`。
 
 #### 观看费用：如将文件用于点播观看则会产生该费用
 
 如果录制出的文件要被用于点播观看，由于观看本身会产生 CDN 流量消耗，因此需要按照点播的价格进行计费，默认按流量收费。观看的人数越多费用越高，观看费用可以选择 [视频加速（日结）价格](https://intl.cloud.tencent.com/document/product/266/14666) 进行日结计算。
 
->例如，您通过云端录制产生了一个1GB大小的文件，且有1000位观众从头到尾完整地观看了视频，大约会产生1TB的点播观看流量，那么按照阶梯价格表，1000位观众就会产生 `1000 × 1GB × 0.0794美元/GB = 79.4美元` 的费用。
+>例如，您通过云端录制产生了一个1GB大小的文件，且有1000位观众从头到尾完整地观看了视频，大约会产生1TB的点播观看流量，那么按照阶梯价格表，1000位观众就会产生 `1000 × 1GB ×0.0794美元/GB = 79.4美元`  的费用。
 >如果您选择从腾讯云下载文件到您的服务器上，也会产生一次很小的点播流量消耗，并且会在您的月度账单中有所体现。
 
 #### 转码费用：如开启混流录制则会产生该费用
 
 如果您启用了混流录制，由于混流本身需要进行解码和编码，所以还会产生额外的混流转码费用。 混流转码根据分辨率大小和转码时长进行计费，主播用的分辨率越高，连麦时间（通常在连麦场景才需要混流转码）越长，费用越高，具体费用计算可以参考 [直播转码](https://intl.cloud.tencent.com/document/product/267/39604)。
 
->例如，您通过 [setVideoEncodrParam()](http://doc.qcloudtrtc.com/group__TRTCCloudDef__ios.html#interfaceTRTCVideoEncParam) 设置主播的码率（videoBitrate）为1500kbps，分辨率为720P。如果有一位主播跟观众连麦了一个小时，连麦期间开启了 [云端混流](https://intl.cloud.tencent.com/document/product/647/34618)，那么产生的转码费用为 `0.0057 美元/分钟 × 60分钟 = 0.342美元`。
+>例如，您通过 [setVideoEncoderParam()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__ios.html#a57938e5b62303d705da2ceecf119d74e) 设置主播的码率（videoBitrate）为1500kbps，分辨率为720P。如果有一位主播跟观众连麦了一个小时，连麦期间开启了 [云端混流](https://intl.cloud.tencent.com/document/product/647/34618)，那么产生的转码费用为 `0.0057 美元/分钟 × 60分钟 = 0.342美元`。

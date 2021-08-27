@@ -1,7 +1,7 @@
 本文主要介绍如何快速地将腾讯云 TRTC SDK（iOS）集成到您的项目中，只要按照如下步骤进行配置，就可以完成 SDK 的集成工作。
 
 ## 开发环境要求
-- Xcode 9.0+。
+- Xcode 9.0+。 
 - iOS 9.0 以上的 iPhone 或者 iPad 真机。
 - 项目已配置有效的开发者签名。
 
@@ -25,7 +25,7 @@ pod init
 编辑 Podfile 文件，并根据需要选择合适的 SDK 版本：
 - [精简版](https://intl.cloud.tencent.com/document/product/647/34615)：安装包体积增量最小，但仅支持 TRTC 和 CDN 播放（TXLivePlayer）功能。
 ```
-  platform :ios, '8.0'
+ platform :ios, '8.0'
   
   target 'App' do
   pod 'TXLiteAVSDK_TRTC', :podspec => 'http://pod-1252463788.cosgz.myqcloud.com/liteavsdkspec/TXLiteAVSDK_TRTC.podspec'
@@ -34,7 +34,7 @@ pod init
 
 - [专业版](https://intl.cloud.tencent.com/document/product/647/34615)：除了 TRTC，还包含 RTMP 推流（TXLivePusher）、CDN 播放（TXLivePlayer）、点播播放（TXVodPlayer）以及短视频（UGSV）等多种功能。
 ```
-  platform :ios, '8.0'
+ platform :ios, '8.0'
   
   target 'App' do
   pod 'TXLiteAVSDK_Professional', :podspec => 'http://pod-1252463788.cosgz.myqcloud.com/liteavsdkspec/TXLiteAVSDK_Professional.podspec'
@@ -70,7 +70,7 @@ pod 命令执行完后，会生成集成了 SDK 的 .xcworkspace 后缀的工程
  ![](https://main.qcloudimg.com/raw/85509cc24bd958e7b9978e11937597c5.png)
 3. 单击 **Link Binary with Libraries** 项展开，单击底下的“+”号图标去添加依赖库。
  ![](https://main.qcloudimg.com/raw/54be71cc14ec79ce642216612544a8a4.png)
-4. 依次添加所下载的 TRTC SDK Framework 及其所需依赖库 **libc++** 、**Accelerate.framework**。
+4. 依次添加所下载的 TRTC SDK Framework 及其所需依赖库 **libc++.tbd** 、**Accelerate.framework** 和 **libresolv.tbd**、**AVFoundation.framework**。
  ![](https://main.qcloudimg.com/raw/2fa94b7f81c7e9c4ac09733782e79c10.png)
 
 
@@ -79,20 +79,35 @@ pod 命令执行完后，会生成集成了 SDK 的 .xcworkspace 后缀的工程
 - **Privacy - Microphone Usage Description**，并填入麦克风使用目的提示语。
 - **Privacy - Camera Usage Description**，并填入摄像头使用目的提示语。
 
-![](https://main.qcloudimg.com/raw/54cc6989a8225700ff57494cba819c7b.jpg)
+![](https://main.qcloudimg.com/raw/7c483aae65f64cd2bf35b55d9c896a52.png)
 
 
 ## 引用 TRTC SDK
-项目代码中使用 SDK 有两种方式：
-- 方式一： 在项目需要使用 SDK API 的文件里，添加模块引用。
+TRTC SDK 支持两种调用方式，您可以任选一种
+### 方案一：通过 Objective-C 或 Swift 接口引用 TRTC SDK
+在 Objective-C 或 Swift 代码中使用 SDK 有两种方式：
+- **模块引用**：在项目需要使用 SDK API 的文件里，添加模块引用。
 ```
 @import TXLiteAVSDK_TRTC;
 ```
-
-- 方式二：在项目需要使用 SDK API 的文件里，引入具体的头文件。
+- **头文件引用**：在项目需要使用 SDK API 的文件里，引入具体的头文件。
 ```
 #import TXLiteAVSDK_TRTC/TRTCCloud.h
 ```
+
+
+[](id:using_cpp)
+### 方案二：通过 C++ 接口引用 TRTC SDK
+1. **引用头文件**：如果您要使用 C++ 接口来开发 iOS 应用，请引用 `TXLiteAVSDK_TRTC.framework/Headers/cpp_interface` 目录下的头文件
+```
+#include TXLiteAVSDK_TRTC/cpp_interface/ITRTCCloud.h
+```
+2. **使用命名空间**：C++ 全平台接口的方法、类型等均定义在 trtc 命名空间中，为了让代码更加简洁，建议您直接使用 trtc 命名空间
+```
+using namespace trtc;
+```
+
+>? 对于 C++ 接口的使用方式，请参见 [全平台（C++）API 概览](https://intl.cloud.tencent.com/document/product/647/35131)。
 
 ## 常见问题
 ### 1. TRTC SDK 是否支持后台运行？

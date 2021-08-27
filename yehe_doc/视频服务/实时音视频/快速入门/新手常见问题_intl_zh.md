@@ -12,8 +12,8 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
                                  base64(userid + sdkappid + currtime + expire)))
 ```
 
-[](id:que2)
 
+[](id:que2)
 ### 实时音视频最多可以同时创建多少个房间？
 支持同时并发存在4294967294个房间，累计房间数量无限制。
 
@@ -28,17 +28,17 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 支持，您可以参考如下文档：
 - [屏幕分享（Windows）](https://intl.cloud.tencent.com/document/product/647/37335)
 - [屏幕分享（Mac）](https://intl.cloud.tencent.com/document/product/647/37336)
-- [屏幕分享（桌面浏览器）](https://intl.cloud.tencent.com/document/product/647/35163)
+- [屏幕分享（Web）](https://intl.cloud.tencent.com/document/product/647/35163)
 
-屏幕分享接口详情请参见 [Windows（C++）API](https://intl.cloud.tencent.com/document/product/647/35131) 或 [Windows（C#）API](https://intl.cloud.tencent.com/document/product/647/)。另外，您也可以使用 [Electron 接口](https://intl.cloud.tencent.com/document/product/647/35141)。
+屏幕分享接口详情请参见 [Windows（C++）API](https://intl.cloud.tencent.com/document/product/647/35131) 或 Windows（C#）API。另外，您也可以使用 [Electron 接口](https://intl.cloud.tencent.com/document/product/647/35141)。
 
 
 [](id:que5)
 ### TRTC 支持哪些平台？
-支持的平台包括 iOS、Android、Windows(C++)、Windows(C#)、Mac、桌面浏览器、Electron、微信小程序，更多详情请参见 [平台支持](https://intl.cloud.tencent.com/document/product/647/35078)。
-
+支持的平台包括 iOS、Android、Windows(C++)、Windows(C#)、Mac、Web、Electron，更多详情请参见 [平台支持](https://intl.cloud.tencent.com/document/product/647/35078)。
 
 [](id:que6)
+
 ### 实时音视频最多可以支持多少个人同时通话？
 - 通话模式下，单个房间最多支持300人同时在线，最多支持50人同时开启摄像头或麦克风。
 - 直播模式下，单个房间支持10万人以观众身份在线观看，最多支持50人以主播身份开启摄像头或麦克风。
@@ -60,10 +60,10 @@ TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决�
 ### TRTC 房间支不支持踢人、禁止发言、静音？  
 支持。
 - 如果是简单的信令操作，可以使用 TRTC 的自定义信令接口 sendCustomCmdMsg，开发者自己定义相应的控制信令，收到控制信令的通话方执行对应操作即可。例如，踢人就是定义一个踢人的信令，收到此信令的用户就自行退出房间。
-- 如果是需要实现更完善的操作逻辑，建议开发者通过 [即时通信 IM](https://intl.cloud.tencent.com/zh/document/product/1047) 来实现相关逻辑，将 TRTC 的房间与 IM 群组进行映射，在 IM 群组中收发自定义消息来实现相应的操作。
+- 如果是需要实现更完善的操作逻辑，建议开发者通过 [即时通信 IM](https://intl.cloud.tencent.com/document/product/1047) 来实现相关逻辑，将 TRTC 的房间与 IM 群组进行映射，在 IM 群组中收发自定义消息来实现相应的操作。
+
 
 [](id:que10)
-
 ### TRTC 音视频流是否支持通过 CDN 拉流观看？ 
 支持，详情请参见 [实现 CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242)。
 
@@ -74,13 +74,13 @@ TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决�
 
 
 [](id:que12)
-### 桌面浏览器端 SDK 的支持哪些浏览器？  
-目前主要在桌面版 Chrome 浏览器、桌面版 Safari 浏览器以及移动版的 Safari 浏览器上有较为完整的支持，其他平台（例如 Android 平台的浏览器）支持情况均比较差，具体详情请参见 [支持的平台](https://intl.cloud.tencent.com/document/product/647/35143)。
-您可以在浏览器打开 [WEBRTC 能力测试](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) 测试是否完整的支持 WebRTC 的功能。
+### Web 端 SDK 的支持哪些浏览器？  
+目前主要在桌面版 Chrome 浏览器、桌面版 Safari 浏览器以及移动版的 Safari 浏览器上有较为完整的支持，其他平台（例如 Android 平台的浏览器）支持情况均比较差，具体详情请参见 [支持的平台](https://intl.cloud.tencent.com/document/product/647/41664)。
+您可以在浏览器打开 [WebRTC 能力测试](https://web.sdk.qcloud.com/trtc/webrtc/demo/detect/index.html) 测试是否完整的支持 WebRTC 的功能。
 
 
 [](id:que13)
-### 桌面浏览器端 SDK 日志中报错 NotFoundError、NotAllowedError、NotReadableError、OverConstrainedError 以及 AbortError 分别是什么意思？
+### Web 端 SDK 日志中报错 NotFoundError、NotAllowedError、NotReadableError、OverConstrainedError 以及 AbortError 分别是什么意思？
 
 
 | 错误名 | 描述 | 处理建议 |
@@ -96,7 +96,7 @@ TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决�
 
 
 [](id:que14)
-### 怎么确认桌面浏览器端 SDK 是否能正常获取到设备（摄像头/麦克风）列表？
+### 怎么确认 Web 端 SDK 是否能正常获取到设备（摄像头/麦克风）列表？
 1. 检查浏览器是否能够正常使用设备：
 直接在页面打开控制台，输入 `navigator.mediaDevices.enumerateDevices()` 确认能否获取到设备列表。
  - 如果正常获取到设备会返回一个 Promise，里面会有 MediaDeviceInfo 对象数组，数组里的每个对象对应一个可用的媒体设备。
@@ -105,15 +105,15 @@ TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决�
 
 
 
-[](id:que17)
 
+[](id:que17)
 ### 直播、互动直播、实时音视频以及旁路直播有什么区别和关系？
 - **直播**（关键词：一对多，RTMP/HLS/HTTP-FLV，CDN）
  直播分为推流端、播放端以及直播云服务，云服务使用 CDN 进行直播流的分发。推流使用的是通用标准的协议 RTMP，经过 CDN 分发后，播放时一般可以选择 RTMP、HTTP-FLV 或 HLS（H5 支持）等方式进行观看。
 - **互动直播**（关键词：连麦、PK）
  互动直播是一种业务形式，指主播与观众之间进行互动连麦，主播与主播之间进行互动PK的一种直播类型。
 - **实时音视频**（关键词：多人互动，UDP 私有协议，低延时）
- 实时音视频（Real-Time Communication, RTC）主要应用场景是音视频互动和低延时直播，使用基于 UDP 的私有协议，其延迟可低至100ms，典型的场景就是 QQ 电话、腾讯会议、大班课等。 腾讯云实时音视频（TRTC）覆盖全平台，除了 iOS/Android/Windows 之外，还支持小程序以及 WebRTC 互通，并且支持通过云端混流的方式将画面旁路直播到 CDN。
+ 实时音视频（Tencent Real-Time Communication，TRTC）主要应用场景是音视频互动和低延时直播，使用基于 UDP 的私有协议，其延迟可低至100ms，典型的场景就是 QQ 电话、腾讯会议、大班课等。 腾讯云实时音视频（TRTC）覆盖全平台，除了 iOS/Android/Windows 之外，还支持 WebRTC 互通，并且支持通过云端混流的方式将画面旁路直播到 CDN。
 - **旁路直播**（关键词：云端混流，RTC 旁路转推，CDN）
  旁路直播是一种技术，指的是将低延时连麦房间里的多路推流画面复制出来，在云端将画面混合成一路，并将混流后的画面推流给直播 CDN 进行分发播放。 
 
@@ -143,7 +143,7 @@ TRTC 专门针对在线直播场景推出了10万人低延时互动直播解决�
 - 若您使用自动加载的方法，`latest.release` 为匹配最新版并进行自动加载，不需要对版本号进行修改。具体集成方法请参见 [一分钟集成 SDK](https://intl.cloud.tencent.com/document/product/647/35092)。
 - 当前 SDK 最新版本号可通过发布日志查看，具体请参见：
   - iOS & Android 端，请参见 [发布日志（App）](https://intl.cloud.tencent.com/document/product/647/39426)。
-  - 桌面浏览器端，请参见 [发布日志（桌面浏览器）](https://intl.cloud.tencent.com/document/product/647/39779)。
+  - Web 端，请参见 [发布日志（Web）](https://intl.cloud.tencent.com/document/product/647/39779)。
   - Electron 端，请参见 [发布日志（Electron）](https://intl.cloud.tencent.com/document/product/647/38702)。
 
 
