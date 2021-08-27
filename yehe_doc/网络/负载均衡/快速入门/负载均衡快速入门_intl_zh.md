@@ -24,7 +24,7 @@
 1. 登录 [负载均衡控制台](https://console.cloud.tencent.com/clb/index?rid=1&type=2%2C3)。
 2. 在“实例管理”页面中，找到目标负载均衡实例，单击【配置监听器】。
 3. 在“监听器管理”页签中的“HTTP/HTTPS 监听器”区域下，单击【新建】。
-![](https://main.qcloudimg.com/raw/2e1fcb0c301893859413d33bdc280e93.png)
+![](https://main.qcloudimg.com/raw/782c60eeb4bf9aa334e4243cf4e068d5.png)
 4. 在“创建监听器”对话框中，配置以下内容，配置完成后，单击【提交】。
   - 监听器名称。
   - 监听协议端口。例如 `HTTP：80`。
