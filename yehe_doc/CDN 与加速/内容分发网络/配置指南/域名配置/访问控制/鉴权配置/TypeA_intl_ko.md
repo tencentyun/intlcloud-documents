@@ -2,7 +2,7 @@
 **액세스 URL 형식**
 `http://DomainName/Filename?sign=timestamp-rand-uid-md5hash`
 
->> 액세스 URL에 중국어를 포함할 수 없습니다.
+>!액세스 URL에 중국어를 포함할 수 없습니다.
 
 **알고리즘 설명**
 - timestamp: 10진법(UNIX 타임스탬프).
@@ -13,7 +13,7 @@
 **요청 예시**
 `http://cloud.tencent.com/test.jpg?sign=1582791032-im1acp76sx9sdqe601v-0-dd63f95e739ed4b47427a129d21ef4e3`
 
-> !MD5 계산 시 요청 경로가 `http://cloud.tencent.com/test.jpg`인 경우, MD5 계산 경로는 `/test.jpg`입니다.
+>!MD5 계산 시 요청 경로가 `http://cloud.tencent.com/test.jpg`인 경우, MD5 계산 경로는 `/test.jpg`입니다.
 
 ## 설정 가이드
 ### 매개변수 설명
