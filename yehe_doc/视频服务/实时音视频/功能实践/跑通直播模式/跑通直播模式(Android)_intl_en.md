@@ -1,32 +1,34 @@
 ## Use Cases
-TRTC supports four room entry modes, among which video call (VideoCall) and audio call (VoiceCall) are classified as [call mode](https://intl.cloud.tencent.com/document/product/647/35103), while interactive video live streaming (Live) and interactive audio live streaming (VoiceChatRoom) are classified as live streaming mode.
-TRTC in live streaming mode supports a maximum of 100,000 online users in one single room with a co-anchoring latency of below 300 ms and a watch latency of below 1,000 ms and enables users to mic on/off smoothly. This mode is suitable for such application scenarios as low-latency interactive live streaming, interactive classroom for up to 100,000 participants, video dating, online education, remote training, and large-scale conferencing.
+TRTC supports four room entry modes. Video call (`VideoCall`) and audio call (`VoiceCall`) are the [call modes](https://intl.cloud.tencent.com/document/product/647/35103), and interactive live video streaming (`Live`) and interactive live audio streaming (`VoiceChatRoom`) are the live streaming modes.
+The live streaming modes allow a maximum of 100,000 concurrent users each room, with smooth mic on/off. Co-anchoring latency is kept below 300 ms and watch latency below 1,000 ms. The live streaming modes are suitable for use cases such as low-latency interactive live streaming, interactive classrooms for up to 100,000 participants, video dating, online education, remote training, and super conferences.
 
 ## How It Works
-The TRTC service consists of two types of server nodes: access servers and proxy servers:
+TRTC services use two types of server nodes: access servers and proxy servers.
 - **Access server**
-Backed by the highest-quality lines and high-performance servers, this type of nodes is ideal for processing end-to-end low-latency co-anchoring calls, but the fees per unit time are relatively high.
+This type of nodes use high-quality lines and high-performance servers and are better suited to drive low-latency end-to-end calls, but the unit cost is relatively high.
 - **Proxy server**
-With general lines and average-performance servers, this type of nodes is suitable for processing high-concurrence playback of pulled streams, and the fees per unit time are low.
+This type of servers use mediocre lines and average-performance servers and better suited to power high-concurrency stream pulling and playback. The unit cost is relatively low.
 
-In live streaming mode, TRTC uses the concept of "role". Specifically, users are divided into two roles, namely, "anchors" and "viewers". "Anchors" will be allocated to access servers, while "viewers" to proxy servers. A room can accommodate up to 100,000 viewers.
-If a "user" wants to mic on, the role needs to be switched (switchRole) to "anchor" for the user to speak. During role switch, the user is also migrated from a proxy server to an access server. Thanks to its proprietary low-latency watch and smooth mic-on/off technologies, TRTC can get the whole switch done in a blink.
+In the live streaming modes, TRTC has introduced the concept of "role". Users are either in the role of "anchor" or "audience". Anchors are assigned to access servers, and audience to proxy servers. Each room allows up to 100,000 users in the role of audience.
+For audience to speak, they must switch the role (`switchRole`) to “anchor”. The switching process involves users being migrated from proxy servers to access servers. TRTC’s low-latency streaming and smooth mic on/off technologies help keep this process short.
+![](https://main.qcloudimg.com/raw/e6a7492c3d0151252f7853373f6bcbbc.png)
 
 ## Sample Code
-You can log in to [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTCSimpleDemo) to get the sample code related to this document.
+You can visit [GitHub](https://github.com/tencentyun/TRTCSDK/tree/master/Android/TRTC-API-Example) to obtain the sample code used in this document.
+![](https://main.qcloudimg.com/raw/959efe00790a0a2952f8837a48baec25.png)
 
-
->?If your access to GitHub is slow, you can directly download [TXLiteAVSDK_TRTC_Android_latest.zip](https://liteavsdk-1252463788.cosgz.myqcloud.com/TXLiteAVSDK_TRTC_Android_latest.zip).
+>?If your access to GitHub is slow, download the ZIP file [here](https://liteav.sdk.qcloud.com/download/latest/TXLiteAVSDK_TRTC_Android_latest.zip).
 
 ## Directions
-<span id="step1"> </span>
+[](id:step1)
+
 ### Step 1. Integrate the SDK
 You can integrate the **TRTC SDK** into your project in the following ways:
-#### Method 1. Automatically load the SDK (aar)
+#### Method 1: automatic loading (AAR)
 The TRTC SDK has been released to the JCenter repository, and you can configure Gradle to download updates automatically.
-You only need to use Android Studio to open the project to be integrated with the SDK (integration with `TRTCSimpleDemo` has already been completed, and the sample code is for your reference) and modify the `app/build.gradle` file in simple steps to complete SDK integration:
+Use Android Studio to open the project into which you want to integrate the TRTC SDK (`TRTC-API-Example` has been integrated, and you can refer to the sample code), and follow the steps below to modify the `app/build.gradle` file.
 
-1. Add the TRTC SDK dependencies to `dependencies`.
+1. Add the TRTC SDK dependency to `dependencies`.
 ```
 dependencies {
       compile 'com.tencent.liteav:LiteAVSDK_TRTC:latest.release'
@@ -43,15 +45,15 @@ dependencies {
   }
 ```
 3. Click **Sync Now** to sync the SDK.
- If JCenter can be connected to, the SDK will be automatically downloaded and integrated into the project.
+ If you have no problem connecting to JCenter, the SDK will be downloaded and integrated into your project automatically.
 
-#### Method 2. Download the ZIP package for manual integration
-You can directly download the [ZIP package](https://intl.cloud.tencent.com/document/product/647/34615) and integrate the SDK into your project as instructed in [Quick Integration (Android)](https://intl.cloud.tencent.com/document/product/647/35093).
+#### Method 2: manual integration
+You can download the [ZIP file](https://intl.cloud.tencent.com/document/product/647/34615) of the SDK and integrate it into your project as instructed in [SDK Quick Integration > Android](https://intl.cloud.tencent.com/document/product/647/35093).
 
 
-<span id="step2"> </span>
+[](id:step2)
 ### Step 2. Configure application permissions
-Add the permissions to request camera, mic, and network access in the `AndroidManifest.xml` file.
+Add camera, mic, and network permission requests in `AndroidManifest.xml`.
 
 ```
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -71,18 +73,18 @@ Add the permissions to request camera, mic, and network access in the `AndroidMa
 ```
 
 
-<span id="step3"> </span>
-### Step 3. Initialize an SDK instance and listen on the event callback
+[](id:step3)
+### Step 3. Initialize an SDK instance and configure event callbacks
 
-1. Call the [sharedInstance()](https://cloud.tencent.com/document/product/647/32267) API to create a `TRTCCloud` instance.
+1. Call the [sharedInstance()](https://intl.cloud.tencent.com/document/product/647/35125) API to create a `TRTCCloud` instance.
  ```java
-// Create a `trtcCloud` instance
+// Create a TRTCCloud instance
 mTRTCCloud = TRTCCloud.sharedInstance(getApplicationContext());
 mTRTCCloud.setListener(new TRTCCloudListener());
-```
-2. Set the `setListener` attribute to register the event callback and listen on relevant events and error notifications.
+ ```
+2. Set the attributes of `setListener` to subscribe to event callbacks and listen for event and error notifications.
 ```java
-// Listen on error notifications, which indicate that the SDK cannot continue to run
+// Error notifications indicate that the SDK has stopped working and therefore must be listened for
 @Override
 public void onError(int errCode, String errMsg, Bundle extraInfo) {
     Log.d(TAG, "sdk callback onError");
@@ -95,30 +97,32 @@ public void onError(int errCode, String errMsg, Bundle extraInfo) {
 }
 ```
 
-<span id="step4"> </span>
+[](id:step4)
 ### Step 4. Assemble the room entry parameter `TRTCParams`
-When calling the [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c) API, you need to enter a key parameter [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a674b3c744a0522802d68dfd208763b59), which includes the following required fields:
+When calling the [enterRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c) API, you need to pass in a key parameter [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#a674b3c744a0522802d68dfd208763b59), which includes the following required fields:
 
 | Parameter | Field Type | Description | Example |
 |---------|---------|---------|---------|
-| sdkAppId | Numeric | Application ID. You can view the `SDKAppID` in the <a href="https://console.cloud.tencent.com/trtc/app">TRTC Console</a>. |1400000123 |
-| userId | String | It can contain only letters (a–z and A–Z), digits (0–9), underscores, and hyphens. | test_user_001 |
-| userSig | String | `userSig` can be calculated based on `userId`. For the calculation method, please see [How to Calculate UserSig](https://intl.cloud.tencent.com/document/product/647/35166). | eJyrVareCeYrSy1SslI... |
-| roomId | Numeric | Room IDs in string type are not supported by default, as they will lower the room entry speed. If you need to used string-type room IDs, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance. | 29834 |
+| sdkAppId | Number | Application ID, which you can view in the <a href="https://console.cloud.tencent.com/trtc/app">TRTC console</a>. |1400000123 |
+| userId | String | Can contain only letters (a-z and A-Z), digits (0-9), underscores, and hyphens. | test_user_001 |
+| userSig | String | `userSig` is calculated based on `userId`. For the calculation method, please see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166). | eJyrVareCeYrSy1SslI... |
+| roomId | Number | String-type room IDs tend to slow down the room entry process and are therefore not supported by the SDK by default. If you need to use string-type room IDs, please [submit a ticket](https://console.cloud.tencent.com/workorder/category). | 29834 |
 
->!In TRTC, users with the same `userId` cannot be in the same room at the same time; otherwise, there will be a conflict.
+>!
+>- In TRTC, users with the same `userId` cannot be in the same room at the same time as it will cause a conflict.
+>- The value of `appScene` must be the same on each client. Inconsistent `appScene` may cause unexpected problems.
 
-<span id="step5"> </span>
-### Step 5. The anchor enables camera preview and mic capture
-1. The anchor can call [startLocalPreview()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a84098740a2e69e3d1f02735861614116) to enable the preview of local camera, and the SDK will request the system camera access.
-2. The anchor can call [setLocalViewFillMode()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#af36ab721c670e5871e5b21a41518b51d) to set the display mode of the local video image:
- - `Fill` indicates the fill mode where the image may be scaled up proportionally or cropped, but no black bars will exist.
- - `Fit` indicates the fit mode where the image may be scaled down proportionally to fit the screen, but black bars may exist.
-3. The anchor can call [setVideoEncoderParam()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ae047d96922cb1c19135433fa7908e6ce) to set the encoding parameter of the local video, which determines the [image quality](https://intl.cloud.tencent.com/document/product/647/35153) of the video watched by other users in the room.
-4. The anchor can call [startLocalAudio()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a9428ef48d67e19ba91272c9cf967e35e) to enable the mic, and the SDK will request the system mic access.
+[](id:step5)
+### Step 5. Enable camera preview and mic capturing
+1. Call [startLocalPreview()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a84098740a2e69e3d1f02735861614116) to enable preview of the local camera. The SDK will ask for camera permission.
+2. Call [setLocalViewFillMode()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#af36ab721c670e5871e5b21a41518b51d) to set the display mode of the local video image:
+ - `Fill`: aspect fill. The image may be scaled up and cropped, but there are no black bars.
+ - `Fit`: aspect fit. The image may be scaled down to ensure that it’s displayed in its entirety, and there may be black bars.
+3. Call [setVideoEncoderParam()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ae047d96922cb1c19135433fa7908e6ce) to set the encoding parameters for the local video, which determine the [quality of your video](https://intl.cloud.tencent.com/document/product/647/35153) seen by other users in the room.
+4. Call [startLocalAudio()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a9428ef48d67e19ba91272c9cf967e35e) to turn on the mic. The SDK will ask for mic permission.
 
 ```java
-// Sample code: send local audio/video streams
+// Sample code: publish local audio/video streams
 mTRTCCloud.setLocalViewFillMode(TRTC_VIDEO_RENDER_MODE_FIT);
 mTRTCCloud.startLocalPreview(mIsFrontCamera, localView);
 // Set local video encoding parameter
@@ -131,25 +135,25 @@ mTRTCCloud.setVideoEncoderParam(encParam);
 mTRTCCloud.startLocalAudio();
 ```
 
-<span id="step6"> </span>
-### Step 6. The anchor sets beauty filters
+[](id:step6)
+### Step 6. Sets beauty filters
 
-1. The anchor can call [getBeautyManager()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3fdfeb3204581c27bbf1c8b5598714fb) to get the beauty filter setting API [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager).
-2. The anchor can call [setBeautyStyle()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a46ffe2b60f916a87345fb357110adf10) to set the beauty filter style.
- - Smooth: smooth style, which has more obvious skin smoothing effect, similar to the selfie style of internet influencers.
- - Nature: natural style, which retains more facial details and seems more natural subjectively.
- - Pitu: it is supported only for the [Enterprise Edition](https://intl.cloud.tencent.com/document/product/647/34615#Enterprise).
-3. The anchor can call [setBeautyLevel()](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html#a7f388122cf319218b629fb8e192a2730) to set the skin smoothing level (level 5 is generally okay).
-4. The anchor can call [setWhitenessLevel()](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html#aa4e57d02a4605984f4dc6d3508987746) to set the skin brightening level (level 5 is generally okay).
+1. Call [getBeautyManager()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3fdfeb3204581c27bbf1c8b5598714fb) to get the beauty filter setting API [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager).
+2. Call [setBeautyStyle()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a46ffe2b60f916a87345fb357110adf10) to set the beauty filter style.
+ - `Smooth`: smooth. This style features more obvious skin smoothing effect and is typically used by influencers.
+ - Nature: natural. This style retains more facial details and is more natural.
+ - `Pitu`: this style is supported only by the [Enterprise Edition](https://intl.cloud.tencent.com/document/product/647/34615#Enterprise).
+3. Call [setBeautyLevel()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html#a7f388122cf319218b629fb8e192a2730) to set the skin smoothing strength (`5` is recommended).
+4. Call [setWhitenessLevel()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html#aa4e57d02a4605984f4dc6d3508987746) to set the skin brightening strength (`5` is recommended).
 
 
-<span id="step7"> </span>
-### Step 7. The anchor creates a room and starts push
-1. The anchor sets the `role` field in [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a674b3c744a0522802d68dfd208763b59) to **`TRTCCloudDef.TRTCRoleAnchor`**, which indicates that the current user role is anchor.
-2. The anchor can call [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c) to create an audio/video room whose ID is the `roomId` field value in the `TRTCParams` parameter and specify the **`appScene`** parameter:
- - TRTCCloudDef.TRTC_APP_SCENE_LIVE: interactive video live streaming mode, which is used as an example in this document.
- - TRTCCloudDef.TRTC_APP_SCENE_VOICE_CHATROOM: interactive audio live streaming mode.
-3. After a room is successfully created, the anchor starts encoding and transferring audio/video data. At the same time, the SDK will call back the [onEnterRoom(result)](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#abf0525c3433cbd923fd1f13b42c416a2) event. If `result` is greater than 0, the room entry succeeds, and the specific value indicates the time in milliseconds (ms) used for entering the room; if `result` is less than 0, the room entry fails, and the specific value indicates the error code of the failure.
+[](id:step7)
+### Step 7. Create a room and push streams
+1. Set the `role` field in [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#a674b3c744a0522802d68dfd208763b59) to **`TRTCCloudDef.TRTCRoleAnchor`** to take the role of “anchor”.
+2. Call [enterRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c), specifying **`appScene`**, and a room whose ID is the value of the `roomId` field in `TRTCParams` will be created.
+ - `TRTCCloudDef.TRTC_APP_SCENE_LIVE`: the interactive live video streaming mode, which is used in the example of this document.
+ - `TRTCCloudDef.TRTC_APP_SCENE_VOICE_CHATROOM`: the interactive live audio streaming mode
+3. After the room is created, start encoding and transferring audio/video data. The SDK will return the [onEnterRoom(result)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#abf0525c3433cbd923fd1f13b42c416a2) callback. If `result` is greater than 0, room entry succeeds, and the value indicates the time (ms) room entry takes; if `result` is less than 0, room entry fails, and the value is the error code for the failure.
 
 ```java
 public void enterRoom() {
@@ -171,54 +175,54 @@ public void onEnterRoom(long result) {
 }
 ```
 
-<span id="step8"> </span>
-### Step 8. The viewer enters the room to watch the live stream
-1. The viewer sets the field `role` in [TRTCParams](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a674b3c744a0522802d68dfd208763b59) to **`TRTCCloudDef.TRTCRoleAudience`**, which indicates that the current user role is viewer.
-2. The viewer can call [enterRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c) to enter the audio/video room whose ID is the `roomId` field value in the `TRTCParams` parameter and specify the **`appScene`** parameter:
- - TRTCCloudDef.TRTC_APP_SCENE_LIVE: interactive video live streaming mode, which is used as an example in this document.
- - TRTCCloudDef.TRTC_APP_SCENE_VOICE_CHATROOM: interactive audio live streaming mode.
-3. View the anchor's video image:
- - If the viewer knows the anchor's `userId` in advance, the viewer can use it to call [startRemoteView(userId, view)](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a57541db91ce032ada911ea6ea2be3b2c) after successfully entering the room so as to display the anchor's video image.
- - If the viewer does not know the anchor's `userId`, the viewer will receive the [onUserVideoAvailable()](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ac1a0222f5b3e56176151eefe851deb05) event notification after successfully entering the room. The viewer can use the anchor's `userId` obtained from the callback to call [startRemoteView(userId, view)](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a57541db91ce032ada911ea6ea2be3b2c) so as to display the anchor's video image.
+[](id:step8)
+### Step 8. Enter the room as audience
+1. Set the `role` field in [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#a674b3c744a0522802d68dfd208763b59) to **`TRTCCloudDef.TRTCRoleAudience`** to take the role of “audience”.
+2. Call [enterRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c) to enter the room whose ID is the value of the `roomId` field in `TRTCParams`, specifying **`appScene`**.
+ - `TRTCCloudDef.TRTC_APP_SCENE_LIVE`: the interactive live video streaming mode, which is used in the example of this document.
+ - `TRTCCloudDef.TRTC_APP_SCENE_VOICE_CHATROOM`: the interactive live audio streaming mode
+3. Watch the anchor’s video:
+ - If you know the anchor’s `userId`, call [startRemoteView(userId, view)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a57541db91ce032ada911ea6ea2be3b2c) with the anchor’s `userId` passed in to play the anchor's video.
+ - If you do not know the anchor’s `userId`, find the anchor’s `userId` in the [onUserVideoAvailable()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#ac1a0222f5b3e56176151eefe851deb05) callback, which you will receive after room entry, and call [startRemoteView(userId, view)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a57541db91ce032ada911ea6ea2be3b2c) with the anchor’s `userId` passed in to play the anchor’s video.
 
-<span id="step9"> </span>
-### Step 9. The viewer co-anchors with the anchor
-1. The viewer can call [switchRole(TRTCCloudDef.TRTCRoleAnchor)](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a915a4b3abca0e41f057022a4587faf66) to switch the role to anchor (TRTCCloudDef.TRTCRoleAnchor).
-2. The viewer can call [startLocalPreview()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a84098740a2e69e3d1f02735861614116) to enable the local image.
-3. The viewer can call [startLocalAudio()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a9428ef48d67e19ba91272c9cf967e35e) to enable mic capture:
+[](id:step9)
+### Step 9. Co-anchor
+1. Call [switchRole(TRTCCloudDef.TRTCRoleAnchor)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a915a4b3abca0e41f057022a4587faf66) to switch the role to “anchor” (`TRTCCloudDef.TRTCRoleAnchor`).
+2. Call [startLocalPreview()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a84098740a2e69e3d1f02735861614116) to enable preview of the local image.
+3. Call [startLocalAudio()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a9428ef48d67e19ba91272c9cf967e35e) to enable mic capturing.
 
 ```java
-// Sample code: the viewer mics on
+// Sample code: audience becomes an anchor
 mTrtcCloud.switchRole(TRTCCloudDef.TRTCRoleAnchor);
 mTrtcCloud.startLocalAudio();
 mTrtcCloud.startLocalPreview(mIsFrontCamera, localView);
 
-// Sample code: the viewer mics off
+// Sample code: an anchor becomes audience
 mTrtcCloud.switchRole(TRTCCloudDef.TRTCRoleAudience);
 mTrtcCloud.stopLocalAudio();
 mTrtcCloud.stopLocalPreview();
 ```
 
 
-<span id="step10"> </span>
-### Step 10. Anchors compete across rooms (cross-room co-anchoring)
+[](id:step10)
+### Step 10. Co-anchor across rooms
 
-In TRTC, two anchors in different rooms can use the "cross-room call" feature to engage in "cross-room co-anchoring" without the need to exit their current rooms.
+Anchors from two rooms can compete with each other without exiting their current rooms.
 
-1. Anchor A calls the [connectOtherRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#ac1ab7e4a017b99bb91d89ce1b0fac5fd) API. Currently, the API parameters are in JSON format, and `roomId` and `userId` of anchor B need to be spliced into a parameter in the format of `{"roomId": "978","userId": "userB"}` and then passed in to the API function.
-2. After the cross-room call is successfully made, anchor A will receive the [onConnectOtherRoom()](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ac9fd524ab9de446f4aaf502f80859e95) event callback. At the same time, all users in both rooms will receive the [onUserVideoAvailable()](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ac1a0222f5b3e56176151eefe851deb05) and [onUserAudioAvailable()](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ac474bbf919f96c0cfda87c93890d871f) event callbacks.
- For example, when anchor A in room "001" uses `connectOtherRoom()` to successfully call anchor B in room "002", all users in room "001" will receive the `onUserVideoAvailable(B, true)` and `onUserAudioAvailable(B, true)` callbacks of anchor B, and all users in room "002" will receive the `onUserVideoAvailable(A, true)` and `onUserAudioAvailable(A, true)` callbacks of anchor A.
-3. Users in both rooms can call [startRemoteView(userId, view)](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a57541db91ce032ada911ea6ea2be3b2c) to display the video image of the anchor in the other room, and audio will be automatically played back.
+1. Anchor A calls the [connectOtherRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ac1ab7e4a017b99bb91d89ce1b0fac5fd) API. The API uses parameters in JSON strings, so anchor A needs to pass the `roomId` and `userId` of anchor B in the format of `{"roomId": 978,"userId": "userB"}` to the API.
+2. After co-anchoring succeeds, anchor A will receive the [onConnectOtherRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#ac9fd524ab9de446f4aaf502f80859e95) callback, and all users in both rooms will receive the [onUserVideoAvailable()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#ac1a0222f5b3e56176151eefe851deb05) and [onUserAudioAvailable()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#ac474bbf919f96c0cfda87c93890d871f) callbacks.
+ For example, after anchor A in room "001" uses `connectOtherRoom()` to call anchor B in room "002" successfully, all users in room "001" will receive the `onUserVideoAvailable(B, true)` and `onUserAudioAvailable(B, true)` callbacks, and all users in room "002" will receive the `onUserVideoAvailable(A, true)` and `onUserAudioAvailable(A, true)` callbacks.
+3. Users in both rooms can call [startRemoteView(userId, view)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a57541db91ce032ada911ea6ea2be3b2c) to display the video image of the anchor in the other room, and audio will be played automatically.
 
 ```java
 // Sample code: cross-room co-anchoring
 mTRTCCloud.ConnectOtherRoom(String.format("{\"roomId\":%s,\"userId\":\"%s\"}", roomId, username));
 ```
 
-<span id="step11"> </span>
-### Step 11. Exit the current room
+[](id:step11)
+### Step 11. Exit the room
 
-Call the [exitRoom()](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a41d16a97a9cb8f16ef92f5ef5bfebee1) method to exit the room. The SDK needs to disable and release hardware devices such as the camera and mic during room exit. Therefore, room exit is not completed as soon as the method is called. Only after the [onExitRoom()](http://doc.qcloudtrtc.com/group__TRTCCloudListener__android.html#ad5ac26478033ea9c0339462c69f9c89e) callback is received can the room exit be considered completed.
+Call [exitRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a41d16a97a9cb8f16ef92f5ef5bfebee1) to exit the room. The SDK disables and releases devices such as cameras and mics during room exit. Therefore, room exit is not an instant process. It completes only after the [onExitRoom()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#ad5ac26478033ea9c0339462c69f9c89e) callback is received.
 
 ```java
 // Please wait for the `onExitRoom` event callback after calling the room exit method
@@ -230,5 +234,5 @@ public void onExitRoom(int reason) {
 }
 ```
 
->! If multiple audio/video SDKs are integrated into your application, please enable other SDKs only after receiving the `onExitRoom` callback; otherwise, hardware occupancy issues may occur.
+>! If your application integrates multiple audio/video SDKs, please wait after you receive the `onExitRoom` callback to enable other SDKs; otherwise the device busy error may occur.
 
