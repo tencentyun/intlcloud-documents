@@ -1,28 +1,32 @@
-This document lists the references for common operations in Anti-DDoS Pro.
+This document lists the references for common operations while using Anti-DDoS Pro.
 ## Instance Management
-- [View instance information](https://intl.cloud.tencent.com/document/product/1029/36121)
-- [Manage protected object](https://intl.cloud.tencent.com/document/product/1029/36122)
-- [Set instance alias and tag](https://intl.cloud.tencent.com/document/product/1029/36123)
+- [Viewing Instance Information](https://intl.cloud.tencent.com/document/product/1029/36121)
+- [Managing Protected Object](https://intl.cloud.tencent.com/document/product/1029/36122)
+- [Setting Instance Alias and Tag](https://intl.cloud.tencent.com/document/product/1029/36123)
+- [Unblocking Protected IP](https://intl.cloud.tencent.com/document/product/1029/36125)
 
 ## Protection Configuration
 **IP and port protection**
-- [Protocol blocking](https://intl.cloud.tencent.com/document/product/1029/36129)
-- [Watermark protection](https://intl.cloud.tencent.com/document/product/1029/36130)
-- [Attribute filtering](https://intl.cloud.tencent.com/document/product/1029/36131)
-- [AI protection](https://intl.cloud.tencent.com/document/product/1029/36132)
-- [Exceptional connection protection](https://intl.cloud.tencent.com/document/product/1029/36133)
-- [IP blacklist/whitelist](https://intl.cloud.tencent.com/document/product/1029/36134)
+- [Protection Level and Cleansing Threshold](https://intl.cloud.tencent.com/document/product/1029/39260)
+- [Protocol Blocking](https://intl.cloud.tencent.com/document/product/1029/36129)
+- [Attribute Filtering](https://intl.cloud.tencent.com/document/product/1029/36131)
+- [AI Protection](https://intl.cloud.tencent.com/document/product/1029/36132)
+- [IP Blocklist/Allowlist](https://intl.cloud.tencent.com/document/product/1029/36134)
+- [Exceptional Connection Protection](https://intl.cloud.tencent.com/document/product/1029/36133)
+- [Connection Protection](https://intl.cloud.tencent.com/document/product/1029/41749)
+- [Regional Blocking](https://intl.cloud.tencent.com/document/product/1029/41750)
 
 **Domain name protection**
-- [Targeted protection](https://intl.cloud.tencent.com/document/product/1029/36136)
-- [Frequency control](https://intl.cloud.tencent.com/document/product/1029/36137)
-
+- [Protection Level and Cleansing Threshold](https://intl.cloud.tencent.com/document/product/1029/36135)
+- [Precise Protection](https://intl.cloud.tencent.com/document/product/1029/36136)
+- [Frequency Control](https://intl.cloud.tencent.com/document/product/1029/36137)
 
 ## Statistic Report
-- [View protection overview](https://intl.cloud.tencent.com/document/product/1029/36138)
-- [View operation log](https://intl.cloud.tencent.com/document/product/1029/36140)
+- [Viewing Protection Overview](https://intl.cloud.tencent.com/document/product/1029/36138)
+- [Viewing Operation Log](https://intl.cloud.tencent.com/document/product/1029/36140)
 
-
-
-
-
+##  Blocking Operation
+- Viewing blocking time
+- [Configuring Security Event Notification](https://intl.cloud.tencent.com/document/product/1029/36139)
+- Connecting blocked servers
+- Unblocking IPs

@@ -3,26 +3,30 @@
 - [查看实例信息](https://intl.cloud.tencent.com/document/product/1029/36121)
 - [管理防护对象](https://intl.cloud.tencent.com/document/product/1029/36122)
 - [设置实例别名与标签](https://intl.cloud.tencent.com/document/product/1029/36123)
+- [解封防护 IP](https://intl.cloud.tencent.com/document/product/1029/36125)
 
 ## 防护配置
 **IP和端口防护**
+- [防护等级与清洗阈值](https://intl.cloud.tencent.com/document/product/1029/39260)
 - [协议封禁](https://intl.cloud.tencent.com/document/product/1029/36129)
-- [水印防护](https://intl.cloud.tencent.com/document/product/1029/36130)
 - [特征过滤](https://intl.cloud.tencent.com/document/product/1029/36131)
 - [AI 防护](https://intl.cloud.tencent.com/document/product/1029/36132)
-- [异常连接防护](https://intl.cloud.tencent.com/document/product/1029/36133)
 - [IP黑白名单](https://intl.cloud.tencent.com/document/product/1029/36134)
+- [IP 端口限速](https://intl.cloud.tencent.com/document/product/1029/36133)
+- [连接类攻击防护](https://intl.cloud.tencent.com/document/product/1029/41749)
+- [区域封禁](https://intl.cloud.tencent.com/document/product/1029/41750)
 
 **域名防护**
+- [防护等级与清洗阈值](https://intl.cloud.tencent.com/document/product/1029/36135)
 - [精准防护](https://intl.cloud.tencent.com/document/product/1029/36136)
-- [频率控制](https://intl.cloud.tencent.com/document/product/1029/36137)
-
+- [CC 频率限制](https://intl.cloud.tencent.com/document/product/1029/36137)
 
 ## 统计报表
 - [查看防护概览](https://intl.cloud.tencent.com/document/product/1029/36138)
 - [查看操作日志](https://intl.cloud.tencent.com/document/product/1029/36140)
 
-
-
-
-
+##  封堵相关操作
+- 查看封堵时间
+- [设置安全事件通知](https://intl.cloud.tencent.com/document/product/1029/36139)
+- 连接已被封堵的服务器
+- 解除封堵
