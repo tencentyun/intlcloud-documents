@@ -13,7 +13,7 @@
 **リクエスト例**
 `http://cloud.tencent.com/test.jpg?sign=1582791032-im1acp76sx9sdqe601v-0-dd63f95e739ed4b47427a129d21ef4e3`
 
->MD5を計算する際に、リクエストパスが `http://cloud.tencent.com/test.jpg`の場合、MD5を計算する際のパスは`/test.jpg`となります。
+>!MD5を計算する際に、リクエストパスが `http://cloud.tencent.com/test.jpg`の場合、MD5を計算する際のパスは`/test.jpg`となります。
 
 ## 設定ガイド
 ### パラメータの説明
