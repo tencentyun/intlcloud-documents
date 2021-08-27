@@ -1,23 +1,24 @@
-A high availability virtual IP (HAVIP) is a private IP address assigned by VPC CIDR blocks. It is usually used together with high-availability software, such as Keepalived and Windows Server Failover Cluster, to build a highly available primary/secondary cluster.
+A high availability virtual IP (HAVIP) is a private IP address assigned from the VPC CIDR block. It is usually used together with high-availability software, such as Keepalived and Windows Server Failover Cluster, to build a highly available primary/secondary cluster.
 >?
->- HAVIP is currently in beta, and switching between primary/secondary servers may take 10 seconds. To try it out, please apply to be a beta user.
->- To guarantee the CVM high availability in a primary/secondary cluster, we recommend assigning CVMs to different hosts using [placement group](https://intl.cloud.tencent.com/document/product/213/15486). For more information about the placement group, see [Placement Group](https://intl.cloud.tencent.com/document/product/213/15486).
->
+>- HAVIP is currently in beta, and switching between primary/secondary servers may take 10 seconds. To try it out, please [apply to be a beta user](https://cloud.tencent.com/apply/p/azh0w1qoavk).
+>- To guarantee the CVM high availability in a primary/secondary cluster, we recommend assigning CVMs to different hosts using [placement groups](https://intl.cloud.tencent.com/document/product/213/15486). For more information about the placement group, see [Placement Group](https://intl.cloud.tencent.com/document/product/213/15486).
+>- The high availability software should support sending ARP messages.
 
 ## Features
 1. You can apply for multiple HAVIP addresses in the console for each VPC.
-2. You must bind HAVIP in CVM’s configuration file.
-3. HAVIP is subnet-specific and can only be bound to a server under the same subnet through announcement.
+2. You must bind the HAVIP in CVM’s configuration file.
+3. A HAVIP is subnet-specific and can only be bound to a server under the same subnet through announcement.
 
 ## Architecture and Principle
-Typically, a high availability primary/secondary cluster consists of two servers: an active primary server and a standby secondary server. The two servers share the same VIP (virtual IP) which is only valid for the primary server. When the primary server fails, the secondary server will take over the VIP to continue providing services.
-+ In traditional physical networks, the primary/secondary status can be negotiated with Keepalived’s VRRP protocol. The primary device periodically sends free-of-charge ARP messages to purge the MAC table or terminal ARP table of the uplink exchange to trigger the VIP migration to the primary device.
+Typically, a high availability primary/secondary cluster consists of two servers: an active primary server and a standby secondary server. The two servers share the same VIP (virtual IP). The VIP can only work on one primary server at the same time. When the primary server fails, the secondary server will take over the VIP to continue providing services.
++ In traditional physical networks, the primary/secondary status can be negotiated with Keepalived’s VRRP protocol. The primary device periodically sends free-of-charge ARP messages to purge the MAC table or terminal ARP table of the uplink exchange, so as to trigger the VIP migration to the primary device.
 + In a VPC, a high availability primary/secondary cluster can also be implemented by deploying Keepalived on CVMs. However, a CVM instance usually cannot obtain a private IP through ARP announcement due to security reasons such as ARP spoofing. The VIP must be a HAVIP applied from Tencent Cloud, which is subnet-specific. Therefore, a HAVIP can only be bound to a server under the same subnet through announcement.
 >?Keepalived is a VRRP-based high availability software. To use Keepalived, first complete its configuration in the `Keepalived.conf` file.
 
 The following figure shows the HAVIP architecture.
 ![](https://main.qcloudimg.com/raw/e8d0e60cbd3221089256087c5686588f.png)
 According to the example figure, CVM1 and CVM2 can be built into a high availability primary/secondary cluster with the following steps:
+
 1. Install Keepalived on both CVM1 and CVM2, configure HAVIP as VRRP VIP, and set the priorities of the primary and secondary servers. Larger values represent higher priorities.
 2. Keepalived uses the VRRP protocol to compare the initial priorities of CVM1 and CVM2 and determines CVM1 as the primary server due to its higher priority.
 3. The primary server sends out ARP messages, announces the VIP (a HAVIP), and updates VIP to mac mappings. In this case, the CVM1 is the primary server and provides services by using the private IP (HAVIP) for communication. You can see the HAVIP is bound to the primary server CVM1 on the HAVIP console.   
@@ -26,9 +27,9 @@ According to the example figure, CVM1 and CVM2 can be built into a high availabi
 
 ## Common Use Cases
 - **Cloud load balancer HA**
-  To deploy Cloud Load Balancers (CLB), you will generally have HA between CLB instances and configure real servers as a cluster. Therefore, you must deploy and use HAVIP as a virtual IP between two CLB servers.
+  To deploy Cloud Load Balancers (CLB), you will generally take HA between CLB instances and configure real servers as a cluster. Therefore, you must deploy and use HAVIP as a virtual IP between two CLB servers.
 - **Relational database primary/secondary**
-  If Keepalived or Windows Server Failover Cluster are used between two databases to build a highly available primary/secondary cluster, use HAVIP as a virtual IP. For more information, see [Building High Availability Primary/Secondary Cluster by Using HAVIP + Keepalived](https://intl.cloud.tencent.com/document/product/215/31877) and [Creating a High-availability Database by Using HAVIP + Windows Server Failover Cluster](https://intl.cloud.tencent.com/document/product/215/31878) under Best Practice.
+  If Keepalived or Windows Server Failover Cluster are used between two databases to build a highly available primary/secondary cluster, use HAVIP as a virtual IP. For more information, see [Building High Availability Primary/Secondary Cluster by Using HAVIP + Keepalived](https://intl.cloud.tencent.com/document/product/215/31877) and [Creating a High-availability Database by Using HAVIP + Windows Server Failover Cluster](https://intl.cloud.tencent.com/document/product/215/31878) under Best Practices.
 
 
 ## FAQs
@@ -79,6 +80,6 @@ virtual_ipaddress {
 }
 ```
 
-## Subsequent Operations
+## Reference
 - For more information about the use limits of HAVIP, see [Limits](https://intl.cloud.tencent.com/document/product/215/31818).
 - For more information about the operation guide of HAVIP, see [Managing HAVIP](https://intl.cloud.tencent.com/document/product/215/31820).

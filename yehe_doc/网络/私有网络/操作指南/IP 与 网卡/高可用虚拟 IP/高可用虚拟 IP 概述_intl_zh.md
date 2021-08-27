@@ -1,8 +1,8 @@
 高可用虚拟 IP（HAVIP）是从 VPC CIDR 分配的一个内网IP地址，通常和高可用软件（如 keepalived 或 Windows Server Failover Cluster）配合使用，应用于搭建高可用主备集群场景。
 >?
->- 目前 HAVIP 产品处于灰度优化中，切换的时延在10s左右，如有需要，请提交内测申请。
+>- 目前 HAVIP 产品处于灰度优化中，切换的时延在10s左右，如有需要，请提交 [内测申请](https://cloud.tencent.com/apply/p/azh0w1qoavk)。
 >- 为保证主备集群云服务器的高可用性，强烈建议通过 [置放群组](https://intl.cloud.tencent.com/document/product/213/15486) 将不同云服务器分配到不同的宿主机上，更多关于置放群组的信息，请参考 [置放群组](https://intl.cloud.tencent.com/document/product/213/15486)。
->
+>- 高可用软件需要支持发送 ARP 报文。
 
 ## 特点介绍
 1. 可以在 HAVIP 产品控制台申请 HAVIP 地址，每个 VPC 可以申请多个 HAVIP 地址。
@@ -18,6 +18,7 @@
 高可用虚拟 IP 的架构如下图所示。
 ![](https://main.qcloudimg.com/raw/e8d0e60cbd3221089256087c5686588f.png)
 以上图举例，假设搭建 CVM1 和 CVM2 为一套高可用主备集群，实现原理如下：
+
 1. CVM1 和 CVM2 均安装 keepalived 软件，配置 HAVIP 为 VRRP VIP，并设置主备服务器的优先级（priority 值），值越大优先级越高。
 2. Keepalived 中的 VRRP 协议通过比对 CVM1 和 CVM2 的初始优先级大小，选举出 Master 服务器，即 CVM1 为 Master 服务器，CVM2 为 Backup 服务器。
 3. Master 服务器向外发送 ARP 报文，宣告 VIP（该 VIP 为 HAVIP），并更新 VIP 和 MAC 的地址映射。此时，真正对外提供服务的服务器为 Master 服务器，通信的内网 IP 为 HAVIP 。同时，可在 HAVIP 控制台看到，HAVIP 绑定的服务器为 Master 服务器 CVM1。   
