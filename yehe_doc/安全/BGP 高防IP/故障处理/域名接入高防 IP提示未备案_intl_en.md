@@ -1,7 +1,7 @@
 
 ## Error Description
 The system prompted that my domain name had no ICP filing when I tried to connect it to Anti-DDoS Advanced.
-![](https://main.qcloudimg.com/raw/4cd4d7c84a2c888dc1d1b1ac445b2d36.png)
+![](https://main.qcloudimg.com/raw/1fab5be17e3057fca90054d8ed918748.png)
 
 ## Possible Causes
 #### The domain name does not have an ICP filing from the MIIT
