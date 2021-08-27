@@ -60,7 +60,7 @@ service.kubernetes.io/tke-existed-lbid: "lb-342wppll"
 :::
 </dx-codeblock>
 #### 示例4 
-annotation 在 Service YMAL 中的写法如下所示：
+annotation 在 Service YAML 中的写法如下所示：
 <dx-codeblock>
 :::  yaml
 # 创建异地接入的负载均衡
