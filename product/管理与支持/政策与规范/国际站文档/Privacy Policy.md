@@ -534,7 +534,7 @@ Your personal information, if required to be disclosed to the law enforcement ag
 You have the right to access, correct, and erase the personal information we hold about you. You also have the right to withdraw your earlier provided consent to collect, store, process, use and disclose your personal information and to request us to stop providing your personal information to a third party.
 
 ### MODULES
-Last updated: [2020-08-04]
+Last updated: [2020-08-17]
 The following Modules shall apply and form part of this privacy policy if you use the specific Feature (as defined in each relevant Module). You acknowledge we will collect, process, use and store your personal information, as described in the applicable Module:
 1.[Tencent Push Notification Service](https://intl.cloud.tencent.com/document/product/1024/36175).
 2.[Mobile Tencent Protect](https://intl.cloud.tencent.com/document/product/1018/36786).
@@ -548,3 +548,4 @@ The following Modules shall apply and form part of this privacy policy if you us
 10.[Cloud Native Database TDSQL-C](https://intl.cloud.tencent.com/document/product/1098/41228).
 11.[Tencent Cloud Elastic Microservice](https://intl.cloud.tencent.com/document/product/1094/41578).
 12.[TencentDB for CTSDB](https://intl.cloud.tencent.com/document/product/1100/41705).
+13.[Private DNS](https://intl.cloud.tencent.com/document/product/1097/42072).
