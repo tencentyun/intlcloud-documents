@@ -9,13 +9,13 @@
 
 ## 步骤3：创建规则
 
-进入【规则管理】，在规则列表页点击创建。详情请参见 [创建规则](https://intl.cloud.tencent.com/document/product/1072/39202)。
+进入**规则管理**，在规则列表页点击创建。详情请参见 [创建规则](https://intl.cloud.tencent.com/document/product/1072/39202)。
 ![](https://main.qcloudimg.com/raw/ef3b98bfe79a9a8e84fd22f2913701c0.png)
 
 
 ## 步骤4：创建匹配
 
-进入【匹配管理】，在匹配列表页点击创建。详情请参见 [创建匹配](https://intl.cloud.tencent.com/document/product/1072/39203)。
+进入**匹配管理**，在匹配列表页点击创建。详情请参见 [创建匹配](https://intl.cloud.tencent.com/document/product/1072/39203)。
 ![](https://main.qcloudimg.com/raw/af24136b1c7f6c137f49f343adc8b7b1.png)
 
 ## 步骤5：发起匹配
