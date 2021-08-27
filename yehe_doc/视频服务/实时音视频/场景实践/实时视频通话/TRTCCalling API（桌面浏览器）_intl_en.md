@@ -1,11 +1,11 @@
-## `TRTCCalling` Overview
+## TRTCCalling Overview
 
 The [TRTCCalling](https://www.npmjs.com/package/trtc-calling-js) component is based on Tencent Cloud Real-Time Communication (TRTC) and Instant Message (IM). It supports one-to-one and group video/audio calls. For detailed instructions how to implement it, see [Real-Time Video Call (Desktop Browser)](https://intl.cloud.tencent.com/document/product/647/38927).
 
 - TRTC SDK: the [TRTC SDK](https://intl.cloud.tencent.com/document/product/647) is used as a low-latency audio/video call component.
 - IM SDK: the [IM SDK](https://intl.cloud.tencent.com/zh/document/product/1047) is used to send and process signaling messages.
 
-## `TRTCCalling` APIs 
+## TRTCCalling APIs 
 
 #### Event subscribing/unsubscribing APIs 
 
@@ -29,8 +29,8 @@ This component bases its management on the dispatching of events. The applicatio
 | ----------------------------------------------------------------------------------------- | ------------ |
 | [call({userID, type, timeout}))](#call(.7Buserid.2C-type.2C-timeout.7D))               | Makes a one-to-one call. |
 | [groupCall({userIDList, type, groupID})](#groupcall(.7Buseridlist.2C-type.2C-groupid.7D)) | Makes a group call. |
-| [accept({inviteID, roomID, callType})](#accept(.7Binviteid.2C-roomid.2C-calltype.7D))      | Accepts a call invitation. |
-| [reject({inviteID, isBusy, callType})](#reject(.7Binviteid.2C-isbusy.2C-calltype.7D))      | Rejects a call invitation. |
+| [accept({inviteID, roomID, callType})](#accept(.7Binviteid.2C-roomid.2C-calltype.7D))      | Answers a call. |
+| [reject({inviteID, isBusy, callType})](#reject(.7Binviteid.2C-isbusy.2C-calltype.7D))      | Rejects a call. |
 | [hangup()](#hangup())                                                                     | Hangs up. |
 
 #### Video APIs
@@ -44,10 +44,9 @@ This component bases its management on the dispatching of events. The applicatio
 | [openCamera()](#opencamera())                                                                 | Turns on the camera.         |
 | [closeCamera()](#closecamera())                                                               | Turns off the camera.         |
 | [setMicMute(isMute)](#setmicmute(ismute))                                                     | Mutes/Unmutes the mic. |
-| [setVideoQuality(profile)](#setvideoquality(profile)) | Sets video quality.|
 
 
-## Closer Look at `TRTCCalling`
+## Closer Look
 
 ### Creating a `TRTCCalling` instance
 
@@ -57,7 +56,7 @@ Then, obtain an instance of the `TRTCCalling` component using `new TRTCCalling()
 <dx-codeblock>
 ::: javascript javascript
 let options = {
-  SDKAppID: 0 // Replace 0 with the SDKAppID of your IM application when connecting
+  SDKAppID: 0 // Replace 0 with the SDKAppID of your IM app when connecting
 };
 let trtcCalling = new TRTCCalling(options);
 :::
@@ -150,7 +149,7 @@ The parameters are as detailed below:
 | ------- | ------ | ------------------------ |
 | userID  | String | User ID of the invitee          |
 | type    | Number | `1`: audio call; `2`: video call |
-| timeout | Number | Timeout period in seconds. `0` means the call will never time out.  |
+| timeout | Number | In seconds; 0 means no timeout threshold set.  |
 
 
 
@@ -176,7 +175,7 @@ The parameters are as detailed below:
 
 #### accept({inviteID, roomID, callType})
 This API is used to accept an invitation.
->? If a prior invitation has not been processed, the component will return a message indicating that the line is busy.
+>? If an invitation has yet to be processed, the component will return a message saying that the line is busy to other invitations sent to the same user.
 
 <dx-codeblock>
 ::: javascript javascript
@@ -194,12 +193,12 @@ The parameters are as detailed below:
 | -------- | ------ | ------------------------ |
 | inviteID | String | Invitation ID, which identifies an invitation |
 | roomID   | Number | Room ID            |
-| callType | Number | `1`: audio call; `2`: video call |
+| callType | Number  | `1`: audio call; `2`: video call |
 
 
 
 #### reject({inviteID, isBusy, callType})
-This API is used to reject an invitation.
+This API is used to reject an incoming invitation.
 
 <dx-codeblock>
 ::: javascript javascript
@@ -217,11 +216,11 @@ The parameters are as detailed below:
 | -------- | ------- | ------------------------ |
 | inviteID | String | Invitation ID, which identifies an invitation |
 | isBusy   | Boolean | Whether the line is busy             |
-| callType | Number | `1`: audio call; `2`: video call |
+| callType | Number  | `1`: audio call; `2`: video call |
 
 
 #### hangup()
-1. If you are in a call, you can use this API to end the call.
+1. If you are in a call, you can use this API to end the current call.
 2. If your call is not answered yet, you can use this API to cancel the call.
 
 <dx-codeblock>
@@ -278,7 +277,7 @@ The parameters are as detailed below:
 | Parameter | Type | Description |
 | -------------- | ------ | ----------------------------------------------------------- |
 | UserID | String | User ID |
-| videoViewDomID | String | The DOM node in which the local user’s data is to be rendered. The data will be played via the video tag of the node. |
+| videoViewDomID | String | DOM node in which the local user’s data is to be rendered. The data will be played via the video tag of the node. |
 
 #### stopLocalView({userID, videoViewDomID})
 
@@ -298,7 +297,7 @@ The parameters are as detailed below:
 | videoViewDomID | String | The DOM node whose video tag is to be deleted. The playback will stop. |
 
 #### openCamera()
-This API is used to turn on the local camera.
+This API is used turn on the local camera.
 
 <dx-codeblock>
 ::: javascript javascript
@@ -320,7 +319,7 @@ This API is used to turn on/off the mic.
 
 <dx-codeblock>
 ::: javascript javascript
-trtcCalling.setMicMute(true) // Turn on the mic
+trtcCalling.setMicMute(true) // Enables the mic.
 :::
 </dx-codeblock>
 
@@ -328,29 +327,11 @@ The parameters are as detailed below:
 
 | Parameter        | Type    | Description                                                                                                      |
 | ------ | ------- | -------------------------------------------- |
-| isMute | Boolean | <li/>`true`: turns off the mic <li/>`false`: turns on the mic |
-
-####  setVideoQuality(profile) 
-This API is used to set video quality.
->?  
->- This is a new API in v0.8.0 and later versions.
->- This API must be called before `call`, `groupCall`, and `accept` to take effect.
-
-<dx-codeblock>
-::: javascript javascript
-trtcCalling.setVideoQuality('720p') // Set video quality to 720p
-:::
-</dx-codeblock>
-
-The parameters are as detailed below:
-
-| Parameter        | Type    | Description                                                                                                      |
-| ------ | ------- | -------------------------------------------- |
-| profile | String | <li/>`480p`: 640 x 480 <li/>`720p`: 1280 x 720  <li/>`1080p`: 1920 x 1080  |
+| isMute | Boolean | <li/>`true`: turn off the mic <li/>`false`: turn on the mic |
 
 
 [](id:event)
-## `TRTCCalling` Events
+## TRTCCalling Events
 
 The code below demonstrates how to listen for [TRTCCalling events](https://web.sdk.qcloud.com/component/trtccalling/doc/web/zh-cn/module-EVENT.html).
 
@@ -370,13 +351,13 @@ trtcCalling.on(TRTCCalling.EVENT.REJECT, handleInviteeReject)
 |                     Code                      |   Event Recipient   |           Description            |
 | :-------------------------------------------: | :------------: | :-----------------------: |
 |               [REJECT](#reject)               |     Inviter     |     The invitee rejected the call.      |
-|       [NO_RESP](#no_resp)        |     Inviter     |    The invitation timed out without response from the invitee.      |
-|      [LINE_BUSY](#line_busy)       |     Inviter     | The invitee is in a call, i.e., the line is busy. |
+|       [NO_RESP](#no_resp)        |     Inviter     |    The timeout threshold is reached without response from the invitee.      |
+|      [LINE_BUSY](#line_busy)       |     Inviter     | The invitee is in a call; the line is busy. |
 |       [INVITED](#invited)        |     Invitee     |      You received an invitation.       |
 |    [CALLING_CANCEL](#calling_cancel)    |     Invitee     |     The call is cancelled.      |
-|   [CALLING_TIMEOUT](#calling_timeout)    |     Invitee     |    The invitation timed out.     |
+|   [CALLING_TIMEOUT](#calling_timeout)    |     Invitee     |    The timeout threshold is reached.     |
 |      [USER_ENTER](#user_enter)      | Inviter and invitee |         A user entered the room.          |
-|      [USER_LEAVE](#user_leave)      | Inviter and invitee |       A user left the room.        |
+|      [USER_LEAVE](#user_leave)      | Inviter and invitee |       A user exited the room.        |
 |       [CALL_END](#call_end)       | Inviter and invitee |       The call ended.        |
 |      [KICKED_OUT](#kicked_out)      | Inviter and invitee |   A user was kicked out due to repeated login.    |
 | [USER_VIDEO_AVAILABLE](#user_video_available) | Inviter and invitee | A remote user turned on/off the camera. |
@@ -400,11 +381,11 @@ The parameters are as detailed below:
 
 | Parameter        | Type    | Description                                                                                                      |
 | ------ | ------ | ------- |
-| userID | String | User ID |
+| userId | String | User ID |
 
 #### USER_LEAVE
 
-A user left the room.
+A user exited the room.
 
 <dx-codeblock>
 ::: javascript javascript
@@ -418,7 +399,7 @@ The parameters are as detailed below:
 
 | Parameter        | Type    | Description                                                                                                      |
 | ------ | ------ | ------- |
-| userID | String | User ID |
+| userId | String | User ID |
 
 #### CALL_END
 
@@ -434,7 +415,7 @@ function handleCallEnd() {
 
 #### KICKED_OUT
 
-A user was kicked out due to repeated login.
+A user was kicked out for repeated login.
 
 <dx-codeblock>
 ::: javascript javascript
@@ -482,7 +463,7 @@ The parameters are as detailed below:
 | userID | String | User ID |
 | isAudioAvailable | Boolean | <li/>`true`: the remote user turned on the mic. <li/> `false`: the remote user turned off the mic. |
 
-### Inviter event callback APIs
+### Inviter event callbacks
 
 #### REJECT
 
@@ -500,7 +481,7 @@ The parameters are as detailed below:
 
 | Parameter        | Type    | Description                                                                                                      |
 | ------ | ------ | ------- |
-| userID | String | User ID |
+| userId | String | User ID |
 
 #### NO_RESP
 
@@ -516,14 +497,14 @@ function handleNoResponse({userID, userIDList}) {
 
 The parameters are as detailed below:
 
-| Parameter    | Type   | Description                                                                                                                    |
+| Parameter        | Type    | Description                                                                                                      |
 | ---------- | ------ | ------------ |
 | UserID | String | User ID |
 | userIDList | Array  | List of timed out users |
 
 #### LINE_BUSY
 
-The invitee is in a call, i.e., the line is busy.
+The invitee is in a call. The line is busy.
 
 <dx-codeblock>
 ::: javascript javascript
@@ -537,9 +518,9 @@ The parameters are as detailed below:
 
 | Parameter        | Type    | Description                                                                                                      |
 | ------ | ------ | ------- |
-| userID | String | User ID |
+| userId | String | User ID |
 
-### Invitee event callback APIs
+### Invitee event callbacks
 
 #### INVITED
 You received an invitation.
@@ -578,7 +559,7 @@ function handleInviterCancel() {
 
 #### CALLING_TIMEOUT
 
-The call timed out.
+The timeout threshold is reached.
 
 <dx-codeblock>
 ::: javascript javascript
@@ -588,7 +569,7 @@ function handleCallTimeout() {
 :::
 </dx-codeblock>
 
-## `TRTCCalling` Error Codes
+## TRTCCalling Error Codes
 
 You can handle the errors thrown by the `TRTCCalling` component by listening for the “error” field in events. Below is an example.
 
@@ -608,4 +589,4 @@ trtcCalling.on(TRTCCalling.EVENT.ERROR, onError);
 The `TRTCCalling` component does not support login of multiple instances or **offline signaling** for the time being. Please check that your current login is unique.
 > ?
 > - **Multiple instances**: a user ID logs in multiple times or on different devices, which disrupts signaling.
-> - **Offline signaling**: only online instances can receive a message. Messages sent to offline instances will not be sent again when the instances go online.
+> - *Offline signaling*: only online instances can receive a message. Messages sent to offline instances will not be sent again when the instances go online.

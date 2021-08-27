@@ -1,22 +1,22 @@
 `TRTCChatSalon` is based on Tencent Real-Time Communication (TRTC) and Instant Messaging (IM). Its features include:
 
 - A user can create a chat salon and become a speaker, or enter a salon as a listener.
-- The room owner can allow a listener to become a speaker as well as remove a speaker.
+- The room owner can accept a listener’s request to speak as well as remove a speaker.
 - A listener can request to speak and become a speaker. A speaker can also become a listener.
 - All users can send text messages.
 
 `TRTCChatSalon` is an open-source class depending on two closed-source Tencent Cloud SDKs. For the specific implementation process, please see [Chat Salon (Flutter)](https://intl.cloud.tencent.com/document/product/647/39805).
 
-- TRTC SDK: the [TRTC SDK](https://intl.cloud.tencent.com/document/product/647) is used as a low-latency audio chat component.
-- IM SDK: the `AVChatRoom` feature of the [IM SDK](https://intl.cloud.tencent.com/document/product/1047) is used to implement chat rooms. The attribute APIs of IM are used to store room information such as the speaker list, and invitation signaling is used to send requests to speak or invite others to speak.
+- TRTC SDK: the [TRTC SDK](https://intl.cloud.tencent.com/zh/document/product/647) is used as a low-latency audio chat component.
+- IM SDK: the `AVChatRoom` feature of the [IM SDK](https://intl.cloud.tencent.com/zh/document/product/1047) is used to implement chat rooms. The attribute APIs of IM are used to store room information such as the speaker list, and invitation signaling is used to send requests to speak or invite others to speak.
 
-<span id="TRTCChatSalon"></span>
+[](id:TRTCChatSalon)
 
-## TRTCChatSalon API Overview
+## `TRTCChatSalon` API Overview
 
 ### Basic SDK APIs
 
-| API | Description |
+| API                                             | Description                                                         |
 | ----------------------------------------------- | -------------- |
 | [sharedInstance](#sharedinstance) | Gets singleton object.           |
 | [destroySharedInstance](#destroysharedinstance) | Terminates singleton object. |
@@ -24,24 +24,24 @@
 | [unRegisterListener](#unregisterlistener)       | Terminates event listener. |
 | [login](#login)                   | Logs in.                   |
 | [logout](#logout)                 | Logs out.                   |
-| [setSelfProfile](#setselfprofile)               | Sets profile. |
+| [setSelfProfile](#setselfprofile) | Sets profile. |
 
 ### Room APIs
 
 | API | Description |
 | --------------------------------------- | ------------------------------------------------------------ |
-| [createRoom](#createroom) | Creates room (called by room owner). If the room does not exist, the system will automatically create one. |
-| [destroyRoom](#destroyroom) | Terminates room (called by room owner). |
-| [enterRoom](#enterroom) | Enters room (called by listener). |
-| [exitRoom](#exitroom) | Exits room (called by listener). |
+| [createRoom](#createroom) | Creates a room (called by room owner). If the room does not exist, the system will automatically create a room. |
+| [destroyRoom](#destroyroom) | Terminates a room (called by room owner). |
+| [enterRoom](#enterroom) | Enters a room (called by listener). |
+| [exitRoom](#exitroom) | Exits a room (called by listener). |
 | [getRoomInfoList](#getroominfolist) | Gets room list details.                                     |
-| [getRoomMemberList](#getroommemberlist) | Gets the information of all users in room. |
-| [getArchorInfoList](#getarchorInfolist) | Gets the list of speakers in room. |
-| [getUserInfoList](#getuserinfolist)     | Gets the user information of a specified `userId`. |
+| [getRoomMemberList](#getroommemberlist) | Gets the information of all users in the room. |
+| [getArchorInfoList](#getarchorInfolist) | Gets the list of speakers in the room. |
+| [getUserInfoList](#getuserinfolist) | Gets the user information of the specified `userId`. |
 
 ### Mic APIs
 
-| API | Description |
+| API                                             | Description                                                         |
 | --------------------- | ----------------------------------- |
 | [enterMic](#entermic) | Becomes a speaker.                          |
 | [leaveMic](#leavemic) | Becomes a listener.                          |
@@ -50,57 +50,57 @@
 
 ### Local audio APIs
 
-| API | Description |
+| API                                             | Description                                                         |
 | ----------------------------------------------- | -------------------- |
 | [startMicrophone](#startmicrophone)             | Enables mic capturing.     |
 | [stopMicrophone](#stopmicrophone)               | Stops mic capturing.     |
 | [muteLocalAudio](#mutelocalaudio)               | Mutes/Unmutes local audio.       |
-| [setSpeaker](#setspeaker)                       | Turns on speaker.     |
+| [setSpeaker](#setspeaker)                       | Turns the speaker on.     |
 | [setAudioCaptureVolume](#setaudiocapturevolume) | Sets mic capturing volume. |
 | [setAudioPlayoutVolume](#setaudioplayoutvolume) | Sets playback volume.       |
 
 
 ### Remote audio APIs
 
-| API | Description |
+| API                                             | Description                                                         |
 | ----------------------------------------- | ----------------------- |
-| [muteRemoteAudio](#muteremoteaudio)       | Mutes/Unmutes specified member. |
+| [muteRemoteAudio](#muteremoteaudio)       | Mutes/Unmutes a specified member. |
 | [muteAllRemoteAudio](#muteallremoteaudio) | Mutes/Unmutes all members. |
 
 ### Background music and sound effect APIs
 
-| API | Description |
+| API                                             | Description                                                         |
 | ----------------------------------------------- | ------------------------------------------------------------ |
-| [getAudioEffectManager](#getaudioeffectmanager) | Gets background music and sound effect management object [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa). |
+| [getAudioEffectManager](#getaudioeffectmanager) | Gets the background music and audio effect management object [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa). |
 
 ### Message sending APIs
 
-| API | Description |
+| API                                             | Description                                                         |
 | ----------------------------------- | ---------------------------------------- |
-| [sendRoomTextMsg](#sendroomtextmsg) | Broadcasts text message in room. This API is generally used for on-screen comments. |
+| [sendRoomTextMsg](#sendroomtextmsg) | Broadcasts a text message in the room. This API is generally used for on-screen comments. |
 
-### Signaling APIs for requesting to speak
+### APIs for sending requests to speak
 
-| API | Description |
+| API                                             | Description                                                         |
 | ------------------------------- | -------------- |
-| [raiseHand](#raisehand)         | A listener requests to speak. |
-| [agreeToSpeak](#agreetospeak)   | The room owner approves the request. |
-| [refuseToSpeak](#refusetospeak) | The room owner declines the request. |
+| [raiseHand](#raisehand)         | Requests to speak. |
+| [agreeToSpeak](#agreetospeak)   | Accepts the request to speak (called by room owner). |
+| [refuseToSpeak](#refusetospeak) | Rejects the request to speak (called by room owner). |
 
-<span id="TRTCChatSalonDelegate"></span>
-## TRTCChatSalonDelegate API Overview
+[](id:TRTCChatSalonDelegate)
+## `TRTCChatSalonDelegate` API Overview
 
 ### Common event callback APIs
 
-| API | Description |
+| API                                             | Description                                                         |
 | ----------------------------------- | ---------- |
-| [onError](#onerror)                 | Error |
-| [onWarning](#onwarning)             | Warning |
-| [onKickedOffline](#onkickedoffline) | Warning |
+| [onError](#onerror) | Error |
+| [onWarning](#onwarning) | Warning |
+| [onKickedOffline](#onkickedoffline) | Kicked offline | 
 
 ### Room event callback APIs
 
-| API | Description |
+| API                                             | Description                                                         |
 | ----------------------------------------- | ------------------------ |
 | [onRoomDestroy](#onroomdestroy) | Room termination |
 | [onAnchorListChange](#onanchorlistchange) | Speaker list change |
@@ -108,7 +108,7 @@
 
 ### Speaker list change callback APIs
 
-| API | Description |
+| API                                             | Description                                                         |
 | ------------------------------------- | ------------------------------------- |
 | [onAnchorEnterMic](#onanchorentermic) | Someone became a speaker after requesting or being invited by the room owner. |
 | [onAnchorLeaveMic](#onanchorleavemic) | Someone became a listener or was moved to listeners by the room owner. |
@@ -116,24 +116,24 @@
 
 ### Callback APIs for room entry/exit by listeners
 
-| API | Description |
+| API                                             | Description                                                         |
 | ----------------------------------- | ------------------ |
 | [onAudienceEnter](#onaudienceenter) | A listener entered the room. |
 | [onAudienceExit](#onaudienceexit) | A listener exited the room. |
 
 ### Message event callback APIs
 
-| API | Description |
+| API                                             | Description                                                         |
 | --------------------------------------- | -------------- |
-| [onRecvRoomTextMsg](#onrecvroomtextmsg)     | Receipt of text message   |
+| [onRecvRoomTextMsg](#onrecvroomtextmsg) | A text message was received.  |
 
-### Mic-on Request Signaling Event Callback APIs
+## Callback APIs for sending requests to speak
 
-| API | Description |
+| API                                             | Description                                                         |
 | -------------------------------------- | ---------------------------------------- |
-| [onRaiseHand](#onraisehand) | A listener raised hand to request to speak. |
-| [onAgreeToSpeak](#onagreetospeak)   | The room owner approved the listener's request. |
-| [onRefuseToSpeak](#onrefusetospeak)    | The room owner declined the listener's request. |
+| [onRaiseHand](#onraisehand) | A listener requested to speak. |
+| [onAgreeToSpeak](#onagreetospeak)   | The room owner accepted the listener’s request to speak. |
+| [onRefuseToSpeak](#onrefusetospeak)    | The room owner rejected the listener’s request to speak. |
 
 ## Basic SDK APIs
 
@@ -176,9 +176,9 @@ void unRegisterListener(VoiceListenerFunc func)
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | ---- | ----------------- | --------------------------------------------------------- |
-| func | VoiceListenerFunc | Various status notifications in `TRTCChatSalon` will be sent to the function you specify. |
+| func | VoiceListenerFunc | Status notifications in `TRTCChatSalon` are sent to the function you specify. |
 
 
 ### login
@@ -191,11 +191,11 @@ Future<ActionCallback> login(int sdkAppId, String userId, String userSig)
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | -------- | ------ | ------------------------------------------------------------ |
 | sdkAppId | int | You can view the `SDKAppID` via **[Application Management](https://console.cloud.tencent.com/trtc/app)** > **Application Info** in the TRTC console. |
-| userId | String | ID of current user, which is a string that can contain only letters (a-z and A-Z), digits (0-9), hyphens (-), and underscores (\_). |
-| userSig  | String | Tencent Cloud's proprietary security signature. To get one, please see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166). |
+| userId | String | ID of current user, which is a string that can contain only letters (a-z and A-Z), digits (0–9), hyphens (-), and underscores (\_). |
+| userSig | String | Tencent Cloud's proprietary security signature. For more information on how to get it, please see [UserSig](https://intl.cloud.tencent.com/document/product/647/35166). |
 
 
 ### logout
@@ -216,10 +216,10 @@ Future<ActionCallback> setSelfProfile(String userName, String avatarURL)
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 | --------- | ------ | ---------- |
 | userName | String | Nickname |
-| avatarURL | String | Profile photo address |
+| `avatar` | `String` | Profile photo address |
 
 ## Room APIs
 
@@ -233,15 +233,15 @@ Future<ActionCallback> createRoom(int roomId, RoomParam roomParam)
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | --------- | --------- | ------------------------------------------------------------ |
-| roomId | int | Room ID. You need to assign and manage the IDs in a centralized manner. Multiple `roomID` values can be aggregated as a chat salon room list. Currently, Tencent Cloud does not provide the chat salon room list management service. Please manage the list on your own. |
-| roomParam | RoomParam | Room information, such as room name and cover information. |
+| roomId | int | Room ID. You need to assign and manage the IDs in a centralized manner. Multiple `roomID` values can be aggregated into a chat salon room list. Currently, Tencent Cloud does not provide management services for chat salon room lists. Please manage the list by yourself. |
+| roomParam | RoomParam | Room information, such as room name and cover information |
 
-The process of creating a salon and becoming a speaker is as follows: 
+The process of creating a chat salon and becoming a speaker is as follows: 
 
 1. A user calls `createRoom` to create a chat salon, passing in room attributes such as room ID.
-2. The user will also receive an `onAnchorEnterMic` notification that someone became a speaker, and mic capturing will be enabled automatically.
+2. The user receives an `onAnchorEnterSeat` notification that someone became a speaker, and mic capturing is enabled automatically.
 
 ### destroyRoom
 
@@ -262,19 +262,19 @@ Future<ActionCallback> enterRoom(int roomId)
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | ------ | ---- | ---------- |
-| roomId | int | Room ID. |
+| roomId | int | Room ID |
 
 
 The process of entering a room as a listener is as follows: 
 
-1. A user gets the latest chat salon list from your server. The list may contain `roomId` and room information of multiple chat salons.
-2. The user selects a chat salon and calls `enterRoom` with the room ID passed in to enter the room.
-3. After entering the room, the user can call `getArchorInfoList` to get the speaker list and call `getRoomMemberList` to get the list of all users in the room. The listener list can be obtained by subtracting the speaker list from the user list.
-4. The user will also receive an `onAnchorEnterMic` notification that someone became a speaker.
+1. A user gets the latest chat salon list from your server. The list may contain the `roomId` and room information of multiple chat salons.
+2. The user selects a chat salon, and calls `enterRoom` with the room ID passed in to enter.
+3. After room entry, the user can call `getArchorInfoList` to get the speaker list and call `getRoomMemberList` to get the user list. The user list minus the speaker list is the listener list.
+4. The user receives an `onAnchorEnterMic` notification that someone became a speaker.
 
-### exitRoom
+### exitRoom()
 
 This API is used to exit a room.
 
@@ -284,7 +284,7 @@ Future<ActionCallback> exitRoom()
 
 ### getRoomInfoList
 
-This API is used to get the room list details. The room name and cover are set by the room owner via `roomInfo` when calling `createRoom()`.
+This API is used to get room list details. The room name and cover are set by the room owner via `roomInfo` when calling `createRoom()`.
 
 >?You don’t need this API if both the room list and room information are managed on your server.
 
@@ -295,16 +295,16 @@ Future<RoomInfoCallback> getRoomInfoList(List<String> roomIdList)
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | ---------- | ------------------- | ------------ |
 | roomIdList | List&lt;Integer&gt; | Room ID list |
 
 
 ### getRoomMemberList
 
-This API is used to get the list of all members in the room.
+This API is used to get the user list of a room.
 
->?In an IM live chat group, only the list of the last 31 members can be pulled by default.
+>?By default, the user list includes only the latest 31 users who entered an IM live chat group.
 
 
 ```dart
@@ -313,9 +313,9 @@ Future<MemberListCallback> getRoomMemberList(double nextSeq)
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | ------- | ------ | ------------------------------------------------------------ |
-| nextSeq | double | Pulling-by-page flag. It is set to 0 when the information is pulled for the first time. If the callback succeeds and `nextSeq` is not 0, pagination is needed. The value of this parameter is passed in for the next pull until the value becomes 0. |
+| nextSeq | double | Pulling-by-page flag. It is set to 0 when the information is pulled for the first time. If the callback succeeds and `nextSeq` is not 0, pagination is needed. The value of this field is passed in for the next pull until the value becomes 0.
 
 ### getArchorInfoList
 
@@ -336,9 +336,9 @@ Future<UserListCallback> getUserInfoList(List<String> userIdList)
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | ---------- | ------------------ | ------------------------------------------------------------ |
-| userIdList | List&lt;String&gt; | List of the user IDs to obtain. If this parameter is `null`, the information of all users in the room is obtained. |
+| userIdList | List | IDs of the users to query. If this parameter is `null`, the information of all users in the room is obtained. |
 
 
 ## Mic APIs
@@ -369,7 +369,7 @@ Future<ActionCallback> leaveMic()
 
 This API is used to mute/unmute a speaker (called by room owner).
 
->? After the speaker status is changed, all members in the room will receive `onAnchorListChange` and `onMicMute` notifications.
+>? After the speaker list changes, all users in the room will receive `onAnchorListChange` and `onMicMute` notifications.
 
 ```dart
 Future<ActionCallback> muteMic(bool mute)
@@ -377,9 +377,9 @@ Future<ActionCallback> muteMic(bool mute)
 
 ### kickMic
 
-This API is used to remove a listener (called by room owner).
+This API is used to remove a speaker (called by room owner).
 
->? After a speaker is removed, all members in the room will receive an `onAnchorLeaveMic` notification.
+>? After the room owner removes a speaker, all users in the room will receive an `onAnchorLeaveMic` notification.
 
 ```dart
 Future<ActionCallback> kickMic(String userId)
@@ -387,9 +387,9 @@ Future<ActionCallback> kickMic(String userId)
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 | ------ | ------ | -------------------- |
-| userId | String | ID of the speaker to remove |
+| userId | String | User ID of the speaker to remove |
 
 Calling this API will immediately modify the speaker list.
 
@@ -408,7 +408,7 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | ------- | ---- | ------------------------------------------------------------ |
-| quality | int | Audio quality. For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55). |
+| quality | int | Audio quality. For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55). |
 
 ### stopMicrophone
 
@@ -430,12 +430,12 @@ The parameters are as detailed below:
 
 | Parameter | Type | Description |
 | ---- | ------- | ------------------------------------------------------------ |
-| mute | boolean | Mutes/Unmutes. For more information, please see [TRTC SDK](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86). |
+| mute | boolean | Mutes/Unmutes. For more information, please see [TRTC SDK](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86). |
 
 
 ### setSpeaker
 
-This API is used to turn on the speaker.
+This API is used to turn the speaker on.
 
 ```dart
 void setSpeaker(bool useSpeaker)
@@ -443,7 +443,7 @@ void setSpeaker(bool useSpeaker)
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | ---------- | ------- | --------------------------- |
 | useSpeaker | boolean | `true`: speaker; `false`: receiver |
 
@@ -459,9 +459,9 @@ void setAudioCaptureVolume(int volume)
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | ------ | ---- | ----------------------------- |
-| volume | int | Capture volume level. Value range: 0-100 (default value: 100) |
+| volume | int | Capturing volume. Value range: 0-100 (default: 100) |
 
 
 ### setAudioPlayoutVolume
@@ -474,13 +474,13 @@ void setAudioPlayoutVolume(int volume)
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | ------ | ---- | ----------------------------- |
-| volume | int | Playback volume. Value range: 0-100 (default value: 100) |
+| volume | int | Playback volume. Value range: 0-100 (default: 100) |
 
 ### muteRemoteAudio
 
-This API is used to mute/unmute a specified member.
+This API is used to mute/unmute a specified user.
 
 ```dart
 void muteRemoteAudio(String userId, bool mute)
@@ -495,7 +495,7 @@ The parameters are as detailed below:
 
 ### muteAllRemoteAudio
 
-This API is used to mute/unmute all members.
+This API is used to mute/unmute all users.
 
 ```dart
 void muteAllRemoteAudio(bool mute)
@@ -503,16 +503,16 @@ void muteAllRemoteAudio(bool mute)
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | ---- | ------- | --------------------------------- |
 | mute | boolean | `true`: mute; `false`: unmute |
 
 
-## Background Music and Sound Effect APIs
+## Background Music and Audio Effect APIs
 
 ### getAudioEffectManager
 
-This API is used to get the background music and sound effect management object [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa).
+This API is used to get the background music and audio effect management object [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa).
 
 ```dart
 TXAudioEffectManager getAudioEffectManager()
@@ -523,7 +523,7 @@ TXAudioEffectManager getAudioEffectManager()
 
 ### sendRoomTextMsg
 
-This API is used to broadcast a text message in the room, which is generally used for on-screen comment chat.
+This API is used to broadcast a text message in the room, which is generally used for on-screen comments.
 
 ```dart
 Future<ActionCallback> sendRoomTextMsg(String message)
@@ -531,17 +531,17 @@ Future<ActionCallback> sendRoomTextMsg(String message)
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 | ------- | ------ | ---------- |
 | message | String | Text message |
 
    
 
-## Mic-on Request Signaling APIs
+## APIs for sending requests to speak
 
 ### raiseHand
 
-This API is used by a listener to request to speak.
+This API is used to send a request to speak (called by listener).
 
 ```dart
 void raiseHand()
@@ -549,7 +549,7 @@ void raiseHand()
 
 ### agreeToSpeak
 
-This API is used by the room owner to approve a request to speak.
+This API is used to accept a request to speak (called by room owner).
 
 ```dart
 Future<ActionCallback> agreeToSpeak(String userId)
@@ -557,13 +557,13 @@ Future<ActionCallback> agreeToSpeak(String userId)
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | ------ | ------ | -------- |
-| userId | String | User ID |
+| userID | String | User ID |
 
 ### refuseToSpeak
 
-This API is used by the room owner to decline a request to speak.
+This API is used to reject a request to speak (called by room owner).
 
 ```dart
 Future<ActionCallback> refuseToSpeak(String userId)
@@ -571,12 +571,12 @@ Future<ActionCallback> refuseToSpeak(String userId)
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | ------ | ------ | -------- |
-| userId | String | User ID |
+| userID | String | User ID |
 
-
-## TRTCChatSalonDelegate Event Callback
+[](id:TRTCChatSalonDelegate)
+## `TRTCChatSalonDelegate` Event Callback APIs
 
 ## Common Event Callback APIs
 
@@ -584,16 +584,16 @@ The parameters are as detailed below:
 
 Callback for error.
 
->? This callback indicates that the SDK encounters an irrecoverable error. Such errors must be listened for, and UI reminders should be sent to users depending on the situation.
+This callback indicates that the SDK encountered an unrecoverable error. Such errors must be listened for, and UI reminders should be sent to users depending if necessary.
 
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 | --------- | ------ | -------------------------------------------------------- |
-| errCode | int | Error code |
-| errMsg | String | Error message |
-| extraInfo | String | Extended field. Certain error codes may carry extra information for troubleshooting. |
+| errCode   | int            | Error code                                                     |
+| errMsg    | String | Error message                                                   |
+| extraInfo | String | Extended field. Certain error codes may carry extra information for troubleshooting.
 
 ### onWarning
 
@@ -601,44 +601,44 @@ Callback for warning.
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 | ----------- | ------ | -------------------------------------------------------- |
 | warningCode | int | Warning code |
-| warningMsg  | String     | Warning information                                                   |
-| extraInfo | String | Extended field. Certain error codes may carry extra information for troubleshooting. |
+| warningMsg  | String     | Warning message                                                   |
+| extraInfo | String | Extended field. Certain error codes may carry extra information for troubleshooting.
 
 
 ### onKickedOffline
 
-Another user logged in using the same account, and the current user was forced offline.
+Another user logged in to the same account, and the current user was forced offline.
 
 
 ## Room Event Callback APIs
 
 ### onRoomDestroy
 
-Callback for room termination. When the room owner terminates the room, all users in the room will receive this callback.
+Callback for room termination. When the owner terminates the room, all users in the room will receive this callback.
 
 ### onAnchorListChange
 
-The speaker list changed.
+Callback for speaker list change.
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter    | Type   | Description                                                                                                                    |
 | ------ | ------ | ---------- |
-| userId | String | User ID |
-| mute | bool | Mute status |
+| userID | String | User ID |
+| mute   | bool   | Muted or not     |
 
 
 ### onUserVolumeUpdate
 
-Volume notifications sent to all members after the volume reminder is enabled.
+Callback of the volume of each member in the room after the volume reminder is enabled.
 
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 | ------ | ------ | ------------------------- |
 | userId | String | User ID |
 | volume | int | Volume. Value range: 0-100 |
@@ -649,16 +649,16 @@ The parameters are as detailed below:
 
 ### onAnchorEnterMic
 
-A user became a speaker.
+Someone became a speaker.
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 | ---------- | ------ | -------------------- |
-| userId     | String | ID of the user who became a speaker       |
-| userName   | String | User nickname          |
-| userAvatar | String | Profile photo address           |
-| mute       | bool   | Speaker status. Default value: unmuted |
+| userId | String | ID of the user who became a speaker |
+| userName | String | Nickname |
+| userAvatar | String | Profile photo address |
+| mute       | bool   | Muted or not. Default: unmuted |
 
 ### onAnchorLeaveMic
 
@@ -666,23 +666,23 @@ A speaker became a listener.
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 | ------ | ------ | -------------- |
 | userId | String | ID of the user who became a listener |
 
 ### onMicMute
 
-Whether the room owner muted a speaker.
+Whether a user is muted by the room owner.
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 | ------ | ------ | -------------- |
-| userId | String | ID of the user to mute |
-| mute   | bool   | Speaker status     |
+| userId   | String | User ID |
+| mute   | bool   | Muted or not     |
 
 
-## Callback APIs for Room Entry/Exit by Listeners
+## Callback APIs for Room Entry/Exit by Listener
 
 ### onAudienceEnter
 
@@ -691,10 +691,10 @@ A listener entered the room.
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 | ---------- | ------ | -------------- |
 | userId | String | ID of the user who entered the room |
-| userName   | String | User nickname     |
+| userName | String | Nickname |
 | userAvatar | String | Profile photo address |
 
 ### onAudienceExit
@@ -703,28 +703,28 @@ A listener exited the room.
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 | ------ | ------ | -------------- |
-| userId | String | ID of the user who exited the room |
+| userId   | String | ID of the listener who exited |
 
 
 ## Message Event Callback APIs
 
 ### onRecvRoomTextMsg
 
-Receipt of text message.
+A text message was received.
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 | ---------- | ------ | ---------------- |
 | message | String | Text message |
-| sendId     | String | Sender’s user ID   |
+| sendId     | String | Sender’s uers ID   |
 | userAvatar | String | Sender’s profile photo |
-| userName   | String | Sender’s nickname |
+| userName | String | Sender’s nickname |
 
 
-## Raise-Hand Signaling Event Callback APIs
+## Callback APIs for sending requests to speak (hand raising)
 
 ### onRaiseHand
 
@@ -733,29 +733,29 @@ A request to speak was received.
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 | ------ | ------ | ------------------ |
-| userId | String | ID of the user who raised hand |
+| userId   | String | ID of the user who requested to speak  |
 
 
 ### onAgreeToSpeak
 
-The room owner approved the request.
+The room owner accepted the request to speak.
 
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 | ------ | ------ | -------------- |
-| userId | String | Room owner's user ID |
+| userId   | String | User ID of the room owner |
 
 ### onRefuseToSpeak
 
-The room owner rejected the request.
+The room owner rejected the request to speak.
 
 
 The parameters are as detailed below:
 
-| Parameter | Type | Description |
+| Parameter        | Type    | Description                                                                                                      |
 | ------ | ------ | -------------- |
-| userId | String | Room owner's user ID |
+| userId   | String | User ID of the room owner |
