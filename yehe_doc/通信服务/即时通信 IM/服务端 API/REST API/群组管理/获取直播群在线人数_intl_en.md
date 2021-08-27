@@ -21,8 +21,13 @@ Above are the IM built-in groups. For more information, see [Group system](https
 
 ### Sample request URL
 ```
-https://console.tim.qq.com/v4/group_open_http_svc/get_online_member_num?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/group_open_http_svc/get_online_member_num?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
+Where, `xxxxxx` is the country/region-specific domain. Please enter the domain corresponding to the country/region where your SDKAppID is located.
+
+|Country/Region| Domain |
+|----|----|
+|Singapore| adminapisgp.im.qcloud.com |
 
 ### Request parameters
 
