@@ -13,7 +13,7 @@ Tencent Kubernetes Engine (TKE) allows you to use Cloud Object Storage (COS) by 
 <span id="CreatAccessKey"></span>
 ### Creating an access key
 >!
->- To avoid cloud asset loss due to the leakage of the root account key, we recommend that you stop using your root account to log in to the console, or use the root account key to access cloud APIs and use a sub-account or collaborator with the relevant management permissions to manage related resources. For more information, see [Best Practices](https://intl.cloud.tencent.com/document/product/598/10592).
+>- To avoid cloud asset loss due to the leakage of the root account key, we recommend that you stop using your root account to log in to the console, or use the root account key to access cloud APIs and use a sub-account or collaborator with the relevant management permissions to manage related resources. For more information, see [Security Setting Policy](https://intl.cloud.tencent.com/document/product/598/10592).
 >- This document describes how to create or view an access key as a sub-user with relevant access management permissions. For more information on how to create a sub-user and grant access management permissions to the sub-user, see [Creating a Custom Sub-user](https://intl.cloud.tencent.com/document/product/598/13674).
 
 1. Use a sub-account to log in to the [Cloud Access Management console](https://console.cloud.tencent.com/cam/overview) and choose **Access Key** > **API Keys** in the left sidebar to go to the **API Key Management** page.
@@ -102,7 +102,7 @@ Main parameters are described as follows:
 	- **Namespace**: select **kube-system**.
 	- **Provisioner**: select **COS**.
 	- **R/W permission**: COS only supports multi-host read and write.
-	- **PersistentVolume**: select the PV that you created in [step 2](#StepTwo). This document uses `cos-pvc` as an example.
+	- **PersistentVolume**: select the PV that you created in [step 2](#StepTwo). This document uses `cos-pv` as an example.
 3. Click **Create a PersistentVolumeClaim**.
 
 #### Creating a PVC used by a pod
