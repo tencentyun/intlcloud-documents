@@ -57,8 +57,8 @@ Their EIP and function binding relationships are as shown below:
 </table>
 
 ## Directions
->!You can have up to 5 fixed pubic outbound IPs in a region. To request an increase in quota, please [submit a ticket](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=668&source=0&data_title=%E6%97%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BA%91%E5%87%BD%E6%95%B0%20SCF&step=1) for application.
->
+>!You can have up to 5 fixed pubic outbound IPs in a region. 
+
 1. Log in to the [SCF console](https://console.cloud.tencent.com/scf/index?rid=19) and click **Function Service** on the left sidebar.
 2. Select the function region at the top of the page and click the function name.
 3. Enter the **Function Configuration** tab and click **Edit** in the top-right corner.
