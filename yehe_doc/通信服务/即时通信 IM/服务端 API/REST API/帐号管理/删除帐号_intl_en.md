@@ -12,11 +12,6 @@
 ```
 https://xxxxxx/v4/im_open_login_svc/account_import?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
-Where, `xxxxxx` is the country/region-specific domain. Please enter the domain corresponding to the country/region where your SDKAppID is located.
-
-|Country/Region| Domain |
-|----|----|
-|Singapore| adminapisgp.im.qcloud.com |
 
 ### Request parameters
 
@@ -24,6 +19,8 @@ Where, `xxxxxx` is the country/region-specific domain. Please enter the domain c
 
 | Parameter | Description |
 | ----------------------------------- | ------------------------------------------------------------ |
+| https       | The request protocol is HTTPS, and the request method is POST.       |
+| xxxxxx  | The country/region where your SDKAppID is located.<li>China:  `console.time.qq.com `<li>Singapore:  `adminapisgp.im.qcloud.com ` |
 | v4/im_open_login_svc/account_delete | Request API |
 | sdkappid | `SDKAppID` assigned by the console when the app is created |
 | identifier | App admin account. For more information, please see the **App Admin** section in [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517). |
