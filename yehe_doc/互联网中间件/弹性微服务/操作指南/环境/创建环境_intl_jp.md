@@ -1,6 +1,6 @@
 ## 操作シナリオ
 
-Tencent Cloud Elastic Microserviceの環境は1組のCompute、Networking、Storageなどのリソースのコレクションです。TEMには複数環境の管理機能が用意されており、ご自身のの業務ニーズに応じて、開発、テスト、プレリリース、生産など複数の環境を構築し、サービスを個別にデプロイし、環境隔離の目的を達成することができます。同一環境にあるサービスはk8s ServiceメカニズムまたはConsul、Eurekaなどの登録センターを介して互いにアクセスすることができます。
+Tencent Cloud Elastic Microserviceの環境は1組のCompute、Networking、Storageなどのリソースのコレクションです。TEMには複数環境の管理機能が用意されており、ご自身のの業務ニーズに応じて、開発、テスト、プレリリース、生産など複数の環境を構築し、サービスを個別にデプロイし、環境隔離の目的を達成することができます。同一環境にあるサービスはk8s ServiceメカニズムまたはZooKeeper、Eurekaなどの登録センターを介して互いにアクセスすることができます。
 
 ここでは主にTencent Cloud Elastic Microserviceコンソールで環境を作成する具体的な手順について説明します。
 
