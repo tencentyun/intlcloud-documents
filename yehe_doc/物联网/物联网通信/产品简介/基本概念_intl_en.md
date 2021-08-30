@@ -34,7 +34,8 @@ CA certificate is one of the identity authentication conditions for devices auth
 
 ### Key Authentication
 In key authentication mode, a device needs to carry the `ProductID`, `DeviceName`, and device key to prove its validity before connection to the platform. The key can be viewed in the device information.
-![](https://main.qcloudimg.com/raw/546f1755b5ef86e70f8c847618b09282.png)
+![](https://main.qcloudimg.com/raw/4ce73f14d695055aec4b8f72e3c2101f.png)
+![](https://main.qcloudimg.com/raw/ece7e8466c67e2abaf2c2d8f0639dddb.png)
 
 ### ProductSecret
 `ProductSecret` is a key at the product level. It is used to calculate the device-side signature when a device is dynamically registered, in exchange for the device-level key or certificate + private key.

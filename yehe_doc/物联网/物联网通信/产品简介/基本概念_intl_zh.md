@@ -34,7 +34,8 @@
 
 ### 密钥认证
 采用密钥认证的设备，需携带 ProductID、DeviceName、设备密钥来证明自己的合法性以完成与平台的连接。密钥可在设备信息中查看。
-![](https://main.qcloudimg.com/raw/546f1755b5ef86e70f8c847618b09282.png)
+![](https://main.qcloudimg.com/raw/4ce73f14d695055aec4b8f72e3c2101f.png)
+![](https://main.qcloudimg.com/raw/ece7e8466c67e2abaf2c2d8f0639dddb.png)
 
 ### ProductSecret
 产品级密钥，用于设备动态注册请求时计算设备端签名，换取设备级密钥或证书+私钥。
