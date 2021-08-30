@@ -16,17 +16,13 @@ REST API 的 URL 格式如下：
 ```
 https://xxxxxx/$ver/$servicename/$command?sdkappid=$SDKAppID&identifier=$identifier&usersig=$usersig&random=99999999&contenttype=json
 ```
- `xxxxxx` 是各国家/地区的专属域名，请填写您的 SDKAppID 所在国家/地区对应的专属域名：  
-
-| 国家/地区   | 专属域名|
-| ----- | ----- |
-| 新加坡 | adminapisgp.im.qcloud.com               |
 
 其中各个参数的含义以及取值如下（参数名称及其取值均区分大小写）：
 
 | 参数  | 含义  | 取值  |
 |---------|---------|---------|
 | https    |请求协议      | 请求协议为 HTTPS，请求方式为 POST       |
+| xxxxxx | 专属域名 |<li>中国：console.time.qq.com<li>新加坡：adminapisgp.im.qcloud.com |
 | ver  | 协议版本号 | 固定为`v4`  |
 | servicename  | 内部服务名，不同的 servicename 对应不同的服务类型 |示例：<br>`v4/im_open_login_svc/account_import`，其中`im_open_login_svc`为`servicename`<br/>更多详情请参见 [REST API 接口列表](https://intl.cloud.tencent.com/document/product/1047/34621) |
 | command  | 命令字，与 servicename 组合用来标识具体的业务功能 |示例：<br>`v4/im_open_login_svc/account_import`，其中`account_import`为`command`<br/>更多详情请参见 [REST API 接口列表](https://intl.cloud.tencent.com/document/product/1047/34621) |
