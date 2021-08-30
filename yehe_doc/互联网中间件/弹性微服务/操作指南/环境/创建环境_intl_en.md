@@ -1,6 +1,6 @@
 ## Overview
 
-In TEM, an environment is a collection of computing, network, storage, and other resources. TEM provides the multi-environment management feature. In this way, you can create multiple environments for development, testing, prerelease, and production according to your business needs, deploy applications separately, and thus implement environment isolation. Applications in different environments are isolated from each other. Applications in the same environment can access each other through the K8s service mechanism or registries such as Consul and Eureka.
+In TEM, an environment is a collection of computing, network, storage, and other resources. TEM provides the multi-environment management feature. In this way, you can create multiple environments for development, testing, prerelease, and production according to your business needs, deploy applications separately, and thus implement environment isolation. Applications in different environments are isolated from each other. Applications in the same environment can access each other through the K8s service mechanism or registries such as ZooKeeper and Eureka.
 
 This document describes how to create an environment in the TEM console.
 
