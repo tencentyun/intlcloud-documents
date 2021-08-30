@@ -1,9 +1,6 @@
 ## 群组系统简介
 群组系统是一个支持多人聊天的即时通信系统，群组系统所具备的基本能力包括：
 
-
-
-
 - 完备的 [群组管理](https://intl.cloud.tencent.com/document/product/1047/33530) 能力：创建/解散群组、成员管理、群组资料管理、成员资料管理等。
 - 稳定可靠的消息收发能力，完善的 [群组消息](https://intl.cloud.tencent.com/document/product/1047/33526) 管理机制：权限控制，禁言，脏词过滤，消息回调，消息漫游等。
 - 根据常见使用场景，默认配置了**好友工作群（Work）**、**陌生人社交群（Public）**、**临时会议群（Meeting）**和**直播群（AVChatRoom）** 四个群组类型，并支持业务根据自身需要 [自定义群组类型](https://intl.cloud.tencent.com/document/product/1047/33529)。
@@ -14,7 +11,7 @@
 
 >!
 >- 直播群（AVChatRoom）不设成员人数上限，但如果预期群成员会出现短时间内激增的场景（例如举行大型在线活动，单群成员人数达到5万或以上等情况），请提前联系商务工作人员，提供 SDKAppID 和活动预期发生时间进行服务资源报备。
->- 目前仅非直播群具备历史消息存储能力（体验版及专业版默认7天，旗舰版默认30天）。如需保存更长时间，您可以在 [控制台](https://console.cloud.tencent.com/im) 修改消息历史消息存储时长。延长历史消息存储时长是付费增值服务，具体计费说明请参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
+>- 目前仅非直播群具备历史消息存储能力（体验版及专业版套餐包默认7天，旗舰版默认30天）。如需保存更长时间，您可以在 [控制台](https://console.cloud.tencent.com/im) 修改消息历史消息存储时长。延长历史消息存储时长是付费增值服务，具体计费说明请参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。
 
 除此之外，即时通信 IM 群组系统具备高度可定制性，具体包括：
 
@@ -35,7 +32,7 @@
 | 群主         | 群组的创建者，在群组中拥有最高的管理权限    | 群主具备管理员所拥有的各项权限之外，还拥有如下权限：<ul style="margin:0;"><li>任命/取消管理员</li><li>将管理员踢出群组</li><li>将管理员禁言</li><li>解散群组</li><li>转让群组</li></ul> |
 | App 管理员    | 具备管理 App 中所有群组权限的一种特殊身份，能力超过群主  | App 管理员可以不是群组中的成员，但是拥有群主具备的所有权限    |
 
-<span id="GroupType"></span>
+[](id:GroupType)
 ## 群组类型介绍
 
 根据常见使用场景，默认配置了以下群组类型：
@@ -92,12 +89,12 @@
 ### 群组限制差异
 |功能项|好友工作群（Work）/陌生人社交群（Public）/临时会议群（Meeting）|直播群（AVChatRoom）|
 |--- |--- |--- |
-|成员数量上限|<ul style="margin:0;"><li>体验版：20人/群</li><li>专业版：默认为200人/群，最高支持 [增值](https://intl.cloud.tencent.com/document/product/1047/34350#.E5.A2.9E.E5.80.BC.E6.9C.8D.E5.8A.A1.E8.B5.84.E8.B4.B9) 扩展至2000人/群</li><li>旗舰版：默认为2000人/群，最高支持 [增值](https://intl.cloud.tencent.com/document/product/1047/34350#.E5.A2.9E.E5.80.BC.E6.9C.8D.E5.8A.A1.E8.B5.84.E8.B4.B9) 扩展至6000人/群</li></ul>|无上限|
-|群组数量|<ul style="margin:0;"><li>体验版：最多同时存在100个，已解散的群组不计数</li><li>专业版或旗舰版：无上限</li></ul>|<ul style="margin:0;"><li>体验版：最多同时存在10个，已解散的群组不计数</li><li>专业版：最多同时存在50个，已解散的群组不计数，支持 [增值](https://intl.cloud.tencent.com/document/product/1047/34350#.E5.A2.9E.E5.80.BC.E6.9C.8D.E5.8A.A1.E8.B5.84.E8.B4.B9) 扩展直播群创建数至无上限</li><li>旗舰版：无上限</li></ul>|
+|成员数量上限|<ul style="margin:0;"><li>体验版：20人/群</li><li>专业版：默认为200人/群，最高支持 [增值](https://intl.cloud.tencent.com/document/product/1047/34350#zz) 扩展至2000人/群</li><li>旗舰版：默认为2000人/群，最高支持 [增值](https://intl.cloud.tencent.com/document/product/1047/34350#zz) 扩展至6000人/群</li></ul>|无上限|
+|群组数量|<ul style="margin:0;"><li>体验版：最多同时存在100个，已解散的群组不计数</li><li>专业版或旗舰版：无上限</li></ul>|<ul style="margin:0;"><li>体验版：最多同时存在10个，已解散的群组不计数</li><li>专业版：最多同时存在50个，已解散的群组不计数，支持 [增值](https://intl.cloud.tencent.com/document/product/1047/34350#zz) 扩展直播群创建数至无上限</li><li>旗舰版：无上限</li></ul>|
 
 >!
 >- 专业版或旗舰版 SDKAppID 下，所有群类型日净增群组数（即创建群组数减去解散群组数）上限为1万个。
->- 专业版或旗舰版 SDKAppID 下，免费峰值群组数为10万个/月，超出免费量将产生 [套餐外超量费用](https://intl.cloud.tencent.com/document/product/1047/34350#.E5.A5.97.E9.A4.90.E5.A4.96.E8.B6.85.E9.87.8F.E8.B4.B9.E7.94.A8)，建议及时解散无需继续使用的群组。
+>- 专业版或旗舰版 SDKAppID 下，免费峰值群组数为10万个/月，超出免费量将产生 [套餐外超量费用](https://intl.cloud.tencent.com/document/product/1047/34350#jc)，建议及时解散无需继续使用的群组。
 
 
 ### 消息能力差异
@@ -125,7 +122,7 @@
 |允许导入群、群成员和群消息|允许导入群、群成员和群消息，适用于从第三方平台迁移历史群组到即时通信 IM 时使用|不允许批量导入群、群成员和群消息，只能使用现有的群、群成员和群消息|
 |群组自动回收时间（秒）|后台不会回收群组，除非群主解散，或者所有成员都退出群组|后台不会回收群组，除非群主解散，或者所有成员都退出群组|
 
->!如果需要开启群组回收功能，可以 提交工单进行申请。配置后，将会根据群组类型清理不活跃群组（群组不活跃是指群组中既没人发言，也没有成员变更）。
+>!如果需要开启群组回收功能，可以根据 [工单模板](https://intl.cloud.tencent.com/document/product/1047/37275) 提交工单进行申请。配置后，将会根据群组类型清理不活跃群组（群组不活跃是指群组中既没人发言，也没有成员变更）。
 
 ## 群组数据结构介绍
 ### 群基础资料[](id:GroupBaseInfoFilter)
@@ -145,7 +142,7 @@
 |LastMsgTime|Integer|群组内最后发消息的时间|只读|
 |NextMsgSeq|Integer|群内下一条消息的 Seq|只读<br>群组内每一条消息都有一条唯一的消息 Seq，且该 Seq 是按照发消息顺序而连续的。从1开始，群内每增加一条消息，NextMsgSeq 就会增加1|
 |MemberNum|Integer|当前成员数量|只读|
-|MaxMemberNum|Integer|最大成员数量|-|
+|MaxMemberNum|Integer|最大成员数量|缺省时的默认值：付费套餐包上限，例如体验版是20，如果升级套餐包，需按照修改群基础资料修改这个字段到对应数值|
 |ApplyJoinOption|String|申请加群选项|申请加群选项包括如下几种：<ul style="margin:0;"><li>DisableApply 表示禁止任何人申请加入</li><li>NeedPermission 表示需要群主或管理员审批</li><li>FreeAccess 表示允许无需审批自由加入群组</li></ul>|
 
 
@@ -167,7 +164,7 @@
 
 ## 自定义群组类型
 
-在实际使用中，如果 IM 提供的 [群组类型](#GroupType) 无法满足您的需求，您可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请修改现有群组类型或新增自定义群组类型。
+在实际使用中，如果 IM 提供的 [群组类型](#GroupType) 无法满足您的需求，您可以按照 [工单模板](https://intl.cloud.tencent.com/document/product/1047/37275) 准备相关信息，然后 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请修改现有群组类型或新增自定义群组类型。
 例如，某种办公场景下使用的群组，它与好友工作群（Work）相似但需要群内任意成员都具有最高级别的管理权限且可以查看入群之前的历史消息。那么您可以选择以下方案：
 - 选择使用好友工作群（Work）， 然后 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请开启“是否支持查看入群前历史消息”和“是否允许普通成员踢人”选项。
 - [提交工单](https://console.cloud.tencent.com/workorder/category) 申请定义一种新的群组类型：OAGroup，指定好友工作群（Work）为参考类型，并开启“是否支持查看入群前历史消息”和“是否允许普通成员踢人”选项。  

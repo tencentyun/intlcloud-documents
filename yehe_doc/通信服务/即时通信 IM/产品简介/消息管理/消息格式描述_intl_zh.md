@@ -69,6 +69,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 
 当接收方为 iOS 或 Android，且应用处在后台时，中文版离线推送文本为“[位置]”，英文版离线推送文本为“[Location]”。
 
+
 ### 表情消息元素
 
 ```
@@ -80,6 +81,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
     }
 }
 ```
+
 | 字段 | 类型 | 说明 |
 |---------|---------|---------|
 | Index | Number | 表情索引，用户自定义。 |
@@ -106,6 +108,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
     }
 }
 ```
+
 | 字段 | 类型 | 说明 |
 |---------|---------|---------|
 | Data | String | 自定义消息数据。 不作为 APNs 的 payload 字段下发，故从 payload 中无法获取 Data 字段。|
@@ -237,7 +240,7 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 >}
 >}
 >```
-```
+
 
 ### 视频消息元素
 
@@ -280,21 +283,22 @@ MsgBody 中所填写字段是消息内容。即时通信 IM 支持一条消息�
 
 >?2.X和3.X版本 IM SDK（Android、iOS、Mac 以及 Windows）发出的视频消息元素如下：
 >```
-{
-    "MsgType": "TIMVideoFileElem",
-    "MsgContent": {
-        "VideoUUID": "1400123456_dramon_34ca36be7dd214dc50a49238ef80a6b5",//视频序列号，类型为 String。后台用于索引视频的键值。无法通过该字段下载相应的视频。若需要获取该视频，请升级 IM SDK 版本至4.X。
-        "VideoSize": 1194603, //视频数据大小，类型为 Number，单位：字节。
-        "VideoSecond": 5,     //视频时长，类型为 Number，单位：秒。
-		"VideoFormat": "mp4", //视频格式，类型为 String，例如 mp4。
-		"ThumbUUID": "1400123456_dramon_893f5a7a4872676ae142c08acd49c18a",//视频缩略图序列号，类型为 String。后台用于索引视频缩略图的键值。无法通过该字段下载相应的视频缩略图。若需要获取该视频缩略图，请升级 IM SDK 版本至4.X。
-		"ThumbSize": 13907,   //缩略图大小，类型为 Number，单位：字节。
-		"ThumbWidth": 720,    //缩略图宽度。类型为 Number。
-		"ThumbHeight": 1280,  //缩略图高度。类型为 Number。
-		"ThumbFormat": "JPG"  //缩略图格式，类型为 String，例如 JPG、BMP 等。
-    }
-}
-```
+>{
+>"MsgType": "TIMVideoFileElem",
+>"MsgContent": {
+>  "VideoUUID": "1400123456_dramon_34ca36be7dd214dc50a49238ef80a6b5",//视频序列号，类型为 String。后台用于索引视频的键值。无法通过该字段下载相应的视频。若需要获取该视频，请升级 IM SDK 版本至4.X。
+>  "VideoSize": 1194603, //视频数据大小，类型为 Number，单位：字节。
+>  "VideoSecond": 5,     //视频时长，类型为 Number，单位：秒。
+>	"VideoFormat": "mp4", //视频格式，类型为 String，例如 mp4。
+>	"ThumbUUID": "1400123456_dramon_893f5a7a4872676ae142c08acd49c18a",//视频缩略图序列号，类型为 String。后台用于索引视频缩略图的键值。无法通过该字段下载相应的视频缩略图。若需要获取该视频缩略图，请升级 IM SDK 版本至4.X。
+>	"ThumbSize": 13907,   //缩略图大小，类型为 Number，单位：字节。
+>	"ThumbWidth": 720,    //缩略图宽度。类型为 Number。
+>	"ThumbHeight": 1280,  //缩略图高度。类型为 Number。
+>	"ThumbFormat": "JPG"  //缩略图格式，类型为 String，例如 JPG、BMP 等。
+>}
+>}
+>```
+
 
 ## MsgBody 消息内容实例
 
@@ -501,8 +505,10 @@ OfflinePushInfo 的格式示例如下：
 | AndroidInfo.HuaWeiChannelID | String | 选填 | 华为手机 EMUI 10.0 及以上的通知渠道字段。该字段不为空时，会覆盖控制台配置的 ChannelID 值；该字段为空时，不会覆盖控制台配置的 ChannelID 值。|
 | AndroidInfo.XiaoMiChannelID | String | 选填 | 小米手机 MIUI 10 及以上的通知类别（Channel）适配字段。该字段不为空时，会覆盖控制台配置的 ChannelID 值；该字段为空时，不会覆盖控制台配置的 ChannelID 值。 |
 | AndroidInfo.OPPOChannelID | String | 选填 | OPPO 手机 Android 8.0 及以上的 NotificationChannel 通知适配字段。该字段不为空时，会覆盖控制台配置的 ChannelID 值；该字段为空时，不会覆盖控制台配置的 ChannelID 值。|
-| AndroidInfo.GoogleChannelID | String | 选填 | Google 手机 Android 8.0 及以上的通知渠道字段。Google 推送新接口（上传证书文件）支持 channel id ，旧接口（填写服务器密钥）不支持。 |
+| AndroidInfo.GoogleChannelID | String | 选填 | Google 手机 Android 8.0 及以上的通知渠道字段。Google 推送新接口（上传证书文件）支持 channel id，旧接口（填写服务器密钥）不支持。 |
 | AndroidInfo.VIVOClassification | Integer | 选填 | VIVO 手机推送消息分类，“0”代表运营消息，“1”代表系统消息，不填默认为1。|
+| AndroidInfo.HuaWeiImportance | String | 选填 | 华为推送通知消息分类，取值为 LOW、NORMAL，不填默认为 NORMAL。|
+| AndroidInfo.ExtAsHuaweiIntentParam | Integer | 选填 | 在控制台配置华为推送为“打开应用内指定页面”的前提下，传“1”表示将透传内容 Ext 作为 Intent 的参数，“0”表示将透传内容 Ext 作为 Action 参数。不填默认为0。两种传参区别可参见 [华为推送文档](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/andorid-basic-clickaction-0000001087554076#section20203190121410)。|
 | ApnsInfo.BadgeMode | Integer | 选填 | 这个字段缺省或者为0表示需要计数，为1表示本条消息不需要计数，即右上角图标数字不增加。|
 | ApnsInfo.Title|String|选填|该字段用于标识 APNs 推送的标题，若填写则会覆盖最上层 Title。|
 | ApnsInfo.SubTitle|String|选填|该字段用于标识 APNs 推送的子标题。|
@@ -516,3 +522,7 @@ OfflinePushInfo 的格式示例如下：
 Apple Push Notification Service(APNs) [苹果推送开发文档](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1)。
 iOS 离线消息推送配置：[离线推送(iOS)](https://intl.cloud.tencent.com/document/product/1047/34347)。
 
+
+```
+
+```

@@ -23,6 +23,7 @@
 | 7006   | 空文件，要求文件大小不是0字节，如果上传图片、语音、视频或文件，请检查文件是否正确生成。 |
 | 7007   | 文件打开失败，请检查文件是否存在，或者已被独占打开，引起 SDK 打开失败。 |
 | 7013   | 套餐包不支持该接口的使用，请升级到旗舰版套餐。 |
+| 7014   | 非法请求。 |
 
 ### 帐号错误码
 
@@ -54,6 +55,10 @@
 | 8001   | 消息长度超出限制，消息长度不要超过8k，消息长度是各个 elem 长度的总和，elem 长度是所有 elem 字段的长度总和。 |
 | 8002   | 消息 KEY 错误，内部错误，网络请求包的 KEY 和 回复包的不一致。 |
 | 8003   | 图片转换 HTTP 请求失败。 |
+| 8004   | 图片涉及敏感内容。 |
+| 8005   | 合并转发消息嵌套层数超过上限100层。 |
+| 8010   | 信令请求 ID 无效或已经被处理过。 |
+| 8011   | 信令请求无权限，比如取消非自己发起的邀请。 |
 
 ### 群组错误码
 
@@ -154,20 +159,20 @@
 | ------ | ------------------------------------------------------------ |
 | 60002  | HTTP 解析错误 ，请检查 HTTP 请求 URL 格式。                  |
 | 60003  | HTTP 请求 JSON 解析错误，请检查 JSON 格式。                  |
-| 60004  | 请求 URI 或 JSON 包体中 UserID 或 UserSig 错误。             |
-| 60005  | 请求 URI 或 JSON 包体中 UserID 或 UserSig 错误。             |
+| 60004  | 请求 URI 或 JSON 包体中 UserID 或 UserSig 错误。         |
+| 60005  | 请求 URI 或 JSON 包体中 UserID 或 UserSig 错误。         |
 | 60006  | SDKAppID 失效，请核对 SDKAppID 有效性。                      |
 | 60007  | REST 接口调用频率超过限制，请降低请求频率。                  |
 | 60008  | 服务请求超时或 HTTP 请求格式错误，请检查并重试。             |
 | 60009  | 请求资源错误，请检查请求 URL。                               |
-| 60010  | REST API 请求的 UserID 字段请填写 App 管理员帐号。           |
+| 60010  | REST API 请求的 UserID 字段请填写 App 管理员帐号。       |
 | 60011  | SDKAppID 请求频率超限，请降低请求频率。                      |
 | 60012  | REST 接口需要带 SDKAppID，请检查请求 URL 中的 SDKAppID。     |
 | 60013  | HTTP 响应包 JSON 解析错误。                                  |
 | 60014  | 置换帐号超时。                                               |
-| 60015  | 请求包体 UserID 类型错误，请确认 UserID 为字符串格式。       |
-| 60016  | SDKAppID 被禁用。                                            |
-| 60017  | 请求被禁用。                                                 |
+| 60015  | 请求包体 UserID 类型错误，请确认 UserID 为字符串格式。 |
+| 60016  | SDKAppID 被禁用。                  |
+| 60017  | 请求被禁用。              |
 | 60018  | 请求过于频繁，请稍后重试。                                   |
 | 60019  | 请求过于频繁，请稍后重试。                                   |
 | 80001  | 文本安全打击，文本中可能包含敏感词汇。                       |
@@ -180,24 +185,24 @@
 | 70001  | UserSig 已过期，请重新生成。建议 UserSig 有效期设置不小于24小时。 |
 | 70002  | UserSig 长度为0，请检查传入的 UserSig 是否正确。             |
 | 70003  | UserSig 非法，请使用官网提供的 API 重新 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。 |
-| 70005  | UserSig 非法，请使用官网提供的 API 重新 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。 |
+| 70005  | UserSig 非法，请使用官网提供的 API 重新 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。  |
 | 70009  | UserSig 验证失败，可能因为生成 UserSig 时混用了其他 SDKAppID 的私钥或密钥导致，请使用对应 SDKAppID 下的私钥或密钥重新 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。 |
-| 70013  | 请求中的 UserID 与生成 UserSig 时使用的 UserID 不匹配，您可以在即时通信 IM 控制台的【 [开发辅助工具](https://console.cloud.tencent.com/im-detail/tool-usersig)】页面校验 UserSig。 |
-| 70014  | 请求中的 SDKAppID 与生成 UserSig 时使用的 SDKAppID 不匹配，您可以在即时通信 IM 控制台的【 [开发辅助工具](https://console.cloud.tencent.com/im-detail/tool-usersig)】页面校验 UserSig。 |
+| 70013  | 请求中的 UserID 与生成 UserSig 时使用的 UserID 不匹配，您可以在即时通信 IM 控制台的【 [开发辅助工具](https://console.cloud.tencent.com/im-detail/tool-usersig)】页面校验 UserSig。      |
+| 70014  | 请求中的 SDKAppID 与生成 UserSig 时使用的 SDKAppID 不匹配，您可以在即时通信 IM 控制台的【 [开发辅助工具](https://console.cloud.tencent.com/im-detail/tool-usersig)】页面校验 UserSig。          |
 | 70016  | 公钥不存在，UserSig 验证失败，请在即时通信 IM 控制台 [获取密钥](https://intl.cloud.tencent.com/document/product/1047/34540)。 |
-| 70020  | SDKAppID 未找到，请在即时通信 IM 控制台确认应用信息。        |
+| 70020  | SDKAppID 未找到，请在即时通信 IM 控制台确认应用信息。          |
 | 70050  | UserSig 验证次数过于频繁。请检查 UserSig 是否正确，并于1分钟后重新验证。您可以在即时通信 IM 控制台的【 [开发辅助工具](https://console.cloud.tencent.com/im-detail/tool-usersig)】页面校验 UserSig。 |
 | 70051  | 帐号被拉入黑名单。                                           |
 | 70107  | 请求的用户帐号不存在。                                       |
-| 70114  | 因安全原因被限制登录，请不要频繁登录。                       |
-| 70169  | 服务端内部超时，请稍后重试。                                 |
-| 70202  | 服务端内部超时，请稍后重试。                                 |
+| 70114  | 因安全原因被限制登录，请不要频繁登录。                                             |
+| 70169  | 服务端内部超时，请稍后重试。                                     |
+| 70202  | 服务端内部超时，请稍后重试。                                   |
 | 70206  | 请求中批量数量不合法。                                       |
 | 70402  | 参数非法，请检查必填字段是否填充，或者字段的填充是否满足协议要求。 |
-| 70403  | 请求失败，需要 App 管理员权限。                              |
-| 70398  | 帐号数超限。如需创建多于100个帐号，请将应用升级为专业版，具体操作指引请参见 [购买指引](https://intl.cloud.tencent.com/document/product/1047/36021)。 |
-| 70500  | 服务端内部错误，请稍后重试。                                 |
-| 71000  | 删除帐号失败。仅支持删除体验版帐号，您当前应用为专业版，暂不支持帐号删除。 |
+| 70403  | 请求失败，需要 App 管理员权限。                                    |
+| 70398  | 帐号数超限。如需创建多于100个帐号，请将应用升级为专业版，具体操作指引请参见 [购买指引](https://intl.cloud.tencent.com/document/product/1047/36021)。         |
+| 70500  | 服务端内部错误，请稍后重试。                                     |
+| 71000  | 删除帐号失败。仅支持删除体验版帐号，您当前应用为专业版，暂不支持帐号删除。      |
 
 ### 资料错误码
 
@@ -349,7 +354,7 @@
 | 10033  | 群组类型不支持消息撤回操作。                                 |
 | 10034  | 该消息类型不支持删除操作。                                   |
 | 10035  | 音视频聊天室和在线成员广播大群不支持删除消息。               |
-| 10036  | 音视频聊天室创建数量超过了限制，请参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350)。 |
+| 10036  | 音视频聊天室创建数量超过了限制，请参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350) 购买预付费套餐“IM音视频聊天室”。 |
 | 10037  | 单个用户可创建和加入的群组数量超过了限制，请参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350) 购买或升级预付费套餐“单人可创建与加入群组数”。 |
 | 10038  | 群成员数量超过限制，请参考 [价格说明](https://intl.cloud.tencent.com/document/product/1047/34350) 购买或升级预付费套餐“扩展群人数上限”。 |
 | 10041  | 该应用（SDKAppID）已配置不支持群消息撤回。                     |
@@ -362,6 +367,8 @@
 |10051 |消息删除超过最大范围限制。|
 |10052 |消息删除时候群里不存在消息。|
 |10053 |群@数量超过上限30。|
+|10054|群成员过多，请分页拉取。|
+|10056|自定义属性写操作竞争冲突，请获取最新的自定义属性后再进行写操作。|
 
 
 
@@ -452,4 +459,4 @@
 | 6258   | SSO cookie 无效。                                      |
 
 
->!如问题仍无法解决，您可以[提交工单](https://console.cloud.tencent.com/workorder/category) 提供使用接口、错误码以及错误信息给技术支持人员解决。
+>!如问题仍无法解决，您可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 提供使用接口、错误码以及错误信息给技术支持人员解决。

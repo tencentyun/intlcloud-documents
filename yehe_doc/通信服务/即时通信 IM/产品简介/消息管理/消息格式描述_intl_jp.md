@@ -69,6 +69,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 
 受信者がiOSまたはAndroidで、アプリケーションがバックグラウンドにある場合、中国語版のオフラインプッシュテキストは「[位置]となり、英語版のオフラインプッシュテキストは「[Location]」となります。
 
+
 ### 顔絵文字メッセージ要素
 
 ```
@@ -80,6 +81,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
     }
 }
 ```
+
 | フィールド | タイプ | 説明 |
 |---------|---------|---------|
 | Index | Number | 顔絵文字インデックス、ユーザーカスタマイズ。 |
@@ -106,6 +108,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
     }
 }
 ```
+
 | フィールド | タイプ | 説明 |
 |---------|---------|---------|
 | Data | String | カスタムメッセージデータ。APNsのpayloadフィールドとして発行されないため、payloadからDataフィールドを取得できません。|
@@ -237,7 +240,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 >}
 >}
 >```
-```
+
 
 ### ビデオメッセージ要素
 
@@ -280,21 +283,22 @@ MsgBodyに入力されたフィールドはメッセージの内容です。IM�
 
 >?2.Xおよび3.XバージョンのIM SDK（Android、iOS、MacおよびWindows）によって送信されるビデオメッセージ要素は次のとおりです。
 >```
-{
-    "MsgType": "TIMVideoFileElem",
-    "MsgContent": {
-        "VideoUUID": "1400123456_dramon_34ca36be7dd214dc50a49238ef80a6b5"、//ビデオのシリアル番号。タイプはStringです。バックグラウンドでビデオにインデックスを付けるために用いられるキー値です。このフィールドからは、対応するビデオをダウンロードできません。このビデオを取得する必要がある場合は、IMSDKバージョンを4.Xにアップグレードしてください。
-        "VideoSize": 1194603、//ビデオデータサイズ。タイプはNumber。単位：バイト。
-        "VideoSecond": 5、//ビデオの長さ。タイプはNumber。単位：秒。
-		"VideoFormat": "mp4"、//ビデオ形式。タイプはmp4などのStringです。
-		"ThumbUUID": "1400123456_dramon_893f5a7a4872676ae142c08acd49c18a"、//ビデオサムネイルのシリアル番号。タイプはStringです。バックグラウンドでビデオサムネイルにインデックスを付けるために用いられるキー値です。このフィールドからは、対応するビデオサムネイルをダウンロードできません。このビデオサムネイルを取得する必要がある場合は、IMSDKバージョンを4.Xにアップグレードしてください。
-		"ThumbSize": 13907、//サムネイルサイズ。タイプは数値。単位：バイト。
-		"ThumbWidth": 720、//サムネイルの幅。 タイプはNumberです。
-		"ThumbHeight": 1280、//サムネイルの高さ。タイプはNumberです。
-		"ThumbFormat": "JPG"  //サムネイル形式。タイプはJPG、BMPなどのStringです。
-    }
-}
-```
+>{
+>"MsgType": "TIMVideoFileElem",
+>"MsgContent": {
+>  "VideoUUID": "1400123456_dramon_34ca36be7dd214dc50a49238ef80a6b5"、//ビデオのシリアル番号。タイプはStringです。バックグラウンドでビデオにインデックスを付けるために用いられるキー値です。このフィールドからは、対応するビデオをダウンロードできません。このビデオを取得する必要がある場合は、IMSDKバージョンを4.Xにアップグレードしてください。
+>  "VideoSize": 1194603、//ビデオデータサイズ。タイプはNumber。単位：バイト。
+>  "VideoSecond": 5、//ビデオの長さ。タイプはNumber。単位：秒。
+>	"VideoFormat": "mp4"、//ビデオ形式。タイプはmp4などのStringです。
+>	"ThumbUUID": "1400123456_dramon_893f5a7a4872676ae142c08acd49c18a"、//ビデオサムネイルのシリアル番号。タイプはStringです。バックグラウンドでビデオサムネイルにインデックスを付けるために用いられるキー値です。このフィールドからは、対応するビデオサムネイルをダウンロードできません。このビデオサムネイルを取得する必要がある場合は、IMSDKバージョンを4.Xにアップグレードしてください。
+>	"ThumbSize": 13907、//サムネイルサイズ。タイプは数値。単位：バイト。
+>	"ThumbWidth": 720、//サムネイルの幅。 タイプはNumberです。
+>	"ThumbHeight": 1280、//サムネイルの高さ。タイプはNumberです。
+>	"ThumbFormat": "JPG"  //サムネイル形式。タイプはJPG、BMPなどのStringです。
+>}
+>}
+>```
+
 
 ## MsgBodyメッセージ内容インスタンス
 
@@ -501,8 +505,10 @@ OffsetPushInfoの形式の例は次のとおりです。
 | AndroidInfo.HuaWeiChannelID | String | オプション | HuaweiスマホEMUI 10.0以降の通知チャネルフィールド。 このフィールドがブランクでない場合、コンソールによって設定されたChannelID値は上書きされます。このフィールドが空の場合、コンソールによって設定されたChannelID値は上書きされません。|
 | AndroidInfo.XiaoMiChannelID | String | オプション | XiaomiスマホMIUI 10以降の通知カテゴリ(Channel)適合フィールド。 このフィールドがブランクでない場合、コンソールによって構成されたChannelID値は上書きされます。このフィールドがブランクの場合、コンソールによって構成されたChannelID値は上書きされません。 |
 | AndroidInfo.OPPOChannelID | String | オプション | OPPOスマホAndroid 8.0以降のNotificationChannel通知適合フィールド。このフィールドがブランクでない場合、コンソールによって設定されたChannelID値は上書きされます。このフィールドがブランクの場合、コンソールによって設定されたChannelID値は上書きされません。|
-| AndroidInfo.GoogleChannelID | String | オプション | GoogleスマホAndroid 8.0以降の通知チャネルフィールド。 Googleプッシュの新しいインターフェース（アップロード証明書ファイル）はchannel idをサポートし、古いインターフェース（サーバーキーの入力）はサポートしません。 |
+| AndroidInfo.GoogleChannelID | String | オプション | GoogleスマホAndroid 8.0以降の通知チャネルフィールド。Googleプッシュの新しいインターフェース（アップロード証明書ファイル）はchannel idをサポートし、古いインターフェース（サーバーキーの入力）はサポートしません。 |
 | AndroidInfo.VIVOClassification | Integer | オプション | VIVOスマホプッシュメッセージの分類。「0」は運用メッセージを表し、「1」はシステムメッセージを表します。入力されていない場合、デフォルトで「1」になります。|
+| AndroidInfo.HuaWeiImportance | String | オプション | Huaweiプッシュ通知メッセージの分類。値はLOW、NORMALであり、入力されていない場合のデフォルト値はNORMALです。|
+| AndroidInfo.ExtAsHuaweiIntentParam | Integer | オプション | コンソールでHuaweiプッシュを「アプリで指定されたページを開く」ように設定することを前提として、「1」が渡された場合、透過的コンテンツExtがIntentのパラメータとして使用されることを表し、「0」は透過的コンテンツExtがActionパラメータとして使用されることを表します。入力されていない場合、デフォルト値は0です。渡される2つのパラメータの違いについては、[Huaweiプッシュドキュメント](https://developer.huawei.com/consumer/cn/doc/development/HMSCore-Guides/andorid-basic-clickaction-0000001087554076#section20203190121410)をご参照ください。|
 | ApnsInfo.BadgeMode | Integer | オプション | このフィールドをデフォルトのままにするか、「0」に設定すると、メッセージをカウントする必要があることを表し、「1」に設定すると、このメッセージをカウントする必要がないことを表します。この場合、右上隅のアイコンの数字は増加しません。|
 | ApnsInfo.Title|String|オプション|このフィールドは、APNsによってプッシュされたタイトルを識別するために用いられます。入力すると、最上位階層のTitleが上書きされます。|
 | ApnsInfo.SubTitle|String|オプション|このフィールドは、APNsによってプッシュされたサブタイトルを識別するために用いられます。|
@@ -516,3 +522,7 @@ OffsetPushInfoの形式の例は次のとおりです。
 Apple Push Notification Service(APNs) [Appleプッシュ開発ドキュメント](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1)。
 iOSオフラインメッセージプッシュの設定：[オフラインプッシュ(iOS)](https://intl.cloud.tencent.com/document/product/1047/34347)。
 
+
+```
+
+```
