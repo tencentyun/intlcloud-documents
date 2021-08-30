@@ -61,7 +61,7 @@ GSE SDK Protobufファイル `GameServerGrpcSdkService.proto` および `GseGrpc
 
 [手順2](#test2) で生成された4つの `.cs` ファイルをUnityプロジェクトにコピーして（Assets/Scripts/ディレクトリの個別のフォルダにコピー）、GSE SDKを開発に使用できます。詳細は [Unity DEMO](#test5)をご参照ください。
 1. `gameserver_grpcsdk_service.proto`で定義された3つのインターフェース `OnHealthCheck`、`OnStartGameServerSession` および ` OnProcessTerminate`を実装します。
-```
+``` JavaScript
  public class GrpcServer : GameServerGrpcSdkService.GameServerGrpcSdkServiceBase
     {
         private static Logs logger
@@ -105,7 +105,7 @@ GSE SDK Protobufファイル `GameServerGrpcSdkService.proto` および `GseGrpc
     }
 ```
 2. Unityサーバープログラムを開発します（ChatServerを例示します）。 
-```
+``` JavaScript
 public static void StartChatServer(int clientPort)
     {
         RegisterHandlers();
@@ -114,7 +114,7 @@ public static void StartChatServer(int clientPort)
     }
 ```
 3. gRPCサーバーを開発します。
-```
+``` JavaScript
 public static void StartGrpcServer(int clientPort, int grpcPort, string logPath)
     {
         try
@@ -135,7 +135,7 @@ public static void StartGrpcServer(int clientPort, int grpcPort, string logPath)
     }
 ```
 4. 開発したサーバーとgRPCサーバーを起動します。
-```
+``` JavaScript
 public class StartServers : MonoBehaviour
 {
 		private int grpcPort = PortServer.GenerateRandomPort(2000, 6000);
