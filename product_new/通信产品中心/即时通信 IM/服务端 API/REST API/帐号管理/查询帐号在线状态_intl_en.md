@@ -4,13 +4,9 @@ This API is used to query the current login status of a user.
 ## API Call Description
 ### Sample request URL
 ```
-https://xxxxxx/v4/im_open_login_svc/account_import?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/openim/querystate?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
-Where, `xxxxxx` is the country/region-specific domain. Please enter the domain corresponding to the country/region where your SDKAppID is located.
 
-|Country/Region| Domain |
-|----|----|
-|Singapore| adminapisgp.im.qcloud.com |
 
 ### Request parameters
 
@@ -18,6 +14,8 @@ The following is a list of the parameters commonly used when calling this API an
 
 | Parameter | Description |
 | ------------------ | ------------------------------------ |
+| https       | The request protocol is HTTPS, and the request method is POST.       |
+| xxxxxx  | The country/region where your SDKAppID is located.<li>China:  `console.time.qq.com `<li>Singapore:  `adminapisgp.im.qcloud.com ` |
 | v4/openim/querystate | The request API that is used. |
 | sdkappid | The SDKAppID assigned via the IM console when the application is created. |
 | identifier | The value must be the app admin account. For more information, see [App Admin](https://intl.cloud.tencent.com/document/product/1047/33517). |
