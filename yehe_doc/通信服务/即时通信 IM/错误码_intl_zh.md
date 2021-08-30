@@ -1,5 +1,5 @@
 ## （一）IM SDK 的错误码
->?Web SDK 相关的错误码请参见 [错误码对照表](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html)。 
+>?Web SDK 相关的错误码请参见 [错误码对照表](https://web.sdk.qcloud.com/im/doc/zh-cn/module-ERROR_CODE.html)。 
 
 ### 通用错误码
 
