@@ -4,6 +4,23 @@
 <tr><th width="20%">ダイナミックネーム</th>  <th width="50%">動的記述</th><th width="15%">発表時間</th><th width="15%">関連ドキュメント</th>
 </tr> 
 <tr>
+    <td> SDK 5.5.897拡張版をリリース</td>
+    <td><ul style="margin:0">
+	<li> データレポートで、クラッシュが偶発的に発生する問題を修正しました</li>
+        <li> キャリア名を取得するための呼び出しgetSimOperatorName()を取り除きました </li>
+    </ul></td>
+    <td> 2021-07-29 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDKダウンロード</a></td>
+</tr>
+<tr>
+    <td> SDK 5.1.65ベーシック版をリリース</td>
+    <td><ul style="margin:0">
+        <li> キャリア名を取得するための呼び出しgetSimOperatorName()を取り除きました </li>
+    </ul></td>
+    <td> 2021-07-29 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDKダウンロード</a></td>
+</tr>
+<tr>
     <td> SDK 5.5.892拡張版をリリース</td>
     <td><ul style="margin:0">
         <li>メッセージ検索で、「and」や「or」の関係にある複数のキーワードによる検索をサポートしました</li>
@@ -26,6 +43,8 @@
     <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDKダウンロード</a></td>
 </tr>
 </table>
+
+
 ## 2021年06月
 
 <table>
