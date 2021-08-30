@@ -4,6 +4,23 @@
 <tr><th width="20%">动态名称</th>  <th width="50%">动态描述</th><th width="15%">发布时间</th><th width="15%">相关文档</th>
 </tr> 
 <tr>
+    <td> SDK 5.5.897 增强版本发布</td>
+    <td><ul style="margin:0">
+	<li> 修复数据上报偶现崩溃问题</li>
+        <li> 去掉获取运营商名称的调用 getSimOperatorName()</li>
+    </ul></td>
+    <td> 2021-07-29 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 下载</a></td>
+</tr>
+<tr>
+    <td> SDK 5.1.65 基础版本发布</td>
+    <td><ul style="margin:0">
+        <li> 去掉获取运营商名称的调用 getSimOperatorName()</li>
+    </ul></td>
+    <td> 2021-07-29 </td>
+    <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 下载</a></td>
+</tr>
+<tr>
     <td> SDK 5.5.892 增强版本发布</td>
     <td><ul style="margin:0">
         <li> 消息搜索支持多个关键字按照“与”或者“或”的关系进行搜索</li>
@@ -26,6 +43,8 @@
     <td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 下载</a></td>
 </tr>
 </table>
+
+
 ## 2021年06月
 
 <table>
@@ -159,6 +178,7 @@
 	<td> <a href="https://intl.cloud.tencent.com/document/product/1047/33996">SDK 下载</a></td>
 </tr>
 </table>
+
 ## 2021年01月
 <table>
 <tr>
