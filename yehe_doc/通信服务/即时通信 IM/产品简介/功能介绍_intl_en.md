@@ -1,4 +1,4 @@
-### Supported Platforms
+### Supported platforms
 
 The following platforms can communicate with each other and provide services across devices and platforms.
 
@@ -10,19 +10,20 @@ The following platforms can communicate with each other and provide services acr
 | Windows | C and C++ are included. Compatible with Windows 7, Windows 8 and 8.1, and Windows 10. Both 32-bit and 64-bit programs can be connected. | - | - | - |
 | Web | Supports Internet Explorer 9+, Chrome 7+, Firefox 3.6+, Opera 12+ and Safari 6+ | Supported | - | - |
 | Mini Program | Supported | Supported | - | - |
+| Unity | Supports 2020.2.7f1c1 or later | Supported | Supported | - |
+| Flutter |Supports Flutter 2.0.12 | Supported | Supported | - |
 
 
-
-### Global Access
+### Global access
 
 | Feature Type | Description |
 | -------------- | -------------- |
 | Global access overview | IM provides highly reliable and secure network connections with global coverage. With its proprietary multi-level optimal addressing algorithm, IM can perform scheduling across the entire network. When terminals log in from outside the Chinese mainland, IM SDK connects to the nearest access nodes or cache nodes. |
 | China | South China, North China, East China, Hong Kong, Taiwan, etc. |
-| Global | Asia: Japan, South Korea, Singapore, India, Thailand, Malaysia, Vietnam, Philippines, UAE<br>Europe: Germany, United Kingdom, France, Russia, Italy, Norway, Spain<br>North America: United States, Canada, Mexico<br>South America: Brazil<br><br>Oceania: Australia<br>Africa: South Africa, etc. |
+| Global | Asia: Japan, South Korea, Singapore, India, Thailand, Malaysia, Vietnam, Philippines, UAE, Indonesia<br>Europe: Germany, United Kingdom, France, Russia, Italy, Norway, Spain, Netherlands<br>North America: United States, Canada, Mexico<br>South America: Brazil<br><br>Oceania: Australia<br>Africa: South Africa, Nigeria, etc. |
 
 
-### Account Features
+### Account features
 
 | Feature Type | Description |
 | ------------ | -------------------------------------- |
@@ -30,19 +31,20 @@ The following platforms can communicate with each other and provide services acr
 | Deactivate accounts | Invalidate UserSig |
 | Delete accounts | Delete accounts in batches |
 | User online status | Manage the online and offline statuses after users log in |
+| Query accounts | Check whether accounts are imported |
 
-### Multi-Device Login
+### Multi-client login
 
 | Feature Type | Description |
-| ------------- | --------------- |
-| Single-device login | Single-device login is allowed only across Windows, web, Android, and iOS platforms. |
-| Dual-device login (default) | Single-device login across Windows, Android, and iOS with a web device online simultaneously is allowed. |
-| Triple-device login | Single-device login across Android and iOS with one Windows device and one web device online simultaneously is allowed. |
-| Multi-device online | Multiple Windows, web, Android, and iOS devices can be online simultaneously. |
+| --------- | --------------------------------------------------------- |
+| Single-platform     | A user can be online on only one of the Android, iPhone, iPad, Windows, Mac, and web platforms at one time.              |
+| Dual-platform (default) | A user can be concurrently online on the Android, iPhone, iPad, Windows, or Mac platform and the web platform.            |
+| Triple-platform     | A user can be concurrently online on the Android, iPhone, or iPad platform, the Windows or Mac platform, and the web platform. |
+| Multi-platform     | A user can be concurrently online on the Android, iPhone, iPad, Windows, Mac, and web platforms.              |
 
 >? You can configure multi-device login by logging in to the [IM console](https://console.cloud.tencent.com/im) and clicking **App Configuration** for the target app to open the **Feature Configuration** page.
 
-### Message Types
+### Message types
 
 | Feature Type | Description |
 | ------------ | ----------------- |
@@ -54,15 +56,17 @@ The following platforms can communicate with each other and provide services acr
 | File | The message content includes the URL, size, and format of the file. There are no file format restrictions, and the maximum supported file size is 100 MB. |
 | Short video | The message content includes the URL, duration, size, and format of the video file. The maximum supported file size is 100 MB. |
 | Custom | Message types that are customized by developers, such as red packet and rock-paper-scissor. |
-| System notification | This type of message includes built-in system notification messages and system notification messages customized by developers. |
+| System notification | This type of messages include built-in system notification messages and system notification messages customized by developers. |
+| Group tips | System messages pushed when a member joins or leaves a group, group description is modified, group member profile changes, etc. |
+| Combined messages | Up to 300 messages can be combined. |
 
 
 
-### Message Features
+### Message features
 
 | Feature Type | Description |
 | -------- | -------- |
-| Download messages | The app admin can obtain all one-to-one or group messages for a specified hour of a specified day through this API. |
+| Download messages | The app admin can obtain all one-to-one or group messages for a specified hour of a specified day in the past 7 days through this API. |
 | Offline messages | IM supports offline push when a user logs in, the app switches to work in the background, and other users send messages. |
 | Roaming messages | When a user logs in on a new device, the historical message storage recorded (on the cloud) by the server is synchronized to the new device. Roaming messages are stored for 7 days by default. You can pay to increase the roaming message storage period. |
 | Multi-device synchronization | Messages are synchronized and received across multiple devices. |
@@ -75,9 +79,11 @@ The following platforms can communicate with each other and provide services acr
 | Offline push | Apple APNs, Xiaomi push, Huawei push, Meizu push, OPPO push, vivo push, and Google FCM push are supported. |
 | Delete messages | Use the remove method for messages to delete messages locally. |
 | Red packets | Red packet messages are similar to @ messages and can be implemented through TIMCustomElem. |
+| Push to all users | A set of RESTful APIs based on the IM communication architecture to enable push to all users, push by tag, and push by attribute in an app. You can integrate the client with the SDK for capabilities such as online push, offline push (Android background notification and APNs), and message receiving. |
+| Local message search | Support search for friends, search for groups/group members, search for messages, and grouping by conversation. |
 
 
-### Profile Features
+### Profile features
 
 | Feature Type | Description |
 | ------------------ | ---------------- |
@@ -88,13 +94,15 @@ The following platforms can communicate with each other and provide services acr
 
 
 
-### Relationship Chain Features
+### Relationship chain features
 
 | Feature Type | Description |
 | -------------------- | ---------------------- |
 | Search for friends | Search for a friend by account ID. |
 | Apply for friend requests | Specify whether a request reason is required. The default is no. |
 | Add friends | Send friend requests. |
+| Import friends |Support importing multiple one-way friends at a time. |
+| Update friends | Support updating the relationship chain data of multiple friends of a user at a time. |
 | Delete friends | Friends can be deleted after they are added to the contact list. |
 | Obtain all friends | This feature can obtain all friends. Only basic information of friends is pulled by default. |
 | Accept/Reject friend requests | Accept or reject a friend request after receiving a friend request system notification. |
@@ -105,6 +113,8 @@ The following platforms can communicate with each other and provide services acr
 | Set custom friend profile fields | Up to 20 custom fields are allowed. |
 | Create a friend list | When creating a list, you can choose who goes to the list. A user can be added to multiple lists. |
 | Delete a friend list | Delete a friend list. |
+| Verify friends | Support verifying multiple friends at a time.|
+| Verify users on a blocklist | Support verifying multiple users at a time.|
 | Add a friend to a list | Add a friend to a list. |
 | Delete a friend from a list | Remove a friend from a list. |
 | Rename a friend list | Rename a friend list. |
@@ -116,49 +126,177 @@ The following platforms can communicate with each other and provide services acr
 
 
 
-### Group Features
+### Group features
 Based on common use cases, IM has set the following default group types:
-- A work group for friends (Work) is like an ordinary WeChat group. After a work group is created, a user can only join the group by being invited by a friend who is a member of the group. The invitation does not need to be accepted by the invitee or approved by the group owner.
-- A social networking group for strangers (Public) is like a QQ group. After a public group is created, the group owner can designate group admins. To join the group, a user needs to search for the group ID and send an application, and the application needs to be approved by the group owner or an admin before the user can join the group.
-- A temporary meeting group (Meeting) allows users to join and exit freely and supports viewing message history from before the user joined the group. Meeting groups are ideal for scenarios that integrate Tencent Real-Time Communication (TRTC), such as audio and video conferences and online education.
-- An audio-video group (AVChatRoom) allows users to join and exit freely, supports an unlimited number of members, and does not store message history. Audio-video groups can be used with Live Video Broadcasting (LVB) to support on-screen comment chat scenarios.
+- A work group (Work) allows users to join the group by being invited by a friend who is a member of the group. The invitation does not need to be accepted by the invitee or approved by the group owner.
+- A public group (Public) allows the group owner to designate group admins. To join the group, a user needs to search for the group ID and send a request, and the request needs to be approved by the group owner or an admin before the user can join the group.
+- A meeting group (Meeting) allows users to join and exit freely and supports viewing message history from before the user joined the group. Meeting groups are ideal for scenarios that integrate Tencent Real-Time Communication (TRTC), such as audio and video conferences and online education.
+- An audio-video group (AVChatRoom) allows users to join and exit freely, supports an unlimited number of members, and does not store message history. Audio-video groups can be used with Cloud Streaming Services (CSS) to support on-screen comment chat scenarios.
 
 The following table compares the default features of each group type:
 
-| Feature Type | <div style="width:100px"> Work</div> | <div style="width:20%">Public</div> | <div style="width:20%">Meeting</div> | <div style="width:20%">AVChatRoom</div> |
-| ---------- | --------------------- | --------------------- | --------------------- | -------------------------- |
-| Maximum number of members | 6,000 | 6,000 | 6,000 | No upper limit |
-| Restrictions on obtaining member profiles | All available | All available | All available | Only the profiles of the first 300 members are displayed |
-| Setting admins | Not supported | Supported | Supported | Not supported |
-| Group profile modification permissions |<li>Any group member can modify it.<li>Backend app admin | <li>Group owner<li>Group admins<li>Backend app admin | <li>Group owner<li>Group admins<li>Backend app admin | <li>Group owner <li>Backend app admin |
-| Group deletion permissions | Backend app admin | <li>Group owner<li>Backend app admin | <li>Group owner<li>Backend app admin | <li>Group owner<li>Backend app admin |
-| Group owner leaving the group | Supported | Not supported | Not supported | Not supported |
-| Application to join the group | Not supported | Supported and approval by the group owner or group admin is required | Supported, but no approval is required | Supported, but no approval is required |
-| Group members can invite other users to join the group | Supported | Not supported | Not supported | Not supported |
-| Removing members from the group | <li>Group owner<li>Backend app admin | <li>Group owner<li>Group admins<li>Backend app admin | <li>Group owner<li>Group admins<li>Backend app admin | Not supported, but the mute feature can be used to achieve a similar effect |
-| Muting permissions | Not supported | <li>Group owner<li>Group admins (can only mute ordinary group members)<li>Backend app admin | <li>Group owner<li>Group admins (can only mute ordinary group members)<li>Backend app admin | <li>Group owner<li>Backend app admin |
-| Viewing historical messages from before joining the group | Not supported | Not supported | Supported | Not supported |
-| Member change notifications (joining/leaving the group, etc.) | All members | All members | None | All members |
-| Group activation by sending a message after group creation | Required | Not required | Not required | Not required |
-| Unread message count | Supported | Supported | Not supported | Not supported |
-| Importing groups (group members/profiles, etc.) | Supported | Supported | Supported | Not supported |
+<table>
+   <tr>
+      <th width="0px" style="text-align:center">Feature</td>
+      <th width="0px" style="text-align:center">Work</td>
+			 <th width="0px" style="text-align:center">Public</td>
+       <th width="0px" style="text-align:center">Meeting</td>
+			 <th width="0px" style="text-align:center">AVChatRoom</td>
+   </tr>
+   <tr>
+      <td style="text-align:center">Maximum number of members</td>
+      <td ><li>Trial Edition: 20 per group</li><br><li>Pro Edition: 200 per group by default; can be increased to 2,000 per group</li><br><li>Flagship Edition: 2,000 per group by default; can be increased to 6,000</li></td>
+			      <td><li>Trial Edition: 20 per group</li><br><li>Pro Edition: 200 per group by default; can be increased to 2,000 per group</li><br><li>Flagship Edition: 2,000 by default; can be increased to 6,000 per group</li></td>
+						      <td ><li>Trial Edition: 20 per group</li><br><li>Pro Edition: 200 per group by default; can be increased to 2,000 per group</li><br><li>Flagship Edition: 2,000 per group by default; can be increased to 6,000 per group</li></td>
+									      <td>Unlimited</td>
+   </tr>
+   <tr>
+     <td>Permission to modify a group profile</td>
+     <td>Group members</td>
+    <td><li>Group admins</li><br><li>Group owner</li><br><li>App admins</li></td>
+    <td><li>Group owner</li><br><li>App admins</li></td>
+    <td>App admins</td>
+   </tr>
+	   <tr>
+     <td>Member lists</td>
+     <td>Show all</td>
+    <td>Show all</td>
+    <td>Show all</td>
+    <td>Show 300 members</td>
+   </tr>
+	   <tr>
+     <td>Permission to delete a group</td>
+     <td>App admins</td>
+    <td><li>Group owner</li><br><li>App admins</li></td>
+    <td><li>Group owner</li><br><li>App admins</li></td>
+    <td><li>Group owner</li><br><li>App admins</li></td>
+   </tr>
+	   <tr>
+     <td>Request to join a group</td>
+     <td>Not supported</td>
+    <td>Supported</td>
+    <td>Supported</td>
+    <td>Supported</td>
+   </tr>
+	   <tr>
+     <td>Membership request approval</td>
+     <td>Not supported</td>
+    <td>Required</td>
+    <td>Not required</td>
+    <td>Not required</td>
+   </tr>
+	   <tr>
+     <td>Inviting others to a group</td>
+     <td>Confirmation from the invitee is not required.</td>
+    <td>Not supported</td>
+    <td>Not supported</td>
+    <td>Not supported</td>
+   </tr>
+	 	   <tr>
+     <td>Group owner leaving the group</td>
+     <td>Supported</td>
+    <td>Not supported</td>
+    <td>Not supported</td>
+    <td>Not supported</td>
+   </tr>
+	 	   <tr>
+     <td>Setting admins</td>
+     <td>Not supported</td>
+    <td>Supported</td>
+    <td>Supported</td>
+    <td>Not supported</td>
+   </tr>
+		 	   <tr>
+     <td>Removing members from a group</td>
+    <td><li>Group owner</li><br><li>App admins</li></td>
+    <td><li>Group admins</li><br><li>Group owner</li><br><li>App admins</li></td>
+    <td><li>Group admins</li><br><li>Group owner</li><br><li>App admins</li></td>
+    <td>Not supported</td>
+   </tr>
+		 	   <tr>
+     <td>Viewing message history from before the user joined the group</td>
+     <td>Not supported</td>
+    <td>Not supported</td>
+    <td>Supported</td>
+    <td>Not supported</td>
+   </tr>
+		 	   <tr>
+     <td>Member change notifications</td>
+     <td>All members</td>
+    <td>All members</td>
+    <td>None</td>
+    <td>All members</td>
+   </tr>
+		 	   <tr>
+     <td>Group activation</td>
+     <td>Activate via messages.</td>
+    <td>Not required</td>
+    <td>Not required</td>
+    <td>Not required</td>
+   </tr>
+	 	   <tr>
+     <td>Muting members</td>
+     <td>Not supported</td>
+    <td>Supported</td>
+    <td>Supported</td>
+    <td>Supported</td>
+   </tr>
+		 	   <tr>
+     <td>Unread message count</td>
+     <td>Supported</td>
+    <td>Supported</td>
+    <td>Supported</td>
+    <td>Not supported</td>
+   </tr>
+		 	   <tr>
+     <td>Receiving messages as a guest</td>
+     <td>Not supported</td>
+    <td>Not supported</td>
+    <td>Not supported</td>
+    <td>Supported</td>
+   </tr>
+		 	   <tr>
+     <td>Historical message storage</td>
+     <td>Supported</td>
+    <td>Supported</td>
+    <td>Supported</td>
+    <td>Not supported</td>
+   </tr>
+		 	   <tr>
+     <td>Default message receiving option</td>
+     <td>Receive online and offline pushed messages.</td>
+    <td>Receive online and offline pushed messages.</td>
+    <td>Receive only online pushed messages.</td>
+    <td>Receive only online pushed messages.</td>
+   </tr>
+		 	   <tr>
+     <td>Importing groups</td>
+     <td>Supported</td>
+    <td>Supported</td>
+    <td>Supported</td>
+    <td>Not supported</td>
+   </tr>
+</table>
 
 
 
-### IM Console
+
+### IM console
 
 You can log in to Tencent Cloud [IM console](https://console.cloud.tencent.com/im) to configure the app based on your needs.
 
 | Feature Type | Description |
-| -------------- | ------------------------ |
-| Create an app | Create an app |
-| Download the SDK | Download the client SDK |
-| App configuration | Configure apps |
-| Statistics | View operational data |
-| View crashes | Report errors |
-| Callback configuration | Perform third-party callbacks |
-| Feature configuration | Add custom fields and online instances |
-| Developer tool | Generate UserSig on the webpage |
+| ------- | --------------------- |
+| App creation | Create an app. |
+| App upgrade    | Upgrade the plan.              |
+| SDK Download | Download the client SDK. |
+| App configuration | Configure the app. |
+| Statistics | View operations data. |
+| Callback configuration | Perform third-party callbacks. |
+| Feature configuration | Add custom fields and online instances. |
+| Group management    | Add, modify, and delete groups; manage group members; send messages. |
+| Developer tool | Generate UserSig on the webpage. |
+| Content filtering    | Identify and screen out messages containing restricted words.  |
 
 
 
@@ -167,22 +305,32 @@ You can log in to Tencent Cloud [IM console](https://console.cloud.tencent.com/i
 The [statistics and analytics](https://console.cloud.tencent.com/im) feature in the IM console allows you to view operational data in various dimensions.
 
 | Statistic Type | Description |
-| ---------------- | -------------------------------- |
-| Active users | The number of users that have connected to and interacted with the server (de-duplicated) |
-| New sign-ups | The number of newly registered IDs |
-| Total sign-ups | View the total number of registered users |
-| Upstream messages | Specify a time period and view the number of upstream messages |
-| Message senders | Specify a time period and view the number of message senders |
-| Peak concurrent online users | Specify a time period and view the number of concurrent online users |
-| One-to-one chat upstream messages | Specify a time period and view the number of one-to-one chat upstream messages |
-| One-to-one chat message senders | Specify a time period and view the number of one-to-one chat message senders |
-| Group upstream messages | Specify a time period and view the number of group upstream messages |
-| Group message senders | Specify a time period and view the number of group message senders |
-| Message sending groups | Specify a time period and view the number of groups that send messages |
-| New groups | Specify a time period and view the number of new groups |
-| Total groups | Specify a time period and view the total number of groups |
-| Export data | Specify a time period and export data |
+| -------- | ----------------- |
+| Active users | View the number of users (deduplicated) that have connected to and interacted with the server. |
+| New registered users | View the number of newly registered users. |
+| Total registered users | View the total number of registered users. |
+| Upstream messages | Specify a time period and view the number of upstream messages. |
+| Message senders | Specify a time period and view the number of message senders. |
+| Peak concurrent online users | Specify a time period and view the number of concurrent online users. |
+| One-to-one upstream messages | Specify a time period and view the number of one-to-one upstream messages. |
+| One-to-one message senders | Specify a time period and view the number of one-to-one message senders. |
+| Group upstream messages | Specify a time period and view the number of group upstream messages. |
+| Group message senders | Specify a time period and view the number of group message senders. |
+| Message sending groups | Specify a time period and view the number of groups that send messages. |
+| New groups | Specify a time period and view the number of new groups. |
+| Total groups | Specify a time period and view the total number of groups. |
+| Data export | Specify a time period and export data. |
 
-### Support for Private Deployment
+### Real-time monitoring
+The [statistics and analytics](https://console.cloud.tencent.com/im) feature in the IM console allows you to view operations data in various dimensions.
+
+| Statistic Type | Description |
+| -------- | ---------- |
+| Current online users  | Number of online users in real time     |
+| One-to-one messages today  | Total number of one-to-one messages of the current day   |
+| Ordinary group messages today | Number of non-audio-video group messages of the current day |
+| Audio-video group messages today | Number of audio-video group messages of the current day  |
+
+### Support for private deployment
 Private deployment allows an enterprise to deploy systems directly to its own servers and keep data locally. IM provides the private deployment feature to assist enterprises in the deployment, implementation, and operation and maintenance of the private version. If needed, please apply for the [IM private service](https://intl.cloud.tencent.com/apply/p/itvi76h023).
->?To apply for the IM private service, you need to log in with your main account of Tencent Cloud.
+>?To apply for the IM private service, you need to log in with your root account of Tencent Cloud.

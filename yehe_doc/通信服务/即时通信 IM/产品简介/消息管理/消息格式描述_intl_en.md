@@ -1,4 +1,4 @@
-## MsgBody
+## Description of MsgBody Message Content
 Message content is entered in the fields of MsgBody. Instant Messaging (IM) supports multiple message elements in one message, for example, a message can contain both text and emojis. Therefore, MsgBody is defined as an array that can include as many message elements as needed. The name for a message element is TIMMsgElement. For examples of the TIMMsgElements that constitute the MsgBody, see [MsgBody Message Content Examples](https://intl.cloud.tencent.com/document/product/1047/33527).
 
 The format of TIMMsgElement is defined as follows:
@@ -87,6 +87,12 @@ When the receiver is an iOS or Android device and the app is working in the back
 
 When the receiver is an iOS or Android device and the app is working in the background, the offline push text is **[Face]** for the English version.
 
+
+<dx-alert infotype="explain" title="description">
+When there is only one `TIMCustomElem` custom message element in the message, if the `Desc` and `OfflinePushInfo.Desc` fields are left empty, the offline push of the message will not be received. You need to enter the `OfflinePushInfo.Desc` field so that the offline push of the message can be received.
+</dx-alert>
+
+
 ### Custom message element
 
 ```
@@ -103,7 +109,9 @@ When the receiver is an iOS or Android device and the app is working in the back
 | Field | Type | Description |
 |---------|---------|---------|
 | Data | String | Custom message data. This field is not delivered as a payload field by APNs, and therefore the data field cannot be obtained in payload. |
-| Desc | String | Custom message description. When the receiver is an iOS or Android client running in the background, this field is displayed as the offline push text. <br>If custom messages are sent with the [OfflinePushInfo.Desc](https://intl.cloud.tencent.com/document/product/1047/33527) field set, this field will be overwritten. Therefore, fill in the `OfflinePushInfo.Desc` field first.<br>If a message has only one TIMCustomElem element, and neither `Desc` nor `OfflinePushInfo.Desc` is filled in, the offline push notification for the message will not be received. To receive offline push notifications for the message, you must fill in the `OfflinePushInfo.Desc` field. |
+| Desc | String | Custom message description. When the receiver is an iOS or Android client running in the background, this field is displayed as the offline push text.<br>If custom messages are sent with the [OfflinePushInfo.Desc](https://intl.cloud.tencent.com/document/product/1047/33527) field set, this field will be overwritten. Therefore, enter the `OfflinePushInfo.Desc` field first.<br><dx-alert infotype="explain" title="description">
+When there is only one `TIMCustomElem` custom message element in the message, if the `Desc` and `OfflinePushInfo.Desc` fields are left empty, the offline push of the message will not be received. You need to enter the `OfflinePushInfo.Desc` field so that the offline push of the message can be received.
+</dx-alert>|
 | Ext | String | Extended field. When the receiver is an iOS or Android device and the app is working in the background, this field is delivered as an Ext key value in APNs request packet payloads. The protocol format of Ext is defined by the business end, the APNs is only responsible for passthrough. |
 | Sound | String | Custom APNs push ringtone |
 
@@ -133,7 +141,7 @@ When the receiver is an iOS or Android device and the app is working in the back
 | Second | Number | Voice duration, in seconds. |
 | Download_Flag | Number | Flag of the voice download method. Currently, the value of `Download_Flag` must be `2`, which means that the voice content can be downloaded from the URL specified by the `Url` field. |
 
-2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send audio message elements in the following format:
+>?2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send audio message elements in the following format:
 ```
 {
     "MsgType": "TIMSoundElem",
@@ -218,7 +226,7 @@ When the receiver is an iOS or Android device and the app is working in the back
 | fileName | String | File name. |
 | Download_Flag | Number | Flag of the file download method. Currently, the value of `Download_Flag` must be 2, which means that the file can be downloaded from the URL specified by the `Url` field. |
 
-2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send file message elements in the following format:
+>?2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send file message elements in the following format:
 >```
 >{
 >"MsgType": "TIMFileElem",
@@ -228,7 +236,7 @@ When the receiver is an iOS or Android device and the app is working in the back
 >  "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //File name in String type.
 >}
 >}
-
+>```
 ```
 
 ### Video message element
@@ -270,8 +278,8 @@ When the receiver is an iOS or Android device and the app is working in the back
 | ThumbDownloadFlag | Number | Flag of the video thumbnail download method. Currently, the value of `ThumbDownloadFlag` must be 2, which means that the video thumbnail can be downloaded from the URL specified by the `ThumbUrl` field. |
 
 
-2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send video message elements in the following format:
-```
+>?2.X and 3.X versions of IM SDK (for Android, iOS, Mac, and Windows) send video message elements in the following format:
+>```
 {
     "MsgType": "TIMVideoFileElem",
     "MsgContent": {
@@ -336,7 +344,27 @@ The following single message contains two text message elements and one emoji me
 }
 ```
 
->!A combined message can contain only one TIMCustomElem custom message element, and an unlimited number of other message elements.
+>!A combined message can contain only one `TIMCustomElem` custom message element, and an unlimited number of other message elements.
+
+## Custom Message Data `CloudCustomData` Description
+Every message can carry custom data `CloudCustomData`.
+
+`CloudCustomData` will be saved in the cloud together with the `MsgBody` of the message. `CloudCustomData` will be sent to the peer end and can be pulled after the app is uninstalled and reinstalled.
+
+`CloudCustomData` and `MsgBody` sample:
+```
+{
+    "MsgBody": [
+        {
+            "MsgType": "TIMTextElem", 
+            "MsgContent": {
+                "Text": "hello"
+            }
+        }
+    ],
+    "CloudCustomData": "your cloud custom data"
+}
+```
 
 ## Message Formats for Apple Push Notification Service (APNs)
 ### Push notification display format on the client
@@ -446,14 +474,16 @@ The following example shows the format of `OfflinePushInfo`:
         "Ext": "This is the passthrough content",
         "AndroidInfo": { 
 			"Sound": "android.mp3",
-			"OPPOChannelID": "test_OPPO_channel_id"
+			"OPPOChannelID": "test_OPPO_channel_id",
+			"VIVOClassification": 1
         },
         "ApnsInfo": {
             "Sound": "apns.mp3",
             "BadgeMode": 1,
             "Title":"apns title",
             "SubTitle":"apns subtitle",
-            "Image":"www.image.com"
+            "Image":"www.image.com",
+            "MutableContent": 1
         }
     }
 }
@@ -468,14 +498,16 @@ The preceding fields are described as follows:
 | Desc | String | Optional | Offline push content. This field overwrites the offline push display text of the [TIMMsgElement](https://intl.cloud.tencent.com/document/product/1047/33527) elements mentioned above.<br>If the message sent has only one [TIMCustomElem](https://intl.cloud.tencent.com/document/product/1047/33527) element, this `Desc` field will overwrite the `Desc` field in the TIMCustomElem. If neither of the `Desc` fields is filled in, the offline push notification for the message will not be received. |
 | Ext | String | Optional | Passthrough content of offline push. To make sure the offline push of all Android vendors are attainable, this field must be in JSON format. |
 | AndroidInfo.Sound | String | Optional | Path to the offline push sound file in Android. |
-| AndroidInfo.HuaWeiChannelID | String | Optional | Notification channel field for Huawei mobile phones with EMUI 10.0 or later. |
-| AndroidInfo.XiaoMiChannelID | String | Optional | Notification channel field for Mi mobile phones with MIUI 10 or later. |
-| AndroidInfo.OPPOChannelID | String | Optional | Notification channel field for OPPO mobile phones with Android 8.0 or later. |
+| AndroidInfo.HuaWeiChannelID | String | Optional | Notification channel field for Huawei mobile phones with EMUI 10.0 or later. When this field is not empty, the `ChannelID` value configured in the console will be overwritten; when this field is left empty, the `ChannelID` value configured in the console will not be overwritten. |
+| AndroidInfo.XiaoMiChannelID | String | Optional | Notification channel field for Mi mobile phones with MIUI 10 or later. When this field is not empty, the `ChannelID` value configured in the console will be overwritten; when this field is left empty, the `ChannelID` value configured in the console will not be overwritten. |
+| AndroidInfo.OPPOChannelID | String | Optional | Notification channel field for OPPO mobile phones with Android 8.0 or later. When this field is not empty, the `ChannelID` value configured in the console will be overwritten; when this field is left empty, the `ChannelID` value configured in the console will not be overwritten. |
 | AndroidInfo.GoogleChannelID | String | Optional | Notification channel field for Google mobile phones with Android 8.0 or later. This field is supported by the new Google push API (uploading the certificate file) but not the old API (entering the server key). |
+| AndroidInfo.VIVOClassification | Integer | Optional | Message classification for vivo mobile phone push. `0`: operations message; `1`: system message. If you don't specify this parameter, `1` will be used. |
 | ApnsInfo.BadgeMode | Integer | Optional | The default value or 0 indicates that counting is required. 1 indicates that counting is not required for this message, in which case the number in the upper-right icon does not increase. |
 | ApnsInfo.Title | String | Optional | Title of an APNs push message. The top-level title is replaced when this field is filled in. |
 | ApnsInfo.SubTitle | String | Optional | Subtitle of an APNs push message. |
 | ApnsInfo.Image | String | Optional | Image URL carried by APNs. When the client obtains this field, it displays the image in a pop-up window by downloading the image through the URL. |
+| ApnsInfo.MutableContent | Integer | Optional | `1`: enable the push extension of iOS 10; default value: `0`|
 
 >!The maximum data packet size supported by APNs is 4 KB. Therefore, we recommend that the total size of the `Desc` and `Ext` fields does not exceed 3 KB.
 

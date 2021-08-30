@@ -1,7 +1,7 @@
 ## メッセージ内容MsgBodyの説明
-MsgBodyに入力されたフィールドはメッセージの内容です。インスタントメッセージIMは、1つのメッセージにテキストメッセージ要素と表情メッセージ要素の両方を含むなど、複数のメッセージ要素のタイプを含むことをサポートします。したがって、MsgBodyはArray型として定義され、必要に応じて複数のタイプのメッセージ要素を追加できます。メッセージ要素名はTIMMsgElementです。メッセージ要素TIMMsgElementからなるMsgBodyの例については、[メッセージ内容MsgBodyインスタンス](https://intl.cloud.tencent.com/document/product/1047/33527)をご参照ください。
+MsgBodyに入力されたフィールドはメッセージの内容です。IMは、1つのメッセージにテキストメッセージ要素と顔絵文字メッセージ要素の両方を含むなど、メッセージ内へのさまざまなメッセージ要素タイプの包含をサポートします。従ってMsgBodyはArray型として定義され、必要に応じて複数のタイプのメッセージ要素を追加できます。メッセージ要素名はTIMMsgElementです。メッセージ要素TIMMsgElementによって構成されるMsgBodyの例については、[メッセージ内容MsgBodyインスタンス](https://intl.cloud.tencent.com/document/product/1047/33527)をご参照ください。
 
-メッセージ要素TIMMsgElementのフォーマットは、次のように統一します。
+メッセージ要素TIMMsgElementの形式は次のように統一されています。
 ```
 {
     "MsgType": "",
@@ -11,23 +11,23 @@ MsgBodyに入力されたフィールドはメッセージの内容です。イ�
 
 | フィールド | タイプ | 説明 |
 |---------|---------|---------|
-| MsgType | String | メッセージ要素のタイプ。現在サポートされているメッセージオブジェクトは、TIMTextElem（テキストメッセージ）、TIMLocationElem（位置メッセージ）、TIMFaceElem（絵文字メッセージ）、TIMCustomElem（カスタムメッセージ）、TIMSoundElem（音声メッセージ）、TIMImageElem（画像メッセージ）、TIMFileElem（ファイルメッセージ）、TIMVideoFileElem（動画メッセージ）です。|
-|MsgContent|Object|メッセージ要素の内容。MsgTypeによってMsgContentフォーマットが異なります。具体的には以下をご参照ください。|
+| MsgType | String | メッセージ要素タイプ。現在サポートされているメッセージオブジェクトには、TIMTextElem（テキストメッセージ）、TIMLocationElem（位置メッセージ）、TIMFaceElem（顔絵文字メッセージ）、TIMCustomElem（カスタムメッセージ）、TIMSoundElem（音声メッセージ）、TIMImageElem（画像メッセージ）、TIMFileElem（ファイルメッセージ）、TIMVideoFileElem（ビデオメッセージ）が含まれます。 |
+| MsgContent | Object |メッセージ要素の内容。MsgTypeが異なれば、MsgContent形式も異なります。詳細については、下記の文をご参照ください。|
 
 現在サポートされているメッセージタイプMsgTypeを次の表に示します。
 
 | MsgTypeの値 | タイプ |
 |---------|---------|
 | TIMTextElem | テキストメッセージ。|
-|TIMLocationElem|地理位置メッセージ。|
-|TIMFaceElem|絵文字メッセージ。|
-|TIMCustomElem|カスタムメッセージ。受信者がiOSシステムであり、アプリがバックグラウンドになる場合、このメッセージタイプはテキスト以外のフィールドをAPNsに組み入れます。1つの組み合わせメッセージには1つのTIMCustomElemカスタムメッセージ要素だけを含めることができます。|
-|TIMSoundElem|音声メッセージ。（サービス側に統合されたRest APIは、このようなメッセージの送信をサポートしていません）。
-|TIMImageElem|画像メッセージ。（サービス側に統合されたRest APIは、このようなメッセージの送信をサポートしていません）。
-|TIMFileElem|ファイルメッセージ。（サービス側に統合されたRest APIは、このようなメッセージの送信をサポートしていません）。
-|TIMVideoFileElem|動画メッセージ。（サービス側に統合されたRest APIは、このようなメッセージの送信をサポートしていません）。
+|TIMLocationElem|地理的位置メッセージ。|
+|TIMFaceElem|顔絵文字メッセージ。|
+|TIMCustomElem|カスタムメッセージ。受信者がiOSシステムで、アプリケーションがバックグラウンドにある場合、このメッセージタイプはテキスト以外のフィールドをAPNに送信できます。結合されたメッセージには、TIMCustomElemカスタムメッセージ要素を1つしか含めることができません。|
+|TIMSoundElem|音声メッセージ。|
+|TIMImageElem|画像メッセージ。|
+|TIMFileElem|ファイルメッセージ。|
+|TIMVideoFileElem|ビデオメッセージ。|
 
->!サービス側に統合されたRest APIインターフェースを介して送信できるのは、TIMTextElem、TIMLocationElem、TIMFaceElem、TIMCustomElemタイプのメッセージのみです。その他のタイプのメッセージ（TIMSoundElem、TIMImageElem、TIMFileElem、TIMVideoFileElem）は、Rest APIインターフェースを介して送信できません。
+>!上記タイプのメッセージは、サーバーに統合されたRest APIインターフェースを介して送信できます。
 
 ## メッセージ要素TIMMsgElement
 
@@ -44,11 +44,11 @@ MsgBodyに入力されたフィールドはメッセージの内容です。イ�
 
 | フィールド | タイプ | 説明 |
 |---------|---------|---------|
-| Text | String | メッセージ内容。受信者がiOSまたはAndroidのバックグラウンドでオンラインになる場合、オフラインでプッシュされたテキストとして表示されます。|
+| Text | String | メッセージ内容。受信者がiOSまたはAndroidのバックグラウンドでオンラインの場合、オフラインプッシュのテキストとして表示されます。 |
 
-受信者がiOSまたはAndroidであり、かつアプリがバックグラウンドになる場合、JSON要求パッケージボディ内のTextフィールドはオフラインでプッシュされたテキストとして表示されます。
+受信者がiOSまたはAndroidで、アプリケーションがバックグラウンドにある場合、JSONリクエストパケットのTextフィールドは、オフラインプッシュのテキストとして表示されます。
 
-### 地理位置メッセージ要素
+### 地理的位置メッセージ要素
 
 ```
 {
@@ -63,13 +63,13 @@ MsgBodyに入力されたフィールドはメッセージの内容です。イ�
 
 | フィールド | タイプ | 説明 |
 |---------|---------|---------|
-| Desc | String | 地理位置説明情報。|
+| Desc | String | 地理的位置の説明情報。 |
 |Latitude|Number|緯度。|
 |Longitude|Number|経度。|
 
-受信者がiOSまたはAndroidであり、かつアプリがバックグラウンドになる場合、オフラインでプッシュされたテキストは中国語版の場合、「[位置]」、英語版の場合、「[Location]」になります。
+受信者がiOSまたはAndroidで、アプリケーションがバックグラウンドにある場合、中国語版のオフラインプッシュテキストは「[位置]となり、英語版のオフラインプッシュテキストは「[Location]」となります。
 
-### 絵文字メッセージ要素
+### 顔絵文字メッセージ要素
 
 ```
 {
@@ -82,10 +82,16 @@ MsgBodyに入力されたフィールドはメッセージの内容です。イ�
 ```
 | フィールド | タイプ | 説明 |
 |---------|---------|---------|
-| Index | Number | ユーザ定義の絵文字索引。|
+| Index | Number | 顔絵文字インデックス、ユーザーカスタマイズ。 |
 |Data|String|追加データ。|
 
-受信者がiOSまたはAndroidであり、かつアプリがバックグラウンドになる場合、オフラインでプッシュされたテキストは中国語版の場合、「[表情（絵文字）]」、英語版の場合、「[Face]」になります。
+受信者がiOSまたはAndroidで、アプリケーションがバックグラウンドにある場合、中国語版のオフラインプッシュテキストは「[表情]となり、英語版のオフラインプッシュテキストは「[Face]」となります。
+
+
+<dx-alert infotype="explain" title="説明">
+メッセージにTIMCustomElemカスタムメッセージ要素が1つしかない場合、DescフィールドとOfflinePushInfo.Descフィールドが入力されていないと、メッセージのオフラインプッシュを受信できません。このメッセージのオフラインプッシュを受信するには、OfflinePushInfo.Descフィールドに入力する必要があります。
+</dx-alert>
+
 
 ### カスタムメッセージ要素
 
@@ -102,18 +108,20 @@ MsgBodyに入力されたフィールドはメッセージの内容です。イ�
 ```
 | フィールド | タイプ | 説明 |
 |---------|---------|---------|
-| Data | String | カスタムメッセージデータ。APNsのpayloadフィールドとして送信されないため、payloadからDataフィールドを取得できません。|
-|Desc|String|カスタムメッセージの説明情報。受信者がiOSまたはAndroidのバックグラウンドでオンラインになる場合、オフラインでプッシュされたテキストとして表示されます。<br>カスタムメッセージを送信する同時に[OfflinePushInfo.Desc](https://intl.cloud.tencent.com/document/product/1047/33527)フィールドが設定されている場合、このフィールドは上書きされます。OfflinePushInfo.Descフィールドを優先して入力してください。<br>メッセージにTIMCustomElemカスタムメッセージ要素が1つしかない場合、DescフィールドとOfflinePushInfo.Descフィールドの両方が入力されていないと、そのメッセージのオフラインプッシュは受信されません。このメッセージのオフラインプッシュを受信するために、OfflinePushInfo.Descフィールドを入力する必要があります。|
-|Ext|String|拡張フィールド。受信者がiOSシステムであり、かつアプリがバックグラウンドになる場合、このフィールドはAPNs要求パケットPayloads内のExtキー値として送信され、Extのプロトコルフォーマットはサービス側によって決定され、APNsはパススルーのみを行います。|
-|Sound|String|カスタマイズしたAPNsのプッシュ音。|
+| Data | String | カスタムメッセージデータ。APNsのpayloadフィールドとして発行されないため、payloadからDataフィールドを取得できません。|
+|Desc|String|カスタムメッセージの説明情報。受信者がiOSまたはAndroidのバックグラウンドでオンラインの場合、オフラインプッシュテキストを表示します。<br>カスタムメッセージの送信中に[OfflinePushInfo.Desc](https://intl.cloud.tencent.com/document/product/1047/33527)フィールドが同時に設定されている場合、このフィールドは上書きされますので、OfflinePushInfo.Descフィールドを優先的に入力してください。<br><dx-alert infotype="explain" title="説明">
+メッセージにTIMCustomElemカスタムメッセージ要素が1つしかない場合、DescフィールドとOfflinePushInfo.Descフィールドが入力されていないと、メッセージのオフラインプッシュを受信できません。このメッセージのオフラインプッシュを受信するには、OfflinePushInfo.Descフィールドに入力する必要があります。
+</dx-alert>|
+|Ext|String|拡張フィールド。受信者がiOSシステムで、アプリケーションがバックグラウンドにある場合、このフィールドはAPNリクエストパケットPayloadsのExtキー値として発行されます。Extのプロトコル形式は業務側が決定し、APNsは透過的な送信のみを行います。|
+|Sound|String|APNsのプッシュリングトーンをカスタマイズします。|
 
-受信者がiOSシステムであり、かつアプリがバックグラウンドになる場合、Descはプッシュテキストとして送信され、ExtフィールドはAPNS要求パケットPayloadsのextキー値として送信されますが、DataフィールドはAPNsのPayloadsフィールド以外のフィールドとして送信されます。注意：1つの組み合わせメッセージには1つのTIMCustomElemカスタムメッセージ要素だけを含めることができます。
+受信者がiOSシステムで、アプリケーションがバックグラウンドにある場合、Descはプッシュテキストとして使用され、ExtフィールドはAPNSリクエストパケットPayloadsのextキー値として発行され、DataフィールドはAPNsのPayloadsフィールドとして発行されません。結合されたメッセージには、TIMCustomElemカスタムメッセージ要素を1つしか含めることができないので、ご注意ください。
 
 ### 音声メッセージ要素
 
->!音声メッセージは、サービス側に統合されたRest APIインターフェースを介して送信することはできません。音声メッセージを送信するには、クライアント側に適切なインターフェースを統合する必要があります。
+>!サーバー側に統合されたRest APIインターフェースを介して音声メッセージを送信する場合は、音声のURLを入力し、さらにこのURLを介して対応する音声をダウンロードできるようにする必要があります。Download_Flagフィールドには、必ず2を入力してください。
 
-4.XバーションのIM SDK（Android、iOS、MacおよびWindows）からの音声メッセージ要素の形式は次の通りです。
+4.XバージョンIM SDK（Android、iOS、MacおよびWindows）によって送信される音声メッセージ要素の形式は次のとおりです。
 ```
 {
     "MsgType": "TIMSoundElem",
@@ -128,27 +136,27 @@ MsgBodyに入力されたフィールドはメッセージの内容です。イ�
 
 | フィールド | タイプ | 説明 |
 |---------|---------|---------|
-| Url | String | 音声ダウンロードアドレス。このURLアドレスを通じて必要な音声を直接ダウンロードできます。|
-| Size | Number | 音声データのサイズ（単位：バイト）。|
-| Second | Number | 音声時間（単位：秒）。|
-| Download_Flag | Number | 音声ダウンロード方式のフラグ。現在、Download_Flagの値は2だけです。これは、`Url`フィールド値のURLアドレスから音声を直接ダウンロードできることを意味します。|
+| Url | String | 音声ダウンロードアドレス。対応する音声は、このURLアドレスから直接ダウンロードできます。 |
+| Size | Number | 音声データサイズ。単位：バイト。 |
+| Second | Number | 音声の長さ。単位：秒。 |
+| Download_Flag | Number | 音声ダウンロード方法のフラグ。現在、Download_Flagの値は2のみです。これは、`Url`フィールド値のURLアドレスを介して音声を直接ダウンロードできることを意味します。 |
 
->?2.Xと3.XバーションのIM SDK（Android、iOS、MacおよびWindows）からの音声メッセージ要素は次の通りです。
->```
+>?2.Xおよび3.XバージョンのIM SDK（Android、iOS、MacおよびWindows）によって送信される音声メッセージ要素は次のとおりです。
+```
 {
     "MsgType": "TIMSoundElem",
     "MsgContent": {
-        "UUID": "305c0201", //音声シリアル番号、String型。バックグラウンドで音声の検索に使用されるキー値。このフィールドから必要な音声をダウンロードすることができません。この音声を取得するには、IM SDKバーションを4.Xにアップグレードしてください。
-        "Size": 62351,		//音声データのサイズ、Number型、単位：バイト。
-        "Second": 1         //音声時間、Number型、単位：秒。
+        "UUID": "305c0201"、//音声のシリアル番号。タイプはStringです。バックグラウンドで音声にインデックスを付けるために用いられるキー値です。このフィールドからは、対応する音声をダウンロードできません。音声を取得する必要がある場合は、IMSDKバージョンを4.Xにアップグレードしてください。
+        "Size": 62351、//音声データサイズ、タイプはNumber、単位：バイト。
+        "Second": 1         //音声の長さ、タイプはNumber。単位：秒。
     }
 }
->```
+```
 
 
 ### 画像メッセージ要素
 
->!画像メッセージは、サービス側に統合されたRest APIインターフェースを介して送信することはできません。画像メッセージを送信するには、クライアント側に適切なインターフェースを統合する必要があります。
+>!サーバーに統合されたRest APIインターフェースを介して画像メッセージを送信する場合は、画像のURLを入力し、さらにこのURLを介して対応する画像をダウンロードできるようにする必要があります。UUIDフィールドは、グローバルに一意な文字列値を入力する必要があり、通常は画像のMD5値を入力します。IM SDKは、メッセージオブジェクトV2TIMImageElem.V2TIMImageを介してこの値をメッセージ受信者に渡します。業務Appはこのフィールドを使用して画像を区別することができます。
 
 ```
 {
@@ -165,7 +173,7 @@ MsgBodyに入力されたフィールドはメッセージの内容です。イ�
                 "URL": "http://xxx/3200490432214177468_144115198371610486_D61040894AC3DE44CDFFFB3EC7EB720F/0"
             },
             {
-                "Type": 2,      //大アイコン
+                "Type": 2,      //大きな画像
                 "Size": 2565240,
                 "Width": 0,
                 "Height": 0,
@@ -185,20 +193,20 @@ MsgBodyに入力されたフィールドはメッセージの内容です。イ�
 
 | フィールド | タイプ | 説明 |
 |---------|---------|---------|
-| UUID | String | 画像シリアル番号。バックグラウンドで画像の検索に使用されるキー値。|
-| ImageFormat | Number | 画像形式。JPG = 1、GIF = 2、PNG = 3、BMP = 4、その他 = 255。|
-| ImageInfoArray | Array | 元の画像、サムネイルまたは大アイコンのダウンロード情報。|
-| Type | Number | 画像のタイプ：1-元の画像、2-大アイコン、3-サムネイル。|
-| Size | Number | 画像データのサイズ（単位：バイト）。|
-| Width | Number | 画像の幅。|
-| Height | Number | 画像の高さ。|
-| URL | String | 画像のダウンロードアドレス。|
+| UUID | String | 画像のシリアル番号。バックグラウンドが画像にインデックスを付けるために用いるキー値。 |
+| ImageFormat | Number | 画像形式。JPG = 1、GIF = 2、PNG = 3、BMP = 4、その他 = 255。 |
+| ImageInfoArray | Array | 元の画像、サムネイル、または大きな画像のダウンロード情報。 |
+| Type | Number | 画像タイプ：1-元の画像、2-大きな画像、3-サムネイル。 |
+| Size | Number | 画像データサイズ。単位：バイト。 |
+| Width | Number | 画像幅。 |
+| Height | Number | 画像高さ。 |
+| URL | String | 画像のダウンロードアドレス。 |
 
 ### ファイルメッセージ要素
 
->!ファイルメッセージは、サービス側に統合されたRest APIインターフェースを介して送信することはできません。ファイルメッセージを送信するには、クライアント側に適切なインターフェースを統合する必要があります。
+>!サーバー側に統合されたRest APIインターフェースを介してファイルメッセージを送信する場合は、ファイルのURLを入力し、さらにこのURLを介して対応するファイルをダウンロードできるようにする必要があります。Download_Flagフィールドには、必ず2を入力してください。
 
-4.XバーションのIM SDK（Android、iOS、MacおよびWindows）からのファイルメッセージ要素の形式は次の通りです。
+4.XバージョンIM SDK（Android、iOS、MacおよびWindows）によって送信されるファイルメッセージ要素の形式は次のとおりです。
 ```
 {
     "MsgType": "TIMFileElem",
@@ -213,29 +221,29 @@ MsgBodyに入力されたフィールドはメッセージの内容です。イ�
 
 | フィールド | タイプ | 説明 |
 |---------|---------|---------|
-| Url | String | ファイルダウンロードアドレス。このURLアドレスを通じて必要なファイルを直接ダウンロードできます。|
-| FileSize | Number | ファイルデータのサイズ、単位：バイト。|
-| FileName | String | ファイル名。|
-| Download_Flag | Number | ファイルダウンロード方式のフラグ。現在、Download_Flagの値は2だけです。これは、`Url`フィールド値のURLアドレスからファイルを直接ダウンロードできることを意味します。|
+| Url | String | ファイルのダウンロードアドレス。対応するファイルは、このURLアドレスから直接ダウンロードできます。 |
+| FileSize | Number | ファイルデータサイズ。単位：バイト。 |
+| FileName | String | ファイル名。 |
+| Download_Flag | Number | ファイルダウンロード方法のフラグ。現在、Download_Flagの値は2のみです。これは、`Url`フィールドの値のURLアドレスを介してファイルを直接ダウンロードできることを意味します。 |
 
->?2.Xと3.XバーションのIM SDK（Android、iOS、MacおよびWindows）からのファイルメッセージ要素は次の通りです。
+>?2.Xおよび3.XバージョンのIM SDK（Android、iOS、MacおよびWindows）によって送信されるファイルメッセージ要素は次のとおりです。
 >```
 >{
->    "MsgType": "TIMFileElem",
->    "MsgContent": {
->        "UUID": "305c02010", //ファイルシリアル番号、String型。バックグラウンドでファイルの検索に使用されるキー値。このフィールドから必要なファイルをダウンロードすることができません。このファイルを取得するには、IM SDKバーションを4.Xにアップグレードしてください。
->        "FileSize": 1773552, //ファイルデータのサイズ、Number型、単位：バイト。
->        "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //ファイル名、String型。
->    }
+>"MsgType": "TIMFileElem",
+>"MsgContent": {
+>  "UUID": "305c02010", //ファイルのシリアル番号。タイプはStringです。バックグラウンドでファイルにインデックスを付けるために用いられるキー値です。このフィールドからは、対応するファイルをダウンロードできません。このファイルを取得する必要がある場合は、IMSDKバージョンを4.Xにアップグレードしてください。
+>  "FileSize": 1773552、//ファイルデータサイズ。タイプはNumber、単位：バイト。
+>  "FileName": "file:///private/var/Application/tmp/trim.B75D5F9B-1426-4913-8845-90DD46797FCD.MOV" //ファイル名。タイプはStringです。
+>}
 >}
 >```
+```
 
+### ビデオメッセージ要素
 
-### 動画メッセージ要素
+>!サーバーに統合されたRest APIインターフェースを介してビデオメッセージを送信する場合は、ビデオのURLを入力を入力し、さらにこのURLを介して対応するビデオをダウンロードできるようにする必要があります。VideoDownloadFlagとThumbDownloadFlagフィールドには、必ず2を入力してください。
 
->!動画メッセージは、サービス側に統合されたRest APIインターフェースを介して送信することはできません。動画メッセージを送信するには、クライアント側に適切なインターフェースを統合する必要があります。
-
-4.XバーションのIM SDK（Android、iOS、MacおよびWindows）からの動画メッセージ要素の形式は次の通りです。
+4.XバージョンIM SDK（Android、iOS、MacおよびWindows）によって送信されるビデオメッセージ要素の形式は次のとおりです。
 ```
 {
     "MsgType": "TIMVideoFileElem",
@@ -257,42 +265,42 @@ MsgBodyに入力されたフィールドはメッセージの内容です。イ�
 
 | フィールド | タイプ | 説明 |
 |---------|---------|---------|
-| VideoUrl | String | 動画ダウンロ一ドアドレス。このURLアドレスから必要な動画を直接ダウンロードできます。|
-| VideoSize | Number | 動画データのサイズ、単位：バイト。|
-| VideoSecond | Number | 動画時間、単位：秒。|
-| VideoFormat | String | 動画形式、例えば、mp4。|
-| VideoDownloadFlag | Number | 動画ダウンロード方式のフラグ。現在、VideoDownloadFlagの値は2だけです。これは、`VideoUrl`フィールド値のURLアドレスから動画を直接ダウンロードできることを意味します。|
-| ThumbUrl | String | 動画サムネイルのダウンロードアドレス。このURLアドレスから必要な動画サムネイルを直接ダウンロードできます。|
-| ThumbSize | Number | サムネイルのサイズ、単位：バイト。|
-| ThumbWidth | Number | サムネイルの幅。|
-| ThumbHeight | Number | サムネイルの高さ。|
-| ThumbFormat | String | サムネイルの形式、例えば、JPG、BMPなど。|
-| ThumbDownloadFlag | Number | 動画サムネイルダウンロード方式のフラグ。現在、ThumbDownloadFlagの値は2だけです。これは、`ThumbUrl`フィールド値のURLアドレスから動画サムネイルを直接ダウンロードできることを意味します。|
+| VideoUrl | String | ビデオダウンロードアドレス。対応するビデオは、このURLアドレスから直接ダウンロードできます。 |
+| VideoSize | Number | ビデオデータサイズ。単位：バイト。 |
+| VideoSecond | Number | ビデオの長さ。単位：秒。 |
+| VideoFormat | String | mp4などのビデオ形式。 |
+| VideoDownloadFlag | Number | ビデオダウンロード方法のフラグ。現在、`VideoDownloadFlagの値は2のみです。これは、``VideoUrl`フィールドの値のURLアドレスを介してビデオを直接ダウンロードできることを意味します。 |
+| ThumbUrl | String | ビデオサムネイルアドレス。対応するビデオサムネイルは、このURLアドレスから直接ダウンロードできます。 |
+| ThumbSize | Number | サムネイルサイズ。単位：バイト。 |
+| ThumbWidth | Number | サムネイル幅。 |
+| ThumbHeight | Number | サムネイル高さ。 |
+| ThumbFormat | String | JPG、BMPなどのサムネイル形式。 |
+| ThumbDownloadFlag | Number | ビデオサムネイルダウンロード方法のフラグ。現在、`ThumbDownloadFlagの値は2のみです。これは、``ThumbUrl`フィールド値のURLアドレスを介してビデオサムネイルを直接ダウンロードできることを意味します。 |
 
 
->?2.Xと3.XバーションのIM SDK（Android、iOS、MacおよびWindows）からの動画メッセージ要素は次の通りです。
+>?2.Xおよび3.XバージョンのIM SDK（Android、iOS、MacおよびWindows）によって送信されるビデオメッセージ要素は次のとおりです。
 >```
 {
     "MsgType": "TIMVideoFileElem",
     "MsgContent": {
-        "VideoUUID": "1400123456_dramon_34ca36be7dd214dc50a49238ef80a6b5",//動画シリアル番号、String型。バックグラウンドで動画の検索に使用されるキー値。このフィールドから必要な動画をダウンロードすることができません。この動画を取得するには、IM SDKバーションを4.Xにアップグレードしてください。
-        "VideoSize": 1194603, //動画データのサイズ、Number型、単位：バイト。
-        "VideoSecond": 5,     //動画時間、Number型、単位：秒。
-		"VideoFormat": "mp4", //動画形式、String型、例えば、mp4。
-		"ThumbUUID": "1400123456_dramon_893f5a7a4872676ae142c08acd49c18a",//動画サムネイルシリアル番号、String型。バックグラウンドで動画サムネイルの検索に使用されるキー値。このフィールドから必要な動画サムネイルをダウンロードすることができません。この動画サムネイルを取得するには、IM SDKバーションを4.Xにアップグレードしてください。
-		"ThumbSize": 13907,   //サムネイルのサイズ Number型、単位：バイト。
-		"ThumbWidth": 720,    //サムネイルの幅。Number型。
-		"ThumbHeight": 1280,  //サムネイルの高さ。Number型。
-		"ThumbFormat": "JPG"  //サムネイルの形式、String型、例えば、JPG、BMPなど。
+        "VideoUUID": "1400123456_dramon_34ca36be7dd214dc50a49238ef80a6b5"、//ビデオのシリアル番号。タイプはStringです。バックグラウンドでビデオにインデックスを付けるために用いられるキー値です。このフィールドからは、対応するビデオをダウンロードできません。このビデオを取得する必要がある場合は、IMSDKバージョンを4.Xにアップグレードしてください。
+        "VideoSize": 1194603、//ビデオデータサイズ。タイプはNumber。単位：バイト。
+        "VideoSecond": 5、//ビデオの長さ。タイプはNumber。単位：秒。
+		"VideoFormat": "mp4"、//ビデオ形式。タイプはmp4などのStringです。
+		"ThumbUUID": "1400123456_dramon_893f5a7a4872676ae142c08acd49c18a"、//ビデオサムネイルのシリアル番号。タイプはStringです。バックグラウンドでビデオサムネイルにインデックスを付けるために用いられるキー値です。このフィールドからは、対応するビデオサムネイルをダウンロードできません。このビデオサムネイルを取得する必要がある場合は、IMSDKバージョンを4.Xにアップグレードしてください。
+		"ThumbSize": 13907、//サムネイルサイズ。タイプは数値。単位：バイト。
+		"ThumbWidth": 720、//サムネイルの幅。 タイプはNumberです。
+		"ThumbHeight": 1280、//サムネイルの高さ。タイプはNumberです。
+		"ThumbFormat": "JPG"  //サムネイル形式。タイプはJPG、BMPなどのStringです。
     }
 }
->```
+```
 
-## MsgBodyメッセージ内容のインスタンス
+## MsgBodyメッセージ内容インスタンス
 
-### 単一テキスト要素メッセージ
+### シングルテキスト要素メッセージ
 
-単一メッセージには、テキスト内容がhello worldであるテキストメッセージ要素を含みます。
+1つのメッセージに含まれる中国語のテキストメッセージ要素は1つだけで、テキストの内容はhello worldです。
 
 ```
 {
@@ -307,9 +315,9 @@ MsgBodyに入力されたフィールドはメッセージの内容です。イ�
 }
 ```
 
-### 組み合わせ情報
+### 結合されたメッセージ
 
-下記の単一メッセージには、2つのテキストメッセージ要素と1つの絵文字要素が含まれており、メッセージ要素の順序はテキスト+絵文字+テキストとなっています。
+次のシングルメッセージには、2つのテキストメッセージ要素と1つの顔絵文字要素が含まれています。メッセージ要素の順序は、テキスト+顔絵文字+テキストです。
 ```
 {
     "MsgBody": [
@@ -336,19 +344,39 @@ MsgBodyに入力されたフィールドはメッセージの内容です。イ�
 }
 ```
 
->!1つの組み合わせメッセージにTIMCustomElemカスタムメッセージ要素を1つだけ含むことができ、他のメッセージ要素の数量に制限はありません。
+>!結合されたメッセージは1つのTIMCustomElemカスタムメッセージ要素のみを持つことができ、他のメッセージ要素の数は無制限です。
 
-## Apple Push Notification Service（APNs）関連説明
-### クライアントへのプッシュの表示形式の説明
-- **アカウントのニックネームが設定されていない**
-アカウントにニックネームが設定されていない場合、APNsプッシュはプッシュテキストの内容のみを表示します。1対1チャットメッセージは「プッシュテキスト」のみを表示し、グループメッセージは「（グループ名」：プッシュテキスト」のように表示します。
+##  メッセージカスタムデータCloudCustomDataの説明
+各メッセージは、カスタムデータCloudCustomDataを持つことができます。
+
+CloudCustomDataは、メッセージのMsgBodyと一緒にクラウドに保存され、CloudCustomDataは対する相手側に送信されます。これは、プログラムをアンインストールして再インストールした後に取得できます。
+
+CloudCustomDataとMsgBodyの形式の例は次のとおりです。
+```
+{
+    "MsgBody": [
+        {
+            "MsgType": "TIMTextElem", 
+            "MsgContent": {
+                "Text": "hello"
+            }
+        }
+    ],
+    "CloudCustomData": "your cloud custom data"
+}
+```
+
+## Apple Push Notification Service(APNs)関連の説明
+### クライアントプッシュ表示形式の説明
+- **アカウントのニックネームは設定されていません**
+アカウントにニックネームがない場合、APNsプッシュはプッシュテキスト内容のみを表示します。シングルチャットメッセージは「プッシュテキスト」のみを表示し、グループメッセージは「（グループ名）：プッシュテキスト」を表示します。
 ![](https://main.qcloudimg.com/raw/7bdb0f41aaa943190ce949fea8d20095.png)
 
-- **アカウントのニックネームが設定された**
-アカウントにニックネームが設定された場合、1対1チャットメッセージの表示形式は「ニックネーム：プッシュテキストの内容」であり、グループメッセージの表示形式はニックネーム（グループ名）：プッシュテキスト内容です。
+- **アカウントのニックネームが設定されています**
+アカウントにニックネームが設定されている場合、シングルチャットメッセージの表示形式は「ニックネーム：プッシュテキス内容」、グループメッセージの表示形式はニックネーム（グループ名）：プッシュテキスト内容になります。
 
-- **組み合わせメッセージの表示形式**
-組み合わせメッセージについて、各メッセージ要素のプッシュテキストを表示テキストとして順次重畳します。以下はアカウントニックネームを設定した1対1チャットメッセージです。プッシュテキストは「helloworld」です。helloworldにはスペースがなく、バックグラウンドで順番に重畳し、各メッセージ要素のプッシュテキストの間に文字が一切追加されていないことに注意してください。異なるメッセージ要素の間にスペースやその他の文字を追加する必要がある場合、呼び出し側が自ら判断します。
+- **結合されたメッセージ表示形式**
+結合されたメッセージの場合、各メッセージ要素のプッシュテキストが表示テキストとして順番に重ねられます。 以下は、アカウントのニックネームが設定されたシングルチャットメッセージであり、プッシュテキストは「helloworld」です。helloworldにはスペースがなく、バックグラウンドが順番に重ね合わされ、各メッセージ要素のプッシュテキストの間にいかなる文字も追加されないことにご注意ください。それぞれの異なるメッセージ要素の間にスペースやその他の文字を追加する必要がある場合は、呼び出し元がそれを制御する必要があります。
 <pre>
 {
     "MsgBody": [
@@ -372,22 +400,22 @@ MsgBodyに入力されたフィールドはメッセージの内容です。イ�
 </pre>
 ![](https://main.qcloudimg.com/raw/8a9b70df695ecf77c10c5ffba03d9864.png)
 
-各メッセージ要素のプッシュテキストフィールドは次のようにまとめます。
+各タイプのメッセージ要素のテキストフィールドの概要をプッシュします。
 
 | MsgTypeの値 | タイプ |メッセージ要素プッシュテキスト|
 |---------|---------|---------|
 | TIMTextElem | テキストメッセージ。|Textフィールド。|
-|TIMLocationElem|地理位置メッセージ。|中国語版のオフラインプッシュテキストは「[位置]」；英文版は「[Location]」です。|
-|TIMFaceElem|絵文字メッセージ。|中国語版のオフラインプッシュテキストは「[表情（絵文字）]”；英文版は「[Face]」です。|
-|TIMCustomElem|カスタム情報。|Descフィールド。|
+|TIMLocationElem|地理的位置メッセージ。|中国語版オフラインプッシュテキストは「[位置]」、英語版は「[Location]です。|
+|TIMFaceElem|顔絵文字メッセージ。|中国語版オフラインプッシュテキストは「[表情]」、英語版は「[Face]」です。|
+|TIMCustomElem|カスタムメッセージ。|Descフィールド。|
 
-### ニックネームとグループ名のREST API設定インターフェース
-アカウントニックネームのREST APIインターフェースを設定する：[情報設定](https://intl.cloud.tencent.com/document/product/1047/34916)。
-グループ名のREST APIインターフェースを設定する：[グループ基本情報変更](https://intl.cloud.tencent.com/document/product/1047/34962)。
+### ニックネームとグループ名REST API設定インターフェース
+アカウントのニックネームを設定するREST APIインターフェース：[プロファイルの設定](https://intl.cloud.tencent.com/document/product/1047/34916)。
+グループ名を設定するREST APIインターフェース：[グループの基本プロファイルの変更](https://intl.cloud.tencent.com/document/product/1047/34962)。
 
-### 高級アプリケーション
-#### プッシュ音声のカスタマイズ、APNsから拡張フィールドの送信。
-カスタムメッセージ要素TIMCustomElemを使用して、Soundはカスタム音声ファイル名を入力し、Extは送信された拡張フィールドを入力します。要求拡張フィールドはAPNsプッシュPayLoadのExtフィールドから取得できます。
+## 高度なアプリケーション
+#### カスタムプッシュサウンド。APNsは拡張フィールドを発行します。
+カスタムメッセージ要素TIMCustomElemを使用して、Soundはカスタムサウンドファイルの名前を入力し、Extは発行された拡張フィールドを入力します。リクエスト拡張フィールドは、APNsからプッシュされたPayLoadのExtフィールドから取得できます。
 ```
 {
     "To_Account": "lumotuwe5", 
@@ -413,74 +441,78 @@ MsgBodyに入力されたフィールドはメッセージの内容です。イ�
 
 ```
 
-クライアントが受信したAPNsからプッシュされたJSON Payloadは：
+クライアントはAPNsを受信し、JSON Payloadを次のようにプッシュします。
 
 ```
 {
     "aps": {
-        "alert": "Nickname:helloworld",   //各メッセージ要素のプッシュテキストの順番重畳
+        "alert": "Nickname:helloworld"、//各メッセージ要素のプッシュテキストシーケンスが重ねられます
         "badge": 5,                       
-        "sound": "dingdong.aiff"         //TIMCustomElemのSoundフィールドに対応する
+        "sound": "dingdong.aiff"         //TIMCustomElemのSoundフィールドに対応します
     }, 
-    "ext": "www.qq.com"                //TIMCustomElemのExtフィールドに対応する
+    "ext": "www.qq.com"                //TIMCustomElemのExtフィールドに対応します
 }
 
 ```
 
 ## オフラインプッシュOfflinePushInfoの説明
 
-OfflinePushInfoは、オフラインプッシュの設定に使用されるJSONオブジェクトです。このメッセージのプッシュの無効化、テキスト記述内容のプッシュ、パススルー文字列のプッシュをするかどうかを構成できます。オフラインプッシュ情報を簡単に設定するため、TIMCustomElemカプセル化をせずに、OfflinePushInfoを使用するだけでよいです。
+OffsetPushInfoは、オフラインプッシュを設定するためのJSONオブジェクトです。このメッセージがプッシュをオフにするか、テキストの説明内容をプッシュするか、透過的な文字列をプッシュするかなどを設定できます。OfflinePushInfo情報を使用してオフラインプッシュ情報を手軽に設定でき、TIMCustomElemパッケージを介して実装する必要はありません。
 
->!OfflinePushInfoが設定された場合、TIMCustomElem内のオフラインプッシュに関連する情報の構成は無視されます。OfflinePushInfoは現在、APNsプッシュおよびAndroidメーカーのプッシュ配信（Xiaomi、Huawei、MEIZU、OPPO、vivoのプッシュ）に適用されています。
+>!OfflinePushInfoが入力されている場合、TIMCustomElemのオフラインプッシュに関する情報の設定は無視されます。 現在、OfflinePushInfoは、APNsプッシュおよびAndroidメーカープッシュ（Xiaomi、Huawei、Meizu、OPPO、およびvivoプッシュ）に適しています。
 
-OfflinePushInfoの形式例は次の通りです。
+OffsetPushInfoの形式の例は次のとおりです。
 
 ```
 {
     // ...
-    "MsgBody": [...] // MsgBodyの関連記述
+    "MsgBody": [...] // これはMsgBodyに関する説明です
     "OfflinePushInfo": {
         "PushFlag": 0,
-        "Title":"これはプッシュ配信の表題",
-        "Desc": "これはオフラインプッシュ配信内容",
-        "Ext": "これはパススルー内容",
+        "Title":"これはプッシュタイトルです"
+        "Desc": "これはオフラインプッシュ内容です"
+        "Ext": "これは透過的なコンテンツです"
         "AndroidInfo": { 
 			"Sound": "android.mp3",
-			"OPPOChannelID": "test_OPPO_channel_id"
+			"OPPOChannelID": "test_OPPO_channel_id",
+			"VIVOClassification": 1
         },
         "ApnsInfo": {
             "Sound": "apns.mp3",
             "BadgeMode": 1,
             "Title":"apns title",
             "SubTitle":"apns subtitle",
-            "Image":"www.image.com"
+            "Image":"www.image.com",
+            "MutableContent": 1
         }
     }
 }
 ```
 
-フィールドの説明は以下の通りです。
+フィールドの説明は次のとおりです。
 
 | フィールド | タイプ | 属性 | 説明 |
 |---------|---------|---------|---------|
-| PushFlag | Integer | オプション | 0はプッシュすること、1はオフラインプッシュしないことを意味します。  |
-| Title | String | オプション | オフラインプッシュ表題。このフィールドはiOSとAndroidが共通します。|
-| Desc | String | オプション | オフラインプッシュ内容。このフィールドは上記の各メッセージ要素 [TIMMsgElement](https://intl.cloud.tencent.com/document/product/1047/33527)のオフラインプッシュ表示テキストを上書きします。<br>送信されたメッセージには[TIMCustomElem](https://intl.cloud.tencent.com/document/product/1047/33527)カスタムメッセージ要素が1つしかありません。このDescフィールドはTIMCustomElemのDescフィールドを上書きします。どちらのDescフィールドが設定されないと、このカスタムメッセージのオフラインプッシュを受信することができません。|
-| Ext | String | オプション | オフラインプッシュのパススルー内容。国内のAndroid携帯電話メーカーのプッシュ配信プラットフォームに対する要求がそれぞれ異なるため、このフィールドがJSON形式であることを確保してください。そうでない場合、一部のメーカーからのオフラインプッシュ配信を受信できない可能性があります。|
-| AndroidInfo.Sound | String | オプション | Androidがオフラインで音声ファイルをプッシュ配信するパス。|
-| AndroidInfo.HuaWeiChannelID | String | オプション | Huawei携帯電話EMUI 10.0以降の通知経路フィールド。|
-| AndroidInfo.XiaoMiChannelID | String | オプション | Xiaomi携帯電話MIUI 10以降の通知種類（Channel）の適用フィールド。|
-| AndroidInfo.OPPOChannelID | String | オプション | OPPO携帯電話Android 8.0以降のNotificationChannel通知の適用フィールド。|
-| AndroidInfo.GoogleChannelID | String | オプション | Google携帯電話Android 8.0以降の通知経路フィールド。Googleのプッシュ配信のための新しいインターフェース（証明書ファイルをアップロードする）は、channel idをサポートするが、旧いインターフェース（サーバーキーを記入）はサポートしません。|
-| ApnsInfo.BadgeMode | Integer | オプション | このフィールドはデフォルト設定または0の場合はカウントされることを意味します。1はこのメッセージがカウントされない（右上隅のアイコン数字が増加しない）ことを意味します。|
-| ApnsInfo.Title|String|オプション|このフィールドは、APNsからプッシュされた表題を識別するために使用されます。設定されると最上層のTitleを上書きます。|
-| ApnsInfo.SubTitle|String|オプション|このフィールドはAPNsからプッシュされたサブ表題を識別するために使用されます。|
-| ApnsInfo.Image|String|オプション|このフィールドはAPNsに含まれている画像アドレスを識別するために使用されます。クライアントがこのフィールドを取得した場合、画像リソースをダウンロードして画像を、表示ウィンドウ内に表示できます。|
+| PushFlag | Integer | オプション | 「0」はプッシュを表し、「1」はオフラインプッシュでないことを表します。  |
+| Title | String | オプション | オフラインプッシュタイトル。このフィールドはiOSとAndroidで共有されています。|
+| Desc | String | オプション | オフラインプッシュ内容。このフィールドは、上記のさまざまなメッセージ要素[TIMMsgElement](https://intl.cloud.tencent.com/document/product/1047/33527)のオフラインプッシュ表示テキストをカバーします。<br>送信されるメッセージに[TIMCustomElem](https://intl.cloud.tencent.com/document/product/1047/33527)カスタムメッセージ要素が1つしかない場合、このDescフィールドはTIMCustomElemのDescフィールドを上書きします。Descフィールドの両方ともに入力されていない場合、カスタムメッセージのオフラインプッシュは受信できません。|
+| Ext | String | オプション | オフラインプッシュ透過的コンテンツ。国内のAndroidスマホメーカーごとにプッシュプラットフォームの要件が異なるため、このフィールドがJSON形式であることを確認してください。JSON形式でない場合、一部のベンダーからオフラインプッシュを受信できなくなる可能性があります。 |
+| AndroidInfo.Sound | String | オプション | Androidオフラインプッシュ音声ファイルパス。 |
+| AndroidInfo.HuaWeiChannelID | String | オプション | HuaweiスマホEMUI 10.0以降の通知チャネルフィールド。 このフィールドがブランクでない場合、コンソールによって設定されたChannelID値は上書きされます。このフィールドが空の場合、コンソールによって設定されたChannelID値は上書きされません。|
+| AndroidInfo.XiaoMiChannelID | String | オプション | XiaomiスマホMIUI 10以降の通知カテゴリ(Channel)適合フィールド。 このフィールドがブランクでない場合、コンソールによって構成されたChannelID値は上書きされます。このフィールドがブランクの場合、コンソールによって構成されたChannelID値は上書きされません。 |
+| AndroidInfo.OPPOChannelID | String | オプション | OPPOスマホAndroid 8.0以降のNotificationChannel通知適合フィールド。このフィールドがブランクでない場合、コンソールによって設定されたChannelID値は上書きされます。このフィールドがブランクの場合、コンソールによって設定されたChannelID値は上書きされません。|
+| AndroidInfo.GoogleChannelID | String | オプション | GoogleスマホAndroid 8.0以降の通知チャネルフィールド。 Googleプッシュの新しいインターフェース（アップロード証明書ファイル）はchannel idをサポートし、古いインターフェース（サーバーキーの入力）はサポートしません。 |
+| AndroidInfo.VIVOClassification | Integer | オプション | VIVOスマホプッシュメッセージの分類。「0」は運用メッセージを表し、「1」はシステムメッセージを表します。入力されていない場合、デフォルトで「1」になります。|
+| ApnsInfo.BadgeMode | Integer | オプション | このフィールドをデフォルトのままにするか、「0」に設定すると、メッセージをカウントする必要があることを表し、「1」に設定すると、このメッセージをカウントする必要がないことを表します。この場合、右上隅のアイコンの数字は増加しません。|
+| ApnsInfo.Title|String|オプション|このフィールドは、APNsによってプッシュされたタイトルを識別するために用いられます。入力すると、最上位階層のTitleが上書きされます。|
+| ApnsInfo.SubTitle|String|オプション|このフィールドは、APNsによってプッシュされたサブタイトルを識別するために用いられます。|
+| ApnsInfo.Image|String|オプション|このフィールドは、APNsが持つ画像アドレスを識別するために用いられます。クライアントがこのフィールドを取得すると、画像リソースをダウンロードすることにより、ポップアップウィンドウに画像を表示することができます。|
+| ApnsInfo.MutableContent | Integer | オプション | 「1」は、iOS 10のプッシュ拡張のオンを表します。デフォルトは「0」です。|
 
->!APNsのプッシュはパケットサイズを4K以内に制限するため、他の管理フィールドを除いて、DescフィールドとExtフィールドの合計は3Kを超えないようにすることをお勧めします。
+>!APNsプッシュはデータパケットサイズを4Kを超えないよう制限するので、他の制御フィールドを削除し、DescフィールドとExtフィールドの合計が3Kを超えないようにすることをお勧めします。
 
-## 参考資料
+## 参考
 
-Apple Push Notification Service(APNs) [アップル社プッシュ配信開発ドキュメント](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1)。
-iOSオフラインメッセージのプッシュ設定：[オフラインプッシュ(iOS)](https://intl.cloud.tencent.com/document/product/1047/34347)。
+Apple Push Notification Service(APNs) [Appleプッシュ開発ドキュメント](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html#//apple_ref/doc/uid/TP40008194-CH1-SW1)。
+iOSオフラインメッセージプッシュの設定：[オフラインプッシュ(iOS)](https://intl.cloud.tencent.com/document/product/1047/34347)。
 
