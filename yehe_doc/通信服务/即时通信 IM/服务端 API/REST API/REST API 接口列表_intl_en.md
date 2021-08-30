@@ -7,7 +7,7 @@
 | Deletes accounts. | [v4/im_open_login_svc/account_delete](https://intl.cloud.tencent.com/document/product/1047/34955) |
 | Queries accounts. | [v4/im_open_login_svc/account_check](https://intl.cloud.tencent.com/document/product/1047/34956) |
 | Invalidates the login state of an account.  | [v4/im_open_login_svc/kick](https://intl.cloud.tencent.com/document/product/1047/34957) |
-| Queries the login status of an account. | [ v4/openim/querystate](https://intl.cloud.tencent.com/document/product/1047/35477) |
+| Queries the login status of an account. | [v4/openim/query_online_status](https://intl.cloud.tencent.com/document/product/1047/35477) |
 
 ## One-to-One Message
 
