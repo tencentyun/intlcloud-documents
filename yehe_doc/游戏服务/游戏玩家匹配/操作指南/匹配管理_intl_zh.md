@@ -55,7 +55,7 @@
 
 进入匹配管理页面，单击规则列表中的**MatchCode**，即可查看匹配详情。
 
->?如果当前匹配需要请求 GSE 资源，您可以点击游戏服务器队列名称，跳转进 [游戏服务器引擎 GSE 控制台](https://console.cloud.tencent.com/gpm) 查看当前匹配关联的游戏服务器队列信息。
+>?如果当前匹配需要请求 GSE 资源，您可以点击游戏服务器队列名称，跳转进 [游戏服务器伸缩GSE 控制台](https://console.cloud.tencent.com/gpm) 查看当前匹配关联的游戏服务器队列信息。
 >
 ![](https://main.qcloudimg.com/raw/a03b3651923d91c992281546d551fed9.jpg)
 
