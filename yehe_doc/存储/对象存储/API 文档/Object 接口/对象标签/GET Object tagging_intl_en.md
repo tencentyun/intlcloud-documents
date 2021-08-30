@@ -1,35 +1,38 @@
-## Feature
+## Overview
 
-This API is used to query existing tags set on an object.
+This API is used to query the existing tags of an object.
 
-To call this API using a sub-account, please make sure that you have obtained permissions for this API from the root account.
+If a sub-account needs to call this API (`GET Object tagging`), ensure that the root account has authorized it to do so.
 
 #### Versioning
 
-If versioning is enabled for your bucket, you can include `VersionId` in your request to query tags on the specific version of an object.
+If you have enabled versioning for the bucket and want to query the tags of an object of a specified version, include the `VersionId` parameter in the request.
 
 ## Request
 
-#### Sample request 
+#### Sample request
 
 ```plaintext
-GET /<ObjectKey>tagging&VersionId=VersionId HTTP 1.1
+GET /<ObjectKey>?tagging&VersionId=VersionId HTTP 1.1
 Host:<BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information)
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> 
 
 #### Request parameters
 
-| Name | Description | Type | Required |
+| Parameter | Description | Type | Required |
 | :-------- | :----------------------------------------------------------- | :----- | :------- |
-| versionId | Specifies the version ID of the object if versioning is enabled; if this parameter is not specified, tags on the latest version will be queried | string | No |
+| versionId | Version ID of the object (if versioning is enabled). If this parameter is not specified, the latest version will be queried. | string | No |
 
 #### Request headers
 
-This API uses only common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
@@ -39,29 +42,29 @@ The request body of this request is empty.
 
 #### Response headers
 
-This API returns only common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
-The nodes of response body are explained as below:
+The following describes the nodes of the response body returned for this request:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------------------ | ------------------------------------------------------------ | ---------- | -------- |
-| Tagging | None | Tag set | Container | Yes |
+| Tagging | None | Tagging configuration | Container | Yes |
 | TagSet | Tagging | Tag set | Container | Yes |
-| Tag | Tagging.TagSet | Tag set, which can contain up to 10 tags | Containers | Yes |
-| Key | Tagging.TagSet.Tag | Tag key, which can contain up to 128 characters. A tag key can contain English letters, numbers, spaces, plus signs, minus signs, underscores, equals signs, dots, colons, and slashes | String | Yes |
-| Value | Tagging.TagSet.Tag | Tag value, which can contain up to 256 characters. A tag value can contain English letters, numbers, spaces, plus signs, minus signs, underscores, equals signs, dots, colons, and slashes | String | Yes |
+| Tag | Tagging.TagSet | A single tag. Up to 10 tags are supported. | Containers | Yes |
+| Key | Tagging.TagSet.Tag | Tag key, which can be up to 128 characters. A tag key can contain letters, digits, spaces, plus signs (+), minus signs (−), underscores (_), equals signs (=), dots (.), colons (:), and slashes (/). | String | Yes |
+| Value | Tagging.TagSet.Tag | Tag value, which can be up to 256 characters. A tag value can contain letters, digits, spaces, plus signs (+), minus signs (−), underscores (_), equals signs (=), dots (.), colons (:), and slashes (/). | String | Yes |
 
 #### Error codes
 
-This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Sample
 
 #### Request
 
-The following example requests to query the tags on the bucket `examplebucket-1250000000`. COS parses the request and returns `{age:18}` and `{name:xiaoming}`, the two existing tags on the bucket.
+The following example queries the tags of the `exampleobject.txt` object in the `examplebucket-1250000000` bucket. COS parses the request and returns the `{age:18}` and `{name:xiaoming}` tags.
 
 ```plaintext
 GET /exampleobject.txt?tagging HTTP/1.1

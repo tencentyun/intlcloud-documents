@@ -1,4 +1,4 @@
-## API Description
+## Overview
 
 This API is used to delete a specified object. To call this API, you need to have permission to write to the object.
 
@@ -20,7 +20,7 @@ This API is used to delete a specified object. To call this API, you need to hav
 
 #### Versioning
 
-To delete a specified version of object/delete marker, use the `versionId` request parameter to specify the ID of the object version/delete marker. In this way, the `x-cos-version-id` response header will be returned, indicating the version ID to delete.
+To delete a specified version of object/delete marker, use the `versionId` request parameter to specify the ID of the object version/delete marker. In this way, the `x-cos-version-id` response header will be returned, indicating the version ID deleted.
 
 If `versionId` is not specified:
 - When versioning is enabled, the `DELETE` operation will create the latest version of delete marker for this object, and the `x-cos-version-id ` response header will be returned to indicate the version ID of the delete marker created in this request.
@@ -28,11 +28,11 @@ If `versionId` is not specified:
 
 If the `DELETE` operation has successfully created/deleted a delete marker, the `x-cos-delete-marker: true` response header will be returned.
 
-For more information about the enabled/suspended status of versioning, please see [Versioning Overview](https://intl.cloud.tencent.com/document/product/436/19883).
+For more information about the status (enabled/suspended) of versioning, please see [Versioning Overview](https://intl.cloud.tencent.com/document/product/436/19883).
 
-## Requests
+## Request
 
-#### Sample request 
+#### Sample request
 
 ```shell
 DELETE /<ObjectKey> HTTP/1.1
@@ -40,8 +40,10 @@ Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
 Authorization: Auth String
 ```
-
->? Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> 
 
 #### Request parameters
 
@@ -82,7 +84,7 @@ This API returns common error responses and error codes. For more information, p
 
 ## Samples
 
-#### Sample 1: versioning disabled
+#### Sample 1: versioning not enabled
 
 #### Request
 
@@ -105,7 +107,7 @@ Server: tencent-cos
 x-cos-request-id: NWQ1M2Y3YWNfMzdiMDJhMDlfODA1Yl8xZThj****
 ```
 
-#### Sample 2: enabling versioning (creating a delete marker)
+#### Sample 2: versioning-enabled (creating a delete marker)
 
 #### Request
 
@@ -130,7 +132,7 @@ x-cos-request-id: NWQ1M2Y3ZDVfN2RiNDBiMDlfMmMwNmVfMTc4****
 x-cos-version-id: MTg0NDUxNzgyODk2ODc1NjY0NzQ
 ```
 
-#### Sample 3: deleting a specified version of object permanently
+#### Sample 3: deleting an object of a specified version permanently
 
 #### Request
 

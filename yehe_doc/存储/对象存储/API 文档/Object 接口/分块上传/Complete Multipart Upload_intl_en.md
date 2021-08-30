@@ -1,27 +1,45 @@
-## Feature
+## Overview
 
-This API is used to complete a multipart upload after all parts are uploaded via the `Upload Part` API. When using this API, you must specify the `PartNumber` and `ETag` of each part in the request body to check if the parts are correct.
+This API is used to complete a multipart upload after all parts are uploaded with the `Upload Part` API. When calling this API, you must specify the `PartNumber` and `ETag` of each part in the request body to verify the parts.
 
-It may take minutes for COS to merge uploaded parts upon a completed multipart upload. As a result, when the merging begins, COS immediately returns a 200 status code along with the `Transfer-Encoding: chunked` response header. COS then periodically returns chunked spaces to keep the connection active until the merging ends, and returns the information about the resulting entire object in the last chunk.
+After all parts are uploaded, it will take several minutes for them to be concatenated. Therefore, when the concatenation starts, COS will immediately return status code 200 and use the `Transfer-Encoding: chunked` response header to return spaces periodically to keep the connection alive until the concatenation is completed. After that, COS will return information about the concatenated object in the last chunk.
 
-- If any uploaded part is less than 1 MB in size, `400 EntityTooSmall` will be returned when this API is called.
-- If the numbers of the uploaded parts are not continuous, `400 InvalidPart` will be returned when this API is called.
-- If the part information entries in the request body are not sorted by number in ascending order, `400 InvalidPartOrder` will be returned when this API is called.
-- If the `uploadId` does not exist, `404 NoSuchUpload` will be returned when this API is called.
+- If any uploaded part is smaller than 1 MB, "400 EntityTooSmall" will be returned when this API is called.
+- If the part numbers are not continuous, "400 InvalidPart" will be returned when this API is called.
+- If the part numbers in the request body are not in ascending order, "400 InvalidPartOrder" will be returned when this API is called.
+- If the `uploadId` does not exist, "404 NoSuchUpload" will be returned when this API is called.
 
-> We recommend you either complete or abort a multipart upload as early as possible, as the uploaded parts of an incomplete multipart upload will take up storage capacity and incur storage fees.
+>! We recommend you either complete or abort a multipart upload as early as possible, as the uploaded parts of an incomplete multipart upload will take up storage capacity and incur storage fees.
+>
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer is recommended.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=CompleteMultipartUpload&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+            </div>
+        </div>
+    </div>
+</div>
+
 
 #### Versioning
 
-- If versioning is enabled for the bucket, COS will automatically generate a unique version ID for the object to be uploaded and return this ID in the response using the `x-cos-version-id` response header.
-- If versioning is suspended for the bucket, COS will always use `null` as the version ID of any object in the bucket, and return the `x-cos-version-id: null` response header.
+- For a versioning-enabled bucket, COS will automatically generate a unique version ID for the concatenated object, and the ID will be returned in the `x-cos-version-id` response header.
+- For a versioning-suspended bucket, COS will always use `null` as the version ID of the object and will return the `x-cos-version-id: null` response header.
 
-#### Request
+## Request
 
-#### Request samples
+#### Sample request
 
 ```plaintext
-POST /<ObjectKey>uploadId=UploadId HTTP/1.1
+POST /<ObjectKey>?uploadId=UploadId HTTP/1.1
 Host: <BucketName-APPID>.cos.<Region>.myqcloud.com
 Date: GMT Date
 Content-Type: application/xml
@@ -32,21 +50,24 @@ Authorization: Auth String
 [Request Body]
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+>? 
+> - In `Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com`, &lt;BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and &lt;Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> 
 
 #### Request parameters
 
-| Name                                  | Description                                                         | Type   | Required |
+| Parameter | Description | Type | Required |
 | -------- | ------------------------------------------------------------ | ------ | -------- |
-| uploadId | ID that identifies the multipart upload. It’s the same as the UploadId generated when using the Initiate Multipart Upload API. | string | Yes       |
+| uploadId | Multipart upload ID obtained from the `Initiate Multipart Upload` API | string | Yes |
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
-Submits **application/xml** request data, including all parts information.
+The request body contains **application/xml** data that includes information about all parts.
 
 ```xml
 <CompleteMultipartUpload>
@@ -61,46 +82,46 @@ Submits **application/xml** request data, including all parts information.
 </CompleteMultipartUpload>
 ```
 
-The nodes are described in details below:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ----------------------- | ------ | ------------------------------------------------- | --------- | -------- |
-| CompleteMultipartUpload | None     | Contains all information in the Complete Multipart Upload request | Container | No       |
+| CompleteMultipartUpload | None | All request information about `Complete Multipart Upload` | Container | No |
 
-**Content of the Container node `CompleteMultipartUpload`:**
+**Content of `CompleteMultipartUpload`**:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ----------------------- | ---------------------------------- | --------- | -------- |
-| Part      | CompleteMultipartUpload | Describes information on each part in this multipart upload | Container | Yes |
+| Part      | CompleteMultipartUpload | Information about each part | Container | Yes |
 
-**Content of the Container node `Part`:**
+**Content of `Part`**:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ---------------------------- | ----------------------------------------------------------- | ------- | -------- |
-| PartNumber         | CompleteMultipartUpload.Part | Part number                                                      | integer | Yes       |
-| ETag               | CompleteMultipartUpload.Part | The ETag header value returned when the Upload Part request succeeds | string  | Yes       |
+| PartNumber | CompleteMultipartUpload.Part | Part number | integer | Yes |
+| ETag  | CompleteMultipartUpload.Part | ETag of the part. The value is obtained from the ETag header in the response to a successful `Upload Part` request. | string  | Yes |
 
 ## Response
 
 #### Response headers
 
-In addition to common response headers, this API also returns the following response headers. For more information on common response headers, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+In addition to common response headers, this API also returns the following response headers. For more information about common response headers, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 **Versioning-related headers**
 
 If the object is uploaded to a versioning-enabled bucket, the following response headers will be returned:
 
-| Name | Description | Type |
+| Header | Description | Type |
 | ---------------- | ------------- | ------ |
 | x-cos-version-id | Object version ID | string |
 
 **Headers related to server-side encryption (SSE)**
 
-If you upload an object using SSE encryption, this API will return SSE headers. For more information, see [Server-side encryption headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
+If server-side encryption is used during object upload, this API will return headers used specifically for server-side encryption. For more information, please see [Server-Side Encryption Headers](https://intl.cloud.tencent.com/document/product/436/7729#.E6.9C.8D.E5.8A.A1.E7.AB.AF.E5.8A.A0.E5.AF.86.E4.B8.93.E7.94.A8.E5.A4.B4.E9.83.A8).
 
 #### Response body
 
-Returns **application/xml** data, including that on the resulting entire object, upon a successful request.
+If the request is successful, **application/xml** data that includes information about the concatenated object will be returned.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -112,30 +133,31 @@ Returns **application/xml** data, including that on the resulting entire object,
 </CompleteMultipartUploadResult>
 ```
 
-The detailed nodes are described as follows:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ----------------------------- | ------ | --------------------------------------------- | --------- |
-| CompleteMultipartUploadResult | None     | Contains all the results of the Complete Multipart Upload action | Container |
+| CompleteMultipartUploadResult | None | Stores the result of `Complete Multipart Upload` | Container |
 
-**Content of the Container node `CompleteMultipartUploadResult`:**
+**Content of `CompleteMultipartUploadResult`**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ----------------------------- | ------------------------------------------------------------ | ------ |
-| Location           | CompleteMultipartUploadResult | Location of the object for which the multipart upload is completed. Format: `http://<BucketName-APPID>.cos.<Region>.myqcloud.com/<ObjectKey>`, e.g. `http://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/exampleobject` | string |
-| Bucket             | CompleteMultipartUploadResult | The destination bucket for the multipart upload. Format: `<BucketName-APPID>`, e.g. `examplebucket-1250000000` | string |
-| Key                | CompleteMultipartUploadResult | Object key                                                       | string |
-| ETag               | CompleteMultipartUploadResult | ETag of the object into which the parts are merged                                     | string |
+| Location | CompleteMultipartUploadResult | Location of the concatenated object, formatted as `http://<BucketName-APPID>.cos.<Region>.myqcloud.com/<ObjectKey>` (for example, `http://examplebucket-1250000000.cos.ap-beijing.myqcloud.com/exampleobject`) | string |
+| Bucket | CompleteMultipartUploadResult | Bucket where the concatenated object resides, formatted as `<BucketName-APPID>` (for example, `examplebucket-1250000000`) | string |
+| Key | CompleteMultipartUploadResult | Object key | string |
+| ETag | CompleteMultipartUploadResult | ETag of the concatenated object | string |
 
 #### Error codes
 
-This API uses standardized error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730) .
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Examples
 
-By default, this API uses “Transfer-Encoding: chunked” responses. However, developers should understand that, all the examples below use responses without Transfer-Encoding, which languages and libraries can automatically process. For more information, see the language- and library-specific documentation.
+## Samples
 
-#### Example 1. Simple example (versioning not enabled)
+This API uses `Transfer-Encoding: chunked` in the response by default. For readability, samples in this document are displayed without `Transfer-Encoding`. During use, different languages and libraries can automatically process this encoding form. For more information, see the language- and library-related documents.
+
+#### Sample 1: simple use case (versioning-disabled)
 
 #### Request
 
@@ -186,7 +208,7 @@ x-cos-request-id: NWU3YjJkNWVfZDFjODJhMDlfMTk2ODJfMmEyNTA0****
 </CompleteMultipartUploadResult>
 ```
 
-#### Example 2. Using server-side encryption SSE-COS
+#### Sample 2: using server-side encryption SSE-COS
 
 #### Request
 
@@ -230,7 +252,7 @@ x-cos-server-side-encryption: AES256
 </CompleteMultipartUploadResult>
 ```
 
-#### Example 3. Using server-side encryption SSE-KMS
+#### Sample 3: using server-side encryption SSE-KMS
 
 #### Request
 
@@ -276,7 +298,7 @@ x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085***
 
 ```
 
-#### Sample 4. Using Server-side Encryption SSE-C
+#### Sample 4: using server-side encryption SSE-C
 
 #### Request
 
@@ -321,7 +343,7 @@ x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
 </CompleteMultipartUploadResult>
 ```
 
-#### Example 5. Enabling versioning
+#### Sample 5: versioning-enabled
 
 #### Request
 
@@ -365,7 +387,7 @@ x-cos-version-id: MTg0NDUxNTMyMTEwNDU1NDc3OTc
 </CompleteMultipartUploadResult>
 ```
 
-#### Example 6. Suspending versioning
+#### Sample 6: versioning-suspended
 
 #### Request
 

@@ -1,4 +1,4 @@
-## Description
+## Overview
 
 This API is used to delete the cross-bucket replication configuration from a bucket. When initiating this request, you need to get the request signature to show that the request has been authorized.
 
@@ -13,7 +13,10 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
->?Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+>? 
+> - In `Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com`, &lt;BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and &lt;Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> 
 
 #### Request headers
 
@@ -41,7 +44,7 @@ This API returns common error responses and error codes. For more information, p
 
 #### Request
 
-The following sample request deletes the configuration of the `originbucket-1250000000` bucket:
+The following example deletes the cross-bucket replication configuration from the `originbucket-1250000000` bucket:
 
 ```shell
 DELETE /?replication HTTP/1.1

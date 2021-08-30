@@ -6,7 +6,7 @@ This API is used to query the configuration of static websites associated with a
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                You are advised to use API Explorer.
+                API Explorer is recommended.
             </div>
             <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=GetBucketWebsite&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
         </div>
@@ -29,7 +29,10 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
->?Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> 
 
 #### Request parameters
 
@@ -37,7 +40,7 @@ This API has no request parameter.
 
 #### Request headers
 
-This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
@@ -47,7 +50,7 @@ This API does not have a request body.
 
 #### Response headers
 
-This API returns only common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
@@ -93,60 +96,60 @@ The nodes are described as follows:
 | --- | --- | --- | --- |
 | WebsiteConfiguration | None | Stores the result of `GET Bucket website`. | Container |
 
-**Content of the Container node `WebsiteConfiguration`:**
+**Content of `WebsiteConfiguration`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
-| IndexDocument | WebsiteConfiguration | Index document | Container |
-| RedirectAllRequestsTo | WebsiteConfiguration | Redirects all requests | Container |
-| ErrorDocument | WebsiteConfiguration | Error document | Container |
-| RoutingRules | WebsiteConfiguration | Sets redirect rules | Container |
+| IndexDocument | WebsiteConfiguration | Index document configuration | Container |
+| RedirectAllRequestsTo | WebsiteConfiguration | Redirection configuration for all requests | Container |
+| ErrorDocument | WebsiteConfiguration | Error document configuration | Container |
+| RoutingRules | WebsiteConfiguration | Routing rule configuration | Container |
 
-**Content of the Container node `IndexDocument`:**
-
-| Node Name (Keyword) | Parent Node | Description | Type |
-| --- | --- | --- | --- |
-| Suffix | WebsiteConfiguration.IndexDocument | Specifies the object key suffix for index documents. For example, if it is specified as `index.html`, the request automatically returns `index.html` when you access the root directory of the bucket, or `article/index.html` when you access the directory `article/`. | string |
-
-**Content of the Container node `RedirectAllRequestsTo`:**
+**Content of `IndexDocument`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
-| Protocol | WebsiteConfiguration.RedirectAllRequestsTo | Specifies the destination protocol for all redirect requests | string |
+| Suffix | WebsiteConfiguration.IndexDocument | The object key suffix of index documents. For example, if this parameter is set to `index.html`, `index.html` will be automatically returned when you access the root directory of the bucket, and `article/index.html` will be returned when you access the `article/` directory. | string |
 
-**Content of the Container node `ErrorDocument`:**
-
-| Node Name (Keyword) | Parent Node | Description | Type |
-| --- | --- | --- | --- |
-| Key | WebsiteConfiguration.ErrorDocument | Specifies the object key of the general error document | string |
-
-**Content of the Container node `RoutingRules`:**
+**Content of `RedirectAllRequestsTo`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
-| RoutingRule | WebsiteConfiguration.RoutingRules | Sets a single redirect rule | Container |
+| Protocol | WebsiteConfiguration.RedirectAllRequestsTo | The target protocol to redirect all requests | string |
 
-**Content of the Container node `RoutingRules.RoutingRule`:**
-
-| Node Name (Keyword) | Parent Node | Description | Type |
-| --- | --- | --- | --- |
-| Condition | WebsiteConfiguration.RoutingRules.RoutingRule | Sets the condition for the redirect rule | Container |
-| Redirect | WebsiteConfiguration.RoutingRules.RoutingRule | Sets the redirect destination for the redirect rule | Container |
-
-**Content of the Container node `RoutingRules.RoutingRule.Condition`:**
+**Content of `ErrorDocument`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
-| HttpErrorCodeReturnedEquals | WebsiteConfiguration.RoutingRules.<br>RoutingRule.Condition | Specifies the error code as match condition for the redirect rule | integer |
-| KeyPrefixEquals | WebsiteConfiguration.RoutingRules.<br>RoutingRule.Condition | Specifies the object key prefix as match condition for the redirect rule | string |
+| Key | WebsiteConfiguration.ErrorDocument | Object key of the general error document | string |
 
-**Content of the Container node `RoutingRules.RoutingRule.Redirect`:**
+**Content of `RoutingRules`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --- | --- | --- | --- |
-| Protocol | WebsiteConfiguration.RoutingRules.<br>RoutingRule.Redirect | Specifies the destination protocol for the redirect rule | string |
-| ReplaceKeyWith | WebsiteConfiguration.RoutingRules.<br>RoutingRule.Redirect | Specifies the object key of redirect destination in the redirect rule to replace the entire object key included in the original request | string |
-| ReplaceKeyPrefixWith | WebsiteConfiguration.RoutingRules.<br>RoutingRule.Redirect | Specifies the object key of redirect destination in the redirect rule to replace the prefix which the original request used for match | string |
+| RoutingRule | WebsiteConfiguration.RoutingRules | A single routing rule | Container |
+
+**Content of `RoutingRules.RoutingRule`:**
+
+| Node Name (Keyword) | Parent Node | Description | Type |
+| --- | --- | --- | --- |
+| Condition | WebsiteConfiguration.RoutingRules.RoutingRule | Condition for the routing rule | Container |
+| Redirect | WebsiteConfiguration.RoutingRules.RoutingRule | Configuration of the redirection target | Container |
+
+**Content of `RoutingRules.RoutingRule.Condition`:**
+
+| Node Name (Keyword) | Parent Node | Description | Type |
+| --- | --- | --- | --- |
+| HttpErrorCodeReturnedEquals | WebsiteConfiguration.RoutingRules.<br>RoutingRule.Condition | The error code to match the routing rule | integer |
+| KeyPrefixEquals | WebsiteConfiguration.RoutingRules.<br>RoutingRule.Condition | The object key prefix to match the routing rule | string |
+
+**Content of `RoutingRules.RoutingRule.Redirect`:**
+
+| Node Name (Keyword) | Parent Node | Description | Type |
+| --- | --- | --- | --- |
+| Protocol | WebsiteConfiguration.RoutingRules.<br>RoutingRule.Redirect | Target protocol for the routing rule | string |
+| ReplaceKeyWith | WebsiteConfiguration.RoutingRules.<br>RoutingRule.Redirect | Target object key to replace the original object key in the request | string |
+| ReplaceKeyPrefixWith | WebsiteConfiguration.RoutingRules.<br>RoutingRule.Redirect | Target object key prefix to replace the original object key prefix that is matched in the request | string |
 
 #### Error codes
 

@@ -1,11 +1,11 @@
-## Feature description
+## Overview
 
-This API is used to delete the custom domain name configuration of a bucket.
+This API is used to delete the custom domains bound to a bucket.
 
-> 
+> ! 
 >
->By default, the root account has the permission to delete the custom domain name of a bucket and can grant such permission to a sub-account by granting it the access to the `DeleteBucketDomain` API in the [CAM Console](https://console.cloud.tencent.com/cam/overview).
-> - Please note that this API deletes all custom domain names bound to a specified bucket. To delete only part of them, you can get all the custom domain names bound to the bucket by calling the `GET Bucket Domain` API, and then rewriting those which are not to be deleted by calling the `PUT Bucket Domain` API.
+>By default, the root account has permission to delete the custom domains bound to a bucket and can go to the [CAM console](https://console.cloud.tencent.com/cam/overview) to grant such permission to a sub-account by allowing it to call the `DeleteBucketDomain` API.
+> - This API deletes all custom domains bound to the bucket. To delete only some domains, call `GET Bucket Domain` to query all custom domains bound to the bucket first, and call `PUT Bucket Domain` to bind the needed domains again.
 
 ## Request
 
@@ -18,15 +18,18 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+>? 
+> - In `Host: &lt;BucketName-APPID>.cos.&lt;Region>.myqcloud.com`, &lt;BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and &lt;Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> 
 
 #### Request parameters
 
-This API does not use any request parameters.
+This API has no request parameter.
 
 #### Request headers
 
-This API only uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
@@ -36,7 +39,7 @@ This API does not have a request body.
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API returns only common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
@@ -44,9 +47,9 @@ The response body of this API is empty.
 
 #### Error codes
 
-This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Use cases
+## Sample
 
 #### Request
 

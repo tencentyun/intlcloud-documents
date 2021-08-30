@@ -1,11 +1,30 @@
-## Description
+## Overview
 
-This API is used to query inventory jobs for a bucket. To initiate this request, you need to provide the ID of an inventory job and a signature to authenticate the request. For more information, see [Inventory Overview](https://intl.cloud.tencent.com/document/product/436/30622).
+This API is used to query an inventory job of a bucket. When calling this API, you need to specify the inventory job ID and carry a request signature. For more information, please see [Inventory Overview](https://intl.cloud.tencent.com/document/product/436/30622).
 
 > !
-> - To call this API, make sure that you have adequate permission for inventory jobs of the bucket.
-> - The bucket owner has such permission by default. If you do not have it, apply for it to the bucket owner first.
-> - If you specify a prefix for inventory delivery, the COS backend will automatically add `/` behind the prefix. For example, if you specify `Prefix` as the prefix, an inventory report will be delivered to the path `Prefix/inventory_report`.
+> - To call this API, ensure that you have the necessary permission on the bucket inventory job.
+> - The bucket owner has such permission by default. If you do not have the permission, you can request it from the bucket owner.
+> - If you specify a prefix for the destination path of the inventory report, COS will automatically append a slash (/) to the specified prefix. For example, if you set the prefix to `Prefix`, COS will deliver the inventory report to `Prefix/inventory_report`.
+> 
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer is recommended.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=GetBucketInventory&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 ## Request
 
@@ -18,19 +37,22 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
->?Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> 
 
 #### Request parameters
 
-To call this API requires the following parameter:
+To call `GET Bucket inventory`, specify the following parameter:
 
-| Parameter Name | Description | Type | Required |
+| Parameter | Description | Type | Required |
 | ---- | ------------------------------------------------------------ | ------ | ---- |
-| id   | ID of the inventory job. Default value: None<br/>Valid characters: `a-z, A-Z, 0-9, -, _, .`| String | Yes   |
+| Id | ID of the inventory job. Default value: `None` <br/>Letters, digits, hyphens (-), underscores (_), and dots (.) are supported. | String | Yes |
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 
 #### Request body
@@ -41,12 +63,12 @@ The request body of this request is empty.
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API returns only common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 
 #### Response body
 
-This response body returns **application/xml** data. The following example contains all the node data:
+The response body returns **application/xml** data. The following contains all the nodes:
 
 ```shell
 <InventoryConfiguration>
@@ -81,38 +103,38 @@ This response body returns **application/xml** data. The following example conta
 </InventoryConfiguration>
 ```
 
-The nodes are described in details below:
+The nodes are described as follows:
 
-| Node Name | Parent Node | Description | Type |
+| Node | Parent Node | Description | Type |
 | ----------------------- | ----------------------- | ------------------------------------------------------------ | --------- |
-| Inventory Configuration | None | Contains configuration parameters of the inventory | Container |
-| Id | Inventory Configuration | Inventory name, corresponding to the ID in the request parameters | Container |
-| IsEnabled               | Inventory Configuration | Indicates whether to enable inventory:<br><li>`true`: enabled<br><li>`false`: disabled | String    |
-| IncludedObject Versions | Inventory Configuration | Indicates whether to include object versions in the inventory:<br>`All`: the inventory will include all object versions and add the `VersionId`, `IsLatest`, and `DeleteMarker` fields<br>`Current`: the inventory includes no object version | String |
-| Filter                  | Inventory Configuration | Filters objects to be analyzed based on the prefix set in `Filter` | Container |
-| Prefix | Filter | Prefix of the objects to be analyzed | String |
-| OptionalFields | Inventory Configuration | Sets the analysis dimensions that should be included in the inventory result | Container |
-| Field | OptionalFields | Analysis dimension fields that can be optionally included in the inventory result. Valid values: Size, LastModifiedDate, StorageClass, ETag, IsMultipartUploaded, and ReplicationStatus | String |
-| Schedule | Inventory Configuration | Configures the inventory job cycle | Container |
-| Frequency | Schedule | Inventory job cycle. Options include daily and weekly | String |
-| Destination | Inventory Configuration | Storage destination for the inventory result | Container |
-| COSBucket Destination | Destination | Destination bucket where the exported inventory result is stored | Container |
-| Bucket | COSBucket Destination | Name of the bucket where the inventory result is stored | String |
-| AccountId | COSBucket Destination | ID of the bucket owner | String |
-| Prefix | COSBucket Destination | Prefix of the inventory result | String |
-| Format | COSBucket Destination | File format of the inventory result. Valid values: CSV, OCR | String |
-| Encryption | COSBucket Destination | Provides an option of server-side encryption for the inventory result | Container |
+| InventoryConfiguration | None | Inventory configuration | Container |
+| Id | InventoryConfiguration | Inventory ID, corresponding to the request parameter `Id` | Container |
+| IsEnabled | InventoryConfiguration | Whether the inventory is enabled<br><li>`true`: yes <br><li>`false`: no (no inventory will be generated.) | String |
+| IncludedObjectVersions | InventoryConfiguration | Whether object versions are included in the inventory <br><li>`All`: yes (the inventory includes all object versions and the additional fields `VersionId`, `IsLatest`, and `DeleteMarker`.)<br><li>`Current`: no | String |
+| Filter  | InventoryConfiguration | Filters objects prefixed with the specified value to analyze. | Container |
+| Prefix | Filter | Prefix of the objects to analyze | String |
+| OptionalFields | InventoryConfiguration | Analysis dimensions to include in the inventory result | Container |
+| Field | OptionalFields | Optional analysis dimensions, including `Size`, `LastModifiedDate`, `StorageClass`, `ETag`, `IsMultipartUploaded`, and `ReplicationStatus` | String |
+| Schedule | InventoryConfiguration | Inventory job cycle | Container |
+| Frequency | Schedule | Frequency of the inventory job, which can be daily or weekly | String |
+| Destination | InventoryConfiguration | Information about the inventory result destination | Container |
+| COSBucketDestination | Destination | Information about the bucket that stores the exported inventory result | Container |
+| Bucket | COSBucketDestination | Bucket name | String |
+| AccountId | COSBucketDestination | ID of the bucket owner | String |
+| Prefix | COSBucketDestination | Prefix of the inventory result | String |
+| Format | COSBucketDestination | Format of the inventory result. Valid values: `CSV`, `ORC` | String |
+| Encryption | COSBucketDestination | Server-side encryption for the inventory result | Container |
 | SSE-COS | Encryption | Encryption with COS-managed key | Container |
 
 #### Error codes
 
-This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Sample
 
 #### Request
 
-The following sample request shows how to get the configuration of the inventory job list1 from the bucket `examplebucket-1250000000`.
+The following example queries the `list1` inventory job configuration of the `examplebucket-1250000000` bucket:
 
 ```shell
 GET /?inventory&id=list1 HTTP/1.1
@@ -123,11 +145,11 @@ Host: examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com
 
 #### Response
 
-If the request above succeeds, COS returns the following response indicating that the inventory job list1 is currently enabled for the bucket.
-- This inventory job analyzes the objects prefixed with `myPrefix` and all their versions in the bucket `examplebucket-1250000000`.
-- The analysis frequency is once a day.
-- Analysis dimensions include Size, LastModifiedDate, StorageClass, ETag, IsMultipartUploaded, and ReplicationStatus.
-- The analysis result is stored in the bucket `examplebucket-1250000000` as a CSV file, which is prefixed with `list1` and encrypted with SSE-COS.
+After the request above is made, COS returns the following response, indicating that the inventory job `list1` is currently enabled in the bucket:
+- Objects to analyze: objects prefixed with `myPrefix` and all their versions in the `examplebucket-1250000000` bucket
+- Analysis frequency: daily
+- Analysis dimensions: `Size`, `LastModifiedDate`, `StorageClass`, `ETag`, `IsMultipartUploaded`, and `ReplicationStatus`
+- Analysis result: to be stored in the `examplebucket-1250000000` bucket as a CSV file, which is prefixed with `list1` and encrypted with SSE-COS.
 
 ```shell
 HTTP/1.1 200 OK

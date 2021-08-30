@@ -1,23 +1,40 @@
-## Feature
+## Overview
 
-This API is used to delete multiple objects from a bucket. You can delete up to 1,000 objects using a single request. COS supports two modes for the response: Verbose and Quiet.
+This API is used to delete multiple objects (up to 1,000) from a bucket in a single request. COS provides the following two response modes:
 
-- In Quiet mode, the response includes only information on objects with delete failure errors.
-- In Verbose mode, the response includes the result of deletion of each object in your request.
+- Quiet: returns only information about objects that failed to delete and the error messages.
+- Verbose: returns the deletion results of each object.
 
-To make this request, you need to have permission to write to the bucket.
+To call this API, you need to have permission to write to the bucket.
+
+<div class="rno-api-explorer">
+    <div class="rno-api-explorer-inner">
+        <div class="rno-api-explorer-hd">
+            <div class="rno-api-explorer-title">
+                API Explorer is recommended.
+            </div>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=DeleteMultipleObjects&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
+        </div>
+        <div class="rno-api-explorer-body">
+            <div class="rno-api-explorer-cont">
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
+            </div>
+        </div>
+    </div>
+</div>
+
 
 #### Versioning
 
-If versioning is enabled, you can specify the version ID of each object in this API request to permanently delete the specified version or delete marker of the object. If the version ID is not specified, COS will create a delete marker as the latest version of the object.
+If versioning is enabled, you can specify a version ID for each object to delete so that these objects/delete markers of the specified versions can be deleted permanently. If no version ID is specified, a new delete marker will be created for the object.
 
-When the delete operation creates or deletes a delete marker for an object, the response returns both elements `&lt;DeleteMarker>true&lt;/DeleteMarker&gt;` and &lt;DeleteMarkerVersionId>.
+If a delete marker is created or deleted in this request, the &lt;DeleteMarker>true&lt;/DeleteMarker&gt; and &lt;DeleteMarkerVersionId&gt; nodes will be returned for this object.
 
-When the delete operation permanently deletes a specified version (including that of a delete marker) from an object, the response returns the element `&lt;VersionId&gt`.
+If an object of a specified version (including the delete marker version) is deleted permanently in this request, the &lt;VersionId&gt; node will be returned, indicating the version ID that is deleted in this request.
 
 ## Request
 
-#### Request samples
+#### Sample request
 
 ```plaintext
 POST /?delete HTTP/1.1
@@ -30,20 +47,22 @@ Authorization: Auth String
 
 [Request Body]
 ```
-
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> 
 
 #### Request parameters
 
-This API does not use any request parameter.
+This API has no request parameter.
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
-Submits **application/xml** request data, including objects to be deleted.
+The request body contains **application/xml** data that includes information about the objects to delete.
 
 ```xml
 <Delete>
@@ -58,35 +77,35 @@ Submits **application/xml** request data, including objects to be deleted.
 </Delete>
 ```
 
-The nodes are described in details below:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------ | ----------------------------------------------- | --------- | -------- |
-| Delete             | None     | Contains all information about the DELETE Multiple Objects request | Container | Yes       |
+| Delete | None | Stores information about the `DELETE Multiple Objects` request. | Container | Yes |
 
-**Content of the Container node `Delete`:**
+**Content of `Delete`**:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------ | ------ | ------------------------------------------------------------ | --------- | -------- |
-| Quiet              | Delete | Boolean. Default: `false`<br><li>`true` indicates Quiet mode where the response includes only information on the objects with delete failure errors.<br><li>`false` indicates Verbose mode where the response includes the result of deletion of each object. | boolean   | Yes       |
-| Object             | Delete | A single object to be deleted                                   | Container | Yes       |
+| Quiet | Delete | Whether to use the Quiet mode for the response <br><li>`true`: yes (returns only information about objects that failed to delete and the error messages) <br><li>`false` (default): no (uses the Verbose mode instead, returning the deletion results of all objects) | boolean | Yes |
+| Object | Delete | Information about a single object to delete | Container | Yes |
 
-**Content of the Container node `Object`:**
+**Content of `Object`**:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------------------------------------------------ | ------------- | ------------------------------------------------------------ | ------ | -------- |
-| Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Delete.Object | Key of the object to be deleted                                     | string | Yes       |
-| VersionId                                                    | Delete.Object | Version ID of an object to be deleted. Required if you have enabled versioning and want to delete a specified object version; not required if you haven’t enabled versioning, or want to insert a delete marker when versioning is enabled. | string | Yes       |
+| Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Delete.Object | Key of the object to delete | string | Yes |
+| VersionId | Delete.Object | Version ID of the object to delete (if versioning is enabled). If versioning is not enabled, or you want to create a delete marker with versioning enabled, you don’t need to specify this node. | string | Yes |
 
 ## Response
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only returns [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
-A successful request returns the **application/xml** data, which includes deletion results.
+**application/xml** data that contains the deletion results will be returned for a successful request.
 
 ```xml
 <DeleteResult>
@@ -114,44 +133,44 @@ A successful request returns the **application/xml** data, which includes deleti
 </DeleteResult>
 ```
 
-The detailed nodes are described as follows:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ------ | ------------------------------------------- | --------- |
-| DeleteResult       | None     | Contains all results of the DELETE Multiple Objects operation | Container |
+| DeleteResult | None | Stores the results of `DELETE Multiple Objects` | Container |
 
-**Content of the Container node `DeleteResult`:**
+**Content of `DeleteResult`**:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ------------ | ----------------------------------------------------------- | --------- |
-| Deleted            | DeleteResult | An entry for a single object deleted successfully; only returned when Verbose mode is used | Container |
-| Error              | DeleteResult | An entry for a single object that fails to be deleted                                      | Container |
+| Deleted | DeleteResult | An object entry that is successfully deleted. This node is returned only in Verbose mode. | Container |
+| Error | DeleteResult | An object entry that failed to delete | Container |
 
-**Content of the Container node `Deleted`:**
+**Content of `Deleted`**:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | --------------------- | -------------------- | ------------------------------------------------------------ | ------- |
-| Key                   | DeleteResult.Deleted | Key of an object deleted successfully                                       | string  |
-| DeleteMarker          | DeleteResult.Deleted | Boolean. Fixed value: `true`. Returned only if the delete operation creates or deletes a delete marker for the object. | boolean |
-| DeleteMarkerVersionId | DeleteResult.Deleted | Version ID of a delete marker. Returned only if the delete operation creates or deletes a delete marker for the object. | string  |
-| VersionId             | DeleteResult.Deleted | ID of the version deleted successfully. Returned only if the request includes a version ID of the object to be deleted. | string  |
+| Key | DeleteResult.Deleted | Key of the object that is successfully deleted | string  |
+| DeleteMarker | DeleteResult.Deleted | Fixed to `true`. This node is returned when a delete marker is created or deleted for an object. | boolean |
+| DeleteMarkerVersionId | DeleteResult.Deleted | ID of the delete marker that is created or deleted. This node is returned only when a delete marker is created or deleted for an object. | string  |
+| VersionId | DeleteResult.Deleted | Version ID of the object that is successfully deleted. This node is returned only when a version ID is specified in the request. | string |
 
-**Content of the Container node `Error`:**
+**Content of `Error`**:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ------------------ | ------------------------------------------------------------ | ------ |
-| Key                | DeleteResult.Error | Key of the object that failed to be deleted                                       | string |
-| VersionId             | DeleteResult.Error | ID of the version that fails to be deleted. Returned only if the request includes a version ID of the object to be deleted. | string  |
-| Code               | DeleteResult.Error | Error code for a delete failure; used to identify the unique error condition and error scenario       | string |
-| Message            | DeleteResult.Error | Message of a delete failure                                       | string |
+| Key | DeleteResult.Error | Key of the object that failed to delete | string |
+| VersionId          | DeleteResult.Error | Version ID of the object that failed to delete. This node is returned only when a version ID is specified in the request. | string |
+| Code | DeleteResult.Error | Error code for the deletion failure. The error code can be used to locate the error conditions and scenario. | string |
+| Message | DeleteResult.Error | Error message for the deletion failure  | string |
 
 #### Error codes
 
-There are no special error messages for this API. For all error messages, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Examples
+## Sample
 
-#### Example 1. Simple example
+#### Sample 1: simple use case
 
 #### Request
 
@@ -197,7 +216,7 @@ x-cos-request-id: NWQ1YmUwYTdfM2FiMDJhMDlfYzczN18zMGM1****
 </DeleteResult>
 ```
 
-#### Example 2. Simple example (Quiet mode)
+#### Sample 2: simple use case (using the Quiet mode)
 
 #### Request
 
@@ -236,7 +255,7 @@ x-cos-request-id: NWQ1YmUzYWFfMTljMDJhMDlfNTg3ZV8zNDI0****
 <DeleteResult/>
 ```
 
-#### Example 3. Enabling versioning (creating delete markers)
+#### Sample 3: versioning-enabled (creating a delete marker)
 
 #### Request
 
@@ -278,7 +297,7 @@ x-cos-request-id: NWQ1ZDMzMzNfNDhiNDBiMDlfMmIzNzZfMTBh****
 </DeleteResult>
 ```
 
-#### Example 4. Deleting a specified version
+#### Sample 4: deleting an object of a specified version
 
 #### Request
 
@@ -320,7 +339,7 @@ x-cos-request-id: NWQ1ZDI5ZmJfNDhiNDBiMDlfMmIzODNfMTA0****
 </DeleteResult>
 ```
 
-#### Example 5. Deleting a specified delete marker
+#### Sample 5: deleting a delete marker
 
 #### Request
 
@@ -364,7 +383,7 @@ x-cos-request-id: NWQ1ZDMzMzRfYmIwMmEwOV83YTQzXzEyM2Ri****
 </DeleteResult>
 ```
 
-#### Example 6. Partial deletion success
+#### Sample 6: failed to delete some objects
 
 #### Request
 

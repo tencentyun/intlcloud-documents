@@ -1,16 +1,15 @@
 ## Overview
 
-This API is used to query the intelligent tiering configuration on a bucket.
+This API is used to query the INTELLIGENT TIERING configuration of a bucket.
 
 > ?
->
-> - Only the root account or sub-accounts that are granted permission for the GET Bucket IntelligentTiering operation can call this API.
-> - There are two types of responses to this API request:
->  - If you never enabled intelligent tiering configuration on the bucket before, the response will be:
+> - Only the root account and authorized sub-accounts can call this API.
+> - The status of INTELLIGENT TIERING can only be enabled or suspended.
+> - If you have never enabled INTELLIGENT TIERING for your bucket, the response will be:
 ```shell
 	<IntelligentTieringConfiguration/>
 ```
->  - If you enabled intelligent tiering configuration on the bucket, the response will be:
+> - If you have enabled INTELLIGENT TIERING for your bucket, the response will be:
 ```shell
 <IntelligentTieringConfiguration xmlns="cos xmlns/"> 
        <Status>Enabled</Status>
@@ -31,25 +30,28 @@ Date: GMT date
 Authorization: Auth String
 ```
 
-> ?Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> 
 
 #### Request parameters
 
-This API does not use any request parameters.
+This API has no request parameter.
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
-This request has no request body.
+The request body of this request is empty.
 
 ## Response
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API returns only common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
@@ -62,20 +64,20 @@ This API only returns common response headers. For more information, see [Common
 </IntelligentTieringConfiguration>
 ```
 
-The nodes are described in details below:
+The nodes are described as follows:
 
-| Node Name                           | Parent Node                                   | Description                                                         | Type      |
+| Node | Parent Node | Description | Type |
 | ------------------------------- | ------------------------------------------ | ------------------------------------------------------------ | --------- |
-| IntelligentTieringConfiguration | None                                         | Information on the intelligent tiering configuration                                   | Container |
-| Status                          | IntelligentTieringConfiguration            | Specifies the status of the intelligent tiering configuration once enabled. Enumerated values: Suspended, Enabled     | Enum      |
-| Transition                      | IntelligentTieringConfiguration            | Specifies the transition for objects in the intelligent tiering configuration                 | Container |
-| Days                            | IntelligentTieringConfiguration.Transition | Specifies the number of consecutive days for which objects have not been accessed in the frequent access tier, and are therefore moved to the infrequent access tier. Valid values: 30 (default), 60, 90 | Int       |
+| IntelligentTieringConfiguration | None | Configuration of INTELLIGENT TIERING | Container |
+| Status | IntelligentTieringConfiguration | Whether INTELLIGENT TIERING is enabled. Enumerated values: `Suspended`, `Enabled` | Enum |
+| Transition | IntelligentTieringConfiguration | Transition configuration for INTELLIGENT TIERING | Container |
+| Days | IntelligentTieringConfiguration.Transition | The number of consecutive days after which objects are moved from STANDARD to STANDARD_IA. Valid values: 30 (default), 60, 90 | Int  |
 
 #### Error codes
 
-This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Examples
+## Sample
 
 #### Request
 

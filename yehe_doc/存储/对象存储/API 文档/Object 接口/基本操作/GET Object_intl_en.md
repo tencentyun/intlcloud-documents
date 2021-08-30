@@ -1,6 +1,6 @@
 ## Overview
 
-This API is used to download an object to the local file system. To make this request, you need to have read permission for the object, or the object must have public read permission enabled (i.e., everyone has permission to read the object).
+This API is used to download an object in a COS bucket to a local file system. To call this API, you need to have permission to read the object, or the object is set to `public-read` (i.e., everyone can read it).
 
 > !
 >- If the `response-*` parameter is used in a request, anonymous access will not be supported and the request must carry a signature.
@@ -11,13 +11,13 @@ This API is used to download an object to the local file system. To make this re
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
             <div class="rno-api-explorer-title">
-                We recommend using Tencent Cloud API Explorer.
+                API Explorer is recommended.
             </div>
-            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=GetObject&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Click to debug</a>
+            <a href="https://console.cloud.tencent.com/api/explorer?Product=cos&Version=2018-11-26&Action=GetObject&SignVersion=" class="rno-api-explorer-btn" hotrep="doc.api.explorerbtn" target="_blank"><i class="rno-icon-explorer"></i>Debug</a>
         </div>
         <div class="rno-api-explorer-body">
             <div class="rno-api-explorer-cont">
-                API Explorer makes it easy for you to make online API calls, verify signatures, generate SDK code, and search for the desired APIs. You can also use it to query the content of each request as well as its response, and obtain the auto-generated SDK calling samples.
+                API Explorer makes it easy to make online API calls, verify signatures, generate SDK code, search for APIs, etc. You can also use it to query the content of each request as well as its response.
             </div>
         </div>
     </div>
@@ -34,7 +34,7 @@ If this API is used to get an **ARCHIVE or DEEP ARCHIVE** object, and the object
 
 ## Request
 
-#### Sample request 
+#### Sample request
 
 ```shell
 GET /<ObjectKey> HTTP/1.1
@@ -43,7 +43,10 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> ? Authorization: Auth String (See [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details.)
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> 
 
 #### Request parameters
 
@@ -55,7 +58,7 @@ Authorization: Auth String
 | response-content-language | Sets the value of the `Content-Language` header in the response | string | No |
 | response-content-type | Sets the value of the `Content-Type` header in the response | string | No |
 | response-expires | Sets the value of the `Expires` header in the response | string | No |
-| versionId | Specifies the version ID of the object if versioning is enabled; if this parameter is not specified, the object with the latest version will be downloaded | string | No |
+| versionId | Specifies the version ID of the object (if versioning is enabled). If this parameter is not specified, the object of the latest version will be downloaded. | string | No |
 
 #### Request headers
 
@@ -115,9 +118,9 @@ The response body of this API request is the object (file) content.
 
 This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Examples
+## Sample
 
-#### Example 1. Simple use case (with versioning disabled)
+#### Sample 1: simple use case (with versioning disabled)
 
 #### Request
 
@@ -149,7 +152,7 @@ x-cos-request-id: NWU5MDNkZDRfZDgyNzVkNjRfN2Q5M18xOWVi****
 [Object Content]
 ```
 
-#### Example 2. Specifying response headers through request parameters
+#### Sample 2: specifying response headers through request parameters
 
 #### Request
 
@@ -183,7 +186,7 @@ x-cos-request-id: NWU5MDNkZDVfNjZjODJhMDlfMTY2MDdfMThm****
 [Object Content]
 ```
 
-#### Example 3. Specifying search criteria through the request headers with an HTTP status code 304 (Not Modified) returned
+#### Sample 3: specifying search criteria through the request headers with HTTP status code 304 (Not Modified) returned
 
 #### Request
 
@@ -210,7 +213,7 @@ x-cos-hash-crc64ecma: 16749565679157681890
 x-cos-request-id: NWYyMTFjODVfOGZiNzJhMDlfNDcxZjZfZDY2****
 ```
 
-#### Example 4. Specifying search criteria through the request header with HTTP status code 412 (Precondition Failed) returned
+#### Sample 4: specifying search criteria through the request header with HTTP status code 412 (Precondition Failed) returned
 
 #### Request
 
@@ -246,7 +249,7 @@ x-cos-request-id: NWYyMTFjODZfOGRjOTJhMDlfMmIyMWVfOTJl****
 </Error>
 ```
 
-#### Example 5. Using server-side encryption SSE-COS
+#### Sample 5: using server-side encryption SSE-COS
 
 #### Request
 
@@ -279,7 +282,7 @@ x-cos-server-side-encryption: AES256
 [Object Content]
 ```
 
-#### Example 6. Using server-side encryption SSE-KMS
+#### Sample 6: using server-side encryption SSE-KMS
 
 #### Request
 
@@ -313,7 +316,7 @@ x-cos-server-side-encryption-cos-kms-key-id: 48ba38aa-26c5-11ea-855c-52540085***
 [Object Content]
 ```
 
-#### Example 7. Using server-side encryption SSE-C
+#### Sample 7: using server-side encryption SSE-C
 
 #### Request
 
@@ -350,7 +353,7 @@ x-cos-server-side-encryption-customer-key-MD5: U5L61r7jcwdNvT7frmUG8g==
 [Object Content]
 ```
 
-#### Example 8. Downloading the latest version of an object (with versioning enabled)
+#### Sample 8: downloading an object of the latest version (with versioning enabled)
 
 #### Request
 
@@ -383,7 +386,7 @@ x-cos-version-id: MTg0NDUxNTc1NTE5MTc1NjM4MDA
 [Object Content Version 2]
 ```
 
-#### Example 9. Downloading a specific version of an object (with versioning enabled)
+#### Sample 9: downloading an object of a specific version (with versioning enabled)
 
 #### Request
 
@@ -416,7 +419,7 @@ x-cos-version-id: MTg0NDUxNTc1NjIzMTQ1MDAwODg
 [Object Content]
 ```
 
-#### Example 10. Specifying the Range request header to download partial content
+#### Sample 10: specifying the Range request header to download partial content
 
 #### Request
 
@@ -450,7 +453,7 @@ x-cos-request-id: NWU5MDY3NjVfY2VjODJhMDlfOWVlZl8xNmMy****
 Content
 ```
 
-#### Example 11. Downloading an ARCHIVE object that has not been restored
+#### Sample 11: downloading an ARCHIVE object that has not been restored
 
 #### Request
 

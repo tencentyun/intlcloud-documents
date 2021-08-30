@@ -1,7 +1,7 @@
-## Description
-This API is used to get the logging configuration of a bucket.
+## Overview
+This API is used to query the logging configuration of a source bucket.
 
->!Only the bucket owner can make this request.
+>!Only the owner of the source bucket has permission to call this API.
 
 ## Request
 
@@ -13,11 +13,14 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
->?Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> 
 
 #### Request headers
 
-This API only uses common request headers. For more information, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 The request body of this request is empty.
@@ -26,11 +29,11 @@ The request body of this request is empty.
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API only uses [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 
 #### Response body
-This response body returns **application/xml** data. The following example contains all the node data:
+The response body returns **application/xml** data. The following contains all the nodes:
 ```shell
 <BucketLoggingStatus>
   <LoggingEnabled>
@@ -39,30 +42,30 @@ This response body returns **application/xml** data. The following example conta
   </LoggingEnabled>
 </BucketLoggingStatus>
 ```
-The nodes are detailed as follows:<style  rel="stylesheet"> table th:nth-of-type(1) { width: 200px; }</style>
+The nodes are as follows: <style  rel="stylesheet"> table th:nth-of-type(1) { width: 200px; }</style>
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
-| BucketLoggingStatus | None | Bucket logging status | Container |
+| BucketLoggingStatus | None | Logging status of the bucket | Container |
 
-Container node `BucketLoggingStatus`:
-
-| Node Name (Keyword) | Parent Node | Description | Type |
-|:---|:-- |:--|:--|
-| LoggingEnabled | BucketLoggingStatus | Bucket logging configuration details | Container |
-
-Container node `LoggingEnabled`:
+Content of `BucketLoggingStatus`:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 |:---|:-- |:--|:--|
-| TargetBucket | LoggingEnabled | The destination bucket for storing logs, which can be the same as the source bucket (not recommended), or a bucket in the same region or under the same account | String |
-| TargetPrefix | LoggingEnabled | The specified path in which logs are stored in the destination bucket | String |
+| LoggingEnabled | BucketLoggingStatus | Detailed configuration of bucket logging |  Container |
+
+Content of `LoggingEnabled`:
+
+| Node Name (Keyword) | Parent Node | Description | Type |
+|:---|:-- |:--|:--|
+| TargetBucket | LoggingEnabled | Destination bucket that stores logs. It can be a bucket under the same account or in the same region as the source bucket, or the source bucket itself (not recommended). | String |
+| TargetPrefix | LoggingEnabled | Path in the destination bucket that stores logs |  String |
 
 #### Error codes
 
-This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Samples
+## Sample
 
 #### Request
 ```shell

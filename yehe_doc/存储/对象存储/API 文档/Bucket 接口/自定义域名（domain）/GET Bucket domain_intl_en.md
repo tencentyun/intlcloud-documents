@@ -1,8 +1,8 @@
-## Feature description
+## Overview
 
-This API is used to query the custom domain name configuration of a bucket.
+This API is used to query the custom domain configuration of a bucket.
 
->By default, the root account has the permission to query the custom domain name of a bucket and can grant such permission to a sub-account by granting it access to the `GetBucketDomain` API in the [CAM Console](https://console.cloud.tencent.com/cam/overview).
+> !By default, the root account has permission to query the custom domain configuration of a bucket and can go to the [CAM console](https://console.cloud.tencent.com/cam/overview) to grant such permission to a sub-account by allowing it to call the `GetBucketDomain` API.
 
 ## Request
 
@@ -15,15 +15,18 @@ Date: GMT Date
 Authorization: Auth String
 ```
 
-> Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for details).
+>? 
+> - In `Host: <BucketName-APPID>.cos.<Region>.myqcloud.com`, <BucketName-APPID> is the bucket name followed by the APPID, such as `examplebucket-1250000000` (see [Bucket Overview > Basic Information](https://intl.cloud.tencent.com/document/product/436/38493) and [Bucket Overview > Bucket Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312)), and <Region> is a COS region (see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224)).
+> - Authorization: Auth String (see [Request Signature](https://intl.cloud.tencent.com/document/product/436/7778) for more information).
+> 
 
 #### Request parameters
 
-This API does not use any request parameters.
+This API has no request parameter.
 
 #### Request headers
 
-This API only uses common request headers. For more information on common request headers, see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
+This API only uses common request headers. For more information, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 #### Request body
 
@@ -33,11 +36,11 @@ This API does not have a request body.
 
 #### Response headers
 
-This API only returns common response headers. For more information, see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
+This API returns only common response headers. For more information, please see [Common Response Headers](https://intl.cloud.tencent.com/document/product/436/7729).
 
 #### Response body
 
-A successful query will return **application/xml** data which includes all information on the custom domain name of a bucket.
+If the request is successful, **application/xml** data that includes the complete custom domain configuration of the bucket will be returned.
 
 ```xml
 <DomainConfiguration>
@@ -54,31 +57,31 @@ A successful query will return **application/xml** data which includes all infor
 </DomainConfiguration>
 ```
 
-The detailed nodes are described as follows:
+The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------- | ------ | ------------------------------------- | --------- |
-| DomainConfiguration | None     | Saves all information in the `GET Bucket domain` results | Container |
+| DomainConfiguration | None | Stores the result of `GET Bucket domain`. | Container |
 
-**Content of the Container node `DomainConfiguration`:**
+**Content of `DomainConfiguration`**:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ------------------- | -------- | --------- |
 | DomainRule         | DomainConfiguration | Domain entry | Container |
 
-**Content of the Container node `DomainRule`:**
+**Content of `DomainRule`**:
 
 | Node Name (Keyword) | Parent Node | Description | Type |
 | ------------------ | ------------------------------ | ------------------------------------------------------------ | ------ |
 | Status             | DomainConfiguration.DomainRule | Domain status. Enumerated values:<br><li>`ENABLED`, <li>`DISABLED`    | Enum   |
 | Name               | DomainConfiguration.DomainRule | Full domain name                                                     | string |
-| Type               | DomainConfiguration.DomainRule | Type of the origin server. Enumerated values: <br><li>REST: default origin server<li>WEBSITE: static website origin server<li>ACCELERATE: global acceleration origin server | Enum   |
+| Type               | DomainConfiguration.DomainRule | Type of the origin server. Enumerated values: <br><li>`REST`: default origin server<li>`WEBSITE`: static website origin server<li>`ACCELERATE`: global acceleration origin server | Enum   |
 
 #### Error codes
 
-This API returns uniform error responses and error codes. For more information, see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
+This API returns common error responses and error codes. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730).
 
-## Use cases
+## Sample
 
 #### Request
 
