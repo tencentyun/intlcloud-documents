@@ -50,7 +50,7 @@ In addition to `TKE Ingress Controller` provided by Tencent Cloud, the Kubernete
 For more information about ingress-related operations and features, see the following documents:
 - [Ingress Management](https://intl.cloud.tencent.com/document/product/457/30673)
 - [Using an Existing CLB for Direct Pod Connection](https://intl.cloud.tencent.com/document/product/457/37014)
-- [Using TKEServiceConfig to Configure the CLB](https://intl.cloud.tencent.com/document/product/457/37015)
+- [Using TkeServiceConfig to Configure the CLB](https://intl.cloud.tencent.com/document/product/457/37015)
 - [Ingress Certificate Management](https://intl.cloud.tencent.com/document/product/457/37016)
 
 <style>
