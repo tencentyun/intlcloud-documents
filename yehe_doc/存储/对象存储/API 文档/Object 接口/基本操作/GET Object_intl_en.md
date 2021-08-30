@@ -64,7 +64,7 @@ Authorization: Auth String
 
 In addition to common request headers, this API also supports the following request headers. For more information about common request headers, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
-| Header &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description | Type | Required |
+| Header  | Description | Type | Required |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------- | -------- |
 | Range | Byte range as defined in RFC 2616. The value must be in the format of `bytes=first-last` ("first" and "last" are offset relative to 0) and only one range can be set.<br>For example, `bytes=0-9` indicates to download the first 10 bytes of the object and `bytes=5-9` the 6th to 10th bytes. HTTP status code 206 (Partial Content) and the `Content-Range` response header will be returned.<br>If the value of "first" is smaller than the object size, HTTP status code 416 (Requested Range Not Satisfiable) will be returned. If this parameter is not set, the whole object will be downloaded. | string | No |
 | If-Modified-Since | If the object is modified after the specified time, the object will be returned; otherwise, HTTP status code 304 (Not Modified) will be returned. | string | No |
