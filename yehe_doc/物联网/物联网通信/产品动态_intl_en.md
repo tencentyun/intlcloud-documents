@@ -84,10 +84,10 @@
 <table>
 	<tr><th style="width: 15%;">Update</th><th style="width: 50%;">Description</th><th style="width: 15%;">Release Date</th><th style="width: 20%;">Document</th></tr>
 	<tr><td>Added the product-level key authentication feature</td><td>The IoT Hub platform supports product-level key authentication. In this mode, you only need to enable dynamic device registration and then burn the same configuration firmware (ProductID + ProductSecret) for all devices under the same product. In this way, the devices can get device certificates or keys through registration requests and then communicate with the platform.</td><td>2019-05-30</td><td><a href="https://intl.cloud.tencent.com/document/product/1105/41819">Product-Level Key Authentication</a></td></tr>
-	<tr><td>Modified the processing logic of the `metadata` field of device shadow</td><td><li>The `metadata` field will not be delivered to devices by default.</li>
-<li>When a device uses the `get shadow` method, the `metadata` bool tag can be used to specify whether to get the metadata.</li>
-<li>The `metadata` field is added to `JSON Payload` in `Device Update Shadow`, which is optional. The default value is `false`.</li>
-<li>The `metadata` field will still be returned when TencentCloud APIs are used to query device shadows.</li></td><td>2019-05-30</td><td><a href="https://intl.cloud.tencent.com/document/product/1105/41834">Device Shadow Details</a></td></tr>
+	<tr><td>Modified the processing logic of the <code>metadata</code> field of device shadow</td><td><li>The <code>metadata</code> field will not be delivered to devices by default.</li>
+<li>When a device uses the <code>get shadow</code> method, the <code>metadata</code> bool tag can be used to specify whether to get the metadata.</li>
+<li>The <code>metadata</code> field is added to <code>JSON Payload</code> in <code>Device Update Shadow</code>, which is optional. The default value is <code>false</code>.</li>
+<li>The <code>metadata</code> field will still be returned when TencentCloud APIs are used to query device shadows.</li></td><td>2019-05-30</td><td><a href="https://intl.cloud.tencent.com/document/product/1105/41834">Device Shadow Details</a></td></tr>
 </table>
 
 ## April 2019
@@ -97,9 +97,9 @@
 </li><li>Add devices under different products or the same product to a group.</li><li>Manage multiple group levels.</li>
 <li>Query the list of devices in a group.</li></td><td>2019-04-05</td><td><a href="https://intl.cloud.tencent.com/document/product/1105/41478">Device Grouping	</a></td></tr>
 	<tr><td>Added device payload logs</td><td>To meet your needs in connection debugging and business operations, the device payload log feature is added.
-</br>You can get the message payload logs of device-cloud communication in the console or through APIs and search for them by device name, `RequestID`, and keyword. Payload logs in the last 15 days can be queried.</td><td>2019-04-05</td><td><a href="https://intl.cloud.tencent.com/document/product/1105/41482">Cloud Log</a></td>
-<tr><td>Modified the strong verification logic of `Shadow Version`</td><td>Strong verification of `Shadow Version` is modified to reduce the problems of shadow update failures due to inconsistent version numbers when you use device shadows. The current cloud-based processing logic is as follows:<li>For shadow update by TencentCloud APIs, a default value of the `Shadow Version` parameter is added. If the value is 0, IoT Hub will not check the shadow version number.</li>
-<li>For shadow update by devices, if `Version` does not exist or `Version=0` is set, IoT Hub will not verify the shadow version.</li></td><td>2019-04-05</td><td>UpdateDeviceShadow</a></td></tr>
+</br>You can get the message payload logs of device-cloud communication in the console or through APIs and search for them by device name, <code>RequestID</code>, and keyword. Payload logs in the last 15 days can be queried.</td><td>2019-04-05</td><td><a href="https://intl.cloud.tencent.com/document/product/1105/41482">Cloud Log</a></td>
+<tr><td>Modified the strong verification logic of <code>Shadow Version</code></td><td>Strong verification of <code>Shadow Version</code> is modified to reduce the problems of shadow update failures due to inconsistent version numbers when you use device shadows. The current cloud-based processing logic is as follows:<li>For shadow update by TencentCloud APIs, a default value of the <code>Shadow Version</code> parameter is added. If the value is 0, IoT Hub will not check the shadow version number.</li>
+<li>For shadow update by devices, if <code>Version</code> does not exist or <code>Version=0</code> is set, IoT Hub will not verify the shadow version.</li></td><td>2019-04-05</td><td>UpdateDeviceShadow</a></td></tr>
 </table>
 
 ## March 2019
@@ -158,7 +158,7 @@
 	<tr><td>Updated the SDK for C</td><td><li>The support for MQTT/CoAP symmetric encryption connection is added.</li>
 <li>The Linux C compilation is optimized.</li></td><td>2018-02-08</td><td><a href="https://intl.cloud.tencent.com/document/product/1105/41849">Usage Overview</a></td></tr>
 	<tr><td>Updated the SDK version</td><td>The API SDKs for PHP and Java are released, which support basic features.</td><td>2018-02-08</td><td>SDK for Java Usage</a></td></tr>
-	<tr><td>Supported configuring forwarding to CKafka</td><td>There are two types of messages configured for CKafka: **device-reported message** and **device status change notification**.</td><td>2018-02-08</td><td>Configuring Forwarding to CKafka</a></td></tr>
+	<tr><td>Supported configuring forwarding to CKafka</td><td>There are two types of messages configured for CKafka: <b>device-reported message</b> and <b>device status change notification</b>.</td><td>2018-02-08</td><td>Configuring Forwarding to CKafka</a></td></tr>
 </table>
 
 ## January 2018
@@ -172,5 +172,5 @@
 <li>The SDK for Android is supported.</li></td><td>2018-01-16</td><td>-</td></tr>
 	<tr><td>Supported cloud logs</td><td>Key information is logged for the main scenario nodes and connections/disconnections of the device message linkage, so you can analyze the device behaviors based on the logs for troubleshooting.</td><td>2018-01-16</td><td><a href="https://intl.cloud.tencent.com/document/product/1105/41482">Cloud Log</a></td></tr>
 	<tr><td>Optimized device communication</td><td>In order to better meet your needs in different use cases, the product's default topic permissions are changed to `${productId}/${deviceName}/event` (permission for publishing) and `${productId}/${deviceName}/control` (permission for subscribing).</td><td>2018-01-16</td><td><a href="https://intl.cloud.tencent.com/document/product/1105/41500">Feature Components</a></td></tr>
-	<tr><td>Updated TencentCloud API</td><td><li>TencentCloud API's access domain name is changed to `iotcloud.api.qcloud.com` for connection to the new system.</li><li>The `productId` concept is introduced, and the TencentCloud APIs use `productId` + `deviceName` as the device's unique identifier.</li></td><td>2018-01-16</td><td>IoT Hub API Overview</a></td></tr>
+	<tr><td>Updated TencentCloud API</td><td><li>TencentCloud API's access domain name is changed to <code>iotcloud.api.qcloud.com</code> for connection to the new system.</li><li>The <code>productId</code> concept is introduced, and the TencentCloud APIs use <code>productId</code> + <code>deviceName</code> as the device's unique identifier.</li></td><td>2018-01-16</td><td>IoT Hub API Overview</a></td></tr>
 </table>
