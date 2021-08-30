@@ -94,7 +94,7 @@ The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
 | ------------------------------------------------------------ | ------------- | ------------------------------------------------------------ | ------ | -------- |
-| Key&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Delete.Object | Key of the object to delete | string | Yes |
+| Key | Delete.Object | Key of the object to delete | string | Yes |
 | VersionId | Delete.Object | Version ID of the object to delete (if versioning is enabled). If versioning is not enabled, or you want to create a delete marker with versioning enabled, you don’t need to specify this node. | string | Yes |
 
 ## Response
