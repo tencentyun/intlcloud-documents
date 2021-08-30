@@ -95,7 +95,8 @@ MQTT.fx is a mainstream MQTT desktop client. Compatible with Windows, macOS, and
 7. (Optional) Key authentication:
  ![](https://main.qcloudimg.com/raw/555608dcb2b2adb66db3a598f8459cf6.png)
  You can go to the console to get the username and password of the corresponding device:
- ![](https://main.qcloudimg.com/raw/73d115fdb4eafa81ca60fde99daa8b11.png)
+ ![](https://main.qcloudimg.com/raw/e875f3b7ebe4d239238d235b18c72066.png)
+ ![](https://main.qcloudimg.com/raw/ece7e8466c67e2abaf2c2d8f0639dddb.png)
 8. After completing the above steps, click **Apply** and **OK** to save. Then, select the name of the file just created in the profile box and click **Connect**.
 9. If the round icon in the top-right corner is green, the connection to IoT Hub is successful, and publishing and subscribing operations can be performed.
 ![](https://main.qcloudimg.com/raw/d9bba6a0731a3fda4f80b395233c677c.png)
