@@ -26,7 +26,7 @@ When the `long_query_time` parameter is adjusted, existing slow logs will not be
 <tr>
 <td>Rollback logs</td><td>Records the status and progress of rollback tasks</td></tr>
 </tbody></table>
-
+<img src="https://main.qcloudimg.com/raw/c229d0fe6a4869998d3472b0a35efa28.png"  style="margin:0;">
 3. To download the slow log, on the **Download Slow Log** tab, click **Download** in the **Operation** column.
 4. Copy the download address in the pop-up dialog box, [log in to the Linux CVM in the same VPC as the TencentDB instance](https://intl.cloud.tencent.com/document/product/213/10517), and run `wget` to download the file over the high-speed private network.
 >?
