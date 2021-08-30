@@ -61,7 +61,7 @@ Obtain the `GameServerGrpcSdkService.proto` and `GseGrpcSdkService.proto` files 
 
 Copy the four `.cs` files generated in the [Step 2](#test2) to the Unity project (to a separate folder under the `Assets/Scripts/` directory) and use GSE SDK for the development. For more information, see [Unity DEMO](#test5).
 1. Implement the `OnHealthCheck`, `OnStartGameServerSession` and ` OnProcessTerminate` APIs defined by `gameserver_grpcsdk_service.proto`.
-```
+``` JavaScript
  public class GrpcServer : GameServerGrpcSdkService.GameServerGrpcSdkServiceBase
     {
         private static Logs logger
@@ -105,7 +105,7 @@ Copy the four `.cs` files generated in the [Step 2](#test2) to the Unity project
     }
 ```
 2. Develop Unity server programs (taking ChatServer as an example). 
-```
+``` JavaScript
 public static void StartChatServer(int clientPort)
     {
         RegisterHandlers();
@@ -114,7 +114,7 @@ public static void StartChatServer(int clientPort)
     }
 ```
 3. Develop the gRPC server.
-```
+``` JavaScript
 public static void StartGrpcServer(int clientPort, int grpcPort, string logPath)
     {
         try
@@ -135,7 +135,7 @@ public static void StartGrpcServer(int clientPort, int grpcPort, string logPath)
     }
 ```
 4. Launch the implemented server and the gRPC server.
-```
+``` JavaScript
 public class StartServers : MonoBehaviour
 {
 		private int grpcPort = PortServer.GenerateRandomPort(2000, 6000);
