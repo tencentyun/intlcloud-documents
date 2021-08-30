@@ -1,13 +1,10 @@
 TWebLive 即腾讯云 Web 直播互动组件，是腾讯云终端研发团队推出的一个新的 SDK，集成了腾讯云实时音视频 TRTC、腾讯云即时通信以及腾讯云超级播放器 TCPlayer，覆盖了 Web 直播互动场景常见的功能（如推流、开/关麦、开/关摄像头、微信分享观看、聊天点赞等），并封装了简单易用的 [API](https://web.sdk.qcloud.com/component/tweblive/doc/zh-cn/TWebLive.html)，接入后可快速实现 Web 端推流、拉流以及实时聊天互动功能。您可以进入 [Demo](https://web.sdk.qcloud.com/component/tweblive/demo/latest/index.html) 来体验。
 
-
-
-
-
 ## TWebLive 优势
 开发者接入此 [TWebLive SDK](https://www.npmjs.com/package/tweblive)，可彻底替代 Flash 推流方案，极大地降低 Web 推流、Web 低延时观看、CDN 观看以及实时聊天互动（或弹幕）的实现复杂度和时间成本，下面我们通过举例来进行说明。
 
-#### 推流
+<dx-tabs>
+::: 推流
 当需要推流时，创建 Pusher（推流）对象，最简单的推流仅需3步：
 <dx-codeblock>
 ::: html html
@@ -115,45 +112,50 @@ im.enterRoom('your roomID').then((imResponse) => {
 });
 :::
 </dx-codeblock>
-
+:::
+</dx-tabs>
 
 为了进一步降低开发者的开发和人力成本，我们在 TWebLive SDK 的基础上，提供了同时适配 PC 和移动端浏览器的 [Demo](https://github.com/tencentyun/TWebLive)，并开源到了 Github。开发者 fork&clone 项目到本地，稍作修改即可把 Demo 运行起来，也可集成到自己的项目部署上线。
 
 ## 操作步骤
 ### 步骤1：创建应用
-#### 基于实时音视频
-在 [实时音视频 TRTC 控制台](https://console.cloud.tencent.com/trtc/app)，单击左侧导航栏**应用管理**>**创建应用**，输入您的应用名称，单击**确定**即可创建一个实时音视频应用。创建完毕后，请保存 SDKAPPID。
+<dx-tabs>
+::: 基于实时音视频
+在 [实时音视频 TRTC 控制台](https://console.cloud.tencent.com/trtc/app)，单击左侧导航栏【应用管理】>【创建应用】，输入您的应用名称，单击【确定】即可创建一个实时音视频应用。创建完毕后，请保存 SDKAPPID。
 ![](https://main.qcloudimg.com/raw/871c535f4b539ad7791f10d57ef0a9f3.png)
 
 >?与此同时会自动创建一个 SDKAppID 相同的即时通信 IM 应用。
 :::
 ::: 基于即时通信\sIM
-1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im)，单击**创建新应用**将弹出对话框。
+1. 登录 [即时通信 IM 控制台](https://console.cloud.tencent.com/im)，单击【创建新应用】将弹出对话框。
 ![](https://main.qcloudimg.com/raw/15e61a874a0640d517eeb67e922a14bc.png)
-2. 输入您的应用名称，单击**确认**即可完成创建。
+2. 输入您的应用名称，单击【确认】即可完成创建。
 ![](https://main.qcloudimg.com/raw/7954cc2882d050f68cd5d1df2ee776a6.png)
 3. 您可在 [即时通信 IM 控制台](https://console.cloud.tencent.com/im) 总览页面查看新建应用的状态、业务版本、SDKAppID、创建时间以及到期时间。请记录 SDKAppID 信息。
-
+:::
+</dx-tabs>
 
 ### 步骤2：开通服务并获取密钥
-#### 基于实时音视频
-1. 在 [实时音视频 TRTC 控制台](https://console.cloud.tencent.com/trtc/app)，单击左侧导航栏**应用管理**，在您创建的实时音视频应用上，单击**功能配置**进入应用详情。
+<dx-tabs>
+::: 基于实时音视频
+1. 在 [实时音视频 TRTC 控制台](https://console.cloud.tencent.com/trtc/app)，单击左侧导航栏【应用管理】，在您创建的实时音视频应用上，单击【功能配置】进入应用详情。
 ![](https://main.qcloudimg.com/raw/bafd4eae90bd282b4f82421172d67e39.png)
-2. 单击**启用旁路推流**，将旁路推流方式选择：全局自动旁路。旁路推流开启后，实时音视频 TRTC 房间里的每一路画面都配备一路对应的播放地址。
+2. 单击【启用旁路推流】，将旁路推流方式选择：全局自动旁路。旁路推流开启后，实时音视频 TRTC 房间里的每一路画面都配备一路对应的播放地址。
 ![](https://main.qcloudimg.com/raw/a153540779d95dff8a9b381b3566b36e.png)
 >?如果不需要 CDN 直播观看，可略过开启旁路推流的步骤。
-3. 单击**快速上手**，可查看密钥信息，请保存密钥。[](id:step2)
+3. 单击【快速上手】，可查看密钥信息，请保存密钥。[](id:step2)
 ![](https://main.qcloudimg.com/raw/8ec16ab9cab85e324a347dea511f7e4e.png)
 4. 在 [腾讯云直播控制台](https://console.cloud.tencent.com/live/) 配置播放域名并完成 CNAME 配置，详细操作指引请参见 [实现 CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 文档。
 >?如果不需要 CDN 直播观看，可略过配置播放域名步骤。
 :::
 ::: 基于即时通信\sIM
-1. 在 [即时通讯 IM 控制台](https://console.cloud.tencent.com/im) 总览页单击您创建完成的即时通信 IM 应用，随即跳转至该应用的基础配置页。在**基本信息**区域，单击**显示密钥**，复制并保存密钥信息。
+1. 在 [即时通讯 IM 控制台](https://console.cloud.tencent.com/im) 总览页单击您创建完成的即时通信 IM 应用，随即跳转至该应用的基础配置页。在【基本信息】区域，单击【显示密钥】，复制并保存密钥信息。
 ![](https://main.qcloudimg.com/raw/610dee5720e94e324a48b44f4728816a.png)
   >!请妥善保管密钥信息，谨防泄露。
 2. 在该应用的基础配置页，开通腾讯云实时音视频服务。
 ![](https://main.qcloudimg.com/raw/8fb2940618dfb8b7ea06eecd62212468.png)
-
+:::
+</dx-tabs>
 
 ### 步骤3：下载并配置 Demo
 1. 请下载 [腾讯云 TWebLive 直播互动组件 Demo 工程](https://github.com/tencentyun/TWebLive)。
@@ -195,8 +197,7 @@ Vue.prototype.TWebLive = TWebLive
 >
 >- 一般情况下体验 Demo 需要部署至服务器，通过 `https://域名/xxx` 访问，或者直接在本地搭建服务器，通过 `localhost:端口`访问。
 - 目前桌面端 Chrome 浏览器支持 TRTC 桌面浏览器 SDK 的相关特性比较完整，因此建议使用 Chrome 浏览器进行体验。
->- TWebLive 需要使用摄像头和麦克风采集音视频，在体验过程中您可能会收到来自 Chrome 浏览器的相关提示，单击**允许**即可。
-
+>- TWebLive 需要使用摄像头和麦克风采集音视频，在体验过程中您可能会收到来自 Chrome 浏览器的相关提示，单击【允许】即可。
 
 
 ## 架构与平台支持
@@ -240,6 +241,7 @@ Web 推流和 Web 低延时观看用到了 WebRTC 技术。
 <dx-accordion>
 ::: 1.\s查看密钥时只能获取公钥和私钥信息，要如何获取密钥？
 2019年08月之前创建的 TRTC 以及 IM 应用（SDKAppID）默认使用区分公钥和私钥的 ECDSA-SHA256 签名算法，强烈建议您升级至 HMAC-SHA256 签名算法使用密钥。
+
 - IM 升级方法请参见 [基本配置](https://intl.cloud.tencent.com/document/product/1047/34540)。
 - TRTC 升级方法请参见 [UserSig 相关问题](https://intl.cloud.tencent.com/document/product/647/35166)。
 :::
@@ -256,8 +258,8 @@ Web 推流和 Web 低延时观看用到了 WebRTC 技术。
 - 域名：qcloud.rtc.qq.com
 :::
 ::: 4.\s出现10006\serror\s该如何处理？
-如果出现 `"Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it"`。请登录 [实时音视频控制台](https://console.cloud.tencent.com/rav)，单击您创建的应用，单击**帐号信息**，在帐号信息面板请确认您的实时音视频应用的服务状态是否为可用状态。
-![](https://main.qcloudimg.com/raw/558bae048ce6252e6cb609aca214d63d.png)
+如果出现 `"Join room failed result: 10006 error: service is suspended,if charge is overdue,renew it"`。请登录 [实时音视频控制台](https://console.cloud.tencent.com/rav)，单击您创建的应用，单击【帐号信息】，在帐号信息面板请确认您的实时音视频应用的服务状态是否为可用状态。
+![](https://main.qcloudimg.com/raw/13c9b520ea333804cffb4e2c4273fced.png)
 :::
 ::: 5.\sWebRTC\s低延时播放，iOS\s无法拉流播放？
 1. 将 tweblive sdk 升级到 1.2.0。
@@ -279,5 +281,3 @@ Web 推流和 Web 低延时观看用到了 WebRTC 技术。
 
 - [TWebLive 接口手册](https://web.sdk.qcloud.com/component/tweblive/doc/zh-cn/TWebLive.html)
 - [Demo 体验](https://web.sdk.qcloud.com/component/tweblive/demo/latest/index.html)
-
-
