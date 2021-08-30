@@ -1,7 +1,7 @@
 ## Tencent Cloud Elastic Microserviceとは何ですか。
 Tencent Cloud Elastic Microservice（TEM）はマイクロサービスアプリケーション向けServerless PaaSプラットフォームです。リソースのServerless化とマイクロサービスアーキテクチャの完璧な融合を実現し、すぐに使用できるマイクロサービスソリューションパッケージをユーザーに提供します。
 
-Tencent Cloud Elastic Microserviceはオープンソースを採用し、Spring Cloudネイティブアプリケーションをサポートしており、いかなる変更も必要なくクラウド化できます。アプリケーションホスティング、サービス登録の検出、マイクロサービス管理、多次元の監視などの機能を提供しており、Consul、Eureka登録センターをサポートします。
+Tencent Cloud Elastic Microserviceはオープンソースを採用し、Spring Cloudネイティブアプリケーションをサポートしており、いかなる変更も必要なくクラウド化できます。アプリケーションホスティング、サービス登録の検出、マイクロサービス管理、多次元の監視などの機能を提供しており、ZooKeeper、Eureka登録センターをサポートします。
 
 Tencent Cloud Elastic Microserviceは企業によるクラウドリソースの作成および管理を支援し、秒レベルの自動スケーリングを提供しています。必要に応じて使用する従量課金制であるため、維持管理やリソースのコストを最大限に節約することができます。企業がコアビジネスに集中できるよう促し、ビジネスの成功をサポートします。
 
