@@ -1,8 +1,9 @@
 ### What media file formats are supported for upload to VOD?
 
 Supported VOD file formats:
-- Video: MP4, TS, FLV, WMV, ASF, RM, RMVB, MPG, MPEG, 3GP, MOV, WEBM, AVI.
-- Audio: MP3, M4A, FLAC, OGG, WAV.
+- Video: WMV, RM, MOV, MPEG, MP4, 3GP, FLV, AVI, RMVB, TS, ASF, MPG, WEBM, MKV, M3U8, WM, ASX, RAM, MPE, VOB, DAT, MP4V, M4V, F4V, MXF, QT, and OGG
+- Audio: MP3, M4A, FLAC, OGG, WAV, RA, AAC, and AMR
+- Thumbnail: JPG, JPEG, PNG, GIF, BMP, TIFF, AI, CDR, EPS, and TIF
 
 ### How can I upload files to VOD? Is checkpoint restart supported?
 Files can be uploaded to VOD in the following ways: [upload through console](https://intl.cloud.tencent.com/document/product/266/33890), [upload from server](https://intl.cloud.tencent.com/document/product/266/33912), and [upload from client](https://intl.cloud.tencent.com/document/product/266/33921). Among them, upload from client supports checkpoint restart.
