@@ -95,7 +95,8 @@ MQTT.fx 是目前主流的 MQTT 桌面客户端，它支持 Windows、 Mac、Lin
 7. （可选）密钥认证：
  ![](https://main.qcloudimg.com/raw/555608dcb2b2adb66db3a598f8459cf6.png)
  用户可进入控制台获取对应设备的 username，password：
- ![](https://main.qcloudimg.com/raw/73d115fdb4eafa81ca60fde99daa8b11.png)
+ ![](https://main.qcloudimg.com/raw/e875f3b7ebe4d239238d235b18c72066.png)
+ ![](https://main.qcloudimg.com/raw/ece7e8466c67e2abaf2c2d8f0639dddb.png)
 8. 完成以上步骤设置后，单击【Apply】和【OK】进行保存，并在配置文件框中选择刚才创建的文件名，单击【Connect】。
 9. 当右上角圆形图标为绿色时，说明已连接 IoT Cloud 成功，可进行发布和订阅操作。
 ![](https://main.qcloudimg.com/raw/d9bba6a0731a3fda4f80b395233c677c.png)
