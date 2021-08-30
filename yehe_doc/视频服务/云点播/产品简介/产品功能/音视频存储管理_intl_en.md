@@ -6,9 +6,9 @@
 You can upload files from your local file system or via URLs or APIs. VOD supports checkpoint restart, large file upload, and multi-replica backup. For details, please see [Media Upload Overview](https://intl.cloud.tencent.com/document/product/266/9760).
 Supported files formats for upload include:
 
-* Video: MP4, TS, FLV, WMV, ASF, RM, RMVB, MPG, MPEG, 3GP, MOV, WEBM, MKV, and AVI
-* Audio: MP3, M4A, FLAC, OGG, and WAV
-* Thumbnail: JPG, JPEG, PNG, GIF, BMP, TIFF, AI, CDR, and EPS
+* Video: WMV, RM, MOV, MPEG, MP4, 3GP, FLV, AVI, RMVB, TS, ASF, MPG, WEBM, MKV, M3U8, WM, ASX, RAM, MPE, VOB, DAT, MP4V, M4V, F4V, MXF, QT, and OGG
+* Audio: MP3, M4A, FLAC, OGG, WAV, RA, AAC, and AMR
+* Thumbnail: JPG, JPEG, PNG, GIF, BMP, TIFF, AI, CDR, EPS, and TIF
 
 ### Audio/video storage
 VOD supports data storage with redundancy across architectures and devices. It provides 99.9% durability of objects, outperforming traditional architectures. It also supports multiple storage classes to meet your needs.
