@@ -1,5 +1,5 @@
 ## 1. IM SDK Error Codes
->?For web SDK error codes, see [Error Code Table](https://imsdk-1252463788.file.myqcloud.com/IM_DOC/Web/global.html). 
+>?For web SDK error codes, see [Error Code Table](https://web.sdk.qcloud.com/im/doc/zh-cn/module-ERROR_CODE.html). 
 
 ### Common error codes
 
