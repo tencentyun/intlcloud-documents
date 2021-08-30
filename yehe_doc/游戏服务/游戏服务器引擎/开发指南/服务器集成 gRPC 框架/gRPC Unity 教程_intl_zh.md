@@ -25,7 +25,7 @@ gRPC 对 Unity 的支持仍处于实验阶段，更多信息可参见 [README](h
 
 ### 步骤3： 解压
 
-将下载的``` .zip```文件解压到 Unity 项目的```Assets``` 目录中，如下图所示
+将下载的**.zip**文件解压到 Unity 项目的**Assets** 目录中，如下图所示
 ![](https://main.qcloudimg.com/raw/3d319f3b4acbf2dea17f09e704e083fe.png)
 
 ### 步骤4：测试 
@@ -61,7 +61,7 @@ Unity 接入 GSE SDK 包括以下几个步骤：
 
 将 [步骤2](#test2) 中生成的四个 `.cs` 文件拷贝到 Unity 项目中（可以拷贝到 Assets/Scripts/目录下单独的文件夹中），便可使用 GSE SDK 进行开发，详情可参见 [Unity DEMO](#test5)。
 1. 实现 `gameserver_grpcsdk_service.proto` 定义的三个接口 `OnHealthCheck`、`OnStartGameServerSession` 和 ` OnProcessTerminate` 。
-```
+``` JavaScript
  public class GrpcServer : GameServerGrpcSdkService.GameServerGrpcSdkServiceBase
     {
         private static Logs logger
@@ -105,7 +105,7 @@ Unity 接入 GSE SDK 包括以下几个步骤：
     }
 ```
 2. 开发 Unity 服务端程序（以 ChatServer 为例）。 
-```
+``` JavaScript
 public static void StartChatServer(int clientPort)
     {
         RegisterHandlers();
@@ -114,7 +114,7 @@ public static void StartChatServer(int clientPort)
     }
 ```
 3. 开发 gRPC 服务端。
-```
+``` JavaScript
 public static void StartGrpcServer(int clientPort, int grpcPort, string logPath)
     {
         try
@@ -135,7 +135,7 @@ public static void StartGrpcServer(int clientPort, int grpcPort, string logPath)
     }
 ```
 4. 启动开发者本身实现的服务端和 gRPC 服务端。
-```
+``` JavaScript
 public class StartServers : MonoBehaviour
 {
 		private int grpcPort = PortServer.GenerateRandomPort(2000, 6000);
