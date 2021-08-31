@@ -4,7 +4,7 @@
 [데이터베이스 프록시 읽기/쓰기 분리](https://intl.cloud.tencent.com/document/product/236/42050)기능을 통해 응용 프로그램에 데이터베이스 프록시 주소를 설정하면 쓰기 요청을 자동으로 마스터 인스턴스로 포워딩하고 읽기 요청을 자동으로 각 읽기 전용 인스턴스로 포워딩할 수 있습니다. 
 
 ##  전제 조건
-- [데이터베이스 프록시 활성화]가 완료되어 있어야 합니다. (https://intl.cloud.tencent.com/document/product/236/41087)
+- [데이터베이스 프록시 활성화]가 완료되어 있어야 합니다. (https://intl.cloud.tencent.com/document/product/236/42052)
 - 해당 마스터 인스턴스는 [읽기 전용 인스턴스 생성](https://intl.cloud.tencent.com/document/product/236/7270)이 완료되어야 하며, 읽기 전용 인스턴스를 생성하지 않았다면 활성화 페이지에서 읽기 전용 인스턴스 구매를 안내합니다. 
 
 - 작업 순서
