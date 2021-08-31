@@ -1,0 +1,6 @@
+O Tencent Cloud disponibiliza os seguintes métodos de faturamento para as instâncias do Cloud Virtual Machine (CVM):
+- O **pagamento conforme o uso** é um método de faturamento flexível para as instâncias do CVM. É possível ativar ou encerrar um CVM a qualquer momento e você será faturado pelo uso real do CVM. A granularidade do faturamento tem precisão de segundos, e não é necessário pagamento adiantado. Uma fatura é gerada a cada hora cheia. Esse método de faturamento é adequado para casos de uso, como uma oferta relâmpago de comércio eletrônico, em que a demanda por dispositivos pode flutuar muito.
+- A **instância spot** é uma nova forma de usar e pagar por instâncias do CVM. Semelhante ao método de pagamento conforme o uso, você paga pelas instâncias spot no modo pós-pago por segundo, a cada hora. O preço das instâncias spot flutua de acordo com a demanda do mercado. Você pode receber um desconto considerável para elas quando a demanda é baixa (geralmente de 10% a 20%). No entanto, as instâncias spot podem ser reavidas automaticamente pelo sistema à medida que a demanda aumenta.
+
+Os métodos de faturamento de pagamento conforme o uso e de instâncias spot podem atender aos requisitos do usuário em diferentes cenários. Para obter mais informações, consulte os [Modos de preços](https://intl.cloud.tencent.com/document/product/213/2180).
+
