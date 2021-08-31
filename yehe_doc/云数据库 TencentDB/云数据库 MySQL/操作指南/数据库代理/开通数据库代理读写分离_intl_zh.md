@@ -4,7 +4,7 @@
 通过 [数据库代理读写分离](https://intl.cloud.tencent.com/document/product/236/42050) 功能，在应用程序中配置数据库代理地址，就可以使写请求自动转发到主实例，读请求自动转发到各个只读实例。
 
 ## 前提条件
-- 已 [开通数据库代理](https://intl.cloud.tencent.com/document/product/236/41087)。
+- 已 [开通数据库代理](https://intl.cloud.tencent.com/document/product/236/42052)。
 - 该主实例已 [创建只读实例](https://intl.cloud.tencent.com/document/product/236/7270)，如未创建只读实例，开通页面会提示购买只读实例。
 
 ## 操作步骤
