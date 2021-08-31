@@ -11,14 +11,17 @@
 ## API Calling Description
 ### Sample request URL
 ```
-https://console.tim.qq.com/v4/openim/batchsendmsg?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/openim/batchsendmsg?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
+
 ### Request parameters
 
 The following table only describes the modified parameters when this API is called. For more information on other parameters, please see [RESTful API Overview](https://intl.cloud.tencent.com/document/product/1047/34620).
 
 | Parameter | Description |
 | ------------------ | ------------------------------------ |
+| https       | The request protocol is HTTPS, and the request method is POST.       |
+| xxxxxx  | The country/region where your SDKAppID is located.<li>China:  `console.tim.qq.com `<li>Singapore:  `adminapisgp.im.qcloud.com ` |
 | v4/openim/batchsendmsg | Request API |
 | sdkappid | `SDKAppID` assigned by the IM console when an app is created |
 | identifier | App admin account. For more information, please see the **App Admin** section in [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517). |
