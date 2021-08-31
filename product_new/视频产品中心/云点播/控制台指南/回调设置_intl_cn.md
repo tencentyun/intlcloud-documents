@@ -9,7 +9,7 @@
 
 1. 登录 [云点播控制台](https://console.cloud.tencent.com/vod)，选择左侧导航栏的【回调设置】，进入“回调设置”页面。
 2. 单击【设置】，进行相关回调设置。
-![](https://main.qcloudimg.com/raw/cb7e3f9fec12cb8bf5bd5070d63fe24e.png)
+![](https://main.qcloudimg.com/raw/ec6cca4bdcd52698e1c7b795c5d3ad7a.png)
 3. 根据实际需求配置以下参数：
  - 回调模式：请选择普通回调或可靠回调。
  - 回调 URL：仅当回调模式设置为【普通回调】时，该参数可见。请根据实际需求设置接收回调的 App 后台地址。
