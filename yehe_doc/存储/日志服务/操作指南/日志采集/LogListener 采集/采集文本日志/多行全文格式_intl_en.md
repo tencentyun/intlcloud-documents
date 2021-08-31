@@ -1,6 +1,6 @@
 ## Overview
 
-In "full text in multi lines" mode, a log spans multiple lines (such as a Java program log), and the line break `\n` cannot be used to mark the end of a log. To help CLS distinguish between logs, a first-line regular expression is used for matching. When a line of a log matches the preset regular expression, it is considered as the beginning of the log, and the next matching line will be the end mark of the log.
+In "Full text in multi lines" mode, a log spans multiple lines (such as a Java program log), and the line break `\n` cannot be used to mark the end of a log. To help CLS distinguish between logs, a first-line regular expression is used for matching. When a line of a log matches the preset regular expression, it is considered as the beginning of the log, and the log ends before the next matching line.
 
 In the "full text in multi lines" mode, a default key `__CONTENT__` is also set, but the log data itself is not structured, and no log fields are extracted. The time attribute of a log is determined by the collection time.
 
@@ -26,26 +26,25 @@ __CONTENT__:10.20.20.10 - - [Tue Jan 22 14:24:03 CST 2019 +0800] GET /online/sam
 ### Creating a log topic
 
 1. Click **Create Log Topic**.
-2. In the pop-up dialog box, enter `test-mtext` as **Log Topic Name** and click **OK**.
+2. In the pop-up, enter `test-mtext` as **Log Topic Name** and click **OK**.
 
-### Server group management
+### Machine group management
 
 1. After the log topic is created successfully, go to the log topic management page.
 2. Click the **Collection Configuration** tab and click the format in which you need to collect logs.
-3. On the **Server Group Management** page, select the server group to which to bind the current log topic and click **Next** to proceed to collection configuration.
-For more information, see [Machine Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
-
+3. On the **Machine Group Management** page, select the machine group to which to bind the current log topic and click **Next** to proceed to collection configuration.
+For more information, please see [Machine Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
 
 ### Collection configuration
 
 #### Configuring the log file collection path
 
-On the **Collection Configuration** page, set **Collection Path** according to the log collection path format as shown below:
+On the **Collection Configuration** page, enter a **Collection Path** according to the log collection path format as shown below:
 Log collection path format: `[directory prefix expression]/**/[filename expression]`.
 
-After the log collection path is entered, LogListener will match all common prefix paths that meet the **[directory prefix expression]** rule and listen for all log files in the directories (including subdirectories) that meet the **[filename expression]** rule. The parameters are as detailed below:
+After the log collection path is entered, LogListener will match all common prefix paths that meet the **[directory prefix expression]** rule and listen on all log files in the directories (including subdirectories) that meet the **[filename expression]** rule. The parameters are as detailed below:
 
-| Field     | Description                                                         |
+| Field     | Description       |
 | -------- | ------------------------------------------------------------ |
 | Directory prefix | Directory structure of the log file prefix. Only wildcards `\*` and `?` are supported.<ul style="margin: 0;"><li>`\*` indicates to match any multiple characters.</li><li>`?` indicates to match any single character.</li></ul> |
 | /\*\*/     | Current directory and all its subdirectories.                                  |
@@ -57,7 +56,7 @@ Common configuration modes are as follows:
 - [Common directory prefix]/\*\*/[common filename prefix]\*[common filename suffix]
 - [Common directory prefix]/\*\*/\*[common string]\*
 
-Below is an example:
+Below are examples:
 
 | No. | Directory Prefix Expression | Filename Expression | Description                                                         |
 | :--- | :------------- | :----------- | :----------------------------------------------------------- |
@@ -67,6 +66,8 @@ Below is an example:
 
 >!
 > - Only LogListener 2.3.9 or above allows adding multiple collection paths.
+> - The system does not support uploading logs with contents in multiple text formats, which may cause write failure, such as `key:"{"substream":XXX}"`.
+> - You’re advised to configure the collection path as `log/*.log` and rename the old file after log rotation as `log/*.log.xxxx`.
 > - By default, a log file can only be collected by one log topic. If you want to have multiple collection configurations for the same file, please add a soft link to the source file and add it to another collection configuration.
 > 
 
@@ -90,7 +91,7 @@ In the "full text in multi lines" mode, `__CONTENT__` is used as the key name of
 10.20.20.10 - - [Tue Jan 22 14:24:03 CST 2019 +0800] GET /online/sample HTTP/1.1 127.0.0.1 200 628 35 http://127.0.0.1/group/1 
 Mozilla/5.0 (Windows NT 10.0; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0 0.310 0.310
 ```
-If you want to collect all logs of the server `10.20.20.10`, enter `__CONTENT__` in **Key** and `10.20.20.10.*` in **Filter Rule**.
+If you want to collect all logs of the machine `10.20.20.10`, enter `__CONTENT__` in **Key** and `10.20.20.10.*` in **Filter Rule**.
 
 >! The relationship logic between multiple filter rules is "AND". If multiple filter rules are configured for the same key name, previous rules will be overwritten.
 >
@@ -102,7 +103,7 @@ If you want to collect all logs of the server `10.20.20.10`, enter `__CONTENT__`
 
  - Index Status: select whether to enable it.
  - Full-Text Index: select whether to set it to case-sensitive.
- - Full-Text Delimiter: they are `@&()='",;:<>[]{}/ \n\t\r` by default and can be modified as needed.
+ - Full-Text Delimiter: the default value is `@&()='",;:<>[]{}/ \n\t\r` and can be modified as needed.
  - Key-Value Index: disabled by default. You can configure the field type, delimiters, and whether to enable statistical analysis according to the key name as needed. To enable key-value index, you can set <img src="https://main.qcloudimg.com/raw/bd22396a4acfbf6d96def87060207a46.png" /> to <img src="https://main.qcloudimg.com/raw/d7ba8412e263386b627369741b457f2e.png" />.
  >! Index configuration must be enabled before you can perform searches.
 >
@@ -112,4 +113,4 @@ If you want to collect all logs of the server `10.20.20.10`, enter `__CONTENT__`
 ### Log search
 1. Log in to the [CLS console](https://console.cloud.tencent.com/cls).
 2. On the left sidebar, click **Search and Analysis** to enter the search and analysis page.
-3. Select the region, logset, and log topic as needed and click **Search and Analysis** to search for logs according to the set query criteria.
+3. Select the region, logset, and log topic as needed, and click **Search and Analysis** to search for logs according to the set query rules.

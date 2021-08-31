@@ -77,12 +77,14 @@ Samples:
 
 >!
 > - Only LogListener 2.3.9 or above allows adding multiple collection paths.
+> - The system does not support uploading logs with contents in multiple text formats, which may cause write failure, such as `key:"{"substream":XXX}"`.
+> - You’re advised to configure the collection path as `log/*.log` and rename the old file after log rotation as `log/*.log.xxxx`.
 > - By default, a log file can only be collected by one log topic. If you want to have multiple collection configurations for the same file, please add a soft link to the source file and add it to another collection configuration.
 > 
 
-### Associating a server group
+### Associating a machine group
 
-Select the target server group from the server group list and associate it with the current log topic. Please note that the associated server group must be in the same region as the log topic. For detailed directions, please see [Machine Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
+Select the target machine group from the machine group list and associate it with the current log topic. Please note that the associated machine group must be in the same region as the log topic. For detailed directions, please see [Machine Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
 
 
 
@@ -90,6 +92,7 @@ Select the target server group from the server group list and associate it with 
 
 1. Click **Next** to configure the log parsing mode.
 2. Select **JSON** as **Extraction Mode**.
+
 
 ### Configuring the collection time
 
@@ -106,7 +109,7 @@ Keep **Collection Time** enabled.
 #### Using the original timestamp as the time attribute of logs
 
 Disable **Collection Time** and enter the time key of the original timestamp and the corresponding time parsing format in **Time Key** and **Time Parsing Format** respectively. For more information on the time parsing format, please see [Configuring Time Format](https://intl.cloud.tencent.com/document/product/614/32942).
-
+![img](https://main.qcloudimg.com/raw/6eb891575ad26c82fa4b466e0bb53b9c.png)
 
 Below are examples of how to enter a time parsing format:
 Example 1: the parsing format of the original timestamp `10/Dec/2017:08:00:00` is `%d/%b/%Y:%H:%M:%S`.

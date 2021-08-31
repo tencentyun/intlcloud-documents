@@ -33,13 +33,13 @@ time: [Tue Jan 22 14:49:45 CST 2019 +0800]
 ### Creating a log topic
 
 1. Click **Create Log Topic**.
-2. In the pop-up dialog box, enter `test-separator` as **Log Topic Name** and click **OK**.
+2. In the pop-up, enter `test-separator` as **Log Topic Name** and click **OK**.
 
 ### Configuring LogListener collection
 
 1. After the log topic is created successfully, go to the log topic management page.
 2. Select the **Collection Configuration** tab and click the collection status switch to enter the collection configuration editing mode.
-3. In the **LogListener Collection Configuration** item, click **Add Configuration** to enter the Agent configuration page.
+3. In the LogListener collection configuration page, click **Add Configuration** to enter the Agent configuration page.
 
 
 ### Configuring a log file collection path
@@ -70,18 +70,21 @@ Samples:
 
 >!
 > - Only LogListener 2.3.9 or above allows adding multiple collection paths.
+> - The system does not support uploading logs with contents in multiple text formats, which may cause write failure, such as `key:"{"substream":XXX}"`.
+> - You’re advised to configure the collection path as `log/*.log` and rename the old file after log rotation as `log/*.log.xxxx`.
 > - By default, a log file can only be collected by one log topic. If you want to have multiple collection configurations for the same file, please add a soft link to the source file and add it to another collection configuration.
 > 
 
-### Associating a server group
+### Associating a machine group
 
-Select the target server group from the server group list and associate it with the current log topic. Please note that the associated server group must be in the same region as the log topic. For detailed directions, please see [Machine Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
+Select the target machine group from the machine group list and associate it with the current log topic. Please note that the associated machine group must be in the same region as the log topic. For detailed directions, please see [Machine Group Management](https://intl.cloud.tencent.com/document/product/614/17412).
 
 
 ### Selecting the separator mode
 
 1. Click **Next** to configure the log parsing mode.
 2. Select **Separator** as **Extraction Mode**.
+
 
 
 ### Selecting a separator
@@ -98,13 +101,16 @@ Time configuration is described as follows:
  - Collection time: the time attribute of a log is determined by the time when CLS collects the log.
  - Original timestamp: the time attribute of a log is determined by the timestamp in the raw log.
 
-#### Using the collection time as the time attribute of logs
+#### 1. Using the collection time as the time attribute of logs
 
-Keep **Collection Time** enabled.
+Keep **Collection Time** as enabled.
 
-#### Using the original timestamp as the time attribute of logs
+
+
+#### 2. Using the original timestamp as the time attribute of logs
 
 Disable **Collection Time** and enter the time key of the original timestamp and the corresponding time parsing format in **Time Key** and **Time Parsing Format** respectively. For more information on the time parsing format, please see [Configuring Time Format](https://intl.cloud.tencent.com/document/product/614/32942).
+
 
 
 Below are examples of how to enter a time parsing format:
