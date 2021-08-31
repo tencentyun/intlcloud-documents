@@ -22,7 +22,7 @@ User A uses a preset template to transcode a video. The details are as follows:
 - Video duration: 100 minutes
 
 ### Cost estimation
-In the preset transcoding template 100030, the codec is set as H.264, the video will be transcoded into a video with height of 720 px and width scaled proportionally. The resolution of the output video is 1440 × 720. According to [Pay-as-You-Go (Postpaid Daily Billing Cycle)](https://intl.cloud.tencent.com/document/). product/266/14666#.E6.99.AE.E9.80.9A.E8.BD.AC.E7.A0.81), the unit price is 0.0061 USD/min as the height of the output video is 720 px.
+In the preset transcoding template 100030, the codec is set as H.264, the video will be transcoded into a video with height of 720 px and width scaled proportionally. The resolution of the output video is 1440 × 720. According to [Pay-as-You-Go (Postpaid Daily Billing Cycle)](https://intl.cloud.tencent.com/document/product/266/14666#basic-transcoding), the unit price is 0.0061 USD/min as the height of the output video is 720 px.
 Fee in this example = 0.0061 USD/min × 100 min = 0.61 USD
 
 ## Pay-as-You-Go Cost Analysis for VOD Storage
