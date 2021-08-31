@@ -9,7 +9,7 @@ You can set the callback mode based on your actual needs. After video processing
 
 1. Log in to the [VOD Console](https://console.cloud.tencent.com/vod) and click **Callback Settings** on the left sidebar to enter the "Callback Settings" page.
 2. Click **Settings** to configure the callback.
-![](https://main.qcloudimg.com/raw/cb7e3f9fec12cb8bf5bd5070d63fe24e.png)
+![](https://main.qcloudimg.com/raw/ec6cca4bdcd52698e1c7b795c5d3ad7a.png)
 3. Configure the following parameters based on your actual needs:
  - Callback Mode: select normal callback or reliable callback.
  - Callback URL: this parameter is visible only if the callback mode is set to **Normal Callback**. Please set the address at which the application backend receives callbacks based on your actual needs.
