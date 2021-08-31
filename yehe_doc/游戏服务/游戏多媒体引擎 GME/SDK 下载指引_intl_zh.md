@@ -35,31 +35,27 @@ v2.8.3 正式版本更新如下：
 <li >更新 H5 平台 SDK，增加浏览器适配范围。</li>
 <li >性能优化，提升进房速度，提升 SDK 稳定性。</li>
 </ul ></td>
-<td>2021-07-09</td> 
+<td>2021-08-30</td> 
 <td><a href="https://intl.cloud.tencent.com/document/product/607/15210">实时语音</tr>
 </tbody></table>
 
 
 
 
-## SDK v2.8. 正式版本下载
+## SDK v2.8.3 正式版本下载
 
 
 | 平台/引擎     | 更新时间   | SDK 下载                                                     | Demo 下载                                                    | 文档                                                         |
 | ------------- | ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Unity         | 2021/07/09 | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Other/GME_Unity_Audio_SDK_2.8.3.f5945758.zip) | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Other/GME_Unity_Audio_Demo_2.8.3.f5945758.zip) | [快速入门](https://intl.cloud.tencent.com/document/product/607/18248) [接口文档](https://intl.cloud.tencent.com/document/product/607/15228) |
-| Unreal Engine | 2021/07/09 | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Other/GME_Unreal_Audio_SDK_2.8.3.f5945758.zip) | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Other/GME_Unreal_Audio_Demo_2.8.3.f5945758.zip) | [快速入门](https://intl.cloud.tencent.com/document/product/607/18267) [接口文档](https://intl.cloud.tencent.com/document/product/607/15231) |
-| Cocos2D       | 2021/07/09 | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Other/GME_Cocos_Audio_SDK_2.8.3.f5945758.zip) | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Other/GME_Cocos_Audio_Demo_2.8.3.f5945758.zip) | [快速入门](https://intl.cloud.tencent.com/document/product/607/18292) [接口文档](https://intl.cloud.tencent.com/document/product/607/15218) |
-| Windows       | 2021/07/09 | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Windows/GME_Windows_audio_sdk_2.8.3.784d68d0.zip) | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Windows/GME_Windows_audio_demo_project_2.8.3.784d68d0.zip) | [快速入门](https://intl.cloud.tencent.com/document/product/607/40858) [接口文档](https://intl.cloud.tencent.com/document/product/607/15232) |
-| iOS           | 2021/07/09 | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/iOS/GME_ios_audio_sdk_2.8.3.784d68d0.zip) | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/iOS/GME_ios_audio_demo_2.8.3.784d68d0.zip) | [快速入门](https://intl.cloud.tencent.com/document/product/607/40858) [接口文档](https://intl.cloud.tencent.com/document/product/607/15221) |
-| Android       | 2021/07/09 | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Android/GME_android_audio_sdk_2.8.3.784d68d0.zip) | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Android/GME_android_audio_demo_2.8.3.784d68d0.zip) | [快速入门](https://intl.cloud.tencent.com/document/product/607/40858) [接口文档](https://intl.cloud.tencent.com/document/product/607/15210) |
-| macOS         | 2021/07/09 | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Mac/GME_mac_audio_sdk_2.8.3.784d68d0.zip) | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Mac/GME_mac_audio_2.8.3.784d68d0.app.zip) | [快速入门](https://intl.cloud.tencent.com/document/product/607/40858) [接口文档](https://intl.cloud.tencent.com/document/product/607/18739) |
+| Unity         | 2021/08/30 | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Other/GME_Unity_Audio_SDK_2.8.3.f5945758.zip) | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Other/GME_Unity_Audio_Demo_2.8.3.f5945758.zip) | [快速入门](https://intl.cloud.tencent.com/document/product/607/18248) [接口文档](https://intl.cloud.tencent.com/document/product/607/15228) |
+| Unreal Engine | 2021/08/30 | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Other/GME_Unreal_Audio_SDK_2.8.3.f5945758.zip) | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Other/GME_Unreal_Audio_Demo_2.8.3.f5945758.zip) | [快速入门](https://intl.cloud.tencent.com/document/product/607/18267) [接口文档](https://intl.cloud.tencent.com/document/product/607/15231) |
+| Cocos2D       | 2021/08/30 | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Other/GME_Cocos_Audio_SDK_2.8.3.f5945758.zip) | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Other/GME_Cocos_Audio_Demo_2.8.3.f5945758.zip) | [快速入门](https://intl.cloud.tencent.com/document/product/607/18292) [接口文档](https://intl.cloud.tencent.com/document/product/607/15218) |
+| Windows       | 2021/08/30 | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Windows/GME_Windows_audio_sdk_2.8.3.784d68d0.zip) | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Windows/GME_Windows_audio_demo_project_2.8.3.784d68d0.zip) | [快速入门](https://intl.cloud.tencent.com/document/product/607/40858) [接口文档](https://intl.cloud.tencent.com/document/product/607/15232) |
+| iOS           | 2021/08/30 | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/iOS/GME_ios_audio_sdk_2.8.3.784d68d0.zip) | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/iOS/GME_ios_audio_demo_2.8.3.784d68d0.zip) | [快速入门](https://intl.cloud.tencent.com/document/product/607/40858) [接口文档](https://intl.cloud.tencent.com/document/product/607/15221) |
+| Android       | 2021/08/30 | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Android/GME_android_audio_sdk_2.8.3.784d68d0.zip) | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Android/GME_android_audio_demo_2.8.3.784d68d0.zip) | [快速入门](https://intl.cloud.tencent.com/document/product/607/40858) [接口文档](https://intl.cloud.tencent.com/document/product/607/15210) |
+| macOS         | 2021/08/30 | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Mac/GME_mac_audio_sdk_2.8.3.784d68d0.zip) | [下载](http://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.3/Mac/GME_mac_audio_2.8.3.784d68d0.app.zip) | [快速入门](https://intl.cloud.tencent.com/document/product/607/40858) [接口文档](https://intl.cloud.tencent.com/document/product/607/18739) |
 
-## Web SDK 下载
 
-| 平台/引擎 | 更新时间   | SDK 下载                                                     | Demo 下载                                                    | 文档                                                         |
-| --------- | ---------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Web       | 2021/06/11 | [下载](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.1/H5/GME_Web_SDK_2.8.1.47.zip) | [下载](https://dldir1.qq.com/hudongzhibo/QCloud_TGP/GME/GME2.8.1/H5/GME_Web_Demo_2.8.1.47.zip) | [接口文档](https://intl.cloud.tencent.com/document/product/607/30263) |
 
 
 ## 编译 Demo
