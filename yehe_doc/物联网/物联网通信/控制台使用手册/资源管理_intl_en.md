@@ -29,12 +29,12 @@ Select the resource to be delivered and click **Deliver Resource** on the right 
 ![](https://main.qcloudimg.com/raw/98c2bbecc1b85cf9f9a9429fc69a16d9.png)
 Resources can be delivered to a single device or batch delivered to multiple devices as detailed below:
 <dx-tabs>
-::: Delivery to One Device
+::: Delivery\sto\sOne\sDevice
 1. Go to the resource delivery page, select **Single Device**, and select the target device for delivery in the drop-down list.
 
 2. Click **Save**, and the system will perform the delivery task by delivering the selected resource to the selected target device.
 :::
-::: Batch Delivery to Multiple Devices
+::: Batch\sDelivery\sto\sMultiple\sDevices
 1. Go to the resource delivery page, select **Multiple Devices**, and upload the list of target devices.
 
 2. Click **Download Template** to get the template file, enter the correct `DeviceName` values in the template, and click **Browse** to upload it. Up to 10,000 devices can be uploaded at a time, and only CSV files are supported.
