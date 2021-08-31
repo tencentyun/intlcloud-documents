@@ -1,14 +1,11 @@
-
 ## Overview
 
 A **region** is an area where a Tencent Cloud managed data center is deployed. COS data is stored in buckets in these regions. You can use COS to store your data in multiple regions. In general, you are advised to create buckets in the region closest to the location where your business is conducted. In this way, latency and costs can be reduced and compliance requirements can be met.
 
 For example, if your business is distributed in South China, creating buckets in the Guangzhou region can accelerate the object upload and download speeds.
 
-**Default endpoint** refers to the default endpoint for a COS bucket. It is automatically generated according to the bucket name and region of the created bucket. It varies by region.
+**Default endpoint** refers to the COS bucket’s default domain, which is automatically generated when the bucket is generated. Buckets residing in different regions have different default domains. To can view the default domain, you can go to the [COS console](https://console.cloud.tencent.com/cos5), click the name of the desired bucket, click **Overview**, and find the **Domain Information** area.
 
-
-> ? After a bucket is created, a corresponding default endpoint will be generated. You can go to [COS console](https://console.cloud.tencent.com/cos5) and view it on the **Basic Configurations** page of the bucket.
 
 
 
@@ -21,7 +18,7 @@ For example, if your business is distributed in South China, creating buckets in
       <th>Default Endpoint (Upload/Download/Management)</th>
    </tr>
    <tr>
-      <td rowspan=7>The Chinese mainland</td>
+      <td rowspan=10>Chinese mainland</td>
       <td rowspan=7 nowrap="nowrap">Public cloud regions</td>
       <td nowrap="nowrap">Beijing Zone 1 (sold out)</td>
       <td>ap-beijing-1</td>
@@ -58,6 +55,7 @@ For example, if your business is distributed in South China, creating buckets in
       <td>&lt;BucketName-APPID&gt;.cos.ap-chongqing.myqcloud.com</td>
    </tr>
 </table>
+
 
 
 
@@ -144,9 +142,9 @@ For example, if your business is distributed in South China, creating buckets in
 A global acceleration endpoint is formatted as `&lt;BucketName-APPID&gt;.cos.accelerate.myqcloud.com`. For more information about global acceleration endpoints and the use cases, please see [Overview](https://intl.cloud.tencent.com/document/product/436/33409).
 
 
-### Samples
+### Examples
 
-Assume that you have logged in to COS console as the root account (`APPID` is `1250000000`) and created a bucket named **examplebucket** in the **Guangzhou** region, the default endpoint of the bucket will be:
+Assume that you have logged in to the COS console as the root account (`APPID` is `1250000000`) and created a bucket named **examplebucket** in the **Guangzhou** region, the default endpoint of the bucket will be:
 
 ```shell
 examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com
@@ -171,10 +169,11 @@ examplebucket-1250000000.cos.ap-guangzhou.myqcloud.com/picture.jpg
 
 ## Private Network and Public Network Access
 
+If an intra-region CVM instance accesses COS using the default domain, data will be transferred over a private network by default. In this case, data uploads and downloads will generate private network traffic, but this traffic will not be billed. However, please note that you will still be charged for the number of requests.
+
 Tencent Cloud COS adopts intelligent resolution for COS endpoints. In this way, the optimal linkage can be provided for you to access COS with different ISPs.
 
 If you deploy a service in Tencent Cloud to access COS, intra-region access requests will be automatically directed to a private network address. Currently, cross-region requests do not support private network access and will be resolved to a public network address by default.
 
 For more information about private network and public network access, please see [Creating Request Overview](https://intl.cloud.tencent.com/document/product/436/30613).
-
 

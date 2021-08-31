@@ -4,17 +4,17 @@
 
 This document provides an overview of APIs and SDK code samples related to bucket tagging.
 
-| API | Operation Name | Operation Description |
+| API | Operation | Description |
 | ------------------------------------------------------------ | -------------- | -------------------------------- |
-| [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8281) | Setting a bucket tag | Sets a tag for an existing bucket |
-| [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8277) | Querying bucket tags | Queries the existing tags of a specified bucket |
-| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286) | Deleting a bucket tag | Deletes a specified bucket tag |
+| [PUT Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8281) | Setting bucket tags | Sets tags for an existing bucket |
+| [GET Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8277) | Querying bucket tags | Queries the existing tags of a bucket |
+| [DELETE Bucket tagging](https://intl.cloud.tencent.com/document/product/436/8286) | Deleting bucket tags | Deletes the tags of a bucket |
 
-## Setting Bucket Tag
+## Setting a Bucket Tag
 
-#### Feature description
+#### API description
 
-This API (PUT Bucket tagging) is used to set a tag for an existing bucket.
+This API is used to set tags for an existing bucket.
 
 #### Method prototype
 
@@ -24,6 +24,7 @@ public void setBucketTaggingConfiguration(String bucketName, BucketTaggingConfig
 ```
 
 #### Sample request
+
 [//]: # (.cssg-snippet-put-bucket-tagging)
 ```java
 String bucketName = "examplebucket-1250000000";
@@ -36,44 +37,44 @@ BucketTaggingConfiguration bucketTaggingConfiguration = new BucketTaggingConfigu
 bucketTaggingConfiguration.setTagSets(tagSetList);
 SetBucketTaggingConfigurationRequest setBucketTaggingConfigurationRequest =
 new SetBucketTaggingConfigurationRequest(bucketName, bucketTaggingConfiguration);
-cosclient.setBucketTaggingConfiguration(setBucketTaggingConfigurationRequest);
+cosClient.setBucketTaggingConfiguration(setBucketTaggingConfigurationRequest);
 ```
 
 #### Parameter description
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ------------------------------------ | ------------------ | ------------------------------------ |
-| setBucketTaggingConfigurationRequest | Request to set bucket tag | SetBucketTaggingConfigurationRequest  |
+| setBucketTaggingConfigurationRequest | Request to set the bucket tag | SetBucketTaggingConfigurationRequest |
 
-`Request` member description:
+Request member description:
 
-| Request Member | Setting Method | Description | Type |
+| Request Member | Set Method | Description | Type |
 | -------------------- | ------------------- | ------------------------------------------------------------ | -------------------------- |
-| bucketName  | Constructor or set method | Bucket for which to set a tag in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String                 |
-| taggingConfiguration | Constructor or set method | Bucket tag configuration                                             | BucketTaggingConfiguration |
+| bucketName | Constructor or set method | Bucket that the tag is set for, formatted as `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String |
+| taggingConfiguration | Constructor or set method | Tagging configuration of the bucket | BucketTaggingConfiguration |
 
-`BucketLoggingConfiguration` member description:
+Description of the `BucketLoggingConfiguration` member:
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | -------- | -------------------- | ------------ |
-| tagSets  | Bucket tag configuration set | List&lt;TagSet&gt; |
+| tagSets  | Collection of tags for the bucket | List&lt;TagSet&gt; |
 
-`TagSet` member description:
+Description of the `TagSet` member:
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | -------- | ------------------------------------------------------------ | ------------------- |
-| tags | Tag key and value, which can contain letters, digits, spaces, plus signs, minus signs, underscores, equal signs, dots, colons, and slashes with a maximum length of 128 bytes | Map&lt;String, String&gt; |
+| tags | The tag’s key and value, which cannot exceed 128 bytes and can contain letters, digits, spaces, plus signs (+), minus signs (−), underscores (_), equal signs (=), dots (.), colons (:), and slashes (/). | Map&lt;String, String&gt; |
 
-#### Returned result description
+#### Response description
 
-- Success: no returned value.
-- Failure: an error (e.g., authentication failed) occurred and a `CosClientException` or `CosServiceException` exception was thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/30599).
+- Success: No value is returned.
+- Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
-## Querying Bucket Tag
+## Querying Bucket Tags
 
-#### Feature description
+#### API description
 
-This API (GET Bucket tagging) is used to query the existing tags of a specified bucket.
+This API is used to query the existing tags of a specified bucket.
 
 #### Method prototype
 
@@ -82,28 +83,29 @@ public BucketTaggingConfiguration getBucketTaggingConfiguration(String bucketNam
 ```
 
 #### Sample request
+
 [//]: # (.cssg-snippet-get-bucket-tagging)
 ```java
 String bucketName = "examplebucket-1250000000";
-BucketTaggingConfiguration bucketTaggingConfiguration = cosclient.getBucketTaggingConfiguration(bucketName);
+BucketTaggingConfiguration bucketTaggingConfiguration = cosClient.getBucketTaggingConfiguration(bucketName);
 ```
 
 #### Parameter description
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ---------- | ------------------------------------------------------------ | ------ |
-| bucketName | Bucket for which to query a tag in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName | Bucket to query the tags from, formatted as `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String |
 
-#### Returned result description
+#### Response description
 
-- Success: `BucketTaggingConfiguration` is returned, which contains the tag configuration information of the bucket.
-- Failure: an error (e.g., authentication failed) occurred and a `CosClientException` or `CosServiceException` exception was thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/30599).
+- Success: returns `BucketTaggingConfiguration`, including the bucket’s tagging configuration.
+- Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
-## Deleting Bucket Tag
+## Deleting Bucket Tags
 
-#### Feature description
+#### API description
 
-This API (DELETE Bucket tagging) is used to delete an existing tag of a specified bucket.
+This API is used to delete the existing tags from a bucket.
 
 #### Method prototype
 
@@ -112,19 +114,20 @@ public void deleteBucketTaggingConfiguration(String bucketName);
 ```
 
 #### Sample request
+
 [//]: # (.cssg-snippet-delete-bucket-tagging)
 ```java
 String bucketName = "examplebucket-1250000000";
-cosclient.deleteBucketTaggingConfiguration(bucketName);
+cosClient.deleteBucketTaggingConfiguration(bucketName);
 ```
 
 #### Parameter description
 
-| Parameter Name | Description | Type |
+| Parameter | Description | Type |
 | ---------- | ------------------------------------------------------------ | ------ |
-| bucketName | Bucket for which to delete a tag in the format of `BucketName-APPID`. For more information, please see [Naming Convention](https://intl.cloud.tencent.com/document/product/436/13312) | String |
+| bucketName | Bucket to delete the tags from, formatted as `BucketName-APPID`. For more information, please see [Naming Conventions](https://intl.cloud.tencent.com/document/product/436/13312). | String |
 
-#### Returned result description
+#### Response description
 
-- Success: no returned value.
-- Failure: an error (e.g., authentication failed) occurred and a `CosClientException` or `CosServiceException` exception was thrown. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/30599).
+- Success: No value is returned.
+- Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).

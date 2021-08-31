@@ -5,191 +5,151 @@ This document provides an overview of APIs and SDK code samples related to basic
 
 | API | Operation |  Description |
 | ------------------------------------------------------------ | ------------------ | ---------------------------------- |
-| [GET Service (List Buckets)](https://intl.cloud.tencent.com/document/product/436/8291) | Querying bucket list | Queries the list of all buckets under a specified account |
+| [GET Service (List Buckets)](https://intl.cloud.tencent.com/document/product/436/8291) | Querying the bucket list | Queries the list of all buckets under a specified account |
 | [PUT Bucket](https://intl.cloud.tencent.com/document/product/436/7738) | Creating a bucket | Creates a bucket under a specified account |
-| [HEAD Bucket](https://intl.cloud.tencent.com/document/product/436/7735) | Checking a bucket and its permissions | Checks whether a bucket exists and you have access permission for it |
-| [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) | Deleting a bucket | Deletes an empty bucket under a specified account |
+| [HEAD Bucket](https://intl.cloud.tencent.com/document/product/436/7735) | Checking a bucket and its permissions | Checks whether a bucket exists and whether you have permission to access it |
+| [DELETE Bucket](https://intl.cloud.tencent.com/document/product/436/7732) | Deleting a bucket | Deletes an empty bucket from a specified account |
 
 
 
-## Querying Bucket List
+## Querying a Bucket List
 
-#### Feature description
+#### API description
 
-This API (GET Service (List Buckets)) is used to query the list of all buckets under a specified account.
+This API is used to query the list of all buckets under a specified account.
 
 #### Method prototype
 
 ```java
-public Guzzle\Service\Resource\Model listBucket(array $args = array())
+public List<Bucket> listBuckets() throws CosClientException, CosServiceException;
 ```
 
 #### Sample request
 
 [//]: # (.cssg-snippet-get-service)
-
 ```java
-try {
-    // Request succeeded
-    $result = $cosClient->listBuckets();
-    print_r($result);
-} catch (\Exception $e) {
-    // Request failed
-    echo($e);
+// If you only call the “listBuckets” method, set the region to new Region("") when creating cosClient.
+List<Bucket> buckets = cosClient.listBuckets();
+for (Bucket bucketElement : buckets) {
+    String bucketName = bucketElement.getName();
+    String bucketLocation = bucketElement.getLocation();
 }
 ```
 
-#### Sample response
 
-```java
-Array
-(
-    [data:protected] => Array
-        (
-            [Owner] => Array
-                (
-                    [ID] => qcs::cam::uin/100000000001:uin/100000000001
-                    [DisplayName] => 100000000001
-                )
+#### Parameter description
 
-            [Buckets] => Array
-                (
-                    [0] => Array
-                        (
-                            [Name] => examplebucket-1250000000
-                            [Location] => ap-beijing
-                            [CreationDate] => 2016-07-29T03:09:54Z
-                        )
-
-                    [1] => Array
-                        (
-                            [Name] => examplebucket2-1250000000
-                            [Location] => ap-beijing
-                            [CreationDate] => 2017-08-02T04:00:24Z
-                        )
-
-                )
-
-            [RequestId] => NWE3YzgxZmFfYWZhYzM1MGFfMzc3MF9iOGY5OQ==
-        )
-
-)
-```
+None
 
 #### Response description
 
-| Parameter Name | Parent Node | Description | Type |
-| ------------ | ------- | ---------------------- | ------ |
-| Owner        | None      | Bucket owner information       | Array  |
-| ID           | Owner   | Bucket owner ID      | String |
-| DisplayName  | Owner   | Bucket owner name | String |
-| Buckets      | None      | Bucket list             | Array  |
-| Bucket       | Buckets | Bucket information             | Array  |
-| Name         | Bucket  | Bucket name             | String |
-| Location     | Bucket  | Bucket region name     | String |
-| CreationDate | Bucket  | Bucket creation time       | String |
+- Success: A list of all bucket classes will be returned. The bucket class contains information about bucket members, location, and more.
+- Failure: An error (such as the bucket does not exist) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
-## Creating Bucket
 
-#### Feature description
+## Creating a Bucket
 
-This API (PUT Bucket) is used to create a bucket under a specified account.
+#### API description
+
+This API is used to create a bucket under the specified account. You can create multiple buckets under the same user account. The maximum number is 200 (regardless of region). There is no limit to the number of objects in the bucket. Bucket creation is a low-frequency operation. We recommended you create a bucket in the console and perform object operations in the SDK.
 
 #### Method prototype
 
 ```java
-public Guzzle\Service\Resource\Model createBucket(array $args = array());
+public Bucket createBucket(String  bucketName) throws CosClientException, CosServiceException;
 ```
 
 #### Sample request
 
 [//]: # (.cssg-snippet-put-bucket)
-
 ```java
-try {
-    $bucket = "examplebucket-1250000000"; // Bucket name in the format of BucketName-APPID
-    $result = $cosClient->createBucket(array('Bucket' => $bucket));
-    // Request succeeded
-    print_r($result);
-} catch (\Exception $e) {
-    // Request failed
-    echo($e);
-}
+String bucket = "examplebucket-1250000000"; // Bucket, formatted as BucketName-APPID
+CreateBucketRequest createBucketRequest = new CreateBucketRequest(bucket);
+// Set the bucket permission to Private (private read/write). Other options include public read/private write and public read/write.
+createBucketRequest.setCannedAcl(CannedAccessControlList.Private);
+Bucket bucketResult = cosClient.createBucket(createBucketRequest);
 ```
+
 
 #### Parameter description
 
-| Parameter Name | Parent Node | Description | Type |
-| -------- | ------ | ---------------------------------- | ------ |
-| Bucket   | None     | Bucket name in the format of `BucketName-APPID` | String |
+| Parameter | Description | Type |
+| ---------- | ------------------------------------------------------------ | ------ |
+| bucketName | Bucket name, formatted as `BucketName-APPID`. For more information, please see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String |
 
-## Checking Bucket and Its Permission
+#### Response description
 
-#### Feature description
+- Success**: the bucket class, including the bucket description (bucket name, owner, and creation date).
+- Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
-This API (HEAD Bucket) is used to check whether a bucket exists and you have permission to access it.
+
+## Extracting a Bucket and its Permission
+
+#### API description
+
+This API is used to verify whether a bucket exists and whether you have permission to access it.
 
 #### Method prototype
 
 ```java
-public Guzzle\Service\Resource\Model headBucket(array $args = array());
+public boolean doesBucketExist(String bucketName) 
+  throws CosClientException, CosServiceException;
 ```
 
 #### Sample request
 
 [//]: # (.cssg-snippet-head-bucket)
-
 ```java
-try {
-    $result = $cosClient->headBucket(array(
-        'Bucket' => 'examplebucket-1250000000' // Format: BucketName-APPID
-    )); 
-    // Request succeeded
-    print_r($result);
-} catch (\Exception $e) {
-    // Request failed
-    echo($e);
-}
+The bucket name entered must be in the format of `BucketName-APPID`.
+String bucketName = "examplebucket-1250000000";
+boolean bucketExistFlag = cosClient.doesBucketExist(bucketName);
 ```
+
 
 #### Parameter description
 
-| Parameter Name | Parent Node | Description | Type |
-| -------- | ------ | ---------------------------------- | ------ |
-| Bucket   | None     | Bucket name in the format of `BucketName-APPID` | String |
+| Parameter | Description | Type |
+| ---------- | ------------------------------------------------------------ | ------ |
+| bucketName | Bucket name, formatted as `BucketName-APPID`. For more information, please see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String |
 
-## Deleting Bucket
+#### Response description
 
-#### Feature description
+- Success: returns `true` if the bucket exists. Otherwise, `false` is returned.
+- Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
 
-This API (DELETE Bucket) is used to delete an empty bucket under a specified account.
+
+## Deleting a Bucket
+
+#### API description
+
+This API is used to delete an empty bucket under a specified account.
 
 #### Method prototype
 
 ```java
-public Guzzle\Service\Resource\Model deleteBucket(array $args = array());
+public void deleteBucket(String bucketName) throws CosClientException, CosServiceException;
 ```
 
 #### Sample request
 
 [//]: # (.cssg-snippet-delete-bucket)
-
-```java 
-try {
-    $result = $cosClient->deleteBucket(array(
-        'Bucket' => 'examplebucket-1250000000' // Format: BucketName-APPID
-    )); 
-    // Request succeeded
-    print_r($result);
-} catch (\Exception $e) {
-    // Request failed
-    echo($e);
-}
+```java
+The bucket name entered must be in the format of `BucketName-APPID`.
+String bucketName = "examplebucket-1250000000";
+cosClient.deleteBucket(bucketName);
 ```
+
+
 
 #### Parameter description
 
-| Parameter Name | Parent Node | Description | Type |
-| -------- | ------ | ---------------------------------- | ------ |
-| Bucket   | None     | Bucket name in the format of `BucketName-APPID` | String |
+| Parameter | Description | Type |
+| ---------- | ------------------------------------------------------------ | ------ |
+| bucketName | Bucket name, formatted as `BucketName-APPID`. For more information, please see [Bucket Overview](https://intl.cloud.tencent.com/document/product/436/13312). | String |
+
+#### Response description
+
+- Success: No value is returned.
+- Failure: An error (such as authentication failure) occurs, throwing the "CosClientException" or "CosServiceException" exception. For more information, please see [Troubleshooting](https://intl.cloud.tencent.com/document/product/436/31537).
+
 
