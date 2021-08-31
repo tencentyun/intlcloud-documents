@@ -4,7 +4,7 @@ This document describes how to enable database proxy read/write separation in th
 With the [database proxy read/write separation](https://intl.cloud.tencent.com/document/product/236/41093) feature, you can configure the database proxy address in your application so as to automatically forward write requests to the source instance and read requests to the read-only instance.
 
 ## Prerequisites
-- You have [enabled database proxy](https://intl.cloud.tencent.com/document/product/236/41087).
+- You have [enabled database proxy](https://intl.cloud.tencent.com/document/product/236/42052).
 - You have [created a read-only instance](https://intl.cloud.tencent.com/document/product/236/7270) for the source instance. If no read-only instances have been created, the feature enablement page will prompt you to purchase one.
 
 ## Directions
