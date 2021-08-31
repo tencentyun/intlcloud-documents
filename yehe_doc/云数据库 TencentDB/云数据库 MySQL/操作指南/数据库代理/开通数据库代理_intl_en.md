@@ -1,7 +1,7 @@
 
 This document describes how to enable database proxy in the TencentDB for MySQL console.
 
-[Database proxy](https://intl.cloud.tencent.com/document/product/236/41095) is a network proxy service between the TencentDB service and the application service. It is used to proxy all requests when the application service accesses the database. It provides advanced features such as automatic read/write separation, connection pool, and connection persistence and boasts high availability, high performance, OPS support, and ease of use.
+[Database proxy](https://intl.cloud.tencent.com/document/product/236/42048) is a network proxy service between the TencentDB service and the application service. It is used to proxy all requests when the application service accesses the database. It provides advanced features such as automatic read/write separation, connection pool, and connection persistence and boasts high availability, high performance, OPS support, and ease of use.
 
 
 ## Notes
