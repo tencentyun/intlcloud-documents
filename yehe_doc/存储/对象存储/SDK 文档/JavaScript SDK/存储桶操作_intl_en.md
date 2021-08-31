@@ -45,7 +45,7 @@ cos.headBucket({
 function(err, data) { ... }
 ```
 
-| Parameter Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
+| Parameter Name | Description                                                     | Type   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ |
 | err | Object returned when an error (network error or service error) occurs. If the request is successful, this parameter is left empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | - statusCode | HTTP status code, such as 200, 403, and 404 | Number |
@@ -87,7 +87,7 @@ cos.deleteBucket({
 function(err, data) { ... }
 ```
 
-| Parameter Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                     | Type   |
+| Parameter Name | Description                                                     | Type   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------ |
 | err | Object returned when an error (network error or service error) occurs. If the request is successful, this parameter is left empty. For more information, please see [Error Codes](https://intl.cloud.tencent.com/document/product/436/7730). | Object |
 | - statusCode | HTTP status code, such as 200, 403, and 404 | Number |
