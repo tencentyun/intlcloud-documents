@@ -109,7 +109,7 @@ Keep **Collection Time** enabled.
 #### Using the original timestamp as the time attribute of logs
 
 Disable **Collection Time** and enter the time key of the original timestamp and the corresponding time parsing format in **Time Key** and **Time Parsing Format** respectively. For more information on the time parsing format, please see [Configuring Time Format](https://intl.cloud.tencent.com/document/product/614/32942).
-![img](https://main.qcloudimg.com/raw/6eb891575ad26c82fa4b466e0bb53b9c.png)
+
 
 Below are examples of how to enter a time parsing format:
 Example 1: the parsing format of the original timestamp `10/Dec/2017:08:00:00` is `%d/%b/%Y:%H:%M:%S`.
