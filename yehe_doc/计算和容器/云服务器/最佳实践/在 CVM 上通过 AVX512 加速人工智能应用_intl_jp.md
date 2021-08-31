@@ -1,10 +1,10 @@
 ## 操作シナリオ
-Tencent Cloudの第5世代インスタンスS5、M5、C4、IT5、D3は、第2世代インテリジェントIntel <sup>®</sup>Xeon<sup>®</sup> スケーラブルプロセッサCascadeLakeを全面的に採用しています。より多くの命令セットや機能を提供して、人工知能のアプリケーションのアクセラレーションに使用するとともに、多数のハードウェア拡張技術を統合することができます。中でも、AVX-512（アドバンスト・ベクトル・エクステンション）は、AI推論プロセスに強力な並列コンピューティング機能を提供し、ユーザーのディープラーニングの効果をより高めることができます。
+Tencent Cloudの第6世代S6および第5世代インスタンスS5、M5、C4、IT5、D3は、第2世代インテリジェントIntel <sup>®</ sup>Xeon<sup>®</ sup>スケーラブルプロセッサCascadeLakeを全面的に採用しています。より多くの命令セットや機能を提供して、人工知能のアプリケーションのアクセラレーションに使用するとともに、多数のハードウェア拡張技術を統合することができます。中でも、AVX-512（アドバンスト・ベクトル・エクステンション）は、AI推論プロセスに強力な並列コンピューティング機能を提供し、ユーザーのディープラーニングの効果をより高めることができます。
 
 ここではS5、M5インスタンスを例として、CVMでAVX512を介して人工知能アプリケーションをアクセラレーションする方法を説明します。
 
 ## モデル選択時の推奨事項[](id:RecommendedSelection)
-CVMのさまざまなインスタンス仕様は、さまざまなアプリケーション開発に用いることができます。中でも[標準型S5](https://intl.cloud.tencent.com/document/product/213/11518)および[メモリ型M5](https://intl.cloud.tencent.com/document/product/213/11518)は、 機械学習やディープラーニングに適しています。これらのインスタンスには、Intel<sup>®</sup> DL boost学習機能に適応する第2世代Intel<sup>®</sup> Xeon<sup>®</sup>プロセッサが搭載されています。推奨される構成は下表のとおりです。
+CVMのさまざまなインスタンス仕様は、さまざまなアプリケーション開発に用いることができます。中でも[標準型 S6](https://intl.cloud.tencent.com/document/product/213/11518)、[標準型S5](https://intl.cloud.tencent.com/document/product/213/11518)および[メモリ型M5](https://intl.cloud.tencent.com/document/product/213/11518)は、 機械学習やディープラーニングに適しています。これらのインスタンスには、Intel<sup>®</sup> DL boost学習機能に適応する第2世代Intel<sup>®</sup> Xeon<sup>®</sup>プロセッサが搭載されています。推奨される構成は下表のとおりです。
 <table>
 <tr>
 <th>プラットフォームタイプ</th><th>インスタンス仕様</th>
@@ -36,7 +36,6 @@ Intel<sup>®</sup> Xeon<sup>®</sup>スケーラブルプロセッサを使用�
 ### インスタンスを作成
 CVMインスタンスを作成します。詳細については、[購入画面でインスタンスを作成](https://intl.cloud.tencent.com/document/product/213/4855)をご参照ください。そのうち、インスタンス仕様は、[モデル選択時の推奨事項](#RecommendedSelection) と実際の業務シナリオに従って選択する必要があります。下図のとおりです。
 ![](https://main.qcloudimg.com/raw/ceb104790caba9f281f4515f00d32585.png)
-
 >?インスタンス仕様のパラメータについては、[インスタンス仕様](https://intl.cloud.tencent.com/document/product/213/11518)をご参照ください。
 
 ### インスタンスへのログイン
@@ -54,8 +53,9 @@ TensorFlow\*は、大規模な機械学習とディープラーニングに用�
 #### TensorFlow\*フレームワークのデプロイ
 1. CVMにPythonをインストールします。ここでは、Python3.7を例とします。
 2. 以下のコマンドを実行して、Intel<sup>®</sup>に最適化されたTensorFlow\*バージョンのintel-tensorflowをインストールします。
-<dx-alert infotype="explain">最新の機能と最適化を利用するため、**2.4.0およびそれ以降のバージョン**を使用することをお勧めします。
-</dx-alert>
+<dx-alert infotype="explain" title="">
+最新の機能と最適化を利用するため、**2.4.0およびそれ以降のバージョン**を使用することをお勧めします。
+</dx-alert> 
 ```
 pip install intel-tensorflow
 ```
@@ -72,7 +72,7 @@ lscpu | grep "Core(s) per socket" | cut -d':' -f2 | xargs
 ```
 2. 最適化パラメータを設定します。以下のいずれかの方法を選択できます。
  - 環境の実行パラメータを設定します。環境変数ファイルに、以下の構成を追加します。
-``` 
+```
  export OMP_NUM_THREADS= # <physicalcores>
  export KMP_AFFINITY="granularity=fine,verbose,compact,1,0"
  export KMP_BLOCKTIME=1
@@ -81,7 +81,7 @@ lscpu | grep "Core(s) per socket" | cut -d':' -f2 | xargs
  export TF_NUM_INTEROP_THREADS=1
  export TF_ENABLE_MKL_NATIVE_FORMAT=0
 ```
- - コードに環境変更設定を追加します。実行中のPythonコードに、以下の環境変更の構成を追加します。
+ - コードに環境変数設定を追加します。実行中のPythonコードに、以下の環境変数設定を追加します：
 ```
 import os
 os.environ["KMP_BLOCKTIME"] = "1"
@@ -132,14 +132,14 @@ lscpu | grep "Core(s) per socket" | cut -d':' -f2 | xargs
 ```
 2. 最適化パラメータを設定します。以下のいずれかの方法を選択できます。
  - 環境の実行パラメータを設定し、GNU OpenMP* Librariesを使用します。環境変数ファイルに、以下の構成を追加します。
-``` 
+```
 export OMP_NUM_THREADS=physicalcores
 export GOMP_CPU_AFFINITY="0-<physicalcores-1>"
 export OMP_SCHEDULE=STATIC
 export OMP_PROC_BIND=CLOSE
 ```
  - 環境の実行パラメータを設定し、Inte OpenMP* Librariesを使用します。環境変数ファイルに、以下の構成を追加します。
-``` 
+```
 export OMP_NUM_THREADS=physicalcores
 export LD_PRELOAD=<path_to_libiomp5.so>
 export KMP_AFFINITY="granularity=fine,verbose,compact,1,0"
@@ -481,19 +481,22 @@ mkdir –p img_raw/val && cd img_raw
 wget http://www.image-net.org/challenges/LSVRC/2012/dd31405981
 ef5f776aa17412e1f0c112/ILSVRC2012_img_val.tar
 tar –xvf ILSVRC2012_img_val.tar -C val
-​``` 以下のコマンドを実行して、imageファイルをlabelで分類されたサブディレクトリに移動します。
-​```plaintext
+```
+以下のコマンドを実行して、imageファイルをlabelで分類されたサブディレクトリに移動します。
+```plaintext
 cd val
 wget -qO -https://raw.githubusercontent.com/soumith/
 imagenetloader.torch/master/valprep.sh | bash
-​``` 以下のコマンドを実行して、スクリプト [prepare_dataset.sh](https://github.com/intel/lpot/blob/master/examples/tensorflow/image_recognition/prepare_dataset.sh)を使用して、元のデータをTFrecord形式に変換します。
-​```plaintext
+```
+​以下のコマンドを実行して、スクリプト [prepare_dataset.sh](https://github.com/intel/lpot/blob/master/examples/tensorflow/image_recognition/prepare_dataset.sh)を使用して、元のデータをTFrecord形式に変換します。
+```plaintext
 cd examples/tensorflow/image_recognition
 bash prepare_dataset.sh --output_dir=./data --raw_dir=/PATH/TO/img_raw/val/ 
 --subset=validation
-​``` データセットの詳細情報については、[Prepare Dataset](https://github.com/intel/lpot/tree/master/examples/tensorflow/image_recognition#2-prepare-dataset)をご参照ください。
+```
+​データセットの詳細情報については、[Prepare Dataset](https://github.com/intel/lpot/tree/master/examples/tensorflow/image_recognition#2-prepare-dataset)をご参照ください。
     2. 以下のコマンドを実行して、モデルを準備します。
- ```plaintext
+```plaintext
 wget https://storage.googleapis.com/intel-optimized-tensorflow/
  models/v1_6/resnet50_fp32_pretrained_model.pb
 ```
@@ -509,8 +512,9 @@ bash run_tuning.sh --config=resnet50_v1.yaml \
 ```plaintext
 bash run_benchmark.sh --input_model=./lpot_resnet50_v1.pb
 --config=resnet50_v1.yaml
-​``` 出力結果は次のとおりです。パフォーマンスデータはあくまでも参考です。
-​```shell
+```
+​出力結果は次のとおりです。パフォーマンスデータはあくまでも参考です：
+```shell
  accuracy mode benchmarkresult:
  Accuracy is 0.739
  Batch size = 32
@@ -538,7 +542,7 @@ Intel<sup>®</sup> Distribution of OpenVINO™ Toolkitツールキットのワ�
 ![](https://main.qcloudimg.com/raw/98afcac361352773801fbe863d21b912.png)
 
 #### Intel<sup>®</sup> Distribution of OpenVINO™ Toolkitの推論性能
-The Intel® Distribution of OpenVINO™ツールは、さまざまなIntelプロセッサと高速ハードウェアで最適化を実装します。Intel <sup>®</sup>Xeon<sup>®</sup> スケーラブルプロセッサプラットフォームでは、Intel <sup>®</sup>  DLBoostおよびAVX-512命令セットを使用して推論ネットワークをアクセラレーションします。各プラットフォームのパフォーマンスデータについては、[Intel<sup>®</sup> OpenVINO™ツールキットベンチマークパフォーマンスデータ](https://docs.openvinotoolkit.org/latest/openvino_docs_performance_benchmarks_openvino.html)をご参照ください。
+The Intel® Distribution of OpenVINO™ツールは、さまざまなIntelプロセッサと高速ハードウェアで最適化を実装します。Intel <sup>®</ sup>Xeon<sup>®</ sup>スケーラブルプロセッサプラットフォームでは、Intel <sup>®</ sup> DLBoostおよびAVX-512命令セットを使用して推論ネットワークをアクセラレーションします。各プラットフォームのパフォーマンスデータについては、[Intel<sup>®</sup> OpenVINO™ツールキットベンチマークパフォーマンスデータ](https://docs.openvinotoolkit.org/latest/openvino_docs_performance_benchmarks_openvino.html)をご参照ください。
 
  #### Intel<sup>®</sup> Distribution of OpenVINO™ Toolkitディープラーニング開発キット（DLDT）の使用
  以下の資料をご参照ください

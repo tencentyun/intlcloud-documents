@@ -9,8 +9,8 @@
 ### 特徴
 
 - 異なるリージョン間のネットワークは完全に分離されており、異なるリージョン間のクラウド製品は、**デフォルトではプライベートネットワークを介して通信できません**。
-- 異なるリージョン間のクラウド製品は、[パブリックIP](https://intl.cloud.tencent.com/document/product/213/5224)を介してインターネットへアクセスする方式により相互に通信できます。異なるVPC内のクラウド製品は、より高速で安定した[Cloud Connect Network](https://intl.cloud.tencent.com/document/product/1003)を介して相互に通信できます。
-- [Cloud Load Balancer](https://intl.cloud.tencent.com/document/product/214 )は現在、デフォルトでは、同一リージョン内のトラフィック転送をサポートします。[リージョン間のバインディング](https://intl.cloud.tencent.com/document/product/214/38441)機能をアクティブにすると、Cloud Load BalancerとCVMのクロスリージョンバインディングがサポートされます。
+- 異なるリージョン間のクラウドサービスは、[パブリックIP](https://intl.cloud.tencent.com/document/product/213/5224) を介してInternet にアクセスする方式で通信を行うことができます。また異なるプライベートネットワークに属するクラウドサービスは、 [CCN](https://intl.cloud.tencent.com/document/product/1003) を介して通信を行うことができ、この通信方式の方がより高速で、安定しています。
+-[CLB](https://intl.cloud.tencent.com/document/product/214 ) は、現在、デフォルトで同一リージョンのトラフィック転送をサポートし、ローカルドメインのCVMをバインドします。 [クロスリージョンバインディング]（https://intl.cloud.tencent.com/document/product/214/38441）機能を有効にすることによって、CLBをサポートし、リージョン間でCVMをバインドすることができます。
 
 ## アベイラビリティーゾーン
 
@@ -21,7 +21,7 @@ APIインターフェースを介して、[アベイラビリティーゾーン�
 
 ### 特徴
 
-同じVPC内のクラウド製品は、プライベートネットワークを介して相互接続されているため、異なるアベイラビリティーゾーンにある場合でも、[プライベートIPアドレス](https://intl.cloud.tencent.com/document/product/213/5225)を直接使用してアクセスすることができます。
+同一リージョンで異なるアベイラビリティーゾーンに位置していても、同一のプライベートネットワーク下のクラウド製品はプライベートネットワークを介して相互接続されており、[プライベートIPアドレス](https://intl.cloud.tencent.com/document/product/213/5225)を使用して直接アクセスすることができます。
 >?プライベートネットワークの相互接続とは、同じアカウントでのリソースの相互接続を指します。異なるアカウントのリソースは、プライベートネットワークから完全に分離されています。
 >
 
@@ -34,7 +34,7 @@ APIインターフェースを介して、[アベイラビリティーゾーン�
 		<th>アベイラビリティーゾーン</th>
 	</tr>
 	<tr>
-		<td rowspan="5">華南地区（広州）<br> ap-guangzhou</td>
+		<td rowspan="6">華南地区（広州）<br> ap-guangzhou</td>
 		<td>広州1区（売り切れ）<br> ap-guangzhou-1</td>
 	</tr>	
 	<tr>
@@ -49,6 +49,9 @@ APIインターフェースを介して、[アベイラビリティーゾーン�
 	<tr>
 		<td>広州6区<br> ap-guangzhou-6</td>
 	</tr>
+	<tr>
+		<td>広州7区<br> ap-guangzhou-7</td>
+	</tr>
 		<td rowspan="5">華東地区（上海）<br>ap-shanghai</td>
 		<td>上海1区（売り切れ）<br>ap-shanghai-1</td>
 	</tr>
@@ -61,15 +64,18 @@ APIインターフェースを介して、[アベイラビリティーゾーン�
 	<tr>
 		<td>上海4区<br>ap-shanghai-4</td>
 	</tr>
-        <tr>
+    <tr>
 		<td>上海5区<br>ap-shanghai-5</td>
 	</tr>
-		<tr>
-			<td rowspan="2">華東地区（南京）<br>ap-nanjing</td>
+	<tr>
+			<td rowspan="3">華東地区（南京）<br>ap-nanjing</td>
 			<td>南京1区<br>ap-nanjing-1</td>
 	</tr>
 	<tr>
 			<td>南京2区<br>ap-nanjing-2</td>
+	</tr>
+	<tr>
+			<td>南京3区<br>ap-nanjing-3</td>
 	</tr>
 	<tr>
 			<td rowspan="7">華北地区（北京）<br>ap-beijing</td>
@@ -95,7 +101,7 @@ APIインターフェースを介して、[アベイラビリティーゾーン�
 	</tr>
 	<tr>
 		<td rowspan="2">西南地区（成都）<br>ap-chengdu</td>
-		<td>成都1区<br>ap-chengdu-1</td>
+			<td>成都1区<br>ap-chengdu-1</td>
 	</tr>
 	<tr>
 			<td>成都2区<br>ap-chengdu-2</td>
@@ -105,32 +111,30 @@ APIインターフェースを介して、[アベイラビリティーゾーン�
 			<td>重慶1区<br>ap-chongqing-1</td>
 	</tr>
 	<tr>
-			<td rowspan="3">香港・マカオ・台湾リージョン（中国香港）<br>ap-hongkong</td>
-			<td>香港1区（中国香港のノードは香港・マカオ・台湾地域をカバーできる）（売り切れ）<br>ap-hongkong-1</td>
+			<td rowspan="3">香港・マカオ・台湾地区（中国香港）<br>ap-hongkong</td>
+			<td>中国香港1区（中国香港のノードは中国香港・中国マカオ・中国台湾地域をカバーできる）（売り切れ）<br>ap-hongkong-1</td></tr>
 	</tr>
 	<tr>
 			<td>香港2区（中国香港のノードは香港・マカオ・台湾地域をカバーできる）<br>ap-hongkong-2</td>
 	</tr>
 	<tr>
-			<td>香港3区（中国香港のノードは香港・マカオ・台湾地域をカバーできる）<br>ap-hongkong-3</td>
+			<td>中国香港3区（中国香港のノードは中国香港・中国マカオ・中国台湾地域をカバーできる）<br>ap-hongkong-3</td>
 	</tr>
 </tbody>
 </table>	
 
-
 <span id="InternationalArea"></span>
 
 ## その他の国及び地域	
-
 <table class="table-striped">
 	<tbody>
-		<tr>
+	<tr>
 			<th>リージョン</th>
 			<th>アベイラビリティーゾーン</th>
 		</tr>
 		<tr>
-			<td  rowspan="3">東南アジア（シンガポール）<br>ap-singapore</td>
-			<td>シンガポール1区（シンガポールのノードは東南アジア地域をカバーできる）<br>ap-singapore-1</td>
+			<td  rowspan="3">東南アジアパシフィック（シンガポール）<br>ap-singapore</td>
+			<td>シンガポール1区（シンガポールノードは東南アジアパシフィック地域をカバーできる）<br>ap-singapore-1</td>
 		</tr>
 		<tr>
 			<td>シンガポール2区（シンガポールのノードは東南アジア地域をカバーできる）<br>ap-singapore-2</td>
@@ -139,33 +143,37 @@ APIインターフェースを介して、[アベイラビリティーゾーン�
 			<td>シンガポール3区（シンガポールのノードは東南アジア地域をカバーできる）<br>ap-singapore-3</td>
 		</tr>
 		<tr>
-			<td>東南アジア（ジャカルタ）<br>ap-jakarta</td>
+			<td>東南アジアパシフィック（ジャカルタ）<br>ap-jakarta</td>
 			<td>ジャカルタ1区（ジャカルタのノードは東南アジア地域をカバーできる）<br>ap-jakarta-1</td>
 		</tr>
 		<tr>
-			<td rowspan="2">北東アジア（ソウル）<br>ap-seoul</td>
+			<td  rowspan="2">北東アジア（ソウル）<br>ap-seoul</td>
 			<td>ソウル1区（ソウルのノードは北東アジア地域をカバーできる）<br>ap-seoul-1</td>
 		</tr>
 		<tr>
 			<td>ソウル2区（ソウルのノードは北東アジア地域をカバーできる）<br>ap-seoul-2</td>
 		</tr>
 		<tr>
-			<td rowspan="2">北東アジア（ソウル）<br>ap-seoul</td>
-			<td>東京１区（東京のノードは北東アジア地域をカバーできる）<br>ap-tokyo-1</td>
+			<td rowspan="2">北東アジア（東京）<br>ap-tokyo</td>
+			<td>東京1区（東京のノードアベイラビリティーゾーンは北東アジア地域をカバーする）<br>ap-tokyo-1</td>
 		</tr>
 		<tr>
-			<td>東京１区（東京のノードは北東アジア地域をカバーできる）<br>ap-tokyo-1</td>
+			<td>東京2区（東京のノードアベイラビリティーゾーンは北東アジア地域をカバーする）<br>ap-tokyo-2</td>
 		</tr>
-		<tr>
+       <tr>
 			<td  rowspan="2">南アジア太平洋（ムンバイ）<br>ap-mumbai</td>
 			<td>ムンバイ1区（ムンバイのノードは南アジア太平洋地域をカバーできる）<br>ap-mumbai-1</td>
 		</tr>
-		<tr>
+       <tr>
 			<td>ムンバイ2区（ムンバイのノードは南アジア太平洋地域をカバーできる）<br>ap-mumbai-2</td>
 		</tr>
 		<tr>
-		  	<td >東南アジア（バンコク）<br>ap-bangkok </td>
-				 <td >バンコク1区 （バンコクのノードは東南アジア地域をカバーできる）<br>ap-bangkok-1</td>
+		  	<td  rowspan="2">東南アジア（バンコク）<br>ap-bangkok </td>
+			<td >バンコク1区 （バンコクのノードユーザーは東南アジア地域をカバーする）<br>ap-bangkok-1</td>
+		</tr>
+		<tr>
+			<td >バンコク2区 （バンコクのノードユーザーは東南アジア地域をカバーする）<br>ap-bangkok-2</td>
+		</tr>
 		<tr>
 			<td>北米地域（トロント）<br>na-toronto</td>
 			<td>トロント1区（トロントのノードは北米地域をカバーできる）<br>na-toronto-1</td>
@@ -174,7 +182,7 @@ APIインターフェースを介して、[アベイラビリティーゾーン�
 			<td rowspan="2">米国西部（シリコンバレー）<br>na-siliconvalley</td>
 			<td>リコンバレー1区（シリコンバレーノードは米国西部をカバーできる）<br>na-siliconvalley-1</td>
 		</tr>
-		<tr>
+    <tr>
 			<td>リコンバレー1区（シリコンバレーのノードは米国西部をカバーできる）<br>na-siliconvalley-2</td>
 		</tr>
 		<tr>
@@ -185,8 +193,11 @@ APIインターフェースを介して、[アベイラビリティーゾーン�
 			<td>バージニア2区 （バージニアのノードは米国東部をカバーできる）<br>na-ashburn-2</td>
 		</tr>
 		<tr>
-			<td>欧州リージョン（フランクフルト）<br>eu-frankfurt</td>
+			<td rowspan="2">欧州地区（フランクフルト）<br>eu-frankfurt</td>
 			<td>フランクフルト1区（フランクフルトのノードはヨーロッパ地域をカバーできる）<br>eu-frankfurt-1</td>
+		</tr>
+		<tr>
+			<td>フランクフルト2区（フランクフルトのノードはヨーロッパ地域をカバーできる）<br>eu-frankfurt-2</td>
 		</tr>
 		<td >欧州リージョン（モスクワ）<br>eu-moscow</td>
 		<td>モスクワ1区（モスクワのノードはヨーロッパ地域をカバーできる）<br>eu-moscow-1</td>
@@ -208,13 +219,9 @@ VPCが1つしかない場合でも、単一障害点が生じることを回避�
 
 ## リソースの可用性
 次の表は、グローバル、リージョン、アベイラビリティーゾーンに固有のTencent Cloudリソースを示しています。
+
 <table>
-<tr>
-	<th>リソース</th>
-	<th>リソース ID形式<br><リソースの略語>-8桁の数字と文字</th>
-	<th>タイプ</th>
-	<th>説明</th>
-</tr>
+	<tr><th>リソース</th><th>リソース ID形式<br><リソースの略語>-8桁の数字と文字</th><th>タイプ</th><th>説明</th></tr>
 	<tbody>
 	<tr>
 	  <td>ユーザーアカウント</td>
@@ -253,7 +260,7 @@ VPCが1つしかない場合でも、単一障害点が生じることを回避�
 	  <td>セキュリティグループは、同じリージョン内のインスタンスにのみ関連付けることができます。Tencent Cloudは、ユーザーに3つのデフォルトのセキュリティグループを自動的に作成します。</td>
 	</tr>
 	<tr>
-	  <td> <a href="https://intl.cloud.tencent.com/document/product/362">Cloud Block Storage</a> </td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/362">Cloud Block Storage</a> </td>
 	  <td>disk-xxxxxxxx</td>
 	  <td>単一リージョンの単一のアベイラビリティーゾーンでのみ利用可能</td>
 	  <td>ユーザーは、特定のアベイラビリティーゾーンでのみCloud Block Storageを作成でき、また、同じアベイラビリティーゾーンのインスタンスにマウントできます。</td>
@@ -265,25 +272,25 @@ VPCが1つしかない場合でも、単一障害点が生じることを回避�
 	  <td>特定のCloud Block Storageにスナップショットを作成した後、ユーザーは対象リージョンで作成されたスナップショットを使用して、他の操作（クラウドディスクの作成など）を行うことができます。</td>
 	</tr>
 	<tr>
-	  <td><a href="https://intl.cloud.tencent.com/document/product/214/524?from_cn_redirect=1">Cloud Load Balancer</a> </td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/214/524?from_cn_redirect=1">Cloud Load Balancer</a> </td>
 	  <td>clb-xxxxxxxx</td>
 	  <td>単一リージョンの複数のアベイラビリティーゾーンで利用可能</td>
 	  <td>Cloud Load Balancerは、同じリージョン内の異なるアベイラビリティーゾーンのCVMにバインドして、トラフィックを転送することができます。</td>
 	</tr>
 	<tr>
-	  <td> <a href="https://intl.cloud.tencent.com/document/product/215/535">Virtual Private Cloud</a> </td>
+	<td> <a href="https://intl.cloud.tencent.com/document/product/215/535">Virtual Private Cloud</a> </td>
 	  <td>vpc-xxxxxxxx</td>
 	  <td>単一リージョンの複数のアベイラビリティーゾーンで利用可能</td>
 	  <td>VPCは特定のリージョンに作成され、異なるアベイラビリティーゾーンで同じVPCに属するリソースを作成できます。</td>
 	</tr>
 	<tr>
-	  <td> <a href="https://intl.cloud.tencent.com/document/product/215/535#.E5.AD.90.E7.BD.91">サブネット</a> </td>
+	<<td> <a href="https://intl.cloud.tencent.com/document/product/215/535#.E5.AD.90.E7.BD.91">サブネット</a> </td>
 	  <td>subnet-xxxxxxxx</td>
-	  <td>単一のアベイラビリティーゾーンでのみ利用可能</td>
+	  <td>単一リージョンの単一のアベイラビリティーゾーンでのみ利用可能</td>
 	  <td>ユーザーは、異なるアベイラビリティーゾーン間でサブネットを作成することができません。</td>
 	</tr>
 	<tr>
-	  <td><a href="https://intl.cloud.tencent.com/document/product/215/31810"> ルーティングテーブル</a> </td>
+	<td><a href="https://intl.cloud.tencent.com/document/product/215/31810"> ルーティングテーブル</a> </td>
 	  <td>rtb-xxxxxxxx</td>
 	  <td>単一リージョンの複数のアベイラビリティーゾーンで利用可能</td>
 	  <td>ユーザーは、ルーティングテーブルを作成するときに特定のVPCを指定する必要があります。</td>
@@ -297,9 +304,9 @@ VPCが1つしかない場合でも、単一障害点が生じることを回避�
 ### インスタンスを他のアベイラビリティーゾーンに移行する
 
 すでに起動されたインスタンスは、アベイラビリティーゾーンを変更できませんが、ユーザは他の方法でインスタンスを他のアベイラビリティーゾーンに移行させることができます。元のインスタンスからカスタムイメージを作成し、カスタムイメージを使用して新しいアベイラビリティーゾーンでインスタンスを起動し、新しいインスタンスの設定を更新します。
-1. 現在のインスタンスからカスタムイメージを作成します。詳細については、[カスタムイメージ](https://intl.cloud.tencent.com/document/product/213/4942)をご参照ください。
-2. 現在のインスタンスのネットワーク環境が[Virtual Private Cloud](https://intl.cloud.tencent.com/document/product/213/5227)であり、また、移行後も現在のプライベートIPアドレスを保持する必要がある場合、ユーザは現在のアベイラビリティーゾーン内のサブネットを削除してから、同じIPアドレス範囲で新しいアベイラビリティーゾーンにサブネットを作成します。サブネットは、使用可能なインスタンスが含まれていない場合にのみ削除できることに注意してください。そのため、現在のサブネット内のすべてのインスタンスを新しいサブネットに移行する必要があります。
-3. さきほど作成したカスタムイメージを使用して、新しいアベイラビリティーゾーンに新しいインスタンスを作成します。ユーザは、元のインスタンスと同じタイプと設定を選択できるか、新しいインスタンスタイプと設定を選択できます。詳細については、[インスタンスの作成](https://intl.cloud.tencent.com/document/product/213/4855)をご参照ください。
+1.現在のインスタンスのカスタムイメージを作成します。詳細については、[カスタムイメージの作成](https://intl.cloud.tencent.com/document/product/213/4942)をご参照ください。
+2. 現在のインスタンスの [ネットワーク環境](https://intl.cloud.tencent.com/document/product/213/5227) がプライベートネットワークであり、かつ移行後も現在のプライベートIPアドレスを保持する必要がある場合、ユーザーはまず現在のアベイラビリティーゾーンのサブネットを削除し、その後、新しいアベイラビリティーゾーンに元のサブネットと同一のIPアドレスの範囲でサブネットを作成することができます。削除できるのは、使用可能なインスタンスを含まないサブネットのみであることに注意する必要があります。以上より、現在のサブネット内のすべてのインスタンスを新しいサブネットに移動する必要があります。
+3. 作成したカスタムイメージを使用して、新しいアベイラビリティーゾーンに新しいインスタンスを作成します。ユーザーは、元のインスタンスと同一のインスタンスタイプと設定を選択することも、新しいインスタンスタイプと設定を選択することもできます。詳細については、[インスタンスの作成](https://intl.cloud.tencent.com/document/product/213/4855)をご参照ください。
 4. 元のインスタンスがすでにElastic IPアドレスに関連付けられている場合、古いインスタンスとの関連付けを解除してから、新しいインスタンスに関連付ける必要があります。詳細については、[EIP](https://intl.cloud.tencent.com/document/product/213/5733)をご参照ください。
 5. （オプション）元のCVMインスタンスが[従量課金](https://intl.cloud.tencent.com/document/product/213/2180)タイプの場合、元のインスタンスを終了することができます。詳細については、[インスタンスの終了](https://intl.cloud.tencent.com/document/product/213/4930)をご参照ください。
 
