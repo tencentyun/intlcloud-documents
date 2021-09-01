@@ -13,12 +13,12 @@ You can use the MLVB SDK’s publishing feature together with LVB and LEB to qui
 
 After activating CSS, you can generate your own publishing and playback URLs in the format required by Tencent Cloud. With publishing and playback URLs, plus the RTMP SDK provided by MLVB that allows **quick integration**, you can quickly equip your application with live streaming capabilities.
 
-![](https://main.qcloudimg.com/raw/eb48f164da788994ac5d3cf9d8879de0.svg)
+![](https://main.qcloudimg.com/raw/b1fb3290f2c93291ac8ab01f30d0eb75.png)
 
 ### Integrated solution
 
 If you want to integrate a complete set of live streaming features into your application, please see [Trial Demo](https://intl.cloud.tencent.com/document/product/1071/38147).
 
 Built on Tencent Cloud's basic services including CSS, VOD, IM, and COS, Cloud Video Toolkit provides common live streaming features such as text chat, on-screen comment, like giving and heart sending, beauty filters, skinned meshes, co-anchoring, and identity authentication. All the features are designed as stackable modules, which you can assemble as you like to build a prototype for your live streaming application in as short as 1 day.
-![](https://main.qcloudimg.com/raw/930213e24a2175db8d9309603c6f8bf4.svg)
+![](https://main.qcloudimg.com/raw/8f8232368b4cf0aa728c268cb4fa2f43.png)
 
