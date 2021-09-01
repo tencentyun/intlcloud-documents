@@ -1,7 +1,7 @@
 This document describes how to bind an ENI to a CVM.
 >?
->+ If your CVM is based on a CentOS 8.0, 7.8, 7.6, 7.5 or 7.4 image, you can directly refer to the “Method 1: tool-based configuration” section in the [Configuring an ENI on a Linux CVM](https://cloud.tencent.com/document/product/576/59353). Namely, you need to install the tool before binding an ENI. Then, the ENI information will be automatically configured in the ENI file, and the routing policy will be automatically distributed.
->+ If your CVM is based on another type of image, bind an ENI to the CVM as instructed below. And then, [configure it on a Linux CVM](https://cloud.tencent.com/document/product/576/59353) or [a Windows CVM](https://cloud.tencent.com/document/product/576/59354).
+>+ If your CVM is based on a CentOS 8.0, 7.8, 7.6, 7.5 or 7.4 image, you can directly refer to the “Method 1: tool-based configuration” section in the [Configuring an ENI on a Linux CVM](https://intl.cloud.tencent.com/document/product/576/41744). Namely, you need to install the tool before binding an ENI. Then, the ENI information will be automatically configured in the ENI file, and the routing policy will be automatically distributed.
+>+ If your CVM is based on another type of image, bind an ENI to the CVM as instructed below. And then, [configure it on a Linux CVM](https://intl.cloud.tencent.com/document/product/576/41744) or [a Windows CVM](https://intl.cloud.tencent.com/document/product/576/41745).
 
 ## Binding a CVM
 1. Log in to the [VPC console](https://console.cloud.tencent.com/vpc).
