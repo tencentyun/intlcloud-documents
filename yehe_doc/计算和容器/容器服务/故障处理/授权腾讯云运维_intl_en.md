@@ -70,13 +70,12 @@ subjects:
 1. Names and labels should be created according to above rules
 2. roleRef can be replaced with the permissions you want to grant to Tencent Cloud OPS team
 
-#### Optional: ClusterRole/Role: specifies the permission to be granted to Tencent Cloud OPS team. If there is relevant ClusterRole/Role in the cluster, you can use ClusterRoleBinding/RoleBinding to associate.
+#### (Optional) ClusterRole/Role specifies the permission to be granted to Tencent Cloud OPS team
 
-Policies will be created automatically if you authorize through console.
+If there is relevant ClusterRole/Role in the cluster, you can use ClusterRoleBinding/RoleBinding to associate.Policies will be created automatically if you authorize through console.
 
-Admin Permissions:
-
-```yaml
+<dx-codeblock>
+:::Admin\sPermissions
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRole
 metadata:
@@ -94,12 +93,8 @@ rules:
   - '*'
   verbs:
   - '*'
-
-```
-
-Read-only Permissions:
-
-```yaml
+:::
+:::Read-only\sPermissions
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRole
 metadata:
@@ -283,6 +278,6 @@ rules:
   - get
   - list
   - watch
-
-```
+:::
+</dx-codeblock>
 
