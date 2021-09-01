@@ -13,7 +13,7 @@ If the CVM is provided with DHCP, you can view its secondary ENI and IP by follo
 
 ### DHCP not set
 If the CVM is not provided with DHCP, you need to configure the private IP by following the steps below:
-1. Log in to the [Tencent Cloud console](https://console.cloud.tencent.com) and [bind the ENI to a CVM]#.E7.BB.91.E5.AE.9A.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8).
+1. Log in to the [Tencent Cloud console](https://console.cloud.tencent.com) and [bind the ENI to a CVM](#.E7.BB.91.E5.AE.9A.E4.BA.91.E6.9C.8D.E5.8A.A1.E5.99.A8).
 2. Log in to the CVM and select **Control Panel** -> **Network and Internet** -> **Network and Sharing Center**.
 3. Click to edit the “Ethernet 2” secondary ENI.
 4. In the **Ethernet 2 Status** pop-up window, click **Properties**.
