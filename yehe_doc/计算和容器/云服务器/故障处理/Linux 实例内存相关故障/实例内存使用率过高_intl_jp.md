@@ -49,7 +49,7 @@ cat /proc/meminfo | grep -iE "HugePages_Total|Hugepagesize"
 メモリ監視でのメモリ使用率は、バッファとシステムキャッシュによって占有されているコンテンツを除いた、メモリの合計量に対するユーザーが使用したメモリ量の比率として計算します。計算プロセスは次のとおりです。
 = `(Total - available)100% / Total`
 = `(Total - (Free + Buffers + Cached + SReclaimable - Shmem))100% /Total`
-= `(Total - Free - Buffers - Cached - SReclaimable + Shmem)* 100% / Total`
+= `(Total - Free - Buffers - Cached - SReclaimable + Shmem）* 100% / Total`
 
 計算プロセスで使用される`Total`、`Free`、`Buffer`、`Cached`、`SReclaimable`および`Shmem`のパラメータは、`/proc/meminfo`から取得できます。`/proc/meminfo`の例は次のとおりです。
 ```plaintext
