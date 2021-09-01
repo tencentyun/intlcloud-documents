@@ -37,5 +37,6 @@
 ![](https://main.qcloudimg.com/raw/3950c4c7e945b378cfa4b5819ecf04cc.png)
 6. 单击【确定】添加规则。
 >! 精细化的规则优先级高于高防包实例全局维度下的规则。
+
 7. 新建完成后 CC 防护域名列表中，将新增一条 CC 防护域名规则，可以在右侧操作栏，单击【配置】，修改 CC 防护域名等级和清洗阈值。
 ![](https://main.qcloudimg.com/raw/1b3bf38ff4b057308be7441e8f855bb4.png)
