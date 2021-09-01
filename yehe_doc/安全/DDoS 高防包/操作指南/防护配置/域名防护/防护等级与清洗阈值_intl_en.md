@@ -37,5 +37,6 @@ You have successfully purchased an [Anti-DDoS Pro](https://intl.cloud.tencent.co
 ![](https://main.qcloudimg.com/raw/3950c4c7e945b378cfa4b5819ecf04cc.png)
 6. Click **OK** to add the rule.
 >! Refined rules take precedence over rules at the Anti-DDoS Pro instance dimension.
+
 7. Now a CC protection domain name rule is added to the CC protection domain name list. You can click **Configuration** on the right of the rule to modify the CC protection level and cleansing threshold.
 ![](https://main.qcloudimg.com/raw/1b3bf38ff4b057308be7441e8f855bb4.png)
