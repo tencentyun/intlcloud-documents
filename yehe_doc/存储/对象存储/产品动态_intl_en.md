@@ -14,7 +14,7 @@
 <td>Launched Diagnostic Tool</td>
 <td>A web tool for troubleshooting error requests</td>
 <td> 2021-05-27</td>
-<td><a href="https://cloud.tencent.com/document/product/436/57576">Diagnostic Tool</a>
+<td>Diagnostic Tool</a>
 </tr>
 <tr>
 <td>Launched CDN Log Backup</td>
@@ -76,7 +76,7 @@
 <td>Launched Cloud Database Backup</td>
 <td>An SCF-based feature that helps save TencentDB backups to COS to avoid data loss or corruption.</td>
 <td>2021-02-02</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/41112">Setting Cloud Database Backup</a>
+<td>Setting Cloud Database Backup</a>
 </tr>
 </tbody></table>
 
