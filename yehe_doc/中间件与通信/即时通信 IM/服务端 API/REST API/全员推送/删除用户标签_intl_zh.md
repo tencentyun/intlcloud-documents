@@ -8,17 +8,14 @@
 ```
 https://xxxxxx/v4/all_member_push/im_remove_tag?usersig=xxx&identifier=admin&sdkappid=88888888&random=99999999&contenttype=json
 ```
-其中 `xxxxxx` 是各国家/地区的专属域名，请填写您的 SDKAppID 所在国家/地区对应的专属域名：  
 
-| 国家/地区   | 专属域名|
-| ----- | ----- |
-| 新加坡 | adminapisgp.im.qcloud.com      |
 
 ### 请求参数说明
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
-| https              | 请求协议为 HTTPS，请求方式为 POST       |
+| https   | 请求协议为 HTTPS，请求方式为 POST       |
+| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com` |
 | v4/all_member_push/im_remove_tag  | 请求接口                       |
 | usersig            | App 管理员帐号生成的签名，参见 [UserSig 后台 API](https://intl.cloud.tencent.com/document/product/1047/34385)                            |
 | identifier         | 必须为 App 管理员帐号                |
