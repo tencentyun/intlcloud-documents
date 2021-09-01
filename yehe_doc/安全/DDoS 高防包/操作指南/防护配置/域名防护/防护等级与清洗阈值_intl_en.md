@@ -15,7 +15,7 @@ This level applies to more complex CC attacks. It will run checks on all visitor
 >!
 >- The protection algorithms used at the above three CC protection levels are only applicable to webpages and HMTL5 pages.
 >- False blocking is highly likely to occur in a visited website for API or native app businesses, as requests to the website cannot pass the verification.
->- To protect your API or native app business from CC attacks, please [contact us](https://cloud.tencent.com/online-service?from=connect-us) to customize protection policies.
+>- To protect your API or native app business from CC attacks, please [contact us](https://intl.cloud.tencent.com/contact-us) to customize protection policies.
 
 ## Prerequisites
 You have successfully purchased an [Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029/36115) instance and set the protected target.
