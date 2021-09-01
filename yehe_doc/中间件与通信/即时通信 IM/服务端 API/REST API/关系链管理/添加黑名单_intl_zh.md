@@ -1,11 +1,20 @@
 ## 功能说明
-删除指定黑名单。
+
+添加黑名单，支持批量添加黑名单。
+>!
+>- 如果用户 A 与用户 B 之间存在好友关系，拉黑时会解除双向好友关系。
+>- 如果用户 A 与用户 B 之间存在黑名单关系，二者之间无法发起加好友请求。
+>- 如果用户 A 的黑名单中有用户 B 且用户 B 的黑名单中有用户 A，二者之间无法发起会话。
+>- 如果用户 A 的黑名单中有用户 B 但用户 B 的黑名单中没有用户 A，那么用户 A 可以给用户 B 发消息，用户 B 不能给用户 A 发消息。
 
 ## 接口调用说明
-### 请求 URL 示例
+
+### 请求 URL示例
 ```
-https://xxxxxx/v4/sns/black_list_delete?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/sns/black_list_add?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
+
+
 ### 请求参数说明
 
 下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
@@ -14,7 +23,7 @@ https://xxxxxx/v4/sns/black_list_delete?sdkappid=88888888&identifier=admin&users
 | ------------------ | ------------------------------------ |
 | https   | 请求协议为 HTTPS，请求方式为 POST       |
 | xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com` |
-| v4/sns/black_list_delete  | 请求接口                             |
+| v4/sns/black_list_add  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
@@ -28,18 +37,17 @@ https://xxxxxx/v4/sns/black_list_delete?sdkappid=88888888&identifier=admin&users
 
 ```
 {
- "From_Account":"id",
- "To_Account":["id1","id2","id3"]
+	"From_Account":"id",
+	"To_Account":["id1","id2","id3"]
 }
 ```
-
 
 ### 请求包字段说明
 
 |字段|类型|属性|说明|
-|----|----|----|-----|
-| From_Account  | String  |  必填 | 需要删除该 UserID 的黑名单  |
-| To_Account  |  Array | 必填  |  待删除的黑名单的 UserID 列表，单次请求的 To_Account 数不得超过1000 |
+|--- |--- |--- |--- |
+|From_Account|String|必填|请求为该 UserID 添加黑名单|
+|To_Account|Array|必填|待添加为黑名单的用户 UserID 列表，单次请求的 To_Account 数不得超过1000|
 
 ### 应答包体示例
 
@@ -54,16 +62,16 @@ https://xxxxxx/v4/sns/black_list_delete?sdkappid=88888888&identifier=admin&users
 		},
 		{
 			"To_Account":"id2",
-			"ResultCode":0,
-			"ResultInfo":""
+			"ResultCode":30001,
+			"ResultInfo":"Err_SNS_BlackListAdd_Already_Exist"
 		},
 		{
 			"To_Account":"id3",
-			"ResultCode":30006,
-			"ResultInfo":"Err_SNS_BlackListCheck_Check_Reverse_BlackList_Fail"
+			"ResultCode":30002,
+			"ResultInfo":"Err_SNS_BlackListAdd_SdkAppId_Illegal"
 		}
 	],
-	"Fail_Account":["id3"],
+	"Fail_Account":["id2","id3"],
 	"ActionStatus":"OK",
 	"ErrorCode":0,
 	"ErrorInfo":"",
@@ -73,37 +81,38 @@ https://xxxxxx/v4/sns/black_list_delete?sdkappid=88888888&identifier=admin&users
 
 ### 应答包字段说明
 
-| 字段 | 类型 |说明|
-|----|----|-----|
-| ResultItem|	Array	|批量删除黑名单的结果对象数组|
-| To_Account|	String	|请求删除的黑名单的 UserID|
-| ResultCode|	Integer	|To_Account 的处理结果，0表示成功，非0表示失败，非0取值的详细描述请参见 [错误码说明](#ErrorCode)|
-| ResultInfo|	String|	To_Account 的错误描述信息，成功时该字段为空|
-| Fail_Account|Array|返回处理失败的用户列表，仅当存在失败用户时才返回该字段|
-| ActionStatus	|String| 请求包的处理结果，OK 表示处理成功，FAIL 表示失败 |
+|字段|类型|说明|
+|--- |--- |--- |
+|ResultItem|Array|批量添加黑名单的结果对象数组|
+|To_Account|String|请求添加为黑名单的用户 UserID|
+|ResultCode|Integer|To_Account 的处理结果，0表示成功，非0表示失败，非0取值的详细描述请参见 [错误码说明](#ErrorCode)|
+|ResultInfo|	String|	To_Account 的错误描述信息，成功时该字段为空|
+|Fail_Account|Array|返回处理失败的用户列表，仅当存在失败用户时才返回该字段|
+|ActionStatus|String|请求包的处理结果，OK 表示处理成功，FAIL 表示失败|
 | ErrorCode|	Integer	|错误码，0表示成功，非0表示失败，非0取值的详细描述请参见 [错误码说明](#ErrorCode) |
-| ErrorInfo	|String| 详细错误信息 |
-| ErrorDisplay|	String| 详细的客户端展示信息 |
+|ErrorInfo|String|详细错误信息|
+|ErrorDisplay|String|详细的客户端展示信息|
 
 <span id="ErrorCode"></span>
-### 错误码说明
-
+## 错误码说明
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。实际的错误码、错误信息是通过应答包体中的 ResultCode、ResultInfo、ErrorCode 以及 ErrorInfo 来表示的。
-公共错误码（60000到79999）请参见 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348) 文档。
+公共错误码（60000到79999）请参见 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348)。
 本 API 私有错误码如下：
 
 | 错误码 | 描述                                                         |
 | ------ | ------------------------------------------------------------ |
 | 30001  | 请求参数错误，请根据错误描述检查请求参数                     |
+| 30002  | SDKAppID 不匹配                                              |
 | 30003  | 请求的用户帐号不存在                                         |
 | 30004  | 请求需要 App 管理员权限                                      |
 | 30006  | 服务器内部错误，请重试                                       |
 | 30007  | 网络超时，请稍后重试                                         |
 | 30008  | 并发写导致写冲突，建议使用批量方式                           |
+| 30013  | 黑名单数已达系统上限                                         |
 
 
 ## 接口调试工具
-通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/sns/black_list_delete) 调试本接口。
+通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/sns/black_list_add) 调试本接口。
 
 ## 参考
 
@@ -112,4 +121,5 @@ https://xxxxxx/v4/sns/black_list_delete?sdkappid=88888888&identifier=admin&users
 - 校验黑名单（<a href="https://intl.cloud.tencent.com/document/product/1047/34913">v4/sns/black_list_check</a>）
 
 ## 可能触发的回调
-<a href="https://intl.cloud.tencent.com/document/product/1047/34362">删除黑名单之后回调</a>
+
+<a href="https://intl.cloud.tencent.com/document/product/1047/34361">添加黑名单之后回调</a>

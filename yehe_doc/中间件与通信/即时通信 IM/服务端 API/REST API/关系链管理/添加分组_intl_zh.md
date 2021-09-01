@@ -4,13 +4,17 @@
 ## 接口调用说明
 ### 请求 URL示例
 ```
-https://console.tim.qq.com/v4/sns/group_add?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/sns/group_add?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
+
+
 ### 请求参数说明
 下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
+| https   | 请求协议为 HTTPS，请求方式为 POST       |
+| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com` |
 | v4/sns/group_add  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
@@ -42,9 +46,9 @@ https://console.tim.qq.com/v4/sns/group_add?sdkappid=88888888&identifier=admin&u
 
 |字段|	类型|	属性|	说明|
 |----|-----|------|-----|
-|From_Account|	String|	必填| 需要为该 UserID 添加新分组 |
+|From_Account|	String|	必填| 需要为该 Identifier 添加新分组 |
 |GroupName	|Array|	必填| 新增分组列表 |
-|To_Account	|Array	|选填| 需要加入新增分组的好友的 UserID 列表 |
+|To_Account	|Array	|选填| 需要加入新增分组的好友的 Identifier 列表 |
 
 ### 应答包体示例
 - **基础形式**
@@ -78,7 +82,8 @@ https://console.tim.qq.com/v4/sns/group_add?sdkappid=88888888&identifier=admin&u
             "ResultInfo": "ERR_SDKAPPID_ILLEGAL"
         }
     ],
-    "Fail_Account":["id2","id3"],
+    "Fail_Account": ["id1"],
+    "Invalid_Account": ["id3"],
     "CurrentSequence": 3,
     "ActionStatus": "OK",
     "ErrorCode": 0,
@@ -92,21 +97,21 @@ https://console.tim.qq.com/v4/sns/group_add?sdkappid=88888888&identifier=admin&u
 |字段|	类型	|说明|
 |-----|-------|------|
 |ResultItem|	Array	|好友加入新增分组的结果对象数组|
-|To_Account|	String	|请求加入新分组的好友的 UserID|
-|ResultCode|	Integer	|To_Account 的处理结果，0表示成功，非0表示失败，非0取值的详细描述请参见 [错误码说明](#ErrorCode)|
+|To_Account|	String	|请求加入新分组的好友的 Identifier|
+|ResultCode|	Integer	|To_Account 的处理结果，0表示成功，非0表示失败|
 |ResultInfo|	String|	To_Account 的错误描述信息，成功时该字段为空|
 |Fail_Account|Array|返回处理失败的用户列表，仅当存在失败用户时才返回该字段|
+|Invalid_Account|Array |返回 SDKAppID 不匹配的非法用户列表，仅当存在非法用户时才返回该字段|
 |CurrentSequence|	Integer	|返回最新的分组 Sequence|
-|ActionStatus	|String| 请求处理的结果，OK 表示处理成功，FAIL 表示失败 |
-|ErrorCode|	Integer	|错误码，0表示成功，非0表示失败，非0取值的详细描述请参见 [错误码说明](#ErrorCode) |
+|ActionStatus	|String| 请求处理的结果，“OK” 表示处理成功，“FAIL” 表示失败 |
+|ErrorCode|	Integer	|错误码，0表示成功，非0表示失败 |
 |ErrorInfo|	String| 详细错误信息 |
 |ErrorDisplay|	String| 详细的客户端展示信息 |
 
-<span id="ErrorCode"></span>
 ## 错误码说明
 
-除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。实际的错误码、错误信息是通过应答包体中的 ResultCode、ResultInfo、ErrorCode 以及 ErrorInfo 来表示的。
-公共错误码（60000到79999）请参见 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348)。
+除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200；真正的错误码、错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
+公共错误码（60000到79999）参见 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348) 文档。
 本 API 私有错误码如下：
 
 | 错误码 | 描述                                                         |
@@ -122,7 +127,7 @@ https://console.tim.qq.com/v4/sns/group_add?sdkappid=88888888&identifier=admin&u
 | 30011  | 分组已达系统上限                                             |
 
 ## 接口调试工具
-通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/sns/group_add)  调试本接口。
+通过 [REST API 在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/sns/group_add) 调试本接口。
 
 ## 参考
 删除分组（<a href="https://intl.cloud.tencent.com/document/product/1047/34926">v4/sns/group_delete</a>）

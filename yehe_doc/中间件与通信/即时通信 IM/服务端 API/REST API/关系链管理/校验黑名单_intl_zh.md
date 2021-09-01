@@ -4,14 +4,18 @@
 ## 接口调用说明
 ### 请求 URL示例
 ```
-https://console.tim.qq.com/v4/sns/black_list_check?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/sns/black_list_check?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
+
+
 ### 请求参数说明
 
 下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
+| https   | 请求协议为 HTTPS，请求方式为 POST       |
+| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com` |
 | v4/sns/black_list_check  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
@@ -35,8 +39,8 @@ https://console.tim.qq.com/v4/sns/black_list_check?sdkappid=88888888&identifier=
 
 | 字段 |	类型	|属性|	说明|
 |-----|----|---|-----|
-|From_Account|	String	|必填| 需要校验该 UserID 的黑名单 |
-|To_Account|	Array	|必填| 待校验的黑名单的 UserID 列表，单次请求的 To_Account 数不得超过1000 |
+|From_Account|	String	|必填| 需要校验该 Identifier 的黑名单 |
+|To_Account|	Array	|必填| 待校验的黑名单的 Identifier 列表，单次请求的 To_Account 数不得超过1000 |
 |CheckType|	String|	必填| 校验模式，详情可参见 <a href="https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.A1.E9.AA.8C.E9.BB.91.E5.90.8D.E5.8D.95">校验黑名单 |
 
 ### 应答包体示例
@@ -89,19 +93,20 @@ https://console.tim.qq.com/v4/sns/black_list_check?sdkappid=88888888&identifier=
 |字段|	类型	|说明|
 |----|----|-----|
 | BlackListCheckItem|	Array	|校验结果对象数组|
-| To_Account|	String	|请求校验的用户的 UserID|
+| To_Account|	String	|请求校验的用户的 Identifier|
 | Relation	|String| 校验成功时 To_Account 与 From_Account 之间的黑名单关系，详情可参见 <a href="https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.A1.E9.AA.8C.E9.BB.91.E5.90.8D.E5.8D.95">校验黑名单</a> |
-| ResultCode	|Integer	|To_Account 的处理结果，0表示成功，非0表示失败，非0取值的详细描述请参见 [错误码说明](#ErrorCode)|
+| ResultCode	|Integer	|To_Account 的处理结果，0表示成功，非0表示失败|
+| ResultInfo|	String|	To_Account 的错误描述信息，成功时该字段为空|
 | Fail_Account|Array|返回处理失败的用户列表，仅当存在失败用户时才返回该字段|
-| ActionStatus|	String| 请求包的处理结果，OK 表示处理成功，FAIL 表示失败 |
-| ErrorCode|	Integer	|错误码，0表示成功，非0表示失败，非0取值的详细描述请参见 [错误码说明](#ErrorCode) |
+| ActionStatus|	String| 请求包的处理结果，“OK” 表示处理成功，“FAIL” 表示失败 |
+| ErrorCode|	Integer	|错误码，0表示成功，非0表示失败 |
 | ErrorInfo	|String| 详细错误信息 |
 | ErrorDisplay|	String| 详细的客户端展示信息 |
 
-<span id="ErrorCode"></span>
+
 ## 错误码说明
-除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。实际的错误码、错误信息是通过应答包体中的 ResultCode、ResultInfo、ErrorCode 以及 ErrorInfo 来表示的。
-公共错误码（60000到79999）请参见 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348) 文档。
+除非发生网络错误（例如502错误），该接口的 HTTP 返回码均为200；真正的错误码、错误信息是通过应答包体中的 ErrorCode、ErrorInfo 来表示的。
+公共错误码（60000到79999）参见 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348) 文档。
 本 API 私有错误码如下：
 
 | 错误码 | 描述                                                         |
@@ -113,7 +118,7 @@ https://console.tim.qq.com/v4/sns/black_list_check?sdkappid=88888888&identifier=
 | 30007  | 网络超时，请稍后重试                                         |
 
 ## 接口调试工具
-通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/sns/black_list_check)  调试本接口。
+通过 [REST API 在线调试工具](https://avc.cloud.tencent.com/im/APITester/APITester.html#v4/sns/black_list_check) 调试本接口。
 
 ## 参考
 - 删除黑名单（<a href="https://intl.cloud.tencent.com/document/product/1047/34912">v4/sns/black_list_delete</a>）

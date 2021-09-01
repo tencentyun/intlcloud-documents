@@ -1,12 +1,13 @@
 ## 功能说明
--  支持批量导入单向好友。
--  往同一个用户导入好友时建议采用批量导入的方式，避免并发写导致的写冲突。
+添加好友，支持批量添加好友。
 
 ## 接口调用说明
 ### 请求 URL 示例
 ```
-https://xxxxxx/v4/sns/friend_import?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/sns/friend_add?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
+
+
 ### 请求参数说明
 下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
@@ -14,7 +15,7 @@ https://xxxxxx/v4/sns/friend_import?sdkappid=88888888&identifier=admin&usersig=x
 | ------------------ | ------------------------------------ |
 | https   | 请求协议为 HTTPS，请求方式为 POST       |
 | xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com` |
-| v4/sns/friend_import  | 请求接口                             |
+| v4/sns/friend_add  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98)                |
 | usersig            | App 管理员帐号生成的签名，具体操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)    |
@@ -26,7 +27,6 @@ https://xxxxxx/v4/sns/friend_import?sdkappid=88888888&identifier=admin&usersig=x
 200次/秒。
 
 ### 请求包示例
-
 - **基础形式**
 ```
 {
@@ -40,6 +40,7 @@ https://xxxxxx/v4/sns/friend_import?sdkappid=88888888&identifier=admin&usersig=x
     ]
 }
 ```
+
 - **完整形式**
 ```
 {
@@ -49,27 +50,15 @@ https://xxxxxx/v4/sns/friend_import?sdkappid=88888888&identifier=admin&usersig=x
         {
             "To_Account":"id1",
             "Remark":"remark1",
-            "RemarkTime":1420000001,
-            "GroupName":["朋友"],
+            "GroupName":"同学", // 添加好友时只允许设置一个分组，因此使用 String 类型即可
             "AddSource":"AddSource_Type_XXXXXXXX",
-            "AddWording":"I'm Test1",
-            "AddTime":1420000001,
-            "CustomItem":
-            [
-                {
-                    "Tag":"Tag_SNS_Custom_XXXX",
-                    "Value":"Test"
-                },
-                {
-                    "Tag":"Tag_SNS_Custom_YYYY",
-                    "Value":0
-                }
-            ]
+            "AddWording":"I'm Test1"
         }
-    ]
+    ],
+    "AddType":"Add_Type_Both",
+    "ForceAddFlags":1
 }
 ```
-
 - **批量形式**
 ```
 {
@@ -83,53 +72,36 @@ https://xxxxxx/v4/sns/friend_import?sdkappid=88888888&identifier=admin&usersig=x
         {
             "To_Account":"id2",
             "Remark":"remark2",
-            "RemarkTime":1420000001,
-            "GroupName":["朋友"],
+            "GroupName":"同学", // 添加好友时只允许设置一个分组，因此使用 String 类型即可
             "AddSource":"AddSource_Type_XXXXXXXX",
-            "AddWording":"I'm Test2",
-            "AddTime":1420000001
+            "AddWording":"I'm Test2"
         },
         {
             "To_Account":"id3",
             "Remark":"remark3",
-            "RemarkTime":1420000001,
-            "GroupName":["同事","朋友"],
+            "GroupName":"同事", // 添加好友时只允许设置一个分组，因此使用 String 类型即可
             "AddSource":"AddSource_Type_XXXXXXXX",
-            "AddWording":"I'm Test3",
-            "AddTime":1420000001,
-            "CustomItem":
-            [
-                {
-                    "Tag":"Tag_SNS_Custom_XXXX",
-                    "Value":"Test"
-                },
-                {
-                    "Tag":"Tag_SNS_Custom_YYYY",
-                    "Value":0
-                }
-            ]
+            "AddWording":"I'm Test3"
         }
-    ]
+    ],
+    "AddType":"Add_Type_Both",
+    "ForceAddFlags":1
 }
 ```
 
 ### 请求包字段说明
 
 |字段|类型|属性|说明|
-|------|-------|-------|------|
+|--- |--- |--- |--- |
 |From_Account|String|必填|需要为该 UserID 添加好友|
-|AddFriendItem	|Array|必填|好友结构体对象|
-|To_Account	|String	|必填|好友的 UserID|
-|Remark|String|选填|From_Account 对 To_Account 的好友备注，详情可参见 <a href="https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5">标配好友字段</a>|
-|RemarkTime|Integer|选填|From_Account 对 To_Account 的好友备注时间|
-|GroupName|Array|选填	|From_Account 对 To_Account 的分组信息，详情可参见 <a href="https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5">标配好友字段</a>|
-|AddSource	|String		|必填|加好友来源字段，详情可参见 <a href="https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5">标配好友字段</a>|
-|AddWording|String|选填|From_Account 和 To_Account 形成好友关系时的附言信息，详情可参见 <a href="https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5">标配好友字段</a>|
-|AddTime	|Integer	|选填	|From_Account 和 To_Account 形成好友关系的时间|
-|CustomItem|Array|选填	|From_Account 对 To_Account 的自定义好友数据，每一个成员都包含一个 Tag 字段和一个 Value 字段，详情可参见 <a href="https://intl.cloud.tencent.com/document/product/1047/33521#.E8.87.AA.E5.AE.9A.E4.B9.89.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5">自定义好友字段</a>|
-|Tag|String	|选填	|自定义好友字段的名称，使用前请通过即时通信 IM [控制台](https://console.cloud.tencent.com/im) >【应用配置】>【功能配置】申请自定义好友字段|
-|Value|String/Integer 	|选填	|自定义好友字段的值|
-
+|AddFriendItem|Array|必填|好友结构体对象|
+|To_Account|String|必填|好友的 UserID|
+|Remark|String|选填|From_Account 对 To_Account 的好友备注，详情可参见 [标配好友字段](https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5)|
+|GroupName|String|选填|From_Account 对 To_Account 的分组信息，添加好友时只允许设置一个分组，因此使用 String 类型即可，详情可参见 [标配好友字段](https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5)|
+|AddSource|String|必填|加好友来源字段，详情可参见 [标配好友字段](https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5)|
+|AddWording|String|选填|From_Account 和 To_Account 形成好友关系时的附言信息，详情可参见 [标配好友字段](https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.87.E9.85.8D.E5.A5.BD.E5.8F.8B.E5.AD.97.E6.AE.B5)|
+|AddType|String|选填|加好友方式（默认双向加好友方式）：<br><li>Add_Type_Single 表示单向加好友<br><li>Add_Type_Both 表示双向加好友|
+|ForceAddFlags|Integer|选填|管理员强制加好友标记：1表示强制加好友，0表示常规加好友方式|
 
 
 ### 应答包体示例
@@ -150,6 +122,7 @@ https://xxxxxx/v4/sns/friend_import?sdkappid=88888888&identifier=admin&usersig=x
 	"ErrorDisplay":""
 }
 ```
+
 - **批量形式**
 ```
 {
@@ -162,13 +135,13 @@ https://xxxxxx/v4/sns/friend_import?sdkappid=88888888&identifier=admin&usersig=x
 		},
 		{
 			"To_Account":"id2",
-			"ResultCode":30010,
-			"ResultInfo":"Err_SNS_FriendImport_My_Friend_Num_Exceed_Threshold"
+			"ResultCode":30006,
+			"ResultInfo":"Err_SNS_FriendAdd_Unpack_Profile_Data_Fail"
 		},
 		{
 			"To_Account":"id3",
 			"ResultCode":30002,
-			"ResultInfo":"Err_SNS_FriendImport_SdkAppId_Illegal"
+			"ResultInfo":"Err_SNS_FriendAdd_SdkAppId_Illegal"
 		}
 	],
 	"Fail_Account":["id2","id3"],
@@ -179,25 +152,25 @@ https://xxxxxx/v4/sns/friend_import?sdkappid=88888888&identifier=admin&usersig=x
 }
 ```
 
-
 ### 应答包字段说明
 
 |字段|类型|说明|
-|------|------|------|
-|ResultItem|Array |批量加好友的结果对象数组|
-|To_Account|String |请求添加的好友的 UserID|
-|ResultCode|	Integer	|To_Account 的处理结果，0表示成功，非0表示失败，非0取值的详细描述请参见 [错误码说明](#ErrorCode)|
+|--- |--- |--- |
+|ResultItem|Array|批量加好友的结果对象数组|
+|To_Account|String|请求添加的好友的 UserID|
+|ResultCode|Integer|To_Account 的处理结果，0表示成功，非0表示失败，非0取值的详细描述请参见 [错误码说明](#ErrorCode)|
 |ResultInfo|	String|	To_Account 的错误描述信息，成功时该字段为空|
 |Fail_Account|Array|返回处理失败的用户列表，仅当存在失败用户时才返回该字段|
-|ActionStatus|String |请求处理的结果，OK 表示处理成功，FAIL 表示失败|
+|ActionStatus|String|请求处理的结果，“OK” 表示处理成功，“FAIL” 表示失败|
 |ErrorCode|	Integer	|错误码，0表示成功，非0表示失败，非0取值的详细描述请参见 [错误码说明](#ErrorCode) |
-|ErrorInfo|String |详细错误信息|
-|ErrorDisplay|String |详细的客户端展示信息|
+|ErrorInfo|String|详细错误信息|
+|ErrorDisplay|String|详细的客户端展示信息|
 
 <span id="ErrorCode"></span>
 ## 错误码说明
+
 除非发生网络错误（例如502错误），否则该接口的 HTTP 返回码均为200。实际的错误码、错误信息是通过应答包体中的 ResultCode、ResultInfo、ErrorCode 以及 ErrorInfo 来表示的。
-公共错误码（60000到79999）请参见 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348) 。
+公共错误码（60000到79999）请参见 [错误码](https://intl.cloud.tencent.com/document/product/1047/34348)。
 本 API 私有错误码如下：
 
 | 错误码 | 描述                                                         |
@@ -210,14 +183,23 @@ https://xxxxxx/v4/sns/friend_import?sdkappid=88888888&identifier=admin&usersig=x
 | 30006  | 服务器内部错误，请重试                                       |
 | 30007  | 网络超时，请稍后重试                                         |
 | 30008  | 并发写导致写冲突，建议使用批量方式                           |
-| 30010  | 好友数已达系统上限                                           |
+| 30009  | 后台禁止该用户发起加好友请求                                 |
+| 30010  | 自己的好友数已达系统上限                                     |
 | 30011  | 分组已达系统上限                                             |
+| 30012  | 未决数已达系统上限                                           |
+| 30014  | 对方的好友数已达系统上限                                     |
+| 30515  | 请求添加好友时，对方在自己的黑名单中，不允许加好友           |
+| 30516  | 请求添加好友时，对方的加好友验证方式是不允许任何人添加自己为好友 |
+| 30525  | 请求添加好友时，自己在对方的黑名单中，不允许加好友           |
+| 30539  | A 请求加 B 为好友，B 的加好友验证方式被设置为“AllowType_Type_NeedConfirm”，这时 A 与 B 之间只能形成未决关系，这个返回码用于标识加未决成功，以便与加好友成功的返回码区分开，调用方可以捕捉该错误给用户一个合理的提示 |
+| 30540  | 添加好友请求被安全策略打击，请勿频繁发起添加好友请求         |
 
 ## 接口调试工具
-通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/sns/friend_import) 调试本接口。
+通过 [REST API 在线调试工具](https://29294-22989-29805-29810.cdn-go.cn/api-test.html#v4/sns/friend_add) 调试本接口。
 
 ## 参考
-- 添加好友（<a href="https://intl.cloud.tencent.com/document/product/1047/34902">v4/sns/friend_add</a>）
+
+- 导入好友（<a href="https://intl.cloud.tencent.com/document/product/1047/34903">v4/sns/friend_import</a>）
 - 更新好友（<a href="https://intl.cloud.tencent.com/document/product/1047/34904">v4/sns/friend_update</a>）
 - 删除好友（<a href="https://intl.cloud.tencent.com/document/product/1047/34905">v4/sns/friend_delete</a>）
 - 删除所有好友（<a href="https://intl.cloud.tencent.com/document/product/1047/34906">v4/sns/friend_delete_all</a>）
