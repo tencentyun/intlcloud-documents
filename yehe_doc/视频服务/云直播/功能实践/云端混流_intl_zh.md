@@ -1,7 +1,7 @@
 云直播服务为您提供了直播混流功能，根据您设定好的混流布局同步的将各路输入源混流成一个新的流，可实现直播互动效果。同时，云直播直播混流功能已接入 API 3.0 接口，具体可参见 [直播混流接口](https://intl.cloud.tencent.com/document/product/267/35997)，本文将举例说明如何在不同场景下实现直播混流。
 
 ## 注意事项
-- 使用云端混流功能将产生标准转码费用。
+- 使用云端混流功能将产生标准转码费用，相关计费说明请参见 [转码费用](https://intl.cloud.tencent.com/document/product/267/39604)。
 - 使用混流裁剪功能的时候，裁剪的参数不能大于源流参数。
 
 
@@ -23,25 +23,26 @@
 **最常用的布局模板效图：**
 <table>
 <style>#m_img{width:90%;height:auto;display:block;margin-left:auto;margin-right:auto; }</style>
-<thead><tr><th>模板 10</th><th >模板 30</th></tr></thead><tr>
+<thead><tr><th>模板10</th><th >模板30</th></tr></thead><tr>
 <td><img src="https://main.qcloudimg.com/raw/a6b395f6fc7c1d07e4325836a3b725e6.jpg" id="m_img"></td>
 <td><img src="https://main.qcloudimg.com/raw/05fbe1c32bec1aed0624785d51b8a2ef.jpg"  id="m_img"></td>
 </tr>
-<thead><tr><th >模板 40</th><th>模板 310</th></tr></thead><tr>
+<thead><tr><th >模板40</th><th>模板310</th></tr></thead><tr>
 <td><img src="https://main.qcloudimg.com/raw/06cd40976b29452fa297d52db0d3435c.jpg"  id="m_img"></td>
 <td><img src="https://main.qcloudimg.com/raw/e1f4aa6f198856c47d8175302c649448.jpg"  id="m_img"></td>
 </tr>
-<thead><tr><th>模板 390</th><th >模板 410</th></tr></thead><tr>
+<thead><tr><th>模板390</th><th >模板410</th></tr></thead><tr>
 <td><img src="https://main.qcloudimg.com/raw/50157bb0b01d511c10b3637c13b1471a.png"  id="m_img"></td>
 <td><img src="https://main.qcloudimg.com/raw/6a420d03e7921453cbc461d1f1176f6c.jpg"  id="m_img"></td>
+
 </tr>
-<thead><tr><th>模板 510</th><th>模板 610</th></tr></thead>
+<thead><tr><th >模板510</th><th>模板610</th></tr></thead>
 <td><img src="https://main.qcloudimg.com/raw/c0e5bd29f275a6f055af9830ceea0a02.jpg"  id="m_img"></td>
 <td><img src="https://main.qcloudimg.com/raw/5ca8ba33cc08e80d6aeb403645e75aac.jpg"  id="m_img"></td>
 
-
 </tr>
 </tbody></table>	
+
 
 
 
@@ -118,7 +119,7 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 
 
 
-###  场景3：自定义混流示例
+### 场景3：自定义混流示例
 使用自定义布局。其中，位置参数 LocationX 和 LocationY 为小画面左上角相对背景画面左上角的绝对像素距离。
 ![](https://main.qcloudimg.com/raw/e1f81cd4a9b08af4ad7e4658fc643f0d.png)
 
@@ -164,7 +165,7 @@ https://live.tencentcloudapi.com/?Action=CreateCommonMixStream
 
 ## 取消混流
 ### 参数说明
-具体请参见 [取消通用混流](https://intl.cloud.tencent.com/zh/document/product/267/35998)。
+具体请参见 [取消通用混流](https://intl.cloud.tencent.com/document/product/267/35998)。
 
 ### 场景示例
 根据 session id 取消混流。
@@ -186,7 +187,6 @@ https://live.tencentcloudapi.com/?Action=CancelCommonMixStream
 >! 
 >- 申请混流后，请至少等待5s后再取消混流。
 >- 取消混流后，半分钟后才可使用相同的 session id 申请混流。
-
 
 ## 错误码
 云端混流 API3.0 接口已将大部分常用错误码迁移为 [API3.0 错误码](https://intl.cloud.tencent.com/document/product/267/35997#6.-.E9.94.99.E8.AF.AF.E7.A0.81) 风格，但是仍有部分错误码可能无法覆盖，这部分错误码将以 InvalidParameter 错误提示，在 Message 中以`err_code [ $code ],msg [ $message ]`的形式提供。具体 code 所对应的原因如下：
@@ -300,14 +300,20 @@ https://live.tencentcloudapi.com/?Action=CancelCommonMixStream
 <td>检查输出流码率是否在[1，50000]之间。</td>
 </tr><tr>
 <td>其它</td>
-<td>其它错误，请 <a href="https://intl.cloud.tencent.com/contact-sales">联系客服</a> 提供技术支持</td>
+<td>其它错误，请 <a href="https://intl.cloud.tencent.com/contact-us">联系客服</a> 提供技术支持</td>
 <td>-</td>
 </tr>
 </tbody></table>
 
 ## 常见问题
-- [推流后混流，为什么会返回-505错误码？](https://intl.cloud.tencent.com/document/product/267/38255#que1)
-- [申请混流后，如果一直未取消混流，会出现什么情况？](https://intl.cloud.tencent.com/document/product/267/38255#que5)
-- [为什么混流的小主播画面有的时候与期望的位置不同？](https://intl.cloud.tencent.com/document/product/267/38255#que9)
+- [混流过程中想要保持输入流自动缩放并且没有黑边的情况下应该怎么做?](https://intl.cloud.tencent.com/document/product/267/38255)
+- [推流后混流，为什么会返回-505错误码？](https://intl.cloud.tencent.com/document/product/267/38255)
+- [申请混流后，如果一直未取消混流，会出现什么情况？](https://intl.cloud.tencent.com/document/product/267/38255)
+- [为什么混流的小主播画面有的时候与期望的位置不同？](https://intl.cloud.tencent.com/document/product/267/38255)
 
->? 更多云端混流相关问题，请参见 [云端混流相关](https://intl.cloud.tencent.com/document/product/267/38255)
+>? 更多云端混流相关问题，请参见 [云端混流相关](https://intl.cloud.tencent.com/document/product/267/38255)。
+
+
+
+
+
