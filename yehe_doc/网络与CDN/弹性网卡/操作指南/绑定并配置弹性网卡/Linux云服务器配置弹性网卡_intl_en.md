@@ -60,7 +60,7 @@ cp ifcfg-eth0 ifcfg-eth1
 vim ifcfg-eth1
 ```
    3. Press **i** to switch to the edit mode and modify the configuration file as follows:
-> ?For the methods to view the IP address and subnet mask of the ENI, see the [Appendix](#.E9.99.84.E5.BD.95).
+> ?For the methods to view the IP address and subnet mask of the ENI, see the [Appendix](#Appendix).
 > 
 ```plaintext
 DEVICE='eth1' # Enter the actual ENI name obtained in step 1.
@@ -101,7 +101,7 @@ ip route add default dev eth0 via 192.168.1.1 table 10   #Replace “192.168.1.1
 ip route add default dev eth1 via 192.168.1.1 table 20   #Replace “192.168.1.1” with the subnet gateway of the secondary ENI.
 ```
      <dx-alert infotype="explain" title="">
-For gateway details, see [Viewing the gateway](#.E6.9F.A5.E7.9C.8B.E7.BD.91.E5.85.B3).
+For gateway details, see [Viewing the gateway](#viewing-the-gateway).
 </dx-alert>
 
  3. Configure policy-based routes.
@@ -131,7 +131,7 @@ vim interfaces
 ```
    2. Press **i** to switch to the edit mode and add the following content to the configuration file.
       <dx-alert infotype="explain" title="">
-      For the methods to view the IP address and subnet mask of the ENI, see the [Appendix](#.E9.99.84.E5.BD.95).
+      For the methods to view the IP address and subnet mask of the ENI, see the [Appendix](#Appendix).
       </dx-alert>
 ```plaintext
 auto eth1 # Enter the actual ENI name obtained in step 1.
@@ -183,7 +183,7 @@ ip route add default dev eth0 via 172.21.48.1 table 10   #Replace “172.21.48.1
 ip route add default dev eth1 via 172.21.48.1 table 20   #Replace “172.21.48.1” with the subnet gateway of the secondary ENI.
 ```
     <dx-alert infotype="explain" title="">
-For gateway details, see [Viewing the gateway](#.E6.9F.A5.E7.9C.8B.E7.BD.91.E5.85.B3).
+For gateway details, see [Viewing the gateway](#viewing-the-gateway).
 </dx-alert>
  3. Run the following commands to configure policy-based routing.
 ```plaintext
