@@ -5,7 +5,7 @@ This document provides instructions on how to configure ENI on two common server
 + [Configuring ENI on an Ubuntu CVM](#ubuntu)
 
 
-## [Configuring ENI on a CentOS CVM[](id:centos)
+## Configuring ENI on a CentOS CVM[](id:centos)
 ### Method 1: tool-based configuration
 >!
 >+ This method is applicable to CentOS versions 8.0, 7.8, 7.6, 7.5, 7.4 and 7.2.
