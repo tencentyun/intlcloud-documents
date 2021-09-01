@@ -19,7 +19,8 @@ https://xxxxxx/v4/open_msg_svc/get_history?sdkappid=88888888&identifier=admin&us
 下表仅列出调用本接口时涉及修改的参数及其说明，更多参数详情请参考 [REST API 简介](https://intl.cloud.tencent.com/document/product/1047/34620)。
 
 | 参数               | 说明                                 |
-| ------------------ | ------------------------------------ || https   | 请求协议为 HTTPS，请求方式为 POST       |
+| ------------------ | ------------------------------------ |
+| https   | 请求协议为 HTTPS，请求方式为 POST       |
 | xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com` |
 | v4/open_msg_svc/get_history  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
