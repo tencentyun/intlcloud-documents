@@ -11,45 +11,146 @@
 本文提供的代码是免费开源的，但在使用的过程中可能会产生以下费用：
 
 - 购买腾讯云云服务器（CVM）用于执行云 API 请求脚本，详见 [CVM 计费](https://intl.cloud.tencent.com/document/product/213/2180)。
-- 消耗 VOD 存储用于存储上传的视频，详见 [存储计费](https://intl.cloud.tencent.com/document/product/266/14666#.E5.AA.92.E8.B5.84.E5.AD.98.E5.82.A8.3Cspan-id.3D.22media_storage.22.3E.3C.2Fspan.3E)。
-- 消耗 VOD 转码时长用于对视频进行转码，详见 [转码计费](https://intl.cloud.tencent.com/document/product/266/14666#.E5.AA.92.E8.B5.84.E5.A4.84.E7.90.86.3Cspan-id.3D.22media_edit.22.3E.3C.2Fspan.3E) 。
-- 消耗 VOD 流量用于播放视频，详见 [流量计费](https://intl.cloud.tencent.com/document/product/266/14666#.E5.8A.A0.E9.80.9F.E6.9C.8D.E5.8A.A1.3Cspan-id.3D.22speed.22.3E.3C.2Fspan.3E) 。
+- 消耗 VOD 存储用于存储上传的视频，详见 [存储计费](https://intl.cloud.tencent.com/document/product/266/14666) 。
+- 消耗 VOD 转码时长用于对视频进行转码，详见 [转码计费](https://intl.cloud.tencent.com/document/product/266/14666) 。
+- 消耗 VOD 流量用于播放视频，详见 [流量计费](https://intl.cloud.tencent.com/document/product/266/14666) 。
+
+### 参数介绍
+腾讯云点播视频转码目前支持以下视频格式：
+<table>
+   <tr>
+      <th width="0px" style="text-align:center">参数</td>
+      <th width="0px" style="text-align:center">类型</td>
+      <th width="0px"  style="text-align:center">详细说明</td>
+   </tr>
+   <tr>
+      <td rowspan='2' style="text-align:center">输入格式</td>
+      <td>封装格式</td>
+      <td>WMV、RM、MOV、MPEG、MP4、3GP、FLV、AVI、RMVB、TS、ASF、MPG、WEBM、MKV 、M3U8、WM、ASX、RAM、MPE、VOB、DAT、MP4V、M4V、F4V、MXF、QT、OGG</td>
+   </tr>
+   <tr>
+      <td>视频编码格式</td>
+      <td>AV1、AVS2、H.264/AVC、H.263、 H.263+、H.265、MPEG-1、MPEG-2、MPEG-4、MJPEG、VP8、VP9、Quicktime、RealVideo、Windows Media Video</td>
+   </tr>
+   <tr>
+      <td rowspan='4' style="text-align:center">输出格式</td>
+      <td rowspan='3'>封装格式</td>
+      <td>视频：FLV、MP4、HLS（m3u8+ts）</td>
+   </tr>
+   <tr>
+      <td>音频：MP3、MP4、OGG、FLAC、m4a</td>
+   </tr>
+   <tr>
+      <td>图片：GIF、WEBP</td>
+   </tr>
+   <tr>
+      <td>视频编码格式</td>
+      <td>H.264/AVC、 H.265/HEVC、AV1</td>
+   </tr>
+</table>
+
+转码的目标规格包含了编码格式、分辨率和码率等参数。云点播使用转码模板表示转码参数集合，通过转码模板，可以指定以下转码相关参数，请参见 [视频处理综述](https://intl.cloud.tencent.com/document/product/266/33930)。
+<table>
+   <tr>
+      <th width="108px" style="text-align:center">分类</td>
+      <th width="200px" style="text-align:center">参数</td>
+      <th width="0px"  style="text-align:center">说明</td>
+   </tr>
+   <tr>
+      <td rowspan='7' width="0px" style="text-align:center">视频编码</td>
+      <td>编码方式（Codec）</td>
+      <td>支持 H.264 、H.265以及 AV1 编码格式</td>
+   </tr>
+	  <tr>
+      <td>码率（Bitrate）</td>
+      <td>支持的视频码率范围：10kbps - 35Mbps</td>
+   </tr>
+	    <tr>
+      <td>帧率（Frame Rate）</td>
+      <td>支持的帧率范围：1fps - 60fps，常见的有24fps、25fps和30fps</td>
+   </tr>
+	    <tr>
+      <td>分辨率（Resolution）</td>
+      <td><li>支持宽度范围：128px - 4096px</li><br><li>支持高度范围：128px - 4096px</li><br></td>
+   </tr>
+	    <tr>
+      <td>GOP 长度 </td>
+      <td>支持 GOP 长度范围：1秒 - 10秒</td>
+   </tr>
+	    <tr>
+      <td>编码档次（Profile）</td>
+      <td><li>当视频编码方式为 H.264 时，支持 Baseline、Main 和 High 的编码档次</li><br><li>当视频编码方式为 H.265 时，仅支持 Main 编码档次</li><br></td>
+   </tr>
+	    <tr>
+      <td>颜色空间（Color Space）</td>
+      <td>支持 YUV420P</td>
+   </tr>
+</table>
+
+>?
+>- **编码方式**：指通过特定的压缩技术，将某个视频格式的文件转换成另一种视频格式文件的方式。H.265相比H.264则采用更先进的编码方式转码，在不损失原始画质的情况下显著降低码率，节省播放带宽。
+>- **码率**：编码器每秒编出的数据大小，单位是kbps，例800kbps代表编码器每秒产生800kb的数据。
+>- **帧率（FPS）**：指每秒钟要多少帧画面。
+>- **分辨率**：单位英寸中所包含的像素点数。
+>- **GOP**：通常指两个I帧的间隔
+
+对于普通转码，不同清晰度，推荐使用的码率、分辨率及设置区间如下表所示：
+
+| **清晰度** | **推荐码率** | **推荐分辨率** | **分辨率区间**            |
+| ------- | -------- | --------- | -------------------- |
+| 标清      | 600      | 640x480   | 标清 SD（短边 ≤ 480px）    |
+| 高清      | 2000     | 1280x720  | 高清 HD（短边 ≤ 720px）    |
+| 全高清     | 4000     | 1920x1080 | 全高清 FHD（短边 ≤ 1080px） |
+| 2K      | 6000     | 2560x1440 | 2K（短边 ≤ 1440px）      |
+| 4K      | 8000     | 3840x2160 | 4K（短边 ≤ 2160px）      |
+
+腾讯云点播特有的极速高清集成了画质修复与增强、内容自适应参数选择、V265编码器等一整套视频处理解决方案。提供让视频更小更清晰的转码方式，能够保证网络资源低消耗，同时带给用户更佳的视觉体验。点播也预置了各种清晰度，具体参数如下：
+
+| **清晰度** | **推荐码率** | **推荐分辨率** | **分辨率区间**            |
+| ------- | -------- | --------- | -------------------- |
+| 标清      | 350或不设   | 640x480   | 标清 SD（短边 ≤ 480px）    |
+| 高清      | 1350或不设  | 1280x720  | 高清 HD（短边 ≤ 720px）    |
+| 全高清     | 2700或不设  | 1920x1080 | 全高清 FHD（短边 ≤ 1080px） |
+| 2K      | 3500或不设  | 2560x1440 | 2K（短边 ≤ 1440px）      |
+| 4K      | 7500或不设  | 3840x2160 | 4K（短边 ≤ 2160px）      |
+
+>?若不设，极速高清会根据视频源智能分析，智能设置视频最低码率。
 
 ## 在控制台发起转码
 
-### 步骤1：开通云点播
-<span id="p11"></span>
-请参考 [快速入门 - 步骤1](https://intl.cloud.tencent.com/document/product/266/8757) 开通云点播服务。
-<span id="p12"></span>
-### 步骤2：上传视频
+### 步骤1：开通云点播[](id:p11)
 
-参考 [快速入门 - 步骤2](https://intl.cloud.tencent.com/document/product/266/8757) 上传一个测试视频。单击 [此处](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) 查看本 Demo 使用的测试视频，对应的 FileId 为5285890804162014755，如下图所示：
-![](https://main.qcloudimg.com/raw/f8aa62bd40ab37b8cdd371798d4ff1e9.png)
+请参考 [快速入门 - 步骤1](https://intl.cloud.tencent.com/document/product/266/8757) 开通云点播服务。
+
+### 步骤2：上传视频[](id:p12)
+
+参考 [快速入门 - 步骤2](https://intl.cloud.tencent.com/document/product/266/8757) 上传一个测试视频。单击 [此处](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) 查看本 Demo 使用的测试视频，对应的 FileId 是3701925921390170339，如下图所示：
+![](https://main.qcloudimg.com/raw/bb2d019bc46847b00620b51d23f60a90.png)
 >?建议使用较短的视频文件进行测试（例如时长为几十秒的视频），避免转码过程耗时太长。
-<span id="p13"></span>
-### 步骤3：发起转码
+
+### 步骤3：发起转码[](id:p13)
 
 在控制台 [视频管理](https://console.cloud.tencent.com/vod/media) 页面勾选新上传的测试视频，然后单击【视频处理】：
-![](https://main.qcloudimg.com/raw/cf6d8e0fa032b2a76acfd918cf5c3146.png)
+![](https://main.qcloudimg.com/raw/a4ff4f65cc651781583b7c8c812535cb.png)
 在弹框中，处理类型选择【转码】，然后单击【转码模板】：
-![](https://main.qcloudimg.com/raw/fc857eebabee8b5c547774fed0fe2814.png)
-选择所需的转码模板，然后单击【确定】。本 Demo 以系统预置模板 MP4-FLU（模板 ID 100010）和 MP4-SD（模板 ID 100020）为例，如果开发者需要使用自定义的转码模板，请参考 [模板设置文档](https://intl.cloud.tencent.com/document/product/266/14059)。
-![](https://main.qcloudimg.com/raw/e82be691470090beccf1ea27dbdcb4c3.png)
+![](https://main.qcloudimg.com/raw/34dea19debc1ff3e0b119c853d36b5b3.png)
+选择所需的转码模板，然后单击【确定】。本 Demo 以系统预置模板 STD-H264-MP4-360P（模板 ID 100010）和 STD-H264-MP4-540P（模板 ID 100020）为例，如果开发者需要使用自定义的转码模板，请参考 [模板设置文档](https://intl.cloud.tencent.com/document/product/266/14059)。
+![](https://main.qcloudimg.com/raw/fc7811c1d0fbc0633d3c1af0ac899033.png)
 单击【确定】，发起转码：
-![](https://main.qcloudimg.com/raw/f52ec218600e19af3e42359a90d03298.png)
+![](https://main.qcloudimg.com/raw/1673cc42b5eea281904a5e9b1b564578.png)
 在“视频管理”页面看到测试视频的状态为“处理中”，则表示视频正在转码：
-![](https://main.qcloudimg.com/raw/30d3c90f55970568f55ce09be4cdb32b.png)
-<span id="p14"></span>
-### 步骤4：查看转码结果
+![](https://main.qcloudimg.com/raw/31aae3296dbf4d6ecedec05008333586.png)
+
+### 步骤4：查看转码结果[](id:p14)
 
 在控制台 [视频管理](https://console.cloud.tencent.com/vod/media) 页面等待测试视频的状态变为“正常”，此时表示转码已完成。单击测试视频右侧的【管理】，进入视频管理页面：
-![](https://main.qcloudimg.com/raw/694f1b000cea813d12397fcb1c3a86a0.png)
-在“基本信息”标签页下的【标准转码列表】中，转出了 MP4-FLU 和 MP4-SD 两个规格。开发者可以单击右侧的【预览】直接观看视频，还可以单击【复制地址】复制转码视频的 URL，然后通过其它渠道发布给观众。
-![](https://main.qcloudimg.com/raw/38db47dcfbd840bd6d67478ce42fd1cd.png)
+![](https://main.qcloudimg.com/raw/92de2d087295b2614d26dfa3007436be.png)
+在“基本信息”标签页下的【标准转码列表】中，转出了 STD-H264-MP4-360P 和 STD-H264-MP4-540P 两个规格。开发者可以单击右侧的【预览】直接观看视频，还可以单击【复制地址】复制转码视频的 URL，然后通过其它渠道发布给观众。
+![](https://main.qcloudimg.com/raw/1e1d4da179ceafdd742bc1d3e6db7e4a.png)
 
 ## 调用云 API 发起转码
-<span id="p21"></span>
-### 步骤1：准备腾讯云 CVM
+
+### 步骤1：准备腾讯云 CVM[](id:p21)
 
 云 API 请求脚本需要运行在一台腾讯云 CVM 上，要求如下：
 
@@ -61,22 +162,22 @@
 购买 CVM 的方法请参见 [操作指南 - 创建实例](https://intl.cloud.tencent.com/document/product/213/4855)。重装系统的方法请参见 [操作指南 - 重装系统](https://intl.cloud.tencent.com/document/product/213/4933)。
 
 >!如果您没有符合上述条件的腾讯云 CVM，也可以在其它带外网的 Linux（如 CentOS、Debian 等）或 Mac 机器上执行脚本，但需根据操作系统的区别修改脚本中的个别命令，具体修改方式请开发者自行搜索。
-<span id="p22"></span>
-### 步骤2：获取 API 密钥
+
+### 步骤2：获取 API 密钥[](id:p22)
 
 请求云 API 需要使用到开发者的 API 密钥（即 SecretId 和 SecretKey）。如果还未创建过密钥，请参见 [创建密钥文档](https://intl.cloud.tencent.com/document/product/598/34228) 生成新的 API 密钥；如果已创建过密钥，请参见 [查看密钥文档](https://intl.cloud.tencent.com/document/product/598/34228) 获取 API 密钥。
-<span id="p23"></span>
-### 步骤3：开通云点播
+
+### 步骤3：开通云点播[](id:p23)
 
 请参考 [快速入门 - 步骤1](https://intl.cloud.tencent.com/document/product/266/8757) 开通云点播服务。
-<span id="p24"></span>
-### 步骤4：上传视频
+
+### 步骤4：上传视频[](id:p24)
 参考 [快速入门 - 步骤2](https://intl.cloud.tencent.com/document/product/266/8757) 上传一个测试视频。单击 [此处](http://1400329073.vod2.myqcloud.com/ff439affvodcq1400329073/e968a7e55285890804162014755/LKk92603oW0A.mp4) 查看本 Demo 使用的测试视频，对应的 FileId 为5285890804162014755，如下图所示：
-![](https://main.qcloudimg.com/raw/f8aa62bd40ab37b8cdd371798d4ff1e9.png)
+![](https://main.qcloudimg.com/raw/7d153d6bfc8cbbcab175a8d67ea04005.png)
 >?建议使用较短的视频文件进行测试（例如时长为几十秒的视频），避免转码过程耗时太长。
 
-<span id="p25"></span>
-### 步骤5：发起转码
+
+### 步骤5：发起转码[](id:p25)
 
 登录 [步骤1](#p21) 中准备好的 CVM（登录方法详见 [操作指南 - 登录 Linux](https://intl.cloud.tencent.com/document/product/213/5436)），在远程终端输入以下命令并运行：
 ```
@@ -103,15 +204,15 @@ ubuntu@VM-69-2-ubuntu:~$ cd ~/vod-server-demo/transcode_api/; python3 process_me
 ```
 {"TaskId": "1400329073-procedurev2-f6bf6f01612369b6db30f2224792a2aft0", "RequestId": "809918fb-791c-4937-b684-5027ba6bc5f0"}
 ```
-<span id="p14"></span>
-### 步骤6：查看转码结果
+
+### 步骤6：查看转码结果[](id:p14)
 
 在“视频管理”页面看到测试视频的状态为“处理中”，则表示视频正在转码：
-![](https://main.qcloudimg.com/raw/30d3c90f55970568f55ce09be4cdb32b.png)
+![](https://main.qcloudimg.com/raw/32039992fb01196c12d046257e96c88c.png)
 等待测试视频的状态变为“正常”，此时表示转码已完成。单击测试视频右侧的【管理】，进入视频管理页面：
-![](https://main.qcloudimg.com/raw/694f1b000cea813d12397fcb1c3a86a0.png)
-在“基本信息”标签页下的【标准转码列表】中，转出了 MP4-FLU 和 MP4-SD 两个规格。开发者可以单击右侧的【预览】直接观看视频，还可以单击【复制地址】复制转码视频的 URL，然后通过其它渠道发布给观众。
-![](https://main.qcloudimg.com/raw/38db47dcfbd840bd6d67478ce42fd1cd.png)
+![](https://main.qcloudimg.com/raw/6aa13e977450eb426663d52bb53644cc.png)
+在“基本信息”标签页下的【标准转码列表】中，转出了对应规格的视频。开发者可以单击右侧的【预览】直接观看视频，还可以单击【复制地址】复制转码视频的 URL，然后通过其它渠道发布给观众。
+![](https://main.qcloudimg.com/raw/8a4855b492f2c2d1e67fcb70dd7c56e4.png)
 
 ## 上传视频后自动转码（任务流）
 
@@ -120,3 +221,4 @@ VOD 有多种上传视频的方式，包括控制台上传、服务端上传、�
 ## 上传视频后自动转码（事件通知）
 
 VOD 后台在视频上传完成和转码任务完成后均会发起 [事件通知](https://intl.cloud.tencent.com/document/product/266/33948) 请求。开发者可以利用事件通知机制来对新上传的视频发起转码，也可以通过事件通知来自动获取转码结果（上文展示的方法是人工在控制台查看转码结果）。事件通知的使用方法在单独的最佳实践文档 [接收事件通知](https://intl.cloud.tencent.com/document/product/266/37542) 中有详细介绍。
+

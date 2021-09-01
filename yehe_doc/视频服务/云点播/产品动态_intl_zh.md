@@ -1,4 +1,4 @@
-## 2020年12月
+## 2021年8月
 <table>
 <thead>
 <tr>
@@ -9,6 +9,126 @@
 </tr>
 </thead>
 <tbody><tr>
+<td>发布 V3.5 版本</td>
+<td>直播录制联动点播降冷策略，并绑定任务流，实现录制文件的点播相关功能交互优化。</td> 
+ <td>2021-07</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/267/34223">直播录制</a></td>
+</tr>
+<tr>
+<td>发布 V3.6 版本</td>
+<td>腾讯云播放器 Demo 发布，提供完整的产品级交互界面和业务源码。</td>
+ <td>	2021-08</td> 
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/266/42091">播放器 Demo 展示</a>
+</td>
+</tr>
+<tr>
+<td>发布 V3.7 版本</td>
+<td>新版价格计算器。</td>
+ <td>	2021-08</td> 
+<td>
+<a href="https://buy.intl.cloud.tencent.com/pricing/vod">点播定价</a>
+</td>
+</tr>
+</tbody></table>
+
+## 2021年6月
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+ <th width="15%">发布时间</th> 
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>发布 V3.3 版本</td>
+<td>云点播全面接入云监控。</td> 
+ <td>2021-05</td> 
+<td>如何配置CDN指标监控和告警</td>
+</tr>
+<tr>
+<td>发布 V3.4 版本</td>
+<td>云点播支持媒资降冷能力。</td>
+ <td>	2021-06</td> 
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/266/42092">媒资降冷</a>
+</td>
+</tr>
+</tbody></table>
+
+## 2021年4月
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+ <th width="15%">发布时间</th> 
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>发布 V3.0 版本</td>
+<td>云点播发布任务管理系统，支持查询任务详细。</td> 
+ <td>2021-03</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/266/39706">任务管理</a></td>
+</tr>
+<tr>
+<td>发布 V3.1 版本	</td>
+<td>云点播图片媒资管理系统升级，支持筛选，搜索，自定义列表等能力。</td>
+ <td>2021-03</td> 
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/266/37899">图片管理</a>
+</td>
+</tr>
+<tr>
+<td>发布 V3.2 版本</td>
+<td>点云点播支持子应用生命周期管理系统，支持对子应用停用、销毁、启用等管理机制。</td>
+ <td>2021-04</td> 
+<td>应用管理</td>
+</tr>
+</tbody></table>
+
+## 2021年2月
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+ <th width="15%">发布时间</th> 
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>发布 V2.8 版本</td>
+<td>开放云点播极速高清配置能力。</td> 
+ <td>2021-01</td> 
+<td><a href="https://intl.cloud.tencent.com/document/product/266/14059">极速高清</a></td>
+</tr>
+<tr>
+<td>发布 V2.9 版本</td>
+<td>升级和开放点播的 CDN 配置能力，支持仅海外加速。</td>
+ <td>2021-11</td> 
+<td>
+<a href="https://intl.cloud.tencent.com/document/product/266/35572">域名管理</a>
+</td>
+</tr>
+</tbody></table>
+
+
+## 2020年12月
+<table>
+<thead>
+<tr>
+<th width="20%">动态名称</th>
+<th width="50%">动态描述</th>
+ <th width="15%">发布时间</th> 
+<th width="15%">相关文档</th>
+</tr>
+</thead>
+<tbody>
+<tr>
 <td>发布 V2.6 版本</td>
 <td>点播控制台的境外区计费和数据统计正式发布。</td>
  <td>2020-11</td> 
@@ -69,8 +189,7 @@
 <td>发布 V2.2 版本</td>
 <td>图片媒资可直接用于设置视频封面。</td> 
  <td>2020-08</td> 
-<td><a href="https://intl.cloud.tencent.com/document/product/266/33896">视频管理</a>
-</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/33896">视频管理</a></td>
 </tr>
 </tbody></table>
 
@@ -127,6 +246,7 @@
 <td>-</td>
 </tr>
 </tbody></table>
+
 
 
 ## 2019年10月
@@ -243,7 +363,7 @@
 <td>发布 V1.3 版本</td>
 <td>云点播重构 Web 播放器、短视频 License。</td>
  <td>2019-05-15</td> 
-<td><a href="https://cloud.tencent.com/document/product/266/14056">Web 播放器管理</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/266/14056">Web 播放器管理</a></td>
 </tr>
 
 </tbody></table>
