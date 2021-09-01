@@ -1,3 +1,88 @@
+## May 2021
+
+<table>
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="50%">Description</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Launched Diagnostic Tool</td>
+<td>A web tool for troubleshooting error requests</td>
+<td> 2021-05-27</td>
+<td><a href="https://cloud.tencent.com/document/product/436/57576">Diagnostic Tool</a>
+</tr>
+<tr>
+<td>Launched CDN Log Backup</td>
+<td>An SCF-based feature that helps users save CDN logs to COS to monitor and analyze access behaviors, service quality, and more.</td>
+<td> 2021-05-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/40485">CDN Log Backup</a>
+</tr>
+<tr>
+<td>Launched TDMQ Message Backup</td>
+<td>An SCF-based feature that helps users save TDMQ messages to COS to facilitate data analysis and downloads.</td>
+<td> 2021-05-24</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/40541">TDMQ Message Backup</a>
+</tr>
+</tbody></table>
+
+
+## April 2021
+
+<table>
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="50%">Description</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Launched Log Cleansing</td>
+<td>An SCF-based feature for log processing. If you upload logs or enable Logging, the cloud function preset by COS will be triggered, which cleanses logs using the SQL expression you set in the function. </td>
+<td> 2021-04-02</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/39925">Log Cleansing</a>
+</tr>
+<tr>
+<td>Launched CKafka Message Backup</td>
+<td>An SCF-based feature that helps users save CKafka messages to COS to facilitate data analysis and downloads.</td>
+<td> 2021-04-02</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/39926">CKafka Message Backup</a>
+</tr>
+</tbody></table>
+
+
+
+## February 2021
+
+
+<table>
+<thead>
+<tr>
+<th width="20%">Update</th>
+<th width="50%">Description</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Launched Cloud Database Backup</td>
+<td>An SCF-based feature that helps save TencentDB backups to COS to avoid data loss or corruption.</td>
+<td>2021-02-02</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/41112">Setting Cloud Database Backup</a>
+</tr>
+</tbody></table>
+
+
+
+
 ## January 2021
 
 <table>
@@ -5,8 +90,8 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
-<th width=15%>Release Date</th>
-<th width="15%">Documentation</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody>
@@ -22,19 +107,18 @@
 </tbody></table>
 
 ## December 2020
-
 <table>
 <thead>
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
-<th width=15%>Release Date</th>
-<th width="15%">Documentation</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Launched the origin-pull disaster recovery feature</td>
+<td>Launched Origin-Pull Disaster Recovery</td>
 <td>Configuring a backup origin server for COS origin-pull is now supported. In this way, if the origin-pull fails, you can quickly switch to the backup origin-pull address to ensure business smoothness.</td>
 <td> 2020-12-28</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/31508">Setting Origin-Pull</a>
@@ -60,8 +144,8 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
-<th width=15%>Release Date</th>
-<th width="15%">Documentation</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody>
@@ -92,8 +176,8 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
-<th width=15%>Release Date</th>
-<th width="15%">Documentation</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody>
@@ -106,7 +190,7 @@
 </tr>
 <tr>
 <td>Launched DEEP ARCHIVE</td>
-<td>The DEEP ARCHIVE storage class provided by COS enables you to archive massive amounts of data for a long time. It offers a high cost-effectiveness comparable to that of tape storage to reduce your long-term storage costs.</td>
+<td>The DEEP ARCHIVE storage class provided by COS enables you to archive massive amounts of data for a long time. It offers high cost-effectiveness comparable to that of tape storage to reduce your long-term storage costs.</td>
 <td> 2020-09-16</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/38304">Overview - DEEP ARCHIVE</a></td>
 </tr>
@@ -119,8 +203,8 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
-<th width=15%>Release Date</th>
-<th width="15%">Documentation</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody>
@@ -142,8 +226,8 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
-<th width=15%>Release Date</th>
-<th width="15%">Documentation</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody>
@@ -163,8 +247,8 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
-<th width=15%>Release Date</th>
-<th width="15%">Documentation</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -203,8 +287,8 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
-<th width=15%>Release Date</th>
-<th width="15%">Documentation</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -230,8 +314,8 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
-<th width=15%>Release Date</th>
-<th width="15%">Documentation</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -256,8 +340,8 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
-<th width=15%>Release Date</th>
-<th width="15%">Documentation</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -274,8 +358,8 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
-<th width=15%>Release Date</th>
-<th width="15%">Documentation</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -285,10 +369,10 @@
 <td><a href="https://intl.cloud.tencent.com/document/product/436/19883">Versioning Overview</a></td>
 </tr>
 <tr>
-<td>Launched the cross-region replication feature</td>
-<td>After a cross-region replication rule is configured, incremental objects can be automatically replicated asynchronously from and to buckets across different regions.</td>
+<td>Launched Cross-Bucket Replication</td>
+<td>After a cross-bucket replication rule is configured, incremental objects can be automatically replicated asynchronously from and to buckets across different regions.</td>
 <td nowrap="nowrap">2019-06-20</td>
-<td><a href="https://intl.cloud.tencent.com/document/product/436/19237">Cross-region Replication Overview</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/436/19237">Cross-Bucket Replication Overview</a></td>
 </tr>
 <tr>
 <td>Added support for custom endpoints</td>
@@ -313,8 +397,8 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
-<th width=15%>Release Date</th>
-<th width="15%">Documentation</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -332,8 +416,8 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
-<th width=15%>Release Date</th>
-<th width="15%">Documentation</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -352,15 +436,15 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
-<th width=15%>Release Date</th>
-<th width="15%">Documentation</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>Cancelled forced popup download prompt for the default domain name in regions outside Chinese mainland</td>
 <td>COS now allows users to directly use a domain name provided by Tencent Cloud to open a recognizable object in their browser and no longer requires binding a custom domain name.</td>
 <td nowrap="nowrap">2018-11</td>
-<td>—</td>
+<td>-</td>
 </tr>
 </tr>
 </thead>
@@ -378,15 +462,15 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
-<th width=15%>Release Date</th>
-<th width="15%">Documentation</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>Added support for managing access permissions through policies and ACLs</td>
 <td>Users are now able to manage access permissions through policies and ACLs. You can specify who can perform the operation, what operation can be performed, and under what conditions. This helps meet permission management needs in multiple dimensions, both at the team-level and resource-level.</td>
 <td nowrap="nowrap">2018-10</td>
-<td>—</td>
+<td>-</td>
 </tr>
 </tbody></table>
 
@@ -398,8 +482,8 @@
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
-<th width=15%>Release Date</th>
-<th width="15%">Documentation</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -415,7 +499,7 @@ More new regions are now available.
 The new console uses new APIs and supports more regions.
 New features:
 The new console supports new features such as lifecycle management.
-Note:
+<br>Note:
 <br>1. Documents that describe COS features and examples will be updated as per the new console.
 <br>2. Subsequently, new features will only be launched in the new console and will no longer be available in the old console.</td>
 <td nowrap="nowrap">2018-08</td>
@@ -430,8 +514,8 @@ Note:
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
-<th width=15%>Release Date</th>
-<th width="15%">Documentation</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -445,7 +529,7 @@ Note:
 <td>
 COS supports access through CDN. In addition to public buckets, you can now also bind private buckets to CDN for access. In addition, after CDN security authentication is enabled, your data will be protected in the CDN edge cache while enjoying global CDN acceleration.</td>
 <td nowrap="nowrap">2018-06</td>
-<td>—</td>
+<td>-</td>
 </tr>
 </tbody></table>
 
@@ -458,8 +542,8 @@ COS supports access through CDN. In addition to public buckets, you can now also
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
-<th width=15%>Release Date</th>
-<th width="15%">Documentation</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -478,15 +562,15 @@ COS supports access through CDN. In addition to public buckets, you can now also
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
-<th width=15%>Release Date</th>
-<th width="15%">Documentation</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>Added support for request creation with PATH</td>
 <td>In addition to supporting virtual hosted domain names, COS now also supports access through domain name paths. A request to a regional root node `cos.[region].myqcloud.com` will return the bucket and object information of the region. This is compatible with AWS S3 access methods and AWS Authentication V4 signatures. After configuring the corresponding keys and nodes, you can directly access COS by using various S3 code and tools.</td>
 <td nowrap="nowrap">2018-04</td>
-<td>—</td>
+<td>-</td>
 </tr>
 <tr>
 <td>Added support for the Silicon Valley, Virginia (Ashburn), Seoul, and Mumbai regions</td>
@@ -503,8 +587,8 @@ COS supports access through CDN. In addition to public buckets, you can now also
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
-<th width=15%>Release Date</th>
-<th width="15%">Documentation</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -521,13 +605,13 @@ COS supports access through CDN. In addition to public buckets, you can now also
 <tr>
 <th width="20%">Update</th>
 <th width="50%">Description</th>
-<th width=15%>Release Date</th>
-<th width="15%">Documentation</th>
+<th width="15%">Release Date</th>
+<th width="15%">Document</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>Added support for COS in more regions around the globe</td>
-<td>COS is now available in the Chengdu, Hong Kong (China), Singapore, Toronto, and Frankfurt regions, providing global users with the ability to store and access data nearby. The public network traffic prices in Chinese mainland are reduced.</td>
+<td>COS is now available in the Chengdu, Hong Kong (China), Singapore, Toronto, and Frankfurt regions, providing global users with the ability to store and access data nearby. The public network traffic prices in the Chinese mainland are reduced.</td>
 <td nowrap="nowrap">2017-09</td>
 <td><a href="https://intl.cloud.tencent.com/document/product/436/6224">Regions and Access Endpoints</a></td>
 </tbody></table>

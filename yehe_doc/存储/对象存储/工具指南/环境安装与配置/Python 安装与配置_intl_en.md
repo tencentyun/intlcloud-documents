@@ -1,65 +1,47 @@
-This document uses Python 2.7.13 as an example to demonstrate how to install and configure Python in Windows and Linux.
+This document describes how to install Python for different operating systems.
 
+## Using an Installation Package
 
-## Windows 
-#### 1. Download
-Go to the [Python official website](https://www.python.org/downloads/) and download an appropriate version. In this example, we download [Python 2.7.13](https://www.python.org/ftp/python/2.7.13/python-2.7.13.amd64.msi).
+### 1. Download a package
+Go to [Python](https://www.python.org/downloads/) to download an installation package according to your OS.
 
-#### 2. Install
-Double click the Python installer package, and install Python as instructed.
+>! Python has dropped support for Python 2 since January 1, 2020. Therefore, you are advised to install Python 3.
 
-#### 3. Configure environment variables
-(1) Once Python is installed, restart your computer as instructed.
-(2) Right-click on the "Computer" or "My Computer" desktop icon, and select **Properties** > **Advanced system settings** > *Environment Variables*. In **System variables**, locate **Path**, or click **New** to create a variable named as such.
-(3) Click **Edit** > **Edit Text**, and add `;C:\Python27` (replace it with your own Python installation path) to the end of the “Path”.
-(4) Click **OK**.
+### 2. Install the package
+Install the downloaded package as instructed.
 
+>? If you use Windows, check **Add Python to environment variables**.
+> ![](https://main.qcloudimg.com/raw/bd52e448e3ba0e8171b5a37b31caadb8.png)
 
-#### 4. Test whether the configuration is successful
-Click **Start** (or shortcut: Win+R) > **Run** (enter `cmd`) > **OK** (or press Enter), enter the Python command in the pop-up window, and press Enter. If Python version information appears, Python 2.7 has been installed successfully.
-
-## Linux
-#### 1. Check the Python version 
-Linux’s yum comes with Python, so check the default Python version first.
-```sh
+### 3. Verify the installation
+Run the following command in Terminal to view the Python version:
+```shell
 python -V
 ```
-If it comes with Python 2.7 or above, ignore the following steps. Otherwise (for example, if it comes with Python 2.6.6), enter the following command:
-```plaintext
-yum groupinstall "Development tools"
-```
+If the Python version is displayed, Python has been installed successfully.
 
-#### 2. Install the component used to compile Python
-```sh
-yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel
-```
+>? If you use Windows, you may need to restart your computer after the installation.
 
-#### 3. Download and decompress Python 2.7 
-```sh
-wget https://www.python.org/ftp/python/2.7.12/Python-2.7.12.tar.xz
-tar xf Python-2.7.12.tar.xz
-```
+### 4. Configure the environment variable
+In Windows, if “not recognized as an internal or external command” is reported in Terminal after the command above is run, right-click the **Computer** icon, click **Properties** > **Advanced system settings** > **Environment Variables**, and in the **System variables** area, click **New** to add the Python installation path, as shown in the following figure:
 
-#### 4. Compile and install Python
-```plaintext
-cd Python-2.7.12 //Enter the directory
-./configure -prefix=/usr/local
-make && make install //Install
-make clean 
-make distclean
-```
 
-#### 5. Direct the Python command to Python 2.7
+## Using a Package Manager
+
+### macOS
+Install [HomeBrew](https://brew.sh/index_zh-cn) first and use it to install Python:
 ```shell
-mv /usr/bin/python /usr/bin/python2.6.6
-ln -s /usr/local/bin/python2.7 /usr/bin/python
+brew install python
 ```
 
-#### 6. Test whether the configuration is successful
-```sh
-python
+### Ubuntu
+Use the built-in Advanced Packaging Tool (APT) to install Python:
+```shell
+sudo apt-get install python
 ```
-If the information appears as shown below, Python 2.7 has been installed successfully.
-![112046](//mc.qcloudimg.com/static/img/0eb560566c1f67e302e75b1dcb515d98/image.png)
 
->!If permission problems occur, try to add `sudo` to the beginning of your command.
+### CentOS
+Use the built-in Yellowdog Update, Modified (YUM) to install Python:
+```shell
+sudo yum install -y python
+```
