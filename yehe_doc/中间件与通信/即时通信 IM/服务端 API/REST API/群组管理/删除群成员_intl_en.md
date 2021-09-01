@@ -20,11 +20,7 @@ These are the 4 built-in group types in IM. For detailed information, see the [G
 ```
 https://xxxxxx/v4/group_open_http_svc/delete_group_member?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
-Where, `xxxxxx` is the country/region-specific domain. Please enter the domain corresponding to the country/region where your SDKAppID is located.
 
-|Country/Region| Domain |
-|----|----|
-|Singapore| adminapisgp.im.qcloud.com |
 
 ### Request parameters
 
@@ -32,6 +28,8 @@ The list below contains only the parameters commonly used when calling this API 
 
 | Parameter | Description |
 | ------------------ | ------------------------------------ |
+| https       | The request protocol is HTTPS, and the request method is POST.       |
+| xxxxxx  | The country/region where your SDKAppID is located.<li>China:  `console.tim.qq.com `<li>Singapore:  `adminapisgp.im.qcloud.com ` |
 | v4/group_open_http_svc/delete_group_member | Request API |
 | sdkappid | SDKAppID assigned by the IM console when the application is created |
 | identifier | The value must be the app admin account. For more information, see [App Admins](https://intl.cloud.tencent.com/document/product/1047/33517). |

@@ -4,7 +4,7 @@
 ## 接口调用说明
 ### 请求 URL 示例
 ```
-https://console.tim.qq.com/v4/sns/black_list_delete?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
+https://xxxxxx/v4/sns/black_list_delete?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
 ### 请求参数说明
 
@@ -12,6 +12,8 @@ https://console.tim.qq.com/v4/sns/black_list_delete?sdkappid=88888888&identifier
 
 | 参数               | 说明                                 |
 | ------------------ | ------------------------------------ |
+| https   | 请求协议为 HTTPS，请求方式为 POST       |
+| xxxxxx |SDKAppID 所在国家/地区对应的专属域名<li>中国：`console.tim.qq.com`<li>新加坡： `adminapisgp.im.qcloud.com` |
 | v4/sns/black_list_delete  | 请求接口                             |
 | sdkappid           | 创建应用时即时通信 IM 控制台分配的 SDKAppID |
 | identifier         | 必须为 App 管理员帐号，更多详情请参见 [App 管理员](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98)                |

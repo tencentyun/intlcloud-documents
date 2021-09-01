@@ -29,14 +29,10 @@ chmod +x ./install.sh
 ```
 4.  参考 [绑定弹性网卡](https://intl.cloud.tencent.com/document/product/576/18535)，绑定弹性网卡，绑定后可执行如下操作验证新增网卡 eth1 的路由已正常下发。
  1. 执行ip rule show，可查看到eth1的策略路由已添加。
-     ![](https://main.qcloudimg.com/raw/7900394af6f0f53871af6c4093f3e728.png)
  2. 执行ip route show table eth1，可查看到eth1路由表信息。
-		 ![](https://main.qcloudimg.com/raw/75e122a79e96b81de31bf0124c2cf5eb.png)
 5. [](id:step5)（可选）如有存量网卡，可在云服务器控制台或执行 `reboot` 命令重启云服务器，重启后所有网卡的路由将自动下发正常。
     控制台重启：
-	![](https://main.qcloudimg.com/raw/f282450fba6a0a61102a3e674ead325b.png)
     命令重启：
-    ![](https://main.qcloudimg.com/raw/84053ed92ec9eda498beaad1479af930.png)
 
 ### 方式二：手动配置
 >?以 Centos 7.8举例。
@@ -50,7 +46,6 @@ chmod +x ./install.sh
 ```plaintext
 ip addr
 ```
- ![](https://main.qcloudimg.com/raw/37c65397f52bce5702edb4b594bf708a.png)
 2. 执行如下命令，进入`/etc/sysconfig/network-scripts/`文件夹：
 ```plaintext
 cd /etc/sysconfig/network-scripts/
@@ -76,7 +71,6 @@ NETMASK='255.255.255.192'  # 此处填写子网掩码，请根据实际填写
 #GATEWAY='192.168.1.1'  # 因为eth0文件定义了网关，这里不再写网关，避免网关冲突，请根据实际填写
 ```
 		修改后，示例如下：
-	 	![](https://main.qcloudimg.com/raw/f32f979387be2c27c034a8fe6959bd66.png)
   4. 修改后保存配置文件并退出（在 vim 的末行模式下按 “Esc”，输入 “wq!” 并回车）。
 4. 输入如下命令重启网络服务。
 ```plaintext
@@ -88,7 +82,6 @@ systemctl restart network
 ip addr
  ```
  2. 确认辅助网卡和辅助网卡上的 IP 可见，如下图所示。
- ![](https://main.qcloudimg.com/raw/d99d81a7bd973cb0a748d785c326cd22.png)
 	如果IP配置不正确，请执行如下检查：
 	1. 检查配置文件是否正确，如不正确请重新配置。
 	2. 检查网络是否重启，如未重启，请执行如下命令重启网络，使配置生效。
@@ -126,7 +119,6 @@ ip rule add from 192.168.1.62 table 20     #IP请替换为辅助网卡上的 IP�
 ```plaintext
 ip addr
 ```
- ![](https://main.qcloudimg.com/raw/ade946a6b92207acb1fe80bef696379e.png)
 2. 执行如下命令，进入`/etc/network/`文件夹。
 ```plaintext
 cd /etc/network/
@@ -168,7 +160,6 @@ ifup eth1
 ip addr
 ```
  2. 确认辅助网卡和辅助网卡上的 IP 可见，如下图所示。
- ![](https://main.qcloudimg.com/raw/2c7060691fc51a212295e209a9dcee83.png)
   如果 IP 配置不正确，请执行如下检查：
   1. 检查配置文件是否正确，如不正确请重新配置。
   2. 检查网卡是否重启，如未重启，请执行如下命令重启网卡，使配置生效。
@@ -208,14 +199,12 @@ ip rule add from 172.21.48.3 table 20    #替换成辅助网卡上的 IP，请�
 2. 单击左侧目录中的【IP 与网卡】>【弹性网卡】，进入弹性网卡列表页。
 3. 单击弹性网卡 ID，进入详情页。
 4. 选择【IPv4 地址管理】标签页，查看弹性网卡上的 IP 地址，即内网 IP。
-![](https://main.qcloudimg.com/raw/e13d8391fdf23565662408050caa89b8.png)
 
 ### 查看弹性网卡的子网掩码
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc) 。
 2. 单击左侧目录中的【IP 与网卡】>【弹性网卡】，进入弹性网卡列表页。
 3. 单击弹性网卡 ID，进入详情页，查看弹性网卡的子网掩码。
 如下图所示，所属子网的 CIDR 位数为/20，即弹性网卡的子网掩码为：`255.255.240.0`。
- ![](https://main.qcloudimg.com/raw/5ccac8fb71177dff5fa24061a13f1bea.png)
 CIDR 位数与子网掩码的对应关系如下表所示：
 <table style="width:400px;important!">
 <thead>
@@ -284,4 +273,3 @@ CIDR 位数与子网掩码的对应关系如下表所示：
 1. 登录 [私有网络控制台](https://console.cloud.tencent.com/vpc) 。
 2. 单击左侧目录中的【IP 与网卡】>【弹性网卡】，进入弹性网卡列表页。
 3. 单击弹性网卡 ID，进入详情页，查看弹性网卡的所属子网，如下图中的所属子网网段的首个 IP 即为：`10.200.16.17`。
-![](https://main.qcloudimg.com/raw/3497cabed23ed4af369ca4b978c611eb.png)

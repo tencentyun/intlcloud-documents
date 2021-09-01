@@ -5,7 +5,7 @@ This document provides instructions on how to configure ENI on two common server
 + [Configuring ENI on an Ubuntu CVM](#ubuntu)
 
 
-## [Configuring ENI on a CentOS CVM[](id:centos)
+## Configuring ENI on a CentOS CVM[](id:centos)
 ### Method 1: tool-based configuration
 >!
 >+ This method is applicable to CentOS versions 8.0, 7.8, 7.6, 7.5, 7.4 and 7.2.
@@ -29,14 +29,10 @@ chmod +x ./install.sh
 ```
 4. [Bind an ENI](https://intl.cloud.tencent.com/document/product/576/18535), and then verify that the route of the new ENI eth1 has been distributed.
  1. Run the `ip rule show` command. You can see that the policy-based route of the ENI eth1 has been added.
-     ![](https://main.qcloudimg.com/raw/7900394af6f0f53871af6c4093f3e728.png)
  2. Run the `ip route show table eth1` command to view the eth1 route table.
-		 ![](https://main.qcloudimg.com/raw/75e122a79e96b81de31bf0124c2cf5eb.png)
 5. [](id:step5)(Optional) If there are existing ENIs, you can restart the CVM via the console or running the `reboot` command. Then, the routes of all ENIs will be automatically distributed.
     Restart CVM in the console:
-	![](https://main.qcloudimg.com/raw/f282450fba6a0a61102a3e674ead325b.png)
     Restart CVM by running the command:
-    ![](https://main.qcloudimg.com/raw/84053ed92ec9eda498beaad1479af930.png)
 
 ### Method 2: manual configuration
 >?The following operations use CentOS 7.8 as an example.
@@ -50,7 +46,6 @@ You have bound an ENI to the CVM. For detailed directions, see [Binding ENI to C
 ```plaintext
 ip addr
 ```
- ![](https://main.qcloudimg.com/raw/37c65397f52bce5702edb4b594bf708a.png)
 2. Run the following command to access the `/etc/sysconfig/network-scripts/` folder.
 ```plaintext
 cd /etc/sysconfig/network-scripts/
@@ -76,7 +71,6 @@ NETMASK='255.255.255.192'  # Enter the actual subnet mask.
 #GATEWAY='192.168.1.1'  # Enter the actual gateway. Since the eth0 file has defined the gateway, do not enter the gateway here to avoid conflict.
 ```
 		After modification:
-	 	![](https://main.qcloudimg.com/raw/f32f979387be2c27c034a8fe6959bd66.png)
   4. Press **Esc** when you get to the last line of vim, enter **wq!**, and then press **Enter** to save and close the configuration file.
 4. Run the following command to restart the network service.
 ```plaintext
@@ -88,7 +82,6 @@ systemctl restart network
 ip addr
  ```
  2. Confirm that the secondary ENI and its IP are visible, as shown below:
- ![](https://main.qcloudimg.com/raw/d99d81a7bd973cb0a748d785c326cd22.png)
 	If the IP address is incorrectly configured, perform the following checks:
 	1. Verify the configuration file. Reconfigure the file if needed.
 	2. Confirm whether the network service has restarted. You can run the following command to restart the network for the configuration to take effect.
@@ -126,7 +119,6 @@ The routes need to be reconfigured after network restart.
 ```plaintext
 ip addr
 ```
- ![](https://main.qcloudimg.com/raw/ade946a6b92207acb1fe80bef696379e.png)
 2. Run the following command to access the `/etc/network/` folder.
 ```plaintext
 cd /etc/network/
@@ -168,7 +160,6 @@ ifup eth1
 ip addr
 ```
  2. Confirm that the secondary ENI and its IP are visible, as shown below:
- ![](https://main.qcloudimg.com/raw/2c7060691fc51a212295e209a9dcee83.png)
   If the IP address is incorrectly configured, perform the following checks:
   1. Verify the configuration file. Reconfigure the file if needed.
   2. Confirm whether the ENI has restarted. You can run the following commands to restart ENI for the configuration to take effect.
@@ -208,14 +199,12 @@ ip rule add from 172.21.48.3 table 20    #Enter the actual IP address of the sec
 2. Choose **IP and ENI** > **ENI** in the left sidebar to go to the ENI list page.
 3. Click the ID of the target ENI to go to its details page.
 4. Select the **IPv4 Address Management** tab to view the IP address of the ENI, which is the private IP.
-![](https://main.qcloudimg.com/raw/e13d8391fdf23565662408050caa89b8.png)
 
 ### Viewing the subnet mask of an ENI
 1. Log in to [VPC console](https://console.cloud.tencent.com/vpc).
 2. Choose **IP and ENI** > **ENI** in the left sidebar to go to the ENI list page.
 3. Click the ID of the target ENI to go to its details page, where you can view the subnet mask of the ENI.
 As shown in the following figure, the CIDR bits of the subnet are /20, which means that the subnet mask of the ENI is `255.255.240.0`.
- ![](https://main.qcloudimg.com/raw/5ccac8fb71177dff5fa24061a13f1bea.png)
 The relationship between the CIDR bits and the subnet mask is described in the following table:
 <table style="width:400px;important!">
 <thead>
@@ -284,4 +273,3 @@ If you are not sure about the subnet IP range of the ENI, please follow the step
 1. Log in to [VPC console](https://console.cloud.tencent.com/vpc).
 2. Choose **IP and ENI** > **ENI** in the left sidebar to go to the ENI list page.
 3. Click the ID of the target ENI to go to its details page, where you can view the subnet where the ENI resides. As shown in the figure below, the first IP address in the subnet IP range is `10.200.16.17`.
-![](https://main.qcloudimg.com/raw/3497cabed23ed4af369ca4b978c611eb.png)
