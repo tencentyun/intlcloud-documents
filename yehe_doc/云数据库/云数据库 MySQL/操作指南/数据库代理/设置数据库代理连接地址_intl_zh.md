@@ -4,7 +4,7 @@
 数据库代理访问地址独立于原有的数据库访问地址，通过数据库代理地址的请求全部通过代理集群中转访问数据库的主从节点，进行读写分离，将读请求转发至只读实例，降低主库的负载。
 
 ## 前提条件
-已 [开通数据库代理](https://intl.cloud.tencent.com/document/product/236/41087)。
+已 [开通数据库代理](https://intl.cloud.tencent.com/document/product/236/42052)。
 
 ## 操作步骤
 1. 登录 [MySQL 控制台](https://console.cloud.tencent.com/cdb)，在实例列表，选择已开启代理的主实例，单击实例 ID 或“操作”列的【管理】，进入实例管理页面。
