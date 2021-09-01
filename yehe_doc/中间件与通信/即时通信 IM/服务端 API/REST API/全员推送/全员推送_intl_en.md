@@ -14,17 +14,14 @@
 ```
 https://xxxxxx/v4/all_member_push/im_push?usersig=xxx&identifier=admin&sdkappid=88888888&random=99999999&contenttype=json
 ```
-Where, `xxxxxx` is the country/region-specific domain. Please enter the domain corresponding to the country/region where your SDKAppID is located.
 
-|Country/Region| Domain |
-|----|----|
-|Singapore| adminapisgp.im.qcloud.com |
 
 ### Request parameters
 
 | Parameter | Description |
 | ------------------ | ------------------------------------ |
-| https | The request protocol is HTTPS and the request method is POST. |
+| https       | The request protocol is HTTPS, and the request method is POST.       |
+| xxxxxx  | The country/region where your SDKAppID is located.<li>China:  `console.tim.qq.com `<li>Singapore:  `adminapisgp.im.qcloud.com ` |
 | v4/all_member_push/im_push | Request API |
 | usersig | Signature generated in the app admin account. For more information, see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385). |
 | identifier | The value must be the app admin account. |
