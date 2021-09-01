@@ -21,7 +21,7 @@ RTMP may not be a widely adopted protocol for live streaming, but it is the most
 <span id="Que5"></span>
 
 ### What playback protocols are supported?
-Common live streaming protocols include RTMP, HTTP-FLV, and HLS.
+Common live streaming protocols include RTMP, HTTP-FLV, HLS and WebRTC.
 - **RTMP** can be used for both live push and live playback. It works by splitting long video and audio chunks into short fragments and transporting them as small data packets over the internet. RTMP supports encryption and therefore ensures privacy. However, the complicated splitting and splicing processes add uncertainty to the stability of data transmission in high concurrency scenarios. 
 - **HTTP-FLV** is developed by Adobe Systems and is a rather simple video format. It works by adding a header to large video and audio data chunks. This simplicity makes it superb in delay control and high-concurrency performance. The only drawback is that HTTP-FLV is poorly supported on mobile browsers, but it is an ideal option for mobile apps.  
 - **HLS** is released by Apple. It splits video streams into segments of 5-10s and manages them using M3U8 playlists. The protocol ensures smooth playback as clients download data chunks of 5-10s. However, it comes with high latency of about 10-30s. Unlike HTTP-FLV, HLS is well supported on iPhone and most Android browsers and is therefore often used for URL sharing on QQ and WeChat Moments.
@@ -43,7 +43,9 @@ http://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txT
 http://domain/AppName/StreamName.flv?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 https://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 https://domain/AppName/StreamName.flv?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
+webrtc://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 ```
+
 - **Prefix**
 RTMP: **rtmp://**
 HTTP-FLV: **http://** or **https://**
