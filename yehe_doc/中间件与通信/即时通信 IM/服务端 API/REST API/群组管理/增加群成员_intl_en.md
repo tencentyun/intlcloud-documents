@@ -19,11 +19,7 @@ Above are the IM built-in groups. For more information, please see [Group System
 ```
 https://xxxxxx/v4/group_open_http_svc/add_group_member?sdkappid=88888888&identifier=admin&usersig=xxx&random=99999999&contenttype=json
 ```
-Where, `xxxxxx` is the country/region-specific domain. Please enter the domain corresponding to the country/region where your SDKAppID is located.
 
-|Country/Region| Domain |
-|----|----|
-|Singapore| adminapisgp.im.qcloud.com |
 
 ### Request parameters
 
@@ -31,6 +27,8 @@ The following table only describes the modified parameters when this API is call
 
 | Parameter | Description |
 | ------------------ | ------------------------------------ |
+| https       | The request protocol is HTTPS, and the request method is POST.       |
+| xxxxxx  | The country/region where your SDKAppID is located.<li>China:  `console.tim.qq.com `<li>Singapore:  `adminapisgp.im.qcloud.com ` |
 | v4/group_open_http_svc/add_group_member  | Request API |
 | sdkappid | The SDKAppID assigned by the IM console when an application is created |
 | identifier | The app administrator account. For more information, please see the **App Admin** section in [Login Authentication](https://intl.cloud.tencent.com/document/product/1047/33517#app-.E7.AE.A1.E7.90.86.E5.91.98). |
