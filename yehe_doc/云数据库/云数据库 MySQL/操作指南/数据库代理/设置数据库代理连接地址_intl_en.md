@@ -4,7 +4,7 @@ This document describes how to set the database proxy access address in the Tenc
 The database proxy access address is independent of the original database access address. Requests arriving at the proxy address are all relayed through the proxy cluster to access the source and replica nodes of the database. Read/Write separation is implemented, so that read requests are forwarded to read-only instances, which lowers the load of the source database.
 
 ## Prerequisites
-You have [enabled database proxy](https://intl.cloud.tencent.com/document/product/236/41087).
+You have [enabled database proxy](https://intl.cloud.tencent.com/document/product/236/42052).
 
 ## Directions
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, select a source instance with proxy enabled and click its ID or **Manage** in the **Operation** column to enter the instance management page.
