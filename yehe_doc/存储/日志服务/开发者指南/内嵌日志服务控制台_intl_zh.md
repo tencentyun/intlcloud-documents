@@ -175,11 +175,7 @@ https://console.cloud.tencent.com/cls/search?region=<region>&logset_id=<logset_i
 <td align="left">time </td>
 <td align="left">否</td>
 <td align="left">String</td>
-<td align="left">要检索日志的起始时间至结束时间，格式样例： 
-```
-2021-07-15T10:00:00.000,2021-07-15T12:30:00.000
-```
-</td>
+<td align="left">要检索日志的起始时间至结束时间，格式样例： ```2021-07-15T10:00:00.000,2021-07-15T12:30:00.000```</td>
 </tr>
 <tr>
 <td align="left">query</td>
@@ -237,7 +233,6 @@ https://console.cloud.tencent.com/cls/search?region=<region>&logset_id=<logset_i
 </tr>
 </tbody>
 </table>
-
  2. 拼接完整登录信息以及目的页地址进行登录，<b>参数值需要 urlencode 编码</b>。
 ```plaintext
 https://cloud.tencent.com/login/roleAccessCallback

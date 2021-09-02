@@ -6,7 +6,6 @@
 ### 页面显示当前检索结果为空[](id:question1)
 
 
-
 - **常见原因1**：日志未采集成功。
   **解决方案：**详细故障排查参考 [检索不到日志问题](https://intl.cloud.tencent.com/document/product/614/38446)。
 
@@ -14,9 +13,6 @@
   **场景：**用户检索 user-agent 字段中，包含 Window 的日志，形如 `Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322)`。输入检索语句 user-agent:Window，检索结果为空。原因为 Window 不是一个完整分词，无法单独检索。
   **解决方案：**使用通配符`*`检索`user-agent:Window*`。
 
-- **常见原因3：**使用 SQL 语句分析日志数据，管道符前后忘记加空格。
-  **场景：**用户输入 sql 语句形如`*|SELECT * `。因用户在管道符前后没加空格，CLS 将整体语句当作关键词进行全文检索，检索日志内容中含有“`*|Select *`” 的日志数据。
-  **解决方案：**管道符前后添加空格，例如`* | SELECT *`。
 
 ### 查询语句出现报错信息[](id:question2)
 
@@ -34,12 +30,12 @@
 <tbody><tr>
 <td align="left">QueryError [illegal_argument_exception.Cannot search on field [xxx] since it is not indexed</td>
 <td align="left">查询字段xxx未开启键值索引</td>
-<td align="left">为该字段开启键值索引，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/614/39594#.E9.94.AE.E5.80.BC.E7.B4.A2.E5.BC.95">键值索引</a></td>
+<td align="left">为该字段开启键值索引，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/614/39594">键值索引</a></td>
 </tr>
 <tr>
 <td align="left">QueryError [illegal_argument_exception.Cannot search on Full-Text since it is not indexed.]</td>
 <td align="left">未开启全文索引</td>
-<td align="left">开启全文检索，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/614/39594#.E9.94.AE.E5.80.BC.E7.B4.A2.E5.BC.95">全文索引</a></td>
+<td align="left">开启全文检索，详情请参见 <a href="https://intl.cloud.tencent.com/document/product/614/39594">全文索引</a></td>
 </tr>
 <tr>
 <td align="left">QueryError [illegal_argument_exception.syntax error on field [and|or|not], or full text search is closed]</td>
@@ -85,6 +81,16 @@
 <td align="left">QueryError [verification_exception.Unknown column [xxx]]</td>
 <td align="left">查询字段xxx不存在</td>
 <td align="left">检查该字段名称是否正确</td>
+</tr>
+<tr>
+<td align="left">QueryError [verification_exception.argument of [FUNCNAME(xxx)] must be [numeric], found value [xxx] type [text]]</td>
+<td align="left">传入 FUNCNAME 函数的参数类型不正确，例如 SUM(level)，level 字段为 text 类型时会报错</td>
+<td align="left">检查字段类型是否满足函数要求</td>
+</tr>
+<tr>
+<td align="left">QueryError [query_shard_exception.Failed to parse query [xxx]]</td>
+<td align="left">查询语句语法错误</td>
+<td align="left">检查报错信息中指出的错误位置</td>
 </tr>
 <tr>
 <td align="left">SyntaxError[xxx]</td>

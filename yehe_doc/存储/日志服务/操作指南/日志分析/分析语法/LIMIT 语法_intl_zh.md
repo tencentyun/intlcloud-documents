@@ -1,21 +1,38 @@
+本文介绍 LIMIT 语法的使用及示例。
 
+LIMIT 语法用于限制输出结果的行数。
 
-LIMIT 子句用于限制由 SELECT 语句返回的数据数量。
+## 语法格式
 
-## LIMIT 语法格式
+日志服务支持以下一种 LIMIT 语法格式。
 
-读取前 count 行：
-
-```plaintext
-LIMIT count
+- 只读取前 N 行：
 ```
->!LIMIT 不支持 [offset] rows 语法。
-
-
-## LIMIT 语法样例
-
-对请求状态码日志数降序排序，只获取前10行：
-
-```plaintext
-* | SELECT status, COUNT(status) as ct ORDER BY status DESC LIMIT 10
+limit N
 ```
+- 从第 S 行开始读，读取 N 行：
+```
+offset S limit N
+```
+>?
+> - limit 翻页读取时，只用于获取最终的结果，不可用于获取 SQL 中间的结果。
+> - 不支持将 limit 语法用于子查询内部。例如：
+>```
+* | select sum(pv) from 
+(
+select count(1) as pv from log group by status 
+)
+```
+> 
+
+## 示例
+
+- 只获取10行结果：
+```
+* | select status, count(*) as pv group by status limit 10
+```
+- 获取第2行到第42行的结果，共计41行：
+```
+* | select * from log order by ip offset 2 limit 40
+```
+

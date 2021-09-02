@@ -12,7 +12,7 @@
 
 ## 2. 日志服务的计费模式
 
-CLS 支持按量计费（后付费）方式，即根据用户的实际使用资源情况进行计量，并按日进行费用扣除。按量计费适用于日志服务所有地域。详情请参见 [价格总览](https://intl.cloud.tencent.com/document/product/1007/30945)。
+CLS 支持按量计费（后付费）方式，即根据用户的实际使用资源情况进行计量，并按日进行费用扣除。按量计费适用于日志服务所有地域。详情请参见 [产品定价](https://intl.cloud.tencent.com/document/product/614/37510)。
 
 -----
 
@@ -55,11 +55,9 @@ telnet <region 简称>.cls.tencentyun.com
 
  - 日志主题名称：例如 topic_test
  - 日志集操作：默认选择当前地域现有的日志集。如需新建日志集，请选择【创建日志集】，输入日志集名称（例如 cls_test）。
->? 日志集支持保存3 - 90天。如需更长保存时间，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。
->
 5. 单击【确定】。
  - 创建好的日志主题会出现在日志主题列表中。
-![](https://main.qcloudimg.com/raw/744532830cad015849860480edfe4674.png)
+
  - 新创建的日志集可单击【管理日志集】，在展开的日志集列表页面进行查看。
 
 
@@ -90,7 +88,6 @@ telnet <region 简称>.cls.tencentyun.com
 | 文件名   | 日志文件名，仅支持通配符 \* 和 ? ，\* 表示匹配多个任意字符，? 表示匹配单个任意字符 |
 
 例如待采集文件的绝对路径是`/cls/logs/access.log`，则采集路径填写的目录前缀是`/cls/logs`，日志文件名填写access.log。
-
 
 #### 绑定机器组
 
@@ -219,6 +216,5 @@ Tue Jan 22 14:49:45 2019;download;success;194;a31f28ad59434528660c9076517dc23b
 ## 7. 反馈与建议
 使用腾讯云日志服务产品和服务中有任何问题或建议，您可以通过以下渠道反馈，将有专人跟进解决您的问题：
 - 如果发现产品文档的问题，如链接、内容、API 错误等，您可以单击文档页右侧 【文档反馈】或选中存在问题的内容进行反馈。
-- 如果遇到产品相关问题，您可 [提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
-
+- 如果遇到产品相关问题，您可咨询 [智能客服](https://intl.cloud.tencent.com/contact-sales) 或 [提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
 
