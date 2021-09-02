@@ -58,7 +58,7 @@ ChatLayout chatLayout = findViewById(R.id.chat_layout);
 // Initialize the default UI and interaction of the one-to-one chat panel
 chatLayout.initDefault();
 // Passes in a ChatInfo instance. This instance must contain required chat information and is usually input by the caller.
-// To construct mChatInfo, see the startConversation method of <a href="https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/java/com/tencent/qcloud/tim/demo/menu/StartC2CChatActivity.java">StartC2CChatActivity.java</a>.
+// To construct mChatInfo, see the startConversation method of <a href="https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/menu/StartC2CChatActivity.java">StartC2CChatActivity.java</a>.
 chatLayout.setChatInfo(mChatInfo);
 </pre>
 </li></ol>
