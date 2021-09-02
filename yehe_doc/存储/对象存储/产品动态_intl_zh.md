@@ -14,7 +14,7 @@
 <td>自助诊断工具上线</td>
 <td>自助诊断工具是腾讯云对象存储为用户提供的 Web 工具，可用于错误请求的自助诊断排查。</td>
 <td> 2021-05-27</td>
-<td><a href="https://cloud.tencent.com/document/product/436/57576">自助诊断工具 </a>
+<td>自助诊断工具 </a>
 </tr>
 <tr>
 <td>CDN 日志备份上线</td>
