@@ -6,8 +6,9 @@ This document introduces how to quickly run through the IM demo.
  >? If you already have an app, record its SDKAppID and [obtain key information](#step2).
  > A Tencent Cloud account can create a maximum of 100 IM apps. If you want to create more apps, [disable and delete](https://intl.cloud.tencent.com/document/product/1047/34540) an unwanted app first and then create a new one. **Once an app (along with its SDKAppID) is deleted, the service it provides and all its data are lost**. **Proceed with caution**.
  >
-2. Click **+Add App**.
-3. In the **Create App** dialog box, enter your app name, and click **OK**.
+2. Select a region.
+3. Click **+Add App**.
+4. In the **Create App** dialog box, enter your app name, and click **OK**.
     After creation, you can see the status, service version, SDKAppID, creation time, and expiry time of the new app on the overview page of the console. Record the SDKAppID.
     
 

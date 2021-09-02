@@ -606,8 +606,8 @@ trtcCalling.on(TRTCCalling.EVENT.ERROR, onError);
 #### Error codes
 | Code      | Type    | Description                        |
 | --------- | ----------- | ----------------------------- |
-| 60001     | API call failure  | Failed to call switchToAudioCall.   ｜
-| 60002     | API call failure  | Failed to call switchToVideoCall.   ｜
+| 60001     | API call failure  | Failed to call switchToAudioCall.  |
+| 60002     | API call failure  | Failed to call switchToVideoCall.  |
 
 
 ## FAQ
