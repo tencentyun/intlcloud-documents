@@ -1,5 +1,4 @@
 This document describes how to set styles for Android.
->?Hands-on teaching video: [Setting Styles (Android)](https://cloud.tencent.com/edu/learning/course-3130-57629)
 
 ## Setting the Conversation List Style
 The conversation list layout consists of TitleBarLayout and ConversationListLayout. Each part provides UI styles and event registration APIs that can be modified.
@@ -9,7 +8,7 @@ The conversation list layout consists of TitleBarLayout and ConversationListLayo
 The title bar itself has all the features of a view. In addition, it is divided into three parts: left group, middle group, and right group.
 ![TitleBarLayout](https://main.qcloudimg.com/raw/b95c53bd3961372e1ee75bb65dcafbe6.png)
 
-To make custom modifications, see [ITitleBarLayout](https://github.com/tencentyun/TIMSDK/blob/master/Android/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/base/ITitleBarLayout.java).
+To make custom modifications, see [ITitleBarLayout](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/base/ITitleBarLayout.java).
 For example, the following code hides LeftGroup, sets the title in the middle, and hides the text and image buttons on the right in ConversationLayout:
 
 ```java
@@ -69,7 +68,7 @@ public static void customizeConversation(final ConversationLayout layout) {
 }
 ```
 
-For more information, please see [ConversationLayoutHelper.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/java/com/tencent/qcloud/tim/demo/helper/ConversationLayoutHelper.java).
+For more information, please see [ConversationLayoutHelper.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/helper/ConversationLayoutHelper.java).
 
 
 ### Setting the profile photo
@@ -158,7 +157,7 @@ noticeLayout.setOnNoticeClickListener(new View.OnClickListener() {
 
 ### Modifying the MessageLayout style
 
-MessageLayout is inherited from RecyclerView. This document describes how to customize the chat background, bubbles, text, and nicknames. For more information, please see [IMessageProperties](https://github.com/tencentyun/TIMSDK/blob/master/Android/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/interfaces/IMessageProperties.java).
+MessageLayout is inherited from RecyclerView. This document describes how to customize the chat background, bubbles, text, and nicknames. For more information, please see [IMessageProperties](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/interfaces/IMessageProperties.java).
 
 #### Modifying the chat background
 
@@ -336,7 +335,7 @@ inputLayout.addAction(unit);
 
 
 #### Adding custom features (method 2; added in version `5.4.666`)
-The final effect is the same as method 1. The sample code is as follows ([you can also refer to the implementation of the audieo and video call features](https://github.com/tencentyun/TIMSDK/blob/master/Android/tuikit-live/src/main/java/com/tencent/qcloud/tim/tuikit/live/helper/TUIKitLiveChatController.java)):
+The final effect is the same as method 1. The sample code is as follows ([you can also refer to the implementation of the audieo and video call features](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit-live/src/main/java/com/tencent/qcloud/tim/tuikit/live/helper/TUIKitLiveChatController.java)):
 ```java
 class CustomChatController implements TUIChatControllerListener {
     // This method is called to add a action unit each time the "+" button is clicked
