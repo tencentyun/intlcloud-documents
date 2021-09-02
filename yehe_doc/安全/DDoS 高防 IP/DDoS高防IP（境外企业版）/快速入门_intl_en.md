@@ -29,9 +29,9 @@ Log in to the [Anti-DDoS Advanced (Global Enterprise Edition)](https://console.c
 1. Log in to the [Anti-DDoS Advanced (Global Enterprise Edition)](https://console.cloud.tencent.com/ddos/ddos-basic) console and click **Anti-DDoS Advanced (New)** -> **Application Accessing** in the left sidebar.
 2. Select **IP Access**, click **Add Rule**, and then the resource binding window will pop up.
 3. Select an Anti-DDoS Advanced (Global Enterprise Edition) instance and click **OK**.
-![](https://main.qcloudimg.com/raw/b2a2c76d648453401f3a32c45e5b5196.png)
+![](https://main.qcloudimg.com/raw/0df0b4c8f905ccde1d1a6e6488766473.png)
 
 ### Unassociating cloud resource
 1. Log in to the [Anti-DDoS Advanced (Global Enterprise Edition)](https://console.cloud.tencent.com/ddos/ddos-basic) console and click **Anti-DDoS Advanced (New)** -> **Application Accessing** in the left sidebar.
 2. Select **IP Access** and click **Delete** to unassociate.
-![](https://main.qcloudimg.com/raw/0df0b4c8f905ccde1d1a6e6488766473.png)
+![](https://main.qcloudimg.com/raw/2bb05580869f9f70b6f6454e2e530bab.png)
