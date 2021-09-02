@@ -1,59 +1,86 @@
-## Use Cases
-After you set up a workflow, videos uploaded to the specified bucket and directory will be processed automatically, and the results will be uploaded to the specified bucket and directory. Workflows can include tasks such as transcoding, screenshot taking, animated image generating, and watermarking.
+## Overview
+After you set up a workflow, videos uploaded to the specified bucket and directory will be processed automatically, and the results will be uploaded to the specified bucket and directory. Workflows can include tasks such as transcoding, screenshot taking, animated image generating, moderation, content recognition, content analysis, and watermarking.
 
 
 
 ## Creating a Workflow
-1. Log in to the [MPS console](https://console.cloud.tencent.com/mps) and click **Workflow Management** on the left sidebar.
-2. Click **Create Workflow** to enter the workflow creation page and set the workflow name, trigger bucket, trigger directory, output bucket, output directory, event notifications and configuration items.
-![](https://main.qcloudimg.com/raw/314b57f24a325fc3f4a3f4da16594006.png))
-	- **Workflow Name**
-	This field is required and must be unique. It can contain up to 128 Chinese characters, letters, digits, underscores (_), and hyphens (-).
-	- **Trigger Bucket**
-		- This field is required. You can select a bucket created under the current `APPID`.
-		- After a workflow is enabled, it will be executed automatically for video files uploaded to this bucket.
-	- **Trigger Directory**
-	This field is optional and must end with a slash (/). If it is left blank, the workflow will apply to all directories in the trigger bucket.
-	- **Output Bucket**
-		- This field is required and is the same as the trigger bucket by default. You can also select a bucket under the current `APPID` in the same region.
-		- After a workflow is completed, the video files generated will be stored in this bucket.
-	- **Output Directory**
-	This field is optional and must end with a slash (/). If it is left blank, the output directory will be the same as the triggered directory.
-	- **Configuration Items**
-	Select a task for configuration, which may be transcoding, animated image generation, moderation, content recognition, or content analysis. For more information, please see [Task Configuration](#p1).
+1. Log in to the [MPS console](https://console.cloud.tencent.com/mps) and click **Workflow Management**.
+2. Click **Create Workflow** to enter the workflow creation page and set the workflow name, trigger bucket, trigger directory, output bucket, output directory, event notifications and tasks. For detailed instructions, please see [workflow configuration](#workflow).
+![](https://main.qcloudimg.com/raw/314b57f24a325fc3f4a3f4da16594006.png)
+The table below lists the information needed to configure a workflow.
+<table>
+<tr><th>Item<a id="workflow"></a></th><th>Required</th><th>Description</th></tr>
+<tr>
+<td>Workflow name</td>
+<td>Yes</td>
+<td>Max 128 characters; supports Chinese characters, letters, digits, underscores, and hyphens. Example: "MPS"</td>
+</tr><tr>
+<td>Trigger bucket</td>
+<td>Yes</td>
+<td>Select a bucket created under the current `APPID`. After the workflow is enabled, videos uploaded to this bucket will be processed automatically.</td>
+</tr><tr>
+<td>Trigger directory</td>
+<td>No</td>
+<td>A string that ends with <code>(/)</code>. If it is left empty, the workflow will be applied to all directories under the selected trigger bucket.</td>
+</tr><tr>
+<td>Output bucket</td>
+<td>Yes</td>
+<td>By default, the output bucket is the same as the trigger bucket. You can also select a bucket in the same region under the same `APPID`. After a workflow is executed, the processed videos will be stored in this bucket.</td>
+</tr><tr>
+<td>Output directory</td>
+<td>No</td>
+<td>A string that ends with <code>(/)</code>. If it is left empty, the output directory will be the same as the trigger directory.</td>
+</tr><tr>
+<td>Event notifications</td>
+<td>No</td>
+<td><ul style="margin:0"><li>Disabled by default. For detailed instructions on how to configure event notifications, please see <a href="#recall">callback configuration</a> below. </li><li>To enable CMQ event notifications, you need to activate <a href="https://console.cloud.tencent.com/cmq">CMQ</a> and create a model. After CMQ event notifications are enabled, the specified CMQ will receive notifications about video processing events.</li></ul></td>
+</tr><tr>
+<td>Configuration items</td>
+<td>Yes</td>
+<td>From transcoding, screenshot taking, animated image generation, moderation, content recognition, and content analysis, select at least one task for configuration. For details, please see <a href="#p1">task configuration</a> below.</td>
+</tr></table>
+<table>
+<tr><th>Callback Method<a id="recall"></a></th><th>Configuration</th></tr>
+<tr>
+<td>CMQ callback</td>
+<td><ul style="margin:0"><li>CMQ model: queue model by default </li><li>CMQ zone: Guangzhou, Shanghai, Beijing, Shanghai Finance, Shenzhen Finance, Hong Kong (China), Chengdu, North America, or West US </li><li>Queue name: a custom value </li></ul></td>
+</tr><tr>
+<td>SCF callback</td>
+<td>Click **Go to SCF Console** to configure the callback in the SCF console. For detailed instructions, please see <a href="https://cloud.tencent.com/document/product/862/50658">MPS Task Callback Notification</a>. <br>The configuration applies to all workflows and is not saved specifically by one workflow. </td>
+</tr></table>
 
 ## Event Notifications
 ### 1. Receiving event notifications via CMQ
-- Event notifications are disabled by default. When they are enabled, select queue or topic model and set the model name and region, and MPS event notifications will be sent to the specified CMQ queue or topic.
+- Event notifications are disabled by default. To receive notifications via CMQ, click the toggle next to **Enable Event Notifications**, select queue or topic model for **CMQ Model**, and set the model name and region. MPS event notifications will be sent to the specified queue or topic.
 
 - You can receive event notifications via CMQ only after you activate the CMQ service and create a queue or topic model. For more information, please see [CMQ > Getting Started](https://intl.cloud.tencent.com/document/product/406/8435).
 
 ### 2. Receiving event notifications via SCF
 SCF allows quick handling of the event notifications generated by MPS. The figure below shows the data flow.
-![](https://main.qcloudimg.com/raw/af522de2310535d55ea2d76dc4239696.png)
+![](https://main.qcloudimg.com/raw/02656fefa8e2f61f71252727747b7a02.png)
 Events are pushed to SCF by the MPS trigger and are handled by serverless functions.
 
-#### Use cases for function-based handling
-CLS can deliver the data in log topics to SCF via the MPS log trigger for event notification handling, status monitoring, and alarm handling.
+#### Use cases
+CLS can deliver the data in log topics to SCF via an MPS log trigger to enable operations such as notification sending, status monitoring, and alarm handling.
 
 | Use Case | Description |
 |---------|---------|
-| Video task backup to COS | Backing up the callback tasks of MPS to COS via SCF in a timely manner |
-| Video task callback notifications | Receiving MPS data messages in real time and sending the messages to users via WeCom or email. |
+| Video task backup to COS | Backing up the called back tasks of MPS to COS via SCF in a timely manner |
+| Video task callback notifications | Receiving MPS data messages in real time and sending the messages to users via email, etc. |
 
 >! You will incur a cost for delivering data to SCF. For details, please see [SCF > Billing Overview](https://intl.cloud.tencent.com/document/product/583/17299).
 
 
-[](id:p1)**Task Configuration**
+[](id:p1)**Task configuration**
 
-Task Type | Preset/Custom Template | Supported Templates
+Task Type | Preset/Custom Template | Template Configuration
 -|-|-
- Transcoding|Both supported|<li>Transcoding template: select one or more templates from the drop-down list. If existing templates do not meet your needs, you can create your own in [Template Settings > Transcoding Template](https://console.cloud.tencent.com/mps/templates?tab=video). <br><li>Watermark template: you can add up to 4 watermarks to each transcoding template. If existing watermark templates do not meet your needs, you can create your own in [Template Settings > Watermark Templates](https://console.cloud.tencent.com/mps/templates?tab=watermark).
- Screenshot task | Both supported |<li>Screenshot template: there are three types of screenshots, namely, time point screenshot, sampled screenshot, and image sprite screenshot, each with its own preset templates. For time point screenshots, you must specify the time points. If existing templates do not meet your needs, you can create your own in [Template Settings > Screenshot Template](https://console.cloud.tencent.com/mps/templates?tab=snapshot). <br><li>Watermark template: you can add up to 4 watermarks to a screenshot template. If existing watermark templates do not meet your needs, you can create your own in [Template Settings > Watermark Template](https://console.cloud.tencent.com/mps/templates?tab=watermark).
-Animated image generating task |Both supported| Animated image generating template: you can add multiple animated image generating templates and can change the duration of the animated images. If existing templates do not meet your needs, your can create your own in [Template Settings > Animated Image Generating Template](https://console.cloud.tencent.com/mps/templates?tab=gif).
-Moderation task|Both supported|Moderation template: you can add only 1 moderation template. If existing templates do not meet your needs, you can create your own in [Template Settings > Moderation Template](https://console.cloud.tencent.com/mps/templates?tab=audit).
-Content recognition task|Both supported|Content recognition template: you can add only 1 content recognition template. If existing templates do not meet your needs, you can create your own in [Template Settings > Content Recognition Template](https://console.cloud.tencent.com/mps/templates?tab=recognization).
-Content analysis task|Both supported|Content analysis template: you can add only 1 content analysis template. If existing templates do not meet your requirements, you can create your own in [Template Settings > Content Analysis Template](https://console.cloud.tencent.com/mps/templates?tab=analysis).
+ Transcoding|Both supported|<li>Transcoding template: select a template from the drop-down list. You can add multiple transcoding templates to a task. If existing templates do not meet your needs, you can create your own in [Template Settings > Transcoding Template](https://console.cloud.tencent.com/mps/templates?tab=video). <br><li>Watermark template: you can add up to 4 watermarks to each transcoding template. If existing watermark templates do not meet your needs, you can create your own in [Template Settings > Watermark Templates](https://console.cloud.tencent.com/mps/templates?tab=watermark).
+ Screenshot | Both supported |<li>Screenshot template: there are three types of screenshots: time point screenshot, sampled screenshot, and image sprite screenshot, each with its own templates. For time point screenshots, you need to specify the time points. If existing templates do not meet your needs, you can create your own in [Template Settings > Screenshot Template](https://console.cloud.tencent.com/mps/templates?tab=snapshot). <br><li>Watermark template: you can add up to 4 watermarks to a screenshot template. If existing watermark templates do not meet your needs, you can create your own in [Template Settings > Watermark Template](https://console.cloud.tencent.com/mps/templates?tab=watermark).
+Animated image generation |Both supported| Animated image generating template: you can add multiple animated image generating templates and can change the period for generating animated images. If existing templates do not meet your needs, you can create your own in [Template Settings > Animated Image Generating Template](https://console.cloud.tencent.com/mps/templates?tab=gif).
+Moderation|Both supported|Moderation template: you can add only 1 moderation template to a task. If existing templates do not meet your needs, you can create your own in [Template Settings > Moderation Template](https://console.cloud.tencent.com/mps/templates?tab=audit).
+Content recognition|Both supported|Content recognition template: you can add only 1 content recognition template to a task. If existing templates do not meet your needs, you can create your own in [Template Settings > Content Recognition Template](https://console.cloud.tencent.com/mps/templates?tab=recognization).
+Content analysis|Both supported|Content analysis template: you can add only 1 content analysis template to a task. If existing templates do not meet your requirements, you can create your own in [Template Settings > Content Analysis Template](https://console.cloud.tencent.com/mps/templates?tab=analysis).
 
 
 
@@ -62,16 +89,16 @@ Content analysis task|Both supported|Content analysis template: you can add only
 1. Log in to the [MPS console](https://console.cloud.tencent.com/mps) and click **Workflow Management** on the left sidebar.
 2. The workflow list displays information including workflow name, trigger bucket, region, trigger directory, creation time, and status. You can sort workflows by creation time, search for a workflow by name, and view, edit, or delete a workflow.
 	-  **Enable a workflow**
-		- Workflows are disabled by default. To enable a workflow, click the status button.
+		- Workflows are disabled by default. To enable a workflow, click the toggle in the **Enable** column.
 		- After a workflow is enabled, it will be automatically executed for videos uploaded to the trigger bucket.
 	- **Disable a workflow**
-		- To disable a workflow, click the status button.
-		- After a workflow is disabled, the video processing tasks of the workflow will no longer be automatically executed for videos uploaded to the trigger bucket.
+		- To disable a workflow, click the toggle in the **Enable** column.
+		- After a workflow is disabled, its video processing tasks will no longer be automatically executed for videos uploaded to the trigger bucket.
 	- **Edit a workflow**
-		- Click **Edit** in the "Operation" column of the target workflow to edit its name, trigger bucket, trigger directory, output bucket, output directory, event notifications, and configuration items.
+		- Click **Edit** in the **Operation** column of the target workflow to modify its name, trigger bucket, trigger directory, output bucket, output directory, event notification settings, and tasks.
 		- You cannot edit or delete an enabled workflow.
 	- **Delete a workflow**
-		- Click **Delete** in the "Operation" column of the target workflow to delete it.
-		- After a workflow is deleted, the video processing tasks of the workflow will no longer be automatically executed for videos uploaded to the trigger bucket.
+		- Click **Delete** in the **Operation** column of the target workflow to delete it.
+		- After a workflow is deleted, its video processing tasks will no longer be automatically executed for videos uploaded to the trigger bucket.
 		- You cannot edit or delete an enabled workflow.
 
