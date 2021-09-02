@@ -2,7 +2,7 @@
 
 ## 前提条件
 - 已创建主实例，请参见 [创建 PostgreSQL 实例](https://intl.cloud.tencent.com/document/product/409/7550)。
-- 已创建只读实例实例，请参见 [创建只读实例](https://intl.cloud.tencent.com/document/product/409/39545)。
+- 已创建只读实例，请参见 [创建只读实例](https://intl.cloud.tencent.com/document/product/409/39545)。
 
 ## [创建只读实例 RO 组](id:cjzdslrz)
 1. 登录 [PostgreSQL控制台](https://console.cloud.tencent.com/postgres)，在实例列表，单击实例 ID 或“操作”列的【管理】，进入实例管理页面。
@@ -50,6 +50,6 @@
 
 ## 删除只读实例 RO 组
 RO 组随着组内最后一个只读实例被销毁后，即可删除。
-1. 登录 [PostgreSQL控制台](https://console.cloud.tencent.com/postgres)，在实例列表，单击主实例名，进入实例管理页面。
+1. 登录 [PostgreSQL控制台](https://console.cloud.tencent.com/postgres)，在实例列表，单击主实例 ID，进入实例管理页面。
 2. 在实例管理页面，选择【只读实例】页，可查看所有 RO 组列表，当 RO 组中无任何 RO 实例后即可删除。
 ![](https://main.qcloudimg.com/raw/f90e124d71f1ff3324d3dce408a68d46.png)
