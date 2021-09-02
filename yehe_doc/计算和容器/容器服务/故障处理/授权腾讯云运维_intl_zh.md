@@ -70,13 +70,11 @@ subjects:
 1. 名称和label需按上述规则创建
 2. roleRef可替换为您期望授权腾讯云的权限
 
-#### 可选：ClusterRole/Role:授予腾讯云的操作权限， 如集群内有相关ClusterRole/Role可直接使用ClusterRoleBinding/RoleBinding关联
+#### （可选）ClusterRole/Role:授予腾讯云的操作权限
+如集群内有相关ClusterRole/Role可直接使用ClusterRoleBinding/RoleBinding关联。通过控制台授权，将自动创建策略，无需单独创建。
 
-通过控制台授权，将自动创建策略，无需单独创建。
-
-管理员权限：
-
-```yaml
+<dx-codeblock>
+:::管理员权限
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRole
 metadata:
@@ -95,11 +93,8 @@ rules:
   verbs:
   - '*'
 
-```
-
-只读权限：
-
-```yaml
+:::
+:::只读权限
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRole
 metadata:
@@ -284,5 +279,5 @@ rules:
   - list
   - watch
 
-```
+:::
 

@@ -59,7 +59,7 @@ If the problem persists or the reason is not identified, please [contact us](htt
 
 ### What about migration speed and cost?
 
-- Speed: this primarily depends on the bandwidth of the destination CVM. We tested a pay-as-you-go CVM (1 CPU core and 1 GB memory) with a bandwidth of 12 MB, the actual migration speed is about 9 MB/second.
+- Speed: this primarily depends on the bandwidth of the destination CVM. We tested a pay-as-you-go CVM (1 CPU core and 1 GB memory) with a bandwidth of 12Mbps, the actual migration speed is about 9Mbps/second.
 - Cost: the migration tool is free of charge. You will be charged for bandwidth and other resources used during migration. For details, please refer to the prices listed on the Tencent Cloud website.
   
 ### Can I migrate multiple CVMs at the same time?

@@ -1613,7 +1613,7 @@ This API can specify a language for recognition or translate the information rec
 | Parameter | Type | Description |
 | ------------- |:-------------:|-------------|
 | fileID | NSString* | URL of audio file, which will be retained on the server for 90 days |
-| speechLanguage | NSString* | The language in which the audio file is to be converted to text. For parameters, please see [Language Parameter Reference Table](https://cloud.tencent.com/document/product/607/30282) |
+| speechLanguage | NSString* | The language in which the audio file is to be converted to text. For parameters, please see [Language Parameter Reference Table](https://intl.cloud.tencent.com/document/product/607/30260) |
 | translatelanguage | NSString* | The language into which the audio file will be translated. For parameters, please see [Language Parameter Reference List](https://intl.cloud.tencent.com/document/product/607/30260). This parameter is currently unavailable. Enter the same value as that of `speechLanguage`. |
 
 #### Sample code  

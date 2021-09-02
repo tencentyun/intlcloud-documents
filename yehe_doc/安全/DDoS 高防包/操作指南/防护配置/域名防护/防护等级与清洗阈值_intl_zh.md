@@ -15,7 +15,7 @@
 >!
 >- 上述三种 CC 防护等级所采用的防护算法只适用于网页或 H5 页面类的站点。
 >- 如果被访问网站的业务是 API 或原生 App 应用，该类业务一般无法正常响应算法验证，所以会存在很大的误拦截的风险。
->- 如果用户存在 API 业务或原生 App 类业务的 CC 防护需求，请 [联系我们](https://cloud.tencent.com/online-service?from=connect-us) 进行防护策略定制。
+>- 如果用户存在 API 业务或原生 App 类业务的 CC 防护需求，请 [联系我们](https://intl.cloud.tencent.com/contact-us) 进行防护策略定制。
 
 ## 前提条件
 您需要成功 [购买 DDoS 高防包](https://intl.cloud.tencent.com/document/product/1029/36115) ，并设置防护对象。
@@ -37,5 +37,6 @@
 ![](https://main.qcloudimg.com/raw/3950c4c7e945b378cfa4b5819ecf04cc.png)
 6. 单击【确定】添加规则。
 >! 精细化的规则优先级高于高防包实例全局维度下的规则。
+
 7. 新建完成后 CC 防护域名列表中，将新增一条 CC 防护域名规则，可以在右侧操作栏，单击【配置】，修改 CC 防护域名等级和清洗阈值。
 ![](https://main.qcloudimg.com/raw/1b3bf38ff4b057308be7441e8f855bb4.png)

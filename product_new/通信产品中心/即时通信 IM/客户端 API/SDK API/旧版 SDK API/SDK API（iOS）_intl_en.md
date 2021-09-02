@@ -233,7 +233,7 @@ TIMFriendshipManager is the module for managing profile relationship chains. You
 
 ## TIMMessage
 
-[TIMMessage](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/IM_DOC/iOS/ImSDK/Classes/TIMMessage.html#timmessage) consists of multiple message elements [TIMElem](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/IM_DOC/iOS/ImSDK/Classes/TIMMessage.html#timelem). The TIMElem can be text or an image, and each message can contain multiple texts or images. For more information, see [Receiving and Sending Messages](https://cloud.tencent.com/document/product/269/9150).
+[TIMMessage](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/IM_DOC/iOS/ImSDK/Classes/TIMMessage.html#timmessage) consists of multiple message elements [TIMElem](https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/IM_DOC/iOS/ImSDK/Classes/TIMMessage.html#timelem). The TIMElem can be text or an image, and each message can contain multiple texts or images. 
 
 | API | Description |
 | --- | --- |

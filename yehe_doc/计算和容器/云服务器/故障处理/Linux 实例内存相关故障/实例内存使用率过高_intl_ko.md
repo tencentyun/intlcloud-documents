@@ -49,7 +49,7 @@ Linux 릴리스 버전마다 `free` 명령어 출력의 의미가 다를 수 있
 메모리 모니터링에서 메모리 사용률은 총 메모리 중 사용한 메모리의 비율로 계산합니다. 버퍼와 시스템 캐시가 점유하는 콘텐츠는 포함되지 않습니다. 계산 프로세스는 다음과 같습니다.
 = `(Total - available)100% / Total`
 = `(Total - (Free + Buffers + Cached + SReclaimable - Shmem))100% /Total`
-= `（Total - Free - Buffers - Cached - SReclaimable + Shmem）* 100% / Total`
+= `(Total - Free - Buffers - Cached - SReclaimable + Shmem）* 100% / Total`
 
 계산 프로세스에서 사용하는 `Total`, `Free`, `Buffer`, `Cached`, `SReclaimable`, `Shmem` 매개변수는 `/proc/meminfo`에서 획득할 수 있습니다. 다음은 `/proc/meminfo` 예시입니다.
 ```plaintext

@@ -15,7 +15,7 @@ This level applies to more complex CC attacks. It will run checks on all visitor
 >!
 >- The protection algorithms used at the above three CC protection levels are only applicable to webpages and HMTL5 pages.
 >- False blocking is highly likely to occur in a visited website for API or native app businesses, as requests to the website cannot pass the verification.
->- To protect your API or native app business from CC attacks, please [contact us](https://cloud.tencent.com/online-service?from=connect-us) to customize protection policies.
+>- To protect your API or native app business from CC attacks, please [contact us](https://intl.cloud.tencent.com/contact-us) to customize protection policies.
 
 ## Prerequisites
 You have successfully purchased an [Anti-DDoS Pro](https://intl.cloud.tencent.com/document/product/1029/36115) instance and set the protected target.
@@ -37,5 +37,6 @@ You have successfully purchased an [Anti-DDoS Pro](https://intl.cloud.tencent.co
 ![](https://main.qcloudimg.com/raw/3950c4c7e945b378cfa4b5819ecf04cc.png)
 6. Click **OK** to add the rule.
 >! Refined rules take precedence over rules at the Anti-DDoS Pro instance dimension.
+
 7. Now a CC protection domain name rule is added to the CC protection domain name list. You can click **Configuration** on the right of the rule to modify the CC protection level and cleansing threshold.
 ![](https://main.qcloudimg.com/raw/1b3bf38ff4b057308be7441e8f855bb4.png)

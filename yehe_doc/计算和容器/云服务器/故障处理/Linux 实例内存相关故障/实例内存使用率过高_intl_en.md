@@ -49,7 +49,7 @@ The `free` command output may vary with the Linux distributions, which is unreli
 The memory utilization is the ratio of memory used to total memory, excluding the buffer and system cache. The calculation formula is as follows:
 = `(Total - available)100% / Total`
 = `(Total - (Free + Buffers + Cached + SReclaimable - Shmem)) * 100% / Total`
-= `(Total - Free - Buffers - Cached - SReclaimable + Shmem) * 100% / Total`
+= `(Total - Free - Buffers - Cached - SReclaimable + Shmem）* 100% / Total`
 
 The required parameters `Total`, `Free`, `Buffer`, `Cached`, `SReclaimable`, and `Shmem` can be obtained in `/proc/meminfo`. Below is an example of `/proc/meminfo`.
 ```plaintext
