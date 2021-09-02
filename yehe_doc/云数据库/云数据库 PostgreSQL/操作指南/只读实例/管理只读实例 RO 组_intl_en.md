@@ -50,6 +50,6 @@ On the RO group configuration page, you can configure the basic information of t
 
 ## Deleting an RO Group
 An RO group can be deleted if it has no read-only replicas.
-1. Log in to the [TencentDB for PostgreSQL console](https://console.cloud.tencent.com/postgres). In the instance list, click the primary instance ID/name or **Manage** in the **Operation** column to access the instance management page.
+1. Log in to the [TencentDB for PostgreSQL console](https://console.cloud.tencent.com/postgres). In the instance list, click the primary instance ID or **Manage** in the **Operation** column to access the instance management page.
 2. On the **Read-only Replica** tab, locate the desired RO group, confirm that it has no read-only replicas, and click **More** > **Delete** in the **Operation** column.
 ![](https://main.qcloudimg.com/raw/f90e124d71f1ff3324d3dce408a68d46.png)
