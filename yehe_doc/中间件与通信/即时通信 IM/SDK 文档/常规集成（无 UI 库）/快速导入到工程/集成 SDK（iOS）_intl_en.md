@@ -7,7 +7,7 @@ This document describes how to quickly integrate the Tencent Cloud IM SDK (iOS) 
 - Your project has a valid developer signature.
 
 ## Integrating the IM SDK
-You can either automatically integrate the IM SDK using CocoaPods, or manually download the [SDK](https://github.com/tencentyun/TIMSDK/tree/master/iOS/ImSDK) and import it to your current project.
+You can either automatically integrate the IM SDK using CocoaPods, or manually download the [SDK](https://github.com/tencentyun/TIMSDK/tree/master/iOS/IMSDK) and import it to your current project.
 
 ### Automatic loading using CocoaPods
 #### 1. Install CocoaPods
@@ -95,7 +95,7 @@ After the pod command is executed, an .xcworkspace project file integrated with 
 
 ### Manual integration
 #### 1. Download the SDK
-Download the latest SDK version from [GitHub](https://github.com/tencentyun/TIMSDK/tree/master/iOS/ImSDK):
+Download the latest SDK version from [GitHub](https://github.com/tencentyun/TIMSDK/tree/master/iOS/IMSDK):
 
 - `ImSDK.framework` and `ImSDK_Plus.framework` are the core dynamic library files of the IM SDK.
 <table>
@@ -126,7 +126,7 @@ Download the latest SDK version from [GitHub](https://github.com/tencentyun/TIMS
 <tbody><tr>
 <td>TXLiteAVSDK_UGC.framework</td>
 <td>Extension package for recording and editing short videos</td>
-<td>This package provides short video recording and editing features. For more information, see <a href="https://cloud.tencent.com/product/ugsv">UGSV SDK Documentation</a>.</td>
+<td>This package provides short video recording and editing features. For more information, see <a href="https://intl.cloud.tencent.com/product/ugsv">UGSV SDK Documentation</a>.</td>
 </tr>
 </tbody></table>
 
