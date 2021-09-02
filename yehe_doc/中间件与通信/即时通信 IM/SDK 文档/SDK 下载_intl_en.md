@@ -10,27 +10,27 @@ You can download the latest source codes of IM SDKs and demos.
 </tr>
 <tr>
 <td style="text-align:center">Android  </td>
-<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/Android/SDK">GitHub (recommended)</a></td>
-<td style="text-align:center" ><a href="https://gitee.com/cloudtencent/TIMSDK/tree/master/Android/SDK#https://imsdk-1252463788.cos.ap-guangzhou.myqcloud.com/restructure/android/5.1.131/imsdk-smart-5.1.131.aar">Gitee</a></td>
+<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/Android/IMSDK">GitHub (recommended)</a></td>
+<td style="text-align:center" ><a href="https://gitee.com/cloudtencent/TIMSDK/tree/master/Android/IMSDK">Gitee</a></td>
 <td style="text-align:left" ><a href="https://intl.cloud.tencent.com/document/product/1047/34286">Import TUIKit (Android)</a><br><a href="https://intl.cloud.tencent.com/document/product/1047/34306">SDK Integration (Android)</a></td>
 <td style="text-align:center" rowspan='4'><a href="https://intl.cloud.tencent.com/document/product/1047/34282">Update Log (Native)</a> </td>
 </tr>
 <tr>
 <td style="text-align:center">iOS  </td>
-<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/iOS/ImSDK">GitHub (recommended)</a></td>
-<td style="text-align:center" ><a href="https://gitee.com/cloudtencent/TIMSDK/tree/master/iOS/ImSDK">Gitee</a></td>
+<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/iOS/IMSDK">GitHub (recommended)</a></td>
+<td style="text-align:center" ><a href="https://gitee.com/cloudtencent/TIMSDK/tree/master/iOS/IMSDK">Gitee</a></td>
 <td style="text-align:left" ><a href="https://intl.cloud.tencent.com/document/product/1047/34287">Import TUIKit (iOS)</a><br><a href="https://intl.cloud.tencent.com/document/product/1047/34307">SDK Integration (iOS)</a></td>
 </tr>
 <tr>
 <td style="text-align:center">Mac  </td>
-<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/Mac/ImSDK">GitHub (recommended)</a></td>
-<td style="text-align:center" ><a href="https://gitee.com/cloudtencent/TIMSDK/tree/master/Mac/ImSDK">Gitee</a></td>
+<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/Mac/IMSDK">GitHub (recommended)</a></td>
+<td style="text-align:center" ><a href="https://gitee.com/cloudtencent/TIMSDK/tree/master/Mac/IMSDK">Gitee</a></td>
 <td style="text-align:left" ><a href="https://intl.cloud.tencent.com/document/product/1047/34308">SDK Integration (Mac)</a></td>
 </tr>
 <tr>
 <td style="text-align:center">Windows  </td>
-<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/cross-platform/Windows">GitHub (recommended)</a></td>
-<td style="text-align:center" ><a href="https://gitee.com/cloudtencent/TIMSDK/tree/master/cross-platform/Windows">Gitee</a></td>
+<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/Windows/IMSDK">GitHub (recommended)</a></td>
+<td style="text-align:center" ><a href="https://gitee.com/cloudtencent/TIMSDK/tree/master/Windows/IMSDK">Gitee</a></td>
 <td style="text-align:left" ><a href="https://intl.cloud.tencent.com/document/product/1047/34310">SDK Integration (Windows)</a></td>
 </tr>
 </table>
