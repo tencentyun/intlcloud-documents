@@ -70,7 +70,7 @@ After you create an anchor and a viewer, a live room list is required to associa
 - After the anchor terminates the room, the server also terminates the room ID.
 - The viewer gets the room ID list from the server and clicks a room ID to enter the corresponding room.
 
-Room lists can vary, and we do not provide an example of how to build a room list at the server end. You can see [`RoomManager`](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/java/com/tencent/qcloud/tim/demo/scenes/net/RoomManager.java) in the demo to implement the logic by which the client reports the room list.
+Room lists can vary, and we do not provide an example of how to build a room list at the server end. You can see [`RoomManager`](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/scenes/net/RoomManager.java) in the demo to implement the logic by which the client reports the room list.
 
 1. After the anchor is created, live streaming started or stopped information is reported in the callback function at the anchor end.
 ```java
