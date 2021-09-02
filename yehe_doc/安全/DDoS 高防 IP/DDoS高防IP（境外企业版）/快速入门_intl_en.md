@@ -28,7 +28,7 @@ Log in to the [Anti-DDoS Advanced (Global Enterprise Edition)](https://console.c
 ### Associating cloud resource
 1. Log in to the [Anti-DDoS Advanced (Global Enterprise Edition)](https://console.cloud.tencent.com/ddos/ddos-basic) console and click **Anti-DDoS Advanced (New)** -> **Application Accessing** in the left sidebar.
 2. Select **IP Access**, click **Add Rule**, and then the resource binding window will pop up.
-3. Select the Anti-DDoS Advanced (Global Enterprise Edition) instance and the CVM instances that need to be protected, click **OK**.
+3. Select an Anti-DDoS Advanced (Global Enterprise Edition) instance and click **OK**.
 ![](https://main.qcloudimg.com/raw/b2a2c76d648453401f3a32c45e5b5196.png)
 
 ### Unassociating cloud resource
