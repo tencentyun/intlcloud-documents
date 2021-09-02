@@ -2,7 +2,7 @@
 ここでは、TencentDB for MySQLコンソールを介してデータベースプロキシを無効化する方法をご紹介します。
 
 ## 前提条件
-[データベースプロキシのアクティブ化](https://intl.cloud.tencent.com/document/product/236/41087)が完了していること。
+[データベースプロキシのアクティブ化](https://intl.cloud.tencent.com/document/product/236/42052)が完了していること。
 
 ## 操作手順
 1. [MySQLコンソール](https://console.cloud.tencent.com/cdb)にログインし、インスタンスリストで、プロキシの無効化が必要なマスターインスタンスを選択し、インスタンスIDまたは「操作」の列の【管理】をクリックし、インスタンス管理ページに進みます。
