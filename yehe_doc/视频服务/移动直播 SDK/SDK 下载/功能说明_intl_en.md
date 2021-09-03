@@ -1,6 +1,6 @@
 
 
-Mobile Live Video Broadcasting (MLVB) currently provides an easy-to-use SDK **LiteAV_Smart**. With a basic edition license, you can use live streaming features including stream publishing/playback and beauty filters such as skin smoothing and brightening. We also plan to launch an **enterprise edition SDK** in the near future, which includes advanced features for an enhanced live streaming experience.
+Mobile Live Video Broadcasting (MLVB) currently provides an easy-to-use SDK **LiteAV_Smart**. With a basic edition license, you can use live streaming features including stream publishing/playback and beauty filters such as skin smoothing and brightening. Recently, we have upgraded the overseas SDK to the professional version. You can enjoy now it with more features.
 
 
 ### SDK and license 
