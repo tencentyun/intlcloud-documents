@@ -62,7 +62,7 @@ t1  CREATE TABLE `t1` (
 在这条语句中`SELECT a AS x, ROW(11, 12) = (SELECT MAX(x), 12), ROW(11, 12) IN (SELECT MAX(x), 12) FROM t1;`
 
 - MySQL 5.5、5.6 处理子查询 SELECT MAX(x), 12 时，如果该子查询位于 in 后面则相当于 SELECT MAX(x), 12 from t1，如果子查询位于 = 后面，则相当于 SELECT x, 12，其中 x 就是当前行中 a 的别名。
-- MySQL 5.7 和 MariaDB 10.1.* 中，子查询 SELECT MAX(x), 12 都等于 SELECT x, 12 ，其中 x 就是当前行中 a 的别名。
+- MySQL 5.7 和 MariaDB 10.1.\* 中，子查询 SELECT MAX(x), 12 都等于 SELECT x, 12 ，其中 x 就是当前行中 a 的别名。
 
 示例：
 ```
@@ -92,7 +92,7 @@ MySQL 5.7 和 MariaDB 中，由于 NULL 属于未知值，在上述的对比中�
 如果 alter table 仅交换列的顺序，MariaDB 允许使用 inplace 算法，但 MySQL 不允许。
 MariaDB 执行 inplace alter table 后，show create table t1 后发现运行结果与 MySQL 用 ALGORITHM=COPY 时运行结果相同。
 
-### 4 MySQL 和 MariaDB 的未定义行为
+### 4. MySQL 和 MariaDB 的未定义行为
 未定义行为（undefined behavior）：指 MySQL、MariaDB 可以按照任意方式实现这种功能和行为，且版本之间可能发生变化而不需要通知用户或者明确指出。MySQL、MariaDB 对这些行为的实现可能产生相同的结果或者不同的结果。
 
 对于现在和未来版本的这类不同或者相同之处，MariaDB 不会做任何结果保证，也不保证提供内核优化保证完全一致，[未定义行为官方说明](https://mariadb.com/kb/en/mariadb/mariadb-vs-mysql-compatibility/)。
