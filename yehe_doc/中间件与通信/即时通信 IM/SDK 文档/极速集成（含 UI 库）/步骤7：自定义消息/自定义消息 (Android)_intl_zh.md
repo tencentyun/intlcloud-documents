@@ -138,7 +138,7 @@ if (messageSender != null) {
 
 #### 创建 ViewHolder
 `TUIKit` 使用 `RecyclerView` 来展示消息，要想显示自定义消息，需要创建自定义消息的 `ViewHolder` 来存放展示消息内容的 `View`。
-自定义消息的 `ViewHolder` 可以继承自 [基础消息 ViewHolder](https://github.com/tencentyun/TIMSDK/tree/master/Android/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/layout/message/holder)。
+自定义消息的 `ViewHolder` 可以继承自 [基础消息 ViewHolder](https://github.com/tencentyun/TIMSDK/tree/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/layout/message/holder)。
 ```java
 // 定义 HelloViewHolder 继承自 MessageCustomHolder
 class HelloViewHolder extends MessageCustomHolder{
