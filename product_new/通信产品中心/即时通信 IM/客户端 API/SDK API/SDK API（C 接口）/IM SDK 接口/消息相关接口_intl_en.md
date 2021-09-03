@@ -397,7 +397,7 @@ TIM_DECL int TIMMsgDelete(const char* conv_id, enum TIMConvType conv_type, const
 
 >?
 >- If `kTIMMsgDeleteParamMsg` is specified, the specified local message is deleted from the conversation.
->- If `kTIMMsgDeleteParamMsg` is not specified and `kTIMMsgDeleteParamIsRamble` is set to false, all local messages of the conversation are deleted. If `kTIMMsgDeleteParamIsRamble` is set to true, all roaming messages of the conversation are deleted. Currently, the deletion of roaming messages is not supported.
+>- If `kTIMMsgDeleteParamMsg` is not specified and `kTIMMsgDeleteParamIsRamble` is set to false, all local messages of the conversation are deleted. If `kTIMMsgDeleteParamIsRamble` is set to true, all roaming messages of the conversation are deleted. Currently, 5.5.904 and later versions are supported.
 >- Generally, the stored message JSON string or the JSON string located by the message locator is used. You do not need to construct the message JSON string when deleting messages.
 
 

@@ -43,7 +43,7 @@ Currently, EMR Standard supports the Hadoop, Druid, ClickHouse, Kafka, and Doris
 | Ganglia                | 3.7.2       | 3.7.2       | 3.7.2       | 3.7.2       | 3.7.2       | 3.7.2       | 3.7.2       | 3.7.2       | 3.7.2       |
 | Hue                    | 3.12.0      | 3.12.0      | 4.4.0       | 4.6.0       | 4.6.0       | 4.6.0       | 4.6.0       | 4.6.0       | 4.6.0       |
 | Sqoop                  | 1.4.6       | 1.4.6       | 1.4.7       | 1.4.7       | 1.4.7       | 1.4.7       | 1.4.7       | 1.4.7       | 1.4.7       |
-| Ooize                  | 4.3.1       | 4.3.1       | 4.3.1       | 5.1.0       | 5.1.0       | 5.1.0       | 5.1.0       | 5.1.0       | 5.1.0       |
+| Oozie                  | 4.3.1       | 4.3.1       | 4.3.1       | 5.1.0       | 5.1.0       | 5.1.0       | 5.1.0       | 5.1.0       | 5.1.0       |
 | Ranger                 | -           | 0.7.1       | 0.7.1       | 1.2.0       | 1.2.0       | 1.2.0       | 1.2.0       | 1.2.0       | 1.2.0       |
 | ZooKeeper (required component)  | 3.4.9       | 3.4.9       | 3.4.9       | 3.5.5       | 3.5.5       | 3.6.1       | 3.6.1       | 3.6.1       | 3.6.1       |
 | Flume                  | -           | -           | 1.8.0       | 1.9.0       | 1.9.0       | 1.9.0       | 1.9.0       | 1.9.0       | 1.9.0       |
@@ -79,7 +79,7 @@ Currently, EMR Standard supports the Hadoop, Druid, ClickHouse, Kafka, and Doris
 | HBase                 | 2.2.0       | 2.3.3       | 2.3.3       |
 | Hue                   | 4.4.0       | 4.4.0       | 4.4.0       |
 | Sqoop                 | 1.4.7       | 1.4.7       | 1.4.7       |
-| Ooize                 | 5.1.0       | 5.1.0       | 5.1.0       |
+| Oozie                 | 5.1.0       | 5.1.0       | 5.1.0       |
 | Ranger                | 2.0.0       | 2.0.0       | 2.1.0       |
 | ZooKeeper (required component) | 3.4.9       | 3.6.1       | 3.6.1       |
 | Flume                 | 1.9.0       | 1.9.0       | 1.9.0       |
@@ -151,7 +151,7 @@ Currently, EMR TianQiong supports Hadoop clusters only. It has integrated the en
 | Ganglia               | 3.7.2                |
 | Hue                   | 4.6.0                |
 | Sqoop                 | 1.4.7                |
-| Ooize                 | 5.1.0                |
+| Oozie                 | 5.1.0                |
 | Ranger                | 1.2.0                |
 | ZooKeeper (required component) | 3.6.1                |
 | Flume                 | 1.9.0                |

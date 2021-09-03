@@ -18,8 +18,6 @@
 | 广州 | 三区、四区 |
 | 北京 | 三区、四区、五区 |
 | 上海 | 二区、三区、四区 |
-| 上海金融 | 一区、二区、三区 |
-| 深圳金融 | 一区 |
 | 曼谷 | 一区 |
 
 >! 除上述地域外，其他地域不支持 Ckafka 投递。
@@ -32,9 +30,9 @@
 3. 单击需要配置 Ckafka 消费的日志主题 ID/名称，进入日志主题管理页面。
 4. 单击【Ckafka消费】页签，进入 Ckafka 消费配置页面。
 5. 单击右侧的【编辑】，开启 Ckafka 消费开关，选择消费的 Ckafka 实例以及对应的消息列队。
-![](https://main.qcloudimg.com/raw/43a9878b5bf8f0500c1ba19b668b7766.png)
-7. 单击【保存】，启动 Ckafka 消费，Ckafka 消费状态显示为“已开启”则表示开启成功。
-![](https://main.qcloudimg.com/raw/f964f0a141123a7926b8fd1a1eb1b5ba.png)
+
+6. 单击【保存】，启动 Ckafka 消费，Ckafka 消费状态显示为“已开启”则表示开启成功。
+
 
 >! 若需要在投递至 Ckafka 前对日志进行清洗加工过滤，可参考使用 [通过云函数投递至 Ckafka](https://intl.cloud.tencent.com/document/product/614/38885) 操作。
 >

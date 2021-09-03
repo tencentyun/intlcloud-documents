@@ -111,7 +111,7 @@ You need to select **Open webpage** when [adding a certificate](#xiaomiStep1_2) 
 
 #### Open specified in-app page
 
-1. In manifest, configure the `intent-filter` of the Activity to be opened. See the sample code below. You can refer to [AndroidManifest.xml](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/AndroidManifest.xml) of the demo:
+1. In manifest, configure the `intent-filter` of the Activity to be opened. See the sample code below. You can refer to [AndroidManifest.xml](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/AndroidManifest.xml) of the demo:
 
    ```
    <activity
@@ -154,7 +154,7 @@ Select **Open app** or **Open specified in-app page** in **Response after Click*
 **Step 1. Set custom content (sender)**
 Set the custom content for the notification bar message before sending the message.
 
-- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
+- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
 
   ```
   JSONObject jsonObject = new JSONObject();
@@ -188,7 +188,7 @@ Set the custom content for the notification bar message before sending the messa
   String extContent = extra.get("ext");
   ```
 
-- If you selected **Open specified in-app page** in **Response after Click** when [adding a certificate](#xiaomiStep1_2), `MiPushMessage`, which is the object that encapsulates the message, is passed to the client through `Intent`. The client then obtains the custom content from `Activity`. You can refer to the implementation of the `parseOfflineMessage(Intent intent)` method in the [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) class.
+- If you selected **Open specified in-app page** in **Response after Click** when [adding a certificate](#xiaomiStep1_2), `MiPushMessage`, which is the object that encapsulates the message, is passed to the client through `Intent`. The client then obtains the custom content from `Activity`. You can refer to the implementation of the `parseOfflineMessage(Intent intent)` method in the [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) class.
 
   ```
     Bundle bundle = getIntent().getExtras(); 
@@ -243,7 +243,7 @@ You need to select **Open webpage** when [adding a certificate](#huaweiStep1_2) 
 
 #### Open specified in-app page
 
-1. In manifest, configure the `intent-filter` of the Activity to be opened. See the sample code below. You can refer to [AndroidManifest.xml](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/AndroidManifest.xml) of the demo:
+1. In manifest, configure the `intent-filter` of the Activity to be opened. See the sample code below. You can refer to [AndroidManifest.xml](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/AndroidManifest.xml) of the demo:
 
    ```
    <activity
@@ -285,7 +285,7 @@ You need to select **Open webpage** when [adding a certificate](#huaweiStep1_2) 
 **Step 1. Set custom content (sender)**
 Set the custom content for the notification bar message before sending the message.
 
-- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
+- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
 
   ```
   JSONObject jsonObject = new JSONObject();
@@ -312,7 +312,7 @@ Set the custom content for the notification bar message before sending the messa
 
 **Step 2. Set custom content (receiver)**
 
-- If you selected **Open app** or **Open specified in-app page** in **Response after Click** when [adding a certificate](#huaweiStep1_1), the client can obtain the custom content from `Activity` when the notification bar message is clicked. You can refer to the parseOfflineMessage(Intent intent) implementation method in the [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) class.
+- If you selected **Open app** or **Open specified in-app page** in **Response after Click** when [adding a certificate](#huaweiStep1_1), the client can obtain the custom content from `Activity` when the notification bar message is clicked. You can refer to the parseOfflineMessage(Intent intent) implementation method in the [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) class.
 
 ```
 Bundle bundle = getIntent().getExtras();
@@ -396,7 +396,7 @@ These are the ways you can open a specific in-app interface:
 
 **Intent action**
 
-1. In AndroidManifest, set the following configuration in the Activity to be opened and add category without data. You can refer to [AndroidManifest.xml](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/AndroidManifest.xml) of the demo:
+1. In AndroidManifest, set the following configuration in the Activity to be opened and add category without data. You can refer to [AndroidManifest.xml](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/AndroidManifest.xml) of the demo:
 
 ```
 <intent-filter>
@@ -416,7 +416,7 @@ Select **Open app** or **Open specified in-app page** in **Response after Click*
 **Step 1. Set custom content (sender)**
 Set the custom content for the notification bar message before sending the message.
 
-- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
+- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
 
   ```
   JSONObject jsonObject = new JSONObject();
@@ -442,7 +442,7 @@ Set the custom content for the notification bar message before sending the messa
 - For information on configurations for the IM server, refer to the [OfflinePushInfo Format Example](https://intl.cloud.tencent.com/document/product/1047/33527). 
 
 **Step 2. Set custom content (receiver)**
-When the notification bar message is clicked, the client can obtain the custom content from the launched `Activity`. You can refer to the `parseOfflineMessage(Intent intent)` implementation method in the [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) class.
+When the notification bar message is clicked, the client can obtain the custom content from the launched `Activity`. You can refer to the `parseOfflineMessage(Intent intent)` implementation method in the [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) class.
 
 ```
 Bundle bundle = intent.getExtras();
@@ -500,7 +500,7 @@ You need to select **Open webpage** when [adding a certificate](#vivoStep1_2) an
 
 #### Open specified in-app page
 
-1. In manifest, configure the `intent-filter` of the Activity to be opened. See the sample code below. You can refer to [AndroidManifest.xml](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/AndroidManifest.xml) of the demo:
+1. In manifest, configure the `intent-filter` of the Activity to be opened. See the sample code below. You can refer to [AndroidManifest.xml](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/AndroidManifest.xml) of the demo:
 
    ```
    <activity
@@ -542,7 +542,7 @@ Select **Open app** or **Open specified in-app page** in **Response after Click*
 **Step 1. Set custom content (sender)**
 Set the custom content for the notification bar message before sending the message.
 
-- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
+- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
 
   ```
   JSONObject jsonObject = new JSONObject();
@@ -633,7 +633,7 @@ Select **Open app** or **Open specified in-app page** in **Response after Click*
 **Step 1. Set custom content (sender)**
 Set the custom content for the notification bar message before sending the message.
 
-- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
+- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
 
   ```
   JSONObject jsonObject = new JSONObject();
@@ -666,7 +666,7 @@ Clicking a notification bar message triggers a callback of `onNotificationClicke
 String extContent = mzPushMessage.getSelfDefineContentString();
 ```
 
-Alternatively, the client can obtain the custom content from the opened `Activity`. You can refer to the `parseOfflineMessage(Intent intent)` implementation method in the [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) class.
+Alternatively, the client can obtain the custom content from the opened `Activity`. You can refer to the `parseOfflineMessage(Intent intent)` implementation method in the [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) class.
 
 ```
 Bundle bundle = getIntent().getExtras();
@@ -702,7 +702,7 @@ After the certificate ID and regId are successfully reported, the IM server send
 **Step 1. Set custom content (sender)**
 Set the custom content for the notification bar message before sending the message.
 
-- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
+- Below is a simple example on the Android platform. You can also refer to the corresponding logic in the `sendMessage()` method in the [ChatManagerKit.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/base/ChatManagerKit.java) class in the TUIKit:
 
   ```
   JSONObject jsonObject = new JSONObject();
@@ -728,7 +728,7 @@ Set the custom content for the notification bar message before sending the messa
 - For information on configurations for the IM server, refer to the [OfflinePushInfo Format Example](https://intl.cloud.tencent.com/document/product/1047/33527). 
 
 **Step 2. Set custom content (receiver)**
-When the notification bar message is clicked, the client can obtain the custom content from the corresponding `Activity`. You can refer to the `parseOfflineMessage(Intent intent)` implementation method in the [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) class.
+When the notification bar message is clicked, the client can obtain the custom content from the corresponding `Activity`. You can refer to the `parseOfflineMessage(Intent intent)` implementation method in the [OfflineMessageDispatcher.java](https://github.com/tencentyun/TIMSDK/blob/master/Android/Demo/app/src/main/java/com/tencent/qcloud/tim/demo/thirdpush/OfflineMessageDispatcher.java) class.
 
 ```
 Bundle bundle = getIntent().getExtras();

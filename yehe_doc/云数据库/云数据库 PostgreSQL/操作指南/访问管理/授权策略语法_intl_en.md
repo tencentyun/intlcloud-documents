@@ -52,20 +52,20 @@ qcs:project_id:service_type:region:account:resource
 **service_type** describes the abbreviated service name, such as "postgres".
 **region** describes the [region information](https://intl.cloud.tencent.com/document/product/213/6091), such as "ap-shanghai".
 **account**: the root account information of the resource owner (which is the "Account ID" on the [Account Information](https://console.cloud.tencent.com/developer) page), such as "164xxx472".
-**resource** describes detailed resource information of each product, such as "DBinstanceId/postgres-0xssvm8e" or "DBinstanceId/\*". The table below describes the resources that can be used by PostgreSQL and the corresponding resource description methods.
+**resource** describes detailed resource information of each product, such as "DBInstanceId/postgres-0xssvm8e" or "DBInstanceId/\*". The table below describes the resources that can be used by PostgreSQL and the corresponding resource description methods.
 
 | Resource | Resource Description Method in Access Policies |
 | ---- | ------------------------------------------------------- |
-| Instance | qcs::postgres:$region:$account:DBinstanceId/$DBInstanceId |
+| Instance | qcs::postgres:$region:$account:DBInstanceId/$DBInstanceId |
 
 For example, you can specify an instance (instance ID: postgres-0xssvm8e) in the statement as shown below:
 ```
-"resource":[ "qcs::postgres:ap-shanghai:164xxx472:DBinstanceId/postgres-0xssvm8e"]
+"resource":[ "qcs::postgres:ap-shanghai:164xxx472:DBInstanceId/postgres-0xssvm8e"]
 ```
 
 You can also use the wildcard (*) to specify all instances in the Shanghai region that belong to a specific account as shown below:
 ```
-"resource":[ "qcs::postgres:ap-shanghai:164xxx472:DBinstanceId/*"]
+"resource":[ "qcs::postgres:ap-shanghai:164xxx472:DBInstanceId/*"]
 ```
 
 If you want to specify all resources or if a specific API operation does not support resource-level permission control, you can use the wildcard (*) in the `resource` element as shown below:
@@ -75,5 +75,5 @@ If you want to specify all resources or if a specific API operation does not sup
 
 To specify multiple resources in a single statement, separate them with commas. In the following example, we specified two instances:
 ```
-"resource":["qcs::postgres::164xxx472:DBinstanceId/postgres-0xf1f41e","qcs::postgres::164xxx472:DBinstanceId/postgres-0xssvm8e"]
+"resource":["qcs::postgres::164xxx472:DBInstanceId/postgres-0xf1f41e","qcs::postgres::164xxx472:DBInstanceId/postgres-0xssvm8e"]
 ```

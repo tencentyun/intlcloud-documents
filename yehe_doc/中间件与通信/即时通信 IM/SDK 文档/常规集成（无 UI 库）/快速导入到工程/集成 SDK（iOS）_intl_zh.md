@@ -7,7 +7,7 @@
 - 项目已配置有效的开发者签名。
 
 ## 集成 IM SDK
-您可以选择使用 CocoaPods 自动加载的方式，或者先 [下载](https://github.com/tencentyun/TIMSDK/tree/master/iOS/ImSDK) SDK，再将其导入到您当前的工程项目中。
+您可以选择使用 CocoaPods 自动加载的方式，或者先 [下载](https://github.com/tencentyun/TIMSDK/tree/master/iOS/IMSDK) SDK，再将其导入到您当前的工程项目中。
 
 ### CocoaPods 自动加载
 #### 1. 安装 CocoaPods
@@ -95,7 +95,7 @@ pod 命令执行完后，会生成集成了 SDK 的 .xcworkspace 后缀的工程
 
 ### 手动集成
 #### 1. 下载 SDK
-从 [Github](https://github.com/tencentyun/TIMSDK/tree/master/iOS/ImSDK) 下载最新版本 SDK。
+从 [Github](https://github.com/tencentyun/TIMSDK/tree/master/iOS/IMSDK) 下载最新版本 SDK。
 
 - ImSDK.framework 和 ImSDK_Plus.framework 是 IM SDK 的核心动态库文件。
 <table>
@@ -126,7 +126,7 @@ pod 命令执行完后，会生成集成了 SDK 的 .xcworkspace 后缀的工程
 <tbody><tr>
 <td>TXLiteAVSDK_UGC.framework</td>
 <td>小视频录制、编辑能力扩展包</td>
-<td>包含小视频录制功能、小视频编辑功能，详情请参阅 <a href="https://cloud.tencent.com/product/ugsv">短视频 SDK 文档</a></td>
+<td>包含小视频录制功能、小视频编辑功能，详情请参阅 <a href="https://intl.cloud.tencent.com/product/ugsv">短视频 SDK 文档</a></td>
 </tr>
 </tbody></table>
 
@@ -138,10 +138,10 @@ pod 命令执行完后，会生成集成了 SDK 的 .xcworkspace 后缀的工程
 
 #### 3. 集成 IM SDK
 
-**添加依赖库：**选中 IMDemo 的【Target】，在【General】面板中的 【Embedded Binaries】和【Linked Frameworks and Libraries】添加依赖库。若使用基础版 SDK，请选择 ImSDK.framework；若使用增强版 SDK，请选择 ImSDK_Plus.framework。
+**添加依赖库：**选中 IMDemo 的**Target**，在**General**面板中的 **Embedded Binaries**和**Linked Frameworks and Libraries**添加依赖库。若使用基础版 SDK，请选择 ImSDK.framework；若使用增强版 SDK，请选择 ImSDK_Plus.framework。
 ![](https://main.qcloudimg.com/raw/3a1cc30c280362be2d99058dde347d4f.png)
-**设置链接参数：**在【Build Setting】>【Other Linker Flags】添加 `-ObjC`。
->?手动集成需要在【TARGET】>【General】>【Frameworks】> Libraries and Embedded Content，将 ImSDK.framework 修改为 Embed&Sing。
+**设置链接参数：**在**Build Setting**>**Other Linker Flags**添加 `-ObjC`。
+>?手动集成需要在**TARGET**>**General**>**Frameworks**> Libraries and Embedded Content，将 ImSDK.framework 修改为 Embed&Sing。
 
 ## 引用 IM SDK
 项目代码中使用 SDK 有两种方式：

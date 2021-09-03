@@ -9,7 +9,7 @@
  `TUIKit` can be integrated using the `module` source code.
 
 ### Integrating the module source code
-[TUIKit source code download address](https://github.com/tencentyun/TIMSDK/tree/master/Android/tuikit)
+[TUIKit source code download address](https://github.com/tencentyun/TIMSDK/tree/master/Android/TUIKit)
 
 1. Download the `Demo` source code from `GitHub`. Note that you need to copy the `tuikit` folder to a directory of your project and use it as a module.
 

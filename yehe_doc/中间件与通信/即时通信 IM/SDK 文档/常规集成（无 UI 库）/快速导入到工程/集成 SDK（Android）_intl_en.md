@@ -34,7 +34,7 @@ dependencies {
 		api 'com.tencent.imsdk:imsdk-plus:Version number'
 }
 ```
->?Replace `version number` with the actual version number of the SDK. You are advised to use the [latest version]( https://github.com/tencentyun/TIMSDK/tree/master/Android/tuikit/libs).
+>?Replace `version number` with the actual version number of the SDK. You are advised to use the [latest version]( https://github.com/tencentyun/TIMSDK/tree/master/Android/Demo/tuikit/libs).
 >Take the version number `5.4.666` as an example:
 >```
 >dependencies {
@@ -61,7 +61,7 @@ Click the `Sync` icon. If the connection to JCenter is normal, the SDK will be a
 ### Method 2: manual download (AAR)
 If JCenter cannot be accessed, you can manually download the SDK and integrate it into your project:
 - **Step 1: download the IM SDK**
-Download the latest version of the [IM SDK](https://github.com/tencentyun/TIMSDK/tree/master/Android/SDK) from GitHub.
+Download the latest version of the [IM SDK](https://github.com/tencentyun/TIMSDK/tree/master/Android/IMSDK) from GitHub.
 
 - **Step 2: copy the IM SDK to the project directory**
 Copy the downloaded AAR file to the **/libs** directory of the project.
@@ -82,7 +82,7 @@ defaultConfig {
 If you do not want to integrate the AAR library, you can integrate the IM SDK by importing the JAR and SO libraries.
 
 - **Step 1: download and decompress the IM SDK**
-[Download](https://github.com/tencentyun/TIMSDK/tree/master/Android/SDK) the latest version of the AAR file from GitHub and decompress it. The extracted folder contains a JAR file and an SO subfolder. Rename **classes.jar** to **imsdk.jar**.
+[Download](https://github.com/tencentyun/TIMSDK/tree/master/Android/IMSDK) the latest version of the AAR file from GitHub and decompress it. The extracted folder contains a JAR file and an SO subfolder. Rename **classes.jar** to **imsdk.jar**.
 ![](https://main.qcloudimg.com/raw/ecc6ae484565b0170c42698825951eba.png)
 
 - **Step 2: copy the SDK files to the project directory**

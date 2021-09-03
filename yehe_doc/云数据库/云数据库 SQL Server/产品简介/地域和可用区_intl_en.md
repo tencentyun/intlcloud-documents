@@ -2,16 +2,18 @@
 <table class="table-striped">
 <tbody><tr><th>Region</th><th>Availability Zone</th></tr> 
 <tr>
-<td rowspan="5">South China (Guangzhou)<br>ap-guangzhou</td>
+<td rowspan="6">South China (Guangzhou)<br>ap-guangzhou</td>
 <td>Guangzhou Zone 1 (sold out)<br> ap-guangzhou-1</td></tr>	
 <tr>
 <td>Guangzhou Zone 2<br> ap-guangzhou-2</td></tr>
 <tr>
 <td>Guangzhou Zone 3<br> ap-guangzhou-3</td></tr>
 <tr>
-<td>Guangzhou Zone 4<br> ap-guangzhou-4</td></tr>
+<td>Guangzhou Zone 4 (sold out)<br> ap-guangzhou-4</td></tr>
 <tr>
 <td>Guangzhou Zone 6<br> ap-guangzhou-6</td></tr>
+<tr>
+<td>Guangzhou Zone 7<br> ap-guangzhou-7</td></tr>
 <tr>
 <td rowspan="5">East China (Shanghai)<br>ap-shanghai</td>
 <td>Shanghai Zone 1<br>ap-shanghai-1</td></tr>
@@ -29,7 +31,7 @@
 <tr>
 <td>Nanjing Zone 2<br>ap-nanjing-2</td></tr>
 <tr>
-<td rowspan="6">North China (Beijing)<br>ap-beijing</td>
+<td rowspan="7">North China (Beijing)<br>ap-beijing</td>
 <td>Beijing Zone 1<br>ap-beijing-1</td></tr>
 <tr>
 <td>Beijing Zone 2<br>ap-beijing-2</td></tr>
@@ -39,6 +41,8 @@
 <td>Beijing Zone 4<br>ap-beijing-4</td></tr>
 <tr>
 <td>Beijing Zone 5<br>ap-beijing-5</td></tr>
+<tr>
+<td>Beijing Zone 6<br>ap-beijing-6</td></tr>
 <tr>
 <td>Beijing Zone 7<br>ap-beijing-7</td></tr>
 <tr>

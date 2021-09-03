@@ -12,7 +12,7 @@
 
 ### 1. 服务开通
 
-首先，您需要在腾讯云官网申请开通 [日志服务](https://intl.cloud.tencent.com/zh/product/cls)。
+首先，您需要在腾讯云官网申请开通 [日志服务](https://intl.cloud.tencent.com/product/cls)。
 
 ### 2. 下载安装 LogListener
 
@@ -50,8 +50,6 @@ telnet <region 简称>.cls.tencentyun.com 80
 
  - 日志主题名称：例如 topic_test
  - 日志集操作：默认选择当前地域现有的日志集。如需新建日志集，请选择【创建日志集】，输入日志集名称（例如 cls_test）。
->? 日志集支持保存3 - 90天。如需更长保存时间，请 [提交工单](https://console.cloud.tencent.com/workorder/category) 联系我们。
->
 5. 单击【确定】。
  - 创建好的日志主题会出现在日志主题列表中。
 
@@ -91,8 +89,7 @@ telnet <region 简称>.cls.tencentyun.com 80
 | /\*\*/     | 表示当前目录以及所有子目录                                   |
 | 文件名   | 日志文件名，仅支持通配符 \* 和 ? ，\* 表示匹配多个任意字符，? 表示匹配单个任意字符 |
 
-例如，待采集文件的绝对路径是`/cls/logs/access.log`，则采集路径填写的目录前缀是`/cls/logs`，日志文件名填写access.log，如下图所示：
-
+例如，待采集文件的绝对路径是`/cls/logs/access.log`，则采集路径填写的目录前缀是`/cls/logs`，日志文件名填写access.log。
 
 #### 5.2 绑定机器组
 

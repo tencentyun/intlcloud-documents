@@ -8,13 +8,13 @@ You can grant a user permissions to view and use specific resources in the [Tenc
 The sample code of `action` is as follows:
 ```
 "action":  [
-"postgres:"DescribeProductConfig",
-"postgres:"InquiryPriceCreateDBInstances",
-"postgres:"DescribeRegions",
-"postgres:"DescribeZones"
+"postgres:DescribeProductConfig",
+"postgres:InquiryPriceCreateDBInstances",
+"postgres:DescribeRegions",
+"postgres:DescribeZones"
 ]
 ```
->- To grant a user the permissions to monitor and view instances, the API permissions related to monitoring needs to be granted. The sample code of `action` is as follows:
+>! To grant a user the permissions to monitor and view instances, the API permissions related to monitoring needs to be granted. The sample code of `action` is as follows:
 ```
 {"effect": "allow",
 "action":  [

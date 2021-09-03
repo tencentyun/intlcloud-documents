@@ -4,17 +4,17 @@
 
 ## 操作步骤
 >!
->- 如果您想要控制某一个用户只拥有某些特定的接口权限，那么需要至少包含以下接口的权限，否则控制台将无法正常显示。
+>如果您想要控制某一个用户只拥有某些特定的接口权限，那么需要至少包含以下接口的权限，否则控制台将无法正常显示。
 其中 action 示例为：
 ```
 "action": [
-"postgres:"DescribeProductConfig",
-"postgres:"InquiryPriceCreateDBInstances",
-"postgres:"DescribeRegions",
-"postgres:"DescribeZones"
+"postgres:DescribeProductConfig",
+"postgres:InquiryPriceCreateDBInstances",
+"postgres:DescribeRegions",
+"postgres:DescribeZones"
 ]
 ```
->- 如果您想要用户具有实例的监控查看权限，则需要添加 monitor 相关的接口权限，action 示例如下：
+>! 如果您想要用户具有实例的监控查看权限，则需要添加 monitor 相关的接口权限，action 示例如下：
 ```
 {"effect": "allow",
 "action": [

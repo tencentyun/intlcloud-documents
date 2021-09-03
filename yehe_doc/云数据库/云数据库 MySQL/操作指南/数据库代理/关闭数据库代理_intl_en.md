@@ -2,7 +2,7 @@
 This document describes how to disable database proxy in the TencentDB for MySQL console.
 
 ## Prerequisites
-You have [enabled database proxy](https://intl.cloud.tencent.com/document/product/236/41087).
+You have [enabled database proxy](https://intl.cloud.tencent.com/document/product/236/42052).
 
 ## Directions
 1. Log in to the [TencentDB for MySQL console](https://console.cloud.tencent.com/cdb). In the instance list, select the source instance for which to disable database proxy and click its ID or **Manage** in the **Operation** column to enter the instance management page.

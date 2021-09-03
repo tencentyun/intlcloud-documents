@@ -1,3 +1,41 @@
+## 2021年07月
+
+<table>
+	<thead>
+		<tr>
+			<th width="20%">动态名称</th>
+			<th width="50%">动态描述</th>
+			<th width="15%">发布时间</th>
+			<th width="15%">相关文档</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr><td>支持增量/全量采集策略</td><td>提供 LogListener 全量/增量可选采集配置，满足用户只投递新增日志数据的需求，大大减少了用户写流量的成本。</td><td>2021-07-22</td><td><a href="https://intl.cloud.tencent.com/document/product/614/32287">增量/全量采集策略</a></td></tr>
+		<tr><td>优化检索报错提示</td><td>报错提示整体规范化，友好化，人性化，大幅提高了检索错误信息的可读性。</td><td>2021-07-15</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39593">	错误码报错提示</a></td></tr>
+		<tr><td>支持中文分词</td><td>针对包含中文的日志，满足用户按照中文语法拆分成中文内容进行检索。</td><td>2021-07-08</td><td><a href="https://intl.cloud.tencent.com/document/product/614/39594">中文分词</a></td></tr>
+	</tbody>
+</table>
+
+
+## 2021年06月
+
+<table>
+	<thead>
+		<tr>
+			<th width="20%">动态名称</th>
+			<th width="50%">动态描述</th>
+			<th width="15%">发布时间</th>
+			<th width="15%">相关文档</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr><td>支持云服务器批量部署实例</td><td>支持在云服务器上批量部署 Loglistener 实例，对云服务器日志进行采集，用户无须再手动安装 Loglistener 相关配置。</td><td>2021-06-24</td><td>-</td></tr>
+		<tr><td>地图、桑基图等图表功能发布</td><td>仪表盘发布条形图、柱状图、地图以及桑基图图表功能，支持更多数据可视化图表类型。</td><td>2021-06-18</td><td>-</td></tr>
+		<tr><td>检索语句语法错误纠正提示</td><td>检索语法错误提示支持纠正 Lucene 语法错误和索引统计字段拼写错误，有效提高用户检索分析语句输写准确性及高效性。</td><td>2021-06-15</td><td>-</td></tr>
+	</tbody>
+</table>
+
+
 ## 2021年05月
 
 <table>
@@ -13,7 +51,7 @@
 		<tr><td>仪表盘2.0重磅发布</td><td>新版2.0仪表盘 UI 界面全新发布，增强可视化功能，优化仪表盘样式。</td><td>2021-05-31</td><td>-</td></tr>
 		<tr><td>LogListener 支持内网下载</td><td>满足用户在不同地域下通过内网地址下载 LogListener 安装包，避免因链接外网导致安全风险。</td><td>2021-05-27</td><td><a href="https://intl.cloud.tencent.com/document/product/614/17414">LogListener 安装指南</a></td></tr>
 		<tr><td>日志主题量级统计</td><td>新增单个日志主题量级统计监控功能，支持用户查看日志主题流量动态。</td><td>2021-05-20</td><td>-</td></tr>
-		<tr><td>采集配置导入功能</td><td>可一键导入已有日志主题的配置规则，提高日志数据接入效率。</td><td>2021-05-17</td><td>LogListener 采集配置导入</a></td></tr>
+		<tr><td>采集配置导入功能</td><td>可一键导入已有日志主题的配置规则，提高日志数据接入效率。</td><td>2021-05-17</td><td><a href="https://intl.cloud.tencent.com/document/product/614/40863">LogListener 采集配置导入</a></td></tr>
 	</tbody>
 </table>
 
