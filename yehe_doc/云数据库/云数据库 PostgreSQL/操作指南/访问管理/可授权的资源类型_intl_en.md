@@ -5,7 +5,7 @@ In Cloud Access Management (CAM), the types of PostgreSQL resources that can be 
 
 | Resource Type                       | Resource Description Method in Access Policies                                     |
 | :----------------------------- | ------------------------------------------------------------ |
-| [Instance](#PostgreSQLCorrelation) | ` qcs::postgres:$region:$account:DBinstanceId/$DBInstanceId ` <br>` qcs::postgres:$region:$account:DBinstanceId/*  ` |
+| [Instance](#PostgreSQLCorrelation) | ` qcs::postgres:$region:$account:DBInstanceId/$DBInstanceId ` <br>` qcs::postgres:$region:$account:DBInstanceId/*  ` |
 
 The [PostgreSQL instance APIs](#PostgreSQLCorrelation) section in this document describes PostgreSQL API operations that currently support resource-level permissions as well as resources and condition keys supported by each operation. When configuring the resource path, you need to replace values of the parameters such as `$region` and `$account` with your actual values. You can also use the wildcard (*) in the path. For more information, please see [Console Examples](https://intl.cloud.tencent.com/document/product/409/38837).
 
