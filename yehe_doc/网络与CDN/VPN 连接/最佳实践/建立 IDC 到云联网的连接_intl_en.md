@@ -89,7 +89,7 @@ After the VPN tunnel configuration is complete, configure the VPN gateway route 
 </tr>
 <tr>
 <td>Next hop type</td>
-<td>It defaults to **VPN Tunnel**.</td>
+<td>It defaults to <b>VPN Tunnel</b>.</td>
 </tr>
 <tr>
 <td>Next hop</td>
