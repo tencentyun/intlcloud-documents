@@ -10,7 +10,7 @@ New Anti-DDoS Pro service combines the number of protected IPs and protection ch
 | Billable Items      | Billing Mode  | Payment Method | Payment Description                                                       |
 | ------------ | ------------ | -------- | ------------------------------------------------------------ |
 | Number of protected IPs | Monthly subscription | Pay-as-you-go| Please select the number of business IPs to be protected by an Anti-DDoS Pro instance. Specification: 1 (default number) - 100</br>If you need the protection for more IPs, extra fees will be charged. The number can only be increased but not decreased.  |
-| Number of protection chances | Monthly subscription | Pay-as-you-go| We recommend setting the number which is slightly higher than the average number of historical attacks. If the protection chances are used up, the basic protection will be taken instead.</br>If you need more protection chances, extra fees will be charged. The number can only be increased but not decreased.  |
+| Number of protection chances | Monthly subscription | Pay-as-you-go| Unlimited protection quota within the validity period is provided.  |
 
 >?
 >- To use an Anti-DDoS Pro instance, please select the same instance region as your other Tencent Cloud resources such as CVM or CLB instances, and bind it to your business IP first.
@@ -31,19 +31,9 @@ The unit prices of the Anti-DDoS Pro instance are as follows:
          <th>Unit Price for Monthly Subscription (in USD)</th>  
      </tr>
 	 <tr>
-         <td>1 protected IP</br>(10 free all-out protection chances each quarter)</td>  
-         <td>3,000/quarter</td>  
-         <td>7,500/year</td>  
-		</tr> 
-	 <tr>
          <td>1 protected IP</br>(Unlimited all-out protection chances)</td>  
          <td>5,000/quarter</td>  
 		  <td>12,500/year</td>
-     </tr>
-	 <tr>
-         <td>5 protected IPs</br>(10 free all-out protection chances each quarter)</td>  
-         <td>8,500/quarter</td>  
-         <td>21,250/year</td>
      </tr>
 	 <tr>
          <td>5 protected IPs</br>(Unlimited all-out protection chances)</td>  
