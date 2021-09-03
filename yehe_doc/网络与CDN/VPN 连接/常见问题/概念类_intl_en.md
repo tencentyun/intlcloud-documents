@@ -6,7 +6,7 @@ After VPN gateway and customer gateway are created, you can establish a VPN tunn
 
 ### What is a VPN gateway?
 A VPN gateway is an egress gateway for VPC to establish a VPN connection. It is used with a customer gateway (IPsec VPN gateway on the IDC side) to establish an encrypted communication between a Tencent Cloud VPC and an external IDC. Tencent Cloud VPN gateway uses software virtualization and a dual-server hot backup architecture. When one server fails, automatic switchover helps ensure the normal operation of your businesses.
-- Eight bandwidth caps are available for a VPN gateway: 5 Mbps, 10 Mbps, 20 Mbps, 50 Mbps, 100 Mbps, 200 Mbps, 500 Mbps, and 1000 Mbps. You can adjust the bandwidth setting for a VPN gateway, and the adjustment takes effect immediately for a pay-as-you-go VPN gateway.
+- Eight bandwidth caps are available for a VPN gateway: 5 Mbps, 10 Mbps, 20 Mbps, 50 Mbps, 100 Mbps, 200 Mbps, 500 Mbps, and 1000 Mbps. You can adjust the bandwidth setting for a VPN gateway.
 - You can bind an Anti-DDoS instance to a VPN gateway to defend against DDoS and CC attacks with high-bandwidth protection.
 
 
