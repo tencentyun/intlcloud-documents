@@ -114,6 +114,7 @@ VPN 网关路由配置完成后，为 VPN 通道健康检查（主备通道均�
 <img src="https://main.qcloudimg.com/raw/486b81ab8a95ab3fc1da98a49fb0f975.png" width="70%">
 3. 打开健康检查开关，输入【健康检查本端地址】和【健康检查对端地址】，并单击【保存】。
 <img src="https://main.qcloudimg.com/raw/8cb32a12e7bb230832196503b70dd452.png" width="70%">
+
 >?
 >- 本端地址：填写腾讯云侧向 IDC 发起健康检查的访问请求 IP 地址。该 IP 地址不能为 VPC 内 IP 地址。
 >- 对端地址：填写 IDC 侧用于响应腾讯云健康检查请求的 IP 地址。该 IP 地址请勿与腾讯云侧地址相同，以防 IP 冲突。
