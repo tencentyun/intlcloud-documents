@@ -90,7 +90,7 @@ After configuring the primary and secondary VPN tunnels, you need to configure t
 </tr>
 <tr>
 <td>Next hop type</td>
-<td>It defaults to **VPN Tunnel**.</td>
+<td>It defaults to <b>VPN Tunnel</b>.</td>
 </tr>
 <tr>
 <td>Next hop</td>
@@ -114,6 +114,7 @@ After configuring the VPN gateway routes, configure health checks for both the p
 <img src="https://main.qcloudimg.com/raw/486b81ab8a95ab3fc1da98a49fb0f975.png" width="70%">
 3. Enable the health check, enter **VPC IP for Health Check** and **IDC IP for Health Check**, and click **Save**.
 <img src="https://main.qcloudimg.com/raw/8cb32a12e7bb230832196503b70dd452.png" width="70%">
+
 >?
 >- VPC IP refers to the Tencent Cloud IP address that sends the access request to the IDC for a health check. This IP does not fall within a VPC CIDR block.
 >- IDC IP refers to the IDC IP address that responds to the health check request of Tencent Cloud. Use an IP different from the VPC IP to avoid conflict.
