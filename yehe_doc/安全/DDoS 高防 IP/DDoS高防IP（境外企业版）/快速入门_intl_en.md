@@ -6,7 +6,7 @@ This document takes binding an Anti-DDoS Advanced (Global Enterprise Edition) in
 
 ## Background
 The usage lifecycle of Anti-DDoS Advanced (Global Enterprise Edition) includes purchasing Anti-DDoS Advanced (Global Enterprise Edition) instance, configuring protection rules for the instance, configuring application rules for the instance, and terminating the instance.
-![](https://main.qcloudimg.com/raw/95b31a570ba0a1d479db4e65f58ef070.png)
+![](https://main.qcloudimg.com/raw/389a53aa7c9d5fd4b2931415ce3e44c3.png)
 
 1. [Purchasing Anti-DDoS Advanced (Global Enterprise Edition) instance](https://buy.cloud.tencent.com/antiddos#/advanced-intl): purchase Anti-DDoS Advanced (Global Enterprise Edition) resources according to your actual needs.
 2. [Configuring protection rules](https://intl.cloud.tencent.com/document/product/297/34092) for the Anti-DDoS Advanced (Global Enterprise Edition) instance: configure protection policies that fit your application.
