@@ -5,7 +5,7 @@
 
 | 资源类型                       | 授权策略中的资源描述方法                                     |
 | :----------------------------- | ------------------------------------------------------------ |
-| [实例](#PostgreSQLCorrelation) | ` qcs::postgres:$region:$account:DBinstanceId/$DBInstanceId ` <br>` qcs::postgres:$region:$account:DBinstanceId/*  ` |
+| [实例](#PostgreSQLCorrelation) | ` qcs::postgres:$region:$account:DBInstanceId/$DBInstanceId ` <br>` qcs::postgres:$region:$account:DBInstanceId/*  ` |
 
 [PostgreSQL 实例相关](#PostgreSQLCorrelation)分别介绍了当前支持资源级权限的 PostgreSQL API 操作，以及每个操作支持的资源和条件密钥。设置资源路径时，您需要将`$region`、`$account`等变量参数修改为您实际的参数信息，同时您也可以在路径中使用 * 通配符。相关操作示例可参见 [控制台示例](https://intl.cloud.tencent.com/document/product/409/38837)。
 
