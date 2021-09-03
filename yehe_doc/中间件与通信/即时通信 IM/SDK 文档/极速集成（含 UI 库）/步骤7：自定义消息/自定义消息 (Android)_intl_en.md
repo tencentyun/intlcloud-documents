@@ -138,7 +138,7 @@ if (messageSender != null) {
 
 #### Creating ViewHolder
 `TUIKit` uses `RecyclerView` to display messages. To display custom messages, you need to create a custom message `ViewHolder` to store the `view` for displaying the content of custom messages.
-The `ViewHolder` of a custom message can be inherited from the [basic message ViewHolder](https://github.com/tencentyun/TIMSDK/tree/master/Android/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/layout/message/holder).
+The `ViewHolder` of a custom message can be inherited from the [basic message ViewHolder](https://github.com/tencentyun/TIMSDK/tree/master/Android/Demo/tuikit/src/main/java/com/tencent/qcloud/tim/uikit/modules/chat/layout/message/holder).
 ```java
 // Define that `HelloViewHolder` is inherited from `MessageCustomHolder`
 class HelloViewHolder extends MessageCustomHolder{
