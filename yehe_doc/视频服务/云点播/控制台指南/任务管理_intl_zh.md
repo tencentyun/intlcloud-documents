@@ -5,6 +5,7 @@
 ### 任务基本信息
 
 登录云点播控制台，选择【[任务管理](https://console.cloud.tencent.com/vod/task)】，默认进入“任务管理”页面。
+![](https://main.qcloudimg.com/raw/a06c7866a1f5aa92a6f77cb348cc52e3.png)
 任务基本信息：
 
 | 字段         | 说明                     |
@@ -18,6 +19,7 @@
 
 ### 子任务基本信息
 点击子任务基本信息可以查询该任务中的子任务详情。
+![](https://main.qcloudimg.com/raw/bd40adea716a51d9382b27d41659081b.png)
 子任务基本信息：
 
 | 字段      | 说明                                      |
