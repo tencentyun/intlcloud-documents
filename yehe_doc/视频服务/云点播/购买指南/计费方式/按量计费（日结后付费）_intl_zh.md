@@ -168,4 +168,4 @@
   01月01日云点播流量费用 = 0.038（美元/GB）× 550（GB）= 20.9（美元）
 
 ## 补充说明
-若您的业务量级较大（存储空间使用量在1PB以上或流量消耗在10TB/日以上），日结的计费方式无法满足您的需求，您可以[联系商务](https://intl.cloud.tencent.com/contact-us)https://intl.cloud.tencent.com/contact-us)，通过商务谈判约定您的计费方式和计费价格。
+若您的业务量级较大（存储空间使用量在1PB以上或流量消耗在10TB/日以上），日结的计费方式无法满足您的需求，您可以[联系商务](https://intl.cloud.tencent.com/contact-us)，通过商务谈判约定您的计费方式和计费价格。
