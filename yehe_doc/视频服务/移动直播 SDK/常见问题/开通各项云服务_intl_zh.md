@@ -2,7 +2,7 @@
 ## 云直播 
 [](id:LVB_OPEN)
 ### 如何开通云直播服务？
-进入 [云直播管理控制台](https://console.cloud.tencent.com/live)，进入腾讯云直播服务开通页，勾选同意《腾讯云服务协议》，并单击【申请开通】即可开通云直播服务。
+进入 [云直播管理控制台](https://console.cloud.tencent.com/live)，进入腾讯云直播服务开通页，查看相关协议并勾选 **同意**，单击 **申请开通** 即可开通云直播服务。
 ![](https://main.qcloudimg.com/raw/638f1879974702620f533a9c6b0133b9.png)。
 
 [](id:LVB_PUSH_SECRECT)
