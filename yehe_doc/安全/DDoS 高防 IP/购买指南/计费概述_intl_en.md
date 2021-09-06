@@ -11,7 +11,7 @@ Anti-DDoS Advanced adopts a combo billing mode, utilizing both monthly subscript
 <tr>
 <td >Base protection bandwidth</td>
 <td> Monthly subscription</td>
-<td>Prepaid</td>
+<td>Postpaid</td>
 <td>Provides base protection bandwidth. The fee is billed based on the base protection bandwidth limit and subscription plan period. Fees will be frozen at time of purchase and settled on the 1st day of the next month.</td>
 </tr>
 <tr>
@@ -29,7 +29,7 @@ Anti-DDoS Advanced adopts a combo billing mode, utilizing both monthly subscript
 <tr>
 <td >Application bandwidth</td>
 <td>Monthly subscription</br>Billed by bandwidth</td>
-<td>Prepaid</td>
+<td>Postpaid</td>
 <td>The application traffic limit applies to both the inbound anti-DDoS forwarding traffic and the outbound Anti-DDoS traffic. The application bandwidth needs to be higher than the peak bandwidth of the two, 
  whichever is greater. If the actual application bandwidth is continuously higher than the Application Bandwidth selected when you purchased your Anti-DDoS Advanced instance, packet loss may occur. This 
  might affect your service. We recommend adjusting your application bandwidth to avoid such occurrences.</td>
