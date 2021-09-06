@@ -157,7 +157,7 @@ You can call the `setBeautyStyle` API of `TXBeautyManager` to set the beauty fil
 - Call the `setFilter` API in `TXBeautyManager` to set color filters. Color filters are a technology that adjusts the color tone of sections of an image. For example, it may lighten the yellow sections of an image to achieve the effect of skin brightening, or add warm tones to a video to give it a refreshing and soft boost.   
 - Call the `setFilterStrength` API in `TXBeautyManager` to set the strength of a color filter. The higher the strength, the more obvious the effect. 
 
-Based on our experience of operating Now Live, it’s not enough to use the `setBeautyStyle` API in `TXBeautyManager` to set the beauty filter style alone. The `setBeautyStyle` API must be used together with `setFilter` in order to produce richer effects. Given this, our designers have developed 17 built-in color filters and integrated them into the [demo](https://github.com/tencentyun/MLVBSDK/tree/master/Android/Demo). 
+Based on our experience of operating Now Live, it's not enough to use the `setBeautyStyle` API in `TXBeautyManager` to set the beauty filter style alone. The `setBeautyStyle` API must be used together with `setFilter` in order to produce richer effects. Given this, we have provided 17 built-in color filters for you to use.
 
 ```java 
 // Select a color filter file to use   
