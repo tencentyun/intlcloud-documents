@@ -142,7 +142,7 @@ CosXml cosXml = new CosXmlServer(config, cosCredentialProvider);
 
 ## 3단계: COS 서비스 액세스
 
-###버킷 생성하기
+### 버킷 생성하기
 ```cs
 try
 {
