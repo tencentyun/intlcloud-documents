@@ -61,7 +61,7 @@ Call `setRenderView` in [V2TXLivePusher](https://liteav.sdk.qcloud.com/doc/api/z
 </dx-codeblock>
 
 > ! To add animated effects to the view, modify its `transform` attribute rather than `frame` attribute.
->```objectivec
+```objectivec
   [UIView animateWithDuration:0.5 animations:^{
             _localView.transform = CGAffineTransformMakeScale(0.3, 0.3); // Shrink by 1/3
         }];
@@ -71,7 +71,7 @@ Call `setRenderView` in [V2TXLivePusher](https://liteav.sdk.qcloud.com/doc/api/z
 [](id:step5)
 ### 5. Start and stop publishing streams
 After calling `startCamera` to enable camera preview, you can call the [startPush](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a33b38f236a439e7d848606acb68cc087) API in `V2TXLivePusher` to start stream publishing.
-​```objectivec 
+```objectivec 
 // Start publishing streams
 NSString* rtmpUrl = @"rtmp://test.com/live/xxxxxx"; // Enter your RTMP URL for stream publishing
 [_pusher startPush:rtmpUrl];
