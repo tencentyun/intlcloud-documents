@@ -82,8 +82,8 @@ The SDK supports three types of access credentials: permanent keys, updated temp
 **Type 1: permanent key**
 
 ```cs
-String secretId = "COS_SECRETID"; // “SecretId of your TencentCloud API key”
-String secretKey = "COS_SECRETKEY"; // “SecretKey of your TencentCloud API key”
+String secretId = "SECRET_ID"; // “SecretId of your TencentCloud API key”
+String secretKey = "SECRE_TKEY"; // “SecretKey of your TencentCloud API key”
 long durationSecond = 600;          // Validity period of each request signature in seconds
 QCloudCredentialProvider cosCredentialProvider = new DefaultQCloudCredentialProvider(
   secretId, secretKey, durationSecond);
@@ -105,8 +105,8 @@ public class CustomQCloudCredentialProvider : DefaultSessionQCloudCredentialProv
   public override void Refresh()
   {
     //... First, request a temporary key from Tencent Cloud.
-    String tmpSecretId = "COS_SECRETID"; // “SecretId of the temporary key”;
-    String tmpSecretKey = "COS_SECRETKEY"; // “SecretKey of the temporary key”;
+    String tmpSecretId = "SECRET_ID"; // “SecretId of the temporary key”;
+    String tmpSecretKey = "SECRET_KEY"; // “SecretKey of the temporary key”;
     string tmpToken = "COS_TOKEN"; // “Token of the temporary key”;
     long tmpStartTime = 1546860702;// Start time in seconds of the temporary key’s validity period
     long tmpExpireTime = 1546862502;// End time in seconds of the temporary key’s validity period
@@ -124,8 +124,8 @@ QCloudCredentialProvider cosCredentialProvider = new CustomQCloudCredentialProvi
 Note that your request may fail if you use an expired temporary key from a previous request.
 
 ```cs
-String tmpSecretId = "COS_SECRETID"; // “SecretId of the temporary key”;
-String tmpSecretKey = "COS_SECRETKEY"; // “SecretKey of the temporary key”;
+String tmpSecretId = "SECRET_ID"; // “SecretId of the temporary key”;
+String tmpSecretKey = "SECRET_KEY"; // “SecretKey of the temporary key”;
 string tmpToken = "COS_TOKEN"; // “Token of the temporary key”;
 long tmpExpireTime = 1546862502;// End time in seconds of the temporary key’s validity period
 QCloudCredentialProvider cosCredentialProvider = new DefaultSessionQCloudCredentialProvider(
