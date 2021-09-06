@@ -65,7 +65,6 @@ Call `setRenderView` in [V2TXLivePusher](https://liteav.sdk.qcloud.com/doc/api/z
   [UIView animateWithDuration:0.5 animations:^{
             _localView.transform = CGAffineTransformMakeScale(0.3, 0.3); // Shrink by 1/3
         }];
-     ```
 ```
 
 [](id:step5)
