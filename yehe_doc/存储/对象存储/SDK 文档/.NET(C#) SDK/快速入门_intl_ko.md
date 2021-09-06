@@ -82,8 +82,8 @@ SDK에서 영구 키, 지속적으로 갱신되는 임시 키, 불변의 임시 
 **방식1：영구 키**
 
 ```cs
-string secretId = "COS_SECRETID"; //"Tencent Cloud API 키 SecretId";
-String secretKey = "COS_SECRETKEY"; //Tencent Cloud API 키 SecretKey
+string secretId = "SECRET_ID"; //"Tencent Cloud API 키 SecretId";
+String secretKey = "SECRET_KEY"; //Tencent Cloud API 키 SecretKey
 long durationSecond = 600;  //매번 서명의 유효 기간을 요청하며, 단위는 초 입니다.
 QCloudCredentialProvider cosCredentialProvider = new DefaultQCloudCredentialProvider(
   secretId, secretKey, durationSecond);
@@ -105,8 +105,8 @@ public class CustomQCloudCredentialProvider : DefaultSessionQCloudCredentialProv
   public override void Refresh()
   {
     //... 먼저 Tencent Cloud를 통해 임시 키를 요청합니다.
-    string tmpSecretId = "COS_SECRETID"; //"임시 키 SecretId";
-    string tmpSecretKey = "COS_SECRETKEY"; //"임시 키 SecretKey";
+    string tmpSecretId = "SECRET_ID"; //"임시 키 SecretId";
+    string tmpSecretKey = "SECRET_KEY"; //"임시 키 SecretKey";
     string tmpToken = "COS_TOKEN"; //"임시 키 token";
     long tmpStartTime = 1546860702;//임시 키는 유효한 시작 시간이 있으며, 초 단위까지 정확합니다.
     long tmpExpiredTime = 1546862502;//임시 키는 유효한 종료 시간이 있으며, 초 단위까지 정확합니다.
@@ -124,8 +124,8 @@ QCloudCredentialProvider cosCredentialProvider = new CustomQCloudCredentialProvi
 임시 키는 일정 시간 경과 후 만료됩니다. 본 방법은 만료 후에는 요청이 불가하니 주의하시기 바라며, 사용을 권장하지 않습니다.
 
 ```cs
-string tmpSecretId = "COS_SECRETID"; //"임시 키 SecretId";
-string tmpSecretKey = "COS_SECRETKEY"; //"임시 키 SecretKey";
+string tmpSecretId = "SECRET_ID"; //"임시 키 SecretId";
+string tmpSecretKey = "SECRET_KEY"; //"임시 키 SecretKey";
 string tmpToken = "COS_TOKEN"; //"임시 키 token";
 long tmpExpireTime = 1546862502;//임시 키는 유효 기간이 있으며, 초 단위까지 정확합니다.
 QCloudCredentialProvider cosCredentialProvider = new DefaultSessionQCloudCredentialProvider(
