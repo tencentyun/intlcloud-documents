@@ -73,7 +73,7 @@
 [](id:step5)
 ### 5. 启动和结束推流
 如果已经通过`startCamera`接口启动了摄像头预览，就可以调用 V2TXLivePusher 中的 [startPush](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a33b38f236a439e7d848606acb68cc087) 接口开始推流。
-​```objectivec 
+```objectivec 
 //启动推流
 NSString* rtmpUrl = @"rtmp://test.com/live/xxxxxx";    //此处填写您的 rtmp 推流地址
 [_pusher startPush:rtmpUrl];
