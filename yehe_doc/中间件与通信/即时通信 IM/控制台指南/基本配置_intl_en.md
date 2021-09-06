@@ -53,7 +53,7 @@ Obtain the key of the app.
     The key can be used to generate UserSig. For more information, please see [Generating UserSig](https://intl.cloud.tencent.com/document/product/1047/34385).
 
 ## Configuring Account Admins
-Account admins can call RESTful APIs, disband groups, and perform operations on all members. You can use the default account admin `administrator` or manually add a new account admin. Each app supports up to 5 account admins.
+Account admins can call RESTful APIs, disband groups, and perform operations on all members. You can use the default account admin `administrator` or manually add a new account admin. Each app supports up to 10 account admins.
 ![](https://main.qcloudimg.com/raw/9cf8914c53cb998fd7ee619ef30836a9.jpg)
 [](id:AddAdmin)
 
