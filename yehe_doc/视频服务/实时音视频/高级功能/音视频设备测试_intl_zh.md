@@ -22,8 +22,9 @@
     // 开始摄像头测试, cameraPreview为macOS下的NSView或者iOS平台的UIView
     [self.trtcCloud startCameraDeviceTestInView:self.cameraPreview];
 }
+
 //关闭摄像头测试界面
- - (void)windowWillClose:(NSNotification *)notification{
+- (void)windowWillClose:(NSNotification *)notification{
     // 结束摄像头测试
     [self.trtcCloud stopCameraDeviceTest];
 }
@@ -34,6 +35,7 @@ void TRTCMainViewController::startTestCameraDevice(HWND hwnd)
 {
      trtcCloud->startCameraDeviceTest(hwnd);
 }
+
 // 关闭摄像头测试
 void TRTCMainViewController::stopTestCameraDevice() 
 {
@@ -46,6 +48,7 @@ private void startTestCameraDevice(Intptr hwnd)
 {
      mTRTCCloud.startCameraDeviceTest(hwnd);
 }
+
 // 关闭摄像头测试
 private void stopTestCameraDevice() 
 {
@@ -53,6 +56,70 @@ private void stopTestCameraDevice()
 }
 :::
 </dx-codeblock>
+
+## 麦克风测试
+
+使用 TRTCCloud 的 `startMicDeviceTest` 函数可以测试麦克风音量，回调函数会返回实时的麦克风音量值。
+
+<dx-codeblock>
+::: Mac平台 Objective-C
+  // 麦克风测试示例代码
+  -(IBAction)micTest:(id)sender {
+    NSButton *btn = (NSButton *)sender;
+    if (btn.state == 1) {
+		    //开始麦克风测试
+        __weak __typeof(self) wself = self;
+        [self.trtcCloud startMicDeviceTest:500  testEcho:^(NSInteger volume) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+						    // 刷新麦克风音量的进度条
+                [wself _updateInputVolume:volume];
+            });
+        }];
+        btn.title = @"停止测试";
+    }
+    else{
+		    //结束麦克风测试
+        [self.trtcCloud stopMicDeviceTest];
+        [self _updateInputVolume:0];
+        btn.title = @"开始测试";
+    }
+}
+:::
+::: Windows平台（C++） C++
+// 麦克风测试示例代码
+void TRTCMainViewController::startTestMicDevice() 
+{
+	// 设置音量回调频率，此处500ms回调一次，在 onTestMicVolume 回调接口监听。
+	uint32_t interval = 500; 
+	// 开始麦克风测试
+	trtcCloud->startMicDeviceTest(interval);
+}
+
+// 结束麦克风测试
+void TRTCMainViewController::stopTestMicDevice() 
+{
+     trtcCloud->stopMicDeviceTest();
+}
+:::
+::: Windows平台（C#） c#
+// 麦克风测试示例代码
+private void startTestMicDevice() 
+{
+	// 设置音量回调频率，此处500ms回调一次，在 onTestMicVolume 回调接口监听。
+	uint interval = 500; 
+	// 开始麦克风测试
+	mTRTCCloud.startMicDeviceTest(interval);
+}
+
+// 结束麦克风测试
+private void stopTestMicDevice() 
+{
+     mTRTCCloud.stopMicDeviceTest();
+}
+:::
+</dx-codeblock>
+
+
 
 ## 扬声器测试
 
@@ -83,40 +150,40 @@ private void stopTestCameraDevice()
         [self.trtcEngine stopSpeakerDeviceTest];
         [self _updateOutputVolume:0];
     }
-}  
-  
-// 更新扬声器音量指示器  
+}
+
+// 更新扬声器音量指示器
 - (void)_updateOutputVolume:(NSInteger)volume {
     // speakerVolumeMeter 为 NSLevelIndicator
     self.speakerVolumeMeter.doubleValue = volume / 255.0 * 10;
 }
 :::
 ::: Windows平台（C++） C++
- // 扬声器测试示例代码
+// 扬声器测试示例代码
 void TRTCMainViewController::startTestSpeakerDevice(std::string testAudioFilePath) 
 {
-        // testAudioFilePath 音频文件的绝对路径，路径字符串使用 UTF-8 编码格式，支持文件格式: wav、mp3。
-        // 从 onTestSpeakerVolume 回调接口监听扬声器测试音量值。
-        trtcCloud->startSpeakerDeviceTest(testAudioFilePath.c_str());
+	// testAudioFilePath 音频文件的绝对路径，路径字符串使用 UTF-8 编码格式，支持文件格式: wav、mp3。
+	// 从 onTestSpeakerVolume 回调接口监听扬声器测试音量值。
+	trtcCloud->startSpeakerDeviceTest(testAudioFilePath.c_str());
 }
-  
+
 // 结束扬声器测试
 void TRTCMainViewController::stopTestSpeakerDevice() {
-        trtcCloud->stopSpeakerDeviceTest();
+	trtcCloud->stopSpeakerDeviceTest();
 }
 :::
 ::: Windows平台（C#） C#
 // 扬声器测试示例代码
 private void startTestSpeakerDevice(string testAudioFilePath) 
 {
-        // testAudioFilePath 音频文件的绝对路径，路径字符串使用 UTF-8 编码格式，支持文件格式: wav、mp3。
-        // 从 onTestSpeakerVolume 回调接口监听扬声器测试音量值。
-        mTRTCCloud.startSpeakerDeviceTest(testAudioFilePath);
+	// testAudioFilePath 音频文件的绝对路径，路径字符串使用 UTF-8 编码格式，支持文件格式: wav、mp3。
+	// 从 onTestSpeakerVolume 回调接口监听扬声器测试音量值。
+	mTRTCCloud.startSpeakerDeviceTest(testAudioFilePath);
 }
- 
- // 结束扬声器测试
+
+// 结束扬声器测试
 private void stopTestSpeakerDevice() {
-        mTRTCCloud.stopSpeakerDeviceTest();
+	mTRTCCloud.stopSpeakerDeviceTest();
 }
 :::
 </dx-codeblock>

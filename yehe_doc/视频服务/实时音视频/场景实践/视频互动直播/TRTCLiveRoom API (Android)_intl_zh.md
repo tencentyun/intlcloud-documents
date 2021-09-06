@@ -5,8 +5,8 @@ TRTCLiveRoom 是基于腾讯云实时音视频（TRTC）和即时通信 IM 服�
 - 支持发送各种文本消息和自定义消息，自定义消息可用于实现弹幕、点赞和礼物。
 
 TRTCLiveRoom 是一个开源的 Class，依赖腾讯云的两个闭源 SDK，具体的实现过程请参见 [视频连麦直播（Android）](https://intl.cloud.tencent.com/document/product/647/36061)。
-- TRTC SDK：使用 [TRTC SDK](https://intl.cloud.tencent.com/document/product/647) 作为低延时直播组件。
-- IM SDK：使用 [IM SDK](https://intl.cloud.tencent.com/document/product/1047) 的 AVChatroom 实现直播聊天室的功能，同时，通过 IM 消息串联主播间的连麦流程。
+- TRTC SDK：使用 [TRTC SDK](https://intl.cloud.tencent.com/document/product/647/34615) 作为低延时直播组件。
+- IM SDK：使用 [IM SDK](https://intl.cloud.tencent.com/document/product/1047/33996) 的 AVChatroom 实现直播聊天室的功能，同时，通过 IM 消息串联主播间的连麦流程。
 
 [](id:TRTCLiveRoom)
 ## TRTCLiveRoom API 概览
@@ -76,13 +76,13 @@ TRTCLiveRoom 是一个开源的 Class，依赖腾讯云的两个闭源 SDK，具
 
 | API | 描述 |
 |-----|-----|
-| [getAudioEffectManager](#getaudioeffectmanager) | 获取背景音乐音效管理对象 [TXAudioEffectManager](#trtcaudioeffectmanagerapi)。|
+| [getAudioEffectManager](#getaudioeffectmanager) | 获取背景音乐音效管理对象 [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXAudioEffectManager__android.html#interfacecom_1_1tencent_1_1liteav_1_1audio_1_1TXAudioEffectManager)。|
 
 ### 美颜滤镜相关接口函数
 
 | API | 描述 |
 |-----|-----|
-| [getBeautyManager](#getbeautymanager) | 获取美颜管理对象 [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager)。|
+| [getBeautyManager](#getbeautymanager) | 获取美颜管理对象 [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager)。|
 
 ### 消息发送相关接口函数
 
@@ -149,7 +149,7 @@ TRTCLiveRoom 是一个开源的 Class，依赖腾讯云的两个闭源 SDK，具
 [](id:sharedInstance)
 ### sharedInstance
 
-获取 [TRTCLiveRoom](https://intl.cloud.tencent.com/document/product/647/36061) 单例对象。
+获取 [TRTCLiveRoom](https://cloud.tencent.com/document/product/647/43182) 单例对象。
 ```java
  public static synchronized TRTCLiveRoom sharedInstance(Context context);
 ```
@@ -168,7 +168,7 @@ TRTCLiveRoom 是一个开源的 Class，依赖腾讯云的两个闭源 SDK，具
 
 ```java
 public static void destroySharedInstance();
-```   
+```
 
 ### setDelegate
 
@@ -196,12 +196,15 @@ public abstract void setDelegateHandler(Handler handler);
 ### login
 
 登录。
-```java
+
+<dx-codeblock>
+::: java java
 public abstract void login(int sdkAppId,
  String userId, String userSig,
  TRTCLiveRoomDef.TRTCLiveRoomConfig config, 
  TRTCLiveRoomCallback.ActionCallback callback);
-```
+:::
+</dx-codeblock>
 
 参数如下表所示：
 
@@ -240,7 +243,7 @@ public abstract void setSelfProfile(String userName, String avatarURL, TRTCLiveR
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| name | String | 昵称。 |
+| userName | String | 昵称。 |
 | avatarURL | String | 头像地址。 |
 | callback | ActionCallback | 个人信息设置回调，成功时 code 为0。 |
 
@@ -282,7 +285,7 @@ public abstract void destroyRoom(TRTCLiveRoomCallback.ActionCallback callback);
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | callback | ActionCallback | 销毁房间的结果回调，成功时 code 为0。 |
-   
+
 
 ### enterRoom
 
@@ -339,7 +342,7 @@ public abstract void getRoomInfos(List<Integer> roomIdList, TRTCLiveRoomCallback
 |-----|-----|-----|
 | roomIdList | List&lt;Integer&gt; | 房间号列表。 |
 | callback | RoomInfoCallback | 房间详细信息回调。 |
-   
+
 
 ### getAnchorList
 
@@ -414,7 +417,7 @@ public abstract void startPublish(String streamId, TRTCLiveRoomCallback.ActionCa
 |-----|-----|-----|
 | streamId | String | 用于绑定直播 CDN 的 streamId，如果您希望观众通过直播 CDN 进行观看，需要指定当前主播的直播 streamId。|
 | callback | ActionCallback | 操作回调。|
-   
+
 
 ### stopPublish
 
@@ -474,14 +477,14 @@ public abstract void stopPlay(String userId, TRTCLiveRoomCallback.ActionCallback
 |-----|-----|-----|
 | userId | String | 对方的用户信息。|
 | callback | ActionCallback | 操作回调。|
-   
+
 
 ## 主播和观众连麦
 ### requestJoinAnchor
 
 观众请求连麦。
 ```java
-public abstract void requestJoinAnchor(String reason, TRTCLiveRoomCallback.ActionCallback callback);
+public abstract void requestJoinAnchor(String reason, int timeout, TRTCLiveRoomCallback.ActionCallback callback);
 ```
 
 参数如下表所示：
@@ -489,7 +492,8 @@ public abstract void requestJoinAnchor(String reason, TRTCLiveRoomCallback.Actio
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | reason | String | 连麦原因。 |
-| responseCallback | ActionCallback | 主播响应回调。 |
+| timeout | int | 超时时间。 |
+| callback | ActionCallback | 主播响应回调。 |
 
 
 主播和观众的连麦流程如下：
@@ -519,7 +523,7 @@ public abstract void responseJoinAnchor(String userId, boolean agree, String rea
 | userId | String | 观众 ID。 |
 | agree | boolean | true：同意；false：拒绝。 |
 | reason | String | 同意/拒绝连麦的原因描述。 |
-   
+
 
 ### kickoutJoinAnchor
 
@@ -535,7 +539,7 @@ public abstract void kickoutJoinAnchor(String userId, TRTCLiveRoomCallback.Actio
 |-----|-----|-----|
 | userId | String | 连麦观众 ID。 |
 | callback | ActionCallback | 操作回调。|
-  
+
 
 
 ## 主播跨房间 PK
@@ -552,7 +556,7 @@ public abstract void requestRoomPK(int roomId, String userId, TRTCLiveRoomCallba
 |-----|-----|-----|
 | roomId | int | 被邀约房间 ID。 |
 | userId | String | 被邀约主播 ID。 |
-| responseCallback | ActionCallback | 请求跨房 PK 的结果回调。 |
+| callback | ActionCallback | 请求跨房 PK 的结果回调。 |
 
 主播和主播之间可以跨房间 PK，两个正在直播中的主播 A 和 B 之间的跨房 PK 流程如下：
 1. 【主播 A】调用 `requestRoomPK()` 向主播 B 发起连麦请求。
@@ -578,7 +582,7 @@ public abstract void responseRoomPK(String userId, boolean agree, String reason)
 | userId | String | 发起 PK 请求的主播 ID。 |
 | agree | boolean | true：同意；false：拒绝。 |
 | reason | String | 同意/拒绝 PK 的原因描述。 |
-   
+
 
 ### quitRoomPK
 
@@ -592,7 +596,7 @@ public abstract void quitRoomPK(TRTCLiveRoomCallback.ActionCallback callback);
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | callback | ActionCallback | 操作回调。|
-   
+
 
 ## 音视频控制相关接口函数
 ### switchCamera
@@ -668,16 +672,16 @@ public abstract void muteAllRemoteAudio(boolean mute);
 ## 背景音乐音效相关接口函数
 ### getAudioEffectManager
 
-获取背景音乐音效管理对象 [TXAudioEffectManager](http://doc.qcloudtrtc.com/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa)。
+获取背景音乐音效管理对象 [TXAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa)。
 ```java
 public abstract TXAudioEffectManager getAudioEffectManager();
 ```
-   
+
 
 ## 美颜滤镜相关接口函数
 ### getBeautyManager
 
-获取美颜管理对象 [TXBeautyManager](http://doc.qcloudtrtc.com/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager)。
+获取美颜管理对象 [TXBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXBeautyManager__android.html#classcom_1_1tencent_1_1liteav_1_1beauty_1_1TXBeautyManager)。
 ```java
 public abstract TXBeautyManager getBeautyManager();
 ```
@@ -758,7 +762,7 @@ void onError(int code, String message);
 |-----|-----|-----|
 | code | int | 错误码。 |
 | message | String | 错误信息。 |
-   
+
 
 ### onWarning
 
@@ -839,7 +843,7 @@ void onAnchorEnter(String userId);
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | userId | String | 新进房主播 ID。 |
-   
+
 
 ### onAnchorExit
 
@@ -853,7 +857,7 @@ void onAnchorExit(String userId);
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | userId | String | 退房用户 ID。 |
-   
+
 
 ### onAudienceEnter
 
@@ -910,7 +914,7 @@ void onRequestJoinAnchor(TRTCLiveRoomDef.TRTCLiveUserInfo userInfo, String reaso
 ```java
 void onKickoutJoinAnchor();
 ```
-  
+
 
 
 ## 主播 PK 事件回调
@@ -927,7 +931,7 @@ void onRequestRoomPK(TRTCLiveRoomDef.TRTCLiveUserInfo userInfo, int timeout);
 |-----|-----|-----|
 | userInfo | TRTCLiveUserInfo | 发起跨房连麦的主播信息。|
 | timeout | int | 处理请求的超时时间。 |
-   
+
 
 ### onQuitRoomPK
 
@@ -952,7 +956,7 @@ void onRecvRoomTextMsg(String message, TRTCLiveRoomDef.TRTCLiveUserInfo userInfo
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
 | message | String | 文本消息。|
-| user | TRTCLiveUserInfo | 发送者用户信息。|
+| userInfo | TRTCLiveUserInfo | 发送者用户信息。|
 
    
 
@@ -969,9 +973,9 @@ void onRecvRoomCustomMsg(String cmd, String message, TRTCLiveRoomDef.TRTCLiveUse
 |-----|-----|-----|
 | command | String | 命令字，由开发者自定义，主要用于区分不同消息类型。|
 | message | String | 文本消息。|
-| user | TRTCLiveUserInfo | 发送者用户信息。 |
+| userInfo | TRTCLiveUserInfo | 发送者用户信息。 |
 
-   
+
 [](id:TRTCAudioEffectManager)
 ## TRTCAudioEffectManager
 ### playBGM
@@ -1080,7 +1084,7 @@ void setReverbType(int reverbType);
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| reverbType | int | 混响类型，详情请参见 `TRTCCloudDef` 中的 [TRTC_REVERB_TYPE](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a60ecba31f49f70780e623d24bcfa1a7d) 定义。 |
+| reverbType | int | 混响类型，详情请参见 `TRTCCloudDef` 中的 [TRTC_REVERB_TYPE](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#a60ecba31f49f70780e623d24bcfa1a7d) 定义。 |
 
    
 
@@ -1095,7 +1099,7 @@ void setVoiceChangerType(int type);
 
 | 参数 | 类型 | 含义 |
 |-----|-----|-----|
-| type | int | 混响类型，详情请参见 `TRTCCloudDef` 中的 [TRTC_VOICE_CHANGER_TYPE](http://doc.qcloudtrtc.com/group__TRTCCloudDef__android.html#a899e72b3e4a16288e6c2edfd779e3beb) 定义。 |
+| type | int | 混响类型，详情请参见 `TRTCCloudDef` 中的 [TRTC_VOICE_CHANGER_TYPE](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#a899e72b3e4a16288e6c2edfd779e3beb) 定义。 |
 
    
 

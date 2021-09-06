@@ -4,7 +4,9 @@
 ### 应用信息说明
 1. 进入实时音视频控制台，选择【[应用管理](https://console.cloud.tencent.com/trtc/app)】，查看应用列表。
 2. 选择需要修改应用信息的应用，单击其右侧操作栏的【应用信息】。
+![](https://main.qcloudimg.com/raw/140eeec2a024881d78415a370b4a8f72.png)
 3. 进入应用详情页，通过【应用信息】页签的“应用信息”模块即可查看当前应用的基本信息。
+![](https://main.qcloudimg.com/raw/7101ae9a8a23b7e332dabe1e0cf902ea.png)
 <table>
 <tr><th width="18%">信息项</th><th>说明</th></tr><tr>
 <td>应用名称</td>
@@ -28,15 +30,64 @@
 ### 修改应用信息
 1. 在【[应用管理](https://console.cloud.tencent.com/trtc/app)】中选择需要修改应用信息的应用，单击其右侧操作栏的【应用信息】进入应用详情页。
 2. 在【应用信息】页签中，查看“应用信息”模块，单击右侧的【编辑】。
+![](https://main.qcloudimg.com/raw/6e4bde40b65e7d8404252f325821e248.png)
 3. 进入应用信息修改弹框，可修改**应用名称**及**应用介绍**信息，单击【修改】即可保存成功。
+![](https://main.qcloudimg.com/raw/53835eaaf18af6eef5f967262438e987.png)
 > ? 
-   > - **应用名称**输入框仅支持填写数字、中英文和下划线，不能超过15个字符。
-   > - **应用介绍**输入框仅支持填写数字、中英文和下划线，不能超过300个字符。
+> - **应用名称**输入框仅支持填写数字、中英文和下划线，不能超过15个字符。
+> - **应用介绍**输入框仅支持填写数字、中英文和下划线，不能超过300个字符。
 
 
 
 ## 旁路直播信息
-旁路直播指的是TRTC 在云端使用旁路转码集群，将 TRTC 所使用的 UDP 协议转换为标准的直播 RTMP 协议，把 TRTC 的音视频数据推送到标准的云直播系统中，再经由 CDN 进行分发。当您需要 [实现 CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 功能时将会用到此处的信息
+旁路直播指的是TRTC 在云端使用旁路转码集群，将 TRTC 所使用的 UDP 协议转换为标准的直播 RTMP 协议，把 TRTC 的音视频数据推送到标准的云直播系统中，再经由 CDN 进行分发。当您需要 [实现 CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242) 功能时将会用到此处的信息。
+![](https://main.qcloudimg.com/raw/9606f50bb11f2755b1746ad4c57d27b9.png)
+
+## 实时音视频服务状态
+主要展示当前应用的实时音视频基础服务和增值服务状态情况，包括“正常”、“已停用”两种状态。
+- **正常：**
+状态为正常时，实时音视频基础服务和增值服务皆可正常使用。为了保证服务持续正常可用，请及时 [续购套餐包](https://buy.cloud.tencent.com/trtc) ，或 [开启后付费](https://intl.cloud.tencent.com/document/product/647/41979) 并保持 [腾讯云账户](https://console.cloud.tencent.com/expense) 余额充足。
+![](https://main.qcloudimg.com/raw/94d3dcd2bbca94d3bcb23e1ef498883a.png)
+- **已停用：**
+状态为已停用时，实时音视频基础服务和增值服务皆不可用，请检查是否存在下方描述情况：
+	1. 未开启后付费，免费试用套餐包用完或过期自动停服：您可以 [购买套餐包](https://buy.cloud.tencent.com/trtc) 重新激活服务或直接 [开启后付费](https://intl.cloud.tencent.com/document/product/647/41979)。
+	2. 已开启后付费，腾讯云账户欠费后导致停服：[欠费冲正](https://console.cloud.tencent.com/expense/overview) 后将自动恢复服务。
+	3. 您手动操作将应用停用使其处于停服状态：单击【启用应用】即可重新恢复服务。
+![](https://main.qcloudimg.com/raw/36da08fcbaf0eec5aa3b0645dafbaac1.png)
+
+[](id:deactivate)
+### 自助停用应用
+1. 选择【更多操作】下拉菜单，单击【停用应用】。
+![](https://main.qcloudimg.com/raw/48f5cf3d6103e6fb19ce00ef3dee25f1.png)
+2. 阅读《停用声明》并点击确认【停用】。
+![](https://main.qcloudimg.com/raw/acec30ce7de53d495d7036c77f085b80.png)
+3. 确认停用应用后，您需要进行二次身份验证，以防操作失误带来不必要的损失。
+4. 停用操作发起成功后，全量生效需要3-5分钟，请耐心等待。
+
+[](id:enable)
+### 自助启用应用
+1. 单击【启用应用】。
+![](https://main.qcloudimg.com/raw/b3883bab35ff8b1eb47cb84422a6493d.png)
+2. 阅读《启用声明》并单击确认【启用】。
+![](https://main.qcloudimg.com/raw/82b8f340da62b85da5fbbcc91233a672.png)
+3. 确认启用应用后，您需要进行二次身份验证，以防操作失误带来不必要的损失。
+4. 启用操作发起成功后，全量生效需要3分钟 - 5分钟，请稍后再刷新页面查看。
+
+[](id:delete)
+### 自助删除应用
+1. 选择【更多操作】单击【删除应用】。
+![](https://main.qcloudimg.com/raw/9d5a7f87476373e6c287593cf9b9403e.png)
+2. 阅读《删除声明》并点击确认【删除】。
+![](https://main.qcloudimg.com/raw/68e79c1d9a4567b5f40341fc989b9b25.png)
+3. 确认删除应用后，您需要进行二次身份验证，以防操作失误带来不必要的损失。
+4. 删除操作发起成功后，全量生效需要3分钟 - 5分钟，请耐心等待。
+
+>?
+>- 控制台二次身份验证成功后，30分钟内无需重新验证，请谨慎操作。
+>- 停用/删除生效后，只会阻止新的用户进入 [房间](https://intl.cloud.tencent.com/document/product/647/37714#room) ，生效之前已经进房的用户仍然会正常计费。您可以通过 [解散房间](https://intl.cloud.tencent.com/document/product/647/34269) 接口，强行关闭使用中的房间。
+>- 停用/删除生效后，该应用的基础服务（音视频通话、互动直播）和增值服务（混流转码、云端录制等）都将无法使用。
+>- 自助 停用/启用/删除 应用 发起后，全量生效需要3-5分钟，请耐心等待。
+
 
 ## 标签
 [标签](https://intl.cloud.tencent.com/document/product/651/13334) 用于标识和组织您在腾讯云的各种资源。例如：企业可能有多个业务部门，每个部门有1个或多个 TRTC 应用，这时，企业可以通过给 TRTC 应用添加标签来标记部门信息。
@@ -44,16 +95,20 @@
 ### 添加应用标签
 1. 在【[应用管理](https://console.cloud.tencent.com/trtc/app)】中选择需要修改标签信息的应用，单击其右侧操作栏的【应用信息】进入应用详情页。
 2. 在【应用信息】页签中，查看“标签”模块，单击右侧的【编辑】。
+![](https://main.qcloudimg.com/raw/1997cdcbccb2cf93b8e445840663716e.png)
 3. 进入标签编辑弹框，选择已在 [标签管理](https://console.cloud.tencent.com/tag/taglist) 中创建的**标签键**和**标签值**。
+![](https://main.qcloudimg.com/raw/e33e23ecf9ea2d488507744943db1313.png)
 >? 
 >- 若现有的标签不符合您的要求，请前往 [标签管理](https://console.cloud.tencent.com/tag/taglist) 进行创建操作。
 >- 支持为应用添加多个标签，单击【+添加】即可创建新的标签配置框。
-5. 单击【确定】保存，控制台会刷新弹框显示是否修改成功。
+4. 单击【确定】保存，控制台会刷新弹框显示是否修改成功。
 
 ### 删除应用标签
 1. 在【[应用管理](https://console.cloud.tencent.com/trtc/app)】中选择需要修改标签信息的应用，单击其右侧操作栏的【应用信息】进入应用详情页。
-2. 在【应用信息】页签中，查看“标签”模块，单击右侧的【编辑】。
-3. 进入标签编辑弹框，选择需要删除的标签，单击右侧的删除按钮。
+3. 在【应用信息】页签中，查看“标签”模块，单击右侧的【编辑】。
+	![](https://main.qcloudimg.com/raw/6940f4a0f0a08634321fdd2453e1fb6d.png)
+4. 进入标签编辑弹框，选择需要删除的标签，单击右侧的删除按钮。
+![](https://main.qcloudimg.com/raw/f2b1c6b4aab719038025acbfb4b48e24.png)
 5. 单击【确定】保存，控制台会刷新弹框显示是否修改成功。
 
 
@@ -64,8 +119,6 @@
 - 若需配置或查看应用的功能配置信息，具体操作请参见 [功能配置](https://intl.cloud.tencent.com/document/product/647/39080)。
 - 若需在云端混流转码时设置自定义背景图片，可在素材管理中添加对应的图片素材，具体操作请参见 [素材管理](https://intl.cloud.tencent.com/document/product/647/39081)。
 - 若需快速跑应用通配套的 Demo 源码，具体操作请参见 [快速上手](https://intl.cloud.tencent.com/document/product/647/39082)。
-
-
 
 
 
