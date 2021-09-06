@@ -53,7 +53,7 @@
     密钥可用于生成 UserSig，详细操作请参见 [生成 UserSig](https://intl.cloud.tencent.com/document/product/1047/34385)。
 
 ## 配置帐号管理员
-帐号管理员可用于调用 REST API 接口、解散群等功能，您可以直接使用系统默认的帐号管理员`administrator`，也可以手动添加新的帐号管理员。每个应用支持5个帐号管理员。
+帐号管理员可用于调用 REST API 接口、解散群等功能，您可以直接使用系统默认的帐号管理员`administrator`，也可以手动添加新的帐号管理员。每个应用支持10个帐号管理员。
 ![](https://main.qcloudimg.com/raw/9cf8914c53cb998fd7ee619ef30836a9.jpg)
 [](id:AddAdmin)
 
