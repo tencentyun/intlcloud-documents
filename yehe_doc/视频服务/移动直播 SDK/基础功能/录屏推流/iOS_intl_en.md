@@ -2,7 +2,7 @@
 
 Screen recording is a new feature in iOS 10. In addition to using ReplayKit to record video from the screen, which is possible in iOS 9, with iOS 10, users can also stream live video from the screen. For details, see [Go Live with ReplayKit](https://developer.apple.com/videos/play/wwdc2016/601/). In iOS 11, Apple made ReplayKit more usable and more universally applicable and launched [ReplayKit2](https://developer.apple.com/videos/play/wwdc2017/606/), going from supporting ReplayKit alone to allowing the recording of the entire screen. Therefore, we recommend using ReplayKit2 in iOS 11 to enable the screen sharing feature. Screen sharing relies on extensions, which operate as independent processes. However, to ensure system smoothness, iOS allocates limited resources to extensions and may kill extensions with high memory usage. Given this, Tencent Cloud has further reduced the memory usage of LiteAVSDK while retaining its high streaming quality and low latency to ensure the stability of extensions.
 
->!This document describes how to use ReplayKit2 in iOS 11 to publish streams from the screen. The parts about the use of the SDK also apply to other custom stream publishing scenarios. For details, please see the sample code in the `TXReplayKit_Screen` file of the demo(https://github.com/tencentyun/MLVBSDK/tree/master/iOS/MLVB-API-Example/Basic/LivePushScreen).
+>!This document describes how to use ReplayKit2 in iOS 11 to publish streams from the screen. The parts about the use of the SDK also apply to other custom stream publishing scenarios. For details, please see the sample code in the `TXReplayKit_Screen` file of the [demo](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/MLVB-API-Example/Basic/LivePushScreen).
 
 ## Tryout
 
