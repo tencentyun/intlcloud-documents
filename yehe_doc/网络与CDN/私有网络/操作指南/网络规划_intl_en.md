@@ -39,7 +39,7 @@ If you have multiple businesses deployed in the same region and these businesses
 - **When planning VPC IP ranges, note that:**
  - If you need to create multiple VPCs that communicate with each other or with IDCs, make sure that the IP ranges of the VPCs do not overlap.
  - If your VPC needs to communicate with the classic network, the IP range of the VPC you create must be within `10.[0-47].0.0/16` (including subsets).
- - Once created, the CIDR blocks of VPCs and subnets cannot be modified. When either CIDR blocks are insufficient, you can [create auxiliary CIDR blocks](https://intl.cloud.tencent.com/document/product/215/31805). However, this feature is still in beta and increases operational complexity, we recommend that you carefully plan IP ranges when creating VPCs and subnets.
+ - Once created, the CIDR blocks of VPCs and subnets cannot be modified. When either CIDR blocks are insufficient, you can [create auxiliary CIDR blocks](https://intl.cloud.tencent.com/document/product/215/31805).
 
 #### Planning subnet IP ranges
 - **Subnet IP range**: you can use your VPC IP range or a part of it as the subnet IP range. For example, if the VPC IP range is 10.0.0.0/16, the subnet IP range can be between 10.0.0.0/16-10.0.255.255/28.
