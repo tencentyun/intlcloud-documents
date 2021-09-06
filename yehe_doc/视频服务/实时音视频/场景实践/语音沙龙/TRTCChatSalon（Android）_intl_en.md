@@ -898,8 +898,8 @@ The parameters are as detailed below:
 
 | Parameter    | Type   | Description                                                                                                                    |
 | -------- | -------- | -------------------------------------------------- |
-| command | String | Custom command word used to distinguish between different message types |
-| message | String | Text message |
+| cmd      | String | Custom command word used to distinguish between different message types |
+| message  | String | Text message |
 | userInfo | UserInfo | User information of sender                                   |
 
 ## Invitation Signaling Event Callbacks
@@ -919,7 +919,7 @@ The parameters are as detailed below:
 | id      | String   | Invitation ID                          |
 | inviter | String   | Inviter’s user ID                  |
 | cmd     | String   | Custom command word specified by business |
-| content | UserInfo | Content specified by business                   |
+| content | String   | Content specified by business                   |
 
 ### onInviteeAccepted
 
