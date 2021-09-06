@@ -51,7 +51,7 @@ TRTC can record streams in four formats, namely HLS, MP4, FLV, and AAC, whose di
 </tr>
 <tr>
 <td>Resumption timeout (sec)</td>
-<td><li/>This parameter is valid only when **HLS** is selected for **File Type**.<li/>By default, if a call/live streaming session is interrupted due to network jitter or other reasons, the stream of the call will be recorded into multiple files. You can set this parameter if you want to generate only one playback link for each call/live streaming session. If recording is cut off for a period shorter than the specified time, only one file will be generated for a call/live streaming session. The valid value range of this parameter is 1-1800 (seconds). 0 means disabling the breakpoint resume function.</td>
+<td><li/>By default, if a call/live streaming session is interrupted due to network jitter or other reasons, the stream of the call will be recorded into multiple files. <li/>You can set this parameter if you want to generate only one playback link for each call/live streaming session. If recording is cut off for a period shorter than the specified time, only one file will be generated for a call/live streaming session, but you have to wait till the timeout period elapses to get the file. <li/>The valid value range of this parameter is 1-1800 (seconds). 0 means disabling the breakpoint resume function.</td>
 </tr>
 </table>
 

@@ -13,6 +13,3 @@ By using Tencent Cloud Organization, you can do the following:
 Centralized management policies that can be associated with your entire organization, organizational units, or individual Tencent Cloud accounts will be supported soon.
 
 
-### Does viewing member accounts’ billing details require extra configuration?
-
-No. The account view feature is automatically enabled for the organization’s master account (i.e., the organization creator). The organization creator can switch between member accounts in the Billing Center to view the billing details of each account.

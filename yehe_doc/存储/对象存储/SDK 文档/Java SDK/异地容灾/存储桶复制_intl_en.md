@@ -45,7 +45,7 @@ replicationRule.setPrefix("");
 replicationRule.setDestinationConfig(replicationDestinationConfig);
 // Add a rule
 String ruleId = "replication-to-beijing";
-bucketReplicationConfiguration.addRule(ruleId, replicationRule);
+bucketReplicationConfiguration.addRule(replicationRule);
 
 SetBucketReplicationConfigurationRequest setBucketReplicationConfigurationRequest =
         new SetBucketReplicationConfigurationRequest(bucketName, bucketReplicationConfiguration);

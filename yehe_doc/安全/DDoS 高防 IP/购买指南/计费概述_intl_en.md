@@ -11,25 +11,25 @@ Anti-DDoS Advanced adopts a combo billing mode, utilizing both monthly subscript
 <tr>
 <td >Base protection bandwidth</td>
 <td> Monthly subscription</td>
-<td>Prepaid</td>
+<td>Pay-as-you-go</td>
 <td>Provides base protection bandwidth. The fee is billed based on the base protection bandwidth limit and subscription plan period. Fees will be frozen at time of purchase and settled on the 1st day of the next month.</td>
 </tr>
 <tr>
 <td >Elastic protection bandwidth</td>
 <td>Pay-as-you-go; daily billing cycle</td>
-<td>Postpaid</td>
+<td>Pay-as-you-go</td>
 <td>Once elastic protection is triggered, you will be billed on the following day based on the tiered price of the peak attack bandwidth for the current day.</br>No charges will incur if no elastic protection is triggered. You can adjust the elastic protection configuration as needed.</td>
 </tr>
 <tr>
 <td >Forwarding rules</td>
 <td> Monthly subscription</br>Billed by count</td>
-<td>Postpaid</td>
+<td>Pay-as-you-go</td>
 <td>60 forwarding rules are provided for free for each Anti-DDoS Advanced instance by default. Every additional 10 rules costs USD 100 per month. Each instance can have up to 500 forwarding rules.</td>
 </tr>
 <tr>
 <td >Application bandwidth</td>
 <td>Monthly subscription</br>Billed by bandwidth</td>
-<td>Prepaid</td>
+<td>Pay-as-you-go</td>
 <td>The application traffic limit applies to both the inbound anti-DDoS forwarding traffic and the outbound Anti-DDoS traffic. The application bandwidth needs to be higher than the peak bandwidth of the two, 
  whichever is greater. If the actual application bandwidth is continuously higher than the Application Bandwidth selected when you purchased your Anti-DDoS Advanced instance, packet loss may occur. This 
  might affect your service. We recommend adjusting your application bandwidth to avoid such occurrences.</td>
