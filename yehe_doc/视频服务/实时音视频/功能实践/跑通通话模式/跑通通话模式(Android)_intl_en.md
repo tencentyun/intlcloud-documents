@@ -1,5 +1,5 @@
 ## Use Cases
-TRTC supports four room entry modes, among which video call (VideoCall) and audio call (VoiceCall) are classified as call mode, while interactive video live streaming (Live) and interactive audio live streaming (VoiceChatRoom) are classified as [live streaming mode](https://cloud.tencent.com/document/product/647/35428).
+TRTC supports four room entry modes, among which video call (VideoCall) and audio call (AudioCall) are classified as call mode, while interactive video live streaming (Live) and interactive audio live streaming (VoiceChatRoom) are classified as [live streaming mode](https://cloud.tencent.com/document/product/647/35428).
 In call mode, there can be a maximum of 300 members in a single TRTC room, and up to 30 of them can speak at the same time. This service is suitable for various scenarios such as one-to-one video call, video conferencing with up to 300 attendees, online medical diagnosis, video interview, video customer service, and online werewolf.
 
 ## How It Works
