@@ -1,3 +1,5 @@
+>!The database audit feature is being upgraded, during which new instances won't support this feature. But it will be available again very soon.
+
 <table>
 <thead>
 <tr>
