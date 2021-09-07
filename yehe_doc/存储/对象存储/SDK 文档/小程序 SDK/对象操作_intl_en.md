@@ -819,7 +819,7 @@ function(err, data) { ... }
 | - UploadIdMarker | Specifies the `UploadId` where the list starts. | String |
 | - NextKeyMarker | If the returned list is truncated, the `NextKeyMarker` returned will be the starting point of the subsequent list. | String |
 | - NextUploadIdMarker | If the returned list is truncated, the `UploadId` returned will be the starting point of the subsequent list. | String |
-| MaxUploads | Sets the maximum number of entries returned. Value range: 1-1000 | String | No |
+| MaxUploads | Sets the maximum number of entries returned. Value range: 1-1000 | String | 
 | - IsTruncated | Indicates whether returned objects are truncated. Valid value: `true` or `false` | String|
 | - Prefix | Matching prefix for object keys. This parameter specifies that the response can contain only object keys with the specified prefix. | String |
 | - Delimiter | Separating symbol used to group object keys. It is usually `/`. The identical paths between `Prefix` or, if no `Prefix` is specified, the beginning and the first `delimiter` are grouped and defined as a common prefix. All common prefixes will be listed. | String |
@@ -1069,7 +1069,7 @@ function(err, data) { ... }
 | NextPartNumberMarker  | If the returned list is truncated, the `NextMarker` returned will be the starting point of the subsequent list   | String    |
 | - MaxParts | Maximum number of entries returned at a time | String |
 | - IsTruncated | Indicates whether the returned list is truncated. Valid values: `true`, `false` | String |
-| - Part | Array | Part information list | ObjectArray |
+| - Part |Part information list | ObjectArray |
 | - - PartNumber | Part number | String |
 | - - LastModified | Last modified time of a part | String |
 | - - ETag | MD5 checksum of a part | String |
@@ -1310,7 +1310,7 @@ cos.putObjectAcl({
 | AccessControlPolicy | Sets an object's ACL attributes | Object | No |
 | - Owner | Information about the object owner | Object | No |
 | - - - ID | Object owner ID in the format: `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`<br>For root accounts, `&lt;OwnerUin>` and `&lt;SubUin>` have the same value | String | No |
-| - - DisplayName | Name of the object owner | String |
+| - - DisplayName | Name of the object owner | String |   No |
 | - Grants | A list of information about the grantee and granted permissions | ObjectArray | No |
 | - - Permission | Permission granted. Enumerated values: `READ`, `WRITE`, `READ_ACP`, `WRITE_ACP`, `FULL_CONTROL` | String | No |
 | - - Grantee | Information about the grantee | Object | No |
@@ -1378,7 +1378,7 @@ function(err, data) { ... }
 | - - - ID | Object owner ID in the format: `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`<br>For root accounts, `&lt;OwnerUin>` and `&lt;SubUin>` have the same value | String |
 | - - DisplayName | Object owner name | String |
 | - Grants | List of information on the grantee and permissions | ObjectArray |
-| - - Permission | Specifies the permission granted to the authorized user. Enumerated values: `READ`, `WRITE`, `READ_ACP`, `WRITE_ACP`, `FULL_CONTROL` | String | No |
+| - - Permission | Specifies the permission granted to the authorized user. Enumerated values: `READ`, `WRITE`, `READ_ACP`, `WRITE_ACP`, `FULL_CONTROL` | String | 
 | - - Grantee | Authorized user’s information | Object |
 | - - - DisplayName | Name of the user | String |
 | - - - ID | User ID in the format: `qcs::cam::uin/<OwnerUin>:uin/<SubUin>`<br>For root accounts, `&lt;OwnerUin>` and `&lt;SubUin>` have the same value | String |
@@ -1583,14 +1583,14 @@ cos.sliceCopyFile({
 
 #### Parameter description
 
-| Parameter &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                 | Description | Type | Required |
+| Parameter         | Description | Type | Required |
 | ---------------------- | ------------------------------------------------------------ | -------- | ---- |
 | Bucket | Bucket name in the format of `BucketName-APPID` | String | Yes |
 | Region | Bucket region. For the enumerated values, please see [Regions and Access Endpoints](https://intl.cloud.tencent.com/document/product/436/6224). | String | Yes |
 | Key | Object key (object name), the unique ID of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
 | CopySource | URL path of the source object. A historical version can be specified using the URL parameter `?versionId=&lt;versionId>`. | String | Yes |
 | ChunkSize | Size (in bytes) of each part in the multipart copy. Defaults to `1048576` (1 MB). | Number | No |
-| SliceSize | Specifies the minimum file size (in bytes) to use multipart copy. The default value is 5 GB. If the file size is equal to or smaller than this value, the file will be uploaded using `putObjectCopy`; otherwise, it will be uploaded using `sliceCopyFile`. | Number | No | | Number | No |
+| SliceSize | Specifies the minimum file size (in bytes) to use multipart copy. The default value is 5 GB. If the file size is equal to or smaller than this value, the file will be uploaded using `putObjectCopy`; otherwise, it will be uploaded using `sliceCopyFile`. | Number |  No |
 | onProgress | Callback of the upload progress. The callback parameter is the progress object `progressData`. | Function | No |
 | - progressData.loaded | Size of the uploaded parts, in bytes | Number | No |
 | - progressData.total | Size of the entire file, in bytes | Number | No |
@@ -1680,8 +1680,8 @@ wx.chooseMessageFile({
 | - Key | Object key (object name), the unique identifier of an object in a bucket. For more information, please see [Object Overview](https://intl.cloud.tencent.com/document/product/436/13324). | String | Yes |
 | - FilePath | Path to the file to upload | String | Yes |
 | - onTaskReady | Callback function when an upload task is created. The callback returns a `taskId`, which uniquely identifies the task and can be used to cancel (cancelTask), pause (pauseTask), or restart (restartTask) the task. | Function | No |
-| -- taskId                                                     | ID of the upload task                                              | String    | No  |
-| SliceSize                                                    | Specifies the minimum file size (in bytes) to use multipart upload. The default value is `1048576` (1 MB). If the file size is equal to or smaller than this value, the file will be uploaded using `putObject`; otherwise, it will be uploaded using `sliceUploadFile`.                                                     | Number    | Yes   |
+| -- taskId      | ID of the upload task      | String    | No  |
+| SliceSize         | Specifies the minimum file size (in bytes) to use multipart upload. The default value is `1048576` (1 MB). If the file size is equal to or smaller than this value, the file will be uploaded using `putObject`; otherwise, it will be uploaded using `sliceUploadFile`.                                                     | Number    | Yes   |
 | onProgress | Upload progress calculated by averaging out the progress of all tasks | String | Yes |
 | - progressData.loaded | Size of the uploaded parts, in bytes | Number | No |
 | - progressData.total | Size of the entire file, in bytes | Number | No |
