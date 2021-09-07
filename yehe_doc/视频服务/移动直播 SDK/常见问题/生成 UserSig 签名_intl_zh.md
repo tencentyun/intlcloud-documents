@@ -20,7 +20,6 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 访问云直播 [应用管理](https://console.cloud.tencent.com/live/license/appmanage) 可以查询计算 UserSig 用的密钥，方法如下：
 1. 选择一个应用并进入详情页面，如果还没有应用就创建一个。
 2. 进入**应用管理**页面，单击**查看密钥**按钮即可获得加密密钥。
-![](https://main.qcloudimg.com/raw/e7a33567095b6930e5560dd901268186.png)
 
 [](id:Client)
 ### 客户端计算
@@ -32,11 +31,10 @@ usersig = hmacsha256(secretkey, (userid + sdkappid + currtime + expire +
 | Java | Android  | [Github](https://github.com/tencentyun/MLVBSDK/blob/master/Android/Demo/debug/src/main/java/com/tencent/liteav/debug/GenerateTestUserSig.java) |
 | Javascript | 小程序 | [Github](https://github.com/tencentyun/MLVBSDK/tree/master/WXMini/pages/mlvb-live-room-demo/debug/GenerateTestUserSig.js)|
 
-![](https://main.qcloudimg.com/raw/9f2bd1709904f3fd8601f6077d7b7a28.png)
+
 
 
 >! 该方案仅适用于调试，如果产品要正式上线，**不推荐**采用这种方案，因为客户端代码（尤其是 Web 端）中的 SECRETKEY 很容易被反编译逆向破解。一旦您的密钥泄露，攻击者就可以盗用您的腾讯云流量。
-
 >正确的做法是将 UserSig 的计算代码放在您的业务服务器上，然后由您的 App 在需要的时候向您的服务器获取实时算出的 UserSig。
 
 [](id:Server)
