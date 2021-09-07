@@ -73,18 +73,3 @@ iOS 可在工程配置中的`General->Identity`中获取，如下图所示：
 同一个账号下移动直播的 licenseurl 和 key 默认是相同的。这样保证了测试 License 、正式 License、不同包名的 License 均可以复用相同的接口信息。
 
 >?不建议使用免费测试的 License 发布到线上运行。您可以通过添加新的正式版 License，即可无需再修改接口中的 licenseurl 和 key，切换到正式版 License。
-
-
-[](id:que16)
-### 为什么我的子账户已经授权了直播和点播所有权限，但是还是无法访问 License 控制台相关界面？
-#### 问题截图：
-<img src="https://main.qcloudimg.com/raw/7423d2e7912de344052c7891629d528b.png" width=400px>
-
-#### 问题解析：
-新版 SDK License 本次升级更新了接口，需要主账号为子账号独立进行重新授权策略后方可访问 License 控制台页面。
-- 若您仅需要提供子账号查询 License 的权限，请授权 QcloudVCUBEReadOnlyAccess 策略。
-- 若您需要提供子账号所有 License 操作权限，请授权 QcloudVCUBEFullAccess 策略。
-
-为用户/用户组关联策略以授权相关操作权限的关联指引请参见 [策略授权管理](https://intl.cloud.tencent.com/document/product/598/10602)。
-
->? License 界面所有功能操作已独立于云直播、云点播策略外，即原 QcloudVODFullAccess、QcloudLIVEFullAccess 策略已不包含 License 相关接口，需按照上述说明单独授权。
