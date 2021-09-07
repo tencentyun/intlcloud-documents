@@ -8,11 +8,11 @@ Web端末でTencent Real-Time Communicationを実現するには、ブラウザ�
 | ------------ | -------------- | -------- | ------------------------------------ |
 | iOS          | Safari         | 11.1.2   | Appleの Safari にいまだに時々bugが見られることから、製品化計画の提案はとりあえず棚上げし、Appleが解決するのを待って使用する、<br > このためiOS には、互換性がより優れたWeChatミニプログラムソリューションの使用をお薦めします。 |
 | Android      | TBS            | 43600    | WeChatおよびモバイルQQのデフォルト内蔵のブラウザのコアは [TBS](http://x5.tencent.com/)です。    |
-| Android      | Chrome         | 60+      | H264コーデックをサポートする必要があります。
+| Android      | Chrome         | 60+      | H264コーデックをサポートする必要があります。|
 | Mac          | Chrome         | 47+      | - |
 | Mac          | Safari         | 11+      | - |
 | Windows(PC)  | Chrome         | 52+      | - |
-| Windows(PC)  | QQ ブラウザ      | 10.2     | - |
+
 
 > ?TBSカーネルに基づくWebViewは、バージョンが ≥ 43600を満足する必要があります。
 > ブラウザで [WebRTC 能力テスト](https://www.qcloudtrtc.com/webrtc-samples/abilitytest/index.html) 画面を開き、 WebRTCを完全にサポートするか検査することができます。例えば、WeChat公式アカウントなどのブラウザ環境。
