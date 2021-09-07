@@ -26,10 +26,11 @@ druid.storage.type=hdfs
 druid.storage.storageDirectory=ofs://<mountpoint>/<druid-path>
 ```
 2. 在`conf/druid/_common/`这个目录下，新建一个 hdfs 的配置文件 hdfs-site.xml，填入 CHDFS 的配置信息等：
-```xml
+<dx-codeblock>
+::: xml
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
-<!--
+ <!--
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
@@ -39,10 +40,10 @@ druid.storage.storageDirectory=ofs://<mountpoint>/<druid-path>
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License. See accompanying LICENSE file.
--->
-<!-- Put site-specific property overrides in this file. -->
-<configuration>
- <property>
+ -->
+ <!-- Put site-specific property overrides in this file. -->
+ <configuration>
+  <property>
     <name>fs.AbstractFileSystem.ofs.impl</name>
     <value>com.qcloud.chdfs.fs.CHDFSDelegateFSAdapter</value>
  </property>
@@ -60,9 +61,11 @@ druid.storage.storageDirectory=ofs://<mountpoint>/<druid-path>
     <name>fs.ofs.user.appid</name>
     <value>125000001</value>
  </property>
-</configuration>
-```
-上述配置的支持项与 CHDFS 官网文档描述完全一致，详情可参见 [挂载 CHDFS](https://intl.cloud.tencent.com/document/product/1106/41965) 文档。
+ </configuration>
+:::
+</dx-codeblock>
+
+上述配置的支持项与 CHDFS 官网文档描述完全一致，详情可参见 [挂载 CHDFS](https://intl.cloud.tencent.com/document/product/1106/41965)文档。
 
 #### 开始使用
 依次启动 Druid 进程，Druid 数据就可加载到 CHDFS 中。
