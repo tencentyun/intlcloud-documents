@@ -61,17 +61,16 @@ Call `setRenderView` in [V2TXLivePusher](https://liteav.sdk.qcloud.com/doc/api/z
 </dx-codeblock>
 
 > ! To add animated effects to the view, modify its `transform` attribute rather than `frame` attribute.
->```objectivec
+```objectivec
   [UIView animateWithDuration:0.5 animations:^{
             _localView.transform = CGAffineTransformMakeScale(0.3, 0.3); // Shrink by 1/3
         }];
-     ```
 ```
 
 [](id:step5)
 ### 5. Start and stop publishing streams
 After calling `startCamera` to enable camera preview, you can call the [startPush](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a33b38f236a439e7d848606acb68cc087) API in `V2TXLivePusher` to start stream publishing.
-​```objectivec 
+```objectivec 
 // Start publishing streams
 NSString* rtmpUrl = @"rtmp://test.com/live/xxxxxx"; // Enter your RTMP URL for stream publishing
 [_pusher startPush:rtmpUrl];
@@ -143,7 +142,7 @@ You can call the [setBeautyStyle](https://liteav.sdk.qcloud.com/doc/api/zh-cn/gr
 - Call the `setFilter` API in `TXBeautyManager` to set color filters. Color filters are a technology that adjusts the color tone of sections of an image. For example, it may lighten the yellow sections of an image to achieve the effect of skin brightening, or add warm tones to a video to give it a refreshing and soft boost.   
 - Call the `setFilterStrength` API in `TXBeautyManager` to set the strength of a color filter. The higher the strength, the more obvious the effect. 
 
-Based on our experience of operating Now Live, it’s not enough to use the `setBeautyStyle` API in `TXBeautyManager` to set the beauty filter style alone. The `setBeautyStyle` API must be used together with `setFilter` in order to produce richer effects. Given this, our designers have developed 17 built-in color filters and integrated them into the [demo](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/Demo).
+Based on our experience of operating Now Live, it's not enough to use the `setBeautyStyle` API in `TXBeautyManager` to set the beauty filter style alone. The `setBeautyStyle` API must be used together with `setFilter` in order to produce richer effects. Given this, we have provided 17 built-in color filters for you to use.
 ```objectivec
 NSString * path = [[NSBundle mainBundle] pathForResource:@"FilterResource" ofType:@"bundle"];
 path = [path stringByAppendingPathComponent:lookupFileName];

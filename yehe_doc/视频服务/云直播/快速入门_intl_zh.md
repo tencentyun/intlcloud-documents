@@ -13,7 +13,7 @@
 <span id="step1_1"></span>
 1. 准备自有域名，如果要在中国内地（大陆）使用需要完成域名备案。
 2. 登录云直播控制台，进入[【域名管理】](https://console.cloud.tencent.com/live/domainmanage)， 单击【添加域名】。
-![](https://main.qcloudimg.com/raw/bee8085a9d29641ddab913fdcd9c75ab.png)
+![](https://main.qcloudimg.com/raw/771bbce97962dcd1cffdd94324941280.png)
 >?
 >- 云直播默认提供测试域名`xxxx.livepush.myqcloud.com`，您可通过该域名进行推流测试，但不建议您在正式业务中使用这个域名作为推流域名。
 >- 域名添加成功后，您可通过【域名管理】的域名列表查看域名信息。若您需要对已添加成功的域名进行管理，请参见 [域名管理](https://intl.cloud.tencent.com/document/product/267/31056)。
@@ -40,9 +40,9 @@
    2. 选择您在域名管理中已添加的推流域名。
    3. 填写 AppName，默认为 `live`。
    4. 填写自定义的流名称 StreamName，例如：`liveteststream`。
-   5. 选择地址过期时间，例如：`2021-05-31 23:59:59`。
+   5. 选择地址过期时间，例如：`2021-07-09 19:07:04`。
    5. 单击 【生成地址】即可生成推流地址。
-![](https://main.qcloudimg.com/raw/1d9741fe544d1c850ab89b22134f6dc8.png)
+![](https://main.qcloudimg.com/raw/5a377614d5da22c5193bef68f4a3a6e7.png)
 
 >? 
 >- 推流地址的结构如下，`live`为默认的 AppName，`txSecret`为播放推流的签名，`txTime`为推流地址的有效时间。
@@ -68,14 +68,14 @@
    2. 选择您在域名管理中已添加的播放域名。
    3. 填写 AppName，默认为 `live`。
    4. 填写与推流地址相同的 StreamName，播放地址 StreamName 要与推流地址 StreamName 一致才能播放对应的流。
-   5. 选择地址过期时间，例如：`2021-05-31 23:59:59`。
+   5. 选择地址过期时间，例如：`2021-07-09 19:07:04`。
    5. 单击 【生成地址】即可生成播放地址。
-![](https://main.qcloudimg.com/raw/d91fe5d373cfc03df2c87562f3984858.png)
+![](https://main.qcloudimg.com/raw/5025e22cd8c4c555d7de3e0360e13d11.png)
 <span id="step4_1"></span>
 3. 您可以根据业务场景使用以下方式测试直播流是否能正常播放：
    1. PC 端直播流测试，建议您使用[ VLC](https://intl.cloud.tencent.com/document/product/267/32483) 等工具进行播放体验，具体请参见 [播放实践](https://intl.cloud.tencent.com/document/product/267/31559)。
    2. Web 端播放测试，建议您选用播放器 SDK 里的  [TCPlayerLite 播放器] 进行播放，具体请参见 [直播播放](https://intl.cloud.tencent.com/document/product/267/31559)。
-   4. 移动端直播流测试，建议您下载安装 [腾讯云工具包 App](https://intl.cloud.tencent.com/zh/document/product/1071/38147）#rtmpdemo) 打开选择【移动直播 MLVB】>【标准直播播放】，手动输入或扫描二维码录入播放地址到地址编辑框内，单击左下角播放按钮播放观看。
+   4. 移动端直播流测试，建议您下载安装 [腾讯云工具包 App](https://intl.cloud.tencent.com/zh/document/product/1071/38147#rtmpdemo) 打开选择【移动直播 MLVB】>【标准直播播放】，手动输入或扫描二维码录入播放地址到地址编辑框内，单击左下角播放按钮播放观看。
 
 >? 如需在 App 中进行进行推流/播放，可以集成 [移动直播 SDK](https://intl.cloud.tencent.com/product/mlvb) 配合云直播服务使用。试用过程中如果您遇到问题，建议您阅读云直播 [常见问题](https://intl.cloud.tencent.com/document/product/267/7968) 解答疑问。
 

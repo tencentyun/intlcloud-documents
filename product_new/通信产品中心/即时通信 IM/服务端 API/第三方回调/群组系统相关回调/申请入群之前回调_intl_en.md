@@ -91,7 +91,7 @@ Disallows the system to continue to process the user’s request to join a group
 | Field | Type | Attribute | Description |
 | --- | --- | --- | --- |
 | ActionStatus | String | Required | The request processing result. OK: succeeded. FAIL: failed. |
-| ErrorCode | Integer | Required | The error code. 0: the system can continue to process the request. 1: the request is rejected. If the request needs to be approved by the admin, the system must wait for the admin to approve the request even if error code 0 is returned. |
+| ErrorCode | Integer | Required | The error code. `0`: the system can continue to process the request. `1`: the request is rejected. If the business side wants to specify error code to forbid the request form a user and send `ErrorCode` and `ErrorInfo` to the client, ensure that the value of `ErrorCode` is set within the range of [10100, 10200]. If the request needs to be approved by the admin, the system must wait for the admin to approve the request even if error code `0` is returned. |
 | ErrorInfo | String | Required | Error information. |
 
 ## References

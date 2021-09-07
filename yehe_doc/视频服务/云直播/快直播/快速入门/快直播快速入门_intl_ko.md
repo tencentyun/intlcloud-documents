@@ -7,7 +7,7 @@
 2. [Tencent Cloud CSS 서비스 활성화 페이지](https://intl.cloud.tencent.com/)에서 <Tencent Cloud 서비스 약관>에 동의 체크 후 [활성화 신청]을 클릭하면 CSS 서비스가 활성화됩니다.
 >?  
 >- CSS 서비스 활성화 신청 후, 라이브 방송 무료 체험 트래픽 20GB가 제공됩니다. 라이브 방송 트래픽은 LEB 일 결산 트래픽의 비례 공제를 지원합니다. 무료 트래픽 소진 후 자동 차감 및 연체로 인한 CSS 서비스 사용 불가 발생을 방지하기 위해, 실제 서비스 니즈에 따라 적합한 패키지 [[구매](https://intl.cloud.tencent.com)]를 권장합니다.
->- 도메인 구성은 LVB와 동일하며, LVB에 액세스한 경우, [4단계: 재생 주소 획득] (#step4) 부분에서 LEB 풀 스트림에 대해 알아볼 수 있습니다.
+>- 도메인 구성은 LVB와 동일하며, LVB에 액세스한 경우, [4단계: 재생 주소 획득](#step4) 부분에서 LEB 풀 스트림에 대해 알아볼 수 있습니다.
 
 [](id:step1)
 
@@ -96,7 +96,7 @@ LEB 풀 스트림  URL은 기본적으로 Tencent Cloud CSS 풀 스트림 URL과
 
 LEB 풀 스트림 URL 형식은 **`webrtc://domain/path/stream_id`**이며, [링크 도용 방지 인증](https://intl.cloud.tencent.com/document/ product/267/ 31560)이 필요한 경우, 풀 스트림 URL 형식은 **`webrtc://domain/path/stream_id?txSecret=xxx&txTime=xxx`**입니다. Tencent Cloud CSS 풀 스트림 URL 생성은 [재생 주소 가져오기](#step4)를 참고하십시오.
 
->? 다른 해상도와 비트레이트의 스트림을 풀링해야 하는 경우 트랜스 코딩 스트림을 풀링할 수 있으며, 트랜스 코딩된 스트림의 URL 생성은 [라이브 방송 캡슐화 전환 및 트랜스 코딩](https://intl.cloud. tencent.com/document/product/267/31561)을 참고하십시오.
+>? 다른 해상도와 비트레이트의 스트림을 풀링해야 하는 경우 트랜스 코딩 스트림을 풀링할 수 있으며, 트랜스 코딩된 스트림의 URL 생성은 <a href="https://intl.cloud. tencent.com/document/product/267/31561">라이브 방송 캡슐화 전환 및 트랜스 코딩</a>을 참고하십시오.
 
 [](id:b_frame)
 ### B-프레임 관련

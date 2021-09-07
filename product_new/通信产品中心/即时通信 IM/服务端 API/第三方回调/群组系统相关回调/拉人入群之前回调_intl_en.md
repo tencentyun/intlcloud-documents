@@ -103,7 +103,7 @@ The app backend rejects some users in requests to join the group and returns the
 | Field | Type | Attribute | Description |
 | --- | --- | --- | --- |
 | ActionStatus | String | Required | The request processing result. OK: succeeded. FAIL: failed. |
-| ErrorCode | Integer | Required | The error code. |
+| ErrorCode | Integer | Required | The error code.0: allows group buliding; 1: forbids group buliding; 2: discards the message silently.If the business side wants to use his own error code to forbid a user to bulid group and sendErrorCode and ErrorInfo to the client, ensure that the value of ErrorCode is set within the range of [10100, 10200]. |
 | ErrorInfo | String | Required | Error information. |
 | RefusedMembers_Account | Array | Optional | The set of rejected users’ IDs. |
 

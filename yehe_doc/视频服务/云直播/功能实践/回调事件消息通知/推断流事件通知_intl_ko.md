@@ -40,7 +40,7 @@ Tencent Cloud CSS의 콜백 기능 설정 방법과 사용자가 콜백 메시�
 | stream_id     | string | 라이브 방송 스트림 이름                                                   |
 | channel_id    | string | 동일 라이브 방송 스트림 이름                                                 |
 | event_time    | int64  | 이벤트 메시지가 생성하는 UNIX 타임스탬프                                   |
-| sequence      | string | 메시지 일련번호로, 푸시 스트림 이벤트를 식별합니다. 푸시 스트림 이벤트는 동일한 일련번호의 스트림 푸시 및 중단 메시지를 생성합니다.
+| sequence      | string | 메시지 일련번호로, 푸시 스트림 이벤트를 식별합니다. 푸시 스트림 이벤트는 동일한 일련번호의 스트림 푸시 및 중단 메시지를 생성합니다.|
 | node          | string | 라이브 방송 액세스 포인트 IP                                              |
 | user_ip       | string | 사용자 푸시 스트림 IP                                                  |
 | stream_param  | string | 사용자 푸시 스트림 URL이 가지는 매개변수                                        |

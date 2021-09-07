@@ -1,3 +1,4 @@
+>!The database audit feature is being upgraded, during which new instances won't support this feature. But it will be available again very soon.
 
 Database audit currently supports most SQL statements. If you find any deficiency, please [contact us](https://intl.cloud.tencent.com/support) for feedback.
 - Parsing of DCL, DDL, and DML statements is supported.

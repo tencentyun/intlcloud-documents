@@ -149,7 +149,7 @@ Warning codes do not require your special attention. You can choose whether to p
 |WARNING_CAMERA_DEVICE_EMPTY|1111|No available camera detected.|
 |WARNING_MICROPHONE_DEVICE_EMPTY|1201|No available mic detected.|
 |WARNING_SPEAKER_DEVICE_EMPTY|1202|No available speaker detected.|
-|WARNING_MICROPHONE_NOT_AUTHORIZED|1203||User did not grant the application mic access.|
+|WARNING_MICROPHONE_NOT_AUTHORIZED|1203|User did not grant the application mic access.|
 |WARNING_MICROPHONE_DEVICE_ABNORMAL|1204|No audio capturing device available (for example, because the device is occupied).|
 |WARNING_SPEAKER_DEVICE_ABNORMAL|1205|No audio playback device available (for example, because the device is occupied).|
 |WARNING_VIDEO_FRAME_DECODE_FAIL|2101|Failed to decode current video frame.|
