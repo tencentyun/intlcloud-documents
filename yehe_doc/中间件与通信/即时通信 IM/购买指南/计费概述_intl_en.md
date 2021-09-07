@@ -14,6 +14,7 @@ The following table compares the features of the different editions:
 | Maximum friends for a single user | 20 | 3,000 | 3,000 |
 | Maximum groups a single user can join | 50 | 500 | 1,000 |
 | Maximum members in a group (private group, public group, or chat room) | 20 | 200 | Private group: 200<br />Pubic group and chat room: 2,000 |
+| Maximum number of groups (deleted groups not counted)      | 100       | Unlimited                | Unlimited                              |
 | Maximum number of audio-video chat rooms that can be created | 10 | 50 | Unlimited |
 | Maximum net increase in group quantity per day | 10,000 | 10,000 | 10,000 |
 | Free retention period of historical messages | 7 days | 7 days | 30 days |
