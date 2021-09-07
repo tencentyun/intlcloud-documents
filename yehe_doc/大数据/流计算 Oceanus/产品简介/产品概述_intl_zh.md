@@ -11,4 +11,4 @@
 当独享集群的 VPC 与用户指定的 VPC 建立互通关系后，JAR 模式的作业即可访问用户特定 VPC 下的所有网络可达的资源，包括但不限于该 VPC 下的各项腾讯云服务，例如消息队列、数据库、API 服务、云服务器 CVM 等。
 
 此外，如果在这个指定的 VPC 下购买 [NAT 网关](https://intl.cloud.tencent.com/document/product/1015) 并妥善配置路由表，即可访问公网的互联网地址（例如公网上的 API、其他云服务厂商的组件等），进一步增强流计算作业的处理能力。
-![](https://main.qcloudimg.com/raw/b7983dd52cfb0c2d9b0e30e3a0d7956f.png)
+![](https://main.qcloudimg.com/raw/5bf82ae7652557c7c2edbc6c35b4807a.png)
