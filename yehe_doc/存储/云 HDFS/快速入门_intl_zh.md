@@ -13,7 +13,7 @@
 登录 [CHDFS 控制台](https://console.cloud.tencent.com/chdfs) 进行相关操作，包括创建 CHDFS、创建权限组和权限规则、添加挂载点。操作指引请参见 [操作指南](https://cloud.tencent.com/document/product/1105/36365)。
 
 ## 步骤4：部署 CHDFS SDK
-您可在相关机器上部署 CHDFS SDK，进行挂载使用。详情请参见 CHDFS [操作指南](https://cloud.tencent.com/document/product/1105/36365) 文档。
+您可在相关机器上部署 CHDFS SDK，进行挂载使用。详情请参见 CHDFS [操作指南](https://intl.cloud.tencent.com/document/product/1106/41953) 文档。
 
 
 

@@ -13,7 +13,7 @@ After successful registration, log in to the [Tencent Cloud console](https://con
 Log in to the [CHDFS console](https://console.cloud.tencent.com/chdfs) to perform relevant operations, including creating CHDFS instances, creating permission groups and permission rules, and adding mount points. For more information, please see [Operation Guide](https://cloud.tencent.com/document/product/1105/36365).
 
 ## Step 4. Deploy the CHDFS SDK
-You can deploy the CHDFS SDK on relevant servers for mounting. For more information, please see [Operation Guide](https://cloud.tencent.com/document/product/1105/36365).
+You can deploy the CHDFS SDK on relevant servers for mounting. For more information, please see [Operation Guide](https://intl.cloud.tencent.com/document/product/1106/41953).
 
 
 
