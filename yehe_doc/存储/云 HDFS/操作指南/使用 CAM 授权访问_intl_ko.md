@@ -23,7 +23,7 @@ CHDFS 라이선스 정책 사전 설정은 다음과 같습니다.
 | chdfs:DescribeMountPoints  | qcs::chdfs:${region-id}:uin/${account-uin}:mountpoint/${mount-point-id} | 마운트 포인트 리스트 조회       |
 | chdfs:AssociateAccessGroups   | qcs::chdfs:${region-id}:uin/${account-uin}:mountpoint/${mount-point-id} | 권한 그룹 리스트 바인딩  |
 | chdfs:DisassociateAccessGroups| qcs::chdfs:${region-id}:uin/${account-uin}:mountpoint/${mount-point-id} | 권한 그룹 리스트 바인딩 해제  |
-| chdfs:CreateAccessGroup    | qcs::chdfs:${region-id}:uin/${account-uin}:vpc/${vpc-id}<br>qcs::chdfs:${region-id}:uin/${account-uin}:unVpcId/${unVpcId}     | 권한 그룹 생성           |
+| chdfs:CreateAccessGroup | qcs::chdfs:${region-id}:uin/${account-uin}:vpc/${vpc-id} 또는 qcs::chdfs:${region-id}:uin/${account-uin}:unVpcId/${unVpcId} | 권한 그룹 생성 |
 | chdfs:DeleteAccessGroup    | qcs::chdfs:${region-id}:uin/${account-uin}:accessgroup/${access-group-id} | 권한 그룹 삭제           |
 | chdfs:ModifyAccessGroup    | qcs::chdfs:${region-id}:uin/${account-uin}:accessgroup/${access-group-id} | 권한 그룹 속성 수정       |
 | chdfs:DescribeAccessGroup  | qcs::chdfs:${region-id}:uin/${account-uin}:accessgroup/${access-group-id} | 권한 그룹 상세 정보 조회  |
