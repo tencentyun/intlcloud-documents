@@ -186,7 +186,7 @@ TRTCは、4種類の異なる入室モードをサポートしています。こ
 [](id:que37)
 ### TRTCでは、インタラクティブな音声ビデオ通信のプロセスのビデオをファイルにレコーディングする機能をサポートしていますか。
 ご自分のサーバーによるレコーディング（録音/録画）をサポートしています。使用する必要がある場合は、 [チケットを提出](https://console.cloud.tencent.com/workorder/category)でご連絡の上、SDKおよび関連ガイドを取得してください。
-[クラウドレコーディングと再生の実現] (https://intl.cloud.tencent.com/document/product/647/35426) を使用してビデオをレコーディングすることもできます。
+[クラウドレコーディングと再生の実現](https://intl.cloud.tencent.com/document/product/647/35426) を使用してビデオをレコーディングすることもできます。
 
 [](id:que38)
 ### TRTCでは、WeChatのビデオ通話のようなフローティングウィンドウ、大小画面の切り替え等の機能をサポートしていますか。
@@ -318,7 +318,7 @@ TRTCCloudのsetVideoEncoderParam()インターフェースで、TRTCVideoEncPara
 
 [](id:que67)
 ### TRTCとは何ですか。
-Tencent Real-Time Communication（TRTC）は、Tencentが長年に渡り蓄積したネットワークとオーディオ・ビデオ技術をベースに、多人数のオーディオビデオ通話と低遅延インタラクションライブストリーミングの、シナリオ化した2大ソリューションを提供し、Tencent Cloudのサービスを通じて開発者向けに開放します。これにより、開発者が低コスト、低遅延、高品質のインタラクティブな音声ビデオソリューションを迅速に構築するのを支援します。詳細は、[製品概要]https://intl.cloud.tencent.com/document/product/647/35078をご参照ください。
+Tencent Real-Time Communication（TRTC）は、Tencentが長年に渡り蓄積したネットワークとオーディオ・ビデオ技術をベースに、多人数のオーディオビデオ通話と低遅延インタラクションライブストリーミングの、シナリオ化した2大ソリューションを提供し、Tencent Cloudのサービスを通じて開発者向けに開放します。これにより、開発者が低コスト、低遅延、高品質のインタラクティブな音声ビデオソリューションを迅速に構築するのを支援します。詳細は、[製品概要](https://intl.cloud.tencent.com/document/product/647/35078)をご参照ください。
 
 [](id:que68)
 ### TRTCのDemoはどのように体験できますか。
