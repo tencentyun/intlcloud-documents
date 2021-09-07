@@ -11,4 +11,4 @@ You can create your own dedicated cluster in the [Oceanus console](https://conso
 After the VPC of your dedicated cluster is interconnected with the VPC you specify, JAR jobs can access all the network-reachable resources in the specified VPC, including but not limited to various Tencent Cloud services in it, such as message queue, database, API service, and CVM.
 
 In addition, if you purchase a [NAT gateway](https://intl.cloud.tencent.com/document/product/1015) in the specified VPC and properly configure a routing table, you can access internet addresses on the public network (such as public network APIs and components of other cloud vendors) to further enhance the processing capabilities of Oceanus.
-![](https://main.qcloudimg.com/raw/b7983dd52cfb0c2d9b0e30e3a0d7956f.png)
+![](https://main.qcloudimg.com/raw/5bf82ae7652557c7c2edbc6c35b4807a.png)
