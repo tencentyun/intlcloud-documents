@@ -72,7 +72,7 @@ The overall process is as follows:
 
 ### Step 4. Configure the nginx network access in TEM[](id:step4)
 <dx-tabs>
-::: Scheme 1. Configure a forwarding rule (recommended)
+::: Scheme\s1.\sConfigure\sa\sforwarding\srule\s(recommended)
 1. On the **[Application Management](https://console.cloud.tencent.com/tem/service)** page, click the ID of the application you just created to enter its basic information page.
 2. On the application basic information page, click **Configure Now** in the **Access Configuration** module to enter the environment access configuration page.
 ![](https://main.qcloudimg.com/raw/80b914a4a5419cf717d26c67c480fc76.png)
@@ -89,7 +89,7 @@ Access the Hugo service at the generated address:
 
 ![](https://main.qcloudimg.com/raw/9b76fee79a65e46760235629b05f244f.png)
 :::
-::: Scheme 2. Configure public network CLB
+::: Scheme\s2.\sConfigure\spublic\snetwork\sCLB
 1. On the **[Application Management](https://console.cloud.tencent.com/tem/service)** page, click the ID of the application you just created to enter its basic information page.
 2. On the application basic information page, click **Edit and Update** in the top-right corner of the **Access Configuration** module to add a public network CLB instance.
 ![](https://main.qcloudimg.com/raw/5bf8823dccf189f8be4fb495a87ea0c8.png)
