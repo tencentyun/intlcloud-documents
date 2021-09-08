@@ -86,7 +86,7 @@ Configure `pom.xml` as follows:
 
 You can click on the following page to view the two methods of message consumption and view consumption results in the console or printed logs.
 <dx-tabs>
-:::  Consume via VPC
+:::  Consume\svia\sVPC
 <dx-codeblock>
 :::  java
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
@@ -112,7 +112,7 @@ public class CKafkaConsumerDemo {
 :::
 </dx-codeblock>
 :::
-::: Consume via public domain name
+::: Consume\svia\spublic\sdomain\sname
 <dx-codeblock>
 :::  java
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
