@@ -84,8 +84,8 @@ Configuration for initializing the IM SDK.
 
 | JSON Key | Value Type | Attribute | Description |
 |-----|-----|-----|-----|
-| kTIMSdkConfigConfigFilePath | string | Write-only (optional) | Configures the file path. The default path is "/". |
-| kTIMSdkConfigLogFilePath | string | Write-only (optional) | Path of a log file. The default path is "/". |
+| kTIMSdkConfigConfigFilePath | string | Write-only (required) | Configures the file path. The default path is "/". |
+| kTIMSdkConfigLogFilePath | string | Write-only (required) | Path of a log file. The default path is "/". |
 | kTIMSdkConfigJavaVM | uint64 | Write-only (optional) | Configures the Java VM pointer of the Android platform. |
 
 ### TIMGroupMemberInfoFlag
