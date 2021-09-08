@@ -13,6 +13,5 @@ You can modify the virtual device (device shadow) in the console. After the chan
 3. Select **Devices**, click **Device Shadow** on the right, and click **Modify** in the top-right corner.
 4. Add JSON data to the device shadow as prompted on the right. The `reported` field can be empty, while the `desired` field cannot.
 5. Click **Confirm** to complete the modification.
-
-
+![](https://main.qcloudimg.com/raw/f0e8bca6c30a51f3d039bcd9e74513aa.png)
 
