@@ -2,7 +2,7 @@
 
 Following the getting started tutorial, you can quickly start your TEM experience and try deploying a demo application provided by us or an application developed by yourself.
 
-This document describes the preparations you need to complete before using TEM to host your application, including registering an account, applying for the beta test eligibility, and creating an environment and VPC.
+This document describes the preparations you need to complete before using TEM to host your application, including registering an account and creating an environment and VPC.
 
 
 ## Directions
@@ -15,7 +15,7 @@ Before starting using Tencent Cloud services, you need to [register a Tencent Cl
 
 ### Step 2. Create an environment and VPC
 
-1. Log in to the [TEM console](https://console.cloud.tencent.com/tem) and enter the **Environment** page.
+1. Log in to the [TEM console](https://console.cloud.tencent.com/tem) and go to the **Environment** page.
 2. At the top of the **Environment** page, select a **deployment region** and click **Create**.
 3. In the pop-up window, configure the environment information.
 ![](https://main.qcloudimg.com/raw/bb401e16c8e7069e8a4f085afe38a6ee.png)
@@ -26,9 +26,8 @@ Before starting using Tencent Cloud services, you need to [register a Tencent Cl
 
 
 
-### Step 3. Deploy an application
+### Step 3. Deploy the application
 
 For the specific process of deploying an application, please see the corresponding document based on your application type:
 
-- [General application](https://intl.cloud.tencent.com/document/product/1094/41384)
-- [Microservice application](https://intl.cloud.tencent.com/document/product/1094/41385)
+- [Deploying a General Application](https://intl.cloud.tencent.com/document/product/1094/41384)

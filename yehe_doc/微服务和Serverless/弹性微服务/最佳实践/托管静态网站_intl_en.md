@@ -4,13 +4,13 @@ TEM provides static website resource hosting capabilities through **application 
 
 The overall process is as follows:
 <dx-steps>
-- [Develop a static website locally](#step1)
-- [Upload the static website resources to CFS](#step2)
+- [Generate a static blog locally through Hugo](#step1)
+- [Upload the static blog content to CFS](#step2)
 - [Deploy the nginx application in TEM and associate CFS](#step3)
-- [Configure the nginx network access in TEM to provide a public access address](#step4)
+- [Configure the nginx network access in TEM](#step4)
 - [(Optional) Configure a domain name](#step5)
-- [(Optional) Configure a web firewall](#step6)
-- [(Optional) Configure CDN to accelerate the access](#step7)
+- [(Optional) Configure a firewall](#step6)
+- [(Optional) Configure CDN](#step7)
 </dx-steps>
 
 
@@ -48,7 +48,7 @@ The overall process is as follows:
    ```
 
 6. The generated static content is stored in the `public/` directory of the `quickstart` project.
-   ![](https://main.qcloudimg.com/raw/1719df20926f87db5edd93d32dbde0fd.png)
+      ![](https://main.qcloudimg.com/raw/1719df20926f87db5edd93d32dbde0fd.png)
 
 
 ### Step 2. Upload the static blog content to CFS[](id:step2)
@@ -72,8 +72,7 @@ The overall process is as follows:
 
 ### Step 4. Configure the nginx network access in TEM[](id:step4)
 <dx-tabs>
-::: Scheme\s1.\sConfigure\sa\sforwarding\srule\s(recommended)
-
+::: Scheme 1. Configure a forwarding rule (recommended)
 1. On the **[Application Management](https://console.cloud.tencent.com/tem/service)** page, click the ID of the application you just created to enter its basic information page.
 2. On the application basic information page, click **Configure Now** in the **Access Configuration** module to enter the environment access configuration page.
 ![](https://main.qcloudimg.com/raw/80b914a4a5419cf717d26c67c480fc76.png)
@@ -90,8 +89,7 @@ Access the Hugo service at the generated address:
 
 ![](https://main.qcloudimg.com/raw/9b76fee79a65e46760235629b05f244f.png)
 :::
-::: Scheme\s2.\sConfigure\spublic\snetwork\sCLB
-
+::: Scheme 2. Configure public network CLB
 1. On the **[Application Management](https://console.cloud.tencent.com/tem/service)** page, click the ID of the application you just created to enter its basic information page.
 2. On the application basic information page, click **Edit and Update** in the top-right corner of the **Access Configuration** module to add a public network CLB instance.
 ![](https://main.qcloudimg.com/raw/5bf8823dccf189f8be4fb495a87ea0c8.png)
