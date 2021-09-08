@@ -19,5 +19,5 @@ The performance comparison between CKafka and open-source Apache Kafka is as fol
 | Service support   | Supported                                                         | Not supported                                                       |
 
 >?
->-"2-core 4 GB stress test" indicates the result of a stress test on a server with 2 CPU cores and 4 GB memory.
+>- "2-core 4 GB stress test" indicates the result of a stress test on a server with 2 CPU cores and 4 GB memory.
 >- CKafka is compatible with the producer and consumer APIs of Apache Kafka 0.9 and above. To connect to a self-built Kafka instance on a legacy version (such as 0.8), API modification is needed. For more information, please see [Connecting to Legacy Self-Built Kafka](https://intl.cloud.tencent.com/document/product/597/11173).
