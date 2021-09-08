@@ -11,7 +11,7 @@
 >?第一次使用时会提示用户授权访问 CTSDB，用户需单击【授权访问 CTSDB 】才能继续创建。
 ![avatar](https://main.qcloudimg.com/raw/ba935a001132582dfa25d3df4978bfd8.png) 
 3. 在弹出的“添加规则”窗口，选择行为【数据转发到时序数据库（CTSDB）】，依次选择 CTSDB 地域和实例，并填写基本信息和需要配置的转发字段，单击【保存】即可。
-![avatar](https://main.qcloudimg.com/raw/d35bc6bb1141c4ad735e96199f352f2f.png) 
+![avatar](https://main.qcloudimg.com/raw/691bd051f99388ad6eee93dacdfaf774.png) 
 
 
 完成以上配置后，物联网通信平台会将符合规则条件的设备上报数据，转发至用户配置的 CTSDB 实例。用户可参考 [CTSDB 开发指南](https://intl.cloud.tencent.com/document/product/1100/40910) 在自己的应用服务器上读取数据进行处理，或者在 [CTSDB 控制台](https://console.cloud.tencent.com/ctsdb) 对数据进行聚合检索查询。
