@@ -17,7 +17,7 @@ Remote device configuration supports two configuration update methods: active di
 
 1. The device subscribes to the remote configuration topic.
 2. On the configuration page in the [IoT Hub console](https://console.cloud.tencent.com/iothub), enable remote configuration and enter the configuration information in JSON format.
-![](https://main.qcloudimg.com/raw/549b1b23b2faa91edef8943f54d29254.png)
+
 3. Click **Batch Distribute** to distribute the configuration information to all devices under the product in batches through the remote configuration subscription topic.
 The format of the message distributed by the cloud through the remote configuration subscription topic is as follows:
 ```json
