@@ -41,7 +41,7 @@ TEM 中的应用部署在用户的环境中，环境和用户的 VPC 关联，�
 
 1. 在 TEM 控制台【[环境](https://console.cloud.tencent.com/tem/env)】页面单击 TEM 应用所在的环境卡片，进入环境基本信息页面。
 2. 在集群网络处单击 VPC，跳转至 VPC 网络基本信息页面。
-		<img src="https://main.qcloudimg.com/raw/6a240ee7d99c77aafba1a3b8340746d3.png" width="450px">
+<img src="https://main.qcloudimg.com/raw/6a240ee7d99c77aafba1a3b8340746d3.png" width="450px">
 3. 单击【路由表】模块，进入路由表配置页面。
 4. 在路由表页面，单击【新建】，配置路由表。
       ![](https://main.qcloudimg.com/raw/8a61dab5ac424d7b3654c0f63dd6118e.png)
@@ -68,7 +68,7 @@ TEM 中的应用部署在用户的环境中，环境和用户的 VPC 关联，�
 
 1. 在 TEM 控制台【[环境](https://console.cloud.tencent.com/tem/env)】页面单击 TEM 应用所在的环境卡片，进入环境基本信息页面。
 2. 在集群网络处单击 VPC，跳转至 VPC 网络基本信息页面。
-		<img src="https://main.qcloudimg.com/raw/e0505caec5440515b1fc7c65f4493a2e.png" width="450px">
+<img src="https://main.qcloudimg.com/raw/e0505caec5440515b1fc7c65f4493a2e.png" width="450px">
 3. 单击【NAT 网关】模块，进入NAT 网关列表页面。
 4. 单击目标NAT网关的“ID”，进入NAT网关基本信息页面，选择【关联弹性IP】页签，可获取访问公网的 IP。
 
