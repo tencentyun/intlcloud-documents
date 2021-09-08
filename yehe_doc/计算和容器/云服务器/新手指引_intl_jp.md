@@ -56,7 +56,7 @@ CVMインスタンスを購入した後、購入したCVMインスタンスに�
 CVM上に自分の個人的なウェブサイトやフォーラムを構築することができます。詳細については、[Webサイトの作成方法](https://intl.cloud.tencent.com/document/product/213/34815)をご参照ください。
 
 ### 開発者ツール
-Tencent Cloud APIは、製品を便利かつ迅速に使用するのに役立ち、少量のコードでクラウド製品を迅速に管理できます。また、API Explorer、TCCLI、SDK、API Inspectorなどのさまざまなツールを提供します。[Tencent Cloud APIクイックスタート](https://intl.cloud.tencent.com/document/product/1080/38759)ドキュメントを参照して、API関連の情報を確認し、使用を開始できます。
+Tencent Cloud APIは、製品を便利かつ迅速に使用するのに役立ち、少量のコードでクラウド製品を迅速に管理できます。また、API Explorer、TCCLI、SDK、API Inspectorなどのさまざまなツールを提供します。Tencent Cloud APIクイックスタートドキュメントを参照して、API関連の情報を確認し、使用を開始できます。
 
 
 ## 6.フィードバックと提案
