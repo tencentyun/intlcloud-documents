@@ -15,6 +15,6 @@ Devices that don't have direct access to the Ethernet can be connected to the ne
 - Subdevices can be connected to the platform through a gateway device after successful authentication in the following two ways:
   **Device-level key authentication**
     The gateway device gets the device certificate or key of the subdevice, generates the subdevice binding signature string, reports it to the platform, and completes the identity verification on behalf of the subdevice.
- - **Product-level key authentication**
+  **Product-level key authentication**
     The gateway device gets the `ProductKey` (product key) of the subdevice, generates a signature, and sends a dynamic registration request to the platform. After successful authentication, the platform will return the `DeviceCert` or `DeviceSecret` of the subdevice, based on which the gateway will generate the subdevice binding signature string and report it to the platform. Then, after successful verification, the subdevice can be connected.
 

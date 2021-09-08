@@ -11,7 +11,7 @@ The figure below shows the entire process of forwarding data to CTSDB by the rul
 >?You will be prompted to authorize access to CTSDB upon the first use. You need to click **Authorize Now** before you can proceed.
 ![avatar](https://main.qcloudimg.com/raw/ba935a001132582dfa25d3df4978bfd8.png) 
 3. In the pop-up **Add Action** window, select **Forward data to TencentDB for CTSDB**, select the CTSDB region and instance, enter the basic information and the fields to be forwarded, and click **Save**.
-![avatar](https://main.qcloudimg.com/raw/d35bc6bb1141c4ad735e96199f352f2f.png) 
+![avatar](https://main.qcloudimg.com/raw/691bd051f99388ad6eee93dacdfaf774.png) 
 
 
 After the above configuration is completed, IoT Hub will forward eligible data reported by devices to the configured CTSDB instance. You can refer to [Overview](https://intl.cloud.tencent.com/document/product/1100/40910) to read the data on your own application server for processing or aggregate, search for, and query the data in the [CTSDB console](https://console.cloud.tencent.com/ctsdb).
@@ -37,7 +37,7 @@ The advanced configuration items are suitable for scenarios where the device-rep
 >- Default Storage Type: the default storage type of dynamically expanding storage fields in CTSDB is tag.
 >- Key: this is the JSON key that needs to traverse the expanding storage. IoT Hub will traverse the JSON key value nesting under this key with `_` as the connector and finally store the data in CTSDB. The following example shows the JSON results and configuration retrieved by SQL SELECT in the rule engine (multiple subkeys can be configured) as well as the data actually stored in CTSDB:
 
-![](https://main.qcloudimg.com/raw/0595c1a37188139ae5751223ac5d18d4.png)
+
 
 ## Resending Mechanism
 
