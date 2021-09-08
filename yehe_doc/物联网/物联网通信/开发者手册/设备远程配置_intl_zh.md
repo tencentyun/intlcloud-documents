@@ -17,7 +17,7 @@
 
 1. 设备端订阅远程配置 Topic。
 2. 在 [物联网通信控制台](https://console.cloud.tencent.com/iothub) 配置界面开启远程配置开关，并输入 JSON 格式的配置信息。
-![](https://main.qcloudimg.com/raw/549b1b23b2faa91edef8943f54d29254.png)
+
 3. 单击【批量下发】，即可将配置信息通过远程配置订阅 Topic 批量下发到该产品下的所有设备中。
 云端通过远程配置订阅 Topic 下发的消息内容格式如下：
 ```json
