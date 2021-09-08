@@ -1,12 +1,12 @@
 ﻿
 
->!本文档仅针对 TRTC 低延时直播房间内的计费作出相关说明。若将 TRTC 房间内的音视频流旁路到云直播系统中，让观众通过直播 CDN 观看，将产生额外的费用，详情请参见 [CDN 直播观看 > 相关费用](https://cloud.tencent.com/document/product/647/16826#expense)。
+>!本文档仅针对 TRTC 低延时直播房间内的计费作出相关说明。若将 TRTC 房间内的音视频流旁路到云直播系统中，让观众通过直播 CDN 观看，将产生额外的费用，详情请参见 [CDN 直播观看 > 相关费用](https://intl.cloud.tencent.com/document/product/647/35242)。
 
 
 [](id:Billing_items)
 ## 用量统计方式
 
-实时音视频 TRTC 按 [房间](https://cloud.tencent.com/document/product/647/46351#.E6.88.BF.E9.97.B4) 内所有用户产生的 [视频时长](#v_duration) 和 [语音时长](#s_duration) 来统计视频互动直播服务的用量。
+实时音视频 TRTC 按 [房间](https://intl.cloud.tencent.com/document/product/647/37714) 内所有用户产生的 [视频时长](#v_duration) 和 [语音时长](#s_duration) 来统计视频互动直播服务的用量。
 
 >!时长统计精度为秒，以当月累计秒数转换成分钟数后进行计费，不足一分钟按一分钟计。
 
@@ -24,14 +24,14 @@
 
 - 用户订阅视频时，不管该视频里面有没有包含音频，都只统计一次视频时长，不会重复计算语音时长。
 - 单个用户同时订阅多路视频时，其订阅的每一路视频时长将分别统计后叠加计算。
-- TRTC 全平台 SDK 都不会限制您的视频分辨率，您可以根据实际业务需求自行 [设定画面质量](https://cloud.tencent.com/document/product/647/32236)。
+- TRTC 全平台 SDK 都不会限制您的视频分辨率，您可以根据实际业务需求自行 [设定画面质量](https://intl.cloud.tencent.com/document/product/647/35153)。
 
 
 [](id:s_duration)
 ### 语音时长
 视频互动直播场景下的语音时长 = 用户在 TRTC 房间内的总停留时长 - 接收视频画面时的停留时长。
 例如，某用户在00:00进入 TRTC 房间，00:50离开房间，其在房间内停留的情况如下图所示：
-![](https://main.qcloudimg.com/raw/ff9f19240d4345825f6b53c03e088e26.png)
+![](https://main.qcloudimg.com/raw/b127abe248a205842a6216ccbd7c111e.png)
 图中蓝色部分记为该用户的语音时长，即`总停留时长 - 接收视频画面时的停留时长 = 50分钟 - 15分钟 = 35分钟`。
 
 
@@ -45,12 +45,12 @@
 
 视频互动直播服务的刊例价如下表所示：
 
-|计费项|单价（元/千分钟）|
+| 计费项   | 单价（美元/千分钟） |
 |---|---|
-|语音|7.00|
-|标清 SD|14.00|
-|高清 HD|28.00|
-|超清 HD+|105.00|
+| 语音     | 0.99                |
+| 标清 SD  | 1.99                |
+| 高清 HD  | 3.99                |
+| 超清 HD+ | 14.99               |
 
 [](id:Billing_method)
 ## 计费方式
@@ -66,70 +66,70 @@ TRTC 为您提供音视频通用套餐包，可按照**1:2:4:15**分别抵扣语
      <tr>
          <th style="text-align:center">套餐包类型</th>  
          <th style="text-align:center">套餐包时长（千分钟）</th> 
-         <th style="text-align:center">刊例价（元/千分钟）</th> 
-         <th style="text-align:center">套餐内单价（元/千分钟）</th> 
-         <th style="text-align:center">套餐包价格（元）</th> 
+         <th style="text-align:center">刊例价（美元/千分钟）</th> 
+         <th style="text-align:center">套餐内单价（美元/千分钟）</th> 
+         <th style="text-align:center">套餐包价格（美元）</th> 
           <th style="text-align:center">折扣</th> 
      </tr>
      <tr>
          <td style="text-align:center" rowspan="4">固定套餐包</td>   
          <td style="text-align:center">25</td>   
-         <td style="text-align:center">7.00</td>
-         <td style="text-align:center">6.720</td>
-         <td style="text-align:center">168.00</td>   
-         <td style="text-align:center">96%</td>     
+         <td style="text-align:center">0.99</td>
+         <td style="text-align:center">0.960</td>
+         <td style="text-align:center">24</td>   
+         <td style="text-align:center"><96%</td>     
      </tr> 
      <tr>
          <td style="text-align:center">250 </td>   
-         <td style="text-align:center">7.00</td>
-         <td style="text-align:center">6.352</td>
-         <td style="text-align:center">1588.00</td>   
-         <td style="text-align:center">91%</td>   
+         <td style="text-align:center">0.99</td>
+         <td style="text-align:center">0.908</td>
+         <td style="text-align:center">227</td>   
+         <td style="text-align:center"><91%</td>   
      </tr> 
      <tr>
          <td style="text-align:center">1000 </td>   
-         <td style="text-align:center">7.00</td>
-         <td style="text-align:center">5.968</td>
-         <td style="text-align:center">5968.00</td>   
-         <td style="text-align:center">85%</td>   
+         <td style="text-align:center">0.99</td>
+         <td style="text-align:center">0.856</td>
+         <td style="text-align:center">856</td>   
+         <td style="text-align:center"><85%</td>   
      </tr> 
      <tr>
          <td style="text-align:center">3000</td>   
-         <td style="text-align:center">7.00</td>
-         <td style="text-align:center">5.630</td>
-         <td style="text-align:center">16888.00</td>   
-         <td style="text-align:center">80%</td>   
+         <td style="text-align:center">0.99</td>
+         <td style="text-align:center">0.805</td>
+         <td style="text-align:center">2416</td>   
+         <td style="text-align:center"><80%</td>   
      </tr> 
      <tr>
          <td style="text-align:center" rowspan="5">自定义套餐包</td>   
          <td style="text-align:center">0 ＜ X ＜ 25</td>   
-         <td style="text-align:center">7.00</td>
-         <td style="text-align:center">7.000</td>
+         <td style="text-align:center">0.99</td>
+         <td style="text-align:center">0.99</td>
          <td style="text-align:center" rowspan="5">套餐内单价乘以套餐包时长 X</td>   
          <td style="text-align:center">100%</td>    
      </tr> 
      <tr>
          <td style="text-align:center">25 ≤ X ＜ 250</td>   
-         <td style="text-align:center">7.00</td>
-         <td style="text-align:center">6.720</td>
+         <td style="text-align:center">0.99</td>
+         <td style="text-align:center">0.960</td>
          <td style="text-align:center">96%</td>    
      </tr> 
      <tr>
          <td style="text-align:center">250 ≤ X ＜ 1000</td>   
-         <td style="text-align:center">7.00</td>
-         <td style="text-align:center">6.352</td>
+         <td style="text-align:center">0.99</td>
+         <td style="text-align:center">0.908</td>
          <td style="text-align:center">91%</td>   
      </tr> 
      <tr>
          <td style="text-align:center">1000 ≤ X ＜ 3000</td>
-         <td style="text-align:center">7.00</td>
-         <td style="text-align:center">5.968</td>
+         <td style="text-align:center">0.99</td>
+         <td style="text-align:center">0.856</td>
          <td style="text-align:center">85%</td>   
      </tr> 
      <tr> 
          <td style="text-align:center">X ≥ 3000</td>   
-         <td style="text-align:center">7.00</td>
-         <td style="text-align:center">5.630</td>
+         <td style="text-align:center">0.99</td>
+         <td style="text-align:center">0.805</td>
          <td style="text-align:center">80%</td>   
      </tr> 
 </table>
@@ -152,12 +152,12 @@ TRTC 后付费有 [日结](#daily) 和 [月结](#monthly) 两种结算周期：
 
 [](id:daily)
 #### 日结后付费
-2020年09月01日起首次在 TRTC 控制台创建 [应用](https://cloud.tencent.com/document/product/647/46351#.E5.BA.94.E7.94.A8 ) 的用户，后付费生效后默认采用**日结**方式结算。按日计费，每天上午10点扣除前一天产生的费用。
+2020年09月01日起首次在 TRTC 控制台创建 [应用](https://intl.cloud.tencent.com/document/product/647/37714) 的用户，后付费生效后默认采用**日结**方式结算。按日计费，每天上午10点扣除前一天产生的费用。
 
 
 [](id:monthly)
 #### 月结后付费
-2020年08月31日及之前首次在 TRTC 控制台创建 [应用](https://cloud.tencent.com/document/product/647/46351#.E5.BA.94.E7.94.A8 ) 的用户，后付费生效后默认采用**月结**方式结算。按月计费，每月01日 - 05日从您的账户余额中扣除前一月产生的费用，详情以 [计费账单](https://cloud.tencent.com/document/product/555/14192#.E4.BA.8C.E3.80.81.E6.96.B0.E7.89.88.E8.B4.A6.E5.8D.95.E5.8A.9F.E8.83.BD.E7.AE.80.E4.BB.8B) 为准。
+2020年08月31日及之前首次在 TRTC 控制台创建 [应用](https://intl.cloud.tencent.com/document/product/647/37714) 的用户，后付费生效后默认采用**月结**方式结算。按月计费，每月01日 - 05日从您的账户余额中扣除前一月产生的费用，详情以 [计费账单](https://intl.cloud.tencent.com/document/product/555/7432) 为准。
 >!
 >- 结算周期无法自主变更，若您希望将月结变更为日结，可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
 >- 若您的账户因余额不足而无法抵扣账单费用时，您使用的其他腾讯云服务也可能会因为账户欠费而自动停服。例如，云端录制依赖**云直播**和**云点播**，如果腾讯云账户欠费，将导致云端录制失败。
@@ -172,7 +172,7 @@ TRTC 后付费有 [日结](#daily) 和 [月结](#monthly) 两种结算周期：
 
 #### 分析：
 - **纯语音时长计费 = 语音时长单价 × 所有用户语音时长之和**
-- 则该 TRTC 房间产生的语音时长**总费用**为 `语音时长单价 × 所有用户语音时长之和 = 7.00元/千分钟 × (30分钟 + 30分钟 + 30分钟) / 1000 = 0.63元`。
+- 则该 TRTC 房间产生的语音时长**总费用**为 `语音时长单价 × 所有用户语音时长之和 = 0.99美元/千分钟 × (30分钟 + 30分钟 + 30分钟) / 1000 = 0.0891美元`。
 
 ### 语音/视频混合示例
 
@@ -212,26 +212,26 @@ TRTC 后付费有 [日结](#daily) 和 [月结](#monthly) 两种结算周期：
 #### 分析：
 - A 产生的用量及费用：
   - **A 产生的费用 = A 接收 B 的费用 + A 接收 C 的费用**
-  - A 接收 B 的费用 = 语音时长单价 × 语音时长 = 7元/千分钟 × (30分钟 / 1000）= 0.21 元
-  - A 接收 C 的费用 = 超清视频时长单价 × 超清视频时长 = 105元/千分钟 × (30分钟 / 1000) = 3.15 元
-  - A 产生的费用为 A 接收 B 的费用 + A 接收 C 的费用 = 0.21 + 3.15 = 3.36元
+  - A 接收 B 的费用 = 语音时长单价 × 语音时长 = 0.99美元/千分钟 × (30分钟 / 1000）= 0.0297 美元
+  - A 接收 C 的费用 = 超清视频时长单价 × 超清视频时长 = 14.99美元/千分钟 × (30分钟 / 1000) = 0.4497 美元
+  - A 产生的费用为 A 接收 B 的费用 + A 接收 C 的费用 = 0.0297 + 0.4497 = 0.4794 美元
 - B 产生的用量及费用：
   - **B 产生的费用 = B 接收 A 的费用 +  B 接收 C 的费用**
-  - B 接收 A 的费用 = 标清视频时长 × 标清时长 = 14元/千分钟 × (30分钟 / 1000) = 0.42 元
-  - B 接收 C 的费用 = 超清时长单价 × 超清时长 = 105元/千分钟 × (30分钟 / 1000）= 3.15 元
-  - B 产生的费用为 = B 接收 A 的费用 +  B 接收 C 的费用 = 0.42 + 3.15 = 3.57元
+  - B 接收 A 的费用 = 标清视频时长 × 标清时长 = 1.99美元/千分钟 × (30分钟 / 1000) = 0.0597 美元
+  - B 接收 C 的费用 = 超清时长单价 × 超清时长 = 14.99美元/千分钟 × (30分钟 / 1000）= 0.4497 美元
+  - B 产生的费用为 = B 接收 A 的费用 +  B 接收 C 的费用 = 0.0597 + 0.4497= 0.5094 美元
 
 - C 产生的用量及费用：
   -  **C 产生的费用 = C 接收 A 的费用 +  C 接收 B 的费用**
-  -  C 接收 A 的费用 = 标清视频时长 × 标清时长 = 14元/千分钟 × (30分钟 / 1000) =0.42 元
-  -  C 接收 B 的费用 = 语音时长单价 × 语音时长 = 7元/千分钟 × (30分钟 / 1000）= 0.21 元
-  -  C 产生的费用为 =  C 接收 A 的费用 +  C 接收 B 的费用 = 0.42 + 0.21 =0.63元
+  -  C 接收 A 的费用 = 标清视频时长 × 标清时长 = 1.99美元/千分钟 × (30分钟 / 1000) =0.0597 美元
+  -  C 接收 B 的费用 = 语音时长单价 × 语音时长 = 0.99美元/千分钟 × (30分钟 / 1000）= 0.0297 美元
+  -  C 产生的费用为 =  C 接收 A 的费用 +  C 接收 B 的费用 = 0.0597 + 0.0297 =0.0894 美元
 
-则该 TRTC 房间产生的**总费用**为 `用户 A 产生的费用 + 用户 B 产生的费用 + 用户 C 产生的费用 = 7.56元`。
+则该 TRTC 房间产生的**总费用**为 `用户 A 产生的费用 + 用户 B 产生的费用 + 用户 C 产生的费用 = 1.0782美元`。
 
 [](id:estimate)
 ## 用量与费用预估
-您可以使用 [TRTC 价格计算器](https://buy.cloud.tencent.com/price/trtc/calculator) 预估自己业务将产生的语音互动直播用量和费用。
+您可以使用 [TRTC 价格计算器](https://buy.intl.cloud.tencent.com/pricing/trtc) 预估自己业务将产生的语音互动直播用量和费用。
 1. 您可以根据业务需求，在 **语音互动直播、视频互动直播预估用量** 中输入 **平均每日房间数**、**平均每房间主播数**、**平均每房间观众数** 和 **平均每房间单次直播时长**。
 2. 选择使用类型为 **“标清SD”**、**“高清HD”** 或 **“超清HD+”**，可计算得到 **每月预估用量**。
 ![](https://main.qcloudimg.com/raw/3e3600f737e7d2e4cb1c1832d7a638ed.png)
@@ -241,13 +241,12 @@ TRTC 后付费有 [日结](#daily) 和 [月结](#monthly) 两种结算周期：
 
 
 ## 相关文档
-- [计费概述](https://cloud.tencent.com/document/product/647/17157)
-- [免费试用](https://cloud.tencent.com/document/product/647/44360)
-- [语音互动直播计费说明](https://cloud.tencent.com/document/product/647/44248)
-- [语音通话计费说明](https://cloud.tencent.com/document/product/647/44226)
-- [视频通话计费说明](https://cloud.tencent.com/document/product/647/44246)
-- [云端录制计费说明](https://cloud.tencent.com/document/product/647/45892)
-- [云端混流转码计费说明](https://cloud.tencent.com/document/product/647/49446)
-- [折扣活动](https://cloud.tencent.com/document/product/647/58254)
-- [购买指引](https://cloud.tencent.com/document/product/647/37099)
-- [计费常见问题](https://cloud.tencent.com/document/product/647/44364)
+- [计费概述](https://intl.cloud.tencent.com/document/product/647/34610)
+- [免费试用](https://intl.cloud.tencent.com/document/product/647/39784)
+- [语音互动直播计费说明](https://intl.cloud.tencent.com/document/product/647/39785)
+- [语音通话计费说明](https://intl.cloud.tencent.com/document/product/647/39787)
+- [视频通话计费说明](https://intl.cloud.tencent.com/document/product/647/39788)
+- [云端录制计费说明](https://intl.cloud.tencent.com/document/product/647/38385)
+- [云端混流转码计费说明](https://intl.cloud.tencent.com/document/product/647/38929)
+- [购买指引](https://intl.cloud.tencent.com/document/product/647/35440)
+- [计费常见问题](https://intl.cloud.tencent.com/document/product/647/39789)
