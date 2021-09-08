@@ -4,13 +4,13 @@ TEM 通过 **应用实例+CFS** 的方式提供静态网站资源托管的能力
 
 整体流程如下：
 <dx-steps>
-- [本地开发静态网站](#step1)
-- [将静态网站资源上传到腾讯云 CFS](#step2)
+- [本地通过 Hugo 生成静态博客](#step1)
+- [上传静态博客内容到 CFS](#step2)
 - [在 TEM 上部署 nginx 应用并关联 CFS](#step3)
-- [在 TEM 上配置 nginx 的网络访问，提供对外访问地址](#step4)
+- [在 TEM 上配置 nginx 的网络访问](#step4)
 - [(可选) 配置域名](#step5)
-- [(可选) 配置 Web 防火墙](#step6)
-- [(可选) 配置 CDN，加速访问](#step7)
+- [(可选) 配置防火墙](#step6)
+- [(可选) 配置 CDN](#step7)
 </dx-steps>
 
 
@@ -48,7 +48,7 @@ TEM 通过 **应用实例+CFS** 的方式提供静态网站资源托管的能力
    ```
 
 6. 生成的静态内容存放在 quickstart 项目的 `public/` 目录下。
-   ![](https://main.qcloudimg.com/raw/1719df20926f87db5edd93d32dbde0fd.png)
+      ![](https://main.qcloudimg.com/raw/1719df20926f87db5edd93d32dbde0fd.png)
 
 
 ### 步骤2：上传静态博客内容到 CFS[](id:step2)
@@ -73,7 +73,6 @@ TEM 通过 **应用实例+CFS** 的方式提供静态网站资源托管的能力
 ### 步骤4：在 TEM 上配置 nginx 的网络访问[](id:step4)
 <dx-tabs>
 ::: 方案一：配置转发规则（推荐）
-
 1. 在【[应用管理](https://console.cloud.tencent.com/tem/service)】页面，单击刚刚创建的应用的“ID”，进入应用基本信息页面。
 2. 在应用基本信息页面，在【访问配置】模块单击【前往配置】，进入环境访问配置页面。
 ![](https://main.qcloudimg.com/raw/80b914a4a5419cf717d26c67c480fc76.png)

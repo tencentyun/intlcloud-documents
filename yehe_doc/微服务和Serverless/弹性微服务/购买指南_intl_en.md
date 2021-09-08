@@ -1,6 +1,4 @@
-TEM is currently in closed beta test. To try it out, please [submit an application](https://intl.cloud.tencent.com/contact-sales). After your application is approved, you can use this service free of charge between March 16 and June 30, 2021. You need to pay for other Tencent Cloud services you select such as [CFS](https://intl.cloud.tencent.com/document/product/582/9553) though.
+TEM is currently in the beta period (August 17 to November 15, 2021). You can log in to the [TEM console](https://console.cloud.tencent.com/tem) to experience it free of charge during beta. You need to pay for other Tencent Cloud services you select such as [CFS](https://intl.cloud.tencent.com/document/product/582/9553) though.
 
-After the closed beta test ends, this service will undergo public beta test. We will announce this in the release center. If prices change, we will notify you in advance.
-
-For more information on this service, please [contact us](https://intl.cloud.tencent.com/contact-sales).
+After the beta test, this product will be commercially available. We will announce its formal launch. If its price changes, we will notify users in advance. For more information of the product, please [contact us](https://intl.cloud.tencent.com/document/product/1094/40350).
 

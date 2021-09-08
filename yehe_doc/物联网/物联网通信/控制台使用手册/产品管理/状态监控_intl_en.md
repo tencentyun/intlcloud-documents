@@ -94,9 +94,9 @@ IoT Hub supports setting alarms for the following metrics:
 		- You can set a notification policy. This way, an alarm notification will be sent repeatedly at a specified frequency when an alarm is triggered. Frequency options: do not repeat, once every 5 minutes, once every 10 minutes, at an exponentially increasing interval, and other frequency options. An exponentially increasing interval means that a notification is sent when an alarm is triggered the first time, second time, fourth time, eighth time, and so on. In other words, the alarm notification will be sent less and less frequently as time goes on to reduce the disturbance caused by repeated notifications.
 		
 >?The default logic for repeated alarm notifications is as follows:
-- The alarm notification will be sent to you at the configured frequency for 24 hours after an alarm is triggered.
-- Following 24 hours after an alarm is triggered, the alarm notification will be sent once every day by default.
-- The alarm notification will be sent for the last time 72 hours after the alarm is triggered and then will no longer be sent.
+>- The alarm notification will be sent to you at the configured frequency for 24 hours after an alarm is triggered.
+>- Following 24 hours after an alarm is triggered, the alarm notification will be sent once every day by default.
+>- The alarm notification will be sent for the last time 72 hours after the alarm is triggered and then will no longer be sent.
 
 Sample trigger condition: set the following: the alarm is triggered when meeting all conditions; the monitored category is the number of connected devices; the statistical period is 1 minute for 5 consecutive periods; the comparison relationship is "greater than"; the alarm threshold is 100; and the notification policy is to send notifications once every day. Then, the number of connected devices will be determined once every minute, and an alarm will be triggered when the number of connected devices in the product object is found to be greater than 100 for 6 consecutive times.
  - Alarm Channel: you can set the recipients and the time periods, channels, and languages for receiving alarm notifications.

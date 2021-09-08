@@ -40,7 +40,7 @@ After creating a product, you can add one device or batch add devices under it:
 2. Click **Add Device** and enter the relevant device information.
   - Device Name: it can contain up to 48 letters, digits, underscores, and hyphens.
   - Remarks: it can contain up to 16 letters, digits, underscores, and hyphens.
-    ![](https://main.qcloudimg.com/raw/d7379ebf361bc368fc40020c1d3d8f81.png)
+
 
 >!
 >- The device name cannot be modified once confirmed.

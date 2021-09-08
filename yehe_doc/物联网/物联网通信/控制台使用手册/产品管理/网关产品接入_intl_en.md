@@ -19,7 +19,6 @@ You have created a [gateway product](https://intl.cloud.tencent.com/document/pro
 ### Unbinding subdevice
 
 Select the corresponding product on the subdevice page, select the subdevice bound to it, and click **Unbind**.
-![](https://main.qcloudimg.com/raw/f5a6f9033db5dba6825716f781ec9d48.png)
 
 
 

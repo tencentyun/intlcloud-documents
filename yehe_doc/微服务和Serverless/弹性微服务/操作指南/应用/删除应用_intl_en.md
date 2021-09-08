@@ -5,7 +5,7 @@ This document describes how to delete an application instance in the TEM console
 ## Directions
 
 1. Log in to the [TEM console](https://console.cloud.tencent.com/tem).
-2. On the left sidebar, click **Application List** to enter the application list page and select your application deployment region.
+2. In the left sidebar, click **Application Management** to go to the application list page and select a deployment region for your application.
 3. Click **Delete** in the **Operation** column of the target application.
 4. Select **Delete** in the pop-up window to delete the instances of the application in an environment.
 
