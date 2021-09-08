@@ -14,7 +14,7 @@
 
 ### 编辑 Topic 权限
 通过单击 Topic 权限列表的【编辑】，即可修改相应 Topic 权限的名称和权限。
-
+![](https://main.qcloudimg.com/raw/a9ed1eadb1f2cba9fd2ade097065b033.png)
 
 ### 删除 Topic 权限
 通过单击 Topic 权限列表的【删除】，即可删除相应的 Topic 权限。
