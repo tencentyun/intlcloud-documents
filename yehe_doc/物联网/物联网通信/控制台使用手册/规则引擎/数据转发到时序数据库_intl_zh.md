@@ -8,7 +8,7 @@
 ## 配置步骤
 1. 登录 [物联网通信控制台](https://console.cloud.tencent.com/iotcloud)，选择左侧菜单【规则引擎】。
 2. 进入规则详情页面，单击【添加行为操作】。
->?第一次使用时会提示用户授权访问 CTSDB，用户需单击【授权访问 CTSDB 】才能继续创建。
+>?第一次使用时会提示用户授权访问 CTSDB，用户需单击【授权访问】才能继续创建。
 ![avatar](https://main.qcloudimg.com/raw/ba935a001132582dfa25d3df4978bfd8.png) 
 3. 在弹出的“添加规则”窗口，选择行为【数据转发到时序数据库（CTSDB）】，依次选择 CTSDB 地域和实例，并填写基本信息和需要配置的转发字段，单击【保存】即可。
 ![avatar](https://main.qcloudimg.com/raw/691bd051f99388ad6eee93dacdfaf774.png) 
@@ -37,7 +37,6 @@
 >- 默认存储类型：动态扩展存储的字段，在 CTSDB 中的存储类型，默认是 tag 类型
 >- key：需要遍历扩展存储的 json 键，物联通信平台会遍历此 key 下的 json 键值嵌套，以'_'为连接符，最后存储到时序数据库，通过规则引擎配置 SQL SELECT 检索得到的 json 结果与配置（支持配置子 key，支持配置多个），到实际存储进 CTSDB 的数据，如下样例所示：
 
-![](https://main.qcloudimg.com/raw/0595c1a37188139ae5751223ac5d18d4.png)
 
 ## 重发机制
 
