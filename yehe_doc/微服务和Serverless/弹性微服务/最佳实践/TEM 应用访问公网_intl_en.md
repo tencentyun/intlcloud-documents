@@ -76,7 +76,7 @@ Log in to the [NAT Gateway](https://console.cloud.tencent.com/vpc/nat?rid=4) con
 
 ## Additional Fees
 
-The [NAT Gateway](https://intl.cloud.tencent.com/product/nat) and [EIP](https://intl.cloud.tencent.com/product/eip) will be charged separately. For pricing details, see:
+The [NAT Gateway](https://intl.cloud.tencent.com/product/nat) and EIP will be charged separately. For pricing details, see:
 
 - [NAT Gateway Billing Overview](https://intl.cloud.tencent.com/document/product/1015/30248)
 - [Elastic IP Billing](https://intl.cloud.tencent.com/document/product/213/17156)
