@@ -74,7 +74,7 @@ Taking public network access as an example, the steps are as follows:
 1. Create a public network access route as instructed in [Configuring Application Access and Routing](https://intl.cloud.tencent.com/document/product/1094/40359).
 
 2. You can view the public IP of the application under **Access Management** on the environment details page.
-   	![](https://main.qcloudimg.com/raw/bfb77deab6549a5c2f4ef908fc7ef133.png)
+![](https://main.qcloudimg.com/raw/bfb77deab6549a5c2f4ef908fc7ef133.png)
 
 3. Enter the following URL in a browser:
   ```xml
