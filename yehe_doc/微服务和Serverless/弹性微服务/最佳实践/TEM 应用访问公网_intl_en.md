@@ -30,6 +30,7 @@ Configure the applications in the TEM console as instructed in [Creating Environ
 ### Step 2: create a NAT Gateway[](id:step2)
 
 Log in to the [NAT Gateway](https://console.cloud.tencent.com/vpc/nat?rid=4) console, select the region where the TEM applications are deployed, and click **+New** to create a NAT Gateway instance.
+
 <img src="https://main.qcloudimg.com/raw/c5d87bc70ca058f67bf93e99d68d47f5.png" width="600px">
 
 - **Network**: select the VPC with which the environment of the TEM applications associates.
@@ -41,7 +42,7 @@ Log in to the [NAT Gateway](https://console.cloud.tencent.com/vpc/nat?rid=4) con
 
 1. Log in to the TEM console and access the [**Environment**](https://console.cloud.tencent.com/tem/env) page. Select the environment in which the TEM applications are deployed to enter its details page.
 2. Click the VPC next to **Cluster Network** to enter the VPC details page.
-		<img src="https://main.qcloudimg.com/raw/6a240ee7d99c77aafba1a3b8340746d3.png" width="450px">
+<img src="https://main.qcloudimg.com/raw/6a240ee7d99c77aafba1a3b8340746d3.png" width="450px">
 3. Select the **Route Table** module.
 4. Click **Create** on the **Route Table** page to configure a route table.
       ![](https://main.qcloudimg.com/raw/8a61dab5ac424d7b3654c0f63dd6118e.png)
@@ -68,8 +69,8 @@ Log in to the [NAT Gateway](https://console.cloud.tencent.com/vpc/nat?rid=4) con
 
 1. Log in to the TEM console and access the [**Environment**](https://console.cloud.tencent.com/tem/env) page. Select the environment in which the TEM applications are deployed to enter its details page.
 2. Click the VPC next to **Cluster Network** to enter the VPC details page.
-		<img src="https://main.qcloudimg.com/raw/e0505caec5440515b1fc7c65f4493a2e.png" width="450px">
-3. Select the *NAT Gateway** model to go to the **NAT Gateway** page.
+<img src="https://main.qcloudimg.com/raw/e0505caec5440515b1fc7c65f4493a2e.png" width="450px">
+3. Select the **NAT Gateway** model to go to the **NAT Gateway** page.
 4. Click the **ID/Name** of the target NAT Gateway to access its details page. Select the **Bind Elastic IP** tab to view the IP addresses that can access the public network.
 
 
