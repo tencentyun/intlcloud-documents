@@ -14,7 +14,7 @@ After a product is created, you can configure topics that devices can publish or
 
 ### Editing topic permission
 Click **Edit** in the topic permission list to change the name of the corresponding topic permission and the permission itself.
-
+![](https://main.qcloudimg.com/raw/a9ed1eadb1f2cba9fd2ade097065b033.png)
 
 ### Deleting topic permission
 Click **Delete** in the topic permission list to delete the corresponding topic permission.
