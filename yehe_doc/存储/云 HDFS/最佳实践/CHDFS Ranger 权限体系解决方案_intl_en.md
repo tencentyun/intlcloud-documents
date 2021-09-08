@@ -29,7 +29,7 @@ In the Hadoop permission system, authentication is provided by Kerberos and auth
 ## Component Deployment
 
 <dx-tabs>
-::: Deploy CHDFS-Ranger-Plugin
+::: Deploy\sCHDFS-Ranger-Plugin
 `CHDFS-Ranger-Plugin` extends the service types in the Ranger Admin console. You can set the operation permissions related to CHDFS in the Ranger console.
 
 #### Code address
@@ -83,7 +83,7 @@ You need to set the username subsequently used to start the `COSRangerService` s
     - List: traversal permission, which corresponds to the `List Object` operation in COS.
 
 :::
-::: Deploy COSRangerService
+::: Deploy\sCOSRangerService
 COSRangerService is the core of the entire permission system. It is responsible for integrating the Ranger client and receiving its authentication requests, token generation and renewal requests, and temporary key generation requests. It is also where sensitive information (Tencent Cloud key information) resides. Generally, it is deployed on a bastion host, and only the cluster admin is allowed to manipulate it and view its configuration.
 
 COSRangerService supports one-primary-multiple-secondary HA deployment. The `DelegationToken` status is persistently stored in HDFS. The leader role is determined by ZooKeeper lock grabbing. The service that gets the leader role will write its address to ZooKeeper, so that COSRangerClient can perform address routing.
@@ -123,7 +123,7 @@ curl -v http://10.xx.xx.xxx:9998/status
 ```
 
 :::
-::: Deploy COSRangerClient
+::: Deploy\sCOSRangerClient
 COSRangerClient is dynamically loaded by the Hadoop CHDFS plugin and proxies all COSRangerService access requests, such as token acquisition and authentication.
 
 #### Code address
@@ -166,7 +166,7 @@ v1.0 or above
 :::
 </dx-codeblock>
 :::
-::: Deploy CHDFS
+::: Deploy\sCHDFS
 
 #### Version
 

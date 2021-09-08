@@ -19,14 +19,17 @@ CHDFS JARをダウンロードした後、`chdfs_hadoop_plugin_network-1.7.jar`�
 #### 設定の変更
 
 1. Druidインストールパスの`conf/druid/_common/common.runtime.properties`ファイルを変更し、hdfsのextensionを`druid.extensions.loadList`に追加すると同時に、hdfsをDruidのdeep storageとして指定します。そして、パスはCHDFSのパスとして入力します。
+
 ```plaintext
 properties
 druid.extensions.loadList=["druid-hdfs-storage"]
 druid.storage.type=hdfs
 druid.storage.storageDirectory=ofs://<mountpoint>/<druid-path>
 ```
+
 2. このディレクトリ`conf/druid/_common/`下に、hdfsの設定ファイルhdfs-site.xmlを新規作成し、CHDFSの設定情報などを入力します。
-```xml
+<dx-codeblock>
+::: xml
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <!--
@@ -61,7 +64,9 @@ druid.storage.storageDirectory=ofs://<mountpoint>/<druid-path>
     <value>125000001</value>
  </property>
 </configuration>
-```
+:::
+</dx-codeblock>
+
 上記の設定のサポート項目は、CHDFSの公式ウェブサイトの説明と全く同じです。詳細については、[CHDFSのマウント](https://intl.cloud.tencent.com/document/product/1106/41965)ドキュメントをご参照ください。
 
 #### 使用の開始

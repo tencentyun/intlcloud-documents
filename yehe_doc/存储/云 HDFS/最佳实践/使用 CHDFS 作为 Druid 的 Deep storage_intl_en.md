@@ -26,7 +26,9 @@ druid.storage.type=hdfs
 druid.storage.storageDirectory=ofs://<mountpoint>/<druid-path>
 ```
 2. In the `conf/druid/_common/` directory, create the HDFS configuration file `hdfs-site.xml` and enter the configuration information of the CHDFS instance:
-```xml
+
+<dx-codeblock>
+::: xml
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <!--
@@ -61,7 +63,9 @@ druid.storage.storageDirectory=ofs://<mountpoint>/<druid-path>
     <value>125000001</value>
  </property>
 </configuration>
-```
+:::
+</dx-codeblock>
+
 The supported items of the above configuration are completely consistent with those as described at the CHDFS website. For more information, please see [Mounting CHDFS Instance](https://intl.cloud.tencent.com/document/product/1106/41965).
 
 #### Starting to use
