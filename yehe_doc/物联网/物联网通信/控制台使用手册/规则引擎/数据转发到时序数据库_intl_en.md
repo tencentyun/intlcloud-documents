@@ -37,7 +37,7 @@ The advanced configuration items are suitable for scenarios where the device-rep
 >- Default Storage Type: the default storage type of dynamically expanding storage fields in CTSDB is tag.
 >- Key: this is the JSON key that needs to traverse the expanding storage. IoT Hub will traverse the JSON key value nesting under this key with `_` as the connector and finally store the data in CTSDB. The following example shows the JSON results and configuration retrieved by SQL SELECT in the rule engine (multiple subkeys can be configured) as well as the data actually stored in CTSDB:
 
-![](https://main.qcloudimg.com/raw/0595c1a37188139ae5751223ac5d18d4.png)
+
 
 ## Resending Mechanism
 
