@@ -10,7 +10,7 @@ The tag retention feature only allows users to delete the image tags that are no
 
 ## Directions
 ### Creating tag retention rules
-1. Log in to the [TCR console](https://console.cloud.tencent.com/tcr) and select **Tag Retention** in the left sidebar.
+1. Log in to the [TCR console](https://console.cloud.tencent.com/tcr) and select **Tag Retention** on the left sidebar.
 On the **Tag Retention** page, you can view the list of tag retention rules for the current instance. To change the instance, select the desired instance name from the **Instance Name** drop-down list at the top of the page.
 2. Click **Create Rule**. In the **Create Tag Retention Rules** window, configure the rule based on the following information. See the figure below.
 ![](https://main.qcloudimg.com/raw/71e1bf8489e40d2e7acbf4e1283047f4.png)
@@ -48,5 +48,5 @@ After successfully creating tag retention rules, you can view the created tag re
 
 
 
-## Reference
+## References
 You can also use the `CreateTagRetentionRule` API to create the tag retention rules. For more information, see [CreateTagRetentionRule API Documentation](https://cloud.tencent.com/document/product/1141/54803).
