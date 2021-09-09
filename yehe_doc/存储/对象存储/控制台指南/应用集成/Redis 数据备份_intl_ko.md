@@ -1,10 +1,10 @@
 ## 개요
 
-Reids 데이터 백업은 Tencent Cloud Cloud Object Storage(COS)가 [Serverless Cloud Function](https://intl.cloud.tencent.com/zh/document/product/583)을 기반으로 사용자에게 제공하는 데이터베이스 백업 기능입니다. Reids CDB의 백업 파일을 COS에 영속화 저장하여 데이터 손실 및 손상을 방지합니다. 사용자가 지정 버킷에서 백업 함수 규칙을 설정하면 SCF는 정기적으로 Reids 백업 파일을 스캔하여 버킷에 파일을 저장합니다.
+Redis 데이터 백업은 Tencent Cloud Cloud Object Storage(COS)가 [Serverless Cloud Function](https://intl.cloud.tencent.com/zh/document/product/583)을 기반으로 사용자에게 제공하는 데이터베이스 백업 기능입니다. Reids CDB의 백업 파일을 COS에 영속화 저장하여 데이터 손실 및 손상을 방지합니다. 사용자가 지정 버킷에서 백업 함수 규칙을 설정하면 SCF는 정기적으로 Reids 백업 파일을 스캔하여 버킷에 파일을 저장합니다.
 
 ## 주의 사항
 
-- Reids 데이터 백업 함수는 Tencent Cloud Redis 데이터베이스의 백업 파일을 백업합니다. Redis 데이터베이스 백업이 활성화되어 있지 않은 경우, 백업 함수를 실행할 수 없습니다. Tencent Cloud Redis 데이터베이스 백업에 대한 자세한 내용은 [TencentDB for Redis 백업](https://intl.cloud.tencent.com/document/product/236/37796)을 참고하십시오.
+- Redis 데이터 백업 함수는 Tencent Cloud Redis 데이터베이스의 백업 파일을 백업합니다. Redis 데이터베이스 백업이 활성화되어 있지 않은 경우, 백업 함수를 실행할 수 없습니다. Tencent Cloud Redis 데이터베이스 백업에 대한 자세한 내용은 [TencentDB for Redis 백업](https://intl.cloud.tencent.com/document/product/236/37796)을 참고하십시오.
 - COS 콘솔에서 버킷에 Reids 데이터 백업 규칙을 추가한 경우 [SCF 콘솔](https://console.cloud.tencent.com/scf/list?rid=1&ns=default)에서 기존에 생성한 Reids 데이터 백업 함수를 볼 수 있습니다. 이 함수를 삭제하지 **마십시오.** 삭제할 경우 규칙이 적용되지 않을 수 있습니다.
 - 광저우, 상하이, 베이징, 청두, 중국홍콩, 싱가포르, 뭄바이, 토론토, 실리콘밸리 등 SCF가 런칭된 리전은 Reids 백업을 지원합니다. 지원 리전에 대한 자세한 내용은 [SCF 제품 문서](https://intl.cloud.tencent.com/document/product/583)를 참고하십시오.
 
