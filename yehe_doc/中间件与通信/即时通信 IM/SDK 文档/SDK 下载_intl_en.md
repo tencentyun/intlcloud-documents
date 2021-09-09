@@ -93,11 +93,11 @@ IM demos demonstrate IM features in various scenarios. You can [install](https:/
 </tr>
 <tr>
 <td style="text-align:center" >Web</td>
-<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/H5">GitHub (recommended)</a></td>
+<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/Web">GitHub (recommended)</a></td>
 </tr>
 <tr>
 <td style="text-align:center" >WeChat Mini Program</td>
-<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/WXMini">GitHub (recommended)</a></td>
+<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/MiniProgram">GitHub (recommended)</a></td>
 </tr>
 <tr>
 <td style="text-align:center" >IM demo (Flutter)</td>
