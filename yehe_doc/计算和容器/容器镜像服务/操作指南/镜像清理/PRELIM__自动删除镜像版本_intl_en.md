@@ -49,4 +49,4 @@ After successfully creating tag retention rules, you can view the created tag re
 
 
 ## References
-You can also use the `CreateTagRetentionRule` API to create the tag retention rules. For more information, see CreateTagRetentionRule API Documentation.
+You can also use the `CreateTagRetentionRule` API to create the tag retention rules. For more information, see [CreateTagRetentionRule API Documentation](https://cloud.tencent.com/document/product/1141/54803).

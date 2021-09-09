@@ -8,7 +8,7 @@
 
 ### 创建用户主密钥 CMK 是否有个数限制？
 
-是。每账户每区域下限制创建200个 CMK，计划删除状态下的除外。不包含云产品密钥。如需创建更多的 CMK，请 [**提交工单**](https://cloud.tencent.com/act/event/Online_service?from=ticket-transform) 或联系腾讯云商务。
+是。每账户每区域下限制创建200个 CMK，计划删除状态下的除外。不包含云产品密钥。如需创建更多的 CMK，请 [**提交工单**](https://console.cloud.tencent.com/workorder/category) 或联系腾讯云商务。
 	
 
 ### 创建密钥时，密钥材料来源可以选择外部，这个是外部是指什么？BYOK 方案是指什么？

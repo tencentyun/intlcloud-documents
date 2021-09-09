@@ -48,7 +48,7 @@
 <tr>
 <td style="text-align:center">Web & H5  </td>
 <td style="text-align:center" ><a href="https://www.npmjs.com/package/tim-js-sdk">NPM (推荐)</a></td>
-<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/H5/sdk">Github</a></td>
+<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/Web/IMSDK">Github</a></td>
 <td style="text-align:left" rowspan='3' ><a href="https://github-1252463788.cos.ap-shanghai.myqcloud.com/imsdk/TIMSDK.zip">ZIP</a></td>
 <td style="text-align:center" rowspan='2'><a href="https://intl.cloud.tencent.com/document/product/1047/34309">【常规集成】快速导入到工程</a> </td>
 <td style="text-align:center" rowspan='3'><a href="https://intl.cloud.tencent.com/document/product/1047/34281">更新日志(Web & 小程序)</a> </td>
@@ -56,12 +56,12 @@
 <tr>
 <td style="text-align:center">小程序 </td>
 <td style="text-align:center" ><a href="https://www.npmjs.com/package/tim-wx-sdk">NPM (推荐)</a></td>
-<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/WXMini/sdk">Github</a></td>
+<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/MiniProgram/IMSDK">Github</a></td>
 </tr>
 <tr>
 <td style="text-align:center">Web SDK 上传插件  </td>
 <td style="text-align:center" ><a href="https://www.npmjs.com/package/tim-upload-plugin">NPM (推荐)</a></td>
-<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/H5/sdk">Github</a></td>
+<td style="text-align:center" ><a href="https://www.npmjs.com/package/tim-upload-plugin">Github</a></td>
 <td style="text-align:center" >-</td>
 </tr>
 </table>

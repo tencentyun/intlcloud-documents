@@ -48,7 +48,7 @@ You can download the latest source codes of IM SDKs and demos.
 <tr>
 <td style="text-align:center">Web & HTML5  </td>
 <td style="text-align:center" ><a href="https://www.npmjs.com/package/tim-js-sdk">npm (recommended)</a></td>
-<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/H5/sdk">GitHub</a></td>
+<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/Web/IMSDK">GitHub</a></td>
 <td style="text-align:left" rowspan='3' ><a href="https://github-1252463788.cos.ap-shanghai.myqcloud.com/imsdk/TIMSDK.zip">ZIP</a></td>
 <td style="text-align:center" rowspan='2'><a href="https://intl.cloud.tencent.com/document/product/1047/34309">SDK Integration (Web & Mini Program)</a> </td>
 <td style="text-align:center" rowspan='3'><a href="https://intl.cloud.tencent.com/document/product/1047/34281">Update Log (Web & Mini Program)</a> </td>
@@ -56,12 +56,12 @@ You can download the latest source codes of IM SDKs and demos.
 <tr>
 <td style="text-align:center">Mini Program </td>
 <td style="text-align:center" ><a href="https://www.npmjs.com/package/tim-wx-sdk">npm (recommended)</a></td>
-<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/WXMini/sdk">GitHub</a></td>
+<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/MiniProgram/IMSDK">GitHub</a></td>
 </tr>
 <tr>
 <td style="text-align:center">Web SDK upload plugin </td>
 <td style="text-align:center" ><a href="https://www.npmjs.com/package/tim-upload-plugin">npm (recommended)</a></td>
-<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/H5/sdk">GitHub</a></td>
+<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/Web/Demo/sdk">GitHub</a></td>
 <td style="text-align:center" >-</td>
 </tr>
 </table>
