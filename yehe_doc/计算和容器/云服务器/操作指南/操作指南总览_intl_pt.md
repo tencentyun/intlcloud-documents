@@ -25,7 +25,7 @@ Se você esqueceu sua senha ou perdeu sua chave, consulte os documentos a seguir
 
 ## Criação, importação ou exclusão de uma imagem personalizada
 
-Uma [Imagem] (https://intl.cloud.tencent.com/document/product/213/4940) fornece as informações necessárias para iniciar as instâncias de um CVM. O Tencent Cloud fornece quatro tipos de imagens: imagem pública, imagem de marketplace, imagem personalizada e imagem compartilhada. Atualmente, as seguintes operações relacionadas a imagens são compatíveis.
+Uma [Imagem](https://intl.cloud.tencent.com/document/product/213/4940) fornece as informações necessárias para iniciar as instâncias de um CVM. O Tencent Cloud fornece quatro tipos de imagens: imagem pública, imagem de marketplace, imagem personalizada e imagem compartilhada. Atualmente, as seguintes operações relacionadas a imagens são compatíveis.
 
 - [Criação de imagens personalizadas](https://intl.cloud.tencent.com/document/product/213/4942)
 - [Exclusão de imagens personalizadas](https://intl.cloud.tencent.com/document/product/213/6036)
