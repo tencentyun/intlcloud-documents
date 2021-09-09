@@ -25,7 +25,7 @@ No matter whether you access the instance from the private or public network, yo
 1) In the following example, the CVM instance runs on CentOS 7.2 64-bit. You can use Yum, the package manager built in CentOS, to download and install the MySQL client from the Tencent Cloud image source.
 Install the client by running the following command:
 ```
-yum install mysql
+sudo yum install mysql
 ```
 The command is executed as shown below:
 ![](https://main.qcloudimg.com/raw/d820e34b807d84e2c25debeed4ba171e.png)
@@ -59,7 +59,7 @@ Take `show databases;` for example as below:
 **Login on Linux**
 1) In the following example, the CVM instance runs on CentOS 7.2 64-bit. Download the MySQL client from the official website and install it with the following command:
 ```
-yum intall mysql
+sudo yum install mysql
 ```
 2) Log in to the TencentDB for MariaDB instance by using the MySQL command line tool. The command is as follows:
 ```
