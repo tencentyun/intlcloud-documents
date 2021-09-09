@@ -7,9 +7,9 @@
 
 ## 支持此功能的平台
 
-| iOS | Android | Mac OS | Windows  | Web 端|
-|:-------:|:-------:|:-------:|:-------:|:-------:|
-|     ×  |    ×    |    &#10003;   |    &#10003;    |&#10003;    |  ×   |
+| iOS | Android | Mac OS | Windows | Electron  | Web 端|
+|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|     ×  |    ×    |    &#10003;   |    &#10003;    |&#10003;    |  &#10003;（[Web 端](https://web.sdk.qcloud.com/trtc/webrtc/doc/zh-cn/tutorial-23-advanced-support-detection.html)）   |
 
 ## 测试摄像头
 
