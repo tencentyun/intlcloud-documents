@@ -25,7 +25,7 @@ ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-S
 
 <span id="2"></span>
 ### What types of SSL/TLS protocols are supported by HTTPS?
-CLB HTTPS currently supports the following SSL protocols: TLSv1, TLSv1.1, and TLSv1.2.
+CLB HTTPS currently supports the following SSL protocols: TLSv1, TLSv1.1,TLSv1.2,and TLSv1.3.
 
 [[Back to Top]](#1)
 
