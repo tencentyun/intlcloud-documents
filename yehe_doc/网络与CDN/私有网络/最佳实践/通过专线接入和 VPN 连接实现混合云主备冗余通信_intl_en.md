@@ -1,6 +1,6 @@
 If your business is deployed in both a local IDC and a Tencent Cloud VPC, you can connect them via Direct Connect or VPN. To improve the business availability, you set up both DC and VPN connections and configure them as the primary and secondary linkage for redundant communication. This document guides you through how to configure the DC and VPN connection as primary/secondary linkages to connect your IDC to the cloud.
 >?
->+The route priority feature is currently in beta test. To try it out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
+>+ The route priority feature is currently in beta test. To try it out, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 >+ The next hop type determines the route priority in the VPC route table. By default, the route priority from high to low is CCN, direct connect gateway, VPN gateway, and others.
 >+ Currently, you cannot adjust the route priority in the console. If needed, please [submit a ticket](https://console.cloud.tencent.com/workorder/category).
 
