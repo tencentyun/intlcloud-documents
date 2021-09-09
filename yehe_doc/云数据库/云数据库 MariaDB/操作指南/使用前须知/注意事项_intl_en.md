@@ -30,7 +30,6 @@ A public network IP of the database is likely to be detected and scanned by mali
 - **Notes on TencentDB for MariaDB rollback**
  - TencentDB for MariaDB supports data rollback, but you are recommended to back up your key production data before performing rollback.
  - Data is directly rolled back to the temp instance but not the master production instance so as to avoid affecting the production instance after rollback.
- - A temp instance can be promoted to master instance. To avoid confusion, all backup data of the original master instance will become invisible after the switch. If you need such data, please [submit a ticket](https://console.cloud.tencent.com/workorder/category) for assistance.
  - Each master instance has and can generate only one temp instance.
  - A temp instance can be saved for up to 48 hours and will be terminated automatically then.
  - Full backup will not be automatically generated for the temp instance. You can use a third-party tool to back it up manually if necessary.
