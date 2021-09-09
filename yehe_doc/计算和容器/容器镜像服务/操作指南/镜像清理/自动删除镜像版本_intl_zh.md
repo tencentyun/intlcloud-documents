@@ -49,4 +49,4 @@
 
 
 ## 相关文档
-您还可以使用 CreateTagRetentionRule 接口创建版本保留规则。详细信息请参见 创建版本保留规则 API 文档。
+您还可以使用 CreateTagRetentionRule 接口创建版本保留规则。
