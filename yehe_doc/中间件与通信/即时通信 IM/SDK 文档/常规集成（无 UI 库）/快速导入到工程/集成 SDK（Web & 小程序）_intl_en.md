@@ -10,8 +10,8 @@ This document describes how to quickly integrate the Tencent Cloud IM SDK into y
 
 ## Relevant Documents
 - [Demo Quick Start](https://intl.cloud.tencent.com/document/product/1047/34553)
-- [Running the IM SDK (Mini Program) Demo](https://github.com/tencentyun/TIMSDK/tree/master/WXMini)
-- [Running the IM SDK (Web) Demo](https://github.com/tencentyun/TIMSDK/tree/master/H5)
+- [Running the IM SDK (Mini Program) Demo](https://github.com/tencentyun/TIMSDK/tree/master/MiniProgram/Demo)
+- [Running the IM SDK (Web) Demo](https://github.com/tencentyun/TIMSDK/tree/master/Web/Demo)
 - [SDK Upload Plugin Integration (Web & Mini Program)](https://intl.cloud.tencent.com/document/product/1047/39858)
 
 ## Integrating SDK
@@ -94,7 +94,7 @@ For more information on how to initialize the SDK and use APIs, see [SDK Initial
 Import the SDK to your project by using the script tag and initialize the SDK.
 
 ```html
-<!-- `tim-js.js` and `tim-upload-plugin.js` can be obtained at https://github.com/tencentyun/TIMSDK/tree/master/H5/sdk. -->
+<!-- `tim-js.js` and `tim-upload-plugin.js` can be obtained at https://github.com/tencentyun/TIMSDK/tree/master/Web/Demo/sdk. -->
 <script src="./tim-js.js"></script>
 <script src="./tim-upload-plugin.js"></script>
 <script>
