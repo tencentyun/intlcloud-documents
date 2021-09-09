@@ -23,11 +23,11 @@ You can use REST APIs to directly initiate a multipart copy request. For more in
 
 You can also use multipart copy directly through SDKs. For more information, see the language-specific SDK documentation below:
 
-- [SDK for Android](https://intl.cloud.tencent.com/document/product/436/31514)
-- [SDK for C++](https://intl.cloud.tencent.com/document/product/436/31522)
-- [SDK for iOS](https://intl.cloud.tencent.com/document/product/436/31530)
-- [SDK for Java](https://intl.cloud.tencent.com/document/product/436/31534)
-- [SDK for JavaScript](https://intl.cloud.tencent.com/document/product/436/31538)
-- [SDK for Node.js](https://intl.cloud.tencent.com/document/product/436/31710)
-- [SDK for PHP](https://intl.cloud.tencent.com/document/product/436/31542)
-- [SDK for Python](https://intl.cloud.tencent.com/document/product/436/31546)
+- [Android SDK](https://intl.cloud.tencent.com/document/product/436/37674#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
+- [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31522#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
+- [iOS SDK](https://intl.cloud.tencent.com/document/product/436/37683#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
+- [Java SDK](https://intl.cloud.tencent.com/document/product/436/31534#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
+- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31538#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
+- [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/31710#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
+- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31542#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
+- [Python SDK](https://intl.cloud.tencent.com/document/product/436/31546#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)

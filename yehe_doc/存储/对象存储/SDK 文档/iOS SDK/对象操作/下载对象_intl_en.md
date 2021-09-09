@@ -120,7 +120,7 @@ To cancel a download, use the code below:
 
 [//]: # (.cssg-snippet-transfer-download-object-cancel)
 ```objective-c
-undefined
+[request cancel];
 ```
 
 >?For the complete sample, please go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/TransferDownloadObject.m).
@@ -148,7 +148,7 @@ To cancel a download, use the code below:
 
 [//]: # (.cssg-snippet-transfer-download-object-cancel)
 ```swift
-undefined
+request.cancel();
 ```
 
 >?For the complete sample, please go to [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/TransferDownloadObject.swift).

@@ -7,7 +7,7 @@
 + 云联网（主）：本地 IDC 通过物理专线，连接到云联网型专线网关，专线网关和 VPC 均接入云联网，从而实现云下云上全业务通信。在物理专线链路正常时，本地 IDC 与 VPC 之间所有的通信流量都通过云联网经物理专线进行转发。
 + VPN 连接（备）：本地 IDC 与云上 VPC 通过建立 VPN 安全隧道来实现云上云下业务通信，当专线链路出现异常时，可将流量切换至该链路，确保业务可用性。
 
-![](https://main.qcloudimg.com/raw/89d9632f86c8ee4da6d8f1cd52382739.png)
+![](https://main.qcloudimg.com/raw/ce97fc610f1119e92094f72027a3aa9b.png)
 
 ## 前提条件
 + 用户本地 IDC 网关设备具有 IPsec VPN 功能，可同时作为用户侧 VPN 网关设备，与 VPC 侧 VPN 设备建立 IPsec 隧道通信。
@@ -56,7 +56,7 @@
 4. 登录 [云联网控制台](https://console.cloud.tencent.com/vpc/ccn)，单击【新建】创建云联网实例。
 5. 登录 [专用通道控制台](https://console.cloud.tencent.com/dc/dc)，单击【新建】创建专用通道连接云联网专线网关，此处配置通道名称、选择接入网络为云联网，选择已创建的云联网型专线网关、配置腾讯云侧和用户侧的互联 IP、路由方式选择 BGP 路由等，配置完成后下载配置指引并在 IDC 设备完成配置。
 6. 将 VPC 和专线网关关联到云联网实例，即可实现 VPC 和 IDC 通过云联网、云联网专线网关进行互通。
->?更多详细配置请参考 [IDC 通过云联网上云](https://cloud.tencent.com/document/product/216/31638)。
+>?更多详细配置请参考 [IDC 通过云联网上云](https://intl.cloud.tencent.com/zh/document/product/216/41747)。
 
 ###  [](id:step2)步骤二：配置IDC通过VPN连接上云
 1. 登录 [VPN 网关控制台](https://console.cloud.tencent.com/vpc/vpnGw?rid=1) ，单击【新建】创建 VPN 网关，本例关联网络选择私有网络。

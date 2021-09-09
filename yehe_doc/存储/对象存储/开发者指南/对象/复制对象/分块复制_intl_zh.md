@@ -24,10 +24,10 @@
 您可以直接调用 SDK 的复制分块方法，请参见下列各语言 SDK 文档：
 
 - [Android SDK](https://intl.cloud.tencent.com/document/product/436/37674#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
-- [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31522)
+- [C++ SDK](https://intl.cloud.tencent.com/document/product/436/31522#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
 - [iOS SDK](https://intl.cloud.tencent.com/document/product/436/37683#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
-- [Java SDK](https://intl.cloud.tencent.com/document/product/436/31534)
-- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31538)
-- [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/31710)
-- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31542)
-- [Python SDK](https://intl.cloud.tencent.com/document/product/436/31546)
+- [Java SDK](https://intl.cloud.tencent.com/document/product/436/31534#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
+- [JavaScript SDK](https://intl.cloud.tencent.com/document/product/436/31538#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
+- [Node.js SDK](https://intl.cloud.tencent.com/document/product/436/31710#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
+- [PHP SDK](https://intl.cloud.tencent.com/document/product/436/31542#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
+- [Python SDK](https://intl.cloud.tencent.com/document/product/436/31546#.E5.A4.8D.E5.88.B6.E5.88.86.E5.9D.97)
