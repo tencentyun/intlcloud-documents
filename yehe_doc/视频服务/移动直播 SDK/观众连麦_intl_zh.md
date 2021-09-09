@@ -87,7 +87,7 @@
 - 观众 B：启动 `trtc://` 协议推流，播放流也从 CDN 切到超低延迟的 `trtc://` 协议。
 - 主播 A：开始播放观众 B 的流，同时发起混流指令，把 A 和 B 的内容合成一路。
 - 观众 C：无需变化，继续 CDN 播放即可，只不过会看到混流后的连麦画面。
-  <img src="https://main.qcloudimg.com/raw/00e5376f86d39517b3f8c9ad1dca16e4.png">
+  <img src="https://main.qcloudimg.com/raw/adf54d7d08abe642d948aa6fe8517bb3.png">
 
 [](id:step_live1)
 ### 1. 主播 RTC 推流
