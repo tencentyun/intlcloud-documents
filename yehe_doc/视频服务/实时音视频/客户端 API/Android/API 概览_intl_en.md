@@ -1,427 +1,390 @@
-## TRTCCloud @ TXLiteAVSDK
-
-### Basic APIs
-
-| API | Description |
+### Create Instance And Event Callback
+| API | DESC |
 |-----|-----|
-| [sharedInstance](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ac5da416bb06d461c7e1e555e3fd143ee) | Creates a [TRTCCloud](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) singleton. |
-| [destroySharedInstance](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a69e76ca12b727c7cbcbdda274fc007a2) | Terminates a [TRTCCloud](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) singleton. |
-| [setListener](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a22fe2f31f2ef62fb3c6cba083dc6c016) | Sets the `TRTCCloudListener` callback API, through which users can receive status notifications from [TRTCCloud](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud). |
-| [setListenerHandler](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a48c867145dcc09289f7af41871b4fdd9) | Sets the queue that drives the [TRTCCloudListener](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudListener) callback. |
-
+| [sharedInstance](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ac5da416bb06d461c7e1e555e3fd143ee) | Create `TRTCCloud` instance (singleton mode) |
+| [destroySharedInstance](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a69e76ca12b727c7cbcbdda274fc007a2) | Terminate `TRTCCloud` instance (singleton mode)  |
+| [setListener](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a22fe2f31f2ef62fb3c6cba083dc6c016) | Set TRTC event callback |
+| [setListenerHandler](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a48c867145dcc09289f7af41871b4fdd9) | Set the queue that drives the `TRTCCloudDelegate` event callback |
 
 ### Room APIs
-
-| API | Description |
+| API | DESC |
 |-----|-----|
-| [enterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c) | Enters a room. |
-| [exitRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a41d16a97a9cb8f16ef92f5ef5bfebee1) | Exits a room. |
-| [switchRole](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a915a4b3abca0e41f057022a4587faf66) | Switches roles. This API works only in live streaming scenarios (`TRTC_APP_SCENE_LIVE` and `TRTC_APP_SCENE_VOICE_CHATROOM`). |
-| [ConnectOtherRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ac1ab7e4a017b99bb91d89ce1b0fac5fd) | Requests a cross-room call (anchor competition). |
-| [DisconnectOtherRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#af777ac398ac47c8e5649c983fa2053fa) | Exits a cross-room call. |
-| [setDefaultStreamRecvMode](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a0b8d004665d5003ce1d9a48a9ab551b3) | Sets the audio/video data receiving mode, which must be set before room entry for it to take effect. |
-| [createSubCloud](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3c4a93d24e0ef076168b44cf3545a8d4) | Creates a [TRTCCloud](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) sub-instance. |
-| [destroySubCloud](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a6dc091ead812c50497c4b4e87e5c2fcf) | Terminates a [TRTCCloud](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) sub-instance. |
-| [switchRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a09fbe471def0c1790357fc2b70149784) | Switches rooms. |
-
+| [enterRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#abfc1841af52e8f6a5f239a846a1e5d5c) | Enter room |
+| [exitRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a41d16a97a9cb8f16ef92f5ef5bfebee1) | Exit room |
+| [switchRole](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a915a4b3abca0e41f057022a4587faf66) | Switch role |
+| [switchRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a09fbe471def0c1790357fc2b70149784) | Switch room |
+| [ConnectOtherRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ac1ab7e4a017b99bb91d89ce1b0fac5fd) | Request cross-room call |
+| [DisconnectOtherRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#af777ac398ac47c8e5649c983fa2053fa) | Exit cross-room call |
+| [setDefaultStreamRecvMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a0b8d004665d5003ce1d9a48a9ab551b3) | Set subscription mode (which must be set before room entry for it to take effect) |
+| [createSubCloud](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a3c4a93d24e0ef076168b44cf3545a8d4) | Create room subinstance (for concurrent multi-room listen/watch) |
+| [destroySubCloud](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a6dc091ead812c50497c4b4e87e5c2fcf) | Terminate room subinstance |
 
 ### CDN APIs
-
-| API | Description |
+| API | DESC |
 |-----|-----|
-| [startPublishing](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a1c168a9aa35ccd0b24981526425e4730) | Starts pushing to Tencent Cloud’s live streaming CDN. |
-| [stopPublishing](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3067efa528fb9ffb8cf7685ce29925d4) | Stops pushing to Tencent Cloud’s live streaming CDN. |
-| [startPublishCDNStream](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a41aefb8be652f8f6803020e543acaadc) | Starts relaying to the live streaming CDN of a non-Tencent Cloud vendor. |
-| [stopPublishCDNStream](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a0e1e8a1eb1cac3f5e5d4433b4aa21e8e) | Stops relaying to non-Tencent Cloud addresses. |
-| [setMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#af7cf5544f9b8027e9526c32319a13838) | Sets On-Cloud MixTranscoding parameters. |
-
+| [startPublishing](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a1c168a9aa35ccd0b24981526425e4730) | Start publishing audio/video streams to Tencent Cloud CSS CDN |
+| [stopPublishing](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a3067efa528fb9ffb8cf7685ce29925d4) | Stop publishing audio/video streams to Tencent Cloud CSS CDN |
+| [startPublishCDNStream](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a41aefb8be652f8f6803020e543acaadc) | Start publishing audio/video streams to non-Tencent Cloud CDN |
+| [stopPublishCDNStream](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a0e1e8a1eb1cac3f5e5d4433b4aa21e8e) | Stop publishing audio/video streams to non-Tencent Cloud CDN |
+| [setMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#af7cf5544f9b8027e9526c32319a13838) | Set the layout and transcoding parameters of On-Cloud MixTranscoding |
 
 ### Video APIs
-
-| API | Description |
+| API | DESC |
 |-----|-----|
-| [startLocalPreview](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a84098740a2e69e3d1f02735861614116) | Enables preview of the local video. |
-| [stopLocalPreview](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#af6ee50bf2c4c592294061077fc727505) | Disables preview of the local video. |
-| [muteLocalVideo](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a13a2e406bffafecb96bfeac48d82746b) | Pauses/Resumes pushing local video data. |
-| [setVideoMuteImage](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a78195189ea5f3db9a05338f585bb925d) | Sets the image to be pushed when local video pushing is paused. |
-| [startRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a57541db91ce032ada911ea6ea2be3b2c) | Starts pulling and displaying the video image of a specified remote user. |
-| [stopRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a8f3e86bc219090d0e8f2d5c2fab4467a) | Stops displaying the video image of a remote user and pulling the user’s video stream. |
-| [stopAllRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#addaac0786ac0bd6e73a5f35c038df127) | Stops displaying the video images of all users and pulling their video streams. |
-| [muteRemoteVideoStream](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a79f78532789dc6bbf67b128d004fab6a) | Pauses/Resumes receiving a specified remote video stream. |
-| [muteAllRemoteVideoStreams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a2d8a7b74068026a85158262cc9aedd66) | Pauses/Resumes receiving all remote video streams. |
-| [setVideoEncoderParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ae047d96922cb1c19135433fa7908e6ce) | Sets video encoder parameters. |
-| [setSubStreamEncoderParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a34d994fbba559994aaf3a1f20420a885) | Sets encoder parameters for substream video. |
-| [setNetworkQosParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a02631a5e4251657875535c38ab319239) | Sets QoS control parameters. |
-| [setLocalRenderParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#afe6ea1bf7c959722595356a9b7fc2179) | Sets rendering parameters for the local image. |
-| [setRemoteRenderParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a069766641cee1aff4844d0beaa18ee13) | Sets rendering parameters for a remote image. |
-| [setVideoEncoderRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a272afecae1d291033cb9cd4b1d7b52e0) | Sets the rotation degree of encoded video images, i.e., images presented to remote users and recorded by the server. |
-| [setVideoEncoderMirror](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a32d9ba3696b305373508253f9bee8236) | Sets the mirror mode of encoded images. |
-| [setGSensorMode](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#abbbe1548bfba0bd082a08478ce35e9bc) | Sets the adaptation mode of the G-sensor. |
-| [enableEncSmallVideoStream](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3a040c5012cf572b9dfabcca87f2cbb7) | Enables the dual-channel (big and small images) encoding mode. |
-| [setRemoteVideoStreamType](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a2a018cc1010587ea9b0fbd791eb3c54f) | Switches between the small and big images of a specified remote user. |
-| [setPriorRemoteVideoStreamType](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ad2efc2703c86ee009bd4a1d440d0c1e0) | Sets video quality preferences for viewers. |
-| [snapshotVideo](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ae75285c95fc53651e24fa23c4141093b) | Takes a video screenshot. |
-
+| [startLocalPreview](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a84098740a2e69e3d1f02735861614116) | Enable the preview image of local camera (mobile) |
+| [updateLocalView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ae91432ada1767f793c460c7b897b6809) | Update the preview image of local camera |
+| [stopLocalPreview](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#af6ee50bf2c4c592294061077fc727505) | Stop camera preview |
+| [muteLocalVideo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ac334d2c625c487d38eb3311de6831643) | Pause/Resume publishing local video stream |
+| [setVideoMuteImage](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a78195189ea5f3db9a05338f585bb925d) | Set placeholder image during local video pause |
+| [startRemoteView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a360eac7e67afcfab4390e7f37fa29a69) | Subscribe to remote user's video stream and bind video rendering control |
+| [updateRemoteView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a9be8a4c5ea4da16fb1ca42e8e258effd) | Update remote user's video rendering control |
+| [stopRemoteView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a2391ba04b2d54fa1664b52f8f8546a32) | Stop subscribing to remote user's video stream and release rendering control |
+| [stopAllRemoteView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#addaac0786ac0bd6e73a5f35c038df127) | Stop subscribing to all remote users' video streams and release all rendering resources |
+| [muteRemoteVideoStream](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a4048ba6edaa0a959d0918a72cf98b576) | Pause/Resume subscribing to remote user's video stream |
+| [muteAllRemoteVideoStreams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a2d8a7b74068026a85158262cc9aedd66) | Pause/Resume subscribing to all remote users' video streams |
+| [setVideoEncoderParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ae047d96922cb1c19135433fa7908e6ce) | Set the encoding parameters of video encoder |
+| [setNetworkQosParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a02631a5e4251657875535c38ab319239) | Set network quality control parameters |
+| [setLocalRenderParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#afe6ea1bf7c959722595356a9b7fc2179) | Set the rendering parameters of local video image |
+| [setRemoteRenderParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a069766641cee1aff4844d0beaa18ee13) | Set the rendering mode of remote video image |
+| [setVideoEncoderRotation](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a272afecae1d291033cb9cd4b1d7b52e0) | Set the direction of image output by video encoder |
+| [setVideoEncoderMirror](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a32d9ba3696b305373508253f9bee8236) | Set the mirror mode of image output by encoder |
+| [setGSensorMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#abbbe1548bfba0bd082a08478ce35e9bc) | Set the adaptation mode of G-sensor |
+| [enableEncSmallVideoStream](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a3a040c5012cf572b9dfabcca87f2cbb7) | Enable dual-channel encoding mode with big and small images |
+| [setRemoteVideoStreamType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a2a018cc1010587ea9b0fbd791eb3c54f) | Switch the big/small image of specified remote user |
+| [snapshotVideo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ae75285c95fc53651e24fa23c4141093b) | Screencapture video |
 
 ### Audio APIs
-
-| API | Description |
+| API | DESC |
 |-----|-----|
-| [startLocalAudio](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a9428ef48d67e19ba91272c9cf967e35e) | Enables local audio capturing and upstream data transfer. |
-| [stopLocalAudio](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a272bba21d046347ac42d76069ba5972c) | Disables local audio capturing and upstream data transfer. |
-| [muteLocalAudio](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86) | Mutes/Unmutes local audio. |
-| [setAudioRoute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a4a3dda74823afa597b42b981257e9e22) | Sets the audio route. |
-| [muteRemoteAudio](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a8d8b8edf120036d4049cc3639a1ce81f) | Mutes/Unmutes a specified remote user. |
-| [muteAllRemoteAudio](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a5b63c0796404b80323ae67aafe0384ba) | Mutes/Unmutes all users. |
-| [setRemoteAudioVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3dabe4a4e13509cf1bd5b3d58aabaa06) | Sets the playback volume of a remote user. |
-| [setAudioCaptureVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a6af5e2c4819a683042f382688aff41e9) | Sets the SDK capturing volume. |
-| [getAudioCaptureVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a81037b960fb2b3501b1e8e60f2b5f9f3) | Gets the SDK capturing volume. |
-| [setAudioPlayoutVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a0b20e1eec637c82190c5264d78d686af) | Sets the SDK playback volume. |
-| [getAudioPlayoutVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a5a1636fa1300b0b4e2829846c36450a2) | Gets the SDK playback volume. |
-| [enableAudioVolumeEvaluation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ad1dbca6b3f22072d7b3963473d02e0d7) | Enables volume reminders. |
-| [startAudioRecording](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#af89a64fd6ccb822850f9bf7e8a1c8462) | Starts audio recording. |
-| [stopAudioRecording](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a7d55e5f15d1291afc89f7e1dfe0a25d8) | Stops audio recording. |
-| [setSystemVolumeType](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a5438dcc45dc2f26a3771a5feddcdef5d) | Sets the system volume type to use during calls. |
-| [enableAudioEarMonitoring](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a9306bca7c6a13e0443a3fa1b40c9f343) | Enables in-ear monitoring. |
-| [startLocalRecording](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a5d6bf60e9d3051f601988e55106b296c) | Starts local recording. |
-| [stopLocalRecording](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ae982c3c04c0195711ee4e56132522c4b) | Stops local recording. |
-
+| [startLocalAudio](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a1dadf09b10a2d128e4cef11707934329) | Enable local audio capturing and publishing |
+| [stopLocalAudio](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a272bba21d046347ac42d76069ba5972c) | Stop local audio capturing and publishing |
+| [muteLocalAudio](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a37f52481d24fa0f50842d3d8cc380d86) | Pause/Resume publishing local audio stream |
+| [muteRemoteAudio](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a8d8b8edf120036d4049cc3639a1ce81f) | Pause/Resume playing back remote audio stream |
+| [muteAllRemoteAudio](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a5b63c0796404b80323ae67aafe0384ba) | Pause/Resume playing back all remote users' audio streams |
+| [setAudioRoute](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a4a3dda74823afa597b42b981257e9e22) | Set audio route |
+| [setRemoteAudioVolume](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a3dabe4a4e13509cf1bd5b3d58aabaa06) | Set the audio playback volume of remote user |
+| [setAudioCaptureVolume](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a6af5e2c4819a683042f382688aff41e9) | Set the capturing volume of local audio |
+| [getAudioCaptureVolume](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a81037b960fb2b3501b1e8e60f2b5f9f3) | Get the capturing volume of local audio |
+| [setAudioPlayoutVolume](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a0b20e1eec637c82190c5264d78d686af) | Set the playback volume of remote audio |
+| [getAudioPlayoutVolume](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a5a1636fa1300b0b4e2829846c36450a2) | Get the playback volume of remote audio |
+| [enableAudioVolumeEvaluation](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a43e99323fd5680fd377b95b97f0885c3) | Enable volume reminder |
+| [startAudioRecording](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a8b04666d32535637308605d5e15b7220) | Start audio recording |
+| [stopAudioRecording](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a7d55e5f15d1291afc89f7e1dfe0a25d8) | Stop audio recording |
+| [startLocalRecording](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a5d6bf60e9d3051f601988e55106b296c) | Start local media recording |
+| [stopLocalRecording](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ae982c3c04c0195711ee4e56132522c4b) | Stop local media recording |
+| [checkAudioCapabilitySupport](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a225161d0c1028708b4c043653ea0ee4b) | Query whether a certain audio capability is supported (only for Android) |
 
 ### Device management APIs
-
-| API | Description |
+| API | DESC |
 |-----|-----|
-| [getDeviceManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ae66395bc404d205fcd7fe9082ca85ce9) | Gets the device management module. |
+| [getDeviceManager](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ae66395bc404d205fcd7fe9082ca85ce9) | Get device management class (TXDeviceManager) |
 
-
-### Beauty filter APIs
-
-| API | Description |
+### Beauty filter and watermark APIs
+| API | DESC |
 |-----|-----|
-| [getBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3fdfeb3204581c27bbf1c8b5598714fb) | Gets the beauty filter management object. |
-| [setWatermark](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a1083aaf0441e3d90ce6641d278a97a63) | Adds watermarks. |
+| [getBeautyManager](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a3fdfeb3204581c27bbf1c8b5598714fb) | Get beauty filter management class (TXBeautyManager) |
+| [setWatermark](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a1083aaf0441e3d90ce6641d278a97a63) | Add watermark |
 
-
-### Music and voice effect API
-
-| API | Description |
+### Background music and sound effect APIs
+| API | DESC |
 |-----|-----|
-| [getAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) | Gets the audio effect management class `TXAudioEffectManager`. |
+| [getAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a3646dad993287c3a1a38a5bc0e6e33aa) | Get sound effect management class (TXAudioEffectManager) |
 
-
-### Substream APIs
-
-| API | Description |
+### Screen sharing APIs
+| API | DESC |
 |-----|-----|
-| [startScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#aa6671fc587513dad7df580556e43be58) | Starts screen sharing. |
-| [stopScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ab6c3014f6f88c775aa91fccea19ce8a4) | Stops screen sharing. |
-| [pauseScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a56af9ada2d43cfb497fe44fa6d4b99cf) | Pauses screen sharing. |
-| [resumeScreenCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a155ed7b6bcf2edf3259d26b8f8fdfe7e) | Resumes screen sharing. |
-
+| [startScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#aacbe76e164030701d261a2edbc43668f) | Start screen sharing |
+| [stopScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ab6c3014f6f88c775aa91fccea19ce8a4) | Stop screen sharing |
+| [pauseScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a56af9ada2d43cfb497fe44fa6d4b99cf) | Pause screen sharing |
+| [resumeScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a155ed7b6bcf2edf3259d26b8f8fdfe7e) | Resume screen sharing |
+| [setSubStreamEncoderParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a34d994fbba559994aaf3a1f20420a885) | Set the video encoding parameters of screen sharing (i.e., substream) (for desktop systems only) |
 
 ### Custom capturing and rendering APIs
-
-| API | Description |
+| API | DESC |
 |-----|-----|
-| [enableCustomVideoCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#aa29d36eaa707f6acf622e2f87f14b26a) | Enables custom video capturing. You can choose to publish the subsream or the big or small image of the primary stream.   |
-| [sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ad898c0d44a55b86af57de9854638193e) | Sends captured video data to the SDK. |
-| [setLocalVideoProcessListener](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a0b565dc8c77df7fb826f0c45d8ad2d85) | Sets the callback of video data for application of third-party beauty filters. |
-| [setLocalVideoRenderListener](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#aa3cbb7a501c3151d94473965e2538c7a) | Sets the callback of local video for custom rendering. |
-| [setRemoteVideoRenderListener](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a4fca6803d13e4c7ff00dcac2974637e4) | Sets the callback of remote videos for custom rendering. |
-| [enableCustomAudioCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a206b9ce3594aa535b633d4f7c8f97210) | Enables custom audio capturing. |
-| [sendCustomAudioData](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a30a542b7d540c8699595a22ca3401f29) | Sends captured audio data to the SDK. |
-| [setAudioFrameListener](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a034b6fce9a517267acd874c243efc575) | Sets the audio data callback. |
-| [generateCustomPTS](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a0b36383129314d70f150c08de182e2b8) | Gets PTS for custom capturing. |
-| [setCapturedRawAudioFrameCallbackFormat](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a9047b34857b12d85688b3b3f1ca1c3f0) | Sets the format of the callback of audio frames captured by the local mic. |
-| [setLocalProcessedAudioFrameCallbackFormat](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ac0f65e13815edc05ebd765826a94e3dc) | Sets the format of the callback of audio frames captured locally and pre-processed by the audio module. |
-| [setMixedPlayAudioFrameCallbackFormat](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a98a2e38d75366fbc2c4da92fec5c0a30) | Sets the format of the callback of audio frames sent to the speaker. |
-
-| [enableMixExternalAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a7b7d3707d2ed8e8f1221faf73af49027) | Specifies whether to mix external audio into the streams for pushing and playback. |
-| [mixExternalAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#aa411a035318c3a757c5d361d143c929d) | Sends external audio data to the SDK. |
-
+| [enableCustomVideoCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#aa29d36eaa707f6acf622e2f87f14b26a) | Enable/Disable custom video capturing mode |
+| [sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ad898c0d44a55b86af57de9854638193e) | Deliver captured video frames to SDK |
+| [enableCustomAudioCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a206b9ce3594aa535b633d4f7c8f97210) | Enable custom audio capturing mode |
+| [sendCustomAudioData](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a30a542b7d540c8699595a22ca3401f29) | Deliver captured audio data to SDK |
+| [enableMixExternalAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a7b7d3707d2ed8e8f1221faf73af49027) | Enable/Disable custom audio track |
+| [mixExternalAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a899a1e9d42c9bf9ce1474aec13ac6747) | Mix custom audio track into SDK |
+| [setMixExternalAudioVolume](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a362490afb9028595635b52d041a2bfb0) | Set the publish volume and playback volume of mixed custom audio track |
+| [generateCustomPTS](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a0b36383129314d70f150c08de182e2b8) | Generate custom capturing timestamp |
+| [setLocalVideoProcessListener](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a0b565dc8c77df7fb826f0c45d8ad2d85) | Set video data callback for third-party beauty filters |
+| [setLocalVideoRenderListener](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#aa3cbb7a501c3151d94473965e2538c7a) | Set the callback of custom rendering for local video |
+| [setRemoteVideoRenderListener](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a4fca6803d13e4c7ff00dcac2974637e4) | Set the callback of custom rendering for remote video |
+| [setAudioFrameListener](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a034b6fce9a517267acd874c243efc575) | Set custom audio data callback |
+| [setCapturedRawAudioFrameCallbackFormat](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a9047b34857b12d85688b3b3f1ca1c3f0) | Set the callback format of original audio frames captured by local mic |
+| [setLocalProcessedAudioFrameCallbackFormat](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ac0f65e13815edc05ebd765826a94e3dc) | Set the callback format of preprocessed local audio frames |
+| [setMixedPlayAudioFrameCallbackFormat](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a98a2e38d75366fbc2c4da92fec5c0a30) | Set the callback format of audio frames to be played back by system |
+| [enableCustomAudioRendering](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#addb4c87719393cd4c4765d66a8cd9803) | Enabling custom audio playback |
+| [getCustomAudioRenderingFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a1c1c268173ab9b1bc24d34766e433931) | Getting playable audio data |
 
 ### Custom message sending APIs
-
-| API | Description |
+| API | DESC |
 |-----|-----|
-| [sendCustomCmdMsg](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#aa4847ad53acc9ab5990194b21ff5b070) | Sends a custom message to all users in the room. |
-| [sendSEIMsg](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a034f9e1effbdadf8b9bfb7f3f06486c4) | Embeds small-volume custom data in video frames. |
+| [sendCustomCmdMsg](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#aa4847ad53acc9ab5990194b21ff5b070) | Use UDP channel to send custom message to all users in room  |
+| [sendSEIMsg](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a034f9e1effbdadf8b9bfb7f3f06486c4) | Use SEI channel to send custom message to all users in room  |
 
-
-### Network testing APIs
-
-| API | Description |
+### Network test APIs
+| API | DESC |
 |-----|-----|
-| [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a0dbceb18d61d99ca33e967427dd0a344) | Starts network speed testing. This may compromise the quality of video calls and should be avoided during a video call. |
-| [stopSpeedTest](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3e862cef0e818ddecdc3dc4d66a6f8f9) | Stops server speed testing. |
+| [startSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a0dbceb18d61d99ca33e967427dd0a344) | Start network speed test (used before room entry) |
+| [stopSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a3e862cef0e818ddecdc3dc4d66a6f8f9) | Stop network speed test |
 
-
-### Log APIs
-
-| API | Description |
+### Debugging APIs
+| API | DESC |
 |-----|-----|
-| [getSDKVersion](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#aeb5168abbd62c631b65247e6289d1e2d) | Gets the SDK version. |
-| [setLogLevel](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a0ec9520dda7e2062f7455956d093113b) | Sets the log output level. |
-| [setConsoleEnabled](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a2942d9d05045d3f0e0add45a3e10b3ee) | Enables/Disables console log printing. |
-| [setLogCompressEnabled](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a495d2122a4098ab371d825c1f0bb90f5) | Enables/Disables local log compression. |
-| [setLogDirPath](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a44c20358d08da798e0f15d142c9c3914) | Changes the path to save logs. |
-| [setLogListener](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a299a71f4addb3638c7790de446fbdf37) | Sets the log callback. |
-| [showDebugView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ad2cdb5d447114534f53bad5bdc48afba) | Displays the dashboard. |
-| [setDebugViewMargin](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#aa2014c293033e9ea60aa6ffd525ee2fa) | Sets the dashboard margin. |
-| [callExperimentalAPI](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a37f331dd0cfff51ab5a3becf4950a55e) | Calls the experimental API. |
+| [getSDKVersion](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#aeb5168abbd62c631b65247e6289d1e2d) | Get SDK version information |
+| [setLogLevel](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a0ec9520dda7e2062f7455956d093113b) | Set log output level |
+| [setConsoleEnabled](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a2942d9d05045d3f0e0add45a3e10b3ee) | Enable/Disable console log printing |
+| [setLogCompressEnabled](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a495d2122a4098ab371d825c1f0bb90f5) | Enable/Disable local log compression |
+| [setLogDirPath](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a44c20358d08da798e0f15d142c9c3914) | Set local log storage path |
+| [setLogListener](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a299a71f4addb3638c7790de446fbdf37) | Set log callback |
+| [showDebugView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ad2cdb5d447114534f53bad5bdc48afba) | Display dashboard |
+| [setDebugViewMargin](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#aa2014c293033e9ea60aa6ffd525ee2fa) | Set dashboard margin |
+| [callExperimentalAPI](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a37f331dd0cfff51ab5a3becf4950a55e) | Call experimental APIs |
+| [setNetEnv](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a28ae49c86c5e5ba7e5ad2eae171bde76) | Set TRTC backend cluster (for use by Tencent Cloud R&D team only) |
 
-
-### Disused APIs (consider using new ones)
-
-| API | Description |
+### Disused APIs
+| API | DESC |
 |-----|-----|
-| [setMicVolumeOnMixing](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ab356494d1b7dd924be69b23aa631a85a) | Sets the mic volume. |
-| [setBeautyStyle](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a46ffe2b60f916a87345fb357110adf10) | Sets the strength of the beauty, brightening, and rosy skin filters. |
-| [setEyeScaleLevel](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a4ff69ce783f648f23dd737641344ac52) | Sets the strength of the eye enlarging filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [setFaceSlimLevel](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a78a159a2a45d24dbd5722eb73d237e8a) | Sets the strength of the face slimming filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [setFaceVLevel](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a58bb7ce1fbbc40a50647d64693ac5d41) | Sets the strength of the chin slimming filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [setChinLevel](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a774eb948494cecec024771434ccd9d3c) | Sets the strength of the jaw lengthening/shortening filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [setFaceShortLevel](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#aa14091f0d02330cbd02da5186e9dd874) | Sets the strength of the face shortening filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [setNoseSlimLevel](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3f806534b2596d7e29ea0ea6c070b591) | Sets the strength of the nose slimming filter. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [selectMotionTmpl](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a521a0446d0922d480a1eec4b86f1ecb2) | Selects an AI animated effect widget. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [setMotionMute](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a066cbf8f4f6c1cd23fe9451b82c5a073) | Mutes animated effects. This API takes effect only in the [Enterprise Edition SDK](https://intl.cloud.tencent.com/document/product/647/34615). |
-| [setFilter](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a925323ab809957ccaeb4cef30841cb72) | Sets filters for specified materials. This API is no longer used since version 7.2. Please use `TXBeautyManager` instead. |
-| [setFilterConcentration](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a5fb4c8bc9948e61a75b9ef85f618309d) | Sets filter strength. This API is no longer used since version 7.2. Please use `TXBeautyManager` instead. |
-| [setGreenScreenFile](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#aef56a36b901d5e525ee539e7d5642063) | Sets green background effects for videos (valid only in the Enterprise Edition). This API is no longer used since version 7.2. Please use `TXBeautyManager` instead. |
-| [playBGM](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3df738557f5c658c37174ac9aeae9684) | Starts background music. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
-| [stopBGM](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a3ee7bdd15de4ba9010aa5ece3abff0ab) | Stops background music. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
-| [pauseBGM](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a21ddee03e6f4cec028a24e5d5e30955e) | Pauses background music. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
-| [resumeBGM](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#aaa8b34ef2b334bd22a1cb6541a4c6702) | Resumes background music. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
-| [getBGMDuration](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ae7342a8bcfda22a872aa684f06a4677f) | Gets the total length of the music file, in milliseconds. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
-| [setBGMPosition](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a78f901b6175352a31b0236776bfdc661) | Sets the playback progress of background music. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead.|
-| [setBGMVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ada9c2b4aaf9a1a9ab9cd846593fdf9e6) | Sets the playback volume of background music. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
-| [setBGMPlayoutVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ab1e1c94c9efd967dbffb46d3ba08fef5) | Sets the local playback volume of background music. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
-| [setBGMPublishVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a535eab48f9df390f4de5ebd5afcd59e3) | Sets the remote playback volume of background music. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead.|
-| [setReverbType](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a6f4f89be3c810acfa2430ad65fd7ea68) | Sets the reverb effect. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
-| [setVoiceChangerType](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a37acaf3b2539e0b1c18123a646e91189) | Sets the voice changing type. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead.|
-| [playAudioEffect](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ad1ed7667282eccfac1992c1e547a5aeb) | Plays an audio effect. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead.|
-| [setAudioEffectVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a214846db40c2d1be2fe8008c6637f631) | Sets the volume of an audio effect. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
-| [stopAudioEffect](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a18e4ca6939d005a1d67cef397ee8b8d4) | Stops an audio effect. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead.|
-| [stopAllAudioEffects](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a770543c80d3a5629a26d1382535fb6c4) | Stops all audio effects. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
-| [setAllAudioEffectsVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a9bb41c4ff1a5b24ca742fe3ce45a2bc0) | Sets the volume of all audio effects. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead. |
-| [pauseAudioEffect](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ab32923d04ce164b82879b3e05833959f) | Pauses an audio effect. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead.|
-| [resumeAudioEffect](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a33ab6e798d3da245435166464b702d4f) | Resumes an audio effect. This API is no longer used since version 7.3. Please use `TXAudioEffectManager` instead.|
-| [startRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a57541db91ce032ada911ea6ea2be3b2c2) | Starts displaying a remote video image. This API is no longer used since version 8.0. Please use `startRemoteView(userId, streamType, view)` instead. |
-| [stopRemoteView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a8f3e86bc219090d0e8f2d5c2fab4467a2) | Stops displaying the video image of a remote user and pulling the user’s video stream. |
-| [setLocalViewFillMode](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#af36ab721c670e5871e5b21a41518b51d) | Sets the rendering mode of the local image. |
-| [setLocalViewRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a87fd1307871debc7c051de4878eb6d69) | Sets the clockwise rotation degree of the local image. |
-| [setLocalViewMirror](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#aa353b5cf5662c43252eb8e5132f041c1) | Sets the mirror mode of the local camera's preview image. |
-| [setRemoteViewFillMode](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ab4197bc2efb62b471b49f926bab9352f) | Sets the rendering mode of a remote image. |
-| [setRemoteViewRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a8478d804d2a07520ce2bc5466b727839) | Sets the clockwise rotation degree of a remote image. |
-| [setAudioQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55) | Sets audio quality. Higher audio quality of the anchor means better listening experience for viewers, but higher audio quality is more demanding on bandwidth and therefore may lead to lag when bandwidth is insufficient. |
-| [startLocalAudio](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a9428ef48d67e19ba91272c9cf967e35e2) | Enables local audio capturing and upstream data transfer. |
-| [startRemoteSubStreamView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#acdbe3829d20f58cedd5a0c2f49ea24dc) | Starts displaying the screen sharing image of a remote user. |
-| [stopRemoteSubStreamView](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ae5f540d795425046c9166b0a2361a8de) | Stops displaying the screen sharing image of a remote user. |
-| [setRemoteSubStreamViewFillMode](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a73f66e66ffee44e19ebb4d8c56c89718) | Sets the display mode of screen sharing images. |
-| [setRemoteSubStreamViewRotation](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#affdf177b468fdf40a41782e2e47524cc) | Sets the clockwise rotation degree of screen sharing images. |
-| [switchCamera](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a1b43a65a32f9dcb81b39b9c51c5bc4c6) | Switches cameras. This API is no longer used since version 8.0. Please use the functions in `TXDeviceManager` instead. |
-| [isCameraZoomSupported](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ac7ae26eca2f9a673121803d6d175b034) | Queries whether the current camera supports zoom. This API is no longer used since version 8.0. Please use the functions in `TXDeviceManager` instead. |
-| [setZoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a9f761eebdf04f724e0d1591c41c6045f) | Sets camera zoom factor (focal length). |
-| [isCameraTorchSupported](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a645183ba7c0cea748973796cb38aad8c) | Queries whether flash (torch mode) is supported. This API is no longer used since version 8.0. Please use the functions in `TXDeviceManager` instead. |
-| [enableTorch](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a09253f6547914d54058831b61325e770) | Enables/Disables flash. |
-| [isCameraFocusPositionInPreviewSupported](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#abd39aca40adfc8da6beaf32141f84cfa) | Queries whether focus setting is supported. This API is no longer used since version 8.0. Please use the functions in `TXDeviceManager` instead. |
-| [setFocusPosition](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#aa7c65fb033727804e7a79b8f135c776c) | Sets camera focus. |
-| [isCameraAutoFocusFaceModeSupported](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a23f25ffb81215a32517da78455459ff2) | Queries whether automatic facial recognition is supported. This API is no longer used since version 8.0. Please use the functions in `TXDeviceManager` instead. |
-| [TRTCViewMargin](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#adeb72b7f954af864743cdbeb283c534b) | Sets view margins. |
-| [enableCustomVideoCapture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a68187fc9a1656bb32cf825363745f7e7) | Enables custom video capturing |
-| [sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#ad898c0d44a55b86af57de9854638193e) | Sends captured video data to the SDK. |
-### Callback APIs for background music playback
+| [setMicVolumeOnMixing](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ab356494d1b7dd924be69b23aa631a85a) | Set mic volume |
+| [setBeautyStyle](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a46ffe2b60f916a87345fb357110adf10) | Set the strength of beauty, brightening, and rosy skin filters |
+| [setEyeScaleLevel](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a4ff69ce783f648f23dd737641344ac52) | Set the strength of eye enlarging filter |
+| [setFaceSlimLevel](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a78a159a2a45d24dbd5722eb73d237e8a) | Set the strength of face slimming filter |
+| [setFaceVLevel](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a58bb7ce1fbbc40a50647d64693ac5d41) | Set the strength of chin slimming filter |
+| [setChinLevel](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a774eb948494cecec024771434ccd9d3c) | Set the strength of chin lengthening/shortening filter |
+| [setFaceShortLevel](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#aa14091f0d02330cbd02da5186e9dd874) | Set the strength of face shortening filter |
+| [setNoseSlimLevel](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a3f806534b2596d7e29ea0ea6c070b591) | Set the strength of nose slimming filter |
+| [selectMotionTmpl](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a521a0446d0922d480a1eec4b86f1ecb2) | Set animated sticker |
+| [setMotionMute](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a066cbf8f4f6c1cd23fe9451b82c5a073) | Mute animated sticker |
+| [setFilter](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a925323ab809957ccaeb4cef30841cb72) | Set color filter |
+| [setFilterConcentration](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a5fb4c8bc9948e61a75b9ef85f618309d) | Set the strength of color filter |
+| [setGreenScreenFile](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#aef56a36b901d5e525ee539e7d5642063) | Set green screen video |
+| [playBGM](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a3df738557f5c658c37174ac9aeae9684) | Start background music |
+| [stopBGM](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a3ee7bdd15de4ba9010aa5ece3abff0ab) | Stop background music |
+| [pauseBGM](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a21ddee03e6f4cec028a24e5d5e30955e) | Stop background music |
+| [resumeBGM](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#aaa8b34ef2b334bd22a1cb6541a4c6702) | Stop background music |
+| [getBGMDuration](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ae7342a8bcfda22a872aa684f06a4677f) | Get the total length of background music in ms |
+| [setBGMPosition](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a78f901b6175352a31b0236776bfdc661) | Set background music playback progress |
+| [setBGMVolume](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ada9c2b4aaf9a1a9ab9cd846593fdf9e6) | Set background music volume |
+| [setBGMPlayoutVolume](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ab1e1c94c9efd967dbffb46d3ba08fef5) | Set the local playback volume of background music |
+| [setBGMPublishVolume](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a535eab48f9df390f4de5ebd5afcd59e3) | Set the remote playback volume of background music |
+| [setReverbType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a6f4f89be3c810acfa2430ad65fd7ea68) | Set reverb effect |
+| [setVoiceChangerType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a37acaf3b2539e0b1c18123a646e91189) | Set voice changing type |
+| [playAudioEffect](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ad1ed7667282eccfac1992c1e547a5aeb) | Play sound effect |
+| [setAudioEffectVolume](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a214846db40c2d1be2fe8008c6637f631) | Set sound effect volume |
+| [setAudioEffectVolume](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a214846db40c2d1be2fe8008c6637f631) | Stop sound effect |
+| [stopAllAudioEffects](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a770543c80d3a5629a26d1382535fb6c4) | Stop all sound effects |
+| [setAllAudioEffectsVolume](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a9bb41c4ff1a5b24ca742fe3ce45a2bc0) | Set the volume of all sound effects |
+| [pauseAudioEffect](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ab32923d04ce164b82879b3e05833959f) | Pause sound effect |
+| [resumeAudioEffect](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a33ab6e798d3da245435166464b702d4f) | Pause sound effect |
+| [enableAudioEarMonitoring](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a9306bca7c6a13e0443a3fa1b40c9f343) | Enable or disable in-ear monitoring |
+| [startRemoteView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a360eac7e67afcfab4390e7f37fa29a69) | Start displaying remote video image |
+| [stopRemoteView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a2391ba04b2d54fa1664b52f8f8546a32) | Stop displaying remote video image and pulling the video data stream of remote user |
+| [setRemoteViewFillMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ab4197bc2efb62b471b49f926bab9352f) | Set the rendering mode of remote image |
+| [setRemoteViewRotation](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a8478d804d2a07520ce2bc5466b727839) | Set the clockwise rotation angle of remote image |
+| [setLocalViewFillMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#af36ab721c670e5871e5b21a41518b51d) | Set the rendering mode of local image |
+| [setLocalViewRotation](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a87fd1307871debc7c051de4878eb6d69) | Set the clockwise rotation angle of local image |
+| [setLocalViewMirror](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#aa353b5cf5662c43252eb8e5132f041c1) | Set the mirror mode of local camera's preview image |
+| [startRemoteSubStreamView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#acdbe3829d20f58cedd5a0c2f49ea24dc) | Start displaying the substream image of remote user |
+| [stopRemoteSubStreamView](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ae5f540d795425046c9166b0a2361a8de) | Stop displaying the substream image of remote user |
+| [setRemoteSubStreamViewFillMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a73f66e66ffee44e19ebb4d8c56c89718) | Set the fill mode of substream image |
+| [setRemoteSubStreamViewRotation](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#affdf177b468fdf40a41782e2e47524cc) | Set the clockwise rotation angle of substream image |
+| [setPriorRemoteVideoStreamType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ad2efc2703c86ee009bd4a1d440d0c1e0) | Specify whether to view the big or small image |
+| [setAudioQuality](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a955cccaddccb0c993351c656067bee55) | Set sound quality |
+| [startLocalAudio](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a1dadf09b10a2d128e4cef11707934329) | Set sound quality |
+| [switchCamera](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a1b43a65a32f9dcb81b39b9c51c5bc4c6) | Switch camera |
+| [isCameraZoomSupported](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ac7ae26eca2f9a673121803d6d175b034) | Query whether the current camera supports zoom |
+| [setZoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a9f761eebdf04f724e0d1591c41c6045f) | Set camera zoom ratio (focal length) |
+| [isCameraTorchSupported](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a645183ba7c0cea748973796cb38aad8c) | Query whether the device supports flash |
+| [enableTorch](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a09253f6547914d54058831b61325e770) | Enable/Disable flash |
+| [isCameraFocusPositionInPreviewSupported](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#abd39aca40adfc8da6beaf32141f84cfa) | Query whether the camera supports setting focus |
+| [setFocusPosition](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#aa7c65fb033727804e7a79b8f135c776c) | Set the focal position of camera |
+| [isCameraAutoFocusFaceModeSupported](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a23f25ffb81215a32517da78455459ff2) | Query whether the device supports the automatic recognition of face position |
+| [setSystemVolumeType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a5438dcc45dc2f26a3771a5feddcdef5d) | Setting the system volume type (for mobile OS) |
+| [enableCustomVideoCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#aa29d36eaa707f6acf622e2f87f14b26a) | Enable custom video capturing mode |
+| [sendCustomVideoData](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ad898c0d44a55b86af57de9854638193e) | Deliver captured video data to SDK |
+| [startScreenCapture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#aacbe76e164030701d261a2edbc43668f) | Start screen sharing |
+| [muteLocalVideo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#ac334d2c625c487d38eb3311de6831643) | Pause/Resume publishing local video stream |
+| [muteRemoteVideoStream](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloud__android.html#a4048ba6edaa0a959d0918a72cf98b576) | Pause/Resume subscribing to remote user's video stream |
 
-Callback APIs for background music playback
-
-| API | Description |
+### Error and warning events
+| API | DESC |
 |-----|-----|
-| [onBGMStart](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#af7f9f419dafff42ef750256f953a88c9) | Callback of starting background music playback |
-| [onBGMProgress](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a30ab555520fa5a478f633394b9cd4d14) | Callback of the music playback progress |
-| [onBGMComplete](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a444c6749e7cb77466940ec1de1c88546) | Callback of ending background music playback |
+| [onError](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a511d0007e1990e63e853e46ce3f02670) | Error event callback |
+| [onWarning](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a9871472ee8195dfc5d0c34fae3294465) | Warning event callback |
 
-
-## TRTCCloudListener @ TXLiteAVSDK
-
-Callback APIs for Tencent Cloud’s video call feature
-
-### Error and warning event callback APIs
-
-| API | Description |
+### Room event callback
+| API | DESC |
 |-----|-----|
-| [onError](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a511d0007e1990e63e853e46ce3f02670) | Error callback. This indicates that the SDK encountered an irrecoverable error. Such errors must be listened for, and UI reminders should be sent to users depending on the situation. |
-| [onWarning](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a9871472ee8195dfc5d0c34fae3294465) | Warning callback. This alerts you to non-serious problems such as lag or recoverable decoding failure. |
+| [onEnterRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#abf0525c3433cbd923fd1f13b42c416a2) | Whether room entry is successful |
+| [onExitRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#ad5ac26478033ea9c0339462c69f9c89e) | Room exit |
+| [onSwitchRole](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a6a4b7f39bc5dfb0c5d75ef8802e2e758) | Role switching |
+| [onSwitchRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a9778a84932f02de9be52ea7513f606c1) | Result of room switching |
+| [onConnectOtherRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#ac9fd524ab9de446f4aaf502f80859e95) | Result of requesting cross-room call |
+| [onDisConnectOtherRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a6f7db4f0aaadad2cdfa822ba0060414c) | Result of ending cross-room call |
 
-
-### Room event callback APIs
-
-| API | Description |
+### User event callback
+| API | DESC |
 |-----|-----|
-| [onEnterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#abf0525c3433cbd923fd1f13b42c416a2) | Callback of room entry |
-| [onExitRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#ad5ac26478033ea9c0339462c69f9c89e) | Callback of room exit |
-| [onSwitchRole](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a6a4b7f39bc5dfb0c5d75ef8802e2e758) | Callback of role switching |
-| [onConnectOtherRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#ac9fd524ab9de446f4aaf502f80859e95) | Callback of the result of requesting a cross-room call (anchor competition) |
-| [onDisConnectOtherRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a6f7db4f0aaadad2cdfa822ba0060414c) | Callback of the result of ending a cross-room call (anchor competition) |
-| [onSwitchRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a9778a84932f02de9be52ea7513f606c1) | Callback of the result of room switching (`switchRoom`) |
+| [onRemoteUserEnterRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a891f38e4cdeaf3ff18937726f0269c2c) | A user entered the room |
+| [onRemoteUserLeaveRoom](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#abfec3607f97823956fad77a7a63dc441) | A user exited the room |
+| [onUserVideoAvailable](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#ac1a0222f5b3e56176151eefe851deb05) | A remote user published/unpublished primary stream video |
+| [onUserSubStreamAvailable](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a80bcaac82e5372245746a4bc63656390) | A remote user published/unpublished substream video |
+| [onUserAudioAvailable](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#ac474bbf919f96c0cfda87c93890d871f) | A remote user published/unpublished audio |
+| [onFirstVideoFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a0c1ccf1bec2d3261e9f11894b32e357e) | The SDK started rendering the first video frame of the local or a remote user |
+| [onFirstAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a3516aaef4cb63e512cd713e4ec96d118) | The SDK started playing the first audio frame of a remote user |
+| [onSendFirstLocalVideoFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a181788d7441d41022ce014095ee05353) | The first local video frame was published |
+| [onSendFirstLocalAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#acb73daf4ce82cd03f787f057b233b412) | The first local audio frame was published |
+| [onRemoteVideoStatusUpdated](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#aa75cd2a93cfb096357e2de226ff2ea47) | Change of remote video status |
 
-
-### User event callback APIs
-
-| API | Description |
+### Callback of statistics on network and technical metrics
+| API | DESC |
 |-----|-----|
-| [onRemoteUserEnterRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a891f38e4cdeaf3ff18937726f0269c2c) | Callback of the entry of a user |
-| [onRemoteUserLeaveRoom](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#abfec3607f97823956fad77a7a63dc441) | Callback of the exit of a user |
-| [onUserVideoAvailable](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#ac1a0222f5b3e56176151eefe851deb05) | Callback of whether a remote user has a playable primary image (usually the image of the camera) |
-| [onUserSubStreamAvailable](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a80bcaac82e5372245746a4bc63656390) | Callback of whether a remote user has a playable substream image (usually the screen sharing image) |
-| [onUserAudioAvailable](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#ac474bbf919f96c0cfda87c93890d871f) | Callback of whether a remote user has playable audio data |
-| [onFirstVideoFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a0c1ccf1bec2d3261e9f11894b32e357e) | Callback of the rendering of the first video frame of the local user or a remote user |
-| [onFirstAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a3516aaef4cb63e512cd713e4ec96d118) | Callback of the playing of the first audio frame of a remote user. No notifications are sent for local audio. |
-| [onSendFirstLocalVideoFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a181788d7441d41022ce014095ee05353) | Callback of the sending of the first local video frame |
-| [onSendFirstLocalAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#acb73daf4ce82cd03f787f057b233b412) | Callback of the sending of the first local audio frame |
-| [onUserEnter](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#aff18b3bc5b1e448b21b7614e5716e73e) | Disused API: callback of the entry of an anchor |
-| [onUserExit](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a0d1361e52e96b4c7c1a5f1b89f4ef0fb) | Disused API: callback of the exit of an anchor |
+| [onNetworkQuality](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#aba07d4191391dadef900422521f34e5b) | Real-time network quality statistics |
+| [onStatistics](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a24a6ee3b3709a42af226be7258521612) | Real-time statistics on technical metrics |
 
-
-### Callback APIs for statistics on network quality and technical metrics
-
-| API | Description |
+### Callback of connection to the cloud
+| API | DESC |
 |-----|-----|
-| [onNetworkQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#aba07d4191391dadef900422521f34e5b) | Callback of network quality. This callback is triggered every 2 seconds to collect statistics on the current upstream and downstream data transfer. |
-| [onStatistics](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a003278cb7647cd577702e8367c9e0a58) | Callback of statistics on technical metrics |
+| [onConnectionLost](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#aed43a70b4a95eb95181e2b410013bf54) | The SDK was disconnected from the cloud |
+| [onTryToReconnect](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a1c8654b64e4bde42a8a24954ecf2cb2d) | The SDK is reconnecting to the cloud |
+| [onConnectionRecovery](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a36d96a42ec4b00a0e3808f7f8460cd7f) | The SDK is reconnected to the cloud |
+| [onSpeedTest](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#ab77a0dff287e1642527cd414fc5fe5f5) | Result of server speed testing |
 
-
-### Server event callback APIs
-
-| API | Description |
+### Callback of hardware events
+| API | DESC |
 |-----|-----|
-| [onConnectionLost](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#aed43a70b4a95eb95181e2b410013bf54) | Callback of the disconnection of the SDK from the server |
-| [onTryToReconnect](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a1c8654b64e4bde42a8a24954ecf2cb2d) | Callback of the SDK trying to connect to the server again |
-| [onConnectionRecovery](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a36d96a42ec4b00a0e3808f7f8460cd7f) | Callback of the reconnection of the SDK to the server |
-| [onSpeedTest](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#ab77a0dff287e1642527cd414fc5fe5f5) | Callback of server speed test. The SDK tests the speed of multiple server addresses, and the test result of each IP address is returned through this callback. |
+| [onCameraDidReady](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#aaa74021e5fd2564afb2df50e25eedeff) | The camera is ready |
+| [onMicDidReady](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#afdac7dee94451913a4dc9982badc8035) | The mic is ready |
+| [onAudioRouteChanged](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a1a608275247d2912e26bd83f648d6378) | The audio route changed (for mobile devices only) |
+| [onUserVoiceVolume](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a4e3b79968ccbb86de5b79e326a2daafa) | Volume |
 
-
-### Hardware event callback APIs
-
-| API | Description |
+### Callback of the receipt of a custom message
+| API | DESC |
 |-----|-----|
-| [onCameraDidReady](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#aaa74021e5fd2564afb2df50e25eedeff) | Callback of the camera being ready |
-| [onMicDidReady](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#afdac7dee94451913a4dc9982badc8035) | Callback of the mic being ready |
-| [onAudioRouteChanged](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a1a608275247d2912e26bd83f648d6378) | Callback of the change of the audio route, i.e., audio output (speaker or receiver) |
-| [onUserVoiceVolume](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a4e3b79968ccbb86de5b79e326a2daafa) | Callback of volume, including the volume of each `userId` and the total remote volume |
+| [onRecvCustomCmdMsg](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a51fd654c5ec030ff84f208f2ba50298d) | Receipt of custom message |
+| [onMissCustomCmdMsg](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a98af11ba5b25d3124bd9533dc5197127) | Loss of custom message |
+| [onRecvSEIMsg](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#ad3640e6bf80a1f93991644701e9b0d96) | Receipt of SEI message |
 
-
-### Custom message receiving callback APIs
-
-| API | Description |
+### CDN event callback
+| API | DESC |
 |-----|-----|
-| [onRecvCustomCmdMsg](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a51fd654c5ec030ff84f208f2ba50298d) | Callback of the receipt of a custom message |
-| [onMissCustomCmdMsg](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a98af11ba5b25d3124bd9533dc5197127) | Callback of the loss of a custom message |
-| [onRecvSEIMsg](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#ad3640e6bf80a1f93991644701e9b0d96) | Callback of the receipt of an SEI message |
+| [onStartPublishing](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a03d0ef687b2973b9b13cb041bd35bb85) | Started publishing to Tencent Cloud CSS CDN |
+| [onStopPublishing](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#ad3cb7e5ceb69954d762eafca5a0e3a62) | Stopped publishing to Tencent Cloud CSS CDN |
+| [onStartPublishCDNStream](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a64df36d6c56dd69d8b6f051fd9fffcbc) | Started publishing to non-Tencent Cloud’s live streaming CDN |
+| [onStopPublishCDNStream](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a6c3d63538897ddb9ed1b170819c41dca) | Stopped publishing to non-Tencent Cloud’s live streaming CDN |
+| [onSetMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#af1c79a5ec3e0c106939e7f0d7849d694) | Set the layout and transcoding parameters for On-Cloud MixTranscoding |
 
-
-### Callback APIs for CDN relayed push
-
-| API | Description |
+### Screen sharing event callback
+| API | DESC |
 |-----|-----|
-| [onStartPublishing](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a03d0ef687b2973b9b13cb041bd35bb85) | Callback of starting to push to Tencent Cloud’s live streaming CDN, which corresponds to the `startPublishing()` API in [TRTCCloud](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) |
-| [onStopPublishing](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#ad3cb7e5ceb69954d762eafca5a0e3a62) | Callback of stopping pushing to Tencent Cloud’s live streaming CDN, which corresponds to the `stopPublishing()` API in [TRTCCloud](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) |
-| [onStartPublishCDNStream](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a64df36d6c56dd69d8b6f051fd9fffcbc) | Callback of the completion of starting relayed push to CDNs |
-| [onStopPublishCDNStream](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a6c3d63538897ddb9ed1b170819c41dca) | Callback of the completion of stopping relayed push to CDNs |
-| [onSetMixTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#af1c79a5ec3e0c106939e7f0d7849d694) | Callback of setting On-Cloud MixTranscoding parameters, which corresponds to the `setMixTranscodingConfig()` API in [TRTCCloud](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud) |
+| [onScreenCaptureStarted](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a7d15537d26fb001045ff95157d59ed3f) | Screen sharing started |
+| [onScreenCapturePaused](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a12c57991389e32f04a56774df5d1ce76) | Screen sharing was paused |
+| [onScreenCaptureResumed](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#ade88963a254d297d3be1993e8a599f6e) | Screen sharing was resumed |
+| [onScreenCaptureStopped](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a6c09b21b733da7d314d1db2cb03c8bcb) | Screen sharing stopped |
 
-
-### Audio effect callback API
-
-| API | Description |
+### Callback of local recording and screenshot events
+| API | DESC |
 |-----|-----|
-| [onAudioEffectFinished](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#abe967d855abae66836877fe0dacf8b5f) | Callback of ending audio effects |
+| [onLocalRecordBegin](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a6d252931944577cc08d40db1f5ecd7bb) | Local recording started |
+| [onLocalRecording](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a22f09234dc198d33fa38bbb595fb5764) | Local media is being recorded |
+| [onLocalRecordComplete](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a0a3eef0daeb5107290cb5190ceb9467b) | Local recording stopped |
 
-
-### Screen sharing callback APIs
-
-| API | Description |
+### Disused callbacks
+| API | DESC |
 |-----|-----|
-| [onScreenCaptureStarted](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a7d15537d26fb001045ff95157d59ed3f) | Callback of starting screen sharing |
-| [onScreenCapturePaused](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a12c57991389e32f04a56774df5d1ce76) | Callback of pausing screen sharing via the calling of [TRTCCloud.pauseScreenCapture()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a56af9ada2d43cfb497fe44fa6d4b99cf) |
-| [onScreenCaptureResumed](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#ade88963a254d297d3be1993e8a599f6e) | Callback of resuming screen sharing via the calling of [TRTCCloud.resumeScreenCapture()](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#a155ed7b6bcf2edf3259d26b8f8fdfe7e) |
-| [onScreenCaptureStopped](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a6c09b21b733da7d314d1db2cb03c8bcb) | Callback of stopping screen sharing |
+| [onUserEnter](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#aff18b3bc5b1e448b21b7614e5716e73e) | An anchor entered the room (disused) |
+| [onUserExit](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a0d1361e52e96b4c7c1a5f1b89f4ef0fb) | An anchor left the room (disused) |
+| [onAudioEffectFinished](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#abe967d855abae66836877fe0dacf8b5f) | Audio effects ended (disused) |
 
-
-### Local recording callback APIs
-
-| API | Description |
+### Callback of custom video processing
+| API | DESC |
 |-----|-----|
-| [onLocalRecordBegin](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a6d252931944577cc08d40db1f5ecd7bb) | Callback of starting a recording task |
-| [onLocalRecording](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a22f09234dc198d33fa38bbb595fb5764) | Callback of a recording task being executed |
-| [onLocalRecordComplete](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a0a3eef0daeb5107290cb5190ceb9467b) | Callback of ending a recording task |
+| [onRenderVideoFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a41b44f9b0583bbf56ad9e96065ea825c) | Custom video rendering |
+| [onGLContextCreated](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#af4a7a3a4e4945bf216d87f81b6926dab) | An OpenGL context was created in the SDK. |
+| [onProcessVideoFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a22afb08b2a1a18563c7be28c904b166a) | Video processing by third-party beauty filters |
+| [onGLContextDestory](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a5f6d5ef01d3cd610959433107f78aa60) | The OpenGL context in the SDK was destroyed |
 
-
-### Callback APIs for video frames for custom rendering
-Directing to [TRTCVideoRenderListener](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#interfacecom_1_1tencent_1_1trtc_1_1TRTCCloudListener_1_1TRTCVideoRenderListener)
-
-| API | Description |
+### Callback of custom audio processing
+| API | DESC |
 |-----|-----|
-| [onRenderVideoFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a41b44f9b0583bbf56ad9e96065ea825c) | Callback of video frames for custom rendering |
+| [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#abffd560f5b2b2322ea3980bc5a91d22e) | Raw audio data captured locally |
+| [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a62c526c6c30a66671260bdf0c5c64e46) | Audio data captured by the local mic and pre-processed by the audio module |
+| [onRemoteUserAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a4af98a7d668c150ea8e99e3085505902) | Audio data of each remote user before audio mixing |
+| [onMixedPlayAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a580e94224357c38adf6ed883ab3321f7) | Data mixed from each channel before being submitted to the system for playback |
+| [onMixedAllAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a96923a9286a88b83d6890f607884ceb3) | Data mixed from all the captured and to-be-played audio in the SDK |
 
-
-### Callback APIs for third-party beauty filter data
-
-| API | Description |
+### Other event callbacks
+| API | DESC |
 |-----|-----|
-| [onGLContextCreated](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#af4a7a3a4e4945bf216d87f81b6926dab) | Callback of creating an OpenGL context in the SDK |
-| [onProcessVideoFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a22afb08b2a1a18563c7be28c904b166a) |Callback of video data to which third-party beauty filters are applied. This can be set using the `setLocalVideoProcessListener` API in [TRTCCloud](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloud__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloud). |
-| [onGLContextDestory](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a5f6d5ef01d3cd610959433107f78aa60) | Callback of destroying the OpenGL context in the SDK |
+| [onLog](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudListener__android.html#a77d78090666e330606b670bf8ce2d854) | Printing of local log |
 
-
-### Callback APIs for audio frames for custom processing (read-only)
-
-| API | Description |
+### Definitions of video enumerated values
+| API | DESC |
 |-----|-----|
-| [onCapturedRawAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#abffd560f5b2b2322ea3980bc5a91d22e) | Callback of the audio data captured by the local mic |
-| [onLocalProcessedAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a62c526c6c30a66671260bdf0c5c64e46) | Callback of the audio data captured by the local mic and pre-processed by the audio module |
-| [onRemoteUserAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a4af98a7d668c150ea8e99e3085505902) | Callback of the audio data of each remote user before audio mixing, i.e., the raw data of each channel before audio mixing. The data is needed when, for example, you want to convert the audio of a channel into text. |
-| [onMixedPlayAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a580e94224357c38adf6ed883ab3321f7) | Callback of the audio data mixed from all channels and sent to the speaker |
-| [onMixedAllAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a96923a9286a88b83d6890f607884ceb3) | Callback of data mixed from all audio in the SDK, including captured and played audio. |
+| [TRTCVideoResolution](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp01d5e1111c2ba49a53879c343fd484f2) | Video resolution |
+| [TRTCVideoResolutionMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp509a1d5f7a44e1d60cf25e4afb640347) | Video aspect ratio mode |
+| [TRTCVideoStreamType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp8f7c7bceb683fdba0c3cb0a4766dd281) | Video stream type |
+| [TRTCVideoFillMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCVideoFillMode) | Video image fill mode |
+| [TRTCVideoRotation](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp9edface2441370ef72f70dd4945ff0f9) | Video image rotation direction |
+| [TRTCVideoPixelFormat](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrpde7f16ea7692e7c649e9a16638f48dbe) | Video pixel format |
+| [TRTCVideoBufferType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp2c1424df181810edcbd68a9d2cb4adde) | Video data transfer method |
+| [TRTCVideoMirrorType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrpa367a3c86bde4916b80b03acd05ec218) | Video mirror type |
+| [TRTCSnapshotSourceType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCSnapshotSourceType) | Data source of local video screenshot |
 
-
-### Log callback APIs
-
-| API | Description |
+### Definitions of network enumerated values
+| API | DESC |
 |-----|-----|
-| [onLog](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#a77d78090666e330606b670bf8ce2d854) | Callback of log printing |
+| [TRTCAppScene](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrpa53ec28e9d73b79c701a709f44efbebe) | Use cases |
+| [TRTCRoleType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp32cd3ba884366b8a2d45cad705f28b18) | Role |
+| [TRTCQosControlMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp39c937e1be1c70563f58a5a6fdde96a1) | QoS control mode (disused) |
+| [TRTCVideoQosPreference](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp3a953a9777c6e1447a27bc454f9f00b9) | Image quality preference |
+| [TRTCQuality](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp43d6beae8b3d7c79f02df2f125c090a7) | Network quality |
+| [TRTCAVStatusType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp5f5cc2365ee675bbc0f5a14095b1e0fc) | Audio/Video playback status |
+| [TRTCAVStatusChangeReason](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp66f48a69ecc92051ca32055008a19c3e) | Reasons for playback status changes |
 
-
-### Screenshot callback API
-
-| API | Description |
+### Definitions of audio enumerated values
+| API | DESC |
 |-----|-----|
-| [onSnapshotComplete](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudListener__android.html#aa9c6d0488175f6d19f5f38f6307cfea4) | Callback of the completion of a screenshot |
+| [TRTCAudioSampleRate](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp2b7efdf7211746ab55166bb4d55ed619) | Audio sample rate |
+| [TRTCAudioQuality](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp96d66d1098694549803eaba6baedb9c0) | Sound quality |
+| [TRTCAudioRoute](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp7340a7d82950a691c95bde594a44959f) | Audio route (i.e., audio playback mode) |
+| [TRTCReverbType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp30e899d6cb29154e1d73867d199b7191) | Audio reverb mode |
+| [TRTCVoiceChangerType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrpac19166c196a2905657f2a3b52a68ce0) | Voice changing type |
+| [TRTCAudioCapabilityType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp29e12a3869cc165605dc0121e56888a3) | Audio capability type supported by the system (only for Android devices) |
 
-
-## Definitions of Key Classes
-
-| Class | Description |
+### Definitions of other enumerated values
+| API | DESC |
 |-----|-----|
-| [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#a1751af68516425e5556e2057d0c90915) | Room entry parameters |
-| [TRTCVideoEncParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCVideoEncParam) | Encoding parameters |
-| [TRTCNetworkQosParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCNetworkQosParam) | QoS control parameters |
-| [TRTCRenderParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCRenderParams) | Remote image rendering parameters |
-| [TRTCQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCQuality) | Network quality |
-| [TRTCTexture](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCTexture) | Video texture data, including texture ID and the EGL context |
-| [TRTCVideoFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCVideoFrame) | Video frame information |
-| [TRTCAudioFrame](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCAudioFrame) | Audio frame information |
-| [TRTCVolumeInfo](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCVolumeInfo) | Volume |
-| [TRTCSpeedTestResult](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCSpeedTestResult) | Results of network speed tests |
-| [TRTCMixUser](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#a51966088a4a7382a37bc00fa78ff7385) | Position of the image of each channel in On-Cloud MixTranscoding |
-| [TRTCTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#a328b2e89495023a61efc342e3284477a) | On-Cloud MixTranscoding configuration |
-| [TRTCPublishCDNParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCPublishCDNParam) | Relayed push parameters |
-| [TRTCAudioRecordingParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCAudioRecordingParams) | Audio recording parameters |
-| [TRTCAudioEffectParam](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#ad82a59c2209c0596dabaee1152820494) | Audio effect parameters |
-| [TRTCScreenShareParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCScreenShareParams) | Screen sharing parameters |
-| [TRTCSwitchRoomConfig](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#a1b79e0e45a5f137df2e1995af7c0885c) | Room switching parameters |
-| [TRTCAudioFrameCallbackFormat](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCAudioFrameCallbackFormat) | Parameters for the format of called back audio frames |
-| [TRTCLocalRecordingParams](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCLocalRecordingParams) | Local recording parameters |
-| [TRTCStatistics](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCStatistics) | Statistics |
-| [TRTCRemoteStatistics](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCStatistics_1_1TRTCRemoteStatistics) | Remote audio/video statistics |
-| [TRTCLocalStatistics](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCStatistics_1_1TRTCLocalStatistics) | Local audio/video statistics |
+| [TRTCLogLevel](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp2f4911d8563ae1db783b963d626681d8) | Log level |
+| [TRTCGSensorMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp7821baad731a6db4d8977d304fafce63) | G-sensor switch (for mobile devices only) |
+| [TRTCTranscodingConfigMode](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp5e2e800d31dc99373db17e2def3afc99) | Layout mode of On-Cloud MixTranscoding |
+| [TRTCRecordType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrpaa193560ab798cc5dcdb9624ce9740aa) | Media recording type |
+| [TRTCMixInputType](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrpa7e631ba74d7c9f6832a6ad3be7a81af) | Stream mix input type |
+| [TRTCAudioRecordingContent](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp25c9df32061d8ad991f04b21fc6acacb) | Audio recording content type |
+
+### Definitions of core TRTC classes
+| API | DESC |
+|-----|-----|
+| [TRTCParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#a7ff9e03272f5c8e7b585e8c4eea784e1) | Room entry parameters |
+| [TRTCVideoEncParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCVideoEncParam) | Video encoding parameters |
+| [TRTCNetworkQosParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCNetworkQosParam) | Network QoS control parameter set |
+| [TRTCRenderParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCRenderParams) | Rendering parameters of video image |
+| [TRTCQuality](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#amgrp43d6beae8b3d7c79f02df2f125c090a7) | Network quality |
+| [TRTCVolumeInfo](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCVolumeInfo) | Volume |
+| [TRTCSpeedTestResult](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCSpeedTestResult) | Network speed test result |
+| [TRTCTexture](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCTexture) | Video texture data (for Android only and including texture ID and EGL environment) |
+| [TRTCVideoFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCVideoFrame) | Video frame information |
+| [TRTCAudioFrame](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCAudioFrame) | Audio frame data |
+| [TRTCMixUser](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#ac5b1947f21f77726cbff822eaf0003f9) | Description information of each video image in On-Cloud MixTranscoding |
+| [TRTCTranscodingConfig](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#a6066a5537ad8c1bc6158d43e8a4765db) | Layout and transcoding parameters of On-Cloud MixTranscoding |
+| [TRTCPublishCDNParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCPublishCDNParam) | Push parameters required to be set when publishing audio/video streams to non-Tencent Cloud CDN |
+| [TRTCAudioRecordingParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCAudioRecordingParams) | Local audio file recording parameters |
+| [TRTCLocalRecordingParams](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#classcom_1_1tencent_1_1trtc_1_1TRTCCloudDef_1_1TRTCLocalRecordingParams) | Local media file recording parameters |
+| [TRTCAudioEffectParam](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#ad82a59c2209c0596dabaee1152820494) | Sound effect parameter (disused) |
+| [TRTCSwitchRoomConfig](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#a1b79e0e45a5f137df2e1995af7c0885c) | Room switch parameter |
+| [TRTCAudioFrameCallbackFormat](https://liteav.sdk.qcloud.com/doc/api/en/group__TRTCCloudDef__android.html#a9b833660fc60bd0b4e0c0625d2ad84f6) | Format parameter of custom audio callback |
 
