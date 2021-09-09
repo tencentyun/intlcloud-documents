@@ -23,7 +23,8 @@
 ## 创建录制模板
 1. 登录云直播控制台，进入 **功能配置** > [**直播录制**](https://console.cloud.tencent.com/live/config/record)。
 2. 单击 **创建录制模板** 设置模板信息，进行如下配置：
-![](C:\Users\v_vhuawen\AppData\Roaming\Typora\typora-user-images\image-20210909154106873.png)
+![](https://main.qcloudimg.com/raw/ccf133a64c38ce579a9fd91e37514193.png)
+
 <table>
    <thead><tr><th width="20%">配置项</th><th>配置描述</th></tr></thead>
    <tbody><tr>
