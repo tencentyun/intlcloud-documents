@@ -37,7 +37,7 @@ In [Tencent Cloud console](https://console.cloud.tencent.com/), select **Product
 To protect your data, all Internet and private network access requests are denied by default after the instance is created. Before you log in to the instance, push, and pull images, you must configure the network access policy.
 Select **Access Control** on the left sidebar in the console, select **Private Network Access** or **Public Network Access** as needed, and configure the corresponding access policy.
 <dx-tabs>
-::: Private network access (recommended)
+::: Private\snetwork\saccess\s(recommended)
 
 <dx-alert infotype="notice" title="">
 Both TCR Personal Edition and Enterprise Edition don't support classic network access. If you need to use this service, we recommend that you switch to VPC as soon as possible and access the service over the private network.
@@ -53,7 +53,7 @@ Select the VPC where the container cluster to access the image repository is loc
 3. After the private network access link is successfully established, implement private network domain name resolution by [using VPC resolution VPCDNS for automatic configuration](https://intl.cloud.tencent.com/document/product/1051/35492) or [using the TCR plug-in for automatic configuration](https://intl.cloud.tencent.com/document/product/1051/35492). For more information, see [Private Network Access Control](https://intl.cloud.tencent.com/document/product/1051/35492).
 
 :::
-::: Public network access
+::: Public\snetwork\saccess
 <dx-alert infotype="notice" title="">
 Enabling the Internet access entry opens your dedicated instance in the public network environment. We recommend that you disable the Internet access entry as soon as possible after completing private network access configuration.
 </dx-alert>
