@@ -10,7 +10,7 @@ If your business is deployed in both a local IDC and a Tencent Cloud VPC, you ca
 You have deployed businesses in a Tencent Cloud VPC and an IDC. To interconnect them, you need to configure network connection services for high-availability communications as follows:
 + Direct Connect (primary): connects the local IDC to a VPC-based direct connect gateway through a connection. When the connection linkage is normal, all data traffic between the IDC and the VPC is forwarded through the connection.
 + VPN connection (secondary): establishes an IPsec VPN tunnel to interconnect the local IDC and the Tencent Cloud VPC. When the connection linkage fails, traffic will be forwarded using this linkage to ensure the business availability.
-![](https://main.qcloudimg.com/raw/57f25f54abfeb75710a3c82a11d2e30f.png)
+![](https://main.qcloudimg.com/raw/c50965f32412860aec344f2cd0dabd6d.png)
 
 ## Prerequisites
 + Your local IDC gateway device should support the IPsec VPN feature and can act as a customer gateway to create a VPN tunnel with the VPN gateway.
