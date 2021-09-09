@@ -40,6 +40,7 @@
    </tbody></table>
 3. 勾选需要录制格式后，弹出相关格式的设置界面，可选择一个或多个录制格式同时进行设置。请进行如下设置：
 ![](https://main.qcloudimg.com/raw/74a4ac0636c59ff69c23437e72189567.png)
+
 <table>
    <thead><tr width="24%"><th colspan=2>配置项</th><th>配置描述</th></tr></thead>
    <tbody><tr>
