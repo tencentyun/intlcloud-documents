@@ -55,7 +55,7 @@ Kubecost 是一款成本分析工具，可以为集群成本提供洞察、分�
 
 ## 前提条件
 
-- 已创建容器服务 TKE 集群。如果您还未创建集群，请参见 [快速创建一个标准集群](https://intl.cloud.tencent.com/document/product/457/40029)。
+- 已创建容器服务 TKE 集群。如果您还未创建集群，请参见 [快速创建一个标准集群](https://intl.cloud.tencent.com/document/product/457/30637)。
 - 已使用命令行工具 Kubectl 连接集群。如果您还未连接集群，请参见 [连接集群](https://intl.cloud.tencent.com/document/product/457/30639)。
 
 ## 功能说明
