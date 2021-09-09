@@ -49,4 +49,4 @@
 
 
 ## 相关文档
-您还可以使用 CreateTagRetentionRule 接口创建版本保留规则。详细信息请参见 [创建版本保留规则 API 文档](https://cloud.tencent.com/document/product/1141/54803)。
+您还可以使用 CreateTagRetentionRule 接口创建版本保留规则。详细信息请参见 [创建版本保留规则 API 文档]。
