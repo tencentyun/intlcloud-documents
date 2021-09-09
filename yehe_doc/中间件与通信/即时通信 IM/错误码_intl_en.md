@@ -331,7 +331,7 @@
 | 10010 | The group does not exist or has been deleted. |
 | 10011 | Failed to parse the JSON packet. Check whether the packet complies with JSON specifications. |
 | 10012 | Invalid UserID. Check whether the UserID that initiated the operation is entered correctly. |
-| 10013 | The invited user is already a member of the group. |
+| 10013 | The  user is already a member of the group. |
 | 10014 | The user in the request cannot be added to the group, because the number of group members has reached the upper limit. If you are adding group members in batches, try reducing the number of users being added. |
 | 10015 | Invalid group ID. Check whether the group ID is entered correctly. |
 | 10016 | The App backend rejected this operation through a third-party callback. |
