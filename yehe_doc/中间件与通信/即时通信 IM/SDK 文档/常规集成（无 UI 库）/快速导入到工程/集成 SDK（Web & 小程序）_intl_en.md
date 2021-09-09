@@ -122,7 +122,7 @@ For more information on how to initialize the SDK and use APIs, see [SDK Initial
 - [SDK Update Log](https://intl.cloud.tencent.com/document/product/1047/34281)
 - [SDK API Documentation](https://web.sdk.qcloud.com/im/doc/zh-cn//SDK.html)
 - [FAQs](https://web.sdk.qcloud.com/im/doc/zh-cn//tutorial-01-faq.html)
-- [IM Web Demo](https://github.com/tencentyun/TIMSDK/tree/master/H5)
+- [IM Web Demo](https://github.com/tencentyun/TIMSDK/tree/master/Web/Demo)
 - [Download URL of Tencent Cloud IM Upload Plugin](https://www.npmjs.com/package/tim-upload-plugin)
 
 
