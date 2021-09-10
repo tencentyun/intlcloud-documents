@@ -84,8 +84,8 @@
 
 下图是“快速开始”里设备影子的应用示例：
 
-![img](https://main.qcloudimg.com/raw/c8854dbdb2daf3e9b2177b285c2fb6a0.png)
-![img](https://main.qcloudimg.com/raw/c8854dbdb2daf3e9b2177b285c2fb6a0.png)
+![img](https://main.qcloudimg.com/raw/9f582908d0e9276646597b53eecdac26.png)
+![img](https://main.qcloudimg.com/raw/50ef5d9ad4ce5b85b3bc573b4ffdbb74.png)
 
 
 >!设备影子和设备消息的适用场景并不一样。从实现机制上来说，服务器端设备影子总是保存最后一份数据，而先后达到的多条消息并不会相互覆盖。
