@@ -4,7 +4,7 @@
 
 ## 实现原理
 固件升级的过程中，需要设备订阅下面两个 Topic 来实现与云端的通信，如下图所示：
-![OTA topic](https://main.qcloudimg.com/raw/f7f74add32341fc505b465298656f9d8.png)
+![OTA topic](https://main.qcloudimg.com/raw/c9f7a14b804cb84ae2f556e093e27f68.png)
 
 示例如下：
 ```php

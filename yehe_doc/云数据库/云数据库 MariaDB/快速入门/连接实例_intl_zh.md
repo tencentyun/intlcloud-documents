@@ -25,7 +25,7 @@
 1) 以 CentOS 7.2 64位系统的 CVM 为例，利用 CentOS 自带的包管理软件 Yum 去腾讯云的镜像源下载安装 MySQL 客户端。
 执行以下命令安装客户端：
 ```
-yum install mysql
+sudo yum install mysql
 ```
 图示如下：
 ![](https://main.qcloudimg.com/raw/d820e34b807d84e2c25debeed4ba171e.png)
@@ -60,7 +60,7 @@ mysql -h hostname -u username -p
 **从 Linux 系统登录**
 1) 以 CentOS 7.2 64位系统的 CVM 为例，在官网下载安装 MySQL 客户端。具体命令为：
 ```
-yum intall mysql
+sudo yum install mysql
 ```
 2) 使用 MySQL 命令行工具登录到 MariaDB 数据库。相关命令为：
 ```

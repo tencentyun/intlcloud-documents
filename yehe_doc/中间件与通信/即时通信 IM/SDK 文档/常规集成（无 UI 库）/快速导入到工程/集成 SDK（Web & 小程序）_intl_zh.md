@@ -122,7 +122,7 @@ tim.registerPlugin({'tim-upload-plugin': TIMUploadPlugin});
 - [SDK 更新日志](https://intl.cloud.tencent.com/document/product/1047/34281)
 - [SDK 接口文档](https://web.sdk.qcloud.com/im/doc/zh-cn//SDK.html)
 - [常见问题](https://web.sdk.qcloud.com/im/doc/zh-cn//tutorial-01-faq.html)
-- [IM Web Demo](https://github.com/tencentyun/TIMSDK/tree/master/H5)
+- [IM Web Demo](https://github.com/tencentyun/TIMSDK/tree/master/Web/Demo)
 - [腾讯云即时通信 IM 上传插件下载地址](https://www.npmjs.com/package/tim-upload-plugin)
 
 

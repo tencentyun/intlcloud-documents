@@ -23,7 +23,8 @@
 ## 创建录制模板
 1. 登录云直播控制台，进入 **功能配置** > [**直播录制**](https://console.cloud.tencent.com/live/config/record)。
 2. 单击 **创建录制模板** 设置模板信息，进行如下配置：
-![](C:\Users\v_vhuawen\AppData\Roaming\Typora\typora-user-images\image-20210909154106873.png)
+![](https://main.qcloudimg.com/raw/ccf133a64c38ce579a9fd91e37514193.png)
+
 <table>
    <thead><tr><th width="20%">配置项</th><th>配置描述</th></tr></thead>
    <tbody><tr>
@@ -40,6 +41,7 @@
    </tbody></table>
 3. 勾选需要录制格式后，弹出相关格式的设置界面，可选择一个或多个录制格式同时进行设置。请进行如下设置：
 ![](https://main.qcloudimg.com/raw/74a4ac0636c59ff69c23437e72189567.png)
+
 <table>
    <thead><tr width="24%"><th colspan=2>配置项</th><th>配置描述</th></tr></thead>
    <tbody><tr>
@@ -67,9 +69,11 @@
       <td> 单击 <b>选择绑定的任务流</b> 可选择绑定点播子应用下已建立的任务流，或从当前点播任务流选择界面点击任务流名称前往点播控制台新增/修改任务流配置。绑定成功后，在生成录制文件后执行点播任务流模板，产生对应的 <a href="https://tcloud-doc.isd.com/document/product/266/2838">云点播费用</a>。</td>
       </tr>
       </tbody></table>
+      
 >! 视频存储策略中：
 >- 选择 **标准存储** 时，若目前选中的应用已开启降冷策略，录制文件会先生成标准存储文件后再根据降冷策略进行降冷，可点击此处[查看策略](https://console.cloud.tencent.com/vod/inactivation)。
 >- 选择 **低频存储** 时，若目前选中的应用/分类已开启降冷策略，录制文件会先直接生成低频存储文件后再判断是否执行点播降冷策略。
+
 4. 单击 **保存** 即可。
 
 [](id:conect)

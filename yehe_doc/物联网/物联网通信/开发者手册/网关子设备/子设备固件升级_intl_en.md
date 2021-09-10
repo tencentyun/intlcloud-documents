@@ -6,7 +6,7 @@ When a subdevice under a gateway has new features available or vulnerabilities t
 ## How It Works
 
 During the firmware update process, the gateway needs to use the following two topics to communicate with the cloud on behalf of the subdevice:
-![OTA topic](https://main.qcloudimg.com/raw/88d82dafcafc9e2ccf162e8828e9474e.png)
+![OTA topic](https://main.qcloudimg.com/raw/716d837e1fcfd4b3441171436a8f3930.png)
 
 Below is the sample code:
 ```php

@@ -6,7 +6,7 @@
 ## 实现原理
 
 固件升级的过程中，需要网关代子设备使用下面两个 Topic 来实现与云端的通信，如下图所示：
-![OTA topic](https://main.qcloudimg.com/raw/88d82dafcafc9e2ccf162e8828e9474e.png)
+![OTA topic](https://main.qcloudimg.com/raw/716d837e1fcfd4b3441171436a8f3930.png)
 
 示例代码如下：
 ```php

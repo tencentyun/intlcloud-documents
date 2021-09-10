@@ -7,3 +7,10 @@
 ### What should I do if an error persists after a period of production?
 - View whether traffic throttling is performed. Check whether there is a surge in traffic on the monitoring page and upgrade the instance specification for solution.
 - View whether capacity throttling is performed. Check the instance capacity on the monitoring page and upgrade the instance specification or modify the data retention period for solution.
+
+
+### How is the number of remaining unconsumed messages calculated?
+
+Number of unconsumed messages = max offset position - submitted offset position, as shown below:
+
+![](https://main.qcloudimg.com/raw/05c88d97f36784e5f83c08b24e229265.png)

@@ -25,7 +25,7 @@
 >?由于查询语句要先查询索引，再通过索引去查询表；如果索引列相同数据过多，不利于减少筛选的数据量，反而不如直接全表扫描性能快。
 
 #### 死锁诊断
-死锁诊断通诊断`show engine innodb status`获取数据库最后一次死锁信息，如果死锁发生时间在用户选择的诊断时间段内，便展示出来。
+死锁诊断通过诊断`show engine innodb status`获取数据库最后一次死锁信息，如果死锁发生时间在用户选择的诊断时间段内，便展示出来。
 
 >?如果死锁出现频率过高，则代表事务内的 SQL 在并发执行场景中的持锁容易产生环路，根本解决方案是修改 SQL 运行逻辑顺序，优化加锁机制，减少死锁产生概率。临时解决方案是 kill 掉领头的阻塞会话。
 
@@ -37,7 +37,7 @@
 >!当前锁等待只支持 InnoDB 引擎。
 
 #### 长会话诊断
-列通过诊断实例中的 `information_schema.processlist` 获取 Command 不为 Sleep 但执行时间（Time）超过10s的会话。
+通过诊断实例中的 `information_schema.processlist` 获取 Command 不为 Sleep 但执行时间（Time）超过10s的会话。
 
 >?最佳解决长会话的手段是优化 SQL，并在业务代码中主动植入 session 失效配置；当然，您也可以通过调整 `interactive_timeout`、`wait_timeout` 两个参数，让过期 session 主动失效。
 
