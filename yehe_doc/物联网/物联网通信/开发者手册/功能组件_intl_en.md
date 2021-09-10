@@ -84,8 +84,8 @@ As an intermediary, device shadow can effectively implement two-way data sync be
 
 The figure below is a sample use case of the device shadow in "Getting Started":
 
-![img](https://main.qcloudimg.com/raw/c8854dbdb2daf3e9b2177b285c2fb6a0.png)
-![img](https://main.qcloudimg.com/raw/4eb9cf83f9c48cb8fe76049e662ed8c6.png)
+![img](https://main.qcloudimg.com/raw/9f582908d0e9276646597b53eecdac26.png)
+![img](https://main.qcloudimg.com/raw/50ef5d9ad4ce5b85b3bc573b4ffdbb74.png)
 
 
 >!Device shadow and device message have different applicable scenarios. In terms of implementation mechanism, the server-side device shadow always saves the last copy of data, and multiple messages that successively arrive do not overwrite one another.
