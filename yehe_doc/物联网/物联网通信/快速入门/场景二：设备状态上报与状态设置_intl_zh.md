@@ -5,7 +5,7 @@
 
 ## 设置设备目标温度
 ### 解决方案
-![update_shadow](https://main.qcloudimg.com/raw/a97e717caf9519bbbcdf5eade4ce0302.png)
+![update_shadow](https://main.qcloudimg.com/raw/93d2e910859d326de663f3793d4be9b1.png)
 管理后台通过物联网通信提供的云 API 接口，更新设备影子的配置属性，设备注册相关属性和关联对应的回调函数执行本地配置更新处理。
 通过云 API 操作设备影子的相关接口案例实现，请下载 [iotcloud_RestAPI_python.zip](https://mc.qcloudimg.com/static/archive/c6b492abe009de1c47b91b8bfd93c7d2/iotcloud_RestAPI_python.zip)，用户需根据《 RestAPI 操作说明》配置个人信息。通过修改 RestAPI 文件夹下 airConditionerCtrl.py 参数实现自定义功能。
 
