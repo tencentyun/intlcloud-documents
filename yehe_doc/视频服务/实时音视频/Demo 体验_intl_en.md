@@ -21,9 +21,7 @@
 </tr>
 <tr>
 </div></a></td>
-<td><input type="button" value="Video Call" style="height: 50px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;
-    color: #fff;border: 1px solid #00a4ff;line-height: 50px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;
-    box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;"  onclick="window.open('https://trtc-1252463788.file.myqcloud.com/web/demo/official-demo/index.html')" /><br><br>
+<td>
       <input type="button" value="Web API Example " style="height: 50px;width: 150px;margin-top: 5px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;
     color: #fff;border: 1px solid #00a4ff;line-height: 50px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;
     box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html?lang=en')" />
