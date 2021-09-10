@@ -26,7 +26,6 @@
 <tr>
 </div></a></td>
 <td>
-<input type="button" value="视频通话" class="inbuttom" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html')" / ><br><br>
 <input type="button" value="Web端代码示例" class="inbuttom" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html')" />
 </td>
 <td>
