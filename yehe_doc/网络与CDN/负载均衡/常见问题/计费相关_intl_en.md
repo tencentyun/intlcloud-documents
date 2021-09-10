@@ -19,8 +19,8 @@ Communication between CLB and CVM instances generates private network traffic, i
 <span id="2"></span>
 ## How does the CLB billing work?
 CLB billing policies vary by account type. For more information, please see [Billing Overview](https://intl.cloud.tencent.com/document/product/214/36999). The main difference between bill-by-IP and bill-by-CVM accounts lays in the billing dimension, other aspects such as service access and monitoring are the same. For more information on differences between account types, please see [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246).
-- Bill-by-IP account: For the public network traffic accessing a CLB instance, the public network fee is charged on the CLB instance, rather than a CVM instance. For the traffic accessing via a public IP, the public network fee is charged on the public IP, rather than a CVM instance either.
-- Bill-by-CVM account: For the public network traffic accessing a CLB instance or a public IP, the public network fee is charged on a CVM instance, not on the CLB instance or the public IP.
+- Public network fee of bill-by-IP accounts: for the public network traffic accessing a CLB instance or a public IP, the public network fee is respectively charged on the CLB instance or the public IP.
+- Public network fee of bill-by CVM accounts: for the public network traffic accessing a CLB instance or a public IP, the public network fee is charged on the CVM instance.
 
 [[Back to Top]](#6)
 
@@ -42,6 +42,7 @@ The cross-region binding fee is charged only if you use the CLB cross-region bin
 <span id="5"></span>
 ## What is the bandwidth cap of a CLB instance?
 - Bill-by-IP account: You need to select the CLB bandwidth cap when you are purchasing a CLB instance. If the business bandwidth exceeds the cap, the CLB instance will lose the packet automatically.
+![](https://main.qcloudimg.com/raw/873a902af0ddbe7ce963c0769a5e5812.png)
 - Bill-by-CVM account: You do not need to select the CLB bandwidth cap when you are purchasing a CLB instance. The CLB bandwidth is restricted by the total public network bandwidth of the backend CVM instance.
 
 [[Back to Top]](#6)
