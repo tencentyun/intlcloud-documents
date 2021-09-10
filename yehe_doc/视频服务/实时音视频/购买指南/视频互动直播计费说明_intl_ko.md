@@ -193,7 +193,7 @@ TRTC 후불 방식에는 [일 결산](#daily)과 [월 결산](#monthly)이 있�
   <div class="th1">발신자</div>
   <div class="th2">수신자</div></th>
   <th>A<br>640 × 360（SD）</th>
-  <th>B<br>1280 × 720（HD）</th>
+  <th>B<br>퓨어 오디오</th>
   <th>C<br>1920 × 1080（HD+）</th>
 </tr><tr>
   <td>A</td>
