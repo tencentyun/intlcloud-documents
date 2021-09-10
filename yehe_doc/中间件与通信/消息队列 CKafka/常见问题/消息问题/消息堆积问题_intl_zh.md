@@ -1,17 +1,56 @@
 ### 出现消息堆积如何处理？
+
 #### 问题概述
+
 出现消息堆积的警告。
 
 #### 可能原因
-如果在云监控中实例配置告警规则，消息堆积过多未消费时，则会产生 “堆积消息数”产生告警。
+
+客户端没有消费或者客户端消费速度较慢。
 
 #### 解决方法
-可登录 [CKafka 控制台](https://console.cloud.tencent.com/ckafka)，找出消息堆积的消费组，观察消费组是否有消费者在消费：
-- 如果有，可让业务方加快消费效率。
-- 如果没有，让客户酌情删掉不使用的消费组。
+
+- 客户端是否有消费
+
+  可以通过查看分区的消费速度来确认，是否有进行消费，如下图：
+
+  ![](https://main.qcloudimg.com/raw/e48ab4cc7aa70d8e205f5cc220580341.jpg)
+
+- 客户端消费速度较慢
+
+  请参考 [消费端消费消息速度缓慢](https://cloud.tencent.com/document/product/597/60501)。
 
 #### 推荐设置
+
 开源 Kafka 支持消息中设置一个时间戳字段和时间戳类型，目前支持的时间戳类型有两种： CreateTime 和 LogAppendTime。
 
 - CreateTime 表示客户端本地的时间，由于客户端的时间可能和服务器时间存在偏差，请检查写入的时间是否是正确的时间。如果时间和当前北京时间相差较远，导致 CKafka 服务无法按照正常消息保存时间对数据进行及时过期删除，因此可能会存在消息异常堆积 。
 - LogAppendTime 表示消息生产到 CKafka 服务的时间，时间为 CKafka 服务器的时间，建议用户选用 LogAppendTime。
+
+
+
+#### 压测服务端性能
+
+如果对服务端性能有疑问，也可以执行如下压测命令来排除是否是服务端存在问题。命令如下：
+
+- 生产测试命令示例：
+```
+bin/kafka-producer-perf-test.sh   
+--topic test 
+--num-records 123 
+--record-size 1000  
+--producer-props bootstrap.servers= ckafka vip : port 
+--throughput 20000   
+```
+
+- 消费测试命令示例：
+```
+bin/kafka-consumer-perf-test.sh   
+--topic test 
+--new-consumer  
+--fetch-size 10000 
+--messages 1000  
+--broker-list bootstrap.servers=ckafka vip : port
+```
+
+详情请参考 [对 CKafka 进行生产和消费压力测试](https://cloud.tencent.com/document/product/597/19527)。
