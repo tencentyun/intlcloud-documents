@@ -13,4 +13,4 @@
 
 计算方式为：未消费消息数量 = 最大的offset - 提交的 offset。如下图：
 
-![](https://main.qcloudimg.com/raw/05c88d97f36784e5f83c08b24e229265.png)
+![](https://main.qcloudimg.com/raw/0583ce6cf94860b55b2823b20d6aec30.png)
