@@ -24,9 +24,9 @@
 <td><input type="button" value="Video Call" style="height: 50px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;
     color: #fff;border: 1px solid #00a4ff;line-height: 50px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;
     box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;"  onclick="window.open('https://trtc-1252463788.file.myqcloud.com/web/demo/official-demo/index.html')" /><br><br>
-      <input type="button" value="Interactive Live Video Broadcasting" style="height: 50px;width: 150px;margin-top: 5px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;
+      <input type="button" value="Web API Example Broadcasting" style="height: 50px;width: 150px;margin-top: 5px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;
     color: #fff;border: 1px solid #00a4ff;line-height: 50px;text-align: center;display: inline-block;cursor: pointer;outline: 0 none;
-    box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;" onclick="window.open('https://trtc.qcloud.com/tweblive/index.html#/')" />
+    box-sizing: border-box;text-decoration: none;font-size: 12px;vertical-align: middle;white-space: nowrap;" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html?lang=en')" />
 </td>
 <td><img style="width:150px" src="https://main.qcloudimg.com/raw/30938d823c61f718e4a2564c0304030c.png" data-nonescope="true"><br><img style="width:150px" src="https://main.qcloudimg.com/raw/ab9f45c1dfcbf0c88f3776ffbd19c02f.png" data-nonescope="true"></td>
 <td><input type="button" value="Windows" style="height: 50px;width: 150px;min-width: 24px;padding: 0 20px;background-color: #00a4ff;
