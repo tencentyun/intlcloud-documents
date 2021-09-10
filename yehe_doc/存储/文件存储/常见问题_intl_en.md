@@ -48,7 +48,7 @@ As some clients support NFS v4.1 Protocol, the client will first negotiate with 
 ### What do I do if I installed Windows IIS web server in the Windows Server 2016 OS, but IIS and CIFS are incompatible?
 When default security policies are changed in the Windows Server 2016 OS, the following configurations are needed.
 
-1. Modify the registry value for SMB client:
+1. Modify the registry key for SMB client:
 ```plaintext
 HKEY_LOCAL_MACHINE> SYSTEM> CurrentControlSet> Services> LanmanWorkstation> Parameters> AllowInsecureGuestAuth
 ```
@@ -106,7 +106,7 @@ Restart the client, open the IIS configuration page, add a site, and click **Adv
 In **Advanced Settings**, set **Physical Path** to the CFS mount target.
 ![](https://main.qcloudimg.com/raw/44777ef4949311c8db84f972b2885af9.png)
 
-### Mounting a CFS file system on Docker or Kubernetes sometimes succeed and sometimes fail. How can I resolve this issue?
+### Mounting a CFS file system on Docker or Kubernetes can succeed sometimes but fail at other times. How to solve this problem?
 
 This issue is caused by protocol compatibility. NFS v3 is recommended for mounting CFS with clients such as Docker and Kubernetes. Using NFS v4 may lead to issues with some clients.
 

@@ -5,10 +5,28 @@ The traditional `rsync` tool does not support specifying the start/end time for 
   - Querying task execution status with a task ID
   - Listing all historical tasks
 - Filetruck supports the following source and destination directories:
+<table>
+	<tr><th>Supported Item</th><th>Source</th><th>Destination</th></tr>
+	<tr>
+	<td>Migration address</td>
+	<td><ul  style="margin: 0;">
+	<li>CFS file system </li>
+	<li>Local file system (file system installed after the CBS instance is formatted) </li>
+	<li>COSFS local path</li>
+	<li>All local paths attached to this host after the network is interconnected</li>
+	</ul>
+</td>
+<td><ul  style="margin: 0;">
+	<li>CFS file system </li>
+	<li>Local file system (file system installed after the CBS instance is formatted)</li>
+	<li>COSFS local path </li>
+	<li>All local paths attached to this host after the network is interconnected</li>
+	</ul>
+</td></tr>
+</table>
+- Filetruck description:
+Filetruck is a one-time migration tool. If a source file is modified during the migration, the source and destination files might be different (if a data segment is modified and saved after it is migrated, the modification will not be synced to the destination file. If the data segment is modified and saved before it is migrated, the modification will be synced to the destination file. Therefore, you are not advised to modify the source file during the migration/backup process).
 
-| Supported Item | Source | Destination |
-| -------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Migration directory | <li>CFS file system <br/><li> Local file system (installed after the CBS is formatted) <br/><li> COSFS local path <br/><li>All local paths mounted to the host after the connection is established | <li>CFS file system <br/><li> Local file system (installed after the CBS is formatted)<br/><li> COSFS local path <li> All local paths mounted to the host after the connection is established |
 
 The following describes how to use Filetruck to migrate/back up data.
 
