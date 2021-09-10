@@ -27,7 +27,7 @@
 </div></a></td>
 <td>
 <input type="button" value="视频通话" class="inbuttom" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html')" / ><br><br>
-<input type="button" value="互动直播" class="inbuttom" onclick="window.open('https://web.sdk.qcloud.com/component/tweblive/demo/latest/index.html')" />
+<input type="button" value="Web端代码示例" class="inbuttom" onclick="window.open('https://web.sdk.qcloud.com/trtc/webrtc/demo/api-sample/basic-rtc.html')" />
 </td>
 <td>
 <img style="width:150px" src="https://main.qcloudimg.com/raw/844e3de73cf2537e8a58e2263de5900e.png" data-nonescope="true">
