@@ -11,11 +11,14 @@ Take API traffic throttling as an example:
 
 Therefore, in high-traffic scenarios such as Kafka, soft traffic throttling is better for a smooth user experience.
 
+<dx-alert infotype="explain">
+<ul>
+Relationship between purchased bandwidth and production/consumption bandwidth:
+<li>Maximum production bandwidth (per second) = purchased bandwidth/number of replicas</li>
+<li>Maximum consumption bandwidth (per second) = purchased bandwidth</li> 
+</ul>
+</dx-alert>
 
->Relationship between purchased bandwidth and production/consumption bandwidth:
->- Maximum production bandwidth (per second) = purchased bandwidth/number of replicas
->- Maximum consumption bandwidth (per second) = purchased bandwidth 
-</dx-fold-block>
 
 <dx-fold-block title="How Delayed Response Works">
 The underlying traffic throttling mechanism of a CKafka instance is implemented based on token bucket. Each second is divided into multiple time buckets measured in ms.
@@ -55,9 +58,8 @@ To ensure stability of the service, CKafka implement network traffic control str
 ### How do I determine whether CKafka has been throttled?
 
 1. In the instance list, you can see the health status of each cluster. If it's "Warning", you can hover your mouse over it to view the detailed data. The data displays your peak traffic and the throttling times, by which you can determine whether this instance has been throttled.
-![](https://main.qcloudimg.com/raw/0ea089e54c336cd671cbd91a66565570.png)
 
 2. You can click the **Monitor** tab to view the max traffic value. If **the value of max traffic multiplied by replica quantity is greater than that of the purchased peak bandwidth**, you can determine that at least one throttling has occurred. You can also configure an alarm for traffic throttling to check whether throttling occurs.
-   ![](https://main.qcloudimg.com/raw/fd0f26d24abebd1b1f6673d15a28ab75.png)
+   ![](https://main.qcloudimg.com/raw/3c0b2b6346b358287eea11c3f889b90d.png)
 
 3. A monitoring chart for displaying the number of traffic throttling times will be added in the console.
