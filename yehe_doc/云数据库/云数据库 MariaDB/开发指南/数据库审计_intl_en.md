@@ -1,3 +1,5 @@
+>!The database audit feature is being upgraded, during which new instances won't support this feature. But it will be available again very soon.
+
 ## Overview
 ### Background
 You may face the following security risks when using databases, which calls for a complete post-transaction auditing and tracking mechanism. This is where database auditing comes into play.
