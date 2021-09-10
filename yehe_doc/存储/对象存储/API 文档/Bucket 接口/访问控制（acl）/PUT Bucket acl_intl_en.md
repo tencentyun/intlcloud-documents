@@ -65,7 +65,7 @@ This API has no request parameter.
 In addition to common request headers, this API also supports the following request headers. For more information about common request headers, please see [Common Request Headers](https://intl.cloud.tencent.com/document/product/436/7728).
 
 | Header | Description | Type | Required |
----|---|---|---
+|---|---|---|---|
 | x-cos-acl | Defines the ACL attribute of the bucket. For the enumerated values such as `private` (default) and `public-read`, please see the **Preset ACL** section in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583#.E9.A2.84.E8.AE.BE.E7.9A.84-acl). | Enum | No |
 | x-cos-grant-read | Grants a user permission to read the bucket in the format of `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
 | x-cos-grant-write | Grants a user permission to write to the bucket in the format of `id="[OwnerUin]"` (e.g., `id="100000000001"`). You can use commas (,) to separate multiple users, for example, `id="100000000001",id="100000000002"`. | string | No |
@@ -102,39 +102,39 @@ The request body contains the **application/xml** data that includes information
 The nodes are described as follows:
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
----|---|---|---|---
+|---|---|---|---|--- |
 | AccessControlPolicy | None | All request information about the `PUT Bucket acl` operation |Container| Yes |
 
 **Content of `AccessControlPolicy`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
----|---|---|---|---
+|---|---|---|---|--- |
 | Owner | AccessControlPolicy | Information about the bucket owner |Container| Yes |
 | AccessControlList | AccessControlPolicy | Information about the grantee and permissions | Container | Yes |
 
 **Content of `Owner`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
----|---|---|---|---
+|---|---|---|---|--- |
 | ID | AccessControlPolicy.Owner | Complete ID of the bucket owner in the format of `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]` <br> Example: `qcs::cam::uin/100000000001:uin/100000000001` | string | Yes |
 
 **Content of `AccessControlList`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
----|---|---|---|---
+|--|---|---|---|--- |
 | Grant | AccessControlPolicy.AccessControlList | A single permission. Each `AccessControlList` supports up to 100 `Grant` nodes. | Container | Yes |
 
 **Content of `AccessControlList.Grant`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
----|---|---|---|---
+|---|---|---|---|--- |
 | Grantee | AccessControlPolicy.AccessControlList.Grant | Grantee information. `xsi:type` can be set to `Group` or `CanonicalUser`. If it’s set to `Group`, the child node can only include `URI`. If it’s set to `CanonicalUser`, the child node can only include `ID`. | Container | Yes |
 | Permission | AccessControlPolicy.AccessControlList.Grant | Permission granted. For the enumerated values such as `WRITE` and `FULL_CONTROL`, please see <b>Actions on buckets</b> in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583#.E6.93.8D.E4.BD.9C-permission) | Enum | Yes |
 
 **Content of `AccessControlList.Grant.Grantee`:**
 
 | Node Name (Keyword) | Parent Node | Description | Type | Required |
----|---|---|---|---
+|---|---|---|---|--- |
 | URI | AccessControlPolicy.AccessControlList.Grant.Grantee | Preset user group. For more information, please see <b>Preset user group</b> in [ACL Overview](https://intl.cloud.tencent.com/document/product/436/30583#.E8.BA.AB.E4.BB.BD-grantee).<br>Example: `http://cam.qcloud.com/groups/global/AllUsers` or `http://cam.qcloud.com/groups/global/AuthenticatedUsers` | string | Required if `xsi:type` of the `Grantee` is set to `Group` |
 | ID | AccessControlPolicy.AccessControlList.Grant.Grantee | Compete ID of the grantee in the format of `qcs::cam::uin/[OwnerUin]:uin/[OwnerUin]`<br>Example: `qcs::cam::uin/100000000001:uin/100000000001` | string | Required if `xsi:type` of the grantee is set to `CanonicalUser` |
 
