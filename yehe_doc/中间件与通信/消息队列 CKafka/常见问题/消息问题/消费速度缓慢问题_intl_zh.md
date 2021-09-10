@@ -10,18 +10,17 @@
 
 **解决方法**
 
-- 如果想确认是否是服务端问题，可以在控制台查看高级监控里面的消费耗时，耗时信息表示服务端处理请求的耗时，如果服务端负载有问题，可以看到统计各阶段耗时较高，如下图:
-![](https://main.qcloudimg.com/raw/ec2f08922533ab6d9128351b577a29ba.png)
+- 如果想确认是否是服务端问题，可以在控制台查看高级监控里面的消费耗时，耗时信息表示服务端处理请求的耗时，如果服务端负载有问题，可以看到统计各阶段耗时较高.
 
 - 如果想确认是否是限流问题引起的，可以配置带宽超限告警。检查 **监控** > **实例** 是否已经达到实例的带宽峰值。如果已经达到带宽峰值，您需要升级实例的带宽峰值。关于如何升级实例配置，请参阅 [升配实例](https://intl.cloud.tencent.com/document/product/597/40650)。
-  ![](https://main.qcloudimg.com/raw/fd0f26d24abebd1b1f6673d15a28ab75.png)
+   ![](https://main.qcloudimg.com/raw/5e1f6110db1157e23cf1574b53775cab.png)
 
 - 如果服务端没有性能问题，大概率是客户端消费能力不足。首先看一下分区和消费者的对应关系。如果一个消费者消费了太多分区，建议增加消费者的数量。尽量让一个消费者消费一个分区，如下图查看消费者和分区的对应关系：
 
-  ![](https://main.qcloudimg.com/raw/2e53984a61efc0a742e92867673d3c7a.jpg)
+  ![](https://main.qcloudimg.com/raw/5818999b8966e0182099b6fee34aa0da.png)
 
   如果消费者和分区的分配关系是正常的，那可以在控制台扩容分区提高数据消费的并行度。控制台扩容分区是即时无损的扩容的，不用担心有影响。扩容分区如下图：
 
-  <img src="https://main.qcloudimg.com/raw/c1a1544ce98d2a3a0c95adbb2195c755.png" width="600">
+   <img src="https://main.qcloudimg.com/raw/390cec2a876e2f254fd95bb38bb6bb9c.png" width="600">
 
 - 同时可以排查一下客户端的负载情况。例如客户端机器的 CPU、内存、网卡等指标。如果是 Java 的进程，则着重关注 GC 和堆内存的使用情况。
