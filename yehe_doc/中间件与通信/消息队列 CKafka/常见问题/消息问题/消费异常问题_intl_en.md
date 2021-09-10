@@ -13,4 +13,4 @@
 
 Number of unconsumed messages = max offset position - submitted offset position, as shown below:
 
-![](https://main.qcloudimg.com/raw/05c88d97f36784e5f83c08b24e229265.png)
+![](https://main.qcloudimg.com/raw/0583ce6cf94860b55b2823b20d6aec30.png)
