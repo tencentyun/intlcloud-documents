@@ -49,7 +49,7 @@
 <td style="text-align:center">Web & H5  </td>
 <td style="text-align:center" ><a href="https://www.npmjs.com/package/tim-js-sdk">NPM (推荐)</a></td>
 <td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/Web/IMSDK">Github</a></td>
-<td style="text-align:left" rowspan='3' ><a href="https://github-1252463788.cos.ap-shanghai.myqcloud.com/imsdk/TIMSDK.zip">ZIP</a></td>
+<td style="text-align:left" rowspan='3' ><a href="https://im.sdk.qcloud.com/download/github/TIMSDK.zip">ZIP</a></td>
 <td style="text-align:center" rowspan='2'><a href="https://intl.cloud.tencent.com/document/product/1047/34309">【常规集成】快速导入到工程</a> </td>
 <td style="text-align:center" rowspan='3'><a href="https://intl.cloud.tencent.com/document/product/1047/34281">更新日志(Web & 小程序)</a> </td>
 </tr>
@@ -61,7 +61,7 @@
 <tr>
 <td style="text-align:center">Web SDK 上传插件  </td>
 <td style="text-align:center" ><a href="https://www.npmjs.com/package/tim-upload-plugin">NPM (推荐)</a></td>
-<td style="text-align:center" ><a href="https://www.npmjs.com/package/tim-upload-plugin">Github</a></td>
+<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/Web/Demo/sdk">Github</a></td>
 <td style="text-align:center" >-</td>
 </tr>
 </table>
@@ -84,7 +84,7 @@
 <td style="text-align:center" rowspan='4' th width="155px">包含所有 IM 功能以及群里直播连麦语聊能力。</td>
 <td style="text-align:center" >Android</td>
 <td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/Android">Github(推荐)</a></td>
-<td style="text-align:center" rowspan='4' ><a href="https://github-1252463788.cos.ap-shanghai.myqcloud.com/imsdk/TIMSDK.zip">ZIP</a></td>
+<td style="text-align:center" rowspan='4' ><a href="https://im.sdk.qcloud.com/download/github/TIMSDK.zip">ZIP</a></td>
 <td style="text-align:left" rowspan='4'><a href="https://intl.cloud.tencent.com/document/product/1047/34553">【Demo入门】一分钟跑通Demo</a></td>
 </tr>
 <tr>
@@ -120,7 +120,7 @@
 <td style="text-align:center" >包含直播发起以及观看方点赞互动等能力。</td>
 <td style="text-align:center" >H5 及 Web</td>
 <td style="text-align:center" ><a href="https://github.com/tencentyun/TWebLive">Github(推荐)</a></td>
-<td style="text-align:center" ><a href="https://webim-1252463788.cos.ap-shanghai.myqcloud.com/TWebLive-demo.zip?_ga=1.23181178.1931537.1590743323">ZIP</a></td>
+<td style="text-align:center" ><a href="https://web.sdk.qcloud.com/component/tweblive/download/TWebLive-demo.zip">ZIP</a></td>
 <td style="text-align:left" ><a href="https://intl.cloud.tencent.com/document/product/1047/38174">【Demo 入门】 一分钟跑通直播互动组件</a><br><a href="https://intl.cloud.tencent.com/document/product/1047/38175">【最佳实践】Web 直播互动组件</a></td>
 </tr>
 </table>

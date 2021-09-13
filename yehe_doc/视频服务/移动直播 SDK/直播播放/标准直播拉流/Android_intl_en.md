@@ -95,7 +95,7 @@ mLivePlayer.setRenderRotation(V2TXLiveRotation0);
 :::
 </dx-codeblock>
 
-![](https://main.qcloudimg.com/raw/ee76fbabaeba2bc39a570f8e5442e424.png)
+![](https://main.qcloudimg.com/raw/6cddb671d6e5bc6e87d48e9ca3eed42a.png)
 
 [](id:step5)
 
