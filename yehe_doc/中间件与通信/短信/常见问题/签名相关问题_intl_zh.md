@@ -4,7 +4,7 @@
 
 ### 为什么驳回理由为“中性化签名”？
 
-中性化签名是指无法辨别所属公司或个人的签名，例如`测试`、`aabb`、`验证码`或`通知`等，不允许使用。建议使用公司名称、App 名称等作为签名，详细签名标准请参见 [签名审核标准](https://intl.cloud.tencent.com/document/product/382/40658)。
+中性化签名是指无法辨别所属公司或个人的签名，例如`测试`、`aabb`、`验证码`或`通知`等，不允许使用。建议使用公司名称、App 名称、微信公众号名称或小程序名称等作为签名，详细签名标准请参见 [签名审核标准](https://intl.cloud.tencent.com/document/product/382/40658)。
 
 ### 短信签名是否有个数限制？
 短信签名个数上限为50，申请多个签名需要提供每个签名对应的资质证明。
@@ -26,11 +26,69 @@
 - 签名类型为公众号（小程序）：应填写公众号（小程序）的全称。
 
 ### 多个签名场景下，调用 API 发送短信时如何指定签名？[](id:Q8)
-调用 [发送短信 API](https://intl.cloud.tencent.com/document/product/382/40536) 发送短信时，可通过赋值 sign 字段选择需要使用的短信签名。
+调用 [发送短信 API](https://intl.cloud.tencent.com/document/product/382/34859) 发送短信时，可通过赋值 sign 字段选择需要使用的短信签名。
  例如，您有`腾讯科技`和`腾讯云`两个签名，现需要以`腾讯云`签名发送短信，您只需将 sign 字段赋值为`腾讯云`，然后调用 API 发送短信即可。
 
 ### 申请短信签名需要提前准备什么材料？[](id:Q9)
-短信签名根据不同的用途和账号认证类型需要准备不同的材料清单，查看 [证明材料清单](https://intl.cloud.tencent.com/document/product/382/40658)。
+短信签名根据不同的用途和账号认证类型需要准备不同的材料清单，查看 [证明材料清单](https://intl.cloud.tencent.com/document/product/382/40658#.E8.AF.81.E6.98.8E.E6.96.87.E4.BB.B6.E8.A7.84.E8.8C.83)。
 
 ### 个人用户能申请短信签名吗？[](id:Q10)
-个人认证用户可以在【控制台】>【国内短信】>【签名管理】单击【[创建签名](https://console.cloud.tencent.com/smsv2/csms-sign)】。但是个人认证用户创建签名也需要提供相应的证明材料，查看 [证明材料清单](https://intl.cloud.tencent.com/document/product/382/40658)。
+个人认证用户可以在【控制台】>【国内短信】>【签名管理】单击【[创建签名](https://console.cloud.tencent.com/smsv2/csms-sign)】。但是个人认证用户创建签名也需要提供相应的证明材料，查看 [证明材料清单](https://intl.cloud.tencent.com/document/product/382/40658#.E4.B8.AA.E4.BA.BA.E8.AE.A4.E8.AF.81.E7.94.A8.E6.88.B7)。
+
+
+
+[](id:Q11)
+### 个人用户怎么申请签名？
+个人用户申请签名时，建议内容为已上线的 App 名称、个人公众号名称、小程序名称及已在工信部备案的网站名称等。并提供对应的证明材料。
+创建自用签名时，需要上传的证明材料清单如下表所示。
+ <table>
+<tr>
+<th>签名类型</th>
+<th>证明文件</th>
+</tr>
+<tr>
+<td>App</td>
+<td>需上传<b>应用商店后台截图</b></td>
+</tr>
+<tr>
+<td>网站</td>
+<td>需上传<b>网站备案后台截图</b></td>
+</tr>
+<tr>
+<td>公众号或小程序</td>
+<td>需上传<b>公众号或小程序归属方证明截图</b>：<ul><li>公众号：【公众号设置】 > 【帐号详情】页面截图</li><li>小程序：【设置】 > 【基本设置】页面截图</li></ul></td>
+</tr>
+</table>
+
+[](id:Q12)
+### 需要帮其他公司/事业单位发送短信，怎么申请签名？
+目前仅支持企事业单位委托他人申请签名，签名类型选择他用，并上传对应的证明材料。[他用签名证明材料清单](https://intl.cloud.tencent.com/document/product/382/40658#.E8.AF.81.E6.98.8E.E6.96.87.E4.BB.B6.E6.B8.85.E5.8D.95.EF.BC.88.E4.BB.96.E7.94.A8.E7.AD.BE.E5.90.8D.EF.BC.89) 如下：
+>?目前仅支持企事业单位委托他人申请签名。
+
+ <table>
+<tr>
+<th>签名类型</th>
+<th>证明文件</th>
+</tr>
+<tr>
+<td>公司</td>
+<td rowspan="4">需上传<b><a href="https://sms-1258344699.cos.ap-guangzhou.myqcloud.com/Declaration%20of%20Authorisation%20(SMS%20Signature).docx"> 授权委托书 </a></b>和签名所属主体的<b>企事业单位证明文件</b>（择一即可）：<ul><li>三证合一</li><li>企业营业执照</li><li>组织机构代码证书</li><li>社会信用代码证书</li></ul></td>
+</tr>
+<tr>
+<td>App</td>
+</tr>
+<tr>
+<td>网站</td>
+</tr>
+<tr>
+<td>公众号或小程序</td>
+</tr>
+<tr>
+<td>商标</td>
+<td>需上传<b><a href="https://sms-1258344699.cos.ap-guangzhou.myqcloud.com/Declaration%20of%20Authorisation%20(SMS%20Signature).docx"> 授权委托书 </a></b>和<b>商标注册书</b></td>
+</tr>
+<tr>
+<td nowrap="nowrap">政府/机关事业单位/其他机构</td>
+<td>需上传<b><a href="https://sms-1258344699.cos.ap-guangzhou.myqcloud.com/Declaration%20of%20Authorisation%20(SMS%20Signature).docx"> 授权委托书 </a></b>和签名所属主体的<b>企事业单位证明文件</b>（择一即可）：<ul><li>组织机构代码证书</li><li>社会信用代码证书</li><li>事业单位法人证书</li></ul></td>
+</tr>
+</table>
