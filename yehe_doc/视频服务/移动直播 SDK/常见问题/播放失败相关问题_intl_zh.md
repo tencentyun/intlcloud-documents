@@ -11,7 +11,6 @@ https://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&tx
 https://domain/AppName/StreamName.flv?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 ```
 >?domain 为推流/播放域名，AppName 自定义、默认为 live，StreamName 自定义；若未开启推流或播放鉴权，则无 “?” 及其后的 txSecret 内容。例如，推流域名为` www.push.com`，AppName 为 live，StreamName 为 test01，未开启推流鉴权，则推流地址为 `rtmp://www.push.com/live/test01`。
->小直播的播放 URL 可以用调试的办法获取，您可以全局搜索代码寻找关键字 **startPlay**，然后在此处打下调试断点，这里是小直播对 RTMP SDK 的调用点，startPlay 的参数即为播放 URL。
 
 ### 2. 检查视频流
 播放 URL 正确不代表视频就能播放，所以要检查视频流是否正常：
