@@ -43,5 +43,5 @@
 
 ## 方案架构
 
-![](https://main.qcloudimg.com/raw/762ecb03ba9cafad61de75f4a5b2647d.png)
+![](https://main.qcloudimg.com/raw/510a784c9d15fddc136ea89be3dfb7aa.png)
 
