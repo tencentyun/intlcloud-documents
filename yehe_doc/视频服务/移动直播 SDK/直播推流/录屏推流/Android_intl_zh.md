@@ -1,8 +1,8 @@
 ## 功能介绍
-手机录屏直播，即可以直接把主播的手机画面作为直播源，同时可以叠加摄像头预览，应用于游戏直播、移动端 App 演示等需要手机屏幕画面的场景。腾讯云 LiteAVSDK 通过 V2TXLivePusher 接口提供录屏推流能力，如下是 LiteAVSDK 腾讯云工具包 App 中演示摄像头推流的相关操作界面：
+手机录屏直播，即可以直接把主播的手机画面作为直播源，同时可以叠加摄像头预览，应用于游戏直播、移动端 App 演示等需要手机屏幕画面的场景。腾讯云 LiteAVSDK 通过 V2TXLivePusher 接口提供录屏推流能力。
 >?直播中叠加摄像头预览，即通过在手机上添加浮框，显示摄像头预览画面。录屏的时候会把浮框预览画面一并录制下来，达到叠加摄像头预览的效果。
 
-![](https://main.qcloudimg.com/raw/7ea3ae48fc9bfa67ada5e248c0212a9f.png)
+
 
 ## 限制说明
 - Android 5.0 系统以后开始支持录屏功能。
@@ -57,7 +57,7 @@ mLivePusher.setWatermark(BitmapFactory.decodeResource(getResources(),R.drawable.
 [](id:step5)
 ### 步骤5：提醒主播“网络不好”
 手机连接 Wi-Fi 网络不一定就非常好，如果 Wi-Fi 信号差或者出口带宽很有限，可能网速不如4G，如果主播在推流时遇到网络很差的情况，需要有一个友好的提示，提示主播应当切换网络。    
-![](https://main.qcloudimg.com/raw/ede09b70402bee1d88f86492226c6b46.png)  
+![](https://main.qcloudimg.com/raw/faaef46a80988270d3ddc96ec4e578b9.png)  
 
 通过 V2TXLivePusherObserver 里的 [onWarning](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLiveCode__android.html) 可以捕获 **V2TXLIVE_WARNING_NETWORK_BUSY** 事件，它代表当前主播的网络已经非常糟糕，出现此事件即代表观众端会出现卡顿。此时就可以像上图一样在 UI 上弹出一个“弱网提示”。
 <dx-codeblock>
@@ -73,8 +73,7 @@ public void onWarning(int code, String msg, Bundle extraInfo) {
 
 [](id:step6)
 ### 步骤6：横竖屏适配
-大多数情况下，主播习惯以“竖屏持握”手机进行直播拍摄，观众端看到的也是竖屏分辨率的画面（例如 540 × 960 这样的分辨率）；有时主播也会“横屏持握”手机，这时观众端期望能看到是横屏分辨率的画面（例如 960 × 540 这样的分辨率），如下图所示： 
-![](https://main.qcloudimg.com/raw/b1e58275542aac52fb861745d95246cc.png)    
+大多数情况下，主播习惯以“竖屏持握”手机进行直播拍摄，观众端看到的也是竖屏分辨率的画面（例如 540 × 960 这样的分辨率）；有时主播也会“横屏持握”手机，这时观众端期望能看到是横屏分辨率的画面（例如 960 × 540 这样的分辨率）。    
 
 V2TXLivePusher 默认推出的是竖屏分辨率的视频画面，如果希望推出横屏分辨率的画面，可以修改 [setVideoQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__android.html#a2695806cb6c74ccce4b378d306ef0a02) 接口的参数来设定观众端的画面横竖屏模式。
 

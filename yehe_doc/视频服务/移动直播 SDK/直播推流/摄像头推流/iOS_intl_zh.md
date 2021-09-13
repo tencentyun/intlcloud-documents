@@ -1,6 +1,5 @@
 ## 功能概述
-摄像头推流，是指采集手机摄像头的画面以及麦克风的声音，进行编码之后再推送到直播云平台上。腾讯云 LiteAVSDK 通过 V2TXLivePusher 接口提供摄像头推流能力，如下是 LiteAVSDK 的简单版 Demo 中演示摄像头推流的相关操作界面：
-![](https://main.qcloudimg.com/raw/39ee7f9e0e092d0adb9f1dff1077a482.png)
+摄像头推流，是指采集手机摄像头的画面以及麦克风的声音，进行编码之后再推送到直播云平台上。腾讯云 LiteAVSDK 通过 V2TXLivePusher 接口提供摄像头推流能力。
 
 ## 特别说明
 **x86 模拟器调试：**由于 SDK 大量使用 iOS 系统的音视频接口，这些接口在 Mac 上自带的 x86 仿真模拟器下往往不能工作。所以，如果条件允许，推荐您尽量使用真机调试。
@@ -73,7 +72,7 @@
 [](id:step5)
 ### 5. 启动和结束推流
 如果已经通过`startCamera`接口启动了摄像头预览，就可以调用 V2TXLivePusher 中的 [startPush](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a33b38f236a439e7d848606acb68cc087) 接口开始推流。
-```objectivec 
+​```objectivec 
 //启动推流
 NSString* rtmpUrl = @"rtmp://test.com/live/xxxxxx";    //此处填写您的 rtmp 推流地址
 [_pusher startPush:rtmpUrl];
@@ -88,7 +87,7 @@ NSString* rtmpUrl = @"rtmp://test.com/live/xxxxxx";    //此处填写您的 rtmp
 
 -  **如何获取可用的推流 URL？**
 开通直播服务后，可以使用【直播控制台】>【辅助工具】> [【地址生成器】](https://console.cloud.tencent.com/live/addrgenerator/addrgenerator) 生成推流地址，详细信息请参见 [推拉流 URL](https://intl.cloud.tencent.com/document/product/1071/39359)。
-![](https://main.qcloudimg.com/raw/0ec9d83f340454c287d96f83eec3a3e4.png)
+
 - **返回 V2TXLIVE_ERROR_INVALID_LICENSE 的原因**    
 如果 `startPush` 接口返回 `V2TXLIVE_ERROR_INVALID_LICENSE`，则代表您的 License 校验失败了，请检查 [第2步：给 SDK 配置   License 授权](#step2) 中的工作是否有问题。
 
@@ -109,7 +108,7 @@ NSString* rtmpUrl = @"rtmp://test.com/live/xxxxxx";
 
 [](id:step8)
 ### 8. 美颜美白和红润特效
-![](https://main.qcloudimg.com/raw/b0ddfe1f97d73c9fc8e42caf994211b7.jpg)
+
 调用 V2TXLivePusher 中的 [getBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a4fb05ae6b5face276ace62558731280a) 接口可以获取 TXBeautyManager 实例进一步设置美颜效果。
 
 #### 美颜风格
@@ -141,7 +140,7 @@ SDK 内置三种不同的磨皮算法，每种磨皮算法即对应一种美颜�
 
 [](id:step9)
 ### 9. 色彩滤镜效果
-![](https://main.qcloudimg.com/raw/eb06687c79243fa3a6befb30ff62e09e.jpg)
+
 - 调用 V2TXLivePusher 中的 [getBeautyManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a4fb05ae6b5face276ace62558731280a) 接口可以获取 TXBeautyManager 实例进一步设置美色彩滤镜效果。
 - 调用 TXBeautyManager 的 `setFilter` 接口可以设置色彩滤镜效果。所谓色彩滤镜，是指一种将整个画面色调进行区域性调整的技术，例如将画面中的淡黄色区域淡化实现肤色亮白的效果，或者将整个画面的色彩调暖让视频的效果更加清新和温和。   
 - 调用 TXBeautyManager 的 `setFilterStrength` 接口可以设定滤镜的浓度，设置的浓度越高，滤镜效果也就越明显。 
@@ -159,17 +158,17 @@ UIImage *image = [UIImage imageWithContentsOfFile:path];
 [](id:step10)
 ### 10. 设备管理
 V2TXLivePusher 提供了一组 API 用户控制设备的行为，您可通过 `getDeviceManager` 获取 TXDeviceManager 实例进一步进行设备管理，详细用法请参见 [TXDeviceManager API](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__ios.html#interfaceTXDeviceManager)。
-![](https://main.qcloudimg.com/raw/c4d8e442558891c66f315d4c0799fce3.jpg)
+
 
 [](id:step11)
 ### 11. 观众端的镜像效果
 通过调用 V2TXLivePusher 的 [setRenderMirror](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#adf4cd57c705a1022d6730fd722f8dab5) 可以改变摄像头的镜像方式，继而影响观众端观看到的镜像效果。之所以说是观众端的镜像效果，是因为当主播在使用前置摄像头直播时，默认情况下自己看到的画面会被 SDK 反转。
-![](https://main.qcloudimg.com/raw/48cb3e6a39e968f3707fc956c062632a.png)
+![](https://main.qcloudimg.com/raw/520d16280962523809e5695d2483d9ef.png)
 
 [](id:step12)
 ### 12. 横屏推流
-大多数情况下，主播习惯以“竖屏持握”手机进行直播拍摄，观众端看到的也是竖屏分辨率的画面（例如 540 × 960 这样的分辨率）；有时主播也会“横屏持握”手机，这时观众端期望能看到是横屏分辨率的画面（例如 960 × 540 这样的分辨率），如下图所示： 
-![](https://main.qcloudimg.com/raw/d42f32ad9deef5b3eba3ccb271fe05e8.png)
+大多数情况下，主播习惯以“竖屏持握”手机进行直播拍摄，观众端看到的也是竖屏分辨率的画面（例如 540 × 960 这样的分辨率）；有时主播也会“横屏持握”手机，这时观众端期望能看到是横屏分辨率的画面（例如 960 × 540 这样的分辨率）。
+
 
 V2TXLivePusher 默认推出的是竖屏分辨率的视频画面，如果希望推出横屏分辨率的画面，可以修改 [setVideoQuality](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#a0b08436c1e14a8d7d9875fae59ac6d84) 接口的参数来设定观众端的画面横竖屏模式。
 ```objectivec
@@ -180,16 +179,17 @@ V2TXLivePusher 默认推出的是竖屏分辨率的视频画面，如果希望�
 [](id:step13)
 ### 13. 音效设置
 调用 V2TXLivePusher 中的 [getAudioEffectManager](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXAudioEffectManager__ios.html) 获取 TXAudioEffectManager 实例可以实现背景混音、耳返、混响等音效功能。背景混音是指主播在直播时可以选取一首歌曲伴唱，歌曲会在主播的手机端播放出来，同时也会被混合到音视频流中被观众端听到，所以被称为“混音”。
-![](https://main.qcloudimg.com/raw/269e653bc68c73c69feeb6418c513c25.jpg)
+
 
 - 调用 TXAudioEffectManager 中的 `enableVoiceEarMonitor` 选项可以开启耳返功能，“耳返”指的是当主播带上耳机来唱歌时，耳机中要能实时反馈主播的声音。
 - 调用 TXAudioEffectManager 中的 `setVoiceReverbType` 接口可以设置混响效果，例如 KTV、会堂、磁性、金属等，这些效果也会作用到观众端。
 - 调用 TXAudioEffectManager 中的 `setVoiceChangerType` 接口可以设置变调效果，例如“萝莉音”，“大叔音”等，用来增加直播和观众互动的趣味性，这些效果也会作用到观众端。
-![](https://main.qcloudimg.com/raw/a90a110e2950568b9d7cd6bef8e0893b.png)
+![](https://main.qcloudimg.com/raw/f8282bd6e1ba20e1e902bad52fa3131f.png)
 
 >? 详细用法请参见 [TXAudioEffectManager API](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXAudioEffectManager__ios.html)。
 
 [](id:step14)
+
 ### 14. 设置 Logo 水印
 
 设置 V2TXLivePusher 中的 [setWatermark](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePusher__ios.html#ad48aacbfad38b8f5389c159283fae859) 可以让 SDK 在推出的视频流中增加一个水印，水印位置位是由传入参数 `(x, y, scale)` 所决定。
@@ -205,7 +205,7 @@ V2TXLivePusher 默认推出的是竖屏分辨率的视频画面，如果希望�
 [](id:step15)
 ### 15. 主播端弱网提醒
 手机连接 Wi-Fi 网络不一定就非常好，如果 Wi-Fi 信号差或者出口带宽很有限，可能网速不如4G，如果主播在推流时遇到网络很差的情况，需要有一个友好的提示，提示主播应当切换网络。    
-![](https://main.qcloudimg.com/raw/66441cb1356f87caeffb4a3102b938ea.png)  
+![](https://main.qcloudimg.com/raw/faaef46a80988270d3ddc96ec4e578b9.png)  
 
 通过 V2TXLivePusherObserver 里的 [onWarning](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLiveCode__ios.html#ga5506c2171438841ab3e99c80786c7ba0) 可以捕获 **V2TXLIVE_WARNING_NETWORK_BUSY** 事件，它代表当前主播的网络已经非常糟糕，出现此事件即代表观众端会出现卡顿。此时就可以像上图一样在 UI 上弹出一个“弱网提示”。
 

@@ -1,7 +1,7 @@
 ## 快直播概述
 快直播（Live Event Broadcasting，LEB）是标准直播在超低延迟播放场景下的延伸，比传统直播协议延迟更低，为观众提供毫秒级的极致直播观看体验。 能够满足一些对延迟性能要求更高的特定场景需求，例如在线教育、体育赛事直播、在线答题等。 
 
-<img src="https://sdk-liteav-1252463788.cos.ap-hongkong.myqcloud.com/doc/res/mlvb/picture/compare.gif">
+
 
 >?
 >- 上图为快直播和标准的 CDN 直播的真实对比视频（使用 [scrcpy 工具](https://github.com/Genymobile/scrcpy) 配合录制），从左至右分别为：标准的 CDN 直播、**快直播**、推流端。
@@ -53,6 +53,7 @@
 >? Demo 演示和体验步骤以 Android 为例，iOS Demo 界面略有不同。
 
 [](id:code)
+
 ### 源码及示例
 <table>
   <tr>
@@ -66,12 +67,12 @@
     <td><img width="150" src="https://main.qcloudimg.com/raw/6790ddaf4ffe4afd0ceb96b309a16496.png"> </td>
     <td rowspan="2">
       <div align="center">
-        <img  width="200" src="https://sdk-liteav-1252463788.cos.ap-hongkong.myqcloud.com/doc/res/mlvb/picture/push.gif"/>
+        <img  width="200" src="https://main.qcloudimg.com/raw/75573ec26ca0b75279cdff60daadfcf9.png"/>
       </div>
     </td>
     <td rowspan="2">
       <div align="center">
-        <img  width="200"  src="https://sdk-liteav-1252463788.cos.ap-hongkong.myqcloud.com/doc/res/mlvb/picture/pull.gif"/>
+        <img  width="200"  src="https://main.qcloudimg.com/raw/a32537c628d4d40e918e0cc20e929357.png"/>
       </div>
     </td>
   </tr>
@@ -80,6 +81,7 @@
     <td style="text-align:center;"><img src="https://main.qcloudimg.com/raw/12c7da97cc910eda673cb19b66fc7cb3.png" width="150"></td>
   </tr>
 </table>
+
 
 >?除上述示例外，针对开发者的接入反馈的高频问题，腾讯云提供有更加简洁的 API-Example 工程，方便开发者可以快速的了解相关 API 的使用，欢迎使用。
 >- iOS：[MLVB-API-Example](https://github.com/tencentyun/MLVBSDK/tree/master/iOS/MLVB-API-Example) 
@@ -93,14 +95,14 @@
 3. 成功推流之后，点击右上角的二维码图标，可以获取播放地址，其中【快直播】就是用于快直播的播放地址。
 4. 成功开始推流后，可单击右下侧的菜单按钮，进行美颜、BGM、切换摄像头等设置操作。 
 
-![](https://sdk-liteav-1252463788.cos.ap-hongkong.myqcloud.com/doc/res/mlvb/picture/leb_push_flow.png)
+
 
 ### 播放体验
 1. 下载 [视频云工具包](https://intl.cloud.tencent.com/document/product/1071/38147)，安装登录后，进入【快直播播放】中。
 2. 允许相关权限申请，单击二维码扫描按钮，扫描【推流体验】中得到的快直播播放地址。
 3. 扫描完成后即开始播放，播放成功后，可单击右下侧的菜单按钮，进行静音、设置等操作。
 
-![](https://sdk-liteav-1252463788.cos.ap-hongkong.myqcloud.com/doc/res/mlvb/picture/leb_pull_flow.png)
+
 
 
 ## 接入工程

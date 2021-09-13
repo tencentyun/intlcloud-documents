@@ -95,7 +95,7 @@ mLivePlayer.setRenderRotation(V2TXLiveRotation0);
 :::
 </dx-codeblock>
 
-![](https://main.qcloudimg.com/raw/89e7b5b2b6b944fe8377cf9f2bcff573.jpg)
+![](https://main.qcloudimg.com/raw/6cddb671d6e5bc6e87d48e9ca3eed42a.png)
 
 [](id:step5)
 
@@ -121,7 +121,7 @@ mLivePlayer.stopPlay();
 [](id:step7)
 ### 步骤7：屏幕截图
 通过调用 **snapshot** 您可以截取当前直播画面为一帧屏幕，此功能只会截取当前直播流的视频画面，如果您需要截取当前的整个 UI 界面，请调用 Android 的系统 API 来实现。
-![](https://main.qcloudimg.com/raw/1439eff8e2b9629abf92960e1b784f56.jpg)
+![](https://main.qcloudimg.com/raw/faaef46a80988270d3ddc96ec4e578b9.png)
 
 ```java
 mLivePlayer.setObserver(new MyPlayerObserver());

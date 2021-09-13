@@ -175,7 +175,7 @@ V2TXLivePusher 提供了一组 API 用户控制设备的行为。您通过 `getD
 ### 11. 观众端的镜像效果    
 
 通过调用 V2TXLivePusher 的 [setRenderMirror](http://doc.qcloudtrtc.com/group__V2TXLivePusher__android.html#afd909d85fd0dda0db4078692b319681f) 可以改变摄像头的镜像方式，继而影响观众端观看到的镜像效果。之所以说是观众端的镜像效果，是因为当主播在使用前置摄像头直播时，默认情况下自己看到的画面会被 SDK 反转，这时主播就像照镜子一样，观众看到的效果和主播看到的是一致的。如下图所示：
-![](https://main.qcloudimg.com/raw/e9841250668a9057d638ee67d0b0afee.png)   
+![](https://main.qcloudimg.com/raw/520d16280962523809e5695d2483d9ef.png)   
 
 [](id:step12)
 ### 12. 横屏推流    
@@ -195,7 +195,7 @@ mLivePusher.setVideoQuality(mVideoResolution, isLandscape ? V2TXLiveVideoResolut
 - 调用 TXAudioEffectManager 中的 `setVoiceReverbType` 接口可以设置混响效果，例如 KTV、会堂、磁性、金属等，这些效果也会作用到观众端。
 - 调用 TXAudioEffectManager 中的 `setVoiceChangerType` 接口可以设置变调效果，例如“萝莉音”，“大叔音”等，用来增加直播和观众互动的趣味性，这些效果也会作用到观众端。
 
-![](https://main.qcloudimg.com/raw/a90a110e2950568b9d7cd6bef8e0893b.png)
+![](https://main.qcloudimg.com/raw/f8282bd6e1ba20e1e902bad52fa3131f.png)
 >? 详细用法请参见 [TXAudioEffectManager API](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXDeviceManager__android.html)。
 
 ### 14. 设置 Logo 水印  

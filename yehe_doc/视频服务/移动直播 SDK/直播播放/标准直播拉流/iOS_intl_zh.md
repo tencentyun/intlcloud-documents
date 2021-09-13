@@ -97,7 +97,7 @@ NSString* url = @"http://2157.liveplay.myqcloud.com/live/2157_xxxx.flv";
 <td>顺时针旋转270度</td>
 </tr></table>
 
-![](https://main.qcloudimg.com/raw/f3c65504a98c38857ff3e78bcb6c9ae9.jpg)
+![](https://main.qcloudimg.com/raw/6cddb671d6e5bc6e87d48e9ca3eed42a.png)
 
 [](id:step5)
 ### 步骤5：暂停播放
@@ -123,7 +123,7 @@ NSString* url = @"http://2157.liveplay.myqcloud.com/live/2157_xxxx.flv";
 [](id:step7)
 ### 步骤7：屏幕截图
 通过调用 **snapshot** 您可以截取当前直播画面为一帧屏幕通过 V2TXLivePlayerObserver 的 [onSnapshotComplete](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__V2TXLivePlayerObserver__ios.html#a5754eb816b91fd0d0ac1559dd7884dad) 回调截屏图片，此功能只会截取当前直播流的视频画面，如果您需要截取当前的整个 UI 界面，请调用 iOS 的系统 API 来实现。
-![](https://main.qcloudimg.com/raw/d86e665e3fc709c07d170e2ab3e2a7ef.jpg)
+![](https://main.qcloudimg.com/raw/06c0df9f2efb56c0f917dea24b658c59.png)
 ```
 ...
 [_txLivePlayer setObserver:self];

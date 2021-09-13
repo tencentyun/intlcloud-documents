@@ -23,7 +23,7 @@
 1. 打开控制中心，长按屏幕录制按钮，选择【视频云工具包】。
 2. 打开【视频云工具包】>【推流演示（录屏推流）】，输入推流地址或单击【New】自动获取推流地址，单击【开始推流】。
 
-![](https://main.qcloudimg.com/raw/822ccd7c5acbcbf25e8fb148a6db74d7.png)
+
 
 推流设置成功后，顶部通知栏会提示推流开始，此时您可以在其它设备上看到该手机的屏幕画面。单击手机状态栏的红条，即可停止推流。
 
@@ -200,20 +200,20 @@ ReplayKit2 录屏只唤起 upload 直播扩展，直播扩展不能进行 UI 操
 - (void)sendLocalNotificationToHostAppWithTitle:(NSString*)title msg:(NSString*)msg userInfo:(NSDictionary*)userInfo
 {
     UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
-    
+  
     UNMutableNotificationContent* content = [[UNMutableNotificationContent alloc] init];
     content.title = [NSString localizedUserNotificationStringForKey:title arguments:nil];
     content.body = [NSString localizedUserNotificationStringForKey:msg  arguments:nil];
     content.sound = [UNNotificationSound defaultSound];
     content.userInfo = userInfo;
-    
+  
     // 在设定时间后推送本地推送
     UNTimeIntervalNotificationTrigger* trigger = [UNTimeIntervalNotificationTrigger
                                                   triggerWithTimeInterval:0.1f repeats:NO];
-    
+  
     UNNotificationRequest* request = [UNNotificationRequest requestWithIdentifier:@"ReplayKit2Demo"
                                                                           content:content trigger:trigger];
-    
+  
     //添加推送成功后的处理！
     [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
         
@@ -261,10 +261,10 @@ static void onDarwinReplayKit2PushStart(CFNotificationCenterRef center,
 {
 //通过 NSUserDefault 或剪贴板拿到宿主要传递的数据
 //    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:kReplayKit2AppGroupId];
-    
+  
     UIPasteboard* pb = [UIPasteboard generalPasteboard];
     NSDictionary* defaults = [self jsonData2Dictionary:pb.string];
-    
+  
     s_rtmpUrl = [defaults objectForKey:kReplayKit2PushUrlKey];
     s_resolution = [defaults objectForKey:kReplayKit2ResolutionKey];
     if (s_resolution.length < 1) {

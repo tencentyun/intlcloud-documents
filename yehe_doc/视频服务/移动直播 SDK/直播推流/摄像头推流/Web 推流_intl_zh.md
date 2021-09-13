@@ -8,7 +8,7 @@ TXLivePusher 推流 SDK 主要用于视频云的快直播（超低延迟直播�
 
 使用腾讯云直播服务时，推流地址需要满足腾讯云标准直播推流 URL 的格式 ，如下所示，它由四个部分组成：
 
-![](https://main.qcloudimg.com/raw/44bf2ab0ddae946b440faa4fc2f6d43a.png)
+![](https://main.qcloudimg.com/raw/c2ea59c7bd0d42c729e67dea5ec73e9d.png)
 
 其中鉴权 Key 部分非必需，如果需要防盗链，请开启推流鉴权，具体使用说明请参见  [自主拼装直播 URL](https://intl.cloud.tencent.com/document/product/267/38393) 。
 
