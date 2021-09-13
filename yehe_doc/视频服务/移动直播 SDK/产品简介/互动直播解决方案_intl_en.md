@@ -44,5 +44,3 @@ Interactive Live Streaming is a new one-stop solution for real-time mic connect 
 ## Architecture
 
 ![](https://main.qcloudimg.com/raw/510a784c9d15fddc136ea89be3dfb7aa.png)
-
->! The mic connect feature must be unlocked with an MLVB SDK license. You also need to [purchase](https://buy.cloud.tencent.com/mobilelive?urlctr=yes&basepack=10tb) a mic connect package and, for room management capabilities, activate IM.
