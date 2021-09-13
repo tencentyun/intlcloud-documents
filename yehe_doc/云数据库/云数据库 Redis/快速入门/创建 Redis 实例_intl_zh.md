@@ -5,6 +5,7 @@
 已注册腾讯云账号并完成实名认证。
 - 如需注册腾讯云账号：
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://intl.cloud.tencent.com/register?s_url=https%3A%2F%2Fcloud.tencent.com%2F" target="_blank"  style="color: white; font-size:16px;" hotrep="document.guide.3128.btn1">点此注册腾讯云账号</a></div>
+
 - 如需完成实名认证：
 <div style="background-color:#00A4FF; width: 170px; height: 35px; line-height:35px; text-align:center;"><a href="https://console.cloud.tencent.com/developer" target="_blank"  style="color: white; font-size:16px;"  hotrep="document.guide.3128.btn2">点此完成实名认证</a></div>
 
@@ -16,16 +17,16 @@
  - **兼容版本**：兼容 Redis 2.8、4.0、5.0。2.8版暂停售卖，建议您选择4.0及以上版本，如需购买2.8版本请 [提交工单](https://console.cloud.tencent.com/workorder/category) 申请。
  - **架构版本**：支持标准架构、集群架构。
  - **副本数量**：Redis 2.8 标准版支持0 - 1个副本。Redis 4.0、5.0 标准版支持1 - 5个副本。Redis 4.0、5.0 集群版支持1 - 5个副本。
-  - **网络类型**：云数据库 Redis 所属网络，建议您选择与云服务器同一个地域下的同一私有网络，实例购买后支持基础网络转换为 VPC 网络，不支持 VPC 网络转换为基础网络。
- - **可用区**：选择主节点和副本组的可用区，相对单可用区实例，多可用区实例具有更高的可用性和容灾能力，请参见 [多可用区部署](https://cloud.tencent.com/document/product/239/51090)。
+  - **网络类型**：云数据库 Redis 所属网络，建议您选择与云服务器同一个地域下的同一 [私有网络](https://intl.cloud.tencent.com/document/product/215)，实例购买后支持基础网络转换为 VPC 网络，不支持 VPC 网络转换为基础网络。
+ - **可用区**：选择主节点和副本组的可用区，相对单可用区实例，多可用区实例具有更高的可用性和容灾能力，请参见 [多可用区部署](https://intl.cloud.tencent.com/document/product/239/39812)。
  - **端口**：自定义端口号需在1024到65535之间。
- - **指定项目/安全组**：指定数据库的项目和[[安全组](https://cloud.tencent.com/document/product/239/30911)。
+ - **参数模板**：通过使用参数模板，您可以实现批量参数设置，请参见 [使用参数模板](https://intl.cloud.tencent.com/document/product/239/41810)。
+ - **指定项目/安全组**：指定数据库的项目和 [安全组](https://intl.cloud.tencent.com/document/product/239/31945)。
  - **实例名/设置密码**：实例名和密码支持直接设置和创建完后在实例列表进行设置。
 2. 购买完成后，返回实例列表，待实例状态显示为“运行中”，即可正常使用。
 3. （可选）修改实例名，在实例列表的“实例 ID / 名称”列，单击以下小图标可修改实例名。
 ![](https://main.qcloudimg.com/raw/8a6917c05adb4e06731dbdd836c620da.png)
 
 ## 后续步骤
-- 使用云服务器 CVM 直接访问云数据库的内网地址，请参见 [连接 Redis 数据库](https://intl.cloud.tencent.com/zh/document/product/239/9897)。
-- 通过具备外网 IP 的云服务器 CVM 进行端口转发，来实现外网连接 Redis 实例，请参见 [iptable 转发](https://intl.cloud.tencent.com/document/product/239/35905)。
-
+- 使用云服务器 CVM 直接访问云数据库的内网地址，请参见 [连接 Redis 实例（内网）](https://intl.cloud.tencent.com/document/product/239/9897)。
+- 通过具备外网 IP 的云服务器 CVM 进行端口转发，来实现外网连接 Redis 实例，请参见 [连接 Redis 实例（外网）](https://intl.cloud.tencent.com/document/product/239/35905)。

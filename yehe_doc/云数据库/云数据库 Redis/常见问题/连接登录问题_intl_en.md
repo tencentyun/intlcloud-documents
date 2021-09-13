@@ -1,30 +1,44 @@
+### How do I connect to a TencentDB for Redis instance?
+You can connect to a TencentDB for Redis instance using a client tool, the database management center (DMC), and SDKs supporting various programing languages. For more information, see [Connecting to TencentDB for Redis Instances](https://cloud.tencent.com/document/product/239/30877).
 
 ### What should I do if the connection to TencentDB for Redis failed?
->?
->- When a CVM instance is used to access the private network address of a TencentDB instance, both instances should be under the same account in the same VPC in the same region, or both in the classic network.
->- CVM and TencentDB instances in different VPCs (under the same or different accounts in the same or different regions) can be interconnected over private network through [Peering Connection](https://intl.cloud.tencent.com/document/product/553/18827).
->- TencentDB for Redis doesn't support public network address currently. To connect to TencentDB for Redis instances over public network, please see [iptables Forwarding](https://intl.cloud.tencent.com/document/product/239/35905).
+Common causes of connection failure: network/security group issues, password issues, and connection issues (i.e., the maximum number of connections has been reached). For corresponding solutions, see [Redis Instance Connection Failure](https://cloud.tencent.com/document/product/239/58020).
+
+### How can TencentDB for Redis support private network access? How do I view the private network address of my instance?
+To support private network access: the CVM and TencentDB instances must be under the same account and in the same VPC in the same region, or both in the classic network.
+
+To view the private network address: log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), view the address in the instance list, or click an instance ID and view the address on the displayed instance details page.
+
+### Can my CVM instance connect to TencentDB for Redis over the private network?
+1. The following conditions must be met to use the private network connection:
+The CVM and TencentDB instances must be under the same account and in the same VPC in the same region, or both in the classic network.
+2. You can check whether they are in the same VPC or both in the classic network in the following ways:
+ - You can log in to the [CVM console](https://console.cloud.tencent.com/cvm/instance), and view the network information of a CVM instance in the instance list or on the instance details page.
+ - You can log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), and view the network information of a Redis instance in the instance list or on the instance details page.
+ For more information, see [Viewing network type and VPC information](https://cloud.tencent.com/document/product/239/58020#wllxvpdff).
+
+### What should I do if my CVM and TencentDB for Redis instances are in different VPCs?
+You can interconnect them through CCN or iptable-based forwarding.
+- CVM and TencentDB instances in different VPCs (under the same or different accounts in the same or different regions) can be interconnected over the private network through [Cloud Connect Network](https://cloud.tencent.com/document/product/877).
+- You can also interconnect them over the public network through iptable-based forwarding. For more information, see [Connecting to TencentDB for Redis Instances (over Public Network)](https://intl.cloud.tencent.com/document/product/239/35905).
+>?iptable-based forwarding may be unstable; therefore, you are not recommended to access instances over the public network in the production environment.
 >
-Common reasons for connection failure are as follows:
-- The TencentDB for Redis and CVM instances are under different accounts. They are better to be under the same account and in the same VPC in the same region.
-- The TencentDB for Redis and CVM instances are in different regions. They are better to be under the same account and in the same VPC in the same region.
-- The TencentDB for Redis and CVM instances are in different VPCs. Please change the network as instructed in [Configuring Network](https://intl.cloud.tencent.com/document/product/239/31944).
-- The security group rule of the CVM instance blocks access to the private network address and port of the TencentDB for Redis instance. Please modify the rule as instructed in [Configuring Security Group](https://intl.cloud.tencent.com/document/product/239/31945).
 
-### How do I connect to my TencentDB for Redis instance if it is deployed in the same region as the CVM instance?
-In this case, please use the private network for access. For more information, please see [Connecting to Instance (over Private Network)](https://intl.cloud.tencent.com/document/product/239/9897).
+### My CVM and TencentDB for Redis instances are in different regions (such as Guangzhou and Shanghai, respectively). Can I use a private network for connection?
+If CVM and Redis instances are in different [regions](https://intl.cloud.tencent.com/document/product/239/4106), they are in different VPCs, so they cannot interconnect directly over the private network. We recommend that you use [CCN](https://cloud.tencent.com/document/product/877) to connect the VPCs.
 
-### How do I connect to my TencentDB for Redis instance if it is deployed in a different region from the CVM instance?
-For communication between classic network and VPC, please see [Classiclink](https://intl.cloud.tencent.com/document/product/215/31807).
-For communication between VPCs, please see [Peering Connection](https://intl.cloud.tencent.com/document/product/553/18827).
+### My CVM and TencentDB for Redis instances are in different AZs (such as Shanghai Zone 2 and Shanghai Zone 1, respectively) in the same region. Can I use a private network for connection?
+Even if the CVM and TencentDB for Redis instances are in the same region, they may be in different VPCs.
+- If they are in different AZs in the same VPC, they can interconnect over the private network.
+- If they are in different VPCs (such as VPC 1 and VPC 2, respectively), they cannot interconnect over the private network. For solutions, see [Redis Network Change](https://intl.cloud.tencent.com/document/product/239/31944).
 
-### What should I do if my TencentDB for Redis instance is unpingable? 
-Redis prohibits `ping` by default. You can use telnet to check connectivity.
+### My CVM and TencentDB for Redis instances are in different AZs (such as Shanghai Zone 2 and Shanghai Zone 1, respectively) in the same VPC. Can I use a private network for connection?
+Yes. Instances in different AZs but in the same VPC interconnect over the private network by default.
 
-### How do I enable access to TencentDB for Redis over the public network? 
-TencentDB for Redis doesn't support public network address currently. If you want to access it over the public network, you can do so through the [iptable proxy](https://intl.cloud.tencent.com/document/product/239/35905) on a CVM instance that has public network access.
->?Port forwarding with iptables is not stable, so we do not recommend this public network access solution in a production environment.
+### My CVM and TencentDB for Redis instances are under different accounts. Can I use a private network for connection?
+No. Because instances under different accounts are in different VPCs. We recommend that you use [CCN](https://cloud.tencent.com/document/product/877) for connection.
 
-### How do I view the private network address?
-Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis) and view it in the instance list. You can also click an instance ID to enter the **Instance Details** page and view it.
+### How do I enable access to Redis over a public network? 
+TencentDB for Redis does not support public network access for the time being. If you want to access it over the public network, you can do so through the [iptable proxy](https://intl.cloud.tencent.com/document/product/239/35905) on a CVM instance that has public network access.
+>?iptable-based forwarding may be unstable; therefore, you are not recommended to access instances over the public network in the production environment.
 

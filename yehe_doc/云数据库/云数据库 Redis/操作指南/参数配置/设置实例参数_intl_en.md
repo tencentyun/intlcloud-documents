@@ -1,28 +1,30 @@
-This document describes how to modify parameters of TencentDB for Redis instances in the console.
+This document describes how to configure instance parameters in the TencentDB for Redis console.
 
 ## Overview
 Some of the parameters of TencentDB for Redis instances can be customized. In the [console](https://console.cloud.tencent.com/redis), you can view and modify these parameters and view their modification history.
 
->?To ensure instance stability, only some parameters can be modified in the console. These parameters are displayed on the **Parameter Configuration** page.
+>?To ensure instance stability, only some parameters can be modified in the console. These parameters are displayed on the **Parameter Settings** page.
 
 ## Modifying Parameters
 ### [Modifying one parameter](id:xgdgcs)
-1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis) and click an instance ID in the instance list to enter the instance management page.
-2. On the **Parameter Configuration** > **Modifiable Parameters** tab on the instance management page, locate the desired parameter in the parameter list and click <img src="https://main.qcloudimg.com/raw/788902e3f8c335cf17de420f7181c2a8.png"  style="margin:0;"> in the **Current Value** column.
+1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), click an instance ID in the instance list, and enter the instance management page.
+2. On the **Parameter Settings** > **Modifiable Parameters** tab, locate the desired parameter in the parameter list and click <img src="https://main.qcloudimg.com/raw/788902e3f8c335cf17de420f7181c2a8.png"  style="margin:0;"> in the **Current Value** column.
 ![](https://main.qcloudimg.com/raw/1c715f076679b7aa7405b7dc35e744f5.png)
 3. Modify the value within the restrictions stated in the **Acceptable Values** column and click <img src="https://main.qcloudimg.com/raw/1f4c7f2e0744bc601efb5d9fb04a7a04.png"  style="margin:0;"> to save the modification. You can click <img src="https://main.qcloudimg.com/raw/2106cb4b9337a1a2fff5908581d2a908.png"  style="margin:0;"> to cancel the modification.
 ![](https://main.qcloudimg.com/raw/b3cd3751c3b57a4e2fa5bee19dd82198.png)
 
-### [Batch modifying parameters](id:plxgcs)
-1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis) and click an instance ID in the instance list to enter the instance management page.
-2. On the instance management page, select the **Parameter Configuration** tab and click **Modify Current Value**.
+### Modifying parameters in batches
+1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), click an instance ID in the instance list, and enter the instance management page.
+2. On the **Parameter Settings** > **Modifiable Parameters** tab, click **Modify Current Value**.
 ![](https://main.qcloudimg.com/raw/c9dcf38d03f68dae0b8b56b291c14f98.png)
 3. Locate the desired parameters and modify their values in the **Current Value** column. After confirming that everything is correct, click **OK**.
 ![](https://main.qcloudimg.com/raw/e078a0b0108606456b2e569084ccab5e.png)
 
-## Viewing Parameter Modification Log
-1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis) and click an instance ID in the instance list to enter the instance management page.
-2. View the parameter modification history in **Parameter Configuration** > **Modification Log**.
+
+
+## Viewing Parameter Modification Logs
+1. Log in to the [TencentDB for Redis console](https://console.cloud.tencent.com/redis), click an instance ID in the instance list, and enter the instance management page.
+2. View the parameter modification history on the **Parameter Settings** > **Modification Log** tab.
 ![](https://main.qcloudimg.com/raw/91089fb8d13721731d18a804fcaded3a.png)
 
 ## Supported Custom Parameters
@@ -41,7 +43,7 @@ Some of the parameters of TencentDB for Redis instances can be customized. In th
 <li>allkeys-random: randomly evict keys.
 <li>volatile-ttl: evict keys with an expire set, and try to evict keys with a shorter time to live (TTL) first.
 <li>noeviction: do not evict keys but return errors when the memory limit was reached.
-<br>LRU and TTL are implemented by randomized and approximation algorithms.	</td>
+<br>LRU and TTL are implemented by randomized and approximation algorithms.</td>
 <td>Redis 2.8, 4.0, and 5.0</td></tr>
 <tr>
 <td>cluster-node-timeout</td>
@@ -119,3 +121,5 @@ Some of the parameters of TencentDB for Redis instances can be customized. In th
 <li>The number of list elements is smaller than the value of `list-max-ziplist-entries`.</td>
 <td>Redis 2.8</td></tr>
 </table>
+
+

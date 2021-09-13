@@ -1,4 +1,4 @@
-本文为您介绍如何通过控制台修改 Redis 实例的参数配置。
+本文为您介绍如何通过控制台设置 Redis 的实例参数。
 
 ## 操作场景
 云数据库 Redis 支持自定义实例部分参数。您可以通过 [Redis 控制台](https://console.cloud.tencent.com/redis) 查看和修改支持的参数，并可以在控制台查看参数修改记录。
@@ -13,12 +13,14 @@
 3. 根据修改参数所在“参考值”列的提示，输入参数值，单击<img src="https://main.qcloudimg.com/raw/1f4c7f2e0744bc601efb5d9fb04a7a04.png"  style="margin:0;">保存，单击<img src="https://main.qcloudimg.com/raw/2106cb4b9337a1a2fff5908581d2a908.png"  style="margin:0;">可取消操作。
 ![](https://main.qcloudimg.com/raw/b3cd3751c3b57a4e2fa5bee19dd82198.png)
 
-### [批量修改参数](id:plxgcs)
+### 批量修改参数
 1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，单击实例 ID，进入实例管理页面。
 2. 在实例管理页面，选择【参数配置】页，单击【修改运行值】。
 ![](https://main.qcloudimg.com/raw/c9dcf38d03f68dae0b8b56b291c14f98.png)
-3. 在“当前参数运行值”列，选择需要修改的参数进行修改，确认修改无误后，单击【确认】，参数将被修改。
+3. 在“当前参数运行值”列，选择需要修改的参数进行修改，确认修改无误后，单击【确定】，参数将被修改。
 ![](https://main.qcloudimg.com/raw/e078a0b0108606456b2e569084ccab5e.png)
+
+
 
 ## 查看参数修改记录
 1. 登录 [Redis 控制台](https://console.cloud.tencent.com/redis)，在实例列表，单击实例 ID，进入实例管理页面。
@@ -45,7 +47,7 @@
 <td>Redis2.8、4.0、5.0</td></tr>
 <tr>
 <td>cluster-node-timeout</td>
-<td>设置群集节点超时时间，即集群中一个节点不可达的时间（毫秒），才能将该节点视为处于故障状态。</td>
+<td>设置集群节点超时时间，即集群中一个节点不可达的时间（毫秒），才能将该节点视为处于故障状态。</td>
 <td>Redis4.0、5.0</td></tr>
 <tr>
 <td>hash-max-ziplist-entries</td>
@@ -119,3 +121,5 @@
 <li>链表集合对象保存的元素数量，均小于 list-max-ziplist-entries 指定值。</td>
 <td>Redis2.8</td></tr>
 </table>
+
+

@@ -1,6 +1,16 @@
+## July 2021
+<table>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
+<tr>
+<td>Parameter templates are supported</td>
+<td>Besides the system parameter templates provided by TencentDB for Redis, you can now create custom parameter templates to configure parameters in batches as needed.</td>
+<td>2021-07</td>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/41810" target="_blank">Managing Parameter Templates</a></td></tr>
+</table>
+
 ## June 2021
 <table>
-<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
 <tr>
 <td>Auto-failover is now supported</td>
 <td>TencentDB for Redis supports the auto-failover feature for proxy nodes and Redis server nodes to ensure service availability.</td>
@@ -10,7 +20,7 @@
 <td>Auto-failback is now supported</td>
 <td>TencentDB for Redis provides the auto-failback feature for instances deployed across AZs. After the feature is enabled, if the master node is switched from the master AZ or master node group (cluster architecture) to another AZ or group after a failover occurs, it will be automatically switched back, simplifying subsequent OPS operations.</td>
 <td>2021-06</td>
-<td><a href="hhttps://intl.cloud.tencent.com/document/product/239/41051" target="_blank">Auto-Failback</a></td></tr>
+<td><a href="https://intl.cloud.tencent.com/document/product/239/41051" target="_blank">Auto-Failback</a></td></tr>
 <tr>
 <td>You can now manually promote a replica node/node group to master node/node group</td>
 <td>For multi-AZ deployed TencentDB for Redis instances in the standard/cluster architecture, you can manually promote a replica node/node group to master node/node group. You can deploy the master node in a specified AZ/node group.</td>
@@ -25,7 +35,7 @@
 
 ## March 2021
 <table>
-<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
 <tr>
 <td>Five-second monitoring granularity is supported</td>
 <td>TencentDB for Redis now supports the five-second monitoring granularity. After the monitoring granularity of an instance is adjusted to five seconds, the monitoring metrics, proxy, and alarm policies of the instance, and the method of viewing monitoring data in the Cloud Monitor console will change.</td>
@@ -36,7 +46,7 @@
 ## December 2020
 
 <table>
-<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Document</th></tr>
+<tr><th width=20%>Update</th><th width=50%>Description</th><th width=10%>Release Date</th><th width=20%>Documentation</th></tr>
 <tr>
 <td>TencentDB for Redis Hybrid Storage Edition has been renamed TencentDB for Tendis</td>
 <td>TencentDB for Redis Hybrid Storage Edition has been renamed TencentDB for Tendis. You can access TencentDB for Tendis in its own console.</td>
