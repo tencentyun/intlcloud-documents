@@ -49,7 +49,7 @@ You can download the latest source codes of IM SDKs and demos.
 <td style="text-align:center">Web & HTML5  </td>
 <td style="text-align:center" ><a href="https://www.npmjs.com/package/tim-js-sdk">npm (recommended)</a></td>
 <td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/Web/IMSDK">GitHub</a></td>
-<td style="text-align:left" rowspan='3' ><a href="https://github-1252463788.cos.ap-shanghai.myqcloud.com/imsdk/TIMSDK.zip">ZIP</a></td>
+<td style="text-align:left" rowspan='3' ><a href="hhttps://im.sdk.qcloud.com/download/github/TIMSDK.zip">ZIP</a></td>
 <td style="text-align:center" rowspan='2'><a href="https://intl.cloud.tencent.com/document/product/1047/34309">SDK Integration (Web & Mini Program)</a> </td>
 <td style="text-align:center" rowspan='3'><a href="https://intl.cloud.tencent.com/document/product/1047/34281">Update Log (Web & Mini Program)</a> </td>
 </tr>
@@ -60,7 +60,7 @@ You can download the latest source codes of IM SDKs and demos.
 </tr>
 <tr>
 <td style="text-align:center">Web SDK upload plugin </td>
-<td style="text-align:center" ><a href="https://www.npmjs.com/package/tim-upload-plugin">npm (recommended)</a></td>
+<td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/Web/Demo/sdk">npm (recommended)</a></td>
 <td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/Web/Demo/sdk">GitHub</a></td>
 <td style="text-align:center" >-</td>
 </tr>
@@ -84,7 +84,7 @@ IM demos demonstrate IM features in various scenarios. You can [install](https:/
 <td style="text-align:center" rowspan='4' th width="155px">Includes all IM features and the capability to co-anchor in a live stream in a group.</td>
 <td style="text-align:center" >Android</td>
 <td style="text-align:center" ><a href="https://github.com/tencentyun/TIMSDK/tree/master/Android">GitHub (recommended)</a></td>
-<td style="text-align:center" rowspan='4' ><a href="https://github-1252463788.cos.ap-shanghai.myqcloud.com/imsdk/TIMSDK.zip">ZIP</a></td>
+<td style="text-align:center" rowspan='4' ><a href="https://im.sdk.qcloud.com/download/github/TIMSDK.zip">ZIP</a></td>
 <td style="text-align:left" rowspan='4'><a href="https://intl.cloud.tencent.com/document/product/1047/34553">Demo Quick Start</a></td>
 </tr>
 <tr>
@@ -120,7 +120,7 @@ IM demos demonstrate IM features in various scenarios. You can [install](https:/
 <td style="text-align:center" >Includes interactive capabilities such as starting live streaming and giving likes.</td>
 <td style="text-align:center" >HTML5 and Web</td>
 <td style="text-align:center" ><a href="https://github.com/tencentyun/TWebLive">GitHub (recommended)</a></td>
-<td style="text-align:center" ><a href="https://webim-1252463788.cos.ap-shanghai.myqcloud.com/TWebLive-demo.zip?_ga=1.23181178.1931537.1590743323">ZIP</a></td>
+<td style="text-align:center" ><a href="https://web.sdk.qcloud.com/component/tweblive/download/TWebLive-demo.zip">ZIP</a></td>
 <td style="text-align:left" ><a href="https://intl.cloud.tencent.com/document/product/1047/38174">Quick TWebLive Run</a><br><a href="https://intl.cloud.tencent.com/document/product/1047/38175">TWebLive Component</a></td>
 </tr>
 </table>
