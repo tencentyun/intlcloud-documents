@@ -1,4 +1,4 @@
-﻿
+
 
 >!本文档仅针对 TRTC 低延时直播房间内的计费作出相关说明。若将 TRTC 房间内的音视频流旁路到云直播系统中，让观众通过直播 CDN 观看，将产生额外的费用，详情请参见 [CDN 直播观看 > 相关费用](https://intl.cloud.tencent.com/document/product/647/35242)。
 
@@ -54,7 +54,7 @@
 
 [](id:Billing_method)
 ## 计费方式
-即支付方式，TRTC 支持**预付费套餐包**和**后付费**，默认采用预付费套餐包。如需自助开启后付费支付方式，请参见相关 [文档](https://cloud.tencent.com/document/product/647/59756)。
+即支付方式，TRTC 支持**预付费套餐包**和**后付费**，默认采用预付费套餐包。如需自助开启后付费支付方式，请参见相关 [文档](https://intl.cloud.tencent.com/document/product/647/41979)。
 
 [](id:pre-payment)
 ### 预付费套餐包
@@ -77,75 +77,78 @@ TRTC 为您提供音视频通用套餐包，可按照**1:2:4:15**分别抵扣语
          <td style="text-align:center">0.99</td>
          <td style="text-align:center">0.960</td>
          <td style="text-align:center">24</td>   
-         <td style="text-align:center"><96%</td>     
+         <td style="text-align:center"><97%</td>     
      </tr> 
      <tr>
          <td style="text-align:center">250 </td>   
          <td style="text-align:center">0.99</td>
          <td style="text-align:center">0.908</td>
          <td style="text-align:center">227</td>   
-         <td style="text-align:center"><91%</td>   
+         <td style="text-align:center"><92%</td>   
      </tr> 
      <tr>
          <td style="text-align:center">1000 </td>   
          <td style="text-align:center">0.99</td>
          <td style="text-align:center">0.856</td>
          <td style="text-align:center">856</td>   
-         <td style="text-align:center"><85%</td>   
+         <td style="text-align:center"><87%</td>   
      </tr> 
      <tr>
          <td style="text-align:center">3000</td>   
          <td style="text-align:center">0.99</td>
          <td style="text-align:center">0.805</td>
          <td style="text-align:center">2416</td>   
-         <td style="text-align:center"><80%</td>   
+         <td style="text-align:center"><82%</td>   
      </tr> 
      <tr>
          <td style="text-align:center" rowspan="5">自定义套餐包</td>   
-         <td style="text-align:center">0 ＜ X ＜ 25</td>   
+         <td style="text-align:center">0 ＜ T ＜ 25</td>   
          <td style="text-align:center">0.99</td>
          <td style="text-align:center">0.99</td>
-         <td style="text-align:center" rowspan="5">套餐内单价乘以套餐包时长 X</td>   
+         <td style="text-align:center" rowspan="5">套餐内单价*套餐包时长 T</td>   
          <td style="text-align:center">100%</td>    
      </tr> 
      <tr>
-         <td style="text-align:center">25 ≤ X ＜ 250</td>   
+         <td style="text-align:center">25 ≤ T ＜ 250</td>   
          <td style="text-align:center">0.99</td>
          <td style="text-align:center">0.960</td>
-         <td style="text-align:center">96%</td>    
+         <td style="text-align:center"><97%</td>    
      </tr> 
      <tr>
-         <td style="text-align:center">250 ≤ X ＜ 1000</td>   
+         <td style="text-align:center">250 ≤ T ＜ 1000</td>   
          <td style="text-align:center">0.99</td>
          <td style="text-align:center">0.908</td>
-         <td style="text-align:center">91%</td>   
+         <td style="text-align:center"><92%</td>   
      </tr> 
      <tr>
-         <td style="text-align:center">1000 ≤ X ＜ 3000</td>
+         <td style="text-align:center">1000 ≤ T ＜ 3000</td>
          <td style="text-align:center">0.99</td>
          <td style="text-align:center">0.856</td>
-         <td style="text-align:center">85%</td>   
+         <td style="text-align:center"><87%</td>   
      </tr> 
      <tr> 
-         <td style="text-align:center">X ≥ 3000</td>   
+         <td style="text-align:center">T ≥ 3000</td>   
          <td style="text-align:center">0.99</td>
          <td style="text-align:center">0.805</td>
-         <td style="text-align:center">80%</td>   
+         <td style="text-align:center"><82%</td>   
      </tr> 
 </table>
+
+
 
 >?表格中套餐内单价按每千分钟单价向上取整精确到小数点后3位，实际计费按每分钟单价精确到小数点后8位。
 
 通用套餐包说明：
+
 - 通用套餐包的有效期为购买当日 - 次年当月最后一天。
- 例如，2020年05月01日购买的套餐包，其有效时间为2020年05月01日 - 2021年05月31日。
+ 例如，2021年05月01日购买的套餐包，其有效时间为2021年05月01日 - 2022年05月31日。
 - 通用套餐包可以叠加购买，根据各类型用量实际产生的时间实时从通用套餐包中扣除相应分钟数，优先使用先过期的套餐包进行抵扣。
 - 新购套餐包支付成功后5分钟左右生效，**新购套餐包生效后会立即扣除购买新套餐包当日0点起产生的未被其他套餐包抵扣过的用量**。
 - 为了不影响您线上业务的正常运行，**通用套餐包用完或过期后不会自动停服**，超出套餐包的用量将采用 [后付费](#post-payment) 的计费方式。
 - 所有通用套餐包到期后未消耗的分钟数将自动清零且无法恢复。
 
-
 [](id:post-payment)
+
 ### 后付费
 当服务用量无套餐包可抵扣或超出套餐包余量时，将采用后付费的方式，按 [刊例价](#Fixed_price) 计费。
 TRTC 后付费有 [日结](#daily) 和 [月结](#monthly) 两种结算周期：
@@ -158,6 +161,7 @@ TRTC 后付费有 [日结](#daily) 和 [月结](#monthly) 两种结算周期：
 [](id:monthly)
 #### 月结后付费
 2020年08月31日及之前首次在 TRTC 控制台创建 [应用](https://intl.cloud.tencent.com/document/product/647/37714) 的用户，后付费生效后默认采用**月结**方式结算。按月计费，每月01日 - 05日从您的账户余额中扣除前一月产生的费用，详情以 [计费账单](https://intl.cloud.tencent.com/document/product/555/7432) 为准。
+
 >!
 >- 结算周期无法自主变更，若您希望将月结变更为日结，可以 [提交工单](https://console.cloud.tencent.com/workorder/category) 寻求帮助。
 >- 若您的账户因余额不足而无法抵扣账单费用时，您使用的其他腾讯云服务也可能会因为账户欠费而自动停服。例如，云端录制依赖**云直播**和**云点播**，如果腾讯云账户欠费，将导致云端录制失败。
@@ -209,6 +213,7 @@ TRTC 后付费有 [日结](#daily) 和 [月结](#monthly) 两种结算周期：
   <td>-</td>
 </tr></table>
 
+
 #### 分析：
 - A 产生的用量及费用：
   - **A 产生的费用 = A 接收 B 的费用 + A 接收 C 的费用**
@@ -217,13 +222,13 @@ TRTC 后付费有 [日结](#daily) 和 [月结](#monthly) 两种结算周期：
   - A 产生的费用为 A 接收 B 的费用 + A 接收 C 的费用 = 0.0297 + 0.4497 = 0.4794 美元
 - B 产生的用量及费用：
   - **B 产生的费用 = B 接收 A 的费用 +  B 接收 C 的费用**
-  - B 接收 A 的费用 = 标清视频时长 × 标清时长 = 1.99美元/千分钟 × (30分钟 / 1000) = 0.0597 美元
+  - B 接收 A 的费用 = 标清视频时长单价 × 标清时长 = 1.99美元/千分钟 × (30分钟 / 1000) = 0.0597 美元
   - B 接收 C 的费用 = 超清时长单价 × 超清时长 = 14.99美元/千分钟 × (30分钟 / 1000）= 0.4497 美元
   - B 产生的费用为 = B 接收 A 的费用 +  B 接收 C 的费用 = 0.0597 + 0.4497= 0.5094 美元
 
 - C 产生的用量及费用：
   -  **C 产生的费用 = C 接收 A 的费用 +  C 接收 B 的费用**
-  -  C 接收 A 的费用 = 标清视频时长 × 标清时长 = 1.99美元/千分钟 × (30分钟 / 1000) =0.0597 美元
+  -  C 接收 A 的费用 = 标清视频时长单价 × 标清时长 = 1.99美元/千分钟 × (30分钟 / 1000) =0.0597 美元
   -  C 接收 B 的费用 = 语音时长单价 × 语音时长 = 0.99美元/千分钟 × (30分钟 / 1000）= 0.0297 美元
   -  C 产生的费用为 =  C 接收 A 的费用 +  C 接收 B 的费用 = 0.0597 + 0.0297 =0.0894 美元
 
@@ -231,12 +236,12 @@ TRTC 后付费有 [日结](#daily) 和 [月结](#monthly) 两种结算周期：
 
 [](id:estimate)
 ## 用量与费用预估
-您可以使用 [TRTC 价格计算器](https://buy.intl.cloud.tencent.com/pricing/trtc) 预估自己业务将产生的语音互动直播用量和费用。
+您可以使用 [TRTC 价格计算器](https://buy.intl.cloud.tencent.com/pricing/trtc) 预估自己业务将产生的视频互动直播用量和费用。
 1. 您可以根据业务需求，在 **语音互动直播、视频互动直播预估用量** 中输入 **平均每日房间数**、**平均每房间主播数**、**平均每房间观众数** 和 **平均每房间单次直播时长**。
 2. 选择使用类型为 **“标清SD”**、**“高清HD”** 或 **“超清HD+”**，可计算得到 **每月预估用量**。
-![](https://main.qcloudimg.com/raw/3e3600f737e7d2e4cb1c1832d7a638ed.png)
+![](https://main.qcloudimg.com/raw/871d7e1d43e83674f82a3960a079ff7c.png)
 3. 在 **费用预估** 中，可计算得到 **通用套餐包消耗量** 、采用后付费模式与预付费模式下的预估费用。
-![](https://main.qcloudimg.com/raw/e9b1180944e2a04b45655148da1d24af.png)
+![](https://main.qcloudimg.com/raw/6bcfdbe34129fcc143e8cb4bd49ff07e.png)
 
 
 

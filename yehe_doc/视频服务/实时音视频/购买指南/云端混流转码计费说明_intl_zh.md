@@ -2,7 +2,7 @@
 >- 2020年11月01日起首次在 TRTC 控制台创建 [应用](https://intl.cloud.tencent.com/document/product/647/37714) 的账号，**2020年11月01日**开始计费。
 >- 2020年11月01日**之前**首次在 TRTC 控制台创建 [应用](https://intl.cloud.tencent.com/document/product/647/37714) 的账号，延期至**2020年12月08日**开始计费。
 >- 本文档仅针对使用 [TRTC 提供的 MCU 集群进行云端混流转码](https://intl.cloud.tencent.com/document/product/647/34618) 产生的旁路转码费用作出相关说明。若您将 TRTC 的音视频流旁路推流到云直播后，再使用 [云直播提供的云端混流功能](https://intl.cloud.tencent.com/document/product/267/37665)，云直播将向您收取 [直播转码](https://intl.cloud.tencent.com/document/product/267/39604) 费用。
->- 若您将转码后输出的音视频流转推到云直播系统中，让观众 [实现 CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242)，云直播将向您收取 [流量/带宽](https://intl.cloud.tencent.com/zh/document/product/267/2818#.E6.B5.81.E9.87.8F.E5.B8.A6.E5.AE.BD) 费用。
+>- 若您将转码后输出的音视频流转推到云直播系统中，让观众 [实现 CDN 直播观看](https://intl.cloud.tencent.com/document/product/647/35242)，云直播将向您收取 [流量/带宽](https://intl.cloud.tencent.com/document/product/267/2818#.E6.B5.81.E9.87.8F.E5.B8.A6.E5.AE.BD) 费用。
 
 
 <span id="Billing_items"></span>
@@ -62,7 +62,11 @@ TRTC 云端混流转码服务的刊例价如下表所示：
 ## 相关文档
 
 - [计费概述](https://intl.cloud.tencent.com/document/product/647/34610)
-- [基础服务费用](https://intl.cloud.tencent.com/zh/document/product/647/34610)
-- [增值服务费用](https://intl.cloud.tencent.com/zh/document/product/647/34610)
+- [免费试用](https://intl.cloud.tencent.com/document/product/647/39784)
+- [语音互动直播计费说明](https://intl.cloud.tencent.com/document/product/647/39785)
+- [视频互动直播计费说明](https://intl.cloud.tencent.com/document/product/647/39786)
+- [语音通话计费说明](https://intl.cloud.tencent.com/document/product/647/39787)
+- [视频通话计费说明](https://intl.cloud.tencent.com/document/product/647/39788)
 - [云端录制计费说明](https://intl.cloud.tencent.com/document/product/647/38385)
-- [欠费停服说明](https://intl.cloud.tencent.com/document/product/647/34611)
+- [购买指引](https://intl.cloud.tencent.com/document/product/647/35440)
+- [计费常见问题](https://intl.cloud.tencent.com/document/product/647/39789)

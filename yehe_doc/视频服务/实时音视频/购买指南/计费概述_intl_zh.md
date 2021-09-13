@@ -12,11 +12,11 @@
 <li>支持主播与观众语音连麦互动。</li>
 <li>支持主播跨房间（跨直播间）PK。</li>
 <li>支持平滑上下麦，切换过程无需等待，主播延时小于300ms。</li>
-<li>单个房间可连麦人数无限制，最多支持30人同时连麦。</li>
+<li>单个房间可上麦人数无限制，最多支持50人同时连麦。</li>
 <li>低延时直播模式下，支持10万观众同时播放，播放延时低至1000ms。</li>
 <li>CDN 旁路直播模式下，观众数量无限制。</li>
 </ul></td>
-<td><a href="https://cloud.tencent.com/document/product/647/44248">语音互动直播计费说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/39785">语音互动直播计费说明</a></td>
 </tr>
 <tr>
 <td>视频互动直播</td>
@@ -24,25 +24,25 @@
 <li>支持主播与观众视频连麦互动。</li>
 <li>支持主播跨房间（跨直播间）PK。</li>
 <li>支持平滑上下麦，切换过程无需等待，主播延时小于300ms。</li>
-<li>单个房间可连麦人数无限制，最多支持30人同时连麦。</li>
+<li>单个房间可上麦人数无限制，最多支持50人同时连麦。</li>
 <li>低延时直播模式下，支持10万观众同时播放，播放延时低至1000ms。</li>
 <li>CDN 旁路直播模式下，观众数量无限制。</li>
 </ul></td>
-<td><a href="https://cloud.tencent.com/document/product/647/44247">视频互动直播计费说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/39786">视频互动直播计费说明</a></td>
 </tr>
 <tr>
 <td>语音通话</td>
 <td><ul style="margin:0">
 <li>即两人或多人语音通话，支持 48kHz，支持双声道。</li>
-<li>单个房间最多支持300人同时在线，最多支持30人同时开启麦克风。</li>
+<li>单个房间最多支持300人同时在线，最多支持50人同时开启麦克风。</li>
 </ul></td>
-<td><a href="https://cloud.tencent.com/document/product/647/44226">语音通话计费说明</a></td>
+<td><a href="https://intl.cloud.tencent.com/document/product/647/39787">语音通话计费说明</a></td>
 </tr>
 <tr>
 <td>视频通话</td>
 <td><ul style="margin:0">
 <li>即两人或多人视频通话，支持720P、1080P高清画质。</li>
-<li>单个房间最多支持300人同时在线，最多支持30人同时开启摄像头。</li></ul></td>
+<li>单个房间最多支持300人同时在线，最多支持50人同时开启摄像头。</li></ul></td>
 <td><a href="https://intl.cloud.tencent.com/document/product/647/39788">视频通话计费说明</a></td>
 </tr>
 </table>
@@ -58,4 +58,4 @@
 
 ## 免费试用
 
-自2019年10月11日起，首次在 [实时音视频控制台](https://console.cloud.tencent.com/trtc) 创建应用的腾讯云账号，可获赠一个10000分钟的免费试用包。免费试用包可用于抵扣 [视频通话](https://intl.cloud.tencent.com/document/product/647/39788)、[语音通话](https://intl.cloud.tencent.com/document/product/647/39787)、[视频互动直播](https://intl.cloud.tencent.com/document/product/647/39786)、[语音互动直播](https://intl.cloud.tencent.com/document/product/647/39785) 的服务用量，更多详情请参阅 [免费试用](https://intl.cloud.tencent.com/document/product/647/39784)。
+自2021年8月20日起，首次在 [实时音视频控制台](https://console.cloud.tencent.com/trtc) 创建应用的腾讯云账号，可获赠一个10000分钟的免费试用包。免费试用包可用于抵扣 [视频通话](https://intl.cloud.tencent.com/document/product/647/39788)、[语音通话](https://intl.cloud.tencent.com/document/product/647/39787)、[视频互动直播](https://intl.cloud.tencent.com/document/product/647/39786)、[语音互动直播](https://intl.cloud.tencent.com/document/product/647/39785) 的服务用量，更多详情请参阅 [免费试用](https://intl.cloud.tencent.com/document/product/647/39784)。

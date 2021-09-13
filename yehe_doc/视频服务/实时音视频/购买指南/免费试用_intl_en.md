@@ -1,22 +1,22 @@
 [](id:Free_trial_package)
 ## Free Trial
-Starting from October 11, 2019, Tencent Cloud accounts that create applications for the first time in the [TRTC console](https://console.cloud.tencent.com/trtc) will get a 10,000-minute free trial, which can be used for [video calls](https://intl.cloud.tencent.com/document/product/647/39788), [audio calls](https://intl.cloud.tencent.com/document/product/647/39787), [interactive live video streaming](https://intl.cloud.tencent.com/document/product/647/39786), and [interactive live audio streaming](https://intl.cloud.tencent.com/document/product/647/39785).
+Starting from August 20, 2021, accounts that create applications for the first time in the [TRTC console](https://console.cloud.tencent.com/trtc) will get a 10,000-minute free trial, which can be used for [video calls](https://intl.cloud.tencent.com/document/product/647/39788), [audio calls](https://intl.cloud.tencent.com/document/product/647/39787), [interactive live video streaming](https://intl.cloud.tencent.com/document/product/647/39786), and [interactive live audio streaming](https://intl.cloud.tencent.com/document/product/647/39785).
 
-Note:
-- The free trial period lasts from the day of acquisition until the last day of the same month next year.
- For example, if you acquired a free trial on May 1, 2020, it would be valid from May 1, 2020 to May 31, 2021.
-- The audio duration and the SD/HD/UHD video duration are **given the same weight** when it comes to deduction, meaning that your actual usage (in minutes) of TRTC services is deducted from the trial package.
-- **Once the trial package is exhausted, the services will be suspended for your account**. This is to avoid cases where you overuse the trial package and incur costs without knowing. To continue using the services, you need to [purchase a package](https://buy.cloud.tencent.com/trtc). After payment, the package will take effect in about 5 minutes, and TRTC will be activated automatically for your account.
+Notes:
+- The free trial is valid from the day it is offered to the last day of the same month next year.
+ For example, if you got a free trial on May 1, 2021, it would be valid from May 1, 2021 to May 31, 2022.
+- Audio duration and SD/HD/FHD video duration are all deducted **1:1** from your trial package. That is to say, for 1 minute of audio duration or SD/HD/FHD duration used, 1 minute is deducted from your trial package.
+- When creating your first application in the [TRTC console](https://console.cloud.tencent.com/trtc/quickstart), you can select **Do not suspend services. You will be billed at pay-as-you-go rates.** or go to **[Application Management](https://console.cloud.tencent.com/trtc/app)**, select **Application Info**, and enable the pay-as-you-go mode. For detailed directions, please see [Enabling Pay-As-You-Go](https://intl.cloud.tencent.com/document/product/647/41979).
 - Once your trial package expires, the remaining minutes in the package will become invalid and cannot be retrieved.
 
-## Relevant Documentation
-- [Billing Overview](https://intl.cloud.tencent.com/document/product/647/34610)
-- [Interactive Live Audio Streaming Billing](https://intl.cloud.tencent.com/document/product/647/39785)
-- [Interactive Live Video Streaming Billing](https://intl.cloud.tencent.com/document/product/647/39786)
-- [Audio Call Billing](https://intl.cloud.tencent.com/document/product/647/39787)
-- [Video Call Billing](https://intl.cloud.tencent.com/document/product/647/39788)
-- [On-Cloud Recording Billing](https://intl.cloud.tencent.com/document/product/647/38385)
-- [On-Cloud MixTranscoding Billing](https://intl.cloud.tencent.com/document/product/647/38929)
-- [Purchase Guide](https://intl.cloud.tencent.com/document/product/647/35440)
-- [FAQs](https://intl.cloud.tencent.com/document/product/647/39789)
 
+## References
+- [Billing Overview](https://intl.cloud.tencent.com/document/product/647/34610)
+- [Billing of Interactive Live Audio Streaming](https://intl.cloud.tencent.com/document/product/647/39785)
+- [Billing of Interactive Live Video Streaming](https://intl.cloud.tencent.com/document/product/647/39786)
+- [Billing of Audio Calls](https://intl.cloud.tencent.com/document/product/647/39787)
+- [Billing of Video Calls](https://intl.cloud.tencent.com/document/product/647/39788)
+- [Billing of On-Cloud Recording](https://intl.cloud.tencent.com/document/product/647/38385)
+- [Billing of On-Cloud MixTranscoding](https://intl.cloud.tencent.com/document/product/647/38929)
+- [Purchase Instructions](https://intl.cloud.tencent.com/document/product/647/35440)
+- [FAQs](https://intl.cloud.tencent.com/document/product/647/39789)
