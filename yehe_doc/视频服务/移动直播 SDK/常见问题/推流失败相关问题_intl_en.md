@@ -1,24 +1,31 @@
 
-If you are unable to push streams despite having followed the steps in [Best Practice - LVB Push](https://intl.cloud.tencent.com/document/product/267/31558), try troubleshooting the issue by checking the common reasons for push failure listed in this document.
+If you follow the steps in [Best Practice > CSS Push](https://intl.cloud.tencent.com/document/product/267/31558) but fail to publish streams, check the common reasons for publishing failure listed in this document to troubleshoot the issue.
 
-### 1. Have you created a CNAME record that points to a Tencent Cloud address for your domain name?
-Your push can succeed only if your domain name has a CNAME record that points to a Tencent Cloud address. You can check whether a push domain name created has a CNAME record in the “CNAME” column of **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**. The domain names in the figure below have CNAME records.
-If your domain name does not have a CNAME record, you can add one for it by following the steps in [Configuring CNAME for Domain Name](https://intl.cloud.tencent.com/document/product/267/31057).
-	
+[](id:check1)
+### 1. Check whether you have configured for your domain name a CNAME record that points to a Tencent Cloud address
+Publishing can succeed only if your domain name has a CNAME record that points to a Tencent Cloud address. You can check whether a publishing domain name created has a CNAME record in the “CNAME” column in **[Domain Management](https://console.cloud.tencent.com/live/domainmanage)**. The domain names in the figure below have CNAME records.
 
-### 2. Is the network normal?
-RTMP push uses the **1935** port by default. If the port is not open in the firewall of the network you use for testing, you will be unable to connect to the server. You can check whether this is what causes your push failure by switching to another network, for example, 4G.
+If your domain name does not have a CNAME record, you can add one for it by following the steps in [Configuring CNAME for Domain Name](https://intl.cloud.tencent.com/document/product/267/31057). 
+	 
+[](id:check2)
 
-### 3. Is the validity period of the push URL set too short?
-Some clients may be too cautious when setting `txTime`. For example, they may set `txTime` 5 minutes from the current time to prevent their traffic from being stolen. As a matter of fact, this is not necessary given the presence of the `txSercet` signature. If the validity period is set too short, after a host is disconnected due to network problems during a live broadcast, it may be impossible to resume the push due to expiration of the push URL.
-You are recommended to set `txTime` to a point 12 or 24 hours from the current time, longer than the duration of a typical LVB.
+### 2. Check whether the network is normal
+RTMP publishing uses the **1935** port by default. If the port is not open in the firewall of the network you use for testing, you will be unable to connect to the server. You can check whether this is what caused your publishing failure by switching to another network, for example, 4G.
 
-### 4. Is `txSecret` correct?
-To ensure security, Tencent Cloud requires hotlink protection for all push URLs and **rejects** expired URLs and those with miscalculated hotlink protection keys. When push is rejected, the LVB SDK throws a **PUSH_WARNING_SERVER_DISCONNECT** event, and the LVB SDK demo acts as follows:
-See [Best Practice > LVB Push](https://intl.cloud.tencent.com/document/product/267/31558) for how to get reliable push URLs.
+[](id:check3)
+### 3. Check whether the validity period of the publishing URL is too short.
+Some clients may be too cautious about `txTime`. For example, they may set `txTime` to 5 minutes from the current time to prevent traffic theft. This is unnecessary given the presence of the `txSercet` signature. If the validity period is too short, if a host is disconnected during a live stream, he or she may be unable to resume publishing due to the expiration of the publishing URL.
+You are advised to set `txTime` to 12 or 24 hours from the current time, longer than an average live streaming session.
 
-#### 5. Is the push URL occupied?
-A push URL can have only one push client at a time. A second client trying to push with it will be rejected by Tencent Cloud. You can log in to the LVB console and check whether the stream is already being pushed in **[Streaming Management](https://console.cloud.tencent.com/live/streammanage)** > **Live Stream**. You can also check whether the stream is forbidden in **Forbidden Streams**.
+[](id:check4)
+### 4. Check if `txSecret` is correct
+To ensure security, Tencent Cloud requires hotlink protection for all publishing URLs and **rejects** expired URLs and those with miscalculated hotlink protection keys. If publishing is rejected, the MLVB SDK throws the **PUSH_WARNING_SERVER_DISCONNECT** event, and you will see the log below in the [demo](https://intl.cloud.tencent.com/document/product/1071/38147).
+
+See [Best Practice > CSS Push](https://intl.cloud.tencent.com/document/product/267/31558) for how to get reliable publishing URLs.
+
+[](id:check5)
+### 5. Check whether the publishing URL is in use
+A publishing URL can be used by only one client at a time. A second client trying to publish using the URL will be rejected by Tencent Cloud. You can log in to the CSS console and check whether a stream is already being published in **[Stream Management](https://console.cloud.tencent.com/live/streammanage)** > **Live Streams**. You can also check whether a stream is disabled in **Disabled Streams**.
 
  
 

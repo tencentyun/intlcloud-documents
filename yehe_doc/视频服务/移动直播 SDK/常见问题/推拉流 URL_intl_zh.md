@@ -14,7 +14,7 @@
   3. 填写自定义的流名称 StreamName。
   4. 选择地址过期时间。
 3. 单击【生成地址】即可生成您需要的推流/播放地址。
-![](https://main.qcloudimg.com/raw/b92179a1020d676d5e93e7ea4bfd6c37.png)
+
 >? 
 >- AppName 可自定义，仅支持英文字母、数字和符号。
 >- 除上述方法，您还可以在云直播控制台的【[域名管理](https://console.cloud.tencent.com/live/domainmanage)】中，选择推流域名单击【管理】，选择【推流配置】，输入推流地址的过期时间和自定义的流名称 StreamName，单击【生成推流地址】即可生成推流地址。
@@ -26,7 +26,7 @@
 [](id:assemble_push)[](id:push)
 ### 自主拼装推流 URL
 实际产品中，当直播间较多时，您不可能为每一个主播手工创建推流和播放 URL，您可通过服务器**自行拼装**推流和播放地址，只要符合腾讯云标准规范的 URL 就可以用来推流，如下是一条标准的推流 URL，它由四个部分组成：
-![](https://main.qcloudimg.com/raw/095b7c120b62ac8a171603d4fff67cb2.png)
+![](https://main.qcloudimg.com/raw/c2ea59c7bd0d42c729e67dea5ec73e9d.png)
 - **Domain**
 推流域名，可使用腾讯云直播提供的默认推流域名，也可以用自有已备案且 CNAME 配置成功的推流域名。
 - **AppName**

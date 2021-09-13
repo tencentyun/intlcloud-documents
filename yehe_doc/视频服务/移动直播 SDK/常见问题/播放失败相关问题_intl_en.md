@@ -1,35 +1,43 @@
-If you are unable to watch a live broadcast and do not know what the problem is, follow the steps below to locate the problem, which usually takes less than a minute.
+If you are unable to watch a live stream and do not know where the problem lies, follow the steps below to locate the problem. This usually takes less than a minute.
+![](https://main.qcloudimg.com/raw/b5873f21d38360c3afbeb47e119d3337.png)
 
-### 1. Checking you playback URL
-First, check whether your playback URL is correct. Incorrect URLs are the most common cause of playback failure. Tencent Cloud's LVB service uses a push URL and a playback URL. Make sure that you are not **wrongly using the push URL as the playback URL**.
->? “domain” is the push/playback domain name; “AppName” and “StreamName” are custom values (default “AppName”: `live`). If push or playback authentication is not enabled, the URL ends before “?”. For example, if the push domain name is `www.push.com`, “AppName” `live`, “StreanName” `test01`, and push authentication is not enabled, the push URL will be `rtmp://www.push.com/live/test01`.
->You can obtain playback URLs for LVB Lite through debugging. Search in code for **startPlay**, where LVB Lite calls the RTMP SDK, and set a debugging breakpoint. The value of `startPlay` is the playback URL.
+### 1. Check your playback URL
+First, check whether your playback URL is correct. Incorrect URLs are the most common cause of playback failure. Tencent Cloud uses publishing and playback URLs for live streaming. Make sure that you are not **using a publishing URL for playback**.
+```
+rtmp://domain/AppName/StreamName?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
+http://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
+http://domain/AppName/StreamName.flv?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
+https://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
+https://domain/AppName/StreamName.flv?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
+```
+>? `domain` is the domain name for publish/playback. `AppName` and `StreamName` are custom values, and the default value for `AppName` is `live`. If you do not enable publishing or playback authentication, a URL ends before “?”. For example, if the publishing domain name is `www.push.com`, the application name `live`, and the stream name `test01`, and publishing authentication is not enabled, the publishing URL would be `rtmp://www.push.com/live/test01`.
+>小直播的播放 URL 可以用调试的办法获取，您可以全局搜索代码寻找关键字 **startPlay**，然后在此处打下调试断点，这里是小直播对 RTMP SDK 的调用点，startPlay 的参数即为播放 URL。
 
-### 2. Checking video streams
-A correct playback URL does not guarantee normal playback. You need to check the video stream as well.
-In **LVB**, a playback URL becomes unavailable once the host stops pushing streams.
-In **VOD**, you cannot watch a video if the video file has been removed from the cloud.
+### 2. Check video streams
+A correct playback URL does not guarantee successful playback. You need to check the video stream as well.
+- In **live streaming**, a playback URL becomes unavailable once the host stops publishing streams.
+- In **VOD**, you cannot watch a video if the video file has been removed from the cloud.
 
-A common method to check video streams is using VLC, an open-source player for PC that supports a range of protocols.
+A common solution is to run a check using VLC, which is an open-source player for PC that supports a wide range of protocols. If you use Tencent Cloud’s private WebRTC protocol, you can run a check using the [trial demo](https://intl.cloud.tencent.com/document/product/1071/38147#rtmpdemo).
 ![](https://main.qcloudimg.com/raw/8c2b9524e8528d5139d15753a09f6689.png)
 
-### 3. Checking the player
+### 3. Check the playback end
 If there's no problem with the video stream, the next step is checking whether the player is normal.
 
 - **Web browser**
-	**Format**: Mobile browsers support only playback URLs in the **HLS (m3u8) or MP4** format.
-	**HLS (m3u8)**: Tencent Cloud uses a lazy start mechanism for HLS transcoding. That is to say, it starts transcoding video to the HLS format only after a viewer requests playback via an HLS URL. This is to prevent the waste of resources, but the problem it brings is that **watching through an HLS playback URL is possible only 30 seconds after the first user sends a request worldwide**.
-	- **Tencent Cloud web browser:** Tencent Cloud’s web browser supports playback URLs that use different protocols and can select the best playback strategy based on the platform used (PC/Android/iOS). Additionally, its selective retry logic offers a solution to the lazy start issue.
+	- **Format**: Mobile browsers support only playback URLs in **HLS (M3U8) or MP4** format.
+	- **HLS (M3U8)**: Tencent Cloud adopts a lazy start mechanism for HLS transcoding. That is to say, it starts transcoding video to the HLS format only after a viewer requests playback via an HLS URL. This is to prevent the waste of resources, but it also brings a problem: **playback via an HLS URL is possible only 30 seconds after the first user requests the playback worldwide**.
+	- **Tencent Cloud web player:** Tencent Cloud’s web player supports playback URLs of different protocols and can select the best playback strategy for a platform (PC/Android/iOS). Its selective retry logic also offers a solution to the lazy start issue of the HLS (M3U8) protocol.
 
 -  **RTMP SDK**
-If playback is possible with the RTMP SDK demo, we recommend that you check the integration logic. For details, see the RTMP SDK playback documents [iOS](https://intl.cloud.tencent.com/document/product/1071/38159) and [Android](https://intl.cloud.tencent.com/document/product/1071/38160).
+If playback is possible with the [RTMP SDK demo](https://intl.cloud.tencent.com/document/product/1071/38147), we recommend that you check your integration logic against the playback documents [iOS](https://intl.cloud.tencent.com/document/product/1071/38159) and [Android](https://intl.cloud.tencent.com/document/product/1071/38160).
 
-### 4. Checking firewall restrictions
-Firewall restrictions are a common cause of playback failure. Many companies’ office networks set restrictions against video playback by having the firewall check whether a HTTP request is for streaming media. If you can watch an LVB using 4G, but not using your company’s office Wi-Fi, it indicates that the cause of the problem is firewall restrictions. Contact your company’s IT department and see if they can lift the restrictions for you IP address.
+### 4. Check firewall restrictions
+Firewall restrictions are a common cause of playback failure. Many companies’ office networks set restrictions against video streaming. This is achieved by having the firewall check whether an HTTP request involves streaming media. If you can watch live streams using 4G networks but not using your company’s office Wi-Fi, then the problem lies in firewall restrictions. Contact your company’s IT department and see if they can lift the restrictions for your IP address.
 
-### 5. Checking the push
-If playback is simply impossible with an LVB URL, and no firewall restrictions are set, the problem is likely push failure. You can troubleshoot the issue by following the instructions in FAQs > Push Failure.
+### 5. Check the publishing end
+If your playback URL is not playable and the firewall restrictions described in step 4 are nonexistent, the problem probably lies in publishing failure. To troubleshoot the issue, see [Troubleshooting Push Failure](https://intl.cloud.tencent.com/document/product/267/33383).
 
-
+ 
 
  
