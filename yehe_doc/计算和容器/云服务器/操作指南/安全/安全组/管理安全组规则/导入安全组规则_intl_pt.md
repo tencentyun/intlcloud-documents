@@ -9,7 +9,7 @@
 5. Selecione as regras de entrada ou de saída clicando em **Inbound rule (Regra de entrada)** ou **Outbound rule (Regra de saída)**.
 6. Clique em **Import rules (Importar regras)**. A página **Batch import - Inbound/Outbound Rules (Importação em lote - Regras de entrada/saída)** é exibida.
 7. Clique em **Browse (Pesquisar)** e selecione um arquivo de modelo de regras. Clique em **Import (Importar)**.
-> 
+> ?
 > - Se houver regras existentes no grupo de segurança, exporte-as antes de importar regras novas. As regras existentes são substituídas após a importação.
 > - Se não houver regras existentes no grupo de segurança, baixe o modelo primeiro. Use-o como um ponto de partida para modificar as regras conforme desejar. Importe-as quando terminar.
 > 
