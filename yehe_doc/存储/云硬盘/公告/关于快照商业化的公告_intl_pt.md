@@ -55,19 +55,19 @@ A tabela a seguir descreve como o armazenamento de snapshots é cobrado em difer
 	 <tr>
          <td nowrap="nowrap">Norte da China (Pequim)</td>
          <td>100 GB</td>
-				 <td nowrap="nowrap">1 disco em nuvem<br/>**To be repossessed (a ser reavido)**</td>
+				 <td nowrap="nowrap">1 disco em nuvem<br/><b>To be repossessed (a ser reavido)</b></td>
 				 <td><li>Não elegível ao nível gratuito no momento. A capacidade total de snapshots é de 100 GB faturados com pagamento conforme o uso por hora.</li><li>Após o disco em nuvem ser renovado ou um novo disco em nuvem ser adquirido, o nível gratuito é aplicável. A capacidade total de snapshots é de 100 GB - 50 GB = 50 GB faturados por pagamento conforme o uso por hora.</li></td>
      </tr> 
 	 <tr>
          <td nowrap="nowrap">Hong Kong, Macau e Taiwan, China (Hong Kong)</td>
          <td>60GB</td>
-				 <td>1 disco em nuvem<br/>**Mounted (Montado)**</td>
+				 <td>1 disco em nuvem<br/><b>Mounted (Montado)</b></td>
 				 <td>Elegível ao nível gratuito. A capacidade total de snapshots é de 60 GB - 50 GB = 10 GB faturados por pagamento conforme o uso por hora.</td>
      </tr>
 	 <tr>
          <td nowrap="nowrap">Sudeste da Ásia-Pacífico (Singapura)</td>
          <td>40GB</td>
-				 <td>1 disco em nuvem<br/>**Mounted (Montado)**</td>
+				 <td>1 disco em nuvem<br/><b>Mounted (Montado)</b></td>
 				 <td>Não elegível ao nível gratuito. A capacidade total de snapshots é de 40 GB faturados por pagamento conforme o uso por hora.</td>
      </tr>
 </table>
