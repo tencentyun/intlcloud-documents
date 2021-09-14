@@ -21,8 +21,7 @@ Tencent Cloud encapsulates a script for activating Windows servers, which simpli
 
 ### Notes
 An inaccurate system clock will trigger an error during manual activation for some systems. In that case, you need to synchronize the system clock first by following the steps below:
->?
-> If the system clock on the Windows CVM is normal, skip to [Activation](#ActivationStep).
+>? If the system clock on the Windows CVM is normal, skip to [Activation](#ActivationStep).
 >
 1. Log in to the Windows CVM.
 2. On the desktop, choose **Start** > **Run**. Enter `cmd.exe` in the "Run" dialog box to open the console window.
