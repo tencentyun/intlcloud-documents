@@ -1,0 +1,15 @@
+Para manter a alta confiabilidade dos dados, é importante fornecer um bom ambiente de monitoramento para os discos em nuvem. É possível usar o Cloud Monitor para monitorar o disco em nuvem que ***foi montado em uma instância***. Quando você precisar coletar estatísticas de discos em nuvem, realize a montagem de discos em nuvem em instâncias do CVM. Com o Cloud Monitor, é possível visualizar os dados de métricas de um disco em nuvem e analisar e definir o alarme para o disco em nuvem. Agora, o Cloud Monitor fornece discos em nuvem com as seguintes métricas de monitoramento:
+
+
+| Item de monitoramento | Métrica de monitoramento | Significado no Linux | Significado no Windows | Unidade | Dimensão
+|---------|---------|--|--|--|--|
+| Tráfego de leitura do disco | disk_read_traffic | Volume médio de dados lidos de um disco para uma memória por segundo, considere o valor máximo entre todas as partições | Volume médio de dados lidos de um disco para uma memória por segundo, considere o valor máximo entre todas as partições | KB/s | unInstanceId |
+| Tráfego de gravação do disco | disk_write_traffic | Volume médio de dados gravados de uma memória para um disco por segundo, considere o valor máximo entre todas as partições | Volume médio de dados gravados de uma memória para um disco por segundo, considere o valor máximo entre todas as partições | KB/s | unInstanceId |
+| Uso do disco | disk_usage | Porcentagem de espaço em disco usado, exibida por partições | Porcentagem de espaço em disco usado, exibida por partições | % | unInstanceId |
+| Espera de E/S do disco	| disk_io_await	| Tempo médio de espera para cada operação de E/S de um dispositivo, considere o valor máximo entre todas as partições | Tempo médio de espera para operação de E/S de um dispositivo, considere o valor máximo entre todas as partições | ms | unInstanceId |
+
+Para obter mais informações sobre o monitoramento de métricas, consulte a [Documentação do produto Cloud Monitor](https://intl.cloud.tencent.com/doc/product/248).
+
+O Cloud Monitor coleta os dados brutos de um disco de uma instância do CVM em execução e exibe esses dados em gráficos de fácil interpretação Por padrão, as estatísticas podem ser retidas por um mês para que você possa observar a situação do disco em nuvem durante o mês e ter uma melhor compreensão do uso e da leitura/gravação de dados.
+
+É possível obter os dados pelo [Console do Cloud Monitor](https://console.cloud.tencent.com/monitor/cvm) ou pela API do Cloud Monitor. O console também fornece gráficos de métricas correspondentes. Para obter mais informações, consulte [Obtenção de dados de monitoramento de métricas específicas](https://intl.cloud.tencent.com/document/product/248/6141) e [Exibição de gráficos de monitoramento](https://intl.cloud.tencent.com/document/product/248/6142).

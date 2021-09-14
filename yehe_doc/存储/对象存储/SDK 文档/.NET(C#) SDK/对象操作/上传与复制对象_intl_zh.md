@@ -10,6 +10,7 @@
 | [PUT Object](https://intl.cloud.tencent.com/document/product/436/7749) | 简单上传对象       | 上传一个对象至存储桶     |
 | [POST Object](https://intl.cloud.tencent.com/document/product/436/14690) | 表单上传对象   | 使用表单请求上传对象                      |
 | [PUT Object - Copy](https://intl.cloud.tencent.com/document/product/436/10881) | 设置对象复制（修改对象属性）   | 复制文件到目标路径                       |
+| [APPEND Object](https://intl.cloud.tencent.com/document/product/436/7741) | 	追加上传对象  |	使用分块追加的方式上传对象   |
 
 **分块操作**
 
@@ -31,14 +32,27 @@ SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos
 
 ### 上传对象
 
+#### 功能说明
+
+
 高级接口封装了简单上传、分块上传接口，根据文件大小智能的选择上传方式，同时支持续传功能。
+
+>?
+> - 文件大小小于分块阈值时选择简单上传，超过阈值时使用分块上传，阈值支持用户自行配置，默认为5MB。
+> - 分块大小支持用户自行配置，默认为1MB。
+> 
 
 #### 示例代码一: 上传本地文件
 
-[//]: # (.cssg-snippet-transfer-upload-file)
+[//]: # ".cssg-snippet-transfer-upload-file"
 ```cs
 // 初始化 TransferConfig
 TransferConfig transferConfig = new TransferConfig();
+
+//手动设置分块上传阈值，小于阈值的对象使用简单上传，大于阈值的对象使用分块上传，不设定则默认为5MB
+transferConfig.DivisionForUpload = 5242880;
+//手动设置高级接口的自动分块大小，不设定则默认为1MB
+transferConfig.SliceSizeForUpload = 2097152;
 
 // 初始化 TransferManager
 TransferManager transferManager = new TransferManager(cosXml, transferConfig);
@@ -67,12 +81,13 @@ try {
 ```
 
 >?
->- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs) 查看。
->- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 **生成预签名链接** 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
+> - 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs) 查看。
+> - 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见**生成预签名链接**文档。但注意，如果您的文件是私有读权限，那么下载链接只有一定的有效期。
+>
 
 #### 示例代码二: 上传二进制数据
 
-[//]: # (.cssg-snippet-transfer-upload-bytes)
+[//]: # ".cssg-snippet-transfer-upload-bytes"
 ```cs
 try
 {
@@ -96,38 +111,39 @@ catch (COSXML.CosException.CosServerException serverEx)
 ```
 
 >?
->- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs) 查看。
->- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 **生成预签名链接** 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
+> - 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs) 查看。
+> - 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见**生成预签名链接**文档。但注意，如果您的文件是私有读权限，那么下载链接只有一定的有效期。
+>
 
 #### 示例代码三: 上传暂停、继续与取消
 
 对于上传任务，可以通过以下方式暂停：
 
-[//]: # (.cssg-snippet-transfer-upload-pause)
+[//]: # ".cssg-snippet-transfer-upload-pause"
 ```cs
 uploadTask.Pause();
 ```
 
 暂停之后，可以通过以下方式续传：
 
-[//]: # (.cssg-snippet-transfer-upload-resume)
+[//]: # ".cssg-snippet-transfer-upload-resume"
 ```cs
 uploadTask.Resume();
 ```
 
 也通过以下方式取消上传：
 
-[//]: # (.cssg-snippet-transfer-upload-cancel)
+[//]: # ".cssg-snippet-transfer-upload-cancel"
 ```cs
 uploadTask.Cancel();
 ```
 
->?
->- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs) 查看。
+>? 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs) 查看。
+>
 
 #### 示例代码四: 批量上传
 
-[//]: # (.cssg-snippet-transfer-batch-upload-objects)
+[//]: # ".cssg-snippet-transfer-batch-upload-objects"
 ```cs
 TransferConfig transferConfig = new TransferConfig();
 
@@ -148,7 +164,7 @@ for (int i = 0; i < 5; i++) {
 
 #### 示例代码五：创建目录
 
-[//]: # (.cssg-snippet-create-directory)
+[//]: # ".cssg-snippet-create-directory"
 ```cs
 try
 {
@@ -171,17 +187,36 @@ catch (COSXML.CosException.CosServerException serverEx)
 ```
 
 >?
->- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs) 查看。
->- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 **生成预签名链接** 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
+> - 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferUploadObject.cs) 查看。
+> - 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见**生成预签名链接**文档。但注意，如果您的文件是私有读权限，那么下载链接只有一定的有效期。
+> 
 
 ### 复制对象
 
+#### 功能说明
+
 高级接口封装了简单复制、分块复制接口的异步请求，并支持暂停、恢复以及取消复制请求。
+
+>?
+> - 对象大小小于分块阈值时选择简单复制，超过阈值时使用分块复制，阈值支持用户自行配置，默认为5MB。
+> - 分块大小支持用户自行配置，默认为2MB。
+> 
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-transfer-copy-object)
+[//]: # ".cssg-snippet-transfer-copy-object"
 ```cs
+// 初始化 TransferConfig
+TransferConfig transferConfig = new TransferConfig();
+
+//手动设置分块复制阈值，小于阈值的对象使用简单复制，大于阈值的对象使用分块复制，不设定则默认为5MB
+transferConfig.DivisionForCopy = 5242880;
+//手动设置高级接口的自动分块大小，不设定则默认为2MB
+transferConfig.SliceSizeForCopy = 2097152;
+
+// 初始化 TransferManager
+TransferManager transferManager = new TransferManager(cosXml, transferConfig);
+
 string sourceAppid = "1250000000"; //账号 appid
 string sourceBucket = "sourcebucket-1250000000"; //"源对象所在的存储桶
 string sourceRegion = "COS_REGION"; //源对象的存储桶所在的地域
@@ -205,7 +240,8 @@ try {
 }
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferCopyObject.cs) 查看。
+>? 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferCopyObject.cs) 查看。
+>
 
 ## 简单操作
 
@@ -215,13 +251,14 @@ try {
 
 PUT Object 接口可以上传一个对象至指定存储桶中，该操作需要请求者对存储桶有 WRITE 权限。最大支持上传不超过5GB的对象，5GB以上对象请使用 [分块上传](#.E5.88.86.E5.9D.97.E6.93.8D.E4.BD.9C) 或 [高级接口](#.E9.AB.98.E7.BA.A7.E6.8E.A5.E5.8F.A3.EF.BC.88.E6.8E.A8.E8.8D.90.EF.BC.89) 上传。
 
-> !
-> 1. Key（文件名）不能以`/`结尾，否则会被识别为文件夹。
-> 2. 每个主账号（即同一个 APPID），存储桶的 ACL 规则数量最多为1000条，对象 ACL 规则数量不限制。如果您不需要进行对象 ACL 控制，请在上传时不要设置，默认继承存储桶权限。
+>!
+> - Key（文件名）不能以`/`结尾，否则会被识别为文件夹。
+> - 每个主账号（即同一个 APPID），存储桶的 ACL 规则数量最多为1000条，对象 ACL 规则数量不限制。如果您不需要进行对象 ACL 控制，请在上传时不要设置，默认继承存储桶权限。
+> 
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-put-object)
+[//]: # ".cssg-snippet-put-object"
 ```cs
 try
 {
@@ -253,8 +290,9 @@ catch (COSXML.CosException.CosServerException serverEx)
 ```
 
 >?
->- 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PutObject.cs) 查看。
->- 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见 **生成预签名链接** 文档。但注意如果您的文件是私有读权限，那么下载链接只有一定的有效期。
+> - 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PutObject.cs) 查看。
+> - 上传之后，您可以用同样的 Key 生成文件下载链接，具体使用方法见**生成预签名链接**文档。但注意，如果您的文件是私有读权限，那么下载链接只有一定的有效期。
+> 
 
 ### 表单上传对象
 
@@ -264,7 +302,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-post-object)
+[//]: # ".cssg-snippet-post-object"
 ```cs
 try
 {
@@ -294,15 +332,18 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PostObject.cs) 查看。
+>? 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/PostObject.cs) 查看。
+>
 
 ### 复制对象（修改属性）
+
+#### 功能说明
 
 复制文件到目标路径（PUT Object-Copy）。
 
 #### 示例代码一: 复制对象时保留对象属性
 
-[//]: # (.cssg-snippet-copy-object)
+[//]: # ".cssg-snippet-copy-object"
 ```cs
 try
 {
@@ -338,11 +379,12 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/CopyObject.cs) 查看。
+>? 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/CopyObject.cs) 查看。
+>
 
 #### 示例代码二: 复制对象时替换对象属性
 
-[//]: # (.cssg-snippet-copy-object-replaced)
+[//]: # ".cssg-snippet-copy-object-replaced"
 ```cs
 try
 {
@@ -380,11 +422,12 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/CopyObject.cs) 查看。
+>? 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/CopyObject.cs) 查看。
+>
 
 #### 示例代码三: 修改对象元数据
 
-[//]: # (.cssg-snippet-modify-object-metadata)
+[//]: # ".cssg-snippet-modify-object-metadata"
 ```cs
 try
 {
@@ -421,11 +464,12 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/ModifyObjectProperty.cs) 查看。
+>? 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/ModifyObjectProperty.cs) 查看。
+>
 
 #### 示例代码四: 修改对象存储类型
 
-[//]: # (.cssg-snippet-modify-object-storage-class)
+[//]: # ".cssg-snippet-modify-object-storage-class"
 ```cs
 try
 {
@@ -461,7 +505,60 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/ModifyObjectProperty.cs) 查看。
+>? 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/ModifyObjectProperty.cs) 查看。
+
+
+### 追加上传对象
+
+#### 功能说明
+
+使用分块追加的方式上传对象。
+
+#### 示例代码
+
+[//]: # ".cssg-snippet-append-object"
+```cs
+try
+{
+    string bucket = "examplebucket-1250000000"; //存储桶，格式：BucketName-APPID
+    string key = "exampleobject"; //对象键
+    string srcPath = @"temp-source-file";//本地文件绝对路径
+
+    //首次append上传,追加位置传0,创建一个appendable对象
+    long next_append_position = 0;
+    AppendObjectRequest request = new AppendObjectRequest(bucket, key, srcPath, next_append_position);
+    //设置进度回调
+    request.SetCosProgressCallback(delegate (long completed, long total)
+    {
+        Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
+    });
+    AppendObjectResult result = cosXml.AppendObject(request);
+    //获取下次追加位置
+    next_append_position = result.nextAppendPosition;
+    Console.WriteLine(result.GetResultInfo());
+
+    //执行追加,传入上次获取的对象末尾
+    request = new AppendObjectRequest(bucket, key, srcPath, next_append_position);
+    request.SetCosProgressCallback(delegate (long completed, long total)
+    {
+        Console.WriteLine(String.Format("progress = {0:##.##}%", completed * 100.0 / total));
+    });
+    result = cosXml.AppendObject(request);
+    Console.WriteLine(result.GetResultInfo());
+}
+catch (COSXML.CosException.CosClientException clientEx)
+{
+    //请求失败
+    Console.WriteLine("CosClientException: " + clientEx);
+}
+catch (COSXML.CosException.CosServerException serverEx)
+{
+    //请求失败
+    Console.WriteLine("CosServerException: " + serverEx.GetInfo());
+}
+```
+
+>? 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/AppendObject.cs) 查看。
 
 ## 分块操作
 
@@ -469,21 +566,21 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### 分块上传与复制的流程
 
-1. 初始化分块上传（Initiate Multipart Upload），得到 UploadId
-2. 使用 UploadId 上传分块（Upload Part），或者复制分块（Upload Part Copy）
-3. 完成分块上传（Complete Multipart Upload）
+1. 初始化分块上传（Initiate Multipart Upload），得到 UploadId。
+2. 使用 UploadId 上传分块（Upload Part），或者复制分块（Upload Part Copy）。
+3. 完成分块上传（Complete Multipart Upload）。
 
 #### 分块继续上传与复制的流程
 
-1. 如果没有记录 UploadId，查询分块上传任务（List Multipart Uploads），得到对应文件的 UploadId
-2. 使用 UploadId 列出已上传的分块（List Parts）
-2. 使用 UploadId 上传剩余的分块（Upload Part），或者复制剩余的分块（Upload Part Copy）
-3. 完成分块上传（Complete Multipart Upload）
+1. 如果没有记录 UploadId，查询分块上传任务（List Multipart Uploads），得到对应文件的 UploadId。
+2. 使用 UploadId 列出已上传的分块（List Parts）。
+3. 使用 UploadId 上传剩余的分块（Upload Part），或者复制剩余的分块（Upload Part Copy）。
+4. 完成分块上传（Complete Multipart Upload）。
 
 #### 终止分块上传与复制的流程
 
-1. 如果没有记录 UploadId，查询分块上传任务（List Multipart Uploads），得到对应文件的 UploadId
-2. 终止分块上传并删除已上传分块（Abort Multipart Upload）
+1. 如果没有记录 UploadId，查询分块上传任务（List Multipart Uploads），得到对应文件的 UploadId。
+2. 终止分块上传并删除已上传分块（Abort Multipart Upload）。
 
 ### 查询分块上传
 
@@ -493,7 +590,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-list-multi-upload)
+[//]: # ".cssg-snippet-list-multi-upload"
 ```cs
 try
 {
@@ -516,7 +613,8 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/MultiPartsUploadObject.cs) 查看。
+>? 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/MultiPartsUploadObject.cs) 查看。
+>
 
 ### 初始化分块上传
 
@@ -526,7 +624,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-init-multi-upload)
+[//]: # ".cssg-snippet-init-multi-upload"
 ```cs
 try
 {
@@ -551,15 +649,18 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/MultiPartsUploadObject.cs) 查看。
+>? 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/MultiPartsUploadObject.cs) 查看。
+>
 
 ### 上传分块
+
+#### 功能说明
 
 分块上传对象（Upload Part）。
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-upload-part)
+[//]: # ".cssg-snippet-upload-part"
 ```cs
 try
 {
@@ -594,7 +695,8 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/MultiPartsUploadObject.cs) 查看。
+>? 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/MultiPartsUploadObject.cs) 查看。
+>
 
 ### 复制分块
 
@@ -604,7 +706,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-upload-part-copy)
+[//]: # ".cssg-snippet-upload-part-copy"
 ```cs
 try
 {
@@ -645,7 +747,8 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/MultiPartsCopyObject.cs) 查看。
+>? 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/MultiPartsCopyObject.cs) 查看。
+>
 
 ### 查询已上传的分块
 
@@ -655,7 +758,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-list-parts)
+[//]: # ".cssg-snippet-list-parts"
 ```cs
 try
 {
@@ -682,7 +785,8 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/MultiPartsUploadObject.cs) 查看。
+>? 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/MultiPartsUploadObject.cs) 查看。
+>
 
 ### 完成分块上传
 
@@ -691,7 +795,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 完成整个文件的分块上传（Complete Multipart Upload）。
 
 #### 示例代码
-[//]: # (.cssg-snippet-complete-multi-upload)
+[//]: # ".cssg-snippet-complete-multi-upload"
 ```cs
 try
 {
@@ -719,7 +823,8 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/MultiPartsUploadObject.cs) 查看。
+>? 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/MultiPartsUploadObject.cs) 查看。
+>
 
 ### 终止分块上传
 
@@ -729,7 +834,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-abort-multi-upload)
+[//]: # ".cssg-snippet-abort-multi-upload"
 ```cs
 try
 {
@@ -754,5 +859,7 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/AbortMultiPartsUpload.cs) 查看。
+>? 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/AbortMultiPartsUpload.cs) 查看。
+>
+
 

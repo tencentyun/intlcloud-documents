@@ -37,16 +37,11 @@ w32tm /resync
 1. Windows CVM에 로그인합니다.
 2. 운영 체제 인터페이스에서 [시작]>[실행]을 클릭하고 `cmd.exe`를 입력하여 콘솔 창을 엽니다.
 3. 콘솔 창에서 다음 명령어를 순서대로 실행하여 수동으로 활성화합니다.
- - Windows Server 2008, Windows Server 2012 및 Windows Server 2019 서버에서는 다음 명령어를 순서대로 실행합니다.
 ```
 cscript /nologo %windir%/system32/slmgr.vbs -skms kms.tencentyun.com:1688
 cscript /nologo %windir%/system32/slmgr.vbs -ato
 ```
- - Windows Server 2016 서버에서는 다음 명령어를 순서대로 실행합니다.
-```
-cscript /nologo %windir%/system32/slmgr.vbs -skms kms1.tencentyun.com:1688
-cscript /nologo %windir%/system32/slmgr.vbs -ato
-```
+
 
 
 

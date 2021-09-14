@@ -21,7 +21,7 @@ Tencent Cloud encapsulates a script for activating Windows servers, which simpli
 
 ### Notes
 An inaccurate system clock will trigger an error during manual activation for some systems. In that case, you need to synchronize the system clock first by following the steps below:
-> If the system clock on the Windows CVM is normal, skip to [Activation](#ActivationStep).
+>? If the system clock on the Windows CVM is normal, skip to [Activation](#ActivationStep).
 >
 1. Log in to the Windows CVM.
 2. On the desktop, choose **Start** > **Run**. Enter `cmd.exe` in the "Run" dialog box to open the console window.
@@ -37,14 +37,8 @@ w32tm /resync
 1. Log in to the Windows CVM.
 2. On the desktop, choose **Start** > **Run**. Enter `cmd.exe` in the "Run" dialog box to open the console window.
 3. In the console window, run the following commands sequentially to complete manual activation.
- - Run the following commands sequentially for Windows Server 2008, Windows Server 2012, and Windows Server 2019:
 ```
 cscript /nologo %windir%/system32/slmgr.vbs -skms kms.tencentyun.com:1688
-cscript /nologo %windir%/system32/slmgr.vbs -ato
-```
- - Run the following commands in sequence for Windows Server 2016 servers:
-```
-cscript /nologo %windir%/system32/slmgr.vbs -skms kms1.tencentyun.com:1688
 cscript /nologo %windir%/system32/slmgr.vbs -ato
 ```
 

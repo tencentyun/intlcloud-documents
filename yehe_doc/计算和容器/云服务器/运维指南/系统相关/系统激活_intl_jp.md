@@ -21,7 +21,7 @@ Tencent Cloudは、Windowsサーバーをアクティブ化するためのスク
 
 ### 注意事項
 一部のシステムでは、システムクロックに問題がある場合、手動アクティベーション中にエラーが発生する可能性があります。この場合、最初にシステムクロックを同期する必要があります。クロック同期の操作手順は次のとおりです。　
-> Windows CVM のシステムクロックが正常な場合、直接 [アクティベーション手順](#ActivationStep)に進んでください。
+>? Windows CVM のシステムクロックが正常な場合、直接 [アクティベーション手順](#ActivationStep)に進んでください。
 >
 1. Windows CVMにログインします。
 2. OSのインターフェースで、【スタート】>【実行】をクリックし、`cmd.exe`を入力して、コンソールウィンドウを開きます。
@@ -37,16 +37,11 @@ w32tm /resync
 1. Windows CVMにログインします。
 2. OSのインターフェースで、【スタート】>【実行】をクリックし、`cmd.exe`を入力して、コンソールウィンドウを開きます。
 3. コンソールウィンドウで以下のコマンドを順番に実行して、手動アクティベーショが完了します。
- - Windows Server 2008、Windows Server 2012、およびWindows Server 2019の場合は、次のコマンドを順番に実行します。
 ```
 cscript /nologo %windir%/system32/slmgr.vbs -skms kms.tencentyun.com:1688
 cscript /nologo %windir%/system32/slmgr.vbs -ato
 ```
- - Windows Server 2016サーバーに対して、次のコマンドを順番に実行します。
-```
-cscript /nologo %windir%/system32/slmgr.vbs -skms kms1.tencentyun.com:1688
-cscript /nologo %windir%/system32/slmgr.vbs -ato
-```
+
 
 
 

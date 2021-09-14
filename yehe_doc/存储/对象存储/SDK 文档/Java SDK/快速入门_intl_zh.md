@@ -10,6 +10,7 @@
 
 
 >? 如果您在使用 XML 版本 SDK 时遇到函数或方法不存在等错误，请先将 XML 版本 SDK 升级到最新版再重试。
+>
 
 
 #### 环境依赖
@@ -35,7 +36,7 @@
 <dependency>
        <groupId>com.qcloud</groupId>
        <artifactId>cos_api</artifactId>
-       <version>5.6.45</version>
+       <version>5.6.54</version>
 </dependency>
 ```
 - 源码安装
@@ -74,6 +75,7 @@ COSCredentials cred = new BasicCOSCredentials(secretId, secretKey);
 Region region = new Region("COS_REGION");
 ClientConfig clientConfig = new ClientConfig(region);
 // 这里建议设置使用 https 协议
+// 从 5.6.54 版本开始，默认使用了 https
 clientConfig.setHttpProtocol(HttpProtocol.https);
 // 3 生成 cos 客户端。
 COSClient cosClient = new COSClient(cred, clientConfig);
