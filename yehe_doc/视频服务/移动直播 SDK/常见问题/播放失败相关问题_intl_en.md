@@ -11,7 +11,6 @@ https://domain/AppName/StreamName.m3u8?txSecret=Md5(key+StreamName+hex(time))&tx
 https://domain/AppName/StreamName.flv?txSecret=Md5(key+StreamName+hex(time))&txTime=hex(time)
 ```
 >? `domain` is the domain name for publish/playback. `AppName` and `StreamName` are custom values, and the default value for `AppName` is `live`. If you do not enable publishing or playback authentication, a URL ends before “?”. For example, if the publishing domain name is `www.push.com`, the application name `live`, and the stream name `test01`, and publishing authentication is not enabled, the publishing URL would be `rtmp://www.push.com/live/test01`.
->小直播的播放 URL 可以用调试的办法获取，您可以全局搜索代码寻找关键字 **startPlay**，然后在此处打下调试断点，这里是小直播对 RTMP SDK 的调用点，startPlay 的参数即为播放 URL。
 
 ### 2. Check video streams
 A correct playback URL does not guarantee successful playback. You need to check the video stream as well.

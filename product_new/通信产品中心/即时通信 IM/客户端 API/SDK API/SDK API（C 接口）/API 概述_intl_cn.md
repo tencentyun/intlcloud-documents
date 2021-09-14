@@ -60,7 +60,7 @@
 |-----|-----|
 | [TIMConvCreate](https://intl.cloud.tencent.com/document/product/1047/34557#timconvcreate) | 创建会话 |
 | [TIMConvDelete](https://intl.cloud.tencent.com/document/product/1047/34557#timconvdelete) | 删除会话 |
-| [TIMConvGetConvList](https://intl.cloud.tencent.com/document/product/1047/34557#timconvgetconvlist) | 获取本地缓存的会话列表 |
+| [TIMConvGetConvList](https://intl.cloud.tencent.com/document/product/1047/34557#timconvgetconvlist) | 获取最近联系人的会话列表 |
 | [TIMConvSetDraft](https://intl.cloud.tencent.com/document/product/1047/34557#timconvsetdraft) | 设置指定会话的草稿 |
 | [TIMConvCancelDraft](https://intl.cloud.tencent.com/document/product/1047/34557#timconvcanceldraft) | 删除指定会话的草稿 |
 
