@@ -1,9 +1,9 @@
-Stream push/interruption callback is used to call back the push status information including whether the push is successful or interrupted. You need to configure the server address for receiving push/interruption callback messages in a callback template and bind the template with the push domain name. When push starts via the generated push URL, Tencent Cloud backend will call back the push results to the server you set.
+Stream push/interruption callback is used to call back the push status information, including whether the push is successful or interrupted. You need to configure the server address for receiving push/interruption callback messages in a callback template and bind the template with the push domain name. When push starts via the generated push URL, Tencent Cloud backend will call back the push results to the server you set.
 
 This document describes the parameters in callback message notifications sent by Tencent Cloud CSS after a stream push/interruption callback event is triggered.
 
-## Notes
-You need to understand how to configure callbacks and how to receive messages on Tencent Cloud CSS before reading this document. For more information, see [How to Receive Event Notifications](https://intl.cloud.tencent.com/document/product/267/38080). 
+## Note
+You need to understand how to configure callbacks and how to receive messages on Tencent Cloud CSS before reading this document. For more information, see [How to Receive Event Notification](https://intl.cloud.tencent.com/document/product/267/38080). 
 
 
 ## Stream Push/Interruption Event Parameters
@@ -48,46 +48,49 @@ You need to understand how to configure callbacks and how to receive messages on
 | errcode       | int    | Stream push/interruption error code                      |
 | errmsg        | string | Stream push/interruption error message                                               |
 | set_id          | int  | Whether the push is from inside the Chinese mainland. 1-6: yes; 7-200: no  |
+|width       |  int   |Video width. This value may be `0` if the video header information is missing in the callback of the beginning of live push.  |
+|height       |  int   |Video height. This value may be `0` if the video header information is missing in the callback of the beginning of live push.  |
 
 ### Stream push and interruption error codes
 For error codes and error messages of stream push/interruption, see [Stream interruption error codes](https://intl.cloud.tencent.com/document/product/267/31083).
 
 ### Sample callback message
-
-<dx-codeblock>
-::: JSON JSON
+```JSON
 {
-"app":"test.domain.com",
-
-"appid":12345678,
-
-"appname":"live",
-
-"channel_id":"test_stream",
-
-"errcode":0,
-
-"errmsg":"ok",
-
-"event_time":1545115790,
-
-"event_type":1,
-
-"set_id":2,
-
-"node":"100.121.160.92",
-
-"sequence":"6674468118806626493",
-
-"stream_id":"test_stream",
-
-"stream_param":"stream_param=test",
-
-"user_ip":"119.29.94.245",
-
-"sign":"ca3e25e5dc17a6f9909a9ae7281e300d",
-
-"t":1545030873
+	"app":"test.domain.com",
+	
+	"appid":12345678,
+	
+	"appname":"live",
+	
+	"channel_id":"test_stream",
+	
+	"errcode":0,
+	
+	"errmsg":"ok",
+	
+	"event_time":1545115790,
+	
+	"event_type":1,
+	
+	"set_id":2,
+	
+	"node":"100.121.160.92",
+	
+	"sequence":"6674468118806626493",
+	
+	"stream_id":"test_stream",
+	
+	"stream_param":"stream_param=test",
+	
+	"user_ip":"119.29.94.245",
+	
+	"width": 0,
+	
+	"height": 0,
+	
+	"sign":"ca3e25e5dc17a6f9909a9ae7281e300d",
+	
+	"t":1545030873
 }
-:::
-</dx-codeblock>
+```
