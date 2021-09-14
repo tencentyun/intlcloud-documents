@@ -4,8 +4,7 @@ Tencent Cloud plans to upgrade the architecture of all CLB instances staring fro
 The performance is guaranteed for each CLB instance. 
 >?
 >- Before the upgrade, shared CLB instances share resources of one cluster, which may affect the performance in case of resource contention.
->- After the upgrade, the basic performance for every individual shared CLB instance is guaranteed. When the required performance exceeds the guaranteed value, rate limiting and packet loss may occur.
-
+>- After the upgrade, the basic performance for every individual shared CLB instance is guaranteed. When the required performance exceeds the guaranteed value, CLB instances share resources of one cluster, which may affect the performance in case of resource contention.
 
 ## Price Adjustment
 The price adjustment covers all CLB instances (former "Application Load Balancer instances") and Classic CLB instances.
@@ -47,4 +46,4 @@ The price adjustment may cause overdue payments, leading to account suspension a
 ## References
 - [Bill-by-IP Account Billing Description](https://intl.cloud.tencent.com/document/product/214/36998)
 - [Bill-by-CVM Account Billing Description](https://intl.cloud.tencent.com/document/product/214/8848)
-- [LCU Billing](https://cloud.tencent.com/document/product/214/58387)
+- [LCU Pricing](https://intl.cloud.tencent.com/document/product/214/41563)
