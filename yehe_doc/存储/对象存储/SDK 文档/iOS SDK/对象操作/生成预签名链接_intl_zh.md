@@ -1,5 +1,12 @@
 ## 简介
+
 本文档提供关于生成对象预签名链接的示例代码。
+
+>?
+> - 建议用户使用临时密钥生成预签名，通过临时授权的方式进一步提高预签名上传、下载等请求的安全性。申请临时密钥时，请遵循 [最小权限指引原则](https://intl.cloud.tencent.com/document/product/436/32972)，防止泄漏目标存储桶或对象之外的资源。
+> - 如果您一定要使用永久密钥来生成预签名，建议永久密钥的权限范围仅限于上传或下载操作，以规避风险。
+> 
+
 
 ## SDK API 参考
 
@@ -25,7 +32,6 @@ getPresignedURLRequest.object = @"exampleobject";
 
 [getPresignedURLRequest setFinishBlock:^(QCloudGetPresignedURLResult * _Nonnull result,
                                          NSError * _Nonnull error) {
-    
     // 预签名 URL
     NSString* presignedURL = result.presienedURL;
     
@@ -34,7 +40,8 @@ getPresignedURLRequest.object = @"exampleobject";
 [[QCloudCOSXMLService defaultCOSXML] getPresignedURL:getPresignedURLRequest];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ObjectPresignUrl.m) 查看。
+>? 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ObjectPresignUrl.m) 查看。
+>
 
 **Swift**
 
@@ -61,7 +68,8 @@ getPresign.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().getPresignedURL(getPresign);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ObjectPresignUrl.swift) 查看。
+>? 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ObjectPresignUrl.swift) 查看。
+>
 
 #### 示例代码二：生成预签名下载链接
 **Objective-C**
@@ -89,7 +97,8 @@ getPresignedURLRequest.object = @"exampleobject";
 [[QCloudCOSXMLService defaultCOSXML] getPresignedURL:getPresignedURLRequest];
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ObjectPresignUrl.m) 查看。
+>? 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Objc/Examples/cases/ObjectPresignUrl.m) 查看。
+>
 
 **Swift**
 
@@ -116,5 +125,6 @@ getPresign.setFinish { (result, error) in
 QCloudCOSXMLService.defaultCOSXML().getPresignedURL(getPresign);
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ObjectPresignUrl.swift)查看。
+>? 更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/iOS/Swift/Examples/cases/ObjectPresignUrl.swift) 查看。
+>
 

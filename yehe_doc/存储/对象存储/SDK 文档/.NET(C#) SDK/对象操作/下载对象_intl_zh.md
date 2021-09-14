@@ -2,9 +2,9 @@
 
 本文档提供关于对象的下载操作相关的 API 概览以及 SDK 示例代码。
 
-| API                                                          | 操作名         | 操作描述                                  |
-| ------------------------------------------------------------ | -------------- | ----------------------------------------- |
-| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 下载对象       | 下载一个对象至本地        |
+| API                                                          | 操作名   | 操作描述           |
+| ------------------------------------------------------------ | -------- | ------------------ |
+| [GET Object](https://intl.cloud.tencent.com/document/product/436/7753) | 下载对象 | 下载一个对象至本地 |
 
 ## SDK API 参考
 
@@ -12,11 +12,14 @@ SDK 所有接口的具体参数与方法说明，请参考 [SDK API](https://cos
 
 ## 高级接口（推荐）
 
-### 下载对象
+### 下载对象（断点续传）
+
+高级接口支持暂停、恢复以及取消下载请求，同时支持断点下载功能。
 
 #### 示例代码一: 下载对象
 
-[//]: # (.cssg-snippet-transfer-download-object)
+[//]: #	".cssg-snippet-transfer-download-object"
+
 ```cs
 // 初始化 TransferConfig
 TransferConfig transferConfig = new TransferConfig();
@@ -48,11 +51,33 @@ try {
 }
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferDownloadObject.cs) 查看。
+> ?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferDownloadObject.cs) 查看。
 
-#### 示例代码二: 批量下载
+#### 示例代码二: 设置下载支持断点续传
 
-[//]: # (.cssg-snippet-transfer-batch-download-objects)
+[//]: #	".cssg-snippet-transfer-download-resumable"
+
+```cs
+COSXMLDownloadTask downloadTask = new COSXMLDownloadTask(request);
+ //开启断点续传，当本地存在未下载完成文件时，追加下载到文件末尾
+ //本地文件已存在部分不符合本次下载的内容，可能导致下载失败，请删除文件重试
+ downloadTask.SetResumableDownload(true);
+ try {
+   COSXML.Transfer.COSXMLDownloadTask.DownloadTaskResult result = await 
+   transferManager.DownloadAsync(downloadTask);
+   Console.WriteLine(result.GetResultInfo());
+   string eTag = result.eTag;
+ } catch (Exception e) {
+   Console.WriteLine("CosException: " + e);
+ }
+```
+
+> ?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferDownloadObject.cs) 查看。
+
+#### 示例代码三: 批量下载
+
+[//]: #	".cssg-snippet-transfer-batch-download-objects"
+
 ```cs
 TransferConfig transferConfig = new TransferConfig();
 
@@ -72,7 +97,7 @@ for (int i = 0; i < 5; i++) {
 }
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferDownloadObject.cs) 查看。
+> ?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/TransferDownloadObject.cs) 查看。
 
 ## 简单操作
 
@@ -84,7 +109,8 @@ for (int i = 0; i < 5; i++) {
 
 #### 示例代码
 
-[//]: # (.cssg-snippet-get-object)
+[//]: #	".cssg-snippet-get-object"
+
 ```cs
 try
 {
@@ -115,5 +141,4 @@ catch (COSXML.CosException.CosServerException serverEx)
 }
 ```
 
->?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/GetObject.cs) 查看。
-
+> ?更多完整示例，请前往 [GitHub](https://github.com/tencentyun/cos-snippets/tree/master/dotnet/dist/GetObject.cs) 查看。
