@@ -1,15 +1,16 @@
 ### 扩容类型为系统盘的云硬盘
-当扩容类型为系统盘的云硬盘时，您可 [通过云服务器控制台扩容](https://intl.cloud.tencent.com/document/product/362/5747)。
-
+当扩容类型为系统盘的云硬盘时，您可通过以下2种方式进行扩容。
+- [通过云服务器控制台扩容](https://intl.cloud.tencent.com/document/product/362/5747#useCVMconsole)
+- [通过重装系统扩容](https://intl.cloud.tencent.com/document/product/362/5747#reinstallSystem)
 
 
 
 ### 扩容类型为数据盘的云硬盘
 
 当扩容类型为数据盘的云硬盘时，您可通过以下3种方式进行扩容。
-- [通过云服务器控制台扩容](https://intl.cloud.tencent.com/document/product/362/5747)
-- [通过云硬盘控制台扩容](https://intl.cloud.tencent.com/document/product/362/5747)
-- [通过 API 扩容](https://intl.cloud.tencent.com/document/product/362/5747)
+- [通过云服务器控制台扩容](https://intl.cloud.tencent.com/document/product/362/5747#useCVMConsole)
+- [通过云硬盘控制台扩容](https://intl.cloud.tencent.com/document/product/362/5747#useCBSConsole)
+- [通过 API 扩容](https://intl.cloud.tencent.com/document/product/362/5747#useAPI)
 
 
 
@@ -19,7 +20,7 @@
 - 若当前硬盘为“不可卸载”的 CBS 数据盘，您可经由云服务器实例控制台或使用 [扩容云硬盘](https://intl.cloud.tencent.com/document/product/362/16310) 进行扩容操作。
 
 >! 如果云硬盘的最大容量仍无法满足您的业务需求，您可以使用 [多块弹性云硬盘构建 RAID 组](https://intl.cloud.tencent.com/document/product/362/2932) 或 [多块弹性云硬盘构建 LVM 逻辑卷](https://intl.cloud.tencent.com/document/product/362/2933)。
->
+
 数据盘扩容完成后，需要进行相关后续操作才能为实例识别并使用：
 <table>
      <tr>
@@ -40,13 +41,13 @@
          <td   rowspan="2">已创建文件系统</td>
          <td>磁盘容量小于2TB</td>
     		 <td><ul><li>扩容的是 Windows 云服务器的云硬盘：<a href="https://intl.cloud.tencent.com/document/product/362/31601">扩展分区及文件系统（Windows）</a></li>
-			 <li>扩容的是 Linux 云服务器的云硬盘：<a href="https://intl.cloud.tencent.com/document/product/362/39995">扩展分区及文件系统（Linux）</a></li></ul>
+			 <li>扩容的是 Linux 云服务器的云硬盘：<a href="https://intl.cloud.tencent.com/document/product/362/31602">扩展分区及文件系统（Linux）</a></li></ul>
 				 </td>
      </tr>
 	 <tr>
          <td>磁盘容量大于等于2TB</td>
          <td>
-				 <ul><li>采用 GPT 分区格式： <a href="https://intl.cloud.tencent.com/document/product/362/31601">扩展分区及文件系统（Windows）</a>或 <a href="https://intl.cloud.tencent.com/document/product/362/39995">扩展分区及文件系统（Linux）</a>。</li>
+				 <ul><li>采用 GPT 分区格式： <a href="https://intl.cloud.tencent.com/document/product/362/31601">扩展分区及文件系统（Windows）</a>或 <a href="https://intl.cloud.tencent.com/document/product/362/31602">扩展分区及文件系统（Linux）</a>。</li>
 				 <li>采用 MBR 分区格式：不支持。</li>MBR 格式分区支持的磁盘最大容量为2TB。如果您的硬盘分区为 MBR 格式，且需要扩容到超过2TB时，建议您重新创建并挂载一块新的数据盘，然后使用 GPT 分区方式后将数据拷贝至新盘中。</ul>
 				 </td>
      </tr>
