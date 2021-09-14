@@ -44,7 +44,7 @@ A nova capacidade do disco de dados será adicionada ao volume original.
 ### Expansão de um sistema de arquivos
 >?
 >- Este documento usa um CVM com CentOS 7.8 instalado como exemplo. As etapas podem ser diferentes dependendo da versão do sistema operacional. 
->?Neste exemplo, nós atribuiremos a capacidade expandida a `/dev/vdb`. Para obter mais informações, consulte [Expansão online de partições e sistemas de arquivos](https://intl.cloud.tencent.com/document/product/362/39999).
+>- Neste exemplo, nós atribuiremos a capacidade expandida a `/dev/vdb`. Para obter mais informações, consulte [Expansão online de partições e sistemas de arquivos](https://intl.cloud.tencent.com/document/product/362/39999).
 >
 1. Execute o comando a seguir para expandir o sistema de arquivos EXT.
 ```
