@@ -1,4 +1,4 @@
-Quando você precisar criptografar os dados armazenados em um disco em nuvem devido à segurança da empresa ou motivos de conformidade, habilite a criptografia de disco em nuvem e use a infraestrutura fornecida pelo [Key Management Service (KMS) do Tencent Cloud](https://cloud.tencent.com/product/kms) para proteger com eficácia a privacidade dos dados.
+Quando você precisar criptografar os dados armazenados em um disco em nuvem devido à segurança da empresa ou motivos de conformidade, habilite a criptografia de disco em nuvem e use a infraestrutura fornecida pelo [Key Management Service (KMS) do Tencent Cloud](https://intl.cloud.tencent.com/product/kms) para proteger com eficácia a privacidade dos dados.
 >Atualmente, essa funcionalidade está em teste beta. Para usá-la, é necessário [enviar um tíquete](https://console.cloud.tencent.com/workorder/category) para solicitar.
 >
 
