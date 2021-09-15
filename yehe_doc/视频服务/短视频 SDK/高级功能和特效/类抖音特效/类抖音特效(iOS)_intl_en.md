@@ -34,11 +34,11 @@ Use the first special effect filter between the first and second seconds, use th
 
 ```
 // Use the first special effect filter between the first and second seconds
-[_ugcEdit startEffect(TXEffectType_SOUL_OUT, 1.0);
-[_ugcEdit stopEffect(TXEffectType_SOUL_OUT, 2.0);
+[_ugcEdit startEffect:TXEffectType_SOUL_OUT startTime:1.0];
+[_ugcEdit stopEffect:TXEffectType_SOUL_OUT startTime:2.0)];
 // Use the second special effect filter between the third and fourth seconds
-[_ugcEdit startEffect(TXEffectType_SPLIT_SCREEN, 3.0);
-[_ugcEdit stopEffect(TXEffectType_SPLIT_SCREEN, 4.0);
+[_ugcEdit startEffect:TXEffectType_SPLIT_SCREEN startTime:3.0];
+[_ugcEdit stopEffect:TXEffectType_SPLIT_SCREEN startTime:4.0];
 // Delete the special effect filter set between the third and fourth seconds
 [_ugcEdit deleteLastEffect];
 ```
