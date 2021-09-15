@@ -40,7 +40,7 @@ Value-added services are available only for Pro Edition and Flagship Edition. Se
 <td>-</td>
 </tr>
 <tr>
-<td>Increasing the maximum number of members in a single group</td>
+<td>Increasing the maximum number of members in a single non-video-audio group</td>
 <td>2,000 members per group: 239.99 USD/month</td>
 <td>6,000 members per group: 239.99 USD/month</td>
 </tr>
@@ -52,7 +52,7 @@ Value-added services are available only for Pro Edition and Flagship Edition. Se
 <tr>
 <td>Extending the retention period of historical messages</td>
 <td  rowspan = "2">Billed by calendar month. Fees incurred within a calendar month will be deducted on the third day of the next month. Billing starts from the month the service is activated.</td>
-<td>30 days: 99.99 USD/month<br>90 days: 179.99 USD/month<br>180 days: 219.99 USD/month<br>360 days: 399.99 USD/month</td>
+<td>30 days: 99.99 USD/month<br>90 days: 179.99 USD/month<br>180 days: 269.99 USD/month<br>360 days: 399.99 USD/month</td>
 <td>90 days: 99.99 USD/month<br>180 days: 179.99 USD/month<br>360 days: 319.99 USD/month</td>
 </tr>
 <td>Bandwidth of on-screen comments in audio-video chat rooms</td>
