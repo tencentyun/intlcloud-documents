@@ -1,6 +1,7 @@
 CLB 支持个性化配置功能，允许用户设置单 CLB 实例的配置参数，如 client_max_body_size，ssl_protocols 等，满足您的个性化配置需求。
 >?
 >- 个性化配置的个数限制为每个地域200条。
+>- 个性化配置的长度限制为64k。
 >- 当前一个实例仅允许绑定一个个性化配置。
 >- 个性化配置仅针对负载均衡（原“应用型负载均衡”）的七层 HTTP/HTTPS 监听器生效。
 
@@ -9,7 +10,7 @@ CLB 支持个性化配置功能，允许用户设置单 CLB 实例的配置参�
 
 | 配置字段 |   默认值/建议值  |    参数范围  | 说明  |
 | :-------- | :-------- | :------ |:------ |
-|  ssl_protocols  | TLSv1 TLSv1.1 TLSv1.2 |  TLSv1 TLSv1.1 TLSv1.2 | 使用的 TLS 协议版本，后续会增加 TLSv1.3。|
+|ssl_protocols |TLSv1 TLSv1.1 TLSv1.2 |TLSv1 TLSv1.1 TLSv1.2 TLSv1.3 |使用的 TLS 协议版本。 |
 |  ssl_ciphers  | 见下文 |  见下文 | 加密套件。 |
 |  client_header_timeout  | 60s |  [30-120]s | 获取到 Client 请求头部的超时时间, 超时返回408。|
 |  client_header_buffer_size | 4k |[1-256]k | 存放 Client 请求头部的默认 Buffer 大小。 |
@@ -26,11 +27,14 @@ CLB 支持个性化配置功能，允许用户设置单 CLB 实例的配置参�
 |  proxy_buffer_size | 4k |[1-64]k| Server 响应头的大小，默认为 proxy_buffer 中设置的单个缓冲区大小，使用 proxy_buffer_size 时，必须同时设置 proxy_buffers。|
 |  proxy_buffers | 8 4k |[3-8] [4-8]k|缓冲区数量和缓冲区大小。|
 |  <span id="buffer">proxy_request_buffering</span> | on |on，off|<ul><li>on 表示缓存客户端请求体：CLB 会缓存请求，全部接收完成后再分块转发给后端 CVM。</li><li>off 表示不缓存客户端请求体：CLB 收到请求后，立即转发给后端 CVM，此时会导致后端 CVM 有一定性能压力。</li></ul>|
-|  proxy_set_header   |X-Real-Port $remote_port|<ul><li>X-Real-Port $remote_port</li><li>X-clb-stgw-vip $server_addr</li><li>Stgw-request-id $stgw_request_id</li><li>X-Forwarded-Proto</li></ul>|<ul><li>X-Real-Port $remote_port 表示客户端端口。</li><li>X-clb-stgw-vip $server_addr 表示 CLB 的 VIP。</li><li>Stgw-request-id $stgw_request_id 表示请求 ID（CLB 内部使用）。</li><li>X-Forwarded-Proto 表示 CLB 监听器的端口（默认已支持，无需单独配置）。</li></ul> |
+|  proxy_set_header   |X-Real-Port $remote_port|<ul><li>X-Real-Port $remote_port</li><li>X-clb-stgw-vip $server_addr</li><li>Stgw-request-id $stgw_request_id</li><li>X-Forwarded-Port $vport</li><li>X-Method $request_method</li><li>X-Uri $uri</li><li>X-Forwarded-Proto </li></ul>|<ul><li>X-Real-Port $remote_port 表示客户端端口。</li><li>X-clb-stgw-vip $server_addr 表示 CLB 的 VIP。</li><li>Stgw-request-id $stgw_request_id 表示请求 ID（CLB 内部使用）。</li><li>X-Forwarded-Port 表示 CLB 监听器的端口。</li><li>X-Method 表示客户端请求方法。</li><li>X-Uri 表示客户端请求路径URI。</li><li>X-Forwarded-Proto 表示 CLB 监听器的协议（默认已支持，无需单独配置）。</li></ul> |
 |  send_timeout | 60s |[1-3600]s|服务端向客户端传输数据的超时时间，是连续两次发送数据的间隔时间，非整个请求传输时间。|
 |  ssl_verify_depth |  1 |[1，10]|设置客户端证书链中的验证深度。|
+|proxy_redirect | http:// https:// | http:// https://  | 当上游服务器返回的响应是重定向或刷新请求（如 HTTP 响应码是301或者302）时，proxy_redirect 重设 HTTP 头部的 Location 或 Refresh 字段中的 http 为 https，实现安全跳转。  |
+
 
 >?其中，proxy_buffer_size 和 proxy_buffers 配置的值需要满足约束条件：2 * max（proxy_buffer_size, proxy_buffers.size) ≤（proxy_buffers.num - 1）\* proxy_buffers.size。例如，配置 proxy_buffer_size 为 24k，proxy_buffers 为 8 8k，则2 * 24k = 48k，（8 - 1）\* 8k = 56k，此时 48k ≤ 56k，因此配置不会报错，否则报错。
+>
 ## ssl_ciphers 配置说明
 配置 ssl_ciphers 加密套件时，格式需同 OpenSSL 使用的格式保持一致。算法列表是一个或多个`<cipher strings>`，多个算法间使用“:”隔开，ALL 表示全部算法，“!”表示不启用该算法，“+”表示将该算法排到最后一位 。
 默认强制禁用的加密算法为：`!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!DHE`。

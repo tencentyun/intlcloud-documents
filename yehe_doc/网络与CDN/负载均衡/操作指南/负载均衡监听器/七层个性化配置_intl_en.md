@@ -1,15 +1,16 @@
 CLB supports custom configurations, allowing you to set the configuration parameters for a single CLB instance, such as `client_max_body_size` and `ssl_protocols`, so as to meet your unique needs.
 >?
 >- Each region can have up to 200 entries of custom configurations.
+>- Custom configurations are limited to 64K bytes.
 >- Currently, each instance can be bound to only one entry of custom configuration.
 >- Custom configurations are valid only for layer-7 HTTP/HTTPS CLB (former Application CLB) listeners.
 
 ## CLB Custom Configuration Parameters
 Currently, CLB custom configuration supports the following fields:
 
-| Configuration Field | Default Value/Recommended Value | Parameter Range | Description |
+| Configuration Field |   Default Value/Recommended Value  |    Parameter Range  | Description  |
 | :-------- | :-------- | :------ |:------ |
-|  ssl_protocols  | TLSv1 TLSv1.1 TLSv1.2 |  TLSv1 TLSv1.1 TLSv1.2 | Version of TLS protocol used; TLSv1.3 will be supported later.|
+|ssl_protocols | TLSv1 TLSv1.1 TLSv1.2 |TLSv1 TLSv1.1 TLSv1.2 TLSv1.3 | Version of TLS protocol used |
 |  ssl_ciphers  | See further below | See further below | Encryption suite |
 |  client_header_timeout  | 60s |  [30-120]s | Timeout period of obtaining a client request header; in case of timeout, a 408 error will be returned.|
 |  client_header_buffer_size | 4k |[1-256]k | Size of default buffer where a client request header is stored. |
@@ -26,11 +27,14 @@ Currently, CLB custom configuration supports the following fields:
 |  proxy_buffer_size | 4k |[1-64]k| Size of server response header, which is the size of a single buffer set in `proxy_buffer` by default; to use `proxy_buffer_size`, `proxy_buffers` must be set at the same time.|
 |  proxy_buffers | 8 4k |[3-8] [4-8]k|Buffer quantity and size.|
 |  <span id="buffer">proxy_request_buffering</span> | on |on, off|<ul><li>on: caches the client request body; the CLB instance caches the request and forwards it to the backend CVM instance in multiple parts after the request is completely received.</li><li>off: does not cache the client request body; after receiving a request, the CLB instance directly forwards it to the backend CVM instance, which increases pressure on the backend CVM performance.</li></ul>|
-|  proxy_set_header   |X-Real-Port $remote_port|<ul><li>X-Real-Port $remote_port</li><li>X-clb-stgw-vip $server_addr</li><li>Stgw-request-id $stgw_request_id</li><li>X-Forwarded-Proto</li></ul>|<ul><li>`X-Real-Port $remote_port`: client port.</li><li>`X-clb-stgw-vip $server_addr`: CLB VIP.</li><li>`Stgw-request-id $stgw_request_id`: request ID (only used in CLB)</li><li>`X-Forwarded-Proto`: CLB listener port (supported by default).</li></ul> |
+|  proxy_set_header   |X-Real-Port $remote_port|<ul><li>X-Real-Port $remote_port</li><li>X-clb-stgw-vip $server_addr</li><li>Stgw-request-id $stgw_request_id</li><li>X-Forwarded-Port $vport</li><li>X-Method $request_method</li><li>X-Uri $uri</li><li>X-Forwarded-Proto </li></ul>|<ul><li>`X-Real-Port $remote_port`: client port.</li><li>`X-clb-stgw-vip $server_addr`: CLB VIP.</li><li>`Stgw-request-id $stgw_request_id`: request ID (used in CLB only).</li><li>`X-Forwarded-Port`: CLB listener port.</li><li>`X-Method`: client request method.</li><li>`X-Uri`: client request URI.</li><li>`X-Forwarded-Proto`: protocol for the CLB listener port (supported by default).</li></ul> |
 |  send_timeout | 60s |[1-3600]s|Timeout period of data transfer from the server to the client, which is the time interval between two consecutive data transfer actions, not the entire request transfer period.|
 |  ssl_verify_depth |  1 |[1,10]|Verification depth of the client certificate chain.|
+|proxy_redirect | http:// https:// | http:// https://  | If the upstream server returns a redirect or refresh request (code 301 or 302), `proxy_redirect` will reset `http` to `https` in the `Location` or `Refresh` field in the HTTP header for safe redirection.  |
+
 
 >?Requirements on the value of `proxy_buffer_size` and `proxy_buffers`: 2 * max (proxy_buffer_size, proxy_buffers.size) ≤ (proxy_buffers.num - 1)\* proxy_buffers.size; For example, if `proxy_buffer_size` is "24k", `proxy_buffers` is "8 8k"; then 2 * 24k = 48k, (8 - 1)\* 8k = 56k; and 48k ≤ 56k, so there will be no configuration error.
+>
 ## ssl_ciphers Configuration Instructions
 The ssl_ciphers encryption suite being configured must be in the same format as that used by OpenSSL. The algorithm list is one or more `<cipher strings>`; multiple algorithms should be separated with ":"; ALL represents all algorithms, "!" indicates not to enable an algorithm, and "+" indicates to move an algorithm to the last place.
 The encryption algorithm for default forced disabling is: `!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!DHE`.
