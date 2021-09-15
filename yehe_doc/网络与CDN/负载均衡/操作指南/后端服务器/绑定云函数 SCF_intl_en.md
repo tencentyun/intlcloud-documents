@@ -34,7 +34,7 @@ Applicable to using SCF to handle highly elastic services and CVM to handle dail
 
 
 ## Restrictions
-- Binding with SCF is only available in Guangzhou, Shenzhen Finance, Shanghai, Shanghai Finance, Beijing, Chengdu, Hong Kong (China), Singapore, Mumbai, Tokyo, and Silicon Valley.
+- Binding with SCF is only available in Guangzhou, Shanghai, Beijing, Chengdu, Hong Kong (China), Singapore, Mumbai, Tokyo, and Silicon Valley.
 - SCF functions can only be bound with CLB instances of bill-by-IP accounts but not with bill-by-CVM accounts. If you are using a bill-by-CVM account, we recommend upgrading it to a bill-by-IP account. For more information, please see [Checking Account Type](https://intl.cloud.tencent.com/document/product/684/15246). 
 - SCF functions cannot be bound with classic CLB instances.
 - SCF functions cannot be bound with classic network CLB instances.
