@@ -3,7 +3,7 @@ After a CLB instance is created, you can configure a CLB security group to isola
 - One CLB instance can be bound to five security groups at most.
 - Up to 512 rules are allowed for a security group.
 - Security groups cannot be bound to classic network-based private CLB instances and classic private CLB instances. If a private CLB instance is bound to an [Anycast EIP](https://intl.cloud.tencent.com/document/product/214/32426), security groups bound to the instance will not take effect.
-- **Allow by Default** is not available for classic private CLBs and classic network-based CLBs, and neither for [BM Physical Server 2.0](https://intl.cloud.tencent.com/document/product/213/11518).
+- **Allow by Default** is not available for classic private CLBs and classic network-based CLBs.
 
 ## Background
 A security group is a virtual firewall that can filter stateful data packets and control outbound and inbound traffic at the instance level. For more information, please see [Security Group](https://intl.cloud.tencent.com/document/product/213/12452).
@@ -33,7 +33,8 @@ When **Allow by Default** is disabled:</p>
 <li>Traffic from public IPs (including general public IPs and EIPs) still needs to pass through the CVM security group.</li>
 <li>If a CLB instance has no security group configured, only traffic passing through the CVM security group will be allowed.</li>
 <li>You can reject access either the CLB security group or the CVM security group to reject traffic from a specified client IP.</li></ul>
-<p >When **Allow by Default** is disabled, the CVM security group should be configured as follows to ensure effective health check:</p>
+
+<p >When <b>Allow by Default</b> is disabled, the CVM security group should be configured as follows to ensure effective health check:</p>
 <ol ><li>Configure public network CLB<br>You need to allow the CLB VIP on the backend CVM security group, so that CLB can use the VIP to detect the backend CVM health status.</li>
 <li>Configure private network CLB<ul><li>For private network CLB (formerly "private network application CLB"), if your CLB instance is in a VPC, the CLB VIP needs to be allowed in the backend CVM security group for health check; if your CLB instance is in the classic network, no additional configuration is needed as the health check IP is allowed by default.</li><li>For private network classic CLB, if your CLB instance was created before December 5, 2016 and is in a VPC, the CLB VIP needs to be allowed (for health check) in the backend CVM security group; otherwise, no additional configuration is needed as the health check IP is allowed by default.</li></ul></li></ol>
 
@@ -85,7 +86,7 @@ If **Allow by Default** is disabled, you need to allow the client IP in the CVM 
    A CVM security group can be configured to only allow access from service ports for traffic accessing the backend CVM instance.<br>Go to the [Security Group Console](https://console.cloud.tencent.com/cvm/securitygroup) to configure a security group policy. In the inbound rule, all port 8080 of all IPs. To ensure smooth remote CVM login and ping services, open 22, 3389, and ICMP services in the security group.
    ![](https://console.cloud.tencent.com/cvm/instance/index?rid=1)
 2. Bind the security group to the CVM instance
- 1. In the [CVM Console](https://cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fcvm%2Finstance%2Findex%3Frid%3D1), click the ID of CVM instance bound to the CLB instance to enter the details page.
+ 1. In the [CVM Console](https://console.intl.cloud.tencent.com/cvm/instance/index?rid=1), click the ID of CVM instance bound to the CLB instance to enter the details page.
  2. Select the **Security Group** tab and click **Bind** in the **Bound Security Groups** module.
  3. In the **Configure Security Group** window that pops up, select the security group bound to the CVM instance and click **OK**.      <img alt="" src="https://main.qcloudimg.com/raw/6e0e1c2f834bb7425ef3ca010114165a.png" title="Click to view the original image">
 
