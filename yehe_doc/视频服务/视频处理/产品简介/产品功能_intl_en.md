@@ -23,7 +23,7 @@ The parameters you can specify for transcoding include codec, resolution, bitrat
    </tr>
    <tr>
       <td style="text-align:center">Video codec</td>
-      <td>AV1, AVS2, H.264/AVC, H.263, H.263+, H.265, MPEG-1, MPEG-2, MPEG-4, MJPEG, VP8, VP9, QuickTime, RealVideo, Windows Media Video</td>
+      <td>AV1, AVS2, H.264/AVC, H.263, H.263+, H.265, MPEG-1, MPEG-2, MPEG-4, MJPEG, VP8, VP9, RealVideo, Windows Media Video</td>
    </tr>
 	    <tr>
       <td style="text-align: center; ">Audio codec</td>
