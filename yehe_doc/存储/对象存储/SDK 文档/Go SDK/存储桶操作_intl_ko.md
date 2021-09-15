@@ -120,7 +120,7 @@ type CreateBucketConfiguration struct {
 | XCosGrantFullControl | 지정 계정에 Bucket에 대한 읽기/쓰기 권한 부여. 형식: `id=" ",id=" "`, 서브 계정에 권한을 부여해야 하는 경우의 형식: `id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`, 루트 계정에 권한을 부여해야 하는 경우의 형식: `id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`. 예: `id="qcs::cam::uin/100000000001:uin/100000000011",id="qcs::cam::uin/100000000001:uin/100000000001"` | string | 아니요   |
 | XCosGrantRead        | 지정 계정에 Bucket에 대한 읽기 권한 부여. 형식: `id=" ",id=" "`, 서브 계정에 권한을 부여해야 하는 경우의 형식: `id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`, 루트 계정에 권한을 부여해야 하는 경우의 형식: `id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`. 예: `id="qcs::cam::uin/100000000001:uin/100000000011",id="qcs::cam::uin/100000000001:uin/100000000001"` | string | 아니요   |
 | XCosGrantWrite       | 지정 계정에 Bucket에 대한 쓰기 권한 부여. 형식: `id=" ",id=" "`, 서브 계정에 권한을 부여해야 하는 경우의 형식: `id="qcs::cam::uin/{OwnerUin}:uin/{SubUin}"`, 루트 계정에 권한을 부여해야 하는 경우의 형식: `id="qcs::cam::uin/{OwnerUin}:uin/{OwnerUin}"`. 예: `id="qcs::cam::uin/100000000001:uin/100000000011",id="qcs::cam::uin/100000000001:uin/100000000001"` | string | 아니요   |
-| BucketAZConfig | 버킷 AZ 구성. MAZ로 지정하여 다중 AZ 버킷을 생성합니다. 다중 AZ 스토리지 유형은 현재 베이징 및 광저우 리전만 지원됩니다. | Struct | | 아니요 |
+| BucketAZConfig | 버킷 AZ 구성. MAZ로 지정하여 다중 AZ 버킷을 생성합니다. 다중 AZ 스토리지 유형은 현재 베이징 및 광저우 리전만 지원됩니다. | Struct  | 아니요 |
 
 ## 버킷 및 해당 권한 인덱스
 
