@@ -4,8 +4,8 @@
 - 失败处理策略支持两种方式：失败时阻塞等待处理和单节点失败继续处理。
 
 ## 操作步骤
-1. 登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，在【集群列表】中单击对应的集群【ID/名称】进入集群详情页。
-2. 在【集群服务】中，单击【重启服务】，或者选择需要重启的组件卡片【操作】>【角色管理】勾选需要重启的服务【角色】并单击【重启服务】。
+1. 登录 [EMR 控制台](https://console.cloud.tencent.com/emr)，在**集群列表**中单击对应的集群**ID/名称**进入集群详情页。
+2. 在**集群服务**中，单击**重启服务**，或者选择需要重启的组件卡片**操作**>**角色管理**勾选需要重启的服务**角色**并单击**重启服务**。
  - 在集群详情页面中直接重启服务时，需要选择重启的服务名称、服务角色、重启方式、是否滚动重启、失败处理策略等。
 
  - 在组件卡片中重启服务时，只需要选择重启方式、失败处理策略等。
@@ -152,7 +152,7 @@
       <td>HUE</td>
       <td>Hue</td>
       <td>默认重启模式</td>
-			<td>通过<code> build/env/bin/start.sh 和build/env/bin/sop.sh </code>进行重启</td>
+			<td>通过<code> build/env/bin/start.sh </code>和<code> build/env/bin/sop.sh </code>进行重启</td>
 			<td>-</td>
    </tr>
 	 <tr>
@@ -198,13 +198,13 @@
       <td rowspan="2">ALLUXIO</td>
       <td>AlluxioMaster</td>
       <td>默认重启模式</td>
-			<td>通过<code> bin/alluxio-stop.sh master 和 bin/alluxio-start.sh master </code>进行重启</td>
+			<td>通过<code> bin/alluxio-stop.sh master </code>和<code> bin/alluxio-start.sh master </code>进行重启</td>
 			<td>-</td>
    </tr>
    <tr>
       <td>AlluxioWorker</td>
       <td>默认重启模式</td>
-			<td>通过<code> bin/alluxio-stop.sh worker 和 bin/alluxio-start.sh worker </code>进行重启</td>
+			<td>通过<code> bin/alluxio-stop.sh worker </code>和<code> bin/alluxio-start.sh worker </code>进行重启</td>
 			<td>-</td>
    </tr>
 	 <tr>
