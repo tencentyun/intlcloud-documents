@@ -105,7 +105,7 @@ The maximum invocation frequency is 200 times per second.
 
 
 ## Error Codes
-Unless a network error (such as error 502) occurs, the HTTP return code of this API is always 200. ErrorCode and ErrorInfo in the response packet represent the actual error code and error information, respectively.
+Unless a network error (such as error 502) occurs, the HTTP return code of this API is always 200. ResultCode, ResultInfo, ErrorCode and ErrorInfo in the response packet represent the actual error code and error information, respectively.
 For common error codes (60000 to 79999), see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
 The following table describes the error codes specific to this API.
 
