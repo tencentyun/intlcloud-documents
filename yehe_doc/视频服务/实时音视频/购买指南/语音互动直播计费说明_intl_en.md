@@ -109,8 +109,6 @@ Below are the prices of general packages:
 >? The package unit prices in the table are rounded up to 3 decimal places. However, in actual billing, unit prices are rounded to 8 decimal places.
 
 About general packages:
-
-- You must be on our allowlist to use TRTC services. [Contact us](https://intl.cloud.tencent.com/contact-us) to add your account to the allowlist.
 - A general package is valid from the day of purchase to the last day of the same month next year.
    For example, if you purchased a package on May 1, 2021, it would be valid from May 1, 2021 to May 31, 2022.
 - You can purchase multiple packages. Durations are deducted in real time from the package that expires the fastest.
