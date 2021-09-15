@@ -39,8 +39,8 @@ https://xxxxxx/v4/sns/black_list_check?sdkappid=88888888&identifier=admin&usersi
 
 | 字段 |	类型	|属性|	说明|
 |-----|----|---|-----|
-|From_Account|	String	|必填| 需要校验该 Identifier 的黑名单 |
-|To_Account|	Array	|必填| 待校验的黑名单的 Identifier 列表，单次请求的 To_Account 数不得超过1000 |
+|From_Account|	String	|必填| 需要校验该 UserID 的黑名单 |
+|To_Account|	Array	|必填| 待校验的黑名单的 UserID 列表，单次请求的 To_Account 数不得超过1000 |
 |CheckType|	String|	必填| 校验模式，详情可参见 <a href="https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.A1.E9.AA.8C.E9.BB.91.E5.90.8D.E5.8D.95">校验黑名单 |
 
 ### 应答包体示例
@@ -93,7 +93,7 @@ https://xxxxxx/v4/sns/black_list_check?sdkappid=88888888&identifier=admin&usersi
 |字段|	类型	|说明|
 |----|----|-----|
 | BlackListCheckItem|	Array	|校验结果对象数组|
-| To_Account|	String	|请求校验的用户的 Identifier|
+| To_Account|	String	|请求校验的用户的 UserID|
 | Relation	|String| 校验成功时 To_Account 与 From_Account 之间的黑名单关系，详情可参见 <a href="https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.A1.E9.AA.8C.E9.BB.91.E5.90.8D.E5.8D.95">校验黑名单</a> |
 | ResultCode	|Integer	|To_Account 的处理结果，0表示成功，非0表示失败|
 | ResultInfo|	String|	To_Account 的错误描述信息，成功时该字段为空|
