@@ -3,7 +3,7 @@
 - 每个 CLB 最多绑定5个安全组。
 - CLB 的安全组规则条数最大为512条。
 - 传统型内网负载均衡和基础网络的内网负载均衡不支持绑定安全组，当内网负载均衡绑定 [Anycast EIP](https://intl.cloud.tencent.com/document/product/214/32426) 时，内网负载均衡绑定的安全组暂不生效。
-- 传统型内网负载均衡和基础网络的负载均衡不支持安全组默认放通功能，[黑石物理服务器2.0](https://intl.cloud.tencent.com/document/product/213/11518) 暂不支持安全组默认放通能力。
+- 传统型内网负载均衡和基础网络的负载均衡不支持安全组默认放通功能。
 
 ## 背景信息
 安全组是一种虚拟防火墙，具备有状态的数据包过滤功能，控制实例级别的出入流量，详情请参见 [安全组概述](https://intl.cloud.tencent.com/document/product/213/12452)。
@@ -85,7 +85,7 @@ CLB 安全组为绑定在 CLB 实例上的安全组，CVM 安全组为绑定在 
    对于访问后端 CVM 的流量，通过配置云服务器安全组，限制仅允许服务端口的访问。<br>在 [安全组控制台](https://console.cloud.tencent.com/cvm/securitygroup) 上配置安全组策略，在入站规则中放通所有 IP 的 8080 端口，为保障远程登录主机和 Ping 服务，在安全组上须放通 22、3389 和 ICMP 服务。
    ![](https://console.cloud.tencent.com/cvm/instance/index?rid=1)
 2. 将安全组绑定 CVM
- 1. 在 [云服务器控制台](https://cloud.tencent.com/login/subAccount?s_url=https%3A%2F%2Fconsole.cloud.tencent.com%2Fcvm%2Finstance%2Findex%3Frid%3D1)上，单击 CLB 绑定的 CVM 的 ID，进入详情页。
+ 1. 在 [云服务器控制台](https://console.intl.cloud.tencent.com/cvm/instance/index?rid=1)上，单击 CLB 绑定的 CVM 的 ID，进入详情页。
  2. 选择【安全组】标签页，在“已绑定安全组”模块单击【绑定】。
  3. 在弹出的“配置安全组”窗口中，选择对应绑定到 CVM 上的安全组，单击【确定】。      <img alt="" src="https://main.qcloudimg.com/raw/6e0e1c2f834bb7425ef3ca010114165a.png" title="点击看原图">
 
