@@ -5,7 +5,7 @@ You can export a list of CLB instances containing the configuration and resource
 1. Log in to the [CLB Console](https://console.cloud.tencent.com/clb) and select a region in the top left corner of the **Instance Management** page.
 2. In the instance list, select an instance and click ![](https://main.qcloudimg.com/raw/60af8ca18770c716a5e18c576b71ddc1.svg) in the top right corner.
 3. In the pop-up window, select the fields and scopes to export and click **Confirm** to download the instance list locally.
-![](https://main.qcloudimg.com/raw/b2a82b086ab4b1468af06aaa1cfe9353.png)
+![](https://main.qcloudimg.com/raw/f22aa8a4f3b0783b777c4cdceeb80b63.png)
 <table>
 <thead>
 <tr>
