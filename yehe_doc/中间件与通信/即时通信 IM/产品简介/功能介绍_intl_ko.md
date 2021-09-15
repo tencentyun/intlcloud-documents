@@ -8,7 +8,7 @@
 | iOS     | iOS 8.0 및 그 이후 버전  | 지원     | 지원     | 지원     |
 | Mac     | OS X 10.10 및 그 이후 버전  | 지원     | 지원     | -     |
 | Windows | C, C++ 포함. Windows 7, Windows 8/8.1, Windows 10과 호환. 32비트 및 64비트 프로그램 연결 완벽 지원 | - | - | - |
-| Web     | IE 9+, Chrome 7+, FireFox 3.6+, Opera 12+ 및 Safari 6+ 지원 | 지원     | - | - |
+| Web     | IE 11+, Chrome 7+, FireFox 3.6+, Opera 12+ 및 Safari 6+ 지원 | 지원     | - | - |
 | 미니프로그램   | 지원   | 지원     | - | - |
 |Unity|2020.2.7f1c1 및 그 이후 버전|지원|지원|-|
 |Flutter|Flutter 2.0.12 버전|지원|지원|-|

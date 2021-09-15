@@ -1,4 +1,3 @@
-## Introduction
 MPS Console provides a comprehensive transcoding service overview.
 
 ## Directions

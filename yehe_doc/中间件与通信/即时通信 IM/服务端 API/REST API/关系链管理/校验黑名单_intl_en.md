@@ -39,8 +39,8 @@ The maximum invocation frequency is 200 times per second.
 
 | Field | Type | Attribute | Description |
 |-----|----|---|-----|
-| From_Account | String | Required | The identifier whose blocklist needs to be verified. |
-| To_Account | Array | Required | The list of blocked identifiers to be verified. Up to 1,000 To_Account entries are supported in a single request. |
+| From_Account | String | Required | The UserID whose blocklist needs to be verified. |
+| To_Account | Array | Required | The list of blocked UserIDs to be verified. Up to 1,000 To_Account entries are supported in a single request. |
 | CheckType | String | Required | The verification mode. For details, see <a href="https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.A1.E9.AA.8C.E9.BB.91.E5.90.8D.E5.8D.95">Verifying Blocklists</a>. |
 
 ### Response packet example
@@ -93,7 +93,7 @@ The maximum invocation frequency is 200 times per second.
 | Field | Type | Description |
 |----|----|-----|
 | BlackListCheckItem | Array | The array of verification result objects. |
-| To_Account | String | The identifier of the account to be verified. |
+| To_Account | String | The UserID of the account to be verified. |
 | Relation | String | Blocklist relationship between To_Account and From_Account upon successful verification. For details, see <a href="https://intl.cloud.tencent.com/document/product/1047/33521#.E6.A0.A1.E9.AA.8C.E9.BB.91.E5.90.8D.E5.8D.95">Verifying Blocklists</a>. |
 | ResultCode | Integer | The processing result of To_Account. 0: succeeded. Others: failed. |
 | ResultInfo | String | Error description for To_Account. If the processing was successful, the field is empty. |
@@ -105,7 +105,7 @@ The maximum invocation frequency is 200 times per second.
 
 
 ## Error Codes
-Unless a network error (such as error 502) occurs, the HTTP return code of this API is always 200. ErrorCode and ErrorInfo in the response packet represent the actual error code and error information, respectively.
+Unless a network error (such as error 502) occurs, the HTTP return code of this API is always 200. ResultCode, ResultInfo, ErrorCode and ErrorInfo in the response packet represent the actual error code and error information, respectively.
 For common error codes (60000 to 79999), see [Error Codes](https://intl.cloud.tencent.com/document/product/1047/34348).
 The following table describes the error codes specific to this API.
 
