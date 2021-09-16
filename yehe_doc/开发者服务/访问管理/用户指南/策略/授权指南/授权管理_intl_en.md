@@ -13,7 +13,9 @@ You can associate policies with users/user groups and vice versa. These two meth
 <dx-tabs>
 ::: Associating\spolicy\swith\suser
 1. On the **[Policies](https://console.cloud.tencent.com/cam/policy)** page in the CAM console, select a policy type.
->?This document takes a **preset policy** as an example. You can also select a **custom policy**.
+<dx-alert infotype="explain">
+This document takes a **preset policy** as an example. You can also select a **custom policy**.
+</dx-alert>
 2. Search for the preset policy you want to associate and click **Associate Users/Groups** in the **Operation** column.
 ![](https://main.qcloudimg.com/raw/c3c39a4e97345a3b31728f0e1b0ed379.png)
 3. In the **Associate Users/User Groups** pop-up window, select the user you want to associate and click **OK** to complete the association.
@@ -21,7 +23,9 @@ You can associate policies with users/user groups and vice versa. These two meth
 :::
 ::: Associating\spolicy\swith\suser\sgroup
 1. On the **[Policies](https://console.cloud.tencent.com/cam/policy)** page in the CAM console, select a policy type.
->?This document takes a **preset policy** as an example. You can also select a **custom policy**.
+<dx-alert infotype="explain">
+This document takes a **preset policy** as an example. You can also select a **custom policy**.
+</dx-alert>
 2. Search for the preset policy you want to associate and click **Associate Users/Groups** in the **Operation** column.
 ![](https://main.qcloudimg.com/raw/c3c39a4e97345a3b31728f0e1b0ed379.png)
 3. In the **Associate Users/User Groups** pop-up window, click **Switch to User Group**.
@@ -39,7 +43,9 @@ You can associate policies with users/user groups and vice versa. These two meth
 1. On the **Users** > **[User List](https://console.cloud.tencent.com/cam)** page in the CAM console, find the user to be authorized and click **Authorization** in the **Operation** column to enter the **Associate Policy** page.
 ![](https://main.qcloudimg.com/raw/a29dc8dd4c1a7e587140b9dfeb101b58.png)
 2. On the **Associate Policy** page, select a policy type.
->?All policies are displayed by default. You can filter custom or preset policies to find specific policy information.
+<dx-alert infotype="explain">
+All policies are displayed by default. You can filter custom or preset policies to find specific policy information.
+</dx-alert>
 3. Select the policy you want to associate and click **OK** to complete the association.
 ![](https://main.qcloudimg.com/raw/a743ce549be775bd50b42296c03af43b.png)
 :::
@@ -48,7 +54,9 @@ You can associate policies with users/user groups and vice versa. These two meth
 2. On the user group details page, click **Associate Policy** to enter the **Associate Policy** page.
 ![](https://main.qcloudimg.com/raw/78e647a8af6f34e96c384e5f02fd15d0.png)
 3. On the **Associate Policy** page, select a policy type.
->?All policies are displayed by default. You can filter custom or preset policies to find specific policy information.
+<dx-alert infotype="explain">
+All policies are displayed by default. You can filter custom or preset policies to find specific policy information.
+</dx-alert>
 4. Select the policy you want to associate and click **OK** to complete the association.
 ![](https://main.qcloudimg.com/raw/a743ce549be775bd50b42296c03af43b.png)
 :::
