@@ -12,13 +12,11 @@
 
 - 客户端是否有消费
 
-  可以通过查看分区的消费速度来确认，是否有进行消费，如下图：
-
-  ![](https://main.qcloudimg.com/raw/e48ab4cc7aa70d8e205f5cc220580341.jpg)
+  可以通过查看分区的消费速度来确认，是否有进行消费.
 
 - 客户端消费速度较慢
 
-  请参考 [消费端消费消息速度缓慢](https://cloud.tencent.com/document/product/597/60501)。
+  请参考 [消费端消费消息速度缓慢](https://intl.cloud.tencent.com/document/product/597/42147)。
 
 #### 推荐设置
 
@@ -53,4 +51,4 @@ bin/kafka-consumer-perf-test.sh
 --broker-list bootstrap.servers=ckafka vip : port
 ```
 
-详情请参考 [对 CKafka 进行生产和消费压力测试](https://cloud.tencent.com/document/product/597/19527)。
+详情请参考 [对 CKafka 进行生产和消费压力测试](https://intl.cloud.tencent.com/document/product/597/42257)。
