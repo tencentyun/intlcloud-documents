@@ -37,7 +37,7 @@ The Node.js runtime environment has been installed locally.
 
 #### Local development
 
-1. Refer to [Installation](https://zh.nuxtjs.org/docs/2.x/get-started/installation) to install and initialize your Nuxt.js project:
+1. Refer to [Installation](https://nuxtjs.org/docs/get-started/installation) to install and initialize your Nuxt.js project:
 ```sh
 npx create-nuxt-app nuxt-app
 ```
