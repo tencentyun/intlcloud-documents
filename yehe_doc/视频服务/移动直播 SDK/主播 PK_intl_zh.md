@@ -1,6 +1,6 @@
 
 ## PK 方案介绍
-目前，在 [**连麦互动 - RTMP方案**](https://cloud.tencent.com/document/product/454/14606) 中，腾讯云移动直播 SDK 提供连麦互动组件 `MLVBLiveRoom` 用来帮助开发者快速实现 PK 需求，为了更好的满足开发者针对 PK 功能的需求，腾讯云新增了基于 RTC 协议的 PK 方案，同时提供了更加简单灵活的 V2 接口。
+目前，在 **连麦互动 - RTMP方案** 中，腾讯云移动直播 SDK 提供连麦互动组件 `MLVBLiveRoom` 用来帮助开发者快速实现 PK 需求，为了更好的满足开发者针对 PK 功能的需求，腾讯云新增了基于 RTC 协议的 PK 方案，同时提供了更加简单灵活的 V2 接口。
 
 移动直播 V2 接口同时支持通过 RTMP 协议及 RTC 协议进行推流/PK，开发者可根据自身需求选择适合的方案，对比如下：
 
@@ -10,12 +10,12 @@
 | QoS      | 弱网抗性能力弱             | 50%丢包率可正常视频观看，70%丢包率可正常语音连麦 |
 | 支持区域 | 仅支持中国内地（大陆）地区 | 全球覆盖                                           |
 | 使用产品 | 需开通移动直播、云直播服务 | 需开通移动直播、云直播、实时音视频服务             |
-| 价格     | 0.0028美元/分钟           | 阶梯价格，详情请参见 [费用介绍](https://cloud.tencent.com/document/product/454/8008#rtc_live) |
+| 价格     | 0.0028美元/分钟           | 阶梯价格，详情请参见 [费用介绍](https://intl.cloud.tencent.com/document/product/1071/38114) |
 
 
 ## RTC PK 方案演示
-移动直播 SDK 提供了新的 V2 接口：` V2TXLivePusher` （推流）、` V2TXLivePlayer` （拉流），用来帮助客户实现更加灵活、更低延时、更多人数的直播互动场景。开播端可以利用 V2 提供的 RTC 推流能力，默认情况下，观众端观看则可使用 CDN 方式进行拉流。 CDN 观看费用较低。如果主播端有 PK 需求，直接互相播放对方的流即可。RTC PK 需要另外开通服务，具体步骤请参见 [配置连麦或 PK 能力](https://cloud.tencent.com/document/product/454/60985#step4) 配置。
-下面是 [MLVB-API-Example Demo](https://cloud.tencent.com/document/product/454/60985) 的演示效果。
+移动直播 SDK 提供了新的 V2 接口：` V2TXLivePusher` （推流）、` V2TXLivePlayer` （拉流），用来帮助客户实现更加灵活、更低延时、更多人数的直播互动场景。开播端可以利用 V2 提供的 RTC 推流能力，默认情况下，观众端观看则可使用 CDN 方式进行拉流。 CDN 观看费用较低。如果主播端有 PK 需求，直接互相播放对方的流即可。RTC PK 需要另外开通服务。
+下面是 MLVB-API-Example Demo 的演示效果。
 
 ### 演示图示
 
@@ -304,18 +304,18 @@ pusher.setMixTranscodingConfig(config);
 
 >? 此处开发者可能会有疑问：貌似新的 RTC 连麦方案还需要我们自己维护一套房间和用户状态，这样不是更麻烦吗？是的，**没有更好的方案，只有更适合自己的方案**，我们也有考虑到这样的场景：
 - 如果对时延和并发要求并不高的场景，可以继续使用连麦互动的旧方案。
-- 如果既想用到 V2 相关的接口，但是又不想维护一套单独的房间状态，可以尝试搭配 [腾讯云 IM SDK](https://cloud.tencent.com/document/product/269)，快速实现相关逻辑。
+- 如果既想用到 V2 相关的接口，但是又不想维护一套单独的房间状态，可以尝试搭配 [腾讯云 IM SDK](https://intl.cloud.tencent.com/document/product/1047)，快速实现相关逻辑。
 
 [](id:price)
 ## RTC 连麦方案怎么计算费用
-具体请参见 [连麦互动费用-新方案（RTC 连麦）](https://cloud.tencent.com/document/product/454/8008#rtc_live)。
+具体请参见 [连麦互动费用-新方案（RTC 连麦）](https://intl.cloud.tencent.com/document/product/1071/38114)。
 
 [](id:que)
 ## 常见问题
 [](id:que1)
 #### 1. 为什么使用 `V2TXLivePusher&V2TXLivePlayer` 接口时，同一台设备不支持使用相同 streamid 同时推流和拉流，而 `TXLivePusher&TXLivePlayer` 可以支持？
 
-是的，目前 `V2TXLivePusher&V2TXLivePlayer` 是 [腾讯云 TRTC](https://cloud.tencent.com/document/product/647/45151) 协议实现，其基于 UDP 的超低延时的私有协议暂时还不支持**同一台设备，使用相同的 streamid，一边推超低延时流，一边拉超低延时的流**，同时考虑到用户的使用场景，所以暂时并未支持，后续会酌情考虑此问题的优化。
+是的，目前 `V2TXLivePusher&V2TXLivePlayer` 是 [腾讯云 TRTC](https://intl.cloud.tencent.com/document/product/647/39958) 协议实现，其基于 UDP 的超低延时的私有协议暂时还不支持**同一台设备，使用相同的 streamid，一边推超低延时流，一边拉超低延时的流**，同时考虑到用户的使用场景，所以暂时并未支持，后续会酌情考虑此问题的优化。
 
 [](id:que2)
 #### 2. [**服务开通**](#step1) 章节中生成参数都是什么意思呢？
