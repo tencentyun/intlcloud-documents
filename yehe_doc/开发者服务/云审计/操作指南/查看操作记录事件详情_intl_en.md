@@ -1,26 +1,26 @@
 ## Overview
-This document describes how to view the event details of operation records and the field descriptions involved in event details on the CloudAudit console.
+This document describes how to view the event details in operation records and the field descriptions involved in event details in the CloudAudit console.
 
 ## Directions
-### Viewing operation records
-1. Log in to the CloudAudit console and select **[Event History](https://console.cloud.tencent.com/cloudaudit)**.
-2. You can view the operation records of an event in the operation record list on the page you enter, as shown in the figure below.
+### Viewing operation record
+1. Log in to the CloudAudit console and select **[Operation Record](https://console.cloud.tencent.com/cloudaudit)** on the left sidebar.
+2. On the operation record list page, you can view the operation records of an event in the operation record list as shown below:
 ![](https://main.qcloudimg.com/raw/05997e3350e76763e3efe70e6610307f.png)
 The username indicates the event operator. It is divided into three types according to the following operation types:
- - **Operation by a root account**: “root” is displayed as the username.
+ - **Operation by a root account**: "root" is displayed as the username.
  - **Operation by a sub-user**: the sub-user name is displayed as the username. If the sub-user has been deleted, the sub-user ID will be displayed as the username.
  - **Operation by a role**: the role name is displayed as the username. If the role has been deleted, the role ID will be displayed as the username.
 To view more information of a user, you can click the username to go to the user details page.
 
 ### Viewing event details
-1. If you need to view the details of an event, please click <img src="https://main.qcloudimg.com/raw/01149711e1d47fd4bbd2051a58b7211d.png" style="margin:-1px 0px"> on the left of an event in the event list, and click **View Event** in the expanded module, as shown in the figure below.
+1. If you need to view the details of an event, you can click the information in the list. You can also click `+` before the information and click **View Event** in the expanded module as shown below:
 ![](https://main.qcloudimg.com/raw/2e0478f26d9f947cb6929467bc20a4d9.png)
-2. Then you can view the event details in the module on the right. For more information on field descriptions, see [Appendix](#appendix).
+2. Then, you can view the event details in the module on the right. For more information on field descriptions, please see [Appendix](#appendix).
 
 
 
 ## Appendix[](id:appendix)
-The table below displays the field descriptions of the event details for an operation record.
+The table below displays the field descriptions of the event details in an operation record.
 <table>
 <tr>
 <th width="20%">Name</th><th width="9%">Type</th>
@@ -98,7 +98,7 @@ The table below displays the field descriptions of the event details for an oper
 </tr>
 </table>
 
-The table below displays the requester’s identity descriptions.
+The table below displays the requester's identity descriptions.
 <table>
 <tr>
 <th width="20%">Name</th><th width="9%">Type</th>

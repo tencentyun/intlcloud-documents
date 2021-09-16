@@ -7,8 +7,8 @@ The six-segment format is defined as follows:
 qcs:project_id:service_type:region:account:resource
 ```
 
-- **qcs**: is the abbreviation of `qcloud service` and indicates that the resource is a Tencent Cloud resource. It is required. 
-- **project_id** describes the project information, which is only compatible with legacy CAM logic. It is prohibited to be entered in the current policy syntax and can be left empty.
+- **qcs**: is the abbreviation of `qcloud service` and indicates a Tencent Cloud resource, which is required. 
+- **project_id** describes the project information, which is only compatible with legacy CAM logic. It is not allowed in the current policy syntax and can be left empty.
 - **service_type** describes the abbreviated service name, such as CVM and CDN. For more information on the abbreviations, please see the corresponding service documentation. The value `*` indicates all services. This field is required.  
 - **region** describes the region information. If this field is left empty, it indicates all regions. For more information on region naming, please see [Region List](https://intl.cloud.tencent.com/document/product/213/31574).
 - **account** describes the root account information of the resource owner. Currently, either `uin` or `uid` can be used to describe the resource owner.
