@@ -2,7 +2,7 @@
 ## 1. 工程结构
 ![](https://main.qcloudimg.com/raw/6dece0a7e9535e3fdb138975ff69452c.png)
 小视频主要集成了 UGCKit 作为核心功能库。集成方式参考 [UGCKit](https://github.com/tencentyun/UGSVSDK/tree/master/iOS)（主要负责播放录制）。
-小视频的美颜功能，主要集成 BeautySettingkit 实现。集成方式参考 [高级功能和特效](https://intl.cloud.tencent.com/document/product/1069/38028) 文档（类抖音特效、动效变脸），相关代码都可以在 BeautySettingKit 目录下找到。
+小视频的美颜功能，主要集成 BeautySettingkit 实现。集成方式请参见 [类抖音特效](https://intl.cloud.tencent.com/document/product/1069/38028)、[动效变脸](https://intl.cloud.tencent.com/document/product/1069/38030) 文档，相关代码都可以在 BeautySettingKit 目录下找到。
 
 [](id:function)
 ## 2. 模块介绍
@@ -55,7 +55,7 @@
 编辑模块主要包括：短视频裁剪、BGM、滤镜风格、特效、动态贴纸、静态贴纸等。
 
 #### 相关代码
-`UGCKit/Source/Edit`目录下可以找到录制相关的所有逻辑。
+`UGCKit/Source/Edit`目录下可以找到编辑相关的所有逻辑。
 
 [](id:pod)
 ### 发布模块
