@@ -8,7 +8,7 @@
 - Step2. App 向您的业务服务器申请上传签名（App 将 MP4 文件上传到腾讯云视频分发平台的“许可证”）。为了确保安全性，上传签名由您的业务 Server 进行签发，而不能由终端 App 生成。
 - Step3. 使用 TXUGCPublish 接口发布视频，发布成功后，SDK 会将观看地址的 URL 回调给您。
 
-#### 注意事项
+## 注意事项
 
 - App 不能把计算上传签名的 SecretID 和 SecretKey 写在客户端代码里，这两个关键信息泄露将导致安全隐患，如果恶意攻击者通过破解 App 来获取该信息，则可以免费使用您的流量和存储服务。
 - 正确的做法是在您的服务器上，用  SecretID 和 SecretKey 生成一次性的上传签名，然后将签名交给 App。
@@ -23,7 +23,7 @@
 <span id="step2"></span>
 ### 2. 压缩视频
  - 压缩视频会减小视频文件的大小，同时也会降低视频的清晰度，您可以按需决定是否进行压缩。
- - 对视频进行压缩，使用 TXVideoEditer.generateVideo(int videoCompressed, String videoOutputPath) 接口，支持4种分辨率的压缩，后续会增加自定义码率的压缩。
+ - 对视频进行压缩，使用 [TXVideoEditer.generateVideo(int videoCompressed, String videoOutputPath)](https://liteav.sdk.qcloud.com/doc/api/zh-cn/group__TXVideoEditer__android.html#af3f16bcb21f26c608c980b91671e386e)接口，支持4种分辨率的压缩，后续会增加自定义码率的压缩。
 <span id="step3"></span>
 ### 3. 发布视频
 将生成的 MP4 文件发布到腾讯云上，App 需要拿到上传文件的短期有效上传签名，详细请参见 [签名派发](https://intl.cloud.tencent.com/document/product/1069/38015)。TXUGCPublish（位于 TXUGCPublish.java）负责将 MP4 文件发布到腾讯云视频分发平台上，以满足视频观看的就近调度、秒开播放、动态加速以及海外接入等要求。
