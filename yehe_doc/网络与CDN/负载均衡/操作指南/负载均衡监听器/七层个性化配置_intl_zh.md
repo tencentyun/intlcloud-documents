@@ -32,7 +32,7 @@ CLB 支持个性化配置功能，允许用户设置单 CLB 实例的配置参�
 |  ssl_verify_depth |  1 |[1，10]|设置客户端证书链中的验证深度。|
 |proxy_redirect | http:// https:// | http:// https://  | 当上游服务器返回的响应是重定向或刷新请求（如 HTTP 响应码是301或者302）时，proxy_redirect 重设 HTTP 头部的 Location 或 Refresh 字段中的 http 为 https，实现安全跳转。  |
 | ssl_early_data  |  off |on，off|启用或禁止 TLS 1.3 0-RTT。仅当 ssl_protocols 字段取值包含 TLSv1.3 时，开启 ssl_early_data 才会生效。**开启 ssl_early_data 后，有重放攻击的风险，请谨慎开启。**|
-|http2_max_field_size|4k|[1-256]k|限制 HPACK  压缩的请求头字段的最大大小（ Size ）。|
+|http2_max_field_size|4k|[1-256]k|限制 HPACK  压缩的请求头字段的最大 大小（ Size ）。|
 |error_page|-|error_page code [ = [ response]] uri|当发生特定错误码（Code）的时候，能够显示一个预定义的 URI，默认状态码（Response）为302。URI 必须是以 `/` 开头的路径。|
 
 
