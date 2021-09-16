@@ -6,5 +6,5 @@
 源站如果需要获取客户端真实IP（仅 TCP 协议），需要安装 TOA 模块，具体可参见 [服务端获取客户端真实 IP（仅针对 TCP 协议）](https://intl.cloud.tencent.com/document/product/608/14429)。
 
 ## HTTP/HTTPS 协议
-将客户端访问的域名 CNAME 到加速通道的接入域名，或者修改客户端本地 host，将客户端要访问的域名解析到加速通道 VIP，然后客户端按照`协议+URL`访问即可实现加速。
-源站可以直接从 HTTP 请求头中 x-forward-for 字段中获取客户端真实 IP。
+将客户端访问的域名 CNAME 到加速通道的接入域名，或者修改客户端本地 host，将客户端要访问的域名解析到加速通道 VIP，然后客户端按照协议+URL访问即可实现加速。
+源站可以直接从 HTTP 请求头中 x-forwarded-for 字段中获取客户端真实 IP。
