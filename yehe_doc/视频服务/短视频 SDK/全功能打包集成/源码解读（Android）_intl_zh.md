@@ -2,7 +2,7 @@
 ## 工程结构
 
 下载小视频代码，使用 Android Studio 打开工程后，您将看到如下的目录结构：
-![](https://main.qcloudimg.com/raw/7e871288732522edc565944b3324a694.png)
+![](https://main.qcloudimg.com/raw/56990c09cfb83517988f721a0f694530.png)
 
 | 文件/目录    | 说明                                                         |
 | ------------ | ------------------------------------------------------------ |
@@ -21,7 +21,7 @@
 [](id:effect)
 ## 动效表情
 
-小视频源代码中默认使用的是基础版短视频 SDK，而非企业版本，所以动效贴纸等功能并不包含。如果您需要此功能，请在 [DOWNLOAD](https://intl.cloud.tencent.com/document/product/1069/37914) 中获取商用版本。
+小视频源代码中默认使用的是普通版短视频 SDK，而非商用版本，所以动效贴纸等功能并不包含。如果您需要此功能，请在 [DOWNLOAD](https://intl.cloud.tencent.com/document/product/1069/37914) 中获取商用版本。
 
 [](id:function)
 ## 模块介绍
@@ -45,7 +45,7 @@
 | TCLoginActivity.java    | 用户登录页面                                                 |
 | TCRegisterActivity.java | 用户注册页面                                                 |
 | TCUserMgr | 用户登录注册管理类 |
-| OnProcessFragment       | 显示进度条的 Fragment                                         |
+| ProgressFragmentUtil       | 显示进度条的控件                                        |
 | TCUserInfoFragment.java     | 用户资料展示页面                                             |
 | TCAboutActivity             |  小视频介绍的关于页面                                   |
 
