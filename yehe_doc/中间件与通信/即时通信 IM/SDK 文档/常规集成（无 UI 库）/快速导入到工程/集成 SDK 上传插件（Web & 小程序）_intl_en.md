@@ -63,7 +63,7 @@ tim.registerPlugin({'tim-upload-plugin': TIMUploadPlugin});
 ### 2. Access via script
 
 ```html
-<!-- `tim-js.js` and `tim-upload-plugin.js` can be obtained at https://github.com/tencentyun/TIMSDK/tree/master/H5/sdk. -->
+<!-- `tim-js.js` and `tim-upload-plugin.js` can be obtained at https://github.com/tencentyun/TIMSDK/tree/master/Web/Demo/sdk. -->
 <script src='./tim-js.js'></script>
 <script src='./tim-upload-plugin.js'></script>
 <script>

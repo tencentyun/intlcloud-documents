@@ -2,7 +2,7 @@
 ## 1. Project Structure
 ![](https://main.qcloudimg.com/raw/6dece0a7e9535e3fdb138975ff69452c.png)
 A UGSV application mainly integrates `UGCKit` as the core feature library, which is used for playback and shoot. For the integration method, please see [UGCKit](https://github.com/tencentyun/UGSVSDK/tree/master/iOS).
-The UGSV application implements the beauty filter feature mainly by integrating `BeautySettingkit`. For the integration method, please see [Advanced Features and Special Effects](https://intl.cloud.tencent.com/document/product/1069/38028) (TikTok-like special effects, animated effects, and face changing). The relevant code is in the `BeautySettingKit` directory.
+The UGSV application implements the beauty filter feature mainly by integrating `BeautySettingkit`. For the integration method, please see [iOS](https://intl.cloud.tencent.com/document/product/1069/38028),[Eye Enlarging, Face Slimming, and Pendants (iOS)](https://intl.cloud.tencent.com/document/product/1069/38030) . The relevant code is in the `BeautySettingKit` directory.
 
 [](id:function)
 ## 2. Module Overview

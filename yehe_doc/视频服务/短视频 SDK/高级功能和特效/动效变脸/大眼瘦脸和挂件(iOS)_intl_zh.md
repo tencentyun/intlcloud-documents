@@ -7,7 +7,7 @@
 申请企业版本 License 请联系您的商务。
 
 ## 版本下载
-在 [SDK 下载](https://intl.cloud.tencent.com/document/product/1069/37914) 页面下方下载企业版 SDK 压缩包，压缩包有加密（解压密码和 Licence 在接入流程步骤获取），成功解压后得到一个 `Demo` 和 `SDK` 文件，特效资源存放在 SDK/Resource 下。
+在 [SDK 下载](https://intl.cloud.tencent.com/document/product/1069/37914) 页面下方下载企业版 SDK 压缩包，压缩包有加密（解压密码和 Licence 在接入流程步骤获取），成功解压后得到一个 Demo 和 SDK 文件，特效资源存放在 SDK/Resource 下。
 
 ## Xcode 工程设置
 
@@ -43,7 +43,7 @@
 > - v1
 
 ### 步骤4：导入 Licence 文件
-企业版需要 Licence 验证通过后，相应功能才能生效。您可以向我们的商务同学申请一个免费30天的调试用 Licence。
+企业版需要 Licence 验证通过后，相应功能才能生效。您可以向我们的商务人员申请一个免费30天的调试用 Licence。
 得到 Licence 后，您需要将其命名为 **YTFaceSDK.licence**，然后如上图所示添加到工程。
 >?
 >- 每个 Licence 都有绑定具体的 Bundle Identifier，修改 app 的 Bundle Identifier 会导致验证失败。
@@ -51,7 +51,7 @@
 >- iOS 和 Android 不需要重复申请 licence，一个 Licence 可以同时授权一个 iOS 的 bundleid 和一个 Android 的 packageName。
 
 
-**从4.9版本开始，SDK 支持二合一的 Licence，这种方式不再需要 YTFaceSDK.licence，在从商务同学处获取到 Licence 对应的 key 和 url 后，设置方式和标准版 Licence 设置方式相同。**
+**从4.9版本开始，SDK 支持二合一的 Licence，这种方式不再需要 YTFaceSDK.licence，在从商务人员处获取到 Licence 对应的 key 和 url 后，设置方式和标准版 Licence 设置方式相同。**
 
 ## 功能调用
 

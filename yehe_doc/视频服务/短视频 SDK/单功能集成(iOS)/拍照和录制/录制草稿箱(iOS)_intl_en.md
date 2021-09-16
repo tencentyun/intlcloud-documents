@@ -1,13 +1,13 @@
 How the shooting drafts feature works
 #### Starting a shooting
 1. Start shooting a video.
-- Pause/End the shooting. 
-- Cache the video segment locally (draft box).
+2. Pause/End the shooting. 
+3. Cache the video segment locally (draft box).
 
 #### Resuming the shooting
 1. Preload the locally cached video segment.
-- Continue with the shooting.
-- End the shooting.
+2. Continue with the shooting.
+3. End the shooting.
 
 ```plaintext
 //Get the object of the previous shooting

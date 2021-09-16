@@ -7,7 +7,7 @@ For the purchase method for bill-by-CVM accounts, please see [Purchase Methods](
 1. Log in to the Tencent Cloud console and go to the [CLB purchase page](https://buy.cloud.tencent.com/lb).
 2. For the **Instance type**, **Cloud Load Balancer** is recommended.
 3. Select attributes as needed, including the network type and project. For attribute details, please see [Product Attribute Selection](https://intl.cloud.tencent.com/document/product/214/13629).
->?Currently, the static single-line IP is supported only in Guangzhou, Shanghai, Nanjing, Jinan, Hangzhou, Fuzhou, Beijing, Shijiazhuang, Wuhan, Changsha, Chengdu, and Chongqing. For its support in other districts, please see the console. The feature is currently in beta, if you want to try it out, please submit an application. Once you are accepted, you can select an ISP (China Mobile, China Unicom, or China Telecom) on the purchase page.
+>?The beta test of static single-line IP is only available in Jinan, Hangzhou, Fuzhou, Shijiazhuang, Wuhan, and Changsha. Please contact your sales rep if you need to join the beta.
 >
 4. Confirm and pay for the selected CLB instance.
 5. CLB service will be activated once the payment completes. You can now configure and use the CLB instance.

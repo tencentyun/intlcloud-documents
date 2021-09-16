@@ -15,7 +15,7 @@
 | ------- | ------------------------------- | ------------------------------------------------------------ |
 | -100001 | ERR_SOURCE_NO_FOUND             | Source video file passed in via `setVideoPath` not found.                     |
 | -100002 | ERR_SOURCE_DAMAGED              | Source video file passed in via `setVideoPath` is damaged.                   |
--100003 | ERR_SOURCE_NO_TRACK | Unsupported video format for demuxing (extracting audio/video files of different formats from composed videos). OPPO R9s does not support MP3 audio files currently. |
+-100003 | ERR_SOURCE_NO_TRACK | Unsupported video format for demuxing (extracting audio/video files of different formats from composed videos).|
 
 ## Uploading
 

@@ -1,4 +1,3 @@
-## Feature Overview
 Video shoot includes features such as adjustable-speed shoot, beauty filters, filters, sound effects, and background music configuration. 
 
 ## Overview of Relevant Classes
@@ -16,7 +15,7 @@ The following is the basic usage process of video shoot:
 3. Set the shoot effects.
 4. Complete shoot.
 
-#### Example
+#### Code Example
 ```
 // Create `TXCloudVideoView` for camera preview
 mVideoView = (TXCloudVideoView) findViewById(R.id.video_view);
@@ -148,14 +147,14 @@ void onRecordProgress(long milliSecond);
 void onRecordComplete(TXRecordResult result);
 ```
 
-- `onRecordEvent` is the shoot event callback, which contains the event ID and event-related parameters in the format of `(key,value)`.
+- `onRecordEvent` is the shoot event callback, which contains the event ID and event-related parameters in the format of (key,value).
 ```    
 @optional
 void onRecordEvent(final int event, final Bundle param);
 ```
 
 ## Setting Shoot Attributes
-### 1. Set the video image
+### Set the video image
 
 ``` 
 // Set the landscape or portrait mode for shoot
@@ -177,7 +176,7 @@ mTXCameraRecord.setRenderRotation(TXLiveConstants.RENDER_ROTATION_PORTRAIT);
 mTXCameraRecord.setAspectRatio(TXRecordCommon.VIDEO_ASPECT_RATIO_9_16);
 ```
 
-### 2. Set the speed
+### Set the speed
 ``` 
 // Set the video shoot speed
 // TXRecordCommon.RECORD_SPEED_SLOWEST (ultra-slow) 
@@ -185,9 +184,9 @@ mTXCameraRecord.setAspectRatio(TXRecordCommon.VIDEO_ASPECT_RATIO_9_16);
 // TXRecordCommon.RECORD_SPEED_NORMAL (standard) 
 // TXRecordCommon.RECORD_SPEED_FAST (fast) 
 // TXRecordCommon.RECORD_SPEED_FASTEST (ultra-fast) 
-mTXCameraRecord.setRecordSpeed(VIDEO_RECORD_SPEED_NOMAL);
+mTXCameraRecord.setRecordSpeed(TXRecordCommon.VIDEO_RECORD_SPEED_NORMAL);
 ```
-### 3. Set the audio
+### Set the audio
 
 ``` 
 // Set the mic volume level. It is used to adjust the mic volume level when background music is played back
@@ -199,7 +198,7 @@ mTXCameraRecord.setMute(isMute);
 
 ## Setting Effects
 During video shoot, you can set various special effects for the shot video.
-### 1. Watermark
+### Watermark
 ``` 
 // Set a global watermark
 // TXRect: normalized value of watermark relative to video image. The SDK will automatically calculate the `height` according to the watermark aspect ratio
@@ -208,7 +207,7 @@ During video shoot, you can set various special effects for the shot video.
 // 540 * 0.1 * watermarkBitmap.height / watermarkBitmap.width）
 mTXCameraRecord.setWatermark(watermarkBitmap, txRect)
 ```
-### 2. Filter
+### Filter
 ``` 
 // Set the color filter to Romantic, Fresh, Aesthetic, Rosy, Vintage, etc.
 // filterBitmap: color lookup table used for filter. Note: it must be in .png format
@@ -228,7 +227,7 @@ mTXCameraRecord.setFilter(mLeftBitmap, leftIntensity, mRightBitmap, rightIntensi
 mTXCameraRecord.setSpecialRatio(0.5);
 ```
 
-### 3. Beauty filter
+### Beauty filter
 
 ``` 
 // Set the beauty filter type
