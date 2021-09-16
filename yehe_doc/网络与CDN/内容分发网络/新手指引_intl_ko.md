@@ -83,7 +83,7 @@ Tencent Cloud CDN을 사용하려면 우선 Tencent Cloud 계정에 가입하고
 </tr>
 <tr>
 <td>실시간 모니터링 데이터를 바탕으로 운영 상황 분석. </td>
-<td><a href="https://cloud.tencent.com/document/product/228/30794" target="_blank">실시간 모니터링</a></td>
+<td>실시간 모니터링</a></td>
 </tr>
 <tr>
 <td>사용자 출처와 분포, 사용 현황 분석. </td>
@@ -115,7 +115,7 @@ Tencent Cloud CDN을 사용하려면 우선 Tencent Cloud 계정에 가입하고
 </tr>
 <tr>
 <td>CDN 콘솔에서 중국 내 트래픽 패키지 사용 현황 조회. </td>
-<td><a href="https://cloud.tencent.com/document/product/228/6306" target="_blank">트래픽 패키지 관리</a></td>
+<td>트래픽 패키지 관리</a></td>
 </tr>
 <tr>
 <td>지정된 IP가 Tencent Cloud의 CDN 노드인지 확인. </td>

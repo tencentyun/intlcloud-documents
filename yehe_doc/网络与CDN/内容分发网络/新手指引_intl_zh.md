@@ -83,7 +83,7 @@
 </tr>
 <tr>
 <td>根据实时监控数据来分析运行情况。</td>
-<td><a href="https://cloud.tencent.com/document/product/228/30794" target="_blank">实时监控</a></td>
+<td>实时监控</a></td>
 </tr>
 <tr>
 <td>分析您的用户来源和用户分布及使用情况。</td>
