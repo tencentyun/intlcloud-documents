@@ -37,7 +37,7 @@
 
 #### 本地开发
 
-1. 参考 [Nuxt.js](https://zh.nuxtjs.org/docs/2.x/get-started/installation) 官方文档，安装并初始化您的 Nuxt.js 项目：
+1. 参考 [Nuxt.js](https://nuxtjs.org/docs/get-started/installation) 官方文档，安装并初始化您的 Nuxt.js 项目：
 ```sh
 npx create-nuxt-app nuxt-app
 ```
