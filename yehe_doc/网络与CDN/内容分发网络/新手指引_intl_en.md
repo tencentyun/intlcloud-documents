@@ -83,7 +83,7 @@ Below is the overview page of the CDN console:
 </tr>
 <tr>
 <td>Use real-time monitoring data to analyze the running status.</td>
-<td><a href="https://cloud.tencent.com/document/product/228/30794" target="_blank">Real-time Monitoring</a></td>
+<td>Real-time Monitoring</a></td>
 </tr>
 <tr>
 <td>Analyze your user sources, distribution, and usage.</td>
