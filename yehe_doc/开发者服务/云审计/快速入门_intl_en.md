@@ -10,7 +10,7 @@ You can get started with CloudAudit easily in the Tencent Cloud console, where y
 1. Log in to the [CloudAudit console](https://console.cloud.tencent.com/cloudaudit).
 2. Click **Operation Record** on the left sidebar to enter the operation record page.
 3. On the operation record page, you can view relevant operation records by username, resource type, resource name, event source, event ID, keyword, or corresponding operation event time. The queried operation records will be displayed in a list. By default, only partial data is displayed. You can click **Load More** as shown below:
-![](https://main.qcloudimg.com/raw/124225c642c747a52cbdb1c001e2b6d2.jpg)
+
 
 ### Details
 In the operation record list, you can click <img src="https://main.qcloudimg.com/raw/8b58051804db873ddf14a5f897711c9c.png" style="margin:-3px 0px;"> on the left of an operation to get its details, including event time, username, event name, access key, event ID, source IP address, resource region, CAM error code, event region, event source, and request ID. You can also click **View Event** to view the details of the event as shown below:
