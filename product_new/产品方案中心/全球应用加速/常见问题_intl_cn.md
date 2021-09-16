@@ -24,4 +24,3 @@ GAAP 可应用于跨区域访问业务，如全球电商、游戏全球同服等
 
 ### 协作者账号无权限访问 GAAP 该如何处理?
 当出现协作者账号无权限访问 GAAP 时，您可以联系主账号或拥有 AdministratorAccess 权限的其他账号管理者，通过 [配置权限](https://intl.cloud.tencent.com/document/product/608/31510)，使协作者账号拥有 GAAP 全读写访问权限或 GAAP 只读访问权限。
-![](https://main.qcloudimg.com/raw/0189d4261af32dbc8cf632e390ff7a19.png)
