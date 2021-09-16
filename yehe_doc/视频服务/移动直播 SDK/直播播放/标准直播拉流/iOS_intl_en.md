@@ -50,7 +50,7 @@ In iOS, a view is used as the basic UI rendering unit. Therefore, you need to co
 Technically, the player does not render video images directly on the view (`_myView` in the sample code) you provide. Instead, it creates a subview for OpenGL rendering over the view.
 
 You can adjust the size of video images by changing the size and position of the view. The SDK will make changes to the video images accordingly.
- ![](https://main.qcloudimg.com/raw/39a02a8525a20fd861c69c42d2b3ab14.png)
+ ![](https://main.qcloudimg.com/raw/33d49a6272a8bd6b11e9ddb9db571aa5.png)
 
 **How can I animate views?**
 You are allowed great flexibility in view animation, but note that you need to modify the `transform` rather than `frame` attribute of the view.

@@ -50,7 +50,7 @@ V2TXLivePlayer *_txLivePlayer = [[V2TXLivePlayer alloc] init];
 内部原理上，播放器并不是直接把画面渲染到您提供的 view （示例代码中的 `_myView`）上，而是在这个 view 之上创建一个用于 OpenGL 渲染的子视图（subView）。
 
 如果您要调整渲染画面的大小，只需要调整您所常见的 view 的大小和位置即可，SDK 会让视频画面跟着您的 view 的大小和位置进行实时的调整。
- ![](https://main.qcloudimg.com/raw/39a02a8525a20fd861c69c42d2b3ab14.png)
+ ![](https://main.qcloudimg.com/raw/33d49a6272a8bd6b11e9ddb9db571aa5.png)
 
 **如何做动画？**
 针对 view 做动画是比较自由的，不过请注意此处动画所修改的目标属性应该是 transform 属性而不是 frame 属性。
