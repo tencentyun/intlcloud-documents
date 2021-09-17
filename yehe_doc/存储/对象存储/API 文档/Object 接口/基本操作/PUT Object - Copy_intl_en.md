@@ -97,7 +97,7 @@ When copying an object, you can configure the access permissions of the destinat
 
 If the source object uses the server-side encryption method, `SSE-C`, you need to specify the following request headers to decrypt the source object:
 
-| Header | Description | Type | Required &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| Header | Description | Type | Required  |
 | ----------------------------------------------------------- | ------------------------------------------------------------ | ------ | ------------------------------------------------------------ |
 | x-cos-server-side-encryption-customer-algorithm | Server-side encryption algorithm. Currently, only AES256 is supported. | string | Required if the source object uses SSE-C. |
 | x-cos-server-side-encryption-customer-key | Base64-encoded server-side encryption key, such as <code>MDEyMzQ1Njc4OUFCQ<br>0RFRjAxMjM0NTY3ODlBQkNERUY=</code> | string | Required if the source object uses SSE-C. |
