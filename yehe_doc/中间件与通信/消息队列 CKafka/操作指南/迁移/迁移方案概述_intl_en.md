@@ -8,7 +8,7 @@ This document describes the schemes for migrating a self-built Kafka cluster to 
 
 This scheme is simple, clear, and easy to implement, with no data heap for smooth transition.
 
-![](https://main.qcloudimg.com/raw/7b41c8c1f3740a9b5b6ad45f6b369cc0.png)
+![](https://main.qcloudimg.com/raw/51d15605b01dd1095239001a966b2671.png)
 
 
 
@@ -32,7 +32,7 @@ This scheme is simple, clear, and easy to implement, with no data heap for smoot
 
 This scheme is simple, clear, and easy to implement.
 
-![](https://main.qcloudimg.com/raw/a24b388a3259dfe609e94ed14037c862.png)
+![](https://main.qcloudimg.com/raw/d25503d1d258cc9266c816daded70029.png)
 
 **Scheme ideas:**
 
@@ -52,7 +52,7 @@ This scheme is simple, clear, and easy to implement.
 
 This scheme migrates the existing data in the self-built Kafka cluster to CKafka.
 
-![](https://main.qcloudimg.com/raw/74a958680c5d45812dfc8141505bc013.png)
+![](https://main.qcloudimg.com/raw/faa4c766dfd74e86da605ffdb0410b24.png)
 
 **Scheme ideas:**
 
