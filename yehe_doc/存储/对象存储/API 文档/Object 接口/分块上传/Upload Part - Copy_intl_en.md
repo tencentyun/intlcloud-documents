@@ -94,7 +94,7 @@ This API uses [Common Response Headers](https://intl.cloud.tencent.com/document/
 
 #### Non-common response headers
 
-|Header &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Description | Type |
+|Header | Description | Type |
 |---|---|---|
 | x-cos-copy-source-version-id | Version ID of the source object to copy (if versioning is enabled for the source bucket) | String |
 | x-cos-server-side-encryption | If the object is stored with COS-managed server-side encryption, the response will contain this header and the encryption algorithm used (AES256). | String |
