@@ -241,7 +241,7 @@ Both the prelude and data end with a 4-byte CRC code encoded in Big Endian. COS 
 > !The integer values in all the messages are transferred in network byte order (i.e., encoded in Big Endian).
 
 The figure below shows what a message and a header consist of. One message may contain multiple headers.
-![Message construction](https://main.qcloudimg.com/raw/aeb1263d0c9af56842997327514f13aa.png)
+![Message construction](https://main.qcloudimg.com/raw/854fe989e1f98b168a038b4fb615d4e5.png)
 
 As shown above, each message consists of a prelude, a prelude CRC code (composed of two pieces of information that record the number of bytes), header(s), a payload, and a message CRC code. As can be seen from the above figure, the length of the entire response body is calculated as follows:
 ```shell
@@ -290,7 +290,7 @@ These response types are as detailed below.
 
 - Header format
   A records message contains three types of headers: ":message-type", ":event-type", and ":content-type", as shown below:
-  ![Records message ](https://main.qcloudimg.com/raw/922e7b72b786ff478d022bf3a5b62166.png) 
+  ![Records message ](https://main.qcloudimg.com/raw/7e04ad30a1ce335a67975a291bffdac5.png) 
 - Body format
   The body of a records message may contain a single record, a partial record, or multiple records, depending on the number of extraction results.
 
@@ -298,7 +298,7 @@ These response types are as detailed below.
 
 - Header format
   A continuation message contains two types of headers: ":message-type" and ":event-type", as shown below:
-  ![ Continuation Message ](https://main.qcloudimg.com/raw/46f32071a712ecf39af238629fd746fc.png) 
+  ![ Continuation Message ](https://main.qcloudimg.com/raw/b8488620e8f2989f993e9b5488dfe52b.png) 
 - Body format
   A continuation message contains no body content.
 
@@ -306,7 +306,7 @@ These response types are as detailed below.
 
 - Header format
   A progress message contains three types of headers: ":message-type", ":event-type", and ":content-type", as shown below:
-  ![Progress Message](https://main.qcloudimg.com/raw/fbbfc15950e7a063fdfa38cb349c40aa.png) 
+  ![Progress Message](https://main.qcloudimg.com/raw/6f262224260381b3c7b233b25ce0fbb0.png) 
 - Body format
   The body of a progress message is XML text which contains the current query progress, mainly including:
 	- BytesScanned: If the file is compressed, this value represents the size of the file in bytes before it is decompressed; otherwise, this value represents the size of the file in bytes.
@@ -328,7 +328,7 @@ Below is a sample:
 
 - Header format
   A stats message contains three types of headers: ":message-type", ":event-type", and ":content-type", as shown below:
-  ![ Stats Message ](https://main.qcloudimg.com/raw/e565c09f71267eba208206fcaceaf991.png)
+  ![ Stats Message ](https://main.qcloudimg.com/raw/8fbe1d40ec19c4f72d18275ff087f264.png)
 - Body format
   The body of a stats message is XML text which contains the statistics of the current query, mainly including:
   - BytesScanned: If the file is compressed, this value represents the size of the file in bytes before it is decompressed; otherwise, this value represents the size of the file in bytes.
@@ -350,7 +350,7 @@ Example:
 
 - Header format
   An end message contains two types of headers: ":message-type" and ":event-type", as shown below:
-  ![ End messages ](https://main.qcloudimg.com/raw/b079e8945f1a70aa474a0da7c7763311.png)
+  ![ End messages ](https://main.qcloudimg.com/raw/f28f76c719b02258379adf1fcc71f484.png)
 - Body format
   An end message contains no body content.
 
@@ -358,7 +358,7 @@ Example:
 
 - Header format
   A request level error message contains three types of headers: ":error-code", ":error-message", and ":message-type", as shown below:
-  ![ Request Level Error Message](https://main.qcloudimg.com/raw/2617ffc28532fb49f53de576e20629d4.png) 
+  ![ Request Level Error Message](https://main.qcloudimg.com/raw/72fc70c4cabbc86b67d1cf8cc46a8d70.png) 
 
 For more information on the error code in a request level error message, see [Special Error Codes](#.E7.89.B9.E6.AE.8A.E9.94.99.E8.AF.AF.E7.A0.81).
 
